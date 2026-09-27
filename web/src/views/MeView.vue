@@ -30,7 +30,7 @@ async function logOut() {
       <button
         type="button"
         class="h-11 w-fit rounded-control bg-region-strong px-4 text-body-sm font-bold text-white active:translate-y-px disabled:cursor-not-allowed disabled:opacity-40"
-        :disabled="!userStore.ready"
+        :disabled="!userStore.ready || !userStore.canSignIn"
         @click="userStore.signIn()"
       >
         用 Google 登入

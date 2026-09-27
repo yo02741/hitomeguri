@@ -2,24 +2,30 @@ import { onAuthStateChanged, signInWithPopup, signOut, type User } from 'firebas
 import { defineStore } from 'pinia'
 import { ref } from 'vue'
 
-import { auth, googleProvider } from '../services/firebase'
+import { auth, firebaseAvailable, googleProvider } from '../services/firebase'
 
 export const useUserStore = defineStore('user', () => {
   const user = ref<User | null>(null)
-  const ready = ref(false)
+  // Auth 狀態已確定（或 Firebase 未設定）時為 true；登入按鈕在此之前停用。
+  const ready = ref(!firebaseAvailable)
+  const canSignIn = firebaseAvailable
 
-  onAuthStateChanged(auth, (u) => {
-    user.value = u
-    ready.value = true
-  })
+  if (auth) {
+    onAuthStateChanged(auth, (u) => {
+      user.value = u
+      ready.value = true
+    })
+  }
 
   async function signIn() {
+    if (!auth) return
     await signInWithPopup(auth, googleProvider)
   }
 
   async function logOut() {
+    if (!auth) return
     await signOut(auth)
   }
 
-  return { user, ready, signIn, logOut }
+  return { user, ready, canSignIn, signIn, logOut }
 })

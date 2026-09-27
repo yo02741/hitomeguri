@@ -70,7 +70,7 @@ function isActive(tab: (typeof tabs)[number]) {
         v-else
         type="button"
         class="h-11 rounded-control border border-line bg-paper px-3.5 text-body-sm text-ink active:translate-y-px disabled:cursor-not-allowed disabled:opacity-40"
-        :disabled="!userStore.ready"
+        :disabled="!userStore.ready || !userStore.canSignIn"
         @click="userStore.signIn()"
       >
         登入
