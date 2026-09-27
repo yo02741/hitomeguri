@@ -42,6 +42,7 @@ function isActive(tab: (typeof tabs)[number]) {
         to="/me"
         aria-label="我的"
         class="grid size-10 place-items-center overflow-hidden rounded-full border border-line bg-placeholder text-sub"
+        :class="route.name === 'me' ? 'outline-2 outline-offset-2 outline-region-strong' : ''"
       >
         <img
           v-if="userStore.user.photoURL"
