@@ -22,7 +22,7 @@ def client() -> httpx.Client:
     if _client is None:
         _client = httpx.Client(
             headers={"User-Agent": USER_AGENT, "Accept": "application/json"},
-            timeout=httpx.Timeout(240.0, connect=30.0),
+            timeout=httpx.Timeout(360.0, connect=30.0),
             follow_redirects=True,
         )
     return _client

@@ -1,5 +1,3246 @@
 [
   {
+    "id": "osm-node-10031043550",
+    "name": {
+      "ja": "ゆめの里 かずら（農事組合法人）",
+      "zh_tw": "ゆめの里 かずら（農事組合法人）"
+    },
+    "location": {
+      "lat": 34.523569,
+      "lng": 136.135209
+    },
+    "prefecture": "nara",
+    "kind": "theme",
+    "themes": [
+      "sake"
+    ],
+    "tags": [],
+    "featured": false,
+    "score": 0.0,
+    "summary_zh": "",
+    "images": [],
+    "external_ids": {
+      "osm": "node/10031043550"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/node/10031043550",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
+    "id": "osm-node-10878439834",
+    "name": {
+      "ja": "天理スタミナラーメン",
+      "zh_tw": "天理スタミナラーメン"
+    },
+    "location": {
+      "lat": 34.600095,
+      "lng": 135.839467
+    },
+    "prefecture": "nara",
+    "kind": "theme",
+    "themes": [
+      "ramen"
+    ],
+    "tags": [],
+    "featured": false,
+    "score": 0.0,
+    "summary_zh": "",
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "天理",
+          "kana": "てんり",
+          "romaji": "Tenri",
+          "en": "Tenri"
+        },
+        "distance_m": 820
+      }
+    ],
+    "images": [],
+    "external_ids": {
+      "osm": "node/10878439834"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/node/10878439834",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
+    "id": "osm-node-11169283822",
+    "name": {
+      "ja": "にぼしこいし",
+      "zh_tw": "にぼしこいし"
+    },
+    "location": {
+      "lat": 34.684108,
+      "lng": 135.825055
+    },
+    "prefecture": "nara",
+    "kind": "theme",
+    "themes": [
+      "ramen"
+    ],
+    "tags": [],
+    "featured": false,
+    "score": 1.0,
+    "summary_zh": "",
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "近鉄奈良",
+          "romaji": "Kintetsu Nara",
+          "en": "Kintetsu Nara"
+        },
+        "distance_m": 320
+      },
+      {
+        "name": {
+          "ja": "奈良",
+          "romaji": "Nara",
+          "en": "Nara"
+        },
+        "distance_m": 670
+      }
+    ],
+    "images": [],
+    "external_ids": {
+      "osm": "node/11169283822"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/node/11169283822",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
+    "id": "osm-node-11169287949",
+    "name": {
+      "ja": "麺屋 龍",
+      "zh_tw": "麺屋 龍"
+    },
+    "location": {
+      "lat": 34.682142,
+      "lng": 135.82084
+    },
+    "prefecture": "nara",
+    "kind": "theme",
+    "themes": [
+      "ramen"
+    ],
+    "tags": [],
+    "featured": false,
+    "score": 0.0,
+    "summary_zh": "",
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "奈良",
+          "romaji": "Nara",
+          "en": "Nara"
+        },
+        "distance_m": 230
+      },
+      {
+        "name": {
+          "ja": "近鉄奈良",
+          "romaji": "Kintetsu Nara",
+          "en": "Kintetsu Nara"
+        },
+        "distance_m": 740
+      }
+    ],
+    "images": [],
+    "external_ids": {
+      "osm": "node/11169287949"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/node/11169287949",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
+    "id": "osm-node-11171253944",
+    "name": {
+      "ja": "まこと屋",
+      "zh_tw": "まこと屋"
+    },
+    "location": {
+      "lat": 34.673575,
+      "lng": 135.831401
+    },
+    "prefecture": "nara",
+    "kind": "theme",
+    "themes": [
+      "ramen"
+    ],
+    "tags": [],
+    "featured": false,
+    "score": 0.0,
+    "summary_zh": "",
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "京終",
+          "en": "Kyōbate"
+        },
+        "distance_m": 480
+      },
+      {
+        "name": {
+          "ja": "近鉄奈良",
+          "romaji": "Kintetsu Nara",
+          "en": "Kintetsu Nara"
+        },
+        "distance_m": 1200
+      }
+    ],
+    "images": [],
+    "external_ids": {
+      "osm": "node/11171253944"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/node/11171253944",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
+    "id": "osm-node-1154159593",
+    "name": {
+      "ja": "彩華ラーメン本店",
+      "zh_tw": "彩華ラーメン本店",
+      "en": "Saika ramen"
+    },
+    "location": {
+      "lat": 34.595144,
+      "lng": 135.811486
+    },
+    "prefecture": "nara",
+    "kind": "theme",
+    "themes": [
+      "ramen"
+    ],
+    "tags": [],
+    "featured": false,
+    "score": 4.0,
+    "summary_zh": "",
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "前栽",
+          "romaji": "Senzai",
+          "en": "Senzai"
+        },
+        "distance_m": 800
+      }
+    ],
+    "images": [],
+    "external_ids": {
+      "osm": "node/1154159593"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/node/1154159593",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
+    "id": "osm-node-11821499672",
+    "name": {
+      "ja": "天下一品",
+      "romaji": "Tenka Ippin",
+      "zh_tw": "天下一品",
+      "en": "Tenkaippin"
+    },
+    "location": {
+      "lat": 34.682358,
+      "lng": 135.8288
+    },
+    "prefecture": "nara",
+    "kind": "theme",
+    "themes": [
+      "ramen"
+    ],
+    "tags": [],
+    "featured": false,
+    "score": 3.0,
+    "summary_zh": "",
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "近鉄奈良",
+          "romaji": "Kintetsu Nara",
+          "en": "Kintetsu Nara"
+        },
+        "distance_m": 200
+      },
+      {
+        "name": {
+          "ja": "奈良",
+          "romaji": "Nara",
+          "en": "Nara"
+        },
+        "distance_m": 920
+      }
+    ],
+    "images": [],
+    "external_ids": {
+      "osm": "node/11821499672"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/node/11821499672",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
+    "id": "osm-node-11824949979",
+    "name": {
+      "ja": "吉野家 南芳園",
+      "zh_tw": "吉野家 南芳園"
+    },
+    "location": {
+      "lat": 34.372134,
+      "lng": 135.856014
+    },
+    "prefecture": "nara",
+    "kind": "theme",
+    "themes": [
+      "tea"
+    ],
+    "tags": [],
+    "featured": false,
+    "score": 0.0,
+    "summary_zh": "",
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "吉野",
+          "kana": "よしの",
+          "romaji": "Yoshino",
+          "en": "Yoshino"
+        },
+        "distance_m": 590
+      }
+    ],
+    "images": [],
+    "external_ids": {
+      "osm": "node/11824949979"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/node/11824949979",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
+    "id": "osm-node-12206692642",
+    "name": {
+      "ja": "たかばしラーメン",
+      "zh_tw": "たかばしラーメン"
+    },
+    "location": {
+      "lat": 34.726201,
+      "lng": 135.751067
+    },
+    "prefecture": "nara",
+    "city": "生駒市",
+    "kind": "theme",
+    "themes": [
+      "ramen"
+    ],
+    "tags": [],
+    "featured": false,
+    "score": 3.0,
+    "summary_zh": "",
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "学研奈良登美ヶ丘",
+          "en": "Gakken-Nara-Tomigaoka"
+        },
+        "distance_m": 110
+      }
+    ],
+    "images": [],
+    "external_ids": {
+      "osm": "node/12206692642"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/node/12206692642",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
+    "id": "osm-node-12222120101",
+    "name": {
+      "ja": "奈良三条通店",
+      "zh_tw": "奈良三条通店",
+      "en": "YAMATO Craft Beer Table"
+    },
+    "location": {
+      "lat": 34.682059,
+      "lng": 135.823671
+    },
+    "prefecture": "nara",
+    "kind": "theme",
+    "themes": [
+      "sake"
+    ],
+    "tags": [],
+    "featured": false,
+    "score": 1.0,
+    "summary_zh": "",
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "奈良",
+          "romaji": "Nara",
+          "en": "Nara"
+        },
+        "distance_m": 450
+      },
+      {
+        "name": {
+          "ja": "近鉄奈良",
+          "romaji": "Kintetsu Nara",
+          "en": "Kintetsu Nara"
+        },
+        "distance_m": 500
+      }
+    ],
+    "images": [],
+    "external_ids": {
+      "osm": "node/12222120101"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/node/12222120101",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
+    "id": "osm-node-12468253471",
+    "name": {
+      "ja": "らーめん仁",
+      "zh_tw": "らーめん仁"
+    },
+    "location": {
+      "lat": 34.669597,
+      "lng": 135.775796
+    },
+    "prefecture": "nara",
+    "kind": "theme",
+    "themes": [
+      "ramen"
+    ],
+    "tags": [],
+    "featured": false,
+    "score": 0.0,
+    "summary_zh": "",
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "西ノ京",
+          "en": "Nishinokyō"
+        },
+        "distance_m": 680
+      },
+      {
+        "name": {
+          "ja": "九条",
+          "romaji": "Kujō",
+          "en": "Kujo"
+        },
+        "distance_m": 1270
+      }
+    ],
+    "images": [],
+    "external_ids": {
+      "osm": "node/12468253471"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/node/12468253471",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
+    "id": "osm-node-12582310157",
+    "name": {
+      "ja": "天下一品",
+      "zh_tw": "天下一品",
+      "en": "Tenkaippin"
+    },
+    "location": {
+      "lat": 34.669514,
+      "lng": 135.799415
+    },
+    "prefecture": "nara",
+    "city": "奈良市",
+    "kind": "theme",
+    "themes": [
+      "ramen"
+    ],
+    "tags": [],
+    "featured": false,
+    "score": 4.0,
+    "summary_zh": "",
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "西ノ京",
+          "en": "Nishinokyō"
+        },
+        "distance_m": 1490
+      }
+    ],
+    "images": [],
+    "external_ids": {
+      "osm": "node/12582310157"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/node/12582310157",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
+    "id": "osm-node-12587759288",
+    "name": {
+      "ja": "スガキヤ",
+      "zh_tw": "スガキヤ"
+    },
+    "location": {
+      "lat": 34.725978,
+      "lng": 135.750927
+    },
+    "prefecture": "nara",
+    "city": "生駒市",
+    "kind": "theme",
+    "themes": [
+      "ramen"
+    ],
+    "tags": [],
+    "featured": false,
+    "score": 3.0,
+    "summary_zh": "",
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "学研奈良登美ヶ丘",
+          "en": "Gakken-Nara-Tomigaoka"
+        },
+        "distance_m": 130
+      }
+    ],
+    "images": [],
+    "external_ids": {
+      "osm": "node/12587759288"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/node/12587759288",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
+    "id": "osm-node-12817317102",
+    "name": {
+      "ja": "彩華ラーメン 屋台",
+      "zh_tw": "彩華ラーメン 屋台"
+    },
+    "location": {
+      "lat": 34.607403,
+      "lng": 135.835462
+    },
+    "prefecture": "nara",
+    "kind": "theme",
+    "themes": [
+      "ramen"
+    ],
+    "tags": [],
+    "featured": false,
+    "score": 1.0,
+    "summary_zh": "",
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "天理",
+          "kana": "てんり",
+          "romaji": "Tenri",
+          "en": "Tenri"
+        },
+        "distance_m": 860
+      }
+    ],
+    "images": [],
+    "external_ids": {
+      "osm": "node/12817317102"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/node/12817317102",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
+    "id": "osm-node-12913926779",
+    "name": {
+      "ja": "天下一品",
+      "zh_tw": "天下一品",
+      "en": "Tenkaippin"
+    },
+    "location": {
+      "lat": 34.580115,
+      "lng": 135.797696
+    },
+    "prefecture": "nara",
+    "kind": "theme",
+    "themes": [
+      "ramen"
+    ],
+    "tags": [],
+    "featured": false,
+    "score": 2.0,
+    "summary_zh": "",
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "結崎",
+          "romaji": "Yūzaki",
+          "en": "Yuzaki"
+        },
+        "distance_m": 1270
+      },
+      {
+        "name": {
+          "ja": "石見",
+          "romaji": "Iwami",
+          "en": "Iwami"
+        },
+        "distance_m": 1450
+      }
+    ],
+    "images": [],
+    "external_ids": {
+      "osm": "node/12913926779"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/node/12913926779",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
+    "id": "osm-node-12948778754",
+    "name": {
+      "ja": "天理スタミナラーメン",
+      "zh_tw": "天理スタミナラーメン"
+    },
+    "location": {
+      "lat": 34.683962,
+      "lng": 135.828628
+    },
+    "prefecture": "nara",
+    "kind": "theme",
+    "themes": [
+      "ramen"
+    ],
+    "tags": [],
+    "featured": false,
+    "score": 0.0,
+    "summary_zh": "",
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "近鉄奈良",
+          "romaji": "Kintetsu Nara",
+          "en": "Kintetsu Nara"
+        },
+        "distance_m": 20
+      },
+      {
+        "name": {
+          "ja": "奈良",
+          "romaji": "Nara",
+          "en": "Nara"
+        },
+        "distance_m": 950
+      }
+    ],
+    "images": [],
+    "external_ids": {
+      "osm": "node/12948778754"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/node/12948778754",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
+    "id": "osm-node-12995626600",
+    "name": {
+      "ja": "東京庵本店",
+      "zh_tw": "東京庵本店",
+      "en": "Tokyoan-honten"
+    },
+    "location": {
+      "lat": 34.684196,
+      "lng": 135.839769
+    },
+    "prefecture": "nara",
+    "kind": "theme",
+    "themes": [
+      "ramen"
+    ],
+    "tags": [],
+    "featured": false,
+    "score": 1.0,
+    "summary_zh": "",
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "近鉄奈良",
+          "romaji": "Kintetsu Nara",
+          "en": "Kintetsu Nara"
+        },
+        "distance_m": 1030
+      }
+    ],
+    "images": [],
+    "external_ids": {
+      "osm": "node/12995626600"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/node/12995626600",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
+    "id": "osm-node-13121006202",
+    "name": {
+      "ja": "Yamato Craft Beer",
+      "zh_tw": "Yamato Craft Beer"
+    },
+    "location": {
+      "lat": 34.683873,
+      "lng": 135.828828
+    },
+    "prefecture": "nara",
+    "kind": "theme",
+    "themes": [
+      "sake"
+    ],
+    "tags": [],
+    "featured": false,
+    "score": 2.0,
+    "summary_zh": "",
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "近鉄奈良",
+          "romaji": "Kintetsu Nara",
+          "en": "Kintetsu Nara"
+        },
+        "distance_m": 40
+      },
+      {
+        "name": {
+          "ja": "奈良",
+          "romaji": "Nara",
+          "en": "Nara"
+        },
+        "distance_m": 970
+      }
+    ],
+    "images": [],
+    "external_ids": {
+      "osm": "node/13121006202"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/node/13121006202",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
+    "id": "osm-node-13347214363",
+    "name": {
+      "ja": "菓子屋ヒトハコby prems",
+      "zh_tw": "菓子屋ヒトハコby prems"
+    },
+    "location": {
+      "lat": 34.509473,
+      "lng": 135.841787
+    },
+    "prefecture": "nara",
+    "city": "桜井市阿部511－2シルフアスカ１F",
+    "kind": "theme",
+    "themes": [
+      "tea"
+    ],
+    "tags": [],
+    "featured": false,
+    "score": 2.0,
+    "summary_zh": "",
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "桜井",
+          "kana": "さくらい",
+          "romaji": "Sakurai",
+          "en": "Sakurai"
+        },
+        "distance_m": 610
+      },
+      {
+        "name": {
+          "ja": "大福",
+          "romaji": "Daifuku",
+          "en": "Daifuku"
+        },
+        "distance_m": 1150
+      }
+    ],
+    "images": [],
+    "external_ids": {
+      "osm": "node/13347214363"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/node/13347214363",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
+    "id": "osm-node-13697652804",
+    "name": {
+      "ja": "a cup and bread",
+      "zh_tw": "a cup and bread"
+    },
+    "location": {
+      "lat": 34.685365,
+      "lng": 135.766384
+    },
+    "prefecture": "nara",
+    "kind": "theme",
+    "themes": [
+      "tea"
+    ],
+    "tags": [],
+    "featured": false,
+    "score": 0.0,
+    "summary_zh": "",
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "菖蒲池",
+          "en": "Ayameike"
+        },
+        "distance_m": 1480
+      }
+    ],
+    "images": [],
+    "external_ids": {
+      "osm": "node/13697652804"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/node/13697652804",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
+    "id": "osm-node-1402530875",
+    "name": {
+      "ja": "奈良らーめん　あおによし",
+      "zh_tw": "奈良らーめん　あおによし",
+      "en": "Aoniyoshi"
+    },
+    "location": {
+      "lat": 34.68267,
+      "lng": 135.828659
+    },
+    "prefecture": "nara",
+    "kind": "theme",
+    "themes": [
+      "ramen"
+    ],
+    "tags": [],
+    "featured": false,
+    "score": 1.0,
+    "summary_zh": "",
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "近鉄奈良",
+          "romaji": "Kintetsu Nara",
+          "en": "Kintetsu Nara"
+        },
+        "distance_m": 160
+      },
+      {
+        "name": {
+          "ja": "奈良",
+          "romaji": "Nara",
+          "en": "Nara"
+        },
+        "distance_m": 910
+      }
+    ],
+    "images": [],
+    "external_ids": {
+      "osm": "node/1402530875"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/node/1402530875",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
+    "id": "osm-node-1483765542",
+    "name": {
+      "ja": "どうとんぼり神座",
+      "zh_tw": "どうとんぼり神座"
+    },
+    "location": {
+      "lat": 34.68793,
+      "lng": 135.752985
+    },
+    "prefecture": "nara",
+    "city": "奈良市",
+    "kind": "theme",
+    "themes": [
+      "ramen"
+    ],
+    "tags": [],
+    "featured": false,
+    "score": 0.0,
+    "summary_zh": "",
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "学園前",
+          "en": "Gakuemmae"
+        },
+        "distance_m": 1040
+      },
+      {
+        "name": {
+          "ja": "菖蒲池",
+          "en": "Ayameike"
+        },
+        "distance_m": 1350
+      }
+    ],
+    "images": [],
+    "external_ids": {
+      "osm": "node/1483765542"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/node/1483765542",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
+    "id": "osm-node-1483765671",
+    "name": {
+      "ja": "丸源",
+      "zh_tw": "丸源"
+    },
+    "location": {
+      "lat": 34.684614,
+      "lng": 135.79167
+    },
+    "prefecture": "nara",
+    "kind": "theme",
+    "themes": [
+      "ramen"
+    ],
+    "tags": [],
+    "featured": false,
+    "score": 0.0,
+    "summary_zh": "",
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "尼ヶ辻",
+          "romaji": "Amagatsuji",
+          "en": "Amagatsuji"
+        },
+        "distance_m": 830
+      },
+      {
+        "name": {
+          "ja": "大和西大寺",
+          "romaji": "Yamato-Saidaiji",
+          "en": "Yamato-Saidaiji"
+        },
+        "distance_m": 1310
+      }
+    ],
+    "images": [],
+    "external_ids": {
+      "osm": "node/1483765671"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/node/1483765671",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
+    "id": "osm-node-1852356231",
+    "name": {
+      "ja": "老麺茶屋 豚竹林",
+      "kana": "らーめんぢゃやとんちくりん",
+      "romaji": "Ramenjayatonchikurin",
+      "zh_tw": "老麺茶屋 豚竹林"
+    },
+    "kana_source": "osm",
+    "location": {
+      "lat": 34.679676,
+      "lng": 135.820326
+    },
+    "prefecture": "nara",
+    "kind": "theme",
+    "themes": [
+      "ramen"
+    ],
+    "tags": [],
+    "featured": false,
+    "score": 1.0,
+    "summary_zh": "",
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "奈良",
+          "romaji": "Nara",
+          "en": "Nara"
+        },
+        "distance_m": 180
+      },
+      {
+        "name": {
+          "ja": "近鉄奈良",
+          "romaji": "Kintetsu Nara",
+          "en": "Kintetsu Nara"
+        },
+        "distance_m": 900
+      }
+    ],
+    "images": [],
+    "external_ids": {
+      "osm": "node/1852356231"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/node/1852356231",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
+    "id": "osm-node-1852762621",
+    "name": {
+      "ja": "らーめん三ちゃん",
+      "zh_tw": "らーめん三ちゃん"
+    },
+    "location": {
+      "lat": 34.681891,
+      "lng": 135.822605
+    },
+    "prefecture": "nara",
+    "kind": "theme",
+    "themes": [
+      "ramen"
+    ],
+    "tags": [],
+    "featured": false,
+    "score": 0.0,
+    "summary_zh": "",
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "奈良",
+          "romaji": "Nara",
+          "en": "Nara"
+        },
+        "distance_m": 360
+      },
+      {
+        "name": {
+          "ja": "近鉄奈良",
+          "romaji": "Kintetsu Nara",
+          "en": "Kintetsu Nara"
+        },
+        "distance_m": 600
+      }
+    ],
+    "images": [],
+    "external_ids": {
+      "osm": "node/1852762621"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/node/1852762621",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
+    "id": "osm-node-2657084664",
+    "name": {
+      "ja": "天下一品",
+      "romaji": "Tenka Ippin",
+      "zh_tw": "天下一品",
+      "en": "Tenkaippin"
+    },
+    "location": {
+      "lat": 34.685058,
+      "lng": 135.812103
+    },
+    "prefecture": "nara",
+    "kind": "theme",
+    "themes": [
+      "ramen"
+    ],
+    "tags": [],
+    "featured": false,
+    "score": 2.0,
+    "summary_zh": "",
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "新大宮",
+          "romaji": "Shin-Ōmiya",
+          "en": "Shinomiya"
+        },
+        "distance_m": 50
+      },
+      {
+        "name": {
+          "ja": "奈良",
+          "romaji": "Nara",
+          "en": "Nara"
+        },
+        "distance_m": 780
+      }
+    ],
+    "images": [],
+    "external_ids": {
+      "osm": "node/2657084664"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/node/2657084664",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
+    "id": "osm-node-2970208333",
+    "name": {
+      "ja": "十津川温泉 庵の湯",
+      "zh_tw": "十津川温泉 庵の湯"
+    },
+    "location": {
+      "lat": 33.941243,
+      "lng": 135.768257
+    },
+    "prefecture": "nara",
+    "kind": "theme",
+    "themes": [
+      "onsen"
+    ],
+    "tags": [],
+    "featured": false,
+    "score": 0.0,
+    "summary_zh": "",
+    "images": [],
+    "external_ids": {
+      "osm": "node/2970208333"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/node/2970208333",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
+    "id": "osm-node-2971716601",
+    "name": {
+      "ja": "夢街道",
+      "zh_tw": "夢街道"
+    },
+    "location": {
+      "lat": 34.681608,
+      "lng": 135.799843
+    },
+    "prefecture": "nara",
+    "kind": "theme",
+    "themes": [
+      "ramen"
+    ],
+    "tags": [],
+    "featured": false,
+    "score": 0.0,
+    "summary_zh": "",
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "新大宮",
+          "romaji": "Shin-Ōmiya",
+          "en": "Shinomiya"
+        },
+        "distance_m": 1160
+      },
+      {
+        "name": {
+          "ja": "尼ヶ辻",
+          "romaji": "Amagatsuji",
+          "en": "Amagatsuji"
+        },
+        "distance_m": 1490
+      }
+    ],
+    "images": [],
+    "external_ids": {
+      "osm": "node/2971716601"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/node/2971716601",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
+    "id": "osm-node-3079809756",
+    "name": {
+      "ja": "一望",
+      "zh_tw": "一望",
+      "en": "ICHIBOU"
+    },
+    "location": {
+      "lat": 34.686259,
+      "lng": 135.716645
+    },
+    "prefecture": "nara",
+    "kind": "theme",
+    "themes": [
+      "ramen"
+    ],
+    "tags": [],
+    "featured": false,
+    "score": 1.0,
+    "summary_zh": "",
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "東生駒",
+          "en": "Higashi-Ikoma"
+        },
+        "distance_m": 900
+      },
+      {
+        "name": {
+          "ja": "菜畑",
+          "en": "Nabata"
+        },
+        "distance_m": 910
+      }
+    ],
+    "images": [],
+    "external_ids": {
+      "osm": "node/3079809756"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/node/3079809756",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
+    "id": "osm-node-3233811861",
+    "name": {
+      "ja": "麺舎 いっとう 奈良富雄店",
+      "zh_tw": "麺舎 いっとう 奈良富雄店"
+    },
+    "location": {
+      "lat": 34.691336,
+      "lng": 135.735081
+    },
+    "prefecture": "nara",
+    "kind": "theme",
+    "themes": [
+      "ramen"
+    ],
+    "tags": [],
+    "featured": false,
+    "score": 2.0,
+    "summary_zh": "",
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "富雄",
+          "en": "Tomio"
+        },
+        "distance_m": 320
+      }
+    ],
+    "images": [],
+    "external_ids": {
+      "osm": "node/3233811861"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/node/3233811861",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
+    "id": "osm-node-3422202678",
+    "name": {
+      "ja": "あまのじゃく",
+      "zh_tw": "あまのじゃく"
+    },
+    "location": {
+      "lat": 34.693306,
+      "lng": 135.735423
+    },
+    "prefecture": "nara",
+    "kind": "theme",
+    "themes": [
+      "ramen"
+    ],
+    "tags": [],
+    "featured": false,
+    "score": 1.0,
+    "summary_zh": "",
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "富雄",
+          "en": "Tomio"
+        },
+        "distance_m": 120
+      },
+      {
+        "name": {
+          "ja": "学園前",
+          "en": "Gakuemmae"
+        },
+        "distance_m": 1470
+      }
+    ],
+    "images": [],
+    "external_ids": {
+      "osm": "node/3422202678"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/node/3422202678",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
+    "id": "osm-node-3422202679",
+    "name": {
+      "ja": "みつ葉",
+      "zh_tw": "みつ葉"
+    },
+    "location": {
+      "lat": 34.692388,
+      "lng": 135.731959
+    },
+    "prefecture": "nara",
+    "kind": "theme",
+    "themes": [
+      "ramen"
+    ],
+    "tags": [],
+    "featured": false,
+    "score": 2.0,
+    "summary_zh": "",
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "富雄",
+          "en": "Tomio"
+        },
+        "distance_m": 330
+      }
+    ],
+    "images": [],
+    "external_ids": {
+      "osm": "node/3422202679"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/node/3422202679",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
+    "id": "osm-node-3648749131",
+    "name": {
+      "ja": "大廣",
+      "zh_tw": "大廣",
+      "en": "Kura"
+    },
+    "location": {
+      "lat": 34.680421,
+      "lng": 135.827323
+    },
+    "prefecture": "nara",
+    "city": "奈良市",
+    "kind": "theme",
+    "themes": [
+      "ramen"
+    ],
+    "tags": [],
+    "featured": false,
+    "score": 2.0,
+    "summary_zh": "",
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "近鉄奈良",
+          "romaji": "Kintetsu Nara",
+          "en": "Kintetsu Nara"
+        },
+        "distance_m": 430
+      },
+      {
+        "name": {
+          "ja": "奈良",
+          "romaji": "Nara",
+          "en": "Nara"
+        },
+        "distance_m": 770
+      }
+    ],
+    "images": [],
+    "external_ids": {
+      "osm": "node/3648749131"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/node/3648749131",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
+    "id": "osm-node-3665537341",
+    "name": {
+      "ja": "ふじ門製麺",
+      "zh_tw": "ふじ門製麺"
+    },
+    "location": {
+      "lat": 34.67901,
+      "lng": 135.825737
+    },
+    "prefecture": "nara",
+    "city": "奈良市",
+    "kind": "theme",
+    "themes": [
+      "ramen"
+    ],
+    "tags": [],
+    "featured": false,
+    "score": 1.0,
+    "summary_zh": "",
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "近鉄奈良",
+          "romaji": "Kintetsu Nara",
+          "en": "Kintetsu Nara"
+        },
+        "distance_m": 630
+      },
+      {
+        "name": {
+          "ja": "奈良",
+          "romaji": "Nara",
+          "en": "Nara"
+        },
+        "distance_m": 650
+      }
+    ],
+    "images": [],
+    "external_ids": {
+      "osm": "node/3665537341"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/node/3665537341",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
+    "id": "osm-node-3787613516",
+    "name": {
+      "ja": "稲村茶屋",
+      "zh_tw": "稲村茶屋",
+      "en": "Inamurajaya"
+    },
+    "location": {
+      "lat": 34.501585,
+      "lng": 135.796057
+    },
+    "prefecture": "nara",
+    "kind": "theme",
+    "themes": [
+      "tea"
+    ],
+    "tags": [],
+    "featured": false,
+    "score": 1.0,
+    "summary_zh": "",
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "畝傍",
+          "romaji": "Unebi",
+          "en": "Unebi"
+        },
+        "distance_m": 770
+      },
+      {
+        "name": {
+          "ja": "畝傍御陵前",
+          "en": "Unebigoryōmae"
+        },
+        "distance_m": 970
+      }
+    ],
+    "images": [],
+    "external_ids": {
+      "osm": "node/3787613516"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/node/3787613516",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
+    "id": "osm-node-4226282810",
+    "name": {
+      "ja": "華山",
+      "zh_tw": "華山"
+    },
+    "location": {
+      "lat": 34.692278,
+      "lng": 135.732353
+    },
+    "prefecture": "nara",
+    "kind": "theme",
+    "themes": [
+      "ramen"
+    ],
+    "tags": [],
+    "featured": false,
+    "score": 0.0,
+    "summary_zh": "",
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "富雄",
+          "en": "Tomio"
+        },
+        "distance_m": 310
+      }
+    ],
+    "images": [],
+    "external_ids": {
+      "osm": "node/4226282810"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/node/4226282810",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
+    "id": "osm-node-4324675419",
+    "name": {
+      "ja": "湯泉地温泉 滝の湯",
+      "zh_tw": "湯泉地温泉 滝の湯",
+      "en": "Takinoyu"
+    },
+    "location": {
+      "lat": 33.987753,
+      "lng": 135.790301
+    },
+    "prefecture": "nara",
+    "kind": "theme",
+    "themes": [
+      "onsen"
+    ],
+    "tags": [],
+    "featured": false,
+    "score": 2.0,
+    "summary_zh": "",
+    "images": [],
+    "external_ids": {
+      "osm": "node/4324675419"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/node/4324675419",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
+    "id": "osm-node-4631870305",
+    "name": {
+      "ja": "星の湯",
+      "zh_tw": "星の湯",
+      "en": "Hoshinoyu"
+    },
+    "location": {
+      "lat": 33.938469,
+      "lng": 135.752789
+    },
+    "prefecture": "nara",
+    "kind": "theme",
+    "themes": [
+      "onsen"
+    ],
+    "tags": [],
+    "featured": false,
+    "score": 2.0,
+    "summary_zh": "",
+    "images": [],
+    "external_ids": {
+      "osm": "node/4631870305"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/node/4631870305",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
+    "id": "osm-node-4641648674",
+    "name": {
+      "ja": "丸晶",
+      "zh_tw": "丸晶"
+    },
+    "location": {
+      "lat": 34.6935,
+      "lng": 135.735625
+    },
+    "prefecture": "nara",
+    "kind": "theme",
+    "themes": [
+      "ramen"
+    ],
+    "tags": [],
+    "featured": false,
+    "score": 0.0,
+    "summary_zh": "",
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "富雄",
+          "en": "Tomio"
+        },
+        "distance_m": 120
+      },
+      {
+        "name": {
+          "ja": "学園前",
+          "en": "Gakuemmae"
+        },
+        "distance_m": 1450
+      }
+    ],
+    "images": [],
+    "external_ids": {
+      "osm": "node/4641648674"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/node/4641648674",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
+    "id": "osm-node-4717589995",
+    "name": {
+      "ja": "ラーメン壺",
+      "zh_tw": "ラーメン壺",
+      "en": "ラーメン壺"
+    },
+    "location": {
+      "lat": 34.697119,
+      "lng": 135.709324
+    },
+    "prefecture": "nara",
+    "kind": "theme",
+    "themes": [
+      "ramen"
+    ],
+    "tags": [],
+    "featured": false,
+    "score": 1.0,
+    "summary_zh": "",
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "東生駒",
+          "en": "Higashi-Ikoma"
+        },
+        "distance_m": 570
+      },
+      {
+        "name": {
+          "ja": "生駒",
+          "kana": "いこま",
+          "romaji": "Ikoma",
+          "en": "Ikoma"
+        },
+        "distance_m": 1130
+      }
+    ],
+    "images": [],
+    "external_ids": {
+      "osm": "node/4717589995"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/node/4717589995",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
+    "id": "osm-node-4729087690",
+    "name": {
+      "ja": "ラーメン 来来亭",
+      "zh_tw": "ラーメン 来来亭"
+    },
+    "location": {
+      "lat": 34.709326,
+      "lng": 135.706536
+    },
+    "prefecture": "nara",
+    "kind": "theme",
+    "themes": [
+      "ramen"
+    ],
+    "tags": [],
+    "featured": false,
+    "score": 0.0,
+    "summary_zh": "",
+    "images": [],
+    "external_ids": {
+      "osm": "node/4729087690"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/node/4729087690",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
+    "id": "osm-node-4903560123",
+    "name": {
+      "ja": "餃子 極楽や",
+      "zh_tw": "餃子 極楽や"
+    },
+    "location": {
+      "lat": 34.685126,
+      "lng": 135.706617
+    },
+    "prefecture": "nara",
+    "kind": "theme",
+    "themes": [
+      "ramen"
+    ],
+    "tags": [],
+    "featured": false,
+    "score": 0.0,
+    "summary_zh": "",
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "菜畑",
+          "en": "Nabata"
+        },
+        "distance_m": 60
+      },
+      {
+        "name": {
+          "ja": "東生駒",
+          "en": "Higashi-Ikoma"
+        },
+        "distance_m": 810
+      }
+    ],
+    "images": [],
+    "external_ids": {
+      "osm": "node/4903560123"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/node/4903560123",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
+    "id": "osm-node-5031455285",
+    "name": {
+      "ja": "まりお流",
+      "zh_tw": "まりお流"
+    },
+    "location": {
+      "lat": 34.678076,
+      "lng": 135.80015
+    },
+    "prefecture": "nara",
+    "kind": "theme",
+    "themes": [
+      "ramen"
+    ],
+    "tags": [],
+    "featured": false,
+    "score": 0.0,
+    "summary_zh": "",
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "新大宮",
+          "romaji": "Shin-Ōmiya",
+          "en": "Shinomiya"
+        },
+        "distance_m": 1330
+      }
+    ],
+    "images": [],
+    "external_ids": {
+      "osm": "node/5031455285"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/node/5031455285",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
+    "id": "osm-node-5506857665",
+    "name": {
+      "ja": "ラーメン まこと屋",
+      "zh_tw": "ラーメン まこと屋"
+    },
+    "location": {
+      "lat": 34.480483,
+      "lng": 135.732254
+    },
+    "prefecture": "nara",
+    "kind": "theme",
+    "themes": [
+      "ramen"
+    ],
+    "tags": [],
+    "featured": false,
+    "score": 0.0,
+    "summary_zh": "",
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "忍海",
+          "romaji": "Oshimi",
+          "en": "Oshimi"
+        },
+        "distance_m": 470
+      },
+      {
+        "name": {
+          "ja": "近鉄新庄",
+          "romaji": "Kintetsu-Shinjō",
+          "en": "Kintetsu-Shinjō"
+        },
+        "distance_m": 1060
+      }
+    ],
+    "images": [],
+    "external_ids": {
+      "osm": "node/5506857665"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/node/5506857665",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
+    "id": "osm-node-5506857667",
+    "name": {
+      "ja": "ラーメン 来来亭",
+      "zh_tw": "ラーメン 来来亭"
+    },
+    "location": {
+      "lat": 34.480648,
+      "lng": 135.73262
+    },
+    "prefecture": "nara",
+    "kind": "theme",
+    "themes": [
+      "ramen"
+    ],
+    "tags": [],
+    "featured": false,
+    "score": 0.0,
+    "summary_zh": "",
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "忍海",
+          "romaji": "Oshimi",
+          "en": "Oshimi"
+        },
+        "distance_m": 490
+      },
+      {
+        "name": {
+          "ja": "近鉄新庄",
+          "romaji": "Kintetsu-Shinjō",
+          "en": "Kintetsu-Shinjō"
+        },
+        "distance_m": 1060
+      }
+    ],
+    "images": [],
+    "external_ids": {
+      "osm": "node/5506857667"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/node/5506857667",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
+    "id": "osm-node-5595244837",
+    "name": {
+      "ja": "工場跡事務室",
+      "zh_tw": "工場跡事務室",
+      "en": "Kojoato"
+    },
+    "location": {
+      "lat": 34.689501,
+      "lng": 135.835823
+    },
+    "prefecture": "nara",
+    "kind": "theme",
+    "themes": [
+      "tea"
+    ],
+    "tags": [],
+    "featured": false,
+    "score": 1.0,
+    "summary_zh": "",
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "近鉄奈良",
+          "romaji": "Kintetsu Nara",
+          "en": "Kintetsu Nara"
+        },
+        "distance_m": 890
+      }
+    ],
+    "images": [],
+    "external_ids": {
+      "osm": "node/5595244837"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/node/5595244837",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
+    "id": "osm-node-5843433010",
+    "name": {
+      "ja": "teru",
+      "zh_tw": "teru"
+    },
+    "location": {
+      "lat": 33.941067,
+      "lng": 135.768792
+    },
+    "prefecture": "nara",
+    "kind": "theme",
+    "themes": [
+      "ramen"
+    ],
+    "tags": [],
+    "featured": false,
+    "score": 0.0,
+    "summary_zh": "",
+    "images": [],
+    "external_ids": {
+      "osm": "node/5843433010"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/node/5843433010",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
+    "id": "osm-node-6277969394",
+    "name": {
+      "ja": "まっちゃん",
+      "zh_tw": "まっちゃん",
+      "en": "Macchan"
+    },
+    "location": {
+      "lat": 34.525781,
+      "lng": 135.795058
+    },
+    "prefecture": "nara",
+    "kind": "theme",
+    "themes": [
+      "ramen"
+    ],
+    "tags": [],
+    "featured": false,
+    "score": 1.0,
+    "summary_zh": "",
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "新ノ口",
+          "romaji": "Ninokuchi",
+          "en": "Ninokuchi"
+        },
+        "distance_m": 50
+      },
+      {
+        "name": {
+          "ja": "大和八木",
+          "romaji": "Yamato-Yagi",
+          "en": "Yamato-Yagi"
+        },
+        "distance_m": 1430
+      }
+    ],
+    "images": [],
+    "external_ids": {
+      "osm": "node/6277969394"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/node/6277969394",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
+    "id": "osm-node-6514843476",
+    "name": {
+      "ja": "白鳳酒家",
+      "zh_tw": "白鳳酒家"
+    },
+    "location": {
+      "lat": 34.519168,
+      "lng": 135.743838
+    },
+    "prefecture": "nara",
+    "city": "大和高田市",
+    "kind": "theme",
+    "themes": [
+      "tea"
+    ],
+    "tags": [],
+    "featured": false,
+    "score": 0.0,
+    "summary_zh": "",
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "大和高田",
+          "romaji": "Yamato-Takada",
+          "en": "Yamato-Takada"
+        },
+        "distance_m": 150
+      },
+      {
+        "name": {
+          "ja": "高田",
+          "en": "Takada"
+        },
+        "distance_m": 330
+      }
+    ],
+    "images": [],
+    "external_ids": {
+      "osm": "node/6514843476"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/node/6514843476",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
+    "id": "osm-node-6698539903",
+    "name": {
+      "ja": "二月堂北の茶所",
+      "zh_tw": "二月堂北の茶所"
+    },
+    "location": {
+      "lat": 34.689583,
+      "lng": 135.844133
+    },
+    "prefecture": "nara",
+    "kind": "theme",
+    "themes": [
+      "tea"
+    ],
+    "tags": [],
+    "featured": false,
+    "score": 0.0,
+    "summary_zh": "",
+    "images": [],
+    "external_ids": {
+      "osm": "node/6698539903"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/node/6698539903",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
+    "id": "osm-node-6731309739",
+    "name": {
+      "ja": "梅の郷;月ヶ瀬温泉",
+      "zh_tw": "梅の郷;月ヶ瀬温泉"
+    },
+    "location": {
+      "lat": 34.714157,
+      "lng": 136.047304
+    },
+    "prefecture": "nara",
+    "city": "奈良市",
+    "kind": "theme",
+    "themes": [
+      "onsen"
+    ],
+    "tags": [],
+    "featured": false,
+    "score": 1.0,
+    "summary_zh": "",
+    "images": [],
+    "external_ids": {
+      "osm": "node/6731309739"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/node/6731309739",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
+    "id": "osm-node-7559401337",
+    "name": {
+      "ja": "一壱",
+      "zh_tw": "一壱"
+    },
+    "location": {
+      "lat": 34.517511,
+      "lng": 135.844455
+    },
+    "prefecture": "nara",
+    "kind": "theme",
+    "themes": [
+      "ramen"
+    ],
+    "tags": [],
+    "featured": false,
+    "score": 0.0,
+    "summary_zh": "",
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "桜井",
+          "kana": "さくらい",
+          "romaji": "Sakurai",
+          "en": "Sakurai"
+        },
+        "distance_m": 490
+      },
+      {
+        "name": {
+          "ja": "三輪",
+          "romaji": "Miwa",
+          "en": "Miwa"
+        },
+        "distance_m": 1110
+      }
+    ],
+    "images": [],
+    "external_ids": {
+      "osm": "node/7559401337"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/node/7559401337",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
+    "id": "osm-node-807534769",
+    "name": {
+      "ja": "天理スタミナラーメン",
+      "zh_tw": "天理スタミナラーメン"
+    },
+    "location": {
+      "lat": 34.618057,
+      "lng": 135.832344
+    },
+    "prefecture": "nara",
+    "kind": "theme",
+    "themes": [
+      "ramen"
+    ],
+    "tags": [],
+    "featured": false,
+    "score": 0.0,
+    "summary_zh": "",
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "櫟本",
+          "romaji": "Ichinomoto",
+          "en": "Ichinomoto"
+        },
+        "distance_m": 650
+      }
+    ],
+    "images": [],
+    "external_ids": {
+      "osm": "node/807534769"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/node/807534769",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
+    "id": "osm-node-819038960",
+    "name": {
+      "ja": "どうとんぼり神座",
+      "zh_tw": "どうとんぼり神座"
+    },
+    "location": {
+      "lat": 34.522458,
+      "lng": 135.833596
+    },
+    "prefecture": "nara",
+    "kind": "theme",
+    "themes": [
+      "ramen"
+    ],
+    "tags": [],
+    "featured": false,
+    "score": 0.0,
+    "summary_zh": "",
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "大福",
+          "romaji": "Daifuku",
+          "en": "Daifuku"
+        },
+        "distance_m": 1120
+      },
+      {
+        "name": {
+          "ja": "三輪",
+          "romaji": "Miwa",
+          "en": "Miwa"
+        },
+        "distance_m": 1460
+      }
+    ],
+    "images": [],
+    "external_ids": {
+      "osm": "node/819038960"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/node/819038960",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
+    "id": "osm-node-8242046504",
+    "name": {
+      "ja": "田村青芳園茶舗",
+      "zh_tw": "田村青芳園茶舗",
+      "en": "Tamura Seihouen"
+    },
+    "location": {
+      "lat": 34.67912,
+      "lng": 135.830429
+    },
+    "prefecture": "nara",
+    "city": "奈良市",
+    "kind": "theme",
+    "themes": [
+      "tea"
+    ],
+    "tags": [],
+    "featured": false,
+    "score": 4.0,
+    "summary_zh": "",
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "近鉄奈良",
+          "romaji": "Kintetsu Nara",
+          "en": "Kintetsu Nara"
+        },
+        "distance_m": 580
+      },
+      {
+        "name": {
+          "ja": "京終",
+          "en": "Kyōbate"
+        },
+        "distance_m": 1040
+      }
+    ],
+    "images": [],
+    "external_ids": {
+      "osm": "node/8242046504"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/node/8242046504",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
+    "id": "osm-node-9072319206",
+    "name": {
+      "ja": "グッドウルフ麦酒",
+      "zh_tw": "グッドウルフ麦酒"
+    },
+    "location": {
+      "lat": 34.379208,
+      "lng": 136.017535
+    },
+    "prefecture": "nara",
+    "city": "東吉野村大豆生",
+    "kind": "theme",
+    "themes": [
+      "sake"
+    ],
+    "tags": [],
+    "featured": false,
+    "score": 2.0,
+    "summary_zh": "",
+    "images": [],
+    "external_ids": {
+      "osm": "node/9072319206"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/node/9072319206",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
+    "id": "osm-way-1124764721",
+    "name": {
+      "ja": "御茶堂",
+      "kana": "おちゃどう",
+      "romaji": "Ocha-dō",
+      "zh_tw": "御茶堂",
+      "en": "Teahouse"
+    },
+    "kana_source": "osm",
+    "location": {
+      "lat": 34.684437,
+      "lng": 135.686914
+    },
+    "prefecture": "nara",
+    "kind": "theme",
+    "themes": [
+      "tea"
+    ],
+    "tags": [],
+    "featured": false,
+    "score": 3.0,
+    "summary_zh": "",
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "梅屋敷",
+          "kana": "うめやしきえき",
+          "romaji": "Umeyashiki",
+          "en": "Umeyashiki"
+        },
+        "distance_m": 120
+      },
+      {
+        "name": {
+          "ja": "宝山寺",
+          "kana": "ほうざんじ",
+          "romaji": "Hōzan-ji",
+          "en": "Hōzanji"
+        },
+        "distance_m": 280
+      }
+    ],
+    "images": [],
+    "external_ids": {
+      "osm": "way/1124764721"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/way/1124764721",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
+    "id": "osm-way-1349912370",
+    "name": {
+      "ja": "キラメキノトリ",
+      "zh_tw": "キラメキノトリ"
+    },
+    "location": {
+      "lat": 34.673562,
+      "lng": 135.824593
+    },
+    "prefecture": "nara",
+    "city": "奈良市奈良市",
+    "kind": "theme",
+    "themes": [
+      "ramen"
+    ],
+    "tags": [],
+    "featured": false,
+    "score": 3.0,
+    "summary_zh": "",
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "京終",
+          "en": "Kyōbate"
+        },
+        "distance_m": 550
+      },
+      {
+        "name": {
+          "ja": "奈良",
+          "romaji": "Nara",
+          "en": "Nara"
+        },
+        "distance_m": 960
+      }
+    ],
+    "images": [],
+    "external_ids": {
+      "osm": "way/1349912370"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/way/1349912370",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
+    "id": "osm-way-1494938242",
+    "name": {
+      "ja": "a cup and bread",
+      "zh_tw": "a cup and bread"
+    },
+    "location": {
+      "lat": 34.685359,
+      "lng": 135.766387
+    },
+    "prefecture": "nara",
+    "kind": "theme",
+    "themes": [
+      "tea"
+    ],
+    "tags": [],
+    "featured": false,
+    "score": 0.0,
+    "summary_zh": "",
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "菖蒲池",
+          "en": "Ayameike"
+        },
+        "distance_m": 1480
+      }
+    ],
+    "images": [],
+    "external_ids": {
+      "osm": "way/1494938242"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/way/1494938242",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
+    "id": "osm-way-244040916",
+    "name": {
+      "ja": "麺屋空間",
+      "zh_tw": "麺屋空間"
+    },
+    "location": {
+      "lat": 34.693984,
+      "lng": 135.734799
+    },
+    "prefecture": "nara",
+    "kind": "theme",
+    "themes": [
+      "ramen"
+    ],
+    "tags": [],
+    "featured": false,
+    "score": 0.0,
+    "summary_zh": "",
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "富雄",
+          "en": "Tomio"
+        },
+        "distance_m": 30
+      }
+    ],
+    "images": [],
+    "external_ids": {
+      "osm": "way/244040916"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/way/244040916",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
+    "id": "osm-way-267919149",
+    "name": {
+      "ja": "神座",
+      "zh_tw": "神座"
+    },
+    "location": {
+      "lat": 34.564714,
+      "lng": 135.697551
+    },
+    "prefecture": "nara",
+    "kind": "theme",
+    "themes": [
+      "ramen"
+    ],
+    "tags": [],
+    "featured": false,
+    "score": 0.0,
+    "summary_zh": "",
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "志都美",
+          "en": "Shizumi"
+        },
+        "distance_m": 510
+      }
+    ],
+    "images": [],
+    "external_ids": {
+      "osm": "way/267919149"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/way/267919149",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
+    "id": "osm-way-278784654",
+    "name": {
+      "ja": "ラーメン家 みつ葉",
+      "zh_tw": "ラーメン家 みつ葉"
+    },
+    "location": {
+      "lat": 34.692433,
+      "lng": 135.732024
+    },
+    "prefecture": "nara",
+    "kind": "theme",
+    "themes": [
+      "ramen"
+    ],
+    "tags": [],
+    "featured": false,
+    "score": 0.0,
+    "summary_zh": "",
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "富雄",
+          "en": "Tomio"
+        },
+        "distance_m": 320
+      }
+    ],
+    "images": [],
+    "external_ids": {
+      "osm": "way/278784654"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/way/278784654",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
+    "id": "osm-way-307864722",
+    "name": {
+      "ja": "天下一品",
+      "zh_tw": "天下一品",
+      "en": "Tenkaippin"
+    },
+    "location": {
+      "lat": 34.703931,
+      "lng": 135.706659
+    },
+    "prefecture": "nara",
+    "city": "生駒市",
+    "kind": "theme",
+    "themes": [
+      "ramen"
+    ],
+    "tags": [],
+    "featured": false,
+    "score": 5.0,
+    "summary_zh": "",
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "東生駒",
+          "en": "Higashi-Ikoma"
+        },
+        "distance_m": 1360
+      },
+      {
+        "name": {
+          "ja": "生駒",
+          "kana": "いこま",
+          "romaji": "Ikoma",
+          "en": "Ikoma"
+        },
+        "distance_m": 1430
+      }
+    ],
+    "images": [],
+    "external_ids": {
+      "osm": "way/307864722"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/way/307864722",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
+    "id": "osm-way-375749268",
+    "name": {
+      "ja": "彩華 ラーメン",
+      "zh_tw": "彩華 ラーメン"
+    },
+    "location": {
+      "lat": 34.682051,
+      "lng": 135.791754
+    },
+    "prefecture": "nara",
+    "city": "奈良市",
+    "kind": "theme",
+    "themes": [
+      "ramen"
+    ],
+    "tags": [],
+    "featured": false,
+    "score": 3.0,
+    "summary_zh": "",
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "尼ヶ辻",
+          "romaji": "Amagatsuji",
+          "en": "Amagatsuji"
+        },
+        "distance_m": 750
+      }
+    ],
+    "images": [],
+    "external_ids": {
+      "osm": "way/375749268"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/way/375749268",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
+    "id": "osm-way-439996876",
+    "name": {
+      "ja": "たかすみの里",
+      "zh_tw": "たかすみの里"
+    },
+    "location": {
+      "lat": 34.439205,
+      "lng": 136.060938
+    },
+    "prefecture": "nara",
+    "city": "東吉野村",
+    "kind": "theme",
+    "themes": [
+      "onsen"
+    ],
+    "tags": [],
+    "featured": false,
+    "score": 0.0,
+    "summary_zh": "",
+    "images": [],
+    "external_ids": {
+      "osm": "way/439996876"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/way/439996876",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
+    "id": "osm-way-440115045",
+    "name": {
+      "ja": "曽爾高原温泉;お亀の湯",
+      "zh_tw": "曽爾高原温泉;お亀の湯"
+    },
+    "location": {
+      "lat": 34.524521,
+      "lng": 136.151636
+    },
+    "prefecture": "nara",
+    "kind": "theme",
+    "themes": [
+      "onsen"
+    ],
+    "tags": [],
+    "featured": false,
+    "score": 0.0,
+    "summary_zh": "",
+    "images": [],
+    "external_ids": {
+      "osm": "way/440115045"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/way/440115045",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
+    "id": "osm-way-490258278",
+    "name": {
+      "ja": "丸源ラーメン",
+      "zh_tw": "丸源ラーメン",
+      "en": "Marugen Ramen"
+    },
+    "location": {
+      "lat": 34.507979,
+      "lng": 135.761458
+    },
+    "prefecture": "nara",
+    "city": "橿原市",
+    "kind": "theme",
+    "themes": [
+      "ramen"
+    ],
+    "tags": [],
+    "featured": false,
+    "score": 2.0,
+    "summary_zh": "",
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "金橋",
+          "romaji": "Kanahashi",
+          "en": "Kanahashi"
+        },
+        "distance_m": 400
+      },
+      {
+        "name": {
+          "ja": "浮孔",
+          "romaji": "Ukiana",
+          "en": "Ukiana"
+        },
+        "distance_m": 1260
+      }
+    ],
+    "images": [],
+    "external_ids": {
+      "osm": "way/490258278"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/way/490258278",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
+    "id": "osm-way-512314437",
+    "name": {
+      "ja": "どうとんぼり 神座",
+      "zh_tw": "どうとんぼり 神座"
+    },
+    "location": {
+      "lat": 34.493693,
+      "lng": 135.735138
+    },
+    "prefecture": "nara",
+    "kind": "theme",
+    "themes": [
+      "ramen"
+    ],
+    "tags": [],
+    "featured": false,
+    "score": 0.0,
+    "summary_zh": "",
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "近鉄新庄",
+          "romaji": "Kintetsu-Shinjō",
+          "en": "Kintetsu-Shinjō"
+        },
+        "distance_m": 870
+      }
+    ],
+    "images": [],
+    "external_ids": {
+      "osm": "way/512314437"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/way/512314437",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
+    "id": "osm-way-571294087",
+    "name": {
+      "ja": "麺屋岡田",
+      "zh_tw": "麺屋岡田"
+    },
+    "location": {
+      "lat": 34.666536,
+      "lng": 135.837624
+    },
+    "prefecture": "nara",
+    "kind": "theme",
+    "themes": [
+      "ramen"
+    ],
+    "tags": [],
+    "featured": false,
+    "score": 0.0,
+    "summary_zh": "",
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "京終",
+          "en": "Kyōbate"
+        },
+        "distance_m": 900
+      }
+    ],
+    "images": [],
+    "external_ids": {
+      "osm": "way/571294087"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/way/571294087",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
+    "id": "osm-way-691666771",
+    "name": {
+      "ja": "ずんどう屋",
+      "zh_tw": "ずんどう屋"
+    },
+    "location": {
+      "lat": 34.5398,
+      "lng": 135.797566
+    },
+    "prefecture": "nara",
+    "kind": "theme",
+    "themes": [
+      "ramen"
+    ],
+    "tags": [],
+    "featured": false,
+    "score": 0.0,
+    "summary_zh": "",
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "笠縫",
+          "romaji": "Kasanui",
+          "en": "Kasanui"
+        },
+        "distance_m": 370
+      }
+    ],
+    "images": [],
+    "external_ids": {
+      "osm": "way/691666771"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/way/691666771",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
+    "id": "osm-way-722144661",
+    "name": {
+      "ja": "王道家直系 我道家",
+      "zh_tw": "王道家直系 我道家"
+    },
+    "location": {
+      "lat": 34.605484,
+      "lng": 135.79793
+    },
+    "prefecture": "nara",
+    "kind": "theme",
+    "themes": [
+      "ramen"
+    ],
+    "tags": [],
+    "featured": false,
+    "score": 0.0,
+    "summary_zh": "",
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "二階堂",
+          "kana": "にかいどう",
+          "romaji": "Nikaido",
+          "en": "Nikaidō"
+        },
+        "distance_m": 420
+      },
+      {
+        "name": {
+          "ja": "平端",
+          "romaji": "Hirahata",
+          "en": "Hirahata"
+        },
+        "distance_m": 1370
+      }
+    ],
+    "images": [],
+    "external_ids": {
+      "osm": "way/722144661"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/way/722144661",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
+    "id": "osm-way-750643997",
+    "name": {
+      "ja": "朝日温泉",
+      "zh_tw": "朝日温泉"
+    },
+    "location": {
+      "lat": 34.67209,
+      "lng": 135.826949
+    },
+    "prefecture": "nara",
+    "kind": "theme",
+    "themes": [
+      "onsen"
+    ],
+    "tags": [],
+    "featured": false,
+    "score": 1.0,
+    "summary_zh": "",
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "京終",
+          "en": "Kyōbate"
+        },
+        "distance_m": 290
+      },
+      {
+        "name": {
+          "ja": "奈良",
+          "romaji": "Nara",
+          "en": "Nara"
+        },
+        "distance_m": 1220
+      }
+    ],
+    "images": [],
+    "external_ids": {
+      "osm": "way/750643997"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/way/750643997",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
     "id": "wd-Q1018450",
     "name": {
       "ja": "白毫寺",
@@ -15,7 +3256,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -169,7 +3412,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院",
       "史跡"
@@ -495,7 +3740,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -556,7 +3803,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院",
       "國寶",
@@ -622,7 +3871,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院",
       "史跡"
@@ -798,7 +4049,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院",
       "國寶",
@@ -845,7 +4098,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院",
       "國寶"
@@ -892,7 +4147,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院",
       "國寶"
@@ -942,7 +4199,9 @@
     "prefecture": "nara",
     "city": "斑鳩町",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -1373,7 +4632,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -1421,7 +4682,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社"
     ],
@@ -1487,7 +4750,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社"
     ],
@@ -1610,7 +4875,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -1648,7 +4915,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -1952,7 +5221,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -2127,7 +5398,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院",
       "重要文化財"
@@ -2244,7 +5517,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -2360,7 +5635,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院",
       "重要文化財"
@@ -2738,7 +6015,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -2796,7 +6075,9 @@
     "prefecture": "nara",
     "city": "吉野町",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社"
     ],
@@ -2841,7 +6122,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社"
     ],
@@ -2882,7 +6165,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院",
       "國寶"
@@ -2945,7 +6230,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -2990,7 +6277,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -3038,7 +6327,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院",
       "重要文化財"
@@ -3087,7 +6378,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社"
     ],
@@ -3136,7 +6429,9 @@
     "prefecture": "nara",
     "city": "奈良県吉野郡吉野町",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社"
     ],
@@ -3251,7 +6546,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院",
       "重要文化財"
@@ -3381,7 +6678,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社"
     ],
@@ -3486,7 +6785,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社"
     ],
@@ -3534,7 +6835,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社"
     ],
@@ -4021,7 +7324,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社"
     ],
@@ -4067,7 +7372,9 @@
     "prefecture": "nara",
     "city": "高取町",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -4210,7 +7517,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社"
     ],
@@ -4277,7 +7586,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -4477,7 +7788,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -4586,7 +7899,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院",
       "史跡"
@@ -4946,7 +8261,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -5062,7 +8379,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -5120,7 +8439,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社"
     ],
@@ -5186,7 +8507,9 @@
     "prefecture": "nara",
     "city": "奈良市",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -5234,7 +8557,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -5342,7 +8667,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -5457,7 +8784,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -5513,7 +8842,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社",
       "重要文化財",
@@ -5616,7 +8947,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社"
     ],
@@ -5766,7 +9099,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院",
       "史跡",
@@ -5825,7 +9160,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -5935,7 +9272,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院",
       "重要文化財"
@@ -5984,7 +9323,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院",
       "國寶"
@@ -6098,7 +9439,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -6269,7 +9612,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社"
     ],
@@ -6327,7 +9672,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院",
       "史跡"
@@ -6421,7 +9768,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院",
       "史跡"
@@ -6541,7 +9890,9 @@
     "prefecture": "nara",
     "city": "奈良市",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -6589,7 +9940,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -6655,7 +10008,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社"
     ],
@@ -6710,7 +10065,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -6775,7 +10132,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -6831,7 +10190,9 @@
     "prefecture": "nara",
     "city": "奈良市",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院",
       "國寶"
@@ -6950,7 +10311,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社"
     ],
@@ -7015,7 +10378,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社"
     ],
@@ -7181,7 +10546,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -7229,7 +10596,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社",
       "世界遺產",
@@ -7279,7 +10648,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社"
     ],
@@ -7518,7 +10889,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社",
       "重要文化財"
@@ -7622,7 +10995,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社"
     ],
@@ -7687,7 +11062,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院",
       "重要文化財"
@@ -7750,7 +11127,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -7813,7 +11192,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院",
       "重要文化財"
@@ -7880,7 +11261,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -7928,7 +11311,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社"
     ],
@@ -8203,7 +11588,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院",
       "重要文化財"
@@ -8269,7 +11656,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -8314,7 +11703,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -8359,7 +11750,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社"
     ],
@@ -8425,7 +11818,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社"
     ],
@@ -8598,7 +11993,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社"
     ],
@@ -8649,7 +12046,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社"
     ],
@@ -8697,7 +12096,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社"
     ],
@@ -8984,7 +12385,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -9049,7 +12452,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社"
     ],
@@ -9137,7 +12542,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社"
     ],
@@ -9235,7 +12642,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社"
     ],
@@ -9289,7 +12698,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -9447,7 +12858,9 @@
     "prefecture": "nara",
     "city": "大和郡山市",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -9557,7 +12970,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院",
       "重要文化財"
@@ -9614,7 +13029,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院",
       "國寶"
@@ -9679,7 +13096,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院",
       "重要文化財"
@@ -9741,7 +13160,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -9803,7 +13224,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社"
     ],
@@ -10087,7 +13510,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社"
     ],
@@ -10132,7 +13557,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社"
     ],
@@ -10241,7 +13668,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -10401,7 +13830,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社"
     ],
@@ -10463,7 +13894,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社"
     ],
@@ -10511,7 +13944,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院",
       "國寶",
@@ -10576,7 +14011,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院",
       "重要文化財",
@@ -10643,7 +14080,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -10709,7 +14148,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社"
     ],
@@ -10775,7 +14216,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社"
     ],
@@ -10841,7 +14284,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社"
     ],
@@ -10907,7 +14352,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -11026,7 +14473,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -11089,7 +14538,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -11155,7 +14606,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -11219,7 +14672,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -11285,7 +14740,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社"
     ],
@@ -11351,7 +14808,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -11417,7 +14876,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -11483,7 +14944,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -11549,7 +15012,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社"
     ],
@@ -11615,7 +15080,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -11681,7 +15148,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社"
     ],
@@ -11899,7 +15368,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社"
     ],
@@ -11940,7 +15411,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社"
     ],
@@ -12035,7 +15508,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社"
     ],
@@ -12082,7 +15557,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社"
     ],
@@ -12131,7 +15608,9 @@
     "prefecture": "nara",
     "city": "斑鳩町",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院",
       "國寶",
@@ -12239,7 +15718,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院",
       "國寶"
@@ -12411,7 +15892,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院",
       "國寶"
@@ -12540,7 +16023,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社"
     ],
@@ -12631,7 +16116,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -12675,7 +16162,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -12723,7 +16212,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -12781,7 +16272,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -12908,7 +16401,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -13028,7 +16523,9 @@
     "prefecture": "nara",
     "city": "吉野郡吉野町",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院",
       "國寶",
@@ -13097,7 +16594,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -13255,7 +16754,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社"
     ],
@@ -13515,7 +17016,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -13581,7 +17084,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -13823,7 +17328,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -13888,7 +17395,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院",
       "重要文化財"
@@ -14015,7 +17524,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -14080,7 +17591,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社"
     ],
@@ -14145,7 +17658,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社"
     ],
@@ -14210,7 +17725,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社"
     ],
@@ -14329,7 +17846,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社"
     ],
@@ -14395,7 +17914,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社"
     ],
@@ -14460,7 +17981,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -14525,7 +18048,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社"
     ],
@@ -14582,7 +18107,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -14644,7 +18171,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -14700,7 +18229,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社"
     ],
@@ -14765,7 +18296,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -14830,7 +18363,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -14878,7 +18413,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社"
     ],
@@ -14944,7 +18481,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -15009,7 +18548,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -15072,7 +18613,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -15137,7 +18680,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社",
       "重要文化財"
@@ -15203,7 +18748,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社"
     ],
@@ -15268,7 +18815,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社"
     ],
@@ -15331,7 +18880,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社"
     ],
@@ -15397,7 +18948,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社"
     ],
@@ -15462,7 +19015,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -15527,7 +19082,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社"
     ],
@@ -15572,7 +19129,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社"
     ],
@@ -15630,7 +19189,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社"
     ],
@@ -15695,7 +19256,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -15756,7 +19319,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -15813,7 +19378,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -15875,7 +19442,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院",
       "國寶",
@@ -15988,7 +19557,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社"
     ],
@@ -16054,7 +19625,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社"
     ],
@@ -16102,7 +19675,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社",
       "重要文化財"
@@ -16167,7 +19742,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -16252,7 +19829,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -16431,7 +20010,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社"
     ],
@@ -16533,7 +20114,9 @@
     "prefecture": "nara",
     "city": "斑鳩町",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院",
       "國寶",
@@ -16591,7 +20174,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -16699,7 +20284,9 @@
     "prefecture": "nara",
     "city": "桜井市",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院",
       "重要文化財"
@@ -16759,7 +20346,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社"
     ],
@@ -16869,7 +20458,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院",
       "重要文化財"
@@ -16915,7 +20506,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -16981,7 +20574,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -17104,7 +20699,9 @@
     "prefecture": "nara",
     "city": "奈良市",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院",
       "重要文化財",
@@ -17162,7 +20759,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社",
       "世界遺產",
@@ -17210,7 +20809,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院",
       "國寶"
@@ -17259,7 +20860,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社"
     ],
@@ -17324,7 +20927,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院",
       "重要文化財"
@@ -17449,7 +21054,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院",
       "史跡"
@@ -17498,7 +21105,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社",
       "世界遺產"
@@ -17727,7 +21336,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院",
       "重要文化財"
@@ -17776,7 +21387,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社",
       "世界遺產",
@@ -17826,7 +21439,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社",
       "國寶"
@@ -17867,7 +21482,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院",
       "史跡",
@@ -17913,7 +21530,9 @@
     "prefecture": "nara",
     "city": "吉野郡吉野町",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社",
       "世界遺產",
@@ -18022,7 +21641,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院",
       "史跡"
@@ -18172,7 +21793,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社"
     ],
@@ -18238,7 +21861,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -18304,7 +21929,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社"
     ],
@@ -18352,7 +21979,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社"
     ],
@@ -18417,7 +22046,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社"
     ],
@@ -18481,7 +22112,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -18544,7 +22177,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院",
       "國寶"
@@ -18610,7 +22245,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社"
     ],
@@ -18655,7 +22292,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社"
     ],
@@ -18720,7 +22359,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社"
     ],
@@ -18781,7 +22422,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社"
     ],
@@ -18827,7 +22470,9 @@
     "prefecture": "nara",
     "city": "奈良県吉野郡吉野町河原屋",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社"
     ],
@@ -18872,7 +22517,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社"
     ],
@@ -18929,7 +22576,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社"
     ],
@@ -19049,7 +22698,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院",
       "國寶"
@@ -19194,7 +22845,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社"
     ],
@@ -19242,7 +22895,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社"
     ],
@@ -19290,7 +22945,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社"
     ],
@@ -19335,7 +22992,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社"
     ],
@@ -19400,7 +23059,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社"
     ],
@@ -19458,7 +23119,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社"
     ],
@@ -19513,7 +23176,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社"
     ],
@@ -19568,7 +23233,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社"
     ],
@@ -19630,7 +23297,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社"
     ],
@@ -19692,7 +23361,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社"
     ],
@@ -19754,7 +23425,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社"
     ],
@@ -19809,7 +23482,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社"
     ],
@@ -19871,7 +23546,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社"
     ],
@@ -19933,7 +23610,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社"
     ],
@@ -19998,7 +23677,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社"
     ],
@@ -20063,7 +23744,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社",
       "重要文化財"
@@ -20194,7 +23877,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -20253,7 +23938,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社"
     ],
@@ -20298,7 +23985,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社",
       "重要文化財"
@@ -20344,7 +24033,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -20426,7 +24117,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社"
     ],
@@ -20492,7 +24185,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社"
     ],
@@ -20617,7 +24312,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -20683,7 +24380,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社"
     ],
@@ -20728,7 +24427,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院",
       "重要文化財"
@@ -20784,7 +24485,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社"
     ],
@@ -20832,7 +24535,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社"
     ],
@@ -20890,7 +24595,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社"
     ],
@@ -20988,7 +24695,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社",
       "重要文化財"
@@ -21091,7 +24800,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社"
     ],
@@ -21140,7 +24851,9 @@
     "prefecture": "nara",
     "city": "斑鳩町",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -21244,7 +24957,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社"
     ],
@@ -21312,7 +25027,9 @@
     "prefecture": "nara",
     "city": "河合町",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社"
     ],
@@ -21369,7 +25086,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社",
       "重要文化財",
@@ -21489,7 +25208,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社",
       "國寶"
@@ -21538,7 +25259,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社",
       "重要文化財"
@@ -21605,7 +25328,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社",
       "國寶",
@@ -21651,7 +25376,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -21720,7 +25447,9 @@
     "prefecture": "nara",
     "city": "明日香村",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院",
       "史跡"
@@ -21984,7 +25713,9 @@
     "prefecture": "nara",
     "city": "奈良市",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院",
       "國寶",
@@ -22052,7 +25783,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社"
     ],
@@ -22113,7 +25846,9 @@
     },
     "prefecture": "nara",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院",
       "國寶",

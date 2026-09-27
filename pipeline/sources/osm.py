@@ -115,9 +115,13 @@ THEME_FILTERS: dict[str, list[str]] = {
 }
 
 
-def themed(iso: str) -> dict[str, list[OsmElement]]:
-    """各主題的 OSM 物件（以縣的 area 查詢）。"""
+def themed(iso: str, bbox: tuple[float, float, float, float]) -> dict[str, list[OsmElement]]:
+    """各主題的 OSM 物件。先用縣的 area 查詢；逾時就改用範圍框（呼叫端再用縣界過濾）。
+
+    回傳值的 key 以 "bbox:" 開頭的表示是範圍框結果。
+    """
     out: dict[str, list[OsmElement]] = {}
+    s, w, n, e = bbox
     for theme, filters in THEME_FILTERS.items():
         body = "\n".join(f"  nwr{f}(area.a);" for f in filters)
         q = f"""[out:json][timeout:300];
@@ -126,5 +130,13 @@ def themed(iso: str) -> dict[str, list[OsmElement]]:
 {body}
 );
 out center tags;"""
-        out[theme] = _run(q)
+        try:
+            out[theme] = _run(q)
+        except RuntimeError:
+            body = "\n".join(f"  nwr{f}({s},{w},{n},{e});" for f in filters)
+            out["bbox:" + theme] = _run(f"""[out:json][timeout:300];
+(
+{body}
+);
+out center tags;""")
     return out

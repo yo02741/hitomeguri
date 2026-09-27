@@ -12,7 +12,7 @@ def test_seed_themes(fake_sources, monkeypatch):  # noqa: F811
     monkeypatch.setattr(
         themes.osm,
         "themed",
-        lambda iso: {
+        lambda iso, bbox: {
             "tea": [OsmElement("node/100", 35.0, 135.76, {"name": "一保堂茶舗", "shop": "tea",
                     "website": "https://x", "name:ja-Hira": "いっぽどうちゃほ"})],
             "sake": [OsmElement("node/101", 34.99, 135.785, {"name": "清水寺", "craft": "brewery",

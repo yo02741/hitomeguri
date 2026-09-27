@@ -1,5 +1,53 @@
 [
   {
+    "id": "osm-node-10074096507",
+    "name": {
+      "ja": "あきん亭",
+      "zh_tw": "あきん亭"
+    },
+    "location": {
+      "lat": 35.449334,
+      "lng": 137.415579
+    },
+    "prefecture": "gifu",
+    "kind": "theme",
+    "themes": [
+      "ramen"
+    ],
+    "tags": [],
+    "featured": false,
+    "score": 0.0,
+    "summary_zh": "",
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "恵那",
+          "en": "Ena"
+        },
+        "distance_m": 920
+      },
+      {
+        "name": {
+          "ja": "東野",
+          "en": "Higashino"
+        },
+        "distance_m": 1260
+      }
+    ],
+    "images": [],
+    "external_ids": {
+      "osm": "node/10074096507"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/node/10074096507",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
     "id": "osm-node-10074926668",
     "name": {
       "ja": "川原町Galley Sagan",
@@ -256,6 +304,201 @@
     "updated_at": "2026-09-27"
   },
   {
+    "id": "osm-node-11005200017",
+    "name": {
+      "ja": "クアガーデン露天風呂",
+      "zh_tw": "クアガーデン露天風呂"
+    },
+    "location": {
+      "lat": 35.810192,
+      "lng": 137.239736
+    },
+    "prefecture": "gifu",
+    "kind": "theme",
+    "themes": [
+      "onsen"
+    ],
+    "tags": [],
+    "featured": false,
+    "score": 0.0,
+    "summary_zh": "",
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "下呂",
+          "kana": "げろ",
+          "romaji": "Gero",
+          "en": "Gero"
+        },
+        "distance_m": 490
+      }
+    ],
+    "images": [],
+    "external_ids": {
+      "osm": "node/11005200017"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/node/11005200017",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
+    "id": "osm-node-11030005310",
+    "name": {
+      "ja": "誠屋",
+      "zh_tw": "誠屋"
+    },
+    "location": {
+      "lat": 35.331289,
+      "lng": 137.116993
+    },
+    "prefecture": "gifu",
+    "kind": "theme",
+    "themes": [
+      "ramen"
+    ],
+    "tags": [],
+    "featured": false,
+    "score": 0.0,
+    "summary_zh": "",
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "多治見",
+          "kana": "たじみ",
+          "romaji": "Tajimi",
+          "en": "Tajimi"
+        },
+        "distance_m": 560
+      }
+    ],
+    "images": [],
+    "external_ids": {
+      "osm": "node/11030005310"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/node/11030005310",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
+    "id": "osm-node-11148131755",
+    "name": {
+      "ja": "味軒",
+      "zh_tw": "味軒"
+    },
+    "location": {
+      "lat": 35.344089,
+      "lng": 137.119469
+    },
+    "prefecture": "gifu",
+    "kind": "theme",
+    "themes": [
+      "ramen"
+    ],
+    "tags": [],
+    "featured": false,
+    "score": 0.0,
+    "summary_zh": "",
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "多治見",
+          "kana": "たじみ",
+          "romaji": "Tajimi",
+          "en": "Tajimi"
+        },
+        "distance_m": 1000
+      }
+    ],
+    "images": [],
+    "external_ids": {
+      "osm": "node/11148131755"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/node/11148131755",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
+    "id": "osm-node-11268951569",
+    "name": {
+      "ja": "四方木屋",
+      "zh_tw": "四方木屋",
+      "en": "Yomogiya"
+    },
+    "location": {
+      "lat": 35.526517,
+      "lng": 137.567211
+    },
+    "prefecture": "gifu",
+    "kind": "theme",
+    "themes": [
+      "tea"
+    ],
+    "tags": [],
+    "featured": false,
+    "score": 2.0,
+    "summary_zh": "",
+    "images": [],
+    "external_ids": {
+      "osm": "node/11268951569"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/node/11268951569",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
+    "id": "osm-node-11270393570",
+    "name": {
+      "ja": "茶房土蔵",
+      "zh_tw": "茶房土蔵",
+      "en": "Dozo Tea House"
+    },
+    "location": {
+      "lat": 35.525615,
+      "lng": 137.566066
+    },
+    "prefecture": "gifu",
+    "kind": "theme",
+    "themes": [
+      "tea"
+    ],
+    "tags": [],
+    "featured": false,
+    "score": 1.0,
+    "summary_zh": "",
+    "images": [],
+    "external_ids": {
+      "osm": "node/11270393570"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/node/11270393570",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
     "id": "osm-node-11302345862",
     "name": {
       "ja": "Sake Brewery",
@@ -290,6 +533,145 @@
     "sources": [
       {
         "url": "https://www.openstreetmap.org/node/11302345862",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
+    "id": "osm-node-11355592313",
+    "name": {
+      "ja": "富士静製茶所",
+      "zh_tw": "富士静製茶所"
+    },
+    "location": {
+      "lat": 35.344379,
+      "lng": 137.118615
+    },
+    "prefecture": "gifu",
+    "kind": "theme",
+    "themes": [
+      "tea"
+    ],
+    "tags": [],
+    "featured": false,
+    "score": 0.0,
+    "summary_zh": "",
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "多治見",
+          "kana": "たじみ",
+          "romaji": "Tajimi",
+          "en": "Tajimi"
+        },
+        "distance_m": 1040
+      }
+    ],
+    "images": [],
+    "external_ids": {
+      "osm": "node/11355592313"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/node/11355592313",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
+    "id": "osm-node-11355592320",
+    "name": {
+      "ja": "来来亭",
+      "zh_tw": "来来亭",
+      "en": "Rairaitei"
+    },
+    "location": {
+      "lat": 35.341514,
+      "lng": 137.117062
+    },
+    "prefecture": "gifu",
+    "kind": "theme",
+    "themes": [
+      "ramen"
+    ],
+    "tags": [],
+    "featured": false,
+    "score": 2.5,
+    "summary_zh": "",
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "多治見",
+          "kana": "たじみ",
+          "romaji": "Tajimi",
+          "en": "Tajimi"
+        },
+        "distance_m": 780
+      }
+    ],
+    "images": [],
+    "external_ids": {
+      "osm": "node/11355592320"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/node/11355592320",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
+    "id": "osm-node-11477359759",
+    "name": {
+      "ja": "Sugakiya",
+      "zh_tw": "Sugakiya"
+    },
+    "location": {
+      "lat": 35.370206,
+      "lng": 136.617576
+    },
+    "prefecture": "gifu",
+    "kind": "theme",
+    "themes": [
+      "ramen"
+    ],
+    "tags": [],
+    "featured": false,
+    "score": 0.0,
+    "summary_zh": "",
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "大垣",
+          "kana": "おおがき",
+          "romaji": "Ōgaki",
+          "en": "Ōgaki"
+        },
+        "distance_m": 350
+      },
+      {
+        "name": {
+          "ja": "室",
+          "kana": "むろ",
+          "romaji": "Muro",
+          "en": "Muro"
+        },
+        "distance_m": 1040
+      }
+    ],
+    "images": [],
+    "external_ids": {
+      "osm": "node/11477359759"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/node/11477359759",
         "fetched_at": "2026-09-27"
       }
     ],
@@ -426,6 +808,49 @@
     "updated_at": "2026-09-27"
   },
   {
+    "id": "osm-node-11771319961",
+    "name": {
+      "ja": "中華天国",
+      "zh_tw": "中華天国"
+    },
+    "location": {
+      "lat": 35.332609,
+      "lng": 137.129169
+    },
+    "prefecture": "gifu",
+    "kind": "theme",
+    "themes": [
+      "ramen"
+    ],
+    "tags": [],
+    "featured": false,
+    "score": 0.0,
+    "summary_zh": "",
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "多治見",
+          "kana": "たじみ",
+          "romaji": "Tajimi",
+          "en": "Tajimi"
+        },
+        "distance_m": 810
+      }
+    ],
+    "images": [],
+    "external_ids": {
+      "osm": "node/11771319961"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/node/11771319961",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
     "id": "osm-node-11779418698",
     "name": {
       "ja": "さざれ石",
@@ -449,6 +874,59 @@
     "sources": [
       {
         "url": "https://www.openstreetmap.org/node/11779418698",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
+    "id": "osm-node-11998977821",
+    "name": {
+      "ja": "すいぎょく園",
+      "zh_tw": "すいぎょく園"
+    },
+    "location": {
+      "lat": 35.364607,
+      "lng": 136.613932
+    },
+    "prefecture": "gifu",
+    "city": "大垣市",
+    "kind": "theme",
+    "themes": [
+      "tea"
+    ],
+    "tags": [],
+    "featured": false,
+    "score": 2.0,
+    "summary_zh": "",
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "大垣",
+          "kana": "おおがき",
+          "romaji": "Ōgaki",
+          "en": "Ōgaki"
+        },
+        "distance_m": 350
+      },
+      {
+        "name": {
+          "ja": "室",
+          "kana": "むろ",
+          "romaji": "Muro",
+          "en": "Muro"
+        },
+        "distance_m": 720
+      }
+    ],
+    "images": [],
+    "external_ids": {
+      "osm": "node/11998977821"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/node/11998977821",
         "fetched_at": "2026-09-27"
       }
     ],
@@ -481,6 +959,50 @@
     "sources": [
       {
         "url": "https://www.openstreetmap.org/node/12350709332",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
+    "id": "osm-node-12401514895",
+    "name": {
+      "ja": "甚五郎ラーメン",
+      "zh_tw": "甚五郎ラーメン",
+      "en": "Jingoro Ramen"
+    },
+    "location": {
+      "lat": 36.138167,
+      "lng": 137.249573
+    },
+    "prefecture": "gifu",
+    "kind": "theme",
+    "themes": [
+      "ramen"
+    ],
+    "tags": [],
+    "featured": false,
+    "score": 1.0,
+    "summary_zh": "",
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "高山",
+          "kana": "たかやま",
+          "romaji": "Takayama",
+          "en": "Takayama"
+        },
+        "distance_m": 360
+      }
+    ],
+    "images": [],
+    "external_ids": {
+      "osm": "node/12401514895"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/node/12401514895",
         "fetched_at": "2026-09-27"
       }
     ],
@@ -746,6 +1268,99 @@
     "updated_at": "2026-09-27"
   },
   {
+    "id": "osm-node-13242209389",
+    "name": {
+      "ja": "天領",
+      "zh_tw": "天領"
+    },
+    "location": {
+      "lat": 35.87601,
+      "lng": 137.209347
+    },
+    "prefecture": "gifu",
+    "kind": "theme",
+    "themes": [
+      "sake"
+    ],
+    "tags": [],
+    "featured": false,
+    "score": 0.0,
+    "summary_zh": "",
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "飛驒萩原",
+          "kana": "ひだはぎわら",
+          "romaji": "Hida-Hagiwara",
+          "en": "Hida-Hagiwara"
+        },
+        "distance_m": 430
+      }
+    ],
+    "images": [],
+    "external_ids": {
+      "osm": "node/13242209389"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/node/13242209389",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
+    "id": "osm-node-13243160291",
+    "name": {
+      "ja": "スガキヤ",
+      "zh_tw": "スガキヤ"
+    },
+    "location": {
+      "lat": 35.403903,
+      "lng": 136.933169
+    },
+    "prefecture": "gifu",
+    "kind": "theme",
+    "themes": [
+      "ramen"
+    ],
+    "tags": [],
+    "featured": false,
+    "score": 0.0,
+    "summary_zh": "",
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "鵜沼宿",
+          "en": "Unumajuku"
+        },
+        "distance_m": 430
+      },
+      {
+        "name": {
+          "ja": "羽場",
+          "kana": "はば",
+          "romaji": "Haba",
+          "en": "Haba"
+        },
+        "distance_m": 1090
+      }
+    ],
+    "images": [],
+    "external_ids": {
+      "osm": "node/13243160291"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/node/13243160291",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
     "id": "osm-node-13250925901",
     "name": {
       "ja": "The Great Gingko of Hida Kokubun-ji",
@@ -787,6 +1402,93 @@
     "updated_at": "2026-09-27"
   },
   {
+    "id": "osm-node-13289648026",
+    "name": {
+      "ja": "湯の洞温泉",
+      "zh_tw": "湯の洞温泉"
+    },
+    "location": {
+      "lat": 35.579948,
+      "lng": 136.931498
+    },
+    "prefecture": "gifu",
+    "kind": "theme",
+    "themes": [
+      "onsen"
+    ],
+    "tags": [],
+    "featured": false,
+    "score": 1.0,
+    "summary_zh": "",
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "湯の洞温泉口",
+          "kana": "ゆのほらおんせんぐち",
+          "romaji": "Yunohora Onsen Guchi",
+          "en": "Yunohora-Onsen-guchi"
+        },
+        "distance_m": 970
+      }
+    ],
+    "images": [],
+    "external_ids": {
+      "wikidata": "Q136733744",
+      "osm": "node/13289648026"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/node/13289648026",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
+    "id": "osm-node-13347347668",
+    "name": {
+      "ja": "大黒屋",
+      "zh_tw": "大黒屋"
+    },
+    "location": {
+      "lat": 36.142524,
+      "lng": 137.264411
+    },
+    "prefecture": "gifu",
+    "kind": "theme",
+    "themes": [
+      "ramen"
+    ],
+    "tags": [],
+    "featured": false,
+    "score": 1.0,
+    "summary_zh": "",
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "高山",
+          "kana": "たかやま",
+          "romaji": "Takayama",
+          "en": "Takayama"
+        },
+        "distance_m": 1190
+      }
+    ],
+    "images": [],
+    "external_ids": {
+      "osm": "node/13347347668"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/node/13347347668",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
     "id": "osm-node-13626150428",
     "name": {
       "ja": "サイエンスワールド",
@@ -819,6 +1521,91 @@
     "updated_at": "2026-09-27"
   },
   {
+    "id": "osm-node-13670537706",
+    "name": {
+      "ja": "スガキヤ",
+      "zh_tw": "スガキヤ"
+    },
+    "location": {
+      "lat": 35.498671,
+      "lng": 137.507416
+    },
+    "prefecture": "gifu",
+    "kind": "theme",
+    "themes": [
+      "ramen"
+    ],
+    "tags": [],
+    "featured": false,
+    "score": 0.0,
+    "summary_zh": "",
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "中津川",
+          "en": "Nakatsugawa"
+        },
+        "distance_m": 470
+      }
+    ],
+    "images": [],
+    "external_ids": {
+      "osm": "node/13670537706"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/node/13670537706",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
+    "id": "osm-node-13683997793",
+    "name": {
+      "ja": "なべしま銘茶",
+      "romaji": "NABESHIMA MEICHA",
+      "zh_tw": "なべしま銘茶"
+    },
+    "location": {
+      "lat": 36.144309,
+      "lng": 137.259982
+    },
+    "prefecture": "gifu",
+    "kind": "theme",
+    "themes": [
+      "tea"
+    ],
+    "tags": [],
+    "featured": false,
+    "score": 2.0,
+    "summary_zh": "",
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "高山",
+          "kana": "たかやま",
+          "romaji": "Takayama",
+          "en": "Takayama"
+        },
+        "distance_m": 860
+      }
+    ],
+    "images": [],
+    "external_ids": {
+      "osm": "node/13683997793"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/node/13683997793",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
     "id": "osm-node-13707143972",
     "name": {
       "ja": "関ヶ原合戦資料館",
@@ -844,6 +1631,58 @@
     "sources": [
       {
         "url": "https://www.openstreetmap.org/node/13707143972",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
+    "id": "osm-node-13730123801",
+    "name": {
+      "ja": "Mitsuru",
+      "zh_tw": "Mitsuru"
+    },
+    "location": {
+      "lat": 35.412128,
+      "lng": 136.762081
+    },
+    "prefecture": "gifu",
+    "kind": "theme",
+    "themes": [
+      "ramen"
+    ],
+    "tags": [],
+    "featured": false,
+    "score": 3.0,
+    "summary_zh": "",
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "名鉄岐阜",
+          "kana": "めいてつぎふ",
+          "romaji": "Meitetsu Gifu",
+          "en": "Meitetsu Gifu"
+        },
+        "distance_m": 190
+      },
+      {
+        "name": {
+          "ja": "岐阜",
+          "kana": "ぎふ",
+          "romaji": "Gifu",
+          "en": "Gifu"
+        },
+        "distance_m": 550
+      }
+    ],
+    "images": [],
+    "external_ids": {
+      "osm": "node/13730123801"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/node/13730123801",
         "fetched_at": "2026-09-27"
       }
     ],
@@ -1081,6 +1920,49 @@
     "updated_at": "2026-09-27"
   },
   {
+    "id": "osm-node-14067321964",
+    "name": {
+      "ja": "下呂温泉湯本",
+      "zh_tw": "下呂温泉湯本"
+    },
+    "location": {
+      "lat": 35.806585,
+      "lng": 137.239464
+    },
+    "prefecture": "gifu",
+    "kind": "theme",
+    "themes": [
+      "onsen"
+    ],
+    "tags": [],
+    "featured": false,
+    "score": 0.0,
+    "summary_zh": "",
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "下呂",
+          "kana": "げろ",
+          "romaji": "Gero",
+          "en": "Gero"
+        },
+        "distance_m": 90
+      }
+    ],
+    "images": [],
+    "external_ids": {
+      "osm": "node/14067321964"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/node/14067321964",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
     "id": "osm-node-14100848201",
     "name": {
       "ja": "岐阜のマチュピチュ 天空の茶畑",
@@ -1104,6 +1986,341 @@
     "sources": [
       {
         "url": "https://www.openstreetmap.org/node/14100848201",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
+    "id": "osm-node-14118651801",
+    "name": {
+      "ja": "スガキヤ ロビン・フッド笠松店",
+      "zh_tw": "スガキヤ ロビン・フッド笠松店"
+    },
+    "location": {
+      "lat": 35.37995,
+      "lng": 136.804817
+    },
+    "prefecture": "gifu",
+    "kind": "theme",
+    "themes": [
+      "ramen"
+    ],
+    "tags": [],
+    "featured": false,
+    "score": 0.0,
+    "summary_zh": "",
+    "images": [],
+    "external_ids": {
+      "osm": "node/14118651801"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/node/14118651801",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
+    "id": "osm-node-14118914501",
+    "name": {
+      "ja": "麺屋 絆（きずな）",
+      "zh_tw": "麺屋 絆（きずな）"
+    },
+    "location": {
+      "lat": 35.442487,
+      "lng": 136.772345
+    },
+    "prefecture": "gifu",
+    "kind": "theme",
+    "themes": [
+      "ramen"
+    ],
+    "tags": [],
+    "featured": false,
+    "score": 0.0,
+    "summary_zh": "",
+    "images": [],
+    "external_ids": {
+      "osm": "node/14118914501"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/node/14118914501",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
+    "id": "osm-node-14122049102",
+    "name": {
+      "ja": "焼豚ラーメン三條",
+      "zh_tw": "焼豚ラーメン三條"
+    },
+    "location": {
+      "lat": 35.350156,
+      "lng": 136.748991
+    },
+    "prefecture": "gifu",
+    "kind": "theme",
+    "themes": [
+      "ramen"
+    ],
+    "tags": [],
+    "featured": false,
+    "score": 0.0,
+    "summary_zh": "",
+    "images": [],
+    "external_ids": {
+      "osm": "node/14122049102"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/node/14122049102",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
+    "id": "osm-node-14122051001",
+    "name": {
+      "ja": "みそラーメン三條",
+      "zh_tw": "みそラーメン三條"
+    },
+    "location": {
+      "lat": 35.419608,
+      "lng": 136.812848
+    },
+    "prefecture": "gifu",
+    "kind": "theme",
+    "themes": [
+      "ramen"
+    ],
+    "tags": [],
+    "featured": false,
+    "score": 0.0,
+    "summary_zh": "",
+    "images": [],
+    "external_ids": {
+      "osm": "node/14122051001"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/node/14122051001",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
+    "id": "osm-node-14122054201",
+    "name": {
+      "ja": "桜ラーメン 笠松店",
+      "zh_tw": "桜ラーメン 笠松店"
+    },
+    "location": {
+      "lat": 35.36977,
+      "lng": 136.752267
+    },
+    "prefecture": "gifu",
+    "kind": "theme",
+    "themes": [
+      "ramen"
+    ],
+    "tags": [],
+    "featured": false,
+    "score": 0.0,
+    "summary_zh": "",
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "西笠松",
+          "kana": "にしかさまつ",
+          "romaji": "Nishi-Kasamatsu",
+          "en": "Nishi-Kasamatsu"
+        },
+        "distance_m": 520
+      },
+      {
+        "name": {
+          "ja": "笠松",
+          "en": "Kasamatsu"
+        },
+        "distance_m": 1210
+      }
+    ],
+    "images": [],
+    "external_ids": {
+      "osm": "node/14122054201"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/node/14122054201",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
+    "id": "osm-node-14122062601",
+    "name": {
+      "ja": "カフェ ド さらら",
+      "zh_tw": "カフェ ド さらら"
+    },
+    "location": {
+      "lat": 35.393183,
+      "lng": 136.750026
+    },
+    "prefecture": "gifu",
+    "kind": "theme",
+    "themes": [
+      "tea"
+    ],
+    "tags": [],
+    "featured": false,
+    "score": 0.0,
+    "summary_zh": "",
+    "images": [],
+    "external_ids": {
+      "osm": "node/14122062601"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/node/14122062601",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
+    "id": "osm-node-14122095601",
+    "name": {
+      "ja": "スガキヤ",
+      "zh_tw": "スガキヤ"
+    },
+    "location": {
+      "lat": 35.401758,
+      "lng": 136.74848
+    },
+    "prefecture": "gifu",
+    "kind": "theme",
+    "themes": [
+      "ramen"
+    ],
+    "tags": [],
+    "featured": false,
+    "score": 0.0,
+    "summary_zh": "",
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "岐阜",
+          "kana": "ぎふ",
+          "romaji": "Gifu",
+          "en": "Gifu"
+        },
+        "distance_m": 1150
+      }
+    ],
+    "images": [],
+    "external_ids": {
+      "osm": "node/14122095601"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/node/14122095601",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
+    "id": "osm-node-14124770401",
+    "name": {
+      "ja": "京都北白川ラーメン魁力屋 岐阜島店",
+      "zh_tw": "京都北白川ラーメン魁力屋 岐阜島店"
+    },
+    "location": {
+      "lat": 35.42634,
+      "lng": 136.731019
+    },
+    "prefecture": "gifu",
+    "kind": "theme",
+    "themes": [
+      "ramen"
+    ],
+    "tags": [],
+    "featured": false,
+    "score": 0.0,
+    "summary_zh": "",
+    "images": [],
+    "external_ids": {
+      "osm": "node/14124770401"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/node/14124770401",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
+    "id": "osm-node-14124824701",
+    "name": {
+      "ja": "麺屋えいと",
+      "zh_tw": "麺屋えいと"
+    },
+    "location": {
+      "lat": 35.44718,
+      "lng": 136.675246
+    },
+    "prefecture": "gifu",
+    "kind": "theme",
+    "themes": [
+      "ramen"
+    ],
+    "tags": [],
+    "featured": false,
+    "score": 0.0,
+    "summary_zh": "",
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "北方真桑",
+          "kana": "きたがたまくわ",
+          "romaji": "Kitagata-Makuwa",
+          "en": "Kitagata-Makuwa"
+        },
+        "distance_m": 850
+      },
+      {
+        "name": {
+          "ja": "モレラ岐阜",
+          "en": "Morera-Gifu"
+        },
+        "distance_m": 1030
+      }
+    ],
+    "images": [],
+    "external_ids": {
+      "osm": "node/14124824701"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/node/14124824701",
         "fetched_at": "2026-09-27"
       }
     ],
@@ -1141,6 +2358,406 @@
     "updated_at": "2026-09-27"
   },
   {
+    "id": "osm-node-14125010001",
+    "name": {
+      "ja": "岐阜タンメン 関店",
+      "zh_tw": "岐阜タンメン 関店"
+    },
+    "location": {
+      "lat": 35.486743,
+      "lng": 136.872729
+    },
+    "prefecture": "gifu",
+    "kind": "theme",
+    "themes": [
+      "ramen"
+    ],
+    "tags": [],
+    "featured": false,
+    "score": 0.0,
+    "summary_zh": "",
+    "images": [],
+    "external_ids": {
+      "osm": "node/14125010001"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/node/14125010001",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
+    "id": "osm-node-14125011801",
+    "name": {
+      "ja": "スガキヤ 関カインズ店",
+      "zh_tw": "スガキヤ 関カインズ店"
+    },
+    "location": {
+      "lat": 35.485273,
+      "lng": 136.873048
+    },
+    "prefecture": "gifu",
+    "kind": "theme",
+    "themes": [
+      "ramen"
+    ],
+    "tags": [],
+    "featured": false,
+    "score": 0.0,
+    "summary_zh": "",
+    "images": [],
+    "external_ids": {
+      "osm": "node/14125011801"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/node/14125011801",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
+    "id": "osm-node-14125015201",
+    "name": {
+      "ja": "ラーメン つけ麺 爆王",
+      "zh_tw": "ラーメン つけ麺 爆王"
+    },
+    "location": {
+      "lat": 35.456973,
+      "lng": 136.889414
+    },
+    "prefecture": "gifu",
+    "kind": "theme",
+    "themes": [
+      "ramen"
+    ],
+    "tags": [],
+    "featured": false,
+    "score": 0.0,
+    "summary_zh": "",
+    "images": [],
+    "external_ids": {
+      "osm": "node/14125015201"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/node/14125015201",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
+    "id": "osm-node-14125030001",
+    "name": {
+      "ja": "やすや",
+      "zh_tw": "やすや"
+    },
+    "location": {
+      "lat": 35.406208,
+      "lng": 136.885126
+    },
+    "prefecture": "gifu",
+    "kind": "theme",
+    "themes": [
+      "ramen"
+    ],
+    "tags": [],
+    "featured": false,
+    "score": 0.0,
+    "summary_zh": "",
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "二十軒",
+          "kana": "にじっけん",
+          "romaji": "Nijikken",
+          "en": "Nijikken"
+        },
+        "distance_m": 750
+      },
+      {
+        "name": {
+          "ja": "三柿野",
+          "kana": "みかきの",
+          "romaji": "Mikakino",
+          "en": "Mikakino"
+        },
+        "distance_m": 1080
+      }
+    ],
+    "images": [],
+    "external_ids": {
+      "osm": "node/14125030001"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/node/14125030001",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
+    "id": "osm-node-14125033201",
+    "name": {
+      "ja": "ベトコンラーメン 各務原新京",
+      "zh_tw": "ベトコンラーメン 各務原新京"
+    },
+    "location": {
+      "lat": 35.407626,
+      "lng": 136.868204
+    },
+    "prefecture": "gifu",
+    "kind": "theme",
+    "themes": [
+      "ramen"
+    ],
+    "tags": [],
+    "featured": false,
+    "score": 0.0,
+    "summary_zh": "",
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "蘇原",
+          "kana": "そはら",
+          "romaji": "Sohara",
+          "en": "Sohara"
+        },
+        "distance_m": 560
+      },
+      {
+        "name": {
+          "ja": "六軒",
+          "kana": "ろっけん",
+          "romaji": "Rokken",
+          "en": "Rokken"
+        },
+        "distance_m": 920
+      }
+    ],
+    "images": [],
+    "external_ids": {
+      "osm": "node/14125033201"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/node/14125033201",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
+    "id": "osm-node-14125045001",
+    "name": {
+      "ja": "ベトコンラーメン専門店 四万十",
+      "zh_tw": "ベトコンラーメン専門店 四万十"
+    },
+    "location": {
+      "lat": 35.406637,
+      "lng": 136.848883
+    },
+    "prefecture": "gifu",
+    "kind": "theme",
+    "themes": [
+      "ramen"
+    ],
+    "tags": [],
+    "featured": false,
+    "score": 0.0,
+    "summary_zh": "",
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "各務原市役所前",
+          "kana": "かかみがはらしやくしょまえ",
+          "romaji": "Kakamigahara-Shiyakusho-mae",
+          "en": "Kakamigahara-Shiyakusho-mae"
+        },
+        "distance_m": 660
+      },
+      {
+        "name": {
+          "ja": "市民公園前",
+          "en": "Shimin-Kōen-mae"
+        },
+        "distance_m": 890
+      }
+    ],
+    "images": [],
+    "external_ids": {
+      "osm": "node/14125045001"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/node/14125045001",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
+    "id": "osm-node-14125094702",
+    "name": {
+      "ja": "あじへい 各務原店",
+      "zh_tw": "あじへい 各務原店"
+    },
+    "location": {
+      "lat": 35.390532,
+      "lng": 136.831458
+    },
+    "prefecture": "gifu",
+    "kind": "theme",
+    "themes": [
+      "ramen"
+    ],
+    "tags": [],
+    "featured": false,
+    "score": 0.0,
+    "summary_zh": "",
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "新那加",
+          "en": "Shin-Naka"
+        },
+        "distance_m": 1080
+      },
+      {
+        "name": {
+          "ja": "那加",
+          "kana": "なか",
+          "romaji": "Naka",
+          "en": "Naka"
+        },
+        "distance_m": 1170
+      }
+    ],
+    "images": [],
+    "external_ids": {
+      "osm": "node/14125094702"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/node/14125094702",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
+    "id": "osm-node-14125174101",
+    "name": {
+      "ja": "豚旨うま屋ラーメン 各務原店",
+      "zh_tw": "豚旨うま屋ラーメン 各務原店"
+    },
+    "location": {
+      "lat": 35.392961,
+      "lng": 136.841161
+    },
+    "prefecture": "gifu",
+    "kind": "theme",
+    "themes": [
+      "ramen"
+    ],
+    "tags": [],
+    "featured": false,
+    "score": 0.0,
+    "summary_zh": "",
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "市民公園前",
+          "en": "Shimin-Kōen-mae"
+        },
+        "distance_m": 860
+      },
+      {
+        "name": {
+          "ja": "那加",
+          "kana": "なか",
+          "romaji": "Naka",
+          "en": "Naka"
+        },
+        "distance_m": 1000
+      }
+    ],
+    "images": [],
+    "external_ids": {
+      "osm": "node/14125174101"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/node/14125174101",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
+    "id": "osm-node-14125176401",
+    "name": {
+      "ja": "長崎屋",
+      "zh_tw": "長崎屋"
+    },
+    "location": {
+      "lat": 35.393197,
+      "lng": 136.841085
+    },
+    "prefecture": "gifu",
+    "kind": "theme",
+    "themes": [
+      "ramen"
+    ],
+    "tags": [],
+    "featured": false,
+    "score": 0.0,
+    "summary_zh": "",
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "市民公園前",
+          "en": "Shimin-Kōen-mae"
+        },
+        "distance_m": 830
+      },
+      {
+        "name": {
+          "ja": "那加",
+          "kana": "なか",
+          "romaji": "Naka",
+          "en": "Naka"
+        },
+        "distance_m": 970
+      }
+    ],
+    "images": [],
+    "external_ids": {
+      "osm": "node/14125176401"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/node/14125176401",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
     "id": "osm-node-14128704202",
     "name": {
       "ja": "レールマウンテンバイク Gattan Go!!",
@@ -1165,6 +2782,209 @@
     "sources": [
       {
         "url": "https://www.openstreetmap.org/node/14128704202",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
+    "id": "osm-node-14172818701",
+    "name": {
+      "ja": "焼豚 ジョニー",
+      "zh_tw": "焼豚 ジョニー"
+    },
+    "location": {
+      "lat": 35.397342,
+      "lng": 136.764953
+    },
+    "prefecture": "gifu",
+    "kind": "theme",
+    "themes": [
+      "ramen"
+    ],
+    "tags": [],
+    "featured": false,
+    "score": 0.0,
+    "summary_zh": "",
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "茶所",
+          "en": "Chajo"
+        },
+        "distance_m": 660
+      },
+      {
+        "name": {
+          "ja": "加納",
+          "en": "Kanō"
+        },
+        "distance_m": 880
+      }
+    ],
+    "images": [],
+    "external_ids": {
+      "osm": "node/14172818701"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/node/14172818701",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
+    "id": "osm-node-14172824201",
+    "name": {
+      "ja": "パンチラーメン 橘",
+      "zh_tw": "パンチラーメン 橘"
+    },
+    "location": {
+      "lat": 35.383307,
+      "lng": 136.737008
+    },
+    "prefecture": "gifu",
+    "kind": "theme",
+    "themes": [
+      "ramen"
+    ],
+    "tags": [],
+    "featured": false,
+    "score": 0.0,
+    "summary_zh": "",
+    "images": [],
+    "external_ids": {
+      "osm": "node/14172824201"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/node/14172824201",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
+    "id": "osm-node-14172926401",
+    "name": {
+      "ja": "中華そば まる福",
+      "zh_tw": "中華そば まる福"
+    },
+    "location": {
+      "lat": 35.382628,
+      "lng": 136.886669
+    },
+    "prefecture": "gifu",
+    "kind": "theme",
+    "themes": [
+      "ramen"
+    ],
+    "tags": [],
+    "featured": false,
+    "score": 0.0,
+    "summary_zh": "",
+    "images": [],
+    "external_ids": {
+      "osm": "node/14172926401"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/node/14172926401",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
+    "id": "osm-node-14172935701",
+    "name": {
+      "ja": "寿らーめん 各務原店",
+      "zh_tw": "寿らーめん 各務原店"
+    },
+    "location": {
+      "lat": 35.388835,
+      "lng": 136.92891
+    },
+    "prefecture": "gifu",
+    "kind": "theme",
+    "themes": [
+      "ramen"
+    ],
+    "tags": [],
+    "featured": false,
+    "score": 0.0,
+    "summary_zh": "",
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "鵜沼宿",
+          "en": "Unumajuku"
+        },
+        "distance_m": 1290
+      }
+    ],
+    "images": [],
+    "external_ids": {
+      "osm": "node/14172935701"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/node/14172935701",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
+    "id": "osm-node-14172939901",
+    "name": {
+      "ja": "刀削麺 喜祥",
+      "zh_tw": "刀削麺 喜祥"
+    },
+    "location": {
+      "lat": 35.39309,
+      "lng": 136.939249
+    },
+    "prefecture": "gifu",
+    "kind": "theme",
+    "themes": [
+      "ramen"
+    ],
+    "tags": [],
+    "featured": false,
+    "score": 0.0,
+    "summary_zh": "",
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "新鵜沼",
+          "en": "Shin-Unuma"
+        },
+        "distance_m": 610
+      },
+      {
+        "name": {
+          "ja": "犬山遊園",
+          "kana": "いぬやまゆうえん",
+          "romaji": "Inuyama Yūen",
+          "en": "Inuyama-Yūen"
+        },
+        "distance_m": 740
+      }
+    ],
+    "images": [],
+    "external_ids": {
+      "osm": "node/14172939901"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/node/14172939901",
         "fetched_at": "2026-09-27"
       }
     ],
@@ -3289,6 +5109,1135 @@
     "updated_at": "2026-09-27"
   },
   {
+    "id": "osm-node-2158616782",
+    "name": {
+      "ja": "ラーメンショップ 海津店",
+      "zh_tw": "ラーメンショップ 海津店"
+    },
+    "location": {
+      "lat": 35.223459,
+      "lng": 136.649526
+    },
+    "prefecture": "gifu",
+    "kind": "theme",
+    "themes": [
+      "ramen"
+    ],
+    "tags": [],
+    "featured": false,
+    "score": 0.0,
+    "summary_zh": "",
+    "images": [],
+    "external_ids": {
+      "osm": "node/2158616782"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/node/2158616782",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
+    "id": "osm-node-4120895989",
+    "name": {
+      "ja": "Menya Shirakawa (iK)",
+      "zh_tw": "Menya Shirakawa (iK)"
+    },
+    "location": {
+      "lat": 36.142734,
+      "lng": 137.25688
+    },
+    "prefecture": "gifu",
+    "kind": "theme",
+    "themes": [
+      "ramen"
+    ],
+    "tags": [],
+    "featured": false,
+    "score": 0.0,
+    "summary_zh": "",
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "高山",
+          "kana": "たかやま",
+          "romaji": "Takayama",
+          "en": "Takayama"
+        },
+        "distance_m": 530
+      }
+    ],
+    "images": [],
+    "external_ids": {
+      "osm": "node/4120895989"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/node/4120895989",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
+    "id": "osm-node-5035915808",
+    "name": {
+      "ja": "幸楽苑",
+      "zh_tw": "幸楽苑",
+      "en": "Kourakuen"
+    },
+    "location": {
+      "lat": 35.452428,
+      "lng": 137.013821
+    },
+    "prefecture": "gifu",
+    "kind": "theme",
+    "themes": [
+      "ramen"
+    ],
+    "tags": [],
+    "featured": false,
+    "score": 2.0,
+    "summary_zh": "",
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "美濃太田",
+          "kana": "みのおおた",
+          "romaji": "Mino-Ōta",
+          "en": "Mino-Ota"
+        },
+        "distance_m": 920
+      },
+      {
+        "name": {
+          "ja": "前平公園",
+          "en": "Maehira-Kōen"
+        },
+        "distance_m": 1160
+      }
+    ],
+    "images": [],
+    "external_ids": {
+      "osm": "node/5035915808"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/node/5035915808",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
+    "id": "osm-node-5259211366",
+    "name": {
+      "ja": "幸楽苑",
+      "zh_tw": "幸楽苑",
+      "en": "Kourakuen"
+    },
+    "location": {
+      "lat": 35.481018,
+      "lng": 136.897475
+    },
+    "prefecture": "gifu",
+    "kind": "theme",
+    "themes": [
+      "ramen"
+    ],
+    "tags": [],
+    "featured": false,
+    "score": 2.0,
+    "summary_zh": "",
+    "images": [],
+    "external_ids": {
+      "osm": "node/5259211366"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/node/5259211366",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
+    "id": "osm-node-5286153523",
+    "name": {
+      "ja": "ラーメン   ワクワク",
+      "zh_tw": "ラーメン   ワクワク"
+    },
+    "location": {
+      "lat": 35.529558,
+      "lng": 136.895876
+    },
+    "prefecture": "gifu",
+    "kind": "theme",
+    "themes": [
+      "ramen"
+    ],
+    "tags": [],
+    "featured": false,
+    "score": 0.0,
+    "summary_zh": "",
+    "images": [],
+    "external_ids": {
+      "osm": "node/5286153523"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/node/5286153523",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
+    "id": "osm-node-5301712121",
+    "name": {
+      "ja": "一番亭",
+      "zh_tw": "一番亭",
+      "en": "ichibantei"
+    },
+    "location": {
+      "lat": 35.4814,
+      "lng": 136.899155
+    },
+    "prefecture": "gifu",
+    "kind": "theme",
+    "themes": [
+      "ramen"
+    ],
+    "tags": [],
+    "featured": false,
+    "score": 1.0,
+    "summary_zh": "",
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "せきてらす前",
+          "en": "Sekiterasu-mae"
+        },
+        "distance_m": 1380
+      }
+    ],
+    "images": [],
+    "external_ids": {
+      "osm": "node/5301712121"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/node/5301712121",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
+    "id": "osm-node-5301712123",
+    "name": {
+      "ja": "わかや",
+      "zh_tw": "わかや"
+    },
+    "location": {
+      "lat": 35.52968,
+      "lng": 136.901064
+    },
+    "prefecture": "gifu",
+    "kind": "theme",
+    "themes": [
+      "ramen"
+    ],
+    "tags": [],
+    "featured": false,
+    "score": 0.0,
+    "summary_zh": "",
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "松森",
+          "en": "Matsumori"
+        },
+        "distance_m": 1360
+      }
+    ],
+    "images": [],
+    "external_ids": {
+      "osm": "node/5301712123"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/node/5301712123",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
+    "id": "osm-node-5352110724",
+    "name": {
+      "ja": "天下一品",
+      "zh_tw": "天下一品",
+      "en": "Tenkaippin"
+    },
+    "location": {
+      "lat": 35.351477,
+      "lng": 136.623441
+    },
+    "prefecture": "gifu",
+    "kind": "theme",
+    "themes": [
+      "ramen"
+    ],
+    "tags": [],
+    "featured": false,
+    "score": 2.0,
+    "summary_zh": "",
+    "images": [],
+    "external_ids": {
+      "osm": "node/5352110724"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/node/5352110724",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
+    "id": "osm-node-5626667623",
+    "name": {
+      "ja": "甚五郎ラーメン",
+      "zh_tw": "甚五郎ラーメン",
+      "en": "Jingoro Ramen"
+    },
+    "location": {
+      "lat": 36.138133,
+      "lng": 137.249477
+    },
+    "prefecture": "gifu",
+    "kind": "theme",
+    "themes": [
+      "ramen"
+    ],
+    "tags": [],
+    "featured": false,
+    "score": 1.0,
+    "summary_zh": "",
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "高山",
+          "kana": "たかやま",
+          "romaji": "Takayama",
+          "en": "Takayama"
+        },
+        "distance_m": 370
+      }
+    ],
+    "images": [],
+    "external_ids": {
+      "osm": "node/5626667623"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/node/5626667623",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
+    "id": "osm-node-6174799174",
+    "name": {
+      "ja": "奥飛騨酒造",
+      "zh_tw": "奥飛騨酒造"
+    },
+    "location": {
+      "lat": 35.662627,
+      "lng": 137.157908
+    },
+    "prefecture": "gifu",
+    "kind": "theme",
+    "themes": [
+      "sake"
+    ],
+    "tags": [],
+    "featured": false,
+    "score": 1.0,
+    "summary_zh": "",
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "飛騨金山",
+          "kana": "ひだかなやま",
+          "romaji": "Hida Kanayama",
+          "en": "Hida-Kanayama"
+        },
+        "distance_m": 610
+      }
+    ],
+    "images": [],
+    "external_ids": {
+      "wikidata": "Q110352788",
+      "osm": "node/6174799174"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/node/6174799174",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
+    "id": "osm-node-7866798649",
+    "name": {
+      "ja": "長屋茶舗",
+      "zh_tw": "長屋茶舗"
+    },
+    "location": {
+      "lat": 35.48777,
+      "lng": 136.572755
+    },
+    "prefecture": "gifu",
+    "kind": "theme",
+    "themes": [
+      "tea"
+    ],
+    "tags": [],
+    "featured": false,
+    "score": 0.0,
+    "summary_zh": "",
+    "images": [],
+    "external_ids": {
+      "osm": "node/7866798649"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/node/7866798649",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
+    "id": "osm-node-9736612356",
+    "name": {
+      "ja": "来来亭",
+      "zh_tw": "来来亭",
+      "en": "Rairaitei"
+    },
+    "location": {
+      "lat": 35.449534,
+      "lng": 137.408361
+    },
+    "prefecture": "gifu",
+    "kind": "theme",
+    "themes": [
+      "ramen"
+    ],
+    "tags": [],
+    "featured": false,
+    "score": 2.5,
+    "summary_zh": "",
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "恵那",
+          "en": "Ena"
+        },
+        "distance_m": 640
+      }
+    ],
+    "images": [],
+    "external_ids": {
+      "osm": "node/9736612356"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/node/9736612356",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
+    "id": "osm-node-9739267489",
+    "name": {
+      "ja": "恵那ラヂウム温泉",
+      "zh_tw": "恵那ラヂウム温泉",
+      "en": "Ena Radium Onsen"
+    },
+    "location": {
+      "lat": 35.466998,
+      "lng": 137.404136
+    },
+    "prefecture": "gifu",
+    "kind": "theme",
+    "themes": [
+      "onsen"
+    ],
+    "tags": [],
+    "featured": false,
+    "score": 2.0,
+    "summary_zh": "",
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "恵那",
+          "en": "Ena"
+        },
+        "distance_m": 1360
+      }
+    ],
+    "images": [],
+    "external_ids": {
+      "wikidata": "Q52044406",
+      "osm": "node/9739267489"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/node/9739267489",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
+    "id": "osm-way-1184765617",
+    "name": {
+      "ja": "クアガーデン露天風呂",
+      "zh_tw": "クアガーデン露天風呂"
+    },
+    "location": {
+      "lat": 35.810189,
+      "lng": 137.239739
+    },
+    "prefecture": "gifu",
+    "kind": "theme",
+    "themes": [
+      "onsen"
+    ],
+    "tags": [],
+    "featured": false,
+    "score": 0.0,
+    "summary_zh": "",
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "下呂",
+          "kana": "げろ",
+          "romaji": "Gero",
+          "en": "Gero"
+        },
+        "distance_m": 490
+      }
+    ],
+    "images": [],
+    "external_ids": {
+      "osm": "way/1184765617"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/way/1184765617",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
+    "id": "osm-way-1251112280",
+    "name": {
+      "ja": "ラーメンログハウス",
+      "zh_tw": "ラーメンログハウス"
+    },
+    "location": {
+      "lat": 35.344829,
+      "lng": 137.119993
+    },
+    "prefecture": "gifu",
+    "kind": "theme",
+    "themes": [
+      "ramen"
+    ],
+    "tags": [],
+    "featured": false,
+    "score": 0.0,
+    "summary_zh": "",
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "多治見",
+          "kana": "たじみ",
+          "romaji": "Tajimi",
+          "en": "Tajimi"
+        },
+        "distance_m": 1070
+      }
+    ],
+    "images": [],
+    "external_ids": {
+      "osm": "way/1251112280"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/way/1251112280",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
+    "id": "osm-way-1253122255",
+    "name": {
+      "ja": "味の龍王",
+      "zh_tw": "味の龍王"
+    },
+    "location": {
+      "lat": 35.341781,
+      "lng": 137.128907
+    },
+    "prefecture": "gifu",
+    "kind": "theme",
+    "themes": [
+      "ramen"
+    ],
+    "tags": [],
+    "featured": false,
+    "score": 0.0,
+    "summary_zh": "",
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "多治見",
+          "kana": "たじみ",
+          "romaji": "Tajimi",
+          "en": "Tajimi"
+        },
+        "distance_m": 1040
+      }
+    ],
+    "images": [],
+    "external_ids": {
+      "osm": "way/1253122255"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/way/1253122255",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
+    "id": "osm-way-1255917581",
+    "name": {
+      "ja": "ゑびす",
+      "zh_tw": "ゑびす"
+    },
+    "location": {
+      "lat": 35.343603,
+      "lng": 137.107576
+    },
+    "prefecture": "gifu",
+    "kind": "theme",
+    "themes": [
+      "ramen"
+    ],
+    "tags": [],
+    "featured": false,
+    "score": 0.0,
+    "summary_zh": "",
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "小泉",
+          "en": "Koizumi"
+        },
+        "distance_m": 890
+      }
+    ],
+    "images": [],
+    "external_ids": {
+      "osm": "way/1255917581"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/way/1255917581",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
+    "id": "osm-way-1356181484",
+    "name": {
+      "ja": "つけ麺本丸",
+      "zh_tw": "つけ麺本丸"
+    },
+    "location": {
+      "lat": 35.368269,
+      "lng": 136.740596
+    },
+    "prefecture": "gifu",
+    "kind": "theme",
+    "themes": [
+      "ramen"
+    ],
+    "tags": [],
+    "featured": false,
+    "score": 0.0,
+    "summary_zh": "",
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "柳津",
+          "en": "Yanaizu"
+        },
+        "distance_m": 360
+      }
+    ],
+    "images": [],
+    "external_ids": {
+      "osm": "way/1356181484"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/way/1356181484",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
+    "id": "osm-way-1461280485",
+    "name": {
+      "ja": "麵屋 もり田 可児本店",
+      "zh_tw": "麵屋 もり田 可児本店"
+    },
+    "location": {
+      "lat": 35.429273,
+      "lng": 137.062261
+    },
+    "prefecture": "gifu",
+    "kind": "theme",
+    "themes": [
+      "ramen"
+    ],
+    "tags": [],
+    "featured": false,
+    "score": 0.0,
+    "summary_zh": "",
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "新可児",
+          "kana": "しんかに",
+          "romaji": "Shin-Kani",
+          "en": "Shin-Kani"
+        },
+        "distance_m": 920
+      },
+      {
+        "name": {
+          "ja": "可児",
+          "en": "Kani"
+        },
+        "distance_m": 970
+      }
+    ],
+    "images": [],
+    "external_ids": {
+      "osm": "way/1461280485"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/way/1461280485",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
+    "id": "osm-way-1461280491",
+    "name": {
+      "ja": "豚骨うま屋ラーメン 可児店",
+      "zh_tw": "豚骨うま屋ラーメン 可児店"
+    },
+    "location": {
+      "lat": 35.435296,
+      "lng": 137.064062
+    },
+    "prefecture": "gifu",
+    "kind": "theme",
+    "themes": [
+      "ramen"
+    ],
+    "tags": [],
+    "featured": false,
+    "score": 0.0,
+    "summary_zh": "",
+    "images": [],
+    "external_ids": {
+      "osm": "way/1461280491"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/way/1461280491",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
+    "id": "osm-way-1463919388",
+    "name": {
+      "ja": "岐阜タンメン",
+      "zh_tw": "岐阜タンメン"
+    },
+    "location": {
+      "lat": 35.425503,
+      "lng": 137.065299
+    },
+    "prefecture": "gifu",
+    "kind": "theme",
+    "themes": [
+      "ramen"
+    ],
+    "tags": [],
+    "featured": false,
+    "score": 0.0,
+    "summary_zh": "",
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "新可児",
+          "kana": "しんかに",
+          "romaji": "Shin-Kani",
+          "en": "Shin-Kani"
+        },
+        "distance_m": 920
+      },
+      {
+        "name": {
+          "ja": "可児",
+          "en": "Kani"
+        },
+        "distance_m": 960
+      }
+    ],
+    "images": [],
+    "external_ids": {
+      "osm": "way/1463919388"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/way/1463919388",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
+    "id": "osm-way-1546973015",
+    "name": {
+      "ja": "家系ラーメンタカハシ",
+      "zh_tw": "家系ラーメンタカハシ"
+    },
+    "location": {
+      "lat": 35.368435,
+      "lng": 137.200702
+    },
+    "prefecture": "gifu",
+    "kind": "theme",
+    "themes": [
+      "ramen"
+    ],
+    "tags": [],
+    "featured": false,
+    "score": 0.0,
+    "summary_zh": "",
+    "images": [],
+    "external_ids": {
+      "osm": "way/1546973015"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/way/1546973015",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
+    "id": "osm-way-235396369",
+    "name": {
+      "ja": "一刻魅堂 可児店",
+      "zh_tw": "一刻魅堂 可児店"
+    },
+    "location": {
+      "lat": 35.414924,
+      "lng": 137.052827
+    },
+    "prefecture": "gifu",
+    "kind": "theme",
+    "themes": [
+      "ramen"
+    ],
+    "tags": [],
+    "featured": false,
+    "score": 0.0,
+    "summary_zh": "",
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "可児",
+          "en": "Kani"
+        },
+        "distance_m": 880
+      },
+      {
+        "name": {
+          "ja": "新可児",
+          "kana": "しんかに",
+          "romaji": "Shin-Kani",
+          "en": "Shin-Kani"
+        },
+        "distance_m": 940
+      }
+    ],
+    "images": [],
+    "external_ids": {
+      "osm": "way/235396369"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/way/235396369",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
+    "id": "osm-way-660441368",
+    "name": {
+      "ja": "笑い茶屋",
+      "zh_tw": "笑い茶屋"
+    },
+    "location": {
+      "lat": 35.262509,
+      "lng": 136.645773
+    },
+    "prefecture": "gifu",
+    "kind": "theme",
+    "themes": [
+      "tea"
+    ],
+    "tags": [],
+    "featured": false,
+    "score": 0.0,
+    "summary_zh": "",
+    "images": [],
+    "external_ids": {
+      "osm": "way/660441368"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/way/660441368",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
+    "id": "osm-way-661615296",
+    "name": {
+      "ja": "味や",
+      "zh_tw": "味や"
+    },
+    "location": {
+      "lat": 35.458014,
+      "lng": 136.774797
+    },
+    "prefecture": "gifu",
+    "kind": "theme",
+    "themes": [
+      "ramen"
+    ],
+    "tags": [],
+    "featured": false,
+    "score": 0.0,
+    "summary_zh": "",
+    "images": [],
+    "external_ids": {
+      "osm": "way/661615296"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/way/661615296",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
+    "id": "osm-way-676209469",
+    "name": {
+      "ja": "天然温泉；三峰",
+      "zh_tw": "天然温泉；三峰"
+    },
+    "location": {
+      "lat": 35.388818,
+      "lng": 137.080542
+    },
+    "prefecture": "gifu",
+    "kind": "theme",
+    "themes": [
+      "onsen"
+    ],
+    "tags": [],
+    "featured": false,
+    "score": 0.0,
+    "summary_zh": "",
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "姫",
+          "en": "Hime"
+        },
+        "distance_m": 1070
+      }
+    ],
+    "images": [],
+    "external_ids": {
+      "osm": "way/676209469"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/way/676209469",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
+    "id": "osm-way-686810208",
+    "name": {
+      "ja": "白川園本舗 七宗御殿",
+      "zh_tw": "白川園本舗 七宗御殿"
+    },
+    "location": {
+      "lat": 35.532458,
+      "lng": 137.114908
+    },
+    "prefecture": "gifu",
+    "kind": "theme",
+    "themes": [
+      "tea"
+    ],
+    "tags": [],
+    "featured": false,
+    "score": 0.0,
+    "summary_zh": "",
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "上麻生",
+          "kana": "かみあそう",
+          "romaji": "Kamiasō",
+          "en": "Kamiaso"
+        },
+        "distance_m": 1050
+      }
+    ],
+    "images": [],
+    "external_ids": {
+      "osm": "way/686810208"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/way/686810208",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
+    "id": "osm-way-787929465",
+    "name": {
+      "ja": "さか江家食堂",
+      "zh_tw": "さか江家食堂",
+      "en": "Sakaeya Shokudo"
+    },
+    "location": {
+      "lat": 36.236386,
+      "lng": 137.188862
+    },
+    "prefecture": "gifu",
+    "kind": "theme",
+    "themes": [
+      "ramen"
+    ],
+    "tags": [],
+    "featured": false,
+    "score": 2.0,
+    "summary_zh": "",
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "飛驒古川",
+          "kana": "ひだふるかわ",
+          "romaji": "Hida-Furukawa",
+          "en": "Hida-Furukawa"
+        },
+        "distance_m": 80
+      }
+    ],
+    "images": [],
+    "external_ids": {
+      "osm": "way/787929465"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/way/787929465",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
     "id": "wd-Q1002193",
     "name": {
       "ja": "白川郷",
@@ -3660,7 +6609,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -3708,7 +6659,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -3756,7 +6709,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -3804,7 +6759,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -3861,7 +6818,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社"
     ],
@@ -3961,7 +6920,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -4190,7 +7151,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -4409,7 +7372,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -4621,7 +7586,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -4752,7 +7719,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -4855,7 +7824,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -5043,7 +8014,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -5141,7 +8114,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -5280,7 +8255,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社"
     ],
@@ -5434,7 +8411,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -5483,7 +8462,9 @@
     "prefecture": "gifu",
     "city": "富加町",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社"
     ],
@@ -5528,7 +8509,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社"
     ],
@@ -5573,7 +8556,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -5632,7 +8617,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社"
     ],
@@ -5737,7 +8724,9 @@
     "prefecture": "gifu",
     "city": "海津市",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社"
     ],
@@ -5782,7 +8771,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -6397,7 +9388,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社"
     ],
@@ -6510,7 +9503,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社"
     ],
@@ -6735,7 +9730,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院",
       "國寶"
@@ -6776,7 +9773,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -6933,7 +9932,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社"
     ],
@@ -7496,7 +10497,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -7613,7 +10616,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -7677,7 +10682,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社"
     ],
@@ -7874,7 +10881,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社"
     ],
@@ -7975,7 +10984,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社"
     ],
@@ -8192,7 +11203,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社"
     ],
@@ -8258,7 +11271,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社"
     ],
@@ -8311,7 +11326,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -8372,7 +11389,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -8507,7 +11526,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -8571,7 +11592,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社"
     ],
@@ -8630,7 +11653,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社"
     ],
@@ -8730,7 +11755,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -8868,7 +11895,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社"
     ],
@@ -8913,7 +11942,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -9071,7 +12102,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社"
     ],
@@ -9249,7 +12282,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社"
     ],
@@ -9294,7 +12329,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社"
     ],
@@ -9382,7 +12419,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社"
     ],
@@ -9436,7 +12475,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -9502,7 +12543,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -9547,7 +12590,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -9595,7 +12640,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社"
     ],
@@ -9742,7 +12789,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -9790,7 +12839,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社"
     ],
@@ -9835,7 +12886,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社"
     ],
@@ -9953,7 +13006,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院",
       "史跡"
@@ -10208,7 +13263,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社"
     ],
@@ -10256,7 +13313,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社"
     ],
@@ -10509,7 +13568,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -10709,7 +13770,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社"
     ],
@@ -10765,7 +13828,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -10810,7 +13875,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社"
     ],
@@ -10872,7 +13939,9 @@
     "prefecture": "gifu",
     "city": "郡上市",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -11143,7 +14212,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -11188,7 +14259,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院",
       "重要文化財",
@@ -11561,7 +14634,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -11660,7 +14735,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -11750,7 +14827,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -11805,7 +14884,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -11850,7 +14931,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -11907,7 +14990,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社"
     ],
@@ -11952,7 +15037,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社"
     ],
@@ -12006,7 +15093,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社"
     ],
@@ -12051,7 +15140,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社"
     ],
@@ -12194,7 +15285,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -12238,7 +15331,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社"
     ],
@@ -12282,7 +15377,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -12320,7 +15417,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -12384,7 +15483,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -12433,7 +15534,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社"
     ],
@@ -12490,7 +15593,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社"
     ],
@@ -12531,7 +15636,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社"
     ],
@@ -12670,7 +15777,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -12714,7 +15823,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -12758,7 +15869,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -12802,7 +15915,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -12846,7 +15961,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -12894,7 +16011,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -12949,7 +16068,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -13002,7 +16123,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -13378,7 +16501,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -13482,7 +16607,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社"
     ],
@@ -13526,7 +16653,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -13567,7 +16696,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -13630,7 +16761,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -13675,7 +16808,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -13740,7 +16875,9 @@
     "prefecture": "gifu",
     "city": "大垣市",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -13804,7 +16941,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -13864,7 +17003,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -13957,7 +17098,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -14013,7 +17156,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -14072,7 +17217,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -14132,7 +17279,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -14200,7 +17349,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -14410,7 +17561,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院",
       "國寶"
@@ -14549,7 +17702,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -14606,7 +17761,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -14662,7 +17819,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -14718,7 +17877,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -14774,7 +17935,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -14829,7 +17992,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -14894,7 +18059,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -14954,7 +18121,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -15002,7 +18171,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -15047,7 +18218,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -15092,7 +18265,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -15155,7 +18330,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社"
     ],
@@ -15211,7 +18388,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社"
     ],
@@ -15276,7 +18455,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -15321,7 +18502,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社"
     ],
@@ -15366,7 +18549,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -15414,7 +18599,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社"
     ],
@@ -15458,7 +18645,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -15503,7 +18692,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -15551,7 +18742,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -15596,7 +18789,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -15641,7 +18836,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -15696,7 +18893,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -15751,7 +18950,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -15806,7 +19007,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -16539,7 +19742,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -16583,7 +19788,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -16627,7 +19834,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -16689,7 +19898,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -17123,7 +20334,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -17177,7 +20390,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -17221,7 +20436,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -17284,7 +20501,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -17441,7 +20660,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -17495,7 +20716,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -17548,7 +20771,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -17725,7 +20950,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -17782,7 +21009,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -17835,7 +21064,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -17922,7 +21153,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -17966,7 +21199,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -18032,7 +21267,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -18085,7 +21322,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -18129,7 +21368,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -18173,7 +21414,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -18318,7 +21561,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社"
     ],
@@ -18366,7 +21611,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社"
     ],
@@ -18425,7 +21672,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社",
       "重要文化財"
@@ -18689,7 +21938,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "神社"
     ],
@@ -18733,7 +21984,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -18777,7 +22030,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -18821,7 +22076,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -18869,7 +22126,9 @@
     },
     "prefecture": "gifu",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],
@@ -18927,7 +22186,9 @@
     "prefecture": "gifu",
     "city": "恵那市",
     "kind": "major",
-    "themes": [],
+    "themes": [
+      "goshuin"
+    ],
     "tags": [
       "寺院"
     ],

@@ -88,7 +88,13 @@ def seed_themes(pref: str) -> str:
             s["themes"].append("goshuin")
 
     log(f"[{pref}] OSM 主題小店…")
-    found = osm.themed(geo.iso_code(pref))
+    raw = osm.themed(geo.iso_code(pref), geo.bbox(pref))
+    found: dict[str, list[OsmElement]] = {}
+    for key, els in raw.items():
+        if key.startswith("bbox:"):
+            found[key[5:]] = [e for e in els if geo.contains_fine(pref, e.lat, e.lng)]
+        else:
+            found[key] = els
     stations = station_index(pref)
     new: dict[str, dict[str, Any]] = {}
     counts: dict[str, int] = {}
