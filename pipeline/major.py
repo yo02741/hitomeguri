@@ -70,12 +70,19 @@ class Draft:
 
     @property
     def osm_tags(self) -> dict[str, str]:
-        # 同一個 wikidata 可能掛在多個 OSM 物件（例：醍醐寺與下醍醐），名稱相同的優先。
-        target = norm_name(self.ent.labels.get("ja", "")) if self.ent else ""
-        els = sorted(
-            self.osm_els,
-            key=lambda el: norm_name(el.tags.get("name:ja") or el.tags.get("name", "")) != target,
-        )
+        """只採用名稱與主體相符的 OSM 物件的 tag。
+
+        同一個 wikidata 常掛在寺內的博物館、寶物館等物件上（例：東大寺ミュージアム），
+        混進來會讓分類、假名、羅馬拼音變成別的設施。
+        """
+        els = self.osm_els
+        if self.ent:
+            target = norm_name(self.ent.labels.get("ja", ""))
+            els = [
+                el
+                for el in els
+                if norm_name(el.tags.get("name:ja") or el.tags.get("name", "")) == target
+            ]
         merged: dict[str, str] = {}
         for el in els:
             for k, v in el.tags.items():
@@ -314,7 +321,6 @@ def drop_subparts(drafts: dict[str, Draft]) -> int:
             if cname != pname and cname.startswith(pname):
                 dist = geo.haversine_m(parent.lat, parent.lng, child.lat, child.lng)
                 if dist <= config.SUBPART_DISTANCE_M:
-                    parent.osm_els.extend(child.osm_els)
                     del drafts[child.key]
                     removed += 1
     return removed

@@ -63,6 +63,9 @@ def fake_sources(monkeypatch, tmp_path):
         OsmElement("node/11", 35.0036, 135.7780, {"name": "八坂の塔", "tourism": "attraction",
                    "name:ja-Hira": "やさかのとう", "name:en": "Yasaka Pagoda"}),
         OsmElement("node/12", 34.99495, 135.78505, {"name": "清水寺", "tourism": "attraction"}),
+        # 寺內博物館也掛了伏見稲荷大社的 wikidata：不能影響主體的分類與假名
+        OsmElement("node/14", 34.9675, 135.7730, {"name": "稲荷大社宝物館", "wikidata": "Q1",
+                   "tourism": "museum", "name:ja-Hira": "ほうもつかん"}),
     ]  # fmt: skip
     stations = [
         OsmElement("node/20", 34.9677, 135.7704, {"name": "稲荷", "name:ja-Hira": "いなり",
