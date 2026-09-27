@@ -42,3 +42,10 @@ uv venv && uv pip install -e ".[dev]"
 ```
 
 `npm run dev` 時前端預設連本機 emulator；正式 build 一律連真實 Firebase 專案。
+
+## 資料出處
+
+- 景點：Wikidata（CC0）、OpenStreetMap contributors（ODbL）
+- 照片：Wikimedia Commons，各張依原作者與授權標示於景點卡片
+- 縣界：出典：地球地図日本（国土地理院），經 dataofjapan/land 轉為 GeoJSON 後簡化
+- 底圖：OpenFreeMap（OpenStreetMap）

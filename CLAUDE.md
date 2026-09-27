@@ -30,8 +30,15 @@ cd web && npm run typecheck && npm run build
 npx firebase emulators:start --project demo-hitomeguri --only auth,firestore
 uv venv && uv pip install -e ".[dev]" # pipeline 環境
 .venv/bin/python -m pipeline.cli build-region-css
+.venv/bin/python -m pipeline.cli build-bundles          # data/spots → web/public/bundles（gitignore）
 .venv/bin/ruff check pipeline && .venv/bin/pytest -q
 ```
+
+## 資料 pipeline 在 GitHub Actions 上跑
+Claude Code 的雲端沙箱連不到 Wikidata、OSM、Wikimedia，也沒有 Claude API key，所以採集與補全放在 Actions：
+- `seed-region.yml`（手動）：輸入縣 slug，各縣平行採集，結果推到 `pipeline/seed-<run>` 分支。
+- `enrich.yml`（手動，需 `ANTHROPIC_API_KEY` secret）：Batch API 補簡介與缺漏假名，預設先 20 筆，結果推到 `pipeline/enrich-<run>`。
+- 產出分支檢查報告（commit 訊息與 Actions 摘要）後再合併進工作分支。
 
 ## 結構速覽
 - `data/`：景點主資料（source of truth）。`regions.json` 47 縣名稱、地方、地區色；`seed/` 攻略候選清單。
@@ -41,4 +48,4 @@ uv venv && uv pip install -e ".[dev]" # pipeline 環境
 
 ## 目前進度
 - Phase 0 完成：骨架、Emulator、Google 登入、空白地圖、GitHub Pages 部署。
-- 下一步 Phase 1：名古屋＋關西大點端到端（見 PLAN.md §9）。
+- Phase 1 進行中：大點 pipeline、LLM 補全、地圖／地區頁／景點詳情。
