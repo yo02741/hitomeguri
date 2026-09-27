@@ -14,6 +14,12 @@
 - 七縣（kyoto aichi osaka hyogo nara gifu shiga）已採集；S 級種子都在精選。
 - 未完成：簡介與缺漏假名需要 enrich（等使用者設定 ANTHROPIC_API_KEY）。
 
-## 下一步
-1. Phase 2 主題層（PLAN.md §5.2、§9）：OSM 撈茶、酒、拉麵、溫泉 → `kind: "theme"` 景點；寶可夢中心；寺社御朱印欄位；前端 LayerToggle（主題開關、URL `?themes=`）、主題符號 marker（DESIGN.md §6、主題色 token `t-*`）。
-2. Phase 3 地區特色＋台灣直飛（PLAN.md §5.2b、§5.3）：`data/specialties/`、`data/flights/taiwan_direct.json`（種子 flights 為 verified:false 候選，驗證需 agent + web search，沒有 API key 前只能先放候選並在 UI 標示未驗證或不顯示）；地區面板顯示。
+## Phase 2、3 狀態（程式已完成，資料待跑）
+- Phase 2：`pipeline/themes.py`（seed-themes）、前端主題開關／主題色標記／`?themes=`。
+- Phase 3：`pipeline/specialties.py`（seed-specialties，含航線候選）、`pipeline/verify_flights.py`（需 API key）、前端地區特色與海報區航線（只顯示 verified）。
+- 資料順序：seed-region（run 6 進行中）→ 合併 → seed-themes（command=seed-themes）→ 合併 → seed-specialties → 合併。
+  每次合併：`git checkout origin/pipeline/<command>-N -- data/`，commit、push（Pages 自動部署）。
+- 需要使用者：repo secret `ANTHROPIC_API_KEY` → 跑 enrich.yml（先 limit 20）與 enrich.yml task=verify-flights。
+
+## 之後
+- Phase 4 期間限定、Phase 5 個人化（收藏、去過、匯出）等，見 PLAN.md §9；使用者只授權到 Phase 3。
