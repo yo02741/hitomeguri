@@ -51,7 +51,10 @@ def seed_specialties(prefs: list[str]) -> str:
     images = commons.image_info([e.image for _, e in matched if e.image])
     for seed, ent in matched:
         labels = ent.labels
-        kana = next((normalize_kana(k) for k in ent.kana_all if is_kana(k)), None)
+        ja = labels.get("ja", seed["name_ja"])
+        # 名稱本身就是假名時直接用（Wikidata 的讀音偶有錯誤，例：ひつまぶし→ひまつぶし）
+        kana = normalize_kana(ja) if is_kana(ja) else None
+        kana = kana or next((normalize_kana(k) for k in ent.kana_all if is_kana(k)), None)
         zh = strip_disambiguation(
             labels.get("zh-tw") or labels.get("zh-hant") or labels.get("zh") or seed["name_zh"]
         )

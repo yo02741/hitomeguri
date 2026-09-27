@@ -491,7 +491,9 @@ def build_names(d: Draft) -> tuple[LocalizedName, str | None]:
     en = labels.get("en") or t.get("name:en")
     kana, kana_source = None, None
     wd_kana = next((k for k in (d.ent.kana_all if d.ent else []) if is_kana(k)), None)
-    if wd_kana:
+    if is_kana(ja):  # 名稱本身就是假名
+        kana, kana_source = normalize_kana(ja), "wikidata" if d.ent else "osm"
+    elif wd_kana:
         kana, kana_source = normalize_kana(wd_kana), "wikidata"
     else:
         for key in ("name:ja-Hira", "name:ja_kana", "name:ja-Kana"):
