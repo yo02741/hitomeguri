@@ -11,11 +11,11 @@ on:
         required: true
         default: "kyoto"
       command:
-        description: "seed-region（大點）或 seed-themes（主題小店，需先有大點）"
+        description: "seed-region（大點）、seed-themes（主題小店，需先有大點）、seed-specialties（地區特色＋航線候選）"
         required: true
         default: seed-region
         type: choice
-        options: [seed-region, seed-themes]
+        options: [seed-region, seed-themes, seed-specialties]
 
 permissions:
   contents: write
@@ -57,7 +57,10 @@ jobs:
           name: seed-${{ matrix.pref }}
           path: |
             data/spots/${{ matrix.pref }}.json
+            data/specialties/${{ matrix.pref }}.json
+            data/flights/taiwan_direct.json
             report-${{ matrix.pref }}.md
+          if-no-files-found: ignore
 
   collect:
     needs: seed
@@ -74,7 +77,7 @@ jobs:
           : > /tmp/report.md
           for dir in /tmp/seed/seed-*; do
             [ -d "$dir" ] || continue
-            find "$dir" -name '*.json' -exec cp {} data/spots/ \;
+            if [ -d "$dir/data" ]; then cp -r "$dir/data/." data/; fi
             cat "$dir"/report-*.md >> /tmp/report.md
           done
           cat /tmp/report.md >> "$GITHUB_STEP_SUMMARY"
@@ -82,7 +85,7 @@ jobs:
           git config user.name "hitomeguri-pipeline"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git checkout -b "$branch"
-          git add data/spots
+          git add data/spots data/specialties data/flights 2>/dev/null || git add data
           if git diff --cached --quiet; then
             echo "沒有變更" >> "$GITHUB_STEP_SUMMARY"
             exit 0

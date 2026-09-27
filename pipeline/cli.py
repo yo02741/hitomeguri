@@ -47,6 +47,20 @@ def cmd_seed_themes(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_seed_specialties(args: argparse.Namespace) -> int:
+    from pipeline.specialties import flight_candidates, seed_specialties
+
+    _emit(seed_specialties(args.prefectures) + "\n" + flight_candidates(), args.report)
+    return 0
+
+
+def cmd_verify_flights(args: argparse.Namespace) -> int:
+    from pipeline.verify_flights import verify_flights
+
+    _emit(verify_flights(), args.report)
+    return 0
+
+
 def cmd_build_bundles(_: argparse.Namespace) -> int:
     from pipeline.build_bundles import build
 
@@ -97,6 +111,15 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("prefectures", nargs="+")
     p.add_argument("--report")
     p.set_defaults(func=cmd_seed_themes)
+
+    p = sub.add_parser("seed-specialties", help="地區特色（種子 × Wikidata）與直飛航線候選")
+    p.add_argument("prefectures", nargs="+")
+    p.add_argument("--report")
+    p.set_defaults(func=cmd_seed_specialties)
+
+    p = sub.add_parser("verify-flights", help="以 Claude + 網頁搜尋驗證台灣直飛航線")
+    p.add_argument("--report")
+    p.set_defaults(func=cmd_verify_flights)
 
     p = sub.add_parser("enrich", help="LLM 補全（Batch API）：簡介、假名、季節、停留時間")
     p.add_argument("action", choices=["submit", "poll", "run"])

@@ -1,0 +1,121 @@
+[
+  {
+    "origin": "KHH",
+    "dest": "KIX",
+    "airlines": [
+      {
+        "name_zh": "長榮"
+      },
+      {
+        "name_zh": "華航"
+      },
+      {
+        "name_zh": "虎航"
+      },
+      {
+        "name_zh": "樂桃"
+      }
+    ],
+    "verified": false,
+    "checked_at": "2026-09-27",
+    "sources": []
+  },
+  {
+    "origin": "TPE",
+    "dest": "KIX",
+    "airlines": [
+      {
+        "name_zh": "長榮"
+      },
+      {
+        "name_zh": "華航"
+      },
+      {
+        "name_zh": "星宇"
+      },
+      {
+        "name_zh": "虎航"
+      },
+      {
+        "name_zh": "樂桃"
+      },
+      {
+        "name_zh": "捷星"
+      }
+    ],
+    "verified": false,
+    "checked_at": "2026-09-27",
+    "sources": []
+  },
+  {
+    "origin": "KHH",
+    "dest": "NGO",
+    "airlines": [
+      {
+        "name_zh": "台灣虎航"
+      }
+    ],
+    "verified": false,
+    "checked_at": "2026-09-27",
+    "sources": []
+  },
+  {
+    "origin": "RMQ",
+    "dest": "NGO",
+    "airlines": [
+      {
+        "name_zh": "台灣虎航"
+      }
+    ],
+    "verified": false,
+    "checked_at": "2026-09-27",
+    "sources": []
+  },
+  {
+    "origin": "TPE",
+    "dest": "NGO",
+    "airlines": [
+      {
+        "name_zh": "長榮"
+      },
+      {
+        "name_zh": "華航"
+      },
+      {
+        "name_zh": "星宇"
+      },
+      {
+        "name_zh": "日航"
+      },
+      {
+        "name_zh": "國泰"
+      },
+      {
+        "name_zh": "虎航"
+      }
+    ],
+    "verified": false,
+    "checked_at": "2026-09-27",
+    "sources": []
+  },
+  {
+    "origin": "RMQ",
+    "dest": "UKB",
+    "airlines": [
+      {
+        "name_zh": "星宇"
+      }
+    ],
+    "verified": false,
+    "checked_at": "2026-09-27",
+    "sources": []
+  },
+  {
+    "origin": "TPE",
+    "dest": "UKB",
+    "airlines": [],
+    "verified": false,
+    "checked_at": "2026-09-27",
+    "sources": []
+  }
+]

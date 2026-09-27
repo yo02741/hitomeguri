@@ -116,7 +116,10 @@ class Specialty(StrictModel):
     category: str
     season_months: list[int] | None = None
     summary_zh: str
-    source_type: Literal["gi", "regional_trademark", "kyodo_ryori", "llm_research"]
+    # wikidata：攻略種子經 Wikidata 對齊（官方 GI／商標／郷土料理來源接上前的暫時來源）
+    source_type: Literal["gi", "regional_trademark", "kyodo_ryori", "llm_research", "wikidata"]
+    kana_source: Literal["wikidata", "llm"] | None = None
+    images: list[Image] = Field(default_factory=list)
     sources: list[Source] = Field(default_factory=list)
     related_spot_ids: list[str] | None = None
     updated_at: str

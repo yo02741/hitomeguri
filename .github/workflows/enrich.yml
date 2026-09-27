@@ -15,6 +15,12 @@ on:
         description: "每縣最多送出幾筆；0 表示全部"
         required: true
         default: "20"
+      task:
+        description: "enrich（簡介與假名）或 verify-flights（直飛航線驗證）"
+        required: true
+        default: enrich
+        type: choice
+        options: [enrich, verify-flights]
 
 permissions:
   contents: write
@@ -49,20 +55,24 @@ jobs:
           limit="${{ inputs.limit }}"
           args=""
           if [ "$limit" != "0" ]; then args="--limit $limit"; fi
-          .venv/bin/python -m pipeline.cli enrich run ${{ inputs.prefectures }} $args --report /tmp/report.md
+          if [ "${{ inputs.task }}" = "verify-flights" ]; then
+            .venv/bin/python -m pipeline.cli verify-flights --report /tmp/report.md
+          else
+            .venv/bin/python -m pipeline.cli enrich run ${{ inputs.prefectures }} $args --report /tmp/report.md
+          fi
       - name: 推到審核分支
         run: |
-          branch="pipeline/enrich-${{ github.run_number }}"
+          branch="pipeline/${{ inputs.task }}-${{ github.run_number }}"
           git config user.name "hitomeguri-pipeline"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git checkout -b "$branch"
-          git add data/spots data/_state
+          git add data
           if git diff --cached --quiet; then
             echo "沒有變更" >> "$GITHUB_STEP_SUMMARY"
             exit 0
           fi
           git commit -q -F - <<MSG
-          enrich: ${{ inputs.prefectures }}
+          ${{ inputs.task }}: ${{ inputs.prefectures }}
 
           $(cat /tmp/report.md)
           MSG
