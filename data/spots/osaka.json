@@ -105,58 +105,6 @@
     "updated_at": "2026-09-27"
   },
   {
-    "id": "wd-Q102178360",
-    "name": {
-      "ja": "大阪城",
-      "zh_tw": "大阪城",
-      "en": "Ōsaka-jō"
-    },
-    "location": {
-      "lat": 34.686566,
-      "lng": 135.527475
-    },
-    "prefecture": "osaka",
-    "kind": "major",
-    "themes": [],
-    "tags": [
-      "城",
-      "guide-S"
-    ],
-    "featured": true,
-    "score": 30.0,
-    "summary_zh": "",
-    "nearest_stations": [
-      {
-        "name": {
-          "ja": "大阪城公園",
-          "romaji": "Ōsakajōkōen",
-          "en": "Ōsakajōkōen"
-        },
-        "distance_m": 650
-      },
-      {
-        "name": {
-          "ja": "大阪ビジネスパーク",
-          "romaji": "Ōsaka bizinesu pāku",
-          "en": "Osaka Business Park"
-        },
-        "distance_m": 680
-      }
-    ],
-    "images": [],
-    "external_ids": {
-      "wikidata": "Q102178360"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q102178360",
-        "fetched_at": "2026-09-27"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-27"
-  },
-  {
     "id": "wd-Q10272491",
     "name": {
       "ja": "川口基督教会",
@@ -2455,72 +2403,6 @@
     "updated_at": "2026-09-27"
   },
   {
-    "id": "wd-Q11374245",
-    "name": {
-      "ja": "京善寺",
-      "kana": "きょうぜんじ",
-      "romaji": "Kyozenji",
-      "zh_tw": "京善寺",
-      "en": "Kyōzen-ji Temple"
-    },
-    "kana_source": "wikidata",
-    "location": {
-      "lat": 34.638577,
-      "lng": 135.530716
-    },
-    "prefecture": "osaka",
-    "city": "大阪市",
-    "kind": "major",
-    "themes": [],
-    "tags": [
-      "寺院"
-    ],
-    "featured": false,
-    "score": 38.22,
-    "summary_zh": "",
-    "nearest_stations": [
-      {
-        "name": {
-          "ja": "東部市場前",
-          "en": "Tōbushijō-Mae"
-        },
-        "distance_m": 620
-      },
-      {
-        "name": {
-          "ja": "美章園",
-          "romaji": "Bishōen",
-          "en": "Bishōen"
-        },
-        "distance_m": 640
-      }
-    ],
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a1/Ky%C5%8Dzen-ji%2C_Main_Sanctuary_001.jpg/960px-Ky%C5%8Dzen-ji%2C_Main_Sanctuary_001.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Naokijp",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Ky%C5%8Dzen-ji,_Main_Sanctuary_001.jpg"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q11374245",
-      "osm": "node/10593518107"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q11374245",
-        "fetched_at": "2026-09-27"
-      },
-      {
-        "url": "https://www.openstreetmap.org/node/10593518107",
-        "fetched_at": "2026-09-27"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-27"
-  },
-  {
     "id": "wd-Q11376795",
     "name": {
       "ja": "今城塚古墳",
@@ -2886,72 +2768,6 @@
     "sources": [
       {
         "url": "https://www.wikidata.org/wiki/Q11381878",
-        "fetched_at": "2026-09-27"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-27"
-  },
-  {
-    "id": "wd-Q11382761",
-    "name": {
-      "ja": "佐井寺",
-      "kana": "さいでら",
-      "romaji": "Saidera",
-      "zh_tw": "佐井寺",
-      "en": "Sai-dera Temple"
-    },
-    "kana_source": "wikidata",
-    "location": {
-      "lat": 34.783556,
-      "lng": 135.518639
-    },
-    "prefecture": "osaka",
-    "kind": "major",
-    "themes": [],
-    "tags": [
-      "寺院"
-    ],
-    "featured": false,
-    "score": 38.22,
-    "summary_zh": "",
-    "nearest_stations": [
-      {
-        "name": {
-          "ja": "千里山",
-          "romaji": "Senriyama",
-          "en": "Senriyama"
-        },
-        "distance_m": 1300
-      },
-      {
-        "name": {
-          "ja": "南千里",
-          "romaji": "Minami-Senri",
-          "en": "Minami-Senri"
-        },
-        "distance_m": 1350
-      }
-    ],
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2d/Saidera01.jpg/960px-Saidera01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Bittercup",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Saidera01.jpg"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q11382761",
-      "osm": "way/556256508"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q11382761",
-        "fetched_at": "2026-09-27"
-      },
-      {
-        "url": "https://www.openstreetmap.org/way/556256508",
         "fetched_at": "2026-09-27"
       }
     ],
@@ -19018,6 +18834,73 @@
     "updated_at": "2026-09-27"
   },
   {
+    "id": "wd-Q150118",
+    "name": {
+      "ja": "大阪城公園",
+      "kana": "おおさかじょうこうえん",
+      "romaji": "Ōsaka-jō kōen",
+      "zh_tw": "大阪城公園",
+      "en": "Osaka Castle Park"
+    },
+    "kana_source": "osm",
+    "location": {
+      "lat": 34.687378,
+      "lng": 135.525844
+    },
+    "prefecture": "osaka",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "公園",
+      "特別史跡"
+    ],
+    "featured": true,
+    "score": 68.22,
+    "summary_zh": "",
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "大阪ビジネスパーク",
+          "romaji": "Ōsaka bizinesu pāku",
+          "en": "Osaka Business Park"
+        },
+        "distance_m": 650
+      },
+      {
+        "name": {
+          "ja": "大阪城北詰",
+          "romaji": "Ōsakajōkitazume",
+          "en": "Osakajokitazume"
+        },
+        "distance_m": 730
+      }
+    ],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9d/Osaka_Castle_01bs3200.jpg/960px-Osaka_Castle_01bs3200.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "663highland",
+        "license": "CC BY 2.5",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Osaka_Castle_01bs3200.jpg"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q150118",
+      "osm": "way/35457792"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q150118",
+        "fetched_at": "2026-09-27"
+      },
+      {
+        "url": "https://www.openstreetmap.org/way/35457792",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
     "id": "wd-Q15535185",
     "name": {
       "ja": "ミニオン・ハチャメチャ・ライド",
@@ -20517,10 +20400,11 @@
       "城",
       "重要文化財",
       "史跡",
-      "特別史跡"
+      "特別史跡",
+      "guide-S"
     ],
     "featured": true,
-    "score": 95.55,
+    "score": 125.55,
     "summary_zh": "",
     "nearest_stations": [
       {
@@ -24127,6 +24011,72 @@
       },
       {
         "url": "https://www.openstreetmap.org/way/173693696",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
+    "id": "wd-Q96338884",
+    "name": {
+      "ja": "大阪城天守閣",
+      "kana": "おおさかじょうてんしゅかく",
+      "romaji": "Ōsaka-jō tenshukaku",
+      "zh_tw": "大阪城天守閣",
+      "en": "Osaka Castle Museum"
+    },
+    "kana_source": "osm",
+    "location": {
+      "lat": 34.687287,
+      "lng": 135.52587
+    },
+    "prefecture": "osaka",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "博物館"
+    ],
+    "featured": false,
+    "score": 51.33,
+    "summary_zh": "",
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "大阪ビジネスパーク",
+          "romaji": "Ōsaka bizinesu pāku",
+          "en": "Osaka Business Park"
+        },
+        "distance_m": 660
+      },
+      {
+        "name": {
+          "ja": "大阪城北詰",
+          "romaji": "Ōsakajōkitazume",
+          "en": "Osakajokitazume"
+        },
+        "distance_m": 740
+      }
+    ],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ac/Osaka_Castle_Nishinomaru_Garden_April_2005.JPG/960px-Osaka_Castle_Nishinomaru_Garden_April_2005.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "不明",
+        "license": "Public domain",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Osaka_Castle_Nishinomaru_Garden_April_2005.JPG"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q96338884",
+      "osm": "node/13388509601"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q96338884",
+        "fetched_at": "2026-09-27"
+      },
+      {
+        "url": "https://www.openstreetmap.org/node/13388509601",
         "fetched_at": "2026-09-27"
       }
     ],
