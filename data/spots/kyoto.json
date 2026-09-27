@@ -1833,11 +1833,16 @@
       }
     ],
     "external_ids": {
-      "wikidata": "Q11054653"
+      "wikidata": "Q11054653",
+      "osm": "node/5665665228"
     },
     "sources": [
       {
         "url": "https://www.wikidata.org/wiki/Q11054653",
+        "fetched_at": "2026-09-27"
+      },
+      {
+        "url": "https://www.openstreetmap.org/node/5665665228",
         "fetched_at": "2026-09-27"
       }
     ],
@@ -4459,6 +4464,10 @@
       {
         "url": "https://www.openstreetmap.org/way/462950538",
         "fetched_at": "2026-09-27"
+      },
+      {
+        "url": "https://www.openstreetmap.org/node/4317581591",
+        "fetched_at": "2026-09-27"
       }
     ],
     "status": "published",
@@ -4783,9 +4792,12 @@
     "id": "wd-Q11437955",
     "name": {
       "ja": "大田神社",
+      "kana": "おおたじんじゃ",
+      "romaji": "Otajinja",
       "zh_tw": "大田神社",
       "en": "Ōta Shrine"
     },
+    "kana_source": "wikidata",
     "location": {
       "lat": 35.060013,
       "lng": 135.758392
@@ -10369,6 +10381,10 @@
       {
         "url": "https://www.openstreetmap.org/way/42647003",
         "fetched_at": "2026-09-27"
+      },
+      {
+        "url": "https://www.openstreetmap.org/node/7233536016",
+        "fetched_at": "2026-09-27"
       }
     ],
     "status": "published",
@@ -13463,69 +13479,6 @@
     "updated_at": "2026-09-27"
   },
   {
-    "id": "wd-Q1197771",
-    "name": {
-      "ja": "伏見区",
-      "kana": "ふしみく",
-      "romaji": "Fushimi Ku",
-      "zh_tw": "伏見區",
-      "en": "Fushimi-ku"
-    },
-    "kana_source": "wikidata",
-    "location": {
-      "lat": 34.935556,
-      "lng": 135.761389
-    },
-    "prefecture": "kyoto",
-    "kind": "major",
-    "themes": [
-      "sake"
-    ],
-    "tags": [
-      "guide-A"
-    ],
-    "featured": false,
-    "score": 83.06,
-    "summary_zh": "",
-    "nearest_stations": [
-      {
-        "name": {
-          "ja": "伏見桃山",
-          "romaji": "Fushimi-momoyama",
-          "en": "Fushimi-momoyama"
-        },
-        "distance_m": 410
-      },
-      {
-        "name": {
-          "ja": "桃山御陵前",
-          "romaji": "Momoyama Goryō mae",
-          "en": "Momoyamagoryōmae"
-        },
-        "distance_m": 440
-      }
-    ],
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3d/Fushimimomoyamajo_03.jpg/960px-Fushimimomoyamajo_03.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Maechan0360",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Fushimimomoyamajo_03.jpg"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q1197771"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q1197771",
-        "fetched_at": "2026-09-27"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-27"
-  },
-  {
     "id": "wd-Q1201304",
     "name": {
       "ja": "京都タワー",
@@ -13658,6 +13611,10 @@
       },
       {
         "url": "https://www.openstreetmap.org/way/554879249",
+        "fetched_at": "2026-09-27"
+      },
+      {
+        "url": "https://www.openstreetmap.org/node/6126022593",
         "fetched_at": "2026-09-27"
       }
     ],
@@ -14449,6 +14406,10 @@
       },
       {
         "url": "https://www.openstreetmap.org/relation/18344117",
+        "fetched_at": "2026-09-27"
+      },
+      {
+        "url": "https://www.openstreetmap.org/way/196173120",
         "fetched_at": "2026-09-27"
       }
     ],
@@ -20705,6 +20666,60 @@
     "updated_at": "2026-09-27"
   },
   {
+    "id": "wd-Q56523409",
+    "name": {
+      "ja": "金刀比羅神社",
+      "zh_tw": "金刀比羅神社",
+      "en": "Kotohira Shrine"
+    },
+    "location": {
+      "lat": 35.620944,
+      "lng": 135.061167
+    },
+    "prefecture": "kyoto",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "神社"
+    ],
+    "featured": false,
+    "score": 41.36,
+    "summary_zh": "",
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "峰山",
+          "en": "Mineyama"
+        },
+        "distance_m": 1130
+      }
+    ],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/87/Mineyama_Kotohira_jinja_ac_%281%29.jpg/960px-Mineyama_Kotohira_jinja_ac_%281%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Asturio Cantabrio",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Mineyama_Kotohira_jinja_ac_(1).jpg"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q56523409",
+      "osm": "way/738871502"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q56523409",
+        "fetched_at": "2026-09-27"
+      },
+      {
+        "url": "https://www.openstreetmap.org/way/738871502",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
     "id": "wd-Q5677900",
     "name": {
       "ja": "宇治市源氏物語ミュージアム",
@@ -22774,7 +22789,7 @@
       "goshuin"
     ],
     "tags": [
-      "神社",
+      "展望",
       "重要文化財",
       "guide-S"
     ],
@@ -22809,11 +22824,16 @@
       }
     ],
     "external_ids": {
-      "wikidata": "Q714828"
+      "wikidata": "Q714828",
+      "osm": "node/6865347485"
     },
     "sources": [
       {
         "url": "https://www.wikidata.org/wiki/Q714828",
+        "fetched_at": "2026-09-27"
+      },
+      {
+        "url": "https://www.openstreetmap.org/node/6865347485",
         "fetched_at": "2026-09-27"
       }
     ],
@@ -23997,11 +24017,16 @@
       }
     ],
     "external_ids": {
-      "wikidata": "Q926312"
+      "wikidata": "Q926312",
+      "osm": "node/4198049508"
     },
     "sources": [
       {
         "url": "https://www.wikidata.org/wiki/Q926312",
+        "fetched_at": "2026-09-27"
+      },
+      {
+        "url": "https://www.openstreetmap.org/node/4198049508",
         "fetched_at": "2026-09-27"
       }
     ],

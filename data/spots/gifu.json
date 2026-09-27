@@ -3256,42 +3256,32 @@
     "updated_at": "2026-09-27"
   },
   {
-    "id": "osm-node-4341705794",
+    "id": "osm-node-2096080571",
     "name": {
-      "ja": "古い町並み",
-      "zh_tw": "古い町並み"
+      "ja": "伊木城址",
+      "zh_tw": "伊木城址",
+      "en": "Igi castle site"
     },
     "location": {
-      "lat": 36.140875,
-      "lng": 137.259662
+      "lat": 35.386144,
+      "lng": 136.921477
     },
     "prefecture": "gifu",
     "kind": "major",
     "themes": [],
     "tags": [
-      "guide-A"
+      "遺跡"
     ],
     "featured": false,
-    "score": 12.0,
+    "score": 0.0,
     "summary_zh": "",
-    "nearest_stations": [
-      {
-        "name": {
-          "ja": "高山",
-          "kana": "たかやま",
-          "romaji": "Takayama",
-          "en": "Takayama"
-        },
-        "distance_m": 750
-      }
-    ],
     "images": [],
     "external_ids": {
-      "osm": "node/4341705794"
+      "osm": "node/2096080571"
     },
     "sources": [
       {
-        "url": "https://www.openstreetmap.org/node/4341705794",
+        "url": "https://www.openstreetmap.org/node/2096080571",
         "fetched_at": "2026-09-27"
       }
     ],

@@ -379,63 +379,6 @@
     "updated_at": "2026-09-27"
   },
   {
-    "id": "wd-Q1055749",
-    "name": {
-      "ja": "古都奈良の文化財",
-      "zh_tw": "古都奈良的文化財",
-      "en": "Historic Monuments of Ancient Nara"
-    },
-    "location": {
-      "lat": 34.67556,
-      "lng": 135.83944
-    },
-    "prefecture": "nara",
-    "kind": "major",
-    "themes": [],
-    "tags": [
-      "世界遺產"
-    ],
-    "featured": true,
-    "score": 89.94,
-    "summary_zh": "",
-    "nearest_stations": [
-      {
-        "name": {
-          "ja": "京終",
-          "en": "Kyōbate"
-        },
-        "distance_m": 1170
-      },
-      {
-        "name": {
-          "ja": "近鉄奈良",
-          "romaji": "Kintetsu Nara",
-          "en": "Kintetsu Nara"
-        },
-        "distance_m": 1380
-      }
-    ],
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1d/Todaiji18s3200.jpg/960px-Todaiji18s3200.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "663highland",
-        "license": "CC BY 2.5",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Todaiji18s3200.jpg"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q1055749"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q1055749",
-        "fetched_at": "2026-09-27"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-27"
-  },
-  {
     "id": "wd-Q105783781",
     "name": {
       "ja": "駒帰廃寺跡",
@@ -11789,6 +11732,65 @@
     "updated_at": "2026-09-27"
   },
   {
+    "id": "wd-Q122658838",
+    "name": {
+      "ja": "奈良町からくりおもちゃ館",
+      "zh_tw": "奈良町からくりおもちゃ館"
+    },
+    "location": {
+      "lat": 34.677285,
+      "lng": 135.828117
+    },
+    "prefecture": "nara",
+    "kind": "major",
+    "themes": [],
+    "tags": [],
+    "featured": false,
+    "score": 1.5,
+    "summary_zh": "",
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "近鉄奈良",
+          "romaji": "Kintetsu Nara",
+          "en": "Kintetsu Nara"
+        },
+        "distance_m": 760
+      },
+      {
+        "name": {
+          "ja": "京終",
+          "en": "Kyōbate"
+        },
+        "distance_m": 820
+      }
+    ],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a0/Naramachi_Karakuri_Omocha-kan_01.jpg/960px-Naramachi_Karakuri_Omocha-kan_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Higa4",
+        "license": "CC0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Naramachi_Karakuri_Omocha-kan_01.jpg"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q122658838",
+      "osm": "way/313024119"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q122658838",
+        "fetched_at": "2026-09-27"
+      },
+      {
+        "url": "https://www.openstreetmap.org/way/313024119",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
     "id": "wd-Q123118224",
     "name": {
       "ja": "中川寺跡",
@@ -20111,7 +20113,7 @@
     "tags": [
       "世界遺產"
     ],
-    "featured": false,
+    "featured": true,
     "score": 79.9,
     "summary_zh": "",
     "images": [

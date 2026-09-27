@@ -14588,9 +14588,12 @@
     "id": "wd-Q11617266",
     "name": {
       "ja": "茨住吉神社",
+      "kana": "いばらすみよしじんじゃ",
+      "romaji": "Ibarasumiyoshijinja",
       "zh_tw": "茨住吉神社",
       "en": "Ibarasumiyoshi Shrine"
     },
+    "kana_source": "wikidata",
     "location": {
       "lat": 34.675306,
       "lng": 135.478
@@ -16695,6 +16698,7 @@
       "lng": 135.529806
     },
     "prefecture": "osaka",
+    "city": "河内長野市",
     "kind": "major",
     "themes": [],
     "tags": [],
@@ -16720,6 +16724,10 @@
       },
       {
         "url": "https://www.openstreetmap.org/node/6685048385",
+        "fetched_at": "2026-09-27"
+      },
+      {
+        "url": "https://www.openstreetmap.org/way/1410913622",
         "fetched_at": "2026-09-27"
       }
     ],

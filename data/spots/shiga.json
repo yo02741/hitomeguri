@@ -824,7 +824,7 @@
           "romaji": "Ritto",
           "en": "Rittō"
         },
-        "distance_m": 1260
+        "distance_m": 1270
       },
       {
         "name": {
@@ -938,7 +938,7 @@
           "ja": "手原",
           "en": "Tehara"
         },
-        "distance_m": 790
+        "distance_m": 800
       }
     ],
     "images": [],
@@ -2024,7 +2024,7 @@
           "ja": "手原",
           "en": "Tehara"
         },
-        "distance_m": 1160
+        "distance_m": 1170
       }
     ],
     "images": [],
@@ -2098,6 +2098,130 @@
     "sources": [
       {
         "url": "https://www.openstreetmap.org/node/14014216884",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
+    "id": "osm-node-14067213878",
+    "name": {
+      "ja": "鶏塚",
+      "zh_tw": "鶏塚",
+      "en": "Niwatorizuka"
+    },
+    "location": {
+      "lat": 35.07742,
+      "lng": 135.875106
+    },
+    "prefecture": "shiga",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "遺跡"
+    ],
+    "featured": false,
+    "score": 0.0,
+    "summary_zh": "",
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "比叡山坂本",
+          "en": "Hieizan-Sakamoto"
+        },
+        "distance_m": 810
+      },
+      {
+        "name": {
+          "ja": "坂本比叡山口",
+          "kana": "さかもとひえいざんぐち",
+          "romaji": "Sakamoto-hieizanguchi",
+          "en": "Sakamoto-hieizanguchi"
+        },
+        "distance_m": 850
+      }
+    ],
+    "images": [],
+    "external_ids": {
+      "osm": "node/14067213878"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/node/14067213878",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
+    "id": "osm-node-14075685549",
+    "name": {
+      "ja": "多喜山城跡",
+      "zh_tw": "多喜山城跡"
+    },
+    "location": {
+      "lat": 35.022872,
+      "lng": 136.025054
+    },
+    "prefecture": "shiga",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "遺跡"
+    ],
+    "featured": false,
+    "score": 0.0,
+    "summary_zh": "",
+    "images": [],
+    "external_ids": {
+      "osm": "node/14075685549"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/node/14075685549",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
+    "id": "osm-node-14168522238",
+    "name": {
+      "ja": "鈎陣所土塁跡",
+      "zh_tw": "鈎陣所土塁跡"
+    },
+    "location": {
+      "lat": 35.025941,
+      "lng": 135.989404
+    },
+    "prefecture": "shiga",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "遺跡"
+    ],
+    "featured": false,
+    "score": 0.0,
+    "summary_zh": "",
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "手原",
+          "en": "Tehara"
+        },
+        "distance_m": 920
+      }
+    ],
+    "images": [],
+    "external_ids": {
+      "osm": "node/14168522238"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/node/14168522238",
         "fetched_at": "2026-09-27"
       }
     ],
@@ -3754,47 +3878,6 @@
     "sources": [
       {
         "url": "https://www.openstreetmap.org/node/4085984809",
-        "fetched_at": "2026-09-27"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-27"
-  },
-  {
-    "id": "osm-node-411308398",
-    "name": {
-      "ja": "長浜市曳山博物館",
-      "zh_tw": "長浜市曳山博物館"
-    },
-    "location": {
-      "lat": 35.381305,
-      "lng": 136.268905
-    },
-    "prefecture": "shiga",
-    "kind": "major",
-    "themes": [],
-    "tags": [
-      "博物館"
-    ],
-    "featured": false,
-    "score": 0.0,
-    "summary_zh": "",
-    "nearest_stations": [
-      {
-        "name": {
-          "ja": "長浜",
-          "en": "Nagahama"
-        },
-        "distance_m": 460
-      }
-    ],
-    "images": [],
-    "external_ids": {
-      "osm": "node/411308398"
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/411308398",
         "fetched_at": "2026-09-27"
       }
     ],
@@ -5797,152 +5880,6 @@
     "updated_at": "2026-09-27"
   },
   {
-    "id": "osm-node-5240961721",
-    "name": {
-      "ja": "野洲川河川公園",
-      "zh_tw": "野洲川河川公園"
-    },
-    "location": {
-      "lat": 35.050548,
-      "lng": 136.018036
-    },
-    "prefecture": "shiga",
-    "kind": "major",
-    "themes": [],
-    "tags": [
-      "展望"
-    ],
-    "featured": false,
-    "score": 0.0,
-    "summary_zh": "",
-    "images": [],
-    "external_ids": {
-      "osm": "node/5240961721"
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/5240961721",
-        "fetched_at": "2026-09-27"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-27"
-  },
-  {
-    "id": "osm-node-529732948",
-    "name": {
-      "ja": "丸山古墳",
-      "zh_tw": "丸山古墳"
-    },
-    "location": {
-      "lat": 35.429224,
-      "lng": 136.263064
-    },
-    "prefecture": "shiga",
-    "kind": "major",
-    "themes": [],
-    "tags": [
-      "古墳"
-    ],
-    "featured": false,
-    "score": 0.0,
-    "summary_zh": "",
-    "nearest_stations": [
-      {
-        "name": {
-          "ja": "虎姫",
-          "en": "Torahime"
-        },
-        "distance_m": 730
-      }
-    ],
-    "images": [],
-    "external_ids": {
-      "osm": "node/529732948"
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/529732948",
-        "fetched_at": "2026-09-27"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-27"
-  },
-  {
-    "id": "osm-node-5300762947",
-    "name": {
-      "ja": "老々塚古墳",
-      "zh_tw": "老々塚古墳"
-    },
-    "location": {
-      "lat": 35.076654,
-      "lng": 136.089157
-    },
-    "prefecture": "shiga",
-    "kind": "major",
-    "themes": [],
-    "tags": [
-      "古墳"
-    ],
-    "featured": false,
-    "score": 0.0,
-    "summary_zh": "",
-    "images": [],
-    "external_ids": {
-      "osm": "node/5300762947"
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/5300762947",
-        "fetched_at": "2026-09-27"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-27"
-  },
-  {
-    "id": "osm-node-534529037",
-    "name": {
-      "ja": "黒壁美術館",
-      "zh_tw": "黒壁美術館"
-    },
-    "location": {
-      "lat": 35.381072,
-      "lng": 136.266714
-    },
-    "prefecture": "shiga",
-    "kind": "major",
-    "themes": [],
-    "tags": [
-      "博物館"
-    ],
-    "featured": false,
-    "score": 0.0,
-    "summary_zh": "",
-    "nearest_stations": [
-      {
-        "name": {
-          "ja": "長浜",
-          "en": "Nagahama"
-        },
-        "distance_m": 320
-      }
-    ],
-    "images": [],
-    "external_ids": {
-      "osm": "node/534529037"
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/534529037",
-        "fetched_at": "2026-09-27"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-27"
-  },
-  {
     "id": "osm-way-437101610",
     "name": {
       "ja": "近江八幡市立資料館（旧判家住宅）",
@@ -6229,7 +6166,7 @@
           "ja": "手原",
           "en": "Tehara"
         },
-        "distance_m": 1350
+        "distance_m": 1360
       }
     ],
     "images": [
@@ -10450,6 +10387,8 @@
       {
         "name": {
           "ja": "近江今津",
+          "kana": "おおみいまず",
+          "romaji": "Ōmi-Imazu",
           "en": "Ōmi-Imazu"
         },
         "distance_m": 180
@@ -12454,9 +12393,12 @@
     "id": "wd-Q123144783",
     "name": {
       "ja": "比叡山国宝殿",
+      "kana": "ひえいざんこくほうでん",
+      "romaji": "Hieizan Kokuhōden",
       "zh_tw": "比叡山国宝殿",
       "en": "Kokuhōden Museum, Mt. Hiei"
     },
+    "kana_source": "osm",
     "location": {
       "lat": 35.070389,
       "lng": 135.839877
@@ -12464,7 +12406,9 @@
     "prefecture": "shiga",
     "kind": "major",
     "themes": [],
-    "tags": [],
+    "tags": [
+      "博物館"
+    ],
     "featured": false,
     "score": 1.5,
     "summary_zh": "",
@@ -13320,6 +13264,60 @@
       },
       {
         "url": "https://www.openstreetmap.org/node/1422943161",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
+    "id": "wd-Q132725989",
+    "name": {
+      "ja": "長浜市曳山博物館",
+      "zh_tw": "長浜市曳山博物館",
+      "en": "Nagahama Hikiyama Museum"
+    },
+    "location": {
+      "lat": 35.381264,
+      "lng": 136.268769
+    },
+    "prefecture": "shiga",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "博物館"
+    ],
+    "featured": false,
+    "score": 35.1,
+    "summary_zh": "",
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "長浜",
+          "en": "Nagahama"
+        },
+        "distance_m": 450
+      }
+    ],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/22/Hikiyama_Museum_Nagahama_Shiga_pref01n3680.jpg/960px-Hikiyama_Museum_Nagahama_Shiga_pref01n3680.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "663highland",
+        "license": "CC BY 2.5",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Hikiyama_Museum_Nagahama_Shiga_pref01n3680.jpg"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q132725989",
+      "osm": "node/411308398"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q132725989",
+        "fetched_at": "2026-09-27"
+      },
+      {
+        "url": "https://www.openstreetmap.org/node/411308398",
         "fetched_at": "2026-09-27"
       }
     ],
@@ -16132,6 +16130,54 @@
     "sources": [
       {
         "url": "https://www.wikidata.org/wiki/Q200239",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
+    "id": "wd-Q20043046",
+    "name": {
+      "ja": "安楽律院",
+      "kana": "あんらくりついん",
+      "romaji": "Anrakuritsu-in",
+      "zh_tw": "安楽律院",
+      "en": "Anrakuritsu-in"
+    },
+    "kana_source": "osm",
+    "location": {
+      "lat": 35.091667,
+      "lng": 135.864556
+    },
+    "prefecture": "shiga",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "寺院"
+    ],
+    "featured": false,
+    "score": 42.62,
+    "summary_zh": "",
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/17/Anrakuritsuin.jpg/960px-Anrakuritsuin.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "イココ",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Anrakuritsuin.jpg"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q20043046",
+      "osm": "node/13729490815"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q20043046",
+        "fetched_at": "2026-09-27"
+      },
+      {
+        "url": "https://www.openstreetmap.org/node/13729490815",
         "fetched_at": "2026-09-27"
       }
     ],
@@ -19117,7 +19163,7 @@
           "romaji": "Ritto",
           "en": "Rittō"
         },
-        "distance_m": 930
+        "distance_m": 920
       },
       {
         "name": {

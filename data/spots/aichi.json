@@ -938,6 +938,10 @@
       {
         "url": "https://www.openstreetmap.org/way/493467366",
         "fetched_at": "2026-09-27"
+      },
+      {
+        "url": "https://www.openstreetmap.org/node/7345757685",
+        "fetched_at": "2026-09-27"
       }
     ],
     "status": "published",
@@ -1830,62 +1834,6 @@
       },
       {
         "url": "https://www.openstreetmap.org/way/195632854",
-        "fetched_at": "2026-09-27"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-27"
-  },
-  {
-    "id": "wd-Q11367346",
-    "name": {
-      "ja": "中部電力千代田ビル",
-      "zh_tw": "中部電力千代田ビル",
-      "en": "Chuden Chiyoda Building"
-    },
-    "location": {
-      "lat": 35.158597,
-      "lng": 136.915294
-    },
-    "prefecture": "aichi",
-    "kind": "major",
-    "themes": [],
-    "tags": [
-      "guide-S"
-    ],
-    "featured": true,
-    "score": 71.28,
-    "summary_zh": "",
-    "nearest_stations": [
-      {
-        "name": {
-          "ja": "鶴舞",
-          "en": "Tsurumai"
-        },
-        "distance_m": 270
-      },
-      {
-        "name": {
-          "ja": "矢場町",
-          "en": "Yabachō"
-        },
-        "distance_m": 780
-      }
-    ],
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8d/Chuden_Chiyoda_20140517.JPG/960px-Chuden_Chiyoda_20140517.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "円周率３パーセント",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Chuden_Chiyoda_20140517.JPG"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q11367346"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q11367346",
         "fetched_at": "2026-09-27"
       }
     ],
@@ -11336,6 +11284,69 @@
     "updated_at": "2026-09-27"
   },
   {
+    "id": "wd-Q11647008",
+    "name": {
+      "ja": "金山神社",
+      "zh_tw": "金山神社",
+      "en": "Kanayama Shrine"
+    },
+    "location": {
+      "lat": 35.16,
+      "lng": 136.875278
+    },
+    "prefecture": "aichi",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "神社"
+    ],
+    "featured": false,
+    "score": 35.22,
+    "summary_zh": "",
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "米野",
+          "kana": "こめの",
+          "romaji": "Komeno",
+          "en": "Komeno"
+        },
+        "distance_m": 410
+      },
+      {
+        "name": {
+          "ja": "ささしまライブ",
+          "en": "Sashima-raibu"
+        },
+        "distance_m": 600
+      }
+    ],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8d/Kanayama-Jinja_Nakamura-ku.jpg/960px-Kanayama-Jinja_Nakamura-ku.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "KAMUI",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Kanayama-Jinja_Nakamura-ku.jpg"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q11647008",
+      "osm": "way/171654973"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q11647008",
+        "fetched_at": "2026-09-27"
+      },
+      {
+        "url": "https://www.openstreetmap.org/way/171654973",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-27"
+  },
+  {
     "id": "wd-Q116475081",
     "name": {
       "ja": "徳林寺",
@@ -15648,7 +15659,7 @@
     "kind": "major",
     "themes": [],
     "tags": [],
-    "featured": false,
+    "featured": true,
     "score": 62.45,
     "summary_zh": "",
     "nearest_stations": [
@@ -16117,7 +16128,9 @@
     "prefecture": "aichi",
     "kind": "major",
     "themes": [],
-    "tags": [],
+    "tags": [
+      "博物館"
+    ],
     "featured": false,
     "score": 45.69,
     "summary_zh": "",
@@ -16147,11 +16160,16 @@
       }
     ],
     "external_ids": {
-      "wikidata": "Q2901289"
+      "wikidata": "Q2901289",
+      "osm": "node/1423950759"
     },
     "sources": [
       {
         "url": "https://www.wikidata.org/wiki/Q2901289",
+        "fetched_at": "2026-09-27"
+      },
+      {
+        "url": "https://www.openstreetmap.org/node/1423950759",
         "fetched_at": "2026-09-27"
       }
     ],
