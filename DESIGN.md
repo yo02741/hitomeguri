@@ -13,7 +13,7 @@
 3. **地名就是設計**：假名／漢字／羅馬拼音三行的名稱區塊是本產品的招牌，每個景點、每個地名都用同一套版式。
 4. **沒有 AI 味**：不解釋功能、不加 emoji、不用 sparkle 圖示與漸層（完整規則見 `PLAN.md` §6a）。
 5. **柔和**：地區色一律使用去飽和、疊白後的版本；需要強調時用 `strong`，不回頭用原色。
-6. **整個介面帶著地區色**：背景、header、線條、文字都由目前的地區色甲生（地區色滲透），不使用純白底與純黑字；沒有地區語境時使用「全國色」。
+6. **整個介面帶著地區色**：背景、header、線條、文字都由目前的地區色產生（地區色滲透），不使用純白底與純黑字；沒有地區語境時使用「全國色」。
 
 ---
 
@@ -30,7 +30,7 @@
 | 版本 | 用在 | 規格 |
 |---|---|---|
 | Hero（三行） | 首頁、關於頁、商店截圖 | 假名 `tracking-kana` → 漢字 `font-black`（字級依版面，漢字至少是假名的 4 倍）→ HITOMEGURI `font-latin font-bold uppercase`，字距 0.4–0.5em |
-| Header（橪排） | 每頁 header 左側 | 左：假名 10px 疊在「一巡り」22px 900 上方；右：HITOMEGURI 13px `font-latin font-semibold`，底部對齊；整塊是回首頁的連結 |
+| Header（橫排） | 每頁 header 左側 | 左：假名 10px 疊在「一巡り」22px 900 上方；右：HITOMEGURI 13px `font-latin font-semibold`，底部對齊；整塊是回首頁的連結 |
 | 地區色上 | 海報區、分享圖 | 同 Hero 三行，文字用 `text-on-region`，可加 `bg-region-accent` 正圓裝飾 |
 | 最小尺寸 | 頁尾、小型標示 | 只用單行：「一巡り」16px 900，或「ひとめぐり」14px 700，或 HITOMEGURI 13px |
 
@@ -180,7 +180,7 @@
 ### 6.1 繪製規格
 - 24×24 grid，線條 `stroke-width: 2`，圓頭圓角（`round`），無填色（御朱印帳內的印可實心）。
 - 放在 `web/src/assets/symbols/*.svg`，以 `currentColor` 著色，透過 `<ThemeSymbol name="tea" />` 使用。
-- 通用 UI 圖示（返回、定位、播放、帳號、放大縮小）使用同樣筆奫規格；可用 lucide 並統一 `stroke-width={1.8}`。
+- 通用 UI 圖示（返回、定位、播放、帳號、放大縮小）使用同樣筆畫規格；可用 lucide 並統一 `stroke-width={1.8}`。
 - 寺院不使用「卍」。寶可夢不使用任何官方角色、精靈球或 logo。
 
 ### 6.2 Badge 尺寸與狀態
