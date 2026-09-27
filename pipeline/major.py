@@ -196,6 +196,9 @@ def collect(pref: str) -> tuple[dict[str, Draft], dict[str, Entity]]:
         qid = el.tags.get("wikidata", "")
         if QID_RE.match(qid) and qid in ents:
             ent = ents[qid]
+            other = _resolver.resolve(ent)
+            if other and other != pref:
+                continue  # 例：延暦寺在滋賀，京都境內也有它的 OSM 物件
             if qid not in drafts:
                 inside = _entity_in_pref(ent, pref)
                 lat, lng = (ent.lat, ent.lng) if inside else (el.lat, el.lng)
@@ -281,6 +284,10 @@ def _search_seed(pref: str, variants: list[str], drafts: dict[str, Draft]) -> Dr
             ent = ents.get(qid)
             if not ent or not _entity_in_pref(ent, pref):
                 continue
+            label = norm_name(ent.labels.get("ja", ""))
+            # 搜尋結果名稱必須和種子相符（「大須商店街」不能對到附近的「ふれあい広場」）
+            if not label or not (label == v or v in label or label in v):
+                continue
             if qid in drafts:
                 return drafts[qid]
             d = Draft(key=qid, lat=ent.lat, lng=ent.lng, ent=ent)  # type: ignore[arg-type]
@@ -324,9 +331,13 @@ ADMIN_P31 = {
 # 其他非景點：總稱條目、車站、事件、可移動文化財（畫作等）、地質構造。
 EXCLUDE_P31_EXACT = {"世界遺産", "文化遺産", "自然遺産", "複合遺産"}
 EXCLUDE_P31_SUBSTR = (
-    "構成資産", "古墳群", "駅", "停留場", "事故", "事件", "災害", "戦い", "絵画", "屏風",
+    "世界遺産", "遺産群", "構成資産", "古墳群", "駅", "停留場", "事故", "事件",
+    "災害", "戦い", "絵画", "屏風",
     "絵巻", "美術作品", "彫刻作品", "書跡", "典籍", "古文書", "工芸品", "刀剣", "写本",
-    "断層", "構造線", "路線", "街道",
+    "断層", "構造線", "路線", "街道", "宗教団体", "新宗教", "遊廓", "遊郭", "企業", "会社",
+    # 沒有日文標籤時 labels_ja 會回傳英文
+    "station", "accident", "incident", "disaster", "painting", "folding screen",
+    "organization", "religious movement", "World Heritage", "red-light", "company",
 )  # fmt: skip
 
 
@@ -342,7 +353,7 @@ def drop_non_spots(drafts: dict[str, Draft]) -> list[str]:
         other = bool(kinds & EXCLUDE_P31_EXACT) or any(
             sub in k for k in kinds for sub in EXCLUDE_P31_SUBSTR
         )
-        if admin or (other and not d.tier):
+        if admin or other:
             dropped.append(d.name_ja or key)
             del drafts[key]
     return dropped
@@ -414,7 +425,12 @@ _CATEGORY_BY_NAME = [
 ]
 
 
+KOFUN_RE = re.compile(r"(古墳|天皇陵|御陵)$")
+
+
 def category(d: Draft) -> str | None:
+    if KOFUN_RE.search(unicodedata.normalize("NFKC", d.name_ja or "")):
+        return "古墳"
     t = d.osm_tags
     if t.get("amenity") == "place_of_worship":
         if t.get("religion") == "shinto":
