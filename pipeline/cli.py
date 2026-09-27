@@ -48,6 +48,26 @@ def cmd_build_bundles(_: argparse.Namespace) -> int:
     return 0
 
 
+def _emit(text: str, report: str | None) -> None:
+    print(text)
+    summary = os.environ.get("GITHUB_STEP_SUMMARY")
+    if summary:
+        with open(summary, "a", encoding="utf-8") as f:
+            f.write(text + "\n")
+    if report:
+        Path(report).write_text(text, encoding="utf-8")
+
+
+def cmd_enrich(args: argparse.Namespace) -> int:
+    from pipeline import enrich
+
+    if args.action in ("submit", "run"):
+        enrich.submit(args.prefectures, args.limit)
+    if args.action in ("poll", "run"):
+        _emit(enrich.wait_and_collect(max_wait_s=args.max_wait), args.report)
+    return 0
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(prog="pipeline", description=__doc__)
     sub = parser.add_subparsers(dest="command", required=True)
@@ -63,6 +83,14 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("prefectures", nargs="+", help="都道府縣 slug，例 kyoto aichi")
     p.add_argument("--report", help="把 markdown 報告另存到這個路徑")
     p.set_defaults(func=cmd_seed_region)
+
+    p = sub.add_parser("enrich", help="LLM 補全（Batch API）：簡介、假名、季節、停留時間")
+    p.add_argument("action", choices=["submit", "poll", "run"])
+    p.add_argument("prefectures", nargs="*", help="都道府縣 slug")
+    p.add_argument("--limit", type=int, help="每縣最多送出幾筆（先小量驗證 prompt）")
+    p.add_argument("--max-wait", type=int, default=3 * 3600, help="poll 最多等幾秒")
+    p.add_argument("--report", help="把 markdown 報告另存到這個路徑")
+    p.set_defaults(func=cmd_enrich)
 
     p = sub.add_parser("build-bundles", help="data/ → web/public/bundles/")
     p.set_defaults(func=cmd_build_bundles)

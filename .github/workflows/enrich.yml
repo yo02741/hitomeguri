@@ -1,0 +1,70 @@
+name: enrich
+
+# 手動觸發：以 Claude（Batch API）補繁中簡介、缺漏的假名、最佳季節、建議停留。
+# 需要 repo secret ANTHROPIC_API_KEY。結果推到 pipeline/enrich-<run> 分支，檢查後再合併。
+# 先用小量（limit 20）驗證 prompt 與輸出，再跑整區（PLAN.md §11）。
+
+on:
+  workflow_dispatch:
+    inputs:
+      prefectures:
+        description: "都道府縣 slug，空白分隔（例：kyoto aichi）"
+        required: true
+        default: "kyoto"
+      limit:
+        description: "每縣最多送出幾筆；0 表示全部"
+        required: true
+        default: "20"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: enrich
+  cancel-in-progress: false
+
+jobs:
+  enrich:
+    runs-on: ubuntu-latest
+    timeout-minutes: 240
+    steps:
+      - uses: actions/checkout@v4
+      - name: 檢查 API key
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          if [ -z "$ANTHROPIC_API_KEY" ]; then
+            echo "::error::請在 Settings → Secrets and variables → Actions 新增 ANTHROPIC_API_KEY"
+            exit 1
+          fi
+      - uses: astral-sh/setup-uv@v6
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: uv venv && uv pip install -e ".[dev]"
+      - name: enrich
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          limit="${{ inputs.limit }}"
+          args=""
+          if [ "$limit" != "0" ]; then args="--limit $limit"; fi
+          .venv/bin/python -m pipeline.cli enrich run ${{ inputs.prefectures }} $args --report /tmp/report.md
+      - name: 推到審核分支
+        run: |
+          branch="pipeline/enrich-${{ github.run_number }}"
+          git config user.name "hitomeguri-pipeline"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -b "$branch"
+          git add data/spots data/_state
+          if git diff --cached --quiet; then
+            echo "沒有變更" >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+          git commit -q -F - <<MSG
+          enrich: ${{ inputs.prefectures }}
+
+          $(cat /tmp/report.md)
+          MSG
+          git push -q origin "$branch"
+          echo "推到 \`$branch\`" >> "$GITHUB_STEP_SUMMARY"
