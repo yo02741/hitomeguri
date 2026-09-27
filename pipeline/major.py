@@ -43,6 +43,13 @@ def norm_name(s: str) -> str:
     return re.sub(r"[\s・･\-‐（）()「」]", "", s)
 
 
+def name_variants_strict(s: str) -> list[str]:
+    """部分相符用：只取全名與括號內外，不含空白拆出的片段（避免「中部電力」誤配）。"""
+    s = unicodedata.normalize("NFKC", s)
+    out = [s, re.sub(r"[（(].*?[）)]", "", s)] + re.findall(r"[（(](.*?)[）)]", s)
+    return [v for v in dict.fromkeys(norm_name(x) for x in out) if len(v) >= 2]
+
+
 def name_variants(s: str) -> list[str]:
     s = unicodedata.normalize("NFKC", s)
     out = [s, re.sub(r"[（(].*?[）)]", "", s)]
@@ -221,7 +228,8 @@ def collect(pref: str) -> tuple[dict[str, Draft], dict[str, Entity]]:
         for d in drafts.values():
             if geo.haversine_m(d.lat, d.lng, el.lat, el.lng) > config.DEDUPE_DISTANCE_M:
                 continue
-            if any(norm_name(n) == name for n in d.all_names()):
+            labels = d.ent.labels.values() if d.ent else []
+            if any(norm_name(n) == name for n in [*d.all_names(), *labels]):
                 target = d
                 break
         if target:
@@ -251,7 +259,7 @@ def apply_seeds(pref: str, drafts: dict[str, Draft]) -> list[str]:
                 if best is None or _sitelinks(d) > _sitelinks(best):
                     best = d
         if best is None:
-            best = _substring_match(variants, drafts)
+            best = _substring_match(name_variants_strict(seed["name_ja"]), drafts)
         if best is None:
             best = _search_seed(pref, variants, drafts)
         if best is None:
@@ -347,6 +355,10 @@ EXCLUDE_P31_SUBSTR = (
 )  # fmt: skip
 
 
+# 總稱條目（世界遺產登錄名、古墳群）：以名稱判斷
+COLLECTIVE_NAME_RE = re.compile(r"(の文化財|古墳群|世界遺産|関連遺産群|構成資産)$")
+
+
 def drop_non_spots(drafts: dict[str, Draft]) -> list[str]:
     qids = sorted({q for d in drafts.values() if d.ent for q in d.ent.instance_of})
     labels = wikidata.labels_ja(qids) if qids else {}
@@ -359,7 +371,8 @@ def drop_non_spots(drafts: dict[str, Draft]) -> list[str]:
         other = bool(kinds & EXCLUDE_P31_EXACT) or any(
             sub in k for k in kinds for sub in EXCLUDE_P31_SUBSTR
         )
-        if admin or other:
+        collective = bool(COLLECTIVE_NAME_RE.search(d.name_ja or ""))
+        if admin or other or collective:
             dropped.append(d.name_ja or key)
             del drafts[key]
     return dropped
