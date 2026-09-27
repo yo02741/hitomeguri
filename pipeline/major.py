@@ -99,16 +99,79 @@ class Draft:
 # ---------- 候選 ----------
 
 
+class PrefResolver:
+    """Wikidata 項目屬於哪個縣：沿 P131（所在行政區）往上找到都道府縣；找不到才用縣界判斷。
+
+    縣界資料精度有限，河川邊的景點（例：犬山城）容易判錯，行政區鏈比較可靠。
+    """
+
+    def __init__(self) -> None:
+        iso_to_slug = {geo.iso_code(p): p for p in geo.pref_slugs()}
+        items = wikidata.prefecture_items()
+        self.pref_items = {q: iso_to_slug[i] for q, i in items.items() if i in iso_to_slug}
+        self.parents: dict[str, list[str]] = {}
+
+    def prefetch(self, ents: list[Entity]) -> None:
+        frontier = {q for e in ents for q in e.located_in}
+        for _ in range(5):
+            todo = [q for q in frontier if q not in self.parents and q not in self.pref_items]
+            if not todo:
+                break
+            self.parents.update(wikidata.parents(todo))
+            frontier = {p for q in todo for p in self.parents.get(q, [])}
+
+    def resolve(self, ent: Entity) -> str | None:
+        seen: set[str] = set()
+        level = list(ent.located_in)
+        for _ in range(6):
+            nxt = []
+            for q in level:
+                if q in self.pref_items:
+                    return self.pref_items[q]
+                if q not in seen:
+                    seen.add(q)
+                    nxt += self.parents.get(q, [])
+            level = nxt
+        return None
+
+
+_resolver: PrefResolver | None = None
+_resolver_seen: set[str] = set()
+
+
 def _entity_in_pref(ent: Entity, pref: str) -> bool:
-    return ent.lat is not None and ent.lng is not None and geo.contains(pref, ent.lat, ent.lng)
+    if ent.lat is None or ent.lng is None:
+        return False
+    if _resolver is not None:
+        if ent.qid not in _resolver_seen:
+            _resolver.prefetch([ent])
+            _resolver_seen.add(ent.qid)
+        found = _resolver.resolve(ent)
+        if found:
+            return found == pref
+    return geo.contains_fine(pref, ent.lat, ent.lng)
 
 
 def collect(pref: str) -> tuple[dict[str, Draft], dict[str, Entity]]:
     iso = geo.iso_code(pref)
     south, west, north, east = geo.bbox(pref)
 
+    global _resolver
+    _resolver = PrefResolver()
+
     log(f"[{pref}] OSM 大點候選（{iso}）…")
-    osm_els = [e for e in osm.attractions(iso) if geo.contains(pref, e.lat, e.lng)]
+    try:
+        osm_els = osm.attractions(iso)
+    except RuntimeError as e:
+        log(f"[{pref}]   area 查詢失敗：{e}")
+        osm_els = []
+    if not osm_els:
+        log(f"[{pref}]   改用範圍框查詢")
+        osm_els = [
+            e
+            for e in osm.attractions_bbox((south, west, north, east))
+            if geo.contains_fine(pref, e.lat, e.lng)
+        ]
     log(f"[{pref}]   OSM {len(osm_els)} 筆")
 
     log(f"[{pref}] Wikidata 文化指定候選…")
@@ -119,6 +182,8 @@ def collect(pref: str) -> tuple[dict[str, Draft], dict[str, Entity]]:
 
     osm_qids = [e.tags["wikidata"] for e in osm_els if QID_RE.match(e.tags.get("wikidata", ""))]
     ents = wikidata.entities(osm_qids + wd_qids)
+    _resolver.prefetch(list(ents.values()))
+    _resolver_seen.update(ents)
 
     drafts: dict[str, Draft] = {}
     for qid in wd_qids:
@@ -251,35 +316,33 @@ def drop_subparts(drafts: dict[str, Draft]) -> int:
 # ---------- 排除非景點 ----------
 
 # P31（性質）日文標籤命中這些就不是景點：縣市本身、世界遺產的總稱條目等。
-EXCLUDE_P31 = {
-    "都道府県",
-    "日本の都道府県",
-    "府",
-    "県",
-    "市",
-    "日本の市",
-    "町",
-    "村",
-    "特別区",
-    "政令指定都市",
-    "中核市",
-    "行政区",
-    "世界遺産",
-    "文化遺産",
-    "自然遺産",
-    "複合遺産",
-}
+# 行政區本身：即使是攻略種子對到的也排除（種子「西尾市」指的是地區，不是景點）。
+ADMIN_P31 = {
+    "都道府県", "日本の都道府県", "府", "県", "市", "日本の市", "町", "村", "特別区",
+    "政令指定都市", "中核市", "特例市", "行政区", "郡", "日本の町", "日本の村",
+}  # fmt: skip
+# 其他非景點：總稱條目、車站、事件、可移動文化財（畫作等）、地質構造。
+EXCLUDE_P31_EXACT = {"世界遺産", "文化遺産", "自然遺産", "複合遺産"}
+EXCLUDE_P31_SUBSTR = (
+    "構成資産", "古墳群", "駅", "停留場", "事故", "事件", "災害", "戦い", "絵画", "屏風",
+    "絵巻", "美術作品", "彫刻作品", "書跡", "典籍", "古文書", "工芸品", "刀剣", "写本",
+    "断層", "構造線", "路線", "街道",
+)  # fmt: skip
 
 
 def drop_non_spots(drafts: dict[str, Draft]) -> list[str]:
-    qids = sorted({q for d in drafts.values() if d.ent and not d.tier for q in d.ent.instance_of})
+    qids = sorted({q for d in drafts.values() if d.ent for q in d.ent.instance_of})
     labels = wikidata.labels_ja(qids) if qids else {}
     dropped = []
     for key, d in list(drafts.items()):
-        if not d.ent or d.tier:
+        if not d.ent:
             continue
-        kinds = {labels.get(q, "") for q in d.ent.instance_of}
-        if kinds & EXCLUDE_P31:
+        kinds = {labels.get(q, "") for q in d.ent.instance_of} - {""}
+        admin = bool(kinds & ADMIN_P31)
+        other = bool(kinds & EXCLUDE_P31_EXACT) or any(
+            sub in k for k in kinds for sub in EXCLUDE_P31_SUBSTR
+        )
+        if admin or (other and not d.tier):
             dropped.append(d.name_ja or key)
             del drafts[key]
     return dropped
@@ -342,6 +405,7 @@ _CATEGORY_BY_NAME = [
     (re.compile(r"(神社|大社|神宮|天満宮|八幡宮|稲荷)$"), "神社"),
     (re.compile(r"(寺|院|堂)$"), "寺院"),
     (re.compile(r"城$"), "城"),
+    (re.compile(r"(古墳|天皇陵|御陵)$"), "古墳"),
     (re.compile(r"美術館$"), "美術館"),
     (re.compile(r"(博物館|資料館|記念館|科学館)$"), "博物館"),
     (re.compile(r"(庭園|御苑)$"), "庭園"),
@@ -542,6 +606,24 @@ def write_spots(pref: str, spots: list[dict[str, Any]]) -> None:
     path.write_text(json.dumps(spots, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
 
+def pick_featured(ranked: list[Draft]) -> set[str]:
+    """分數高到低挑精選，同一分類設上限，避免整片都是古墳或寺院；S 級種子一律列入。"""
+    chosen = {d.key for d in ranked if d.tier == "S"}
+    counts: dict[str, int] = {}
+    for d in ranked:
+        if len(chosen) >= config.FEATURED_PER_PREF:
+            break
+        if d.key in chosen:
+            continue
+        cat = category(d) or ""
+        cap = config.FEATURED_CATEGORY_CAP.get(cat, config.FEATURED_CATEGORY_CAP_DEFAULT)
+        if counts.get(cat, 0) >= cap:
+            continue
+        counts[cat] = counts.get(cat, 0) + 1
+        chosen.add(d.key)
+    return chosen
+
+
 def seed_region(pref: str) -> str:
     """回傳 markdown 報告。"""
     today = dt.date.today().isoformat()
@@ -558,8 +640,7 @@ def seed_region(pref: str) -> str:
     ranked = sorted(drafts.values(), key=lambda d: (-d.score, d.key))
     keep = ranked[: config.MAX_SPOTS_PER_PREF]
     keep += [d for d in ranked[config.MAX_SPOTS_PER_PREF :] if d.tier]
-    featured_keys = {d.key for d in keep[: config.FEATURED_PER_PREF]}
-    featured_keys |= {d.key for d in keep if d.tier == "S"}
+    featured_keys = pick_featured(keep)
 
     files = [d.ent.image for d in keep if d.ent and d.ent.image]
     log(f"[{pref}] 照片資訊 {len(files)} 筆…")

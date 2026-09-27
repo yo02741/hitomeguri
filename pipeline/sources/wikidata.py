@@ -25,6 +25,7 @@ class Entity:
     image: str | None = None  # P18 檔名
     heritage: list[str] = field(default_factory=list)  # P1435 的 QID
     instance_of: list[str] = field(default_factory=list)  # P31
+    located_in: list[str] = field(default_factory=list)  # P131
     sitelinks: dict[str, str] = field(default_factory=dict)  # 例 {"jawiki": "伏見稲荷大社"}
 
     @property
@@ -94,6 +95,7 @@ def entities(qids: list[str]) -> dict[str, Entity]:
             ent.image = imgs[0] if imgs else None
             ent.heritage = [v["id"] for v in _claim_values(claims, "P1435")]
             ent.instance_of = [v["id"] for v in _claim_values(claims, "P31")]
+            ent.located_in = [v["id"] for v in _claim_values(claims, "P131")]
             ent.sitelinks = {k: v["title"] for k, v in e.get("sitelinks", {}).items()}
             out[qid] = ent
     return out
@@ -138,3 +140,29 @@ def search(name: str, lang: str = "ja", limit: int = 7) -> list[str]:
         min_interval=0.5,
     )
     return [r["id"] for r in data.get("search", [])]
+
+
+def prefecture_items() -> dict[str, str]:
+    """都道府縣的 QID → ISO 3166-2 代碼（以 P300 查詢，不寫死 QID）。"""
+    rows = sparql("""SELECT ?p ?iso WHERE { ?p wdt:P300 ?iso . FILTER(STRSTARTS(?iso, "JP-")) }""")
+    return {r["p"]["value"].rsplit("/", 1)[1]: r["iso"]["value"] for r in rows}
+
+
+def parents(qids: list[str]) -> dict[str, list[str]]:
+    """行政區項目的 P131（上一層行政區）。"""
+    out: dict[str, list[str]] = {}
+    uniq = list(dict.fromkeys(qids))
+    for i in range(0, len(uniq), 50):
+        data = get_json(
+            API,
+            params={
+                "action": "wbgetentities",
+                "ids": "|".join(uniq[i : i + 50]),
+                "props": "claims",
+                "format": "json",
+            },
+            min_interval=0.5,
+        )
+        for qid, e in data.get("entities", {}).items():
+            out[qid] = [v["id"] for v in _claim_values(e.get("claims", {}), "P131")]
+    return out

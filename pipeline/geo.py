@@ -21,6 +21,10 @@ Ring = list[tuple[float, float]]
 Polygon = list[Ring]  # 第一個是外環，其餘是洞
 
 
+def pref_slugs() -> list[str]:
+    return _pref_slugs()
+
+
 def _pref_slugs() -> list[str]:
     data = json.loads(REGIONS_JSON.read_text(encoding="utf-8"))
     return [r["prefecture"] for r in data["regions"]]  # JIS X 0401 順序，index+1 = 都道府縣碼
@@ -131,8 +135,43 @@ def _in_ring(x: float, y: float, ring: Ring) -> bool:
     return inside
 
 
+@cache
+def _fine_polygons() -> dict[str, list[Polygon]]:
+    """未簡化的原始縣界（pipeline 用；第一次呼叫時下載並快取）。取不到就用簡化版。"""
+    from pipeline.http import client
+    from pipeline.paths import CACHE_DIR
+
+    path = CACHE_DIR / "japan.geojson"
+    if not path.exists():
+        try:
+            resp = client().get(SOURCE_URL)
+            resp.raise_for_status()
+            path.parent.mkdir(parents=True, exist_ok=True)
+            path.write_bytes(resp.content)
+        except Exception:  # noqa: BLE001
+            return _polygons()
+    raw = json.loads(path.read_text(encoding="utf-8"))
+    slugs = _pref_slugs()
+    out: dict[str, list[Polygon]] = {}
+    for f in raw["features"]:
+        geom = f["geometry"]
+        polys = geom["coordinates"] if geom["type"] == "MultiPolygon" else [geom["coordinates"]]
+        out[slugs[int(f["properties"]["id"]) - 1]] = [
+            [[(x, y) for x, y in ring] for ring in poly] for poly in polys
+        ]
+    return out
+
+
+def contains_fine(pref: str, lat: float, lng: float) -> bool:
+    return _contains(_fine_polygons()[pref], lat, lng)
+
+
 def contains(pref: str, lat: float, lng: float) -> bool:
-    for poly in _polygons()[pref]:
+    return _contains(_polygons()[pref], lat, lng)
+
+
+def _contains(polys: list[Polygon], lat: float, lng: float) -> bool:
+    for poly in polys:
         if _in_ring(lng, lat, poly[0]) and not any(_in_ring(lng, lat, h) for h in poly[1:]):
             return True
     return False

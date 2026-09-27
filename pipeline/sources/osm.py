@@ -57,14 +57,33 @@ def _area(iso: str) -> str:
     return f'area["ISO3166-2"="{iso}"]["admin_level"="4"]->.a;'
 
 
+_ATTRACTION_FILTERS = [
+    '["tourism"~"^(attraction|museum|viewpoint|gallery|zoo|aquarium|theme_park)$"]["name"]',
+    '["historic"~"^(castle|ruins|archaeological_site|monument|city_gate|fort|palace)$"]["name"]',
+    '["amenity"="place_of_worship"]["wikidata"]["name"]',
+    '["leisure"~"^(park|garden)$"]["wikidata"]["name"]',
+]
+
+
 def attractions(iso: str) -> list[OsmElement]:
+    """以縣的 area 查詢；OSM 內已確定在縣內。"""
+    body = "\n".join(f"  nwr{f}(area.a);" for f in _ATTRACTION_FILTERS)
     q = f"""[out:json][timeout:300];
 {_area(iso)}
 (
-  nwr["tourism"~"^(attraction|museum|viewpoint|gallery|zoo|aquarium|theme_park)$"]["name"](area.a);
-  nwr["historic"~"^(castle|ruins|archaeological_site|monument|city_gate|fort|palace)$"]["name"](area.a);
-  nwr["amenity"="place_of_worship"]["wikidata"]["name"](area.a);
-  nwr["leisure"~"^(park|garden)$"]["wikidata"]["name"](area.a);
+{body}
+);
+out center tags;"""
+    return _run(q)
+
+
+def attractions_bbox(bbox: tuple[float, float, float, float]) -> list[OsmElement]:
+    """area 查詢失敗或回傳 0 筆時的備援：範圍框查詢，呼叫端再用縣界過濾。"""
+    s, w, n, e = bbox
+    body = "\n".join(f"  nwr{f}({s},{w},{n},{e});" for f in _ATTRACTION_FILTERS)
+    q = f"""[out:json][timeout:300];
+(
+{body}
 );
 out center tags;"""
     return _run(q)

@@ -34,3 +34,7 @@ STATION_MAX_COUNT = 2
 # 去重：座標距離與附屬建物合併距離
 DEDUPE_DISTANCE_M = 80
 SUBPART_DISTANCE_M = 500
+
+# 精選的分類上限（其餘分類用預設值）
+FEATURED_CATEGORY_CAP = {"寺院": 8, "神社": 6, "古墳": 2, "城": 4, "": 6}
+FEATURED_CATEGORY_CAP_DEFAULT = 4
