@@ -24,7 +24,7 @@ ENTS = {
         34.9671,
         135.7727,
         labels={"zh-tw": "伏見稻荷大社", "en": "Fushimi Inari-taisha"},
-        kana="ふしみいなりたいしゃ",
+        kana_all=["-いなりの", "ふしみいなりたいしゃ"],
         image="Fushimi.jpg",
         heritage=["QH1"],
         sitelinks={
@@ -47,7 +47,7 @@ ENTS = {
         34.9949,
         135.7850,
         labels={"zh": "清水寺", "en": "Kiyomizu-dera"},
-        kana="キヨミズデラ",
+        kana_all=["キヨミズデラ"],
         heritage=["QH1"],
         sitelinks={"jawiki": "清水寺"},
     ),
@@ -57,7 +57,7 @@ ENTS = {
         "鹿苑寺",
         35.0394,
         135.7292,
-        labels={"zh-tw": "金閣寺"},
+        labels={"zh-tw": "金閣寺 (京都)"},
         sitelinks={"jawiki": "鹿苑寺"},
     ),
 }
@@ -102,13 +102,17 @@ def fake_sources(monkeypatch, tmp_path):
         OsmElement("node/22", 35.0000, 135.7700, {"name": "清水五条"}),
     ]
     monkeypatch.setattr(major.osm, "attractions", lambda iso: osm_els)
-    monkeypatch.setattr(major.osm, "stations", lambda iso: stations)
-    monkeypatch.setattr(major.wikidata, "heritage_items_in_box", lambda *a: ["Q2", "Q3", "Q9"])
+    monkeypatch.setattr(major.osm, "stations", lambda bbox: stations)
+    monkeypatch.setattr(
+        major.wikidata, "heritage_items_in_box", lambda *a: ["Q2", "Q3", "Q9", "Q7"]
+    )
     monkeypatch.setattr(
         major.wikidata, "entities", lambda qids: {q: ENTS[q] for q in qids if q in ENTS}
     )
     monkeypatch.setattr(
-        major.wikidata, "labels_ja", lambda qids: {"QH1": "世界遺産", "QH2": "重要文化財"}
+        major.wikidata,
+        "labels_ja",
+        lambda qids: {"QH1": "世界遺産", "QH2": "重要文化財", "QP": "日本の都道府県"},
     )
     monkeypatch.setattr(
         major.wikidata, "search", lambda name, **kw: ["Q5"] if "鹿苑寺" in name else []

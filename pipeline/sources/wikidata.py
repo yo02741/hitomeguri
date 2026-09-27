@@ -21,7 +21,7 @@ class Entity:
     labels: dict[str, str] = field(default_factory=dict)
     lat: float | None = None
     lng: float | None = None
-    kana: str | None = None  # P1814
+    kana_all: list[str] = field(default_factory=list)  # P1814（可能多筆）
     image: str | None = None  # P18 檔名
     heritage: list[str] = field(default_factory=list)  # P1435 的 QID
     instance_of: list[str] = field(default_factory=list)  # P31
@@ -89,8 +89,7 @@ def entities(qids: list[str]) -> dict[str, Entity]:
             coords = _claim_values(claims, "P625")
             if coords:
                 ent.lat, ent.lng = coords[0]["latitude"], coords[0]["longitude"]
-            kana = [v for v in _claim_values(claims, "P1814") if isinstance(v, str)]
-            ent.kana = kana[0] if kana else None
+            ent.kana_all = [v for v in _claim_values(claims, "P1814") if isinstance(v, str)]
             imgs = _claim_values(claims, "P18")
             ent.image = imgs[0] if imgs else None
             ent.heritage = [v["id"] for v in _claim_values(claims, "P1435")]

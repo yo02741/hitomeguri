@@ -163,8 +163,19 @@ def to_hiragana(text: str) -> str:
 
 
 def is_kana(text: str) -> bool:
-    t = re.sub(r"[\s・ー\-]", "", to_hiragana(text))
-    return bool(t) and all("ぁ" <= c <= "ゖ" for c in t)
+    """整串都是假名（可含空白、中黑、長音），且不是「-みおやの」這種殘缺片段。"""
+    raw = unicodedata.normalize("NFKC", text).strip()
+    if not raw or raw[0] in "-‐ー" or raw[-1] in "-‐":
+        return False
+    t = re.sub(r"[\s・ー\-]", "", to_hiragana(raw))
+    return len(t) >= 2 and all("\u3041" <= c <= "\u3096" for c in t)
+
+
+LATIN_RE = re.compile(r"^[A-Za-z\u00C0-\u017F' .\-]+$")
+
+
+def is_romaji(text: str | None) -> bool:
+    return bool(text) and bool(LATIN_RE.match(text.strip()))  # type: ignore[union-attr]
 
 
 def normalize_kana(text: str) -> str:

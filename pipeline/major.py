@@ -15,7 +15,7 @@ from dataclasses import dataclass, field
 from typing import Any
 
 from pipeline import config, geo
-from pipeline.kana import is_kana, normalize_kana, romaji_with_spacing
+from pipeline.kana import is_kana, is_romaji, normalize_kana, romaji_with_spacing
 from pipeline.models import (
     ExternalIds,
     Image,
@@ -70,8 +70,14 @@ class Draft:
 
     @property
     def osm_tags(self) -> dict[str, str]:
+        # 同一個 wikidata 可能掛在多個 OSM 物件（例：醍醐寺與下醍醐），名稱相同的優先。
+        target = norm_name(self.ent.labels.get("ja", "")) if self.ent else ""
+        els = sorted(
+            self.osm_els,
+            key=lambda el: norm_name(el.tags.get("name:ja") or el.tags.get("name", "")) != target,
+        )
         merged: dict[str, str] = {}
-        for el in self.osm_els:
+        for el in els:
             for k, v in el.tags.items():
                 merged.setdefault(k, v)
         return merged
@@ -170,6 +176,8 @@ def apply_seeds(pref: str, drafts: dict[str, Draft]) -> list[str]:
                 if best is None or _sitelinks(d) > _sitelinks(best):
                     best = d
         if best is None:
+            best = _substring_match(variants, drafts)
+        if best is None:
             best = _search_seed(pref, variants, drafts)
         if best is None:
             unmatched.append(seed["name_ja"])
@@ -179,6 +187,19 @@ def apply_seeds(pref: str, drafts: dict[str, Draft]) -> list[str]:
             best.tier = tier
         best.seed_themes = sorted(set(best.seed_themes) | set(seed.get("themes", [])))
     return unmatched
+
+
+def _substring_match(variants: list[str], drafts: dict[str, Draft]) -> Draft | None:
+    """「美山かやぶきの里」對「かやぶきの里」這類部分相符（至少 4 字）。"""
+    best: Draft | None = None
+    for d in drafts.values():
+        for n in (norm_name(x) for x in d.all_names()):
+            if len(n) < 4:
+                continue
+            if any((len(v) >= 4 and v in n) or n in v for v in variants):
+                if best is None or _sitelinks(d) > _sitelinks(best):
+                    best = d
+    return best
 
 
 def _sitelinks(d: Draft) -> int:
@@ -225,6 +246,43 @@ def drop_subparts(drafts: dict[str, Draft]) -> int:
                     del drafts[child.key]
                     removed += 1
     return removed
+
+
+# ---------- 排除非景點 ----------
+
+# P31（性質）日文標籤命中這些就不是景點：縣市本身、世界遺產的總稱條目等。
+EXCLUDE_P31 = {
+    "都道府県",
+    "日本の都道府県",
+    "府",
+    "県",
+    "市",
+    "日本の市",
+    "町",
+    "村",
+    "特別区",
+    "政令指定都市",
+    "中核市",
+    "行政区",
+    "世界遺産",
+    "文化遺産",
+    "自然遺産",
+    "複合遺産",
+}
+
+
+def drop_non_spots(drafts: dict[str, Draft]) -> list[str]:
+    qids = sorted({q for d in drafts.values() if d.ent and not d.tier for q in d.ent.instance_of})
+    labels = wikidata.labels_ja(qids) if qids else {}
+    dropped = []
+    for key, d in list(drafts.items()):
+        if not d.ent or d.tier:
+            continue
+        kinds = {labels.get(q, "") for q in d.ent.instance_of}
+        if kinds & EXCLUDE_P31:
+            dropped.append(d.name_ja or key)
+            del drafts[key]
+    return dropped
 
 
 # ---------- 評分 ----------
@@ -311,20 +369,26 @@ def category(d: Draft) -> str | None:
     return None
 
 
+def strip_disambiguation(label: str) -> str:
+    """維基標籤的消歧義括號：「竹林 (京都)」→「竹林」。"""
+    return re.sub(r"\s*[（(][^）)]*[）)]\s*$", "", label).strip()
+
+
 def build_names(d: Draft) -> tuple[LocalizedName, str | None]:
     t = d.osm_tags
     labels = d.ent.labels if d.ent else {}
     ja = d.name_ja or ""
     en = labels.get("en") or t.get("name:en")
     kana, kana_source = None, None
-    if d.ent and d.ent.kana and is_kana(d.ent.kana):
-        kana, kana_source = normalize_kana(d.ent.kana), "wikidata"
+    wd_kana = next((k for k in (d.ent.kana_all if d.ent else []) if is_kana(k)), None)
+    if wd_kana:
+        kana, kana_source = normalize_kana(wd_kana), "wikidata"
     else:
         for key in ("name:ja-Hira", "name:ja_kana", "name:ja-Kana"):
             if t.get(key) and is_kana(t[key]):
                 kana, kana_source = normalize_kana(t[key]), "osm"
                 break
-    romaji = t.get("name:ja-Latn") or t.get("name:ja_rm")
+    romaji = next((t[k] for k in ("name:ja-Latn", "name:ja_rm") if is_romaji(t.get(k))), None)
     if not romaji and kana:
         romaji = romaji_with_spacing(kana, en)
     zh_tw = (
@@ -337,11 +401,12 @@ def build_names(d: Draft) -> tuple[LocalizedName, str | None]:
         or t.get("name:zh")
         or ja
     )
+    zh_tw = strip_disambiguation(zh_tw) or ja
     return LocalizedName(ja=ja, kana=kana, romaji=romaji, zh_tw=zh_tw, en=en), kana_source
 
 
 def station_index(pref: str) -> list[OsmElement]:
-    els = osm.stations(geo.iso_code(pref))
+    els = osm.stations(geo.bbox(pref, pad=0.05))
     log(f"[{pref}]   車站 {len(els)} 筆")
     return els
 
@@ -364,7 +429,7 @@ def nearest_stations(d: Draft, stations: list[OsmElement]) -> list[NearestStatio
         kana = next(
             (normalize_kana(t[k]) for k in ("name:ja-Hira", "name:ja_kana") if t.get(k)), None
         )
-        romaji = t.get("name:ja-Latn") or t.get("name:ja_rm")
+        romaji = next((t[k] for k in ("name:ja-Latn", "name:ja_rm") if is_romaji(t.get(k))), None)
         if not romaji and kana:
             romaji = romaji_with_spacing(kana, t.get("name:en"))
         out.append(
@@ -483,6 +548,9 @@ def seed_region(pref: str) -> str:
     drafts, _ = collect(pref)
     unmatched = apply_seeds(pref, drafts)
     merged = drop_subparts(drafts)
+    excluded = drop_non_spots(drafts)
+    if excluded:
+        log(f"[{pref}] 排除非景點：{'、'.join(excluded)}")
     drafts = {k: d for k, d in drafts.items() if d.name_ja}
     log(f"[{pref}] 候選 {len(drafts)} 筆（附屬建物併入 {merged} 筆）")
 

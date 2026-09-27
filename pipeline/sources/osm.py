@@ -33,6 +33,9 @@ def _run(query: str) -> list[OsmElement]:
     for url in ENDPOINTS:
         try:
             data = post_json(url, data={"data": query}, min_interval=2.0, retries=3)
+            remark = data.get("remark", "")
+            if "runtime error" in remark or "timed out" in remark:
+                raise RuntimeError(remark)
             break
         except Exception as e:  # noqa: BLE001 — 換下一個鏡像
             last_err = e
@@ -67,12 +70,10 @@ out center tags;"""
     return _run(q)
 
 
-def stations(iso: str) -> list[OsmElement]:
-    q = f"""[out:json][timeout:300];
-{_area(iso)}
-(
-  node["railway"="station"]["name"](area.a);
-  node["railway"="halt"]["name"](area.a);
-);
-out tags;"""
+def stations(bbox: tuple[float, float, float, float]) -> list[OsmElement]:
+    """車站用範圍框查詢（比 area 查詢快很多；縣界附近的鄰縣車站也一併納入）。"""
+    s, w, n, e = bbox
+    q = f"""[out:json][timeout:180];
+node["railway"~"^(station|halt)$"]["name"]({s},{w},{n},{e});
+out;"""
     return _run(q)
