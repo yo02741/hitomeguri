@@ -27,5 +27,7 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <div ref="container" class="size-full bg-map-land" role="region" aria-label="地圖"></div>
+  <div class="absolute inset-0 bg-map-land" role="region" aria-label="地圖">
+    <div ref="container" class="size-full"></div>
+  </div>
 </template>

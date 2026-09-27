@@ -10,10 +10,10 @@ const explore = useExploreStore()
   <div
     id="app-root"
     :data-pref="explore.activePref ?? undefined"
-    class="flex min-h-dvh flex-col bg-paper text-ink transition-colors duration-200"
+    class="flex h-dvh flex-col bg-paper text-ink transition-colors duration-200"
   >
     <AppHeader />
-    <main class="flex flex-1 min-h-0 flex-col">
+    <main class="flex min-h-0 flex-1 flex-col overflow-y-auto">
       <RouterView />
     </main>
   </div>
