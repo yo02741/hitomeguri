@@ -10,6 +10,12 @@ on:
         description: "都道府縣 slug，空白分隔（例：kyoto aichi）"
         required: true
         default: "kyoto"
+      command:
+        description: "seed-region（大點）或 seed-themes（主題小店，需先有大點）"
+        required: true
+        default: seed-region
+        type: choice
+        options: [seed-region, seed-themes]
 
 permissions:
   contents: write
@@ -44,8 +50,8 @@ jobs:
         with:
           python-version: "3.11"
       - run: uv venv && uv pip install -e ".[dev]"
-      - name: seed-region ${{ matrix.pref }}
-        run: .venv/bin/python -m pipeline.cli seed-region ${{ matrix.pref }} --report report-${{ matrix.pref }}.md
+      - name: ${{ inputs.command }} ${{ matrix.pref }}
+        run: .venv/bin/python -m pipeline.cli ${{ inputs.command }} ${{ matrix.pref }} --report report-${{ matrix.pref }}.md
       - uses: actions/upload-artifact@v4
         with:
           name: seed-${{ matrix.pref }}
@@ -72,7 +78,7 @@ jobs:
             cat "$dir"/report-*.md >> /tmp/report.md
           done
           cat /tmp/report.md >> "$GITHUB_STEP_SUMMARY"
-          branch="pipeline/seed-${{ github.run_number }}"
+          branch="pipeline/${{ inputs.command }}-${{ github.run_number }}"
           git config user.name "hitomeguri-pipeline"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git checkout -b "$branch"
@@ -82,7 +88,7 @@ jobs:
             exit 0
           fi
           git commit -q -F - <<MSG
-          seed-region: ${{ inputs.prefectures }}
+          ${{ inputs.command }}: ${{ inputs.prefectures }}
 
           $(cat /tmp/report.md)
           MSG

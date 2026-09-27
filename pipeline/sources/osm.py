@@ -96,3 +96,35 @@ def stations(bbox: tuple[float, float, float, float]) -> list[OsmElement]:
 node["railway"~"^(station|halt)$"]["name"]({s},{w},{n},{e});
 out;"""
     return _run(q)
+
+
+# 主題小店（PLAN.md §5.2）。香（incense）OSM 資料不足，之後由 agent 搜尋補。
+THEME_FILTERS: dict[str, list[str]] = {
+    "tea": ['["shop"="tea"]["name"]', '["amenity"="cafe"]["cuisine"~"tea"]["name"]'],
+    "sake": [
+        '["craft"~"^(brewery|winery|distillery|sake_brewery)$"]["name"]',
+        '["industrial"~"^(brewery|distillery)$"]["name"]',
+    ],
+    "ramen": ['["cuisine"~"ramen"]["name"]'],
+    "onsen": [
+        '["natural"="hot_spring"]["name"]',
+        '["amenity"="public_bath"]["bath:type"~"onsen"]["name"]',
+        '["leisure"="resort"]["resort"="onsen"]["name"]',
+    ],
+    "pokemon": ['["shop"]["name"~"ポケモンセンター|ポケモンストア|Pokémon Center"]'],
+}
+
+
+def themed(iso: str) -> dict[str, list[OsmElement]]:
+    """各主題的 OSM 物件（以縣的 area 查詢）。"""
+    out: dict[str, list[OsmElement]] = {}
+    for theme, filters in THEME_FILTERS.items():
+        body = "\n".join(f"  nwr{f}(area.a);" for f in filters)
+        q = f"""[out:json][timeout:300];
+{_area(iso)}
+(
+{body}
+);
+out center tags;"""
+        out[theme] = _run(q)
+    return out

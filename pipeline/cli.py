@@ -40,6 +40,13 @@ def cmd_seed_region(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_seed_themes(args: argparse.Namespace) -> int:
+    from pipeline.themes import seed_themes
+
+    _emit("\n".join(seed_themes(p) for p in args.prefectures), args.report)
+    return 0
+
+
 def cmd_build_bundles(_: argparse.Namespace) -> int:
     from pipeline.build_bundles import build
 
@@ -83,6 +90,13 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("prefectures", nargs="+", help="都道府縣 slug，例 kyoto aichi")
     p.add_argument("--report", help="把 markdown 報告另存到這個路徑")
     p.set_defaults(func=cmd_seed_region)
+
+    p = sub.add_parser(
+        "seed-themes", help="採集主題小店（茶、酒、拉麵、溫泉、寶可夢），寫入 data/spots/"
+    )
+    p.add_argument("prefectures", nargs="+")
+    p.add_argument("--report")
+    p.set_defaults(func=cmd_seed_themes)
 
     p = sub.add_parser("enrich", help="LLM 補全（Batch API）：簡介、假名、季節、停留時間")
     p.add_argument("action", choices=["submit", "poll", "run"])

@@ -31,3 +31,4 @@ testpaths = ["pipeline/tests"]
 [tool.ruff.lint.per-file-ignores]
 # prompt 內的中文長句不斷行
 "pipeline/enrich.py" = ["E501"]
+"pipeline/tests/*" = ["E501"]

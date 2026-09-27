@@ -38,3 +38,6 @@ SUBPART_DISTANCE_M = 500
 # 精選的分類上限（其餘分類用預設值）
 FEATURED_CATEGORY_CAP = {"寺院": 8, "神社": 6, "古墳": 2, "城": 4, "": 6}
 FEATURED_CATEGORY_CAP_DEFAULT = 4
+
+# 每縣每主題最多收錄的小店數（依資料完整度排序）
+THEME_SPOTS_PER_PREF = {"tea": 80, "sake": 80, "ramen": 150, "onsen": 120, "pokemon": 20}
