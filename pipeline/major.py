@@ -642,7 +642,12 @@ def merge_existing(spots: list[Spot], path) -> list[dict[str, Any]]:  # noqa: AN
                 s["fetched_at"] = prev_fetch.get(s["url"], s["fetched_at"])
             if _comparable(prev) == _comparable(new):
                 new["updated_at"] = prev["updated_at"]
+        if prev:  # 主題由 seed-themes 維護：保留既有的
+            new["themes"] = sorted(set(new.get("themes", [])) | set(prev.get("themes", [])))
         out.append(Spot.model_validate(new).model_dump(mode="json", exclude_none=True))
+    # 主題小店（kind=theme）由 seed-themes 產生，這裡原樣保留
+    ids = {s["id"] for s in out}
+    out += [s for s in old.values() if s.get("kind") == "theme" and s["id"] not in ids]
     return sorted(out, key=lambda s: s["id"])
 
 
