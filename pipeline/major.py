@@ -226,10 +226,18 @@ def collect(pref: str) -> tuple[dict[str, Draft], dict[str, Entity]]:
         name = norm_name(el.tags.get("name:ja") or el.tags.get("name", ""))
         target = None
         for d in drafts.values():
-            if geo.haversine_m(d.lat, d.lng, el.lat, el.lng) > config.DEDUPE_DISTANCE_M:
+            dist = geo.haversine_m(d.lat, d.lng, el.lat, el.lng)
+            if dist > config.SUBPART_DISTANCE_M:
                 continue
+            if (
+                any(norm_name(n) == name for n in d.all_names())
+                and dist <= config.DEDUPE_DISTANCE_M
+            ):
+                target = d
+                break
+            # Wikidata 的任一語言標籤相同（大坂城／大阪城）：城郭、公園範圍大，放寬距離
             labels = d.ent.labels.values() if d.ent else []
-            if any(norm_name(n) == name for n in [*d.all_names(), *labels]):
+            if any(norm_name(x) == name for x in labels):
                 target = d
                 break
         if target:
@@ -261,7 +269,7 @@ def apply_seeds(pref: str, drafts: dict[str, Draft]) -> list[str]:
         if best is None:
             best = _substring_match(name_variants_strict(seed["name_ja"]), drafts)
         if best is None:
-            best = _search_seed(pref, variants, drafts)
+            best = _search_seed(pref, name_variants_strict(seed["name_ja"]), drafts)
         if best is None:
             unmatched.append(seed["name_ja"])
             continue
