@@ -14,12 +14,12 @@
 - 七縣（kyoto aichi osaka hyogo nara gifu shiga）已採集；S 級種子都在精選。
 - 未完成：簡介與缺漏假名需要 enrich（等使用者設定 ANTHROPIC_API_KEY）。
 
-## Phase 2、3 狀態（程式已完成，資料待跑）
-- Phase 2：`pipeline/themes.py`（seed-themes）、前端主題開關／主題色標記／`?themes=`。
-- Phase 3：`pipeline/specialties.py`（seed-specialties，含航線候選）、`pipeline/verify_flights.py`（需 API key）、前端地區特色與海報區航線（只顯示 verified）。
-- 資料順序：seed-region（run 6 進行中）→ 合併 → seed-themes（command=seed-themes）→ 合併 → seed-specialties → 合併。
-  每次合併：`git checkout origin/pipeline/<command>-N -- data/`，commit、push（Pages 自動部署）。
-- 需要使用者：repo secret `ANTHROPIC_API_KEY` → 跑 enrich.yml（先 limit 20）與 enrich.yml task=verify-flights。
+## Phase 2、3 狀態（已完成，資料已上線）
+- Phase 2：主題小店七縣已採集（茶、酒、拉麵、溫泉、寶可夢；寺社大點加 goshuin 主題）。前端主題開關、主題色標記、`?themes=` 同步。
+- Phase 3：地區特色 12 筆（種子 × Wikidata）；直飛航線 7 條候選皆 `verified: false`，網站不顯示。
+- 需要使用者：repo secret `ANTHROPIC_API_KEY` → 跑 `enrich.yml`（task=enrich，先 limit 20；之後 limit 0 跑全部）與 `enrich.yml`（task=verify-flights）。enrich 目前只補大點與主題小店，地區特色的簡介尚未接上。
+- 已知資料缺口：香（incense）主題與御朱印授與細節需 agent + web search；官方 GI／地域團體商標／郷土料理來源未接；種子對不上的景點見各次 seed-region 報告（大須商店街、中部電力 MIRAI TOWER、常滑やきもの散歩道、川原町、高山 古い町並、灘五郷、伏見 酒蔵、伊根の舟屋）。
+- 重跑順序：seed-region（保留主題小店）→ seed-themes → seed-specialties；每次合併 `git checkout origin/pipeline/<command>-N -- data/`。
 
 ## 之後
-- Phase 4 期間限定、Phase 5 個人化（收藏、去過、匯出）等，見 PLAN.md §9；使用者只授權到 Phase 3。
+- Phase 4 期間限定、Phase 5 個人化（收藏、去過、匯出）等，見 PLAN.md §9；使用者授權到 Phase 3。

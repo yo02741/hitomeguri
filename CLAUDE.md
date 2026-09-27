@@ -48,4 +48,4 @@ Claude Code 的雲端沙箱連不到 Wikidata、OSM、Wikimedia，也沒有 Clau
 
 ## 目前進度
 - Phase 0 完成：骨架、Emulator、Google 登入、空白地圖、GitHub Pages 部署。
-- Phase 1 進行中：大點 pipeline、LLM 補全、地圖／地區頁／景點詳情。
+- Phase 1–3 完成（簡介／假名補全與航線驗證待 ANTHROPIC_API_KEY）。詳見 docs/PROGRESS.md。
