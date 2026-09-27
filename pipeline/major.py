@@ -227,7 +227,7 @@ def collect(pref: str) -> tuple[dict[str, Draft], dict[str, Entity]]:
         target = None
         for d in drafts.values():
             dist = geo.haversine_m(d.lat, d.lng, el.lat, el.lng)
-            if dist > config.SUBPART_DISTANCE_M:
+            if dist > config.LABEL_MERGE_DISTANCE_M:
                 continue
             if (
                 any(norm_name(n) == name for n in d.all_names())
@@ -263,8 +263,11 @@ def apply_seeds(pref: str, drafts: dict[str, Draft]) -> list[str]:
         best: Draft | None = None
         for d in drafts.values():
             names = [norm_name(n) for n in d.all_names()]
+            names += [norm_name(x) for x in (d.ent.labels.values() if d.ent else [])]
             if any(v == n for v in variants for n in names):
-                if best is None or _sitelinks(d) > _sitelinks(best):
+                # 有 Wikidata 的優先（「大阪城」要對到 Wikidata 的大坂城，不是 OSM 的同名物件）
+                rank = (bool(d.ent), _sitelinks(d))
+                if best is None or rank > (bool(best.ent), _sitelinks(best)):
                     best = d
         if best is None:
             best = _substring_match(name_variants_strict(seed["name_ja"]), drafts)
