@@ -82,6 +82,8 @@ class Spot(StrictModel):
 
     id: str
     name: LocalizedName
+    # 假名的來源；"llm" 表示由 LLM 補、尚未人工確認（PLAN.md §11：reviewed: false）。
+    kana_source: Literal["wikidata", "osm", "llm"] | None = None
     location: Location
     prefecture: Prefecture
     city: str | None = None
@@ -90,7 +92,7 @@ class Spot(StrictModel):
     tags: list[str] = Field(default_factory=list)
     featured: bool = False
     score: float = 0
-    summary_zh: str
+    summary_zh: str = ""  # 由 enrich 補；空字串表示尚未補全
     best_months: list[int] | None = None
     stay_minutes: int | None = None
     nearest_stations: list[NearestStation] | None = None
