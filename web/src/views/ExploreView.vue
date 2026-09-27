@@ -71,6 +71,7 @@ function spotBounds(spots: MapSpot[]): [number, number, number, number] | null {
 }
 
 onMounted(async () => {
+  catalog.loadExtras()
   await catalog.loadAllMaps()
   if (props.pref && !panSwitch) bounds.value = spotBounds(prefSpots.value.filter((s) => s.f === 1))
   loadPrefectureShapes().catch(() => {})

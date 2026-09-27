@@ -4,6 +4,10 @@ import { shallowRef, triggerRef } from 'vue'
 import {
   type BundleIndex,
   fetchDetail,
+  fetchFlights,
+  fetchSpecialties,
+  type FlightRoute,
+  type Specialty,
   fetchIndex,
   fetchMap,
   type MapSpot,
@@ -83,5 +87,16 @@ export const useCatalogStore = defineStore('catalog', () => {
     return d[id] ?? null
   }
 
-  return { index, mapSpots, details, loadIndex, available, loadMap, loadAllMaps, loadDetail, getSpot }
+  const specialties = shallowRef<Specialty[]>([])
+  const flights = shallowRef<FlightRoute[]>([])
+
+  async function loadExtras(): Promise<void> {
+    await once('extras', async () => {
+      const [s, f] = await Promise.all([fetchSpecialties(), fetchFlights()])
+      specialties.value = s
+      flights.value = f
+    })
+  }
+
+  return { index, mapSpots, details, specialties, flights, loadExtras, loadIndex, available, loadMap, loadAllMaps, loadDetail, getSpot }
 })

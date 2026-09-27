@@ -12,8 +12,8 @@ import json
 from pathlib import Path
 from typing import Any
 
-from pipeline.models import Spot
-from pipeline.paths import BUNDLES_DIR, SPOTS_DIR
+from pipeline.models import FlightRoute, Specialty, Spot
+from pipeline.paths import BUNDLES_DIR, FLIGHTS_JSON, SPECIALTIES_DIR, SPOTS_DIR
 
 
 def _write(path: Path, data: Any) -> Path:
@@ -63,4 +63,20 @@ def build(src: Path = SPOTS_DIR, dst: Path = BUNDLES_DIR) -> list[Path]:
             "version": version,
         }
     written.append(_write(dst / "_index.json", index))
+    written += build_extras(dst)
     return written
+
+
+def build_extras(dst: Path = BUNDLES_DIR) -> list[Path]:
+    """地區特色（全部縣一個檔）與直飛航線（只含已驗證，PLAN.md §5.2b）。"""
+    specs: list[dict[str, Any]] = []
+    for path in sorted(SPECIALTIES_DIR.glob("*.json")) if SPECIALTIES_DIR.exists() else []:
+        for s in json.loads(path.read_text(encoding="utf-8")):
+            specs.append(Specialty.model_validate(s).model_dump(mode="json", exclude_none=True))
+    flights: list[dict[str, Any]] = []
+    if FLIGHTS_JSON.exists():
+        for r in json.loads(FLIGHTS_JSON.read_text(encoding="utf-8")):
+            route = FlightRoute.model_validate(r)
+            if route.verified:
+                flights.append(route.model_dump(mode="json", exclude_none=True))
+    return [_write(dst / "specialties.json", specs), _write(dst / "flights.json", flights)]
