@@ -1,0 +1,66 @@
+rules_version = '2';
+
+// 只存使用者資料；景點目錄在 Hosting 的靜態 JSON，不在 Firestore。
+// 完整資料模型見 UX-FLOW.md §3、PLAN.md §4.3。
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function signedIn() {
+      return request.auth != null;
+    }
+
+    function isOwner(uid) {
+      return signedIn() && request.auth.uid == uid;
+    }
+
+    function isString(v, max) {
+      return v is string && v.size() <= max;
+    }
+
+    match /users/{uid} {
+      allow read: if isOwner(uid);
+      allow create, update: if isOwner(uid)
+        && request.resource.data.keys().hasOnly(['display_name', 'home_airport', 'created_at', 'updated_at'])
+        && (!('display_name' in request.resource.data) || isString(request.resource.data.display_name, 80))
+        && (!('home_airport' in request.resource.data) || request.resource.data.home_airport in ['TPE', 'TSA', 'RMQ', 'KHH', 'TNN']);
+      allow delete: if isOwner(uid);
+
+      match /trips/{tripId} {
+        allow read, delete: if isOwner(uid);
+        allow create, update: if isOwner(uid)
+          && request.resource.data.status in ['planning', 'ongoing', 'done']
+          && request.resource.data.days is list
+          && request.resource.data.days.size() <= 60
+          && (!('name' in request.resource.data) || isString(request.resource.data.name, 80));
+
+        match /progress/{phraseId} {
+          allow read, write: if isOwner(uid);
+        }
+      }
+
+      match /places/{placeId} {
+        allow read, delete: if isOwner(uid);
+        allow create, update: if isOwner(uid)
+          && isString(request.resource.data.name, 120)
+          && request.resource.data.location.lat is number
+          && request.resource.data.location.lng is number
+          && isString(request.resource.data.prefecture, 20);
+      }
+
+      match /marks/{spotId} {
+        allow read, write: if isOwner(uid);
+      }
+
+      match /lists/{listId} {
+        allow read, delete: if isOwner(uid);
+        allow create, update: if isOwner(uid)
+          && isString(request.resource.data.name, 80);
+      }
+    }
+
+    // 其餘路徑一律拒絕。
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

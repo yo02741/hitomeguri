@@ -1,0 +1,16 @@
+{
+  "name": "hitomeguri",
+  "private": true,
+  "description": "ひとめぐり（一巡り／HITOMEGURI）：日本景點主題地圖與旅前準備",
+  "scripts": {
+    "dev": "npm --prefix web run dev",
+    "build": "npm --prefix web run build",
+    "typecheck": "npm --prefix web run typecheck",
+    "emulators": "firebase emulators:start --project demo-hitomeguri --only auth,firestore",
+    "emulators:hosting": "firebase emulators:start --project demo-hitomeguri",
+    "region-css": "python -m pipeline.cli build-region-css"
+  },
+  "devDependencies": {
+    "firebase-tools": "^15.31.0"
+  }
+}

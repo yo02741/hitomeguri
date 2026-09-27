@@ -1,0 +1,35 @@
+# secrets
+.env
+.env.*
+!.env.example
+*-service-account*.json
+
+# node
+node_modules/
+web/dist/
+web/public/bundles/
+web/.vite/
+
+# python
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+pipeline/.cache/
+
+# firebase
+.firebase/
+firebase-debug.log
+firestore-debug.log
+ui-debug.log
+*-debug.log
+emulator-data/
+
+# os / editor
+.DS_Store
+.idea/
+*.swp
+
+# python build
+*.egg-info/

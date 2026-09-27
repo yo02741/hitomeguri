@@ -1,0 +1,133 @@
+/* ひとめぐり design tokens — Tailwind CSS v4（CSS-first 設定）
+ * 規格說明見 DESIGN.md。新增或修改 token 時兩邊一起改。
+ */
+@import "tailwindcss";
+@import "./regions.css";
+
+@theme {
+  /* ---------- 字體 ---------- */
+  --font-sans: "Noto Sans TC", "Noto Sans JP", system-ui, sans-serif;
+  --font-ja: "Noto Sans JP", "Noto Sans TC", system-ui, sans-serif;
+  --font-latin: "Barlow Semi Condensed", "Noto Sans TC", system-ui, sans-serif;
+
+  /* 中性色（paper、surface、line、ink…）改由地區色產生，定義在下方 @theme inline */
+
+  /* ---------- 地圖 ---------- */
+  --color-map-water: #A9CFE0;
+  --color-map-green: #E1ECD9;
+
+  /* ---------- 主題色（固定，不隨地區改變） ---------- */
+  --color-t-tea: #3F8F35;
+  --color-t-sake: #B0561C;
+  --color-t-incense: #A4508B;
+  --color-t-onsen: #0E8FA0;
+  --color-t-ramen: #B07A00;
+  --color-t-pokemon: #1F6FC0;
+  --color-t-goshuin: #C8102E;
+
+  /* ---------- 功能色 ---------- */
+  --color-visited: #1F4E8C;       /* 去過印章 */
+  --color-visited-tint: #EEF3F9;
+  --color-danger: #B42318;
+
+  /* ---------- 字級（px 註記於右） ---------- */
+  --text-display: 3.625rem;       /* 58 海報區縣名 */
+  --text-display--line-height: 1.1;
+  --text-h1: 2.25rem;             /* 36 手機景點名 */
+  --text-h1--line-height: 1.25;
+  --text-h2: 1.875rem;            /* 30 桌機景點名 */
+  --text-h2--line-height: 1.25;
+  --text-h3: 1.375rem;            /* 22 頁面標題 */
+  --text-h3--line-height: 1.35;
+  --text-title: 1.125rem;         /* 18 片語、清單標題 */
+  --text-title--line-height: 1.5;
+  --text-body: 0.9375rem;         /* 15 內文 */
+  --text-body--line-height: 1.8;
+  --text-body-sm: 0.875rem;       /* 14 資訊列、清單 */
+  --text-body-sm--line-height: 1.6;
+  --text-label: 0.8125rem;        /* 13 次要標籤 */
+  --text-label--line-height: 1.5;
+  --text-caption: 0.75rem;        /* 12 假名、說明、credit */
+  --text-caption--line-height: 1.5;
+
+  /* ---------- 字距 ---------- */
+  --tracking-kana: 0.2em;         /* 假名行 */
+  --tracking-name: 0.1em;         /* 漢字大標 */
+  --tracking-romaji: 0.15em;      /* 羅馬拼音（大寫） */
+  --tracking-section: 0.15em;     /* 區塊小標 */
+
+  /* ---------- 圓角 ---------- */
+  --radius-tag: 3px;
+  --radius-control: 6px;          /* 按鈕、輸入框 */
+  --radius-badge: 8px;            /* 主題符號 */
+  --radius-card: 10px;
+  --radius-sheet: 20px;           /* 手機 bottom sheet 上緣 */
+
+  /* ---------- 陰影 ---------- */
+  --shadow-marker: 0 1px 3px rgb(30 33 36 / 0.25);
+  --shadow-sheet: 0 -6px 20px rgb(30 33 36 / 0.12);
+
+  /* ---------- 版面 ---------- */
+  --spacing-sidebar: 20rem;       /* 320 左欄 */
+  --spacing-panel: 25rem;         /* 400 右欄 */
+  --spacing-header: 3.75rem;      /* 60 header 高 */
+  --spacing-hero: 15.625rem;      /* 250 海報區高 */
+  --spacing-tap: 2.75rem;         /* 44 最小點擊區 */
+
+  /* ---------- 動態 ---------- */
+  --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* 地區色與中性色：值由 [data-pref] 在執行時決定（沒有 data-pref 時為 :root 的全國色）。
+ * 必須用 inline，讓 utility 直接輸出 var(--region-*)，子容器覆寫 data-pref 時才會生效。 */
+@theme inline {
+  /* 強調色 */
+  --color-region: var(--region-base);
+  --color-on-region: var(--region-on);
+  --color-region-accent: var(--region-accent);
+  --color-region-tint: var(--region-tint);
+  --color-region-strong: var(--region-strong);
+
+  /* 中性色（地區色滲透） */
+  --color-paper: var(--region-paper);
+  --color-surface: var(--region-surface);
+  --color-header: var(--region-header);
+  --color-placeholder: var(--region-placeholder);
+  --color-line: var(--region-line);
+  --color-line-soft: var(--region-line-soft);
+  --color-ink: var(--region-ink);
+  --color-ink-2: var(--region-ink-2);
+  --color-sub: var(--region-sub);
+
+  /* 地圖 */
+  --color-map-land: var(--region-map);
+  --color-map-rail: var(--region-line);
+  --color-map-label: var(--region-sub);
+
+  /* 主題色中跟著中性色走的兩個 */
+  --color-t-major: var(--region-ink);
+  --color-t-custom: var(--region-sub);
+}
+
+@layer base {
+  html {
+    color: var(--region-ink);
+    background: var(--region-paper);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+  /* 日文字形：TC 與 JP 的漢字字形不同，日文內容一律標 lang="ja" */
+  :lang(ja) {
+    font-family: var(--font-ja);
+  }
+  :focus-visible {
+    outline: 2px solid var(--region-strong);
+    outline-offset: 2px;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
