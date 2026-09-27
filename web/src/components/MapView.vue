@@ -5,6 +5,7 @@ import 'maplibre-gl/dist/maplibre-gl.css'
 import { nextTick, onBeforeUnmount, onMounted, ref, watch } from 'vue'
 
 import { JAPAN_CENTER, JAPAN_ZOOM, MAP_STYLE_URL } from '../map/style'
+import { THEMES } from '../data/themes'
 import type { MapSpot } from '../services/bundles'
 
 const props = defineProps<{
@@ -14,6 +15,8 @@ const props = defineProps<{
   bounds?: [number, number, number, number] | null
   /** 地區色改變時換一個值，讓地圖重新讀取 CSS 變數 */
   colorKey?: string | null
+  /** 目前開啟的主題：主題景點依主題色畫外框 */
+  themes?: string[]
 }>()
 
 const emit = defineEmits<{
@@ -41,7 +44,13 @@ function toGeoJSON(spots: MapSpot[]): GeoJSON.FeatureCollection<GeoJSON.Point> {
     features: spots.map((s) => ({
       type: 'Feature',
       geometry: { type: 'Point', coordinates: [s.lng, s.lat] },
-      properties: { id: s.id, n: s.n, f: s.f, s: s.s },
+      properties: {
+        id: s.id,
+        n: s.n,
+        f: s.k === 'major' ? s.f : 0,
+        // 顯示用主題：大點為空字串（墨色），主題景點取第一個開啟中的主題
+        th: s.k === 'major' ? '' : ((s.t ?? []).find((t) => props.themes?.includes(t)) ?? s.t?.[0] ?? ''),
+      },
     })),
   }
 }
@@ -55,8 +64,16 @@ function applyColors() {
   map.setPaintProperty('clusters', 'circle-color', ink)
   map.setPaintProperty('clusters', 'circle-stroke-color', paper)
   map.setPaintProperty('cluster-count', 'text-color', paper)
+  const themeColor: unknown[] = ['match', ['get', 'th']]
+  for (const t of THEMES) themeColor.push(t.key, token(`--color-t-${t.key}`))
+  themeColor.push(ink)
   map.setPaintProperty('spots', 'circle-color', ['case', ['==', ['get', 'f'], 1], ink, paper])
-  map.setPaintProperty('spots', 'circle-stroke-color', ['case', ['==', ['get', 'f'], 1], paper, ink])
+  map.setPaintProperty('spots', 'circle-stroke-color', [
+    'case',
+    ['==', ['get', 'f'], 1],
+    paper,
+    themeColor,
+  ] as unknown as maplibregl.ExpressionSpecification)
   map.setPaintProperty('spot-labels', 'text-color', ink)
   map.setPaintProperty('spot-labels', 'text-halo-color', paper)
   map.setPaintProperty('selected', 'circle-color', ink)
@@ -189,8 +206,8 @@ function fit(b: [number, number, number, number], animate = true) {
 }
 
 watch(
-  () => props.spots,
-  (spots) => {
+  () => [props.spots, props.themes] as const,
+  ([spots]) => {
     if (!map || !ready) return
     ;(map.getSource(SOURCE) as GeoJSONSource | undefined)?.setData(toGeoJSON(spots))
   },

@@ -30,8 +30,33 @@ const available = computed(() => Object.keys(catalog.index?.prefectures ?? {}))
 const allSpots = computed<MapSpot[]>(() =>
   available.value.flatMap((p) => catalog.mapSpots[p] ?? []),
 )
+// 顯示規則：大點（可只看精選）＋開啟中主題的景點（UX-FLOW.md A3、A4）
 const visibleSpots = computed(() =>
-  explore.featuredOnly ? allSpots.value.filter((s) => s.f === 1 || s.id === selectedId.value) : allSpots.value,
+  allSpots.value.filter((s) => {
+    if (s.id === selectedId.value) return true
+    if (s.t?.some((t) => explore.themes.includes(t))) return true
+    if (s.k !== 'major' || !explore.showMajor) return false
+    return !explore.featuredOnly || s.f === 1
+  }),
+)
+
+// 主題開關與 URL query 同步：分享連結與重新整理後保留（A4）
+watch(
+  () => route.query.themes,
+  (q) => {
+    const list = typeof q === 'string' && q ? q.split(',') : []
+    if (list.join(',') !== explore.themes.join(',')) explore.themes = list
+  },
+  { immediate: true },
+)
+watch(
+  () => explore.themes,
+  (list) => {
+    const q = { ...route.query }
+    if (list.length) q.themes = list.join(',')
+    else delete q.themes
+    if ((route.query.themes ?? '') !== (q.themes ?? '')) router.replace({ query: q })
+  },
 )
 const prefSpots = computed(() => (props.pref ? (catalog.mapSpots[props.pref] ?? []) : []))
 
@@ -140,6 +165,7 @@ function onMoveEnd(center: { lng: number; lat: number }, zoom: number) {
         :selected-id="selectedId"
         :bounds="bounds"
         :color-key="explore.activePref"
+        :themes="explore.themes"
         @select="select"
         @moveend="onMoveEnd"
       />

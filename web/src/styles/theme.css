@@ -4,7 +4,7 @@
 @import "tailwindcss";
 @import "./regions.css";
 
-@theme {
+@theme static {
   /* ---------- 字體 ---------- */
   --font-sans: "Noto Sans TC", "Noto Sans JP", system-ui, sans-serif;
   --font-ja: "Noto Sans JP", "Noto Sans TC", system-ui, sans-serif;

@@ -2,7 +2,9 @@
 import { computed } from 'vue'
 
 import type { Spot } from '../services/bundles'
+import { themeByKey } from '../data/themes'
 import { canSpeak, speakJa } from '../services/tts'
+import ThemeBadge from './ThemeBadge.vue'
 
 const props = defineProps<{ spot: Spot | null; loading?: boolean }>()
 const emit = defineEmits<{ close: [] }>()
@@ -102,6 +104,14 @@ function distance(m: number): string {
       </div>
       <div v-if="category.length" class="flex border-b border-line-soft py-2.5 text-body-sm">
         <span class="w-[72px] shrink-0 text-sub">分類</span><span>{{ category.join('　') }}</span>
+      </div>
+      <div v-if="spot.themes.length" class="flex items-center border-b border-line-soft py-2.5 text-body-sm">
+        <span class="w-[72px] shrink-0 text-sub">主題</span>
+        <span class="flex flex-wrap gap-x-3 gap-y-1.5">
+          <span v-for="t in spot.themes" :key="t" class="flex items-center gap-1.5">
+            <ThemeBadge :theme="t" :size="20" />{{ themeByKey.get(t)?.label ?? t }}
+          </span>
+        </span>
       </div>
     </div>
 
