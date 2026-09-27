@@ -8,5 +8,7 @@ export default defineConfig({
   plugins: [vue(), tailwindcss()],
   server: {
     port: 5173,
+    // 前端直接 import repo 根目錄的 data/regions.json
+    fs: { allow: ['..'] },
   },
 })

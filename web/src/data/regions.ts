@@ -1,0 +1,40 @@
+import raw from '../../../data/regions.json'
+
+export interface RegionName {
+  ja: string
+  kana: string
+  romaji: string
+  zh_tw: string
+}
+
+export interface Region {
+  prefecture: string
+  name: RegionName
+  area: string
+  area_name: string
+  motif_zh: string
+}
+
+export const regions: Region[] = raw.regions
+export const national = raw.national
+
+const byPref = new Map(regions.map((r) => [r.prefecture, r]))
+
+export function regionOf(pref: string | null | undefined): Region | undefined {
+  return pref ? byPref.get(pref) : undefined
+}
+
+/** 依地方分組，保留 regions.json 的順序（JIS 順）。 */
+export function groupByArea(prefs: string[]): { area: string; areaName: string; items: Region[] }[] {
+  const groups: { area: string; areaName: string; items: Region[] }[] = []
+  for (const r of regions) {
+    if (!prefs.includes(r.prefecture)) continue
+    let g = groups.find((x) => x.area === r.area)
+    if (!g) {
+      g = { area: r.area, areaName: r.area_name, items: [] }
+      groups.push(g)
+    }
+    g.items.push(r)
+  }
+  return groups
+}

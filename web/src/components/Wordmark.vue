@@ -4,10 +4,10 @@
 
 <template>
   <RouterLink to="/" aria-label="ひとめぐり 首頁" class="flex items-end gap-2.5 no-underline text-ink">
-    <span class="flex flex-col leading-none">
+    <span class="flex shrink-0 flex-col leading-none whitespace-nowrap">
       <span lang="ja" class="mb-[3px] text-[10px] tracking-[3px] text-sub">ひとめぐり</span>
       <span lang="ja" class="text-[22px] font-black tracking-[2px]">一巡り</span>
     </span>
-    <span class="font-latin text-[13px] font-semibold uppercase tracking-[3px] text-sub">HITOMEGURI</span>
+    <span class="font-latin text-[13px] font-semibold whitespace-nowrap uppercase tracking-[3px] text-sub">HITOMEGURI</span>
   </RouterLink>
 </template>

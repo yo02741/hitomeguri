@@ -20,10 +20,10 @@ function isActive(tab: (typeof tabs)[number]) {
 </script>
 
 <template>
-  <header class="flex h-header shrink-0 items-center gap-8 border-b border-line bg-header px-6">
+  <header class="flex h-header shrink-0 items-center gap-8 border-b border-line bg-header px-4 md:px-6">
     <Wordmark />
 
-    <nav class="flex h-full">
+    <nav class="flex h-full max-md:hidden" aria-label="主要">
       <RouterLink
         v-for="tab in tabs"
         :key="tab.to"
