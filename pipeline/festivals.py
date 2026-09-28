@@ -16,7 +16,13 @@ import unicodedata
 from typing import Any
 
 from pipeline.kana import is_kana, normalize_kana, romaji_with_spacing
-from pipeline.major import excluded_ids, log, pref_full_name, strip_disambiguation
+from pipeline.major import (
+    PrefResolver,
+    excluded_ids,
+    log,
+    pref_full_name,
+    strip_disambiguation,
+)
 from pipeline.models import Festival, Image, LocalizedName, Location, Source, Summary
 from pipeline.paths import FESTIVALS_DIR
 from pipeline.sources import commons, pageviews, wikidata, wikipedia
@@ -55,9 +61,12 @@ _MONTH_PATTERNS = [
 _MONTH_LABEL = re.compile(r"^(\d{1,2})月")
 
 
+_OVERVIEW = re.compile(r"[二三四五六七八九十]大(祭|まつり|祭り|花火|行事)")
+
+
 def is_festival(title: str, p31_labels: list[str]) -> bool:
-    # 一覧、「京都三大祭り」這類總論條目
-    if "一覧" in title or "三大" in title:
+    # 一覧、「京都三大祭り」「福岡五大祭」這類總論條目
+    if "一覧" in title or _OVERVIEW.search(title):
         return False
     labels = [lab.lower() for lab in p31_labels if lab]
     if any(w in lab for lab in labels for w in NOT_FESTIVAL_P31):
@@ -127,6 +136,7 @@ def _summary(
 
 
 def seed_festivals(prefs: list[str]) -> str:
+    from pipeline.specialties import pref_from_text
     from pipeline.wiki import _TO_TW, page_url, reading_from_lead
 
     today = dt.date.today().isoformat()
@@ -134,6 +144,7 @@ def seed_festivals(prefs: list[str]) -> str:
     lines = ["## 祭典", "", "| 縣 | 分類條目 | 收錄 | 有月份 |", "|---|---|---|---|"]
     details: list[str] = []
     FESTIVALS_DIR.mkdir(parents=True, exist_ok=True)
+    resolver = PrefResolver()
     for pref in prefs:
         titles = wikipedia.category_members("jawiki", CATEGORY.format(name=pref_full_name(pref)), 1)
         qids = wikipedia.wikidata_ids("jawiki", titles) if titles else {}
@@ -152,7 +163,15 @@ def seed_festivals(prefs: list[str]) -> str:
 
         # 已停辦的不收（要先取開頭段落才知道：多取一些再篩，最後留 MAX_PER_PREF 個）
         leads = wikipedia.intro_extracts("jawiki", [t for t, _ in cands]) if cands else {}
-        cands = [te for te in cands if not is_defunct(leads.get(te[0], ""))][:MAX_PER_PREF]
+        cands = [te for te in cands if not is_defunct(leads.get(te[0], ""))]
+        # 子分類會帶進別縣的祭典（「阿波踊り」分類裡的東京高円寺阿波おどり）：
+        # 所在縣（P131，沒有時看開頭段落第一個縣名）是別縣的不收
+        resolver.prefetch([e for _, e in cands])
+        cands = [
+            (t, e)
+            for t, e in cands
+            if (resolver.resolve(e) or pref_from_text(leads.get(t, ""))) in (None, pref)
+        ][:MAX_PER_PREF]
         ents_kept = [e for _, e in cands]
         occurs = wikidata.labels_ja(sorted({q for e in ents_kept for q in e.occurs}))
         extracts = {

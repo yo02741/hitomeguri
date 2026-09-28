@@ -9,6 +9,8 @@ def test_is_festival_by_p31_and_name():
     assert not is_festival("八坂神社", ["神社"])
     assert not is_festival("日本の祭り一覧", ["一覧記事"])
     assert not is_festival("京都三大祭り", ["祭り"])
+    assert not is_festival("福岡五大祭", [])
+    assert is_festival("大祭", [])
     # P31 沒有時看名稱
     assert is_festival("唐津くんち", [])
     assert not is_festival("某保存会", [])
