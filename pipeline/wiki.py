@@ -10,6 +10,7 @@ from __future__ import annotations
 import datetime as dt
 import json
 import re
+import unicodedata
 from typing import Any
 from urllib.parse import quote
 
@@ -27,20 +28,50 @@ _TO_TW = OpenCC("s2tw")
 SUMMARY_MAX = 220
 
 # 「名稱（よみ、英語: …）」「名稱 (よみ)」：取開頭括號，括號前不能太長（避免抓到內文的括號）
-_LEAD_PAREN = re.compile(r"^[^（(。\n]{1,40}[（(]([^）)]{1,120})[）)]")
+_LEAD_PAREN = re.compile(r"^([^（(。\n]{1,40})[（(]([^）)]{1,120})[）)]")
+# 中文維基開頭常見「（日語：…／…，羅馬化：…）」：與卡片上的名稱、念法重複，刪去
+_ZH_JA_NOTE = re.compile(r"[（(](?:日語|日文|日本語|日语)[:：]")
 _SENTENCE_END = re.compile(r"(?<=。)")
 
 
-def reading_from_lead(text: str) -> str | None:
-    """日文維基開頭括號裡的讀音；括號內有多段（、；）時取第一段是假名的。"""
+def _norm(s: str) -> str:
+    s = unicodedata.normalize("NFKC", s)
+    s = re.sub(r"\s*[（(][^）)]*[）)]\s*$", "", s)  # 消歧義括號
+    return re.sub(r"[\s・]", "", s)
+
+
+def reading_from_lead(text: str, name: str | None = None) -> str | None:
+    """日文維基開頭括號裡的讀音；括號內有多段（、；）時取第一段是假名的。
+
+    name：括號前的詞必須就是這個名稱（條目可能是上位概念，例如「元離宮二条城」對到「二条城」），
+    不一致就不用，避免念法少一截。
+    """
     m = _LEAD_PAREN.match(text.strip())
     if not m:
         return None
-    for part in re.split(r"[、，,；;／/]", m.group(1)):
+    if name is not None and _norm(m.group(1)) != _norm(name):
+        return None
+    for part in re.split(r"[、，,；;／/]", m.group(2)):
         part = part.strip().replace(" ", "").replace("　", "")
         if part and is_kana(part):
             return normalize_kana(part)
     return None
+
+
+def strip_ja_note(text: str) -> str:
+    """刪去中文維基開頭的日語名稱註記（含巢狀括號），其餘文字不動。"""
+    m = _ZH_JA_NOTE.search(text[:80])
+    if not m:
+        return text
+    depth = 0
+    for i in range(m.start(), len(text)):
+        if text[i] in "（(":
+            depth += 1
+        elif text[i] in "）)":
+            depth -= 1
+            if depth == 0:
+                return text[: m.start()] + text[i + 1 :]
+    return text
 
 
 def first_paragraph(text: str, limit: int = SUMMARY_MAX) -> str:
@@ -86,7 +117,7 @@ def apply_wiki(spots: list[dict[str, Any]], today: str) -> dict[str, int]:
             title = ent.sitelinks.get(site)
             text = first_paragraph(extracts[site].get(title, "")) if title else ""
             if lang == "zh":
-                text = _TO_TW.convert(text)
+                text = _TO_TW.convert(strip_ja_note(text))
             if not text:
                 continue
             url = page_url(site, title)
@@ -100,10 +131,14 @@ def apply_wiki(spots: list[dict[str, Any]], today: str) -> dict[str, int]:
             }
             stats[f"summary_{lang}"] += 1
             break
-        # 念法：只補缺漏的
+        # 念法：只補缺漏的（之前由維基補的每次重算，規則修正時才會更新）
         ja_title = ent.sitelinks.get("jawiki")
+        if s.get("kana_source") == "wikipedia":
+            s["name"].pop("kana", None)
+            s["name"].pop("romaji", None)
+            s.pop("kana_source", None)
         if not s["name"].get("kana") and ja_title:
-            kana = reading_from_lead(extracts["jawiki"].get(ja_title, ""))
+            kana = reading_from_lead(extracts["jawiki"].get(ja_title, ""), s["name"]["ja"])
             if kana:
                 s["name"]["kana"] = kana
                 s["name"]["romaji"] = s["name"].get("romaji") or romaji_with_spacing(

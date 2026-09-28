@@ -1,5 +1,5 @@
 from pipeline import wiki
-from pipeline.wiki import first_paragraph, reading_from_lead
+from pipeline.wiki import first_paragraph, reading_from_lead, strip_ja_note
 
 
 def test_reading_from_lead() -> None:
@@ -24,3 +24,18 @@ def test_first_paragraph_cuts_at_sentence() -> None:
 
 def test_zh_summary_converted_to_traditional() -> None:
     assert wiki._TO_TW.convert("位于京都市伏见区的神社") == "位於京都市伏見區的神社"
+
+
+def test_reading_requires_matching_name() -> None:
+    lead = "二条城（にじょうじょう）は、京都市中京区にある城。"
+    assert reading_from_lead(lead, "二条城") == "にじょうじょう"
+    assert reading_from_lead(lead, "元離宮二条城") is None
+    assert reading_from_lead("金閣寺 (きんかくじ) は…", "金閣寺 (京都)") == "きんかくじ"
+
+
+def test_strip_ja_note() -> None:
+    text = "伏見稻荷大社（日語：伏見稲荷大社／ふしみいなりたいしゃ，羅馬化：Fushimi）是一座神社。"
+    assert strip_ja_note(text) == "伏見稻荷大社是一座神社。"
+    nested = "元離宮二條城（日語：元離宮二条城〔元離宮二條城〕（もとりきゅう）／x）是城堡。"
+    assert strip_ja_note(nested) == "元離宮二條城是城堡。"
+    assert strip_ja_note("清水寺是一座寺院（778年）。") == "清水寺是一座寺院（778年）。"
