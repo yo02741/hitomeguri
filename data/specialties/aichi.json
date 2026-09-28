@@ -84,6 +84,85 @@
     "updated_at": "2026-09-28"
   },
   {
+    "id": "aichi-Q10915484",
+    "name": {
+      "ja": "台湾ラーメン",
+      "kana": "たいわんらーめん",
+      "romaji": "Taiwan Ramen",
+      "zh_tw": "臺灣拉麵",
+      "en": "Taiwan ramen"
+    },
+    "prefecture": "aichi",
+    "category": "ramen",
+    "summary": {
+      "text": "臺灣拉麵是主要在中京圈臺灣料理店提供的辣味拉麵。此料理發源自愛知縣名古屋市，現視作名古屋料理。在臺灣販賣此種麵食的店家，則稱之為名古屋拉麵。",
+      "lang": "zh",
+      "source_url": "https://zh.wikipedia.org/wiki/%E5%8F%B0%E7%81%A3%E6%8B%89%E9%BA%B5",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
+    "source_type": "wikipedia",
+    "kana_source": "wikidata",
+    "images": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/3/3a/CodazziTaiwanRamen.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+        "author": "小太刀",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:CodazziTaiwanRamen.jpg"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q10915484",
+        "fetched_at": "2026-09-28"
+      },
+      {
+        "url": "https://zh.wikipedia.org/wiki/%E5%8F%B0%E7%81%A3%E6%8B%89%E9%BA%B5",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "aichi-Q109361052",
+    "name": {
+      "ja": "ひきずり",
+      "kana": "ひきずり",
+      "romaji": "Hikizuri",
+      "zh_tw": "ひきずり",
+      "en": "hikizuri"
+    },
+    "prefecture": "aichi",
+    "category": "food",
+    "summary": {
+      "text": "ひきずりあるいはひきずり鍋とは、鶏肉を使ったすき焼き。鶏肉以外も含めたすき焼き全般を「ひきずり」と呼ぶ場合もあり、鶏肉を使ったものを「かしわのひきずり」とも呼ぶ。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E3%81%B2%E3%81%8D%E3%81%9A%E3%82%8A",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
+    "source_type": "wikipedia",
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4c/%E9%B6%8F%E3%81%AE%E3%81%99%E3%81%8D%E7%84%BC%E3%81%8D1178_02.jpg/960px-%E9%B6%8F%E3%81%AE%E3%81%99%E3%81%8D%E7%84%BC%E3%81%8D1178_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "経済特区",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:%E9%B6%8F%E3%81%AE%E3%81%99%E3%81%8D%E7%84%BC%E3%81%8D1178_02.jpg"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q109361052",
+        "fetched_at": "2026-09-28"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E3%81%B2%E3%81%8D%E3%81%9A%E3%82%8A",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
     "id": "aichi-Q110256900",
     "name": {
       "ja": "好来系ラーメン",
@@ -163,6 +242,81 @@
     "updated_at": "2026-09-28"
   },
   {
+    "id": "aichi-Q11261018",
+    "name": {
+      "ja": "えびおろし",
+      "kana": "えびおろし",
+      "romaji": "Ebioroshi",
+      "zh_tw": "えびおろし",
+      "en": "Ebioroshi"
+    },
+    "prefecture": "aichi",
+    "category": "food",
+    "summary": {
+      "text": "えびおろしは、名古屋めしの一種。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E3%81%88%E3%81%B3%E3%81%8A%E3%82%8D%E3%81%97",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
+    "source_type": "wikipedia",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q11261018",
+        "fetched_at": "2026-09-28"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E3%81%88%E3%81%B3%E3%81%8A%E3%82%8D%E3%81%97",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "aichi-Q11264789",
+    "name": {
+      "ja": "きしめん",
+      "kana": "きしめん",
+      "romaji": "Kishimen",
+      "zh_tw": "棊子麵",
+      "en": "kishimen"
+    },
+    "prefecture": "aichi",
+    "category": "kyodo",
+    "summary": {
+      "text": "きしめん（棊子麺）は、幅広で薄く平たい形状のうどんの一種。ならびにその麺を使用した料理を指す。愛知県では「きしめん普及委員会」が発足するなど、愛知県の名物となっている。また基準を守り、愛知県で製造されたものについては「名古屋きしめん」と表示することが認められている。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E3%81%8D%E3%81%97%E3%82%81%E3%82%93",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
+    "source_type": "kyodo_ryori",
+    "images": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/3/31/CodazziKishimen2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+        "author": "No machine-readable author provided. 小太刀~commonswiki assumed (based on copyright claims).",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:CodazziKishimen2.jpg"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/kishimen_aichi.html",
+        "fetched_at": "2026-09-28"
+      },
+      {
+        "url": "https://www.wikidata.org/wiki/Q11264789",
+        "fetched_at": "2026-09-28"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E3%81%8D%E3%81%97%E3%82%81%E3%82%93",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
     "id": "aichi-Q11273846",
     "name": {
       "ja": "どて焼き",
@@ -220,7 +374,7 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "source_type": "wikidata",
+    "source_type": "wikipedia",
     "images": [
       {
         "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cd/Hitsumabushi1.jpg/960px-Hitsumabushi1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -242,39 +396,69 @@
     "updated_at": "2026-09-28"
   },
   {
-    "id": "aichi-Q11308473",
+    "id": "aichi-Q11286686",
     "name": {
-      "ja": "シロノワール",
-      "kana": "しろのわーる",
-      "romaji": "Shironowaru",
-      "zh_tw": "シロノワール",
-      "en": "Shiro-Noir"
+      "ja": "イタリアンスパゲッティ",
+      "kana": "いたりあんすぱげってぃ",
+      "romaji": "Itariansupagetti",
+      "zh_tw": "イタリアンスパゲッティ"
     },
     "prefecture": "aichi",
     "category": "food",
     "summary": {
-      "text": "シロノワールは、喫茶店チェーン「珈琲所 コメダ珈琲店」で提供されているスイーツ商品。同店の看板商品の一つである。",
+      "text": "イタリアンスパゲッティは、日本のスパゲッティ料理の一つ。",
       "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E3%82%B7%E3%83%AD%E3%83%8E%E3%83%AF%E3%83%BC%E3%83%AB",
+      "source_url": "https://ja.wikipedia.org/wiki/%E3%82%A4%E3%82%BF%E3%83%AA%E3%82%A2%E3%83%B3%E3%82%B9%E3%83%91%E3%82%B2%E3%83%83%E3%83%86%E3%82%A3",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
+    "source_type": "wikipedia",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q11286686",
+        "fetched_at": "2026-09-28"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E3%82%A4%E3%82%BF%E3%83%AA%E3%82%A2%E3%83%B3%E3%82%B9%E3%83%91%E3%82%B2%E3%83%83%E3%83%86%E3%82%A3",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "aichi-Q11287632",
+    "name": {
+      "ja": "インディアンスパゲッティ",
+      "kana": "いんでぃあんすぱげってぃ",
+      "romaji": "Indiansupagetti",
+      "zh_tw": "インディアンスパゲッティ"
+    },
+    "prefecture": "aichi",
+    "category": "food",
+    "summary": {
+      "text": "インディアンスパゲッティ、あるいはインディアンスパゲティとは、名古屋めしの1種。スパゲッティに日本のカレーをかけた料理。同様の料理をカレースパゲッティ、カレーパスタと呼ぶ地域もある。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E3%82%A4%E3%83%B3%E3%83%87%E3%82%A3%E3%82%A2%E3%83%B3%E3%82%B9%E3%83%91%E3%82%B2%E3%83%83%E3%83%86%E3%82%A3",
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
     "source_type": "wikipedia",
     "images": [
       {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/f/f2/Komeda_Shirono.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-        "author": "不明",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ef/Indian_spaghetti%2C_in_Atsuta-ku%2C_Nagoya%2C_Japan_%282013.11.30%29.jpg/960px-Indian_spaghetti%2C_in_Atsuta-ku%2C_Nagoya%2C_Japan_%282013.11.30%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Lombroso",
         "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Komeda_Shirono.JPG"
+        "source_url": "https://commons.wikimedia.org/wiki/File:Indian_spaghetti,_in_Atsuta-ku,_Nagoya,_Japan_(2013.11.30).jpg"
       }
     ],
     "sources": [
       {
-        "url": "https://www.wikidata.org/wiki/Q11308473",
+        "url": "https://www.wikidata.org/wiki/Q11287632",
         "fetched_at": "2026-09-28"
       },
       {
-        "url": "https://ja.wikipedia.org/wiki/%E3%82%B7%E3%83%AD%E3%83%8E%E3%83%AF%E3%83%BC%E3%83%AB",
+        "url": "https://ja.wikipedia.org/wiki/%E3%82%A4%E3%83%B3%E3%83%87%E3%82%A3%E3%82%A2%E3%83%B3%E3%82%B9%E3%83%91%E3%82%B2%E3%83%83%E3%83%86%E3%82%A3",
         "fetched_at": "2026-09-28"
       }
     ],
@@ -320,6 +504,38 @@
     "updated_at": "2026-09-28"
   },
   {
+    "id": "aichi-Q11344876",
+    "name": {
+      "ja": "モーニングサービス",
+      "kana": "もーにんぐさーびす",
+      "romaji": "Moningusabisu",
+      "zh_tw": "早上服務",
+      "en": "Breakfast Special of Japan"
+    },
+    "prefecture": "aichi",
+    "category": "food",
+    "summary": {
+      "text": "モーニングサービス（Morning service）は、日本の喫茶店やレストランが、朝の時間帯にドリンクやトーストなど、特定のメニューを、朝食として割安価格で提供するサービスの呼称である。略して「モーニング」とも。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E3%83%A2%E3%83%BC%E3%83%8B%E3%83%B3%E3%82%B0%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
+    "source_type": "wikipedia",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q11344876",
+        "fetched_at": "2026-09-28"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E3%83%A2%E3%83%BC%E3%83%8B%E3%83%B3%E3%82%B0%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
     "id": "aichi-Q11390440",
     "name": {
       "ja": "八丁味噌",
@@ -354,6 +570,90 @@
       },
       {
         "url": "https://ja.wikipedia.org/wiki/%E5%85%AB%E4%B8%81%E5%91%B3%E5%99%8C",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "aichi-Q11417014",
+    "name": {
+      "ja": "味噌カツ",
+      "kana": "みそかつ",
+      "romaji": "Miso Katsu",
+      "zh_tw": "味噌豬排",
+      "en": "Miso-katsu"
+    },
+    "prefecture": "aichi",
+    "category": "food",
+    "summary": {
+      "text": "味噌カツ（みそカツ）は、豚カツに味噌をかけた料理。中京圏で供する飲食店が多い。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E5%91%B3%E5%99%8C%E3%82%AB%E3%83%84",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
+    "source_type": "wikipedia",
+    "kana_source": "wikipedia",
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d5/Misokatsu_Teishoku_20200328-02.jpg/960px-Misokatsu_Teishoku_20200328-02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "円周率３パーセント",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Misokatsu_Teishoku_20200328-02.jpg"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q11417014",
+        "fetched_at": "2026-09-28"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E5%91%B3%E5%99%8C%E3%82%AB%E3%83%84",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "aichi-Q11417019",
+    "name": {
+      "ja": "味噌煮込みうどん",
+      "kana": "みそにこみうどん",
+      "romaji": "Miso Nikomi Udon",
+      "zh_tw": "味噌煮込みうどん",
+      "en": "miso nikomi udon"
+    },
+    "prefecture": "aichi",
+    "category": "kyodo",
+    "summary": {
+      "text": "味噌煮込みうどん（みそにこみうどん）は、味噌仕立ての汁でうどんを煮込んだ日本の麺料理。土鍋を用いて煮込まれることが多く、鍋焼きうどんとともに煮込みうどんの一種である。赤味噌が使用されることが多く、主に玉子、ネギ、鶏肉、蒲鉾、油揚げなどの具材が入る。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E5%91%B3%E5%99%8C%E7%85%AE%E8%BE%BC%E3%81%BF%E3%81%86%E3%81%A9%E3%82%93",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
+    "source_type": "kyodo_ryori",
+    "kana_source": "wikipedia",
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/66/Misonikomi_Udon_with_Chickin_%26_Egg_%2815869622505%29.jpg/960px-Misonikomi_Udon_with_Chickin_%26_Egg_%2815869622505%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "bryan... from Taipei, Taiwan",
+        "license": "CC BY-SA 2.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Misonikomi_Udon_with_Chickin_%26_Egg_(15869622505).jpg"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/misonikomiudon_aichi.html",
+        "fetched_at": "2026-09-28"
+      },
+      {
+        "url": "https://www.wikidata.org/wiki/Q11417019",
+        "fetched_at": "2026-09-28"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E5%91%B3%E5%99%8C%E7%85%AE%E8%BE%BC%E3%81%BF%E3%81%86%E3%81%A9%E3%82%93",
         "fetched_at": "2026-09-28"
       }
     ],
@@ -484,6 +784,46 @@
     "updated_at": "2026-09-28"
   },
   {
+    "id": "aichi-Q11497126",
+    "name": {
+      "ja": "手羽先唐揚げ",
+      "kana": "てばさきからあげ",
+      "romaji": "Tebasaki Karaage",
+      "zh_tw": "乾炸雞翅",
+      "en": "tebasaki karaage"
+    },
+    "prefecture": "aichi",
+    "category": "food",
+    "summary": {
+      "text": "手羽先唐揚げ（てばさきからあげ）は、鶏の手羽先をから揚げにした料理。日本各地で食べられているが、特に中京圏（愛知県名古屋市およびその周辺地域）で多く食べられる。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E6%89%8B%E7%BE%BD%E5%85%88%E5%94%90%E6%8F%9A%E3%81%92",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
+    "source_type": "wikipedia",
+    "kana_source": "wikipedia",
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a8/Tebasaki_karaage_by_kawanet_in_Kanayama%2C_Nagoya.jpg/960px-Tebasaki_karaage_by_kawanet_in_Kanayama%2C_Nagoya.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "kawanet",
+        "license": "CC BY 2.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Tebasaki_karaage_by_kawanet_in_Kanayama,_Nagoya.jpg"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q11497126",
+        "fetched_at": "2026-09-28"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E6%89%8B%E7%BE%BD%E5%85%88%E5%94%90%E6%8F%9A%E3%81%92",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
     "id": "aichi-Q11516498",
     "name": {
       "ja": "有松・鳴海絞",
@@ -508,6 +848,115 @@
       },
       {
         "url": "https://ja.wikipedia.org/wiki/%E6%9C%89%E6%9D%BE%E3%83%BB%E9%B3%B4%E6%B5%B7%E7%B5%9E%E3%82%8A",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "aichi-Q122790013",
+    "name": {
+      "ja": "きゃらぶき",
+      "kana": "きゃらぶき",
+      "romaji": "Kyarabuki",
+      "zh_tw": "きゃらぶき"
+    },
+    "prefecture": "aichi",
+    "category": "food",
+    "summary": {
+      "text": "きゃらぶきはフキの佃煮。日本の伝統的な保存食の1つ。ツワブキを用いて作られることもある。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E3%81%8D%E3%82%83%E3%82%89%E3%81%B6%E3%81%8D",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
+    "source_type": "wikipedia",
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7a/Tsukudani-2.jpg/960px-Tsukudani-2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "江戸村のとくぞう",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Tsukudani-2.jpg"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q122790013",
+        "fetched_at": "2026-09-28"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E3%81%8D%E3%82%83%E3%82%89%E3%81%B6%E3%81%8D",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "aichi-Q1536337",
+    "name": {
+      "ja": "天むす",
+      "kana": "てんむす",
+      "romaji": "Tenmusu",
+      "zh_tw": "天むす",
+      "en": "tenmusu"
+    },
+    "prefecture": "aichi",
+    "category": "food",
+    "summary": {
+      "text": "天むす（てんむす）とは、海老の天ぷらを具にしたおにぎり。三重県発の名古屋めしの一つとして知られる。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E5%A4%A9%E3%82%80%E3%81%99",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
+    "source_type": "wikipedia",
+    "kana_source": "wikipedia",
+    "images": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/f/fd/Ten-Musu.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+        "author": "Antique1967",
+        "license": "CC BY 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Ten-Musu.JPG"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q1536337",
+        "fetched_at": "2026-09-28"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E5%A4%A9%E3%82%80%E3%81%99",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "aichi-Q17212622",
+    "name": {
+      "ja": "みそたま",
+      "kana": "みそたま",
+      "romaji": "Misotama",
+      "zh_tw": "みそたま"
+    },
+    "prefecture": "aichi",
+    "category": "food",
+    "summary": {
+      "text": "みそたまとは、八丁味噌の中に漬けて、煮込んだゆで卵である。愛知県の郷土料理。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E3%81%BF%E3%81%9D%E3%81%9F%E3%81%BE",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
+    "source_type": "wikipedia",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q17212622",
+        "fetched_at": "2026-09-28"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E3%81%BF%E3%81%9D%E3%81%9F%E3%81%BE",
         "fetched_at": "2026-09-28"
       }
     ],
@@ -989,26 +1438,6 @@
     "updated_at": "2026-09-28"
   },
   {
-    "id": "aichi-maff-kishimen_aichi",
-    "name": {
-      "ja": "きしめん",
-      "kana": "きしめん",
-      "romaji": "Kishimen",
-      "zh_tw": "きしめん"
-    },
-    "prefecture": "aichi",
-    "category": "kyodo",
-    "source_type": "kyodo_ryori",
-    "images": [],
-    "sources": [
-      {
-        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/kishimen_aichi.html",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "updated_at": "2026-09-28"
-  },
-  {
     "id": "aichi-maff-kushiasari_aichi",
     "name": {
       "ja": "串あさり",
@@ -1021,24 +1450,6 @@
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/kushiasari_aichi.html",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "updated_at": "2026-09-28"
-  },
-  {
-    "id": "aichi-maff-misonikomiudon_aichi",
-    "name": {
-      "ja": "味噌煮込みうどん",
-      "zh_tw": "味噌煮込みうどん"
-    },
-    "prefecture": "aichi",
-    "category": "kyodo",
-    "source_type": "kyodo_ryori",
-    "images": [],
-    "sources": [
-      {
-        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/misonikomiudon_aichi.html",
         "fetched_at": "2026-09-28"
       }
     ],

@@ -747,6 +747,26 @@
     "updated_at": "2026-09-28"
   },
   {
+    "id": "hokkaido-maff-ramen_hokkaido",
+    "name": {
+      "ja": "ラーメン",
+      "kana": "らーめん",
+      "romaji": "Ramen",
+      "zh_tw": "ラーメン"
+    },
+    "prefecture": "hokkaido",
+    "category": "ramen",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/ramen_hokkaido.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
     "id": "hokkaido-maff-ruibe_hokkaido",
     "name": {
       "ja": "ルイベ",
