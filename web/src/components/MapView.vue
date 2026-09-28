@@ -7,6 +7,7 @@ import { computed, nextTick, onBeforeUnmount, onMounted, ref, shallowRef, watch 
 import { JAPAN_CENTER, JAPAN_ZOOM, MAP_STYLE_URL } from '../map/style'
 import { THEMES } from '../data/themes'
 import { mapThumbUrl, type MapSpot } from '../services/bundles'
+import { trackSplash } from '../services/splash'
 
 const props = defineProps<{
   spots: MapSpot[]
@@ -401,6 +402,15 @@ onMounted(() => {
     },
   })
   map.addControl(new maplibregl.NavigationControl({ showCompass: false }), 'bottom-right')
+  // 開場畫面等到底圖第一次畫完（樣式或圖磚失敗也放行）
+  const m = map
+  trackSplash(
+    new Promise<void>((resolve) => {
+      m.once('idle', () => resolve())
+      m.once('error', () => resolve())
+    }),
+    'map',
+  )
   map.on('load', () => {
     addLayers()
     ready = true

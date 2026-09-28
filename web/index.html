@@ -7,13 +7,146 @@
     <meta name="description" content="來一趟日本，才知道它有多大。" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- 字型不擋首次繪製：先 preload，載完才套用（開場畫面先用系統字） -->
     <link
-      rel="stylesheet"
+      id="webfonts"
+      rel="preload"
+      as="style"
       href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700;900&family=Noto+Sans+JP:wght@400;700;900&family=Barlow+Semi+Condensed:wght@500;600;700&display=swap"
+      onload="this.onload=null;this.rel='stylesheet'"
     />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700;900&family=Noto+Sans+JP:wght@400;700;900&family=Barlow+Semi+Condensed:wght@500;600;700&display=swap"
+      />
+    </noscript>
+    <!-- 開場畫面（DESIGN.md §7.0）：寫在 HTML 裡，JS 與字型下載前就會顯示。
+         顏色由 vite.config.ts 在建置時從 data/regions.json 的全國色帶入。 -->
+    <style>
+      #splash {
+        position: fixed;
+        inset: 0;
+        z-index: 100;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 36px;
+        background: %REGION_PAPER%;
+        color: %REGION_INK%;
+        font-family: "Noto Sans JP", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", "Noto Sans TC", system-ui, sans-serif;
+        transition: opacity 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+      #splash.is-done {
+        opacity: 0;
+        pointer-events: none;
+      }
+      #splash .mark {
+        position: relative;
+        display: grid;
+        place-items: center;
+        width: 184px;
+        height: 184px;
+      }
+      #splash svg {
+        position: absolute;
+        inset: 0;
+        transform: rotate(-90deg);
+      }
+      #splash .ring-track {
+        stroke: %REGION_LINE%;
+      }
+      /* 一巡り：沿著圓畫一圈、停一下、再收回，循環 */
+      #splash .ring {
+        stroke: %REGION_STRONG%;
+        stroke-dasharray: 540;
+        stroke-dashoffset: 540;
+        animation: splash-round 2.4s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+      }
+      @keyframes splash-round {
+        0% { stroke-dashoffset: 540; }
+        55% { stroke-dashoffset: 0; }
+        70% { stroke-dashoffset: 0; }
+        100% { stroke-dashoffset: -540; }
+      }
+      #splash .words {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        line-height: 1;
+        animation: splash-in 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+      }
+      #splash .kana {
+        font-size: 11px;
+        letter-spacing: 4px;
+        color: %REGION_SUB%;
+        margin-bottom: 8px;
+        padding-left: 4px;
+      }
+      #splash .kanji {
+        font-size: 38px;
+        font-weight: 900;
+        letter-spacing: 4px;
+        padding-left: 4px;
+      }
+      #splash .latin {
+        font-family: "Barlow Semi Condensed", system-ui, sans-serif;
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 4px;
+        color: %REGION_SUB%;
+        margin-top: 10px;
+        padding-left: 4px;
+      }
+      @keyframes splash-in {
+        from { opacity: 0; transform: translateY(6px); }
+        to { opacity: 1; transform: none; }
+      }
+      #splash .bar {
+        width: 160px;
+        height: 2px;
+        border-radius: 1px;
+        overflow: hidden;
+        background: %REGION_LINE%;
+      }
+      /* JS 還沒接手前先慢慢走到三成；接手後由 --p 控制 */
+      #splash .fill {
+        height: 100%;
+        width: var(--p, 0%);
+        background: %REGION_STRONG%;
+        transition: width 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+        animation: splash-boot 4s cubic-bezier(0.1, 0.7, 0.3, 1) forwards;
+      }
+      #splash.is-live .fill {
+        animation: none;
+      }
+      @keyframes splash-boot {
+        from { width: 0%; }
+        to { width: 30%; }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        #splash .ring { animation: none; stroke-dashoffset: 0; }
+        #splash .words { animation: none; }
+      }
+    </style>
     <title>ひとめぐり</title>
   </head>
   <body>
+    <div id="splash" role="progressbar" aria-label="ひとめぐり" aria-valuemin="0" aria-valuemax="100">
+      <div class="mark">
+        <svg viewBox="0 0 184 184" width="184" height="184" fill="none" aria-hidden="true">
+          <circle class="ring-track" cx="92" cy="92" r="86" stroke-width="1" />
+          <circle class="ring" cx="92" cy="92" r="86" stroke-width="2.5" stroke-linecap="round" />
+        </svg>
+        <div class="words" lang="ja">
+          <span class="kana">ひとめぐり</span>
+          <span class="kanji">一巡り</span>
+          <span class="latin">HITOMEGURI</span>
+        </div>
+      </div>
+      <div class="bar"><div class="fill"></div></div>
+    </div>
     <div id="app"></div>
     <script type="module" src="/src/main.ts"></script>
   </body>

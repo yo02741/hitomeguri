@@ -242,6 +242,13 @@
 </label>
 ```
 
+### 7.0 開場畫面 Splash
+- 寫在 `web/index.html`（JS、字型下載前就顯示）；顏色佔位字 `%REGION_*%` 由 `vite.config.ts` 在建置時換成 `data/regions.json` 的全國色。
+- 置中：Wordmark 三行（ひとめぐり／一巡り 38px 900／HITOMEGURI）外圍一個 184px 圓；`strong` 色的圓弧沿圓畫一圈、停一下、收回，循環（一巡り）。`prefers-reduced-motion` 時不動。
+- 下方 160×2px 進度條（底 `line`、填色 `strong`）。JS 接手前 CSS 動畫慢慢走到三成；之後依實際工作推進：字型、路由、景點資料、地區 bundle、底圖第一次畫完（`web/src/services/splash.ts` 的 `trackSplash`）。
+- 全部完成後進度走滿、淡出（0.45s）並移除；最少顯示 0.9s，最多等 10s。不放文字說明（無「載入中」字樣）。
+- Google Fonts 改為 preload 後再套用，不擋首次繪製。
+
 ### 7.5 地區標籤 RegionTag（原海報區 RegionHero）
 - 桌機改為浮在地圖左上的小卡：`rounded-card bg-region text-on-region px-4 py-3 shadow-float`，設 `data-pref`。
 - 裝飾：右上 104px 圓形 `bg-region-accent`；**只用正圓**，不用漸層、不用照片。

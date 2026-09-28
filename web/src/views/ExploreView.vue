@@ -12,6 +12,7 @@ import { JAPAN_BOUNDS } from '../map/style'
 import { regionOf } from '../data/regions'
 import type { MapSpot, Spot } from '../services/bundles'
 import { loadPrefectureShapes, prefectureAt, prefectureBounds } from '../services/geo'
+import { trackSplash } from '../services/splash'
 import { useCatalogStore } from '../stores/catalog'
 import { useExploreStore } from '../stores/explore'
 
@@ -90,7 +91,7 @@ function spotBounds(spots: MapSpot[]): [number, number, number, number] | null {
 // 地區頁的定位由下方 props.pref 的 watcher 負責；這裡只載入共用資料
 onMounted(() => {
   catalog.loadExtras()
-  catalog.loadFeatured()
+  trackSplash(catalog.loadFeatured(), 'featured')
   loadPrefectureShapes().catch(() => {})
 })
 
@@ -108,7 +109,7 @@ watch(
       bounds.value = [...JAPAN_BOUNDS]
       return
     }
-    const spots = await catalog.loadMap(pref)
+    const spots = await trackSplash(catalog.loadMap(pref), 'map-bundle')
     // 還沒有資料的縣：用縣界範圍定位
     if (!spots.length) await loadPrefectureShapes().catch(() => {})
     bounds.value = spotBounds(spots.filter((s) => s.f === 1)) ?? spotBounds(spots) ?? prefectureBounds(pref)
