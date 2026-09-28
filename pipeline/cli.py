@@ -88,6 +88,13 @@ def cmd_prune_spots(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_seed_pokefuta(args: argparse.Namespace) -> int:
+    from pipeline.packs import seed_pokefuta
+
+    _emit(seed_pokefuta(args.prefectures or None), args.report)
+    return 0
+
+
 def cmd_seed_wiki(args: argparse.Namespace) -> int:
     from pipeline.wiki import seed_wiki
 
@@ -136,6 +143,11 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("prefectures", nargs="+")
     p.add_argument("--report")
     p.set_defaults(func=cmd_seed_wiki)
+
+    p = sub.add_parser("seed-pokefuta", help="擴充包：寶可夢人孔蓋（ポケふた）→ data/packs/")
+    p.add_argument("prefectures", nargs="*", help="省略時處理全部縣")
+    p.add_argument("--report")
+    p.set_defaults(func=cmd_seed_pokefuta)
 
     p = sub.add_parser("build-bundles", help="data/ → web/public/bundles/")
     p.set_defaults(func=cmd_build_bundles)

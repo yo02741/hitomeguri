@@ -8,6 +8,8 @@ REGIONS_JSON = DATA / "regions.json"
 SEED_DIR = DATA / "seed"
 SPOTS_DIR = DATA / "spots"
 SPECIALTIES_DIR = DATA / "specialties"
+# 擴充包（寶可夢人孔蓋等全國性的小點），一個擴充包一個檔案
+PACKS_DIR = DATA / "packs"
 TIMED_DIR = DATA / "timed"
 PHRASES_DIR = DATA / "phrases"
 FLIGHTS_JSON = DATA / "flights" / "taiwan_direct.json"
