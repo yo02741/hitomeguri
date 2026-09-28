@@ -121,7 +121,9 @@ export interface Specialty {
   area?: string
   category: string
   season_months?: number[]
-  summary_zh: string
+  /** 維基百科開頭段落（中文優先，沒有則日文）；舊資料為 summary_zh */
+  summary?: { text: string; lang: 'zh' | 'ja'; source_url: string; license: string; fetched_at: string }
+  summary_zh?: string
   images?: SpotImage[]
   sources: { url: string; fetched_at: string }[]
 }

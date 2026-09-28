@@ -3,23 +3,17 @@ import { computed, ref, watch } from 'vue'
 
 import { CATEGORY_GROUPS, categoryGroup } from '../data/categories'
 import { mapThumbUrl, type MapSpot } from '../services/bundles'
-import { useCatalogStore } from '../stores/catalog'
 import { useExploreStore } from '../stores/explore'
 import CollapseChevron from './CollapseChevron.vue'
 
-// 地區的景點清單（全部大點）與地區特色。
+// 地區的景點清單（全部大點）。地區特色在深度探索頁（views/RegionView.vue）。
 // 類型列可篩選（清單與地圖一起）；不篩選時清單依類型分段排列。
 // 清單與地圖連動：滑過一列在地圖上標出，點選則選取並飛過去。
 const props = defineProps<{ pref: string; spots: MapSpot[]; selectedId?: string | null }>()
 const emit = defineEmits<{ select: [id: string]; highlight: [id: string | null] }>()
-const catalog = useCatalogStore()
 const explore = useExploreStore()
-const specialties = computed(() => catalog.specialties.filter((s) => s.prefecture === props.pref))
-const CATEGORY_LABEL: Record<string, string> = { food: '料理', drink: '飲品', craft: '工藝', fruit: '水果' }
 
 const majors = computed(() => props.spots.filter((s) => s.k === 'major').sort((a, b) => b.s - a.s))
-const showSpecialties = ref(false)
-const tab = computed(() => (showSpecialties.value ? 'specialties' : 'spots'))
 // 依類型分段（CATEGORY_GROUPS 的順序），段內依分數
 const sections = computed(() =>
   CATEGORY_GROUPS.map((g) => ({ ...g, rows: majors.value.filter((s) => categoryGroup(s.c) === g.key) })).filter(
@@ -36,39 +30,20 @@ const shown = computed(() =>
 const isOpen = (key: string) => !explore.collapsed.includes(`cat:${key}`)
 
 const failed = ref(new Set<string>())
-const tabClass = 'flex h-9 flex-1 items-center justify-center gap-1.5 rounded-control text-label'
 </script>
 
 <template>
-  <section v-if="!majors.length && !specialties.length" class="rounded-card bg-paper px-4 py-3 text-body-sm text-sub shadow-float">
+  <section v-if="!majors.length" class="rounded-card bg-paper px-4 py-3 text-body-sm text-sub shadow-float">
     資料準備中。
   </section>
   <section v-else class="flex min-h-0 flex-col rounded-card bg-paper p-1.5 shadow-float">
-    <div class="flex shrink-0 gap-1" role="tablist">
-      <button
-        type="button"
-        role="tab"
-        :aria-selected="tab === 'spots'"
-        :class="[tabClass, tab === 'spots' ? 'bg-region-tint font-bold text-ink' : 'text-sub hover:text-ink']"
-        @click="showSpecialties = false"
-      >
-        景點<span class="font-latin">{{ majors.length }}</span>
-      </button>
-      <button
-        v-if="specialties.length"
-        type="button"
-        role="tab"
-        :aria-selected="tab === 'specialties'"
-        :class="[tabClass, tab === 'specialties' ? 'bg-region-tint font-bold text-ink' : 'text-sub hover:text-ink']"
-        @click="showSpecialties = true"
-      >
-        地區特色<span class="font-latin">{{ specialties.length }}</span>
-      </button>
-    </div>
+    <h2 class="flex h-9 shrink-0 items-center justify-center gap-1.5 rounded-control bg-region-tint text-label font-bold text-ink">
+      景點<span class="font-latin">{{ majors.length }}</span>
+    </h2>
 
     <!-- 類型：文字索引列，選中的加底線；再點一次取消 -->
     <nav
-      v-if="tab !== 'specialties' && sections.length > 1"
+      v-if="sections.length > 1"
       class="flex shrink-0 flex-wrap gap-x-3.5 gap-y-1 border-b border-line-soft px-2.5 pt-2.5 pb-2"
       aria-label="類型"
     >
@@ -95,9 +70,7 @@ const tabClass = 'flex h-9 flex-1 items-center justify-center gap-1.5 rounded-co
     </nav>
 
     <div
-      v-if="tab !== 'specialties'"
       class="scroll-quiet flex min-h-0 flex-col overflow-y-auto pr-3 pb-1 pl-1.5"
-      role="tabpanel"
       @mouseleave="emit('highlight', null)"
     >
       <template v-for="g in shown" :key="g.key">
@@ -144,19 +117,5 @@ const tabClass = 'flex h-9 flex-1 items-center justify-center gap-1.5 rounded-co
       <p v-if="!shown.length" class="px-1.5 py-3 text-body-sm text-sub">資料準備中。</p>
     </div>
 
-    <div v-else class="scroll-quiet flex min-h-0 flex-col overflow-y-auto pr-3 pb-1 pl-2.5" role="tabpanel">
-      <div
-        v-for="sp in specialties"
-        :key="sp.id"
-        class="flex min-h-tap shrink-0 items-center gap-3 border-b border-line-soft py-1.5 last:border-b-0"
-      >
-        <span class="flex min-w-0 flex-col">
-          <span v-if="sp.name.kana" lang="ja" class="truncate text-caption tracking-kana text-sub">{{ sp.name.kana }}</span>
-          <span lang="ja" class="truncate text-body-sm font-bold">{{ sp.name.ja }}</span>
-          <span v-if="sp.name.zh_tw !== sp.name.ja" class="truncate text-caption text-sub">{{ sp.name.zh_tw }}</span>
-        </span>
-        <span class="ml-auto shrink-0 text-caption text-sub">{{ CATEGORY_LABEL[sp.category] ?? sp.category }}</span>
-      </div>
-    </div>
   </section>
 </template>

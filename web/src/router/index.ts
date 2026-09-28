@@ -10,6 +10,13 @@ export const router = createRouter({
     { path: '/', name: 'home', component: ExploreView },
     { path: '/explore', name: 'explore', component: ExploreView, meta: { title: '探索' } },
     { path: '/map/:pref', name: 'map', component: ExploreView, props: true, meta: { title: '探索' } },
+    {
+      path: '/region/:pref',
+      name: 'region',
+      component: () => import('../views/RegionView.vue'),
+      props: true,
+      meta: { title: '深度探索' },
+    },
     { path: '/trips', name: 'trips', component: () => import('../views/TripsView.vue'), meta: { title: '行程' } },
     { path: '/log', name: 'log', component: () => import('../views/LogView.vue'), meta: { title: '紀錄' } },
     { path: '/me', name: 'me', component: () => import('../views/MeView.vue'), meta: { title: '我的' } },

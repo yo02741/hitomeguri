@@ -367,12 +367,25 @@ function onMoveEnd(view: MapViewState) {
         @moveend="onMoveEnd"
       />
 
-      <!-- 地圖上方：擴充包列（桌機；手機版面暫緩） -->
-      <PackBar
-        :pref="pref && regionOf(pref) ? pref : null"
-        class="absolute top-4 right-4 z-10 max-lg:hidden"
+      <!-- 地圖上方：深度探索入口（地區頁）＋擴充包列（桌機；手機版面暫緩） -->
+      <div
+        class="pointer-events-none absolute top-4 right-4 z-10 flex items-start gap-2 *:pointer-events-auto max-lg:hidden"
         :style="{ left: `${insetLeft}px` }"
-      />
+      >
+        <RouterLink
+          v-if="pref && regionOf(pref)"
+          :to="`/region/${pref}`"
+          :aria-label="`深度探索 ${regionOf(pref)!.name.ja}`"
+          class="flex h-9 shrink-0 items-center gap-1.5 rounded-full bg-region-strong pr-3 pl-3.5 text-label font-bold text-white no-underline shadow-float hover:opacity-90"
+        >
+          深度探索
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M9 5l7 7-7 7" />
+          </svg>
+        </RouterLink>
+        <span v-if="pref && regionOf(pref)" class="h-9 w-px shrink-0 bg-line" aria-hidden="true"></span>
+        <PackBar :pref="pref && regionOf(pref) ? pref : null" />
+      </div>
 
       <!-- 左上浮動面板：地區標籤／地區清單、主題篩選、景點與地區特色 -->
       <div

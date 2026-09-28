@@ -20,7 +20,7 @@ function onPick(hit: SearchHit) {
 }
 
 const tabs = [
-  { to: '/', label: '探索', match: ['home', 'explore', 'map'] },
+  { to: '/', label: '探索', match: ['home', 'explore', 'map', 'region'] },
   { to: '/trips', label: '行程', match: ['trips'] },
   { to: '/log', label: '紀錄', match: ['log'] },
 ]
