@@ -20,8 +20,9 @@ on:
 permissions:
   contents: write
 
+# 同一個指令一次只跑一個（GitHub 每個 group 只保留一個等待中的 run，不同指令分開才不會互相取消）
 concurrency:
-  group: seed-pack
+  group: seed-pack-${{ inputs.command }}
   cancel-in-progress: false
 
 jobs:
