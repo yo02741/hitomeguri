@@ -909,55 +909,6 @@
     "updated_at": "2026-09-28"
   },
   {
-    "id": "wd-Q1017113",
-    "name": {
-      "ja": "下北半島国定公園",
-      "kana": "しもきたはんとうこくていこうえん",
-      "romaji": "Shimokitahantokokuteikoen",
-      "zh_tw": "下北半島國定公園",
-      "en": "Shimokita Hanto Quasi-National Park"
-    },
-    "kana_source": "wikidata",
-    "location": {
-      "lat": 41.525833,
-      "lng": 140.923611
-    },
-    "prefecture": "aomori",
-    "kind": "major",
-    "themes": [],
-    "tags": [
-      "公園"
-    ],
-    "featured": false,
-    "score": 66.03,
-    "summary": {
-      "text": "下北半島國定公園是位於日本青森縣東部下北半島的國定公園。成立於1968年7月22日。公園涵蓋了恐山與周邊破火山口區域、藥研溪流、半島西岸的鯛島、佛浦、辯天島等約15公里的海岸線，以及大間崎與尻屋崎的前端部分。",
-      "lang": "zh",
-      "source_url": "https://zh.wikipedia.org/wiki/%E4%B8%8B%E5%8C%97%E5%8D%8A%E5%B3%B6%E5%9C%8B%E5%AE%9A%E5%85%AC%E5%9C%92",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6f/Osorezan.jpg/960px-Osorezan.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Angaurits",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Osorezan.jpg"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q1017113"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q1017113",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
     "id": "wd-Q1037216",
     "name": {
       "ja": "小川原湖",
@@ -1202,55 +1153,6 @@
       },
       {
         "url": "https://www.openstreetmap.org/way/796856914",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
-    "id": "wd-Q1071023",
-    "name": {
-      "ja": "津軽国定公園",
-      "kana": "つがるこくていこうえん",
-      "romaji": "Tsugarukokuteikoen",
-      "zh_tw": "津輕國定公園",
-      "en": "Tsugaru Quasi-National Park"
-    },
-    "kana_source": "wikidata",
-    "location": {
-      "lat": 41.1669,
-      "lng": 140.59
-    },
-    "prefecture": "aomori",
-    "kind": "major",
-    "themes": [],
-    "tags": [
-      "公園"
-    ],
-    "featured": false,
-    "score": 66.4,
-    "summary": {
-      "text": "津輕國定公園，是位在日本青森縣的國定公園。",
-      "lang": "zh",
-      "source_url": "https://zh.wikipedia.org/wiki/%E6%B4%A5%E8%BC%95%E5%9C%8B%E5%AE%9A%E5%85%AC%E5%9C%92",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1c/Obi_Island_and_Port_of_Tappi_01.jpg/960px-Obi_Island_and_Port_of_Tappi_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Mugu-shisai",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Obi_Island_and_Port_of_Tappi_01.jpg"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q1071023"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q1071023",
         "fetched_at": "2026-09-28"
       }
     ],
@@ -1640,7 +1542,7 @@
     "tags": [
       "特別名勝"
     ],
-    "featured": false,
+    "featured": true,
     "score": 83.63,
     "summary": {
       "text": "奧入瀨溪流是青森縣十和田市十和田湖畔子之口到燒山之間約14公里的奧入瀨川的溪流。屬於十和田八幡平國立公園。國指定之特別名勝及天然記念物（天然保護區域）。",
@@ -6393,73 +6295,6 @@
     "updated_at": "2026-09-28"
   },
   {
-    "id": "wd-Q11487199",
-    "name": {
-      "ja": "弘前さくらまつり",
-      "kana": "ひろさきさくらまつり",
-      "romaji": "Hirosakisakuramatsuri",
-      "zh_tw": "弘前櫻花祭",
-      "en": "Hirosaki Cherry Blossom Festival"
-    },
-    "kana_source": "wikipedia",
-    "location": {
-      "lat": 40.6039,
-      "lng": 140.4649
-    },
-    "prefecture": "aomori",
-    "kind": "major",
-    "themes": [],
-    "tags": [],
-    "featured": false,
-    "score": 60.8,
-    "summary": {
-      "text": "弘前さくらまつり（ひろさきさくらまつり）は、青森県弘前市で開催される弘前四大まつり（弘前ねぷた、弘前城菊と紅葉まつり、弘前城雪燈籠まつり）のひとつである春祭り。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%BC%98%E5%89%8D%E3%81%95%E3%81%8F%E3%82%89%E3%81%BE%E3%81%A4%E3%82%8A",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "nearest_stations": [
-      {
-        "name": {
-          "ja": "中央弘前",
-          "en": "Chūō-Hirosaki"
-        },
-        "distance_m": 810
-      },
-      {
-        "name": {
-          "ja": "弘高下",
-          "en": "Hirokōshita"
-        },
-        "distance_m": 1240
-      }
-    ],
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/db/Hirosaki_castle.jpg/960px-Hirosaki_castle.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Angaurits",
-        "license": "CC0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Hirosaki_castle.jpg"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q11487199"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q11487199",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://ja.wikipedia.org/wiki/%E5%BC%98%E5%89%8D%E3%81%95%E3%81%8F%E3%82%89%E3%81%BE%E3%81%A4%E3%82%8A",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
     "id": "wd-Q11487200",
     "name": {
       "ja": "弘前ねぷた",
@@ -6513,133 +6348,6 @@
     "sources": [
       {
         "url": "https://www.wikidata.org/wiki/Q11487200",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
-    "id": "wd-Q11487216",
-    "name": {
-      "ja": "弘前城菊と紅葉まつり",
-      "kana": "ひろさきじょうきくともみじまつり",
-      "romaji": "Hirosakijokikutomomijimatsuri",
-      "zh_tw": "弘前城菊花和紅葉節",
-      "en": "Hirosaki Castle Chrysanthemum and Autumn Foliage Festival"
-    },
-    "kana_source": "wikipedia",
-    "location": {
-      "lat": 40.6039,
-      "lng": 140.4649
-    },
-    "prefecture": "aomori",
-    "kind": "major",
-    "themes": [],
-    "tags": [],
-    "featured": false,
-    "score": 52.83,
-    "summary": {
-      "text": "弘前城菊と紅葉まつり（ひろさきじょうきくともみじまつり）は、青森県弘前市で開催される弘前四大まつり（弘前さくらまつり、ねぷた、弘前城雪燈籠まつり）のひとつである秋祭り。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%BC%98%E5%89%8D%E5%9F%8E%E8%8F%8A%E3%81%A8%E7%B4%85%E8%91%89%E3%81%BE%E3%81%A4%E3%82%8A",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "nearest_stations": [
-      {
-        "name": {
-          "ja": "中央弘前",
-          "en": "Chūō-Hirosaki"
-        },
-        "distance_m": 810
-      },
-      {
-        "name": {
-          "ja": "弘高下",
-          "en": "Hirokōshita"
-        },
-        "distance_m": 1240
-      }
-    ],
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1f/Hirosaki_Castle_chrysanthemum_and_autumn_leaves_festival_03.jpg/960px-Hirosaki_Castle_chrysanthemum_and_autumn_leaves_festival_03.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Marho",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Hirosaki_Castle_chrysanthemum_and_autumn_leaves_festival_03.jpg"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q11487216"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q11487216",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://ja.wikipedia.org/wiki/%E5%BC%98%E5%89%8D%E5%9F%8E%E8%8F%8A%E3%81%A8%E7%B4%85%E8%91%89%E3%81%BE%E3%81%A4%E3%82%8A",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
-    "id": "wd-Q11487218",
-    "name": {
-      "ja": "弘前城雪燈籠まつり",
-      "kana": "ひろさきじょうゆきどうろうまつり",
-      "romaji": "Hirosakijoyukidoromatsuri",
-      "zh_tw": "弘前城雪燈籠まつり",
-      "en": "Hirosaki Castle Snow Lantern Festival"
-    },
-    "kana_source": "wikipedia",
-    "location": {
-      "lat": 40.6039,
-      "lng": 140.4649
-    },
-    "prefecture": "aomori",
-    "kind": "major",
-    "themes": [],
-    "tags": [],
-    "featured": false,
-    "score": 54.64,
-    "summary": {
-      "text": "弘前城雪燈籠まつり（ひろさきじょうゆきどうろうまつり）は、青森県弘前市で開催される弘前四大まつり（弘前さくらまつり、ねぷた、弘前城菊と紅葉まつり、本祭）のひとつである冬祭り。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%BC%98%E5%89%8D%E5%9F%8E%E9%9B%AA%E7%87%88%E7%B1%A0%E3%81%BE%E3%81%A4%E3%82%8A",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "nearest_stations": [
-      {
-        "name": {
-          "ja": "中央弘前",
-          "en": "Chūō-Hirosaki"
-        },
-        "distance_m": 810
-      },
-      {
-        "name": {
-          "ja": "弘高下",
-          "en": "Hirokōshita"
-        },
-        "distance_m": 1240
-      }
-    ],
-    "images": [],
-    "external_ids": {
-      "wikidata": "Q11487218"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q11487218",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://ja.wikipedia.org/wiki/%E5%BC%98%E5%89%8D%E5%9F%8E%E9%9B%AA%E7%87%88%E7%B1%A0%E3%81%BE%E3%81%A4%E3%82%8A",
         "fetched_at": "2026-09-28"
       }
     ],
@@ -8526,59 +8234,6 @@
       },
       {
         "url": "https://ja.wikipedia.org/wiki/%E6%B5%AA%E5%B2%A1%E6%B8%A9%E6%B3%89",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
-    "id": "wd-Q1155842",
-    "name": {
-      "ja": "十和田八幡平国立公園",
-      "kana": "とわだはちまんたいこくりつこうえん",
-      "romaji": "Towadahachimantaikokuritsukoen",
-      "zh_tw": "十和田八幡平國立公園",
-      "en": "Towada-Hachimantai National Park"
-    },
-    "kana_source": "wikipedia",
-    "location": {
-      "lat": 40.3333,
-      "lng": 140.833
-    },
-    "prefecture": "aomori",
-    "kind": "major",
-    "themes": [],
-    "tags": [
-      "公園"
-    ],
-    "featured": true,
-    "score": 75.83,
-    "summary": {
-      "text": "十和田八幡平國立公園是位在日本青森縣、巖手縣、秋田縣的國立公園。公園包含了十和田湖周邊與八幡平周邊的火山群。1936年（昭和11年）2月1日在十和田地區成立十和田國立公園。1956年7月10日加入八幡平地域，改稱為現在的十和田八幡平國立公園。",
-      "lang": "zh",
-      "source_url": "https://zh.wikipedia.org/wiki/%E5%8D%81%E5%92%8C%E7%94%B0%E5%85%AB%E5%B9%A1%E5%B9%B3%E5%9C%8B%E7%AB%8B%E5%85%AC%E5%9C%92",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c3/Oirase_Stream_%E5%B7%9D%28%E3%81%8B%E3%82%8F%29.jpg/960px-Oirase_Stream_%E5%B7%9D%28%E3%81%8B%E3%82%8F%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "TANAKA Juuyoh (田中十洋)",
-        "license": "CC BY 2.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Oirase_Stream_%E5%B7%9D(%E3%81%8B%E3%82%8F).jpg"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q1155842"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q1155842",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://ja.wikipedia.org/wiki/%E5%8D%81%E5%92%8C%E7%94%B0%E5%85%AB%E5%B9%A1%E5%B9%B3%E5%9B%BD%E7%AB%8B%E5%85%AC%E5%9C%92",
         "fetched_at": "2026-09-28"
       }
     ],
@@ -13689,59 +13344,6 @@
     "updated_at": "2026-09-28"
   },
   {
-    "id": "wd-Q1206082",
-    "name": {
-      "ja": "三陸復興国立公園",
-      "kana": "さんりくふっこうこくりつこうえん",
-      "romaji": "Sanrikufukkokokuritsukoen",
-      "zh_tw": "三陸復興國立公園",
-      "en": "Sanriku Fukko National Park"
-    },
-    "kana_source": "wikipedia",
-    "location": {
-      "lat": 39.071944,
-      "lng": 141.716944
-    },
-    "prefecture": "aomori",
-    "kind": "major",
-    "themes": [],
-    "tags": [
-      "公園"
-    ],
-    "featured": true,
-    "score": 74.18,
-    "summary": {
-      "text": "三陸復興國立公園是位在日本青森縣、巖手縣、宮城縣，以青森縣南部至宮城縣牡鹿半島之間的三陸海岸為主體的國立公園。也是東日本唯一一座以海岸為主題的國立公園。管理上分為北部的八戶·宮古地區與南部的大船渡地區。",
-      "lang": "zh",
-      "source_url": "https://zh.wikipedia.org/wiki/%E4%B8%89%E9%99%B8%E5%BE%A9%E8%88%88%E5%9C%8B%E7%AB%8B%E5%85%AC%E5%9C%92",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "images": [
-      {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/9/93/Jyoudogahama.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-        "author": "Junpei Satoh",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Jyoudogahama.jpg"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q1206082"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q1206082",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://ja.wikipedia.org/wiki/%E4%B8%89%E9%99%B8%E5%BE%A9%E8%88%88%E5%9B%BD%E7%AB%8B%E5%85%AC%E5%9C%92",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
     "id": "wd-Q123124042",
     "name": {
       "ja": "弘前れんが倉庫美術館",
@@ -14401,59 +14003,6 @@
       },
       {
         "url": "https://www.openstreetmap.org/way/1259735267",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
-    "id": "wd-Q1321564",
-    "name": {
-      "ja": "下北半島",
-      "kana": "しもきたはんとう",
-      "romaji": "Shimokitahanto",
-      "zh_tw": "下北半島",
-      "en": "Shimokita Peninsula"
-    },
-    "kana_source": "wikipedia",
-    "location": {
-      "lat": 41.335556,
-      "lng": 140.998333
-    },
-    "prefecture": "aomori",
-    "kind": "major",
-    "themes": [],
-    "tags": [
-      "島"
-    ],
-    "featured": true,
-    "score": 80.3,
-    "summary": {
-      "text": "下北半島是位於日本青森縣東北部的一個半島，北臨津輕海峽。整個半島為下北半島國定公園，本州島最北端大間崎與日本三大靈場之一的恐山位於該地。",
-      "lang": "zh",
-      "source_url": "https://zh.wikipedia.org/wiki/%E4%B8%8B%E5%8C%97%E5%8D%8A%E5%B3%B6",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "images": [
-      {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/e/ee/Shimokita_Peninsula_Aomori_Japan_SRTM.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-        "author": "っ",
-        "license": "Public domain",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Shimokita_Peninsula_Aomori_Japan_SRTM.jpg"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q1321564"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q1321564",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://ja.wikipedia.org/wiki/%E4%B8%8B%E5%8C%97%E5%8D%8A%E5%B3%B6",
         "fetched_at": "2026-09-28"
       }
     ],
@@ -16038,59 +15587,6 @@
     "updated_at": "2026-09-28"
   },
   {
-    "id": "wd-Q179131",
-    "name": {
-      "ja": "津軽半島",
-      "kana": "つがるはんとう",
-      "romaji": "Tsugaruhanto",
-      "zh_tw": "津轻半岛",
-      "en": "Tsugaru Peninsula"
-    },
-    "kana_source": "wikipedia",
-    "location": {
-      "lat": 40.95,
-      "lng": 140.483333
-    },
-    "prefecture": "aomori",
-    "kind": "major",
-    "themes": [],
-    "tags": [
-      "島"
-    ],
-    "featured": true,
-    "score": 75.28,
-    "summary": {
-      "text": "津輕半島是日本本州島最北部伸入津輕海峽的一個半島，東臨陸奧灣與下北半島相望，北臨津輕海峽與北海道的渡島半島相望，西臨日本海，屬青森縣管轄。半島因長期受津輕氏統治而得名，最大城市是青森市。青函隧道從該半島其下通過。",
-      "lang": "zh",
-      "source_url": "https://zh.wikipedia.org/wiki/%E6%B4%A5%E8%BD%BB%E5%8D%8A%E5%B2%9B",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a7/Tsugaru_hantou_from_Mt._Iwaki.jpg/960px-Tsugaru_hantou_from_Mt._Iwaki.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Soica2001 (talk)",
-        "license": "Public domain",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Tsugaru_hantou_from_Mt._Iwaki.jpg"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q179131"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q179131",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://ja.wikipedia.org/wiki/%E6%B4%A5%E8%BB%BD%E5%8D%8A%E5%B3%B6",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
     "id": "wd-Q18335691",
     "name": {
       "ja": "大間稲荷神社",
@@ -17006,7 +16502,7 @@
     "tags": [
       "島"
     ],
-    "featured": false,
+    "featured": true,
     "score": 71.48,
     "summary": {
       "text": "蕪島位於日本青森縣八戶市鮫町，是黑尾鷗的繁殖地，被指定為國家天然紀念物。2013年5月，蕪島也被指定為三陸復興國立公園的一部分。",
@@ -19619,7 +19115,7 @@
     "tags": [
       "名勝"
     ],
-    "featured": false,
+    "featured": true,
     "score": 71.75,
     "summary": {
       "text": "盛美園是位於日本青森縣平川市猿賀石林的一座日本庭園。盛美園是盛行於津輕地區的大石武學流造園的代表作，被日本政府指定為名勝。盛美園由當地資產家清藤盛美出資興建，耗時9年完成，被譽為武學流庭園的最高峰。庭園西南有一座融合和洋風格的洋館盛美館。吉卜力電影借物少女艾莉緹的世界觀參考了盛美園的建築。",
@@ -19924,7 +19420,7 @@
     "tags": [
       "名勝"
     ],
-    "featured": false,
+    "featured": true,
     "score": 71.12,
     "summary": {
       "text": "仏ヶ浦（ほとけがうら）は、青森県下北半島西岸の下北郡佐井村南部に所在する景勝地。古くは仏宇陀（ほとけうた、ほとけうだ）と称した。国の名勝および天然記念物に指定されている。",
@@ -19952,59 +19448,6 @@
       },
       {
         "url": "https://www.openstreetmap.org/node/6725244688",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
-    "id": "wd-Q8014105",
-    "name": {
-      "ja": "夏泊半島",
-      "kana": "なつどまりはんとう",
-      "romaji": "Natsudomarihanto",
-      "zh_tw": "夏泊半島",
-      "en": "Natsudomari Peninsula"
-    },
-    "kana_source": "wikipedia",
-    "location": {
-      "lat": 40.9141,
-      "lng": 140.938
-    },
-    "prefecture": "aomori",
-    "kind": "major",
-    "themes": [],
-    "tags": [
-      "島"
-    ],
-    "featured": false,
-    "score": 71.43,
-    "summary": {
-      "text": "夏泊半島，位於青森縣中央，陸奧灣南部，將津輕半島下北半島合圍形成的陸奧灣一分為二，東部為野邊地灣，西部為青森灣。半島地形以山地為主（夏泊山地），為奧羽山脈的一支。當地海岸綿長，風景秀麗。由於距青森市較近，成為野營，海水浴等短期旅行的著名觀光地。此外，半島西部還有淺蟲溫泉。",
-      "lang": "zh",
-      "source_url": "https://zh.wikipedia.org/wiki/%E5%A4%8F%E6%B3%8A%E5%8D%8A%E5%B3%B6",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/59/Nastudomari_Pen_01.jpg/960px-Nastudomari_Pen_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Okapia2 (Editor)",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Nastudomari_Pen_01.jpg"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q8014105"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q8014105",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://ja.wikipedia.org/wiki/%E5%A4%8F%E6%B3%8A%E5%8D%8A%E5%B3%B6",
         "fetched_at": "2026-09-28"
       }
     ],

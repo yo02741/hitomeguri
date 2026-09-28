@@ -1177,55 +1177,6 @@
     "updated_at": "2026-09-28"
   },
   {
-    "id": "wd-Q1072799",
-    "name": {
-      "ja": "室戸阿南海岸国定公園",
-      "kana": "むろとあなんかいがんこくていこうえん",
-      "romaji": "Murotoanankaigankokuteikoen",
-      "zh_tw": "室戶阿南海岸國定公園",
-      "en": "Muroto-Anan Kaigan Quasi-National Park"
-    },
-    "kana_source": "wikidata",
-    "location": {
-      "lat": 33.583,
-      "lng": 134.38
-    },
-    "prefecture": "kochi",
-    "kind": "major",
-    "themes": [],
-    "tags": [
-      "公園"
-    ],
-    "featured": false,
-    "score": 64.12,
-    "summary": {
-      "text": "室戶阿南海岸國定公園，是位在日本四國南側海岸的國定公園，範圍跨越高知縣和德島縣。成立於1964年6月1日，總面積達6,225公頃。",
-      "lang": "zh",
-      "source_url": "https://zh.wikipedia.org/wiki/%E5%AE%A4%E6%88%B6%E9%98%BF%E5%8D%97%E6%B5%B7%E5%B2%B8%E5%9C%8B%E5%AE%9A%E5%85%AC%E5%9C%92",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bc/Muroto_Cape.JPG/960px-Muroto_Cape.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Nobunaga24 at English Wikipedia",
-        "license": "Public domain",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Muroto_Cape.JPG"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q1072799"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q1072799",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
     "id": "wd-Q107922253",
     "name": {
       "ja": "閑慶院",
@@ -1454,7 +1405,7 @@
     "tags": [
       "寺院"
     ],
-    "featured": false,
+    "featured": true,
     "score": 67.33,
     "summary": {
       "text": "土佐國分寺（とさこくぶんじ）是位在日本高知縣南國市的真言宗智山派寺院。山號「摩尼山」（まにざん）。本尊千手觀世音菩薩、開基（創立者）為行基。四國八十八箇所靈場之第二十九番札所。",
@@ -1929,55 +1880,6 @@
       },
       {
         "url": "https://ja.wikipedia.org/wiki/%E5%AE%BF%E6%AF%9B%E3%83%AA%E3%82%BE%E3%83%BC%E3%83%88%E6%A4%B0%E5%AD%90%E3%81%AE%E6%B9%AF",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
-    "id": "wd-Q1132029",
-    "name": {
-      "ja": "足摺宇和海国立公園",
-      "kana": "あしずりうわかいこくりつこうえん",
-      "romaji": "Ashizuriuwakaikokuritsukoen",
-      "zh_tw": "足摺宇和海國立公園",
-      "en": "Ashizuri-Uwakai National Park"
-    },
-    "kana_source": "wikidata",
-    "location": {
-      "lat": 32.723889,
-      "lng": 133.02
-    },
-    "prefecture": "kochi",
-    "kind": "major",
-    "themes": [],
-    "tags": [
-      "公園"
-    ],
-    "featured": true,
-    "score": 71.75,
-    "summary": {
-      "text": "足摺宇和海國立公園，是位在日本四國高知縣、愛媛縣的國立公園。",
-      "lang": "zh",
-      "source_url": "https://zh.wikipedia.org/wiki/%E8%B6%B3%E6%91%BA%E5%AE%87%E5%92%8C%E6%B5%B7%E5%9C%8B%E7%AB%8B%E5%85%AC%E5%9C%92",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f3/Ashizurimisaki.jpg/960px-Ashizurimisaki.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "四万十人",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Ashizurimisaki.jpg"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q1132029"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q1132029",
         "fetched_at": "2026-09-28"
       }
     ],

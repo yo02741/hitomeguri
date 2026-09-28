@@ -379,55 +379,6 @@
     "updated_at": "2026-09-28"
   },
   {
-    "id": "wd-Q1071139",
-    "name": {
-      "ja": "日南海岸国定公園",
-      "kana": "にちなんかいがんこくていこうえん",
-      "romaji": "Nichinankaigankokuteikoen",
-      "zh_tw": "日南海岸國定公園",
-      "en": "Nichinan Kaigan Quasi-National Park"
-    },
-    "kana_source": "wikidata",
-    "location": {
-      "lat": 31.579,
-      "lng": 131.43
-    },
-    "prefecture": "kagoshima",
-    "kind": "major",
-    "themes": [],
-    "tags": [
-      "公園"
-    ],
-    "featured": false,
-    "score": 67.6,
-    "summary": {
-      "text": "日南海岸國定公園（假名：にちなんかいがんこくていこうえん），是位在日本宮崎縣、鹿兒島縣的國定公園。1955年6月1日指定。",
-      "lang": "zh",
-      "source_url": "https://zh.wikipedia.org/wiki/%E6%97%A5%E5%8D%97%E6%B5%B7%E5%B2%B8%E5%9C%8B%E5%AE%9A%E5%85%AC%E5%9C%92",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/69/NichinanKaigan.JPG/960px-NichinanKaigan.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Ippukucho",
-        "license": "CC BY 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:NichinanKaigan.JPG"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q1071139"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q1071139",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
     "id": "wd-Q107410083",
     "name": {
       "ja": "若一王子神社",
@@ -740,7 +691,7 @@
     "tags": [
       "名勝"
     ],
-    "featured": false,
+    "featured": true,
     "score": 71.6,
     "summary": {
       "text": "坊津是古代日本九州島的一個繁華的港口名字。位於薩摩國川邊郡坊津（今鹿兒島縣南薩摩市坊津町坊）。",
@@ -2178,55 +2129,6 @@
     "updated_at": "2026-09-28"
   },
   {
-    "id": "wd-Q1132024",
-    "name": {
-      "ja": "霧島錦江湾国立公園",
-      "kana": "きりしまきんこうわんこくりつこうえん",
-      "romaji": "Kirishimakinkowankokuritsukoen",
-      "zh_tw": "霧島錦江灣國立公園",
-      "en": "Kirishima-Kinkōwan National Park"
-    },
-    "kana_source": "wikidata",
-    "location": {
-      "lat": 31.2629,
-      "lng": 130.706
-    },
-    "prefecture": "kagoshima",
-    "kind": "major",
-    "themes": [],
-    "tags": [
-      "公園"
-    ],
-    "featured": true,
-    "score": 73.68,
-    "summary": {
-      "text": "霧島錦江灣國立公園，是位在日本宮崎縣、鹿兒島縣的國立公園。",
-      "lang": "zh",
-      "source_url": "https://zh.wikipedia.org/wiki/%E9%9C%A7%E5%B3%B6%E9%8C%A6%E6%B1%9F%E7%81%A3%E5%9C%8B%E7%AB%8B%E5%85%AC%E5%9C%92",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "images": [
-      {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/6/6e/Senpiro_Fall_Yaku_Island.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-        "author": "Yosemite",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Senpiro_Fall_Yaku_Island.jpg"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q1132024"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q1132024",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
     "id": "wd-Q11323336",
     "name": {
       "ja": "ドルフィンポート",
@@ -2387,53 +2289,6 @@
       },
       {
         "url": "https://ja.wikipedia.org/wiki/%E3%83%95%E3%83%AC%E3%82%B9%E3%83%9D%E5%9B%BD%E5%88%86",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
-    "id": "wd-Q11338631",
-    "name": {
-      "ja": "ボゼ",
-      "kana": "ぼぜ",
-      "romaji": "Boze",
-      "zh_tw": "ボゼ",
-      "en": "Boze"
-    },
-    "kana_source": "wikidata",
-    "location": {
-      "lat": 29.450833,
-      "lng": 129.603056
-    },
-    "prefecture": "kagoshima",
-    "kind": "major",
-    "themes": [],
-    "tags": [],
-    "featured": false,
-    "score": 67.94,
-    "summary": {
-      "text": "ボゼは、鹿児島県トカラ列島の悪石島に伝わる来訪神行事である。奇祭として知られている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E3%83%9C%E3%82%BC",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a4/Masked_God_Boze.jpg/960px-Masked_God_Boze.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Fred Cherrygarden",
-        "license": "CC BY 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Masked_God_Boze.jpg"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q11338631"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q11338631",
         "fetched_at": "2026-09-28"
       }
     ],
@@ -6041,52 +5896,6 @@
     "updated_at": "2026-09-28"
   },
   {
-    "id": "wd-Q11449515",
-    "name": {
-      "ja": "宇治群島",
-      "kana": "うじぐんとう",
-      "romaji": "Ujigunto",
-      "zh_tw": "宇治群島",
-      "en": "Uji Islands"
-    },
-    "kana_source": "wikipedia",
-    "location": {
-      "lat": 31.196278,
-      "lng": 129.45025
-    },
-    "prefecture": "kagoshima",
-    "kind": "major",
-    "themes": [],
-    "tags": [
-      "島"
-    ],
-    "featured": false,
-    "score": 47.43,
-    "summary": {
-      "text": "宇治群島（うじぐんとう）は、薩摩半島の鹿児島県枕崎市の西方沖約80kmにある群島。鹿児島県南さつま市笠沙町片浦に属し全て無人島である。南方の草垣群島と同じく、上三島、薩南諸島のいずれにも属さず、よって南西諸島にも属さない。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%AE%87%E6%B2%BB%E7%BE%A4%E5%B3%B6",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "images": [],
-    "external_ids": {
-      "wikidata": "Q11449515"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q11449515",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://ja.wikipedia.org/wiki/%E5%AE%87%E6%B2%BB%E7%BE%A4%E5%B3%B6",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
     "id": "wd-Q11450879",
     "name": {
       "ja": "安楽山宮神社",
@@ -6395,55 +6204,6 @@
     "sources": [
       {
         "url": "https://www.wikidata.org/wiki/Q11465115",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
-    "id": "wd-Q11465642",
-    "name": {
-      "ja": "屋久島国立公園",
-      "kana": "やくしまこくりつこうえん",
-      "romaji": "Yakushimakokuritsukoen",
-      "zh_tw": "屋久島國立公園",
-      "en": "Yakushima National Park"
-    },
-    "kana_source": "wikidata",
-    "location": {
-      "lat": 30.337306,
-      "lng": 130.503833
-    },
-    "prefecture": "kagoshima",
-    "kind": "major",
-    "themes": [],
-    "tags": [
-      "公園"
-    ],
-    "featured": true,
-    "score": 71.91,
-    "summary": {
-      "text": "屋久島國立公園，是位在日本鹿兒島縣屋久島之一部及口永良部島全域的國立公園。指定面積32,553公頃。2012年3月16日從霧島屋久國立公園分離獨立為第30座國立公園。",
-      "lang": "zh",
-      "source_url": "https://zh.wikipedia.org/wiki/%E5%B1%8B%E4%B9%85%E5%B3%B6%E5%9C%8B%E7%AB%8B%E5%85%AC%E5%9C%92",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "images": [
-      {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/9/9d/Bouzuiwa_in_Yaku_Island_001.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-        "author": "不明",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Bouzuiwa_in_Yaku_Island_001.jpg"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q11465642"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q11465642",
         "fetched_at": "2026-09-28"
       }
     ],
@@ -7025,7 +6785,7 @@
       "城",
       "史跡"
     ],
-    "featured": false,
+    "featured": true,
     "score": 70.94,
     "summary": {
       "text": "志布志城是位於鹿兒島縣志布志市（日向國諸縣郡救仁院志布志）、曾經存在的一座城。現時只存有少部份曲輪等屬於最外圍的基礎部份。",
@@ -10352,59 +10112,6 @@
       },
       {
         "url": "https://www.openstreetmap.org/node/8872584670",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
-    "id": "wd-Q11618116",
-    "name": {
-      "ja": "草垣群島",
-      "kana": "くさがきぐんとう",
-      "romaji": "Kusagakigunto",
-      "zh_tw": "草垣群島",
-      "en": "Kusagaki Islands"
-    },
-    "kana_source": "wikipedia",
-    "location": {
-      "lat": 30.845111,
-      "lng": 129.430639
-    },
-    "prefecture": "kagoshima",
-    "kind": "major",
-    "themes": [],
-    "tags": [
-      "島"
-    ],
-    "featured": false,
-    "score": 47.11,
-    "summary": {
-      "text": "草垣群島（くさがきぐんとう）は、坊ノ岬（鹿児島県南さつま市）の南西約80kmの東シナ海に位置する無人島群。鹿児島県南さつま市（旧笠沙町）に属する。縄文時代から古墳時代に至る遺跡がある。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E8%8D%89%E5%9E%A3%E7%BE%A4%E5%B3%B6",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/19/Kusagaki_Islands_aerial_photograph.JPG/960px-Kusagaki_Islands_aerial_photograph.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "国土交通省",
-        "license": "Attribution",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Kusagaki_Islands_aerial_photograph.JPG"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q11618116"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q11618116",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://ja.wikipedia.org/wiki/%E8%8D%89%E5%9E%A3%E7%BE%A4%E5%B3%B6",
         "fetched_at": "2026-09-28"
       }
     ],
@@ -14911,59 +14618,6 @@
     "updated_at": "2026-09-28"
   },
   {
-    "id": "wd-Q129762",
-    "name": {
-      "ja": "トカラ列島",
-      "kana": "とかられっとう",
-      "romaji": "Tokararetto",
-      "zh_tw": "吐噶喇群島",
-      "en": "Tokara Islands"
-    },
-    "kana_source": "wikipedia",
-    "location": {
-      "lat": 29.37,
-      "lng": 129.743333
-    },
-    "prefecture": "kagoshima",
-    "kind": "major",
-    "themes": [],
-    "tags": [
-      "島"
-    ],
-    "featured": false,
-    "score": 86.86,
-    "summary": {
-      "text": "吐噶喇群島是薩南群島的一個群島，在行政區劃上，全境設立日本鹿兒島縣十島村。",
-      "lang": "zh",
-      "source_url": "https://zh.wikipedia.org/wiki/%E5%90%90%E5%99%B6%E5%96%87%E7%BE%A4%E5%B3%B6",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/be/Akusekijima.jpg/960px-Akusekijima.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "名古屋太郎",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Akusekijima.jpg"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q129762"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q129762",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://ja.wikipedia.org/wiki/%E3%83%88%E3%82%AB%E3%83%A9%E5%88%97%E5%B3%B6",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
     "id": "wd-Q1319361",
     "name": {
       "ja": "霧島山",
@@ -17054,7 +16708,7 @@
     "tags": [
       "史跡"
     ],
-    "featured": false,
+    "featured": true,
     "score": 70.59,
     "summary": {
       "text": "上野原遺跡是位於日本鹿兒島縣霧島市的一個繩文時代歷史遺跡，在1997年的一個建築工程中發現的竪穴式住居。在遺址中找到無數並未玻璃化的陶器和石器以及該遺址已被列為日本重要文化財產。於 2002/3年，日本將遺址及附近共36公頃的土地轉為公園及展覽中心，並命名為上野原縄文森林。",
@@ -17342,55 +16996,6 @@
       },
       {
         "url": "https://ja.wikipedia.org/wiki/%E3%83%8A%E3%83%9D%E3%83%AC%E3%82%AA%E3%83%B3%E5%B2%A9",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
-    "id": "wd-Q29388143",
-    "name": {
-      "ja": "奄美群島国立公園",
-      "kana": "あまみぐんとうこくりつこうえん",
-      "romaji": "Amamiguntokokuritsukoen",
-      "zh_tw": "奄美群島國立公園",
-      "en": "Amami Guntō National Park"
-    },
-    "kana_source": "wikidata",
-    "location": {
-      "lat": 27.78,
-      "lng": 128.915
-    },
-    "prefecture": "kagoshima",
-    "kind": "major",
-    "themes": [],
-    "tags": [
-      "公園"
-    ],
-    "featured": true,
-    "score": 71.13,
-    "summary": {
-      "text": "奄美群島國立公園是位於日本鹿兒島縣奄美群島一個以自然保育為目的所設置的國立公園，成立於2017年3月7日，公園範圍包括奄美大島、加計呂麻島、喜界島、德之島、沖永良部島、與論島。由奄美群島國定公園升格成立。是日本全國第34座、鹿兒島縣內第4座國立公園。也是自2016年山原國立公園以來日本最新的國立公園。",
-      "lang": "zh",
-      "source_url": "https://zh.wikipedia.org/wiki/%E5%A5%84%E7%BE%8E%E7%BE%A4%E5%B3%B6%E5%9C%8B%E7%AB%8B%E5%85%AC%E5%9C%92",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/07/Amami_beach.jpg/960px-Amami_beach.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "TANAKA Juuyoh (田中十洋)",
-        "license": "CC BY 2.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Amami_beach.jpg"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q29388143"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q29388143",
         "fetched_at": "2026-09-28"
       }
     ],
@@ -17726,59 +17331,6 @@
       },
       {
         "url": "https://ja.wikipedia.org/wiki/%E9%B9%BF%E5%85%90%E5%B3%B6%E7%B4%A1%E7%B8%BE%E6%89%80",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
-    "id": "wd-Q386104",
-    "name": {
-      "ja": "大隅諸島",
-      "kana": "おおすみしょとう",
-      "romaji": "Osumishoto",
-      "zh_tw": "大隅群島",
-      "en": "Ōsumi Islands"
-    },
-    "kana_source": "wikipedia",
-    "location": {
-      "lat": 30.609167,
-      "lng": 130.183333
-    },
-    "prefecture": "kagoshima",
-    "kind": "major",
-    "themes": [],
-    "tags": [
-      "島"
-    ],
-    "featured": false,
-    "score": 62.67,
-    "summary": {
-      "text": "大隅群島位於日本九州鹿兒島縣大隅半島佐多岬南方，是薩南群島的一個群島，屬於鹿兒島縣。大隅群島的主要島嶼包括種子島、屋久島和口永良部島；也有認為三島村的黑島、硫磺島和竹島也屬於大隅諸島。大隅群島的主要中心城市是位於種子島北部的西之表市。",
-      "lang": "zh",
-      "source_url": "https://zh.wikipedia.org/wiki/%E5%A4%A7%E9%9A%85%E7%BE%A4%E5%B3%B6",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/60/Osumi-Islands-Tanegashima-Japan.png/960px-Osumi-Islands-Tanegashima-Japan.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "NASA/USGS; Mike Taylor",
-        "license": "Public domain",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Osumi-Islands-Tanegashima-Japan.png"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q386104"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q386104",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E9%9A%85%E8%AB%B8%E5%B3%B6",
         "fetched_at": "2026-09-28"
       }
     ],
@@ -18362,59 +17914,6 @@
     "updated_at": "2026-09-28"
   },
   {
-    "id": "wd-Q453510",
-    "name": {
-      "ja": "奄美群島",
-      "kana": "あまみぐんとう",
-      "romaji": "Amamigunto",
-      "zh_tw": "奄美群島",
-      "en": "Amami Islands"
-    },
-    "kana_source": "wikipedia",
-    "location": {
-      "lat": 27.833333,
-      "lng": 129.0
-    },
-    "prefecture": "kagoshima",
-    "kind": "major",
-    "themes": [],
-    "tags": [
-      "島"
-    ],
-    "featured": false,
-    "score": 71.27,
-    "summary": {
-      "text": "奄美群島，為琉球群島北部的一個群島，位於日本九州島的南方、沖繩群島的北方，行政區劃屬於日本鹿兒島縣大島支廳。",
-      "lang": "zh",
-      "source_url": "https://zh.wikipedia.org/wiki/%E5%A5%84%E7%BE%8E%E7%BE%A4%E5%B3%B6",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/07/Amami_beach.jpg/960px-Amami_beach.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "TANAKA Juuyoh (田中十洋)",
-        "license": "CC BY 2.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Amami_beach.jpg"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q453510"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q453510",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://ja.wikipedia.org/wiki/%E5%A5%84%E7%BE%8E%E7%BE%A4%E5%B3%B6",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
     "id": "wd-Q4739454",
     "name": {
       "ja": "奄美アイランド植物園",
@@ -18635,59 +18134,6 @@
       },
       {
         "url": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E5%B3%B6%E6%B5%B7%E5%B3%A1",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
-    "id": "wd-Q49515",
-    "name": {
-      "ja": "甑島列島",
-      "kana": "こしきしまれっとう",
-      "romaji": "Koshikishimaretto",
-      "zh_tw": "甑島群島",
-      "en": "Koshikijima Islands"
-    },
-    "kana_source": "wikipedia",
-    "location": {
-      "lat": 31.753281,
-      "lng": 129.784239
-    },
-    "prefecture": "kagoshima",
-    "kind": "major",
-    "themes": [],
-    "tags": [
-      "島"
-    ],
-    "featured": false,
-    "score": 79.37,
-    "summary": {
-      "text": "甑島列島（こしきしまれっとう）為東海上的一個群島，由鹿兒島縣薩摩川內市管轄。主要有上甑島・中甑島・下甑島三島，人口約5576人(2011年)。",
-      "lang": "zh",
-      "source_url": "https://zh.wikipedia.org/wiki/%E7%94%91%E5%B3%B6%E5%88%97%E5%B3%B6",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "images": [
-      {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/c/c3/Koshikijima_Islands.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-        "author": "不明",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Koshikijima_Islands.png"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q49515"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q49515",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://ja.wikipedia.org/wiki/%E7%94%91%E5%B3%B6%E5%88%97%E5%B3%B6",
         "fetched_at": "2026-09-28"
       }
     ],
@@ -19378,59 +18824,6 @@
     "updated_at": "2026-09-28"
   },
   {
-    "id": "wd-Q642318",
-    "name": {
-      "ja": "薩南諸島",
-      "kana": "さつなんしょとう",
-      "romaji": "Satsunanshoto",
-      "zh_tw": "薩南群島",
-      "en": "Satsunan Islands"
-    },
-    "kana_source": "wikipedia",
-    "location": {
-      "lat": 29.0,
-      "lng": 130.0
-    },
-    "prefecture": "kagoshima",
-    "kind": "major",
-    "themes": [],
-    "tags": [
-      "島"
-    ],
-    "featured": false,
-    "score": 61.74,
-    "summary": {
-      "text": "薩南群島，是日本地理區劃之一，屬於鹿兒島縣，歷史上為薩摩藩的一部分。",
-      "lang": "zh",
-      "source_url": "https://zh.wikipedia.org/wiki/%E8%96%A9%E5%8D%97%E7%BE%A4%E5%B3%B6",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6b/Satsunan-Islands-Kagoshima-Japan.png/960px-Satsunan-Islands-Kagoshima-Japan.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "This image is in the public domain because it came from the site https://www.demis.nl/products/web-map-server/examples/ ",
-        "license": "Public domain",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Satsunan-Islands-Kagoshima-Japan.png"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q642318"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q642318",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://ja.wikipedia.org/wiki/%E8%96%A9%E5%8D%97%E8%AB%B8%E5%B3%B6",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
     "id": "wd-Q65292179",
     "name": {
       "ja": "雄川の滝",
@@ -19486,102 +18879,6 @@
       },
       {
         "url": "https://ja.wikipedia.org/wiki/%E9%9B%84%E5%B7%9D%E3%81%AE%E6%BB%9D",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
-    "id": "wd-Q667475",
-    "name": {
-      "ja": "薩摩国",
-      "kana": "さつまのくに",
-      "romaji": "Satsumanokuni",
-      "zh_tw": "薩摩國",
-      "en": "Satsuma Province"
-    },
-    "kana_source": "wikidata",
-    "location": {
-      "lat": 31.758611,
-      "lng": 130.48
-    },
-    "prefecture": "kagoshima",
-    "kind": "major",
-    "themes": [],
-    "tags": [],
-    "featured": true,
-    "score": 85.67,
-    "summary": {
-      "text": "薩摩國，日本古代的令制國之一，屬西海道，又稱薩州。薩摩國的領域大約相當於現在的鹿兒島縣西部。長官為薩摩守",
-      "lang": "zh",
-      "source_url": "https://zh.wikipedia.org/wiki/%E8%96%A9%E6%91%A9%E5%9C%8B",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/aa/%E5%9C%B0%E5%9B%B3_%E4%BB%A4%E5%88%B6%E5%9B%BD_%E8%96%A9%E6%91%A9%E5%9B%BD.svg/960px-%E5%9C%B0%E5%9B%B3_%E4%BB%A4%E5%88%B6%E5%9B%BD_%E8%96%A9%E6%91%A9%E5%9B%BD.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Lincun",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:%E5%9C%B0%E5%9B%B3_%E4%BB%A4%E5%88%B6%E5%9B%BD_%E8%96%A9%E6%91%A9%E5%9B%BD.svg"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q667475"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q667475",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
-    "id": "wd-Q6897416",
-    "name": {
-      "ja": "南西諸島",
-      "kana": "なんせいしょとう",
-      "romaji": "Nanseishoto",
-      "zh_tw": "西南諸島",
-      "en": "Ryukyu Islands"
-    },
-    "kana_source": "wikidata",
-    "location": {
-      "lat": 26.332808,
-      "lng": 127.749022
-    },
-    "prefecture": "kagoshima",
-    "kind": "major",
-    "themes": [],
-    "tags": [
-      "島"
-    ],
-    "featured": false,
-    "score": 83.85,
-    "summary": {
-      "text": "琉球群島是太平洋西部的一系列島嶼群，位於臺灣與九州之間；現由日本統治，並由日本方面稱為南西諸島（南西諸島／なんせいしょとう，Nansei shotō）。",
-      "lang": "zh",
-      "source_url": "https://zh.wikipedia.org/wiki/%E7%90%89%E7%90%83%E7%BE%A4%E5%B2%9B",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "images": [
-      {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/e/e1/Test_20121016_1445.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-        "author": "浅見真規",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Test_20121016_1445.png"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q6897416"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q6897416",
         "fetched_at": "2026-09-28"
       }
     ],
@@ -19871,7 +19168,7 @@
     "tags": [
       "神社"
     ],
-    "featured": false,
+    "featured": true,
     "score": 70.91,
     "summary": {
       "text": "照國神社（てるくにじんじゃ）是一座位於鹿兒島縣鹿兒島市照國町的神社，其舊社格是別格官幣社，現在則屬於神社本廳的別表神社。",
@@ -20480,48 +19777,6 @@
     "sources": [
       {
         "url": "https://www.wikidata.org/wiki/Q8081720",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
-    "id": "wd-Q85774920",
-    "name": {
-      "ja": "甑島国定公園",
-      "kana": "こしきしまこくていこうえん",
-      "romaji": "Koshikishimakokuteikoen",
-      "zh_tw": "甑島国定公園",
-      "en": "Koshikishima Quasi-National Park"
-    },
-    "kana_source": "wikidata",
-    "location": {
-      "lat": 31.86,
-      "lng": 129.88
-    },
-    "prefecture": "kagoshima",
-    "kind": "major",
-    "themes": [],
-    "tags": [
-      "公園"
-    ],
-    "featured": false,
-    "score": 57.54,
-    "summary": {
-      "text": "甑島国定公園（こしきしまこくていこうえん）は、鹿児島県薩摩川内市の離島、甑島列島および周辺海域からなる国定公園である。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E7%94%91%E5%B3%B6%E5%9B%BD%E5%AE%9A%E5%85%AC%E5%9C%92",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "images": [],
-    "external_ids": {
-      "wikidata": "Q85774920"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q85774920",
         "fetched_at": "2026-09-28"
       }
     ],

@@ -5538,50 +5538,6 @@
     "updated_at": "2026-09-28"
   },
   {
-    "id": "wd-Q11481091",
-    "name": {
-      "ja": "帝釈山脈",
-      "kana": "たいしゃくさんみゃく",
-      "romaji": "Taishakusanmyaku",
-      "zh_tw": "帝釋山地",
-      "en": "Taishaku Mountains"
-    },
-    "kana_source": "wikipedia",
-    "location": {
-      "lat": 36.969722,
-      "lng": 139.46
-    },
-    "prefecture": "fukushima",
-    "kind": "major",
-    "themes": [],
-    "tags": [],
-    "featured": false,
-    "score": 58.42,
-    "summary": {
-      "text": "帝釈山脈（たいしゃくさんみゃく）は、福島県南西部と栃木県北西部の境にあり、一部が群馬県にかかる山地。広義の越後山脈に入る。会津経由で新潟に向かう阿賀川の流域と関東平野を流れて利根川へとつながる鬼怒川の流域の境界にある。近辺には他に多数の山地があり、しかも帝釈山脈と同程度、もしくはさらに高いものも多い（帝釈山脈で最も高い黒岩山が2163m、これに対し、例えば燧ヶ岳は2356m）ため、低地からはほとんど見ることができない。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%B8%9D%E9%87%88%E5%B1%B1%E8%84%88",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "images": [],
-    "external_ids": {
-      "wikidata": "Q11481091"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q11481091",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://ja.wikipedia.org/wiki/%E5%B8%9D%E9%87%88%E5%B1%B1%E8%84%88",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
     "id": "wd-Q11481797",
     "name": {
       "ja": "幕川温泉",
@@ -18206,55 +18162,6 @@
       },
       {
         "url": "https://ja.wikipedia.org/wiki/%E7%A6%8F%E5%B3%B6%E7%9C%8C%E7%AB%8B%E5%8D%9A%E7%89%A9%E9%A4%A8",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
-    "id": "wd-Q4386028",
-    "name": {
-      "ja": "越後三山只見国定公園",
-      "kana": "えちごさんざんただみこくていこうえん",
-      "romaji": "Echigosanzantadamikokuteikoen",
-      "zh_tw": "越後三山只見國定公園",
-      "en": "Echigo Sanzan-Tadami Quasi-National Park"
-    },
-    "kana_source": "wikidata",
-    "location": {
-      "lat": 37.158,
-      "lng": 139.08
-    },
-    "prefecture": "fukushima",
-    "kind": "major",
-    "themes": [],
-    "tags": [
-      "公園"
-    ],
-    "featured": false,
-    "score": 65.59,
-    "summary": {
-      "text": "越後三山只見國定公園，是位在日本新潟縣、福島縣的國定公園。",
-      "lang": "zh",
-      "source_url": "https://zh.wikipedia.org/wiki/%E8%B6%8A%E5%BE%8C%E4%B8%89%E5%B1%B1%E5%8F%AA%E8%A6%8B%E5%9C%8B%E5%AE%9A%E5%85%AC%E5%9C%92",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/24/Lake_Tagokurako-1.JPG/960px-Lake_Tagokurako-1.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "河川一等兵",
-        "license": "Public domain",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Lake_Tagokurako-1.JPG"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q4386028"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q4386028",
         "fetched_at": "2026-09-28"
       }
     ],

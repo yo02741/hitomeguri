@@ -10948,7 +10948,7 @@
       "神社",
       "國寶"
     ],
-    "featured": false,
+    "featured": true,
     "score": 74.33,
     "summary": {
       "text": "神谷神社（かんだにじんじゃ）は、香川県坂出市にある神社。式内社で、旧社格は郷社。",
@@ -11342,49 +11342,6 @@
     "sources": [
       {
         "url": "https://www.wikidata.org/wiki/Q11605774",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
-    "id": "wd-Q11607281",
-    "name": {
-      "ja": "綾子踊",
-      "kana": "あやこおどり",
-      "romaji": "Ayakodori",
-      "zh_tw": "綾子踊"
-    },
-    "kana_source": "wikipedia",
-    "location": {
-      "lat": 34.169081,
-      "lng": 133.808717
-    },
-    "prefecture": "kagawa",
-    "kind": "major",
-    "themes": [],
-    "tags": [],
-    "featured": false,
-    "score": 51.82,
-    "summary": {
-      "text": "綾子踊（あやこおどり）は、香川県仲多度郡まんのう町（旧・仲南町佐文）に伝わる民俗芸能。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E7%B6%BE%E5%AD%90%E8%B8%8A",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "images": [],
-    "external_ids": {
-      "wikidata": "Q11607281"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q11607281",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://ja.wikipedia.org/wiki/%E7%B6%BE%E5%AD%90%E8%B8%8A",
         "fetched_at": "2026-09-28"
       }
     ],
@@ -17808,59 +17765,6 @@
     "updated_at": "2026-09-28"
   },
   {
-    "id": "wd-Q1754227",
-    "name": {
-      "ja": "塩飽諸島",
-      "kana": "しわくしょとう",
-      "romaji": "Shiwakushoto",
-      "zh_tw": "鹽飽羣島",
-      "en": "Shiwaku Islands"
-    },
-    "kana_source": "wikipedia",
-    "location": {
-      "lat": 34.383333,
-      "lng": 133.716667
-    },
-    "prefecture": "kagawa",
-    "kind": "major",
-    "themes": [],
-    "tags": [
-      "島"
-    ],
-    "featured": true,
-    "score": 75.3,
-    "summary": {
-      "text": "塩飽諸島（しわくしょとう）は、瀬戸内海に浮かぶ諸島。香川県に属しており、小豆島（香川県）や笠岡諸島（岡山県）とともに備讃諸島と称される。塩飽島（しわくじま）とも呼ばれ、岡山県と香川県に挟まれた西備讃瀬戸に浮かぶ大小合わせて28の島々から成る。名の由来は「塩焼く」とも「潮湧く」とも言う。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%A1%A9%E9%A3%BD%E8%AB%B8%E5%B3%B6",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "images": [
-      {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/a/a0/Awashima_Kagawa.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-        "author": "Toto-tarou at ja.wikipedia",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Awashima_Kagawa.jpg"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q1754227"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q1754227",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://ja.wikipedia.org/wiki/%E5%A1%A9%E9%A3%BD%E8%AB%B8%E5%B3%B6",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
     "id": "wd-Q189558",
     "name": {
       "ja": "銭形砂絵",
@@ -18331,73 +18235,6 @@
       },
       {
         "url": "https://ja.wikipedia.org/wiki/%E6%BA%80%E6%BF%83%E6%B1%A0",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
-    "id": "wd-Q2117322",
-    "name": {
-      "ja": "屋島の戦い",
-      "kana": "やしまのたたかい",
-      "romaji": "Yashimanotatakai",
-      "zh_tw": "屋島之戰",
-      "en": "Battle of Yashima"
-    },
-    "kana_source": "wikipedia",
-    "location": {
-      "lat": 34.345611,
-      "lng": 134.122333
-    },
-    "prefecture": "kagawa",
-    "kind": "major",
-    "themes": [],
-    "tags": [],
-    "featured": true,
-    "score": 83.08,
-    "summary": {
-      "text": "屋島之戰（屋島の戦い），發生於日本平安時代末期，為源平合戰的關鍵戰役之一。",
-      "lang": "zh",
-      "source_url": "https://zh.wikipedia.org/wiki/%E5%B1%8B%E5%B3%B6%E4%B9%8B%E6%88%B0",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "nearest_stations": [
-      {
-        "name": {
-          "ja": "八栗",
-          "en": "Yakuri"
-        },
-        "distance_m": 110
-      },
-      {
-        "name": {
-          "ja": "古高松南",
-          "en": "Furutakamatsu-Minami"
-        },
-        "distance_m": 500
-      }
-    ],
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/48/Battle_of_Yashima_Folding_Screens_Kano_School.jpg/960px-Battle_of_Yashima_Folding_Screens_Kano_School.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Kano School",
-        "license": "Public domain",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Battle_of_Yashima_Folding_Screens_Kano_School.jpg"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q2117322"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q2117322",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://ja.wikipedia.org/wiki/%E5%B1%8B%E5%B3%B6%E3%81%AE%E6%88%A6%E3%81%84",
         "fetched_at": "2026-09-28"
       }
     ],
@@ -19203,7 +19040,7 @@
     "tags": [
       "島"
     ],
-    "featured": false,
+    "featured": true,
     "score": 75.24,
     "summary": {
       "text": "男木島，一個位於瀨戶內海中部的島嶼，隸屬日本香川縣高松市。截至2019年，共有109戶家庭168人。男木島為雄島，臨近的女木島為雌島，兩島併稱為雌雄島。這個島也是Summer Pockets虛構故事的發生地「鳥白島」的主要取景地與原型之一。",

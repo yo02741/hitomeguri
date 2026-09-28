@@ -755,55 +755,6 @@
     "updated_at": "2026-09-28"
   },
   {
-    "id": "wd-Q1017118",
-    "name": {
-      "ja": "祖母傾国定公園",
-      "kana": "そぼかたむきこくていこうえん",
-      "romaji": "Sobokatamukikokuteikoen",
-      "zh_tw": "祖母傾國定公園",
-      "en": "Sobo-Katamuki Quasi-National Park"
-    },
-    "kana_source": "wikidata",
-    "location": {
-      "lat": 32.728,
-      "lng": 131.41
-    },
-    "prefecture": "oita",
-    "kind": "major",
-    "themes": [],
-    "tags": [
-      "公園"
-    ],
-    "featured": false,
-    "score": 66.03,
-    "summary": {
-      "text": "祖母傾國定公園（そぼかたむきこくていこうえん）是一個位於日本九州東部的國定公園，它跨到了日本的大分縣和宮崎縣，是屬於山嶽型的國家公園，於1965年3月25日成立。",
-      "lang": "zh",
-      "source_url": "https://zh.wikipedia.org/wiki/%E7%A5%96%E6%AF%8D%E5%82%BE%E5%9C%8B%E5%AE%9A%E5%85%AC%E5%9C%92",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f8/Mt.Sobo.jpg/960px-Mt.Sobo.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "As6673",
-        "license": "Public domain",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Mt.Sobo.jpg"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q1017118"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q1017118",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
     "id": "wd-Q10359310",
     "name": {
       "ja": "森陣屋",
@@ -1065,55 +1016,6 @@
       },
       {
         "url": "https://www.openstreetmap.org/node/1423866075",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
-    "id": "wd-Q1072867",
-    "name": {
-      "ja": "日豊海岸国定公園",
-      "kana": "にっぽうかいがんこくていこうえん",
-      "romaji": "Nippokaigankokuteikoen",
-      "zh_tw": "日豐海岸國定公園",
-      "en": "Nippō Kaigan Quasi-National Park"
-    },
-    "kana_source": "wikidata",
-    "location": {
-      "lat": 32.63,
-      "lng": 131.79
-    },
-    "prefecture": "oita",
-    "kind": "major",
-    "themes": [],
-    "tags": [
-      "公園"
-    ],
-    "featured": false,
-    "score": 65.49,
-    "summary": {
-      "text": "日豐海岸國定公園（假名：にっぽうかいがんこくていこうえん），是位在日本大分縣、宮崎縣的國定公園。1974年2月15日指定。總面積8,518ha。",
-      "lang": "zh",
-      "source_url": "https://zh.wikipedia.org/wiki/%E6%97%A5%E8%B1%90%E6%B5%B7%E5%B2%B8%E5%9C%8B%E5%AE%9A%E5%85%AC%E5%9C%92",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d4/%E6%9E%87%E6%A6%94%E5%B3%B6%EF%BC%88%E3%81%B3%E3%82%8D%E3%81%86%E3%81%98%E3%81%BE%EF%BC%89.jpg/960px-%E6%9E%87%E6%A6%94%E5%B3%B6%EF%BC%88%E3%81%B3%E3%82%8D%E3%81%86%E3%81%98%E3%81%BE%EF%BC%89.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Tremblay.typea",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:%E6%9E%87%E6%A6%94%E5%B3%B6%EF%BC%88%E3%81%B3%E3%82%8D%E3%81%86%E3%81%98%E3%81%BE%EF%BC%89.jpg"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q1072867"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q1072867",
         "fetched_at": "2026-09-28"
       }
     ],
@@ -2414,7 +2316,7 @@
     "tags": [
       "主題樂園"
     ],
-    "featured": false,
+    "featured": true,
     "score": 69.1,
     "summary": {
       "text": "ラクテンチは、大分県別府市にある遊園地、およびそれを運営する別府市の企業（株式会社ラクテンチ）である。",
@@ -4520,49 +4422,6 @@
       },
       {
         "url": "https://ja.wikipedia.org/wiki/%E5%8F%A4%E8%A6%81%E7%A5%9E%E7%A4%BE%E3%81%AE%E5%82%80%E5%84%A1%E5%AD%90%E3%81%AE%E8%88%9E%E3%81%A8%E7%9B%B8%E6%92%B2",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
-    "id": "wd-Q11413122",
-    "name": {
-      "ja": "吉弘楽",
-      "kana": "よしひろがく",
-      "romaji": "Yoshihirogaku",
-      "zh_tw": "吉弘楽"
-    },
-    "kana_source": "wikipedia",
-    "location": {
-      "lat": 33.523533,
-      "lng": 131.669181
-    },
-    "prefecture": "oita",
-    "kind": "major",
-    "themes": [],
-    "tags": [],
-    "featured": false,
-    "score": 48.81,
-    "summary": {
-      "text": "吉弘楽（よしひろがく ）は、大分県国東市武蔵地区に伝わる太鼓踊り。1996年（平成8年）12月20日に重要無形民俗文化財に指定された。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%90%89%E5%BC%98%E6%A5%BD",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "images": [],
-    "external_ids": {
-      "wikidata": "Q11413122"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q11413122",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://ja.wikipedia.org/wiki/%E5%90%89%E5%BC%98%E6%A5%BD",
         "fetched_at": "2026-09-28"
       }
     ],
@@ -15855,59 +15714,6 @@
       },
       {
         "url": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E5%8E%9F%E3%81%AE%E3%81%97%E3%81%A0%E3%82%8C%E6%A1%9C",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
-    "id": "wd-Q1792216",
-    "name": {
-      "ja": "国東半島",
-      "kana": "くにさきはんとう",
-      "romaji": "Kunisakihanto",
-      "zh_tw": "國東半島",
-      "en": "Kunisaki Peninsula"
-    },
-    "kana_source": "wikipedia",
-    "location": {
-      "lat": 33.547778,
-      "lng": 131.5925
-    },
-    "prefecture": "oita",
-    "kind": "major",
-    "themes": [],
-    "tags": [
-      "島"
-    ],
-    "featured": true,
-    "score": 75.84,
-    "summary": {
-      "text": "國東半島為日本大分縣東北部的半島。",
-      "lang": "zh",
-      "source_url": "https://zh.wikipedia.org/wiki/%E5%9C%8B%E6%9D%B1%E5%8D%8A%E5%B3%B6",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "images": [
-      {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Kunisaki_Peninsula_STS068-253-7.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-        "author": "NASA, cropped and edited by OiOiO",
-        "license": "Public domain",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Kunisaki_Peninsula_STS068-253-7.jpg"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q1792216"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q1792216",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://ja.wikipedia.org/wiki/%E5%9B%BD%E6%9D%B1%E5%8D%8A%E5%B3%B6",
         "fetched_at": "2026-09-28"
       }
     ],

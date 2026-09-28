@@ -358,55 +358,6 @@
     "updated_at": "2026-09-28"
   },
   {
-    "id": "wd-Q1069265",
-    "name": {
-      "ja": "妙義荒船佐久高原国定公園",
-      "kana": "みょうぎあらふねさくこうげんこくていこうえん",
-      "romaji": "Myogiarafunesakukogenkokuteikoen",
-      "zh_tw": "妙義荒船佐久高原國定公園",
-      "en": "Myōgi-Arafune-Saku Kōgen Quasi-National Park"
-    },
-    "kana_source": "wikidata",
-    "location": {
-      "lat": 36.2,
-      "lng": 138.7
-    },
-    "prefecture": "gunma",
-    "kind": "major",
-    "themes": [],
-    "tags": [
-      "公園"
-    ],
-    "featured": false,
-    "score": 68.57,
-    "summary": {
-      "text": "妙義荒船佐久高原國立公園，是位在日本群馬縣、長野縣的國定公園。1969年4月10日指定，為日本第39座國定公園。",
-      "lang": "zh",
-      "source_url": "https://zh.wikipedia.org/wiki/%E5%A6%99%E7%BE%A9%E8%8D%92%E8%88%B9%E4%BD%90%E4%B9%85%E9%AB%98%E5%8E%9F%E5%9C%8B%E5%AE%9A%E5%85%AC%E5%9C%92",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7a/Mt.Arafune.JPG/960px-Mt.Arafune.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "韋駄天狗 at Japanese Wikipedia",
-        "license": "Public domain",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Mt.Arafune.JPG"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q1069265"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q1069265",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
     "id": "wd-Q107352659",
     "name": {
       "ja": "芳ヶ平湿地群",
@@ -4425,7 +4376,7 @@
       "史跡",
       "特別史跡"
     ],
-    "featured": false,
+    "featured": true,
     "score": 82.18,
     "summary": {
       "text": "多胡碑（たごひ、たごのひ）は、群馬県高崎市吉井町池字御門にある古碑（金石文）。多胡郡の建郡を記念して和銅4年（711年）ごろに建碑された。",
@@ -6332,50 +6283,6 @@
     "updated_at": "2026-09-28"
   },
   {
-    "id": "wd-Q11489305",
-    "name": {
-      "ja": "御荷鉾山系",
-      "kana": "みかぼさんけい",
-      "romaji": "Mikabosankei",
-      "zh_tw": "御荷鉾山系",
-      "en": "Mikabo Mountains"
-    },
-    "kana_source": "wikipedia",
-    "location": {
-      "lat": 36.143611,
-      "lng": 138.843333
-    },
-    "prefecture": "gunma",
-    "kind": "major",
-    "themes": [],
-    "tags": [],
-    "featured": false,
-    "score": 55.76,
-    "summary": {
-      "text": "御荷鉾山系（みかぼさんけい）は、群馬県南西部にある山系であり、上武山地の群馬県側を形成する。山中を御荷鉾スーパー林道が東西に貫く。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%BE%A1%E8%8D%B7%E9%89%BE%E5%B1%B1%E7%B3%BB",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "images": [],
-    "external_ids": {
-      "wikidata": "Q11489305"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q11489305",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://ja.wikipedia.org/wiki/%E5%BE%A1%E8%8D%B7%E9%89%BE%E5%B1%B1%E7%B3%BB",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
     "id": "wd-Q11493859",
     "name": {
       "ja": "愛宕神社",
@@ -8058,59 +7965,6 @@
       },
       {
         "url": "https://ja.wikipedia.org/wiki/%E6%B0%B4%E4%B8%8A%E9%AB%98%E5%8E%9F%E3%82%B9%E3%82%AD%E3%83%BC%E3%83%AA%E3%82%BE%E3%83%BC%E3%83%88",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
-    "id": "wd-Q1155306",
-    "name": {
-      "ja": "上信越高原国立公園",
-      "kana": "じょうしんえつこうげんこくりつこうえん",
-      "romaji": "Joshinetsukogenkokuritsukoen",
-      "zh_tw": "上信越高原國立公園",
-      "en": "Jōshin'etsu-kōgen National Park"
-    },
-    "kana_source": "wikipedia",
-    "location": {
-      "lat": 36.625,
-      "lng": 138.625
-    },
-    "prefecture": "gunma",
-    "kind": "major",
-    "themes": [],
-    "tags": [
-      "公園"
-    ],
-    "featured": true,
-    "score": 74.52,
-    "summary": {
-      "text": "上信越高原國立公園，是位在日本群馬縣（上野國）、長野縣（信濃國）、新潟縣（越後國）的國立公園。",
-      "lang": "zh",
-      "source_url": "https://zh.wikipedia.org/wiki/%E4%B8%8A%E4%BF%A1%E8%B6%8A%E9%AB%98%E5%8E%9F%E5%9C%8B%E7%AB%8B%E5%85%AC%E5%9C%92",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/43/Joshinetsu-Kogen_National-Park.jpg/960px-Joshinetsu-Kogen_National-Park.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "MaedaAkihiko",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Joshinetsu-Kogen_National-Park.jpg"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q1155306"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q1155306",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://ja.wikipedia.org/wiki/%E4%B8%8A%E4%BF%A1%E8%B6%8A%E9%AB%98%E5%8E%9F%E5%9B%BD%E7%AB%8B%E5%85%AC%E5%9C%92",
         "fetched_at": "2026-09-28"
       }
     ],
@@ -14208,55 +14062,6 @@
       },
       {
         "url": "https://ja.wikipedia.org/wiki/%E6%85%88%E7%9C%BC%E5%AF%BA_%28%E9%AB%98%E5%B4%8E%E5%B8%82%29",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
-    "id": "wd-Q1204729",
-    "name": {
-      "ja": "尾瀬国立公園",
-      "kana": "おぜこくりつこうえん",
-      "romaji": "Ozekokuritsukoen",
-      "zh_tw": "尾瀨國立公園",
-      "en": "Oze National Park"
-    },
-    "kana_source": "wikidata",
-    "location": {
-      "lat": 36.927222,
-      "lng": 139.316111
-    },
-    "prefecture": "gunma",
-    "kind": "major",
-    "themes": [],
-    "tags": [
-      "公園"
-    ],
-    "featured": true,
-    "score": 76.59,
-    "summary": {
-      "text": "尾瀨國立公園，是位於日本福島縣、栃木縣、群馬縣、新潟縣的國立公園。2007年8月30日，以劃出日光國立公園尾瀨地域，並編入會津駒嶽、田代山、帝釋山等周邊區域的形式指定為國立公園。是繼釧路濕原國立公園以來睽違20年新設的第29座國立公園。",
-      "lang": "zh",
-      "source_url": "https://zh.wikipedia.org/wiki/%E5%B0%BE%E7%80%A8%E5%9C%8B%E7%AB%8B%E5%85%AC%E5%9C%92",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/58/Mountains_in_Oze_National_Park.JPG/960px-Mountains_in_Oze_National_Park.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "BrianAdler",
-        "license": "Public domain",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Mountains_in_Oze_National_Park.JPG"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q1204729"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q1204729",
         "fetched_at": "2026-09-28"
       }
     ],
@@ -22009,7 +21814,7 @@
     "tags": [
       "名勝"
     ],
-    "featured": false,
+    "featured": true,
     "score": 83.59,
     "summary": {
       "text": "妙義山是位於群馬縣下仁田町、富岡市、安中市的一座標高1104米的山峰。與赤城山、榛名山並稱為上毛三山。因其陡峭的外觀被選為日本三大奇形之一。也是日本百景之一。",

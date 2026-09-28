@@ -107,53 +107,6 @@
     "updated_at": "2026-09-28"
   },
   {
-    "id": "wd-Q1042680",
-    "name": {
-      "ja": "南区",
-      "kana": "みなみく",
-      "romaji": "Minami Ku",
-      "zh_tw": "南區",
-      "en": "Minami-ku"
-    },
-    "kana_source": "wikidata",
-    "location": {
-      "lat": 34.59968,
-      "lng": 133.91958
-    },
-    "prefecture": "okayama",
-    "kind": "major",
-    "themes": [],
-    "tags": [],
-    "featured": true,
-    "score": 72.99,
-    "summary": {
-      "text": "南區是日本岡山縣岡山市的4個區之一，位於岡山市西南部。轄區為原兒島郡、都窪郡、御津郡的各一部分。",
-      "lang": "zh",
-      "source_url": "https://zh.wikipedia.org/wiki/%E5%8D%97%E5%8D%80_%28%E5%B2%A1%E5%B1%B1%E5%B8%82%29",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/aa/Okayama_city_Minami_ward_office2.JPG/960px-Okayama_city_Minami_ward_office2.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Nakanic2",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Okayama_city_Minami_ward_office2.JPG"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q1042680"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q1042680",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
     "id": "wd-Q104815654",
     "name": {
       "ja": "なぎビカリアミュージアム",
@@ -1042,7 +995,7 @@
       "寺院",
       "史跡"
     ],
-    "featured": false,
+    "featured": true,
     "score": 71.08,
     "summary": {
       "text": "備中國分寺（びっちゅうこくぶんじ）是位在日本岡山縣總社市的真言宗御室派寺院。山號「日照山」。本尊藥師如來、開基（創立者）為聖武天皇。田園風景之中的國分寺五重塔是觀光地吉備路的象徵。",
@@ -3992,59 +3945,6 @@
       },
       {
         "url": "https://www.openstreetmap.org/node/5980391712",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
-    "id": "wd-Q11388656",
-    "name": {
-      "ja": "児島半島",
-      "kana": "こじまはんとう",
-      "romaji": "Kojimahanto",
-      "zh_tw": "兒島半島",
-      "en": "Kojima Peninsula"
-    },
-    "kana_source": "wikipedia",
-    "location": {
-      "lat": 34.51,
-      "lng": 133.878889
-    },
-    "prefecture": "okayama",
-    "kind": "major",
-    "themes": [],
-    "tags": [
-      "島"
-    ],
-    "featured": false,
-    "score": 47.47,
-    "summary": {
-      "text": "児島半島（こじまはんとう）は、岡山県南部に位置する半島。瀬戸内海国立公園の一角をなす地域である。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%85%90%E5%B3%B6%E5%8D%8A%E5%B3%B6",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/55/%E5%85%90%E5%B3%B6%E6%B9%96_-_panoramio.jpg/960px-%E5%85%90%E5%B3%B6%E6%B9%96_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "z tanuki",
-        "license": "CC BY 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:%E5%85%90%E5%B3%B6%E6%B9%96_-_panoramio.jpg"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q11388656"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q11388656",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://ja.wikipedia.org/wiki/%E5%85%90%E5%B3%B6%E5%8D%8A%E5%B3%B6",
         "fetched_at": "2026-09-28"
       }
     ],
@@ -9041,59 +8941,6 @@
       },
       {
         "url": "https://ja.wikipedia.org/wiki/%E7%89%9B%E7%AA%93%E7%A5%9E%E7%A4%BE",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
-    "id": "wd-Q11571226",
-    "name": {
-      "ja": "犬島諸島",
-      "kana": "いぬじましょとう",
-      "romaji": "Inujimashoto",
-      "zh_tw": "犬島諸島",
-      "en": "Inujima Islands"
-    },
-    "kana_source": "wikipedia",
-    "location": {
-      "lat": 34.563333,
-      "lng": 134.101944
-    },
-    "prefecture": "okayama",
-    "kind": "major",
-    "themes": [],
-    "tags": [
-      "島"
-    ],
-    "featured": false,
-    "score": 55.01,
-    "summary": {
-      "text": "犬島諸島（いぬじましょとう）は、瀬戸内海の東部、備讃瀬戸地域に位置する諸島である。岡山県の岡山水道や児島半島、香川県の小豆島や豊島に囲まれており、瀬戸内海国立公園に指定されている。岡山市宝伝（本州）の沖合い3km前後に、比較的まとまって位置しており、また最大の犬島で0.54km2と、小さな島々である。諸島全域が岡山県岡山市東区に属する。これらの島々はしばしば犬島本島の属島とみなされる。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E7%8A%AC%E5%B3%B6%E8%AB%B8%E5%B3%B6",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5b/%E7%8A%AC%E5%B3%B6%E8%AB%B8%E5%B3%B6.jpg/960px-%E7%8A%AC%E5%B3%B6%E8%AB%B8%E5%B3%B6.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "国土地理院",
-        "license": "Attribution",
-        "source_url": "https://commons.wikimedia.org/wiki/File:%E7%8A%AC%E5%B3%B6%E8%AB%B8%E5%B3%B6.jpg"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q11571226"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q11571226",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://ja.wikipedia.org/wiki/%E7%8A%AC%E5%B3%B6%E8%AB%B8%E5%B3%B6",
         "fetched_at": "2026-09-28"
       }
     ],
@@ -20488,59 +20335,6 @@
     "updated_at": "2026-09-28"
   },
   {
-    "id": "wd-Q6374018",
-    "name": {
-      "ja": "笠岡諸島",
-      "kana": "かさおかしょとう",
-      "romaji": "Kasaokashoto",
-      "zh_tw": "笠岡群",
-      "en": "Kasaoka Islands"
-    },
-    "kana_source": "wikipedia",
-    "location": {
-      "lat": 34.441111,
-      "lng": 133.395278
-    },
-    "prefecture": "okayama",
-    "kind": "major",
-    "themes": [],
-    "tags": [
-      "島"
-    ],
-    "featured": false,
-    "score": 68.83,
-    "summary": {
-      "text": "笠岡諸島（かさおかしょとう）は、瀬戸内海中部にある諸島。全島が岡山県笠岡市に属する。備中諸島の異称もある。2019年、日本遺産に認定された。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E7%AC%A0%E5%B2%A1%E8%AB%B8%E5%B3%B6",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0b/Shiraishijima_01.jpg/960px-Shiraishijima_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Prue Simmons",
-        "license": "CC BY 2.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Shiraishijima_01.jpg"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q6374018"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q6374018",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://ja.wikipedia.org/wiki/%E7%AC%A0%E5%B2%A1%E8%AB%B8%E5%B3%B6",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
     "id": "wd-Q65248889",
     "name": {
       "ja": "倉敷市立自然史博物館",
@@ -21029,7 +20823,7 @@
       "島",
       "名勝"
     ],
-    "featured": false,
+    "featured": true,
     "score": 71.25,
     "summary": {
       "text": "白石島（しらいしじま）は、岡山県笠岡市にある笠岡諸島に属する、面積2.86km2、最高点169m（立石山）、人口346人（令和2年）の島で全島が国の名勝に指定されている。",
@@ -21431,64 +21225,6 @@
     "updated_at": "2026-09-28"
   },
   {
-    "id": "wd-Q852116",
-    "name": {
-      "ja": "中区",
-      "kana": "なかく",
-      "romaji": "Naka Ku",
-      "zh_tw": "中區",
-      "en": "Naka-ku"
-    },
-    "kana_source": "wikidata",
-    "location": {
-      "lat": 34.6705,
-      "lng": 133.943139
-    },
-    "prefecture": "okayama",
-    "kind": "major",
-    "themes": [],
-    "tags": [],
-    "featured": false,
-    "score": 72.88,
-    "summary": {
-      "text": "中區是日本岡山縣岡山市的4個區之一，雖然是4個區中面積最小，但人口密度卻最高的一區。範圍主要位於旭川以東到百間川以西。雖然名為中區，但岡山市政府和岡山縣政府等行政中心及主要車站岡山車站皆不在該區內，區內也沒有大規模的商店街，這一點與大阪府堺市的中區相似。",
-      "lang": "zh",
-      "source_url": "https://zh.wikipedia.org/wiki/%E4%B8%AD%E5%8D%80_%28%E5%B2%A1%E5%B1%B1%E5%B8%82%29",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "nearest_stations": [
-      {
-        "name": {
-          "ja": "西川原",
-          "kana": "にしがわら",
-          "romaji": "Nishigawara",
-          "en": "Nishigawara"
-        },
-        "distance_m": 1060
-      }
-    ],
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d6/RSK_Media_Com.jpg/960px-RSK_Media_Com.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Phronimoi",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:RSK_Media_Com.jpg"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q852116"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q852116",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
     "id": "wd-Q8536691",
     "name": {
       "ja": "蒜山",
@@ -21533,127 +21269,6 @@
       },
       {
         "url": "https://ja.wikipedia.org/wiki/%E8%92%9C%E5%B1%B1",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
-    "id": "wd-Q855478",
-    "name": {
-      "ja": "北区",
-      "kana": "きたく",
-      "romaji": "Kita Ku",
-      "zh_tw": "北區",
-      "en": "Kita-ku"
-    },
-    "kana_source": "wikidata",
-    "location": {
-      "lat": 34.655,
-      "lng": 133.919444
-    },
-    "prefecture": "okayama",
-    "kind": "major",
-    "themes": [],
-    "tags": [],
-    "featured": true,
-    "score": 76.22,
-    "summary": {
-      "text": "北區是日本岡山縣岡山市的4個區之一。位於岡山市的西北部，面積451km²，無論面積還是人口都是4個區中最大的。",
-      "lang": "zh",
-      "source_url": "https://zh.wikipedia.org/wiki/%E5%8C%97%E5%8D%80_%28%E5%B2%A1%E5%B1%B1%E5%B8%82%29",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "nearest_stations": [
-      {
-        "name": {
-          "ja": "大元",
-          "en": "Ōmoto"
-        },
-        "distance_m": 1160
-      },
-      {
-        "name": {
-          "ja": "岡山",
-          "kana": "おかやま",
-          "romaji": "Okayama",
-          "en": "Okayama"
-        },
-        "distance_m": 1170
-      }
-    ],
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/63/Saijo_Inari_-01.jpg/960px-Saijo_Inari_-01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Aimaimyi",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Saijo_Inari_-01.jpg"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q855478"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q855478",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
-    "id": "wd-Q855491",
-    "name": {
-      "ja": "東区",
-      "kana": "ひがしく",
-      "romaji": "Higashi Ku",
-      "zh_tw": "東區",
-      "en": "Higashi-ku"
-    },
-    "kana_source": "wikidata",
-    "location": {
-      "lat": 34.651111,
-      "lng": 134.029444
-    },
-    "prefecture": "okayama",
-    "kind": "major",
-    "themes": [],
-    "tags": [],
-    "featured": false,
-    "score": 71.85,
-    "summary": {
-      "text": "東區是日本岡山縣岡山市的4個區之一。範圍包括了百間川以東的區域（亦含舊赤磐郡瀨戶町）。",
-      "lang": "zh",
-      "source_url": "https://zh.wikipedia.org/wiki/%E6%9D%B1%E5%8D%80_%28%E5%B2%A1%E5%B1%B1%E5%B8%82%29",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "nearest_stations": [
-      {
-        "name": {
-          "ja": "西大寺",
-          "en": "Saidaiji"
-        },
-        "distance_m": 1410
-      }
-    ],
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/44/Okayama_plain01.JPG/960px-Okayama_plain01.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Fjkelfeimvvn",
-        "license": "CC BY 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Okayama_plain01.JPG"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q855491"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q855491",
         "fetched_at": "2026-09-28"
       }
     ],

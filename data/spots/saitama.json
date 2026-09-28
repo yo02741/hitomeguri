@@ -78,64 +78,6 @@
     "updated_at": "2026-09-28"
   },
   {
-    "id": "wd-Q1029251",
-    "name": {
-      "ja": "南区",
-      "kana": "みなみく",
-      "romaji": "Minami Ku",
-      "zh_tw": "南區",
-      "en": "Minami-ku"
-    },
-    "kana_source": "wikidata",
-    "location": {
-      "lat": 35.833333,
-      "lng": 139.633333
-    },
-    "prefecture": "saitama",
-    "kind": "major",
-    "themes": [],
-    "tags": [],
-    "featured": false,
-    "score": 74.89,
-    "summary": {
-      "text": "南區是日本埼玉縣埼玉市的10個行政區之一。",
-      "lang": "zh",
-      "source_url": "https://zh.wikipedia.org/wiki/%E5%8D%97%E5%8D%80_%28%E5%9F%BC%E7%8E%89%E5%B8%82%29",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "nearest_stations": [
-      {
-        "name": {
-          "ja": "西浦和",
-          "kana": "にしうらわ",
-          "romaji": "Nishi Urawa",
-          "en": "Nishi-Urawa"
-        },
-        "distance_m": 1300
-      }
-    ],
-    "images": [
-      {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/2/28/South_peer.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-        "author": "The original uploader was ainosuke at Japanese Wikipedia.",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:South_peer.jpeg"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q1029251"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q1029251",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
     "id": "wd-Q1041232",
     "name": {
       "ja": "所沢航空発祥記念館",
@@ -155,7 +97,7 @@
     "tags": [
       "博物館"
     ],
-    "featured": false,
+    "featured": true,
     "score": 72.96,
     "summary": {
       "text": "所澤航空發祥紀念館位於日本埼玉縣所澤市，用以紀念該國航空史。它擁有飛機以及其它展示品（很多都可以與參觀者進行互動）和一個IMAX劇院。它坐落於日本的第一個飛機場上，這個飛機場於1911年啟用，德川好敏進行了日本第一次飛行，原始的單跑道目前還存在。它已經合併到臨近的更大的多功能公園內。",
@@ -398,53 +340,6 @@
     "sources": [
       {
         "url": "https://www.wikidata.org/wiki/Q1058730",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
-    "id": "wd-Q1062270",
-    "name": {
-      "ja": "桜区",
-      "kana": "さくらく",
-      "romaji": "Sakura Ku",
-      "zh_tw": "櫻區",
-      "en": "Sakura-ku"
-    },
-    "kana_source": "wikidata",
-    "location": {
-      "lat": 35.855778,
-      "lng": 139.609889
-    },
-    "prefecture": "saitama",
-    "kind": "major",
-    "themes": [],
-    "tags": [],
-    "featured": false,
-    "score": 74.74,
-    "summary": {
-      "text": "櫻區是日本埼玉市的10個行政區之一。位於埼玉市西南部。",
-      "lang": "zh",
-      "source_url": "https://zh.wikipedia.org/wiki/%E6%AB%BB%E5%8D%80",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1c/Sakura_word_hall.jpg/960px-Sakura_word_hall.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Ebiebi2",
-        "license": "Public domain",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Sakura_word_hall.jpg"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q1062270"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q1062270",
         "fetched_at": "2026-09-28"
       }
     ],
@@ -790,73 +685,6 @@
       },
       {
         "url": "https://ja.wikipedia.org/wiki/%E5%BF%8D%E5%9F%8E",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
-    "id": "wd-Q1075040",
-    "name": {
-      "ja": "西区",
-      "kana": "にしく",
-      "romaji": "Nishi Ku",
-      "zh_tw": "西區",
-      "en": "Nishi-ku"
-    },
-    "kana_source": "wikidata",
-    "location": {
-      "lat": 35.916667,
-      "lng": 139.566667
-    },
-    "prefecture": "saitama",
-    "kind": "major",
-    "themes": [],
-    "tags": [],
-    "featured": false,
-    "score": 73.66,
-    "summary": {
-      "text": "西區是埼玉市的10區之一。舊為大宮市的一部分。",
-      "lang": "zh",
-      "source_url": "https://zh.wikipedia.org/wiki/%E8%A5%BF%E5%8D%80_%28%E5%9F%BC%E7%8E%89%E5%B8%82%29",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "nearest_stations": [
-      {
-        "name": {
-          "ja": "指扇",
-          "kana": "さしおうぎ",
-          "romaji": "Sashiōgi",
-          "en": "Sashiogi"
-        },
-        "distance_m": 150
-      },
-      {
-        "name": {
-          "ja": "西大宮",
-          "kana": "にしおおみや",
-          "romaji": "Nishi Ōmiya",
-          "en": "Nishi-Omiya"
-        },
-        "distance_m": 1340
-      }
-    ],
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/10/Saitama_City_Nishi_Word_Hall.JPG/960px-Saitama_City_Nishi_Word_Hall.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Ebiebi2",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Saitama_City_Nishi_Word_Hall.JPG"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q1075040"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q1075040",
         "fetched_at": "2026-09-28"
       }
     ],
@@ -3405,53 +3233,6 @@
       },
       {
         "url": "https://www.openstreetmap.org/node/1420189922",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
-    "id": "wd-Q1130733",
-    "name": {
-      "ja": "緑区",
-      "kana": "みどりく",
-      "romaji": "Midori Ku",
-      "zh_tw": "綠區",
-      "en": "Midori-ku"
-    },
-    "kana_source": "wikidata",
-    "location": {
-      "lat": 35.871389,
-      "lng": 139.684444
-    },
-    "prefecture": "saitama",
-    "kind": "major",
-    "themes": [],
-    "tags": [],
-    "featured": false,
-    "score": 75.3,
-    "summary": {
-      "text": "綠區是埼玉縣埼玉市的10個行政區之一。位於埼玉市東南部。",
-      "lang": "zh",
-      "source_url": "https://zh.wikipedia.org/wiki/%E7%B6%A0%E5%8D%80_%28%E5%9F%BC%E7%8E%89%E5%B8%82%29",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/67/Saitamacity_midori_word_hall_1.JPG/960px-Saitamacity_midori_word_hall_1.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Ebiebi2",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Saitamacity_midori_word_hall_1.JPG"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q1130733"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q1130733",
         "fetched_at": "2026-09-28"
       }
     ],
@@ -11121,138 +10902,6 @@
     "updated_at": "2026-09-28"
   },
   {
-    "id": "wd-Q1154570",
-    "name": {
-      "ja": "見沼区",
-      "kana": "みぬまく",
-      "romaji": "Minuma Ku",
-      "zh_tw": "見沼區",
-      "en": "Minuma-ku"
-    },
-    "kana_source": "wikidata",
-    "location": {
-      "lat": 35.935278,
-      "lng": 139.654444
-    },
-    "prefecture": "saitama",
-    "kind": "major",
-    "themes": [],
-    "tags": [],
-    "featured": false,
-    "score": 76.3,
-    "summary": {
-      "text": "見沼區是埼玉市的10區之一。位於埼玉市東北部。舊大宮市東部。",
-      "lang": "zh",
-      "source_url": "https://zh.wikipedia.org/wiki/%E8%A6%8B%E6%B2%BC%E5%8D%80",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "nearest_stations": [
-      {
-        "name": {
-          "ja": "大和田",
-          "romaji": "Ōwada",
-          "en": "Ōwada"
-        },
-        "distance_m": 750
-      },
-      {
-        "name": {
-          "ja": "七里",
-          "romaji": "Nanasato",
-          "en": "Nanasato"
-        },
-        "distance_m": 1030
-      }
-    ],
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/52/Minuma_word_hall_saitama_city.jpg/960px-Minuma_word_hall_saitama_city.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Ebiebi2",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Minuma_word_hall_saitama_city.jpg"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q1154570"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q1154570",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
-    "id": "wd-Q1154583",
-    "name": {
-      "ja": "浦和区",
-      "kana": "うらわく",
-      "romaji": "Urawa Ku",
-      "zh_tw": "浦和區",
-      "en": "Urawa-ku"
-    },
-    "kana_source": "wikidata",
-    "location": {
-      "lat": 35.862008,
-      "lng": 139.645539
-    },
-    "prefecture": "saitama",
-    "kind": "major",
-    "themes": [],
-    "tags": [],
-    "featured": false,
-    "score": 79.11,
-    "summary": {
-      "text": "浦和區是埼玉縣埼玉市的10個行政區之一。範圍為舊浦和市中心。也是埼玉市的主要行政機關的所在地。",
-      "lang": "zh",
-      "source_url": "https://zh.wikipedia.org/wiki/%E6%B5%A6%E5%92%8C%E5%8D%80",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "nearest_stations": [
-      {
-        "name": {
-          "ja": "浦和",
-          "kana": "うらわ",
-          "romaji": "Urawa",
-          "en": "Urawa"
-        },
-        "distance_m": 1100
-      },
-      {
-        "name": {
-          "ja": "北浦和",
-          "kana": "きたうらわ",
-          "romaji": "Kita Urawa",
-          "en": "Kita-Urawa"
-        },
-        "distance_m": 1130
-      }
-    ],
-    "images": [
-      {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/8/83/Saitama-City-Hall.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-        "author": "ja:利用者:うぐいすの森",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Saitama-City-Hall.jpg"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q1154583"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q1154583",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
     "id": "wd-Q11546374",
     "name": {
       "ja": "武蔵浦和ラーメンアカデミー",
@@ -12414,77 +12063,6 @@
       },
       {
         "url": "https://ja.wikipedia.org/wiki/%E7%8B%AD%E5%B1%B1%E3%82%B9%E3%82%AD%E3%83%BC%E5%A0%B4",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
-    "id": "wd-Q11571728",
-    "name": {
-      "ja": "狭山丘陵",
-      "kana": "さやまきゅうりょう",
-      "romaji": "Sayamakyuryo",
-      "zh_tw": "狹山丘陵",
-      "en": "Sayama Hills"
-    },
-    "kana_source": "wikipedia",
-    "location": {
-      "lat": 35.781667,
-      "lng": 139.434167
-    },
-    "prefecture": "saitama",
-    "kind": "major",
-    "themes": [],
-    "tags": [],
-    "featured": false,
-    "score": 69.39,
-    "summary": {
-      "text": "狭山丘陵（さやま きゅうりょう）は、日本の関東平野西方、埼玉県と東京都の都県境に東西11km、南北4km、総面積約3,500haの規模で広がる丘陵である。最高地点の標高は194m。周囲は武蔵野台地となっている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E7%8B%AD%E5%B1%B1%E4%B8%98%E9%99%B5",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "nearest_stations": [
-      {
-        "name": {
-          "ja": "下山口",
-          "kana": "しもやまぐち",
-          "romaji": "Shimo Yamaguchi",
-          "en": "Shimo-Yamaguchi"
-        },
-        "distance_m": 700
-      },
-      {
-        "name": {
-          "ja": "西武園ゆうえんち",
-          "kana": "せいぶえんゆうえんち",
-          "romaji": "Seibuen Yu Enchi",
-          "en": "Seibuen-yūenchi"
-        },
-        "distance_m": 1470
-      }
-    ],
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7f/Sayama-from-rokudousan.JPG/960px-Sayama-from-rokudousan.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Nyao148",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Sayama-from-rokudousan.JPG"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q11571728"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q11571728",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://ja.wikipedia.org/wiki/%E7%8B%AD%E5%B1%B1%E4%B8%98%E9%99%B5",
         "fetched_at": "2026-09-28"
       }
     ],
@@ -16837,63 +16415,6 @@
     "updated_at": "2026-09-28"
   },
   {
-    "id": "wd-Q1184508",
-    "name": {
-      "ja": "岩槻区",
-      "kana": "いわつきく",
-      "romaji": "Iwatsuki Ku",
-      "zh_tw": "岩槻區",
-      "en": "Iwatsuki-ku"
-    },
-    "kana_source": "wikidata",
-    "location": {
-      "lat": 35.95,
-      "lng": 139.7
-    },
-    "prefecture": "saitama",
-    "kind": "major",
-    "themes": [],
-    "tags": [],
-    "featured": false,
-    "score": 79.77,
-    "summary": {
-      "text": "巖槻區是埼玉市的10個行政區之一，也是10區中最新成立的一區。2005年4月1日，舊巖槻市編入埼玉市，舊巖槻市市域即為現在的巖槻區。",
-      "lang": "zh",
-      "source_url": "https://zh.wikipedia.org/wiki/%E5%B2%A9%E6%A7%BB%E5%8D%80",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "nearest_stations": [
-      {
-        "name": {
-          "ja": "岩槻",
-          "romaji": "Iwatsuki",
-          "en": "Iwatsuki"
-        },
-        "distance_m": 640
-      }
-    ],
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2a/Iwatsuki_WATSU.JPG/960px-Iwatsuki_WATSU.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "あばさー",
-        "license": "Public domain",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Iwatsuki_WATSU.JPG"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q1184508"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q1184508",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
     "id": "wd-Q1189715",
     "name": {
       "ja": "さいたま市大宮公園サッカー場",
@@ -17631,73 +17152,6 @@
       },
       {
         "url": "https://ja.wikipedia.org/wiki/%E5%B7%9D%E5%8F%A3%E5%B8%82%E7%AB%8B%E7%BE%8E%E8%A1%93%E9%A4%A8",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
-    "id": "wd-Q153629",
-    "name": {
-      "ja": "大宮区",
-      "kana": "おおみやく",
-      "romaji": "O Miya Ku",
-      "zh_tw": "大宮區",
-      "en": "Ōmiya-ku"
-    },
-    "kana_source": "wikidata",
-    "location": {
-      "lat": 35.906111,
-      "lng": 139.628611
-    },
-    "prefecture": "saitama",
-    "kind": "major",
-    "themes": [],
-    "tags": [],
-    "featured": true,
-    "score": 81.49,
-    "summary": {
-      "text": "大宮區是日本埼玉縣埼玉市的10個區之一。",
-      "lang": "zh",
-      "source_url": "https://zh.wikipedia.org/wiki/%E5%A4%A7%E5%AE%AE%E5%8D%80",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "nearest_stations": [
-      {
-        "name": {
-          "ja": "大宮",
-          "kana": "おおみや",
-          "romaji": "Ōmiya",
-          "en": "Omiya"
-        },
-        "distance_m": 390
-      },
-      {
-        "name": {
-          "ja": "北大宮",
-          "kana": "きたおおみや",
-          "romaji": "Kita-ōmiya",
-          "en": "Kita-omiya"
-        },
-        "distance_m": 1320
-      }
-    ],
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6a/Front_shrine_of_the_Hikawa_shrine.jpg/960px-Front_shrine_of_the_Hikawa_shrine.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Ocdp",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Front_shrine_of_the_Hikawa_shrine.jpg"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q153629"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q153629",
         "fetched_at": "2026-09-28"
       }
     ],
@@ -21209,7 +20663,7 @@
     "tags": [
       "神社"
     ],
-    "featured": false,
+    "featured": true,
     "score": 73.76,
     "summary": {
       "text": "秩父神社（ちちぶじんじゃ）は、埼玉県秩父市番場町にある神社。式内社、武蔵国四宮。旧社格は国幣小社で、現在は神社本庁の別表神社。知知夫国の一之宮。",
@@ -22413,70 +21867,6 @@
     "updated_at": "2026-09-28"
   },
   {
-    "id": "wd-Q542542",
-    "name": {
-      "ja": "北区",
-      "kana": "きたく",
-      "romaji": "Kitaku",
-      "zh_tw": "北區",
-      "en": "Kita-ku, Saitama"
-    },
-    "kana_source": "wikidata",
-    "location": {
-      "lat": 35.93,
-      "lng": 139.620556
-    },
-    "prefecture": "saitama",
-    "kind": "major",
-    "themes": [],
-    "tags": [],
-    "featured": false,
-    "score": 73.78,
-    "summary": {
-      "text": "北區是埼玉市的10區之一。舊為大宮市北部。",
-      "lang": "zh",
-      "source_url": "https://zh.wikipedia.org/wiki/%E5%8C%97%E5%8D%80_%28%E5%9F%BC%E7%8E%89%E5%B8%82%29",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "nearest_stations": [
-      {
-        "name": {
-          "ja": "加茂宮",
-          "kana": "かものみや",
-          "romaji": "Kamonomiya",
-          "en": "Kamonomiya"
-        },
-        "distance_m": 720
-      },
-      {
-        "name": {
-          "ja": "はくぶつかんきた"
-        },
-        "distance_m": 770
-      }
-    ],
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/83/Saitamacity_kita_word_hall_1.JPG/960px-Saitamacity_kita_word_hall_1.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Ebiebi2",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Saitamacity_kita_word_hall_1.JPG"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q542542"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q542542",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
     "id": "wd-Q56345064",
     "name": {
       "ja": "さいたま市立漫画会館",
@@ -23217,55 +22607,6 @@
       },
       {
         "url": "https://ja.wikipedia.org/wiki/%E8%B5%A4%E5%B1%B1%E6%AD%B4%E5%8F%B2%E8%87%AA%E7%84%B6%E5%85%AC%E5%9C%92",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
-    "id": "wd-Q656506",
-    "name": {
-      "ja": "秩父多摩甲斐国立公園",
-      "kana": "ちちぶたまかいこくりつこうえん",
-      "romaji": "Chichibutamakaikokuritsukoen",
-      "zh_tw": "秩父多摩甲斐國立公園",
-      "en": "Chichibu Tama Kai National Park"
-    },
-    "kana_source": "wikidata",
-    "location": {
-      "lat": 35.9,
-      "lng": 138.716667
-    },
-    "prefecture": "saitama",
-    "kind": "major",
-    "themes": [],
-    "tags": [
-      "公園"
-    ],
-    "featured": true,
-    "score": 76.57,
-    "summary": {
-      "text": "秩父多摩甲斐國立公園，是位於日本東京都、埼玉縣、山梨縣、長野縣的國立公園。",
-      "lang": "zh",
-      "source_url": "https://zh.wikipedia.org/wiki/%E7%A7%A9%E7%88%B6%E5%A4%9A%E6%91%A9%E7%94%B2%E6%96%90%E5%9C%8B%E7%AB%8B%E5%85%AC%E5%9C%92",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f6/Mt.Kobushigatake_and_Mt.Sanpou_from_Mt.Tokusa.jpg/960px-Mt.Kobushigatake_and_Mt.Sanpou_from_Mt.Tokusa.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Σ64",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Mt.Kobushigatake_and_Mt.Sanpou_from_Mt.Tokusa.jpg"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q656506"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q656506",
         "fetched_at": "2026-09-28"
       }
     ],
@@ -24281,73 +23622,6 @@
       },
       {
         "url": "https://ja.wikipedia.org/wiki/%E9%BE%8D%E6%B7%B5%E5%AF%BA",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
-    "id": "wd-Q976945",
-    "name": {
-      "ja": "中央区",
-      "kana": "ちゅうおうく",
-      "romaji": "Chu O Ku",
-      "zh_tw": "中央區",
-      "en": "Chūō-ku"
-    },
-    "kana_source": "wikidata",
-    "location": {
-      "lat": 35.88378,
-      "lng": 139.626156
-    },
-    "prefecture": "saitama",
-    "kind": "major",
-    "themes": [],
-    "tags": [],
-    "featured": false,
-    "score": 76.14,
-    "summary": {
-      "text": "中央區是日本埼玉市的10個行政區之一。其範圍為舊與野市全域及浦和市、大宮市的部分區域。",
-      "lang": "zh",
-      "source_url": "https://zh.wikipedia.org/wiki/%E4%B8%AD%E5%A4%AE%E5%8D%80_%28%E5%9F%BC%E7%8E%89%E5%B8%82%29",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "nearest_stations": [
-      {
-        "name": {
-          "ja": "与野本町",
-          "kana": "よのほんまち",
-          "romaji": "Yono hommachi",
-          "en": "Yono-Hommachi"
-        },
-        "distance_m": 290
-      },
-      {
-        "name": {
-          "ja": "北与野",
-          "kana": "きたよの",
-          "romaji": "Kita Yono",
-          "en": "Kita-Yono"
-        },
-        "distance_m": 780
-      }
-    ],
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/eb/Chuo_Ward_Office%2C_Saitama.jpg/960px-Chuo_Ward_Office%2C_Saitama.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "掬茶",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Chuo_Ward_Office,_Saitama.jpg"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q976945"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q976945",
         "fetched_at": "2026-09-28"
       }
     ],

@@ -3194,55 +3194,6 @@
     "updated_at": "2026-09-28"
   },
   {
-    "id": "wd-Q1072818",
-    "name": {
-      "ja": "西中国山地国定公園",
-      "kana": "にしちゅうごくさんちこくていこうえん",
-      "romaji": "Nishichugokusanchikokuteikoen",
-      "zh_tw": "西中國山地國定公園",
-      "en": "Nishi-Chugoku Sanchi Quasi-National Park"
-    },
-    "kana_source": "wikidata",
-    "location": {
-      "lat": 34.522,
-      "lng": 132.11
-    },
-    "prefecture": "shimane",
-    "kind": "major",
-    "themes": [],
-    "tags": [
-      "公園"
-    ],
-    "featured": false,
-    "score": 64.86,
-    "summary": {
-      "text": "西中國山地國定公園（假名：にしちゅうごくさんちこくていこうえん），是位在日本島根縣、廣島縣、山口縣的國定公園。1969年1月10日指定。總面積28,553公頃。",
-      "lang": "zh",
-      "source_url": "https://zh.wikipedia.org/wiki/%E8%A5%BF%E4%B8%AD%E5%9C%8B%E5%B1%B1%E5%9C%B0%E5%9C%8B%E5%AE%9A%E5%85%AC%E5%9C%92",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "images": [
-      {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/8/87/Sandankyo_Hiroshima_Japan_021026.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-        "author": "Yama 1009 at Japanese Wikipedia",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Sandankyo_Hiroshima_Japan_021026.JPG"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q1072818"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q1072818",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
     "id": "wd-Q107298068",
     "name": {
       "ja": "海潮のカツラ",
@@ -3427,59 +3378,6 @@
       },
       {
         "url": "https://ja.wikipedia.org/wiki/%E5%B1%B1%E4%BB%A3%E6%96%B9%E5%A2%B3",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
-    "id": "wd-Q11052312",
-    "name": {
-      "ja": "島根半島",
-      "kana": "しまねはんとう",
-      "romaji": "Shimanehanto",
-      "zh_tw": "島根半島",
-      "en": "Shimane Peninsula"
-    },
-    "kana_source": "wikipedia",
-    "location": {
-      "lat": 35.528333,
-      "lng": 133.060278
-    },
-    "prefecture": "shimane",
-    "kind": "major",
-    "themes": [],
-    "tags": [
-      "島"
-    ],
-    "featured": false,
-    "score": 68.94,
-    "summary": {
-      "text": "島根半島為島根縣東北部面向日本海的半島。西起出雲市大社的日御碕，東至松江市美保關的地蔵崎，東西寬65公里、南北長15－20公里。半島上有眾多漁港，也是日本百大秘境之一。",
-      "lang": "zh",
-      "source_url": "https://zh.wikipedia.org/wiki/%E5%B3%B6%E6%A0%B9%E5%8D%8A%E5%B3%B6",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ce/Shimane_Peninsula.JPG/960px-Shimane_Peninsula.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "国道559号線",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Shimane_Peninsula.JPG"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q11052312"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q11052312",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://ja.wikipedia.org/wiki/%E5%B3%B6%E6%A0%B9%E5%8D%8A%E5%B3%B6",
         "fetched_at": "2026-09-28"
       }
     ],
@@ -16724,7 +16622,7 @@
     "tags": [
       "神社"
     ],
-    "featured": false,
+    "featured": true,
     "score": 72.82,
     "summary": {
       "text": "美保神社是日本島根縣松江市美保關町美保關的神社，社格是式內小社、國幣中社和別表神社，祭神是三穗津姬命和事代主神，為日本3385座供奉事代主神的惠比壽社的總本宮，與出雲大社形成雙參拜。",
@@ -17466,59 +17364,6 @@
       },
       {
         "url": "https://www.openstreetmap.org/way/413140682",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
-    "id": "wd-Q483146",
-    "name": {
-      "ja": "隠岐諸島",
-      "kana": "おきしょとう",
-      "romaji": "Okishoto",
-      "zh_tw": "隱岐群島",
-      "en": "Oki Islands"
-    },
-    "kana_source": "wikipedia",
-    "location": {
-      "lat": 36.154722,
-      "lng": 133.1525
-    },
-    "prefecture": "shimane",
-    "kind": "major",
-    "themes": [],
-    "tags": [
-      "島"
-    ],
-    "featured": true,
-    "score": 88.93,
-    "summary": {
-      "text": "隱岐群島，亦稱隱岐島，是位於日本島根半島北方約50公里的群島，總面積345.73平方公里，行政區劃分屬於島根縣隱岐郡下的3町1村。",
-      "lang": "zh",
-      "source_url": "https://zh.wikipedia.org/wiki/%E9%9A%B1%E5%B2%90%E7%BE%A4%E5%B3%B6",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/39/%E6%B5%B7%E3%81%8B%E3%82%89%E8%A6%8B%E3%82%8B%E7%9F%A5%E5%A4%AB%E8%B5%A4%E5%A3%81.jpg/960px-%E6%B5%B7%E3%81%8B%E3%82%89%E8%A6%8B%E3%82%8B%E7%9F%A5%E5%A4%AB%E8%B5%A4%E5%A3%81.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "KoheiU",
-        "license": "CC0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:%E6%B5%B7%E3%81%8B%E3%82%89%E8%A6%8B%E3%82%8B%E7%9F%A5%E5%A4%AB%E8%B5%A4%E5%A3%81.jpg"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q483146"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q483146",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://ja.wikipedia.org/wiki/%E9%9A%A0%E5%B2%90%E8%AB%B8%E5%B3%B6",
         "fetched_at": "2026-09-28"
       }
     ],

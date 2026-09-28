@@ -1824,108 +1824,6 @@
     "updated_at": "2026-09-28"
   },
   {
-    "id": "wd-Q1072511",
-    "name": {
-      "ja": "鳥海国定公園",
-      "kana": "ちょうかいこくていこうえん",
-      "romaji": "Chokaikokuteikoen",
-      "zh_tw": "鳥海國定公園",
-      "en": "Chōkai Quasi-National Park"
-    },
-    "kana_source": "wikipedia",
-    "location": {
-      "lat": 39.099167,
-      "lng": 140.048889
-    },
-    "prefecture": "akita",
-    "kind": "major",
-    "themes": [],
-    "tags": [
-      "公園"
-    ],
-    "featured": false,
-    "score": 64.77,
-    "summary": {
-      "text": "鳥海國定公園，是位在日本秋田縣、山形縣的國定公園。指定區域為鳥海山、象潟、莊內砂丘與莊內海岸林等海岸部，以及飛島島。",
-      "lang": "zh",
-      "source_url": "https://zh.wikipedia.org/wiki/%E9%B3%A5%E6%B5%B7%E5%9C%8B%E5%AE%9A%E5%85%AC%E5%9C%92",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b5/Mt.Chokai_Summer.JPG/960px-Mt.Chokai_Summer.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "ChiefHira",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Mt.Chokai_Summer.JPG"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q1072511"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q1072511",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://ja.wikipedia.org/wiki/%E9%B3%A5%E6%B5%B7%E5%9B%BD%E5%AE%9A%E5%85%AC%E5%9C%92",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
-    "id": "wd-Q1072585",
-    "name": {
-      "ja": "男鹿国定公園",
-      "kana": "おがこくていこうえん",
-      "romaji": "Ogakokuteikoen",
-      "zh_tw": "男鹿國定公園",
-      "en": "Oga Quasi-National Park"
-    },
-    "kana_source": "wikidata",
-    "location": {
-      "lat": 39.913889,
-      "lng": 139.721667
-    },
-    "prefecture": "akita",
-    "kind": "major",
-    "themes": [],
-    "tags": [
-      "公園"
-    ],
-    "featured": true,
-    "score": 65.49,
-    "summary": {
-      "text": "男鹿國定公園，是位在日本秋田縣男鹿市的國定公園。1973年5月15日指定。總面積11,534ha。",
-      "lang": "zh",
-      "source_url": "https://zh.wikipedia.org/wiki/%E7%94%B7%E9%B9%BF%E5%9C%8B%E5%AE%9A%E5%85%AC%E5%9C%92",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/aa/Oga_Aquarium_20210618.jpg/960px-Oga_Aquarium_20210618.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "掬茶",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Oga_Aquarium_20210618.jpg"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q1072585"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q1072585",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
     "id": "wd-Q107410087",
     "name": {
       "ja": "伊豆山神社",
@@ -3352,7 +3250,7 @@
     "tags": [
       "史跡"
     ],
-    "featured": false,
+    "featured": true,
     "score": 69.37,
     "summary": {
       "text": "檜山安東氏城館跡是秋田縣能代市的檜山集落之東側丘陵的宏偉山城。檜山城跡附近還有大館跡、茶臼館跡、國清寺跡等，是日本國內指定史跡。",

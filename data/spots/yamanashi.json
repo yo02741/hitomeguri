@@ -1813,55 +1813,6 @@
     "updated_at": "2026-09-28"
   },
   {
-    "id": "wd-Q1131218",
-    "name": {
-      "ja": "南アルプス国立公園",
-      "kana": "みなみあるぷすこくりつこうえん",
-      "romaji": "Minamiarupusukokuritsukoen",
-      "zh_tw": "南阿爾卑斯國立公園",
-      "en": "Minami Alps National Park"
-    },
-    "kana_source": "wikidata",
-    "location": {
-      "lat": 35.752222,
-      "lng": 137.673056
-    },
-    "prefecture": "yamanashi",
-    "kind": "major",
-    "themes": [],
-    "tags": [
-      "公園"
-    ],
-    "featured": true,
-    "score": 73.82,
-    "summary": {
-      "text": "南阿爾卑斯國立公園，是位於日本山梨縣、長野縣、靜岡縣的國立公園。",
-      "lang": "zh",
-      "source_url": "https://zh.wikipedia.org/wiki/%E5%8D%97%E9%98%BF%E7%88%BE%E5%8D%91%E6%96%AF%E5%9C%8B%E7%AB%8B%E5%85%AC%E5%9C%92",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/74/Mt.Kitadake_and_Mt.Senjogatake_from_Mt.Nakashirane.jpg/960px-Mt.Kitadake_and_Mt.Senjogatake_from_Mt.Nakashirane.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Σ64",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Mt.Kitadake_and_Mt.Senjogatake_from_Mt.Nakashirane.jpg"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q1131218"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q1131218",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
     "id": "wd-Q11333038",
     "name": {
       "ja": "フカサワ温泉",
@@ -3992,68 +3943,6 @@
     "sources": [
       {
         "url": "https://www.wikidata.org/wiki/Q11411748",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
-    "id": "wd-Q11413521",
-    "name": {
-      "ja": "吉田の火祭",
-      "kana": "よしだのひまつり",
-      "romaji": "Yoshidanohimatsuri",
-      "zh_tw": "吉田の火祭",
-      "en": "Yoshida Fire Festival"
-    },
-    "kana_source": "wikipedia",
-    "location": {
-      "lat": 35.478194,
-      "lng": 138.794139
-    },
-    "prefecture": "yamanashi",
-    "kind": "major",
-    "themes": [],
-    "tags": [],
-    "featured": false,
-    "score": 65.05,
-    "summary": {
-      "text": "吉田の火祭（よしだのひまつり）は、山梨県富士吉田市上吉田（かみよしだ）地区で行われる祭りである。日本三奇祭のひとつ。北口本宮冨士浅間神社と境内社（摂社）である諏訪神社の両社による例大祭で、毎年8月26日の「鎮火祭」と、翌8月27日の「すすき祭り」の2日間にわたって行われる。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%90%89%E7%94%B0%E3%81%AE%E7%81%AB%E7%A5%AD",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "nearest_stations": [
-      {
-        "name": {
-          "ja": "富士山",
-          "kana": "ふじさん",
-          "romaji": "Fuji-san",
-          "en": "Mt Fuji"
-        },
-        "distance_m": 610
-      }
-    ],
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/82/Torches_burning_Yoshida_Fire_Festival_A.JPG/960px-Torches_burning_Yoshida_Fire_Festival_A.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Sakaori (talk)",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Torches_burning_Yoshida_Fire_Festival_A.JPG"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q11413521"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q11413521",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://ja.wikipedia.org/wiki/%E5%90%89%E7%94%B0%E3%81%AE%E7%81%AB%E7%A5%AD",
         "fetched_at": "2026-09-28"
       }
     ],
@@ -11724,7 +11613,7 @@
     "tags": [
       "史跡"
     ],
-    "featured": false,
+    "featured": true,
     "score": 83.49,
     "summary": {
       "text": "躑躅崎館是日本曾經存在過的一座城堡，為戰國時代甲斐國大名武田氏的居城，位於山梨縣甲府市古府中，今僅存石垣、土壘、堀等殘跡，日本政府指定為國定史跡「武田氏館跡」。",
@@ -18818,53 +18707,6 @@
       },
       {
         "url": "https://www.openstreetmap.org/way/226949641",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
-    "id": "wd-Q415350",
-    "name": {
-      "ja": "赤石山脈",
-      "kana": "あかいしさんみゃく",
-      "romaji": "Akaishisanmyaku",
-      "zh_tw": "赤石山脈",
-      "en": "Akaishi Mountains"
-    },
-    "kana_source": "wikidata",
-    "location": {
-      "lat": 35.674722,
-      "lng": 138.04
-    },
-    "prefecture": "yamanashi",
-    "kind": "major",
-    "themes": [],
-    "tags": [],
-    "featured": false,
-    "score": 83.57,
-    "summary": {
-      "text": "赤石山脈是日本的一座山脈，橫跨長野縣、山梨縣、靜岡縣三縣。通稱南阿爾卑斯（南アルプス／みなみアルプス，minami arupusu），與飛驒山脈（北阿爾卑斯）、木曾山脈（中央阿爾卑斯）共同組成日本阿爾卑斯山。最高峰是北嶽，海拔3,193米，為日本第二高峰，僅次於富士山。",
-      "lang": "zh",
-      "source_url": "https://zh.wikipedia.org/wiki/%E8%B5%A4%E7%9F%B3%E5%B1%B1%E8%84%88",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/ff/20091228%E5%8D%97%E3%82%A2%E3%83%AB%E3%83%97%E3%82%B9A100.jpg/960px-20091228%E5%8D%97%E3%82%A2%E3%83%AB%E3%83%97%E3%82%B9A100.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "BehBeh",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:20091228%E5%8D%97%E3%82%A2%E3%83%AB%E3%83%97%E3%82%B9A100.jpg"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q415350"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q415350",
         "fetched_at": "2026-09-28"
       }
     ],
