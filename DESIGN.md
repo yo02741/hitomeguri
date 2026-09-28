@@ -275,6 +275,8 @@ header 右側、登入鈕左邊（`SearchBox.vue`，每一頁都在；在行程�
 - 海報區：`bg-region text-on-region`，右上 320px 正圓 `bg-region-accent`；「‹ 地圖」返回、假名（`text-body tracking-kana`）＋縣名（`text-display font-black`）＋羅馬拼音與地方名；段落超過一個時列出段落錨點。
 - 內文 `max-w-5xl`，段落標題 `text-h3 font-black`，組別小標 `text-caption font-bold tracking-section text-sub`＋件數。
 - 地區特色卡：`rounded-card border border-line`，有 Commons 照片才放 16:10 圖；假名／日文名＋繁中名、維基簡介最多 4 行、授權與來源連結。每組先顯示 9 項，其餘用「全部 N 項」展開。
+- 季節月曆：左側現象名（`text-body-sm font-bold`＋`text-caption text-sub` 的「開花」「紅葉」），右側 12 欄時間軸（`border-l border-line-soft` 格線，本月 `bg-region-tint`）；日期點 `size-3 rounded-full bg-region-strong border-2 border-paper`，櫻花開花到滿開以 `h-2 rounded-full bg-region-strong` 連起來；日期 `font-latin text-caption font-bold`（例 `3.24 – 4.2`），靠近年底時放在點的左邊。多個觀測站用與地圖清單相同的文字索引列切換。下方出處一行：平年值・站名・氣象廳連結。
+- 祭典：月份文字索引列（沒有祭典的月份 disabled）；每月小標＋件數；卡片 `rounded-card border border-line p-3` 橫排，有照片才放左側 96px 方圖；假名／日文名＋繁中名＋跨月時的月份範圍（`font-latin`，例 `7–8月`）、簡介最多 3 行、授權／維基百科／地圖連結。
 
 ### 7.6 名稱區塊 NameBlock（招牌元件）
 三行固定順序：假名 → 漢字 → 羅馬拼音；所有日文加 `lang="ja"`。
