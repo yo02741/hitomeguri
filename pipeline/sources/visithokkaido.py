@@ -17,9 +17,9 @@ from pipeline.sources.okinawastory import OfficialSpot
 BASE = "https://www.visit-hokkaido.jp"
 LIST_URL = BASE + "/spot/index_{page}_2,2.html"
 
-# 清單的每一項：<a href="…/spot/detail_{id}.html" alt="名稱" title="名稱">more</a>
+# 清單的每一項：<a href="detail_{id}.html" alt="名稱" title="名稱">more</a>（相對或絕對網址）
 # （頁首的精選區塊沒有 alt，不會被抓到）
-_ITEM = re.compile(r'/spot/detail_(\d+)\.html"\s+alt="([^"]+)"')
+_ITEM = re.compile(r'href="(?:[^"]*/)?detail_(\d+)\.html"\s+alt="([^"]+)"')
 _LATLNG = re.compile(r"gConf\s*=\s*\{\s*lat:\s*(-?\d+\.\d+),\s*lng:\s*(-?\d+\.\d+)")
 
 

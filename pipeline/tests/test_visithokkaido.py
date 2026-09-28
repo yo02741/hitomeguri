@@ -3,7 +3,7 @@ from pipeline.sources.visithokkaido import parse_latlng, parse_list
 LIST = """
 <dd><a href="https://www.visit-hokkaido.jp/spot/detail_10527.html" target="_self">more</a></dd>
 <dd><a href="https://www.visit-hokkaido.jp/spot/detail_10527.html" alt="天に続く道" title="天に続く道">more</a></dd>
-<dd><a href="/spot/detail_10511.html" alt="白金青い池" title="白金青い池">more</a></dd>
+<dd><a href="detail_10511.html" alt="白金青い池" title="白金青い池">more</a></dd>
 """
 
 
