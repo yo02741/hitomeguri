@@ -43,9 +43,12 @@ let ready = false
 const SOURCE = 'spots'
 // hover 命中半徑（px）：游標靠近就放大，不必精準對到小圓點
 const HOVER_HIT = 14
-// 這個縮放以上，hover 的圓圈裡顯示景點照片
-const PHOTO_ZOOM = 12
+// 這個縮放以上，有照片的景點直接畫成圓形照片；hover 時再放大
+const PHOTO_ZOOM = 13
+const PHOTO_PIN = 52
 const PHOTO_SIZE = 88
+// 同時顯示的照片上限（精選優先）
+const PHOTO_MAX = 80
 
 interface Hover {
   id: string
@@ -162,7 +165,14 @@ function addLayers() {
       'text-field': ['get', 'n'],
       'text-font': FONT_REGULAR,
       'text-size': 12,
-      'text-offset': [0, 1.1],
+      // 照片模式下名稱移到照片下緣
+      'text-offset': [
+        'step',
+        ['zoom'],
+        ['literal', [0, 1.1]],
+        PHOTO_ZOOM,
+        ['case', ['!=', ['get', 'i'], ''], ['literal', [0, 2.5]], ['literal', [0, 1.1]]],
+      ],
       'text-anchor': 'top',
       'text-optional': true,
     },
@@ -184,9 +194,11 @@ function addLayers() {
   })
 
   // 點選：以 hover 中的景點為準（命中範圍比圓點大）
+  // 觸控沒有 hover：直接找點擊位置附近的景點
   map.on('click', (e) => {
-    if (hover.value) {
-      emit('select', hover.value.id)
+    const hit = hover.value ?? nearestSpot(e.point)
+    if (hit) {
+      emit('select', hit.id)
       return
     }
     const f = map?.queryRenderedFeatures(e.point, { layers: ['clusters'] })[0]
@@ -195,7 +207,12 @@ function addLayers() {
   map.on('mousemove', (e) => updateHover(e.point))
   map.on('mouseout', () => setHover(null))
   map.on('move', positionHover)
-  map.on('zoom', () => map && (photoMode.value = map.getZoom() >= PHOTO_ZOOM))
+  map.on('zoom', () => {
+    if (!map) return
+    photoMode.value = map.getZoom() >= PHOTO_ZOOM
+    if (!photoMode.value && photoPins.size) syncPhotos()
+  })
+  map.on('idle', syncPhotos)
   photoMode.value = map.getZoom() >= PHOTO_ZOOM
   map.on('mouseenter', 'clusters', () => map && !hover.value && (map.getCanvas().style.cursor = 'pointer'))
   map.on('mouseleave', 'clusters', () => map && !hover.value && (map.getCanvas().style.cursor = ''))
@@ -215,6 +232,13 @@ function setHover(h: Hover | null) {
   hover.value = h
   if (!changed) return
   map.setFilter('hover', ['==', ['get', 'id'], h?.id ?? ''])
+  // hover 的名稱小標取代地圖上的同名標籤，避免重疊
+  map.setFilter('spot-labels', [
+    'all',
+    ['!', ['has', 'point_count']],
+    ['==', ['get', 'f'], 1],
+    ['!=', ['get', 'id'], h?.id ?? ''],
+  ])
   map.getCanvas().style.cursor = h ? 'pointer' : ''
 }
 
@@ -224,7 +248,13 @@ function updateHover(pt: { x: number; y: number }) {
   const cur = hover.value
   const keep = cur?.thumb && photoMode.value ? PHOTO_SIZE / 2 : HOVER_HIT
   if (cur && Math.hypot(cur.x - pt.x, cur.y - pt.y) <= keep) return
-  const r = HOVER_HIT
+  setHover(nearestSpot(pt))
+}
+
+/** 游標／點擊位置附近最近的景點；照片模式下整張圓形照片都算命中 */
+function nearestSpot(pt: { x: number; y: number }): Hover | null {
+  if (!map) return null
+  const r = photoMode.value ? Math.max(HOVER_HIT, PHOTO_PIN / 2) : HOVER_HIT
   const feats = map.queryRenderedFeatures(
     [
       [pt.x - r, pt.y - r],
@@ -238,12 +268,71 @@ function updateHover(pt: { x: number; y: number }) {
     const [lng, lat] = (f.geometry as GeoJSON.Point).coordinates as [number, number]
     const p = map.project([lng, lat])
     const d = Math.hypot(p.x - pt.x, p.y - pt.y)
-    if (d > r || d >= bestD) continue
     const fp = f.properties as { id: string; n: string; i?: string }
+    const reach = photoPins.has(fp.id) ? PHOTO_PIN / 2 : HOVER_HIT
+    if (d > reach || d >= bestD) continue
     bestD = d
     best = { id: fp.id, name: fp.n, lng, lat, x: p.x, y: p.y, thumb: fp.i || undefined }
   }
-  setHover(best)
+  return best
+}
+
+// 照片模式：畫面內有照片的景點各放一個圓形照片 marker（不接收滑鼠事件，點擊仍走地圖）
+const photoPins = new Map<string, maplibregl.Marker>()
+
+function syncPhotos() {
+  if (!map) return
+  const want = new Map<string, { lng: number; lat: number; thumb: string; f: number }>()
+  if (map.getZoom() >= PHOTO_ZOOM) {
+    const feats = map.queryRenderedFeatures({ layers: ['spots'] })
+    for (const f of feats) {
+      const fp = f.properties as { id: string; i?: string; f: number }
+      if (!fp.i || failedThumbs.has(fp.i) || want.has(fp.id)) continue
+      const [lng, lat] = (f.geometry as GeoJSON.Point).coordinates as [number, number]
+      want.set(fp.id, { lng, lat, thumb: fp.i, f: fp.f })
+    }
+  }
+  const keep = new Set(
+    [...want.entries()]
+      .sort((a, b) => b[1].f - a[1].f)
+      .slice(0, PHOTO_MAX)
+      .map(([id]) => id),
+  )
+  for (const [id, m] of photoPins) {
+    if (!keep.has(id)) {
+      m.remove()
+      photoPins.delete(id)
+    }
+  }
+  for (const id of keep) {
+    if (photoPins.has(id)) continue
+    const w = want.get(id)!
+    photoPins.set(id, new maplibregl.Marker({ element: photoEl(id, w.thumb, w.f) }).setLngLat([w.lng, w.lat]).addTo(map))
+  }
+}
+
+function photoEl(id: string, thumb: string, featured: number): HTMLElement {
+  const el = document.createElement('div')
+  el.className = `pointer-events-none overflow-hidden rounded-full border-[3px] bg-placeholder shadow-float ${
+    id === props.selectedId ? 'border-region-strong' : 'border-paper'
+  }`
+  el.style.width = `${PHOTO_PIN}px`
+  el.style.height = `${PHOTO_PIN}px`
+  el.style.zIndex = String(featured ? 2 : 1)
+  el.dataset.id = id
+  const img = document.createElement('img')
+  img.src = mapThumbUrl(thumb)
+  img.alt = ''
+  img.referrerPolicy = 'no-referrer'
+  img.decoding = 'async'
+  img.className = 'size-full object-cover'
+  img.onerror = () => {
+    failedThumbs.add(thumb)
+    photoPins.get(id)?.remove()
+    photoPins.delete(id)
+  }
+  el.append(img)
+  return el
 }
 
 function positionHover() {
@@ -302,6 +391,7 @@ onMounted(() => {
 })
 
 onBeforeUnmount(() => {
+  photoPins.clear()
   map?.remove()
   map = null
   ready = false
@@ -336,6 +426,11 @@ watch(
   (id) => {
     if (!map || !ready) return
     map.setFilter('selected', ['==', ['get', 'id'], id ?? ''])
+    for (const [pid, m] of photoPins) {
+      const el = m.getElement()
+      el.classList.toggle('border-region-strong', pid === id)
+      el.classList.toggle('border-paper', pid !== id)
+    }
   },
 )
 
@@ -370,7 +465,7 @@ defineExpose({
 
 <template>
   <div class="absolute inset-0 bg-map-land" role="region" aria-label="地圖">
-    <div ref="container" class="size-full"></div>
+    <div ref="container" class="isolate size-full"></div>
     <div
       v-if="hover"
       class="pointer-events-none absolute z-[1] flex -translate-x-1/2 flex-col items-center"
