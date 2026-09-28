@@ -383,7 +383,10 @@ def drop_non_spots(drafts: dict[str, Draft]) -> list[str]:
             sub in k for k in kinds for sub in EXCLUDE_P31_SUBSTR
         )
         collective = bool(COLLECTIVE_NAME_RE.search(d.name_ja or ""))
-        if admin or other or collective:
+        # 古墳不列為景點（使用者決定：一般旅客不會專程去）
+        name = strip_disambiguation(unicodedata.normalize("NFKC", d.name_ja or ""))
+        kofun = bool(KOFUN_DROP_RE.search(name))
+        if admin or other or collective or kofun:
             dropped.append(d.name_ja or key)
             del drafts[key]
     return dropped
@@ -456,6 +459,8 @@ _CATEGORY_BY_NAME = [
 
 
 KOFUN_RE = re.compile(r"(古墳|天皇陵|御陵)$")
+# 排除用：另外涵蓋古墳群；名稱先去掉消歧義括號（「亀塚古墳 (野洲市)」）
+KOFUN_DROP_RE = re.compile(r"(古墳群?|天皇陵|御陵)$")
 
 
 def category(d: Draft) -> str | None:

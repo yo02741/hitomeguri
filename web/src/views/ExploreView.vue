@@ -8,6 +8,7 @@ import RegionLists from '../components/RegionLists.vue'
 import RegionTag from '../components/RegionTag.vue'
 import SpotPanel from '../components/SpotPanel.vue'
 import { categoryGroup } from '../data/categories'
+import { JAPAN_BOUNDS } from '../map/style'
 import { regionOf } from '../data/regions'
 import type { MapSpot, Spot } from '../services/bundles'
 import { loadPrefectureShapes, prefectureAt, prefectureBounds } from '../services/geo'
@@ -102,7 +103,11 @@ watch(
       panSwitch = false
       return
     }
-    if (!pref) return
+    // 首頁（含點左上地區標籤回來）：拉回整個日本版圖
+    if (!pref) {
+      bounds.value = [...JAPAN_BOUNDS]
+      return
+    }
     const spots = await catalog.loadMap(pref)
     // 還沒有資料的縣：用縣界範圍定位
     if (!spots.length) await loadPrefectureShapes().catch(() => {})

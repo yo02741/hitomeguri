@@ -2,7 +2,7 @@
 import maplibregl, { type GeoJSONSource, type LngLatBoundsLike } from 'maplibre-gl'
 import type * as GeoJSON from 'geojson'
 import 'maplibre-gl/dist/maplibre-gl.css'
-import { nextTick, onBeforeUnmount, onMounted, ref, shallowRef, watch } from 'vue'
+import { computed, nextTick, onBeforeUnmount, onMounted, ref, shallowRef, watch } from 'vue'
 
 import { JAPAN_CENTER, JAPAN_ZOOM, MAP_STYLE_URL } from '../map/style'
 import { THEMES } from '../data/themes'
@@ -60,6 +60,45 @@ interface Hover {
 }
 const hover = shallowRef<Hover | null>(null)
 const failedThumbs = new Set<string>()
+
+// 景點在可見範圍外（或被左上浮動面板蓋住）時，改在可見範圍邊緣畫一個指向它的箭頭
+// 箭頭與名稱一起置中在這個內縮線上，留足空間不被裁掉
+const EDGE_PAD = 52
+interface Edge {
+  x: number
+  y: number
+  angle: number
+  side: 'left' | 'right' | 'top' | 'bottom'
+}
+const edge = computed<Edge | null>(() => {
+  const h = hover.value
+  const el = container.value
+  if (!h || !el) return null
+  const w = el.clientWidth
+  const ht = el.clientHeight
+  const inset = Math.min(props.insetLeft ?? 0, w / 2)
+  if (h.x >= inset && h.x <= w && h.y >= 0 && h.y <= ht) return null
+  const left = inset + EDGE_PAD
+  const right = w - EDGE_PAD
+  const top = EDGE_PAD
+  const bottom = ht - EDGE_PAD
+  const cx = (left + right) / 2
+  const cy = (top + bottom) / 2
+  const dx = h.x - cx
+  const dy = h.y - cy
+  const tx = dx ? ((dx > 0 ? right : left) - cx) / dx : Infinity
+  const ty = dy ? ((dy > 0 ? bottom : top) - cy) / dy : Infinity
+  const t = Math.min(tx, ty)
+  const side = tx <= ty ? (dx > 0 ? 'right' : 'left') : dy > 0 ? 'bottom' : 'top'
+  return { x: cx + dx * t, y: cy + dy * t, angle: (Math.atan2(dy, dx) * 180) / Math.PI, side }
+})
+// 名稱放在箭頭朝內的一側，避免被裁掉
+const EDGE_FLEX: Record<Edge['side'], string> = {
+  left: 'flex-row',
+  right: 'flex-row-reverse',
+  top: 'flex-col',
+  bottom: 'flex-col-reverse',
+}
 const FONT_BOLD = ['Noto Sans Bold']
 const FONT_REGULAR = ['Noto Sans Regular']
 
@@ -460,7 +499,24 @@ defineExpose({
   <div class="absolute inset-0 overflow-hidden bg-map-land" role="region" aria-label="地圖">
     <div ref="container" class="isolate size-full"></div>
     <div
-      v-if="hover"
+      v-if="hover && edge"
+      class="pointer-events-none absolute z-[1] flex -translate-x-1/2 -translate-y-1/2 items-center gap-1.5"
+      :class="EDGE_FLEX[edge.side]"
+      :style="{ left: `${edge.x}px`, top: `${edge.y}px` }"
+      aria-hidden="true"
+    >
+      <span
+        class="grid size-9 shrink-0 place-items-center rounded-full bg-region-strong text-white shadow-float"
+        :style="{ transform: `rotate(${edge.angle}deg)` }"
+      >
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M5 12h14M13 6l6 6-6 6" />
+        </svg>
+      </span>
+      <span lang="ja" class="rounded-tag bg-paper px-1.5 text-label font-bold whitespace-nowrap text-ink shadow-marker">{{ hover.name }}</span>
+    </div>
+    <div
+      v-else-if="hover"
       class="pointer-events-none absolute z-[1] flex -translate-x-1/2 flex-col items-center"
       :style="{ left: `${hover.x}px`, top: `${hover.y}px` }"
       aria-hidden="true"

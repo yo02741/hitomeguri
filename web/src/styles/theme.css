@@ -133,3 +133,12 @@
     }
   }
 }
+
+/* 捲軸：平常不顯示，滑過容器才出現。macOS 接滑鼠或系統設定「永遠顯示」時，
+ * 原生捲軸會一直顯示，這裡把顏色設成透明、hover 時才上色。 */
+@utility scroll-quiet {
+  scrollbar-color: transparent transparent;
+  &:hover {
+    scrollbar-color: var(--region-line) transparent;
+  }
+}

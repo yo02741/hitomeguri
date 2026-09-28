@@ -247,7 +247,7 @@
 - 裝飾：右上 104px 圓形 `bg-region-accent`；**只用正圓**，不用漸層、不用照片。
 - 內容：左側假名（`text-caption tracking-kana`）＋縣名（`text-h3 font-black tracking-name`）；右側羅馬拼音（`font-latin font-bold text-body-sm tracking-[0.3em] uppercase`）＋地方名；已驗證的直飛航線在下一行（`font-latin font-semibold text-caption`）。
 - 整塊是一個按鈕（回到首頁的日本地圖），`aria-label="切換地區"`。
-- 下方是景點清單卡（`rounded-card bg-paper shadow-float`）：分頁「精選／全部／地區特色」，精選與全部同時決定地圖上顯示哪些大點（取代原本的「只看精選」勾選框）。分頁下方是類型 chip（不限／寺社／城・史跡／古墳／博物館／公園・自然／娛樂／其他，只列目前分頁有的類型，單選），同時篩選清單與地圖；分組定義在 `web/src/data/categories.ts`。每列左側 44px 圓角縮圖（lazy 載入）＋假名／名稱＋類型；滑過一列在地圖上標出該景點，點選則選取並飛過去。清單用瀏覽器原生捲軸，容器右側留 12px（`pr-3`）讓捲軸不貼字。
+- 下方是景點清單卡（`rounded-card bg-paper shadow-float`）：分頁「精選／全部／地區特色」，精選與全部同時決定地圖上顯示哪些大點（取代原本的「只看精選」勾選框）。分頁下方是類型索引列（文字＋2px 底線，選中 `border-region-strong font-bold`；不限／寺社／城・史跡／博物館／自然／娛樂／其他，只列目前分頁有的類型，再點一次取消），同時篩選清單與地圖；分組定義在 `web/src/data/categories.ts`。不篩選時清單依類型分段，段首為 sticky 小標（類型＋件數），段內依分數。每列左側 44px 圓角縮圖（lazy 載入）＋假名／名稱＋細類型；滑過一列在地圖上標出該景點，點選則選取並飛過去。捲動區用 `scroll-quiet`（theme.css）：捲軸平常透明、滑過才顯示，右側 `pr-3` 讓捲軸不貼字。
 - 主題篩選（茶、酒等）暫停，見 PLAN.md §1。
 - 首頁左上列出 47 都道府縣（依地方分組）；還沒有景點資料的縣字色用 `text-sub`，點進去用縣界範圍定位。
 
@@ -255,6 +255,8 @@
 - 游標 14px 內最近的景點放大（精選 12、一般 10，外框 3），並顯示名稱小標（`bg-paper rounded-tag shadow-marker`）；點擊以放大中的景點為準。
 - 不分縮放：沒被群集成數字的景點，有照片就直接畫成 48px 圓形照片（`rounded-full border-[3px] border-paper shadow-float`，選取中改 `border-region-strong`），名稱移到照片下緣；同畫面最多 80 張，精選優先。群集半徑 50px、縮放 15 以上全部散開，讓照片彼此不太重疊。照片來自 map bundle 的 Commons 250px 縮圖，載入失敗就退回圓點。
 - 不預先下載照片：只載入畫面上的照片與清單中捲到的縮圖（試過背景全抓，初始載入變慢且持續佔用網路）。
+- 景點在可見範圍外（或被左上浮動面板蓋住）時，改在可見範圍邊緣畫 36px 圓形箭頭（`bg-region-strong text-white`，旋轉指向景點）＋名稱小標。
+- 回首頁（含點左上地區標籤）時地圖拉回整個日本版圖（`JAPAN_BOUNDS`，含沖繩）。
 - hover 照片再放大成 88px；整張照片都算命中範圍。觸控裝置沒有 hover，點擊時直接取點擊位置附近最近的景點。
 
 ### 7.6 名稱區塊 NameBlock（招牌元件）
