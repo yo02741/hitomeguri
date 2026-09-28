@@ -13,7 +13,8 @@ from dataclasses import dataclass, field
 from pipeline.http import get_text
 
 BASE = "https://www.okinawastory.jp"
-LIST_URL = BASE + "/spot/list/page:{page}/sort:AccessLogSumResult_COUNT/direction:desc"
+# 路徑式分頁（/page:N）會被忽略，要用查詢參數
+LIST_URL = BASE + "/spot/list?page={page}&sort=AccessLogSumResult_COUNT&direction=desc"
 
 _ITEM = re.compile(r'<a class="os-c-list-cmn__title-link" href="/spot/(\d+)">\s*([^<]+?)\s*</a>')
 _H1 = re.compile(r'<h1 class="os-c-title-cmn-main">\s*([^<]+?)\s*</h1>')

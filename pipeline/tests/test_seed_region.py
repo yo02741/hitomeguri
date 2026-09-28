@@ -287,3 +287,9 @@ def test_parse_okinawastory():
     )
     listing = '<a class="os-c-list-cmn__title-link" href="/spot/1321">古宇利大橋</a>'
     assert okinawastory._ITEM.findall(listing) == [("1321", "古宇利大橋")]
+
+
+def test_official_names():
+    assert major.norm_name("今帰仁城跡") in major.official_names("今帰仁城跡（なきじんじょうあと）")
+    got = major.official_names("古宇利島／ティーヌ浜／トケイ浜")
+    assert {major.norm_name("古宇利島"), major.norm_name("ティーヌ浜")} <= got

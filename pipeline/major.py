@@ -104,7 +104,12 @@ class Draft:
         if self.ent and self.ent.labels.get("ja"):
             return self.ent.labels["ja"]
         t = self.osm_tags
-        return t.get("name:ja") or t.get("name") or (self.official.name if self.official else None)
+        if t.get("name:ja") or t.get("name"):
+            return t.get("name:ja") or t.get("name")
+        if self.official:  # 官方名稱去掉括號裡的讀音、說明
+            clean = re.sub(r"\s*[（(][^）)]*[）)]", "", self.official.name).strip()
+            return clean or self.official.name
+        return None
 
     def all_names(self) -> list[str]:
         names = [self.name_ja or ""]
@@ -215,6 +220,13 @@ def extra_category_qids(pref: str) -> set[str]:
 OFFICIAL_SOURCES = {"okinawa": okinawastory.spots}
 
 
+def official_names(name: str) -> set[str]:
+    """官方名稱的比對用變體：去掉括號（讀音、說明）、拆開「A／B」「A / B」合寫。"""
+    base = re.sub(r"[（(][^）)]*[）)]", "", unicodedata.normalize("NFKC", name)).strip()
+    parts = [p.strip() for p in re.split(r"[／/]", base)]
+    return {norm_name(p) for p in [base, *parts] if p} - {""}
+
+
 def merge_official(pref: str, drafts: dict[str, Draft]) -> None:
     """官方觀光網站的熱門排行：名稱相同且在附近的併入既有候選，其餘新增。"""
     fetch = OFFICIAL_SOURCES.get(pref)
@@ -230,14 +242,20 @@ def merge_official(pref: str, drafts: dict[str, Draft]) -> None:
         if any(x in c for c in o.categories for x in config.OFFICIAL_EXCLUDE_CATEGORY):
             skipped += 1
             continue
-        name = norm_name(o.name)
+        names = official_names(o.name)
         target = None
         for d in drafts.values():
             if d.official:
                 continue
             dist = geo.haversine_m(d.lat, d.lng, o.lat, o.lng)
-            if dist <= config.OFFICIAL_MATCH_DISTANCE_M and any(
-                norm_name(n) == name for n in d.all_names()
+            if dist > config.OFFICIAL_MATCH_DISTANCE_M:
+                continue
+            mine = {norm_name(n) for n in d.all_names()} - {""}
+            if names & mine or (
+                dist <= 800
+                and any(
+                    len(a) >= 3 and len(b) >= 3 and (a in b or b in a) for a in names for b in mine
+                )
             ):
                 target = d
                 break
