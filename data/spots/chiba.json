@@ -14997,59 +14997,6 @@
     "updated_at": "2026-09-28"
   },
   {
-    "id": "wd-Q117455432",
-    "name": {
-      "ja": "東京ディズニーリゾート40周年“ドリームゴーラウンド”",
-      "zh_tw": "東京ディズニーリゾート40周年“ドリームゴーラウンド”"
-    },
-    "location": {
-      "lat": 35.632778,
-      "lng": 139.880556
-    },
-    "prefecture": "chiba",
-    "kind": "major",
-    "themes": [],
-    "tags": [],
-    "featured": false,
-    "score": 60.4,
-    "summary": {
-      "text": "『東京ディズニーリゾート40周年“ドリームゴーラウンド”』（とうきょうディズニーリゾート40しゅうねん“ドリームゴーラウンド”）は、2023年4月15日から2024年3月31日にかけて東京ディズニーリゾート（TDR）で開催されたアニバーサリーイベント。2023年4月15日で東京ディズニーランド（TDL）が開園40周年を迎えるのを記念し、TDR全体でアニバーサリーイベントが行われた。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%9D%B1%E4%BA%AC%E3%83%87%E3%82%A3%E3%82%BA%E3%83%8B%E3%83%BC%E3%83%AA%E3%82%BE%E3%83%BC%E3%83%8840%E5%91%A8%E5%B9%B4%E2%80%9C%E3%83%89%E3%83%AA%E3%83%BC%E3%83%A0%E3%82%B4%E3%83%BC%E3%83%A9%E3%82%A6%E3%83%B3%E3%83%89%E2%80%9D",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "nearest_stations": [
-      {
-        "name": {
-          "ja": "ウエスタンリバー鉄道"
-        },
-        "distance_m": 200
-      },
-      {
-        "name": {
-          "ja": "東京ディズニーランド・ステーション",
-          "kana": "とうきょうでぃずにーらんどすてーしょん",
-          "romaji": "Tokyodizunirandosuteshon",
-          "en": "Tokyo Disneyland Station"
-        },
-        "distance_m": 390
-      }
-    ],
-    "images": [],
-    "external_ids": {
-      "wikidata": "Q117455432"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q117455432",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
     "id": "wd-Q117858464",
     "name": {
       "ja": "八街神社",
@@ -19564,7 +19511,7 @@
     "tags": [
       "名勝"
     ],
-    "featured": false,
+    "featured": true,
     "score": 73.94,
     "summary": {
       "text": "屏風浦是日本千葉縣東北部銚子市至旭市的一個岸邊懸崖，長約10公里，高度超過40米，2016年3月被指定為國家名勝·天然記念物。當地為海蝕地貌。",
@@ -21616,73 +21563,6 @@
       },
       {
         "url": "https://ja.wikipedia.org/wiki/%E3%82%A2%E3%82%B8%E3%82%A2%E7%B5%8C%E6%B8%88%E7%A0%94%E7%A9%B6%E6%89%80",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
-    "id": "wd-Q605492",
-    "name": {
-      "ja": "東京ディズニーリゾート",
-      "kana": "とうきょうでぃずにーりぞーと",
-      "romaji": "Tokyodizunirizoto",
-      "zh_tw": "東京迪士尼度假區",
-      "en": "Tokyo Disney Resort"
-    },
-    "kana_source": "wikipedia",
-    "location": {
-      "lat": 35.629722,
-      "lng": 139.882778
-    },
-    "prefecture": "chiba",
-    "kind": "major",
-    "themes": [],
-    "tags": [],
-    "featured": true,
-    "score": 91.05,
-    "summary": {
-      "text": "東京迪士尼度假區又稱為日本迪士尼，是一座位於日本千葉縣浦安市，是日本Oriental Land公司在美國華特迪士尼公司授權下經營的迪士尼度假區。",
-      "lang": "zh",
-      "source_url": "https://zh.wikipedia.org/wiki/%E6%9D%B1%E4%BA%AC%E8%BF%AA%E5%A3%AB%E5%B0%BC%E5%BA%A6%E5%81%87%E5%8D%80",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "nearest_stations": [
-      {
-        "name": {
-          "ja": "ウエスタンリバー鉄道"
-        },
-        "distance_m": 450
-      },
-      {
-        "name": {
-          "ja": "ポートディスカバリー・ステーション",
-          "romaji": "Pōtodisukabarī",
-          "en": "Port Discovery Station"
-        },
-        "distance_m": 480
-      }
-    ],
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/91/A8_Tokyo_Disneyland.jpg/960px-A8_Tokyo_Disneyland.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Øyvind Holmstad",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:A8_Tokyo_Disneyland.jpg"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q605492"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q605492",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://ja.wikipedia.org/wiki/%E6%9D%B1%E4%BA%AC%E3%83%87%E3%82%A3%E3%82%BA%E3%83%8B%E3%83%BC%E3%83%AA%E3%82%BE%E3%83%BC%E3%83%88",
         "fetched_at": "2026-09-28"
       }
     ],

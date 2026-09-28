@@ -301,8 +301,11 @@ def test_non_spot_kind():
     assert major.non_spot_kind({"令制国"})
     assert major.non_spot_kind({"祭り"})
     assert major.non_spot_kind({"戦闘"})
-    assert major.non_spot_kind({"半島"})
-    assert not major.non_spot_kind({"山地"}, world_heritage=True)
+    assert major.non_spot_kind(set(), name="下北半島")
+    assert major.non_spot_kind({"山"}, name="六甲山地")
+    assert not major.non_spot_kind({"山地"}, name="六甲山")
+    assert not major.non_spot_kind(set(), world_heritage=True, name="白神山地")
+    assert major.non_spot_reason({"政令指定都市の区"}) == "政令指定都市の区"
     assert not major.non_spot_kind({"神社"})
     assert not major.non_spot_kind({"道の駅"})
     assert not major.non_spot_kind({"湾"})

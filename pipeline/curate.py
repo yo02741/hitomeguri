@@ -12,7 +12,7 @@ from typing import Any
 
 from pipeline import config
 from pipeline.build_bundles import spot_type
-from pipeline.major import excluded_ids, log, name_excluded, non_spot_kind
+from pipeline.major import excluded_ids, log, name_excluded, non_spot_reason
 from pipeline.paths import SPOTS_DIR
 
 OFFICIAL_HOSTS = ("okinawastory.jp",)
@@ -70,8 +70,8 @@ def refill_featured(spots: list[dict[str, Any]]) -> list[str]:
     return added
 
 
-def wikidata_non_spots(spots: list[dict[str, Any]]) -> set[str]:
-    """重新查 Wikidata 的 P31，回傳不是景點的 spot id。"""
+def wikidata_non_spots(spots: list[dict[str, Any]]) -> dict[str, str]:
+    """重新查 Wikidata 的 P31，回傳不是景點的 spot id → 理由（命中的標籤）。"""
     from pipeline.sources import wikidata
 
     by_qid = {
@@ -82,13 +82,14 @@ def wikidata_non_spots(spots: list[dict[str, Any]]) -> set[str]:
     ents = wikidata.entities(sorted(by_qid)) if by_qid else {}
     p31 = sorted({q for e in ents.values() for q in e.instance_of})
     labels = wikidata.labels_ja(p31) if p31 else {}
-    tags = {s["id"]: s.get("tags", []) for s in spots}
-    out = set()
+    info = {s["id"]: s for s in spots}
+    out: dict[str, str] = {}
     for qid, e in ents.items():
-        sid = by_qid[qid]
+        s = info[by_qid[qid]]
         kinds = {labels.get(q, "") for q in e.instance_of} - {""}
-        if non_spot_kind(kinds, "世界遺產" in tags.get(sid, [])):
-            out.add(sid)
+        reason = non_spot_reason(kinds, s["name"]["ja"], "世界遺產" in s.get("tags", []))
+        if reason:
+            out[s["id"]] = reason
     return out
 
 
@@ -96,9 +97,11 @@ def prune_spots(pref: str, recheck: bool = False) -> str:
     path = SPOTS_DIR / f"{pref}.json"
     spots = json.loads(path.read_text(encoding="utf-8"))
     manual = excluded_ids()
+    reasons: dict[str, str] = {}
     if recheck:
         log(f"[{pref}] 重新查 Wikidata 類型…")
-        manual |= wikidata_non_spots(spots)
+        reasons = wikidata_non_spots(spots)
+        manual |= set(reasons)
     removed = [s for s in spots if is_excluded(s, manual)]
     kept = [s for s in spots if not is_excluded(s, manual)]
     added = refill_featured(kept)
@@ -108,7 +111,11 @@ def prune_spots(pref: str, recheck: bool = False) -> str:
         f"## {pref}",
         f"- 排除 {len(removed)} 筆（剩 {sum(s['kind'] == 'major' for s in kept)} 個大點）",
     ]
-    names = [s["name"]["ja"] for s in removed if s["kind"] == "major"]
+    names = [
+        s["name"]["ja"] + (f"（{reasons[s['id']]}）" if s["id"] in reasons else "")
+        for s in removed
+        if s["kind"] == "major"
+    ]
     if names:
         lines.append(f"- 排除：{'、'.join(names)}")
     if removed_featured:

@@ -547,26 +547,33 @@ EVENT_P31_SUBSTR = (
     "祭り", "祭礼", "例祭", "年中行事", "行事", "戦闘", "合戦", "紛争", "事変", "政変", "反乱",
     "festival", "battle", "recurring event",
 )  # fmt: skip
-# 廣域地名：地圖上一個點代表不了（半島、山地、國立公園、群島）；世界遺產例外（白神山地）
-REGION_P31_SUBSTR = (
-    "国立公園", "国定公園", "半島", "山地", "山脈", "平野", "盆地", "諸島", "列島", "群島",
-    "national park", "peninsula", "mountain range", "archipelago",
-)  # fmt: skip
+# 廣域地名：地圖上一個點代表不了。以名稱結尾判斷（P31 判斷會誤殺六甲山、上高地這類景點）；
+# 世界遺產例外（白神山地）
+REGION_NAME_RE = re.compile(
+    r"(国立公園|国定公園|半島|山地|山脈|山系|連峰|連山|丘陵|平野|盆地|諸島|列島|群島)$"
+)
 
 
-def non_spot_kind(kinds: set[str], world_heritage: bool = False) -> bool:
-    """P31 標籤判斷不是景點：行政區、事件與活動、廣域地名、既有的排除類型。"""
-    if kinds & ADMIN_P31 or kinds & EXCLUDE_P31_EXACT:
-        return True
-    for k in kinds:
+def non_spot_reason(kinds: set[str], name: str = "", world_heritage: bool = False) -> str | None:
+    """不是景點的理由（命中的 P31 標籤或名稱規則）；是景點回傳 None。
+
+    行政區、事件與活動、既有的排除類型看 P31；廣域地名看名稱結尾。
+    """
+    for k in sorted(kinds & (ADMIN_P31 | EXCLUDE_P31_EXACT)):
+        return k
+    for k in sorted(kinds):
         if any(s in k for s in ADMIN_P31_SUBSTR + EVENT_P31_SUBSTR):
-            return True
-        if not world_heritage and any(s in k for s in REGION_P31_SUBSTR):
-            return True
+            return k
         # 道の駅是景點，不當車站排除
         if any(s in k and not (s == "駅" and "道の駅" in k) for s in EXCLUDE_P31_SUBSTR):
-            return True
-    return False
+            return k
+    if not world_heritage and REGION_NAME_RE.search(strip_disambiguation(name)):
+        return "廣域地名"
+    return None
+
+
+def non_spot_kind(kinds: set[str], world_heritage: bool = False, name: str = "") -> bool:
+    return non_spot_reason(kinds, name, world_heritage) is not None
 
 
 # 總稱條目（世界遺產登錄名、古墳群）：以名稱判斷
@@ -634,7 +641,7 @@ def drop_non_spots(drafts: dict[str, Draft]) -> list[str]:
         kinds = {labels.get(q, "") for q in d.ent.instance_of} - {""}
         heritage = {labels_h.get(h, "") for h in d.ent.heritage}
         world = any("世界遺産" in h for h in heritage)
-        if non_spot_kind(kinds, world) or name_excluded(d.name_ja):
+        if non_spot_kind(kinds, world, d.name_ja or "") or name_excluded(d.name_ja):
             dropped.append(d.name_ja or key)
             del drafts[key]
     return dropped
