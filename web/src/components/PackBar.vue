@@ -11,7 +11,10 @@ const props = defineProps<{ pref?: string | null }>()
 const catalog = useCatalogStore()
 const explore = useExploreStore()
 
-const shown = computed(() => PACKS.filter((p) => explore.enabledPacks.includes(p.key)))
+// 還沒有 bundle 的擴充包不顯示
+const shown = computed(() =>
+  PACKS.filter((p) => explore.enabledPacks.includes(p.key) && catalog.index?.packs?.[p.key]),
+)
 function count(key: string): number | null {
   const items = catalog.packs[key]
   if (!items) return null
