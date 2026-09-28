@@ -473,6 +473,26 @@ COLLECTIVE_NAME_RE = re.compile(
 )
 
 
+# OSM 標籤明確是景點類型（海灘、博物館、主題樂園、市場、購物中心…）
+_OSM_SPOT_TAGS = {
+    ("natural", "beach"), ("natural", "cape"), ("tourism", "museum"), ("tourism", "gallery"),
+    ("tourism", "theme_park"), ("tourism", "zoo"), ("tourism", "aquarium"),
+    ("amenity", "marketplace"), ("shop", "mall"), ("leisure", "park"), ("leisure", "garden"),
+    ("natural", "waterfall"), ("waterway", "waterfall"), ("natural", "cave_entrance"),
+}  # fmt: skip
+# 通用名稱（「展望台」「神社」）不是可辨識的景點
+GENERIC_NAME_RE = re.compile(
+    r"^(展望台|展望所|展望広場|展示広場|展示室|神社|寺|水族館|美術館|博物館|資料館|公園|ビーチ|海岸|"
+    r"church|shrine|temple|museum|welcome|view ?point|observatory|beach|park)$",
+    re.IGNORECASE,
+)
+
+
+def _osm_spot_like(d: Draft) -> bool:
+    t = d.osm_tags
+    return any(t.get(k) == v for k, v in _OSM_SPOT_TAGS)
+
+
 def excluded_ids() -> set[str]:
     """人工排除清單（data/seed/exclude.json）的景點 id。"""
     path = SEED_DIR / "exclude.json"
@@ -484,7 +504,9 @@ def excluded_ids() -> set[str]:
 def name_excluded(name_ja: str | None) -> bool:
     """以名稱判斷的排除：總稱條目、古墳（使用者決定：一般旅客不會專程去）。"""
     name = strip_disambiguation(unicodedata.normalize("NFKC", name_ja or ""))
-    return bool(COLLECTIVE_NAME_RE.search(name) or KOFUN_DROP_RE.search(name))
+    return bool(
+        COLLECTIVE_NAME_RE.search(name) or KOFUN_DROP_RE.search(name) or GENERIC_NAME_RE.match(name)
+    )
 
 
 def drop_non_spots(drafts: dict[str, Draft]) -> list[str]:
@@ -494,9 +516,10 @@ def drop_non_spots(drafts: dict[str, Draft]) -> list[str]:
     dropped = []
     for key, d in list(drafts.items()):
         # 只有 OSM、沒有 Wikidata 項目的點大多是遊樂設施、動物舍、店家等（分數也都是 0）；
-        # 攻略種子與官方觀光網站列出的例外
+        # 攻略種子、官方觀光網站列出的、OSM 標籤明確是景點類型的例外
         if not d.ent:
-            if not (d.tier or d.official) or name_excluded(d.name_ja):
+            keep = d.tier or d.official or _osm_spot_like(d)
+            if not keep or name_excluded(d.name_ja):
                 dropped.append(d.name_ja or key)
                 del drafts[key]
             continue
@@ -507,7 +530,9 @@ def drop_non_spots(drafts: dict[str, Draft]) -> list[str]:
         kinds = {labels.get(q, "") for q in d.ent.instance_of} - {""}
         admin = bool(kinds & ADMIN_P31)
         other = bool(kinds & EXCLUDE_P31_EXACT) or any(
-            sub in k for k in kinds for sub in EXCLUDE_P31_SUBSTR
+            sub in k and not (sub == "駅" and "道の駅" in k)  # 道の駅是景點
+            for k in kinds
+            for sub in EXCLUDE_P31_SUBSTR
         )
         if admin or other or name_excluded(d.name_ja):
             dropped.append(d.name_ja or key)

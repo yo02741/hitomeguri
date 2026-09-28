@@ -18,7 +18,8 @@ LIST_URL = BASE + "/spot/list/page:{page}/sort:AccessLogSumResult_COUNT/directio
 _ITEM = re.compile(r'<a class="os-c-list-cmn__title-link" href="/spot/(\d+)">\s*([^<]+?)\s*</a>')
 _H1 = re.compile(r'<h1 class="os-c-title-cmn-main">\s*([^<]+?)\s*</h1>')
 _LATLNG = re.compile(r"maps/embed/v1/place\?q=(-?\d+\.\d+),(-?\d+\.\d+)")
-_CATEGORY = re.compile(r'href="/spot/list\?category=\d+">([^<]+)</a>')
+# 景點自己的類型標籤（頁面上另有全站搜尋選單的類型清單，不能一起抓）
+_CATEGORY = re.compile(r'class="p-detail-tag__link" href="/spot/list\?category=\d+">([^<]+)</a>')
 
 
 @dataclass

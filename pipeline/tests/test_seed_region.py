@@ -276,6 +276,8 @@ def test_parse_okinawastory():
         '<h1 class="os-c-title-cmn-main">知念岬公園</h1>'
         '<iframe src="https://www.google.com/maps/embed/v1/place?q=26.16673088,127.8297348&zoom=16">'
         '<a class="p-detail-tag__link" href="/spot/list?category=20">海岸・岬・湾</a>'
+        # 全站搜尋選單的類型不算
+        '<a href="/spot/list?category=26">旅行会社</a>'
     )
     assert okinawastory.parse_detail(detail) == (
         "知念岬公園",
