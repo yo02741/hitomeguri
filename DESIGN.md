@@ -231,16 +231,15 @@
 - 手機底部 tab：圖示＋文字，選取時圖示與文字 `text-ink`，未選 `text-sub`；不使用底色塊。
 
 ### 7.3 Search
-`h-10 w-60 px-3 rounded-control border border-line bg-surface text-body-sm placeholder:text-sub`，必須有可見或 `sr-only` 的 `<label>`。
+header 右側、登入鈕左邊（`SearchBox.vue`，每一頁都在；在行程、紀錄頁選了結果會回到探索頁）：`h-10 w-72 rounded-full border border-line bg-paper px-3.5`，聚焦時外框 `border-region-strong`，左側放大鏡圖示，placeholder「搜尋景點、地區」，input 帶 `aria-label`。結果是同寬的浮動卡（`rounded-card bg-paper shadow-float`，最高 60dvh），每列：縣色小方塊 14px＋假名／日文名（繁中名不同時接在後面、`text-sub`）＋右側縣名（縣的結果標「地區」）。上下鍵移動、Enter 選取、Esc 清除。
 
-### 7.4 主題開關列
-```html
-<label class="h-10 flex items-center gap-3 border-b border-line-soft">
-  <ThemeBadge theme="tea" size="26" />
-  <span class="text-body-sm">茶</span>
-  <input type="checkbox" class="ml-auto size-5 accent-[var(--region-strong)]" />
-</label>
-```
+### 7.4 擴充包列（原主題開關列）
+- 地圖上方浮動列，左緣對齊左側浮動面板外（`left: insetLeft`），右側景點卡片打開時自動縮窄。
+- 每個擴充包一顆膠囊按鈕 `h-9 rounded-full px-3.5 text-label font-bold shadow-float`：圖示（主題色）＋名稱＋件數（`font-latin`）。開啟中改為主題色底白字（`bg-(--pack)`，`--pack` 設為 `var(--color-t-*)`，不寫死色碼）；目前地區沒有資料時 `opacity-50` 不能按。
+- 最右邊 36px 圓形圖示鈕（滑桿圖示，`aria-label="選擇擴充包"`）打開設定卡（`w-72 rounded-card bg-paper shadow-float`）：每個擴充包一列 checkbox＋圖示＋名稱，下方小字列出組別。
+- 開啟擴充包時：左側清單換成擴充包清單（`PackList.vue`，頂端「‹ 景點」返回、右側擴充包名稱＋件數；組別列與景點類型列同樣式，底線用主題色；地區頁依組別分段、首頁依縣分段；每列左側 10px 主題色圓點）。地圖上景點（圓點、群集）不透明度 0.3、名稱標籤與照片收起，只有擴充包的點可以選；擴充包的點獨立群集（半徑 40、縮放 12 以上散開），主題色填色、paper 外框，縮放 12 以上顯示名稱。
+- 擴充包的點的卡片（`PackPanel.vue`）：地區色標頭（主題色圓點＋「寶可夢・人孔蓋」小字、名稱）＋資訊列（地區、寶可夢與圖鑑編號、地址）＋底部「官方頁面」（外框按鈕）與「在 Google Maps 開啟」。人孔蓋不放圖片（著作權屬 The Pokémon Company），只連官方頁面。
+- 景點卡片在簡介下方列出「附近的{擴充包}」（2 km 內、最多 6 個、依距離），點選即開啟該擴充包並選取那個點。
 
 ### 7.0 開場畫面 Splash
 - 寫在 `web/index.html`（JS、字型下載前就顯示）；顏色佔位字 `%REGION_*%` 由 `vite.config.ts` 在建置時換成 `data/regions.json` 的全國色。

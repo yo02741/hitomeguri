@@ -4,6 +4,7 @@
 - map/{pref}.json：地圖用精簡資料。
 - detail/{pref}.json：完整景點資料，點選景點時才載入。
 - packs/{key}.json：擴充包（全國一個檔，data/packs/ 組合而成）。
+- search.json：全國景點搜尋索引（第一次搜尋時才載入）。
 """
 
 from __future__ import annotations
@@ -88,6 +89,7 @@ def build(src: Path = SPOTS_DIR, dst: Path = BUNDLES_DIR) -> list[Path]:
     written = []
     index: dict[str, Any] = {"prefectures": {}}
     featured: dict[str, list[dict[str, Any]]] = {}
+    search: list[list[Any]] = []
     for path in sorted(src.glob("*.json")):
         pref = path.stem
         raw = json.loads(path.read_text(encoding="utf-8"))
@@ -102,11 +104,14 @@ def build(src: Path = SPOTS_DIR, dst: Path = BUNDLES_DIR) -> list[Path]:
             {k: v for k, v in e.items() if k in FEATURED_KEYS} for e in majors if e["f"] == 1
         ]
         written.append(_write(dst / "detail" / f"{pref}.json", published))
+        search += [search_entry(pref, e) for e in majors]
         index["prefectures"][pref] = {
             "count": len(published),
             "featured": sum(1 for s in published if s["featured"]),
             "version": version,
         }
+    written.append(_write(dst / "search.json", search))
+    index["search"] = hashlib.sha1(json.dumps(search).encode()).hexdigest()[:10]
     packs = build_packs(dst / "packs")
     index["packs"] = {key: meta for key, (_, meta) in packs.items()}
     written += [path for path, _ in packs.values()]
@@ -115,6 +120,16 @@ def build(src: Path = SPOTS_DIR, dst: Path = BUNDLES_DIR) -> list[Path]:
     written.append(_write(dst / "featured.json", featured))
     written += build_extras(dst)
     return written
+
+
+def search_entry(pref: str, e: dict[str, Any]) -> list[Any]:
+    """[id, 縣, 日文名, 假名, 繁中名, 羅馬拼音, 分數]：陣列比物件省一半大小。
+
+    繁中名與日文名相同時為空字串。
+    """
+    zh = e.get("z", "")
+    zh = "" if zh == e["n"] else zh
+    return [e["id"], pref, e["n"], e.get("h", ""), zh, e.get("r", ""), e["s"]]
 
 
 def _read(path: Path) -> list[dict[str, Any]]:

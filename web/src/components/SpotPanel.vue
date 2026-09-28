@@ -5,8 +5,15 @@ import type { Spot } from '../services/bundles'
 import { prefectureFullName } from '../data/regions'
 import { canSpeak, speakJa } from '../services/tts'
 
-const props = defineProps<{ spot: Spot | null; loading?: boolean }>()
-const emit = defineEmits<{ close: [] }>()
+export interface NearbyPack {
+  pack: string
+  label: string
+  color: string
+  items: { id: string; n: string; group: string; d: number }[]
+}
+
+const props = defineProps<{ spot: Spot | null; loading?: boolean; nearby?: NearbyPack[] }>()
+const emit = defineEmits<{ close: []; selectPack: [id: string] }>()
 
 // 圖片載入失敗（Commons 暫時無法取得等）時退回底色，不顯示破圖
 const imageFailed = ref(false)
@@ -120,6 +127,30 @@ function distance(m: number): string {
         >・{{ spot.summary.license }}
       </figcaption>
     </figure>
+
+    <!-- 附近的擴充包小點（設定中啟用的擴充包）：找大點時順便看到可以塞的小點 -->
+    <section
+      v-for="nb in nearby ?? []"
+      :key="nb.pack"
+      class="mx-5 mt-4 flex flex-col"
+      :style="{ '--pack': `var(--color-t-${nb.color})` }"
+    >
+      <h3 class="flex items-baseline gap-1.5 pb-1 text-caption font-bold tracking-section text-sub">
+        附近的{{ nb.label }}<span class="font-latin font-normal tracking-normal">{{ nb.items.length }}</span>
+      </h3>
+      <button
+        v-for="it in nb.items"
+        :key="it.id"
+        type="button"
+        class="-mx-1.5 flex min-h-tap items-center gap-3 rounded-control px-1.5 text-left hover:bg-surface"
+        @click="emit('selectPack', it.id)"
+      >
+        <span class="size-2.5 shrink-0 rounded-full bg-(--pack)" aria-hidden="true"></span>
+        <span lang="ja" class="min-w-0 truncate text-body-sm font-bold">{{ it.n }}</span>
+        <span class="shrink-0 text-caption text-sub">{{ it.group }}</span>
+        <span class="ml-auto shrink-0 font-latin text-caption text-sub">{{ distance(it.d) }}</span>
+      </button>
+    </section>
 
     <div class="mx-5 mt-2 flex flex-wrap gap-x-3 text-caption text-sub">
       <span>來源</span>

@@ -62,6 +62,29 @@ export interface Spot {
 
 export interface BundleIndex {
   prefectures: Record<string, { count: number; featured: number; version: string }>
+  packs?: Record<string, { count: number; version: string }>
+  /** search.json 的版本 */
+  search?: string
+}
+
+/** 搜尋索引一筆：[id, 縣, 日文名, 假名, 繁中名（同日文時空字串）, 羅馬拼音, 分數] */
+export type SearchRow = [string, string, string, string, string, string, number]
+
+export function fetchSearch(version: string): Promise<SearchRow[]> {
+  return getJson<SearchRow[]>(`search.json?v=${version}`)
+}
+
+/** 擴充包的一個點（pipeline/build_bundles.py 的 pack_items_*） */
+export interface PackItem {
+  id: string
+  g: string // 組別（data/packs.ts 的 groups）
+  p: string // 縣
+  n: string // 名稱（人孔蓋為所在市町村）
+  lat: number
+  lng: number
+  a?: string // 地址
+  pk?: [string, string][] // 人孔蓋上的寶可夢（圖鑑編號、日文名）
+  u: string // 官方頁面或來源
 }
 
 const base = `${import.meta.env.BASE_URL}bundles/`
@@ -83,6 +106,9 @@ export function fetchMap(pref: string, version: string): Promise<MapSpot[]> {
 /** 各縣精選（首頁用）；v 為各縣版本組成，資料更新時換網址避開快取 */
 export function fetchFeatured(v: string): Promise<Record<string, MapSpot[]>> {
   return getJson<Record<string, MapSpot[]>>(`featured.json?v=${v}`)
+}
+export function fetchPack(key: string, version: string): Promise<PackItem[]> {
+  return getJson<PackItem[]>(`packs/${key}.json?v=${version}`)
 }
 export function fetchDetail(pref: string, version: string): Promise<Spot[]> {
   return getJson<Spot[]>(`detail/${pref}.json?v=${version}`)

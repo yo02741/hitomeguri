@@ -11,7 +11,10 @@ import {
   type Specialty,
   fetchIndex,
   fetchMap,
+  fetchPack,
+  fetchSearch,
   type MapSpot,
+  type PackItem,
   type Spot,
 } from '../services/bundles'
 
@@ -120,5 +123,43 @@ export const useCatalogStore = defineStore('catalog', () => {
     })
   }
 
-  return { index, mapSpots, featured, loadFeatured, details, specialties, flights, loadExtras, loadIndex, available, loadMap, loadAllMaps, loadDetail, getSpot }
+  /** 擴充包：全國一個檔，第一次開啟（或設定中啟用）時才載入 */
+  const packs = shallowRef<Record<string, PackItem[]>>({})
+  async function loadPack(key: string): Promise<PackItem[]> {
+    await loadIndex()
+    const meta = index.value?.packs?.[key]
+    if (!meta) return []
+    if (packs.value[key]) return packs.value[key]
+    return once(`pack:${key}`, async () => {
+      try {
+        packs.value[key] = await fetchPack(key, meta.version)
+      } catch {
+        packs.value[key] = []
+      }
+      triggerRef(packs)
+      return packs.value[key]
+    })
+  }
+
+  /** 全國搜尋索引：第一次搜尋時才載入 */
+  let searchLoaded = false
+  async function loadSearch(): Promise<void> {
+    if (searchLoaded) return
+    await loadIndex()
+    await once('search', async () => {
+      searchLoaded = true
+      const { setIndex } = await import('../services/search')
+      try {
+        setIndex(await fetchSearch(index.value?.search ?? ''))
+      } catch {
+        setIndex([])
+      }
+    })
+  }
+
+  return {
+    loadSearch,
+    index, mapSpots, featured, loadFeatured, details, specialties, flights, loadExtras, loadIndex, available,
+    loadMap, loadAllMaps, loadDetail, getSpot, packs, loadPack,
+  }
 })

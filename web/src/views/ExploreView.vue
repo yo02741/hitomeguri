@@ -4,14 +4,19 @@ import { useRoute, useRouter } from 'vue-router'
 
 import HomeSidebar from '../components/HomeSidebar.vue'
 import MapView, { type MapView as MapViewState } from '../components/MapView.vue'
+import PackBar from '../components/PackBar.vue'
+import PackList from '../components/PackList.vue'
+import PackPanel from '../components/PackPanel.vue'
 import RegionLists from '../components/RegionLists.vue'
 import RegionTag from '../components/RegionTag.vue'
-import SpotPanel from '../components/SpotPanel.vue'
+import SpotPanel, { type NearbyPack } from '../components/SpotPanel.vue'
 import { categoryGroup } from '../data/categories'
+import { PACKS, packByKey, packOfId } from '../data/packs'
 import { JAPAN_BOUNDS } from '../map/style'
 import { regionOf } from '../data/regions'
-import type { MapSpot, Spot } from '../services/bundles'
-import { loadPrefectureShapes, prefectureAt, prefectureBounds } from '../services/geo'
+import type { MapSpot, PackItem, Spot } from '../services/bundles'
+import { distanceM, loadPrefectureShapes, prefectureAt, prefectureBounds } from '../services/geo'
+import type { SearchHit } from '../services/search'
 import { trackSplash } from '../services/splash'
 import { useCatalogStore } from '../stores/catalog'
 import { useExploreStore } from '../stores/explore'
@@ -29,40 +34,82 @@ const loadingSpot = ref(false)
 const bounds = shallowRef<[number, number, number, number] | null>(null)
 // 由平移地圖觸發的縣切換不重新定位地圖
 let panSwitch = false
+// 從搜尋選了別縣的景點：進入該縣後飛到這個景點，不做整縣定位
+let flyAfterLoad: string | null = null
 
 const available = computed(() => Object.keys(catalog.index?.prefectures ?? {}))
 // 已載入完整地圖 bundle 的縣用全部大點，其餘縣先用全國總覽（各縣分數前段，bundles/featured.json）
 const allSpots = computed<MapSpot[]>(() =>
   available.value.flatMap((p) => catalog.mapSpots[p] ?? catalog.featured[p] ?? []),
 )
-// 顯示規則：全部大點（可依類型篩選）＋開啟中主題的景點（UX-FLOW.md A3、A4；主題層目前暫停）
+// 顯示規則：全部大點（可依類型篩選；開啟擴充包時不篩選，變淡當底圖）
 const visibleSpots = computed(() =>
   allSpots.value.filter((s) => {
     if (s.id === selectedId.value) return true
-    if (s.t?.some((t) => explore.themes.includes(t))) return true
     if (s.k !== 'major') return false
-    return !explore.category || categoryGroup(s.c) === explore.category
+    return explore.pack || !explore.category || categoryGroup(s.c) === explore.category
   }),
 )
 
-// 主題開關與 URL query 同步：分享連結與重新整理後保留（A4）
+// 擴充包開關與 URL query 同步：分享連結與重新整理後保留（UX-FLOW.md A4）
 watch(
-  () => route.query.themes,
+  () => route.query.pack,
   (q) => {
-    const list = typeof q === 'string' && q ? q.split(',') : []
-    if (list.join(',') !== explore.themes.join(',')) explore.themes = list
+    const key = typeof q === 'string' && packByKey.has(q) ? q : null
+    if (key !== explore.pack) explore.pack = key
   },
   { immediate: true },
 )
 watch(
-  () => explore.themes,
-  (list) => {
+  () => explore.pack,
+  (key) => {
     const q = { ...route.query }
-    if (list.length) q.themes = list.join(',')
-    else delete q.themes
-    if ((route.query.themes ?? '') !== (q.themes ?? '')) router.replace({ query: q })
+    if (key) q.pack = key
+    else delete q.pack
+    if ((route.query.pack ?? '') !== (q.pack ?? '')) router.replace({ query: q })
+    if (key) catalog.loadPack(key)
   },
 )
+// 設定中啟用的擴充包先載入：擴充包列要顯示件數、景點卡片要列出附近的點
+watch(
+  () => explore.enabledPacks,
+  (keys) => keys.forEach((k) => catalog.loadPack(k)),
+  { immediate: true },
+)
+
+const packMap = computed(() => {
+  const def = explore.pack ? packByKey.get(explore.pack) : undefined
+  if (!def) return null
+  const items = catalog.packs[def.key] ?? []
+  return { color: def.color, points: items.filter((it) => !explore.packGroup || it.g === explore.packGroup) }
+})
+
+/** 選取中的擴充包點 */
+const selectedPack = computed<{ pack: string; item: PackItem } | null>(() => {
+  const id = selectedId.value
+  const pack = id ? packOfId(id) : undefined
+  const item = pack ? catalog.packs[pack]?.find((it) => it.id === id) : undefined
+  return pack && item ? { pack, item } : null
+})
+
+// 景點附近（2 km 內）的擴充包點，每個擴充包最多 6 個
+const NEARBY_M = 2000
+const NEARBY_MAX = 6
+const nearby = computed<NearbyPack[]>(() => {
+  const s = selectedSpot.value
+  if (!s) return []
+  const { lat, lng } = s.location
+  return PACKS.filter((p) => explore.enabledPacks.includes(p.key)).flatMap((p) => {
+    const labels = new Map(p.groups.map((g) => [g.key, g.label]))
+    const items = (catalog.packs[p.key] ?? [])
+      .map((it) => ({ it, d: distanceM(lat, lng, it.lat, it.lng) }))
+      .filter((x) => x.d <= NEARBY_M)
+      .sort((a, b) => a.d - b.d)
+      .slice(0, NEARBY_MAX)
+      .map(({ it, d }) => ({ id: it.id, n: it.n, group: labels.get(it.g) ?? '', d: Math.round(d / 10) * 10 }))
+    return items.length ? [{ pack: p.key, label: p.label, color: p.color, items }] : []
+  })
+})
 const prefSpots = computed(() => (props.pref ? (catalog.mapSpots[props.pref] ?? []) : []))
 
 // 桌機：左上浮動面板蓋住地圖左側，地圖定位時扣掉這塊（寬 w-float＋左右間距）
@@ -120,6 +167,13 @@ watch(
       return
     }
     const spots = await trackSplash(catalog.loadMap(pref), 'map-bundle')
+    const target = flyAfterLoad ? spots.find((s) => s.id === flyAfterLoad) : undefined
+    flyAfterLoad = null
+    if (target) {
+      await nextTick()
+      mapRef.value?.flyTo(target.lng, target.lat)
+      return
+    }
     // 還沒有資料的縣：用縣界範圍定位
     if (!spots.length) await loadPrefectureShapes().catch(() => {})
     bounds.value = spotBounds(spots.filter((s) => s.f === 1)) ?? spotBounds(spots) ?? prefectureBounds(pref)
@@ -135,6 +189,14 @@ watch(
       selectedSpot.value = null
       return
     }
+    // 擴充包的點：確認資料載入後由 selectedPack 顯示
+    const pack = packOfId(id)
+    if (pack) {
+      selectedSpot.value = null
+      const items = await catalog.loadPack(pack)
+      if (!items.some((it) => it.id === id) && selectedId.value === id) closeSpot()
+      return
+    }
     loadingSpot.value = true
     selectedSpot.value = await catalog.getSpot(id)
     loadingSpot.value = false
@@ -145,10 +207,39 @@ watch(
 )
 
 async function select(id: string) {
-  await router.replace({ query: { ...route.query, spot: id } })
+  const pack = packOfId(id)
+  // 從景點卡片的「附近」點進擴充包的點：一併開啟那個擴充包
+  if (pack && explore.pack !== pack) explore.pack = pack
+  await router.replace({ query: { ...route.query, spot: id, ...(pack ? { pack } : {}) } })
   await nextTick()
-  const s = allSpots.value.find((x) => x.id === id)
-  if (s) mapRef.value?.flyTo(s.lng, s.lat)
+  const s = pack ? catalog.packs[pack]?.find((x) => x.id === id) : allSpots.value.find((x) => x.id === id)
+  if (s) mapRef.value?.flyTo(s.lng, s.lat, pack ? 15 : 13)
+}
+
+/** header 搜尋的結果：縣 → 進入地區頁；景點 → 選取並飛過去（別縣先進入該縣） */
+watch(
+  () => explore.searchPick,
+  (hit) => {
+    if (!hit) return
+    explore.searchPick = null
+    onSearch(hit)
+  },
+  { immediate: true },
+)
+
+function onSearch(hit: SearchHit) {
+  if (hit.kind === 'pref') {
+    router.push(`/map/${hit.pref}`)
+    return
+  }
+  explore.pack = null
+  explore.category = null
+  if (hit.pref === props.pref) {
+    void select(hit.id)
+    return
+  }
+  flyAfterLoad = hit.id
+  router.push({ path: `/map/${hit.pref}`, query: { spot: hit.id } })
 }
 
 function closeSpot() {
@@ -225,10 +316,17 @@ function onMoveEnd(view: MapViewState) {
         :selected-id="selectedId"
         :bounds="bounds"
         :color-key="explore.activePref"
-        :themes="explore.themes"
         :inset-left="insetLeft"
+        :pack="packMap"
         @select="select"
         @moveend="onMoveEnd"
+      />
+
+      <!-- 地圖上方：擴充包列（桌機；手機版面暫緩） -->
+      <PackBar
+        :pref="pref && regionOf(pref) ? pref : null"
+        class="absolute top-4 right-4 z-10 max-lg:hidden"
+        :style="{ left: `${insetLeft}px` }"
       />
 
       <!-- 左上浮動面板：地區標籤／地區清單、主題篩選、景點與地區特色 -->
@@ -237,7 +335,16 @@ function onMoveEnd(view: MapViewState) {
       >
         <template v-if="pref && regionOf(pref)">
           <RegionTag :pref="pref" class="max-lg:hidden" />
+          <PackList
+            v-if="explore.pack"
+            :pref="pref"
+            :selected-id="selectedId"
+            class="max-lg:hidden"
+            @select="select"
+            @highlight="(id) => mapRef?.highlight(id)"
+          />
           <RegionLists
+            v-else
             :pref="pref"
             :spots="prefSpots"
             :selected-id="selectedId"
@@ -247,7 +354,14 @@ function onMoveEnd(view: MapViewState) {
           />
         </template>
         <template v-else>
-          <HomeSidebar :available="available" class="max-lg:max-h-[40dvh]" />
+          <PackList
+            v-if="explore.pack"
+            :selected-id="selectedId"
+            class="max-lg:hidden"
+            @select="select"
+            @highlight="(id) => mapRef?.highlight(id)"
+          />
+          <HomeSidebar v-else :available="available" class="max-lg:max-h-[40dvh]" />
         </template>
       </div>
     </div>
@@ -256,7 +370,15 @@ function onMoveEnd(view: MapViewState) {
       v-if="selectedId"
       class="shrink-0 border-line lg:w-panel lg:border-l max-lg:absolute max-lg:inset-x-0 max-lg:bottom-0 max-lg:z-20 max-lg:h-[60dvh] max-lg:overflow-hidden max-lg:rounded-t-sheet max-lg:shadow-sheet"
     >
-      <SpotPanel :spot="selectedSpot" :loading="loadingSpot" @close="closeSpot" />
+      <PackPanel v-if="selectedPack" :item="selectedPack.item" :pack="selectedPack.pack" @close="closeSpot" />
+      <SpotPanel
+        v-else
+        :spot="selectedSpot"
+        :loading="loadingSpot"
+        :nearby="nearby"
+        @close="closeSpot"
+        @select-pack="select"
+      />
     </aside>
   </div>
 </template>

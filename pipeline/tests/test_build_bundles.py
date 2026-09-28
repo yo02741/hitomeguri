@@ -22,3 +22,10 @@ def test_spot_type_skips_designations() -> None:
     assert spot_type(["重要文化財", "神社"]) == "神社"
     assert spot_type(["世界遺產", "特別史跡"]) == "史跡"
     assert spot_type(["guide-S"]) is None
+
+
+def test_search_entry_drops_same_zh_name() -> None:
+    from pipeline.build_bundles import search_entry
+
+    e = {"id": "wd-Q1", "n": "清水寺", "z": "清水寺", "h": "きよみずでら", "r": "Kiyomizu-dera", "s": 90.0}
+    assert search_entry("kyoto", e) == ["wd-Q1", "kyoto", "清水寺", "きよみずでら", "", "Kiyomizu-dera", 90.0]

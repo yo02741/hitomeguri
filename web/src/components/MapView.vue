@@ -16,11 +16,18 @@ const props = defineProps<{
   bounds?: [number, number, number, number] | null
   /** 地區色改變時換一個值，讓地圖重新讀取 CSS 變數 */
   colorKey?: string | null
-  /** 目前開啟的主題：主題景點依主題色畫外框 */
-  themes?: string[]
   /** 左側被浮動面板蓋住的寬度（px）：定位與「目前看的範圍」都扣掉這一塊 */
   insetLeft?: number
+  /** 開啟中的擴充包：用主題色畫在最上層，景點變淡當底圖 */
+  pack?: { color: string; points: PackPoint[] } | null
 }>()
+
+export interface PackPoint {
+  id: string
+  n: string
+  lat: number
+  lng: number
+}
 
 export interface MapView {
   /** 可見範圍（扣掉 insetLeft）的中心 */
@@ -42,6 +49,9 @@ let map: maplibregl.Map | null = null
 let ready = false
 
 const SOURCE = 'spots'
+const PACK_SOURCE = 'pack'
+// 開啟擴充包時景點的不透明度
+const DIM = 0.3
 // hover 命中半徑（px）：游標靠近就放大，不必精準對到小圓點
 const HOVER_HIT = 14
 // 沒被群集起來的景點，有照片就直接畫成圓形照片；hover 時再放大
@@ -121,12 +131,36 @@ function toGeoJSON(spots: MapSpot[]): GeoJSON.FeatureCollection<GeoJSON.Point> {
         // 大點（major）與主題景點樣式不同；照片、名稱標籤由分數高的優先
         m: s.k === 'major' ? 1 : 0,
         s: s.s ?? 0,
-        // 顯示用主題：大點為空字串（墨色），主題景點取第一個開啟中的主題
-        th: s.k === 'major' ? '' : ((s.t ?? []).find((t) => props.themes?.includes(t)) ?? s.t?.[0] ?? ''),
+        // 顯示用主題：大點為空字串（墨色），主題景點取第一個主題（主題層暫停，map bundle 目前只有大點）
+        th: s.k === 'major' ? '' : (s.t?.[0] ?? ''),
         i: s.i ?? '',
       },
     })),
   }
+}
+
+function packGeoJSON(points: PackPoint[]): GeoJSON.FeatureCollection<GeoJSON.Point> {
+  return {
+    type: 'FeatureCollection',
+    features: points.map((p) => ({
+      type: 'Feature',
+      geometry: { type: 'Point', coordinates: [p.lng, p.lat] },
+      properties: { id: p.id, n: p.n, i: '' },
+    })),
+  }
+}
+
+/** 開啟擴充包時景點變淡、名稱標籤與照片收起 */
+function applyDim() {
+  if (!map || !ready) return
+  const o = props.pack ? DIM : 1
+  for (const layer of ['clusters', 'spots']) {
+    map.setPaintProperty(layer, 'circle-opacity', o)
+    map.setPaintProperty(layer, 'circle-stroke-opacity', o)
+  }
+  map.setPaintProperty('cluster-count', 'text-opacity', o)
+  map.setLayoutProperty('spot-labels', 'visibility', props.pack ? 'none' : 'visible')
+  syncPhotos()
 }
 
 function applyColors() {
@@ -150,6 +184,18 @@ function applyColors() {
   map.setPaintProperty('spot-labels', 'text-halo-color', paper)
   map.setPaintProperty('selected', 'circle-color', ink)
   map.setPaintProperty('selected', 'circle-stroke-color', strong)
+  const packColor = token(`--color-t-${props.pack?.color ?? 'major'}`)
+  map.setPaintProperty('pack-clusters', 'circle-color', packColor)
+  map.setPaintProperty('pack-clusters', 'circle-stroke-color', paper)
+  map.setPaintProperty('pack-count', 'text-color', paper)
+  for (const layer of ['pack-points', 'pack-hover']) {
+    map.setPaintProperty(layer, 'circle-color', packColor)
+    map.setPaintProperty(layer, 'circle-stroke-color', paper)
+  }
+  map.setPaintProperty('pack-labels', 'text-color', ink)
+  map.setPaintProperty('pack-labels', 'text-halo-color', paper)
+  map.setPaintProperty('pack-selected', 'circle-color', packColor)
+  map.setPaintProperty('pack-selected', 'circle-stroke-color', strong)
   for (const layer of map.getStyle().layers ?? []) {
     if (layer.type === 'background') map.setPaintProperty(layer.id, 'background-color', land)
   }
@@ -215,6 +261,58 @@ function addLayers() {
     },
     paint: { 'text-halo-width': 1.5 },
   })
+  // 擴充包：獨立的來源與群集，畫在景點上面
+  map.addSource(PACK_SOURCE, {
+    type: 'geojson',
+    data: packGeoJSON(props.pack?.points ?? []),
+    cluster: true,
+    clusterRadius: 40,
+    clusterMaxZoom: 12,
+  })
+  map.addLayer({
+    id: 'pack-clusters',
+    type: 'circle',
+    source: PACK_SOURCE,
+    filter: ['has', 'point_count'],
+    paint: {
+      'circle-radius': ['step', ['get', 'point_count'], 11, 10, 14, 50, 18],
+      'circle-stroke-width': 2,
+    },
+  })
+  map.addLayer({
+    id: 'pack-count',
+    type: 'symbol',
+    source: PACK_SOURCE,
+    filter: ['has', 'point_count'],
+    layout: {
+      'text-field': ['get', 'point_count_abbreviated'],
+      'text-font': FONT_BOLD,
+      'text-size': 11,
+    },
+  })
+  map.addLayer({
+    id: 'pack-points',
+    type: 'circle',
+    source: PACK_SOURCE,
+    filter: ['!', ['has', 'point_count']],
+    paint: { 'circle-radius': 6, 'circle-stroke-width': 2 },
+  })
+  map.addLayer({
+    id: 'pack-labels',
+    type: 'symbol',
+    source: PACK_SOURCE,
+    filter: ['!', ['has', 'point_count']],
+    minzoom: 12,
+    layout: {
+      'text-field': ['get', 'n'],
+      'text-font': FONT_REGULAR,
+      'text-size': 12,
+      'text-offset': [0, 1.1],
+      'text-anchor': 'top',
+      'text-optional': true,
+    },
+    paint: { 'text-halo-width': 1.5 },
+  })
   map.addLayer({
     id: 'hover',
     type: 'circle',
@@ -229,6 +327,20 @@ function addLayers() {
     filter: ['==', ['get', 'id'], props.selectedId ?? ''],
     paint: { 'circle-radius': 10, 'circle-stroke-width': 3 },
   })
+  map.addLayer({
+    id: 'pack-hover',
+    type: 'circle',
+    source: PACK_SOURCE,
+    filter: ['==', ['get', 'id'], ''],
+    paint: { 'circle-radius': 10, 'circle-stroke-width': 3 },
+  })
+  map.addLayer({
+    id: 'pack-selected',
+    type: 'circle',
+    source: PACK_SOURCE,
+    filter: ['==', ['get', 'id'], props.selectedId ?? ''],
+    paint: { 'circle-radius': 10, 'circle-stroke-width': 3 },
+  })
 
   // 點選：以 hover 中的景點為準（命中範圍比圓點大）
   // 觸控沒有 hover：直接找點擊位置附近的景點
@@ -238,20 +350,22 @@ function addLayers() {
       emit('select', hit.id)
       return
     }
-    const f = map?.queryRenderedFeatures(e.point, { layers: ['clusters'] })[0]
+    const f = map?.queryRenderedFeatures(e.point, { layers: ['pack-clusters', 'clusters'] })[0]
     if (f) void expandCluster(f)
   })
   map.on('mousemove', (e) => updateHover(e.point))
   map.on('mouseout', () => setHover(null))
   map.on('move', positionHover)
   map.on('idle', syncPhotos)
-  map.on('mouseenter', 'clusters', () => map && !hover.value && (map.getCanvas().style.cursor = 'pointer'))
-  map.on('mouseleave', 'clusters', () => map && !hover.value && (map.getCanvas().style.cursor = ''))
+  for (const layer of ['clusters', 'pack-clusters']) {
+    map.on('mouseenter', layer, () => map && !hover.value && (map.getCanvas().style.cursor = 'pointer'))
+    map.on('mouseleave', layer, () => map && !hover.value && (map.getCanvas().style.cursor = ''))
+  }
 }
 
 async function expandCluster(f: maplibregl.MapGeoJSONFeature) {
   if (!map) return
-  const src = map.getSource(SOURCE) as GeoJSONSource
+  const src = map.getSource(f.source) as GeoJSONSource
   const zoom = await src.getClusterExpansionZoom(f.properties?.cluster_id as number)
   const center = (f.geometry as GeoJSON.Point).coordinates as [number, number]
   map.easeTo({ center, zoom, offset: [(props.insetLeft ?? 0) / 2, 0] }, { user: true })
@@ -263,6 +377,7 @@ function setHover(h: Hover | null) {
   hover.value = h
   if (!changed) return
   map.setFilter('hover', ['==', ['get', 'id'], h?.id ?? ''])
+  map.setFilter('pack-hover', ['==', ['get', 'id'], h?.id ?? ''])
   // hover 的名稱小標取代地圖上的同名標籤，避免重疊
   map.setFilter('spot-labels', ['all', ['!', ['has', 'point_count']], ['!=', ['get', 'id'], h?.id ?? '']])
   map.getCanvas().style.cursor = h ? 'pointer' : ''
@@ -286,7 +401,8 @@ function nearestSpot(pt: { x: number; y: number }): Hover | null {
       [pt.x - r, pt.y - r],
       [pt.x + r, pt.y + r],
     ],
-    { layers: ['spots'] },
+    // 開啟擴充包時只有擴充包的點可以選，變淡的景點只當底圖
+    { layers: props.pack ? ['pack-points'] : ['spots'] },
   )
   let best: Hover | null = null
   let bestD = Infinity
@@ -309,7 +425,7 @@ const photoPins = new Map<string, maplibregl.Marker>()
 function syncPhotos() {
   if (!map) return
   const want = new Map<string, { lng: number; lat: number; thumb: string; s: number }>()
-  for (const f of map.queryRenderedFeatures({ layers: ['spots'] })) {
+  for (const f of props.pack ? [] : map.queryRenderedFeatures({ layers: ['spots'] })) {
     const fp = f.properties as { id: string; i?: string; s: number }
     if (!fp.i || failedThumbs.has(fp.i) || want.has(fp.id)) continue
     const [lng, lat] = (f.geometry as GeoJSON.Point).coordinates as [number, number]
@@ -415,6 +531,7 @@ onMounted(() => {
     addLayers()
     ready = true
     applyColors()
+    applyDim()
     if (props.bounds) fit(props.bounds, false)
   })
   map.on('moveend', (e: { originalEvent?: Event; user?: boolean }) => {
@@ -446,8 +563,8 @@ function fit(b: [number, number, number, number], animate = true) {
 }
 
 watch(
-  () => [props.spots, props.themes] as const,
-  ([spots]) => {
+  () => props.spots,
+  (spots) => {
     if (!map || !ready) return
     ;(map.getSource(SOURCE) as GeoJSONSource | undefined)?.setData(toGeoJSON(spots))
     setHover(null)
@@ -459,11 +576,23 @@ watch(
   (id) => {
     if (!map || !ready) return
     map.setFilter('selected', ['==', ['get', 'id'], id ?? ''])
+    map.setFilter('pack-selected', ['==', ['get', 'id'], id ?? ''])
     for (const [pid, m] of photoPins) {
       const el = m.getElement()
       el.classList.toggle('border-region-strong', pid === id)
       el.classList.toggle('border-paper', pid !== id)
     }
+  },
+)
+
+watch(
+  () => props.pack,
+  (pack) => {
+    if (!map || !ready) return
+    ;(map.getSource(PACK_SOURCE) as GeoJSONSource | undefined)?.setData(packGeoJSON(pack?.points ?? []))
+    setHover(null)
+    applyColors()
+    applyDim()
   },
 )
 
@@ -486,10 +615,11 @@ defineExpose({
   /** 由清單滑過時在地圖上標出景點（null 取消） */
   highlight(id: string | null) {
     if (!map || !ready) return
-    const s = id ? props.spots.find((x) => x.id === id) : undefined
+    const spot = id ? props.spots.find((x) => x.id === id) : undefined
+    const s = spot ?? (id ? props.pack?.points.find((x) => x.id === id) : undefined)
     if (!s) return setHover(null)
     const p = map.project([s.lng, s.lat])
-    setHover({ id: s.id, name: s.n, lng: s.lng, lat: s.lat, x: p.x, y: p.y, thumb: s.i })
+    setHover({ id: s.id, name: s.n, lng: s.lng, lat: s.lat, x: p.x, y: p.y, thumb: spot?.i })
   },
   flyTo(lng: number, lat: number, zoom = 13) {
     // 右欄剛打開時地圖寬度已變：先同步尺寸再算目標位置

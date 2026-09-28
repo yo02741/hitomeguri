@@ -1,12 +1,23 @@
 <script setup lang="ts">
-import { useRoute } from 'vue-router'
+import { useRoute, useRouter } from 'vue-router'
 
+import type { SearchHit } from '../services/search'
+import { useExploreStore } from '../stores/explore'
 import { useUserStore } from '../stores/user'
+import SearchBox from './SearchBox.vue'
 import Wordmark from './Wordmark.vue'
 
 const userStore = useUserStore()
+const explore = useExploreStore()
 
 const route = useRoute()
+const router = useRouter()
+
+// 搜尋結果交給探索頁處理；在其他頁（行程、紀錄）先回到探索頁
+function onPick(hit: SearchHit) {
+  explore.searchPick = hit
+  if (!['home', 'explore', 'map'].includes(String(route.name))) router.push('/')
+}
 
 const tabs = [
   { to: '/', label: '探索', match: ['home', 'explore', 'map'] },
@@ -37,6 +48,7 @@ function isActive(tab: (typeof tabs)[number]) {
     </nav>
 
     <div class="ml-auto flex items-center gap-2.5">
+      <SearchBox class="max-md:hidden" @pick="onPick" />
       <RouterLink
         v-if="userStore.user"
         to="/me"
