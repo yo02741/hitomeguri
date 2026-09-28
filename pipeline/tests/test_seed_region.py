@@ -298,6 +298,10 @@ def test_official_names():
 def test_non_spot_kind():
     assert major.non_spot_kind({"政令指定都市の区"})
     assert major.non_spot_kind({"廃止市町村"})
+    assert major.non_spot_kind({"日本の区"})
+    assert not major.non_spot_kind({"幹線二級市町村道"})
+    assert not major.non_spot_kind({"行政区画"})
+    assert not major.non_spot_kind({"市町村営水道用ダム"})
     assert major.non_spot_kind({"令制国"})
     assert major.non_spot_kind({"祭り"})
     assert major.non_spot_kind({"戦闘"})
