@@ -51,3 +51,13 @@ def test_is_food_and_overview():
     assert specialties.is_overview("名古屋めし", "名古屋めし")
     assert specialties.is_overview("北海道のラーメン", "ご当地ラーメン")
     assert not specialties.is_overview("徳島ラーメン", "ご当地ラーメン")
+
+
+def test_tea_only_for_tea_names():
+    assert specialties.category_for("宇治茶", [], "food") == "tea"
+    assert specialties.category_for("奈良茶飯", [], "kyodo") == "kyodo"
+    assert specialties.category_for("茶ごめ", [], "kyodo") == "kyodo"
+
+
+def test_instant_noodles_not_food():
+    assert not specialties.is_food(["インスタントラーメン"])

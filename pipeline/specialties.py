@@ -19,6 +19,7 @@ from pipeline import geo
 from pipeline.kana import is_kana, normalize_kana, romaji_with_spacing
 from pipeline.major import (
     PrefResolver,
+    excluded_ids,
     log,
     name_variants,
     norm_name,
@@ -52,8 +53,8 @@ FOOD_P31 = (
 # 這些優先判斷為「不是食物」（喫茶店的「茶」、ラーメン店）
 NOT_FOOD_P31 = (
     "店", "企業", "会社", "チェーン", "楽曲", "歌", "アルバム", "番組", "書籍", "漫画",
-    "キャラクター", "イベント", "restaurant", "company", "business", "song", "album",
-    "television", "book", "manga", "character", "event",
+    "キャラクター", "イベント", "インスタント", "商品", "restaurant", "company", "business",
+    "song", "album", "television", "book", "manga", "character", "event", "instant", "product",
 )  # fmt: skip
 SWEETS_WORDS = (
     "まんじゅう",
@@ -109,7 +110,8 @@ def category_for(name: str, p31_labels: list[str], hint: str) -> str:
     text = name + " ".join(p31_labels)
     if any(w in text for w in SWEETS_WORDS):
         return "sweets"
-    if "茶" in name or any(x.endswith("茶") for x in p31_labels):
+    # 「宇治茶」這類茶葉；「茶ごめ」「奈良茶飯」是料理
+    if name.endswith("茶") or any(x.endswith("茶") for x in p31_labels):
         return "tea"
     if any(w in text for w in SAKE_WORDS):
         return "sake"
@@ -146,6 +148,8 @@ def _match(
             label = norm_name(e.labels.get("ja", "")) if e else ""
             if not (e and label and (label == v or v in label or label in v)):
                 continue
+            if is_overview(e.labels.get("ja", ""), ""):
+                continue
             if require_food and not is_food([p31_cache.get(x, "") for x in e.instance_of]):
                 continue
             return e
@@ -159,12 +163,19 @@ def wiki_drafts(prefs: list[str]) -> list[Draft]:
         if fixed and fixed not in prefs:
             continue
         for t in wikipedia.category_members("jawiki", cat, depth=1):
-            if not is_overview(t, cat):
-                hints.setdefault(t, (fixed, hint))
+            if is_overview(t, cat):
+                continue
+            prev = hints.get(t)
+            # 同一條目在多個分類：固定的縣（名古屋めし→愛知）與拉麵類別都保留
+            hints[t] = (
+                (prev[0] if prev else None) or fixed,
+                "ramen" if hint == "ramen" or (prev and prev[1] == "ramen") else hint,
+            )
     for p in prefs:
         for pat in PREF_WIKI_CATEGORIES:
             for t in wikipedia.category_members("jawiki", pat.format(name=pref_full_name(p)), 0):
-                hints.setdefault(t, (p, "food"))
+                prev = hints.get(t)
+                hints[t] = (p, prev[1] if prev else "food")
     log(f"維基分類：{len(hints)} 條")
     qids = wikipedia.wikidata_ids("jawiki", list(hints))
     ents = wikidata.entities(sorted(set(qids.values()))) if qids else {}
@@ -180,8 +191,12 @@ def wiki_drafts(prefs: list[str]) -> list[Draft]:
             continue
         labels = [p31.get(q, "") for q in ent.instance_of]
         # 分類裡混有店家、公司、歌曲：P31 是食物才收（沒有 P31 的拉麵條目看名稱）
+        # 沒有 P31 的條目：名稱是麵類的拉麵、或列在固定縣的食文化分類（名古屋めし）裡的才收
         named_ramen = hint == "ramen" and re.search(r"(ラーメン|拉麺|そば|麺)$", title)
-        if not (is_food(labels) or (named_ramen and not ent.instance_of)):
+        untyped_ok = not ent.instance_of and (named_ramen or fixed)
+        if not (is_food(labels) or untyped_ok):
+            continue
+        if is_overview(ent.labels.get("ja") or title, ""):
             continue
         pref = fixed or resolver.resolve(ent) or pref_from_text(leads.get(title, ""))
         if pref not in prefs:
@@ -250,6 +265,8 @@ def seed_specialties(prefs: list[str]) -> str:
     )
 
     today = dt.date.today().isoformat()
+    # 人工排除清單（data/seed/exclude.json）也用在地區特色：id 為 {縣}-{QID}
+    manual = excluded_ids()
     drafts = merge_drafts(maff_drafts(prefs) + wiki_drafts(prefs) + seed_drafts(prefs))
 
     # 還沒對到 Wikidata 的（郷土料理、攻略種子）用名稱搜尋
@@ -319,6 +336,8 @@ def seed_specialties(prefs: list[str]) -> str:
             img = [Image(url=i.url, author=i.author, license=i.license, source_url=i.source_url)]
         # 對到 Wikidata 的用 QID；只有郷土料理的用料理頁 id
         key = d.qid or (f"maff-{d.maff.id}" if d.maff else "")
+        if f"{d.prefecture}-{key}" in manual:
+            continue
         spec = Specialty(
             id=f"{d.prefecture}-{key}",
             name=LocalizedName(
