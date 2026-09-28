@@ -398,7 +398,7 @@ onMounted(() => {
     zoom: JAPAN_ZOOM,
     attributionControl: {
       compact: true,
-      customAttribution: '景點資料 © OpenStreetMap contributors・Wikidata・Wikimedia Commons',
+      customAttribution: '景點資料 © OpenStreetMap contributors・Wikidata・Wikimedia Commons・維基百科（CC BY-SA 4.0）',
     },
   })
   map.addControl(new maplibregl.NavigationControl({ showCompass: false }), 'bottom-right')

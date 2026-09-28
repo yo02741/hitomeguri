@@ -120,14 +120,14 @@ def seed_themes(pref: str) -> str:
             data = spot.model_dump(mode="json", exclude_none=True)
             prev = old_theme.get(sid)
             if prev:
-                for k in ("summary_zh", "best_months", "stay_minutes", "verification"):
+                for k in ("summary", "best_months", "stay_minutes", "verification"):
                     if prev.get(k) and not data.get(k):
                         data[k] = prev[k]
-                if prev.get("kana_source") == "llm" and not data["name"].get("kana"):
+                if prev.get("kana_source") == "wikipedia" and not data["name"].get("kana"):
                     data["name"].update(
                         {k: prev["name"][k] for k in ("kana", "romaji") if k in prev["name"]}
                     )
-                    data["kana_source"] = "llm"
+                    data["kana_source"] = "wikipedia"
             new[sid] = data
             kept += 1
         counts[theme] = kept

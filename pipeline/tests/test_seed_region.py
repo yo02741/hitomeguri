@@ -4,7 +4,7 @@ import json
 
 import pytest
 
-from pipeline import build_bundles, major
+from pipeline import build_bundles, major, wiki
 from pipeline.sources.commons import ImageInfo
 from pipeline.sources.osm import OsmElement
 from pipeline.sources.wikidata import Entity
@@ -117,6 +117,14 @@ def fake_sources(monkeypatch, tmp_path):
             {"name_ja": "存在しない寺", "guide_tier": "A", "themes": [], "kind": "major"},
         ],
     )
+    monkeypatch.setattr(
+        wiki.wikipedia,
+        "intro_extracts",
+        lambda site, titles: {
+            "zhwiki": {"伏見稻荷大社": "伏見稻荷大社是位於京都市伏見區的神社。\n第二段。"},
+            "jawiki": {"鹿苑寺": "鹿苑寺（ろくおんじ）は、京都市北区にある臨済宗の寺院。"},
+        }.get(site, {}),
+    )
     monkeypatch.setattr(major, "SPOTS_DIR", tmp_path / "spots")
     return tmp_path
 
@@ -165,12 +173,14 @@ def test_rerun_preserves_enriched_fields(fake_sources):
     path = fake_sources / "spots" / "kyoto.json"
     spots = json.loads(path.read_text(encoding="utf-8"))
     for s in spots:
-        s["summary_zh"] = "既有簡介"
+        if s.get("summary"):
+            s["summary"]["fetched_at"] = "2000-01-01"
         s["updated_at"] = "2000-01-01"
     path.write_text(json.dumps(spots, ensure_ascii=False), encoding="utf-8")
     major.seed_region("kyoto")
     again = json.loads(path.read_text(encoding="utf-8"))
-    assert all(s["summary_zh"] == "既有簡介" for s in again)
+    # 簡介內容沒變：取得時間與 updated_at 都保留
+    assert all(s["summary"]["fetched_at"] == "2000-01-01" for s in again if s.get("summary"))
     assert all(s["updated_at"] == "2000-01-01" for s in again)
 
 

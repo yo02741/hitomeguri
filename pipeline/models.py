@@ -36,6 +36,16 @@ class Source(StrictModel):
     fetched_at: str
 
 
+class Summary(StrictModel):
+    """簡介：取自維基百科開頭段落（不由 LLM 撰寫）。顯示時須標示出處與授權。"""
+
+    text: str
+    lang: Literal["zh", "ja"]
+    source_url: str
+    license: str
+    fetched_at: str
+
+
 class Image(StrictModel):
     url: str
     author: str
@@ -82,8 +92,8 @@ class Spot(StrictModel):
 
     id: str
     name: LocalizedName
-    # 假名的來源；"llm" 表示由 LLM 補、尚未人工確認（PLAN.md §11：reviewed: false）。
-    kana_source: Literal["wikidata", "osm", "llm"] | None = None
+    # 假名的來源（一律來自實際資料，不由 LLM 補）
+    kana_source: Literal["wikidata", "osm", "wikipedia"] | None = None
     location: Location
     prefecture: Prefecture
     city: str | None = None
@@ -92,7 +102,7 @@ class Spot(StrictModel):
     tags: list[str] = Field(default_factory=list)
     featured: bool = False
     score: float = 0
-    summary_zh: str = ""  # 由 enrich 補；空字串表示尚未補全
+    summary: Summary | None = None  # 維基百科開頭段落；沒有條目就沒有
     best_months: list[int] | None = None
     stay_minutes: int | None = None
     nearest_stations: list[NearestStation] | None = None

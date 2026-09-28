@@ -39,7 +39,7 @@ export interface StationName {
 export interface Spot {
   id: string
   name: { ja: string; kana?: string; romaji?: string; zh_tw: string; en?: string }
-  kana_source?: 'wikidata' | 'osm' | 'llm'
+  kana_source?: 'wikidata' | 'osm' | 'wikipedia'
   location: { lat: number; lng: number }
   prefecture: string
   city?: string
@@ -48,7 +48,8 @@ export interface Spot {
   tags: string[]
   featured: boolean
   score: number
-  summary_zh: string
+  /** 維基百科開頭段落（中文優先，沒有則日文）；顯示時標示出處與授權 */
+  summary?: { text: string; lang: 'zh' | 'ja'; source_url: string; license: string; fetched_at: string }
   best_months?: number[]
   stay_minutes?: number
   nearest_stations?: { name: StationName; distance_m: number }[]

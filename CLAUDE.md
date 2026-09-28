@@ -36,8 +36,8 @@ uv venv && uv pip install -e ".[dev]" # pipeline 環境
 
 ## 資料 pipeline 在 GitHub Actions 上跑
 Claude Code 的雲端沙箱連不到 Wikidata、OSM、Wikimedia，也沒有 Claude API key，所以採集與補全放在 Actions：
-- `seed-region.yml`（手動）：輸入縣 slug，各縣平行採集，結果推到 `pipeline/seed-<run>` 分支。
-- `enrich.yml`（手動，需 `ANTHROPIC_API_KEY` secret）：task=enrich（LLM 補簡介／假名）**已停用**，違反「內容來自實際來源」原則；task=verify-flights（帶 web search 查證航線）保留，留待排程使用。
+- `seed-region.yml`（手動）：輸入縣 slug，各縣平行採集，結果推到 `pipeline/seed-<run>` 分支。command=seed-region 會連同維基百科簡介與念法一起做；seed-wiki 只更新已有大點的縣的簡介與念法（`pipeline/wiki.py`）。
+- `verify-flights.yml`（手動，需 `ANTHROPIC_API_KEY` secret）：帶 web search 查證直飛航線，留待排程使用。原本 LLM 補簡介／假名的 enrich 已移除（違反「內容來自實際來源」原則）。
 - 產出分支檢查報告（commit 訊息與 Actions 摘要）後再合併進工作分支。
 
 ## 結構速覽

@@ -606,7 +606,6 @@ def to_spot(
         tags=tags,
         featured=featured,
         score=d.score,
-        summary_zh="",
         nearest_stations=nearest_stations(d, stations) or None,
         images=img_list,
         external_ids=ExternalIds(wikidata=d.qid, osm=d.osm_els[0].osm_id if d.osm_els else None),
@@ -619,7 +618,7 @@ def to_spot(
 # ---------- 與既有檔案合併、輸出 ----------
 
 # pipeline 不產生、由 enrich / verify / 人工維護的欄位：重跑時保留。
-PRESERVED = ("summary_zh", "best_months", "stay_minutes", "goshuin", "omamori", "verification")
+PRESERVED = ("summary", "best_months", "stay_minutes", "goshuin", "omamori", "verification")
 
 
 def _comparable(d: dict[str, Any]) -> dict[str, Any]:
@@ -640,10 +639,14 @@ def merge_existing(spots: list[Spot], path) -> list[dict[str, Any]]:  # noqa: AN
             for k in PRESERVED:
                 if prev.get(k) and not new.get(k):
                     new[k] = prev[k]
-            if prev.get("kana_source") == "llm" and not new["name"].get("kana"):
+            if prev.get("kana_source") == "wikipedia" and not new["name"].get("kana"):
                 new["name"]["kana"] = prev["name"].get("kana")
                 new["name"]["romaji"] = prev["name"].get("romaji")
-                new["kana_source"] = "llm"
+                new["kana_source"] = "wikipedia"
+            # 維基百科的來源由 pipeline.wiki 加上（簡介、念法），重新採集時沿用
+            urls = {s["url"] for s in new["sources"]}
+            wiki_sources = [s for s in prev.get("sources", []) if "wikipedia.org" in s["url"]]
+            new["sources"] += [s for s in wiki_sources if s["url"] not in urls]
             prev_fetch = {s["url"]: s["fetched_at"] for s in prev.get("sources", [])}
             for s in new["sources"]:
                 s["fetched_at"] = prev_fetch.get(s["url"], s["fetched_at"])
@@ -708,6 +711,11 @@ def seed_region(pref: str) -> str:
     spots = [to_spot(pref, d, d.key in featured_keys, images, stations, today) for d in keep]
     path = SPOTS_DIR / f"{pref}.json"
     out = merge_existing(spots, path)
+    # 簡介與缺漏念法取自維基百科（pipeline.wiki），與採集同一次完成
+    from pipeline.wiki import apply_wiki
+
+    apply_wiki(out, today)
+    out = [Spot.model_validate(s).model_dump(mode="json", exclude_none=True) for s in out]
     write_spots(pref, out)
     return report(pref, out, unmatched)
 

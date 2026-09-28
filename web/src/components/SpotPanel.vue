@@ -29,6 +29,8 @@ function sourceLabel(url: string): string {
     const host = new URL(url).hostname.replace(/^www\./, '')
     if (host.includes('wikidata')) return 'Wikidata'
     if (host.includes('openstreetmap')) return 'OpenStreetMap'
+    if (host === 'ja.wikipedia.org') return '維基百科（日文）'
+    if (host === 'zh.wikipedia.org') return '維基百科（中文）'
     return host
   } catch {
     return url
@@ -119,7 +121,14 @@ function distance(m: number): string {
       </div>
     </div>
 
-    <p v-if="spot.summary_zh" class="mx-5 mt-3.5 text-body-sm leading-[1.8]">{{ spot.summary_zh }}</p>
+    <figure v-if="spot.summary" class="mx-5 mt-3.5 flex flex-col gap-1">
+      <p :lang="spot.summary.lang === 'ja' ? 'ja' : undefined" class="text-body-sm leading-[1.8]">{{ spot.summary.text }}</p>
+      <figcaption class="text-caption text-sub">
+        <a :href="spot.summary.source_url" target="_blank" rel="noopener" class="text-sub"
+          >維基百科（{{ spot.summary.lang === 'ja' ? '日文' : '中文' }}）</a
+        >・{{ spot.summary.license }}
+      </figcaption>
+    </figure>
 
     <div class="mx-5 mt-2 flex flex-wrap gap-x-3 text-caption text-sub">
       <span>來源</span>

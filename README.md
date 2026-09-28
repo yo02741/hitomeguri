@@ -47,5 +47,6 @@ uv venv && uv pip install -e ".[dev]"
 
 - 景點：Wikidata（CC0）、OpenStreetMap contributors（ODbL）
 - 照片：Wikimedia Commons，各張依原作者與授權標示於景點卡片
+- 景點簡介與部分念法：維基百科（中文、日文）開頭段落，CC BY-SA 4.0；每則簡介在景點卡片標示出處條目。中文簡介經 OpenCC 做簡→繁字元轉換
 - 縣界：出典：地球地図日本（国土地理院），經 dataofjapan/land 轉為 GeoJSON 後簡化
 - 底圖：OpenFreeMap（OpenStreetMap）

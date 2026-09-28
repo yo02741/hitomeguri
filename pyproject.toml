@@ -7,6 +7,8 @@ dependencies = [
   "pydantic>=2.11",
   "httpx>=0.28",
   "anthropic>=1.0",
+  # 中文維基簡介轉繁體（字元轉換，不改用語）
+  "opencc-python-reimplemented>=0.1.7",
 ]
 
 [project.optional-dependencies]
@@ -30,6 +32,5 @@ testpaths = ["pipeline/tests"]
 
 [tool.ruff.lint.per-file-ignores]
 # prompt 內的中文長句不斷行
-"pipeline/enrich.py" = ["E501"]
 "pipeline/verify_flights.py" = ["E501"]
 "pipeline/tests/*" = ["E501"]
