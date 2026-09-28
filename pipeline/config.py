@@ -27,6 +27,11 @@ HERITAGE_BONUS_CAP = 35.0
 # 攻略種子清單的加分（PLAN.md §5.0）；S 級一律列入精選。
 GUIDE_TIER_BONUS = {"S": 30.0, "A": 12.0}
 
+# 列在日文維基「{縣}の観光地」分類／清單條目裡的地點（人工整理的觀光地）加分，
+# 讓沒有文化指定的熱門地點（國際通、瀨長島、購物中心、市場）也進得了前段
+TOURISM_LIST_BONUS = 18.0
+TOURISM_CATEGORY_DEPTH = 2
+
 # 最近車站
 STATION_MAX_DISTANCE_M = 1500
 STATION_MAX_COUNT = 2

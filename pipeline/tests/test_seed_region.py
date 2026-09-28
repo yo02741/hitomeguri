@@ -125,6 +125,8 @@ def fake_sources(monkeypatch, tmp_path):
             "jawiki": {"鹿苑寺": "鹿苑寺（ろくおんじ）は、京都市北区にある臨済宗の寺院。"},
         }.get(site, {}),
     )
+    # 維基「京都府の観光地」：Q5（鹿苑寺）列在上面
+    monkeypatch.setattr(major, "tourism_qids", lambda pref: {"Q5"})
     monkeypatch.setattr(major, "SPOTS_DIR", tmp_path / "spots")
     return tmp_path
 
@@ -225,3 +227,18 @@ def test_prune_and_refill_featured(tmp_path, monkeypatch):
     added = curate.refill_featured(kept)
     # 類型不明的「機関車」不遞補，改補有類型的乙神社
     assert added == ["乙神社"]
+
+
+def test_category_for_shopping_and_coast():
+    def cat(name, **tags):
+        el = OsmElement("node/1", 0, 0, {"name": name, **tags})
+        return major.category(major.Draft(key="k", lat=0, lng=0, osm_els=[el]))
+
+    assert cat("国際通り") == "街區"
+    assert cat("港川外人住宅") == "街區"
+    assert cat("泊いゆまち") == "市場"
+    assert cat("イーアス沖縄豊崎") == "購物"
+    assert cat("瀬長島") == "島"
+    assert cat("古宇利大橋") == "橋"
+    assert cat("知念岬") == "岬"
+    assert cat("どこか", natural="beach") == "海灘"

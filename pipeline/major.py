@@ -26,8 +26,8 @@ from pipeline.models import (
     Spot,
     StationName,
 )
-from pipeline.paths import SEED_DIR, SPOTS_DIR
-from pipeline.sources import commons, osm, pageviews, wikidata
+from pipeline.paths import REGIONS_JSON, SEED_DIR, SPOTS_DIR
+from pipeline.sources import commons, osm, pageviews, wikidata, wikipedia
 from pipeline.sources.osm import OsmElement
 from pipeline.sources.wikidata import Entity
 
@@ -70,6 +70,7 @@ class Draft:
     views: dict[str, int] = field(default_factory=dict)
     heritage_tags: list[str] = field(default_factory=list)
     score: float = 0.0
+    listed: bool = False  # 列在維基「{縣}の観光地」
 
     @property
     def qid(self) -> str | None:
@@ -166,6 +167,33 @@ def _entity_in_pref(ent: Entity, pref: str) -> bool:
     return geo.contains_fine(pref, ent.lat, ent.lng)
 
 
+def pref_full_name(pref: str) -> str:
+    """含「都道府県」字尾的正式名稱（沖縄 → 沖縄県）。"""
+    regions = json.loads(REGIONS_JSON.read_text(encoding="utf-8"))["regions"]
+    ja = next(r["name"]["ja"] for r in regions if r["prefecture"] == pref)
+    if pref == "hokkaido":
+        return ja
+    if pref == "tokyo":
+        return f"{ja}都"
+    if pref in ("kyoto", "osaka"):
+        return f"{ja}府"
+    return f"{ja}県"
+
+
+def tourism_qids(pref: str) -> set[str]:
+    """日文維基「{縣}の観光地」分類（含子分類）與同名清單條目裡連到的地點 → Wikidata QID。
+
+    這是人工整理的觀光地，涵蓋沒有文化指定的熱門地點（街道、島、購物中心、市場）。
+    清單條目也會連到市町村、概念條目，之後由 drop_non_spots 與「沒有座標」排除。
+    """
+    name = pref_full_name(pref)
+    titles = wikipedia.category_members("jawiki", f"{name}の観光地", config.TOURISM_CATEGORY_DEPTH)
+    listed = wikipedia.page_links("jawiki", f"{name}の観光地")
+    log(f"[{pref}]   維基觀光地：分類 {len(titles)} 條、清單條目連結 {len(listed)} 條")
+    ids = wikipedia.wikidata_ids("jawiki", titles + listed)
+    return set(ids.values())
+
+
 def collect(pref: str) -> tuple[dict[str, Draft], dict[str, Entity]]:
     iso = geo.iso_code(pref)
     south, west, north, east = geo.bbox(pref)
@@ -194,16 +222,23 @@ def collect(pref: str) -> tuple[dict[str, Draft], dict[str, Entity]]:
     )
     log(f"[{pref}]   Wikidata {len(wd_qids)} 筆（框內）")
 
+    log(f"[{pref}] 維基「{pref_full_name(pref)}の観光地」…")
+    tour_qids = sorted(tourism_qids(pref))
+
     osm_qids = [e.tags["wikidata"] for e in osm_els if QID_RE.match(e.tags.get("wikidata", ""))]
-    ents = wikidata.entities(osm_qids + wd_qids)
+    ents = wikidata.entities(osm_qids + wd_qids + tour_qids)
     _resolver.prefetch(list(ents.values()))
     _resolver_seen.update(ents)
 
     drafts: dict[str, Draft] = {}
-    for qid in wd_qids:
+    for qid in [*wd_qids, *tour_qids]:
         ent = ents.get(qid)
-        if ent and _entity_in_pref(ent, pref):
+        if qid not in drafts and ent and _entity_in_pref(ent, pref):
             drafts[qid] = Draft(key=qid, lat=ent.lat, lng=ent.lng, ent=ent)  # type: ignore[arg-type]
+    for qid in tour_qids:
+        if qid in drafts:
+            drafts[qid].listed = True
+    log(f"[{pref}]   維基觀光地在縣內且有座標：{sum(d.listed for d in drafts.values())} 筆")
 
     loose: list[OsmElement] = []
     for el in osm_els:
@@ -454,6 +489,8 @@ def score(drafts: dict[str, Draft]) -> None:
         s += min(bonus, config.HERITAGE_BONUS_CAP)
         if d.tier:
             s += config.GUIDE_TIER_BONUS.get(d.tier, 0.0)
+        if d.listed:
+            s += config.TOURISM_LIST_BONUS
         d.score = round(s, 2)
 
 
@@ -471,6 +508,14 @@ _CATEGORY_BY_TAG = [
     (("tourism", "viewpoint"), "展望"),
     (("historic", "ruins"), "遺跡"),
     (("historic", "archaeological_site"), "遺跡"),
+    (("shop", "mall"), "購物"),
+    (("shop", "department_store"), "購物"),
+    (("amenity", "marketplace"), "市場"),
+    (("natural", "beach"), "海灘"),
+    (("natural", "cape"), "岬"),
+    (("place", "island"), "島"),
+    (("place", "islet"), "島"),
+    (("man_made", "bridge"), "橋"),
 ]
 _CATEGORY_BY_NAME = [
     (re.compile(r"(神社|大社|神宮|天満宮|八幡宮|稲荷)$"), "神社"),
@@ -481,7 +526,18 @@ _CATEGORY_BY_NAME = [
     (re.compile(r"(博物館|資料館|記念館|科学館)$"), "博物館"),
     (re.compile(r"(庭園|御苑)$"), "庭園"),
     (re.compile(r"公園$"), "公園"),
-    (re.compile(r"(商店街|横丁|通り)$"), "街區"),
+    (re.compile(r"(商店街|横丁|通り|外人住宅|アメリカンビレッジ|町並み?)$"), "街區"),
+    (re.compile(r"(市場|いゆまち|漁港|朝市)$"), "市場"),
+    (
+        re.compile(
+            r"(パルコシティ|PARCO CITY|モール|アウトレット|イーアス.*|ショッピングセンター)$"
+        ),
+        "購物",
+    ),
+    (re.compile(r"(ビーチ|海水浴場|海浜|浜)$"), "海灘"),
+    (re.compile(r"(岬|崎)$"), "岬"),
+    (re.compile(r"(大橋|橋)$"), "橋"),
+    (re.compile(r"島$"), "島"),
 ]
 
 
