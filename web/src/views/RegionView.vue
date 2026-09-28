@@ -6,6 +6,7 @@ import { SPECIALTY_GROUPS, specialtyGroup } from '../data/specialties'
 import type { Specialty } from '../services/bundles'
 import { useCatalogStore } from '../stores/catalog'
 import { useExploreStore } from '../stores/explore'
+import CollapseChevron from '../components/CollapseChevron.vue'
 
 // 深度探索（UX-FLOW.md A8）：一個縣的季節、祭典、地區特色、期間限定。
 // 地圖頁負責「去哪」，這一頁負責「這個地方有什麼、什麼時候去」。沒有資料的段落不顯示。
@@ -21,11 +22,26 @@ watch(
 )
 onMounted(() => catalog.loadExtras())
 
-const specialties = computed(() => catalog.specialties.filter((s) => s.prefecture === props.pref))
+// 有照片、有簡介的排前面（資料比較完整），其餘依名稱
+function richness(s: Specialty): number {
+  return (s.images?.length ? 2 : 0) + (s.summary || s.summary_zh ? 1 : 0)
+}
+const specialties = computed(() =>
+  catalog.specialties
+    .filter((s) => s.prefecture === props.pref)
+    .sort((a, b) => richness(b) - richness(a) || a.name.ja.localeCompare(b.name.ja, 'ja')),
+)
 const groups = computed(() =>
   SPECIALTY_GROUPS.map((g) => ({ ...g, items: specialties.value.filter((s) => specialtyGroup(s.category) === g.key) })).filter(
     (g) => g.items.length,
   ),
+)
+// 每組先顯示幾項，其餘展開
+const FIRST = 9
+const expanded = ref(new Set<string>())
+watch(
+  () => props.pref,
+  () => (expanded.value = new Set()),
 )
 
 const sections = computed(() => [{ id: 'specialties', label: '地區特色', show: groups.value.length > 0 }].filter((s) => s.show))
@@ -88,7 +104,7 @@ function sourceLabel(url: string): string {
             {{ g.label }}<span class="font-latin font-normal tracking-normal">{{ g.items.length }}</span>
           </h3>
           <ul class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            <li v-for="s in g.items" :key="s.id" class="flex flex-col overflow-hidden rounded-card border border-line bg-paper">
+            <li v-for="s in expanded.has(g.key) ? g.items : g.items.slice(0, FIRST)" :key="s.id" class="flex flex-col overflow-hidden rounded-card border border-line bg-paper">
               <!-- 沒有照片就不留空白圖框 -->
               <div v-if="s.images?.length" class="aspect-[16/10] shrink-0 bg-placeholder">
                 <img
@@ -124,6 +140,15 @@ function sourceLabel(url: string): string {
               </div>
             </li>
           </ul>
+          <button
+            v-if="g.items.length > FIRST && !expanded.has(g.key)"
+            type="button"
+            class="flex h-10 w-fit items-center gap-2 rounded-control border border-line px-4 text-label font-bold text-ink hover:bg-surface"
+            @click="expanded = new Set(expanded).add(g.key)"
+          >
+            <CollapseChevron :open="true" />
+            全部 <span class="font-latin">{{ g.items.length }}</span> 項
+          </button>
         </div>
       </section>
 
