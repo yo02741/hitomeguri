@@ -3,6 +3,7 @@
 - _index.json：各縣筆數與版本（內容雜湊），前端依此決定要載入哪些縣。
 - map/{pref}.json：地圖用精簡資料。
 - detail/{pref}.json：完整景點資料，點選景點時才載入。
+- packs/{key}.json：擴充包（全國一個檔，data/packs/ 組合而成）。
 """
 
 from __future__ import annotations
@@ -15,7 +16,7 @@ from typing import Any
 
 from pipeline import config
 from pipeline.models import FlightRoute, Specialty, Spot
-from pipeline.paths import BUNDLES_DIR, FLIGHTS_JSON, SPECIALTIES_DIR, SPOTS_DIR
+from pipeline.paths import BUNDLES_DIR, FLIGHTS_JSON, PACKS_DIR, SPECIALTIES_DIR, SPOTS_DIR
 
 
 def _write(path: Path, data: Any) -> Path:
@@ -106,11 +107,55 @@ def build(src: Path = SPOTS_DIR, dst: Path = BUNDLES_DIR) -> list[Path]:
             "featured": sum(1 for s in published if s["featured"]),
             "version": version,
         }
+    packs = build_packs(dst / "packs")
+    index["packs"] = {key: meta for key, (_, meta) in packs.items()}
+    written += [path for path, _ in packs.values()]
     written.append(_write(dst / "_index.json", index))
     # 首頁只需要各縣精選：一個小檔，不必先載入全部縣的地圖 bundle
     written.append(_write(dst / "featured.json", featured))
     written += build_extras(dst)
     return written
+
+
+def _read(path: Path) -> list[dict[str, Any]]:
+    return json.loads(path.read_text(encoding="utf-8")) if path.exists() else []
+
+
+def pack_items_pokemon(src: Path = PACKS_DIR) -> list[dict[str, Any]]:
+    """寶可夢擴充包：人孔蓋（g=lid）、寶可夢中心（center）、寶可夢商店（store）。"""
+    items: list[dict[str, Any]] = []
+    for r in _read(src / "pokefuta.json"):
+        items.append({
+            "id": r["id"], "g": "lid", "p": r["prefecture"], "n": r["municipality"],
+            "lat": round(r["location"]["lat"], 5), "lng": round(r["location"]["lng"], 5),
+            "a": r.get("address") or None,
+            "pk": [[m["dex"], m["ja"]] for m in r.get("pokemon", [])],
+            "u": r["sources"][0]["url"],
+        })  # fmt: skip
+    for r in _read(src / "pokecen.json"):
+        items.append({
+            "id": r["id"], "g": r["kind"], "p": r["prefecture"], "n": r["name"]["ja"],
+            "lat": round(r["location"]["lat"], 5), "lng": round(r["location"]["lng"], 5),
+            "a": r.get("address") or None,
+            "u": r.get("website") or r["sources"][0]["url"],
+        })  # fmt: skip
+    return [{k: v for k, v in it.items() if v not in (None, [])} for it in items]
+
+
+PACK_BUILDERS = {"pokemon": pack_items_pokemon}
+
+
+def build_packs(dst: Path) -> dict[str, tuple[Path, dict[str, Any]]]:
+    """擴充包 bundle；回傳 {key: (路徑, 索引資訊)}，沒有資料的擴充包不輸出。"""
+    out = {}
+    for key, builder in PACK_BUILDERS.items():
+        items = sorted(builder(), key=lambda it: it["id"])
+        if not items:
+            continue
+        body = json.dumps(items, ensure_ascii=False, separators=(",", ":"))
+        version = hashlib.sha1(body.encode()).hexdigest()[:10]
+        out[key] = (_write(dst / f"{key}.json", items), {"count": len(items), "version": version})
+    return out
 
 
 def build_extras(dst: Path = BUNDLES_DIR) -> list[Path]:

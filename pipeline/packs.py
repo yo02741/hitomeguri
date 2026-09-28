@@ -1,4 +1,6 @@
-"""擴充包：疊在大點上的全國性小點（PLAN.md §1 主題層）。目前只有寶可夢人孔蓋（ポケふた）。
+"""擴充包：疊在大點上的全國性小點（PLAN.md §1 主題層）。
+
+目前只有寶可夢：人孔蓋（ポケふた）、寶可夢中心與商店。
 
 每個擴充包寫成 data/packs/<key>.json，依 id 排序；每筆保留來源網址與取得時間。
 """
@@ -9,8 +11,9 @@ import datetime as dt
 import json
 from typing import Any
 
+from pipeline import geo
 from pipeline.paths import PACKS_DIR, REGIONS_JSON
-from pipeline.sources import pokefuta
+from pipeline.sources import osm, pokefuta
 
 
 def log(msg: str) -> None:
@@ -64,3 +67,51 @@ def seed_pokefuta(prefs: list[str] | None = None) -> str:
     if no_coords:
         report += ["", f"沒有座標而略過：{'、'.join(no_coords)}"]
     return "\n".join(report) + "\n"
+
+
+def _pref_of(lat: float, lng: float) -> str | None:
+    """簡化縣界外的海岸埋立地：退回範圍框判斷。"""
+    pref = geo.prefecture_at(lat, lng)
+    if pref:
+        return pref
+    for slug in pref_slugs():
+        s, w, n, e = geo.bbox(slug, pad=0.0)
+        if s <= lat <= n and w <= lng <= e:
+            return slug
+    return None
+
+
+def shop_record(el: osm.OsmElement, today: str) -> dict[str, Any] | None:
+    pref = _pref_of(el.lat, el.lng)
+    name = el.tags.get("name", "")
+    if not pref or not name:
+        return None
+    t = el.tags
+    address = "".join(
+        t.get(k, "") for k in ("addr:province", "addr:city", "addr:quarter", "addr:full")
+    )
+    return {
+        "id": f"osm-{el.osm_id.replace('/', '-')}",
+        "prefecture": pref,
+        # ポケモンストア（小型店）與ポケモンセンター分開
+        "kind": "store" if ("ストア" in name or "Store" in name) else "center",
+        "name": {"ja": name, "en": t.get("name:en")},
+        "address": address,
+        "location": {"lat": round(el.lat, 6), "lng": round(el.lng, 6)},
+        "website": t.get("website") or t.get("contact:website"),
+        "sources": [{"url": el.url, "fetched_at": today}],
+    }
+
+
+def seed_pokecen() -> str:
+    """全國的寶可夢中心與寶可夢商店（OSM）→ data/packs/pokecen.json。"""
+    today = dt.date.today().isoformat()
+    elements = osm.pokemon_shops()
+    out = [r for el in elements if (r := shop_record(el, today))]
+    out.sort(key=lambda r: r["id"])
+    PACKS_DIR.mkdir(parents=True, exist_ok=True)
+    path = PACKS_DIR / "pokecen.json"
+    path.write_text(json.dumps(out, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    lines = [f"- {r['name']['ja']}（{r['prefecture']}）" for r in out]
+    head = ["## 寶可夢中心・商店", "", f"共 {len(out)} 家（OSM {len(elements)} 筆）", ""]
+    return "\n".join([*head, *lines]) + "\n"

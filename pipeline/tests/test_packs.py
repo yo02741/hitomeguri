@@ -57,3 +57,29 @@ def test_seed_pokefuta(tmp_path, monkeypatch):
     assert rec["pokemon"] == [{"dex": "058", "ja": "ガーディ"}]
     assert rec["sources"][0]["url"].endswith("/manhole/desc/446/?is_modal=1")
     assert "沒有座標" in report
+
+
+def test_shop_record_and_bundle(tmp_path, monkeypatch):
+    from pipeline import build_bundles
+    from pipeline.sources.osm import OsmElement
+
+    monkeypatch.setattr(packs, "_pref_of", lambda lat, lng: "aichi")
+    center = packs.shop_record(
+        OsmElement("node/1", 35.16, 136.9, {"name": "ポケモンセンターナゴヤ", "shop": "toys"}), "d"
+    )
+    store = packs.shop_record(OsmElement("node/2", 35.1, 136.8, {"name": "ポケモンストア"}), "d")
+    assert center["kind"] == "center" and store["kind"] == "store"
+    assert center["id"] == "osm-node-1"
+
+    (tmp_path / "pokecen.json").write_text(json.dumps([center]), encoding="utf-8")
+    lid = packs.lid_record(
+        pokefuta.Lid("446", "okinawa", "那覇市", "https://x", 26.22005, 127.71657, "", [("058", "ガーディ")]),
+        "d",
+    )
+    (tmp_path / "pokefuta.json").write_text(json.dumps([lid]), encoding="utf-8")
+    items = {it["id"]: it for it in build_bundles.pack_items_pokemon(tmp_path)}
+    assert items["pokefuta-446"] == {
+        "id": "pokefuta-446", "g": "lid", "p": "okinawa", "n": "那覇市",
+        "lat": 26.22005, "lng": 127.71657, "pk": [["058", "ガーディ"]], "u": "https://x",
+    }  # fmt: skip
+    assert items["osm-node-1"]["g"] == "center"

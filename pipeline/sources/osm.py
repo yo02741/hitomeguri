@@ -111,8 +111,20 @@ THEME_FILTERS: dict[str, list[str]] = {
         '["amenity"="public_bath"]["bath:type"~"onsen"]["name"]',
         '["leisure"="resort"]["resort"="onsen"]["name"]',
     ],
-    "pokemon": ['["shop"]["name"~"ポケモンセンター|ポケモンストア|Pokémon Center"]'],
 }
+
+# 擴充包：寶可夢中心與寶可夢商店（全國一次查詢，pipeline.packs）
+POKEMON_SHOP_FILTER = (
+    '["shop"]["name"~"ポケモンセンター|ポケモンストア|Pokémon Center|Pokémon Store"]'
+)
+
+
+def pokemon_shops() -> list[OsmElement]:
+    q = f"""[out:json][timeout:300];
+area["ISO3166-1"="JP"]["admin_level"="2"]->.a;
+nwr{POKEMON_SHOP_FILTER}(area.a);
+out center tags;"""
+    return _run(q)
 
 
 def themed(iso: str, bbox: tuple[float, float, float, float]) -> dict[str, list[OsmElement]]:

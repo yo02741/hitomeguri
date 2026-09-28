@@ -19,7 +19,7 @@ def test_seed_themes(fake_sources, monkeypatch):  # noqa: F811
                      "wikidata": "Q3"})],
             "ramen": [OsmElement("node/102", 35.0, 135.77, {"name": "ラーメン A", "cuisine": "ramen"}),
                       OsmElement("node/100", 35.0, 135.76, {"name": "一保堂茶舗", "cuisine": "ramen"})],
-            "onsen": [], "pokemon": [],
+            "onsen": [],
         },
     )  # fmt: skip
     report = themes.seed_themes("kyoto")
