@@ -127,6 +127,7 @@ def fake_sources(monkeypatch, tmp_path):
     )
     # 維基「京都府の観光地」：Q5（鹿苑寺）列在上面
     monkeypatch.setattr(major, "tourism_qids", lambda pref: {"Q5"})
+    monkeypatch.setattr(major, "extra_category_qids", lambda pref: set())
     monkeypatch.setattr(major, "SPOTS_DIR", tmp_path / "spots")
     return tmp_path
 

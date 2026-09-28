@@ -194,6 +194,19 @@ def tourism_qids(pref: str) -> set[str]:
     return set(ids.values())
 
 
+def extra_category_qids(pref: str) -> set[str]:
+    """購物中心、市場、島、橋、岬等維基分類裡的地點（不加分，靠瀏覽量排序）。"""
+    name = pref_full_name(pref)
+    titles: list[str] = []
+    for tpl in config.EXTRA_CATEGORIES:
+        cat = tpl.format(name=name)
+        got = wikipedia.category_members("jawiki", cat, 1)
+        if got:
+            log(f"[{pref}]   {cat}：{len(got)} 條")
+        titles += got
+    return set(wikipedia.wikidata_ids("jawiki", titles).values())
+
+
 def collect(pref: str) -> tuple[dict[str, Draft], dict[str, Entity]]:
     iso = geo.iso_code(pref)
     south, west, north, east = geo.bbox(pref)
@@ -224,14 +237,15 @@ def collect(pref: str) -> tuple[dict[str, Draft], dict[str, Entity]]:
 
     log(f"[{pref}] 維基「{pref_full_name(pref)}の観光地」…")
     tour_qids = sorted(tourism_qids(pref))
+    extra_qids = sorted(extra_category_qids(pref) - set(tour_qids))
 
     osm_qids = [e.tags["wikidata"] for e in osm_els if QID_RE.match(e.tags.get("wikidata", ""))]
-    ents = wikidata.entities(osm_qids + wd_qids + tour_qids)
+    ents = wikidata.entities(osm_qids + wd_qids + tour_qids + extra_qids)
     _resolver.prefetch(list(ents.values()))
     _resolver_seen.update(ents)
 
     drafts: dict[str, Draft] = {}
-    for qid in [*wd_qids, *tour_qids]:
+    for qid in [*wd_qids, *tour_qids, *extra_qids]:
         ent = ents.get(qid)
         if qid not in drafts and ent and _entity_in_pref(ent, pref):
             drafts[qid] = Draft(key=qid, lat=ent.lat, lng=ent.lng, ent=ent)  # type: ignore[arg-type]
@@ -398,6 +412,8 @@ EXCLUDE_P31_SUBSTR = (
     # 人物、物品、園區內遊樂設施、住宿（全國擴展時發現混入精選）
     "人間", "ヒト", "妖怪", "機関車", "航空機", "軍艦", "戦艦", "艦船", "舞楽", "郷土芸能",
     "アトラクション", "コースター", "ダークライド", "ホテル", "印章", "土偶", "出土品", "飛行隊",
+    "空港", "飛行場", "港湾", "フェリーターミナル",
+    "airport", "aerodrome",
     "human", "yōkai", "locomotive", "aircraft", "battleship", "amusement ride", "roller coaster",
     "dark ride", "hotel",
     # 沒有日文標籤時 labels_ja 會回傳英文

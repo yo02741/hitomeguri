@@ -31,6 +31,19 @@ GUIDE_TIER_BONUS = {"S": 30.0, "A": 12.0}
 # 讓沒有文化指定的熱門地點（國際通、瀨長島、購物中心、市場）也進得了前段
 TOURISM_LIST_BONUS = 18.0
 TOURISM_CATEGORY_DEPTH = 2
+# 其他類型的維基分類（{name} 換成縣名）：收進候選但不加分，靠瀏覽量排序；
+# 分類不存在時 API 回傳空清單，不影響
+EXTRA_CATEGORIES = [
+    "{name}のショッピングセンター",
+    "{name}の商業施設",
+    "{name}の市場",
+    "{name}の漁港",
+    "{name}の島",
+    "{name}の橋",
+    "{name}の岬",
+    "{name}の海水浴場",
+    "{name}の商店街",
+]
 
 # 最近車站
 STATION_MAX_DISTANCE_M = 1500
