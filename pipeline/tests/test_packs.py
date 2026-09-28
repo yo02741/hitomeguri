@@ -67,9 +67,12 @@ def test_shop_record_and_bundle(tmp_path, monkeypatch):
     center = packs.shop_record(
         OsmElement("node/1", 35.16, 136.9, {"name": "ポケモンセンターナゴヤ", "shop": "toys"}), "d"
     )
-    store = packs.shop_record(OsmElement("node/2", 35.1, 136.8, {"name": "ポケモンストア"}), "d")
+    store = packs.shop_record(
+        OsmElement("node/2", 35.1, 136.8, {"name": "ポケモンストア", "branch": "名古屋駅店"}), "d"
+    )
+    assert store["name"]["ja"] == "ポケモンストア 名古屋駅店"
     assert center["kind"] == "center" and store["kind"] == "store"
-    assert center["id"] == "osm-node-1"
+    assert center["id"] == "pokecen-node-1"
 
     (tmp_path / "pokecen.json").write_text(json.dumps([center]), encoding="utf-8")
     lid = packs.lid_record(
@@ -82,4 +85,4 @@ def test_shop_record_and_bundle(tmp_path, monkeypatch):
         "id": "pokefuta-446", "g": "lid", "p": "okinawa", "n": "那覇市",
         "lat": 26.22005, "lng": 127.71657, "pk": [["058", "ガーディ"]], "u": "https://x",
     }  # fmt: skip
-    assert items["osm-node-1"]["g"] == "center"
+    assert items["pokecen-node-1"]["g"] == "center"
