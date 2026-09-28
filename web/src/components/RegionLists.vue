@@ -38,7 +38,7 @@ const failed = ref(new Set<string>())
   </section>
   <section v-else class="flex min-h-0 flex-col rounded-card bg-paper p-1.5 shadow-float">
     <h2 class="flex h-9 shrink-0 items-center justify-center gap-1.5 rounded-control bg-region-tint text-label font-bold text-ink">
-      景點<span class="font-latin">{{ majors.length }}</span>
+      景點
     </h2>
 
     <!-- 類型：文字索引列，選中的加底線；再點一次取消 -->
