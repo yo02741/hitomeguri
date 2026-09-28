@@ -52,6 +52,8 @@ let ready = false
 
 const SOURCE = 'spots'
 const PACK_SOURCE = 'pack'
+// 選取中的景點另外放一個不群集的來源：不會被併進群集數字裡而看不見
+const SELECTED_SOURCE = 'selected-spot'
 const OUTLINE_SOURCE = 'outline'
 
 function outlineData(f: GeoJSON.Feature | null | undefined): GeoJSON.FeatureCollection {
@@ -124,6 +126,21 @@ const FONT_REGULAR = ['Noto Sans Regular']
 function token(name: string): string {
   const el = document.getElementById('app-root') ?? document.documentElement
   return getComputedStyle(el).getPropertyValue(name).trim() || '#1D222C'
+}
+
+function unselected(): MapSpot[] {
+  return props.selectedId ? props.spots.filter((s) => s.id !== props.selectedId) : props.spots
+}
+
+function selectedSpots(): MapSpot[] {
+  const s = props.selectedId ? props.spots.find((x) => x.id === props.selectedId) : undefined
+  return s ? [s] : []
+}
+
+function syncSources() {
+  if (!map) return
+  ;(map.getSource(SOURCE) as GeoJSONSource | undefined)?.setData(toGeoJSON(unselected()))
+  ;(map.getSource(SELECTED_SOURCE) as GeoJSONSource | undefined)?.setData(toGeoJSON(selectedSpots()))
 }
 
 function toGeoJSON(spots: MapSpot[]): GeoJSON.FeatureCollection<GeoJSON.Point> {
@@ -234,7 +251,7 @@ function addLayers() {
   })
   map.addSource(SOURCE, {
     type: 'geojson',
-    data: toGeoJSON(props.spots),
+    data: toGeoJSON(unselected()),
     cluster: true,
     // 半徑略大於照片，未群集的照片彼此不太會重疊；縮放 15 以上全部散開
     clusterRadius: 50,
@@ -349,11 +366,11 @@ function addLayers() {
     filter: ['==', ['get', 'id'], ''],
     paint: { 'circle-radius': 11, 'circle-stroke-width': 3 },
   })
+  map.addSource(SELECTED_SOURCE, { type: 'geojson', data: toGeoJSON(selectedSpots()) })
   map.addLayer({
     id: 'selected',
     type: 'circle',
-    source: SOURCE,
-    filter: ['==', ['get', 'id'], props.selectedId ?? ''],
+    source: SELECTED_SOURCE,
     paint: { 'circle-radius': 10, 'circle-stroke-width': 3 },
   })
   map.addLayer({
@@ -431,7 +448,7 @@ function nearestSpot(pt: { x: number; y: number }): Hover | null {
       [pt.x + r, pt.y + r],
     ],
     // 開啟擴充包時只有擴充包的點可以選，變淡的景點只當底圖
-    { layers: props.pack ? ['pack-points'] : ['spots'] },
+    { layers: props.pack ? ['pack-points'] : ['spots', 'selected'] },
   )
   let best: Hover | null = null
   let bestD = Infinity
@@ -448,13 +465,54 @@ function nearestSpot(pt: { x: number; y: number }): Hover | null {
   return best
 }
 
+// 選取中的景點：外圈呼吸燈（兩圈錯開半個週期，看起來連續）。大小跟著照片或圓點
+let pulse: maplibregl.Marker | null = null
+
+function selectedPoint(): { lng: number; lat: number } | undefined {
+  const id = props.selectedId
+  if (!id) return undefined
+  return props.spots.find((s) => s.id === id) ?? props.pack?.points.find((p) => p.id === id)
+}
+
+function syncPulse() {
+  if (!map) return
+  const p = selectedPoint()
+  if (!p) {
+    pulse?.remove()
+    pulse = null
+    return
+  }
+  const size = props.selectedId && photoPins.has(props.selectedId) ? PHOTO_PIN : 22
+  if (!pulse) {
+    const el = document.createElement('div')
+    el.className = 'pointer-events-none relative'
+    el.setAttribute('aria-hidden', 'true')
+    // 固定的外圈＋兩圈往外擴散的光（半透明填色＋外框）
+    const halo = document.createElement('span')
+    halo.className = 'absolute -inset-[5px] rounded-full border-[2.5px] border-region-strong'
+    el.append(halo)
+    for (const delay of ['0s', '1s']) {
+      const ring = document.createElement('span')
+      ring.className =
+        'absolute inset-0 rounded-full border-[3px] border-region-strong bg-region-strong/25 animate-pulse-ring motion-reduce:hidden'
+      ring.style.animationDelay = delay
+      el.append(ring)
+    }
+    pulse = new maplibregl.Marker({ element: el }).setLngLat([p.lng, p.lat]).addTo(map)
+  }
+  const el = pulse.getElement()
+  el.style.width = `${size}px`
+  el.style.height = `${size}px`
+  pulse.setLngLat([p.lng, p.lat])
+}
+
 // 照片模式：畫面內有照片的景點各放一個圓形照片 marker（不接收滑鼠事件，點擊仍走地圖）
 const photoPins = new Map<string, maplibregl.Marker>()
 
 function syncPhotos() {
   if (!map) return
   const want = new Map<string, { lng: number; lat: number; thumb: string; s: number }>()
-  for (const f of props.pack ? [] : map.queryRenderedFeatures({ layers: ['spots'] })) {
+  for (const f of props.pack ? [] : map.queryRenderedFeatures({ layers: ['spots', 'selected'] })) {
     const fp = f.properties as { id: string; i?: string; s: number }
     if (!fp.i || failedThumbs.has(fp.i) || want.has(fp.id)) continue
     const [lng, lat] = (f.geometry as GeoJSON.Point).coordinates as [number, number]
@@ -477,6 +535,8 @@ function syncPhotos() {
     const w = want.get(id)!
     photoPins.set(id, new maplibregl.Marker({ element: photoEl(id, w.thumb, w.s) }).setLngLat([w.lng, w.lat]).addTo(map))
   }
+  // 照片出現或消失時，呼吸燈的大小跟著換
+  syncPulse()
 }
 
 function photoEl(id: string, thumb: string, score: number): HTMLElement {
@@ -571,6 +631,7 @@ onMounted(() => {
 
 onBeforeUnmount(() => {
   photoPins.clear()
+  pulse = null
   map?.remove()
   map = null
   ready = false
@@ -593,9 +654,9 @@ function fit(b: [number, number, number, number], animate = true) {
 
 watch(
   () => props.spots,
-  (spots) => {
+  () => {
     if (!map || !ready) return
-    ;(map.getSource(SOURCE) as GeoJSONSource | undefined)?.setData(toGeoJSON(spots))
+    syncSources()
     setHover(null)
   },
 )
@@ -604,8 +665,9 @@ watch(
   () => props.selectedId,
   (id) => {
     if (!map || !ready) return
-    map.setFilter('selected', ['==', ['get', 'id'], id ?? ''])
+    syncSources()
     map.setFilter('pack-selected', ['==', ['get', 'id'], id ?? ''])
+    syncPulse()
     for (const [pid, m] of photoPins) {
       const el = m.getElement()
       el.classList.toggle('border-region-strong', pid === id)

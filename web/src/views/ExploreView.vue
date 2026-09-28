@@ -192,7 +192,7 @@ watch(
     flyAfterLoad = null
     if (target) {
       await nextTick()
-      mapRef.value?.flyTo(target.lng, target.lat)
+      mapRef.value?.flyTo(target.lng, target.lat, 15)
       return
     }
     // 看得到整個縣的形狀（主要陸地的縣界）＋主要景點；還沒有資料的縣用縣界範圍定位
@@ -235,7 +235,8 @@ async function select(id: string) {
   await router.replace({ query: { ...route.query, spot: id, ...(pack ? { pack } : {}) } })
   await nextTick()
   const s = pack ? catalog.packs[pack]?.find((x) => x.id === id) : allSpots.value.find((x) => x.id === id)
-  if (s) mapRef.value?.flyTo(s.lng, s.lat, pack ? 15 : 13)
+  // 縮放 15：群集全部散開（clusterMaxZoom 14），看得出選到的是哪一個點
+  if (s) mapRef.value?.flyTo(s.lng, s.lat, 15)
 }
 
 /** header 搜尋的結果：縣 → 進入地區頁；景點 → 選取並飛過去（別縣先進入該縣） */
