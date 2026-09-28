@@ -3,9 +3,12 @@ import { shallowRef, triggerRef } from 'vue'
 
 import {
   type BundleIndex,
+  type Festival,
   fetchDetail,
   fetchFeatured,
+  fetchFestivals,
   fetchFlights,
+  fetchSeasons,
   fetchSpecialties,
   type FlightRoute,
   type Specialty,
@@ -15,6 +18,7 @@ import {
   fetchSearch,
   type MapSpot,
   type PackItem,
+  type SeasonData,
   type Spot,
 } from '../services/bundles'
 
@@ -115,11 +119,31 @@ export const useCatalogStore = defineStore('catalog', () => {
   const specialties = shallowRef<Specialty[]>([])
   const flights = shallowRef<FlightRoute[]>([])
 
+  const seasons = shallowRef<SeasonData | null>(null)
   async function loadExtras(): Promise<void> {
     await once('extras', async () => {
-      const [s, f] = await Promise.all([fetchSpecialties(), fetchFlights()])
+      const [s, f, se] = await Promise.all([fetchSpecialties(), fetchFlights(), fetchSeasons()])
       specialties.value = s
       flights.value = f
+      seasons.value = se
+    })
+  }
+
+  /** 深度探索「祭典」：一縣一檔，開深度探索頁時載入 */
+  const festivals = shallowRef<Record<string, Festival[]>>({})
+  async function loadFestivals(pref: string): Promise<Festival[]> {
+    await loadIndex()
+    const meta = index.value?.festivals?.[pref]
+    if (!meta) return []
+    if (festivals.value[pref]) return festivals.value[pref]
+    return once(`festivals:${pref}`, async () => {
+      try {
+        festivals.value[pref] = await fetchFestivals(pref, meta.version)
+      } catch {
+        festivals.value[pref] = []
+      }
+      triggerRef(festivals)
+      return festivals.value[pref]
     })
   }
 
@@ -159,7 +183,7 @@ export const useCatalogStore = defineStore('catalog', () => {
 
   return {
     loadSearch,
-    index, mapSpots, featured, loadFeatured, details, specialties, flights, loadExtras, loadIndex, available,
+    index, mapSpots, featured, loadFeatured, details, specialties, flights, seasons, festivals, loadFestivals, loadExtras, loadIndex, available,
     loadMap, loadAllMaps, loadDetail, getSpot, packs, loadPack,
   }
 })

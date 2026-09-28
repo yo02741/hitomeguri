@@ -7,6 +7,8 @@ import type { Specialty } from '../services/bundles'
 import { useCatalogStore } from '../stores/catalog'
 import { useExploreStore } from '../stores/explore'
 import CollapseChevron from '../components/CollapseChevron.vue'
+import FestivalList from '../components/FestivalList.vue'
+import SeasonCalendar from '../components/SeasonCalendar.vue'
 
 // 深度探索（UX-FLOW.md A8）：一個縣的季節、祭典、地區特色、期間限定。
 // 地圖頁負責「去哪」，這一頁負責「這個地方有什麼、什麼時候去」。沒有資料的段落不顯示。
@@ -17,7 +19,10 @@ const region = computed(() => regionOf(props.pref))
 
 watch(
   () => props.pref,
-  (p) => explore.setActivePref(regionOf(p) ? p : null),
+  (p) => {
+    explore.setActivePref(regionOf(p) ? p : null)
+    if (regionOf(p)) void catalog.loadFestivals(p)
+  },
   { immediate: true },
 )
 onMounted(() => catalog.loadExtras())
@@ -44,7 +49,18 @@ watch(
   () => (expanded.value = new Set()),
 )
 
-const sections = computed(() => [{ id: 'specialties', label: '地區特色', show: groups.value.length > 0 }].filter((s) => s.show))
+const festivals = computed(() => catalog.festivals[props.pref] ?? [])
+
+// 季節：這個縣的觀測站（有平年值的），代表站在前
+const stations = computed(() => catalog.seasons?.stations.filter((s) => s.prefecture === props.pref) ?? [])
+
+const sections = computed(() =>
+  [
+    { id: 'seasons', label: '季節', show: stations.value.length > 0 },
+    { id: 'festivals', label: '祭典', show: festivals.value.length > 0 },
+    { id: 'specialties', label: '地區特色', show: groups.value.length > 0 },
+  ].filter((s) => s.show),
+)
 
 const failed = ref(new Set<string>())
 function image(s: Specialty) {
@@ -97,6 +113,16 @@ function sourceLabel(url: string): string {
     </header>
 
     <main class="mx-auto flex w-full max-w-5xl flex-col gap-12 px-6 pt-8 pb-16">
+      <section v-if="stations.length" id="seasons" class="flex flex-col gap-4" aria-labelledby="seasons-title">
+        <h2 id="seasons-title" class="text-h3 font-black tracking-[2px]">季節</h2>
+        <SeasonCalendar :stations="stations" :source-url="catalog.seasons!.source.url" />
+      </section>
+
+      <section v-if="festivals.length" id="festivals" class="flex flex-col gap-4" aria-labelledby="festivals-title">
+        <h2 id="festivals-title" class="text-h3 font-black tracking-[2px]">祭典</h2>
+        <FestivalList :festivals="festivals" />
+      </section>
+
       <section v-if="groups.length" id="specialties" class="flex flex-col gap-6" aria-labelledby="specialties-title">
         <h2 id="specialties-title" class="text-h3 font-black tracking-[2px]">地區特色</h2>
         <div v-for="g in groups" :key="g.key" class="flex flex-col gap-3">

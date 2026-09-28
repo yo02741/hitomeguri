@@ -1,0 +1,720 @@
+{
+  "source": {
+    "url": "https://www.data.jma.go.jp/sakura/data/index.html",
+    "fetched_at": "2026-09-28T17:03:37+00:00"
+  },
+  "stations": [
+    {
+      "name": "札幌",
+      "prefecture": "hokkaido",
+      "normals": {
+        "ajisai": "07-16",
+        "ichou": "11-04",
+        "kaede": "10-28",
+        "sakura_kaika": "05-01",
+        "sakura_mankai": "05-06",
+        "ume": "04-29"
+      }
+    },
+    {
+      "name": "函館",
+      "prefecture": "hokkaido",
+      "normals": {
+        "ajisai": "07-17",
+        "fuji": "05-24",
+        "ichou": "11-02",
+        "kaede": "11-02",
+        "sakura_kaika": "04-28",
+        "sakura_mankai": "05-02",
+        "ume": "04-26"
+      }
+    },
+    {
+      "name": "旭川",
+      "prefecture": "hokkaido",
+      "normals": {
+        "ajisai": "07-21",
+        "kaede": "10-23",
+        "sakura_kaika": "05-04",
+        "sakura_mankai": "05-07"
+      }
+    },
+    {
+      "name": "釧路",
+      "prefecture": "hokkaido",
+      "normals": {
+        "kaede": "10-16",
+        "sakura_kaika": "05-16",
+        "sakura_mankai": "05-19"
+      }
+    },
+    {
+      "name": "帯広",
+      "prefecture": "hokkaido",
+      "normals": {
+        "ajisai": "08-01",
+        "ichou": "10-28",
+        "kaede": "10-20",
+        "sakura_kaika": "05-02",
+        "sakura_mankai": "05-05"
+      }
+    },
+    {
+      "name": "網走",
+      "prefecture": "hokkaido",
+      "normals": {
+        "ajisai": "08-06",
+        "sakura_kaika": "05-10",
+        "sakura_mankai": "05-13"
+      }
+    },
+    {
+      "name": "稚内",
+      "prefecture": "hokkaido",
+      "normals": {
+        "ajisai": "08-12",
+        "sakura_kaika": "05-13",
+        "sakura_mankai": "05-16"
+      }
+    },
+    {
+      "name": "室蘭",
+      "prefecture": "hokkaido",
+      "normals": {
+        "ajisai": "08-06",
+        "kaede": "11-07",
+        "sakura_kaika": "05-04",
+        "sakura_mankai": "05-09",
+        "ume": "05-03"
+      }
+    },
+    {
+      "name": "青森",
+      "prefecture": "aomori",
+      "normals": {
+        "ajisai": "07-14",
+        "fuji": "05-18",
+        "ichou": "11-02",
+        "kaede": "11-13",
+        "sakura_kaika": "04-22",
+        "sakura_mankai": "04-26",
+        "ume": "04-19"
+      }
+    },
+    {
+      "name": "盛岡",
+      "prefecture": "iwate",
+      "normals": {
+        "ajisai": "07-06",
+        "fuji": "05-14",
+        "ichou": "10-30",
+        "kaede": "11-13",
+        "sakura_kaika": "04-18",
+        "sakura_mankai": "04-24",
+        "ume": "04-06"
+      }
+    },
+    {
+      "name": "仙台",
+      "prefecture": "miyagi",
+      "normals": {
+        "ajisai": "06-30",
+        "fuji": "05-07",
+        "ichou": "11-23",
+        "kaede": "11-21",
+        "sakura_kaika": "04-08",
+        "sakura_mankai": "04-13",
+        "ume": "03-01"
+      }
+    },
+    {
+      "name": "秋田",
+      "prefecture": "akita",
+      "normals": {
+        "ajisai": "07-01",
+        "fuji": "05-13",
+        "ichou": "11-05",
+        "kaede": "11-12",
+        "sakura_kaika": "04-17",
+        "sakura_mankai": "04-22",
+        "ume": "04-08"
+      }
+    },
+    {
+      "name": "山形",
+      "prefecture": "yamagata",
+      "normals": {
+        "ajisai": "07-03",
+        "fuji": "05-07",
+        "ichou": "11-10",
+        "kaede": "11-25",
+        "sakura_kaika": "04-13",
+        "sakura_mankai": "04-18",
+        "ume": "04-03"
+      }
+    },
+    {
+      "name": "福島",
+      "prefecture": "fukushima",
+      "normals": {
+        "ajisai": "06-26",
+        "fuji": "05-03",
+        "ichou": "10-31",
+        "kaede": "11-17",
+        "sakura_kaika": "04-07",
+        "sakura_mankai": "04-11",
+        "ume": "03-07"
+      }
+    },
+    {
+      "name": "水戸",
+      "prefecture": "ibaraki",
+      "normals": {
+        "ajisai": "06-20",
+        "fuji": "04-28",
+        "ichou": "11-21",
+        "kaede": "11-20",
+        "sakura_kaika": "03-30",
+        "sakura_mankai": "04-06",
+        "ume": "02-03"
+      }
+    },
+    {
+      "name": "宇都宮",
+      "prefecture": "tochigi",
+      "normals": {
+        "ajisai": "06-22",
+        "fuji": "04-26",
+        "ichou": "11-29",
+        "kaede": "11-20",
+        "sakura_kaika": "03-30",
+        "sakura_mankai": "04-06",
+        "ume": "02-10"
+      }
+    },
+    {
+      "name": "前橋",
+      "prefecture": "gunma",
+      "normals": {
+        "ajisai": "06-16",
+        "ichou": "11-27",
+        "kaede": "12-08",
+        "sakura_kaika": "03-29",
+        "sakura_mankai": "04-05",
+        "ume": "02-06"
+      }
+    },
+    {
+      "name": "熊谷",
+      "prefecture": "saitama",
+      "normals": {
+        "ajisai": "06-16",
+        "fuji": "04-21",
+        "ichou": "11-28",
+        "kaede": "12-01",
+        "sakura_kaika": "03-27",
+        "sakura_mankai": "04-03",
+        "ume": "02-12"
+      }
+    },
+    {
+      "name": "銚子",
+      "prefecture": "chiba",
+      "normals": {
+        "ajisai": "06-14",
+        "fuji": "04-21",
+        "ichou": "11-30",
+        "kaede": "12-12",
+        "sakura_kaika": "03-30",
+        "sakura_mankai": "04-06",
+        "ume": "01-20"
+      }
+    },
+    {
+      "name": "東京",
+      "prefecture": "tokyo",
+      "normals": {
+        "ajisai": "06-05",
+        "fuji": "04-19",
+        "ichou": "11-23",
+        "kaede": "11-28",
+        "sakura_kaika": "03-24",
+        "sakura_mankai": "03-31",
+        "ume": "01-22"
+      }
+    },
+    {
+      "name": "横浜",
+      "prefecture": "kanagawa",
+      "normals": {
+        "ajisai": "06-12",
+        "fuji": "04-25",
+        "ichou": "11-30",
+        "kaede": "12-14",
+        "sakura_kaika": "03-25",
+        "sakura_mankai": "04-01",
+        "ume": "02-01"
+      }
+    },
+    {
+      "name": "新潟",
+      "prefecture": "niigata",
+      "normals": {
+        "ajisai": "06-23",
+        "fuji": "05-04",
+        "ichou": "11-13",
+        "kaede": "11-15",
+        "sakura_kaika": "04-08",
+        "sakura_mankai": "04-13",
+        "ume": "03-11"
+      }
+    },
+    {
+      "name": "富山",
+      "prefecture": "toyama",
+      "normals": {
+        "ajisai": "06-18",
+        "fuji": "04-24",
+        "ichou": "11-19",
+        "kaede": "11-24",
+        "sakura_kaika": "04-03",
+        "sakura_mankai": "04-08",
+        "ume": "03-02"
+      }
+    },
+    {
+      "name": "金沢",
+      "prefecture": "ishikawa",
+      "normals": {
+        "ajisai": "06-15",
+        "fuji": "04-28",
+        "ichou": "11-10",
+        "kaede": "11-24",
+        "sakura_kaika": "04-03",
+        "sakura_mankai": "04-08",
+        "ume": "02-23"
+      }
+    },
+    {
+      "name": "福井",
+      "prefecture": "fukui",
+      "normals": {
+        "ajisai": "06-16",
+        "fuji": "04-30",
+        "ichou": "11-21",
+        "kaede": "11-28",
+        "sakura_kaika": "04-01",
+        "sakura_mankai": "04-07",
+        "ume": "02-19"
+      }
+    },
+    {
+      "name": "甲府",
+      "prefecture": "yamanashi",
+      "normals": {
+        "ajisai": "06-22",
+        "fuji": "04-18",
+        "ichou": "11-17",
+        "kaede": "11-29",
+        "sakura_kaika": "03-25",
+        "sakura_mankai": "04-02",
+        "ume": "02-24"
+      }
+    },
+    {
+      "name": "長野",
+      "prefecture": "nagano",
+      "normals": {
+        "ajisai": "06-29",
+        "fuji": "04-28",
+        "ichou": "11-10",
+        "kaede": "11-12",
+        "sakura_kaika": "04-11",
+        "sakura_mankai": "04-16",
+        "ume": "03-18"
+      }
+    },
+    {
+      "name": "岐阜",
+      "prefecture": "gifu",
+      "normals": {
+        "ajisai": "06-10",
+        "fuji": "04-16",
+        "ichou": "12-01",
+        "kaede": "11-26",
+        "sakura_kaika": "03-25",
+        "sakura_mankai": "04-02",
+        "ume": "02-17"
+      }
+    },
+    {
+      "name": "静岡",
+      "prefecture": "shizuoka",
+      "normals": {
+        "ajisai": "06-13",
+        "fuji": "04-11",
+        "ichou": "11-25",
+        "kaede": "12-05",
+        "sakura_kaika": "03-24",
+        "sakura_mankai": "04-02",
+        "ume": "01-17"
+      }
+    },
+    {
+      "name": "名古屋",
+      "prefecture": "aichi",
+      "normals": {
+        "ajisai": "06-11",
+        "fuji": "04-17",
+        "ichou": "11-18",
+        "kaede": "11-28",
+        "sakura_kaika": "03-24",
+        "sakura_mankai": "04-02",
+        "ume": "01-28"
+      }
+    },
+    {
+      "name": "津",
+      "prefecture": "mie",
+      "normals": {
+        "ajisai": "06-08",
+        "fuji": "04-23",
+        "ichou": "11-20",
+        "kaede": "11-25",
+        "sakura_kaika": "03-29",
+        "sakura_mankai": "04-03",
+        "ume": "02-04"
+      }
+    },
+    {
+      "name": "彦根",
+      "prefecture": "shiga",
+      "normals": {
+        "ajisai": "06-20",
+        "fuji": "04-25",
+        "ichou": "11-20",
+        "kaede": "11-28",
+        "sakura_kaika": "04-01",
+        "sakura_mankai": "04-08",
+        "ume": "02-20"
+      }
+    },
+    {
+      "name": "京都",
+      "prefecture": "kyoto",
+      "normals": {
+        "ajisai": "06-13",
+        "fuji": "04-18",
+        "ichou": "11-24",
+        "kaede": "12-05",
+        "sakura_kaika": "03-26",
+        "sakura_mankai": "04-04",
+        "ume": "02-22"
+      }
+    },
+    {
+      "name": "大阪",
+      "prefecture": "osaka",
+      "normals": {
+        "ajisai": "06-07",
+        "fuji": "04-16",
+        "ichou": "11-22",
+        "kaede": "12-01",
+        "sakura_kaika": "03-27",
+        "sakura_mankai": "04-04",
+        "ume": "02-13"
+      }
+    },
+    {
+      "name": "神戸",
+      "prefecture": "hyogo",
+      "normals": {
+        "ajisai": "06-08",
+        "fuji": "04-23",
+        "ichou": "11-13",
+        "kaede": "12-01",
+        "sakura_kaika": "03-27",
+        "sakura_mankai": "04-05",
+        "ume": "02-06"
+      }
+    },
+    {
+      "name": "奈良",
+      "prefecture": "nara",
+      "normals": {
+        "ajisai": "06-14",
+        "fuji": "04-19",
+        "ichou": "11-18",
+        "kaede": "11-21",
+        "sakura_kaika": "03-28",
+        "sakura_mankai": "04-04",
+        "ume": "01-31"
+      }
+    },
+    {
+      "name": "和歌山",
+      "prefecture": "wakayama",
+      "normals": {
+        "ajisai": "06-07",
+        "fuji": "04-15",
+        "ichou": "11-23",
+        "kaede": "12-06",
+        "sakura_kaika": "03-24",
+        "sakura_mankai": "04-03",
+        "ume": "02-12"
+      }
+    },
+    {
+      "name": "鳥取",
+      "prefecture": "tottori",
+      "normals": {
+        "ajisai": "06-17",
+        "fuji": "04-22",
+        "ichou": "11-27",
+        "kaede": "11-30",
+        "sakura_kaika": "03-29",
+        "sakura_mankai": "04-05",
+        "ume": "02-10"
+      }
+    },
+    {
+      "name": "松江",
+      "prefecture": "shimane",
+      "normals": {
+        "ajisai": "06-20",
+        "fuji": "04-27",
+        "ichou": "11-21",
+        "kaede": "11-24",
+        "sakura_kaika": "03-29",
+        "sakura_mankai": "04-05",
+        "ume": "01-19"
+      }
+    },
+    {
+      "name": "岡山",
+      "prefecture": "okayama",
+      "normals": {
+        "ajisai": "06-11",
+        "fuji": "04-19",
+        "ichou": "11-22",
+        "kaede": "11-29",
+        "sakura_kaika": "03-28",
+        "sakura_mankai": "04-04",
+        "ume": "02-08"
+      }
+    },
+    {
+      "name": "広島",
+      "prefecture": "hiroshima",
+      "normals": {
+        "ajisai": "06-10",
+        "fuji": "04-16",
+        "ichou": "11-15",
+        "kaede": "11-22",
+        "sakura_kaika": "03-25",
+        "sakura_mankai": "04-03",
+        "ume": "02-06"
+      }
+    },
+    {
+      "name": "下関",
+      "prefecture": "yamaguchi",
+      "normals": {
+        "ajisai": "06-13",
+        "fuji": "04-23",
+        "ichou": "11-24",
+        "kaede": "12-06",
+        "sakura_kaika": "03-26",
+        "sakura_mankai": "04-04",
+        "ume": "01-29"
+      }
+    },
+    {
+      "name": "徳島",
+      "prefecture": "tokushima",
+      "normals": {
+        "ajisai": "06-11",
+        "fuji": "04-19",
+        "ichou": "12-08",
+        "kaede": "11-28",
+        "sakura_kaika": "03-28",
+        "sakura_mankai": "04-04",
+        "ume": "02-06"
+      }
+    },
+    {
+      "name": "高松",
+      "prefecture": "kagawa",
+      "normals": {
+        "ajisai": "06-09",
+        "fuji": "04-20",
+        "ichou": "11-26",
+        "kaede": "11-23",
+        "sakura_kaika": "03-27",
+        "sakura_mankai": "04-04",
+        "ume": "01-13"
+      }
+    },
+    {
+      "name": "松山",
+      "prefecture": "ehime",
+      "normals": {
+        "ajisai": "06-09",
+        "fuji": "04-18",
+        "ichou": "11-22",
+        "kaede": "12-05",
+        "sakura_kaika": "03-24",
+        "sakura_mankai": "04-03",
+        "ume": "01-05"
+      }
+    },
+    {
+      "name": "高知",
+      "prefecture": "kochi",
+      "normals": {
+        "ajisai": "06-04",
+        "fuji": "04-10",
+        "ichou": "11-15",
+        "kaede": "12-02",
+        "sakura_kaika": "03-22",
+        "sakura_mankai": "03-30",
+        "ume": "01-27"
+      }
+    },
+    {
+      "name": "福岡",
+      "prefecture": "fukuoka",
+      "normals": {
+        "ajisai": "06-05",
+        "fuji": "04-11",
+        "ichou": "11-20",
+        "kaede": "12-01",
+        "sakura_kaika": "03-22",
+        "sakura_mankai": "03-31",
+        "ume": "01-31"
+      }
+    },
+    {
+      "name": "佐賀",
+      "prefecture": "saga",
+      "normals": {
+        "ajisai": "06-04",
+        "fuji": "04-13",
+        "ichou": "11-21",
+        "kaede": "11-30",
+        "sakura_kaika": "03-24",
+        "sakura_mankai": "04-02",
+        "ume": "01-28"
+      }
+    },
+    {
+      "name": "長崎",
+      "prefecture": "nagasaki",
+      "normals": {
+        "ajisai": "06-06",
+        "fuji": "04-14",
+        "ichou": "12-05",
+        "kaede": "12-07",
+        "sakura_kaika": "03-23",
+        "sakura_mankai": "04-02",
+        "ume": "01-24"
+      }
+    },
+    {
+      "name": "熊本",
+      "prefecture": "kumamoto",
+      "normals": {
+        "ajisai": "06-01",
+        "fuji": "04-09",
+        "ichou": "11-27",
+        "kaede": "12-02",
+        "sakura_kaika": "03-22",
+        "sakura_mankai": "04-01",
+        "ume": "02-03"
+      }
+    },
+    {
+      "name": "大分",
+      "prefecture": "oita",
+      "normals": {
+        "ajisai": "06-08",
+        "fuji": "04-20",
+        "ichou": "12-05",
+        "kaede": "11-28",
+        "sakura_kaika": "03-24",
+        "sakura_mankai": "04-04",
+        "ume": "01-26"
+      }
+    },
+    {
+      "name": "宮崎",
+      "prefecture": "miyazaki",
+      "normals": {
+        "ajisai": "06-02",
+        "fuji": "04-08",
+        "ichou": "11-29",
+        "kaede": "12-04",
+        "sakura_kaika": "03-23",
+        "sakura_mankai": "04-02",
+        "ume": "01-22"
+      }
+    },
+    {
+      "name": "鹿児島",
+      "prefecture": "kagoshima",
+      "normals": {
+        "ajisai": "06-01",
+        "fuji": "04-09",
+        "ichou": "11-25",
+        "kaede": "12-15",
+        "sakura_kaika": "03-26",
+        "sakura_mankai": "04-05",
+        "ume": "02-02"
+      }
+    },
+    {
+      "name": "名瀬",
+      "prefecture": "kagoshima",
+      "normals": {
+        "ajisai": "06-01",
+        "fuji": "03-29",
+        "sakura_kaika": "01-20",
+        "sakura_mankai": "02-02"
+      }
+    },
+    {
+      "name": "那覇",
+      "prefecture": "okinawa",
+      "normals": {
+        "sakura_kaika": "01-16",
+        "sakura_mankai": "02-04",
+        "ume": "01-13"
+      }
+    },
+    {
+      "name": "宮古島",
+      "prefecture": "okinawa",
+      "normals": {
+        "sakura_kaika": "01-17",
+        "sakura_mankai": "02-09"
+      }
+    },
+    {
+      "name": "石垣島",
+      "prefecture": "okinawa",
+      "normals": {
+        "sakura_kaika": "01-18",
+        "sakura_mankai": "02-10",
+        "ume": "01-11"
+      }
+    },
+    {
+      "name": "南大東島",
+      "prefecture": "okinawa",
+      "normals": {
+        "sakura_kaika": "01-20",
+        "sakura_mankai": "02-05"
+      }
+    }
+  ]
+}

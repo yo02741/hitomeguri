@@ -65,6 +65,8 @@ export interface BundleIndex {
   packs?: Record<string, { count: number; version: string }>
   /** search.json 的版本 */
   search?: string
+  /** 深度探索「祭典」：縣 → 版本 */
+  festivals?: Record<string, { count: number; version: string }>
 }
 
 /** 搜尋索引一筆：[id, 縣, 日文名, 假名, 繁中名（同日文時空字串）, 羅馬拼音, 分數] */
@@ -144,6 +146,43 @@ export async function fetchSpecialties(): Promise<Specialty[]> {
     return await getJson<Specialty[]>('specialties.json')
   } catch {
     return []
+  }
+}
+
+/** 深度探索「祭典」（pipeline/models.py Festival） */
+export interface Festival {
+  id: string
+  name: { ja: string; kana?: string; romaji?: string; zh_tw: string; en?: string }
+  prefecture: string
+  months?: number[]
+  months_source?: 'wikidata' | 'wikipedia'
+  location?: { lat: number; lng: number }
+  summary?: { text: string; lang: 'zh' | 'ja'; source_url: string; license: string }
+  images?: Array<{ url: string; author: string; license: string; source_url: string }>
+  sources: Array<{ url: string; fetched_at: string }>
+  views: number
+}
+
+export function fetchFestivals(pref: string, version: string): Promise<Festival[]> {
+  return getJson<Festival[]>(`festivals/${pref}.json?v=${version}`)
+}
+
+/** 深度探索「季節」：氣象廳生物季節観測平年值（normals: 現象 key → "MM-DD"） */
+export interface SeasonStation {
+  name: string
+  prefecture: string
+  normals: Record<string, string>
+}
+export interface SeasonData {
+  source: { url: string; fetched_at: string }
+  stations: SeasonStation[]
+}
+
+export async function fetchSeasons(): Promise<SeasonData | null> {
+  try {
+    return await getJson<SeasonData>('seasons.json')
+  } catch {
+    return null
   }
 }
 
