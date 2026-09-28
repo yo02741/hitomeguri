@@ -79,6 +79,10 @@ export function fetchMap(pref: string, version: string): Promise<MapSpot[]> {
   return getJson<MapSpot[]>(`map/${pref}.json?v=${version}`)
 }
 
+/** 各縣精選（首頁用）；v 為各縣版本組成，資料更新時換網址避開快取 */
+export function fetchFeatured(v: string): Promise<Record<string, MapSpot[]>> {
+  return getJson<Record<string, MapSpot[]>>(`featured.json?v=${v}`)
+}
 export function fetchDetail(pref: string, version: string): Promise<Spot[]> {
   return getJson<Spot[]>(`detail/${pref}.json?v=${version}`)
 }

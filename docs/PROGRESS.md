@@ -28,6 +28,9 @@
 - 手機版暫緩（PLAN.md §5 RWD）。待辦見根目錄 TODO.md。
 - 第二輪：主題層 UI 暫停；左側清單改為精選／全部／地區特色，與地圖連動；首頁列出 47 縣；拿掉照片預先下載；
   拉遠到縮放 7 以下回到首頁；Google Maps 改用「名稱＋縣名」搜尋。
+- 第三輪（載入速度）：首頁只載 `bundles/featured.json`（各縣精選），進入地區才載該縣地圖 bundle；地圖 bundle 只放大點；
+  Firebase SDK 改動態 import（未設定時不下載）；探索頁直接打包進主程式；字型拿掉 Noto Sans TC 500。
+  清單加類型篩選；地圖 bundle 的 `c` 改為類型（跳過世界遺產等文化指定）。
 
 ## 之後
 - Phase 4 期間限定、Phase 5 個人化（收藏、去過、匯出）等，見 PLAN.md §9；使用者授權到 Phase 3。

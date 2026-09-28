@@ -13,6 +13,7 @@ import re
 from pathlib import Path
 from typing import Any
 
+from pipeline import config
 from pipeline.models import FlightRoute, Specialty, Spot
 from pipeline.paths import BUNDLES_DIR, FLIGHTS_JSON, SPECIALTIES_DIR, SPOTS_DIR
 
@@ -37,6 +38,22 @@ def map_thumb(url: str) -> str | None:
     return thumb[len(COMMONS_THUMB_PREFIX) :]
 
 
+# 文化指定（世界遺產、國寶…）是屬性不是類型，分類時跳過；只有指定沒有類型時退回史跡／名勝
+DESIGNATION_TAGS = {label for _, label, _ in config.HERITAGE_RULES}
+DESIGNATION_FALLBACK = {"特別史跡": "史跡", "史跡": "史跡", "特別名勝": "名勝", "名勝": "名勝"}
+
+
+def spot_type(tags: list[str]) -> str | None:
+    tags = [t for t in tags if not t.startswith("guide-")]
+    for t in tags:
+        if t not in DESIGNATION_TAGS:
+            return t
+    for t in tags:
+        if t in DESIGNATION_FALLBACK:
+            return DESIGNATION_FALLBACK[t]
+    return None
+
+
 def map_entry(s: dict[str, Any]) -> dict[str, Any]:
     name = s["name"]
     entry: dict[str, Any] = {
@@ -55,9 +72,8 @@ def map_entry(s: dict[str, Any]) -> dict[str, Any]:
         entry["r"] = name["romaji"]
     if s.get("themes"):
         entry["t"] = s["themes"]
-    cats = [t for t in s.get("tags", []) if not t.startswith("guide-")]
-    if cats:
-        entry["c"] = cats[0]
+    if cat := spot_type(s.get("tags", [])):
+        entry["c"] = cat
     if s.get("images") and (thumb := map_thumb(s["images"][0]["url"])):
         entry["i"] = thumb
     return entry
@@ -66,13 +82,17 @@ def map_entry(s: dict[str, Any]) -> dict[str, Any]:
 def build(src: Path = SPOTS_DIR, dst: Path = BUNDLES_DIR) -> list[Path]:
     written = []
     index: dict[str, Any] = {"prefectures": {}}
+    featured: dict[str, list[dict[str, Any]]] = {}
     for path in sorted(src.glob("*.json")):
         pref = path.stem
         raw = json.loads(path.read_text(encoding="utf-8"))
         spots = [Spot.model_validate(s).model_dump(mode="json", exclude_none=True) for s in raw]
         published = [s for s in spots if s["status"] == "published"]
         version = hashlib.sha1(path.read_bytes()).hexdigest()[:10]
-        written.append(_write(dst / "map" / f"{pref}.json", [map_entry(s) for s in published]))
+        # 地圖 bundle 只放大點（主題層暫停，PLAN.md §5）；主題小店仍在 detail
+        majors = [map_entry(s) for s in published if s["kind"] == "major"]
+        written.append(_write(dst / "map" / f"{pref}.json", majors))
+        featured[pref] = [e for e in majors if e["f"] == 1]
         written.append(_write(dst / "detail" / f"{pref}.json", published))
         index["prefectures"][pref] = {
             "count": len(published),
@@ -80,6 +100,8 @@ def build(src: Path = SPOTS_DIR, dst: Path = BUNDLES_DIR) -> list[Path]:
             "version": version,
         }
     written.append(_write(dst / "_index.json", index))
+    # 首頁只需要各縣精選：一個小檔，不必先載入全部縣的地圖 bundle
+    written.append(_write(dst / "featured.json", featured))
     written += build_extras(dst)
     return written
 

@@ -7,6 +7,7 @@ import MapView, { type MapView as MapViewState } from '../components/MapView.vue
 import RegionLists from '../components/RegionLists.vue'
 import RegionTag from '../components/RegionTag.vue'
 import SpotPanel from '../components/SpotPanel.vue'
+import { categoryGroup } from '../data/categories'
 import { regionOf } from '../data/regions'
 import type { MapSpot, Spot } from '../services/bundles'
 import { loadPrefectureShapes, prefectureAt, prefectureBounds } from '../services/geo'
@@ -28,8 +29,9 @@ const bounds = shallowRef<[number, number, number, number] | null>(null)
 let panSwitch = false
 
 const available = computed(() => Object.keys(catalog.index?.prefectures ?? {}))
+// 已載入完整地圖 bundle 的縣用全部大點，其餘縣先用精選
 const allSpots = computed<MapSpot[]>(() =>
-  available.value.flatMap((p) => catalog.mapSpots[p] ?? []),
+  available.value.flatMap((p) => catalog.mapSpots[p] ?? catalog.featured[p] ?? []),
 )
 // 顯示規則：大點（精選或全部）＋開啟中主題的景點（UX-FLOW.md A3、A4；主題層目前暫停）
 const visibleSpots = computed(() =>
@@ -37,7 +39,8 @@ const visibleSpots = computed(() =>
     if (s.id === selectedId.value) return true
     if (s.t?.some((t) => explore.themes.includes(t))) return true
     if (s.k !== 'major') return false
-    return !explore.featuredOnly || s.f === 1
+    if (explore.featuredOnly && s.f !== 1) return false
+    return !explore.category || categoryGroup(s.c) === explore.category
   }),
 )
 
@@ -83,12 +86,11 @@ function spotBounds(spots: MapSpot[]): [number, number, number, number] | null {
   return [w, s, e, n]
 }
 
-onMounted(async () => {
+// 地區頁的定位由下方 props.pref 的 watcher 負責；這裡只載入共用資料
+onMounted(() => {
   catalog.loadExtras()
-  await catalog.loadAllMaps()
-  if (props.pref && !panSwitch) bounds.value = spotBounds(prefSpots.value.filter((s) => s.f === 1))
-  await loadPrefectureShapes().catch(() => {})
-  if (props.pref && !bounds.value) bounds.value = prefectureBounds(props.pref)
+  catalog.loadFeatured()
+  loadPrefectureShapes().catch(() => {})
 })
 
 // 地區：URL 的 :pref 決定整頁地區色；首頁用全國色（UX-FLOW.md §1.3）。

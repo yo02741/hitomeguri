@@ -1,8 +1,11 @@
-import { onAuthStateChanged, signInWithPopup, signOut, type User } from 'firebase/auth'
+import type { User } from 'firebase/auth'
 import { defineStore } from 'pinia'
 import { ref } from 'vue'
 
-import { auth, firebaseAvailable, googleProvider } from '../services/firebase'
+import { firebaseAvailable } from '../services/firebaseEnv'
+
+// Firebase SDK 以動態 import 載入：沒有設定 Firebase 時完全不下載，也不擋住首頁載入。
+const loadFirebase = () => Promise.all([import('../services/firebase'), import('firebase/auth')])
 
 export const useUserStore = defineStore('user', () => {
   const user = ref<User | null>(null)
@@ -10,21 +13,24 @@ export const useUserStore = defineStore('user', () => {
   const ready = ref(!firebaseAvailable)
   const canSignIn = firebaseAvailable
 
-  if (auth) {
-    onAuthStateChanged(auth, (u) => {
-      user.value = u
-      ready.value = true
+  if (firebaseAvailable) {
+    void loadFirebase().then(([{ auth }, { onAuthStateChanged }]) => {
+      if (!auth) return
+      onAuthStateChanged(auth, (u) => {
+        user.value = u
+        ready.value = true
+      })
     })
   }
 
   async function signIn() {
-    if (!auth) return
-    await signInWithPopup(auth, googleProvider)
+    const [{ auth, googleProvider }, { signInWithPopup }] = await loadFirebase()
+    if (auth) await signInWithPopup(auth, googleProvider)
   }
 
   async function logOut() {
-    if (!auth) return
-    await signOut(auth)
+    const [{ auth }, { signOut }] = await loadFirebase()
+    if (auth) await signOut(auth)
   }
 
   return { user, ready, canSignIn, signIn, logOut }

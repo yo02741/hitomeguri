@@ -247,7 +247,7 @@
 - 裝飾：右上 104px 圓形 `bg-region-accent`；**只用正圓**，不用漸層、不用照片。
 - 內容：左側假名（`text-caption tracking-kana`）＋縣名（`text-h3 font-black tracking-name`）；右側羅馬拼音（`font-latin font-bold text-body-sm tracking-[0.3em] uppercase`）＋地方名；已驗證的直飛航線在下一行（`font-latin font-semibold text-caption`）。
 - 整塊是一個按鈕（回到首頁的日本地圖），`aria-label="切換地區"`。
-- 下方是景點清單卡（`rounded-card bg-paper shadow-float`）：分頁「精選／全部／地區特色」，精選與全部同時決定地圖上顯示哪些大點（取代原本的「只看精選」勾選框）。每列左側 44px 圓角縮圖（lazy 載入）＋假名／名稱＋分類；滑過一列在地圖上標出該景點，點選則選取並飛過去。
+- 下方是景點清單卡（`rounded-card bg-paper shadow-float`）：分頁「精選／全部／地區特色」，精選與全部同時決定地圖上顯示哪些大點（取代原本的「只看精選」勾選框）。分頁下方是類型 chip（不限／寺社／城・史跡／古墳／博物館／公園・自然／娛樂／其他，只列目前分頁有的類型，單選），同時篩選清單與地圖；分組定義在 `web/src/data/categories.ts`。每列左側 44px 圓角縮圖（lazy 載入）＋假名／名稱＋類型；滑過一列在地圖上標出該景點，點選則選取並飛過去。清單捲軸用細捲軸並保留 gutter，不貼字。
 - 主題篩選（茶、酒等）暫停，見 PLAN.md §1。
 - 首頁左上列出 47 都道府縣（依地方分組）；還沒有景點資料的縣字色用 `text-sub`，點進去用縣界範圍定位。
 

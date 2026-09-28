@@ -5,6 +5,8 @@ import { ref } from 'vue'
 export const useExploreStore = defineStore('explore', () => {
   const activePref = ref<string | null>(null)
   const featuredOnly = ref(true)
+  // 景點類型篩選（data/categories.ts 的組別 key）；null 為不限
+  const category = ref<string | null>(null)
   const themes = ref<string[]>([])
 
   function setActivePref(pref: string | null) {
@@ -24,5 +26,5 @@ export const useExploreStore = defineStore('explore', () => {
       : [...themes.value, key]
   }
 
-  return { activePref, featuredOnly, themes, setActivePref, toggleTheme }
+  return { activePref, featuredOnly, category, themes, setActivePref, toggleTheme }
 })

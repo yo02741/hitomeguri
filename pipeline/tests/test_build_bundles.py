@@ -1,4 +1,4 @@
-from pipeline.build_bundles import map_thumb
+from pipeline.build_bundles import map_thumb, spot_type
 
 
 def test_map_thumb_rewrites_width_and_strips_prefix() -> None:
@@ -16,3 +16,9 @@ def test_map_thumb_keeps_small_originals() -> None:
 
 def test_map_thumb_ignores_non_thumbnail_urls() -> None:
     assert map_thumb("https://example.com/a.jpg") is None
+
+
+def test_spot_type_skips_designations() -> None:
+    assert spot_type(["重要文化財", "神社"]) == "神社"
+    assert spot_type(["世界遺產", "特別史跡"]) == "史跡"
+    assert spot_type(["guide-S"]) is None

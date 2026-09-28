@@ -4,6 +4,7 @@ import { shallowRef, triggerRef } from 'vue'
 import {
   type BundleIndex,
   fetchDetail,
+  fetchFeatured,
   fetchFlights,
   fetchSpecialties,
   type FlightRoute,
@@ -57,6 +58,26 @@ export const useCatalogStore = defineStore('catalog', () => {
     })
   }
 
+  /** 各縣精選：首頁與還沒載入完整地圖 bundle 的縣用這份 */
+  const featured = shallowRef<Record<string, MapSpot[]>>({})
+  async function loadFeatured(): Promise<void> {
+    await loadIndex()
+    if (Object.keys(featured.value).length) return
+    await once('featured', async () => {
+      const v = Object.values(index.value?.prefectures ?? {})
+        .map((m) => m.version.slice(0, 4))
+        .join('')
+      try {
+        featured.value = await fetchFeatured(v)
+      } catch {
+        featured.value = {}
+      }
+      for (const [pref, spots] of Object.entries(featured.value)) {
+        for (const s of spots) if (!prefOfSpot.has(s.id)) prefOfSpot.set(s.id, pref)
+      }
+    })
+  }
+
   async function loadAllMaps(): Promise<void> {
     await loadIndex()
     await Promise.all(available().map((p) => loadMap(p)))
@@ -77,6 +98,7 @@ export const useCatalogStore = defineStore('catalog', () => {
 
   /** 依 id 取完整景點；若不知道在哪個縣，先載入全部地圖 bundle 找出來。 */
   async function getSpot(id: string): Promise<Spot | null> {
+    await loadFeatured()
     let pref = prefOfSpot.get(id)
     if (!pref) {
       await loadAllMaps()
@@ -98,5 +120,5 @@ export const useCatalogStore = defineStore('catalog', () => {
     })
   }
 
-  return { index, mapSpots, details, specialties, flights, loadExtras, loadIndex, available, loadMap, loadAllMaps, loadDetail, getSpot }
+  return { index, mapSpots, featured, loadFeatured, details, specialties, flights, loadExtras, loadIndex, available, loadMap, loadAllMaps, loadDetail, getSpot }
 })
