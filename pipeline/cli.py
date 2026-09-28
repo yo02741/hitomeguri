@@ -48,9 +48,11 @@ def cmd_seed_themes(args: argparse.Namespace) -> int:
 
 
 def cmd_seed_specialties(args: argparse.Namespace) -> int:
+    from pipeline.geo import pref_slugs
     from pipeline.specialties import flight_candidates, seed_specialties
 
-    _emit(seed_specialties(args.prefectures) + "\n" + flight_candidates(), args.report)
+    prefs = args.prefectures or pref_slugs()
+    _emit(seed_specialties(prefs) + "\n" + flight_candidates(), args.report)
     return 0
 
 
@@ -132,8 +134,10 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("--report")
     p.set_defaults(func=cmd_seed_themes)
 
-    p = sub.add_parser("seed-specialties", help="地區特色（種子 × Wikidata）與直飛航線候選")
-    p.add_argument("prefectures", nargs="+")
+    p = sub.add_parser(
+        "seed-specialties", help="地區特色（郷土料理、維基分類、種子）與直飛航線候選"
+    )
+    p.add_argument("prefectures", nargs="*", help="省略時處理全部縣")
     p.add_argument("--report")
     p.set_defaults(func=cmd_seed_specialties)
 

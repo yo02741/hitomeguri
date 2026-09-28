@@ -1,19 +1,19 @@
 name: seed-pack
 
-# 手動觸發：採集擴充包（目前只有寶可夢人孔蓋 ポケふた），結果推到 pipeline/<command>-<run> 分支，檢查後再合併。
-# 全國一個 job 依序抓（同一網站，每秒最多一次請求）。
+# 手動觸發：採集全國一次抓完的資料（擴充包：寶可夢；地區特色：郷土料理＋維基分類），
+# 結果推到 pipeline/<command>-<run> 分支，檢查後再合併。全國一個 job 依序抓（同一網站，每秒最多一次請求）。
 
 on:
   workflow_dispatch:
     inputs:
       command:
-        description: "擴充包"
+        description: "採集項目"
         required: true
         default: seed-pokefuta
         type: choice
-        options: [seed-pokefuta, seed-pokecen]
+        options: [seed-pokefuta, seed-pokecen, seed-specialties]
       prefectures:
-        description: "都道府縣 slug，空白分隔；空白表示全部（只有 seed-pokefuta 用）"
+        description: "都道府縣 slug，空白分隔；空白表示全部（seed-pokecen 不用）"
         required: false
         default: ""
 
@@ -39,7 +39,7 @@ jobs:
         env:
           PREFS: ${{ inputs.prefectures }}
         run: |
-          if [ "${{ inputs.command }}" = seed-pokefuta ]; then args="$PREFS"; else args=""; fi
+          if [ "${{ inputs.command }}" = seed-pokecen ]; then args=""; else args="$PREFS"; fi
           .venv/bin/python -m pipeline.cli ${{ inputs.command }} $args --report /tmp/report.md
       - name: 推到審核分支
         run: |
@@ -47,7 +47,7 @@ jobs:
           git config user.name "hitomeguri-pipeline"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git checkout -b "$branch"
-          git add data/packs
+          git add data/packs data/specialties data/flights 2>/dev/null || true
           if git diff --cached --quiet; then
             echo "沒有變更" >> "$GITHUB_STEP_SUMMARY"
             exit 0
