@@ -27,7 +27,15 @@ from pipeline.models import (
     StationName,
 )
 from pipeline.paths import REGIONS_JSON, SEED_DIR, SPOTS_DIR
-from pipeline.sources import commons, okinawastory, osm, pageviews, wikidata, wikipedia
+from pipeline.sources import (
+    commons,
+    crossroadfukuoka,
+    okinawastory,
+    osm,
+    pageviews,
+    wikidata,
+    wikipedia,
+)
 from pipeline.sources.okinawastory import OfficialSpot
 from pipeline.sources.osm import OsmElement
 from pipeline.sources.wikidata import Entity
@@ -217,7 +225,8 @@ def extra_category_qids(pref: str) -> set[str]:
 
 
 # 有官方觀光網站熱門排行的縣
-OFFICIAL_SOURCES = {"okinawa": okinawastory.spots}
+OFFICIAL_SOURCES = {"okinawa": okinawastory.spots, "fukuoka": crossroadfukuoka.spots}
+OFFICIAL_HOSTS = ("okinawastory.jp", "crossroadfukuoka.jp")
 
 
 def _names_overlap(a: set[str], b: set[str]) -> bool:
@@ -254,7 +263,7 @@ def merge_official(pref: str, drafts: dict[str, Draft]) -> None:
     log(f"[{pref}] 官方觀光網站熱門排行…")
     items = fetch(config.OFFICIAL_TOP_N)
     matched = added = 0
-    skipped: dict[str, list[str]] = {"沒有座標": [], "縣外": [], "住宿等": []}
+    skipped: dict[str, list[str]] = {"沒有座標": [], "縣外": [], "住宿等": [], "活動、花況": []}
     south, west, north, east = geo.bbox(pref)
     for o in items:
         if o.lat is None or o.lng is None:
@@ -276,6 +285,10 @@ def merge_official(pref: str, drafts: dict[str, Draft]) -> None:
             continue
         if any(x in c for c in o.categories for x in config.OFFICIAL_EXCLUDE_CATEGORY):
             skipped["住宿等"].append(o.name)
+            continue
+        # 熱門清單混有活動與季節花況（「【宇美八幡宮】放生会」「矢部川沿いの彼岸花」）：不是景點
+        if config.OFFICIAL_EXCLUDE_NAME_RE.search(o.name):
+            skipped["活動、花況"].append(o.name)
             continue
         names = official_names(o.name)
         # 名稱完全相同的優先，其次名稱重疊的；各自取最近的
@@ -1039,7 +1052,7 @@ def seed_region(pref: str) -> str:
 
 
 def _official_url(s: dict[str, Any]) -> bool:
-    return any("okinawastory.jp" in x["url"] for x in s.get("sources", []))
+    return any(h in x["url"] for x in s.get("sources", []) for h in OFFICIAL_HOSTS)
 
 
 def report(pref: str, spots: list[dict[str, Any]], unmatched: list[str]) -> str:
