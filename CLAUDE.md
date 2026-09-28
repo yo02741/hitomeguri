@@ -40,6 +40,12 @@ Claude Code 的雲端沙箱連不到 Wikidata、OSM、Wikimedia，也沒有 Clau
 - `verify-flights.yml`（手動，需 `ANTHROPIC_API_KEY` secret）：帶 web search 查證直飛航線，留待排程使用。原本 LLM 補簡介／假名的 enrich 已移除（違反「內容來自實際來源」原則）。
 - 產出分支檢查報告（commit 訊息與 Actions 摘要）後再合併進工作分支。
 
+## 分支
+- `claude/charming-hawking-gngkes`：目前唯一的工作分支，也是 GitHub 預設分支；推上去就會部署 GitHub Pages。
+- `pipeline/<指令>-<run 編號>`（例：`pipeline/seed-region-23`）：Actions 採集結果的暫存審核分支。檢查報告後用
+  `git checkout origin/pipeline/... -- data/...` 合併進工作分支，之後用 `cleanup-branches.yml`（手動）刪除；
+  還沒合併的填在 keep 保留。Claude Code 的雲端 session 只能推自己的工作分支，不能直接刪別的分支。
+
 ## 結構速覽
 - `data/`：景點主資料（source of truth）。`regions.json` 47 縣名稱、地方、地區色；`seed/` 攻略候選清單。
 - `pipeline/`：Python 資料 pipeline，`models.py` 對應 PLAN.md §4 的 schema，`cli.py` 為指令入口。

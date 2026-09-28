@@ -1,0 +1,32 @@
+name: cleanup-branches
+
+# 手動觸發：刪除已合併的 pipeline/* 審核分支（採集結果推到這些分支，檢查後合併進工作分支就不需要了）。
+# keep 填還沒合併、要保留的分支。只動 pipeline/ 開頭的分支，其他分支不碰。
+
+on:
+  workflow_dispatch:
+    inputs:
+      keep:
+        description: "要保留的 pipeline/ 分支，空白分隔（例：pipeline/seed-region-24）"
+        required: false
+        default: ""
+
+permissions:
+  contents: write
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: 刪除 pipeline/* 分支
+        env:
+          KEEP: ${{ inputs.keep }}
+        run: |
+          git fetch -q --prune origin '+refs/heads/pipeline/*:refs/remotes/origin/pipeline/*'
+          for b in $(git branch -r | sed 's#^ *origin/##' | grep '^pipeline/'); do
+            case " $KEEP " in
+              *" $b "*) echo "保留 $b" ;;
+              *) git push -q origin --delete "$b" && echo "已刪除 $b" ;;
+            esac
+          done
