@@ -18,6 +18,8 @@ const props = defineProps<{
   colorKey?: string | null
   /** 左側被浮動面板蓋住的寬度（px）：定位與「目前看的範圍」都扣掉這一塊 */
   insetLeft?: number
+  /** 目前地區的縣界：虛線外框＋淡淡的地區色，看出縣的範圍 */
+  outline?: GeoJSON.Feature | null
   /** 開啟中的擴充包：用主題色畫在最上層，景點變淡當底圖 */
   pack?: { color: string; points: PackPoint[] } | null
 }>()
@@ -50,6 +52,11 @@ let ready = false
 
 const SOURCE = 'spots'
 const PACK_SOURCE = 'pack'
+const OUTLINE_SOURCE = 'outline'
+
+function outlineData(f: GeoJSON.Feature | null | undefined): GeoJSON.FeatureCollection {
+  return { type: 'FeatureCollection', features: f ? [f] : [] }
+}
 // 開啟擴充包時景點的不透明度
 const DIM = 0.3
 // hover 命中半徑（px）：游標靠近就放大，不必精準對到小圓點
@@ -184,6 +191,8 @@ function applyColors() {
   map.setPaintProperty('spot-labels', 'text-halo-color', paper)
   map.setPaintProperty('selected', 'circle-color', ink)
   map.setPaintProperty('selected', 'circle-stroke-color', strong)
+  map.setPaintProperty('outline-fill', 'fill-color', token('--region-base'))
+  map.setPaintProperty('outline-line', 'line-color', strong)
   const packColor = token(`--color-t-${props.pack?.color ?? 'major'}`)
   map.setPaintProperty('pack-clusters', 'circle-color', packColor)
   map.setPaintProperty('pack-clusters', 'circle-stroke-color', paper)
@@ -203,6 +212,26 @@ function applyColors() {
 
 function addLayers() {
   if (!map) return
+  // 縣界畫在景點下面
+  map.addSource(OUTLINE_SOURCE, { type: 'geojson', data: outlineData(props.outline) })
+  map.addLayer({
+    id: 'outline-fill',
+    type: 'fill',
+    source: OUTLINE_SOURCE,
+    paint: { 'fill-opacity': 0.14 },
+  })
+  map.addLayer({
+    id: 'outline-line',
+    type: 'line',
+    source: OUTLINE_SOURCE,
+    layout: { 'line-join': 'round' },
+    paint: {
+      'line-width': ['interpolate', ['linear'], ['zoom'], 6, 1.5, 10, 2.5],
+      'line-dasharray': [2.5, 1.5],
+      // 縣界是簡化過的線（約 400 m 精度），拉很近時和海岸線對不齊：淡出
+      'line-opacity': ['interpolate', ['linear'], ['zoom'], 11, 0.9, 13, 0.35],
+    },
+  })
   map.addSource(SOURCE, {
     type: 'geojson',
     data: toGeoJSON(props.spots),
@@ -582,6 +611,14 @@ watch(
       el.classList.toggle('border-region-strong', pid === id)
       el.classList.toggle('border-paper', pid !== id)
     }
+  },
+)
+
+watch(
+  () => props.outline,
+  (f) => {
+    if (!map || !ready) return
+    ;(map.getSource(OUTLINE_SOURCE) as GeoJSONSource | undefined)?.setData(outlineData(f))
   },
 )
 

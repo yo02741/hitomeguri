@@ -1,4 +1,6 @@
-// 縣界（web/public/geo/prefectures.json）：判斷地圖中心落在哪個縣（UX-FLOW.md §1.3）。
+// 縣界（web/public/geo/prefectures.json）：判斷地圖中心落在哪個縣（UX-FLOW.md §1.3），並在地區頁畫出縣界。
+
+import type * as GeoJSON from 'geojson'
 
 type Ring = [number, number][]
 interface Feature {
@@ -39,6 +41,13 @@ export function prefectureAt(lng: number, lat: number): string | null {
   return null
 }
 
+/** 縣界的 GeoJSON（地圖上畫縣界用）；縣界尚未載入時為 null */
+export function prefectureShape(pref: string): GeoJSON.Feature<GeoJSON.MultiPolygon> | null {
+  const f = features?.find((x) => x.properties.pref === pref)
+  if (!f) return null
+  return { type: 'Feature', properties: { pref }, geometry: { type: 'MultiPolygon', coordinates: f.geometry.coordinates } }
+}
+
 /** 縣界的外框 [west, south, east, north]；縣界尚未載入時為 null。 */
 export function prefectureBounds(pref: string): [number, number, number, number] | null {
   const f = features?.find((x) => x.properties.pref === pref)
@@ -51,6 +60,30 @@ export function prefectureBounds(pref: string): [number, number, number, number]
     }
   }
   return [w, s, e, n]
+}
+
+/**
+ * 縣的主要陸地（範圍最大的一塊）的外框：進入地區時看得到整個縣的形狀，
+ * 又不會因為離島（沖繩的八重山、東京的伊豆諸島）拉得太遠。縣界尚未載入時為 null。
+ */
+export function prefectureMainBounds(pref: string): [number, number, number, number] | null {
+  const f = features?.find((x) => x.properties.pref === pref)
+  if (!f) return null
+  let best: [number, number, number, number] | null = null
+  let bestArea = -1
+  for (const poly of f.geometry.coordinates) {
+    let w = 180, s = 90, e = -180, n = -90
+    for (const [x, y] of poly[0] ?? []) {
+      w = Math.min(w, x); e = Math.max(e, x)
+      s = Math.min(s, y); n = Math.max(n, y)
+    }
+    const area = (e - w) * (n - s)
+    if (area > bestArea) {
+      bestArea = area
+      best = [w, s, e, n]
+    }
+  }
+  return best
 }
 
 /** 兩點距離（公尺） */

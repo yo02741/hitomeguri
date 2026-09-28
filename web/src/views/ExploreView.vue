@@ -15,7 +15,14 @@ import { PACKS, packByKey, packOfId } from '../data/packs'
 import { JAPAN_BOUNDS } from '../map/style'
 import { regionOf } from '../data/regions'
 import type { MapSpot, PackItem, Spot } from '../services/bundles'
-import { distanceM, loadPrefectureShapes, prefectureAt, prefectureBounds } from '../services/geo'
+import {
+  distanceM,
+  loadPrefectureShapes,
+  prefectureAt,
+  prefectureBounds,
+  prefectureMainBounds,
+  prefectureShape,
+} from '../services/geo'
 import type { SearchHit } from '../services/search'
 import { trackSplash } from '../services/splash'
 import { useCatalogStore } from '../stores/catalog'
@@ -145,11 +152,25 @@ function spotBounds(all: MapSpot[]): [number, number, number, number] | null {
   return [w, s, e, n]
 }
 
+// 縣界載入後才畫得出目前地區的外框
+const shapesReady = ref(false)
+const outline = computed(() => (shapesReady.value && props.pref ? prefectureShape(props.pref) : null))
+
+function union(
+  a: [number, number, number, number] | null,
+  b: [number, number, number, number] | null,
+): [number, number, number, number] | null {
+  if (!a || !b) return a ?? b
+  return [Math.min(a[0], b[0]), Math.min(a[1], b[1]), Math.max(a[2], b[2]), Math.max(a[3], b[3])]
+}
+
 // 地區頁的定位由下方 props.pref 的 watcher 負責；這裡只載入共用資料
 onMounted(() => {
   catalog.loadExtras()
   trackSplash(catalog.loadFeatured(), 'featured')
-  loadPrefectureShapes().catch(() => {})
+  loadPrefectureShapes()
+    .then(() => (shapesReady.value = true))
+    .catch(() => {})
 })
 
 // 地區：URL 的 :pref 決定整頁地區色；首頁用全國色（UX-FLOW.md §1.3）。
@@ -174,9 +195,10 @@ watch(
       mapRef.value?.flyTo(target.lng, target.lat)
       return
     }
-    // 還沒有資料的縣：用縣界範圍定位
-    if (!spots.length) await loadPrefectureShapes().catch(() => {})
-    bounds.value = spotBounds(spots.filter((s) => s.f === 1)) ?? spotBounds(spots) ?? prefectureBounds(pref)
+    // 看得到整個縣的形狀（主要陸地的縣界）＋主要景點；還沒有資料的縣用縣界範圍定位
+    await loadPrefectureShapes().catch(() => {})
+    const main = spotBounds(spots.filter((s) => s.f === 1)) ?? spotBounds(spots)
+    bounds.value = union(main, prefectureMainBounds(pref)) ?? prefectureBounds(pref)
   },
   { immediate: true },
 )
@@ -318,6 +340,7 @@ function onMoveEnd(view: MapViewState) {
         :color-key="explore.activePref"
         :inset-left="insetLeft"
         :pack="packMap"
+        :outline="outline"
         @select="select"
         @moveend="onMoveEnd"
       />
