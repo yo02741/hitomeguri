@@ -596,8 +596,9 @@ def score(drafts: dict[str, Draft]) -> None:
         if d.listed:
             s += config.TOURISM_LIST_BONUS
         if d.official:
-            share = 1 - (d.official.rank - 1) / config.OFFICIAL_TOP_N
-            s += config.OFFICIAL_BONUS_MAX * max(share, 0)
+            share = max(1 - (d.official.rank - 1) / config.OFFICIAL_TOP_N, 0)
+            span = config.OFFICIAL_BONUS_MAX - config.OFFICIAL_BONUS_MIN
+            s += config.OFFICIAL_BONUS_MIN + span * share
         d.score = round(s, 2)
 
 
@@ -947,6 +948,10 @@ def seed_region(pref: str) -> str:
     return report(pref, out, unmatched)
 
 
+def _official_url(s: dict[str, Any]) -> bool:
+    return any("okinawastory.jp" in x["url"] for x in s.get("sources", []))
+
+
 def report(pref: str, spots: list[dict[str, Any]], unmatched: list[str]) -> str:
     featured = [s for s in spots if s["featured"]]
     featured.sort(key=lambda s: -s["score"])
@@ -962,7 +967,8 @@ def report(pref: str, spots: list[dict[str, Any]], unmatched: list[str]) -> str:
         f"| 全部景點 | {len(spots)} |",
         f"| 精選 | {len(featured)} |",
         f"| 對上的種子景點 | {len(seed_hits)} |",
-        f"| 缺假名（待 LLM 補） | {len(no_kana)} |",
+        f"| 官方觀光網站列出 | {sum(1 for s in spots if _official_url(s))} |",
+        f"| 缺假名 | {len(no_kana)} |",
         f"| 沒有照片 | {len(no_image)} |",
         f"| 1.5 km 內沒有車站 | {len(no_station)} |",
         "",

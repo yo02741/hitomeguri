@@ -34,7 +34,10 @@ TOURISM_CATEGORY_DEPTH = 2
 
 # 縣的官方觀光網站熱門排行（目前：沖繩 おきなわ物語）。取前 N 名，排名越前加分越多。
 OFFICIAL_TOP_N = 400
-OFFICIAL_BONUS_MAX = 40.0
+# 官方網站的熱門排名是「旅客實際在看什麼」最直接的訊號：排名第 1 加 OFFICIAL_BONUS_MAX，
+# 第 N 名加 OFFICIAL_BONUS_MIN（沒有維基條目的購物中心、市場也能進前段）
+OFFICIAL_BONUS_MAX = 80.0
+OFFICIAL_BONUS_MIN = 20.0
 # 官方網站上的地點併入既有候選：名稱相同的距離上限
 OFFICIAL_MATCH_DISTANCE_M = 2000
 # 這些類型的官方條目不是景點（住宿、租車、旅行社）
