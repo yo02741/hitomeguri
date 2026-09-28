@@ -27,7 +27,8 @@ from pipeline.models import (
     StationName,
 )
 from pipeline.paths import REGIONS_JSON, SEED_DIR, SPOTS_DIR
-from pipeline.sources import commons, osm, pageviews, wikidata, wikipedia
+from pipeline.sources import commons, okinawastory, osm, pageviews, wikidata, wikipedia
+from pipeline.sources.okinawastory import OfficialSpot
 from pipeline.sources.osm import OsmElement
 from pipeline.sources.wikidata import Entity
 
@@ -71,6 +72,7 @@ class Draft:
     heritage_tags: list[str] = field(default_factory=list)
     score: float = 0.0
     listed: bool = False  # 列在維基「{縣}の観光地」
+    official: OfficialSpot | None = None  # 縣的官方觀光網站
 
     @property
     def qid(self) -> str | None:
@@ -102,12 +104,14 @@ class Draft:
         if self.ent and self.ent.labels.get("ja"):
             return self.ent.labels["ja"]
         t = self.osm_tags
-        return t.get("name:ja") or t.get("name")
+        return t.get("name:ja") or t.get("name") or (self.official.name if self.official else None)
 
     def all_names(self) -> list[str]:
         names = [self.name_ja or ""]
         t = self.osm_tags
         names += [t.get("name", ""), t.get("name:ja", "")]
+        if self.official:
+            names.append(self.official.name)
         return [n for n in names if n]
 
 
@@ -207,6 +211,46 @@ def extra_category_qids(pref: str) -> set[str]:
     return set(wikipedia.wikidata_ids("jawiki", titles).values())
 
 
+# 有官方觀光網站熱門排行的縣
+OFFICIAL_SOURCES = {"okinawa": okinawastory.spots}
+
+
+def merge_official(pref: str, drafts: dict[str, Draft]) -> None:
+    """官方觀光網站的熱門排行：名稱相同且在附近的併入既有候選，其餘新增。"""
+    fetch = OFFICIAL_SOURCES.get(pref)
+    if not fetch:
+        return
+    log(f"[{pref}] 官方觀光網站熱門排行…")
+    items = fetch(config.OFFICIAL_TOP_N)
+    matched = added = skipped = 0
+    for o in items:
+        if o.lat is None or o.lng is None or not geo.contains_fine(pref, o.lat, o.lng):
+            skipped += 1
+            continue
+        if any(x in c for c in o.categories for x in config.OFFICIAL_EXCLUDE_CATEGORY):
+            skipped += 1
+            continue
+        name = norm_name(o.name)
+        target = None
+        for d in drafts.values():
+            if d.official:
+                continue
+            dist = geo.haversine_m(d.lat, d.lng, o.lat, o.lng)
+            if dist <= config.OFFICIAL_MATCH_DISTANCE_M and any(
+                norm_name(n) == name for n in d.all_names()
+            ):
+                target = d
+                break
+        if target:
+            target.official = o
+            matched += 1
+        else:
+            key = f"{o.source}-{o.id}"
+            drafts[key] = Draft(key=key, lat=o.lat, lng=o.lng, official=o)
+            added += 1
+    log(f"[{pref}]   官方 {len(items)} 筆：併入 {matched}、新增 {added}、略過 {skipped}")
+
+
 def collect(pref: str) -> tuple[dict[str, Draft], dict[str, Entity]]:
     iso = geo.iso_code(pref)
     south, west, north, east = geo.bbox(pref)
@@ -293,6 +337,7 @@ def collect(pref: str) -> tuple[dict[str, Draft], dict[str, Entity]]:
             target.osm_els.append(el)
         else:
             drafts[el.osm_id] = Draft(key=el.osm_id, lat=el.lat, lng=el.lng, osm_els=[el])
+    merge_official(pref, drafts)
     return drafts, ents
 
 
@@ -449,9 +494,9 @@ def drop_non_spots(drafts: dict[str, Draft]) -> list[str]:
     dropped = []
     for key, d in list(drafts.items()):
         # 只有 OSM、沒有 Wikidata 項目的點大多是遊樂設施、動物舍、店家等（分數也都是 0）；
-        # 攻略種子例外
+        # 攻略種子與官方觀光網站列出的例外
         if not d.ent:
-            if not d.tier or name_excluded(d.name_ja):
+            if not (d.tier or d.official) or name_excluded(d.name_ja):
                 dropped.append(d.name_ja or key)
                 del drafts[key]
             continue
@@ -507,6 +552,9 @@ def score(drafts: dict[str, Draft]) -> None:
             s += config.GUIDE_TIER_BONUS.get(d.tier, 0.0)
         if d.listed:
             s += config.TOURISM_LIST_BONUS
+        if d.official:
+            share = 1 - (d.official.rank - 1) / config.OFFICIAL_TOP_N
+            s += config.OFFICIAL_BONUS_MAX * max(share, 0)
         d.score = round(s, 2)
 
 
@@ -557,6 +605,34 @@ _CATEGORY_BY_NAME = [
 ]
 
 
+# 官方觀光網站的類型名稱 → 本站類型（依序比對關鍵字）
+_CATEGORY_BY_OFFICIAL = [
+    ("ビーチ", "海灘"),
+    ("海水浴", "海灘"),
+    ("岬", "岬"),
+    ("島", "島"),
+    ("市場", "市場"),
+    ("直売", "市場"),
+    ("ショッピング", "購物"),
+    ("商業施設", "購物"),
+    ("水族館", "水族館"),
+    ("動物園", "動物園"),
+    ("美術館", "美術館"),
+    ("博物館", "博物館"),
+    ("資料館", "博物館"),
+    ("テーマパーク", "主題樂園"),
+    ("城", "城"),
+    ("グスク", "城"),
+    ("御嶽", "神社"),
+    ("神社", "神社"),
+    ("寺", "寺院"),
+    ("公園", "公園"),
+    ("庭園", "庭園"),
+    ("展望", "展望"),
+    ("街並", "街區"),
+    ("通り", "街區"),
+]
+
 KOFUN_RE = re.compile(r"(古墳|天皇陵|御陵)$")
 # 排除用：另外涵蓋古墳群；名稱先去掉消歧義括號（「亀塚古墳 (野洲市)」）
 KOFUN_DROP_RE = re.compile(r"(古墳群?|天皇陵|御陵)$")
@@ -580,6 +656,11 @@ def category(d: Draft) -> str | None:
     for rx, cat in _CATEGORY_BY_NAME:
         if rx.search(name):
             return cat
+    # 官方觀光網站的類型（名稱與 OSM 都判斷不出來時）
+    for label in d.official.categories if d.official else []:
+        for key, cat in _CATEGORY_BY_OFFICIAL:
+            if key in label:
+                return cat
     return None
 
 
@@ -660,6 +741,8 @@ def nearest_stations(d: Draft, stations: list[OsmElement]) -> list[NearestStatio
 def spot_id(d: Draft) -> str:
     if d.qid:
         return f"wd-{d.qid}"
+    if not d.osm_els and d.official:
+        return f"{d.official.source}-{d.official.id}"
     kind, num = d.osm_els[0].osm_id.split("/")
     return f"osm-{kind}-{num}"
 
@@ -678,6 +761,8 @@ def to_spot(
         sources.append(Source(url=d.ent.url, fetched_at=today))
     for el in d.osm_els[:3]:
         sources.append(Source(url=el.url, fetched_at=today))
+    if d.official:
+        sources.append(Source(url=d.official.url, fetched_at=today))
     img_list = []
     if d.ent and d.ent.image and d.ent.image in images:
         info = images[d.ent.image]

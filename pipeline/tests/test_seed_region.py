@@ -243,3 +243,45 @@ def test_category_for_shopping_and_coast():
     assert cat("古宇利大橋") == "橋"
     assert cat("知念岬") == "岬"
     assert cat("どこか", natural="beach") == "海灘"
+
+
+def test_merge_official(monkeypatch):
+    from pipeline.sources.okinawastory import OfficialSpot
+
+    monkeypatch.setattr(major.geo, "contains_fine", lambda pref, lat, lng: True)
+    existing = major.Draft(
+        key="Q10", lat=26.2147, lng=127.6861,
+        osm_els=[OsmElement("way/1", 26.2147, 127.6861, {"name": "国際通り"})],
+    )  # fmt: skip
+    drafts = {"Q10": existing}
+    items = [
+        OfficialSpot("okinawastory", "1", "国際通り", "https://x/1", 1, 26.2150, 127.6870, []),
+        OfficialSpot(
+            "okinawastory", "2", "泊いゆまち", "https://x/2", 2, 26.2270, 127.6780, ["市場"]
+        ),
+        OfficialSpot("okinawastory", "3", "某ホテル", "https://x/3", 3, 26.2, 127.6, ["宿泊施設"]),
+    ]
+    monkeypatch.setattr(major, "OFFICIAL_SOURCES", {"okinawa": lambda n: items})
+    major.merge_official("okinawa", drafts)
+    assert existing.official and existing.official.rank == 1
+    assert set(drafts) == {"Q10", "okinawastory-2"}
+    new = drafts["okinawastory-2"]
+    assert major.spot_id(new) == "okinawastory-2" and major.category(new) == "市場"
+
+
+def test_parse_okinawastory():
+    from pipeline.sources import okinawastory
+
+    detail = (
+        '<h1 class="os-c-title-cmn-main">知念岬公園</h1>'
+        '<iframe src="https://www.google.com/maps/embed/v1/place?q=26.16673088,127.8297348&zoom=16">'
+        '<a class="p-detail-tag__link" href="/spot/list?category=20">海岸・岬・湾</a>'
+    )
+    assert okinawastory.parse_detail(detail) == (
+        "知念岬公園",
+        26.16673088,
+        127.8297348,
+        ["海岸・岬・湾"],
+    )
+    listing = '<a class="os-c-list-cmn__title-link" href="/spot/1321">古宇利大橋</a>'
+    assert okinawastory._ITEM.findall(listing) == [("1321", "古宇利大橋")]
