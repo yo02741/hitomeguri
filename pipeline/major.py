@@ -303,11 +303,14 @@ def merge_official(pref: str, drafts: dict[str, Draft]) -> None:
             if d.official:
                 continue
             dist = geo.haversine_m(d.lat, d.lng, o.lat, o.lng)
-            if dist > config.OFFICIAL_MATCH_DISTANCE_M:
+            if dist > config.OFFICIAL_EXACT_MATCH_DISTANCE_M:
                 continue
             mine = {norm_name(n) for n in d.all_names()} - {""}
+            # 名稱完全相同的放寬距離（湖、山的代表點官方與維基可能差好幾公里：摩周湖差 3 km）
             if names & mine:
                 exact.append((dist, d))
+            elif dist > config.OFFICIAL_MATCH_DISTANCE_M:
+                continue
             elif dist <= 800 and _names_overlap(names, mine):
                 loose.append((dist, d))
         pool = exact or loose

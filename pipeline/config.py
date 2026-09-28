@@ -42,6 +42,8 @@ OFFICIAL_BONUS_MAX = 80.0
 OFFICIAL_BONUS_MIN = 20.0
 # 官方網站上的地點併入既有候選：名稱相同的距離上限
 OFFICIAL_MATCH_DISTANCE_M = 2000
+# 名稱完全相同時的距離上限（湖、山、半島這類大範圍景點）
+OFFICIAL_EXACT_MATCH_DISTANCE_M = 5000
 # 這些類型的官方條目不是景點（住宿、租車、旅行社）
 OFFICIAL_EXCLUDE_CATEGORY = ("宿泊", "ホテル", "レンタカー", "レンタル", "旅行会社", "交通")
 # 官方熱門清單裡的活動與季節花況（名稱判斷）
