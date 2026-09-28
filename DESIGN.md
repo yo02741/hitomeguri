@@ -157,7 +157,7 @@
 |---|---|---|
 | 手機 | < 768 | 單欄、底部 tab、bottom sheet |
 | 平板 | 768–1279 | 地圖＋右欄（左欄收成可開關的抽屜） |
-| 桌機 | ≥ 1280 | 左欄 `w-sidebar` 320／地圖／右欄 `w-panel` 400 |
+| 桌機 | ≥ 1024 | 地圖佔滿，左上浮動面板 `w-float` 300（地區標籤、主題篩選、精選／地區特色）；右欄 `w-panel` 400 |
 
 ### 5.2 間距
 - 基準 4px（Tailwind 預設 spacing）。面板內距 `px-5`（20）～`px-6`（24）；清單列 `py-2.5`；區塊間距 `gap-4`～`gap-6`。
@@ -168,7 +168,7 @@
 | 元素 | 值 |
 |---|---|
 | Header | `h-header`（60） |
-| 海報區（桌機左欄頂） | `h-hero`（250） |
+| 地區標籤（桌機地圖左上） | 高約 64，隨內容 |
 | 手機海報條 | 高 88，只放縣名＋羅馬拼音 |
 | 底部 tab | 高 56＋safe area |
 | Bottom sheet | 收合 120／半開 55vh／全開 100vh−header |
@@ -242,11 +242,16 @@
 </label>
 ```
 
-### 7.5 海報區 RegionHero
-- 容器：`relative overflow-hidden bg-region text-on-region h-hero px-6 py-5 flex flex-col`，設 `data-pref`。
-- 裝飾：右上 220px 圓形 `bg-region-accent`，可再加一個 70px 淡金小圓（`#F3E3B8`）；**只用正圓**，不用漸層、不用照片。
-- 內容由上而下：假名（`text-caption tracking-kana`）、縣名（`text-display font-black tracking-name`）、羅馬拼音（`font-latin font-bold text-xl tracking-[0.4em] uppercase`）、底部：地方名（`text-label font-bold`）＋直飛航線（`font-latin font-semibold`）。
+### 7.5 地區標籤 RegionTag（原海報區 RegionHero）
+- 桌機改為浮在地圖左上的小卡：`rounded-card bg-region text-on-region px-4 py-3 shadow-float`，設 `data-pref`。
+- 裝飾：右上 104px 圓形 `bg-region-accent`；**只用正圓**，不用漸層、不用照片。
+- 內容：左側假名（`text-caption tracking-kana`）＋縣名（`text-h3 font-black tracking-name`）；右側羅馬拼音（`font-latin font-bold text-body-sm tracking-[0.3em] uppercase`）＋地方名；已驗證的直飛航線在下一行（`font-latin font-semibold text-caption`）。
 - 整塊是一個按鈕（回到首頁的日本地圖），`aria-label="切換地區"`。
+- 下方依序是主題篩選（圓角 chip，開啟時 `border-region-strong bg-region-tint font-bold`）與精選／地區特色（分頁標籤，平常收合）；三塊都是 `rounded-card bg-paper shadow-float`。
+
+### 7.5a 地圖 hover
+- 游標 14px 內最近的景點放大（精選 12、一般 10，外框 3），並顯示名稱小標（`bg-paper rounded-tag shadow-marker`）；點擊以放大中的景點為準。
+- 縮放 12 以上且有照片時，放大成 88px 圓形照片（`border-[3px] border-paper shadow-float`），照片來自 map bundle 的 Commons 250px 縮圖；載入失敗就退回圓點。
 
 ### 7.6 名稱區塊 NameBlock（招牌元件）
 三行固定順序：假名 → 漢字 → 羅馬拼音；所有日文加 `lang="ja"`。

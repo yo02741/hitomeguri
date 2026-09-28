@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed, ref, watch } from 'vue'
 
 import type { Spot } from '../services/bundles'
 import { themeByKey } from '../data/themes'
@@ -9,7 +9,10 @@ import ThemeBadge from './ThemeBadge.vue'
 const props = defineProps<{ spot: Spot | null; loading?: boolean }>()
 const emit = defineEmits<{ close: [] }>()
 
-const image = computed(() => props.spot?.images[0])
+// 圖片載入失敗（Commons 暫時無法取得等）時退回底色，不顯示破圖
+const imageFailed = ref(false)
+watch(() => props.spot?.id, () => (imageFailed.value = false))
+const image = computed(() => (imageFailed.value ? undefined : props.spot?.images[0]))
 const category = computed(() => props.spot?.tags.filter((t) => !t.startsWith('guide-')) ?? [])
 const station = computed(() => props.spot?.nearest_stations?.[0])
 const showZh = computed(() => props.spot && props.spot.name.zh_tw !== props.spot.name.ja)
@@ -49,8 +52,8 @@ function distance(m: number): string {
         :src="image.url"
         :alt="spot.name.ja"
         class="size-full object-cover"
-        loading="lazy"
         referrerpolicy="no-referrer"
+        @error="imageFailed = true"
       />
       <a
         v-if="image"

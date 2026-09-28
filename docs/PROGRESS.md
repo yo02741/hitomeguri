@@ -21,5 +21,11 @@
 - 已知資料缺口：香（incense）主題與御朱印授與細節需 agent + web search；官方 GI／地域團體商標／郷土料理來源未接；種子對不上的景點見各次 seed-region 報告（大須商店街、中部電力 MIRAI TOWER、常滑やきもの散歩道、川原町、高山 古い町並、灘五郷、伏見 酒蔵、伊根の舟屋）。
 - 重跑順序：seed-region（保留主題小店）→ seed-themes → seed-specialties；每次合併 `git checkout origin/pipeline/<command>-N -- data/`。
 
+## 桌機介面調整（Phase 3 後，使用者回饋）
+- 左欄改為地圖左上的浮動面板；地區標籤縮小。
+- 拉遠到縮放 10 以下關閉景點卡片；hover 放大景點，縮放 12 以上顯示照片（map bundle 新增 `i` 縮圖欄位）。
+- 平移時地區跟著畫面中心的縣；範圍涵蓋太多縣時不指定。
+- 手機版暫緩（PLAN.md §5 RWD）。待辦見根目錄 TODO.md。
+
 ## 之後
 - Phase 4 期間限定、Phase 5 個人化（收藏、去過、匯出）等，見 PLAN.md §9；使用者授權到 Phase 3。

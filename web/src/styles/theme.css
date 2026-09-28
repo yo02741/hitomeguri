@@ -66,10 +66,12 @@
   /* ---------- 陰影 ---------- */
   --shadow-marker: 0 1px 3px rgb(30 33 36 / 0.25);
   --shadow-sheet: 0 -6px 20px rgb(30 33 36 / 0.12);
+  --shadow-float: 0 2px 14px rgb(30 33 36 / 0.16); /* 地圖上的浮動面板 */
 
   /* ---------- 版面 ---------- */
   --spacing-sidebar: 20rem;       /* 320 左欄 */
   --spacing-panel: 25rem;         /* 400 右欄 */
+  --spacing-float: 18.75rem;      /* 300 地圖左上浮動面板 */
   --spacing-header: 3.75rem;      /* 60 header 高 */
   --spacing-hero: 15.625rem;      /* 250 海報區高 */
   --spacing-tap: 2.75rem;         /* 44 最小點擊區 */

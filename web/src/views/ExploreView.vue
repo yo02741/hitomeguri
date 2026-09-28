@@ -1,10 +1,12 @@
 <script setup lang="ts">
-import { computed, onMounted, ref, shallowRef, watch } from 'vue'
+import { computed, nextTick, onBeforeUnmount, onMounted, ref, shallowRef, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 
+import FilterPanel from '../components/FilterPanel.vue'
 import HomeSidebar from '../components/HomeSidebar.vue'
-import MapView from '../components/MapView.vue'
-import RegionSidebar from '../components/RegionSidebar.vue'
+import MapView, { type MapView as MapViewState } from '../components/MapView.vue'
+import RegionLists from '../components/RegionLists.vue'
+import RegionTag from '../components/RegionTag.vue'
 import SpotPanel from '../components/SpotPanel.vue'
 import { regionOf } from '../data/regions'
 import type { MapSpot, Spot } from '../services/bundles'
@@ -59,6 +61,19 @@ watch(
   },
 )
 const prefSpots = computed(() => (props.pref ? (catalog.mapSpots[props.pref] ?? []) : []))
+const filterSpots = computed(() => (props.pref ? prefSpots.value : allSpots.value))
+
+// 桌機：左上浮動面板蓋住地圖左側，地圖定位時扣掉這塊（寬 w-float＋左右間距）
+const desktop = ref(false)
+const mq = typeof window !== 'undefined' ? window.matchMedia('(min-width: 1024px)') : null
+function syncDesktop() {
+  desktop.value = mq?.matches ?? false
+}
+syncDesktop()
+mq?.addEventListener('change', syncDesktop)
+onBeforeUnmount(() => mq?.removeEventListener('change', syncDesktop))
+const FLOAT_INSET = 300 + 16 * 2
+const insetLeft = computed(() => (desktop.value ? FLOAT_INSET : 0))
 
 function spotBounds(spots: MapSpot[]): [number, number, number, number] | null {
   if (!spots.length) return null
@@ -82,11 +97,11 @@ watch(
   () => props.pref,
   async (pref) => {
     explore.setActivePref(pref && regionOf(pref) ? pref : null)
-    if (!pref) return
     if (panSwitch) {
       panSwitch = false
       return
     }
+    if (!pref) return
     const spots = await catalog.loadMap(pref)
     bounds.value = spotBounds(spots.filter((s) => s.f === 1)) ?? spotBounds(spots)
   },
@@ -108,8 +123,9 @@ watch(
   { immediate: true },
 )
 
-function select(id: string) {
-  router.replace({ query: { ...route.query, spot: id } })
+async function select(id: string) {
+  await router.replace({ query: { ...route.query, spot: id } })
+  await nextTick()
   const s = allSpots.value.find((x) => x.id === id)
   if (s) mapRef.value?.flyTo(s.lng, s.lat)
 }
@@ -120,21 +136,52 @@ function closeSpot() {
   router.replace({ query: q })
 }
 
-// 平移跨縣界：地圖中心所在的縣改變時，海報區、地區色、URL 一起更新（replace，不新增歷史）。
-function onMoveEnd(center: { lng: number; lat: number }, zoom: number) {
-  if (!props.pref || zoom < 8) return
-  const p = prefectureAt(center.lng, center.lat)
-  if (p && p !== props.pref && regionOf(p)) {
-    panSwitch = true
-    router.replace({ path: `/map/${p}`, query: route.query })
-    catalog.loadMap(p)
+// 景點卡片：拉遠到這個縮放以下就關閉
+const CLOSE_SPOT_ZOOM = 10
+// 取樣格點（每邊）判斷畫面涵蓋哪些縣
+const SAMPLE = 7
+
+/**
+ * 畫面對應的地區：中心所在的縣。畫面涵蓋太多縣、中心縣又只佔一小部分時不指定（回到全國）。
+ * 回傳 undefined 表示判斷不出來（例如全是海），維持原狀。
+ */
+function regionForView(view: MapViewState): string | null | undefined {
+  const [w, s, e, n] = view.bounds
+  const counts = new Map<string, number>()
+  let land = 0
+  for (let i = 0; i < SAMPLE; i++) {
+    for (let j = 0; j < SAMPLE; j++) {
+      const p = prefectureAt(w + ((e - w) * (i + 0.5)) / SAMPLE, s + ((n - s) * (j + 0.5)) / SAMPLE)
+      if (!p) continue
+      land++
+      counts.set(p, (counts.get(p) ?? 0) + 1)
+    }
   }
+  if (!land) return undefined
+  let main = prefectureAt(view.center.lng, view.center.lat)
+  if (!main) main = [...counts.entries()].sort((a, b) => b[1] - a[1])[0]![0]
+  const share = (counts.get(main) ?? 0) / land
+  if (counts.size <= 3 || share >= 0.4) return regionOf(main) ? main : null
+  return null
+}
+
+// 使用者平移、縮放後：地區標籤、地區色、URL 跟著畫面更新（replace，不新增歷史）；拉遠時關閉景點卡片。
+function onMoveEnd(view: MapViewState) {
+  if (!view.user) return
+  if (selectedId.value && view.zoom < CLOSE_SPOT_ZOOM) closeSpot()
+  const target = regionForView(view)
+  if (target === undefined || target === (props.pref ?? null)) return
+  const query = { ...route.query }
+  if (view.zoom < CLOSE_SPOT_ZOOM) delete query.spot
+  panSwitch = true
+  router.replace({ path: target ? `/map/${target}` : '/', query })
+  if (target) catalog.loadMap(target)
 }
 </script>
 
 <template>
   <div class="relative flex min-h-0 flex-1 max-lg:flex-col">
-    <!-- 手機：頂部海報條 -->
+    <!-- 手機：頂部海報條（手機版面暫緩，見 PLAN.md §5 RWD） -->
     <RouterLink
       v-if="pref && regionOf(pref)"
       to="/"
@@ -146,19 +193,6 @@ function onMoveEnd(center: { lng: number; lat: number }, zoom: number) {
       <span class="ml-auto text-caption">{{ regionOf(pref)!.area_name }}</span>
     </RouterLink>
 
-    <aside
-      class="flex min-h-0 shrink-0 flex-col overflow-y-auto border-line lg:w-sidebar lg:border-r max-lg:order-last max-lg:max-h-[38dvh] max-lg:border-t"
-    >
-      <RegionSidebar
-        v-if="pref && regionOf(pref)"
-        :pref="pref"
-        :spots="prefSpots"
-        :selected-id="selectedId"
-        @select="select"
-      />
-      <HomeSidebar v-else :prefs="available" />
-    </aside>
-
     <div class="relative min-h-0 flex-1">
       <MapView
         ref="mapRef"
@@ -167,14 +201,36 @@ function onMoveEnd(center: { lng: number; lat: number }, zoom: number) {
         :bounds="bounds"
         :color-key="explore.activePref"
         :themes="explore.themes"
+        :inset-left="insetLeft"
         @select="select"
         @moveend="onMoveEnd"
       />
+
+      <!-- 左上浮動面板：地區標籤／地區清單、主題篩選、精選與地區特色 -->
+      <div
+        class="pointer-events-none absolute top-4 bottom-4 left-4 z-10 flex w-float flex-col gap-2.5 *:pointer-events-auto max-lg:right-4 max-lg:bottom-auto max-lg:w-auto"
+      >
+        <template v-if="pref && regionOf(pref)">
+          <RegionTag :pref="pref" class="max-lg:hidden" />
+          <FilterPanel :spots="filterSpots" />
+          <RegionLists
+            :pref="pref"
+            :spots="prefSpots"
+            :selected-id="selectedId"
+            class="max-lg:hidden"
+            @select="select"
+          />
+        </template>
+        <template v-else>
+          <HomeSidebar :prefs="available" class="max-lg:max-h-[40dvh]" />
+          <FilterPanel v-if="desktop" :spots="filterSpots" />
+        </template>
+      </div>
     </div>
 
     <aside
       v-if="selectedId"
-      class="shrink-0 border-line lg:w-panel lg:border-l max-lg:absolute max-lg:inset-x-0 max-lg:bottom-0 max-lg:z-10 max-lg:h-[60dvh] max-lg:overflow-hidden max-lg:rounded-t-sheet max-lg:shadow-sheet"
+      class="shrink-0 border-line lg:w-panel lg:border-l max-lg:absolute max-lg:inset-x-0 max-lg:bottom-0 max-lg:z-20 max-lg:h-[60dvh] max-lg:overflow-hidden max-lg:rounded-t-sheet max-lg:shadow-sheet"
     >
       <SpotPanel :spot="selectedSpot" :loading="loadingSpot" @close="closeSpot" />
     </aside>

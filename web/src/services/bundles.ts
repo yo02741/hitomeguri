@@ -13,6 +13,13 @@ export interface MapSpot {
   r?: string // 羅馬拼音
   t?: string[] // 主題
   c?: string // 分類
+  i?: string // 地圖用小圖：Commons 縮圖路徑（省略前綴）或完整網址
+}
+
+const COMMONS_THUMB_PREFIX = 'https://thumb.wikimedia.org/wikipedia/commons/thumb/'
+
+export function mapThumbUrl(i: string): string {
+  return i.startsWith('https://') ? i : COMMONS_THUMB_PREFIX + i
 }
 
 export interface SpotImage {

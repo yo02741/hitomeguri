@@ -9,6 +9,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import re
 from pathlib import Path
 from typing import Any
 
@@ -20,6 +21,20 @@ def _write(path: Path, data: Any) -> Path:
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(data, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
     return path
+
+
+COMMONS_THUMB_PREFIX = "https://thumb.wikimedia.org/wikipedia/commons/thumb/"
+MAP_THUMB_WIDTH = 250
+
+
+def map_thumb(url: str) -> str | None:
+    """地圖 hover 用小圖：Commons 縮圖寬度換成 250px、去掉追蹤參數，省略固定前綴縮小 bundle。"""
+    base = url.split("?", 1)[0]
+    if not base.startswith(COMMONS_THUMB_PREFIX) or not re.search(r"/\d+px-[^/]+$", base):
+        # 原圖本來就小於縮圖寬度時 Commons 給原圖網址：直接用
+        return base if base.startswith("https://upload.wikimedia.org/") else None
+    thumb = re.sub(r"/\d+px-([^/]+)$", rf"/{MAP_THUMB_WIDTH}px-\1", base)
+    return thumb[len(COMMONS_THUMB_PREFIX) :]
 
 
 def map_entry(s: dict[str, Any]) -> dict[str, Any]:
@@ -43,6 +58,8 @@ def map_entry(s: dict[str, Any]) -> dict[str, Any]:
     cats = [t for t in s.get("tags", []) if not t.startswith("guide-")]
     if cats:
         entry["c"] = cats[0]
+    if s.get("images") and (thumb := map_thumb(s["images"][0]["url"])):
+        entry["i"] = thumb
     return entry
 
 
