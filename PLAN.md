@@ -232,6 +232,12 @@ users/{uid}/lists/{listId}
 ```
 原則：**能用結構化開放資料撈的不交給 LLM 想；LLM 負責翻譯、摘要、分類、判斷、驗證與詞彙生成，且必須保留來源 URL。**
 
+> **決策更新（使用者，Phase 3 後）：所有內容一律來自網路上的實際來源，不用 LLM 產生網路上沒有的內容。**
+> - 景點簡介不由 LLM 撰寫；改取自有授權可用的來源（例：維基百科開頭段落，CC BY-SA，須標示出處與授權），沒有來源就不顯示。
+> - 假名念法取自來源：Wikidata P1814、OSM `name:ja-Hira`、日文維基百科開頭括號內的讀音；都沒有時留空，不由 LLM 猜。
+> - LLM（Claude API）只可用於「查證與擷取」：例如帶 web search 查航線是否存在、從已取得的網頁擷取欄位，結果必須附來源 URL。這類工作放在未來的排程（Phase 6）才需要 `ANTHROPIC_API_KEY`。
+> - 下方 §5.7 enrich 的「LLM 補寫簡介／念法」停用；§5.5、§5.6 若涉及 LLM 生成，實作前需再與使用者確認。
+
 ### 5.1 大點
 - **來源**：
   - Wikidata SPARQL（https://query.wikidata.org/）：位於某都道府縣（`P131*`）的觀光地、寺社、城、庭園、博物館等；取座標 `P625`、圖片 `P18`、假名表記 `P1814`、各語言標籤、sitelinks 數。都道府縣 QID 實作時查詢確認，不要硬寫猜測值。
@@ -438,7 +444,7 @@ users/{uid}/lists/{listId}
 - 開發與測試一律使用 Firebase Emulator；**未經我同意不要執行 `firebase deploy`**。
 - 任何 API key、service account 不可 commit；本機用 `.env`（加入 .gitignore），CI 用 GitHub Actions secrets。前端不得包含 Claude API key。
 - 外部資料採集：遵守各站 robots.txt 與使用條款、設定合理 rate limit 與 User-Agent；不爬 traveldoko、Google Maps、食べログ。
-- 每筆資料都要保留來源 URL 與取得時間；LLM 生成的內容不得編造來源；LLM 補的日文念法標記 `reviewed: false`。
+- 每筆資料都要保留來源 URL 與取得時間；**不用 LLM 產生網路上沒有的內容**（簡介、念法等一律取自實際來源，沒有就留空）；LLM 只用於查證與擷取，且必須附來源 URL。
 - LLM 呼叫先用小量資料（例 20 筆）驗證 prompt 與輸出 schema，再跑整區 batch；記錄 token 用量並寫進 PR 描述。
 - `data/` 的 JSON 以穩定順序（依 id 排序）與固定縮排輸出，讓 PR diff 可讀。
 - **UI 文案遵守 §6a「不要有 AI 味」**：不把本文件的設計理由、功能說明寫進介面；不加 onboarding 說明卡、emoji、sparkle 圖示、「AI」標記。寫任何 UI 文字前先問：車站標示或旅遊書會這樣寫嗎？

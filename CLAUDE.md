@@ -14,8 +14,8 @@
 - 開發與測試一律使用 Firebase Emulator；**未經使用者同意不要執行 `firebase deploy`**。目前靜態站台部署在 GitHub Pages（`.github/workflows/pages.yml`）。
 - 任何 API key、service account 不可 commit；本機用 `.env` / `.env.local`（已在 .gitignore），CI 用 GitHub Actions secrets 或 variables。前端不得包含 Claude API key。
 - 外部資料採集：遵守各站 robots.txt 與使用條款、設定合理 rate limit 與 User-Agent；不爬 traveldoko、Google Maps、食べログ。
-- 每筆資料都要保留來源 URL 與取得時間；LLM 生成的內容不得編造來源；LLM 補的日文念法標記 `reviewed: false`。
-- LLM 呼叫先用小量資料（例 20 筆）驗證 prompt 與輸出 schema，再跑整區 batch；記錄 token 用量並寫進 PR 描述。
+- 每筆資料都要保留來源 URL 與取得時間。**不用 LLM 產生網路上沒有的內容**（使用者決定）：簡介、念法等一律取自實際來源（維基百科、Wikidata、OSM…），沒有就留空。LLM 只用於查證與擷取（例：帶 web search 查航線），結果必須附來源 URL；這類工作放在未來的排程，才需要 `ANTHROPIC_API_KEY`。
+- 使用 LLM 查證時先用小量資料（例 20 筆）驗證 prompt 與輸出 schema，再跑整批；記錄 token 用量並寫進 PR 描述。
 - `data/` 的 JSON 以穩定順序（依 id 排序）與固定縮排輸出，讓 PR diff 可讀。
 - **UI 文案遵守 PLAN.md §6a「不要有 AI 味」**：不把設計理由、功能說明寫進介面；不加 onboarding 說明卡、emoji、sparkle 圖示、「AI」標記、驚嘆號。寫任何 UI 文字前先問：車站標示或旅遊書會這樣寫嗎？
 - LLM 生成的簡介與詞彙說明遵守 §6a 文風規則，並做禁用詞檢查。
@@ -37,7 +37,7 @@ uv venv && uv pip install -e ".[dev]" # pipeline 環境
 ## 資料 pipeline 在 GitHub Actions 上跑
 Claude Code 的雲端沙箱連不到 Wikidata、OSM、Wikimedia，也沒有 Claude API key，所以採集與補全放在 Actions：
 - `seed-region.yml`（手動）：輸入縣 slug，各縣平行採集，結果推到 `pipeline/seed-<run>` 分支。
-- `enrich.yml`（手動，需 `ANTHROPIC_API_KEY` secret）：Batch API 補簡介與缺漏假名，預設先 20 筆，結果推到 `pipeline/enrich-<run>`。
+- `enrich.yml`（手動，需 `ANTHROPIC_API_KEY` secret）：task=enrich（LLM 補簡介／假名）**已停用**，違反「內容來自實際來源」原則；task=verify-flights（帶 web search 查證航線）保留，留待排程使用。
 - 產出分支檢查報告（commit 訊息與 Actions 摘要）後再合併進工作分支。
 
 ## 結構速覽

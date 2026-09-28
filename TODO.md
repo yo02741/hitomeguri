@@ -2,9 +2,7 @@
 
 ## 需要你做的事
 
-1. 在 repo 的 Settings → Secrets and variables → Actions 新增 `ANTHROPIC_API_KEY`。
-2. 到 Actions 手動跑 `enrich`，task 選 enrich，先用 limit 20 驗證文風，沒問題再設 limit 0 跑全部。這會補上繁中簡介和缺漏的假名，目前約六成景點沒有假名。
-3. 同一個 workflow 的 task 改選 verify-flights，驗證 7 條直飛航線。依 PLAN 的規則，未驗證的航線不會顯示，所以地區海報區目前沒有航線。
+- 目前沒有。`ANTHROPIC_API_KEY` 只在未來排程要用 Claude 查證（例：航線）時才需要，簡介與念法改從網路來源取得，不需要 key。
 
 ## 還沒做到的部分
 
