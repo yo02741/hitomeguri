@@ -6,7 +6,7 @@ import { mapThumbUrl, type MapSpot } from '../services/bundles'
 import { useCatalogStore } from '../stores/catalog'
 import { useExploreStore } from '../stores/explore'
 
-// 地區的景點清單：精選／全部（同時決定地圖上顯示哪些大點）與地區特色。
+// 地區的景點清單（全部大點）與地區特色。
 // 類型列可篩選（清單與地圖一起）；不篩選時清單依類型分段排列。
 // 清單與地圖連動：滑過一列在地圖上標出，點選則選取並飛過去。
 const props = defineProps<{ pref: string; spots: MapSpot[]; selectedId?: string | null }>()
@@ -17,19 +17,11 @@ const specialties = computed(() => catalog.specialties.filter((s) => s.prefectur
 const CATEGORY_LABEL: Record<string, string> = { food: '料理', drink: '飲品', craft: '工藝', fruit: '水果' }
 
 const majors = computed(() => props.spots.filter((s) => s.k === 'major').sort((a, b) => b.s - a.s))
-const featured = computed(() => majors.value.filter((s) => s.f === 1))
 const showSpecialties = ref(false)
-const tab = computed(() => (showSpecialties.value ? 'specialties' : explore.featuredOnly ? 'featured' : 'all'))
-
-function pick(t: 'featured' | 'all' | 'specialties') {
-  showSpecialties.value = t === 'specialties'
-  if (t !== 'specialties') explore.featuredOnly = t === 'featured'
-}
-
-const base = computed(() => (explore.featuredOnly ? featured.value : majors.value))
+const tab = computed(() => (showSpecialties.value ? 'specialties' : 'spots'))
 // 依類型分段（CATEGORY_GROUPS 的順序），段內依分數
 const sections = computed(() =>
-  CATEGORY_GROUPS.map((g) => ({ ...g, rows: base.value.filter((s) => categoryGroup(s.c) === g.key) })).filter(
+  CATEGORY_GROUPS.map((g) => ({ ...g, rows: majors.value.filter((s) => categoryGroup(s.c) === g.key) })).filter(
     (g) => g.rows.length,
   ),
 )
@@ -53,20 +45,11 @@ const tabClass = 'flex h-9 flex-1 items-center justify-center gap-1.5 rounded-co
       <button
         type="button"
         role="tab"
-        :aria-selected="tab === 'featured'"
-        :class="[tabClass, tab === 'featured' ? 'bg-region-tint font-bold text-ink' : 'text-sub hover:text-ink']"
-        @click="pick('featured')"
+        :aria-selected="tab === 'spots'"
+        :class="[tabClass, tab === 'spots' ? 'bg-region-tint font-bold text-ink' : 'text-sub hover:text-ink']"
+        @click="showSpecialties = false"
       >
-        精選<span class="font-latin">{{ featured.length }}</span>
-      </button>
-      <button
-        type="button"
-        role="tab"
-        :aria-selected="tab === 'all'"
-        :class="[tabClass, tab === 'all' ? 'bg-region-tint font-bold text-ink' : 'text-sub hover:text-ink']"
-        @click="pick('all')"
-      >
-        全部<span class="font-latin">{{ majors.length }}</span>
+        景點<span class="font-latin">{{ majors.length }}</span>
       </button>
       <button
         v-if="specialties.length"
@@ -74,7 +57,7 @@ const tabClass = 'flex h-9 flex-1 items-center justify-center gap-1.5 rounded-co
         role="tab"
         :aria-selected="tab === 'specialties'"
         :class="[tabClass, tab === 'specialties' ? 'bg-region-tint font-bold text-ink' : 'text-sub hover:text-ink']"
-        @click="pick('specialties')"
+        @click="showSpecialties = true"
       >
         地區特色<span class="font-latin">{{ specialties.length }}</span>
       </button>

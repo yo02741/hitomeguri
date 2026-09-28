@@ -47,7 +47,7 @@ const HOVER_HIT = 14
 // 沒被群集起來的景點，有照片就直接畫成圓形照片；hover 時再放大
 const PHOTO_PIN = 48
 const PHOTO_SIZE = 88
-// 同時顯示的照片上限（精選優先）
+// 同時顯示的照片上限（分數高的優先）
 const PHOTO_MAX = 80
 
 interface Hover {
@@ -118,7 +118,9 @@ function toGeoJSON(spots: MapSpot[]): GeoJSON.FeatureCollection<GeoJSON.Point> {
       properties: {
         id: s.id,
         n: s.n,
-        f: s.k === 'major' ? s.f : 0,
+        // 大點（major）與主題景點樣式不同；照片、名稱標籤由分數高的優先
+        m: s.k === 'major' ? 1 : 0,
+        s: s.s ?? 0,
         // 顯示用主題：大點為空字串（墨色），主題景點取第一個開啟中的主題
         th: s.k === 'major' ? '' : ((s.t ?? []).find((t) => props.themes?.includes(t)) ?? s.t?.[0] ?? ''),
         i: s.i ?? '',
@@ -139,9 +141,9 @@ function applyColors() {
   const themeColor: unknown[] = ['match', ['get', 'th']]
   for (const t of THEMES) themeColor.push(t.key, token(`--color-t-${t.key}`))
   themeColor.push(ink)
-  const stroke = ['case', ['==', ['get', 'f'], 1], paper, themeColor] as unknown as maplibregl.ExpressionSpecification
+  const stroke = ['case', ['==', ['get', 'm'], 1], paper, themeColor] as unknown as maplibregl.ExpressionSpecification
   for (const layer of ['spots', 'hover']) {
-    map.setPaintProperty(layer, 'circle-color', ['case', ['==', ['get', 'f'], 1], ink, paper])
+    map.setPaintProperty(layer, 'circle-color', ['case', ['==', ['get', 'm'], 1], ink, paper])
     map.setPaintProperty(layer, 'circle-stroke-color', stroke)
   }
   map.setPaintProperty('spot-labels', 'text-color', ink)
@@ -190,7 +192,7 @@ function addLayers() {
     source: SOURCE,
     filter: ['!', ['has', 'point_count']],
     paint: {
-      'circle-radius': ['case', ['==', ['get', 'f'], 1], 7, 5],
+      'circle-radius': 6,
       'circle-stroke-width': 2,
     },
   })
@@ -198,9 +200,11 @@ function addLayers() {
     id: 'spot-labels',
     type: 'symbol',
     source: SOURCE,
-    filter: ['all', ['!', ['has', 'point_count']], ['==', ['get', 'f'], 1]],
+    filter: ['!', ['has', 'point_count']],
     minzoom: 10,
     layout: {
+      // 標籤互相擋到時，分數高的留下
+      'symbol-sort-key': ['-', 0, ['get', 's']],
       'text-field': ['get', 'n'],
       'text-font': FONT_REGULAR,
       'text-size': 12,
@@ -216,7 +220,7 @@ function addLayers() {
     type: 'circle',
     source: SOURCE,
     filter: ['==', ['get', 'id'], ''],
-    paint: { 'circle-radius': ['case', ['==', ['get', 'f'], 1], 12, 10], 'circle-stroke-width': 3 },
+    paint: { 'circle-radius': 11, 'circle-stroke-width': 3 },
   })
   map.addLayer({
     id: 'selected',
@@ -260,12 +264,7 @@ function setHover(h: Hover | null) {
   if (!changed) return
   map.setFilter('hover', ['==', ['get', 'id'], h?.id ?? ''])
   // hover 的名稱小標取代地圖上的同名標籤，避免重疊
-  map.setFilter('spot-labels', [
-    'all',
-    ['!', ['has', 'point_count']],
-    ['==', ['get', 'f'], 1],
-    ['!=', ['get', 'id'], h?.id ?? ''],
-  ])
+  map.setFilter('spot-labels', ['all', ['!', ['has', 'point_count']], ['!=', ['get', 'id'], h?.id ?? '']])
   map.getCanvas().style.cursor = h ? 'pointer' : ''
 }
 
@@ -309,16 +308,16 @@ const photoPins = new Map<string, maplibregl.Marker>()
 
 function syncPhotos() {
   if (!map) return
-  const want = new Map<string, { lng: number; lat: number; thumb: string; f: number }>()
+  const want = new Map<string, { lng: number; lat: number; thumb: string; s: number }>()
   for (const f of map.queryRenderedFeatures({ layers: ['spots'] })) {
-    const fp = f.properties as { id: string; i?: string; f: number }
+    const fp = f.properties as { id: string; i?: string; s: number }
     if (!fp.i || failedThumbs.has(fp.i) || want.has(fp.id)) continue
     const [lng, lat] = (f.geometry as GeoJSON.Point).coordinates as [number, number]
-    want.set(fp.id, { lng, lat, thumb: fp.i, f: fp.f })
+    want.set(fp.id, { lng, lat, thumb: fp.i, s: fp.s })
   }
   const keep = new Set(
     [...want.entries()]
-      .sort((a, b) => b[1].f - a[1].f)
+      .sort((a, b) => b[1].s - a[1].s)
       .slice(0, PHOTO_MAX)
       .map(([id]) => id),
   )
@@ -331,18 +330,19 @@ function syncPhotos() {
   for (const id of keep) {
     if (photoPins.has(id)) continue
     const w = want.get(id)!
-    photoPins.set(id, new maplibregl.Marker({ element: photoEl(id, w.thumb, w.f) }).setLngLat([w.lng, w.lat]).addTo(map))
+    photoPins.set(id, new maplibregl.Marker({ element: photoEl(id, w.thumb, w.s) }).setLngLat([w.lng, w.lat]).addTo(map))
   }
 }
 
-function photoEl(id: string, thumb: string, featured: number): HTMLElement {
+function photoEl(id: string, thumb: string, score: number): HTMLElement {
   const el = document.createElement('div')
   el.className = `pointer-events-none overflow-hidden rounded-full border-[3px] bg-placeholder shadow-float ${
     id === props.selectedId ? 'border-region-strong' : 'border-paper'
   }`
   el.style.width = `${PHOTO_PIN}px`
   el.style.height = `${PHOTO_PIN}px`
-  el.style.zIndex = String(featured ? 2 : 1)
+  // 照片重疊時分數高的在上
+  el.style.zIndex = String(Math.max(1, Math.round(score)))
   el.dataset.id = id
   const img = document.createElement('img')
   img.src = mapThumbUrl(thumb)

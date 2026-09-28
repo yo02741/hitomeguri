@@ -31,17 +31,16 @@ const bounds = shallowRef<[number, number, number, number] | null>(null)
 let panSwitch = false
 
 const available = computed(() => Object.keys(catalog.index?.prefectures ?? {}))
-// 已載入完整地圖 bundle 的縣用全部大點，其餘縣先用精選
+// 已載入完整地圖 bundle 的縣用全部大點，其餘縣先用全國總覽（各縣分數前段，bundles/featured.json）
 const allSpots = computed<MapSpot[]>(() =>
   available.value.flatMap((p) => catalog.mapSpots[p] ?? catalog.featured[p] ?? []),
 )
-// 顯示規則：大點（精選或全部）＋開啟中主題的景點（UX-FLOW.md A3、A4；主題層目前暫停）
+// 顯示規則：全部大點（可依類型篩選）＋開啟中主題的景點（UX-FLOW.md A3、A4；主題層目前暫停）
 const visibleSpots = computed(() =>
   allSpots.value.filter((s) => {
     if (s.id === selectedId.value) return true
     if (s.t?.some((t) => explore.themes.includes(t))) return true
     if (s.k !== 'major') return false
-    if (explore.featuredOnly && s.f !== 1) return false
     return !explore.category || categoryGroup(s.c) === explore.category
   }),
 )
@@ -232,7 +231,7 @@ function onMoveEnd(view: MapViewState) {
         @moveend="onMoveEnd"
       />
 
-      <!-- 左上浮動面板：地區標籤／地區清單、主題篩選、精選與地區特色 -->
+      <!-- 左上浮動面板：地區標籤／地區清單、主題篩選、景點與地區特色 -->
       <div
         class="pointer-events-none absolute top-4 bottom-4 left-4 z-10 flex w-float flex-col gap-2.5 *:pointer-events-auto max-lg:right-4 max-lg:bottom-auto max-lg:w-auto"
       >
