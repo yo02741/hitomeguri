@@ -9893,6 +9893,13 @@
     ],
     "featured": true,
     "score": 106.66,
+    "summary": {
+      "text": "彥根城是一所位於日本滋賀縣彥根市金龜町的城堡，城內的天守名列日本國寶，亦為十二座現存天守之一。該城完整地保留了江戶時代以前的築城方式。別名金龜城（金亀城）。其建造耗時約20年，於1622年(元和8年)建成。",
+      "lang": "zh",
+      "source_url": "https://zh.wikipedia.org/wiki/%E5%BD%A5%E6%A0%B9%E5%9F%8E",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "nearest_stations": [
       {
         "name": {
@@ -9933,9 +9940,12 @@
     "id": "wd-Q1013195",
     "name": {
       "ja": "長浜城",
+      "kana": "ながはまじょう",
+      "romaji": "Nagahamajo",
       "zh_tw": "長濱城",
       "en": "Nagahama Castle"
     },
+    "kana_source": "wikipedia",
     "location": {
       "lat": 35.3775,
       "lng": 136.261111
@@ -9948,6 +9958,13 @@
     ],
     "featured": true,
     "score": 64.43,
+    "summary": {
+      "text": "長濱城（ながはまじょう）是位在滋賀縣長濱市的一座平城。羽柴秀吉（豐臣秀吉）築城之城。別稱今濱城（いまはまじょう）。現在的天守是1983年以犬山城、伏見城為模型模擬復元，作為長濱城歷史博物館營運。",
+      "lang": "zh",
+      "source_url": "https://zh.wikipedia.org/wiki/%E9%95%B7%E6%BF%B1%E5%9F%8E_%28%E8%BF%91%E6%B1%9F%E5%9C%8B%29",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "nearest_stations": [
       {
         "name": {
@@ -9977,6 +9994,10 @@
       {
         "url": "https://www.openstreetmap.org/way/412923591",
         "fetched_at": "2026-09-27"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E9%95%B7%E6%B5%9C%E5%9F%8E_%28%E8%BF%91%E6%B1%9F%E5%9B%BD%29",
+        "fetched_at": "2026-09-28"
       }
     ],
     "status": "published",
@@ -10031,9 +10052,12 @@
     "id": "wd-Q104082588",
     "name": {
       "ja": "滋賀サファリ博物館",
+      "kana": "しがさふぁりはくぶつかん",
+      "romaji": "Shigasafarihakubutsukan",
       "zh_tw": "滋賀サファリ博物館",
       "en": "Shiga Safari Museum"
     },
+    "kana_source": "wikipedia",
     "location": {
       "lat": 34.919014,
       "lng": 136.087078
@@ -10046,6 +10070,13 @@
     ],
     "featured": false,
     "score": 41.09,
+    "summary": {
+      "text": "滋賀サファリ博物館（しがサファリはくぶつかん）は、滋賀県甲賀市信楽町にあった博物館。珍しい希少動物の剥製が集められた自然・動物学博物館であったが、2025年5月11日に閉館した。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E6%BB%8B%E8%B3%80%E3%82%B5%E3%83%95%E3%82%A1%E3%83%AA%E5%8D%9A%E7%89%A9%E9%A4%A8",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "nearest_stations": [
       {
         "name": {
@@ -10086,6 +10117,10 @@
       {
         "url": "https://www.openstreetmap.org/node/726946398",
         "fetched_at": "2026-09-27"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E6%BB%8B%E8%B3%80%E3%82%B5%E3%83%95%E3%82%A1%E3%83%AA%E5%8D%9A%E7%89%A9%E9%A4%A8",
+        "fetched_at": "2026-09-28"
       }
     ],
     "status": "published",
@@ -10095,9 +10130,12 @@
     "id": "wd-Q104720767",
     "name": {
       "ja": "栗東歴史民俗博物館",
+      "kana": "りっとうれきしみんぞくはくぶつかん",
+      "romaji": "Rittorekishiminzokuhakubutsukan",
       "zh_tw": "栗東歴史民俗博物館",
       "en": "Rittō History Museum"
     },
+    "kana_source": "wikipedia",
     "location": {
       "lat": 35.017972,
       "lng": 136.008861
@@ -10110,6 +10148,13 @@
     ],
     "featured": false,
     "score": 31.06,
+    "summary": {
+      "text": "栗東歴史民俗博物館（りっとうれきしみんぞくはくぶつかん）は滋賀県栗東市小野にある公立の博物館。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E6%A0%97%E6%9D%B1%E6%AD%B4%E5%8F%B2%E6%B0%91%E4%BF%97%E5%8D%9A%E7%89%A9%E9%A4%A8",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "nearest_stations": [
       {
         "name": {
@@ -10143,6 +10188,10 @@
       {
         "url": "https://www.openstreetmap.org/way/1392209719",
         "fetched_at": "2026-09-27"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E6%A0%97%E6%9D%B1%E6%AD%B4%E5%8F%B2%E6%B0%91%E4%BF%97%E5%8D%9A%E7%89%A9%E9%A4%A8",
+        "fetched_at": "2026-09-28"
       }
     ],
     "status": "published",
@@ -10361,6 +10410,13 @@
     ],
     "featured": true,
     "score": 69.76,
+    "summary": {
+      "text": "石山寺（いしやまでら）是位在日本滋賀縣大津市的東寺真言宗寺院。山號「石光山」（せっこうざん）。本尊如意輪觀音、聖武天皇勅願、開山（初代住持）為良辨。傳說紫式部在此閉關之時，獲得『源氏物語』的構想。「近江八景」之一「石山秋月」的月之名所。",
+      "lang": "zh",
+      "source_url": "https://zh.wikipedia.org/wiki/%E7%9F%B3%E5%B1%B1%E5%AF%BA",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "nearest_stations": [
       {
         "name": {
@@ -10410,9 +10466,12 @@
     "id": "wd-Q10855543",
     "name": {
       "ja": "桑実寺",
+      "kana": "くわのみでら",
+      "romaji": "Kuwanomidera",
       "zh_tw": "桑実寺",
       "en": "Kuwanomi-dera Temple"
     },
+    "kana_source": "wikipedia",
     "location": {
       "lat": 35.148119,
       "lng": 136.154086
@@ -10428,6 +10487,13 @@
     ],
     "featured": false,
     "score": 49.76,
+    "summary": {
+      "text": "桑実寺（くわのみでら）は滋賀県近江八幡市安土町桑実寺にある天台宗の寺院。山号は繖山（きぬがさやま）、本尊は薬師如来、開山は定恵。別名桑峰薬師。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E6%A1%91%E5%AE%9F%E5%AF%BA",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "images": [
       {
         "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ef/Kuwanomi-dera_Azuchi_Shiga_pref_Japan13n.jpg/960px-Kuwanomi-dera_Azuchi_Shiga_pref_Japan13n.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -10443,6 +10509,10 @@
       {
         "url": "https://www.wikidata.org/wiki/Q10855543",
         "fetched_at": "2026-09-27"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E6%A1%91%E5%AE%9F%E5%AF%BA",
+        "fetched_at": "2026-09-28"
       }
     ],
     "status": "published",
@@ -10472,6 +10542,13 @@
     ],
     "featured": false,
     "score": 41.35,
+    "summary": {
+      "text": "鬼室神社（きしつじんじゃ）とは、滋賀県蒲生郡日野町小野にある神社である。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E9%AC%BC%E5%AE%A4%E7%A5%9E%E7%A4%BE",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "images": [
       {
         "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/eb/Kishitsu_Shrine.jpg/960px-Kishitsu_Shrine.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -10521,6 +10598,13 @@
     ],
     "featured": false,
     "score": 37.2,
+    "summary": {
+      "text": "本願寺近松別院（ほんがんじちかまつべついん）は、滋賀県大津市にある浄土真宗本願寺派の直属寺院。 住職は浄土真宗本願寺派門主が兼ねるが、別院輪番が置かれて実務を主管している。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E6%9C%AC%E9%A1%98%E5%AF%BA%E8%BF%91%E6%9D%BE%E5%88%A5%E9%99%A2",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "nearest_stations": [
       {
         "name": {
@@ -10588,6 +10672,13 @@
     ],
     "featured": false,
     "score": 33.72,
+    "summary": {
+      "text": "本願寺八幡別院（ほんがんじはちまんべついん）は滋賀県近江八幡市にある浄土真宗本願寺派（西本願寺）の別院である。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E6%9C%AC%E9%A1%98%E5%AF%BA%E5%85%AB%E5%B9%A1%E5%88%A5%E9%99%A2",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "images": [
       {
         "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8a/Hongan-ji_Hachiman_Betsuin_-_Main_hall.jpg/960px-Hongan-ji_Hachiman_Betsuin_-_Main_hall.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -10677,9 +10768,12 @@
     "id": "wd-Q111032926",
     "name": {
       "ja": "近江日野商人ふるさと館「旧山中正吉邸」",
+      "kana": "おうみひのしょうにんふるさとかんきゅうやまなかしょうきちてい",
+      "romaji": "Omihinoshoninfurusatokankyuyamanakashokichitei",
       "zh_tw": "近江日野商人ふるさと館「旧山中正吉邸」",
       "en": "Former Yamanaka Shokichi House"
     },
+    "kana_source": "wikipedia",
     "location": {
       "lat": 35.012333,
       "lng": 136.261417
@@ -10692,6 +10786,13 @@
     ],
     "featured": false,
     "score": 33.02,
+    "summary": {
+      "text": "近江日野商人ふるさと館「旧山中正吉邸」（おうみひのしょうにんふるさとかん きゅうやまなかしょうきちてい）は、滋賀県蒲生郡日野町にある体験・交流・学習施設。建物は近江日野商人（近江商人）の代表的な本宅建築とされ、2015年（平成27年）3月31日に日野町有形文化財に指定されている。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E8%BF%91%E6%B1%9F%E6%97%A5%E9%87%8E%E5%95%86%E4%BA%BA%E3%81%B5%E3%82%8B%E3%81%95%E3%81%A8%E9%A4%A8%E3%80%8C%E6%97%A7%E5%B1%B1%E4%B8%AD%E6%AD%A3%E5%90%89%E9%82%B8%E3%80%8D",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "images": [
       {
         "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bc/Former_Yamanaka_Shokichi_House_ac_%281%29.jpg/960px-Former_Yamanaka_Shokichi_House_ac_%281%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -10712,6 +10813,10 @@
       {
         "url": "https://www.openstreetmap.org/node/9544535933",
         "fetched_at": "2026-09-27"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E8%BF%91%E6%B1%9F%E6%97%A5%E9%87%8E%E5%95%86%E4%BA%BA%E3%81%B5%E3%82%8B%E3%81%95%E3%81%A8%E9%A4%A8%E3%80%8C%E6%97%A7%E5%B1%B1%E4%B8%AD%E6%AD%A3%E5%90%89%E9%82%B8%E3%80%8D",
+        "fetched_at": "2026-09-28"
       }
     ],
     "status": "published",
@@ -10721,8 +10826,11 @@
     "id": "wd-Q111551598",
     "name": {
       "ja": "甲南中央運動公園",
+      "kana": "こうなんちゅうおううんどうこうえん",
+      "romaji": "Konanchuoundokoen",
       "zh_tw": "甲南中央運動公園"
     },
+    "kana_source": "wikipedia",
     "location": {
       "lat": 34.931111,
       "lng": 136.176944
@@ -10735,6 +10843,13 @@
     ],
     "featured": false,
     "score": 28.2,
+    "summary": {
+      "text": "甲南中央運動公園（こうなんちゅうおううんどうこうえん）は、滋賀県甲賀市にある運動公園である。福祉ゾーンが近接する。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E7%94%B2%E5%8D%97%E4%B8%AD%E5%A4%AE%E9%81%8B%E5%8B%95%E5%85%AC%E5%9C%92",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "nearest_stations": [
       {
         "name": {
@@ -10757,6 +10872,10 @@
       {
         "url": "https://www.openstreetmap.org/way/617193985",
         "fetched_at": "2026-09-27"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E7%94%B2%E5%8D%97%E4%B8%AD%E5%A4%AE%E9%81%8B%E5%8B%95%E5%85%AC%E5%9C%92",
+        "fetched_at": "2026-09-28"
       }
     ],
     "status": "published",
@@ -10766,9 +10885,12 @@
     "id": "wd-Q11274212",
     "name": {
       "ja": "大津湖岸なぎさ公園",
+      "kana": "おおつこがんなぎさこうえん",
+      "romaji": "Otsukogannagisakoen",
       "zh_tw": "大津湖岸渚公園",
       "en": "Otsu Kogan Nagisa Park"
     },
+    "kana_source": "wikipedia",
     "location": {
       "lat": 34.988626,
       "lng": 135.897889
@@ -10781,6 +10903,13 @@
     ],
     "featured": false,
     "score": 46.04,
+    "summary": {
+      "text": "大津湖岸なぎさ公園（おおつこがんなぎさこうえん）は、滋賀県大津市の琵琶湖畔にある都市公園である。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E6%B4%A5%E6%B9%96%E5%B2%B8%E3%81%AA%E3%81%8E%E3%81%95%E5%85%AC%E5%9C%92",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "nearest_stations": [
       {
         "name": {
@@ -10821,6 +10950,10 @@
       {
         "url": "https://www.openstreetmap.org/relation/9503807",
         "fetched_at": "2026-09-27"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E6%B4%A5%E6%B9%96%E5%B2%B8%E3%81%AA%E3%81%8E%E3%81%95%E5%85%AC%E5%9C%92",
+        "fetched_at": "2026-09-28"
       }
     ],
     "status": "published",
@@ -10830,9 +10963,12 @@
     "id": "wd-Q11338923",
     "name": {
       "ja": "ボーダレス・アートミュージアム NO-MA",
+      "kana": "ぼーだれすあーとみゅーじあむのま",
+      "romaji": "Bodaresuatomyujiamunoma",
       "zh_tw": "ボーダレス・アートミュージアム NO-MA",
       "en": "Borderless Art Museum NO-MA"
     },
+    "kana_source": "wikipedia",
     "location": {
       "lat": 35.137639,
       "lng": 136.094472
@@ -10845,6 +10981,13 @@
     ],
     "featured": false,
     "score": 35.16,
+    "summary": {
+      "text": "ボーダレス・アートミュージアム NO-MA（ボーダレス・アートミュージアム ノマ）は、滋賀県近江八幡市にある美術館である。当館はアール・ブリュット（アウトサイダー・アート）の一部をなす障害者による美術作品の展示を目的とする施設である。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E3%83%9C%E3%83%BC%E3%83%80%E3%83%AC%E3%82%B9%E3%83%BB%E3%82%A2%E3%83%BC%E3%83%88%E3%83%9F%E3%83%A5%E3%83%BC%E3%82%B8%E3%82%A2%E3%83%A0_NO-MA",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "images": [
       {
         "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8c/Borderless_Art_Museum_NO-MA_1.jpg/960px-Borderless_Art_Museum_NO-MA_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -10865,6 +11008,10 @@
       {
         "url": "https://www.openstreetmap.org/way/360331880",
         "fetched_at": "2026-09-27"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E3%83%9C%E3%83%BC%E3%83%80%E3%83%AC%E3%82%B9%E3%83%BB%E3%82%A2%E3%83%BC%E3%83%88%E3%83%9F%E3%83%A5%E3%83%BC%E3%82%B8%E3%82%A2%E3%83%A0_NO-MA",
+        "fetched_at": "2026-09-28"
       }
     ],
     "status": "published",
@@ -10874,9 +11021,12 @@
     "id": "wd-Q11352217",
     "name": {
       "ja": "ヴォーリズ記念館",
+      "kana": "ゔぉーりずきねんかん",
+      "romaji": "Vorizukinenkan",
       "zh_tw": "ヴォーリズ記念館",
       "en": "Vories Memorial Hall"
     },
+    "kana_source": "wikipedia",
     "location": {
       "lat": 35.139861,
       "lng": 136.094722
@@ -10889,6 +11039,13 @@
     ],
     "featured": false,
     "score": 41.3,
+    "summary": {
+      "text": "ヴォーリズ記念館（ヴォーリズきねんかん）は、滋賀県近江八幡市慈恩寺町元11にある博物館。正式名称は一柳記念館（ひとつやなぎきねんかん）。運営は公益財団法人近江兄弟社。滋賀県指定文化財。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E3%83%B4%E3%82%A9%E3%83%BC%E3%83%AA%E3%82%BA%E8%A8%98%E5%BF%B5%E9%A4%A8",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "images": [
       {
         "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9a/Old_vories_house01s3200.jpg/960px-Old_vories_house01s3200.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -10909,6 +11066,10 @@
       {
         "url": "https://www.openstreetmap.org/way/437107467",
         "fetched_at": "2026-09-27"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E3%83%B4%E3%82%A9%E3%83%BC%E3%83%AA%E3%82%BA%E8%A8%98%E5%BF%B5%E9%A4%A8",
+        "fetched_at": "2026-09-28"
       }
     ],
     "status": "published",
@@ -10918,9 +11079,12 @@
     "id": "wd-Q11354833",
     "name": {
       "ja": "三大神社",
+      "kana": "さんだいじんじゃ",
+      "romaji": "Sandaijinja",
       "zh_tw": "三大神社",
       "en": "Sandai Shrine"
     },
+    "kana_source": "wikipedia",
     "location": {
       "lat": 35.04833,
       "lng": 135.93722
@@ -10935,6 +11099,13 @@
     ],
     "featured": false,
     "score": 35.83,
+    "summary": {
+      "text": "三大神社（さんだいじんじゃ）は、滋賀県草津市志那町に鎮座する神社である。式内社論社である。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E4%B8%89%E5%A4%A7%E7%A5%9E%E7%A4%BE_%28%E8%8D%89%E6%B4%A5%E5%B8%82%29",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "images": [
       {
         "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/58/%E4%B8%89%E5%A4%A7%E7%A5%9E%E7%A4%BE-%E9%B3%A5%E5%B1%85.jpg/960px-%E4%B8%89%E5%A4%A7%E7%A5%9E%E7%A4%BE-%E9%B3%A5%E5%B1%85.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -10955,6 +11126,10 @@
       {
         "url": "https://www.openstreetmap.org/way/684120519",
         "fetched_at": "2026-09-27"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E4%B8%89%E5%A4%A7%E7%A5%9E%E7%A4%BE_%28%E8%8D%89%E6%B4%A5%E5%B8%82%29",
+        "fetched_at": "2026-09-28"
       }
     ],
     "status": "published",
@@ -10964,9 +11139,12 @@
     "id": "wd-Q11356025",
     "name": {
       "ja": "三橋節子美術館",
+      "kana": "みつはしせつこびじゅつかん",
+      "romaji": "Mitsuhashisetsukobijutsukan",
       "zh_tw": "三橋節子美術館",
       "en": "Setsuko Mitsuhashi Memorial Museum"
     },
+    "kana_source": "wikipedia",
     "location": {
       "lat": 35.007333,
       "lng": 135.857278
@@ -10979,6 +11157,13 @@
     ],
     "featured": false,
     "score": 37.92,
+    "summary": {
+      "text": "三橋節子美術館（みつはしせつこびじゅつかん）は滋賀県大津市の長等公園にある美術館。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E4%B8%89%E6%A9%8B%E7%AF%80%E5%AD%90%E7%BE%8E%E8%A1%93%E9%A4%A8",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "nearest_stations": [
       {
         "name": {
@@ -11017,6 +11202,10 @@
       {
         "url": "https://www.openstreetmap.org/node/1422945609",
         "fetched_at": "2026-09-27"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E4%B8%89%E6%A9%8B%E7%AF%80%E5%AD%90%E7%BE%8E%E8%A1%93%E9%A4%A8",
+        "fetched_at": "2026-09-28"
       }
     ],
     "status": "published",
@@ -11026,9 +11215,12 @@
     "id": "wd-Q11358693",
     "name": {
       "ja": "上坂神社",
+      "kana": "こうさかじんじゃ",
+      "romaji": "Kosakajinja",
       "zh_tw": "上坂神社",
       "en": "Kōsaka Shrine"
     },
+    "kana_source": "wikipedia",
     "location": {
       "lat": 35.40675,
       "lng": 136.317611
@@ -11043,6 +11235,13 @@
     ],
     "featured": false,
     "score": 30.92,
+    "summary": {
+      "text": "上坂神社（こうさかじんじゃ）は、滋賀県長浜市東上坂町にある神社である。「上坂田宮」ともいい、国史見在社に比定されている。旧社格は県社。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E4%B8%8A%E5%9D%82%E7%A5%9E%E7%A4%BE",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "images": [
       {
         "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/71/%E4%B8%8A%E5%9D%82%E7%A5%9E%E7%A4%BE.JPG/960px-%E4%B8%8A%E5%9D%82%E7%A5%9E%E7%A4%BE.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -11063,6 +11262,10 @@
       {
         "url": "https://www.openstreetmap.org/node/411184001",
         "fetched_at": "2026-09-27"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E4%B8%8A%E5%9D%82%E7%A5%9E%E7%A4%BE",
+        "fetched_at": "2026-09-28"
       }
     ],
     "status": "published",
@@ -11092,6 +11295,13 @@
     ],
     "featured": false,
     "score": 35.55,
+    "summary": {
+      "text": "乎加神社（おかじんじゃ）は、滋賀県東近江市にある神社である。式内社で、旧社格は県社。豊遠迦比売命（豊岡姫命）を主祭神とし、白山比売（白山比咩神）を配祀する。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E4%B9%8E%E5%8A%A0%E7%A5%9E%E7%A4%BE",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "images": [
       {
         "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/23/Oka_jinja_torii.jpg/960px-Oka_jinja_torii.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -11141,6 +11351,13 @@
     ],
     "featured": false,
     "score": 35.03,
+    "summary": {
+      "text": "乎彌神社（おみじんじゃ）は滋賀県長浜市余呉町下余呉に鎮座する神社である。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E4%B9%8E%E5%BD%8C%E7%A5%9E%E7%A4%BE",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "nearest_stations": [
       {
         "name": {
@@ -11199,6 +11416,13 @@
     ],
     "featured": false,
     "score": 35.5,
+    "summary": {
+      "text": "今堀日吉神社（いまほりひよしじんじゃ）は、滋賀県東近江市にある神社。旧社格は村社。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E4%BB%8A%E5%A0%80%E6%97%A5%E5%90%89%E7%A5%9E%E7%A4%BE",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "nearest_stations": [
       {
         "name": {
@@ -11264,6 +11488,13 @@
     ],
     "featured": false,
     "score": 45.47,
+    "summary": {
+      "text": "伊香具神社（いかぐじんじゃ）は、滋賀県長浜市木之本町大音にある神社。式内社（名神大社）で、旧社格は県社。神紋は「上藤」。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E4%BC%8A%E9%A6%99%E5%85%B7%E7%A5%9E%E7%A4%BE",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "images": [
       {
         "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e3/Ikagu-jinja%2C_nakamon-1.jpg/960px-Ikagu-jinja%2C_nakamon-1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -11313,6 +11544,13 @@
     ],
     "featured": false,
     "score": 47.29,
+    "summary": {
+      "text": "佐久奈度神社（さくなどじんじゃ）は、滋賀県大津市大石中町に鎮座する神社である。式内社（名神大社）で、旧社格は県社。神紋は心櫻十六菊。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E4%BD%90%E4%B9%85%E5%A5%88%E5%BA%A6%E7%A5%9E%E7%A4%BE",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "images": [
       {
         "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/41/Sakunado_jinja.jpg/960px-Sakunado_jinja.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -11388,9 +11626,12 @@
     "id": "wd-Q11409089",
     "name": {
       "ja": "印岐志呂神社",
+      "kana": "いきしろじんじゃ",
+      "romaji": "Ikishirojinja",
       "zh_tw": "印岐志呂神社",
       "en": "Ikishiro Shrine"
     },
+    "kana_source": "wikipedia",
     "location": {
       "lat": 35.05649,
       "lng": 135.951329
@@ -11405,6 +11646,13 @@
     ],
     "featured": false,
     "score": 36.21,
+    "summary": {
+      "text": "印岐志呂神社（いきしろじんじゃ）は、滋賀県草津市片岡町に鎮座する神社である。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E5%8D%B0%E5%B2%90%E5%BF%97%E5%91%82%E7%A5%9E%E7%A4%BE",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "images": [
       {
         "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/78/Ikisiro_jinja_honden.JPG/960px-Ikisiro_jinja_honden.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -11425,6 +11673,10 @@
       {
         "url": "https://www.openstreetmap.org/node/5855900222",
         "fetched_at": "2026-09-27"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E5%8D%B0%E5%B2%90%E5%BF%97%E5%91%82%E7%A5%9E%E7%A4%BE",
+        "fetched_at": "2026-09-28"
       }
     ],
     "status": "published",
@@ -11434,9 +11686,12 @@
     "id": "wd-Q11418537",
     "name": {
       "ja": "唐崎神社",
+      "kana": "からさきじんじゃ",
+      "romaji": "Karasakijinja",
       "zh_tw": "唐崎神社",
       "en": "Karasaki Shrine"
     },
+    "kana_source": "wikipedia",
     "location": {
       "lat": 35.047389,
       "lng": 135.87425
@@ -11451,6 +11706,13 @@
     ],
     "featured": false,
     "score": 42.03,
+    "summary": {
+      "text": "唐崎神社（からさきじんじゃ）は、滋賀県大津市にある神社。日吉大社の摂社の一つである。琵琶湖西岸に位置し、境内は滋賀県指定名勝に指定されている。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E5%94%90%E5%B4%8E%E7%A5%9E%E7%A4%BE",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "nearest_stations": [
       {
         "name": {
@@ -11489,6 +11751,10 @@
       {
         "url": "https://www.openstreetmap.org/node/4796151838",
         "fetched_at": "2026-09-27"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E5%94%90%E5%B4%8E%E7%A5%9E%E7%A4%BE",
+        "fetched_at": "2026-09-28"
       }
     ],
     "status": "published",
@@ -11498,9 +11764,12 @@
     "id": "wd-Q11418946",
     "name": {
       "ja": "善水寺",
+      "kana": "ぜんすいじ",
+      "romaji": "Zensuiji",
       "zh_tw": "善水寺",
       "en": "Zensui-ji Temple"
     },
+    "kana_source": "wikipedia",
     "location": {
       "lat": 35.006444,
       "lng": 136.112556
@@ -11516,6 +11785,13 @@
     ],
     "featured": false,
     "score": 55.81,
+    "summary": {
+      "text": "善水寺（ぜんすいじ）は、滋賀県湖南市岩根にある天台宗の寺院。山号は岩根山（いわねさん）。本尊は薬師如来。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E5%96%84%E6%B0%B4%E5%AF%BA",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "images": [
       {
         "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/81/Shiga_Zensuiji.jpg/960px-Shiga_Zensuiji.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -11531,6 +11807,10 @@
       {
         "url": "https://www.wikidata.org/wiki/Q11418946",
         "fetched_at": "2026-09-27"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E5%96%84%E6%B0%B4%E5%AF%BA",
+        "fetched_at": "2026-09-28"
       }
     ],
     "status": "published",
@@ -11553,6 +11833,13 @@
     "tags": [],
     "featured": false,
     "score": 37.97,
+    "summary": {
+      "text": "国友鉄砲の里資料館（くにともてっぽうのさとしりょうかん）は、滋賀県長浜市にある博物館。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E5%9B%BD%E5%8F%8B%E9%89%84%E7%A0%B2%E3%81%AE%E9%87%8C%E8%B3%87%E6%96%99%E9%A4%A8",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "images": [
       {
         "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/60/Kunitomo_Gun_Museum_20210131_01.jpg/960px-Kunitomo_Gun_Museum_20210131_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -11582,9 +11869,12 @@
     "id": "wd-Q11425171",
     "name": {
       "ja": "坂本",
+      "kana": "さかもと",
+      "romaji": "Sakamoto",
       "zh_tw": "坂本",
       "en": "Sakamoto"
     },
+    "kana_source": "wikipedia",
     "location": {
       "lat": 35.072506,
       "lng": 135.870086
@@ -11595,6 +11885,13 @@
     "tags": [],
     "featured": false,
     "score": 49.41,
+    "summary": {
+      "text": "坂本是位於日本滋賀縣大津市的一個町以及地區。這裡也是延曆寺和日吉大社的門前町（鳥居前町）。現行行政町中設有坂本一丁目至坂本八丁目，而坂本地區還包括坂本本町以及相鄰的下阪本等地。",
+      "lang": "zh",
+      "source_url": "https://zh.wikipedia.org/wiki/%E5%9D%82%E6%9C%AC_%28%E5%A4%A7%E6%B4%A5%E5%B8%82%29",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "nearest_stations": [
       {
         "name": {
@@ -11623,6 +11920,10 @@
       {
         "url": "https://www.wikidata.org/wiki/Q11425171",
         "fetched_at": "2026-09-27"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E5%9D%82%E6%9C%AC_%28%E5%A4%A7%E6%B4%A5%E5%B8%82%29",
+        "fetched_at": "2026-09-28"
       }
     ],
     "status": "published",
@@ -11632,9 +11933,12 @@
     "id": "wd-Q11425904",
     "name": {
       "ja": "埋木舎",
+      "kana": "うもれぎのや",
+      "romaji": "Umoreginoya",
       "zh_tw": "埋木捨",
       "en": "Umoreginoya"
     },
+    "kana_source": "wikipedia",
     "location": {
       "lat": 35.275611,
       "lng": 136.256556
@@ -11647,6 +11951,13 @@
     ],
     "featured": false,
     "score": 45.74,
+    "summary": {
+      "text": "埋木舎（うもれぎのや）は、滋賀県彦根市尾末町にある、旧彦根藩主井伊家の屋敷跡。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E5%9F%8B%E6%9C%A8%E8%88%8E",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "nearest_stations": [
       {
         "name": {
@@ -11678,6 +11989,10 @@
       {
         "url": "https://www.openstreetmap.org/node/582527746",
         "fetched_at": "2026-09-27"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E5%9F%8B%E6%9C%A8%E8%88%8E",
+        "fetched_at": "2026-09-28"
       }
     ],
     "status": "published",
@@ -11687,9 +12002,12 @@
     "id": "wd-Q11438451",
     "name": {
       "ja": "大笹原神社",
+      "kana": "おおささはらじんじゃ",
+      "romaji": "Osasaharajinja",
       "zh_tw": "大笹原神社",
       "en": "Ōsasahara Shrine"
     },
+    "kana_source": "wikipedia",
     "location": {
       "lat": 35.07649,
       "lng": 136.06585
@@ -11705,6 +12023,13 @@
     ],
     "featured": false,
     "score": 55.59,
+    "summary": {
+      "text": "大笹原神社（おおささはらじんじゃ）は、滋賀県野洲市大篠原にある神社。旧社格は郷社。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E7%AC%B9%E5%8E%9F%E7%A5%9E%E7%A4%BE",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "images": [
       {
         "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/66/Shiga_Oosasahara.jpg/960px-Shiga_Oosasahara.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -11725,6 +12050,10 @@
       {
         "url": "https://www.openstreetmap.org/node/8791802063",
         "fetched_at": "2026-09-27"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E7%AC%B9%E5%8E%9F%E7%A5%9E%E7%A4%BE",
+        "fetched_at": "2026-09-28"
       }
     ],
     "status": "published",
@@ -11754,6 +12083,13 @@
     ],
     "featured": false,
     "score": 31.31,
+    "summary": {
+      "text": "大荒比古神社・鞆結神社（おおあらひこじんじゃ・ともゆいじんじゃ）は、滋賀県高島市マキノ町浦に鎮座する神社である。大荒比古神社と鞆結神社の2神社が併記の形で合祀されているが、ともに式内社の論社とされる。旧社格は郷社。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E8%8D%92%E6%AF%94%E5%8F%A4%E7%A5%9E%E7%A4%BE%E3%83%BB%E9%9E%86%E7%B5%90%E7%A5%9E%E7%A4%BE",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "images": [
       {
         "url": "https://upload.wikimedia.org/wikipedia/commons/a/a5/T-tomoyui-jinja.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
@@ -11803,6 +12139,13 @@
     ],
     "featured": false,
     "score": 41.75,
+    "summary": {
+      "text": "奥津嶋神社（おきつしまじんじゃ）は、滋賀県近江八幡市沖島町に鎮座する神社である。旧社格は村社。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E5%A5%A5%E6%B4%A5%E5%B6%8B%E7%A5%9E%E7%A4%BE",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "images": [
       {
         "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/75/Okitusima_jinja.jpg/960px-Okitusima_jinja.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -11852,6 +12195,13 @@
     ],
     "featured": false,
     "score": 36.63,
+    "summary": {
+      "text": "小槻神社（おつきじんじゃ/おつぎじんじゃ）は、滋賀県草津市青地町にある神社。式内社で、旧社格は郷社。神紋は「下り藤」。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E5%B0%8F%E6%A7%BB%E7%A5%9E%E7%A4%BE",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "images": [
       {
         "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/20/%E5%B0%8F%E6%A7%BB%E7%A5%9E%E7%A4%BE_%E5%A2%83%E5%86%85.JPG/960px-%E5%B0%8F%E6%A7%BB%E7%A5%9E%E7%A4%BE_%E5%A2%83%E5%86%85.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -11901,6 +12251,13 @@
     ],
     "featured": false,
     "score": 37.71,
+    "summary": {
+      "text": "小汐井神社（おしおいじんじゃ）は、滋賀県草津市大路に鎮座する神社である。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E5%B0%8F%E6%B1%90%E4%BA%95%E7%A5%9E%E7%A4%BE",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "nearest_stations": [
       {
         "name": {
@@ -11941,8 +12298,11 @@
     "id": "wd-Q11464272",
     "name": {
       "ja": "小野谷信号場",
+      "kana": "おのたにしんごうじょう",
+      "romaji": "Onotanishingojo",
       "zh_tw": "小野谷訊號場"
     },
+    "kana_source": "wikipedia",
     "location": {
       "lat": 34.925889,
       "lng": 136.114472
@@ -11953,6 +12313,13 @@
     "tags": [],
     "featured": false,
     "score": 51.33,
+    "summary": {
+      "text": "小野谷號誌站是位於日本滋賀縣甲賀市、原為信樂高原鐵道信樂線的號誌站。本號誌站實際投入使用的時間只有2個月，因1991年5月發生了造成42人死亡、628人受傷的信樂高原鐵道列車對撞事故，路線停駛而暫停使用，同年的12月8日信樂線重新營運，但本號誌站卻一直處於停用狀態。最終於2018年11月，獲國土交通省批准後正式廢除。",
+      "lang": "zh",
+      "source_url": "https://zh.wikipedia.org/wiki/%E5%B0%8F%E9%87%8E%E8%B0%B7%E4%BF%A1%E8%99%9F%E5%A0%B4",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "images": [
       {
         "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b9/Onotani_signal_point_siga.jpeg/960px-Onotani_signal_point_siga.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -11973,6 +12340,10 @@
       {
         "url": "https://www.openstreetmap.org/way/511087432",
         "fetched_at": "2026-09-27"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E5%B0%8F%E9%87%8E%E8%B0%B7%E4%BF%A1%E5%8F%B7%E5%A0%B4",
+        "fetched_at": "2026-09-28"
       }
     ],
     "status": "published",
@@ -12000,6 +12371,13 @@
     ],
     "featured": false,
     "score": 48.91,
+    "summary": {
+      "text": "崇福寺跡（すうふくじあと）は、滋賀県大津市にある飛鳥時代後期から室町時代にかけて存在した寺院の遺跡。3つの尾根にまたがって建築群があり、崇福寺と奈良時代末期に建立された梵釈寺の複合遺跡とする説が有力である。また出土した崇福寺塔心礎納置品は国宝に指定されており、遺跡は国の史跡と歴史的風土特別保存地区に指定されている。本記事では史跡としての崇福寺跡と、文献資料にみる崇福寺について記述する。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E5%B4%87%E7%A6%8F%E5%AF%BA%E8%B7%A1",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "nearest_stations": [
       {
         "name": {
@@ -12044,9 +12422,12 @@
     "id": "wd-Q11481425",
     "name": {
       "ja": "常楽寺",
+      "kana": "じょうらくじ",
+      "romaji": "Jorakuji",
       "zh_tw": "常樂寺",
       "en": "Jōraku-ji Temple"
     },
+    "kana_source": "wikipedia",
     "location": {
       "lat": 34.990125,
       "lng": 136.048567
@@ -12062,6 +12443,13 @@
     ],
     "featured": false,
     "score": 58.72,
+    "summary": {
+      "text": "常楽寺（じょうらくじ）は、滋賀県湖南市西寺にある天台宗系単立の寺院。山号は阿星山（あぼしさん）。本尊は千手観音。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E5%B8%B8%E6%A5%BD%E5%AF%BA_%28%E6%B9%96%E5%8D%97%E5%B8%82%29",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "images": [
       {
         "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/80/061220_Joraku-ji_Konan_Shiga_pref_Japan04s5.jpg/960px-061220_Joraku-ji_Konan_Shiga_pref_Japan04s5.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -12077,6 +12465,10 @@
       {
         "url": "https://www.wikidata.org/wiki/Q11481425",
         "fetched_at": "2026-09-27"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E5%B8%B8%E6%A5%BD%E5%AF%BA_%28%E6%B9%96%E5%8D%97%E5%B8%82%29",
+        "fetched_at": "2026-09-28"
       }
     ],
     "status": "published",
@@ -12086,9 +12478,12 @@
     "id": "wd-Q11488762",
     "name": {
       "ja": "御上神社",
+      "kana": "みかみじんじゃ",
+      "romaji": "Mikamijinja",
       "zh_tw": "御上神社",
       "en": "Mikami Shrine"
     },
+    "kana_source": "wikipedia",
     "location": {
       "lat": 35.049809,
       "lng": 136.027388
@@ -12104,6 +12499,13 @@
     ],
     "featured": true,
     "score": 61.8,
+    "summary": {
+      "text": "御上神社（みかみじんじゃ）は、滋賀県野洲市三上にある神社。式内社（名神大社）で、旧社格は官幣中社。現在は神社本庁の別表神社。琵琶湖南岸、「近江富士」の別名もある三上山（標高432メートル）の山麓に鎮座し、三上山を神体山として祀る。三上山は藤原秀郷（俵藤太）のムカデ退治伝説でも知られる。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E5%BE%A1%E4%B8%8A%E7%A5%9E%E7%A4%BE",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "images": [
       {
         "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4e/Mikami-jinja_keidai-2.JPG/960px-Mikami-jinja_keidai-2.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -12124,6 +12526,10 @@
       {
         "url": "https://www.openstreetmap.org/node/2406002822",
         "fetched_at": "2026-09-27"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E5%BE%A1%E4%B8%8A%E7%A5%9E%E7%A4%BE",
+        "fetched_at": "2026-09-28"
       }
     ],
     "status": "published",
@@ -12133,9 +12539,12 @@
     "id": "wd-Q11490390",
     "name": {
       "ja": "徳源院",
+      "kana": "とくげんいん",
+      "romaji": "Tokugenin",
       "zh_tw": "德源院",
       "en": "Tokugen-in Temple"
     },
+    "kana_source": "wikipedia",
     "location": {
       "lat": 35.345278,
       "lng": 136.388056
@@ -12150,6 +12559,13 @@
     ],
     "featured": false,
     "score": 43.41,
+    "summary": {
+      "text": "徳源院（とくげんいん）は、滋賀県米原市清滝にある天台宗の寺院。山号は霊通山。本尊は聖観世音菩薩。寺号で清瀧寺（せいりゅうじ）とも呼ばれる。京極氏の菩提寺であり、境内にある京極家墓所は国の史跡に指定されている。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E5%BE%B3%E6%BA%90%E9%99%A2_%28%E7%B1%B3%E5%8E%9F%E5%B8%82%29",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "nearest_stations": [
       {
         "name": {
@@ -12181,6 +12597,10 @@
       {
         "url": "https://www.openstreetmap.org/node/4963978022",
         "fetched_at": "2026-09-27"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E5%BE%B3%E6%BA%90%E9%99%A2_%28%E7%B1%B3%E5%8E%9F%E5%B8%82%29",
+        "fetched_at": "2026-09-28"
       }
     ],
     "status": "published",
@@ -12190,9 +12610,12 @@
     "id": "wd-Q11495203",
     "name": {
       "ja": "慶雲館",
+      "kana": "けいうんかん",
+      "romaji": "Keiunkan",
       "zh_tw": "慶雲館",
       "en": "Keiunkan"
     },
+    "kana_source": "wikipedia",
     "location": {
       "lat": 35.375833,
       "lng": 136.266278
@@ -12205,6 +12628,13 @@
     ],
     "featured": false,
     "score": 46.16,
+    "summary": {
+      "text": "慶雲館（けいうんかん）は、滋賀県長浜市港町にある迎賓館である。庭園部分は国の名勝に指定されている。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E6%85%B6%E9%9B%B2%E9%A4%A8",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "nearest_stations": [
       {
         "name": {
@@ -12229,6 +12659,10 @@
       {
         "url": "https://www.wikidata.org/wiki/Q11495203",
         "fetched_at": "2026-09-27"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E6%85%B6%E9%9B%B2%E9%A4%A8",
+        "fetched_at": "2026-09-28"
       }
     ],
     "status": "published",
@@ -12238,9 +12672,12 @@
     "id": "wd-Q11495725",
     "name": {
       "ja": "成田美術館",
+      "kana": "なりたびじゅつかん",
+      "romaji": "Naritabijutsukan",
       "zh_tw": "成田美術館",
       "en": "Musée Narita"
     },
+    "kana_source": "wikipedia",
     "location": {
       "lat": 35.374667,
       "lng": 136.268861
@@ -12253,6 +12690,13 @@
     ],
     "featured": false,
     "score": 35.39,
+    "summary": {
+      "text": "成田美術館（なりたびじゅつかん）は滋賀県長浜市の古い町並みが残る北国街道沿いにある現代建築の美術館。1998年に開館。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E6%88%90%E7%94%B0%E7%BE%8E%E8%A1%93%E9%A4%A8",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "nearest_stations": [
       {
         "name": {
@@ -12282,6 +12726,10 @@
       {
         "url": "https://www.openstreetmap.org/node/1422943179",
         "fetched_at": "2026-09-27"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E6%88%90%E7%94%B0%E7%BE%8E%E8%A1%93%E9%A4%A8",
+        "fetched_at": "2026-09-28"
       }
     ],
     "status": "published",
@@ -12291,8 +12739,11 @@
     "id": "wd-Q11495807",
     "name": {
       "ja": "成願寺",
+      "kana": "じょうがんじ",
+      "romaji": "Joganji",
       "zh_tw": "成願寺"
     },
+    "kana_source": "wikipedia",
     "location": {
       "lat": 35.116944,
       "lng": 136.183028
@@ -12307,6 +12758,13 @@
     ],
     "featured": false,
     "score": 35.24,
+    "summary": {
+      "text": "成願寺（じょうがんじ）は、滋賀県東近江市小脇町にある天台宗の寺院。山号は赤神山。本尊は薬師如来。太郎坊大権現とも呼ばれる。太郎坊阿賀神社の参道にある。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E6%88%90%E9%A1%98%E5%AF%BA_%28%E6%9D%B1%E8%BF%91%E6%B1%9F%E5%B8%82%29",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "nearest_stations": [
       {
         "name": {
@@ -12347,6 +12805,10 @@
       {
         "url": "https://www.openstreetmap.org/way/483157488",
         "fetched_at": "2026-09-27"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E6%88%90%E9%A1%98%E5%AF%BA_%28%E6%9D%B1%E8%BF%91%E6%B1%9F%E5%B8%82%29",
+        "fetched_at": "2026-09-28"
       }
     ],
     "status": "published",
@@ -12356,9 +12818,12 @@
     "id": "wd-Q11496660",
     "name": {
       "ja": "戸隠神社",
+      "kana": "とがくしじんじゃ",
+      "romaji": "Togakushijinja",
       "zh_tw": "戸隠神社",
       "en": "Togakushi Shrine"
     },
+    "kana_source": "wikipedia",
     "location": {
       "lat": 34.94972,
       "lng": 135.90694
@@ -12373,6 +12838,13 @@
     ],
     "featured": false,
     "score": 30.64,
+    "summary": {
+      "text": "戸隠神社（とがくしじんじゃ）は、滋賀県大津市にある神社である。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E6%88%B8%E9%9A%A0%E7%A5%9E%E7%A4%BE_%28%E5%A4%A7%E6%B4%A5%E5%B8%82%29",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "images": [
       {
         "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d6/Otsu-Togakushi-Shrine1.jpg/960px-Otsu-Togakushi-Shrine1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -12393,6 +12865,10 @@
       {
         "url": "https://www.openstreetmap.org/node/10003980524",
         "fetched_at": "2026-09-27"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E6%88%B8%E9%9A%A0%E7%A5%9E%E7%A4%BE_%28%E5%A4%A7%E6%B4%A5%E5%B8%82%29",
+        "fetched_at": "2026-09-28"
       }
     ],
     "status": "published",
@@ -12422,6 +12898,13 @@
     ],
     "featured": false,
     "score": 29.51,
+    "summary": {
+      "text": "日吉二宮神社（ひよしにのみやじんじゃ）は滋賀県高島市新旭町深溝に鎮座する神社である。旧村社。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E6%97%A5%E5%90%89%E4%BA%8C%E5%AE%AE%E7%A5%9E%E7%A4%BE",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "nearest_stations": [
       {
         "name": {
@@ -12460,9 +12943,12 @@
     "id": "wd-Q11505052",
     "name": {
       "ja": "日吉東照宮",
+      "kana": "ひよしとうしょうぐう",
+      "romaji": "Hiyoshi To Sho Gu",
       "zh_tw": "日吉東照宮",
       "en": "Hiyoshi Tōshō-gū"
     },
+    "kana_source": "wikipedia",
     "location": {
       "lat": 35.068361,
       "lng": 135.864333
@@ -12478,6 +12964,13 @@
     ],
     "featured": false,
     "score": 45.87,
+    "summary": {
+      "text": "日吉東照宮（ひよしとうしょうぐう）は、滋賀県大津市坂本にある神社。日吉大社の境外末社である。重要文化財の社殿は権現造の発祥とされ、関西の日光とも呼ばれている。比叡山東麓に鎮座する。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E6%97%A5%E5%90%89%E6%9D%B1%E7%85%A7%E5%AE%AE",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "nearest_stations": [
       {
         "name": {
@@ -12516,6 +13009,10 @@
       {
         "url": "https://www.openstreetmap.org/way/360086808",
         "fetched_at": "2026-09-27"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E6%97%A5%E5%90%89%E6%9D%B1%E7%85%A7%E5%AE%AE",
+        "fetched_at": "2026-09-28"
       }
     ],
     "status": "published",
@@ -12545,6 +13042,13 @@
     ],
     "featured": false,
     "score": 51.84,
+    "summary": {
+      "text": "日牟禮八幡宮（ひむれはちまんぐう）は、滋賀県近江八幡市宮内町にある神社。旧社格は県社で、現在は神社本庁の別表神社。「近江八幡市」の市名の由来となった神社である。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E6%97%A5%E7%89%9F%E7%A6%AE%E5%85%AB%E5%B9%A1%E5%AE%AE",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "images": [
       {
         "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8a/Himure_hachimangu04s3200.jpg/960px-Himure_hachimangu04s3200.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -12590,6 +13094,13 @@
     ],
     "featured": false,
     "score": 33.36,
+    "summary": {
+      "text": "妙法山明照寺（みょうほうざん めんしょうじ）は、滋賀県彦根市にある浄土真宗本願寺派寺院。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E6%98%8E%E7%85%A7%E5%AF%BA_%28%E5%BD%A6%E6%A0%B9%E5%B8%82%29",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "nearest_stations": [
       {
         "name": {
@@ -12628,9 +13139,12 @@
     "id": "wd-Q11512447",
     "name": {
       "ja": "明王院",
+      "kana": "みょうおういん",
+      "romaji": "Myoin",
       "zh_tw": "明王院",
       "en": "Myōō-in Temple"
     },
+    "kana_source": "wikipedia",
     "location": {
       "lat": 35.247861,
       "lng": 135.869139
@@ -12646,6 +13160,13 @@
     ],
     "featured": false,
     "score": 46.36,
+    "summary": {
+      "text": "明王院（みょうおういん）は、滋賀県大津市葛川坊村町（かつらがわぼうむらちょう）にある天台宗の寺院。山号は北嶺山（阿都山）。本尊は千手観音。比叡山にある総本山延暦寺東塔無動寺の奥の院である。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E6%98%8E%E7%8E%8B%E9%99%A2_%28%E5%A4%A7%E6%B4%A5%E5%B8%82%29",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "images": [
       {
         "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3d/%E8%91%9B%E5%B7%9D%E6%98%8E%E7%8E%8B%E9%99%A2.jpg/960px-%E8%91%9B%E5%B7%9D%E6%98%8E%E7%8E%8B%E9%99%A2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -12666,6 +13187,10 @@
       {
         "url": "https://www.openstreetmap.org/node/3244491887",
         "fetched_at": "2026-09-27"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E6%98%8E%E7%8E%8B%E9%99%A2_%28%E5%A4%A7%E6%B4%A5%E5%B8%82%29",
+        "fetched_at": "2026-09-28"
       }
     ],
     "status": "published",
@@ -12675,9 +13200,12 @@
     "id": "wd-Q11515499",
     "name": {
       "ja": "最勝寺",
+      "kana": "さいしょうじ",
+      "romaji": "Saishoji",
       "zh_tw": "最勝寺",
       "en": "Saishō-ji Temple"
     },
+    "kana_source": "wikipedia",
     "location": {
       "lat": 35.285833,
       "lng": 136.017222
@@ -12692,6 +13220,13 @@
     ],
     "featured": false,
     "score": 29.95,
+    "summary": {
+      "text": "最勝寺（さいしょうじ）は、滋賀県高島市勝野にある真宗大谷派に属する寺院。山号は、琶湖山（はこざん）。本尊は阿弥陀如来。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E6%9C%80%E5%8B%9D%E5%AF%BA_%28%E9%AB%98%E5%B3%B6%E5%B8%82%29",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "nearest_stations": [
       {
         "name": {
@@ -12722,6 +13257,10 @@
       {
         "url": "https://www.openstreetmap.org/node/11310219885",
         "fetched_at": "2026-09-27"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E6%9C%80%E5%8B%9D%E5%AF%BA_%28%E9%AB%98%E5%B3%B6%E5%B8%82%29",
+        "fetched_at": "2026-09-28"
       }
     ],
     "status": "published",
@@ -12731,9 +13270,12 @@
     "id": "wd-Q11520729",
     "name": {
       "ja": "本福寺",
+      "kana": "ほんぷくじ",
+      "romaji": "Honpukuji",
       "zh_tw": "本福寺",
       "en": "Honpuku-ji Temple"
     },
+    "kana_source": "wikipedia",
     "location": {
       "lat": 35.1112,
       "lng": 135.919361
@@ -12748,6 +13290,13 @@
     ],
     "featured": false,
     "score": 39.14,
+    "summary": {
+      "text": "本福寺（ほんぷくじ）は、滋賀県大津市本堅田にある浄土真宗本願寺派の寺院。山号は夕陽山（せきようさん）。本尊は阿弥陀如来。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E6%9C%AC%E7%A6%8F%E5%AF%BA_%28%E5%A4%A7%E6%B4%A5%E5%B8%82%29",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "nearest_stations": [
       {
         "name": {
@@ -12777,6 +13326,10 @@
       {
         "url": "https://www.openstreetmap.org/way/345815363",
         "fetched_at": "2026-09-27"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E6%9C%AC%E7%A6%8F%E5%AF%BA_%28%E5%A4%A7%E6%B4%A5%E5%B8%82%29",
+        "fetched_at": "2026-09-28"
       }
     ],
     "status": "published",
@@ -12806,6 +13359,13 @@
     ],
     "featured": false,
     "score": 29.65,
+    "summary": {
+      "text": "本要寺（ほんようじ）は、滋賀県大津市にある日蓮宗の寺院。山号は蓮光山（れんこうさん）。旧本山は、大本山本圀寺（六条門流）。法縁は勇師法縁(縁頭本山東山二条妙傳寺)。現住職 第35世 中紙賢孝(開聞院日梵)",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E6%9C%AC%E8%A6%81%E5%AF%BA_%28%E5%A4%A7%E6%B4%A5%E5%B8%82%29",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "nearest_stations": [
       {
         "name": {
@@ -12853,9 +13413,12 @@
     "id": "wd-Q11527980",
     "name": {
       "ja": "東海道石部宿歴史民俗資料館",
+      "kana": "とうかいどういしべしゅくれきしみんぞくしりょうかん",
+      "romaji": "Tokaidoishibeshukurekishiminzokushiryokan",
       "zh_tw": "東海道石部宿歷史民俗資料館",
       "en": "Ishibe Historical Museum"
     },
+    "kana_source": "wikipedia",
     "location": {
       "lat": 35.004833,
       "lng": 136.045444
@@ -12868,6 +13431,13 @@
     ],
     "featured": false,
     "score": 31.36,
+    "summary": {
+      "text": "東海道石部宿歴史民俗資料館（とうかいどういしべしゅくれきしみんぞくしりょうかん）は滋賀県湖南市の雨山文化運動公園内にある湖南市立の資料館。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E6%9D%B1%E6%B5%B7%E9%81%93%E7%9F%B3%E9%83%A8%E5%AE%BF%E6%AD%B4%E5%8F%B2%E6%B0%91%E4%BF%97%E8%B3%87%E6%96%99%E9%A4%A8",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "images": [
       {
         "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b4/Ishibeshuku_museum02s3200.jpg/960px-Ishibeshuku_museum02s3200.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -12888,6 +13458,10 @@
       {
         "url": "https://www.openstreetmap.org/node/1422943401",
         "fetched_at": "2026-09-27"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E6%9D%B1%E6%B5%B7%E9%81%93%E7%9F%B3%E9%83%A8%E5%AE%BF%E6%AD%B4%E5%8F%B2%E6%B0%91%E4%BF%97%E8%B3%87%E6%96%99%E9%A4%A8",
+        "fetched_at": "2026-09-28"
       }
     ],
     "status": "published",
@@ -12897,9 +13471,12 @@
     "id": "wd-Q11534047",
     "name": {
       "ja": "柳が崎湖畔公園",
+      "kana": "やながさきこはんこうえん",
+      "romaji": "Yanagasakikohankoen",
       "zh_tw": "柳崎湖畔公園",
       "en": "Yanagasaki Lakeside Park"
     },
+    "kana_source": "wikipedia",
     "location": {
       "lat": 35.026389,
       "lng": 135.868583
@@ -12912,6 +13489,13 @@
     ],
     "featured": false,
     "score": 41.63,
+    "summary": {
+      "text": "柳が崎湖畔公園 （やながさきこはんこうえん）は滋賀県大津市にある都市公園（総合公園）である。琵琶湖畔にある親水公園で、びわ湖大津館を中核施設として2002年に開園した。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E6%9F%B3%E3%81%8C%E5%B4%8E%E6%B9%96%E7%95%94%E5%85%AC%E5%9C%92",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "nearest_stations": [
       {
         "name": {
@@ -12945,6 +13529,10 @@
       {
         "url": "https://www.openstreetmap.org/way/585716976",
         "fetched_at": "2026-09-27"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E6%9F%B3%E3%81%8C%E5%B4%8E%E6%B9%96%E7%95%94%E5%85%AC%E5%9C%92",
+        "fetched_at": "2026-09-28"
       }
     ],
     "status": "published",
@@ -12973,6 +13561,13 @@
     ],
     "featured": false,
     "score": 42.69,
+    "summary": {
+      "text": "楽々園（らくらくえん）は、滋賀県彦根市にある歴史的建造物と庭園および遺構。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E6%A5%BD%E3%80%85%E5%9C%92",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "nearest_stations": [
       {
         "name": {
@@ -13033,6 +13628,13 @@
     ],
     "featured": false,
     "score": 40.39,
+    "summary": {
+      "text": "櫟野寺（らくやじ）は、滋賀県甲賀市甲賀町櫟野にある天台宗の寺院。山号は福生山。院号は自性院。本尊は十一面観音（櫟野観音）。また、甲賀三大仏の一つである薬師如来像が安置されている。甲賀六大寺のひとつ。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E6%AB%9F%E9%87%8E%E5%AF%BA",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "images": [
       {
         "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c5/Rakuya-ji_201811.jpg/960px-Rakuya-ji_201811.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -13062,9 +13664,12 @@
     "id": "wd-Q11545558",
     "name": {
       "ja": "正法寺",
+      "kana": "しょうほうじ",
+      "romaji": "Shohoji",
       "zh_tw": "正法寺",
       "en": "Iwama-dera Temple"
     },
+    "kana_source": "wikipedia",
     "location": {
       "lat": 34.933,
       "lng": 135.878389
@@ -13079,6 +13684,13 @@
     ],
     "featured": false,
     "score": 45.97,
+    "summary": {
+      "text": "正法寺（しょうほうじ）は、滋賀県大津市にある真言宗醍醐派の寺院。山号は岩間山。本尊は千手観世音菩薩。開山は加賀国白山を開いた泰澄（たいちょう）である。別称は岩間寺（いわまでら）。西国三十三所第12番札所。正法寺は、11番上醍醐の東方約4キロメートル、13番石山寺の南西約4キロメートル、滋賀県と京都府との府県境の一部をなす岩間山（標高443メートル）南麓の標高390メートル辺りに位置する。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E6%AD%A3%E6%B3%95%E5%AF%BA_%28%E5%A4%A7%E6%B4%A5%E5%B8%82%29",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "images": [
       {
         "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/04/Syouhouji5838.jpg/960px-Syouhouji5838.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -13099,6 +13711,10 @@
       {
         "url": "https://www.openstreetmap.org/way/790911213",
         "fetched_at": "2026-09-27"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E6%AD%A3%E6%B3%95%E5%AF%BA_%28%E5%A4%A7%E6%B4%A5%E5%B8%82%29",
+        "fetched_at": "2026-09-28"
       }
     ],
     "status": "published",
@@ -13124,6 +13740,13 @@
     ],
     "featured": false,
     "score": 38.1,
+    "summary": {
+      "text": "甲賀市水口スポーツの森（こうかし みなくちスポーツのもり）は、滋賀県甲賀市にある運動公園である。施設は甲賀市が所有し、指定管理者の一般社団法人甲賀市スポーツ協会が管理している。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E7%94%B2%E8%B3%80%E5%B8%82%E6%B0%B4%E5%8F%A3%E3%82%B9%E3%83%9D%E3%83%BC%E3%83%84%E3%81%AE%E6%A3%AE",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "nearest_stations": [
       {
         "name": {
@@ -13166,9 +13789,12 @@
     "id": "wd-Q11548370",
     "name": {
       "ja": "水口岡山城",
+      "kana": "みなくちおかやまじょう",
+      "romaji": "Minakuchiokayamajo",
       "zh_tw": "水口城",
       "en": "Minakuchi Okayama Castle"
     },
+    "kana_source": "wikipedia",
     "location": {
       "lat": 34.97068,
       "lng": 136.18013
@@ -13181,6 +13807,13 @@
     ],
     "featured": false,
     "score": 49.25,
+    "summary": {
+      "text": "水口岡山城（みなくちおかやまじょう）は、滋賀県甲賀市水口町水口にあった日本の城。国の史跡に指定されている。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E6%B0%B4%E5%8F%A3%E5%B2%A1%E5%B1%B1%E5%9F%8E",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "nearest_stations": [
       {
         "name": {
@@ -13219,6 +13852,10 @@
       {
         "url": "https://www.openstreetmap.org/node/2648858444",
         "fetched_at": "2026-09-27"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E6%B0%B4%E5%8F%A3%E5%B2%A1%E5%B1%B1%E5%9F%8E",
+        "fetched_at": "2026-09-28"
       }
     ],
     "status": "published",
@@ -13228,9 +13865,12 @@
     "id": "wd-Q11548384",
     "name": {
       "ja": "水口神社",
+      "kana": "みなくちじんじゃ",
+      "romaji": "Minakuchijinja",
       "zh_tw": "水口神社",
       "en": "Minakuchi Shrine"
     },
+    "kana_source": "wikipedia",
     "location": {
       "lat": 34.967585,
       "lng": 136.167507
@@ -13246,6 +13886,13 @@
     ],
     "featured": false,
     "score": 37.32,
+    "summary": {
+      "text": "水口神社（みなくちじんじゃ）は、滋賀県甲賀市水口町宮の前にある神社。式内社で、旧社格は県社。例祭として水口曳山祭が行われる。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E6%B0%B4%E5%8F%A3%E7%A5%9E%E7%A4%BE_%28%E7%94%B2%E8%B3%80%E5%B8%82%29",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "nearest_stations": [
       {
         "name": {
@@ -13286,6 +13933,10 @@
       {
         "url": "https://www.openstreetmap.org/way/881255806",
         "fetched_at": "2026-09-27"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E6%B0%B4%E5%8F%A3%E7%A5%9E%E7%A4%BE_%28%E7%94%B2%E8%B3%80%E5%B8%82%29",
+        "fetched_at": "2026-09-28"
       }
     ],
     "status": "published",
@@ -13315,6 +13966,13 @@
     ],
     "featured": false,
     "score": 41.39,
+    "summary": {
+      "text": "水尾神社（みおじんじゃ/みをじんじゃ）は、滋賀県高島市拝戸（はいど）にある神社。式内社（名神大社）で、旧社格は県社。神紋は「菊」。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E6%B0%B4%E5%B0%BE%E7%A5%9E%E7%A4%BE",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "images": [
       {
         "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/22/Mio-jinja_%28Takashima%29_shaden.JPG/960px-Mio-jinja_%28Takashima%29_shaden.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -13364,6 +14022,13 @@
     ],
     "featured": false,
     "score": 36.91,
+    "summary": {
+      "text": "河桁御河邊神社（かわけたみかべじんじゃ）は、滋賀県東近江市神田町（じんでんちょう）にある神社。式内社論社で、旧社格は郷社。神紋は抱澤潟。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E6%B2%B3%E6%A1%81%E5%BE%A1%E6%B2%B3%E9%82%8A%E7%A5%9E%E7%A4%BE",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "images": [
       {
         "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/35/Kawaketamikabe_jinja.jpg/960px-Kawaketamikabe_jinja.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -13413,6 +14078,13 @@
     ],
     "featured": false,
     "score": 46.11,
+    "summary": {
+      "text": "油日神社（あぶらひじんじゃ）は、滋賀県甲賀市甲賀町油日にある神社。国史見在社で旧社格は県社。祭神の油日大神は勝軍神として武士の崇敬を受け、社名から油の火の神としても信仰された。油日岳を神体山とし、山頂には罔象女神を祀る岳神社がある。神紋は木瓜に二ツ引。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E6%B2%B9%E6%97%A5%E7%A5%9E%E7%A4%BE",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "images": [
       {
         "url": "https://upload.wikimedia.org/wikipedia/commons/b/b0/Aburahi-jinja.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
@@ -13462,6 +14134,13 @@
     ],
     "featured": false,
     "score": 36.68,
+    "summary": {
+      "text": "泉神社（いずみじんじゃ）は、滋賀県米原市に鎮座する神社である。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E6%B3%89%E7%A5%9E%E7%A4%BE_%28%E7%B1%B3%E5%8E%9F%E5%B8%82%29",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "images": [
       {
         "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0f/Shrine_izumi_baibara_cty.jpg/960px-Shrine_izumi_baibara_cty.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -13491,9 +14170,12 @@
     "id": "wd-Q11555344",
     "name": {
       "ja": "法蔵寺",
+      "kana": "ほうぞうじ",
+      "romaji": "Hozoji",
       "zh_tw": "法蔵寺",
       "en": "Hōzō-ji Temple"
     },
+    "kana_source": "wikipedia",
     "location": {
       "lat": 35.221417,
       "lng": 136.228972
@@ -13508,6 +14190,13 @@
     ],
     "featured": false,
     "score": 32.12,
+    "summary": {
+      "text": "法蔵寺（ほうぞうじ）は、滋賀県彦根市にある浄土真宗本願寺派の寺院。山号は獅子吼山（ししくざん）。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E6%B3%95%E8%94%B5%E5%AF%BA_%28%E5%BD%A6%E6%A0%B9%E5%B8%82%29",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "nearest_stations": [
       {
         "name": {
@@ -13539,6 +14228,10 @@
       {
         "url": "https://www.openstreetmap.org/node/5893801087",
         "fetched_at": "2026-09-27"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E6%B3%95%E8%94%B5%E5%AF%BA_%28%E5%BD%A6%E6%A0%B9%E5%B8%82%29",
+        "fetched_at": "2026-09-28"
       }
     ],
     "status": "published",
@@ -13548,9 +14241,12 @@
     "id": "wd-Q115632828",
     "name": {
       "ja": "長浜旧開知学校",
+      "kana": "ながはまきゅうかいちがっこう",
+      "romaji": "Nagahamakyukaichigakko",
       "zh_tw": "長浜旧開知学校",
       "en": "Former Kaichi School (Nagahama)"
     },
+    "kana_source": "wikipedia",
     "location": {
       "lat": 35.379444,
       "lng": 136.267361
@@ -13563,6 +14259,13 @@
     ],
     "featured": false,
     "score": 38.26,
+    "summary": {
+      "text": "長浜旧開知学校（ながはまきゅうかいちがっこう）は、滋賀県長浜市にある建築物。1874年（明治7年）に建設された木造3階建・八角塔屋付の擬洋風建築である。国の登録有形文化財。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E9%95%B7%E6%B5%9C%E6%97%A7%E9%96%8B%E7%9F%A5%E5%AD%A6%E6%A0%A1",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "nearest_stations": [
       {
         "name": {
@@ -13592,6 +14295,10 @@
       {
         "url": "https://www.openstreetmap.org/node/5502988829",
         "fetched_at": "2026-09-27"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E9%95%B7%E6%B5%9C%E6%97%A7%E9%96%8B%E7%9F%A5%E5%AD%A6%E6%A0%A1",
+        "fetched_at": "2026-09-28"
       }
     ],
     "status": "published",
@@ -13601,8 +14308,11 @@
     "id": "wd-Q11564611",
     "name": {
       "ja": "滋賀県希望が丘文化公園",
+      "kana": "しがけんきぼうがおかぶんかこうえん",
+      "romaji": "Shigakenkibogaokabunkakoen",
       "zh_tw": "滋賀縣希望丘文化公園"
     },
+    "kana_source": "wikipedia",
     "location": {
       "lat": 35.058333,
       "lng": 136.052222
@@ -13615,6 +14325,13 @@
     ],
     "featured": false,
     "score": 42.61,
+    "summary": {
+      "text": "滋賀県希望が丘文化公園（しがけんきぼうがおかぶんかこうえん）は、滋賀県野洲市を中心に、湖南市および蒲生郡竜王町にかけて位置する敷地面積4,160,000 m2という広大な公園である。1969年（昭和44年）に起工し、1974年（昭和49年）9月に全園完工した。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E6%BB%8B%E8%B3%80%E7%9C%8C%E5%B8%8C%E6%9C%9B%E3%81%8C%E4%B8%98%E6%96%87%E5%8C%96%E5%85%AC%E5%9C%92",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "images": [
       {
         "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f9/Shiga_Kibougaoka-west_gate.JPG/960px-Shiga_Kibougaoka-west_gate.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -13635,6 +14352,10 @@
       {
         "url": "https://www.openstreetmap.org/way/544715396",
         "fetched_at": "2026-09-27"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E6%BB%8B%E8%B3%80%E7%9C%8C%E5%B8%8C%E6%9C%9B%E3%81%8C%E4%B8%98%E6%96%87%E5%8C%96%E5%85%AC%E5%9C%92",
+        "fetched_at": "2026-09-28"
       }
     ],
     "status": "published",
@@ -13644,9 +14365,12 @@
     "id": "wd-Q11564645",
     "name": {
       "ja": "滋賀県立安土城考古博物館",
+      "kana": "しがけんりつあづちじょうこうこはくぶつかん",
+      "romaji": "Shigakenritsuazuchijokokohakubutsukan",
       "zh_tw": "滋賀縣立安土城考古博物館",
       "en": "Shiga Prefectural Azuchi Castle Archaeological Museum"
     },
+    "kana_source": "wikipedia",
     "location": {
       "lat": 35.15,
       "lng": 136.147778
@@ -13659,6 +14383,13 @@
     ],
     "featured": false,
     "score": 44.8,
+    "summary": {
+      "text": "滋賀縣立安土城考古博物館位於日本滋賀縣近江八幡市，於1992年開館，館內有兩個常規展室。",
+      "lang": "zh",
+      "source_url": "https://zh.wikipedia.org/wiki/%E6%BB%8B%E8%B3%80%E7%B8%A3%E7%AB%8B%E5%AE%89%E5%9C%9F%E5%9F%8E%E8%80%83%E5%8F%A4%E5%8D%9A%E7%89%A9%E9%A4%A8",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "images": [
       {
         "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e7/Spacam01s2816.jpg/960px-Spacam01s2816.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -13679,6 +14410,10 @@
       {
         "url": "https://www.openstreetmap.org/way/45666259",
         "fetched_at": "2026-09-27"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E6%BB%8B%E8%B3%80%E7%9C%8C%E7%AB%8B%E5%AE%89%E5%9C%9F%E5%9F%8E%E8%80%83%E5%8F%A4%E5%8D%9A%E7%89%A9%E9%A4%A8",
+        "fetched_at": "2026-09-28"
       }
     ],
     "status": "published",
@@ -13688,9 +14423,12 @@
     "id": "wd-Q11564666",
     "name": {
       "ja": "滋賀県立琵琶湖文化館",
+      "kana": "しがけんりつびわこぶんかかん",
+      "romaji": "Shigakenritsubiwakobunkakan",
       "zh_tw": "滋賀縣立琵琶湖文化館",
       "en": "Museum of Shiga Prefecture Biwako-Bunkakan"
     },
+    "kana_source": "wikipedia",
     "location": {
       "lat": 35.008083,
       "lng": 135.874056
@@ -13703,6 +14441,13 @@
     ],
     "featured": false,
     "score": 43.21,
+    "summary": {
+      "text": "滋賀県立琵琶湖文化館（しがけんりつ びわこぶんかかん）は、滋賀県大津市にある博物館。現在休館中。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E6%BB%8B%E8%B3%80%E7%9C%8C%E7%AB%8B%E7%90%B5%E7%90%B6%E6%B9%96%E6%96%87%E5%8C%96%E9%A4%A8",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "nearest_stations": [
       {
         "name": {
@@ -13743,6 +14488,10 @@
       {
         "url": "https://www.openstreetmap.org/node/6197760387",
         "fetched_at": "2026-09-27"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E6%BB%8B%E8%B3%80%E7%9C%8C%E7%AB%8B%E7%90%B5%E7%90%B6%E6%B9%96%E6%96%87%E5%8C%96%E9%A4%A8",
+        "fetched_at": "2026-09-28"
       }
     ],
     "status": "published",
@@ -13752,9 +14501,12 @@
     "id": "wd-Q11564667",
     "name": {
       "ja": "滋賀県立琵琶湖博物館",
+      "kana": "しがけんりつびわこはくぶつかん",
+      "romaji": "Shigakenritsubiwakohakubutsukan",
       "zh_tw": "滋賀縣立琵琶湖博物館",
       "en": "Lake Biwa Museum"
     },
+    "kana_source": "wikipedia",
     "location": {
       "lat": 35.074139,
       "lng": 135.934917
@@ -13767,6 +14519,13 @@
     ],
     "featured": false,
     "score": 52.69,
+    "summary": {
+      "text": "滋賀縣立琵琶湖博物館是位於滋賀縣草津市琵琶湖畔烏丸半島的縣立博物館。作為以湖泊為主題的博物館，其規模居日本首位，除淡水水族展示外還設有豐富多樣的展覽。2020年，該館歷經三期改造的展廳全面煥新開放，通稱「琵琶湖博物館」。該館是日本動物園水族館協會（JAZA）的成員，並根據文部科學省《博物館法》被認證為註冊博物館。",
+      "lang": "zh",
+      "source_url": "https://zh.wikipedia.org/wiki/%E6%BB%8B%E8%B4%BA%E5%8E%BF%E7%AB%8B%E7%90%B5%E7%90%B6%E6%B9%96%E5%8D%9A%E7%89%A9%E9%A6%86",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "images": [
       {
         "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cd/%E6%BB%8B%E8%B3%80%E7%9C%8C%E7%AB%8B%E7%90%B5%E7%90%B6%E6%B9%96%E5%8D%9A%E7%89%A9%E9%A4%A8%E5%A4%96%E8%A6%B3.jpg/960px-%E6%BB%8B%E8%B3%80%E7%9C%8C%E7%AB%8B%E7%90%B5%E7%90%B6%E6%B9%96%E5%8D%9A%E7%89%A9%E9%A4%A8%E5%A4%96%E8%A6%B3.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -13787,6 +14546,10 @@
       {
         "url": "https://www.openstreetmap.org/way/1060347731",
         "fetched_at": "2026-09-27"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E6%BB%8B%E8%B3%80%E7%9C%8C%E7%AB%8B%E7%90%B5%E7%90%B6%E6%B9%96%E5%8D%9A%E7%89%A9%E9%A4%A8",
+        "fetched_at": "2026-09-28"
       }
     ],
     "status": "published",
@@ -13796,9 +14559,12 @@
     "id": "wd-Q11564683",
     "name": {
       "ja": "滋賀県立美術館",
+      "kana": "しがけんりつびじゅつかん",
+      "romaji": "Shigakenritsubijutsukan",
       "zh_tw": "滋賀県立美術館",
       "en": "Shiga Museum of Art"
     },
+    "kana_source": "wikipedia",
     "location": {
       "lat": 34.970444,
       "lng": 135.942139
@@ -13811,6 +14577,13 @@
     ],
     "featured": false,
     "score": 42.75,
+    "summary": {
+      "text": "滋賀県立美術館（しがけんりつびじゅつかん、英: Shiga Museum of Art、英略称:SMoA）は滋賀県大津市にある美術館。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E6%BB%8B%E8%B3%80%E7%9C%8C%E7%AB%8B%E7%BE%8E%E8%A1%93%E9%A4%A8",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "images": [
       {
         "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/60/Shiga_Museum_of_Art_exterior.jpg/960px-Shiga_Museum_of_Art_exterior.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -13835,6 +14608,10 @@
       {
         "url": "https://www.openstreetmap.org/relation/20020893",
         "fetched_at": "2026-09-27"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E6%BB%8B%E8%B3%80%E7%9C%8C%E7%AB%8B%E7%BE%8E%E8%A1%93%E9%A4%A8",
+        "fetched_at": "2026-09-28"
       }
     ],
     "status": "published",
@@ -13844,9 +14621,12 @@
     "id": "wd-Q11564689",
     "name": {
       "ja": "滋賀県立陶芸の森",
+      "kana": "しがけんりつとうげいのもり",
+      "romaji": "Shigakenritsutogeinomori",
       "zh_tw": "滋賀縣立陶藝之森",
       "en": "Shigaraki Ceramic Cultural Park"
     },
+    "kana_source": "wikipedia",
     "location": {
       "lat": 34.886222,
       "lng": 136.058583
@@ -13857,6 +14637,13 @@
     "tags": [],
     "featured": false,
     "score": 41.5,
+    "summary": {
+      "text": "滋賀県立陶芸の森（しがけんりつとうげいのもり、英文名称：The Shigaraki Ceramic Cultural Park）は、滋賀県甲賀市の信楽高原にある都市公園。美術館、コンベンションセンター、研修施設を備え、公益財団法人滋賀県陶芸の森が指定管理者として管理運営を行っている。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E6%BB%8B%E8%B3%80%E7%9C%8C%E7%AB%8B%E9%99%B6%E8%8A%B8%E3%81%AE%E6%A3%AE",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "nearest_stations": [
       {
         "name": {
@@ -13897,6 +14684,10 @@
       {
         "url": "https://www.openstreetmap.org/way/832914030",
         "fetched_at": "2026-09-27"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E6%BB%8B%E8%B3%80%E7%9C%8C%E7%AB%8B%E9%99%B6%E8%8A%B8%E3%81%AE%E6%A3%AE",
+        "fetched_at": "2026-09-28"
       }
     ],
     "status": "published",
@@ -13906,9 +14697,12 @@
     "id": "wd-Q11564971",
     "name": {
       "ja": "滋賀縣護國神社",
+      "kana": "しがけんごこくじんじゃ",
+      "romaji": "Shigakengokokujinja",
       "zh_tw": "滋賀縣護國神社",
       "en": "Shiga Gokoku Shrine"
     },
+    "kana_source": "wikipedia",
     "location": {
       "lat": 35.275,
       "lng": 136.256389
@@ -13923,6 +14717,13 @@
     ],
     "featured": false,
     "score": 40.24,
+    "summary": {
+      "text": "滋賀縣護國神社（しがけんごこくじんじゃ）は、滋賀県彦根市にある神社（護国神社）。戊辰戦争から第二次世界大戦までの滋賀県関係の戦歿者3万4千余柱を祀る。現在は神社本庁の別表神社。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E6%BB%8B%E8%B3%80%E7%B8%A3%E8%AD%B7%E5%9C%8B%E7%A5%9E%E7%A4%BE",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "nearest_stations": [
       {
         "name": {
@@ -13963,6 +14764,10 @@
       {
         "url": "https://www.openstreetmap.org/way/585543144",
         "fetched_at": "2026-09-27"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E6%BB%8B%E8%B3%80%E7%B8%A3%E8%AD%B7%E5%9C%8B%E7%A5%9E%E7%A4%BE",
+        "fetched_at": "2026-09-28"
       }
     ],
     "status": "published",
@@ -13992,6 +14797,13 @@
     ],
     "featured": false,
     "score": 45.77,
+    "summary": {
+      "text": "滋賀院（しがいん）是位在日本滋賀縣大津市的天台宗寺院，比叡山延曆寺之本坊（總裡坊）。本尊藥師如來、開基（創立者）為天海。歷代天台座主之居所，也稱作「滋賀院門跡」。",
+      "lang": "zh",
+      "source_url": "https://zh.wikipedia.org/wiki/%E6%BB%8B%E8%B3%80%E9%99%A2",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "nearest_stations": [
       {
         "name": {
@@ -14061,6 +14873,13 @@
     ],
     "featured": false,
     "score": 46.86,
+    "summary": {
+      "text": "無動寺（むどうじ）は、滋賀県大津市にある天台宗の寺院。比叡山にある総本山延暦寺東塔無動寺谷の塔頭。山号は比叡山。本尊は不動明王。正式には無動寺明王堂といい、延暦寺五大堂の一つで千日回峰行の拠点である。無動寺は東塔の一谷ではあるが別格で「南山」と呼ばれている。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E7%84%A1%E5%8B%95%E5%AF%BA_%28%E5%A4%A7%E6%B4%A5%E5%B8%82%29",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "nearest_stations": [
       {
         "name": {
@@ -14127,6 +14946,13 @@
     ],
     "featured": false,
     "score": 51.06,
+    "summary": {
+      "text": "玄宮園是一所位於日本滋賀縣彥根市的大名庭園（江戶時代大名所建造的私家庭園），也是日本國家指定特別史蹟「彥根城」的一部份，鄰近有樂樂園，常與其稱為「玄宮樂樂園」，是相當知名的日本觀光名勝之一。",
+      "lang": "zh",
+      "source_url": "https://zh.wikipedia.org/wiki/%E7%8E%84%E5%AE%AE%E5%9C%92",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "nearest_stations": [
       {
         "name": {
@@ -14187,6 +15013,13 @@
     ],
     "featured": false,
     "score": 40.69,
+    "summary": {
+      "text": "玉桂寺（ぎょくけいじ）は、滋賀県甲賀市信楽町勅旨にある高野山真言宗の仏教寺院。山号は秋葉山、院号は十輪院。詳しくは秋葉山十輪院玉桂寺と号する。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E7%8E%89%E6%A1%82%E5%AF%BA",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "nearest_stations": [
       {
         "name": {
@@ -14236,9 +15069,12 @@
     "id": "wd-Q11573829",
     "name": {
       "ja": "琵琶湖周航の歌資料館",
+      "kana": "びわこしゅうこうのうたしりょうかん",
+      "romaji": "Biwakoshukonotashiryokan",
       "zh_tw": "琵琶湖周航之歌資料館",
       "en": "Lake Biwa Rowing Song Museum"
     },
+    "kana_source": "wikipedia",
     "location": {
       "lat": 35.397669,
       "lng": 136.034083
@@ -14251,6 +15087,13 @@
     ],
     "featured": false,
     "score": 37.14,
+    "summary": {
+      "text": "琵琶湖周航の歌資料館（びわこしゅうこうのうたしりょうかん）は、滋賀県高島市今津町中沼（今津東コミュニティセンター内）にある「琵琶湖周航の歌」に関する高島市立の資料館。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E7%90%B5%E7%90%B6%E6%B9%96%E5%91%A8%E8%88%AA%E3%81%AE%E6%AD%8C%E8%B3%87%E6%96%99%E9%A4%A8",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "nearest_stations": [
       {
         "name": {
@@ -14282,6 +15125,10 @@
       {
         "url": "https://www.openstreetmap.org/node/4213226199",
         "fetched_at": "2026-09-27"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E7%90%B5%E7%90%B6%E6%B9%96%E5%91%A8%E8%88%AA%E3%81%AE%E6%AD%8C%E8%B3%87%E6%96%99%E9%A4%A8",
+        "fetched_at": "2026-09-28"
       }
     ],
     "status": "published",
@@ -14311,6 +15158,13 @@
     ],
     "featured": false,
     "score": 51.25,
+    "summary": {
+      "text": "瑞龍寺（ずいりゅうじ）は、滋賀県近江八幡市宮内町にある日蓮宗の本山（由緒寺院）。山号はなく御所号「村雲御所」を冠する。本尊は三宝尊。日蓮宗唯一の門跡寺院・本山（由緒寺院）。大本山大光山本圀寺を祖とする六条門流の主要寺院の一つで、八幡山山頂・八幡山城本丸跡にある豊臣秀次の菩提寺でもある。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E7%91%9E%E9%BE%8D%E5%AF%BA_%28%E8%BF%91%E6%B1%9F%E5%85%AB%E5%B9%A1%E5%B8%82%29",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "images": [
       {
         "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ea/Yahatahachimanjo05.jpg/960px-Yahatahachimanjo05.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -14340,9 +15194,12 @@
     "id": "wd-Q11577976",
     "name": {
       "ja": "甲賀の里忍術村",
+      "kana": "こうかのさとにんじゅつむら",
+      "romaji": "Kokanosatoninjutsumura",
       "zh_tw": "甲賀之裏忍術村",
       "en": "Kōka Ninja Village"
     },
+    "kana_source": "wikipedia",
     "location": {
       "lat": 34.919667,
       "lng": 136.207417
@@ -14355,6 +15212,13 @@
     ],
     "featured": false,
     "score": 43.34,
+    "summary": {
+      "text": "甲賀の里忍術村（こうかのさとにんじゅつむら）は、滋賀県甲賀市にあるテーマパークである。当テーマパークは忍者や戦国時代を主題としており、1983年に開園した。村内には世界一の忍術資料を保有する甲賀忍術博物館や万川集海の著者として知られる藤林保武の一族の家を移築したからくり忍者屋敷などの資料館が点在する。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E7%94%B2%E8%B3%80%E3%81%AE%E9%87%8C%E5%BF%8D%E8%A1%93%E6%9D%91",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "images": [
       {
         "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ef/Koga-no-sato_Ninja_village_%2C_%E7%94%B2%E8%B3%80%E3%81%AE%E9%87%8C_%E5%BF%8D%E8%A1%93%E6%9D%91_-_panoramio_%288%29.jpg/960px-Koga-no-sato_Ninja_village_%2C_%E7%94%B2%E8%B3%80%E3%81%AE%E9%87%8C_%E5%BF%8D%E8%A1%93%E6%9D%91_-_panoramio_%288%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -14375,6 +15239,10 @@
       {
         "url": "https://www.openstreetmap.org/way/653297010",
         "fetched_at": "2026-09-27"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E7%94%B2%E8%B3%80%E3%81%AE%E9%87%8C%E5%BF%8D%E8%A1%93%E6%9D%91",
+        "fetched_at": "2026-09-28"
       }
     ],
     "status": "published",
@@ -14400,6 +15268,13 @@
     "tags": [],
     "featured": false,
     "score": 37.46,
+    "summary": {
+      "text": "白雲館（はくうんかん）は、滋賀県近江八幡市為心町元9にある建築物。明治時代初期に建てられた擬洋風建築の校舎である。登録有形文化財。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E7%99%BD%E9%9B%B2%E9%A4%A8",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "images": [
       {
         "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/31/Hakuunkan02s3200.jpg/960px-Hakuunkan02s3200.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -14429,9 +15304,12 @@
     "id": "wd-Q11580781",
     "name": {
       "ja": "百済寺",
+      "kana": "ひゃくさいじ",
+      "romaji": "Hyakusaiji",
       "zh_tw": "百濟寺",
       "en": "Hyakusai-ji Temple"
     },
+    "kana_source": "wikipedia",
     "location": {
       "lat": 35.126889,
       "lng": 136.288833
@@ -14449,6 +15327,13 @@
     ],
     "featured": false,
     "score": 57.42,
+    "summary": {
+      "text": "百済寺（ひゃくさいじ）は、滋賀県東近江市百済寺町にある天台宗の寺院。山号は釈迦山。本尊は十一面観音。開基は聖徳太子とされる。金剛輪寺、西明寺とともに「湖東三山」の1つとして知られる。境内は国の史跡に指定されている。また、紅葉の名所としても知られている。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E7%99%BE%E6%B8%88%E5%AF%BA",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "images": [
       {
         "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ca/Shiga_Hyakusaiji_Hondo.jpg/960px-Shiga_Hyakusaiji_Hondo.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -14469,6 +15354,10 @@
       {
         "url": "https://www.openstreetmap.org/way/183562887",
         "fetched_at": "2026-09-27"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E7%99%BE%E6%B8%88%E5%AF%BA",
+        "fetched_at": "2026-09-28"
       }
     ],
     "status": "published",
@@ -14498,6 +15387,13 @@
     ],
     "featured": false,
     "score": 32.84,
+    "summary": {
+      "text": "神高槻神社（かみたかつきじんじゃ）は滋賀県長浜市高月町高月に鎮座する神社。『延喜式神名帳』に記載された式内社である。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E7%A5%9E%E9%AB%98%E6%A7%BB%E7%A5%9E%E7%A4%BE",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "nearest_stations": [
       {
         "name": {
@@ -14536,9 +15432,12 @@
     "id": "wd-Q11598003",
     "name": {
       "ja": "安養寺",
+      "kana": "あんようじ",
+      "romaji": "Anyoji",
       "zh_tw": "安養寺",
       "en": "Tachikisan-ji Temple"
     },
+    "kana_source": "wikipedia",
     "location": {
       "lat": 34.917778,
       "lng": 135.91
@@ -14553,6 +15452,13 @@
     ],
     "featured": false,
     "score": 42.71,
+    "summary": {
+      "text": "安養寺（あんようじ）は、滋賀県大津市にある浄土宗の寺院。山号は立木山。本尊は聖観世音菩薩。立木山寺（たちきさんじ）、立木観音の通称で知られており、地元では「立木さん」とも呼ばれ親しまれている。弘法大師が42歳の厄年に開いたことから厄除けの寺として知られる。新西国三十三箇所第20番札所。琵琶湖国定公園エリア内に位置している。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E5%AE%89%E9%A4%8A%E5%AF%BA_%28%E5%A4%A7%E6%B4%A5%E5%B8%82%E7%9F%B3%E5%B1%B1%E5%8D%97%E9%83%B7%E7%94%BA%29",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "images": [
       {
         "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c5/Precinct_of_Anyoji_Temple.jpg/960px-Precinct_of_Anyoji_Temple.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -14573,6 +15479,10 @@
       {
         "url": "https://www.openstreetmap.org/way/790876439",
         "fetched_at": "2026-09-27"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E5%AE%89%E9%A4%8A%E5%AF%BA_%28%E5%A4%A7%E6%B4%A5%E5%B8%82%E7%9F%B3%E5%B1%B1%E5%8D%97%E9%83%B7%E7%94%BA%29",
+        "fetched_at": "2026-09-28"
       }
     ],
     "status": "published",
@@ -14602,6 +15512,13 @@
     ],
     "featured": false,
     "score": 28.82,
+    "summary": {
+      "text": "等波神社（とばじんじゃ）は、滋賀県長浜市に鎮座する神社である。式内社である。旧社格は村社。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E7%AD%89%E6%B3%A2%E7%A5%9E%E7%A4%BE",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "images": [
       {
         "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cf/%E7%AD%89%E6%B3%A2%E7%A5%9E%E7%A4%BE.jpg/960px-%E7%AD%89%E6%B3%A2%E7%A5%9E%E7%A4%BE.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -14631,9 +15548,12 @@
     "id": "wd-Q11602835",
     "name": {
       "ja": "筑摩神社",
+      "kana": "ちくまじんじゃ",
+      "romaji": "Chikumajinja",
       "zh_tw": "筑摩神社",
       "en": "Chikuma Shrine (Maibara)"
     },
+    "kana_source": "wikipedia",
     "location": {
       "lat": 35.3165,
       "lng": 136.266833
@@ -14648,6 +15568,13 @@
     ],
     "featured": false,
     "score": 38.99,
+    "summary": {
+      "text": "筑摩神社（ちくまじんじゃ）は滋賀県米原市にある神社。国史見在社で旧県社。日本三大奇祭の一つとされる鍋冠祭（なべかぶりまつり）が著名で、米原市の無形民俗文化財に指定されている。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E7%AD%91%E6%91%A9%E7%A5%9E%E7%A4%BE_%28%E7%B1%B3%E5%8E%9F%E5%B8%82%29",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "images": [
       {
         "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fe/Maibara_chikuma_shrine.jpg/960px-Maibara_chikuma_shrine.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -14668,6 +15595,10 @@
       {
         "url": "https://www.openstreetmap.org/node/5864927989",
         "fetched_at": "2026-09-27"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E7%AD%91%E6%91%A9%E7%A5%9E%E7%A4%BE_%28%E7%B1%B3%E5%8E%9F%E5%B8%82%29",
+        "fetched_at": "2026-09-28"
       }
     ],
     "status": "published",
@@ -14697,6 +15628,13 @@
     ],
     "featured": false,
     "score": 35.47,
+    "summary": {
+      "text": "篠津神社（しのづじんじゃ）は、滋賀県大津市中庄に鎮座する神社である。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E7%AF%A0%E6%B4%A5%E7%A5%9E%E7%A4%BE",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "nearest_stations": [
       {
         "name": {
@@ -14767,6 +15705,13 @@
     ],
     "featured": false,
     "score": 53.64,
+    "summary": {
+      "text": "義仲寺（ぎちゅうじ）は、滋賀県大津市にある天台宗系単立の寺院。山号は朝日山。本尊は聖観音菩薩。境内全域が1967年（昭和42年）に国の史跡に指定されている。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E7%BE%A9%E4%BB%B2%E5%AF%BA",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "nearest_stations": [
       {
         "name": {
@@ -14816,9 +15761,12 @@
     "id": "wd-Q11614893",
     "name": {
       "ja": "芦浦観音寺",
+      "kana": "あしうらかんのんじ",
+      "romaji": "Ashiurakannonji",
       "zh_tw": "芦浦観音寺",
       "en": "Ashiura Kannon-ji Temple"
     },
+    "kana_source": "wikipedia",
     "location": {
       "lat": 35.059611,
       "lng": 135.955028
@@ -14833,6 +15781,13 @@
     ],
     "featured": false,
     "score": 42.19,
+    "summary": {
+      "text": "芦浦観音寺（あしうらかんのんじ）は、滋賀県草津市にある天台宗の寺院。山号は大慈山。本尊は十一面観世音菩薩で秘仏となっている。堀を含む境内全体が芦浦観音寺跡として国の史跡に指定されている。宗教法人としての名称は「観音寺」。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E8%8A%A6%E6%B5%A6%E8%A6%B3%E9%9F%B3%E5%AF%BA",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "images": [
       {
         "url": "https://upload.wikimedia.org/wikipedia/commons/e/eb/Ashiura_Kannon-ji_Entrance.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
@@ -14853,6 +15808,10 @@
       {
         "url": "https://www.openstreetmap.org/node/5855900223",
         "fetched_at": "2026-09-27"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E8%8A%A6%E6%B5%A6%E8%A6%B3%E9%9F%B3%E5%AF%BA",
+        "fetched_at": "2026-09-28"
       }
     ],
     "status": "published",
@@ -14862,9 +15821,12 @@
     "id": "wd-Q11616123",
     "name": {
       "ja": "苗村神社",
+      "kana": "なむらじんじゃ",
+      "romaji": "Namurajinja",
       "zh_tw": "苗村神社",
       "en": "Namura Shrine"
     },
+    "kana_source": "wikipedia",
     "location": {
       "lat": 35.064861,
       "lng": 136.127917
@@ -14880,6 +15842,13 @@
     ],
     "featured": false,
     "score": 56.57,
+    "summary": {
+      "text": "苗村神社（なむらじんじゃ）は、滋賀県蒲生郡竜王町にある神社。式内社で旧社格は県社。近郷の33ヶ村にわたって氏子を有する総社である。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E8%8B%97%E6%9D%91%E7%A5%9E%E7%A4%BE",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "images": [
       {
         "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5c/Shiga_Namura1.jpg/960px-Shiga_Namura1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -14900,6 +15869,10 @@
       {
         "url": "https://www.openstreetmap.org/way/628002406",
         "fetched_at": "2026-09-27"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E8%8B%97%E6%9D%91%E7%A5%9E%E7%A4%BE",
+        "fetched_at": "2026-09-28"
       }
     ],
     "status": "published",
@@ -14929,6 +15902,13 @@
     ],
     "featured": false,
     "score": 37.75,
+    "summary": {
+      "text": "荒神山神社（こうじんやまじんじゃ）は、滋賀県彦根市にある神社。かまど神の信仰がある。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E8%8D%92%E7%A5%9E%E5%B1%B1%E7%A5%9E%E7%A4%BE",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "images": [
       {
         "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a7/Koujinyama_jinja.jpg/960px-Koujinyama_jinja.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -14978,6 +15958,13 @@
     ],
     "featured": false,
     "score": 39.58,
+    "summary": {
+      "text": "萱野神社（かやのじんじゃ）は、滋賀県大津市にある神社。神紋は「蓑亀」。別称として「九帝王宮（九帝王社）」「九大王社」とも。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E8%90%B1%E9%87%8E%E7%A5%9E%E7%A4%BE",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "nearest_stations": [
       {
         "name": {
@@ -15038,6 +16025,13 @@
     ],
     "featured": false,
     "score": 29.51,
+    "summary": {
+      "text": "藁園神社（わらそのじんじゃ）は、滋賀県高島市新旭町に鎮座する神社である。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E8%97%81%E5%9C%92%E7%A5%9E%E7%A4%BE",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "images": [
       {
         "url": "https://upload.wikimedia.org/wikipedia/commons/e/ef/Warasono_jinja.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
@@ -15088,6 +16082,13 @@
     ],
     "featured": false,
     "score": 55.78,
+    "summary": {
+      "text": "西教寺（さいきょうじ）是位在日本滋賀縣大津市的寺院，天台真盛宗總本山。山號「戒光山」（かいこうさん）。本尊阿彌陀如來、傳說開基（創立者）為聖德太子。",
+      "lang": "zh",
+      "source_url": "https://zh.wikipedia.org/wiki/%E8%A5%BF%E6%95%99%E5%AF%BA",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "nearest_stations": [
       {
         "name": {
@@ -15137,9 +16138,12 @@
     "id": "wd-Q11628433",
     "name": {
       "ja": "西明寺",
+      "kana": "さいみょうじ",
+      "romaji": "Saimyoji",
       "zh_tw": "西明寺",
       "en": "Saimyō-ji Temple"
     },
+    "kana_source": "wikipedia",
     "location": {
       "lat": 35.183972,
       "lng": 136.284278
@@ -15157,6 +16161,13 @@
     ],
     "featured": true,
     "score": 62.37,
+    "summary": {
+      "text": "西明寺（さいみょうじ）は、滋賀県犬上郡甲良町池寺にある天台宗の寺院。山号は龍応山（りゅうおうざん）。本尊は薬師如来。開山は三修上人である。金剛輪寺、百済寺とともに「湖東三山」の1つに数えられる。西国薬師四十九霊場第32番札所。境内は紅葉の名所となっている。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E8%A5%BF%E6%98%8E%E5%AF%BA_%28%E6%BB%8B%E8%B3%80%E7%9C%8C%E7%94%B2%E8%89%AF%E7%94%BA%29",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "images": [
       {
         "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/21/Saimyouji_temple_%2C_%E8%A5%BF%E6%98%8E%E5%AF%BA_%E6%9C%AC%E5%A0%82_-_panoramio.jpg/960px-Saimyouji_temple_%2C_%E8%A5%BF%E6%98%8E%E5%AF%BA_%E6%9C%AC%E5%A0%82_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -15177,6 +16188,10 @@
       {
         "url": "https://www.openstreetmap.org/way/183559737",
         "fetched_at": "2026-09-27"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E8%A5%BF%E6%98%8E%E5%AF%BA_%28%E6%BB%8B%E8%B3%80%E7%9C%8C%E7%94%B2%E8%89%AF%E7%94%BA%29",
+        "fetched_at": "2026-09-28"
       }
     ],
     "status": "published",
@@ -15186,9 +16201,12 @@
     "id": "wd-Q11630653",
     "name": {
       "ja": "観音正寺",
+      "kana": "かんのんしょうじ",
+      "romaji": "Kannonshoji",
       "zh_tw": "観音正寺",
       "en": "Kannonshō-ji Temple"
     },
+    "kana_source": "wikipedia",
     "location": {
       "lat": 35.144667,
       "lng": 136.161028
@@ -15203,6 +16221,13 @@
     ],
     "featured": false,
     "score": 50.34,
+    "summary": {
+      "text": "観音正寺（かんのんしょうじ）は、滋賀県近江八幡市安土町石寺にある天台宗系単立の寺院。山号は繖山（きぬがささん）。本尊は千手観音。西国三十三所第32番札所。琵琶湖の東岸、標高433メートルの繖山（きぬがさやま）の山頂南側の標高370メートル付近、観音寺城の跡に位置する。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E8%A6%B3%E9%9F%B3%E6%AD%A3%E5%AF%BA",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "images": [
       {
         "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/91/Kannonshoji_Azuchi_Kyoto_pref_Japan04n.jpg/960px-Kannonshoji_Azuchi_Kyoto_pref_Japan04n.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -15223,6 +16248,10 @@
       {
         "url": "https://www.openstreetmap.org/way/482933989",
         "fetched_at": "2026-09-27"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E8%A6%B3%E9%9F%B3%E6%AD%A3%E5%AF%BA",
+        "fetched_at": "2026-09-28"
       }
     ],
     "status": "published",
@@ -15232,9 +16261,12 @@
     "id": "wd-Q11633365",
     "name": {
       "ja": "豊国神社",
+      "kana": "ほうこくじんじゃ",
+      "romaji": "Hokokujinja",
       "zh_tw": "豐國神社",
       "en": "Hōkoku Shrine"
     },
+    "kana_source": "wikipedia",
     "location": {
       "lat": 35.3805,
       "lng": 136.264722
@@ -15249,6 +16281,13 @@
     ],
     "featured": false,
     "score": 43.1,
+    "summary": {
+      "text": "豊国神社（ほうこくじんじゃ）は、滋賀県長浜市にある神社。旧社格は県社。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E8%B1%8A%E5%9B%BD%E7%A5%9E%E7%A4%BE_%28%E9%95%B7%E6%B5%9C%E5%B8%82%29",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "nearest_stations": [
       {
         "name": {
@@ -15278,6 +16317,10 @@
       {
         "url": "https://www.openstreetmap.org/way/34627584",
         "fetched_at": "2026-09-27"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E8%B1%8A%E5%9B%BD%E7%A5%9E%E7%A4%BE_%28%E9%95%B7%E6%B5%9C%E5%B8%82%29",
+        "fetched_at": "2026-09-28"
       }
     ],
     "status": "published",
@@ -15287,9 +16330,12 @@
     "id": "wd-Q11634258",
     "name": {
       "ja": "豊郷町立豊郷小学校",
+      "kana": "とよさとちょうりつとよさとしょうがっこう",
+      "romaji": "Toyosatochoritsutoyosatoshogakko",
       "zh_tw": "豐鄉小學校舊校捨",
       "en": "Toyosato Elementary School"
     },
+    "kana_source": "wikipedia",
     "location": {
       "lat": 35.202944,
       "lng": 136.233694
@@ -15300,6 +16346,13 @@
     "tags": [],
     "featured": false,
     "score": 54.62,
+    "summary": {
+      "text": "豐鄉町立豐鄉小學校是位於日本滋賀縣犬上郡豐鄉町大字石畑的一所公立小學。其舊校舍因其歷史地標地位、週邊的保育工作以及曾作為《K-ON！輕音部》等影視作品的取景地而聞名全國。",
+      "lang": "zh",
+      "source_url": "https://zh.wikipedia.org/wiki/%E8%B1%90%E9%84%89%E7%94%BA%E7%AB%8B%E8%B1%90%E9%84%89%E5%B0%8F%E5%AD%B8%E6%A0%A1",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "nearest_stations": [
       {
         "name": {
@@ -15331,6 +16384,10 @@
       {
         "url": "https://www.openstreetmap.org/way/239775634",
         "fetched_at": "2026-09-27"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E8%B1%8A%E9%83%B7%E7%94%BA%E7%AB%8B%E8%B1%8A%E9%83%B7%E5%B0%8F%E5%AD%A6%E6%A0%A1",
+        "fetched_at": "2026-09-28"
       }
     ],
     "status": "published",
@@ -15340,9 +16397,12 @@
     "id": "wd-Q11638479",
     "name": {
       "ja": "近江国庁跡",
+      "kana": "おうみこくちょうあと",
+      "romaji": "Omikokuchoato",
       "zh_tw": "近江国庁跡",
       "en": "Ōmi Kokuchō"
     },
+    "kana_source": "wikipedia",
     "location": {
       "lat": 34.974556,
       "lng": 135.920111
@@ -15356,6 +16416,13 @@
     ],
     "featured": false,
     "score": 44.51,
+    "summary": {
+      "text": "近江国庁跡（おうみこくちょうあと、三大寺遺跡）は、滋賀県大津市大江三丁目・大江六丁目・三大寺に所在する、律令制下の地方行政機関の施設跡である。国の史跡に指定されている（史跡「近江国府跡」のうち）。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E8%BF%91%E6%B1%9F%E5%9B%BD%E5%BA%81%E8%B7%A1",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "nearest_stations": [
       {
         "name": {
@@ -15387,6 +16454,10 @@
       {
         "url": "https://www.openstreetmap.org/node/5862959985",
         "fetched_at": "2026-09-27"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E8%BF%91%E6%B1%9F%E5%9B%BD%E5%BA%81%E8%B7%A1",
+        "fetched_at": "2026-09-28"
       }
     ],
     "status": "published",
@@ -15416,6 +16487,13 @@
     ],
     "featured": false,
     "score": 39.87,
+    "summary": {
+      "text": "那波加神社（なはかじんじゃ/なばかじんじゃ）は、滋賀県大津市にある神社。式内社で、旧社格は県社。神紋は「苗を背負鹿」「三ツ巴」「抱茗荷」。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E9%82%A3%E6%B3%A2%E5%8A%A0%E7%A5%9E%E7%A4%BE",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "images": [
       {
         "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/%E9%82%A3%E6%B3%A2%E5%8A%A0%E7%A5%9E%E7%A4%BE_%E7%A4%BE%E6%AE%BF.JPG/960px-%E9%82%A3%E6%B3%A2%E5%8A%A0%E7%A5%9E%E7%A4%BE_%E7%A4%BE%E6%AE%BF.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -15466,6 +16544,13 @@
     ],
     "featured": true,
     "score": 62.88,
+    "summary": {
+      "text": "都久夫須麻神社（つくぶすまじんじゃ）は、日本の近畿地方北東部の、琵琶湖に浮かぶ島である竹生島に鎮座する神社。現在行政区画上では滋賀県長浜市早崎町（旧・東浅井郡早崎村）に属する（※過去については『所在地』を参照のこと）。竹生島神社（ちくぶしま じんじゃ）とも呼ばれ、公式案内などではこちらの呼称を用いている。神体は竹生島そのもの。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E9%83%BD%E4%B9%85%E5%A4%AB%E9%A0%88%E9%BA%BB%E7%A5%9E%E7%A4%BE",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "images": [
       {
         "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/57/Tsukubusuma_Shrine.jpg/960px-Tsukubusuma_Shrine.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -15495,9 +16580,12 @@
     "id": "wd-Q11646547",
     "name": {
       "ja": "金剛輪寺",
+      "kana": "こんごうりんじ",
+      "romaji": "Kongorinji",
       "zh_tw": "金剛輪寺",
       "en": "Kongōrin-ji Temple"
     },
+    "kana_source": "wikipedia",
     "location": {
       "lat": 35.16125,
       "lng": 136.283056
@@ -15514,6 +16602,13 @@
     ],
     "featured": true,
     "score": 58.91,
+    "summary": {
+      "text": "金剛輪寺（こんごうりんじ）は、滋賀県愛知郡愛荘町松尾寺にある天台宗の寺院。山号は松峯山（しょうほうざん）。本尊は聖観音菩薩（秘仏）。地名から松尾寺ともいう。開創は行基とされる。西明寺、百済寺（ひゃくさいじ）とともに湖東三山の1つに数えられる。現在は「血染めのもみじ」と呼ばれる有名な紅葉の名所となっている。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E9%87%91%E5%89%9B%E8%BC%AA%E5%AF%BA",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "images": [
       {
         "url": "https://upload.wikimedia.org/wikipedia/commons/f/f1/Kongourinji_hondou_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
@@ -15534,6 +16629,10 @@
       {
         "url": "https://www.openstreetmap.org/way/183561240",
         "fetched_at": "2026-09-27"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E9%87%91%E5%89%9B%E8%BC%AA%E5%AF%BA",
+        "fetched_at": "2026-09-28"
       }
     ],
     "status": "published",
@@ -15543,9 +16642,12 @@
     "id": "wd-Q11651580",
     "name": {
       "ja": "長命寺",
+      "kana": "ちょうめいじ",
+      "romaji": "Chomeiji",
       "zh_tw": "長命寺",
       "en": "Chōmei-ji Temple"
     },
+    "kana_source": "wikipedia",
     "location": {
       "lat": 35.162683,
       "lng": 136.064003
@@ -15561,6 +16663,13 @@
     ],
     "featured": false,
     "score": 53.94,
+    "summary": {
+      "text": "長命寺（ちょうめいじ）は、滋賀県近江八幡市長命寺町にある天台宗系単立の寺院。山号は姨綺耶山（いきやさん）。本尊は千手観音、十一面観音、聖観音の三尊を千手十一面聖観世音菩薩としたもの。聖徳太子の開基と伝わる。西国三十三所第31番札所。2015年（平成27年）4月24日に「琵琶湖とその水辺景観－ 祈りと暮らしの水遺産 」の構成文化財として日本遺産に認定された。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E9%95%B7%E5%91%BD%E5%AF%BA",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "images": [
       {
         "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c1/Chomeiji27n3200.jpg/960px-Chomeiji27n3200.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -15581,6 +16690,10 @@
       {
         "url": "https://www.openstreetmap.org/way/790735543",
         "fetched_at": "2026-09-27"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E9%95%B7%E5%91%BD%E5%AF%BA",
+        "fetched_at": "2026-09-28"
       }
     ],
     "status": "published",
@@ -15590,9 +16703,12 @@
     "id": "wd-Q11653274",
     "name": {
       "ja": "長浜びわこ大仏",
+      "kana": "ながはまびわこだいぶつ",
+      "romaji": "Nagahama Biwako Daibutsu",
       "zh_tw": "長浜びわこ大仏",
       "en": "Nagahama Biwako Daibutsu"
     },
+    "kana_source": "wikipedia",
     "location": {
       "lat": 35.36775,
       "lng": 136.273833
@@ -15603,6 +16719,13 @@
     "tags": [],
     "featured": false,
     "score": 40.14,
+    "summary": {
+      "text": "長浜びわこ大仏（ながはまびわこだいぶつ）は、滋賀県長浜市の良疇寺にある大仏である。現存するものは2代目である。琵琶湖大仏、びわこ大仏とも呼ばれる。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E9%95%B7%E6%B5%9C%E3%81%B3%E3%82%8F%E3%81%93%E5%A4%A7%E4%BB%8F",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "nearest_stations": [
       {
         "name": {
@@ -15632,6 +16755,10 @@
       {
         "url": "https://www.openstreetmap.org/node/416778346",
         "fetched_at": "2026-09-27"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E9%95%B7%E6%B5%9C%E3%81%B3%E3%82%8F%E3%81%93%E5%A4%A7%E4%BB%8F",
+        "fetched_at": "2026-09-28"
       }
     ],
     "status": "published",
@@ -15641,9 +16768,12 @@
     "id": "wd-Q11653277",
     "name": {
       "ja": "長浜タワービル",
+      "kana": "ながはまたわーびる",
+      "romaji": "Nagahamatawabiru",
       "zh_tw": "長浜タワービル",
       "en": "Nagahama Towerbill"
     },
+    "kana_source": "wikipedia",
     "location": {
       "lat": 35.379667,
       "lng": 136.267389
@@ -15656,6 +16786,13 @@
     ],
     "featured": false,
     "score": 39.86,
+    "summary": {
+      "text": "長浜タワービル（ながはまタワービル）は、滋賀県長浜市元浜町に所在する建築物。単に長浜タワーとも呼ばれる。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E9%95%B7%E6%B5%9C%E3%82%BF%E3%83%AF%E3%83%BC%E3%83%93%E3%83%AB",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "nearest_stations": [
       {
         "name": {
@@ -15685,6 +16822,10 @@
       {
         "url": "https://www.openstreetmap.org/node/12599843621",
         "fetched_at": "2026-09-27"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E9%95%B7%E6%B5%9C%E3%82%BF%E3%83%AF%E3%83%BC%E3%83%93%E3%83%AB",
+        "fetched_at": "2026-09-28"
       }
     ],
     "status": "published",
@@ -15694,9 +16835,12 @@
     "id": "wd-Q11653283",
     "name": {
       "ja": "長浜八幡宮",
+      "kana": "ながはまはちまんぐう",
+      "romaji": "Nagahama Hachimangu",
       "zh_tw": "長濱八幡宮",
       "en": "Nagahama Hachimangū"
     },
+    "kana_source": "wikipedia",
     "location": {
       "lat": 35.382639,
       "lng": 136.274333
@@ -15711,6 +16855,13 @@
     ],
     "featured": false,
     "score": 43.41,
+    "summary": {
+      "text": "長浜八幡宮（ながはまはちまんぐう）は、滋賀県長浜市宮前町にある神社。旧社格は県社で、現在は神社本庁の別表神社。日本三大山車祭の「長浜曳山祭」で有名である。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E9%95%B7%E6%B5%9C%E5%85%AB%E5%B9%A1%E5%AE%AE",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "nearest_stations": [
       {
         "name": {
@@ -15740,6 +16891,10 @@
       {
         "url": "https://www.openstreetmap.org/way/34627582",
         "fetched_at": "2026-09-27"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E9%95%B7%E6%B5%9C%E5%85%AB%E5%B9%A1%E5%AE%AE",
+        "fetched_at": "2026-09-28"
       }
     ],
     "status": "published",
@@ -15749,9 +16904,12 @@
     "id": "wd-Q11653326",
     "name": {
       "ja": "長浜鉄道スクエア",
+      "kana": "ながはまてつどうすくえあ",
+      "romaji": "Nagahamatetsudosukuea",
       "zh_tw": "長濱鐵道廣場",
       "en": "Nagahama Railway Square"
     },
+    "kana_source": "wikipedia",
     "location": {
       "lat": 35.376881,
       "lng": 136.2658
@@ -15764,6 +16922,13 @@
     ],
     "featured": false,
     "score": 45.71,
+    "summary": {
+      "text": "長浜鉄道スクエア（ながはまてつどうスクエア）は、滋賀県長浜市にある長浜市立の鉄道保存展示施設。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E9%95%B7%E6%B5%9C%E9%89%84%E9%81%93%E3%82%B9%E3%82%AF%E3%82%A8%E3%82%A2",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "nearest_stations": [
       {
         "name": {
@@ -15793,6 +16958,10 @@
       {
         "url": "https://www.openstreetmap.org/way/854120758",
         "fetched_at": "2026-09-27"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E9%95%B7%E6%B5%9C%E9%89%84%E9%81%93%E3%82%B9%E3%82%AF%E3%82%A8%E3%82%A2",
+        "fetched_at": "2026-09-28"
       }
     ],
     "status": "published",
@@ -15802,8 +16971,11 @@
     "id": "wd-Q11657427",
     "name": {
       "ja": "阿弥陀寺",
+      "kana": "あみだじ",
+      "romaji": "Amidaji",
       "zh_tw": "阿弥陀寺"
     },
+    "kana_source": "wikipedia",
     "location": {
       "lat": 35.35475,
       "lng": 136.0365
@@ -15818,6 +16990,13 @@
     ],
     "featured": false,
     "score": 37.51,
+    "summary": {
+      "text": "阿弥陀寺（あみだじ）は、滋賀県高島市新旭町旭にある真言律宗の仏教寺院。山号は、延命山（えんめいざん）。本尊は阿弥陀如来。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E9%98%BF%E5%BC%A5%E9%99%80%E5%AF%BA_%28%E9%AB%98%E5%B3%B6%E5%B8%82%29",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "nearest_stations": [
       {
         "name": {
@@ -15847,6 +17026,10 @@
       {
         "url": "https://www.openstreetmap.org/node/11841655225",
         "fetched_at": "2026-09-27"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E9%98%BF%E5%BC%A5%E9%99%80%E5%AF%BA_%28%E9%AB%98%E5%B3%B6%E5%B8%82%29",
+        "fetched_at": "2026-09-28"
       }
     ],
     "status": "published",
@@ -15856,9 +17039,12 @@
     "id": "wd-Q11657692",
     "name": {
       "ja": "阿賀神社",
+      "kana": "あがじんじゃ",
+      "romaji": "Agajinja",
       "zh_tw": "阿賀神社",
       "en": "Aga Shrine"
     },
+    "kana_source": "wikipedia",
     "location": {
       "lat": 35.117778,
       "lng": 136.181667
@@ -15873,6 +17059,13 @@
     ],
     "featured": false,
     "score": 49.09,
+    "summary": {
+      "text": "阿賀神社（あがじんじゃ）は、滋賀県東近江市小脇町にある神社。太郎坊宮（たろうぼうぐう）や太郎坊阿賀神社の通称で知られている。旧社格は村社で、現在は神社本庁の別表神社。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E9%98%BF%E8%B3%80%E7%A5%9E%E7%A4%BE",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "nearest_stations": [
       {
         "name": {
@@ -15913,6 +17106,10 @@
       {
         "url": "https://www.openstreetmap.org/way/483157489",
         "fetched_at": "2026-09-27"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E9%98%BF%E8%B3%80%E7%A5%9E%E7%A4%BE",
+        "fetched_at": "2026-09-28"
       }
     ],
     "status": "published",
@@ -15942,6 +17139,13 @@
     ],
     "featured": false,
     "score": 38.42,
+    "summary": {
+      "text": "青岸寺（せいがんじ）は、滋賀県米原市の太尾山西麓にある曹洞宗の仏教寺院である。 山号は吸湖山、近江湖北二十七名刹第27番札所、近江七福神（福禄寿）。境内にある築山林泉式枯山水庭園「青岸寺庭園」で知られる。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E9%9D%92%E5%B2%B8%E5%AF%BA",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "nearest_stations": [
       {
         "name": {
@@ -15982,9 +17186,12 @@
     "id": "wd-Q11664826",
     "name": {
       "ja": "須賀神社",
+      "kana": "すがじんじゃ",
+      "romaji": "Sugajinja",
       "zh_tw": "須賀神社",
       "en": "Suga Shrine"
     },
+    "kana_source": "wikipedia",
     "location": {
       "lat": 35.461796,
       "lng": 136.140047
@@ -15999,6 +17206,13 @@
     ],
     "featured": false,
     "score": 42.12,
+    "summary": {
+      "text": "須賀神社（すがじんじゃ）は、滋賀県長浜市西浅井町に鎮座する神社である。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E9%A0%88%E8%B3%80%E7%A5%9E%E7%A4%BE_%28%E9%95%B7%E6%B5%9C%E5%B8%82%29",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "images": [
       {
         "url": "https://upload.wikimedia.org/wikipedia/commons/7/74/Shiga_suga-jinja.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
@@ -16019,6 +17233,10 @@
       {
         "url": "https://www.openstreetmap.org/way/1227801054",
         "fetched_at": "2026-09-27"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E9%A0%88%E8%B3%80%E7%A5%9E%E7%A4%BE_%28%E9%95%B7%E6%B5%9C%E5%B8%82%29",
+        "fetched_at": "2026-09-28"
       }
     ],
     "status": "published",
@@ -16028,9 +17246,12 @@
     "id": "wd-Q11668076",
     "name": {
       "ja": "馬路石邊神社",
+      "kana": "うまじいそべじんじゃ",
+      "romaji": "Umajiisobejinja",
       "zh_tw": "馬路石邊神社",
       "en": "Umajiisobe Shrine"
     },
+    "kana_source": "wikipedia",
     "location": {
       "lat": 35.060241,
       "lng": 135.999684
@@ -16046,6 +17267,13 @@
     ],
     "featured": false,
     "score": 36.99,
+    "summary": {
+      "text": "馬路石邊神社（うまじいそべじんじゃ）は、滋賀県守山市にある神社。式内社で、旧社格は郷社。神紋は「木瓜」。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E9%A6%AC%E8%B7%AF%E7%9F%B3%E9%82%8A%E7%A5%9E%E7%A4%BE",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "nearest_stations": [
       {
         "name": {
@@ -16077,6 +17305,10 @@
       {
         "url": "https://www.openstreetmap.org/way/501286022",
         "fetched_at": "2026-09-27"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E9%A6%AC%E8%B7%AF%E7%9F%B3%E9%82%8A%E7%A5%9E%E7%A4%BE",
+        "fetched_at": "2026-09-28"
       }
     ],
     "status": "published",
@@ -16106,6 +17338,13 @@
     ],
     "featured": false,
     "score": 34.65,
+    "summary": {
+      "text": "龍王寺（りゅうおうじ）は、滋賀県蒲生郡竜王町川守にある天台宗の寺院。山号は雪野山。本尊は薬師瑠璃光如来（薬師如来）。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E9%BE%8D%E7%8E%8B%E5%AF%BA",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "images": [
       {
         "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/16/Ryuouji.jpg/960px-Ryuouji.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -16135,9 +17374,12 @@
     "id": "wd-Q1195682",
     "name": {
       "ja": "佐和山城",
+      "kana": "さわやまじょう",
+      "romaji": "Sawayamajo",
       "zh_tw": "佐和山城",
       "en": "Sawayama Castle"
     },
+    "kana_source": "wikipedia",
     "location": {
       "lat": 35.2795,
       "lng": 136.268925
@@ -16150,6 +17392,13 @@
     ],
     "featured": false,
     "score": 63.4,
+    "summary": {
+      "text": "佐和山城是位於滋賀縣彥根市（古近江國東城郡的山城。是近江國一個重要的據點，在16世紀末為石田三成的居城最為出名。",
+      "lang": "zh",
+      "source_url": "https://zh.wikipedia.org/wiki/%E4%BD%90%E5%92%8C%E5%B1%B1%E5%9F%8E",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "nearest_stations": [
       {
         "name": {
@@ -16190,6 +17439,10 @@
       {
         "url": "https://www.openstreetmap.org/node/2482336137",
         "fetched_at": "2026-09-27"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E4%BD%90%E5%92%8C%E5%B1%B1%E5%9F%8E",
+        "fetched_at": "2026-09-28"
       }
     ],
     "status": "published",
@@ -16219,6 +17472,13 @@
     ],
     "featured": false,
     "score": 36.14,
+    "summary": {
+      "text": "筒井神社（つついじんじゃ）は、滋賀県東近江市蛭谷にある神社。別名：筒井八幡宮。祭神は八幡大神（応神天皇）と惟喬親王。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E7%AD%92%E4%BA%95%E7%A5%9E%E7%A4%BE",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "images": [
       {
         "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d8/Tsutsui-jinja_entrance.jpg/960px-Tsutsui-jinja_entrance.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -16617,6 +17877,13 @@
     ],
     "featured": false,
     "score": 34.41,
+    "summary": {
+      "text": "伊豆神宮（いずじんじゃ）は、滋賀県大津市にある神社。旧社格は村社。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E4%BC%8A%E8%B1%86%E7%A5%9E%E7%A4%BE_%28%E5%A4%A7%E6%B4%A5%E5%B8%82%29",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "nearest_stations": [
       {
         "name": {
@@ -16655,9 +17922,12 @@
     "id": "wd-Q1268542",
     "name": {
       "ja": "MIHO MUSEUM",
+      "kana": "みほみゅーじあむ",
+      "romaji": "Mihomyujiamu",
       "zh_tw": "美秀美術館",
       "en": "Miho Museum"
     },
+    "kana_source": "wikipedia",
     "location": {
       "lat": 34.915922,
       "lng": 136.015822
@@ -16668,6 +17938,13 @@
     "tags": [],
     "featured": true,
     "score": 65.47,
+    "summary": {
+      "text": "美秀美術館（MIHO MUSEUM）是位於日本滋賀縣甲賀市的私立美術館，創辦人為神慈秀明會創始者小山美秀子。建築由貝聿銘設計，於1997年11月開館，當時獲美國《時代週刊》選為全球十大建築。",
+      "lang": "zh",
+      "source_url": "https://zh.wikipedia.org/wiki/%E7%BE%8E%E7%A7%80%E7%BE%8E%E8%A1%93%E9%A4%A8",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "images": [
       {
         "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a0/241119_MIHO_MUSEUM_Koga_Shiga_pref_Japan08s3.jpg/960px-241119_MIHO_MUSEUM_Koga_Shiga_pref_Japan08s3.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -16688,6 +17965,10 @@
       {
         "url": "https://www.openstreetmap.org/node/1422945982",
         "fetched_at": "2026-09-27"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/MIHO_MUSEUM",
+        "fetched_at": "2026-09-28"
       }
     ],
     "status": "published",
@@ -16766,9 +18047,12 @@
     "id": "wd-Q1303021",
     "name": {
       "ja": "永源寺",
+      "kana": "えいげんじ",
+      "romaji": "Eigenji",
       "zh_tw": "永源寺",
       "en": "Eigen-ji Temple"
     },
+    "kana_source": "wikipedia",
     "location": {
       "lat": 35.080602,
       "lng": 136.319599
@@ -16783,6 +18067,13 @@
     ],
     "featured": false,
     "score": 52.59,
+    "summary": {
+      "text": "永源寺（えいげんじ）是位在日本滋賀縣東近江市的寺院，臨濟宗永源寺派大本山。山號「瑞石山」（ずいせきざん）。本尊世繼觀世音菩薩、開基（創立者）為佐佐木氏賴、開山（初代住持）為寂室元光。紅葉名所。",
+      "lang": "zh",
+      "source_url": "https://zh.wikipedia.org/wiki/%E6%B0%B8%E6%BA%90%E5%AF%BA",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "images": [
       {
         "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/46/Eigen-ji_%28Rinzai_temple%29.jpg/960px-Eigen-ji_%28Rinzai_temple%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -16803,6 +18094,10 @@
       {
         "url": "https://www.openstreetmap.org/node/1939667916",
         "fetched_at": "2026-09-27"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E6%B0%B8%E6%BA%90%E5%AF%BA",
+        "fetched_at": "2026-09-28"
       }
     ],
     "status": "published",
@@ -16812,9 +18107,12 @@
     "id": "wd-Q130638515",
     "name": {
       "ja": "大宝神社",
+      "kana": "だいほうじんじゃ",
+      "romaji": "Daihojinja",
       "zh_tw": "大宝神社",
       "en": "Daiho Shrine"
     },
+    "kana_source": "wikipedia",
     "location": {
       "lat": 35.040556,
       "lng": 135.980556
@@ -16829,6 +18127,13 @@
     ],
     "featured": false,
     "score": 39.5,
+    "summary": {
+      "text": "大宝神社（だいほうじんじゃ）は、滋賀県栗東市にある神社。式内社で旧社格は郷社。旧中山道沿いにある神社で、方除・厄除・健康・宝くじにご利益があるとされる。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E5%AE%9D%E7%A5%9E%E7%A4%BE",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "nearest_stations": [
       {
         "name": {
@@ -16860,6 +18165,10 @@
       {
         "url": "https://www.openstreetmap.org/way/688143785",
         "fetched_at": "2026-09-27"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E5%AE%9D%E7%A5%9E%E7%A4%BE",
+        "fetched_at": "2026-09-28"
       }
     ],
     "status": "published",
@@ -16869,9 +18178,12 @@
     "id": "wd-Q131903615",
     "name": {
       "ja": "総持寺",
+      "kana": "そうじじ",
+      "romaji": "Sojiji",
       "zh_tw": "総持寺",
       "en": "Sōji-ji Temple"
     },
+    "kana_source": "wikipedia",
     "location": {
       "lat": 35.38473,
       "lng": 136.290135
@@ -16886,6 +18198,13 @@
     ],
     "featured": false,
     "score": 34.92,
+    "summary": {
+      "text": "総持寺（そうじじ）は、滋賀県長浜市にある真言宗豊山派の寺院。山号は医王山。本尊は薬師如来。「ぼたん寺」とも称されている。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E7%B7%8F%E6%8C%81%E5%AF%BA_%28%E9%95%B7%E6%B5%9C%E5%B8%82%29",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "images": [
       {
         "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7e/I%C5%8Dzan_Ry%C5%8Dgon-in_S%C5%8Dji-ji_Temple_20220303_12.jpg/960px-I%C5%8Dzan_Ry%C5%8Dgon-in_S%C5%8Dji-ji_Temple_20220303_12.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -16906,6 +18225,10 @@
       {
         "url": "https://www.openstreetmap.org/node/391076163",
         "fetched_at": "2026-09-27"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E7%B7%8F%E6%8C%81%E5%AF%BA_%28%E9%95%B7%E6%B5%9C%E5%B8%82%29",
+        "fetched_at": "2026-09-28"
       }
     ],
     "status": "published",
@@ -16915,9 +18238,12 @@
     "id": "wd-Q131910774",
     "name": {
       "ja": "近江聖人中江藤樹記念館",
+      "kana": "おうみせいじんなかえとうじゅきねんかん",
+      "romaji": "Omiseijinnakaetojukinenkan",
       "zh_tw": "近江聖人中江藤樹記念館",
       "en": "Nakae Tōju Memorial Museum"
     },
+    "kana_source": "wikipedia",
     "location": {
       "lat": 35.324643,
       "lng": 136.031425
@@ -16930,6 +18256,13 @@
     ],
     "featured": false,
     "score": 37.22,
+    "summary": {
+      "text": "近江聖人中江藤樹記念館（おうみせいじんなかえとうじゅきねんかん）は、滋賀県高島市安曇川町にある儒学者・中江藤樹の記念館。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E8%BF%91%E6%B1%9F%E8%81%96%E4%BA%BA%E4%B8%AD%E6%B1%9F%E8%97%A4%E6%A8%B9%E8%A8%98%E5%BF%B5%E9%A4%A8",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "nearest_stations": [
       {
         "name": {
@@ -16959,6 +18292,10 @@
       {
         "url": "https://www.openstreetmap.org/node/1422944908",
         "fetched_at": "2026-09-27"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E8%BF%91%E6%B1%9F%E8%81%96%E4%BA%BA%E4%B8%AD%E6%B1%9F%E8%97%A4%E6%A8%B9%E8%A8%98%E5%BF%B5%E9%A4%A8",
+        "fetched_at": "2026-09-28"
       }
     ],
     "status": "published",
@@ -16968,9 +18305,12 @@
     "id": "wd-Q131925932",
     "name": {
       "ja": "千代神社",
+      "kana": "ちよじんじゃ",
+      "romaji": "Chiyojinja",
       "zh_tw": "千代神社",
       "en": "Chiyo Shrine"
     },
+    "kana_source": "wikipedia",
     "location": {
       "lat": 35.267788,
       "lng": 136.255173
@@ -16985,6 +18325,13 @@
     ],
     "featured": false,
     "score": 35.13,
+    "summary": {
+      "text": "千代神社（ちよじんじゃ）は、滋賀県彦根市にある神社。旧社格は県社。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E5%8D%83%E4%BB%A3%E7%A5%9E%E7%A4%BE",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "nearest_stations": [
       {
         "name": {
@@ -17025,6 +18372,10 @@
       {
         "url": "https://www.openstreetmap.org/way/1453286757",
         "fetched_at": "2026-09-27"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E5%8D%83%E4%BB%A3%E7%A5%9E%E7%A4%BE",
+        "fetched_at": "2026-09-28"
       }
     ],
     "status": "published",
@@ -17034,9 +18385,12 @@
     "id": "wd-Q132188921",
     "name": {
       "ja": "胡宮神社",
+      "kana": "このみやじんじゃ",
+      "romaji": "Konomiyajinja",
       "zh_tw": "胡宮神社",
       "en": "Komiya Shrine (Taga)"
     },
+    "kana_source": "wikipedia",
     "location": {
       "lat": 35.215222,
       "lng": 136.286667
@@ -17051,6 +18405,13 @@
     ],
     "featured": false,
     "score": 40.95,
+    "summary": {
+      "text": "胡宮神社（このみやじんじゃ）は、滋賀県犬上郡多賀町敏満寺にある神社。旧社格は県社。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E8%83%A1%E5%AE%AE%E7%A5%9E%E7%A4%BE",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "nearest_stations": [
       {
         "name": {
@@ -17082,6 +18443,10 @@
       {
         "url": "https://www.openstreetmap.org/way/643092792",
         "fetched_at": "2026-09-27"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E8%83%A1%E5%AE%AE%E7%A5%9E%E7%A4%BE",
+        "fetched_at": "2026-09-28"
       }
     ],
     "status": "published",
@@ -17135,9 +18500,12 @@
     "id": "wd-Q132725989",
     "name": {
       "ja": "長浜市曳山博物館",
+      "kana": "ながはましひきやまはくぶつかん",
+      "romaji": "Nagahamashihikiyamahakubutsukan",
       "zh_tw": "長浜市曳山博物館",
       "en": "Nagahama Hikiyama Museum"
     },
+    "kana_source": "wikipedia",
     "location": {
       "lat": 35.381264,
       "lng": 136.268769
@@ -17150,6 +18518,13 @@
     ],
     "featured": false,
     "score": 35.1,
+    "summary": {
+      "text": "長浜市曳山博物館（ながはましひきやまはくぶつかん）は滋賀県長浜市にある、長浜曳山祭を紹介する博物館である。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E6%9B%B3%E5%B1%B1%E5%8D%9A%E7%89%A9%E9%A4%A8",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "nearest_stations": [
       {
         "name": {
@@ -17179,6 +18554,10 @@
       {
         "url": "https://www.openstreetmap.org/node/411308398",
         "fetched_at": "2026-09-27"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E6%9B%B3%E5%B1%B1%E5%8D%9A%E7%89%A9%E9%A4%A8",
+        "fetched_at": "2026-09-28"
       }
     ],
     "status": "published",
@@ -18867,6 +20246,13 @@
     ],
     "featured": false,
     "score": 32.59,
+    "summary": {
+      "text": "大津大神宮（おおつだいじんぐう）は、滋賀県大津市にある神社。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E6%B4%A5%E5%A4%A7%E7%A5%9E%E5%AE%AE",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "nearest_stations": [
       {
         "name": {
@@ -19683,6 +21069,13 @@
     ],
     "featured": false,
     "score": 41.05,
+    "summary": {
+      "text": "石馬寺（いしばじ）は、滋賀県東近江市五個荘石馬寺町にある臨済宗妙心寺派の寺院。山号は御都繖山（ぎょとさんざん）。本尊は十一面千手観世音菩薩。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E7%9F%B3%E9%A6%AC%E5%AF%BA",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "images": [
       {
         "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0e/Ishibaji_main_hall_2014-11-27.JPG/960px-Ishibaji_main_hall_2014-11-27.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -19712,9 +21105,12 @@
     "id": "wd-Q17209860",
     "name": {
       "ja": "観峰館",
+      "kana": "かんぽうかん",
+      "romaji": "Kanpokan",
       "zh_tw": "観峰館",
       "en": "Kampō Museum in Shiga"
     },
+    "kana_source": "wikipedia",
     "location": {
       "lat": 35.154389,
       "lng": 136.188933
@@ -19727,6 +21123,13 @@
     ],
     "featured": false,
     "score": 38.46,
+    "summary": {
+      "text": "観峰館（かんぽうかん）は、滋賀県東近江市五個荘竜田町に所在する「書の文化にふれる博物館」がメインテーマの博物館である。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E8%A6%B3%E5%B3%B0%E9%A4%A8",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "nearest_stations": [
       {
         "name": {
@@ -19758,6 +21161,10 @@
       {
         "url": "https://www.openstreetmap.org/way/1384544805",
         "fetched_at": "2026-09-27"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E8%A6%B3%E5%B3%B0%E9%A4%A8",
+        "fetched_at": "2026-09-28"
       }
     ],
     "status": "published",
@@ -19787,6 +21194,13 @@
     ],
     "featured": false,
     "score": 43.63,
+    "summary": {
+      "text": "木之本地蔵院 （きのもとじぞういん）は、滋賀県長浜市木之本町木之本にある時宗の寺院。公式の寺号は浄信寺（じょうしんじ）であるが、一般には「木之本地蔵」「木之本地蔵院」の名で知られている。山号は長祈山（ちょうきさん）。本尊は地蔵菩薩（秘仏）である。境内には秘仏本尊の写しである高さ約6メートルの地蔵菩薩大銅像があり、これは日本三大地蔵の一つとされている。眼の地蔵菩薩として信仰を集めている。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E6%9C%A8%E4%B9%8B%E6%9C%AC%E5%9C%B0%E8%94%B5%E9%99%A2",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "nearest_stations": [
       {
         "name": {
@@ -19825,9 +21239,12 @@
     "id": "wd-Q17214594",
     "name": {
       "ja": "長寿寺",
+      "kana": "ちょうじゅじ",
+      "romaji": "Chojuji",
       "zh_tw": "長壽寺",
       "en": "Chōju-ji Temple"
     },
+    "kana_source": "wikipedia",
     "location": {
       "lat": 34.985325,
       "lng": 136.059894
@@ -19843,6 +21260,13 @@
     ],
     "featured": false,
     "score": 56.11,
+    "summary": {
+      "text": "長寿寺（ちょうじゅじ）は、滋賀県湖南市東寺にある天台宗の寺院。山号は阿星山（あぼしさん）。本尊は地蔵菩薩。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E9%95%B7%E5%AF%BF%E5%AF%BA_%28%E6%B9%96%E5%8D%97%E5%B8%82%29",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "images": [
       {
         "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9a/Chojuji01s3200.jpg/960px-Chojuji01s3200.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -19858,6 +21282,10 @@
       {
         "url": "https://www.wikidata.org/wiki/Q17214594",
         "fetched_at": "2026-09-27"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E9%95%B7%E5%AF%BF%E5%AF%BA_%28%E6%B9%96%E5%8D%97%E5%B8%82%29",
+        "fetched_at": "2026-09-28"
       }
     ],
     "status": "published",
@@ -19867,9 +21295,12 @@
     "id": "wd-Q17227875",
     "name": {
       "ja": "皇子山総合運動公園",
+      "kana": "おおつしおうじやまそうごううんどうこうえん",
+      "romaji": "Otsushiojiyamasogoundokoen",
       "zh_tw": "皇子山総合運動公園",
       "en": "Ojiyama Sports Park"
     },
+    "kana_source": "wikipedia",
     "location": {
       "lat": 35.016983,
       "lng": 135.856842
@@ -19883,6 +21314,13 @@
     ],
     "featured": false,
     "score": 40.89,
+    "summary": {
+      "text": "皇子山総合運動公園（おおつしおうじやまそうごううんどうこうえん）は、滋賀県大津市にある都市公園（運動公園）である。施設は大津市が所有し、公益財団法人大津市公園緑地協会が指定管理者として運営管理を行っている。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E7%9A%87%E5%AD%90%E5%B1%B1%E7%B7%8F%E5%90%88%E9%81%8B%E5%8B%95%E5%85%AC%E5%9C%92",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "nearest_stations": [
       {
         "name": {
@@ -19916,6 +21354,10 @@
       {
         "url": "https://www.openstreetmap.org/way/482181730",
         "fetched_at": "2026-09-27"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E7%9A%87%E5%AD%90%E5%B1%B1%E7%B7%8F%E5%90%88%E9%81%8B%E5%8B%95%E5%85%AC%E5%9C%92",
+        "fetched_at": "2026-09-28"
       }
     ],
     "status": "published",
@@ -19925,9 +21367,12 @@
     "id": "wd-Q1756307",
     "name": {
       "ja": "園城寺",
+      "kana": "おんじょうじ",
+      "romaji": "Onjoji",
       "zh_tw": "園城寺",
       "en": "Mii-dera Temple"
     },
+    "kana_source": "wikipedia",
     "location": {
       "lat": 35.013333,
       "lng": 135.852778
@@ -19943,6 +21388,13 @@
     ],
     "featured": true,
     "score": 74.8,
+    "summary": {
+      "text": "園城寺是位在日本滋賀縣大津市的寺院，天台寺門宗總本山。日本代表四大佛寺之一。山號「長等山」（ながらさん）。本尊彌勒菩薩、開基（創立者）為大友與多王。「近江八景」之一「三井晩鐘」之寺。",
+      "lang": "zh",
+      "source_url": "https://zh.wikipedia.org/wiki/%E5%9C%92%E5%9F%8E%E5%AF%BA",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "nearest_stations": [
       {
         "name": {
@@ -19983,6 +21435,10 @@
       {
         "url": "https://www.openstreetmap.org/node/4619790890",
         "fetched_at": "2026-09-27"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E5%9C%92%E5%9F%8E%E5%AF%BA",
+        "fetched_at": "2026-09-28"
       }
     ],
     "status": "published",
@@ -19992,9 +21448,12 @@
     "id": "wd-Q200239",
     "name": {
       "ja": "琵琶湖",
+      "kana": "びわこ",
+      "romaji": "Biwako",
       "zh_tw": "琵琶湖",
       "en": "Lake Biwa"
     },
+    "kana_source": "wikipedia",
     "location": {
       "lat": 35.255,
       "lng": 136.08
@@ -20005,6 +21464,13 @@
     "tags": [],
     "featured": true,
     "score": 79.64,
+    "summary": {
+      "text": "琵琶湖位於日本滋賀縣，為日本最大的湖泊；日本湖沼水質保全特別措置法指定湖泊，也列入濕地公約國際重要濕地名錄中。",
+      "lang": "zh",
+      "source_url": "https://zh.wikipedia.org/wiki/%E7%90%B5%E7%90%B6%E6%B9%96",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "images": [
       {
         "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/24/Top_view_of_Lake_Biwa.jpg/960px-Top_view_of_Lake_Biwa.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -20020,6 +21486,10 @@
       {
         "url": "https://www.wikidata.org/wiki/Q200239",
         "fetched_at": "2026-09-27"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E7%90%B5%E7%90%B6%E6%B9%96",
+        "fetched_at": "2026-09-28"
       }
     ],
     "status": "published",
@@ -20049,6 +21519,13 @@
     ],
     "featured": false,
     "score": 42.62,
+    "summary": {
+      "text": "安楽律院（あんらくりついん）は延暦寺横川飯室谷の別所である安楽谷にかつて存在した天台宗安楽律法流の寺院。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E5%AE%89%E6%A5%BD%E5%BE%8B%E9%99%A2",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "images": [
       {
         "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/17/Anrakuritsuin.jpg/960px-Anrakuritsuin.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -20078,8 +21555,11 @@
     "id": "wd-Q22119406",
     "name": {
       "ja": "長松院",
+      "kana": "ちょうしょういん",
+      "romaji": "Choshoin",
       "zh_tw": "長松院"
     },
+    "kana_source": "wikipedia",
     "location": {
       "lat": 35.268972,
       "lng": 136.254472
@@ -20094,6 +21574,13 @@
     ],
     "featured": false,
     "score": 38.17,
+    "summary": {
+      "text": "長松院（ちょうしょういん）は、滋賀県彦根市中央町に所在する曹洞宗の寺院である。寺紋は丸に左三階松。山号は萬年山、本尊は釈迦如来（釈迦牟尼仏）。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E9%95%B7%E6%9D%BE%E9%99%A2_%28%E5%BD%A6%E6%A0%B9%E5%B8%82%29",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "nearest_stations": [
       {
         "name": {
@@ -20134,6 +21621,10 @@
       {
         "url": "https://www.openstreetmap.org/way/1363513028",
         "fetched_at": "2026-09-27"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E9%95%B7%E6%9D%BE%E9%99%A2_%28%E5%BD%A6%E6%A0%B9%E5%B8%82%29",
+        "fetched_at": "2026-09-28"
       }
     ],
     "status": "published",
@@ -20162,6 +21653,13 @@
     ],
     "featured": true,
     "score": 67.31,
+    "summary": {
+      "text": "小谷城（おだにじょう）是位於滋賀縣長濱市湖北町伊部（舊近江國淺井郡）的日本戰國時代的山城。小谷城是日本五大山城之一。為戰國時代大名淺井家的居城。在元龜・天正之亂中被織田信長攻下。之後被廢城。是日本100名城之一。",
+      "lang": "zh",
+      "source_url": "https://zh.wikipedia.org/wiki/%E5%B0%8F%E8%B0%B7%E5%9F%8E",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "images": [
       {
         "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/35/Odanij10.jpg/960px-Odanij10.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -20186,9 +21684,12 @@
     "id": "wd-Q24864985",
     "name": {
       "ja": "奥石神社",
+      "kana": "おいそじんじゃ",
+      "romaji": "Oisojinja",
       "zh_tw": "奥石神社",
       "en": "Oiso Shrine"
     },
+    "kana_source": "wikipedia",
     "location": {
       "lat": 35.130173,
       "lng": 136.161771
@@ -20203,6 +21704,13 @@
     ],
     "featured": false,
     "score": 41.32,
+    "summary": {
+      "text": "奥石神社（おいそじんじゃ）は、滋賀県近江八幡市安土町東老蘇にある神社。式内社で、旧社格は県社。東老蘇集落の北、中山道（中仙道）沿いの老蘇森（おいそのもり、国の史跡）内に鎮座する。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E5%A5%A5%E7%9F%B3%E7%A5%9E%E7%A4%BE",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "images": [
       {
         "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c5/Oisojinnjya.JPG/960px-Oisojinnjya.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -20223,6 +21731,10 @@
       {
         "url": "https://www.openstreetmap.org/way/1198037823",
         "fetched_at": "2026-09-27"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E5%A5%A5%E7%9F%B3%E7%A5%9E%E7%A4%BE",
+        "fetched_at": "2026-09-28"
       }
     ],
     "status": "published",
@@ -20253,6 +21765,13 @@
     ],
     "featured": false,
     "score": 42.44,
+    "summary": {
+      "text": "馬見岡綿向神社（うまみおかわたむきじんじゃ）は、滋賀県蒲生郡日野町の東にそびえる綿向山の山頂に祀られている大嵩神社の里宮。式内社馬見岡神社に比定。旧社格は県社。毎年5月2日と3日に例祭として日野祭を開催する。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E9%A6%AC%E8%A6%8B%E5%B2%A1%E7%B6%BF%E5%90%91%E7%A5%9E%E7%A4%BE",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "images": [
       {
         "url": "https://upload.wikimedia.org/wikipedia/commons/1/1e/Umamiokawatanukizinnzyahaiden.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
@@ -20282,9 +21801,12 @@
     "id": "wd-Q24865038",
     "name": {
       "ja": "赤神山",
+      "kana": "あかがみやま",
+      "romaji": "Akagamiyama",
       "zh_tw": "赤神山",
       "en": "Mount Akagami"
     },
+    "kana_source": "wikipedia",
     "location": {
       "lat": 35.119889,
       "lng": 136.180944
@@ -20295,6 +21817,13 @@
     "tags": [],
     "featured": false,
     "score": 45.82,
+    "summary": {
+      "text": "赤神山（あかがみやま）は、滋賀県東近江市にある山である。西に琵琶湖を望む。標高357.2ｍ。別名を太郎坊山という。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E8%B5%A4%E7%A5%9E%E5%B1%B1",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "nearest_stations": [
       {
         "name": {
@@ -20335,6 +21864,10 @@
       {
         "url": "https://www.openstreetmap.org/node/5938567782",
         "fetched_at": "2026-09-27"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E8%B5%A4%E7%A5%9E%E5%B1%B1",
+        "fetched_at": "2026-09-28"
       }
     ],
     "status": "published",
@@ -20358,6 +21891,13 @@
     ],
     "featured": false,
     "score": 33.82,
+    "summary": {
+      "text": "東近江市ひばり公園（ひがしおうみしひばりこうえん）は、滋賀県東近江市にある都市公園。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E3%81%B2%E3%81%B0%E3%82%8A%E5%85%AC%E5%9C%92",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "images": [],
     "external_ids": {
       "wikidata": "Q24865046",
@@ -20397,6 +21937,13 @@
     ],
     "featured": false,
     "score": 33.95,
+    "summary": {
+      "text": "東近江市立ガリ版伝承館（ひがしおうみしりつガリばんでんしょうかん）は、滋賀県東近江市にある謄写版（ガリ版）印刷を伝承する施設である。米国で発明され商品化された謄写版技術を日本に初めて持ち込んだ堀井新治郎父子の本家を修復して、1998年（平成10年）4月に開館した。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E3%82%AC%E3%83%AA%E7%89%88%E4%BC%9D%E6%89%BF%E9%A4%A8",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "nearest_stations": [
       {
         "name": {
@@ -20442,9 +21989,12 @@
     "id": "wd-Q262438",
     "name": {
       "ja": "紫香楽宮",
+      "kana": "しがらきのみや",
+      "romaji": "Shigarakinomiya",
       "zh_tw": "紫香樂宮",
       "en": "Shigaraki Palace"
     },
+    "kana_source": "wikipedia",
     "location": {
       "lat": 34.934722,
       "lng": 136.084444
@@ -20457,6 +22007,13 @@
     ],
     "featured": true,
     "score": 59.83,
+    "summary": {
+      "text": "紫香樂宮是指日本奈良時代聖武天皇在近江國甲賀郡（現在的滋賀縣甲賀市信樂町）建立的離宮。之後更名為甲賀宮（こうかのみや）並成為了首都。",
+      "lang": "zh",
+      "source_url": "https://zh.wikipedia.org/wiki/%E7%B4%AB%E9%A6%99%E6%A8%82%E5%AE%AE",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "images": [
       {
         "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/97/Albacete_-_La_Purisima.jpg/960px-Albacete_-_La_Purisima.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -20472,6 +22029,10 @@
       {
         "url": "https://www.wikidata.org/wiki/Q262438",
         "fetched_at": "2026-09-27"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E7%B4%AB%E9%A6%99%E6%A5%BD%E5%AE%AE",
+        "fetched_at": "2026-09-28"
       }
     ],
     "status": "published",
@@ -20481,9 +22042,12 @@
     "id": "wd-Q2753954",
     "name": {
       "ja": "琵琶湖疏水",
+      "kana": "びわこそすい",
+      "romaji": "Biwakososui",
       "zh_tw": "琵琶湖疏水",
       "en": "Lake Biwa Canal"
     },
+    "kana_source": "wikipedia",
     "location": {
       "lat": 35.01125,
       "lng": 135.85575
@@ -20496,6 +22060,13 @@
     ],
     "featured": true,
     "score": 65.58,
+    "summary": {
+      "text": "琵琶湖疏水是日本的一個水利基礎設施，為了將滋賀縣琵琶湖的湖水引至京都府京都市而建造的水路（疏水道）。",
+      "lang": "zh",
+      "source_url": "https://zh.wikipedia.org/wiki/%E7%90%B5%E7%90%B6%E6%B9%96%E7%96%8F%E6%B0%B4",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "nearest_stations": [
       {
         "name": {
@@ -20529,6 +22100,10 @@
       {
         "url": "https://www.wikidata.org/wiki/Q2753954",
         "fetched_at": "2026-09-27"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E7%90%B5%E7%90%B6%E6%B9%96%E7%96%8F%E6%B0%B4",
+        "fetched_at": "2026-09-28"
       }
     ],
     "status": "published",
@@ -20558,6 +22133,13 @@
     ],
     "featured": false,
     "score": 32.57,
+    "summary": {
+      "text": "正崇寺（しょうそうじ）は、滋賀県蒲生郡日野町大窪にある浄土真宗本願寺派の仏教寺院。山号は川原山（せんげんさん）。開基は1241年（仁治2年）、円鸞による。江戸時代には若霖と法霖の2人の能化（学林の長）が輩出した。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E6%AD%A3%E5%B4%87%E5%AF%BA",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "images": [
       {
         "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8b/Shosoji-Temple.jpg/960px-Shosoji-Temple.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -20608,6 +22190,13 @@
     ],
     "featured": false,
     "score": 31.1,
+    "summary": {
+      "text": "桃源寺（とうげんじ）は滋賀県大津市にある臨済宗永源寺派の寺院。山号は吉田山。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E6%A1%83%E6%BA%90%E5%AF%BA",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "nearest_stations": [
       {
         "name": {
@@ -20676,6 +22265,13 @@
     ],
     "featured": false,
     "score": 63.47,
+    "summary": {
+      "text": "觀音寺城（かんのんじじょう）是位於滋賀縣近江八幡市安土町的一座山城，為國家指定史跡。另有和田山城、佐生城、箕作城等支城。觀音寺城是近江國守護六角氏的居城。現在正確的築城年代已經不明。在該城曾爆發過多次戰鬥。1568年，該城被廢城。是全日本本州島最中央的城，是日本100名城之一。",
+      "lang": "zh",
+      "source_url": "https://zh.wikipedia.org/wiki/%E8%A7%80%E9%9F%B3%E5%AF%BA%E5%9F%8E",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "images": [
       {
         "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/35/Kannonjij7.jpg/960px-Kannonjij7.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -20700,9 +22296,12 @@
     "id": "wd-Q2969895",
     "name": {
       "ja": "水口城",
+      "kana": "みなくちじょう",
+      "romaji": "Minakuchijo",
       "zh_tw": "水口城",
       "en": "Minakuchi Castle"
     },
+    "kana_source": "wikipedia",
     "location": {
       "lat": 34.970446,
       "lng": 136.164583
@@ -20715,6 +22314,13 @@
     ],
     "featured": false,
     "score": 52.22,
+    "summary": {
+      "text": "水口城（みなくちじょう）は、近江国甲賀郡水口村（現・滋賀県甲賀市水口町水口）にあった日本の城。城跡は県指定史跡である。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E6%B0%B4%E5%8F%A3%E5%9F%8E",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "nearest_stations": [
       {
         "name": {
@@ -20755,6 +22361,10 @@
       {
         "url": "https://www.openstreetmap.org/way/242303038",
         "fetched_at": "2026-09-27"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E6%B0%B4%E5%8F%A3%E5%9F%8E",
+        "fetched_at": "2026-09-28"
       }
     ],
     "status": "published",
@@ -20764,9 +22374,12 @@
     "id": "wd-Q2975401",
     "name": {
       "ja": "竹生島",
+      "kana": "ちくぶしま",
+      "romaji": "Chikubushima",
       "zh_tw": "竹生島",
       "en": "Chikubu Island"
     },
+    "kana_source": "wikipedia",
     "location": {
       "lat": 35.423333,
       "lng": 136.143611
@@ -20780,6 +22393,13 @@
     ],
     "featured": true,
     "score": 69.23,
+    "summary": {
+      "text": "竹生島是日本滋賀縣琵琶湖北部的一個島嶼，為日本的國家指定名勝和國家指定史跡，位於葛籠尾崎以南約2公里處，屬於滋賀縣長濱市管轄。全島為針葉林所覆蓋，為琵琶湖八景之一。",
+      "lang": "zh",
+      "source_url": "https://zh.wikipedia.org/wiki/%E7%AB%B9%E7%94%9F%E5%B3%B6",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "images": [
       {
         "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/53/Chikubushima-2016-07-21.jpg/960px-Chikubushima-2016-07-21.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -20795,6 +22415,10 @@
       {
         "url": "https://www.wikidata.org/wiki/Q2975401",
         "fetched_at": "2026-09-27"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E7%AB%B9%E7%94%9F%E5%B3%B6",
+        "fetched_at": "2026-09-28"
       }
     ],
     "status": "published",
@@ -20825,6 +22449,13 @@
     ],
     "featured": true,
     "score": 66.35,
+    "summary": {
+      "text": "寶嚴寺（ほうごんじ）是位在日本滋賀縣長濱市竹生島的真言宗豐山派寺院。山號「巖金山」（がんこんざん）。本尊弁才天、聖武天皇勅願、開山（初代住持）為行基。是觀音靈場，也是弁才天信仰的聖地，日本三大弁才天之一（其他兩個是嚴島神社和江島神社）。舊名本業寺（ほんごうじ）。",
+      "lang": "zh",
+      "source_url": "https://zh.wikipedia.org/wiki/%E5%AF%B6%E5%9A%B4%E5%AF%BA",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "images": [
       {
         "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/50/Hogonji114520.jpg/960px-Hogonji114520.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -20874,6 +22505,13 @@
     ],
     "featured": false,
     "score": 45.65,
+    "summary": {
+      "text": "天孫神社（てんそんじんじゃ）は、滋賀県大津市京町にある神社。旧社格は県社。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E5%A4%A9%E5%AD%AB%E7%A5%9E%E7%A4%BE",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "nearest_stations": [
       {
         "name": {
@@ -20923,9 +22561,12 @@
     "id": "wd-Q30930488",
     "name": {
       "ja": "横川定光院",
+      "kana": "よかわじょうこういん",
+      "romaji": "Yokawajokoin",
       "zh_tw": "横川定光院",
       "en": "Yokawa Jōkō-in Temple"
     },
+    "kana_source": "wikipedia",
     "location": {
       "lat": 35.099,
       "lng": 135.853861
@@ -20941,6 +22582,13 @@
     ],
     "featured": false,
     "score": 41.66,
+    "summary": {
+      "text": "横川定光院（よかわじょうこういん）は、滋賀県大津市坂本本町にある天台宗の寺院だが、管理は協定により日蓮宗が行っている。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E6%A8%AA%E5%B7%9D%E5%AE%9A%E5%85%89%E9%99%A2",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "images": [
       {
         "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/04/%E6%A8%AA%E5%B7%9D%E5%AE%9A%E5%85%89%E9%99%A2_%E7%A5%96%E5%B8%AB%E5%A0%82%E5%85%A8%E6%99%AF.jpg/960px-%E6%A8%AA%E5%B7%9D%E5%AE%9A%E5%85%89%E9%99%A2_%E7%A5%96%E5%B8%AB%E5%A0%82%E5%85%A8%E6%99%AF.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -20961,6 +22609,10 @@
       {
         "url": "https://www.openstreetmap.org/way/425931948",
         "fetched_at": "2026-09-27"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E6%A8%AA%E5%B7%9D%E5%AE%9A%E5%85%89%E9%99%A2",
+        "fetched_at": "2026-09-28"
       }
     ],
     "status": "published",
@@ -20970,9 +22622,12 @@
     "id": "wd-Q30931160",
     "name": {
       "ja": "大津市歴史博物館",
+      "kana": "おおつしれきしはくぶつかん",
+      "romaji": "Otsushirekishihakubutsukan",
       "zh_tw": "大津市歷史博物館",
       "en": "Otsu City Museum of History"
     },
+    "kana_source": "wikipedia",
     "location": {
       "lat": 35.015447,
       "lng": 135.852836
@@ -20985,6 +22640,13 @@
     ],
     "featured": false,
     "score": 37.4,
+    "summary": {
+      "text": "大津市歴史博物館（おおつしれきしはくぶつかん）は、滋賀県大津市にある市立博物館である。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E6%B4%A5%E5%B8%82%E6%AD%B4%E5%8F%B2%E5%8D%9A%E7%89%A9%E9%A4%A8",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "nearest_stations": [
       {
         "name": {
@@ -21025,6 +22687,10 @@
       {
         "url": "https://www.openstreetmap.org/way/468934478",
         "fetched_at": "2026-09-27"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E6%B4%A5%E5%B8%82%E6%AD%B4%E5%8F%B2%E5%8D%9A%E7%89%A9%E9%A4%A8",
+        "fetched_at": "2026-09-28"
       }
     ],
     "status": "published",
@@ -21054,6 +22720,13 @@
     ],
     "featured": false,
     "score": 50.46,
+    "summary": {
+      "text": "満月寺（まんげつじ）は、滋賀県大津市本堅田にある臨済宗大徳寺派の寺院。山号は海門山（かいもんさん）。本尊は聖観音。琵琶湖畔にあり、湖上に突き出ている浮御堂で知られる。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E6%BA%80%E6%9C%88%E5%AF%BA_%28%E5%A4%A7%E6%B4%A5%E5%B8%82%29",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "nearest_stations": [
       {
         "name": {
@@ -21092,9 +22765,12 @@
     "id": "wd-Q3511694",
     "name": {
       "ja": "摠見寺",
+      "kana": "そうけんじ",
+      "romaji": "So Ken Ji",
       "zh_tw": "總見寺",
       "en": "Sōken-ji"
     },
+    "kana_source": "wikipedia",
     "location": {
       "lat": 35.156022,
       "lng": 136.139361
@@ -21110,6 +22786,13 @@
     ],
     "featured": false,
     "score": 55.25,
+    "summary": {
+      "text": "摠見寺是一座位於日本滋賀縣近江八幡市安土町的佛教寺廟，其山號為遠景山  。該寺廟屬於日本禪宗臨済宗妙心寺派。摠見寺由織田信長於天正時代（1573-1591 年）在安土城內建造。當時的住持為剛可正仲。",
+      "lang": "zh",
+      "source_url": "https://zh.wikipedia.org/wiki/%E6%91%A0%E8%A6%8B%E5%AF%BA",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "images": [
       {
         "url": "https://upload.wikimedia.org/wikipedia/commons/d/dd/Azuchi_Town_Sokenji_Tower.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
@@ -21134,6 +22817,10 @@
       {
         "url": "https://www.openstreetmap.org/way/753925746",
         "fetched_at": "2026-09-27"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E6%91%A0%E8%A6%8B%E5%AF%BA",
+        "fetched_at": "2026-09-28"
       }
     ],
     "status": "published",
@@ -21143,9 +22830,12 @@
     "id": "wd-Q38278452",
     "name": {
       "ja": "水観寺",
+      "kana": "すいかんじ",
+      "romaji": "Suikanji",
       "zh_tw": "水観寺",
       "en": "Suikan-ji Temple"
     },
+    "kana_source": "wikipedia",
     "location": {
       "lat": 35.011611,
       "lng": 135.854528
@@ -21160,6 +22850,13 @@
     ],
     "featured": false,
     "score": 35.56,
+    "summary": {
+      "text": "水観寺（すいかんじ）は、滋賀県大津市園城寺町にある天台寺門宗の寺院。総本山園城寺の別所。山号は長等山。本尊は薬師瑠璃光如来。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E6%B0%B4%E8%A6%B3%E5%AF%BA",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "nearest_stations": [
       {
         "name": {
@@ -21200,6 +22897,10 @@
       {
         "url": "https://www.openstreetmap.org/way/592355279",
         "fetched_at": "2026-09-27"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E6%B0%B4%E8%A6%B3%E5%AF%BA",
+        "fetched_at": "2026-09-28"
       }
     ],
     "status": "published",
@@ -21229,6 +22930,13 @@
     ],
     "featured": false,
     "score": 58.35,
+    "summary": {
+      "text": "近江神宮（おうみじんぐう）是位在日本滋賀縣大津市的神社。為勅祭社、舊社格為官幣大社（現神社本廳的別表神社）。",
+      "lang": "zh",
+      "source_url": "https://zh.wikipedia.org/wiki/%E8%BF%91%E6%B1%9F%E7%A5%9E%E5%AE%AE",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "nearest_stations": [
       {
         "name": {
@@ -21299,6 +23007,13 @@
     ],
     "featured": true,
     "score": 61.29,
+    "summary": {
+      "text": "多賀大社（たがたいしゃ）是位在日本滋賀縣犬上郡多賀町的神社。為式內社、舊社格為官幣大社（現神社本廳的別表神社）。在神佛習合的中世期稱作「多賀大明神」，受到崇敬。",
+      "lang": "zh",
+      "source_url": "https://zh.wikipedia.org/wiki/%E5%A4%9A%E8%B3%80%E5%A4%A7%E7%A4%BE",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "nearest_stations": [
       {
         "name": {
@@ -21334,9 +23049,12 @@
     "id": "wd-Q41692567",
     "name": {
       "ja": "盛安寺",
+      "kana": "せいあんじ",
+      "romaji": "Seianji",
       "zh_tw": "盛安寺",
       "en": "Seianji Temple"
     },
+    "kana_source": "wikipedia",
     "location": {
       "lat": 35.058139,
       "lng": 135.868361
@@ -21351,6 +23069,13 @@
     ],
     "featured": false,
     "score": 36.57,
+    "summary": {
+      "text": "盛安寺（せいあんじ）は、滋賀県大津市にある天台真盛宗の寺院。山号は瑞應山。本尊は阿弥陀如来。井上靖の小説『星と祭』で知られる重要文化財の十一面観音菩薩立像がある。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E7%9B%9B%E5%AE%89%E5%AF%BA",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "nearest_stations": [
       {
         "name": {
@@ -21391,6 +23116,10 @@
       {
         "url": "https://www.openstreetmap.org/node/5828933099",
         "fetched_at": "2026-09-27"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E7%9B%9B%E5%AE%89%E5%AF%BA",
+        "fetched_at": "2026-09-28"
       }
     ],
     "status": "published",
@@ -21400,9 +23129,12 @@
     "id": "wd-Q41692581",
     "name": {
       "ja": "赤後寺",
+      "kana": "しゃくごじ",
+      "romaji": "Shakugoji",
       "zh_tw": "赤後寺",
       "en": "Sekigo-ji Temple"
     },
+    "kana_source": "wikipedia",
     "location": {
       "lat": 35.491639,
       "lng": 136.2165
@@ -21417,6 +23149,13 @@
     ],
     "featured": false,
     "score": 35.13,
+    "summary": {
+      "text": "赤後寺（しゃくごじ）は、滋賀県長浜市高月町唐川にある寺院。山号は唐喜山。湧出山（ゆるぎやま）の中腹に建つ。木造菩薩立像と木造千手観音立像はともに平安時代の作で重要文化財に指定されている。境内の赤後寺の杉は巨木として知られる。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E8%B5%A4%E5%BE%8C%E5%AF%BA",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "images": [
       {
         "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/22/Shakugo-ji%2C_Nagahama_-_Main_Hall.jpg/960px-Shakugo-ji%2C_Nagahama_-_Main_Hall.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -21437,6 +23176,10 @@
       {
         "url": "https://www.openstreetmap.org/node/434337571",
         "fetched_at": "2026-09-27"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E8%B5%A4%E5%BE%8C%E5%AF%BA",
+        "fetched_at": "2026-09-28"
       }
     ],
     "status": "published",
@@ -21466,6 +23209,13 @@
     ],
     "featured": false,
     "score": 35.41,
+    "summary": {
+      "text": "小田神社（おだじんじゃ）は、滋賀県近江八幡市小田町にある神社。旧社格は郷社。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E5%B0%8F%E7%94%B0%E7%A5%9E%E7%A4%BE",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "images": [
       {
         "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d4/Oda-jinja_Torii.jpg/960px-Oda-jinja_Torii.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -21495,9 +23245,12 @@
     "id": "wd-Q5954731",
     "name": {
       "ja": "草津市立水生植物公園みずの森",
+      "kana": "くさつしりつすいせいしょくぶつこうえんみずのもり",
+      "romaji": "Kusatsushiritsusuiseishokubutsukoenmizunomori",
       "zh_tw": "草津市立水生植物公園水之森",
       "en": "Mizunomori Water Botanical Garden"
     },
+    "kana_source": "wikipedia",
     "location": {
       "lat": 35.074078,
       "lng": 135.940458
@@ -21510,6 +23263,13 @@
     ],
     "featured": false,
     "score": 44.31,
+    "summary": {
+      "text": "草津市立水生植物公園みずの森（くさつしりつすいせいしょくぶつこうえんみずのもり）は、滋賀県草津市の烏丸半島にある植物園である。「植物と人、水と人のふれあい」をテーマに、1996年（平成8年）に開園した。総面積は約3.7 ha。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E8%8D%89%E6%B4%A5%E5%B8%82%E7%AB%8B%E6%B0%B4%E7%94%9F%E6%A4%8D%E7%89%A9%E5%85%AC%E5%9C%92%E3%81%BF%E3%81%9A%E3%81%AE%E6%A3%AE",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "images": [
       {
         "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bd/250712_Mizunomori_Water_Botanical_Garden_Kusatsu_Shiga_pref_Japan01s3.jpg/960px-250712_Mizunomori_Water_Botanical_Garden_Kusatsu_Shiga_pref_Japan01s3.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -21530,6 +23290,10 @@
       {
         "url": "https://www.openstreetmap.org/node/1422944664",
         "fetched_at": "2026-09-27"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E8%8D%89%E6%B4%A5%E5%B8%82%E7%AB%8B%E6%B0%B4%E7%94%9F%E6%A4%8D%E7%89%A9%E5%85%AC%E5%9C%92%E3%81%BF%E3%81%9A%E3%81%AE%E6%A3%AE",
+        "fetched_at": "2026-09-28"
       }
     ],
     "status": "published",
@@ -21558,6 +23322,13 @@
     ],
     "featured": false,
     "score": 40.94,
+    "summary": {
+      "text": "大岡寺（だいこうじ）は、滋賀県甲賀市水口町にある天台宗系単立の寺院。山号は龍王山。本尊は千手観音。近江西国三十三箇所第26番札所。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E5%B2%A1%E5%AF%BA",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "nearest_stations": [
       {
         "name": {
@@ -21605,9 +23376,12 @@
     "id": "wd-Q60988387",
     "name": {
       "ja": "大池寺",
+      "kana": "だいちじ",
+      "romaji": "Daichiji",
       "zh_tw": "大池寺",
       "en": "Daichi-ji Temple"
     },
+    "kana_source": "wikipedia",
     "location": {
       "lat": 34.983889,
       "lng": 136.171667
@@ -21622,6 +23396,13 @@
     ],
     "featured": false,
     "score": 38.35,
+    "summary": {
+      "text": "大池寺（だいちじ）は、滋賀県甲賀市水口町にある臨済宗妙心寺派の寺院。山号は龍護山。本尊は釈迦如来。本尊は甲賀三大仏の一つである。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E6%B1%A0%E5%AF%BA",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "nearest_stations": [
       {
         "name": {
@@ -21658,6 +23439,10 @@
       {
         "url": "https://www.openstreetmap.org/way/255379082",
         "fetched_at": "2026-09-27"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E6%B1%A0%E5%AF%BA",
+        "fetched_at": "2026-09-28"
       }
     ],
     "status": "published",
@@ -21687,6 +23472,13 @@
     ],
     "featured": false,
     "score": 42.52,
+    "summary": {
+      "text": "生源寺（しょうげんじ）は、滋賀県大津市坂本にある天台宗の寺院。山号は比叡山。本尊は十一面観音。伝教大師最澄が生まれた場所に建てられている。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E7%94%9F%E6%BA%90%E5%AF%BA",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "nearest_stations": [
       {
         "name": {
@@ -21736,9 +23528,12 @@
     "id": "wd-Q63138436",
     "name": {
       "ja": "善勝寺",
+      "kana": "ぜんしょうじ",
+      "romaji": "Zenshoji",
       "zh_tw": "善勝寺",
       "en": "Zensho-ji Temple"
     },
+    "kana_source": "wikipedia",
     "location": {
       "lat": 35.174361,
       "lng": 136.171556
@@ -21753,6 +23548,13 @@
     ],
     "featured": false,
     "score": 33.82,
+    "summary": {
+      "text": "善勝寺（ぜんしょうじ）は、滋賀県東近江市にある曹洞宗の寺院。山号は繖山。本尊は十一面観音。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E5%96%84%E5%8B%9D%E5%AF%BA_%28%E6%9D%B1%E8%BF%91%E6%B1%9F%E5%B8%82%29",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "nearest_stations": [
       {
         "name": {
@@ -21784,6 +23586,10 @@
       {
         "url": "https://www.openstreetmap.org/way/483170527",
         "fetched_at": "2026-09-27"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E5%96%84%E5%8B%9D%E5%AF%BA_%28%E6%9D%B1%E8%BF%91%E6%B1%9F%E5%B8%82%29",
+        "fetched_at": "2026-09-28"
       }
     ],
     "status": "published",
@@ -21793,9 +23599,12 @@
     "id": "wd-Q65267640",
     "name": {
       "ja": "微妙寺",
+      "kana": "びみょうじ",
+      "romaji": "Bimyoji",
       "zh_tw": "微妙寺",
       "en": "Bimyō-ji Temple"
     },
+    "kana_source": "wikipedia",
     "location": {
       "lat": 35.011028,
       "lng": 135.853083
@@ -21810,6 +23619,13 @@
     ],
     "featured": false,
     "score": 35.53,
+    "summary": {
+      "text": "微妙寺（びみょうじ）は、滋賀県大津市園城寺町にある天台寺門宗の寺院。総本山園城寺の別所。山号は長等山。本尊は十一面観音。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E5%BE%AE%E5%A6%99%E5%AF%BA",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "nearest_stations": [
       {
         "name": {
@@ -21850,6 +23666,10 @@
       {
         "url": "https://www.openstreetmap.org/way/592355190",
         "fetched_at": "2026-09-27"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E5%BE%AE%E5%A6%99%E5%AF%BA",
+        "fetched_at": "2026-09-28"
       }
     ],
     "status": "published",
@@ -21881,6 +23701,13 @@
     ],
     "featured": true,
     "score": 74.82,
+    "summary": {
+      "text": "日吉大社（ひよしたいしゃ）是位於日本滋賀縣大津市的神社，為式內社（名神大社）、二十二社、舊社格為官幣大社（現神社本廳的別表神社），也是日本全國約2千座日吉、日枝、山王神社之總本宮。內部的大宮橋被選為日本百名橋。",
+      "lang": "zh",
+      "source_url": "https://zh.wikipedia.org/wiki/%E6%97%A5%E5%90%89%E5%A4%A7%E7%A4%BE",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "nearest_stations": [
       {
         "name": {
@@ -21923,9 +23750,12 @@
     "id": "wd-Q66673849",
     "name": {
       "ja": "膳所神社",
+      "kana": "ぜぜじんじゃ",
+      "romaji": "Zezejinja",
       "zh_tw": "膳所神社",
       "en": "Zeze Shrine"
     },
+    "kana_source": "wikipedia",
     "location": {
       "lat": 34.994694,
       "lng": 135.889944
@@ -21940,6 +23770,13 @@
     ],
     "featured": false,
     "score": 37.53,
+    "summary": {
+      "text": "膳所神社（ぜぜじんじゃ）は、滋賀県大津市にある神社。旧社格は県社。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E8%86%B3%E6%89%80%E7%A5%9E%E7%A4%BE",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "nearest_stations": [
       {
         "name": {
@@ -21980,6 +23817,10 @@
       {
         "url": "https://www.openstreetmap.org/way/315101372",
         "fetched_at": "2026-09-27"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E8%86%B3%E6%89%80%E7%A5%9E%E7%A4%BE",
+        "fetched_at": "2026-09-28"
       }
     ],
     "status": "published",
@@ -22010,6 +23851,13 @@
     ],
     "featured": true,
     "score": 59.96,
+    "summary": {
+      "text": "白鬚神社是位在日本滋賀縣高島市的神社。為國史見在社、舊社格為縣社。日本全國約300座白鬚神社・白髭神社之總本社。",
+      "lang": "zh",
+      "source_url": "https://zh.wikipedia.org/wiki/%E7%99%BD%E9%AC%9A%E7%A5%9E%E7%A4%BE",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "images": [
       {
         "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e7/Shirahige-jinja_%28Takashima%29_keidai.JPG/960px-Shirahige-jinja_%28Takashima%29_keidai.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -22039,9 +23887,12 @@
     "id": "wd-Q72184419",
     "name": {
       "ja": "滋賀農業公園ブルーメの丘",
+      "kana": "しがのうぎょうこうえんぶるーめのおか",
+      "romaji": "Shiganogyokoenburumenoka",
       "zh_tw": "滋賀農業公園花之丘",
       "en": "Blumen Hügel"
     },
+    "kana_source": "wikipedia",
     "location": {
       "lat": 35.013444,
       "lng": 136.282139
@@ -22052,6 +23903,13 @@
     "tags": [],
     "featured": false,
     "score": 44.74,
+    "summary": {
+      "text": "滋賀農業公園ブルーメの丘（しがのうぎょうこうえんブルーメのおか）は、滋賀県蒲生郡日野町にある農業公園である。中世ドイツをイメージした、酪農・ふれあい・体験をテーマに自然の中で遊びを通じて感性を育む体験型農業公園。1997年4月19日開業。指定管理者制度にもとづき、株式会社ワールドインテック パークマネジメント事業本部（旧:株式会社ファーム）が管理・運営している。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E6%BB%8B%E8%B3%80%E8%BE%B2%E6%A5%AD%E5%85%AC%E5%9C%92%E3%83%96%E3%83%AB%E3%83%BC%E3%83%A1%E3%81%AE%E4%B8%98",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "images": [],
     "external_ids": {
       "wikidata": "Q72184419",
@@ -22065,6 +23923,10 @@
       {
         "url": "https://www.openstreetmap.org/way/629055356",
         "fetched_at": "2026-09-27"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E6%BB%8B%E8%B3%80%E8%BE%B2%E6%A5%AD%E5%85%AC%E5%9C%92%E3%83%96%E3%83%AB%E3%83%BC%E3%83%A1%E3%81%AE%E4%B8%98",
+        "fetched_at": "2026-09-28"
       }
     ],
     "status": "published",
@@ -22074,9 +23936,12 @@
     "id": "wd-Q7399081",
     "name": {
       "ja": "佐川美術館",
+      "kana": "さがわびじゅつかん",
+      "romaji": "Sagawabijutsukan",
       "zh_tw": "佐川美术馆",
       "en": "Sagawa Art Museum"
     },
+    "kana_source": "wikipedia",
     "location": {
       "lat": 35.109444,
       "lng": 135.946111
@@ -22090,6 +23955,13 @@
     ],
     "featured": false,
     "score": 50.62,
+    "summary": {
+      "text": "佐川美術館（英語：Sagawa Art Museum）是一個位於日本滋賀縣守山市的美術館。",
+      "lang": "zh",
+      "source_url": "https://zh.wikipedia.org/wiki/%E4%BD%90%E5%B7%9D%E7%BE%8E%E6%9C%AF%E9%A6%86",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "images": [
       {
         "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5b/Sagawa_art_museum01s3200.jpg/960px-Sagawa_art_museum01s3200.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -22110,6 +23982,10 @@
       {
         "url": "https://www.openstreetmap.org/way/500030623",
         "fetched_at": "2026-09-27"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E4%BD%90%E5%B7%9D%E7%BE%8E%E8%A1%93%E9%A4%A8",
+        "fetched_at": "2026-09-28"
       }
     ],
     "status": "published",
@@ -22119,9 +23995,12 @@
     "id": "wd-Q74704569",
     "name": {
       "ja": "柏木神社",
+      "kana": "かしわぎじんじゃ",
+      "romaji": "Kashiwagijinja",
       "zh_tw": "柏木神社",
       "en": "Kashiwagi Shrine"
     },
+    "kana_source": "wikipedia",
     "location": {
       "lat": 34.977807,
       "lng": 136.159756
@@ -22136,6 +24015,13 @@
     ],
     "featured": false,
     "score": 34.02,
+    "summary": {
+      "text": "柏木神社（かしわぎじんじゃ）は、滋賀県甲賀市水口町にある神社。旧社格は県社。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E6%9F%8F%E6%9C%A8%E7%A5%9E%E7%A4%BE_%28%E7%94%B2%E8%B3%80%E5%B8%82%29",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "nearest_stations": [
       {
         "name": {
@@ -22176,6 +24062,10 @@
       {
         "url": "https://www.openstreetmap.org/way/186071866",
         "fetched_at": "2026-09-27"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E6%9F%8F%E6%9C%A8%E7%A5%9E%E7%A4%BE_%28%E7%94%B2%E8%B3%80%E5%B8%82%29",
+        "fetched_at": "2026-09-28"
       }
     ],
     "status": "published",
@@ -22185,9 +24075,12 @@
     "id": "wd-Q76820638",
     "name": {
       "ja": "滋賀県南郷水産センター",
+      "kana": "しがけんなんごうすいさんせんたー",
+      "romaji": "Shigakennangosuisansenta",
       "zh_tw": "滋賀県南郷水産センター",
       "en": "Nangou Fisheries Center"
     },
+    "kana_source": "wikipedia",
     "location": {
       "lat": 34.938972,
       "lng": 135.912333
@@ -22198,6 +24091,13 @@
     "tags": [],
     "featured": false,
     "score": 35.85,
+    "summary": {
+      "text": "滋賀県南郷水産センター（しがけんなんごうすいさんセンター）は、滋賀県大津市にある魚のテーマパークである。滋賀県漁業協同組合連合会が管理・運営している。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E6%BB%8B%E8%B3%80%E7%9C%8C%E5%8D%97%E9%83%B7%E6%B0%B4%E7%94%A3%E3%82%BB%E3%83%B3%E3%82%BF%E3%83%BC",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "images": [],
     "external_ids": {
       "wikidata": "Q76820638",
@@ -22211,6 +24111,10 @@
       {
         "url": "https://www.openstreetmap.org/way/319033704",
         "fetched_at": "2026-09-27"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E6%BB%8B%E8%B3%80%E7%9C%8C%E5%8D%97%E9%83%B7%E6%B0%B4%E7%94%A3%E3%82%BB%E3%83%B3%E3%82%BF%E3%83%BC",
+        "fetched_at": "2026-09-28"
       }
     ],
     "status": "published",
@@ -22240,6 +24144,13 @@
     ],
     "featured": false,
     "score": 40.99,
+    "summary": {
+      "text": "立木神社（たちきじんじゃ）は、滋賀県草津市草津にある神社。旧社格は郷社。東海道の草津宿にあったため厄除開運・交通安全の神社として信仰を集めている滋賀県隋一の古社である。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E7%AB%8B%E6%9C%A8%E7%A5%9E%E7%A4%BE",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "nearest_stations": [
       {
         "name": {
@@ -22308,6 +24219,13 @@
     ],
     "featured": false,
     "score": 45.93,
+    "summary": {
+      "text": "草津宿本陣（くさつじゅくほんじん）は、滋賀県草津市にある草津宿の本陣である。当主は代々田中七左衛門を名乗り、「田中七左衛門本陣」と呼ばれた。草津宿にもう1軒置かれた本陣も田中家（田中九蔵家）であり、2軒を区別するため、木材商を営んでいた七左衛門本陣は「木屋本陣」とも呼ばれた。敷地や建物の大半が現存している中でも最大級であり、国の史跡に指定されている。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E8%8D%89%E6%B4%A5%E5%AE%BF%E6%9C%AC%E9%99%A3",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "nearest_stations": [
       {
         "name": {
@@ -22428,6 +24346,13 @@
     ],
     "featured": true,
     "score": 85.56,
+    "summary": {
+      "text": "安土城，是安土時代織田信長的居城、織田政權的中心，位於日本滋賀縣近江八幡市安土町。號稱「天下布武」之城。",
+      "lang": "zh",
+      "source_url": "https://zh.wikipedia.org/wiki/%E5%AE%89%E5%9C%9F%E5%9F%8E",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "images": [
       {
         "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/10/Azuchi_Castle_Tower.jpg/960px-Azuchi_Castle_Tower.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -22457,9 +24382,12 @@
     "id": "wd-Q85882405",
     "name": {
       "ja": "瓦屋寺",
+      "kana": "かわらやじ",
+      "romaji": "Kawarayaji",
       "zh_tw": "瓦屋寺",
       "en": "Kawarayazen-ji Temple"
     },
+    "kana_source": "wikipedia",
     "location": {
       "lat": 35.124889,
       "lng": 136.183861
@@ -22474,6 +24402,13 @@
     ],
     "featured": false,
     "score": 39.35,
+    "summary": {
+      "text": "瓦屋寺（かわらやじ）は、滋賀県東近江市建部瓦屋寺町にある臨済宗妙心寺派の寺院。山号は石崎山。本尊は千手観音。箕作城がある箕作山に位置する。「湖国百選 社/寺編」に指定された観光名所の1つ。瓦屋禅寺とも呼ばれる。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E7%93%A6%E5%B1%8B%E5%AF%BA",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "images": [
       {
         "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/97/Kawaraya_Temple_%2C_%E7%93%A6%E5%B1%8B%E7%A6%85%E5%AF%BA_-_panoramio_%286%29.jpg/960px-Kawaraya_Temple_%2C_%E7%93%A6%E5%B1%8B%E7%A6%85%E5%AF%BA_-_panoramio_%286%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -22494,6 +24429,10 @@
       {
         "url": "https://www.openstreetmap.org/way/483158218",
         "fetched_at": "2026-09-27"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E7%93%A6%E5%B1%8B%E5%AF%BA",
+        "fetched_at": "2026-09-28"
       }
     ],
     "status": "published",
@@ -22523,6 +24462,13 @@
     ],
     "featured": false,
     "score": 37.6,
+    "summary": {
+      "text": "石坐神社（いわいじんじゃ）は、滋賀県大津市にある神社。式内社で、旧社格は村社。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E7%9F%B3%E5%9D%90%E7%A5%9E%E7%A4%BE",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "nearest_stations": [
       {
         "name": {
@@ -22572,9 +24518,12 @@
     "id": "wd-Q88281532",
     "name": {
       "ja": "草津市立草津宿街道交流館",
+      "kana": "くさつしりつくさつじゅくかいどうこうりゅうかん",
+      "romaji": "Kusatsushiritsukusatsujukukaidokoryukan",
       "zh_tw": "草津市立草津宿街道交流館",
       "en": "Kusatsu-juku Kaidō Kōryūkan"
     },
+    "kana_source": "wikipedia",
     "location": {
       "lat": 35.015694,
       "lng": 135.959083
@@ -22585,6 +24534,13 @@
     "tags": [],
     "featured": false,
     "score": 31.2,
+    "summary": {
+      "text": "草津市立草津宿街道交流館（くさつしりつくさつじゅくかいどうこうりゅうかん）は滋賀県草津市草津にある歴史史料館である。往時の草津宿のにぎわいの再生を目指した地域づくりの拠点として1999年4月に開館した。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E8%8D%89%E6%B4%A5%E5%B8%82%E7%AB%8B%E8%8D%89%E6%B4%A5%E5%AE%BF%E8%A1%97%E9%81%93%E4%BA%A4%E6%B5%81%E9%A4%A8",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "nearest_stations": [
       {
         "name": {
@@ -22616,6 +24572,10 @@
       {
         "url": "https://www.openstreetmap.org/way/783248397",
         "fetched_at": "2026-09-27"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E8%8D%89%E6%B4%A5%E5%B8%82%E7%AB%8B%E8%8D%89%E6%B4%A5%E5%AE%BF%E8%A1%97%E9%81%93%E4%BA%A4%E6%B5%81%E9%A4%A8",
+        "fetched_at": "2026-09-28"
       }
     ],
     "status": "published",
@@ -22648,6 +24608,13 @@
     ],
     "featured": true,
     "score": 107.94,
+    "summary": {
+      "text": "延曆寺是位於滋賀縣大津市坂本本町的一個寺院。位於比叡山內。不少名僧出身該寺，有「日本佛教之母山」的美稱，由於在戰國時代曾因庇護淺井長政跟朝倉義景的軍隊而遭織田信長在1571年率軍焚燬，所以也常在宗教、歷史文學作品中出現。該寺於1994年被聯合國教科文組織列為世界文化遺產。",
+      "lang": "zh",
+      "source_url": "https://zh.wikipedia.org/wiki/%E5%BB%B6%E6%9B%86%E5%AF%BA",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "nearest_stations": [
       {
         "name": {
@@ -22695,9 +24662,12 @@
     "id": "wd-Q93346924",
     "name": {
       "ja": "伊勢遺跡",
+      "kana": "いせいせき",
+      "romaji": "Iseiseki",
       "zh_tw": "伊勢遺跡",
       "en": "Ise Site"
     },
+    "kana_source": "wikipedia",
     "location": {
       "lat": 35.041417,
       "lng": 135.988778
@@ -22710,6 +24680,13 @@
     ],
     "featured": false,
     "score": 47.62,
+    "summary": {
+      "text": "伊勢遺跡（いせいせき）は、滋賀県守山市伊勢町・阿村町・栗東市野尻にある遺跡。国の史跡に指定されている。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E4%BC%8A%E5%8B%A2%E9%81%BA%E8%B7%A1",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "nearest_stations": [
       {
         "name": {
@@ -22745,6 +24722,10 @@
       {
         "url": "https://www.wikidata.org/wiki/Q93346924",
         "fetched_at": "2026-09-27"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E4%BC%8A%E5%8B%A2%E9%81%BA%E8%B7%A1",
+        "fetched_at": "2026-09-28"
       }
     ],
     "status": "published",
@@ -22754,9 +24735,12 @@
     "id": "wd-Q97186807",
     "name": {
       "ja": "長寿院",
+      "kana": "ちょうじゅいん",
+      "romaji": "Chojuin",
       "zh_tw": "長寿院",
       "en": "Ōhorazan Chōju-in Temple"
     },
+    "kana_source": "wikipedia",
     "location": {
       "lat": 35.285639,
       "lng": 136.26525
@@ -22771,6 +24755,13 @@
     ],
     "featured": false,
     "score": 36.74,
+    "summary": {
+      "text": "長寿院（ちょうじゅいん）は、滋賀県彦根市にある真言宗醍醐派の寺院。山号は大洞山。本尊は阿弥陀如来と日本三大弁財天の一つとされる弁財天。大洞弁財天と呼ばれている。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E9%95%B7%E5%AF%BF%E9%99%A2",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "images": [
       {
         "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/31/%C5%8Chorazan_Ch%C5%8Dju-in_Temple_20210411_19.jpg/960px-%C5%8Chorazan_Ch%C5%8Dju-in_Temple_20210411_19.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -22791,6 +24782,10 @@
       {
         "url": "https://www.openstreetmap.org/node/4389672844",
         "fetched_at": "2026-09-27"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E9%95%B7%E5%AF%BF%E9%99%A2",
+        "fetched_at": "2026-09-28"
       }
     ],
     "status": "published",
