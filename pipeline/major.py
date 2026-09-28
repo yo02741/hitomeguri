@@ -220,6 +220,25 @@ def extra_category_qids(pref: str) -> set[str]:
 OFFICIAL_SOURCES = {"okinawa": okinawastory.spots}
 
 
+def _names_overlap(a: set[str], b: set[str]) -> bool:
+    """名稱互相包含，或結尾相同 5 字以上。
+
+    例：美浜アメリカンビレッジ／美浜タウンリゾート・アメリカンビレッジ
+    """
+    for x in a:
+        for y in b:
+            if len(x) < 3 or len(y) < 3:
+                continue
+            if x in y or y in x:
+                return True
+            n = 0
+            while n < min(len(x), len(y)) and x[-1 - n] == y[-1 - n]:
+                n += 1
+            if n >= 5:
+                return True
+    return False
+
+
 def official_names(name: str) -> set[str]:
     """官方名稱的比對用變體：去掉括號（讀音、說明）、拆開「A／B」「A / B」合寫。"""
     base = re.sub(r"[（(][^）)]*[）)]", "", unicodedata.normalize("NFKC", name)).strip()
@@ -234,16 +253,22 @@ def merge_official(pref: str, drafts: dict[str, Draft]) -> None:
         return
     log(f"[{pref}] 官方觀光網站熱門排行…")
     items = fetch(config.OFFICIAL_TOP_N)
-    matched = added = skipped = 0
+    matched = added = 0
+    skipped: dict[str, list[str]] = {"沒有座標": [], "縣外": [], "住宿等": []}
     for o in items:
-        if o.lat is None or o.lng is None or not geo.contains_fine(pref, o.lat, o.lng):
-            skipped += 1
+        if o.lat is None or o.lng is None:
+            skipped["沒有座標"].append(o.name)
+            continue
+        if not geo.contains_fine(pref, o.lat, o.lng):
+            skipped["縣外"].append(o.name)
             continue
         if any(x in c for c in o.categories for x in config.OFFICIAL_EXCLUDE_CATEGORY):
-            skipped += 1
+            skipped["住宿等"].append(o.name)
             continue
         names = official_names(o.name)
-        target = None
+        # 名稱完全相同的優先，其次名稱重疊的；各自取最近的
+        exact: list[tuple[float, Draft]] = []
+        loose: list[tuple[float, Draft]] = []
         for d in drafts.values():
             if d.official:
                 continue
@@ -251,14 +276,12 @@ def merge_official(pref: str, drafts: dict[str, Draft]) -> None:
             if dist > config.OFFICIAL_MATCH_DISTANCE_M:
                 continue
             mine = {norm_name(n) for n in d.all_names()} - {""}
-            if names & mine or (
-                dist <= 800
-                and any(
-                    len(a) >= 3 and len(b) >= 3 and (a in b or b in a) for a in names for b in mine
-                )
-            ):
-                target = d
-                break
+            if names & mine:
+                exact.append((dist, d))
+            elif dist <= 800 and _names_overlap(names, mine):
+                loose.append((dist, d))
+        pool = exact or loose
+        target = min(pool, key=lambda x: x[0])[1] if pool else None
         if target:
             target.official = o
             matched += 1
@@ -266,7 +289,11 @@ def merge_official(pref: str, drafts: dict[str, Draft]) -> None:
             key = f"{o.source}-{o.id}"
             drafts[key] = Draft(key=key, lat=o.lat, lng=o.lng, official=o)
             added += 1
-    log(f"[{pref}]   官方 {len(items)} 筆：併入 {matched}、新增 {added}、略過 {skipped}")
+    n_skip = sum(len(v) for v in skipped.values())
+    log(f"[{pref}]   官方 {len(items)} 筆：併入 {matched}、新增 {added}、略過 {n_skip}")
+    for why, names in skipped.items():
+        if names:
+            log(f"[{pref}]     略過（{why}）：{'、'.join(names[:40])}")
 
 
 def collect(pref: str) -> tuple[dict[str, Draft], dict[str, Entity]]:
@@ -443,10 +470,14 @@ def drop_subparts(drafts: dict[str, Draft]) -> int:
     removed = 0
     for parent in items:
         pname = norm_name(parent.name_ja or "")
-        if len(pname) < 3 or parent.key not in drafts:
+        # 主體名稱太短（「古宇利」「知念」這類地名）會把「古宇利大橋」「知念岬」吞掉
+        if len(pname) < 4 or parent.key not in drafts:
             continue
         for child in items:
+            # 種子、官方網站、維基觀光地清單列出的是獨立景點，不併入
             if child is parent or child.key not in drafts or child.tier:
+                continue
+            if child.official or child.listed:
                 continue
             cname = norm_name(child.name_ja or "")
             if cname != pname and cname.startswith(pname):
