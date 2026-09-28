@@ -40,3 +40,14 @@ def test_merge_drafts_by_name_and_alias():
     out = specialties.merge_drafts([a, b, c])
     assert len(out) == 2
     assert out[0].maff is dish and out[0].qid == "Q1" and out[0].name == "あぶらげずし"
+
+
+def test_is_food_and_overview():
+    assert specialties.is_food(["dish"])
+    assert specialties.is_food(["麺料理"])
+    assert not specialties.is_food(["喫茶店"])
+    assert not specialties.is_food(["ラーメン店", "企業"])
+    assert not specialties.is_food(["song"])
+    assert specialties.is_overview("名古屋めし", "名古屋めし")
+    assert specialties.is_overview("北海道のラーメン", "ご当地ラーメン")
+    assert not specialties.is_overview("徳島ラーメン", "ご当地ラーメン")

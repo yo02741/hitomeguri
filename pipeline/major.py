@@ -539,6 +539,36 @@ EXCLUDE_P31_SUBSTR = (
 )  # fmt: skip
 
 
+# 以 P31 標籤的部分文字判斷（Wikidata 的標籤寫法不一：「政令指定都市の区」「廃止市町村」…）
+# 行政區（含已廢止的市町村）、令制國
+ADMIN_P31_SUBSTR = ("市町村", "自治体", "行政区", "都市の区", "日本の区", "令制国", "旧国")
+# 活動、事件：祭典之後放在深度探索頁，不當景點
+EVENT_P31_SUBSTR = (
+    "祭り", "祭礼", "例祭", "年中行事", "行事", "戦闘", "合戦", "紛争", "事変", "政変", "反乱",
+    "festival", "battle", "recurring event",
+)  # fmt: skip
+# 廣域地名：地圖上一個點代表不了（半島、山地、國立公園、群島）；世界遺產例外（白神山地）
+REGION_P31_SUBSTR = (
+    "国立公園", "国定公園", "半島", "山地", "山脈", "平野", "盆地", "諸島", "列島", "群島",
+    "national park", "peninsula", "mountain range", "archipelago",
+)  # fmt: skip
+
+
+def non_spot_kind(kinds: set[str], world_heritage: bool = False) -> bool:
+    """P31 標籤判斷不是景點：行政區、事件與活動、廣域地名、既有的排除類型。"""
+    if kinds & ADMIN_P31 or kinds & EXCLUDE_P31_EXACT:
+        return True
+    for k in kinds:
+        if any(s in k for s in ADMIN_P31_SUBSTR + EVENT_P31_SUBSTR):
+            return True
+        if not world_heritage and any(s in k for s in REGION_P31_SUBSTR):
+            return True
+        # 道の駅是景點，不當車站排除
+        if any(s in k and not (s == "駅" and "道の駅" in k) for s in EXCLUDE_P31_SUBSTR):
+            return True
+    return False
+
+
 # 總稱條目（世界遺產登錄名、古墳群）：以名稱判斷
 COLLECTIVE_NAME_RE = re.compile(
     r"(の文化財|古墳群|世界遺産|関連遺産群?|構成資産|の社寺|産業革命遺産.*|の古都.*)$"
@@ -584,6 +614,8 @@ def name_excluded(name_ja: str | None) -> bool:
 def drop_non_spots(drafts: dict[str, Draft]) -> list[str]:
     qids = sorted({q for d in drafts.values() if d.ent for q in d.ent.instance_of})
     labels = wikidata.labels_ja(qids) if qids else {}
+    hq = sorted({h for d in drafts.values() if d.ent for h in d.ent.heritage})
+    labels_h = wikidata.labels_ja(hq) if hq else {}
     manual = excluded_ids()
     dropped = []
     for key, d in list(drafts.items()):
@@ -600,13 +632,9 @@ def drop_non_spots(drafts: dict[str, Draft]) -> list[str]:
             del drafts[key]
             continue
         kinds = {labels.get(q, "") for q in d.ent.instance_of} - {""}
-        admin = bool(kinds & ADMIN_P31)
-        other = bool(kinds & EXCLUDE_P31_EXACT) or any(
-            sub in k and not (sub == "駅" and "道の駅" in k)  # 道の駅是景點
-            for k in kinds
-            for sub in EXCLUDE_P31_SUBSTR
-        )
-        if admin or other or name_excluded(d.name_ja):
+        heritage = {labels_h.get(h, "") for h in d.ent.heritage}
+        world = any("世界遺産" in h for h in heritage)
+        if non_spot_kind(kinds, world) or name_excluded(d.name_ja):
             dropped.append(d.name_ja or key)
             del drafts[key]
     return dropped

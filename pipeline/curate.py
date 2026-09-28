@@ -1,7 +1,8 @@
-"""把排除規則套用到既有的 data/spots，並補足精選（不需連網）。
+"""把排除規則套用到既有的 data/spots，並補足精選。
 
-seed-region 採集時已套用同樣規則；這個指令用在規則更新後整理既有資料，
-不必重跑整個採集。
+seed-region 採集時已套用同樣規則；這個指令用在規則更新後整理既有資料，不必重跑整個採集。
+預設不連網（名稱規則、人工排除清單）；--wikidata 另外重新查 Wikidata 的類型（P31），
+用 major.non_spot_kind 排除行政區、事件、廣域地名（要連網，在 Actions 上跑）。
 """
 
 from __future__ import annotations
@@ -11,7 +12,7 @@ from typing import Any
 
 from pipeline import config
 from pipeline.build_bundles import spot_type
-from pipeline.major import excluded_ids, name_excluded
+from pipeline.major import excluded_ids, log, name_excluded, non_spot_kind
 from pipeline.paths import SPOTS_DIR
 
 OFFICIAL_HOSTS = ("okinawastory.jp",)
@@ -32,7 +33,8 @@ SPOT_LIKE_TYPES = {
 
 def is_excluded(s: dict[str, Any], manual: set[str]) -> bool:
     if s["kind"] != "major":
-        return False
+        # 寶可夢店家改由擴充包提供（data/packs），主題層的舊資料移除
+        return "pokemon" in s.get("themes", [])
     if s["id"] in manual or name_excluded(s["name"]["ja"]):
         return True
     seeded = any(t.startswith("guide-") for t in s.get("tags", []))
@@ -68,10 +70,35 @@ def refill_featured(spots: list[dict[str, Any]]) -> list[str]:
     return added
 
 
-def prune_spots(pref: str) -> str:
+def wikidata_non_spots(spots: list[dict[str, Any]]) -> set[str]:
+    """重新查 Wikidata 的 P31，回傳不是景點的 spot id。"""
+    from pipeline.sources import wikidata
+
+    by_qid = {
+        s["external_ids"]["wikidata"]: s["id"]
+        for s in spots
+        if s["kind"] == "major" and s.get("external_ids", {}).get("wikidata")
+    }
+    ents = wikidata.entities(sorted(by_qid)) if by_qid else {}
+    p31 = sorted({q for e in ents.values() for q in e.instance_of})
+    labels = wikidata.labels_ja(p31) if p31 else {}
+    tags = {s["id"]: s.get("tags", []) for s in spots}
+    out = set()
+    for qid, e in ents.items():
+        sid = by_qid[qid]
+        kinds = {labels.get(q, "") for q in e.instance_of} - {""}
+        if non_spot_kind(kinds, "世界遺產" in tags.get(sid, [])):
+            out.add(sid)
+    return out
+
+
+def prune_spots(pref: str, recheck: bool = False) -> str:
     path = SPOTS_DIR / f"{pref}.json"
     spots = json.loads(path.read_text(encoding="utf-8"))
     manual = excluded_ids()
+    if recheck:
+        log(f"[{pref}] 重新查 Wikidata 類型…")
+        manual |= wikidata_non_spots(spots)
     removed = [s for s in spots if is_excluded(s, manual)]
     kept = [s for s in spots if not is_excluded(s, manual)]
     added = refill_featured(kept)
@@ -81,6 +108,9 @@ def prune_spots(pref: str) -> str:
         f"## {pref}",
         f"- 排除 {len(removed)} 筆（剩 {sum(s['kind'] == 'major' for s in kept)} 個大點）",
     ]
+    names = [s["name"]["ja"] for s in removed if s["kind"] == "major"]
+    if names:
+        lines.append(f"- 排除：{'、'.join(names)}")
     if removed_featured:
         lines.append(f"- 排除的精選：{'、'.join(removed_featured)}")
     if added:

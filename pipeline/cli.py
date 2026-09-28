@@ -86,7 +86,7 @@ def cmd_prune_spots(args: argparse.Namespace) -> int:
     from pipeline.paths import SPOTS_DIR
 
     prefs = args.prefectures or sorted(p.stem for p in SPOTS_DIR.glob("*.json"))
-    _emit("\n".join(prune_spots(p) for p in prefs), args.report)
+    _emit("\n".join(prune_spots(p, args.wikidata) for p in prefs), args.report)
     return 0
 
 
@@ -145,8 +145,9 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("--report")
     p.set_defaults(func=cmd_verify_flights)
 
-    p = sub.add_parser("prune-spots", help="套用排除規則到既有資料並補足精選（不連網）")
+    p = sub.add_parser("prune-spots", help="套用排除規則到既有資料並補足精選")
     p.add_argument("prefectures", nargs="*", help="省略時處理全部縣")
+    p.add_argument("--wikidata", action="store_true", help="重新查 Wikidata 類型（要連網）")
     p.add_argument("--report")
     p.set_defaults(func=cmd_prune_spots)
 

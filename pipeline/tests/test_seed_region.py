@@ -293,3 +293,16 @@ def test_official_names():
     assert major.norm_name("今帰仁城跡") in major.official_names("今帰仁城跡（なきじんじょうあと）")
     got = major.official_names("古宇利島／ティーヌ浜／トケイ浜")
     assert {major.norm_name("古宇利島"), major.norm_name("ティーヌ浜")} <= got
+
+
+def test_non_spot_kind():
+    assert major.non_spot_kind({"政令指定都市の区"})
+    assert major.non_spot_kind({"廃止市町村"})
+    assert major.non_spot_kind({"令制国"})
+    assert major.non_spot_kind({"祭り"})
+    assert major.non_spot_kind({"戦闘"})
+    assert major.non_spot_kind({"半島"})
+    assert not major.non_spot_kind({"山地"}, world_heritage=True)
+    assert not major.non_spot_kind({"神社"})
+    assert not major.non_spot_kind({"道の駅"})
+    assert not major.non_spot_kind({"湾"})

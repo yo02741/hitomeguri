@@ -39,11 +39,21 @@ WIKI_CATEGORIES: list[tuple[str, str | None, str]] = [
 ]
 PREF_WIKI_CATEGORIES = ["{name}の郷土料理"]
 
-# Wikidata P31 的日文標籤含這些字才算食物（分類裡混有公司、活動、人物）
+# Wikidata P31 的標籤（沒有日文時是英文）含這些字才算食物（分類裡混有公司、店家、歌曲）
 FOOD_P31 = (
     "料理", "食品", "食べ物", "食物", "菓子", "麺", "丼", "鍋", "寿司", "飲料", "飲み物",
     "茶", "酒", "焼", "漬", "餅", "うどん", "そば", "ラーメン", "パン", "調味料", "味噌",
-    "スープ", "汁", "揚げ物", "ご飯", "米",
+    "スープ", "汁", "揚げ物", "ご飯", "米", "牛", "肉", "果物", "野菜",
+    "dish", "food", "cuisine", "noodle", "soup", "sushi", "confection", "dessert", "sweet",
+    "snack", "beverage", "drink", "tea", "sake", "wine", "beer", "liquor", "shōchū", "beef",
+    "pork", "meat", "fruit", "vegetable", "rice", "bread", "pickle", "seasoning", "condiment",
+    "ramen", "udon", "soba", "wagashi", "mochi", "cake",
+)  # fmt: skip
+# 這些優先判斷為「不是食物」（喫茶店的「茶」、ラーメン店）
+NOT_FOOD_P31 = (
+    "店", "企業", "会社", "チェーン", "楽曲", "歌", "アルバム", "番組", "書籍", "漫画",
+    "キャラクター", "イベント", "restaurant", "company", "business", "song", "album",
+    "television", "book", "manga", "character", "event",
 )  # fmt: skip
 SWEETS_WORDS = (
     "まんじゅう",
@@ -80,7 +90,16 @@ class Draft:
 
 
 def is_food(p31_labels: list[str]) -> bool:
-    return any(w in lab for lab in p31_labels for w in FOOD_P31)
+    labels = [lab.lower() for lab in p31_labels if lab]
+    if any(w in lab for lab in labels for w in NOT_FOOD_P31):
+        return False
+    return any(w in lab for lab in labels for w in FOOD_P31)
+
+
+def is_overview(title: str, category: str) -> bool:
+    """分類的主條目、總論條目（「名古屋めし」「北海道のラーメン」「ラーメン」）不算一項特色。"""
+    t = strip_disambiguation(title)
+    return t == category or t == "ラーメン" or t.endswith("のラーメン")
 
 
 def category_for(name: str, p31_labels: list[str], hint: str) -> str:
@@ -110,17 +129,26 @@ def pref_from_text(text: str) -> str | None:
     return names.get(m.group(0)) if m else None
 
 
-def _match(name_ja: str) -> wikidata.Entity | None:
+def _match(
+    name_ja: str, p31_cache: dict[str, str], require_food: bool = True
+) -> wikidata.Entity | None:
+    """名稱搜尋 Wikidata：候選裡第一個名稱相符（且 P31 是食物）的項目。"""
     for v in name_variants(name_ja):
         qids = wikidata.search(v)
         if not qids:
             continue
         ents = wikidata.entities(qids)
+        need = sorted({q for e in ents.values() for q in e.instance_of} - set(p31_cache))
+        if need:
+            p31_cache.update(wikidata.labels_ja(need))
         for q in qids:
             e = ents.get(q)
             label = norm_name(e.labels.get("ja", "")) if e else ""
-            if e and label and (label == v or v in label or label in v):
-                return e
+            if not (e and label and (label == v or v in label or label in v)):
+                continue
+            if require_food and not is_food([p31_cache.get(x, "") for x in e.instance_of]):
+                continue
+            return e
     return None
 
 
@@ -131,7 +159,8 @@ def wiki_drafts(prefs: list[str]) -> list[Draft]:
         if fixed and fixed not in prefs:
             continue
         for t in wikipedia.category_members("jawiki", cat, depth=1):
-            hints.setdefault(t, (fixed, hint))
+            if not is_overview(t, cat):
+                hints.setdefault(t, (fixed, hint))
     for p in prefs:
         for pat in PREF_WIKI_CATEGORIES:
             for t in wikipedia.category_members("jawiki", pat.format(name=pref_full_name(p)), 0):
@@ -150,9 +179,9 @@ def wiki_drafts(prefs: list[str]) -> list[Draft]:
         if not ent:
             continue
         labels = [p31.get(q, "") for q in ent.instance_of]
-        # 拉麵分類的子分類裡有店家（公司）：名稱是麵類或 P31 是食物才收
-        food = is_food(labels) or (hint == "ramen" and re.search(r"(ラーメン|そば|麺)$", title))
-        if not food:
+        # 分類裡混有店家、公司、歌曲：P31 是食物才收（沒有 P31 的拉麵條目看名稱）
+        named_ramen = hint == "ramen" and re.search(r"(ラーメン|拉麺|そば|麺)$", title)
+        if not (is_food(labels) or (named_ramen and not ent.instance_of)):
             continue
         pref = fixed or resolver.resolve(ent) or pref_from_text(leads.get(title, ""))
         if pref not in prefs:
@@ -228,12 +257,10 @@ def seed_specialties(prefs: list[str]) -> str:
     log(f"Wikidata 名稱比對：{len(unmatched)} 項")
     p31_cache: dict[str, str] = {}
     for i, d in enumerate(unmatched):
-        ent = _match(d.name)
+        # 攻略種子有工藝品（常滑焼）：不要求是食物
+        ent = _match(d.name, p31_cache, require_food=d.source != "wikidata")
         if ent:
-            need = [q for q in ent.instance_of if q not in p31_cache]
-            p31_cache.update(wikidata.labels_ja(need) if need else {})
-            if is_food([p31_cache.get(q, "") for q in ent.instance_of]):
-                d.ent, d.qid = ent, ent.qid
+            d.ent, d.qid = ent, ent.qid
         if (i + 1) % 100 == 0:
             log(f"  {i + 1}/{len(unmatched)}")
     # 對到同一項目的再合併一次
@@ -262,9 +289,8 @@ def seed_specialties(prefs: list[str]) -> str:
             if not kana and ja_title:
                 kana = reading_from_lead(extracts["jawiki"].get(ja_title, ""), ja)
                 kana_source = "wikipedia" if kana else None
-        zh = strip_disambiguation(
-            labels.get("zh-tw") or labels.get("zh-hant") or labels.get("zh") or ja
-        )
+        zh = labels.get("zh-tw") or labels.get("zh-hant")
+        zh = strip_disambiguation(zh or (_TO_TW.convert(labels["zh"]) if labels.get("zh") else ja))
         summary = None
         sources: list[Source] = []
         if d.maff:
