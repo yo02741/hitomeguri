@@ -35,6 +35,8 @@ jobs:
           for u in $URLS; do
             echo "===== $u"
             curl -sS -L -A "hitomeguri-pipeline/0.1 (+https://github.com/yo02741/hitomeguri)" -o /tmp/body -w "status=%{http_code} type=%{content_type} size=%{size_download}\n" "$u" || true
+            # Shift_JIS 的網頁與 CSV（氣象廳等）轉成 UTF-8 再印
+            if ! iconv -f UTF-8 -t UTF-8 /tmp/body >/dev/null 2>&1; then iconv -f CP932 -t UTF-8 /tmp/body > /tmp/body8 2>/dev/null && mv /tmp/body8 /tmp/body; fi
             if [ -n "$PATTERN" ]; then grep -oE "$PATTERN" /tmp/body | head -200; else head -c "$MAX" /tmp/body; fi
             echo
             sleep 2
