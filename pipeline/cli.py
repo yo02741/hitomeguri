@@ -79,6 +79,15 @@ def _emit(text: str, report: str | None) -> None:
         Path(report).write_text(text, encoding="utf-8")
 
 
+def cmd_prune_spots(args: argparse.Namespace) -> int:
+    from pipeline.curate import prune_spots
+    from pipeline.paths import SPOTS_DIR
+
+    prefs = args.prefectures or sorted(p.stem for p in SPOTS_DIR.glob("*.json"))
+    _emit("\n".join(prune_spots(p) for p in prefs), args.report)
+    return 0
+
+
 def cmd_seed_wiki(args: argparse.Namespace) -> int:
     from pipeline.wiki import seed_wiki
 
@@ -117,6 +126,11 @@ def main(argv: list[str] | None = None) -> int:
     p = sub.add_parser("verify-flights", help="以 Claude + 網頁搜尋驗證台灣直飛航線")
     p.add_argument("--report")
     p.set_defaults(func=cmd_verify_flights)
+
+    p = sub.add_parser("prune-spots", help="套用排除規則到既有資料並補足精選（不連網）")
+    p.add_argument("prefectures", nargs="*", help="省略時處理全部縣")
+    p.add_argument("--report")
+    p.set_defaults(func=cmd_prune_spots)
 
     p = sub.add_parser("seed-wiki", help="由維基百科補簡介與缺漏念法（已有大點的縣）")
     p.add_argument("prefectures", nargs="+")

@@ -360,6 +360,11 @@ EXCLUDE_P31_SUBSTR = (
     "災害", "戦い", "絵画", "屏風",
     "絵巻", "美術作品", "彫刻作品", "書跡", "典籍", "古文書", "工芸品", "刀剣", "写本",
     "断層", "構造線", "路線", "街道", "宗教団体", "新宗教", "遊廓", "遊郭", "企業", "会社",
+    # 人物、物品、園區內遊樂設施、住宿（全國擴展時發現混入精選）
+    "人間", "ヒト", "妖怪", "機関車", "航空機", "軍艦", "戦艦", "艦船", "舞楽", "郷土芸能",
+    "アトラクション", "コースター", "ダークライド", "ホテル", "印章", "土偶", "出土品", "飛行隊",
+    "human", "yōkai", "locomotive", "aircraft", "battleship", "amusement ride", "roller coaster",
+    "dark ride", "hotel",
     # 沒有日文標籤時 labels_ja 會回傳英文
     "station", "accident", "incident", "disaster", "painting", "folding screen",
     "organization", "religious movement", "World Heritage", "red-light", "company",
@@ -367,26 +372,48 @@ EXCLUDE_P31_SUBSTR = (
 
 
 # 總稱條目（世界遺產登錄名、古墳群）：以名稱判斷
-COLLECTIVE_NAME_RE = re.compile(r"(の文化財|古墳群|世界遺産|関連遺産群|構成資産)$")
+COLLECTIVE_NAME_RE = re.compile(
+    r"(の文化財|古墳群|世界遺産|関連遺産群?|構成資産|の社寺|産業革命遺産.*|の古都.*)$"
+)
+
+
+def excluded_ids() -> set[str]:
+    """人工排除清單（data/seed/exclude.json）的景點 id。"""
+    path = SEED_DIR / "exclude.json"
+    if not path.exists():
+        return set()
+    return {x["id"] for x in json.loads(path.read_text(encoding="utf-8"))["items"]}
+
+
+def name_excluded(name_ja: str | None) -> bool:
+    """以名稱判斷的排除：總稱條目、古墳（使用者決定：一般旅客不會專程去）。"""
+    name = strip_disambiguation(unicodedata.normalize("NFKC", name_ja or ""))
+    return bool(COLLECTIVE_NAME_RE.search(name) or KOFUN_DROP_RE.search(name))
 
 
 def drop_non_spots(drafts: dict[str, Draft]) -> list[str]:
     qids = sorted({q for d in drafts.values() if d.ent for q in d.ent.instance_of})
     labels = wikidata.labels_ja(qids) if qids else {}
+    manual = excluded_ids()
     dropped = []
     for key, d in list(drafts.items()):
+        # 只有 OSM、沒有 Wikidata 項目的點大多是遊樂設施、動物舍、店家等（分數也都是 0）；
+        # 攻略種子例外
         if not d.ent:
+            if not d.tier or name_excluded(d.name_ja):
+                dropped.append(d.name_ja or key)
+                del drafts[key]
+            continue
+        if f"wd-{d.ent.qid}" in manual:
+            dropped.append(d.name_ja or key)
+            del drafts[key]
             continue
         kinds = {labels.get(q, "") for q in d.ent.instance_of} - {""}
         admin = bool(kinds & ADMIN_P31)
         other = bool(kinds & EXCLUDE_P31_EXACT) or any(
             sub in k for k in kinds for sub in EXCLUDE_P31_SUBSTR
         )
-        collective = bool(COLLECTIVE_NAME_RE.search(d.name_ja or ""))
-        # 古墳不列為景點（使用者決定：一般旅客不會專程去）
-        name = strip_disambiguation(unicodedata.normalize("NFKC", d.name_ja or ""))
-        kofun = bool(KOFUN_DROP_RE.search(name))
-        if admin or other or collective or kofun:
+        if admin or other or name_excluded(d.name_ja):
             dropped.append(d.name_ja or key)
             del drafts[key]
     return dropped

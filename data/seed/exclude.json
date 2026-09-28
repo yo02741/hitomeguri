@@ -1,0 +1,371 @@
+{
+  "_readme": "人工排除清單：不是景點（人物、物品、作品、園區內遊樂設施、世界遺產總稱等）。seed-region 以 id 排除，並在 exclude-spots 指令套用到既有資料。",
+  "items": [
+    {
+      "id": "osm-way-488832051",
+      "prefecture": "akita",
+      "name": "D51 232 蒸気機関車",
+      "reason": "物品（機關車）"
+    },
+    {
+      "id": "wd-Q1107656",
+      "prefecture": "akita",
+      "name": "庭園",
+      "reason": "名稱不是景點"
+    },
+    {
+      "id": "wd-Q11435617",
+      "prefecture": "akita",
+      "name": "大日堂舞楽",
+      "reason": "表演藝術，不是地點"
+    },
+    {
+      "id": "wd-Q11308639",
+      "prefecture": "chiba",
+      "name": "シンデレラのフェアリーテイル・ホール",
+      "reason": "迪士尼園區內的遊樂設施"
+    },
+    {
+      "id": "wd-Q11317957",
+      "prefecture": "chiba",
+      "name": "チップとデールのツリーハウス",
+      "reason": "迪士尼園區內的遊樂設施"
+    },
+    {
+      "id": "wd-Q11332978",
+      "prefecture": "chiba",
+      "name": "フォートレス・エクスプロレーション",
+      "reason": "迪士尼園區內的遊樂設施"
+    },
+    {
+      "id": "wd-Q11348247",
+      "prefecture": "chiba",
+      "name": "リドアイル",
+      "reason": "迪士尼園區內的遊樂設施"
+    },
+    {
+      "id": "wd-Q2300040",
+      "prefecture": "chiba",
+      "name": "タートル・トーク",
+      "reason": "迪士尼園區內的遊樂設施"
+    },
+    {
+      "id": "wd-Q267353",
+      "prefecture": "chiba",
+      "name": "レイジングスピリッツ",
+      "reason": "迪士尼園區內的遊樂設施"
+    },
+    {
+      "id": "wd-Q2742709",
+      "prefecture": "chiba",
+      "name": "シンデレラ城",
+      "reason": "迪士尼園區內的遊樂設施"
+    },
+    {
+      "id": "wd-Q2744001",
+      "prefecture": "chiba",
+      "name": "アラジンのマジック・カーペット",
+      "reason": "迪士尼園區內的遊樂設施"
+    },
+    {
+      "id": "wd-Q2777874",
+      "prefecture": "chiba",
+      "name": "ジャングルクルーズ",
+      "reason": "迪士尼園區內的遊樂設施"
+    },
+    {
+      "id": "wd-Q28530645",
+      "prefecture": "chiba",
+      "name": "タワー・オブ・テラー",
+      "reason": "迪士尼園區內的遊樂設施"
+    },
+    {
+      "id": "wd-Q3006137",
+      "prefecture": "chiba",
+      "name": "蒸気船マークトウェイン号",
+      "reason": "迪士尼園區內的遊樂設施"
+    },
+    {
+      "id": "wd-Q30921752",
+      "prefecture": "chiba",
+      "name": "マジックランプシアター",
+      "reason": "迪士尼園區內的遊樂設施"
+    },
+    {
+      "id": "wd-Q3150108",
+      "prefecture": "chiba",
+      "name": "インディ・ジョーンズ・アドベンチャー",
+      "reason": "迪士尼園區內的遊樂設施"
+    },
+    {
+      "id": "wd-Q3439399",
+      "prefecture": "chiba",
+      "name": "ロジャーラビットのカートゥーンスピン",
+      "reason": "迪士尼園區內的遊樂設施"
+    },
+    {
+      "id": "wd-Q3487196",
+      "prefecture": "chiba",
+      "name": "白雪姫と七人のこびと",
+      "reason": "迪士尼園區內的遊樂設施"
+    },
+    {
+      "id": "wd-Q3496988",
+      "prefecture": "chiba",
+      "name": "スター・ツアーズ：ザ・アドベンチャーズ・コンティニュー",
+      "reason": "迪士尼園區內的遊樂設施"
+    },
+    {
+      "id": "wd-Q3567503",
+      "prefecture": "chiba",
+      "name": "ウエスタンリバー鉄道",
+      "reason": "迪士尼園區內的遊樂設施"
+    },
+    {
+      "id": "wd-Q54087317",
+      "prefecture": "chiba",
+      "name": "海底2万マイル",
+      "reason": "迪士尼園區內的遊樂設施"
+    },
+    {
+      "id": "wd-Q65042943",
+      "prefecture": "chiba",
+      "name": "美女と野獣“魔法のものがたり”",
+      "reason": "迪士尼園區內的遊樂設施"
+    },
+    {
+      "id": "wd-Q65044325",
+      "prefecture": "chiba",
+      "name": "ワールド・オブ・フローズン",
+      "reason": "迪士尼園區內的遊樂設施"
+    },
+    {
+      "id": "wd-Q65046459",
+      "prefecture": "chiba",
+      "name": "ファンタジースプリングス",
+      "reason": "迪士尼園區內的遊樂設施"
+    },
+    {
+      "id": "wd-Q6600319",
+      "prefecture": "chiba",
+      "name": "東京ディズニーシーのアトラクション",
+      "reason": "迪士尼園區內的遊樂設施"
+    },
+    {
+      "id": "wd-Q6838553",
+      "prefecture": "chiba",
+      "name": "ミッキーの家",
+      "reason": "迪士尼園區內的遊樂設施"
+    },
+    {
+      "id": "wd-Q85873622",
+      "prefecture": "chiba",
+      "name": "ベイマックスのハッピーライド",
+      "reason": "迪士尼園區內的遊樂設施"
+    },
+    {
+      "id": "wd-Q859406",
+      "prefecture": "chiba",
+      "name": "ビッグサンダー・マウンテン",
+      "reason": "迪士尼園區內的遊樂設施"
+    },
+    {
+      "id": "wd-Q935409",
+      "prefecture": "chiba",
+      "name": "マーメイドラグーン",
+      "reason": "迪士尼園區內的遊樂設施"
+    },
+    {
+      "id": "wd-Q964565",
+      "prefecture": "chiba",
+      "name": "空飛ぶダンボ",
+      "reason": "迪士尼園區內的遊樂設施"
+    },
+    {
+      "id": "wd-Q2975212",
+      "prefecture": "fukuoka",
+      "name": "漢委奴国王印",
+      "reason": "物品（金印）"
+    },
+    {
+      "id": "wd-Q986144",
+      "prefecture": "hokkaido",
+      "name": "国鉄D51形蒸気機関車",
+      "reason": "物品（機關車）"
+    },
+    {
+      "id": "wd-Q6924212",
+      "prefecture": "ibaraki",
+      "name": "筑波山鋼索鉄道線",
+      "reason": "鐵道路線"
+    },
+    {
+      "id": "wd-Q2896261",
+      "prefecture": "iwate",
+      "name": "平泉",
+      "reason": "世界遺產總稱"
+    },
+    {
+      "id": "wd-Q11444847",
+      "prefecture": "kagoshima",
+      "name": "奄美大島、徳之島、沖縄島北部及び西表島",
+      "reason": "世界遺產總稱"
+    },
+    {
+      "id": "wd-Q11545893",
+      "prefecture": "kanagawa",
+      "name": "武家の古都・鎌倉",
+      "reason": "世界遺產候補總稱"
+    },
+    {
+      "id": "wd-Q1813237",
+      "prefecture": "kanagawa",
+      "name": "陸奥",
+      "reason": "軍艦（已不存在）"
+    },
+    {
+      "id": "wd-Q227494",
+      "prefecture": "kanagawa",
+      "name": "富嶽三十六景",
+      "reason": "作品"
+    },
+    {
+      "id": "wd-Q2732289",
+      "prefecture": "kumamoto",
+      "name": "油すまし",
+      "reason": "妖怪，不是地點"
+    },
+    {
+      "id": "wd-Q2505817",
+      "prefecture": "miyagi",
+      "name": "ブルーインパルス",
+      "reason": "飛行隊，不是地點"
+    },
+    {
+      "id": "wd-Q107045454",
+      "prefecture": "nagano",
+      "name": "土偶／長野県中ッ原遺跡出土",
+      "reason": "出土品"
+    },
+    {
+      "id": "wd-Q93643",
+      "prefecture": "nagasaki",
+      "name": "長崎と天草地方の潜伏キリシタン関連遺産",
+      "reason": "世界遺產總稱"
+    },
+    {
+      "id": "wd-Q986144",
+      "prefecture": "nara",
+      "name": "国鉄D51形蒸気機関車",
+      "reason": "物品（機關車）"
+    },
+    {
+      "id": "wd-Q127378385",
+      "prefecture": "niigata",
+      "name": "佐渡島の金山",
+      "reason": "世界遺產總稱（佐渡鉱山另列）"
+    },
+    {
+      "id": "wd-Q267929",
+      "prefecture": "okayama",
+      "name": "有森裕子",
+      "reason": "人物"
+    },
+    {
+      "id": "wd-Q48514",
+      "prefecture": "okayama",
+      "name": "雪舟",
+      "reason": "人物"
+    },
+    {
+      "id": "wd-Q8048278",
+      "prefecture": "okinawa",
+      "name": "山原",
+      "reason": "地區總稱（やんばる國立公園另列）"
+    },
+    {
+      "id": "wd-Q104125924",
+      "prefecture": "osaka",
+      "name": "マリオカート 〜クッパの挑戦状〜",
+      "reason": "USJ 園區內的遊樂設施"
+    },
+    {
+      "id": "wd-Q1207226",
+      "prefecture": "osaka",
+      "name": "ウォーターワールド",
+      "reason": "USJ 園區內的遊樂設施"
+    },
+    {
+      "id": "wd-Q15535185",
+      "prefecture": "osaka",
+      "name": "ミニオン・ハチャメチャ・ライド",
+      "reason": "USJ 園區內的遊樂設施"
+    },
+    {
+      "id": "wd-Q2453087",
+      "prefecture": "osaka",
+      "name": "ハリー・ポッター・アンド・ザ・フォービドゥン・ジャーニー",
+      "reason": "USJ 園區內的遊樂設施"
+    },
+    {
+      "id": "wd-Q28104177",
+      "prefecture": "osaka",
+      "name": "スーパー・ニンテンドー・ワールド",
+      "reason": "USJ 園區內的遊樂設施"
+    },
+    {
+      "id": "wd-Q7572345",
+      "prefecture": "osaka",
+      "name": "スペース・ファンタジー・ザ・ライド",
+      "reason": "USJ 園區內的遊樂設施"
+    },
+    {
+      "id": "wd-Q1063133",
+      "prefecture": "tochigi",
+      "name": "日光の社寺",
+      "reason": "世界遺產總稱"
+    },
+    {
+      "id": "wd-Q788917",
+      "prefecture": "tochigi",
+      "name": "眠り猫",
+      "reason": "日光東照宮內的雕刻"
+    },
+    {
+      "id": "wd-Q1151821",
+      "prefecture": "tokyo",
+      "name": "北硫黄島",
+      "reason": "一般不可登島"
+    },
+    {
+      "id": "wd-Q1187278",
+      "prefecture": "tokyo",
+      "name": "西之島",
+      "reason": "一般不可登島"
+    },
+    {
+      "id": "wd-Q13383295",
+      "prefecture": "tokyo",
+      "name": "小笠原諸島",
+      "reason": "群島總稱"
+    },
+    {
+      "id": "wd-Q1737305",
+      "prefecture": "tottori",
+      "name": "C-1",
+      "reason": "飛機"
+    },
+    {
+      "id": "wd-Q11337953",
+      "prefecture": "toyama",
+      "name": "ホテル立山",
+      "reason": "飯店"
+    },
+    {
+      "id": "wd-Q7751872",
+      "prefecture": "yamaguchi",
+      "name": "明治日本の産業革命遺産 製鉄・鉄鋼、造船、石炭産業",
+      "reason": "世界遺產總稱"
+    }
+  ]
+}

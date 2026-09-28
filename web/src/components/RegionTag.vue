@@ -37,12 +37,17 @@ const routes = computed(() =>
         <span class="text-[10px] leading-none font-bold">全國</span>
       </RouterLink>
       <span class="h-8 w-px shrink-0 bg-on-region opacity-25" aria-hidden="true"></span>
-      <span class="flex flex-col pl-1">
+      <span class="flex shrink-0 flex-col pl-1 whitespace-nowrap">
         <span lang="ja" class="text-caption tracking-kana opacity-85">{{ region.name.kana }}</span>
         <span lang="ja" class="text-h3 leading-tight font-black tracking-name">{{ region.name.ja }}</span>
       </span>
-      <span class="ml-auto flex flex-col items-end self-end">
-        <span class="font-latin text-body-sm font-bold tracking-[0.3em] uppercase">{{ region.name.romaji }}</span>
+      <span class="ml-auto flex min-w-0 flex-col items-end self-end">
+        <!-- 長的羅馬拼音（KAGOSHIMA 等）收緊字距，縣名不換行 -->
+        <span
+          class="font-latin text-body-sm font-bold whitespace-nowrap uppercase"
+          :class="region.name.romaji.length > 7 ? 'tracking-[0.12em]' : 'tracking-[0.3em]'"
+          >{{ region.name.romaji }}</span
+        >
         <span class="text-caption font-bold">{{ region.area_name }}</span>
       </span>
     </span>

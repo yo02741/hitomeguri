@@ -135,8 +135,8 @@ def test_seed_region_end_to_end(fake_sources):
     by_id = {s["id"]: s for s in spots}
 
     # 縣外的大阪城、縣本身、車站被排除；本殿併入主體；清水寺 OSM 與 Wikidata 合併；
-    # 座標在縣界外但行政區屬於京都的境界寺收錄
-    assert set(by_id) == {"wd-Q1", "wd-Q3", "wd-Q5", "wd-Q8", "osm-node-11"}
+    # 座標在縣界外但行政區屬於京都的境界寺收錄；只有 OSM、沒有 Wikidata 的八坂の塔排除
+    assert set(by_id) == {"wd-Q1", "wd-Q3", "wd-Q5", "wd-Q8"}
 
     fushimi = by_id["wd-Q1"]
     assert fushimi["featured"] is True
@@ -199,7 +199,29 @@ def test_build_bundles(fake_sources):
     out = fake_sources / "bundles"
     build_bundles.build(fake_sources / "spots", out)
     index = json.loads((out / "_index.json").read_text(encoding="utf-8"))
-    assert index["prefectures"]["kyoto"]["count"] == 5
+    assert index["prefectures"]["kyoto"]["count"] == 4
     entries = json.loads((out / "map" / "kyoto.json").read_text(encoding="utf-8"))
     fushimi = next(e for e in entries if e["id"] == "wd-Q1")
     assert fushimi["f"] == 1 and fushimi["h"] == "ふしみいなりたいしゃ" and fushimi["c"] == "神社"
+
+
+def test_prune_and_refill_featured(tmp_path, monkeypatch):
+    from pipeline import curate
+
+    spots = [
+        {"id": "wd-Q1", "kind": "major", "name": {"ja": "甲寺"}, "tags": ["寺院"], "featured": True,
+         "score": 90, "status": "published", "external_ids": {"wikidata": "Q1"}},
+        {"id": "wd-Q2", "kind": "major", "name": {"ja": "某古墳 (某市)"}, "tags": [], "featured": True,
+         "score": 80, "status": "published", "external_ids": {"wikidata": "Q2"}},
+        {"id": "osm-node-3", "kind": "major", "name": {"ja": "パチンコ"}, "tags": [], "featured": False,
+         "score": 0, "status": "published", "external_ids": {}},
+        {"id": "wd-Q4", "kind": "major", "name": {"ja": "機関車"}, "tags": [], "featured": False,
+         "score": 70, "status": "published", "external_ids": {"wikidata": "Q4"}},
+        {"id": "wd-Q5", "kind": "major", "name": {"ja": "乙神社"}, "tags": ["神社"], "featured": False,
+         "score": 60, "status": "published", "external_ids": {"wikidata": "Q5"}},
+    ]  # fmt: skip
+    kept = [s for s in spots if not curate.is_excluded(s, {"wd-Q9"})]
+    assert [s["id"] for s in kept] == ["wd-Q1", "wd-Q4", "wd-Q5"]
+    added = curate.refill_featured(kept)
+    # 類型不明的「機関車」不遞補，改補有類型的乙神社
+    assert added == ["乙神社"]

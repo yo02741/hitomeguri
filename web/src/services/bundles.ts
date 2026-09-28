@@ -3,7 +3,7 @@
 export interface MapSpot {
   id: string
   n: string // 日文名
-  z: string // 繁中名
+  z?: string // 繁中名（featured.json 省略）
   lat: number
   lng: number
   k: 'major' | 'theme'

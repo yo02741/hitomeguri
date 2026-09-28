@@ -78,8 +78,19 @@ onBeforeUnmount(() => mq?.removeEventListener('change', syncDesktop))
 const FLOAT_INSET = 300 + 16 * 2
 const insetLeft = computed(() => (desktop.value ? FLOAT_INSET : 0))
 
-function spotBounds(spots: MapSpot[]): [number, number, number, number] | null {
-  if (!spots.length) return null
+function median(xs: number[]): number {
+  const a = [...xs].sort((x, y) => x - y)
+  return a[Math.floor(a.length / 2)]!
+}
+
+// 定位用範圍：離主要群聚太遠的點（例：東京的小笠原諸島）不算進去，否則畫面會拉得很遠
+function spotBounds(all: MapSpot[]): [number, number, number, number] | null {
+  if (!all.length) return null
+  const cx = median(all.map((p) => p.lng))
+  const cy = median(all.map((p) => p.lat))
+  const d = all.map((p) => Math.hypot(p.lng - cx, p.lat - cy))
+  const limit = Math.max(median(d) * 3, 0.3)
+  const spots = all.filter((_, i) => d[i]! <= limit)
   let w = 180, s = 90, e = -180, n = -90
   for (const p of spots) {
     w = Math.min(w, p.lng); e = Math.max(e, p.lng)
@@ -128,6 +139,8 @@ watch(
     loadingSpot.value = true
     selectedSpot.value = await catalog.getSpot(id)
     loadingSpot.value = false
+    // 找不到的景點（舊連結、已排除）：關閉卡片
+    if (!selectedSpot.value && selectedId.value === id) closeSpot()
   },
   { immediate: true },
 )

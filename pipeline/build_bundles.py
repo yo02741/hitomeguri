@@ -43,6 +43,9 @@ DESIGNATION_TAGS = {label for _, label, _ in config.HERITAGE_RULES}
 DESIGNATION_FALLBACK = {"特別史跡": "史跡", "史跡": "史跡", "特別名勝": "名勝", "名勝": "名勝"}
 
 
+FEATURED_KEYS = {"id", "n", "lat", "lng", "k", "f", "s", "c", "i"}
+
+
 def spot_type(tags: list[str]) -> str | None:
     tags = [t for t in tags if not t.startswith("guide-")]
     for t in tags:
@@ -60,8 +63,9 @@ def map_entry(s: dict[str, Any]) -> dict[str, Any]:
         "id": s["id"],
         "n": name["ja"],
         "z": name["zh_tw"],
-        "lat": s["location"]["lat"],
-        "lng": s["location"]["lng"],
+        # 小數 5 位約 1 公尺，縮小 bundle
+        "lat": round(s["location"]["lat"], 5),
+        "lng": round(s["location"]["lng"], 5),
         "k": s["kind"],
         "f": 1 if s["featured"] else 0,
         "s": round(s["score"], 1),
@@ -92,7 +96,10 @@ def build(src: Path = SPOTS_DIR, dst: Path = BUNDLES_DIR) -> list[Path]:
         # 地圖 bundle 只放大點（主題層暫停，PLAN.md §5）；主題小店仍在 detail
         majors = [map_entry(s) for s in published if s["kind"] == "major"]
         written.append(_write(dst / "map" / f"{pref}.json", majors))
-        featured[pref] = [e for e in majors if e["f"] == 1]
+        # 首頁用：只留地圖顯示需要的欄位（名稱、座標、類型、照片）
+        featured[pref] = [
+            {k: v for k, v in e.items() if k in FEATURED_KEYS} for e in majors if e["f"] == 1
+        ]
         written.append(_write(dst / "detail" / f"{pref}.json", published))
         index["prefectures"][pref] = {
             "count": len(published),
