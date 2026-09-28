@@ -13,6 +13,10 @@ on:
         description: "每個網址最多印出幾個位元組"
         required: true
         default: "20000"
+      pattern:
+        description: "有填時只印出符合這個 grep -oE 樣式的片段"
+        required: false
+        default: ""
 
 permissions:
   contents: read
@@ -26,11 +30,12 @@ jobs:
         env:
           URLS: ${{ inputs.urls }}
           MAX: ${{ inputs.max_bytes }}
+          PATTERN: ${{ inputs.pattern }}
         run: |
           for u in $URLS; do
             echo "===== $u"
             curl -sS -L -A "hitomeguri-pipeline/0.1 (+https://github.com/yo02741/hitomeguri)" -o /tmp/body -w "status=%{http_code} type=%{content_type} size=%{size_download}\n" "$u" || true
-            head -c "$MAX" /tmp/body
+            if [ -n "$PATTERN" ]; then grep -oE "$PATTERN" /tmp/body | head -200; else head -c "$MAX" /tmp/body; fi
             echo
             sleep 2
           done
