@@ -8,6 +8,7 @@ def test_is_festival_by_p31_and_name():
     assert not is_festival("長刀鉾", ["山鉾"])
     assert not is_festival("八坂神社", ["神社"])
     assert not is_festival("日本の祭り一覧", ["一覧記事"])
+    assert not is_festival("京都三大祭り", ["祭り"])
     # P31 沒有時看名稱
     assert is_festival("唐津くんち", [])
     assert not is_festival("某保存会", [])
@@ -24,7 +25,19 @@ def test_months_from_text():
     assert months_from_text("例年7月下旬に開催される。") == [7]
     assert months_from_text("毎年5月15日に行われる。1884年に始まった。") == [5]
     assert months_from_text("10月9日から11日にかけて行われる秋祭り。") == [10]
+    assert months_from_text("弘前公園で4月下旬から5月上旬まで開かれる桜の祭り。") == [4]
     # 舊曆與創始年份不算
     assert months_from_text("毎年旧暦7月15日に行われる。") == []
     assert months_from_text("毎年旧暦12月に行われる。") == []
     assert months_from_text("1603年に始まった祭り。") == []
+
+
+def test_location_falls_back_to_place():
+    from pipeline.festivals import location_of
+    from pipeline.sources.wikidata import Entity
+
+    fest = Entity(qid="Q1", location_items=["Q2"])
+    shrine = Entity(qid="Q2", lat=35.0, lng=135.7)
+    loc = location_of(fest, {"Q2": shrine})
+    assert loc is not None and (loc.lat, loc.lng) == (35.0, 135.7)
+    assert location_of(Entity(qid="Q3"), {}) is None

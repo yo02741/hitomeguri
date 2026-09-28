@@ -49,12 +49,15 @@ _MONTH_PATTERNS = [
         r"(?<!旧暦)(?<!陰暦)(?<!\d)(\d{1,2})月[^。]{0,24}?"
         r"(?:行われ|開催され|催され|実施され|開かれ)"
     ),
+    # 「4月下旬から5月上旬まで」
+    re.compile(r"(?<!旧暦)(?<!陰暦)(?<!\d)(\d{1,2})月(?:上旬|中旬|下旬|初旬|末)"),
 ]
 _MONTH_LABEL = re.compile(r"^(\d{1,2})月")
 
 
 def is_festival(title: str, p31_labels: list[str]) -> bool:
-    if "一覧" in title:
+    # 一覧、「京都三大祭り」這類總論條目
+    if "一覧" in title or "三大" in title:
         return False
     labels = [lab.lower() for lab in p31_labels if lab]
     if any(w in lab for lab in labels for w in NOT_FESTIVAL_P31):
@@ -81,6 +84,14 @@ def months_from_text(text: str) -> list[int]:
         if found:
             return sorted(set(found))[:3]
     return []
+
+
+def location_of(ent: wikidata.Entity, places: dict[str, wikidata.Entity]) -> Location | None:
+    """活動本身的座標（P625），沒有則用第一個舉行地點（P276）的座標。"""
+    for e in [ent, *(places[q] for q in ent.location_items[:1] if q in places)]:
+        if e.lat is not None and e.lng is not None:
+            return Location(lat=e.lat, lng=e.lng)
+    return None
 
 
 def _summary(
@@ -137,6 +148,10 @@ def seed_festivals(prefs: list[str]) -> str:
             for s in ("zhwiki", "jawiki")
         }
         images = commons.image_info([e.image for e in ents_kept if e.image])
+        # 沒有座標的用舉行地點（P276，例：神社）的座標
+        places = wikidata.entities(
+            sorted({q for e in ents_kept if e.lat is None for q in e.location_items[:1]})
+        )
 
         items: list[dict[str, Any]] = []
         for title, ent in cands:
@@ -182,9 +197,7 @@ def seed_festivals(prefs: list[str]) -> str:
                 prefecture=pref,
                 months=months,
                 months_source=months_source,
-                location=Location(lat=ent.lat, lng=ent.lng)
-                if ent.lat is not None and ent.lng is not None
-                else None,
+                location=location_of(ent, places),
                 summary=summary,
                 kana_source=kana_source,
                 images=img,

@@ -26,6 +26,7 @@ class Entity:
     heritage: list[str] = field(default_factory=list)  # P1435 的 QID
     instance_of: list[str] = field(default_factory=list)  # P31
     located_in: list[str] = field(default_factory=list)  # P131
+    location_items: list[str] = field(default_factory=list)  # P276（活動的舉行地點）
     sitelinks: dict[str, str] = field(default_factory=dict)  # 例 {"jawiki": "伏見稲荷大社"}
     # 定期活動的日期與月份（P837 day in year for periodic occurrence、P2922 month of the year）
     occurs: list[str] = field(default_factory=list)
@@ -98,6 +99,7 @@ def entities(qids: list[str]) -> dict[str, Entity]:
             ent.heritage = [v["id"] for v in _claim_values(claims, "P1435")]
             ent.instance_of = [v["id"] for v in _claim_values(claims, "P31")]
             ent.located_in = [v["id"] for v in _claim_values(claims, "P131")]
+            ent.location_items = [v["id"] for v in _claim_values(claims, "P276")]
             ent.sitelinks = {k: v["title"] for k, v in e.get("sitelinks", {}).items()}
             ent.occurs = [
                 v["id"]
