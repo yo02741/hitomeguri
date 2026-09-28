@@ -269,6 +269,12 @@ header 右側、登入鈕左邊（`SearchBox.vue`，每一頁都在；在行程�
 ### 7.5b 收合
 清單分段（首頁的地方、景點類型、擴充包的組別或縣）的小標可以點擊收合：左側 `CollapseChevron`（7px 直角兩邊 `border-r/b-[1.5px] border-current`，收合時 `-rotate-45` 朝右、展開時 `rotate-45` 朝下，150ms 轉動），收合時小標後面顯示件數。收合狀態存在探索頁 store，切換地區後保留。
 
+### 7.5c 深度探索頁（`/region/:pref`）
+- 入口：地區頁地圖上方最左的膠囊按鈕「深度探索 ›」（`bg-region-strong text-white rounded-full h-9 shadow-float`），和擴充包列之間一條直線分隔。
+- 海報區：`bg-region text-on-region`，右上 320px 正圓 `bg-region-accent`；「‹ 地圖」返回、假名（`text-body tracking-kana`）＋縣名（`text-display font-black`）＋羅馬拼音與地方名；段落超過一個時列出段落錨點。
+- 內文 `max-w-5xl`，段落標題 `text-h3 font-black`，組別小標 `text-caption font-bold tracking-section text-sub`＋件數。
+- 地區特色卡：`rounded-card border border-line`，有 Commons 照片才放 16:10 圖；假名／日文名＋繁中名、維基簡介最多 4 行、授權與來源連結。每組先顯示 9 項，其餘用「全部 N 項」展開。
+
 ### 7.6 名稱區塊 NameBlock（招牌元件）
 三行固定順序：假名 → 漢字 → 羅馬拼音；所有日文加 `lang="ja"`。
 | 情境 | 版式 |
