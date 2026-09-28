@@ -67,6 +67,17 @@ def is_festival(title: str, p31_labels: list[str]) -> bool:
     return not labels and bool(FESTIVAL_NAME_RE.search(strip_disambiguation(title)))
 
 
+# 開頭段落寫著已停辦的（「行われていた」「廃止された」）
+_DEFUNCT = re.compile(
+    r"(行われていた|開催されていた|催されていた|廃止され|中止となり、?以後|終了した)"
+)
+
+
+def is_defunct(lead: str) -> bool:
+    para = next((p for p in lead.split("\n") if p.strip()), "")
+    return bool(_DEFUNCT.search(para))
+
+
 def months_from_labels(labels: list[str]) -> list[int]:
     out = set()
     for lab in labels:
@@ -137,8 +148,11 @@ def seed_festivals(prefs: list[str]) -> str:
         cands = list({e.qid: (t, e) for t, e in cands}.values())
         views = {t: pageviews.yearly_views("jawiki", t) for t, _ in cands}
         cands.sort(key=lambda te: -views[te[0]])
-        cands = [te for te in cands if f"{pref}-{te[1].qid}" not in manual][:MAX_PER_PREF]
+        cands = [te for te in cands if f"{pref}-{te[1].qid}" not in manual][: MAX_PER_PREF * 2]
 
+        # 已停辦的不收（要先取開頭段落才知道：多取一些再篩，最後留 MAX_PER_PREF 個）
+        leads = wikipedia.intro_extracts("jawiki", [t for t, _ in cands]) if cands else {}
+        cands = [te for te in cands if not is_defunct(leads.get(te[0], ""))][:MAX_PER_PREF]
         ents_kept = [e for _, e in cands]
         occurs = wikidata.labels_ja(sorted({q for e in ents_kept for q in e.occurs}))
         extracts = {

@@ -41,3 +41,10 @@ def test_location_falls_back_to_place():
     loc = location_of(fest, {"Q2": shrine})
     assert loc is not None and (loc.lat, loc.lng) == (35.0, 135.7)
     assert location_of(Entity(qid="Q3"), {}) is None
+
+
+def test_is_defunct():
+    from pipeline.festivals import is_defunct
+
+    assert is_defunct("南部道楽フェスティバルは、毎年9月最終週の土曜日と日曜日に行われていた祭である。")
+    assert not is_defunct("青森ねぶた祭は、毎年8月2日から7日に行われる夏祭り。\n2020年は中止された。")
