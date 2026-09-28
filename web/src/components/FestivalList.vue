@@ -4,7 +4,7 @@ import { computed, ref, watch } from 'vue'
 import type { Festival } from '../services/bundles'
 import CollapseChevron from './CollapseChevron.vue'
 
-// 深度探索「祭典」：依舉行月份分組（跨月的放在第一個月），組內依日文維基瀏覽量。
+// 深度探索「祭典」：依舉行月份分組（跨月的放在第一個月），從本月開始往後排，組內依日文維基瀏覽量。
 // 月份列可篩選；沒有月份的放最後「月份未載」。
 const props = defineProps<{ festivals: Festival[] }>()
 
@@ -14,7 +14,8 @@ const FIRST = 6
 
 const groups = computed(() => {
   const sorted = [...props.festivals].sort((a, b) => b.views - a.views)
-  const out = MONTHS.map((m) => ({
+  const upcoming = MONTHS.map((_, i) => ((thisMonth - 1 + i) % 12) + 1)
+  const out = upcoming.map((m) => ({
     key: String(m),
     label: `${m}月`,
     items: sorted.filter((f) => f.months?.[0] === m),
