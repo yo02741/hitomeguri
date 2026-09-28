@@ -11,6 +11,7 @@ import SpotPanel from '../components/SpotPanel.vue'
 import { regionOf } from '../data/regions'
 import type { MapSpot, Spot } from '../services/bundles'
 import { loadPrefectureShapes, prefectureAt } from '../services/geo'
+import { prefetchThumbs } from '../services/prefetch'
 import { useCatalogStore } from '../stores/catalog'
 import { useExploreStore } from '../stores/explore'
 
@@ -85,12 +86,29 @@ function spotBounds(spots: MapSpot[]): [number, number, number, number] | null {
   return [w, s, e, n]
 }
 
+// 照片預先下載：先全部縣的精選，再目前地區的其他大點（依分數）
+function thumbsOf(spots: MapSpot[]): string[] {
+  return spots
+    .filter((s) => s.i && s.k === 'major')
+    .sort((a, b) => b.f - a.f || b.s - a.s)
+    .map((s) => s.i!)
+}
+
 onMounted(async () => {
   catalog.loadExtras()
   await catalog.loadAllMaps()
   if (props.pref && !panSwitch) bounds.value = spotBounds(prefSpots.value.filter((s) => s.f === 1))
   loadPrefectureShapes().catch(() => {})
+  prefetchThumbs(thumbsOf(allSpots.value.filter((s) => s.f === 1)))
+  if (props.pref) prefetchThumbs(thumbsOf(prefSpots.value), true)
 })
+
+watch(
+  () => props.pref,
+  async (pref) => {
+    if (pref) prefetchThumbs(thumbsOf(await catalog.loadMap(pref)), true)
+  },
+)
 
 // 地區：URL 的 :pref 決定整頁地區色；首頁用全國色（UX-FLOW.md §1.3）。
 watch(

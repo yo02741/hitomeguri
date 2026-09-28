@@ -251,8 +251,9 @@
 
 ### 7.5a 地圖 hover
 - 游標 14px 內最近的景點放大（精選 12、一般 10，外框 3），並顯示名稱小標（`bg-paper rounded-tag shadow-marker`）；點擊以放大中的景點為準。
-- 縮放 13 以上，有照片的景點直接畫成 52px 圓形照片（`rounded-full border-[3px] border-paper shadow-float`，選取中改 `border-region-strong`），名稱移到照片下緣；同畫面最多 80 張，精選優先。照片來自 map bundle 的 Commons 250px 縮圖，載入失敗就退回圓點。
-- 照片模式下 hover 再放大成 88px；整張照片都算命中範圍。觸控裝置沒有 hover，點擊時直接取點擊位置附近最近的景點。
+- 不分縮放：沒被群集成數字的景點，有照片就直接畫成 48px 圓形照片（`rounded-full border-[3px] border-paper shadow-float`，選取中改 `border-region-strong`），名稱移到照片下緣；同畫面最多 80 張，精選優先。群集半徑 50px、縮放 15 以上全部散開，讓照片彼此不太重疊。照片來自 map bundle 的 Commons 250px 縮圖，載入失敗就退回圓點。
+- 照片預先下載：進入探索頁後於閒置時在背景抓縮圖（一次 4 張、低優先度，省流量模式不抓），順序為目前地區的大點 → 全部縣的精選。
+- hover 照片再放大成 88px；整張照片都算命中範圍。觸控裝置沒有 hover，點擊時直接取點擊位置附近最近的景點。
 
 ### 7.6 名稱區塊 NameBlock（招牌元件）
 三行固定順序：假名 → 漢字 → 羅馬拼音；所有日文加 `lang="ja"`。

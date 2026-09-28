@@ -43,9 +43,8 @@ let ready = false
 const SOURCE = 'spots'
 // hover 命中半徑（px）：游標靠近就放大，不必精準對到小圓點
 const HOVER_HIT = 14
-// 這個縮放以上，有照片的景點直接畫成圓形照片；hover 時再放大
-const PHOTO_ZOOM = 13
-const PHOTO_PIN = 52
+// 沒被群集起來的景點，有照片就直接畫成圓形照片；hover 時再放大
+const PHOTO_PIN = 48
 const PHOTO_SIZE = 88
 // 同時顯示的照片上限（精選優先）
 const PHOTO_MAX = 80
@@ -60,7 +59,6 @@ interface Hover {
   thumb?: string
 }
 const hover = shallowRef<Hover | null>(null)
-const photoMode = ref(false)
 const failedThumbs = new Set<string>()
 const FONT_BOLD = ['Noto Sans Bold']
 const FONT_REGULAR = ['Noto Sans Regular']
@@ -121,8 +119,9 @@ function addLayers() {
     type: 'geojson',
     data: toGeoJSON(props.spots),
     cluster: true,
-    clusterRadius: 44,
-    clusterMaxZoom: 11,
+    // 半徑略大於照片，未群集的照片彼此不太會重疊；縮放 15 以上全部散開
+    clusterRadius: 50,
+    clusterMaxZoom: 14,
   })
   map.addLayer({
     id: 'clusters',
@@ -165,14 +164,8 @@ function addLayers() {
       'text-field': ['get', 'n'],
       'text-font': FONT_REGULAR,
       'text-size': 12,
-      // 照片模式下名稱移到照片下緣
-      'text-offset': [
-        'step',
-        ['zoom'],
-        ['literal', [0, 1.1]],
-        PHOTO_ZOOM,
-        ['case', ['!=', ['get', 'i'], ''], ['literal', [0, 2.5]], ['literal', [0, 1.1]]],
-      ],
+      // 有照片的景點，名稱放在照片下緣
+      'text-offset': ['case', ['!=', ['get', 'i'], ''], ['literal', [0, 2.3]], ['literal', [0, 1.1]]],
       'text-anchor': 'top',
       'text-optional': true,
     },
@@ -207,13 +200,7 @@ function addLayers() {
   map.on('mousemove', (e) => updateHover(e.point))
   map.on('mouseout', () => setHover(null))
   map.on('move', positionHover)
-  map.on('zoom', () => {
-    if (!map) return
-    photoMode.value = map.getZoom() >= PHOTO_ZOOM
-    if (!photoMode.value && photoPins.size) syncPhotos()
-  })
   map.on('idle', syncPhotos)
-  photoMode.value = map.getZoom() >= PHOTO_ZOOM
   map.on('mouseenter', 'clusters', () => map && !hover.value && (map.getCanvas().style.cursor = 'pointer'))
   map.on('mouseleave', 'clusters', () => map && !hover.value && (map.getCanvas().style.cursor = ''))
 }
@@ -246,7 +233,7 @@ function updateHover(pt: { x: number; y: number }) {
   if (!map) return
   // 照片圓圈比較大：游標還在圓圈裡就維持，不因離開原本的點而閃掉
   const cur = hover.value
-  const keep = cur?.thumb && photoMode.value ? PHOTO_SIZE / 2 : HOVER_HIT
+  const keep = cur?.thumb ? PHOTO_SIZE / 2 : HOVER_HIT
   if (cur && Math.hypot(cur.x - pt.x, cur.y - pt.y) <= keep) return
   setHover(nearestSpot(pt))
 }
@@ -254,7 +241,7 @@ function updateHover(pt: { x: number; y: number }) {
 /** 游標／點擊位置附近最近的景點；照片模式下整張圓形照片都算命中 */
 function nearestSpot(pt: { x: number; y: number }): Hover | null {
   if (!map) return null
-  const r = photoMode.value ? Math.max(HOVER_HIT, PHOTO_PIN / 2) : HOVER_HIT
+  const r = Math.max(HOVER_HIT, PHOTO_PIN / 2)
   const feats = map.queryRenderedFeatures(
     [
       [pt.x - r, pt.y - r],
@@ -283,14 +270,11 @@ const photoPins = new Map<string, maplibregl.Marker>()
 function syncPhotos() {
   if (!map) return
   const want = new Map<string, { lng: number; lat: number; thumb: string; f: number }>()
-  if (map.getZoom() >= PHOTO_ZOOM) {
-    const feats = map.queryRenderedFeatures({ layers: ['spots'] })
-    for (const f of feats) {
-      const fp = f.properties as { id: string; i?: string; f: number }
-      if (!fp.i || failedThumbs.has(fp.i) || want.has(fp.id)) continue
-      const [lng, lat] = (f.geometry as GeoJSON.Point).coordinates as [number, number]
-      want.set(fp.id, { lng, lat, thumb: fp.i, f: fp.f })
-    }
+  for (const f of map.queryRenderedFeatures({ layers: ['spots'] })) {
+    const fp = f.properties as { id: string; i?: string; f: number }
+    if (!fp.i || failedThumbs.has(fp.i) || want.has(fp.id)) continue
+    const [lng, lat] = (f.geometry as GeoJSON.Point).coordinates as [number, number]
+    want.set(fp.id, { lng, lat, thumb: fp.i, f: fp.f })
   }
   const keep = new Set(
     [...want.entries()]
@@ -473,7 +457,7 @@ defineExpose({
       aria-hidden="true"
     >
       <span
-        v-if="photoMode && hover.thumb && !failedThumbs.has(hover.thumb)"
+        v-if="hover.thumb && !failedThumbs.has(hover.thumb)"
         class="-mt-[44px] block overflow-hidden rounded-full border-[3px] border-paper bg-placeholder shadow-float"
         :style="{ width: `${PHOTO_SIZE}px`, height: `${PHOTO_SIZE}px` }"
       >
@@ -488,7 +472,7 @@ defineExpose({
       <span
         lang="ja"
         class="mt-1 rounded-tag bg-paper px-1.5 text-label font-bold whitespace-nowrap text-ink shadow-marker"
-        :class="photoMode && hover.thumb && !failedThumbs.has(hover.thumb) ? '' : 'mt-[16px]'"
+        :class="hover.thumb && !failedThumbs.has(hover.thumb) ? '' : 'mt-[16px]'"
       >{{ hover.name }}</span>
     </div>
   </div>
