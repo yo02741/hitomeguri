@@ -2,6 +2,7 @@
 import { computed, ref, watch } from 'vue'
 
 import type { Spot } from '../services/bundles'
+import { prefectureFullName } from '../data/regions'
 import { themeByKey } from '../data/themes'
 import { canSpeak, speakJa } from '../services/tts'
 import ThemeBadge from './ThemeBadge.vue'
@@ -18,8 +19,8 @@ const station = computed(() => props.spot?.nearest_stations?.[0])
 const showZh = computed(() => props.spot && props.spot.name.zh_tw !== props.spot.name.ja)
 const mapsUrl = computed(() => {
   if (!props.spot) return ''
-  const { lat, lng } = props.spot.location
-  const q = encodeURIComponent(`${props.spot.name.ja} ${lat},${lng}`)
+  // 名稱＋縣名搜尋，讓 Google Maps 對到地點頁（附座標反而只會落在座標點上）
+  const q = encodeURIComponent(`${props.spot.name.ja} ${prefectureFullName(props.spot.prefecture)}`)
   return `https://www.google.com/maps/search/?api=1&query=${q}`
 })
 

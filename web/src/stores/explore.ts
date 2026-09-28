@@ -5,7 +5,6 @@ import { ref } from 'vue'
 export const useExploreStore = defineStore('explore', () => {
   const activePref = ref<string | null>(null)
   const featuredOnly = ref(true)
-  const showMajor = ref(true)
   const themes = ref<string[]>([])
 
   function setActivePref(pref: string | null) {
@@ -25,5 +24,5 @@ export const useExploreStore = defineStore('explore', () => {
       : [...themes.value, key]
   }
 
-  return { activePref, featuredOnly, showMajor, themes, setActivePref, toggleTheme }
+  return { activePref, featuredOnly, themes, setActivePref, toggleTheme }
 })

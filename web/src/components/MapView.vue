@@ -434,6 +434,14 @@ watch(
 )
 
 defineExpose({
+  /** 由清單滑過時在地圖上標出景點（null 取消） */
+  highlight(id: string | null) {
+    if (!map || !ready) return
+    const s = id ? props.spots.find((x) => x.id === id) : undefined
+    if (!s) return setHover(null)
+    const p = map.project([s.lng, s.lat])
+    setHover({ id: s.id, name: s.n, lng: s.lng, lat: s.lat, x: p.x, y: p.y, thumb: s.i })
+  },
   flyTo(lng: number, lat: number, zoom = 13) {
     // 右欄剛打開時地圖寬度已變：先同步尺寸再算目標位置
     map?.resize()

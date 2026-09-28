@@ -38,3 +38,17 @@ export function prefectureAt(lng: number, lat: number): string | null {
   }
   return null
 }
+
+/** 縣界的外框 [west, south, east, north]；縣界尚未載入時為 null。 */
+export function prefectureBounds(pref: string): [number, number, number, number] | null {
+  const f = features?.find((x) => x.properties.pref === pref)
+  if (!f) return null
+  let w = 180, s = 90, e = -180, n = -90
+  for (const poly of f.geometry.coordinates) {
+    for (const [x, y] of poly[0] ?? []) {
+      w = Math.min(w, x); e = Math.max(e, x)
+      s = Math.min(s, y); n = Math.max(n, y)
+    }
+  }
+  return [w, s, e, n]
+}

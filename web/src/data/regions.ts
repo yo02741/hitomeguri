@@ -24,6 +24,15 @@ export function regionOf(pref: string | null | undefined): Region | undefined {
   return pref ? byPref.get(pref) : undefined
 }
 
+/** 含「都道府縣」字尾的正式名稱，例：奈良 → 奈良県、京都 → 京都府 */
+export function prefectureFullName(pref: string): string {
+  const ja = regionOf(pref)?.name.ja ?? ''
+  if (pref === 'hokkaido') return ja
+  if (pref === 'tokyo') return `${ja}都`
+  if (pref === 'kyoto' || pref === 'osaka') return `${ja}府`
+  return `${ja}県`
+}
+
 /** 依地方分組，保留 regions.json 的順序（JIS 順）。 */
 export function groupByArea(prefs: string[]): { area: string; areaName: string; items: Region[] }[] {
   const groups: { area: string; areaName: string; items: Region[] }[] = []

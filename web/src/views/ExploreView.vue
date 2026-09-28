@@ -2,7 +2,6 @@
 import { computed, nextTick, onBeforeUnmount, onMounted, ref, shallowRef, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 
-import FilterPanel from '../components/FilterPanel.vue'
 import HomeSidebar from '../components/HomeSidebar.vue'
 import MapView, { type MapView as MapViewState } from '../components/MapView.vue'
 import RegionLists from '../components/RegionLists.vue'
@@ -10,8 +9,7 @@ import RegionTag from '../components/RegionTag.vue'
 import SpotPanel from '../components/SpotPanel.vue'
 import { regionOf } from '../data/regions'
 import type { MapSpot, Spot } from '../services/bundles'
-import { loadPrefectureShapes, prefectureAt } from '../services/geo'
-import { prefetchThumbs } from '../services/prefetch'
+import { loadPrefectureShapes, prefectureAt, prefectureBounds } from '../services/geo'
 import { useCatalogStore } from '../stores/catalog'
 import { useExploreStore } from '../stores/explore'
 
@@ -33,12 +31,12 @@ const available = computed(() => Object.keys(catalog.index?.prefectures ?? {}))
 const allSpots = computed<MapSpot[]>(() =>
   available.value.flatMap((p) => catalog.mapSpots[p] ?? []),
 )
-// 顯示規則：大點（可只看精選）＋開啟中主題的景點（UX-FLOW.md A3、A4）
+// 顯示規則：大點（精選或全部）＋開啟中主題的景點（UX-FLOW.md A3、A4；主題層目前暫停）
 const visibleSpots = computed(() =>
   allSpots.value.filter((s) => {
     if (s.id === selectedId.value) return true
     if (s.t?.some((t) => explore.themes.includes(t))) return true
-    if (s.k !== 'major' || !explore.showMajor) return false
+    if (s.k !== 'major') return false
     return !explore.featuredOnly || s.f === 1
   }),
 )
@@ -62,7 +60,6 @@ watch(
   },
 )
 const prefSpots = computed(() => (props.pref ? (catalog.mapSpots[props.pref] ?? []) : []))
-const filterSpots = computed(() => (props.pref ? prefSpots.value : allSpots.value))
 
 // 桌機：左上浮動面板蓋住地圖左側，地圖定位時扣掉這塊（寬 w-float＋左右間距）
 const desktop = ref(false)
@@ -86,29 +83,13 @@ function spotBounds(spots: MapSpot[]): [number, number, number, number] | null {
   return [w, s, e, n]
 }
 
-// 照片預先下載：先全部縣的精選，再目前地區的其他大點（依分數）
-function thumbsOf(spots: MapSpot[]): string[] {
-  return spots
-    .filter((s) => s.i && s.k === 'major')
-    .sort((a, b) => b.f - a.f || b.s - a.s)
-    .map((s) => s.i!)
-}
-
 onMounted(async () => {
   catalog.loadExtras()
   await catalog.loadAllMaps()
   if (props.pref && !panSwitch) bounds.value = spotBounds(prefSpots.value.filter((s) => s.f === 1))
-  loadPrefectureShapes().catch(() => {})
-  prefetchThumbs(thumbsOf(allSpots.value.filter((s) => s.f === 1)))
-  if (props.pref) prefetchThumbs(thumbsOf(prefSpots.value), true)
+  await loadPrefectureShapes().catch(() => {})
+  if (props.pref && !bounds.value) bounds.value = prefectureBounds(props.pref)
 })
-
-watch(
-  () => props.pref,
-  async (pref) => {
-    if (pref) prefetchThumbs(thumbsOf(await catalog.loadMap(pref)), true)
-  },
-)
 
 // 地區：URL 的 :pref 決定整頁地區色；首頁用全國色（UX-FLOW.md §1.3）。
 watch(
@@ -121,7 +102,9 @@ watch(
     }
     if (!pref) return
     const spots = await catalog.loadMap(pref)
-    bounds.value = spotBounds(spots.filter((s) => s.f === 1)) ?? spotBounds(spots)
+    // 還沒有資料的縣：用縣界範圍定位
+    if (!spots.length) await loadPrefectureShapes().catch(() => {})
+    bounds.value = spotBounds(spots.filter((s) => s.f === 1)) ?? spotBounds(spots) ?? prefectureBounds(pref)
   },
   { immediate: true },
 )
@@ -156,6 +139,8 @@ function closeSpot() {
 
 // 景點卡片：拉遠到這個縮放以下就關閉
 const CLOSE_SPOT_ZOOM = 10
+// 這個縮放以下一律回到全國
+const MIN_REGION_ZOOM = 7
 // 取樣格點（每邊）判斷畫面涵蓋哪些縣
 const SAMPLE = 7
 
@@ -164,6 +149,8 @@ const SAMPLE = 7
  * 回傳 undefined 表示判斷不出來（例如全是海），維持原狀。
  */
 function regionForView(view: MapViewState): string | null | undefined {
+  // 拉遠到看得到整個日本以上：不指定地區（取樣點可能全落在海上，要先判斷）
+  if (view.zoom < MIN_REGION_ZOOM) return null
   const [w, s, e, n] = view.bounds
   const counts = new Map<string, number>()
   let land = 0
@@ -230,18 +217,17 @@ function onMoveEnd(view: MapViewState) {
       >
         <template v-if="pref && regionOf(pref)">
           <RegionTag :pref="pref" class="max-lg:hidden" />
-          <FilterPanel :spots="filterSpots" />
           <RegionLists
             :pref="pref"
             :spots="prefSpots"
             :selected-id="selectedId"
             class="max-lg:hidden"
             @select="select"
+            @highlight="(id) => mapRef?.highlight(id)"
           />
         </template>
         <template v-else>
-          <HomeSidebar :prefs="available" class="max-lg:max-h-[40dvh]" />
-          <FilterPanel v-if="desktop" :spots="filterSpots" />
+          <HomeSidebar :available="available" class="max-lg:max-h-[40dvh]" />
         </template>
       </div>
     </div>
