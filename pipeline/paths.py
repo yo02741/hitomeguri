@@ -11,6 +11,8 @@ SPECIALTIES_DIR = DATA / "specialties"
 # 擴充包（寶可夢人孔蓋等全國性的小點），一個擴充包一個檔案
 PACKS_DIR = DATA / "packs"
 TIMED_DIR = DATA / "timed"
+# 深度探索「季節」：氣象廳生物季節平年值
+SEASONS_JSON = DATA / "seasons.json"
 PHRASES_DIR = DATA / "phrases"
 FLIGHTS_JSON = DATA / "flights" / "taiwan_direct.json"
 STATE_DIR = DATA / "_state"

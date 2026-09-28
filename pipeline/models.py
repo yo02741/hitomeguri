@@ -140,6 +140,21 @@ class Specialty(StrictModel):
     updated_at: str
 
 
+class SeasonStation(StrictModel):
+    """氣象廳生物季節観測的一個觀測站：現象 key → 平年值（"MM-DD"）。"""
+
+    name: str
+    prefecture: Prefecture
+    normals: dict[str, str]
+
+
+class SeasonData(StrictModel):
+    """深度探索「季節」（data/seasons.json）。"""
+
+    source: Source
+    stations: list[SeasonStation]
+
+
 class TimedTitle(StrictModel):
     ja: str
     zh_tw: str

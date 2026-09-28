@@ -11,7 +11,7 @@ on:
         required: true
         default: seed-pokefuta
         type: choice
-        options: [seed-pokefuta, seed-pokecen, seed-specialties, prune-spots]
+        options: [seed-pokefuta, seed-pokecen, seed-specialties, seed-seasons, prune-spots]
       prefectures:
         description: "都道府縣 slug，空白分隔；空白表示全部（seed-pokecen 不用）"
         required: false
@@ -40,7 +40,7 @@ jobs:
           PREFS: ${{ inputs.prefectures }}
         run: |
           case "${{ inputs.command }}" in
-            seed-pokecen) args="" ;;
+            seed-pokecen|seed-seasons) args="" ;;
             prune-spots) args="$PREFS --wikidata" ;;  # 重新查 Wikidata 類型，排除非景點
             *) args="$PREFS" ;;
           esac
@@ -51,7 +51,7 @@ jobs:
           git config user.name "hitomeguri-pipeline"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git checkout -b "$branch"
-          git add data/packs data/specialties data/flights data/spots 2>/dev/null || true
+          for d in data/packs data/specialties data/flights data/spots data/seasons.json; do if [ -e "$d" ]; then git add "$d"; fi; done
           if git diff --cached --quiet; then
             echo "沒有變更" >> "$GITHUB_STEP_SUMMARY"
             exit 0
