@@ -255,11 +255,23 @@ def merge_official(pref: str, drafts: dict[str, Draft]) -> None:
     items = fetch(config.OFFICIAL_TOP_N)
     matched = added = 0
     skipped: dict[str, list[str]] = {"沒有座標": [], "縣外": [], "住宿等": []}
+    south, west, north, east = geo.bbox(pref)
     for o in items:
         if o.lat is None or o.lng is None:
-            skipped["沒有座標"].append(o.name)
+            # 頁面沒有地圖：名稱完全相同的既有候選才併入
+            names = official_names(o.name)
+            same = [
+                d for d in drafts.values()
+                if not d.official and names & {norm_name(n) for n in d.all_names()}
+            ]  # fmt: skip
+            if same:
+                same[0].official = o
+                matched += 1
+            else:
+                skipped["沒有座標"].append(o.name)
             continue
-        if not geo.contains_fine(pref, o.lat, o.lng):
+        # 官方網站只收本縣：用範圍框判斷就好（簡化縣界不含海岸線，橋、海灘、岬會被誤判在縣外）
+        if not (south <= o.lat <= north and west <= o.lng <= east):
             skipped["縣外"].append(o.name)
             continue
         if any(x in c for c in o.categories for x in config.OFFICIAL_EXCLUDE_CATEGORY):
@@ -282,6 +294,17 @@ def merge_official(pref: str, drafts: dict[str, Draft]) -> None:
                 loose.append((dist, d))
         pool = exact or loose
         target = min(pool, key=lambda x: x[0])[1] if pool else None
+        # 同名的只是 OSM 點（首里城公園）、附近有 Wikidata 景點（首里城）：
+        # 官方資訊給 Wikidata 景點，OSM 點併進去
+        if target and not target.ent:
+            wd = [(dist, d) for dist, d in exact + loose if d.ent and dist <= 800]
+            if wd:
+                wd_target = min(wd, key=lambda x: x[0])[1]
+                for _, d in exact:
+                    if not d.ent and d.key in drafts:
+                        wd_target.osm_els += d.osm_els
+                        del drafts[d.key]
+                target = wd_target
         if target:
             target.official = o
             matched += 1
