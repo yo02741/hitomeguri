@@ -14,6 +14,21 @@ from pipeline.build_bundles import spot_type
 from pipeline.major import excluded_ids, name_excluded
 from pipeline.paths import SPOTS_DIR
 
+OFFICIAL_HOSTS = ("okinawastory.jp",)
+SPOT_LIKE_TYPES = {
+    "海灘",
+    "岬",
+    "博物館",
+    "美術館",
+    "主題樂園",
+    "動物園",
+    "水族館",
+    "市場",
+    "購物",
+    "公園",
+    "庭園",
+}
+
 
 def is_excluded(s: dict[str, Any], manual: set[str]) -> bool:
     if s["kind"] != "major":
@@ -21,7 +36,11 @@ def is_excluded(s: dict[str, Any], manual: set[str]) -> bool:
     if s["id"] in manual or name_excluded(s["name"]["ja"]):
         return True
     seeded = any(t.startswith("guide-") for t in s.get("tags", []))
-    return not s.get("external_ids", {}).get("wikidata") and not seeded
+    # 與 major.drop_non_spots 一致：官方觀光網站列出的、類型明確是景點的，沒有 Wikidata 也保留
+    official = any(x in src["url"] for src in s.get("sources", []) for x in OFFICIAL_HOSTS)
+    spot_like = spot_type(s.get("tags", [])) in SPOT_LIKE_TYPES
+    has_wd = bool(s.get("external_ids", {}).get("wikidata"))
+    return not (has_wd or seeded or official or spot_like)
 
 
 def refill_featured(spots: list[dict[str, Any]]) -> list[str]:
