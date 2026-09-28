@@ -1,0 +1,603 @@
+[
+  {
+    "id": "saitama-Q11633169",
+    "name": {
+      "ja": "豆腐ラーメン",
+      "kana": "とーふらーめん",
+      "romaji": "Tofu Ramen",
+      "zh_tw": "豆腐ラーメン",
+      "en": "tofu ramen"
+    },
+    "prefecture": "saitama",
+    "category": "ramen",
+    "summary": {
+      "text": "豆腐ラーメン（とーふらーめん）は、豆腐とひき肉の醤油餡をかけたラーメンで、埼玉県岩槻市(現・岩槻区)発祥で現在さいたま市(岩槻区・桜区)のご当地グルメである。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E8%B1%86%E8%85%90%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
+    "source_type": "wikipedia",
+    "kana_source": "wikipedia",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q11633169",
+        "fetched_at": "2026-09-28"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E8%B1%86%E8%85%90%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "saitama-Q122411411",
+    "name": {
+      "ja": "たらし焼き",
+      "kana": "たらしやき",
+      "romaji": "Tarashiyaki",
+      "zh_tw": "たらし焼き"
+    },
+    "prefecture": "saitama",
+    "category": "kyodo",
+    "summary": {
+      "text": "たらし焼き（たらしやき）は埼玉県秩父地方の郷土料理。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E3%81%9F%E3%82%89%E3%81%97%E7%84%BC%E3%81%8D",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
+    "source_type": "kyodo_ryori",
+    "kana_source": "wikipedia",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/33_23_saitama.html",
+        "fetched_at": "2026-09-28"
+      },
+      {
+        "url": "https://www.wikidata.org/wiki/Q122411411",
+        "fetched_at": "2026-09-28"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E3%81%9F%E3%82%89%E3%81%97%E7%84%BC%E3%81%8D",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "saitama-maff-33_10_saitama",
+    "name": {
+      "ja": "ねじ",
+      "kana": "ねじ",
+      "romaji": "Neji",
+      "zh_tw": "ねじ"
+    },
+    "prefecture": "saitama",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/33_10_saitama.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "saitama-maff-33_11_saitama",
+    "name": {
+      "ja": "みそポテト",
+      "kana": "みそぽてと",
+      "romaji": "Misopoteto",
+      "zh_tw": "みそポテト"
+    },
+    "prefecture": "saitama",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/33_11_saitama.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "saitama-maff-33_12_saitama",
+    "name": {
+      "ja": "甘露梅",
+      "zh_tw": "甘露梅"
+    },
+    "prefecture": "saitama",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/33_12_saitama.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "saitama-maff-33_13_saitama",
+    "name": {
+      "ja": "栗の渋皮煮",
+      "zh_tw": "栗の渋皮煮"
+    },
+    "prefecture": "saitama",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/33_13_saitama.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "saitama-maff-33_14_saitama",
+    "name": {
+      "ja": "つみっこ",
+      "kana": "つみっこ",
+      "romaji": "Tsumikko",
+      "zh_tw": "つみっこ"
+    },
+    "prefecture": "saitama",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/33_14_saitama.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "saitama-maff-33_15_saitama",
+    "name": {
+      "ja": "こんにゃくのみそおでん",
+      "kana": "こんにゃくのみそおでん",
+      "romaji": "Konnyakunomisoden",
+      "zh_tw": "こんにゃくのみそおでん"
+    },
+    "prefecture": "saitama",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/33_15_saitama.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "saitama-maff-33_16_saitama",
+    "name": {
+      "ja": "やきとり",
+      "kana": "やきとり",
+      "romaji": "Yakitori",
+      "zh_tw": "やきとり"
+    },
+    "prefecture": "saitama",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/33_16_saitama.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "saitama-maff-33_17_saitama",
+    "name": {
+      "ja": "ゆず巻き",
+      "zh_tw": "ゆず巻き"
+    },
+    "prefecture": "saitama",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/33_17_saitama.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "saitama-maff-33_18_saitama",
+    "name": {
+      "ja": "うでまんじゅう",
+      "kana": "うでまんじゅう",
+      "romaji": "Udemanju",
+      "zh_tw": "うでまんじゅう"
+    },
+    "prefecture": "saitama",
+    "category": "sweets",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/33_18_saitama.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "saitama-maff-33_19_saitama",
+    "name": {
+      "ja": "すみつかれ",
+      "kana": "すみつかれ",
+      "romaji": "Sumitsukare",
+      "zh_tw": "すみつかれ"
+    },
+    "prefecture": "saitama",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/33_19_saitama.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "saitama-maff-33_1_saitama",
+    "name": {
+      "ja": "埼玉のうどん",
+      "zh_tw": "埼玉のうどん"
+    },
+    "prefecture": "saitama",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/33_1_saitama.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "saitama-maff-33_20_saitama",
+    "name": {
+      "ja": "フライ",
+      "kana": "ふらい",
+      "romaji": "Furai",
+      "zh_tw": "フライ"
+    },
+    "prefecture": "saitama",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/33_20_saitama.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "saitama-maff-33_21_saitama",
+    "name": {
+      "ja": "飯餅",
+      "zh_tw": "飯餅"
+    },
+    "prefecture": "saitama",
+    "category": "sweets",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/33_21_saitama.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "saitama-maff-33_22_saitama",
+    "name": {
+      "ja": "八ツ頭の茎の炒め煮",
+      "zh_tw": "八ツ頭の茎の炒め煮"
+    },
+    "prefecture": "saitama",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/33_22_saitama.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "saitama-maff-33_24_saitama",
+    "name": {
+      "ja": "つとっこ",
+      "kana": "つとっこ",
+      "romaji": "Tsutokko",
+      "zh_tw": "つとっこ"
+    },
+    "prefecture": "saitama",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/33_24_saitama.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "saitama-maff-33_25_saitama",
+    "name": {
+      "ja": "おなめ",
+      "kana": "おなめ",
+      "romaji": "Oname",
+      "zh_tw": "おなめ"
+    },
+    "prefecture": "saitama",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/33_25_saitama.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "saitama-maff-33_26_saitama",
+    "name": {
+      "ja": "どじょう煮",
+      "zh_tw": "どじょう煮"
+    },
+    "prefecture": "saitama",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/33_26_saitama.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "saitama-maff-33_27_saitama",
+    "name": {
+      "ja": "くわいの含め煮",
+      "zh_tw": "くわいの含め煮"
+    },
+    "prefecture": "saitama",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/33_27_saitama.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "saitama-maff-33_28_saitama",
+    "name": {
+      "ja": "小麦まんじゅう",
+      "zh_tw": "小麦まんじゅう"
+    },
+    "prefecture": "saitama",
+    "category": "sweets",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/33_28_saitama.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "saitama-maff-33_29_saitama",
+    "name": {
+      "ja": "聖天ずし",
+      "zh_tw": "聖天ずし"
+    },
+    "prefecture": "saitama",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/33_29_saitama.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "saitama-maff-33_2_saitama",
+    "name": {
+      "ja": "呉汁",
+      "zh_tw": "呉汁"
+    },
+    "prefecture": "saitama",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/33_2_saitama.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "saitama-maff-33_3_saitama",
+    "name": {
+      "ja": "冷や汁",
+      "zh_tw": "冷や汁"
+    },
+    "prefecture": "saitama",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/33_3_saitama.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "saitama-maff-33_4_saitama",
+    "name": {
+      "ja": "いがまんじゅう",
+      "kana": "いがまんじゅう",
+      "romaji": "Igamanju",
+      "zh_tw": "いがまんじゅう"
+    },
+    "prefecture": "saitama",
+    "category": "sweets",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/33_4_saitama.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "saitama-maff-33_5_saitama",
+    "name": {
+      "ja": "塩あんびん",
+      "zh_tw": "塩あんびん"
+    },
+    "prefecture": "saitama",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/33_5_saitama.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "saitama-maff-33_6_saitama",
+    "name": {
+      "ja": "かてめし",
+      "kana": "かてめし",
+      "romaji": "Katemeshi",
+      "zh_tw": "かてめし"
+    },
+    "prefecture": "saitama",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/33_6_saitama.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "saitama-maff-33_7_saitama",
+    "name": {
+      "ja": "煮ぼうとう",
+      "zh_tw": "煮ぼうとう"
+    },
+    "prefecture": "saitama",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/33_7_saitama.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "saitama-maff-33_8_saitama",
+    "name": {
+      "ja": "ゼリーフライ",
+      "kana": "ぜりーふらい",
+      "romaji": "Zerifurai",
+      "zh_tw": "ゼリーフライ"
+    },
+    "prefecture": "saitama",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/33_8_saitama.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "saitama-maff-33_9_saitama",
+    "name": {
+      "ja": "ねぎぬた",
+      "kana": "ねぎぬた",
+      "romaji": "Neginuta",
+      "zh_tw": "ねぎぬた"
+    },
+    "prefecture": "saitama",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/33_9_saitama.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  }
+]

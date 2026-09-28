@@ -1,0 +1,802 @@
+[
+  {
+    "id": "tokyo-Q11235217",
+    "name": {
+      "ja": "東京ラーメン",
+      "kana": "とうきょうらーめん",
+      "romaji": "Tokyo Ramen",
+      "zh_tw": "東京ラーメン",
+      "en": "Tokyo ramen"
+    },
+    "prefecture": "tokyo",
+    "category": "ramen",
+    "summary": {
+      "text": "東京ラーメン（とうきょうラーメン）とは、「醤油ラーメン」の1つであり、ラーメンの原型である。多くの場合、和風だし、醤油タレ、中細縮れ中華麺が使用される。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E6%9D%B1%E4%BA%AC%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
+    "source_type": "wikipedia",
+    "kana_source": "wikidata",
+    "images": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/f/fc/Soy_ramen.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+        "author": "Lusheeta at Japanese Wikipedia",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Soy_ramen.jpg"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q11235217",
+        "fetched_at": "2026-09-28"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E6%9D%B1%E4%BA%AC%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "tokyo-Q11258393",
+    "name": {
+      "ja": "柳川鍋",
+      "kana": "やながわなべ",
+      "romaji": "Yanagawa Nabe",
+      "zh_tw": "柳川鍋",
+      "en": "yanagawa nabe"
+    },
+    "prefecture": "tokyo",
+    "category": "kyodo",
+    "summary": {
+      "text": "柳川鍋（やながわなべ）は、ドジョウを使った江戸生まれの鍋料理。どぜう鍋と同じくドジョウの鍋料理であるが、開いたドジョウを予め割下で煮こみ卵とじにしている点で一般的などぜう鍋と区別されることが多い（#歴史を参照）。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E6%9F%B3%E5%B7%9D%E9%8D%8B",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
+    "source_type": "kyodo_ryori",
+    "kana_source": "wikipedia",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/34_4_tokyo.html",
+        "fetched_at": "2026-09-28"
+      },
+      {
+        "url": "https://www.wikidata.org/wiki/Q11258393",
+        "fetched_at": "2026-09-28"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E6%9F%B3%E5%B7%9D%E9%8D%8B",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "tokyo-Q112862537",
+    "name": {
+      "ja": "玉子焼き",
+      "zh_tw": "玉子焼き",
+      "en": "Tamago yaki fry"
+    },
+    "prefecture": "tokyo",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b7/NGO_Nishi_Machikadoya_Chichibudori_20220702-03.jpg/960px-NGO_Nishi_Machikadoya_Chichibudori_20220702-03.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "円周率３パーセント",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:NGO_Nishi_Machikadoya_Chichibudori_20220702-03.jpg"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/34_11_tokyo.html",
+        "fetched_at": "2026-09-28"
+      },
+      {
+        "url": "https://www.wikidata.org/wiki/Q112862537",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "tokyo-Q11288287",
+    "name": {
+      "ja": "深川めし",
+      "kana": "ふかがわめし",
+      "romaji": "Fukagawa Meshi",
+      "zh_tw": "深川めし",
+      "en": "Fukagawa-meshi"
+    },
+    "prefecture": "tokyo",
+    "category": "kyodo",
+    "summary": {
+      "text": "深川めし（ふかがわめし）は、アサリ、ハマグリ、アオヤギなどの貝類とネギなどの野菜などを煮込んだ汁物を米飯に掛けたものや、炊き込んだもの。深川丼またはアサリ飯と呼ぶこともある。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E6%B7%B1%E5%B7%9D%E3%82%81%E3%81%97",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
+    "source_type": "kyodo_ryori",
+    "kana_source": "wikipedia",
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/84/Fukagawameshi.jpg/960px-Fukagawameshi.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "self",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Fukagawameshi.jpg"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/34_1_tokyo.html",
+        "fetched_at": "2026-09-28"
+      },
+      {
+        "url": "https://www.wikidata.org/wiki/Q11288287",
+        "fetched_at": "2026-09-28"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E6%B7%B1%E5%B7%9D%E3%82%81%E3%81%97",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "tokyo-Q11391553",
+    "name": {
+      "ja": "八王子ラーメン",
+      "kana": "はちおうじらーめん",
+      "romaji": "Hachio Ji Ramen",
+      "zh_tw": "八王子拉麵",
+      "en": "Hachiōji ramen"
+    },
+    "prefecture": "tokyo",
+    "category": "ramen",
+    "summary": {
+      "text": "八王子ラーメン（はちおうじラーメン）は、東京都八王子市のご当地ラーメン（ご当地グルメ）。醤油タレの醤油ラーメンである。トッピングとして、一般的なチャーシューやメンマのほかに、刻みタマネギを使うことに特徴がある。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E5%85%AB%E7%8E%8B%E5%AD%90%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
+    "source_type": "wikipedia",
+    "kana_source": "wikipedia",
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Hachioujira-men.jpg/960px-Hachioujira-men.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "The original uploader was Hykw-a4 at Japanese Wikipedia.",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Hachioujira-men.jpg"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q11391553",
+        "fetched_at": "2026-09-28"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E5%85%AB%E7%8E%8B%E5%AD%90%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "tokyo-Q1195290",
+    "name": {
+      "ja": "コロッケ",
+      "kana": "ころっけ",
+      "romaji": "Korokke",
+      "zh_tw": "可樂餅",
+      "en": "korokke"
+    },
+    "prefecture": "tokyo",
+    "category": "kyodo",
+    "summary": {
+      "text": "日式可樂餅（コロッケ，英語：Potato croquettes）是日本的一種洋食，將絞肉、蔬菜等與煮熟的馬鈴薯泥或者白醬混合揉成一團，裹上麵皮，然後用食用油炸製而成。仿製自西餐中的可樂餅。一般日式可樂餅是指用馬鈴薯泥做的，日本還有用白醬做的叫做白醬可樂餅（暫譯，日文：クリームコロッケ）。逆輸出至日本國外的日式可樂餅，就以日語發音稱作「Korokke」，中文語境中通常直接稱呼為可樂餅。另外還有用魚肉代替馬鈴薯泥的，稱為魚カツ。",
+      "lang": "zh",
+      "source_url": "https://zh.wikipedia.org/wiki/%E6%97%A5%E5%BC%8F%E5%8F%AF%E6%A8%82%E9%A4%85",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
+    "source_type": "kyodo_ryori",
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a9/Korokke.jpg/960px-Korokke.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Pieria(Uploader and Photographer)",
+        "license": "Public domain",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Korokke.jpg"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/34_10_tokyo.html",
+        "fetched_at": "2026-09-28"
+      },
+      {
+        "url": "https://www.wikidata.org/wiki/Q1195290",
+        "fetched_at": "2026-09-28"
+      },
+      {
+        "url": "https://zh.wikipedia.org/wiki/%E6%97%A5%E5%BC%8F%E5%8F%AF%E6%A8%82%E9%A4%85",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "tokyo-Q1304390",
+    "name": {
+      "ja": "親子丼",
+      "kana": "おやこどんぶり",
+      "romaji": "Oyakodonburi",
+      "zh_tw": "親子丼",
+      "en": "oyakodon"
+    },
+    "prefecture": "tokyo",
+    "category": "kyodo",
+    "summary": {
+      "text": "親子丼，又稱滑蛋雞肉飯，是日本的一種米食類料理。主要食材是雞肉和雞蛋，故稱為親子丼。若同時包含魚肉與魚卵的丼物也稱為「海鮮親子丼」，如「鮭魚親子丼」。",
+      "lang": "zh",
+      "source_url": "https://zh.wikipedia.org/wiki/%E8%A6%AA%E5%AD%90%E4%B8%BC",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
+    "source_type": "kyodo_ryori",
+    "kana_source": "wikipedia",
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/29/Oyakodon_003.jpg/960px-Oyakodon_003.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Ocdp",
+        "license": "CC0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Oyakodon_003.jpg"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/34_12_tokyo.html",
+        "fetched_at": "2026-09-28"
+      },
+      {
+        "url": "https://www.wikidata.org/wiki/Q1304390",
+        "fetched_at": "2026-09-28"
+      },
+      {
+        "url": "https://zh.wikipedia.org/wiki/%E8%A6%AA%E5%AD%90%E4%B8%BC",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "tokyo-Q139409004",
+    "name": {
+      "ja": "ちゃん系ラーメン",
+      "kana": "ちゃんけいらーめん",
+      "romaji": "Chankeiramen",
+      "zh_tw": "ちゃん系ラーメン"
+    },
+    "prefecture": "tokyo",
+    "category": "ramen",
+    "summary": {
+      "text": "ちゃん系ラーメン（ちゃんけいラーメン）とは、東京都千代田区のラーメン店・神田ちえちゃんラーメン（2020年6月創業）を源流とするラーメン店舗群、及び「ちゃんのれん組合」に加盟しているラーメン店が提供しているラーメンのジャンルを指す名称。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E3%81%A1%E3%82%83%E3%82%93%E7%B3%BB%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
+    "source_type": "wikipedia",
+    "kana_source": "wikipedia",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q139409004",
+        "fetched_at": "2026-09-28"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E3%81%A1%E3%82%83%E3%82%93%E7%B3%BB%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "tokyo-Q167692",
+    "name": {
+      "ja": "もんじゃ焼き",
+      "kana": "もんじゃやき",
+      "romaji": "Monjayaki",
+      "zh_tw": "文字燒",
+      "en": "monjayaki"
+    },
+    "prefecture": "tokyo",
+    "category": "kyodo",
+    "summary": {
+      "text": "文字燒是一種發祥於東京月島、盛行於關東地方的鐵板燒小吃。將蔬菜肉類置於鐵板上，再淋上麵糊煎至凝固。其形式類似什錦燒，但口感更為濃稠。",
+      "lang": "zh",
+      "source_url": "https://zh.wikipedia.org/wiki/%E6%96%87%E5%AD%97%E7%87%92",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
+    "source_type": "kyodo_ryori",
+    "kana_source": "wikipedia",
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/93/Monjayaki-2006-06-25.jpg/960px-Monjayaki-2006-06-25.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Syohei Arai",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Monjayaki-2006-06-25.jpg"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/34_3_tokyo.html",
+        "fetched_at": "2026-09-28"
+      },
+      {
+        "url": "https://www.wikidata.org/wiki/Q167692",
+        "fetched_at": "2026-09-28"
+      },
+      {
+        "url": "https://zh.wikipedia.org/wiki/%E6%96%87%E5%AD%97%E7%87%92",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "tokyo-maff-34_13_tokyo",
+    "name": {
+      "ja": "かんぴょう巻き",
+      "zh_tw": "かんぴょう巻き"
+    },
+    "prefecture": "tokyo",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/34_13_tokyo.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "tokyo-maff-34_14_tokyo",
+    "name": {
+      "ja": "治助芋のネギ味噌",
+      "zh_tw": "治助芋のネギ味噌"
+    },
+    "prefecture": "tokyo",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/34_14_tokyo.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "tokyo-maff-34_15_tokyo",
+    "name": {
+      "ja": "おくたまワサビのTOKYO-X巻き",
+      "zh_tw": "おくたまワサビのTOKYO-X巻き"
+    },
+    "prefecture": "tokyo",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/34_15_tokyo.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "tokyo-maff-34_16_tokyo",
+    "name": {
+      "ja": "のしこみうどん",
+      "kana": "のしこみうどん",
+      "romaji": "Noshikomiudon",
+      "zh_tw": "のしこみうどん"
+    },
+    "prefecture": "tokyo",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/34_16_tokyo.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "tokyo-maff-34_17_tokyo",
+    "name": {
+      "ja": "すき焼き",
+      "zh_tw": "すき焼き"
+    },
+    "prefecture": "tokyo",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/34_17_tokyo.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "tokyo-maff-34_18_tokyo",
+    "name": {
+      "ja": "穴子寿司",
+      "zh_tw": "穴子寿司"
+    },
+    "prefecture": "tokyo",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/34_18_tokyo.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "tokyo-maff-34_19_tokyo",
+    "name": {
+      "ja": "島ずし",
+      "zh_tw": "島ずし"
+    },
+    "prefecture": "tokyo",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/34_19_tokyo.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "tokyo-maff-34_20_tokyo",
+    "name": {
+      "ja": "そば",
+      "kana": "そば",
+      "romaji": "Soba",
+      "zh_tw": "そば"
+    },
+    "prefecture": "tokyo",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/34_20_tokyo.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "tokyo-maff-34_21_tokyo",
+    "name": {
+      "ja": "こはだの粟づけ",
+      "zh_tw": "こはだの粟づけ"
+    },
+    "prefecture": "tokyo",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/34_21_tokyo.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "tokyo-maff-34_22_tokyo",
+    "name": {
+      "ja": "桜もち",
+      "zh_tw": "桜もち"
+    },
+    "prefecture": "tokyo",
+    "category": "sweets",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/34_22_tokyo.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "tokyo-maff-34_23_tokyo",
+    "name": {
+      "ja": "いもようかん",
+      "kana": "いもようかん",
+      "romaji": "Imoyokan",
+      "zh_tw": "いもようかん"
+    },
+    "prefecture": "tokyo",
+    "category": "sweets",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/34_23_tokyo.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "tokyo-maff-34_24_tokyo",
+    "name": {
+      "ja": "鰻のかば焼き",
+      "zh_tw": "鰻のかば焼き"
+    },
+    "prefecture": "tokyo",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/34_24_tokyo.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "tokyo-maff-34_25_tokyo",
+    "name": {
+      "ja": "佃煮",
+      "zh_tw": "佃煮"
+    },
+    "prefecture": "tokyo",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/34_25_tokyo.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "tokyo-maff-34_26_tokyo",
+    "name": {
+      "ja": "ねぎま鍋",
+      "zh_tw": "ねぎま鍋"
+    },
+    "prefecture": "tokyo",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/34_26_tokyo.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "tokyo-maff-34_27_tokyo",
+    "name": {
+      "ja": "きんぴら",
+      "kana": "きんぴら",
+      "romaji": "Kinpira",
+      "zh_tw": "きんぴら"
+    },
+    "prefecture": "tokyo",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/34_27_tokyo.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "tokyo-maff-34_28_tokyo",
+    "name": {
+      "ja": "ちゃんこ鍋",
+      "zh_tw": "ちゃんこ鍋"
+    },
+    "prefecture": "tokyo",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/34_28_tokyo.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "tokyo-maff-34_29_tokyo",
+    "name": {
+      "ja": "串だんご",
+      "zh_tw": "串だんご"
+    },
+    "prefecture": "tokyo",
+    "category": "sweets",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/34_29_tokyo.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "tokyo-maff-34_2_tokyo",
+    "name": {
+      "ja": "にぎりずし",
+      "kana": "にぎりずし",
+      "romaji": "Nigirizushi",
+      "zh_tw": "にぎりずし"
+    },
+    "prefecture": "tokyo",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/34_2_tokyo.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "tokyo-maff-34_30_tokyo",
+    "name": {
+      "ja": "うどの酢味噌和え",
+      "zh_tw": "うどの酢味噌和え"
+    },
+    "prefecture": "tokyo",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/34_30_tokyo.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "tokyo-maff-34_5_tokyo",
+    "name": {
+      "ja": "おでん",
+      "kana": "おでん",
+      "romaji": "Oden",
+      "zh_tw": "おでん"
+    },
+    "prefecture": "tokyo",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/34_5_tokyo.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "tokyo-maff-34_6_tokyo",
+    "name": {
+      "ja": "てんぷら",
+      "kana": "てんぷら",
+      "romaji": "Tenpura",
+      "zh_tw": "てんぷら"
+    },
+    "prefecture": "tokyo",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/34_6_tokyo.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "tokyo-maff-34_7_tokyo",
+    "name": {
+      "ja": "お雑煮",
+      "zh_tw": "お雑煮"
+    },
+    "prefecture": "tokyo",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/34_7_tokyo.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "tokyo-maff-34_8_tokyo",
+    "name": {
+      "ja": "べったら漬け",
+      "zh_tw": "べったら漬け"
+    },
+    "prefecture": "tokyo",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/34_8_tokyo.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "tokyo-maff-34_9_tokyo",
+    "name": {
+      "ja": "しょっから汁",
+      "zh_tw": "しょっから汁"
+    },
+    "prefecture": "tokyo",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/34_9_tokyo.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  }
+]

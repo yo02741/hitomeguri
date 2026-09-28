@@ -1,0 +1,508 @@
+[
+  {
+    "id": "saga-Q24869886",
+    "name": {
+      "ja": "佐賀ラーメン",
+      "kana": "さがらーめん",
+      "romaji": "Saga Ramen",
+      "zh_tw": "佐賀ラーメン",
+      "en": "Saga ramen"
+    },
+    "prefecture": "saga",
+    "category": "ramen",
+    "summary": {
+      "text": "佐賀ラーメン（さがラーメン）は、佐賀県佐賀市を中心に作られるラーメン。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E4%BD%90%E8%B3%80%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
+    "source_type": "wikipedia",
+    "kana_source": "wikipedia",
+    "images": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/0/02/%E4%BD%90%E8%B3%80%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+        "author": "Dddbtr",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:%E4%BD%90%E8%B3%80%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3.jpg"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q24869886",
+        "fetched_at": "2026-09-28"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E4%BD%90%E8%B3%80%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "saga-maff-45_10_saga",
+    "name": {
+      "ja": "むつごろうの蒲焼",
+      "zh_tw": "むつごろうの蒲焼"
+    },
+    "prefecture": "saga",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/45_10_saga.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "saga-maff-45_11_saga",
+    "name": {
+      "ja": "ゆでだご",
+      "kana": "ゆでだご",
+      "romaji": "Yudedago",
+      "zh_tw": "ゆでだご"
+    },
+    "prefecture": "saga",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/45_11_saga.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "saga-maff-45_12_saga",
+    "name": {
+      "ja": "およごし",
+      "kana": "およごし",
+      "romaji": "Oyogoshi",
+      "zh_tw": "およごし"
+    },
+    "prefecture": "saga",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/45_12_saga.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "saga-maff-45_13_saga",
+    "name": {
+      "ja": "つんきーだご汁",
+      "zh_tw": "つんきーだご汁"
+    },
+    "prefecture": "saga",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/45_13_saga.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "saga-maff-45_14_saga",
+    "name": {
+      "ja": "呉豆腐のごま醤油かけ",
+      "zh_tw": "呉豆腐のごま醤油かけ"
+    },
+    "prefecture": "saga",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/45_14_saga.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "saga-maff-45_15_saga",
+    "name": {
+      "ja": "ゆきのつゆ",
+      "kana": "ゆきのつゆ",
+      "romaji": "Yukinotsuyu",
+      "zh_tw": "ゆきのつゆ"
+    },
+    "prefecture": "saga",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/45_15_saga.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "saga-maff-45_16_saga",
+    "name": {
+      "ja": "くちぞこの煮つけ",
+      "zh_tw": "くちぞこの煮つけ"
+    },
+    "prefecture": "saga",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/45_16_saga.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "saga-maff-45_17_saga",
+    "name": {
+      "ja": "栗おこわ",
+      "zh_tw": "栗おこわ"
+    },
+    "prefecture": "saga",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/45_17_saga.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "saga-maff-45_18_saga",
+    "name": {
+      "ja": "干し柿なます",
+      "zh_tw": "干し柿なます"
+    },
+    "prefecture": "saga",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/45_18_saga.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "saga-maff-45_19_saga",
+    "name": {
+      "ja": "つがにめし",
+      "kana": "つがにめし",
+      "romaji": "Tsuganimeshi",
+      "zh_tw": "つがにめし"
+    },
+    "prefecture": "saga",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/45_19_saga.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "saga-maff-45_1_saga",
+    "name": {
+      "ja": "ふなんこぐい",
+      "kana": "ふなんこぐい",
+      "romaji": "Funankogui",
+      "zh_tw": "ふなんこぐい"
+    },
+    "prefecture": "saga",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/45_1_saga.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "saga-maff-45_20_saga",
+    "name": {
+      "ja": "しゃっぱの煮つけ",
+      "zh_tw": "しゃっぱの煮つけ"
+    },
+    "prefecture": "saga",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/45_20_saga.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "saga-maff-45_21_saga",
+    "name": {
+      "ja": "わらすぼのみそ汁",
+      "zh_tw": "わらすぼのみそ汁"
+    },
+    "prefecture": "saga",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/45_21_saga.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "saga-maff-45_22_saga",
+    "name": {
+      "ja": "あらの姿煮",
+      "zh_tw": "あらの姿煮"
+    },
+    "prefecture": "saga",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/45_22_saga.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "saga-maff-45_23_saga",
+    "name": {
+      "ja": "ふつもち",
+      "kana": "ふつもち",
+      "romaji": "Futsumochi",
+      "zh_tw": "ふつもち"
+    },
+    "prefecture": "saga",
+    "category": "sweets",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/45_23_saga.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "saga-maff-45_24_saga",
+    "name": {
+      "ja": "おこもじの油炒め",
+      "zh_tw": "おこもじの油炒め"
+    },
+    "prefecture": "saga",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/45_24_saga.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "saga-maff-45_25_saga",
+    "name": {
+      "ja": "冷やしそうめん",
+      "zh_tw": "冷やしそうめん"
+    },
+    "prefecture": "saga",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/45_25_saga.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "saga-maff-45_2_saga",
+    "name": {
+      "ja": "いかのかけ和え",
+      "zh_tw": "いかのかけ和え"
+    },
+    "prefecture": "saga",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/45_2_saga.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "saga-maff-45_3_saga",
+    "name": {
+      "ja": "にいもじ",
+      "kana": "にいもじ",
+      "romaji": "Niimoji",
+      "zh_tw": "にいもじ"
+    },
+    "prefecture": "saga",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/45_3_saga.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "saga-maff-45_4_saga",
+    "name": {
+      "ja": "だぶ",
+      "kana": "だぶ",
+      "romaji": "Dabu",
+      "zh_tw": "だぶ"
+    },
+    "prefecture": "saga",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/45_4_saga.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "saga-maff-45_5_saga",
+    "name": {
+      "ja": "お茶がい",
+      "zh_tw": "お茶がい"
+    },
+    "prefecture": "saga",
+    "category": "tea",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/45_5_saga.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "saga-maff-45_6_saga",
+    "name": {
+      "ja": "須古ずし",
+      "zh_tw": "須古ずし"
+    },
+    "prefecture": "saga",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/45_6_saga.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "saga-maff-45_7_saga",
+    "name": {
+      "ja": "のっぺ汁",
+      "zh_tw": "のっぺ汁"
+    },
+    "prefecture": "saga",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/45_7_saga.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "saga-maff-45_8_saga",
+    "name": {
+      "ja": "煮ごみ",
+      "zh_tw": "煮ごみ"
+    },
+    "prefecture": "saga",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/45_8_saga.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "saga-maff-45_9_saga",
+    "name": {
+      "ja": "がめ煮",
+      "zh_tw": "がめ煮"
+    },
+    "prefecture": "saga",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/45_9_saga.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  }
+]

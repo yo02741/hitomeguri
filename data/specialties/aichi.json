@@ -1,36 +1,209 @@
 [
   {
-    "id": "wd-Q11264789",
+    "id": "aichi-Q102177463",
     "name": {
-      "ja": "きしめん",
-      "kana": "きしめん",
-      "romaji": "Kishimen",
-      "zh_tw": "棊子麵",
-      "en": "kishimen"
+      "ja": "志の田うどん",
+      "kana": "しのだうどん",
+      "romaji": "Shinoda Udon",
+      "zh_tw": "志の田うどん",
+      "en": "Shinoda udon"
     },
     "prefecture": "aichi",
     "category": "food",
-    "summary_zh": "",
-    "source_type": "wikidata",
-    "kana_source": "wikidata",
+    "summary": {
+      "text": "志の田うどん（しのだうどん）は、愛知県名古屋市周辺で食べられているうどん。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E5%BF%97%E3%81%AE%E7%94%B0%E3%81%86%E3%81%A9%E3%82%93",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
+    "source_type": "wikipedia",
+    "kana_source": "wikipedia",
     "images": [
       {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/3/31/CodazziKishimen2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-        "author": "No machine-readable author provided. 小太刀~commonswiki assumed (based on copyright claims).",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:CodazziKishimen2.jpg"
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4d/Haguriya_20201122-04.jpg/960px-Haguriya_20201122-04.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "円周率３パーセント",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Haguriya_20201122-04.jpg"
       }
     ],
     "sources": [
       {
-        "url": "https://www.wikidata.org/wiki/Q11264789",
-        "fetched_at": "2026-09-27"
+        "url": "https://www.wikidata.org/wiki/Q102177463",
+        "fetched_at": "2026-09-28"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E5%BF%97%E3%81%AE%E7%94%B0%E3%81%86%E3%81%A9%E3%82%93",
+        "fetched_at": "2026-09-28"
       }
     ],
-    "updated_at": "2026-09-27"
+    "updated_at": "2026-09-28"
   },
   {
-    "id": "wd-Q11276269",
+    "id": "aichi-Q10855366",
+    "name": {
+      "ja": "五平餅",
+      "kana": "ごへいもち",
+      "romaji": "Goheimochi",
+      "zh_tw": "五平餅",
+      "en": "Goheimochi"
+    },
+    "prefecture": "aichi",
+    "category": "sweets",
+    "summary": {
+      "text": "五平餅，又作御幣餅（日語：御幣餅／ごへいもち，羅馬化：Goheimochi），是在日本中部地方山區（長野縣木曾・伊那地區、岐阜縣東濃・飛驒地區、富山縣南部、愛知縣奧三河地區、靜岡縣北遠・駿河地區以及山梨縣）流傳的鄉土風飯糰變體。製作方法是在糙粳米飯中加入醬汁，製成串燒烤。在長野縣，五平餅有被列為當地的民俗文化財產之一（以御幣餅的名義）。",
+      "lang": "zh",
+      "source_url": "https://zh.wikipedia.org/wiki/%E4%BA%94%E5%B9%B3%E9%A5%BC",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
+    "source_type": "kyodo_ryori",
+    "kana_source": "wikidata",
+    "images": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/c/c5/CodazziGoheimochi1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+        "author": "No machine-readable author provided. 小太刀~commonswiki assumed (based on copyright claims).",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:CodazziGoheimochi1.jpg"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/goheimochi_aichi.html",
+        "fetched_at": "2026-09-28"
+      },
+      {
+        "url": "https://www.wikidata.org/wiki/Q10855366",
+        "fetched_at": "2026-09-28"
+      },
+      {
+        "url": "https://zh.wikipedia.org/wiki/%E4%BA%94%E5%B9%B3%E9%A5%BC",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "aichi-Q110256900",
+    "name": {
+      "ja": "好来系ラーメン",
+      "kana": "こうらいけいらーめん",
+      "romaji": "Koraikeiramen",
+      "zh_tw": "好来系ラーメン",
+      "en": "Kouraikei Ramen"
+    },
+    "prefecture": "aichi",
+    "category": "ramen",
+    "summary": {
+      "text": "好来系ラーメン（こうらいけいラーメン）は、主に愛知県名古屋市を中心とするラーメン店で提供されるラーメンの一種である。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E5%A5%BD%E6%9D%A5%E7%B3%BB%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
+    "source_type": "wikipedia",
+    "kana_source": "wikipedia",
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ca/%E5%A5%BD%E6%9D%A5%E7%B3%BB%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3.jpg/960px-%E5%A5%BD%E6%9D%A5%E7%B3%BB%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Fluoros jp",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:%E5%A5%BD%E6%9D%A5%E7%B3%BB%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3.jpg"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q110256900",
+        "fetched_at": "2026-09-28"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E5%A5%BD%E6%9D%A5%E7%B3%BB%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "aichi-Q11258799",
+    "name": {
+      "ja": "あんかけスパゲッティ",
+      "kana": "あんかけすぱげってぃ",
+      "romaji": "Ankakesupagetti",
+      "zh_tw": "燴義大利麵",
+      "en": "Ankake spaghetti"
+    },
+    "prefecture": "aichi",
+    "category": "food",
+    "summary": {
+      "text": "あんかけスパゲッティは、1960年代に愛知県名古屋市で誕生したスパゲッティ料理。略称は、「あんかけスパ」。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E3%81%82%E3%82%93%E3%81%8B%E3%81%91%E3%82%B9%E3%83%91%E3%82%B2%E3%83%83%E3%83%86%E3%82%A3",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
+    "source_type": "wikipedia",
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/17/Ankake_Spaghetti_Yokoi_2021-08_ac.jpg/960px-Ankake_Spaghetti_Yokoi_2021-08_ac.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Asturio Cantabrio",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Ankake_Spaghetti_Yokoi_2021-08_ac.jpg"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q11258799",
+        "fetched_at": "2026-09-28"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E3%81%82%E3%82%93%E3%81%8B%E3%81%91%E3%82%B9%E3%83%91%E3%82%B2%E3%83%83%E3%83%86%E3%82%A3",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "aichi-Q11273846",
+    "name": {
+      "ja": "どて焼き",
+      "kana": "どてやき",
+      "romaji": "Doteyaki",
+      "zh_tw": "どて焼き",
+      "en": "doteyaki"
+    },
+    "prefecture": "aichi",
+    "category": "food",
+    "summary": {
+      "text": "どて焼き（どてやき）は、牛のスジ肉を味噌やみりんで時間をかけて煮込んだもの。「どて煮」または「どて」ともいう。大阪の郷土料理とされる。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E3%81%A9%E3%81%A6%E7%84%BC%E3%81%8D",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
+    "source_type": "wikipedia",
+    "kana_source": "wikipedia",
+    "images": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/6/6b/Doteyaki.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+        "author": "ayustety from Tokyo, JAPAN",
+        "license": "CC BY-SA 2.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Doteyaki.jpg"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q11273846",
+        "fetched_at": "2026-09-28"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E3%81%A9%E3%81%A6%E7%84%BC%E3%81%8D",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "aichi-Q11276269",
     "name": {
       "ja": "ひつまぶし",
       "kana": "ひつまぶし",
@@ -40,9 +213,14 @@
     },
     "prefecture": "aichi",
     "category": "food",
-    "summary_zh": "",
+    "summary": {
+      "text": "ひつまぶし（櫃まぶし）とは、ウナギの蒲焼を用いた日本の郷土料理である。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E3%81%B2%E3%81%A4%E3%81%BE%E3%81%B6%E3%81%97",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "source_type": "wikidata",
-    "kana_source": "wikidata",
     "images": [
       {
         "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cd/Hitsumabushi1.jpg/960px-Hitsumabushi1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -54,23 +232,113 @@
     "sources": [
       {
         "url": "https://www.wikidata.org/wiki/Q11276269",
-        "fetched_at": "2026-09-27"
+        "fetched_at": "2026-09-28"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E3%81%B2%E3%81%A4%E3%81%BE%E3%81%B6%E3%81%97",
+        "fetched_at": "2026-09-28"
       }
     ],
-    "updated_at": "2026-09-27"
+    "updated_at": "2026-09-28"
   },
   {
-    "id": "wd-Q11390440",
+    "id": "aichi-Q11308473",
+    "name": {
+      "ja": "シロノワール",
+      "kana": "しろのわーる",
+      "romaji": "Shironowaru",
+      "zh_tw": "シロノワール",
+      "en": "Shiro-Noir"
+    },
+    "prefecture": "aichi",
+    "category": "food",
+    "summary": {
+      "text": "シロノワールは、喫茶店チェーン「珈琲所 コメダ珈琲店」で提供されているスイーツ商品。同店の看板商品の一つである。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E3%82%B7%E3%83%AD%E3%83%8E%E3%83%AF%E3%83%BC%E3%83%AB",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
+    "source_type": "wikipedia",
+    "images": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/f/f2/Komeda_Shirono.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+        "author": "不明",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Komeda_Shirono.JPG"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q11308473",
+        "fetched_at": "2026-09-28"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E3%82%B7%E3%83%AD%E3%83%8E%E3%83%AF%E3%83%BC%E3%83%AB",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "aichi-Q11336977",
+    "name": {
+      "ja": "ベトコンラーメン",
+      "kana": "べとこんらーめん",
+      "romaji": "Betokonramen",
+      "zh_tw": "ベトコンラーメン",
+      "en": "Viet Cong Ramen"
+    },
+    "prefecture": "aichi",
+    "category": "ramen",
+    "summary": {
+      "text": "ベトコンラーメンは、主に愛知県尾張地方、岐阜県美濃地方、岡山県南部地方、静岡県中部地方のラーメン店で提供されるラーメンの一種である。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E3%83%99%E3%83%88%E3%82%B3%E3%83%B3%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
+    "source_type": "wikipedia",
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/91/Betokon_Ramen%2C_at_Shinkyo_Ichinomiya_%282014-05-18%29_01.JPG/960px-Betokon_Ramen%2C_at_Shinkyo_Ichinomiya_%282014-05-18%29_01.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Lombroso",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Betokon_Ramen,_at_Shinkyo_Ichinomiya_(2014-05-18)_01.JPG"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q11336977",
+        "fetched_at": "2026-09-28"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E3%83%99%E3%83%88%E3%82%B3%E3%83%B3%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "aichi-Q11390440",
     "name": {
       "ja": "八丁味噌",
+      "kana": "はっちょうみそ",
+      "romaji": "Hatcho Miso",
       "zh_tw": "八丁味噌",
       "en": "Hatchō Miso"
     },
     "prefecture": "aichi",
-    "area": "岡崎",
     "category": "food",
-    "summary_zh": "",
+    "summary": {
+      "text": "八丁味噌（はっちょうみそ）は、愛知県岡崎市八丁町発祥の長期熟成させた豆味噌。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E5%85%AB%E4%B8%81%E5%91%B3%E5%99%8C",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "source_type": "wikidata",
+    "kana_source": "wikipedia",
     "images": [
       {
         "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/df/Hatcho-Miso-Kakukyu-6.jpg/960px-Hatcho-Miso-Kakukyu-6.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -82,50 +350,119 @@
     "sources": [
       {
         "url": "https://www.wikidata.org/wiki/Q11390440",
-        "fetched_at": "2026-09-27"
+        "fetched_at": "2026-09-28"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E5%85%AB%E4%B8%81%E5%91%B3%E5%99%8C",
+        "fetched_at": "2026-09-28"
       }
     ],
-    "updated_at": "2026-09-27"
+    "updated_at": "2026-09-28"
   },
   {
-    "id": "wd-Q11417019",
+    "id": "aichi-Q11417020",
     "name": {
-      "ja": "味噌煮込みうどん",
-      "zh_tw": "味噌煮込烏龍麵",
-      "en": "miso nikomi udon"
+      "ja": "味噌田楽",
+      "kana": "みそでんがく",
+      "romaji": "Misodengaku",
+      "zh_tw": "味噌田楽",
+      "en": "dengaku"
     },
     "prefecture": "aichi",
-    "category": "food",
-    "summary_zh": "",
-    "source_type": "wikidata",
+    "category": "kyodo",
+    "summary": {
+      "text": "味噌田楽（みそでんがく）は、豆腐、あるいは里芋、茄子、こんにゃくなどを串に刺して焼き、砂糖や味醂を配合し柚子や木の芽などで香りをつけた味噌を塗りつけた料理である。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E5%91%B3%E5%99%8C%E7%94%B0%E6%A5%BD",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
+    "source_type": "kyodo_ryori",
+    "kana_source": "wikipedia",
     "images": [
       {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/66/Misonikomi_Udon_with_Chickin_%26_Egg_%2815869622505%29.jpg/960px-Misonikomi_Udon_with_Chickin_%26_Egg_%2815869622505%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "bryan... from Taipei, Taiwan",
-        "license": "CC BY-SA 2.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Misonikomi_Udon_with_Chickin_%26_Egg_(15869622505).jpg"
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4e/Dengaku.jpg/960px-Dengaku.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Lombroso",
+        "license": "CC0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Dengaku.jpg"
       }
     ],
     "sources": [
       {
-        "url": "https://www.wikidata.org/wiki/Q11417019",
-        "fetched_at": "2026-09-27"
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/misodengaku_aichi.html",
+        "fetched_at": "2026-09-28"
+      },
+      {
+        "url": "https://www.wikidata.org/wiki/Q11417020",
+        "fetched_at": "2026-09-28"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E5%91%B3%E5%99%8C%E7%94%B0%E6%A5%BD",
+        "fetched_at": "2026-09-28"
       }
     ],
-    "updated_at": "2026-09-27"
+    "updated_at": "2026-09-28"
   },
   {
-    "id": "wd-Q11481449",
+    "id": "aichi-Q11458898",
+    "name": {
+      "ja": "小倉トースト",
+      "kana": "おぐらとーすと",
+      "romaji": "Oguratosuto",
+      "zh_tw": "小倉トースト",
+      "en": "Ogura toast"
+    },
+    "prefecture": "aichi",
+    "category": "food",
+    "summary": {
+      "text": "小倉トースト（おぐらトースト）とは、愛知県の喫茶店で供されている軽食の一種。いわゆる名古屋めしの一つ。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E5%B0%8F%E5%80%89%E3%83%88%E3%83%BC%E3%82%B9%E3%83%88",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
+    "source_type": "wikipedia",
+    "kana_source": "wikidata",
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/85/%E3%83%A2%E3%83%BC%E3%83%8B%E3%83%B3%E3%82%B0%E5%90%8D%E5%8F%A4%E5%B1%8B%E3%82%BB%E3%83%83%E3%83%88%E3%81%AE%E5%B0%8F%E5%80%89%E3%83%88%E3%83%BC%E3%82%B9%E3%83%88_%288923375578%29.jpg/960px-%E3%83%A2%E3%83%BC%E3%83%8B%E3%83%B3%E3%82%B0%E5%90%8D%E5%8F%A4%E5%B1%8B%E3%82%BB%E3%83%83%E3%83%88%E3%81%AE%E5%B0%8F%E5%80%89%E3%83%88%E3%83%BC%E3%82%B9%E3%83%88_%288923375578%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "akira yamada",
+        "license": "CC BY-SA 2.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:%E3%83%A2%E3%83%BC%E3%83%8B%E3%83%B3%E3%82%B0%E5%90%8D%E5%8F%A4%E5%B1%8B%E3%82%BB%E3%83%83%E3%83%88%E3%81%AE%E5%B0%8F%E5%80%89%E3%83%88%E3%83%BC%E3%82%B9%E3%83%88_(8923375578).jpg"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q11458898",
+        "fetched_at": "2026-09-28"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E5%B0%8F%E5%80%89%E3%83%88%E3%83%BC%E3%82%B9%E3%83%88",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "aichi-Q11481449",
     "name": {
       "ja": "常滑焼",
+      "kana": "とこなめやき",
+      "romaji": "Tokonameyaki",
       "zh_tw": "常滑燒",
       "en": "Tokoname ware"
     },
     "prefecture": "aichi",
-    "area": "常滑",
     "category": "craft",
-    "summary_zh": "",
+    "summary": {
+      "text": "常滑焼（とこなめやき）は、愛知県常滑市を中心とし、その周辺を含む知多半島内で焼かれる炻器。日本六古窯の一つ。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E5%B8%B8%E6%BB%91%E7%84%BC",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "source_type": "wikidata",
+    "kana_source": "wikipedia",
     "images": [
       {
         "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dd/Large_jar%2C_Tokoname_ware%2C_Japan%2C_Heian_period%2C_1100s_AD%2C_natural_glaze_-_Tokyo_National_Museum_-_Tokyo%2C_Japan_-_DSC08941.jpg/960px-Large_jar%2C_Tokoname_ware%2C_Japan%2C_Heian_period%2C_1100s_AD%2C_natural_glaze_-_Tokyo_National_Museum_-_Tokyo%2C_Japan_-_DSC08941.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -137,50 +474,740 @@
     "sources": [
       {
         "url": "https://www.wikidata.org/wiki/Q11481449",
-        "fetched_at": "2026-09-27"
+        "fetched_at": "2026-09-28"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E5%B8%B8%E6%BB%91%E7%84%BC",
+        "fetched_at": "2026-09-28"
       }
     ],
-    "updated_at": "2026-09-27"
+    "updated_at": "2026-09-28"
   },
   {
-    "id": "wd-Q11516498",
+    "id": "aichi-Q11516498",
     "name": {
-      "ja": "有松・鳴海絞り",
-      "zh_tw": "有松絞",
+      "ja": "有松・鳴海絞",
+      "zh_tw": "有松・鳴海絞",
       "en": "Arimatsu Shibori"
     },
     "prefecture": "aichi",
-    "area": "有松",
     "category": "craft",
-    "summary_zh": "",
+    "summary": {
+      "text": "有松・鳴海絞り（ありまつ・なるみしぼり）は、愛知県名古屋市緑区の有松・鳴海地域を中心に生産される絞り染めの織物である。江戸時代に誕生して以降、日本国内における絞り製品の大半を生産しており、1975年（昭和50年）9月4日、愛知県初の国の伝統工芸品に指定された。「有松絞り」、「鳴海絞り」と個別に呼ばれる場合もある。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E6%9C%89%E6%9D%BE%E3%83%BB%E9%B3%B4%E6%B5%B7%E7%B5%9E%E3%82%8A",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "source_type": "wikidata",
     "images": [],
     "sources": [
       {
         "url": "https://www.wikidata.org/wiki/Q11516498",
-        "fetched_at": "2026-09-27"
+        "fetched_at": "2026-09-28"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E6%9C%89%E6%9D%BE%E3%83%BB%E9%B3%B4%E6%B5%B7%E7%B5%9E%E3%82%8A",
+        "fetched_at": "2026-09-28"
       }
     ],
-    "updated_at": "2026-09-27"
+    "updated_at": "2026-09-28"
   },
   {
-    "id": "wd-Q28687780",
+    "id": "aichi-Q17229022",
     "name": {
-      "ja": "西尾の抹茶",
-      "zh_tw": "西尾抹茶"
+      "ja": "台湾まぜそば",
+      "kana": "たいわんまぜそば",
+      "romaji": "Taiwan Mazesoba",
+      "zh_tw": "臺灣乾拌麵",
+      "en": "Taiwan mazesoba"
     },
     "prefecture": "aichi",
-    "area": "西尾",
+    "category": "ramen",
+    "summary": {
+      "text": "臺灣乾拌麵是源自日本愛知縣名古屋市的拉麵料理，是名古屋料理的一種，由「麵屋花火」（麵屋はなび）創辦人新山直人發明。",
+      "lang": "zh",
+      "source_url": "https://zh.wikipedia.org/wiki/%E5%8F%B0%E7%81%A3%E4%B9%BE%E6%8B%8C%E9%BA%B5",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
+    "source_type": "wikipedia",
+    "kana_source": "wikidata",
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/72/Taiwan_Mazesoba_Kokoro.jpg/960px-Taiwan_Mazesoba_Kokoro.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Totti",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Taiwan_Mazesoba_Kokoro.jpg"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q17229022",
+        "fetched_at": "2026-09-28"
+      },
+      {
+        "url": "https://zh.wikipedia.org/wiki/%E5%8F%B0%E7%81%A3%E4%B9%BE%E6%8B%8C%E9%BA%B5",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "aichi-Q249169",
+    "name": {
+      "ja": "雑煮",
+      "kana": "ぞうに",
+      "romaji": "Zo Ni",
+      "zh_tw": "雜煮",
+      "en": "zōni"
+    },
+    "prefecture": "aichi",
+    "category": "kyodo",
+    "summary": {
+      "text": "雜煮，又譯作年糕湯，是日本以麻糬為主要原料的一道料理，常在日本新年期間烹調並食用。各地都有許多不同的做法。",
+      "lang": "zh",
+      "source_url": "https://zh.wikipedia.org/wiki/%E6%9D%82%E7%85%AE",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
+    "source_type": "kyodo_ryori",
+    "kana_source": "wikipedia",
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/20/Zoni_by_atmo_in_Nagoya.jpg/960px-Zoni_by_atmo_in_Nagoya.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "atmo from Nagoya, Aichi",
+        "license": "CC BY 2.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Zoni_by_atmo_in_Nagoya.jpg"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/zoni_aichi.html",
+        "fetched_at": "2026-09-28"
+      },
+      {
+        "url": "https://www.wikidata.org/wiki/Q249169",
+        "fetched_at": "2026-09-28"
+      },
+      {
+        "url": "https://zh.wikipedia.org/wiki/%E6%9D%82%E7%85%AE",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "aichi-Q28067862",
+    "name": {
+      "ja": "ぴよりん",
+      "kana": "ぴよりん",
+      "romaji": "Piyorin",
+      "zh_tw": "ぴよりん",
+      "en": "Piyorin"
+    },
+    "prefecture": "aichi",
+    "category": "food",
+    "summary": {
+      "text": "「ぴよりん」は、東海旅客鉄道（JR東海）名古屋駅（愛知県名古屋市中村区名駅）構内のジェイアール東海フードサービスが運営する「cafe＆gifts ぴよりんvillage」等にて販売しているひよこの形をした洋生菓子の名称。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E3%81%B4%E3%82%88%E3%82%8A%E3%82%93",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
+    "source_type": "wikipedia",
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ca/Piyorin.jpg/960px-Piyorin.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Cyukon",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Piyorin.jpg"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q28067862",
+        "fetched_at": "2026-09-28"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E3%81%B4%E3%82%88%E3%82%8A%E3%82%93",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "aichi-Q28687780",
+    "name": {
+      "ja": "西尾の抹茶",
+      "kana": "にしおのまっちゃ",
+      "romaji": "Nishionomatcha",
+      "zh_tw": "西尾の抹茶"
+    },
+    "prefecture": "aichi",
     "category": "drink",
-    "summary_zh": "",
+    "summary": {
+      "text": "西尾の抹茶（にしおのまっちゃ）は、西尾茶を対象とする地域ブランド（地域団体商標）の一つ（登録番号：第5204296号、権利者：西尾茶協同組合）。「愛知県西尾市・安城市・幡豆郡吉良町で生産された茶葉を同地域においててん茶加工・仕上げ精製し、茶臼挽（ひ）きした抹茶」をさす。飲用から加工までのすべてが対象。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E8%A5%BF%E5%B0%BE%E3%81%AE%E6%8A%B9%E8%8C%B6",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "source_type": "wikidata",
+    "kana_source": "wikipedia",
     "images": [],
     "sources": [
       {
         "url": "https://www.wikidata.org/wiki/Q28687780",
-        "fetched_at": "2026-09-27"
+        "fetched_at": "2026-09-28"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E8%A5%BF%E5%B0%BE%E3%81%AE%E6%8A%B9%E8%8C%B6",
+        "fetched_at": "2026-09-28"
       }
     ],
-    "updated_at": "2026-09-27"
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "aichi-Q43378784",
+    "name": {
+      "ja": "名古屋カレーうどん",
+      "kana": "なごやかれーうどん",
+      "romaji": "Nagoyakareudon",
+      "zh_tw": "名古屋カレーうどん",
+      "en": "Nagoya curry udon"
+    },
+    "prefecture": "aichi",
+    "category": "food",
+    "summary": {
+      "text": "名古屋カレーうどん（なごやカレーうどん）は、愛知県名古屋市のご当地麺料理（カレーうどん）の一種である。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E5%90%8D%E5%8F%A4%E5%B1%8B%E3%82%AB%E3%83%AC%E3%83%BC%E3%81%86%E3%81%A9%E3%82%93",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
+    "source_type": "wikipedia",
+    "kana_source": "wikipedia",
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/64/Nagoya_Curry_Udon%2C_at_Honten_Shachinoya.jpg/960px-Nagoya_Curry_Udon%2C_at_Honten_Shachinoya.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "要塞騎士",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Nagoya_Curry_Udon,_at_Honten_Shachinoya.jpg"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q43378784",
+        "fetched_at": "2026-09-28"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E5%90%8D%E5%8F%A4%E5%B1%8B%E3%82%AB%E3%83%AC%E3%83%BC%E3%81%86%E3%81%A9%E3%82%93",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "aichi-maff-aburagezushi_aichi",
+    "name": {
+      "ja": "あぶらげずし",
+      "kana": "あぶらげずし",
+      "romaji": "Aburagezushi",
+      "zh_tw": "あぶらげずし"
+    },
+    "prefecture": "aichi",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/aburagezushi_aichi.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "aichi-maff-arametorakkaseinonitsuke_aichi",
+    "name": {
+      "ja": "あらめと落花生の煮付",
+      "zh_tw": "あらめと落花生の煮付"
+    },
+    "prefecture": "aichi",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/arametorakkaseinonitsuke_aichi.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "aichi-maff-fukinonitsuke_aichi",
+    "name": {
+      "ja": "ふきの煮付け",
+      "zh_tw": "ふきの煮付け"
+    },
+    "prefecture": "aichi",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/fukinonitsuke_aichi.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "aichi-maff-funamiso_aichi",
+    "name": {
+      "ja": "ふな味噌",
+      "zh_tw": "ふな味噌"
+    },
+    "prefecture": "aichi",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/funamiso_aichi.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "aichi-maff-furofukidaikon_aichi",
+    "name": {
+      "ja": "ふろふき大根",
+      "zh_tw": "ふろふき大根"
+    },
+    "prefecture": "aichi",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/furofukidaikon_aichi.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "aichi-maff-hakozushi_aichi",
+    "name": {
+      "ja": "箱ずし",
+      "zh_tw": "箱ずし"
+    },
+    "prefecture": "aichi",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/hakozushi_aichi.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "aichi-maff-hazetsukudani_aichi",
+    "name": {
+      "ja": "はぜ佃煮",
+      "zh_tw": "はぜ佃煮"
+    },
+    "prefecture": "aichi",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/hazetsukudani_aichi.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "aichi-maff-hebomeshi_aichi",
+    "name": {
+      "ja": "へぼ飯",
+      "zh_tw": "へぼ飯"
+    },
+    "prefecture": "aichi",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/hebomeshi_aichi.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "aichi-maff-igamanju_aichi",
+    "name": {
+      "ja": "いがまんじゅう",
+      "kana": "いがまんじゅう",
+      "romaji": "Igamanju",
+      "zh_tw": "いがまんじゅう"
+    },
+    "prefecture": "aichi",
+    "category": "sweets",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/igamanju_aichi.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "aichi-maff-jojokiri_aichi",
+    "name": {
+      "ja": "じょじょきり",
+      "kana": "じょじょきり",
+      "romaji": "Jojokiri",
+      "zh_tw": "じょじょきり"
+    },
+    "prefecture": "aichi",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/jojokiri_aichi.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "aichi-maff-jurokusasagenogomamisoae_aichi",
+    "name": {
+      "ja": "十六ささげのごま味噌和え",
+      "zh_tw": "十六ささげのごま味噌和え"
+    },
+    "prefecture": "aichi",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/jurokusasagenogomamisoae_aichi.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "aichi-maff-kakimawashi_aichi",
+    "name": {
+      "ja": "かきまわし",
+      "kana": "かきまわし",
+      "romaji": "Kakimawashi",
+      "zh_tw": "かきまわし"
+    },
+    "prefecture": "aichi",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/kakimawashi_aichi.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "aichi-maff-karimorinokasuzuke_aichi",
+    "name": {
+      "ja": "かりもりの粕漬け",
+      "zh_tw": "かりもりの粕漬け"
+    },
+    "prefecture": "aichi",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/karimorinokasuzuke_aichi.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "aichi-maff-kashiwanohikizuri_aichi",
+    "name": {
+      "ja": "かしわのひきずり",
+      "kana": "かしわのひきずり",
+      "romaji": "Kashiwanohikizuri",
+      "zh_tw": "かしわのひきずり"
+    },
+    "prefecture": "aichi",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/kashiwanohikizuri_aichi.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "aichi-maff-kiinaiokowa_aichi",
+    "name": {
+      "ja": "黄いないおこわ",
+      "zh_tw": "黄いないおこわ"
+    },
+    "prefecture": "aichi",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/kiinaiokowa_aichi.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "aichi-maff-kishimen_aichi",
+    "name": {
+      "ja": "きしめん",
+      "kana": "きしめん",
+      "romaji": "Kishimen",
+      "zh_tw": "きしめん"
+    },
+    "prefecture": "aichi",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/kishimen_aichi.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "aichi-maff-kushiasari_aichi",
+    "name": {
+      "ja": "串あさり",
+      "zh_tw": "串あさり"
+    },
+    "prefecture": "aichi",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/kushiasari_aichi.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "aichi-maff-misonikomiudon_aichi",
+    "name": {
+      "ja": "味噌煮込みうどん",
+      "zh_tw": "味噌煮込みうどん"
+    },
+    "prefecture": "aichi",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/misonikomiudon_aichi.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "aichi-maff-misooden_aichi",
+    "name": {
+      "ja": "味噌おでん",
+      "zh_tw": "味噌おでん"
+    },
+    "prefecture": "aichi",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/misooden_aichi.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "aichi-maff-morokozushi_aichi",
+    "name": {
+      "ja": "もろこずし",
+      "kana": "もろこずし",
+      "romaji": "Morokozushi",
+      "zh_tw": "もろこずし"
+    },
+    "prefecture": "aichi",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/morokozushi_aichi.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "aichi-maff-nimiso_aichi",
+    "name": {
+      "ja": "煮味噌",
+      "zh_tw": "煮味噌"
+    },
+    "prefecture": "aichi",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/nimiso_aichi.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "aichi-maff-onimanju_aichi",
+    "name": {
+      "ja": "鬼まんじゅう",
+      "zh_tw": "鬼まんじゅう"
+    },
+    "prefecture": "aichi",
+    "category": "sweets",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/onimanju_aichi.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "aichi-maff-oshimon_aichi",
+    "name": {
+      "ja": "おしもん",
+      "kana": "おしもん",
+      "romaji": "Oshimon",
+      "zh_tw": "おしもん"
+    },
+    "prefecture": "aichi",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/oshimon_aichi.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "aichi-maff-renkonnonimono_aichi",
+    "name": {
+      "ja": "れんこんの煮物",
+      "zh_tw": "れんこんの煮物"
+    },
+    "prefecture": "aichi",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/renkonnonimono_aichi.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "aichi-maff-sumisosomen_aichi",
+    "name": {
+      "ja": "酢味噌そうめん",
+      "zh_tw": "酢味噌そうめん"
+    },
+    "prefecture": "aichi",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/sumisosomen_aichi.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "aichi-maff-takomeshi_aichi",
+    "name": {
+      "ja": "たこ飯",
+      "zh_tw": "たこ飯"
+    },
+    "prefecture": "aichi",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/takomeshi_aichi.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "aichi-maff-toganjiru_aichi",
+    "name": {
+      "ja": "とうがん汁",
+      "zh_tw": "とうがん汁"
+    },
+    "prefecture": "aichi",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/toganjiru_aichi.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
   }
 ]

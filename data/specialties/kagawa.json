@@ -1,0 +1,616 @@
+[
+  {
+    "id": "kagawa-Q11269155",
+    "name": {
+      "ja": "しょうゆ豆",
+      "kana": "しょうゆまめ",
+      "romaji": "Shoyumame",
+      "zh_tw": "しょうゆ豆",
+      "en": "Shoyumame"
+    },
+    "prefecture": "kagawa",
+    "category": "kyodo",
+    "summary": {
+      "text": "しょうゆ豆（しょうゆまめ）は香川県の郷土料理である。発酵食品のしょうゆ豆については醤油の実を参照のこと。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E3%81%97%E3%82%87%E3%81%86%E3%82%86%E8%B1%86",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
+    "source_type": "kyodo_ryori",
+    "kana_source": "wikipedia",
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bc/Syouyumame_1.jpg/960px-Syouyumame_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Dokudami",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Syouyumame_1.jpg"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/shouyu_mame_kagawa.html",
+        "fetched_at": "2026-09-28"
+      },
+      {
+        "url": "https://www.wikidata.org/wiki/Q11269155",
+        "fetched_at": "2026-09-28"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E3%81%97%E3%82%87%E3%81%86%E3%82%86%E8%B1%86",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "kagawa-Q122354181",
+    "name": {
+      "ja": "なすそうめん",
+      "kana": "なすそうめん",
+      "romaji": "Nasu So Men",
+      "zh_tw": "なすそうめん",
+      "en": "nasu sōmen"
+    },
+    "prefecture": "kagawa",
+    "category": "kyodo",
+    "summary": {
+      "text": "なすそうめんは石川県や香川県の郷土料理。茄子 (ナス)と素麺を使用した料理である。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E3%81%AA%E3%81%99%E3%81%9D%E3%81%86%E3%82%81%E3%82%93",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/nasu_soumen_kagawa.html",
+        "fetched_at": "2026-09-28"
+      },
+      {
+        "url": "https://www.wikidata.org/wiki/Q122354181",
+        "fetched_at": "2026-09-28"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E3%81%AA%E3%81%99%E3%81%9D%E3%81%86%E3%82%81%E3%82%93",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "kagawa-maff-ajino_sanbai_kagawa",
+    "name": {
+      "ja": "アジの三杯",
+      "zh_tw": "アジの三杯"
+    },
+    "prefecture": "kagawa",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/ajino_sanbai_kagawa.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "kagawa-maff-anmochi_zouni_kagawa",
+    "name": {
+      "ja": "あんもち雑煮",
+      "zh_tw": "あんもち雑煮"
+    },
+    "prefecture": "kagawa",
+    "category": "sweets",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/anmochi_zouni_kagawa.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "kagawa-maff-bara_zushi_kagawa",
+    "name": {
+      "ja": "ばらずし",
+      "kana": "ばらずし",
+      "romaji": "Barazushi",
+      "zh_tw": "ばらずし"
+    },
+    "prefecture": "kagawa",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/bara_zushi_kagawa.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "kagawa-maff-dojou_jiru_kagawa",
+    "name": {
+      "ja": "どじょう汁",
+      "zh_tw": "どじょう汁"
+    },
+    "prefecture": "kagawa",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/dojou_jiru_kagawa.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "kagawa-maff-ebi_miso_shiru_kagawa",
+    "name": {
+      "ja": "えびみそ汁",
+      "zh_tw": "えびみそ汁"
+    },
+    "prefecture": "kagawa",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/ebi_miso_shiru_kagawa.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "kagawa-maff-hage_dango_kagawa",
+    "name": {
+      "ja": "はげ団子",
+      "zh_tw": "はげ団子"
+    },
+    "prefecture": "kagawa",
+    "category": "sweets",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/hage_dango_kagawa.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "kagawa-maff-imotako_kagawa",
+    "name": {
+      "ja": "いもたこ",
+      "kana": "いもたこ",
+      "romaji": "Imotako",
+      "zh_tw": "いもたこ"
+    },
+    "prefecture": "kagawa",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/imotako_kagawa.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "kagawa-maff-iriko_meshi_kagawa",
+    "name": {
+      "ja": "いりこ飯",
+      "zh_tw": "いりこ飯"
+    },
+    "prefecture": "kagawa",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/iriko_meshi_kagawa.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "kagawa-maff-kakimaze_kagawa",
+    "name": {
+      "ja": "かきまぜ",
+      "kana": "かきまぜ",
+      "romaji": "Kakimaze",
+      "zh_tw": "かきまぜ"
+    },
+    "prefecture": "kagawa",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/kakimaze_kagawa.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "kagawa-maff-kankan_zushi_kagawa",
+    "name": {
+      "ja": "カンカンずし",
+      "kana": "かんかんずし",
+      "romaji": "Kankanzushi",
+      "zh_tw": "カンカンずし"
+    },
+    "prefecture": "kagawa",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/kankan_zushi_kagawa.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "kagawa-maff-konnyaku_no_hachihai_kagawa",
+    "name": {
+      "ja": "こんにゃくのはちはい",
+      "kana": "こんにゃくのはちはい",
+      "romaji": "Konnyakunohachihai",
+      "zh_tw": "こんにゃくのはちはい"
+    },
+    "prefecture": "kagawa",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/konnyaku_no_hachihai_kagawa.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "kagawa-maff-konnyaku_no_shiraae_kagawa",
+    "name": {
+      "ja": "こんにゃくの白あえ",
+      "zh_tw": "こんにゃくの白あえ"
+    },
+    "prefecture": "kagawa",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/konnyaku_no_shiraae_kagawa.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "kagawa-maff-manbano_kenchan_kagawa",
+    "name": {
+      "ja": "まんばのけんちゃん",
+      "kana": "まんばのけんちゃん",
+      "romaji": "Manbanokenchan",
+      "zh_tw": "まんばのけんちゃん"
+    },
+    "prefecture": "kagawa",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/manbano_kenchan_kagawa.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "kagawa-maff-mossou_meshi_kagawa",
+    "name": {
+      "ja": "もっそうめし",
+      "kana": "もっそうめし",
+      "romaji": "Mossomeshi",
+      "zh_tw": "もっそうめし"
+    },
+    "prefecture": "kagawa",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/mossou_meshi_kagawa.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "kagawa-maff-ochi_rashi_ame_kagawa",
+    "name": {
+      "ja": "おちらしあめ",
+      "kana": "おちらしあめ",
+      "romaji": "Ochirashiame",
+      "zh_tw": "おちらしあめ"
+    },
+    "prefecture": "kagawa",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/ochi_rashi_ame_kagawa.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "kagawa-maff-oshinuki_zushi_kagawa",
+    "name": {
+      "ja": "押し抜きずし",
+      "zh_tw": "押し抜きずし"
+    },
+    "prefecture": "kagawa",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/oshinuki_zushi_kagawa.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "kagawa-maff-satsuma_kagawa",
+    "name": {
+      "ja": "さつま",
+      "kana": "さつま",
+      "romaji": "Satsuma",
+      "zh_tw": "さつま"
+    },
+    "prefecture": "kagawa",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/satsuma_kagawa.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "kagawa-maff-sawasawa_kagawa",
+    "name": {
+      "ja": "さわさわ",
+      "kana": "さわさわ",
+      "romaji": "Sawasawa",
+      "zh_tw": "さわさわ"
+    },
+    "prefecture": "kagawa",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/sawasawa_kagawa.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "kagawa-maff-shima_no_chagayu_kagawa",
+    "name": {
+      "ja": "島の茶粥",
+      "zh_tw": "島の茶粥"
+    },
+    "prefecture": "kagawa",
+    "category": "tea",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/shima_no_chagayu_kagawa.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "kagawa-maff-sippoku_udon_kagawa",
+    "name": {
+      "ja": "しっぽくうどん",
+      "kana": "しっぽくうどん",
+      "romaji": "Shippokudon",
+      "zh_tw": "しっぽくうどん"
+    },
+    "prefecture": "kagawa",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/sippoku_udon_kagawa.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "kagawa-maff-tai_soumen_kagawa",
+    "name": {
+      "ja": "鯛そうめん",
+      "zh_tw": "鯛そうめん"
+    },
+    "prefecture": "kagawa",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/tai_soumen_kagawa.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "kagawa-maff-takuan_no_kinpira_kagawa",
+    "name": {
+      "ja": "たくあんのきんぴら",
+      "kana": "たくあんのきんぴら",
+      "romaji": "Takuannokinpira",
+      "zh_tw": "たくあんのきんぴら"
+    },
+    "prefecture": "kagawa",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/takuan_no_kinpira_kagawa.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "kagawa-maff-teppai_kagawa",
+    "name": {
+      "ja": "てっぱい",
+      "kana": "てっぱい",
+      "romaji": "Teppai",
+      "zh_tw": "てっぱい"
+    },
+    "prefecture": "kagawa",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/teppai_kagawa.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "kagawa-maff-toshiake_udon_kagawa",
+    "name": {
+      "ja": "年明けうどん",
+      "zh_tw": "年明けうどん"
+    },
+    "prefecture": "kagawa",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/toshiake_udon_kagawa.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "kagawa-maff-uchikomi_jiru_kagawa",
+    "name": {
+      "ja": "打ち込み汁",
+      "zh_tw": "打ち込み汁"
+    },
+    "prefecture": "kagawa",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/uchikomi_jiru_kagawa.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "kagawa-maff-uzumaki_mochi_kagawa",
+    "name": {
+      "ja": "うずまきもち",
+      "kana": "うずまきもち",
+      "romaji": "Uzumakimochi",
+      "zh_tw": "うずまきもち"
+    },
+    "prefecture": "kagawa",
+    "category": "sweets",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/uzumaki_mochi_kagawa.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "kagawa-maff-wakegiae_kagawa",
+    "name": {
+      "ja": "わけぎあえ",
+      "kana": "わけぎあえ",
+      "romaji": "Wakegiae",
+      "zh_tw": "わけぎあえ"
+    },
+    "prefecture": "kagawa",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/wakegiae_kagawa.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "kagawa-maff-warigo_bentou_kagawa",
+    "name": {
+      "ja": "わりご弁当",
+      "zh_tw": "わりご弁当"
+    },
+    "prefecture": "kagawa",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/warigo_bentou_kagawa.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  }
+]

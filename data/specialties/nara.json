@@ -1,15 +1,24 @@
 [
   {
-    "id": "wd-Q10861386",
+    "id": "nara-Q10861386",
     "name": {
       "ja": "柿の葉寿司",
+      "kana": "かきのはずし",
+      "romaji": "Kaki No Ha Zushi",
       "zh_tw": "柿葉壽司",
       "en": "kaki no ha zushi"
     },
     "prefecture": "nara",
-    "category": "food",
-    "summary_zh": "",
-    "source_type": "wikidata",
+    "category": "kyodo",
+    "summary": {
+      "text": "柿葉壽司（柿の葉壽司），以柿樹的葉子包裹著鮭魚或鯖魚製成的壽司，為奈良縣及和歌山縣的特產，是甚具鄉土風味的日本料理。",
+      "lang": "zh",
+      "source_url": "https://zh.wikipedia.org/wiki/%E6%9F%BF%E8%91%89%E5%A3%BD%E5%8F%B8",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
+    "source_type": "kyodo_ryori",
+    "kana_source": "wikipedia",
     "images": [
       {
         "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/35/Kakinohazusi.jpg/960px-Kakinohazusi.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -20,10 +29,590 @@
     ],
     "sources": [
       {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/kakinoha_zushi_nara.html",
+        "fetched_at": "2026-09-28"
+      },
+      {
         "url": "https://www.wikidata.org/wiki/Q10861386",
-        "fetched_at": "2026-09-27"
+        "fetched_at": "2026-09-28"
+      },
+      {
+        "url": "https://zh.wikipedia.org/wiki/%E6%9F%BF%E8%91%89%E5%A3%BD%E5%8F%B8",
+        "fetched_at": "2026-09-28"
       }
     ],
-    "updated_at": "2026-09-27"
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "nara-Q11443039",
+    "name": {
+      "ja": "天理ラーメン",
+      "kana": "てんりらーめん",
+      "romaji": "Tenri Ramen",
+      "zh_tw": "天理拉麵",
+      "en": "Tenri ramen"
+    },
+    "prefecture": "nara",
+    "category": "ramen",
+    "summary": {
+      "text": "天理拉麵 是奈良縣天理市當地的一種拉麵。特點是使用大量的白菜烹煮。。",
+      "lang": "zh",
+      "source_url": "https://zh.wikipedia.org/wiki/%E5%A4%A9%E7%90%86%E6%8B%89%E9%9D%A2",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
+    "source_type": "wikipedia",
+    "kana_source": "wikipedia",
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/68/%E3%82%B9%E3%82%BF%E3%83%9F%E3%83%8A%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3%EF%BC%88%E5%A4%A9%E7%90%86%E3%82%B9%E3%82%BF%E3%83%9F%E3%83%8A%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3%EF%BC%89.jpg/960px-%E3%82%B9%E3%82%BF%E3%83%9F%E3%83%8A%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3%EF%BC%88%E5%A4%A9%E7%90%86%E3%82%B9%E3%82%BF%E3%83%9F%E3%83%8A%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3%EF%BC%89.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "くろふね",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:%E3%82%B9%E3%82%BF%E3%83%9F%E3%83%8A%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3%EF%BC%88%E5%A4%A9%E7%90%86%E3%82%B9%E3%82%BF%E3%83%9F%E3%83%8A%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3%EF%BC%89.jpg"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q11443039",
+        "fetched_at": "2026-09-28"
+      },
+      {
+        "url": "https://zh.wikipedia.org/wiki/%E5%A4%A9%E7%90%86%E6%8B%89%E9%9D%A2",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "nara-maff-amago_no_kanroni_nara",
+    "name": {
+      "ja": "あまごの甘露煮",
+      "zh_tw": "あまごの甘露煮"
+    },
+    "prefecture": "nara",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/amago_no_kanroni_nara.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "nara-maff-asuka_nabe_nara",
+    "name": {
+      "ja": "飛鳥鍋",
+      "zh_tw": "飛鳥鍋"
+    },
+    "prefecture": "nara",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/asuka_nabe_nara.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "nara-maff-ayu_zushi_nara",
+    "name": {
+      "ja": "鮎寿司",
+      "zh_tw": "鮎寿司"
+    },
+    "prefecture": "nara",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/ayu_zushi_nara.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "nara-maff-chagayu_nara",
+    "name": {
+      "ja": "茶粥",
+      "zh_tw": "茶粥"
+    },
+    "prefecture": "nara",
+    "category": "tea",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/chagayu_nara.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "nara-maff-dengara_nara",
+    "name": {
+      "ja": "でんがら",
+      "kana": "でんがら",
+      "romaji": "Dengara",
+      "zh_tw": "でんがら"
+    },
+    "prefecture": "nara",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/dengara_nara.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "nara-maff-eino_nikogori_nara",
+    "name": {
+      "ja": "エイの煮こごり",
+      "zh_tw": "エイの煮こごり"
+    },
+    "prefecture": "nara",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/eino_nikogori_nara.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "nara-maff-fuki_dawara_nara",
+    "name": {
+      "ja": "ふき俵",
+      "zh_tw": "ふき俵"
+    },
+    "prefecture": "nara",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/fuki_dawara_nara.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "nara-maff-ha_gesshou_mochi_nara",
+    "name": {
+      "ja": "半夏生餅",
+      "zh_tw": "半夏生餅"
+    },
+    "prefecture": "nara",
+    "category": "sweets",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/ha_gesshou_mochi_nara.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "nara-maff-imobota_nara",
+    "name": {
+      "ja": "いもぼた",
+      "kana": "いもぼた",
+      "romaji": "Imobota",
+      "zh_tw": "いもぼた"
+    },
+    "prefecture": "nara",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/imobota_nara.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "nara-maff-irogohan_nara",
+    "name": {
+      "ja": "色ご飯",
+      "zh_tw": "色ご飯"
+    },
+    "prefecture": "nara",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/irogohan_nara.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "nara-maff-itadori_no_nimono_nara",
+    "name": {
+      "ja": "いたどりの煮もの",
+      "zh_tw": "いたどりの煮もの"
+    },
+    "prefecture": "nara",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/itadori_no_nimono_nara.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "nara-maff-kaki_goori_nara",
+    "name": {
+      "ja": "かき氷",
+      "zh_tw": "かき氷"
+    },
+    "prefecture": "nara",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/kaki_goori_nara.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "nara-maff-kaki_namasu_nara",
+    "name": {
+      "ja": "柿なます",
+      "zh_tw": "柿なます"
+    },
+    "prefecture": "nara",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/kaki_namasu_nara.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "nara-maff-kashiwa_no_sukiyaki_nara",
+    "name": {
+      "ja": "かしわのすき焼き",
+      "zh_tw": "かしわのすき焼き"
+    },
+    "prefecture": "nara",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/kashiwa_no_sukiyaki_nara.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "nara-maff-kuzu_mochi_nara",
+    "name": {
+      "ja": "葛餅",
+      "zh_tw": "葛餅"
+    },
+    "prefecture": "nara",
+    "category": "sweets",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/kuzu_mochi_nara.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "nara-maff-mana_mehari_nara",
+    "name": {
+      "ja": "まなめはり",
+      "kana": "まなめはり",
+      "romaji": "Manamehari",
+      "zh_tw": "まなめはり"
+    },
+    "prefecture": "nara",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/mana_mehari_nara.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "nara-maff-nama_bushi_to_negi_no_nimono_nara",
+    "name": {
+      "ja": "生節とねぎの煮もの",
+      "zh_tw": "生節とねぎの煮もの"
+    },
+    "prefecture": "nara",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/nama_bushi_to_negi_no_nimono_nara.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "nara-maff-nana_iro_oae_nara",
+    "name": {
+      "ja": "七色お和え",
+      "zh_tw": "七色お和え"
+    },
+    "prefecture": "nara",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/nana_iro_oae_nara.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "nara-maff-nara_chameshi_nara",
+    "name": {
+      "ja": "奈良茶飯",
+      "zh_tw": "奈良茶飯"
+    },
+    "prefecture": "nara",
+    "category": "tea",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/nara_chameshi_nara.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "nara-maff-nara_noppei_nara",
+    "name": {
+      "ja": "奈良のっぺ",
+      "zh_tw": "奈良のっぺ"
+    },
+    "prefecture": "nara",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/nara_noppei_nara.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "nara-maff-naraae_nara",
+    "name": {
+      "ja": "奈良和え",
+      "zh_tw": "奈良和え"
+    },
+    "prefecture": "nara",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/naraae_nara.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "nara-maff-nyuumen_nara",
+    "name": {
+      "ja": "にゅうめん",
+      "kana": "にゅうめん",
+      "romaji": "Nyumen",
+      "zh_tw": "にゅうめん"
+    },
+    "prefecture": "nara",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/nyuumen_nara.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "nara-maff-sanma_sushi_nara",
+    "name": {
+      "ja": "さんま寿司",
+      "zh_tw": "さんま寿司"
+    },
+    "prefecture": "nara",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/sanma_sushi_nara.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "nara-maff-shiki_shiki_nara",
+    "name": {
+      "ja": "しきしき",
+      "kana": "しきしき",
+      "romaji": "Shikishiki",
+      "zh_tw": "しきしき"
+    },
+    "prefecture": "nara",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/shiki_shiki_nara.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "nara-maff-tako_momiuri_nara",
+    "name": {
+      "ja": "蛸もみうり",
+      "zh_tw": "蛸もみうり"
+    },
+    "prefecture": "nara",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/tako_momiuri_nara.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "nara-maff-warabi_mochi_nara",
+    "name": {
+      "ja": "蕨餅",
+      "zh_tw": "蕨餅"
+    },
+    "prefecture": "nara",
+    "category": "sweets",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/warabi_mochi_nara.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "nara-maff-yamato_no_zouni_nara",
+    "name": {
+      "ja": "大和の雑煮",
+      "zh_tw": "大和の雑煮"
+    },
+    "prefecture": "nara",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/yamato_no_zouni_nara.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "nara-maff-yamatona_to_usuage_no_nimono_nara",
+    "name": {
+      "ja": "大和まなと薄揚げの煮もの",
+      "zh_tw": "大和まなと薄揚げの煮もの"
+    },
+    "prefecture": "nara",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/yamatona_to_usuage_no_nimono_nara.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "nara-maff-zuiki_no_nimono_nara",
+    "name": {
+      "ja": "ずいきの煮もの",
+      "zh_tw": "ずいきの煮もの"
+    },
+    "prefecture": "nara",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/zuiki_no_nimono_nara.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
   }
 ]

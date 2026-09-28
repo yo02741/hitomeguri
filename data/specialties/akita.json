@@ -1,0 +1,567 @@
+[
+  {
+    "id": "akita-Q11405053",
+    "name": {
+      "ja": "十文字中華そば",
+      "kana": "じゅうもんじちゅうかそば",
+      "romaji": "Jumonjichukasoba",
+      "zh_tw": "十文字中華そば",
+      "en": "Jūmonji ramen"
+    },
+    "prefecture": "akita",
+    "category": "ramen",
+    "summary": {
+      "text": "十文字中華そば（じゅうもんじちゅうかそば）とは、秋田県横手市十文字町を中心とする地域で食されるラーメン（ご当地ラーメン）。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E5%8D%81%E6%96%87%E5%AD%97%E4%B8%AD%E8%8F%AF%E3%81%9D%E3%81%B0",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
+    "source_type": "wikipedia",
+    "kana_source": "wikipedia",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q11405053",
+        "fetched_at": "2026-09-28"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E5%8D%81%E6%96%87%E5%AD%97%E4%B8%AD%E8%8F%AF%E3%81%9D%E3%81%B0",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "akita-maff-29_10_akita",
+    "name": {
+      "ja": "てんこ小豆の赤飯",
+      "zh_tw": "てんこ小豆の赤飯"
+    },
+    "prefecture": "akita",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/29_10_akita.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "akita-maff-29_11_akita",
+    "name": {
+      "ja": "卵寒天",
+      "zh_tw": "卵寒天"
+    },
+    "prefecture": "akita",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/29_11_akita.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "akita-maff-29_12_akita",
+    "name": {
+      "ja": "豆腐カステラ",
+      "zh_tw": "豆腐カステラ"
+    },
+    "prefecture": "akita",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/29_12_akita.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "akita-maff-29_13_akita",
+    "name": {
+      "ja": "あさづけ",
+      "kana": "あさづけ",
+      "romaji": "Asazuke",
+      "zh_tw": "あさづけ"
+    },
+    "prefecture": "akita",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/29_13_akita.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "akita-maff-29_14_akita",
+    "name": {
+      "ja": "鱈の子炒り",
+      "zh_tw": "鱈の子炒り"
+    },
+    "prefecture": "akita",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/29_14_akita.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "akita-maff-29_15_akita",
+    "name": {
+      "ja": "かまぶく",
+      "kana": "かまぶく",
+      "romaji": "Kamabuku",
+      "zh_tw": "かまぶく"
+    },
+    "prefecture": "akita",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/29_15_akita.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "akita-maff-29_16_akita",
+    "name": {
+      "ja": "じゅんさい鍋",
+      "zh_tw": "じゅんさい鍋"
+    },
+    "prefecture": "akita",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/29_16_akita.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "akita-maff-29_17_akita",
+    "name": {
+      "ja": "鱈汁",
+      "zh_tw": "鱈汁"
+    },
+    "prefecture": "akita",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/29_17_akita.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "akita-maff-29_18_akita",
+    "name": {
+      "ja": "とんぶりの長芋和え",
+      "zh_tw": "とんぶりの長芋和え"
+    },
+    "prefecture": "akita",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/29_18_akita.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "akita-maff-29_19_akita",
+    "name": {
+      "ja": "なすの花ずし",
+      "zh_tw": "なすの花ずし"
+    },
+    "prefecture": "akita",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/29_19_akita.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "akita-maff-29_1_akita",
+    "name": {
+      "ja": "いぶりがっこ",
+      "kana": "いぶりがっこ",
+      "romaji": "Iburigakko",
+      "zh_tw": "いぶりがっこ"
+    },
+    "prefecture": "akita",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/29_1_akita.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "akita-maff-29_20_akita",
+    "name": {
+      "ja": "鯉の甘煮",
+      "zh_tw": "鯉の甘煮"
+    },
+    "prefecture": "akita",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/29_20_akita.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "akita-maff-29_21_akita",
+    "name": {
+      "ja": "おやき",
+      "kana": "おやき",
+      "romaji": "Oyaki",
+      "zh_tw": "おやき"
+    },
+    "prefecture": "akita",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/29_21_akita.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "akita-maff-29_22_akita",
+    "name": {
+      "ja": "かすべ煮",
+      "zh_tw": "かすべ煮"
+    },
+    "prefecture": "akita",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/29_22_akita.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "akita-maff-29_23_akita",
+    "name": {
+      "ja": "しょっつる鍋",
+      "zh_tw": "しょっつる鍋"
+    },
+    "prefecture": "akita",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/29_23_akita.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "akita-maff-29_24_akita",
+    "name": {
+      "ja": "とろろまんま",
+      "kana": "とろろまんま",
+      "romaji": "Tororomanma",
+      "zh_tw": "とろろまんま"
+    },
+    "prefecture": "akita",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/29_24_akita.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "akita-maff-29_25_akita",
+    "name": {
+      "ja": "きゃのっこ汁",
+      "zh_tw": "きゃのっこ汁"
+    },
+    "prefecture": "akita",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/29_25_akita.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "akita-maff-29_26_akita",
+    "name": {
+      "ja": "干し餅",
+      "zh_tw": "干し餅"
+    },
+    "prefecture": "akita",
+    "category": "sweets",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/29_26_akita.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "akita-maff-29_27_akita",
+    "name": {
+      "ja": "なすのこうじ漬け",
+      "zh_tw": "なすのこうじ漬け"
+    },
+    "prefecture": "akita",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/29_27_akita.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "akita-maff-29_28_akita",
+    "name": {
+      "ja": "三杯みそ",
+      "zh_tw": "三杯みそ"
+    },
+    "prefecture": "akita",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/29_28_akita.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "akita-maff-29_29_akita",
+    "name": {
+      "ja": "赤漬け",
+      "zh_tw": "赤漬け"
+    },
+    "prefecture": "akita",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/29_29_akita.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "akita-maff-29_2_akita",
+    "name": {
+      "ja": "ハタハタ寿し",
+      "zh_tw": "ハタハタ寿し"
+    },
+    "prefecture": "akita",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/29_2_akita.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "akita-maff-29_3_akita",
+    "name": {
+      "ja": "笹巻き",
+      "zh_tw": "笹巻き"
+    },
+    "prefecture": "akita",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/29_3_akita.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "akita-maff-29_4_akita",
+    "name": {
+      "ja": "だまこ鍋",
+      "zh_tw": "だまこ鍋"
+    },
+    "prefecture": "akita",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/29_4_akita.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "akita-maff-29_5_akita",
+    "name": {
+      "ja": "納豆汁",
+      "zh_tw": "納豆汁"
+    },
+    "prefecture": "akita",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/29_5_akita.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "akita-maff-29_6_akita",
+    "name": {
+      "ja": "きりたんぽ鍋",
+      "zh_tw": "きりたんぽ鍋"
+    },
+    "prefecture": "akita",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/29_6_akita.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "akita-maff-29_7_akita",
+    "name": {
+      "ja": "いものこ汁",
+      "zh_tw": "いものこ汁"
+    },
+    "prefecture": "akita",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/29_7_akita.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "akita-maff-29_8_akita",
+    "name": {
+      "ja": "柿漬け",
+      "zh_tw": "柿漬け"
+    },
+    "prefecture": "akita",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/29_8_akita.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "akita-maff-29_9_akita",
+    "name": {
+      "ja": "なた漬け",
+      "zh_tw": "なた漬け"
+    },
+    "prefecture": "akita",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/29_9_akita.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  }
+]

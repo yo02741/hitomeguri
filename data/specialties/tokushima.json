@@ -1,0 +1,632 @@
+[
+  {
+    "id": "tokushima-Q11489657",
+    "name": {
+      "ja": "徳島ラーメン",
+      "kana": "とくしまらーめん",
+      "romaji": "Tokushima Ramen",
+      "zh_tw": "德島拉麵",
+      "en": "Tokushima ramen"
+    },
+    "prefecture": "tokushima",
+    "category": "ramen",
+    "summary": {
+      "text": "德島拉麵是日本德島縣東部的地區特色日本拉麵。",
+      "lang": "zh",
+      "source_url": "https://zh.wikipedia.org/wiki/%E5%BE%B7%E5%B3%B6%E6%8B%89%E9%BA%B5",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
+    "source_type": "wikipedia",
+    "kana_source": "wikipedia",
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6f/Tokushima_Ramen_Men-Oh_ac.jpg/960px-Tokushima_Ramen_Men-Oh_ac.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Asturio Cantabrio",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Tokushima_Ramen_Men-Oh_ac.jpg"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q11489657",
+        "fetched_at": "2026-09-28"
+      },
+      {
+        "url": "https://zh.wikipedia.org/wiki/%E5%BE%B7%E5%B3%B6%E6%8B%89%E9%BA%B5",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "tokushima-Q122354953",
+    "name": {
+      "ja": "島そうめん",
+      "kana": "しまそうめん",
+      "romaji": "Shima So Men",
+      "zh_tw": "島そうめん",
+      "en": "shima sōmen"
+    },
+    "prefecture": "tokushima",
+    "category": "kyodo",
+    "summary": {
+      "text": "島そうめん（しまそうめん）は、徳島県牟岐町出羽島の郷土料理。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E5%B3%B6%E3%81%9D%E3%81%86%E3%82%81%E3%82%93",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
+    "source_type": "kyodo_ryori",
+    "kana_source": "wikipedia",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/44_21_tokushima.html",
+        "fetched_at": "2026-09-28"
+      },
+      {
+        "url": "https://www.wikidata.org/wiki/Q122354953",
+        "fetched_at": "2026-09-28"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E5%B3%B6%E3%81%9D%E3%81%86%E3%82%81%E3%82%93",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "tokushima-Q122370327",
+    "name": {
+      "ja": "でんぶ",
+      "kana": "でんぶ",
+      "romaji": "Denbu",
+      "zh_tw": "でんぶ"
+    },
+    "prefecture": "tokushima",
+    "category": "kyodo",
+    "summary": {
+      "text": "おでんぶ、またはでんぶ、れんぶ、おれんぶは徳島県の郷土料理。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E3%81%8A%E3%81%A7%E3%82%93%E3%81%B6",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/44_17_tokushima.html",
+        "fetched_at": "2026-09-28"
+      },
+      {
+        "url": "https://www.wikidata.org/wiki/Q122370327",
+        "fetched_at": "2026-09-28"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E3%81%8A%E3%81%A7%E3%82%93%E3%81%B6",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "tokushima-maff-44_10_tokushima",
+    "name": {
+      "ja": "いり飯",
+      "zh_tw": "いり飯"
+    },
+    "prefecture": "tokushima",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/44_10_tokushima.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "tokushima-maff-44_11_tokushima",
+    "name": {
+      "ja": "金時豆入りばら寿司",
+      "zh_tw": "金時豆入りばら寿司"
+    },
+    "prefecture": "tokushima",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/44_11_tokushima.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "tokushima-maff-44_12_tokushima",
+    "name": {
+      "ja": "うちがえ雑煮",
+      "zh_tw": "うちがえ雑煮"
+    },
+    "prefecture": "tokushima",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/44_12_tokushima.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "tokushima-maff-44_13_tokushima",
+    "name": {
+      "ja": "ならえ",
+      "kana": "ならえ",
+      "romaji": "Narae",
+      "zh_tw": "ならえ"
+    },
+    "prefecture": "tokushima",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/44_13_tokushima.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "tokushima-maff-44_14_tokushima",
+    "name": {
+      "ja": "ゆべし",
+      "kana": "ゆべし",
+      "romaji": "Yubeshi",
+      "zh_tw": "ゆべし"
+    },
+    "prefecture": "tokushima",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/44_14_tokushima.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "tokushima-maff-44_15_tokushima",
+    "name": {
+      "ja": "おみいさん",
+      "kana": "おみいさん",
+      "romaji": "Omiisan",
+      "zh_tw": "おみいさん"
+    },
+    "prefecture": "tokushima",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/44_15_tokushima.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "tokushima-maff-44_16_tokushima",
+    "name": {
+      "ja": "茶ごめ",
+      "zh_tw": "茶ごめ"
+    },
+    "prefecture": "tokushima",
+    "category": "tea",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/44_16_tokushima.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "tokushima-maff-44_18_tokushima",
+    "name": {
+      "ja": "ゆずかん",
+      "kana": "ゆずかん",
+      "romaji": "Yuzukan",
+      "zh_tw": "ゆずかん"
+    },
+    "prefecture": "tokushima",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/44_18_tokushima.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "tokushima-maff-44_19_tokushima",
+    "name": {
+      "ja": "伊勢エビの味噌汁",
+      "zh_tw": "伊勢エビの味噌汁"
+    },
+    "prefecture": "tokushima",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/44_19_tokushima.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "tokushima-maff-44_1_tokushima",
+    "name": {
+      "ja": "そば米雑炊",
+      "zh_tw": "そば米雑炊"
+    },
+    "prefecture": "tokushima",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/44_1_tokushima.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "tokushima-maff-44_20_tokushima",
+    "name": {
+      "ja": "いももち",
+      "kana": "いももち",
+      "romaji": "Imomochi",
+      "zh_tw": "いももち"
+    },
+    "prefecture": "tokushima",
+    "category": "sweets",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/44_20_tokushima.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "tokushima-maff-44_22_tokushima",
+    "name": {
+      "ja": "阿波のいとこ煮",
+      "zh_tw": "阿波のいとこ煮"
+    },
+    "prefecture": "tokushima",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/44_22_tokushima.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "tokushima-maff-44_23_tokushima",
+    "name": {
+      "ja": "鯛めし",
+      "zh_tw": "鯛めし"
+    },
+    "prefecture": "tokushima",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/44_23_tokushima.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "tokushima-maff-44_24_tokushima",
+    "name": {
+      "ja": "白味噌雑煮",
+      "zh_tw": "白味噌雑煮"
+    },
+    "prefecture": "tokushima",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/44_24_tokushima.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "tokushima-maff-44_25_tokushima",
+    "name": {
+      "ja": "包飯",
+      "zh_tw": "包飯"
+    },
+    "prefecture": "tokushima",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/44_25_tokushima.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "tokushima-maff-44_26_tokushima",
+    "name": {
+      "ja": "ずきがし",
+      "kana": "ずきがし",
+      "romaji": "Zukigashi",
+      "zh_tw": "ずきがし"
+    },
+    "prefecture": "tokushima",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/44_26_tokushima.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "tokushima-maff-44_27_tokushima",
+    "name": {
+      "ja": "鮎ろうすい",
+      "zh_tw": "鮎ろうすい"
+    },
+    "prefecture": "tokushima",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/44_27_tokushima.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "tokushima-maff-44_28_tokushima",
+    "name": {
+      "ja": "あめごのひらら焼き",
+      "zh_tw": "あめごのひらら焼き"
+    },
+    "prefecture": "tokushima",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/44_28_tokushima.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "tokushima-maff-44_29_tokushima",
+    "name": {
+      "ja": "ほたようかん",
+      "kana": "ほたようかん",
+      "romaji": "Hotayokan",
+      "zh_tw": "ほたようかん"
+    },
+    "prefecture": "tokushima",
+    "category": "sweets",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/44_29_tokushima.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "tokushima-maff-44_2_tokushima",
+    "name": {
+      "ja": "ボウゼの姿寿司",
+      "zh_tw": "ボウゼの姿寿司"
+    },
+    "prefecture": "tokushima",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/44_2_tokushima.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "tokushima-maff-44_30_tokushima",
+    "name": {
+      "ja": "はすいもの茎の酢の物",
+      "zh_tw": "はすいもの茎の酢の物"
+    },
+    "prefecture": "tokushima",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/44_30_tokushima.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "tokushima-maff-44_3_tokushima",
+    "name": {
+      "ja": "祖谷のでこまわし",
+      "zh_tw": "祖谷のでこまわし"
+    },
+    "prefecture": "tokushima",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/44_3_tokushima.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "tokushima-maff-44_4_tokushima",
+    "name": {
+      "ja": "半田そうめん",
+      "zh_tw": "半田そうめん"
+    },
+    "prefecture": "tokushima",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/44_4_tokushima.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "tokushima-maff-44_5_tokushima",
+    "name": {
+      "ja": "祖谷そば",
+      "zh_tw": "祖谷そば"
+    },
+    "prefecture": "tokushima",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/44_5_tokushima.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "tokushima-maff-44_6_tokushima",
+    "name": {
+      "ja": "出世いも",
+      "zh_tw": "出世いも"
+    },
+    "prefecture": "tokushima",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/44_6_tokushima.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "tokushima-maff-44_7_tokushima",
+    "name": {
+      "ja": "阿波ういろ",
+      "zh_tw": "阿波ういろ"
+    },
+    "prefecture": "tokushima",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/44_7_tokushima.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "tokushima-maff-44_8_tokushima",
+    "name": {
+      "ja": "半ごろし",
+      "zh_tw": "半ごろし"
+    },
+    "prefecture": "tokushima",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/44_8_tokushima.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "tokushima-maff-44_9_tokushima",
+    "name": {
+      "ja": "押し寿司",
+      "zh_tw": "押し寿司"
+    },
+    "prefecture": "tokushima",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/44_9_tokushima.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  }
+]

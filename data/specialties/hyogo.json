@@ -1,30 +1,600 @@
 [
   {
-    "id": "wd-Q11512535",
+    "id": "hyogo-Q11447460",
     "name": {
-      "ja": "明石焼",
-      "zh_tw": "明石燒",
-      "en": "Akashi ware"
+      "ja": "姫路ラーメン",
+      "kana": "ひめじらーめん",
+      "romaji": "Himeji Ramen",
+      "zh_tw": "姫路ラーメン",
+      "en": "Himeji ramen"
     },
     "prefecture": "hyogo",
-    "area": "明石",
-    "category": "food",
-    "summary_zh": "",
-    "source_type": "wikidata",
+    "category": "ramen",
+    "summary": {
+      "text": "姫路ラーメン（ひめじらーめん）とは、兵庫県姫路市を中心に加古川市、播磨地域のご当地ラーメンである。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E5%A7%AB%E8%B7%AF%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
+    "source_type": "wikipedia",
+    "kana_source": "wikipedia",
     "images": [
       {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/6/63/MET_93_3_401.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-        "author": "不明",
-        "license": "CC0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:MET_93_3_401.jpeg"
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/32/Himeji-ramen_Hakkaku.JPG/960px-Himeji-ramen_Hakkaku.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Yanasha Itch",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Himeji-ramen_Hakkaku.JPG"
       }
     ],
     "sources": [
       {
-        "url": "https://www.wikidata.org/wiki/Q11512535",
-        "fetched_at": "2026-09-27"
+        "url": "https://www.wikidata.org/wiki/Q11447460",
+        "fetched_at": "2026-09-28"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E5%A7%AB%E8%B7%AF%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3",
+        "fetched_at": "2026-09-28"
       }
     ],
-    "updated_at": "2026-09-27"
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "hyogo-maff-40_10_hyogo",
+    "name": {
+      "ja": "出石皿そば",
+      "zh_tw": "出石皿そば"
+    },
+    "prefecture": "hyogo",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/40_10_hyogo.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "hyogo-maff-40_11_hyogo",
+    "name": {
+      "ja": "鯖寿司",
+      "zh_tw": "鯖寿司"
+    },
+    "prefecture": "hyogo",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/40_11_hyogo.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "hyogo-maff-40_12_hyogo",
+    "name": {
+      "ja": "とふめし",
+      "kana": "とふめし",
+      "romaji": "Tofumeshi",
+      "zh_tw": "とふめし"
+    },
+    "prefecture": "hyogo",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/40_12_hyogo.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "hyogo-maff-40_13_hyogo",
+    "name": {
+      "ja": "粕汁",
+      "zh_tw": "粕汁"
+    },
+    "prefecture": "hyogo",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/40_13_hyogo.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "hyogo-maff-40_14_hyogo",
+    "name": {
+      "ja": "神戸ビーフステーキ",
+      "zh_tw": "神戸ビーフステーキ"
+    },
+    "prefecture": "hyogo",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/40_14_hyogo.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "hyogo-maff-40_15_hyogo",
+    "name": {
+      "ja": "山椒の佃煮",
+      "zh_tw": "山椒の佃煮"
+    },
+    "prefecture": "hyogo",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/40_15_hyogo.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "hyogo-maff-40_16_hyogo",
+    "name": {
+      "ja": "ハモすき",
+      "kana": "はもすき",
+      "romaji": "Hamosuki",
+      "zh_tw": "ハモすき"
+    },
+    "prefecture": "hyogo",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/40_16_hyogo.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "hyogo-maff-40_17_hyogo",
+    "name": {
+      "ja": "鍛冶屋鍋",
+      "zh_tw": "鍛冶屋鍋"
+    },
+    "prefecture": "hyogo",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/40_17_hyogo.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "hyogo-maff-40_18_hyogo",
+    "name": {
+      "ja": "味噌だれ餃子",
+      "zh_tw": "味噌だれ餃子"
+    },
+    "prefecture": "hyogo",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/40_18_hyogo.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "hyogo-maff-40_19_hyogo",
+    "name": {
+      "ja": "にくてん",
+      "kana": "にくてん",
+      "romaji": "Nikuten",
+      "zh_tw": "にくてん"
+    },
+    "prefecture": "hyogo",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/40_19_hyogo.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "hyogo-maff-40_1_hyogo",
+    "name": {
+      "ja": "イカナゴのくぎ煮",
+      "zh_tw": "イカナゴのくぎ煮"
+    },
+    "prefecture": "hyogo",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/40_1_hyogo.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "hyogo-maff-40_20_hyogo",
+    "name": {
+      "ja": "こけらずし",
+      "kana": "こけらずし",
+      "romaji": "Kokerazushi",
+      "zh_tw": "こけらずし"
+    },
+    "prefecture": "hyogo",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/40_20_hyogo.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "hyogo-maff-40_21_hyogo",
+    "name": {
+      "ja": "焼きアナゴ",
+      "zh_tw": "焼きアナゴ"
+    },
+    "prefecture": "hyogo",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/40_21_hyogo.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "hyogo-maff-40_22_hyogo",
+    "name": {
+      "ja": "高野豆腐粉と野菜の煮物",
+      "zh_tw": "高野豆腐粉と野菜の煮物"
+    },
+    "prefecture": "hyogo",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/40_22_hyogo.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "hyogo-maff-40_23_hyogo",
+    "name": {
+      "ja": "さばのじゃう",
+      "kana": "さばのじゃう",
+      "romaji": "Sabanojau",
+      "zh_tw": "さばのじゃう"
+    },
+    "prefecture": "hyogo",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/40_23_hyogo.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "hyogo-maff-40_24_hyogo",
+    "name": {
+      "ja": "とろろご飯",
+      "zh_tw": "とろろご飯"
+    },
+    "prefecture": "hyogo",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/40_24_hyogo.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "hyogo-maff-40_25_hyogo",
+    "name": {
+      "ja": "黒豆煮",
+      "zh_tw": "黒豆煮"
+    },
+    "prefecture": "hyogo",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/40_25_hyogo.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "hyogo-maff-40_26_hyogo",
+    "name": {
+      "ja": "じゃぶ",
+      "kana": "じゃぶ",
+      "romaji": "Jabu",
+      "zh_tw": "じゃぶ"
+    },
+    "prefecture": "hyogo",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/40_26_hyogo.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "hyogo-maff-40_27_hyogo",
+    "name": {
+      "ja": "たこめし",
+      "kana": "たこめし",
+      "romaji": "Takomeshi",
+      "zh_tw": "たこめし"
+    },
+    "prefecture": "hyogo",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/40_27_hyogo.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "hyogo-maff-40_28_hyogo",
+    "name": {
+      "ja": "はたはたの唐あげ",
+      "zh_tw": "はたはたの唐あげ"
+    },
+    "prefecture": "hyogo",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/40_28_hyogo.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "hyogo-maff-40_29_hyogo",
+    "name": {
+      "ja": "いびつもち",
+      "kana": "いびつもち",
+      "romaji": "Ibitsumochi",
+      "zh_tw": "いびつもち"
+    },
+    "prefecture": "hyogo",
+    "category": "sweets",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/40_29_hyogo.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "hyogo-maff-40_2_hyogo",
+    "name": {
+      "ja": "明石焼",
+      "zh_tw": "明石焼"
+    },
+    "prefecture": "hyogo",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/40_2_hyogo.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "hyogo-maff-40_30_hyogo",
+    "name": {
+      "ja": "やたら漬け",
+      "zh_tw": "やたら漬け"
+    },
+    "prefecture": "hyogo",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/40_30_hyogo.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "hyogo-maff-40_3_hyogo",
+    "name": {
+      "ja": "ぼたん鍋",
+      "zh_tw": "ぼたん鍋"
+    },
+    "prefecture": "hyogo",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/40_3_hyogo.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "hyogo-maff-40_4_hyogo",
+    "name": {
+      "ja": "かつめし",
+      "kana": "かつめし",
+      "romaji": "Katsumeshi",
+      "zh_tw": "かつめし"
+    },
+    "prefecture": "hyogo",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/40_4_hyogo.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "hyogo-maff-40_5_hyogo",
+    "name": {
+      "ja": "ちょぼ汁",
+      "zh_tw": "ちょぼ汁"
+    },
+    "prefecture": "hyogo",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/40_5_hyogo.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "hyogo-maff-40_6_hyogo",
+    "name": {
+      "ja": "姫路おでん",
+      "zh_tw": "姫路おでん"
+    },
+    "prefecture": "hyogo",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/40_6_hyogo.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "hyogo-maff-40_7_hyogo",
+    "name": {
+      "ja": "丹波黒豆ごはん",
+      "zh_tw": "丹波黒豆ごはん"
+    },
+    "prefecture": "hyogo",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/40_7_hyogo.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "hyogo-maff-40_8_hyogo",
+    "name": {
+      "ja": "播州手延べそうめん",
+      "zh_tw": "播州手延べそうめん"
+    },
+    "prefecture": "hyogo",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/40_8_hyogo.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "hyogo-maff-40_9_hyogo",
+    "name": {
+      "ja": "ゆで松葉ガニ",
+      "zh_tw": "ゆで松葉ガニ"
+    },
+    "prefecture": "hyogo",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/40_9_hyogo.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
   }
 ]

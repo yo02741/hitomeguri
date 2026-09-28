@@ -1,15 +1,109 @@
 [
   {
-    "id": "wd-Q11638505",
+    "id": "shiga-Q11259811",
+    "name": {
+      "ja": "いとこ煮",
+      "kana": "いとこに",
+      "romaji": "Itoko Ni",
+      "zh_tw": "從兄弟煮",
+      "en": "Itoko-ni"
+    },
+    "prefecture": "shiga",
+    "category": "kyodo",
+    "summary": {
+      "text": "從兄弟煮，又稱從子煮、從弟煮、最濃煑、倭毒護煮，日本佛教料理，通常為報恩講之日進行食用，但在冬至及平時也會作為副餐食用。與之相似的料理有從兄弟汁（いとこ汁）、從兄弟煉（やいとこねり）、御座煮（ござに）等。",
+      "lang": "zh",
+      "source_url": "https://zh.wikipedia.org/wiki/%E5%BE%9E%E5%85%84%E5%BC%9F%E7%85%AE",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
+    "source_type": "kyodo_ryori",
+    "kana_source": "wikipedia",
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/93/Itokoni.jpg/960px-Itokoni.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Pittyu2020",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Itokoni.jpg"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/itokoni_shiga.html",
+        "fetched_at": "2026-09-28"
+      },
+      {
+        "url": "https://www.wikidata.org/wiki/Q11259811",
+        "fetched_at": "2026-09-28"
+      },
+      {
+        "url": "https://zh.wikipedia.org/wiki/%E5%BE%9E%E5%85%84%E5%BC%9F%E7%85%AE",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "shiga-Q11567691",
+    "name": {
+      "ja": "鯖そうめん",
+      "zh_tw": "鯖そうめん",
+      "en": "Yakisaba-somen"
+    },
+    "prefecture": "shiga",
+    "category": "kyodo",
+    "summary": {
+      "text": "焼鯖そうめん（やきさばそうめん）は、滋賀県長浜市周辺の湖北地域に伝わる郷土料理。鯖そうめん（さばそうめん）とも呼ばれる。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E7%84%BC%E9%AF%96%E3%81%9D%E3%81%86%E3%82%81%E3%82%93",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
+    "source_type": "kyodo_ryori",
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ab/Sabasomen1.jpg/960px-Sabasomen1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Kyoww",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Sabasomen1.jpg"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/saba_soumen_shiga.html",
+        "fetched_at": "2026-09-28"
+      },
+      {
+        "url": "https://www.wikidata.org/wiki/Q11567691",
+        "fetched_at": "2026-09-28"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E7%84%BC%E9%AF%96%E3%81%9D%E3%81%86%E3%82%81%E3%82%93",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "shiga-Q11638505",
     "name": {
       "ja": "近江牛",
+      "kana": "おうみうしまたはおうみぎゅう",
+      "romaji": "Omiushimatahaomigyu",
       "zh_tw": "近江牛",
       "en": "Ōmi beef"
     },
     "prefecture": "shiga",
     "category": "food",
-    "summary_zh": "",
+    "summary": {
+      "text": "近江牛（おうみうし）是滋賀縣內生產的黑毛和種的和牛。日本歷史最久的肉用牛，與松阪牛、神戶牛並稱為日本三大和牛之一。",
+      "lang": "zh",
+      "source_url": "https://zh.wikipedia.org/wiki/%E8%BF%91%E6%B1%9F%E7%89%9B",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "source_type": "wikidata",
+    "kana_source": "wikipedia",
     "images": [
       {
         "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6c/LE_POINT_DE_VUE07s4s4000.jpg/960px-LE_POINT_DE_VUE07s4s4000.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -21,9 +115,527 @@
     "sources": [
       {
         "url": "https://www.wikidata.org/wiki/Q11638505",
-        "fetched_at": "2026-09-27"
+        "fetched_at": "2026-09-28"
+      },
+      {
+        "url": "https://zh.wikipedia.org/wiki/%E8%BF%91%E6%B1%9F%E7%89%9B",
+        "fetched_at": "2026-09-28"
       }
     ],
-    "updated_at": "2026-09-27"
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "shiga-maff-aka_konnyaku_ni_shiga",
+    "name": {
+      "ja": "赤こんにゃく煮",
+      "zh_tw": "赤こんにゃく煮"
+    },
+    "prefecture": "shiga",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/aka_konnyaku_ni_shiga.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "shiga-maff-amenoio_gohan_shiga",
+    "name": {
+      "ja": "あめのいおご飯",
+      "zh_tw": "あめのいおご飯"
+    },
+    "prefecture": "shiga",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/amenoio_gohan_shiga.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "shiga-maff-biwamasu_sasimi_shiga",
+    "name": {
+      "ja": "ビワマス刺身",
+      "zh_tw": "ビワマス刺身"
+    },
+    "prefecture": "shiga",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/biwamasu_sasimi_shiga.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "shiga-maff-choujifu_no_karashi_ae_shiga",
+    "name": {
+      "ja": "丁字麩のからしあえ",
+      "zh_tw": "丁字麩のからしあえ"
+    },
+    "prefecture": "shiga",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/choujifu_no_karashi_ae_shiga.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "shiga-maff-decchi_youkan_shiga",
+    "name": {
+      "ja": "丁稚羊羹",
+      "zh_tw": "丁稚羊羹"
+    },
+    "prefecture": "shiga",
+    "category": "sweets",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/decchi_youkan_shiga.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "shiga-maff-dongame_jiru_shiga",
+    "name": {
+      "ja": "泥亀汁",
+      "zh_tw": "泥亀汁"
+    },
+    "prefecture": "shiga",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/dongame_jiru_shiga.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "shiga-maff-ebimame_shiga",
+    "name": {
+      "ja": "えび豆",
+      "zh_tw": "えび豆"
+    },
+    "prefecture": "shiga",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/ebimame_shiga.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "shiga-maff-funa_zushi_shiga",
+    "name": {
+      "ja": "ふなずし",
+      "kana": "ふなずし",
+      "romaji": "Funazushi",
+      "zh_tw": "ふなずし"
+    },
+    "prefecture": "shiga",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/funa_zushi_shiga.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "shiga-maff-gorino_tsukuda_ni_shiga",
+    "name": {
+      "ja": "ごりの佃煮",
+      "zh_tw": "ごりの佃煮"
+    },
+    "prefecture": "shiga",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/gorino_tsukuda_ni_shiga.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "shiga-maff-hakusai_no_tatami_zuke_shiga",
+    "name": {
+      "ja": "白菜のたたみ漬け",
+      "zh_tw": "白菜のたたみ漬け"
+    },
+    "prefecture": "shiga",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/hakusai_no_tatami_zuke_shiga.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "shiga-maff-hasu_gyoden_shiga",
+    "name": {
+      "ja": "はす魚田",
+      "zh_tw": "はす魚田"
+    },
+    "prefecture": "shiga",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/hasu_gyoden_shiga.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "shiga-maff-hinona_zuke_shiga",
+    "name": {
+      "ja": "日野菜漬け",
+      "zh_tw": "日野菜漬け"
+    },
+    "prefecture": "shiga",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/hinona_zuke_shiga.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "shiga-maff-hitokawa_zushi_shiga",
+    "name": {
+      "ja": "ひとかわすし",
+      "kana": "ひとかわすし",
+      "romaji": "Hitokawasushi",
+      "zh_tw": "ひとかわすし"
+    },
+    "prefecture": "shiga",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/hitokawa_zushi_shiga.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "shiga-maff-isaza_mame_shiga",
+    "name": {
+      "ja": "いさざ豆",
+      "zh_tw": "いさざ豆"
+    },
+    "prefecture": "shiga",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/isaza_mame_shiga.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "shiga-maff-junjun_shiga",
+    "name": {
+      "ja": "じゅんじゅん",
+      "kana": "じゅんじゅん",
+      "romaji": "Junjun",
+      "zh_tw": "じゅんじゅん"
+    },
+    "prefecture": "shiga",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/junjun_shiga.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "shiga-maff-koayuno_sanshou_ni_shiga",
+    "name": {
+      "ja": "小あゆの山椒煮",
+      "zh_tw": "小あゆの山椒煮"
+    },
+    "prefecture": "shiga",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/koayuno_sanshou_ni_shiga.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "shiga-maff-kofuku_mame_shiga",
+    "name": {
+      "ja": "幸福豆",
+      "zh_tw": "幸福豆"
+    },
+    "prefecture": "shiga",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/kofuku_mame_shiga.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "shiga-maff-kogyono_tenpura_shiga",
+    "name": {
+      "ja": "湖魚の天ぷら",
+      "zh_tw": "湖魚の天ぷら"
+    },
+    "prefecture": "shiga",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/kogyono_tenpura_shiga.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "shiga-maff-kurumi_gobou_shiga",
+    "name": {
+      "ja": "くるみごぼう",
+      "kana": "くるみごぼう",
+      "romaji": "Kurumigobo",
+      "zh_tw": "くるみごぼう"
+    },
+    "prefecture": "shiga",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/kurumi_gobou_shiga.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "shiga-maff-oaedango_shiga",
+    "name": {
+      "ja": "おあえ団子",
+      "zh_tw": "おあえ団子"
+    },
+    "prefecture": "shiga",
+    "category": "sweets",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/oaedango_shiga.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "shiga-maff-oumigyuu_no_misozuke_shiga",
+    "name": {
+      "ja": "近江牛の味噌漬",
+      "zh_tw": "近江牛の味噌漬"
+    },
+    "prefecture": "shiga",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/oumigyuu_no_misozuke_shiga.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "shiga-maff-sabano_bouzushi_shiga",
+    "name": {
+      "ja": "鯖の棒ずし",
+      "zh_tw": "鯖の棒ずし"
+    },
+    "prefecture": "shiga",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/sabano_bouzushi_shiga.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "shiga-maff-shijimi_jiru_shiga",
+    "name": {
+      "ja": "しじみ汁",
+      "zh_tw": "しじみ汁"
+    },
+    "prefecture": "shiga",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/shijimi_jiru_shiga.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "shiga-maff-shoi_meshi_shiga",
+    "name": {
+      "ja": "しょいめし",
+      "kana": "しょいめし",
+      "romaji": "Shoimeshi",
+      "zh_tw": "しょいめし"
+    },
+    "prefecture": "shiga",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/shoi_meshi_shiga.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "shiga-maff-toufu_dengaku_shiga",
+    "name": {
+      "ja": "豆腐田楽",
+      "zh_tw": "豆腐田楽"
+    },
+    "prefecture": "shiga",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/toufu_dengaku_shiga.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "shiga-maff-uchimame_jiru_shiga",
+    "name": {
+      "ja": "打ち豆汁",
+      "zh_tw": "打ち豆汁"
+    },
+    "prefecture": "shiga",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/uchimame_jiru_shiga.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "shiga-maff-yaki_morokono_dorozu_shiga",
+    "name": {
+      "ja": "焼きもろこのどろ酢",
+      "zh_tw": "焼きもろこのどろ酢"
+    },
+    "prefecture": "shiga",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/yaki_morokono_dorozu_shiga.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "shiga-maff-zeitaku_ni_shiga",
+    "name": {
+      "ja": "ぜいたく煮",
+      "zh_tw": "ぜいたく煮"
+    },
+    "prefecture": "shiga",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/zeitaku_ni_shiga.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
   }
 ]

@@ -1,23 +1,679 @@
 [
   {
-    "id": "wd-Q11665910",
+    "id": "gifu-Q10855366",
+    "name": {
+      "ja": "五平餅",
+      "kana": "ごへいもち",
+      "romaji": "Goheimochi",
+      "zh_tw": "五平餅",
+      "en": "Goheimochi"
+    },
+    "prefecture": "gifu",
+    "category": "sweets",
+    "summary": {
+      "text": "五平餅，又作御幣餅（日語：御幣餅／ごへいもち，羅馬化：Goheimochi），是在日本中部地方山區（長野縣木曾・伊那地區、岐阜縣東濃・飛驒地區、富山縣南部、愛知縣奧三河地區、靜岡縣北遠・駿河地區以及山梨縣）流傳的鄉土風飯糰變體。製作方法是在糙粳米飯中加入醬汁，製成串燒烤。在長野縣，五平餅有被列為當地的民俗文化財產之一（以御幣餅的名義）。",
+      "lang": "zh",
+      "source_url": "https://zh.wikipedia.org/wiki/%E4%BA%94%E5%B9%B3%E9%A5%BC",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
+    "source_type": "kyodo_ryori",
+    "kana_source": "wikidata",
+    "images": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/c/c5/CodazziGoheimochi1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+        "author": "No machine-readable author provided. 小太刀~commonswiki assumed (based on copyright claims).",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:CodazziGoheimochi1.jpg"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/38_8_gifu.html",
+        "fetched_at": "2026-09-28"
+      },
+      {
+        "url": "https://www.wikidata.org/wiki/Q10855366",
+        "fetched_at": "2026-09-28"
+      },
+      {
+        "url": "https://zh.wikipedia.org/wiki/%E4%BA%94%E5%B9%B3%E9%A5%BC",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "gifu-Q11665910",
     "name": {
       "ja": "飛騨牛",
+      "kana": "ひだぎゅう",
+      "romaji": "Hidagyu",
       "zh_tw": "飛騨牛",
       "en": "Hida Beef"
     },
     "prefecture": "gifu",
-    "area": "高山",
     "category": "food",
-    "summary_zh": "",
+    "summary": {
+      "text": "飛騨牛（ひだぎゅう、ひだうし）は、岐阜県で肥育される黒毛和牛の牛肉である。飛騨牛は食肉になった後は、「ひだぎゅう」と呼び、食肉になる前の牛、牛を産むための母牛（繁殖牛）および父牛（種雄牛）は「ひだうし」と呼ぶ。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E9%A3%9B%E9%A8%A8%E7%89%9B",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "source_type": "wikidata",
+    "kana_source": "wikipedia",
     "images": [],
     "sources": [
       {
         "url": "https://www.wikidata.org/wiki/Q11665910",
-        "fetched_at": "2026-09-27"
+        "fetched_at": "2026-09-28"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E9%A3%9B%E9%A8%A8%E7%89%9B",
+        "fetched_at": "2026-09-28"
       }
     ],
-    "updated_at": "2026-09-27"
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "gifu-Q11669310",
+    "name": {
+      "ja": "高山ラーメン",
+      "kana": "たかやまらーめん",
+      "romaji": "Takayama Ramen",
+      "zh_tw": "高山らーめん",
+      "en": "Takayama ramen"
+    },
+    "prefecture": "gifu",
+    "category": "ramen",
+    "summary": {
+      "text": "高山拉麵是岐阜縣高山市流行的一種拉麵，屬於醬油拉麵派系。因當地處於飛驒地方，有時也被稱為飛驒拉麵或者飛驒高山拉麵。動畫電影《你的名字。》的主角食用過這種拉麵，電影上映後，高山拉麵的人氣大漲。目前，這種拉麵在中國、加拿大一些拉麵店也有售賣。",
+      "lang": "zh",
+      "source_url": "https://zh.wikipedia.org/wiki/%E9%AB%98%E5%B1%B1%E6%8B%89%E9%9D%A2",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
+    "source_type": "wikipedia",
+    "kana_source": "wikipedia",
+    "images": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/6/67/Takayama_ramen.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+        "author": "Craford at Japanese Wikipedia",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Takayama_ramen.jpg"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q11669310",
+        "fetched_at": "2026-09-28"
+      },
+      {
+        "url": "https://zh.wikipedia.org/wiki/%E9%AB%98%E5%B1%B1%E6%8B%89%E9%9D%A2",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "gifu-Q11675813",
+    "name": {
+      "ja": "鶏ちゃん",
+      "kana": "けいちゃん",
+      "romaji": "Keichan",
+      "zh_tw": "鶏ちゃん",
+      "en": "keichan"
+    },
+    "prefecture": "gifu",
+    "category": "kyodo",
+    "summary": {
+      "text": "鶏ちゃん（けいちゃん）とは、岐阜県奥美濃地方の郡上市、飛騨地方南部の下呂市、下呂市に隣接する中津川市の北部で食べられてきた郷土料理である。「ケーちゃん」、「鶏ちゃん焼き」ともいう。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E9%B6%8F%E3%81%A1%E3%82%83%E3%82%93",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
+    "source_type": "kyodo_ryori",
+    "kana_source": "wikidata",
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b5/Keichan.jpg/960px-Keichan.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Opqr",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Keichan.jpg"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/38_2_gifu.html",
+        "fetched_at": "2026-09-28"
+      },
+      {
+        "url": "https://www.wikidata.org/wiki/Q11675813",
+        "fetched_at": "2026-09-28"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E9%B6%8F%E3%81%A1%E3%82%83%E3%82%93",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "gifu-maff-38_10_gifu",
+    "name": {
+      "ja": "朴葉味噌",
+      "zh_tw": "朴葉味噌"
+    },
+    "prefecture": "gifu",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/38_10_gifu.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "gifu-maff-38_11_gifu",
+    "name": {
+      "ja": "大歳のごっつぉ",
+      "zh_tw": "大歳のごっつぉ"
+    },
+    "prefecture": "gifu",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/38_11_gifu.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "gifu-maff-38_12_gifu",
+    "name": {
+      "ja": "ねずし",
+      "kana": "ねずし",
+      "romaji": "Nezushi",
+      "zh_tw": "ねずし"
+    },
+    "prefecture": "gifu",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/38_12_gifu.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "gifu-maff-38_13_gifu",
+    "name": {
+      "ja": "もろこずし",
+      "kana": "もろこずし",
+      "romaji": "Morokozushi",
+      "zh_tw": "もろこずし"
+    },
+    "prefecture": "gifu",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/38_13_gifu.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "gifu-maff-38_14_gifu",
+    "name": {
+      "ja": "いももち",
+      "kana": "いももち",
+      "romaji": "Imomochi",
+      "zh_tw": "いももち"
+    },
+    "prefecture": "gifu",
+    "category": "sweets",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/38_14_gifu.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "gifu-maff-38_15_gifu",
+    "name": {
+      "ja": "みそぎだんご",
+      "kana": "みそぎだんご",
+      "romaji": "Misogidango",
+      "zh_tw": "みそぎだんご"
+    },
+    "prefecture": "gifu",
+    "category": "sweets",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/38_15_gifu.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "gifu-maff-38_16_gifu",
+    "name": {
+      "ja": "すったて汁",
+      "zh_tw": "すったて汁"
+    },
+    "prefecture": "gifu",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/38_16_gifu.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "gifu-maff-38_17_gifu",
+    "name": {
+      "ja": "栗きんとん",
+      "zh_tw": "栗きんとん"
+    },
+    "prefecture": "gifu",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/38_17_gifu.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "gifu-maff-38_18_gifu",
+    "name": {
+      "ja": "水まんじゅう",
+      "zh_tw": "水まんじゅう"
+    },
+    "prefecture": "gifu",
+    "category": "sweets",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/38_18_gifu.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "gifu-maff-38_19_gifu",
+    "name": {
+      "ja": "煮たくもじ",
+      "zh_tw": "煮たくもじ"
+    },
+    "prefecture": "gifu",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/38_19_gifu.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "gifu-maff-38_1_gifu",
+    "name": {
+      "ja": "朴葉ずし",
+      "zh_tw": "朴葉ずし"
+    },
+    "prefecture": "gifu",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/38_1_gifu.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "gifu-maff-38_20_gifu",
+    "name": {
+      "ja": "赤かぶ漬け",
+      "zh_tw": "赤かぶ漬け"
+    },
+    "prefecture": "gifu",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/38_20_gifu.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "gifu-maff-38_21_gifu",
+    "name": {
+      "ja": "柿なます",
+      "zh_tw": "柿なます"
+    },
+    "prefecture": "gifu",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/38_21_gifu.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "gifu-maff-38_22_gifu",
+    "name": {
+      "ja": "赤だつの酢ぶて",
+      "zh_tw": "赤だつの酢ぶて"
+    },
+    "prefecture": "gifu",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/38_22_gifu.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "gifu-maff-38_23_gifu",
+    "name": {
+      "ja": "千石豆のかきまわし",
+      "zh_tw": "千石豆のかきまわし"
+    },
+    "prefecture": "gifu",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/38_23_gifu.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "gifu-maff-38_24_gifu",
+    "name": {
+      "ja": "つぎ汁",
+      "zh_tw": "つぎ汁"
+    },
+    "prefecture": "gifu",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/38_24_gifu.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "gifu-maff-38_25_gifu",
+    "name": {
+      "ja": "初午だんご",
+      "zh_tw": "初午だんご"
+    },
+    "prefecture": "gifu",
+    "category": "sweets",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/38_25_gifu.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "gifu-maff-38_26_gifu",
+    "name": {
+      "ja": "漬物味噌煮",
+      "zh_tw": "漬物味噌煮"
+    },
+    "prefecture": "gifu",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/38_26_gifu.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "gifu-maff-38_27_gifu",
+    "name": {
+      "ja": "寒干大根煮",
+      "zh_tw": "寒干大根煮"
+    },
+    "prefecture": "gifu",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/38_27_gifu.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "gifu-maff-38_28_gifu",
+    "name": {
+      "ja": "桑の木豆煮",
+      "zh_tw": "桑の木豆煮"
+    },
+    "prefecture": "gifu",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/38_28_gifu.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "gifu-maff-38_29_gifu",
+    "name": {
+      "ja": "こも豆腐",
+      "zh_tw": "こも豆腐"
+    },
+    "prefecture": "gifu",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/38_29_gifu.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "gifu-maff-38_30_gifu",
+    "name": {
+      "ja": "鮎の塩焼",
+      "zh_tw": "鮎の塩焼"
+    },
+    "prefecture": "gifu",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/38_30_gifu.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "gifu-maff-38_3_gifu",
+    "name": {
+      "ja": "からすみ",
+      "kana": "からすみ",
+      "romaji": "Karasumi",
+      "zh_tw": "からすみ"
+    },
+    "prefecture": "gifu",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/38_3_gifu.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "gifu-maff-38_4_gifu",
+    "name": {
+      "ja": "鮎ぞうすい",
+      "zh_tw": "鮎ぞうすい"
+    },
+    "prefecture": "gifu",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/38_4_gifu.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "gifu-maff-38_5_gifu",
+    "name": {
+      "ja": "へぼ飯",
+      "zh_tw": "へぼ飯"
+    },
+    "prefecture": "gifu",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/38_5_gifu.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "gifu-maff-38_6_gifu",
+    "name": {
+      "ja": "みょうがぼち",
+      "kana": "みょうがぼち",
+      "romaji": "Myogabochi",
+      "zh_tw": "みょうがぼち"
+    },
+    "prefecture": "gifu",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/38_6_gifu.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "gifu-maff-38_7_gifu",
+    "name": {
+      "ja": "鮎なれずし",
+      "zh_tw": "鮎なれずし"
+    },
+    "prefecture": "gifu",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/38_7_gifu.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "gifu-maff-38_9_gifu",
+    "name": {
+      "ja": "鮒味噌",
+      "zh_tw": "鮒味噌"
+    },
+    "prefecture": "gifu",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/38_9_gifu.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
   }
 ]

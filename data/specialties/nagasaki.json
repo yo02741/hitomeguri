@@ -1,0 +1,634 @@
+[
+  {
+    "id": "nagasaki-Q11274925",
+    "name": {
+      "ja": "ぬっぺ",
+      "kana": "ぬっぺ",
+      "romaji": "Nuppe",
+      "zh_tw": "ぬっぺ"
+    },
+    "prefecture": "nagasaki",
+    "category": "kyodo",
+    "summary": {
+      "text": "ぬっぺ汁（-じる）は岩手県の紫波郡に伝わる郷土料理である。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E3%81%AC%E3%81%A3%E3%81%BA%E6%B1%81",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/46_14_nagasaki.html",
+        "fetched_at": "2026-09-28"
+      },
+      {
+        "url": "https://www.wikidata.org/wiki/Q11274925",
+        "fetched_at": "2026-09-28"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E3%81%AC%E3%81%A3%E3%81%BA%E6%B1%81",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "nagasaki-Q703286",
+    "name": {
+      "ja": "ちゃんぽん",
+      "kana": "ちゃんぽん",
+      "romaji": "Chanpon",
+      "zh_tw": "什錦麵",
+      "en": "champon"
+    },
+    "prefecture": "nagasaki",
+    "category": "kyodo",
+    "summary": {
+      "text": "強棒麵，又稱日式什錦麵，是日本一種加入豬肉、貝類、魚類、蔬菜的雜燴麵食，起源於長崎，並發展出數個衍生菜色。",
+      "lang": "zh",
+      "source_url": "https://zh.wikipedia.org/wiki/%E5%BC%B7%E6%A3%92%E9%BA%B5",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
+    "source_type": "kyodo_ryori",
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0e/Shikairo_Nagasaki_Japan05s.jpg/960px-Shikairo_Nagasaki_Japan05s.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "663highland",
+        "license": "CC BY 2.5",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Shikairo_Nagasaki_Japan05s.jpg"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/46_8_nagasaki.html",
+        "fetched_at": "2026-09-28"
+      },
+      {
+        "url": "https://www.wikidata.org/wiki/Q703286",
+        "fetched_at": "2026-09-28"
+      },
+      {
+        "url": "https://zh.wikipedia.org/wiki/%E5%BC%B7%E6%A3%92%E9%BA%B5",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "nagasaki-Q873032",
+    "name": {
+      "ja": "皿うどん",
+      "kana": "さらうどん",
+      "romaji": "Sara Udon",
+      "zh_tw": "皿烏龍麵",
+      "en": "sara udon"
+    },
+    "prefecture": "nagasaki",
+    "category": "kyodo",
+    "summary": {
+      "text": "皿烏龍麵是發揚於日本長崎市的麵類料理。菜餚的名稱雖帶有「烏龍麵」，麵體實際是採用中華料理的細麵條或粗麵條來炒。",
+      "lang": "zh",
+      "source_url": "https://zh.wikipedia.org/wiki/%E7%9A%BF%E7%83%8F%E9%BE%8D%E9%BA%B5",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
+    "source_type": "kyodo_ryori",
+    "kana_source": "wikipedia",
+    "images": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/1/1c/Sara_udon_in_Kyoto.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+        "author": "yurayura_naoko from Kyoto",
+        "license": "CC BY 2.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Sara_udon_in_Kyoto.jpg"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/46_7_nagasaki.html",
+        "fetched_at": "2026-09-28"
+      },
+      {
+        "url": "https://www.wikidata.org/wiki/Q873032",
+        "fetched_at": "2026-09-28"
+      },
+      {
+        "url": "https://zh.wikipedia.org/wiki/%E7%9A%BF%E7%83%8F%E9%BE%8D%E9%BA%B5",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "nagasaki-maff-46_10_nagasaki",
+    "name": {
+      "ja": "いぎりす",
+      "kana": "いぎりす",
+      "romaji": "Igirisu",
+      "zh_tw": "いぎりす"
+    },
+    "prefecture": "nagasaki",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/46_10_nagasaki.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "nagasaki-maff-46_11_nagasaki",
+    "name": {
+      "ja": "ヒカド",
+      "kana": "ひかど",
+      "romaji": "Hikado",
+      "zh_tw": "ヒカド"
+    },
+    "prefecture": "nagasaki",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/46_11_nagasaki.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "nagasaki-maff-46_12_nagasaki",
+    "name": {
+      "ja": "地獄炊き（五島うどん・島原そうめん）",
+      "zh_tw": "地獄炊き"
+    },
+    "prefecture": "nagasaki",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/46_12_nagasaki.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "nagasaki-maff-46_13_nagasaki",
+    "name": {
+      "ja": "鶏飯",
+      "zh_tw": "鶏飯"
+    },
+    "prefecture": "nagasaki",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/46_13_nagasaki.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "nagasaki-maff-46_15_nagasaki",
+    "name": {
+      "ja": "鼻はじき",
+      "zh_tw": "鼻はじき"
+    },
+    "prefecture": "nagasaki",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/46_15_nagasaki.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "nagasaki-maff-46_16_nagasaki",
+    "name": {
+      "ja": "押し寿司（もろぶた寿司）",
+      "zh_tw": "押し寿司"
+    },
+    "prefecture": "nagasaki",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/46_16_nagasaki.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "nagasaki-maff-46_17_nagasaki",
+    "name": {
+      "ja": "かんころ餅",
+      "zh_tw": "かんころ餅"
+    },
+    "prefecture": "nagasaki",
+    "category": "sweets",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/46_17_nagasaki.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "nagasaki-maff-46_18_nagasaki",
+    "name": {
+      "ja": "長崎天ぷら",
+      "zh_tw": "長崎天ぷら"
+    },
+    "prefecture": "nagasaki",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/46_18_nagasaki.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "nagasaki-maff-46_19_nagasaki",
+    "name": {
+      "ja": "鯨じゃが",
+      "zh_tw": "鯨じゃが"
+    },
+    "prefecture": "nagasaki",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/46_19_nagasaki.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "nagasaki-maff-46_1_nagasaki",
+    "name": {
+      "ja": "具雑煮",
+      "zh_tw": "具雑煮"
+    },
+    "prefecture": "nagasaki",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/46_1_nagasaki.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "nagasaki-maff-46_20_nagasaki",
+    "name": {
+      "ja": "パスティー",
+      "kana": "ぱすてぃー",
+      "romaji": "Pasuti",
+      "zh_tw": "パスティー"
+    },
+    "prefecture": "nagasaki",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/46_20_nagasaki.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "nagasaki-maff-46_21_nagasaki",
+    "name": {
+      "ja": "アルマド",
+      "kana": "あるまど",
+      "romaji": "Arumado",
+      "zh_tw": "アルマド"
+    },
+    "prefecture": "nagasaki",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/46_21_nagasaki.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "nagasaki-maff-46_22_nagasaki",
+    "name": {
+      "ja": "ピーナッツ豆腐",
+      "zh_tw": "ピーナッツ豆腐"
+    },
+    "prefecture": "nagasaki",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/46_22_nagasaki.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "nagasaki-maff-46_23_nagasaki",
+    "name": {
+      "ja": "茹で干し大根とかんぼこの煮物",
+      "zh_tw": "茹で干し大根とかんぼこの煮物"
+    },
+    "prefecture": "nagasaki",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/46_23_nagasaki.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "nagasaki-maff-46_24_nagasaki",
+    "name": {
+      "ja": "レモンステーキ",
+      "kana": "れもんすてーき",
+      "romaji": "Remonsuteki",
+      "zh_tw": "レモンステーキ"
+    },
+    "prefecture": "nagasaki",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/46_24_nagasaki.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "nagasaki-maff-46_25_nagasaki",
+    "name": {
+      "ja": "くりつぼ",
+      "kana": "くりつぼ",
+      "romaji": "Kuritsubo",
+      "zh_tw": "くりつぼ"
+    },
+    "prefecture": "nagasaki",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/46_25_nagasaki.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "nagasaki-maff-46_26_nagasaki",
+    "name": {
+      "ja": "対州そば",
+      "zh_tw": "対州そば"
+    },
+    "prefecture": "nagasaki",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/46_26_nagasaki.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "nagasaki-maff-46_27_nagasaki",
+    "name": {
+      "ja": "つぼ汁",
+      "zh_tw": "つぼ汁"
+    },
+    "prefecture": "nagasaki",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/46_27_nagasaki.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "nagasaki-maff-46_28_nagasaki",
+    "name": {
+      "ja": "長崎ミルクセーキ",
+      "zh_tw": "長崎ミルクセーキ"
+    },
+    "prefecture": "nagasaki",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/46_28_nagasaki.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "nagasaki-maff-46_29_nagasaki",
+    "name": {
+      "ja": "ハトシ",
+      "kana": "はとし",
+      "romaji": "Hatoshi",
+      "zh_tw": "ハトシ"
+    },
+    "prefecture": "nagasaki",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/46_29_nagasaki.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "nagasaki-maff-46_2_nagasaki",
+    "name": {
+      "ja": "ひきとおし",
+      "kana": "ひきとおし",
+      "romaji": "Hikitoshi",
+      "zh_tw": "ひきとおし"
+    },
+    "prefecture": "nagasaki",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/46_2_nagasaki.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "nagasaki-maff-46_30_nagasaki",
+    "name": {
+      "ja": "かんざらし",
+      "kana": "かんざらし",
+      "romaji": "Kanzarashi",
+      "zh_tw": "かんざらし"
+    },
+    "prefecture": "nagasaki",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/46_30_nagasaki.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "nagasaki-maff-46_3_nagasaki",
+    "name": {
+      "ja": "浦上ソボロ",
+      "zh_tw": "浦上ソボロ"
+    },
+    "prefecture": "nagasaki",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/46_3_nagasaki.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "nagasaki-maff-46_4_nagasaki",
+    "name": {
+      "ja": "にごみ",
+      "kana": "にごみ",
+      "romaji": "Nigomi",
+      "zh_tw": "にごみ"
+    },
+    "prefecture": "nagasaki",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/46_4_nagasaki.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "nagasaki-maff-46_5_nagasaki",
+    "name": {
+      "ja": "大村寿司",
+      "zh_tw": "大村寿司"
+    },
+    "prefecture": "nagasaki",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/46_5_nagasaki.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "nagasaki-maff-46_6_nagasaki",
+    "name": {
+      "ja": "ろくべえ",
+      "kana": "ろくべえ",
+      "romaji": "Rokubee",
+      "zh_tw": "ろくべえ"
+    },
+    "prefecture": "nagasaki",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/46_6_nagasaki.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "nagasaki-maff-46_9_nagasaki",
+    "name": {
+      "ja": "いりやき",
+      "kana": "いりやき",
+      "romaji": "Iriyaki",
+      "zh_tw": "いりやき"
+    },
+    "prefecture": "nagasaki",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/46_9_nagasaki.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  }
+]

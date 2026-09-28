@@ -1,6 +1,83 @@
 [
   {
-    "id": "wd-Q11449516",
+    "id": "kyoto-Q108799327",
+    "name": {
+      "ja": "肉豆腐",
+      "kana": "にくどうふ",
+      "romaji": "Niku Dofu",
+      "zh_tw": "肉豆腐",
+      "en": "Niku-dofu"
+    },
+    "prefecture": "kyoto",
+    "category": "kyodo",
+    "summary": {
+      "text": "肉豆腐（にくどうふ）は、牛肉と豆腐、ねぎを煮た煮物料理。醤油や酒、みりん、砂糖を用いて、すき焼きに似た味付けに調える。京都市の郷土料理であり、冬の定番料理である。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E8%82%89%E8%B1%86%E8%85%90",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
+    "source_type": "kyodo_ryori",
+    "kana_source": "wikipedia",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/nikudofu_kyoto.html",
+        "fetched_at": "2026-09-28"
+      },
+      {
+        "url": "https://www.wikidata.org/wiki/Q108799327",
+        "fetched_at": "2026-09-28"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E8%82%89%E8%B1%86%E8%85%90",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "kyoto-Q11374829",
+    "name": {
+      "ja": "京都ラーメン",
+      "kana": "きょうとらーめん",
+      "romaji": "Kyoto Ramen",
+      "zh_tw": "京都拉麵小路",
+      "en": "Kyoto ramen"
+    },
+    "prefecture": "kyoto",
+    "category": "ramen",
+    "summary": {
+      "text": "京都拉麵（日文平假名：きょうとラーメン），是一種主要流行在日本京都地區的拉麵，其特點在於醇厚的濃湯 ，深受京都人民喜愛。據京都的地方雜誌《Leaf》2013年的統計，僅以京都·滋賀一地，每年就會新開50餘家京都風味拉麵店。",
+      "lang": "zh",
+      "source_url": "https://zh.wikipedia.org/wiki/%E4%BA%AC%E9%83%BD%E6%8B%89%E9%9D%A2",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
+    "source_type": "wikipedia",
+    "kana_source": "wikipedia",
+    "images": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/2/2e/Kyoto-Shinpuku.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+        "author": "Kansai explorer at Japanese Wikipedia",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Kyoto-Shinpuku.jpg"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q11374829",
+        "fetched_at": "2026-09-28"
+      },
+      {
+        "url": "https://zh.wikipedia.org/wiki/%E4%BA%AC%E9%83%BD%E6%8B%89%E9%9D%A2",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "kyoto-Q11449516",
     "name": {
       "ja": "宇治茶",
       "kana": "うじちゃ",
@@ -9,9 +86,14 @@
       "en": "Uji tea"
     },
     "prefecture": "kyoto",
-    "area": "宇治・和束",
     "category": "drink",
-    "summary_zh": "",
+    "summary": {
+      "text": "宇治茶， 是日本的綠茶。茶葉主要產自京都府、奈良縣、滋賀縣、三重縣，然後由京都府內廠商採用該地宇治地區發源的技法進行加工處理，故而得名。該茶與靜岡茶、狹山茶等並稱日本三大茶。但由於狹山茶產量較少，又與靜岡茶合稱日本二大茶。",
+      "lang": "zh",
+      "source_url": "https://zh.wikipedia.org/wiki/%E5%AE%87%E6%B2%BB%E8%8C%B6",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
     "source_type": "wikidata",
     "kana_source": "wikidata",
     "images": [
@@ -25,9 +107,545 @@
     "sources": [
       {
         "url": "https://www.wikidata.org/wiki/Q11449516",
-        "fetched_at": "2026-09-27"
+        "fetched_at": "2026-09-28"
+      },
+      {
+        "url": "https://zh.wikipedia.org/wiki/%E5%AE%87%E6%B2%BB%E8%8C%B6",
+        "fetched_at": "2026-09-28"
       }
     ],
-    "updated_at": "2026-09-27"
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "kyoto-maff-barazushi_kyoto",
+    "name": {
+      "ja": "ばらずし",
+      "kana": "ばらずし",
+      "romaji": "Barazushi",
+      "zh_tw": "ばらずし"
+    },
+    "prefecture": "kyoto",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/barazushi_kyoto.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "kyoto-maff-ebiimotobodaranotaitan_kyoto",
+    "name": {
+      "ja": "えびいもと棒だらの炊いたん",
+      "zh_tw": "えびいもと棒だらの炊いたん"
+    },
+    "prefecture": "kyoto",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/ebiimotobodaranotaitan_kyoto.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "kyoto-maff-furofukidaikon_kyoto",
+    "name": {
+      "ja": "ふろふき大根",
+      "zh_tw": "ふろふき大根"
+    },
+    "prefecture": "kyoto",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/furofukidaikon_kyoto.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "kyoto-maff-hamonoyakimono_kyoto",
+    "name": {
+      "ja": "はもの焼き物",
+      "zh_tw": "はもの焼き物"
+    },
+    "prefecture": "kyoto",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/hamonoyakimono_kyoto.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "kyoto-maff-heshiko_kyoto",
+    "name": {
+      "ja": "へしこ",
+      "kana": "へしこ",
+      "romaji": "Heshiko",
+      "zh_tw": "へしこ"
+    },
+    "prefecture": "kyoto",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/heshiko_kyoto.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "kyoto-maff-kamonasunodengaku_kyoto",
+    "name": {
+      "ja": "賀茂なすの田楽",
+      "zh_tw": "賀茂なすの田楽"
+    },
+    "prefecture": "kyoto",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/kamonasunodengaku_kyoto.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "kyoto-maff-kibimochi_kyoto",
+    "name": {
+      "ja": "きび餅・あわ餅・とち餅",
+      "zh_tw": "きび餅・あわ餅・とち餅"
+    },
+    "prefecture": "kyoto",
+    "category": "sweets",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/kibimochi_kyoto.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "kyoto-maff-kigosho_kyoto",
+    "name": {
+      "ja": "きごしょう",
+      "kana": "きごしょう",
+      "romaji": "Kigosho",
+      "zh_tw": "きごしょう"
+    },
+    "prefecture": "kyoto",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/kigosho_kyoto.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "kyoto-maff-korokakinamasu_kyoto",
+    "name": {
+      "ja": "古老柿なます",
+      "zh_tw": "古老柿なます"
+    },
+    "prefecture": "kyoto",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/korokakinamasu_kyoto.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "kyoto-maff-kurigohan_kyoto",
+    "name": {
+      "ja": "栗ごはん",
+      "zh_tw": "栗ごはん"
+    },
+    "prefecture": "kyoto",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/kurigohan_kyoto.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "kyoto-maff-kuromameni_kyoto",
+    "name": {
+      "ja": "黒豆煮",
+      "zh_tw": "黒豆煮"
+    },
+    "prefecture": "kyoto",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/kuromameni_kyoto.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "kyoto-maff-manganzitougarashitojakonotaitan_kyoto",
+    "name": {
+      "ja": "万願寺とうがらしとじゃこの炊いたん",
+      "zh_tw": "万願寺とうがらしとじゃこの炊いたん"
+    },
+    "prefecture": "kyoto",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/manganzitougarashitojakonotaitan_kyoto.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "kyoto-maff-matsutakegohan_kyoto",
+    "name": {
+      "ja": "松茸ごはん",
+      "zh_tw": "松茸ごはん"
+    },
+    "prefecture": "kyoto",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/matsutakegohan_kyoto.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "kyoto-maff-mibunanokarashiae_kyoto",
+    "name": {
+      "ja": "壬生菜のからし和え",
+      "zh_tw": "壬生菜のからし和え"
+    },
+    "prefecture": "kyoto",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/mibunanokarashiae_kyoto.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "kyoto-maff-minazuki_kyoto",
+    "name": {
+      "ja": "水無月",
+      "zh_tw": "水無月"
+    },
+    "prefecture": "kyoto",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/minazuki_kyoto.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "kyoto-maff-nattomochi_kyoto",
+    "name": {
+      "ja": "納豆餅",
+      "zh_tw": "納豆餅"
+    },
+    "prefecture": "kyoto",
+    "category": "sweets",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/nattomochi_kyoto.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "kyoto-maff-nishinnasu_kyoto",
+    "name": {
+      "ja": "にしん茄子",
+      "zh_tw": "にしん茄子"
+    },
+    "prefecture": "kyoto",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/nishinnasu_kyoto.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "kyoto-maff-ohagi_kyoto",
+    "name": {
+      "ja": "おはぎ",
+      "kana": "おはぎ",
+      "romaji": "Ohagi",
+      "zh_tw": "おはぎ"
+    },
+    "prefecture": "kyoto",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/ohagi_kyoto.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "kyoto-maff-sabazushi_kyoto",
+    "name": {
+      "ja": "さばずし",
+      "kana": "さばずし",
+      "romaji": "Sabazushi",
+      "zh_tw": "さばずし"
+    },
+    "prefecture": "kyoto",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/sabazushi_kyoto.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "kyoto-maff-sanshonohanotsukudani_kyoto",
+    "name": {
+      "ja": "山椒の葉の佃煮",
+      "zh_tw": "山椒の葉の佃煮"
+    },
+    "prefecture": "kyoto",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/sanshonohanotsukudani_kyoto.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "kyoto-maff-semmaizuke_kyoto",
+    "name": {
+      "ja": "千枚漬け",
+      "zh_tw": "千枚漬け"
+    },
+    "prefecture": "kyoto",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/semmaizuke_kyoto.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "kyoto-maff-shibazuke_kyoto",
+    "name": {
+      "ja": "しば漬け",
+      "zh_tw": "しば漬け"
+    },
+    "prefecture": "kyoto",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/shibazuke_kyoto.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "kyoto-maff-shiromisonozoni_kyoto",
+    "name": {
+      "ja": "白味噌の雑煮",
+      "zh_tw": "白味噌の雑煮"
+    },
+    "prefecture": "kyoto",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/shiromisonozoni_kyoto.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "kyoto-maff-sugukizuke_kyoto",
+    "name": {
+      "ja": "すぐき漬け",
+      "zh_tw": "すぐき漬け"
+    },
+    "prefecture": "kyoto",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/sugukizuke_kyoto.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "kyoto-maff-taikabura_kyoto",
+    "name": {
+      "ja": "鯛蕪",
+      "zh_tw": "鯛蕪"
+    },
+    "prefecture": "kyoto",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/taikabura_kyoto.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "kyoto-maff-takenokonokinomeae_kyoto",
+    "name": {
+      "ja": "たけのこの木の芽和え",
+      "zh_tw": "たけのこの木の芽和え"
+    },
+    "prefecture": "kyoto",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/takenokonokinomeae_kyoto.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "kyoto-maff-takenokotofuki_kyoto",
+    "name": {
+      "ja": "たけのことふき・生節の炊いたん",
+      "zh_tw": "たけのことふき・生節の炊いたん"
+    },
+    "prefecture": "kyoto",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/takenokotofuki_kyoto.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "kyoto-maff-ujikintoki_kyoto",
+    "name": {
+      "ja": "宇治金時",
+      "zh_tw": "宇治金時"
+    },
+    "prefecture": "kyoto",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/ujikintoki_kyoto.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "kyoto-maff-zuikinotaitan_kyoto",
+    "name": {
+      "ja": "ずいきの炊いたん",
+      "zh_tw": "ずいきの炊いたん"
+    },
+    "prefecture": "kyoto",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/zuikinotaitan_kyoto.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
   }
 ]

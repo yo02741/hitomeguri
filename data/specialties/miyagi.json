@@ -1,0 +1,584 @@
+[
+  {
+    "id": "miyagi-Q11257281",
+    "name": {
+      "ja": "あざら",
+      "kana": "あざら",
+      "romaji": "Azara",
+      "zh_tw": "あざら",
+      "en": "azara"
+    },
+    "prefecture": "miyagi",
+    "category": "kyodo",
+    "summary": {
+      "text": "あざらは、バラメヌケ（メヌケ）のあらと白菜の古漬けを、酒粕と共にトロ火で煮込んだもの。宮城県の気仙沼地方の料理。メヌケの代わりに赤魚が用いられる場合もある。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E3%81%82%E3%81%96%E3%82%89",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/azara_miyagi.html",
+        "fetched_at": "2026-09-28"
+      },
+      {
+        "url": "https://www.wikidata.org/wiki/Q11257281",
+        "fetched_at": "2026-09-28"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E3%81%82%E3%81%96%E3%82%89",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "miyagi-Q11268875",
+    "name": {
+      "ja": "しそ巻き",
+      "zh_tw": "しそ巻き"
+    },
+    "prefecture": "miyagi",
+    "category": "kyodo",
+    "summary": {
+      "text": "しそ巻（しそまき）は、特に遠州と東北地方で盛んに食されるおかずの1つである。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E3%81%97%E3%81%9D%E5%B7%BB%E3%81%8D",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/shiso_maki_miyagi.html",
+        "fetched_at": "2026-09-28"
+      },
+      {
+        "url": "https://www.wikidata.org/wiki/Q11268875",
+        "fetched_at": "2026-09-28"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E3%81%97%E3%81%9D%E5%B7%BB%E3%81%8D",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "miyagi-Q11275595",
+    "name": {
+      "ja": "はっと汁",
+      "kana": "はっとう",
+      "romaji": "Hatto",
+      "zh_tw": "はっと汁",
+      "en": "hatto"
+    },
+    "prefecture": "miyagi",
+    "category": "kyodo",
+    "summary": {
+      "text": "はっと（はっとうとも言う）は、茨城県と福島県の境にある八溝山周辺から、宮城県の大崎地方・栗原・登米地方、岩手県の一関・奥州市地方など、主に東北地方に伝わる郷土料理。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E3%81%AF%E3%81%A3%E3%81%A8",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
+    "source_type": "kyodo_ryori",
+    "kana_source": "wikidata",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/hatto_jiru_miyagi.html",
+        "fetched_at": "2026-09-28"
+      },
+      {
+        "url": "https://www.wikidata.org/wiki/Q11275595",
+        "fetched_at": "2026-09-28"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E3%81%AF%E3%81%A3%E3%81%A8",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "miyagi-maff-aburafu_don_miyagi",
+    "name": {
+      "ja": "油麩丼",
+      "zh_tw": "油麩丼"
+    },
+    "prefecture": "miyagi",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/aburafu_don_miyagi.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "miyagi-maff-bakke_miso_miyagi",
+    "name": {
+      "ja": "ばっけ味噌",
+      "zh_tw": "ばっけ味噌"
+    },
+    "prefecture": "miyagi",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/bakke_miso_miyagi.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "miyagi-maff-donko_jiru_miyagi",
+    "name": {
+      "ja": "どんこ汁",
+      "zh_tw": "どんこ汁"
+    },
+    "prefecture": "miyagi",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/donko_jiru_miyagi.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "miyagi-maff-ebibochi_miyagi",
+    "name": {
+      "ja": "エビ餅",
+      "zh_tw": "エビ餅"
+    },
+    "prefecture": "miyagi",
+    "category": "sweets",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/ebibochi_miyagi.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "miyagi-maff-fusube_mochi_miyagi",
+    "name": {
+      "ja": "ふすべ餅",
+      "zh_tw": "ふすべ餅"
+    },
+    "prefecture": "miyagi",
+    "category": "sweets",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/fusube_mochi_miyagi.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "miyagi-maff-ganzuki_miyagi",
+    "name": {
+      "ja": "がんづき",
+      "kana": "がんづき",
+      "romaji": "Ganzuki",
+      "zh_tw": "がんづき"
+    },
+    "prefecture": "miyagi",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/ganzuki_miyagi.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "miyagi-maff-gojiru_miyagi",
+    "name": {
+      "ja": "呉汁",
+      "zh_tw": "呉汁"
+    },
+    "prefecture": "miyagi",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/gojiru_miyagi.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "miyagi-maff-harako_meshi_miyagi",
+    "name": {
+      "ja": "はらこ飯",
+      "zh_tw": "はらこ飯"
+    },
+    "prefecture": "miyagi",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/harako_meshi_miyagi.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "miyagi-maff-heso_daikon_no_nishime_miyagi",
+    "name": {
+      "ja": "へそ大根のにしめ",
+      "zh_tw": "へそ大根のにしめ"
+    },
+    "prefecture": "miyagi",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/heso_daikon_no_nishime_miyagi.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "miyagi-maff-hokki_meshi_miyagi",
+    "name": {
+      "ja": "ほっきめし",
+      "kana": "ほっきめし",
+      "romaji": "Hokkimeshi",
+      "zh_tw": "ほっきめし"
+    },
+    "prefecture": "miyagi",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/hokki_meshi_miyagi.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "miyagi-maff-hoyano_sunomono_miyagi",
+    "name": {
+      "ja": "ホヤの酢の物",
+      "zh_tw": "ホヤの酢の物"
+    },
+    "prefecture": "miyagi",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/hoyano_sunomono_miyagi.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "miyagi-maff-ichijiku_no_kanroni_miyagi",
+    "name": {
+      "ja": "いちじくの甘露煮",
+      "zh_tw": "いちじくの甘露煮"
+    },
+    "prefecture": "miyagi",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/ichijiku_no_kanroni_miyagi.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "miyagi-maff-iwanano_shioyaki_miyagi",
+    "name": {
+      "ja": "いわなの塩焼き",
+      "zh_tw": "いわなの塩焼き"
+    },
+    "prefecture": "miyagi",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/iwanano_shioyaki_miyagi.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "miyagi-maff-kaki_namasu_miyagi",
+    "name": {
+      "ja": "柿なます",
+      "zh_tw": "柿なます"
+    },
+    "prefecture": "miyagi",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/kaki_namasu_miyagi.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "miyagi-maff-kishazu_iri_miyagi",
+    "name": {
+      "ja": "きしゃず炒り",
+      "zh_tw": "きしゃず炒り"
+    },
+    "prefecture": "miyagi",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/kishazu_iri_miyagi.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "miyagi-maff-myouga_no_hayaki_miyagi",
+    "name": {
+      "ja": "みょうがの葉焼き",
+      "zh_tw": "みょうがの葉焼き"
+    },
+    "prefecture": "miyagi",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/myouga_no_hayaki_miyagi.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "miyagi-maff-nameta_gareino_nitsuke_miyagi",
+    "name": {
+      "ja": "ナメタガレイの煮つけ",
+      "zh_tw": "ナメタガレイの煮つけ"
+    },
+    "prefecture": "miyagi",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/nameta_gareino_nitsuke_miyagi.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "miyagi-maff-nasuiri_miyagi",
+    "name": {
+      "ja": "なす炒り",
+      "zh_tw": "なす炒り"
+    },
+    "prefecture": "miyagi",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/nasuiri_miyagi.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "miyagi-maff-okuzu_kake_miyagi",
+    "name": {
+      "ja": "おくずかけ",
+      "kana": "おくずかけ",
+      "romaji": "Okuzukake",
+      "zh_tw": "おくずかけ"
+    },
+    "prefecture": "miyagi",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/okuzu_kake_miyagi.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "miyagi-maff-sanma_no_kigaki_miyagi",
+    "name": {
+      "ja": "サンマのきがき",
+      "kana": "さんまのきがき",
+      "romaji": "Sanmanokigaki",
+      "zh_tw": "サンマのきがき"
+    },
+    "prefecture": "miyagi",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/sanma_no_kigaki_miyagi.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "miyagi-maff-sanmano_surimi_shiru_miyagi",
+    "name": {
+      "ja": "サンマのすり身汁",
+      "zh_tw": "サンマのすり身汁"
+    },
+    "prefecture": "miyagi",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/sanmano_surimi_shiru_miyagi.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "miyagi-maff-sasa_kamaboko_no_isobeage_miyagi",
+    "name": {
+      "ja": "笹かまぼこの磯部揚げ",
+      "zh_tw": "笹かまぼこの磯部揚げ"
+    },
+    "prefecture": "miyagi",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/sasa_kamaboko_no_isobeage_miyagi.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "miyagi-maff-sendai_hakusai_no_tsuke_mono_miyagi",
+    "name": {
+      "ja": "仙台白菜の漬物",
+      "zh_tw": "仙台白菜の漬物"
+    },
+    "prefecture": "miyagi",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/sendai_hakusai_no_tsuke_mono_miyagi.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "miyagi-maff-sendai_zouni_miyagi",
+    "name": {
+      "ja": "仙台雑煮",
+      "zh_tw": "仙台雑煮"
+    },
+    "prefecture": "miyagi",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/sendai_zouni_miyagi.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "miyagi-maff-takenoko_gohan_miyagi",
+    "name": {
+      "ja": "たけのこご飯",
+      "zh_tw": "たけのこご飯"
+    },
+    "prefecture": "miyagi",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/takenoko_gohan_miyagi.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "miyagi-maff-zunda_mochi_miyagi",
+    "name": {
+      "ja": "ずんだ餅",
+      "zh_tw": "ずんだ餅"
+    },
+    "prefecture": "miyagi",
+    "category": "sweets",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/zunda_mochi_miyagi.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  }
+]

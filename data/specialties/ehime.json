@@ -1,0 +1,511 @@
+[
+  {
+    "id": "ehime-Q136924638",
+    "name": {
+      "ja": "味噌汁（麦味噌）",
+      "kana": "みそしるさんびゃくろくじゅうごにち",
+      "romaji": "Misoshirusanbyakurokujugonichi",
+      "zh_tw": "味噌汁",
+      "en": "Miso soup 365 days"
+    },
+    "prefecture": "ehime",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "kana_source": "wikidata",
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b2/Miso_soup_365_days%2C_cover.png/960px-Miso_soup_365_days%2C_cover.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Kaichi Tsuji / Rosanjin / Kenkichi Sugimoto",
+        "license": "Public domain",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Miso_soup_365_days,_cover.png"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/miso_shiru_ehime.html",
+        "fetched_at": "2026-09-28"
+      },
+      {
+        "url": "https://www.wikidata.org/wiki/Q136924638",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "ehime-Q6125429",
+    "name": {
+      "ja": "じゃこ天",
+      "kana": "じゃこてん",
+      "romaji": "Jakoten",
+      "zh_tw": "雜魚天婦羅",
+      "en": "Jakoten"
+    },
+    "prefecture": "ehime",
+    "category": "kyodo",
+    "summary": {
+      "text": "じゃこ天（じゃこてん）は、愛媛県南予地方の海岸部で作られる特産品および、それを使用した郷土料理。近海で獲れた地魚のすり身を油で揚げた魚肉練り製品である（揚げかまぼこに分類される）。「じゃこてんぷら」や「皮てんぷら」と呼ばれることもある。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E3%81%98%E3%82%83%E3%81%93%E5%A4%A9",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
+    "source_type": "kyodo_ryori",
+    "kana_source": "wikipedia",
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/95/Serving_jakoten_in_Dogo.jpg/960px-Serving_jakoten_in_Dogo.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Koppepan",
+        "license": "CC BY 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Serving_jakoten_in_Dogo.jpg"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/jakoten_ehime.html",
+        "fetched_at": "2026-09-28"
+      },
+      {
+        "url": "https://www.wikidata.org/wiki/Q6125429",
+        "fetched_at": "2026-09-28"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E3%81%98%E3%82%83%E3%81%93%E5%A4%A9",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "ehime-maff-botecha_ehime",
+    "name": {
+      "ja": "ぼて茶",
+      "zh_tw": "ぼて茶"
+    },
+    "prefecture": "ehime",
+    "category": "tea",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/botecha_ehime.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "ehime-maff-ebiten_ehime",
+    "name": {
+      "ja": "えび天",
+      "zh_tw": "えび天"
+    },
+    "prefecture": "ehime",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/ebiten_ehime.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "ehime-maff-fukano_yu_zarashi_ehime",
+    "name": {
+      "ja": "ふかの湯ざらし",
+      "zh_tw": "ふかの湯ざらし"
+    },
+    "prefecture": "ehime",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/fukano_yu_zarashi_ehime.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "ehime-maff-fukumen_ehime",
+    "name": {
+      "ja": "ふくめん",
+      "kana": "ふくめん",
+      "romaji": "Fukumen",
+      "zh_tw": "ふくめん"
+    },
+    "prefecture": "ehime",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/fukumen_ehime.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "ehime-maff-hino_kabura_zuke_ehime",
+    "name": {
+      "ja": "緋の蕪漬",
+      "zh_tw": "緋の蕪漬"
+    },
+    "prefecture": "ehime",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/hino_kabura_zuke_ehime.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "ehime-maff-houraku_yaki_ehime",
+    "name": {
+      "ja": "法楽焼",
+      "zh_tw": "法楽焼"
+    },
+    "prefecture": "ehime",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/houraku_yaki_ehime.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "ehime-maff-igisu_dofu_ehime",
+    "name": {
+      "ja": "いぎす豆腐",
+      "zh_tw": "いぎす豆腐"
+    },
+    "prefecture": "ehime",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/igisu_dofu_ehime.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "ehime-maff-imabari_yakitori_ehime",
+    "name": {
+      "ja": "今治焼き鳥",
+      "zh_tw": "今治焼き鳥"
+    },
+    "prefecture": "ehime",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/imabari_yakitori_ehime.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "ehime-maff-imotaki_ehime",
+    "name": {
+      "ja": "いもたき",
+      "kana": "いもたき",
+      "romaji": "Imotaki",
+      "zh_tw": "いもたき"
+    },
+    "prefecture": "ehime",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/imotaki_ehime.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "ehime-maff-izumiya_ehime",
+    "name": {
+      "ja": "いずみや",
+      "kana": "いずみや",
+      "romaji": "Izumiya",
+      "zh_tw": "いずみや"
+    },
+    "prefecture": "ehime",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/izumiya_ehime.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "ehime-maff-kankoro_ehime",
+    "name": {
+      "ja": "かんころ",
+      "kana": "かんころ",
+      "romaji": "Kankoro",
+      "zh_tw": "かんころ"
+    },
+    "prefecture": "ehime",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/kankoro_ehime.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "ehime-maff-kijiniku_to_kiri_boshi_daikon_no_maze_gohan_ehime",
+    "name": {
+      "ja": "きじ肉と切り干し大根の混ぜご飯",
+      "zh_tw": "きじ肉と切り干し大根の混ぜご飯"
+    },
+    "prefecture": "ehime",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/kijiniku_to_kiri_boshi_daikon_no_maze_gohan_ehime.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "ehime-maff-matsu_yama_zushi_ehime",
+    "name": {
+      "ja": "松山鮓",
+      "zh_tw": "松山鮓"
+    },
+    "prefecture": "ehime",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/matsu_yama_zushi_ehime.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "ehime-maff-mikan_zushi_ehime",
+    "name": {
+      "ja": "みかんずし",
+      "kana": "みかんずし",
+      "romaji": "Mikanzushi",
+      "zh_tw": "みかんずし"
+    },
+    "prefecture": "ehime",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/mikan_zushi_ehime.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "ehime-maff-satsuma_ehime",
+    "name": {
+      "ja": "さつま",
+      "kana": "さつま",
+      "romaji": "Satsuma",
+      "zh_tw": "さつま"
+    },
+    "prefecture": "ehime",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/satsuma_ehime.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "ehime-maff-sekka_jiru_ehime",
+    "name": {
+      "ja": "石花汁",
+      "zh_tw": "石花汁"
+    },
+    "prefecture": "ehime",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/sekka_jiru_ehime.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "ehime-maff-senzanki_ehime",
+    "name": {
+      "ja": "せんざんき",
+      "kana": "せんざんき",
+      "romaji": "Senzanki",
+      "zh_tw": "せんざんき"
+    },
+    "prefecture": "ehime",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/senzanki_ehime.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "ehime-maff-shouyu_meshi_ehime",
+    "name": {
+      "ja": "しょうゆめし",
+      "kana": "しょうゆめし",
+      "romaji": "Shoyumeshi",
+      "zh_tw": "しょうゆめし"
+    },
+    "prefecture": "ehime",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/shouyu_meshi_ehime.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "ehime-maff-tachiuo_maki_ehime",
+    "name": {
+      "ja": "太刀魚巻",
+      "zh_tw": "太刀魚巻"
+    },
+    "prefecture": "ehime",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/tachiuo_maki_ehime.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "ehime-maff-tai_soumen_ehime",
+    "name": {
+      "ja": "鯛そうめん",
+      "zh_tw": "鯛そうめん"
+    },
+    "prefecture": "ehime",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/tai_soumen_ehime.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "ehime-maff-taimeshi_ehime",
+    "name": {
+      "ja": "鯛めし",
+      "zh_tw": "鯛めし"
+    },
+    "prefecture": "ehime",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/taimeshi_ehime.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "ehime-maff-tako_meshi_ehime",
+    "name": {
+      "ja": "たこ飯",
+      "zh_tw": "たこ飯"
+    },
+    "prefecture": "ehime",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/tako_meshi_ehime.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "ehime-maff-taruto_ehime",
+    "name": {
+      "ja": "タルト",
+      "kana": "たると",
+      "romaji": "Taruto",
+      "zh_tw": "タルト"
+    },
+    "prefecture": "ehime",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/taruto_ehime.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  }
+]

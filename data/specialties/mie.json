@@ -1,0 +1,655 @@
+[
+  {
+    "id": "mie-Q1142503",
+    "name": {
+      "ja": "魚の漬物（塩辛）",
+      "zh_tw": "鹽辛",
+      "en": "shiokara"
+    },
+    "prefecture": "mie",
+    "category": "kyodo",
+    "summary": {
+      "text": "鹽辛，是流行於日本與朝鮮半島一帶的漬物，將魚類、蝦、章魚等海鮮及其內臟，以酶、鹽、酒麴，加上食材自帶的微生物發酵而成。",
+      "lang": "zh",
+      "source_url": "https://zh.wikipedia.org/wiki/%E9%B9%BD%E8%BE%9B",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
+    "source_type": "kyodo_ryori",
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d4/Shiokara_001.jpg/960px-Shiokara_001.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Ocdp",
+        "license": "CC0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Shiokara_001.jpg"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/sakana_no_tsuke_mono_mie.html",
+        "fetched_at": "2026-09-28"
+      },
+      {
+        "url": "https://www.wikidata.org/wiki/Q1142503",
+        "fetched_at": "2026-09-28"
+      },
+      {
+        "url": "https://zh.wikipedia.org/wiki/%E9%B9%BD%E8%BE%9B",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "mie-Q249169",
+    "name": {
+      "ja": "雑煮",
+      "kana": "ぞうに",
+      "romaji": "Zo Ni",
+      "zh_tw": "雜煮",
+      "en": "zōni"
+    },
+    "prefecture": "mie",
+    "category": "kyodo",
+    "summary": {
+      "text": "雜煮，又譯作年糕湯，是日本以麻糬為主要原料的一道料理，常在日本新年期間烹調並食用。各地都有許多不同的做法。",
+      "lang": "zh",
+      "source_url": "https://zh.wikipedia.org/wiki/%E6%9D%82%E7%85%AE",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
+    "source_type": "kyodo_ryori",
+    "kana_source": "wikipedia",
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/20/Zoni_by_atmo_in_Nagoya.jpg/960px-Zoni_by_atmo_in_Nagoya.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "atmo from Nagoya, Aichi",
+        "license": "CC BY 2.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Zoni_by_atmo_in_Nagoya.jpg"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/zouni_mie.html",
+        "fetched_at": "2026-09-28"
+      },
+      {
+        "url": "https://www.wikidata.org/wiki/Q249169",
+        "fetched_at": "2026-09-28"
+      },
+      {
+        "url": "https://zh.wikipedia.org/wiki/%E6%9D%82%E7%85%AE",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "mie-Q30925424",
+    "name": {
+      "ja": "亀山ラーメン",
+      "kana": "かめやまらーめん",
+      "romaji": "Kameyama Ramen",
+      "zh_tw": "亀山ラーメン",
+      "en": "Kameyama ramen"
+    },
+    "prefecture": "mie",
+    "category": "ramen",
+    "summary": {
+      "text": "亀山ラーメン（かめやまラーメン）は、三重県亀山市の亀山商工会議所と三重県が企画し、亀山市内のラーメン店が開発したご当地ラーメン。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E4%BA%80%E5%B1%B1%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
+    "source_type": "wikipedia",
+    "kana_source": "wikipedia",
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/55/Kameyama_Ramen_01.JPG/960px-Kameyama_Ramen_01.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Abasaa",
+        "license": "Public domain",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Kameyama_Ramen_01.JPG"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q30925424",
+        "fetched_at": "2026-09-28"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E4%BA%80%E5%B1%B1%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "mie-maff-ahodaki_mie",
+    "name": {
+      "ja": "あほだき",
+      "kana": "あほだき",
+      "romaji": "Ahodaki",
+      "zh_tw": "あほだき"
+    },
+    "prefecture": "mie",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/ahodaki_mie.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "mie-maff-aimaze_mie",
+    "name": {
+      "ja": "あいまぜ",
+      "kana": "あいまぜ",
+      "romaji": "Aimaze",
+      "zh_tw": "あいまぜ"
+    },
+    "prefecture": "mie",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/aimaze_mie.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "mie-maff-arame_maki_mie",
+    "name": {
+      "ja": "あらめ巻き",
+      "zh_tw": "あらめ巻き"
+    },
+    "prefecture": "mie",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/arame_maki_mie.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "mie-maff-bonjiru_mie",
+    "name": {
+      "ja": "盆汁",
+      "zh_tw": "盆汁"
+    },
+    "prefecture": "mie",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/bonjiru_mie.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "mie-maff-chagayu_mie",
+    "name": {
+      "ja": "茶粥",
+      "zh_tw": "茶粥"
+    },
+    "prefecture": "mie",
+    "category": "tea",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/chagayu_mie.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "mie-maff-chatsu_mie",
+    "name": {
+      "ja": "ちゃつ",
+      "kana": "ちゃつ",
+      "romaji": "Chatsu",
+      "zh_tw": "ちゃつ"
+    },
+    "prefecture": "mie",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/chatsu_mie.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "mie-maff-fuki_dawara_mie",
+    "name": {
+      "ja": "ふき俵",
+      "zh_tw": "ふき俵"
+    },
+    "prefecture": "mie",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/fuki_dawara_mie.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "mie-maff-garagara_oroshi_mie",
+    "name": {
+      "ja": "ガラガラおろし",
+      "kana": "がらがらおろし",
+      "romaji": "Garagaraoroshi",
+      "zh_tw": "ガラガラおろし"
+    },
+    "prefecture": "mie",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/garagara_oroshi_mie.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "mie-maff-ibara_mochi_mie",
+    "name": {
+      "ja": "いばら餅",
+      "zh_tw": "いばら餅"
+    },
+    "prefecture": "mie",
+    "category": "sweets",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/ibara_mochi_mie.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "mie-maff-iseudon_mie",
+    "name": {
+      "ja": "伊勢うどん",
+      "zh_tw": "伊勢うどん"
+    },
+    "prefecture": "mie",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/iseudon_mie.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "mie-maff-iwashi_zushi_mie",
+    "name": {
+      "ja": "いわしずし",
+      "kana": "いわしずし",
+      "romaji": "Iwashizushi",
+      "zh_tw": "いわしずし"
+    },
+    "prefecture": "mie",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/iwashi_zushi_mie.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "mie-maff-kakimaze_mie",
+    "name": {
+      "ja": "かきまぜ",
+      "kana": "かきまぜ",
+      "romaji": "Kakimaze",
+      "zh_tw": "かきまぜ"
+    },
+    "prefecture": "mie",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/kakimaze_mie.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "mie-maff-kokera_zushi_mie",
+    "name": {
+      "ja": "こけらずし",
+      "kana": "こけらずし",
+      "romaji": "Kokerazushi",
+      "zh_tw": "こけらずし"
+    },
+    "prefecture": "mie",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/kokera_zushi_mie.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "mie-maff-kounago_no_kugini_mie",
+    "name": {
+      "ja": "こうなごのくぎ煮",
+      "zh_tw": "こうなごのくぎ煮"
+    },
+    "prefecture": "mie",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/kounago_no_kugini_mie.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "mie-maff-kyuuri_no_hiyajiru_mie",
+    "name": {
+      "ja": "きゅうりの冷や汁",
+      "zh_tw": "きゅうりの冷や汁"
+    },
+    "prefecture": "mie",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/kyuuri_no_hiyajiru_mie.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "mie-maff-manbou_sumiso_ae_mie",
+    "name": {
+      "ja": "まんぼう酢味噌あえ",
+      "zh_tw": "まんぼう酢味噌あえ"
+    },
+    "prefecture": "mie",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/manbou_sumiso_ae_mie.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "mie-maff-naisho_meshi_mie",
+    "name": {
+      "ja": "ないしょ餅",
+      "zh_tw": "ないしょ餅"
+    },
+    "prefecture": "mie",
+    "category": "sweets",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/naisho_meshi_mie.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "mie-maff-nare_zushi_mie",
+    "name": {
+      "ja": "なれずし",
+      "kana": "なれずし",
+      "romaji": "Narezushi",
+      "zh_tw": "なれずし"
+    },
+    "prefecture": "mie",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/nare_zushi_mie.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "mie-maff-noppei_mie",
+    "name": {
+      "ja": "のっぺい",
+      "kana": "のっぺい",
+      "romaji": "Noppei",
+      "zh_tw": "のっぺい"
+    },
+    "prefecture": "mie",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/noppei_mie.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "mie-maff-rakkasei_no_nimame_mie",
+    "name": {
+      "ja": "落花生の煮豆",
+      "zh_tw": "落花生の煮豆"
+    },
+    "prefecture": "mie",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/rakkasei_no_nimame_mie.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "mie-maff-sakana_no_jifu_mie",
+    "name": {
+      "ja": "魚のじふ",
+      "zh_tw": "魚のじふ"
+    },
+    "prefecture": "mie",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/sakana_no_jifu_mie.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "mie-maff-sakana_no_tataki_mie",
+    "name": {
+      "ja": "魚のたたき",
+      "zh_tw": "魚のたたき"
+    },
+    "prefecture": "mie",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/sakana_no_tataki_mie.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "mie-maff-same_namasu_mie",
+    "name": {
+      "ja": "さめなます",
+      "kana": "さめなます",
+      "romaji": "Samenamasu",
+      "zh_tw": "さめなます"
+    },
+    "prefecture": "mie",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/same_namasu_mie.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "mie-maff-sanma_zushi_mie",
+    "name": {
+      "ja": "さんまずし",
+      "kana": "さんまずし",
+      "romaji": "Sanmazushi",
+      "zh_tw": "さんまずし"
+    },
+    "prefecture": "mie",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/sanma_zushi_mie.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "mie-maff-tako_meshi_mie",
+    "name": {
+      "ja": "たこ飯",
+      "zh_tw": "たこ飯"
+    },
+    "prefecture": "mie",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/tako_meshi_mie.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "mie-maff-tekone_zushi_mie",
+    "name": {
+      "ja": "てこねずし",
+      "kana": "てこねずし",
+      "romaji": "Tekonezushi",
+      "zh_tw": "てこねずし"
+    },
+    "prefecture": "mie",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/tekone_zushi_mie.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "mie-maff-toufu_dengaku_mie",
+    "name": {
+      "ja": "豆腐でんがく",
+      "zh_tw": "豆腐でんがく"
+    },
+    "prefecture": "mie",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/toufu_dengaku_mie.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "mie-maff-yasaino_tsuke_mono_mie",
+    "name": {
+      "ja": "野菜の漬物",
+      "zh_tw": "野菜の漬物"
+    },
+    "prefecture": "mie",
+    "category": "kyodo",
+    "source_type": "kyodo_ryori",
+    "images": [],
+    "sources": [
+      {
+        "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/yasaino_tsuke_mono_mie.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "updated_at": "2026-09-28"
+  }
+]
