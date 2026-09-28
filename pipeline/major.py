@@ -33,6 +33,7 @@ from pipeline.sources import (
     okinawastory,
     osm,
     pageviews,
+    visithokkaido,
     wikidata,
     wikipedia,
 )
@@ -225,8 +226,12 @@ def extra_category_qids(pref: str) -> set[str]:
 
 
 # 有官方觀光網站熱門排行的縣
-OFFICIAL_SOURCES = {"okinawa": okinawastory.spots, "fukuoka": crossroadfukuoka.spots}
-OFFICIAL_HOSTS = ("okinawastory.jp", "crossroadfukuoka.jp")
+OFFICIAL_SOURCES = {
+    "okinawa": okinawastory.spots,
+    "fukuoka": crossroadfukuoka.spots,
+    "hokkaido": visithokkaido.spots,
+}
+OFFICIAL_HOSTS = ("okinawastory.jp", "crossroadfukuoka.jp", "visit-hokkaido.jp")
 
 
 def _names_overlap(a: set[str], b: set[str]) -> bool:
