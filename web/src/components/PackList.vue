@@ -6,6 +6,7 @@ import { regions } from '../data/regions'
 import type { PackItem } from '../services/bundles'
 import { useCatalogStore } from '../stores/catalog'
 import { useExploreStore } from '../stores/explore'
+import CollapseChevron from './CollapseChevron.vue'
 
 // 擴充包清單：開啟擴充包時取代左側的景點清單（UX-FLOW.md A4）。
 // 地區頁依組別分段；首頁（全國）依縣分段。組別列同時篩選清單與地圖。
@@ -34,6 +35,8 @@ const sections = computed<{ key: string; label: string; rows: PackItem[] }[]>(()
     .map((r) => ({ key: r.prefecture, label: r.name.ja, rows: rows.value.filter((it) => it.p === r.prefecture) }))
     .filter((s) => s.rows.length)
 })
+
+const isOpen = (key: string) => !explore.collapsed.includes(`pack:${key}`)
 
 /** 第二行：人孔蓋列出寶可夢，其他列出地址 */
 function detail(it: PackItem): string {
@@ -96,13 +99,19 @@ function detail(it: PackItem): string {
 
     <div class="scroll-quiet flex min-h-0 flex-col overflow-y-auto pr-3 pb-1 pl-1.5" @mouseleave="emit('highlight', null)">
       <template v-for="s in sections" :key="s.key">
-        <h3
-          class="sticky top-0 z-[1] flex shrink-0 items-baseline gap-1.5 bg-paper px-1.5 pt-2.5 pb-1 text-caption font-bold tracking-section text-sub"
-        >
-          <span :lang="pref ? undefined : 'ja'">{{ s.label }}</span><span class="font-latin font-normal tracking-normal">{{ s.rows.length }}</span>
+        <h3 class="sticky top-0 z-[1] shrink-0 bg-paper">
+          <button
+            type="button"
+            class="flex w-full items-center gap-2 px-1.5 pt-2.5 pb-1 text-left text-caption font-bold tracking-section text-sub hover:text-ink"
+            :aria-expanded="isOpen(s.key)"
+            @click="explore.toggleCollapsed(`pack:${s.key}`)"
+          >
+            <CollapseChevron :open="isOpen(s.key)" />
+            <span :lang="pref ? undefined : 'ja'">{{ s.label }}</span><span class="font-latin font-normal tracking-normal">{{ s.rows.length }}</span>
+          </button>
         </h3>
         <button
-          v-for="it in s.rows"
+          v-for="it in isOpen(s.key) ? s.rows : []"
           :key="it.id"
           type="button"
           class="flex min-h-tap shrink-0 items-center gap-3 rounded-control px-1.5 py-1.5 text-left text-ink hover:bg-surface"

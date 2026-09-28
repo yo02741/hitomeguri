@@ -5,6 +5,7 @@ import { CATEGORY_GROUPS, categoryGroup } from '../data/categories'
 import { mapThumbUrl, type MapSpot } from '../services/bundles'
 import { useCatalogStore } from '../stores/catalog'
 import { useExploreStore } from '../stores/explore'
+import CollapseChevron from './CollapseChevron.vue'
 
 // 地區的景點清單（全部大點）與地區特色。
 // 類型列可篩選（清單與地圖一起）；不篩選時清單依類型分段排列。
@@ -31,6 +32,8 @@ watch(sections, (list) => {
 const shown = computed(() =>
   explore.category ? sections.value.filter((g) => g.key === explore.category) : sections.value,
 )
+
+const isOpen = (key: string) => !explore.collapsed.includes(`cat:${key}`)
 
 const failed = ref(new Set<string>())
 const tabClass = 'flex h-9 flex-1 items-center justify-center gap-1.5 rounded-control text-label'
@@ -98,13 +101,19 @@ const tabClass = 'flex h-9 flex-1 items-center justify-center gap-1.5 rounded-co
       @mouseleave="emit('highlight', null)"
     >
       <template v-for="g in shown" :key="g.key">
-        <h3
-          class="sticky top-0 z-[1] flex shrink-0 items-baseline gap-1.5 bg-paper px-1.5 pt-2.5 pb-1 text-caption font-bold tracking-section text-sub"
-        >
-          {{ g.label }}<span class="font-latin font-normal tracking-normal">{{ g.rows.length }}</span>
+        <h3 class="sticky top-0 z-[1] shrink-0 bg-paper">
+          <button
+            type="button"
+            class="flex w-full items-center gap-2 px-1.5 pt-2.5 pb-1 text-left text-caption font-bold tracking-section text-sub hover:text-ink"
+            :aria-expanded="isOpen(g.key)"
+            @click="explore.toggleCollapsed(`cat:${g.key}`)"
+          >
+            <CollapseChevron :open="isOpen(g.key)" />
+            {{ g.label }}<span class="font-latin font-normal tracking-normal">{{ g.rows.length }}</span>
+          </button>
         </h3>
         <button
-          v-for="s in g.rows"
+          v-for="s in isOpen(g.key) ? g.rows : []"
           :key="s.id"
           type="button"
           class="flex min-h-tap shrink-0 items-center gap-3 rounded-control px-1.5 py-1.5 text-left text-ink hover:bg-surface"

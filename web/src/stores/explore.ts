@@ -39,6 +39,13 @@ export const useExploreStore = defineStore('explore', () => {
     if (pack.value && !list.includes(pack.value)) pack.value = null
   })
   watch(pack, () => (packGroup.value = null))
+  // 收合的清單分段（首頁的地方 `area:*`、景點類型 `cat:*`、擴充包組別或縣 `pack:*`）
+  const collapsed = ref<string[]>([])
+  function toggleCollapsed(key: string) {
+    collapsed.value = collapsed.value.includes(key)
+      ? collapsed.value.filter((k) => k !== key)
+      : [...collapsed.value, key]
+  }
   // header 搜尋選到的結果，由探索頁接手（進入該縣、選取景點）
   const searchPick = shallowRef<SearchHit | null>(null)
 
@@ -62,5 +69,8 @@ export const useExploreStore = defineStore('explore', () => {
     enabledPacks.value = on ? PACKS.map((p) => p.key).filter((k) => k === key || rest.includes(k)) : rest
   }
 
-  return { activePref, category, pack, packGroup, enabledPacks, searchPick, setActivePref, togglePack, setPackEnabled }
+  return {
+    activePref, category, pack, packGroup, enabledPacks, searchPick, collapsed,
+    setActivePref, togglePack, setPackEnabled, toggleCollapsed,
+  }
 })
