@@ -143,41 +143,6 @@
     "updated_at": "2026-09-28"
   },
   {
-    "id": "osm-node-4263596089",
-    "name": {
-      "ja": "野付半島ネイチャーセンター",
-      "zh_tw": "野付半島ネイチャーセンター"
-    },
-    "location": {
-      "lat": 43.589981,
-      "lng": 145.335202
-    },
-    "prefecture": "hokkaido",
-    "kind": "major",
-    "themes": [],
-    "tags": [
-      "展望"
-    ],
-    "featured": false,
-    "score": 73.55,
-    "images": [],
-    "external_ids": {
-      "osm": "node/4263596089"
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/4263596089",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://www.visit-hokkaido.jp/spot/detail_10494.html",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
     "id": "osm-node-4607329891",
     "name": {
       "ja": "小樽運河クルーズ",
@@ -880,46 +845,6 @@
     "updated_at": "2026-09-28"
   },
   {
-    "id": "visithokkaido-10244",
-    "name": {
-      "ja": "釧路湿原国立公園",
-      "zh_tw": "釧路湿原国立公園"
-    },
-    "location": {
-      "lat": 43.098124,
-      "lng": 144.449333
-    },
-    "prefecture": "hokkaido",
-    "kind": "major",
-    "themes": [],
-    "tags": [
-      "公園"
-    ],
-    "featured": false,
-    "score": 77.6,
-    "nearest_stations": [
-      {
-        "name": {
-          "ja": "釧路湿原",
-          "kana": "くしろしつげん",
-          "romaji": "Kushiro Shitsugen",
-          "en": "Kushiro-Shitsugen"
-        },
-        "distance_m": 320
-      }
-    ],
-    "images": [],
-    "external_ids": {},
-    "sources": [
-      {
-        "url": "https://www.visit-hokkaido.jp/spot/detail_10244.html",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
     "id": "visithokkaido-10256",
     "name": {
       "ja": "ばんえい十勝",
@@ -940,78 +865,6 @@
     "sources": [
       {
         "url": "https://www.visit-hokkaido.jp/spot/detail_10256.html",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
-    "id": "visithokkaido-10299",
-    "name": {
-      "ja": "大沼国定公園",
-      "zh_tw": "大沼国定公園"
-    },
-    "location": {
-      "lat": 41.983851,
-      "lng": 140.672143
-    },
-    "prefecture": "hokkaido",
-    "kind": "major",
-    "themes": [],
-    "tags": [
-      "公園"
-    ],
-    "featured": false,
-    "score": 73.7,
-    "nearest_stations": [
-      {
-        "name": {
-          "ja": "大沼公園",
-          "en": "Ōnuma-Kōen"
-        },
-        "distance_m": 370
-      },
-      {
-        "name": {
-          "ja": "大沼",
-          "en": "Ōnuma"
-        },
-        "distance_m": 1310
-      }
-    ],
-    "images": [],
-    "external_ids": {},
-    "sources": [
-      {
-        "url": "https://www.visit-hokkaido.jp/spot/detail_10299.html",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
-    "id": "visithokkaido-10352",
-    "name": {
-      "ja": "層雲峡",
-      "zh_tw": "層雲峡"
-    },
-    "location": {
-      "lat": 43.712798,
-      "lng": 142.997059
-    },
-    "prefecture": "hokkaido",
-    "kind": "major",
-    "themes": [],
-    "tags": [],
-    "featured": false,
-    "score": 75.8,
-    "images": [],
-    "external_ids": {},
-    "sources": [
-      {
-        "url": "https://www.visit-hokkaido.jp/spot/detail_10352.html",
         "fetched_at": "2026-09-28"
       }
     ],
@@ -1149,36 +1002,6 @@
     "sources": [
       {
         "url": "https://www.visit-hokkaido.jp/spot/detail_10490.html",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
-    "id": "visithokkaido-10496",
-    "name": {
-      "ja": "トドワラ",
-      "kana": "とどわら",
-      "romaji": "Todowara",
-      "zh_tw": "トドワラ"
-    },
-    "kana_source": "osm",
-    "location": {
-      "lat": 43.605236,
-      "lng": 145.281282
-    },
-    "prefecture": "hokkaido",
-    "kind": "major",
-    "themes": [],
-    "tags": [],
-    "featured": false,
-    "score": 68.45,
-    "images": [],
-    "external_ids": {},
-    "sources": [
-      {
-        "url": "https://www.visit-hokkaido.jp/spot/detail_10496.html",
         "fetched_at": "2026-09-28"
       }
     ],
@@ -3861,6 +3684,57 @@
     "updated_at": "2026-09-28"
   },
   {
+    "id": "wd-Q11292987",
+    "name": {
+      "ja": "オロフレ峠",
+      "kana": "おろふれとうげ",
+      "romaji": "Orofuretoge",
+      "zh_tw": "オロフレ峠",
+      "en": "Orofure Pass"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 42.551944,
+      "lng": 141.075833
+    },
+    "prefecture": "hokkaido",
+    "kind": "major",
+    "themes": [],
+    "tags": [],
+    "featured": false,
+    "score": 64.22,
+    "summary": {
+      "text": "オロフレ峠（オロフレとうげ）は、北海道有珠郡壮瞥町と登別市の境にある峠。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E3%82%AA%E3%83%AD%E3%83%95%E3%83%AC%E5%B3%A0",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
+    "images": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/8/80/Mt_OROFURE_2.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+        "author": "Highten31",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Mt_OROFURE_2.JPG"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q11292987"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q11292987",
+        "fetched_at": "2026-09-28"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E3%82%AA%E3%83%AD%E3%83%95%E3%83%AC%E5%B3%A0",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-28"
+  },
+  {
     "id": "wd-Q11294362",
     "name": {
       "ja": "カトリック元町教会",
@@ -4454,7 +4328,7 @@
       "展望"
     ],
     "featured": false,
-    "score": 65.45,
+    "score": 133.9,
     "summary": {
       "text": "トドワラは、北海道東部の根室振興局野付郡別海町の野付半島にある、立ち枯れたトドマツ林の跡である。同じく野付半島内にあるナラワラについても当項で述べる。",
       "lang": "ja",
@@ -4478,6 +4352,10 @@
       },
       {
         "url": "https://www.openstreetmap.org/node/5788196172",
+        "fetched_at": "2026-09-28"
+      },
+      {
+        "url": "https://www.visit-hokkaido.jp/spot/detail_10496.html",
         "fetched_at": "2026-09-28"
       }
     ],
@@ -4931,7 +4809,7 @@
           "ja": "網走",
           "en": "Abashiri"
         },
-        "distance_m": 1200
+        "distance_m": 1220
       }
     ],
     "images": [
@@ -5511,6 +5389,46 @@
     "updated_at": "2026-09-28"
   },
   {
+    "id": "wd-Q11371763",
+    "name": {
+      "ja": "二股ラヂウム温泉",
+      "kana": "ふたまたらぢうむおんせん",
+      "romaji": "Futamatarajiumuonsen",
+      "zh_tw": "二股ラヂウム温泉",
+      "en": "Futamata-Radium Onsen"
+    },
+    "kana_source": "wikidata",
+    "location": {
+      "lat": 42.576758,
+      "lng": 140.239344
+    },
+    "prefecture": "hokkaido",
+    "kind": "major",
+    "themes": [],
+    "tags": [],
+    "featured": false,
+    "score": 64.28,
+    "summary": {
+      "text": "二股ラヂウム温泉（ふたまたラヂウムおんせん）は、北海道山越郡長万部町字大峯にある温泉。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E4%BA%8C%E8%82%A1%E3%83%A9%E3%83%82%E3%82%A6%E3%83%A0%E6%B8%A9%E6%B3%89",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
+    "images": [],
+    "external_ids": {
+      "wikidata": "Q11371763"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q11371763",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-28"
+  },
+  {
     "id": "wd-Q11371926",
     "name": {
       "ja": "二風谷アイヌ文化博物館",
@@ -5681,6 +5599,79 @@
       },
       {
         "url": "https://ja.wikipedia.org/wiki/%E4%BD%8F%E5%90%89%E7%A5%9E%E7%A4%BE_%28%E5%B0%8F%E6%A8%BD%E5%B8%82%29",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "wd-Q11391718",
+    "name": {
+      "ja": "八窓庵",
+      "kana": "はっそうあん",
+      "romaji": "Hasso An",
+      "zh_tw": "八窓庵",
+      "en": "Hassō-an"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 43.046972,
+      "lng": 141.353111
+    },
+    "prefecture": "hokkaido",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "重要文化財"
+    ],
+    "featured": false,
+    "score": 64.09,
+    "summary": {
+      "text": "八窓庵（はっそうあん）は、北海道札幌市中央区の中島公園にある茶室である。当初は近江国小室城（滋賀県長浜市）に建てられていた。重要文化財（1936年9月18日指定）。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E5%85%AB%E7%AA%93%E5%BA%B5",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "中島公園",
+          "kana": "なかじまこうえん",
+          "romaji": "Nakajima-Koen",
+          "en": "Nakajima-Koen"
+        },
+        "distance_m": 220
+      },
+      {
+        "name": {
+          "ja": "幌平橋",
+          "kana": "ほろひらばし",
+          "romaji": "Horohira-Bashi",
+          "en": "Horohira-Bashi"
+        },
+        "distance_m": 790
+      }
+    ],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/21/%E5%85%AB%E7%AA%93%E5%BA%B5_%E9%87%8D%E8%A6%81%E6%96%87%E5%8C%96%E8%B2%A1%EF%BC%88A_hermitage%EF%BC%89_-_panoramio.jpg/960px-%E5%85%AB%E7%AA%93%E5%BA%B5_%E9%87%8D%E8%A6%81%E6%96%87%E5%8C%96%E8%B2%A1%EF%BC%88A_hermitage%EF%BC%89_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "pakku",
+        "license": "CC BY 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:%E5%85%AB%E7%AA%93%E5%BA%B5_%E9%87%8D%E8%A6%81%E6%96%87%E5%8C%96%E8%B2%A1%EF%BC%88A_hermitage%EF%BC%89_-_panoramio.jpg"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q11391718"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q11391718",
+        "fetched_at": "2026-09-28"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E5%85%AB%E7%AA%93%E5%BA%B5",
         "fetched_at": "2026-09-28"
       }
     ],
@@ -7738,6 +7729,61 @@
     "updated_at": "2026-09-28"
   },
   {
+    "id": "wd-Q11480647",
+    "name": {
+      "ja": "市立函館博物館",
+      "kana": "しりつはこだてはくぶつかん",
+      "romaji": "Shiritsuhakodatehakubutsukan",
+      "zh_tw": "市立函館博物館",
+      "en": "Hakodate City Museum"
+    },
+    "kana_source": "wikidata",
+    "location": {
+      "lat": 41.755944,
+      "lng": 140.714639
+    },
+    "prefecture": "hokkaido",
+    "city": "函館市",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "博物館"
+    ],
+    "featured": false,
+    "score": 64.02,
+    "summary": {
+      "text": "市立函館博物館是位於日本函館市青柳町函館公園內的一座公立綜合博物館。",
+      "lang": "zh",
+      "source_url": "https://zh.wikipedia.org/wiki/%E5%B8%82%E7%AB%8B%E5%87%BD%E9%A4%A8%E5%8D%9A%E7%89%A9%E9%A4%A8",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/49/Hakodate_City_Museum_in_May_2024.jpg/960px-Hakodate_City_Museum_in_May_2024.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "掬茶",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Hakodate_City_Museum_in_May_2024.jpg"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q11480647",
+      "osm": "way/412452520"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q11480647",
+        "fetched_at": "2026-09-28"
+      },
+      {
+        "url": "https://www.openstreetmap.org/way/412452520",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-28"
+  },
+  {
     "id": "wd-Q11481183",
     "name": {
       "ja": "帯広競馬場",
@@ -7920,6 +7966,84 @@
       },
       {
         "url": "https://ja.wikipedia.org/wiki/%E5%B9%B3%E5%92%8C%E9%80%9A%E8%B2%B7%E7%89%A9%E5%85%AC%E5%9C%92",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "wd-Q11482664",
+    "name": {
+      "ja": "平岸高台公園",
+      "kana": "ひらぎしたかだいこうえん",
+      "romaji": "Hiragishitakadaikoen",
+      "zh_tw": "平岸高台公園",
+      "en": "Hiragishi Takadai Park"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 43.026673,
+      "lng": 141.374876
+    },
+    "prefecture": "hokkaido",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "公園"
+    ],
+    "featured": false,
+    "score": 64.16,
+    "summary": {
+      "text": "平岸高台公園（ひらぎしたかだいこうえん）は、北海道札幌市豊平区平岸4条13丁目にある公園である。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E5%B9%B3%E5%B2%B8%E9%AB%98%E5%8F%B0%E5%85%AC%E5%9C%92",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "南平岸",
+          "kana": "みなみひらぎし",
+          "romaji": "Minami-Hiragishi",
+          "en": "Minami-Hiragishi"
+        },
+        "distance_m": 290
+      },
+      {
+        "name": {
+          "ja": "平岸",
+          "kana": "ひらぎし",
+          "romaji": "Hiragishi",
+          "en": "Hiragishi"
+        },
+        "distance_m": 1030
+      }
+    ],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/26/%E5%B9%B3%E5%B2%B8%E9%AB%98%E5%8F%B0%E5%85%AC%E5%9C%92.jpg/960px-%E5%B9%B3%E5%B2%B8%E9%AB%98%E5%8F%B0%E5%85%AC%E5%9C%92.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "dutyterms",
+        "license": "Public domain",
+        "source_url": "https://commons.wikimedia.org/wiki/File:%E5%B9%B3%E5%B2%B8%E9%AB%98%E5%8F%B0%E5%85%AC%E5%9C%92.jpg"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q11482664",
+      "osm": "way/161768026"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q11482664",
+        "fetched_at": "2026-09-28"
+      },
+      {
+        "url": "https://www.openstreetmap.org/way/161768026",
+        "fetched_at": "2026-09-28"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E5%B9%B3%E5%B2%B8%E9%AB%98%E5%8F%B0%E5%85%AC%E5%9C%92",
         "fetched_at": "2026-09-28"
       }
     ],
@@ -8342,6 +8466,59 @@
       },
       {
         "url": "https://ja.wikipedia.org/wiki/%E6%97%AD%E5%B1%B1%E8%A8%98%E5%BF%B5%E5%85%AC%E5%9C%92",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "wd-Q11511817",
+    "name": {
+      "ja": "旭橋",
+      "kana": "あさひばし",
+      "romaji": "Asahibashi",
+      "zh_tw": "旭橋",
+      "en": "Asahi Bridge"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 43.778333,
+      "lng": 142.36
+    },
+    "prefecture": "hokkaido",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "橋"
+    ],
+    "featured": false,
+    "score": 63.99,
+    "summary": {
+      "text": "旭橋（あさひばし、英語：Asahibashi Bridge）は、北海道旭川市の石狩川と牛朱別川に架かる橋。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E6%97%AD%E6%A9%8B_%28%E6%97%AD%E5%B7%9D%E5%B8%82%29",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
+    "images": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/c/cc/Asahibashi_Bridge_Asahikawa_Hokkaido_Japan.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+        "author": "ほくなん",
+        "license": "Public domain",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Asahibashi_Bridge_Asahikawa_Hokkaido_Japan.jpg"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q11511817"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q11511817",
+        "fetched_at": "2026-09-28"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E6%97%AD%E6%A9%8B_%28%E6%97%AD%E5%B7%9D%E5%B8%82%29",
         "fetched_at": "2026-09-28"
       }
     ],
@@ -8773,7 +8950,7 @@
     "name": {
       "ja": "札幌伏見稲荷神社",
       "kana": "さっぽろふしみいなりじんじゃ",
-      "romaji": "Sapporo Fuhimi Inari Jinja",
+      "romaji": "Sapporofushimiinarijinja",
       "zh_tw": "札幌伏見稻荷神社",
       "en": "Sapporo Fushimi Inari Shrine"
     },
@@ -8957,6 +9134,85 @@
       },
       {
         "url": "https://ja.wikipedia.org/wiki/%E6%9C%AD%E5%B9%8C%E5%B8%82%E4%B8%AD%E5%A4%AE%E5%8D%B8%E5%A3%B2%E5%B8%82%E5%A0%B4",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "wd-Q11521250",
+    "name": {
+      "ja": "札幌市交通資料館",
+      "kana": "さっぽろしこうつうしりょうかん",
+      "romaji": "Sapporoshikotsushiryokan",
+      "zh_tw": "札幌市交通資料館",
+      "en": "Sapporo Transportation Museum"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 43.004692,
+      "lng": 141.364436
+    },
+    "prefecture": "hokkaido",
+    "city": "札幌市",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "博物館"
+    ],
+    "featured": false,
+    "score": 64.08,
+    "summary": {
+      "text": "札幌市交通資料館（さっぽろしこうつうしりょうかん）は、北海道札幌市南区にある札幌市交通事業振興公社（札幌市交通局の外郭団体）が運営する鉄道保存展示施設。札幌市営地下鉄南北線自衛隊前駅の南側高架下及び西隣に設けられている。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E6%9C%AD%E5%B9%8C%E5%B8%82%E4%BA%A4%E9%80%9A%E8%B3%87%E6%96%99%E9%A4%A8",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "自衛隊前",
+          "kana": "じえいたいまえ",
+          "romaji": "Jieitai-Mae",
+          "en": "Jieitai-Mae"
+        },
+        "distance_m": 180
+      },
+      {
+        "name": {
+          "ja": "澄川",
+          "kana": "すみかわ",
+          "romaji": "Sumikawa",
+          "en": "Sumikawa"
+        },
+        "distance_m": 1410
+      }
+    ],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7f/Sapporo_Transportation_Museum.JPG/960px-Sapporo_Transportation_Museum.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Abasaa",
+        "license": "Public domain",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Sapporo_Transportation_Museum.JPG"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q11521250",
+      "osm": "node/11880299865"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q11521250",
+        "fetched_at": "2026-09-28"
+      },
+      {
+        "url": "https://www.openstreetmap.org/node/11880299865",
+        "fetched_at": "2026-09-28"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E6%9C%AD%E5%B9%8C%E5%B8%82%E4%BA%A4%E9%80%9A%E8%B3%87%E6%96%99%E9%A4%A8",
         "fetched_at": "2026-09-28"
       }
     ],
@@ -12057,7 +12313,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 140.28,
+    "score": 65.98,
     "summary": {
       "text": "阿寒湖溫泉是位於日本北海道釧路市阿寒町阿寒湖畔的溫泉區，也被稱為阿寒湖畔溫泉。主要溫泉街區位於國道240號與阿寒湖之間，在阿寒湖岸有碼頭可搭乘觀光船遊覽阿寒湖。街區內除了餐廳、紀念品店，還有北海道內最大的阿伊努族聚落。",
       "lang": "zh",
@@ -12079,10 +12335,6 @@
     "sources": [
       {
         "url": "https://www.wikidata.org/wiki/Q11657382",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://www.visit-hokkaido.jp/spot/detail_10044.html",
         "fetched_at": "2026-09-28"
       }
     ],
@@ -12518,8 +12770,8 @@
     "kind": "major",
     "themes": [],
     "tags": [],
-    "featured": false,
-    "score": 82.84,
+    "featured": true,
+    "score": 161.34,
     "summary": {
       "text": "摩周湖是位於日本北海道東部川上郡弟子屈町的一個火山湖，湖面面積在日本排名第20；以高透明度而知名，在20世紀前半世紀曾以能見深度最深曾達41.6公尺超越貝加爾湖成為全世界透明度最高的湖泊，但目前的能見深度僅約20公尺左右。現被劃入阿寒摩周國立公園的範圍，在2001年被列為北海道遺產。",
       "lang": "zh",
@@ -12541,6 +12793,10 @@
     "sources": [
       {
         "url": "https://www.wikidata.org/wiki/Q1194619",
+        "fetched_at": "2026-09-28"
+      },
+      {
+        "url": "https://www.visit-hokkaido.jp/spot/detail_10052.html",
         "fetched_at": "2026-09-28"
       }
     ],
@@ -13158,6 +13414,59 @@
       },
       {
         "url": "https://ja.wikipedia.org/wiki/ONE%E6%9C%AD%E5%B9%8C%E3%82%B9%E3%83%86%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E3%82%BF%E3%83%AF%E3%83%BC",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "wd-Q15621830",
+    "name": {
+      "ja": "尾花岬",
+      "kana": "おばなみさき",
+      "romaji": "Obanamisaki",
+      "zh_tw": "尾花岬",
+      "en": "Cape Obana"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 42.303056,
+      "lng": 139.766944
+    },
+    "prefecture": "hokkaido",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "岬"
+    ],
+    "featured": false,
+    "score": 64.34,
+    "summary": {
+      "text": "尾花岬是北海道最西端的海角，面向日本海。周圍有天狗嶽和毛無山，圍繞著險峻的海岸線。北海道道740號北檜山大成線經過，起初在離角7公里處戛然而止，2013年4月24日開放了3,395米的大田隧道經過海角。太田集落的太田神社中拜殿可瞭望海角。",
+      "lang": "zh",
+      "source_url": "https://zh.wikipedia.org/wiki/%E5%B0%BE%E8%8A%B1%E5%B2%AC",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d4/Cape_Obana%2C_Setana%2C_Hokkaido.jpg/960px-Cape_Obana%2C_Setana%2C_Hokkaido.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Kzaral",
+        "license": "CC BY 2.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Cape_Obana,_Setana,_Hokkaido.jpg"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q15621830"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q15621830",
+        "fetched_at": "2026-09-28"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E5%B0%BE%E8%8A%B1%E5%B2%AC",
         "fetched_at": "2026-09-28"
       }
     ],
@@ -15369,7 +15678,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 65.89,
+    "score": 129.09,
     "summary": {
       "text": "シューパロ湖（シューパロこ）は、北海道夕張市にある人造湖。石狩川水系の夕張川にあり、1962年に竣工した大夕張ダムによって形成され、2015年竣工の夕張シューパロダムによって水域が拡大した。",
       "lang": "ja",
@@ -15384,6 +15693,10 @@
     "sources": [
       {
         "url": "https://www.wikidata.org/wiki/Q28692634",
+        "fetched_at": "2026-09-28"
+      },
+      {
+        "url": "https://www.visit-hokkaido.jp/spot/detail_11447.html",
         "fetched_at": "2026-09-28"
       },
       {
@@ -16031,7 +16344,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 143.3,
+    "score": 151.55,
     "summary": {
       "text": "層雲峽是日本北海道上川町的一座峽谷，位於大雪山國立公園境內，為石狩川沿岸一段約24公里長的斷崖峭壁。是大雪山主要的觀光景點。峽谷旁有層雲峽溫泉，是北海道規模較大的溫泉街之一，除了溫泉之外，層雲峽還有流星瀑布、銀河瀑布等景點。",
       "lang": "zh",
@@ -16061,7 +16374,7 @@
         "fetched_at": "2026-09-28"
       },
       {
-        "url": "https://www.visit-hokkaido.jp/spot/detail_10350.html",
+        "url": "https://www.visit-hokkaido.jp/spot/detail_10352.html",
         "fetched_at": "2026-09-28"
       },
       {
@@ -16090,7 +16403,7 @@
     "kind": "major",
     "themes": [],
     "tags": [],
-    "featured": true,
+    "featured": false,
     "score": 157.94,
     "summary": {
       "text": "函館山是一處位於北海道函館市市區西部的山地。因函館山也是一座陸連島，因此有時也被稱為「函館島」「函館山島」。函館山標高334米，周長約9公里。因其外觀形似一頭仰臥的牛，因此又名臥牛山（日語：がぎゅうざん）。",
@@ -16117,6 +16430,60 @@
       },
       {
         "url": "https://www.visit-hokkaido.jp/spot/detail_10095.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "wd-Q3547609",
+    "name": {
+      "ja": "姥神大神宮",
+      "kana": "うばがみだいじんぐう",
+      "romaji": "Ubagamidaijingu",
+      "zh_tw": "姥神大神宮",
+      "en": "Ubagami Daijin-gū shrine"
+    },
+    "kana_source": "wikidata",
+    "location": {
+      "lat": 41.8664,
+      "lng": 140.125
+    },
+    "prefecture": "hokkaido",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "神社"
+    ],
+    "featured": false,
+    "score": 64.32,
+    "summary": {
+      "text": "姥神大神宮（うばがみだいじんぐう）は、北海道檜山郡江差町にある神社である。旧社格は県社。社伝では鎌倉時代の創建と伝える、北海道最古の神社とされる。渡島国の一宮と称されており、姥神大神宮渡御祭にて配られる名刺にその記載がある事からもそれがうかがえる。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E5%A7%A5%E7%A5%9E%E5%A4%A7%E7%A5%9E%E5%AE%AE",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f9/Ubagami_Shrine_090206.jpg/960px-Ubagami_Shrine_090206.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Yauchi",
+        "license": "Public domain",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Ubagami_Shrine_090206.jpg"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q3547609",
+      "osm": "way/248611201"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q3547609",
+        "fetched_at": "2026-09-28"
+      },
+      {
+        "url": "https://www.openstreetmap.org/way/248611201",
         "fetched_at": "2026-09-28"
       }
     ],
@@ -16658,7 +17025,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 82.44,
+    "score": 156.74,
     "summary": {
       "text": "阿寒湖是位於日本北海道釧路市阿寒町的淡水湖泊，全域被劃入阿寒摩周國立公園，以盛產毬藻和鱒魚聞名，湖水清澈，風景秀麗，在湖的南岸有阿寒湖溫泉，為道東著名的旅遊勝地。阿寒的名稱來自阿伊努語的「akam」（車輪）。",
       "lang": "zh",
@@ -16680,6 +17047,10 @@
     "sources": [
       {
         "url": "https://www.wikidata.org/wiki/Q429402",
+        "fetched_at": "2026-09-28"
+      },
+      {
+        "url": "https://www.visit-hokkaido.jp/spot/detail_10044.html",
         "fetched_at": "2026-09-28"
       },
       {
@@ -17482,7 +17853,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 66.42,
+    "score": 133.97,
     "summary": {
       "text": "大雪山層雲峽・黑嶽纜車是位於日本北海道上川郡上川町黑嶽山麓的纜車，可以從海拔670公尺處的層雲峽溫泉抵達黑嶽山腰（海拔1,300公尺），路線全長1,650公尺，上升高度620公尺。由日本纜車設計及施工， 林友觀光經營。",
       "lang": "zh",
@@ -17504,6 +17875,10 @@
     "sources": [
       {
         "url": "https://www.wikidata.org/wiki/Q5209606",
+        "fetched_at": "2026-09-28"
+      },
+      {
+        "url": "https://www.visit-hokkaido.jp/spot/detail_10350.html",
         "fetched_at": "2026-09-28"
       },
       {
@@ -18285,7 +18660,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 72.17,
+    "score": 125.17,
     "summary": {
       "text": "網走湖，是一個橫跨日本北海道網走市及網走郡大空町的湖泊。是網走國定公園的一部分。在約6,000年前，網走湖曾是鄂霍次克海的海灣。隨著海面後退和地盤上升，約在1200年前時，網走湖由海灣變為湖泊。",
       "lang": "zh",
@@ -18307,6 +18682,10 @@
     "sources": [
       {
         "url": "https://www.wikidata.org/wiki/Q572825",
+        "fetched_at": "2026-09-28"
+      },
+      {
+        "url": "https://www.visit-hokkaido.jp/spot/detail_10135.html",
         "fetched_at": "2026-09-28"
       }
     ],
@@ -18409,6 +18788,62 @@
       },
       {
         "url": "https://www.visit-hokkaido.jp/spot/detail_10177.html",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "wd-Q59282626",
+    "name": {
+      "ja": "金吾龍神社",
+      "kana": "きんごりゅうじんじゃ",
+      "romaji": "Kingoryujinja",
+      "zh_tw": "金吾龍神社",
+      "en": "Kingoryū Shrine"
+    },
+    "kana_source": "wikidata",
+    "location": {
+      "lat": 43.196905,
+      "lng": 140.847194
+    },
+    "prefecture": "hokkaido",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "神社"
+    ],
+    "featured": false,
+    "score": 64.08,
+    "summary": {
+      "text": "金吾龍神社（きんごりゅうじんじゃ）は、北海道小樽市蘭島にある神社。日本最古と伝わる龍神が祀られている。旧社格は無格社。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E9%87%91%E5%90%BE%E9%BE%8D%E7%A5%9E%E7%A4%BE",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "蘭島",
+          "en": "Ranshima"
+        },
+        "distance_m": 710
+      }
+    ],
+    "images": [],
+    "external_ids": {
+      "wikidata": "Q59282626",
+      "osm": "node/6334500538"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q59282626",
+        "fetched_at": "2026-09-28"
+      },
+      {
+        "url": "https://www.openstreetmap.org/node/6334500538",
         "fetched_at": "2026-09-28"
       }
     ],
@@ -18825,6 +19260,57 @@
       },
       {
         "url": "https://ja.wikipedia.org/wiki/%E7%8B%A9%E5%8B%9D%E5%B3%A0",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-28"
+  },
+  {
+    "id": "wd-Q6378192",
+    "name": {
+      "ja": "桂沢ダム",
+      "kana": "かつらざわだむ",
+      "romaji": "Katsurazawadamu",
+      "zh_tw": "桂沢ダム",
+      "en": "Katsurazawa Dam"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 43.239722,
+      "lng": 142.0025
+    },
+    "prefecture": "hokkaido",
+    "kind": "major",
+    "themes": [],
+    "tags": [],
+    "featured": false,
+    "score": 64.02,
+    "summary": {
+      "text": "桂沢ダム（かつらざわダム）は、北海道三笠市、一級河川・石狩川水系幾春別川に建設されたダムである。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E6%A1%82%E6%B2%A2%E3%83%80%E3%83%A0",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-28"
+    },
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cd/Katsurazawa-49-r1.JPG/960px-Katsurazawa-49-r1.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "河川一等兵",
+        "license": "Public domain",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Katsurazawa-49-r1.JPG"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q6378192"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q6378192",
+        "fetched_at": "2026-09-28"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E6%A1%82%E6%B2%A2%E3%83%80%E3%83%A0",
         "fetched_at": "2026-09-28"
       }
     ],
@@ -20568,7 +21054,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 70.28,
+    "score": 134.68,
     "summary": {
       "text": "日勝峠（にっしょうとうげ）は、北海道沙流郡日高町と上川郡清水町の境界にある峠。峠の東側は十勝川水系、西側は沙流川水系である。日高山脈の分水界であるが、両水系とも太平洋に注いでいる。",
       "lang": "ja",
@@ -20590,6 +21076,10 @@
     "sources": [
       {
         "url": "https://www.wikidata.org/wiki/Q8191807",
+        "fetched_at": "2026-09-28"
+      },
+      {
+        "url": "https://www.visit-hokkaido.jp/spot/detail_13073.html",
         "fetched_at": "2026-09-28"
       },
       {
