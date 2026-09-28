@@ -27,6 +27,8 @@ class Entity:
     instance_of: list[str] = field(default_factory=list)  # P31
     located_in: list[str] = field(default_factory=list)  # P131
     sitelinks: dict[str, str] = field(default_factory=dict)  # 例 {"jawiki": "伏見稲荷大社"}
+    # 定期活動的日期與月份（P837 day in year for periodic occurrence、P2922 month of the year）
+    occurs: list[str] = field(default_factory=list)
 
     @property
     def url(self) -> str:
@@ -97,6 +99,12 @@ def entities(qids: list[str]) -> dict[str, Entity]:
             ent.instance_of = [v["id"] for v in _claim_values(claims, "P31")]
             ent.located_in = [v["id"] for v in _claim_values(claims, "P131")]
             ent.sitelinks = {k: v["title"] for k, v in e.get("sitelinks", {}).items()}
+            ent.occurs = [
+                v["id"]
+                for prop in ("P837", "P2922")
+                for v in _claim_values(claims, prop)
+                if isinstance(v, dict) and "id" in v
+            ]
             out[qid] = ent
     return out
 

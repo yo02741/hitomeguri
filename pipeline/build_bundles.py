@@ -16,9 +16,10 @@ from pathlib import Path
 from typing import Any
 
 from pipeline import config
-from pipeline.models import FlightRoute, SeasonData, Specialty, Spot
+from pipeline.models import Festival, FlightRoute, SeasonData, Specialty, Spot
 from pipeline.paths import (
     BUNDLES_DIR,
+    FESTIVALS_DIR,
     FLIGHTS_JSON,
     PACKS_DIR,
     SEASONS_JSON,
@@ -122,6 +123,9 @@ def build(src: Path = SPOTS_DIR, dst: Path = BUNDLES_DIR) -> list[Path]:
     packs = build_packs(dst / "packs")
     index["packs"] = {key: meta for key, (_, meta) in packs.items()}
     written += [path for path, _ in packs.values()]
+    festivals = build_festivals(dst / "festivals")
+    index["festivals"] = {pref: meta for pref, (_, meta) in festivals.items()}
+    written += [path for path, _ in festivals.values()]
     written.append(_write(dst / "_index.json", index))
     # 首頁只需要各縣精選：一個小檔，不必先載入全部縣的地圖 bundle
     written.append(_write(dst / "featured.json", featured))
@@ -177,6 +181,19 @@ def build_packs(dst: Path) -> dict[str, tuple[Path, dict[str, Any]]]:
         body = json.dumps(items, ensure_ascii=False, separators=(",", ":"))
         version = hashlib.sha1(body.encode()).hexdigest()[:10]
         out[key] = (_write(dst / f"{key}.json", items), {"count": len(items), "version": version})
+    return out
+
+
+def build_festivals(dst: Path) -> dict[str, tuple[Path, dict[str, Any]]]:
+    """深度探索「祭典」：一縣一檔（開深度探索頁時才載入）；回傳 {縣: (路徑, 索引資訊)}。"""
+    out = {}
+    for path in sorted(FESTIVALS_DIR.glob("*.json")) if FESTIVALS_DIR.exists() else []:
+        raw = json.loads(path.read_text(encoding="utf-8"))
+        items = [Festival.model_validate(f).model_dump(mode="json", exclude_none=True) for f in raw]
+        if not items:
+            continue
+        version = hashlib.sha1(path.read_bytes()).hexdigest()[:10]
+        out[path.stem] = (_write(dst / path.name, items), {"count": len(items), "version": version})
     return out
 
 

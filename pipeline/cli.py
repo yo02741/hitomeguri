@@ -104,6 +104,14 @@ def cmd_seed_pokecen(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_seed_festivals(args: argparse.Namespace) -> int:
+    from pipeline.festivals import seed_festivals
+    from pipeline.geo import pref_slugs
+
+    _emit(seed_festivals(args.prefectures or pref_slugs()), args.report)
+    return 0
+
+
 def cmd_seed_seasons(args: argparse.Namespace) -> int:
     from pipeline.seasons import seed_seasons
 
@@ -171,6 +179,11 @@ def main(argv: list[str] | None = None) -> int:
     p = sub.add_parser("seed-pokecen", help="擴充包：寶可夢中心與商店（OSM 全國）→ data/packs/")
     p.add_argument("--report")
     p.set_defaults(func=cmd_seed_pokecen)
+
+    p = sub.add_parser("seed-festivals", help="祭典：日文維基「{縣}の祭り」→ data/festivals/")
+    p.add_argument("prefectures", nargs="*", help="省略時處理全部縣")
+    p.add_argument("--report")
+    p.set_defaults(func=cmd_seed_festivals)
 
     p = sub.add_parser("seed-seasons", help="季節：氣象廳生物季節平年值 → data/seasons.json")
     p.add_argument("prefectures", nargs="*", help="不使用（全國一次抓）")

@@ -140,6 +140,25 @@ class Specialty(StrictModel):
     updated_at: str
 
 
+class Festival(StrictModel):
+    """深度探索「祭典」（data/festivals/{prefecture}.json）：日文維基「{縣}の祭り」分類的條目。"""
+
+    id: str
+    name: LocalizedName
+    prefecture: Prefecture
+    # 舉行月份（新曆）；來源：Wikidata P837／P2922，或日文維基內文的「毎年○月」
+    months: list[int] = Field(default_factory=list)
+    months_source: Literal["wikidata", "wikipedia"] | None = None
+    location: Location | None = None
+    summary: Summary | None = None
+    kana_source: Literal["wikidata", "wikipedia"] | None = None
+    images: list[Image] = Field(default_factory=list)
+    sources: list[Source] = Field(default_factory=list)
+    # 日文維基一年的瀏覽量（排序與取捨用）
+    views: int = 0
+    updated_at: str
+
+
 class SeasonStation(StrictModel):
     """氣象廳生物季節観測的一個觀測站：現象 key → 平年值（"MM-DD"）。"""
 
