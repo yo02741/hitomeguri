@@ -456,7 +456,8 @@ defineExpose({
 </script>
 
 <template>
-  <div class="absolute inset-0 bg-map-land" role="region" aria-label="地圖">
+  <!-- overflow-hidden：hover 標籤落在畫面外時（例如從清單滑過畫面外的景點）不撐出整頁捲軸 -->
+  <div class="absolute inset-0 overflow-hidden bg-map-land" role="region" aria-label="地圖">
     <div ref="container" class="isolate size-full"></div>
     <div
       v-if="hover"

@@ -109,7 +109,7 @@ const chipOff = 'border-line text-sub hover:text-ink'
 
     <div
       v-if="tab !== 'specialties'"
-      class="flex min-h-0 flex-col overflow-y-auto pt-1 pr-1 pb-1 pl-1.5 [scrollbar-gutter:stable] [scrollbar-width:thin]"
+      class="flex min-h-0 flex-col overflow-y-auto pt-1 pr-3 pb-1 pl-1.5"
       role="tabpanel"
       @mouseleave="emit('highlight', null)"
     >
@@ -117,7 +117,7 @@ const chipOff = 'border-line text-sub hover:text-ink'
         v-for="s in rows"
         :key="s.id"
         type="button"
-        class="mr-1.5 flex min-h-tap shrink-0 items-center gap-3 rounded-control px-1.5 py-1.5 text-left text-ink hover:bg-surface"
+        class="flex min-h-tap shrink-0 items-center gap-3 rounded-control px-1.5 py-1.5 text-left text-ink hover:bg-surface"
         :class="s.id === selectedId ? 'bg-region-tint' : ''"
         :aria-current="s.id === selectedId ? 'true' : undefined"
         @mouseenter="emit('highlight', s.id)"
@@ -144,11 +144,11 @@ const chipOff = 'border-line text-sub hover:text-ink'
       <p v-if="!rows.length" class="px-1.5 py-3 text-body-sm text-sub">資料準備中。</p>
     </div>
 
-    <div v-else class="flex min-h-0 flex-col overflow-y-auto pr-1 pb-1 pl-2.5 [scrollbar-gutter:stable] [scrollbar-width:thin]" role="tabpanel">
+    <div v-else class="flex min-h-0 flex-col overflow-y-auto pr-3 pb-1 pl-2.5" role="tabpanel">
       <div
         v-for="sp in specialties"
         :key="sp.id"
-        class="mr-1.5 flex min-h-tap shrink-0 items-center gap-3 border-b border-line-soft py-1.5 last:border-b-0"
+        class="flex min-h-tap shrink-0 items-center gap-3 border-b border-line-soft py-1.5 last:border-b-0"
       >
         <span class="flex min-w-0 flex-col">
           <span v-if="sp.name.kana" lang="ja" class="truncate text-caption tracking-kana text-sub">{{ sp.name.kana }}</span>
