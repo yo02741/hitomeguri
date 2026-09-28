@@ -272,18 +272,40 @@ function closeSpot() {
 
 // 景點卡片：拉遠到這個縮放以下就關閉
 const CLOSE_SPOT_ZOOM = 10
-// 這個縮放以下一律回到全國
+// 首頁：縮放到這裡以上才依畫面中心指定地區
 const MIN_REGION_ZOOM = 7
+// 已選定地區：拉遠看位置時保留，縮放到這裡以下（接近整個日本）才回到全國
+const RESET_ZOOM = 5
 // 取樣格點（每邊）判斷畫面涵蓋哪些縣
 const SAMPLE = 7
 
+function intersects(a: [number, number, number, number], b: [number, number, number, number]): boolean {
+  return a[0] <= b[2] && b[0] <= a[2] && a[1] <= b[3] && b[1] <= a[3]
+}
+
 /**
  * 畫面對應的地區：中心所在的縣。畫面涵蓋太多縣、中心縣又只佔一小部分時不指定（回到全國）。
+ * 已選定地區時有遲滯：只要這個縣還在畫面裡就保留（拉遠看它在日本哪裡），
+ * 平移到鄰縣且鄰縣佔了畫面主要部分才切換。
  * 回傳 undefined 表示判斷不出來（例如全是海），維持原狀。
  */
 function regionForView(view: MapViewState): string | null | undefined {
-  // 拉遠到看得到整個日本以上：不指定地區（取樣點可能全落在海上，要先判斷）
+  const current = props.pref && regionOf(props.pref) ? props.pref : null
+  if (current) {
+    if (view.zoom < RESET_ZOOM) return null
+    const b = prefectureBounds(current)
+    // 縣已經移出畫面：和首頁一樣依畫面中心判斷
+    if (b && !intersects(b, view.bounds)) return view.zoom < MIN_REGION_ZOOM ? null : (regionForCenter(view) ?? null)
+    if (view.zoom < MIN_REGION_ZOOM) return current
+    const next = regionForCenter(view)
+    return next === undefined || next === null ? current : next
+  }
+  // 首頁：拉遠到看得到整個日本以上不指定地區（取樣點可能全落在海上，要先判斷）
   if (view.zoom < MIN_REGION_ZOOM) return null
+  return regionForCenter(view)
+}
+
+function regionForCenter(view: MapViewState): string | null | undefined {
   const [w, s, e, n] = view.bounds
   const counts = new Map<string, number>()
   let land = 0
