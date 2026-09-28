@@ -1,0 +1,36 @@
+name: probe
+
+# 手動觸發：取回網址內容印在 job log（寫爬蟲前確認 robots.txt、使用條款與網頁結構）。
+# 沙箱連不到的網站用這個看。只讀取，不寫任何資料。
+
+on:
+  workflow_dispatch:
+    inputs:
+      urls:
+        description: "網址，空白分隔"
+        required: true
+      max_bytes:
+        description: "每個網址最多印出幾個位元組"
+        required: true
+        default: "20000"
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: fetch
+        env:
+          URLS: ${{ inputs.urls }}
+          MAX: ${{ inputs.max_bytes }}
+        run: |
+          for u in $URLS; do
+            echo "===== $u"
+            curl -sS -L -A "hitomeguri-pipeline/0.1 (+https://github.com/yo02741/hitomeguri)" -o /tmp/body -w "status=%{http_code} type=%{content_type} size=%{size_download}\n" "$u" || true
+            head -c "$MAX" /tmp/body
+            echo
+            sleep 2
+          done
