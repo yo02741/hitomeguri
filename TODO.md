@@ -2,7 +2,7 @@
 
 ## 需要你做的事
 
-- 在 GitHub repo 的 Settings → Secrets and variables → Actions 新增 `ANTHROPIC_API_KEY`（Claude API 金鑰）。英文簡介翻成中文（`translate-summaries`）要用；設好後在 Actions 跑 seed-pack，command 選 translate-summaries，prefectures 填 20 先試翻 20 筆。
+- 目前沒有。英文簡介翻成中文（`translate-summaries`）程式已寫好，使用者決定先不翻；日後要用時在 Actions secrets 新增 `ANTHROPIC_API_KEY`。
 
 ## 還沒做到的部分
 
