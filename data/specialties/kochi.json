@@ -3,8 +3,8 @@
     "id": "kochi-Q10433119",
     "name": {
       "ja": "皿鉢料理",
-      "kana": "さわちりょうり",
-      "romaji": "Sawachiryo Ri",
+      "kana": "さわちさはちりょうり",
+      "romaji": "Sawachisahachiryori",
       "zh_tw": "皿缽料理",
       "en": "Sawachiryōri"
     },
@@ -18,7 +18,7 @@
       "fetched_at": "2026-09-29"
     },
     "source_type": "kyodo_ryori",
-    "kana_source": "wikidata",
+    "kana_source": "maff",
     "images": [
       {
         "url": "https://upload.wikimedia.org/wikipedia/commons/0/08/SawachiDish_Sushi_and_Tataki01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
@@ -30,6 +30,10 @@
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/sawachiryori_kochi.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/3325/index.html",
         "fetched_at": "2026-09-29"
       },
       {
@@ -165,15 +169,30 @@
     "id": "kochi-maff-chatenoaemono_kochi",
     "name": {
       "ja": "チャーテの和え物",
-      "zh_tw": "チャーテの和え物"
+      "kana": "ちゃーてのあえもの",
+      "romaji": "Chatenoaemono",
+      "zh_tw": "チャーテの和え物",
+      "en": "Chate aemono"
     },
     "prefecture": "kochi",
     "category": "kyodo",
+    "summary": {
+      "text": "When the hot summer is over and there are signs of autumn approaching, the season for chate arrives. Chaate is a plant of the Cucurbitaceae family that is native to tropical America. It was introduced to Kagoshima Prefecture from overseas in 1907, so it is commonly called “hayatouri.” It is a vine, and one of its characteristics is that it bears many fruits on its vines. It is also called “sennari” because a single plant produces 100 to 200 fruits. It is said that the English name “chayote” was passed down to Kochi Prefecture, and was corrupted to become “chate.” The fruits come in a variety of shapes, including pear, oval, and conical shapes. The colors vary from whitish to greenish.It is easy to grow and is a popular ingredient, especially in mountainous regions. It is rarely cultivated for commercial purposes and is often cultivated for home consumption. Many households grow them in their vegetable gardens or as green curtains for shade. For this reason, it is common for neighbors to share chate among themselves.Chate is often used as an ingredient in everyday home cooking, and chate aemono is especially easy to prepare, so it is easy to add to your daily cooking repertoire.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/3988/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/chatenoaemono_kochi.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/3988/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -183,15 +202,30 @@
     "id": "kochi-maff-gimburozushi_kochi",
     "name": {
       "ja": "銀ぶろうずし",
-      "zh_tw": "銀ぶろうずし"
+      "kana": "ぎんぶろうずし",
+      "romaji": "Ginburozushi",
+      "zh_tw": "銀ぶろうずし",
+      "en": "Gimburo Zushi"
     },
     "prefecture": "kochi",
     "category": "kyodo",
+    "summary": {
+      "text": "\"Gimburo beans\" are a type of black turtle bean which has been grown in households of Nishi-Toyonaga (this village is now a part of Otoyo town) for a long time. This bean is known to be healthy and is often referred to as “beans of longevity”, which is considered good luck. The beans were mostly consumed within the region. When cooked, the skin of the beans become soft and absorbs the flavor of the seasonings.It is said that the beans have the word “gin” (=silver) in its name because of its distinctive black and glossy appearance. “Buro” means immortal in Japanese. Another story behind the name is that around 1750, a person named “Ogin” living in Uemomohara village received the seeds of beans named “Furou” from a traveler and began to grow the beans in the region. “Gimburo Zushi” is a type of sushi with gimburo beans mixed in the rice. Sometimes, the recipe is made without vinegar or made into rice balls.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/4396/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/gimburozushi_kochi.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/4396/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -201,15 +235,30 @@
     "id": "kochi-maff-guruni_kochi",
     "name": {
       "ja": "ぐる煮",
-      "zh_tw": "ぐる煮"
+      "kana": "ぐるに",
+      "romaji": "Guruni",
+      "zh_tw": "ぐる煮",
+      "en": "Guruni"
     },
     "prefecture": "kochi",
     "category": "kyodo",
+    "summary": {
+      "text": "“Guruni” is a simmered dish made mainly of winter root vegetables such as daikons, carrots and taros. These are all vegetables that are easy to obtain in the prefecture. The word \"guru\" means \"company\" or \"everyone\" in the Tosa (Kochi) dialect, and is said to have originated from the simmering of various ingredients together. At a time when it was more difficult to procure food than it is today, a large quantity of guruni was made from vegetables that were available and eaten by reheating them over and over again. Originally, six ingredients were used to represent six kanji characters of the Buddhist invocation, “Namu Amidabutsu”. Today, a variety of foodstuffs are used. It is called \"Oguru\" in the Noichi area of Konan City. In Tosa City, when there are nine ingredients to be simmered, it is called “Itokoni”. The ingredients that are similar in genre, such as daikon, carrot, and burdock, or taro, konnyaku, and tofu, are likened to \"itoko (cousins)\". When three similar ingredients \"itoko (cousins)\" are there, it is called \"Itokoni\". Some of the customs, such as cutting the ingredients into squares and adding taros, have also been handed down today.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/351/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/guruni_kochi.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/351/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -219,15 +268,30 @@
     "id": "kochi-maff-hachikutoendononimono_kochi",
     "name": {
       "ja": "淡竹とエンドウの煮物",
-      "zh_tw": "淡竹とエンドウの煮物"
+      "kana": "はちくとえんどうのにもの",
+      "romaji": "Hachikutoendononimono",
+      "zh_tw": "淡竹とエンドウの煮物",
+      "en": "Hachiku to Endo no Nimono(Henon Bamboo and Green Pea Stew)"
     },
     "prefecture": "kochi",
     "category": "kyodo",
+    "summary": {
+      "text": "Bamboo shoots are often eaten in Kōchi prefecture. mōsō bamboo is in season at the beginning of spring, followed by Henon bamboo, and madaké bamboo. Square bamboo is a local specialty of Nankoku City that is harvested in the fall. Azouno district in Kōchi City is known for its local specialty of bamboo shoots that include various cultivars, including mōsō bamboo, golden bamboo, madaké bamboo, and square bamboo.As with bamboo, there are also a great variety of bamboo shoot dishes: there is “aradaki”, offcuts from skipjack tuna cooked with bamboo shoots; the bamboo shoot packed “bamboo shoot sushi”; bamboo shoots topped with vinegared miso or pepper tree bud dressing; and a great number of other dishes born from the crops of each region being mixed together.Awadake and pea stew\" is a popular bamboo shoot dish in Kochi Prefecture. The bamboo shoots are long and thin with reddish-purplish skin. The combination of seasonal ingredients is a dish that is very seasonal, as the peas also begin to bear fruit around May, when the bamboo shoots begin to appear on the market after the moso bamboo.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/3320/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/hachikutoendononimono_kochi.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/3320/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -237,15 +301,30 @@
     "id": "kochi-maff-hangedango_kochi",
     "name": {
       "ja": "半夏だんご",
-      "zh_tw": "半夏だんご"
+      "kana": "はんげだんご",
+      "romaji": "Hangedango",
+      "zh_tw": "半夏だんご",
+      "en": "Han-Ge Dango"
     },
     "prefecture": "kochi",
     "category": "sweets",
+    "summary": {
+      "text": "Otoyo Town is located in the center of the Shikoku mountain range, about 40 km from Kochi City, the prefectural capital. The town was called Toyonaga-go in ancient times, and is a key transportation hub connecting the north and south since ancient times.The \"Han-Ge Dango\" (mid summer dumplings) is a local sweet that has been handed down from generation to generation in this town. The name \"Han-Ge\" refers to July 2nd. And is eaten to celebrate the end of the busy farming season, or at the end of the planting season.The dumplings are wrapped in“ Myoga” leaves, and the unique combination of the“ Myoga” leaves cool aroma and sweetness of the sweet bean paste is said to have soothed the fatigue of the farmers. “Han-Ge dango\" was also offered to the god of rice paddies.The use of wheat flour instead of glutinous rice is a remnant of the days when rice was precious. Some people call the sweet dumplings \"Myoga -dango\" instead because it uses “ Myoga” leaves.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/5621/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/hangedango_kochi.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/5621/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -255,15 +334,30 @@
     "id": "kochi-maff-haninnikunonuta_kochi",
     "name": {
       "ja": "葉にんにくのぬた",
-      "zh_tw": "葉にんにくのぬた"
+      "kana": "はにんにくのぬた",
+      "romaji": "Haninnikunonuta",
+      "zh_tw": "葉にんにくのぬた",
+      "en": "Haninniku-no-nuta (Vinaigrette Miso Leaf Garlic)"
     },
     "prefecture": "kochi",
     "category": "kyodo",
+    "summary": {
+      "text": "Nuta is a traditional seasoning from Kochi Prefecture, made by mixing miso and vinegar with garlic. It is commonly used to accompany raw fish or konjac(=yam cake).The culture of consuming garlic leaves is said to have originated from the Korean Peninsula. In the late 16th century, after returning from the Korean Campaign, Chosokabe Motochika, a warlord in Tosa Province, introduced this tradition to the region.In Kochi Prefecture, garlic leaves are widely used in various dishes, including sukiyaki, zosui (rice soup), stir-fries, and more. The preference for garlic leaves and green onions in Kochi is attributed to adapting to the region's hot and humid climate. On March 3rd, during the Girls Day (Hinamatsuri), it is a custom in Kochi to offer garlic leaves and red sprouting taro (a type of red-tinged taro) in front of the hina dolls.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/6312/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/haninnikunonuta_kochi.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/6312/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -273,15 +367,30 @@
     "id": "kochi-maff-himeichitomikannokarashini_kochi",
     "name": {
       "ja": "ひめいちとみかんの辛子煮",
-      "zh_tw": "ひめいちとみかんの辛子煮"
+      "kana": "ひめいちとみかんのからしに",
+      "romaji": "Himeichitomikannokarashini",
+      "zh_tw": "ひめいちとみかんの辛子煮",
+      "en": "Himeichi to mikan no karashini"
     },
     "prefecture": "kochi",
     "category": "kyodo",
+    "summary": {
+      "text": "Himeichi is a small fish caught in small bottom trawls in Tosa Bay. Its official name is Hourai goatfish. Because of its low price, it is often used as a substitute for Thai fish. It is called \"asunaru\" or \"asunaro\" depending on the region because it means \"let's be a sea bream tomorrow.Himeichi's white flesh has a refined taste without any peculiarities. It is therefore used in a wide variety of dishes, such as grilled, dried, and sashimi. The smaller ones, in particular, are often cooked together with mandarin oranges in a \"spicy stew.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/637/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/himeichitomikannokarashini_kochi.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/637/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -293,15 +402,27 @@
       "ja": "いもべらあずき",
       "kana": "いもべらあずき",
       "romaji": "Imoberaazuki",
-      "zh_tw": "いもべらあずき"
+      "zh_tw": "いもべらあずき",
+      "en": "Imobera Azuki"
     },
     "prefecture": "kochi",
     "category": "kyodo",
+    "summary": {
+      "text": "Known for being the production area of Tosa washi paper, Ino-machi is located in the central part of the prefecture. In this area, people have since long ago called dried sweet potatoes, cherished as the taste of winter, “hera.” After thoroughly boiling whole sweet potatoes for many hours, they are hung up to dry as-is, and once the outsides have begun to dry, they are sliced into rounds and dried again; the finished product is called “yudebera” or “nibera.” “Imobera azuki” is a confection local to Ino-machi, in which yudebera and azuki beans are boiled with sugar. It is distinct for its sticky texture and fluffy, unsophisticated sweetness.In areas outside of Ino-machi, yudebera are commonly called “higashiyama.” Higashiyama may be eaten as-is or slightly toasted for an even more superb taste. Higashiyama’s moist texture and rich sweetness make it popular as a prefectural product. “Imobera azuki” is a name limited to Ino-machi, but it is also deeply familiar to the people of Kochi Prefecture.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/3332/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/imoberaazuki_kochi.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/3332/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -311,15 +432,30 @@
     "id": "kochi-maff-imonokukinoitameni_kochi",
     "name": {
       "ja": "いもの茎の炒め煮",
-      "zh_tw": "いもの茎の炒め煮"
+      "kana": "いものくきのいために",
+      "romaji": "Imonokukinoitameni",
+      "zh_tw": "いもの茎の炒め煮",
+      "en": "Stir-fried stalks of sweet potatoes"
     },
     "prefecture": "kochi",
     "category": "kyodo",
+    "summary": {
+      "text": "In Kochi Prefecture, there is a food culture of eating sweet potatoes and pumpkin stems. The stem is the \"petiole\" that connects the leaves to the stem. When you say \"Imo no kuki (potato stem)\" dish, it is generally made with sweet potato stems. The climate of Kochi Prefecture has a lot to do with the fact that the locals started eating stems. Due to the hot and humid climate of Kochi Prefecture, the stems of sweet potatoes and pumpkins flourish in the fields during the summer months. Farmers used the stems for food, and it has spread as a wisdom of living. Nowadays, it is readily available at supermarkets in urban areas and is eaten by ordinary households, but reportedly this is a trend that began to emerge after the migration of people from rural areas to the cities. Farming housewives used to peel the stems of sweet potatoes and sell them at the Sunday market. The stems were important for the family's finances, as they generated additional income from them. Because of the vestiges of this, there is still a common phrase among the elderly, \"Come on, let's peel off Imo no kuki (sweet potato stems)\" after spending money.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/365/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/imonokukinoitameni_kochi.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/365/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -329,15 +465,30 @@
     "id": "kochi-maff-inakazushi_kochi",
     "name": {
       "ja": "田舎ずし",
-      "zh_tw": "田舎ずし"
+      "kana": "いなかずし",
+      "romaji": "Inakazushi",
+      "zh_tw": "田舎ずし",
+      "en": "Inakazushi"
     },
     "prefecture": "kochi",
     "category": "kyodo",
+    "summary": {
+      "text": "“Inaka-zushi” is a type of Sushi using vegetables that are rare in Japan. It is a traditional event food in the mountainous areas of Kochi Prefecture, and the ingredients for the Sushi are made with vegetables from the mountains. It is served during” Okyaku”（ a banquet in the Tosa dialect）, and is also part of the \"Sawachi\" or \"Sahachi\" dishes that are a staple of the” Okyaku” culture.It is said that originally the people made this sushi because they could afford to get the ingredients from mountains when Kelp and Seaweed were hard to get .Ingredients vary from region to region, but they include a wide range of ingredients such as “Ryukyu” (a stalk of lotus root),” Myoga”, “Konjac”, and “Shiho-tiku” (bamboo shoots). Vivid colors decorate the dining table, such as \"Ryukyu-zushi\" with “Ryukyu” on top and “Shiho-tiku no Hitokuchi-zushi\"(one bite size Sushi with Bamboo shoots) in which the hollow part of the Bamboo shoots is filled with vinegared rice.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/5629/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/inakazushi_kochi.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/5629/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -347,15 +498,30 @@
     "id": "kochi-maff-itadorinoaburaitame_kochi",
     "name": {
       "ja": "いたどりの油いため",
-      "zh_tw": "いたどりの油いため"
+      "kana": "いたどりのあぶらいため",
+      "romaji": "Itadorinoaburaitame",
+      "zh_tw": "いたどりの油いため",
+      "en": "Stir-fried itadori"
     },
     "prefecture": "kochi",
     "category": "kyodo",
+    "summary": {
+      "text": "“Itadori” (Japanese knotweed) is a member of the buckwheat family that grows wild in the mountains. In some regions, it is called \"sukampo\" because its center is hollow like bamboo. You can eat them raw on the way to mountain climbing or hiking, but in Kochi Prefecture, they have been eaten in a variety of ways for many years. The sprouts of itadori can only be harvested in spring, but since they can be preserved by salting or freezing, they are very useful as preserved food and are served on the table throughout the year as a side dish in home cooking. One of the dishes, \"Stir-fried itadori\" is a dish that is still very popular at home.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/337/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/itadorinoaburaitame_kochi.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/337/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -367,15 +533,27 @@
       "ja": "かしきり",
       "kana": "かしきり",
       "romaji": "Kashikiri",
-      "zh_tw": "かしきり"
+      "zh_tw": "かしきり",
+      "en": "Kashikiri"
     },
     "prefecture": "kochi",
     "category": "kyodo",
+    "summary": {
+      "text": "“Kashikiri\" is a type of Tofu made from ”kashi-no-mi” (Oak nuts, also called Acorns). It is also called \"Kashi-dofu\" (meaning \"oak tofu\" in Japanese) in the mountainous areas of Kochi Prefecture and can be a useful food supply in an emergency . It is said to have been introduced from the Korean Peninsula in ancient times, and was prepared simply by using “Kashi-no-mi” and water in mountainous areas where cultivation was unsuitable. It was an important food supply in times of food shortages. Making “Kashikiri\" was often the work of elderly people who guarded their homes. “Kashikiri\" used to be widely eaten in Kochi Prefecture, but nowadays there are not many opportunities to eat it, and it is a rare local delicacy eaten only in Aki City. In Korea, a similar dish made from Oak nuts called “Totorimuku” is still eaten today.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/5653/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/kashikiri_kochi.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/5653/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -387,15 +565,27 @@
       "ja": "かつおのたたき",
       "kana": "かつおのたたき",
       "romaji": "Katsuonotataki",
-      "zh_tw": "かつおのたたき"
+      "zh_tw": "かつおのたたき",
+      "en": "Bonito tataki"
     },
     "prefecture": "kochi",
     "category": "kyodo",
+    "summary": {
+      "text": "Bonito, the prefectural fish of Kochi, is a common foodstuff eaten on a daily basis. “Bonito tataki \" was a fisherman's meal on board a boat, and was later introduced to the public. At a time when preservation techniques were not available, a method of “tataki” had been developed as a way of eating less fresh bonito on board. “Bonito tataki” reduces the fishy smell of bonito. The word \"tataki\" means \"tataku (“beat” in Japanese) as the name implies. It is said to have originated in the cooking process, where it was tapped with salt or sauce to blend the flavors. Nowadays, “Bonito tataki” is a nationwide menu, but in Kochi Prefecture, the particulars and recipes vary slightly by region and community. In Kochi Prefecture, where tataki cuisine is popular, foodstuffs other than bonito fish are also eaten as tataki, such as moray eels and other fish, meat, shiitake mushrooms, pumpkins and eggplants, depending on the region. In the case of vegetables, tataki are boiled or fried and served with sauce or condiments on top. They also offer vegetables and fish tataki, which combine seasonal fish and vegetables, such as horse mackerel and eggplant.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/357/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/katuonotataki_kochi.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/357/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -407,15 +597,27 @@
       "ja": "きびなごのほおかぶり",
       "kana": "きびなごのほおかぶり",
       "romaji": "Kibinagonohokaburi",
-      "zh_tw": "きびなごのほおかぶり"
+      "zh_tw": "きびなごのほおかぶり",
+      "en": "Kibinago no Hokaburi"
     },
     "prefecture": "kochi",
     "category": "kyodo",
+    "summary": {
+      "text": "In Kochi prefecture, sardines were soaked in vinegar and made into sushi using “okara” (=soy pulp) instead of rice, and this was called “tamazushi” because in Kochi, people refer to okara as “otama”. Okara was used instead of rice because rice was considered a delicacy in the past. Okara is soy pulp which is a by-product of tofu and the people of Kochi made good use of it in this way. “Kibinago no Hokaburi” is a type of tamazushi using the fish “kibinago” (=silver-stripe round herring), which is a small fish measuring to around 10cm in length. The small kibinago is carefully opened by hand and soaked in vinegar and then wrapped around the okara. The cute roundness of the sushi is said to look like the shape of a person’s head which is how it got the name “Hokaburi”, meaning a person wearing a washcloth on their head.Sukumo city actively promotes “Kibinago no Hokaburi” as one of their specialties. Kibinago are caught in large amounts in Sukumo Bay and in 1985, the area caught over 3,000 tons of kibinago. The number of fish caught has since decreased but in in the early 1990s, more than 2,000 tons of kibinago were still being caught. Kibinago is still popular today and it is served at local restaurants as sashimi, tempura and “nanbanzuke” (=marinade of sweet and peppery vegetable sauce). In Shimanto city and surrounding areas, sardines are used instead of kibinago, and the dish is called “rokuyata”.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/4417/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/kibinagonohokaburi_kochi.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/4417/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -427,15 +629,27 @@
       "ja": "きらずもち",
       "kana": "きらずもち",
       "romaji": "Kirazumochi",
-      "zh_tw": "きらずもち"
+      "zh_tw": "きらずもち",
+      "en": "Kirazumochi"
     },
     "prefecture": "kochi",
     "category": "sweets",
+    "summary": {
+      "text": "Okara, a byproduct of tofu production, is eaten in many parts of Japan and is called variously \"Unohana\", \"Kirazu\", \"Kara\", \"Kasu\", and \"Otama\". The name \"kirizushi\" is derived from \"kirizushi,\" which means that it does not need to be cut with a knife when cooking. Also, dishes using \"kirizushi\" were served at wedding celebrations as a good luck charm, with the hope of \"never breaking the marriage bond\".Kirazu mochi is a local sweet made from this bean curd. Kirazu mochi is a rice cake made of glutinous rice and kirazu mixed with sweet red bean paste, and is only found in the Ogawa area in the western part of Sagawa.In the old days, it was customary to make tofu before New Year's, and each family would ask a contracted soybean grinder to grind a square of soybeans for them. Making tofu produces okara (bean curd). This bean curd was made into \"kirazu-mochi\" and eaten at New Year's, just like tofu.In Kochi Prefecture, sweetened and roasted okara has been a common side dish for a long time, including \"tai no tama-mushi\" (sea bream steamed in soy sauce), which is made by stuffing seasoned okara into the back of open sea bream and steaming it; \"tama-zushi\" (sushi ball with sardines in vinegar), which is made by rolling okara into round balls and placing them on top; and \"kibinago no hokaburi\" (yellowtail roe wrapped with kibinago), which is made by rolling okara with kibinago. and \"Kibinago no Hookaburi,\" which is made by wrapping okara with kibinago (dried yellowtail).",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/1513/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/kirazumochi_kochi.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/1513/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -447,15 +661,27 @@
       "ja": "こぶずし",
       "kana": "こぶずし",
       "romaji": "Kobuzushi",
-      "zh_tw": "こぶずし"
+      "zh_tw": "こぶずし",
+      "en": "Kobu-Zushi"
     },
     "prefecture": "kochi",
     "category": "kyodo",
+    "summary": {
+      "text": "The recipe for \"Kobu-Zushi\" is different in the central and western parts of the prefecture. The central part of the prefecture eats \"Ita-Kobu-Zushi\". This is sushi rice wrapped in thin, white, \"Shiroita-Kombu (=White kelp)\". On the other hand, the western part of the prefecture eats \"Kuro-Kobu-Zushi,\" which has a contrasting black appearance. This one is wrapped in Kombu (=Kelp). They were all served to guests on celebratory occasions such as weddings, funerals, and other festivals and events. It is thought that the food culture in the region was divided because \"Shiroita-Kombu (=White kelp)\" was more expensive and harder to obtain. Unlike \"Norimaki\", \"Kobu-Zushi\" has no core ingredients.Another type of “Makizushi” is \"Tamago-Zushi\". This is sushi rice rolled with a thinly baked omelet. In the Nakamura area, customers were given a folded box containing \"Kobu-Zushi,\" \"Tamago-Zushi\", \"Maki-Zushi\", and \"Saba-no-Sugata-Zushi\" to take home with them when they returned from a celebration. Since the boxes were given to each guest individually, the whole family worked together to prepare them, with help from neighbors. The preparation was hard work, but it was also a scene of happy family life.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/5201/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/kobuzushi_kochi.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/5201/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -467,15 +693,27 @@
       "ja": "こけらずし",
       "kana": "こけらずし",
       "romaji": "Kokerazushi",
-      "zh_tw": "こけらずし"
+      "zh_tw": "こけらずし",
+      "en": "Kokera-Zushi"
     },
     "prefecture": "kochi",
     "category": "kyodo",
+    "summary": {
+      "text": "Sushi culture is one of Kochi Prefecture's representative food cultures. There is a wide range of variations, including not only the common \"Nigiri-Zushi\", but also \"Oshi-Zushi,\" \"Sugata-Zushi,\" and \"Vegetable-Zushi,\" to name just a few. In the days when rice was precious, sushi was the best feast of all. Sushi was always eaten on special occasions such as weddings, funerals, celebrations for success in life, and “Kanreki (60th birthday) celebrations”. One typical type of sushi is \"Oshi-Zushi\". One type of \"Oshi-Zushi\" is \"Kokera-Zushi\", a local dish of Toyo-cho. \"Oshi-Zushi\" is a type of sushi in which vinegared rice and ingredients are piled one on top of the other in a square wooden frame, giving it a colorful appearance similar to a decorated cake. The layers of garnish give it the meaning of \"Piling up joy\", and it has been passed down through the generations as a good-luck charm.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/5219/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/kokerazushi_kochi.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/5219/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -487,15 +725,27 @@
       "ja": "こんちん",
       "kana": "こんちん",
       "romaji": "Konchin",
-      "zh_tw": "こんちん"
+      "zh_tw": "こんちん",
+      "en": "Konchin"
     },
     "prefecture": "kochi",
     "category": "kyodo",
+    "summary": {
+      "text": "Otoyo is a valley town located in the center of the Shikoku Mountains area. \"Konchin\" is a local Otoyo confection in which ample amounts of flour batter are added to burdock root shavings. It has a simple taste like oyaki (wheel cakes), and is deeply familiar to men and women of all ages as a snack when one is hungry. The unique firmness of the burdock root becomes addictive, and one finds oneself reaching for more.\"Konchin\" is made from all-purpose flour, the main ingredient in noodles. The flour that farmers make for home use is called \"jigona,\" which refers to all-purpose flour. All-purpose flour was the staple food in periods when rice was unobtainable, and it is said that \"konchin\" also uses all-purpose flour because of this.Egoma is mixed into the batter of \"konchin,\" but in the past, hemp seeds were used instead of egoma.Additionally, \"konchin\" is a classic item that is dished up in the Sawachi/Sahachi cuisine of Otoyo.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/3336/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/konchin_kochi.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/3336/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -505,15 +755,30 @@
     "id": "kochi-maff-koshimeshi_kochi",
     "name": {
       "ja": "こうし飯",
-      "zh_tw": "こうし飯"
+      "kana": "こうしめし",
+      "romaji": "Koshimeshi",
+      "zh_tw": "こうし飯",
+      "en": "Koushimeshi"
     },
     "prefecture": "kochi",
     "category": "kyodo",
+    "summary": {
+      "text": "Otsuki Town is a seaside town located in the southwestern part of the prefecture. In the town, agriculture such as rice cultivation, leaf tobacco cultivation, and horticulture are practiced, and fishing is practiced in the coastal area that forms a rias coastline. In one part of the town, there is a tuna aquaculture industry. The production of tuna is one of the highest in Japan.Koshi-meshi\" is a dish that the people of Otsuki eat on New Year's Eve. Koshimeshi\" is rice cooked with chirimenjako (dried baby sardines) and finely chopped fish, and is said to have started as \"koshimeshi\" and gradually changed to \"koshimeshi. An indispensable part of koshimeshi is iwanori, which is mixed into the rice as a finishing touch. Iwanori is called \"menori\" in this region. During the cold winter months, people dip themselves chest-deep in the sea to gather menori. Although the menori pickers wear \"yanza,\" a cotton garment made of stitching, it is still cold in the frigid sea.In the port city of Sukumo, menori is also used to make a rice dish. This dish is called \"momoburi,\" and consists of cooked daikon radish, burdock root, carrots, and other ingredients mixed with rice and topped with lightly roasted menori. The word \"moburi\" is derived from \"to smear.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/646/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/koshimeshi_kochi.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/646/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -523,15 +788,30 @@
     "id": "kochi-maff-kurenonimono_kochi",
     "name": {
       "ja": "暮れの煮物",
-      "zh_tw": "暮れの煮物"
+      "kana": "くれのにもの",
+      "romaji": "Kurenonimono",
+      "zh_tw": "暮れの煮物",
+      "en": "Kure no nimono"
     },
     "prefecture": "kochi",
     "category": "kyodo",
+    "summary": {
+      "text": "The local dish eaten at New Year's Eve in Kochi Prefecture is \"Kureno-ni-nimono\" (simmered dishes at the end of the year), which contains whale meat. This dish was eaten with the wish that by eating something as large as a whale, one would \"become a big fish. In the days when whales were readily available, it was a common sight to see them lined up at fish shops as New Year's Eve approached. In the mountainous areas, dried whale called \"koro\" was an indispensable ingredient.The port city of Muroto was responsible for Kochi's whale eating culture. Whales cross Tosa Bay as they migrate north and south across the Pacific Ocean. Fishing groups called \"Kujigumi\" whaled whales at that time of year. Tosa Bay is also known as the birthplace of Tosa whaling, and whaling is said to have begun in the early Edo period. Whaling in Tosa Bay continued for more than 300 years until 1936. Even today, Tosa Bay is a migratory course for whales, and whale watching and other whale watching activities are conducted there.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/1523/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/kurenonimono_kochi.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/1523/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -541,15 +821,30 @@
     "id": "kochi-maff-kyuritokawaebinonimono_kochi",
     "name": {
       "ja": "きゅうりと川エビの煮物",
-      "zh_tw": "きゅうりと川エビの煮物"
+      "kana": "きゅうりとかわえびのにもの",
+      "romaji": "Kyuritokawaebinonimono",
+      "zh_tw": "きゅうりと川エビの煮物",
+      "en": "Kyuuri to Kawa-Ebi no Nimono"
     },
     "prefecture": "kochi",
     "category": "kyodo",
+    "summary": {
+      "text": "River shrimp are bigclaw river shrimp. It is one of the specialties of Kochi Prefecture, taken from the Shimanto and Niyodo Rivers. This freshwater shrimp is about 9 cm long and is characterized by its long scissors, which are 1.5 times longer than its body length. The Shimanto River is inhabited mainly by two species of shrimp, the southern prawn and the Yamato prawn. Even today, the traditional fishing method \"Shibazuke fishing\", which takes advantage of the nocturnal nature of the fish, has been handed down. \"Shibazuke fishing\" is done using traps made of leafy bush branches and bamboos about one meter long. If the trap is left submerged at some depth near the mouth of the river for at least one day and night, the river shrimp will think it is a hiding place and take the trap. A long time ago, catching river shrimps in summer was a staple of children's river trips, and the shrimps became a side dish for dinner.The most common way to eat them is to take advantage of the flavor of the ingredients. Grilled or fried without peeling the skin, you can enjoy its crunchy texture and savory flavor. Another typical recipe is \"Kyuuri to Kawa-Ebi no Nimono\". It is said that \"Kyuuri to Kawa-Ebi no Nimono\" originated with fishermen who fished for river shrimp.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/5237/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/kyuritokawaebinonimono_kochi.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/5237/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -559,15 +854,30 @@
     "id": "kochi-maff-mushidai_kochi",
     "name": {
       "ja": "蒸し鯛",
-      "zh_tw": "蒸し鯛"
+      "kana": "むしだい",
+      "romaji": "Mushidai",
+      "zh_tw": "蒸し鯛",
+      "en": "Mushi-Dai（Steamed sea bream）"
     },
     "prefecture": "kochi",
     "category": "kyodo",
+    "summary": {
+      "text": "\"Mushi-Dai \" is one of the festive dishes served at an \"okyaku\" occasion in Kochi prefecture, such as weddings and New Year's celebrations. \"Okyaku\" means a banquet in the Tosa dialect. This “Okyaku” (banquetting) has influenced the food culture of Kochi prefecture, like \"Sawachi(or Sahachi)-Ryori\" is deeply rooted in the food customs of Kochi Prefecture. The \"Mushi\" in \" Mushi-Dai \" means “steam” and the dish refers to a steamed sea bream stuffed with “Okara”. There are many dishes in Kochi Prefecture that serve fish cooked in its unchanged form.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/5664/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/mushidai_kochi.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/5664/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -579,15 +889,27 @@
       "ja": "ねぎとさつまいものぬた",
       "kana": "ねぎとさつまいものぬた",
       "romaji": "Negitosatsumaimononuta",
-      "zh_tw": "ねぎとさつまいものぬた"
+      "zh_tw": "ねぎとさつまいものぬた",
+      "en": "Negi to satsumaimo no nuta (Green onions and Sweet potatoes are mixed with vinegar miso dressing)"
     },
     "prefecture": "kochi",
     "category": "kyodo",
+    "summary": {
+      "text": "Nankoku City, located in the central part of Kochi Prefecture, flourished as the political and cultural center of Tosa during the Nara and Heian periods when the capital was established. Sweet potatoes have been cultivated in Nankoku City since the Taisho era. What started as a local cultivation has now become a specialty product, and sweet potatoes harvested in Nankoku City are shipped throughout the year. At the Nankoku Service Area, imo-ten where sweet potatoes are coated with doughnut batter and deep-fried, has become a popular local dish.Similarly, the history of green onion cultivation in the region is long, making it another specialty product alongside sweet potatoes. In Kochi Prefecture, there is a custom of consuming green onions often, and like young garlic with leaves, green onions are a representative local ingredient in Kochi.Negi to Satsumaimo no Nuta is a dish where green onions and sweet potatoes are mixed with vinegar miso dressing. It is said to have originated as a variation of Ika no Sunomono, a dish of squid and green onions with vinegar miso dressing, using homegrown sweet potatoes instead of squid. This dish was developed through culinary research that involved utilizing self-produced items and local products by producers.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/6308/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/negitosatsumaimononuta_kochi.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/6308/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -597,15 +919,30 @@
     "id": "kochi-maff-ryukyunosunomono_kochi",
     "name": {
       "ja": "りゅうきゅうの酢の物",
-      "zh_tw": "りゅうきゅうの酢の物"
+      "kana": "りゅうきゅうのすのもの",
+      "romaji": "Ryukyunosunomono",
+      "zh_tw": "りゅうきゅうの酢の物",
+      "en": "Vinegared Ryukyu"
     },
     "prefecture": "kochi",
     "category": "kyodo",
+    "summary": {
+      "text": "In Kochi Prefecture, the petiole part of the leaf and stem of the Hasuimo (a member of the taro family) is called “Ryukyu”, a vegetable that has been eaten as an ingredient in daily life for many years. “Ryukyu” is characterized by its bright green color and unique crispy texture. It is said that the name came from Okinawa (Ryukyu), but it is not certain. “Vinegared Ryukyu” is one of the most popular summer dishes in Kochi Prefecture, and is still popular with the locals.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/344/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/ryukyunosunomono_kochi.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/344/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -615,15 +952,30 @@
     "id": "kochi-maff-sabanosugatazushi_kochi",
     "name": {
       "ja": "さばの姿ずし",
-      "zh_tw": "さばの姿ずし"
+      "kana": "さばのすがたずし",
+      "romaji": "Sabanosugatazushi",
+      "zh_tw": "さばの姿ずし",
+      "en": "Saba no Sugata Zushi (Mackerel Sushi)"
     },
     "prefecture": "kochi",
     "category": "kyodo",
+    "summary": {
+      "text": "\"Sawachi\" cooking refers to regional cuisine from Kochi prefecture and it is served for weddings, funerals, ceremonies, and Shinto rituals. \"Sawachi\" cooking are served on large platters that are around 36cm to 39cm in diameter. \"Saba no sugata zushi\" is one of the main dishes in \"sawachi\" cooking. Fresh mackerel is cut open and soaked in vinegar. Sushi rice is then stuffed into the mackerel. The head and tail of the mackerel which has been cut off is placed on the platter with the sushi as decorations. \"Oshizushi\" (=pressed sushi) made with mackerel is also served at feasts. In Kochi prefecture, there are many local dishes that use an entire fish when preparing dishes. Sushi made with mackerel is also famous in Kyoto. The difference between the two prefectures is that the mackerel sushi from Kyoto has a sweet flavor whereas the sushi made in Kochi is seasoned with vinegar and salt. The flavors are different because different types of mackerel are used for the sushi. In Kyoto, chub mackerels are used and in Kochi, blue mackerels are used, which are less fatty than chub mackerels.For intimate gatherings, red sea bream, horse mackerel, and barracuda were used to make sushi instead of blue mackerel. Sushi made with \"himeji\" (=whitesaddle goatfish) was eaten as a daily dish and was often sold along with \"inari sushi\" (=sushi rice packed into pouches of deep-fried tofu) at local cafeterias.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/7238/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/sabanosugatazushi_kochi.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/7238/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -633,15 +985,30 @@
     "id": "kochi-maff-taimonokorobashi_kochi",
     "name": {
       "ja": "田芋のころばし",
-      "zh_tw": "田芋のころばし"
+      "kana": "たいものころばし",
+      "romaji": "Taimonokorobashi",
+      "zh_tw": "田芋のころばし",
+      "en": "Taimo no Korobashi"
     },
     "prefecture": "kochi",
     "category": "kyodo",
+    "summary": {
+      "text": "In Kochi Prefecture, taro is called taimo and has been eaten since long ago as a valuable source of nutrients that ranks second to rice. It does not lack sweetness and has a soft and flaky texture. It also has a unique viscosity. Large ones were made into \"taimo rice;\" it is said that this was a way to bulk up meals during the war when rice was difficult to obtain. Smaller ones were used as an ingredient in miso soup, candied mash, and stews. \"Zuiki,\" their dried stems, were harvested before the harsh winter came, peeled, dried and stored as a preserved food in people's homes.Sakawa Town, located in the mid-western part of the prefecture, flourished as the castle town of chief retainer Fukao of the Tosa Domain; even now sake breweries, sake storehouses, and old merchant houses are still part of the charming townscape. This area had similar taimo-eating customs as other areas; however, \"taimo no korobashi\" is a local food unique to this area. This is a dish that uses taimo and resembles \"nikkorogashi\" (root vegetables boiled in broth). It is distinct in that soy sauce and sugar are used to give it a salty-sweet flavor, with sesame sprinkled on as a finishing touch. It is said that it was named \"korobashi\" since the taimo is tossed (\"korobasu\") with sesame. Since the preparations take time, it is said that this was a dish made when there was time to spare.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/3315/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/taimonokorobashi_kochi.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/3315/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -651,15 +1018,30 @@
     "id": "kochi-maff-tofunoumezuzuke_kochi",
     "name": {
       "ja": "豆腐の梅酢づけ",
-      "zh_tw": "豆腐の梅酢づけ"
+      "kana": "とうふのうめずづけ",
+      "romaji": "Tofunomezuzuke",
+      "zh_tw": "豆腐の梅酢づけ",
+      "en": "Tohu no umezu zuke"
     },
     "prefecture": "kochi",
     "category": "kyodo",
+    "summary": {
+      "text": "Tofu was first eaten in Japan in the late Heian period (794-1185). It is said to have been introduced from China.In Kochi Prefecture, tofu was introduced by Park, who was brought back by Chosokabe Motochika, a feudal lord of Tosa Province, when he went to Korea. It is said that Yamauchi Kazutoyo, lord of the Tosa domain, also recommended the monopoly of tofu in Karajinmachi. At that time, tofu was made using the \"nama-shibori\" method, in which the juice of soaked and ground soybeans (kure) was squeezed out of a cloth bag, boiled, and then nigari (bittern) was added to coagulate the juice. Tofu was a delicacy served at Shinto rituals and New Year's celebrations, and it was not uncommon for families to make their own tofu.Tofu with ume (plum) vinegar is a local dish handed down in the Tsunoyama area. Tofu produced in this area is characterized by its toughness. Tofu with ume plum vinegar\" is made by marinating firm tofu in ume plum vinegar, and has been made as a preserved food. It was also sold at a high price as a luxury food.The red appearance stained with ume vinegar is brilliant. It is high in salt and has a strong flavor.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/1518/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/tofunoumezuzuke_kochi.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/1518/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -669,15 +1051,30 @@
     "id": "kochi-maff-tsuganijiru_kochi",
     "name": {
       "ja": "つがに汁",
-      "zh_tw": "つがに汁"
+      "kana": "つがにじる",
+      "romaji": "Tsuganijiru",
+      "zh_tw": "つがに汁",
+      "en": "Tsugani-jiru"
     },
     "prefecture": "kochi",
     "category": "kyodo",
+    "summary": {
+      "text": "\"Tsugani-jiru\" is one of the representative regional cuisines of Kochi prefecture. Tsugani refers to the mitten crabs that live in rivers such as the Shimanto River and Niyodo River. \"Tsugani-jiru\" is a soup made by crushing live crabs in a stone mill or blender to make soup stock. Tsugani are in season around autumn when Japanese knotweed and kudzu flowers begin to bloom. The fishing begins in the basin when the tsugani go downriver to spawn. Tsugani grow from a length of around 10cm to nearly 30cm. In addition to \"Tsugani-jiru,\" there are many other dishes made with tsugani, including \"Tsugani Somen\" which uses the crab shell and the crushed body to make soup stock, and \"Tsugani Meshi\" made by cooking rice with the whole shell.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/3984/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/tsuganijiru_kochi.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/3984/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -687,15 +1084,30 @@
     "id": "kochi-maff-zemmainoitameni_kochi",
     "name": {
       "ja": "ぜんまいの炒め煮",
-      "zh_tw": "ぜんまいの炒め煮"
+      "kana": "ぜんまいのいために",
+      "romaji": "Zenmainoitameni",
+      "zh_tw": "ぜんまいの炒め煮",
+      "en": "Simmered Stir-fried Royal Ferns"
     },
     "prefecture": "kochi",
     "category": "kyodo",
+    "summary": {
+      "text": "In mountain villages, \"fried royal fern with oil,\" tofu paste, and simmered vegetables have been eaten since ancient times.Otoyo Town, located in the central part of the Shikoku mountain range, is one of the most famous places in Kochi Prefecture for the production of royal ferns. The town covers a vast area of 315.06 km2, more than 80% of which is covered by mountains and forests. Settlements and arable lands dot the steep slopes at elevations of 200 to 850 meters, where paddy rice and yuzu are cultivated in addition to royal ferns. Royal ferns are an important dietary staple because they can be preserved for a long period of time when boiled and dried. Harvested in spring, royal ferns are processed into dried royal ferns or boiled in water and shipped.In the old days, royal fern dishes were often served as part of meals on the day of rice planting. Because they go well with oil, and oil-based dishes help people stay fuller for longer, royal ferns were highly valued by farmers.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/3993/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/zemmainoitameni_kochi.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/3993/index.html",
         "fetched_at": "2026-09-29"
       }
     ],

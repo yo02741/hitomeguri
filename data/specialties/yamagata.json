@@ -3,19 +3,22 @@
     "id": "yamagata-Q11262445",
     "name": {
       "ja": "おみ漬",
+      "kana": "おみづけ",
+      "romaji": "Omizuke",
       "zh_tw": "おみ漬",
       "en": "omizuke"
     },
     "prefecture": "yamagata",
     "category": "kyodo",
     "summary": {
-      "text": "おみ漬け（おみづけ）は、山形県特産の青菜を細かく刻み、他の野菜とともに漬けた漬物の一種で、山形県内陸部の郷土料理である。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E3%81%8A%E3%81%BF%E6%BC%AC%E3%81%91",
-      "license": "CC BY-SA 4.0",
+      "text": "Yamagata Prefecture maintains a diversity of pickling traditions. \"Omizuke\" is a pickle made from a type of mustard green called \"Yamagata seisai.\" Along with \"seisaizuke,\" it is one of the representative pickles of Yamagata Prefecture.Seisai greens are said to have been imported from Chongqing, China in 1904, and the seeds were introduced from Nara Prefecture to Yamagata Prefecture in 1908, where they were prototyped at an agricultural experiment station. They found that the quality surpassed that of conventional pickled greens such as bok choy, Chinese cabbage, and rape leaves, and thus the farming of Yamagata seisai was started. (\"Kitaguni no Yasai Fudoshi\" Takashi Aoba\"). Seeds could be collected from the early Taisho period, and cultivation expanded from the Murayama area to the entire prefecture during the Showa period. Yamagata seisai are large vegetables, weighing around 500g each with a length of 70 to 80cm. In \"seisaizuke,\" the thick stems are highly valued, so the leaf tips were often thrown away. The traders from Omi province started to cut off the tips and pickle them, which led to the name \"omizuke.\" (There are many other origin theories for the name, such as that the cut vegetables were rubbed (momi) and pickled, leading to the name \"momizuke,\" which eventually became “omizuke\").In this way, \"omizuke\" is said to have developed as a clever way to use up leftover vegetables, so not only \"Yamagata seisai\" but any leftover vegetables can be chopped and pickled to make this dish.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/3823/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
       "fetched_at": "2026-09-29"
     },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
@@ -23,11 +26,11 @@
         "fetched_at": "2026-09-29"
       },
       {
-        "url": "https://www.wikidata.org/wiki/Q11262445",
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/3823/index.html",
         "fetched_at": "2026-09-29"
       },
       {
-        "url": "https://ja.wikipedia.org/wiki/%E3%81%8A%E3%81%BF%E6%BC%AC%E3%81%91",
+        "url": "https://www.wikidata.org/wiki/Q11262445",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -45,10 +48,10 @@
     "prefecture": "yamagata",
     "category": "kyodo",
     "summary": {
-      "text": "だしは、山形県村山地方の郷土料理である。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E3%81%A0%E3%81%97_%28%E9%83%B7%E5%9C%9F%E6%96%99%E7%90%86%29",
-      "license": "CC BY-SA 4.0",
+      "text": "This is a staple summer dish in Yamagata Prefecture in which you can easily eat vegetables in their raw form. This dish has been mainly eaten in the Murayama region, which is surrounded by mountains and has extremely hot and humid summers, and is still a part of the local people's lives today. “Dashi\" is made by chopping up and seasoning summer vegetables such as cucumbers and eggplants, which contain a lot of water, and savory vegetables such as green perilla and myoga (Japanese ginger), which is suitable when the heat makes you lose your appetite. It has long been a popular speedy dish to make during the busy farming season. There are a number of theories as to the origin of the word \"Dashi\" (soup stock), for example, because “Dashi” brings out the best in other ingredients; “Dashi” comes from the word “Kiridasu” (cut from) used when vegetables are chopped into small pieces using a knife; and “Dashi” comes from the word “Dasu” (serve) used when vegetables are quickly served at the table after being chopped and seasoned. If there are 100 houses, there will be 100 different flavors of “Dashi”, and it is very interesting to see how many different recipes there are. The basic ingredients are eggplants and cucumbers, but some families add green perilla, myoga, green onions, and onions to the ingredients. It is also possible to make it sticky by mixing yam, okra and natto kelp (chopped kelp). The basic seasoning is soy sauce, but sometimes mentsuyu (noodle dipping sauce) or soy sauce with dashi is used.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/533/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
       "fetched_at": "2026-09-29"
     },
     "source_type": "kyodo_ryori",
@@ -66,11 +69,11 @@
         "fetched_at": "2026-09-29"
       },
       {
-        "url": "https://www.wikidata.org/wiki/Q11271555",
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/533/index.html",
         "fetched_at": "2026-09-29"
       },
       {
-        "url": "https://ja.wikipedia.org/wiki/%E3%81%A0%E3%81%97_%28%E9%83%B7%E5%9C%9F%E6%96%99%E7%90%86%29",
+        "url": "https://www.wikidata.org/wiki/Q11271555",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -311,15 +314,27 @@
     "id": "yamagata-maff-akebinomisozumeyaki_yamagata",
     "name": {
       "ja": "あけびの味噌詰め焼き",
-      "zh_tw": "あけびの味噌詰め焼き"
+      "zh_tw": "あけびの味噌詰め焼き",
+      "en": "Grilled akebi stuffed with miso / Grilled akebi with oil"
     },
     "prefecture": "yamagata",
     "category": "kyodo",
+    "summary": {
+      "text": "\"Akebi(=Chocolate vine)\" has taken root as an indispensable local delicacy for the people of Yamagata Prefecture, with its sprouts edible in spring and its fruits in autumn. The vines are used for vine crafting and other purposes.\"Akebi(=Chocolate vine)\" cultivation became popular in Yamagata Prefecture in the 1970s and 1980s. \"Akebi(=Chocolate vine)\" grown in Tendo City was well received in the Kanto region, and its cultivation began in earnest. The Murayama and Okitama regions are the main production areas, and the prefecture as a whole boasts the highest production level in Japan. The appearance of the seeds varies slightly depending on the type and strain, such as light purple or pink, and they also serve to add color to the dining table.While the white part around the seeds is generally eaten nationwide, Yamagata Prefecture has a unique culinary culture in which the skin is eaten. \"Akebi(=Chocolate vine)\" has a bittersweet flavor and is served in a variety of dishes such as grilled akebi stuffed with miso, simmered dishes, salad, tempura, and nuta-age.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/5088/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/akebinomisozumeyaki_yamagata.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/5088/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -329,15 +344,27 @@
     "id": "yamagata-maff-dongarajiru_yamagata",
     "name": {
       "ja": "どんがら汁",
-      "zh_tw": "どんがら汁"
+      "zh_tw": "どんがら汁",
+      "en": "Dongara Jiru (cod soup)"
     },
     "prefecture": "yamagata",
     "category": "kyodo",
+    "summary": {
+      "text": "The spawning season of Pacific cod comes in the rough seas of the Sea of Japan, and it is a popular winter delicacy in the Shonai region. Cod, as shown in its kanji character ('snow' on the right and the 'fish' radical on the left), comes into season during the snowy season. Especially in the Shonai region, the cod caught during the cold season of the 24 divisions of the old calendar (from early January to early February) is called \"Kandara (cold cod)\". At this time of year when the fish gather to spawn, Kandara trawl fishery is very popular. Fresh cod are eaten as sashimi or kombu-jime (wrapped in kelp), while others are preserved in miso or pickled in sake lees. Cod milt is known for its thick and creamy texture, and in recent years, fresh milt has been used as a sushi topping. “Dongara Jiru” (cod soup) is a local winter dish using Kandara. It was originally eaten by fishermen on the beach. It is characterized by the use of Kandara from head to tail without leaving anything. \"Dongara\" is a word that refers to bony parts. “Dongara Jiru\" is named after the soup in which the bony parts of Kandara are boiled. It is also known as \"Kandara Jiru” (cold cod soup). Every January, “Kandara Matsuri”, a festival to eat Kandara is held mainly in Sakata and Tsuruoka Cities in the Shonai region, where “Dongara Jiru” is served.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/546/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/dongarajiru_yamagata.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/546/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -347,15 +374,30 @@
     "id": "yamagata-maff-hatahatanoyuage_yamagata",
     "name": {
       "ja": "ハタハタの湯上げ",
-      "zh_tw": "ハタハタの湯上げ"
+      "kana": "はたはたのゆあげ",
+      "romaji": "Hatahatanoyuage",
+      "zh_tw": "ハタハタの湯上げ",
+      "en": "Hatahata no Yuage (Poached Japanese sandfish)"
     },
     "prefecture": "yamagata",
     "category": "kyodo",
+    "summary": {
+      "text": "Japanese sandfish are a scaleless, mild-flavored fish that are favored in the Shonai region as the taste of autumn. The sandfish come to the shores of Shonai around December to lay their eggs. For this reason, the sight of fisherman congregating on Sakatakita Pier and other such places is a characteristic winter scene.The size of the Japanese sandfish catch declined precipitously from around the end of the Showa period until the Heisei period. However, as a result of a joint effort by Yamagata Prefecture’s fisherman to institute fishing limits and manage resources, the size of the sandfish catch is now on an upswing. Japanese sandfish will rush toward shallow water in large groups when the sea is rough and thunder sounds. For this reason, they are also known as “thunder fish.”“Poached Japanese sandfish” is a simple dish: poach the fish in a pot, splash on soy sauce or the like, and eat. The dish has a light flavor and is a go-to choice for cooking with sandfish. There are a wide variety of ways to cook with sandfish: in addition to poaching, it can be, among other things, fried, dried, or simmered with sauce. The Japanese sandfish is deeply connected to traditional events of the Shonai region. “During a celebration of the deity Daikoku-sama”, an event which takes places on December 9, there is an ongoing custom of eating sandfish with a miso glaze.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/3800/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/hatahatanoyuage_yamagata.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/3800/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -365,15 +407,30 @@
     "id": "yamagata-maff-hiyashiru_yamagata",
     "name": {
       "ja": "冷や汁",
-      "zh_tw": "冷や汁"
+      "kana": "ひやしる",
+      "romaji": "Hiyashiru",
+      "zh_tw": "冷や汁",
+      "en": "Hiyashiru"
     },
     "prefecture": "yamagata",
     "category": "kyodo",
+    "summary": {
+      "text": "Although the name “Hiyashiru” suggests soup, this is a boiled dish made by combining seasonal vegetables and cold dashi broth (soaking soup). Hiyashiru is a local dish of Yonezawa City, known as \"Uesugi's Castle Town.\"There are various theories as to its origin, including the theory that it was served to warriors under the command of Kenshin Uesugi at battlefield ceremonies, and that it was born out of the \"one soup, one side dish\" dietary custom practiced by Lord Yozan Uesugi.Hiyashiru is served in a large bowl and then divided into smaller bowls for each person. At the feast table in the early Showa period, Hiyashiru and “Tsubu-tsubu-ni”(simmered beans and vegetables in small cut) served in a large bowl were placed on a special table at the lower seat of the banquet table, and these were allowed to be refilled as much as they wanted. It was considered considerate for the waiter to add more food to the dish as soon as the customers started to eat, even if only a little.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/6432/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/hiyashiru_yamagata.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/6432/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -383,15 +440,27 @@
     "id": "yamagata-maff-hyoboshinonimono_yamagata",
     "name": {
       "ja": "ひょう干しの煮物",
-      "zh_tw": "ひょう干しの煮物"
+      "zh_tw": "ひょう干しの煮物",
+      "en": "Hyo-Boshi-no-Nimono/Hyo-Boshi-Ni"
     },
     "prefecture": "yamagata",
     "category": "kyodo",
+    "summary": {
+      "text": "The entire area of Yamagata Prefecture was designated as a heavy snowfall area, and in those days when distribution was poor, securing food for the winter was essential for survival. Therefore, there was a culture of preserving foods such as wild vegetables and greens, which could be harvested in abundance from spring to fall, by drying them or pickling them in salt in preparation for the snowy winters. One of the traditional preserved foods in the Okitama and Murayama regions is \"Hyo-Boshi\" (dried purslane). “Hyo-Boshi\" is made by boiling and sun-drying Hyo (purslane) picked in summer. Hyo is another name for Suberihiyu and it is also mentioned as \"Sumeri Hiyau\" in \"Katemono\", a book of salvation published by Lord Yozan Uesugi in the late Edo period under the order to his vassals. Hyo is a wild plant that grows at the places such as the edges of fields from early summer to early fall. Hyo is a vigorous plant and it thrives in the strong summer sun. In summer, freshly picked Hyo is boiled and eaten with Soy sauce and mustard, and dried Hyo is often used in stewed dishes.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/4543/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/hyoboshinonimono_yamagata.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/4543/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -401,15 +470,30 @@
     "id": "yamagata-maff-imoni_yamagata",
     "name": {
       "ja": "芋煮",
-      "zh_tw": "芋煮"
+      "kana": "いもに",
+      "romaji": "Imoni",
+      "zh_tw": "芋煮",
+      "en": "Imoni(taro soup)"
     },
     "prefecture": "yamagata",
     "category": "kyodo",
+    "summary": {
+      "text": "“Imoni” (taro soup) is said to have originated in the mid-1600s. At that time, the Nakayama-machi Nagasaki area, the last stop for the Mogami River boat service, was a place to pick up cargo brought from the Kamigata (Kyoto-Osaka area) via Sakata. However, at that time there was no way to communicate to announce the arrival of a boat, so the boatmen had to wait for days before the consignee showed up, and they would hold a party around a pot on the riverbank to pass the time. As there was a village called Koshio near the pier, which was famous for taro production, they would cook taro and dried cod from the cargo in a pot and eat them. This is believed to be the root of the present day \"Imoni\". The use of beef started around the beginning of the Showa period (around 1930). The seasoning and ingredients of \"Imoni\" differ from region to region. The Shonai region, which faces the Sea of Japan, is especially unique in that when the tradition of the inland area's Imoni was introduced to the Shonai region, the locals chose pork and miso (which goes well with the pork), because the pig farming industry was active in the region.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/553/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/imoni_yamagata.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/553/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -419,15 +503,30 @@
     "id": "yamagata-maff-karakaini_yamagata",
     "name": {
       "ja": "からかい煮",
-      "zh_tw": "からかい煮"
+      "kana": "からかいに",
+      "romaji": "Karakaini",
+      "zh_tw": "からかい煮",
+      "en": "Karakaini (simmered dried stingray fin)"
     },
     "prefecture": "yamagata",
     "category": "kyodo",
+    "summary": {
+      "text": "\"Karakai\" is a dry food made by drying the cartilage of kasube (stingray) fins that are caught in Hokkaido. In the past, the fish eaten in inland areas far from the sea were dried fish such as Shiobiki-zake (salted salmon), Bodara (dried cod), and Karakai. It was originally introduced from Hokkaido and called \"Karage\" from the expression \"Juppahitokarage\" (to make sweeping generalizations), but it took root in Yamagata and the name was changed to \"Karakai.\" The name \"Karage\" still remains in the Shonai region. In inland areas, it is valued as a special dish served during celebrations and festivals.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/2762/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/karakaini_yamagata.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/2762/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -437,15 +536,30 @@
     "id": "yamagata-maff-koinomani_yamagata",
     "name": {
       "ja": "鯉のうま煮",
-      "zh_tw": "鯉のうま煮"
+      "kana": "こいのうまに",
+      "romaji": "Koinomani",
+      "zh_tw": "鯉のうま煮",
+      "en": "Koi-no-Umani"
     },
     "prefecture": "yamagata",
     "category": "kyodo",
+    "summary": {
+      "text": "Koi-no-Umani is a local dish made by koi (=Carp) cut into round slices and simmering them in sugar, soy sauce, and sake. koi (=Carp) was once a valuable source of protein in inland rural areas. It is said that the practice began in 1802, when Yozan Uesugi, the ninth lord of the Yonezawa domain, proposed the promotion of koi (=Carp) farming in order to secure nourishing foodstuffs in Yonezawa, an inland area with scarce fishery resources. Yozan had a pond built near the drainage outlet of houses (the pond is called “Sesena”), where he had people raised koi (=Carp) using rice water (water left over from washing rice), leftovers, and silkworm chrysalis (called “Mayu-mi”) as food.Koi (=Carp) was a luxury food, so the common people usually ate koi (=Carp) dishes only on special occasions. Koi (=Carp) farming flourished mainly in the Okitama region and developed from the Taisho to Showa periods. Koi (=Carp) farming methods in this region included rearing them in clean spring water or groundwater to make them spit out mud.Koi (=Carp) farmed in and around Yonezawa City are said to be of high quality and firm due to the severe winter cold, and under the brand name of \"Yonezawa koi (=Carp),\" they are a local specialty along with Yonezawa beef and Tateyama apples. However, the number of producers has been declining in recent years.It is said that \"Koi-no-Umani\" became popular after the Russo-Japanese War, when sugar became more readily available. Koi (=Carp) is also eaten in other ways, such as \"Koi-koku\" (koi (=Carp) stewed in miso soup) and \"Koi-no-Arai\" (koi (=Carp) sliced into pieces and lightly washed in cold water).",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/4534/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/koinomani_yamagata.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/4534/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -455,15 +569,30 @@
     "id": "yamagata-maff-kujiramochi_yamagata",
     "name": {
       "ja": "くじら餅",
-      "zh_tw": "くじら餅"
+      "kana": "くじらもち",
+      "romaji": "Kujiramochi",
+      "zh_tw": "くじら餅",
+      "en": "Kujira-mochi"
     },
     "prefecture": "yamagata",
     "category": "sweets",
+    "summary": {
+      "text": "Although it is called \" Kujira-Mochi （whale cake）,\" it is not made with Whale meat. There are various theories as to the origin of the name. One theory is that it was named \"Kujira- Mochi\", because it is said to be a \"good rice cake that lasts for a long time\" because it can be preserved well(in Japanese character), another is that it used to be larger than today's mochi and the size was compared to that of a whale, and still another is that it looks like “Shio- Kujira”(a salted whale), which is made by pickling the fatty meat with whale skin in salt. There are many theories, as mentioned above.There are several theories as to its origin, with the most popular theory being that it was made as a food for soldiers during the Edo period, about 300 years ago, during the reign of Masatsune TOZAWA, the third lord of the Shinjo clan, and is said to have originated in Shinjo City in the Mogami region.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/6120/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/kujiramochi_yamagata.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/6120/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -473,15 +602,30 @@
     "id": "yamagata-maff-kukitachihoshinonimono_yamagata",
     "name": {
       "ja": "くきたち干しの煮物",
-      "zh_tw": "くきたち干しの煮物"
+      "kana": "くきたちほしのにもの",
+      "romaji": "Kukitachihoshinonimono",
+      "zh_tw": "くきたち干しの煮物",
+      "en": "Kukitachihoshi no nimono"
     },
     "prefecture": "yamagata",
     "category": "kyodo",
+    "summary": {
+      "text": "Kukitachi-nimono\" is a local dish using \"kukitachi\", a cruciferous vegetable. Kukitachi has a strong vitality, and its side branches grow after the core is picked, so it can be harvested one after another.Dried kukitachi are made by boiling the kukitachi caught in spring and drying them in the sun for four to five days. The secret to making tasty dried kukitachi-hairi is to give it a slight rub when drying it. In the old days, it was stored in an Ami-bag and stored as food during the winter when leafy vegetables were scarce, and it is still eaten today as a delicious food.Some vegetables called kukitachi have different leaf shapes, but they all belong to the Brassicaceae family and are called by the same name. Any type of leaves can be used to make dried kukitachi.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/1334/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/kukitachihoshinonimono_yamagata.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/1334/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -491,15 +635,30 @@
     "id": "yamagata-maff-masunoankake_yamagata",
     "name": {
       "ja": "鱒のあんかけ",
-      "zh_tw": "鱒のあんかけ"
+      "kana": "ますのあんかけ",
+      "romaji": "Masunoankake",
+      "zh_tw": "鱒のあんかけ",
+      "en": "Trout Ankake"
     },
     "prefecture": "yamagata",
     "category": "kyodo",
+    "summary": {
+      "text": "Trout Ankake is a springtime dish representative of the Shonai area. It is made from the most delicious of all trout, “Sakuramasu” or cherry trout. When cherry trout is young, they fight for their territory. The losing fish go down to the sea and become “Sakuramasu” or cherry trout, while the winning fish stay in the river to grow to become “yamame” or landlocked trout. The name “Sakuramasu” is said to come from the blooming of the cherry blossoms, which is the same time when these fish come back to the river after preparing nutrients for their spawning during the fall. Sakuramasu is one of the most iconic fishes of Yamagata Prefecture, and it was designated as the prefectural fish in 1992.“Trout Ankake” was first eaten during the Edo period. It is believed that the tradition of cooking with “Ankake”, a thick savory sauce, came to the Shonai region after being introduced by merchant ships passing through Osaka and Hokkaido. It is still a popular dish today for celebrations and special occasions. Since Ankake sauce uses sugar and kudzu flour, which were very scarce ingredients at the time, it was most likely that trout ankake was a dish served when entertaining house guests.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/2748/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/masunoankake_yamagata.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/2748/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -509,15 +668,30 @@
     "id": "yamagata-maff-mosojiru_yamagata",
     "name": {
       "ja": "孟宗汁",
-      "zh_tw": "孟宗汁"
+      "kana": "もうそうじる",
+      "romaji": "Mosojiru",
+      "zh_tw": "孟宗汁",
+      "en": "Mousou-jiru (Bambooshoot Soup)"
     },
     "prefecture": "yamagata",
     "category": "kyodo",
+    "summary": {
+      "text": "\"Mousou-jiru\" is a local dish using \"Mousou\", a type of bamboo shoot. The season of \"Mousou\" starts from Kyushu and goes north along the season, then will be the peak season in mid-May in Tsuruoka City, considered as the most northern place to cultivate the bamboo shoot. There are many \"Mousou\" bamboo shoots growing around Yudagawa-Onsen, the hot spring in Tsuruoka City, and this are is famous for \"Mousou\" production. It is said that wet red clay soil makes \"Mousou\" high-quality, and \"Mousou\" harvested in Yudagawa area is known nationally as \"Yudagawa Mousou\". There are many stories why \"Mousou\" had prevailed in Tsuruoka City, but it is said that the origin is the \"Mousou\" brought from Kyoto by \"shugenja\" (mountain ascetic) with commercial ship from Hokkaido, then planted in the temple. The \"Mousou Festival\" is held from late April to early June in Yudagawa Onsen. Many people from inside and outside of the prefecture come to enjoy \"Mousou-jiru\" and other mousou dishes, a morning mousou market, and a mousou harvesting experience. Mousou-jiru is also a popular dish at the Sakata Festival and the Tsuruoka Tenjin Festival, both held in May.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/6985/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/mosojiru_yamagata.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/6985/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -527,15 +701,30 @@
     "id": "yamagata-maff-nattojiru_yamagata",
     "name": {
       "ja": "納豆汁",
-      "zh_tw": "納豆汁"
+      "kana": "なっとうじる",
+      "romaji": "Nattojiru",
+      "zh_tw": "納豆汁",
+      "en": "Natto Jiru(natto soup)"
     },
     "prefecture": "yamagata",
     "category": "kyodo",
+    "summary": {
+      "text": "In Yamagata Prefecture, it was common for people to make natto (fermented soybeans) at home as a way of preserving food to get through the winter when foodstuffs are in short supply. Natto was made by stuffing boiled soybeans into a tube made of straw and placing it in a warm place such as beside the kotatsu (heating table covered with a blanket) for one or two nights. In the Murayama area of Oe Town, fermented soybeans without strings are made into \"Natto Jiru” (natto soup). “Natto Jiru” is a winter home-style dish that has been popular in Yamagata Prefecture for a long time. Natto is milled in a mortar until it becomes completely creamy, then thickened and blended into the soup. “Imogara”, made from dried stems of Karatori potatoes, is an indispensable ingredient in “Natto Jiru”. It was a valuable source of protein with plenty of tofu and fried tofu, along with dried and salted products and other preserved foods. It is eaten on the day of Nanakusa (January 7) in the Murayama area, on New Year's Day in the Mogami area, and in the Shonai area, it is sometimes eaten on \"Daikoku-sama no Otoshiya (New Year's Eve of God of Wealth)\" (December 9).",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/540/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/nattojiru_yamagata.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/540/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -545,15 +734,30 @@
     "id": "yamagata-maff-okahijikinokarashiae_yamagata",
     "name": {
       "ja": "おかひじきのからし和え",
-      "zh_tw": "おかひじきのからし和え"
+      "kana": "おかひじきのからしあえ",
+      "romaji": "Okahijikinokarashiae",
+      "zh_tw": "おかひじきのからし和え",
+      "en": "Japanese saltwort in mustard dressing"
     },
     "prefecture": "yamagata",
     "category": "kyodo",
+    "summary": {
+      "text": "The Japanese saltwort used in this dish was originally a wild plant that grew along the coast and came to be called okahijiki because it looks like hijiki, a seaweed. In Yamagata Prefecture, it is said that the seeds of the Japanese saltwort, which grew wild in the Shonai area by the sea, were introduced by boat across the Mogami River to Sunazuka Village (present-day Nanyo City), a sandy area under the Yonezawa Domain, where its cultivation began. In the Honzo Zufu (1828), it is mentioned in the \"Wo Kamiru\" section as \"Wo Kahishiki\" Ushu Yonezawa, indicating that it has been a production center since the Edo period. Nanyo City is considered to be the birthplace of Japanese saltwort, and even today, it is actively produced as a traditional vegetable that the local people are proud of.As a wild species, it is very vigorous and can be expected to produce a large yield if the soil is suitable. Even after being picked once, the leaves sprout immediately. Therefore, depending on the care of the plant, it could be harvested many times.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/2753/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/okahijikinokarashiae_yamagata.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/2753/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -563,15 +767,30 @@
     "id": "yamagata-maff-sasamaki_yamagata",
     "name": {
       "ja": "笹巻き",
-      "zh_tw": "笹巻き"
+      "kana": "ささまき",
+      "romaji": "Sasamaki",
+      "zh_tw": "笹巻き",
+      "en": "Sasamaki"
     },
     "prefecture": "yamagata",
     "category": "kyodo",
+    "summary": {
+      "text": "“Sasamaki “is made by soaking and draining Glutinous rice, wrapping it in Bamboo leaves, tying a string around it, and boiling it in hot water. In other prefectures, it is also called \"Chimaki. Bamboo leaves are said to have antiseptic and antibacterial properties, and have long been used to wrap preserved and portable foods.In Yamagata Prefecture, Rice cakes are often pounded to make and eaten throughout the year, not only for New Year's Eve and New Year's, but also for festivals and celebrations. While this type of Rice cake culture is not unusual in a rice-producing region, \"Sasamaki,\" in which Glutinous rice is used in its whole grain form, and \"Sasamaki,\" boiled in lye water, as made in the southern part of Tsuruoka City, are known as rare local foods. There is a theory that \"Sasamaki,\" boiled in Lye water, was introduced as a preserved food after the Boshin War (1868-1868).“Sasamaki “is especially offered on the Boys' Festival on May 5, and has been eaten in every household along with \"Kashiwa Mochi,\" and other foods to wish for the health and vigorous growth of children.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/6133/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/sasamaki_yamagata.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/6133/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -581,15 +800,30 @@
     "id": "yamagata-maff-seisaizuke_yamagata",
     "name": {
       "ja": "青菜漬",
-      "zh_tw": "青菜漬"
+      "kana": "せいさいづけ",
+      "romaji": "Seisaizuke",
+      "zh_tw": "青菜漬",
+      "en": "Seisai-zuke (Pickled seisai mustard)"
     },
     "prefecture": "yamagata",
     "category": "kyodo",
+    "summary": {
+      "text": "Yamagata Prefecture is known for its diverse pickling culture, with \"Seisai mustard pickles\" being one of its most popular varieties. These pickles are made from Yamagata seisai mustard, a type of leaf mustard, and are often paired with \"Omizuke\" to represent the prefecture's pickling traditions.The \"pickled seisai mustard\" has its roots in Chongqing, China, and was introduced to Yamagata Prefecture in 1908. After a prototype was made at the Agricultural Experiment Station, it was found to be superior in quality to other pickled greens like \"bok choy\", Chinese cabbage, and spinach. This led to the cultivation of \"Yamagata seisai mustard\", which began in the Murayama region and later spread throughout the prefecture during the Showa era.\"Yamagata seisai mustard\" is characterized by its large, broad leaves - measuring 70 cm to 80 cm in length - and thick stems. Each plant weighs around 500 grams and has a unique pungent taste and crunchy texture. To make the pickles, the greens are lightly dried in the sun, pickled in salt, rinsed carefully, and then pickled again in a sauce made from soy sauce, kelp, dried bonito flakes, and other ingredients. The harvest season for \"Yamagata seisai mustard\" is from late October to mid-November, and the greens are dried in the sun after harvesting. It's a common sight to see households drying the greens and preparing pickles in their yards during the early winter months.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/3807/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/seisaizuke_yamagata.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/3807/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -599,15 +833,30 @@
     "id": "yamagata-maff-shiobikisushi_yamagata",
     "name": {
       "ja": "塩引きずし",
-      "zh_tw": "塩引きずし"
+      "kana": "しおびきすし",
+      "romaji": "Shiobikisushi",
+      "zh_tw": "塩引きずし",
+      "en": "Shiobiki zushi"
     },
     "prefecture": "yamagata",
     "category": "kyodo",
+    "summary": {
+      "text": "Salted sushi, a local delicacy for special occasions, originated in Yonezawa City. It is pressed sushi made from salted salmon, and could be made even in inland Yonezawa City, where fresh fish was not available in the past. The red color of the salmon and the white color of the rice used to make a reddish-white color, and so the dish was prepared for weddings and other celebratory occasions.Yonezawa City is located in a basin surrounded by mountains, and in the days when transportation systems were not well developed, opportunities to eat fresh seafood were rare. Fish was mostly freshwater fish such as carp and river fish, or processed products such as cod, herring, and salted salmon, but it was still a feast.Generally, salted fish is called shiobiki, but in Yonezawa City, shiobiki refers to salted salmon. Salted salmon has long been a familiar foodstuff, and during the year-end and New Year's holidays, many \"shinmaki-zaké\" (salted white salmon) were hung in front of fishmongers' stores as gifts, but the number of such gifts has been decreasing in recent years. In the early Showa period (1926-1989), both \"Niimaki Salmon\" and beautifully colored \"Honben Salmon\" were used for sushi, but \"Honben Salmon\" was very expensive, so \"Niimaki Salmon\" was generally used. Even in recent years, it has become difficult to obtain domestically produced salmon with just the right amount of oil and saltiness, and foreign salmon with high oil content is also used.In the past, wooden crates were used to make pressed sushi one by one, but nowadays a large mold is sometimes used to cut the pressed pieces. Few of the old-fashioned wooden crates remain in the local area.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/1328/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/shiobikisushi_yamagata.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/1328/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -617,15 +866,30 @@
     "id": "yamagata-maff-shiokujirajiru_yamagata",
     "name": {
       "ja": "塩くじら汁",
-      "zh_tw": "塩くじら汁"
+      "kana": "しおくじらじる",
+      "romaji": "Shiokujirajiru",
+      "zh_tw": "塩くじら汁",
+      "en": "Shio-Kujira-Jiru"
     },
     "prefecture": "yamagata",
     "category": "kyodo",
+    "summary": {
+      "text": "\"Shio-Kujira-Jiru\" (salted whale soup) is a traditional nourishing meal to survive the hot inland summers. It is said that this dish was created to prepare for the hot summer by boiling salted whale, which was a handy as a source of animal protein in mountainous areas, and summer vegetables together.Salted whale is the fatty flesh of the whale, with its skin preserved in salt. Vegetables used for the dish are delicious seasonal vegetables such as new potatoes, eggplants, and green beans, which are harvested in the summer in the region.In the Murayama area, it is also called \"Iruka-jiru.\" In the town of Oe-cho in the Murayama area, \"Iruka-jiru\" was often made during the summer vacation when the children's association in the town held gatherings. Mothers brought vegetables and other ingredients from their homes and boiled them in a large pot and served them.Ingredients always include salted whale, and new potatoes. Other ingredients that are always included are “Aomizuna”, a wild green vegetable that grows taller in the summer but can still be eaten tender if peeled, and “Natsuna” (Hudan-sou), a perennial herb, that grows in the fields during the hot summer months.In the Mogami area, the \"Mizu\" of wild vegetables used in \"Shio-Kujira-Jiru\" is called \"Mongirimizu-jiru\" because it is torn off by hand to allow the flavor to soak in well.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/6126/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/shiokujirajiru_yamagata.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/6126/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -635,15 +899,30 @@
     "id": "yamagata-maff-shokuyogikunoohitashi_yamagata",
     "name": {
       "ja": "食用ぎくのおひたし",
-      "zh_tw": "食用ぎくのおひたし"
+      "kana": "しょくようぎくのおひたし",
+      "romaji": "Shokuyogikunohitashi",
+      "zh_tw": "食用ぎくのおひたし",
+      "en": "Ohitashi of edible chrysanthemums (boiled and eaten with soy sauce)"
     },
     "prefecture": "yamagata",
     "category": "kyodo",
+    "summary": {
+      "text": "In Yamagata Prefecture, where edible chrysanthemums (except for small ones used as a garnish for sashimi, etc.) are widely produced, there are many local dishes using them. The custom of eating chrysanthemum petals became popular during the Edo period (1603 - 1868), and it is said that the famous poet Matsuo Basho loved this food. In Yamagata Prefecture, the culture of eating this flower is still strong, and “Ohitashi of edible chrysanthemums” (boiled and eaten with soy sauce) is a typical example. Among the edible chrysanthemums grown in Yamagata Prefecture, the purple-colored \"Mottenohoka\", which is a late variety, is the most fragrant and delicious of all. “Mottenohoka” means “outrageous” or “out of the question” in Japanese. Its official name is \"Enmeiraku\", but it is said to be called that because \"eating it is out of the question as chrysanthemum is the crest of the emperor's family” or \"just too delicious\". The deliciousness of \"Mottenohoka\" lies in its unique crunchy texture. This is largely due to the shape of the individual petals of the chrysanthemum, which are tubular rather than sheet-shaped. Various varieties of edible chrysanthemums are cultivated in Yamagata Prefecture, and they are eaten as “ohitashi” (boiled), “sunomono” (pickled), or as tempura.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/526/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/shokuyogikunoohitashi_yamagata.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/526/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -653,15 +932,30 @@
     "id": "yamagata-maff-shoyunomi_yamagata",
     "name": {
       "ja": "しょうゆの実",
-      "zh_tw": "しょうゆの実"
+      "kana": "しょうゆのみ",
+      "romaji": "Shoyunomi",
+      "zh_tw": "しょうゆの実",
+      "en": "Shoyu no mi"
     },
     "prefecture": "yamagata",
     "category": "kyodo",
+    "summary": {
+      "text": "Shoyu-no-Mi\" is a versatile seasoning made by fermenting soybeans, wheat (pressed barley is sometimes used), rice, and seed koji by adding salt water and letting it sit while stirring. Soy sauce and sake are added instead of salt water, and with this method, the soy sauce is ready to eat in about one week to 10 days. In the Shonai area, it is said to have been eaten since the Edo period (1603-1867).The flavor can be sweet or salty, depending on the amount of koji used. It is also called \"amabisho\" or \"amapicho\" in some regions.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/937/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/shoyunomi_yamagata.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/937/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -671,15 +965,27 @@
     "id": "yamagata-maff-tamagokanten_yamagata",
     "name": {
       "ja": "卵寒天",
-      "zh_tw": "卵寒天"
+      "zh_tw": "卵寒天",
+      "en": "Egg agar/soy sauce agar"
     },
     "prefecture": "yamagata",
     "category": "kyodo",
+    "summary": {
+      "text": "In Yamagata Prefecture, dishes using agar have been eaten for a long time, and it is also served as a tea snack. In the Shonai area, agar as a sweet dessert is mainstream, and the most popular one is \"egg agar\". It has a sweet soy sauce flavor and is made for celebratory occasions such as festivals and the New Year. It is said that the combination of agar, which is deeply rooted in the Japanese diet, and eggs, which were a valuable commodity at the time, has become popular as an event food. Boiled or beaten eggs are sometimes added as well, and the flavor is distinctively sweet and salty with soy sauce and sugar.Also in the prefecture, there is \"egg agar\" which is sweet and salty, as in the Shonai region, and \"walnut agar\", which is chopped walnuts seasoned with sugar and soy sauce. Furthermore, in the Okitama area, there are many agar dishes such as agar with vegetables and mustard agar mixed with kneaded mustard. \"Mustard agar\" is treated as an item on the Buddhist menu.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/2734/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/tamagokanten_yamagata.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/2734/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -689,15 +995,30 @@
     "id": "yamagata-maff-tamakonnyaku_yamagata",
     "name": {
       "ja": "玉こんにゃく",
-      "zh_tw": "玉こんにゃく"
+      "kana": "たまこんにゃく",
+      "romaji": "Tamakonnyaku",
+      "zh_tw": "玉こんにゃく",
+      "en": "Tama Konnyaku(Ball-shaped konjac)"
     },
     "prefecture": "yamagata",
     "category": "kyodo",
+    "summary": {
+      "text": "\"Ball-shaped konjac\", nicknamed Tamakon, is the soul food of the people of Yamagata Prefecture. As the name suggests, it is a spherical konjac about 3 cm in diameter and is sold on skewers at tourist attractions and event halls. While square konjac and konjac noodles are popular throughout Japan, \"ball-shaped konjac \"is a food culture unique to Yamagata Prefecture. The origin of the ball-shaped konjac is said to be Chitoseyama Konnyaku, a konjac specialty store located at the foot of\" Chitoseyama Mountain\", which was established in 1926.The temple that is closely associated with konjac is \"Hoshuzan Risshakuji Temple\", also known as \"Yamadera\", in Yamagata City. The temple was founded in the Heian period, and its founder, Jikaku Daishi (monk Ennin), brought konjac back from China and began using it in the temple's vegetarian dishes, which later became popular among the local residents. This eventually led to the spread of konjac throughout the prefecture.Currently, \"ball-shaped konjac\" is sold at restaurants and stalls in the vicinity of the temple. Since one has to climb the 1015 steps to get to the temple's main sanctuary, it has become popular among tourists as \"chikara-konnyaku\" (power konjac) to eat before the climb.Tamakon is a registered trademark of Hiranoya Co.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/2728/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/tamakonnyaku_yamagata.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/2728/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -707,15 +1028,30 @@
     "id": "yamagata-maff-toyamakabukasujiru_yamagata",
     "name": {
       "ja": "遠山かぶの粕汁",
-      "zh_tw": "遠山かぶの粕汁"
+      "kana": "とおやまかぶのかすじる",
+      "romaji": "Toyamakabunokasujiru",
+      "zh_tw": "遠山かぶの粕汁",
+      "en": "Toyama Kabu no Kasu-jiru (Toyama Turnip Soup with Sake Lees)"
     },
     "prefecture": "yamagata",
     "category": "kyodo",
+    "summary": {
+      "text": "“Toyama-Kabu” (turnip) is a traditional vegetable of Yamagata Prefecture that originated in Yonezawa City. Its name comes from the Toyama area of Yonezawa City, where it was brought by the Uesugi family when they came to Yonezawa City in 1600. Around 1800, the feudal lord Uesugi Takaama issued a decree as one of the measures to boost the local industry: \"Radish should be grown in the east, Zusa-yama, turnips in Nishiyama, and autumn turnips in Toyama.\" Thus the cultivation of autumn turnips began in Toyama.There are several varieties of native turnips in the prefecture, including \"Fujisawa Turnips\" and \"Mogami Turnips,\" but only “Toyama Turnips” are white and round. It has a stronger flavor and sweeter taste than ordinary turnips, and its tough flesh prevents it from falling apart when cooked. Once threatened with decline, volunteers who wanted to preserve the taste gathered to find the only one producer who had the last seed.Even today, “Toyama Kabu” is recognized as one of the \"Yamagata Okitama Traditional Vegetables,\" and the local production cooperative is working on its production and spread to protect the species. \"Toyama Kabu no Kasu-jiru\" is a soup with “Toyama Kabu” and “Uchimame,” an ingredient unique to snowy Yonezawa City. \"Uchimame\" is made by soaking soybeans in water and pounding them flat with a wooden hammer.Dried beans can be stored for a long time, on the other hand, it takes long time to cook them, so that they are flattened to make them easier to cook.As side note, “Yukina,” a traditional vegetable also in Yonezawa City, is said to be a flower stalk of a cross between ”Toyama Kabu” and “Nagaoka Vegetables,” and for this reason, older people still call \"Yukina\" to \"Kabu-no-to\".",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/6140/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/toyamakabukasujiru_yamagata.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/6140/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -725,15 +1061,30 @@
     "id": "yamagata-maff-udotoshimidaikonnodonkoroni_yamagata",
     "name": {
       "ja": "うどと凍み大根のどんころ煮",
-      "zh_tw": "うどと凍み大根のどんころ煮"
+      "kana": "うどとしみだいこんのどんころに",
+      "romaji": "Udotoshimidaikonnodonkoroni",
+      "zh_tw": "うどと凍み大根のどんころ煮",
+      "en": "Udo to komidaikon no donkoroni"
     },
     "prefecture": "yamagata",
     "category": "kyodo",
+    "summary": {
+      "text": "Frozen daikon\" and \"frozen rice cakes\" are common preserved foods in the Tohoku region, and are made by taking advantage of the cold weather unique to the snow country. Frozen daikon\" is prepared in January, when the weather is at its coldest. The daikon is peeled, cut into round slices or 20 cm in length, split lengthwise, pierced and boiled, then soaked in water to remove the scum before being placed on the snow and frozen. After that, they are hung to dry under the eaves of the roof, and finally completed around March. This is a time-consuming process, but it concentrates the flavor of the daikon and preserves it well.The dish \"Udo and Frozen Daikon Simmered in Dongkoro\" combines udo, a seasonal wild vegetable that sprouts in the spring, and frozen daikon.\" Dongkoro\" refers to a log, and the name \"udo\" is said to have come about because the cross section of udo when cut resembles a log. Dried herring, an ingredient of \"Dongkoro-ni-ni\", is a dried herring, and \"Dongkoro-ni-ni\" is a local dish that harmonizes the delicacies of the sea with those of the mountains.Dongkoroni\" is a local dish that blends seafood and mountain vegetables. Dongkoroni has a long history and is said to have been brought to Japan by the Kitamae Ship, a merchant ship that carried goods from Hokkaido to Kansai in the Edo period .",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/965/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/udotoshimidaikonnodonkoroni_yamagata.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/965/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -743,15 +1094,30 @@
     "id": "yamagata-maff-ukoginokiriae_yamagata",
     "name": {
       "ja": "うこぎの切り和え",
-      "zh_tw": "うこぎの切り和え"
+      "kana": "うこぎのきりあえ",
+      "romaji": "Ukoginokiriae",
+      "zh_tw": "うこぎの切り和え",
+      "en": "Ukogi no Kiri-Ae(Sliced and dressed araliad)"
     },
     "prefecture": "yamagata",
     "category": "kyodo",
+    "summary": {
+      "text": "\"Kiri-Ae\", which is to finely slice \"Ukogi(=Araliad)\" and dress it with miso paste, has been a common cooking method in the Okitama region, where there are the largest number of \"Ukogi(=Araliad)\" hedges. It is said that Youzan Uesugi, the ninth lord of the Yonezawa Domain, recommended planting \"Ukogi(=Araliad)\" as a hedge for his house, and the spiny branches served as a rose wire to prevent crime, and the shoots sprouted from spring to early summer.It is also said to have been used as a tonic in Chinese medicine since the Heian period (794-1185) and was known as a nourishing food. Most of the \"Hime-ukogi\" variety eaten in the Okitama region centering on Yonezawa City has few spines and its leaves are soft.\"Ukogi(=Araliad)\" has a unique flavor and bitterness, and is used to make \"ukogi gohan (rice with ukogi),\" \"ukogi tempura,\" and \"ukogi ohitashi (boiled ukogi),\" in addition to \"Ukogi no Kiri-Ae,\" a dish that heralds the arrival of spring on the dinner table.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/5095/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/ukoginokiriae_yamagata.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/5095/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -763,15 +1129,27 @@
       "ja": "わらびたたき",
       "kana": "わらびたたき",
       "romaji": "Warabitataki",
-      "zh_tw": "わらびたたき"
+      "zh_tw": "わらびたたき",
+      "en": "Warabi tataki"
     },
     "prefecture": "yamagata",
     "category": "kyodo",
+    "summary": {
+      "text": "Strawbi produced in Yamagata Prefecture, which boasts the largest production volume in Japan, is soft and slimy, and is popular even in the Tokyo metropolitan area as a high-quality strawbi. Generally, after removing the scum from the bracken, the bracken is eaten as a dish such as chopped, boiled, simmered, or in miso soup.Tataki\" in \"Warabi Tataki\" refers to a method of cooking in which the strawbi is placed on a cutting board and beaten with a knife as if cutting it, thereby breaking the fibers of the strawbi into small pieces. It is said that in the old days, the sound of \"thump, thump, thump\" could be heard from every home when it was time to pound the strawberries. The tender texture and the flavors of sansho (Japanese pepper) leaves and miso (soybean paste) that go with them are exceptional, making this a local dish that has taken root as a springtime delicacy. Yamagata Prefecture is also home to many other cooking methods that allow the mountain vegetables, which are the bounty of the mountain villages nurtured by the rich nature of the area, to be removed from their acrid taste and eaten with relish, which is the result of the wisdom of our ancestors.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/1322/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/warabitataki_yamagata.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/1322/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -781,15 +1159,30 @@
     "id": "yamagata-maff-yukinanofusubezuke_yamagata",
     "name": {
       "ja": "雪菜のふすべ漬け",
-      "zh_tw": "雪菜のふすべ漬け"
+      "kana": "ゆきなのふすべづけ",
+      "romaji": "Yukinanofusubezuke",
+      "zh_tw": "雪菜のふすべ漬け",
+      "en": "Yukina no fusubezuke (Pickled yukina cabbage)"
     },
     "prefecture": "yamagata",
     "category": "kyodo",
+    "summary": {
+      "text": "\"Yukina no Fusubedzuke\" is a pickled dish using yukina, a snow cabbage. Yukina is one of the Yamagata-Okitama traditional vegetables, a special vegetable of the Okitama region. The name \"Fusubezuke\" comes from the dialect word \"fusuberu,\" which means \"to quickly dip in hot water\". Yukina cabbage is a rare, blanch vegetable that grows in the snow in Japan. It is said that Lord Uesugi Takayama encouraged its cultivation in order to secure fresh vegetables in snow country. It is said to have been selected and bred from a natural crossbreeding with Nagaoka cabbage introduced from Echigo. This is a vegetable that can only be produced in deep snow. It used to be called \"kabunotou\" (turnip's stem), but in 1930, the name \"yukina\" was given after improvements were made to encourage its cultivation. Currently, yukina is grown in the Kaminagai area (Sasano, Koshida, and Toyama) within Yonezawa City. The edible part of Yukina is its inner center, which grows in the snow. It is sown in late August or early September, and harvested in early November when it has grown to 60 to 80 cm in height, with the roots intact. Because yukina is susceptible to frost damage, the growers bundle 12 to 13 plants together, tie them up with straw, surround the bundle with more rice straw and soil (a process called \"tokoyose\"), and wait for the plants to be covered with snow. The temperature and humidity are maintained in the snow, and the plants nourish themselves with their own leaves and grow stalks inside. Only the inner center is used to pickle, which is about 20% to 25% of the whole amount of cabbage before being covered by the snow.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/4935/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/yukinanofusubezuke_yamagata.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/4935/index.html",
         "fetched_at": "2026-09-29"
       }
     ],

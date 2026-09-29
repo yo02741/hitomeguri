@@ -11,14 +11,14 @@
     "prefecture": "kyoto",
     "category": "kyodo",
     "summary": {
-      "text": "肉豆腐（にくどうふ）は、牛肉と豆腐、ねぎを煮た煮物料理。醤油や酒、みりん、砂糖を用いて、すき焼きに似た味付けに調える。京都市の郷土料理であり、冬の定番料理である。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E8%82%89%E8%B1%86%E8%85%90",
-      "license": "CC BY-SA 4.0",
+      "text": "“Niku Tofu” is a simple dish made of beef, tofu, and green onions. The green onions used in the dish are often “kujo green onions”, a traditional vegetable of Kyoto. These onions are leaf onions (green onions) whose green leaves are eaten. Legend has it that in 771, when the Fushimi Inari Shrine was built, Hata Irogu planted green onions brought from Naniwa. These seeds have been passed down and protected by farmers from generation to generation, earning it the nickname \"king of green onions\". According to one theory, the name comes from the fact that high-quality green onions were grown in the Kujo area during the Heian period. The tender leaf is slimy, sweet, and fragrant which makes it a popular ingredient for a wide range of dishes including as a condiment, nabe (one-pot dish), sukiyaki, simmered dishes, salad, and miso soup. Although it is grown year-round, it is in season in winter when it is slimy and sweet.The history of beef in Kyoto is long and rich, with \"Tamba beef\" being mentioned in Japan's oldest wagyu book, \"Kokugyu Juzu,\" drawn in 1310. In the early Meiji period, sukiyaki restaurants were established in Kyoto City. Today, Kyoto Prefecture and the Kyoto Beef Distribution Promotion Council have branded high-grade beef produced and raised in the prefecture as \"Kyoto Meat\". To qualify for this prestigious classification, the breed must be Japanese black cattle, the cattle must have been raised in Kyoto for the longest period of time, and the meat must be processed at the Kyoto City Central Wholesale Market No. 2.The water used for daily life in Kyoto is soft, which means that it is low in minerals and has no peculiar taste. This unique characteristic is believed to be the reason for producing delicious tofu.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/3560/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
       "fetched_at": "2026-09-29"
     },
     "source_type": "kyodo_ryori",
-    "kana_source": "wikipedia",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
@@ -26,11 +26,11 @@
         "fetched_at": "2026-09-29"
       },
       {
-        "url": "https://www.wikidata.org/wiki/Q108799327",
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/3560/index.html",
         "fetched_at": "2026-09-29"
       },
       {
-        "url": "https://ja.wikipedia.org/wiki/%E8%82%89%E8%B1%86%E8%85%90",
+        "url": "https://www.wikidata.org/wiki/Q108799327",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -122,15 +122,27 @@
       "ja": "ばらずし",
       "kana": "ばらずし",
       "romaji": "Barazushi",
-      "zh_tw": "ばらずし"
+      "zh_tw": "ばらずし",
+      "en": "Barazushi"
     },
     "prefecture": "kyoto",
     "category": "kyodo",
+    "summary": {
+      "text": "Mackerel has long been a popular fish among the people of Tango Peninsula, which faces Wakasa Bay. At a time when refrigeration technology was not yet developed, mackerel lost its freshness very quickly, so innovations were devised to prolong the enjoyment of mackerel. “Heshiko”, which is marinated in salt and then pickled in sake lees, is another dish that was created to prolong the quality of mackerel, and grilling is another method of preserving them. It is said that the mackerel was either grilled or salted before being transported inland on the \"Mackerel Road\", the route used to transport fish and shellfish from Wakasa Bay to the capital (Kyoto). Accordingly, many of the local dishes around Mackerel Road are made with grilled mackerel. “Barazushi” is another local dish that uses grilled mackerel, and is characterized by its minced mackerel and a variety of other ingredients on top. \"Matsubuta\", a shallow wooden box, a sushi-kiri (a spatula for separating Barazushi), a tetsuki (colander), and other unique tools are used. Locals often call it \"Barazushi\", but officially it is called \"Tango Barazushi\". The most popular theory about the origin of \"Barazushi\" is that the ingredients and mackerel are scattered on top of the sushi rice (onomatopoeia “bara bara”), but there is another theory that it comes from mixing the sushi rice in a flat colander called a \"baratetsuki\". In the past, people used to boil mackerel for a long time to make mince, but nowadays they often use canned food as a substitute. As a result, local supermarkets sell oversized cans of mackerel that are not found in other parts of the country.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/430/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/barazushi_kyoto.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/430/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -140,15 +152,30 @@
     "id": "kyoto-maff-ebiimotobodaranotaitan_kyoto",
     "name": {
       "ja": "えびいもと棒だらの炊いたん",
-      "zh_tw": "えびいもと棒だらの炊いたん"
+      "kana": "えびいもとぼうだらのたいたん",
+      "romaji": "Ebiimotobodaranotaitan",
+      "zh_tw": "えびいもと棒だらの炊いたん",
+      "en": "Ebiimo to Boudara no Taitan"
     },
     "prefecture": "kyoto",
     "category": "kyodo",
+    "summary": {
+      "text": "\"Ebi-imo and Boudara no Taitan (Simmered Dish)\" is a local dish from Kyoto, featuring traditional Kyoto vegetables called ebi-imo, known for their shrimp-like shape and striped pattern, and Boudara, a dried type of cod from Hokkaido, which are slowly cooked by simmering them together.The ebi-imo has a dense and sticky texture with a unique richness in flavor, making it a popular traditional vegetable in ordinary households. Due to its resistance to falling apart during cooking, it is often used in simmered dishes. Boudara is dried cod, primarily brought in from Hokkaido. Kyoto, once the imperial capital, gathered various ingredients from all over Japan, fostering a culture of creatively enjoying these ingredients. One characteristic of Kyoto cuisine is \"deaimon,\" which refers to dishes that combine seasonal ingredients to complement each other's positive qualities. \"Ebi-imo and Boudara no Taitan (Simmered Dish)\" is indeed a representative dish of this \"deaimon\" culture. The gelatinous quality from Boudara is said to prevent the ebi-imo from falling apart, while the ebi-imo's natural bitterness helps tenderize the Boudara.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/4603/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/ebiimotobodaranotaitan_kyoto.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/4603/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -158,15 +185,30 @@
     "id": "kyoto-maff-furofukidaikon_kyoto",
     "name": {
       "ja": "ふろふき大根",
-      "zh_tw": "ふろふき大根"
+      "kana": "ふろふきだいこん",
+      "romaji": "Furofukidaikon",
+      "zh_tw": "ふろふき大根",
+      "en": "Furofuki Daikon(Simmered Daikon Radish)"
     },
     "prefecture": "kyoto",
     "category": "kyodo",
+    "summary": {
+      "text": "Several varieties of daikon radish are enjoyed in Kyoto. Among them are the \"Aomi Daikon\" from Nakagyo Ward, \"Karashi Daikon\" from Kita Ward, and \"Sawaga Daikon\" from Maizuru City in the Chutan area. However, the most well-known is the Shogoin daikon. This radish's ancestor, \"Miyashige Daikon,\" was cultivated from seeds brought from Owari during the Bunsei period (1818-1830). Farmers in the Shogoin area of Otagi County (now Shogoin, Sakyo Ward) selectively bred a round variety of Miyashige Daikon that became known as Shogoin Daikon. It is grown throughout the prefecture, in locations including Kyoto City, Kameoka City, Kumiyama Town, and Kyotango City in the Tango region. Shogoin Daikon, along with Aomi Daikon and Karashi Daikon, is recognized as a traditional Kyoto vegetable that has been cultivated in the city for generations.The flesh of Shogoin Daikon is dense yet soft, sweet, and devoid of bitterness. Known for its low tendency to fall apart when cooked, it boasts a smooth and viscous texture when simmered due to its high water content and low fiber content. \"Furofuki Daikon\" is a typical regional dish made with Shogoin Daikon.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/2662/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/furofukidaikon_kyoto.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/2662/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -176,15 +218,30 @@
     "id": "kyoto-maff-hamonoyakimono_kyoto",
     "name": {
       "ja": "はもの焼き物",
-      "zh_tw": "はもの焼き物"
+      "kana": "はものやきもの",
+      "romaji": "Hamonoyakimono",
+      "zh_tw": "はもの焼き物",
+      "en": "Grilled Hamo (Pike Conger Eel)"
     },
     "prefecture": "kyoto",
     "category": "kyodo",
+    "summary": {
+      "text": "Pike conger eel, often referred to as Hamo, plays an essential role in Kyoto's cuisine. It thrives in the seas influenced by warm currents, and several tons are caught annually in the Tango waters. However, most of the Hamo consumed in Kyoto comes from the Seto Inland Sea or the Genkai Sea.Resembling eels or conger eels in shape, some Hamo can reach almost 2 meters in length. The larger ones are often over ten years old. These fish hide in sandy mud bottoms or rocky holes during the day and become active at night, favoring a diet of fish, shrimp, and crabs. With sharp teeth and a fierce temperament, Hamo may continue to move violently and even bite after being caught. Despite this ferocious appearance, the flesh is beautifully white with a delicate flavor.Preparing Hamo can be challenging due to its numerous small bones, but it has become an integral part of Kyoto's cuisine, largely because the resilient Hamo could be transported live to Kyoto from faraway places.Chefs use a unique technique called \"honekiri\" (bone cutting) to deal with the problematic small bones during cooking. Mastering this method requires skill, and it is often said that a Kyoto chef isn't fully trained until they have learned it.Though it's unclear when Hamo consumption began, a compilation from the latter part of the Edo period titled \"Hamu hyakuchin\" (Sea Eel Hundred Rarities) lists over 100 Hamo dishes. Traditional dishes such as blanched hamo no otoshi, shabu-shabu, sashimi, and others are still enjoyed today, with grilled Hamo being a standard offering.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/2663/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/hamonoyakimono_kyoto.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/2663/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -196,15 +253,27 @@
       "ja": "へしこ",
       "kana": "へしこ",
       "romaji": "Heshiko",
-      "zh_tw": "へしこ"
+      "zh_tw": "へしこ",
+      "en": "Heshiko"
     },
     "prefecture": "kyoto",
     "category": "kyodo",
+    "summary": {
+      "text": "Many are under the impression that fresh seafood cannot be obtained in Kyoto, but the Tango area facing the Sea of Japan is blessed with fertile fishing grounds thanks to the warm currents from Tsushima and the rivers flowing through the Tango Peninsula and Tamba plateau mountains. For example, the fishing industry in Kyoto Prefecture is wide-ranging, including fixed net fishing, offshore trawling, small boat trawling, shellfish farming, and longline fishing. A variety of seafood can be caught, such as snow crab, egg cockle, and amberjack. The fishermen have a custom of drying the seasonal fish they catch to use at home, and this is a tradition that continues to this day. Dried fish, dried sardines, and dried seaweed are well known as Tango specialties.\"Heshiko\" is eaten throughout the Tango area, especially in the town of Ine. \"Heshiko\" is a preserved food made by pickling fish such as mackerel and sardines in rice bran and salt for a long period of time. There are various theories about the origin of the name, such as that fishermen referred to the act of pickling fish in a barrel as \"heshikomu,\" which was then shortened to \"heshiko.\"\"Heshiko\" is richer in umami than raw mackerel before it is processed. The unique flavor and saltiness go well with rice and alcoholic drinks. The \"heshiko\" made in Ine uses domestic, Canadian, or Norwegian mackerel, which contain a lot of fat.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/3555/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/heshiko_kyoto.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/3555/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -214,15 +283,30 @@
     "id": "kyoto-maff-kamonasunodengaku_kyoto",
     "name": {
       "ja": "賀茂なすの田楽",
-      "zh_tw": "賀茂なすの田楽"
+      "kana": "かもなすのでんがく",
+      "romaji": "Kamonasunodengaku",
+      "zh_tw": "賀茂なすの田楽",
+      "en": "Kamo-nasu no Dengaku"
     },
     "prefecture": "kyoto",
     "category": "kyodo",
+    "summary": {
+      "text": "“Kamo-Nasu” is one of the most popular traditional vegetables in Kyoto. Characterized by its round shape with a diameter of over 10 cm, the eggplant has a firm, heavy weight, and does not fall apart when cooked, thus it is called “The queen of eggplants\" in the Kyoto area.According to one theory, the “Kamo-Nasu” was originally produced in” Serikawa”, “Shimotoba” Village, but was introduced to “Kamigamo” in the north and became a production center, hence the name, but this is not certain. The” Kamigamo” area is located on a fan-shaped alluvial plain between the “Kamo-Gawa” river to the west and the “Takano-Gawa” river to the east, and because the land was fertile, vegetables other than “Kamo-Nasu” , such as the traditional vegetable “Suguki”, have also been produced in the area for a long time. “Kamo-Nasu” are known for being difficult to cultivate because they produce only half as many fruits from a single eggplant as normal eggplants, and they also tend to lose their color and crack easily.A typical dish using Kamo eggplants is “Kamo-Nasu- Dengaku”. The eggplant goes well with oil, and its firm flesh allows the eggplant to be cooked slowly and still have a firm texture.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/5773/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/kamonasunodengaku_kyoto.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/5773/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -232,15 +316,30 @@
     "id": "kyoto-maff-kibimochi_kyoto",
     "name": {
       "ja": "きび餅・あわ餅・とち餅",
-      "zh_tw": "きび餅・あわ餅・とち餅"
+      "kana": "きびもちあわもちとちもち",
+      "romaji": "Kibimochiawamochitochimochi",
+      "zh_tw": "きび餅・あわ餅・とち餅",
+      "en": "Kibi-mochi / Awa-mochi / Tochi-mochi (Miscellaneous grains Mochi)"
     },
     "prefecture": "kyoto",
     "category": "sweets",
+    "summary": {
+      "text": "Kyoto Prefecture has the Tango Mountains in the north, the Tanba Mountains in the center, and a low mountain range of less than 1000 meters, and most of the area from the Chutan region to the Nantan region is mountainous. From the Tamba Mountains, large and small rivers, including the Katsura River, flow between the mountains, and satoyama (area between pristine nature and urban areas, made up of villages, farmland, and secondary forests etc.) are scattered throughout the prefecture.In mountainous areas where there is little flat land, rice and wheat cannot be harvested sufficiently, so mochi (rice cakes), were made from miscellaneous grains, such as \"kibi\" (common millet), \"awa\" (foxtail millet), or “tochi-no-mi\" (Japanese horse chesnuts).In times when rice could not be produced sufficiently, mochi were eaten as a substitute for the staple food. Mochi made with miscellaneous grains are eaten in many parts of Japan, other than Kyoto Prefecture.Miscellaneous grains, used to be grown everywhere, but since rice has been bred to be easier to grow, miscellaneous grains have conversely become scarce. In recent years, however, miscellaneous grains have been attracting more and more attention as a healthy food due to their high nutritional value.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/6727/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/kibimochi_kyoto.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/6727/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -252,15 +351,27 @@
       "ja": "きごしょう",
       "kana": "きごしょう",
       "romaji": "Kigosho",
-      "zh_tw": "きごしょう"
+      "zh_tw": "きごしょう",
+      "en": "Kigosho"
     },
     "prefecture": "kyoto",
     "category": "kyodo",
+    "summary": {
+      "text": "Fushimi Togarashi\" is a traditional Kyoto vegetable cultivated in the Fushimi Ward area of Kyoto City. Although the details are not clear, it is recorded in \"Yongshu fushi,\" a geographical journal compiled in 1684, that it was cultivated in Yamashiro-no-kuni (present-day southern part of Kyoto Prefecture). Kyoto Prefecture has designated vegetables that have been cultivated in the prefecture since ancient times as \"Kyoto's traditional vegetables\" and is attempting to brand them. In branding, the vegetables are defined as those introduced before the Meiji era, and are grown in all areas of Kyoto Prefecture, excluding mushrooms and ferns.While chili peppers are generally thought of as spicy, the Fushimi Togarashi is also known as \"Fushimi amanaga\" because it is not spicy and has a unique sweet taste. When ripe, the fruit turns red like a red pepper, but the pungency does not increase. The blue and red fruits are sometimes combined to add color to dishes.Compared to the \"Manganji Togarashi,\" which is also grown in Kyoto, it is slender and 10 to 15 cm long. In the market, it is known by the nickname \"Aoto.The young leaves are called \"Kigosho\" and together with the small fruits are used for food such as tsukudani. Fushimi Togarashi is often used, but other chili peppers may also be used. The leaves are tender and have a subtle chili pepper flavor and a distinctive bitterness.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/791/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/kigosho_kyoto.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/791/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -270,15 +381,30 @@
     "id": "kyoto-maff-korokakinamasu_kyoto",
     "name": {
       "ja": "古老柿なます",
-      "zh_tw": "古老柿なます"
+      "kana": "ころかきなます",
+      "romaji": "Korokakinamasu",
+      "zh_tw": "古老柿なます",
+      "en": "Korokaki-namasu"
     },
     "prefecture": "kyoto",
     "category": "kyodo",
+    "summary": {
+      "text": "\"Korokaki Persimmon\" are dried persimmon produced in Uji-Tawara Town using a type of astringent persimmon known as \"Tsurunoko.\" In a time when dried persimmon was not yet well-known, a certain girl was selling sweet dried persimmon. Impressed by their deliciousness, the villagers asked the girl to teach them how to make them. Later, as they followed the girl who had left, she disappeared at Zenjoji Temple and then reappeared as the goddess Kannon. It is said that from then on, the dried persimmon she conveyed was called \"Koroukaki\" (persimmon conveyed by a single girl). Another explanation for the name is that it comes from the rare method of drying without hanging them, known nationwide as \"Korokaki.\"While it's common to string and hang dried persimmon using ropes, Korokaki Persimmon is dried on multiple-layered shelves in a drying area called \"Kakiya.\" After drying, they are taken down from the Kakiya and further dried by rolling them on a sieve. This unique process led to the name \"Korokaki\" (rolling) Persimmon.Korokaki Persimmon is considered the origin of tea sweets, and their natural sweetness has become a standard for the sweetness of Japanese confections. While widely appreciated as tea sweets, during winter, they are often used in a dish called \"Korogashi Persimmon Namasu.\" The simple and rustic flavor of Korogashi Persimmon pairs well with daikon radish and carrots.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/4744/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/korokakinamasu_kyoto.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/4744/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -288,15 +414,30 @@
     "id": "kyoto-maff-kurigohan_kyoto",
     "name": {
       "ja": "栗ごはん",
-      "zh_tw": "栗ごはん"
+      "kana": "くりごはん",
+      "romaji": "Kurigohan",
+      "zh_tw": "栗ごはん",
+      "en": "Kuri Gohan(=Chestnut rice)"
     },
     "prefecture": "kyoto",
     "category": "kyodo",
+    "summary": {
+      "text": "One of Kyoto's specialties is the \"Tamba Kuri (chestnut)\" harvested in the Tamba region. \"Tamba Kuri\" does not refer to a specific variety but rather to chestnuts grown in the Tamba region. The history of these large and sweet chestnuts dates back to ancient times, with the name \"Tamba Kuri\" mentioned in the \"Engishiki (set of ancient Japanese governmental regulations).\" They were consumed among the nobility from around the Heian period. Even during the Edo period, they were highly valued and presented as offerings to the shogunate and imperial court.The Tamba Kuri continues to be recognized nationally as a branded chestnut. The Tamba region, surrounded by mountains and forming a basin, experiences significant temperature differences between day and night. The presence of rivers flowing through the mountains and fertile soil contribute to ideal conditions for enhancing the sweetness of crops, including chestnuts. In the Tamba region, various cooking methods have been employed for chestnuts, such as boiled, roasted, and candied chestnuts, enjoyed since ancient times. \"Kuri Gohan\" (chestnut rice) is also a beloved way to savor chestnuts. This dish involves adding \"Tamba Kuri\" to rice seasoned with a bit of salt, highlighting the sweetness of the chestnuts and making it an essential autumn specialty.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/6734/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/kurigohan_kyoto.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/6734/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -306,15 +447,30 @@
     "id": "kyoto-maff-kuromameni_kyoto",
     "name": {
       "ja": "黒豆煮",
-      "zh_tw": "黒豆煮"
+      "kana": "くろまめに",
+      "romaji": "Kuromameni",
+      "zh_tw": "黒豆煮",
+      "en": "Kuromameni"
     },
     "prefecture": "kyoto",
     "category": "kyodo",
+    "summary": {
+      "text": "Kurodaizu is a black soybean that comes mainly from the Tamba area, including Kyotamba Town and Nantan City. The cultivation of soybeans has a long history, and soybeans themselves were counted as one of the five main grains by the time of “Kojiki” (record of ancient matters, edited in 712) and “Nihonshoki” (chronicles of Japan, edited in 720), but it is not known when a variety of soybeans, the Tamba black soybean, was established. In the tenth century, it was distinguished from the soybean as a \"black bean\" in books, and in the sixteenth century, the name \"black bean\" was used as an offering to the court, suggesting that cultivation was already flourishing by this time. Because the land is fertile and they are cultivated in an inland climate with a large temperature difference between day and night, the grains grow large and have a rich taste. Because of the long cultivation period of six months and the technical difficulties, the beans were sometimes called \"Kurou mame (hardship beans)\" by some growers. Large, wrinkle-free, shiny, black soybeans have a great taste when cooked. Recipes such as edamame and bean rice with unripe beans are common, as they allow you to enjoy the flavors of the ingredients directly. In the New Year's Osechi cuisine, they are made into \"Kuromameni” (simmered black beans) and then served. “Kuromameni” represents a wish for longevity and good health, as well as a wish to be able to work as diligently as possible to get a deep suntan.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/404/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/kuromameni_kyoto.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/404/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -324,15 +480,30 @@
     "id": "kyoto-maff-manganzitougarashitojakonotaitan_kyoto",
     "name": {
       "ja": "万願寺とうがらしとじゃこの炊いたん",
-      "zh_tw": "万願寺とうがらしとじゃこの炊いたん"
+      "kana": "まんがんじとうがらしとじゃこのたいたん",
+      "romaji": "Manganjitogarashitojakonotaitan",
+      "zh_tw": "万願寺とうがらしとじゃこの炊いたん",
+      "en": "Taitan of Manganji Togarashi and Jako"
     },
     "prefecture": "kyoto",
     "category": "kyodo",
+    "summary": {
+      "text": "“Taitan of Manganji Togarashi and Jako” is a popular home-style simmered dish using Manganji Togarashi (Manganji red pepper), one of the brand products of Kyoto, and Jako (dried young sardines). \"Taitan\" refers to a side dish made by cooking it in such a way that the ingredients slowly soak up the soup stock. Because Manganji Togarashi is a summer vegetable, it is often served on the table in summer. It is the longest of the large sweet peppers; it is also slender, slim at the top and slightly curved all over, fresh dark green, glossy and taut, and refreshing looking. It is said to have been cultivated around the end of the Taisho period (1912-1926) in the Manganji area of Maizuru City, Kyoto Prefecture, as a result of the natural hybridization of “Fushimi Togarashi”, a traditional Kyoto vegetable, with California Wonder, a native of North America. It is a vegetable with a fresh taste and fleshy texture. Although it is called red pepper, it is not spicy and is safe for children to eat.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/416/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/manganzitougarashitojakonotaitan_kyoto.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/416/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -342,15 +513,30 @@
     "id": "kyoto-maff-matsutakegohan_kyoto",
     "name": {
       "ja": "松茸ごはん",
-      "zh_tw": "松茸ごはん"
+      "kana": "まつたけごはん",
+      "romaji": "Matsutakegohan",
+      "zh_tw": "松茸ごはん",
+      "en": "Matsutake Rice"
     },
     "prefecture": "kyoto",
     "category": "kyodo",
+    "summary": {
+      "text": "Matsutake mushroom production thrives in the Nantan region's city of Nantan and the cities of Ayabe and Fukuchiyama in the Chutan region. These regions market their mushrooms as \"Tamba matsutake,\" known for their fragrant aroma and elastic texture. The scent is particularly prized, and it's often said that a car filled with freshly harvested Tamba matsutake will be permeated with its rich fragrance. Matsutake is also produced in the Yamashiro region, in the southern part of Kyoto Prefecture, and is sold as \"Yamashiro matsutake.\" Its taste and flavor are considered on par with Tamba matsutake.Before World War II, the prefecture's matsutake production exceeded 1200 tons per year. However, in recent years, this number has plummeted to just a few tons. A significant factor contributing to this decline is the lifestyle changes resulting from rapid economic growth. As the use of electricity, oil, and propane has increased, pine leaves and branches are no longer utilized as fuel. This leaves more pine forests untouched, creating an environment in which matsutake, preferring dry and arid soil, struggles to grow amidst various trees and weeds. Furthermore, recent insect damage to pine trees has caused many trees to die, further aggravating the decline in production. Even today, cultivating matsutake remains unfeasible. Maintaining mountains and pine forests to foster favorable growing conditions is still necessary. In response, a project to improve the matsutake environment was initiated across the prefecture in 1978 (Showa 53), involving measures such as the removal of mid-layer trees and humus. This is known as the \"Kyoto method.\"Against this backdrop, kyoto's matsutake is highly valued as a premium ingredient. When the season arrives in the fall, it's served in ryotei and kappo restaurants in dishes like “matsutake rice”, “osumashi”, and “sukiyaki”.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/2661/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/matsutakegohan_kyoto.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/2661/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -360,15 +546,30 @@
     "id": "kyoto-maff-mibunanokarashiae_kyoto",
     "name": {
       "ja": "壬生菜のからし和え",
-      "zh_tw": "壬生菜のからし和え"
+      "kana": "みぶなのからしあえ",
+      "romaji": "Mibunanokarashiae",
+      "zh_tw": "壬生菜のからし和え",
+      "en": "Mibuna Mustard Salad"
     },
     "prefecture": "kyoto",
     "category": "kyodo",
+    "summary": {
+      "text": "Mibuna is a traditional vegetable from Kyoto, originating in the Mibu area of Kyoto City. It is believed to have been developed in the 1800s as a natural hybrid of mizuna. The exact time when it was first distinguished from mizuna is unclear, but documents from 1804 (Bunka 1) mention \"mibuna produced in Mibu.\"Unlike mizuna, mibuna has round, spoon-shaped leaves without notches at the edges. Its taste is spicier and slightly more bitter compared to the refreshing flavor of mizuna. Mibuna is cultivated throughout Kyoto City, but the main production area within Kyoto Prefecture is in Hiyoshi Town, Nantan City. While some is grown outdoors for pickling, the primary cultivation method is year-round greenhouse farming, allowing for approximately five harvests a year.Kyoto Prefecture has recognized vegetables that have been grown in the area for many generations as \"Traditional Vegetables of Kyoto.\" The prefecture is actively working on their branding, including all vegetables grown within its borders prior to the Meiji era, except for mushrooms and ferns. Mibuna is acknowledged as one of these traditional vegetables.Utilized in a wide array of dishes, mibuna features in mibuna mustard salad, mixed dishes, pickles, salads, and stir-fries.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/2660/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/mibunanokarashiae_kyoto.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/2660/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -378,15 +579,30 @@
     "id": "kyoto-maff-minazuki_kyoto",
     "name": {
       "ja": "水無月",
-      "zh_tw": "水無月"
+      "kana": "みなづき",
+      "romaji": "Minazuki",
+      "zh_tw": "水無月",
+      "en": "Minazuki"
     },
     "prefecture": "kyoto",
     "category": "kyodo",
+    "summary": {
+      "text": "Various local confections have developed in Kyoto, including rakugan, which is made by molding dough mixed with sugar and syrup in a wooden mold; wasanbon, which is made by molding high-quality wasanbon sugar in a wooden mold; and ariheito, which is made by boiling sugar and syrup together and molding it by hand. Mizunazuki\" is another local confection traditionally eaten throughout the prefecture. It is made of white Uiro (rice cake) topped with azuki beans and cut into triangles.During the Heian period (794-1185), the court people used to take a sip of ice stored in an icehouse in the Nishigamo district of Kyoto's Kita Ward to get rid of the heat. At that time, ice was a luxury item, and the common people rarely had the opportunity to eat it. It is said that this is why people began to eat \"mizunashi\" (waterless moon), which is shaped like ice.In Kyoto, on June 30, \"Nagoshi-no-harae,\" a Shinto ritual to purify the \"sins and impurities\" of the six months from January to June, is held at shrines in various parts of the city. During this ritual, mizunagetsu is eaten to drive away sins and pray for good health and good fortune. The triangular shape of mizunashizuki is a symbol of ice to ward off the heat, and the red color of the azuki beans is meant to drive away evil spirits.Kyoto Prefecture has designated mizunazuki as a \"traditional Kyoto food\" as it is an artistic food based on the culture of the imperial court and the tea ceremony nurtured in Kyoto. In designating it as such, the prefecture has established the following criteria: all products must be made by hand, and wooden molds must be hand-carved.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/1926/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/minazuki_kyoto.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/1926/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -396,15 +612,30 @@
     "id": "kyoto-maff-nattomochi_kyoto",
     "name": {
       "ja": "納豆餅",
-      "zh_tw": "納豆餅"
+      "kana": "なっとうもち",
+      "romaji": "Nattomochi",
+      "zh_tw": "納豆餅",
+      "en": "Natto-Mochi (Fermented soybeans rice cake)"
     },
     "prefecture": "kyoto",
     "category": "sweets",
+    "summary": {
+      "text": "There are many theories about the birthplace of natto throughout Japan, and Kyoto Prefecture is said to be one of them. It is said when the monk emperor Kōgon (1313-1364), who was undergoing ascetic training at Joshoko Temple in the Keihoku district of Ukyo Ward in Kyoto City, ate boiled beans wrapped in straw wrappings donated by the villagers, which became stringier and more delicious as the days went by. In the temple's stored picture scrolls, there is a depiction of the head priest serving straw-wrapped “Natto” (fermented soybeans). Over time, this delicacy became an offering to the Kyoto Imperial Palace, leading to its name \"Natto\" (meaning to offer beans) according to the tradition. Therefore, at that time, the awareness that it was a precious food to be eaten on New Year's Day and other special occasions took root among the common people.Furthermore, the Keihoku area is the birthplace of the \"Yamaguni-tai\", a group of peasant soldiers who fought in the Boshin War (1868-1869). There is an anecdote that these soldier-farmers carried “Natto” with them when they went to battle. The name \"Yamaguni Natto,\" which has become a local specialty in the Keihoku area, originates from this historical connection.At a time when food was scarce, \"Natto\", a valuable source of protein, was wrapped in a rice cake that was good for the stomach and eaten as a “Natto-Mochi”, which was also favored by peasant soldiers. \"Natto-Mochi\" was as big as a person's face those days and was said to have been eaten over the three days of the New Year.In addition to the Keihoku area, Hiyoshi town and Miyama town in Nantan City also have the custom of making \"Natto-Mochi\", and each region has its own method of making.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/5783/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/nattomochi_kyoto.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/5783/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -414,15 +645,27 @@
     "id": "kyoto-maff-nishinnasu_kyoto",
     "name": {
       "ja": "にしん茄子",
-      "zh_tw": "にしん茄子"
+      "zh_tw": "にしん茄子",
+      "en": "Nishin Nasu/Nasu to Nishin no Taitan (Herring and Eggplant)"
     },
     "prefecture": "kyoto",
     "category": "kyodo",
+    "summary": {
+      "text": "Combining seasonal ingredients and compatible ingredients is called “deaimon” in the world of Kyoto cuisine. There is ”taikabura” which combines sea bream and turnips, “ebi-imo to bodara no taitan” (shrimp-shaped taro and cod), ”buri daikon” (yellowtail and daikon cooked with soy sauce), etc. “Nishin nasu,” which combines fat-rich dried sliced herring and eggplants which readily absorb fat, is also beloved as a deaimon.Dried sliced herring is a preserved food where the herring has its innards removed and is then dried. From the Edo Period through the Meiji Period, it was one of the foodstuff that was brought by merchant fleet and cargo ships which came and went between Hokkaido and Kansai; it was made much of in Kyoto City, which was inland and where it was difficult to obtain seafood. Regional cuisines that use herring have many divergences; that is one such circumstance. It is a traditional ingredient indispensable to Kyoto, used for example in “yaki nishin” where mirin and soy sauce are poured over herring and then grilled, “nishin soba” where herring is arranged on soba, ”nishin no konnmaki” where herring is wrapped in kombu seaweed and then stewed, and more.“Nishin nasu” becomes a delicacy when using “Yamashina eggplant” or “Kamo eggplant” which are Kyoto City’s native species. “Yamashina eggplant” outdid other varieties during the end of the Meiji Period to the beginning of the Showa Period, and at one point it made up 60-70% of the eggplant cultivated in the city. Its characteristic is its soft, melt-in-your mouth flesh. ”Kamo eggplant” is a type of round eggplant made from long ago in Kamigamo, Kita Ward. It has hard, tight flesh and is sweet.Vegetables cultivated within Kyoto Prefecture from long ago are designated “Kyo no dento yasai” (Kyoto’s traditional vegetables), and are seeking branding. The branding applies to vegetables introduced before the Meiji Period within all areas of Kyoto Prefecture, excluding mushrooms and ferns; “Yamashina eggplant” and ”Kamo eggplant” also fall under this certification.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/3559/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/nishinnasu_kyoto.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/3559/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -434,15 +677,27 @@
       "ja": "おはぎ",
       "kana": "おはぎ",
       "romaji": "Ohagi",
-      "zh_tw": "おはぎ"
+      "zh_tw": "おはぎ",
+      "en": "Ohagi"
     },
     "prefecture": "kyoto",
     "category": "kyodo",
+    "summary": {
+      "text": "\"Ohagi\" is a well-loved dish throughout Japan. The red color of azuki beans has long been believed to ward off evil spirits, and as such, it has been incorporated into various seasonal celebratory dishes. During the spring and autumn equinoxes, \"Ohagi\" is offered as an ancestral ritual. This practice is said to be rooted in the belief that the azuki beans, known for their protective properties, combined with the use of sugar, which was considered precious at the time, conveyed gratitude to ancestors.\"Ohagi\" is also known as \"Bota-mochi,\" and there are various theories about its origin. One representative explanation is that it is called \"Bota-mochi\" in spring and \"Ohagi\" in autumn, reflecting the change in seasonal names. In spring, it is named after the peony flowers (“Botan”) that bloom during that time, while in autumn, it is named after the bush clover flowers (“Hagi”).Kyoto is a renowned region to produce azuki beans for \"Ohagi,\" especially the \"Tanba Dai-nagon Azuki\" variety, which is known as a brand of azuki beans nationwide. Cultivated mainly in the mountainous basins of the Naka-tan and Minami-tan regions, the region's significant temperature fluctuations between morning and evening throughout the year contribute to the growth of large, beautifully shaped azuki beans with a strong sweetness, including those resembling traditional court caps (\"Eboshi\") or straw bags for rice (\"Kome-dawara\").The \"Tanba Dai-nagon Azuki\" is said to have taken its name from \"Dai-nagon\", a high rank that it is not customary to commit \"Seppuku\" (ritual suicide), because its skin does not tear easily when cooked, and it is hard to \"cut off the belly\".",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/6036/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/ohagi_kyoto.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/6036/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -454,15 +709,27 @@
       "ja": "さばずし",
       "kana": "さばずし",
       "romaji": "Sabazushi",
-      "zh_tw": "さばずし"
+      "zh_tw": "さばずし",
+      "en": "Sabazushi (Mackerel Sushi)"
     },
     "prefecture": "kyoto",
     "category": "kyodo",
+    "summary": {
+      "text": "In Wakasa Bay, mackerel has been abundantly caught and has been a popular fish among the common people since ancient times. In an era when refrigeration technology was not well developed, mackerel, known for its quick deterioration, led to creative methods for prolonging its enjoyment. One such dish that emerged as a result of this ingenuity was \"heshiko\", where mackerel is first salted and then further pickled in bran. Additionally, another preservation method involved pickling the fish in vinegar or grilling it.Along the route known as the \"saba kaido\" (mackerel highway), used to transport seafood from Wakasa Bay (Obama) to Kyoto, mackerel was salted, pickled in vinegar, or grilled to transport the products inland. Consequently, in the vicinity of the Saba Kaido, various regional dishes incorporating mackerel, such as \"saba meshi\" (mackerel rice) and \"narezushi\", have been passed down.One of these dishes is said to be \"sabazushi\", believed to have originated in the Edo period. The mackerel, salted during transportation along the Saba Kaido, would reach the destination in Kyoto in approximately 2 to 3 days, developing just the right level of salinity. Using this salted mackerel, \"sabazushi\" was created, giving rise to a cultural tradition among commoners to savor the precious blue fish. Even in the present day, with the advancement of refrigeration technology, it continues to be cherished by many.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/7191/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/sabazushi_kyoto.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/7191/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -472,15 +739,30 @@
     "id": "kyoto-maff-sanshonohanotsukudani_kyoto",
     "name": {
       "ja": "山椒の葉の佃煮",
-      "zh_tw": "山椒の葉の佃煮"
+      "kana": "さんしょうのはのつくだに",
+      "romaji": "Sanshonohanotsukudani",
+      "zh_tw": "山椒の葉の佃煮",
+      "en": "Sansho no Ha no Tukudani"
     },
     "prefecture": "kyoto",
     "category": "kyodo",
+    "summary": {
+      "text": "Kyoto Prefecture has the “Tango” Mountains in the north, the” Tamba” Mountains in the center, and a low mountain range of less than 1,000 m. Most of the Nantan area from Nakatan to Nantan is mountainous. The Tamba Mountains are interspersed with “Satoyama”villages, and rivers of all sizes, including the Katsura River, flow between the mountains. The Tamba mountains are rich in mountain produce, and “Sansho” (Japanese pepper) trees have been growing wild throughout the region since ancient times and have been used as an ingredient to accentuate dishes.“Sansho” sprouts in spring, and these young shoots are called \"kinome,\" or \"sprouts of trees,\" and are used in dishes such as simmered or grilled dishes,” kinome miso”, and vinegared dishes to enjoy their aroma. In April, it produces small yellow flowers. Known as \"Hana-Sansho,\" the flowers as well as the leaves are picked together. In May, the light green color of \"Jitsu-Sansho\"(berries of Sansho) becomes available. The season for the Sansho berry is short, so that is usually made into” Tsukudani” (food boiled in soy sauce) or” Chirimen -Zansho” (dried Japanese pepper) while it is still soft. In autumn, \"Wari-Sansho\"(cracked pepper) begins to appear on store shelves. Sansho can be enjoyed in a variety of dishes depending on the harvest season, and is widely known as an indispensable ingredient in Kyoto cuisine and “Obanzai”.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/5766/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/sanshonohanotsukudani_kyoto.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/5766/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -490,15 +772,30 @@
     "id": "kyoto-maff-semmaizuke_kyoto",
     "name": {
       "ja": "千枚漬け",
-      "zh_tw": "千枚漬け"
+      "kana": "せんまいづけ",
+      "romaji": "Senmaizuke",
+      "zh_tw": "千枚漬け",
+      "en": "Senmaizuke"
     },
     "prefecture": "kyoto",
     "category": "kyodo",
+    "summary": {
+      "text": "Senmaizuke\" is a pickle made by pickling thinly sliced Shogoin turnips in salt. It is one of the three most popular pickles in Kyoto, along with \"sukkizuke\" and \"shibazuke\". Unlike conventional pickles, it is not intended to be preserved for a long period of time and is delicately pickled.It is said to have been invented by Ohfuji Tozaburo, a chef at the Imperial Palace during the Edo period (1603-1868). Later, Ohfuji Tozaburo became a pickles merchant and sold \"Senmai-zuke\" (pickled sliced radish), which quickly became popular. The product quickly became popular and was even selected as one of the national specialties at the National Exposition held in Kyoto in 1890.The turnip used is the traditional Kyoto vegetable \"Shogoin turnip. It is said that this turnip originated in the Kyoho period when a farmer in Shogoin, Sakyo-ku brought back seeds of Omi turnips that had been cultivated in Otsu City, Shiga Prefecture, and started growing them. It is the largest turnip in Japan, weighing from 4 to 5 kg in large pieces, and has a soft and elegant flavor. As \"senmaizuke\" became popular, its cultivation flourished. In Shino-machi, Kameoka City, where Shogoin turnips are famous, production began soon after World War II. Most of the \"senmaizuke\" produced in Kyoto comes from this area. It has been certified as a \"traditional vegetable of Kyoto\" as it has been eaten in Kyoto since ancient times.Kyoto Prefecture designates traditional foods made with traditional ingredients and techniques as \"traditional Kyoto foods\" and Senmaizuke is one of them.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/1900/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/semmaizuke_kyoto.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/1900/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -508,15 +805,30 @@
     "id": "kyoto-maff-shibazuke_kyoto",
     "name": {
       "ja": "しば漬け",
-      "zh_tw": "しば漬け"
+      "kana": "しばづけ",
+      "romaji": "Shibazuke",
+      "zh_tw": "しば漬け",
+      "en": "Shibazuke"
     },
     "prefecture": "kyoto",
     "category": "kyodo",
+    "summary": {
+      "text": "In Kyoto, where underground water flows, vegetables have been cultivated in various parts of the city since ancient times. As a result, a culture of pickles using vegetables has developed. Shibazuke\" is one of Kyoto's representative pickles, and along with \"sukkizuke\" and \"senmaizuke,\" is regarded as one of the three most popular pickles in Kyoto. Shibazuke is made by pickling eggplant, cucumber, myoga, etc. in salt with shiso leaves. It is characterized by its bright purple color and sour taste.The Ohara area in Sakyo-ku, Kyoto City is known as a production center of \"aka shiso\" (red perilla). It is highly valued for its color and aroma, and is in high demand both within and outside of the prefecture. The Ohara area's red shiso is considered the closest to the original variety because it has been cultivated more than 800 times and because the area's location in a basin prevents pollen from flying in from outside the region.Shibazuke is said to have been invented by Seio Daishi, a monk at the famous Sanzen-in Temple in Ohara. The name is said to have originated with Kenreimonin, the empress of Emperor Takakura. When local residents presented Kenreimonin, who resided quietly at Jakkoin Temple in Ohara, with a pickle made from shiso, she was delighted with its taste. The local people were so pleased with the taste that they named the dish \"Murasaki haazuke\" (purple leaf pickles) after the bright purple color. Because of this, \"shibazuke\" has become a staple in Ohara area households.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/1905/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/shibazuke_kyoto.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/1905/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -526,15 +838,30 @@
     "id": "kyoto-maff-shiromisonozoni_kyoto",
     "name": {
       "ja": "白味噌の雑煮",
-      "zh_tw": "白味噌の雑煮"
+      "kana": "しろみそのぞうに",
+      "romaji": "Shiromisonozoni",
+      "zh_tw": "白味噌の雑煮",
+      "en": "Zoni made with white miso"
     },
     "prefecture": "kyoto",
     "category": "kyodo",
+    "summary": {
+      "text": "Zoni is unique in its ingredients in each region of Japan. The ingredients and taste of the soup stock, the ingredients that go into it, and the shape of the rice cake vary from region to region. The custom of eating zoni with rice cakes on the first three days of the New Year is said to have existed in the Heian period (794 - 1185). Later, in the Muromachi period (1336-1573), zoni became a celebratory meal for samurai families, incorporating a variety of good luck ingredients and taking root in many areas. The zoni that is eaten at New Year in Kyoto is a \"Zoni made with white miso”, which includes a round rice cake, kashira-imo (parent taro), daikon (Japanese radish) and a branded Kyoto vegetable, Kintoki carrot. A round rice cake represents a wish for happiness and long life, a kashira-imo means prosperity of descendants and success in life, and a round slice of daikon means happiness, and a slice of daikon in the shape of a tortoise shell means long life. Kintoki carrot is sometimes included to ward off evil because of its vivid red color. White miso is said to have originated in Kyoto and has been made since the Heian period. A luxury product made from rice, white miso was mainly consumed by the nobility since it was valuable at the time. Compared to other miso developed for storage purposes, such as barley miso and soybean miso, the fermentation period is shorter (one week to 10 days) and less salt is used, resulting in a mellow and sweet finish.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/423/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/shiromisonozoni_kyoto.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/423/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -544,15 +871,30 @@
     "id": "kyoto-maff-sugukizuke_kyoto",
     "name": {
       "ja": "すぐき漬け",
-      "zh_tw": "すぐき漬け"
+      "kana": "すぐきづけ",
+      "romaji": "Sugukizuke",
+      "zh_tw": "すぐき漬け",
+      "en": "Sugukizuke (suguki pickles (turnip greens))"
     },
     "prefecture": "kyoto",
     "category": "kyodo",
+    "summary": {
+      "text": "\"Suguki\" is a type of turnip greens, a traditional vegetable in Kyoto, known for its distinctive acidity. It is rarely consumed outside of pickles, and \"Suguki Pickles\" is as famous as \"Senmaizuke\" and \"Shibazuke,\" making it part of the trio of famous pickles in Kyoto. There are various theories about the origin of Suguki, including one that dates back to the Azuchi-Momoyama period when the prominent family of Kamigamo Shrine (a family serving the shrine) began cultivating it from the wild plants growing along the Kamo River, and another theory that involves receiving seeds from the Kyoto Imperial Palace.\"Suguki Pickles,\" which involves pickling Suguki simply with salt, is said to have originated in the early Edo period. Initially, it was a high-class pickle made exclusively by the shrine family and presented as an offering to the Imperial Palace. By the late Edo period, it started to be made by farmers around Kamigamo Shrine as well. However, due to a prohibition outlined in the \"Okakizuke-koujougaki\" that restricted taking Suguki out of the village, production was limited. After the Meiji Restoration, the popularity of Suguki increased, and it became widely available in the city.The making of \"Suguki Pickles\" involves three main steps: pre-pickling, primary pickling, and maturing in a warming chamber called \"muro.\" The muro is an artificially heated chamber maintained at around 40°C, promoting lactic acid fermentation. This method is now common, allowing Suguki to be ready to eat in about two weeks. In the past, instead of the muro, a natural fermentation method called \"Jikounare\" was used, allowing fermentation to occur naturally based on ambient temperatures. In this case, Suguki would be ready from spring to summer, and in the Edo period, it was cherished as a delicacy during the summer.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/4751/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/sugukizuke_kyoto.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/4751/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -562,15 +904,27 @@
     "id": "kyoto-maff-taikabura_kyoto",
     "name": {
       "ja": "鯛蕪",
-      "zh_tw": "鯛蕪"
+      "zh_tw": "鯛蕪",
+      "en": "Taikabura (Sea Bream and Shogoin Turnip Stew)"
     },
     "prefecture": "kyoto",
     "category": "kyodo",
+    "summary": {
+      "text": "The stew made from Shogoin turnip and sea bream, known locally as \"Taikabura,\" has long been a beloved dish in Kyoto City. A classic winter favorite, this stew allows you to savor the rich umami of sea bream along with the gentle, mellow flavor of turnip. The harmonious pairing of sea bream and turnip, enhancing each other's flavors, is referred to as \"Deaimon.\"The Shogoin turnip utilized in Taikabura is among Kyoto's traditional vegetables. Its roots can be traced back to the Kyoho era (1716-1736), when a farmer from the Shogoin area of Sakyo Ward brought back seeds of the Omi turnip, then cultivated in Otsu City, Shiga Prefecture. Unlike regular turnips, it has an unusual oval shape, a distinct feature that is believed to be a result of deliberate cultivation practices.Renowned as the largest turnip in Japan, weighing from 4 to 5 kg, the Shogoin turnip is celebrated for its delicate and refined taste. Its cultivation gained popularity during the Tenpo era (1830-1844), especially for the Shogoin turnip pickles, known as \"Senmaizuke.\" Farmers use specific techniques in growing these turnips, diligently heaping soil and fertilizing to achieve their beautiful form. The Shino area of Kameoka City has become famous for Shogoin turnip production since its inception shortly after World War Two, with the unique temperature, fog, climate, and geography all contributing to ideal growth conditions. Most of the Senmaizuke produced in Kyoto is made from turnips harvested in this region. Kyoto Prefecture recognizes these turnips as part of its \"Kyoto traditional vegetables.\" These include vegetables that were introduced to today's Kyoto prefecture before the Meiji period and excludes mushrooms and ferns. The Shogoin turnip is a prime example of these.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/2664/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/taikabura_kyoto.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/2664/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -580,15 +934,30 @@
     "id": "kyoto-maff-takenokonokinomeae_kyoto",
     "name": {
       "ja": "たけのこの木の芽和え",
-      "zh_tw": "たけのこの木の芽和え"
+      "kana": "たけのこのきのめあえ",
+      "romaji": "Takenokonokinomeae",
+      "zh_tw": "たけのこの木の芽和え",
+      "en": "Kinome-ae of bamboo shoots"
     },
     "prefecture": "kyoto",
     "category": "kyodo",
+    "summary": {
+      "text": "The \"Kyoto bamboo shoots\" are known for their soft, white flesh and lack of bitterness, and are cultivated in a unique way using the moso bamboo variety. The Kyoto-style softening method is used including processes such as “Shindome” to stop the ends of the parent bamboo, “Shikiwara” to spread straw over the entire field, and “Tsuchiire” which deepens the soil layer and prevents the skin of the bamboo shoots from oxidizing and turning black. In addition to this meticulous work, the Nishiyama area, the largest production area for bamboo shoots in Kyoto Prefecture, has acidic soil with good drainage and high magnesium content, and many hills with good sunshine, which makes it possible to grow high-quality bamboo shoots. As the region is famous for its bamboo shoots, there is a tradition of tasting them in various ways in spring when they are in season. If you are lucky enough to get some freshly harvested bamboo shoots, they are served as popular dishes such as sashimi, “bamboo rice” and “Wakatakeni” (simmered bamboo shoots). “Kinome-ae of bamboo shoots” is very popular as a reminder of the arrival of spring. It is a dish of bamboo shoots dressed with Kinome (leaves of Japanese pepper) which are also in season in spring. “Kinome-ae\" is a local dish that is so widely and commonly known that it reminds people of bamboo shoots.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/410/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/takenokonokinomeae_kyoto.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/410/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -598,15 +967,30 @@
     "id": "kyoto-maff-takenokotofuki_kyoto",
     "name": {
       "ja": "たけのことふき・生節の炊いたん",
-      "zh_tw": "たけのことふき・生節の炊いたん"
+      "kana": "たけのことふきなまぶしのたいたん",
+      "romaji": "Takenokotofukinamabushinotaitan",
+      "zh_tw": "たけのことふき・生節の炊いたん",
+      "en": "Takenoko to Fuki, Namabushi no Taitan"
     },
     "prefecture": "kyoto",
     "category": "kyodo",
+    "summary": {
+      "text": "Kyoto's bamboo shoots are particularly renowned for their high quality nationwide. It is said that they were introduced to Kyoto during the era of Emperor Saga (810 to 823). According to one account, the founder of Kaiinji Jakusho-in temple in Nagaokakyo City, Douyuu, brought back Mosochiku (Moso bamboo) from China, which became the catalyst for its spread in the Kansai region.Nagaokakyo City is famous as a production area for bamboo shoots. The bamboo shoots in the Otokuni area of Nagaokakyo City adopt a unique cultivation method called the \"Kyoto-style softening cultivation method.\" The process begins with selecting parent bamboo shoots in early April, followed by steps such as fertilization, thinning, and adding soil. The bamboo shoots' growth is monitored until around January, with harvesting taking place in early March. The distinctive feature is the meticulous care throughout the year, including the use of straw and grass, and soil addition in various stages. Additionally, the western part of the region, extending to the Nishiyama mountain range, has many bamboo groves with acidic clay soil. With good drainage and sunlight, it provides an environment suitable for bamboo shoot cultivation.The \"Takenoko to Fuki, Namabushi no Taitan\" dish is a local specialty unique to Kyoto, which is far from the sea. \"Namabushi\" refers to a processed item where fresh bonito is filleted, then subjected to heating processes such as steaming or boiling, and smoked (roasted) only once. Repeating the smoking process multiple times results in firm bonito flakes. While it is commonly known as Namabushi in Eastern Japan, it refers to the same processed item called \"Namaribushi.\" While bonito flakes are often used for making dashi (Japanese soup stock), in the case of Namabushi, the flakes are loosened and used in various dishes.The season for bamboo shoots coincides with the time when Namabushi is distributed, making them a perfect match. Additionally, Fuki is at its softest during this time.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/4738/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/takenokotofuki_kyoto.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/4738/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -616,15 +1000,30 @@
     "id": "kyoto-maff-ujikintoki_kyoto",
     "name": {
       "ja": "宇治金時",
-      "zh_tw": "宇治金時"
+      "kana": "うじきんとき",
+      "romaji": "Ujikintoki",
+      "zh_tw": "宇治金時",
+      "en": "Ujikintoki (Shaved ice)"
     },
     "prefecture": "kyoto",
     "category": "kyodo",
+    "summary": {
+      "text": "Uji tea is one of Japan's representative high-grade teas, and its cultivation began in 1191 when Zen monk Eisai brought back tea seeds from the sect of Zen Buddhism, and priest Meie sowed them in Toganoo, Ukyo-ku, Kyoto City. During the reigns of Ashikaga Yoshimitsu and Yoshimasa, tea cultivation was encouraged and tea gardens were opened in Uji City. As the custom of tea drinking spread, Uji tea became a first-class product used as a gift. People also enjoyed \"tea fighting,\" in which they would try to guess where the tea was grown. The \"chanoyu,\" or the appreciation of tea utensils and decorations for the tea ceremony, was born and spread to the masses. In the mid-Edo period, the \"Uji method\" was established by Nagatani Soen. This method involved rubbing steamed tea sprouts over a roasting furnace and then drying them. Tea made using this method became popular in Edo (Tokyo) and was well known throughout the country.Today, Uji City, Wazuka Town, Minamiyamashiro Village, and other areas in the Yamashiro region of southern Kyoto Prefecture, as well as the Nakatan and Tango regions, are the main tea-producing areas.There are various types of Uji tea. There are sencha, made by steaming and rubbing sprouts grown in the open air; gyokuro, made by covering the sprouts to prevent direct sunlight; tencha, made by avoiding direct sunlight like gyokuro and not rubbing the steamed leaves; and matcha, a powdered form of tencha.Uji matcha is the highest grade of tea, and is also used to make ice cream and ice cream. Uji Kintoki, shaved ice topped with Ogura-an (sweet bean paste) and matcha syrup, is a classic matcha-based sweet. It is served at cafes and tea stores in Kyoto City and other parts of the prefecture.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/797/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/ujikintoki_kyoto.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/797/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -634,15 +1033,30 @@
     "id": "kyoto-maff-zuikinotaitan_kyoto",
     "name": {
       "ja": "ずいきの炊いたん",
-      "zh_tw": "ずいきの炊いたん"
+      "kana": "ずいきのたいたん",
+      "romaji": "Zuikinotaitan",
+      "zh_tw": "ずいきの炊いたん",
+      "en": "Zuiki no Taitan"
     },
     "prefecture": "kyoto",
     "category": "kyodo",
+    "summary": {
+      "text": "\"Zuiki no Taitan\" is a simmered dish made with the stalk of the taro plant, known as \"zuiki,\" and is a home-cooked dish enjoyed in households. \"taitan\" refers to a dish that is slowly simmered to allow the flavors to thoroughly penetrate the food.The stalks of Ebiimo (a traditional Kyoto taro variety) are also used as zuiki and are a crucial ingredient in obanzai, traditional Kyoto side dishes. When selecting zuiki, it is advisable to choose ones with a firm and thick stem. The crisp texture and refreshing taste are favored, especially during the summer as obanzai. In addition to \"Zuiki no Taitan,\" other dishes like pickled zuiki in plum vinegar and sesame dressing are also popular.Furthermore, at Kitano Tenmangu Shrine in Kyoto, the \"Zuiki Festival\" is held in gratitude for a bountiful harvest in autumn. The highlight of this festival is a portable shrine with a roof made of thick red zuiki. The impressive shrine, with its roof crafted from sturdy red zuiki and various Kyoto vegetables, is a sight to behold.Dried zuiki is believed to be consumed by postpartum women to assist in the recovery from childbirth.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/4600/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/zuikinotaitan_kyoto.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/4600/index.html",
         "fetched_at": "2026-09-29"
       }
     ],

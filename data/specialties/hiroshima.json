@@ -85,19 +85,20 @@
       "ja": "美酒鍋",
       "kana": "びしゅなべ",
       "romaji": "Bishunabe",
-      "zh_tw": "美酒鍋"
+      "zh_tw": "美酒鍋",
+      "en": "Bisyunabe(Sake Hot Pot)"
     },
     "prefecture": "hiroshima",
     "category": "sake",
     "summary": {
-      "text": "美酒鍋（びしゅなべ、びしょなべ）とは、広島県東広島市の郷土料理。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E7%BE%8E%E9%85%92%E9%8D%8B",
-      "license": "CC BY-SA 4.0",
+      "text": "Sake hot pot is a simple dish made by cooking chicken, gizzard, pork, and vegetables with a straightforward seasoning of salt, pepper, and sake. It's light and lets you enjoy the natural flavors of the ingredients. It's said to have originated as a staff meal invented by a sake brewer in Nishijo, Hiroshima City, to satisfy hunger during breaks from sake-making. The simple seasoning is designed to not affect the ability to taste sake. Because the alcohol evaporates when heated, even people who aren't fond of alcohol and a wide range of age groups can enjoy it. The name comes from the Japanese word \"bisho\", meaning wet, referring to brewery workers who often got soaked with water due to their work. Since they would eat this hot pot, it became known as \"bisho nabe.\" The characters \"美酒\" (\"sake\" and \"beauty\") were added in recent years. Nishijo, known for its sake brewing, is a renowned brewing area comparable to \"Nada of Hyogo\" and \"Fushimi of Kyoto.\" It has excelled in quality, monopolizing top positions in national sake competitions from the Meiji to Taisho eras, thus elevating the reputation of Sake City Nishijo. It's also famous for being called the \"New Sake Capital\" by the poet Kawahigashi Hekigoto, who visited Nishijo at the beginning of the Showa era.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/2806/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
       "fetched_at": "2026-09-29"
     },
     "source_type": "kyodo_ryori",
-    "kana_source": "wikipedia",
+    "kana_source": "maff",
     "images": [
       {
         "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b0/%E7%BE%8E%E9%85%92%E9%8D%8B%EF%BC%88bisyonabe%29.jpg/960px-%E7%BE%8E%E9%85%92%E9%8D%8B%EF%BC%88bisyonabe%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -112,11 +113,11 @@
         "fetched_at": "2026-09-29"
       },
       {
-        "url": "https://www.wikidata.org/wiki/Q11609405",
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/2806/index.html",
         "fetched_at": "2026-09-29"
       },
       {
-        "url": "https://ja.wikipedia.org/wiki/%E7%BE%8E%E9%85%92%E9%8D%8B",
+        "url": "https://www.wikidata.org/wiki/Q11609405",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -126,15 +127,27 @@
     "id": "hiroshima-maff-42_10_hiroshima",
     "name": {
       "ja": "鯛めん",
-      "zh_tw": "鯛めん"
+      "zh_tw": "鯛めん",
+      "en": "Tai-men/Tai-somen"
     },
     "prefecture": "hiroshima",
     "category": "kyodo",
+    "summary": {
+      "text": "Tai-men is a dish featuring boiled somen noodles piled in waves on a large plate and topped with a whole boiled sea bream, garnished with prickly ash leaves, cucumber, shredded egg crepe, and salty-sweet simmered shiitake mushroom. It can also be garnished with pine branches. It is a ceremonial dish often served for special occasions such as house framing ceremonies, 77th birthdays, 88th birthdays, weddings, and ship unloading ceremonies. It is an auspicious dish with sea bream (tai) signifying \"medetai\" (happy), and somen noodles signifying a \"long and thin continuation.\" The guests compliment the size and flavor of the sea bream, and they enjoy the feast with the wish that their happiness will continue for a long time. It is served on a large plate, then divided into smaller plates and covered in broth and toppings as desired. The broth poured on top is simply the broth in which the sea bream was boiled. At home, it is typically made with smaller fish such as rockfish, black sea bream, stonefish, or grunt. It is generally referred to \"Tai-men\" when eaten at celebrations, and \"Tai-somen\" when eaten at home. It is difficult to keep the sea bream intact while boiling, so it is often placed in a boat-shaped basket made of straw or bamboo peel, and boiled in a pot large enough to contain it completely. With its rocky, undulating sea floor and tidal currents, the Seto Inland Sea is well-suited for the spawning and habitation of sea bream, and they have long flourished in those waters. In addition to Tai-somen, there are many other sea bream dishes in the region.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/2809/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/42_10_hiroshima.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/2809/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -144,15 +157,30 @@
     "id": "hiroshima-maff-42_11_hiroshima",
     "name": {
       "ja": "煮ごめ",
-      "zh_tw": "煮ごめ"
+      "kana": "にごめ",
+      "romaji": "Nigome",
+      "zh_tw": "煮ごめ",
+      "en": "Nigome"
     },
     "prefecture": "hiroshima",
     "category": "kyodo",
+    "summary": {
+      "text": "The vegetarian dish \"Nigome\" is made with diced and boiled azuki beans, daikon radish, carrots, dried shiitake mushrooms, burdock root, lotus root, taro, deep-fried tofu, and konjac. No meat or fish is used in the ingredients or broth. The western part of the prefecture is called \"Aki no Kuni\" and has many Jodo Shinshu followers, who were named \"Aki followers\". Shinran Shonin, the founder of the Jodo Shinshu sect, passed away on January 16th, which is celebrated as \"Goshoiki\". When Shinran Shonin was critically ill, his disciples made him a vegetarian stew with azuki beans, his favorite food. This later became the vegetarian food of the Goaritoyo, named \"Nigome\". Fishermen in the area used to follow the custom of \"Otanya no Ichigomari\" during the Otaidaya period, where they closed their fishing boats and markets for three days to avoid killing. Nigome was made in large quantities before the Oarigoya and boiled repeatedly for three days before being consumed. Soy sauce is used for seasoning, giving it a simple flavor that allows the natural taste of the ingredients to shine.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/3719/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/42_11_hiroshima.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/3719/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -162,15 +190,30 @@
     "id": "hiroshima-maff-42_12_hiroshima",
     "name": {
       "ja": "イギス豆腐",
-      "zh_tw": "イギス豆腐"
+      "kana": "いぎすどうふ",
+      "romaji": "Igisudofu",
+      "zh_tw": "イギス豆腐",
+      "en": "Igisu tofu (Red algae and soy flour)"
     },
     "prefecture": "hiroshima",
     "category": "kyodo",
+    "summary": {
+      "text": "This dish is made from a type of algae called “igisu”, which is mixed with raw soy flour and heated until it melts, then set like gelatin. It works on the same principle as vegetable gelatin or agar-agar, and sets without any need to add a coagulant. It is always made for Bon festival or other occasions when friends and family gather. In some areas it is frequently made during summer. The garnishes and seasonings used vary depending on the region and the household. In summer it is eaten chilled from the fridge. Igisu is a reddish-brown variety of algae cultivated from summer until fall, also referred to as “egonori”.It is shaped in fine strands that split off into different \"paths\" one after another, with the tips bending into a hooked shape. While it grows in the deep recesses of the sea, it drifts into the shallows of inlets and beaches from spring to summer, where it is harvested from the rocks and pebbles it sticks to. Once gathered, it is repeatedly rinsed in cold water and dried in the sun, until it is dehydrated. Low in calories and rich in minerals and dietary fiber, it is prized as an ideal food for promoting a long life. It has been eaten since ancient times, reportedly having been offered as tribute to the Imperial Court in the Asuka (592 to 710 CE) and Nara (710 to 794 CE) periods. It has become difficult to get hold of these days, but foods made from melted and set igisu can still be seen in Tottori, Ehime, Niigata, Nagasaki, Fukuoka and other prefectures.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/3720/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/42_12_hiroshima.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/3720/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -180,15 +223,30 @@
     "id": "hiroshima-maff-42_13_hiroshima",
     "name": {
       "ja": "くわいの甘煮",
-      "zh_tw": "くわいの甘煮"
+      "kana": "くわいのあまに",
+      "romaji": "Kuwainoamani",
+      "zh_tw": "くわいの甘煮",
+      "en": "Kuwai no Ama-ni (Arrowhead simmered in a sweet sauce)"
     },
     "prefecture": "hiroshima",
     "category": "kyodo",
+    "summary": {
+      "text": "Kuwai no Ama-ni is a stew that is known for its sweet taste, which is seasoned with broth, sugar, and mirin. The dish is named after \"kuwaimo,\" a potato-like fruit that grows under the leaves shaped like a hoe for digging up the earth. There are three types of arrowhead: ao kuwai (blue arrowhead), shiroi kuwai (white arrowhead), and suita kuwai. Ao kuwai, the main type grown in Japan, is characterized by its round, spherical shape and vivid blue surface. Fukuyama City produces the largest amount of arrowhead in Japan, according to the Ministry of Agriculture, Forestry and Fisheries' \"Survey on Regional Vegetable Production in Japan in 2018\". It is also referred to as the \"sapphire of the rice field\" due to its beautiful color. Arrowhead is a nutritious root vegetable that is rich in protein and potassium. It has a dusty texture and a sweet taste with a slightly bitter aftertaste. In Japanese cuisine, it is considered a lucky food and is often served during festive occasions. Fukuyama's arrowhead is particularly famous and is in high demand as an ingredient in Osechi dishes. The best time to get shipments of this root vegetable is between November and December. The mild Seto Inland Sea climate of Fukuyama is perfect for growing blue arrowhead. Its cultivation began around 1902 when it grew wild in a swampy area in present-day Senda-cho, Fukuyama City. Later on, it was brought to the fertile moat around Fukuyama Castle. During the Edo period, the Fukuyama clan built additional irrigation canals to convey water from the Ashida River to the new rice paddies. This provided a plentiful supply of water, which helped the cultivation of arrowhead to flourish in Fukuyama.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/3721/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/42_13_hiroshima.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/3721/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -200,15 +258,27 @@
       "ja": "きなこむすび",
       "kana": "きなこむすび",
       "romaji": "Kinakomusubi",
-      "zh_tw": "きなこむすび"
+      "zh_tw": "きなこむすび",
+      "en": "Kinako Musubi"
     },
     "prefecture": "hiroshima",
     "category": "kyodo",
+    "summary": {
+      "text": "Kinako-musubi is a round omusubi with dried plums and thinly sliced salted kelp, covered with kinako (roasted soybean flour). It was served between rice plantings and at the end of the rice planting season called “dai-mite”. In Hiroshima, \"Mite\" means \"disappear,” and Kinako musubi along with \"Bara Sushi\" and \"Grilled Mackerel Chishamomi\" are eaten. It is said that the sushi was made in a round shape with the wish that the seedlings planted would bear a full crop in the fall. In the Chugoku region, there is an event called \"Hayashida\" or \"Tabayashi,\" in which a large number of people plant rice while playing drums and flutes and singing rice-planting songs. These events, which have been handed down from the Middle Ages, were a ritual for rice cultivation to worship the \"god of rice fields\" to pray for peace and a good harvest, and at the same time, they were a major event that served as a consolation for those engaged in the hard work of rice planting and as one of the few entertainment elements in the farming villages of the time. The \"Hayashida\" of Mibu, Kita Hiroshima Town, in particular, came to be called \"Mibu no Hana Taue\" (flower rice planting in Mibu) because of its extravagant pageantry, with the participating oxen wearing gorgeous flower garlands and dressed-up Saotome girls planting seedlings to the sound of drums and flutes. During this event, \"kinako-musubi\" is still served today, and is sometimes called \"sanbai\" or \"sanbai-meshi. Sanbai\" refers to the conductor of the O-hayashi, or the god of rice paddies.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/4969/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/42_14_hiroshima.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/4969/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -218,15 +288,30 @@
     "id": "hiroshima-maff-42_15_hiroshima",
     "name": {
       "ja": "ねぶとの唐揚げ",
-      "zh_tw": "ねぶとの唐揚げ"
+      "kana": "ねぶとのからあげ",
+      "romaji": "Nebutonokaraage",
+      "zh_tw": "ねぶとの唐揚げ",
+      "en": "Nebuto no Karaage"
     },
     "prefecture": "hiroshima",
     "category": "kyodo",
+    "summary": {
+      "text": "Nebuto is a white-fleshed fish of 3 to 5 cm caught mainly in the Seto Inland Sea, and is commonly called tenjikudai. It is also called \"ishimochi\" or \"ishikaberi\" because of its hard head. Because its otolith bone is larger than those of other fish, it cannot be eaten whole from the head even though it is a small fish, so the head is removed and eaten. It is in season from May to September, and is selected as one of the \"Bingo Fish\" by fishermen in the Bingo area (Mihara City, Onomichi City, Fukuyama City, Hiroshima Prefecture; Kasaoka City, Okayama Prefecture) who choose representative fish of their area. Deep-fried nebuto is made by dipping nebuto in potato starch and deep frying it, making it a snackable dish. It is popular as a snack for children and as a snack for alcoholic beverages. In 2021, Fukuyama City held a \"Fukutsumami General Election,\" a competition to determine the ranking of \"Fukuzumami,\" snacks made from the city's specialties, and \"Nebuto no Nanbanzuke\" was chosen as the fourth place winner, making it one of The Big Four .",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/4973/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/42_15_hiroshima.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/4973/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -236,15 +321,30 @@
     "id": "hiroshima-maff-42_16_hiroshima",
     "name": {
       "ja": "角寿司",
-      "zh_tw": "角寿司"
+      "kana": "かくずし",
+      "romaji": "Kakuzushi",
+      "zh_tw": "角寿司",
+      "en": "Kaku Sushi"
     },
     "prefecture": "hiroshima",
     "category": "kyodo",
+    "summary": {
+      "text": "It is a type of oshizushi made by filling a square wooden mold with sushi rice and other ingredients, and is eaten in the Asakita-ku area of Hiroshima City and the Geihoku region of Hiroshima Prefecture. When pressed out of the wooden frame, six to eight pieces of the same size are formed at the same time, and the finished product is square, hence the name \"kaku-zushi\" (square sushi). It is sometimes called \"oshizushi\" or \"Inaka sushi\" (country sushi). The ingredients are sometimes changed according to the season or region, and are characterized by a decorative ingredient on top called \"Kami-oki\" and an ingredient in the sushi rice called \"Nakagu\". The \"Kami-oki\" is made up of brightly colored red, green, and yellow ingredients such as shime saba (mackerel), thinly fried egg, kamaboko (fish cake), shiitake mushrooms, aromatic mushrooms, matsutake mushrooms, chestnuts, sansho leaves, carrot leaves, dried shrimp, and denbu, while the \"Nakagu\" is made up of slightly salty carrot, shiitake mushroom, gobo, beans, etc., all of which are not visible from the outside. As you eat your way through the sushi rice, the rich flavor of the simmered ingredients suddenly spreads out. In addition, because the vegetables are seasoned and the seafood is heated, it tastes good even after a long time has passed. In the 1950s, it was common for each household to have a wooden form of kaku-zushi, and since kaku-zushi was traditionally served to guests on celebratory occasions and other special occasions, it was customary to make a larger quantity and distribute it in wooden boxes to neighbors and neighbors.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/4977/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/42_16_hiroshima.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/4977/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -254,15 +354,30 @@
     "id": "hiroshima-maff-42_17_hiroshima",
     "name": {
       "ja": "小いわしの刺身",
-      "zh_tw": "小いわしの刺身"
+      "kana": "こいわしのさしみ",
+      "romaji": "Koiwashinosashimi",
+      "zh_tw": "小いわしの刺身",
+      "en": "Ko-iwashi no sashimi (sashimi of small sardine)"
     },
     "prefecture": "hiroshima",
     "category": "kyodo",
+    "summary": {
+      "text": "\"Ko-iwashi\" refers to Japanese anchovy, and has long been known as \"small sardines\" in Hiroshima Prefecture. Hiroshima Bay is rich in plankton, which serves as bait for small sardines, so well grown sardines are caught in abundance. As a result, approximately 70% of the catch landed in Hiroshima Prefecture is anchovy (Ministry of Agriculture, Forestry and Fisheries \"2020 Fishery and Aquaculture Production Statistics\").They are caught with sardine boat seines, which are sometimes referred to locally as \"patch net fishing\" because the shape of the net resembles the patches on a man's underwear. In the old days, peddlers were often seen selling fresh small sardines, which were cheap, tasty, and a valuable foodstuff for the common people. Washing small sardines in water removes the scales and removes the unique smell of small sardines. Sashimi is served with soy sauce and grated ginger. Its firm flesh is said to be as tasty as sea bream, the king of fish, and there is even a food proverb that says, \"If you wash sardines seven times, they taste like sea bream\". The season is from June to August. Because of its high unsaturated fatty acid content, freshness is essential for sashimi, but because Hiroshima is close to fishing grounds, fresh small sardines can be found in supermarkets and fresh fish stores. In Hiroshima, many people use a spoon or packing tape (PP band) to quickly cut the small sardines. In addition to raw fish, boiled and dried \"iriko (=dried sardines)\" are used as soup stock mainly in western Japan, and \"chirimen\" made from young sardines (=shirasu) is also widely eaten.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/4470/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/42_17_hiroshima.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/4470/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -274,15 +389,27 @@
       "ja": "たこめし",
       "kana": "たこめし",
       "romaji": "Takomeshi",
-      "zh_tw": "たこめし"
+      "zh_tw": "たこめし",
+      "en": "Takomeshi"
     },
     "prefecture": "hiroshima",
     "category": "kyodo",
+    "summary": {
+      "text": "\"Takomeshi\" is octopus cooked with rice. Originally, fishermen would chop octopus on the boat and cook it into rice and eat it as fishermen's rice. The environment off the coast of Mihara is particularly suitable for growing octopus because of its good water quality, stable water temperature, and rocky areas with abundant bait, and octopus fishing has been popular since the Edo period. Even today, the Seto Inland Sea is one of the most important habitats for octopus. The fast ocean currents in this area allow octopus to stick firmly to the rocks, making their legs thicker and shorter, and giving them a firmer, crunchier texture. The main method of octopus fishing in Mihara is \"takotsubo fishing\", in which the octopus body is not easily damaged. About 100 octopus cribs are attached to a rope about 100 meters long and sunk at intervals of several tens of meters to the bottom of the sea, as determined by each fisherman. No buoys or other landmarks are placed at this time, so fishing requires many years of intuition and experience. The octopus are immediately washed in salt water, vacuum-packed, and flash-frozen. The Mihara City Fisheries Cooperative Association has branded the octopus caught in Mihara under the name \"Mihara Yassa Octopus,\" after the local traditional event \"Mihara Yassa Festival\".",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/4433/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/42_18_hiroshima.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/4433/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -294,15 +421,27 @@
       "ja": "あずま",
       "kana": "あずま",
       "romaji": "Azuma",
-      "zh_tw": "あずま"
+      "zh_tw": "あずま",
+      "en": "Azuma (Vinegared Sashimi on Soy Pulp)"
     },
     "prefecture": "hiroshima",
     "category": "kyodo",
+    "summary": {
+      "text": "Mama Kari Sushi is a type of nigiri sushi made with fish that has been marinated in vinegar. The distinctive feature is the use of okara (soy pulp) seasoned with vinegar instead of vinegared rice. In the past, when rice was scarce, okara, which was more readily available, was used as a substitute to conserve rice. This type of sushi is not limited to Mama Kari; it can also be made with fish such as Kohada (gizzard shad) or Konoshiro (dotted gizzard shad). Along the coastal areas, it is known as \"Azuma\" or \"Azumazushi,\" while in the mountainous regions around Miyoshi City, there is a variation called \"Unohana Zushi\" that uses sweetfish (ayu) and, once again, incorporates okara. Sushi made with okara is also found in other prefectures like Toyama, Ishikawa, Ehime, but the choice of fish and preparation methods may vary. In the past, it was commonly prepared during festivals and New Year celebrations, serving as a popular dish to be shared among many people as a sake accompaniment or side dish.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/5616/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/42_19_hiroshima.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/5616/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -312,15 +451,30 @@
     "id": "hiroshima-maff-42_1_hiroshima",
     "name": {
       "ja": "ワニの刺身",
-      "zh_tw": "ワニの刺身"
+      "kana": "わにのさしみ",
+      "romaji": "Waninosashimi",
+      "zh_tw": "ワニの刺身",
+      "en": "Wani no sashimi"
     },
     "prefecture": "hiroshima",
     "category": "kyodo",
+    "summary": {
+      "text": "It is called \"crocodile\", but what is actually eaten is \"shark\". It is also called \"fuka. In the mountainous areas of the Chugoku region, there is an old word for \"shark\" called \"crocodile,\" and the crocodile that appears in the myth \"Inaba no Shirohagi (White Hare of Inaba)\" in the Kojiki is also thought to be a shark. There is a record of sharks being brought to this area from merchants on the Sea of Japan coast during the Edo period (1603-1868). Since sharks can last for a long time due to their high ammonia content and can be eaten as sashimi for about half a month, they began to be eaten as sashimi at home when fishermen from Shimane Prefecture began bringing them in the late 1890s. In the days when transportation was not developed, fresh seafood was difficult to obtain in mountainous areas far from the sea, and sharks were valued. Since the smell of ammonia becomes stronger as time goes by, it is often eaten with ginger soy sauce to remove the smell. Some families also ate it with sugar soy sauce. It is mainly eaten at festive occasions such as autumn festivals, New Year's, and celebrations, etc. In Miyoshi City, there is an old saying of hospitality, \"Eat alligator until your stomach gets cold. There are about 20 species of sharks eaten in Miyoshi City and other parts of northern Hiroshima Prefecture, including the common ratshark, blue shark, and hammerhead shark. The color of the meat differs depending on the species, and the reddish sharks resemble swordfish, with a low fat content and soft, light flesh. Because of its taste, the shark is sometimes called \"Miyoshi swordfish\" in Miyoshi City and \"Nishijo tuna\" in Nishijo Town, Shobara City. It is caught throughout the year, but is more delicious in fall and winter, when its flesh is firmer and tastier.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/620/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/42_1_hiroshima.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/620/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -330,15 +484,30 @@
     "id": "hiroshima-maff-42_20_hiroshima",
     "name": {
       "ja": "呉の肉じゃが",
-      "zh_tw": "呉の肉じゃが"
+      "kana": "くれのにくじゃが",
+      "romaji": "Kurenonikujaga",
+      "zh_tw": "呉の肉じゃが",
+      "en": "Kure-no-Nikujaga (Kure style Meat and Potato Stew)"
     },
     "prefecture": "hiroshima",
     "category": "kyodo",
+    "summary": {
+      "text": "In the case of the general \"nikujaga\" (meat and potato stew), it typically consists of potatoes, beef, and onions as the main ingredients, with variations in additional vegetables such as carrots and snap peas, all seasoned with soy sauce and sugar. However, \"Kure's Nikujaga\" features the use of \"May Queen\" potatoes, along with standard ingredients like beef, shirataki (konjac noodles), and onions. The unique aspect is that it is prepared with a fixed set of ingredients. The roots of nikujaga are speculated to trace back to Admiral Togo Heihachiro's stay in England, where he ordered his subordinates to create a dish similar to \"beef stew\" that he had experienced during his studies. The cooks, experimenting with substitutes for scarce red wine, eventually crafted the dish using soy sauce, leading to the creation of \"amani\" or sweetened stew. The preparation method is believed to be documented in the \"Navy Culinary Management Textbook\" of that time. In the 1960s, the dish gained popularity as a home-cooked meal after being introduced in women's magazines under the name \"nikujaga.\" With Togo Heihachiro having been stationed in Kure in 23 year of Meiji(1890), there is a theory that Kure is the birthplace of nikujaga. In 1997, the \"Kure Nikujaga Association\" was established, promoting \"Kure's Nikujaga\" as a dish closely resembling the recipe from \"Navy Culinary Management Textbook\".",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/5618/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/42_20_hiroshima.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/5618/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -348,15 +517,27 @@
     "id": "hiroshima-maff-42_21_hiroshima",
     "name": {
       "ja": "えび粉",
-      "zh_tw": "えび粉"
+      "zh_tw": "えび粉",
+      "en": "Ebiko / Maki-Zushi"
     },
     "prefecture": "hiroshima",
     "category": "kyodo",
+    "summary": {
+      "text": "\"Ebiko\" is made by peeling and finely chopping boiled small shrimp (Akaebi) with a knife, and then sweetening and stir-frying them with sugar, mirin, sake, etc. Some people use a mortar and pestle instead of a knife. In the past, it was commonly made at home and is also known as \"ebioboro.\" It is often used in rolled sushi, particularly in the local style of rolled sushi that includes grilled conger eel, ebiko, asari (clams), thick grilled egg, shiitake mushrooms, kanpyo (dried gourd strips), and mitsuba (Japanese parsley), rolled with nori (seaweed) and vinegared rice. Additionally, it can be found in chirashi sushi served at events such as ceremonies and celebrations by sushi restaurants in the region.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/5374/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/42_21_hiroshima.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/5374/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -366,15 +547,30 @@
     "id": "hiroshima-maff-42_22_hiroshima",
     "name": {
       "ja": "江波巻き",
-      "zh_tw": "江波巻き"
+      "kana": "えばまき",
+      "romaji": "Ebamaki",
+      "zh_tw": "江波巻き",
+      "en": "Eba Maki"
     },
     "prefecture": "hiroshima",
     "category": "kyodo",
+    "summary": {
+      "text": "Traditional nori(seaweed) rolls from the Eba district in the central area of Hiroshima City, where nori cultivation has been thriving for a long time. This type of nori roll has been consumed since ancient times. It consists of rice, Hiroshima-style pickled vegetables, bonito flakes, soy sauce, and sesame seeds mixed together, then rolled and wrapped with roasted seaweed. Instead of vinegar rice, regular rice is used, and the filling includes pickled vegetables and other easily preserved ingredients. Sometimes, both ends of the roll are closed to prevent the filling from falling out. It is said that nori fishermen, lacking time for a leisurely meal, began eating this dish on their boats during offshore trips. The nori used is made from torn pieces that are unsuitable for sale. The Hiroshima vegetable used in the roll is said to be a type of Chinese cabbage with low fiber, soft texture, good bite when lightly pickled, and a subtly spicy flavor. Primarily used as a gift, it is shipped nationwide from late November. The practice is said to have started during the Edo period's Sankin-kotai, when seeds were brought back from Kyoto during the Edo period, and many older people call it \"kyona\", which is thought to have originated from Kyoto's \"mibuna\". The term \"Hiroshima greens\" was coined in 1933. The Kawauchi district in Asaminami Ward, Hiroshima City, located on a sandbar in the Ōta River, has fertile soil with good drainage, making it an area where Hiroshima greens have been cultivated since ancient times.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/5382/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/42_22_hiroshima.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/5382/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -384,15 +580,27 @@
     "id": "hiroshima-maff-42_23_hiroshima",
     "name": {
       "ja": "広島菜漬のおにぎり",
-      "zh_tw": "広島菜漬のおにぎり"
+      "zh_tw": "広島菜漬のおにぎり",
+      "en": "Hiroshima-nazuke-no Onigiri (Rice ball wrapped in pickled Hiroshima mustard)"
     },
     "prefecture": "hiroshima",
     "category": "kyodo",
+    "summary": {
+      "text": "Rice ball wrapped in pickled Hiroshima mustard. Hiroshima-na is a type of Chinese cabbage belonging to the Brassicaceae family. Sown in September, it grows well in December, and the frost gives it a tangy flavor. It is said that the seeds were brought back from Kyoto during the Edo period (1603-1867), and many elderly people call it kyona (meaning Kyoto vegetable), suggesting that it has its roots in Kyoto's mibuna. Because of the shape of its stem, it is also called Hira-guki (flat stem). The name Hiroshima-na was given in 1933. The Kawauchi district of Asaminami Ward in Hiroshima City, located on the middle of the Ota River, is fertile and well drained, and Hiroshima mustard has been cultivated there for many years. As a vegetable unique to the area, it is called one of the three most popular pickles in Japan, along with nozawana in Nagano Prefecture and takana in Kyushu. In Hiroshima, there is an \"oyster boat\" where boats originally selling oysters began serving meals, and the existence of Hiroshima mustard also spread as an ingredient that goes well with oysters. After the war, they became prized as gifts. Cultivation also spread outside of Hiroshima City, and it became an important specialty of Hiroshima.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/6263/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/42_23_hiroshima.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/6263/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -402,15 +610,30 @@
     "id": "hiroshima-maff-42_24_hiroshima",
     "name": {
       "ja": "魚飯",
-      "zh_tw": "魚飯"
+      "kana": "ぎょはん",
+      "romaji": "Gyohan",
+      "zh_tw": "魚飯",
+      "en": "Gyohan (Fish rice)"
     },
     "prefecture": "hiroshima",
     "category": "kyodo",
+    "summary": {
+      "text": "Fish rice is a dish consisting of grilled and loosened white fish topped with colorful ingredients such as kinshi tamago (thin cut omelets), mitsuba, shiitake mushrooms, shrimp, seaweed, and bamboo shoots, and served on rice with soup made from the bones. The city of Takehara, where the dish is mainly handed down, used to be a shallow sea, but it was reclaimed during the Edo period (1603-1868) and salt fields were built, and it flourished as a salt town for more than 320 years from 1650 to 1970. The owners of the salt fields were called Hamadanna (masters of the salt fields) and earned enormous wealth, and fish rice was a favorite dish of these masters for entertaining and ceremonial occasions. This dish, which once nearly disappeared when the salt fields were closed in 1960, was recreated in 2008 by the \"Association for Thinking about Food in Takehara\" after an article introducing fish rice was discovered in the January 1, 1979 edition of the Geinan Newspaper, and it is now served at restaurants and other establishments. In 1982, Takehara City was selected as an Important Preservation District for Traditional Buildings, and in 2000, its streets were selected as one of the 100 Best Cityscapes by the Ministry of Land, Infrastructure, Transport and Tourism.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/6265/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/42_24_hiroshima.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/6265/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -420,15 +643,30 @@
     "id": "hiroshima-maff-42_25_hiroshima",
     "name": {
       "ja": "大平",
-      "zh_tw": "大平"
+      "kana": "おおひら",
+      "romaji": "Ohira",
+      "zh_tw": "大平",
+      "en": "Ohira (Chiken and vegetable stew)"
     },
     "prefecture": "hiroshima",
     "category": "kyodo",
+    "summary": {
+      "text": "It is a traditional stew in Otake City. Root vegetables such as satoimo (Japanese taro), lotus root, carrot, daikon radish, gobou (burdock root), chicken, konjac (yam cake), dried shiitake mushrooms, and thick fried tofu are cut into pieces or bite-sized pieces, seasoned with dashi (Japanese soup stock), soy sauce, sugar, etc., and then simmered. The name ohira is said to come from the large, flat bowl in which it is placed when served on a table. It is sometimes compared to ni-gome and hassun from the same prefecture, but there are some differences in the way they are cut. Nigome is a vegetarian dish, so it does not contain any animal ingredients, and the ingredients are diced into small pieces, while Ohira contains chicken and is cut into relatively large pieces. The bowl used for serving ohira is larger than that for hassun and nigome, and it is also characterized by the fact that it is juicier than hassun and is served with its own juices. It is often served at festivals and gatherings, with an odd number of ingredients, as a good luck charm. There is also a dish of the same name in the neighboring city of Iwakuni, Yamaguchi Prefecture.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/6270/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/42_25_hiroshima.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/6270/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -438,15 +676,30 @@
     "id": "hiroshima-maff-42_26_hiroshima",
     "name": {
       "ja": "煮菜",
-      "zh_tw": "煮菜"
+      "kana": "にじゃー",
+      "romaji": "Nija",
+      "zh_tw": "煮菜",
+      "en": "Nija (Stir-fried Vegetables)"
     },
     "prefecture": "hiroshima",
     "category": "kyodo",
+    "summary": {
+      "text": "Stir-fried julienned daikon radish, fried thin tofu, nebuka-negi (Japanese leeks), and iriko (dried sardines) in soy sauce seasoning. Because it is cooked using only the water from the ingredients, the flavor is not lost and the dish is rich. Although the word boiled is in the name, it is similar to stir-fried food. It was loved by busy farmers as an everyday side dish that could be prepared quickly, deliciously, and in large quantities. In the northern part of Fukuyama City, it is called nija and in the southern part, nizai. Seasonal ingredients such as small shrimp, shellfish, bonito flakes, and Napa cabbage may be added. Also, the best leeks used in this dish are nebuka-negi (Japanese leeks) with a lot of white parts.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/6272/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/42_26_hiroshima.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/6272/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -456,15 +709,30 @@
     "id": "hiroshima-maff-42_27_hiroshima",
     "name": {
       "ja": "かき雑煮",
-      "zh_tw": "かき雑煮"
+      "kana": "かきぞうに",
+      "romaji": "Kakizoni",
+      "zh_tw": "かき雑煮",
+      "en": "Kaki Zoni (Japanese Soup made with Rice Cakes and Oysters)"
     },
     "prefecture": "hiroshima",
     "category": "kyodo",
+    "summary": {
+      "text": "\"Kaki zoni\" is a \"sumashi-jiru\" (=clear soup) made with dried sardines, kombu (=kelp), and bonito soup stock. The soup contains oysters, yellowtail, and vegetables. Sometimes, miso is used for the soup. Yellowtail is fatty and remains fresh for a long time, which is why it is used for \"zoni\" eaten during the New Year holidays. An entire yellowtail is used to make sashimi and \"zoni\" with the leftover fish. In the coastal areas of Hiroshima Bay, salted yellowtail is not used to make \"zoni\" and instead, conger eels and oysters caught in the Seto Inland Sea are used. Oysters were considered lucky which made them perfect for the New Year holidays. Ingredients used vary from region to region and some people like to use hamaguri (=Asian hard clams), grilled conger eels, and fugu (=blowfish). The local people of Hiroshima have been eating oysters for a long time. Shell middens have shown that wild oysters were eaten as far back as the Jomon and Yayoi periods. It is believed that aquaculture of oysters began between the 1500s and 1600s. Currently, 60% of the oysters caught in Japan are from Hiroshima (according to the \"2020 Fishery and Aquaculture Production Statistics\" by the Ministry of Agriculture, Forestry and Fisheries).The bay area in Hiroshima has quiet waves and moderate tidal currents. In addition, rivers flow into the bay, diluting the salt concentration of the seawater during the rainy season in the summer, creating an environment favorable to oysters. Nutrients flowing into the bay from the Chugoku Mountains also support oyster growth, and the oysters of Hiroshima are characterized by their largeness and rich flavor. The prefecture has its own food hygiene regulations, which make the oysters not only delicious but also high in safety.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/7027/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/42_27_hiroshima.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/7027/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -474,15 +742,30 @@
     "id": "hiroshima-maff-42_28_hiroshima",
     "name": {
       "ja": "かき飯",
-      "zh_tw": "かき飯"
+      "kana": "かきめし",
+      "romaji": "Kakimeshi",
+      "zh_tw": "かき飯",
+      "en": "Kaki Meshi (Mixed Rice with Oysters)"
     },
     "prefecture": "hiroshima",
     "category": "kyodo",
+    "summary": {
+      "text": "\"Kaki meshi\" is a mixed rice made with oysters from aquaculture in the areas around Etajima city. The local people of Hiroshima have been eating oysters for a long time. Shell middens have shown that wild oysters were eaten as far back as the Jomon and Yayoi periods. It is believed that aquaculture of oysters began between the 1500s and 1600s. Currently, 60% of the oysters caught in Japan are from Hiroshima (according to the \"2020 Fishery and Aquaculture Production Statistics\" by the Ministry of Agriculture, Forestry and Fisheries).The bay area in Hiroshima has quiet waves and moderate tidal currents. In addition, rivers flow into the bay, diluting the salt concentration of the seawater during the rainy season in the summer, creating an environment favorable to oysters. Nutrients flowing into the bay from the Chugoku Mountains also support oyster growth, and the oysters of Hiroshima are characterized by their largeness and rich flavor. The prefecture has its own food hygiene regulations, which make the oysters not only delicious but also high in safety. \"Kaki meshi\" is a popular \"ekiben\" (=bento sold at major Japanese train stations) and several types are sold, including \"Shamoji kaki meshi.\"",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/7029/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/42_28_hiroshima.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/7029/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -492,11 +775,21 @@
     "id": "hiroshima-maff-42_29_hiroshima",
     "name": {
       "ja": "いが餅",
+      "kana": "いがもち",
+      "romaji": "Igamochi",
       "zh_tw": "いが餅"
     },
     "prefecture": "hiroshima",
     "category": "sweets",
+    "summary": {
+      "text": "もち米や米の粉で作った皮で小豆のあんを包み、鮮やかに彩ったもち米の粒を上に乗せて蒸したお菓子。もちもちとした食感と上に乗ったもち米の粒々とした食感が楽しめる。亀山神社の例大祭と小祭りといった秋祭りの時期になると菓子店や屋台などで販売され、屋台では蒸したてのものを楽しむこともできる。名前の由来は「栗のイガに似ているから」や「旅の僧侶が食べたところ胃の病が治ったことから、胃が持つ（治る）から」など様々な説がある。また発祥についても「田畑の少ない呉では米が貴重だったため、せめて祭りの時だけでも食べたいと、もち米を麦、あわ、いもなどで作ったもちにまぶして食べた」「東北出身の人が故郷を懐かしんで作り始めた」など、そのほかにも諸説ある。 「いが餅」は東北地方から中国・四国地方にかけての複数の地域で食されており、山形県では「上に乗せた米を稲に見立て、五穀豊穣を祈った儀式から始まった」という由来から、上に乗せたもち米の着色は黄色だけであるのに対し、呉ではピンクやグリーンなどに華やかに着色されているなど違いがある。また、食す機会、形状についても地域により異なる。",
+      "lang": "ja",
+      "source_url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/42_29_hiroshima.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
@@ -512,15 +805,27 @@
       "ja": "うずみ",
       "kana": "うずみ",
       "romaji": "Uzumi",
-      "zh_tw": "うずみ"
+      "zh_tw": "うずみ",
+      "en": "Uzumi"
     },
     "prefecture": "hiroshima",
     "category": "kyodo",
+    "summary": {
+      "text": "Uzumi\" is said to have originated in the Edo period (1603-1867), when people buried the ingredients under the rice to make it look more simple. Shrimp, sea bream, taro and other vegetables cooked in broth are placed in a bowl, and rice is served on top of the broth. In the Chugoku region, there are other \"burying\" food cultures outside of Fukuyama City, such as \"Uzume-meshi\" in the Iwami region of Shimane Prefecture and \"Bizen-bara-zushi\" in Okayama Prefecture. Until the 1960s, it was often eaten as a dish to celebrate the autumn harvest. Ingredients vary from region to region, with taro, carrots, matsutake mushrooms, shiitake mushrooms, shrimp, sea bream, and chicken being the most commonly used. Dashi broth also varies from region to region. In the southern part of the country facing the Seto Inland Sea, iriko is used, while dried shiitake mushrooms are used in the mountainous northern part of the country.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/628/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/42_2_hiroshima.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/628/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -530,15 +835,30 @@
     "id": "hiroshima-maff-42_30_hiroshima",
     "name": {
       "ja": "あなご飯",
-      "zh_tw": "あなご飯"
+      "kana": "あなごめし",
+      "romaji": "Anagomeshi",
+      "zh_tw": "あなご飯",
+      "en": "Anago Meshi (Rice with Conger Eel)"
     },
     "prefecture": "hiroshima",
     "category": "kyodo",
+    "summary": {
+      "text": "Grilled conger eel is cut into smaller pieces and placed on top of warm rice cooked with dashi (=Japanese soup stock). Sometimes, the conger eel is steamed. Conger eels are caught in Miyajima Town and Hiroshima city and the local people have been eating them over a long time. \"Geihan Tsushi,\" a geographical journal written during the Bunsei era of the Edo period by the Hiroshima Domain in Aki Province, describes conger eels along with \"mebaru\" (=Japanese red seaperch), and smelt as delicious fish from the region. The currents around Ono Seto of Hatsukaichi city are swift, making conger eels caught in this region fatty, flavorful, soft, and delicious. The eels caught here are referred to as \"Anago from Seto.\" Conger eels are less fatty than unagi eel and are rich in vitamin A. People like to eat it during the hot summer to relieve fatigue or for treating tired eyes. It is a popular ingredient used in a variety of local dishes. Conger eels hide in \"ana\" (=holes) and between rocks during the daytime. They come out after it becomes dark and there is a lot of unknown facts about them, including where they lay their fish eggs and what they eat. This is why it is not possible to use aquaculture to raise them. \"Anago meshi\" is said to have been born in Meiji 34, four years after the opening of the Sanyo Railway. It was first sold as \"ekiben\" (=bento sold at major Japanese train stations) at Miyajimaguchi train station, the entrance to Miyajima. In the 1950s, it was a popular bento purchased by tourists and students on school excursions, who arrived in large numbers using sightseeing buses. After that, restaurants in Miyajima began to serve \"anago meshi\" and souvenir shops also began to sell it, making it a specialty of Miyajima.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/7033/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/42_30_hiroshima.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/7033/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -548,15 +868,30 @@
     "id": "hiroshima-maff-42_3_hiroshima",
     "name": {
       "ja": "八寸",
-      "zh_tw": "八寸"
+      "kana": "はっすん",
+      "romaji": "Hassun",
+      "zh_tw": "八寸",
+      "en": "Hassun"
     },
     "prefecture": "hiroshima",
     "category": "kyodo",
+    "summary": {
+      "text": "Hachisun\" is a stew made from a combination of mountain and sea vegetables that was eaten in areas where there were many Aki Monzoku (Jodo Shinshu sect members in the western part of Hiroshima Prefecture). Some say that the name comes from the fact that the lacquerware used to serve it has a diameter of eight inches (about 24 centimeters), while others say that it is made from \"eight different ingredients. It is also called \"ohasun. In the past, when people gathered for festivals, New Year's, memorial services, and other ceremonial occasions, it was customary to invite the fishmonger to one's home to prepare sashimi, etc. It is said that this custom started when the \"arao\" of fish and vegetables from home were stewed together. It is made for both festive and non-celebratory occasions, but \"for celebratory occasions, an odd number of ingredients should be used, and the dish should be vermilion in color. On occasions of noncelebrations, such as funerals and memorial services, the number of ingredients should be even and black containers should be used. For non-celebratory occasions such as funerals and memorial services, an even number of ingredients should be used and black bowls should be used. Japanese kaiseki and kaiseki dishes also have a dish called \"hakusun,\" but it is different from the \"hakusun\" of Hiroshima. In kaiseki cuisine, it is often called \"maehasun\" (appetizer served after the entrée). In kaiseki cuisine, \"hakusun\" refers to two or three dishes of animal and vegetable origin that are served as snacks after the meal is over. Hachisun\" is a vegetarian dish that does not contain any animal products and includes azuki beans, a favorite of Shinran Shonin, while \"ni-gome\" is a vegetarian dish that does not contain any animal products and includes azuki beans. There is also a difference in the way vegetables are cut.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/1641/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/42_3_hiroshima.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/1641/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -566,15 +901,30 @@
     "id": "hiroshima-maff-42_4_hiroshima",
     "name": {
       "ja": "かきの土手鍋",
-      "zh_tw": "かきの土手鍋"
+      "kana": "かきのどてなべ",
+      "romaji": "Kakinodotenabe",
+      "zh_tw": "かきの土手鍋",
+      "en": "Kaki no dotenabe"
     },
     "prefecture": "hiroshima",
     "category": "kyodo",
+    "summary": {
+      "text": "There are three origins of the name of \"oyster Dote-nabe\". The first is that miso is coated on the inside of the pot like a bank. The second is that Chokichi Dote was the inventor of this nabe dish. The third is said to be because oyster boats that transported oysters from Hiroshima to Osaka during the Edo period served the nabe on the river bank. The characteristic feature of this way of eating is that the taste is adjusted by breaking up the miso paste coated on the edge of the nabe. Hiroshima Prefecture ranks first in the nation in oyster production, accounting for more than half of the nation's total production (according to \"Fishery and Aquaculture Production Statistics\" by the Ministry of Agriculture, Forestry and Fisheries in 2020). The history of oyster eating in Hiroshima is long, with shells excavated from shell middens indicating that people have been eating wild oysters since the Jomon and Yayoi periods. It is also believed that aquaculture began in the 1500s and 1600s. The bay in this area has all the right conditions for oyster cultivation: calm waves and moderate tidal currents, rivers flowing into the bay creating a layer that dilutes the salt concentration in the seawater during the rainy season and summer, and nutrients flowing into the bay from the Chugoku Mountains. Hiroshima's oysters are characterized by their large size and rich flavor, but they are also popular not only for their delicious taste but also for their safety, as the prefecture has its own food sanitation ordinance.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/1645/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/42_4_hiroshima.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/1645/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -586,15 +936,27 @@
       "ja": "わけぎのぬた",
       "kana": "わけぎのぬた",
       "romaji": "Wakeginonuta",
-      "zh_tw": "わけぎのぬた"
+      "zh_tw": "わけぎのぬた",
+      "en": "Wakegi no nuta"
     },
     "prefecture": "hiroshima",
     "category": "kyodo",
+    "summary": {
+      "text": "It is a hybrid of leek and shallot, and has a unique aroma different from that of green onions. It is a member of the leek family, but has a unique aroma that is different from that of green onions. It is called \"wakaegi,\" meaning \"a leek whose root is divided into many plants. The Seto Inland Sea coast has a mild climate suitable for growing wekegi, and Onomichi in particular boasts the nation's largest production (Ministry of Agriculture, Forestry and Fisheries \"Survey of Regional Specialty Vegetable Production in Fiscal Year 2008\"). The wakamegi grown in this region is characterized by its sweet flavor and gentle aroma. In the Taisho and early Showa periods, the area was already a production center, and in the 1960s, it became possible to harvest all year round. Then, with the spread of plastic greenhouse cultivation, it became possible to harvest stably even in the coldest season, and production volume increased greatly. The largest amount of harvest is available in the market from December to March. Especially from the end of February to the beginning of March is the peak season, and during this period, wekegi is sweeter and has more umami flavor. Nuta\" is made by mixing boiled wekegi with white miso (soybean paste), sugar, vinegar, and mirin (sweet cooking sake). It contains minerals such as calcium and iron, vitamins A, B2, and C, and allyl sulfide, which is found in onions, other green onions, chives, and garlic, and which helps to stimulate the appetite.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/1650/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/42_5_hiroshima.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/1650/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -606,15 +968,27 @@
       "ja": "もぶり",
       "kana": "もぶり",
       "romaji": "Moburi",
-      "zh_tw": "もぶり"
+      "zh_tw": "もぶり",
+      "en": "Moburi"
     },
     "prefecture": "hiroshima",
     "category": "kyodo",
+    "summary": {
+      "text": "The name \"Moburi\" is derived from the Hiroshima dialect, meaning \"to mix\" or \"to blend.\" Depending on the region, it is also known as \"Mōburi-gohan\" or \"Moguri-meshi.\" Moburi is a dish where cooked rice is mixed with various vegetables such as dried shiitake mushrooms, burdock root, carrots, black beans, and snow peas. It can also include cooked or grilled seafood such as shrimp, fish, or clams, and instead of black beans, other beans like pinto beans may be used. The ingredients vary depending on the region and season. It is a nutritious meal that can be quickly eaten during agricultural work, even without side dishes. It is also prepared as a special treat during celebrations, ceremonies, and gatherings. In Ōtake City, it is enjoyed during events such as the anniversary of the famous monk Kōbō Daishi and the equinoctial week gatherings in spring and autumn. Durring community gatherings or when celebrating a newly built home, large round rice balls are distributed to the neighborhood.A similar dish called \"Moburi-zu\" (Matsuyama vinegar) exists in Ehime Prefecture. While sharing the same name's origin, this dish involves making sushi rice using a sweetened vinegar made from small fish found in the Seto Inland Sea, such as grub fish and lizard fish, and then arranging seasonal small fish like conger eel on top. Unlike the recognition of Hiroshima's \"Moburi\" as a mixed rice dish, Ehime's version is considered \"chirashi sushi\", raw fish served in a bowl on top of rice.There is also a dish called \"Moburi\" in Sukumo City, Kochi Prefecture, where it involves mixing cooked rice with simmered daikon radish, burdock root, and carrots, topped with lightly grilled dried seaweed.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/2804/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/42_6_hiroshima.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/2804/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -624,15 +998,30 @@
     "id": "hiroshima-maff-42_7_hiroshima",
     "name": {
       "ja": "お好み焼き",
-      "zh_tw": "お好み焼き"
+      "kana": "おこのみやき",
+      "romaji": "Okonomiyaki",
+      "zh_tw": "お好み焼き",
+      "en": "Okonomiyaki"
     },
     "prefecture": "hiroshima",
     "category": "kyodo",
+    "summary": {
+      "text": "The okonomiyaki made in Hiroshima is a dish wherein thinly spread batter is cooked in a pan and piled with heaps of cabbage, pork, yakisoba, a thinly fried egg, or other ingredients. While topping it with a rich, sweet sauce is universal, mayonnaise is also often added if you like. A spatula is used as the eating utensil when okonomiyaki is eaten from the steel plate griddle it’s cooked on. Okonomiyaki is called “the soul food of Hiroshima,” and the prefecture ranked first in the country for the number of okonomiyaki shops per population of 100,000 people (Ministry of Internal Affairs and Communications; 2014 Economic Census - Basic Research). Okonomiyaki originates from a dish eaten in the period prior to the Second World War known as “issen yoshoku” (lit. one cent western meal), and in its use as a food to stave off hunger, transformed into okonomiyaki in the post-war era. In those days there were many steel factories in Hiroshima, meaning steel plate griddles were relatively easy to obtain, which is why it’s believed the number of okonomiyaki shops increased. In the year Showa 30 (1955), an increased number of stores remodeled their buildings and became able to offer soba noodles and pork, progressing the popularization of okonomiyaki. After that, following the championship victory of the Hiroshima Toyo Carp baseball team in Showa 50 (1975) Hiroshima was put on the map, being featured in things like guidebooks and okonomiyaki became known throughout the country.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/2805/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/42_7_hiroshima.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/2805/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -642,15 +1031,30 @@
     "id": "hiroshima-maff-42_9_hiroshima",
     "name": {
       "ja": "鯛めし",
-      "zh_tw": "鯛めし"
+      "kana": "たいめし",
+      "romaji": "Taimeshi",
+      "zh_tw": "鯛めし",
+      "en": "Taimeshi"
     },
     "prefecture": "hiroshima",
     "category": "kyodo",
+    "summary": {
+      "text": "“Taimeshi” is a local dish mainly eaten in the Seto Inland Sea coastal region. It’s made by putting a whole sea bream in a pot and cooking it with rice. It’s said that fishermen began making this dish during the Edo period when the village headman of Hashirishima started casting a sea bream fishing net. The Seto Inland Sea is characterized by a rocky and undulating seabed terrain, along with strong tidal currents, making it a suitable spawning environment and habitat for sea bream. As a result, sea bream fishing has thrived in the area since ancient times. Traditional fishing methods for sea bream, such as single-hook line fishing, abise fishing, floating sea bream fishing in Noshiro, and sea bream net fishing in Tomo, have been passed down through generations. Among them, Tomonoura in Fukuyama City is famous for the “taishibari net fishing method,” which is said to have started about 380 years ago in the Edo period. It’s a fishing method in which the sea bream that gather in the Seto Inland Sea to spawn in early summer are caught in nets all at once, and is now designated as an important intangible folk cultural property of Fukuyama City. From the beginning to middle of May you can watch the fishing from a boat and have the experience of actually pulling a net. In recent years, there has been a surge in red snapper aquaculture in the Seto Inland Sea. The practice of “harbor-based cultivation” involves releasing red snapper into the harbor and providing them with food for a specific period to encourage their settlement in the area. Additionally, the establishment of the first “marine ranch” off the coast of Osaki Kamijima Town has further promoted red snapper cultivation in the Seto Inland Sea.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/2808/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/42_9_hiroshima.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/2808/index.html",
         "fetched_at": "2026-09-29"
       }
     ],

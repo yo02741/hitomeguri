@@ -84,14 +84,14 @@
     "prefecture": "tochigi",
     "category": "kyodo",
     "summary": {
-      "text": "耳うどん（みみうどん）は、栃木県佐野市葛生地区（旧葛生町）、および宇都宮市城山地区（旧城山村）の郷土料理。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E8%80%B3%E3%81%86%E3%81%A9%E3%82%93",
-      "license": "CC BY-SA 4.0",
+      "text": "Mimi Udon\" is a traditional dish in the Kuzuu area of Sano City and the Shiroyama area of Utsunomiya City. Udon noodles are generally thought of as long and thin strings, but Mimi Udon has a slightly different shape. It is called \"Mimi Udon\" because the shape made from kneaded flour resembles the shape of an ear. In Sano City, there is a custom of holding an ear-shaped udon in one's hand and putting it to one's ear to pray for good things in the coming year. In Utsunomiya City, the Utsunomiya Shrine's Utsunomiya Shrine's Ujiko (shrine parishioners) used to eat ear udon as a feast during the New Year's festival.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/1303/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
       "fetched_at": "2026-09-29"
     },
     "source_type": "kyodo_ryori",
-    "kana_source": "wikipedia",
+    "kana_source": "maff",
     "images": [
       {
         "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/25/Mimi-udon.jpg/960px-Mimi-udon.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -106,11 +106,11 @@
         "fetched_at": "2026-09-29"
       },
       {
-        "url": "https://www.wikidata.org/wiki/Q11610715",
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/1303/index.html",
         "fetched_at": "2026-09-29"
       },
       {
-        "url": "https://ja.wikipedia.org/wiki/%E8%80%B3%E3%81%86%E3%81%A9%E3%82%93",
+        "url": "https://www.wikidata.org/wiki/Q11610715",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -147,6 +147,10 @@
         "fetched_at": "2026-09-29"
       },
       {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/4381/index.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
         "url": "https://www.wikidata.org/wiki/Q98320311",
         "fetched_at": "2026-09-29"
       },
@@ -161,15 +165,30 @@
     "id": "tochigi-maff-31_10_tochigi",
     "name": {
       "ja": "モロの煮付",
-      "zh_tw": "モロの煮付"
+      "kana": "もろのにつけ",
+      "romaji": "Morononitsuke",
+      "zh_tw": "モロの煮付",
+      "en": "Moro no Nitsuke( Salmon Shark Stew)"
     },
     "prefecture": "tochigi",
     "category": "kyodo",
+    "summary": {
+      "text": "The salmon shark or moro, as it is called in Tochigi, is caught off the coast of northern Ibaraki, Fukushima, and Miyagi. Made by simmering salmon shark in soy sauce and sugar to make it tender, Moro no Nitsuke is a home-cooked dish well-known in Tochigi.Shark dishes were commonly consumed in inland areas far from the sea and were a valuable source of protein for the folks there. This is because shark meat was neither popular nor widely consumed by people near fishing ports where sharks were caught. Sharks store uric acid in their bodies, which disperses and turns into ammonia when they die, making them less prone to spoilage. This made sharks perfect for transporting to inland areas where fresh seafood was scarce, and they were highly valued in inland areas as the only type of fresh fish they could get from the sea.In addition to moro, sagambo (Pacific spiny dogfish) is also eaten in Tochigi, and both have become traditional local flavors that are often served in Tochigi households.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/2909/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/31_10_tochigi.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/2909/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -179,15 +198,30 @@
     "id": "tochigi-maff-31_11_tochigi",
     "name": {
       "ja": "干瓢のごま酢あえ",
-      "zh_tw": "干瓢のごま酢あえ"
+      "kana": "かんぴょうのごますあえ",
+      "romaji": "Kanpyonogomasuae",
+      "zh_tw": "干瓢のごま酢あえ",
+      "en": "Kanpyo no Gomasu-ae (Dried Gourd Strips Dressed with Sesame Vinegar)"
     },
     "prefecture": "tochigi",
     "category": "kyodo",
+    "summary": {
+      "text": "Amidst the many dried gourd strips dishes, “Kanpyo no gomasu-ae” is one of the dishes beloved by residents of the prefecture along with “Kanpyo no tamago-toshi.” Tochigi Prefecture’s dried gourd strip production accounts for over 99% of the country’s; its cultivation especially flourishes in the southern part of the prefecture. For the cultivation of bottle gourd which becomes dried gourd strips, light soil with good drainage is desirable; this area where the \"Kanto Loam Formation\" is widely distributed is suitable for its cultivation. Also, the evening showers that are the mark of summer cool the ground surface and stimulate the growth of the bottle gourd’s roots, and their water content is the primary factor that leads to the development of the bottle gourd’s fruit. Thus blessed in topographical and meteorological conditions, dried gourd strip production became established here. The history of bottle gourd cultivation goes back over 300 years; it is said that the cultivation was brought about by \"Torii Tadateru\", the first \"daimyo of the Shimotsuke Mibu Domain\". It is said that in 1712, bottle gourd seeds were sent from \"Minaku Kizue\", Omi Province and successfully cultivated, and dried gourd strips began to be produced there.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/4028/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/31_11_tochigi.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/4028/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -197,15 +231,30 @@
     "id": "tochigi-maff-31_12_tochigi",
     "name": {
       "ja": "ゆず巻き",
-      "zh_tw": "ゆず巻き"
+      "kana": "ゆずまき",
+      "romaji": "Yuzumaki",
+      "zh_tw": "ゆず巻き",
+      "en": "Yuzumaki (Yuzu Rolls)"
     },
     "prefecture": "tochigi",
     "category": "kyodo",
+    "summary": {
+      "text": "A \"yuzu roll\" is a regional dish in which you wrap the skin of a \"yuzu\" fruit with daikon radish and pickle the roll in sweet vinegar for about 2 ~ 3 days. It is an indispensable item for autumn festivals and the New Year.Cold \"yuzu\" fruits are cultivated mainly in the northern part of Utsunomiya. They have a stronger aroma and are meatier than \"yuzu\" fruits cultivated in warm regions. \"Yuzu\" fruits evoke images of people enjoying their fragrance such as when using them as udon noodle condiments or putting them into the bath. However, the fruits cultivated around Utsunomiya are meaty. Thus, they are suitable as foodstuffs.A \"yuzu roll\" that uses this cold \"yuzu\" fruit is an indispensable item for traditional food eaten during the New Year's holidays in the northern part of Utsunomiya. After your soup with rice cakes and vegetables, a \"yuzu roll\" pickled in sweet vinegar will refresh your mouth. You can use raw daikon radish, but the chewiness and preservability of the radish will improve if you dry it for about a half day to a day.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/4042/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/31_12_tochigi.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/4042/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -215,15 +264,30 @@
     "id": "tochigi-maff-31_13_tochigi",
     "name": {
       "ja": "五目飯",
-      "zh_tw": "五目飯"
+      "kana": "ごもくめし",
+      "romaji": "Gomokumeshi",
+      "zh_tw": "五目飯",
+      "en": "Gomoku-meshi (Five Ingredients Rice)"
     },
     "prefecture": "tochigi",
     "category": "kyodo",
+    "summary": {
+      "text": "“Gomoku-meshi” is made for special days such as festivals and farmers’ holidays. With its lineup of colorful ingredients including \"kanpyo\", dried shiitake, carrots, burdock root, snow peas, abura-age and thin omelet strips, it is a traditional food that is perfect for formal occasions.The main ingredient, \"kanpyo\", has in Japan over 99% of its production in Tochigi Prefecture, which is the number one producer in Japan (according to the 2018 Ministry of Agriculture, Forestry and Fisheries survey); and thus is a specialty product that represents Tochigi Prefecture, particularly the southern region where its cultivation flourishes. Nutrition-wise, \"kanpyo\" contains much calcium and potassium, and is also abundant in dietary fiber. It is a dried food product in which strips of the bottle gourd fruit are thinly peeled and then dried in direct sunlight.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/4051/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/31_13_tochigi.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/4051/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -235,15 +299,27 @@
       "ja": "いなりずし",
       "kana": "いなりずし",
       "romaji": "Inarizushi",
-      "zh_tw": "いなりずし"
+      "zh_tw": "いなりずし",
+      "en": "Inari-zushi"
     },
     "prefecture": "tochigi",
     "category": "kyodo",
+    "summary": {
+      "text": "This dish was called \"Inari-zushi\" because fried thin tofu is said to be the favorite food of the fox, which is believed to be the messenger of the god Inari, and because sushi made with fried thin tofu is an essential part of the offerings made at Inari shrines. In Tochigi Prefecture, fried thin tofu stuffed with \"sushi rice(=vinegared rice)\" is wrapped with seasoned \"kanpyo (=dried gourd)\" in the center to make it look like a bale. \"kanpyo (=dried gourd)\", a specialty of Tochigi Prefecture, which accounts for more than 99% of the nation's production, is made by peeling the pulp of yugao into a string-like shape and drying it. It blends well with any seasoning and is used in many menus as a supplementary ingredient.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/5144/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/31_14_tochigi.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/5144/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -253,15 +329,30 @@
     "id": "tochigi-maff-31_15_tochigi",
     "name": {
       "ja": "あいその甘露煮",
-      "zh_tw": "あいその甘露煮"
+      "kana": "あいそのかんろに",
+      "romaji": "Aisonokanroni",
+      "zh_tw": "あいその甘露煮",
+      "en": "Aiso no Kanroni(candied japanise dace)"
     },
     "prefecture": "tochigi",
     "category": "kyodo",
+    "summary": {
+      "text": "\"Aiso no Kanroni(candied japanise dace)\" is a local dish of Tochigi Prefecture, in which \"Aiso(=japanise dace)\" caught in early spring at big river like Nakagawa River , Kinugawa River, are stewed in a sweetened broth.It is often softened and sweetened because of its slightly bony taste.In Tochigi Prefecture, which is located inland, it was not until refrigerators became widely available that people were able to eat an abundance of fresh seafood. Before that time, dried fish and salted salmon were the main products. Against this background, familiar river fish was used as a valuable source of protein.Traditional small-net fishing began with the creation of a suitable spawning ground, and there are still areas in the prefecture where fishermen catch the \"Aiso(=japanise dace)\" that come to spawn there.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/5184/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/31_15_tochigi.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/5184/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -271,15 +362,30 @@
     "id": "tochigi-maff-31_16_tochigi",
     "name": {
       "ja": "揚げまき湯波の煮物",
-      "zh_tw": "揚げまき湯波の煮物"
+      "kana": "あげまきゆばのにもの",
+      "romaji": "Agemakiyubanonimono",
+      "zh_tw": "揚げまき湯波の煮物",
+      "en": "Simmered Deep-fried Yuba Roll"
     },
     "prefecture": "tochigi",
     "category": "kyodo",
+    "summary": {
+      "text": "\"Simmered Deep-fried Yuba Roll\" is a traditional Nikko City dish made by rolling up and deep frying yuba, seasoning it, and simmering it.It is said that \"Yuba\" was introduced as an ingredient in vegetarian cuisine by Buddhist monks returning from study in Tang Dynasty China, and spread throughout the country. “Shugenja\", who abstained from eating meat, had a long-standing custom of eating \"Yuba\", which is thought to have spread to the general population. It is generally written “湯葉(meanings hot water leaf),\" but in Nikko, it is written “湯波(meanings hot water wave)\". \"Nikko Yuba\" is made by using a metal skewer and scooping the “Yuba\" into the center of the thin skin, which is thick and voluminous with a wavy surface. \"Deep-fried Yuba Rolled\" is a type of dried \"Yuba\" that is made by rolling up a layer of raw “Yuba\" into a stick shape, cutting it into round slices, and deep frying it in oil.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/5202/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/31_16_tochigi.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/5202/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -289,15 +395,30 @@
     "id": "tochigi-maff-31_18_tochigi",
     "name": {
       "ja": "かんぴょうのり巻き寿司",
-      "zh_tw": "かんぴょうのり巻き寿司"
+      "kana": "かんぴょうのりまきずし",
+      "romaji": "Kanpyonorimakizushi",
+      "zh_tw": "かんぴょうのり巻き寿司",
+      "en": "Kanpyo Nori Makizushi (‘Kanpyo’ Dried Gourd Strips Sushi Roll)"
     },
     "prefecture": "tochigi",
     "category": "kyodo",
+    "summary": {
+      "text": "Kanpyo is a crucial ingredient for sushi rolls; it is simmered with sugar and soy sauce then rolled with rice alone or with omelette egg and cucumber. Kanpyo is a local specialty in Tochigi prefecture, which boasts more than 90% of its market. (researched by Ministry of Agriculture, Forestry and Fishery in 2018) Kanpyo is made from ‘yugao’(moonflower) fruit cut into strip and dried. It is said that Dadateru Torii, Japanese Daimyo, got moonflower seeds when he moved from Koshu (currently Shiga Prefecture) to Mibu in current Tochigi Prefecture in 1712, then ordered local farmers to grow moonflowers to produce Kanpyo. The area of production has been expended to south-east Tochigi Prefecture like Kaminokawa machi, Koyama City, Simono City, Utsunomiya City, Moka City and Kanuma City since then. It goes well with various flavours, and is popular as an ingredient of sushi roll.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/4384/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/31_18_tochigi.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/4384/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -307,15 +428,30 @@
     "id": "tochigi-maff-31_19_tochigi",
     "name": {
       "ja": "煮しめ",
-      "zh_tw": "煮しめ"
+      "kana": "にしめ",
+      "romaji": "Nishime",
+      "zh_tw": "煮しめ",
+      "en": "Nishime (Simmered Japanese Taro and Others)"
     },
     "prefecture": "tochigi",
     "category": "kyodo",
+    "summary": {
+      "text": "“Nishime” is a local traditional dish served at festivals, home celebrations, and ceremonies. Another name for this dish is “imo-nishime” because satoimo(=Japanese taro) is always used as an ingredient. Satoimo(=Japanese taro) is a symbol of being blessed with many children and bountiful harvests because the young taro grow around the parent taro. Satoimo(=Japanese taro) is considered lucky for this reason and is used for feasts such as “osechi” eaten during the New Year holidays.Satoimo(=Japanese taro) is said to have been introduced to Japan in the Jomon period before rice cultivation began. It is possible to grow satoimo(=Japanese taro) on various lands including volcanic ash plateaus and gravel. In Tochigi, the vegetable is grown and harvested in the volcanic ash areas of Utsunomiya, fan-shaped areas of Nasu, and gravel areas at the foot of the Ashio Mountains. This vegetable is widely used in Tochigi to make a variety of dishes including “Nishime.”",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/5818/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/31_19_tochigi.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/5818/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -327,15 +463,27 @@
       "ja": "しもつかれ",
       "kana": "しもつかれ",
       "romaji": "Shimotsukare",
-      "zh_tw": "しもつかれ"
+      "zh_tw": "しもつかれ",
+      "en": "Shimotsukare"
     },
     "prefecture": "tochigi",
     "category": "kyodo",
+    "summary": {
+      "text": "It is one of the representative local dishes of Tochigi Prefecture. It is a dish filled with the wisdom of our ancestors, using leftover salted salmon heads from the New Year and soybeans left over from roasted lucky beans on Setsubun. In the past, this dish was made as an offering to the Inari shrine on the first horse day of the second lunar month, and there was a taboo against making it outside of that time. The time of Hatsuuma was the peak season for vegetables, and it was difficult to procure foodstuffs. Mishitsuke, made from leftovers, was not originally suitable as an offering to the gods. Therefore, it is thought that the food was sublimated into an offering to the Inari shrine by making it an \"oddity,\" an offering to the gods, instead of being made normally.The ingredients vary from region to region. In the central part of Tochigi Prefecture and the lower reaches of the Kinugawa River in Ibaraki Prefecture, the basic ingredients are radish, soybeans, salted salmon head, sake lees, carrots, and deep-fried tofu. In the eastern part of Saitama Prefecture, northern part of Chiba Prefecture, southern part of Fukushima Prefecture, and Tajima, only radish and soybeans are used, but there are also combinations of radish, soybeans, and salted salmon head, or radish, soybeans, salted salmon head, and sakekasu. Sakekasu is said to have come into use around the middle of the Edo period, when sake breweries began to appear and sakekasu became widely distributed.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/1297/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/31_1_tochigi.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/1297/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -345,15 +493,30 @@
     "id": "tochigi-maff-31_20_tochigi",
     "name": {
       "ja": "ニシンとタケノコの煮付け",
-      "zh_tw": "ニシンとタケノコの煮付け"
+      "kana": "にしんとたけのこのにつけ",
+      "romaji": "Nishintotakenokononitsuke",
+      "zh_tw": "ニシンとタケノコの煮付け",
+      "en": "Nishin to Takenoko no Nitsuke (Simmered Herring and Bamboo Shoots)"
     },
     "prefecture": "tochigi",
     "category": "kyodo",
+    "summary": {
+      "text": "“Nishin to takenoko no nitsuke” is a dish made with dried herring and bamboo shoots simmered in a sweet and savory sauce. Tochigi prefecture is located inland, and local people were not able to enjoy fresh fish until refrigerators were introduced. “Migaki nishin” is dried herring with the entrails and head of the fish removed. It was an important source of protein in the days that fresh fish were hard to come by because it could be preserved. Another name for “Nishin to takenoko no nitsuke” is “ta-ue nishin” (=rice planting herring) as simmered herring was served at the start of the rice planting season and after. The herring goes well with bamboo shoots and this dish is now enjoyed as an everyday dish as it tastes delicious with rice.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/5822/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/31_20_tochigi.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/5822/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -363,15 +526,30 @@
     "id": "tochigi-maff-31_21_tochigi",
     "name": {
       "ja": "ぼた餅",
-      "zh_tw": "ぼた餅"
+      "kana": "ぼたもち",
+      "romaji": "Botamochi",
+      "zh_tw": "ぼた餅",
+      "en": "Botamochi (Japanese Confectionary Made with Rice and Bean Paste)"
     },
     "prefecture": "tochigi",
     "category": "sweets",
+    "summary": {
+      "text": "“Botamochi” is an indispensable dish eaten on “Higan” (=equinoctial week). It is mostly eaten during the week of the spring equinox when peony flowers bloom. For the autumnal equinox, when Japanese clovers are in bloom, “ohagi” is typically eaten. At local confectionary shops, “botamochi” is made by molding mashed glutinous rice and short-grain rice into barrel shapes and covering them in azuki bean paste. Local farmers were busy so when preparing “botamochi”, they would put the cooked rice in a “chawan” and place the azuki bean paste on top. It is also eaten during the Bon holiday. There is a saying, “Botamochi for Bon, udon noodles at noon, and pumpkin soup with rice at night.”",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/5824/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/31_21_tochigi.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/5824/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -381,15 +559,30 @@
     "id": "tochigi-maff-31_22_tochigi",
     "name": {
       "ja": "鮎めし",
-      "zh_tw": "鮎めし"
+      "kana": "あゆめし",
+      "romaji": "Ayumeshi",
+      "zh_tw": "鮎めし",
+      "en": "Ayumeshi (Mixed Rice with Ayu Sweetfish)"
     },
     "prefecture": "tochigi",
     "category": "kyodo",
+    "summary": {
+      "text": "“Ayumeshi” is a local dish which is a mixed rice using ayu sweetfish. It has been eaten by the local people living alongside Naka River and Kinu River. Ayu fishing has been carried out for many years in the Naka River area and it is often said, the “Shimanto River of the west, Naka River of the east.” In 2002, Naka River was selected as one of the “100 Best Rivers with Natural Ayu Sweetfish” by the Japan Sportfishing Foundation. River fish were an important source of protein for the local people of Tochigi prefecture as the area is located inland. Ayu sweetfish was a valuable fish eaten on special occasions such as on festivals and agricultural holidays. Leftover ayu sweetfish were skewered and left out to hang and dry by a hearth so that they could be preserved. “Ayumeshi” is a simple dish made with grilled ayu sweetfish and rice and has been popular among commoners as it is easy to prepare.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/5828/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/31_22_tochigi.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/5828/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -399,15 +592,30 @@
     "id": "tochigi-maff-31_23_tochigi",
     "name": {
       "ja": "えび大根",
-      "zh_tw": "えび大根"
+      "kana": "えびだいこん",
+      "romaji": "Ebidaikon",
+      "zh_tw": "えび大根",
+      "en": "Ebi Daikon (Simmered Daikon radish with Shrimp)"
     },
     "prefecture": "tochigi",
     "category": "kyodo",
+    "summary": {
+      "text": "This is a dish in winter when it starts frosting in the south region of the prefecture, where river shrimp can be caught once it’s getting cold. Not only ‘Ebi Daikon,’ ‘Sekihan’ (rice cooked with red beans), ‘Kenchin-jiru’ (miso soup with vegetables and meat) and ‘Kinpira Gobou’ (shaved burdocks and carrots fried with soy sauce and sugar) were served at Water God Festival, one of the occasions that relatives and children living away from their parents get together.Many river shrimp were sold at peddlers in Namai area and Shiratori area in the south-west of Oyama City. The shrimp turns red when cooked, and with the combination of daikon radish’s white, this dish was served at the auspicious occasion as a lucky dish.River shrimp used in ‘Ebi Daikon’ is also called ‘Sasa-ebi’ (Bamboo grass shrimp). There is nowhere for shrimp to keep off the cold once grasses along the river die out. People bundle bamboo leaves and set them about 1m away from the river side to let shrimp come there. Then they catch shrimp with a net when shrimp come closer. ‘Ebi Daikon,’ simmered river shrimp and daikon radish until the daikon radish gets melting-soft, was one of treats. River shrimp is a general name for shrimp inhabiting rivers and lakes, and it is cooked to tempura, ‘tsukudani’ (preserved food cooked with soy sauce and sugar) and ‘nitsuke’ (boiled with soy sauce). Sakura shrimp is often replaced with river shrimp these days.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/6492/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/31_23_tochigi.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/6492/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -417,15 +625,30 @@
     "id": "tochigi-maff-31_24_tochigi",
     "name": {
       "ja": "草餅",
-      "zh_tw": "草餅"
+      "kana": "くさもち",
+      "romaji": "Kusamochi",
+      "zh_tw": "草餅",
+      "en": "Kusa-mochi (Mochi mixed with mugwort)"
     },
     "prefecture": "tochigi",
     "category": "sweets",
+    "summary": {
+      "text": "‘Kusa-mochi’ is a mochi mixed with mugwort and served at the events from mid March to mid April, when mugwort sprouts and grows. There is a custom to offer ‘Kusa-mochi’ to the ‘Hina-kazari’ (decoration during the Girl’s Festival) during Girl’s Festival (also known as Doll’s Festival or March Festival) and to enjoy with ‘kinako’ (roasted soybean flour), but it was the Girl’s Festival in the luna calendar (in early April). Now we celebrate the Girl’s Festival on March 3rd, and it is not possible to obtain mugwort at that time. Therefore, people buy ‘Kusa-mochi’ at Japanese confectionaries. When the first baby girl was born, the family decorate the Hina Dolls from father’s parents or mother's parents to pray for the baby’s healthy growth. It is a custom for mothers to go back her parent’s home during the festival. Although some families offer red-and-white ‘Hishi-mochi’ (diamond-shaped mochi) or ‘Shirozake’ (sweet white sake), ‘Kusa-mochi’ is a must to offer.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/6505/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/31_24_tochigi.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/6505/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -435,15 +658,30 @@
     "id": "tochigi-maff-31_25_tochigi",
     "name": {
       "ja": "白あえ",
-      "zh_tw": "白あえ"
+      "kana": "しらあえ",
+      "romaji": "Shiraae",
+      "zh_tw": "白あえ",
+      "en": "Shira-ae"
     },
     "prefecture": "tochigi",
     "category": "kyodo",
+    "summary": {
+      "text": "This dish is very popular not only as an attractive food for auspicious occasions, but also as a daily home food. People had no choice other than making tofu by themselves in mountainous area, where no tofu store was nearby. In Kawamata area or Serizawa area in Nikko City, neighbors shared the instrument and made tofu together. That’s why tofu was a precious food. They made tofu for special occasion like memorial service, ceremony or New Year, and cooked ‘Shira-ae’ at that time. People cooked this dish for festivals in shrines or yearly events in the area where they can get tofu easily. Now it is one of home dishes served throughout the year.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/6510/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/31_25_tochigi.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/6510/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -453,15 +691,30 @@
     "id": "tochigi-maff-31_26_tochigi",
     "name": {
       "ja": "ちたけとなすの油炒め",
-      "zh_tw": "ちたけとなすの油炒め"
+      "kana": "ちたけとなすのあぶらいため",
+      "romaji": "Chitaketonasunoaburaitame",
+      "zh_tw": "ちたけとなすの油炒め",
+      "en": "Chitake to Nasu no Abura-itame"
     },
     "prefecture": "tochigi",
     "category": "kyodo",
+    "summary": {
+      "text": "This is a representative dish of Tochigi, fried \"Chitake\" (=weeping milk cap mushrooms) and eggplants. \"Chitake\" is also called \"Chichitake\", and its name came from its milky white liquid out when you tear one. Weeping milk cap has good smell and goes well with eggplants, and it is used one of ingredients for Dashi (Japanese soup stock) for \"udon\" thick noodle or \"soba\" buckwheat noodle. In Tochigi Prefecture, \"Chichitake\" and its related species were called \"Chitake\", and eaten on daily basis. \"Chitake\" in \"satoyama\" (woodland near village) is very scarce edible mushroom grown around in August, earlier than other mushrooms, and the locals ate this mushroom during \"bon\" season (mid-August). In \"satoyama\" area, people managed the area to produce \"chitake\"; they cut oak or \"kunugi\" (a kind of oak) every couples of decades years to produce charcoal, and cleared fallen leaves to compost leaves. The amount of product and distribution of \"Chitake\" is decreasing now due to environmental change.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/6516/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/31_26_tochigi.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/6516/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -471,15 +724,30 @@
     "id": "tochigi-maff-31_27_tochigi",
     "name": {
       "ja": "なすといんげんの油味噌",
-      "zh_tw": "なすといんげんの油味噌"
+      "kana": "なすといんげんのあぶらみそ",
+      "romaji": "Nasutoingennoaburamiso",
+      "zh_tw": "なすといんげんの油味噌",
+      "en": "Nasu to Ingen no Abura Miso (stir-fried eggplants and green beans with miso)"
     },
     "prefecture": "tochigi",
     "category": "kyodo",
+    "summary": {
+      "text": "Eggplant is a representative vegetable from summer to autumn. Inland Tochigi Prefecture, where the temperatures soar during the summer, making it suitable for cultivation, eggplant was a familiar vegetable not only for farmers but also for those with even a small plot of land to cultivate it. There are numerous eggplant dishes, such as pickled in rice bran and miso soup, but one of the most popular during the summer is \"Nasu to Ingen no Abura Miso,\" where chopped eggplant is stir-fried in oil and coated with a mixture of miso and sugar. In Itato, Utsunomiya City, there is a tradition during the summer festival called \"Tensai\" where people consume \"Nasu to Ingen no Abura Miso\". In regions where eggplant is cultivated, excluding the mountainous areas in the northwest, it is commonly enjoyed not only during festivals but also on regular weekdays.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/7067/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/31_27_tochigi.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/7067/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -489,15 +757,30 @@
     "id": "tochigi-maff-31_28_tochigi",
     "name": {
       "ja": "どじょう汁",
-      "zh_tw": "どじょう汁"
+      "kana": "どじょうじる",
+      "romaji": "Dojojiru",
+      "zh_tw": "どじょう汁",
+      "en": "Dojō-jiru"
     },
     "prefecture": "tochigi",
     "category": "kyodo",
+    "summary": {
+      "text": "\"Dojō-jiru(=loach soup)\" is one of the dishes invariably made during the summer. It has been consumed to endure the harsh heat during the challenging summer months. Tochigi Prefecture, with its inland climate and significant temperature differences between seasons, experiences intense heat in the summer and continues with cold days in the winter.River fish, including \"Dojō (=loach),\" serve as a valuable source of protein in the inland areas away from the sea. Before irrigation ditchs were lined with concrete, \"Dojō\" were commonly found in the local rivers around the Utsunomiya region.In households where farmers cultivated rice paddies, it was a tradition to cover the water inlets of the paddies during the summer, catching \"Dojō\" and making \"Dojō-jiru.\" For small children, parents would peel the meat off and feed them. Pinch the bottom of the head of the loach with your left hand and scrape off the meat from the bottom of the head to the tail with the chopstick of your right hand, so that the meat peels off cleanly and is easy to eat.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/7072/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/31_28_tochigi.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/7072/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -507,15 +790,30 @@
     "id": "tochigi-maff-31_29_tochigi",
     "name": {
       "ja": "焼き餅",
-      "zh_tw": "焼き餅"
+      "kana": "やきもち",
+      "romaji": "Yakimochi",
+      "zh_tw": "焼き餅",
+      "en": "Yakimochi (Grilled rice cake)"
     },
     "prefecture": "tochigi",
     "category": "sweets",
+    "summary": {
+      "text": "In the days when homemade snacks and light meals were prevalent, rice cakes made from leftover rice mixed with flour and miso, shaped, flattened, and then grilled on a \"hōroku (=traditional grilling implement)\" or in a frying pan, were a beloved taste in households for their miso fragrance and rustic simplicity. Additionally, during the summer when rice was prone to spoilage, turning it into grilled rice cakes was a clever way to keep it to eat.In the past, these cakes were made with only flour and miso, without any additional ingredients, and cooked by firesides. Depending on the season, rice flour was sometimes used instead of wheat flour. Gradually, seasonal vegetables and other ingredients became common fillings, resulting in various households creating their unique grilled rice cakes.In some regions, they are steamed or boiled instead of being grilled, and they are enjoyed with dipping in sugar, soy sauce, or kinako (roasted soybean flour). There are numerous variations and adaptations depending on the region and household, and these dishes continue to be cherished as snacks or tea treats in modern times.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/7083/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/31_29_tochigi.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/7083/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -525,15 +823,30 @@
     "id": "tochigi-maff-31_30_tochigi",
     "name": {
       "ja": "切干し大根の煮物",
-      "zh_tw": "切干し大根の煮物"
+      "kana": "きりぼしだいこんのにもの",
+      "romaji": "Kiriboshidaikonnonimono",
+      "zh_tw": "切干し大根の煮物",
+      "en": "Kiriboshi-daikon no nimono (simmered dried shredded daikon radish)"
     },
     "prefecture": "tochigi",
     "category": "kyodo",
+    "summary": {
+      "text": "This is a dish made by rehydrating \"kiriboshi Daikon\"(=Dried strips of Daikon radish), adding seasonings, and slowly simmering it. In winter, Tochigi Prefecture experiences dry winds and many continuous sunny days, making it conducive to the production of dried foods such as \"Kiriboshi daikon(=dried shredded daikon radish)\" and \"Imogara (=dried Satoimo(=Japanese taro) stalk). \" Dried shredded daikon radish is made by thinly slicing and drying daikon radish, and it is rich in dietary fiber, offering a distinct flavor compared to fresh daikon radish. Even today, it is commonly enjoyed as part of daily meals. In the past, during periods of limited vegetables, especially in winter, it served as a valuable preserved food. One of the representative cooking methods for this is simmering.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/7087/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/31_30_tochigi.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/7087/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -543,15 +856,30 @@
     "id": "tochigi-maff-31_3_tochigi",
     "name": {
       "ja": "干瓢の卵とじ",
-      "zh_tw": "干瓢の卵とじ"
+      "kana": "かんぴょうのたまごとじ",
+      "romaji": "Kanpyonotamagotoji",
+      "zh_tw": "干瓢の卵とじ",
+      "en": "Kanpyo no tamagotoji"
     },
     "prefecture": "tochigi",
     "category": "kyodo",
+    "summary": {
+      "text": "Simmered dried gourd with egg\" is a local dish using kanpyo, a specialty of Tochigi Prefecture. Tochigi Prefecture is a production center of kanpyo, which accounts for more than 90% of the total production in Japan. The history of its cultivation is long, beginning in 1712 when it was introduced to the Mibu domain in Shimono-kuni (present-day Mibu-cho, Tochigi Prefecture). Yugao is suitable for the volcanic ash plateau and hot summer climate, and its cultivation area has expanded, and now it is mainly grown in Utsunomiya City, Kamisangawa Town, Shimono City, and Mibu Town. KANPYO is made by cutting the flesh of Yugao into long, thin strips and then drying them. The kanpyo was used to make soup, which was a waste of the kanpyo that could not be peeled well, and this was the beginning of \" kanpyo with egg\". Kanpyo, which can be seasoned with any seasoning, is also used in many other dishes as a supplementary food.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/1308/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/31_3_tochigi.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/1308/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -561,15 +889,30 @@
     "id": "tochigi-maff-31_4_tochigi",
     "name": {
       "ja": "芋ぐし",
-      "zh_tw": "芋ぐし"
+      "kana": "いもぐし",
+      "romaji": "Imogushi",
+      "zh_tw": "芋ぐし",
+      "en": "Imogushi"
     },
     "prefecture": "tochigi",
     "category": "kyodo",
+    "summary": {
+      "text": "Imogushi\" is a local dish of roasted sweet potatoes on skewers with a savory miso sauce, which has been prepared for ceremonial occasions and events. Sato-imo was introduced to Japan from tropical Asia during the Jomon period (before rice cultivation). In Tochigi Prefecture, sato-imo has been cultivated in a wide area except for the former Kuriyama Village, which is unsuitable for sato-imo cultivation due to its cold climate. In the past, the word \"taro\" used to refer to sato-imo, which was offered at festivals and annual events, as well as in everyday life. For example, there is a custom in Tsukizawa, Nasu-Shiobara City, to eat imogushi while enjoying osechi (New Year) dishes and sake around the hearth at New Year's. In Yamakubo, Nikko City, there is a custom to make and eat imogushi at the festival of Inari Shrine on the first horse day of the lunar calendar.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/1314/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/31_4_tochigi.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/1314/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -579,15 +922,30 @@
     "id": "tochigi-maff-31_5_tochigi",
     "name": {
       "ja": "さがんぼの煮つけ",
-      "zh_tw": "さがんぼの煮つけ"
+      "kana": "さがんぼのにつけ",
+      "romaji": "Saganbononitsuke",
+      "zh_tw": "さがんぼの煮つけ",
+      "en": "Saganbo no nitsuke"
     },
     "prefecture": "tochigi",
     "category": "kyodo",
+    "summary": {
+      "text": "In Tochigi, a prefecture without a sea, people ate sharks, called saganbo (Spiny dogfish) and moro (mouse shark), as raw fish from the sea before refrigerators became widely available. This is because sharks store uric acid in their bodies, and when their lives run out, the uric acid decomposes into ammonia, which prevents decomposition and preservation.The saganbo distributed in Tochigi Prefecture were originally landed at a fishing port in Kitaibaraki, where they were sold at a higher price by removing the fins and skin and shipping the spindle-shaped meat inland to Tochigi Prefecture. The distinctive name \"sagambo\" comes from a dialect from Kitaibaraki to northeastern Tochigi Prefecture, where spindle-shaped icicles are called \"sagabo\" or \"saganbo. According to the \"Bussu-rui Shouko,\" a collection of dialects from all over Japan compiled during the Edo period, sharks are called \"Sagabo\" in the Utsunomiya area of Shimono-kuni, indicating that sharks have been eaten in Tochigi Prefecture for a long time.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/1352/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/31_5_tochigi.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/1352/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -597,15 +955,30 @@
     "id": "tochigi-maff-31_6_tochigi",
     "name": {
       "ja": "板台餅",
-      "zh_tw": "板台餅"
+      "kana": "ばんだいもち",
+      "romaji": "Bandaimochi",
+      "zh_tw": "板台餅",
+      "en": "Bandai Mochi"
     },
     "prefecture": "tochigi",
     "category": "sweets",
+    "summary": {
+      "text": "A local cuisine passed down from long ago in the Kuriyama region located in Tochigi Prefecture’s Nikko city. Known for using Rice flour as opposed to glutinous rice, bandai mochi’s name is said to have been derived from how it was made in small mountain huts where the rice was placed on top of a board and pounded with things such as the butt of an axe. As opposed to mochi which uses glutinous rice, bandai mochi is less sticky, hardens at a slower pace and is known for its smooth texture.In the Kuriyama region, the mochi is eaten in various ways depending on the area. The mochi can be formed into a flat round shape and brushed with sweet miso or jūne (perilla seed miso) and grilled, or it can be enjoyed with red bean paste and mashed soybeans (zunda) as toppings. Some also put it into soup stock made using freshly fished char.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/2892/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/31_6_tochigi.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/2892/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -615,15 +988,30 @@
     "id": "tochigi-maff-31_7_tochigi",
     "name": {
       "ja": "小麦まんじゅう",
-      "zh_tw": "小麦まんじゅう"
+      "kana": "こむぎまんじゅう",
+      "romaji": "Komugimanju",
+      "zh_tw": "小麦まんじゅう",
+      "en": "Wheat manju"
     },
     "prefecture": "tochigi",
     "category": "sweets",
+    "summary": {
+      "text": "Wheat manju is a steamed bun made by wrapping red bean paste in a dough made of wheat flour. It is also simply known as “manju” and, because it is made by adding carbonic acid (sodium bicarbonate), “carbonated manju” as well. It is a hometown flavor that has been made at home in each household for a long time.Tochigi Prefecture employs a two-crop system with many wheat crops, and their people have loved dishes made with wheat for a long time. Wheat manju is also one of the indispensable dishes for annual events and ceremonial occasions. In particular, it was an indispensable dish for Obon observances, when fresh wheat flour was circulated after the wheat harvest.July 1st of the lunar calendar is called Kamafuta Tsuitachi and is said to be “the day when the lid of hell opens.” The steamed buns offered to the Kamafuta on this day are called Kamafuta manju. In order for the ancestors to return in time for Mukaebon on the 13th, it is said they depart from the spirit world on Kamafuta Tsuitachi, which is said to be when the lid of the kiln of hell opens. Offer the pot lid steamed buns. In order to keep the ancestors from going hungry, Kamafuta manju are offered.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/2897/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/31_7_tochigi.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/2897/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -635,15 +1023,27 @@
       "ja": "かてそば",
       "kana": "かてそば",
       "romaji": "Katesoba",
-      "zh_tw": "かてそば"
+      "zh_tw": "かてそば",
+      "en": "Kate-soba"
     },
     "prefecture": "tochigi",
     "category": "kyodo",
+    "summary": {
+      "text": "The \"Kate\" in the name refers to ingredients used to increase volume. This regional cuisine was created with the purpose of increasing the volume by adding daikon and nira (garlic chives). The practice of using daikon in the winter and soft nira in the early spring to improve the flavor while increasing the volume is said to have been started by common people when food was scarce. About 40 years ago, when nira cultivation began to flourish in Kanuma City, \"Nira Soba\" (garlic chive buckwheat noodles) became commercialized at a soba shop and since then has been offered at many shops throughout the city. \"Nira Soba\" was established around Kanuma City, and \"Daikon Soba\" was established around Sano City. According to the results of a survey by the Ministry of Agriculture, Forestry and Fisheries, Tochigi prefecture is the third largest producer of soba in Japan, and it is an essential cuisine for both daily life and special events. Kanuma City and the surrounding area used to produce hemp as well. \"Asa-Ato Soba\" (after-hemp soba) made from the buckwheat planted to restore nutrients to the soil after the hemp harvest. The hemp production is smaller today, but buckwheat continues to be cultivated, and a large amount of nira are produced, resulting in \"Kanuma Nira Soba.\"",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/2902/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/31_8_tochigi.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/2902/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -653,15 +1053,30 @@
     "id": "tochigi-maff-31_9_tochigi",
     "name": {
       "ja": "ちたけうどん（そば）",
-      "zh_tw": "ちたけうどん（そば）"
+      "kana": "そば",
+      "romaji": "Soba",
+      "zh_tw": "ちたけうどん（そば）",
+      "en": "Chitake Udon (Soba) (Chitake Mushrooms with Buckwheat Noodles)"
     },
     "prefecture": "tochigi",
     "category": "kyodo",
+    "summary": {
+      "text": "'Chitake udon' is an udon dish unique to the plains of Tochigi Prefecture, where flatland forests abound, and it consists of udon noodles in a broth made from stir-fried chitake mushrooms and eggplant.Tochigi Prefecture, with its extensive fields and double-cropped rice paddies, is one of the largest wheat-growing areas in Japan, and udon noodles were made from freshly ground wheat flour during the Bon Festival when the barley and wheat harvests were still in progress. 'Chitake' refers to 'chichitake (tany milkcap mushroom),' which produces a white juice when split open. Its strong aroma makes it ideal as a broth for udon and soba noodles, and it also goes perfectly with eggplant. Chitake is one of the few edible mushrooms that grow around August, ahead of the fall mushrooms, and was eaten during the Bon Festival in Tochigi Prefecture. In the past, chitake used to be abundant in satoyama areas rich in nature, but now the amount that is harvested and distributed is in decline due to factors such as changes in the natural environment.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/3006/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/31_9_tochigi.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/3006/index.html",
         "fetched_at": "2026-09-29"
       }
     ],

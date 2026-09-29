@@ -83,19 +83,22 @@
     "id": "kumamoto-Q11635274",
     "name": {
       "ja": "赤ど漬け",
+      "kana": "あかどづけ",
+      "romaji": "Akadozuke",
       "zh_tw": "赤ど漬け",
       "en": "akadozuke"
     },
     "prefecture": "kumamoto",
     "category": "kyodo",
     "summary": {
-      "text": "赤ど漬（あかどづけ）とは熊本県の内、阿蘇市などの阿蘇地域、特に旧一の宮町で作られる漬物の一つである。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E8%B5%A4%E3%81%A9%E6%BC%AC",
-      "license": "CC BY-SA 4.0",
+      "text": "A traditional pickle that has been passed down through the ages in Aso (in some areas, such as the former Ichinomiya town) along with Takanazuke pickles. It’s also called “Aso horse sashimi” or “field horse sashimi” because of its color, shape, and how it’s eaten. Akadoimo, a type of taro cultivated in this area, is a name unique to the Aso region and has been passed down along with regular seed potatoes. The stems have low bitterness and take on a beautiful red color, so they’ve been used for pickles since ancient times.As for how they’re pickled, a small amount of salt is rubbed in these stems and a weight is placed on them so the water rises overnight as it soaks. Once the stems become soft, they’re sprinkled with vinegar. Black liquid rises to the surface, so this is removed. After leaving it for a while, the color changes to red. When they turn a beautiful bright red, they’re ready to eat. Peel the skin, cut them into appropriate lengths, and eat them with soy sauce or ginger soy sauce. There were no refrigerators in the past, so these were pickled from mid-September until around the first frost and eaten during this period. It’s said that the ones harvested around the mid-autumn harvest moon have a particularly vibrant color, and even a slight variation in the pickling method can affect the color. It seems the women of the house worked very carefully when pickling the “akadozuke.” Vinegar is used to make these pickles, but when the temperature drops lactic acid fermentation is used instead of vinegar. It’s indispensable as a lunch box item for the farm work of autumn such as cutting hay. It’s a pickle that feels like the arrival of autumn for the people of Aso.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/3358/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
       "fetched_at": "2026-09-29"
     },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
@@ -103,11 +106,11 @@
         "fetched_at": "2026-09-29"
       },
       {
-        "url": "https://www.wikidata.org/wiki/Q11635274",
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/3358/index.html",
         "fetched_at": "2026-09-29"
       },
       {
-        "url": "https://ja.wikipedia.org/wiki/%E8%B5%A4%E3%81%A9%E6%BC%AC",
+        "url": "https://www.wikidata.org/wiki/Q11635274",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -125,10 +128,10 @@
     "prefecture": "kumamoto",
     "category": "kyodo",
     "summary": {
-      "text": "Tojiko mame (とじこ豆) is a traditional confectionery from Kyushu, Japan, particularly associated with Kumamoto Prefecture.",
+      "text": "The name of this sweet comes from the fact that it is made by locking up soybeans with a sweet wheat flour dough. In the cities of Yamaga and Kikuchi, and the areas surrounding them, “tojiko mame/mame gashi” was prepared at the same time as osechi to be eaten during New Year’s. Sugar and water are cooked in a pan and after that, roasted soybeans are added. Once the soybeans become soft, wheat flour is added, and the ingredients are mixed. Oil is heated in a frying pan and the dough is kneaded until it becomes transparent. The dough is then wrapped in some dry bamboo skin and steamed. Traditionally, soybeans were used but recently, people like to use peanuts instead. Peanuts do not need to be roasted and they are crunchier and have more flavor. The ingredients used differ depending on the family and region that makes it, and some people like to add yuzu or ginger and use different types of sugar such as muscovado sugar, soft brown sugar, and cane sugar or blend different types of sugar together. Sometimes, this sweet is not steamed and a bamboo rolling mat is used to shape the dough.",
       "lang": "en",
-      "source_url": "https://en.wikipedia.org/wiki/Tojiko_mame",
-      "license": "CC BY-SA 4.0",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/6770/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
       "fetched_at": "2026-09-29"
     },
     "source_type": "kyodo_ryori",
@@ -140,11 +143,11 @@
         "fetched_at": "2026-09-29"
       },
       {
-        "url": "https://www.wikidata.org/wiki/Q135116202",
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/6770/index.html",
         "fetched_at": "2026-09-29"
       },
       {
-        "url": "https://en.wikipedia.org/wiki/Tojiko_mame",
+        "url": "https://www.wikidata.org/wiki/Q135116202",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -154,15 +157,30 @@
     "id": "kumamoto-maff-aso_takana_zuke_kumamoto",
     "name": {
       "ja": "阿蘇高菜漬け",
-      "zh_tw": "阿蘇高菜漬け"
+      "kana": "あそたかなづけ",
+      "romaji": "Asotakanazuke",
+      "zh_tw": "阿蘇高菜漬け",
+      "en": "Aso Takana-zuke"
     },
     "prefecture": "kumamoto",
     "category": "kyodo",
+    "summary": {
+      "text": "\"Aso takana\" are a traditional vegetable grown in the cold climate and volcanic soil of Aso. The seeds are sown in fall, slowly overcome the winter cold, and grow remarkably in the beginning of spring; they are harvested in March-April. The thick stalks that are ready to be eaten have a part that can be easily snapped off, and even now the work is done by hand and not by machine. For that reason the harvesting of Aso takana is called \"takana folding.\" Also, since the sprouts are fine and soft and lose freshness quickly, since long ago they have been pickled in salt and red chili flakes immediately after harvest. \"Aso takana-zuke\" are pickled vegetables that are a common sight on the dining table as well as as souvenirs. There are freshly pickled vegetables (known as shin-zuke or asa-zuke), which can be eaten three days after pickling, as well as well-pickled vegetables (furu-zuke) which are enjoyed for their spiciness and sourness that comes from six months of lactic fermentation.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/3357/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/aso_takana_zuke_kumamoto.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/3357/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -172,15 +190,30 @@
     "id": "kumamoto-maff-baniku_soba_kumamoto",
     "name": {
       "ja": "馬肉蕎麦",
-      "zh_tw": "馬肉蕎麦"
+      "kana": "ばにくそば",
+      "romaji": "Banikusoba",
+      "zh_tw": "馬肉蕎麦",
+      "en": "Baniku Soba (Buckwheat Noodles with Horsemeat)"
     },
     "prefecture": "kumamoto",
     "category": "kyodo",
+    "summary": {
+      "text": "According to statistics published in 2019 by the Ministry of Agriculture, Forestry and Fisheries of Japan, Kumamoto prefecture is the highest producer of horsemeat in Japan. Other names for horsemeat aside from “baniku” are “sakura-niku” or “ketobashi.” Horsemeat sashimi is a specialty of this region. Japanese daimyo Kiyomasa Kato of the Higo domain had no choice but to eat the meat of a military horse during his expedition to Korea because he ran out of food. He found the meat to be so tasty that he continued to eat horsemeat sashimi even after he returned to Japan. This is how horsemeat became prevalent in Kumamoto.Horsemeat is high in protein and contains many vitamins and low in fat, making it a healthy option. During the Edo period, when eating meat was banned, horsemeat was served as a medicinal food to those that were ill or injured as it is highly nutritious. In Kumamoto Prefecture, horse meat has been eaten by some farmers since before World War II. The pastureland at the foot of Mt. Aso was a production area for army horses, and the use of their meat, which had served as a substitute for beef and pork in the postwar food shortage, spread horse meat cuisine. Around 1955, local restaurants began to serve dishes using horsemeat. In Kumamoto, horsemeat is sold at supermarkets and people like to use it to make curry, “nikujaga” (=meat and vegetable stew) and other dishes. “Shigureni” (=simmered horsemeat tsukudani) made with leftover meat after horsemeat sashimi is prepared, is a sweet-flavored meat dish made with soy sauce, sugar, and ginger. It is a popular dish eaten by the locals and is usually eaten with rice or enjoyed with drinks. It is also used a as a topping for soba noodle or udon noodle soup.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/6780/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/baniku_soba_kumamoto.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/6780/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -190,15 +223,30 @@
     "id": "kumamoto-maff-basashi_kumamoto",
     "name": {
       "ja": "馬刺し",
-      "zh_tw": "馬刺し"
+      "kana": "ばさし",
+      "romaji": "Basashi",
+      "zh_tw": "馬刺し",
+      "en": "Basashi(Horse sashimi)"
     },
     "prefecture": "kumamoto",
     "category": "kyodo",
+    "summary": {
+      "text": "The most famous specialty of Kumamoto, Japan's largest producer of horse meat, is \"Basashi(Horse sashimi)\". Thinly sliced raw horse meat is served with thinly sliced onions, grated ginger, garlic, etc., and dipped in sweet soy sauce. Low in fat and calories, high in protein, and rich in minerals such as iron, calcium, and zinc, horse meat is now a popular ingredient, but it has also long been consumed in Kumamoto as a fortifying and nourishing food.There are various theories as to the origin of \"Basashi(Horse sashimi)\", but it is said that when Kiyomasa Kato, the first lord of the Kumamoto domain, was leading his army in Korea, he ran out of food on the Korean Peninsula and was forced to kill his military horses for food. He found them so delicious that he continued to enjoy horse meat and \"Basashi(Horse sashimi)\" after returning to Japan. Meat consumption was almost non-existent during the Edo period, and only a few farmers ate it, but it become widespread in Kumamoto and the Aso region during the Meiji Era. In the Aso region, which produced military horses, people began eating horse meat due to postwar food shortages, leading to the practice being widespread, and restaurants began serving horse meat in the 1950s. \"Basashi(Horse sashimi)\" tastes different depending on the cut, such as marbled meat (loin), lean meat (thigh), liver, and tongue. There are also many terms unique to horse meat, such as \"futaego\" (belly), \"nekko\" (aorta), and \"kone\" (fat beneath the mane). Horse meat is labelled differently depending on their place of origin. \"Kumamoto-produced horse meat\" is produced using horses that are born and raised in Kumamoto, and \"Kumamoto horse meat\" is produced using foals that have been imported from countries such as Canada and fed carefully selected feed for 1 to 1.5 years to improve the quality of their meat.Horses have a higher body temperature than cows and pigs, making it difficult for bacteria that can cause food poisoning to multiply, which is one of the reasons why horse meat can be eaten raw. In addition, horse meat is processed in thoroughly sanitized meat processing plants, and is always frozen before distribution as an anti-parasite measure.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/4013/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/basashi_kumamoto.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/4013/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -210,15 +258,27 @@
       "ja": "ぶたあえ",
       "kana": "ぶたあえ",
       "romaji": "Butaae",
-      "zh_tw": "ぶたあえ"
+      "zh_tw": "ぶたあえ",
+      "en": "Buta-ae"
     },
     "prefecture": "kumamoto",
     "category": "kyodo",
+    "summary": {
+      "text": "The Amakusa region, consisting of some 120 islands of various sizes, is blessed with an abundance of seafood, especially the specialty octopus, which grows on shrimp and crabs and is known for its quality, including its elastic texture. Drying octopus is a summer tradition, and National Route 324, where such a scene can be seen, was named \"Amakusa Ariake Tako Kaido (Amakusa Arake Octopus Road) \" in 2005, in an effort to promote the region with its specialty, octopus.While there are new octopus dishes being created, \"Buta-ae\" made with eggplant and boiled octopus is a local dish that has been popular in the area for a long time. It is based on the Okinawan dish \"Goya Chanpuru\", which was originally made by substituting octopus caught in Amakusa Bay for pork, which was precious and hard to find in the Amakusa region in the old days. For a long time, when we could get a lot of eggplant and bitter gourd, we could also get a lot of octopus, this unique dish was introduced as \"Buta-ae\" even after it was established as a dish of stir-fried summer vegetables and octopus with miso (barley miso). The spicy-sweet miso flavor with sugar and hawk's claw (chili pepper) enhances the taste of octopus and the sweetness of vegetables, making it a perfect accompaniment to rice or as a snack with sake. The main vegetable used is eggplant, but each family has its own arrangement, including bitter melon, bell pepper, carrot, pumpkin, and other vegetables, as well as the way in which they are cut.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/5113/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/butaae_kumamoto.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/5113/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -228,15 +288,30 @@
     "id": "kumamoto-maff-dagojiru_kumamoto",
     "name": {
       "ja": "だご汁",
-      "zh_tw": "だご汁"
+      "kana": "だごじる",
+      "romaji": "Dagojiru",
+      "zh_tw": "だご汁",
+      "en": "Dagojiru"
     },
     "prefecture": "kumamoto",
     "category": "kyodo",
+    "summary": {
+      "text": "Dako-jiru\" is a soup made by kneading wheat flour (rice flour) with water, letting it sit for a while, then spreading it by hand and filling it with dumplings, and adding seasonal vegetables such as taro and burdock root, and eating it with miso or soy sauce. It is easy to make, nutritious, and filling, so it has long been eaten between farm chores. Dago\" means \"dango\" in the Kumamoto dialect and is also called dango soup. It is eaten throughout Kyushu, but in Kumamoto, sweet potatoes are used for dango in many areas. There is \"Ikinari Dago Jiru\" (Kumamoto City), which contains dango wrapped with raw sweet potatoes, \"Ohimesan Dango Jiru\" (Kanomoto-Kikuchi area), which is sweetened by kneading sweet potatoes and has a smooth, soft texture, and \"Anmochi Dago Jiru\" (Koshi City), which contains sweet bean paste made from sweet potatoes and brown sugar mixed with sweet potatoes and wrapped in a dough filled with sweet potato ), and others. In some cases, instead of dumplings, the dough is stretched and cut into pieces like udon noodles. The variety of ingredients and methods of making dagojiru differ from region to region and from household to household, and the variety is part of its appeal.Many restaurants also serve dagojiru, and the stretch of National Route 57 lined with restaurants offering dagojiru is known as \"dagojiru highway.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/275/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/dagojiru_kumamoto.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/275/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -246,15 +321,30 @@
     "id": "kumamoto-maff-ganeage_kumamoto",
     "name": {
       "ja": "がね揚げ",
-      "zh_tw": "がね揚げ"
+      "kana": "がねあげ",
+      "romaji": "Ganeage",
+      "zh_tw": "がね揚げ",
+      "en": "Ganeage(Fried sweet potato)"
     },
     "prefecture": "kumamoto",
     "category": "kyodo",
+    "summary": {
+      "text": "In the Amakusa area, fish could not be used for Buddhist ceremonies, so instead, sweet potatoes were cut into thick slices and deep-fried in rapeseed oil, and \"gane-age\" is said to have originated as a vegetarian food.In the Amakusa dialect, \"gane\" means crab, and the name comes from the fact that the fried appearance looks like crab legs. Also known as \"tsukiage,\" it is called \"ganeage\" at festive occasions and \"tsukiage\" at Buddhist ceremonies. The batter is flavored with chopped or shredded ginger and sweetened with sugar. The crispy batter and the crunchy sweet potatoes are popular among people of all ages.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/292/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/ganeage_kumamoto.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/292/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -264,15 +354,30 @@
     "id": "kumamoto-maff-hone_kajiri_kumamoto",
     "name": {
       "ja": "骨かじり",
-      "zh_tw": "骨かじり"
+      "kana": "ほねかじり",
+      "romaji": "Honekajiri",
+      "zh_tw": "骨かじり",
+      "en": "Honekajiri (Simmered Bone-in meat)"
     },
     "prefecture": "kumamoto",
     "category": "kyodo",
+    "summary": {
+      "text": "\"Honekajiri\" is a local dish from the Hitoyoshi and Kuma area in Kumamoto prefecture, particularly in the Oku-Kuma (including Kami-Kuma/Yunomae Town, Taragi Town, and Mizukami Village). It is a hearty dish where people gather in large numbers, often served at banquets. The dish is savored by hand, allowing diners to take big, satisfying bites directly from the bone.The cooking method is as follows: Place bone-in meat such as ribs, back, and pelvic bones of wild boar or pork in a large pot, and simmer slowly in water for about three hours (time may vary depending on the heat and size). Throughout the simmering process, skim off any scum and excess fat. Once the meat is tender enough to easily come off the bone, it is simply seasoned with salt.Though it takes time, the process is simple. The simmered meat becomes incredibly tender, juicy, and packed with flavor, offering a delightful dining experience.The name \"Honekajiri\" comes from the tradition of savoring every bit of meat, even down to the marrow inside the bones. It is said to have originated from the cuisine of hunters during wild boar hunting expeditions. After butchering and processing the wild boar or pork, the leftover meat on the bones was used to create this dish. In addition to simmering in water alone, there are various methods to enhance the flavor of \"Honekajiri\". After boiling in water, some include adding \"Kombu\" (=kelp), aromatic vegetables like ginger, infusing fragrance with \"Kuma Shochu\" (a local distilled spirit), or seasoning with soy sauce or miso. The broth, rich with the essence from the meat and bones, can also be used in dishes such as ramen or hot pot.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/7403/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/hone_kajiri_kumamoto.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/7403/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -282,15 +387,30 @@
     "id": "kumamoto-maff-ikinari_dango_kumamoto",
     "name": {
       "ja": "いきなり団子",
-      "zh_tw": "いきなり団子"
+      "kana": "いきなりだんご",
+      "romaji": "Ikinaridango",
+      "zh_tw": "いきなり団子",
+      "en": "Ikinari dango"
     },
     "prefecture": "kumamoto",
     "category": "sweets",
+    "summary": {
+      "text": "Ikinari dango\" is a simple local snack made by wrapping sliced sweet potatoes in flour dough and steaming them. Because of the volcanic ash in Otsu, the largest producer of sweet potatoes in the prefecture, and other areas around the foot of Mt. Aso, farmers in the Kikuchi Plain and Kumamoto Plain used to make these dumplings as a snack to eat during the fall farming season when sweet potatoes are harvested. The word \"ikinari\" in \"ikinari dango\" means \"easy, quick, or immediately\" in the Kumamoto dialect, and the origin of the name is said to be that the dumplings can be made quickly and easily, and can be served immediately even when there are sudden visitors.The dough for the skin is made of wheat flour and dango flour (and salt), but in the days when rice was precious, it was made of wheat flour only. A few decades ago, azuki bean paste was added to the filling, and it has become a mainstream item because of its popularity with the sweetness of the azuki bean paste and the saltiness of the dough, which goes well with the crunchy sweet potatoes. Recently, the dough has been mixed with mugwort and brown sugar, sprinkled with soybean flour, and filled with purple sweet potatoes, chestnuts, walnuts, and other ingredients, with variations gradually increasing. Although originally a warm snack to be eaten freshly made, cold ikinari dumplings made from frozen dumplings and eaten half-frozen have also made their appearance.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/287/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/ikinari_dango_kumamoto.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/287/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -300,15 +420,30 @@
     "id": "kumamoto-maff-itimonji_no_guruguru_kumamoto",
     "name": {
       "ja": "一文字のぐるぐる",
-      "zh_tw": "一文字のぐるぐる"
+      "kana": "ひともじのぐるぐる",
+      "romaji": "Hitomojinoguruguru",
+      "zh_tw": "一文字のぐるぐる",
+      "en": "Hitomoji no Guruguru (Green onion with Vinegar miso)"
     },
     "prefecture": "kumamoto",
     "category": "kyodo",
+    "summary": {
+      "text": "It is said that during the reign of the 6th lord of the Higo domain, Hosokawa Shigekata, when the domain's finances were in trouble and austerity measures were implemented to rebuild, \"Ichimonji\" green onions were conceived as an inexpensive and delicious accompaniment to sake, serving as a snack.\"Hitomoji\" is another term for \"Wakegi\" green onions, derived from the appearance of the planted green onion resembling the character \"Hito\" (person). Another theory suggests that it originates from the term \"Hitomoji kusa,\" which referred to green onions as a single character \"ki\" in the language of the court ladies during the imperial era. In Kumamoto prefecture, \"Hitomoji\" green onions are known for the distinctive bulge at the white part, making them a unique local product.\"Guruguru\" refers to wrapping the green leaves tightly around the white part of a briefly boiled \"Hitomoji\", using the white part as the axis.When you cut the tips of the wrapped leaves with your fingers, a sticky liquid comes out, which is used to seal the end of the roll. By tightly wrapping them in this way, it creates a crunchy texture when bitten into, allowing you to enjoy the unique aroma and sweetness. Though a simple dish made solely with \"Hitomoji \", it becomes a delicacy when topped with vinegar miso or spicy miso. You can enjoy plenty of nutrition from the rich \"Hitomoji\" green onions.The peak season for \"Hitomoji\", which have been cultivated since the Edo period, was originally in spring. However, due to increased demand for year-round availability as a local specialty, efforts such as improving varieties have extended the cultivation period.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/7337/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/itimonji_no_guruguru_kumamoto.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/7337/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -318,15 +453,27 @@
     "id": "kumamoto-maff-jyabara_daikon_no_nimono_kumamoto",
     "name": {
       "ja": "蛇腹大根（房切り大根）の煮物",
-      "zh_tw": "蛇腹大根（房切り大根）の煮物"
+      "zh_tw": "蛇腹大根（房切り大根）の煮物",
+      "en": "Jabara Daikon (Fusakiri Daikon) no Nimono (Simmered Dried Daikon Radish)"
     },
     "prefecture": "kumamoto",
     "category": "kyodo",
+    "summary": {
+      "text": "\"Jabara Daikon\" is a dried daikon radish traditionally made in the Minami-Aso region using the cold winter winds. It is also known as \"Fusakiri Daikon\" or \"Kirikake Daikon.\" While it can be made using \"Aokubi Daikon\" (a variety of daikon radish), it is more commonly made with daikon radishes specifically chosen for drying, often referred to as \"Ideal Daikon.\"The method for making \"Jabara Daikon\" involves a unique cutting technique. Lay the daikon radish horizontally and use a knife to make slices about 2-3mm thick. Leave about 5mm at the bottom without cutting all the way through, and it's helpful to use chopsticks placed alongside the daikon radish to prevent slicing through completely. Turn it over and place the cut side facing downwards. Make diagonal cuts about 2-3mm wide. When you reach the end, the slices will elongate like a snake's belly, extending to about three times their original length. Freshly cut raw daikon radish is hard and tends to break easily when stretched. Therefore, it is recommended to first put it in a sieve or similar container to air-dry. Once it becomes flexible and no longer breaks easily, you can hang it to dry on a pole. (Some also prefer to dry the harvested daikon radish for several days to a week before cutting it.) This method results in the daikon radish becoming long and slender, doesn't taking up minimal space and facilitating faster drying. The finished product can be stored in cans or jars for preservation, providing food throughout the year. Sun-drying condenses the flavor and nutrients, and increases calcium, iron, and dietary fiber, making it useful for cutting vegetables from winter to spring. When cooking, it is rehydrated in water and used mainly as an ingredient in simmered dishes, pickles, and miso soup. The flavor is soaked in and the unique crunchy texture gives it a different taste compared to using raw daikon radish. Water that has been rehydrated with dried daikon radish is also often used because it has a delicious flavor.In the Aso region, simmered dishes are made by simmering seasonal vegetables, fried thin tofu, Shiitake mushrooms, Konjac(=yam cake), and other ingredients in soy sauce and sugar. It is a custom to prepare simmered dishes for festivals, Buddhist events, and celebrations.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/7374/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/jyabara_daikon_no_nimono_kumamoto.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/7374/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -336,15 +483,30 @@
     "id": "kumamoto-maff-kanzuke_kumamoto",
     "name": {
       "ja": "寒漬け",
-      "zh_tw": "寒漬け"
+      "kana": "かんづけ",
+      "romaji": "Kanzuke",
+      "zh_tw": "寒漬け",
+      "en": "Kanzuke"
     },
     "prefecture": "kumamoto",
     "category": "kyodo",
+    "summary": {
+      "text": "“Kanzuke” is a pickle made by exposing radishes to the cold winter wind twice. It is a traditional specialty of the Ashikita and Minamata regions. Raw radishes are dried, then pickled in salt when they become wrinkled, and further dried for 1-2 months. Once dried to an amber color, they are thinly sliced and soaked in a mixture of soy sauce, mirin, and vinegar. After 1-2 days, when the flavor has seeped in, the pickles are ready. The crunch and unique flavor make them a perfect accompaniment to rice, so much so that you can eat several bowls. It also works well as a snack with tea or to accompany alcohol. Other flavorings such as ginger, kelp, and yuzu pepper are added to the seasoning liquid, and each household has its own special twist. When the radishes are dried, they are pierced with a bamboo skewer, threaded with string, and hung on a bamboo pole under the eaves. This sight is considered a part of the winter tradition in the Ashikita and Minamata areas.Nowadays, fewer people dry radishes at home, but dried radishes are sold so that you can season them to your taste at home. They are popular at roadside stations and supermarkets as reminders of hometown flavors.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/3359/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/kanzuke_kumamoto.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/3359/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -354,15 +516,30 @@
     "id": "kumamoto-maff-karashi_renkon_kumamoto",
     "name": {
       "ja": "からし蓮根",
-      "zh_tw": "からし蓮根"
+      "kana": "からしれんこん",
+      "romaji": "Karashirenkon",
+      "zh_tw": "からし蓮根",
+      "en": "Karashi renkon(lotus root with Japanese mustard)"
     },
     "prefecture": "kumamoto",
     "category": "kyodo",
+    "summary": {
+      "text": "Kumamoto Prefecture is one of the largest producers of lotus root in Japan. The Ugi region, where new rice paddies were developed during the Tenpou era of the Hosokawa clan, is still the main production area.Karashirenkon is known as a dish associated with the Hosokawa clan. In 1632, Tadatoshi, the first lord of the Hosokawa clan, was sickly and weak from day to day, and a monk at Rahanji Temple, who was concerned about his health, painstakingly searched for something nutritious. He learned from a Japanese-Chinese book that lotus root has blood-enriching properties. He would never eat it. So, he stuffed a mixture of miso and Japanese mustard into the holes of the lotus root, coated it with a batter of flour, fava bean flour, and egg yolk, and deep-fried it in oil. The spiciness of the lotus root was so effective that people began to like it so much that they ate it regularly. The appearance of the sliced lotus root resembled the Hosokawa family's family crest, the Kuyo (Nine Yours) pattern, and Lord Tadatoshi kept the method of making \"mustard lotus root\" a secret, and the taste was kept out of the public until the Meiji Restoration. This is the reason why \"mustard lotus root\" is still made only in Kumamoto Prefecture.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/270/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/karashi_renkon_kumamoto.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/270/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -374,15 +551,27 @@
       "ja": "かすよせ",
       "kana": "かすよせ",
       "romaji": "Kasuyose",
-      "zh_tw": "かすよせ"
+      "zh_tw": "かすよせ",
+      "en": "Kasu-yose"
     },
     "prefecture": "kumamoto",
     "category": "kyodo",
+    "summary": {
+      "text": "“Kasu-yose” is a home-cooked dish, primarily eaten in the town of Yamato and has been served for celebrations and festivals or when a large group of people gathered for an event. It looks similar to “Shira-ae” (=mashed tofu salad) in appearance, but this dish is unique in that it can be served as a main dish, side dish or snack. Taro, onions, carrots and dried shiitake mushrooms are finely chopped and stir-fried with chicken meat. Rice and soybeans are added, and all the ingredients are simmered. The soybeans are soaked in water from the day before so that they become soft and can be mashed into a puree.It is said that the name “Kasu-yose” comes from the word “okara” (=soy pulp). In this region, “okara” is referred to as “kasu”. Another theory is that since different types of vegetables are used together in this recipe, the name came from the word “kazuyose” (=bring numbers together). Another name for this dish is “Oshiyose”, meaning bringing together available ingredients. Different types of rice may be used for the dish and some families opt to use glutinous rice or rice dumplings instead of white rice.The recipe differs per region and some recipes always include pumpkin while others do not. The ingredients are lightly seasoned with soy sauce, mirin (=sweet rice wine) and sugar (soft brown sugar) to enhance the natural flavors of the ingredients.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/4237/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/kasuyose_kumamoto.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/4237/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -392,15 +581,30 @@
     "id": "kumamoto-maff-kono_shirono_sugata_zushi_kumamoto",
     "name": {
       "ja": "このしろの姿寿司",
-      "zh_tw": "このしろの姿寿司"
+      "kana": "このしろのすがたずし",
+      "romaji": "Konoshironosugatazushi",
+      "zh_tw": "このしろの姿寿司",
+      "en": "Konoshiro sugata sushi"
     },
     "prefecture": "kumamoto",
     "category": "kyodo",
+    "summary": {
+      "text": "\"Konoshiro no sugata sushi\" is an essential dish for New Year's, festivals, celebrations, and other family gatherings in the Yatsushiro area. The region faces three seas - the Yatsushiro Sea, the Amakusa Sea, and the Ariake Sea. This dish has been passed down since the Edo period and is considered a symbol of good luck.\"Konoshiro fish\" is a member of the herring family that lives in brackish water. Small fish that are as young as 5 cm in length are referred to as \"shinko\" and are a delicacy at sushi restaurants, commanding high prices. Interestingly, the smaller the fish, the higher the price. The Chinese character for \"winter\" is used to represent this fish, which is caught during the fall and winter seasons when it is at its fattiest. However, in the Yatsushiro Sea, where the Kuma River meets the sea, this fish can be caught all year round. Its limited shelf life and quick loss of freshness make it difficult to find far from the city. This fish is best served with vinegar, which enhances its flavor and shelf life. \"Konoshiro sugata sushi\" is made by cutting open the fish either from the back or the belly. The entrails and inside bones are removed, and the fish is then salted and dipped in sweet vinegar. After that, it is filled with rice sticks and shaped into sushi. Finally, the head and tail are placed upright on a plate. The moderate saltiness and sweetness of the vinegar, along with the spices such as green onion, ginger, and sesame seeds in the sushi rice, make it delicious even without soy sauce. Along the Yatsushiro Sea coast, there is a type of sushi called \"konoshiro-zushi\", also known as yoshino sushi or unohana-zushi, which is made from okara (soy pulp) that is produced during the process of making tofu. To prepare \"konoshiro-zushi\", the okara is sautéed with chopped carrots and green onions and then seasoned with vinegar, soy sauce, and sugar. There are two types of \"konoshiro-zushi\": the first type, called \"katazushi,\" is stuffed into the belly, and the second type is wrapped around the okara, which is then cut into three pieces, seasoned with vinegar, and rolled in konoshiro.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/4010/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/kono_shirono_sugata_zushi_kumamoto.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/4010/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -412,15 +616,27 @@
       "ja": "こっぱもち",
       "kana": "こっぱもち",
       "romaji": "Koppamochi",
-      "zh_tw": "こっぱもち"
+      "zh_tw": "こっぱもち",
+      "en": "Koppa-mochi (Sweet potato rice cake)"
     },
     "prefecture": "kumamoto",
     "category": "sweets",
+    "summary": {
+      "text": "“Koppa-mochi\" is a traditional snack made from sweet potatoes, a specialty of the Amakusa region. The word \"koppa\" comes from a dialect word meaning “cut into small pieces,” and refers to peeled sweet potatoes that have been cut into 1- or 2-cm round slices, boiled, and dried in the sun. The sight of straw-threaded slices of sweet potatoes hanging from the eaves, signaling the arrival of winter, is a common scene in Amakusa. In the Amakusa region, the rice harvest is low due to the lack of flat land, so sweet potatoes, which can be grown on barren land, have been cultivated in large quantities for a long time. “Koppa” not only served as a convenient preserved food but also gained enhanced sweetness through a process of boiling, drying in the sun, and letting it become completely dry. “Koppa-mochi” is made by steaming a mixture of “Koppa” and glutinous rice, combined with sugar (or malt syrup, etc.). It has a soft and chewy texture, offering a simple and rustic flavor that highlights the sweetness of sweet potatoes. In the old days, it was made at each household, and because it lasted for a long time at room temperature, it was made as a New Year's snack, especially at the end of the year. Nowadays, it is sold as a typical souvenir of the Amakusa region.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/5431/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/koppa_mochi_kumamoto.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/5431/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -430,15 +646,30 @@
     "id": "kumamoto-maff-makigaki_kumamoto",
     "name": {
       "ja": "巻柿",
-      "zh_tw": "巻柿"
+      "kana": "まきがき",
+      "romaji": "Makigaki",
+      "zh_tw": "巻柿",
+      "en": "Makigaki"
     },
     "prefecture": "kumamoto",
     "category": "kyodo",
+    "summary": {
+      "text": "A traditional food handed down in Yamato-cho, Kamimashiki County, in the Uki area, famous for its dried persimmons. With the meaning of \"attracting good fortune,\" persimmons are in demand as gifts at the end of the year and as good luck charms for New Year's. The scene of \"Makigaki\" being made is newsworthy at this time of the year.Dried persimmons are made from a specialty astringent persimmon called \"nayaboshi,\" which is rubbed by hand three times while being dried to get the right shape, and are ready when the surface is covered with white powder (fructose). To make \"Makigaki (rolled persimmons)\", cut the shaft and tip of a dried persimmon, slit it open lengthwise, carefully remove the seeds, stack 10 or more (depending on the size of the persimmon) in a rugby ball shape, wrap them in a bamboo skin, wrap them in straw, and then roll them up with a rope, using a lot of force to make it go round and round. A good indicator of a well-done product is that when cut, the brown color of the dried persimmon and the layer of white flour show up well and look like a rose flower. The unique flavor and natural sweetness of the dried persimmon is like a high-class Japanese confectionary. Production begins around July with removing the bark of the main bamboo and weaving rice straw while waiting for the dried persimmons to be ready and finished by the end of the year. While there are no differences among regions or producers in the way they wrap the bamboo skin, there are differences in the way they roll it up with a rope (straw or rush grass). In the past, persimmons were often seen hanging under the eaves of houses, but the number of producers of \"Makigaki (rolled persimmons)\" has been decreasing over the years.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/5118/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/makigaki_kumamoto.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/5118/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -448,15 +679,30 @@
     "id": "kumamoto-maff-maze_meshi_kumamoto",
     "name": {
       "ja": "まぜ飯",
-      "zh_tw": "まぜ飯"
+      "kana": "まぜめし",
+      "romaji": "Mazemeshi",
+      "zh_tw": "まぜ飯",
+      "en": "Mazemeshi"
     },
     "prefecture": "kumamoto",
     "category": "kyodo",
+    "summary": {
+      "text": "\"Mazemeshi\" is a dish that always appears at local events and celebrations where people gather. Also called \"Gumeshi\", it is made by chopping and stir-frying ingredients such as chicken, gobou(=burdock), carrots, dried shiitake mushrooms, bamboo shoots, fried thin tofu, etc., seasoned with soy sauce and sugar, and mixed with freshly cooked warm rice. Ingredients vary from region to region and from household to household, such as konjac(=yam cake) and \"kamaboko(=fish cake)\", sea bream and maki mussels in areas near the sea, and plenty of daikon radish during the daikon radish harvest season. Rokka Shrine in Shimorokka, Kashima Town, holds an annual autumn festival on October 17 to pray for a bountiful harvest, during which each household makes \"Gumeshi (Mazemeshi)\" and serves it to gathered relatives and neighbors. Instead of chicken, it uses horse meat, a specialty of the prefecture, and seasonal vegetables such as gobou(=burdock), dried shiitake mushrooms, konjac(=yam cake), and carrots, which are stir-fried and seasoned with soy sauce and sugar, and mixed with white rice.The \"Shishimai\" dedicated at this festival is the first important intangible cultural asset in Kumamoto Prefecture, and is derived from Kiyomasa Kato's tiger hunting, and depicts a child growing up to become a warrior and bravely fighting a lion. On Tobase Island, located halfway between the Uto Peninsula and Amakusa, there is a mixed rice dish called \"birin meshi\" that uses tofu instead of meat. The name comes from the sound made when the tofu is stir-fried to remove the water. It was served at Buddhist ceremonies as a vegetarian dish.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/5122/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/maze_meshi_kumamoto.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/5122/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -466,15 +712,30 @@
     "id": "kumamoto-maff-nankan_ageno_maki_zushi_kumamoto",
     "name": {
       "ja": "南関あげ巻き寿司",
-      "zh_tw": "南関あげ巻き寿司"
+      "kana": "なんかんあげまきずし",
+      "romaji": "Nankanagemakizushi",
+      "zh_tw": "南関あげ巻き寿司",
+      "en": "Nankan agemakizushi"
     },
     "prefecture": "kumamoto",
     "category": "kyodo",
+    "summary": {
+      "text": "\"Nankan-Agemaki Sushi\" is a type of rolled sushi that uses \"Nankan-Age,\" a deep-fried tofu specialty that has been passed down in Nankan Town since the Edo period. It's so beloved in the Nankansen region that when people talk about rolled sushi there, they are usually referring to this dish.Nankan-Age is a large piece of oil-fried tofu measuring around 20-30 cm on each side, known for its crispy texture. The process involves compressing tofu, thoroughly removing its moisture, and then double-frying it at both low and high temperatures. This removes most of the moisture, allowing it to be stored in a cool, dark place without direct sunlight for 2-3 months at room temperature. It's so renowned for enhancing broth that it's referred to as \"dashi-age,\" and it's a must-add ingredient in miso soup and simmered dishes in the Nankansen region. A similar type of fried tofu exists in Matsuyama, Ehime Prefecture, in Shikoku, and Nankan-Age is said to have originated from Matsuyama.\"Nankan-Agemaki Sushi\" involves using oil-drained Nankan-Age that has been simmered in a sweet and savory mixture of dashi, soy sauce, and sugar, as a substitute for nori seaweed. After squeezing out excess liquid from the simmered ingredients, the sushi rice is spread on a bamboo mat, the simmered ingredients (shiitake mushrooms, carrots, tamagoyaki, etc.) are placed on top, and then it's rolled. Unlike with nori seaweed, it's a bit trickier to stick the rice together and to tighten the end of the roll. This dish is often handcrafted in eateries and delis. The Nankan-Age absorbs the simmering liquid, resulting in a plump, juicy, and chewy texture.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/3355/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/nankan_ageno_maki_zushi_kumamoto.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/3355/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -484,15 +745,30 @@
     "id": "kumamoto-maff-shakuno_tenpura_kumamoto",
     "name": {
       "ja": "シャクの天ぷら",
-      "zh_tw": "シャクの天ぷら"
+      "kana": "しゃくのてんぷら",
+      "romaji": "Shakunotenpura",
+      "zh_tw": "シャクの天ぷら",
+      "en": "Shaku no Tempura (Tempura of Shaku)"
     },
     "prefecture": "kumamoto",
     "category": "kyodo",
+    "summary": {
+      "text": "Officially known as \"Anajako,\" the Shaku, a summer delicacy in Kumamoto, lives in deep burrows in tidal flats in the Yatsushiro and Arao regions. Although it looks like “Shako,” “Shaku” is a shrimp, and is a completely different species from “Shako”. “Shaku fishing” is a unique method in which a brush is placed in a burrow that appears after the tide recedes, and Shaku are captured one by one as they come out to the entrance of the burrow in response to an external enemy. Because it loses its freshness quickly and cannot survive for long on land, it is not distributed outside of Kumamoto prefecture. Shaku has long been enjoyed as a local delicacy, served in tempura, boiled in salted water, simmered in soy sauce, or in \"Shaku miso\" (miso flavored Shaku). To prepare it as tempura, wash it thoroughly to remove mud, coat it in batter, and deep-fry until crispy. Enjoy it whole, including the flesh, shell, and internal organs. The flavor is rich and distinctive, making it a perfect accompaniment for shochu (Japanese distilled liquor, commonly drunk in and around Kumamoto.) Shaku miso is made by taking the gills and legs of fresh Shaku, finely chopping, and grinding them using a mortar and pestle, and then mixing them with miso and salt. This dish is not only popular as a snack for sake but also as a side dish for rice. Shaku is also found in Taiwan and the Korean Peninsula, where it is also cooked. Although not so common as an ingredient in Japan, there are many local dishes using Anajako in Okayama Prefecture.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/5435/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/shakuno_tenpura_kumamoto.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/5435/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -502,15 +778,30 @@
     "id": "kumamoto-maff-tai_soumen_kumamoto",
     "name": {
       "ja": "鯛そうめん",
-      "zh_tw": "鯛そうめん"
+      "kana": "たいそうめん",
+      "romaji": "Taisomen",
+      "zh_tw": "鯛そうめん",
+      "en": "Tai Somen (Sea Bream Somen Noodles)"
     },
     "prefecture": "kumamoto",
     "category": "kyodo",
+    "summary": {
+      "text": "Tai (sea bream) has long been an indispensable fish for celebrations and other occasions. Kumamoto prefecture has an abundance of fresh sea bream, and its consumption is always among the highest in the country. It is popularly served in a variety of ways, including sashimi, salt-grilled fish, and sea bream chazuke (rice in green tea). In the Amakusa region, “Tai Somen” (also known as ‘Tai Men’) involves making a broth from the head and bones leftover after filleting sea bream and pouring the broth over somen noodles before eating. It's a practical wisdom of not wasting the rich flavor of sea bream broth, often served during celebratory occasions in a mindful approach to living. The use of somen noodles seems to have been influenced by the food culture of Shimabara, where somen is a specialty. Meanwhile, “Tai Men” from Yamato Town in Kami-mashiki District (formerly the Mamihara district) is a luxurious celebratory dish. It involves simmering a whole sea bream, arranging it on a large plate, and serving somen noodles as if they were representing white waves on the plate. Somen noodles are briefly cooked in a broth made from simmering sea bream, then arranged and served. The dish is enjoyed by dipping the noodles into the broth before eating. Mamihara was a bustling post town during the Edo period, flourishing with Sake brewing businesses and lined with merchant houses, including restaurants and inns. In a town nestled in the mountains, obtaining fresh sea bream was challenging. However, due to the affluence of wealthy merchants, Tai (sea bream) from Hyuganada sea was transported by carriage through Oita's Takeda and that from Amakusa was shipped via boats or swift horses. In the old days, it was a special dish for weddings and other such occasions, and the women of the village inherited the recipe for making it, with each family having a pot and serving dish large enough to boil 2 to 3 kg of Tai fish in. “Tai Somen\" (or ‘Tai men’) is also known as a local dish in Okayama, Ehime, and Hiroshima prefectures bordering the Seto Inland Sea. The exact origin in Kumamoto Prefecture is uncertain, but it is believed to have been introduced to Mamihara from Himeshima in Oita Prefecture. In Himeshima, sea breams are known to form a pair and choose a nest, never parting ways. This behavior has symbolized the wish for an unbreakable bond during wedding ceremonies. It is also meant for both families to meet each other (\"tai-men\") and the long noodles symbolize the enduring relationship between the two families, expressing a wish for lasting connections.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/5440/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/tai_soumen_kumamoto.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/5440/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -520,15 +811,30 @@
     "id": "kumamoto-maff-taipiien_kumamoto",
     "name": {
       "ja": "太平燕",
-      "zh_tw": "太平燕"
+      "kana": "たいぴーえん",
+      "romaji": "Taipien",
+      "zh_tw": "太平燕",
+      "en": "Taipiien (Glass Noodle Soup)"
     },
     "prefecture": "kumamoto",
     "category": "kyodo",
+    "summary": {
+      "text": "“Taipiien” is a local dish served at Chinese restaurants and at home. It is a soup made with “harusame”(=glass noodles) and stir-fried vegetables, pork, shrimp, bamboo shoot, kamaboko(=Fish cake), shiitake mushroom and other ingredients. The dish is served with a fried hard-boiled egg on top.This dish was influenced by a soup dish from Fuzhou, Fujian of China, eaten on special occasions such as during the Bon holiday, New Year’s, and other celebrations. It is said that the recipe was taught by Chinese people living in Japan who came from Fujian to Nagasaki and later to Kumamoto during the late Meiji period. Instead of using swallow nests, a delicacy of China, people fried hard-boiled eggs to make them look like swallow nests, and instead of using shark fins, glass noodles were used to make “taipiien.” The egg on top is called “taipinon” in Chinese, which is how the dish got the name “taipiien.” It is said that people who eat this egg receive good luck.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/6768/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/taipiien_kumamoto.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/6768/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -538,15 +844,30 @@
     "id": "kumamoto-maff-tako_meshi_kumamoto",
     "name": {
       "ja": "たこ飯",
-      "zh_tw": "たこ飯"
+      "kana": "たこめし",
+      "romaji": "Takomeshi",
+      "zh_tw": "たこ飯",
+      "en": "Tako Meshi"
     },
     "prefecture": "kumamoto",
     "category": "kyodo",
+    "summary": {
+      "text": "Dried octopuses, hung with their legs spread out and swaying in the sea breeze, are a slightly humorous summer tradition in Ariake Town, Amakusa City.During the summertime up until September in Ariake, Amakusa, octopus are left out to dry in the salty breeze on sunny days for three to four days. The dried octopus is always soaked in water and softened before being eaten not eaten as it is, as is the case with the surume. Octopuses are caught using traditional methods, whereby octopus pots are submerged into the sea. The texture of octopus differs depending on where they are caught, and those from the Amakusa region are firm and chewy year-round. Octopuses caught in the Ariake Sea close to Nagasaki have little fat and are suitable for making dried octopus.In the past, octopuses were dried and preserved during the winter when they become scarce. They are used for “Tako meshi” because by drying them, their flavor becomes concentrated and delicious. The dried octopuses are soaked in water and cut into smaller pieces once soft and combined with gobou (=burdock), carrots, and hijiki. Some regions cook all the ingredients and rice together from the start while others flavor the other ingredients separately from the rice and then add them later to the cooked rice. The water used to soak the dried octopuses are used as “dashi” (=Japanese soup stock) and soy sauce, sake and sugar are added. In Itsuwa-machi, the “Tako Meshi” is made with dried octopus and rice only. National Route 324 in Ariake is called “Amakusa Ariake Octopus Street” and attracts many tourists.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/4252/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/tako_meshi_kumamoto.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/4252/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -556,15 +877,30 @@
     "id": "kumamoto-maff-toufuno_misozuke_kumamoto",
     "name": {
       "ja": "豆腐の味噌漬け",
-      "zh_tw": "豆腐の味噌漬け"
+      "kana": "とうふのみそづけ",
+      "romaji": "Tofunomisozuke",
+      "zh_tw": "豆腐の味噌漬け",
+      "en": "Tofu misozuke"
     },
     "prefecture": "kumamoto",
     "category": "kyodo",
+    "summary": {
+      "text": "It is said that about 800 years ago, a fallen Heike warrior who lost the battle with the Minamoto clan hid at the foot of the Higo Mountains and created and passed down this \"tofu misozuke\". Homemade tofu and barley miso are made using soybeans and barley grown in slash-and-burn fields in the \"mountainous Gokansho (Izumi, Yatsushiro City)\" area and Itsuki Village. The tofu, which has been soaked in miso for about six months, has a cheesy flavor and can be used as a side dish with rice or as an appetizer with alcohol, making it a valuable preserved food in areas with poor logistics. \"Kazura tofu\", which is made in the Ayugaeri district of Sakamoto-cho, Yatsushiro City, is made by putting weights on the tofu and thoroughly draining the moisture during the hardening process. It got its name because it is so hard that it can also be carried around by tying it with \"tsutakazura (a generic term for vine grass)\". Also, in Itsuki Village, there is a type of tofu called “kashinoki tofu,” which has a hard texture and is also made with plenty of soybeans. This kind of hard tofu is suitable for misozuke, so the tofu is squeezed well so that it can be stored for a long time at room temperature and then dried over low heat before being pickled in miso with a high salt content.Currently, it is produced in various parts of the prefecture and sold as a specialty product. Variations made using \"moromi\" such as “yamauni tofu” and “hiden tomei” are well known, and those with low salt content, smooth texture, and mellow taste became mainstream. There are also many variations, such as adding \"yuzu pepper\" or red chili pepper, and it goes well with various alcoholic beverages, including shochu, sake, and wine. Horses naturally have a higher body temperature than cows and pigs, making it difficult for bacteria that can cause food poisoning to grow, which is also why horse meat can be eaten raw. In addition, the meat is now disassembled at a meat processing plant under strict sanitary control and frozen before distribution in all cases. In this manner, all possible precautions against parasites are taken.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/4012/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/toufuno_misozuke_kumamoto.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/4012/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -574,15 +910,30 @@
     "id": "kumamoto-maff-tsubon_jiru_kumamoto",
     "name": {
       "ja": "つぼん汁",
-      "zh_tw": "つぼん汁"
+      "kana": "つぼんじる",
+      "romaji": "Tsubonjiru",
+      "zh_tw": "つぼん汁",
+      "en": "Tsubon-jiru Soup"
     },
     "prefecture": "kumamoto",
     "category": "kyodo",
+    "summary": {
+      "text": "\"Tsubon-jiru\" is a soup full of finely-chopped ingredients such as chicken, kamakobo fish cakes, and root vegetables like taro, burdock, carrot, and daikon radish. The ingredients are simmered in anchovy stock and flavored with soy sauce, with the stock taking on the delicate umami flavor of the vegetables. Originally included in kaiseki banquet cuisine served at autumn festivals in the Hitoyoshi Kuma region, tsubon-jiru is now also made at New Year's, festivals, and other such events. It is an indispensable dish particularly for celebratory occasions and is said to be prepared with an odd number of ingredients, such as seven or nine.While kaiseki banquet cuisine is served in a mix of shallow and deep dishes, the name comes from the fact that the soup was served in deep bowl a lid, hence the name “tsubo no jiru (soup in a jar)\" which was changed to “tsubon-jiru.\" Each region and household has its own stock, ingredients, and cutting method. For example, grilled tofu is added in the Hitoyoshi district (Okunchi-san), thick deep-fried tofu in Asagiri Town (Hachiman-san) in Kuma County, and thin deep-fried tofu slices in Taraki Town (Ebisu-san). In addition to anchovies, soup stock made from dried shiitake mushrooms, local free-range chicken, and grilled shrimp is also passed down through the generations.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/3356/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/tsubon_jiru_kumamoto.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/3356/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -592,15 +943,30 @@
     "id": "kumamoto-maff-yakiayu_no_kanroni_kumamoto",
     "name": {
       "ja": "焼鮎の甘露煮",
-      "zh_tw": "焼鮎の甘露煮"
+      "kana": "やきあゆのかんろに",
+      "romaji": "Yakiayunokanroni",
+      "zh_tw": "焼鮎の甘露煮",
+      "en": "Yakiayu no kanroni"
     },
     "prefecture": "kumamoto",
     "category": "kyodo",
+    "summary": {
+      "text": "The Kuma River, Kumamoto's largest first-class river, runs through the Hitoyoshi Basin, flows through the Yatsushiro Plain, and empties into the Yatsushiro Sea. It has long been known as a source of ayu because of its rapid current, which is one of the three most rapid rivers in Japan, and the quality of its water, which is said to be clear. The reason for this is that the ayu's body is trained by the fierce current, and the clear water allows sunlight to reach the bottom of the river, which provides an abundance of algae as food. The Kawabe River, a tributary of the Midorigawa River, is especially famous for catching large ayu, called shaku-ayu, which are about 30 cm in length. The town of Kosa, through which the Midorigawa River flows, is home to fish weirs, and restaurants serving ayu dishes are also popular. The town is a treasure trove of ayu, and there are a variety of specialties such as grilled ayu and ayu sushi, but grilled ayu is a winter preserve unique to the area. After being skewered and roasted over a charcoal fire to a golden brown, it was dried in a drying kiln and used as a soup stock for New Year's zoni or takikomi-gohan (rice cooked in a pot). Another preserved winter food is nandoro-ni (sweetened soy sauce stew), which is made by slowly simmering grilled ayu in a sweet soy sauce sauce for a long time. Finally, syrup is added to give the fish a nice shine. The ayu is edible down to the bones, and the meat is plump. Ayu with eggs are also a delicacy during this season.However, the catch of ayu, which used to be abundant until the mid-Showa period, has been decreasing in the Kuma River and its estuary. The Kuma River Fisheries Cooperative Association has been working to protect the ayu resource by, for example, scooping up young ayu at weirs along the way and releasing them into the entire basin, because dams and multiple weirs prevent them from migrating upstream.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/282/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/yakiayu_no_kanroni_kumamoto.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/282/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -610,15 +976,30 @@
     "id": "kumamoto-maff-yama_surume_no_kinpira_kumamoto",
     "name": {
       "ja": "山するめのきんぴら",
-      "zh_tw": "山するめのきんぴら"
+      "kana": "やまするめのきんぴら",
+      "romaji": "Yamasurumenokinpira",
+      "zh_tw": "山するめのきんぴら",
+      "en": "Yama-Surume no Kinpira"
     },
     "prefecture": "kumamoto",
     "category": "kyodo",
+    "summary": {
+      "text": "Dried bamboo shoots are enjoyed throughout the Kyushu region, but they are particularly popular in Kumamoto prefecture. In Kumamoto, there are numerous bamboo groves in satoyama (traditional rural landscape). Traditionally, people have harvested bamboo shoots abundantly in spring, dried and preserved them as a staple food. While the bamboo shoots are still fresh, cut them lengthwise and remove the inner knots, then boil them, and dry them slowly in the sun. During this process, the dried triangular bamboo shoots resemble surume (dried cuttlefish), leading to the name “Yama_Surume” (mountain surume). Yama_Surume has been very useful because it can be used anytime throughout the year for simmering and stir-frying. To rehydrate, soak in water or hot water, and cook in a pot or pressure cooker.The dish 'Yama_Surume no Kinpira' involves thinly slicing rehydrated dried bamboo shoots, simmering them in dashi broth, and seasoning with soy sauce, sugar, Mirin (sweet rice wine), etc. Adding thinly sliced wood ear mushrooms enhances the flavor. Dried bamboo shoots have a different texture and flavor from fresh bamboo shoots, and their crunchy and crunchy texture is a delightful dish. There are various recipes at home and in different regions by stir-frying gobou(=burdock root) and shiitake mushrooms in oil, and adding dried bamboo shoots, carrots, and Konjac(=yam cake).",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/5447/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/yama_surume_no_kinpira_kumamoto.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/5447/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -628,15 +1009,30 @@
     "id": "kumamoto-maff-yubeshi_kumamoto",
     "name": {
       "ja": "柚餅子",
-      "zh_tw": "柚餅子"
+      "kana": "ゆべし",
+      "romaji": "Yubeshi",
+      "zh_tw": "柚餅子",
+      "en": "Yubeshi (Yuzu cake)"
     },
     "prefecture": "kumamoto",
     "category": "sweets",
+    "summary": {
+      "text": "It is a simple local confectionery with the texture of a mochi rice cake, and the flavor of yuzu and miso. The more you chew it, the more delicious it gets. Yubeshi, yuzu cake, is a Japanese confectionery found throughout Japan, but in this region, it is wrapped in bamboo bark and steamed. The antibacterial properties of the bamboo bark are used as a preservative. It is now a famous confectionery of Kikuchi City, an area that has long been a rice-producing region, and the scraps of rice produced during the rice harvest were effectively utilized to make the confectionery. It is said that the Kikuchi clan, which flourished during the Nanbokucho period (1336-1644), first used the rice scraps as food for their soldiers. It was not until the Meiji Era (1868-1912) that it took its present form. Tsushimaya Matabei, a confectioner for the Hosokawa clan, moved from Kyomachi in Kumamoto to Kikuchi after being forced to leave the city during the Seinan Civil War, and commercialized a modified version of the traditional yubeshi (yuzu cake). With the excavation of the Kikuchi hot springs in the 1960s, the product became popular as a souvenir.In fact, although the name \"yubeshi\" is the same, there is a completely different type of yubeshi in the Hitoyoshi and Kuma areas, where many dishes are made with yuzu. The yuzu fruit is hollowed out and made into a container, then stuffed with a mixture of miso, peanuts, sesame, ginger, togarashi chili pepper, and Wheat flour with seasonings and steamed. After that, it is put in a net and dried in the sun for about two weeks to mature. In the old days, it was wrapped in \"waratsuto,\" a straw wrap, and dried for a month under the eaves of the house. Accented with the spiciness of chili peppers and it is salty, and it became a snack for shochu from Kuma area as well as for tea. It was a wise way to utilize the yuzu, which was abundantly available.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/7410/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/yubeshi_kumamoto.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/7410/index.html",
         "fetched_at": "2026-09-29"
       }
     ],

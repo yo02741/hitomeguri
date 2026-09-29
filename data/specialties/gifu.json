@@ -18,7 +18,7 @@
       "fetched_at": "2026-09-29"
     },
     "source_type": "kyodo_ryori",
-    "kana_source": "wikidata",
+    "kana_source": "maff",
     "images": [
       {
         "url": "https://upload.wikimedia.org/wikipedia/commons/c/c5/CodazziGoheimochi1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
@@ -30,6 +30,10 @@
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/38_8_gifu.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/3039/index.html",
         "fetched_at": "2026-09-29"
       },
       {
@@ -135,14 +139,14 @@
     "prefecture": "gifu",
     "category": "kyodo",
     "summary": {
-      "text": "鶏ちゃん（けいちゃん）とは、岐阜県奥美濃地方の郡上市、飛騨地方南部の下呂市、下呂市に隣接する中津川市の北部で食べられてきた郷土料理である。「ケーちゃん」、「鶏ちゃん焼き」ともいう。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E9%B6%8F%E3%81%A1%E3%82%83%E3%82%93",
-      "license": "CC BY-SA 4.0",
+      "text": "Chicken and vegetables are mixed with a special sauce and stir-fried, although the seasoning varies from region to region and from household to household.It is said that it was first made around 1950, imitating Genghis Khan, which was eaten in some regions of Gifu Prefecture. Later, from around 1960, local butcher stores and izakaya (Japanese-style pubs) began to make their own improvements, giving birth to chicken chan with a rich regional flavor in many different regions.It is said that chicken chow was first eaten as a valuable source of protein after the chickens that were kept in each household stopped laying eggs, and at that time, it was a treat to be enjoyed on special occasions.Some say that the name \"keichan\" comes from the fact that grilled pork hormone is called \"tonchan (pig-chan),\" while others say that the name \"keichan\" came from \"keijan (chicken sauce),\" a combination of \"chan\" meaning \"to mix\" and \"jan (sauce),\" and \"keichan.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/886/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
       "fetched_at": "2026-09-29"
     },
     "source_type": "kyodo_ryori",
-    "kana_source": "wikidata",
+    "kana_source": "maff",
     "images": [
       {
         "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b5/Keichan.jpg/960px-Keichan.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -157,11 +161,11 @@
         "fetched_at": "2026-09-29"
       },
       {
-        "url": "https://www.wikidata.org/wiki/Q11675813",
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/886/index.html",
         "fetched_at": "2026-09-29"
       },
       {
-        "url": "https://ja.wikipedia.org/wiki/%E9%B6%8F%E3%81%A1%E3%82%83%E3%82%93",
+        "url": "https://www.wikidata.org/wiki/Q11675813",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -171,15 +175,30 @@
     "id": "gifu-maff-38_10_gifu",
     "name": {
       "ja": "朴葉味噌",
-      "zh_tw": "朴葉味噌"
+      "kana": "ほおばみそ",
+      "romaji": "Hobamiso",
+      "zh_tw": "朴葉味噌",
+      "en": "Hoba Miso (Magnolia Leaf Miso)"
     },
     "prefecture": "gifu",
     "category": "kyodo",
+    "summary": {
+      "text": "This dish is prepared by spreading homemade koji miso paste onto hoba (magnolia leaves), which are then grilled. This dish is said to pair well with rice, and is also an excellent accompaniment to sake. Magnolia trees are large deciduous broad-leaved trees which can be found in mountains throughout Japan. Because hoba has antibacterial properties, it can be wrapped around foods to preserve them, and can enhance flavors by imparting its pleasant aroma.While there are various theories surrounding its origin, the use of magnolia leaves as food is said to have started in the Hida region, which enjoyed a propsperous forest industry. The woodsmen (called “somabito”) were said to have used the leaves as plates to grill miso when they worked up in the mountains. The practice later spread to common households, and by the 1960s hoba leaves began to be sold as souvenirs.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/3056/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/38_10_gifu.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/3056/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -189,15 +208,30 @@
     "id": "gifu-maff-38_11_gifu",
     "name": {
       "ja": "大歳のごっつぉ",
-      "zh_tw": "大歳のごっつぉ"
+      "kana": "おおとしのごっつぉ",
+      "romaji": "Otoshinogottsuo",
+      "zh_tw": "大歳のごっつぉ",
+      "en": "Otoshi no Gottso"
     },
     "prefecture": "gifu",
     "category": "kyodo",
+    "summary": {
+      "text": "\"Otoshi no Gottso\" is eaten throughout Gifu Prefecture from New Year's Eve on December 31st to the third day of the New Year. It has been handed down under various other names depending on the region, such as \"Toshikoshi Ryori,\" \"Toshikoshi-ni,\" and \"Otoshikoshi.\" A large pot of Otoshi no Gottso is made at a time and reheated before eating to give the kitchen appliances and utensils a rest on New Year's Day, so the family can relax together. Root vegetables such as daikon radish and carrot are usually simmered in dashi broth, but the types of simmered vegetables, the way they are cut, and the dashi broth itself vary depending on the region and household. However, \"ito-konbu\" (shredded kelp) is always included regardless of the region because it symbolizes the hope to \"live a long and thin life.\" In the past, before New Year's cuisine as we know it today, this dish was considered a delicacy and is said to have been eaten as an offering to the gods and Buddha to express gratitude for a healthy past year and to wish for a prosperous new year.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/3891/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/38_11_gifu.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/3891/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -209,15 +243,27 @@
       "ja": "ねずし",
       "kana": "ねずし",
       "romaji": "Nezushi",
-      "zh_tw": "ねずし"
+      "zh_tw": "ねずし",
+      "en": "Nezushi"
     },
     "prefecture": "gifu",
     "category": "kyodo",
+    "summary": {
+      "text": "“Nezushi” is a type of flavorful fermented sushi that has been a delicacy as a New Year’s dish in the Central Hida Region since long ago. “Nezushi” written in Chinese characters also expresses the meaning, a dish that is made and set aside to rest (i.e. ferment). The winters of the Hida Region were cold and severe, and there was a lack of fresh vegetables and basic food, so people cured, dried, and fermented their food. A culture of food preservation took root, and thus nezushi became a familiar dish among the people.When December arrives, every household prepares salted trout and malted rice, then begins to thoroughly cure the nezushi. The person preparing the nezushi adds malted rice to regular rice, and mixes in the trout, radish, and carrots. Then, it is set aside to cure for about 15 to 20 days―after which it is ready. Varieties of fermented sushi exist all across Japan, and while many people don’t like their peculiar taste, it is said that nezushi has a sweet and sour flavor that is mild and easy to eat.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/3895/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/38_12_gifu.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/3895/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -229,15 +275,27 @@
       "ja": "もろこずし",
       "kana": "もろこずし",
       "romaji": "Morokozushi",
-      "zh_tw": "もろこずし"
+      "zh_tw": "もろこずし",
+      "en": "Morokozushi"
     },
     "prefecture": "gifu",
     "category": "kyodo",
+    "summary": {
+      "text": "“Morokozushi“ is made by filling a sushi box with vinegared rice, topping it with sweet and spicy simmered “moroko”, and making this into pressed sushi. It is a local dish with a simple flavor that is valued as a hospitality dish for New Year's Day and festivals and is eaten not only in the Seino region but also in the northwestern part of Aichi Prefecture.“Moroko” is a freshwater fish that belongs to the Cyprinidae family and grows to about 10 cm in length as an adult. It is said that it is easier to eat morokozushi if smaller moroko is used.The Seino region, which was nurtured by the three Kiso rivers (Kiso River, Nagara River, and Ibi River), was a network of riverside villages until the land infrastructure was developed after the war, and river fish such as crucian carp, carp, moroko, eel, catfish, etc. were plentiful. A food culture that utilized them developed and is still loved by people today.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/3899/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/38_13_gifu.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/3899/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -249,15 +307,27 @@
       "ja": "いももち",
       "kana": "いももち",
       "romaji": "Imomochi",
-      "zh_tw": "いももち"
+      "zh_tw": "いももち",
+      "en": "Imo Mochi"
     },
     "prefecture": "gifu",
     "category": "sweets",
+    "summary": {
+      "text": "“Imo mochi” is a traditional dish that is eaten across Japan, in prefectures such as Hokkaido, Wakayama, and Kochi. Imo means potato in Japanese and different types of potatoes are used depending on the region such as white potatoes, sweet potatoes and satoimo(=Japanese taro) and the way the dish is prepared also differs.“Imo mochi” from Gifu is made with satoimo(=Japanese taro) and rice. The satoimo(=Japanese taro) and rice are cooked together and mashed. “Dango” (=Japanese dumpling) shapes are made, and they can be eaten right away or cooked on a grill and dipped in ginger soy sauce. It is said that “imo mochi” was made with leftover rice that was harvested or rice of poor quality combined with seasonal satoimo(=Japanese taro) to prevent the rice from going to waste. Satoimo(=Japanese taro) is not affected by the climate and so there was a steady supply of this vegetable. Rice was considered valuable in the past, so it was mixed with satoimo(=Japanese taro) to make a dish that was filling.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/5003/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/38_14_gifu.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/5003/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -269,15 +339,27 @@
       "ja": "みそぎだんご",
       "kana": "みそぎだんご",
       "romaji": "Misogidango",
-      "zh_tw": "みそぎだんご"
+      "zh_tw": "みそぎだんご",
+      "en": "Misogi Dango"
     },
     "prefecture": "gifu",
     "category": "sweets",
+    "summary": {
+      "text": "A traditional confectionery in Hashima City, dumplings made of rice flour dough and filled with sweet bean paste are skewered, dipped in a sauce made of miso paste and sugar, and baked.Around the beginning of the Showa period (1926-1989), the owner of a confectionery store in Hashima City developed and began selling \"Miso Tsuke Dango,\" a baked Mitarashi dumpling filled with red bean paste and dipped in miso paste. Later, the second generation of the store owner learned the origin of the \"Misogi ritual\" at the Hakken Shrine, a shrine in Takehana, and renamed the dumpling \"Misogi Dango\" by combining the ritual and \"Misotsuke Dango,\" and made and sold a sign saying, \"If you eat this dango on June 30, during the Misogi ritual, you will be rid of the first half of the year and live the remaining six months in good health.\" The dumplings were then sold.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/5083/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/38_15_gifu.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/5083/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -287,15 +369,30 @@
     "id": "gifu-maff-38_16_gifu",
     "name": {
       "ja": "すったて汁",
-      "zh_tw": "すったて汁"
+      "kana": "すったてじる",
+      "romaji": "Suttatejiru",
+      "zh_tw": "すったて汁",
+      "en": "Suttate-jiru(Soybean paste soup)"
     },
     "prefecture": "gifu",
     "category": "kyodo",
+    "summary": {
+      "text": "\"Suttate-jiru\" is a soup made by grinding boiled soybeans in a mortar and pestle with miso or soy sauce, and is a popular local dish at festive occasions such as celebrations and \"Houonko\" ceremonies in Shirakawa Village, a World Heritage site famous for its \"Gassho Zukuri\" style architecture. Also known as \"Suritate-jiru,\" it is also sometimes called \"Dobu-jiru\" because of its resemblance to Doburoku. When food preservation and distribution were not as convenient as they are today, soybeans, which grow on barren land and can be harvested in large quantities, were actively cultivated in Shirakawa Village, deep in the mountains, as a valuable source of protein. Miso (fermented soybean paste) and tofu are made from these soybeans, and it is said that \"Suttate-jiru\" was created in the process of making tofu. Because it quickly goes bad during the summer, it is often eaten during the fall, winter, and early spring.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/5286/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/38_16_gifu.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/5286/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -305,15 +402,30 @@
     "id": "gifu-maff-38_17_gifu",
     "name": {
       "ja": "栗きんとん",
-      "zh_tw": "栗きんとん"
+      "kana": "くりきんとん",
+      "romaji": "Kurikinton",
+      "zh_tw": "栗きんとん",
+      "en": "Kuri Kinton(mashed sweet potatoes with sweetened chestnuts)"
     },
     "prefecture": "gifu",
     "category": "kyodo",
+    "summary": {
+      "text": "When you hear \"Kuri Kinton,\" you might typically think of it as a traditional New Year's dish, but in the area centered on the southeastern part of Gifu Prefecture, Kuri Kinton refers to a simple wagashi (Japanese sweet) made by steaming chestnuts once, then cooking them with sugar and forming them into the shape of a chestnut using a cloth. It's a straightforward sweet that allows you to fully enjoy the flavor of the chestnut itself. Originally, people used to eat chestnuts by boiling or roasting wild chestnuts, but over time, the method of squeezing boiled chestnuts with a cloth to create a form similar to Kuri Kinton emerged, marking the beginning of this confection.Considered the birthplace of Kuri Kinton and one of the leading chestnut-producing areas in the prefecture, Nakatsugawa City flourished during the Edo period as one of the important post towns along the Nakasendo highway, a major route connecting Edo (present-day Tokyo) with Kyoto and Osaka. The city developed its unique culture, including a thriving tea ceremony culture. As a result, there was a demand for delicious sweets to accompany tea, leading confectioners to compete and create various sweets using local chestnuts, giving rise to the creation of Kuri Kinton.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/4328/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/38_17_gifu.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/4328/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -323,15 +435,30 @@
     "id": "gifu-maff-38_18_gifu",
     "name": {
       "ja": "水まんじゅう",
-      "zh_tw": "水まんじゅう"
+      "kana": "みずまんじゅう",
+      "romaji": "Mizumanju",
+      "zh_tw": "水まんじゅう",
+      "en": "Mizu Manju (Water Sweet Mochi)"
     },
     "prefecture": "gifu",
     "category": "sweets",
+    "summary": {
+      "text": "\"Mizu Manju\" is a type of steamed bun made with a dough composed of kudzu powder and warabi powder, filled with sweet red bean paste, and then chilled using well water. The creation of Mizu Manju is said to date back to the Meiji era. Owing to the abundant underground water in Ogaki, known as the \"City of Water,\" many households used well water to cool vegetables and fruits in a device called the \"idobune\" (well boat) as an alternative to refrigerators. Mizu Manju was developed as a refreshing summer sweet to enjoy during this time.In its early stages, Mizu Manju was made using only kudzu powder. However, kudzu powder easily dissolves in water and becomes firm when chilled. To address this, water-resistant warabi powder was incorporated into the recipe, resulting in a delightful and chewy texture for Mizu Manju when chilled.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/4338/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/38_18_gifu.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/4338/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -341,15 +468,30 @@
     "id": "gifu-maff-38_19_gifu",
     "name": {
       "ja": "煮たくもじ",
-      "zh_tw": "煮たくもじ"
+      "kana": "にたくもじ",
+      "romaji": "Nitakumoji",
+      "zh_tw": "煮たくもじ",
+      "en": "Nita-kumoji"
     },
     "prefecture": "gifu",
     "category": "kyodo",
+    "summary": {
+      "text": "\"Kumoji\" is a dish made by simmering pickled leafy greens that have been soaked in water to remove excess salt. This dish emerged from the desire to cherish and utilize pickled vegetables that have become sour in spring rather than discarding them. The term \"kumoji\" dates back to the Heian period, and it referred to pickled vegetables. In ancient times, pickled vegetables were known as \"kukizuke,\" but with time, the \"ku\" from \"kukizuke\" was taken to form \"ku moji,\" and as the dish involves simmering the \"ku moji\" characters, it came to be called \"nita kumoji.\"",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/5888/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/38_19_gifu.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/5888/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -359,15 +501,30 @@
     "id": "gifu-maff-38_1_gifu",
     "name": {
       "ja": "朴葉ずし",
-      "zh_tw": "朴葉ずし"
+      "kana": "ほおばずし",
+      "romaji": "Hobazushi",
+      "zh_tw": "朴葉ずし",
+      "en": "Hoba zushi"
     },
     "prefecture": "gifu",
     "category": "kyodo",
+    "summary": {
+      "text": "It is a traditional early summer dish made by wrapping vinegared rice in the leaves of a magnolia tree, and has been eaten as a feast during the farming holidays such as rice planting.In the area where it has been handed down from generation to generation, there is always a magnolia tree planted in the garden or in the surrounding area, with large leaves growing thickly. The leaves of the magnolia tree are believed to have antifungal properties as well as bactericidal properties. In particular, the enzyme \"hinokitiol\" contained in the leaves has high antibacterial properties, and together with the vinegar used in rice vinegar, it was very useful during the planting season when food products were likely to spoil due to the high temperature and humidity.The use of magnolia leaves made it possible to eat without chopsticks and without soiling one's hands, so it is said to have originated as a portable food for mountain work and busy farming seasons. The first time, however, it was a simple dish of salted salmon from the Hokuriku region, made with vinegared rice, and topped with salmon.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/879/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/38_1_gifu.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/879/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -377,15 +534,30 @@
     "id": "gifu-maff-38_20_gifu",
     "name": {
       "ja": "赤かぶ漬け",
-      "zh_tw": "赤かぶ漬け"
+      "kana": "あかかぶづけ",
+      "romaji": "Akakabuzuke",
+      "zh_tw": "赤かぶ漬け",
+      "en": "Akakabu-zuke"
     },
     "prefecture": "gifu",
     "category": "kyodo",
+    "summary": {
+      "text": "Deep in the mountains, where winter often brings heavy snow, pickled vegetables were a precious source of food in the Hida region. Various vegetables such as daikon radish, turnip, cucumber, and burdock are commonly enjoyed as pickles, but among them, pickled red turnips, known as \"Akakabu-zuke,\" continue to be passed down through households in the region, renowned for their resilience to snow and frost.The key ingredient for \"Akakabu-zuke\" is the \"Hida Beni-kabu,\" a red turnip that originated from a spontaneous mutation found in the Haga turnip in 1918. The abundant sugars and lactic acid bacteria in the soft and enlarged turnips create a unique flavor profile with a subtle sourness. This distinct taste is attributed to the traditional method developed during the Edo period, born out of the necessity to conserve salt, which was once scarce in the mountainous Hida region.The vibrant red color, a distinctive feature of Akakabu-zuke, is a natural pigment from the skin. As fermentation progresses, the originally white flesh is dyed red, and the flavor deepens.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/5896/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/38_20_gifu.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/5896/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -395,15 +567,30 @@
     "id": "gifu-maff-38_21_gifu",
     "name": {
       "ja": "柿なます",
-      "zh_tw": "柿なます"
+      "kana": "かきなます",
+      "romaji": "Kakinamasu",
+      "zh_tw": "柿なます",
+      "en": "Kaki-Namasu"
     },
     "prefecture": "gifu",
     "category": "kyodo",
+    "summary": {
+      "text": "\"Kakinamasu\" is a local dish made with daikon radish and carrots, seasoned with vinegar and added with dried persimmons. It is considered an essential dish for the New Year's festivities in some regions. Persimmons are broadly categorized into sweet persimmons and astringent persimmons. Gifu Prefecture, one of the leading persimmon-producing regions in the country, is known as the birthplace of the \"Fuyu Gaki,\" known as the king of persimmons. In the prefecture, high-quality persimmons with a sugar content exceeding 17 degrees are cultivated. Additionally, astringent persimmons, particularly the dried persimmons from Mino-Kamo City, such as the \"Doujou Hachiya Gaki,\" and the processed dried persimmons called \"Ren Gaki\" from Yamagata City, along with the \"Ijira Omi Gaki,\" considered a lucky charm for the New Year, have a history of over 1000 years and are well-regarded for their harvest volume and quality.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/5901/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/38_21_gifu.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/5901/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -413,15 +600,30 @@
     "id": "gifu-maff-38_22_gifu",
     "name": {
       "ja": "赤だつの酢ぶて",
-      "zh_tw": "赤だつの酢ぶて"
+      "kana": "あかだつのすぶて",
+      "romaji": "Akadatsunosubute",
+      "zh_tw": "赤だつの酢ぶて",
+      "en": "Akadatsu no Subute"
     },
     "prefecture": "gifu",
     "category": "kyodo",
+    "summary": {
+      "text": "\"Akadatsu no subute\" is a dish made by dressing the stalk part of the satoimo(=japanise taro) leaves (zuiki) with seasoned vinegar. \"Datsu\" refers to \"zuiki,\" and when it is red, it is called \"aka-datsu\" (Red Taro Stalk).In the northern part of Yamagata City, which is an area with a rich tradition, there is limited flat land due to the mountainous terrain, making rice cultivation challenging. However, the lime-rich and lean soil is suitable for growing taro. Eating \"datsu\" has been believed to \"cleanse old blood and improve breast milk production,\" and it has been traditionally served to postpartum women to aid in their physical recovery.Red datsu is not only dressed with vinegar but is also used in various dishes, such as stir-frying and then mixing with vinegar or pickling in vinegar with a weight on top. It continues to be a beloved ingredient in local cuisine.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/5908/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/38_22_gifu.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/5908/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -431,15 +633,30 @@
     "id": "gifu-maff-38_23_gifu",
     "name": {
       "ja": "千石豆のかきまわし",
-      "zh_tw": "千石豆のかきまわし"
+      "kana": "せんごくまめのかきまわし",
+      "romaji": "Sengokumamenokakimawashi",
+      "zh_tw": "千石豆のかきまわし",
+      "en": "Sengoku Mame no Kakimawashi (Mixed Rice with Sengoku Beans)"
     },
     "prefecture": "gifu",
     "category": "kyodo",
+    "summary": {
+      "text": "Sengoku-mame, cultivated in the southern area of Gifu City since the Meiji era (1868-1912), is a type of Fuji-mame, so named because its pods resemble a Sengoku-bune (boat), and it is resistant to high temperatures and disease, and produces a lot of beans.It is used in a variety of dishes such as tempura and dishes dressed with sesame sauce. Kakimawashi is a local dish served at gatherings of relatives in Gifu City, and it is said that the name \"kakimawashi\" comes from the way the boiled ingredients are mixed into the rice and turned to distinguish it from \"mazegohan\" (rice cooked in a pot and called \"mixed rice\").",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/6526/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/38_23_gifu.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/6526/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -449,15 +666,30 @@
     "id": "gifu-maff-38_24_gifu",
     "name": {
       "ja": "つぎ汁",
-      "zh_tw": "つぎ汁"
+      "kana": "つぎじる",
+      "romaji": "Tsugijiru",
+      "zh_tw": "つぎ汁",
+      "en": "Tsugi-jiru (Tofu Soup)"
     },
     "prefecture": "gifu",
     "category": "kyodo",
+    "summary": {
+      "text": "Tsugi-jiru, a local dish of the Kanomizu district of Meiho, is a rare soup that can only be tasted here. It is characterized by the spiciness of red pepper, the sweetness of sugar, and the inclusion of small cubes of firm local tofu. It is also known as \"karajiru\" (spicy soup).The name \"tsugi-jiru\" is said to come from the fact that the soup is served from a special container called a \"kitate,\" which is used to pour the soup to the person holding the bowl while mixing it using a pair of chopsticks.It is served to worshippers at a temple in the Meiho Kanomizu district during the Hoonko festival held every October.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/6539/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/38_24_gifu.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/6539/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -467,15 +699,30 @@
     "id": "gifu-maff-38_25_gifu",
     "name": {
       "ja": "初午だんご",
-      "zh_tw": "初午だんご"
+      "kana": "はつうまだんご",
+      "romaji": "Hatsumadango",
+      "zh_tw": "初午だんご",
+      "en": "Hatsu-uma Dango"
     },
     "prefecture": "gifu",
     "category": "sweets",
+    "summary": {
+      "text": "From the Meiji period to the early Showa period, sericulture flourished in a lifestyle of self-sufficiency. As a domestic activity that provided valuable cash income, many families in Gifu Prefecture, in areas suitable for sericulture, raised silkworms, harvested cocoons, and shipped them out.On the first horse day of February, before the mulberry leaves that silkworms will eat are prepared, people offered cocoon-shaped dumplings called \"Hatsuuma-dango\" to the gods and eat them, hoping that cocoons would be of high quality and produced in large quantities.In Shirakawa Village, not only are Hatsuuma-dango offered to the gods, but there is also the Kogai Festival to pray for a good harvest of silkworms, and the traditional performing art of \"Harukoma Odori\" is performed. The Harukoma Odori is a celebratory dance in which residents disguise themselves as the seven gods of good fortune and dancers. In recent years, the dance has been performed not only at the Kogai Festival, but also on special occasions such as New Year's and weddings.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/6556/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/38_25_gifu.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/6556/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -485,15 +732,30 @@
     "id": "gifu-maff-38_26_gifu",
     "name": {
       "ja": "漬物味噌煮",
-      "zh_tw": "漬物味噌煮"
+      "kana": "つけものみそに",
+      "romaji": "Tsukemonomisoni",
+      "zh_tw": "漬物味噌煮",
+      "en": "Tsukemono Misoni"
     },
     "prefecture": "gifu",
     "category": "kyodo",
+    "summary": {
+      "text": "Pickles simmered in miso is a dish made by simmering pickled Napa cabbage in a pot of salty \"Gujo miso,\" a soybean miso, and dried fish stock. This local dish was created by the wisdom of our ancestors, who used every available ingredient during the cold winter months when foodstuffs were scarce.It is said to have originated when people working in charcoal-making huts used a canned mackerel as a container and filled it with pickled Napa cabbage. Even today, it is eaten in every household, with some modern variations including the addition of meat. It also goes well with rice.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/6568/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/38_26_gifu.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/6568/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -503,15 +765,30 @@
     "id": "gifu-maff-38_27_gifu",
     "name": {
       "ja": "寒干大根煮",
-      "zh_tw": "寒干大根煮"
+      "kana": "かんぼしだいこんに",
+      "romaji": "Kanboshidaikonni",
+      "zh_tw": "寒干大根煮",
+      "en": "Kanboshi Daikon Ni (Simmered Dried Daikon Radish)"
     },
     "prefecture": "gifu",
     "category": "kyodo",
+    "summary": {
+      "text": "\"Kanboshi\" (=dried) daikon radish is a specialty of Hida city of Gifu prefecture. \"Kanboshi Daikon Ni\" is made by simmering \"kanboshi\" (=dried) daikon radish in dashi (=Japanese soup stock) and soy sauce.\"Kanboshi\" (=dried) daikon radish is made in Yamanomura of Kamiokacho of Hida city, located along the northeastern tip of Gifu prefecture. It takes around 8 months for the dried daikon radish to be made from planting to completion. In early November, daikon radish is stored in the ground and dug up in January or February of the following year when the temperature is below zero. The daikon radish is then washed, cut into round slices, and boiled. After that, the daikon radishes are skewered and left outside to dry under the eaves of roofs. At night, the temperature drops to minus 20 degrees Celsius, and the daikon radishes freeze. During the day, they melt under the warm sunlight and dry further when exposed to wind. The drying process is continued for about a month when the daikon radishes begin to turn amber in color and sweet in taste.Yamanomura, where \"kanboshi\" (=dried) daikon radish is made, is located at an altitude of 850 to 1,000 meters and is referred to as a village in the sky. In the past, the village would become isolated for about 5 months due to deep snow in the winter. \"Kanboshi\" (=dried) daikon radish is a preserved food which allowed the people of this region to overcome the harsh cold winter. The dried daikon radish is soaked in water before it is used for cooking. It is used for a variety of recipes including \"kanboshi daikon ni\".",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/6990/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/38_27_gifu.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/6990/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -521,15 +798,30 @@
     "id": "gifu-maff-38_28_gifu",
     "name": {
       "ja": "桑の木豆煮",
-      "zh_tw": "桑の木豆煮"
+      "kana": "くわのきまめに",
+      "romaji": "Kuwanokimameni",
+      "zh_tw": "桑の木豆煮",
+      "en": "Kuwanoki-mame Ni (Simmered Mulberry Beans)"
     },
     "prefecture": "gifu",
     "category": "kyodo",
+    "summary": {
+      "text": "\"Kuwanoki-mame ni\" is made by simmering \"kuwanoki-mame\" (=mulberry beans) grown in Miyama area, located in the northern part of Yamagata city in Gifu, in soy sauce and sugar.When the \"kuwanoki-mame\" (=mulberry beans) ripen, the pod and the beans develop red patterns. This bean has been cultivated for many years in this region and is a type of kidney bean that has been certified as a traditional vegetable from the Hida/Mino regions.From the Meiji to the Taisho periods, sericulture flourished in the Miyama area of Yamagata city and many mulberry trees were planted to feed the silkworms. To make sure that \"kuwanoki-mame\" (=mulberry beans) were protected from typhoons, they were planted at the base of mulberry trees so that their vines would wrap around the bark of the trees which would protect them from violent winds. This is how the mulberry beans got its name \"kuwanoki-mame\" (=mulberry beans), as they were planted alongside \"kuwanoki\" (=mulberry trees).",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/7001/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/38_28_gifu.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/7001/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -539,15 +831,30 @@
     "id": "gifu-maff-38_29_gifu",
     "name": {
       "ja": "こも豆腐",
-      "zh_tw": "こも豆腐"
+      "kana": "こもどうふ",
+      "romaji": "Komodofu",
+      "zh_tw": "こも豆腐",
+      "en": "Komo Dofu (Tofu Cooked in Woven Straw)"
     },
     "prefecture": "gifu",
     "category": "kyodo",
+    "summary": {
+      "text": "\"Komo dofu\" is made by wrapping tofu in \"komo\", a mat made of woven straw, and then boiling it. \"Komo dofu\" is characterized by the small holes in the tofu, the aroma of the straw, and the patterns made by the straw.In the past, people made \"komo dofu\" with leftover pieces of homemade tofu. Nowadays, tofu is wrapped in a bamboo mat or the \"komo dofu\" is store-bought. The small holes in the tofu allow the dashi (=Japanese soup stock) to seep in, making the tofu flavorful, and prevents the tofu from losing its shape.In the Hida area, \"komo dofu\" is served during the Bon festival, New Year holidays and other gatherings.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/7010/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/38_29_gifu.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/7010/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -557,15 +864,30 @@
     "id": "gifu-maff-38_30_gifu",
     "name": {
       "ja": "鮎の塩焼",
-      "zh_tw": "鮎の塩焼"
+      "kana": "あゆのしおやき",
+      "romaji": "Ayunoshioyaki",
+      "zh_tw": "鮎の塩焼",
+      "en": "Ayu no Shioyaki (Salt-grilled Sweetfish)"
     },
     "prefecture": "gifu",
     "category": "kyodo",
+    "summary": {
+      "text": "Gifu prefecture has many clear streams such as Kiso River, Nagara River and Ibi River. From around June to October of each year, ayu (=sweetfish) fishing is active and fresh ayu (=sweetfish) can be enjoyed.Cormorant fishing is a traditional method of ayu (=sweetfish) fishing which dates to 1,300 years ago. Ayu (=sweetfish) caught through \"Goryo Ukai\" (=Imperial Cormorant Fishing) is dedicated to the imperial family and Ise Jingu.\"Yana fishing\" (=fishing weirs) using wooden stakes and bamboo are installed in the rivers of Gifu prefecture to obstruct tidal waters and trap ayu (=sweetfish) to catch them. Fishing weirs for tourists are set up during the summer in the Miyama area and along the Itadori River and tourists can enjoy catching ayu (=sweetfish) with their hands and eat \"ayu no shioyaki\" and other dishes using freshly caught ayu (=sweetfish).",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/7014/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/38_30_gifu.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/7014/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -577,15 +899,27 @@
       "ja": "からすみ",
       "kana": "からすみ",
       "romaji": "Karasumi",
-      "zh_tw": "からすみ"
+      "zh_tw": "からすみ",
+      "en": "Karasumi"
     },
     "prefecture": "gifu",
     "category": "kyodo",
+    "summary": {
+      "text": "Karasumi is said to have been made in the Tono region around the end of the Edo period for the Peach Festival.\"Karasumi\" is a well-known delicacy made from salted and dried ovaries of mullet and other fish, but this is a Japanese confectionary made from kneaded rice flour and steamed. The characteristic feature of karasumi is its mountain-shaped cross section. The two peaks of the mountain are the most common, but in rare cases there are three. It is said that the mountain shape was created to imitate Mt. Fuji in the hope that the child would be the happiest in Japan.There are various theories as to the origin of the name. One theory is that the name was derived from the fact that karasu, a luxury delicacy, was so precious in this region, which is far from the sea, that it was replaced by a confection similar in shape to it. The other theory is that the name is derived from its similarity in shape to the Chinese ink stick, which served as both a paperweight and a tin in the Tang Dynasty.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/1888/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/38_3_gifu.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/1888/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -595,15 +929,30 @@
     "id": "gifu-maff-38_4_gifu",
     "name": {
       "ja": "鮎ぞうすい",
-      "zh_tw": "鮎ぞうすい"
+      "kana": "あゆぞうすい",
+      "romaji": "Ayuzosui",
+      "zh_tw": "鮎ぞうすい",
+      "en": "Ayu zosui"
     },
     "prefecture": "gifu",
     "category": "kyodo",
+    "summary": {
+      "text": "Ayu zosui is made by quickly simmering ayu fish, which has been grilled to a golden brown and fragrant, in rice and soup stock.It is said that in the old days, it was one of the ways to enjoy ayu fish that had been damaged during the catching process and was no longer marketable as it was.In Gifu Prefecture, which has many clear streams such as the Kiso, Nagara, and Ibi Rivers, ayu fishing is active from around June to October each year.There are two methods of fishing for ayu: tomozuri and fish weir fishing. On the other hand, \"fish weir fishing\" is a traditional fishing method in which ayu fish are caught by constructing wooden or bamboo sled-like platforms in the river.There are many \"sightseeing weirs\" near major rivers in Gifu Prefecture, which attract many tourists during the ayu fishing season. These are where fish weirs are fished and where restaurants are set up to serve freshly caught ayu fish.Ayuyu zuusui is often served as a topping for ayu dishes served at the fish weirs and other restaurants that serve ayu dishes.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/1932/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/38_4_gifu.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/1932/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -613,15 +962,30 @@
     "id": "gifu-maff-38_5_gifu",
     "name": {
       "ja": "へぼ飯",
-      "zh_tw": "へぼ飯"
+      "kana": "へぼめし",
+      "romaji": "Hebomeshi",
+      "zh_tw": "へぼ飯",
+      "en": "Hebo meshi"
     },
     "prefecture": "gifu",
     "category": "kyodo",
+    "summary": {
+      "text": "A local dish of Ena City and the surrounding area using the larvae of hebo (black hornet, a bee about 2 cm in length that nests in the ground). High in protein and calories, hebo was a valuable source of protein in this region far from the sea, and was served as a treat to important guests as well as to promote the health of the local residents.The culture of eating hebo is flourishing in the mountainous areas from Shinshu to Okumikawa. In the \"Souzan's Book of Wonders\" (Miyoshi Souzan, 1850) written in the Edo period, there is already a description of the eating of \"hebo-meshi,\" rice mixed with rice, seasoned with bee larva and soy sauce, in Mino and Shinano provinces, indicating that it was a long-standing food custom.In addition to hebo-meshi, there are other hebo dishes, such as sweetened rice cakes with a savory texture and hebo gohei-mochi, which have been passed down from generation to generation as a secret local cuisine.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/1963/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/38_5_gifu.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/1963/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -633,15 +997,27 @@
       "ja": "みょうがぼち",
       "kana": "みょうがぼち",
       "romaji": "Myogabochi",
-      "zh_tw": "みょうがぼち"
+      "zh_tw": "みょうがぼち",
+      "en": "Myogabochi"
     },
     "prefecture": "gifu",
     "category": "kyodo",
+    "summary": {
+      "text": "“Myogabochi” is a local confection with a simple flavor made by wrapping bean paste made from broad beans in a skin made from wheat flour, then wrapping it in myoga leaves.Bochi refers to “mochi,” and in general, dumplings made with glutinous rice are called “mochi.” Around the area where myogabochi is tradition, however, kneaded wheat flour is called “bochi.”It’s said that each household would make myogabochi during early summer, when the leaves of myoga ginger grow lush, and enjoy them as a snack during breaks from rice planting and other agricultural tasks. In the past they were also known as “field planting bochi (tanue bochi)” or “field break bochi (nokyuumi bochi).”The myoga leaves essential for making myogabochi have antimicrobial properties, making them suitable as portable snacks during the perishable early summer to summer season. This reflects the wisdom of our ancestors from an era before refrigeration and food preservation devices were available. Additionally, the broad beans used for the bean paste contain iron and protein, making it an ideal snack for replenishing energy and healing fatigue during agricultural work.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/3005/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/38_6_gifu.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/3005/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -651,15 +1027,30 @@
     "id": "gifu-maff-38_7_gifu",
     "name": {
       "ja": "鮎なれずし",
-      "zh_tw": "鮎なれずし"
+      "kana": "あゆなれずし",
+      "romaji": "Ayunarezushi",
+      "zh_tw": "鮎なれずし",
+      "en": "Fermented Sweetfish Sushi"
     },
     "prefecture": "gifu",
     "category": "kyodo",
+    "summary": {
+      "text": "“Fermented sweetfish sushi,” a preserved sweetfish dish, is a fermented food made by stuffing sweetfish full of freshly cooked rice and pickling it in a barrel for about two months. Salt, sweetfish, and rice are pickled with the help of bacteria, and the meal provides a valuable source of protein in the winter and increases the shelf life of the seasonal fish.The first thing that comes to one’s mind upon thinking of sweetfish in Gifu is cormorant fishing, with a history said to be over 1300 years old. “Nagara River Cormorant Fishing'' was supposedly used by Oda Nobunaga to convey hospitality. In the Edo period, sweetfish caught while cormorant fishing was used to make ayu-zushi (fermented sweetfish sushi) and presented to the Tokugawa Shogunate family. Today, the road along which the ayu-zushi was transported is called Ayu-zushi Highway, or Sushi Highway.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/3020/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/38_7_gifu.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/3020/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -669,15 +1060,30 @@
     "id": "gifu-maff-38_9_gifu",
     "name": {
       "ja": "鮒味噌",
-      "zh_tw": "鮒味噌"
+      "kana": "ふなみそ",
+      "romaji": "Funamiso",
+      "zh_tw": "鮒味噌",
+      "en": "Carp Miso"
     },
     "prefecture": "gifu",
     "category": "kyodo",
+    "summary": {
+      "text": "“Carp miso,” made by simmering unglazed crucian carp with miso, coarse grain, and soybeans. Within the prefecture, Seino, the basin of the Kiso Three Rivers (the general term for the Kiso, Nagara, and Ibi rivers flowing through the Nobi Plains), is the primary locale for the dish. Outside of Gifu, it is eaten in the Owari region of Aichi Prefecture, Nagashima Town in Mie Precture’s Kuwana City, and Kisomisaki Town. “Soybean miso,” also called “Tokai red miso,” is an irreplaceable seasoning in the Tokai region and is used to make carp miso. In addition, soybean miso contains more beans than other miso, thus containing more proteins and other umami components (glutamic acid). Combined with its relatively strong smell, soybean miso is more than suitable as an ingredient in crucian carp cuisines.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/3047/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/38_9_gifu.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/3047/index.html",
         "fetched_at": "2026-09-29"
       }
     ],

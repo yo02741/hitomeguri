@@ -18,7 +18,7 @@
       "fetched_at": "2026-09-29"
     },
     "source_type": "kyodo_ryori",
-    "kana_source": "wikidata",
+    "kana_source": "maff",
     "images": [
       {
         "url": "https://upload.wikimedia.org/wikipedia/commons/c/c5/CodazziGoheimochi1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
@@ -30,6 +30,10 @@
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/gohei_mochi_nagano.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/5883/index.html",
         "fetched_at": "2026-09-29"
       },
       {
@@ -55,10 +59,10 @@
     "prefecture": "nagano",
     "category": "kyodo",
     "summary": {
-      "text": "いもなます（芋膾）は、芋を使った料理。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E3%81%84%E3%82%82%E3%81%AA%E3%81%BE%E3%81%99",
-      "license": "CC BY-SA 4.0",
+      "text": "Imo-Namasu\" is a local dish using potatoes in the Iiyama City area. In Japan, \"Namasu\" is a dish made by dressing ingredients with vinegar, and is used as a New Year's osechi dish. In the Hokushin region, known as one of the heaviest snowfall areas in Japan, it has been difficult to obtain fresh vegetables in winter due to the heavy snowfall. For this reason, people in the Iiyama area made namasu with potatoes, which can be stored for a long time. Potato dishes are said to have taken root in Japan after the Meiji period, but in the Iiyama area, potato dishes have been eaten since the Edo period.In 2007, it was designated as an Intangible folk cultural asset by Iiyama City.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/895/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
       "fetched_at": "2026-09-29"
     },
     "source_type": "kyodo_ryori",
@@ -69,11 +73,11 @@
         "fetched_at": "2026-09-29"
       },
       {
-        "url": "https://www.wikidata.org/wiki/Q11260024",
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/895/index.html",
         "fetched_at": "2026-09-29"
       },
       {
-        "url": "https://ja.wikipedia.org/wiki/%E3%81%84%E3%82%82%E3%81%AA%E3%81%BE%E3%81%99",
+        "url": "https://www.wikidata.org/wiki/Q11260024",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -91,10 +95,10 @@
     "prefecture": "nagano",
     "category": "kyodo",
     "summary": {
-      "text": "Shoyumame (しょうゆ豆) is a regional cuisine of the Kagawa prefecture of Japan. Shoyumame consists of parched broad beans left overnight in a marinade consisting primarily of soy sauce and sugar, with mirin and sake usually included in the marinade. It is commonly served alongside lunch or dinner, or as an accompaniment to alcohol.",
+      "text": "\"Shoyu Mame\" or \"Soy Sauce Beans\" is a fermented food traditional to the northern and central Shinshu region. It is made by fermenting steamed soybeans or black beans with seed koji(seed malt), creating a fermented product with the savory flavor of soy sauce, akin to \"eating soy sauce.\" It should not be confused with the regional dish \"Shoyu Mame\" from Kagawa Prefecture, which uses soramame (fava beans).For \"Shoyu Mame\" in Nagano, steamed soybeans or black beans are fermented with rice koji, and then soaked in raw soy sauce. The mixture is manually stirred every day while monitoring the fermentation process. After fermenting for over a month, the result is the flavorful \"Shoyu Mame.\" Nagano Prefecture, known for having the highest number of miso storehouses in Japan, has a deep-rooted fermentation culture. Various fermented foods, such as \"Koji Amazake,\" \"Shio Koji,\" and \"Shoyu Koji,\" utilizing koji, play a significant role in the local culinary traditions. In the Ina region, people make \"Shiromiso\" by adding beans to amazake and letting it mature for a few days, which is then enjoyed with mochi during the New Year. In the Saku region, a firmer type of amazake with added beans, known as \"Amamiso\" or \"Onattou,\" is prepared and enjoyed by dipping mochi in it during the New Year festivities.",
       "lang": "en",
-      "source_url": "https://en.wikipedia.org/wiki/Shoyumame",
-      "license": "CC BY-SA 4.0",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/4852/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
       "fetched_at": "2026-09-29"
     },
     "source_type": "kyodo_ryori",
@@ -113,11 +117,11 @@
         "fetched_at": "2026-09-29"
       },
       {
-        "url": "https://www.wikidata.org/wiki/Q11269155",
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/4852/index.html",
         "fetched_at": "2026-09-29"
       },
       {
-        "url": "https://en.wikipedia.org/wiki/Shoyumame",
+        "url": "https://www.wikidata.org/wiki/Q11269155",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -169,15 +173,16 @@
       "ja": "やたら",
       "kana": "やたら",
       "romaji": "Yatara",
-      "zh_tw": "やたら"
+      "zh_tw": "やたら",
+      "en": "Yatara"
     },
     "prefecture": "nagano",
     "category": "kyodo",
     "summary": {
-      "text": "やたらは長野県北信地域の郷土料理。野菜や漬物を細かく刻んで混ぜ合わせた料理であり、夏野菜のふりかけにも例えられる。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E3%82%84%E3%81%9F%E3%82%89",
-      "license": "CC BY-SA 4.0",
+      "text": "“Yatara” is a mixture of finely chopped vegetables and pickles, similar to a “furikake” (sprinkles) of summer vegetables. It is a local dish eaten mainly in the Hokushin region and is a popular summer dish. Summer vegetables such as myoga ginger, eggplant, botan pepper, and miso-pickled radish are chopped, mixed together, and served over warm rice. “Botan pepper ” is a green pepper than has been cultivated in the Hokushin region such ancient times, and is said to have been named botan pepper because it looks like a peony flower. It was recognized as a traditional vegetable of Shinshu in 2008. The crunchiness of the vegetables is accentuated by the spiciness of the botan pepper, and I could eat rice if there was yatara even in the hot summer months when I didn’t have much of an appetite. Anyway, it is said that the name of this dish, \"yatara\", originated from the fact that it contains a mixture of many vegetables that are finely chopped. The taste of yatara is“determined by the seasonal vegetables“, “miso pickles“, and “the skill of the chef with a knife“. Shinshu Miso\" is a characteristic light-colored, dry rice miso made from malted rice and soybeans, which is used to make miso pickles, giving them a deep flavor. It is the most produced and eaten miso in Japan, accounting for more than 40% of the country's total miso production and consumption.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/2994/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
       "fetched_at": "2026-09-29"
     },
     "source_type": "kyodo_ryori",
@@ -188,11 +193,11 @@
         "fetched_at": "2026-09-29"
       },
       {
-        "url": "https://www.wikidata.org/wiki/Q131355057",
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/2994/index.html",
         "fetched_at": "2026-09-29"
       },
       {
-        "url": "https://ja.wikipedia.org/wiki/%E3%82%84%E3%81%9F%E3%82%89",
+        "url": "https://www.wikidata.org/wiki/Q131355057",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -202,15 +207,30 @@
     "id": "nagano-maff-ego_no_sumisoae_nagano",
     "name": {
       "ja": "えごの酢味噌あえ",
-      "zh_tw": "えごの酢味噌あえ"
+      "kana": "えごのすみそあえ",
+      "romaji": "Egonosumisoae",
+      "zh_tw": "えごの酢味噌あえ",
+      "en": "Ego no Sumiso-ae"
     },
     "prefecture": "nagano",
     "category": "kyodo",
+    "summary": {
+      "text": "The name \"Ego\" comes from boiled and kneaded seaweed called \"egogusa,\" and it is a regional cuisine passed down throughout Niigata Prefecture. Egogusa is said to have been brought to mountain villages in Shinshu by peddlers from fishing villages along the Sea of Japan, and \"Ego\" is mainly eaten along the \"Shio no Michi\" (Salt Road) extending from the Daihoku area to the Nagano Nishiyama area (Shinshushinmachi, Ogawa, Nakajo, Naniai, etc.). In the days before refrigeration, well-preserved seafood was a valuable source of nutrients that were often deficient in the land-locked Nagano Prefecture. Ego is thought to have been eaten towards the end of the Taisho era, and it was transported over several days from the coast of Niigata Prefecture. In the Iiyama region, their version of \"Ego\" is simply boiled and dissolved. It is eaten in many areas excluding the southern regions, and is eaten with karashi (mustard) soy sauce, karashi sumiso (vinegar miso), plain karashi, etc. In Kijimadaira and Azumino (near Toyoshinaminamihotaka), it is called \"Igo\" and is sun-bleached prior to boiling and dissolving, then eaten with sansho (Japanese pepper) miso, bonito flake soy sauce, wasabi soy sauce, karashi soy sauce, etc. Egogusa brought from Niigata Prefecture was often sold out in the Hokushin area, and rarely reached the larger cities of Nagano and Matsumoto. This is said to be the reason why it spread and took root mainly in the northern part of Nagano Prefecture. As a regional cuisine of Niigata Prefecture,some areas have a custom of boiling and dissolving Egogusa in the original color, and other areas wet the Ego and dry it in the sun until it becomes white, then boil and dissolve before eating. It has been passed down as a meal to serve during festive events.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/3843/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/ego_no_sumisoae_nagano.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/3843/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -220,15 +240,30 @@
     "id": "nagano-maff-gu_dakusan_miso_shiru_nagano",
     "name": {
       "ja": "具だくさん味噌汁",
-      "zh_tw": "具だくさん味噌汁"
+      "kana": "ぐだくさんみそしる",
+      "romaji": "Gudakusanmisoshiru",
+      "zh_tw": "具だくさん味噌汁",
+      "en": "Gudakusan Misosiru (Gudakusan Miso Soup)"
     },
     "prefecture": "nagano",
     "category": "kyodo",
+    "summary": {
+      "text": "“Gudakusan miso soup” is a soup with lots of ingredients such as seasonal vegetables, meat, and fish. Miso soup is so nutritious that it is said to keep the doctor away, and a bowl of miso soup a day was a source of energy throughout the day, just as it is today. By adding lots of ingredients such as radish, carrots, taro, green onions, and fried tofu, you can fill your stomach and efficiently get the nutrients from vegetables. “Suiton” has also long been a popular food in areas where wheat can be grown. Because the wheat flour dough is pulled and torn into pieces, suiton is also called “hinnobe (pull and stretch)” and “tochanage (grab and throw)” around Nagano City and Suzaka City. There are many different ways to knead the flour, levels of hardness, and shapes, and each person has their own preferences. Also, if you mix in pastes such as mugwort or pumpkin, you can create fancy dishes. In Nagano Prefecture, they take care to use seasonal vegetables and ingredients as a foundation, and it is not a matter of just adding anything. Roots are in season in winter (radish, burdock, carrots, potatoes, etc.).Recently, gudakusan miso soup has been attracting attention for its various health benefits. One of these is \"reducing salt.\" In a typical miso soup, the amount of miso and salt per bowl is 12g and 1.5g, but if you make gudakusan miso soup, the umami of the ingredients will be added. Thus, the amount of miso can be reduced to 10g, the amount of soup can be reduced, and the amount of salt can be reduced to 1.2g. In addition, gudakusan miso soup is said to be the best way to get a large amount of phytochemicals such as lycopene, polyphenols, and isoflavones. Nagano Prefecture is said to have many healthy people who live long lives, and it is believed that the secret to this is gudakusan miso soup.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/3868/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/gu_dakusan_miso_shiru_nagano.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/3868/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -238,15 +273,30 @@
     "id": "nagano-maff-han_goroshi_nagano",
     "name": {
       "ja": "半ごろし",
-      "zh_tw": "半ごろし"
+      "kana": "はんごろし",
+      "romaji": "Hangoroshi",
+      "zh_tw": "半ごろし",
+      "en": "Hangoroshi"
     },
     "prefecture": "nagano",
     "category": "kyodo",
+    "summary": {
+      "text": "\"Hangoroshi\" refers to \"botamochi\" or \"ohagi\" in Nagano Prefecture, and it indicates the state of mochi rice that is pounded until it becomes semi-crushed with a surikogi (pestle). Additionally, when it is pounded even more finely, it is called \"minagoroshi,\" adding a touch of humor to the ways of eating. It is a convenient dish for weddings, funerals, and other occasions that was devised by busy women engaged in household chores and farming. In spring, it is called \"botamochi,\" and in autumn, it is called \"ohagi,\" but they are essentially the same thing. In addition to the classic adzuki beans and roasted soybean flour (kinako), there are variations that generously sprinkle egoma (perilla seeds) or walnuts. The Ueda region, which receives little rainfall, is suitable for cultivating walnuts, making it a high-quality walnut-producing area. Ohagi, eaten with a walnut sauce seasoned with soy sauce and sugar, has become a specialty in the city of Tomi. There is an old saying that goes, \"Thunder from afar and botamochi next door are things that seem to come but never do,\" expressing the desire to share this dish. Red adzuki beans have long been believed to have the power to ward off evil, and they have always been used in celebratory meals.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/4310/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/han_goroshi_nagano.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/4310/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -256,15 +306,30 @@
     "id": "nagano-maff-hitashi_mame_nagano",
     "name": {
       "ja": "ひたし豆",
-      "zh_tw": "ひたし豆"
+      "kana": "ひたしまめ",
+      "romaji": "Hitashimame",
+      "zh_tw": "ひたし豆",
+      "en": "Hitashi Mame (Soaked Beans)"
     },
     "prefecture": "nagano",
     "category": "kyodo",
+    "summary": {
+      "text": "The soil in the northern part of the Nishiyama region is suitable for soybean cultivation, and cultivation of barley and beans has been actively carried out in the region for a long time. The soybeans grown in the Nishiyama region are of good quality, with a pleasant fragrance and a sweet, comforting taste, and are named \"Nishiyama soybeans.\" In the Togakushi region, flower beans are a specialty product, and they cultivate the \"Kogen Hana Mame\" (Highland Flower Bean), which is considered suitable for cultivation at an altitude of 800 meters or higher. The Highland Flower Bean has a color that combines black and purple, and it is also known as the \"purple flower bean.\" It is large-grained, flavorful, and used for simmered beans and sweetened dishes.\"Hitashi Mame\" is a regional dish eaten not only in the northern and eastern Shinano regions of Nagano Prefecture but also in Niigata Prefecture and the Tohoku region. It is often used in traditional New Year's osechi dishes. It involves boiling green soybeans and soaking them in lightly seasoned dashi broth. In Nagano, it is also made as \"Kurakake Mame,\" a variety of green soybeans known for its pattern resembling a saddle on a horse's back. Due to its unique nori-like flavor, it is also called \"Nori Mame\" in some regions. The distinctive aroma, the crunchy texture of the beans, and the rich flavor combine beautifully, making the beans themselves exceptionally delicious. However, in recent times, the production has decreased, making it challenging to obtain.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/4316/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/hitashi_mame_nagano.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/4316/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -274,15 +339,30 @@
     "id": "nagano-maff-hoshi_kabocha_no_egomaae_nagano",
     "name": {
       "ja": "干しかぼちゃのえごま和え",
-      "zh_tw": "干しかぼちゃのえごま和え"
+      "kana": "ほしかぼちゃのえごまあえ",
+      "romaji": "Hoshikabochanoegomaae",
+      "zh_tw": "干しかぼちゃのえごま和え",
+      "en": "Hoshi-kabocha no Egoma-ae (Dried pumpkin dressed with perilla seeds)"
     },
     "prefecture": "nagano",
     "category": "kyodo",
+    "summary": {
+      "text": "The region known as Kinasa, also called the \"Valley Capital,\" has a long-standing food culture of drying and preserving vegetables. Surrounded by mountains, the Kinasa region used to be cut off from external transportation when snow accumulated, leading to the practice of drying and preserving food to endure the long winters. Drying vegetables not only changes their taste and texture but also enriches their nutritional content. The act of \"drying\" is not just about preserving flavor but is also a practical wisdom for efficiently consuming surplus vegetables.In spring, wild vegetables like fern shoots (zenmai) and warabi (bracken root) are dried. In summer, eggplants are thinly sliced and dried, resulting in a texture resembling meat when rehydrated. In autumn, various vegetables such as pumpkins and daikon radish are prepared for storage. As the saying goes, \"On the Winter Solstice, take care of the pumpkins,\" as pumpkins, if left as is, may freeze or rot after winter. So, people dry them for winter storage. Pumpkin is cut into strips, spread on wooden boards, and dried until completely dehydrated. When ready to eat, it is washed, boiled, and used in sesame dressing, simmered dishes, or even as a filling for rice cakes.After the daikon radishes and leafy vegetables have been harvested, they are bundled with straw and hung under the eaves. Throughout winter, they are left to dry in a well-ventilated, shaded area. When it's time to eat, they are taken down and used in cooking.In Nagano Prefecture, there is another drying method that takes advantage of the severe winter cold and dry climate―freeze-drying. Products like agar jelly, frozen mochi, frozen daikon radish, and frozen tofu undergo repeated freezing and thawing in the outdoor air, gradually losing moisture in the dry winter climate. This freeze-drying technique, born out of the harsh winter conditions in Shinshu (Nagano), is truly a culinary culture derived from practical wisdom in daily life.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/5869/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/hoshi_kabocha_no_egomaae_nagano.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/5869/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -292,15 +372,30 @@
     "id": "nagano-maff-houba_maki_nagano",
     "name": {
       "ja": "ほう葉巻",
-      "zh_tw": "ほう葉巻"
+      "kana": "ほうばまき",
+      "romaji": "Hobamaki",
+      "zh_tw": "ほう葉巻",
+      "en": "Hooba Maki"
     },
     "prefecture": "nagano",
     "category": "kyodo",
+    "summary": {
+      "text": "Hooba maki is a traditional festive rice cake in the Kiso region. It is made by mixing rice flour with boiling water, kneading it well, filling it with bean paste, wrapping it in a Hooba leaf, and finally steaming it. In the Kiso region, Tango-no Sekku (Boys' Festival) is celebrated on June 5, a month later than usual. Around that time, \"Hooba maki\" are made. Kashiwa-mochi, or oak rice cakes, are a traditional Japanese sweet made on Tango-no Sekku, but in the Kiso region, where oak trees do not grow at high altitudes, people have started to use magnolia leaves instead. In the early part of June, the young leaves of the magnolia tree grow and spread, making it suitable for wrapping things. The leaves are connected to the ends of the twigs, and each leaf is used to wrap a rice cake, leaving it connected without cutting it. The rice cake is filled with azuki bean paste or crushed red bean paste, and the leaves are tied together with fresh weeds or straw. The steamed Hooba maki is a celebratory rice cake with the distinctive fragrance of fresh young leaves. Nowadays, yuzu miso (soybean paste) starchy sauce and white miso walnut starch sauce are also available, and each household and store has its own unique way of making them. Hooba maki can be found in many stores throughout the town, and has become a unique early summer tradition in the Kiso area. The origin of Hooba maki is said to date back to the late Heian period (794-1185), when Kiso Yoshinaka, a member of the Shinano Genji clan, used magnolia leaves to wrap miso and rice when going to war. The magnolia is a deciduous tree of the magnolia family, and has the largest leaves and flowers of any tree found in the mountains. Its large leaves are 40 cm(15 inches) long and 25 cm(9 inches) wide. The leaves have antiseptic properties and have been used to wrap food since ancient times.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/6520/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/houba_maki_nagano.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/6520/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -310,15 +405,30 @@
     "id": "nagano-maff-inagono_tsuku_dani_nagano",
     "name": {
       "ja": "いなごの佃煮",
-      "zh_tw": "いなごの佃煮"
+      "kana": "いなごのつくだに",
+      "romaji": "Inagonotsukudani",
+      "zh_tw": "いなごの佃煮",
+      "en": "Inago-no-tsukudani (Locust cooked in soy sauce)"
     },
     "prefecture": "nagano",
     "category": "kyodo",
+    "summary": {
+      "text": "The Ina Valley in the southern part of Nagano Prefecture has a long-standing culture of eating insects, including locusts, bee larvae, cicadas, and grasshoppers. The consumption of such insects has been a tradition in the region, serving as a source of animal protein, especially in areas with limited access to seafood like mountainous regions such as Gunma Prefecture. During times of food shortages, such as during and after the war, locusts were eaten to fulfill nutritional needs and sustain life. Larvae of insects like the Asian giant hornet, known as \"hachi-no-ko\" in Japanese, are widely consumed in various dishes such as mixed rice and sweet simmered dishes. In Nagano Prefecture, a traditional method called \"hachi-oi\" involves luring hornets with bait attached to a red string, which helps locate their nests in the forest. While the number of locusts has decreased compared to the past, and changes in lifestyle and dietary habits have led to fewer households preparing them, the culture of insect consumption still persists in the Ina Valley.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/6981/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/inagono_tsuku_dani_nagano.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/6981/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -328,15 +438,30 @@
     "id": "nagano-maff-kobunano_kanroni_nagano",
     "name": {
       "ja": "小鮒の甘露煮",
-      "zh_tw": "小鮒の甘露煮"
+      "kana": "こぶなのかんろに",
+      "romaji": "Kobunanokanroni",
+      "zh_tw": "小鮒の甘露煮",
+      "en": "Kobuna-no-kanroni (Sweet and Savory Simmered Small Crucian Carp)"
     },
     "prefecture": "nagano",
     "category": "kyodo",
+    "summary": {
+      "text": "Saku City, located in the eastern part of the prefecture, is situated near the border with Gunma Prefecture and is blessed with clean water sources suitable for cultivating freshwater fish such as crucian carp and carp in rice fields. Practices such as \"Suiden Yofuna\" (cultivating crucian carp in paddy fields) and \"Suiden Yori\" (cultivating carp in paddy fields) were carried out. Previously harvested as a byproduct, crucian carp became the preferred choice for cultivation over carp due to its lower maintenance requirements with the progress of paddy field rotation. In the local area, around September, small crucian carp, approximately 5 cm in size, are alive and packed for sale. The word \"Small Crucian Carp\" can be seen in various places around the town. Small crucian carp are simmered in a sweet and savory sauce made with soy sauce and sugar. When bought (or caught in the rice fields), the small crucian carp is washed thoroughly, cooked in a pot while still alive, and enjoyed with freshly harvested rice. The slight bitterness of the small crucian carp imparts the sense of autumn.In landlocked Shinshu, surrounded by mountains with abundant water sources such as the Chikuma River, Kiso River, Tenryu River, freshwater fish thrive in rivers and lakes. Eating these fish and developing a unique mountainous culinary culture has been a tradition. In Shinshu, there is a custom of simmering river fish in a sweet and savory sauce and eating them as a side dish. Local dishes like \"Sweet and Savory Simmered Carp\" in Saku and \"Sweet and Savory Simmered Smelt\" in Lake Suwa have taken root as regional specialties in Shinshu. Simmered river fish, which can be eaten whole, are not only rich in calcium but were also a valuable source of protein in the past.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/6934/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/kobunano_kanroni_nagano.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/6934/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -346,15 +471,30 @@
     "id": "nagano-maff-koikoku_nagano",
     "name": {
       "ja": "鯉こく",
-      "zh_tw": "鯉こく"
+      "kana": "こいこく",
+      "romaji": "Koikoku",
+      "zh_tw": "鯉こく",
+      "en": "Koikoku"
     },
     "prefecture": "nagano",
     "category": "kyodo",
+    "summary": {
+      "text": "Saku City, located in the eastern part of Nagano Prefecture, has been cultivating carp using rice paddies in Saku-daira, where double cropping is difficult. In 1825, when Iwamurada feudal lord Naito Toyogomori returned from Osaka, he gave Yodo carp to Namiki Nanazaemon, a wealthy merchant in Nozawa, and the cultivation of Saku carp took root. After 1872, with the development of mechanical spinning, it became easier to obtain \"Sanagi,\" or carp, which could be used as feed for mass production, and carp farming rapidly developed, and the name \"Saku Koi\" became nationally known. As time went by, changes in eating habits and the spread of agricultural chemicals caused the gradual decline of carp farming in Saku City, but recent years have seen the spread of reduced pesticide cultivation and adjustments to reduce the amount of pesticides used, and efforts to revive the \"Saku carp\" have begun.Usually, carp are shipped after two years, but \"Saku carp\" takes three to four years to grow to a suitable size for eating. Koikoku,\" a traditional soup in Saku City, is made by boldly cutting the fish into cylindrical slices and simmering them in miso paste, and is an indispensable New Year's dish in the Saku area. The \"koikoku\" was first eaten on New Year's Day when Shinozawa Sagoemon Shigeno Baido, an ancestor of Saku Hotel President Shinozawa for eight generations before him, invited Fukushima Toba Taio, a priest of Ise Jingu Shrine, to his residence on the sixth day of the New Year in 1746, and fed him \"koikoku\". Koi no umani\" (carp cooked in a sweet broth) is a familiar dish in the Saku area, and if the carp has a good fat content, it melts in the mouth. The flesh of carp is light, fluffy, and fatty, and good soup stock is made from the ara. Although people tend to think of carp as being muddy, \"Saku carp\" raised in a clear stream is delicious as sashimi, and \"arai,\" a type of carp that has been firmed up in cold water, goes well with Saku's locally brewed sake.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/904/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/koikoku_nagano.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/904/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -366,15 +506,27 @@
       "ja": "こねつけ",
       "kana": "こねつけ",
       "romaji": "Konetsuke",
-      "zh_tw": "こねつけ"
+      "zh_tw": "こねつけ",
+      "en": "Konetsuke"
     },
     "prefecture": "nagano",
     "category": "kyodo",
+    "summary": {
+      "text": "\"Konetsuke\" is said to have been eaten by Yukimura Sanada, a feudal warlord, to fill his stomach before going into battle. Konetsuke is a local dish of the Hokushin and To-shin regions, made by mixing rice and flour and dipping it in miso sauce or soy sauce sauce. It is said that because rice was precious in those days, it was mixed with flour and baked to make people feel full when there was a poor rice harvest. It is said that Yukimura and his brother Nobuyuki ate it together with a farewell cup of sake during Yukimura's last battle in the Osaka summer campaign (1615). Although refrigeration and freezing technology has been developed now, there was no such thing in the past. Konetsuke is a local dish that was born from the wisdom of people who wanted to eat surplus rice without wasting it. The rice grains left in the pot were sometimes soaked in water and soaked in a colander, then dried and eaten.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/1876/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/kone_tsuke_nagano.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/1876/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -386,15 +538,27 @@
       "ja": "にらせんべい",
       "kana": "にらせんべい",
       "romaji": "Nirasenbei",
-      "zh_tw": "にらせんべい"
+      "zh_tw": "にらせんべい",
+      "en": "Garlic Chive Senbei"
     },
     "prefecture": "nagano",
     "category": "sweets",
+    "summary": {
+      "text": "The mountainous region of Hokushin, being surrounded by mountains, has many crop-growing fields situated on steep slopes, with few rice paddies, so wheat is mainly cultivated instead of rice. Additionally, wheat is also mainly grown in the crop rotation of the rice paddies located at the river basin of the Chikuma river. Rice is so precious that it cannot be eaten everyday at home. As a result, since times past, in order to economize, wheat has played a vital role in daily meals, being milled into flour and used in dishes known as “flour foods.” Among these flour foods one referred to as senbei or usuyaki, where flour is mixed with water and cut vegetables then fried, is often made for okobiru/okobire, or brunch, or children’s afternoon snack. Okobiru is an inflection of kohiru, meaning “late-morning,” and is a sort of in-between meal. It was made as something that could be filling to eat in between the labor of farmwork. The senbei are filled with seasonal vegetables like garlic chives, eggplants, onions, or others; however garlic chives are easy to grow, and aside from a snow-heavy winter, can be harvested anytime so every house has them planted in part of their garden to use at their convenience. It’s said the senbei made with the tender garlic chives that shoot up at the start of spring have an exceptional flavor. The recipes for garlic chive senbei or usuyaki also differ slightly between households, with many variations; like mixing in miso with the flour and vegetables when frying, or eating with a miso or soy based dipping sauce.In the past to save oil, a heated earthenware pan would be greased with silk wadding soaked in oil, then the wheat flour batter poured in. Once fried it would be cut into portions of suitable size and eaten.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/2968/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/nira_senbei_nagano.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/2968/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -406,15 +570,27 @@
       "ja": "のたもち",
       "kana": "のたもち",
       "romaji": "Notamochi",
-      "zh_tw": "のたもち"
+      "zh_tw": "のたもち",
+      "en": "Notamochi"
     },
     "prefecture": "nagano",
     "category": "sweets",
+    "summary": {
+      "text": "“Notamochi” is a local dish eaten in the Suwa and Kamiina regions. The “nota” in “notamochi” is made by boiling edamame beans, grinding them with a mortar and pestle, and adding sugar and salt. It is similar to Miyagi Prefecture’s \"zundamochi\", made by spreading \"nota\" (edamame bean paste) over half pounded rice. Made in every home, this dish is traditional for the O-Bon festival and fall offerings in the Suwa area. In the Kamiina, it is also called \"jindamochi”. In Suwa, edamame is also called \"bonmame\" and was grown in the paths between rice paddies. During the O-Bon Festival, rice cakes made with edamame paste, or sesame seed paste were offered to Buddha. The vibrant green pleases the eyes, and the sweet aroma of the edamame fills the mouth.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/2983/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/nota_mochi_nagano.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/2983/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -424,15 +600,30 @@
     "id": "nagano-maff-nozawana_zuke_nagano",
     "name": {
       "ja": "野沢菜漬",
-      "zh_tw": "野沢菜漬"
+      "kana": "のざわなづけ",
+      "romaji": "Nozawanazuke",
+      "zh_tw": "野沢菜漬",
+      "en": "Nozawana-zuke (Nozawana pickles)"
     },
     "prefecture": "nagano",
     "category": "kyodo",
+    "summary": {
+      "text": "In the harsh cold of the prefecture, as winter approaches, no greenery can be harvested from the fields. Therefore, in late autumn, a large amount of preserved pickles are prepared. The pickling of vegetable varieties is called 'o-ha-zuke,' and it involves the use of vegetables such as 'Nozawana,' 'Inanohana,' 'Gensuke Kabuna,' and 'Kisona. Among them, 'Nozawana-zuke' is one of the two representative pickles in the prefecture and an essential ingredient during the winter in Shinshu. In the local area, it is cherished as the taste of hometown and mother's cooking, deeply rooted in the community. Nozawana is said to have originated when a priest from Nozawa Onsen village in the northeastern part of the prefecture brought turnip seeds from Tennoji Temple in Kyoto and planted them in the sixth year of the Horeki era (1756). The turnips from Tennoji Temple, which originally grew in the warm region, underwent a sudden mutation due to the climate and conditions of Nozawa Onsen village, which is situated at an elevation of nearly 600 meters in a cold and high-altitude area. As a result, the roots did not develop, and only the leaves and stems grew large, creating a unique and distinct local variety. The taste received favorable reviews, and it gradually became popular under the name \"Nozawana\" associated with the region. Nozawana is sown in September, and it can grow up to one meter in size. The harvest takes place in November, and since Nozawana becomes sweeter and softer when exposed to frost, the harvesting is done after waiting for the cold weather. After that, the nozawana washing process begins, which is said to be a tradition in northern Shinshu, where large quantities of nozawana are carefully and cleanly washed one by one and pickled in large tubs called isseki-buckets. There are various ways of pickling, and each region has its own way of pickling.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/6498/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/nozawana_zuke_nagano.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/6498/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -444,15 +635,27 @@
       "ja": "おしぼりうどん",
       "kana": "おしぼりうどん",
       "romaji": "Oshiboriudon",
-      "zh_tw": "おしぼりうどん"
+      "zh_tw": "おしぼりうどん",
+      "en": "Oshibori Udon"
     },
     "prefecture": "nagano",
     "category": "kyodo",
+    "summary": {
+      "text": "“Oshibori Udon” is a local dish that originated from the Sakaki area in Hanishina County. It is made by grating spicy daikon radish and squeezing out its juice. “Oshibori udon” is characterized by the use of squeezed daikon juice instead of dashi broth. The word “oshibori” in oshibori udon refers to this unique feature. This dish became popular during the Edo period (1603-1868) to the Meiji period (1868-1912). It gained fame because of the excellent combination of spicy daikon squeezed soup and Shinshu miso (rice miso). The locals used miso as a dipping sauce for udon and soba noodles. The radish used for oshibori udon is “Nezumi daikon,” a specialty of Sakaki Town. Although the daikon is surprisingly spicy, the squeezed soup is served with mild Shinshu miso dissolved in it. The deep taste of the spiciness is followed by a hint of sweetness, which makes you sweat when you eat it. It warms the body from the core, and the local people describe the taste as “amamokura”. Togakushi and Chikuma City (formerly Koshoku City and Tokura Town) in the prefecture also have oshiborisoba, which is cold soba noodles dipped in a dipping sauce made from squeezed juice of spicy daikon radish and miso.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/3852/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/oshibori_udon_nagano.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/3852/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -464,15 +667,27 @@
       "ja": "おやき",
       "kana": "おやき",
       "romaji": "Oyaki",
-      "zh_tw": "おやき"
+      "zh_tw": "おやき",
+      "en": "Oyaki (Japanese stuffed dumplings)"
     },
     "prefecture": "nagano",
     "category": "kyodo",
+    "summary": {
+      "text": "\"Oyaki\" is a local dish representing Shinshu, made by mixing flour such as wheat and buckwheat flour with water or hot water, kneading it, wrapping seasonal ingredients such as sweet red bean paste or vegetables in thinly rolled-out dough, and then baking it. In some regions, \"oyaki\" is also referred to as \"yakimochi.\" It is said to have originated in the Nishiyama area of Kamiminochi District, and its history is ancient. Traces of kneaded and baked coarse grain flour have been discovered at the Jomon archaeological site in Ogawa Village. The mountainous areas have steep terrain, and due to the cold climate, many of these regions are not suitable for rice cultivation. In these mountainous areas, wheat and buckwheat are commonly cultivated. It is said that the people in these regions traditionally made and consumed at least one meal a day using the flour from these crops, supporting their diet as an alternative to rice. On the other hand, in the heavy snowfall region of Sakaemura, where wheat cultivation is not suitable, they make \"anbo,\" a type of oyaki, using rice flour as the main ingredient. In the past, almost every household had an irori (traditional Japanese hearth). In the Nishiyama region, they used an iron pot called \"horoku\" to bake the surface of the oyaki and then steamed it in the ashes of the irori. They would remove any attached ashes before eating. This type of oyaki is called \"ha-yaki oyaki,\" and it used to be the mainstream method. This tradition has spread from villages to towns, giving rise to various cooking methods such as \"steaming,\" \"baking,\" \"baking and steaming,\" and \"steaming and baking.\" The fillings for oyaki include ingredients like eggplant, mushrooms, pumpkin, dried daikon radish, etc., seasoned with miso or soy sauce. There are various types, including those with single ingredients or a mixture of multiple ones. People enjoy oyaki by incorporating local and seasonal ingredients, making use of what is readily available. Originally a local dish passed down in the northern part of the prefecture, oyaki has spread throughout the entire prefecture as its value as a tourism resource increased. It is now beloved as a local specialty across the entire prefecture.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/6480/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/oyaki_nagano.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/6480/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -482,15 +697,30 @@
     "id": "nagano-maff-sakeno_kasuni_nagano",
     "name": {
       "ja": "鮭の粕煮",
-      "zh_tw": "鮭の粕煮"
+      "kana": "さけのかすに",
+      "romaji": "Sakenokasuni",
+      "zh_tw": "鮭の粕煮",
+      "en": "Sake no Kasuni (Simmered Salmon in Sake Lees)"
     },
     "prefecture": "nagano",
     "category": "kyodo",
+    "summary": {
+      "text": "In Japan, as part of the preparations to welcome Toshigami (the deity of the New Year), there is a tradition of preparing a special feast called \"Toshikoshi\" on New Year's Eve. Toshikoshi Soba (buckwheat noodles eaten on New Year's Eve) is one such dish, symbolizing longevity and prosperity as the long and thin noodles are associated with a wish for a long and healthy life.Fish also plays a significant role in Japanese New Year cuisine, often being offered as a sacred dish during rituals and festivals. Fish such as \"Sake\" (salmon) and the auspicious \"Buri\" (yellowtail) are considered symbols of good fortune, and they are enjoyed as celebratory dishes. The choice of New Year's fish may vary by region; for example, in Nagano Prefecture, the eastern part might use salmon (Sake), while the western part may prefer yellowtail (Buri). In regions where salmon is a specialty, dishes like \"Salmon Kasu-jiru\" (salmon soup with sake lees) or \"Salmon Kasu-ni\" (salmon simmered with sake lees) are essential components of the New Year's feast in the Toshin and Kami Ina regions.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/4834/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/sakeno_kasuni_nagano.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/4834/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -500,15 +730,30 @@
     "id": "nagano-maff-sasa_zushi_nagano",
     "name": {
       "ja": "笹ずし",
-      "zh_tw": "笹ずし"
+      "kana": "ささずし",
+      "romaji": "Sasazushi",
+      "zh_tw": "笹ずし",
+      "en": "Sasazushi (Bamboo Sushi)"
     },
     "prefecture": "nagano",
     "category": "kyodo",
+    "summary": {
+      "text": "\"Sasazushi\" is a regional dish passed down in the city of Iiyama and the Joetsu region of Niigata Prefecture. It consists of vinegar rice spread on bamboo leaves, with various ingredients placed on top. The history of Sasazushi is ancient, dating back to the battles in the 22nd year of the Tenbun era (1553) during the Kawanakajima conflict, which lasted for 12 years. The Tomikura Pass, located on the border between Shinshu (present-day Nagano Prefecture) and Echigo (present-day Niigata Prefecture), became a crucial military route during the battles. It is said that Sasazushi originated when it was offered to Uesugi Kenshin's forces during this period, and there are several other theories surrounding its origin.Bamboo leaves have sterilizing and preservative effects, and it is said that Uesugi Kenshin carried Sasazushi as preserved food during wartime. Due to this historical background, in Iiyama City, Sasazushi is also referred to as \"Kenshin Sushi\". On the vinegar rice, ingredients such as bracken, bamboo shoots, shiitake mushrooms, and walnuts, primarily featuring mountain delicacies, are arranged. The dish is garnished with shredded omelette and pickled red ginger for added color. The choice of ingredients varies between regions and households. Some households mix glutinous rice into the vinegar rice, while others may top it with hijiki seaweed or miso-pickled vegetables.In the past, Sasazushi was made by each household during celebrations and festivals. Recognized as a local dish cherished in Iiyama City, especially during festive occasions, Sasazushi was designated as an Intangible Folk Cultural Property of Nagano Prefecture in the year 2007.There is also a theory that Sasazushi originated when villagers from the Tomikura region used bamboo leaves instead of dishes to serve rice topped with mountain vegetables to Uesugi Kenshin and his entourage.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/6948/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/sasa_zushi_nagano.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/6948/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -518,15 +763,30 @@
     "id": "nagano-maff-shimi_daikon_no_otaue_no_nimono_nagano",
     "name": {
       "ja": "凍み大根のお田植えの煮物",
-      "zh_tw": "凍み大根のお田植えの煮物"
+      "kana": "しみだいこんのおたうえのにもの",
+      "romaji": "Shimidaikonnotauenonimono",
+      "zh_tw": "凍み大根のお田植えの煮物",
+      "en": "Shimi Daikon no Otaue no Nimono"
     },
     "prefecture": "nagano",
     "category": "kyodo",
+    "summary": {
+      "text": "\"Frozen Daikon Radish\" is one of the preserved foods made by utilizing the cold of winter. It involves exposing daikon radishes to the cold outdoor air to dry them. In the past, people used to tie daikon radishes with straw and hang them under the eaves to freeze. The radishes would freeze overnight in the cold, and then thaw during the warmer daytime. This process was repeated several times to remove the water content from the daikon radishes. Also known as \"Kanboshi Daikon,\" it offers a unique taste compared to fresh daikon radishes. Back in the day, when everyone manually planted rice paddies, a significant effort was required. During that special time of planting, people would create unique \"planting season dishes,\" such as simmered fish, rice balls, and stewed frozen daikon radish, expressing hopes for a good rice harvest. The \"frozen\" food culture, taking advantage of the cold climate, is deeply rooted in Shinshu, and besides frozen daikon radish, other items like \"frozen tofu\" and \"frozen mochi\" are also prepared. This \"frozen culture\" supported the cuisine in regions with harsh winter conditions, showcasing the wisdom of the ancestors who closely adapted to nature to create their food.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/4840/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/shimi_daikon_no_otaue_no_nimono_nagano.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/4840/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -536,15 +796,30 @@
     "id": "nagano-maff-sioika_no_sunomono_nagano",
     "name": {
       "ja": "塩いかの酢の物",
-      "zh_tw": "塩いかの酢の物"
+      "kana": "しおいかのすのもの",
+      "romaji": "Shioikanosunomono",
+      "zh_tw": "塩いかの酢の物",
+      "en": "Shioika no sunomono"
     },
     "prefecture": "nagano",
     "category": "kyodo",
+    "summary": {
+      "text": "Because Nagano Prefecture is far from the sea, marine products were processed in the area where they were landed and transported via the \"salt road. There were several salt roads, including \"Chikuni Kaido (from Itoigawa to Matsumoto and Shiojiri),\" \"Kitakuni Kaido (from Naoetsu to Oiwake (now Oiwake, Karuizawa-cho, Kitasaku-gun),\" \"Kitakuni Kaido (from Okazaki to Shiojiri)\" and \"Akiba Kaido (from Omaezaki to Shiojiri),\" used to carry salt and marine products inland. Salted round squid, made by pickling boiled squid in salt, is a typical example of this food, which has been produced since the mid-Edo period. Originally, it was made as a byproduct of trading in salt itself, but since Nagano Prefecture has no ocean, marine products were very valuable and were prized as preserved food when refrigeration and freezing were not available. Saltmaru squid is commonly eaten as a \"vinegared\" dish with cucumber and wakame seaweed. Today, it is mainly eaten in the Hokushin and Nan-Shin regions.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/1839/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/sioika_no_sunomono_nagano.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/1839/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -554,15 +829,30 @@
     "id": "nagano-maff-sunki_zuke_nagano",
     "name": {
       "ja": "すんき漬け",
-      "zh_tw": "すんき漬け"
+      "kana": "すんきづけ",
+      "romaji": "Sunkizuke",
+      "zh_tw": "すんき漬け",
+      "en": "Sunki-zuke"
     },
     "prefecture": "nagano",
     "category": "kyodo",
+    "summary": {
+      "text": "The mountainous Kiso region has a unique culinary tradition that includes a dish called \"Sunki-zuke,\" using the leaves of red turnips. Sunki-zuke is a salt-free pickled dish made by lacto-fermenting the leaves of red turnips with the addition of sunki \"seeds.\" In the Kiso region, it is known as a fermented food product, referred to as \"sunki.\"During times when there was limited circulation and transportation, salt was considered a precious commodity in the remote and mountainous Kiso Valley, to the extent that there was a saying, \"Lend rice, but never lend salt.\" To conserve salt, the locals developed the wisdom of making Sunki-zuke without using any salt. This pickled dish has a distinctive acidity, offering a unique taste compared to typical pickles.While the exact origins are uncertain, there are references to Sunki in a haiku written by a member of the Basho school, mentioning \"Spring is ending with Sunki of Kiso.\" Additionally, approximately 150 years ago, old documents noted the presence of Sunki dishes. Thus, it is believed to have existed for at least 300 years. The red turnip used as the raw material is the \"Kiso Kabu,\" a variety cultivated in the Kiso region. Among them are six local varieties: \"Kaida kabu,\" \"Odaki Kabu,\" \"Mitake Kurose Kabu,\" \"Yoshino Kabu,\" \"Ashijima Kabu,\" and \"Hosojima Kabu.\" The natural lactic acid bacteria found in the turnips are said to be particularly abundant in the stem and the base of the roots.In the past, fruits like small pears (zumi) and wild grapes found in the mountains were crushed and fermented to create sunki \"seeds\" (fermentation starters). Nowadays, people may use dried or frozen Sunki-zuke from the previous year as the sunki \"seeds.\" Recent research indicates that Sunki-zuke contains lactobacilli comparable to yogurt, with about four suitable lactobacilli strains identified from over 300. Since the year 2003, in-depth research on Sunki lactobacilli has been conducted by a professor at Tokyo University of Agriculture, and trial tests using the four identified lactobacilli strains as sunki \"seeds\" have been progressing.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/5879/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/sunki_zuke_nagano.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/5879/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -572,15 +862,30 @@
     "id": "nagano-maff-takenoko_jiru_nagano",
     "name": {
       "ja": "たけのこ汁",
-      "zh_tw": "たけのこ汁"
+      "kana": "たけのこじる",
+      "romaji": "Takenokojiru",
+      "zh_tw": "たけのこ汁",
+      "en": "Takenoko jiru(Bamboo Shoot Soup)"
     },
     "prefecture": "nagano",
     "category": "kyodo",
+    "summary": {
+      "text": "Takenoko jiru(Bamboo shoot soup) is a miso soup that uses Nemagari bamboo. It is a regional dish eaten in the Hokushin Region and Niigata Prefecture's Joetsu region. Nemagari bamboo is the young shoot of the sasa bamboo called \"chimazasa\" and is picked in mountainous regions. Because the bamboo shoots can be picked only during the short period at the height of early summer, these bamboo shoots arrive on the market in small quantities and are scarce and difficult to obtain. They are characteristic of regions with heavy snowfall and are said to have a good flavor without too much of a bitter taste. Some regions also use hachiku bamboo shoots. As for Takenoko jiru(Bamboo shoot soup), an indispensable ingredient is canned mackerel in brine. Canned mackerel became popular during the mid-1950s to mid-1960s. It was found to be convenient in ocean-less Nagano Prefecture, and it was formerly an expensive product. Putting mackerel into miso soup is a way of eating that is characteristic of the region. Add oil and flavor to a simple miso soup, and a good taste will develop that is indispensable to a bamboo shoot soup. The dish will be a fully delicious Takenoko jiru(Bamboo shoot soup) with just bamboo shoots and canned mackerel. Sometimes, put in something like onions, carrots, thin deep-fried slices of tofu, tofu, or beaten eggs.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/2928/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/takenoko_jiru_nagano.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/2928/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -592,15 +897,27 @@
       "ja": "たなばたほうとう",
       "kana": "たなばたほうとう",
       "romaji": "Tanabatahoto",
-      "zh_tw": "たなばたほうとう"
+      "zh_tw": "たなばたほうとう",
+      "en": "Tanabata Hoto"
     },
     "prefecture": "nagano",
     "category": "kyodo",
+    "summary": {
+      "text": "Matsumoto City, situated in the almost exact center of Nagano Prefecture, offers views of the Northern Alps to the west and the Utsukushi-gahara Plateau to the east. It is a mountainous city that prospered as the castle town of Matsumoto Castle. The charming streets, resonating with history, have been selected as part of the \"Matsumoto City Scenic Selection.\" In Matsumoto, a city where urban and rural areas coexist harmoniously, peaceful fields and rice paddies stretch just a short distance away from the city center. In Nagano Prefecture, where life is lived while gazing at mountains and feeling the changes of nature, annual events often follow a lunar calendar or are scheduled a month later.In the Matsumoto region, the Tanabata festival is observed on August 7th, following the lunar calendar. The tradition dates back to the Edo period, involving hanging Tanabata dolls made of paper or kimono fabric, symbolizing the dispelling of misfortune, on the veranda. Additionally, a custom persists of offering houtou (thick wheat noodles) and manju (sweet buns) during this festival. In the surrounding Matsumoto region, wheat was traditionally cultivated by many farming households. The wheat harvest coincided with Tanabata, leading to the practice of making and offering these special dishes during the festival. \"Tanabata Houtou\" consists of thick noodles made from wheat flour, mixed with sweet red bean paste and kinako (roasted soybean flour). This dish is consumed exclusively during the Tanabata festival in the Matsumoto region. Another traditional treat, \"Tanabata Manju,\" is made in the Azumino region and offered to the gods during the Tanabata festival. It consists of manju filled with sweet red bean paste, crafted from newly harvested wheat.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/5874/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/tanabata_houtou_nagano.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/5874/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -610,15 +927,30 @@
     "id": "nagano-maff-tenyose_nagano",
     "name": {
       "ja": "天寄せ",
-      "zh_tw": "天寄せ"
+      "kana": "てんよせ",
+      "romaji": "Tenyose",
+      "zh_tw": "天寄せ",
+      "en": "Tenyose Jelly Cake"
     },
     "prefecture": "nagano",
     "category": "kyodo",
+    "summary": {
+      "text": "The Suwa region’s kanten (agar agar) producing industry developed due to the area’s low temperatures and stable weather, which allowed for longer production seasons than other areas, and the opening of the railroad at the end of the Meiji period (1868 - 1912). The kanten industry started in the Edo period (1603 – 1868). It is said that Kumezaemon Kobayashi, a migrant kanten producer, brought the process back to his hometown. Kanten is made by boiling red algae, such as Gelidium amansii and gracilaria, letting it set, and then freezing and drying it repeatedly.In the Suwa region, tenyose is a delicacy that is a regular feature in summer dishes, and is served as a confectionery and at annual events. Tenyose is a jelly-like cake made with kanten (agar agar). It is served at the Suwa-taisha Shrine’s Onbashira Festival as a festive dish to welcome visitors. It is also an indispensable dish at weddings and funerals in the Suwa region, with the ingredients and taste varying depending on the event and season. Tenyose is often made when people gather, adding color to the table.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/2946/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/tenyose_nagano.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/2946/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -628,15 +960,30 @@
     "id": "nagano-maff-teuchi_soba_nagano",
     "name": {
       "ja": "手打ちそば",
-      "zh_tw": "手打ちそば"
+      "kana": "てうちそば",
+      "romaji": "Teuchisoba",
+      "zh_tw": "手打ちそば",
+      "en": "Teuchi soba"
     },
     "prefecture": "nagano",
     "category": "kyodo",
+    "summary": {
+      "text": "Soba is a typical local cuisine, so much so that Nagano Prefecture is known for its \"Shinshu soba\" (buckwheat noodles). Soba has been cultivated as an agricultural product in highland areas where the cool climate makes it difficult to grow rice and wheat. In high altitude areas around 700m above sea level, where morning mist hangs in the air, delicious soba is produced because the mist gently protects the buckwheat, which is vulnerable to frost. The area is also famous as the birthplace of \"soba-kiri\" (thin noodle-like buckwheat noodles), and is dotted with many soba specialty and specialty areas such as \"Togakushi-soba\" and \"Kaida-soba. Togakushi soba, also known as \"frost buckwheat soba,\" has a delicious flavor and is made with cold water. The traditional buckwheat noodle making method of \"single stick\" and \"round stretching\" is used, and the small portions are called \"Bocchi-zakari\". Wasabi, an essential condiment for soba, is produced in Azumino City, which accounts for more than 90% of the prefecture's production, making it the largest producer of wasabi in Japan. Wasabi, grown in melted snow water from the Northern Alps, is characterized by its smooth texture and mild richness, which not only makes it spicy but also enhances the sweetness of soba.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/1848/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/teuchi_soba_nagano.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/1848/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -648,15 +995,27 @@
       "ja": "やしょうま",
       "kana": "やしょうま",
       "romaji": "Yashoma",
-      "zh_tw": "やしょうま"
+      "zh_tw": "やしょうま",
+      "en": "Yashouma (Colorful Mochi)"
     },
     "prefecture": "nagano",
     "category": "kyodo",
+    "summary": {
+      "text": "In the northern regions, February 15th is a day known as Nehan-e, commemorating the death of Buddha, and there is a custom to make \"yashouma\" and offer it on the Buddhist altar. Yashouma is a steamed rice-flour dumpling colored and molded, and it used to be made in almost every household. Generally, \"yashouma\" was made in homes or temples and given to children, a practice known as \"yashouma o hiku\" (pulling yashouma).The typical shape is a long, stick-like dumpling with a convex top using chopsticks, but various shapes exist, such as triangular, hourglass with a narrowed center, or petal-shaped. In recent years, yashouma with colorful patterns has become popular among children.In Ueda City, dumplings called \"neji\" are made by kneading rice flour, coloring it with red or green food dye, and filling it with sweet bean paste. These dumplings are shaped like vegetables, flowers, animals, and more. The annual event \"Tozawa no Neji\" held in February, recognized as a nationally selected intangible folk cultural property, involves children pulling a straw horse, visiting a roadside god, and praying for good health and a bountiful harvest.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/6958/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/yashouma_nagano.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/6958/index.html",
         "fetched_at": "2026-09-29"
       }
     ],

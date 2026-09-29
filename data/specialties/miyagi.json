@@ -11,10 +11,10 @@
     "prefecture": "miyagi",
     "category": "kyodo",
     "summary": {
-      "text": "あざらは、バラメヌケ（メヌケ）のあらと白菜の古漬けを、酒粕と共にトロ火で煮込んだもの。宮城県の気仙沼地方の料理。メヌケの代わりに赤魚が用いられる場合もある。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E3%81%82%E3%81%96%E3%82%89",
-      "license": "CC BY-SA 4.0",
+      "text": "Kesennuma City, located in Miyagi Prefecture, is well-known for its fresh fish. During winter, ocean perch is abundant due to its high fat content. \"Azara\", a popular dish made from this fish, has been enjoyed by the locals for a long time. The old pickled Chinese cabbage is fermented through long-term pickling, increasing the sourness of the cabbage. It is then stewed with fresh ocean perch and sake lees to create a dish that has a concentrated umami flavor. Recently, red rockfish, which is just as delicious as ocean perch due to its \"umami-rich broth\" and high-fat content, has become a popular alternative for azara. This is due to the decrease in catch and increase in the price of red rockfish.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/3760/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
       "fetched_at": "2026-09-29"
     },
     "source_type": "kyodo_ryori",
@@ -25,11 +25,11 @@
         "fetched_at": "2026-09-29"
       },
       {
-        "url": "https://www.wikidata.org/wiki/Q11257281",
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/3760/index.html",
         "fetched_at": "2026-09-29"
       },
       {
-        "url": "https://ja.wikipedia.org/wiki/%E3%81%82%E3%81%96%E3%82%89",
+        "url": "https://www.wikidata.org/wiki/Q11257281",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -39,18 +39,22 @@
     "id": "miyagi-Q11268875",
     "name": {
       "ja": "しそ巻き",
-      "zh_tw": "しそ巻き"
+      "kana": "しそまき",
+      "romaji": "Shisomaki",
+      "zh_tw": "しそ巻き",
+      "en": "Shiso-maki"
     },
     "prefecture": "miyagi",
     "category": "kyodo",
     "summary": {
-      "text": "しそ巻（しそまき）は、特に遠州と東北地方で盛んに食されるおかずの1つである。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E3%81%97%E3%81%9D%E5%B7%BB%E3%81%8D",
-      "license": "CC BY-SA 4.0",
+      "text": "Shiso has been consumed by the Japanese since ancient times, so much so that fossils of the seeds have been excavated from Jomon ruins. There are red Shiso and green Shiso, and red Shiso is pickled with “Umeboshi” (Pickled plums) and cucumbers. Green Shiso, also called \"Oba”, is valued as a garnish for sashimi and as a savory vegetable.Nutritional value includes high levels of dietary fiber, B vitamins, vitamin C, and minerals such as potassium and calcium.In Miyagi Prefecture, Lord Date Masamune built the \"Goenso-gura\"(Storehouse for salt and Miso) in the castle during the feudal domain era to encourage the production of \"Sendai Miso,\" and Sendai Miso has remained a representative specialty of Miyagi Prefecture until the present day.\"Shiso-maki\" is made by kneading Sendai miso with sesame and walnuts, wrapping it in green shiso, and deep fry it. Its origin is attributed to Lord Date Masamune. Some say that it was created in Naruko (famous hot-spring area in Miyagi) for the benefit of hot-spring cure customers.Originally eaten as a side dish, the addition of sugar and other ingredients made it popular as a tea relish and snack for children. It is also commonly used as a side dish for Bento lunches. In Miyagi Prefecture, it is sold year-round at supermarkets and Michi-no-eki (roadside reststop), and is loved by many people.Not only in Miyagi Prefecture, but also in Iwate and Yamagata prefectures, \"Shiso-maki\" is a favorite snack of the people.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/6368/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
       "fetched_at": "2026-09-29"
     },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
@@ -58,11 +62,11 @@
         "fetched_at": "2026-09-29"
       },
       {
-        "url": "https://www.wikidata.org/wiki/Q11268875",
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/6368/index.html",
         "fetched_at": "2026-09-29"
       },
       {
-        "url": "https://ja.wikipedia.org/wiki/%E3%81%97%E3%81%9D%E5%B7%BB%E3%81%8D",
+        "url": "https://www.wikidata.org/wiki/Q11268875",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -72,22 +76,22 @@
     "id": "miyagi-Q11275595",
     "name": {
       "ja": "はっと汁",
-      "kana": "はっとう",
-      "romaji": "Hatto",
+      "kana": "はっとじる",
+      "romaji": "Hattojiru",
       "zh_tw": "はっと汁",
       "en": "hatto"
     },
     "prefecture": "miyagi",
     "category": "kyodo",
     "summary": {
-      "text": "はっと（はっとうとも言う）は、茨城県と福島県の境にある八溝山周辺から、宮城県の大崎地方・栗原・登米地方、岩手県の一関・奥州市地方など、主に東北地方に伝わる郷土料理。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E3%81%AF%E3%81%A3%E3%81%A8",
-      "license": "CC BY-SA 4.0",
+      "text": "Hatto is a local flour dish eaten throughout the northern part of the prefecture. Water is added to flour, and the mixture is kneaded until it is the consistency of earlobes, then left to rest for an appropriate amount of time, spread thinly with fingers, and boiled. In the past, women were good at making it so thin that you could see through to the other side.In the Tome and Kurihara regions, it is called \"hatto\" or \"hatto,\" in the Tamatsukuri region \"tsumeiri\" or \"tsumire,\" and in other regions \"hitotsumi. Hatto is eaten in a variety of ways, like rice cakes, and is sometimes served in a soup called \"hatto soup\" or with red bean paste or zunda-an (sweet red bean paste).Hatto has a long history, dating back 400 years to the era of the feudal government. In the Tome region, which was one of the Date clan's major rice-producing areas, farmers were unable to eat enough rice to satisfy their needs because rice was given to the clan after the annual tribute was paid under the \"rice purchase\" system. In addition to barley rice, farmers in their wisdom turned wheat from their fields into flour, kneaded it into a paste, boiled it, and ate it as \"hatto. At first, \"hatto\" was a substitute for rice, but over the years, it became a tastier and more popular food. However, the lords who ruled the Tome region were concerned that the farmers might neglect rice cultivation, and they began to prohibit the consumption of this dish except on special occasions, hence the name \"hatto\".The soup stock and ingredients used for Hatto soup vary from region to region and from household to household, even within the Tome region. The soup stock is made from dried bonito flakes and dried sardines, and the ingredients include seasonal vegetables, mushrooms, chicken, and pork, and the taste has been passed down from mother to son for generations.Even today, hatto soup is served at local events throughout the four seasons.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/1157/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
       "fetched_at": "2026-09-29"
     },
     "source_type": "kyodo_ryori",
-    "kana_source": "wikidata",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
@@ -95,11 +99,11 @@
         "fetched_at": "2026-09-29"
       },
       {
-        "url": "https://www.wikidata.org/wiki/Q11275595",
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/1157/index.html",
         "fetched_at": "2026-09-29"
       },
       {
-        "url": "https://ja.wikipedia.org/wiki/%E3%81%AF%E3%81%A3%E3%81%A8",
+        "url": "https://www.wikidata.org/wiki/Q11275595",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -109,15 +113,30 @@
     "id": "miyagi-maff-aburafu_don_miyagi",
     "name": {
       "ja": "油麩丼",
-      "zh_tw": "油麩丼"
+      "kana": "あぶらふどん",
+      "romaji": "Aburafudon",
+      "zh_tw": "油麩丼",
+      "en": "Aburafu don (Rice Bowl with deep-fried wheat gluten)"
     },
     "prefecture": "miyagi",
     "category": "kyodo",
+    "summary": {
+      "text": "In Obon holidays (mid-August), tofu merchants worked hard making fried thin tofu and fresh tofu for \"Shojin ryori (vegan cuisine for Buddist monks)\". However, they always faced a big issue; both fried and non-fried tofu were spoiled quickly because there wasn’t any refrigeration technology like we have today. In such circumstances, a tofu shop in Tome City thought of “Aburafu”.When wheat flour and water are mixed well together and rinse the starch with water, gluten stays there.There are three types of “Fu” = wheat gluten: \"Namafu\", \"Yakifu\", and \"Aburafu\". \"Namafu\" is steamed gluten combined with glutinous rice flour, while \"Yakifu\" is baked one with wheat flour. Like \"Yakifu\", aburafu is made by adding wheat flour to gluten, and shaped into sticks and fried. Because it has a great flavor and a chewy texture, it is also used in vegetarian or macrobiotic cuisine. \"Aburafu\" was produced only in the Tome region before, but it’s widely manufactured outside of Tome area since \"Aburafu\" has been getting popular nationally. \"Aburafudon (Rice Bowl with deep-fried wheat gluten)\" is a famous dish made with \"Aburafu\" and was made up by the hostess of a local inn. It’s like a katsudon with replacing the pork cutlet with \"Aburafu\", and the flavor of \"Aburafu\" is brought out to its fullest. It is getting well-known nationwide after participating in the local food competition called “B-1 Grand Prix.”",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/4643/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/aburafu_don_miyagi.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/4643/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -127,15 +146,30 @@
     "id": "miyagi-maff-bakke_miso_miyagi",
     "name": {
       "ja": "ばっけ味噌",
-      "zh_tw": "ばっけ味噌"
+      "kana": "ばっけみそ",
+      "romaji": "Bakkemiso",
+      "zh_tw": "ばっけ味噌",
+      "en": "Bakke-miso"
     },
     "prefecture": "miyagi",
     "category": "kyodo",
+    "summary": {
+      "text": "During the Edo period (1603-1867), the teaching that \"if you eat tree leaves or grass roots without using Miso, you will be exposed to its poison\" spread, and Miso was used when eating tree leaves or grass roots. It is believed that Miso gradually developed from raw Miso to kneaded Miso, in which ingredients are kneaded together.Therefore, Miso paste made with seasonal ingredients has been handed down to the present. Among these seasonal Miso paste, \"Bakke-miso\" is the most commonly eaten Miso in Miyagi Prefecture. \"Bakke\" is the Miyagi dialect word for Butterbur sprouts. There is a theory that the word for Butterbur is \"Bakke,\" which means \"Ghost,\" since the buds appear on the ground and the flowers bloom.\"Bakke\" is a popular edible wild plant that heralds the coming of spring and helps to eliminate toxins from the body during the winter months. Once it flowers, it becomes bitter and tasteless, so the tender buds are picked before the flowers bloom.Nutritionally, it contains a lot of potassium, which helps to excrete salt, reduce swelling, and lower blood pressure.The bitter components are alkanoid and kenpher, which are said to strengthen liver function, promote metabolism, and suppress carcinogens such as active oxygen. In addition to being cooked with Tempura, Ohitashi, and dressed dishes, \"Bakke-miso\" is often made in Miyagi Prefecture by kneading seasonal ingredients with Miso.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/6929/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/bakke_miso_miyagi.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/6929/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -145,15 +179,30 @@
     "id": "miyagi-maff-donko_jiru_miyagi",
     "name": {
       "ja": "どんこ汁",
-      "zh_tw": "どんこ汁"
+      "kana": "どんこじる",
+      "romaji": "Donkojiru",
+      "zh_tw": "どんこ汁",
+      "en": "Donko Jiru (brown hakeling soup)"
     },
     "prefecture": "miyagi",
     "category": "kyodo",
+    "summary": {
+      "text": "\"Donko\" is another name for the brown hakeling, a fish that is in season from fall to winter. It is mainly landed in Ishinomaki and Kesennuma ports in Miyagi Prefecture, and its catch has been decreasing year by year. The fish has a large mouth and a swollen belly that becomes narrower towards the tail. According to local beliefs, it is a lucky fish that helps people save money, as it is hard to get a lot in through the big mouth and out through the small buttocks. In the Kesennuma area, it is a custom to hang \"donko\" on the altar on \"Ebisukou day\" to pray for a big catch and prosperous business, and to eat them in soup. The flesh of \"donko\" becomes firmer in winter, and the liver becomes more fatty, making it even more delicious. The meat and bones are tender, and its white flesh and skin have no peculiarities, giving it an elegant flavor similar to cod. The liver tends to be preferred over the meat, and in the Sanriku region, it has long been eaten as \"nameko\", grilled whole, deep-fried, or in a nabe (hot pot), in a soup, and the liver gives a rich flavor to any dish. \"Donko jiru\" is a winter delicacy that uses plenty of donko, which goes well with miso. It is a local dish that warms the body from the inside out and is often eaten mainly in coastal areas. It is often prepared with vegetables such as daikon radish, carrots, and tofu.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/3750/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/donko_jiru_miyagi.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/3750/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -163,15 +212,30 @@
     "id": "miyagi-maff-ebibochi_miyagi",
     "name": {
       "ja": "エビ餅",
-      "zh_tw": "エビ餅"
+      "kana": "えびもち",
+      "romaji": "Ebimochi",
+      "zh_tw": "エビ餅",
+      "en": "Ebi mochi(Shrimp mochi)"
     },
     "prefecture": "miyagi",
     "category": "sweets",
+    "summary": {
+      "text": "Miyagi Prefecture has an abundance of mochi dishes; there are said to be over 50 different kinds. Naturally, mochi is eaten during annual events like New Year’s celebrations, weddings, memorial services, and funerals, but it is also eaten during breaks while working on the farm. Though it used to be that mochi was made at home, recently there are increasing numbers of people who purchase ready-made mochi.Particularly in the northern parts of the prefecture, there is a rich variety of mochi, including adzuki mochi, mochi soup, grated radish mochi, ginger mochi, shrimp mochi, and fermented soybean mochi. Indeed, at any one time there may be five or six mochi dishes on a single dining table.Amongst such variety, shrimp mochi stands out for its delicious-looking red-and-white appearance. During New Year, it is offered as a special treat to visiting guests.Kurihara is an agricultural region situated in the interior of Miyagi Prefecture. As such, freshwater shrimp and loach caught in rice paddy irrigation canals and ponds provide an important source of protein. Shrimp mochi, made using that precious source of protein that is freshwater shrimp, and smoked mochi, made using pond loach, are meals for special occasions in Kurihara.\"Shrimp mochi ”is made by taking pond-caught freshwater shrimp, seasoning it with soy sauce and sake, and combining it with fresh mochi. Though the preparation is simple, since the shrimp are left intact when mixed with the mochi, the dish leaves a strong impression on someone seeing it for the first time.In addition to rice cake dishes, swamp shrimp is also served over boiled rice or with grated radish.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/2589/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/ebibochi_miyagi.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/2589/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -181,15 +245,30 @@
     "id": "miyagi-maff-fusube_mochi_miyagi",
     "name": {
       "ja": "ふすべ餅",
-      "zh_tw": "ふすべ餅"
+      "kana": "ふすべもち",
+      "romaji": "Fusubemochi",
+      "zh_tw": "ふすべ餅",
+      "en": "Fusube Mochi"
     },
     "prefecture": "miyagi",
     "category": "sweets",
+    "summary": {
+      "text": "In Miyagi Prefecture, a major region for rice production, mochi has long been eaten at New Year's, weddings, memorial services, funerals, and other annual events. It has also been customary to eat mochi on special occasions like the equinoxes, Obon, and when the farming season comes to an end.The “fusube mochi” combines Miyagi's mochi culture and the unique food culture in Kurihara City, which is far inland from the sea. In the inland area of Kurihara City away from the sea, crucian carp, swamp shrimp, loach, and sea cucumbers have historically been important sources of protein.Loaches are eaten raw, but if caught before the winter, they are soaked in fresh water to remove any mud from them, then skewered and boiled, before being skewered and roasted. Smoking the loach is called “fusuberu,” which is where the name “fusube mochi” comes from. You then mix the chopped with grated burdock root and radish, fried in oil and boiled with water. Then, you add soy sauce and chili pepper to the mixture to make it spicy, and you mix in the mochi. This local cuisine with a touch of chili pepper has been used to warm the body in colder seasons and to stimulate people’s appetites in the hot summer months.When loach is not available, you can use minced chicken or dried fish powder instead.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/2572/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/fusube_mochi_miyagi.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/2572/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -201,15 +280,27 @@
       "ja": "がんづき",
       "kana": "がんづき",
       "romaji": "Ganzuki",
-      "zh_tw": "がんづき"
+      "zh_tw": "がんづき",
+      "en": "Ganzuki"
     },
     "prefecture": "miyagi",
     "category": "kyodo",
+    "summary": {
+      "text": "\"Ganzuki\", so named because of its resemblance to \"Gan (goose in Japanese) meat\", is a familiar snack for Miyagi residents. It is a simple steamed bread made with only wheat flour, baking soda, brown sugar and water. It is characterized by its fluffy yet firm texture, and is a simple local confectionery with a handmade feel. Not only as a casual everyday snack or light meal, they were also eaten to satisfy hunger between farm works. Also, It was also often eaten as a snack by children. As brown sugar is used, this brownish steamed bread is known as \"Kuro-gan\" (black goose). In some areas, the main ingredients are wheat flour, brown sugar, and eggs, to which baking soda and vinegar are added, and walnuts, sesame seeds, soy sauce, Miso, and other ingredients are added and steamed. In contrast to the darker, fluffy \"Kuro Ganzuki/Kuro-gan\", there is \"Shiro Ganzuki/Shiro-gan,\" which is made with white sugar and additional milk and is similar to \"Uiro (Sweet Rice Jelly)\". It is eaten as a snack not only in Miyagi Prefecture, but also in Iwate Prefecture as well.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/4502/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/ganzuki_miyagi.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/4502/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -219,15 +310,30 @@
     "id": "miyagi-maff-gojiru_miyagi",
     "name": {
       "ja": "呉汁",
-      "zh_tw": "呉汁"
+      "kana": "ごじる",
+      "romaji": "Gojiru",
+      "zh_tw": "呉汁",
+      "en": "Go-jiru (mashed soybeans miso soup)"
     },
     "prefecture": "miyagi",
     "category": "kyodo",
+    "summary": {
+      "text": "Soybeans, are known as the \"meat of the field\" and are rich in high-quality protein with a good balance of essential amino acids. In addition, vitamins, minerals, isoflavones, saponins, dietary fiber, and other nutrients and functional ingredients are packed into small grains, making it a food that has supported the lives of Japanese people since ancient times.Miyagi Prefecture is the second largest producer of soybeans after Hokkaido. Miyagi-Shirome, Tanrei, Tachinagaha, and other varieties are grown in the prefecture. Soybeans, produced by farmers have been processed into Miso, “Natto” (fermented soybeans), “Tofu”(bean curd), and other products.Local dishes using Soybeans, can be found all over Japan, and one of the most favorite dishes is \"Go-jiru\".Soybeans, soaked in water and mashed are called \"Go\" . \"Go-jiru\" is made by adding this \"Go\" to Miso soup.Harvested Soybeans, are available from autumn through winter, and \"Go-jiru\", which contains Soybeans, and a Variety of vegetables, is a highly nutritious dish. It has also been popular as a wintertime local dish in many parts of Japan for centuries because it warms the body.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/5642/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/gojiru_miyagi.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/5642/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -237,15 +343,30 @@
     "id": "miyagi-maff-harako_meshi_miyagi",
     "name": {
       "ja": "はらこ飯",
-      "zh_tw": "はらこ飯"
+      "kana": "はらこめし",
+      "romaji": "Harakomeshi",
+      "zh_tw": "はらこ飯",
+      "en": "Harakomeshi"
     },
     "prefecture": "miyagi",
     "category": "kyodo",
+    "summary": {
+      "text": "Miyagi Prefecture is home to a variety of rivers, large and small, including the Kitakami, Naruse, and Abukuma Rivers, where salmon return every autumn to spawn. The prefecture has a history of protecting and nurturing salmon, including an artificial hatching and stocking program that began more than 100 years ago. Today, there are 20 hatcheries in Miyagi Prefecture, and efforts are being made to propagate and conserve the resource.The most famous local dish using salmon in Miyagi is \"harako-meshi\" (harako rice). Harako-meshi is famous because it was presented to Lord Date Masamune by the local people when he inspected the construction of a canal in Arahama. Harako\" is a local term for salmon roe, which is said to have come to be called \"harako\" because of the \"belly\" of the salmon.Even before it was presented to the feudal lord Masamune, harako was eaten as \"fisherman's rice\" by local fishermen who caught the salmon that came up the Abukuma River with seine nets. Since the seasoning differs from household to household, the watchword in Watari is \"ours is the best.Today, boiled salmon, rice cooked in salmon broth, and salmon roe dipped in the broth are served separately, but in the old days, all the ingredients were mixed together and called \"mixed rice. Unlike today's harako-meshi, the Arahama Women's Association is involved in a variety of activities to pass on the original taste.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/1144/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/harako_meshi_miyagi.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/1144/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -255,15 +376,30 @@
     "id": "miyagi-maff-heso_daikon_no_nishime_miyagi",
     "name": {
       "ja": "へそ大根のにしめ",
-      "zh_tw": "へそ大根のにしめ"
+      "kana": "へそだいこんのにしめ",
+      "romaji": "Hesodaikonnonishime",
+      "zh_tw": "へそ大根のにしめ",
+      "en": "Heso-daikon no nisime"
     },
     "prefecture": "miyagi",
     "category": "kyodo",
+    "summary": {
+      "text": "In the Tohoku region, where the weather is severely cold, there has long been a custom of making preserved foods by exposing vegetables and fish to the cold wind. \"Heso-Daikon\" is one such preserved food, produced in Marumori Town in the southern part of the prefecture. Delicious daikon radish produced at an altitude of over 300 meters above sea level is peeled, cut into round slices, boiled, and then dried on skewers or straw in the center for about one month under the eaves to take advantage of the cold winter weather.By repeatedly freezing at night and thawing during the day, candy-colored \"Heso-Daikon\" is produced. It is called \"Heso-Daikon\" or \"Baba-beso\" because the hole in the daikon radish after it is skewered \"looks like a navel.\" When sufficiently dried, it can be preserved until the following summer, and the standard way to cook it is to simmer it with seasonal vegetables.When cooking, lightly wash daikon radish and soak in lukewarm water to return it to the desired consistency before simmering with various other ingredients. It is known that sun-drying increases the nutritional value of daikon radish, including B vitamins, minerals such as potassium and calcium, and dietary fiber, which is higher than that of fresh daikon radish.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/6935/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/heso_daikon_no_nishime_miyagi.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/6935/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -275,15 +411,27 @@
       "ja": "ほっきめし",
       "kana": "ほっきめし",
       "romaji": "Hokkimeshi",
-      "zh_tw": "ほっきめし"
+      "zh_tw": "ほっきめし",
+      "en": "Hokki-meshi"
     },
     "prefecture": "miyagi",
     "category": "kyodo",
+    "summary": {
+      "text": "Hokki-gai is a large bivalve molluscs whose formal name is Uba-gai, and is called the \"king of shellfish\" because of its size and taste. Hokki-gai is rich in vitamin B12, which is one of the highest in seafood. Vitamin B12 aids in the production of hemoglobin in red blood cells and also helps maintain normal neurotransmission from the brain. It is also rich in taurine, which is expected to reduce cholesterol, improve heart and liver function, restore eyesight, promote insulin secretion, and prevent high blood pressure. The season is from winter to spring. Hokkaido produces the largest amount of Hokki-gai in Japan, but the Isohama fishing port in Yamamoto Town has long boasted the largest catch in the prefecture. In Yamamoto Town, the fishing cooperative's resource management regulations stipulate that the catch size must be 9.5 cm or larger, and the large Hokki-gai are prized as high-end sushi items, and the flavorful \"Hokki-meshi\" rice is a local delicacy. \"Hokki-meshi\" is made by boiling raw Hokki-gai in a soy sauce-based sauce and serving them on top of rice cooked in the sauce. It is one of the home-style dishes unique to Yamamoto Town, where Hokki fishing is thriving. This home-style dish has gradually become a local delicacy, and is now one of the town's representative local dishes.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/6943/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/hokki_meshi_miyagi.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/6943/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -293,15 +441,30 @@
     "id": "miyagi-maff-hoyano_sunomono_miyagi",
     "name": {
       "ja": "ホヤの酢の物",
-      "zh_tw": "ホヤの酢の物"
+      "kana": "ほやのすのもの",
+      "romaji": "Hoyanosunomono",
+      "zh_tw": "ホヤの酢の物",
+      "en": "Sea Squirt"
     },
     "prefecture": "miyagi",
     "category": "kyodo",
+    "summary": {
+      "text": "Sea squirts are raised in the coastal areas of Sanriku. The main kind of sea squirts cultivated are maboya, which are lowered by attaching oyster shells to ropes and attaching sea squirt spores. They are then grown in the sea for around three years while thinning out the oyster shells, and then they are brought up to land. Miyagi Prefecture accounts for 80% of sea squirt production.Sea squirts called the “pineapples of the sea” and are known as having all five tastes: sweet, sour, salty, umami, and bitter. It is also rich in nutrients like taurine and glycogen, which are known for their various physiological effects, as well as zinc, vitamin E, and vitamin B12.In early summer in the prefecture, freshly gathered sea squirts are sold at markets and supermarkets in both shelled and peeled forms. Locals eat sea squirts as sashimi, vinegared, roasted, or as tempura.Freshness is important for sea squirts, and many people who live in areas far from their production centers are not fond of them, because they develop a distinctive smell after a long time. However, it is recommended to eat fresh sea squirts where they are produced, as they have a strong smell of the sea and the five distinct tastes.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/2581/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/hoyano_sunomono_miyagi.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/2581/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -311,15 +474,30 @@
     "id": "miyagi-maff-ichijiku_no_kanroni_miyagi",
     "name": {
       "ja": "いちじくの甘露煮",
-      "zh_tw": "いちじくの甘露煮"
+      "kana": "いちじくのかんろに",
+      "romaji": "Ichijikunokanroni",
+      "zh_tw": "いちじくの甘露煮",
+      "en": "Ichijiku no Kanroni (Fig Compote)"
     },
     "prefecture": "miyagi",
     "category": "kyodo",
+    "summary": {
+      "text": "Fig has been used since antient time. In Japan, it is said that \"Fig was introduced to Nagasaki via China\", and was used for medicinal purposes. During the Meiji Era (1868-1912), Mr. Masui introduced “Masui Dauphine” variety, from the US, which now makes up about 80% of figs in the market. It is eaten all over the world because of its plump texture and sweetness. Fig is often processed into dried fruit in Western countries and the Middle East.As often called “the fruit of immortality”, fig is highly nutritious and contains plenty of dietary fiber, potassium (effective to get rid of excess salt), calcium (necessary to build bone) and iron (essential for preventing anemia). The fig season is from September to October in Miyagi Prefecture, with the main production areas lying in the southern part of the prefecture. The “Brunswick” variety of green fig for processed food is grown in Miyagi and some area of Fukushima, Yamagata and Akita Prefectures exclusively. Ripen figs are eaten raw or used for cooking nationally. On the other hand, in Miyagi Prefecture, where figs are mainly grown for processing, it is commonly cooked into compote, or “kanroni”. \"Kanroni\" made at home is simply boiled figs with sugar, water and lemon juice. People used to cook large quantities of \"kanroni\" and bottled it to serve to their neighbors and friends.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/4665/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/ichijiku_no_kanroni_miyagi.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/4665/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -329,15 +507,30 @@
     "id": "miyagi-maff-iwanano_shioyaki_miyagi",
     "name": {
       "ja": "いわなの塩焼き",
-      "zh_tw": "いわなの塩焼き"
+      "kana": "いわなのしおやき",
+      "romaji": "Iwananoshioyaki",
+      "zh_tw": "いわなの塩焼き",
+      "en": "Iwana no Shioyaki (Salt-grilled Char)"
     },
     "prefecture": "miyagi",
     "category": "kyodo",
+    "summary": {
+      "text": "Char is a fish only lives in the upper stream of headwater areas where clear water flows. It is very difficult to catch.Miyagi Prefecture was the first area in Japan to farm char, which is difficult to catch. Farmed char raised in clean water has no off-smells and tastes sweet. It has soft skin and is best enjoyed simply with salt-grilled. It has been popular with ordinary people since ancient times. Also char for raw consumption has been developed in Miyagi Prefecture, and ‘Date Iwana’, came from the original local species unique to the prefecture, was successfully developed by. Today, the “Date Iwana” is being farmed in Kurihara City, the birthplace of char farming, as well as in Yamato Town and Shiroishi City. ”Date Iwana” has been bred not to have eggs, which enables it not to suffer from growth stagnation or decline in quality during the spawning season. As a result, it grows to approx. 50cm in length and approx. 1kg in weight in two or three years. It is controlled under the strict brand management guidelines, and only large char over 800g can be called “Date Iwana”. ”Date Iwana”, developed to be shipped for eating raw, was bred in the strictly controlled environment and food. It enables not to have the peculiar characteristics of river fish. As such, it is used not only for eating raw, such as sashimi, also used in a wide range of dishes, including in Japanese, Western and Chinese cuisine with its high-quality white flesh.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/4667/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/iwanano_shioyaki_miyagi.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/4667/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -347,15 +540,30 @@
     "id": "miyagi-maff-kaki_namasu_miyagi",
     "name": {
       "ja": "柿なます",
-      "zh_tw": "柿なます"
+      "kana": "かきなます",
+      "romaji": "Kakinamasu",
+      "zh_tw": "柿なます",
+      "en": "Kaki Namasu(Pickled Daikon Radish and Carrot with Dried Persimmon)"
     },
     "prefecture": "miyagi",
     "category": "kyodo",
+    "summary": {
+      "text": "As the old saying goes, \"when a persimmon turns red, the doctor turns blue,\" persimmons are rich in vitamins A, C, folic acid, potassium, and other nutrients, especially vitamin C, which is said to be more than twice the amount found in lemons.When persimmons are dried, in addition to sugar, vitamin A and folic acid are concentrated. In Miyagi Prefecture, high-quality dried persimmons are produced from fall to winter, mainly in Marumori Town and Shiroishi City in the southern part of the prefecture. Those high-quality dried persimmons are called “Korogaki” and are made from “Hachiyagaki”, a variety of astringent persimmon. They are peeled, hung by the stem on a string, and exposed to the cold wind. “Kaki Namasu” is a New Year's dish that incorporates \"Korogaki\" persimmons, which have stored sweetness after being exposed to severe cold weather.Daikon radishes are rich in not only vitamin C but also diastase, which aids digestion. The crisp texture and refreshing taste are indispensable for New Year's dishes, especially when eating rice cakes.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/4498/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/kaki_namasu_miyagi.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/4498/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -365,15 +573,30 @@
     "id": "miyagi-maff-kishazu_iri_miyagi",
     "name": {
       "ja": "きしゃず炒り",
-      "zh_tw": "きしゃず炒り"
+      "kana": "きしゃずいり",
+      "romaji": "Kishazuiri",
+      "zh_tw": "きしゃず炒り",
+      "en": "Kishazu-iri"
     },
     "prefecture": "miyagi",
     "category": "kyodo",
+    "summary": {
+      "text": "Traditional local dish also known as \"Kirazu-iri\" or \"Kishazu-iri\". \"Kirazu\" is another name for ”Okara”(the lees of Tofu), and the Chinese characters meaning “snow-flower greens” have been assigned to it because of its appearance.“Kirazu” is rich in protein, calcium, potassium, and dietary fiber. It contains 11.5 grams of dietary fiber in 100 grams, about twice the amount of dietary fiber found in burdocks. In addition, the dietary fiber in \"Kirazu\" is a water-insoluble type called cellulose, which is said to promote the natural movement of the intestines. Since it also relieves constipation, it is said to be effective in preventing colon cancer and in reducing weight, and is attracting a great deal of attention as a healthy food.\"Kirazu-iri\" is stir-fried \"Kirazu\" with Vegetables, and Mushrooms. It is sometimes made with meat, or seafood, in addition to vegetables. In some regions, it is called \"Unohana\".",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/5637/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/kishazu_iri_miyagi.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/5637/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -383,15 +606,30 @@
     "id": "miyagi-maff-myouga_no_hayaki_miyagi",
     "name": {
       "ja": "みょうがの葉焼き",
-      "zh_tw": "みょうがの葉焼き"
+      "kana": "みょうがのはやき",
+      "romaji": "Myoganohayaki",
+      "zh_tw": "みょうがの葉焼き",
+      "en": "Myoga no Hayaki"
     },
     "prefecture": "miyagi",
     "category": "kyodo",
+    "summary": {
+      "text": "\"Myoga\" is a perennial plant that grows in the wild from Honshu to Okinawa, and it is related to ginger. Both the flower and the stem have been used since long ago as potherbs, but Japan is said to be the only country that grows it for food. It is used in various ways, such as a condiment for udon and soba noodles, or lightly pickled with cucumber and eggplant.In Miyagi Prefecture, around the time that the \"myoga leaves\" grow large, \"Myoga no Hayaki\" is eaten as a children's' snack during breaks from farm work. Wheat flour or glutinous rice flour, sugar, and miso are mixed into a paste, wrapped in myoga leaves, and roasted. Then, the leaves are removed before eating. The fragrance of the \"myoga leaves\" permeates to make a flavorful snack. In addition to the breaks from farm work, there is a custom of making it as an offering to ancestors on August 13th during the Obon Festival, then the leftovers are eaten after the welcoming fire for the ancestors. With the fresh fragrance of myoga leaves and a simple sweetness, it was often eaten as a snack in times when confectionery were scarce.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/3755/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/myouga_no_hayaki_miyagi.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/3755/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -401,15 +639,30 @@
     "id": "miyagi-maff-nameta_gareino_nitsuke_miyagi",
     "name": {
       "ja": "ナメタガレイの煮つけ",
-      "zh_tw": "ナメタガレイの煮つけ"
+      "kana": "なめたがれいのにつけ",
+      "romaji": "Nametagareinonitsuke",
+      "zh_tw": "ナメタガレイの煮つけ",
+      "en": "Nametagarei no nitsuke(Boiled slime flounder)"
     },
     "prefecture": "miyagi",
     "category": "kyodo",
+    "summary": {
+      "text": "The slime flounder is also known as “granny flounder” or “Indian flounder” in other regions. It is said that it came to be called “slime flounder” because it is very slimy. It is characterized by being larger than other flatfishes, and compared to the yellow striped flounder, which weighs around 300g per fish, the slime flounder grows to around 600g per fish during the winter period, almost double the size. A fish with thick and filling meat, it is said that it came to be served over the New Year because it is deemed to be auspicious for the prosperity of descendants due to its increased number of offspring in winter and also, because the eggs are golden in color, it is auspicious for business prosperity as well.The slime flounder is low-calorie and easy to digest, and it is effective for recovering physical strength when one’s stomach is in poor condition too. It can be said that it is the best fish to eat during the year-end and New Year holidays when we tend to eat too much and get tired.In fact, it is only recently that the slime flounder came to be eaten on New Year's Eve. From the Edo period to the prewar period, cod was the New Year's fish in Sendai. This can be observed in the letter written by Date Masamune, who was worried that cod would not be available in the castle town on New Year's Day, instructing his vassals to investigate the reason why cod caught by fishermen was not being shipped (refer to “History of Sendai City”), as well as a document from before World War II describing annual events in Sendai stating that cod soup is indispensable for the New Year (refer to Sendai Castle Town “Townspeople Retsuden”). Today, the custom of eating cod on New Year's Day is almost non-existent.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/2560/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/nameta_gareino_nitsuke_miyagi.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/2560/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -419,15 +672,30 @@
     "id": "miyagi-maff-nasuiri_miyagi",
     "name": {
       "ja": "なす炒り",
-      "zh_tw": "なす炒り"
+      "kana": "なすいり",
+      "romaji": "Nasuiri",
+      "zh_tw": "なす炒り",
+      "en": "Nasu-iri"
     },
     "prefecture": "miyagi",
     "category": "kyodo",
+    "summary": {
+      "text": "Eggplant is in season from summer to fall, and the types grown in different regions are quite different.It is said that eggplant cultivation began in Miyagi Prefecture around 1590, during the reign of Date Masamune, the feudal lord. It is believed that an eggplant brought back from Hakata by one of Date's vassals adapted to the Tohoku climate over a long period of time and took on a unique shape. It is called \"Sendai naganasu (long eggplant),\" and is used in a variety of dishes, such as pickles and stir-fries.Eggplant is a vegetable with high water content, and its nutritional value lies in a type of polyphenol called nasunin, which is found in the skin. Nasunin, an anthocyanin pigment, has strong antioxidant properties and is said to have a strong ability to suppress active oxygen, which is a source of cancer and lifestyle-related diseases. It also reduces the absorption of cholesterol.The nutritious eggplant stir fried with its skin intact is called Nasu-iri. It is a simple dish made by stir frying together with Abura-fu or Aburaage (deep-fried bean curd) in soy sauce, and has long been made as a reserve dish in Miyagi Prefecture. In addition to stir-frying with soy sauce, each household has its own way of cooking it: adding sugar and Mirin(sweet rice wine), stir-frying with Miso, adding walnuts, and so on.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/6398/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/nasuiri_miyagi.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/6398/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -439,15 +707,27 @@
       "ja": "おくずかけ",
       "kana": "おくずかけ",
       "romaji": "Okuzukake",
-      "zh_tw": "おくずかけ"
+      "zh_tw": "おくずかけ",
+      "en": "Okuzukake"
     },
     "prefecture": "miyagi",
     "category": "kyodo",
+    "summary": {
+      "text": "Shojin ryori (vegetarian food) is eaten mainly in the southern part of the prefecture during the higan (equinox) and obon (Bon festival) seasons in spring and fall. It is also a form of hospitality for people gathered for Buddhist memorial services. It is eaten as an offering to the Buddha and as a home-style dish.It is made by simmering several kinds of vegetables, tofu, deep-fried tofu, and fu in shiitake mushroom mash, adding shiraishi hot noodles, and thickening the mixture with kuzu flour. In modern times, katakuriko (potato starch) is often used instead of kuzu flour to thicken the noodles. Shiroishi On-men, a specialty of Shiroishi City in the southern part of the prefecture, is slightly thicker than somen noodles and is considered easy to digest because no oil is used during processing. Vegetables used as ingredients vary from household to household, although they are mostly what is available at that time of the year. In any case, it has a gentle taste with dashi broth, and is popular among people of all ages, from children to the elderly.In the northern part of the prefecture, there is another type of vegetable soup called \"suppoko\" or \"nopponjiru,\" which is similar to \"okuzugake. The preparation method is almost the same, but there is a difference in whether it is eaten on a daily basis or on special occasions.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/899/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/okuzu_kake_miyagi.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/899/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -459,15 +739,27 @@
       "ja": "サンマのきがき",
       "kana": "さんまのきがき",
       "romaji": "Sanmanokigaki",
-      "zh_tw": "サンマのきがき"
+      "zh_tw": "サンマのきがき",
+      "en": "Sanma no Kigaki"
     },
     "prefecture": "miyagi",
     "category": "kyodo",
+    "summary": {
+      "text": "In the Motoyoshi region of Kesennuma, Bonito fish flocks have been migrating to the vicinity of the coast and were landed in large quantities since long ago. Most of them were distributed as salted bonito, but the marinade of Salted bonito, was called \"Kigaki,\". Some merchants sold the marinade in barrels as a seasoning, and it became popular for its delicious taste when used to cook “Daikon,” radish and other dishes.\"Kigaki\" is a type of Fish sauce ,similar to Akita's “Shotsuru”, and Thailand's fish sauce \"Nam pla\", and was a revolutionary seasoning at the time. Later, the dish made by simmered Daikon radish in a broth of salted squid or salted fish came to be called “Kigaki”, and fresh fish such as Pacific saury were also simmered in such a broth”. In the past, the only seasonings used in the home were homemade “Miso”, Salt, and Vinegar, so when celebrations were held, \"Miso-Dare,\" (strained miso), was used as a substitute for soy sauce.In the Meiji period (1868-1912), Soy sauce, began to be sold in the provinces and the brewing industry developed. However, Soy sauce was expensive, so it was used only for celebrations and for guests.Today, Saury, is boiled in Soy sauce, instead of fish sauce.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/5647/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/sanma_no_kigaki_miyagi.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/5647/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -477,15 +769,30 @@
     "id": "miyagi-maff-sanmano_surimi_shiru_miyagi",
     "name": {
       "ja": "サンマのすり身汁",
-      "zh_tw": "サンマのすり身汁"
+      "kana": "さんまのすりみしる",
+      "romaji": "Sanmanosurimishiru",
+      "zh_tw": "サンマのすり身汁",
+      "en": "Sanma no Surimi-jiru"
     },
     "prefecture": "miyagi",
     "category": "kyodo",
+    "summary": {
+      "text": "Sanma(pacific saury) is a fish that represents the waters off Mt. Kinkasan and has long been a favorite autumn delicacy. Sanma(pacific saury) is born in the southern ocean, migrate north, feed in the northern ocean, and then move south to spawn. They migrate from north to south, from the Kuril Islands in the north to the vicinity of Okinawa in the south, and grow up. The saury fishing season begins in Hokkaido in August and reaches its peak in October and November off the coast of Kinkasan.IPA (icosapentaenoic acid) and DHA (docosahexaenoic acid), which are abundant in fatty acids in fish oil contained in bluefish such as Saury and Mackerel, are attracting attention as foods that reduce arteriosclerosis and prevent lifestyle-related diseases such as myocardial and brain infarctions. The price of Sanma(pacific saury), which is popular among ordinary people as a taste of autumn, has been rising due to poor catch in recent years.Locally, fresh ones are eaten raw as“ Sashimi ,”（raw fish）or “Sushi”. The most common way to eat it is simply grilled with Salt and served with Grated Daikon radish. Surimi(minced fish ), is also commonly eaten, and it is made by beating it by oneself, or it is sold as “Surimi”, in autumn at supermarkets and fresh fish shops in the prefecture. The \"Sanma(pacific saury) surimi soup\" is made into a soup with Daikon”radish, Chinese cabbage, and other ingredients, and is served at home, restaurants, and at events.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/5659/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/sanmano_surimi_shiru_miyagi.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/5659/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -495,15 +802,30 @@
     "id": "miyagi-maff-sasa_kamaboko_no_isobeage_miyagi",
     "name": {
       "ja": "笹かまぼこの磯部揚げ",
-      "zh_tw": "笹かまぼこの磯部揚げ"
+      "kana": "ささかまぼこのいそべあげ",
+      "romaji": "Sasakamabokonoisobeage",
+      "zh_tw": "笹かまぼこの磯部揚げ",
+      "en": "Sasa Kamaboko no Isobeage"
     },
     "prefecture": "miyagi",
     "category": "kyodo",
+    "summary": {
+      "text": "Miyagi prefecture is rich in fishing grounds, with fishing ports in Kesennuma, Ishinomaki, Shiogama, and Yuriage, and large amounts of fish such as flounder, sea bass, and sea bream have been caught there since the middle of the Meiji period. In those days, when transportation was not as developed as it is today, \"Grilled Kamaboko\" emerged as a method for preservation. Until then, each household would mince white fish into a paste, shape it with their palm, then grill it on a bamboo skewer, and this eventually entered the market as a food product. At the time it was referred to as \"Tenohira (Palm) Kamaboko\" or \"Bero (Tongue) Kamaboko,\" but it later came to be called \"Sasa (Bamboo) Kamaboko\" in connection to the \"Take ni Suzume (Bamboo and Sparrow)\" Date clan family crest of the former Sendai domain, and it was unified into \"Sasa Kamaboko\" at the start of the Showa period.Since then, there has been a dramatic drop in the catch of flounder and other fish, so other white-fleshed fish such as walleye pollock are used today instead. Now, they are mainly processed into fish paste and flash frozen while still fresh on the fishing boat. It is gaining popularity as a health food due to its light flavor, high-quality protein, and low calorie count. Thanks to advances in packaging technology and transportation speed in recent years, Sasa Kamaboko is widely beloved as a local specialty and souvenir representing Miyagi prefecture. There are over 40 manufacturers of various sizes in Miyagi prefecture, each offering many products featuring their own unique concepts. In addition to eating it plain, it is also eaten in arranged dishes such as kakiage, oden stew, and tempura.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/2597/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/sasa_kamaboko_no_isobeage_miyagi.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/2597/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -513,15 +835,30 @@
     "id": "miyagi-maff-sendai_hakusai_no_tsuke_mono_miyagi",
     "name": {
       "ja": "仙台白菜の漬物",
-      "zh_tw": "仙台白菜の漬物"
+      "kana": "せんだいはくさいのつけもの",
+      "romaji": "Sendaihakusainotsukemono",
+      "zh_tw": "仙台白菜の漬物",
+      "en": "Sendai Hakusai no Tsukemono"
     },
     "prefecture": "miyagi",
     "category": "kyodo",
+    "summary": {
+      "text": "It was not until the Meiji period (1868-1912) that napa cabbage began to be cultivated in Japan. In Miyagi Prefecture, seeds were brought back from China during the triumphant return of the Sino-Japanese and Russo-Japanese wars. In the Taisho era (1912-1926), \"Matsushima Hakusai,\" one of the prototypes of Japanese napa cabbage, was born. Based on \"Matsushima Hakusai,\" \"Matsushima Jun-ni-go\" and \"Matsushima Shin-ni-go\" were also bred, and Miyagi Prefecture became a major producer of Hakusai, boasting the largest shipment of Hakusai in Japan. Matsushima-type napa cabbage is white, soft, and sweet inside, and was branded under the name \"Sendai Hakusai\" and distributed throughout Japan. However, as the postwar transition to newer varieties progressed, the cultivation of Sendai Hakusai, a traditional vegetable with soft leaves that are easily damaged during transportation, declined.In 2011, the tsunami caused by the Great East Japan Earthquake severely damaged farmland in coastal areas. While the impact of salt damage has become an issue for resuming farming, JA Zen-Noh Miyagi has taken the lead in reviving and promoting the production of Sendai Hakusai, which is relatively resistant to salt damage, and has started an integrated effort to consume the Sendai Hakusai.Sendai Hakusai is soft and contains high levels of amino acids, which are umami components. It is easy to be pickled, maintains a moderate crunchiness, and tastes better and lasts longer the longer it is pickled.In the past, this pickled Sendai Hakusai was often eaten as a side dish above all else.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/6380/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/sendai_hakusai_no_tsuke_mono_miyagi.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/6380/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -531,15 +868,30 @@
     "id": "miyagi-maff-sendai_zouni_miyagi",
     "name": {
       "ja": "仙台雑煮",
-      "zh_tw": "仙台雑煮"
+      "kana": "せんだいぞうに",
+      "romaji": "Sendaizoni",
+      "zh_tw": "仙台雑煮",
+      "en": "Sendai zoni"
     },
     "prefecture": "miyagi",
     "category": "kyodo",
+    "summary": {
+      "text": "Sendai Zoni has been eaten since the end of the Edo period. It is a beautifully colored meal for a special occasion with grilled hake so large that it protrudes from the bowl, harako (salmon roe), Sendai celeri, and omorina.Daikon, carrots, and burdocks are cut into small pieces and quickly blanched in hot water, and the \"o-hinna\" is divided into servings and frozen in the open air. This way, the flavor sinks in more easily (in recent years, with global warming, freezing in the freezer is the norm).The broth is made from grilled and dried goby, which were once caught in large numbers in Matsushima Bay. These grilled gobies are sold in rows of several fish tied together with straw. In the past, there used to be a number of yaki-haze huts, but due to poor catches in recent years, the number of huts has drastically decreased. As a result, the price of grilled goby has become more expensive every year.Harako, which is made from salmon that have come up the Abukuma River, is also a highlight, but its price has also risen in recent years, and overall, Sendai zoni is becoming more and more expensive.Incidentally, it is recorded that Lord Date Masamune did not eat Sendai zoni, but rather a zoni of dried abalone, dried sea cucumbers, and herring stock.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/905/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/sendai_zouni_miyagi.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/905/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -549,15 +901,30 @@
     "id": "miyagi-maff-takenoko_gohan_miyagi",
     "name": {
       "ja": "たけのこご飯",
-      "zh_tw": "たけのこご飯"
+      "kana": "たけのこごはん",
+      "romaji": "Takenokogohan",
+      "zh_tw": "たけのこご飯",
+      "en": "Takenoko-gohan (Bamboo shoots rice)"
     },
     "prefecture": "miyagi",
     "category": "kyodo",
+    "summary": {
+      "text": "Bamboo shoots are an indispensable ingredient in Japanese cuisine, and there are records that they have been eaten since ancient times, as recorded in the Kojiki (Records of Ancient Matters). The bamboo shoots currently in circulation are mainly called Moso Bamboo, native to China, and are large and thick with brown hair on the skin, while the flesh is white and soft. It has relatively little bitterness and is characterized by a unique Umami taste with sweetness and a crunchy texture.Nutrients include minerals such as potassium and zinc, which release salt, and high dietary fiber content, as well as Umami compounds such as glutamic acid. Because of its low calory content, it is also attracting attention as a diet food.In Miyagi Prefecture, Moso Bamboo begins to sprout in many places around April. The main production areas are Marumori-machi and Natori City, where Bamboo shoots are not only shipped for sale, but also for bamboo shoot digging events.Bamboo shoots are plucked everywhere in the prefecture, and after the rains, there are more than enough to eat, so farmers serve them as Takenoko-gohan (bamboo shoot rice), Nishime (simmered bamboo shoots), Aemono(seasoned with miso dressing), and Miso soup at rice planting time and during excursions.By late May, the Moso bamboo season is over and \"Karatake\" and other bamboo species are plucked instead.Takenoko-gohan is the most common recipe for bamboo shoots and is served not only in Miyagi Prefecture but also throughout Japan.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/6393/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/takenoko_gohan_miyagi.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/6393/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -567,15 +934,30 @@
     "id": "miyagi-maff-zunda_mochi_miyagi",
     "name": {
       "ja": "ずんだ餅",
-      "zh_tw": "ずんだ餅"
+      "kana": "ずんだもち",
+      "romaji": "Zundamochi",
+      "zh_tw": "ずんだ餅",
+      "en": "Zunda mochi"
     },
     "prefecture": "miyagi",
     "category": "sweets",
+    "summary": {
+      "text": "In Miyagi Prefecture, there are many opportunities to eat mochi, and it is said that mochi is eaten without fail at New Year's, weddings, Buddhist memorial services, funerals, and other annual events. In the past, rice cakes were made at home, but in recent years, many people have begun to purchase ready-made rice cakes.Perhaps because rice cakes are eaten so frequently, there is a wide variety of rice cakes available. There are fusube mochi (rice cakes) made with loach, walnut rice cakes, sesame rice cakes, natto rice cakes, zunda rice cakes, and others. Sesame, walnut, and zunda rice cakes are often served to guests.Among them, Zunda rice cake is one of the most representative local dishes of Miyagi Prefecture. There are various theories about the name \"Zundamochi,\" including that it was created by a farmer named Jinta, or that Lord Date Masamune crushed edamame (soybeans) with the handle of his sword. It is said that by the end of the Edo period (1603-1867), this dressage became established as zunda, and edamame was already being used. There is also a theory that the name \"zunda\" (meaning \"bean hitting\") is a reference to the sound of hitting the beans. Zunda takes a lot of time to make, so in the past, the whole family worked together to make it, including the children who took the beans out of the pods.The bright green Zunda bean paste is seasoned with sugar and salt, but often only sugar is used to flavor the rice cake.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/1153/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/zunda_mochi_miyagi.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/1153/index.html",
         "fetched_at": "2026-09-29"
       }
     ],

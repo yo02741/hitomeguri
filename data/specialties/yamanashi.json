@@ -5,15 +5,16 @@
       "ja": "みみ",
       "kana": "みみ",
       "romaji": "Mimi",
-      "zh_tw": "みみ"
+      "zh_tw": "みみ",
+      "en": "Mimi"
     },
     "prefecture": "yamanashi",
     "category": "kyodo",
     "summary": {
-      "text": "みみは、山梨県南巨摩郡富士川町十谷地区の郷土料理。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E3%81%BF%E3%81%BF",
-      "license": "CC BY-SA 4.0",
+      "text": "\"Mimi\" is a local dish mainly in the Toya area of Fujikawa Town. It is made by kneading flour and cutting it into bite-size pieces, then sticking the two corners of the dough together to make a triangular shape and stewing it with vegetables in a miso flavor. It is similar to \"houtou,\" but \"mimi\" is so named because of its distinctive triangular shape, which resembles the shape of a \"winnowing basket,\" a farming implement (some say it is because it resembles an ear). There is also a legend that a warrior of the Minamoto clan ate it to celebrate his victory in battle in Juya (various theories exist), and it is said to have been called \"fuku-mi,\" meaning \"to scoop up good fortune,\" which in turn became \"mimi. It is said to have been considered a very auspicious food, and became a dish for New Year's and festive occasions. In Jukkoku, \"mimi\" is still served to the god of the year for breakfast on New Year's Day every year, and is then eaten with the family.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/1779/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
       "fetched_at": "2026-09-29"
     },
     "source_type": "kyodo_ryori",
@@ -24,11 +25,11 @@
         "fetched_at": "2026-09-29"
       },
       {
-        "url": "https://www.wikidata.org/wiki/Q11279243",
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/1779/index.html",
         "fetched_at": "2026-09-29"
       },
       {
-        "url": "https://ja.wikipedia.org/wiki/%E3%81%BF%E3%81%BF",
+        "url": "https://www.wikidata.org/wiki/Q11279243",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -67,6 +68,10 @@
         "fetched_at": "2026-09-29"
       },
       {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/918/index.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
         "url": "https://www.wikidata.org/wiki/Q2712621",
         "fetched_at": "2026-09-29"
       },
@@ -81,15 +86,30 @@
     "id": "yamanashi-maff-akebono_daizuno_edamame_yama_nashi",
     "name": {
       "ja": "あけぼの大豆の枝豆",
-      "zh_tw": "あけぼの大豆の枝豆"
+      "kana": "あけぼのだいずのえだまめ",
+      "romaji": "Akebonodaizunoedamame",
+      "zh_tw": "あけぼの大豆の枝豆",
+      "en": "Akebono Daizu no Edamame"
     },
     "prefecture": "yamanashi",
     "category": "kyodo",
+    "summary": {
+      "text": "\"Akebono Soybeans\" have been cultivated in the Akebono region of Minobu Town since the Meiji era. These soybeans are exceptional, with larger size and higher sugar content compared to regular soybeans. They are approximately 1.6 times the size of typical soybeans, and when lined up, 10 beans span about 6 sun (18cm or 7 inches), earning them the alternate name \"Tourokusun\". The ideal conditions for Akebono Soybeans in Minobu Town include a climate with significant temperature differences between day and night, frequent fog, and soil referred to as \"conglomerate gravel layer\".Despite being renowned for their quality, Akebono Soybeans face challenges due to their regional specificity, labor-intensive cultivation practices throughout all stages, and the aging population of producers. This has led to a decrease in harvest volume, making these soybeans difficult to obtain, earning them the nickname \"phantom soybeans.\" Young edamame from Akebono Soybeans are particularly rare, as they are only available for a brief period during the harvest season.Efforts have been made to revitalize the region through a collaborative approach among producers, resulting in increased production. Akebono Soybeans are now processed into tofu, miso, croquettes, natto, and other products, contributing to local culinary diversity. It has become a common saying that when attempting to grow Akebono Soybeans in other regions, the first-year harvest may yield large soybeans, but subsequent years may result in smaller beans that lose the distinctive qualities of Akebono Soybeans. Thus, the phrase \"Akebono Soybeans are truly Akebono Soybeans when grown in Akebono\" is an often expressed statement.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/4820/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/akebono_daizuno_edamame_yama_nashi.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/4820/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -99,15 +119,30 @@
     "id": "yamanashi-maff-ama_nattou_no_osekihan_yama_nashi",
     "name": {
       "ja": "甘納豆のお赤飯",
-      "zh_tw": "甘納豆のお赤飯"
+      "kana": "あまなっとうのおせきはん",
+      "romaji": "Amanattonosekihan",
+      "zh_tw": "甘納豆のお赤飯",
+      "en": "Amanatto no osekihan"
     },
     "prefecture": "yamanashi",
     "category": "kyodo",
+    "summary": {
+      "text": "Ama-natto no Osekihan (red rice with sweetened soybeans)\" is, as the name suggests, red rice cooked with ama-natto (sweetened soybeans). It tastes sweet, and is popular among the locals for its delicious sweetness when sprinkled with sesame salt. Since it is made without using sasage or azuki beans, the glutinous rice does not turn red, but is instead colored with food coloring. Japanese confectionery stores and supermarkets sell both sweet sekihan made with amanatto and non-sweet sekihan made with sasage or azuki beans, which are well-known throughout Japan. Since ancient times, the color red has been believed to ward off evil spirits. For this reason, \"sweet red rice with red beans\" is just as essential for festive occasions as non-sweet red rice. Although sweet sekihan seems very unusual, it is also eaten in parts of Hokkaido and Tohoku, far from Yamanashi Prefecture. There are many theories about its roots, including one that the Nanbu clan, who moved from Kai no Kuni (Yamanashi Prefecture) to Aomori Prefecture during the Kamakura period (1185-1333), introduced it to the region, and another that amanatto was added to school lunches in Yamanashi Prefecture 50 years ago after hearing about it from people in Aomori.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/1816/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/ama_nattou_no_osekihan_yama_nashi.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/1816/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -119,15 +154,27 @@
       "ja": "あんびん",
       "kana": "あんびん",
       "romaji": "Anbin",
-      "zh_tw": "あんびん"
+      "zh_tw": "あんびん",
+      "en": "Anbin (Red Bean Dougnuts)"
     },
     "prefecture": "yamanashi",
     "category": "kyodo",
+    "summary": {
+      "text": "\"Anbin\" is a local specialty in Kyonan area. It is made by kneading a dough of sweet potato flour, wheat flour, and diced sweet potatoes with boiling water, wrapping it around sweet red bean paste, flattening it, and then steaming it. The name \"Anbin\" comes from the process of strongly pounding it (in Japanese, Slapping is “Binta\") after putting in the sweet red bean paste. Since the land was not suitable for rice cultivation, the cultivation of sweet potatoes, corn, wheat, and other crops was predominant, leading to the development of a culture of flour-based foods. While it can also be made with corn flour, it turns yellow, whereas using sweet potato flour results in a black color. No leavening agents like baking soda are used, and the cooled Anbin has a substantial texture and provides lasting satisfaction. The tradition of making and consuming Anbin declined with changes in dietary habits, but in 1996, the residents of the local community decided to revive their traditional food as part of a town revitalization effort. This initiative led to the establishment of the Rokugo Town Special Product Processing Cooperative, promoting local agricultural products and reviving the traditional dish \"Anbin.\"",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/4825/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/anbin_yama_nashi.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/4825/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -137,15 +184,30 @@
     "id": "yamanashi-maff-awabino_nigai_yama_nashi",
     "name": {
       "ja": "あわびの煮貝",
-      "zh_tw": "あわびの煮貝"
+      "kana": "あわびのにがい",
+      "romaji": "Awabinonigai",
+      "zh_tw": "あわびの煮貝",
+      "en": "Awabi no nigai"
     },
     "prefecture": "yamanashi",
     "category": "kyodo",
+    "summary": {
+      "text": "Abalone shellfish is a specialty of Yamanashi Prefecture. There are various theories as to why abalone, a seafood, became a specialty in an inland area surrounded by mountains and not facing the sea. One of them is that it was not easy to transport abundant seafood from the neighboring Suruga Bay (Shizuoka Prefecture) across mountains without transportation and refrigeration facilities as is the case today, and only a few salted or dried fish were delivered. In the Edo period, fresh abalone from Suruga Bay was processed, marinated in soy sauce, and packed in wooden casks for transportation. There is also a theory that Shingen Takeda, noting the nutritional value of abalone, invented abalone as a campaign food. Compared to raw abalone, boiled abalone contains more glutamic acid and aspartic acid, which increases its flavor, and this may be the reason why it became a specialty of inland regions.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/1821/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/awabino_nigai_yama_nashi.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/1821/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -155,15 +217,30 @@
     "id": "yamanashi-maff-azuki_houtou_yama_nashi",
     "name": {
       "ja": "小豆ほうとう",
-      "zh_tw": "小豆ほうとう"
+      "kana": "あずきほうとう",
+      "romaji": "Azukihoto",
+      "zh_tw": "小豆ほうとう",
+      "en": "Azuki Hoto"
     },
     "prefecture": "yamanashi",
     "category": "kyodo",
+    "summary": {
+      "text": "\"Hoto\" originated as something eaten in a red bean soup in the Heian Period, as recorded in the diaries of aristocrats. In Yamanashi after the Edo period, it was common to eat \"hoto\" stewed in miso, but \"azuki hoto\" was eaten during celebrations like New Year's and Obon as well as regional events such as during rice planting season. \"Azuki hoto\" is served at the festival held at the end of July every year at Miwa Shrine in Sutamacho Wakamiko, Hokuto City, which is why the festival is also called \"Hoto Festival.\" The red color of azuki beans is said to have the power to drive away noxious vapors and ward off evil, so people offered fresh azuki beans and flour before altars, ate the \"azuki hoto\" served, and gave thanks for the harvest. Originally mochi was put into azuki bean soup, but rice is extremely precious in in Yamanashi Prefecture, whose land is largely unsuitable for the cultivation of rice, so \"hoto\" noodles were cut thickly and treated as a mochi substitute in sweet azuki bean soup.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/2913/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/azuki_houtou_yama_nashi.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/2913/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -173,15 +250,30 @@
     "id": "yamanashi-maff-basashi_yama_nashi",
     "name": {
       "ja": "馬刺し",
-      "zh_tw": "馬刺し"
+      "kana": "ばさし",
+      "romaji": "Basashi",
+      "zh_tw": "馬刺し",
+      "en": "Basashi (Horse-Meat Sashimi)"
     },
     "prefecture": "yamanashi",
     "category": "kyodo",
+    "summary": {
+      "text": "Yamanashi, known as Kai Province since the Ritsuryo system era, has been recognized as a contributor of tribute horses. The \"Kai no Kurokoma\" (Black Horses of Kai) were a coveted brand among the aristocracy during that time. Furthermore, during the heyday of Mount Fuji's pilgrimage, many horses were kept for carrying the loads of climbers. Due to the proximity of horses, it is said that horse meat dishes became popular because they were readily available and affordable. \"Basashi\" is a simple dish where raw horse meat is dipped in condiments and soy sauce. Despite its simplicity, it is a representative dish of horse meat, offering the luxurious texture of high-quality horse meat and a delicate sweetness from its light fat. In dishes like \"Yoshida Udon,\" which has been selected in \"Yamanashi Local Food\" and \"Local Cuisine Selection of Agricultural, Mountain, and Fishing Villages,\" sweet and savory simmered horse meat is often placed on top. In addition to its delicious taste, horse meat is known for its high nutritional value, including iron, minerals, vitamins, and more. It is highly regarded for being high in protein, low in calories, and considered a low-allergy food. Additionally, horse meat is sometimes referred to as \"sakuraniku\" (cherry blossom meat), and there are various theories about the origin of this name. One theory suggests it is because horse meat itself has a beautiful cherry blossom color. Another theory links it to the idea that horses, when well-fed during the cold season and fattened for winter, produce exquisite basashi in spring. In the Edo period, when openly consuming certain meats was restricted, there is a theory that horse meat was referred to as \"sakura\" as a euphemism. Another theory ties it to a phrase sung by Ryoma Sakamoto, \"Why tether a horse to a blooming cherry blossom? If the horse shows courage, the flowers will scatter,\" as the origin. Indeed, horse meat can be considered a food ingrained in the local cuisine of various regions, with its consumption deeply rooted in the culinary practices of different communities.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/6468/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/basashi_yama_nashi.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/6468/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -191,15 +283,30 @@
     "id": "yamanashi-maff-imogara_iri_futomaki_sushi_yama_nashi",
     "name": {
       "ja": "いもがら入り太巻き寿司",
-      "zh_tw": "いもがら入り太巻き寿司"
+      "kana": "いもがらいりふとまきすし",
+      "romaji": "Imogarairifutomakisushi",
+      "zh_tw": "いもがら入り太巻き寿司",
+      "en": "Imogara iri Futomaki Sushi"
     },
     "prefecture": "yamanashi",
     "category": "kyodo",
+    "summary": {
+      "text": "In Yamanashi Prefecture, \"Imogara\" is a commonly consumed food that is made from the peeled skin of various types of taro, such as Yattsu-Atama and Akameimo, or from the peeled stems of Hasuimo (taro) that are grown for harvesting the leaf stalks (the part between the leaf and stem). It is also known as \"Hoshizuiki.\" Imogara is dried and used as a preserved food, finding its way into various dishes. When rehydrated, it absorbs broth and seasonings well and has a crunchy texture due to its fibrous nature. Imogara is used in everyday cooking for dishes such as vinegar-based salads, simmered dishes, and kinpira (sauteed and seasoned vegetables). It is also added to miso soup and \"Houtou,\" a regional noodle dish. \"Imogara-filled futomaki sushi\" is a dish that sweetly simmers Imogara, similar to how kanpyo (dried gourd strips) is prepared, and uses it as an ingredient rolled inside sushi. This dish has been traditionally served on various occasions, including celebrations and gatherings, showcasing the enduring popularity of the delicious taste of Imogara, a cherished local flavor that continues to be passed down through generations.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/4296/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/imogara_iri_futomaki_sushi_yama_nashi.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/4296/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -209,15 +316,30 @@
     "id": "yamanashi-maff-inobuta_nabe_yama_nashi",
     "name": {
       "ja": "いのぶた鍋",
-      "zh_tw": "いのぶた鍋"
+      "kana": "いのぶたなべ",
+      "romaji": "Inobutanabe",
+      "zh_tw": "いのぶた鍋",
+      "en": "Inobuta nabe (Inobuta Hot pot)"
     },
     "prefecture": "yamanashi",
     "category": "kyodo",
+    "summary": {
+      "text": "Yamanashi Prefecture, comprising 80% forested areas, has a history of consuming game dishes through hunting. Particularly in the Mitomi region, upstream of the Fuefuki River, hunting has been prevalent since ancient times, and wild boar, in particular, was commonly eaten. After World War II, breeding \"Inobuta\", a crossbreed of male wild boar and female domestic pig, was encouraged. \"Inobuta Nabe\" is a hot pot dish that includes Inobuta meat in sesame miso soup, cooked with plenty of locally sourced vegetables and mushrooms. Inobuta meat lacks the gamey odor of boar, has a refreshing taste with sweetness and richness in its fat. It is tender compared to pork, and its flavorful lean meat is a distinctive feature. Additionally, it contains about 20% more protein and is lower in fat than pork. Due to its high nutritional value and warming properties, it is considered stamina-boosting cuisine. Breeding Inobuta is challenging, requiring longer periods than pigs, meticulous management to prevent diseases and stress. Capturing wild male boars and the effort to acclimate them to human interaction pose additional challenges due to their nervous nature. The breeding process, including pairing and timing for mating, also demands experience.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/6920/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/inobuta_nabe_yama_nashi.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/6920/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -227,15 +349,30 @@
     "id": "yamanashi-maff-jagaimo_to_hijiki_no_nimono_yama_nashi",
     "name": {
       "ja": "じゃがいもとひじきの煮物",
-      "zh_tw": "じゃがいもとひじきの煮物"
+      "kana": "じゃがいもとひじきのにもの",
+      "romaji": "Jagaimotohijikinonimono",
+      "zh_tw": "じゃがいもとひじきの煮物",
+      "en": "Jagaimo-to-Hijiki-no-Nimono (Simmered Potatoes and Hijiki Seaweed)"
     },
     "prefecture": "yamanashi",
     "category": "kyodo",
+    "summary": {
+      "text": "It is said that on the opening day of Mount Fuji on July 1st, the Goshi (a role of a clergyman) who provides lodging and hospitality to believers visiting for Mount Fuji faith offered 'Simmered Potatoes and Hijiki Seaweed. Additionally, it is reported that it was offered to Mount Fuji and household Shinto altars as a prayer for the safety and well-being of those climbing Mount Fuji, and for a healthy and safe summer. The original meaning of this dish was to \"celebrate the opening of the mountain with foods from the sea and the mountains,\" and this \"Simmered Potatoes and Hijiki Seaweed\" has been eaten for more than 100 years and is still eaten on the day of the opening of the mountain as a custom today.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/6439/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/jagaimo_to_hijiki_no_nimono_yama_nashi.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/6439/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -245,15 +382,30 @@
     "id": "yamanashi-maff-katsudon_yama_nashi",
     "name": {
       "ja": "かつ丼",
-      "zh_tw": "かつ丼"
+      "kana": "かつどん",
+      "romaji": "Katsudon",
+      "zh_tw": "かつ丼",
+      "en": "Katsudon (Rice Topped with Pork Cutlet)"
     },
     "prefecture": "yamanashi",
     "category": "kyodo",
+    "summary": {
+      "text": "When ordering “katsudon” in Yamanashi prefecture, the rice dish is served with julienned cabbage and pork cutlet on top. A thick sauce is poured on top of the ingredients and when combined with the freshly cooked pork cutlet, the soup from the meat and the sauce are delicious together. The cabbage tones down the oil from the pork, and one can fully enjoy this dish until the end. In other prefectures of Japan, “katsudon” is made with egg but this dish is called “ni-katsudon” in Yamanashi. It is said that “katsudon” was first made in Yamanashi during the Meiji era, at a soba shop. It is said that the owner of “Okumura Honten,” a soba shop in Yamanashi with a 360-year history, visited Tokyo during the Meiji era and ate pork cutlet there. He loved the pork cutlet so much that he wanted to serve it at his soba shop as well. At the time, soba shops mainly delivered the noodles to peoples’ houses so he created a new menu that could be served in one bowl, which is how “katsudon” is said to have been born in Yamanashi.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/5865/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/katsudon_yama_nashi.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/5865/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -263,15 +415,30 @@
     "id": "yamanashi-maff-korogaki_yama_nashi",
     "name": {
       "ja": "枯露柿",
-      "zh_tw": "枯露柿"
+      "kana": "ころがき",
+      "romaji": "Korogaki",
+      "zh_tw": "枯露柿",
+      "en": "Korogaki (Dried persimmon)"
     },
     "prefecture": "yamanashi",
     "category": "kyodo",
+    "summary": {
+      "text": "“Korogaki” is a candy-colored dried persimmon that is often made in Koshu City and Minami-Alps City. It is made from a larger variety of persimmon that has a moisture content of around 25% to 30% and a crystallized sweetness and white powder. This type of persimmon is called “korogaki”, and it is dried for a longer period of time than a soft persimmon, which has a moisture content of around 50% named\"Anpogaki\". The name “Korogaki” comes from the way the peeled persimmons are dried in the sun. They are placed side by side in different positions so that the entire fruit is exposed to the sun. From November to December, persimmons dried under the sun in front of the eaves of houses form an orange curtain, and are a popular autumn taste.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/3829/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/korogaki_yama_nashi.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/3829/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -281,15 +448,30 @@
     "id": "yamanashi-maff-kousyuu_koume_zuke_yama_nashi",
     "name": {
       "ja": "甲州小梅漬",
-      "zh_tw": "甲州小梅漬"
+      "kana": "こうしゅうこうめづけ",
+      "romaji": "Koshukomezuke",
+      "zh_tw": "甲州小梅漬",
+      "en": "Koshu Ko-Umezuke"
     },
     "prefecture": "yamanashi",
     "category": "kyodo",
+    "summary": {
+      "text": "“Koshu ko-umezuke” is made by harvesting Koshu mini plums―a special product of Yamanashi Prefecture―when they are still green and finishing the pickling by the end of May. The climate with a unique temperature difference, especially in the Kofu basin, is suitable for growing mini plums. The seeds are small and the flesh is thick, so they’re small but have a good texture. Plum cultivation became popular with the decline of sericulture. In recent years, the amount of production has decreased due to the development of residential land, roads, and the aging population, but it’s said they sill boast the largest production of mini plums in Japan. There’s even a record stating it was a special product of the prefecture in the late Edo period. “Koshu ko-umezuke,” which was created through trial and error to find the right texture and salt content, is also known as “karikari-zuke” because of its crunchy (karikari) texture, and is overwhelmingly popular among the processed plum products in the prefecture. Because they aren’t dried in the sun like conventional pickled plums, they stand out for being preserved while pickled in plum vinegar called “dobuzuke.”",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/2923/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/kousyuu_koume_zuke_yama_nashi.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/2923/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -301,15 +483,27 @@
       "ja": "めまき",
       "kana": "めまき",
       "romaji": "Memaki",
-      "zh_tw": "めまき"
+      "zh_tw": "めまき",
+      "en": "Memaki"
     },
     "prefecture": "yamanashi",
     "category": "kyodo",
+    "summary": {
+      "text": "\"Memaki\" is a local dish in which fish is wrapped in arame (a kelp related to kombu) and slowly simmered with soy sauce and sugar. The name \"memaki\" comes from the fact that it is wrapped in arame kelp. It is said that since the middle of the Edo period, the Shinto priests who provided lodging and received guests on their religious trips to Mount Fuji treated them to memaki. It has also spread throughout the region as a festive dish to celebrate the regular festival at Kawaguchi Asama Shrine in Fujikawaguchiko Town. Memaki's triangle shape is said to represent Mount Fuji, while the toothpick used to hold the arame kelp wrapping is said to signify the pilgrim's staff used to climb Mount Fuji. These may also convey the religious belief in Mount Fuji and a prayer for safety in climbing the mountain. Because the arame kelp used as an ingredient is very hard, it must be simmered for several days. However, this serves to preserve the dish, and it was once used as a convenient portable food for climbing Mount Fuji. In addition, memaki's triangle shape mimics the shape of the kimono worn by the enshrined deity, the goddess of Fuji Lady Konohanasakuyahime.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/2901/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/memaki_yama_nashi.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/2901/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -319,15 +513,30 @@
     "id": "yamanashi-maff-mogura_uri_no_hiyajiru_yama_nashi",
     "name": {
       "ja": "茂倉瓜の冷や汁",
-      "zh_tw": "茂倉瓜の冷や汁"
+      "kana": "もぐらうりのひやじる",
+      "romaji": "Moguraurinohiyajiru",
+      "zh_tw": "茂倉瓜の冷や汁",
+      "en": "Mogura-uri-no-hiyajiru (Mogura melon chilled soup）"
     },
     "prefecture": "yamanashi",
     "category": "kyodo",
+    "summary": {
+      "text": "\"Mogura-uri-no-hiyashijiru \" is a local dish from the Mogura region in Hayakawa Town, situated at the foothills of the Southern Alps at an altitude of 800 meters. This dish features Mogura melon, a type of melon that has been cultivated in the region for generations, with a tradition of self-seeding for 130 years. The melon is julienned and added to a cold broth, then seasoned with miso and condiments. It is served over rice, creating a refreshing mountain-style cold soup. This dish is simple and perfect for the hot summer, representing a local specialty with a history of 130 years. \"Mogura melon\" resembles a cucumber when young, but as it matures, it takes on a stout and robust form, growing larger similar to winter melons. The skin of Mogura melon can vary in color, ranging from dark green to yellow or brownish. However, when peeled, the flesh is a light green and juicy. The taste of Mogura melon is not as strongly aromatic as cucumber, and it lacks any distinctive off-flavors. The texture is crunchy and goes well with cold soup. Because melons are easily cross-pollinated, in the Mogura region, they are not planted in the same fields as cucumbers or bitter gourds. Instead, they are cultivated in the lower communities' land to avoid crossbreeding.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/6428/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/mogura_uri_no_hiyajiru_yama_nashi.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/6428/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -337,15 +546,30 @@
     "id": "yamanashi-maff-nama_yuba_yama_nashi",
     "name": {
       "ja": "生湯葉",
-      "zh_tw": "生湯葉"
+      "kana": "なまゆば",
+      "romaji": "Namayuba",
+      "zh_tw": "生湯葉",
+      "en": "Nama-Yuba (Raw Tofu Skin)"
     },
     "prefecture": "yamanashi",
     "category": "kyodo",
+    "summary": {
+      "text": "\"Nama-yuba\" is a coating formed on the surface of boiled soybean milk which is made by boiling soybeans, grinding them, and squeezing them through a cloth. It is a specialty of Minobu Town, and there are many manufacturers. Despite being called \"Namayuba,\" there are various types with different thicknesses and textures available for purchase. About 1200 years ago, during the Heian period, the monk Saicho brought \"Yuba\" back to Japan from China, along with Buddhism and tea. Approximately 750 years ago, when Saint Nichiren entered Mount Minobu, his disciples, in caring for their master's health, created Namayuba as a nutritious source with good digestibility and absorption. It is said to have originated around that time. Soybeans contain high-quality plant-based proteins and fats, supporting the bodies of monks who are prohibited from eating meat. It remains an important Shojin cuisine even today.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/6907/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/nama_yuba_yama_nashi.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/6907/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -357,15 +581,27 @@
       "ja": "おばく",
       "kana": "おばく",
       "romaji": "Obaku",
-      "zh_tw": "おばく"
+      "zh_tw": "おばく",
+      "en": "Obaku"
     },
     "prefecture": "yamanashi",
     "category": "kyodo",
+    "summary": {
+      "text": "“Obaku” is made with round barley (barley without outer husk) soaked in water overnight as well as other ingredients such as potato, sweet potato, daikon radish, “satoimo” (=Japanese taro), and azuki beans or red kidney beans. All the ingredients are cooked in plenty of water until soft. One way to eat this dish is by adding grinded roasted sesame seeds and miso and pouring cold soup over the “obaku.” In the mountainous areas, rice was hard to come by and could only be enjoyed on special occasions. People living in these areas ate barley as staple food. In the past, people prepared “obaku” in a large “kamado” (=traditional Japanese cook stove) and stirred the ingredients throughout the day, making sure that they did not get burned. It was a lot of work because it took an entire day to prepare the dish. “Obaku” is prepared without any seasonings, and so it is eaten with miso containing green onions and bonito flakes or soy sauce paste. The “obaku” is thick and soft with bits of barley adding additional texture. When round barley is used, the dish is called “baku,” and when pressed barley is used, the dish is called “mugi meshi” (=barley rice). Round barley is highly nutritious and is full of fibers, minerals and vitamins and is referred to as the “chief of the five grains.” It has supported the health of the local people who live in harsh mountain weather and engage in hard labor.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/5857/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/obaku_yama_nashi.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/5857/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -377,15 +613,27 @@
       "ja": "おしゃかこごり",
       "kana": "おしゃかこごり",
       "romaji": "Oshakakogori",
-      "zh_tw": "おしゃかこごり"
+      "zh_tw": "おしゃかこごり",
+      "en": "Oshaka Kogori"
     },
     "prefecture": "yamanashi",
     "category": "kyodo",
+    "summary": {
+      "text": "“Oshaka kogori” is eaten on Buddha’s Birthday which is on April 8th of each year and is served with “amacha” (=Japanese herbal tea made with fermented five-leaf ginseng leaves). “Oshaka kogori” is “dango” (=Japanese dumpling) made with wheat flour, sugar, and roasted soybeans. The ingredients used differ depending on the family and region that makes it and sometimes, rice flour is used instead of wheat flour. Some people also like to add small rice crackers, walnuts, and raisins. The name “oshaka kogori” describes the bumpy head of the Buddha and when people eat “oshaka kogori,” it is said that they become wiser, like the Buddha. “Kogori” means “lump” in the local dialect. Flowers and offerings to the Buddha are called “hanakugo,” which sounds like the Japanese word for dried snot, which is “hanakuso.” This is why some people call “oshaka kogori,” “oshakasama no hanakuso,” meaning that the dumplings are described as something so small as dried snot, as a form of modesty. It is also said that eating “oshaka kogori” allows one to live a life of good health.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/5813/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/oshaka_kogori_yama_nashi.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/5813/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -397,15 +645,27 @@
       "ja": "おざら",
       "kana": "おざら",
       "romaji": "Ozara",
-      "zh_tw": "おざら"
+      "zh_tw": "おざら",
+      "en": "Ozara"
     },
     "prefecture": "yamanashi",
     "category": "kyodo",
+    "summary": {
+      "text": "When talking about the local cuisines of the Yamanashi Prefecture, hōtō (flat udon noodles and vegetables stewed in miso soup) is often brought up as an example. However, as the Yamanashi Prefecture is one surrounded by mountains, winters are extremely cold whilst summers get extremely hot and this has led to ozara being more preferred over hōtō in the summer seasons. Using cooled noodles thinner than hōtō, ozara is a dish where you enjoy these noodles by dipping them into a warm soy sauce based dipping sauce. As opposed to hōtō which you directly cook in a pot with other ingredients and enjoy, the noodles for ozara are rinsed in cold water after they are boiled on their own. This allows the noodles to be slippery and refreshing to slurp, making them an easy food to eat during the hot summers and a popular choice to prevent fatigue from the summer heat. When rice was scarce in the past, it was made as a delicacy when the weather was warm.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/2918/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/ozara_yama_nashi.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/2918/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -417,15 +677,27 @@
       "ja": "さんまめし",
       "kana": "さんまめし",
       "romaji": "Sanmameshi",
-      "zh_tw": "さんまめし"
+      "zh_tw": "さんまめし",
+      "en": "Sanmameshi"
     },
     "prefecture": "yamanashi",
     "category": "kyodo",
+    "summary": {
+      "text": "Even in Yamanashi Prefecture, which has no sea, fresh, high-quality saury becomes available in autumn. “Sanmameshi” is a dish made by cooking this seasonal saury and new rice together. “Sanmameshi” was indispensable as a feast for farmers to celebrate the successful completion of their autumn harvest. According to one old theory, at the end of the rice harvest, at “the Ebisu-ko Festival ”(which began in the early Showa era), two or three salted sauries (dried) that a trader came from Niigata to sell and one sho of new rice were cooked, and this became the “sanmameshi” that we know today. Even today, many households continue to make this recipe as it is a method of simply lining up the saury and cooking it with rice, resulting in a delicious meal even on busy days.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/3838/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/sanma_meshi_yama_nashi.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/3838/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -437,15 +709,27 @@
       "ja": "せいだのたまじ",
       "kana": "せいだのたまじ",
       "romaji": "Seidanotamaji",
-      "zh_tw": "せいだのたまじ"
+      "zh_tw": "せいだのたまじ",
+      "en": "Seida no tamaji"
     },
     "prefecture": "yamanashi",
     "category": "kyodo",
+    "summary": {
+      "text": "Seida no tamashi\" is a local dish handed down from generation to generation in the Yuzurihara area of Uenohara City. It is made by boiling small potatoes with their skin on with miso paste. In the late Edo period, Nakai Seidayu, a deputy governor of Kofu, brought potatoes from Kyushu and gave them to villagers to grow, saving them from a severe famine. Nakai Seitao is enshrined as \"Imo Daimyojin,\" and a monument to him remains at Ryusenji Temple in Uenohara City. Tamaji\" means small potatoes, and it is a local dish born from the wisdom of our ancestors who made it possible to eat even the smallest of potatoes without wasting them.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/932/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/seidano_tamaji_yama_nashi.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/932/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -455,15 +739,30 @@
     "id": "yamanashi-maff-shouyu_nomi_yama_nashi",
     "name": {
       "ja": "しょうゆの実",
-      "zh_tw": "しょうゆの実"
+      "kana": "しょうゆのみ",
+      "romaji": "Shoyunomi",
+      "zh_tw": "しょうゆの実",
+      "en": "Shoyu-no-mi (Soy sauce seeds)"
     },
     "prefecture": "yamanashi",
     "category": "kyodo",
+    "summary": {
+      "text": "\"Shoyu no Mi\" is a preserved food that has been passed down in the Ashiyasu region, made by fermenting soybeans and koji (malted rice). It is a local dish unique to the Ashiyasu region. The Ashiyasu region has long been characterized by its sloped terrain and cold climate, making it unsuitable for conventional vegetable cultivation and rice farming. Soybeans, known for their cold resistance, have been cultivated abundantly in this region. In each household, soy sauce is made from soaked soybeans, and the leftover beans become \"shoyu no mi,\" a nutrition-packed side dish and valuable source of protein. This practice has been a tradition, and even though soy sauce is now readily available, \"shoyu no mi\" continues to be made and cherished every year. The preparation method varies among households, and due to the use of koji in the fermentation process, the taste and aroma subtly differ based on factors such as temperature and the skills of the maker.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/6911/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/shouyu_nomi_yama_nashi.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/6911/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -473,15 +772,30 @@
     "id": "yamanashi-maff-torino_motsuni_yama_nashi",
     "name": {
       "ja": "鳥もつ煮",
-      "zh_tw": "鳥もつ煮"
+      "kana": "とりもつに",
+      "romaji": "Torimotsuni",
+      "zh_tw": "鳥もつ煮",
+      "en": "Chicken Motsuni"
     },
     "prefecture": "yamanashi",
     "category": "kyodo",
+    "summary": {
+      "text": "“Chicken Motsuni“ is a dish made from chicken innards such as liver, gizzard, heart, kinkan (unlaid eggs), and himo (fallopian tubes), simmered in a sweet soy-based sauce. Around 1950, shortly after the end of WWII, the second-generation owner of Okuto Honten Kunimoten, a soba noodle restaurant established in 1913 in Kofu City, was asked by a butcher if there was anything he could do with the chicken parts that were thrown away. At that time, there was still a shortage of food, and after much trial and error to make a cheap and tasty dish, he developed Chicken Motsuni, which was simmered in soy sauce and sugar, both of which were precious commodities at that time. The sweet-salty flavor goes well with alcohol and is the perfect topping for rice, making the dish a staple at izakaya, set menu restaurants, and soba noodle restaurants, and a favorite of Kofu residents. Although “Motsuni” usually refers to a soup dish that has been simmered for a long time, Chicken Motsuni is made in a unique way by quickly braising chicken liver and other ingredients in a small amount of sauce over a high flame to lock in the flavor and sweetness of the chicken innards. The origin of the name of the ingredient “kinkan” is also interesting.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/2887/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/torino_motsuni_yama_nashi.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/2887/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -491,15 +805,30 @@
     "id": "yamanashi-maff-tukino_shizuku_yama_nashi",
     "name": {
       "ja": "月の雫",
-      "zh_tw": "月の雫"
+      "kana": "つきのしずく",
+      "romaji": "Tsukinoshizuku",
+      "zh_tw": "月の雫",
+      "en": "Tsuki-no-Shizuku (Koshu Grape confectionery)"
     },
     "prefecture": "yamanashi",
     "category": "kyodo",
+    "summary": {
+      "text": "\"Tsuki no Shizuku\" is a painstakingly crafted local confection from Yamanashi Prefecture. It features the representative grape variety of the region, the \"Koshu grape.\" Each grape is coated with a layer of white syrup, which is kneaded with sugar, creating a unique and time-consuming delicacy. The confection features a delightful combination of a solidified syrup that offers a sweet and gently crumbly texture. This pairs harmoniously with the distinctive juicy sweetness and tartness of the \"Koshu grape,\" creating an exquisite balance of flavors and textures. The \"Koshu grape\" is known for having a thick skin that can withstand high-temperature syrup, and its moderate acidity is considered well-suited for this confection. The origin of \"Tsuki no Shizuku\" dates back to the Edo period. According to one story, at a wagashi (traditional Japanese confectionery) shop in Kofu City, while boiling sugar, a grape nearby fell off. The grape cooled, solidified, and became the creation known as \"Tsuki no Shizuku.\" In the guidebook \"Kofu Kaimono Dokimono Guide\" published around the end of the Edo period, \"Tsuki no Shizuku\" was sold at several confectionery stores, and it is also depicted in \"Kai Meisho Jukoroku\" as \"Kyokusei Tsuki no Shizuku,\" indicating that it was already known as a famous confectionery in Koshu. It has a long history as a famous confectionery of Yamanashi Prefecture and is still very popular.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/6454/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/tukino_shizuku_yama_nashi.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/6454/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -511,15 +840,27 @@
       "ja": "うらじろまんじゅう",
       "kana": "うらじろまんじゅう",
       "romaji": "Urajiromanju",
-      "zh_tw": "うらじろまんじゅう"
+      "zh_tw": "うらじろまんじゅう",
+      "en": "Urajiro Manjuu"
     },
     "prefecture": "yamanashi",
     "category": "sweets",
+    "summary": {
+      "text": "“Urajiro manjuu” is a traditional Japanese confectionary made using fresh leaves of the perennial plant “oyamabokuchi” (=synurus pungens), which grows in the sunny mountainous areas. The name “oyamabokuchi” comes from the fact that the hairs on the back of its leaves were used as tinder to start fires. In Japanese, tinder is “hokuchi” which is incorporated in the name of the plant. Also, the hairs on the back of the leaves make the back of the leaves white, which is how “urajiro manjuu” got its name. “Urajiro” literally means that the back is white. This confectionary is like kusa mochi (yomogi mochi) in texture. However, the taste of the leaves is not as strong as “yomogi” (=Japanese mugwort). In the past, the fibers extracted from the leaves were used as an ingredient to bind hoto (flat udon) noodles in the Yamato area of Koshu city. The same idea was used to make “urajiro manjuu.” In Makioka of Yamanashi city and the eastern parts of the prefecture, “urajiro dango,” made with “oyamabokuchi” (=synurus pungens) leaves, maize flour, and wheat flour, was eaten on March 3rd to celebrate “Hinamatsuri.”",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/5861/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/urajiro_manjuu_yama_nashi.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/5861/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -531,15 +872,27 @@
       "ja": "うすやき",
       "kana": "うすやき",
       "romaji": "Usuyaki",
-      "zh_tw": "うすやき"
+      "zh_tw": "うすやき",
+      "en": "Usuyaki"
     },
     "prefecture": "yamanashi",
     "category": "kyodo",
+    "summary": {
+      "text": "In Yamanashi Prefecture, where approximately 80% of the land is covered by forests, the use of vast land for rice cultivation is challenging, making rice a precious commodity. Instead, crops such as soba (=buckwheat), corn, sweet potatoes, and miscellaneous grains were cultivated as staple foods. Among them, wheat had high utility, and the development of flour culture was inevitable, as evidenced by \"houtou\" being a specialty of Yamanashi Prefecture, becoming ingrained in people's lives for many years. \"Usuyaki\" is a type of flour-based dish that allows for flavor variations with different ingredients and is easy to make. It was not only enjoyed as a home snack but also consumed as a light meal during daily agricultural work due to its portability. Some variations included adding local vegetables, shiso (Japanese basil), beans, while others kept it simple with just wheat flour, often enjoyed with sugar or sweet soy sauce.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/4301/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/usuyaki_yama_nashi.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/4301/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -551,15 +904,27 @@
       "ja": "やこめ",
       "kana": "やこめ",
       "romaji": "Yakome",
-      "zh_tw": "やこめ"
+      "zh_tw": "やこめ",
+      "en": "Yakome"
     },
     "prefecture": "yamanashi",
     "category": "kyodo",
+    "summary": {
+      "text": "For rice farmers, the seed sowing in the seedbeds around the beginning of spring, known as \"Minakuchi Matsuri\" is considered the most crucial ritual of the year. During this event, farmers welcome the harvest deity to the irrigation gate (rice paddy entrance) to pray for a bountiful harvest. The offerings presented at the irrigation gate are called \"Yakome.\" The term \"Yakome\" is said to have originated from Yakome and means roasted rice.\"Yakome\" consists of carefully selected seeds from the previous year's harvest, particularly the leftover rice husks and seeds. These are toasted and offered at the irrigation gate. In addition to \"Yakome,\" seasonal flowers such as irises and peonies, as well as items like paddles and chopsticks used in making Nanakusa-gayu (rice porridge with seven herbs), are also presented. In modern times, \"Yakome\" refers to a dish made with glutinous rice, short-grain rice, roasted soybeans, and salt. Soybeans, believed to harbor the spirit of the harvest deity, are frequently used in rituals after rice.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/4829/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/yakome_yama_nashi.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/4829/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -569,15 +934,30 @@
     "id": "yamanashi-maff-yoshida_no_udon_yama_nashi",
     "name": {
       "ja": "吉田のうどん",
-      "zh_tw": "吉田のうどん"
+      "kana": "よしだのうどん",
+      "romaji": "Yoshidanodon",
+      "zh_tw": "吉田のうどん",
+      "en": "Yoshida no Udon"
     },
     "prefecture": "yamanashi",
     "category": "kyodo",
+    "summary": {
+      "text": "“Yoshida no udon” is a local dish that originated in the area around the city of Fujiyoshida. It is made of flour noodles that have a chewy, firm, and thick texture, and is served in a broth of miso and soy sauce. Fujiyoshida City has a cool climate and volcanic ash soil at an altitude of 700-900 m, which makes rice cultivation unsuitable. Instead, wheat, barley, buckwheat, and minor grains were cultivated, leading to a culture of eating powdered foods. In the early Showa period, the textile industry was thriving in Fujiyoshida, and it is said that the men in charge of peddling udon noodles began to make udon for lunch so that the women working the weaving machines would not have to stop to prepare lunch. This also helped to prevent their hands from becoming rough when touching the silk threads. The men kneaded the noodles vigorously, resulting in a filling and characteristic firmness. “Houtou” is another famous local dish from Yamanashi Prefecture, while “Yoshida's udon” has been popular for a long time and is now famous not only in the area around Fujiyoshida City, but also in Yamanashi Prefecture.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/3833/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/yoshida_no_udon_yama_nashi.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/3833/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
@@ -587,15 +967,30 @@
     "id": "yamanashi-maff-yuugao_no_miso_shiru_yama_nashi",
     "name": {
       "ja": "夕顔のみそ汁",
-      "zh_tw": "夕顔のみそ汁"
+      "kana": "ゆうがおのみそしる",
+      "romaji": "Yugaonomisoshiru",
+      "zh_tw": "夕顔のみそ汁",
+      "en": "Yugao no misoshiru (Evening Glory Gourd Miso soup)"
     },
     "prefecture": "yamanashi",
     "category": "kyodo",
+    "summary": {
+      "text": "Yugao (evening glories) are a summer delicacy in the Fuji Hokuroku region, and \"yugao no miso soup\" is frequently served at the dinner table. It is generally called \"yugao\", but in Yamanakako Village it is often called \"yugo\". The yugao cultivated in this area is a different plant from the morning glory, and is not the \"maru-yugao\" used to make kanpyo, but the \"naga-yugao\" with a long, gourd-like shape. Yugao has long been used as a diuretic in the diet of people suffering from kidney disease. The name \"yugao\" comes from the fact that it blooms in the evening, in contrast to morning glories, which bloom in the morning. It has been cultivated in Japan since ancient times, but it is not known when and how it was introduced to Japan. In the Fuji-Hokuroku Area (Fuji-northern foothills area), yugao cultivation has been practiced since the Taisho Era (1912-1926), and it was actively cultivated for the market from around 1965. Currently, the number of people growing yugao has decreased due to the aging of the population, but many households still grow yugao in their fields, and it has become one of the representative vegetables of the region.",
+      "lang": "en",
+      "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/6895/index.html",
+      "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+      "fetched_at": "2026-09-29"
+    },
     "source_type": "kyodo_ryori",
+    "kana_source": "maff",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/yuugao_no_miso_shiru_yama_nashi.html",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/6895/index.html",
         "fetched_at": "2026-09-29"
       }
     ],
