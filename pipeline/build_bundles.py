@@ -9,6 +9,7 @@
 
 from __future__ import annotations
 
+import datetime
 import hashlib
 import json
 import re
@@ -16,7 +17,16 @@ from pathlib import Path
 from typing import Any
 
 from pipeline import config
-from pipeline.models import Festival, FlightRoute, Phrase, RailData, SeasonData, Specialty, Spot
+from pipeline.models import (
+    Festival,
+    FlightRoute,
+    Phrase,
+    RailData,
+    SeasonData,
+    Specialty,
+    Spot,
+    TimedItem,
+)
 from pipeline.paths import (
     BUNDLES_DIR,
     FESTIVALS_DIR,
@@ -27,6 +37,7 @@ from pipeline.paths import (
     SEASONS_JSON,
     SPECIALTIES_DIR,
     SPOTS_DIR,
+    TIMED_DIR,
 )
 
 
@@ -160,6 +171,12 @@ def build(src: Path = SPOTS_DIR, dst: Path = BUNDLES_DIR) -> list[Path]:
     festivals = build_festivals(dst / "festivals")
     index["festivals"] = {pref: meta for pref, (_, meta) in festivals.items()}
     written += [path for path, _ in festivals.values()]
+    timed = build_timed()
+    written.append(_write(dst / "timed.json", timed))
+    index["timed"] = {
+        "count": len(timed),
+        "version": hashlib.sha1(json.dumps(timed).encode()).hexdigest()[:10],
+    }
     written.append(_write(dst / "_index.json", index))
     # 首頁只需要各縣精選：一個小檔，不必先載入全部縣的地圖 bundle
     written.append(_write(dst / "featured.json", featured))
@@ -262,6 +279,18 @@ def build_festivals(dst: Path) -> dict[str, tuple[Path, dict[str, Any]]]:
         version = hashlib.sha1(path.read_bytes() + tag).hexdigest()[:10]
         out[path.stem] = (_write(dst / path.name, items), {"count": len(items), "version": version})
     return out
+
+
+def build_timed(src: Path = TIMED_DIR, today: str | None = None) -> list[dict[str, Any]]:
+    """期間限定：還沒過期的（valid_to ≥ 今天），依結束日排序。前端也會再依當天日期過濾。"""
+    today = today or datetime.date.today().isoformat()
+    out: list[dict[str, Any]] = []
+    for path in sorted(src.glob("*.json")) if src.exists() else []:
+        for x in json.loads(path.read_text(encoding="utf-8")):
+            item = TimedItem.model_validate(x)
+            if item.valid_to >= today:
+                out.append(item.model_dump(mode="json", exclude_none=True, exclude={"updated_at"}))
+    return sorted(out, key=lambda x: (x["valid_to"], x["id"]))
 
 
 def load_phrases(src: Path = PHRASES_DIR) -> list[dict[str, Any]]:

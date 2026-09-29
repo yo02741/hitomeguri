@@ -9,6 +9,7 @@ import {
   fetchFestivals,
   fetchFlights,
   fetchPhrases,
+  fetchTimed,
   fetchSeasons,
   fetchSpecialties,
   type FlightRoute,
@@ -22,6 +23,7 @@ import {
   type PackItem,
   type RailBundle,
   type SeasonData,
+  type TimedItem,
   type Spot,
 } from '../services/bundles'
 
@@ -186,6 +188,14 @@ export const useCatalogStore = defineStore('catalog', () => {
     })
   }
 
+  /** 期間限定：全國一個檔 */
+  const timed = shallowRef<TimedItem[] | null>(null)
+  async function loadTimed(): Promise<TimedItem[]> {
+    if (timed.value) return timed.value
+    await loadIndex()
+    return once('timed', async () => (timed.value = index.value?.timed ? await fetchTimed(index.value.timed.version) : []))
+  }
+
   /** 旅前準備的會話：開旅前準備頁時才載入 */
   const phrases = shallowRef<import('../services/prep').Phrase[] | null>(null)
   async function loadPhrases() {
@@ -212,6 +222,6 @@ export const useCatalogStore = defineStore('catalog', () => {
   return {
     loadSearch,
     index, mapSpots, featured, loadFeatured, details, specialties, flights, seasons, festivals, loadFestivals, rail, loadRail, loadExtras, loadIndex, available,
-    loadMap, loadAllMaps, loadDetail, getSpot, packs, loadPack, phrases, loadPhrases,
+    loadMap, loadAllMaps, loadDetail, getSpot, packs, loadPack, phrases, loadPhrases, timed, loadTimed,
   }
 })

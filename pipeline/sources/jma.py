@@ -12,6 +12,7 @@ from __future__ import annotations
 
 import csv
 import io
+import re
 from dataclasses import dataclass
 
 from pipeline.http import _throttle, client
@@ -70,3 +71,93 @@ def fetch_csv(code: str) -> str | None:
 def normals(code: str) -> list[Normal]:
     text = fetch_csv(code)
     return parse_normals(text) if text else []
+
+
+# ── 本季的觀測（期間限定，Phase 4）────────────────────────────────────────────
+# さくら：sakura_kaika.html／sakura_mankai.html（12 月到 6 月每天更新三次），
+#   每站一列 <th scope='row'>地點</th><td>観測日</td><td>平年差</td><td>平年日</td>…
+# いちょう黄葉 phn_012.html、かえで紅葉 phn_014.html：標題「(2025年-2026年)」，
+#   每站一列 <td>地點</td> 之後每年三欄（観測日、平年差、昨年差），取最後一年；還沒觀測寫「-」。
+PAGE_URL = "https://www.data.jma.go.jp/sakura/data/{page}.html"
+
+_TAGS = re.compile(r"<[^>]+>")
+_MD = re.compile(r"(\d{1,2})\s*月\s*(\d{1,2})\s*日")
+_SAKURA_ROW = re.compile(
+    r"<th scope='row'>([^<]+)</th>\s*<td[^>]*>([^<]*)</td>\s*<td[^>]*>([^<]*)</td>", re.S
+)
+_TR = re.compile(r"<tr[^>]*>(.*?)</tr>", re.S | re.I)
+_TD = re.compile(r"<td[^>]*>(.*?)</td>", re.S | re.I)
+_YEAR = re.compile(r"(\d{4})年")
+
+
+@dataclass
+class Observation:
+    station: str
+    date: str  # YYYY-MM-DD
+    diff_normal: int | None  # 平年差（日）：負的是比平年早
+
+
+def _station(s: str) -> str:
+    return _TAGS.sub("", s).replace("　", "").replace("　", "").strip()
+
+
+def _diff(s: str) -> int | None:
+    s = _TAGS.sub("", s).strip()
+    try:
+        return int(s)
+    except ValueError:
+        return None
+
+
+def _date(year: int, s: str, rollover: bool = False) -> str | None:
+    """「11月 6日」→ YYYY-MM-DD。rollover：秋季表格的 1–3 月屬於隔年。"""
+    m = _MD.search(_TAGS.sub("", s))
+    if not m:
+        return None
+    month, day = int(m.group(1)), int(m.group(2))
+    if rollover and month <= 3:
+        year += 1
+    return f"{year:04d}-{month:02d}-{day:02d}"
+
+
+def parse_sakura(html: str) -> tuple[int | None, list[Observation]]:
+    """さくら開花／満開頁：（年, 已觀測的站）。"""
+    title = re.search(r"<title>[^<]*?(\d{4})年", html)
+    year = int(title.group(1)) if title else None
+    out: list[Observation] = []
+    if year is None:
+        return None, out
+    for name, obs, diff in _SAKURA_ROW.findall(html):
+        date = _date(year, obs)
+        if date:
+            out.append(Observation(_station(name), date, _diff(diff)))
+    return year, out
+
+
+def parse_autumn(html: str) -> tuple[int | None, list[Observation]]:
+    """いちょう黄葉／かえで紅葉頁：取最後一年的欄位（本季）。"""
+    h1 = re.search(r"<h1>(.*?)</h1>", html, re.S)
+    years = [int(y) for y in _YEAR.findall(h1.group(1))] if h1 else []
+    if not years:
+        return None, []
+    year = years[-1]
+    out: list[Observation] = []
+    for row in _TR.findall(html):
+        tds = _TD.findall(row)
+        # 地點 + 兩年各三欄 + 代替種目
+        if len(tds) < 7:
+            continue
+        name = _station(tds[0])
+        date = _date(year, tds[4], rollover=True)
+        if name and date:
+            out.append(Observation(name, date, _diff(tds[5])))
+    return year, out
+
+
+def fetch_page(page: str) -> str | None:
+    _throttle("www.data.jma.go.jp", 1.0)
+    resp = client().get(PAGE_URL.format(page=page))
+    if resp.status_code == 404:
+        return None
+    resp.raise_for_status()
+    return resp.content.decode("utf-8", errors="replace")

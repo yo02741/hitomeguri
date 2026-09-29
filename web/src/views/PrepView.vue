@@ -1,12 +1,15 @@
 <script setup lang="ts">
-import { computed, ref } from 'vue'
+import { computed, onMounted, ref } from 'vue'
 
 import PhraseRow from '../components/PhraseRow.vue'
 import RegionChip from '../components/RegionChip.vue'
 import SpeakButton from '../components/SpeakButton.vue'
+import TimedList from '../components/TimedList.vue'
 import { usePrep } from '../composables/prep'
 import { type Phrase, type PrepPlace, SITUATION_LABEL } from '../services/prep'
+import { overlapping } from '../services/timed'
 import { dayDate, shortDate } from '../services/trip'
+import { useCatalogStore } from '../stores/catalog'
 import { useUserStore } from '../stores/user'
 
 // 旅前準備（UX-FLOW.md D1、D2、D4）：這趟會遇到的日文。地名與車站 → 聽 → 說 → 讀 → 地區特色。
@@ -14,6 +17,15 @@ import { useUserStore } from '../stores/user'
 const props = defineProps<{ id: string }>()
 const userStore = useUserStore()
 const { trip, prefs, places, phrases, words, loading, todayIndex } = usePrep(() => props.id)
+
+// 期間限定（行程日期內、所在縣）：例如出發時已經觀測到的紅葉
+const catalog = useCatalogStore()
+onMounted(() => void catalog.loadTimed())
+const timed = computed(() => {
+  const t = trip.value
+  if (!t?.start_date) return []
+  return overlapping(catalog.timed ?? [], t.start_date, t.end_date ?? t.start_date, prefs.value)
+})
 
 const onlyMust = ref(false)
 const shownPhrases = computed(() => phrases.value.filter((p) => !onlyMust.value || p.priority === 1))
@@ -125,6 +137,13 @@ function dayLabel(p: PrepPlace): string {
             <PhraseRow v-for="p in g.items" :key="p.id" :phrase="p" />
           </ul>
         </div>
+      </section>
+
+      <section v-if="timed.length && !onlyMust" class="flex flex-col gap-2" aria-labelledby="timed-title">
+        <h2 id="timed-title" class="flex items-baseline gap-1.5 text-h3 font-black tracking-[2px]">
+          期間限定<span class="font-latin text-body font-normal tracking-normal text-sub">{{ timed.length }}</span>
+        </h2>
+        <TimedList :items="timed" detailed />
       </section>
 
       <section v-if="words.length && !onlyMust" class="flex flex-col gap-2" aria-labelledby="words-title">

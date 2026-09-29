@@ -1,0 +1,59 @@
+name: harvest-timed
+
+# 每天：期間限定（氣象廳本季的生物季節觀測，pipeline/timed.py）。
+# 只改 data/timed/；有變更就直接提交到 main，再觸發部署（用 GITHUB_TOKEN 推送不會自動觸發其他 workflow）。
+# 資料是氣象廳發表的觀測日，解析規則固定、有測試，所以不走 pipeline/* 審核分支（使用者可以改回審核流程）。
+# 氣象廳 17:30 前後更新，這裡在 17:50（日本時間）跑。
+
+on:
+  schedule:
+    - cron: "50 8 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: harvest-timed
+  cancel-in-progress: false
+
+jobs:
+  harvest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: astral-sh/setup-uv@v6
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: 安裝
+        run: uv venv && uv pip install -e .
+      - name: 採集
+        run: .venv/bin/python -m pipeline.cli harvest-timed --report /tmp/report.md
+      - name: 報告
+        run: cat /tmp/report.md >> "$GITHUB_STEP_SUMMARY"
+      - name: 提交並部署
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if [ -z "$(git status --porcelain data/timed)" ]; then
+            echo "沒有變更" >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+          git config user.name "hitomeguri-pipeline"
+          git config user.email "hitomeguri-pipeline@users.noreply.github.com"
+          git add data/timed
+          git commit -q -F - <<MSG
+          期間限定：氣象廳本季觀測（harvest-timed #${{ github.run_number }}）
+
+          $(cat /tmp/report.md)
+          MSG
+          git pull -q --rebase origin main
+          git push -q origin HEAD:main
+          gh workflow run firebase-hosting.yml --ref main
+          gh workflow run pages.yml --ref main
+          echo "已提交並觸發部署" >> "$GITHUB_STEP_SUMMARY"

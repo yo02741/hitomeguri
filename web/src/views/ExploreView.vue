@@ -10,6 +10,7 @@ import PackPanel from '../components/PackPanel.vue'
 import RegionLists from '../components/RegionLists.vue'
 import RegionTag from '../components/RegionTag.vue'
 import SpotPanel, { type NearbyPack } from '../components/SpotPanel.vue'
+import TimedList from '../components/TimedList.vue'
 import { categoryGroup } from '../data/categories'
 import { PACKS, packByKey, packOfId } from '../data/packs'
 import { JAPAN_BOUNDS } from '../map/style'
@@ -25,6 +26,8 @@ import {
 } from '../services/geo'
 import type { SearchHit } from '../services/search'
 import { trackSplash } from '../services/splash'
+import { currentTimed } from '../services/timed'
+import { todayIso } from '../services/userdb'
 import { useCatalogStore } from '../stores/catalog'
 import { useExploreStore } from '../stores/explore'
 import { useMarksStore } from '../stores/marks'
@@ -256,8 +259,12 @@ function closePin() {
 }
 
 // 地區頁的定位由下方 props.pref 的 watcher 負責；這裡只載入共用資料
+// 期間限定（UX-FLOW.md A6）：目前地區的，左側面板列前三筆
+const timedHere = computed(() => (props.pref ? currentTimed(catalog.timed ?? [], todayIso(), props.pref) : []))
+
 onMounted(() => {
   catalog.loadExtras()
+  void catalog.loadTimed()
   trackSplash(catalog.loadFeatured(), 'featured')
   loadPrefectureShapes()
     .then(() => (shapesReady.value = true))
@@ -526,6 +533,13 @@ function onMoveEnd(view: MapViewState) {
       >
         <template v-if="pref && regionOf(pref)">
           <RegionTag :pref="pref" class="max-lg:hidden" />
+          <section v-if="timedHere.length && !explore.pack" class="shrink-0 rounded-card bg-paper px-3.5 pt-2.5 pb-2 shadow-float max-lg:hidden" aria-labelledby="timed-here">
+            <h2 id="timed-here" class="flex items-baseline gap-1.5 text-label font-bold">
+              期間限定<span class="font-latin font-normal text-sub">{{ timedHere.length }}</span>
+              <RouterLink v-if="timedHere.length > 3" :to="`/region/${pref}#timed`" class="ml-auto text-caption font-normal text-sub">全部</RouterLink>
+            </h2>
+            <TimedList :items="timedHere.slice(0, 3)" />
+          </section>
           <PackList
             v-if="explore.pack"
             :pref="pref"

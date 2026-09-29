@@ -89,6 +89,8 @@
 
 ## 之後
 - Phase 4 期間限定等，見 PLAN.md §9。
+- Phase 4 v1（2026-09-29）：期間限定只接氣象廳（`pipeline/timed.py`、`pipeline/sources/jma.py` 的 parse_sakura／parse_autumn）。
+  沙箱連不到氣象廳：頁面格式用 `probe.yml` 看；測試的網頁片段取自實際格式。
 - Phase 7（2026-09-29）：行程（trips）、旅前準備、練習。資料在 Firestore `users/{uid}/trips`、`trips/{id}/progress`。
   測試時 Pinia 的 trips store 只有在元件用到時才建立：Playwright 裡先 `import('/src/stores/trips.ts')` 再 `useTripsStore()`。
 - Phase 5（2026-09-29）：收藏、去過、清單、KML / CSV 匯出。資料在 Firestore `users/{uid}/marks`、`lists`（UX-FLOW.md §3）。

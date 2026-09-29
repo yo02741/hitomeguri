@@ -69,6 +69,8 @@ export interface BundleIndex {
   rail?: Record<string, { version: string }>
   /** 深度探索「祭典」：縣 → 版本 */
   festivals?: Record<string, { count: number; version: string }>
+  /** 期間限定（全國一個檔） */
+  timed?: { count: number; version: string }
 }
 
 /** 搜尋索引一筆：[id, 縣, 日文名, 假名, 繁中名（同日文時空字串）, 羅馬拼音, 分數] */
@@ -195,6 +197,32 @@ export async function fetchSeasons(): Promise<SeasonData | null> {
     return await getJson<SeasonData>('seasons.json')
   } catch {
     return null
+  }
+}
+
+/** 期間限定（pipeline/models.py TimedItem；build-bundles 只輸出沒過期的） */
+export interface TimedItem {
+  id: string
+  kind: 'product' | 'event' | 'seasonal'
+  category: string
+  brand?: string
+  title: { ja: string; zh_tw: string }
+  summary_zh?: string
+  scope: 'national' | 'regional' | 'spot'
+  prefectures?: string[]
+  location?: { lat: number; lng: number }
+  spot_id?: string
+  valid_from: string
+  valid_to: string
+  source_url: string
+  source_label?: string
+}
+
+export async function fetchTimed(version: string): Promise<TimedItem[]> {
+  try {
+    return await getJson<TimedItem[]>(`timed.json?v=${version}`)
+  } catch {
+    return []
   }
 }
 

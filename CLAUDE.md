@@ -37,6 +37,7 @@ uv venv && uv pip install -e ".[dev]" # pipeline 環境
 ## 資料 pipeline 在 GitHub Actions 上跑
 Claude Code 的雲端沙箱連不到 Wikidata、OSM、Wikimedia，也沒有 Claude API key，所以採集與補全放在 Actions：
 - `seed-region.yml`（手動）：輸入縣 slug，各縣平行採集，結果推到 `pipeline/seed-<run>` 分支。command=seed-region 會連同維基百科簡介與念法一起做；seed-wiki 只更新已有大點的縣的簡介與念法（`pipeline/wiki.py`）。
+- `harvest-timed.yml`（每天 17:50 JST＋手動）：期間限定（氣象廳本季觀測，`pipeline/timed.py`）。只改 `data/timed/`，有變更直接提交 main 並觸發 Firebase Hosting、Pages 部署（例外：不走 pipeline/* 審核分支）。
 - `verify-flights.yml`（手動，需 `ANTHROPIC_API_KEY` secret）：帶 web search 查證直飛航線，留待排程使用。原本 LLM 補簡介／假名的 enrich 已移除（違反「內容來自實際來源」原則）。
 - 產出分支檢查報告（commit 訊息與 Actions 摘要）後再合併進 `main`。
 
@@ -56,4 +57,5 @@ Claude Code 的雲端沙箱連不到 Wikidata、OSM、Wikimedia，也沒有 Clau
 - Phase 0 完成：骨架、Emulator、Google 登入、空白地圖、GitHub Pages 部署。
 - Phase 1–3 完成；47 縣都有景點資料（Phase 6 的全國擴展），簡介與念法取自維基百科。詳見 docs/PROGRESS.md。
 - Phase 5（收藏、去過、清單、KML / CSV 匯出）完成，等使用者驗收（docs/Phase5驗收.md）。
+- Phase 4 v1（期間限定：氣象廳觀測）完成，等使用者驗收（docs/Phase4驗收.md）；超商、麥當勞、PR TIMES 因使用條款不收。
 - Phase 7（行程、旅前準備、練習）完成，等使用者驗收（docs/Phase7驗收.md）。會話 `data/phrases` 是編輯整理的內容（非來源擷取），`reviewed: false` 待使用者校對。Firestore 規則在 `firestore.rules`，改了要請使用者貼到 Firebase Console 發布。

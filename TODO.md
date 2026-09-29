@@ -2,7 +2,7 @@
 
 ## 需要你做的事
 
-- Phase 5、Phase 7 驗收：見 `docs/Phase5驗收.md`、`docs/Phase7驗收.md`（含更新 Firestore 規則、校對旅前準備的會話）。
+- Phase 4、Phase 5、Phase 7 驗收：見 `docs/Phase4驗收.md`、`docs/Phase5驗收.md`、`docs/Phase7驗收.md`（含更新 Firestore 規則、校對旅前準備的會話、期間限定要不要改走審核分支）。
 - Google 登入：在 Actions variables 新增 `VITE_FIREBASE_API_KEY`、`VITE_FIREBASE_APP_ID`（專案 ID 與 authDomain 已有預設值 hitomeguri-7d87a），並在 Firebase Authentication 啟用 Google 登入。
 - 英文簡介翻成中文（`translate-summaries`）程式已寫好，使用者決定先不翻；日後要用時在 Actions secrets 新增 `ANTHROPIC_API_KEY`。
 

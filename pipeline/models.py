@@ -214,14 +214,18 @@ class TimedImage(StrictModel):
 
 
 class TimedItem(StrictModel):
-    """期間限定（data/timed/{yyyy-mm}.json）。"""
+    """期間限定（data/timed/{yyyy-mm}.json，依 valid_from 的月份分檔）。
+
+    summary_zh 只放由來源資料套固定句型組出來的事實（例：觀測日、平年差），不用 LLM 撰寫。
+    source_label 是介面上的出典標示（例：氣象廳的「出典：気象庁ホームページ」）。
+    """
 
     id: str
     kind: Literal["product", "event", "seasonal"]
     category: str
     brand: str | None = None
     title: TimedTitle
-    summary_zh: str
+    summary_zh: str | None = None
     scope: Literal["national", "regional", "spot"]
     prefectures: list[Prefecture] | None = None
     location: Location | None = None
@@ -231,6 +235,7 @@ class TimedItem(StrictModel):
     relevance: float = 0
     image: TimedImage | None = None
     source_url: str
+    source_label: str | None = None
     updated_at: str
 
 

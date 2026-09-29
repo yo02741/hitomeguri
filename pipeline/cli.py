@@ -142,6 +142,13 @@ def cmd_seed_seasons(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_harvest_timed(args: argparse.Namespace) -> int:
+    from pipeline.timed import harvest_timed
+
+    _emit(harvest_timed(), args.report)
+    return 0
+
+
 def cmd_seed_wiki(args: argparse.Namespace) -> int:
     from pipeline.wiki import seed_wiki
 
@@ -227,6 +234,11 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("prefectures", nargs="*", help="不使用（全國一次抓）")
     p.add_argument("--report")
     p.set_defaults(func=cmd_seed_seasons)
+
+    p = sub.add_parser("harvest-timed", help="期間限定：氣象廳本季觀測 → data/timed/")
+    p.add_argument("prefectures", nargs="*", help="不使用（全國一次抓）")
+    p.add_argument("--report")
+    p.set_defaults(func=cmd_harvest_timed)
 
     p = sub.add_parser("build-bundles", help="data/ → web/public/bundles/")
     p.set_defaults(func=cmd_build_bundles)
