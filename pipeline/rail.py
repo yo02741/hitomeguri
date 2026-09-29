@@ -28,14 +28,26 @@ BBOX_PAD = 0.05
 # 方向與區間的寫法：「（内回り）」「(上り)」「: 東京 => 大阪」
 _DIRECTION = re.compile(r"\s*([（(][^）)]*[）)]|[:：].*)$")
 _HEX = re.compile(r"^#?[0-9A-Fa-f]{6}$|^#?[0-9A-Fa-f]{3}$")
+# 列車種別：「阪急京都本線 急行」與「阪急京都本線」是同一條線
+_SERVICE = re.compile(
+    r"\s*(各駅停車|各停|普通|区間快速|新快速|快速|通勤特急|準特急|特急|準急|急行|ライナー)$"
+)
+# 去掉種別後仍沒有這些字的是列車名稱（のぞみ、サンダーバード、大和路快速），不是路線
+_LINE_WORD = re.compile(r"(線|鉄道|モノレール|ライン|レール|電車|軌道|新幹線)")
 
 
 def base_name(name: str) -> str:
-    """去掉方向、區間的路線名稱：「JR山手線（内回り）」→「JR山手線」。"""
+    """去掉方向、區間、列車種別的路線名稱：「JR山手線（内回り）」「阪急京都本線 急行」。"""
     prev = None
     while prev != name:
-        prev, name = name, _DIRECTION.sub("", name).strip()
+        prev = name
+        name = _SERVICE.sub("", _DIRECTION.sub("", name).strip()).strip()
     return name
+
+
+def is_service(name: str) -> bool:
+    """列車名稱（不是路線）：去掉種別後沒有「線」「鉄道」這類字。"""
+    return not _LINE_WORD.search(base_name(name))
 
 
 def colour(tag: str | None) -> str | None:
@@ -79,7 +91,7 @@ def build_lines(data: dict[str, Any], box: tuple[float, float, float, float]) ->
             continue
         tags = el.get("tags", {})
         name = tags.get("name:ja") or tags.get("name")
-        if not name:
+        if not name or is_service(name):
             continue
         key = (tags.get("operator") or tags.get("network") or "", base_name(name))
         g = groups.setdefault(
@@ -97,10 +109,17 @@ def build_lines(data: dict[str, Any], box: tuple[float, float, float, float]) ->
             geom = m.get("geometry") or []
             if len(geom) >= 2 and m["ref"] not in g["ways"]:
                 g["ways"][m["ref"]] = [(p["lon"], p["lat"]) for p in geom]
+    # 同一段軌道只畫一次（直通運轉、多個營運者各有一份 relation）：
+    # 有官方路線色的先、名稱短的先（「京都市営地下鉄烏丸線」先於「京都地下鉄烏丸線・近鉄京都線」）
+    used: set[int] = set()
     lines: list[RailLine] = []
-    for (operator, _), g in groups.items():
+    order = sorted(groups.items(), key=lambda kv: (kv[1].get("colour") is None, len(kv[0][1])))
+    for (operator, _), g in order:
         segs: list[list[list[float]]] = []
-        for pts in g["ways"].values():
+        for ref, pts in g["ways"].items():
+            if ref in used:
+                continue
+            used.add(ref)
             for seg in clip(pts, box):
                 simple = geo._dp(seg, SIMPLIFY_TOL)
                 segs.append([[round(x, 5), round(y, 5)] for x, y in simple])
