@@ -76,7 +76,7 @@ def rail_routes(iso: str) -> dict:
     q = f"""[out:json][timeout:900];
 {_area(iso)}
 relation["type"="route"]["route"~"{RAIL_ROUTES}"](area.a);
-out tags geom;"""
+out geom;"""
     return raw(q)
 
 
