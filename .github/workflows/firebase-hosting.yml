@@ -3,7 +3,8 @@ name: Firebase Hosting
 # main 有變更時把前端部署到 Firebase Hosting（https://<專案 ID>.web.app/）。只用 Hosting（Spark 免費方案）。
 # 需要：
 #   secrets.FIREBASE_SERVICE_ACCOUNT  服務帳戶 JSON 金鑰（角色：Firebase Hosting 管理員、API 金鑰檢視者）
-#   vars.VITE_FIREBASE_*               Firebase Web 設定（與 pages.yml 共用；PROJECT_ID 未設定時用 .firebaserc 的 hitomeguri）
+#   vars.VITE_FIREBASE_*               Firebase Web 設定（與 pages.yml 共用）
+# 專案 ID 取 vars.VITE_FIREBASE_PROJECT_ID，未設定時取服務帳戶金鑰裡的 project_id。
 # 沒有設定 secret 時只建置、不部署。
 
 on:
@@ -21,15 +22,20 @@ concurrency:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    env:
-      PROJECT_ID: ${{ vars.VITE_FIREBASE_PROJECT_ID || 'hitomeguri' }}
     steps:
       - name: 檢查部署金鑰
         id: check
         env:
           SA: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
+          PROJECT_VAR: ${{ vars.VITE_FIREBASE_PROJECT_ID }}
         run: |
           if [ -n "$SA" ]; then
+            project="${PROJECT_VAR:-$(printf '%s' "$SA" | jq -r '.project_id // empty')}"
+            if [ -z "$project" ]; then
+              echo "::error::服務帳戶金鑰不是 JSON 或沒有 project_id"
+              exit 1
+            fi
+            echo "project=$project" >> "$GITHUB_OUTPUT"
             echo "ready=true" >> "$GITHUB_OUTPUT"
           else
             echo "::notice::尚未設定 secrets.FIREBASE_SERVICE_ACCOUNT，只建置不部署"
@@ -64,8 +70,8 @@ jobs:
         if: steps.check.outputs.ready == 'true'
         with:
           firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
-          projectId: ${{ env.PROJECT_ID }}
+          projectId: ${{ steps.check.outputs.project }}
           channelId: live
       - name: 摘要
         if: steps.check.outputs.ready == 'true'
-        run: echo "部署到 https://${PROJECT_ID}.web.app/" >> "$GITHUB_STEP_SUMMARY"
+        run: echo "部署到 https://${{ steps.check.outputs.project }}.web.app/" >> "$GITHUB_STEP_SUMMARY"
