@@ -1,6 +1,7 @@
 """鐵路路線圖層（TODO.md「鐵路路線圖層」）：seed-rail 指令。
 
-來源：OpenStreetMap 的鐵路路線 relation（route=train|subway|light_rail|monorail|tram）與車站
+來源：OpenStreetMap 的鐵路路線 relation（route=train|subway|light_rail|monorail|tram，
+以及軌道本身的 route=railway：地方的 JR 線多半只有這種）與車站
 （railway=station|halt）。ODbL 授權，UI 已標示「© OpenStreetMap contributors」。
 - 同一條路線的上下行、內外回り是不同 relation：以營運者＋去掉方向的名稱合併，路段不重複
 - 路線顏色取 OSM 的 colour（多為官方路線色），沒有就由前端用預設的鐵路色
@@ -53,6 +54,16 @@ def base_name(name: str) -> str:
 def is_service(name: str) -> bool:
     """列車名稱（不是路線）：去掉種別後沒有「線」「鉄道」這類字；直通運轉的列車。"""
     return "直通" in name or not _LINE_WORD.search(base_name(name))
+
+
+def is_defunct(tags: dict[str, str]) -> bool:
+    """廃線、休止中的線（route=railway 裡有，軌道已不在或沒有列車）。"""
+    name = tags.get("name:ja") or tags.get("name") or ""
+    return (
+        any(k in tags for k in ("disused", "abandoned", "razed"))
+        or any(k.startswith(("disused:", "abandoned:")) for k in tags)
+        or bool(re.search(r"(廃線|旧線|休止)", name))
+    )
 
 
 def colour(tag: str | None) -> str | None:
@@ -109,7 +120,7 @@ def build_lines(data: dict[str, Any], inside: Inside) -> list[RailLine]:
             continue
         tags = el.get("tags", {})
         name = tags.get("name:ja") or tags.get("name")
-        if not name or is_service(name):
+        if not name or is_service(name) or is_defunct(tags):
             continue
         g = groups.setdefault(
             base_name(name),
@@ -151,7 +162,7 @@ def build_lines(data: dict[str, Any], inside: Inside) -> list[RailLine]:
                 name_en=g["name_en"],
                 ref=tags.get("ref"),
                 operator=g["operator"],
-                kind=tags.get("route", "train"),
+                kind="train" if tags.get("route") == "railway" else tags.get("route", "train"),
                 colour=g["colour"],
                 coords=segs,
             )

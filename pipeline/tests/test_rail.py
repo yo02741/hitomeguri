@@ -128,3 +128,12 @@ def test_same_name_stations_merge():
         OsmElement("node/4", 35.6000, 139.7000, {"name": "新宿"}),
     ]
     assert [x.id for x in build_stations(els)] == ["node-1", "node-3", "node-4"]
+
+
+def test_defunct_railway_skipped():
+    from pipeline.rail import is_defunct
+
+    assert is_defunct({"name": "国鉄士幌線", "disused": "yes"})
+    assert is_defunct({"name": "三江線（廃線）"})
+    assert is_defunct({"name": "x", "abandoned:railway": "rail"})
+    assert not is_defunct({"name": "函館本線", "route": "railway"})

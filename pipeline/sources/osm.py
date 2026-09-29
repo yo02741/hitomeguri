@@ -68,7 +68,8 @@ def raw(query: str) -> dict:
     raise RuntimeError(f"Overpass 全部失敗：{last_err}")
 
 
-RAIL_ROUTES = "^(train|subway|light_rail|monorail|tram)$"
+# route=railway 是軌道本身（「函館本線」「山陰本線」）：地方的 JR 線多半沒有 route=train 的列車路線
+RAIL_ROUTES = "^(train|subway|light_rail|monorail|tram|railway)$"
 
 
 def rail_routes(iso: str) -> dict:
