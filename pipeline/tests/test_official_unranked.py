@@ -63,3 +63,19 @@ def test_unranked_official_only_matches(monkeypatch):
     major.merge_official("osaka", drafts)
     assert existing.official and existing.official.rank is None
     assert set(drafts) == {"Q1"}
+
+
+def test_official_cache_roundtrip(monkeypatch, tmp_path):
+    from pipeline import official
+
+    monkeypatch.setattr(official, "OFFICIAL_DIR", tmp_path)
+    items = [
+        OfficialSpot("gotokyo", "14", "雷門（風雷神門）", "https://x/14", None),
+        OfficialSpot("okinawastory", "2", "b", "https://x/2", 2, 26.2, 127.6, ["市場"]),
+        OfficialSpot("okinawastory", "1", "a", "https://x/1", 1, 26.1, 127.5),
+    ]
+    official.write_official("tokyo", items, "2026-09-29")
+    got = official.load_official("tokyo")
+    assert [o.id for o in got] == ["1", "2", "14"]
+    assert got[1].categories == ["市場"]
+    assert official.load_official("kyoto") is None

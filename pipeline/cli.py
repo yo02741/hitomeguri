@@ -112,6 +112,14 @@ def cmd_seed_rail(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_seed_official(args: argparse.Namespace) -> int:
+    from pipeline.major import OFFICIAL_SOURCES
+    from pipeline.official import seed_official
+
+    _emit(seed_official(args.prefectures or sorted(OFFICIAL_SOURCES)), args.report)
+    return 0
+
+
 def cmd_seed_festivals(args: argparse.Namespace) -> int:
     from pipeline.festivals import seed_festivals
     from pipeline.geo import pref_slugs
@@ -192,6 +200,11 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("prefectures", nargs="*", help="省略時處理全部縣")
     p.add_argument("--report")
     p.set_defaults(func=cmd_seed_rail)
+
+    p = sub.add_parser("seed-official", help="縣官方觀光網站景點清單 → data/seed/official/")
+    p.add_argument("prefectures", nargs="*", help="省略時處理有官方網站來源的全部縣")
+    p.add_argument("--report")
+    p.set_defaults(func=cmd_seed_official)
 
     p = sub.add_parser("seed-festivals", help="祭典：日文維基「{縣}の祭り」→ data/festivals/")
     p.add_argument("prefectures", nargs="*", help="省略時處理全部縣")

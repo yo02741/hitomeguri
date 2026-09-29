@@ -6,6 +6,8 @@ ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data"
 REGIONS_JSON = DATA / "regions.json"
 SEED_DIR = DATA / "seed"
+# 縣官方觀光網站的景點清單（seed-official）
+OFFICIAL_DIR = SEED_DIR / "official"
 SPOTS_DIR = DATA / "spots"
 SPECIALTIES_DIR = DATA / "specialties"
 # 擴充包（寶可夢人孔蓋等全國性的小點），一個擴充包一個檔案

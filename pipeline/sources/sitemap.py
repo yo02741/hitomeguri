@@ -24,7 +24,15 @@ def urls(index_url: str, keep: re.Pattern[str], max_files: int = 50) -> list[str
     children = [u for u in found if u.endswith(".xml")]
     for child in children[:max_files]:
         found += locs(get_text(child) or "")
-    return list(dict.fromkeys(u for u in found if keep.search(u)))
+    out = list(dict.fromkeys(u for u in found if keep.search(u)))
+    print(f"  sitemap {index_url}：{len(out)} 頁", flush=True)
+    return out
+
+
+def progress(i: int, total: int) -> None:
+    """逐頁取的進度（每 200 頁一行）。"""
+    if (i + 1) % 200 == 0 or i + 1 == total:
+        print(f"    {i + 1}/{total}", flush=True)
 
 
 def ld_json(text: str) -> list[dict[str, Any]]:

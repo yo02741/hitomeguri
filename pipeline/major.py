@@ -279,8 +279,15 @@ def merge_official(pref: str, drafts: dict[str, Draft]) -> None:
     fetch = OFFICIAL_SOURCES.get(pref)
     if not fetch:
         return
-    log(f"[{pref}] 官方觀光網站熱門排行…")
-    items = fetch(config.OFFICIAL_TOP_N)
+    from pipeline.official import load_official
+
+    # seed-official 的存檔優先（東京要取數千頁，和採集一起跑會超過時限）
+    items = load_official(pref)
+    if items is None:
+        log(f"[{pref}] 官方觀光網站熱門排行…")
+        items = fetch(config.OFFICIAL_TOP_N)
+    else:
+        log(f"[{pref}] 官方觀光網站：讀 data/seed/official/{pref}.json")
     matched = added = 0
     skipped: dict[str, list[str]] = {
         "沒有座標": [], "縣外": [], "住宿等": [], "活動、花況": [], "沒有對應的候選": [],

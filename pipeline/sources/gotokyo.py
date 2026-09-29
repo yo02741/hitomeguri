@@ -28,7 +28,9 @@ def parse_detail(text: str) -> str | None:
 
 def spots(limit: int) -> list[OfficialSpot]:
     out = []
-    for url in sitemap.urls(BASE + "/sitemap.xml", _SPOT)[:limit]:
+    urls = sitemap.urls(BASE + "/sitemap.xml", _SPOT)[:limit]
+    for i, url in enumerate(urls):
+        sitemap.progress(i, len(urls))
         text = get_text(url)
         name = parse_detail(text) if text else None
         if name:

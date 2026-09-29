@@ -55,7 +55,9 @@ def spot_urls() -> list[tuple[str, int, str]]:
 
 def spots(limit: int) -> list[OfficialSpot]:
     out = []
-    for url, cat, tid in spot_urls()[:limit]:
+    todo = spot_urls()[:limit]
+    for i, (url, cat, tid) in enumerate(todo):
+        sitemap.progress(i, len(todo))
         text = get_text(url)
         if not text:
             continue
