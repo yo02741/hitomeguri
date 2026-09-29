@@ -62,7 +62,7 @@ def is_defunct(tags: dict[str, str]) -> bool:
     return (
         any(k in tags for k in ("disused", "abandoned", "razed"))
         or any(k.startswith(("disused:", "abandoned:")) for k in tags)
-        or bool(re.search(r"(廃線|旧線|休止)", name))
+        or bool(re.search(r"(廃線|旧線|休止|跡$)", name))
     )
 
 
@@ -115,6 +115,8 @@ def clip(points: list[tuple[float, float]], inside: Inside):
 def build_lines(data: dict[str, Any], inside: Inside) -> list[RailLine]:
     # 以去掉方向的名稱合併：營運者的標法常不一致（「西日本旅客鉄道」與空白），同名視為同一條線
     groups: dict[str, dict[str, Any]] = {}
+    # 營運中的旅客線路段（查詢另外回傳的 way id）；沒有這份清單時（測試）全部都算
+    active = {el["id"] for el in data.get("elements", []) if el.get("type") == "way"}
     for el in data.get("elements", []):
         if el.get("type") != "relation":
             continue
@@ -136,6 +138,8 @@ def build_lines(data: dict[str, Any], inside: Inside) -> list[RailLine]:
             if m.get("type") != "way" or m.get("role") not in ("", "forward", "backward"):
                 continue
             geom = m.get("geometry") or []
+            if active and m["ref"] not in active:
+                continue
             if len(geom) >= 2 and m["ref"] not in g["ways"]:
                 g["ways"][m["ref"]] = [(p["lon"], p["lat"]) for p in geom]
     # 同一段軌道只畫一次（直通運轉、多個營運者各有一份 relation）：

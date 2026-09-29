@@ -72,12 +72,21 @@ def raw(query: str) -> dict:
 RAIL_ROUTES = "^(train|subway|light_rail|monorail|tram|railway)$"
 
 
+# 營運中的旅客線軌道：廃線（railway=abandoned|disused）、建設中、貨物線、站場內的側線不算
+RAIL_ACTIVE_WAY = (
+    '["railway"~"^(rail|light_rail|subway|monorail|narrow_gauge|tram)$"]'
+    '["usage"!~"^(freight|industrial|military)$"]["service"!~"."]'
+)
+
+
 def rail_routes(iso: str) -> dict:
-    """縣內的鐵路路線 relation（含成員路段的幾何）。"""
+    """縣內的鐵路路線 relation（含成員路段的幾何），以及營運中的旅客線路段 id（way）。"""
     q = f"""[out:json][timeout:900];
 {_area(iso)}
-relation["type"="route"]["route"~"{RAIL_ROUTES}"](area.a);
-out geom;"""
+relation["type"="route"]["route"~"{RAIL_ROUTES}"](area.a)->.rels;
+.rels out geom;
+way(r.rels){RAIL_ACTIVE_WAY};
+out ids;"""
     return raw(q)
 
 

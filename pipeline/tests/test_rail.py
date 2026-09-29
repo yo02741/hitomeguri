@@ -135,5 +135,20 @@ def test_defunct_railway_skipped():
 
     assert is_defunct({"name": "国鉄士幌線", "disused": "yes"})
     assert is_defunct({"name": "三江線（廃線）"})
+    assert is_defunct({"name": "倉吉線跡"})
     assert is_defunct({"name": "x", "abandoned:railway": "rail"})
     assert not is_defunct({"name": "函館本線", "route": "railway"})
+
+
+def test_only_active_ways_when_listed():
+    live = (1, [(26.2, 127.65), (26.21, 127.66)])
+    gone = (2, [(26.3, 127.65), (26.31, 127.66)])
+    data = {
+        "elements": [
+            _rel(1, "士幌線", [gone], route="railway"),
+            _rel(2, "ゆいレール", [live]),
+            {"type": "way", "id": 1},
+        ]
+    }
+    lines = build_lines(data, BOX)
+    assert [x.name for x in lines] == ["ゆいレール"]
