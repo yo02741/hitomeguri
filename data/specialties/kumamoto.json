@@ -15,7 +15,7 @@
       "lang": "zh",
       "source_url": "https://zh.wikipedia.org/wiki/%E7%86%8A%E6%9C%AC%E6%8B%89%E9%BA%B5",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "source_type": "wikipedia",
     "kana_source": "wikipedia",
@@ -30,14 +30,14 @@
     "sources": [
       {
         "url": "https://www.wikidata.org/wiki/Q11567931",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       },
       {
         "url": "https://zh.wikipedia.org/wiki/%E7%86%8A%E6%9C%AC%E6%8B%89%E9%BA%B5",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "kumamoto-Q11572418",
@@ -55,7 +55,7 @@
       "lang": "ja",
       "source_url": "https://ja.wikipedia.org/wiki/%E7%8E%89%E5%90%8D%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "source_type": "wikipedia",
     "kana_source": "wikipedia",
@@ -70,14 +70,14 @@
     "sources": [
       {
         "url": "https://www.wikidata.org/wiki/Q11572418",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       },
       {
         "url": "https://ja.wikipedia.org/wiki/%E7%8E%89%E5%90%8D%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "kumamoto-Q11635274",
@@ -93,25 +93,25 @@
       "lang": "ja",
       "source_url": "https://ja.wikipedia.org/wiki/%E8%B5%A4%E3%81%A9%E6%BC%AC",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "source_type": "kyodo_ryori",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/akado_zuke_kumamoto.html",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       },
       {
         "url": "https://www.wikidata.org/wiki/Q11635274",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       },
       {
         "url": "https://ja.wikipedia.org/wiki/%E8%B5%A4%E3%81%A9%E6%BC%AC",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "kumamoto-Q135116202",
@@ -125,11 +125,11 @@
     "prefecture": "kumamoto",
     "category": "kyodo",
     "summary": {
-      "text": "とじこ豆（とじこまめ）とは、九州の主に熊本県で作られる郷土菓子。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E3%81%A8%E3%81%98%E3%81%93%E8%B1%86",
+      "text": "Tojiko mame (とじこ豆) is a traditional confectionery from Kyushu, Japan, particularly associated with Kumamoto Prefecture.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Tojiko_mame",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "source_type": "kyodo_ryori",
     "kana_source": "wikipedia",
@@ -137,18 +137,18 @@
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/tojiko_mame_kumamoto.html",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       },
       {
         "url": "https://www.wikidata.org/wiki/Q135116202",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       },
       {
-        "url": "https://ja.wikipedia.org/wiki/%E3%81%A8%E3%81%98%E3%81%93%E8%B1%86",
-        "fetched_at": "2026-09-28"
+        "url": "https://en.wikipedia.org/wiki/Tojiko_mame",
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "kumamoto-maff-aso_takana_zuke_kumamoto",
@@ -163,10 +163,10 @@
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/aso_takana_zuke_kumamoto.html",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "kumamoto-maff-baniku_soba_kumamoto",
@@ -181,10 +181,10 @@
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/baniku_soba_kumamoto.html",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "kumamoto-maff-basashi_kumamoto",
@@ -199,10 +199,10 @@
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/basashi_kumamoto.html",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "kumamoto-maff-butaae_kumamoto",
@@ -219,10 +219,10 @@
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/butaae_kumamoto.html",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "kumamoto-maff-dagojiru_kumamoto",
@@ -237,10 +237,10 @@
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/dagojiru_kumamoto.html",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "kumamoto-maff-ganeage_kumamoto",
@@ -255,10 +255,10 @@
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/ganeage_kumamoto.html",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "kumamoto-maff-hone_kajiri_kumamoto",
@@ -273,10 +273,10 @@
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/hone_kajiri_kumamoto.html",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "kumamoto-maff-ikinari_dango_kumamoto",
@@ -291,10 +291,10 @@
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/ikinari_dango_kumamoto.html",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "kumamoto-maff-itimonji_no_guruguru_kumamoto",
@@ -309,10 +309,10 @@
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/itimonji_no_guruguru_kumamoto.html",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "kumamoto-maff-jyabara_daikon_no_nimono_kumamoto",
@@ -327,10 +327,10 @@
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/jyabara_daikon_no_nimono_kumamoto.html",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "kumamoto-maff-kanzuke_kumamoto",
@@ -345,10 +345,10 @@
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/kanzuke_kumamoto.html",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "kumamoto-maff-karashi_renkon_kumamoto",
@@ -363,10 +363,10 @@
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/karashi_renkon_kumamoto.html",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "kumamoto-maff-kasuyose_kumamoto",
@@ -383,10 +383,10 @@
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/kasuyose_kumamoto.html",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "kumamoto-maff-kono_shirono_sugata_zushi_kumamoto",
@@ -401,10 +401,10 @@
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/kono_shirono_sugata_zushi_kumamoto.html",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "kumamoto-maff-koppa_mochi_kumamoto",
@@ -421,10 +421,10 @@
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/koppa_mochi_kumamoto.html",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "kumamoto-maff-makigaki_kumamoto",
@@ -439,10 +439,10 @@
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/makigaki_kumamoto.html",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "kumamoto-maff-maze_meshi_kumamoto",
@@ -457,10 +457,10 @@
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/maze_meshi_kumamoto.html",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "kumamoto-maff-nankan_ageno_maki_zushi_kumamoto",
@@ -475,10 +475,10 @@
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/nankan_ageno_maki_zushi_kumamoto.html",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "kumamoto-maff-shakuno_tenpura_kumamoto",
@@ -493,10 +493,10 @@
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/shakuno_tenpura_kumamoto.html",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "kumamoto-maff-tai_soumen_kumamoto",
@@ -511,10 +511,10 @@
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/tai_soumen_kumamoto.html",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "kumamoto-maff-taipiien_kumamoto",
@@ -529,10 +529,10 @@
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/taipiien_kumamoto.html",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "kumamoto-maff-tako_meshi_kumamoto",
@@ -547,10 +547,10 @@
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/tako_meshi_kumamoto.html",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "kumamoto-maff-toufuno_misozuke_kumamoto",
@@ -565,10 +565,10 @@
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/toufuno_misozuke_kumamoto.html",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "kumamoto-maff-tsubon_jiru_kumamoto",
@@ -583,10 +583,10 @@
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/tsubon_jiru_kumamoto.html",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "kumamoto-maff-yakiayu_no_kanroni_kumamoto",
@@ -601,10 +601,10 @@
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/yakiayu_no_kanroni_kumamoto.html",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "kumamoto-maff-yama_surume_no_kinpira_kumamoto",
@@ -619,10 +619,10 @@
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/yama_surume_no_kinpira_kumamoto.html",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "kumamoto-maff-yubeshi_kumamoto",
@@ -637,9 +637,9 @@
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/yubeshi_kumamoto.html",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   }
 ]

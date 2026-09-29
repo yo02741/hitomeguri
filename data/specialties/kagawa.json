@@ -11,11 +11,11 @@
     "prefecture": "kagawa",
     "category": "kyodo",
     "summary": {
-      "text": "しょうゆ豆（しょうゆまめ）は香川県の郷土料理である。発酵食品のしょうゆ豆については醤油の実を参照のこと。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E3%81%97%E3%82%87%E3%81%86%E3%82%86%E8%B1%86",
+      "text": "Shoyumame (しょうゆ豆) is a regional cuisine of the Kagawa prefecture of Japan. Shoyumame consists of parched broad beans left overnight in a marinade consisting primarily of soy sauce and sugar, with mirin and sake usually included in the marinade. It is commonly served alongside lunch or dinner, or as an accompaniment to alcohol.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Shoyumame",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "source_type": "kyodo_ryori",
     "kana_source": "wikipedia",
@@ -30,18 +30,18 @@
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/shouyu_mame_kagawa.html",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       },
       {
         "url": "https://www.wikidata.org/wiki/Q11269155",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       },
       {
-        "url": "https://ja.wikipedia.org/wiki/%E3%81%97%E3%82%87%E3%81%86%E3%82%86%E8%B1%86",
-        "fetched_at": "2026-09-28"
+        "url": "https://en.wikipedia.org/wiki/Shoyumame",
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "kagawa-Q122354181",
@@ -59,25 +59,25 @@
       "lang": "ja",
       "source_url": "https://ja.wikipedia.org/wiki/%E3%81%AA%E3%81%99%E3%81%9D%E3%81%86%E3%82%81%E3%82%93",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "source_type": "kyodo_ryori",
     "images": [],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/nasu_soumen_kagawa.html",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       },
       {
         "url": "https://www.wikidata.org/wiki/Q122354181",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       },
       {
         "url": "https://ja.wikipedia.org/wiki/%E3%81%AA%E3%81%99%E3%81%9D%E3%81%86%E3%82%81%E3%82%93",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "kagawa-maff-ajino_sanbai_kagawa",
@@ -92,10 +92,10 @@
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/ajino_sanbai_kagawa.html",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "kagawa-maff-anmochi_zouni_kagawa",
@@ -110,10 +110,10 @@
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/anmochi_zouni_kagawa.html",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "kagawa-maff-bara_zushi_kagawa",
@@ -130,10 +130,10 @@
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/bara_zushi_kagawa.html",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "kagawa-maff-dojou_jiru_kagawa",
@@ -148,10 +148,10 @@
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/dojou_jiru_kagawa.html",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "kagawa-maff-ebi_miso_shiru_kagawa",
@@ -166,10 +166,10 @@
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/ebi_miso_shiru_kagawa.html",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "kagawa-maff-hage_dango_kagawa",
@@ -184,10 +184,10 @@
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/hage_dango_kagawa.html",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "kagawa-maff-imotako_kagawa",
@@ -204,10 +204,10 @@
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/imotako_kagawa.html",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "kagawa-maff-iriko_meshi_kagawa",
@@ -222,10 +222,10 @@
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/iriko_meshi_kagawa.html",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "kagawa-maff-kakimaze_kagawa",
@@ -242,10 +242,10 @@
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/kakimaze_kagawa.html",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "kagawa-maff-kankan_zushi_kagawa",
@@ -262,10 +262,10 @@
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/kankan_zushi_kagawa.html",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "kagawa-maff-konnyaku_no_hachihai_kagawa",
@@ -282,10 +282,10 @@
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/konnyaku_no_hachihai_kagawa.html",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "kagawa-maff-konnyaku_no_shiraae_kagawa",
@@ -300,10 +300,10 @@
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/konnyaku_no_shiraae_kagawa.html",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "kagawa-maff-manbano_kenchan_kagawa",
@@ -320,10 +320,10 @@
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/manbano_kenchan_kagawa.html",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "kagawa-maff-mossou_meshi_kagawa",
@@ -340,10 +340,10 @@
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/mossou_meshi_kagawa.html",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "kagawa-maff-ochi_rashi_ame_kagawa",
@@ -360,10 +360,10 @@
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/ochi_rashi_ame_kagawa.html",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "kagawa-maff-oshinuki_zushi_kagawa",
@@ -378,10 +378,10 @@
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/oshinuki_zushi_kagawa.html",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "kagawa-maff-satsuma_kagawa",
@@ -398,10 +398,10 @@
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/satsuma_kagawa.html",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "kagawa-maff-sawasawa_kagawa",
@@ -418,10 +418,10 @@
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/sawasawa_kagawa.html",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "kagawa-maff-shima_no_chagayu_kagawa",
@@ -436,10 +436,10 @@
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/shima_no_chagayu_kagawa.html",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "kagawa-maff-sippoku_udon_kagawa",
@@ -456,10 +456,10 @@
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/sippoku_udon_kagawa.html",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "kagawa-maff-tai_soumen_kagawa",
@@ -474,10 +474,10 @@
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/tai_soumen_kagawa.html",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "kagawa-maff-takuan_no_kinpira_kagawa",
@@ -494,10 +494,10 @@
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/takuan_no_kinpira_kagawa.html",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "kagawa-maff-teppai_kagawa",
@@ -514,10 +514,10 @@
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/teppai_kagawa.html",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "kagawa-maff-toshiake_udon_kagawa",
@@ -532,10 +532,10 @@
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/toshiake_udon_kagawa.html",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "kagawa-maff-uchikomi_jiru_kagawa",
@@ -550,10 +550,10 @@
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/uchikomi_jiru_kagawa.html",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "kagawa-maff-uzumaki_mochi_kagawa",
@@ -570,10 +570,10 @@
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/uzumaki_mochi_kagawa.html",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "kagawa-maff-wakegiae_kagawa",
@@ -590,10 +590,10 @@
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/wakegiae_kagawa.html",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "kagawa-maff-warigo_bentou_kagawa",
@@ -608,9 +608,9 @@
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/warigo_bentou_kagawa.html",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   }
 ]

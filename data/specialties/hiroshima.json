@@ -15,7 +15,7 @@
       "lang": "ja",
       "source_url": "https://ja.wikipedia.org/wiki/%E5%B0%BE%E9%81%93%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "source_type": "wikipedia",
     "kana_source": "wikipedia",
@@ -30,14 +30,14 @@
     "sources": [
       {
         "url": "https://www.wikidata.org/wiki/Q11465459",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       },
       {
         "url": "https://ja.wikipedia.org/wiki/%E5%B0%BE%E9%81%93%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "hiroshima-Q11484441",
@@ -55,7 +55,7 @@
       "lang": "ja",
       "source_url": "https://ja.wikipedia.org/wiki/%E5%BA%83%E5%B3%B6%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "source_type": "wikipedia",
     "kana_source": "wikipedia",
@@ -70,14 +70,14 @@
     "sources": [
       {
         "url": "https://www.wikidata.org/wiki/Q11484441",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       },
       {
         "url": "https://ja.wikipedia.org/wiki/%E5%BA%83%E5%B3%B6%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "hiroshima-Q11609405",
@@ -94,26 +94,33 @@
       "lang": "ja",
       "source_url": "https://ja.wikipedia.org/wiki/%E7%BE%8E%E9%85%92%E9%8D%8B",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "source_type": "kyodo_ryori",
     "kana_source": "wikipedia",
-    "images": [],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b0/%E7%BE%8E%E9%85%92%E9%8D%8B%EF%BC%88bisyonabe%29.jpg/960px-%E7%BE%8E%E9%85%92%E9%8D%8B%EF%BC%88bisyonabe%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Naocchi",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:%E7%BE%8E%E9%85%92%E9%8D%8B%EF%BC%88bisyonabe).jpg"
+      }
+    ],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/42_8_hiroshima.html",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       },
       {
         "url": "https://www.wikidata.org/wiki/Q11609405",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       },
       {
         "url": "https://ja.wikipedia.org/wiki/%E7%BE%8E%E9%85%92%E9%8D%8B",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "hiroshima-maff-42_10_hiroshima",
@@ -128,10 +135,10 @@
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/42_10_hiroshima.html",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "hiroshima-maff-42_11_hiroshima",
@@ -146,10 +153,10 @@
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/42_11_hiroshima.html",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "hiroshima-maff-42_12_hiroshima",
@@ -164,10 +171,10 @@
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/42_12_hiroshima.html",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "hiroshima-maff-42_13_hiroshima",
@@ -182,10 +189,10 @@
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/42_13_hiroshima.html",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "hiroshima-maff-42_14_hiroshima",
@@ -202,10 +209,10 @@
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/42_14_hiroshima.html",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "hiroshima-maff-42_15_hiroshima",
@@ -220,10 +227,10 @@
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/42_15_hiroshima.html",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "hiroshima-maff-42_16_hiroshima",
@@ -238,10 +245,10 @@
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/42_16_hiroshima.html",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "hiroshima-maff-42_17_hiroshima",
@@ -256,10 +263,10 @@
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/42_17_hiroshima.html",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "hiroshima-maff-42_18_hiroshima",
@@ -276,10 +283,10 @@
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/42_18_hiroshima.html",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "hiroshima-maff-42_19_hiroshima",
@@ -296,10 +303,10 @@
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/42_19_hiroshima.html",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "hiroshima-maff-42_1_hiroshima",
@@ -314,10 +321,10 @@
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/42_1_hiroshima.html",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "hiroshima-maff-42_20_hiroshima",
@@ -332,10 +339,10 @@
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/42_20_hiroshima.html",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "hiroshima-maff-42_21_hiroshima",
@@ -350,10 +357,10 @@
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/42_21_hiroshima.html",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "hiroshima-maff-42_22_hiroshima",
@@ -368,10 +375,10 @@
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/42_22_hiroshima.html",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "hiroshima-maff-42_23_hiroshima",
@@ -386,10 +393,10 @@
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/42_23_hiroshima.html",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "hiroshima-maff-42_24_hiroshima",
@@ -404,10 +411,10 @@
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/42_24_hiroshima.html",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "hiroshima-maff-42_25_hiroshima",
@@ -422,10 +429,10 @@
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/42_25_hiroshima.html",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "hiroshima-maff-42_26_hiroshima",
@@ -440,10 +447,10 @@
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/42_26_hiroshima.html",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "hiroshima-maff-42_27_hiroshima",
@@ -458,10 +465,10 @@
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/42_27_hiroshima.html",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "hiroshima-maff-42_28_hiroshima",
@@ -476,10 +483,10 @@
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/42_28_hiroshima.html",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "hiroshima-maff-42_29_hiroshima",
@@ -494,10 +501,10 @@
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/42_29_hiroshima.html",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "hiroshima-maff-42_2_hiroshima",
@@ -514,10 +521,10 @@
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/42_2_hiroshima.html",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "hiroshima-maff-42_30_hiroshima",
@@ -532,10 +539,10 @@
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/42_30_hiroshima.html",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "hiroshima-maff-42_3_hiroshima",
@@ -550,10 +557,10 @@
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/42_3_hiroshima.html",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "hiroshima-maff-42_4_hiroshima",
@@ -568,10 +575,10 @@
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/42_4_hiroshima.html",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "hiroshima-maff-42_5_hiroshima",
@@ -588,10 +595,10 @@
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/42_5_hiroshima.html",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "hiroshima-maff-42_6_hiroshima",
@@ -608,10 +615,10 @@
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/42_6_hiroshima.html",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "hiroshima-maff-42_7_hiroshima",
@@ -626,10 +633,10 @@
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/42_7_hiroshima.html",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "hiroshima-maff-42_9_hiroshima",
@@ -644,9 +651,9 @@
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/42_9_hiroshima.html",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   }
 ]

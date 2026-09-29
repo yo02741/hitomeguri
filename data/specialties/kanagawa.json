@@ -15,7 +15,7 @@
       "lang": "zh",
       "source_url": "https://zh.wikipedia.org/wiki/%E6%B5%B7%E8%BB%8D%E5%92%96%E5%93%A9",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "source_type": "kyodo_ryori",
     "kana_source": "wikidata",
@@ -30,18 +30,18 @@
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/35_5_kanagawa.html",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       },
       {
         "url": "https://www.wikidata.org/wiki/Q11151345",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       },
       {
         "url": "https://zh.wikipedia.org/wiki/%E6%B5%B7%E8%BB%8D%E5%92%96%E5%93%A9",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "kanagawa-Q11355298",
@@ -59,22 +59,29 @@
       "lang": "ja",
       "source_url": "https://ja.wikipedia.org/wiki/%E4%B8%89%E5%B4%8E%E3%81%BE%E3%81%90%E3%82%8D%E6%8B%89%E9%BA%BA",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "source_type": "wikipedia",
     "kana_source": "wikipedia",
-    "images": [],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1b/Gthumb.svg/960px-Gthumb.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "不明",
+        "license": "CC0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Gthumb.svg"
+      }
+    ],
     "sources": [
       {
         "url": "https://www.wikidata.org/wiki/Q11355298",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       },
       {
         "url": "https://ja.wikipedia.org/wiki/%E4%B8%89%E5%B4%8E%E3%81%BE%E3%81%90%E3%82%8D%E6%8B%89%E9%BA%BA",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "kanagawa-Q1735816",
@@ -88,11 +95,11 @@
     "prefecture": "kanagawa",
     "category": "kyodo",
     "summary": {
-      "text": "かて飯（かてめし）は、米に他の穀物や野菜・海藻などの食品を混ぜて炊いた飯。「かて」ともよび、「糅飯」とも書く。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E3%81%8B%E3%81%A6%E9%A3%AF",
+      "text": "Katemeshi, also spelled katé-meshi, was a common peasant food in Japan during the Meiji and Taishō periods (1867–1924). Some laborers and farmers subsisted on the dish during this time, whereas wealthier people consumed larger quantities of rice, which was a relatively expensive food compared to the income of some workers. Typical ingredients in the dish included rice, barley, millet, and chopped daikon (a mild winter radish). Variations of the dish were based upon the regional and seasonal availability of foods in different areas of Japan.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Katemeshi",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "source_type": "kyodo_ryori",
     "kana_source": "wikipedia",
@@ -100,18 +107,18 @@
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/35_8_kanagawa.html",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       },
       {
         "url": "https://www.wikidata.org/wiki/Q1735816",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       },
       {
-        "url": "https://ja.wikipedia.org/wiki/%E3%81%8B%E3%81%A6%E9%A3%AF",
-        "fetched_at": "2026-09-28"
+        "url": "https://en.wikipedia.org/wiki/Katemeshi",
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "kanagawa-Q263351",
@@ -129,7 +136,7 @@
       "lang": "zh",
       "source_url": "https://zh.wikipedia.org/wiki/%E5%AE%B6%E7%B3%BB%E6%8B%89%E9%BA%B5",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "source_type": "wikipedia",
     "kana_source": "wikipedia",
@@ -144,14 +151,14 @@
     "sources": [
       {
         "url": "https://www.wikidata.org/wiki/Q263351",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       },
       {
         "url": "https://zh.wikipedia.org/wiki/%E5%AE%B6%E7%B3%BB%E6%8B%89%E9%BA%B5",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "kanagawa-Q42044808",
@@ -169,7 +176,7 @@
       "lang": "ja",
       "source_url": "https://ja.wikipedia.org/wiki/%E5%B0%8F%E7%94%B0%E5%8E%9F%E7%B3%BB%E6%8B%85%E3%80%85%E9%BA%BA",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "source_type": "wikipedia",
     "kana_source": "wikipedia",
@@ -184,14 +191,14 @@
     "sources": [
       {
         "url": "https://www.wikidata.org/wiki/Q42044808",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       },
       {
         "url": "https://ja.wikipedia.org/wiki/%E5%B0%8F%E7%94%B0%E5%8E%9F%E7%B3%BB%E6%8B%85%E3%80%85%E9%BA%BA",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "kanagawa-Q42045522",
@@ -209,7 +216,7 @@
       "lang": "ja",
       "source_url": "https://ja.wikipedia.org/wiki/%E5%B0%8F%E7%94%B0%E5%8E%9F%E7%B3%BB%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "source_type": "wikipedia",
     "kana_source": "wikipedia",
@@ -224,14 +231,14 @@
     "sources": [
       {
         "url": "https://www.wikidata.org/wiki/Q42045522",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       },
       {
         "url": "https://ja.wikipedia.org/wiki/%E5%B0%8F%E7%94%B0%E5%8E%9F%E7%B3%BB%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "kanagawa-maff-35_10_kanagawa",
@@ -246,10 +253,10 @@
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/35_10_kanagawa.html",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "kanagawa-maff-35_11_kanagawa",
@@ -266,10 +273,10 @@
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/35_11_kanagawa.html",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "kanagawa-maff-35_12_kanagawa",
@@ -284,10 +291,10 @@
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/35_12_kanagawa.html",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "kanagawa-maff-35_13_kanagawa",
@@ -302,10 +309,10 @@
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/35_13_kanagawa.html",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "kanagawa-maff-35_14_kanagawa",
@@ -320,10 +327,10 @@
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/35_14_kanagawa.html",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "kanagawa-maff-35_15_kanagawa",
@@ -338,10 +345,10 @@
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/35_15_kanagawa.html",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "kanagawa-maff-35_16_kanagawa",
@@ -358,10 +365,10 @@
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/35_16_kanagawa.html",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "kanagawa-maff-35_17_kanagawa",
@@ -376,10 +383,10 @@
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/35_17_kanagawa.html",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "kanagawa-maff-35_18_kanagawa",
@@ -394,10 +401,10 @@
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/35_18_kanagawa.html",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "kanagawa-maff-35_19_kanagawa",
@@ -412,10 +419,10 @@
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/35_19_kanagawa.html",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "kanagawa-maff-35_1_kanagawa",
@@ -430,10 +437,10 @@
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/35_1_kanagawa.html",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "kanagawa-maff-35_20_kanagawa",
@@ -448,10 +455,10 @@
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/35_20_kanagawa.html",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "kanagawa-maff-35_21_kanagawa",
@@ -466,10 +473,10 @@
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/35_21_kanagawa.html",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "kanagawa-maff-35_22_kanagawa",
@@ -486,10 +493,10 @@
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/35_22_kanagawa.html",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "kanagawa-maff-35_23_kanagawa",
@@ -504,10 +511,10 @@
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/35_23_kanagawa.html",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "kanagawa-maff-35_2_kanagawa",
@@ -522,10 +529,10 @@
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/35_2_kanagawa.html",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "kanagawa-maff-35_3_kanagawa",
@@ -540,10 +547,10 @@
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/35_3_kanagawa.html",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "kanagawa-maff-35_4_kanagawa",
@@ -558,10 +565,10 @@
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/35_4_kanagawa.html",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "kanagawa-maff-35_6_kanagawa",
@@ -576,10 +583,10 @@
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/35_6_kanagawa.html",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "kanagawa-maff-35_7_kanagawa",
@@ -594,10 +601,10 @@
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/35_7_kanagawa.html",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "kanagawa-maff-35_9_kanagawa",
@@ -612,9 +619,9 @@
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/35_9_kanagawa.html",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   }
 ]

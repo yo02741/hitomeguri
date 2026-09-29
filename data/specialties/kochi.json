@@ -15,7 +15,7 @@
       "lang": "zh",
       "source_url": "https://zh.wikipedia.org/wiki/%E7%9A%BF%E7%BC%BD%E6%96%99%E7%90%86",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "source_type": "kyodo_ryori",
     "kana_source": "wikidata",
@@ -30,18 +30,18 @@
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/sawachiryori_kochi.html",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       },
       {
         "url": "https://www.wikidata.org/wiki/Q10433119",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       },
       {
         "url": "https://zh.wikipedia.org/wiki/%E7%9A%BF%E7%BC%BD%E6%96%99%E7%90%86",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "kochi-Q115490972",
@@ -58,22 +58,29 @@
       "lang": "ja",
       "source_url": "https://ja.wikipedia.org/wiki/%E4%B8%AD%E6%97%A5%E3%81%9D%E3%81%B0",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "source_type": "wikipedia",
     "kana_source": "wikipedia",
-    "images": [],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1b/Gthumb.svg/960px-Gthumb.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "不明",
+        "license": "CC0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Gthumb.svg"
+      }
+    ],
     "sources": [
       {
         "url": "https://www.wikidata.org/wiki/Q115490972",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       },
       {
         "url": "https://ja.wikipedia.org/wiki/%E4%B8%AD%E6%97%A5%E3%81%9D%E3%81%B0",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "kochi-Q11650717",
@@ -91,22 +98,29 @@
       "lang": "ja",
       "source_url": "https://ja.wikipedia.org/wiki/%E9%8D%8B%E7%84%BC%E3%81%8D%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "source_type": "wikipedia",
     "kana_source": "wikipedia",
-    "images": [],
+    "images": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/c/c4/%E9%8D%8B%E7%84%BC%E3%81%8D%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+        "author": "投稿者により撮影。",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:%E9%8D%8B%E7%84%BC%E3%81%8D%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3.JPG"
+      }
+    ],
     "sources": [
       {
         "url": "https://www.wikidata.org/wiki/Q11650717",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       },
       {
         "url": "https://ja.wikipedia.org/wiki/%E9%8D%8B%E7%84%BC%E3%81%8D%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "kochi-Q65236098",
@@ -124,21 +138,28 @@
       "lang": "ja",
       "source_url": "https://ja.wikipedia.org/wiki/%E3%81%BF%E3%81%9D%E3%82%AB%E3%83%84%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "source_type": "wikipedia",
-    "images": [],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d9/%E5%91%B3%E5%99%8C%E3%82%AB%E3%83%84%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3.jpg/960px-%E5%91%B3%E5%99%8C%E3%82%AB%E3%83%84%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Gyozaski7",
+        "license": "CC0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:%E5%91%B3%E5%99%8C%E3%82%AB%E3%83%84%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3.jpg"
+      }
+    ],
     "sources": [
       {
         "url": "https://www.wikidata.org/wiki/Q65236098",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       },
       {
         "url": "https://ja.wikipedia.org/wiki/%E3%81%BF%E3%81%9D%E3%82%AB%E3%83%84%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "kochi-maff-chatenoaemono_kochi",
@@ -153,10 +174,10 @@
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/chatenoaemono_kochi.html",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "kochi-maff-gimburozushi_kochi",
@@ -171,10 +192,10 @@
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/gimburozushi_kochi.html",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "kochi-maff-guruni_kochi",
@@ -189,10 +210,10 @@
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/guruni_kochi.html",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "kochi-maff-hachikutoendononimono_kochi",
@@ -207,10 +228,10 @@
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/hachikutoendononimono_kochi.html",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "kochi-maff-hangedango_kochi",
@@ -225,10 +246,10 @@
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/hangedango_kochi.html",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "kochi-maff-haninnikunonuta_kochi",
@@ -243,10 +264,10 @@
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/haninnikunonuta_kochi.html",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "kochi-maff-himeichitomikannokarashini_kochi",
@@ -261,10 +282,10 @@
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/himeichitomikannokarashini_kochi.html",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "kochi-maff-imoberaazuki_kochi",
@@ -281,10 +302,10 @@
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/imoberaazuki_kochi.html",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "kochi-maff-imonokukinoitameni_kochi",
@@ -299,10 +320,10 @@
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/imonokukinoitameni_kochi.html",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "kochi-maff-inakazushi_kochi",
@@ -317,10 +338,10 @@
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/inakazushi_kochi.html",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "kochi-maff-itadorinoaburaitame_kochi",
@@ -335,10 +356,10 @@
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/itadorinoaburaitame_kochi.html",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "kochi-maff-kashikiri_kochi",
@@ -355,10 +376,10 @@
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/kashikiri_kochi.html",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "kochi-maff-katuonotataki_kochi",
@@ -375,10 +396,10 @@
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/katuonotataki_kochi.html",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "kochi-maff-kibinagonohokaburi_kochi",
@@ -395,10 +416,10 @@
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/kibinagonohokaburi_kochi.html",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "kochi-maff-kirazumochi_kochi",
@@ -415,10 +436,10 @@
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/kirazumochi_kochi.html",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "kochi-maff-kobuzushi_kochi",
@@ -435,10 +456,10 @@
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/kobuzushi_kochi.html",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "kochi-maff-kokerazushi_kochi",
@@ -455,10 +476,10 @@
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/kokerazushi_kochi.html",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "kochi-maff-konchin_kochi",
@@ -475,10 +496,10 @@
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/konchin_kochi.html",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "kochi-maff-koshimeshi_kochi",
@@ -493,10 +514,10 @@
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/koshimeshi_kochi.html",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "kochi-maff-kurenonimono_kochi",
@@ -511,10 +532,10 @@
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/kurenonimono_kochi.html",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "kochi-maff-kyuritokawaebinonimono_kochi",
@@ -529,10 +550,10 @@
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/kyuritokawaebinonimono_kochi.html",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "kochi-maff-mushidai_kochi",
@@ -547,10 +568,10 @@
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/mushidai_kochi.html",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "kochi-maff-negitosatsumaimononuta_kochi",
@@ -567,10 +588,10 @@
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/negitosatsumaimononuta_kochi.html",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "kochi-maff-ryukyunosunomono_kochi",
@@ -585,10 +606,10 @@
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/ryukyunosunomono_kochi.html",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "kochi-maff-sabanosugatazushi_kochi",
@@ -603,10 +624,10 @@
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/sabanosugatazushi_kochi.html",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "kochi-maff-taimonokorobashi_kochi",
@@ -621,10 +642,10 @@
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/taimonokorobashi_kochi.html",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "kochi-maff-tofunoumezuzuke_kochi",
@@ -639,10 +660,10 @@
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/tofunoumezuzuke_kochi.html",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "kochi-maff-tsuganijiru_kochi",
@@ -657,10 +678,10 @@
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/tsuganijiru_kochi.html",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "kochi-maff-zemmainoitameni_kochi",
@@ -675,9 +696,9 @@
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/zemmainoitameni_kochi.html",
-        "fetched_at": "2026-09-28"
+        "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   }
 ]
