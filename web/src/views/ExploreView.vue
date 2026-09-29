@@ -164,6 +164,20 @@ function union(
   return [Math.min(a[0], b[0]), Math.min(a[1], b[1]), Math.max(a[2], b[2]), Math.max(a[3], b[3])]
 }
 
+// 地點標記（深度探索的祭典「地圖」）：?at=緯度,經度&label=名稱
+const pin = computed(() => {
+  const at = typeof route.query.at === 'string' ? route.query.at.split(',').map(Number) : []
+  const [lat, lng] = at
+  if (at.length !== 2 || !Number.isFinite(lat) || !Number.isFinite(lng)) return null
+  return { lat: lat!, lng: lng!, label: typeof route.query.label === 'string' ? route.query.label : '' }
+})
+function closePin() {
+  const q = { ...route.query }
+  delete q.at
+  delete q.label
+  router.replace({ query: q })
+}
+
 // 地區頁的定位由下方 props.pref 的 watcher 負責；這裡只載入共用資料
 onMounted(() => {
   catalog.loadExtras()
@@ -193,6 +207,11 @@ watch(
     if (target) {
       await nextTick()
       mapRef.value?.flyTo(target.lng, target.lat, 15)
+      return
+    }
+    if (pin.value) {
+      await nextTick()
+      mapRef.value?.flyTo(pin.value.lng, pin.value.lat, 14)
       return
     }
     // 看得到整個縣的形狀（主要陸地的縣界）＋主要景點；還沒有資料的縣用縣界範圍定位
@@ -232,7 +251,9 @@ async function select(id: string) {
   const pack = packOfId(id)
   // 從景點卡片的「附近」點進擴充包的點：一併開啟那個擴充包
   if (pack && explore.pack !== pack) explore.pack = pack
-  await router.replace({ query: { ...route.query, spot: id, ...(pack ? { pack } : {}) } })
+  // 選了景點就收起地點標記
+  const { at: _at, label: _label, ...rest } = route.query
+  await router.replace({ query: { ...rest, spot: id, ...(pack ? { pack } : {}) } })
   await nextTick()
   const s = pack ? catalog.packs[pack]?.find((x) => x.id === id) : allSpots.value.find((x) => x.id === id)
   // 縮放 15：群集全部散開（clusterMaxZoom 14），看得出選到的是哪一個點
@@ -364,7 +385,9 @@ function onMoveEnd(view: MapViewState) {
         :inset-left="insetLeft"
         :pack="packMap"
         :outline="outline"
+        :pin="pin"
         @select="select"
+        @close-pin="closePin"
         @moveend="onMoveEnd"
       />
 

@@ -4,7 +4,7 @@ import { computed, ref, watch } from 'vue'
 import type { Festival } from '../services/bundles'
 import CollapseChevron from './CollapseChevron.vue'
 
-// 深度探索「祭典」：依舉行月份分組（跨月的放在第一個月），從本月開始往後排，組內依日文維基瀏覽量。
+// 深度探索「祭典」：依舉行月份分組（跨月的放在第一個月），1 到 12 月，組內依日文維基瀏覽量。
 // 月份列可篩選；沒有月份的放最後「月份未載」。
 const props = defineProps<{ festivals: Festival[] }>()
 
@@ -14,8 +14,7 @@ const FIRST = 6
 
 const groups = computed(() => {
   const sorted = [...props.festivals].sort((a, b) => b.views - a.views)
-  const upcoming = MONTHS.map((_, i) => ((thisMonth - 1 + i) % 12) + 1)
-  const out = upcoming.map((m) => ({
+  const out = MONTHS.map((m) => ({
     key: String(m),
     label: `${m}月`,
     items: sorted.filter((f) => f.months?.[0] === m),
@@ -49,8 +48,9 @@ function image(f: Festival) {
   const img = f.images?.[0]
   return img && !failed.value.has(img.url) ? img : undefined
 }
-function mapUrl(f: Festival): string {
-  return `https://www.google.com/maps/search/?api=1&query=${f.location!.lat},${f.location!.lng}`
+// 在我們的地圖上標出位置（縣的地圖頁＋地點標記）
+function mapLink(f: Festival) {
+  return { path: `/map/${f.prefecture}`, query: { at: `${f.location!.lat},${f.location!.lng}`, label: f.name.ja } }
 }
 </script>
 
@@ -122,7 +122,7 @@ function mapUrl(f: Festival): string {
             <div class="mt-auto flex flex-wrap gap-x-3 text-caption text-sub">
               <span v-if="f.summary">{{ f.summary.license }}</span>
               <a :href="f.summary?.source_url ?? f.sources[0]!.url" target="_blank" rel="noopener" class="text-sub">維基百科</a>
-              <a v-if="f.location" :href="mapUrl(f)" target="_blank" rel="noopener" class="text-sub">地圖</a>
+              <RouterLink v-if="f.location" :to="mapLink(f)" class="text-sub">在地圖上看</RouterLink>
             </div>
           </div>
         </li>

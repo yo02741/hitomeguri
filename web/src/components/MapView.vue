@@ -22,6 +22,8 @@ const props = defineProps<{
   outline?: GeoJSON.Feature | null
   /** 開啟中的擴充包：用主題色畫在最上層，景點變淡當底圖 */
   pack?: { color: string; points: PackPoint[] } | null
+  /** 不是景點的地點（深度探索的祭典）：一個帶名稱的標記 */
+  pin?: { lng: number; lat: number; label: string } | null
 }>()
 
 export interface PackPoint {
@@ -44,6 +46,7 @@ export interface MapView {
 const emit = defineEmits<{
   select: [id: string]
   moveend: [view: MapView]
+  'close-pin': []
 }>()
 
 const container = ref<HTMLDivElement | null>(null)
@@ -506,6 +509,49 @@ function syncPulse() {
   pulse.setLngLat([p.lng, p.lat])
 }
 
+// 地點標記（祭典等不是景點的位置）：地區色圓點＋呼吸燈＋名稱與關閉鈕
+let pinMarker: maplibregl.Marker | null = null
+
+function syncPin() {
+  if (!map) return
+  pinMarker?.remove()
+  pinMarker = null
+  const p = props.pin
+  if (!p) return
+  const el = document.createElement('div')
+  el.className = 'flex flex-col items-center'
+  const chip = document.createElement('div')
+  chip.className =
+    'mb-1.5 flex items-center gap-1 rounded-full bg-paper py-1 pr-1 pl-3 text-label font-bold text-ink shadow-float'
+  const name = document.createElement('span')
+  name.lang = 'ja'
+  name.textContent = p.label
+  const close = document.createElement('button')
+  close.type = 'button'
+  close.className = 'grid size-6 place-items-center rounded-full text-sub hover:bg-surface hover:text-ink'
+  close.setAttribute('aria-label', '關閉標記')
+  close.innerHTML =
+    '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>'
+  close.addEventListener('click', (e) => {
+    e.stopPropagation()
+    emit('close-pin')
+  })
+  chip.append(name, close)
+  const dot = document.createElement('div')
+  dot.className = 'relative size-4'
+  const core = document.createElement('span')
+  core.className = 'absolute inset-0 rounded-full border-2 border-paper bg-region-strong'
+  const ring = document.createElement('span')
+  ring.className =
+    'absolute inset-0 rounded-full border-[3px] border-region-strong bg-region-strong/25 animate-pulse-ring motion-reduce:hidden'
+  dot.append(ring, core)
+  el.append(chip, dot)
+  // 錨點在圓點中心：整個元素往上移（名稱在上方）
+  pinMarker = new maplibregl.Marker({ element: el, anchor: 'bottom', offset: [0, 8] })
+    .setLngLat([p.lng, p.lat])
+    .addTo(map)
+}
+
 // 照片模式：畫面內有照片的景點各放一個圓形照片 marker（不接收滑鼠事件，點擊仍走地圖）
 const photoPins = new Map<string, maplibregl.Marker>()
 
@@ -621,6 +667,7 @@ onMounted(() => {
     ready = true
     applyColors()
     applyDim()
+    syncPin()
     if (props.bounds) fit(props.bounds, false)
   })
   map.on('moveend', (e: { originalEvent?: Event; user?: boolean }) => {
@@ -632,6 +679,7 @@ onMounted(() => {
 onBeforeUnmount(() => {
   photoPins.clear()
   pulse = null
+  pinMarker = null
   map?.remove()
   map = null
   ready = false
@@ -692,6 +740,13 @@ watch(
     setHover(null)
     applyColors()
     applyDim()
+  },
+)
+
+watch(
+  () => props.pin,
+  () => {
+    if (map && ready) syncPin()
   },
 )
 
