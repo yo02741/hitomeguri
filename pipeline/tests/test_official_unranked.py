@@ -35,12 +35,6 @@ def test_kyototravel_detail():
         '<iframe src="https://www.google.com/maps/embed/v1/place?key=K&q=34.949058,135.762544">'
     )
     assert kyototravel.parse_detail(page) == ("京料理 清和荘", 34.949058, 135.762544)
-    assert kyototravel._SPOT.match(
-        "https://ja.kyoto.travel/tourism/single01.php?category_id=7&tourism_id=12"
-    )
-    assert not kyototravel._SPOT.match(
-        "https://ja.kyoto.travel/tourism/single-hotel01.php?category_id=13&tourism_id=2168"
-    )
 
 
 def test_gotokyo_title():
@@ -79,3 +73,13 @@ def test_official_cache_roundtrip(monkeypatch, tmp_path):
     assert [o.id for o in got] == ["1", "2", "14"]
     assert got[1].categories == ["市場"]
     assert official.load_official("kyoto") is None
+
+
+def test_kyototravel_list():
+    page = (
+        '<p class="cat"><a href="search.php?category_id=7">寺院・神社</a></p>'
+        '<h3 class="tit"><a href="/tourism/single01.php?category_id=7&tourism_id=535">本経寺</a></h3>'
+        '<h3 class="tit"><a href="/tourism/single01.php?category_id=7&amp;tourism_id=518">'
+        "法観寺（八坂の塔）</a></h3>"
+    )
+    assert kyototravel.parse_list(page) == [(7, "535", "本経寺"), (7, "518", "法観寺（八坂の塔）")]
