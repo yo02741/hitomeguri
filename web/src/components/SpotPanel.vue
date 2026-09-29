@@ -120,10 +120,10 @@ function distance(m: number): string {
     </div>
 
     <figure v-if="spot.summary" class="mx-5 mt-3.5 flex flex-col gap-1">
-      <p :lang="spot.summary.lang === 'ja' ? 'ja' : undefined" class="text-body-sm leading-[1.8]">{{ spot.summary.text }}</p>
+      <p :lang="spot.summary.lang === 'zh' ? undefined : spot.summary.lang" class="text-body-sm leading-[1.8]">{{ spot.summary.text }}</p>
       <figcaption class="text-caption text-sub">
         <a :href="spot.summary.source_url" target="_blank" rel="noopener" class="text-sub"
-          >維基百科（{{ spot.summary.lang === 'ja' ? '日文' : '中文' }}）</a
+          >維基百科（{{ { zh: '中文', en: '英文', ja: '日文' }[spot.summary.lang] }}）</a
         >・{{ spot.summary.license }}
       </figcaption>
     </figure>

@@ -49,7 +49,7 @@ export interface Spot {
   featured: boolean
   score: number
   /** 維基百科開頭段落（中文優先，沒有則日文）；顯示時標示出處與授權 */
-  summary?: { text: string; lang: 'zh' | 'ja'; source_url: string; license: string; fetched_at: string }
+  summary?: { text: string; lang: 'zh' | 'en' | 'ja'; source_url: string; license: string; fetched_at: string }
   best_months?: number[]
   stay_minutes?: number
   nearest_stations?: { name: StationName; distance_m: number }[]
@@ -124,7 +124,7 @@ export interface Specialty {
   category: string
   season_months?: number[]
   /** 維基百科開頭段落（中文優先，沒有則日文）；舊資料為 summary_zh */
-  summary?: { text: string; lang: 'zh' | 'ja'; source_url: string; license: string; fetched_at: string }
+  summary?: { text: string; lang: 'zh' | 'en' | 'ja'; source_url: string; license: string; fetched_at: string }
   summary_zh?: string
   images?: SpotImage[]
   sources: { url: string; fetched_at: string }[]
@@ -157,7 +157,7 @@ export interface Festival {
   months?: number[]
   months_source?: 'wikidata' | 'wikipedia'
   location?: { lat: number; lng: number }
-  summary?: { text: string; lang: 'zh' | 'ja'; source_url: string; license: string }
+  summary?: { text: string; lang: 'zh' | 'en' | 'ja'; source_url: string; license: string }
   images?: Array<{ url: string; author: string; license: string; source_url: string }>
   sources: Array<{ url: string; fetched_at: string }>
   views: number

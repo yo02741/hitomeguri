@@ -25,7 +25,7 @@ from pipeline.major import (
 )
 from pipeline.models import Festival, Image, LocalizedName, Location, Source, Summary
 from pipeline.paths import FESTIVALS_DIR
-from pipeline.sources import commons, pageviews, wikidata, wikipedia
+from pipeline.sources import pageviews, wikidata, wikipedia
 
 CATEGORY = "{name}の祭り"
 # 每縣最多收幾個（依日文維基瀏覽量）
@@ -114,30 +114,16 @@ def location_of(ent: wikidata.Entity, places: dict[str, wikidata.Entity]) -> Loc
     return None
 
 
-def _summary(
-    ent: wikidata.Entity, extracts: dict[str, dict[str, str]], today: str
-) -> Summary | None:
-    from pipeline.wiki import _TO_TW, LICENSE, first_paragraph, page_url, strip_ja_note
-
-    for site, lang in (("zhwiki", "zh"), ("jawiki", "ja")):
-        title = ent.sitelinks.get(site)
-        text = first_paragraph(extracts[site].get(title, "")) if title else ""
-        if lang == "zh":
-            text = _TO_TW.convert(strip_ja_note(text))
-        if text:
-            return Summary(
-                text=text,
-                lang=lang,
-                source_url=page_url(site, title or ""),
-                license=LICENSE,
-                fetched_at=today,
-            )
-    return None
-
-
 def seed_festivals(prefs: list[str]) -> str:
     from pipeline.specialties import pref_from_text
-    from pipeline.wiki import _TO_TW, page_url, reading_from_lead
+    from pipeline.wiki import (
+        lead_images,
+        page_url,
+        pick_summary,
+        reading_from_lead,
+        summary_extracts,
+        zh_label,
+    )
 
     today = dt.date.today().isoformat()
     manual = excluded_ids()
@@ -174,13 +160,8 @@ def seed_festivals(prefs: list[str]) -> str:
         ][:MAX_PER_PREF]
         ents_kept = [e for _, e in cands]
         occurs = wikidata.labels_ja(sorted({q for e in ents_kept for q in e.occurs}))
-        extracts = {
-            s: wikipedia.intro_extracts(
-                s, [e.sitelinks[s] for e in ents_kept if e.sitelinks.get(s)]
-            )
-            for s in ("zhwiki", "jawiki")
-        }
-        images = commons.image_info([e.image for e in ents_kept if e.image])
+        extracts = summary_extracts(ents_kept)
+        images = lead_images(ents_kept)
         # 沒有座標的用舉行地點（P276，例：神社）的座標
         places = wikidata.entities(
             sorted({q for e in ents_kept if e.lat is None for q in e.location_items[:1]})
@@ -205,16 +186,13 @@ def seed_festivals(prefs: list[str]) -> str:
                 if not kana and lead:
                     kana = reading_from_lead(lead, ja)
                     kana_source = "wikipedia" if kana else None
-            zh = labels.get("zh-tw") or labels.get("zh-hant")
-            zh = strip_disambiguation(
-                zh or (_TO_TW.convert(labels["zh"]) if labels.get("zh") else ja)
-            )
-            summary = _summary(ent, extracts, today)
+            zh = zh_label(labels, ja)
+            summary = pick_summary(ent, extracts, today)
             sources = [Source(url=page_url("jawiki", title), fetched_at=today)]
             sources.append(Source(url=ent.url, fetched_at=today))
             img = []
-            if ent.image and ent.image in images:
-                i = images[ent.image]
+            if ent.qid in images:
+                i = images[ent.qid]
                 img = [
                     Image(url=i.url, author=i.author, license=i.license, source_url=i.source_url)
                 ]
@@ -231,7 +209,7 @@ def seed_festivals(prefs: list[str]) -> str:
                 months=months,
                 months_source=months_source,
                 location=location_of(ent, places),
-                summary=summary,
+                summary=Summary.model_validate(summary) if summary else None,
                 kana_source=kana_source,
                 images=img,
                 sources=sources,

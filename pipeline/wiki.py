@@ -20,7 +20,7 @@ from pipeline.kana import is_kana, normalize_kana, romaji_with_spacing
 from pipeline.major import log
 from pipeline.models import Spot
 from pipeline.paths import SPOTS_DIR
-from pipeline.sources import wikidata, wikipedia
+from pipeline.sources import commons, wikidata, wikipedia
 
 LICENSE = "CC BY-SA 4.0"
 # 中文維基的 API 轉換不一定套用到內文：一律再做一次簡→繁（臺灣字形）字元轉換，不改用語
@@ -32,6 +32,9 @@ _LEAD_PAREN = re.compile(r"^([^（(。\n]{1,40})[（(]([^）)]{1,120})[）)]")
 # 中文維基開頭常見「（日語：…／…，羅馬化：…）」：與卡片上的名稱、念法重複，刪去
 _ZH_JA_NOTE = re.compile(r"[（(](?:日語|日文|日本語|日语)[:：]")
 _SENTENCE_END = re.compile(r"(?<=。)")
+_SENTENCE_END_EN = re.compile(r"(?<=[.!?])(?=\s)")
+# 簡介的語言順序：中文 → 英文 → 日文（使用者看不懂日文；都取自維基百科原文，不翻譯）
+SUMMARY_SITES = (("zhwiki", "zh"), ("enwiki", "en"), ("jawiki", "ja"))
 
 
 def _norm(s: str) -> str:
@@ -74,17 +77,80 @@ def strip_ja_note(text: str) -> str:
     return text
 
 
-def first_paragraph(text: str, limit: int = SUMMARY_MAX) -> str:
-    """開頭第一段；超過長度時在句號處截斷（不在句中截斷，找不到句號就整段不用）。"""
+def first_paragraph(text: str, limit: int = SUMMARY_MAX, lang: str = "ja") -> str:
+    """開頭第一段；超過長度時在句號處截斷（不在句中截斷，找不到句號就整段不用）。
+
+    英文用「. 」斷句，長度上限放寬（英文字數多）。
+    """
     para = next((p.strip() for p in text.split("\n") if p.strip()), "")
+    if lang == "en":
+        limit = int(limit * 2.5)
     if len(para) <= limit:
         return para
     out = ""
-    for sentence in _SENTENCE_END.split(para):
+    splitter = _SENTENCE_END_EN if lang == "en" else _SENTENCE_END
+    for sentence in splitter.split(para):
         if len(out) + len(sentence) > limit:
             break
         out += sentence
     return out.strip()
+
+
+def zh_label(labels: dict[str, str], fallback: str) -> str:
+    """Wikidata 的中文名稱：繁體標籤優先，其次簡體（轉繁體），都沒有用 fallback。"""
+    from pipeline.major import strip_disambiguation
+
+    for key in ("zh-tw", "zh-hant", "zh-hk", "zh-mo"):
+        if labels.get(key):
+            return strip_disambiguation(labels[key])
+    for key in ("zh", "zh-hans", "zh-cn"):
+        if labels.get(key):
+            return strip_disambiguation(_TO_TW.convert(labels[key]))
+    return fallback
+
+
+def summary_extracts(ents: list[wikidata.Entity]) -> dict[str, dict[str, str]]:
+    """各語言維基的開頭段落（標題 → 文字），給 pick_summary 用。"""
+    out = {}
+    for site, _ in SUMMARY_SITES:
+        titles = [e.sitelinks[site] for e in ents if e.sitelinks.get(site)]
+        out[site] = wikipedia.intro_extracts(site, titles) if titles else {}
+    return out
+
+
+def pick_summary(
+    ent: wikidata.Entity, extracts: dict[str, dict[str, str]], today: str
+) -> dict[str, Any] | None:
+    """簡介：中文 → 英文 → 日文維基的開頭段落（原文，不翻譯）。"""
+    for site, lang in SUMMARY_SITES:
+        title = ent.sitelinks.get(site)
+        text = first_paragraph(extracts.get(site, {}).get(title, ""), lang=lang) if title else ""
+        if lang == "zh":
+            text = _TO_TW.convert(strip_ja_note(text))
+        if text:
+            return {
+                "text": text,
+                "lang": lang,
+                "source_url": page_url(site, title or ""),
+                "license": LICENSE,
+                "fetched_at": today,
+            }
+    return None
+
+
+def lead_images(ents: list[wikidata.Entity]) -> dict[str, commons.ImageInfo]:
+    """照片：Wikidata P18，沒有時用維基條目的代表圖（自由授權、在 Commons 上的）。QID → 圖片。"""
+    names: dict[str, str] = {e.qid: e.image for e in ents if e.image}
+    for site in ("jawiki", "zhwiki", "enwiki"):
+        todo = {
+            e.sitelinks[site]: e.qid for e in ents if e.qid not in names and e.sitelinks.get(site)
+        }
+        if todo:
+            for title, name in wikipedia.page_images(site, list(todo)).items():
+                if title in todo:
+                    names.setdefault(todo[title], name)
+    infos = commons.image_info(list(names.values())) if names else {}
+    return {q: infos[n] for q, n in names.items() if n in infos}
 
 
 def page_url(site: str, title: str) -> str:
@@ -99,38 +165,22 @@ def apply_wiki(spots: list[dict[str, Any]], today: str) -> dict[str, int]:
     ]
     qids = [s["external_ids"]["wikidata"] for s in majors]
     ents = wikidata.entities(qids) if qids else {}
-    titles: dict[str, list[str]] = {"zhwiki": [], "jawiki": []}
-    for e in ents.values():
-        for site in titles:
-            if e.sitelinks.get(site):
-                titles[site].append(e.sitelinks[site])
-    log(f"  維基條目：中文 {len(titles['zhwiki'])}、日文 {len(titles['jawiki'])}")
-    extracts = {site: wikipedia.intro_extracts(site, t) if t else {} for site, t in titles.items()}
+    extracts = summary_extracts(list(ents.values()))
+    log("  維基條目：" + "、".join(f"{site} {len(v)}" for site, v in extracts.items()))
 
-    stats = {"summary_zh": 0, "summary_ja": 0, "kana": 0}
+    stats = {"summary_zh": 0, "summary_en": 0, "summary_ja": 0, "kana": 0}
     for s in majors:
         ent = ents.get(s["external_ids"]["wikidata"])
         if not ent:
             continue
-        # 簡介：中文優先，沒有就日文
-        for site, lang in (("zhwiki", "zh"), ("jawiki", "ja")):
-            title = ent.sitelinks.get(site)
-            text = first_paragraph(extracts[site].get(title, "")) if title else ""
-            if lang == "zh":
-                text = _TO_TW.convert(strip_ja_note(text))
-            if not text:
-                continue
-            url = page_url(site, title)
+        # 簡介：中文 → 英文 → 日文（原文不翻譯）；內容沒變時保留原本的取得日期
+        summary = pick_summary(ent, extracts, today)
+        if summary:
             prev = s.get("summary") or {}
-            s["summary"] = {
-                "text": text,
-                "lang": lang,
-                "source_url": url,
-                "license": LICENSE,
-                "fetched_at": prev.get("fetched_at", today) if prev.get("text") == text else today,
-            }
-            stats[f"summary_{lang}"] += 1
-            break
+            if prev.get("text") == summary["text"]:
+                summary["fetched_at"] = prev.get("fetched_at", today)
+            s["summary"] = summary
+            stats[f"summary_{summary['lang']}"] += 1
         # 念法：只補缺漏的（之前由維基補的每次重算，規則修正時才會更新）
         ja_title = ent.sitelinks.get("jawiki")
         if s.get("kana_source") == "wikipedia":

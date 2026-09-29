@@ -12,7 +12,7 @@ from pipeline.http import get_json
 
 SPARQL = "https://query.wikidata.org/sparql"
 API = "https://www.wikidata.org/w/api.php"
-LANGS = ["ja", "zh-tw", "zh-hant", "zh-hk", "zh", "en"]
+LANGS = ["ja", "zh-tw", "zh-hant", "zh-hk", "zh-mo", "zh", "zh-hans", "zh-cn", "en"]
 
 
 @dataclass

@@ -121,3 +121,34 @@ def wikidata_ids(site: str, titles: list[str]) -> dict[str, str]:
             if qid:
                 out[page["title"]] = qid
     return out
+
+
+def page_images(site: str, titles: list[str]) -> dict[str, str]:
+    """條目的代表圖片檔名（pageimages，只取自由授權的圖）；標題 → 檔名（不含 File:）。"""
+    out: dict[str, str] = {}
+    uniq = list(dict.fromkeys(titles))
+    for i in range(0, len(uniq), 50):
+        chunk = uniq[i : i + 50]
+        data = get_json(
+            _api(site),
+            params={
+                "action": "query",
+                "prop": "pageimages",
+                "piprop": "name",
+                "pilicense": "free",
+                "titles": "|".join(chunk),
+                "redirects": 1,
+                "format": "json",
+            },
+            min_interval=0.3,
+        )
+        q = data.get("query", {})
+        back = {r["to"]: r["from"] for r in q.get("redirects", [])}
+        back.update({n["to"]: n["from"] for n in q.get("normalized", [])})
+        for page in q.get("pages", {}).values():
+            name = page.get("pageimage")
+            if name:
+                title = page["title"]
+                original = back.get(title, title)
+                out[back.get(original, original)] = name
+    return out

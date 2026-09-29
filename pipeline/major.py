@@ -870,16 +870,11 @@ def build_names(d: Draft) -> tuple[LocalizedName, str | None]:
     romaji = next((t[k] for k in ("name:ja-Latn", "name:ja_rm") if is_romaji(t.get(k))), None)
     if not romaji and kana:
         romaji = romaji_with_spacing(kana, en)
-    zh_tw = (
-        labels.get("zh-tw")
-        or labels.get("zh-hant")
-        or labels.get("zh-hk")
-        or t.get("name:zh-Hant")
-        or t.get("name:zh_TW")
-        or labels.get("zh")
-        or t.get("name:zh")
-        or ja
-    )
+    from pipeline.wiki import _TO_TW, zh_label
+
+    osm_zh = t.get("name:zh-Hant") or t.get("name:zh_TW")
+    osm_zh = osm_zh or (_TO_TW.convert(t["name:zh"]) if t.get("name:zh") else None)
+    zh_tw = zh_label(labels, "") or osm_zh or ja
     zh_tw = strip_disambiguation(zh_tw) or ja
     return LocalizedName(ja=ja, kana=kana, romaji=romaji, zh_tw=zh_tw, en=en), kana_source
 

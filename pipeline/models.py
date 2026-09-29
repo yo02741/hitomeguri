@@ -40,7 +40,7 @@ class Summary(StrictModel):
     """簡介：取自維基百科開頭段落（不由 LLM 撰寫）。顯示時須標示出處與授權。"""
 
     text: str
-    lang: Literal["zh", "ja"]
+    lang: Literal["zh", "en", "ja"]
     source_url: str
     license: str
     fetched_at: str

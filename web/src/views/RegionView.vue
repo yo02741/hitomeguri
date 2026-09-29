@@ -149,11 +149,13 @@ function sourceLabel(url: string): string {
                   <span class="flex flex-wrap items-baseline gap-x-2">
                     <span lang="ja" class="text-body font-bold">{{ s.name.ja }}</span>
                     <span v-if="s.name.zh_tw && s.name.zh_tw !== s.name.ja" class="text-body-sm text-sub">{{ s.name.zh_tw }}</span>
+                <!-- 沒有中文名時放英文名（取自 Wikidata） -->
+                <span v-else-if="s.name.en" lang="en" class="text-body-sm text-sub">{{ s.name.en }}</span>
                   </span>
                 </div>
                 <p
                   v-if="s.summary"
-                  :lang="s.summary.lang === 'ja' ? 'ja' : undefined"
+                  :lang="s.summary.lang === 'zh' ? undefined : s.summary.lang"
                   class="line-clamp-4 text-body-sm leading-[1.75]"
                 >{{ s.summary.text }}</p>
                 <p v-else-if="s.summary_zh" class="line-clamp-4 text-body-sm leading-[1.75]">{{ s.summary_zh }}</p>

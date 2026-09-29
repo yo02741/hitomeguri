@@ -39,3 +39,33 @@ def test_strip_ja_note() -> None:
     nested = "元離宮二條城（日語：元離宮二条城〔元離宮二條城〕（もとりきゅう）／x）是城堡。"
     assert strip_ja_note(nested) == "元離宮二條城是城堡。"
     assert strip_ja_note("清水寺是一座寺院（778年）。") == "清水寺是一座寺院（778年）。"
+
+
+def test_zh_label_prefers_traditional_then_converts_simplified():
+    from pipeline.wiki import zh_label
+
+    assert zh_label({"zh-tw": "祇園祭", "zh": "祇园祭"}, "x") == "祇園祭"
+    assert zh_label({"zh-hans": "长崎灯会"}, "x") == "長崎燈會"
+    assert zh_label({"en": "Gion"}, "祇園祭") == "祇園祭"
+
+
+def test_pick_summary_order_zh_en_ja():
+    from pipeline.sources.wikidata import Entity
+    from pipeline.wiki import pick_summary
+
+    ent = Entity(qid="Q1", sitelinks={"jawiki": "祇園祭", "enwiki": "Gion Matsuri"})
+    extracts = {
+        "zhwiki": {},
+        "enwiki": {"Gion Matsuri": "The Gion Festival takes place annually in Kyoto."},
+        "jawiki": {"祇園祭": "祇園祭は、京都市東山区の八坂神社の祭礼。"},
+    }
+    s = pick_summary(ent, extracts, "2026-09-29")
+    assert s and s["lang"] == "en" and s["source_url"].startswith("https://en.wikipedia.org/")
+
+
+def test_first_paragraph_english_cuts_at_sentence():
+    from pipeline.wiki import first_paragraph
+
+    text = "First sentence here. " * 60
+    out = first_paragraph(text, lang="en")
+    assert out.endswith(".") and len(out) <= 550

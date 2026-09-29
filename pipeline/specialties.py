@@ -28,7 +28,7 @@ from pipeline.major import (
 )
 from pipeline.models import Image, LocalizedName, Source, Specialty
 from pipeline.paths import SEED_DIR, SPECIALTIES_DIR
-from pipeline.sources import commons, maff, wikidata, wikipedia
+from pipeline.sources import maff, wikidata, wikipedia
 
 CATEGORY_ALIASES = {"food": "food", "drink": "drink", "craft": "craft", "fruit": "fruit"}
 
@@ -256,12 +256,11 @@ def merge_drafts(drafts: list[Draft]) -> list[Draft]:
 
 def seed_specialties(prefs: list[str]) -> str:
     from pipeline.wiki import (
-        _TO_TW,
-        LICENSE,
-        first_paragraph,
-        page_url,
+        lead_images,
+        pick_summary,
         reading_from_lead,
-        strip_ja_note,
+        summary_extracts,
+        zh_label,
     )
 
     today = dt.date.today().isoformat()
@@ -287,9 +286,8 @@ def seed_specialties(prefs: list[str]) -> str:
     drafts = [d for d in drafts if d.ent or d.maff]
 
     ents = [d.ent for d in drafts if d.ent]
-    titles = {s: [e.sitelinks[s] for e in ents if e.sitelinks.get(s)] for s in ("zhwiki", "jawiki")}
-    extracts = {s: wikipedia.intro_extracts(s, t) if t else {} for s, t in titles.items()}
-    images = commons.image_info([e.image for e in ents if e.image])
+    extracts = summary_extracts(ents)
+    images = lead_images(ents)
 
     by_pref: dict[str, list[dict[str, Any]]] = {p: [] for p in prefs}
     for d in drafts:
@@ -306,33 +304,19 @@ def seed_specialties(prefs: list[str]) -> str:
             if not kana and ja_title:
                 kana = reading_from_lead(extracts["jawiki"].get(ja_title, ""), ja)
                 kana_source = "wikipedia" if kana else None
-        zh = labels.get("zh-tw") or labels.get("zh-hant")
-        zh = strip_disambiguation(zh or (_TO_TW.convert(labels["zh"]) if labels.get("zh") else ja))
+        zh = zh_label(labels, ja)
         summary = None
         sources: list[Source] = []
         if d.maff:
             sources.append(Source(url=d.maff.url, fetched_at=today))
         if ent:
             sources.append(Source(url=ent.url, fetched_at=today))
-            for site, lang in (("zhwiki", "zh"), ("jawiki", "ja")):
-                title = ent.sitelinks.get(site)
-                text = first_paragraph(extracts[site].get(title, "")) if title else ""
-                if lang == "zh":
-                    text = _TO_TW.convert(strip_ja_note(text))
-                if text:
-                    url = page_url(site, title)
-                    summary = {
-                        "text": text,
-                        "lang": lang,
-                        "source_url": url,
-                        "license": LICENSE,
-                        "fetched_at": today,
-                    }
-                    sources.append(Source(url=url, fetched_at=today))
-                    break
+            summary = pick_summary(ent, extracts, today)
+            if summary:
+                sources.append(Source(url=summary["source_url"], fetched_at=today))
         img = []
-        if ent and ent.image and ent.image in images:
-            i = images[ent.image]
+        if ent and ent.qid in images:
+            i = images[ent.qid]
             img = [Image(url=i.url, author=i.author, license=i.license, source_url=i.source_url)]
         # 對到 Wikidata 的用 QID；只有郷土料理的用料理頁 id
         key = d.qid or (f"maff-{d.maff.id}" if d.maff else "")

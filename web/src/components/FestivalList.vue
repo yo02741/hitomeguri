@@ -111,12 +111,14 @@ function mapLink(f: Festival) {
               <span class="flex flex-wrap items-baseline gap-x-2">
                 <span lang="ja" class="text-body font-bold">{{ f.name.ja }}</span>
                 <span v-if="f.name.zh_tw && f.name.zh_tw !== f.name.ja" class="text-body-sm text-sub">{{ f.name.zh_tw }}</span>
+                <!-- 沒有中文名時放英文名（取自 Wikidata） -->
+                <span v-else-if="f.name.en" lang="en" class="text-body-sm text-sub">{{ f.name.en }}</span>
                 <span v-if="monthsText(f)" class="font-latin text-caption font-bold">{{ monthsText(f) }}</span>
               </span>
             </div>
             <p
               v-if="f.summary"
-              :lang="f.summary.lang === 'ja' ? 'ja' : undefined"
+              :lang="f.summary.lang === 'zh' ? undefined : f.summary.lang"
               class="line-clamp-3 text-body-sm leading-[1.75]"
             >{{ f.summary.text }}</p>
             <div class="mt-auto flex flex-wrap gap-x-3 text-caption text-sub">
