@@ -2,7 +2,7 @@
 
 ## 需要你做的事
 
-- 目前沒有。`ANTHROPIC_API_KEY` 只在未來排程要用 Claude 查證（例：航線）時才需要，簡介與念法改從網路來源取得，不需要 key。
+- 在 GitHub repo 的 Settings → Secrets and variables → Actions 新增 `ANTHROPIC_API_KEY`（Claude API 金鑰）。英文簡介翻成中文（`translate-summaries`）要用；設好後在 Actions 跑 seed-pack，command 選 translate-summaries，prefectures 填 20 先試翻 20 筆。
 
 ## 還沒做到的部分
 
