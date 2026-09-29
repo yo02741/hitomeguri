@@ -15,9 +15,11 @@ import {
   fetchIndex,
   fetchMap,
   fetchPack,
+  fetchRail,
   fetchSearch,
   type MapSpot,
   type PackItem,
+  type RailBundle,
   type SeasonData,
   type Spot,
 } from '../services/bundles'
@@ -129,6 +131,24 @@ export const useCatalogStore = defineStore('catalog', () => {
     })
   }
 
+  /** 鐵路路線圖層：一縣一檔，打開鐵路開關時才載入 */
+  const rail = shallowRef<Record<string, RailBundle | null>>({})
+  async function loadRail(pref: string): Promise<RailBundle | null> {
+    await loadIndex()
+    const meta = index.value?.rail?.[pref]
+    if (!meta) return null
+    if (pref in rail.value) return rail.value[pref] ?? null
+    return once(`rail:${pref}`, async () => {
+      try {
+        rail.value[pref] = await fetchRail(pref, meta.version)
+      } catch {
+        rail.value[pref] = null
+      }
+      triggerRef(rail)
+      return rail.value[pref] ?? null
+    })
+  }
+
   /** 深度探索「祭典」：一縣一檔，開深度探索頁時載入 */
   const festivals = shallowRef<Record<string, Festival[]>>({})
   async function loadFestivals(pref: string): Promise<Festival[]> {
@@ -183,7 +203,7 @@ export const useCatalogStore = defineStore('catalog', () => {
 
   return {
     loadSearch,
-    index, mapSpots, featured, loadFeatured, details, specialties, flights, seasons, festivals, loadFestivals, loadExtras, loadIndex, available,
+    index, mapSpots, featured, loadFeatured, details, specialties, flights, seasons, festivals, loadFestivals, rail, loadRail, loadExtras, loadIndex, available,
     loadMap, loadAllMaps, loadDetail, getSpot, packs, loadPack,
   }
 })

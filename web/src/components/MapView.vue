@@ -24,6 +24,8 @@ const props = defineProps<{
   pack?: { color: string; points: PackPoint[] } | null
   /** 不是景點的地點（深度探索的祭典）：一個帶名稱的標記 */
   pin?: { lng: number; lat: number; label: string } | null
+  /** 鐵路圖層：路線（官方路線色）與車站；null 為關閉 */
+  rail?: { lines: GeoJSON.FeatureCollection; stations: GeoJSON.FeatureCollection } | null
 }>()
 
 export interface PackPoint {
@@ -58,6 +60,9 @@ const PACK_SOURCE = 'pack'
 // 選取中的景點另外放一個不群集的來源：不會被併進群集數字裡而看不見
 const SELECTED_SOURCE = 'selected-spot'
 const OUTLINE_SOURCE = 'outline'
+const RAIL_SOURCE = 'rail'
+const STATION_SOURCE = 'rail-stations'
+const EMPTY: GeoJSON.FeatureCollection = { type: 'FeatureCollection', features: [] }
 
 function outlineData(f: GeoJSON.Feature | null | undefined): GeoJSON.FeatureCollection {
   return { type: 'FeatureCollection', features: f ? [f] : [] }
@@ -212,6 +217,15 @@ function applyColors() {
   map.setPaintProperty('selected', 'circle-color', ink)
   map.setPaintProperty('selected', 'circle-stroke-color', strong)
   map.setPaintProperty('outline-fill', 'fill-color', token('--region-base'))
+  const rail = token('--color-map-rail')
+  map.setPaintProperty('rail-casing', 'line-color', paper)
+  map.setPaintProperty('rail-line', 'line-color', ['coalesce', ['get', 'c'], rail])
+  map.setPaintProperty('rail-labels', 'text-color', ink)
+  map.setPaintProperty('rail-labels', 'text-halo-color', paper)
+  map.setPaintProperty('rail-stations', 'circle-color', paper)
+  map.setPaintProperty('rail-stations', 'circle-stroke-color', ink)
+  map.setPaintProperty('rail-station-labels', 'text-color', ink)
+  map.setPaintProperty('rail-station-labels', 'text-halo-color', paper)
   map.setPaintProperty('outline-line', 'line-color', strong)
   const packColor = token(`--color-t-${props.pack?.color ?? 'major'}`)
   map.setPaintProperty('pack-clusters', 'circle-color', packColor)
@@ -251,6 +265,63 @@ function addLayers() {
       // 縣界是簡化過的線（約 400 m 精度），拉很近時和海岸線對不齊：淡出
       'line-opacity': ['interpolate', ['linear'], ['zoom'], 11, 0.9, 13, 0.35],
     },
+  })
+  // 鐵路：縣界之上、景點之下。路線用資料裡的官方路線色，沒有就用地圖的鐵路色
+  map.addSource(RAIL_SOURCE, { type: 'geojson', data: props.rail?.lines ?? EMPTY })
+  map.addSource(STATION_SOURCE, { type: 'geojson', data: props.rail?.stations ?? EMPTY })
+  map.addLayer({
+    id: 'rail-casing',
+    type: 'line',
+    source: RAIL_SOURCE,
+    layout: { 'line-join': 'round', 'line-cap': 'round' },
+    paint: { 'line-width': ['interpolate', ['linear'], ['zoom'], 8, 2.5, 12, 5, 16, 9] },
+  })
+  map.addLayer({
+    id: 'rail-line',
+    type: 'line',
+    source: RAIL_SOURCE,
+    layout: { 'line-join': 'round', 'line-cap': 'round' },
+    paint: { 'line-width': ['interpolate', ['linear'], ['zoom'], 8, 1.2, 12, 3, 16, 6] },
+  })
+  map.addLayer({
+    id: 'rail-labels',
+    type: 'symbol',
+    source: RAIL_SOURCE,
+    minzoom: 12,
+    layout: {
+      'symbol-placement': 'line',
+      'text-field': ['get', 'n'],
+      'text-font': FONT_REGULAR,
+      'text-size': 11,
+      'symbol-spacing': 320,
+      'text-optional': true,
+    },
+    paint: { 'text-halo-width': 1.5 },
+  })
+  map.addLayer({
+    id: 'rail-stations',
+    type: 'circle',
+    source: STATION_SOURCE,
+    minzoom: 12,
+    paint: {
+      'circle-radius': ['interpolate', ['linear'], ['zoom'], 12, 2.5, 16, 5],
+      'circle-stroke-width': 1.5,
+    },
+  })
+  map.addLayer({
+    id: 'rail-station-labels',
+    type: 'symbol',
+    source: STATION_SOURCE,
+    minzoom: 13,
+    layout: {
+      'text-field': ['get', 'n'],
+      'text-font': FONT_REGULAR,
+      'text-size': 11,
+      'text-offset': [0, 0.8],
+      'text-anchor': 'top',
+      'text-optional': true,
+    },
+    paint: { 'text-halo-width': 1.5 },
   })
   map.addSource(SOURCE, {
     type: 'geojson',
@@ -740,6 +811,15 @@ watch(
     setHover(null)
     applyColors()
     applyDim()
+  },
+)
+
+watch(
+  () => props.rail,
+  (rail) => {
+    if (!map || !ready) return
+    ;(map.getSource(RAIL_SOURCE) as GeoJSONSource | undefined)?.setData(rail?.lines ?? EMPTY)
+    ;(map.getSource(STATION_SOURCE) as GeoJSONSource | undefined)?.setData(rail?.stations ?? EMPTY)
   },
 )
 

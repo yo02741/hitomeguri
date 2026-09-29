@@ -5,6 +5,22 @@ import { PACKS } from '../data/packs'
 import type { SearchHit } from '../services/search'
 
 const PACKS_KEY = 'hitomeguri:packs'
+const RAIL_KEY = 'hitomeguri:rail'
+
+function loadFlag(key: string): boolean {
+  try {
+    return localStorage.getItem(key) === '1'
+  } catch {
+    return false
+  }
+}
+function saveFlag(key: string, on: boolean) {
+  try {
+    localStorage.setItem(key, on ? '1' : '0')
+  } catch {
+    /* 略過 */
+  }
+}
 
 function loadEnabled(): string[] {
   try {
@@ -46,6 +62,9 @@ export const useExploreStore = defineStore('explore', () => {
       ? collapsed.value.filter((k) => k !== key)
       : [...collapsed.value, key]
   }
+  // 鐵路圖層（地圖上方的開關）；存在這台瀏覽器
+  const rail = ref(loadFlag(RAIL_KEY))
+  watch(rail, (on) => saveFlag(RAIL_KEY, on))
   // header 搜尋選到的結果，由探索頁接手（進入該縣、選取景點）
   const searchPick = shallowRef<SearchHit | null>(null)
 
@@ -70,7 +89,7 @@ export const useExploreStore = defineStore('explore', () => {
   }
 
   return {
-    activePref, category, pack, packGroup, enabledPacks, searchPick, collapsed,
+    activePref, category, pack, packGroup, enabledPacks, searchPick, collapsed, rail,
     setActivePref, togglePack, setPackEnabled, toggleCollapsed,
   }
 })

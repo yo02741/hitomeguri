@@ -65,6 +65,8 @@ export interface BundleIndex {
   packs?: Record<string, { count: number; version: string }>
   /** search.json 的版本 */
   search?: string
+  /** 鐵路路線圖層：縣 → 版本 */
+  rail?: Record<string, { version: string }>
   /** 深度探索「祭典」：縣 → 版本 */
   festivals?: Record<string, { count: number; version: string }>
 }
@@ -147,6 +149,16 @@ export async function fetchSpecialties(): Promise<Specialty[]> {
   } catch {
     return []
   }
+}
+
+/** 鐵路路線圖層（pipeline/build_bundles.py build_rail）：n 名稱、e 英文、c 路線色、k 種類、o 營運者、g 線段 */
+export interface RailBundle {
+  lines: Array<{ n: string; e?: string; c?: string; k: string; o?: string; g: number[][][] }>
+  stations: Array<{ n: string; e?: string; lat: number; lng: number }>
+}
+
+export function fetchRail(pref: string, version: string): Promise<RailBundle> {
+  return getJson<RailBundle>(`rail/${pref}.json?v=${version}`)
 }
 
 /** 深度探索「祭典」（pipeline/models.py Festival） */

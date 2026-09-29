@@ -14,7 +14,7 @@ import { categoryGroup } from '../data/categories'
 import { PACKS, packByKey, packOfId } from '../data/packs'
 import { JAPAN_BOUNDS } from '../map/style'
 import { regionOf } from '../data/regions'
-import type { MapSpot, PackItem, Spot } from '../services/bundles'
+import type { MapSpot, PackItem, RailBundle, Spot } from '../services/bundles'
 import {
   distanceM,
   loadPrefectureShapes,
@@ -163,6 +163,44 @@ function union(
   if (!a || !b) return a ?? b
   return [Math.min(a[0], b[0]), Math.min(a[1], b[1]), Math.max(a[2], b[2]), Math.max(a[3], b[3])]
 }
+
+// 鐵路圖層：開關打開且在地區頁時載入該縣的路線與車站，轉成地圖用的 GeoJSON
+const railBundle = shallowRef<RailBundle | null>(null)
+watch(
+  () => [explore.rail, props.pref] as const,
+  async ([on, pref]) => {
+    if (!on || !pref || !regionOf(pref)) {
+      railBundle.value = null
+      return
+    }
+    const data = await catalog.loadRail(pref)
+    if (explore.rail && props.pref === pref) railBundle.value = data
+  },
+  { immediate: true },
+)
+const railAvailable = computed(() => Boolean(props.pref && catalog.index?.rail?.[props.pref]))
+const railMap = computed(() => {
+  const r = railBundle.value
+  if (!r) return null
+  return {
+    lines: {
+      type: 'FeatureCollection' as const,
+      features: r.lines.map((l) => ({
+        type: 'Feature' as const,
+        properties: { n: l.n, ...(l.c ? { c: l.c } : {}), k: l.k },
+        geometry: { type: 'MultiLineString' as const, coordinates: l.g },
+      })),
+    },
+    stations: {
+      type: 'FeatureCollection' as const,
+      features: r.stations.map((st) => ({
+        type: 'Feature' as const,
+        properties: { n: st.n },
+        geometry: { type: 'Point' as const, coordinates: [st.lng, st.lat] },
+      })),
+    },
+  }
+})
 
 // 地點標記（深度探索的祭典「地圖」）：?at=緯度,經度&label=名稱
 const pin = computed(() => {
@@ -386,6 +424,7 @@ function onMoveEnd(view: MapViewState) {
         :pack="packMap"
         :outline="outline"
         :pin="pin"
+        :rail="railMap"
         @select="select"
         @close-pin="closePin"
         @moveend="onMoveEnd"
@@ -407,6 +446,22 @@ function onMoveEnd(view: MapViewState) {
             <path d="M9 5l7 7-7 7" />
           </svg>
         </RouterLink>
+        <!-- 鐵路圖層開關：路線與車站，和擴充包可以同時開 -->
+        <button
+          v-if="pref && regionOf(pref)"
+          type="button"
+          class="flex h-9 shrink-0 items-center gap-1.5 rounded-full px-3.5 text-label font-bold shadow-float disabled:opacity-50"
+          :class="explore.rail ? 'bg-ink text-paper' : 'bg-paper text-ink hover:bg-surface'"
+          :aria-pressed="explore.rail"
+          :disabled="!railAvailable"
+          @click="explore.rail = !explore.rail"
+        >
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="6" y="3" width="12" height="13" rx="3" />
+            <path d="M6 10h12M9 16l-2 5M15 16l2 5M9.5 13h.01M14.5 13h.01" />
+          </svg>
+          鐵路
+        </button>
         <span v-if="pref && regionOf(pref)" class="h-9 w-px shrink-0 bg-line" aria-hidden="true"></span>
         <PackBar :pref="pref && regionOf(pref) ? pref : null" />
       </div>
