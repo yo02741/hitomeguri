@@ -95,5 +95,9 @@ jobs:
 
           $(cat /tmp/report.md)
           MSG
+          # 跑的期間工作分支若改過 workflow 檔，直接推會被拒（GitHub App 沒有 workflows 權限）：
+          # 先併入最新的工作分支（資料衝突時保留這次的結果）
+          git fetch -q origin "$GITHUB_REF_NAME"
+          git merge -q --no-edit -X ours "origin/$GITHUB_REF_NAME"
           git push -q origin "$branch"
           echo "推到 \`$branch\`" >> "$GITHUB_STEP_SUMMARY"
