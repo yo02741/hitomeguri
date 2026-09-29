@@ -133,6 +133,13 @@
     outline: 2px solid var(--region-strong);
     outline-offset: 2px;
   }
+  /* Tailwind v4 的 preflight 讓 button 用預設游標；可以按的都改成手指 */
+  button:not(:disabled),
+  [role='button']:not([aria-disabled='true']),
+  summary,
+  label[for] {
+    cursor: pointer;
+  }
   @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after {
       animation-duration: 0.01ms !important;
