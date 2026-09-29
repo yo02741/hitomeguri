@@ -1,11 +1,11 @@
 # 進度與交接（給下一段工作的 Claude）
 
-使用者指示：Phase 1 完成後直接繼續 Phase 2、3（不用等確認）。工作分支 `claude/charming-hawking-gngkes`（也是 repo 預設分支，GitHub Pages 由它部署）。
+使用者指示：Phase 1 完成後直接繼續 Phase 2、3（不用等確認）。工作分支 `main`（repo 預設分支，GitHub Pages 由它部署；原本叫 `claude/charming-hawking-gngkes`，2026-09-29 改名）。
 
 ## 環境限制
 - 沙箱連不到 Wikidata / OSM / Wikimedia / openfreemap；raw.githubusercontent.com 與 api.github.com 可以。
 - 外部資料採集一律在 GitHub Actions：`seed-region.yml`（輸入縣 slug，各縣平行，結果推到 `pipeline/seed-<run_number>`）、`enrich.yml`（需 `ANTHROPIC_API_KEY` secret，使用者尚未設定）。
-- 觸發：GitHub MCP `actions_run_trigger`（workflow_id=seed-region.yml, ref=工作分支）。等待：`curl https://api.github.com/repos/yo02741/hitomeguri/actions/runs/<id>` 看 status。
+- 觸發：GitHub MCP `actions_run_trigger`（workflow_id=seed-region.yml, ref=main）。等待：`curl https://api.github.com/repos/yo02741/hitomeguri/actions/runs/<id>` 看 status。
 - 結果檢查：`git fetch origin pipeline/seed-N`，看 commit 訊息的報告，再 `git checkout origin/pipeline/seed-N -- data/spots` 合併。
 
 ## Phase 1 狀態

@@ -38,12 +38,12 @@ uv venv && uv pip install -e ".[dev]" # pipeline 環境
 Claude Code 的雲端沙箱連不到 Wikidata、OSM、Wikimedia，也沒有 Claude API key，所以採集與補全放在 Actions：
 - `seed-region.yml`（手動）：輸入縣 slug，各縣平行採集，結果推到 `pipeline/seed-<run>` 分支。command=seed-region 會連同維基百科簡介與念法一起做；seed-wiki 只更新已有大點的縣的簡介與念法（`pipeline/wiki.py`）。
 - `verify-flights.yml`（手動，需 `ANTHROPIC_API_KEY` secret）：帶 web search 查證直飛航線，留待排程使用。原本 LLM 補簡介／假名的 enrich 已移除（違反「內容來自實際來源」原則）。
-- 產出分支檢查報告（commit 訊息與 Actions 摘要）後再合併進工作分支。
+- 產出分支檢查報告（commit 訊息與 Actions 摘要）後再合併進 `main`。
 
 ## 分支
-- `claude/charming-hawking-gngkes`：目前唯一的工作分支，也是 GitHub 預設分支；推上去就會部署 GitHub Pages。
+- `main`：預設分支，也是工作分支；推上去就會部署 GitHub Pages（`pages.yml` 只部署預設分支）。
 - `pipeline/<指令>-<run 編號>`（例：`pipeline/seed-region-23`）：Actions 採集結果的暫存審核分支。檢查報告後用
-  `git checkout origin/pipeline/... -- data/...` 合併進工作分支，之後用 `cleanup-branches.yml`（手動）刪除；
+  `git checkout origin/pipeline/... -- data/...` 合併進 `main`，之後用 `cleanup-branches.yml`（手動）刪除；
   還沒合併的填在 keep 保留。Claude Code 的雲端 session 只能推自己的工作分支，不能直接刪別的分支。
 
 ## 結構速覽
