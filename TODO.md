@@ -2,7 +2,7 @@
 
 ## 需要你做的事
 
-- Firebase Hosting 自動部署：建立服務帳戶金鑰，存成 Actions secret `FIREBASE_SERVICE_ACCOUNT`；設定 `VITE_FIREBASE_*` 四個 Actions variables（Google 登入也要用）。沒有金鑰時 `firebase-hosting.yml` 只建置不部署。
+- Google 登入：在 Actions variables 新增 `VITE_FIREBASE_API_KEY`、`VITE_FIREBASE_APP_ID`（專案 ID 與 authDomain 已有預設值 hitomeguri-7d87a），並在 Firebase Authentication 啟用 Google 登入。
 - 英文簡介翻成中文（`translate-summaries`）程式已寫好，使用者決定先不翻；日後要用時在 Actions secrets 新增 `ANTHROPIC_API_KEY`。
 
 ## 還沒做到的部分

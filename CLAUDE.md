@@ -11,7 +11,7 @@
 ## 工作規則（PLAN.md §11）
 - 一次只做一個 Phase；每個 Phase 結束時總結做了什麼、還缺什麼，等使用者確認再繼續。
 - **不得引入任何需要 Firebase Blaze 方案的服務**（Cloud Functions、Cloud Storage、Extensions 等）；需要後端運算一律用 GitHub Actions 或本機 script。
-- 開發與測試一律使用 Firebase Emulator；**未經使用者同意不要執行 `firebase deploy`**。靜態站台由 Actions 部署：Firebase Hosting（`firebase-hosting.yml`，使用者同意推 main 就部署；只部署 Hosting）與 GitHub Pages（`pages.yml`）。
+- 開發與測試一律使用 Firebase Emulator；**未經使用者同意不要執行 `firebase deploy`**。靜態站台由 Actions 部署：Firebase Hosting（https://hitomeguri-7d87a.web.app/ ，`firebase-hosting.yml`，使用者同意推 main 就部署；只部署 Hosting）與 GitHub Pages（`pages.yml`）。
 - 任何 API key、service account 不可 commit；本機用 `.env` / `.env.local`（已在 .gitignore），CI 用 GitHub Actions secrets 或 variables。前端不得包含 Claude API key。
 - 外部資料採集：遵守各站 robots.txt 與使用條款、設定合理 rate limit 與 User-Agent；不爬 traveldoko、Google Maps、食べログ。
 - 每筆資料都要保留來源 URL 與取得時間。**不用 LLM 產生網路上沒有的內容**（使用者決定）：簡介、念法等一律取自實際來源（維基百科、Wikidata、OSM…），沒有就留空。LLM 只用於查證、擷取與翻譯實際來源的原文（例：帶 web search 查航線；英文簡介翻成繁體中文，介面英文一行、中文一行，`translate-summaries`），不自己寫介紹；結果必須附來源 URL。這類工作在 Actions 上跑，需要 `ANTHROPIC_API_KEY` secret。

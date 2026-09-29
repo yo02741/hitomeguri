@@ -1,6 +1,6 @@
 name: Firebase Hosting
 
-# main 有變更時把前端部署到 Firebase Hosting（https://<專案 ID>.web.app/）。只用 Hosting（Spark 免費方案）。
+# main 有變更時把前端部署到 Firebase Hosting（https://hitomeguri-7d87a.web.app/）。只用 Hosting（Spark 免費方案）。
 # 需要：
 #   secrets.FIREBASE_SERVICE_ACCOUNT  服務帳戶 JSON 金鑰（角色：Firebase Hosting 管理員、API 金鑰檢視者）
 #   vars.VITE_FIREBASE_*               Firebase Web 設定（與 pages.yml 共用）
