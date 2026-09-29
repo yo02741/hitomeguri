@@ -2,8 +2,9 @@
 import { computed, ref, watch } from 'vue'
 
 import type { Spot } from '../services/bundles'
-import { prefectureFullName } from '../data/regions'
+import { googleMapsUrl } from '../services/maps'
 import { canSpeak, speakJa } from '../services/tts'
+import SpotActions from './SpotActions.vue'
 import SummaryText from './SummaryText.vue'
 
 export interface NearbyPack {
@@ -23,12 +24,8 @@ const image = computed(() => (imageFailed.value ? undefined : props.spot?.images
 const category = computed(() => props.spot?.tags.filter((t) => !t.startsWith('guide-')) ?? [])
 const station = computed(() => props.spot?.nearest_stations?.[0])
 const showZh = computed(() => props.spot && props.spot.name.zh_tw !== props.spot.name.ja)
-const mapsUrl = computed(() => {
-  if (!props.spot) return ''
-  // 名稱＋縣名搜尋，讓 Google Maps 對到地點頁（附座標反而只會落在座標點上）
-  const q = encodeURIComponent(`${props.spot.name.ja} ${prefectureFullName(props.spot.prefecture)}`)
-  return `https://www.google.com/maps/search/?api=1&query=${q}`
-})
+const mapsUrl = computed(() => (props.spot ? googleMapsUrl(props.spot.name.ja, props.spot.prefecture) : ''))
+const spotRef = computed(() => (props.spot ? { id: props.spot.id, pref: props.spot.prefecture, name: props.spot.name.ja } : null))
 
 function sourceLabel(url: string): string {
   try {
@@ -158,7 +155,8 @@ function distance(m: number): string {
       <a v-for="s in spot.sources" :key="s.url" :href="s.url" target="_blank" rel="noopener" class="text-sub">{{ sourceLabel(s.url) }}</a>
     </div>
 
-    <div class="mt-auto flex gap-2 border-t border-line px-5 pt-3.5 pb-5">
+    <div class="mt-auto flex flex-col gap-2 border-t border-line px-5 pt-3.5 pb-5">
+      <SpotActions v-if="spotRef" :spot="spotRef" />
       <a
         :href="mapsUrl"
         target="_blank"

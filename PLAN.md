@@ -414,6 +414,8 @@ users/{uid}/lists/{listId}
 
 ### Phase 5 — 個人化與匯出
 - 收藏、去過、清單；CSV / KML / Google Maps 轉乘連結。
+- 實作（2026-09-29）：`web/src/stores/marks.ts`、`components/SpotActions.vue`、`views/MeView.vue`、`ListView.vue`、`LogView.vue`、`services/export.ts`。
+  CSV、KML 每個景點附 Google Maps 連結；有順序的轉乘路線連結放到 Phase 7（行程的每一天）。
 - ✅ 驗收：登入後收藏幾個點 → 匯出 KML 可成功匯入 Google My Maps。
 
 ### Phase 6 — 自動化排程 + PR 審核流程 + 擴展全國

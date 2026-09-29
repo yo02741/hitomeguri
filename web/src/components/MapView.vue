@@ -26,6 +26,8 @@ const props = defineProps<{
   pin?: { lng: number; lat: number; label: string } | null
   /** 鐵路圖層：路線（官方路線色）與車站；null 為關閉 */
   rail?: { lines: GeoJSON.FeatureCollection; stations: GeoJSON.FeatureCollection } | null
+  /** 使用者的收藏、去過（景點 id → 狀態）：收藏畫外圈，去過在右上疊印章色小圓點 */
+  marked?: Record<string, { favorite?: boolean; visited?: boolean }> | null
 }>()
 
 export interface PackPoint {
@@ -166,6 +168,8 @@ function toGeoJSON(spots: MapSpot[]): GeoJSON.FeatureCollection<GeoJSON.Point> {
         // 顯示用主題：大點為空字串（墨色），主題景點取第一個主題（主題層暫停，map bundle 目前只有大點）
         th: s.k === 'major' ? '' : (s.t?.[0] ?? ''),
         i: s.i ?? '',
+        fv: props.marked?.[s.id]?.favorite ? 1 : 0,
+        vs: props.marked?.[s.id]?.visited ? 1 : 0,
       },
     })),
   }
@@ -186,10 +190,11 @@ function packGeoJSON(points: PackPoint[]): GeoJSON.FeatureCollection<GeoJSON.Poi
 function applyDim() {
   if (!map || !ready) return
   const o = props.pack ? DIM : 1
-  for (const layer of ['clusters', 'spots']) {
+  for (const layer of ['clusters', 'spots', 'spot-visited']) {
     map.setPaintProperty(layer, 'circle-opacity', o)
     map.setPaintProperty(layer, 'circle-stroke-opacity', o)
   }
+  map.setPaintProperty('spot-fav', 'circle-stroke-opacity', o)
   map.setPaintProperty('cluster-count', 'text-opacity', o)
   map.setLayoutProperty('spot-labels', 'visibility', props.pack ? 'none' : 'visible')
   syncPhotos()
@@ -212,6 +217,9 @@ function applyColors() {
     map.setPaintProperty(layer, 'circle-color', ['case', ['==', ['get', 'm'], 1], ink, paper])
     map.setPaintProperty(layer, 'circle-stroke-color', stroke)
   }
+  map.setPaintProperty('spot-fav', 'circle-stroke-color', strong)
+  map.setPaintProperty('spot-visited', 'circle-color', token('--color-visited'))
+  map.setPaintProperty('spot-visited', 'circle-stroke-color', paper)
   map.setPaintProperty('spot-labels', 'text-color', ink)
   map.setPaintProperty('spot-labels', 'text-halo-color', paper)
   map.setPaintProperty('selected', 'circle-color', ink)
@@ -352,6 +360,14 @@ function addLayers() {
       'text-size': 12,
     },
   })
+  // 收藏：圓點外面一圈（地區強調色）
+  map.addLayer({
+    id: 'spot-fav',
+    type: 'circle',
+    source: SOURCE,
+    filter: ['all', ['!', ['has', 'point_count']], ['==', ['get', 'fv'], 1]],
+    paint: { 'circle-radius': 10.5, 'circle-opacity': 0, 'circle-stroke-width': 2.5 },
+  })
   map.addLayer({
     id: 'spots',
     type: 'circle',
@@ -361,6 +377,14 @@ function addLayers() {
       'circle-radius': 6,
       'circle-stroke-width': 2,
     },
+  })
+  // 去過：右上疊一個印章色小圓點（DESIGN.md §7.12）
+  map.addLayer({
+    id: 'spot-visited',
+    type: 'circle',
+    source: SOURCE,
+    filter: ['all', ['!', ['has', 'point_count']], ['==', ['get', 'vs'], 1]],
+    paint: { 'circle-radius': 4, 'circle-translate': [6, -6], 'circle-stroke-width': 1.5 },
   })
   map.addLayer({
     id: 'spot-labels',
@@ -658,7 +682,7 @@ function syncPhotos() {
 
 function photoEl(id: string, thumb: string, score: number): HTMLElement {
   const el = document.createElement('div')
-  el.className = `pointer-events-none overflow-hidden rounded-full border-[3px] bg-placeholder shadow-float ${
+  el.className = `pointer-events-none relative rounded-full border-[3px] bg-placeholder shadow-float ${
     id === props.selectedId ? 'border-region-strong' : 'border-paper'
   }`
   el.style.width = `${PHOTO_PIN}px`
@@ -671,14 +695,36 @@ function photoEl(id: string, thumb: string, score: number): HTMLElement {
   img.alt = ''
   img.referrerPolicy = 'no-referrer'
   img.decoding = 'async'
-  img.className = 'size-full object-cover'
+  img.className = 'size-full rounded-full object-cover'
   img.onerror = () => {
     failedThumbs.add(thumb)
     photoPins.get(id)?.remove()
     photoPins.delete(id)
   }
   el.append(img)
+  decoratePhoto(el, id)
   return el
+}
+
+// 照片 marker 上的收藏、去過記號：收藏左上星形、去過右上印章色小圓點
+const STAR =
+  '<svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.9 5.9 6.5 1-4.7 4.6 1.1 6.5L12 17.4l-5.8 3.1 1.1-6.5-4.7-4.6 6.5-1z"/></svg>'
+function decoratePhoto(el: HTMLElement, id: string) {
+  el.querySelectorAll('[data-badge]').forEach((b) => b.remove())
+  const m = props.marked?.[id]
+  if (m?.favorite) {
+    const fav = document.createElement('span')
+    fav.dataset.badge = 'fav'
+    fav.className = 'absolute -top-1.5 -left-1.5 grid size-5 place-items-center rounded-full bg-paper text-region-strong shadow-marker'
+    fav.innerHTML = STAR
+    el.append(fav)
+  }
+  if (m?.visited) {
+    const vis = document.createElement('span')
+    vis.dataset.badge = 'visited'
+    vis.className = 'absolute -top-1 -right-1 size-3.5 rounded-full border-2 border-paper bg-visited'
+    el.append(vis)
+  }
 }
 
 function positionHover() {
@@ -777,6 +823,15 @@ watch(
     if (!map || !ready) return
     syncSources()
     setHover(null)
+  },
+)
+
+watch(
+  () => props.marked,
+  () => {
+    if (!map || !ready) return
+    syncSources()
+    for (const [id, m] of photoPins) decoratePhoto(m.getElement(), id)
   },
 )
 

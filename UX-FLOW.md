@@ -138,11 +138,21 @@ users/{uid}/lists/{listId}
   created_at
 }
 
-// Mark
-{ favorite?: boolean, visited_at?: string, note?: string }
+// Mark（Phase 5 實作：web/src/stores/marks.ts）
+{
+  pref: string, name: string,                 // 景點所在縣、日文名：列表與匯出只載入相關縣的 bundle；景點從目錄移除時仍認得出來
+  favorite?: true,
+  visited?: true, visited_on?: "YYYY-MM-DD",  // 去過；日期可以留空
+  lists?: string[],                           // 所屬清單 id（上限 50）
+  updated_at
+}
+// 收藏、去過、清單三者都沒有時刪掉文件。
+
+// List
+{ name: string, created_at, updated_at }       // 景點歸屬記在 Mark.lists；刪除清單時一併移除
 ```
 
-- **「去過」是推導出來的**：`status: done` 的 trip 裡所有 stops ∪ marks 裡有 `visited_at` 的景點。
+- **「去過」是推導出來的**：`status: done` 的 trip 裡所有 stops ∪ marks 裡 `visited` 的景點。
 - 景點卡片按「去過」時：如果日期落在某個 trip 期間，詢問是否加入那趟；否則只寫 mark。
 - 自訂地點**永遠不進公開目錄**，pipeline 不讀取 users 資料。
 
@@ -224,7 +234,8 @@ users/{uid}/lists/{listId}
 
 ### F. 帳號與設定
 - **F0** 我想隨時知道自己有沒有登入、一鍵進到帳號設定。
-  ✅ 右上角固定一個帳號位置：未登入是「登入」按鈕；登入後是 Google 大頭貼，點開向下展開帳號選單（名稱與 email、我的行程、旅行紀錄、收藏與設定、登出；手機上行程與紀錄也從這裡進），在這幾頁時頭像加外框。
+  ✅ 右上角固定一個帳號位置：未登入是「登入」按鈕；登入後是 Google 大頭貼，點開向下展開帳號選單（名稱與 email、我的行程、旅行紀錄、收藏與清單、登出），在這幾頁時頭像加外框。
+  ✅ Phase 5：景點卡片「收藏」「去過」（可填日期）「清單」（勾選加入、新增清單）；地圖上收藏畫外圈、去過右上印章色小圓點，上方「收藏」開關只顯示收藏；`/me` 收藏與清單（匯出 KML / CSV）、`/me/lists/:id` 清單（改名、刪除、移除景點、匯出）；`/log` 全部去過地圖＋去過列表（依日期）。
 - **F1** 我想不登入也能瀏覽。
   ✅ 探索、景點、搜尋、期間限定都不需登入；收藏 / 行程 / 紀錄需要。
 - **F2** 我想設定常用的出發機場。

@@ -5,16 +5,16 @@ import { useRoute, useRouter } from 'vue-router'
 import { useUserStore } from '../stores/user'
 
 // 右上角頭像：點開向下展開的帳號選單（UX-FLOW.md F0）。
-// 行程、紀錄在手機上沒有分頁列，也從這裡進入。
 const userStore = useUserStore()
 const route = useRoute()
 const router = useRouter()
 
 const items = [
-  { to: '/trips', label: '我的行程', match: 'trips' },
-  { to: '/log', label: '旅行紀錄', match: 'log' },
-  { to: '/me', label: '收藏與設定', match: 'me' },
+  { to: '/trips', label: '我的行程', match: ['trips'] },
+  { to: '/log', label: '旅行紀錄', match: ['log'] },
+  { to: '/me', label: '收藏與清單', match: ['me', 'list'] },
 ]
+const isActive = (it: (typeof items)[number]) => it.match.includes(String(route.name))
 
 const open = ref(false)
 const root = ref<HTMLElement | null>(null)
@@ -92,7 +92,7 @@ async function logOut() {
       :aria-expanded="open"
       aria-controls="user-menu"
       class="grid size-10 place-items-center overflow-hidden rounded-full border border-line bg-placeholder text-sub"
-      :class="open || items.some((it) => it.match === route.name) ? 'outline-2 outline-offset-2 outline-region-strong' : ''"
+      :class="open || items.some(isActive) ? 'outline-2 outline-offset-2 outline-region-strong' : ''"
       @click="open ? hide() : show()"
       @keydown="onTriggerKey"
     >
@@ -141,8 +141,8 @@ async function logOut() {
         role="menuitem"
         tabindex="-1"
         class="mt-1 flex min-h-tap items-center rounded-control px-2.5 text-body-sm text-ink no-underline hover:bg-surface focus-visible:bg-surface"
-        :class="route.name === it.match ? 'font-bold' : ''"
-        :aria-current="route.name === it.match ? 'page' : undefined"
+        :class="isActive(it) ? 'font-bold' : ''"
+        :aria-current="isActive(it) ? 'page' : undefined"
         @click="hide()"
       >
         {{ it.label }}

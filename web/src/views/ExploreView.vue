@@ -27,12 +27,16 @@ import type { SearchHit } from '../services/search'
 import { trackSplash } from '../services/splash'
 import { useCatalogStore } from '../stores/catalog'
 import { useExploreStore } from '../stores/explore'
+import { useMarksStore } from '../stores/marks'
+import { useUserStore } from '../stores/user'
 
 const props = defineProps<{ pref?: string }>()
 const route = useRoute()
 const router = useRouter()
 const catalog = useCatalogStore()
 const explore = useExploreStore()
+const marks = useMarksStore()
+const userStore = useUserStore()
 
 const mapRef = ref<InstanceType<typeof MapView> | null>(null)
 const selectedId = computed(() => (typeof route.query.spot === 'string' ? route.query.spot : null))
@@ -54,8 +58,43 @@ const visibleSpots = computed(() =>
   allSpots.value.filter((s) => {
     if (s.id === selectedId.value) return true
     if (s.k !== 'major') return false
+    if (explore.onlyFavorites && !explore.pack) return Boolean(marks.marks[s.id]?.favorite)
     return explore.pack || !explore.category || categoryGroup(s.c) === explore.category
   }),
+)
+
+// 只看收藏：收藏所在的縣載入完整地圖 bundle（全國總覽只有各縣前段的景點）；登出或沒有收藏時關閉
+const favoritePrefs = computed(() => [...new Set(marks.favorites.map(([, m]) => m.pref))])
+watch(
+  () => [explore.onlyFavorites, favoritePrefs.value] as const,
+  ([on, prefs]) => {
+    if (on) prefs.forEach((p) => catalog.loadMap(p))
+  },
+  { immediate: true },
+)
+// 打開時移到看得到全部收藏的範圍
+watch(
+  () => explore.onlyFavorites,
+  async (on) => {
+    if (!on) return
+    const spots = (await Promise.all(favoritePrefs.value.map((p) => catalog.loadMap(p))))
+      .flat()
+      .filter((s) => marks.marks[s.id]?.favorite)
+    const b = spotBounds(spots)
+    if (b && explore.onlyFavorites) bounds.value = b
+  },
+)
+watch(
+  () => marks.loaded && marks.favorites.length === 0,
+  (none) => {
+    if (none) explore.onlyFavorites = false
+  },
+)
+watch(
+  () => userStore.user,
+  (u) => {
+    if (!u) explore.onlyFavorites = false
+  },
 )
 
 // 擴充包開關與 URL query 同步：分享連結與重新整理後保留（UX-FLOW.md A4）
@@ -425,6 +464,7 @@ function onMoveEnd(view: MapViewState) {
         :outline="outline"
         :pin="pin"
         :rail="railMap"
+        :marked="marks.marks"
         @select="select"
         @close-pin="closePin"
         @moveend="onMoveEnd"
@@ -446,6 +486,20 @@ function onMoveEnd(view: MapViewState) {
             <path d="M9 5l7 7-7 7" />
           </svg>
         </RouterLink>
+        <!-- 只看收藏：登入且有收藏時出現 -->
+        <button
+          v-if="userStore.user && marks.favorites.length"
+          type="button"
+          class="flex h-9 shrink-0 items-center gap-1.5 rounded-full px-3.5 text-label font-bold shadow-float"
+          :class="explore.onlyFavorites ? 'bg-ink text-paper' : 'bg-paper text-ink hover:bg-surface'"
+          :aria-pressed="explore.onlyFavorites"
+          @click="explore.onlyFavorites = !explore.onlyFavorites"
+        >
+          <svg width="16" height="16" viewBox="0 0 24 24" :fill="explore.onlyFavorites ? 'currentColor' : 'none'" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.9l-5.2 2.7 1-5.8-4.3-4.1 5.9-.9z" />
+          </svg>
+          收藏<span class="font-latin">{{ marks.favorites.length }}</span>
+        </button>
         <!-- 鐵路圖層開關：路線與車站，和擴充包可以同時開 -->
         <button
           v-if="pref && regionOf(pref)"

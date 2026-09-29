@@ -55,3 +55,4 @@ Claude Code 的雲端沙箱連不到 Wikidata、OSM、Wikimedia，也沒有 Clau
 ## 目前進度
 - Phase 0 完成：骨架、Emulator、Google 登入、空白地圖、GitHub Pages 部署。
 - Phase 1–3 完成；47 縣都有景點資料（Phase 6 的全國擴展），簡介與念法取自維基百科。詳見 docs/PROGRESS.md。
+- Phase 5（收藏、去過、清單、KML / CSV 匯出）完成，等使用者驗收。Firestore 規則在 `firestore.rules`，改了要請使用者貼到 Firebase Console 發布。

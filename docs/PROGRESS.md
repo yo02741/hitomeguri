@@ -88,4 +88,8 @@
 - 採集 workflow 推送前先併入最新的工作分支（跑的期間 workflow 檔有改時，GitHub App 推送會被拒）。
 
 ## 之後
-- Phase 4 期間限定、Phase 5 個人化（收藏、去過、匯出）等，見 PLAN.md §9；使用者授權到 Phase 3。
+- Phase 4 期間限定等，見 PLAN.md §9。
+- Phase 5（2026-09-29）：收藏、去過、清單、KML / CSV 匯出。資料在 Firestore `users/{uid}/marks`、`lists`（UX-FLOW.md §3）。
+  測試方式：`npx firebase emulators:start --project demo-hitomeguri --only auth,firestore` ＋ `npm run dev`，
+  Playwright 用 `signInWithCredential(GoogleAuthProvider.credential('{"sub":…}'))` 登入 emulator（uid 由 emulator 指派）。
+  沙箱連不到 openfreemap：截圖時用 `page.route` 回傳只有背景層的 style。

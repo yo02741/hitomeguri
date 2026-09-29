@@ -65,6 +65,8 @@ export const useExploreStore = defineStore('explore', () => {
   // 鐵路圖層（地圖上方的開關）；存在這台瀏覽器
   const rail = ref(loadFlag(RAIL_KEY))
   watch(rail, (on) => saveFlag(RAIL_KEY, on))
+  // 地圖只顯示收藏的景點（地圖上方的開關；不存）
+  const onlyFavorites = ref(false)
   // header 搜尋選到的結果，由探索頁接手（進入該縣、選取景點）
   const searchPick = shallowRef<SearchHit | null>(null)
 
@@ -89,7 +91,7 @@ export const useExploreStore = defineStore('explore', () => {
   }
 
   return {
-    activePref, category, pack, packGroup, enabledPacks, searchPick, collapsed, rail,
+    activePref, category, pack, packGroup, enabledPacks, searchPick, collapsed, rail, onlyFavorites,
     setActivePref, togglePack, setPackEnabled, toggleCollapsed,
   }
 })

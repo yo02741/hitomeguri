@@ -19,7 +19,14 @@ export const router = createRouter({
     },
     { path: '/trips', name: 'trips', component: () => import('../views/TripsView.vue'), meta: { title: '行程' } },
     { path: '/log', name: 'log', component: () => import('../views/LogView.vue'), meta: { title: '紀錄' } },
-    { path: '/me', name: 'me', component: () => import('../views/MeView.vue'), meta: { title: '我的' } },
+    { path: '/me', name: 'me', component: () => import('../views/MeView.vue'), meta: { title: '收藏與清單' } },
+    {
+      path: '/me/lists/:id',
+      name: 'list',
+      component: () => import('../views/ListView.vue'),
+      props: true,
+      meta: { title: '清單' },
+    },
     { path: '/:pathMatch(.*)*', redirect: '/' },
   ],
 })
