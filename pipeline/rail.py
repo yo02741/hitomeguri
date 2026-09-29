@@ -24,6 +24,8 @@ from pipeline.sources import osm
 
 # 簡化容許誤差（度）：約 15 m，縮放 15 看不出差別
 SIMPLIFY_TOL = 0.00015
+# 同名車站合併的距離（公尺）
+STATION_MERGE_M = 500
 # 方向與區間的寫法：「（内回り）」「(上り)」「: 東京 => 大阪」「 三軒茶屋→下高井戸」
 _DIRECTION = re.compile(
     r"(\s*[（(][^）)]*[）)]|\s*[:：].*|[\s\u3000]+\S*\s*(=>|->|→|⇒)\s*\S*|上り|下り)$"
@@ -158,26 +160,26 @@ def build_lines(data: dict[str, Any], inside: Inside) -> list[RailLine]:
 
 
 def build_stations(elements: list[osm.OsmElement]) -> list[RailStation]:
-    seen: set[tuple[str, float, float]] = set()
-    out = []
-    for el in elements:
+    """車站；同名且相距 STATION_MERGE_M 以內的只留一個（東京駅有 JR、地下鐵各自的點）。"""
+    kept: list[RailStation] = []
+    by_name: dict[str, list[RailStation]] = {}
+    for el in sorted(elements, key=lambda e: e.osm_id):
         name = el.tags.get("name:ja") or el.tags.get("name")
         if not name:
             continue
-        key = (name, round(el.lat, 3), round(el.lng, 3))
-        if key in seen:
+        same = by_name.setdefault(name, [])
+        if any(geo.haversine_m(st.lat, st.lng, el.lat, el.lng) <= STATION_MERGE_M for st in same):
             continue
-        seen.add(key)
-        out.append(
-            RailStation(
-                id=el.osm_id.replace("/", "-"),
-                name=name,
-                name_en=el.tags.get("name:en"),
-                lat=round(el.lat, 6),
-                lng=round(el.lng, 6),
-            )
+        st = RailStation(
+            id=el.osm_id.replace("/", "-"),
+            name=name,
+            name_en=el.tags.get("name:en"),
+            lat=round(el.lat, 6),
+            lng=round(el.lng, 6),
         )
-    return sorted(out, key=lambda x: x.id)
+        same.append(st)
+        kept.append(st)
+    return sorted(kept, key=lambda x: x.id)
 
 
 def write_rail(pref: str, data: RailData) -> None:

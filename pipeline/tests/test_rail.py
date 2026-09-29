@@ -115,3 +115,16 @@ def test_same_name_different_operator_tags_merge():
     lines = build_lines(data, BOX)
     assert len(lines) == 1 and len(lines[0].coords) == 2
     assert lines[0].operator == "西日本旅客鉄道"
+
+
+def test_same_name_stations_merge():
+    from pipeline.rail import build_stations
+    from pipeline.sources.osm import OsmElement
+
+    els = [
+        OsmElement("node/1", 35.6812, 139.7671, {"name": "東京"}),
+        OsmElement("node/2", 35.6820, 139.7650, {"name": "東京"}),
+        OsmElement("node/3", 35.6900, 139.7000, {"name": "新宿"}),
+        OsmElement("node/4", 35.6000, 139.7000, {"name": "新宿"}),
+    ]
+    assert [x.id for x in build_stations(els)] == ["node-1", "node-3", "node-4"]
