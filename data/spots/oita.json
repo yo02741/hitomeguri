@@ -755,6 +755,188 @@
     "updated_at": "2026-09-28"
   },
   {
+    "id": "osm-node-1423882469",
+    "name": {
+      "ja": "直川憩の森公園昆虫館・直川農業歴史資料館",
+      "zh_tw": "直川憩の森公園昆虫館・直川農業歴史資料館"
+    },
+    "location": {
+      "lat": 32.870418,
+      "lng": 131.784671
+    },
+    "prefecture": "oita",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "博物館"
+    ],
+    "featured": false,
+    "score": 0.0,
+    "images": [],
+    "external_ids": {
+      "osm": "node/1423882469"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/node/1423882469",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
+  },
+  {
+    "id": "osm-node-1423883222",
+    "name": {
+      "ja": "福沢記念館",
+      "zh_tw": "福沢記念館"
+    },
+    "location": {
+      "lat": 33.607223,
+      "lng": 131.191261
+    },
+    "prefecture": "oita",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "博物館"
+    ],
+    "featured": false,
+    "score": 0.0,
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "中津",
+          "en": "Nakatsu"
+        },
+        "distance_m": 890
+      }
+    ],
+    "images": [],
+    "external_ids": {
+      "osm": "node/1423883222"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/node/1423883222",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
+  },
+  {
+    "id": "osm-node-1423883394",
+    "name": {
+      "ja": "竹田市立歴史資料館",
+      "zh_tw": "竹田市立歴史資料館"
+    },
+    "location": {
+      "lat": 32.965882,
+      "lng": 131.392692
+    },
+    "prefecture": "oita",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "博物館"
+    ],
+    "featured": false,
+    "score": 0.0,
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "豊後竹田",
+          "en": "Bungo-Taketa"
+        },
+        "distance_m": 610
+      }
+    ],
+    "images": [],
+    "external_ids": {
+      "osm": "node/1423883394"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/node/1423883394",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
+  },
+  {
+    "id": "osm-node-1423883553",
+    "name": {
+      "ja": "耶馬溪風物館",
+      "zh_tw": "耶馬溪風物館"
+    },
+    "location": {
+      "lat": 33.490048,
+      "lng": 131.174073
+    },
+    "prefecture": "oita",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "博物館"
+    ],
+    "featured": false,
+    "score": 0.0,
+    "images": [],
+    "external_ids": {
+      "osm": "node/1423883553"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/node/1423883553",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
+  },
+  {
+    "id": "osm-node-1423884116",
+    "name": {
+      "ja": "豊後大野市歴史民俗資料館",
+      "zh_tw": "豊後大野市歴史民俗資料館"
+    },
+    "location": {
+      "lat": 32.972077,
+      "lng": 131.470852
+    },
+    "prefecture": "oita",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "博物館"
+    ],
+    "featured": false,
+    "score": 0.0,
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "緒方",
+          "en": "Ogata"
+        },
+        "distance_m": 570
+      }
+    ],
+    "images": [],
+    "external_ids": {
+      "osm": "node/1423884116"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/node/1423884116",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
+  },
+  {
     "id": "wd-Q10359310",
     "name": {
       "ja": "森陣屋",
@@ -886,11 +1068,11 @@
     "featured": false,
     "score": 36.0,
     "summary": {
-      "text": "長者屋敷官衙遺跡（ちょうじゃやしきかんがいせき）は、大分県中津市大字永添にある古代官衙の遺跡である。豊前国下毛郡郡衙の正倉域に比定されている。2010年2月22日に国の史跡に指定され、2017年2月9日には一部が追加指定されている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E9%95%B7%E8%80%85%E5%B1%8B%E6%95%B7%E5%AE%98%E8%A1%99%E9%81%BA%E8%B7%A1",
+      "text": "Chōja Yashiki Kanga ruins (長者屋敷官衙遺跡, Chōja yashiki kanga iseki)  is an archaeological site with the ruins of a Heian period government administrative complex located in what is now the Nagazoe neighborhood of the city of Nakatsu, Ōita Prefecture, on the island of Kyushu, Japan. The ruins were designated a National Historic Site of Japan in 2010 with the area under protection expanded in 2017.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Ch%C5%8Dja_Yashiki_Kanga_ruins",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [],
     "external_ids": {
@@ -2148,11 +2330,11 @@
     "featured": false,
     "score": 63.7,
     "summary": {
-      "text": "B-Con Plaza（ビーコンプラザ）は、大分県別府市山の手町にある複合施設の総称。別府市市民ホール、大分県立別府コンベンションセンターなどからなる。敷地内の各施設は愛称を共有しているが、運営面では別府市部分と大分県部分とに管轄が分かれる。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E3%83%93%E3%83%BC%E3%82%B3%E3%83%B3%E3%83%97%E3%83%A9%E3%82%B6",
+      "text": "The Ehime Orange Vikings (愛媛オレンジバイキングス, Ehime Orenji Baikingusu) are a Japanese professional basketball team based in Matsuyama, Ehime Prefecture. The team competes in the B.League One, the second division of the B.League, as a member of the Southern Conference.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Beppu_B-con_Plaza",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -2853,11 +3035,11 @@
     "featured": false,
     "score": 69.91,
     "summary": {
-      "text": "九州自然動物公園アフリカンサファリ（きゅうしゅうしぜんどうつぶこうえん アフリカンサファリ）は、大分県宇佐市安心院町南畑にある日本最大のサファリパーク形式の動物園である。小泉グループの九州アフリカ・ライオン・サファリ株式会社が運営する。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E4%B9%9D%E5%B7%9E%E8%87%AA%E7%84%B6%E5%8B%95%E7%89%A9%E5%85%AC%E5%9C%92%E3%82%A2%E3%83%95%E3%83%AA%E3%82%AB%E3%83%B3%E3%82%B5%E3%83%95%E3%82%A1%E3%83%AA",
+      "text": "Kyushu Natural Animal Park African Safari (九州自然動物公園アフリカンサファリ, Kyūshū Shizen Dōbutsu Kōen Afurikan Safari), also referred to as simply African Safari, is Japan's largest safari park and is located at the base of the Kunisaki Peninsula in Usa, Ōita Prefecture.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Kyushu_Natural_Animal_Park_African_Safari",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -3396,11 +3578,11 @@
     "featured": false,
     "score": 67.72,
     "summary": {
-      "text": "佐伯城（さいきじょう）は、大分県佐伯市にあった日本の城。江戸時代には佐伯藩の藩庁が置かれた。「さえき」と読むのは誤り。国の史跡に指定され、大分百景・ 続日本100名城（194番）に選定されている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E4%BD%90%E4%BC%AF%E5%9F%8E",
+      "text": "Saiki Castle (佐伯城, Saiki-jō) was an Edo period yamajiro-style Japanese castle located in the city of Saiki, Ōita Prefecture, Japan.  Its ruins have been protected as a National Historic Site since 2023. It is No.194 on the list \"Continued 100 Fine Castles of Japan\".",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Saiki_Castle",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -3640,11 +3822,11 @@
     "featured": false,
     "score": 66.49,
     "summary": {
-      "text": "八丁原発電所（はっちょうばるはつでんしょ）は、大分県玖珠郡九重町に所在する地熱発電所である。九電みらいエナジー（九州電力の子会社）が運営する。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%85%AB%E4%B8%81%E5%8E%9F%E7%99%BA%E9%9B%BB%E6%89%80",
+      "text": "The Hatchōbaru Geothermal Power Plant (八丁原発電所, Hatchōbaru Hatsudensho) is a large geothermal power station in Ōita Prefecture, Japan. At 112 MW, it is the largest geothermal power plant in the country. The plant comprises 3 generation units. The first unit, with a capacity of 55 MW, was activated in June 1977. A second unit started operation in June 1990, with an additional 55 MW capacity. A third binary unit rated at 2 MW is operational since April 2006.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Hatch%C5%8Dbaru_Geothermal_Power_Plant",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -3982,11 +4164,11 @@
     "featured": false,
     "score": 63.35,
     "summary": {
-      "text": "八面山（はちめんざん）は、大分県中津市三光田口に位置する高さ659mの卓状溶岩台地（メサ）である。中津市を代表する山であり、地元では「箭山」、「屋山」（ややま）とも呼ばれる。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%85%AB%E9%9D%A2%E5%B1%B1_%28%E5%A4%A7%E5%88%86%E7%9C%8C%29",
+      "text": "Mount Hachimen (八面山, Hachimen-zan) is a mesa in Nakatsu, Ōita Prefecture, Japan. Its elevation is 659.4 meter (2,163 feet). It is the most prominent mountain in Nakatsu and is seen as a symbol of the city.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Mount_Hachimen",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [],
     "external_ids": {
@@ -5485,11 +5667,11 @@
     "featured": false,
     "score": 40.74,
     "summary": {
-      "text": "大分元町石仏（おおいたもとまちせきぶつ）は、大分県大分市元町にある平安時代後期（11世紀中頃）の磨崖仏である。国の史跡（1924年1月22日指定）に指定されている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E5%88%86%E5%85%83%E7%94%BA%E7%9F%B3%E4%BB%8F",
+      "text": "The Ōita Motomachi Stone Buddhas (大分元町石仏, Ōita Motomachi sekibutsu) is a group of religious statues carved in bas-relief into a tuff cliff in Motomachi neighborhood of the city of Ōita, Ōita Prefecture on the island of Kyushu, Japan.  The site was designated a National Historic Site of Japan in 1934.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/%C5%8Cita_Motomachi_Stone_Buddhas",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -5559,11 +5741,11 @@
     "featured": false,
     "score": 54.52,
     "summary": {
-      "text": "大分市歴史資料館（おおいたしれきししりょうかん）は、大分県大分市大字国分にある歴史博物館。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E5%88%86%E5%B8%82%E6%AD%B4%E5%8F%B2%E8%B3%87%E6%96%99%E9%A4%A8",
+      "text": "Ōita City Historical Museum (大分市歴史資料館, Ōita-shi Rekishi Shiryōkan) opened in Ōita, Ōita Prefecture, Japan, in 1987. The collection comprises materials relating to Ōita. The museum itself is on the site of the former Bungo Kokubun-ji (豊後国分寺), the provincial temple of Bungo province.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/%C5%8Cita_City_Historical_Museum",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -8568,11 +8750,11 @@
     "featured": false,
     "score": 71.92,
     "summary": {
-      "text": "杵築城（きつきじょう）は、大分県杵築市杵築にあった日本の城。城跡のうち麓の藩主御殿跡は大分県の史跡に指定されている。また、城郭があった台山地区と藩主御殿地区は、国の史跡に指定されている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%9D%B5%E7%AF%89%E5%9F%8E",
+      "text": "Kitsuki Castle (杵築城, Kitsuki-jō) is an Edo period yamajiro-style Japanese castle located in the city of Kitsuki, Ōita Prefecture, Japan. Its ruins have been protected as a National Historic Site since 2020. The current castle, a replica tenshu built in 1970, is considered to be the smallest castle in Japan.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Kitsuki_Castle",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -9689,7 +9871,7 @@
       "ja": "狭霧台",
       "kana": "さぎりだい",
       "romaji": "Sagiridai",
-      "zh_tw": "狹霧台",
+      "zh_tw": "狹霧臺",
       "en": "Sagiridai"
     },
     "kana_source": "wikipedia",
@@ -9739,7 +9921,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11575081",
@@ -10388,11 +10570,11 @@
     "featured": false,
     "score": 64.66,
     "summary": {
-      "text": "稲積水中鍾乳洞（いなづみすいちゅうしょうにゅうどう）は、日本ジオパーク認定の大分県豊後大野市三重町中津留にある日本最長（日本一）の水中鍾乳洞である。水は日本名水百選認定の「白山川」に繋がっている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E7%A8%B2%E7%A9%8D%E6%B0%B4%E4%B8%AD%E9%8D%BE%E4%B9%B3%E6%B4%9E",
+      "text": "Inazumi Underwater Cave (稲積水中鍾乳洞, Inadzumi-Suichūshōnyūdō) is an underwater limestone cave located in Bungo-Ōno, Ōita Prefecture, Japan. It is the longest underwater cave system in Japan.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Inazumi_Underwater_Cave",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [],
     "external_ids": {
@@ -10860,11 +11042,11 @@
     "featured": false,
     "score": 42.27,
     "summary": {
-      "text": "耶馬渓橋（やばけいばし）は、大分県中津市本耶馬渓町の山国川水系山国川に架かる石造アーチ橋である。国の重要文化財に指定されている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E8%80%B6%E9%A6%AC%E6%B8%93%E6%A9%8B",
+      "text": "Yabakei Bridge (耶馬渓橋, Yabakei-bashi) is a Taishō-era stone bridge over the Yamakuni River in Yabakei, Nakatsu, Ōita Prefecture, Japan. Construction work on the eight-arched bridge, built as part of a tourist road for the viewing of the nearby Aonodōmon, began in 1920 and was completed in 1923; repair and restoration work took place in 1999. At 115.7 metres (380 ft) in length, it is the longest stone bridge in the country, and has been designated an Important Cultural Property.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Yabakei_Bridge",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -11428,11 +11610,11 @@
     "featured": false,
     "score": 41.24,
     "summary": {
-      "text": "菅尾磨崖仏（すがおまがいぶつ）は、大分県豊後大野市三重町浅瀬の宇対瀬（うたいぜ）にある平安時代後期の磨崖仏である。国の重要文化財（1964年5月26日指定）及び史跡（1924年1月22日指定）に指定されている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E8%8F%85%E5%B0%BE%E7%A3%A8%E5%B4%96%E4%BB%8F",
+      "text": "The Sugao Stone Buddhas (菅尾磨崖仏, Sugao magaibutsu) is a group of religious statues carved in bas-relief into a tuff cliff in Mie neighborhood of the city of Bungo-Ōno, Ōita Prefecture on the island of Kyushu, Japan.  The site was designated a National Historic Site of Japan in 1934, and was designated a National Important Cultural Property in 1964.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Sugao_Stone_Buddhas",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -11754,11 +11936,11 @@
     "featured": false,
     "score": 67.34,
     "summary": {
-      "text": "角牟礼城（つのむれじょう）は、大分県玖珠郡玖珠町の角埋山（つのむれやま）にあった日本の城（山城）。弘安年間（1278年 - 1288年）に森朝通により築かれたとされる。国の史跡。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E8%A7%92%E7%89%9F%E7%A4%BC%E5%9F%8E",
+      "text": "Tsunomure Castle (角牟礼城, Tsunomure-jō) was a yamajiro-style Japanese castle located in the town of Kusu, Ōita Prefecture, Japan. Its ruins have been protected as a National Historic Site since 2005. It is on the list \"Continued 100 Fine Castles of Japan\".",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Tsunomure_Castle",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -11928,11 +12110,11 @@
     "featured": false,
     "score": 47.72,
     "summary": {
-      "text": "豊予要塞（ほうよようさい）は、豊予海峡の防備のため設置された大日本帝国陸軍の二等要塞である。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E8%B1%8A%E4%BA%88%E8%A6%81%E5%A1%9E",
+      "text": "Hōyo Fortress (豊予要塞, Hōyo yōsai) was the name of a group of coastal fortifications built to guard the Hōyo Strait at the entrance to Bungo Channel between the Japanese islands of Kyushu and Shikoku and this the western entrance to the Seto Inland Sea. These gun batteries and fortifications ceased to be used after the end of World War II.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/H%C5%8Dyo_Fortress",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -12181,11 +12363,11 @@
     "featured": false,
     "score": 61.97,
     "summary": {
-      "text": "豊後国分寺（ぶんごこくぶんじ）は、大分県大分市にある天台宗の寺院。山号は医王山。本尊は薬師如来。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E8%B1%8A%E5%BE%8C%E5%9B%BD%E5%88%86%E5%AF%BA",
+      "text": "Bungo Kokubun-ji (豊後国分寺) is a Buddhist temple in the Kokubu neighborhood of the city of Ōita, Ōita Prefecture Japan. It belongs to the Tendai sect, and its honzon is a statue of  Yakushi Nyōrai.  It claims to be the successor of the provincial temple established by Emperor Shōmu during the Nara period (710 – 794). Its honzon is a statue of  Yakushi Nyōrai.  The foundation stones and remaining traces of the Nara-period temple were designated as a National Historic Site in 1933.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Bungo_Kokubun-ji",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -12242,11 +12424,11 @@
     "featured": false,
     "score": 68.1,
     "summary": {
-      "text": "豊後森機関庫（ぶんごもりきかんこ）は、大分県玖珠郡玖珠町の国鉄（現JR九州）久大本線豊後森駅の東側にあった機関庫である。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E8%B1%8A%E5%BE%8C%E6%A3%AE%E6%A9%9F%E9%96%A2%E5%BA%AB",
+      "text": "Bungo-Mori Roundhouse (Japanese: 豊後森機関庫, Hepburn: Bungo-Mori-Kikanko) was a railway roundhouse located to the east of Bungo-mori Station on the Kyūdai Main Line in Kusu, Ōita Prefecture, Japan.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Bungo-Mori_Roundhouse",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -13655,8 +13837,8 @@
     "name": {
       "ja": "高崎山自然動物園",
       "kana": "たかさきやましぜんどうぶつえん",
-      "romaji": "Takasakiyama Shizen Dōbutsuen",
-      "zh_tw": "高崎山自然动物园",
+      "romaji": "Takasakiyamashizendobutsuen",
+      "zh_tw": "高崎山自然動物園",
       "en": "Takasakiyama Natural Zoological Garden"
     },
     "kana_source": "wikipedia",
@@ -13709,7 +13891,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11671972",
@@ -13734,11 +13916,11 @@
     "featured": false,
     "score": 41.38,
     "summary": {
-      "text": "高瀬石仏（たかせせきぶつ）は、大分県大分市高瀬にある平安時代中期から後期の磨崖仏である。国の史跡（1924年1月22日指定）に指定されている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E9%AB%98%E7%80%AC%E7%9F%B3%E4%BB%8F",
+      "text": "The Takase Stone Buddhas (高瀬石仏, Takase sekibutsu) is a group of religious statues carved in bas-relief into a tuff cliff in Takase neighborhood of the city of Ōita, Ōita Prefecture on the island of Kyushu, Japan.  The site was designated a National Historic Site of Japan in 1934.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Takase_Stone_Buddhas",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -13828,11 +14010,11 @@
     "featured": false,
     "score": 68.12,
     "summary": {
-      "text": "鯛生金山（たいおきんざん）は、1898年（明治31年）から1972年（昭和47年）にかけて大分県日田市中津江村鯛生地区（旧日田郡中津江村）にあった金鉱山。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E9%AF%9B%E7%94%9F%E9%87%91%E5%B1%B1",
+      "text": "The Taio mine (Japanese:鯛生金山) was the large gold mine in Oita, Japan. At its peak productivity between 1934 and 1938, it produced 2.3 tons of gold per year, being the most productive gold mine of Japan. Tunnels stretch for 500 meters below ground level, and total tunnels length is 110 km, although all tunnels below 4th are flooded. From 1983, the mine has become a museum, with 800-meter tunnel section opened to the visitors.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Taio_gold_mine",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [],
     "external_ids": {
@@ -14327,7 +14509,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 55.44,
+    "score": 55.38,
     "summary": {
       "text": "別府ブルーバード劇場（べっぷブルーバードげきじょう）は、大分県別府市にある老舗映画館。",
       "lang": "ja",
@@ -14366,7 +14548,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q123366317",
@@ -15074,7 +15256,7 @@
       "ja": "龍巻地獄",
       "kana": "たつまきじごく",
       "romaji": "Tatsumaki-jigoku",
-      "zh_tw": "龙卷地狱",
+      "zh_tw": "龍捲地獄",
       "en": "Tatsumaki Hell"
     },
     "kana_source": "osm",
@@ -15117,7 +15299,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q135237479",
@@ -16236,11 +16418,11 @@
     "featured": false,
     "score": 57.78,
     "summary": {
-      "text": "白鬚田原神社（しらひげたわらじんじゃ）は、大分県杵築市大田沓掛に鎮座する神社である。旧社格は郷社。どぶろく祭りで知られる。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E7%99%BD%E9%AC%9A%E7%94%B0%E5%8E%9F%E7%A5%9E%E7%A4%BE",
+      "text": "Shirahige-Tawara Shrine is a Shinto shrine located in Kitsuki City, in Oita Prefecture, Japan. It was ranked as a Gosha shrine. Known for its Doburoku festival.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Shirahigetawara_Shrine",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -16558,11 +16740,11 @@
     "featured": false,
     "score": 62.59,
     "summary": {
-      "text": "ひょうたん温泉（ひょうたんおんせん）は、大分県別府市鉄輪の鉄輪温泉にある温泉入浴施設である。1922年（大正11年）創業。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E3%81%B2%E3%82%87%E3%81%86%E3%81%9F%E3%82%93%E6%B8%A9%E6%B3%89",
+      "text": "Hyotan Onsen (ひょうたん温泉) is a large onsen bathing facility located in Kannawa, Beppu, Ōita Prefecture. Opened in 1922, Hyotan Onsen is notable for being the only onsen facility in Japan to have received three Michelin Stars from Michelin Green Guides Japan.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Hyotan_Onsen",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [],
     "external_ids": {
@@ -17279,11 +17461,11 @@
     "featured": false,
     "score": 61.77,
     "summary": {
-      "text": "白水溜池堰堤（はくすいためいけえんてい）は、大分県竹田市の大野川上流にある重力式コンクリート造及び石造の堰堤。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E7%99%BD%E6%B0%B4%E6%BA%9C%E6%B1%A0%E5%A0%B0%E5%A0%A4",
+      "text": "Hakusui Dam (白水ダム) is a stone masonry-faced concrete gravity dam on the upper reaches of the Ōno River in Taketa, Ōita Prefecture, Japan. Completed in 1938, the dam spans 86 m and stands 14 m tall. Designed by civil engineer Yasuo Ono (小野康夫) for irrigation purposes, it features a distinctive curved and stepped spillway that controls water flow and prevents erosion.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Hakusui_Dam",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -17401,11 +17583,11 @@
     "featured": false,
     "score": 70.29,
     "summary": {
-      "text": "日出城（ひじじょう）は、大分県速見郡日出町にあった日本の城。江戸時代を通して、木下氏が居城した。明治初期の府藩県三治制下において日出藩の藩庁が置かれた。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%97%A5%E5%87%BA%E5%9F%8E",
+      "text": "Hiji Castle (日出城, Hiji-jō), also known as Yōkoku Castle, Aoyagi Castle, and Ukitsu Castle, was a castle located in Hiji, Ōita Prefecture, Japan. The construction of the castle began in 1601, under Kinoshita Nobutoshi's orders, when he was transferred to Hiji from Himeji. The castle was designed by Nobutoshi's brother-in-law, Hosokawa Tadaoki. It held a strategic location, as it overlooked Beppu Bay. The castle was destroyed after the Hiji Domain was abolished during the Meiji era.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Hiji_Castle",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -17531,11 +17713,11 @@
     "featured": false,
     "score": 66.02,
     "summary": {
-      "text": "両子寺（ふたごじ）は、大分県国東市安岐町両子の両子山中腹にある天台宗の寺院。山号を足曳山と称する。本尊は阿弥陀如来（大講堂）。九州西国三十三箇所第六番・国東六郷満山霊場第十三番。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E4%B8%A1%E5%AD%90%E5%AF%BA",
+      "text": "Futago-ji (両子寺) is a Tendai Buddhist temple in Kunisaki, Ōita Prefecture, Japan. It is located on the slopes of Mount Futago (両子山, Futagosan), the highest mountain on the Kunisaki Peninsula.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Futago-ji",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -18004,11 +18186,11 @@
     "featured": false,
     "score": 68.92,
     "summary": {
-      "text": "原尻の滝（はらじりのたき）は、大分県豊後大野市緒方町原尻の大野川水系緒方川にある滝。日本の滝百選に選ばれている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%8E%9F%E5%B0%BB%E3%81%AE%E6%BB%9D",
+      "text": "Harajiri Falls (原尻の滝, Harajiri-no-taki) is a waterfall located on the Ōno River in Ogata Town, Bungo-Ōno, Ōita Prefecture. It was selected by the Japanese Ministry of the Environment as one of the top 100 waterfalls in Japan.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Harajiri_Falls",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -18045,7 +18227,7 @@
       "ja": "城島高原パーク",
       "kana": "きじまこうげんぱーく",
       "romaji": "Kijimakogenpaku",
-      "zh_tw": "城岛高原公园",
+      "zh_tw": "城島高原公園",
       "en": "Kijima Kōgen Park"
     },
     "kana_source": "wikipedia",
@@ -18096,7 +18278,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q3200358",
@@ -18119,11 +18301,11 @@
     "featured": false,
     "score": 65.35,
     "summary": {
-      "text": "熊野磨崖仏（くまのまがいぶつ）は、大分県豊後高田市にある平安時代後期の磨崖仏。磨崖仏としては日本国内最大級のものである。国の重要文化財（1964年5月26日指定）及び史跡（1955年2月15日指定）に指定されている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E7%86%8A%E9%87%8E%E7%A3%A8%E5%B4%96%E4%BB%8F",
+      "text": "Kumano Magaibutsu (熊野磨崖仏) is a group of Buddhist statues carved in bas-relief into a tuff cliff on the Kunisaki Peninsula in Bungotakada, Ōita Prefecture on the island of Kyushu, Japan. In 1955, Kumano Magaibutsu, along with nearby Motomiya Magaibutsu (元宮磨崖仏) and Nabeyama Magaibutsu (鍋山磨崖仏), were designated as a National Historic Sites of Japan. The carvings were designated as a National Important Cultural Property in 1964.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Kumano_Magaibutsu",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -18177,11 +18359,11 @@
     "featured": false,
     "score": 60.03,
     "summary": {
-      "text": "真木大堂（まきおおどう、まきのおおどう）は、大分県豊後高田市田染真木にある仏教寺院である。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E7%9C%9F%E6%9C%A8%E5%A4%A7%E5%A0%82",
+      "text": "Maki Ōdō (真木大堂) is an historic temple in Bungotakada, Ōita Prefecture, Japan. The current buildings are the Edo-period Hondō and an exhibition hall dating to 1955. Inside are nine Heian-period statues that have been designated Important Cultural Properties.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Maki_%C5%8Cd%C5%8D",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -18231,11 +18413,11 @@
     "featured": false,
     "score": 57.71,
     "summary": {
-      "text": "大分県立歴史博物館（おおいたけんりつれきしはくぶつかん）は、大分県宇佐市大字高森字京塚の宇佐風土記の丘内にある歴史博物館。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E5%88%86%E7%9C%8C%E7%AB%8B%E6%AD%B4%E5%8F%B2%E5%8D%9A%E7%89%A9%E9%A4%A8",
+      "text": "The Ōita Prefectural Museum of History (大分県立歴史博物館, Ōita kenritsu rekishi hakubutsukan) opened in Usa, Ōita Prefecture, Japan in 1998, replacing the Usa Fudoki-no-Oka (宇佐風土記の丘) of 1981.  It is one of Japan's many museums which are supported by a prefecture.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/%C5%8Cita_Prefectural_Museum_of_History",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -18290,11 +18472,11 @@
     "featured": false,
     "score": 67.03,
     "summary": {
-      "text": "羅漢寺（らかんじ）は、大分県中津市本耶馬渓町にある曹洞宗の寺院である。山号は耆闍崛山（ぎじゃくっせん）。本尊は釈迦如来。日本国内の羅漢寺の総本山である。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E7%BE%85%E6%BC%A2%E5%AF%BA_%28%E4%B8%AD%E6%B4%A5%E5%B8%82%29",
+      "text": "Rakan-ji (羅漢寺) is a Sōtō temple in Nakatsu, Oita Prefecture, Japan. The temple stands on the mountainside of Mt. Rakan, the rocky cliff of which has countless mouths of caves. The main gate and the main hall stand directly in the rocky cliff. In the caves, over 3,700 stone Buddhas are enshrined.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Rakan-ji",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -18701,7 +18883,7 @@
       "ja": "別府温泉",
       "kana": "べっぷおんせん",
       "romaji": "Beppu Onsen",
-      "zh_tw": "别府温泉",
+      "zh_tw": "別府溫泉",
       "en": "Beppu Onsen"
     },
     "kana_source": "wikipedia",
@@ -18761,7 +18943,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q4997672",
@@ -18786,11 +18968,11 @@
     "featured": false,
     "score": 54.21,
     "summary": {
-      "text": "豊後水道県立自然公園（ぶんごすいどうけんりつしぜんこうえん）は、大分県南部の豊後水道沿岸に1951年（昭和26年）3月30日に設けられた県立自然公園。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E8%B1%8A%E5%BE%8C%E6%B0%B4%E9%81%93%E7%9C%8C%E7%AB%8B%E8%87%AA%E7%84%B6%E5%85%AC%E5%9C%92",
+      "text": "Bungo Suidō Prefectural Natural Park (豊後水道県立自然公園, Bungo Suidō kenritsu shizen kōen) is a Prefectural Natural Park on the east coast of Ōita Prefecture, Japan. Established in 1985, the park spans the municipalities of Saiki, Tsukumi, and Usuki. The park's central focus is upon the Bungo Strait.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Bungo_Suid%C5%8D_Prefectural_Natural_Park",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -18833,11 +19015,11 @@
     "featured": false,
     "score": 63.13,
     "summary": {
-      "text": "沈堕の滝（ちんだのたき）は、大分県豊後大野市大野町矢田にある滝。2007年7月26日に、国の登録記念物として登録されている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%B2%88%E5%A0%95%E3%81%AE%E6%BB%9D",
+      "text": "Chinda Falls (沈堕の滝, Chinda no taki) is a double waterfall on the Ōno River in Bungo-ōno, Ōita Prefecture, Japan.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Chinda_Falls",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -19050,11 +19232,11 @@
     "featured": true,
     "score": 80.44,
     "summary": {
-      "text": "別府地獄めぐり（べっぷじごくめぐり）は、大分県別府市の別府温泉に多数存在する様々な奇観を呈する自然湧出の源泉「地獄」を、定期観光バスなどで周遊する定番の観光コースである。また、これらの地獄の総称としても使われる。海地獄、血の池地獄、白池地獄、龍巻地獄は、2009年（平成21年）7月23日に、別府の地獄として国の名勝に指定されている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%88%A5%E5%BA%9C%E5%9C%B0%E7%8D%84%E3%82%81%E3%81%90%E3%82%8A",
+      "text": "The hot spring system Hells of Beppu (別府の地獄, Beppu no jigoku) is a nationally designated \"Place of Scenic Beauty\" in the onsen town of Beppu, Ōita, Japan. The \"hells,\" or \"jigoku\" (地獄) in Japanese, are for viewing rather than bathing.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Hells_of_Beppu",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -19177,11 +19359,11 @@
     "featured": false,
     "score": 52.26,
     "summary": {
-      "text": "神角寺芹川県立自然公園（じんかくじせりかわけんりつしぜんこうえん）は、大分県中部の神角寺を中心とする地域に1951年（昭和26年）3月30日に設けられた県立自然公園。1961年（昭和36年）4月28日の区域変更により芹川周辺が追加され、公園名に「芹川」を挿入する名称変更が行われた。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E7%A5%9E%E8%A7%92%E5%AF%BA%E8%8A%B9%E5%B7%9D%E7%9C%8C%E7%AB%8B%E8%87%AA%E7%84%B6%E5%85%AC%E5%9C%92",
+      "text": "Jinkakuji Serikawa Prefectural Natural Park (神角寺芹川県立自然公園, Jinkakuji Serikawa kenritsu shizen kōen) is a Prefectural Natural Park in central Ōita Prefecture, Japan. Established in 1951, the park spans the municipalities of Bungo-ōno, Ōita, Taketa, and Yufu. The park derives its name from the temple Jinkaku-ji and the Seri River.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Jinkakuji_Serikawa_Prefectural_Natural_Park",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -19277,11 +19459,11 @@
     "featured": false,
     "score": 54.1,
     "summary": {
-      "text": "国東半島県立自然公園（くにさきはんとうけんりつしぜんこうえん）は、大分県北東部にある国東半島に1951年（昭和26年）3月30日に設けられた県立自然公園。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%9B%BD%E6%9D%B1%E5%8D%8A%E5%B3%B6%E7%9C%8C%E7%AB%8B%E8%87%AA%E7%84%B6%E5%85%AC%E5%9C%92",
+      "text": "Kunisaki Hantō Prefectural Natural Park (国東半島県立自然公園, Kunisaki Hantō kenritsu shizen kōen) is a Prefectural Natural Park on the Kunisaki Peninsula in northeast Ōita Prefecture, Japan. Established in 1951, the park spans the municipalities of Bungotakada, Kitsuki, Kunisaki, and Usa. The park encompasses the temples of Fuki-ji and Maki Ōdō as well as Kumano magaibutsu, and includes a marine zone of 41 km2.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Kunisaki_Hant%C5%8D_Prefectural_Natural_Park",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -19419,11 +19601,11 @@
     "featured": false,
     "score": 64.97,
     "summary": {
-      "text": "水ノ子島灯台（みずのこじまとうだい）は、豊後水道の中央に位置し、大分県佐伯市に属する無人島水ノ子島にある石造の灯台である。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%B0%B4%E3%83%8E%E5%AD%90%E5%B3%B6%E7%81%AF%E5%8F%B0",
+      "text": "Mizunokojima Lighthouse (水ノ子島灯台, Mizunokojima Tōdai) is an active lighthouse located in Japan's Bungo Channel.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Mizunokojima_Lighthouse",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -19521,11 +19703,11 @@
     "featured": false,
     "score": 71.33,
     "summary": {
-      "text": "鶴見岳（つるみだけ）は、大分県別府市にある活火山。標高は1,375m。日本三百名山のひとつ。東側山麓の扇状地には別府温泉（別府八湯）が広がる。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E9%B6%B4%E8%A6%8B%E5%B2%B3",
+      "text": "Mount Tsurumi (鶴見岳, Tsurumi-dake) is a 1,374.5 m (4,510 ft) volcano in Beppu, Ōita, Japan.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Mount_Tsurumi",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -19674,11 +19856,11 @@
     "featured": false,
     "score": 51.33,
     "summary": {
-      "text": "祖母傾県立自然公園（そぼかたむきけんりつしぜんこうえん）は、大分県南部内陸の祖母山、傾山周辺に1951年（昭和26年）3月30日に設けられた県立自然公園。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E7%A5%96%E6%AF%8D%E5%82%BE%E7%9C%8C%E7%AB%8B%E8%87%AA%E7%84%B6%E5%85%AC%E5%9C%92_%28%E5%A4%A7%E5%88%86%E7%9C%8C%29",
+      "text": "Sobo Katamuki Prefectural Natural Park (祖母傾県立自然公園, Sobo Katamuki kenritsu shizen kōen) was a Prefectural Natural Park in southern Ōita Prefecture, Japan. Established in 1951, the park spanned the municipalities of Bungo-ōno, Saiki, and Taketa. In 2017 it was incorporated into the Sobo, Katamuki and Okue Biosphere Reserve.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Sobo_Katamuki_Prefectural_Natural_Park_%28%C5%8Cita%29",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -19723,11 +19905,11 @@
     "featured": false,
     "score": 52.37,
     "summary": {
-      "text": "津江山系県立自然公園（つえさんけいけんりつしぜんこうえん）は、大分県西部の津江山系に1951年（昭和26年）3月30日に設けられた県立自然公園。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%B4%A5%E6%B1%9F%E5%B1%B1%E7%B3%BB%E7%9C%8C%E7%AB%8B%E8%87%AA%E7%84%B6%E5%85%AC%E5%9C%92",
+      "text": "Tsue Sankei Prefectural Natural Park (津江山系県立自然公園, Tsue Sankei kenritsu shizen kōen) is a Prefectural Natural Park in western Ōita Prefecture, Japan. Established in 1951, the park is within the municipality of Hita and encompasses Mounts Gozen (御前岳), Shaka (釈迦岳), and Togami (渡神岳).",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Tsue_Sankei_Prefectural_Natural_Park",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [],
     "external_ids": {
@@ -19822,11 +20004,11 @@
     "featured": false,
     "score": 60.92,
     "summary": {
-      "text": "耶馬溪ダム（やばけいダム）は、大分県中津市を流れる、一級河川山国川水系の山移川に建設されたダムである。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E8%80%B6%E9%A6%AC%E6%BA%AA%E3%83%80%E3%83%A0",
+      "text": "Yabakei Dam (Japanese: 耶馬溪ダム) is a dam in the Ōita Prefecture, Japan.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Yabakei_Dam",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {

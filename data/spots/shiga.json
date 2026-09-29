@@ -5462,7 +5462,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q10855543",
@@ -5518,7 +5518,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q10855637",
@@ -5574,7 +5574,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q10865239",
@@ -5648,11 +5648,11 @@
     "featured": false,
     "score": 58.75,
     "summary": {
-      "text": "旧和中散本舗（きゅうわちゅうさんほんぽ）は、滋賀県栗東市六地蔵にある、江戸時代以来、胃薬「和中散」を製造販売していた旧家である。「旧和中散本舗」として国の史跡に指定されている（1949年7月13日指定）。また、主屋、正門、隠居所の建造物3棟が「大角家（おおすみけ）住宅」として国の重要文化財に（1954年3月20日指定）、庭園が「大角氏庭園」として国の名勝に（2001年1月29日指定）、それぞれ指定されている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%97%A7%E5%92%8C%E4%B8%AD%E6%95%A3%E6%9C%AC%E8%88%97",
+      "text": "Wachūsan Honpo (和中散本舗, Wachūsan Honpo) is an early Edo period pharmacy located on the former Tōkaidō highway in the city of  Rittō, Shiga Prefecture, Japan. The building was designated an Important Cultural Property of Japan (ICP) in 1954 and a National Historic Site of Japan in 1949.  The ICP designation covers the main house and shop, main gate  and the shoin residence",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Wach%C5%ABsan_Honpo",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [],
     "external_ids": {
@@ -6335,11 +6335,11 @@
     "featured": false,
     "score": 64.04,
     "summary": {
-      "text": "大津湖岸なぎさ公園（おおつこがんなぎさこうえん）は、滋賀県大津市の琵琶湖畔にある都市公園である。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E6%B4%A5%E6%B9%96%E5%B2%B8%E3%81%AA%E3%81%8E%E3%81%95%E5%85%AC%E5%9C%92",
+      "text": "Otsu Lakeside Nagisa Park (大津湖岸なぎさ公園, Ōtsu Kogan Nagisa Kōen) is a park in Otsu City, Shiga Prefecture, Japan, on the shores of Lake Biwa. It is renowned for its views, being one of the top 100 Views of Nature in Kansai, and is popular with both locals and visitors.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Otsu_Lakeside_Nagisa_Park",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -6819,6 +6819,63 @@
     "updated_at": "2026-09-28"
   },
   {
+    "id": "wd-Q11289578",
+    "name": {
+      "ja": "エイスクエア",
+      "kana": "えいすくえあ",
+      "romaji": "Eisukuea",
+      "zh_tw": "エイスクエア"
+    },
+    "kana_source": "wikidata",
+    "location": {
+      "lat": 35.025028,
+      "lng": 135.959722
+    },
+    "prefecture": "shiga",
+    "kind": "major",
+    "themes": [],
+    "tags": [],
+    "featured": false,
+    "score": 45.32,
+    "summary": {
+      "text": "エイスクエア（A・SQUARE）は、滋賀県草津市西渋川のJR草津駅西口にある綾羽株式会社が運営する大型ショッピングモールである。「新しいトキメキが待ついつもの広場。」がコンセプトである。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E3%82%A8%E3%82%A4%E3%82%B9%E3%82%AF%E3%82%A8%E3%82%A2",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "草津",
+          "kana": "くさつ",
+          "romaji": "Kusatsu",
+          "en": "Kusatsu"
+        },
+        "distance_m": 340
+      }
+    ],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cc/A%E3%83%BBSQUARE_kusatsu.jpg/960px-A%E3%83%BBSQUARE_kusatsu.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "イココ",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:A%E3%83%BBSQUARE_kusatsu.jpg"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q11289578"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q11289578",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
+  },
+  {
     "id": "wd-Q11326078",
     "name": {
       "ja": "ハイド記念館・教育会館",
@@ -7213,7 +7270,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11355261",
@@ -7399,7 +7456,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11360119",
@@ -7663,7 +7720,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11369800",
@@ -7728,7 +7785,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11372025",
@@ -7844,7 +7901,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11377284",
@@ -8051,7 +8108,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11382603",
@@ -8107,7 +8164,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11383085",
@@ -8192,11 +8249,11 @@
     "featured": false,
     "score": 73.09,
     "summary": {
-      "text": "余呉湖（よごこ、よごのうみ）は、滋賀県長浜市にある湖。「大江」（琵琶湖）に対して「伊香小江（いかごのおえ）」と称されたほか、湖面が穏やかなことから「鏡湖」とも呼ばれる。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E4%BD%99%E5%91%89%E6%B9%96",
+      "text": "Lake Yogo (Japanese: 余呉湖, Hepburn: Yogo-ko) is freshwater lake in Nagahama, Shiga Prefecture, Japan.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Lake_Yogo",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -8581,7 +8638,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11412752",
@@ -8882,7 +8939,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11418946",
@@ -8910,11 +8967,11 @@
     "featured": false,
     "score": 73.81,
     "summary": {
-      "text": "善水寺（ぜんすいじ）は、滋賀県湖南市岩根にある天台宗の寺院。山号は岩根山（いわねさん）。本尊は薬師如来。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%96%84%E6%B0%B4%E5%AF%BA",
+      "text": "Zensui-ji (善水寺) is a Buddhist temple in the Iwane neighborhood of the city of Konan, Shiga Prefecture, Japan. It belongs to the Tendai school of Japanese Buddhism. Its main image is a hibutsu statue of Yakushi Nyōrai, which was carved in 993. Its Hondō is a National Treasure.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Zensui-ji",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -8938,7 +8995,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11420600",
@@ -9752,11 +9809,11 @@
     "featured": false,
     "score": 73.59,
     "summary": {
-      "text": "大笹原神社（おおささはらじんじゃ）は、滋賀県野洲市大篠原にある神社。旧社格は郷社。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E7%AC%B9%E5%8E%9F%E7%A5%9E%E7%A4%BE",
+      "text": "Ōsasahara Shrine (大笹原神社, Ōsasahara Jinja) is a Shinto shrine located in the city of Yasu, Shiga Prefecture, Japan. The kami worshipped at this shrine are Susanoo-no-Mikoto and Kushinadahime.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/%C5%8Csasahara_Shrine",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -9785,7 +9842,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11438675",
@@ -9890,7 +9947,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11438780",
@@ -10039,7 +10096,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11450462",
@@ -10303,7 +10360,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11462224",
@@ -10370,7 +10427,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11463730",
@@ -10728,11 +10785,11 @@
     "featured": false,
     "score": 48.91,
     "summary": {
-      "text": "崇福寺跡（すうふくじあと）は、滋賀県大津市にある飛鳥時代後期から室町時代にかけて存在した寺院の遺跡。3つの尾根にまたがって建築群があり、崇福寺と奈良時代末期に建立された梵釈寺の複合遺跡とする説が有力である。また出土した崇福寺塔心礎納置品は国宝に指定されており、遺跡は国の史跡と歴史的風土特別保存地区に指定されている。本記事では史跡としての崇福寺跡と、文献資料にみる崇福寺について記述する。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%B4%87%E7%A6%8F%E5%AF%BA%E8%B7%A1",
+      "text": "The Sūfuku-ji temple ruins (崇福寺跡, Sūfuku ato) is an archaeological site with the ruins of a late Asuka through Muromachi period Buddhist temple located in the Shigasato neighborhood of the city of  Ōtsu,Shiga Prefecture, in the Kansai region of Japan. The site was designated a National Historic Site of Japan in 1941, and some of the artifacts recovered from the site are collectively designated as a National Treasure.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/S%C5%ABfuku-ji_%28%C5%8Ctsu%29",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -11022,11 +11079,11 @@
     "featured": false,
     "score": 76.72,
     "summary": {
-      "text": "常楽寺（じょうらくじ）は、滋賀県湖南市西寺にある天台宗系単立の寺院。山号は阿星山（あぼしさん）。本尊は千手観音。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%B8%B8%E6%A5%BD%E5%AF%BA_%28%E6%B9%96%E5%8D%97%E5%B8%82%29",
+      "text": "Jōraku-ji (常楽寺) is a Buddhist temple in the city of Konan, Shiga Prefecture, Japan. It belongs to the Tendai school of Japanese Buddhism. Its main image is a hibutsu statue of Senjū Kannon. Its Hondō and Three-story Pagoda are both National Treasures.: It is also referred to as Nishi-dera (西寺), whereas the temple of Chōjū-ji (長寿寺) is referred to as Higashi-dera (東寺).",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/J%C5%8Draku-ji",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -11050,7 +11107,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11487078",
@@ -11242,11 +11299,11 @@
     "featured": true,
     "score": 79.8,
     "summary": {
-      "text": "御上神社（みかみじんじゃ）は、滋賀県野洲市三上にある神社。式内社（名神大社）で、旧社格は官幣中社。現在は神社本庁の別表神社。琵琶湖南岸、「近江富士」の別名もある三上山（標高432メートル）の山麓に鎮座し、三上山を神体山として祀る。三上山は藤原秀郷（俵藤太）のムカデ退治伝説でも知られる。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%BE%A1%E4%B8%8A%E7%A5%9E%E7%A4%BE",
+      "text": "Mikami Shrine (御上神社, Mikami Jinja) is a Shinto shrine located in the city of Yasu, Shiga Prefecture, Japan.  The kami worshipped at this shrine is Ame-no-mikage-no-mikoto, Amaterasu's grandson, who in legend, descended onto 432-meter Mount Mikami during the reign of Emperor Kōrei (290 - 215 BC) to become the shintai of the mountain.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Mikami_Shrine",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -11275,7 +11332,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11490390",
@@ -11302,11 +11359,11 @@
     "featured": false,
     "score": 61.41,
     "summary": {
-      "text": "徳源院（とくげんいん）は、滋賀県米原市清滝にある天台宗の寺院。山号は霊通山。本尊は聖観世音菩薩。寺号で清瀧寺（せいりゅうじ）とも呼ばれる。京極氏の菩提寺であり、境内にある京極家墓所は国の史跡に指定されている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%BE%B3%E6%BA%90%E9%99%A2_%28%E7%B1%B3%E5%8E%9F%E5%B8%82%29",
+      "text": "Tokugen-in (徳源院) is a Buddhist temple in the Kiyotaki neighborhood of the city of Maibara, Shiga Prefecture Japan. It belongs to the Tendai school of Japanese Buddhism and its main image is a hibutsu statue of Sho-Kannon Bosatsu.  The temple is noted as the bodaiji of the Kyōgoku clan, a prominent Sengoku and Edo period daimyō clan. The clan cemetery was designated a National Historic Site in 1936.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Tokugen-in",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -11346,7 +11403,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11491514",
@@ -11588,7 +11645,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11499330",
@@ -11704,7 +11761,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11505052",
@@ -11732,11 +11789,11 @@
     "featured": false,
     "score": 63.87,
     "summary": {
-      "text": "日吉東照宮（ひよしとうしょうぐう）は、滋賀県大津市坂本にある神社。日吉大社の境外末社である。重要文化財の社殿は権現造の発祥とされ、関西の日光とも呼ばれている。比叡山東麓に鎮座する。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%97%A5%E5%90%89%E6%9D%B1%E7%85%A7%E5%AE%AE",
+      "text": "Hiyoshi Tōshō-gū (日吉東照宮) is a Shinto shrine in Ōtsu, Shiga Prefecture, Japan. It enshrines the first Shōgun of the Tokugawa Shogunate, Tokugawa Ieyasu. It was established in 1623. The shrine's annual festival is held on June 1.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Hiyoshi_T%C5%8Dsh%C5%8D-g%C5%AB",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -11783,7 +11840,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11505072",
@@ -12094,11 +12151,11 @@
     "featured": false,
     "score": 69.84,
     "summary": {
-      "text": "日牟禮八幡宮（ひむれはちまんぐう）は、滋賀県近江八幡市宮内町にある神社。旧社格は県社で、現在は神社本庁の別表神社。「近江八幡市」の市名の由来となった神社である。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%97%A5%E7%89%9F%E7%A6%AE%E5%85%AB%E5%B9%A1%E5%AE%AE",
+      "text": "Himure Hachiman-gū (日牟禮八幡宮) is a Shinto shrine located in the city of Ōmihachiman, Shiga Prefecture, Japan. The city is named after this shrine, and it is located within the Omihachiman City Traditional Buildings Preservation Area. The shrine has two main festivals, the Sagichō Matsuri (左義長まつり) and the Hachiman Matsuri (八幡まつり) which are both designated National Intangible Folk Cultural Properties.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Himure_Hachiman-g%C5%AB",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -12123,7 +12180,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11510250",
@@ -12672,7 +12729,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11527980",
@@ -12916,11 +12973,11 @@
     "featured": false,
     "score": 77.63,
     "summary": {
-      "text": "栗東トレーニングセンター（りっとうトレーニングセンター）は、滋賀県栗東市にある、日本中央競馬会(JRA)の施設（トレーニングセンター）である。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%A0%97%E6%9D%B1%E3%83%88%E3%83%AC%E3%83%BC%E3%83%8B%E3%83%B3%E3%82%B0%E3%82%BB%E3%83%B3%E3%82%BF%E3%83%BC",
+      "text": "Ritto Training Center (Japanese: 栗東トレーニングセンター, Rittō Torēningu Sentā) is a Japan Racing Association (JRA) facility in Rittō, Shiga Prefecture, Japan. It serves as the primary training base for West Japan (Kansai) racehorses.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Ritto_Training_Center",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -13217,11 +13274,11 @@
     "featured": false,
     "score": 63.97,
     "summary": {
-      "text": "正法寺（しょうほうじ）は、滋賀県大津市にある真言宗醍醐派の寺院。山号は岩間山。本尊は千手観世音菩薩。開山は加賀国白山を開いた泰澄（たいちょう）である。別称は岩間寺（いわまでら）。西国三十三所第12番札所。正法寺は、11番上醍醐の東方約4キロメートル、13番石山寺の南西約4キロメートル、滋賀県と京都府との府県境の一部をなす岩間山（標高443メートル）南麓の標高390メートル辺りに位置する。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%AD%A3%E6%B3%95%E5%AF%BA_%28%E5%A4%A7%E6%B4%A5%E5%B8%82%29",
+      "text": "Shōhō-ji (正法寺) is a Buddhist temple located in the Ishiyamauchihatachō neighborhood of the city of Ōtsu, Shiga Prefecture, Japan. It belongs to the Shingon-shū Daigoji-ha sect of Japanese Buddhism and its honzon (primary image) is a statue of Senjū Kannon Bosatsu (Sahasrabhuja). The temple's full name is Iwama-san Shōhō-ji (岩間山 正法寺), but the temple is also popularly known as the Iwama-dera. The temple is the 12th stop on the 33 temple Saigoku Kannon Pilgrimage route.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Sh%C5%8Dh%C5%8D-ji_%28%C5%8Ctsu%29",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -13250,7 +13307,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11545589",
@@ -13512,11 +13569,11 @@
     "featured": false,
     "score": 49.25,
     "summary": {
-      "text": "水口岡山城（みなくちおかやまじょう）は、滋賀県甲賀市水口町水口にあった日本の城。国の史跡に指定されている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%B0%B4%E5%8F%A3%E5%B2%A1%E5%B1%B1%E5%9F%8E",
+      "text": "Minakuchi Okayama Castle (水口岡山城, Minakuchi Okayama jō) was a Sengoku period Japanese castle located in what is now the city of  Kōka, Shiga Prefecture, in the Kansai region of Japan. Its ruins have been protected as a National Historic Site since 2017.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Minakuchi_Okayama_Castle",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -13644,7 +13701,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11548449",
@@ -13700,7 +13757,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11552043",
@@ -13966,7 +14023,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11554016",
@@ -14084,7 +14141,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11554898",
@@ -14140,7 +14197,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11555428",
@@ -14429,11 +14486,11 @@
     "featured": false,
     "score": 61.49,
     "summary": {
-      "text": "清水山城（しみずやまじょう）は、滋賀県高島市新旭町熊野本・同市新旭町安井川にあった日本の城（山城）。城跡は2004年（平成16年）2月27日に「清水山城館跡」として、国の史跡に指定されている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%B8%85%E6%B0%B4%E5%B1%B1%E5%9F%8E_%28%E8%BF%91%E6%B1%9F%E5%9B%BD%29",
+      "text": "Shimizuyama Castle (清水山城, Shimizuyama-jō) is a Kamakura to Sengoku period Japanese castle located in the former town of Shin'asahi, now part of Takashima city, in Shiga Prefecture, Japan. It had curved rings arranged in three directions around the main enclosure, and the site of the vassals and other buildings at the foot of the mountain. Its ruins have been protected as a National Historic Site since 2004.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Shimizuyama_Castle",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [],
     "external_ids": {
@@ -14761,11 +14818,11 @@
     "featured": false,
     "score": 61.21,
     "summary": {
-      "text": "滋賀県立琵琶湖文化館（しがけんりつ びわこぶんかかん）は、滋賀県大津市にある博物館。現在休館中。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%BB%8B%E8%B3%80%E7%9C%8C%E7%AB%8B%E7%90%B5%E7%90%B6%E6%B9%96%E6%96%87%E5%8C%96%E9%A4%A8",
+      "text": "The Museum of Shiga Prefecture Biwako-Bunkakan (滋賀県立琵琶湖文化館) is a museum in the capital city of Shiga Prefecture, Japan.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Museum_of_Shiga_Prefecture_Biwako-Bunkakan",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -14895,11 +14952,11 @@
     "featured": false,
     "score": 64.97,
     "summary": {
-      "text": "滋賀県立芸術劇場びわ湖ホール（しがけんりつげいじゅつげきじょうびわこホール）は滋賀県大津市打出浜にある劇場・歌劇場。通称はびわ湖ホール。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%BB%8B%E8%B3%80%E7%9C%8C%E7%AB%8B%E8%8A%B8%E8%A1%93%E5%8A%87%E5%A0%B4_%E3%81%B3%E3%82%8F%E6%B9%96%E3%83%9B%E3%83%BC%E3%83%AB",
+      "text": "Biwako Hall Center for the Performing Arts, Shiga (滋賀県立芸術劇場びわ湖ホール, Shiga Kenritsu Geijutsu Gekijō Biwa-ko Hōru) is a performing arts centre that opened beside Lake Biwa in Ōtsu, Shiga Prefecture, Japan in 1998. Biwako Hall is one of Japan's leading centres for opera and is home to the Biwako Hall Vocal Ensemble. The three halls also host performances of ballet, orchestral and choral works, chamber music, world music, jazz, plays, and traditional performing arts.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Biwako_Hall_Center_for_the_Performing_Arts%2C_Shiga",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -14968,11 +15025,11 @@
     "featured": false,
     "score": 60.75,
     "summary": {
-      "text": "滋賀県立美術館（しがけんりつびじゅつかん、英: Shiga Museum of Art、英略称:SMoA）は滋賀県大津市にある美術館。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%BB%8B%E8%B3%80%E7%9C%8C%E7%AB%8B%E7%BE%8E%E8%A1%93%E9%A4%A8",
+      "text": "Shiga Museum of Art (滋賀県立美術館, Shiga Kenritsu Bijutsukan) opened under the former name Museum of Modern Art, Shiga (滋賀県立近代美術館) in Ōtsu, Shiga Prefecture, Japan in 1984, changing its name to broaden its scope on 1 April 2021. As of 31 March 2024, the collection numbered some 2,589 works, including a Brâncuși Bird in Space, paintings by Rothko and Yukihiko Yasuda, and art brut.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Shiga_Museum_of_Art",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -15225,7 +15282,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11564979",
@@ -15301,7 +15358,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11566714",
@@ -15448,7 +15505,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11568963",
@@ -15736,7 +15793,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11575775",
@@ -15992,6 +16049,57 @@
     "updated_at": "2026-09-28"
   },
   {
+    "id": "wd-Q11579600",
+    "name": {
+      "ja": "白山神社 (高島市宮野)",
+      "kana": "はくさんじんじゃ",
+      "romaji": "Hakusanjinja",
+      "zh_tw": "白山神社",
+      "en": "Hakusan Shrine (Takashima)"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 35.31222,
+      "lng": 136.0
+    },
+    "prefecture": "shiga",
+    "kind": "major",
+    "themes": [],
+    "tags": [],
+    "featured": false,
+    "score": 45.1,
+    "summary": {
+      "text": "白山神社（はくさんじんじゃ）は、滋賀県高島市宮野にある神社である。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E7%99%BD%E5%B1%B1%E7%A5%9E%E7%A4%BE_%28%E9%AB%98%E5%B3%B6%E5%B8%82%E5%AE%AE%E9%87%8E%29",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "images": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/f/fb/Miyano-hakusanjinja.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+        "author": "山重",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Miyano-hakusanjinja.JPG"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q11579600"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q11579600",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E7%99%BD%E5%B1%B1%E7%A5%9E%E7%A4%BE_%28%E9%AB%98%E5%B3%B6%E5%B8%82%E5%AE%AE%E9%87%8E%29",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
+  },
+  {
     "id": "wd-Q11580439",
     "name": {
       "ja": "白雲館",
@@ -16124,11 +16232,11 @@
     "featured": false,
     "score": 75.42,
     "summary": {
-      "text": "百済寺（ひゃくさいじ）は、滋賀県東近江市百済寺町にある天台宗の寺院。山号は釈迦山。本尊は十一面観音。開基は聖徳太子とされる。金剛輪寺、西明寺とともに「湖東三山」の1つとして知られる。境内は国の史跡に指定されている。また、紅葉の名所としても知られている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E7%99%BE%E6%B8%88%E5%AF%BA",
+      "text": "Hyakusai-ji (百済寺) is a Buddhist temple in the Hyakusaiji neighborhood of the city of Higashiōmi, Shiga Prefecture, Japan. It belongs to the Tendai school of Japanese Buddhism, and together with Kongōrin-ji and Saimyō-ji is regard as one of the \"Three Great Temples\" east of Lake Biwa.  It was designated a National Historic Site in 2008.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Hyakusai-ji",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -16157,7 +16265,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11581020",
@@ -16562,7 +16670,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11594131",
@@ -16681,7 +16789,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11602727",
@@ -16737,7 +16845,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11602835",
@@ -16797,7 +16905,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11603120",
@@ -16980,7 +17088,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11607423",
@@ -17051,11 +17159,11 @@
     "featured": false,
     "score": 71.64,
     "summary": {
-      "text": "義仲寺（ぎちゅうじ）は、滋賀県大津市にある天台宗系単立の寺院。山号は朝日山。本尊は聖観音菩薩。境内全域が1967年（昭和42年）に国の史跡に指定されている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E7%BE%A9%E4%BB%B2%E5%AF%BA",
+      "text": "Gichū-ji (義仲寺) is a Tendai Buddhist temple in the Baba neighborhood of the city of Ōtsu, Shiga Prefecture, Japan. Its honzon is a statue of Shō-Kannon Bosatsu.  It contains the grave of the late Heian period warlord Kiso Yoshinaka and the Edo period poet Matsuo Basho. Its precincts were designated a National Historic Site in 1967.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Gich%C5%AB-ji",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -17100,7 +17208,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11611119",
@@ -17318,11 +17426,11 @@
     "featured": false,
     "score": 60.19,
     "summary": {
-      "text": "芦浦観音寺（あしうらかんのんじ）は、滋賀県草津市にある天台宗の寺院。山号は大慈山。本尊は十一面観世音菩薩で秘仏となっている。堀を含む境内全体が芦浦観音寺跡として国の史跡に指定されている。宗教法人としての名称は「観音寺」。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E8%8A%A6%E6%B5%A6%E8%A6%B3%E9%9F%B3%E5%AF%BA",
+      "text": "Ashiura Kannon-ji (芦浦観音寺) is a Buddhist temple of the Tendai sect located in the city of Kusatsu, Shiga Prefecture, Japan. The temple was founded in the Hakuho period and its grounds were designated a National Historic Site in 2004. The complex includes several Muromachi or Edo Period buildings, two of which are designated as Important Cultural Properties.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Ashiura_Kannon-ji",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -17351,7 +17459,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11616123",
@@ -17379,11 +17487,11 @@
     "featured": false,
     "score": 74.57,
     "summary": {
-      "text": "苗村神社（なむらじんじゃ）は、滋賀県蒲生郡竜王町にある神社。式内社で旧社格は県社。近郷の33ヶ村にわたって氏子を有する総社である。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E8%8B%97%E6%9D%91%E7%A5%9E%E7%A4%BE",
+      "text": "Namura Shrine (苗村神社) is a Shinto shrine located in the town of Ryūō, Shiga Prefecture, Japan. The shrine has many structures from the Muromachi period or older which are designated either National Treasures (NT) or Important Cultural Properties (ICP). Although the shrine holds annual festivals, the shrine's main festival is held only once every 33 years.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Namura_Shrine",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -17412,7 +17520,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11618829",
@@ -17468,7 +17576,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11620527",
@@ -17535,7 +17643,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11622537",
@@ -17591,7 +17699,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11622964",
@@ -17784,7 +17892,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11628433",
@@ -17814,11 +17922,11 @@
     "featured": true,
     "score": 80.37,
     "summary": {
-      "text": "西明寺（さいみょうじ）は、滋賀県犬上郡甲良町池寺にある天台宗の寺院。山号は龍応山（りゅうおうざん）。本尊は薬師如来。開山は三修上人である。金剛輪寺、百済寺とともに「湖東三山」の1つに数えられる。西国薬師四十九霊場第32番札所。境内は紅葉の名所となっている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E8%A5%BF%E6%98%8E%E5%AF%BA_%28%E6%BB%8B%E8%B3%80%E7%9C%8C%E7%94%B2%E8%89%AF%E7%94%BA%29",
+      "text": "Saimyō-ji (西明寺), also known as Kotō-sanzan Saimyōji (湖東三山西明寺) or as Ryūōzan Saimyōji (龍應山西明寺) is a Buddhist temple of the Tendai sect located in the town of Kōra, Shiga Prefecture, Japan. The honzon of the temple is Yakushi Nyōrai, the Buddha of healing. The temple was founded in the early Heian period and together with Kongōrin-ji in Aishō and Hyakusai-ji in Higashiōmi the temple forms a group of three temples known as Kotō-sanzan (湖東三山; lit. \"three mountains east of the lake\").",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Saimy%C5%8D-ji_%28Kora%29",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -17847,7 +17955,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11630653",
@@ -17874,11 +17982,11 @@
     "featured": false,
     "score": 68.34,
     "summary": {
-      "text": "観音正寺（かんのんしょうじ）は、滋賀県近江八幡市安土町石寺にある天台宗系単立の寺院。山号は繖山（きぬがささん）。本尊は千手観音。西国三十三所第32番札所。琵琶湖の東岸、標高433メートルの繖山（きぬがさやま）の山頂南側の標高370メートル付近、観音寺城の跡に位置する。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E8%A6%B3%E9%9F%B3%E6%AD%A3%E5%AF%BA",
+      "text": "Kannonshō-ji (観音正寺) is a Buddhist temple located in the Azuchi neighborhood of the city of Ōmihachiman, Shiga Prefecture, Japan. It belongs to the  Tendai sect of Japanese Buddhism and its honzon is a statue of Senjū Kannon Bosatsu (Sahasrabhuja). The temple's full name is Kinugasa-san Kannonshō-ji (繖山 観音正寺).The temple is the 31st stop on the Saigoku Kannon Pilgrimage route.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Kannonsh%C5%8D-ji",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -17907,7 +18015,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11633365",
@@ -17976,74 +18084,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
-    "id": "wd-Q11634258",
-    "name": {
-      "ja": "豊郷町立豊郷小学校",
-      "kana": "とよさとちょうりつとよさとしょうがっこう",
-      "romaji": "Toyosatochoritsutoyosatoshogakko",
-      "zh_tw": "豐鄉小學校舊校捨",
-      "en": "Toyosato Elementary School"
-    },
-    "kana_source": "wikipedia",
-    "location": {
-      "lat": 35.202944,
-      "lng": 136.233694
-    },
-    "prefecture": "shiga",
-    "kind": "major",
-    "themes": [],
-    "tags": [],
-    "featured": false,
-    "score": 72.62,
-    "summary": {
-      "text": "豐鄉町立豐鄉小學校是位於日本滋賀縣犬上郡豐鄉町大字石畑的一所公立小學。其舊校舍因其歷史地標地位、週邊的保育工作以及曾作為《K-ON！輕音部》等影視作品的取景地而聞名全國。",
-      "lang": "zh",
-      "source_url": "https://zh.wikipedia.org/wiki/%E8%B1%90%E9%84%89%E7%94%BA%E7%AB%8B%E8%B1%90%E9%84%89%E5%B0%8F%E5%AD%B8%E6%A0%A1",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "nearest_stations": [
-      {
-        "name": {
-          "ja": "豊郷",
-          "kana": "とよさと",
-          "romaji": "Toyosato",
-          "en": "Toyosato"
-        },
-        "distance_m": 640
-      }
-    ],
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ae/Toyosato_Elementary_School_New_building.jpg/960px-Toyosato_Elementary_School_New_building.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Rsa",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Toyosato_Elementary_School_New_building.jpg"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q11634258",
-      "osm": "way/239775634"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q11634258",
-        "fetched_at": "2026-09-27"
-      },
-      {
-        "url": "https://www.openstreetmap.org/way/239775634",
-        "fetched_at": "2026-09-27"
-      },
-      {
-        "url": "https://ja.wikipedia.org/wiki/%E8%B1%8A%E9%83%B7%E7%94%BA%E7%AB%8B%E8%B1%8A%E9%83%B7%E5%B0%8F%E5%AD%A6%E6%A0%A1",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11634951",
@@ -18104,7 +18145,7 @@
       "ja": "賤ヶ岳",
       "kana": "しずがたけ",
       "romaji": "Shizugatake",
-      "zh_tw": "賤岳",
+      "zh_tw": "賤嶽",
       "en": "Shizugatake"
     },
     "kana_source": "wikipedia",
@@ -18147,7 +18188,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11636084",
@@ -18331,6 +18372,59 @@
     ],
     "status": "published",
     "updated_at": "2026-09-28"
+  },
+  {
+    "id": "wd-Q11638483",
+    "name": {
+      "ja": "近江大鳥橋",
+      "kana": "おうみおおどりばし",
+      "romaji": "Omiodoribashi",
+      "zh_tw": "近江大鳥橋",
+      "en": "Omiodori Bridge"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 34.942083,
+      "lng": 136.031889
+    },
+    "prefecture": "shiga",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "橋"
+    ],
+    "featured": false,
+    "score": 45.31,
+    "summary": {
+      "text": "近江大鳥橋（おうみおおどりばし）は新名神高速道路 信楽IC-大津JCTにある橋梁である。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E8%BF%91%E6%B1%9F%E5%A4%A7%E9%B3%A5%E6%A9%8B",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7f/Omi-oodori_bridge_003.jpg/960px-Omi-oodori_bridge_003.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "W-nexco",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Omi-oodori_bridge_003.jpg"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q11638483"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q11638483",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E8%BF%91%E6%B1%9F%E5%A4%A7%E9%B3%A5%E6%A9%8B",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11638542",
@@ -18693,7 +18787,7 @@
       "ja": "道の駅塩津海道 あぢかまの里",
       "kana": "みちのえきしおつかいどうあぢかまのさと",
       "romaji": "Michinoekishiotsukaidoajikamanosato",
-      "zh_tw": "道之驛鹽津海道 あぢかま之里",
+      "zh_tw": "道之驛鹽津海道 あぢかま之裡",
       "en": "Roadside station Shiotsukaido Ajikama-no-sato"
     },
     "kana_source": "wikipedia",
@@ -18736,7 +18830,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11641340",
@@ -18851,7 +18945,7 @@
       "ja": "道の駅竜王かがみの里",
       "kana": "みちのえきりゅうおうかがみのさと",
       "romaji": "Michinoekiryuokagaminosato",
-      "zh_tw": "道之驛龍王鏡之里",
+      "zh_tw": "道之驛龍王鏡之裡",
       "en": "Roadside station Ryuo Kagami-no-sato"
     },
     "kana_source": "wikipedia",
@@ -18894,7 +18988,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11641486",
@@ -19080,7 +19174,7 @@
       "ja": "還来神社",
       "kana": "もどろぎじんじゃ",
       "romaji": "Modorogijinja",
-      "zh_tw": "還来神社",
+      "zh_tw": "還來神社",
       "en": "Modorogi Shrine"
     },
     "kana_source": "wikidata",
@@ -19121,7 +19215,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11642701",
@@ -19230,7 +19324,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11643470",
@@ -19258,11 +19352,11 @@
     "featured": true,
     "score": 80.88,
     "summary": {
-      "text": "都久夫須麻神社（つくぶすまじんじゃ）は、日本の近畿地方北東部の、琵琶湖に浮かぶ島である竹生島に鎮座する神社。現在行政区画上では滋賀県長浜市早崎町（旧・東浅井郡早崎村）に属する（※過去については『所在地』を参照のこと）。竹生島神社（ちくぶしま じんじゃ）とも呼ばれ、公式案内などではこちらの呼称を用いている。神体は竹生島そのもの。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E9%83%BD%E4%B9%85%E5%A4%AB%E9%A0%88%E9%BA%BB%E7%A5%9E%E7%A4%BE",
+      "text": "Tsukubusuma Shrine (都久夫須麻神社, Tsukubusuma Jinja) is a Shinto shrine on Chikubu Island in Shiga Prefecture, Japan. Its main hall (本殿, honden) is a National Treasure of Japan. The shrine's main festival is held annually on June 15. It is also called Chikubushima Shrine (竹生島神社, Chikubushima Jinja).",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Tsukubusuma_Shrine",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -19287,7 +19381,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11644483",
@@ -19380,11 +19474,11 @@
     "featured": false,
     "score": 76.91,
     "summary": {
-      "text": "金剛輪寺（こんごうりんじ）は、滋賀県愛知郡愛荘町松尾寺にある天台宗の寺院。山号は松峯山（しょうほうざん）。本尊は聖観音菩薩（秘仏）。地名から松尾寺ともいう。開創は行基とされる。西明寺、百済寺（ひゃくさいじ）とともに湖東三山の1つに数えられる。現在は「血染めのもみじ」と呼ばれる有名な紅葉の名所となっている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E9%87%91%E5%89%9B%E8%BC%AA%E5%AF%BA",
+      "text": "Kongōrin-ji (金剛輪寺), also known as Matsuo-dera (松尾寺) (from its location) is a Buddhist temple of the Tendai sect located in the town of Aishō, Shiga Prefecture, Japan. The honzon of the temple is Kannon Bosatsu. The temple was founded in the early Heian period and together with Saimyō-ji in Kōra and Hyakusai-ji in Higashiōmi the temple forms a group of three temples known as Kotō-sanzan (湖東三山; lit. '\"three mountains east of the lake\"').",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Kong%C5%8Drin-ji",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -19413,7 +19507,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11649828",
@@ -19499,11 +19593,11 @@
     "featured": false,
     "score": 71.94,
     "summary": {
-      "text": "長命寺（ちょうめいじ）は、滋賀県近江八幡市長命寺町にある天台宗系単立の寺院。山号は姨綺耶山（いきやさん）。本尊は千手観音、十一面観音、聖観音の三尊を千手十一面聖観世音菩薩としたもの。聖徳太子の開基と伝わる。西国三十三所第31番札所。2015年（平成27年）4月24日に「琵琶湖とその水辺景観－ 祈りと暮らしの水遺産 」の構成文化財として日本遺産に認定された。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E9%95%B7%E5%91%BD%E5%AF%BA",
+      "text": "Chōmei-ji (長命寺) is a Buddhist temple located in the Chōmeiji neighborhood of the city of Ōmihachiman, Shiga Prefecture, Japan. It belongs to the Tendai sect of Japanese Buddhism and its honzon (primary image) is a statue of Senjū Kannon Bosatsu (Sahasrabhuja), the bodhisattva of 1000 arms. The temple's full name is Ikiya-san Chōmei-ji (綺耶山 長命寺). The temple is the 31st stop on the 33-temple Saigoku Kannon Pilgrimage route. It is unique in that its honzon is a trinity of Senjū Kannon, Jūichimen Kannon Bosatsu and Shō-Kannon statues.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Ch%C5%8Dmei-ji",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -19532,7 +19626,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11653274",
@@ -19666,7 +19760,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11653314",
@@ -20057,7 +20151,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11659228",
@@ -20292,7 +20386,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11664826",
@@ -20352,7 +20446,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11664829",
@@ -20471,7 +20565,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11675836",
@@ -21018,7 +21112,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q124313526",
@@ -21171,7 +21265,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q1268542",
@@ -21339,7 +21433,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q130638515",
@@ -21410,7 +21504,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q131197013",
@@ -21630,7 +21724,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q132125270",
@@ -21810,7 +21904,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q132725989",
@@ -22002,7 +22096,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q135552089",
@@ -22062,6 +22156,72 @@
     ],
     "status": "published",
     "updated_at": "2026-09-28"
+  },
+  {
+    "id": "wd-Q136257483",
+    "name": {
+      "ja": "石清水神社",
+      "kana": "いわしみずじんじゃ",
+      "romaji": "Iwashimizu Jinja",
+      "zh_tw": "石清水神社",
+      "en": "Iwashimizu Jinja"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 35.247611,
+      "lng": 136.2655
+    },
+    "prefecture": "shiga",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "神社"
+    ],
+    "featured": false,
+    "score": 45.37,
+    "summary": {
+      "text": "石清水神社（いわしみずじんじゃ）は滋賀県彦根市大堀町749にある神社である。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E7%9F%B3%E6%B8%85%E6%B0%B4%E7%A5%9E%E7%A4%BE",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "彦根口",
+          "kana": "ひこねぐち",
+          "romaji": "Hikoneguchi",
+          "en": "Hikoneguchi"
+        },
+        "distance_m": 1030
+      },
+      {
+        "name": {
+          "ja": "高宮",
+          "kana": "たかみや",
+          "romaji": "Takamiya",
+          "en": "Takamiya"
+        },
+        "distance_m": 1340
+      }
+    ],
+    "images": [],
+    "external_ids": {
+      "wikidata": "Q136257483"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q136257483",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E7%9F%B3%E6%B8%85%E6%B0%B4%E7%A5%9E%E7%A4%BE",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q139883929",
@@ -22509,7 +22669,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q17214206",
@@ -22591,11 +22751,11 @@
     "featured": false,
     "score": 74.11,
     "summary": {
-      "text": "長寿寺（ちょうじゅじ）は、滋賀県湖南市東寺にある天台宗の寺院。山号は阿星山（あぼしさん）。本尊は地蔵菩薩。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E9%95%B7%E5%AF%BF%E5%AF%BA_%28%E6%B9%96%E5%8D%97%E5%B8%82%29",
+      "text": "Chōjū-ji (長寿寺) is a Buddhist temple in the city of Konan, Shiga Prefecture, Japan. It belongs to the Tendai school of Japanese Buddhism. Its main image is a hibutsu statue of Jizō Bosatsu. Its Hondō is a National Treasure.: It is also referred to as  Higashi-dera (東寺), whereas the temple of Jōraku-ji (長寿寺) is referred to as Nishi-dera (西寺).",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Ch%C5%8Dj%C5%AB-ji",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -22619,7 +22779,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q17215620",
@@ -23053,7 +23213,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q200239",
@@ -23440,11 +23600,11 @@
     "featured": false,
     "score": 59.32,
     "summary": {
-      "text": "奥石神社（おいそじんじゃ）は、滋賀県近江八幡市安土町東老蘇にある神社。式内社で、旧社格は県社。東老蘇集落の北、中山道（中仙道）沿いの老蘇森（おいそのもり、国の史跡）内に鎮座する。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%A5%A5%E7%9F%B3%E7%A5%9E%E7%A4%BE",
+      "text": "Oiso Shrine (奥石神社, Oiso Jinja) is a Shinto shrine located in the Azuchi neighborhood of the city of Ōmihachiman, Shiga Prefecture, Japan. It located on the old Nakasendō highway connecting Kyoto with the eastern provinces of Japan, and part of the precincts are a National Historic Site. The main kami enshrined is Ame-no-Koyane, who at this shrine is worshipped as the kami of then kitchen and protection against fire, and for easy childbirth.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Oiso_Shrine",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -23473,7 +23633,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q24865035",
@@ -23530,7 +23690,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q24865038",
@@ -24062,11 +24222,11 @@
     "featured": false,
     "score": 70.22,
     "summary": {
-      "text": "水口城（みなくちじょう）は、近江国甲賀郡水口村（現・滋賀県甲賀市水口町水口）にあった日本の城。城跡は県指定史跡である。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%B0%B4%E5%8F%A3%E5%9F%8E",
+      "text": "Minakuchi Castle (水口城, Minakuchi-jō) is a hirashiro-style Japanese castle located in the former town of Minakuchi, in the city of Kōka, Shiga Prefecture, Japan. The castle is also known as Hekisui Castle",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Minakuchi_Castle",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -24262,11 +24422,11 @@
     "featured": false,
     "score": 67.05,
     "summary": {
-      "text": "水口宿（みなくちしゅく、みなくちじゅく）は、近江国甲賀郡にあった東海道五十三次の50番目の宿場である。現在は滋賀県甲賀市水口町旧市街。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%B0%B4%E5%8F%A3%E5%AE%BF",
+      "text": "Minakuchi-juku (水口宿, Minakuchi-juku) was the fiftieth of the fifty-three stations of the Tōkaidō highway connecting Edo with Kyoto in Edo period Japan. It was located in the Minakuchi neighborhood of the present-day city of Kōka, Shiga Prefecture, Japan.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Minakuchi-juku",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -24365,7 +24525,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q3082076",
@@ -24392,11 +24552,11 @@
     "featured": false,
     "score": 63.65,
     "summary": {
-      "text": "天孫神社（てんそんじんじゃ）は、滋賀県大津市京町にある神社。旧社格は県社。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%A4%A9%E5%AD%AB%E7%A5%9E%E7%A4%BE",
+      "text": "The Tenson Shrine (天孫神社, Tenson Jinja) is a Shinto shrine located in Ōtsu, Shiga, Japan.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Tenson_Shrine",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -24441,7 +24601,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q30931160",
@@ -24542,11 +24702,11 @@
     "featured": false,
     "score": 66.54,
     "summary": {
-      "text": "石部宿（いしべしゅく、いしべじゅく）は、近江国甲賀郡にあった東海道五十三次の51番目の宿場である。現在の滋賀県湖南市にあたる。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E7%9F%B3%E9%83%A8%E5%AE%BF",
+      "text": "Ishibe-juku (石部宿) was the fifty-first of the fifty-three stations of the Tōkaidō highway connecting Edo with Kyoto in Edo period Japan. It was located in the present-day city of Konan, Shiga Prefecture, Japan.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Ishibe-juku",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -24604,11 +24764,11 @@
     "featured": false,
     "score": 69.96,
     "summary": {
-      "text": "草津宿（くさつしゅく、くさつじゅく、くさつやど）は、近江国栗太郡にあった東海道五十三次の52番目の宿場で、中山道が合流する。現在は滋賀県草津市市街。本陣が現存し、国の史跡に指定されている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E8%8D%89%E6%B4%A5%E5%AE%BF",
+      "text": "Kusatsu-juku (草津宿, Kusatsu-juku) was the fifty-second of the fifty-three stations of the Tōkaidō as well as the sixty-eighth of the sixty-nine stations of the Nakasendō. It is located in the downtown area of the present-day city of Kusatsu, Shiga Prefecture, Japan.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Kusatsu-juku",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -24670,11 +24830,11 @@
     "featured": false,
     "score": 68.46,
     "summary": {
-      "text": "満月寺（まんげつじ）は、滋賀県大津市本堅田にある臨済宗大徳寺派の寺院。山号は海門山（かいもんさん）。本尊は聖観音。琵琶湖畔にあり、湖上に突き出ている浮御堂で知られる。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%BA%80%E6%9C%88%E5%AF%BA_%28%E5%A4%A7%E6%B4%A5%E5%B8%82%29",
+      "text": "Mangetsu-ji (満月寺) is a temple beside Lake Biwa in Ōtsu, Shiga Prefecture, Japan. The Heian period statue of Shō Kannon is an Important Cultural Property.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Mangetsu-ji",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -24708,7 +24868,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q3324144",
@@ -24731,11 +24891,11 @@
     "featured": false,
     "score": 62.47,
     "summary": {
-      "text": "守山宿（もりやましゅく、もりやまじゅく）は、近江国野洲郡にあった中山道67番目の宿場（→中山道六十九次）で、現在の滋賀県守山市旧市街に当たる。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%AE%88%E5%B1%B1%E5%AE%BF",
+      "text": "Moriyama-juku (守山宿)  was the sixty-seventh of the sixty-nine stations of the Nakasendō highway connecting Edo with Kyoto in Edo period Japan. It was located in the present-day city of Moriyama, Shiga Prefecture, Japan.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Moriyama-juku",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -24793,11 +24953,11 @@
     "featured": false,
     "score": 70.48,
     "summary": {
-      "text": "醒井宿（さめがいしゅく、さめがいじゅく）は、近江国坂田郡にあった中山道（中山道六十九次）61番目の宿場であり、現在の滋賀県米原市醒井に位置する。2015年（平成27年）4月24日に文化庁の「日本遺産」として認定された「琵琶湖とその水辺景観 - 祈りと暮らしの水遺産」の構成文化財に選定されている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E9%86%92%E4%BA%95%E5%AE%BF",
+      "text": "Samegai-juku (醒井宿, Samegai-juku) was the sixty-first of the sixty-nine post stations on the Nakasendō, a highway connecting Edo (present-day Tokyo) and Kyoto during the Edo period of Japan. Located in what is now Maibara in Shiga Prefecture, the post town developed around the clear spring Isame no Shimizu and the Jizogawa River. Several Edo-period buildings and waterways survive, and the area forms part of the Japan Heritage listing “Lake Biwa and its Waterside Landscape—Water Heritage of Prayer and Life.”",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Samegai-juku",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -24893,7 +25053,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q38277762",
@@ -25018,7 +25178,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q3945402",
@@ -25143,7 +25303,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q403338",
@@ -25308,11 +25468,11 @@
     "featured": false,
     "score": 63.27,
     "summary": {
-      "text": "八幡山ロープウェー（はちまんやまロープウェー）は、滋賀県近江八幡市の公園前駅から同市の八幡城址駅までを結ぶ近江鉄道の索道（ロープウェイ）である。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%85%AB%E5%B9%A1%E5%B1%B1%E3%83%AD%E3%83%BC%E3%83%97%E3%82%A6%E3%82%A7%E3%83%BC",
+      "text": "The Hachimanyama Ropeway (八幡山ロープウェー, Hachiman'yama Rōpuwē) is a Japanese aerial lift line in Ōmihachiman, Shiga, operated by Ohmi Railway. Opened in 1962, the line climbs Mount Hachiman, where there was Hachiman Castle built by Toyotomi Hidetsugu. The observatory has a view of Lake Biwa, as well as the city of Ōmihachiman, known for its traditional buildings lasting from Edo period.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Yawatayama_Ropeway",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -25454,7 +25614,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q59282652",
@@ -25528,11 +25688,11 @@
     "featured": false,
     "score": 62.31,
     "summary": {
-      "text": "草津市立水生植物公園みずの森（くさつしりつすいせいしょくぶつこうえんみずのもり）は、滋賀県草津市の烏丸半島にある植物園である。「植物と人、水と人のふれあい」をテーマに、1996年（平成8年）に開園した。総面積は約3.7 ha。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E8%8D%89%E6%B4%A5%E5%B8%82%E7%AB%8B%E6%B0%B4%E7%94%9F%E6%A4%8D%E7%89%A9%E5%85%AC%E5%9C%92%E3%81%BF%E3%81%9A%E3%81%AE%E6%A3%AE",
+      "text": "The Mizunomori Water Botanical Garden (草津市立水生植物公園みずの森, Kusatsu Shiritsu Suiseishokubutsu Kōen Mizunomori), also known as the Kusatsu Aquatic Botanical Garden, is a botanical garden specializing in aquatic plants and best known for its extensive lotus display. Mizu-no-mori means \"water forest\" in Japanese.  It is located on Lake Biwa's southeastern shore on the Karasuma Peninsula in Oroshimo-cho, Kusatsu, Shiga, Japan, and open daily except Mondays. An admission fee is charged.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Mizunomori_Water_Botanical_Garden",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -25637,7 +25797,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q60988403",
@@ -25760,11 +25920,11 @@
     "featured": false,
     "score": 53.24,
     "summary": {
-      "text": "湖東県立自然公園（ことうけんりつしぜんこうえん）は、滋賀県東部の県立自然公園である。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%B9%96%E6%9D%B1%E7%9C%8C%E7%AB%8B%E8%87%AA%E7%84%B6%E5%85%AC%E5%9C%92",
+      "text": "Kotō Prefectural Natural Park (湖東県立自然公園, Kotō kenritsu shizen kōen) is a Prefectural Natural Park in Shiga Prefecture, Japan. Established in 1987, the park comprises areas of the eastern plains of Lake Biwa and the foothills of the Suzuka Mountains. It spans the municipalities of Aishō, Higashiōmi, Hikone, Kōra and Taga, and encompasses the temples of Hyakusai-ji (百済寺), Kongōrin-ji (金剛輪寺), and Saimyō-ji (西明寺).",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Kot%C5%8D_Prefectural_Natural_Park",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -25809,11 +25969,11 @@
     "featured": false,
     "score": 54.83,
     "summary": {
-      "text": "朽木・葛川県立自然公園（くつき・かつらがわけんりつしぜんこうえん）は、滋賀県西部の県立自然公園である。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%9C%BD%E6%9C%A8%E3%83%BB%E8%91%9B%E5%B7%9D%E7%9C%8C%E7%AB%8B%E8%87%AA%E7%84%B6%E5%85%AC%E5%9C%92",
+      "text": "Kutsuki-Katsuragawa Prefectural Natural Park (朽木・葛川県立自然公園, Kutsuki-Katsuragawa kenritsu shizen kōen) is a Prefectural Natural Park in the mountains of western Shiga Prefecture, Japan. Established in 1971, the park spans the borders of the municipalities of Ōtsu and Takashima.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Kutsuki-Katsuragawa_Prefectural_Natural_Park",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -26039,7 +26199,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q66380841",
@@ -26168,7 +26328,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q67494156",
@@ -26240,11 +26400,11 @@
     "featured": false,
     "score": 55.21,
     "summary": {
-      "text": "三上・田上・信楽県立自然公園（みかみ・たなかみ・しがらきけんりつしぜんこうえん）は、滋賀県南部の県立自然公園である。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E4%B8%89%E4%B8%8A%E3%83%BB%E7%94%B0%E4%B8%8A%E3%83%BB%E4%BF%A1%E6%A5%BD%E7%9C%8C%E7%AB%8B%E8%87%AA%E7%84%B6%E5%85%AC%E5%9C%92",
+      "text": "Mikami-Tanakami-Shigaraki Prefectural Natural Park (三上・田上・信楽県立自然公園, Mikami-Tanakami-Shigaraki kenritsu shizen kōen) is a Prefectural Natural Park in southern Shiga Prefecture, Japan. Established in 1969, the park spans the borders of the municipalities of Higashiōmi, Kōka, Konan, Ōmihachiman, Ōtsu, Rittō, Ryūō, and Yasu; and encompasses Mount Mikami, Mount Tanakami, and the Shigaraki district.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Mikami-Tanakami-Shigaraki_Prefectural_Natural_Park",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -26272,7 +26432,7 @@
       "ja": "武奈ヶ岳",
       "kana": "ぶながたけ",
       "romaji": "Bunagatake",
-      "zh_tw": "武奈岳",
+      "zh_tw": "武奈嶽",
       "en": "Mount Bunagatake"
     },
     "kana_source": "wikipedia",
@@ -26287,11 +26447,11 @@
     "featured": false,
     "score": 67.08,
     "summary": {
-      "text": "武奈ヶ岳（ぶながたけ）は、滋賀県大津市にある、標高1214.4mの山。滋賀県西部、湖西地方に位置する比良山地の最高峰である。琵琶湖国定公園の一部。日本二百名山、近畿百名山の一つ。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%AD%A6%E5%A5%88%E3%83%B6%E5%B2%B3",
+      "text": "Mount Bunagatake (武奈ヶ岳, Bunagatake) is a 1,214.4-metre-high (3,984 ft) mountain in Ōtsu, Shiga Prefecture, Japan. This mountain is one of the 200 famous mountains in Japan and also one of the Kinki 100 mountains.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Mount_Bunagatake",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -26315,7 +26475,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q6920956",
@@ -26338,11 +26498,11 @@
     "featured": false,
     "score": 74.88,
     "summary": {
-      "text": "御在所岳（ございしょだけ）は、三重県三重郡菰野町と滋賀県東近江市の境にある標高1,212 mの山で、御在所山とも呼ばれる。鈴鹿国定公園の中に位置し、日本二百名山、関西百名山及び鈴鹿セブンマウンテンに選定されている。また、東近江市が市政10周年を記念して2015年（平成27年）9月に選定した鈴鹿10座の一座でもある。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%BE%A1%E5%9C%A8%E6%89%80%E5%B2%B3",
+      "text": "Mount Gozaisho (御在所岳, Gozaisho-dake) is a Japanese mountain located on the border of Komono, Mie Prefecture and Higashi-Ōmi, Shiga Prefecture.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Mount_Gozaisho",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -26423,7 +26583,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q72183108",
@@ -26655,7 +26815,7 @@
       "ja": "佐川美術館",
       "kana": "さがわびじゅつかん",
       "romaji": "Sagawabijutsukan",
-      "zh_tw": "佐川美术馆",
+      "zh_tw": "佐川美術館",
       "en": "Sagawa Art Museum"
     },
     "kana_source": "wikipedia",
@@ -26706,7 +26866,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q7402803",
@@ -27188,7 +27348,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q748040",
@@ -27382,7 +27542,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q77824459",
@@ -27635,7 +27795,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q85882705",
@@ -27711,7 +27871,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q88281532",
@@ -27855,7 +28015,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q93346924",
@@ -27880,11 +28040,11 @@
     "featured": false,
     "score": 47.62,
     "summary": {
-      "text": "伊勢遺跡（いせいせき）は、滋賀県守山市伊勢町・阿村町・栗東市野尻にある遺跡。国の史跡に指定されている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E4%BC%8A%E5%8B%A2%E9%81%BA%E8%B7%A1",
+      "text": "The Ise Site (伊勢遺跡) is an archaeological site containing the traces of a large Yayoi period settlement and ritual area, located across the Ise and Amura neighborhoods of Moriyama and the Nojiri neighborhood of the city of Rittō, Shiga in the Kansai region of Japan. The site was designated a National Historic Site of Japan in 2012.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Ise_Site",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {

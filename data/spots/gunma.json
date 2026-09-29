@@ -20,11 +20,11 @@
     "featured": false,
     "score": 60.43,
     "summary": {
-      "text": "桜山（さくらやま）は、群馬県藤岡市にある標高591mの山。山頂付近は桜山公園として整備されており国の名勝及び天然記念物である。桜の名所として知られ、日本さくら名所100選に選定されている。麓にはみかん園、中腹にはりんご園があり、それぞれフルーツ狩りを楽しめる。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%A1%9C%E5%B1%B1_%28%E7%BE%A4%E9%A6%AC%E7%9C%8C%29",
+      "text": "Sakurayama (桜山) is a mountain in the city of Fujioka, Gunma Prefecture,  Japan. It is 591 metres (1,939 ft) in height, and was named one of the \"100 Sakura Spots in Japan\" during Expo '90 by the International Flower and Green Expo Association. It is also a National Place of Scenic Beauty as determined by the Agency for Cultural Affairs in Japan.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Sakurayama",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -555,6 +555,67 @@
     "updated_at": "2026-09-28"
   },
   {
+    "id": "wd-Q108505880",
+    "name": {
+      "ja": "赤城神社 (館林市足次町)",
+      "kana": "あかぎじんじゃ",
+      "romaji": "Akagijinja",
+      "zh_tw": "赤城神社",
+      "en": "Akagi Shrine (Ashitsugi-cho, Tatebayashi)"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 36.269581,
+      "lng": 139.531113
+    },
+    "prefecture": "gunma",
+    "kind": "major",
+    "themes": [],
+    "tags": [],
+    "featured": false,
+    "score": 46.64,
+    "summary": {
+      "text": "赤城神社（あかぎじんじゃ）は、群馬県館林市足次町の神社。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E8%B5%A4%E5%9F%8E%E7%A5%9E%E7%A4%BE_%28%E9%A4%A8%E6%9E%97%E5%B8%82%E8%B6%B3%E6%AC%A1%E7%94%BA%29",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "渡瀬",
+          "romaji": "Watarase",
+          "en": "Watarase"
+        },
+        "distance_m": 1030
+      }
+    ],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9d/Akagi-jinja_%28Ashitsugi-cho%2C_Tatebayashi%29_8.jpg/960px-Akagi-jinja_%28Ashitsugi-cho%2C_Tatebayashi%29_8.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "photo: Qurren (talk) Taken with Canon PowerShot G9 X",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Akagi-jinja_(Ashitsugi-cho,_Tatebayashi)_8.jpg"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q108505880"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q108505880",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E8%B5%A4%E5%9F%8E%E7%A5%9E%E7%A4%BE_%28%E9%A4%A8%E6%9E%97%E5%B8%82%E8%B6%B3%E6%AC%A1%E7%94%BA%29",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
+  },
+  {
     "id": "wd-Q10863796",
     "name": {
       "ja": "一之宮貫前神社",
@@ -782,11 +843,11 @@
     "featured": false,
     "score": 59.0,
     "summary": {
-      "text": "やんば天明泥流ミュージアム（やんばてんめいでいりゅうミュージアム）は、群馬県長野原町林にある博物館。2021年4月3日にオープンした。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E3%82%84%E3%82%93%E3%81%B0%E5%A4%A9%E6%98%8E%E6%B3%A5%E6%B5%81%E3%83%9F%E3%83%A5%E3%83%BC%E3%82%B8%E3%82%A2%E3%83%A0",
+      "text": "The Yamba Tenmei Mudflow Museum (やんば天明泥流ミュージアム) is a disaster museum located in Naganohara, Gunma prefecture, Japan. It opened on April 3, 2021.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Yamba_Tenmei_Mudflow_Museum",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -1418,6 +1479,77 @@
     "updated_at": "2026-09-28"
   },
   {
+    "id": "wd-Q11275704",
+    "name": {
+      "ja": "はねたき橋",
+      "kana": "はねたきばし",
+      "romaji": "Hanetakibashi",
+      "zh_tw": "鱍瀧橋",
+      "en": "Hanetaki Bridge"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 36.438508,
+      "lng": 139.278416
+    },
+    "prefecture": "gunma",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "橋"
+    ],
+    "featured": false,
+    "score": 46.56,
+    "summary": {
+      "text": "はねたき橋（はねたきばし、鱍瀧橋）は、渡良瀬川の高津戸峡に架かる橋である。群馬県みどり市大間々町の大間々地区と高津戸地区を結ぶ。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E3%81%AF%E3%81%AD%E3%81%9F%E3%81%8D%E6%A9%8B",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "大間々",
+          "romaji": "Omama",
+          "en": "Omama"
+        },
+        "distance_m": 440
+      },
+      {
+        "name": {
+          "ja": "赤城",
+          "romaji": "Akagi",
+          "en": "Akagi"
+        },
+        "distance_m": 1430
+      }
+    ],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1f/Hanetakibridge-underview-nov19-2017.jpg/960px-Hanetakibridge-underview-nov19-2017.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Nesnad",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Hanetakibridge-underview-nov19-2017.jpg"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q11275704"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q11275704",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E3%81%AF%E3%81%AD%E3%81%9F%E3%81%8D%E6%A9%8B",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
+  },
+  {
     "id": "wd-Q11279084",
     "name": {
       "ja": "みどり市立富弘美術館",
@@ -1968,7 +2100,7 @@
     "tags": [
       "動物園"
     ],
-    "featured": false,
+    "featured": true,
     "score": 70.34,
     "summary": {
       "text": "ジャパンスネークセンターは、群馬県太田市の藪塚温泉に位置するヘビ類を専門的に展示する動物園である。一般財団法人日本蛇族学術研究所が所有、運営管理を行っている。",
@@ -2010,7 +2142,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11312602",
@@ -2747,11 +2879,11 @@
     "featured": true,
     "score": 72.16,
     "summary": {
-      "text": "世良田東照宮（せらだとうしょうぐう）は、群馬県太田市世良田町にある神社。「東照大権現」としての徳川家康を祭神とする東照宮の1つである。1617年（元和3年）に駿河国久能山（久能山東照宮）より下野国日光（日光東照宮）へ家康の遺骸を改葬した際に建てられた社殿を、1644年（寛永21年）に上野国世良田へ移築し、創建された。太田市内の他の社寺、館跡とともに「新田荘遺跡」として国の史跡に指定されている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E4%B8%96%E8%89%AF%E7%94%B0%E6%9D%B1%E7%85%A7%E5%AE%AE",
+      "text": "The Serada Tōshō-gū (世良田東照宮) is a Shinto shrine located in the city of Ōta Gunma Prefecture, Japan. It enshrines the deified first Shōgun of the Tokugawa shogunate, Tokugawa Ieyasu. In the year 2000, it was one of the eleven sites connected with the Nitta-no-shō which were collectively designated a National Historic Site of Japan.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Serada_T%C5%8Dsh%C5%8D-g%C5%AB",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -2815,11 +2947,11 @@
     "featured": false,
     "score": 62.89,
     "summary": {
-      "text": "中之嶽神社（なかのたけじんじゃ）は、群馬県甘楽郡下仁田町上小坂にある神社である。祭神は日本武尊外16柱。本来は往昔元「波胡曽神（はこそかみ）」を山の主と祀られていたが、倭建尊（日本武尊、やまとたけるのみこと）が勅命に依り関東御巡行の際に妙義山に登嶽したと伝えられている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E4%B8%AD%E4%B9%8B%E5%B6%BD%E7%A5%9E%E7%A4%BE",
+      "text": "Nakanotake Shrine (中之嶽神社, Nakanotake jinja) is a Shinto shrine located in Shimonita, Gunma Prefecture, Japan. It enshrines Yamato Takeru no mikoto (日本武尊) as its main kami. It was established by Emperor Kinmei and holds its annual festival on October 15.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Nakanotake_Shrine",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -3016,11 +3148,11 @@
     "featured": false,
     "score": 66.85,
     "summary": {
-      "text": "丸沼ダム（まるぬまダム）は、群馬県利根郡片品村の利根川水系片品川左支・大滝川の最上流部にある、東京電力リニューアブルパワーが管理している発電専用ダムである。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E4%B8%B8%E6%B2%BC%E3%83%80%E3%83%A0",
+      "text": "Marunuma Dam is a buttress dam located in Gunma Prefecture in Japan. The dam is used for power production. The catchment area of the dam is 25.9 km2. The dam impounds about 68  ha of land when full and can store 13600 thousand cubic meters of water. The construction of the dam was started on 1928 and completed in 1931.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Marunuma_Dam",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -3938,11 +4070,11 @@
     "featured": false,
     "score": 73.38,
     "summary": {
-      "text": "吹割の滝（ふきわれのたき）は、群馬県沼田市の片品川にある滝。高さ7メートル、幅30メートル。1936年（昭和11年）12月16日に旧文部省より、「吹割渓ならびに吹割瀑」として天然記念物および名勝に指定されている。2000年（平成12年）のNHK大河ドラマ『葵 徳川三代』のオープニングにも登場した。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%90%B9%E5%89%B2%E3%81%AE%E6%BB%9D",
+      "text": "Fukiware Falls (吹割の滝, Fukiware no taki) is a waterfall located in the city of Numata, Gunma Prefecture, Japan. It is a nationally designated Place of Scenic Beauty and a Natural Monument. It is one of \"Japan’s Top 100 Waterfalls\", per a listing published by the Japanese Ministry of the Environment in 1990.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Fukiware_Falls",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -3996,11 +4128,11 @@
     "featured": false,
     "score": 67.34,
     "summary": {
-      "text": "吾妻渓谷（あがつまけいこく）は、群馬県吾妻郡東吾妻町から長野原町にまたがる吾妻川の渓谷。吾妻峡（あがつまきょう）という名称で国の名勝に指定されている（1935年12月24日付け）。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%90%BE%E5%A6%BB%E6%B8%93%E8%B0%B7",
+      "text": "Agatsuma Gorge (吾妻渓谷, Agatsuma Keikoku) is a two to three kilometer long ravine on the upper and middle reaches of the Agatsuma River in the towns of Highashiagatsuma and Naganohara, Gunma Prefecture, Japan. It has been designated a National Place of Scenic Beauty since 1935. It is featured on the \"ya\" card in Jomo Karuta.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Agatsuma_Gorge",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -4295,6 +4427,45 @@
     "updated_at": "2026-09-28"
   },
   {
+    "id": "wd-Q11428772",
+    "name": {
+      "ja": "塩河原温泉",
+      "kana": "しおがわらおんせん",
+      "romaji": "Shiogawaraonsen",
+      "zh_tw": "塩河原温泉"
+    },
+    "kana_source": "wikidata",
+    "location": {
+      "lat": 36.690111,
+      "lng": 139.106889
+    },
+    "prefecture": "gunma",
+    "kind": "major",
+    "themes": [],
+    "tags": [],
+    "featured": false,
+    "score": 46.68,
+    "summary": {
+      "text": "塩河原温泉（しおがわらおんせん）は、群馬県利根郡川場村（旧国上野国）にある温泉。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E5%A1%A9%E6%B2%B3%E5%8E%9F%E6%B8%A9%E6%B3%89",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "images": [],
+    "external_ids": {
+      "wikidata": "Q11428772"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q11428772",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
+  },
+  {
     "id": "wd-Q11430587",
     "name": {
       "ja": "多々良沼",
@@ -4376,14 +4547,14 @@
       "史跡",
       "特別史跡"
     ],
-    "featured": true,
+    "featured": false,
     "score": 82.18,
     "summary": {
-      "text": "多胡碑（たごひ、たごのひ）は、群馬県高崎市吉井町池字御門にある古碑（金石文）。多胡郡の建郡を記念して和銅4年（711年）ごろに建碑された。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%A4%9A%E8%83%A1%E7%A2%91",
+      "text": "The Tago Stele (多胡碑, Tago hi) is a Nara period stele discovered in the city of Takasaki, Gunma Prefecture, in the northern Kantō region of Japan.  The stele was designated a National Historic Site of Japan in 1921, and was raised in status to that of a Special National Historic Site in 1954. As one of the \"Three Stelae of Kōzuke\", it was submitted by Japan for inclusion into the UNESCO  Memory of the World Programme in 2017.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Tago_Stele",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -4425,7 +4596,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q114350120",
@@ -4885,11 +5056,11 @@
     "featured": false,
     "score": 66.82,
     "summary": {
-      "text": "太田市運動公園（おおたしうんどうこうえん）は、群馬県太田市にある太田市立の都市公園（運動公園）である。施設は太田市が所有し、運営管理も太田市が行っている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%A4%AA%E7%94%B0%E5%B8%82%E9%81%8B%E5%8B%95%E5%85%AC%E5%9C%92",
+      "text": "Ota Stadium (太田市運動公園陸上競技場) is an athletic stadium in Ota, Gunma, Japan. The stadium has a capacity of 3,223 people. It was used as the baseball and softball training venue for the Tokyo Olympics.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Ota_Stadium",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -5690,11 +5861,11 @@
     "featured": false,
     "score": 77.7,
     "summary": {
-      "text": "山ノ上碑（やまのうえのひ / やまのうえひ、山上碑）は、群馬県高崎市山名町にある古碑。隣接する山ノ上古墳（山上古墳）と合わせて国の特別史跡に指定されている（指定名称は「山上碑及び古墳」）。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%B1%B1%E3%83%8E%E4%B8%8A%E7%A2%91",
+      "text": "Yamanoue Stele (山ノ上碑, Yamanoue hi) (also written 山上碑) is an Asuka period stele discovered in the Yamana neighborhood of the city of Takasaki, Gunma Prefecture, in the northern Kantō region of Japan. The stele was designated a National Historic Site of Japan in 1921, and was raised in status to that of a Special National Historic Site in 1954. It is associated with the adjacent Yamanoue Kofun (山ノ上古墳), a kofun burial mound, which is also covered under the Special Historical Site designation.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Yamanoue_Stele",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -6779,11 +6950,11 @@
     "featured": false,
     "score": 66.07,
     "summary": {
-      "text": "松井田城（まついだじょう）は、群馬県安中市松井田町高梨子（上野国碓氷郡）にあった戦国時代の日本の城（山城）。諏訪城・小屋城・霞ヶ城・堅田城ともいわれる。「安中郭」が安中市指定史跡に指定されている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%9D%BE%E4%BA%95%E7%94%B0%E5%9F%8E",
+      "text": "Matsuida Castle (松井田城, Matsuida-jō)) is the remains of a castle structure in Annaka, Gunma Prefecture, Japan.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Matsuida_Castle",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -7633,11 +7804,11 @@
     "featured": false,
     "score": 68.64,
     "summary": {
-      "text": "楽山園（らくさんえん）は、群馬県甘楽郡甘楽町小幡にある大名庭園。築庭は織田信長の次男である織田信雄。名の由来は『論語』の「智者は水を楽しみ、仁者は山を楽しむ」の一文から採ったものである。国の名勝に指定されており、群馬県では初の名勝指定庭園である。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%A5%BD%E5%B1%B1%E5%9C%92",
+      "text": "The Rakusan-en (楽山園, Sakai-shi teien) is a traditional Japanese garden located in the town of Kanra, Gunma Prefecture, Japan. It became a nationally designated Place of Scenic Beauty in 2000.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Rakusan-en",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -7729,11 +7900,11 @@
     "featured": false,
     "score": 62.88,
     "summary": {
-      "text": "榛名山ロープウェイ（はるなさんロープウェイ）は、群馬県高崎市にあるロープウェイである。1958年に運行を開始し、1996年には日本初の15人乗り2両連結式ゴンドラが採用された。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%A6%9B%E5%90%8D%E5%B1%B1%E3%83%AD%E3%83%BC%E3%83%97%E3%82%A6%E3%82%A7%E3%82%A4",
+      "text": "The Harunasan Ropeway (榛名山ロープウェイ, Harunasan Rōpuwei) is a Japanese aerial lift line in Haruna, Gunma, operated by Tanigawadake Ropeway Company. The Tōbu Group company also operates another aerial lift line, Tanigawadake Ropeway. The line climbs to the summit of Mount Haruna. The line opened in 1929, and refurbished in 1996 to the current system, which two smaller cabins are attached.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Harunasan_Ropeway",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -7780,11 +7951,11 @@
     "featured": false,
     "score": 71.83,
     "summary": {
-      "text": "武尊山（ほたかやま）は、群馬県利根郡みなかみ町、川場村、片品村の境にある標高2,158mの山。第四紀に形成された複式成層火山である。北アルプスの穂高岳と区別するため、上州武尊山（上州武尊）とも呼ばれる。日本百名山及び新・花の百名山に選定されている山である。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%AD%A6%E5%B0%8A%E5%B1%B1",
+      "text": "Mount Hotaka (武尊山 Hotakayama, 上州武尊山 Joshu Hotakayama) is a stratovolcano with its highest peak at the altitude of 2,158m.  It is located near Minakami-machi, Kawaba Village, and Katashina Village in the Gunma Prefecture.  In order to distinguish it from Mount Hotakadake in the Northern Alps, it is also called as Joshu Hotakayama(上州武尊山). This mountain has been selected as one of \"100 Famous Japanese Mountains\"  and the \"New 100 Famous Flower of Japanese Mountains\".",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Mount_Hotaka_%28Gunma%29",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -7977,7 +8148,7 @@
       "ja": "沢渡温泉",
       "kana": "さわたりおんせん",
       "romaji": "Sawatari Onsen",
-      "zh_tw": "澤渡温泉",
+      "zh_tw": "澤渡溫泉",
       "en": "Sawatari Onsen"
     },
     "kana_source": "wikidata",
@@ -8009,7 +8180,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11554573",
@@ -8034,11 +8205,11 @@
     "featured": true,
     "score": 79.11,
     "summary": {
-      "text": "沼田城（ぬまたじょう）は、群馬県沼田市（上野国利根郡）にあった日本の城（丘城）。1976年（昭和51年）3月30日、沼田市指定史跡。幾つかの守護城に囲まれた堅城である。沼田氏の居城として建築され、戦国時代後期から江戸時代初期にかけて真田氏の沼田領支配の拠点として機能した。沼田藩の藩庁。はじめは倉内城と称した。2017年（平成29年）には、続日本100名城（116番）に選定された。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%B2%BC%E7%94%B0%E5%9F%8E",
+      "text": "Numata Castle (沼田城, Numata-jō) is a Japanese castle located in Numata, northern Gunma Prefecture, Japan. At the end of the Edo period, Numata Castle was home to the Toki clan, daimyō of Numata Domain, but the castle was ruled by various clans over its history, and is noted as the site of a major battle in the Sengoku period. The castle was also known as \"Kurauchi-jō\" (倉内城).",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Numata_Castle",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -8535,11 +8706,11 @@
     "featured": false,
     "score": 67.68,
     "summary": {
-      "text": "生品神社（いくしなじんじゃ）は、群馬県太田市新田市野井町にある神社。主祭神は大穴牟遅神。旧社格は県社。境内は「新田荘遺跡」の一部として国の史跡に指定されている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E7%94%9F%E5%93%81%E7%A5%9E%E7%A4%BE",
+      "text": "Ikushina Jinja (生品神社) is a Shinto shrine located in the city of Ōta, Gunma, Japan, dedicated to the kami Ōkuninushi. The precincts of this shrine was designated a National Historic Site of Japan in 1934.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Ikushina_Shrine",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -9684,11 +9855,11 @@
     "featured": false,
     "score": 67.16,
     "summary": {
-      "text": "つつじが岡公園（つつじがおかこうえん）は、群馬県館林市にある総合公園（都市公園）である。日本の歴史公園100選に選ばれている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E3%81%A4%E3%81%A4%E3%81%98%E3%81%8C%E5%B2%A1%E5%85%AC%E5%9C%92",
+      "text": "The Tsutsujigaoka Park (躑躅ヶ岡公園, Tsutsujigaoka Kōen) is a Japanese garden located in the city of Tatebayashi, Gunma Prefecture, Japan, which is a nationally designated Place of Scenic Beauty. It is also one of then \"100 Japanese historical parks\" designated in 2006 by the Ministry of Land, Infrastructure, Transport and Tourism to mark the 50th anniversary of the Urban Parks Law.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Tsutsujigaoka_Park",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -9851,11 +10022,11 @@
     "featured": false,
     "score": 63.38,
     "summary": {
-      "text": "群馬県立自然史博物館（ぐんまけんりつしぜんしはくぶつかん）は、群馬県富岡市上黒岩にある自然史博物館。館内には、群馬県の自然史展示を中心に地球の文化・鉱物・ヒトや動物の進化に関する資料・標本・写真などを展示している。カマラサウルスの実物骨格や実物大のティランノサウルスの動く模型、壮大なブナ林のジオラマは日本国内では貴重な展示品である。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E7%BE%A4%E9%A6%AC%E7%9C%8C%E7%AB%8B%E8%87%AA%E7%84%B6%E5%8F%B2%E5%8D%9A%E7%89%A9%E9%A4%A8",
+      "text": "Gunma Museum of Natural History (群馬県立自然史博物館, Gunma Kenritsu Shizenshi Hakubutsukan; formerly 群馬県立自然科学資料館) is a museum of the natural sciences in Tomioka, Gunma Prefecture, Japan.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Gunma_Museum_of_Natural_History",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -9916,11 +10087,11 @@
     "featured": false,
     "score": 65.77,
     "summary": {
-      "text": "群馬県立近代美術館（ぐんまけんりつきんだいびじゅつかん 英表記:THE MUSEUM OF MODERN ART,GUNMA 略称「MMAG」）は群馬県高崎市の県立公園・群馬の森内にある美術館である。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E7%BE%A4%E9%A6%AC%E7%9C%8C%E7%AB%8B%E8%BF%91%E4%BB%A3%E7%BE%8E%E8%A1%93%E9%A4%A8",
+      "text": "The Museum of Modern Art, Gunma (群馬県立近代美術館, Gunma kenritsu kindai bijutsukan) opened in Takasaki, Gunma Prefecture, Japan, in 1974. The collection includes works by Monet, Renoir, and Soga Jasoku.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/The_Museum_of_Modern_Art%2C_Gunma",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -10253,11 +10424,11 @@
     "featured": false,
     "score": 69.78,
     "summary": {
-      "text": "至仏山（しぶつさん、しふつさん）は、群馬県の北東部、みなかみ町と片品村との境界に位置する標高2,228.1メートルの山。尾瀬ヶ原の西端に位置する山で、燧ヶ岳とあわせて尾瀬の主峰の一つである。二等三角点「至仏山」が設置されている。尾瀬国立公園（尾瀬地域）に属する。また、日本百名山の1つに数えられている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E8%87%B3%E4%BB%8F%E5%B1%B1",
+      "text": "Mount Shibutsu (至仏山 Shifutsu/Shibutsu-san) is a serpentine mountain in the north-east of Gunma Prefecture in Japan. It is 2,228.1 m (7,310 ft) tall and located between Minakami Machi and Katashina Villages. It's one of the 100 Famous Japanese Mountains and is home to a \"treasure trove\" of alpine plants. It is part of Oze National Park and the Minakami UNESCO Eco Park.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Mount_Shibutsu",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -12199,7 +12370,7 @@
     "tags": [
       "寺院"
     ],
-    "featured": false,
+    "featured": true,
     "score": 70.36,
     "summary": {
       "text": "達磨寺（だるまじ）是位在日本群馬縣高崎市的黃檗宗寺院。山號「少林山」。本尊十一面觀音・北辰鎮宅靈符尊神、開山（初代住持）為東皐心越。作為緣起達磨的發祥地而廣為人知。",
@@ -12245,7 +12416,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11643438",
@@ -12315,11 +12486,11 @@
     "featured": false,
     "score": 67.44,
     "summary": {
-      "text": "野反ダム（のぞりダム）は、群馬県吾妻郡中之条町を流れる信濃川水系中津川に建設されたダム。高さ44メートルのロックフィルダムで、東京電力リニューアブルパワーの発電用ダムである。ダム湖（人造湖）の名は野反湖（のぞりこ）という（ダム湖百選）。上信越高原国立公園に属する。湖を一周する遊歩道は遊歩百選。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E9%87%8E%E5%8F%8D%E3%83%80%E3%83%A0",
+      "text": "Nozori Dam (野反ダム) is a dam located in the town of Nakanojō, Agatsuma District, Gunma Prefecture, Japan. It is a hydroelectric dam operated by Tokyo Electric Power Company. The lake created by the dam is known as Lake Nozori (野反湖, nozori-ko).",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Nozori_Dam",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -12369,11 +12540,11 @@
     "featured": false,
     "score": 76.66,
     "summary": {
-      "text": "金井沢碑（かないざわひ、かないざわのひ）は、群馬県高崎市山名町にある古碑であり、国の特別史跡に指定されている。市内の山ノ上碑・多胡碑とともに「上野三碑」と称され、三碑は国連教育科学文化機関（UNESCO）の「世界の記憶」に登録されている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E9%87%91%E4%BA%95%E6%B2%A2%E7%A2%91",
+      "text": "The Kanaizawa Stele (金井沢碑, Kanaizawa hi) is a Nara period stele discovered in the Yamana neighborhood of the city of Takasaki, Gunma Prefecture, in the northern Kantō region of Japan.  The stele was designated a National Historic Site of Japan in 1921, and was raised in status to a Special National Historic Site in 1954. As one of the \"Three Stelae of Kōzuke\", it was submitted by Japan for inclusion into the UNESCO  Memory of the World Programme in 2017",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Kanaizawa_Stele",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -12606,7 +12777,7 @@
       "ja": "霧積温泉",
       "kana": "きりづみおんせん",
       "romaji": "Kirizumionsen",
-      "zh_tw": "霧積温泉"
+      "zh_tw": "霧積溫泉"
     },
     "kana_source": "wikidata",
     "location": {
@@ -12637,7 +12808,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11665020",
@@ -12722,11 +12893,11 @@
     "featured": false,
     "score": 71.56,
     "summary": {
-      "text": "館林城（たてばやしじょう）は、群馬県館林市城町3（上野国邑楽郡館林）にあった戦国時代から江戸時代の日本の城。尾曳城（おびきじょう）ともいう。館林市指定史跡。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E9%A4%A8%E6%9E%97%E5%9F%8E",
+      "text": "Tatebayashi Castle (館林城, Tatebayashi-jō) is a Japanese castle located in Tatebayashi, southern Gunma Prefecture, Japan. At the end of the Edo period, Tatebayashi Castle was home to the Akimoto clan, daimyō of Tatebayashi Domain, but the castle was ruled by a large number of different clans over its history. The castle was also known as \"Obiki-jō\" (尾曳城).",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Tatebayashi_Castle",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -13153,11 +13324,11 @@
     "featured": false,
     "score": 72.52,
     "summary": {
-      "text": "高崎白衣大観音（たかさきびゃくえだいかんのん、たかさきびゃくいだいかんのん）は、群馬県高崎市の岩野谷丘陵（通称観音山丘陵）にある大観音（白衣観音）像である。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E9%AB%98%E5%B4%8E%E7%99%BD%E8%A1%A3%E5%A4%A7%E8%A6%B3%E9%9F%B3",
+      "text": "The Takasaki Byakue Daikannon (高崎白衣大観音; lit. 'Giant Takasaki White-Robed Kannon') is a Kannon statue located on top of Mt. Kannonyama in Takasaki, Gunma Prefecture. It is also known colloquially as Kannonyama, and sometimes pronounced as Byakui as well. In Jomo Karuta, it is featured on the 'hi' card.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Takasaki_Byakue_Daikannon",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -13662,6 +13833,58 @@
     ],
     "status": "published",
     "updated_at": "2026-09-28"
+  },
+  {
+    "id": "wd-Q11678142",
+    "name": {
+      "ja": "黒峯神社",
+      "kana": "くろみねじんじゃ",
+      "romaji": "Kurominejinja",
+      "zh_tw": "黒峯神社",
+      "en": "Kuromine Shrine"
+    },
+    "kana_source": "wikidata",
+    "location": {
+      "lat": 36.502467,
+      "lng": 139.285515
+    },
+    "prefecture": "gunma",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "神社"
+    ],
+    "featured": false,
+    "score": 46.36,
+    "summary": {
+      "text": "黒峯神社（くろみねじんじゃ）は、群馬県桐生市黒保根町水沼にある神社である。祭神は菅原道真、旧社格は村社。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E9%BB%92%E5%B3%AF%E7%A5%9E%E7%A4%BE",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "水沼",
+          "romaji": "Mizunuma",
+          "en": "Mizunuma"
+        },
+        "distance_m": 770
+      }
+    ],
+    "images": [],
+    "external_ids": {
+      "wikidata": "Q11678142"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q11678142",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11679325",
@@ -15197,7 +15420,7 @@
       "zh_tw": "吾妻神社",
       "en": "Azuma Shrine (Nakanojo)"
     },
-    "kana_source": "osm",
+    "kana_source": "wikidata",
     "location": {
       "lat": 36.592028,
       "lng": 138.86175
@@ -15250,7 +15473,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q131275532",
@@ -15744,7 +15967,7 @@
       "ja": "荒船・東谷風穴蚕種貯蔵所跡",
       "kana": "あらふねあずまやふうけつさんしゅちょぞうしょあと",
       "romaji": "Arafuneazumayafuketsusanshuchozoshoato",
-      "zh_tw": "荒船、東谷風穴蚕種貯藏所跡",
+      "zh_tw": "荒船、東谷風穴蠶種貯藏所跡",
       "en": "Arafune-Azumaya Cold Storage Facilities"
     },
     "kana_source": "wikipedia",
@@ -15761,11 +15984,11 @@
     "featured": false,
     "score": 65.61,
     "summary": {
-      "text": "荒船・東谷風穴蚕種貯蔵所跡（あらふね・あずまやふうけつさんしゅちょぞうしょあと）は、群馬県下仁田町の荒船風穴および同県中之条町の東谷風穴を対象とする国指定の史跡である。明治時代後期から大正時代にかけては、全国的に風穴を蚕種（蚕の卵）の貯蔵に利用することが行われていた。その中でも、荒船風穴は最大規模の蚕種貯蔵施設として機能しており、県内では東谷風穴がそれに次いだ。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E8%8D%92%E8%88%B9%E3%83%BB%E6%9D%B1%E8%B0%B7%E9%A2%A8%E7%A9%B4%E8%9A%95%E7%A8%AE%E8%B2%AF%E8%94%B5%E6%89%80%E8%B7%A1",
+      "text": "Arafune-Azumaya Cold Storage Facilities (荒船・東谷風穴蚕種貯蔵所跡, Arafune-Azumaya fūketsu sanshu chozō sho ato) are natural refrigerators used in silkworm production in association with the Tomioka Silk Mill in the towns of Shimonita and Nakanojō, Gunma Prefecture Japan. They are jointly designated as a National Historic Site and, together with the Tomioka Silk Mill, inscribed on the UNESCO World Heritage List as part of the serial nomination Tomioka Silk Mill and Related Sites",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Arafune-Azumaya_Cold_Storage_Facilities",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -15789,7 +16012,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q17209498",
@@ -15815,11 +16038,11 @@
     "featured": true,
     "score": 90.65,
     "summary": {
-      "text": "高山社（たかやましゃ）あるいは養蚕改良高山社（ようさんかいりょうたかやましゃ）は、1884年（明治17年）に設立された養蚕業の研究所・教育機関である。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E9%AB%98%E5%B1%B1%E7%A4%BE",
+      "text": "The Takayama Sericulture School (高山社, Takayama-sha), also known as the \"Takayama-sha Sericulture School\" or the \"Takayama-sha Sericulture Improvement Society\", was a school and research institute located in the city of Fujioka, Gunma. It was founded in 1884 by sericulturist Takayama Chōgorō to teach sericulture and conduct research on improvements to Japan's fledgling silk industry. The school building from 1887 was made a National Historic Site of Japan in 2009.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Takayama-sha",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -15869,11 +16092,11 @@
     "featured": true,
     "score": 91.16,
     "summary": {
-      "text": "田島弥平旧宅（たじまやへいきゅうたく）は、群馬県伊勢崎市境島村にある歴史的建造物。明治初期に大きな影響力を持った養蚕業者田島弥平が自身の養蚕理論に基づいて改築した民家である。「近代養蚕農家の原型」とも言われるその旧宅は、2012年に国の史跡に指定され、2013年に「富岡製糸場と絹産業遺産群」の構成資産として世界遺産リストに登録された。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E7%94%B0%E5%B3%B6%E5%BC%A5%E5%B9%B3%E6%97%A7%E5%AE%85",
+      "text": "The Tajima Yahei Sericulture Farm (旧田島弥平旧宅, Tajima Yahei kyū-taku) is located in the Sakaishima neighbored of the city of Isesaki, Gunma. It was the former home of an influential silk farmer in the early Meiji period, known for writing a new sericulture theory which laid the foundations for modern sericultural production. The building has been protected as a National Historic Site since 2012. It was subsequently included as part of The Tomioka Silk Mill and Related Industrial Heritage UNESCO World Heritage Site in 2013.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Tajima_Yahei_Sericulture_Farm",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -16892,11 +17115,11 @@
     "featured": false,
     "score": 67.44,
     "summary": {
-      "text": "奈良俣ダム（ならまたダム）は、群馬県利根郡みなかみ町、利根川水系楢俣川に建設されたダムである。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%A5%88%E8%89%AF%E4%BF%A3%E3%83%80%E3%83%A0",
+      "text": "Naramata Dam is a dam near Minakami, in the Gunma Prefecture of Japan. It supports a 12.2 MW hydroelectric power station.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Naramata_Dam",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -16945,11 +17168,11 @@
     "featured": false,
     "score": 61.17,
     "summary": {
-      "text": "群馬県立歴史博物館（ぐんまけんりつれきしはくぶつかん）は、群馬県高崎市にある博物館。第21回BCS賞受賞。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E7%BE%A4%E9%A6%AC%E7%9C%8C%E7%AB%8B%E6%AD%B4%E5%8F%B2%E5%8D%9A%E7%89%A9%E9%A4%A8",
+      "text": "Gunma Prefectural Museum of History (群馬県立歴史博物館, Gunma kenritsu rekishi hakubutsukan) opened in Takasaki, Gunma Prefecture, Japan, in 1979.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Gunma_Prefectural_Museum_of_History",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -17537,11 +17760,11 @@
     "featured": false,
     "score": 60.81,
     "summary": {
-      "text": "前橋東照宮（まえばしとうしょうぐう）は、群馬県前橋市に鎮座する神社である。正式名称は「東照宮」。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%89%8D%E6%A9%8B%E6%9D%B1%E7%85%A7%E5%AE%AE",
+      "text": "Maebashi Tōshō-gū (前橋東照宮) is a Shinto Shrine dedicated to Tokugawa Ieyasu in the city of Maebashi, Gunma Prefecture, Japan. It was established in 1624.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Maebashi_T%C5%8Dsh%C5%8D-g%C5%AB",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -17599,11 +17822,11 @@
     "featured": false,
     "score": 75.99,
     "summary": {
-      "text": "栃木・群馬・埼玉の三県境（とちぎ・ぐんま・さいたまのさんけんざかい、-さんけんきょう）は、栃木県・群馬県間、群馬県・埼玉県間、埼玉県・栃木県間の3本の県境が交わっている点で、平地にある。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%A0%83%E6%9C%A8%E3%83%BB%E7%BE%A4%E9%A6%AC%E3%83%BB%E5%9F%BC%E7%8E%89%E3%81%AE%E4%B8%89%E7%9C%8C%E5%A2%83",
+      "text": "The Tochigi–Gunma–Saitama border, or the Tochigi–Gunma–Saitama tripoint (Japanese: 栃木・群馬・埼玉の三県境, Hepburn: Tochigi-Gunma-Saitama no Sankenkyō), or simply Sankenkyō (三県境; lit. \"Three prefectural borders\"), is a tripoint between Tochigi Prefecture, Gunma Prefecture, and Saitama Prefecture in Japan. It is the only tripoint in Japan that is not located on a mountain or a river.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Tochigi%E2%80%93Gunma%E2%80%93Saitama_border",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -17662,11 +17885,11 @@
     "featured": false,
     "score": 65.36,
     "summary": {
-      "text": "水澤寺（みずさわでら）は、群馬県渋川市にある天台宗の寺院。山号は五徳山。院号は無量壽院。本尊は十一面千手観世音菩薩で、坂東三十三観音第16番札所である。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%B0%B4%E6%BE%A4%E5%AF%BA",
+      "text": "Mizusawa-dera (水澤寺) is a Buddhist temple  located in the city of Shibukawa in Gunma Prefecture, Japan.  It belongs to the  Tendai sect and its honzon is a statue of statue of Senjū Kannon Bosatsu (Sahasrabhūja).The temple's full name is Gotokuzan Muryōjū-in Jion-ji (五徳山 無量壽院 水澤寺).The temple is the 16th stop on the Bandō Sanjūsankasho pilgrimage route. The temple is also referred to as the Mizusawa-Kannon (水 澤 観 音).",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Mizusawa-dera",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -18019,11 +18242,11 @@
     "featured": true,
     "score": 78.78,
     "summary": {
-      "text": "岩櫃城（いわびつじょう）は、群馬県吾妻郡東吾妻町（上野国吾妻郡）にあった日本の城（山城）。吾妻川北岸の岩櫃山中腹に位置し、戦国期に、上杉謙信に従う斉藤氏と、武田信玄に従う真田氏が当地をめぐり争った。最終的には真田信之の支配下に収まり、慶長19年（1614年）に廃城となった。国の史跡に指定されている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%B2%A9%E6%AB%83%E5%9F%8E",
+      "text": "Iwabitsu Castle (岩櫃城, Iwabitsu-jō) is a \"yamashiro\"-style (castle located on Mount Iwabitsu in Higashiagatsuma, Gunma Prefecture, Japan. The ruins have been protected by the central government as a National Historic Site since 2019.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Iwabitsu_Castle",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -18080,11 +18303,11 @@
     "featured": false,
     "score": 75.75,
     "summary": {
-      "text": "四万温泉（しま おんせん、旧字体: 四萬溫泉）は、日本の群馬県吾妻郡中之条町四万（近世における上野国吾妻郡四万村、幕藩体制下の上州御料四万村）に所在する温泉である。三国山脈に発して南進する四万川（吾妻川の支流）の上流域に位置する。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%9B%9B%E4%B8%87%E6%B8%A9%E6%B3%89",
+      "text": "Shima Onsen is a name of Japanese town and hot springs -  onsen, the part of Nakanojō city in the Gunma Prefecture.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Shima_Onsen",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -18358,11 +18581,11 @@
     "featured": true,
     "score": 75.63,
     "summary": {
-      "text": "榛名神社（はるなじんじゃ）は、群馬県高崎市榛名山町にある神社。式内社、上野国六宮で、旧社格は県社。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%A6%9B%E5%90%8D%E7%A5%9E%E7%A4%BE",
+      "text": "Haruna Shrine (榛名神社, Haruna Jinja) is a Shinto shrine located in Takasaki, Gunma Prefecture, Japan. Mount Haruna, the mountain where the shrine is located, is one of the \"Three Mountains of Jōmō\" and the shrine has a close relationship with the shrines of the other two mountains, Mount Akagi and Mount Myōgi. It is dedicated to the gods of Water, Fire, and Agriculture. It also said to give blessings of prosperity in business and a good marriage.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Haruna_Shrine",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -18457,11 +18680,11 @@
     "featured": false,
     "score": 75.99,
     "summary": {
-      "text": "榛名湖（はるなこ）は、群馬県西部にある湖。榛名山のカルデラ内に生じた火口原湖で、水系としては利根川に属する。周囲は約4.8キロメートル、面積は約1.2平方キロメートル、最深部は約12メートルから15メートル。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%A6%9B%E5%90%8D%E6%B9%96",
+      "text": "Lake Haruna (榛名湖, Haruna-ko) is a caldera lake. It lies near the summit of Mount Haruna, within the city limits of Takasaki, Gunma Prefecture, Japan. A former name for the lake is Lake Ikaho (伊香保沼, Ikaho-numa).",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Lake_Haruna",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -18710,11 +18933,11 @@
     "featured": false,
     "score": 64.88,
     "summary": {
-      "text": "ぐんま昆虫の森（ぐんまこんちゅうのもり）は、群馬県桐生市新里町鶴ケ谷にある県立の昆虫館である。条例上の名称は「群馬県立ぐんま昆虫の森」で、「昆虫の森」と略称される。日本では唯一の教育委員会が運営する昆虫施設である。敷地面積は45 ha（東京ドーム約10個分）もしくは48.2 haで、昆虫観察施設としては日本最大規模である。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E3%81%90%E3%82%93%E3%81%BE%E6%98%86%E8%99%AB%E3%81%AE%E6%A3%AE",
+      "text": "Gunma Insect World (ぐんま昆虫の森, Gunma Konchū-no Mori) Insect Observation Facility in Kiryū, Gunma, Japan is a learning facility for observing the ecology of insects. The building was designed by Tadao Ando, built by Takenaka Corporation with three other firms, and opened in 2005. The facility offers outdoor hands-on experience to allow visitors to observe and learn more about the world of insects.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Gunma_Insect_World",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -18766,11 +18989,11 @@
     "featured": false,
     "score": 65.74,
     "summary": {
-      "text": "国立療養所栗生楽泉園（こくりつりょうようじょくりうらくせんえん）は、群馬県吾妻郡草津町に位置する国立ハンセン病療養所。厚生労働省所管の施設等機関である。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%9B%BD%E7%AB%8B%E7%99%82%E9%A4%8A%E6%89%80%E6%A0%97%E7%94%9F%E6%A5%BD%E6%B3%89%E5%9C%92",
+      "text": "Kuryū Rakusen-en Sanatorium, or National Sanatorium Kuryū Rakusen-en is a sanatorium for leprosy or ex-leprosy patients situated at Kusatsu-machi, Azuma-gun, Gunma Prefecture in Japan, which started in 1932.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Kuryu_Rakusen-en_Sanatorium",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [],
     "external_ids": {
@@ -18810,11 +19033,11 @@
     "featured": false,
     "score": 64.35,
     "summary": {
-      "text": "相俣ダム（あいまたダム）は、群馬県利根郡みなかみ町相俣、一級河川・利根川水系赤谷川に建設されたダムである。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E7%9B%B8%E4%BF%A3%E3%83%80%E3%83%A0",
+      "text": "Aimata Dam (相俣ダム) is a dam built on the Akaya River, part of the class-A Tonegawa River system at Aimata in the city of Minakami (the former village of Nīharimura), in the Tone District of Gunma Prefecture, Japan.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Aimata_Dam",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -19339,11 +19562,11 @@
     "featured": false,
     "score": 62.86,
     "summary": {
-      "text": "大川美術館（おおかわびじゅつかん）は、群馬県桐生市水道山の中腹（小曾根町）にある群馬県の登録博物館。大川栄二の収集品を収蔵展示、運営は公益財団法人大川美術館。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E5%B7%9D%E7%BE%8E%E8%A1%93%E9%A4%A8",
+      "text": "The Okawa Museum of Art (大川美術館, Ōkawa Bijutsukan) is an art gallery in Kiryū, Gunma Prefecture, Japan that concentrates on modern Japanese art.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Okawa_Museum_of_Art",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -19466,7 +19689,7 @@
       "ja": "岩宿遺跡",
       "kana": "いわじゅくいせき",
       "romaji": "Iwajukuiseki",
-      "zh_tw": "岩宿遺跡",
+      "zh_tw": "巖宿遺跡",
       "en": "Iwajuku Site"
     },
     "kana_source": "wikipedia",
@@ -19526,7 +19749,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q53998070",
@@ -20092,11 +20315,11 @@
     "featured": false,
     "score": 67.27,
     "summary": {
-      "text": "草木ダム（くさきダム）は、群馬県みどり市東町座間、一級河川・利根川水系渡良瀬川の本川上流部に建設されたダムである。旧名は神戸ダム（ごうどダム）。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E8%8D%89%E6%9C%A8%E3%83%80%E3%83%A0",
+      "text": "Kusaki Dam is a dam in the Gunma Prefecture of Japan.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Kusaki_Dam_%28Gunma%29",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -20395,11 +20618,11 @@
     "featured": false,
     "score": 64.8,
     "summary": {
-      "text": "四万川ダム（しまがわダム）は、群馬県吾妻郡中之条町四万地先、利根川水系四万川に建設された重力式コンクリートダムである。堤高の89.5メートルは群馬県が運営するダムとしては最も高い。国土交通省の地域に開かれたダムに指定されており、西洋の城を想起させるデザインが施されている。監査廊は見学者のために整備されており、予約制ではあるものの見学が可能。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%9B%9B%E4%B8%87%E5%B7%9D%E3%83%80%E3%83%A0",
+      "text": "Shimagawa Dam is a dam in the Gunma Prefecture of Japan.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Shimagawa_Dam",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -20446,11 +20669,11 @@
     "featured": false,
     "score": 69.93,
     "summary": {
-      "text": "下久保ダム（しもくぼダム）は、群馬県藤岡市と埼玉県児玉郡神川町にまたがる、一級河川・利根川水系神流川（かんながわ）に建設されたダムである。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E4%B8%8B%E4%B9%85%E4%BF%9D%E3%83%80%E3%83%A0",
+      "text": "Shimokubo Dam is a dam in the Gunma Prefecture of Japan, completed in 1968.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Shimokubo_Dam",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -20497,11 +20720,11 @@
     "featured": false,
     "score": 70.69,
     "summary": {
-      "text": "谷川岳ロープウェイ（たにがわだけロープウェイ）は、群馬県利根郡みなかみ町湯檜曾字湯吹山国有林にあるロープウェイである。土合口駅から天神平駅までの2,300 メートルを結んでいる。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E8%B0%B7%E5%B7%9D%E5%B2%B3%E3%83%AD%E3%83%BC%E3%83%97%E3%82%A6%E3%82%A7%E3%82%A4",
+      "text": "The Tanigawadake Ropeway (谷川岳ロープウェイ, Tanigawadake Rōpuwei) is a Japanese cable car line, operated by Tanigawadake Ropeway Company. The Tōbu Group company also operates another aerial lift line, Harunasan Ropeway.  Opened in 1960, the line climbs Mount Tanigawa Tenjindaira Ski Resort, Minakami, Gunma. The line is operated all seasons, transporting skiers, hikers, or tourists.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Tanigawadake_Ropeway",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -20901,11 +21124,11 @@
     "featured": false,
     "score": 71.4,
     "summary": {
-      "text": "矢木沢ダム（やぎさわダム）は、群馬県利根郡みなかみ町、一級河川・利根川本川最上流部に位置するダムである。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E7%9F%A2%E6%9C%A8%E6%B2%A2%E3%83%80%E3%83%A0",
+      "text": "Yagisawa Dam (矢木沢ダム) is a dam in the Gunma Prefecture of Japan; it supports a 240 MW hydroelectric power station.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Yagisawa_Dam",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -20952,11 +21175,11 @@
     "featured": false,
     "score": 79.68,
     "summary": {
-      "text": "八ッ場ダム（やんばダム）は、利根川の主要な支流の一つである吾妻川中流部、群馬県吾妻郡長野原町川原湯地先に建設された多目的ダムである。2020年（令和2年）4月1日より運用を開始した。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%85%AB%E3%83%83%E5%A0%B4%E3%83%80%E3%83%A0",
+      "text": "Yamba Dam (八ッ場ダム, Yamba damu) is a dam in Naganohara, Agatsuma District, Gunma Prefecture, Japan. Construction began in 1967, with effective completion in October 2019 and the official opening on 1 April 2020.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Yamba_Dam",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -21438,11 +21661,11 @@
     "featured": true,
     "score": 71.38,
     "summary": {
-      "text": "グリーンドーム前橋（グリーンドームまえばし）は、群馬県前橋市にある前橋市立の多目的アリーナである。2022年4月1日からネーミングライツにより日本トーターグリーンドーム前橋（にっぽんとーたーグリーンドームまえばし）と呼称されている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E3%82%B0%E3%83%AA%E3%83%BC%E3%83%B3%E3%83%89%E3%83%BC%E3%83%A0%E5%89%8D%E6%A9%8B",
+      "text": "Nippon Totor Green Dome Maebashi (日本トーターグリーンドーム前橋, Nihon Tōtā Gurīn Dōmu Maebashi) is an arena in Maebashi, Japan. With a capacity of 8,000, it is primarily used for indoor sports. One of its primary functions is as a velodrome - when it is known as Maebashi Velodrome (前橋競輪場, Maebashi Keirinjyō) - holding parimutuel Keirin races throughout the year.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Yamada_Green_Dome_Maebashi",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -21814,7 +22037,7 @@
     "tags": [
       "名勝"
     ],
-    "featured": true,
+    "featured": false,
     "score": 83.59,
     "summary": {
       "text": "妙義山是位於群馬縣下仁田町、富岡市、安中市的一座標高1104米的山峰。與赤城山、榛名山並稱為上毛三山。因其陡峭的外觀被選為日本三大奇形之一。也是日本百景之一。",
@@ -21845,6 +22068,6 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   }
 ]

@@ -12601,7 +12601,7 @@
       "橋"
     ],
     "featured": false,
-    "score": 65.84,
+    "score": 85.84,
     "summary": {
       "text": "心齋橋是位於日本大阪府大阪市中央區的商業購物區。",
       "lang": "zh",
@@ -12642,10 +12642,14 @@
       {
         "url": "https://www.wikidata.org/wiki/Q1049109",
         "fetched_at": "2026-09-28"
+      },
+      {
+        "url": "https://osaka-info.jp/spot/blanz/",
+        "fetched_at": "2026-09-29"
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q1049117",
@@ -12742,7 +12746,7 @@
       "史跡",
       "重要文化財"
     ],
-    "featured": true,
+    "featured": false,
     "score": 83.56,
     "summary": {
       "text": "適塾（てきじゅく）是日本蘭學者、醫生緒方洪庵在江戶時代後期的大坂・船場開設的蘭學私塾。正式名稱是適適齋塾（てきてきさいじゅく）。也稱作適適塾。由來是緒方洪庵的號「適適齋」。",
@@ -12787,7 +12791,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q1054648",
@@ -12939,6 +12943,80 @@
     "updated_at": "2026-09-28"
   },
   {
+    "id": "wd-Q105967497",
+    "name": {
+      "ja": "安満遺跡公園",
+      "kana": "あまいせきこうえん",
+      "romaji": "Amaisekikoen",
+      "zh_tw": "安満遺跡公園",
+      "en": "Ama site park"
+    },
+    "kana_source": "wikidata",
+    "location": {
+      "lat": 34.854694,
+      "lng": 135.628889
+    },
+    "prefecture": "osaka",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "公園"
+    ],
+    "featured": false,
+    "score": 62.31,
+    "summary": {
+      "text": "安満遺跡公園（あまいせきこうえん）は、大阪府高槻市八丁畷町12番3号にある都市公園（歴史公園）である。弥生時代の大規模環壕集落を主体とする国の史跡「安満遺跡」の範囲内に立地する。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E5%AE%89%E6%BA%80%E9%81%BA%E8%B7%A1%E5%85%AC%E5%9C%92",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "高槻市",
+          "kana": "たかつきし",
+          "romaji": "Takatsuki-shi",
+          "en": "Takatsuki-shi"
+        },
+        "distance_m": 740
+      },
+      {
+        "name": {
+          "ja": "高槻",
+          "kana": "たかつき",
+          "romaji": "Takatsuki",
+          "en": "Takatsuki"
+        },
+        "distance_m": 1080
+      }
+    ],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3a/Amasitepark.1.jpg/960px-Amasitepark.1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "沢庵師匠",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Amasitepark.1.jpg"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q105967497",
+      "osm": "relation/13010385"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q105967497",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.openstreetmap.org/relation/13010385",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
+  },
+  {
     "id": "wd-Q1075406",
     "name": {
       "ja": "難波",
@@ -13073,7 +13151,7 @@
       "ja": "慶沢園",
       "kana": "けいたくえん",
       "romaji": "Keitaku-en",
-      "zh_tw": "庆泽园",
+      "zh_tw": "慶澤園",
       "en": "Keitaku-en"
     },
     "kana_source": "wikidata",
@@ -13107,12 +13185,12 @@
       },
       {
         "name": {
-          "ja": "大阪阿部野橋駅",
-          "kana": "おおさかあべのばしえき",
-          "romaji": "Ōsaka Abenobashi eki",
-          "en": "Ōsaka Abenobashi Station"
+          "ja": "大阪阿部野橋",
+          "kana": "おおさかあべのばし",
+          "romaji": "Ōsaka Abenobashi",
+          "en": "Ōsaka Abenobashi"
         },
-        "distance_m": 580
+        "distance_m": 590
       }
     ],
     "images": [
@@ -13138,7 +13216,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q10855506",
@@ -13241,7 +13319,7 @@
       "寺院",
       "國寶"
     ],
-    "featured": true,
+    "featured": false,
     "score": 84.8,
     "summary": {
       "text": "觀心寺（かんしんじ）是位在日本大阪府河內長野市的寺院，高野山真言宗遺跡本山。山號「檜尾山」（ひのおざん）。本尊如意輪觀音、開基（創立者）為役小角。觀心寺是楠木氏的菩提寺，是和楠木正成及南朝有淵源之寺而為人所知。正平14年（1359年），本寺是後村上天皇之行在所。此外，境內有後村上天皇檜尾陵。",
@@ -13273,7 +13351,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q108912361",
@@ -13407,7 +13485,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q1092700",
@@ -13725,7 +13803,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q10938364",
@@ -13837,12 +13915,12 @@
       },
       {
         "name": {
-          "ja": "大阪阿部野橋駅",
-          "kana": "おおさかあべのばしえき",
-          "romaji": "Ōsaka Abenobashi eki",
-          "en": "Ōsaka Abenobashi Station"
+          "ja": "大阪阿部野橋",
+          "kana": "おおさかあべのばし",
+          "romaji": "Ōsaka Abenobashi",
+          "en": "Ōsaka Abenobashi"
         },
-        "distance_m": 350
+        "distance_m": 360
       }
     ],
     "images": [
@@ -13867,7 +13945,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q1098123",
@@ -13958,8 +14036,8 @@
     "kind": "major",
     "themes": [],
     "tags": [],
-    "featured": false,
-    "score": 76.06,
+    "featured": true,
+    "score": 96.06,
     "summary": {
       "text": "難波豪華花月是一座由吉本Creative Agency營運的搞笑與喜劇專門劇場（2007年9月開始由吉本興業營運），位於大阪府大阪市中央區，簡稱為NGK。廣告標語是「搞笑的殿堂」。",
       "lang": "zh",
@@ -14001,12 +14079,16 @@
         "fetched_at": "2026-09-28"
       },
       {
+        "url": "https://osaka-info.jp/spot/namba-grand-kagetsu/",
+        "fetched_at": "2026-09-29"
+      },
+      {
         "url": "https://ja.wikipedia.org/wiki/%E3%81%AA%E3%82%93%E3%81%B0%E3%82%B0%E3%83%A9%E3%83%B3%E3%83%89%E8%8A%B1%E6%9C%88",
         "fetched_at": "2026-09-28"
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11188018",
@@ -14491,11 +14573,11 @@
     "featured": false,
     "score": 73.02,
     "summary": {
-      "text": "宗右衛門町（そうえもんちょう）は、大阪府大阪市中央区の町名。丁番を持たない単独町名である。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%AE%97%E5%8F%B3%E8%A1%9B%E9%96%80%E7%94%BA",
+      "text": "Sōemonchō or Soemonchō (宗右衛門町) is an entertainment district in Chūō-ku, one of the wards of Osaka, Japan. The district borders on two other entertainment districts, Shinsaibashi to the north and Dōtonbori to the south. Sōemonchō  has a high concentration of bars, restaurants and nightclubs.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/S%C5%8Demonch%C5%8D",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -14803,6 +14885,145 @@
     "updated_at": "2026-09-28"
   },
   {
+    "id": "wd-Q11256577",
+    "name": {
+      "ja": "あいおいニッセイ同和損保フェニックスタワー",
+      "kana": "あいおいにっせいどうわそんぽふぇにっくすたわー",
+      "romaji": "Aioinisseidowasonpofenikkusutawa",
+      "zh_tw": "愛和誼日生同和產物保險鳳凰塔",
+      "en": "Aioi Nissay Dowa Insurance Phoenix Tower"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 34.697753,
+      "lng": 135.50125
+    },
+    "prefecture": "osaka",
+    "kind": "major",
+    "themes": [],
+    "tags": [],
+    "featured": false,
+    "score": 61.91,
+    "summary": {
+      "text": "あいおいニッセイ同和損保フェニックスタワー（あいおいニッセイどうわそんぽフェニックスタワー）は、大阪市北区西天満に所在する超高層建築物である。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E3%81%82%E3%81%84%E3%81%8A%E3%81%84%E3%83%8B%E3%83%83%E3%82%BB%E3%82%A4%E5%90%8C%E5%92%8C%E6%90%8D%E4%BF%9D%E3%83%95%E3%82%A7%E3%83%8B%E3%83%83%E3%82%AF%E3%82%B9%E3%82%BF%E3%83%AF%E3%83%BC",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "東梅田",
+          "en": "Higashi-Umeda"
+        },
+        "distance_m": 340
+      },
+      {
+        "name": {
+          "ja": "北新地",
+          "kana": "きたしんち",
+          "romaji": "Kitashinchi",
+          "en": "Kitashinchi"
+        },
+        "distance_m": 370
+      }
+    ],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bc/Osaka_Phoenix_tower.jpg/960px-Osaka_Phoenix_tower.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "NKNS",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Osaka_Phoenix_tower.jpg"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q11256577"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q11256577",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E3%81%82%E3%81%84%E3%81%8A%E3%81%84%E3%83%8B%E3%83%83%E3%82%BB%E3%82%A4%E5%90%8C%E5%92%8C%E6%90%8D%E4%BF%9D%E3%83%95%E3%82%A7%E3%83%8B%E3%83%83%E3%82%AF%E3%82%B9%E3%82%BF%E3%83%AF%E3%83%BC",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
+  },
+  {
+    "id": "wd-Q11258278",
+    "name": {
+      "ja": "あべのHoop",
+      "kana": "あべのふーぷ",
+      "romaji": "Abenofupu",
+      "zh_tw": "あべのHoop",
+      "en": "Abeno Hoop"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 34.645083,
+      "lng": 135.513833
+    },
+    "prefecture": "osaka",
+    "kind": "major",
+    "themes": [],
+    "tags": [],
+    "featured": false,
+    "score": 61.95,
+    "summary": {
+      "text": "あべのHoop（あべのフープ）は、大阪府大阪市阿倍野区の近鉄大阪阿部野橋駅南側にあるファッションビル。近鉄百貨店の商業開発本部が運営している。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E3%81%82%E3%81%B9%E3%81%AEHoop",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "大阪阿部野橋",
+          "kana": "おおさかあべのばし",
+          "romaji": "Ōsaka Abenobashi",
+          "en": "Ōsaka Abenobashi"
+        },
+        "distance_m": 150
+      },
+      {
+        "name": {
+          "ja": "天王寺",
+          "romaji": "Tennōji",
+          "en": "Tennoji"
+        },
+        "distance_m": 170
+      }
+    ],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6d/Abeno-Hoop01.JPG/960px-Abeno-Hoop01.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Kansai explorer",
+        "license": "CC BY 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Abeno-Hoop01.JPG"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q11258278"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q11258278",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E3%81%82%E3%81%B9%E3%81%AEHoop",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
+  },
+  {
     "id": "wd-Q11258284",
     "name": {
       "ja": "あべのアポロ",
@@ -14840,12 +15061,12 @@
       },
       {
         "name": {
-          "ja": "大阪阿部野橋駅",
-          "kana": "おおさかあべのばしえき",
-          "romaji": "Ōsaka Abenobashi eki",
-          "en": "Ōsaka Abenobashi Station"
+          "ja": "大阪阿部野橋",
+          "kana": "おおさかあべのばし",
+          "romaji": "Ōsaka Abenobashi",
+          "en": "Ōsaka Abenobashi"
         },
-        "distance_m": 350
+        "distance_m": 360
       }
     ],
     "images": [],
@@ -14859,7 +15080,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11258285",
@@ -14898,12 +15119,12 @@
       },
       {
         "name": {
-          "ja": "大阪阿部野橋駅",
-          "kana": "おおさかあべのばしえき",
-          "romaji": "Ōsaka Abenobashi eki",
-          "en": "Ōsaka Abenobashi Station"
+          "ja": "大阪阿部野橋",
+          "kana": "おおさかあべのばし",
+          "romaji": "Ōsaka Abenobashi",
+          "en": "Ōsaka Abenobashi"
         },
-        "distance_m": 500
+        "distance_m": 510
       }
     ],
     "images": [],
@@ -14917,7 +15138,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11258288",
@@ -14957,12 +15178,12 @@
       },
       {
         "name": {
-          "ja": "大阪阿部野橋駅",
-          "kana": "おおさかあべのばしえき",
-          "romaji": "Ōsaka Abenobashi eki",
-          "en": "Ōsaka Abenobashi Station"
+          "ja": "大阪阿部野橋",
+          "kana": "おおさかあべのばし",
+          "romaji": "Ōsaka Abenobashi",
+          "en": "Ōsaka Abenobashi"
         },
-        "distance_m": 390
+        "distance_m": 400
       }
     ],
     "images": [
@@ -14983,7 +15204,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11259901",
@@ -15216,11 +15437,11 @@
     "featured": false,
     "score": 74.17,
     "summary": {
-      "text": "大阪コリアタウン（おおさかコリアタウン）は、大阪府大阪市生野区桃谷三丁目から五丁目にあるコリアタウン。御幸森天神宮から平野川に架かる御幸橋まで御幸通商店街を形成している。大阪生野コリアタウン、生野コリアタウンとも呼ばれる。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E9%98%AA%E3%82%B3%E3%83%AA%E3%82%A2%E3%82%BF%E3%82%A6%E3%83%B3",
+      "text": "Ikuno Korea Town (Japanese: 生野コリアタウン; Korean: 이쿠노 코리아타운) is a Koreatown in Ikuno-ku, Osaka, Japan. It is one of the largest Koreatowns in the country and a significant tourist attraction, with around two million visitors in 2021.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Ikuno_Korea_Town",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -15271,7 +15492,7 @@
       "ja": "大江橋",
       "kana": "おおえばし",
       "romaji": "Oebashi",
-      "zh_tw": "大江桥",
+      "zh_tw": "大江橋",
       "en": "Ōe Bridge"
     },
     "kana_source": "wikidata",
@@ -15331,7 +15552,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11261914",
@@ -15519,12 +15740,88 @@
     "updated_at": "2026-09-28"
   },
   {
+    "id": "wd-Q11271546",
+    "name": {
+      "ja": "造幣博物館",
+      "kana": "ぞうへいはくぶつかん",
+      "romaji": "Zouhei Hakubutsukan",
+      "zh_tw": "造幣博物館",
+      "en": "Mint Museum"
+    },
+    "kana_source": "osm",
+    "location": {
+      "lat": 34.695917,
+      "lng": 135.521667
+    },
+    "prefecture": "osaka",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "博物館"
+    ],
+    "featured": false,
+    "score": 79.18,
+    "summary": {
+      "text": "造幣博物館（ぞうへいはくぶつかん）は、大阪府大阪市北区の造幣局本局構内にある博物館。1969年に開館した。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E9%80%A0%E5%B9%A3%E5%8D%9A%E7%89%A9%E9%A4%A8",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "大阪城北詰",
+          "romaji": "Ōsakajōkitazume",
+          "en": "Osakajokitazume"
+        },
+        "distance_m": 470
+      },
+      {
+        "name": {
+          "ja": "天満橋",
+          "romaji": "Tenmabashi",
+          "en": "Temmabashi"
+        },
+        "distance_m": 780
+      }
+    ],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1b/Mint_Museum_Osaka_Japan01s5.jpg/960px-Mint_Museum_Osaka_Japan01s5.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "663highland",
+        "license": "CC BY 2.5",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Mint_Museum_Osaka_Japan01s5.jpg"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q11271546",
+      "osm": "node/1423016951"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q11271546",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.openstreetmap.org/node/1423016951",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://osaka-info.jp/spot/mint-museum/",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
+  },
+  {
     "id": "wd-Q11274443",
     "name": {
       "ja": "なにわ淀川花火大会",
       "kana": "なにわよどがわはなびたいかい",
       "romaji": "Naniwayodogawahanabitaikai",
-      "zh_tw": "浪速淀川花火大會",
+      "zh_tw": "浪速澱川花火大會",
       "en": "Naniwa Yodogawa Fireworks Festival"
     },
     "kana_source": "wikidata",
@@ -15575,7 +15872,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11274668",
@@ -16399,7 +16696,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11306559",
@@ -16529,6 +16826,68 @@
     ],
     "status": "published",
     "updated_at": "2026-09-28"
+  },
+  {
+    "id": "wd-Q11308179",
+    "name": {
+      "ja": "ショッパーズモール泉佐野",
+      "zh_tw": "ショッパーズモール泉佐野",
+      "en": "IcoraMall Izumisano"
+    },
+    "location": {
+      "lat": 34.422278,
+      "lng": 135.327111
+    },
+    "prefecture": "osaka",
+    "kind": "major",
+    "themes": [],
+    "tags": [],
+    "featured": false,
+    "score": 62.24,
+    "summary": {
+      "text": "いこらも〜る泉佐野（いこらも〜るいずみさの）は、大阪府泉佐野市下瓦屋二丁目にある大型ショッピングモールである。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E3%81%84%E3%81%93%E3%82%89%E3%82%82%E3%83%BC%E3%82%8B%E6%B3%89%E4%BD%90%E9%87%8E",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "井原里",
+          "romaji": "Iharanosato",
+          "en": "Iharanosato"
+        },
+        "distance_m": 440
+      },
+      {
+        "name": {
+          "ja": "鶴原",
+          "romaji": "Tsuruhara",
+          "en": "Tsuruhara"
+        },
+        "distance_m": 1160
+      }
+    ],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0b/Ikora-mall-izumisano.JPG/960px-Ikora-mall-izumisano.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "小倉商事",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Ikora-mall-izumisano.JPG"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q11308179"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q11308179",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11310165",
@@ -16665,7 +17024,7 @@
       "ja": "パナソニックミュージアム 松下幸之助歴史館",
       "kana": "ぱなそにっくみゅーじあむまつしたこうのすけれきしかん",
       "romaji": "Panasonikkumyujiamumatsushitakonosukerekishikan",
-      "zh_tw": "松下博物馆：松下幸之助历史館",
+      "zh_tw": "松下博物館：松下幸之助歷史館",
       "en": "Panasonic Kōnosuke Matsushita Museum"
     },
     "kana_source": "wikipedia",
@@ -16680,11 +17039,11 @@
     "featured": false,
     "score": 64.48,
     "summary": {
-      "text": "パナソニックミュージアム 松下幸之助歴史館（パナソニックミュージアム まつしたこうのすけれきしかん）は、大阪府門真市でパナソニックが運営している企業博物館。2008年9月までは松下電器歴史館という名称であったが、パナソニックの社名変更にあわせて同年10月1日から現在の名称に変更された。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E3%83%91%E3%83%8A%E3%82%BD%E3%83%8B%E3%83%83%E3%82%AF%E3%83%9F%E3%83%A5%E3%83%BC%E3%82%B8%E3%82%A2%E3%83%A0_%E6%9D%BE%E4%B8%8B%E5%B9%B8%E4%B9%8B%E5%8A%A9%E6%AD%B4%E5%8F%B2%E9%A4%A8",
+      "text": "The Konosuke Matsushita Museum (松下幸之助歴史館, kōnosuke matsushita rekishikan; Konosuke Matsushita History Museum) is a corporate museum operated by Panasonic in Kadoma, Osaka, Japan. Until September 2008, the museum was called the Matsushita Electric Industrial History Museum (松下電器歴史館, matsushita denki rekishikan), but it was changed to its current name on October 1, 2008, to coordinate with the renaming of the company to Panasonic. The museum was temporarily closed in October 2017 and reopened in March 2018.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Konosuke_Matsushita_Museum",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -16731,7 +17090,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11330742",
@@ -16882,7 +17241,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 67.47,
+    "score": 87.47,
     "summary": {
       "text": "ポンポン山（ポンポンやま）は、京都府京都市西京区と大阪府高槻市の境界に位置する標高678.7mの山で、西京区及び高槻市の最高峰である。山頂の二等三角点は西京区に所在する。古くは加茂勢山と呼ばれていた。北摂山系に属する。",
       "lang": "ja",
@@ -16907,12 +17266,16 @@
         "fetched_at": "2026-09-28"
       },
       {
+        "url": "https://osaka-info.jp/spot/mount-pon-pon/",
+        "fetched_at": "2026-09-29"
+      },
+      {
         "url": "https://ja.wikipedia.org/wiki/%E3%83%9D%E3%83%B3%E3%83%9D%E3%83%B3%E5%B1%B1_%28%E8%BF%91%E7%95%BF%29",
         "fetched_at": "2026-09-28"
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11345701",
@@ -16920,7 +17283,7 @@
       "ja": "ユニバーサル・シティウォーク大阪",
       "kana": "ゆにばーさるしてぃうぉーくおおさか",
       "romaji": "Yunibasarushitiwokuosaka",
-      "zh_tw": "大阪环球城市大道",
+      "zh_tw": "大阪環球城市大道",
       "en": "Universal Citywalk Osaka"
     },
     "kana_source": "wikipedia",
@@ -16979,7 +17342,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11346101",
@@ -17238,7 +17601,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11356851",
@@ -17316,7 +17679,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11358789",
@@ -17576,6 +17939,75 @@
     "updated_at": "2026-09-28"
   },
   {
+    "id": "wd-Q11372732",
+    "name": {
+      "ja": "五風荘",
+      "kana": "ごふうそう",
+      "romaji": "Gofu So",
+      "zh_tw": "五風荘",
+      "en": "Gofūsō"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 34.457833,
+      "lng": 135.370889
+    },
+    "prefecture": "osaka",
+    "kind": "major",
+    "themes": [],
+    "tags": [],
+    "featured": false,
+    "score": 61.94,
+    "summary": {
+      "text": "五風荘（ごふうそう）は、大阪府岸和田市にある近代和風建築と回遊式日本庭園。岸和田城二の曲輪の「新御茶屋」の跡地に旧寺田財閥堺寺田家の二代当主家別邸として建設された。1998年国の登録有形文化財に登録されたものの、指定管理者制度導入を機に、2008年岸和田市指定有形文化財に指定された（これに伴い国の登録は抹消）。正門は奈良東大寺塔頭中性院表門を移築したもの。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E4%BA%94%E9%A2%A8%E8%8D%98",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "蛸地蔵",
+          "romaji": "Takojizō",
+          "en": "Takojizō"
+        },
+        "distance_m": 200
+      },
+      {
+        "name": {
+          "ja": "岸和田",
+          "romaji": "Kishiwada",
+          "en": "Kishiwada"
+        },
+        "distance_m": 720
+      }
+    ],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c1/Gofuso_Kishiwada_Osaka_pref_Japan17bs5.jpg/960px-Gofuso_Kishiwada_Osaka_pref_Japan17bs5.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "663highland",
+        "license": "CC BY 2.5",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Gofuso_Kishiwada_Osaka_pref_Japan17bs5.jpg"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q11372732"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q11372732",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E4%BA%94%E9%A2%A8%E8%8D%98",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
+  },
+  {
     "id": "wd-Q11374034",
     "name": {
       "ja": "交野天神社",
@@ -17800,11 +18232,11 @@
     "featured": false,
     "score": 73.48,
     "summary": {
-      "text": "今宮戎神社（いまみやえびすじんじゃ）は、大阪市浪速区にある神社。大阪七福神の恵比寿を祀る。商売繁盛の神様「えべっさん」として知られ、毎年1月9日から11日にかけて十日戎（とおかえびす）が開催される。地元では単に「戎神社」と言えば当社のことを指す。旧社格は郷社で、現在は神社本庁の別表神社。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E4%BB%8A%E5%AE%AE%E6%88%8E%E7%A5%9E%E7%A4%BE",
+      "text": "Imamiya Ebisu Shrine (今宮戎神社, Imamiya Ebisu jinja) is a Shinto shrine located in Naniwa-ku, Osaka Prefecture, Japan. According to legend, it was established in 600 during the reign of Empress Suiko. Its annual festival is held from January 9 to 11. The kami enshrined here included Amaterasu (天照皇大神), Kotoshironushi (事代主命, also known as Ebisu), Susanoo-no-Mikoto (素盞鳴尊), Tsukuyomi-no-Mikoto (月読尊), and Wakahiru-me (稚日女尊).",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Imamiya_Ebisu_Shrine",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -17851,7 +18283,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11379324",
@@ -18130,6 +18562,81 @@
     "updated_at": "2026-09-28"
   },
   {
+    "id": "wd-Q11390949",
+    "name": {
+      "ja": "八幡屋公園",
+      "kana": "やはたやこうえん",
+      "romaji": "Yahatayakoen",
+      "zh_tw": "八幡屋公園",
+      "en": "Yahataya Park"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 34.660472,
+      "lng": 135.447167
+    },
+    "prefecture": "osaka",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "公園"
+    ],
+    "featured": false,
+    "score": 61.76,
+    "summary": {
+      "text": "The Yahataya Sports Park Center (八幡屋スポーツパークセンター, Yahataya Supōtsu Pāku Sentā) also known as Yahataya Park (八幡屋公園, Yahataya kōen) is a park in Osaka, Japan",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Yahataya_Park",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "朝潮橋",
+          "romaji": "Asashio-bashi",
+          "en": "Asashiobashi"
+        },
+        "distance_m": 160
+      },
+      {
+        "name": {
+          "ja": "ユニバーサルシティ",
+          "en": "Universal City"
+        },
+        "distance_m": 1140
+      }
+    ],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/60/Yahataya-park.jpg/960px-Yahataya-park.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "KENPEI",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Yahataya-park.jpg"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q11390949",
+      "osm": "way/126784686"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q11390949",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.openstreetmap.org/way/126784686",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E5%85%AB%E5%B9%A1%E5%B1%8B%E5%85%AC%E5%9C%92",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
+  },
+  {
     "id": "wd-Q11395863",
     "name": {
       "ja": "出雲大社大阪分祠",
@@ -18201,7 +18708,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11400541",
@@ -18279,7 +18786,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11401797",
@@ -18352,6 +18859,68 @@
     "updated_at": "2026-09-28"
   },
   {
+    "id": "wd-Q11406849",
+    "name": {
+      "ja": "千里川",
+      "kana": "せんりがわ",
+      "romaji": "Senrigawa",
+      "zh_tw": "千里川",
+      "en": "Senri River"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 34.780752,
+      "lng": 135.451954
+    },
+    "prefecture": "osaka",
+    "kind": "major",
+    "themes": [],
+    "tags": [],
+    "featured": false,
+    "score": 61.66,
+    "summary": {
+      "text": "千里川（せんりがわ）は、大阪府を流れる淀川水系の一級河川。猪名川の支流。昭和40年代から50年代にかけて行われた改修工事以前までは「暴れ川」として治水対策に悩まされてきた。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E5%8D%83%E9%87%8C%E5%B7%9D",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "豊中",
+          "romaji": "Toyonaka",
+          "en": "Toyonaka"
+        },
+        "distance_m": 1140
+      },
+      {
+        "name": {
+          "ja": "岡町",
+          "romaji": "Okamachi",
+          "en": "Okamachi"
+        },
+        "distance_m": 1210
+      }
+    ],
+    "images": [],
+    "external_ids": {
+      "wikidata": "Q11406849"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q11406849",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E5%8D%83%E9%87%8C%E5%B7%9D",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
+  },
+  {
     "id": "wd-Q11407716",
     "name": {
       "ja": "南宗寺",
@@ -18378,11 +18947,11 @@
     "featured": false,
     "score": 76.05,
     "summary": {
-      "text": "南宗寺（なんしゅうじ）は、大阪府堺市堺区にある臨済宗大徳寺派の寺院。山号は龍興山。本尊は釈迦如来。三好氏の菩提寺。茶人の武野紹鴎、千利休が修行をした縁の寺であり、堺の町衆文化の発展に寄与した寺院である。古田織部作と伝わる枯山水庭園は、国の名勝に指定されている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%8D%97%E5%AE%97%E5%AF%BA",
+      "text": "Nanshū-ji (南宗寺) is a Buddhist temple in the Sakai ward of the city of Sakai, Osaka Prefecture, Japan. It belongs to the Daitoku-ji-branch of the Rinzai school of Japanese Zen. Its main image is a Shaka Sanzon. Its Japanese garden, laid out by Furuta Oribe in 1619, is designated a National Place of Scenic Beauty. The temple is the bodaiji of the Miyoshi clan and for many schools of the Japanese tea ceremony.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Nansh%C5%AB-ji",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -18424,7 +18993,81 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
+  },
+  {
+    "id": "wd-Q11409912",
+    "name": {
+      "ja": "原田神社",
+      "kana": "はらだじんじゃ",
+      "romaji": "Haradajinja",
+      "zh_tw": "原田神社",
+      "en": "Harada Shrine"
+    },
+    "kana_source": "wikidata",
+    "location": {
+      "lat": 34.779428,
+      "lng": 135.465789
+    },
+    "prefecture": "osaka",
+    "city": "豊中市",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "神社"
+    ],
+    "featured": false,
+    "score": 62.21,
+    "summary": {
+      "text": "原田神社（はらだじんじゃ）は、大阪府豊中市中央部にある神社。旧社格は府社。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E5%8E%9F%E7%94%B0%E7%A5%9E%E7%A4%BE",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "岡町",
+          "romaji": "Okamachi",
+          "en": "Okamachi"
+        },
+        "distance_m": 80
+      },
+      {
+        "name": {
+          "ja": "曽根",
+          "kana": "そね",
+          "romaji": "Sone",
+          "en": "Sone"
+        },
+        "distance_m": 900
+      }
+    ],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f2/%E5%8E%9F%E7%94%B0%E7%A5%9E%E7%A4%BE.JPG/960px-%E5%8E%9F%E7%94%B0%E7%A5%9E%E7%A4%BE.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "不明",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:%E5%8E%9F%E7%94%B0%E7%A5%9E%E7%A4%BE.JPG"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q11409912",
+      "osm": "way/239034516"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q11409912",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.openstreetmap.org/way/239034516",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11410732",
@@ -18453,11 +19096,11 @@
     "featured": false,
     "score": 72.66,
     "summary": {
-      "text": "叡福寺（えいふくじ）は、大阪府南河内郡太子町太子にある太子宗の本山の寺院。山号は磯長山（しながさん）。本尊は如意輪観音。新西国三十三箇所客番札所。聖徳太子の墓所とされる叡福寺北古墳（磯長墓〈しながのはか〉）がある。開基は聖徳太子または推古天皇とも聖武天皇ともいわれる。聖徳太子建立三太子の一つで、野中寺（羽曳野市）の「中の太子」、大聖勝軍寺（八尾市）の「下の太子」に対して、「上の太子」と呼ばれている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%8F%A1%E7%A6%8F%E5%AF%BA",
+      "text": "Eifuku-ji (叡福寺) is a Buddhist temple in Minamikawachi, Osaka, Japan. It is affiliated with Shingon Buddhism. According to legend, it was founded in 724 by Emperor Shōmu.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Eifuku-ji",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -18486,7 +19129,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11412294",
@@ -18508,8 +19151,8 @@
     "tags": [
       "博物館"
     ],
-    "featured": false,
-    "score": 67.75,
+    "featured": true,
+    "score": 87.75,
     "summary": {
       "text": "司馬遼太郎紀念館是一座位於日本大阪府東大阪市的文學博物館。",
       "lang": "zh",
@@ -18555,12 +19198,16 @@
         "fetched_at": "2026-09-27"
       },
       {
+        "url": "https://osaka-info.jp/spot/shiba-ryotaro-memorial-museum/",
+        "fetched_at": "2026-09-29"
+      },
+      {
         "url": "https://ja.wikipedia.org/wiki/%E5%8F%B8%E9%A6%AC%E9%81%BC%E5%A4%AA%E9%83%8E%E8%A8%98%E5%BF%B5%E9%A4%A8",
         "fetched_at": "2026-09-28"
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11413133",
@@ -18588,11 +19235,11 @@
     "featured": false,
     "score": 65.24,
     "summary": {
-      "text": "吉志部神社（きしべじんじゃ）は、大阪府吹田市岸部北にある神社。旧社格は村社。千里丘陵の南西部に位置する紫金山公園として整備された紫金山エリアの一角に鎮座する。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%90%89%E5%BF%97%E9%83%A8%E7%A5%9E%E7%A4%BE",
+      "text": "Kishibe tile kiln ruins (吉志部瓦窯跡, Kishibe Kawara-gama ato) is an archaeological site consisting of the remains of Heian period kilns located in what is now the Kishibe-kita neighborhood of the city of Suita, Osaka Prefecture in the Kansai region of Japan.  It has been protected by the central government as a National Historic Site since 1971.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Kishibe_Tile_Kiln_Site",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -18637,7 +19284,77 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
+  },
+  {
+    "id": "wd-Q11416775",
+    "name": {
+      "ja": "呉服神社",
+      "kana": "くれはじんじゃ",
+      "romaji": "Kurehajinja",
+      "zh_tw": "呉服神社",
+      "en": "Kureha Shrine"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 34.822917,
+      "lng": 135.422083
+    },
+    "prefecture": "osaka",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "神社"
+    ],
+    "featured": false,
+    "score": 61.92,
+    "summary": {
+      "text": "呉服神社（くれはじんじゃ）は、大阪府池田市室町にある神社。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E5%91%89%E6%9C%8D%E7%A5%9E%E7%A4%BE",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "池田",
+          "romaji": "Ikeda",
+          "en": "Ikeda"
+        },
+        "distance_m": 370
+      },
+      {
+        "name": {
+          "ja": "川西能勢口",
+          "romaji": "Kawanisinoseguchi"
+        },
+        "distance_m": 880
+      }
+    ],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/aa/Kureha_shrine_Heiden.jpeg/960px-Kureha_shrine_Heiden.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Eveningveach",
+        "license": "CC BY 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Kureha_shrine_Heiden.jpeg"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q11416775"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q11416775",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E5%91%89%E6%9C%8D%E7%A5%9E%E7%A4%BE",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11417787",
@@ -18662,11 +19379,11 @@
     "featured": false,
     "score": 66.7,
     "summary": {
-      "text": "和泉市久保惣記念美術館 （いずみしくぼそうきねんびじゅつかん） は、大阪府和泉市内田町にある、東洋古美術を中心とした市立美術館である。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%92%8C%E6%B3%89%E5%B8%82%E4%B9%85%E4%BF%9D%E6%83%A3%E8%A8%98%E5%BF%B5%E7%BE%8E%E8%A1%93%E9%A4%A8",
+      "text": "The Kubosō Memorial Museum of Arts, Izumi (和泉市久保惣記念美術館, Izumi-shi Kubosō Kinen Bijutsukan) opened in Izumi, Osaka Prefecture, Japan, in 1982. The new wing was added in 1997. The local Kubo family, founders of the Kubosō cotton textile business, donated the land, buildings, collection, and funds for the museum's management to the city.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Kubos%C5%8D_Memorial_Museum_of_Arts%2C_Izumi",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -18843,7 +19560,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11423145",
@@ -18869,11 +19586,11 @@
     "featured": false,
     "score": 69.45,
     "summary": {
-      "text": "土塔（どとう）は、大阪府堺市中区土塔町にある階段ピラミッド形状の土製の仏塔。奈良時代に行基が建立した大野寺の境内に建立されたもので、大野寺土塔（おおのでらどとう）とも呼ばれる。国の史跡に指定され、多くの出土物が国の重要文化財に指定されている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%9C%9F%E5%A1%94",
+      "text": "The Dotō (土塔, earth stupa), is a Nara period Buddhist relic located in the Dotō neighborhood of Naka-ku, in the city of Sakai, Osaka, Japan. It is also referred to as the Ōno-ji Dotō (大野寺土塔) after the temple on whose grounds it is located. It was designated as a National Historic Site in 1953, with the area under protection expanded in 2005.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Dot%C5%8D",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -18990,7 +19707,79 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
+  },
+  {
+    "id": "wd-Q11425829",
+    "name": {
+      "ja": "垂水神社",
+      "kana": "たるみじんじゃ",
+      "romaji": "Tarumi Jinjya",
+      "zh_tw": "垂水神社",
+      "en": "Tarumi Shrine"
+    },
+    "kana_source": "wikidata",
+    "location": {
+      "lat": 34.766257,
+      "lng": 135.504236
+    },
+    "prefecture": "osaka",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "神社"
+    ],
+    "featured": false,
+    "score": 62.0,
+    "summary": {
+      "text": "垂水神社（たるみじんじゃ）は、大阪府吹田市垂水町にある神社。式内社（名神大社）で、旧社格は郷社。現在は神社本庁に属さない単立神社。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E5%9E%82%E6%B0%B4%E7%A5%9E%E7%A4%BE_%28%E5%90%B9%E7%94%B0%E5%B8%82%29",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "豊津",
+          "romaji": "Toyotsu",
+          "en": "Toyotsu"
+        },
+        "distance_m": 510
+      },
+      {
+        "name": {
+          "ja": "関大前",
+          "romaji": "Kandaimae",
+          "en": "Kandai-mae"
+        },
+        "distance_m": 560
+      }
+    ],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ac/Tarumi-jinja_%28Suita%29%2C_haiden.jpg/960px-Tarumi-jinja_%28Suita%29%2C_haiden.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Saigen Jiro",
+        "license": "CC0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Tarumi-jinja_(Suita),_haiden.jpg"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q11425829",
+      "osm": "way/815803799"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q11425829",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.openstreetmap.org/way/815803799",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11427801",
@@ -19034,10 +19823,10 @@
       },
       {
         "name": {
-          "ja": "大阪阿部野橋駅",
-          "kana": "おおさかあべのばしえき",
-          "romaji": "Ōsaka Abenobashi eki",
-          "en": "Ōsaka Abenobashi Station"
+          "ja": "大阪阿部野橋",
+          "kana": "おおさかあべのばし",
+          "romaji": "Ōsaka Abenobashi",
+          "en": "Ōsaka Abenobashi"
         },
         "distance_m": 700
       }
@@ -19069,7 +19858,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11427873",
@@ -19237,11 +20026,11 @@
     "featured": false,
     "score": 67.49,
     "summary": {
-      "text": "壺井八幡宮（つぼいはちまんぐう）は、大阪府羽曳野市壺井にある神社。旧社格は村社。武家の棟梁・河内源氏の氏神であり、源義家（八幡太郎義家）が愛用したとされる黒韋威胴丸（くろかわおどしどうまる・重要文化財）や天光丸の太刀（重要美術品）などが伝わっている。京都市の六孫王神社や川西市の多田神社と並ぶ源氏三神社の一つである壺井権現社がある。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%A3%BA%E4%BA%95%E5%85%AB%E5%B9%A1%E5%AE%AE",
+      "text": "Tsuboi Hachimangū (壺井八幡宮, Tsuboi Hachimangū) is a Shinto shrine located in Habikino, Osaka Prefecture, Japan. It is a Hachiman shrine, dedicated to the kami Hachiman. It was established in 1063 by Minamoto no Yoriyoshi. Its main festival is held annually on May 15.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Tsuboi_Hachimang%C5%AB",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -19276,7 +20065,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11430889",
@@ -19346,7 +20135,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11431590",
@@ -19491,8 +20280,8 @@
     "tags": [
       "公園"
     ],
-    "featured": false,
-    "score": 66.46,
+    "featured": true,
+    "score": 86.46,
     "summary": {
       "text": "大仙公園，是位於日本大阪府堺市堺區的城市公園。該公園是被登錄為世界文化遺產的百舌鳥古墳群的一部分。",
       "lang": "zh",
@@ -19537,10 +20326,14 @@
       {
         "url": "https://www.openstreetmap.org/way/41175084",
         "fetched_at": "2026-09-27"
+      },
+      {
+        "url": "https://osaka-info.jp/spot/daisen-park/",
+        "fetched_at": "2026-09-29"
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11432381",
@@ -19614,7 +20407,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11436877",
@@ -19691,7 +20484,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11437186",
@@ -20282,6 +21075,79 @@
     "updated_at": "2026-09-28"
   },
   {
+    "id": "wd-Q11440161",
+    "name": {
+      "ja": "大阪大学総合学術博物館",
+      "kana": "おおさかだいがくそうごうがくじゅつはくぶつかん",
+      "romaji": "Osakadaigakusogogakujutsuhakubutsukan",
+      "zh_tw": "大阪大學綜合學術博物館",
+      "en": "Museum of Osaka University"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 34.806444,
+      "lng": 135.453833
+    },
+    "prefecture": "osaka",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "博物館"
+    ],
+    "featured": false,
+    "score": 61.8,
+    "summary": {
+      "text": "大阪大學綜合學術博物館是大阪大學設置的一個博物館。",
+      "lang": "zh",
+      "source_url": "https://zh.wikipedia.org/wiki/%E5%A4%A7%E9%98%AA%E5%A4%A7%E5%AD%B8%E7%B6%9C%E5%90%88%E5%AD%B8%E8%A1%93%E5%8D%9A%E7%89%A9%E9%A4%A8",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "石橋阪大前",
+          "kana": "いしばしはんだいまえ",
+          "romaji": "Ishibashi Handai-mae",
+          "en": "Ishibashi Handai-mae"
+        },
+        "distance_m": 760
+      },
+      {
+        "name": {
+          "ja": "柴原阪大前",
+          "kana": "しばはらはんだいまえ",
+          "romaji": "Shibahara-Handai-Mae",
+          "en": "Shibahara-Handai-Mae"
+        },
+        "distance_m": 810
+      }
+    ],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/96/Museum_of_Osaka_University.JPG/960px-Museum_of_Osaka_University.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Bergmann",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Museum_of_Osaka_University.JPG"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q11440161"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q11440161",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E9%98%AA%E5%A4%A7%E5%AD%A6%E7%B7%8F%E5%90%88%E5%AD%A6%E8%A1%93%E5%8D%9A%E7%89%A9%E9%A4%A8",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
+  },
+  {
     "id": "wd-Q11440266",
     "name": {
       "ja": "大阪市庁舎",
@@ -20439,11 +21305,11 @@
     "featured": false,
     "score": 67.43,
     "summary": {
-      "text": "大阪市立博物館（おおさかしりつはくぶつかん）は、大阪府大阪市の大阪城公園内にあった博物館。旧陸軍第四師団司令部庁舎を利用して1960年に開館し、2001年に閉館した。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E9%98%AA%E5%B8%82%E7%AB%8B%E5%8D%9A%E7%89%A9%E9%A4%A8",
+      "text": "Osaka City Museum (大阪市立博物館, Ōsaka Shiritsu Hakubutsukan) is a former museum dedicated to the history of Ōsaka, Japan. Located in the former headquarters of the 4th Division of the Imperial Japanese Army in Osaka Castle Park, the ground floor opened to the public in December 1960, with the special exhibition Momoyama Culture. After completion of the second stage of works, the entire museum opened in November 1962, with the special exhibition Famous Treasures of Osaka. In March 1989, the museum welcomed its 3,200,000th paying visitor.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Osaka_City_Museum",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -20509,11 +21375,11 @@
     "featured": false,
     "score": 67.96,
     "summary": {
-      "text": "大阪公立大学医学部附属病院（おおさかこうりつだいがくいがくぶふぞくびょういん、英語: Osaka Metropolitan University Hospital）は、大阪市阿倍野区にある大阪公立大学医学部附属の大学病院。大阪公立大学阿倍野キャンパスに位置する。特定機能病院、大阪府災害拠点病院。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E9%98%AA%E5%85%AC%E7%AB%8B%E5%A4%A7%E5%AD%A6%E5%8C%BB%E5%AD%A6%E9%83%A8%E9%99%84%E5%B1%9E%E7%97%85%E9%99%A2",
+      "text": "Osaka Metropolitan University Hospital (大阪公立大学医学部附属病院, Ōsaka kouritsu daigaku igakubu fuzoku byōin) is a university hospital in Japan. It's located in Abeno-ku, Osaka, and affiliated with Osaka Metropolitan University.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Osaka_Metropolitan_University_Hospital",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -21204,7 +22070,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11441636",
@@ -21227,11 +22093,11 @@
     "featured": false,
     "score": 63.44,
     "summary": {
-      "text": "大阪迎賓館（おおさかげいひんかん）は、大坂城西の丸公園にある建築物。1995年のAPEC大阪開催に際して休憩所を取り壊し跡地に新しく建造された。その後は西の丸庭園の休憩所となったが、各種の会議にも使用された。現在は宴会場となり、ランチ営業もしているほか、結婚式の披露宴会場としても利用できる。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E9%98%AA%E8%BF%8E%E8%B3%93%E9%A4%A8",
+      "text": "The Osaka State Guest House (大阪迎賓館 Ōsaka geihinkan) is located in the Nishinomaru area of Osaka Castle. The building is owned by City of Osaka, managed by Osaka Castle Management Consortium, and operated by Value Management.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Osaka_State_Guest_House",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -21488,7 +22354,7 @@
       "ja": "天照大神高座神社・岩戸神社",
       "kana": "あまてらすおおみかみたかくらじんじゃいわとじんじゃ",
       "romaji": "Amaterasuomikamitakakurajinjaiwatojinja",
-      "zh_tw": "天照大神高座神社·岩戶神社",
+      "zh_tw": "天照大神高座神社·巖戶神社",
       "en": "Amaterasu Ōmikami Takakura Shrine & Iwato Shrine"
     },
     "kana_source": "wikidata",
@@ -21548,7 +22414,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11442973",
@@ -21588,12 +22454,12 @@
       },
       {
         "name": {
-          "ja": "大阪阿部野橋駅",
-          "kana": "おおさかあべのばしえき",
-          "romaji": "Ōsaka Abenobashi eki",
-          "en": "Ōsaka Abenobashi Station"
+          "ja": "大阪阿部野橋",
+          "kana": "おおさかあべのばし",
+          "romaji": "Ōsaka Abenobashi",
+          "en": "Ōsaka Abenobashi"
         },
-        "distance_m": 240
+        "distance_m": 250
       }
     ],
     "images": [
@@ -21618,7 +22484,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11443265",
@@ -21712,11 +22578,11 @@
     "featured": false,
     "score": 69.56,
     "summary": {
-      "text": "太融寺（たいゆうじ）は、大阪市北区太融寺町にある高野山真言宗の準別格本山の寺院。山号は佳木山。本尊は千手観音。新西国三十三箇所第2番札所。嵯峨源氏の祖である嵯峨天皇第十二皇子源融ゆかりの寺で、古くから当寺付近の地名にもなっている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%A4%AA%E8%9E%8D%E5%AF%BA",
+      "text": "Taiyū-ji (太融寺) is a Buddhist temple in Osaka Prefecture, Japan. It was founded in 821.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Taiy%C5%AB-ji",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -21761,7 +22627,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11448027",
@@ -21789,11 +22655,11 @@
     "featured": false,
     "score": 72.13,
     "summary": {
-      "text": "孝恩寺（こうおんじ）は、大阪府貝塚市木積（こつみ）にある浄土宗の寺院。山号は慈眼山。本尊は阿弥陀如来。「木積の釘無堂」と呼ばれる観音堂（国宝）が有名である。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%AD%9D%E6%81%A9%E5%AF%BA",
+      "text": "Kōon-ji (孝恩寺) is a Jōdo-shū Buddhist temple in Kaizuka, Osaka, Japan.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/K%C5%8Don-ji_%28Kaizuka%29",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -21840,7 +22706,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11450228",
@@ -21917,7 +22783,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11455394",
@@ -22012,11 +22878,11 @@
     "featured": false,
     "score": 67.52,
     "summary": {
-      "text": "富田林寺内町（とんだばやしじないちょう、とんだばやしじないまち）は、大阪府富田林市にある寺内町。江戸時代から昭和初期の町並みが残ることで知られる。国の「重要伝統的建造物群保存地区」および、旧建設省選定の「日本の道100選」のひとつ。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%AF%8C%E7%94%B0%E6%9E%97%E5%AF%BA%E5%86%85%E7%94%BA",
+      "text": "Tondabayashi Jinaimachi (富田林寺内町) is a popular name of the old temple-based town (Jinaimachi) located in Tondabayashi City, Osaka Prefecture, Japan. It is one of the Important Preservation Districts for Groups of Traditional Buildings (1997) in Tondabayashi-shi Tondabayashi (富田林市富田林重要伝統的建造物群保存地区). The town retains town blocks from the Sengoku period, along with machiyas (traditional wooden town residences) built from the mid-Edo period on.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Tondabayashi_Jinaimachi",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -22202,7 +23068,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11475373",
@@ -22465,7 +23331,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11480676",
@@ -22789,6 +23655,75 @@
     "updated_at": "2026-09-28"
   },
   {
+    "id": "wd-Q11487076",
+    "name": {
+      "ja": "弓削神社 (八尾市)",
+      "kana": "ゆげじんじゃ",
+      "romaji": "Yugejinja",
+      "zh_tw": "弓削神社",
+      "en": "Yuge Shrine"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 34.601867,
+      "lng": 135.61703
+    },
+    "prefecture": "osaka",
+    "kind": "major",
+    "themes": [],
+    "tags": [],
+    "featured": false,
+    "score": 61.76,
+    "summary": {
+      "text": "弓削神社（ゆげじんじゃ）は、大阪府八尾市にある神社。同名神社として2社があり、いずれも式内社（式内大社）論社。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E5%BC%93%E5%89%8A%E7%A5%9E%E7%A4%BE_%28%E5%85%AB%E5%B0%BE%E5%B8%82%29",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "志紀",
+          "romaji": "Shiki",
+          "en": "Shiki"
+        },
+        "distance_m": 190
+      },
+      {
+        "name": {
+          "ja": "法善寺",
+          "romaji": "Hōzenji",
+          "en": "Hōzenji"
+        },
+        "distance_m": 1170
+      }
+    ],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/98/%E5%BC%93%E5%89%8A%E7%A5%9E%E7%A4%BE02.JPG/960px-%E5%BC%93%E5%89%8A%E7%A5%9E%E7%A4%BE02.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Kansai explorer",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:%E5%BC%93%E5%89%8A%E7%A5%9E%E7%A4%BE02.JPG"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q11487076"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q11487076",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E5%BC%93%E5%89%8A%E7%A5%9E%E7%A4%BE_%28%E5%85%AB%E5%B0%BE%E5%B8%82%29",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
+  },
+  {
     "id": "wd-Q11489357",
     "name": {
       "ja": "御霊神社",
@@ -22860,7 +23795,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11492258",
@@ -22926,7 +23861,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11493042",
@@ -23004,7 +23939,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11495035",
@@ -23061,7 +23996,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11495351",
@@ -23203,7 +24138,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q1149573",
@@ -23226,7 +24161,7 @@
       "城",
       "史跡"
     ],
-    "featured": true,
+    "featured": false,
     "score": 79.71,
     "summary": {
       "text": "千早城，日本之古城。所在地是大阪府南河內郡千早赤阪村千早。是日本指定史跡。",
@@ -23258,7 +24193,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11496859",
@@ -23335,6 +24270,132 @@
     ],
     "status": "published",
     "updated_at": "2026-09-28"
+  },
+  {
+    "id": "wd-Q11498555",
+    "name": {
+      "ja": "摂津峡",
+      "kana": "せっつきょう",
+      "romaji": "Settsukyo",
+      "zh_tw": "攝津峽",
+      "en": "Settsukyō"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 34.877972,
+      "lng": 135.587028
+    },
+    "prefecture": "osaka",
+    "kind": "major",
+    "themes": [],
+    "tags": [],
+    "featured": false,
+    "score": 62.05,
+    "summary": {
+      "text": "摂津峡（せっつきょう）は、大阪府高槻市を流れる芥川上流に広がる渓谷。府の名勝（1938年指定）。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E6%91%82%E6%B4%A5%E5%B3%A1",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/56/130928_Settsu-kyo_Gorge_Takatsuki_Osaka_pref_Japan03s3.jpg/960px-130928_Settsu-kyo_Gorge_Takatsuki_Osaka_pref_Japan03s3.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "663highland",
+        "license": "CC BY 2.5",
+        "source_url": "https://commons.wikimedia.org/wiki/File:130928_Settsu-kyo_Gorge_Takatsuki_Osaka_pref_Japan03s3.jpg"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q11498555",
+      "osm": "way/483968487"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q11498555",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.openstreetmap.org/way/483968487",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E6%91%82%E6%B4%A5%E5%B3%A1",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
+  },
+  {
+    "id": "wd-Q11499410",
+    "name": {
+      "ja": "教育塔",
+      "kana": "きょういくとう",
+      "romaji": "Kyoikuto",
+      "zh_tw": "教育塔",
+      "en": "Kyoikuto"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 34.682917,
+      "lng": 135.523194
+    },
+    "prefecture": "osaka",
+    "kind": "major",
+    "themes": [],
+    "tags": [],
+    "featured": false,
+    "score": 61.99,
+    "summary": {
+      "text": "The Kyoikuto, or the Education Tower (Japanese: 教育塔; or  きょういくとう, literally \"Education Tower\") is a memorial tower located in Osaka Castle Park in Chuo Ward, Osaka City. It serves as a memorial for the victims of Muroto typhoon in 1934.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Kyoikuto",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "谷町四丁目",
+          "romaji": "Tanimachi Yonchōme",
+          "en": "Tanimachi 4-chome"
+        },
+        "distance_m": 540
+      },
+      {
+        "name": {
+          "ja": "森ノ宮",
+          "kana": "もりのみや",
+          "romaji": "Morinomiya",
+          "en": "Morinomiya"
+        },
+        "distance_m": 820
+      }
+    ],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/66/Kyouikutou%2C_Osaka.JPG/960px-Kyouikutou%2C_Osaka.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Kansai explorer",
+        "license": "CC BY 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Kyouikutou,_Osaka.JPG"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q11499410"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q11499410",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E6%95%99%E8%82%B2%E5%A1%94",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11499708",
@@ -23468,6 +24529,68 @@
     "updated_at": "2026-09-28"
   },
   {
+    "id": "wd-Q11501781",
+    "name": {
+      "ja": "新宿ごちそうビル",
+      "kana": "しんじゅくごちそうびる",
+      "romaji": "Shinjukugochisobiru",
+      "zh_tw": "新宿ごちそうビル"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 34.645833,
+      "lng": 135.515167
+    },
+    "prefecture": "osaka",
+    "kind": "major",
+    "themes": [],
+    "tags": [],
+    "featured": false,
+    "score": 61.6,
+    "summary": {
+      "text": "新宿ごちそうビル（しんじゅくごちそうビル）は、大阪府大阪市阿倍野区にあるグルメビル。地元では「ごちビル」の略称・通称で呼ばれることもある。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E6%96%B0%E5%AE%BF%E3%81%94%E3%81%A1%E3%81%9D%E3%81%86%E3%83%93%E3%83%AB",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "天王寺",
+          "romaji": "Tennōji",
+          "en": "Tennoji"
+        },
+        "distance_m": 30
+      },
+      {
+        "name": {
+          "ja": "大阪阿部野橋",
+          "kana": "おおさかあべのばし",
+          "romaji": "Ōsaka Abenobashi",
+          "en": "Ōsaka Abenobashi"
+        },
+        "distance_m": 50
+      }
+    ],
+    "images": [],
+    "external_ids": {
+      "wikidata": "Q11501781"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q11501781",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E6%96%B0%E5%AE%BF%E3%81%94%E3%81%A1%E3%81%9D%E3%81%86%E3%83%93%E3%83%AB",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
+  },
+  {
     "id": "wd-Q11501968",
     "name": {
       "ja": "新屋坐天照御魂神社",
@@ -23519,6 +24642,76 @@
     ],
     "status": "published",
     "updated_at": "2026-09-28"
+  },
+  {
+    "id": "wd-Q11502603",
+    "name": {
+      "ja": "新梅田シティ",
+      "kana": "しんうめだしてぃ",
+      "romaji": "Shinumedashiti",
+      "zh_tw": "新梅田城",
+      "en": "Shin Umeda City"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 34.705278,
+      "lng": 135.490528
+    },
+    "prefecture": "osaka",
+    "kind": "major",
+    "themes": [],
+    "tags": [],
+    "featured": false,
+    "score": 61.84,
+    "summary": {
+      "text": "新梅田シティ（しんうめだシティ）は、大阪府大阪市北区大淀中一丁目にある、梅田スカイビル、ウェスティンホテル大阪を中心とする複合施設。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E6%96%B0%E6%A2%85%E7%94%B0%E3%82%B7%E3%83%86%E3%82%A3",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "中津",
+          "kana": "なかつ",
+          "romaji": "Nakatsu",
+          "en": "Nakatsu"
+        },
+        "distance_m": 540
+      },
+      {
+        "name": {
+          "ja": "大阪",
+          "romaji": "Ōsaka",
+          "en": "Osaka"
+        },
+        "distance_m": 570
+      }
+    ],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/87/Shin-Umeda-City-01.jpg/960px-Shin-Umeda-City-01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "J o",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Shin-Umeda-City-01.jpg"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q11502603"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q11502603",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E6%96%B0%E6%A2%85%E7%94%B0%E3%82%B7%E3%83%86%E3%82%A3",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11502648",
@@ -23661,7 +24854,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11504416",
@@ -23717,7 +24910,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11509543",
@@ -23792,11 +24985,11 @@
     "featured": false,
     "score": 65.61,
     "summary": {
-      "text": "旧堺燈台（きゅうさかいとうだい）は、大阪府堺市堺区大浜北町5丁にある木製洋式灯台跡である。現存する最古の木製洋式灯台のひとつとして、国の史跡に指定されている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%97%A7%E5%A0%BA%E7%87%88%E5%8F%B0",
+      "text": "Sakai Lighthouse (堺燈台, Sakai tōdai) is a wooden lighthouse located in Sakai-ku, Sakai Osaka Prefecture, Japan.  It claims to be the oldest wooden lighthouse in Japan, and was designated a National Monument in 1972.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Old_Sakai_Lighthouse",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -23839,6 +25032,68 @@
     ],
     "status": "published",
     "updated_at": "2026-09-28"
+  },
+  {
+    "id": "wd-Q11514069",
+    "name": {
+      "ja": "昭和山",
+      "kana": "しょうわざん",
+      "romaji": "Showazan",
+      "zh_tw": "昭和山",
+      "en": "Showazan"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 34.64892,
+      "lng": 135.47411
+    },
+    "prefecture": "osaka",
+    "kind": "major",
+    "themes": [],
+    "tags": [],
+    "featured": false,
+    "score": 62.03,
+    "summary": {
+      "text": "昭和山（しょうわざん）は、大阪市大正区千島二丁目にある人工の山。標高33メートル。山の周囲は千島公園（ちしまこうえん）として整備されている。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E6%98%AD%E5%92%8C%E5%B1%B1",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "津守",
+          "romaji": "Tsumori",
+          "en": "Tsumori"
+        },
+        "distance_m": 870
+      },
+      {
+        "name": {
+          "ja": "木津川",
+          "romaji": "Kizugawa",
+          "en": "Kizugawa"
+        },
+        "distance_m": 1050
+      }
+    ],
+    "images": [],
+    "external_ids": {
+      "wikidata": "Q11514069"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q11514069",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E6%98%AD%E5%92%8C%E5%B1%B1",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11514635",
@@ -23918,7 +25173,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11516907",
@@ -23994,7 +25249,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q1151808",
@@ -24015,7 +25270,7 @@
     "themes": [],
     "tags": [],
     "featured": true,
-    "score": 86.9,
+    "score": 106.9,
     "summary": {
       "text": "梅田藍天大廈是日本一座摩天大樓，位於大阪府大阪市北區新梅田城。由於大廈獨特的建築外型，已成為大阪地區的地標和觀光勝地之一。",
       "lang": "zh",
@@ -24059,12 +25314,16 @@
         "fetched_at": "2026-09-28"
       },
       {
+        "url": "https://osaka-info.jp/spot/umeda-sky-building/",
+        "fetched_at": "2026-09-29"
+      },
+      {
         "url": "https://ja.wikipedia.org/wiki/%E6%A2%85%E7%94%B0%E3%82%B9%E3%82%AB%E3%82%A4%E3%83%93%E3%83%AB",
         "fetched_at": "2026-09-28"
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11521059",
@@ -24142,7 +25401,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11523763",
@@ -24220,7 +25479,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11527431",
@@ -24442,11 +25701,11 @@
     "featured": false,
     "score": 75.22,
     "summary": {
-      "text": "桜井神社（さくらいじんじゃ、櫻井神社）は、大阪府堺市南区片蔵にある神社。式内社で、旧社格は府社。別称は「上神谷八幡宮」（にわだにはちまんぐう）とも。拝殿は堺市内唯一の国宝に指定されている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%A1%9C%E4%BA%95%E7%A5%9E%E7%A4%BE_%28%E5%A0%BA%E5%B8%82%29",
+      "text": "Sakurai Shrine (桜井神社, Sakurai jinja, also 櫻井神社) is a Shinto shrine located in Sakai, Osaka Prefecture, Japan. It was founded at an unknown date and holds its annual festival on the first Sunday in October. It enshrines Emperor Ōjin, Emperor Chūai, and Empress Jingū as kami. The oratory (拝殿, haiden) is designated as the only Japanese National Treasure in Sakai City.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Sakurai_Shrine_%28Sakai%29",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -24493,7 +25752,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11538596",
@@ -24774,6 +26033,57 @@
     "updated_at": "2026-09-28"
   },
   {
+    "id": "wd-Q11541928",
+    "name": {
+      "ja": "槇尾山",
+      "kana": "まきおさん",
+      "romaji": "Makiosan",
+      "zh_tw": "槙尾山",
+      "en": "Mount Makio"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 34.39243,
+      "lng": 135.51177
+    },
+    "prefecture": "osaka",
+    "kind": "major",
+    "themes": [],
+    "tags": [],
+    "featured": false,
+    "score": 62.09,
+    "summary": {
+      "text": "槇尾山（まきおさん）は、大阪府和泉市にある標高600 mの山。標高500 mくらいのところに行基・空海ゆかりの古刹「施福寺」があり、参拝登山者の多い霊峰である。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E6%A7%87%E5%B0%BE%E5%B1%B1",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d1/Kuraiwa_%28Mount_Makio%293.jpg/960px-Kuraiwa_%28Mount_Makio%293.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "KENPEI",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Kuraiwa_(Mount_Makio)3.jpg"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q11541928"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q11541928",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E6%A7%87%E5%B0%BE%E5%B1%B1",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
+  },
+  {
     "id": "wd-Q1154203",
     "name": {
       "ja": "なみはやドーム",
@@ -24794,11 +26104,11 @@
     "featured": false,
     "score": 72.53,
     "summary": {
-      "text": "大阪府立門真スポーツセンター（おおさかふりつかどまスポーツセンター）は、大阪府門真市にある多目的アリーナである。施設は大阪府が所有し、OGS・関電FA・パティネレジャー門真SC共同事業体（構成団体：（代表）オージースポーツ、関電ファシリティーズ、パティネレジャー）が指定管理者として運営管理を行っている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E9%98%AA%E5%BA%9C%E7%AB%8B%E9%96%80%E7%9C%9F%E3%82%B9%E3%83%9D%E3%83%BC%E3%83%84%E3%82%BB%E3%83%B3%E3%82%BF%E3%83%BC",
+      "text": "Towa Pharmaceutical Ractab Dome (東和薬品RACTABドーム, Tōwa Yakuhin Ractab Dōmu) is an indoor sporting arena located in Kadoma city in the Osaka Prefecture of Japan.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Towa_Pharmaceutical_Ractab_Dome",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -24859,13 +26169,13 @@
       "博物館"
     ],
     "featured": false,
-    "score": 63.67,
+    "score": 83.67,
     "summary": {
-      "text": "正木美術館（まさきびじゅつかん）は、大阪府泉北郡忠岡町にある大阪府の登録博物館。正木孝之の収集品を収蔵展示、運営は公益財団法人正木美術館。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%AD%A3%E6%9C%A8%E7%BE%8E%E8%A1%93%E9%A4%A8",
+      "text": "Masaki Art Museum (Japanese: 正木美術館, Hepburn: Masaki Bijutsukan) is an art museum in Tadaoka, Osaka Prefecture, Japan, that opened in 1968. The collection, built up by Masaki Takayuki (正木孝之), comprises some thirteen hundred works, including three National Treasures and twelve Important Cultural Properties.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Masaki_Art_Museum",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -24899,12 +26209,16 @@
         "fetched_at": "2026-09-27"
       },
       {
+        "url": "https://osaka-info.jp/spot/masaki-art-museum/",
+        "fetched_at": "2026-09-29"
+      },
+      {
         "url": "https://ja.wikipedia.org/wiki/%E6%AD%A3%E6%9C%A8%E7%BE%8E%E8%A1%93%E9%A4%A8",
         "fetched_at": "2026-09-28"
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11547445",
@@ -24982,7 +26296,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11549500",
@@ -25060,7 +26374,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11551440",
@@ -25086,11 +26400,11 @@
     "featured": false,
     "score": 67.05,
     "summary": {
-      "text": "池上曽根遺跡（いけがみそねいせき）は、大阪府和泉市池上町と同泉大津市曽根町とにまたがる弥生時代中期の環濠集落遺跡。南北1.5km、東西0.6kmの範囲に広がり、総面積60万m2に達する大集落遺跡である。1976年に国の史跡に指定された。1995年から史跡整備が行われている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%B1%A0%E4%B8%8A%E6%9B%BD%E6%A0%B9%E9%81%BA%E8%B7%A1",
+      "text": "The Ikegami-Sone site (池上・曽根遺跡, Ikegami-Sone iseki) is an archaeological site containing the ruins of a large-scale Yayoi period settlement straddling the Ikegami neighborhood in the city of Izumi and the Sone neighborhood in the city of Izumiōtsu in the Kansai region of Japan. It is a large settlement ruin with a total area of 600,000 m2, extending 1.5 kilometers north-to-south and 0.6 kilometers east-to-west. It was designated a National Historic Site of Japan in 1976 and has been maintained as an archaeological park since 2005.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Ikegami-Sone_Site",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -25224,14 +26538,14 @@
     "tags": [
       "動物園"
     ],
-    "featured": false,
-    "score": 67.4,
+    "featured": true,
+    "score": 87.4,
     "summary": {
-      "text": "池田市立五月山動物園（いけだしりつ さつきやまどうぶつえん）は、大阪府池田市の五月山公園にある動物園。1957年（昭和32年）4月に開園した。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%B1%A0%E7%94%B0%E5%B8%82%E7%AB%8B%E4%BA%94%E6%9C%88%E5%B1%B1%E5%8B%95%E7%89%A9%E5%9C%92",
+      "text": "Satsukiyama Zoo (五月山動物園) is located at Satsukiyama Park, at the base of Mount Satsuki in Ikeda, Osaka, Japan. The zoo opened in April, 1957. The zoo is the municipal zoo of Ikeda.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Satsukiyama_Zoo",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -25272,12 +26586,16 @@
         "fetched_at": "2026-09-27"
       },
       {
+        "url": "https://osaka-info.jp/spot/satsukiyamazoo/",
+        "fetched_at": "2026-09-29"
+      },
+      {
         "url": "https://ja.wikipedia.org/wiki/%E6%B1%A0%E7%94%B0%E5%B8%82%E7%AB%8B%E4%BA%94%E6%9C%88%E5%B1%B1%E5%8B%95%E7%89%A9%E5%9C%92",
         "fetched_at": "2026-09-28"
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11554710",
@@ -25356,7 +26674,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11555078",
@@ -25383,11 +26701,11 @@
     "featured": false,
     "score": 70.94,
     "summary": {
-      "text": "法善寺（ほうぜんじ）は、大阪府大阪市中央区難波にある浄土宗の寺院。山号は天龍山。本尊は阿弥陀如来。全身が苔むした姿の「水掛不動」が有名である。千日念仏を行ったことから俗に千日寺と呼ばれ、千日前の地名は当寺の門前に由来する。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%B3%95%E5%96%84%E5%AF%BA",
+      "text": "Hōzen-ji (法善寺) is a Buddhist temple of the Jōdo-shū sect in Chūō-ku, Osaka, Japan. The temple is located in the Dotonbori district, near Namba Station. It has a reputation in Japan for helping women who are about to give birth.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/H%C5%8Dzen-ji_%28Osaka%29",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -25437,7 +26755,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11557632",
@@ -25581,7 +26899,7 @@
       "ja": "淀屋橋",
       "kana": "よどやばし",
       "romaji": "Yodoyabashi",
-      "zh_tw": "淀屋橋",
+      "zh_tw": "澱屋橋",
       "en": "Yodoya Bridge"
     },
     "kana_source": "wikidata",
@@ -25641,7 +26959,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11564491",
@@ -25708,7 +27026,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11565280",
@@ -25825,7 +27143,70 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
+  },
+  {
+    "id": "wd-Q11567184",
+    "name": {
+      "ja": "為那都比古神社",
+      "kana": "いなつひこじんじゃ",
+      "romaji": "Inatsuhiko Jinja",
+      "zh_tw": "為那都比古神社",
+      "en": "Inatsuhiko Shrine"
+    },
+    "kana_source": "osm",
+    "location": {
+      "lat": 34.839543,
+      "lng": 135.497484
+    },
+    "prefecture": "osaka",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "神社"
+    ],
+    "featured": false,
+    "score": 62.1,
+    "summary": {
+      "text": "為那都比古神社（いなつひこじんじゃ）は、大阪府箕面市石丸にある神社。式内社で、旧社格は村社。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E7%82%BA%E9%82%A3%E9%83%BD%E6%AF%94%E5%8F%A4%E7%A5%9E%E7%A4%BE",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "箕面萱野",
+          "en": "Minoh-kayano"
+        },
+        "distance_m": 1190
+      }
+    ],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d7/Inatsuhiko-jinja%2C_haiden-2.jpg/960px-Inatsuhiko-jinja%2C_haiden-2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Saigen Jiro",
+        "license": "CC0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Inatsuhiko-jinja,_haiden-2.jpg"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q11567184",
+      "osm": "way/528708355"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q11567184",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.openstreetmap.org/way/528708355",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11567246",
@@ -25851,11 +27232,11 @@
     "featured": false,
     "score": 66.09,
     "summary": {
-      "text": "烏帽子形城（えぼしがたじょう）は、大阪府河内長野市喜多町の烏帽子形山にあった日本の城。別名「押子形城」。奥河内の名所である高野街道の沿線にあり、城跡は国の史跡に指定されている。また日本遺産『中世に出逢えるまち 〜千年にわたり護られてきた中世文化遺産の宝庫〜』の構成文化財のひとつでもある。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E7%83%8F%E5%B8%BD%E5%AD%90%E5%BD%A2%E5%9F%8E",
+      "text": "Eboshigata Castle (烏帽子形城, Eboshigata-jō) is a late Kamakura period Japanese castle located in the city of Kawachinagano, Osaka Prefecture, Japan. Its ruins have been protected as a National Historic Site since 2012. It is also a site registered under Japan Heritage.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Eboshigata_Castle",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -25964,7 +27345,47 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
+  },
+  {
+    "id": "wd-Q11571298",
+    "name": {
+      "ja": "犬鳴山温泉",
+      "kana": "いぬなきやまおんせん",
+      "romaji": "Inunakiyama Onsen",
+      "zh_tw": "犬鳴山温泉",
+      "en": "Inunakiyama Onsen"
+    },
+    "kana_source": "wikidata",
+    "location": {
+      "lat": 34.3385,
+      "lng": 135.375944
+    },
+    "prefecture": "osaka",
+    "kind": "major",
+    "themes": [],
+    "tags": [],
+    "featured": false,
+    "score": 62.26,
+    "summary": {
+      "text": "犬鳴山温泉（いぬなきやまおんせん）は、大阪府泉佐野市大木犬鳴にある温泉。かつて犬鳴温泉と呼ばれていた時期もある。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E7%8A%AC%E9%B3%B4%E5%B1%B1%E6%B8%A9%E6%B3%89",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "images": [],
+    "external_ids": {
+      "wikidata": "Q11571298"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q11571298",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11571743",
@@ -26095,6 +27516,80 @@
     ],
     "status": "published",
     "updated_at": "2026-09-28"
+  },
+  {
+    "id": "wd-Q11574175",
+    "name": {
+      "ja": "瓢箪山稲荷神社",
+      "kana": "ひょうたんやまいなりじんじゃ",
+      "romaji": "Hyotanyamainarijinja",
+      "zh_tw": "瓢簞山稻荷神社",
+      "en": "Hyōtan-yama Inari Shrine"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 34.66075,
+      "lng": 135.642028
+    },
+    "prefecture": "osaka",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "神社"
+    ],
+    "featured": false,
+    "score": 62.02,
+    "summary": {
+      "text": "瓢箪山稲荷神社（ひょうたんやまいなりじんじゃ）は、大阪府東大阪市瓢箪山町にある神社。日本三稲荷（諸説あり）の一つであり、辻占総本社である。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E7%93%A2%E7%AE%AA%E5%B1%B1%E7%A8%B2%E8%8D%B7%E7%A5%9E%E7%A4%BE",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "瓢箪山",
+          "en": "Hyōtan-yama"
+        },
+        "distance_m": 310
+      },
+      {
+        "name": {
+          "ja": "枚岡",
+          "en": "Hiraoka"
+        },
+        "distance_m": 1150
+      }
+    ],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8a/Hyotanyamainari-honden.jpg/960px-Hyotanyamainari-honden.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "小倉商事",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Hyotanyamainari-honden.jpg"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q11574175",
+      "osm": "way/554045818"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q11574175",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.openstreetmap.org/way/554045818",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E7%93%A2%E7%AE%AA%E5%B1%B1%E7%A8%B2%E8%8D%B7%E7%A5%9E%E7%A4%BE",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11574477",
@@ -26241,12 +27736,83 @@
     "updated_at": "2026-09-28"
   },
   {
+    "id": "wd-Q11574576",
+    "name": {
+      "ja": "生根神社",
+      "kana": "いくねじんじゃ",
+      "romaji": "Ikunejinja",
+      "zh_tw": "生根神社",
+      "en": "Ikune Shrine"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 34.625972,
+      "lng": 135.490139
+    },
+    "prefecture": "osaka",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "神社"
+    ],
+    "featured": false,
+    "score": 62.16,
+    "summary": {
+      "text": "生根神社（いくねじんじゃ）是大阪府大阪市西成區玉出的神社。大阪還有一家同名的生根神社，位於住吉區。",
+      "lang": "zh",
+      "source_url": "https://zh.wikipedia.org/wiki/%E7%94%9F%E6%A0%B9%E7%A5%9E%E7%A4%BE_%28%E5%A4%A7%E9%98%AA%E5%B8%82%E8%A5%BF%E6%88%90%E5%8C%BA%29",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "玉出",
+          "romaji": "Tamade",
+          "en": "Tamade"
+        },
+        "distance_m": 250
+      },
+      {
+        "name": {
+          "ja": "岸里玉出",
+          "romaji": "Kishinosato-tamade",
+          "en": "Kishinosato-tamade"
+        },
+        "distance_m": 580
+      }
+    ],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a1/Ikune_jinja_%28Nishinari%2C_Osaka%29_haiden2.jpg/960px-Ikune_jinja_%28Nishinari%2C_Osaka%29_haiden2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "KENPEI",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Ikune_jinja_(Nishinari,_Osaka)_haiden2.jpg"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q11574576"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q11574576",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E7%94%9F%E6%A0%B9%E7%A5%9E%E7%A4%BE_%28%E5%A4%A7%E9%98%AA%E5%B8%82%E8%A5%BF%E6%88%90%E5%8C%BA%29",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
+  },
+  {
     "id": "wd-Q1157628",
     "name": {
       "ja": "大念仏寺",
       "kana": "だいねんぶつじ",
       "romaji": "Dainenbutsuji",
-      "zh_tw": "大念佛寺",
+      "zh_tw": "大唸佛寺",
       "en": "Dainenbutsu-ji Temple"
     },
     "kana_source": "wikidata",
@@ -26304,7 +27870,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11580783",
@@ -26333,11 +27899,11 @@
     "featured": false,
     "score": 77.2,
     "summary": {
-      "text": "百済寺（くだらでら、くだらじ）は、大阪府枚方市にかつてあった寺。天平勝宝2年（750年）頃に百済王敬福（くだらのこにきしきょうふく）によって建立されたと言われている。1941年1月27日に国の史跡に指定され、更に昭和27年（1952年）3月29日に特別史跡に指定された。その後1965-1967年に史跡公園としての整備が行われた。これは全国初とされる。1973年10月、「百済寺跡の松風」として枚方八景の一つに選ばれた。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E7%99%BE%E6%B8%88%E5%AF%BA_%28%E6%9E%9A%E6%96%B9%E5%B8%82%29",
+      "text": "Kudara-ji (百済寺) was a Buddhist temple located in the city of Hirakata, Osaka, Japan. The temple is now in ruins, and its former precincts were designated a National Historic Site in 1941, with the designation changed to a Special National Historic Site in 1952. The site was opened to the public as one of Japan's first archaeological parks in 1965.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Kudara-dera",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -26375,7 +27941,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11580795",
@@ -26446,7 +28012,82 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
+  },
+  {
+    "id": "wd-Q11580841",
+    "name": {
+      "ja": "百舌鳥八幡宮",
+      "kana": "もずはちまんぐう",
+      "romaji": "Mozu Hachimangu",
+      "zh_tw": "百舌鳥八幡宮",
+      "en": "Mozu-hachimangu"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 34.554139,
+      "lng": 135.494722
+    },
+    "prefecture": "osaka",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "神社"
+    ],
+    "featured": false,
+    "score": 61.79,
+    "summary": {
+      "text": "百舌鳥八幡宮（もずはちまんぐう）は、大阪府堺市北区にある神社。旧社格は府社。約1万坪の境内の中には大阪府の天然記念物に指定されている樹齢約800年の巨大なクスが茂る。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E7%99%BE%E8%88%8C%E9%B3%A5%E5%85%AB%E5%B9%A1%E5%AE%AE",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "百舌鳥",
+          "en": "Mozu"
+        },
+        "distance_m": 700
+      },
+      {
+        "name": {
+          "ja": "百舌鳥八幡",
+          "romaji": "Mozuhachiman",
+          "en": "Mozuhachiman"
+        },
+        "distance_m": 800
+      }
+    ],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Mozu-hachimangu1.jpg/960px-Mozu-hachimangu1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "KENPEI",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Mozu-hachimangu1.jpg"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q11580841",
+      "osm": "way/525649092"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q11580841",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.openstreetmap.org/way/525649092",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E7%99%BE%E8%88%8C%E9%B3%A5%E5%85%AB%E5%B9%A1%E5%AE%AE",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11583062",
@@ -26757,7 +28398,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11597386",
@@ -26821,6 +28462,77 @@
     ],
     "status": "published",
     "updated_at": "2026-09-28"
+  },
+  {
+    "id": "wd-Q11603178",
+    "name": {
+      "ja": "箕面公園昆虫館",
+      "kana": "みのおこうえんこんちゅうかん",
+      "romaji": "Minokoenkonchukan",
+      "zh_tw": "箕面公園昆虫館",
+      "en": "Minoh Park Insect Museum"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 34.841028,
+      "lng": 135.471528
+    },
+    "prefecture": "osaka",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "動物園"
+    ],
+    "featured": false,
+    "score": 74.16,
+    "summary": {
+      "text": "箕面公園昆虫館（みのおこうえんこんちゅうかん）は、大阪府箕面市箕面公園内にある博物館。大阪府営（府営箕面公園の指定管理者により運営管理）の昆虫館。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E7%AE%95%E9%9D%A2%E5%85%AC%E5%9C%92%E6%98%86%E8%99%AB%E9%A4%A8",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "箕面",
+          "en": "Minoh"
+        },
+        "distance_m": 760
+      }
+    ],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/16/Minoh-kontyukan.jpg/960px-Minoh-kontyukan.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Bittercup",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Minoh-kontyukan.jpg"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q11603178",
+      "osm": "way/239972136"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q11603178",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.openstreetmap.org/way/239972136",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://osaka-info.jp/spot/mino-park-museum-insects/",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E7%AE%95%E9%9D%A2%E5%85%AC%E5%9C%92%E6%98%86%E8%99%AB%E9%A4%A8",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11603213",
@@ -26954,11 +28666,11 @@
     "featured": false,
     "score": 65.97,
     "summary": {
-      "text": "綱敷天神社（つなしきてんじんしゃ）は、大阪市北区神山町にある神社。旧社格は郷社。北野（喜多野、喜多埜）天神とも通称され、おおむね旧西成郡北野村（キタの東半）を氏地としている。茶屋町に当社の御旅社があり、角田町に境外社の歯神社（はじんじゃ）がある。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E7%B6%B1%E6%95%B7%E5%A4%A9%E7%A5%9E%E7%A4%BE",
+      "text": "Tsunashiki Tenjinsha (綱敷天神社, Tsunashiki Tenjinsha) is a Tenman-gū Shinto shrine located in Osaka, Osaka prefecture, Japan.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Tsunashiki_Tenjin_Shrine",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -27026,11 +28738,11 @@
     "featured": false,
     "score": 68.91,
     "summary": {
-      "text": "総持寺（そうじじ）は、大阪府茨木市総持寺にある高野山真言宗の寺院。山号は補陀洛山（ふだらくさん）。本尊は千手観音。西国三十三所第22番札所。開基である藤原山蔭は四条流庖丁道という新たな庖丁式（料理作法）を定めたことから料理人の信仰を受けている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E7%B7%8F%E6%8C%81%E5%AF%BA_%28%E8%8C%A8%E6%9C%A8%E5%B8%82%29",
+      "text": "Sōji-ji (総持寺) is a Buddhist temple located in the Sōjiji neighborhood of the city of Ibaraki, Osaka Prefecture, Japan. It belongs to the  Kōyasan Shingon-shū sect of Japanese Buddhism and its honzon (principle image) is a hibutsu (hidden / concealed image) statue of Senjū Jūichimen Kannon Bosatsu (Sahasrabhuja). The temple's full name is Fudaraku-san Katsuō-ji (補陀洛山 総持寺).The temple is the 22nd stop on the Saigoku Kannon Pilgrimage route.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/S%C5%8Dji-ji_%28Osaka%29",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -27079,7 +28791,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11608777",
@@ -27230,7 +28942,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11611929",
@@ -27298,7 +29010,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11613634",
@@ -27383,11 +29095,11 @@
     "featured": false,
     "score": 68.43,
     "summary": {
-      "text": "舞洲スポーツアイランド（まいしまスポーツアイランド）は、大阪府大阪市此花区の舞洲にあるスポーツ施設群を有する公園。大阪市条例での正式名称は大阪港スポーツアイランド（おおさかこうスポーツアイランド）である。施設は大阪市が所有し、ミズノグループ（美津濃・南海ビルサービス・日本パナユーズ・ホビーライフによる共同企業体）が指定管理者として運営管理を行っている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E8%88%9E%E6%B4%B2%E3%82%B9%E3%83%9D%E3%83%BC%E3%83%84%E3%82%A2%E3%82%A4%E3%83%A9%E3%83%B3%E3%83%89",
+      "text": "The Maishima Sports Island (舞洲スポーツアイランド, Maeshima Supōtsu Airando) is a park with sports facilities in Maishima, Konohana-ku, Osaka, Japan. The official name in the Osaka City Ordinance is Osaka Port Sports Island (Osakakou Sports Island). The facility is owned by the city of Osaka, and is operated and managed by the Mizuno Group (a joint venture of Mizuno, Nankai Building Service, Japan Panause, and Hobby Life) as a designated manager.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Maishima_Sports_Island",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -27423,7 +29135,7 @@
       "ja": "航空保安大学校",
       "kana": "こうくうほあんだいがっこう",
       "romaji": "Kokuhoandaigakko",
-      "zh_tw": "航空保安大学校",
+      "zh_tw": "航空保安大學校",
       "en": "Aeronautical Safety College"
     },
     "kana_source": "wikipedia",
@@ -27484,7 +29196,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11614009",
@@ -27858,6 +29570,78 @@
     "updated_at": "2026-09-28"
   },
   {
+    "id": "wd-Q11617924",
+    "name": {
+      "ja": "茨木神社",
+      "kana": "いばらきじんじゃ",
+      "romaji": "Ibarakijinja",
+      "zh_tw": "茨木神社",
+      "en": "Ibaraki Shrine"
+    },
+    "kana_source": "wikidata",
+    "location": {
+      "lat": 34.818576,
+      "lng": 135.570236
+    },
+    "prefecture": "osaka",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "神社"
+    ],
+    "featured": false,
+    "score": 61.99,
+    "summary": {
+      "text": "茨木神社（いばらきじんじゃ）は、大阪府茨木市にある神社。旧社格は郷社。境内には式内社の天石門別神社も鎮座する。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E8%8C%A8%E6%9C%A8%E7%A5%9E%E7%A4%BE",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "茨木市",
+          "kana": "いばらきし",
+          "romaji": "Ibaraki-shi",
+          "en": "Ibaraki-shi"
+        },
+        "distance_m": 550
+      },
+      {
+        "name": {
+          "ja": "茨木",
+          "en": "Ibaraki"
+        },
+        "distance_m": 830
+      }
+    ],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ae/Ibaraki-jinja01s5s1980.jpg/960px-Ibaraki-jinja01s5s1980.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "663highland",
+        "license": "CC BY 2.5",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Ibaraki-jinja01s5s1980.jpg"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q11617924",
+      "osm": "way/259349342"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q11617924",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.openstreetmap.org/way/259349342",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
+  },
+  {
     "id": "wd-Q11631426",
     "name": {
       "ja": "誉田八幡宮",
@@ -27929,7 +29713,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11639118",
@@ -28006,7 +29790,7 @@
       "ja": "逸翁美術館",
       "kana": "いつおうびじゅつかん",
       "romaji": "Itsuobijutsukan",
-      "zh_tw": "逸翁美术馆",
+      "zh_tw": "逸翁美術館",
       "en": "Itsuō Art Museum"
     },
     "kana_source": "wikipedia",
@@ -28073,7 +29857,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11641744",
@@ -28176,11 +29960,11 @@
     "featured": false,
     "score": 71.44,
     "summary": {
-      "text": "道明寺（どうみょうじ）は、大阪府藤井寺市道明寺にある真言宗御室派の寺院（尼寺）。山号は蓮土山。本尊は十一面観音。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E9%81%93%E6%98%8E%E5%AF%BA_%28%E8%97%A4%E4%BA%95%E5%AF%BA%E5%B8%82%29",
+      "text": "Dōmyō-ji (道明寺) is a Buddhist temple and nunnery in Fujiidera, Osaka, Osaka Prefecture, Japan. It was founded in the sixth century, and is affiliated with Shingon Buddhism.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/D%C5%8Dmy%C5%8D-ji",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -28227,7 +30011,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11641864",
@@ -28323,11 +30107,11 @@
     "featured": false,
     "score": 68.62,
     "summary": {
-      "text": "野中寺（やちゅうじ）は、大阪府羽曳野市野々上にある高野山真言宗の寺院。山号は青龍山。本尊は薬師如来。聖徳太子建立三太子の一つで、叡福寺（太子町）の「上の太子」、大聖勝軍寺（八尾市）の「下の太子」に対して、「中の太子」と呼ばれている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E9%87%8E%E4%B8%AD%E5%AF%BA",
+      "text": "Yachū-ji (野中寺) is a Buddhist temple located in the city of Habikino, Osaka Prefecture, Japan, belonging to the Kōyasan Shingon-shū branch of Shingon Buddhism. Its main image is a statue of Yakushi Nyorai. The temple is also popularly known as Naka-no-Taisi (中の太子) as it is located in between the temples of Eifuku-ji and Taiseishōgun-ji, which also claim a connection with Prince Shōtoku.  The temple precincts are designated a National Historic Site",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Yach%C5%AB-ji",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -28357,7 +30141,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11645956",
@@ -28458,11 +30242,11 @@
     "featured": false,
     "score": 77.12,
     "summary": {
-      "text": "金剛寺（こんごうじ）は、大阪府河内長野市天野町にある真言宗御室派の大本山の寺院。山号は天野山（あまのさん）。本尊は大日如来。五仏堂は新西国三十三箇所第7番札所で本尊は千手観音である。境内の多宝塔は平安時代後期の建立で、日本最古の多宝塔であると同時に大阪府最古の木造建築物である。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E9%87%91%E5%89%9B%E5%AF%BA_%28%E6%B2%B3%E5%86%85%E9%95%B7%E9%87%8E%E5%B8%82%29",
+      "text": "Kongō-ji (金剛寺) is a Buddhist temple in Kawachinagano, Osaka, Japan. It is the head temple of the Shingon Omuro sect. and also known under its mountain-name as  Amanosan Kongō-ji (天野山 金剛寺). It is the 7th temple on the Shin Saigoku 33 Kannon Pilgrimage (新西国三十三箇所) and is notable for the large number of designated cultural properties. The precincts of the temple were designated a National Historic Site of Japan in 1934 with the area under protection expanded in 2011.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Kong%C5%8D-ji",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -28491,7 +30275,79 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
+  },
+  {
+    "id": "wd-Q11650558",
+    "name": {
+      "ja": "錦織神社",
+      "kana": "にしきおりじんじゃ",
+      "romaji": "Nishikiorijinja",
+      "zh_tw": "錦織神社",
+      "en": "Nishikiori Shrine"
+    },
+    "kana_source": "wikidata",
+    "location": {
+      "lat": 34.495333,
+      "lng": 135.588667
+    },
+    "prefecture": "osaka",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "神社"
+    ],
+    "featured": false,
+    "score": 61.9,
+    "summary": {
+      "text": "錦織神社（にしこおりじんじゃ）は、大阪府富田林市宮甲田町にある神社。旧社格は郷社。地元では錦織を「にしこり」「にしこおり」「にしごり」等と呼んでいる。当社は建水分神社（上水分社、千早赤阪村）、美具久留御魂神社（下水分社、富田林市）とともに「河内国の三水分（みくまり）社」と呼ばれている。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E9%8C%A6%E7%B9%94%E7%A5%9E%E7%A4%BE",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "川西",
+          "romaji": "Kawanishi",
+          "en": "Kawanishi"
+        },
+        "distance_m": 410
+      },
+      {
+        "name": {
+          "ja": "富田林西口",
+          "romaji": "Tondabayashi-Nishiguchi",
+          "en": "Tondabayashi-Nishiguchi"
+        },
+        "distance_m": 960
+      }
+    ],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c2/Nishikiori-Jinja01.JPG/960px-Nishikiori-Jinja01.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Kansai explorer",
+        "license": "CC BY 2.5",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Nishikiori-Jinja01.JPG"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q11650558",
+      "osm": "way/502661032"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q11650558",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.openstreetmap.org/way/502661032",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11651349",
@@ -28633,7 +30489,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11656208",
@@ -28840,7 +30696,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11657712",
@@ -28936,11 +30792,11 @@
     "featured": false,
     "score": 67.74,
     "summary": {
-      "text": "阿部野神社（あべのじんじゃ）は、大阪市阿倍野区北畠にある神社。南朝方に付いて各地を転戦した北畠顕家と、その父の北畠親房を祀る。建武中興十五社の一社で、旧社格は別格官幣社で、現在は神社本庁の別表神社。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E9%98%BF%E9%83%A8%E9%87%8E%E7%A5%9E%E7%A4%BE",
+      "text": "Abeno Shrine (阿部野神社, Abeno jinja) is a Shinto shrine located in Abeno-ku, Osaka Prefecture, Japan. Its main festival is held annually on January 24. It was founded in 1882, and enshrines the kami of Kitabatake Chikafusa and Kitabatake Akiie. It is one of the Fifteen Shrines of the Kenmu Restoration.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Abeno_Shrine",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -28987,7 +30843,65 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
+  },
+  {
+    "id": "wd-Q11658473",
+    "name": {
+      "ja": "陶荒田神社",
+      "kana": "すえあらたじんじゃ",
+      "romaji": "Suearatajinja",
+      "zh_tw": "陶荒田神社",
+      "en": "Suearata Shrine"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 34.510422,
+      "lng": 135.52253
+    },
+    "prefecture": "osaka",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "神社"
+    ],
+    "featured": false,
+    "score": 61.71,
+    "summary": {
+      "text": "陶荒田神社（すえあらたじんじゃ）は、大阪府堺市中区上之に所在する神社で、和泉国大鳥郡の式内社。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E9%99%B6%E8%8D%92%E7%94%B0%E7%A5%9E%E7%A4%BE",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/ba/Suearata-jinja1.jpg/960px-Suearata-jinja1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "KENPEI",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Suearata-jinja1.jpg"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q11658473",
+      "osm": "node/5629947060"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q11658473",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.openstreetmap.org/node/5629947060",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E9%99%B6%E8%8D%92%E7%94%B0%E7%A5%9E%E7%A4%BE",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11659527",
@@ -28995,7 +30909,7 @@
       "ja": "難波八阪神社",
       "kana": "なんばやさかじんじゃ",
       "romaji": "Nanbayasakajinja",
-      "zh_tw": "难波八阪神社",
+      "zh_tw": "難波八阪神社",
       "en": "Namba-yasaka Shrine"
     },
     "kana_source": "wikipedia",
@@ -29065,7 +30979,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11659562",
@@ -29143,7 +31057,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11660942",
@@ -29217,7 +31131,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11666634",
@@ -29346,6 +31260,80 @@
     ],
     "status": "published",
     "updated_at": "2026-09-28"
+  },
+  {
+    "id": "wd-Q11667143",
+    "name": {
+      "ja": "香具波志神社",
+      "kana": "かぐはしじんじゃ",
+      "romaji": "Kaguhashijinja",
+      "zh_tw": "香具波志神社",
+      "en": "Kaguhashi Shrine"
+    },
+    "kana_source": "wikidata",
+    "location": {
+      "lat": 34.731861,
+      "lng": 135.457
+    },
+    "prefecture": "osaka",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "神社"
+    ],
+    "featured": false,
+    "score": 62.02,
+    "summary": {
+      "text": "香具波志神社是一座位於日本大阪市澱川區加島的神社。舊社格為村社。",
+      "lang": "zh",
+      "source_url": "https://zh.wikipedia.org/wiki/%E9%A6%99%E5%85%B7%E6%B3%A2%E5%BF%97%E7%A5%9E%E7%A4%BE",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "加島",
+          "kana": "かしま",
+          "romaji": "Kashima",
+          "en": "Kashima"
+        },
+        "distance_m": 550
+      },
+      {
+        "name": {
+          "ja": "神崎川",
+          "kana": "かんざきがわ",
+          "romaji": "Kanzakigawa",
+          "en": "Kanzakigawa"
+        },
+        "distance_m": 1450
+      }
+    ],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5a/Kaguwasi01.jpg/960px-Kaguwasi01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "bittercup",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Kaguwasi01.jpg"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q11667143",
+      "osm": "way/568586981"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q11667143",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.openstreetmap.org/way/568586981",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11669137",
@@ -29640,7 +31628,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11675659",
@@ -29663,11 +31651,11 @@
     "featured": false,
     "score": 67.9,
     "summary": {
-      "text": "鴻池新田（こうのいけしんでん）は、かつて河内国（現在の大阪府東大阪市）で開墾された新田のひとつ。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E9%B4%BB%E6%B1%A0%E6%96%B0%E7%94%B0",
+      "text": "The Konoike Shinden (鴻池新田) was a new land development undertaken by a wealthy Osaka merchant, Konoike Zen'emon in mid-Edo Period Japan. It was located in central Kawachi Province in what is now part of the city of Higashiōsaka, Osaka Prefecture, Japan. The well-preserved buildings of the management office of the settlement were designated a National Historic Site of Japan in 1976.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/K%C5%8Dnoike_Shinden",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -29750,6 +31738,76 @@
     "updated_at": "2026-09-28"
   },
   {
+    "id": "wd-Q11675799",
+    "name": {
+      "ja": "鵲森宮",
+      "kana": "かささぎもりのみや",
+      "romaji": "Kasasagi Morinomiya",
+      "zh_tw": "鵲森宮",
+      "en": "Kasasagi Morinomiya"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 34.680778,
+      "lng": 135.533306
+    },
+    "prefecture": "osaka",
+    "kind": "major",
+    "themes": [],
+    "tags": [],
+    "featured": false,
+    "score": 61.85,
+    "summary": {
+      "text": "鵲森宮（かささぎもりのみや）は、大阪市中央区森ノ宮中央にある神社。式内社で、旧社格は府社。通称を森之宮神社（もりのみやじんじゃ）といい、周辺の地名である森之宮や森ノ宮の由来となっている。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E9%B5%B2%E6%A3%AE%E5%AE%AE",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "森ノ宮",
+          "kana": "もりのみや",
+          "romaji": "Morinomiya",
+          "en": "Morinomiya"
+        },
+        "distance_m": 70
+      },
+      {
+        "name": {
+          "ja": "玉造",
+          "romaji": "Tamatsukuri",
+          "en": "Tamatsukuri"
+        },
+        "distance_m": 730
+      }
+    ],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d8/Kasasagimorinomiya1.jpg/960px-Kasasagimorinomiya1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "KENPEI",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Kasasagimorinomiya1.jpg"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q11675799"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q11675799",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E9%B5%B2%E6%A3%AE%E5%AE%AE",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
+  },
+  {
     "id": "wd-Q11679279",
     "name": {
       "ja": "龍泉寺",
@@ -29809,7 +31867,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q1177386",
@@ -30807,11 +32865,11 @@
     "featured": false,
     "score": 63.55,
     "summary": {
-      "text": "堺市博物館（さかいしはくぶつかん、英: Sakai City Museum）は、大阪府堺市堺区の大仙公園内にある人文科学系の博物館。市制90周年記念事業として1980年に開館した。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%A0%BA%E5%B8%82%E5%8D%9A%E7%89%A9%E9%A4%A8",
+      "text": "Sakai City Museum (堺市博物館, Sakai-shi Hakubutsukan) is located within Daisen Park, in Sakai-ku, Sakai City, in Osaka Prefecture.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Sakai_City_Museum",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -31036,12 +33094,12 @@
       },
       {
         "name": {
-          "ja": "大阪阿部野橋駅",
-          "kana": "おおさかあべのばしえき",
-          "romaji": "Ōsaka Abenobashi eki",
-          "en": "Ōsaka Abenobashi Station"
+          "ja": "大阪阿部野橋",
+          "kana": "おおさかあべのばし",
+          "romaji": "Ōsaka Abenobashi",
+          "en": "Ōsaka Abenobashi"
         },
-        "distance_m": 110
+        "distance_m": 120
       }
     ],
     "images": [
@@ -31062,7 +33120,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q1655766",
@@ -31137,12 +33195,79 @@
     "updated_at": "2026-09-28"
   },
   {
+    "id": "wd-Q1666643",
+    "name": {
+      "ja": "大阪府立国際児童文学館",
+      "kana": "おおさかふりつこくさいじどうぶんがくかん",
+      "romaji": "Osakafuritsukokusaijidobungakukan",
+      "zh_tw": "大阪府立国際児童文学館",
+      "en": "International Institute for Children’s Literature, Osaka"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 34.810806,
+      "lng": 135.535056
+    },
+    "prefecture": "osaka",
+    "kind": "major",
+    "themes": [],
+    "tags": [],
+    "featured": false,
+    "score": 61.66,
+    "summary": {
+      "text": "大阪府立国際児童文学館（おおさかふりつこくさいじどうぶんがくかん）は、2009年12月27日まで大阪府吹田市の万博記念公園内に所在し、日本国内外の児童書や関連書籍を収集し、研究を行っていた文学館・専門図書館。略称はIICLO（イイクロ）。2010年に運営が大阪府立中央図書館国際児童文学館に引き継がれ、場所も当該図書館内へと移動した。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E9%98%AA%E5%BA%9C%E7%AB%8B%E5%9B%BD%E9%9A%9B%E5%85%90%E7%AB%A5%E6%96%87%E5%AD%A6%E9%A4%A8",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "公園東口",
+          "en": "Koen-Higashiguchi"
+        },
+        "distance_m": 410
+      },
+      {
+        "name": {
+          "ja": "万博記念公園",
+          "en": "Bampakukinenkoen"
+        },
+        "distance_m": 630
+      }
+    ],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8e/International_Institute_for_Childrens_Literature_Osaka.jpg/960px-International_Institute_for_Childrens_Literature_Osaka.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Machina in the Deep-Blue Sea",
+        "license": "Public domain",
+        "source_url": "https://commons.wikimedia.org/wiki/File:International_Institute_for_Childrens_Literature_Osaka.jpg"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q1666643"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q1666643",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E9%98%AA%E5%BA%9C%E7%AB%8B%E5%9B%BD%E9%9A%9B%E5%85%90%E7%AB%A5%E6%96%87%E5%AD%A6%E9%A4%A8",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
+  },
+  {
     "id": "wd-Q16714657",
     "name": {
       "ja": "市立吹田サッカースタジアム",
       "kana": "しりつすいたさっかーすたじあむ",
       "romaji": "Shiritsusuitasakkasutajiamu",
-      "zh_tw": "市立吹田足球场",
+      "zh_tw": "市立吹田足球場",
       "en": "Suita Stadium"
     },
     "kana_source": "wikipedia",
@@ -31157,11 +33282,11 @@
     "featured": false,
     "score": 83.42,
     "summary": {
-      "text": "市立吹田サッカースタジアム（しりつすいたサッカースタジアム、英: Suita City Football Stadium）は、大阪府吹田市の万博記念公園内にあるサッカー専用スタジアム。日本プロサッカーリーグ（Jリーグ）に加盟するガンバ大阪（G大阪）がホームスタジアムとして使用することを前提に、G大阪が主体となった任意団体（スタジアム建設募金団体）が建設した。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%B8%82%E7%AB%8B%E5%90%B9%E7%94%B0%E3%82%B5%E3%83%83%E3%82%AB%E3%83%BC%E3%82%B9%E3%82%BF%E3%82%B8%E3%82%A2%E3%83%A0",
+      "text": "Suita City Football Stadium (市立吹田サッカースタジアム, Shiritsu Suita Sakkā Sutajiamu), a.k.a. Panasonic Stadium Suita (パナソニックスタジアム吹田, Panasonikku Sutajiamu Suita) for sponsorship reasons. is a stadium located in the city of Suita, Osaka Prefecture, Japan. It has a capacity of 39,694.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Suita_City_Football_Stadium",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -31201,7 +33326,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q17213418",
@@ -31227,11 +33352,11 @@
     "featured": false,
     "score": 66.82,
     "summary": {
-      "text": "下赤坂城（しもあかさかじょう）は、大阪府南河内郡千早赤阪村森屋にあった日本の城。国の史跡に指定されている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E4%B8%8B%E8%B5%A4%E5%9D%82%E5%9F%8E",
+      "text": "Shimo-Akasaka Castle (下赤坂城, Shimo-Akasaka-jō) is a late Kamakura period Japanese castle located in the village of  Chihayaakasaka, Osaka Prefecture, Japan. Its ruins have been protected as a National Historic Site since 1934. It is also referred to as simply Akasaka Castle (赤坂城, Akasaka-jō).",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Shimo-Akasaka_Castle",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -31318,7 +33443,7 @@
     "id": "wd-Q17221791",
     "name": {
       "ja": "大阪鉄道病院",
-      "zh_tw": "大阪铁路医院",
+      "zh_tw": "大阪鐵路醫院",
       "en": "Osaka General Hospital of West Japan Railway Company"
     },
     "location": {
@@ -31350,12 +33475,11 @@
       },
       {
         "name": {
-          "ja": "大阪阿部野橋駅",
-          "kana": "おおさかあべのばしえき",
-          "romaji": "Ōsaka Abenobashi eki",
-          "en": "Ōsaka Abenobashi Station"
+          "ja": "天王寺",
+          "romaji": "Tennōji",
+          "en": "Tennoji"
         },
-        "distance_m": 190
+        "distance_m": 220
       }
     ],
     "images": [],
@@ -31369,7 +33493,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q17230661",
@@ -31442,7 +33566,75 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
+  },
+  {
+    "id": "wd-Q18337468",
+    "name": {
+      "ja": "堂島ビルヂング",
+      "kana": "どうじまびるぢんぐ",
+      "romaji": "Dojimabirujingu",
+      "zh_tw": "堂島ビルヂング"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 34.695556,
+      "lng": 135.501667
+    },
+    "prefecture": "osaka",
+    "kind": "major",
+    "themes": [],
+    "tags": [],
+    "featured": false,
+    "score": 62.01,
+    "summary": {
+      "text": "堂島ビルヂング（どうじまビルヂング）は、大阪市北区西天満二丁目に存在する株式会社堂島ビルヂング保有のオフィスビルである。通称は堂ビル（どうビル）。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E5%A0%82%E5%B3%B6%E3%83%93%E3%83%AB%E3%83%82%E3%83%B3%E3%82%B0",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "大江橋",
+          "romaji": "Oebashi",
+          "en": "Oebashi"
+        },
+        "distance_m": 220
+      },
+      {
+        "name": {
+          "ja": "淀屋橋",
+          "romaji": "Yodoyabashi",
+          "en": "Yodoyabashi"
+        },
+        "distance_m": 340
+      }
+    ],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/99/Dojima_Bulding.jpg/960px-Dojima_Bulding.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "アラツク",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Dojima_Bulding.jpg"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q18337468"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q18337468",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E5%A0%82%E5%B3%B6%E3%83%93%E3%83%AB%E3%83%82%E3%83%B3%E3%82%B0",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q18337476",
@@ -31450,7 +33642,7 @@
       "ja": "道頓堀グリコサイン",
       "kana": "どうとんぼりぐりこさいん",
       "romaji": "Dotonborigurikosain",
-      "zh_tw": "道顿堀格力高广告牌",
+      "zh_tw": "道頓堀格力高廣告牌",
       "en": "Glico Man"
     },
     "kana_source": "wikipedia",
@@ -31516,7 +33708,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q2070374",
@@ -31536,11 +33728,11 @@
     "featured": false,
     "score": 75.37,
     "summary": {
-      "text": "大阪国際見本市会場（おおさかこくさいみほんいちかいじょう）は、大阪市住之江区南港北一丁目にある国際展示場。一般財団法人大阪国際経済振興センターが運営する。1985年（昭和60年）に同市港区田中三丁目の八幡屋公園から移転・開場した。愛称はインテックス大阪（Intex Osaka= International Exhibition Center）。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E9%98%AA%E5%9B%BD%E9%9A%9B%E8%A6%8B%E6%9C%AC%E5%B8%82%E4%BC%9A%E5%A0%B4",
+      "text": "INTEX Osaka (インテックス大阪, Intekkusu Ōsaka), officially known as International Exhibition Center, Osaka (大阪国際見本市会場, Ōsaka kokusai mihon-ichi kaijō), is a convention and exhibition center in Suminoe-ku, Osaka, Osaka Prefecture, Japan. The center is located on the Business Creation and Information Transmission Zone of Cosmosquare District in Sakishima Island, a planned business exchange and trading district in Osaka Bay area.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Intex_Osaka",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -31673,11 +33865,11 @@
     "featured": false,
     "score": 64.0,
     "summary": {
-      "text": "全興寺（せんこうじ）は、大阪市平野区にある高野山真言宗の寺院。山号は野中山（やっちゅうざん）。平野薬師（ひらのやくし）とも呼ばれる。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%85%A8%E8%88%88%E5%AF%BA",
+      "text": "Senkō-ji (全興寺) is a Buddhist temple in Hirano-ku, Osaka Prefecture, Japan.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Senk%C5%8D-ji",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -31724,7 +33916,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q22126949",
@@ -32200,7 +34392,7 @@
     "tags": [
       "寺院"
     ],
-    "featured": true,
+    "featured": false,
     "score": 82.02,
     "summary": {
       "text": "勝尾寺是位於日本大阪府箕面市的高野山真言宗佛寺，山號是應頂山。屬於西國三十三所的第二十三號禮所。開山者為開成（日語：かいじょう），所祭祀本尊是十一面千手觀世音菩薩。寺號日語可讀作「katsuoji（かつおじ）」或「kachioji（かちおじ）」。",
@@ -32227,7 +34419,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q276831",
@@ -32252,11 +34444,11 @@
     "featured": false,
     "score": 63.76,
     "summary": {
-      "text": "美多彌神社（みたみじんじゃ）は、大阪府堺市南区にある神社。式内社で、旧社格は村社。境内にあるシリブカガシの森は大阪みどりの百選に選定されている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E7%BE%8E%E5%A4%9A%E5%BD%8C%E7%A5%9E%E7%A4%BE",
+      "text": "Mitami Shrine Mitami-jinja 美多彌神社 (also 美多弥神社) is a Shinto shrine in Sakai, Osaka Prefecture, Japan. It is located in Senboku New Town near Komyoike Station. It is accessible on the Nankai bus line or the Semboku Rapid Railway. Mitami-jinja is mentioned in the Heian period chronicle Engishiki compiled in the early tenth century. The shrine buildings were destroyed by Oda Nobunaga's troops in 1577, but they were rebuilt in 1592 by Wada Dosan 和田道讃.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Mitami_Shrine",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -32323,11 +34515,11 @@
     "featured": false,
     "score": 71.29,
     "summary": {
-      "text": "服部緑地（はっとりりょくち）は、大阪府豊中市服部緑地・寺内に位置する緑地。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%9C%8D%E9%83%A8%E7%B7%91%E5%9C%B0",
+      "text": "Hattori Ryokuchi Park (服部緑地公園, Hattori Ryokuchi Kōen) is a large, hilly park in northern Osaka.  It is most famous for its Open-Air Museum of Old Japanese Farmhouses, which contains examples of rural architecture from various parts of Japan.  It also contains tennis courts, bamboo gardens, ponds, playgrounds, flower gardens, a concert hall, a \"flower road\", a horseback riding track, and a \"water world\".",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Hattori_Ryokuchi_Park",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -32386,11 +34578,11 @@
     "featured": false,
     "score": 70.83,
     "summary": {
-      "text": "大阪ベイタワー（OSAKA BAY TOWER、おおさかベイタワー）は、大阪市港区弁天にある再開発施設・超高層ビル。最高部の高さは200mで、1993年3月の開業から2018年3月26日までの名称はORC 200（オーク200）であった。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E9%98%AA%E3%83%99%E3%82%A4%E3%82%BF%E3%83%AF%E3%83%BC",
+      "text": "The Osaka Bay Tower (大阪ベイタワー), also known as ORC 1, is a mixed-use, mainly hotel and office, skyscraper in the Osaka Resort City 200 building complex located in the Minato-ku ward of Osaka, Japan. Completed in March 1993, it stands at 200 m (656 ft) tall, with the top floor located at 188.7 m (619 ft). It is the 5th tallest building in Osaka Prefecture and the 36th tallest building in Japan.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Osaka_Bay_Tower",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -32451,7 +34643,7 @@
       "城",
       "名勝"
     ],
-    "featured": true,
+    "featured": false,
     "score": 82.05,
     "summary": {
       "text": "岸和田城，別稱千龜利城，是一座位處日本大阪府岸和田市岸城町（舊和泉國）的城堡。江戶時代為岸和田藩藩廳，城的庭園為日本國家指定名勝。",
@@ -32505,7 +34697,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q302897",
@@ -32530,11 +34722,11 @@
     "featured": false,
     "score": 79.55,
     "summary": {
-      "text": "ひらかたパークは、大阪府枚方市枚方公園町に所在する、京阪電気鉄道の子会社である京阪レジャーサービスが運営する遊園地である。通称は「ひらパー」。一度も取り壊されることなく営業を継続している遊園地としては日本最古とされる。京阪本線・枚方公園駅前に位置しており、年間入園者数は約130万人である。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E3%81%B2%E3%82%89%E3%81%8B%E3%81%9F%E3%83%91%E3%83%BC%E3%82%AF",
+      "text": "Hirakata Park (ひらかたパーク, Hirakata Pāku) is an amusement park in Hirakata, Osaka, Japan, nicknamed \"Hirapah\". The park is managed by Keihan Leisure Service and is located on the Keihan line at Hirakata-kōen Station (枚方公園駅). It takes advantage of its hilly landscape to site 43 attractions on 160,000 square metres (40 acres).",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Hirakata_Park",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -32667,11 +34859,11 @@
     "featured": false,
     "score": 74.1,
     "summary": {
-      "text": "一心寺（いっしんじ）は、大阪市天王寺区にある浄土宗の寺院。山号は坂松山（ばんしょうざん）。本尊は阿弥陀如来。骨仏の寺としてよく知られている。天王寺公園に隣接した上町台地の崖線上に建ち、広い境内を有している。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E4%B8%80%E5%BF%83%E5%AF%BA",
+      "text": "Isshin-ji (一心寺) is a Pure Land Buddhist temple in Osaka, Japan. Starting in the Meiji period, thirteen images have been formed, each incorporating the ashes of tens of thousands of devotees. The annual burial ceremony on 21 April in turn draws tens of thousands of worshippers.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Isshin-ji",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -32718,7 +34910,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q3178626",
@@ -32745,11 +34937,11 @@
     "featured": false,
     "score": 65.79,
     "summary": {
-      "text": "慈眼寺（じげんじ）は、大阪府大東市野崎にある曹洞宗の寺院。山号は福聚山（ふくじゅさん）。本尊は十一面観音。野崎観音（のざきかんのん）の通称で知られる。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%85%88%E7%9C%BC%E5%AF%BA_%28%E5%A4%A7%E6%9D%B1%E5%B8%82%29",
+      "text": "Jigen-ji (慈眼寺), also known as Nozaki Kannon (野崎観音), is a temple located at the foot of Mt. Iimori, in Daitō, Osaka Prefecture, Japan. It is famous for the 11-faced statue of Kanzeon Bosatsu, or Kannon, that it enshrines.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Jigen-ji",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -32794,7 +34986,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q321242",
@@ -32943,7 +35135,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q3275446",
@@ -33026,11 +35218,11 @@
     "featured": false,
     "score": 69.5,
     "summary": {
-      "text": "松下IMPビル（まつしたアイ・エム・ピー・ビル）は、大阪市中央区の大阪ビジネスパーク (OBP) に位置する複合施設で、「IMP」は「International Market Place（インターナショナル・マーケット・プレイス）」の略。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%9D%BE%E4%B8%8BIMP%E3%83%93%E3%83%AB",
+      "text": "Matsushita IMP Hall (松下IMPホール; usually shortened to IMP Hall) is a multi-purpose venue located on the second floor of the Matsushita IMP Building, in Osaka, Japan. It has a floor area of 642.96m2 and 857 movable seats. It has hosted many notable international touring artists, such as Morrissey, Night Ranger, Alice Cooper, My Chemical Romance, Linkin Park, Cheap Trick, Kansas, Iron Maiden, UFO, Green Day, Rage Against the Machine and Björk.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/IMP_Hall",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -33176,11 +35368,11 @@
     "featured": false,
     "score": 68.59,
     "summary": {
-      "text": "妙国寺（みょうこくじ）は、大阪府堺市堺区にある日蓮宗の本山（由緒寺院）の寺院。山号は広普山（こうふさん）。本尊は三宝尊。開山は日珖。開基は三好実休。妙國寺とも書く。幕末に起こった堺事件ゆかりの寺として知られる。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%A6%99%E5%9B%BD%E5%AF%BA",
+      "text": "Myōkoku-ji (妙国寺) is a Buddhist temple in Sakai, Osaka Prefecture, Japan and one of head temples of the Nichiren Sect. It is known as the location of the 1868 Sakai incident.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/My%C5%8Dkoku-ji",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -33223,7 +35415,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q3334412",
@@ -33451,7 +35643,7 @@
       "寺院"
     ],
     "featured": true,
-    "score": 89.48,
+    "score": 109.48,
     "summary": {
       "text": "四天王寺是位在日本大阪府大阪市天王寺區的寺院，和宗總本山。山號「荒陵山」（あらはかさん）。本尊救世觀音菩薩、配祀四大天王，開基（創立者）為聖德太子。別稱「金光明四天王大護國寺」。聖德太子建立七大寺之一。",
       "lang": "zh",
@@ -33496,10 +35688,14 @@
       {
         "url": "https://www.openstreetmap.org/way/579077537",
         "fetched_at": "2026-09-27"
+      },
+      {
+        "url": "https://osaka-info.jp/spot/shitennoji/",
+        "fetched_at": "2026-09-29"
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q3472342",
@@ -33527,11 +35723,11 @@
     "featured": false,
     "score": 65.19,
     "summary": {
-      "text": "三光神社（さんこうじんじゃ）は、大阪市天王寺区の宰相山公園にある神社。大阪七福神の寿老人を祀る。かつてこの一帯には真田丸があったため、真田信繁ゆかりの地とされている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E4%B8%89%E5%85%89%E7%A5%9E%E7%A4%BE",
+      "text": "Sankō Shrine (三光神社, Sankō-jinja) is a Shinto shrine on a hill named Mt. Sanada (真田山, Sanada-yama) in Tennōji-ku, Osaka, Japan. It is notable for being the possible location of a legendary tunnel used during the 17th century Siege of Osaka.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Sank%C5%8D_Shrine",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -33578,7 +35774,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q3514709",
@@ -33605,11 +35801,11 @@
     "featured": false,
     "score": 68.46,
     "summary": {
-      "text": "玉造稲荷神社（たまつくりいなりじんじゃ）は、大阪市中央区玉造にある神社。旧社格は府社。登記上の宗教法人名称は稲荷神社（いなりじんじゃ）。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E7%8E%89%E9%80%A0%E7%A8%B2%E8%8D%B7%E7%A5%9E%E7%A4%BE",
+      "text": "Tamatsukuri Inari Shrine (玉造稲荷神社, Tamatsukuri-Inari-jinja) is a shrine dedicated to the Shinto kami ('god') Inari. Its construction can be traced to 12 BCE, and Inari was enshrined there by Toyotomi Hideyoshi in the 1580s to protect Osaka Castle.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Tamatsukuri_Inari_Shrine",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -33657,7 +35853,78 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
+  },
+  {
+    "id": "wd-Q3523055",
+    "name": {
+      "ja": "The Tower Osaka",
+      "kana": "ざたわーおおさか",
+      "romaji": "Zatawaosaka",
+      "zh_tw": "The Tower Osaka",
+      "en": "The Tower Osaka"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 34.694423,
+      "lng": 135.48905
+    },
+    "prefecture": "osaka",
+    "kind": "major",
+    "themes": [],
+    "tags": [],
+    "featured": false,
+    "score": 61.96,
+    "summary": {
+      "text": "The Tower Osaka is a high rise apartment building situated at Hotarumachi, 1-1 Fukushima, Fukushima-ku, Osaka, Japan. It is the highest building in Fukushima ward.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/The_Tower_Osaka",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "福島",
+          "kana": "ふくしま",
+          "romaji": "Fukushima",
+          "en": "Fukushima"
+        },
+        "distance_m": 200
+      },
+      {
+        "name": {
+          "ja": "新福島",
+          "kana": "しんふくしま",
+          "romaji": "Shinfukushima",
+          "en": "Shin Fukushima"
+        },
+        "distance_m": 340
+      }
+    ],
+    "images": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/d/d0/TheTowerOsaka.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+        "author": "Inoue-hiro",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:TheTowerOsaka.jpg"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q3523055"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q3523055",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/The_Tower_Osaka",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q3608523",
@@ -33679,7 +35946,7 @@
     "tags": [
       "史跡"
     ],
-    "featured": true,
+    "featured": false,
     "score": 80.55,
     "summary": {
       "text": "難波宮（なにわのみや）は、現在の大阪市中央区法円坂付近に造営された古代の宮。",
@@ -33733,7 +36000,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q385793",
@@ -33806,7 +36073,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q4185800",
@@ -33832,11 +36099,11 @@
     "featured": false,
     "score": 67.57,
     "summary": {
-      "text": "上赤坂城（かみあかさかじょう）は、大阪府南河内郡千早赤阪村上赤阪にあった日本の城。「上赤阪城」と書くこともある。別名、楠木城。小根田城、桐山城とも言う。楠木七城の一つ。「楠木城跡（上赤阪城跡）」として国の史跡に指定されている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E4%B8%8A%E8%B5%A4%E5%9D%82%E5%9F%8E",
+      "text": "Kami-Akasaka Castle (上赤坂城, Kami-Akasaka-jō) is a late Kamakura period Japanese castle located in the village of  Chihayaakasaka, Osaka Prefecture, Japan.  Its ruins have been protected as a National Historic Site since 1934. It is also referred to as Kusunoki Castle (楠木城, Kusunoki-jō) or Kiriyama Castle (桐山城, Kiriyama-jō),",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Kami-Akasaka_Castle",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -33941,11 +36208,11 @@
     "featured": false,
     "score": 69.31,
     "summary": {
-      "text": "あべのキューズタウン（英語: abeno CUES TOWN）は、大阪府大阪市阿倍野区にあるショッピングモールである。東急不動産などが運営・管理している。大阪市が主体で行う阿倍野再開発事業の一環として、2011年4月にオープンした。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E3%81%82%E3%81%B9%E3%81%AE%E3%82%AD%E3%83%A5%E3%83%BC%E3%82%BA%E3%82%BF%E3%82%A6%E3%83%B3",
+      "text": "Abeno Cues Town (あべのキューズタウン) is the name of the Abeno A1 Area Urban Redevelopment Project A2 Building (阿倍野A1地区第二種市街地再開発事業A2棟, Abeno A1 Chiku Dainishu Shigaichi Saikaihatsu Jigyō A2 Tō) in Abeno-ku, Osaka, Japan.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Abeno_Cues_Town",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -33957,12 +36224,12 @@
       },
       {
         "name": {
-          "ja": "大阪阿部野橋駅",
-          "kana": "おおさかあべのばしえき",
-          "romaji": "Ōsaka Abenobashi eki",
-          "en": "Ōsaka Abenobashi Station"
+          "ja": "大阪阿部野橋",
+          "kana": "おおさかあべのばし",
+          "romaji": "Ōsaka Abenobashi",
+          "en": "Ōsaka Abenobashi"
         },
-        "distance_m": 340
+        "distance_m": 350
       }
     ],
     "images": [
@@ -33983,7 +36250,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q4745722",
@@ -34119,6 +36386,73 @@
     "updated_at": "2026-09-28"
   },
   {
+    "id": "wd-Q48762570",
+    "name": {
+      "ja": "辛国神社",
+      "kana": "からくにじんじゃ",
+      "romaji": "Karakunijinja",
+      "zh_tw": "辛国神社",
+      "en": "Karakuni Shrine"
+    },
+    "kana_source": "wikidata",
+    "location": {
+      "lat": 34.569419,
+      "lng": 135.59366
+    },
+    "prefecture": "osaka",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "神社"
+    ],
+    "featured": false,
+    "score": 62.11,
+    "summary": {
+      "text": "辛国神社（からくにじんじゃ）は、大阪府藤井寺市にある神社。式内社で、旧社格は村社。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E8%BE%9B%E5%9B%BD%E7%A5%9E%E7%A4%BE",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "藤井寺",
+          "romaji": "Fujiidera",
+          "en": "Fujiidera"
+        },
+        "distance_m": 250
+      },
+      {
+        "name": {
+          "ja": "高鷲",
+          "romaji": "Takawashi",
+          "en": "Takawashi"
+        },
+        "distance_m": 870
+      }
+    ],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/52/Karakuni_shurine_20180131.jpg/960px-Karakuni_shurine_20180131.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "従六位上河内介",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Karakuni_shurine_20180131.jpg"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q48762570"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q48762570",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
+  },
+  {
     "id": "wd-Q494832",
     "name": {
       "ja": "大阪市長居陸上競技場",
@@ -34133,7 +36467,7 @@
     "kind": "major",
     "themes": [],
     "tags": [],
-    "featured": true,
+    "featured": false,
     "score": 86.06,
     "summary": {
       "text": "長居陸上競技場（長居陸上競技場，Nagai Stadium）位於日本大阪市東住吉區，主要舉行田徑及足球等比賽。2002年韓日世界盃時曾舉行3場賽事。2007年世界田徑錦標賽的主場地。",
@@ -34179,7 +36513,87 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
+  },
+  {
+    "id": "wd-Q50375431",
+    "name": {
+      "ja": "大阪中之島美術館",
+      "kana": "おおさかなかのしまびじゅつかん",
+      "romaji": "Osakanakanoshimabijutsukan",
+      "zh_tw": "大阪中之島美術館",
+      "en": "Nakanoshima Museum of Art, Osaka"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 34.692389,
+      "lng": 135.491472
+    },
+    "prefecture": "osaka",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "博物館"
+    ],
+    "featured": false,
+    "score": 76.45,
+    "summary": {
+      "text": "Nakanoshima Museum of Art, Osaka (大阪中之島美術館, Ōsaka Nakanoshima Bijutsukan) opened in Nakanoshima, Kita-ku, Osaka, Japan in 2022. The museum is located in the central Nakanoshima district of Osaka. It is one of Japan's newest and most important art museums, with a collection of over 6,000 works of modern and contemporary art and design from the mid-19th century to the present day.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Nakanoshima_Museum_of_Art%2C_Osaka",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "渡辺橋",
+          "romaji": "Watanabebashi",
+          "en": "Watanabebashi"
+        },
+        "distance_m": 310
+      },
+      {
+        "name": {
+          "ja": "肥後橋",
+          "romaji": "Higobashi",
+          "en": "Higobashi"
+        },
+        "distance_m": 460
+      }
+    ],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/48/Nakanoshima_Museum_of_Art_Osaka.jpg/960px-Nakanoshima_Museum_of_Art_Osaka.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Прикли",
+        "license": "CC BY 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Nakanoshima_Museum_of_Art_Osaka.jpg"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q50375431",
+      "osm": "way/343837388"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q50375431",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.openstreetmap.org/way/343837388",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://osaka-info.jp/spot/nakanoshima-museum/",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E9%98%AA%E4%B8%AD%E4%B9%8B%E5%B3%B6%E7%BE%8E%E8%A1%93%E9%A4%A8",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q5191476",
@@ -34201,7 +36615,7 @@
     "tags": [
       "橋"
     ],
-    "featured": true,
+    "featured": false,
     "score": 80.27,
     "summary": {
       "text": "日本橋是日本大阪府大阪市中央區、浪速區的町名及周邊地區的名稱；也可指道頓堀川上的一座橋梁，為堺筋跨越道頓堀川的橋梁。",
@@ -34246,7 +36660,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q5359309",
@@ -34268,14 +36682,14 @@
     "tags": [
       "公園"
     ],
-    "featured": false,
-    "score": 70.5,
+    "featured": true,
+    "score": 90.5,
     "summary": {
-      "text": "長居公園（ながいこうえん）は、大阪府大阪市東住吉区にある都市公園（運動公園） 。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E9%95%B7%E5%B1%85%E5%85%AC%E5%9C%92",
+      "text": "Nagai Park (長居公園, Nagai kōen) is a large sports complex located in Higashisumiyoshi-ku, Osaka. Its facilities include three multipurpose sports stadiums, including 50,000-seat Nagai Stadium; Nagai Botanical Garden, which has over 1,000 species of trees and flowers; a swimming pool and gymnasium; and a tract of preserved local forest. It also hosts a large number of cherry trees and is a popular area for picnics during cherry blossom (sakura) season in early spring.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Nagai_Park",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -34318,12 +36732,16 @@
         "fetched_at": "2026-09-27"
       },
       {
+        "url": "https://osaka-info.jp/spot/nagai-park/",
+        "fetched_at": "2026-09-29"
+      },
+      {
         "url": "https://ja.wikipedia.org/wiki/%E9%95%B7%E5%B1%85%E5%85%AC%E5%9C%92",
         "fetched_at": "2026-09-28"
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q5364342",
@@ -34418,11 +36836,11 @@
     "featured": false,
     "score": 75.73,
     "summary": {
-      "text": "フェスティバルゲート（英: Festival gate）は、かつて大阪市浪速区恵美須東に存在した都市型テーマパーク。略称はフェスゲ。第三セクターのフェスティバルゲート株式会社により運営されていた（現在は解散している）。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E3%83%95%E3%82%A7%E3%82%B9%E3%83%86%E3%82%A3%E3%83%90%E3%83%AB%E3%82%B2%E3%83%BC%E3%83%88",
+      "text": "Festivalgate (Japanese: フェスティバルゲート, Hepburn: Fesutibarugēto) was an amusement park in the Shinsekai district of Naniwa, Osaka, Japan, just beside the Shin-Imamiya Station of the Osaka Loop Line of Nishinihon Japan Railway and Nankai Railway.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Festivalgate",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -34483,11 +36901,11 @@
     "featured": false,
     "score": 71.36,
     "summary": {
-      "text": "旧淀川（きゅうよどがわ）は、淀川の毛馬水門（毛馬閘門）で南へ分岐する旧・淀川本流。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%97%A7%E6%B7%80%E5%B7%9D",
+      "text": "The Kyū-Yodo River (旧淀川, Kyū-Yodo-gawa) was the main stream of the Yodo River before 1907, when the current (new) Yodo River was constructed by a normalisation project. Now called the Kyū-Yodo River, it is a major waterway in central Osaka and the main drainage of Neyagawa river.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Ky%C5%AB-Yodo_River",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -34552,11 +36970,11 @@
     "featured": false,
     "score": 75.79,
     "summary": {
-      "text": "フェスティバルホール (Festival Hall) は、大阪府大阪市北区中之島二丁目に所在する文化施設（多目的ホール）。中之島フェスティバルホールとも呼ばれている。朝日ビルディングが運営している。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E3%83%95%E3%82%A7%E3%82%B9%E3%83%86%E3%82%A3%E3%83%90%E3%83%AB%E3%83%9B%E3%83%BC%E3%83%AB",
+      "text": "Festival Hall (フェスティバルホール) is a concert hall located in Kita-ku, Osaka, Japan. It is run by the Asahi Building Co., Ltd., a Japanese real estate company controlling properties of the Asahi Shimbun Company, and is housed in the Festival Tower, a skyscraper. The opening ceremony for the new hall was held on April 3, 2013. The new hall has 2,700 seats, the same number of seats as the original hall.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Festival_Hall%2C_Osaka",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -34617,11 +37035,11 @@
     "featured": false,
     "score": 73.94,
     "summary": {
-      "text": "天保山大観覧車（てんぽうざんだいかんらんしゃ）は大阪市港区の天保山ハーバービレッジにある観覧車である。1997年7月12日開業、高さ112.5m、直径は100mで、一時は世界最大の観覧車であった。株式会社海遊館（旧大阪ウォーターフロント開発）が運営を行っている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%A4%A9%E4%BF%9D%E5%B1%B1%E5%A4%A7%E8%A6%B3%E8%A6%A7%E8%BB%8A",
+      "text": "Tempozan Ferris Wheel (Japanese: 天保山大観覧車, Hepburn: Tenpōzan Daikanransha) is a 112-meter-tall (367 ft) Ferris wheel located in Osaka, Japan, at Tempozan Harbor Village, next to Osaka Aquarium Kaiyukan, one of the largest aquariums in the world. The wheel has a height of 112.5 metres (369 ft) and diameter of 100 metres (330 ft).",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Tempozan_Ferris_Wheel",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -34741,7 +37159,7 @@
       "ja": "大阪市立長居植物園",
       "kana": "おおさかしりつながいしょくぶつえん",
       "romaji": "Osakashiritsunagaishokubutsuen",
-      "zh_tw": "大阪市立長居植物園",
+      "zh_tw": "長居植物園",
       "en": "Nagai Botanical Garden"
     },
     "kana_source": "wikipedia",
@@ -34758,11 +37176,11 @@
     "featured": false,
     "score": 64.23,
     "summary": {
-      "text": "大阪市立長居植物園（おおさかしりつながいしょくぶつえん）は、大阪府大阪市東住吉区の長居公園内にある大阪市立の植物園。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E9%98%AA%E5%B8%82%E7%AB%8B%E9%95%B7%E5%B1%85%E6%A4%8D%E7%89%A9%E5%9C%92",
+      "text": "The Nagai Botanical Garden (大阪市立長居植物園, Ōsaka Shiritsu Nagai Shokubutsuen) is a botanical garden located in the southern part of Nagai Park, Higashisumiyoshi-ku, Osaka, Japan. An admission fee is charged for adults, while middle school students and under are free.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Nagai_Botanical_Garden",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -34810,7 +37228,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q620239",
@@ -34902,11 +37320,11 @@
     "featured": false,
     "score": 71.32,
     "summary": {
-      "text": "葛井寺（ふじいでら）は、大阪府藤井寺市藤井寺にある真言宗御室派の寺院。山号は紫雲山。本尊は日本最古という十一面千手観世音菩薩（千手観音）。聖武天皇の勅願寺で神亀2年（725年）に創建され、開山は行基と伝えられる。西国三十三所第5番札所。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E8%91%9B%E4%BA%95%E5%AF%BA",
+      "text": "Fujii-dera (Japanese: 葛井寺) is a Buddhist temple located in the Fujiidera neighborhood of the city of Fujiidera,  Osaka Prefecture Japan. It belongs to the Shingon-shū Omuro-ha sect of Japanese Buddhism and its honzon is a National Treasure statue of Senjū Jūichimen Kannon. The temple's full name is Shiun-san Fujii-dera (紫雲山 葛井寺). The temple is the 4th stop on the Saigoku Kannon Pilgrimage route.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Fujii-dera",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -34951,6 +37369,57 @@
     "updated_at": "2026-09-28"
   },
   {
+    "id": "wd-Q65286486",
+    "name": {
+      "ja": "野間の大ケヤキ",
+      "kana": "のまのおおけやき",
+      "romaji": "Noma No Okeyaki",
+      "zh_tw": "野間の大ケヤキ",
+      "en": "Noma-no-Okeyaki"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 34.946083,
+      "lng": 135.450417
+    },
+    "prefecture": "osaka",
+    "kind": "major",
+    "themes": [],
+    "tags": [],
+    "featured": false,
+    "score": 61.63,
+    "summary": {
+      "text": "野間の大ケヤキ（のまのおおケヤキ）は、大阪府豊能郡能勢町野間稲地にある国の天然記念物に指定されたケヤキの巨木である。大阪府下最大のケヤキで、樹齢は1,000年以上と推定されており、1948年（昭和23年）1月14日に国の天然記念物に指定された。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E9%87%8E%E9%96%93%E3%81%AE%E5%A4%A7%E3%82%B1%E3%83%A4%E3%82%AD",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/35/Noma_no_Okeyaki_B.jpg/960px-Noma_no_Okeyaki_B.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "さかおり",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Noma_no_Okeyaki_B.jpg"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q65286486"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q65286486",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E9%87%8E%E9%96%93%E3%81%AE%E5%A4%A7%E3%82%B1%E3%83%A4%E3%82%AD",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
+  },
+  {
     "id": "wd-Q6875079",
     "name": {
       "ja": "みさき公園",
@@ -34973,11 +37442,11 @@
     "featured": false,
     "score": 75.99,
     "summary": {
-      "text": "みさき公園（みさきこうえん）は、大阪府泉南郡岬町にある都市公園で、南海電気鉄道（南海）が創業70周年記念事業として1957年4月1日に開業。2020年3月31日まで、日本動物園水族館協会加盟の施設 として、遊園地・動物園・水族館などを運営していた。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E3%81%BF%E3%81%95%E3%81%8D%E5%85%AC%E5%9C%92",
+      "text": "Misaki Park (みさき公園) was an amusement park located in the town of Misaki in Osaka Prefecture, Japan, operated by Nankai Electric Railway Co., Ltd. The park was opened on April 1, 1957, coinciding with the 70th anniversary of Nankai Railway.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Misaki_Park",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -35035,11 +37504,11 @@
     "featured": false,
     "score": 74.01,
     "summary": {
-      "text": "交通科学博物館（こうつうかがくはくぶつかん、英語: Modern Transportation Museum）は、かつて大阪府大阪市港区波除3丁目11番10号にあった交通に関する科学を扱う博物館である。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E4%BA%A4%E9%80%9A%E7%A7%91%E5%AD%A6%E5%8D%9A%E7%89%A9%E9%A4%A8",
+      "text": "The Modern Transportation Museum (交通科学博物館, Kōtsū Kagaku Hakubutsukan) was the corporate museum operated by West Japan Railway Company (JR West) in Minato-ku, Osaka, Japan. It opened on 21 January 1962, next to Bentencho Station on the Osaka Loop Line. The collection included steam locomotives, electric locomotives, diesel locomotives, a prototype of a magnetic levitation train, and the original engine of a Messerschmitt Me 163.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Modern_Transportation_Museum",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -35104,11 +37573,11 @@
     "featured": false,
     "score": 63.45,
     "summary": {
-      "text": "深山（みやま）は大阪府豊能郡能勢町と京都府南丹市との境界に位置する山。標高790.5 mで北摂山系の最高峰である。大阪50山の一つである。大阪府北部の最高峰でもあり、標高の高さの割に良い展望を有している。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%B7%B1%E5%B1%B1_%28%E5%A4%A7%E9%98%AA%E5%BA%9C%E3%83%BB%E4%BA%AC%E9%83%BD%E5%BA%9C%29",
+      "text": "Mount Miyama (深山, Miyama) is a 790.5 m (2,594 ft)　mountain, located on the border of Nose, Osaka and Nantan, Kyoto, Japan.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Mount_Miyama",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -35157,11 +37626,11 @@
     "featured": false,
     "score": 67.38,
     "summary": {
-      "text": "中之島公園（なかのしまこうえん）は、大阪市北区中之島にある風致公園である。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E4%B8%AD%E4%B9%8B%E5%B3%B6%E5%85%AC%E5%9C%92",
+      "text": "The Nakanoshima Park (中之島公園, Nakanoshima kōen) is the first public park opened by Osaka in 1891, after its foundation as a city. It is located in Kita ward, on the Nakanoshima sandbank, lying between Dōjima and Tosabori Rivers. The 11 hectare park houses public facilities such as Osaka Central Public Hall (built in 1918), Osaka Prefectural Nakanoshima Library and Museum of Oriental Ceramics. It also holds a rose garden. The City Hall of Osaka building is located on its west end.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Nakanoshima_Park",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -35231,11 +37700,11 @@
     "featured": false,
     "score": 75.91,
     "summary": {
-      "text": "なんばパークス (NAMBA PARKS) は、大阪府大阪市浪速区難波中に所在するショッピングセンター（SC）や都市公園などで構成される複合商業施設である。南海電気鉄道（南海）難波駅の南側にあり、難波駅やなんばCITYと直結している。施設全体として、「緑との共存」を大きなテーマとしている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E3%81%AA%E3%82%93%E3%81%B0%E3%83%91%E3%83%BC%E3%82%AF%E3%82%B9",
+      "text": "Namba Parks (なんばパークス, Nanba Pākusu) is an office and shopping complex located in Namba-naka Nichome, Naniwa-ku, Osaka, Japan, the south of Namba Station on Nankai Railway. It consists of a high-rise office building called Parks Tower and a 120-tenant shopping mall with rooftop garden. Namba Parks was developed by Jon Jerde of The Jerde Partnership in the footprint of the since-closed Osaka Stadium.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Namba_Parks",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -35348,7 +37817,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q705121",
@@ -35429,7 +37898,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q705151",
@@ -35505,7 +37974,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q705949",
@@ -35608,11 +38077,11 @@
     "featured": false,
     "score": 71.15,
     "summary": {
-      "text": "大阪シティエアターミナル（おおさかシティエアターミナル）は、大阪府大阪市浪速区湊町一丁目にある複合商業施設である。略称は「OCAT」（オーキャット）。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E9%98%AA%E3%82%B7%E3%83%86%E3%82%A3%E3%82%A8%E3%82%A2%E3%82%BF%E3%83%BC%E3%83%9F%E3%83%8A%E3%83%AB",
+      "text": "Osaka City Air Terminal (OCAT) is a multi-purpose commercial complex in Minatomachi, Naniwa-ku, Osaka housing South Osaka's inter-city bus terminal and coach ferry services to both Kansai International Airport and Osaka Itami Airport, JR Namba station and six floors of shops, restaurants, travel agencies and tourist offices. OCAT is also the venue for frequent musical performances and its outdoor Ponte Square area is the meeting place and practice area for Osaka's youthful street dance community.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Osaka_City_Air_Terminal",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -35670,11 +38139,11 @@
     "featured": false,
     "score": 70.42,
     "summary": {
-      "text": "大阪府立国際会議場（おおさかふりつこくさいかいぎじょう、Osaka International Convention Center）は、大阪府大阪市北区中之島にある大阪府立の国際会議場である。通称は大阪国際会議場、愛称はグランキューブ大阪。府と大阪財界が出資して設立した株式会社大阪国際会議場が指定管理者となっている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E9%98%AA%E5%BA%9C%E7%AB%8B%E5%9B%BD%E9%9A%9B%E4%BC%9A%E8%AD%B0%E5%A0%B4",
+      "text": "Osaka International Convention Center (大阪府立国際会議場, Ōsaka Furitsu Kokusai Kaigijō), also known as",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Grand_Cube_Osaka",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -35740,11 +38209,11 @@
     "featured": false,
     "score": 67.42,
     "summary": {
-      "text": "大阪国際平和センター（おおさかこくさいへいわセンター、愛称：ピースおおさか）は、大阪市中央区の大阪城公園内にある、戦争と平和に関する調査研究や展示を行う施設。運営者は公益財団法人大阪国際平和センター。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E9%98%AA%E5%9B%BD%E9%9A%9B%E5%B9%B3%E5%92%8C%E3%82%BB%E3%83%B3%E3%82%BF%E3%83%BC",
+      "text": "The Osaka International Peace Center (大阪国際平和センター, Ōsaka-kokusai-heiwa-sentā), also known as Peace Osaka (ピースおおさか, Pīsu-Ōsaka), is a peace museum established in August 1991 based in the city of Osaka, Japan. It focuses on the destruction of the city during World War II and the broader themes of the tragedy of war and the importance of peace. It is funded by Osaka city and Osaka Prefecture.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Osaka_International_Peace_Center",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -35815,11 +38284,11 @@
     "featured": false,
     "score": 76.24,
     "summary": {
-      "text": "大阪府立体育会館（おおさかふりつ たいいくかいかん）は、大阪府大阪市浪速区難波中にある体育館。施設命名権契約により、2015年9月1日から愛称を「エディオンアリーナ大阪」としている（後述）。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E9%98%AA%E5%BA%9C%E7%AB%8B%E4%BD%93%E8%82%B2%E4%BC%9A%E9%A4%A8",
+      "text": "Osaka Prefectural Gymnasium (大阪府立体育会館, Ōsaka furitsu taiikukaikan) is an indoor sporting arena located in Namba, Osaka, Japan. It first opened in 1952 and the current building was constructed in 1987. It is the venue of a professional sumo tournament (honbasho) held in March every year. The capacity of the arena is 8,000 people. Its total revenue for the 2006 fiscal year was 260 million yen, of which sumo provided 80 million.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Osaka_Prefectural_Gymnasium",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -35862,6 +38331,62 @@
     ],
     "status": "published",
     "updated_at": "2026-09-28"
+  },
+  {
+    "id": "wd-Q7105597",
+    "name": {
+      "ja": "大阪府立花の文化園",
+      "kana": "おおさかふりつはなのぶんかえん",
+      "romaji": "Osakafuritsuhananobunkaen",
+      "zh_tw": "大阪府立花之文化園",
+      "en": "Osaka Garden of Floral Culture"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 34.434278,
+      "lng": 135.553556
+    },
+    "prefecture": "osaka",
+    "kind": "major",
+    "themes": [],
+    "tags": [],
+    "featured": false,
+    "score": 61.63,
+    "summary": {
+      "text": "Osaka Prefectural Flowers Garden (大阪府立花の文化園, Osaka-furitsu Hanano-bunkaen), also known as \"Fululu Garden,\" is a botanical garden in Kawachinagano, Osaka Prefecture, Japan.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Osaka_Prefectural_Flowers_Garden",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/75/Fururu.jpg/960px-Fururu.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "KENPEI",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Fururu.jpg"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q7105597",
+      "osm": "node/6982403071"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q7105597",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.openstreetmap.org/node/6982403071",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E9%98%AA%E5%BA%9C%E7%AB%8B%E8%8A%B1%E3%81%AE%E6%96%87%E5%8C%96%E5%9C%92",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q7105601",
@@ -35940,7 +38465,7 @@
       "ja": "咲くやこの花館",
       "kana": "さくやこのはなかん",
       "romaji": "Sakuya Konohana Kan",
-      "zh_tw": "鲜花竞放馆",
+      "zh_tw": "鮮花競放館",
       "en": "Sakuya Konohana Kan"
     },
     "kana_source": "wikipedia",
@@ -35957,11 +38482,11 @@
     "featured": false,
     "score": 68.97,
     "summary": {
-      "text": "咲くやこの花館（さくやこのはなかん）は、大阪市鶴見区の花博記念公園鶴見緑地内にある屋内植物園。日本有数の総合植物館で、日本最大の温室（延床面積6890m2）を有する。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%92%B2%E3%81%8F%E3%82%84%E3%81%93%E3%81%AE%E8%8A%B1%E9%A4%A8",
+      "text": "The Sakuya Konohana Kan (咲くやこの花館) is a botanical garden set within one of the world's largest greenhouses, located in Tsurumi Ryokuchi park at 2-163 Ryokuchi Koen, Tsurumi-ku, Osaka, Japan. It is open daily except Mondays; an admission fee is charged.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Sakuya_Konohana_Kan",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -36008,7 +38533,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q750924",
@@ -36084,11 +38609,11 @@
     "featured": false,
     "score": 72.42,
     "summary": {
-      "text": "HEP（ヘップ）とは、大阪市北区角田町（梅田地区）にある阪急阪神東宝グループの複合商業施設である。「HEP FIVE（ヘップファイブ）」、「HEP NAVIO（ヘップナビオ）」から構成される。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/HEP",
+      "text": "HEP is a major shopping mall and entertainment center in the Umeda commercial district of Kita-ku, Osaka, Japan. It is a shopping mall consisting of a HEP Five and HEP Navio.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/HEP_%28shopping_mall%29",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -36134,6 +38659,80 @@
     "updated_at": "2026-09-28"
   },
   {
+    "id": "wd-Q7637168",
+    "name": {
+      "ja": "住吉公園",
+      "kana": "すみよしこうえん",
+      "romaji": "Sumiyoshi-kōen",
+      "zh_tw": "住吉公園",
+      "en": "Sumiyoshi Park"
+    },
+    "kana_source": "osm",
+    "location": {
+      "lat": 34.6124,
+      "lng": 135.48848
+    },
+    "prefecture": "osaka",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "公園"
+    ],
+    "featured": false,
+    "score": 62.09,
+    "summary": {
+      "text": "Sumiyoshi Park (住吉公園 Sumiyoshi Kōen) is an Osaka prefectural park in Hamaguchi-higashi Itchome, Suminoe-ku, Osaka, Japan.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Sumiyoshi_Park",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "住吉大社",
+          "kana": "すみよしたいしゃ",
+          "romaji": "Sumiyoshitaisha",
+          "en": "Sumiyoshitaisha"
+        },
+        "distance_m": 180
+      },
+      {
+        "name": {
+          "ja": "住吉",
+          "kana": "すみよし",
+          "romaji": "Sumiyoshi",
+          "en": "Sumiyoshi"
+        },
+        "distance_m": 370
+      }
+    ],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/ba/Sumiyoshi-Takatourou1.jpg/960px-Sumiyoshi-Takatourou1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "KENPEI",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Sumiyoshi-Takatourou1.jpg"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q7637168",
+      "osm": "relation/20704300"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q7637168",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.openstreetmap.org/relation/20704300",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
+  },
+  {
     "id": "wd-Q7877450",
     "name": {
       "ja": "上町台地",
@@ -36154,11 +38753,11 @@
     "featured": false,
     "score": 74.45,
     "summary": {
-      "text": "上町台地（うえまちだいち）は、大阪平野を南北に伸びる台地。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E4%B8%8A%E7%94%BA%E5%8F%B0%E5%9C%B0",
+      "text": "The Uemachi plateau (上町台地, うえまちだいち, Uemachi Daichi) is a plateau in Osaka City, Japan, that extends from the Osaka Castle and Tenmabashi area to Tennōji in the south.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Uemachi_Plateau",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -36171,10 +38770,10 @@
       },
       {
         "name": {
-          "ja": "大阪阿部野橋駅",
-          "kana": "おおさかあべのばしえき",
-          "romaji": "Ōsaka Abenobashi eki",
-          "en": "Ōsaka Abenobashi Station"
+          "ja": "大阪阿部野橋",
+          "kana": "おおさかあべのばし",
+          "romaji": "Ōsaka Abenobashi",
+          "en": "Ōsaka Abenobashi"
         },
         "distance_m": 520
       }
@@ -36201,7 +38800,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q7881463",
@@ -36224,11 +38823,11 @@
     "featured": false,
     "score": 73.91,
     "summary": {
-      "text": "梅田芸術劇場（うめだげいじゅつげきじょう、英語: Umeda Arts Theater）は、1992年11月に大阪府大阪市北区茶屋町（梅田地区）の「ちゃやまちアプローズ」内に開場した劇場、並びにこれを運営する企業（株式会社梅田芸術劇場）である。メインホール（1階）とシアター・ドラマシティ（地下1階）がある。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%A2%85%E7%94%B0%E8%8A%B8%E8%A1%93%E5%8A%87%E5%A0%B4",
+      "text": "Umeda Arts Theater (梅田芸術劇場, Umeda Geijutsu Gekijō) is a Japanese theater located at Chayamachi Applause in Chayamachi, Kita-ku, Osaka, operated by Umeda Arts Theater Co., Ltd. It opened in 1992.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Umeda_Arts_Theater",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -36297,11 +38896,11 @@
     "featured": false,
     "score": 70.65,
     "summary": {
-      "text": "靱公園（うつぼこうえん）は、大阪府大阪市西区靱本町にある都市公園（総合公園）である。四つ橋筋からあみだ池筋まで東西に細長い敷地を有し、中央を縦断するなにわ筋によって東園と西園に分かれる。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E9%9D%B1%E5%85%AC%E5%9C%92",
+      "text": "Utsubo Park (靱公園, Utsubo-Kōen) is a large public, urban park, situated at Utsubo-Hommachi in Nishi-ku, Osaka, Japan.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Utsubo_Park",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -36564,8 +39163,8 @@
     "kind": "major",
     "themes": [],
     "tags": [],
-    "featured": false,
-    "score": 81.5,
+    "featured": true,
+    "score": 101.5,
     "summary": {
       "text": "天保山是位於日本大阪市港區天保山公園內一座人造山，高度4.53公尺，現在為全日本第二低的山。",
       "lang": "zh",
@@ -36608,12 +39207,16 @@
         "fetched_at": "2026-09-28"
       },
       {
+        "url": "https://osaka-info.jp/spot/tempozan-park/",
+        "fetched_at": "2026-09-29"
+      },
+      {
         "url": "https://ja.wikipedia.org/wiki/%E5%A4%A9%E4%BF%9D%E5%B1%B1",
         "fetched_at": "2026-09-28"
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q875709",
@@ -36760,7 +39363,7 @@
       "ja": "大阪市立美術館",
       "kana": "おおさかしりつびじゅつかん",
       "romaji": "Ōsaka shiritsu bijitsukan",
-      "zh_tw": "大阪市立美术馆",
+      "zh_tw": "大阪市立美術館",
       "en": "Osaka City Museum of Fine Arts"
     },
     "kana_source": "osm",
@@ -36824,7 +39427,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q9032165",
@@ -36847,11 +39450,11 @@
     "featured": false,
     "score": 74.48,
     "summary": {
-      "text": "オリックス劇場（オリックスげきじょう、英語: ORIX Theater）は、大阪府大阪市西区にある劇場・コンサートホール。オリックス不動産が所有し、京セラドーム大阪の運営管理を行う大阪シティドームが施設管理を行う。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E3%82%AA%E3%83%AA%E3%83%83%E3%82%AF%E3%82%B9%E5%8A%87%E5%A0%B4",
+      "text": "The Orix Theater (Japanese: オリックス劇場, Hepburn: Orikkusu Gekijō), formerly the Osaka Kōsei Nenkin Kaikan (大阪厚生年金会館), is a 2,400-seat concert hall in Nishi-ku, Osaka, Japan. Artists that performed in the main hall include Black Sabbath, Kiss, Pink Floyd, Deep Purple, Whitesnake, Robin Trower, Rainbow, Queen, Santana, The Jackson 5, James Brown, UFO, Iron Maiden, Red Velvet, Amalia Rodrigues, NCT 127, and Jun. K.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Orix_Theater",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -36918,11 +39521,11 @@
     "featured": false,
     "score": 64.67,
     "summary": {
-      "text": "大阪プール（おおさかプール）は、大阪市港区の八幡屋公園にある大阪市立の水泳・アイススケート場である。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E9%98%AA%E3%83%97%E3%83%BC%E3%83%AB",
+      "text": "Maruzen Intec Osaka Pool is a swimming venue in Osaka, Japan. It hosted the figure skating events for the 2000 Four Continents Figure Skating Championships.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Maruzen_Intec_Osaka_Pool",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -36985,8 +39588,8 @@
     "tags": [
       "博物館"
     ],
-    "featured": false,
-    "score": 69.33,
+    "featured": true,
+    "score": 89.33,
     "summary": {
       "text": "大阪城天守閣（おおさかじょうてんしゅかく）は、大阪市中央区の大阪城公園・大阪城の天守内部にある博物館。天守は国の登録有形文化財である。",
       "lang": "ja",
@@ -37032,10 +39635,14 @@
       {
         "url": "https://www.openstreetmap.org/node/13388509601",
         "fetched_at": "2026-09-27"
+      },
+      {
+        "url": "https://osaka-info.jp/spot/osaka-castle-main-keep/",
+        "fetched_at": "2026-09-29"
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q964876",
@@ -37110,6 +39717,85 @@
     "updated_at": "2026-09-28"
   },
   {
+    "id": "wd-Q97310303",
+    "name": {
+      "ja": "清学院",
+      "kana": "せいがくいん",
+      "romaji": "Seigakuin",
+      "zh_tw": "清学院"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 34.591139,
+      "lng": 135.482806
+    },
+    "prefecture": "osaka",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "博物館"
+    ],
+    "featured": false,
+    "score": 71.3,
+    "summary": {
+      "text": "清学院（せいがくいん）は、大阪府堺市堺区にある修験道当山派の寺院。本尊は不動明王坐像。門等が国の登録有形文化財に登録されている。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E6%B8%85%E5%AD%A6%E9%99%A2",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "七道",
+          "romaji": "Shichido",
+          "en": "Shichido"
+        },
+        "distance_m": 240
+      },
+      {
+        "name": {
+          "ja": "浅香山",
+          "romaji": "Asakayama",
+          "en": "Asakayama"
+        },
+        "distance_m": 770
+      }
+    ],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/eb/Seigakuin%2CSakai.jpg/960px-Seigakuin%2CSakai.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Ty19080914",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Seigakuin,Sakai.jpg"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q97310303",
+      "osm": "way/1486473278"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q97310303",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.openstreetmap.org/way/1486473278",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://osaka-info.jp/spot/seigaku-in/",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E6%B8%85%E5%AD%A6%E9%99%A2",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
+  },
+  {
     "id": "wd-Q996259",
     "name": {
       "ja": "生駒山",
@@ -37127,8 +39813,8 @@
     "kind": "major",
     "themes": [],
     "tags": [],
-    "featured": false,
-    "score": 78.13,
+    "featured": true,
+    "score": 98.13,
     "summary": {
       "text": "生駒山是一橫跨奈良縣生駒市與大阪府東大阪市的標高642m的山峰。為生駒山地的主峰。設有一等三角點的山頂位於奈良縣一側，山上有遊樂園。生駒山是關西地區各廣域電視臺的主要發射信號基地。",
       "lang": "zh",
@@ -37173,12 +39859,16 @@
         "fetched_at": "2026-09-28"
       },
       {
+        "url": "https://osaka-info.jp/spot/mount-ikoma/",
+        "fetched_at": "2026-09-29"
+      },
+      {
         "url": "https://ja.wikipedia.org/wiki/%E7%94%9F%E9%A7%92%E5%B1%B1",
         "fetched_at": "2026-09-28"
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q999162",

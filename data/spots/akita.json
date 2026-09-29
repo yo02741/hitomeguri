@@ -1454,6 +1454,237 @@
     "updated_at": "2026-09-28"
   },
   {
+    "id": "osm-way-1173686194",
+    "name": {
+      "ja": "平鹿農村文化伝承館",
+      "zh_tw": "平鹿農村文化伝承館"
+    },
+    "location": {
+      "lat": 39.258167,
+      "lng": 140.493583
+    },
+    "prefecture": "akita",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "博物館"
+    ],
+    "featured": false,
+    "score": 0.0,
+    "images": [],
+    "external_ids": {
+      "osm": "way/1173686194"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/way/1173686194",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
+  },
+  {
+    "id": "osm-way-1228862608",
+    "name": {
+      "ja": "谷藤家",
+      "zh_tw": "谷藤家",
+      "en": "House of Tanifuji"
+    },
+    "location": {
+      "lat": 39.200066,
+      "lng": 140.546235
+    },
+    "prefecture": "akita",
+    "city": "横手市",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "博物館"
+    ],
+    "featured": false,
+    "score": 0.0,
+    "images": [],
+    "external_ids": {
+      "osm": "way/1228862608"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/way/1228862608",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
+  },
+  {
+    "id": "osm-way-1514343487",
+    "name": {
+      "ja": "餅の館",
+      "zh_tw": "餅の館"
+    },
+    "location": {
+      "lat": 39.473979,
+      "lng": 140.53632
+    },
+    "prefecture": "akita",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "博物館"
+    ],
+    "featured": false,
+    "score": 0.0,
+    "images": [],
+    "external_ids": {
+      "osm": "way/1514343487"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/way/1514343487",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
+  },
+  {
+    "id": "osm-way-245391534",
+    "name": {
+      "ja": "大湯ストーンサークル館",
+      "zh_tw": "大湯ストーンサークル館"
+    },
+    "location": {
+      "lat": 40.274012,
+      "lng": 140.806445
+    },
+    "prefecture": "akita",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "博物館"
+    ],
+    "featured": false,
+    "score": 0.0,
+    "images": [],
+    "external_ids": {
+      "osm": "way/245391534"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/way/245391534",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
+  },
+  {
+    "id": "osm-way-253970113",
+    "name": {
+      "ja": "平福記念美術館",
+      "zh_tw": "平福記念美術館",
+      "en": "Hirahuku Memorial Art Museum"
+    },
+    "location": {
+      "lat": 39.601941,
+      "lng": 140.560187
+    },
+    "prefecture": "akita",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "博物館"
+    ],
+    "featured": false,
+    "score": 0.0,
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "角館",
+          "kana": "かくのだて",
+          "romaji": "Kakunodate",
+          "en": "Kakunodate"
+        },
+        "distance_m": 1470
+      }
+    ],
+    "images": [],
+    "external_ids": {
+      "osm": "way/253970113"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/way/253970113",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
+  },
+  {
+    "id": "osm-way-279356305",
+    "name": {
+      "ja": "思い出の潟分校(旧田沢湖町立生保内小学校潟分校)",
+      "zh_tw": "思い出の潟分校"
+    },
+    "location": {
+      "lat": 39.696972,
+      "lng": 140.672815
+    },
+    "prefecture": "akita",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "博物館"
+    ],
+    "featured": false,
+    "score": 0.0,
+    "images": [],
+    "external_ids": {
+      "osm": "way/279356305"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/way/279356305",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
+  },
+  {
+    "id": "osm-way-279358418",
+    "name": {
+      "ja": "仙北市役所　西木山の幸資料館",
+      "zh_tw": "仙北市役所　西木山の幸資料館"
+    },
+    "location": {
+      "lat": 39.717322,
+      "lng": 140.628015
+    },
+    "prefecture": "akita",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "博物館"
+    ],
+    "featured": false,
+    "score": 0.0,
+    "images": [],
+    "external_ids": {
+      "osm": "way/279358418"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/way/279358418",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
+  },
+  {
     "id": "wd-Q100884413",
     "name": {
       "ja": "本荘八幡神社",
@@ -2061,11 +2292,11 @@
     "featured": false,
     "score": 56.81,
     "summary": {
-      "text": "田沢湖抱返り県立自然公園（たざわこだきがえりけんりつしぜんこうえん）は、秋田県東部に位置する県立自然公園。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E7%94%B0%E6%B2%A2%E6%B9%96%E6%8A%B1%E8%BF%94%E3%82%8A%E7%9C%8C%E7%AB%8B%E8%87%AA%E7%84%B6%E5%85%AC%E5%9C%92",
+      "text": "Tazawako Dakigaeri Prefectural Natural Park (田沢湖抱返り県立自然公園, Tazawako Dakigaeri kenritsu shizen kōen) is a Prefectural Natural Park in Akita Prefecture, Japan. Established in 1960, the park lies within the municipality of Semboku, and takes its name from Lake Tazawa and Dakigaeri Gorge (抱返り渓谷).",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Tazawako_Dakigaeri_Prefectural_Natural_Park",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [],
     "external_ids": {
@@ -3250,7 +3481,7 @@
     "tags": [
       "史跡"
     ],
-    "featured": true,
+    "featured": false,
     "score": 69.37,
     "summary": {
       "text": "檜山安東氏城館跡是秋田縣能代市的檜山集落之東側丘陵的宏偉山城。檜山城跡附近還有大館跡、茶臼館跡、國清寺跡等，是日本國內指定史跡。",
@@ -3286,7 +3517,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q111721103",
@@ -3490,11 +3721,11 @@
     "featured": false,
     "score": 62.78,
     "summary": {
-      "text": "きみまち阪（きみまちざか、徯后坂）は、秋田県能代市二ツ井町にある県立自然公園の名称。秋田県有数の桜、ツツジ、紅葉の名所であり、時期ともなると県内はもとより県外からも観光客が訪れる。デートスポットとしても有名。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E3%81%8D%E3%81%BF%E3%81%BE%E3%81%A1%E9%98%AA",
+      "text": "Kimimachizaka Prefectural Natural Park (きみまち阪県立自然公園, Kimimachizaka  kenritsu shizen kōen) is a Prefectural Natural Park in Akita Prefecture, Japan. Established in 1964, the park spans the borders of the municipalities of Fujisato and Noshiro, and takes its name from Kimimachizaka (きみまち阪).",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Kimimachizaka_Prefectural_Natural_Park",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -3932,7 +4163,7 @@
       "ja": "イオンモール大曲",
       "kana": "いおんもーるおおまがり",
       "romaji": "Ionmoruomagari",
-      "zh_tw": "AEON Mall大曲"
+      "zh_tw": "AEON Mall大麴"
     },
     "kana_source": "wikipedia",
     "location": {
@@ -3974,7 +4205,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11286174",
@@ -4452,11 +4683,11 @@
     "featured": true,
     "score": 68.89,
     "summary": {
-      "text": "セリオン (SELION) は、秋田県秋田市土崎港の秋田港にあるタワー、およびタワーを含む施設群である。タワーの正式名称は秋田市ポートタワー。本項ではタワーを指して「セリオン」の名称を用い、周辺の施設やスポットについても併せて記述する。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E3%82%BB%E3%83%AA%E3%82%AA%E3%83%B3_%28%E7%A7%8B%E7%94%B0%E5%B8%82%29",
+      "text": "The Akita City Port Tower Selion (秋田市ポートタワーセリオン, Akitashi Pōto Tawā Serion) is one of the landmarks in the city of Akita, Japan.  The sightseeing tower with 6,272 tempered glasses was completed in 1994.  It is located in the Tsuchizaki District, Akita, Akita Prefecture, Japan. The steel tower is the tallest structure in the 3 northern Tohoku prefectures with its observation deck at 100 metres (328 ft) and its spire at 143.6 metres (471 ft).",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Akita_Port_Tower_Selion",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -5317,11 +5548,11 @@
     "featured": false,
     "score": 40.77,
     "summary": {
-      "text": "仁賀保グリーンフィールド（にかほグリーンフィールド）は秋田県にかほ市の仁賀保運動公園内にあるサッカーやラグビーなどに使用されるスタジアム。施設はにかほ市が所有し、にかほ市が運営管理も行っている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E4%BB%81%E8%B3%80%E4%BF%9D%E3%82%B0%E3%83%AA%E3%83%BC%E3%83%B3%E3%83%95%E3%82%A3%E3%83%BC%E3%83%AB%E3%83%89",
+      "text": "Nikaho Green Field (仁賀保グリーンフィールド, Nikaho Gurin Firudo)  is a football stadium in Nikaho, Akita Prefecture, Japan. The stadium has a capacity of 4,430 and was the home ground of J3 League club Blaublitz Akita.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Nikaho_Green_Field",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -5438,11 +5669,11 @@
     "featured": true,
     "score": 93.0,
     "summary": {
-      "text": "伊勢堂岱遺跡（いせどうたいいせき）は、秋田県北秋田市脇神字伊勢堂岱にある縄文時代後期前半の環状列石が主体の遺跡。国の史跡に指定され、出土板状土偶・出土品は秋田県指定有形文化財に指定されている。2021年7月27日、「北海道・北東北の縄文遺跡群」として世界文化遺産に登録された。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E4%BC%8A%E5%8B%A2%E5%A0%82%E5%B2%B1%E9%81%BA%E8%B7%A1",
+      "text": "The Isedōtai Ruins (伊勢堂岱遺跡, Isedōtai iseki) are a late Jōmon period archaeological site in the city of Kitaakita, Akita Prefecture, in the Tōhoku region of northern Japan.  Discovered during the construction of a highway to nearby Odate–Noshiro Airport, the remains were designated a National Historic Site of Japan  in 2001 by the Japanese government. The site is located approximately five minutes on foot from Ogata on the Akita Nairiku Railway.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Ised%C5%8Dtai_Ruins",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -5600,11 +5831,11 @@
     "featured": false,
     "score": 60.75,
     "summary": {
-      "text": "入道埼灯台（にゅうどうさきとうだい）は、日本の灯台。秋田県男鹿市の男鹿半島北端に位置する。入道崎の突端に立つ白と黒の二色の大型灯台。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%85%A5%E9%81%93%E5%9F%BC%E7%81%AF%E5%8F%B0",
+      "text": "Nyudozaki Lighthouse (入道崎灯台, Nyūdōzaki tōdai), or Nyūdō Saki Lighthouse,  is a lighthouse on the northwest top of Oga Peninsula in the city of Oga, Akita Prefecture, Japan.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Ny%C5%ABd%C5%8Dzaki_Lighthouse",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -5825,11 +6056,11 @@
     "featured": false,
     "score": 52.32,
     "summary": {
-      "text": "八森岩館県立自然公園（はちもりいわだてけんりつしぜんこうえん）は、秋田県北部、八峰町沿岸部に位置する県立自然公園。1964年（昭和39年）7月16日指定。2004年に秋田白神県立自然公園が指定されたことで、一部の領域が変更された。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%85%AB%E6%A3%AE%E5%B2%A9%E9%A4%A8%E7%9C%8C%E7%AB%8B%E8%87%AA%E7%84%B6%E5%85%AC%E5%9C%92",
+      "text": "Hachimori Iwadate Prefectural Natural Park (八森岩館県立自然公園, Hachimori Iwadate kenritsu shizen kōen) is a Prefectural Natural Park in Akita Prefecture, Japan. Established in 1964, the park lies within the municipality of Happō (formerly within Hachimori).",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Hachimori_Iwadate_Prefectural_Natural_Park",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -6721,11 +6952,11 @@
     "featured": false,
     "score": 43.5,
     "summary": {
-      "text": "地蔵田遺跡（じぞうでんいせき）は、秋田県秋田市四ツ小屋末戸松本字地蔵田に所在する旧石器時代・縄文時代・弥生時代にかけての複合遺跡である。特に台地上に築かれた木柵に囲まれた弥生時代前期の集落として知られている。国の史跡に指定されている。日本初の「市民の手づくり史跡整備」の例としても知られる。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%9C%B0%E8%94%B5%E7%94%B0%E9%81%BA%E8%B7%A1",
+      "text": "The Jizōden ruins (地蔵田遺跡, Jizōden iseki) is an archaeological site containing the ruins of a large-scale Yayoi period settlement located in the Goshono neighborhood of the city of Akita in the Tōhoku region of Japan. It also contains artifacts from the Jōmon period and the Japanese Paleolithic periods. The site was designated a National Historic Site of Japan in 1996. The site is currently maintained as an archaeological park with some reconstructed buildings.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Jiz%C5%8Dden",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -7193,11 +7424,11 @@
     "featured": true,
     "score": 107.42,
     "summary": {
-      "text": "大湯環状列石（おおゆかんじょうれっせき）は、秋田県鹿角市十和田大湯にある縄文時代後期の大型の配石遺跡（ストーンサークル）。国の特別史跡に指定され、出土品は秋田県指定有形文化財に指定されている。2021年（令和3年）7月27日、「北海道・北東北の縄文遺跡群」の構成資産の一つとして世界遺産に登録された。環状石籬（かんじょうせきり）やストーンサークルとも呼ばれる。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E6%B9%AF%E7%92%B0%E7%8A%B6%E5%88%97%E7%9F%B3",
+      "text": "The Ōyu Stone Circles (大湯環状列石, Ōyu Kanjyō Resseki) is a late Jōmon period (approx. 2,000 – 1,500 BC) archaeological site in the city of Kazuno, Akita Prefecture, in the Tōhoku region of northern Japan.  The remains were designated a Special National Historic Site of Japan in 1956 by the Japanese government.  The site is located approximately ten minutes by car from Towada-Minami on the JR East Hanawa Line of the Towada Interchange on the Tohoku Expressway.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/%C5%8Cyu_Stone_Circles",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -7456,11 +7687,11 @@
     "featured": false,
     "score": 72.01,
     "summary": {
-      "text": "大館樹海ドーム（おおだてじゅかいドーム）は、秋田県大館市にあるドーム球場。施設は秋田県と大館市が所有し、一般財団法人大館市文教振興事業団が、県および市の委託を受けて運営管理を行っている。施設命名権（ネーミングライツ）契約により、2017年4月1日から愛称を「ニプロハチ公ドーム」としている（後述）。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E9%A4%A8%E6%A8%B9%E6%B5%B7%E3%83%89%E3%83%BC%E3%83%A0",
+      "text": "The Nipro Hachiko Dome (ニプロハチ公ドーム, Nipuro Hachikou Dōmu) is a large wooden stadium in Ōdate, Akita, in northern Japan. The stadium covers an area of 12,915 m2. It was completed in June 1997 and is made from 25,000 Akita cypress trees which are covered with a special double Teflon-coated membrane. This allows enough sunlight into the stadium so that during the day no artificial lights are needed.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Nipro_Hachiko_Dome",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -7509,11 +7740,11 @@
     "featured": false,
     "score": 61.45,
     "summary": {
-      "text": "大鳥井山遺跡（おおとりいやまいせき）または大鳥井柵跡（おおとりいさくあと）は、出羽国北部（現、秋田県域に相当）の横手盆地中部、現在の秋田県横手市新坂町・大鳥町にある平安時代の遺跡（居館跡）。2010年（平成22年）2月、国の史跡に指定された。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E9%B3%A5%E4%BA%95%E5%B1%B1%E9%81%BA%E8%B7%A1",
+      "text": "The Ōtoriiyama ruins (大鳥井山遺跡, Ōtoriiyama iseki) is an archaeological site containing a large Heian period jōsaku-style fortification located in what is now part of the city of Yokote, Akita in the Tōhoku region of Japan. The site was designated a National Historic Site of Japan in 2010.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/%C5%8Ctoriiyama_ruins",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -7631,11 +7862,11 @@
     "featured": false,
     "score": 62.78,
     "summary": {
-      "text": "天徳寺（てんとくじ）は、秋田県秋田市にある曹洞宗の寺院。本尊は聖観音。久保田藩（秋田藩）主佐竹家の菩提寺である。秋田県指定史跡。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%A4%A9%E5%BE%B3%E5%AF%BA_%28%E7%A7%8B%E7%94%B0%E5%B8%82%29",
+      "text": "Tentoku-ji (天徳寺) is a Buddhist temple located in the Izumimitakene neighborhood of the city of Akita, Akita Prefecture, Japan. It is a temple of the Sōtō school and its honzon is a statue of Sho-Kannon Bosatsu. The temple's full name is Mango-zan Tentoku-ji (萬固山 勝福寺). The temple is the bodaiji the Satake clan, daimyō of Kubota Domain in the Edo Period. Its grounds are designated an Akita Prefectural Historic Site.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Tentoku-ji",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -7697,7 +7928,7 @@
     "tags": [
       "神社"
     ],
-    "featured": false,
+    "featured": true,
     "score": 62.89,
     "summary": {
       "text": "太平山三吉神社（たいへいざんみよしじんじゃ）は、秋田県秋田市に鎮座する神社。山岳信仰の対象。太平山のふもとに里宮が、山頂に奥宮がある。",
@@ -7733,7 +7964,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11444958",
@@ -7756,11 +7987,11 @@
     "featured": false,
     "score": 57.26,
     "summary": {
-      "text": "奈曽の白滝（なそのしらたき）は、秋田県にかほ市にあり、すぐ近くには金峰神社がある。標高は150メートル。落差は26メートル。滝幅は11メートル。直瀑。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%A5%88%E6%9B%BD%E3%81%AE%E7%99%BD%E6%BB%9D",
+      "text": "Naso no Shirataki (奈曽の白滝, Naso no Shirataki) is a waterfall located in  Nikaho, Akita Prefecture, Japan. It became a nationally designated Place of Scenic Beauty in 1932. Although not selected as one of \"Japan’s Top 100 Waterfalls\", it was included in the listing of the \"100 New Tourist Attractions of Japan\" in a contest sponsored by the Mainichi Shinbun newspaper in 1950.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Naso_Falls",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [],
     "external_ids": {
@@ -7879,11 +8110,11 @@
     "featured": false,
     "score": 59.52,
     "summary": {
-      "text": "安の滝（やすのたき）は、秋田県北秋田市阿仁打当の中ノ又渓谷奥部に存在する落差約90メートルの滝。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%AE%89%E3%81%AE%E6%BB%9D",
+      "text": "Yasu Falls (安の滝, Yasu-no-taki) is a waterfall in the Ani district of Kitaakika, Akita Prefecture, Japan, on the Yoneshiro River. It was named one of Japan's Top 100 Waterfalls by the Japanese Ministry of the Environment in 1990.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Yasu_Falls",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -8541,11 +8772,11 @@
     "featured": false,
     "score": 67.37,
     "summary": {
-      "text": "秋田県立美術館 平野政吉コレクション（あきたけんりつびじゅつかん ひらのまさきちコレクション）は秋田県秋田市のエリアなかいち内にある美術館。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E7%A7%8B%E7%94%B0%E7%9C%8C%E7%AB%8B%E7%BE%8E%E8%A1%93%E9%A4%A8_%E5%B9%B3%E9%87%8E%E6%94%BF%E5%90%89%E3%82%B3%E3%83%AC%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%B3",
+      "text": "Akita Museum of Art (秋田県立美術館 平野政吉コレクション, Akita Kenritsu Bijutsukan Hirano Masakichi Collection) is an art museum in the city of Akita.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Akita_Museum_of_Art",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -9002,11 +9233,11 @@
     "featured": false,
     "score": 66.79,
     "summary": {
-      "text": "払田柵跡（ほったのさくあと）は、秋田県大仙市払田・仙北郡美郷町本堂城廻にある日本の古代城柵遺跡。国の史跡に指定されている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%89%95%E7%94%B0%E6%9F%B5%E8%B7%A1",
+      "text": "The Hotta-no-saku ruins (払田柵跡, Hotta-no-saku iseki) is an archaeological site containing the ruins of a large-scale Heian period josaku-style fortified settlement located in what is now part of the municipalities of Daisen and Misato in the Tōhoku region of Japan.  The site was designated a National Historic Site of Japan in 1931. The site is maintained  as an archaeological park with some reconstructed buildings.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Hotta-no-saku",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -9155,11 +9386,11 @@
     "featured": true,
     "score": 67.03,
     "summary": {
-      "text": "旧池田氏庭園（きゅういけだしていえん）は、秋田県大仙市高梨にある明治時代後期 - 大正時代作庭の日本庭園。当地の旧家で大地主であった池田家の庭園である。2004年（平成16年）2月27日に国の名勝に指定された。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%97%A7%E6%B1%A0%E7%94%B0%E6%B0%8F%E5%BA%AD%E5%9C%92",
+      "text": "The Former Ikeda Family Gardens (旧池田氏庭園) is a Japanese landscape garden and nationally designated Place of Scenic Beauty in the city of Daisen, Akita Prefecture, Japan. The garden contains a western-style mansion (now a library), which is an Important Cultural Property of Japan. The gardens are located 15 minutes by car from Ōmagari Station on the Akita Shinkansen.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Former_Ikeda_Family_Gardens",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -9208,11 +9439,11 @@
     "featured": false,
     "score": 61.88,
     "summary": {
-      "text": "旧秋田藩主佐竹氏別邸（きゅうあきたはんしゅさたけしべってい）は、秋田県秋田市旭川南町に所在する、久保田藩（秋田藩）主佐竹氏の別邸およびその庭園。附属茶屋を含む。通称「如斯亭（じょしてい）」の名は本来1棟の建物を指す名称であったが、今では建物をめぐる庭園を指す名称として用いられている。かつては「唐見殿（からみでん）」とも称された。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%97%A7%E7%A7%8B%E7%94%B0%E8%97%A9%E4%B8%BB%E4%BD%90%E7%AB%B9%E6%B0%8F%E5%88%A5%E9%82%B8",
+      "text": "The Joshitei (如斯亭), also known as the Former Akita Domain Satake Clan Villa Gardens  (旧秋田藩主佐竹氏別邸, kyū-Akita-han-shu Satake-shi bettei teien) is a Japanese landscape garden and nationally designated Place of Scenic Beauty in the city of Akita, Akita Prefecture, Japan.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Joshitei",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -9261,11 +9492,11 @@
     "featured": false,
     "score": 63.3,
     "summary": {
-      "text": "本荘城（ほんじょうじょう）は、秋田県由利本荘市にあった日本の城（平山城）。江戸時代には本荘藩の藩庁が置かれた。別名鶴舞城・尾崎城とも。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%9C%AC%E8%8D%98%E5%9F%8E",
+      "text": "Honjō Castle (本荘城, Honjō-jō) is a Japanese castle located in Yurihonjō, southern Akita Prefecture, Japan. At the end of the Edo period, Honjō Castle was home to the Rokugō clan, daimyō of Honjō Domain. The castle was also known as \"Tsurumai-jō\" (鶴舞城) or \"Ozaki-jō\" (尾崎城).",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Honj%C5%8D_Castle",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -9515,11 +9746,11 @@
     "featured": false,
     "score": 62.86,
     "summary": {
-      "text": "桧木内川（ひのきないがわ）は、秋田県を流れる一級河川。雄物川水系玉川の支流である。国の名勝に指定されている角館の桜並木が有名である。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%A1%A7%E6%9C%A8%E5%86%85%E5%B7%9D",
+      "text": "Hinokinai River Embankment  (檜木内川堤, Hinokinaikawa zutsumi) is a nationally designated Place of Scenic Beauty in the city of Semboku, Akita Prefecture, Japan.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Hinokinai_River_Embankment",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -9566,11 +9797,11 @@
     "featured": false,
     "score": 67.0,
     "summary": {
-      "text": "森吉山（もりよしざん）は、秋田県北秋田市に位置する標高1,454.2mの古い火山である。高山帯では多くの高山植物が咲乱れるため「花の百名山（NHK選・山と溪谷社選）」に選ばれている。向岳（むかいだけ）、秋田山（あきたやま）ともいう。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%A3%AE%E5%90%89%E5%B1%B1",
+      "text": "Mount Moriyoshi is an inactive volcano in Kitaakita, Akita Prefecture, Japan. The stratovolcano is basaltic-to-dacitic in composition. Its last eruptive activity is thought to be 1.1 million to 700 thousand years ago. The volcano appeared in the List of 100 Floral Mountains. The volcano contains about 300 species of alpine flora which has made it a tourist attraction.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Mount_Moriyoshi",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -10071,11 +10302,11 @@
     "featured": false,
     "score": 61.13,
     "summary": {
-      "text": "法体の滝（ほったいのたき）は、秋田県由利本荘市に位置する滝。子吉川の上流である赤沢川にある。法体の滝と甌穴は、1960年（昭和35年）12月17日に県の名勝および天然記念物の第1号に指定されている。日本の滝百選の一つ。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%B3%95%E4%BD%93%E3%81%AE%E6%BB%9D",
+      "text": "Hottai Falls (法体の滝, Hottai-no-taki) is a waterfall in the city of Yurihonjō, Akita Prefecture, Japan, on the Akasawa River, a tributary of the Koyoshi River system in the foothills of Mount Chōkai. It is one of \"Japan’s Top 100 Waterfalls\", in a listing published by the Japanese Ministry of the Environment in 1990.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Hottai_Falls",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -10882,11 +11113,11 @@
     "featured": false,
     "score": 53.83,
     "summary": {
-      "text": "真木真昼県立自然公園（まぎまひるけんりつしぜんこうえん）は、秋田県東部に位置する県立自然公園。1975年（昭和50年）指定。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E7%9C%9F%E6%9C%A8%E7%9C%9F%E6%98%BC%E7%9C%8C%E7%AB%8B%E8%87%AA%E7%84%B6%E5%85%AC%E5%9C%92",
+      "text": "Magi Mahiru Prefectural Natural Park (真木真昼県立自然公園, Magi Mahiru kenritsu shizen kōen) is a Prefectural Natural Park in Akita Prefecture, Japan.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Magi_Mahiru_Prefectural_Natural_Park",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [],
     "external_ids": {
@@ -11030,11 +11261,11 @@
     "featured": false,
     "score": 60.46,
     "summary": {
-      "text": "秋の宮温泉郷（あきのみやおんせんきょう）は、秋田県湯沢市（旧国出羽国、明治以降は羽後国）にある温泉郷。栗駒国定公園に位置する。1978年（昭和53年）に国民保養温泉地の指定をうけたほか、温泉郷とその周囲はゆざわジオパークのジオサイト「秋の宮温泉郷」に認定されている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E7%A7%8B%E3%83%8E%E5%AE%AE%E6%B8%A9%E6%B3%89%E9%83%B7",
+      "text": "The Akinomiya Hot Springs also known as Aki no Miya Onsenkyo is a thermal spring system and hot springs village in the Akinomiya Geothermal Area located along the western base of Mount Kurikoma in Akita Prefecture, Japan, (formerly Dewa Province, and after the Meiji era, Ugo Province). There are more than 50 hot springs and fumaroles in the area.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Akinomiya_Hot_Springs",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [],
     "external_ids": {
@@ -11346,11 +11577,11 @@
     "featured": false,
     "score": 65.9,
     "summary": {
-      "text": "秋田市大森山動物園（あきたしおおもりやまどうぶつえん）は、秋田県秋田市浜田字潟端にある秋田市立の動物園。愛称は「ミルヴェ」。命名権による愛称は「大森山動物園～あきぎんオモリンの森～」。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E7%A7%8B%E7%94%B0%E5%B8%82%E5%A4%A7%E6%A3%AE%E5%B1%B1%E5%8B%95%E7%89%A9%E5%9C%92",
+      "text": "The Akita Omoriyama Zoo (秋田市大森山動物園, Akitashi Omoriyama dōbutsuen), also known as “Milve”, is a municipal zoo opened in July 1967 in the city of Akita, Akita Prefecture, Japan.  Opened in 1972, the zoo covers 15 hectares, with 114 species on display. It is accredited by the Japanese Association of Zoos and Aquariums (JAZA).",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Akita_Omoriyama_Zoo",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -11527,11 +11758,11 @@
     "featured": false,
     "score": 60.26,
     "summary": {
-      "text": "秋田市立佐竹史料館（あきたしりつさたけしりょうかん）は、秋田県秋田市にある秋田藩や藩主の佐竹氏に関する資料を所蔵・展示する史料館。千秋公園の二の丸広場の近くに位置する。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E7%A7%8B%E7%94%B0%E5%B8%82%E7%AB%8B%E4%BD%90%E7%AB%B9%E5%8F%B2%E6%96%99%E9%A4%A8",
+      "text": "Satake Historical Museum (秋田市立佐竹史料館, Akita Shiritsu Satake Shiryōkan) opened in Akita, Akita Prefecture, Japan in 1990. Located in the grounds of Kubota Castle in Senshū Park (千秋公園), the collection relates to the Satake clan, daimyō of the Akita Domain.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Satake_Historical_Museum",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -11593,11 +11824,11 @@
     "featured": false,
     "score": 58.74,
     "summary": {
-      "text": "秋田市立千秋美術館（あきたしりつ せんしゅうびじゅつかん）は秋田総合生活文化会館・美術館（愛称：アトリオン）内に1989年（平成元年）に開館された公立美術館。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E7%A7%8B%E7%94%B0%E5%B8%82%E7%AB%8B%E5%8D%83%E7%A7%8B%E7%BE%8E%E8%A1%93%E9%A4%A8",
+      "text": "Akita Senshū Museum of Art (秋田市立千秋美術館, Akita Shiritsu Senshū Bijutsukan) opened in Akita, Japan in 1989.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Akita_Sensh%C5%AB_Museum_of_Art",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -11662,11 +11893,11 @@
     "featured": false,
     "score": 62.4,
     "summary": {
-      "text": "秋田市立赤れんが郷土館（あきたしりつあかれんがきょうどかん）は、秋田県秋田市にある市立の郷土史料館・美術館である。旧秋田銀行の本店として1912年（明治45年）に完成した赤れんが館（重要文化財）をメインに、新館、収蔵庫および少し離れたところにある分館、秋田市民俗芸能伝承館（通称ねぶり流し館）からなる。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E7%A7%8B%E7%94%B0%E5%B8%82%E7%AB%8B%E8%B5%A4%E3%82%8C%E3%82%93%E3%81%8C%E9%83%B7%E5%9C%9F%E9%A4%A8",
+      "text": "The Akita Akarenga Museum (秋田市立赤れんが郷土館, Akita shiritsu akarenga kyōdokan) is a museum of local history and culture in Akita, Japan.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Akita_Akarenga_Museum",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -11826,11 +12057,11 @@
     "featured": false,
     "score": 66.32,
     "summary": {
-      "text": "公益社団法人秋田犬保存会（あきたいぬほぞんかい）は、天然記念物である秋田犬の保護や繁殖などを目的とする公益社団法人。通称秋保（あきほ）。英語名はAkita Inu Preservation Society (AIPS)。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E7%A7%8B%E7%94%B0%E7%8A%AC%E4%BF%9D%E5%AD%98%E4%BC%9A",
+      "text": "The Akita Inu (秋田犬, Akita Inu, Akita Ken; Japanese pronunciation: [a.kʲi̥.ta(ꜜ) i.nɯ, -ta.keɴ]) is a Japanese dog breed of large size. Originating from the mountains of northern Japan, the Akita has a short double coat similar to that of many other northern spitz breeds.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Akita_Inu_Preservation_Society",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -11886,11 +12117,11 @@
     "featured": false,
     "score": 55.3,
     "summary": {
-      "text": "秋田白神県立自然公園（あきたしらかみけんりつしぜんこうえん）は、秋田県の北部に位置する県立自然公園。2004年（平成16年）8月24日指定。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E7%A7%8B%E7%94%B0%E7%99%BD%E7%A5%9E%E7%9C%8C%E7%AB%8B%E8%87%AA%E7%84%B6%E5%85%AC%E5%9C%92",
+      "text": "Akita Shirakami Prefectural Natural Park (秋田白神県立自然公園, Akita Shirakami kenritsu shizen kōen) is a Prefectural Natural Park in Akita Prefecture, Japan. Established in 2004, the park spans the borders of the municipalities of Fujisato and Happō, and takes its name from the Shirakami-Sanchi.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Akita_Shirakami_Prefectural_Natural_Park",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [],
     "external_ids": {
@@ -11928,11 +12159,11 @@
     "featured": false,
     "score": 61.53,
     "summary": {
-      "text": "秋田県立中央公園（あきたけんりつちゅうおうこうえん、英: Akita Prefectural Central Park）は、秋田県秋田市雄和に位置する都市公園（広域公園）である。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E7%A7%8B%E7%94%B0%E7%9C%8C%E7%AB%8B%E4%B8%AD%E5%A4%AE%E5%85%AC%E5%9C%92",
+      "text": "Akita Prefectural Central Park (Japanese: 秋田県立中央公園) is a group of sports facilities in Yuwa, Akita, Akita, Japan.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Akita_Prefectural_Central_Park",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -12032,11 +12263,11 @@
     "featured": false,
     "score": 59.7,
     "summary": {
-      "text": "秋田県立図書館（あきたけんりつとしょかん）は秋田県秋田市にある公共図書館である。秋田県教育委員会所管。1993年（平成5年）に開館した現施設は、秋田県公文書館（秋田県総務部所管）と建物を共用する。2012年度における蔵書冊数は約80万5,000冊。分館として秋田県立図書館あきた文学資料館が設置されている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E7%A7%8B%E7%94%B0%E7%9C%8C%E7%AB%8B%E5%9B%B3%E6%9B%B8%E9%A4%A8",
+      "text": "Akita Prefectural Library (秋田県立図書館, Akita Kenritsu Toshokan) opened in Akita, Akita Prefecture, Japan in 1899, and it is one of the oldest libraries in the country. The facilities reopened in a new building in 1993. The collection numbers some 805,000 items in 2012. 441,642 published material are available online through the library's digital archive. This was done through the AMLAD digital archiving service that connects it to other participating facilities in the prefecture.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Akita_Prefectural_Library",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -12220,11 +12451,11 @@
     "featured": false,
     "score": 68.1,
     "summary": {
-      "text": "秋田県立男鹿水族館（あきたけんりつおがすいぞくかん）は、秋田県男鹿市戸賀塩浜（男鹿半島）にある水族館。通称・男鹿水族館GAO（おがすいぞくかん ガオ）。指定管理者制度により、第三セクターの株式会社男鹿水族館が管理・運営している。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E7%A7%8B%E7%94%B0%E7%9C%8C%E7%AB%8B%E7%94%B7%E9%B9%BF%E6%B0%B4%E6%97%8F%E9%A4%A8",
+      "text": "Oga Aquarium Gao (男鹿水族館ガオ, Oga Suizokukan Gao), officially Akita Prefectural Oga Aquarium,  is a public aquarium located along Oga Peninsula coast, Oga, Akita Prefecture, Japan. GAO stands for Globe, Aqua and Ocean, with the imagery of the logo inspired by Namahage.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Oga_Aquarium_Gao",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -12337,11 +12568,11 @@
     "featured": false,
     "score": 61.93,
     "summary": {
-      "text": "秋田県立近代美術館（あきたけんりつきんだいびじゅつかん、英語: Akita Museum of Modern Art）は、秋田県横手市の「秋田ふるさと村」内に位置する県立の美術館。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E7%A7%8B%E7%94%B0%E7%9C%8C%E7%AB%8B%E8%BF%91%E4%BB%A3%E7%BE%8E%E8%A1%93%E9%A4%A8",
+      "text": "Akita Museum of Modern Art (秋田県立近代美術館, Akita Kenritsu Kindai Bijutsukan) opened in Yokote, Akita Prefecture, Japan in 1994 and houses an important collection of Akita ranga .",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Akita_Museum_of_Modern_Art",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -13175,11 +13406,11 @@
     "featured": false,
     "score": 62.31,
     "summary": {
-      "text": "花輪スキー場（はなわスキーじょう）は、秋田県鹿角市花輪で1954年（昭和29年）に開業したスキー場である。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E8%8A%B1%E8%BC%AA%E3%82%B9%E3%82%AD%E3%83%BC%E5%A0%B4",
+      "text": "Alpas (Japanese: アルパス) is a group of sports facilities in Kazuno, Akita, Japan. Full-scale alpine, jumping ski, cross-country skiing  and Nordic combined competitions can be held in one place.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Alpas",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -13302,7 +13533,7 @@
       "ja": "藤里駒ヶ岳",
       "kana": "ふじさとこまがたけ",
       "romaji": "Fujisatokomagatake",
-      "zh_tw": "藤里駒岳",
+      "zh_tw": "藤裡駒嶽",
       "en": "Mount Fujisato-Komagatake"
     },
     "kana_source": "wikipedia",
@@ -13338,7 +13569,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11625496",
@@ -13527,11 +13758,11 @@
     "featured": false,
     "score": 38.08,
     "summary": {
-      "text": "由利本荘市西目カントリーパークサッカー場（ゆりほんじょうしにしめカントリーパークサッカーじょう）は、秋田県由利本荘市西目町出戸の西目カントリーパーク内にあるサッカー専用の球技場である。西目サッカー場とも呼ばれる。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E7%94%B1%E5%88%A9%E6%9C%AC%E8%8D%98%E5%B8%82%E8%A5%BF%E7%9B%AE%E3%82%AB%E3%83%B3%E3%83%88%E3%83%AA%E3%83%BC%E3%83%91%E3%83%BC%E3%82%AF%E3%82%B5%E3%83%83%E3%82%AB%E3%83%BC%E5%A0%B4",
+      "text": "Nishime Country Park Soccer Field (由利本荘市西目カントリーパークサッカー場, Yurihonjoshi Nishime Kantori Paku Sakkajo)  is a football stadium in Nishime, Yurihonjo, Akita Prefecture, Japan. The stadium has a capacity of 4,328 and was the home ground of J3 League club Blaublitz Akita.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Nishime_Country_Park_Soccer_Field",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -14703,7 +14934,7 @@
       "ja": "道の駅岩城",
       "kana": "みちのえきいわき",
       "romaji": "Michinoekiiwaki",
-      "zh_tw": "道之驛岩城",
+      "zh_tw": "道之驛巖城",
       "en": "Roadside station Iwaki"
     },
     "kana_source": "wikipedia",
@@ -14759,7 +14990,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11641507",
@@ -16829,11 +17060,11 @@
     "featured": false,
     "score": 54.12,
     "summary": {
-      "text": "太平山県立自然公園（たいへいざんけんりつしぜんこうえん）は、秋田県のほぼ中央部に位置する県立自然公園。1972年（昭和47年）7月15日指定。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%A4%AA%E5%B9%B3%E5%B1%B1%E7%9C%8C%E7%AB%8B%E8%87%AA%E7%84%B6%E5%85%AC%E5%9C%92_%28%E7%A7%8B%E7%94%B0%E7%9C%8C%29",
+      "text": "Taiheizan Prefectural Natural Park (太平山県立自然公園, Taiheizan kenritsu shizen kōen) is a Prefectural Natural Park in Akita Prefecture, Japan. Established in 1972, the park spans the borders of the municipalities of Akita, Gojōme, and Kamikoani, and takes its name from Mount Taihei (太平山).",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Taiheizan_Prefectural_Natural_Park_%28Akita%29",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [],
     "external_ids": {
@@ -16975,11 +17206,11 @@
     "featured": false,
     "score": 58.71,
     "summary": {
-      "text": "長走風穴（ながばしりふうけつ）とは、秋田県大館市長走にある風穴である。風穴周辺の標高は約165メートルと、比較的低い標高帯であるにもかかわらず、風穴から吹き出る冷たい風の影響により、周囲の植生とは明らかに区別できる高山性の植物が生育しており、指定名称長走風穴高山植物群落として1926年（大正15年）2月24日に国の天然記念物に指定されている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E9%95%B7%E8%B5%B0%E9%A2%A8%E7%A9%B4",
+      "text": "The Nagabashiri Wind Caves (長走風穴, Nagabashiri fūketsu) are a system of talus caves about 15 km (9.3 mi) north of Ōdate along Japan National Route 7.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Nagabashiri_Wind_Caves",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [],
     "external_ids": {
@@ -17453,11 +17684,11 @@
     "featured": false,
     "score": 56.51,
     "summary": {
-      "text": "素波里ダム（すばりダム）は、秋田県山本郡藤里町粕毛字鹿瀬内沢の米代川水系粕毛川に建設された洪水調節・灌漑・発電を目的とした多目的ダムである。ダム湖は素波里湖（すばりこ）と名付けられている。総事業費約5億、県営としては萩形ダムに続いて2番目となる。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E7%B4%A0%E6%B3%A2%E9%87%8C%E3%83%80%E3%83%A0",
+      "text": "Subari Dam is a gravity dam located in Akita Prefecture in Japan. The dam is used for flood control, irrigation and power production. The catchment area of the dam is 100 km2. The dam impounds about 192  ha of land when full and can store 42500 thousand cubic meters of water. The construction of the dam was started on 1966 and completed in 1970.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Subari_Dam",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -18401,11 +18632,11 @@
     "featured": false,
     "score": 67.39,
     "summary": {
-      "text": "角館城（かくのだてじょう）は、秋田県仙北市の角館地域にあった日本の城（山城）。別名、小松山城。戦国時代に戸沢氏の本拠地があったことで知られている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E8%A7%92%E9%A4%A8%E5%9F%8E",
+      "text": "Kakunodate Castle (角館城, Kakunodate-jō), also known as Asakura Castle and Ryugasaki Castle, was a mountaintop castle (yamashiro) located in Kakunodate, Akita Prefecture, Japan. Its roots can be traced to when Moriyasu Tozawa was given the area in 1590, though it may have been constructed prior to this. Due to a Shogunal decree that each domain was to retain only one castle, it was demolished in 1620. Only ruins remain at the site on Mount Furushiro.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Kakunodate_Castle",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -18610,11 +18841,11 @@
     "featured": false,
     "score": 66.67,
     "summary": {
-      "text": "秋田焼山（あきたやけやま）は、秋田県の北東部に位置し、鹿角市と仙北市との境界にある活火山である。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E7%A7%8B%E7%94%B0%E7%84%BC%E5%B1%B1",
+      "text": "Akita-Yake-Yama is a small stratovolcano in Akita Prefecture, Japan, that is known for its radioactive waters. A small parasitic lava dome is located four kilometers from the volcano.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Akita-Yakeyama",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -19722,11 +19953,11 @@
     "featured": false,
     "score": 58.96,
     "summary": {
-      "text": "鷹の湯温泉（たかのゆおんせん）は秋田県湯沢市秋ノ宮にある温泉。秋ノ宮温泉郷のひとつである。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E9%B7%B9%E3%81%AE%E6%B9%AF%E6%B8%A9%E6%B3%89",
+      "text": "Takanoyu Onsen (鷹の湯温泉) is one of several hot springs in the Akinomiya Hot Springs area of the city of Yuzawa,  in southern Akita Prefecture. The onsen is nestled in a small gorge along the banks of the Yakunai River. Because of its secluded location, it is referred to as a Hitou, or hidden hot spring.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Takanoyu_Onsen",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [],
     "external_ids": {
@@ -19766,11 +19997,11 @@
     "featured": false,
     "score": 75.2,
     "summary": {
-      "text": "玉川温泉（たまがわおんせん）は、秋田県仙北市（旧国出羽国、明治以降は羽後国）にある温泉。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E7%8E%89%E5%B7%9D%E6%B8%A9%E6%B3%89_%28%E7%A7%8B%E7%94%B0%E7%9C%8C%29",
+      "text": "Tamagawa Hot Spring (玉川温泉, Tamagawa onsen)  is  a hot spring located in the city of Semboku, Akita in northern Japan.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Tamagawa_Hot_Spring",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [],
     "external_ids": {
@@ -19806,11 +20037,11 @@
     "featured": false,
     "score": 59.91,
     "summary": {
-      "text": "大深温泉（おおぶかおんせん）は、秋田県仙北市大深沢（旧国出羽国、明治以降は羽後国）にある温泉。八幡平温泉郷の一部として国民保養温泉地に指定されている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E6%B7%B1%E6%B8%A9%E6%B3%89",
+      "text": "Ōfuka onsen (大深温泉, Ōfuka onsen) is an onsen (hot spring) in Semboku, Akita, Japan. It is closed as of 2025 with no confirmed reopening date.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/%C5%8Cfuka_Onsen",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -19975,11 +20206,11 @@
     "featured": false,
     "score": 54.57,
     "summary": {
-      "text": "森吉山県立自然公園（もりよしざんけんりつしぜんこうえん）は、秋田県中北部に位置する県立自然公園。1968年10月1日に指定された。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%A3%AE%E5%90%89%E5%B1%B1%E7%9C%8C%E7%AB%8B%E8%87%AA%E7%84%B6%E5%85%AC%E5%9C%92",
+      "text": "Moriyoshizan Prefectural Natural Park (森吉山県立自然公園, Moriyoshizan  kenritsu shizen kōen) is a Prefectural Natural Park in Akita Prefecture, Japan. Established in 1968, the park lies within the municipality of Kitaakita, and takes its name from Mount Moriyoshi (森吉山).",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Moriyoshizan_Prefectural_Natural_Park",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [],
     "external_ids": {
@@ -20136,11 +20367,11 @@
     "featured": false,
     "score": 62.6,
     "summary": {
-      "text": "老犬神社（ろうけんじんじゃ）とは、秋田県大館市葛原にある神社。伝説のマタギ犬を祀っている。神社には多くの犬の像や絵馬、写真が奉納されていて、「秋田犬」の字も見える。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E8%80%81%E7%8A%AC%E7%A5%9E%E7%A4%BE",
+      "text": "Rōken Shrine (老犬神社, Rōken jinja) is a small Shintō shrine in Ōdate, Akita Prefecture, Japan dedicated to dogs.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/R%C5%8Dken_Shrine",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -20199,11 +20430,11 @@
     "featured": false,
     "score": 55.6,
     "summary": {
-      "text": "仙北市立角館樺細工伝承館（せんぼくしりつかくのだてかばざいくでんしょうかん）は、秋田県仙北市に所在する観光施設である。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E4%BB%99%E5%8C%97%E5%B8%82%E7%AB%8B%E8%A7%92%E9%A4%A8%E6%A8%BA%E7%B4%B0%E5%B7%A5%E4%BC%9D%E6%89%BF%E9%A4%A8",
+      "text": "Kakunodate Kabazaiku Museum (仙北市立角館樺細工伝承館, Senboku Shiritsu Kakunodate Kabazaiku Denshōkan), also known in English as Kakunodate Cherry Bark Work Museum, opened in Kakunodate, now Semboku, Akita Prefecture, Japan in 1978. Dedicated to the traditional craft of kabazaiku, there are also displays on other local crafts, including Shiraiwa-yaki ceramics, Kakunodate-shunkei lacquerware, and Itaya-zaiku maple wickerwork.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Kakunodate_Kabazaiku_Museum",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {

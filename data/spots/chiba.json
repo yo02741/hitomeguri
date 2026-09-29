@@ -152,11 +152,11 @@
     "featured": false,
     "score": 57.7,
     "summary": {
-      "text": "山崎貝塚（やまざきかいづか）は、千葉県野田市山崎貝塚町にある、縄文時代中期から晩期にかけての馬蹄型貝塚である。国の史跡に指定されている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%B1%B1%E5%B4%8E%E8%B2%9D%E5%A1%9A_%28%E5%8D%83%E8%91%89%E7%9C%8C%29",
+      "text": "The Yamazaki Shell Midden (山崎貝塚, Yamazaki kaizuka) is an archaeological site in the Yamazaki-Kaizuka neighborhood of the city of Noda, Chiba Prefecture, in the Kantō region of Japan containing a Jōmon period  shell midden and settlement ruin. The site was designated a National Historic Site of Japan in 1976, with the area under designation expanded in 1995.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Yamazaki_Shell_Mound",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -201,6 +201,57 @@
     ],
     "status": "published",
     "updated_at": "2026-09-28"
+  },
+  {
+    "id": "wd-Q108380468",
+    "name": {
+      "ja": "髙梨氏庭園",
+      "zh_tw": "髙梨氏庭園",
+      "en": "Takanashi Gardens"
+    },
+    "location": {
+      "lat": 35.938333,
+      "lng": 139.856667
+    },
+    "prefecture": "chiba",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "庭園",
+      "名勝"
+    ],
+    "featured": false,
+    "score": 57.33,
+    "summary": {
+      "text": "Takanashi family garden (髙梨氏庭園, Takanashi-shi teien) is a Japanese landscape garden and nationally designated Place of Scenic Beauty located in the city of Noda, Chiba Prefecture, Japan.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Takanashi_Family_Gardens",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "野田市",
+          "kana": "のだし",
+          "romaji": "Nodashi",
+          "en": "Nodashi"
+        },
+        "distance_m": 1390
+      }
+    ],
+    "images": [],
+    "external_ids": {
+      "wikidata": "Q108380468"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q108380468",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q10851563",
@@ -353,6 +404,55 @@
     ],
     "status": "published",
     "updated_at": "2026-09-28"
+  },
+  {
+    "id": "wd-Q109359412",
+    "name": {
+      "ja": "佐倉草ぶえの丘",
+      "kana": "さくらくさぶえのおか",
+      "romaji": "Sakurakusabuenoka",
+      "zh_tw": "佐倉草ぶえの丘",
+      "en": "Sakura Kusabue no oka"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 35.747139,
+      "lng": 140.212722
+    },
+    "prefecture": "chiba",
+    "kind": "major",
+    "themes": [],
+    "tags": [],
+    "featured": false,
+    "score": 57.36,
+    "summary": {
+      "text": "佐倉草ぶえの丘（さくらくさぶえのおか、英: Sakura Kusabue-no-Oka）は、千葉県佐倉市にあるレジャー施設である。単に草ぶえの丘とも呼ばれる。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E4%BD%90%E5%80%89%E8%8D%89%E3%81%B6%E3%81%88%E3%81%AE%E4%B8%98",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "images": [],
+    "external_ids": {
+      "wikidata": "Q109359412",
+      "osm": "way/1213478106"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q109359412",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.openstreetmap.org/way/1213478106",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E4%BD%90%E5%80%89%E8%8D%89%E3%81%B6%E3%81%88%E3%81%AE%E4%B8%98",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q109595653",
@@ -525,7 +625,7 @@
       "ja": "麻雀博物館",
       "kana": "まーじゃんはくぶつかん",
       "romaji": "Majanhakubutsukan",
-      "zh_tw": "麻将博物馆",
+      "zh_tw": "麻將博物館",
       "en": "Mahjong Museum"
     },
     "kana_source": "wikipedia",
@@ -568,7 +668,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11187238",
@@ -1298,6 +1398,52 @@
     "updated_at": "2026-09-28"
   },
   {
+    "id": "wd-Q113009676",
+    "name": {
+      "ja": "矢作城",
+      "kana": "やはぎじょう",
+      "romaji": "Yahagijo",
+      "zh_tw": "矢作城",
+      "en": "Yahagi Castle"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 35.871861,
+      "lng": 140.487583
+    },
+    "prefecture": "chiba",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "城"
+    ],
+    "featured": false,
+    "score": 57.34,
+    "summary": {
+      "text": "矢作城（やはぎじょう）、または大崎城（おおさきじょう）は、千葉県香取市大崎にあった日本の城。「大崎城跡」として香取市指定史跡。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E7%9F%A2%E4%BD%9C%E5%9F%8E",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "images": [],
+    "external_ids": {
+      "wikidata": "Q113009676"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q113009676",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E7%9F%A2%E4%BD%9C%E5%9F%8E",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
+  },
+  {
     "id": "wd-Q11308174",
     "name": {
       "ja": "イオン新浦安ショッピングセンター",
@@ -1436,11 +1582,11 @@
     "featured": false,
     "score": 72.74,
     "summary": {
-      "text": "ファイターズ鎌ケ谷スタジアム（ファイターズかまがやスタジアム）は、千葉県鎌ケ谷市にある野球場である。北海道日本ハムファイターズ二軍が専用球場（本拠地）として使用している。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E3%83%95%E3%82%A1%E3%82%A4%E3%82%BF%E3%83%BC%E3%82%BA%E9%8E%8C%E3%82%B1%E8%B0%B7%E3%82%B9%E3%82%BF%E3%82%B8%E3%82%A2%E3%83%A0",
+      "text": "Fighters Kamagaya Stadium is a stadium located in Kamagaya, Chiba Prefecture, Japan, and is primarily used for baseball. It is home to the Kamagaya Fighters, the Eastern League farm squad of the Hokkaido Nippon-Ham Fighters of the NPB. The stadium is also used as a training facility for the Fighters.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Fighters_Kamagaya_Stadium",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -1727,11 +1873,11 @@
     "featured": false,
     "score": 57.55,
     "summary": {
-      "text": "三島ダム（みしまダム）は、千葉県君津市の二級河川・小糸川に建設されたダム。灌漑目的で作られた堤高25.3メートルのアースダムで、ダム湖の名称は三島湖（みしまこ）。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E4%B8%89%E5%B3%B6%E3%83%80%E3%83%A0",
+      "text": "Mishima Dam is an earthfill dam located in Chiba Prefecture in Japan. The dam is used for irrigation. The catchment area of the dam is 26.1 km2. The dam impounds about 72  ha of land when full and can store 5400 thousand cubic meters of water. The construction of the dam was completed in 1955.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Mishima_Dam_%28Chiba%29",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -1832,11 +1978,11 @@
     "featured": false,
     "score": 66.01,
     "summary": {
-      "text": "上総国分寺（かずさこくぶんじ）は、千葉県市原市にある真言宗豊山派の寺院。山号は医王山。院号は清浄院。本尊は薬師如来。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E4%B8%8A%E7%B7%8F%E5%9B%BD%E5%88%86%E5%AF%BA",
+      "text": "Kazusa Kokubun-ji (上総国分寺) is a Buddhist temple located in the city of Ichihara, Chiba, Japan. It belongs to the Shingon-shu Buzan-ha sect, and its honzon is a statue of Yakushi Nyōrai.  It is the  provincial temple (\"kokubunji\") of former Kazusa Province. The present temple is of uncertain foundation, but claims to be the direct descendant of the original Nara period kokubunji temple which fell into ruins sometime in the Muromachi period.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Kazusa_Kokubun-ji",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -1896,11 +2042,11 @@
     "featured": false,
     "score": 62.47,
     "summary": {
-      "text": "上総国分尼寺跡（かずさこくぶんにじあと）は、千葉県市原市国分寺台中央3丁目にある古代寺院跡。国の史跡に指定されている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E4%B8%8A%E7%B7%8F%E5%9B%BD%E5%88%86%E5%B0%BC%E5%AF%BA%E8%B7%A1",
+      "text": "The Kazusa Kokubun-niji (上総国分尼寺跡) is the ruins of a Buddhist nunnery located in the city of Ichihara, Chiba, Japan, which was part of the  provincial temple complex (\"kokubunji\") of former Kazusa Province.The temple ruins were designated a National Historic Site in 1983, with the area under protection expanded in 1985.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Kazusa_Kokubunni-ji",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -2005,11 +2151,11 @@
     "featured": false,
     "score": 59.22,
     "summary": {
-      "text": "下総小金中野牧跡（しもうさこがねなかのまきあと）は、江戸幕府が軍馬育成のための放牧場として現在の千葉県北西部に設置した中野牧の一部。中野牧は、小金五牧最大の牧で、現在の松戸市・柏市・鎌ケ谷市・白井市にまたがって広がり、かつて小金五牧の中核をなした牧であった。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E4%B8%8B%E7%B7%8F%E5%B0%8F%E9%87%91%E4%B8%AD%E9%87%8E%E7%89%A7%E8%B7%A1",
+      "text": "The Shimōsa Kogane Nakano ranch  (下総小金中野牧跡, Shimōsa kogane nakano makiato)  was a government-operated horse ranch during he Edo Period of Japan, which operated to supply cavalry mounts for the Tokugawa shogunate. It was located in what is now part of the city of Kamagaya, Chiba Prefecture in the Kantō region of Japan. The location was designated a National Historic Site of Japan in 2007.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Shim%C5%8Dsa_Kogane_Nakano_Pasture",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -2277,11 +2423,11 @@
     "featured": false,
     "score": 63.93,
     "summary": {
-      "text": "亀山ダム（かめやまダム）は、千葉県君津市の二級河川・小櫃川に建設されたダム。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E4%BA%80%E5%B1%B1%E3%83%80%E3%83%A0",
+      "text": "Kameyama Dam is a gravity dam located in Chiba Prefecture in Japan. The dam is used for flood control and water supply. The catchment area of the dam is 69.7 km2. The dam impounds about 139  ha of land when full and can store 14750 thousand cubic meters of water. The construction of the dam was started on 1969 and completed in 1980.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Kameyama_Dam",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -2506,7 +2652,7 @@
     "kind": "major",
     "themes": [],
     "tags": [],
-    "featured": false,
+    "featured": true,
     "score": 81.46,
     "summary": {
       "text": "福田電子競技場是位於日本千葉縣千葉市蘇我運動公園內的多功能足球場，為日本職業足球聯賽球隊市原千葉JEF聯的主場。該場館以醫療設備製造商福田電子（日語：フクダ電子）冠名，官方正式名稱為千葉市蘇我球技場。",
@@ -2548,7 +2694,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11374159",
@@ -3511,6 +3657,80 @@
     "updated_at": "2026-09-28"
   },
   {
+    "id": "wd-Q11405889",
+    "name": {
+      "ja": "千葉ポートパーク",
+      "kana": "ちばぽーとぱーく",
+      "romaji": "Chibapotopaku",
+      "zh_tw": "千葉港公園",
+      "en": "Chiba Port Park"
+    },
+    "kana_source": "wikidata",
+    "location": {
+      "lat": 35.599078,
+      "lng": 140.100017
+    },
+    "prefecture": "chiba",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "公園"
+    ],
+    "featured": false,
+    "score": 57.2,
+    "summary": {
+      "text": "千葉ポートパーク（ちばポートパーク）は、千葉県千葉市中央区中央港にある県立の港湾環境整備施設（港湾緑地）である。指定管理者制度に基づき、塚原緑地研究所が管理・運営を行っている。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E5%8D%83%E8%91%89%E3%83%9D%E3%83%BC%E3%83%88%E3%83%91%E3%83%BC%E3%82%AF",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "千葉みなと",
+          "kana": "ちばみなと",
+          "romaji": "Chiba-Minato",
+          "en": "Chiba-Minato"
+        },
+        "distance_m": 890
+      },
+      {
+        "name": {
+          "ja": "市役所前",
+          "kana": "しやくしょまえ",
+          "romaji": "Shiyakushomae",
+          "en": "Shiyakushomae"
+        },
+        "distance_m": 1150
+      }
+    ],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/af/Chiba_Port_Park_20111028-004.jpg/960px-Chiba_Port_Park_20111028-004.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "掬茶",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Chiba_Port_Park_20111028-004.jpg"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q11405889",
+      "osm": "way/23991750"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q11405889",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.openstreetmap.org/way/23991750",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
+  },
+  {
     "id": "wd-Q11405927",
     "name": {
       "ja": "千葉公園",
@@ -3612,11 +3832,11 @@
     "featured": false,
     "score": 70.99,
     "summary": {
-      "text": "千葉市動物公園（ちばしどうぶつこうえん、英:Chiba Zoological Park）は、千葉県千葉市若葉区源町280番地にある動物公園である。立ち姿で有名なレッサーパンダの「風太」を飼育することで知られる。房総の魅力500選に選定されている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%8D%83%E8%91%89%E5%B8%82%E5%8B%95%E7%89%A9%E5%85%AC%E5%9C%92",
+      "text": "The Chiba Zoological Park is located in Chiba Prefecture, east of Tokyo, Japan, and near the shore of Tokyo Bay. The park can be accessed by the Chiba Monorail and is open between 9:30am and 4:30pm.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Chiba_Zoological_Park",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -4624,11 +4844,11 @@
     "featured": false,
     "score": 62.0,
     "summary": {
-      "text": "堀之内貝塚（ほりのうちかいづか）は、千葉県市川市堀之内にある縄文時代後期から晩期の貝塚および環状集落の遺跡。国の史跡に指定されている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%A0%80%E4%B9%8B%E5%86%85%E8%B2%9D%E5%A1%9A",
+      "text": "The Horinouchi Shell Midden (堀之内貝塚, Horinouchi kaizuka) is an archaeological site in the Horinouchi neighborhood of the city of Ichikawa, Chiba Prefecture, in the Kantō region of Japan containing a Jōmon period  shell midden and settlement ruin. The site was designated a National Historic Site of Japan in 1964, with the area under designation expanded in 1967 and again in 1972.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Horinouchi_Shell_Mound",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -5292,6 +5512,55 @@
     "updated_at": "2026-09-28"
   },
   {
+    "id": "wd-Q11446940",
+    "name": {
+      "ja": "妙泉寺",
+      "kana": "みょうせんじ",
+      "romaji": "Myosenji",
+      "zh_tw": "妙泉寺",
+      "en": "Myōsen-ji Temple"
+    },
+    "kana_source": "wikidata",
+    "location": {
+      "lat": 35.572167,
+      "lng": 140.289083
+    },
+    "prefecture": "chiba",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "寺院"
+    ],
+    "featured": false,
+    "score": 57.25,
+    "summary": {
+      "text": "大乘山妙泉寺（みょうせんじ）、または關叡山德道寺（とくどうじ）は、千葉県東金市山田にある天台宗系の寺院である。山号は関叡山。千葉厄除け不動尊の通称で知られ、祈願寺で初詣(新年初詣祈願大祭)には多くの参拝客で賑わう。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E5%A6%99%E6%B3%89%E5%AF%BA_%28%E6%9D%B1%E9%87%91%E5%B8%82%29",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/62/%E5%8D%83%E8%91%89%E5%8E%84%E9%99%A4%E3%81%91%E4%B8%8D%E5%8B%95%E5%B0%8A_%E5%A4%A7%E5%AE%89_%E7%A5%9D%E7%A5%B7_02.jpg/960px-%E5%8D%83%E8%91%89%E5%8E%84%E9%99%A4%E3%81%91%E4%B8%8D%E5%8B%95%E5%B0%8A_%E5%A4%A7%E5%AE%89_%E7%A5%9D%E7%A5%B7_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Fourseasonsak",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:%E5%8D%83%E8%91%89%E5%8E%84%E9%99%A4%E3%81%91%E4%B8%8D%E5%8B%95%E5%B0%8A_%E5%A4%A7%E5%AE%89_%E7%A5%9D%E7%A5%B7_02.jpg"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q11446940"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q11446940",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
+  },
+  {
     "id": "wd-Q11447235",
     "name": {
       "ja": "姉埼神社",
@@ -5380,11 +5649,11 @@
     "featured": false,
     "score": 65.35,
     "summary": {
-      "text": "姥山貝塚（うばやまかいづか）は、千葉県市川市柏井町一丁目にある縄文時代中期から後期にかけての貝塚を伴う環状集落の遺跡。大柏川左岸の標高約24メートルの台地上に広がった東西130メートル・南北120メートルの南に開口した馬蹄形の貝塚である。現在は、姥山貝塚公園として整備され、国の史跡に指定されている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%A7%A5%E5%B1%B1%E8%B2%9D%E5%A1%9A",
+      "text": "The Ubayama Shell Mound (姥山貝塚, Ubayama kaizuka) is an archaeological site in the Kashiwai neighborhood of the city of Ichikawa, Chiba Prefecture, in the Kantō region of Japan, containing a mid-to-late Jōmon period  shell midden, designated a National Historic Site of Japan in 1967.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Ubayama_Shell_Mound",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -5572,11 +5841,11 @@
     "featured": false,
     "score": 69.24,
     "summary": {
-      "text": "富津岬（ふっつみさき）は、千葉県富津市の東京湾に突出する岬（砂嘴）。南房総国定公園に含まれる景勝地。岬一帯は千葉県立富津公園として整備され、日本の白砂青松100選、関東の富士見百景に選定されている。岬北側の富津干潟（ふっつひがた）は日本の重要湿地500指定地に含まれる。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%AF%8C%E6%B4%A5%E5%B2%AC",
+      "text": "Cape Futtsu (富津岬, Futtsu-misaki?) is a cape located east of Tokyo Bay in Futtsu, Chiba, Japan. The entire area in the cape has been developed as Chiba Prefectural Futtsu Park, and has been selected as one of Japan's Top 100 White Sand and Green Pines and one of Kanto's Top 100 Views of Fuji. Futtsu Tidal Flat on the north side of Cape Futtsu is included in Japan's 500 important wetlands.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Cape_Futtsu",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -5765,11 +6034,11 @@
     "featured": false,
     "score": 64.22,
     "summary": {
-      "text": "小御門神社（こみかどじんじゃ）は、千葉県成田市名古屋にある神社である。旧社格は別格官幣社。建武中興十五社の一社である。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%B0%8F%E5%BE%A1%E9%96%80%E7%A5%9E%E7%A4%BE",
+      "text": "Komikado Shrine (小御門神社, Komikado jinja) is a Shinto shrine located in Narita, Chiba Prefecture, Japan. Its main festival is held annually on April 29. It was founded in 1882, and enshrines the kami of Kazan'in Morokata. It is one of the Fifteen Shrines of the Kenmu Restoration.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Komikado_Shrine",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -6443,11 +6712,11 @@
     "featured": false,
     "score": 64.5,
     "summary": {
-      "text": "幕張インターナショナルスクール（Makuhari International School）は、千葉県千葉市美浜区若葉三丁目にある私立幼稚園・小学校。通称は「MIS」。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%B9%95%E5%BC%B5%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%BC%E3%83%8A%E3%82%B7%E3%83%A7%E3%83%8A%E3%83%AB%E3%82%B9%E3%82%AF%E3%83%BC%E3%83%AB",
+      "text": "Makuhari International School (幕張インターナショナルスクール) is a private international school located in Wakaba, Mihama-ku, Chiba in Chiba Prefecture, Japan, accepting children from age 3 to 12 in grades K-6. The school caters primarily to Japanese returnees, dual nationality and foreign children moving to this part of Japan. It is the first international primary school in Japan to be recognized as a school under Article 1 of the School Education Law.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Makuhari_International_School",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -6816,6 +7085,62 @@
     "updated_at": "2026-09-28"
   },
   {
+    "id": "wd-Q11487345",
+    "name": {
+      "ja": "弘文洞跡",
+      "kana": "こうぶんどうあと",
+      "romaji": "Kobundoato",
+      "zh_tw": "弘文洞蹟",
+      "en": "Kōbundō Ruins"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 35.251667,
+      "lng": 140.159444
+    },
+    "prefecture": "chiba",
+    "kind": "major",
+    "themes": [],
+    "tags": [],
+    "featured": false,
+    "score": 57.25,
+    "summary": {
+      "text": "弘文洞跡（こうぶんどうあと）は、千葉県夷隅郡大多喜町にある、夕木川（養老川水系の支流）を川廻しした際に造られた隧道の跡である。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E5%BC%98%E6%96%87%E6%B4%9E%E8%B7%A1",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2e/Kobundo-01.jpg/960px-Kobundo-01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "辰之進",
+        "license": "Public domain",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Kobundo-01.jpg"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q11487345",
+      "osm": "node/4681425196"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q11487345",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.openstreetmap.org/node/4681425196",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E5%BC%98%E6%96%87%E6%B4%9E%E8%B7%A1",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
+  },
+  {
     "id": "wd-Q11487359",
     "name": {
       "ja": "弘法寺",
@@ -6938,7 +7263,7 @@
     "name": {
       "ja": "成田ゆめ牧場",
       "kana": "なりたゆめぼくじょう",
-      "romaji": "Narita Yume-Bokujō",
+      "romaji": "Naritayumebokujo",
       "zh_tw": "成田夢牧場",
       "en": "Narita Dream Farm"
     },
@@ -7240,6 +7565,76 @@
     "updated_at": "2026-09-28"
   },
   {
+    "id": "wd-Q11501293",
+    "name": {
+      "ja": "新京成鉄道模型館",
+      "kana": "しんけいせいてつどうもけいかん",
+      "romaji": "Shinkeiseitetsudomokeikan",
+      "zh_tw": "新京成鐵道模型館"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 35.789667,
+      "lng": 139.916472
+    },
+    "prefecture": "chiba",
+    "kind": "major",
+    "themes": [],
+    "tags": [],
+    "featured": false,
+    "score": 57.06,
+    "summary": {
+      "text": "新京成鉄道模型館（しんけいせいてつどうもけいかん）は、千葉県松戸市の新京成電鉄新京成線（後の京成松戸線）上本郷駅の駅ビル内にあった博物館型体験施設。新京成電鉄の子会社である新京成フロンティア企画（現・京成フロンティア企画）が運営していた。2003年（平成15年）4月15日にオープン、2012年（平成24年）4月8日をもって閉館した。キャッチコピーは「ドキドキワクワクが目をさます」。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E6%96%B0%E4%BA%AC%E6%88%90%E9%89%84%E9%81%93%E6%A8%A1%E5%9E%8B%E9%A4%A8",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "上本郷",
+          "kana": "かみほんごう",
+          "romaji": "Kamihongō",
+          "en": "Kamihongo"
+        },
+        "distance_m": 20
+      },
+      {
+        "name": {
+          "ja": "松戸新田",
+          "kana": "まつどしんでん",
+          "romaji": "Matsudo-Shinden",
+          "en": "Matsudo-Shinden"
+        },
+        "distance_m": 560
+      }
+    ],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f7/Shin-Keisei_Railway_model_Playpark.jpg/960px-Shin-Keisei_Railway_model_Playpark.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "掬茶",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Shin-Keisei_Railway_model_Playpark.jpg"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q11501293"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q11501293",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E6%96%B0%E4%BA%AC%E6%88%90%E9%89%84%E9%81%93%E6%A8%A1%E5%9E%8B%E9%A4%A8",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
+  },
+  {
     "id": "wd-Q11507970",
     "name": {
       "ja": "日本寺大仏",
@@ -7290,6 +7685,61 @@
     ],
     "status": "published",
     "updated_at": "2026-09-28"
+  },
+  {
+    "id": "wd-Q11507971",
+    "name": {
+      "ja": "日本寺",
+      "kana": "にちほんじ",
+      "romaji": "Nichihonji",
+      "zh_tw": "日本寺",
+      "en": "Nichihon-ji Temple"
+    },
+    "kana_source": "wikidata",
+    "location": {
+      "lat": 35.74025,
+      "lng": 140.487361
+    },
+    "prefecture": "chiba",
+    "city": "多古町",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "寺院"
+    ],
+    "featured": false,
+    "score": 57.09,
+    "summary": {
+      "text": "日本寺（にちほんじ）は、千葉県香取郡多古町にある、日蓮宗の本山（由緒寺院）。山号は正東山。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E6%97%A5%E6%9C%AC%E5%AF%BA_%28%E5%8D%83%E8%91%89%E7%9C%8C%E5%A4%9A%E5%8F%A4%E7%94%BA%29",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1e/Nichihonji_temple.jpg/960px-Nichihonji_temple.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "1688",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Nichihonji_temple.jpg"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q11507971",
+      "osm": "node/7160947559"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q11507971",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.openstreetmap.org/node/7160947559",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11511015",
@@ -7445,6 +7895,75 @@
     ],
     "status": "published",
     "updated_at": "2026-09-28"
+  },
+  {
+    "id": "wd-Q11515640",
+    "name": {
+      "ja": "最福寺",
+      "kana": "さいふくじ",
+      "romaji": "Saifukuji",
+      "zh_tw": "最福寺",
+      "en": "Saifuku-ji Temple"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 35.562778,
+      "lng": 140.360278
+    },
+    "prefecture": "chiba",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "寺院"
+    ],
+    "featured": false,
+    "score": 57.08,
+    "summary": {
+      "text": "最福寺（さいふくじ）は、千葉県東金市にある単立寺院で、古くは顕本法華宗に属していた。山号は安國山。本尊は一塔二尊四師。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E6%9C%80%E7%A6%8F%E5%AF%BA_%28%E6%9D%B1%E9%87%91%E5%B8%82%29",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "東金",
+          "kana": "とうがね",
+          "romaji": "Tōgane",
+          "en": "Togane"
+        },
+        "distance_m": 410
+      }
+    ],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1e/%E5%85%AB%E9%B6%B4%E6%B9%96-%E6%9C%80%E7%A6%8F%E5%AF%BA.jpg/960px-%E5%85%AB%E9%B6%B4%E6%B9%96-%E6%9C%80%E7%A6%8F%E5%AF%BA.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "IJN JMSDF",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:%E5%85%AB%E9%B6%B4%E6%B9%96-%E6%9C%80%E7%A6%8F%E5%AF%BA.jpg"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q11515640",
+      "osm": "way/570866009"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q11515640",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.openstreetmap.org/way/570866009",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E6%9C%80%E7%A6%8F%E5%AF%BA_%28%E6%9D%B1%E9%87%91%E5%B8%82%29",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11519850",
@@ -7873,6 +8392,60 @@
     ],
     "status": "published",
     "updated_at": "2026-09-28"
+  },
+  {
+    "id": "wd-Q11526492",
+    "name": {
+      "ja": "東大社",
+      "kana": "とうだいしゃ",
+      "romaji": "To Dai Sha",
+      "zh_tw": "東大社",
+      "en": "Tōdai-sha"
+    },
+    "kana_source": "wikidata",
+    "location": {
+      "lat": 35.805833,
+      "lng": 140.686111
+    },
+    "prefecture": "chiba",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "神社"
+    ],
+    "featured": false,
+    "score": 57.12,
+    "summary": {
+      "text": "東大社（とうだいしゃ）は、千葉県香取郡東庄町（下総国香取郡）にある神社。旧社格は県社。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E6%9D%B1%E5%A4%A7%E7%A4%BE",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d4/%E9%A6%99%E5%8F%96%E9%83%A1%E6%9D%B1%E5%BA%84%E7%94%BA%E3%83%BB%E6%9D%B1%E5%A4%A7%E7%A4%BE.jpg/960px-%E9%A6%99%E5%8F%96%E9%83%A1%E6%9D%B1%E5%BA%84%E7%94%BA%E3%83%BB%E6%9D%B1%E5%A4%A7%E7%A4%BE.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Towacoco",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:%E9%A6%99%E5%8F%96%E9%83%A1%E6%9D%B1%E5%BA%84%E7%94%BA%E3%83%BB%E6%9D%B1%E5%A4%A7%E7%A4%BE.jpg"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q11526492",
+      "osm": "way/764846733"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q11526492",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.openstreetmap.org/way/764846733",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11526776",
@@ -8694,11 +9267,11 @@
     "featured": false,
     "score": 62.03,
     "summary": {
-      "text": "櫻木神社（さくらぎじんじゃ）は、千葉県野田市にある神社。旧社格は村社。サクラ（桜）の名所としても知られる。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%AB%BB%E6%9C%A8%E7%A5%9E%E7%A4%BE_%28%E9%87%8E%E7%94%B0%E5%B8%82%29",
+      "text": "Sakuragi Jinja (櫻木神社) is a Shinto shrine in Noda, Chiba. The shrine was founded in 851 CE by a member of the Fujiwara clan and is the oldest shrine in Noda city. The shrine is a famous spot for cherry blossom viewing and its Japanese language name means \"cherry blossom tree shrine\".",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Sakuragi_Jinja",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -8735,6 +9308,68 @@
     ],
     "status": "published",
     "updated_at": "2026-09-28"
+  },
+  {
+    "id": "wd-Q11555838",
+    "name": {
+      "ja": "洞庭湖",
+      "kana": "どうていこ",
+      "romaji": "Doteiko",
+      "zh_tw": "洞庭湖",
+      "en": "Lake Dōtei"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 35.354167,
+      "lng": 140.364611
+    },
+    "prefecture": "chiba",
+    "kind": "major",
+    "themes": [],
+    "tags": [],
+    "featured": false,
+    "score": 57.37,
+    "summary": {
+      "text": "洞庭湖（どうていこ）は、千葉県長生郡一宮町にある人造湖。中国の洞庭湖にちなんで名付けられた。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E6%B4%9E%E5%BA%AD%E6%B9%96_%28%E5%8D%83%E8%91%89%E7%9C%8C%29",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "東浪見",
+          "kana": "とらみ",
+          "romaji": "Torami",
+          "en": "Torami"
+        },
+        "distance_m": 1340
+      }
+    ],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/36/Douteiko-lakeside.jpg/960px-Douteiko-lakeside.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "xpon",
+        "license": "Public domain",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Douteiko-lakeside.jpg"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q11555838"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q11555838",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E6%B4%9E%E5%BA%AD%E6%B9%96_%28%E5%8D%83%E8%91%89%E7%9C%8C%29",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11556507",
@@ -8814,11 +9449,11 @@
     "featured": false,
     "score": 70.24,
     "summary": {
-      "text": "洲崎神社（すさきじんじゃ/すのさきじんじゃ）は、千葉県館山市洲崎にある神社。式内社（大社）論社で、江戸時代に安房国一宮とされた。旧社格は県社。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%B4%B2%E5%B4%8E%E7%A5%9E%E7%A4%BE",
+      "text": "Susaki Shrine (洲崎神社, Susaki Jinja) is a Shinto shrine in the Susaki neighborhood of the city of Tateyama in Chiba Prefecture, Japan. It is one of two shrines claiming to hold the title of ichinomiya of the former Awa Province. The main festival of the shrine is held annually on August 20.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Susaki_Shrine",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -9319,11 +9954,11 @@
     "featured": false,
     "score": 61.17,
     "summary": {
-      "text": "登渡神社（とわたりじんじゃ）は千葉県千葉市中央区登戸にある神社。千葉氏ゆかりの妙見社のひとつである。西千葉総鎮守。通称登戸神社（のぶとじんじゃ）。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E7%99%BB%E6%B8%A1%E7%A5%9E%E7%A4%BE",
+      "text": "Towatari Shrine (登渡神社, Towatari-jinja), also known as Nobuto Shrine (登戸神社, Nobuto-jinja), is a Shinto shrine located in Nobuto, Chūō-ku, Chiba City, Chiba Prefecture, Japan. Originally a branch temple of Kongojū-ji, a temple to the Buddhist deity Myōken founded by the Chiba clan (modern Chiba Shrine), it was converted into a Shinto shrine during the mid-19th century.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Towatari_Shrine",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -9364,6 +9999,127 @@
     ],
     "status": "published",
     "updated_at": "2026-09-28"
+  },
+  {
+    "id": "wd-Q11579524",
+    "name": {
+      "ja": "白子神社",
+      "kana": "しらこじんじゃ",
+      "romaji": "Shirakojinja",
+      "zh_tw": "白子神社",
+      "en": "Shirako Shrine"
+    },
+    "kana_source": "wikidata",
+    "location": {
+      "lat": 35.46,
+      "lng": 140.371389
+    },
+    "prefecture": "chiba",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "神社"
+    ],
+    "featured": false,
+    "score": 57.28,
+    "summary": {
+      "text": "白子神社（しらこじんじゃ）は、千葉県長生郡白子町 関（上総国長柄郡）にある神社。旧社格は郷社。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E7%99%BD%E5%AD%90%E7%A5%9E%E7%A4%BE_%28%E7%99%BD%E5%AD%90%E7%94%BA%29",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/be/Sirako_jinja.JPG/960px-Sirako_jinja.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Jerry fish tkc",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Sirako_jinja.JPG"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q11579524"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q11579524",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
+  },
+  {
+    "id": "wd-Q11579592",
+    "name": {
+      "ja": "白山神社 (君津市俵田)",
+      "kana": "はくさんじんじゃ",
+      "romaji": "Hakusanjinja",
+      "zh_tw": "白山神社",
+      "en": "Hakusan Shrine"
+    },
+    "kana_source": "wikidata",
+    "location": {
+      "lat": 35.3205,
+      "lng": 140.057972
+    },
+    "prefecture": "chiba",
+    "kind": "major",
+    "themes": [],
+    "tags": [],
+    "featured": false,
+    "score": 57.25,
+    "summary": {
+      "text": "白山神社（はくさんじんじゃ）は、千葉県君津市俵田にある神社。旧社格は郷社。古くは「田原神社」と称した。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E7%99%BD%E5%B1%B1%E7%A5%9E%E7%A4%BE_%28%E5%90%9B%E6%B4%A5%E5%B8%82%29",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "俵田",
+          "kana": "たわらだ",
+          "romaji": "Tawarada",
+          "en": "Tawarada"
+        },
+        "distance_m": 710
+      },
+      {
+        "name": {
+          "ja": "小櫃",
+          "kana": "おびつ",
+          "romaji": "Obitsu",
+          "en": "Obitsu"
+        },
+        "distance_m": 900
+      }
+    ],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/be/Hakusan-jinja_%28Kimitsu%29%2C_keidaitorii.jpg/960px-Hakusan-jinja_%28Kimitsu%29%2C_keidaitorii.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Saigen Jiro",
+        "license": "CC0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Hakusan-jinja_(Kimitsu),_keidaitorii.jpg"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q11579592",
+      "osm": "node/5857650172"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q11579592",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.openstreetmap.org/node/5857650172",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11579765",
@@ -9972,11 +10728,11 @@
     "featured": false,
     "score": 58.37,
     "summary": {
-      "text": "筒森神社（つつもりじんじゃ）とは、千葉県夷隅郡大多喜町筒森にある神社である。旧社格は村社。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E7%AD%92%E6%A3%AE%E7%A5%9E%E7%A4%BE",
+      "text": "Tsutsumori Shrine (筒森神社, Tsutsumori-jinja) is a Shinto shrine in Ōtaki, Chiba, in Chiba Prefecture, Japan.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Tsutsumori_Shrine",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -10001,6 +10757,111 @@
     ],
     "status": "published",
     "updated_at": "2026-09-28"
+  },
+  {
+    "id": "wd-Q11606723",
+    "name": {
+      "ja": "結縁寺",
+      "kana": "けつえんじ",
+      "romaji": "Ketsuenji",
+      "zh_tw": "結緣寺",
+      "en": "Ketsuen-ji Temple"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 35.790333,
+      "lng": 140.135056
+    },
+    "prefecture": "chiba",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "寺院"
+    ],
+    "featured": false,
+    "score": 57.14,
+    "summary": {
+      "text": "結縁寺（けつえんじ、英語: Ketsuen-ji）は、千葉県印西市の寺院である。山号は晴天山。院号は西光院。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E7%B5%90%E7%B8%81%E5%AF%BA_%28%E5%8D%B0%E8%A5%BF%E5%B8%82%29",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e1/%E5%8D%B0%E8%A5%BF%E5%B8%82%E7%B5%90%E7%B8%81%E5%AF%BA.jpg/960px-%E5%8D%B0%E8%A5%BF%E5%B8%82%E7%B5%90%E7%B8%81%E5%AF%BA.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Mogeyama",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:%E5%8D%B0%E8%A5%BF%E5%B8%82%E7%B5%90%E7%B8%81%E5%AF%BA.jpg"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q11606723"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q11606723",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E7%B5%90%E7%B8%81%E5%AF%BA_%28%E5%8D%B0%E8%A5%BF%E5%B8%82%29",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
+  },
+  {
+    "id": "wd-Q11608137",
+    "name": {
+      "ja": "縣神社 (大網白里市)",
+      "kana": "あがたじんじゃ",
+      "romaji": "Agatajinja",
+      "zh_tw": "縣神社",
+      "en": "Agata Shrine"
+    },
+    "kana_source": "wikidata",
+    "location": {
+      "lat": 35.542453,
+      "lng": 140.298061
+    },
+    "prefecture": "chiba",
+    "kind": "major",
+    "themes": [],
+    "tags": [],
+    "featured": false,
+    "score": 57.23,
+    "summary": {
+      "text": "縣神社（あがたじんじゃ）は、千葉県大網白里市（上総国山武郡）にある神社。旧社格は村社。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E7%B8%A3%E7%A5%9E%E7%A4%BE_%28%E5%A4%A7%E7%B6%B2%E7%99%BD%E9%87%8C%E5%B8%82%29",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "images": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/3/31/Agatajinja.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+        "author": "Ibaraki101c",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Agatajinja.jpg"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q11608137",
+      "osm": "node/4573211454"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q11608137",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.openstreetmap.org/node/4573211454",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11608170",
@@ -10315,6 +11176,77 @@
     "updated_at": "2026-09-28"
   },
   {
+    "id": "wd-Q11614129",
+    "name": {
+      "ja": "船橋大神宮灯明台",
+      "kana": "ふなばしだいじんぐうとうみょうだい",
+      "romaji": "Funabashi Daijingu To Myo Dai",
+      "zh_tw": "船橋大神宮灯明台",
+      "en": "Funabashi Daijingū Tōmyōdai"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 35.695953,
+      "lng": 139.9934
+    },
+    "prefecture": "chiba",
+    "kind": "major",
+    "themes": [],
+    "tags": [],
+    "featured": false,
+    "score": 57.08,
+    "summary": {
+      "text": "船橋大神宮灯明台（ふなばしだいじんぐうとうみょうだい）は、千葉県船橋市にある灯明台である。千葉県指定の有形民俗文化財になっている。2016年4月1日に船橋市景観重要建造物に指定された。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E8%88%B9%E6%A9%8B%E5%A4%A7%E7%A5%9E%E5%AE%AE%E7%81%AF%E6%98%8E%E5%8F%B0",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "大神宮下",
+          "kana": "だいじんぐうした",
+          "romaji": "Daijingushita",
+          "en": "Daijingu-Shita"
+        },
+        "distance_m": 270
+      },
+      {
+        "name": {
+          "ja": "船橋競馬場",
+          "kana": "ふなばしけいばじょう",
+          "romaji": "Funabashikeibajō",
+          "en": "Funabashi-Keibajo"
+        },
+        "distance_m": 800
+      }
+    ],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8f/Tomeidai.jpg/960px-Tomeidai.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "不明",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Tomeidai.jpg"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q11614129"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q11614129",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E8%88%B9%E6%A9%8B%E5%A4%A7%E7%A5%9E%E5%AE%AE%E7%81%AF%E6%98%8E%E5%8F%B0",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
+  },
+  {
     "id": "wd-Q11614230",
     "name": {
       "ja": "船橋市総合体育館",
@@ -10482,11 +11414,11 @@
     "featured": false,
     "score": 59.13,
     "summary": {
-      "text": "芝山古墳・はにわ博物館（しばやまこふん・はにわはくぶつかん）は、千葉県山武郡芝山町にある芝山町立の古墳と埴輪の博物館である。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E8%8A%9D%E5%B1%B1%E5%8F%A4%E5%A2%B3%E3%83%BB%E3%81%AF%E3%81%AB%E3%82%8F%E5%8D%9A%E7%89%A9%E9%A4%A8",
+      "text": "Shibayama Kofun Haniwa Museum (Japanese: 芝山町立芝山古墳・はにわ博物館, Hepburn: Shibayama Chōritsu Shibayama Kofun・Haniwa Hakubutsukan) opened in Shibayama, Chiba Prefecture, Japan in 1988. The collection and displays focus on the area's numerous kofun and haniwa, among them Tonozuka Kofun and Himezuka Kofun in the Shibayama Kofun Cluster.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Shibayama_Kofun_Haniwa_Museum",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -11884,11 +12816,11 @@
     "featured": false,
     "score": 69.67,
     "summary": {
-      "text": "道の駅南房パラダイス（みちのえき なんぼうパラダイス 英:Roadside station Nanbo Paradise）は、千葉県館山市にかつて存在した千葉県道257号南安房公園線（房総フラワーライン、日本の道100選）の道の駅である。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E9%81%93%E3%81%AE%E9%A7%85%E5%8D%97%E6%88%BF%E3%83%91%E3%83%A9%E3%83%80%E3%82%A4%E3%82%B9",
+      "text": "The Aloha Garden Tateyama (アロハガーデンたてやま, Aloha Garden Tateyama) is a botanical garden located in Tateyama, Chiba, Japan. It is open daily; an admission fee is charged.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Aloha_Garden_Tateyama",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -11916,7 +12848,7 @@
       "ja": "道の駅富楽里とみやま",
       "kana": "みちのえきふらりとみやま",
       "romaji": "Michinoekifuraritomiyama",
-      "zh_tw": "富樂里富山道之驛",
+      "zh_tw": "富樂裡富山道之驛",
       "en": "Roadside station Furari-tomiyama"
     },
     "kana_source": "wikipedia",
@@ -11970,7 +12902,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11641851",
@@ -12186,11 +13118,11 @@
     "featured": false,
     "score": 67.07,
     "summary": {
-      "text": "野島埼灯台（のじまさきとうだい）は、千葉県南房総市の野島崎に立つ日本の洋式灯台。南房総国定公園内に位置する。白亜の八角形をした大型灯台は江戸条約灯台の一つで、日本の灯台50選に選定され、国の登録有形文化財に登録されている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E9%87%8E%E5%B3%B6%E5%9F%BC%E7%81%AF%E5%8F%B0",
+      "text": "Nojimazaki Lighthouse (野島埼灯台, Nojimazaki tōdai) is a lighthouse located at the southern tip of the Bōsō Peninsula, in the city of Minamibōsō, Chiba Prefecture Japan.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Nojimazaki_Lighthouse",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -12271,7 +13203,7 @@
       "ja": "野田の醤油醸造",
       "kana": "のだのしょうゆじょうぞう",
       "romaji": "Nodanoshoyujozo",
-      "zh_tw": "野田的酱油酿造",
+      "zh_tw": "野田的醬油釀造",
       "en": "soy sauce brewing in Noda"
     },
     "kana_source": "wikipedia",
@@ -12327,7 +13259,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11647854",
@@ -12599,11 +13531,11 @@
     "featured": false,
     "score": 61.12,
     "summary": {
-      "text": "長柄ダム（ながらダム）は、千葉県長生郡長柄町山之郷に建設されたダムである。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E9%95%B7%E6%9F%84%E3%83%80%E3%83%A0_%28%E5%8D%83%E8%91%89%E7%9C%8C%29",
+      "text": "Nagara Dam is an earthfill dam located in Chiba Prefecture in Japan. The dam is used for water supply. The catchment area of the dam is 3.4 km2. The dam impounds about 81  ha of land when full and can store 10000 thousand cubic meters of water. The construction of the dam was started on 1966 and completed in 1993.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Nagara_Dam_%28Chiba%29",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -13309,11 +14241,11 @@
     "featured": false,
     "score": 64.59,
     "summary": {
-      "text": "高滝ダム（たかたきダム）は、千葉県市原市の二級河川・養老川に建設された県営の多目的ダム。ダム湖の名称は高滝湖（たかたきこ）。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E9%AB%98%E6%BB%9D%E3%83%80%E3%83%A0",
+      "text": "Takataki Dam is a gravity dam located in Chiba Prefecture in Japan. The dam is used for flood control and water supply. The catchment area of the dam is 107.1 km2. The dam impounds about 199  ha of land when full and can store 14300 thousand cubic meters of water. The construction of the dam was started on 1970 and completed in 1990.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Takataki_Dam",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -13471,7 +14403,7 @@
       "ja": "鶴峯八幡神社",
       "kana": "つるみねはちまんじんじゃ",
       "romaji": "Tsuruminehachimanjinja",
-      "zh_tw": "鶴峯八幡神社",
+      "zh_tw": "鶴峰八幡神社",
       "en": "Tsurumine Hachiman Shrine"
     },
     "kana_source": "wikipedia",
@@ -13533,7 +14465,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11676182",
@@ -13926,11 +14858,11 @@
     "featured": false,
     "score": 59.97,
     "summary": {
-      "text": "龍正院（りゅうしょういん）は、千葉県成田市滑川にある天台宗の寺院。山号は滑河山。本尊は十一面観世音菩薩で、坂東三十三観音第28番札所である。通称は滑河観音（なめかわかんのん）。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E9%BE%8D%E6%AD%A3%E9%99%A2",
+      "text": "Ryūshō-in (龍正院) is a Buddhist temple located in the Namegawa neighborhood of the city of Narita, Chiba Prefecture, Japan. It is a temple of the Tendai school and its honzon is a statue of Jūichimen Kannon Bosatsu, called the Namegawa Kannon (滑河観音).  The temples full name is Namegawa-zan  Ryūshō-in Shōfuku-ji (滑河山龍正院 勝福寺). The temple is the 28th stop on the Bandō Sanjūsankasho pilgrimage route.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Ry%C5%ABsh%C5%8D-in",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -14033,11 +14965,11 @@
     "featured": false,
     "score": 64.04,
     "summary": {
-      "text": "龍角寺（りゅうかくじ）は、千葉県印旛郡栄町龍角寺にある天台宗の寺院。天竺山寂光院と号し、本尊は薬師如来。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E9%BE%8D%E8%A7%92%E5%AF%BA",
+      "text": "Ryūkaku-ji (龍角寺, Ryūkaku-ji) is a Buddhist temple located in the town of Sakae, Chiba, Japan. The temple belongs to the Tendai sect, and its main image is a statue of Yakushi Nyōrai. The temple grounds were designated as a National Historic Site in 1933. Per archaeological investigations, the temple was founded in the early 7th century AD and is one of the oldest known temples in eastern Japan.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Ry%C5%ABkaku-ji",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -14266,11 +15198,11 @@
     "featured": false,
     "score": 66.67,
     "summary": {
-      "text": "ワットパクナム日本別院（ワットパクナムにほんべついん、タイ語:วัดปากน้ำญี่ปุ่น）は、千葉県成田市にある、日本最大のタイの仏教の寺院。タイ王国の有名寺院、ワットパクナムの別院として、タイ系居住者の心の拠り所となるべく1998年に創設された。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E3%83%AF%E3%83%83%E3%83%88%E3%83%91%E3%82%AF%E3%83%8A%E3%83%A0%E6%97%A5%E6%9C%AC%E5%88%A5%E9%99%A2",
+      "text": "Wat Paknam Japan (Thai: วัดปากน้ำญี่ปุ่น; Japanese: ワットパクナム日本別院) is the largest Thai Buddhist temple ('Wat') in Japan, located in Narita City, Chiba Prefecture. It was founded in 1998 as a branch temple of Wat Paknam, a temple in Thailand, to serve as a spiritual center for residents of Thai descent.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Wat_Paknam_Japan",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -14390,7 +15322,7 @@
     "kind": "major",
     "themes": [],
     "tags": [],
-    "featured": false,
+    "featured": true,
     "score": 83.97,
     "summary": {
       "text": "千葉大學是日本的一所國立大學，位於千葉縣千葉市。 本部地址是千葉市稻毛區彌生町1-33。日文中簡稱：千葉大（ちばだい, chibadai）",
@@ -14437,7 +15369,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q133805268",
@@ -14522,11 +15454,11 @@
     "featured": false,
     "score": 60.69,
     "summary": {
-      "text": "鏡忍寺（きょうにんじ）は、千葉県鴨川市にある日蓮宗本山（霊蹟寺院）。山号は小松原山。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E9%8F%A1%E5%BF%8D%E5%AF%BA",
+      "text": "The Kyōnin-ji, situated in Kamogawa, Chiba Prefecture, was founded on 5 March 1281 and is one of the most important historic temples of Nichiren-shū.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Ky%C5%8Dnin-ji",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -14670,6 +15602,60 @@
     "updated_at": "2026-09-28"
   },
   {
+    "id": "wd-Q15207387",
+    "name": {
+      "ja": "八幡岬",
+      "kana": "はちまんみさき",
+      "romaji": "Hachimanmisaki",
+      "zh_tw": "八幡岬",
+      "en": "Cape Hachiman"
+    },
+    "kana_source": "osm",
+    "location": {
+      "lat": 35.135411,
+      "lng": 140.311333
+    },
+    "prefecture": "chiba",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "岬"
+    ],
+    "featured": false,
+    "score": 57.27,
+    "summary": {
+      "text": "Cape Hachiman (八幡岬, Hachiman-misaki) is a cape on the Pacific Ocean, in the city of Katsuura, in the southeast area of Chiba Prefecture, Japan. There are two Cape Hachimans located near one another: Cape Hachiman in Katsuura, and Cape Hachiman a few kilometers to the north in Isumi City. The cape is named after Hachiman, a mythological Japanese god of archery and war.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Cape_Hachiman_%28Katsuura%2C_Chiba%29",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/23/%E5%85%AB%E5%B9%A1%E5%B2%AC%E3%81%AE%E6%B5%B7%E4%B8%AD%E9%B3%A5%E5%B1%85_-_panoramio.jpg/960px-%E5%85%AB%E5%B9%A1%E5%B2%AC%E3%81%AE%E6%B5%B7%E4%B8%AD%E9%B3%A5%E5%B1%85_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Akeiro Torii",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:%E5%85%AB%E5%B9%A1%E5%B2%AC%E3%81%AE%E6%B5%B7%E4%B8%AD%E9%B3%A5%E5%B1%85_-_panoramio.jpg"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q15207387",
+      "osm": "node/9018326419"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q15207387",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.openstreetmap.org/node/9018326419",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
+  },
+  {
     "id": "wd-Q15228612",
     "name": {
       "ja": "千葉県立印旛手賀自然公園",
@@ -14692,11 +15678,11 @@
     "featured": false,
     "score": 59.03,
     "summary": {
-      "text": "千葉県立印旛手賀自然公園（ちばけんりついんばてがしぜんこうえん）は、印旛沼・手賀沼を中心とした千葉県北部に位置する都道府県立自然公園。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%8D%83%E8%91%89%E7%9C%8C%E7%AB%8B%E5%8D%B0%E6%97%9B%E6%89%8B%E8%B3%80%E8%87%AA%E7%84%B6%E5%85%AC%E5%9C%92",
+      "text": "Inba Tega Prefectural Natural Park (県立印旛手賀自然公園, Kenritsu Inba Tega shizen kōen) is a Prefectural Natural Park in northern Chiba Prefecture, Japan. First designated for protection in 1952, the park's central features are Inba Marsh (印旛沼) and Tega Marsh (手賀沼). The park spans the borders of seven municipalities: Abiko, Inzai, Kashiwa, Narita, Sakae, Sakura, and Shisui. The marshes provide an important wetland habitat for wild birds.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Inba_Tega_Prefectural_Natural_Park",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -14887,11 +15873,11 @@
     "featured": false,
     "score": 66.86,
     "summary": {
-      "text": "下総国分寺（しもうさこくぶんじ）は、千葉県市川市にある真言宗豊山派の寺院。山号は国分山。本尊は薬師如来。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E4%B8%8B%E7%B7%8F%E5%9B%BD%E5%88%86%E5%AF%BA",
+      "text": "The Shimōsa Kokubun-ji (下総国分寺) is a Buddhist temple located in the city of Ichikawa, Chiba, Japan. It belongs to the Shingon-shū Buzan-ha sect and its honzon is an image of Dainichi Nyorai. The present temple is of uncertain foundation, but claims to be the direct descendant of the original Nara period provincial temple (\"kokubunji\") of former Shimōsa Province. which fell into ruins sometime during the Kamakura period.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Shim%C5%8Dsa_Kokubun-ji",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -15028,11 +16014,11 @@
     "featured": false,
     "score": 64.29,
     "summary": {
-      "text": "稲村城（いなむらじょう）は、千葉県館山市稲（いな）（安房国安房郡）にあった日本の城。2012年（平成24年）1月24日に岡本城（南房総市）とともに「里見氏城跡」として国の史跡に指定された。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E7%A8%B2%E6%9D%91%E5%9F%8E",
+      "text": "Inamura Castle (稲村城, Inamura-jō) was a Muromachi period Japanese castle located in what is now the city of Tateyama, Chiba Prefecture, Japan. The ruins have been protected as a National Historic Site since 2012 together with Okamoto Castle as the Satomi clan castle ruins (里見氏城跡, Satomi-shi shiro ato).",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Inamura_Castle",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -15068,7 +16054,7 @@
       "ja": "レイクウッズガーデンひめはるの里",
       "kana": "れいくうっずがーでんひめはるのさと",
       "romaji": "Reikuzzugadenhimeharunosato",
-      "zh_tw": "Lakewoods Garden姬春之里"
+      "zh_tw": "Lakewoods Garden姬春之裡"
     },
     "kana_source": "wikipedia",
     "location": {
@@ -15110,7 +16096,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q17220798",
@@ -15185,6 +16171,48 @@
     ],
     "status": "published",
     "updated_at": "2026-09-28"
+  },
+  {
+    "id": "wd-Q17228074",
+    "name": {
+      "ja": "海底神社",
+      "kana": "かいていじんじゃ",
+      "romaji": "Kaiteijinja",
+      "zh_tw": "海底神社",
+      "en": "Underwater Shrine"
+    },
+    "kana_source": "wikidata",
+    "location": {
+      "lat": 34.974892,
+      "lng": 139.7832
+    },
+    "prefecture": "chiba",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "神社"
+    ],
+    "featured": false,
+    "score": 57.15,
+    "summary": {
+      "text": "海底神社（かいていじんじゃ）とは、千葉県館山市の波左間海中公園（はざまかいちゅうこうえん）にある海の底に鎮座する神社の通称。館山市沖約600メートルの“高根”という根にある。高さ3.5メートルの鳥居は水深18メートルに、社は水深12メートルのところにあり、参拝に訪れるダイバーもいる。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E6%B5%B7%E5%BA%95%E7%A5%9E%E7%A4%BE",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "images": [],
+    "external_ids": {
+      "wikidata": "Q17228074"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q17228074",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q17228306",
@@ -15506,11 +16534,11 @@
     "featured": false,
     "score": 72.13,
     "summary": {
-      "text": "犬吠埼マリンパーク（いぬぼうさきマリンパーク、英語: Inubosaki Marine Park Aquarium）は、千葉県銚子市にかつて存在した水族館。博物館法上の「博物館相当施設」である。日本動物園水族館協会（JAZA）には加盟していない。2018年1月31日に閉館した。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E7%8A%AC%E5%90%A0%E5%9F%BC%E3%83%9E%E3%83%AA%E3%83%B3%E3%83%91%E3%83%BC%E3%82%AF",
+      "text": "Inubōsaki Marine Park was a public aquarium and marine park located in Chōshi, Chiba Prefecture. It opened in 1954 and underwent renovation in 1993.It was closed on 31 January 2018, with the owners attributing the decision to a significant decline in visitors after the 2011 Tōhoku earthquake and nuclear crisis.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Inub%C5%8Dsaki_Marine_Park",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -15765,11 +16793,11 @@
     "featured": false,
     "score": 63.93,
     "summary": {
-      "text": "万満寺（まんまんじ、萬満寺）は千葉県松戸市馬橋にある臨済宗大徳寺派の寺院。山号は法王山。本尊は阿弥陀如来。「仁王さまの股くぐり」で知られる。鎌倉時代作の金剛力士（仁王）像は国の重要文化財に指定されている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E4%B8%87%E6%BA%80%E5%AF%BA",
+      "text": "Manman-ji (万満寺) is a Buddhist temple belonging to the Rinzai school of Japanese Zen, located in the city of Matsudo in Chiba Prefecture, Japan. Its main image is a statue of Amida Nyōrai.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Manman-ji",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -16181,11 +17209,11 @@
     "featured": true,
     "score": 74.4,
     "summary": {
-      "text": "亥鼻城（いのはなじょう）は、千葉県千葉市中央区亥鼻（旧：下総国）にあった日本の城（平山城）。文化財報告書では「猪鼻城」の表記がみられる。通称は千葉城。周辺は亥鼻公園（歴史公園）として整備され、土塁、堀切などが現存する城跡は市の文化財に指定されている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E4%BA%A5%E9%BC%BB%E5%9F%8E",
+      "text": "Inohana Castle (亥鼻城, Inohana-jō) was a Japanese hirayama-style (lowland hill) castle located in Inohana (formerly Shimōsa Province) in the Chuo district of Chiba City, Chiba Prefecture. It is commonly known as Chiba Castle. The surrounding area of the castle ruins have been developed into Inohana Park. The castle ruins, including its earthworks and moats, have been designated as a cultural property of the city. The Chiba City Folk Museum, a Japanese castle replica, was built on the site in 1967.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Inohana_Castle",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -16325,11 +17353,11 @@
     "featured": false,
     "score": 68.23,
     "summary": {
-      "text": "千葉寺（せんようじ、ちばでら）は、千葉市中央区にある真言宗豊山派の寺院。山号は海上山。本尊は十一面観世音菩薩であり、坂東三十三観音第29番札所である。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%8D%83%E8%91%89%E5%AF%BA",
+      "text": "Chiba-dera (千葉寺, Chiba-dera), also known as Senyō-ji (千葉寺), is a Buddhist temple in the city of Chiba, Chiba Prefecture, Japan. The temple is located in the central Chūō District in the city of Chiba. Chiba-dera is one of many Buddhist temples in the region that, according to tradition, was established by the priest Gyōki (668–749). Chiba-dera is a temple of the Shingon-shu Buzan-ha, and its honzon is a Jūichimen Kannon Bosatsu. The temple is the 29th stop on the Bandō Sanjūsankasho pilgrimage route.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Chiba-dera",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -16471,11 +17499,11 @@
     "featured": false,
     "score": 72.82,
     "summary": {
-      "text": "久留里城（くるりじょう）は、千葉県君津市久留里付近にあった日本の城。別名雨城・霧降城・浦田城とも呼ばれる。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E4%B9%85%E7%95%99%E9%87%8C%E5%9F%8E",
+      "text": "Kururi Castle (久留里城, Kururi-jō) is a Japanese castle located in Kimitsu, southern Chiba Prefecture, Japan. At the end of the Edo period, Kururi Castle was home to a branch of the Kuroda clan, daimyō of Kururi Domain. The castle was also known as Rain Castle (雨城, U-jō), after a legend that it rained twenty-one times during its construction, or, on average, once every three days. It is located on a 227 meter hill.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Kururi_Castle",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -16526,14 +17554,14 @@
     "tags": [
       "城"
     ],
-    "featured": true,
+    "featured": false,
     "score": 73.73,
     "summary": {
-      "text": "関宿城（せきやどじょう）は、千葉県野田市関宿三軒家にあった日本の城。室町時代に簗田満助または簗田成助によって築かれたとされ、以降簗田氏嫡流の関宿簗田家の居城になったと伝わる。江戸時代には関宿藩の藩庁が置かれた。廃藩置県後は天皇家の物となった（大正宮内庁管轄）。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E9%96%A2%E5%AE%BF%E5%9F%8E",
+      "text": "Sekiyado Castle (関宿城, Sekiyado-jō) is a Japanese castle located in Noda, northwestern Chiba Prefecture, Japan. At the end of the Edo period, Sekiyado Castle was home to the Kuse clan, daimyō of Sekiyado Domain.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Sekiyado_Castle",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -16562,7 +17590,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q2970766",
@@ -16587,11 +17615,11 @@
     "featured": false,
     "score": 72.68,
     "summary": {
-      "text": "館山城（たてやまじょう）は、千葉県館山市館山にあった日本の城。館山市指定史跡。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E9%A4%A8%E5%B1%B1%E5%9F%8E",
+      "text": "Tateyama Castle (館山城, Tateyama-jō) is a Japanese castle located in Tateyama, southern Chiba Prefecture, Japan. At the end of the Edo period, Tateyama Castle was home to the Inaba clan, daimyō of Tateyama Domain, but the castle is better known for its association with the former rulers of Awa Province, the Satomi clan. The castle was also known as \"Nekoya-jō\" (根古屋城).",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Tateyama_Castle",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -16646,11 +17674,11 @@
     "featured": false,
     "score": 58.81,
     "summary": {
-      "text": "圓明院（えんみょういん）は、千葉県君津市山本にある真言宗智山派の寺院。山号は清水山。本尊は不動明王。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%9C%93%E6%98%8E%E9%99%A2_%28%E5%90%9B%E6%B4%A5%E5%B8%82%29",
+      "text": "Enmyō-in (圓明院) is a Buddhist temple of the Shingon Chisan-ha located in the city of Kimitsu in Chiba Prefecture. Its honzon, or primary object of veneration, is a statute of Fudō Myōō. A well-known kaya, or Japanese nutmeg-yew tree, of almost 5.4 meters in circumference is located within the temple grounds. A small hall was built at Enmyō-in in 1989 dedicated to prayers for traffic safety.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Enmy%C5%8D-in",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -16711,11 +17739,11 @@
     "featured": false,
     "score": 66.23,
     "summary": {
-      "text": "円福寺（えんぷくじ）は、千葉県銚子市にある真言宗系単立の寺院。山号は飯沼山。本尊は十一面観世音菩薩。坂東三十三観音第27番札所となっており、飯沼観音（いいぬまかんのん）とも称される。隣接地には銚港神社がある。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%86%86%E7%A6%8F%E5%AF%BA_%28%E9%8A%9A%E5%AD%90%E5%B8%82%29",
+      "text": "Enpuku-ji (円福寺) is a Buddhist temple located in the Baba neighborhood of the city of Chōshi, Chiba Prefecture, Japan. It is an independent temple under Shingon Buddhism and its honzon is a statue of Jūichimen Kannon Bosatsu, also popularly known as the Iinuma Kannon (飯沼観音).  The temples full name is Iinuma-zan Enpuku-ji (飯沼山円福寺). The temple is the 27th stop on the Bandō Sanjūsankasho pilgrimage route.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Enpuku-ji",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -16785,11 +17813,11 @@
     "featured": false,
     "score": 63.46,
     "summary": {
-      "text": "清水寺（きよみずでら）は、千葉県いすみ市岬町鴨根にある天台宗の寺院。山号は音羽山。本尊は千手観世音菩薩であり、坂東三十三観音第32番札所である。通称は清水観音（きよみずかんのん）。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%B8%85%E6%B0%B4%E5%AF%BA_%28%E3%81%84%E3%81%99%E3%81%BF%E5%B8%82%29",
+      "text": "Kiyomizu-dera (清水寺) is a Buddhist temple located in the city of Isumi, Chiba Prefecture, Japan. It belongs to the  Tendai sect and its honzon is a statue of Senjū Kannon Bosatsu ( Sahasrabhūja).  The temple's full name is  Otowa-yama Senjū-in Seisui-ji (音羽山 千手院 清水寺).The temple is the 32nd stop on the Bandō Sanjūsankasho pilgrimage route. It is also called the \"Kiyomizu Kannon\".",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Kiyomizu-dera_%28Isumi%2C_Chiba%29",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -17042,11 +18070,11 @@
     "featured": false,
     "score": 70.4,
     "summary": {
-      "text": "鎌ヶ谷大仏（かまがやだいぶつ）は、千葉県鎌ケ谷市にある大仏である。鋳造青銅製の釈迦如来像で、高さ1.80メートル、台座含めて2.30メートル。日蓮宗の寺院である延命寺の飛地墓地内にあり、京成電鉄松戸線の鎌ヶ谷大仏駅北口・京成バス千葉ウエスト鎌ヶ谷営業所より徒歩1分ほどのところに鎮座している。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E9%8E%8C%E3%83%B6%E8%B0%B7%E5%A4%A7%E4%BB%8F",
+      "text": "The Kamagaya Great Buddha (鎌ヶ谷大仏, Kamagaya Daibutsu) is the smallest Daibutsu (Buddhist statue) in Japan. It is located in the city of Kamagaya, Chiba Prefecture, to the north of Tokyo.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Kamagaya_Great_Buddha",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -17120,11 +18148,11 @@
     "featured": false,
     "score": 61.78,
     "summary": {
-      "text": "一月寺（いちがつじ）は、千葉県松戸市小金にある日蓮正宗の寺院。山号は金龍山（きんりゅうさん）。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E4%B8%80%E6%9C%88%E5%AF%BA",
+      "text": "Ichigatsu-ji (一月寺) is a Buddhist temple located in the city of Matsudo in Chiba Prefecture, Japan. It was the home temple of the Fuke sect of Zen Buddhism.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Ichigatsu-ji",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -17236,11 +18264,11 @@
     "featured": false,
     "score": 58.4,
     "summary": {
-      "text": "甚大寺（じんだいじ）は、千葉県佐倉市にある天台宗の寺院。山号は安城山。院号は不矜院。本尊は十一面観音。そのほか不動明王、金比羅権現などを祀り、毎月10日に金比羅権現の縁日が行われる。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E7%94%9A%E5%A4%A7%E5%AF%BA",
+      "text": "Jindai-ji (甚大寺) is a Buddhist temple located in the city of Sakura in Chiba Prefecture, Japan.  The temple was originally located in Yamagata Prefecture, but when the Hotta clan was granted control of the Sakura Domain, Hotta Masasuke moved the temple in 1746 to serve as the clan's funerary temple (菩提寺, bodaiji),  or family temple. The Hotta clan's historical grave marker is located at Jindai-ji, as are the tombstones of Hotta Masatoshi, Hotta Masayoshi, and Hotta Masatomo, all of which are designated as Chiba Prefectural Historical Places.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Jindai-ji_%28Chiba%29",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -17368,11 +18396,11 @@
     "featured": false,
     "score": 58.23,
     "summary": {
-      "text": "亀井院（かめいいん）は、千葉県市川市真間四丁目にある日蓮宗の寺院である。境内には井戸がある。真間の手児奈がここに毎日、水を汲みに来てたという伝説がある。道を挟んだ南側に手児奈霊神堂がある。旧本山は真間弘法寺。池上・芳師法縁。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E4%BA%80%E4%BA%95%E9%99%A2",
+      "text": "Kamei-in (亀井院) is a Buddhist temple located in the city of Ichikawa in Chiba Prefecture. Kamei-in is a Nichiren Buddhist temple noted for the Mama Well.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Kamei-in",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -17443,11 +18471,11 @@
     "featured": false,
     "score": 59.25,
     "summary": {
-      "text": "観福寺（かんぷくじ）は、千葉県香取市山倉にある真言宗豊山派の寺院。山号は山倉山。本尊は大六天王。元は山倉大神の別当寺であった。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E8%A6%B3%E7%A6%8F%E5%AF%BA_%28%E9%A6%99%E5%8F%96%E5%B8%82%E5%B1%B1%E5%80%89%29",
+      "text": "Kanpuku-ji (観福寺) is a Buddhist temple of the Shingon Buzan Sect located in Yamakura, Katori, Chiba Prefecture. The temple is one of two temples in Katori with the same name, the other being Makinosan Kanpuku-ji.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Kanpuku-ji_%28Yamakura%2C_Katori%29",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -17497,11 +18525,11 @@
     "featured": false,
     "score": 67.83,
     "summary": {
-      "text": "笠森寺（かさもりじ）は、千葉県長生郡長南町笠森にある天台宗別格大本山の寺院。本尊は十一面観世音菩薩であり、坂東三十三観音第31番札所となっている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E7%AC%A0%E6%A3%AE%E5%AF%BA",
+      "text": "Kasamori-ji (笠森寺) is a Buddhist temple located in the town of Chōnan, Chiba Prefecture, Japan. It belongs to the  Tendai sect and its honzon is a hibutsu statue of Jūichimen Kannon Bosatsu shown to the public in the years of the Ox and Horse in the 12-year cycle of the Chinese zodiac.  The temple's full name is Daihi-zan Nankō-in Kasamori-ji (大悲山 楠光院 笠森寺).The temple is the 31st stop on the Bandō Sanjūsankasho pilgrimage route. The temple is also called \"Kasamori-dera\" using the alternate pronunciation of the Chinese character for temple (tera).",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Kasamori-ji",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -17551,11 +18579,11 @@
     "featured": false,
     "score": 61.76,
     "summary": {
-      "text": "高蔵寺（こうぞうじ）は、千葉県木更津市にある真言宗豊山派の寺院。山号は平野山（へいやさん）。本尊は聖観世音菩薩であり、坂東三十三観音第30番札所である。通称は高倉観音（たかくらかんのん）。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E9%AB%98%E8%94%B5%E5%AF%BA_%28%E6%9C%A8%E6%9B%B4%E6%B4%A5%E5%B8%82%29",
+      "text": "Kōzō-ji (高蔵寺) is a Buddhist temple located in the Yana neighbourhood of the city of Kisarazu, Chiba Prefecture, Japan.  It belongs to the  Shingon-shu Buzan-ha sect and its honzon is a statue of Sho-Kannon Bosatsu (Āryāvalokiteśvara).  The temple's full name is Heiya-san Kōzō-ji (平野山 笠森寺).The temple is the 30th stop on the Bandō Sanjūsankasho pilgrimage route. The temple is also known as the \"Takakura Kannon\", and amulets issued by the temple are highly valued throughout Japan.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/K%C5%8Dz%C5%8D-ji_%28Kisarazu%2C_Chiba%29",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -17603,11 +18631,11 @@
     "featured": false,
     "score": 74.37,
     "summary": {
-      "text": "手賀沼（てがぬま）は、千葉県北部の柏市、我孫子市、白井市、印西市にまたがる利根川水系の湖沼。湖沼水質保全特別措置法指定湖沼。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%89%8B%E8%B3%80%E6%B2%BC",
+      "text": "Lake Tega (手賀沼, Tega-numa) is a lake located in the Chiba Prefecture of Japan, northeast of Tokyo.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Lake_Tega",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -17654,11 +18682,11 @@
     "featured": false,
     "score": 67.66,
     "summary": {
-      "text": "印旛放水路（いんばほうすいろ）は、千葉県にある印旛沼の排水を目的として開削された放水路である。西印旛沼からの流出点（八千代市阿宗橋）を上流端とし千葉市美浜区で東京湾に注ぐ（およそ19キロメートル）。上流にあたるのが利根川であるため、利根川水系に属する一級河川に指定されている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%8D%B0%E6%97%9B%E6%94%BE%E6%B0%B4%E8%B7%AF",
+      "text": "The Hanami River (花見川, Hanami-gawa) is a river in Yachiyo and Chiba, Chiba Prefecture, Japan. The river is 18.9 kilometers (11.7 mi) in length and has a drainage area of 94.5 square kilometers (36.5 sq mi). The Hanami is one part of the Inba Discharge Channel (印旛放水路, Inba Hōsuiro). The upper part of the drainage facility is designated as the Shin River. The lower part, the Hanami, ranges from the Ōwada Drainage Pump Station in Yachiyo City, and drains into Tokyo Bay in the Mihama Ward of Chiba City.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Hanami_River",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -17867,11 +18895,11 @@
     "featured": false,
     "score": 59.05,
     "summary": {
-      "text": "妙法生寺（みょうほうしょうじ）は、千葉県夷隅郡大多喜町筒森1749番地（麻綿原高原）に所在する日本の寺院。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%A6%99%E6%B3%95%E7%94%9F%E5%AF%BA",
+      "text": "Myōhōshō-ji (妙法生寺) is a Buddhist temple located in the town of Ōtaki in Chiba Prefecture, and is a temple of the Nichiren sect. The temple was given its name in 1253, and is a reference to the opening line of the Lotus Sutra. Myōhōshō-ji is located deep in the Bōsō Hill Range in the center of the Bōsō Peninsula. The temple had fallen into nearly complete ruin by 1904, but was slowly rebuilt starting in 1931 by Nichiren Buddhists.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/My%C5%8Dh%C5%8Dsh%C5%8D-ji",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -17916,11 +18944,11 @@
     "featured": false,
     "score": 71.34,
     "summary": {
-      "text": "日本寺（にほんじ）は、千葉県安房郡鋸南町にある曹洞宗の寺院。山号は乾坤山（けんこんざん）。本尊は薬師瑠璃光如来。境内は鋸山の南側斜面10万坪余りに及ぶ。大仏（日本寺大仏）があることで知られる。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%97%A5%E6%9C%AC%E5%AF%BA_%28%E5%8D%83%E8%91%89%E7%9C%8C%E9%8B%B8%E5%8D%97%E7%94%BA%29",
+      "text": "Nihon-ji (日本寺, Nihon-ji) is a Buddhist temple in the city of Kyonan, Chiba Prefecture, Japan. The temple is located on the slopes of Mount Nokogiri and is known for its Nihon-ji Daibutsu. Nihon-ji was established as a Hossō sect temple, was transferred to the Tendai sect, and is now a Sōtō Zen temple. Since its founding the temple has fallen into ruin and been revived numerous times.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Nihon-ji",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -17970,11 +18998,11 @@
     "featured": false,
     "score": 60.82,
     "summary": {
-      "text": "良玄寺（りょうげんじ）は、千葉県夷隅郡大多喜町にある浄土宗の寺院。山号は金澤山。本尊は阿弥陀三尊像。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E8%89%AF%E7%8E%84%E5%AF%BA",
+      "text": "Ryōgen-ji (良玄寺) is a Buddhist temple located in the town of Ōtaki in Chiba Prefecture, Japan. It is closely associated with Honda Tadakatsu, a daimyō of the late Sengoku through early Edo period loyal to Tokugawa Ieyasu.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Ry%C5%8Dgen-ji",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -18043,11 +19071,11 @@
     "featured": false,
     "score": 57.69,
     "summary": {
-      "text": "龍福寺（りゅうふくじ）は、千葉県旭市にある真言宗智山派の寺院。山号は仙瀧山。本尊は不動明王。境内には滝があり、また地名から「岩井の滝不動」、「岩井の不動堂」などとも称される。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E9%BE%8D%E7%A6%8F%E5%AF%BA_%28%E6%97%AD%E5%B8%82%29",
+      "text": "Ryūfuku-ji (龍福寺) is a Buddhist temple, formally known as Sentakisan Ryūfuku-ji (仙滝山龍福寺), located in the Iwai district of the city of Asahi in Chiba Prefecture, Japan.  The temple is also known as the Iwai no Taki Fudō (岩井の滝不動), a reference to a Fudō-myōō statue located under a waterfall on the site.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Ry%C5%ABfuku-ji",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -18090,11 +19118,11 @@
     "featured": false,
     "score": 68.87,
     "summary": {
-      "text": "谷津干潟（やつひがた）は、千葉県習志野市にある干潟。国指定谷津鳥獣保護区、ラムサール条約登録地、日本の重要湿地500指定地に含まれる。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E8%B0%B7%E6%B4%A5%E5%B9%B2%E6%BD%9F",
+      "text": "Yatsu-higata (谷津干潟) is a tidal flat in Narashino, Chiba Prefecture, Japan, 2 km from Tokyo Bay. Once a part of the largest tidal flats in Japan, much of the area has been reclaimed. Forty hectares of wetland were designated a Ramsar Site in 1993.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Yatsu-higata",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -18285,11 +19313,11 @@
     "featured": false,
     "score": 62.45,
     "summary": {
-      "text": "水郷佐原あやめパーク（すいごうさわらあやめパーク）は、千葉県香取市にある市営植物園である。水郷筑波国定公園の表玄関として水郷地帯を代表する観光施設。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%B0%B4%E9%83%B7%E4%BD%90%E5%8E%9F%E3%81%82%E3%82%84%E3%82%81%E3%83%91%E3%83%BC%E3%82%AF",
+      "text": "The Suigō Sawara Aquatic Botanical Garden (水郷佐原水生植物園, Suigō Sawara Suisei-shokubutsu-en) is a botanical garden located at the eastern side of the Suigo-Tsukuba Quasi-National Park in Katori, Chiba, Japan. It is open 9 a.m.-4:30 p.m. (8 a.m.-7 p.m. during the Iris Festival) every day in May and June. July through April it is closed every Monday and from Dec.24 through Jan.4. Admission is charged.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Suig%C5%8D_Sawara_Aquatic_Botanical_Garden",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -18334,7 +19362,7 @@
     "kind": "major",
     "themes": [],
     "tags": [],
-    "featured": false,
+    "featured": true,
     "score": 84.7,
     "summary": {
       "text": "千葉海洋球場是位於日本千葉縣千葉市美濱區的多功能棒球場，坐落於幕張新都心的幕張海濱公園F區塊，與幕張展覽館相鄰。此球場於1990年落成啟用，目前為日本職棒千葉羅德海洋的主場，使用人工草坪。它曾是2010年國民體育大會的主場地，用於主持該屆大會的開幕式。",
@@ -18385,7 +19413,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q492596",
@@ -18579,7 +19607,7 @@
     "tags": [
       "名勝"
     ],
-    "featured": true,
+    "featured": false,
     "score": 73.94,
     "summary": {
       "text": "屏風浦是日本千葉縣東北部銚子市至旭市的一個岸邊懸崖，長約10公里，高度超過40米，2016年3月被指定為國家名勝·天然記念物。當地為海蝕地貌。",
@@ -18615,7 +19643,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q5034847",
@@ -18638,13 +19666,13 @@
       "岬"
     ],
     "featured": false,
-    "score": 58.24,
+    "score": 58.35,
     "summary": {
-      "text": "八幡岬（はちまんみさき）は、千葉県いすみ市大原にある岬。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%85%AB%E5%B9%A1%E5%B2%AC_%28%E5%8D%83%E8%91%89%E7%9C%8C%E3%81%84%E3%81%99%E3%81%BF%E5%B8%82%29",
+      "text": "Cape Hachiman (Isumi, Chiba) (八幡岬, Hachiman-misaki) is a cape on the Pacific Ocean, in the Ōhara area of the city of Isumi, in the southeast area of Chiba Prefecture, Japan. The cape is named after Hachiman, a mythological Japanese god of archery and war. There is another identically-named cape a few kilometers to the south in the city of Katsuura City, sharing the namesake.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Cape_Hachiman_%28Isumi%2C_Chiba%29",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -18679,7 +19707,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q5034849",
@@ -18704,11 +19732,11 @@
     "featured": false,
     "score": 64.72,
     "summary": {
-      "text": "刑部岬（ぎょうぶみさき）は、屏風ヶ浦南端に位置する千葉県旭市の太平洋に突出する岬。県立九十九里自然公園の園地として上永井自然公園が整備され、飯岡灯台、飯岡刑部岬展望館がある。岬からの眺望は日本夜景遺産、日本の夜景100選、日本の夕陽・朝日百選、関東の富士見百景に選定されている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%88%91%E9%83%A8%E5%B2%AC",
+      "text": "Cape Gyōbu (刑部岬, Gyōbu-misaki) is a cape on the Pacific Ocean, in the Iioka district of the city of Asahi, Chiba Prefecture, Japan. The cape is located at the very northern point of Kujūkuri Beach on the island of Honshu, and is protected as part of the Suigō-Tsukuba Quasi-National Park.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Cape_Gy%C5%8Dbumi",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -18757,11 +19785,11 @@
     "featured": false,
     "score": 58.83,
     "summary": {
-      "text": "明鐘岬（みょうがねみさき）は、千葉県の富津市と安房郡鋸南町の境にある岬。鋸山が東京湾へ落ち込む所。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%98%8E%E9%90%98%E5%B2%AC",
+      "text": "Cape Myōgane (明鐘岬, Myōgane-misaki) is a cape located on the border of Futtsu and Kyonan, Chiba, Japan, where Mount Nokogiri on its western end precipitously falls into the Uraga Channel to Tokyo Bay.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Cape_My%C5%8Dgane",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -18810,11 +19838,11 @@
     "featured": false,
     "score": 61.87,
     "summary": {
-      "text": "洲崎（すのさき）は、千葉県館山市にある岬。また周辺の地名（大字）でもある。房総半島の最西端であり、浦賀水道（広義の東京湾）の南端に当たる。洲埼灯台がある。また近くには洲崎神社がある。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%B4%B2%E5%B4%8E_%28%E5%8D%83%E8%91%89%E7%9C%8C%29",
+      "text": "Cape Suno (洲崎, Suno-saki) is a cape on the Pacific Ocean, in the city of Tateyama, Chiba Prefecture, Japan. The cape is located at the southwestern point of Bōsō Peninsula on the island of Honshu, and marks the point between the inner and outer parts of the peninsula.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Cape_Sunosaki",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -18868,11 +19896,11 @@
     "featured": false,
     "score": 62.66,
     "summary": {
-      "text": "千葉県立現代産業科学館（ちばけんりつげんだいさんぎょうかがくかん、英: Chiba Museum of Science and Industry）は、千葉県市川市にある県立の科学館。産業に応用された科学技術を体験的に学ぶことを目的とした場を提供している。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%8D%83%E8%91%89%E7%9C%8C%E7%AB%8B%E7%8F%BE%E4%BB%A3%E7%94%A3%E6%A5%AD%E7%A7%91%E5%AD%A6%E9%A4%A8",
+      "text": "Chiba Museum of Science and Industry (千葉県立現代産業科学館, Chiba-kenritsu gendai sangyō kagaku-kan) is a science museum located in Ichikawa, Chiba Prefecture, Japan. The museum introduces mainly topics related to technology, for modern industry. The museum sets up its goal as to provide a place for experiencing various aspects of science and technology which is applied in industry to people at all ages.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Chiba_Museum_of_Science_and_Industry",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -18940,11 +19968,11 @@
     "featured": false,
     "score": 72.13,
     "summary": {
-      "text": "千葉ポートタワー（ちばポートタワー）は、千葉県千葉市中央区の千葉ポートパーク内に建つランドマークタワーである。高さは125メートル。千葉港のシンボルともなっている。千葉県の人口500万人突破を記念して建設され、1986年（昭和61年）に開業した。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%8D%83%E8%91%89%E3%83%9D%E3%83%BC%E3%83%88%E3%82%BF%E3%83%AF%E3%83%BC",
+      "text": "Chiba Port Tower is a tower located in Chiba Port Park, Chūō-ku, Chiba, Chiba Prefecture, Japan. It is 125.1 m (410 ft) tall and has four stories. It was built in 1986.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Chiba_Port_Tower",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -19012,11 +20040,11 @@
     "featured": false,
     "score": 76.65,
     "summary": {
-      "text": "印旛沼（いんばぬま）は、千葉県北部の利根川下流南岸に位置する利根川水系の湖沼である。千葉県立印旛手賀自然公園に属する。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%8D%B0%E6%97%9B%E6%B2%BC",
+      "text": "Lake Inba (印旛沼, Inba-numa) is a man-made polder lake consisting of northern and western sections connected by a canal and located in Inba Tega Prefectural Natural Park in the Tone River basin in Chiba Prefecture, Japan. It is the largest lake in the prefecture. It was formed from remnants of the Katori Sea after the Tone River was diverted.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Lake_Inba",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -19063,11 +20091,11 @@
     "featured": false,
     "score": 77.69,
     "summary": {
-      "text": "鋸山（のこぎりやま）は、千葉県安房郡鋸南町と富津市との境に位置する標高329.5メートルの山。索道として鋸山ロープウェーが通る。日本寺、地獄のぞきなど観光地化されている。日本名山図会の日本80名山、日本百低山に選定されている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E9%8B%B8%E5%B1%B1_%28%E5%8D%83%E8%91%89%E7%9C%8C%29",
+      "text": "Mount Nokogiri (鋸山, Nokogiri-yama) literally \"saw mountain\" is a low mountain on the Bōsō Peninsula on Honshu, Japan. It lies on the southern border of the city of Futtsu and the town Kyonan in Awa District in Chiba Prefecture.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Mount_Nokogiri_%28Chiba%29",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -19115,11 +20143,11 @@
     "featured": false,
     "score": 73.35,
     "summary": {
-      "text": "ニッケコルトンプラザ (NIKKE COLTON PLAZA) は、千葉県市川市鬼高一丁目にあるショッピングセンターである。核店舗はイオンスタイル市川コルトンプラザ。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E3%83%8B%E3%83%83%E3%82%B1%E3%82%B3%E3%83%AB%E3%83%88%E3%83%B3%E3%83%97%E3%83%A9%E3%82%B6",
+      "text": "Nikke Colton Plaza is a shopping mall in Moto-Yawata, Ichikawa city, Chiba prefecture, Japan. In addition to shops, the mall has a tennis court, movie theatres, a park, and a fountain.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Colton_Plaza",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -19182,11 +20210,11 @@
     "featured": false,
     "score": 60.84,
     "summary": {
-      "text": "空挺館（くうていかん）は、千葉県船橋市の陸上自衛隊習志野駐屯地内にある展示施設である。前身は1911年に騎兵連隊御馬見所として天皇や皇族が馬術などの観賞を目的に建てられた迎賓館用途の建物である。習志野名所のひとつ。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E7%A9%BA%E6%8C%BA%E9%A4%A8",
+      "text": "Kūtei-kan (空挺館, Sky-Volunteer Hall) is an exhibition institution in Ground Self-Defense Force Narashino Camp.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/K%C5%ABtei-kan",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -19520,7 +20548,7 @@
     "tags": [
       "展望"
     ],
-    "featured": true,
+    "featured": false,
     "score": 73.84,
     "summary": {
       "text": "おせんころがし（漢字:お仙ころがし）は、千葉県勝浦市の西端から鴨川市にまたがる約4kmの崖の通称である。旧国道が崖の中腹を通り、古くは交通の難所であったが、現在は新国道が整備され解消されている。",
@@ -19563,7 +20591,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q553044",
@@ -19942,11 +20970,11 @@
     "featured": false,
     "score": 64.23,
     "summary": {
-      "text": "大福寺（だいふくじ）は、千葉県館山市船形にある、真言宗智山派の寺院。山号は船形山。院号は普門院。境内には懸造りの観音堂があり、磨崖仏の十一面観世音菩薩が刻まれている。切り立った山の中腹にあることから崖の観音（崖観音）と称される。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E7%A6%8F%E5%AF%BA_%28%E9%A4%A8%E5%B1%B1%E5%B8%82%29",
+      "text": "Daifuku-ji (大福寺) is a Buddhist temple in the Japanese city of Tateyama in Chiba Prefecture, pertaining to the Chizen Sect of Shingon Buddhism. According to tradition, the temple was founded by Gyōki (668–749) in 717, early in the Nara period. It was later revived by a visit by the Tendai Buddhist priest Ennin (794–864), early in the Heian period. The date at which the temple returned to the Shingon sect is unknown. The establishment received a juinjō (朱印状) seal of certification from the Tokugawa shogunate during the Edo period.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Daifuku-ji",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -20009,11 +21037,11 @@
     "featured": false,
     "score": 67.65,
     "summary": {
-      "text": "富山（とみさん）は、千葉県南房総市にある房総丘陵の山の一つ。2つの峰からなる双耳峰で、標高は北峰（金毘羅峰）が349 m",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%AF%8C%E5%B1%B1_%28%E5%8D%83%E8%91%89%E7%9C%8C%29",
+      "text": "Mount Tomi (富山, Tomi-san) is a mountain on the border of the city of Minamibōsō, in southern Chiba Prefecture. The mountain is formed by two peaks. The north, called Konpira Peak, is 349.5 m (1,147 ft), and the south, called Kannon Peak, is 342 m (1,122 ft). Mount Tomi is one of the",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Mount_Tomi",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -20127,11 +21155,11 @@
     "featured": false,
     "score": 61.2,
     "summary": {
-      "text": "太東岬（たいとうみさき）は、千葉県いすみ市の九十九里浜南端リアス式海岸に位置する岬である。南房総国定公園に指定されている。岬には太東埼灯台が屹立する。別称は太東埼（たいとうざき）、愛称は恋のヴィーナス岬。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%A4%AA%E6%9D%B1%E5%B2%AC",
+      "text": "Cape Taitō (太東崎, Taitōsaki) is a cape on the Pacific Ocean, in the city of Isumi, Chiba Prefecture, Japan. The cape is located at the very southern point of Kujūkuri Beach on the island of Honshu.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Cape_Tait%C5%8D",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -20423,11 +21451,11 @@
     "featured": false,
     "score": 72.15,
     "summary": {
-      "text": "ホキ美術館（ホキびじゅつかん、Hoki Museum）は、千葉県千葉市緑区あすみが丘東にある美術館である。主に現代の日本人画家による写実絵画を専門に収集・展示している。千葉県内で発生した2019年10月25日の豪雨による水害により被害を受けて約9カ月間休館したが、2020年8月1日より営業を再開した。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E3%83%9B%E3%82%AD%E7%BE%8E%E8%A1%93%E9%A4%A8",
+      "text": "Hoki Museum (ホキ美術館, Hoki Bijutsukan) is located in Midori-ku, Chiba, Japan. It opened on 3 November 2010 and is the country's first museum dedicated to Realist painting. The collection of over three hundred works includes pieces by Morimoto Sōsuke (森本草介), Noda Hiroshi (野田弘志), Aoki Toshiro (青木敏郎), Isoe Tsuyoshi (磯江毅) and Masayuki Hara. Tomohiko Yamanashi & Taro Nakamoto (Nikken Sekkei） were the architects.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Hoki_Museum",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -20485,11 +21513,11 @@
     "featured": false,
     "score": 60.21,
     "summary": {
-      "text": "一宮川（いちのみやがわ）は、千葉県の九十九里平野南部を流れる二級河川である。流域は夷隅郡大多喜町、長生郡長柄町、長南町、茂原市、長生村、睦沢町、一宮町の1市6町村にまたがる。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E4%B8%80%E5%AE%AE%E5%B7%9D",
+      "text": "The Ichinomiya River (一宮川, Ichinomiyagawa) is a river in Chiba Prefecture, Japan. It is 37.3 kilometers (23.2 mi) in length and has a drainage area of 222 square kilometers (86 sq mi). Under the Rivers Act of 1906 the Ichinomiya is designated as a Class 2 River. The river basin of the Ichinomiya was a social, cultural, and economic center of Kazusa Province in pre-modern Japan. Although very shallow, the river was used to transport sardines from Kujukuri Beach to Tokyo Bay until the beginning of the Meiji period.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Ichinomiya_River",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -20536,11 +21564,11 @@
     "featured": false,
     "score": 69.62,
     "summary": {
-      "text": "アジア経済研究所（アジアけいざいけんきゅうじょ、英語: Institute of Developing Economies）は、千葉県千葉市美浜区にある独立行政法人日本貿易振興機構（ジェトロ）の研究所。通称アジ研。アジアおよび発展途上国に関する社会科学の研究、途上国開発、貧困削減のための政策研究、およびこれらの研究成果の出版を行ってもいる。現在の所長は木村福成。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E3%82%A2%E3%82%B8%E3%82%A2%E7%B5%8C%E6%B8%88%E7%A0%94%E7%A9%B6%E6%89%80",
+      "text": "Institute of Developing Economies (IDE; アジア経済研究所) is a semi-governmental research institute under the Ministry of Economy, Trade and Industry, and the largest institute on social science in Japan. Current status is a body of the Japan External Trade Organization. It is located in Kaihin-Makuhari area of Mihama Ward, Chiba City. The President of IDE is Takashi Shiraishi (白石隆), who is the vice president of the National Graduate Institute for Policy Studies.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Institute_of_Developing_Economies",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -20609,11 +21637,11 @@
     "featured": false,
     "score": 73.21,
     "summary": {
-      "text": "犬吠埼灯台（いぬぼうさきとうだい）は、千葉県銚子市の犬吠埼に立つ第1等灯台。水郷筑波国定公園内に位置する。世界灯台100選、日本の灯台50選に選定され、Aランク保存灯台。2010年に国の登録有形文化財に登録を経て、2020年に国の重要文化財に指定された。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E7%8A%AC%E5%90%A0%E5%9F%BC%E7%81%AF%E5%8F%B0",
+      "text": "Inubōsaki Lighthouse (犬吠埼燈台, Inubōsaki tōdai) is a lighthouse on Cape Inubō, in the city of Chōshi, Chiba Prefecture Japan.  It is notable as one of the few lighthouses whose original lens was a first order Fresnel lens, the strongest type of Fresnel lens.  It is a Registered Tangible Cultural Property of Japan. The lighthouse is located within the borders of the Suigo-Tsukuba Quasi-National Park.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Inub%C5%8Dsaki_Lighthouse",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -20676,11 +21704,11 @@
     "featured": false,
     "score": 65.65,
     "summary": {
-      "text": "夷隅川（いすみがわ）は、千葉県の房総半島南東部を流れる二級河川。一級河川の利根川を除くと千葉県最大の流域面積をもつ。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%A4%B7%E9%9A%85%E5%B7%9D",
+      "text": "The Isumi River (夷隅川, Isumigawa) is a river in Chiba Prefecture, Japan. It is 68 kilometers (42 mi) in length and has a drainage area of 299 square kilometers (115 sq mi). Under the Rivers Act of 1906 the Isumi is designated as a Class 2 River. Additionally, the government has designated the Isumi River a national-level Natural Monument (天然記念物, tennen kinenbutsu).",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Isumi_River",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -20759,6 +21787,60 @@
     "updated_at": "2026-09-28"
   },
   {
+    "id": "wd-Q6373997",
+    "name": {
+      "ja": "千葉県立笠森鶴舞自然公園",
+      "kana": "ちばけんりつかさもりつるまいしぜんこうえん",
+      "romaji": "Chibakenritsukasamoritsurumaishizenkoen",
+      "zh_tw": "千葉県立笠森鶴舞自然公園",
+      "en": "Kasamori Tsurumai Prefectural Natural Park"
+    },
+    "kana_source": "wikidata",
+    "location": {
+      "lat": 35.400278,
+      "lng": 140.200278
+    },
+    "prefecture": "chiba",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "公園"
+    ],
+    "featured": false,
+    "score": 57.33,
+    "summary": {
+      "text": "Kasamori Tsurumai Prefectural Natural Park (県立笠森鶴舞自然公園, Kenritsu Kasamori Tsurumai shizen kōen) is a Prefectural Natural Park in central Chiba Prefecture, Japan. Established in 1966, the park spans the municipalities of Chōnan, Ichihara, and Nagara. Kasamori-dera is on the Bandō 33 Kannon pilgrimage route; its Kannon Hall is an Important Cultural Property dating to 1597 and related woodlands are a Natural Monument.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Kasamori_Tsurumai_Prefectural_Natural_Park",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f0/Kasamori-ji2.jpg/960px-Kasamori-ji2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "User:Wiiii",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Kasamori-ji2.jpg"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q6373997",
+      "osm": "node/8957229063"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q6373997",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.openstreetmap.org/node/8957229063",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
+  },
+  {
     "id": "wd-Q6379617",
     "name": {
       "ja": "DIC川村記念美術館",
@@ -20787,7 +21869,7 @@
     "images": [
       {
         "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/10/Kawamura_kinen_museam.jpg/960px-Kawamura_kinen_museam.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "kent",
+        "author": "不明",
         "license": "Public domain",
         "source_url": "https://commons.wikimedia.org/wiki/File:Kawamura_kinen_museam.jpg"
       }
@@ -20807,7 +21889,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q6426373",
@@ -20830,11 +21912,11 @@
     "featured": false,
     "score": 62.44,
     "summary": {
-      "text": "小糸川（こいとがわ）は、千葉県の主に君津市を流れる二級河川。小糸川水系の本流であり、千葉県では3番目に長い河川である。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%B0%8F%E7%B3%B8%E5%B7%9D",
+      "text": "The Koito River (小糸川, Koito-gawa) is a river in Futtsu and Kimitsu, Chiba Prefecture, Japan. The river is 82 kilometers (51 mi) in length and has a drainage area of 148.7 square kilometers (57.4 sq mi). The Koito is the third-longest river in Chiba Prefecture, and under the Rivers Act of 1906 the Koito is designated as a Class 2 River. The name of the river in Japanese is a combination of two kanji characters, the first meaning “little”, and the second meaning “thread”.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Koito_River",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -20883,11 +21965,11 @@
     "featured": false,
     "score": 58.2,
     "summary": {
-      "text": "千葉県立九十九里自然公園（ちばけんりつくじゅうくりしぜんこうえん）は、九十九里浜を中心とした千葉県東部に位置する都道府県立自然公園。自然公園施設として上永井自然公園、片貝自然公園、白子自然公園が整備されている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%8D%83%E8%91%89%E7%9C%8C%E7%AB%8B%E4%B9%9D%E5%8D%81%E4%B9%9D%E9%87%8C%E8%87%AA%E7%84%B6%E5%85%AC%E5%9C%92",
+      "text": "Kujūkuri Prefectural Natural Park (県立九十九里自然公園, Kenritsu Kujūkuri shizen kōen) is a Prefectural Natural Park in Chiba Prefecture, Japan. First designated for protection in 1935, the park extends along some sixty kilometres of the coast between the Minami Bōsō and  Suigo-Tsukuba Quasi-National Parks. The park spans the borders of twelve municipalities: Asahi, Chiba, Chōsei, Chōshi, Ichinomiya, Kujūkuri, Ōamishirasato, Sanmu, Shirako, Sōsa, Tōgane, and Yokoshibahikari.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Kuj%C5%ABkuri_Prefectural_Natural_Park",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -20959,6 +22041,69 @@
     ],
     "status": "published",
     "updated_at": "2026-09-28"
+  },
+  {
+    "id": "wd-Q65266348",
+    "name": {
+      "ja": "幕張国際研修センター",
+      "kana": "まくはりこくさいけんしゅうせんたー",
+      "romaji": "Makuharikokusaikenshusenta",
+      "zh_tw": "幕張国際研修センター"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 35.651083,
+      "lng": 140.047111
+    },
+    "prefecture": "chiba",
+    "kind": "major",
+    "themes": [],
+    "tags": [],
+    "featured": false,
+    "score": 57.26,
+    "summary": {
+      "text": "幕張国際研修センター（まくはりこくさいけんしゅうセンター）は、千葉市美浜区にある研修施設・宿泊研修施設。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E5%B9%95%E5%BC%B5%E5%9B%BD%E9%9A%9B%E7%A0%94%E4%BF%AE%E3%82%BB%E3%83%B3%E3%82%BF%E3%83%BC",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "海浜幕張",
+          "kana": "かいひんまくはり",
+          "romaji": "Kaihim-Makuhari",
+          "en": "Kaihim-Makuhari"
+        },
+        "distance_m": 550
+      },
+      {
+        "name": {
+          "ja": "京成幕張",
+          "kana": "けいせいまくはり",
+          "romaji": "Keisei Makuhari",
+          "en": "Keisei Makuhari"
+        },
+        "distance_m": 1340
+      }
+    ],
+    "images": [],
+    "external_ids": {
+      "wikidata": "Q65266348"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q65266348",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E5%B9%95%E5%BC%B5%E5%9B%BD%E9%9A%9B%E7%A0%94%E4%BF%AE%E3%82%BB%E3%83%B3%E3%82%BF%E3%83%BC",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q65270530",
@@ -21078,7 +22223,7 @@
     "name": {
       "ja": "濃溝の滝",
       "romaji": "Nomizo no taki",
-      "zh_tw": "龜岩洞窟",
+      "zh_tw": "龜巖洞窟",
       "en": "Nōmizo Falls"
     },
     "location": {
@@ -21122,7 +22267,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q6800065",
@@ -21145,11 +22290,11 @@
     "featured": false,
     "score": 72.51,
     "summary": {
-      "text": "愛宕山（あたごやま）は、千葉県南房総市にある、房総丘陵（嶺岡山地）の一角をなす山である。山頂の高さは標高408.2mで千葉県の最高峰であるが、各都道府県の最高峰の中では最も標高が低い。県内には他に「愛宕山」と称する山が複数存在するため、嶺岡愛宕山（みねおかあたごやま）とも称される。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%84%9B%E5%AE%95%E5%B1%B1_%28%E5%8D%97%E6%88%BF%E7%B7%8F%E5%B8%82%29",
+      "text": "Mount Atago (愛宕山, Atago-yama) is a mountain on the border of the cities of Minamibōsō and Kamogawa in Chiba Prefecture, Japan with an altitude of 408.2 m (1,339 ft). It is the highest point in Chiba Prefecture. Mount Atago is at the west of the Mineoka Mountain District of the Bōsō Hill Range. The kanji for Mount Atago, 愛 and 宕, mean 'love' and 'cave' respectively.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Mount_Atago_%28Minamib%C5%8Ds%C5%8D%2C_Chiba%29",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -21196,11 +22341,11 @@
     "featured": false,
     "score": 63.43,
     "summary": {
-      "text": "伊予ヶ岳（いよがたけ）は、千葉県南房総市にある房総丘陵の山の一つ。標高336.3m。関東百名山に選ばれている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E4%BC%8A%E4%BA%88%E3%83%B6%E5%B2%B3",
+      "text": "Mount Iyogatake (伊予ヶ岳, Iyoga-take) is a mountain on the border of the city of Minamibōsō, Chiba Prefecture, Japan with an altitude of 336.6 m (1,104 ft). Mount Iyogatake is on the western side of Mineoka Mountain District of the Bōsō Hill Range, near Mount Tomi. The mountain takes its name from its resemblance to Mount Ishizuchi in Ehime Prefecture, formerly in Iyo Province.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Mount_Iyogatake",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -21247,11 +22392,11 @@
     "featured": false,
     "score": 61.45,
     "summary": {
-      "text": "烏場山（からすばやま）は、千葉県南房総市と鴨川市との境界にある山である。標高266.6m。房総丘陵（嶺岡山地）の山の一つである。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E7%83%8F%E5%A0%B4%E5%B1%B1",
+      "text": "Mount Karasuba (烏場山, Karasuba-yama) is a mountain of modest height on the border of the cities Minamibōsō and Kamogawa in Chiba Prefecture, Japan, reaching an elevation of 266.6 m (875 ft). It is one of the mountains of the Mineoka Mountain District of the Bōsō Hill Range. The kanji for Mount Karasuba, 烏 and 場, mean 'crow' and 'place' respectively. The mountain became a popular hiking destination after the construction of a hiking trail in 1975.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Mount_Karasuba",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -21297,11 +22442,11 @@
     "featured": false,
     "score": 61.24,
     "summary": {
-      "text": "成田市場（なりたいちば、なりたしじょう）は、",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%88%90%E7%94%B0%E5%B8%82%E5%85%AC%E8%A8%AD%E5%9C%B0%E6%96%B9%E5%8D%B8%E5%A3%B2%E5%B8%82%E5%A0%B4",
+      "text": "The Narita Wholesale Market (成田市公設地方卸売市場) is a public wholesale fish, fruit, and vegetable market in Narita, Chiba, Japan. It is located near Narita International Airport.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Narita_Wholesale_Market",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -21399,11 +22544,11 @@
     "featured": false,
     "score": 69.08,
     "summary": {
-      "text": "小櫃川（おびつがわ）は、千葉県を流れ東京湾に注ぐ二級河川。流路延長88kmは、千葉県内では利根川に次いで2番目に長い川である。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%B0%8F%E6%AB%83%E5%B7%9D",
+      "text": "The Obitsu River (小櫃川, Obitsu-gawa) is a river in Kimitsu, Kisarazu, and Sodegaura, Chiba Prefecture, Japan. The river is 88 kilometers (55 mi) in length and has a drainage area of 273.2 square kilometers (105.5 sq mi).",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Obitsu_River",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -21595,11 +22740,11 @@
     "featured": false,
     "score": 69.13,
     "summary": {
-      "text": "清水公園（しみずこうえん）は、千葉県野田市に所在する面積28万平方メートルの敷地を有する民営の自然公園。サクラ（桜祭り）とツツジ（つつじ祭り）の名所であり、日本さくら名所100選に選定されている。日本最大級のフィールドアスレチックを始め、園内施設が充実している。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%B8%85%E6%B0%B4%E5%85%AC%E5%9C%92",
+      "text": "Shimizu Park (清水公園) is a privately owned park located in Noda City in north-eastern Chiba",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Shimizu_Park",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -21671,11 +22816,11 @@
     "featured": true,
     "score": 74.02,
     "summary": {
-      "text": "法華経寺（ほけきょうじ）は、千葉県市川市中山二丁目にある日蓮宗大本山の寺院である。鎌倉時代の文応元年（1260年）創立。中山法華経寺（なかやまほけきょうじ）とも呼ばれる。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%B3%95%E8%8F%AF%E7%B5%8C%E5%AF%BA",
+      "text": "Hokekyō-ji (法華経寺) is a temple of the Nichiren-shū founded during the Kamakura period in Ichikawa, Chiba Prefecture, Japan. One of Nichiren's most important writings the Risshō Ankoku Ron, regarded as one of the National Treasures of Japan, is kept at the temple. Next to other documents it is being presented to the public on 3 November each year.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Hokeky%C5%8D-ji_%28Ichikawa%29",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -21880,11 +23025,11 @@
     "featured": false,
     "score": 73.38,
     "summary": {
-      "text": "公益財団法人山階鳥類研究所（やましなちょうるいけんきゅうじょ、英語: Yamashina Institute for Ornithology）は、元侯爵の山階芳麿（旧皇族の芳麿王）が、1932年（昭和7年）に東京都渋谷区南平台町の自邸に創設した山階家鳥類標本館（やましなけちょうるいひょうほんかん）を母体に1942年（昭和17年）に設立した研究所。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%B1%B1%E9%9A%8E%E9%B3%A5%E9%A1%9E%E7%A0%94%E7%A9%B6%E6%89%80",
+      "text": "The Yamashina Institute for Ornithology (山階鳥類研究所, Yamashina Chōruikenkyūsho) is a non-profit scientific research organization in Japan, specializing in ornithology.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Yamashina_Institute_for_Ornithology",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -22006,11 +23151,11 @@
     "featured": false,
     "score": 65.93,
     "summary": {
-      "text": "養老川（ようろうがわ）は、千葉県南部を流れる二級河川。養老川水系の本流である。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E9%A4%8A%E8%80%81%E5%B7%9D",
+      "text": "The Yōrō River (養老川, Yōrōgawa) is a river in Chiba Prefecture, Japan. It is 73.4 kilometers (45.6 mi) in length and has a drainage area of 260 square kilometers (100 sq mi). Under the Rivers Act of 1906 the Yōrō is designated as a Class 2 River. The Yōrō originates near Mount Kiyosumi on the border of Amatsukominato area of Kamogawa and Ōtaki, and then passes through Ōtaki and Ichihara.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Y%C5%8Dr%C5%8D_River",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -22390,11 +23535,11 @@
     "featured": false,
     "score": 57.54,
     "summary": {
-      "text": "嵯峨山（さがやま）は、千葉県安房郡鋸南町と富津市との境界にある山である。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%B5%AF%E5%B3%A8%E5%B1%B1_%28%E5%8D%83%E8%91%89%E7%9C%8C%29",
+      "text": "Mount Saga (嵯峨山, Saga-yama) is a mountain located on the border of Futtsu and Kyonan, Chiba Prefecture. Mount Saga has an elevation of 315.5 m (1,035 ft) and is one of the peaks of the Mineoka Mountain District of the Bōsō Hill Range.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Mount_Saga",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -22664,11 +23809,11 @@
     "featured": false,
     "score": 58.15,
     "summary": {
-      "text": "千葉県立養老渓谷奥清澄自然公園（ちばけんりつようろうけいこくおくきよすみしぜんこうえん）は、養老渓谷・清澄山地を中心とした千葉県南部に位置する都道府県立自然公園。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%8D%83%E8%91%89%E7%9C%8C%E7%AB%8B%E9%A4%8A%E8%80%81%E6%B8%93%E8%B0%B7%E5%A5%A5%E6%B8%85%E6%BE%84%E8%87%AA%E7%84%B6%E5%85%AC%E5%9C%92",
+      "text": "Yōrō Keikoku Okukiyosumi Prefectural Natural Park (県立養老渓谷奥清澄自然公園, Kenritsu Yōrō Keikoku Okukiyosumi shizen kōen) is a Prefectural Natural Park in southern Chiba Prefecture, Japan. First designated for protection in 1935, the park's central features are the Yōrō Valley (養老渓谷) and Kiyosumi Mountains (清澄山地). The park spans the municipalities of Ichihara, Kamogawa, Kimitsu, and Ōtaki.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Y%C5%8Dr%C5%8D_Keikoku_Okukiyosumi_Prefectural_Natural_Park",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -23173,11 +24318,11 @@
     "featured": false,
     "score": 70.95,
     "summary": {
-      "text": "清澄寺（せいちょうじ）は、千葉県鴨川市清澄にある日蓮宗の大本山。山号は千光山。日蓮が出家得度および立教開宗した寺とされ、総本山久遠寺・大本山池上本門寺・大本山誕生寺とともに日蓮宗四霊場と呼ばれる。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%B8%85%E6%BE%84%E5%AF%BA_%28%E9%B4%A8%E5%B7%9D%E5%B8%82%29",
+      "text": "Seichō-ji (Japanese: 清澄寺), also known as  Kiyozumi-dera (清水寺),   is a Nichiren Buddhist temple located in the city of Kamogawa in Chiba Prefecture, Japan. Along with Kuon-ji in Yamanashi Prefecture, Ikegami Honmon-ji in the south of Tokyo, and Tanjō-ji also in Kamogawa City, Seichō-ji is one of the \"Four Sacred Places of Nichiren Shū.\"",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Seich%C5%8D-ji",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -23228,11 +24373,11 @@
     "featured": false,
     "score": 69.63,
     "summary": {
-      "text": "誕生寺（たんじょうじ）は、千葉県鴨川市小湊にある、日蓮宗大本山の仏教寺院。山号は小湊山。鎌倉時代の1276年（建治2年）10月、日蓮の弟子日家が日蓮の生家跡に高光山日蓮誕生寺として建立したのが始まりである。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E8%AA%95%E7%94%9F%E5%AF%BA_%28%E9%B4%A8%E5%B7%9D%E5%B8%82%29",
+      "text": "Tanjō-ji (誕生寺) is a Buddhist temple of the Nichiren Shū located in the city of Kamogawa in Chiba Prefecture, Japan. Along with Kuon-ji in Yamanashi Prefecture, Ikegami Honmon-ji in the south of Tokyo, and Seichō-ji also in Kamogawa City, Tanjōji is one of the \"Four Sacred Places of Nichiren Shū.\"",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Tanj%C5%8D-ji",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {

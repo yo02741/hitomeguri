@@ -832,16 +832,21 @@
       }
     ],
     "external_ids": {
-      "wikidata": "Q11123496"
+      "wikidata": "Q11123496",
+      "osm": "node/727622478"
     },
     "sources": [
       {
         "url": "https://www.wikidata.org/wiki/Q11123496",
         "fetched_at": "2026-09-28"
+      },
+      {
+        "url": "https://www.openstreetmap.org/node/727622478",
+        "fetched_at": "2026-09-29"
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q111530249",
@@ -987,7 +992,7 @@
     "id": "wd-Q11260215",
     "name": {
       "ja": "いわて子どもの森",
-      "zh_tw": "岩手兒童之森"
+      "zh_tw": "巖手兒童之森"
     },
     "location": {
       "lat": 40.075722,
@@ -1017,7 +1022,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11260958",
@@ -1310,11 +1315,11 @@
     "featured": false,
     "score": 65.43,
     "summary": {
-      "text": "魹ヶ崎（魹ヶ埼、とどがさき）は、岩手県宮古市の重茂半島にある本州最東端の岬である。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E9%AD%B9%E3%83%B6%E5%B4%8E",
+      "text": "Cape Todo (とどヶ崎, Todogasaki), also written as \"魹ヶ崎\" is the easternmost point of the island of Honshu in Japan. It is located within the borders of the city of Miyako, Iwate, and is part of the Sanriku Fukkō National Park. Although referred to as a \"cape\", the area is not clearly a peninsula extending into the Pacific Ocean, but is simply the easternmost point on a coastline.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Cape_Todo",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -1363,11 +1368,11 @@
     "featured": false,
     "score": 59.01,
     "summary": {
-      "text": "みちのく民俗村 （みちのくみんぞくむら）は岩手県北上市にある野外博物館。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E3%81%BF%E3%81%A1%E3%81%AE%E3%81%8F%E6%B0%91%E4%BF%97%E6%9D%91",
+      "text": "Michinoku Folklore Village (みちのく民俗村, Michinoku Minzoku Mura) is an open-air museum folk museum that opened in Kitakami, Iwate Prefecture, Japan in 1992. The twenty-eight buildings include ten thatched minka, among them the Former Kanno Family Residence, an Important Cultural Property.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Michinoku_Folklore_Village",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -3773,11 +3778,11 @@
     "featured": false,
     "score": 64.61,
     "summary": {
-      "text": "報恩寺（ほうおんじ）は、岩手県盛岡市名須川町にある曹洞宗の寺院。山号は「瑞鳩峰山」と号し報恩禅寺と称する。本尊は釈迦如来。境内にある五百羅漢で有名である。大光山聖壽禪寺、大寶山東禪寺、寶珠盛岡山永福寺、雍護山無量院敎淨寺とともに盛岡五山（盛岡五個寺とも）の一つとされる。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%A0%B1%E6%81%A9%E5%AF%BA_%28%E7%9B%9B%E5%B2%A1%E5%B8%82%29",
+      "text": "Hōon-ji (報恩寺) is a Sōtō Zen Buddhist temple located in the city of Morioka, Iwate Prefecture, Japan. Its main image is a statue of Shaka Nyōrai, although the temple is more famous for its statues of the 500 Rakan.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/H%C5%8Don-ji_%28Morioka%29",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -3892,11 +3897,11 @@
     "featured": false,
     "score": 70.15,
     "summary": {
-      "text": "夏油温泉（げとうおんせん）は、岩手県北上市岩崎新田にある温泉。北上市西部、焼石岳中腹の渓谷にある。夏油高原温泉郷に属する。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%A4%8F%E6%B2%B9%E6%B8%A9%E6%B3%89",
+      "text": "Geto Onsen is an onsen town with traditional ryokan (Japanese inn) and natural hot spring baths. It was founded in 1134, and is one of the oldest establishments in Japan.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Geto_Onsen",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -4487,11 +4492,11 @@
     "featured": false,
     "score": 66.26,
     "summary": {
-      "text": "姫神山（ひめかみさん）は、岩手県盛岡市にある山である。独立峰でピラミッド型をした山容が特徴である。山頂には一等三角点がある。日本二百名山、新・花の百名山の1つである。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%A7%AB%E7%A5%9E%E5%B1%B1_%28%E5%B2%A9%E6%89%8B%E7%9C%8C%29",
+      "text": "Mount Himekami (Japanese: 姫神山, Himekami-san) is a mountain in Morioka, Iwate Prefecture, Japan. It lends its name to the band Himekami.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Mount_Himekami",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -4683,11 +4688,11 @@
     "featured": false,
     "score": 74.01,
     "summary": {
-      "text": "安比高原スキー場（あっぴこうげんスキーじょう, APPI）は、岩手県八幡平市安比高原にあるスキー場。運営会社は株式会社岩手ホテルアンドリゾート。例年12月上旬から5月上旬まで滑走が可能。シンボルは、4つの三角形で四季を表したマーク。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%AE%89%E6%AF%94%E9%AB%98%E5%8E%9F%E3%82%B9%E3%82%AD%E3%83%BC%E5%A0%B4",
+      "text": "Appi Kogen Ski Resort (安比高原スキー場, Appi Kōgen Sukī-jō), branded APPI, is one of the largest ski resorts in Japan, adjacent to the Towada-Hachimantai National Park. Operated by Iwate Hotel & Resort, the resort is most famous for its ski slopes, but it also has a guest ranch, golf courses, tennis courts, soccer fields, sports clubs, hot springs (onsen), and other amenities.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Appi_Kogen_Ski_Resort",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -5232,7 +5237,7 @@
       "ja": "岩手県立博物館",
       "kana": "いわてけんりつはくぶつかん",
       "romaji": "Iwate Kenritsu Hakubutsukan",
-      "zh_tw": "岩手縣立博物館",
+      "zh_tw": "巖手縣立博物館",
       "en": "Iwate Prefectural Museum"
     },
     "kana_source": "wikidata",
@@ -5278,7 +5283,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11475035",
@@ -5665,11 +5670,11 @@
     "featured": true,
     "score": 92.54,
     "summary": {
-      "text": "御所野遺跡（ごしょのいせき）は、岩手県二戸郡一戸町で発見された縄文時代の環状集落遺跡。所在地は一戸町岩舘字御所野。1993年（平成5年）12月21日、国の史跡に指定。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%BE%A1%E6%89%80%E9%87%8E%E9%81%BA%E8%B7%A1",
+      "text": "Goshono ruins (御所野遺跡, Goshono iseki) is a middle Jōmon period archaeological site in the town of Ichinohe, Iwate Prefecture, in the Tōhoku region of northern Japan. Discovered during the construction of an industrial park in 1989, the area was designated a National Historic Site in 1993 by the Japanese government.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Goshono_site",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -5724,11 +5729,11 @@
     "featured": false,
     "score": 66.13,
     "summary": {
-      "text": "徳丹城（とくたんじょう/とくたんのき）は、現在の岩手県紫波郡矢巾町徳田にあった日本の古代城柵。1969年（昭和44年）8月5日に国の史跡に指定されている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%BE%B3%E4%B8%B9%E5%9F%8E",
+      "text": "Tokutan Castle (徳丹城, Tokutan-jō) was an early Heian period jōsaku-style Japanese castle located in what is now the town of Yahaba in Shiwa District, Iwate Prefecture in the Tōhoku region of far northern Honshū, Japan. The site was proclaimed a National Historic Site of Japan on 5 August 1969.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Tokutan_Castle",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -5873,11 +5878,11 @@
     "featured": true,
     "score": 71.84,
     "summary": {
-      "text": "志波城（しわじょう/しわのき）は、現在の岩手県盛岡市中太田・下太田にあった日本の古代城柵。名称は「斯波城」とも。国の史跡に指定されている。現在は盛岡市によって「志波城古代公園」として整備され、外郭南門（がいかくなんもん）築地塀（ついじべい）、政庁の南・西・東それぞれの門、官衙建物などが復元されている。一時は鎮守府将軍が在する鎮守府が置かれていた可能性がある。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%BF%97%E6%B3%A2%E5%9F%8E",
+      "text": "Shiwa Castle (志波城, Shiwa-jō) was an early Heian period jōsaku-style Japanese castle located in what is now part of the city of Morioka, Iwate Prefecture in the Tōhoku region of far northern Honshu, Japan. The site was proclaimed a National Historic Site of Japan in 1979.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Shiwa_Castle",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -6062,6 +6067,57 @@
     "updated_at": "2026-09-28"
   },
   {
+    "id": "wd-Q11498338",
+    "name": {
+      "ja": "接待館遺跡",
+      "kana": "せったいだていせき",
+      "romaji": "Settaidateiseki",
+      "zh_tw": "接待館遺跡",
+      "en": "Settaidate Ruins"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 39.007056,
+      "lng": 141.100194
+    },
+    "prefecture": "iwate",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "遺跡"
+    ],
+    "featured": false,
+    "score": 38.64,
+    "summary": {
+      "text": "接待館遺跡（せったいだていせき）は、岩手県奥州市衣川にある平安時代の遺跡。国の史跡。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E6%8E%A5%E5%BE%85%E9%A4%A8%E9%81%BA%E8%B7%A1",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "images": [],
+    "external_ids": {
+      "wikidata": "Q11498338",
+      "osm": "way/1525343145"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q11498338",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.openstreetmap.org/way/1525343145",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E6%8E%A5%E5%BE%85%E9%A4%A8%E9%81%BA%E8%B7%A1",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
+  },
+  {
     "id": "wd-Q11504244",
     "name": {
       "ja": "新鉛温泉",
@@ -6134,11 +6190,11 @@
     "featured": false,
     "score": 40.06,
     "summary": {
-      "text": "日出島（ひでしま、ひでじま）は、岩手県宮古市に存在する島であり、同市の中で最大の島である。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%97%A5%E5%87%BA%E5%B3%B6",
+      "text": "Hideshima islet is a small 8 ha island lying about 1 km off the coast of the Hinodejima fishery harbour of Miyako, Iwate Prefecture, Japan. It consists of a forested plateau surrounded by cliffs, the steep slopes used by burrow-nesting seabirds. The plateau forest is largely of Quercus crispula and Tilia japonica trees, with some Pinus densiflora and Cryptomeria japonica.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Hideshima_islet",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -6358,7 +6414,7 @@
       "ja": "早池峰神楽",
       "kana": "はやちねかぐら",
       "romaji": "Hayachine Kagura",
-      "zh_tw": "早池峰神乐",
+      "zh_tw": "早池峰神樂",
       "en": "Hayachine Kagura"
     },
     "kana_source": "wikipedia",
@@ -6373,11 +6429,11 @@
     "featured": false,
     "score": 64.0,
     "summary": {
-      "text": "早池峰神楽（はやちねかぐら）は、岩手県花巻市大迫町に伝わる民俗芸能の神楽。「大償（おおつぐない）神楽」と「岳（たけ）神楽」という2つの神楽の総称である。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%97%A9%E6%B1%A0%E5%B3%B0%E7%A5%9E%E6%A5%BD",
+      "text": "Hayachine kagura (早池峰神楽) is a ritual dance, or kagura, in Shinto ceremonies, which is composed of a series of twelve dances. It is performed on August 1 at Hayachine Shrine in Hanamaki, Iwate, Japan.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Hayachine_kagura",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [],
     "external_ids": {
@@ -6394,7 +6450,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11514634",
@@ -6723,11 +6779,11 @@
     "featured": false,
     "score": 64.33,
     "summary": {
-      "text": "松川地熱発電所（まつかわちねつはつでんしょ）は、岩手県八幡平市松川温泉にある地熱発電所。十和田八幡平国立公園の南東にある。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%9D%BE%E5%B7%9D%E5%9C%B0%E7%86%B1%E7%99%BA%E9%9B%BB%E6%89%80",
+      "text": "The Matsukawa Geothermal Power Plant (松川地熱発電所, Matsukawa Jinetsu Hatsudensho) is Japan's first commercial geothermal power station. It is located in the city of  Hachimantai, Iwate Prefecture in the Tōhoku region of northern Japan.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Matsukawa_Geothermal_Power_Plant",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -6816,11 +6872,11 @@
     "featured": false,
     "score": 68.18,
     "summary": {
-      "text": "柳之御所遺跡（やなぎのごしょいせき）は、岩手県西磐井郡平泉町にある平安時代末期の遺跡。『吾妻鏡』に記されている、奥州藤原氏の政庁・平泉館（ひらいずみのたち）跡と推定される。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%9F%B3%E4%B9%8B%E5%BE%A1%E6%89%80%E9%81%BA%E8%B7%A1",
+      "text": "The Yanagi Palace (柳之御所, Yanagi-no-gosho) was the late Heian period palace complex of the Northern Fujiwara clan, the rulers of Hiraizumi,  in what is now southern Iwate Prefecture, Japan. It is protected by the central government as a National Historic Site.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Yanagi-no-Gosho",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -6883,11 +6939,11 @@
     "featured": false,
     "score": 73.36,
     "summary": {
-      "text": "栗駒山（くりこまやま）は、山体が宮城県、秋田県、岩手県の三県にまたがる山。第四紀の安山岩質からなる成層火山（活火山）である。標高は1,626メートル。三角点の名称は須川岳である。山頂部は宮城県と岩手県の境界になっている。奥羽山脈に属し、焼石岳や神室山とともに栗駒国定公園や栗駒山・栃ヶ森周辺森林生態系保護地域として指定されている。二百名山、花の百名山の一つである。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%A0%97%E9%A7%92%E5%B1%B1",
+      "text": "Mount Kurikoma, also known as Kurikomayama and Sukawadake, is an active stratovolcano in Japan that stands 1,627 m (5,338 ft) tall. The volcano is located in Iwate Prefecture on Honshu, the largest of the four main islands of Japan. In addition to recent eruptions, the volcano is seismically active. It is the main feature of Kurikoma Quasi-National Park and a tourist attraction due to its hot springs, hiking trails and flora.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Mount_Kurikoma",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -7038,11 +7094,11 @@
     "featured": false,
     "score": 58.28,
     "summary": {
-      "text": "極楽寺（ごくらくじ）は、岩手県北上市稲瀬町（旧江刺郡）にある真言宗智山派の寺院、および、その前身で平安時代に現在の国見山一帯に栄えた山岳仏教寺院。山号は国見山または金福山。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%A5%B5%E6%A5%BD%E5%AF%BA_%28%E5%8C%97%E4%B8%8A%E5%B8%82%29",
+      "text": "Gokuraki-ji (極楽寺) is a Buddhist temple located in the former Esahi District of what is now the city of Kitakami,  in Iwate Prefecture in the far northern Tōhoku region of Japan, located at the base of the 244 metres (801 ft) Mount Kunimi. The temple belongs to the Shingon sect and its main image is a statue of Amida Nyōrai. Gokuraku-ji is currently managed by Michio Shito. Michio Shito also practices in Anraku-ji l ocated in Inascho, Kitakami.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Gokuraku-ji_%28Kitakami%29",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -7136,11 +7192,11 @@
     "featured": true,
     "score": 94.58,
     "summary": {
-      "text": "橋野高炉跡（はしのこうろあと）は、岩手県釜石市橋野町に所在する高炉跡。国の史跡に指定（1957年）されている。世界遺産「明治日本の産業革命遺産 製鉄・製鋼、造船、石炭産業」の構成資産となっている。登録名は「橋野鉄鉱山」。水戸藩の那珂湊反射炉に大砲用の銑鉄を供給するため南部藩によって建設された。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%A9%8B%E9%87%8E%E9%AB%98%E7%82%89%E8%B7%A1",
+      "text": "Hashino iron mining and smelting site (橋野高炉跡, Hashino kōro ato) is the ruins of an iron smelting and primitive blast furnace built by the Tokugawa shogunate during the final years of the Edo period in the Hashino neighborhood of the city of Kamaishi, Iwate in the Tohoku region of northern Japan. It has been recognized as the oldest western-style blast furnace in Japan, and is part of the UNESCO World Heritage List as one of the Sites of Japan’s Meiji Industrial Revolution: Iron and Steel, Shipbuilding and Coal Mining.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Hashino_iron_mining_and_smelting_site",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -8010,7 +8066,7 @@
       "ja": "焼石岳",
       "kana": "やけいしだけ",
       "romaji": "Yakeishidake",
-      "zh_tw": "燒石岳",
+      "zh_tw": "燒石嶽",
       "en": "Mount Yakeishi"
     },
     "kana_source": "wikipedia",
@@ -8025,11 +8081,11 @@
     "featured": false,
     "score": 64.06,
     "summary": {
-      "text": "焼石岳（やけいしだけ）とは、岩手県南西部、奥州市と和賀郡西和賀町の境にある火山である。標高1,548 m。奥羽山脈中部に属し、牛形山、駒ヶ岳などからなる焼石連峰の主峰で、栗駒国定公園の一部。日本二百名山の一つである。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E7%84%BC%E7%9F%B3%E5%B2%B3",
+      "text": "Mount Yakeishi (jp: 焼石岳) is a mountain in the Ōu Mountains on Honshu, the largest of the four main islands of Japan. The mountain, which rises to a height of 1,548 meters, is part of Kurikoma Quasi-National Park.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Mount_Yakeishi",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -8053,7 +8109,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11567680",
@@ -8263,11 +8319,11 @@
     "featured": false,
     "score": 59.17,
     "summary": {
-      "text": "白鳥舘遺跡（しろとりたていせき）は、岩手県奥州市前沢白鳥舘地内71にある城館跡の遺跡。国の史跡に指定されている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E7%99%BD%E9%B3%A5%E8%88%98%E9%81%BA%E8%B7%A1",
+      "text": "Shirotoridate ruins (白鳥舘遺跡, Shirotoridate iseki) was a late Heian period and Kamakura period settlement in what is now part of the city of Ōshū, Iwate Prefecture, Japan. It is protected by the central government as a National Historic Site.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Shirotoridate_ruins",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [],
     "external_ids": {
@@ -8309,11 +8365,11 @@
     "featured": true,
     "score": 69.23,
     "summary": {
-      "text": "盛岡八幡宮（もりおかはちまんぐう）は、岩手県盛岡市にある神社である。旧社格は県社で、現在は神社本庁の別表神社に加列されている。盛岡の総鎮守とされ、神事のチャグチャグ馬コ、例祭の山車行事（盛岡山車）、流鏑馬神事で知られる。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E7%9B%9B%E5%B2%A1%E5%85%AB%E5%B9%A1%E5%AE%AE",
+      "text": "Morioka Hachimangū (盛岡八幡宮) is a Shinto shrine in the city of Morioka, Iwate in northern Japan. The shrine is noted for its annual festival on the second Saturday in June, which is famous for the Chagu Chagu Umakko, a horse parade which was recognized in 1978 as an Intangible Folk Cultural Property. In 1996 the sound of the bells of the Chagu Chagu Umakko was selected by the Ministry of the Environment as one of the 100 Soundscapes of Japan.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Morioka_Hachimang%C5%AB",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -8361,11 +8417,11 @@
     "featured": false,
     "score": 66.39,
     "summary": {
-      "text": "盛岡市総合アリーナ（もりおかしそうごうアリーナ、英語: Morioka City General Arena）は、岩手県盛岡市にある多目的スポーツ施設である。指定管理者として公益財団法人盛岡市スポーツ協会が管理・運営している。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E7%9B%9B%E5%B2%A1%E5%B8%82%E7%B7%8F%E5%90%88%E3%82%A2%E3%83%AA%E3%83%BC%E3%83%8A",
+      "text": "Morioka Takaya Arena is an arena in Morioka, Iwate, Japan. It is the home arena of the Iwate Big Bulls of the B.League, Japan's professional basketball league.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Morioka_Takaya_Arena",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -8679,11 +8735,11 @@
     "featured": false,
     "score": 67.82,
     "summary": {
-      "text": "石割桜（いしわりざくら）とは、岩手県盛岡市にある一本桜。巨大な花崗岩の割れ目から育った直径約1.35m、樹齢360年を越える桜である。見ごろは4月の半ばから。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E7%9F%B3%E5%89%B2%E6%A1%9C",
+      "text": "The Rock-Breaking (or Rock-Splitting) Cherry Tree (石割桜, Ishiwarizakura) is an approximately 400-year-old cherry tree growing out of a crack in a granite boulder. It is located in front of the district courthouse in Morioka, the capital of Iwate Prefecture in the Tōhoku region of northern Japan.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Rock-Breaking_Cherry_Tree",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -9280,11 +9336,11 @@
     "featured": true,
     "score": 74.06,
     "summary": {
-      "text": "胆沢城（いさわじょう/いさわのき）は、陸奥国胆沢郡（現在の岩手県奥州市水沢）にあった日本の古代城柵。国の史跡に指定されている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E8%83%86%E6%B2%A2%E5%9F%8E",
+      "text": "Isawa Castle (胆沢城, Isawa-jō) was an early Heian period jōsaku-style Japanese castle located in what is now part of the city of Ōshū, Iwate in the Tōhoku region of far northern Honshu, Japan. The site was proclaimed a National National Historic Site in 1922.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Isawa_Castle",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -9433,7 +9489,7 @@
       "ja": "花巻温泉",
       "kana": "はなまきおんせん",
       "romaji": "Hanamakionsen",
-      "zh_tw": "花卷溫泉"
+      "zh_tw": "花捲溫泉"
     },
     "kana_source": "wikidata",
     "location": {
@@ -9464,7 +9520,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11618838",
@@ -9626,11 +9682,11 @@
     "featured": true,
     "score": 73.63,
     "summary": {
-      "text": "衣川館（ころもがわのたて）は、現在の岩手県西磐井郡平泉町高館にあったとされる奥州藤原氏の居館である。源義経の最期の場所として知られる。衣河館とも表記され、高館義経堂（たかだちぎけいどう）、判官館（はんがんだて、ほうがんだて）とも呼ばれる。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E8%A1%A3%E5%B7%9D%E9%A4%A8",
+      "text": "Takadachi Gikeidō (高館義経堂) is a Buddhist chapel located in Hiraizumi in what is now southern Iwate Prefecture in the Tōhoku region of Japan, dedicated to Minamoto no Yoshitsune. It was designated a nationally designated Place of Scenic Beauty in 2014 as part of the Landscapes of the Oku no Hosomichi. It is managed by neighboring Mōtsū-ji.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Takadachi_Gikeid%C5%8D",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -10763,11 +10819,11 @@
     "featured": false,
     "score": 70.05,
     "summary": {
-      "text": "達谷窟（たっこくのいわや）は、岩手県西磐井郡平泉町に所在する毘沙門天をまつった堂（寺院）。国の史跡。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E9%81%94%E8%B0%B7%E7%AA%9F",
+      "text": "Takkoku-no-Iwaya (達谷窟) is a Tendai sect Buddhist temple in Hiraizumi in southern Iwate Prefecture in the Tōhoku region of Japan. Its main image is a stone image of Bishamon-ten. Its formal name is the Takkoku no Iwaya Bishamon-do (達谷窟毘沙門堂). The grounds have been designated a National Historic Site since 2005",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Takkoku-no-Iwaya",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -11082,7 +11138,8 @@
       }
     ],
     "external_ids": {
-      "wikidata": "Q11643163"
+      "wikidata": "Q11643163",
+      "osm": "node/2494981196"
     },
     "sources": [
       {
@@ -11090,12 +11147,16 @@
         "fetched_at": "2026-09-28"
       },
       {
+        "url": "https://www.openstreetmap.org/node/2494981196",
+        "fetched_at": "2026-09-29"
+      },
+      {
         "url": "https://ja.wikipedia.org/wiki/%E9%83%A1%E5%B1%B1%E5%9F%8E_%28%E9%99%B8%E5%A5%A5%E5%9B%BD%E7%B4%AB%E6%B3%A2%E9%83%A1%29",
         "fetched_at": "2026-09-28"
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11646271",
@@ -11659,11 +11720,11 @@
     "featured": false,
     "score": 58.1,
     "summary": {
-      "text": "長者ヶ原廃寺跡（ちょうじゃがはらはいじあと）は、岩手県奥州市衣川にある平安時代の寺院跡。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E9%95%B7%E8%80%85%E3%83%B6%E5%8E%9F%E5%BB%83%E5%AF%BA%E8%B7%A1",
+      "text": "Chōjagahara temple ruins (長者ヶ原廃寺跡, Chōjagahara Haiji) is an archaeological site with the ruins of a late Heian period Buddhist temple located in what is now the city of Ōshū, in northern Japan. The site was protected by the central government as a National Historic Site in the year 2002.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Ch%C5%8Djagahara_temple_ruins",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -11674,7 +11735,8 @@
       }
     ],
     "external_ids": {
-      "wikidata": "Q11653569"
+      "wikidata": "Q11653569",
+      "osm": "node/7461106585"
     },
     "sources": [
       {
@@ -11682,12 +11744,16 @@
         "fetched_at": "2026-09-28"
       },
       {
+        "url": "https://www.openstreetmap.org/node/7461106585",
+        "fetched_at": "2026-09-29"
+      },
+      {
         "url": "https://ja.wikipedia.org/wiki/%E9%95%B7%E8%80%85%E3%83%B6%E5%8E%9F%E5%BB%83%E5%AF%BA%E8%B7%A1",
         "fetched_at": "2026-09-28"
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11655321",
@@ -11765,7 +11831,7 @@
       "ja": "陸中黒埼灯台",
       "kana": "りくちゅうくろさきとうだい",
       "romaji": "Rikuchukurosakitodai",
-      "zh_tw": "陸中黑埼灯台",
+      "zh_tw": "陸中黑埼燈臺",
       "en": "Rikuchū Kurosaki Lighthouse"
     },
     "kana_source": "wikipedia",
@@ -11808,7 +11874,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11658567",
@@ -12418,11 +12484,11 @@
     "featured": false,
     "score": 64.8,
     "summary": {
-      "text": "骨寺村荘園遺跡（ほねでらむらしょうえんいせき）は、岩手県一関市厳美町本寺地域に位置する遺跡である。中尊寺に伝わる、国の重要文化財に指定された2葉の中世荘園絵図に描かれた村落景観が現存する。2005年（平成17年）に国の史跡に指定された。また、史跡指定区域を包括する伝統的な村落景観が一関本寺の農村景観（いちのせきほんでらののうそんけいかん）として、2006年（平成18年）に重要文化的景観に選定された。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E9%AA%A8%E5%AF%BA%E6%9D%91%E8%8D%98%E5%9C%92%E9%81%BA%E8%B7%A1",
+      "text": "Honederamura Shōen ruins (骨寺村荘園遺跡, Honederamura Shōen iseki) is an archaeological site containing the ruins of a large-scale shōen manor from the Kamakura period, located in what is now part of the city of Ichinoseki, Iwate in the Tōhoku region of Japan. A portion of the site (48.8 hectares) was designated a National Historic Site of Japan in 2005.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Honederamura_Sh%C5%8Den",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -12618,11 +12684,11 @@
     "featured": false,
     "score": 65.54,
     "summary": {
-      "text": "鳥海柵（とのみのさく）は、岩手県胆沢郡金ケ崎町西根縦街道南・原添下・鳥海・二ノ宮後にあった平安時代の豪族安倍氏の城柵（日本の城）。指定名称「鳥海柵跡」（とのみのさくあと）として、2013年（平成25年）10月17日に国の史跡に指定されている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E9%B3%A5%E6%B5%B7%E6%9F%B5",
+      "text": "Tonomi Palisade (鳥海柵, Tonomi-no-saku) was an early Heian period jōsaku-style Japanese castle located in what is now the town of Kanegasaki in Isawa District, Iwate Prefecture in far northern Honshū, Japan. The site was proclaimed a National Historic Site of Japan in October 2013.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Tonomi_Palisade",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -12836,16 +12902,21 @@
       }
     ],
     "external_ids": {
-      "wikidata": "Q11678736"
+      "wikidata": "Q11678736",
+      "osm": "node/704414899"
     },
     "sources": [
       {
         "url": "https://www.wikidata.org/wiki/Q11678736",
         "fetched_at": "2026-09-28"
+      },
+      {
+        "url": "https://www.openstreetmap.org/node/704414899",
+        "fetched_at": "2026-09-29"
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q117068227",
@@ -13448,6 +13519,61 @@
     "updated_at": "2026-09-28"
   },
   {
+    "id": "wd-Q132745289",
+    "name": {
+      "ja": "湯舟沢環状列石",
+      "kana": "ゆぶねざわかんじょうれっせき",
+      "romaji": "Yubunezawakanjoresseki",
+      "zh_tw": "湯舟沢環状列石",
+      "en": "Yubunezawa Stone Circle"
+    },
+    "kana_source": "wikidata",
+    "location": {
+      "lat": 39.781165,
+      "lng": 141.097526
+    },
+    "prefecture": "iwate",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "遺跡",
+      "史跡"
+    ],
+    "featured": false,
+    "score": 37.62,
+    "summary": {
+      "text": "Yubunezawa Stone Circle (湯舟沢環状列石, Yubunezawa kanjō resseki) is an archaeological site with the remains of a Late Jōmon (c. 4000 BP) stone circle in what is now the city of Takizawa, Iwate Prefecture, Japan. The site was designated a Prefectural Historic Site in 2013.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Yubunezawa_Stone_Circle",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/44/%E6%B9%AF%E8%88%9F%E6%B2%A2%E7%92%B0%E7%8A%B6%E5%88%97%E7%9F%B3%E5%85%A8%E6%99%AF.jpg/960px-%E6%B9%AF%E8%88%9F%E6%B2%A2%E7%92%B0%E7%8A%B6%E5%88%97%E7%9F%B3%E5%85%A8%E6%99%AF.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "小池 隆",
+        "license": "CC BY 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:%E6%B9%AF%E8%88%9F%E6%B2%A2%E7%92%B0%E7%8A%B6%E5%88%97%E7%9F%B3%E5%85%A8%E6%99%AF.jpg"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q132745289",
+      "osm": "node/2477653799"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q132745289",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.openstreetmap.org/node/2477653799",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
+  },
+  {
     "id": "wd-Q1348297",
     "name": {
       "ja": "北上川",
@@ -13509,6 +13635,7 @@
       "lng": 141.122951
     },
     "prefecture": "iwate",
+    "city": "一関市",
     "kind": "major",
     "themes": [],
     "tags": [
@@ -13536,7 +13663,8 @@
     ],
     "images": [],
     "external_ids": {
-      "wikidata": "Q135040049"
+      "wikidata": "Q135040049",
+      "osm": "node/4741457524"
     },
     "sources": [
       {
@@ -13544,12 +13672,16 @@
         "fetched_at": "2026-09-28"
       },
       {
+        "url": "https://www.openstreetmap.org/node/4741457524",
+        "fetched_at": "2026-09-29"
+      },
+      {
         "url": "https://ja.wikipedia.org/wiki/%E9%85%8D%E5%BF%97%E5%92%8C%E7%A5%9E%E7%A4%BE",
         "fetched_at": "2026-09-28"
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q140528089",
@@ -13692,11 +13824,11 @@
     "featured": false,
     "score": 52.58,
     "summary": {
-      "text": "室根高原県立自然公園（むろねこうげんけんりつしぜんこうえん）は、岩手県一関市室根町折壁一帯から陸前高田市にまたがる県立自然公園である。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%AE%A4%E6%A0%B9%E9%AB%98%E5%8E%9F%E7%9C%8C%E7%AB%8B%E8%87%AA%E7%84%B6%E5%85%AC%E5%9C%92",
+      "text": "Murone Kōgen Prefectural Natural Park (室根高原県立自然公園, Murone Kōgen kenritsu shizen kōen) is a Prefectural Natural Park in Iwate Prefecture, Japan. Established in 1974, the park spans the municipalities of Ichinoseki and Rikuzentakata.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Murone_K%C5%8Dgen_Prefectural_Natural_Park",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -15104,11 +15236,11 @@
     "featured": false,
     "score": 64.88,
     "summary": {
-      "text": "鍋倉城（なべくらじょう）は、岩手県遠野市にあった日本の城。別称遠野城。城跡は国の史跡に指定され、遠野市認定「遠野遺産」に認定されている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E9%8D%8B%E5%80%89%E5%9F%8E_%28%E9%99%B8%E5%A5%A5%E5%9B%BD%29",
+      "text": "Nabekura Castle (鍋倉城, Nabekura-jō) was a Sengoku period yamajiro-style Japanese castle located in the city of Tōno, Iwate Prefecture, Japan. Its ruins have been protected as a National Historic Site since 2023. It is also known as Tōno Castle (遠野城, Tōno-jō) or Yokota Castle (横田城, Yokota-jō).",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Nabekura_Castle",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -15446,11 +15578,11 @@
     "featured": false,
     "score": 59.87,
     "summary": {
-      "text": "気象ロケット観測所（きしょうロケットかんそくじょ）は、かつて存在した日本の気象観測ロケットの射場である。岩手県の綾里に位置するため、英語ではRyori と表記される。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%B0%97%E8%B1%A1%E3%83%AD%E3%82%B1%E3%83%83%E3%83%88%E8%A6%B3%E6%B8%AC%E6%89%80",
+      "text": "Ryori was a launching site for sounding rockets in Japan at 39°02′N 141°50′E in Iwate Prefecture. It was operated by Japan Meteorological Agency, in use since April 1970 until March 2001.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Ryori",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -15540,7 +15672,7 @@
       "ja": "熊の鼻展望台",
       "kana": "くまのはなてんぼうだい",
       "romaji": "Kumanohanatenbodai",
-      "zh_tw": "熊之鼻展望台",
+      "zh_tw": "熊之鼻展望臺",
       "en": "Kumanohana Viewpoint"
     },
     "kana_source": "wikipedia",
@@ -15576,7 +15708,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q21606443",
@@ -15721,11 +15853,11 @@
     "featured": false,
     "score": 65.79,
     "summary": {
-      "text": "碁石海岸（ごいしかいがん）は、岩手県大船渡市末崎半島にある、碁石のような扁平な石（黒色の泥岩による円礫）を主体とする海岸、および、周辺の観光エリアの総称。三陸復興国立公園に属する。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E7%A2%81%E7%9F%B3%E6%B5%B7%E5%B2%B8",
+      "text": "The Goishi Coast (碁石海岸, Goishi Kaigan) is section of the coastline of the Pacific Ocean located in the city of Ōfunato, Iwate Prefecture, in the Tōhoku region of northern Japan. It was  nationally designated a Place of Scenic Beauty and a Natural Monument in 1937. In 1996, the Ministry of the Environment also selected the sound of the waves breaking over Kaminari iwa (雷岩) (lit. 'Thunder Rock') as one of the 100 Soundscapes of Japan.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Goishi_Coast",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -15970,11 +16102,11 @@
     "featured": false,
     "score": 70.51,
     "summary": {
-      "text": "岩手銀行赤レンガ館（いわてぎんこうあかレンガかん）は、岩手県盛岡市中ノ橋通一丁目に所在する銀行建築である。1911年（明治44年）に盛岡銀行本店として完成。2012年まで100年余りにわたり銀行として使われたのち、2016年に多目的ホールおよび創建当時の館内の模様を展示する施設としてオープンした。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%B2%A9%E6%89%8B%E9%8A%80%E8%A1%8C%E8%B5%A4%E3%83%AC%E3%83%B3%E3%82%AC%E9%A4%A8",
+      "text": "Bank of Iwate Red Brick Building (岩手銀行赤レンガ館, Iwate Ginkō Aka-Renga kan) is a former bank building located in the city of Morioka, Iwate Prefecture, Japan. The building is an example of Meiji period western style architecture in Japan, and is listed as an Important Cultural Property. The building is now used as a museum.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Bank_of_Iwate_Red_Brick_Building",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -16384,11 +16516,11 @@
     "featured": false,
     "score": 59.12,
     "summary": {
-      "text": "崎山貝塚（さきやまかいづか）は、岩手県宮古市大字崎山第一地割・第二地割・第三地割にある縄文時代の貝塚および環状集落の遺跡。1996年（平成8年）7月16日、国の史跡に指定された。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%B4%8E%E5%B1%B1%E8%B2%9D%E5%A1%9A",
+      "text": "Sakiyama shell midden (崎山貝塚, Sakiyama Kaizuka) is an archaeological site consisting of a  Jōmon period shell midden and the remains of an adjacent settlement located in what is now the city of Miyako, Iwate Prefecture in the Tōhoku region of northern Japan.  It has been protected by the central government as a National Historic Site since 1996.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Sakiyama_Shell_Mound",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [],
     "external_ids": {
@@ -16431,11 +16563,11 @@
     "featured": false,
     "score": 40.19,
     "summary": {
-      "text": "樺山遺跡（かばやまいせき）は、岩手県北上市稲瀬町大谷地・水越にある、縄文時代の遺跡である。1977年（昭和52年）7月14日に国の史跡に指定されている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%A8%BA%E5%B1%B1%E9%81%BA%E8%B7%A1",
+      "text": "Kabayama ruins (樺山遺跡, Kabayama Iseki) is an archaeological site consisting of  a Jōmon period settlement and possible ceremonial center located in the Inase neighborhood of Kitakami, Iwate, in the Tōhoku region of northern Japan. It has been designated as a National Historic Site since 1977.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Kabayama_Site",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -16718,7 +16850,7 @@
       "ja": "岩手県立美術館",
       "kana": "いわてけんりつびじゅつかん",
       "romaji": "Iwatekenritsubijutsukan",
-      "zh_tw": "岩手縣立美術館",
+      "zh_tw": "巖手縣立美術館",
       "en": "Iwate Museum of Art"
     },
     "kana_source": "wikidata",
@@ -16775,7 +16907,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q34752754",
@@ -16997,11 +17129,11 @@
     "featured": false,
     "score": 63.63,
     "summary": {
-      "text": "中津川（なかつがわ）は、岩手県を流れる一級河川。一級水系北上川の支流。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E4%B8%AD%E6%B4%A5%E5%B7%9D_%28%E5%B2%A9%E6%89%8B%E7%9C%8C%29",
+      "text": "The Nakatsu River (中津川, Nakatsu-gawa) is a river in Iwate Prefecture, Japan. It flows through the city of Morioka, where it enters the Kitakami River.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Nakatsu_River",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -17230,7 +17362,7 @@
       "ja": "もりおか啄木・賢治青春館",
       "kana": "もりおかたくぼくけんじせいしゅんかん",
       "romaji": "Moriokatakubokukenjiseishunkan",
-      "zh_tw": "盛冈拓朴和健二青少年博物馆",
+      "zh_tw": "盛岡拓樸和健二青少年博物館",
       "en": "Morioka Takuboku & Kenji Youth Museum"
     },
     "kana_source": "wikipedia",
@@ -17294,7 +17426,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q5520799",
@@ -17317,11 +17449,11 @@
     "featured": false,
     "score": 62.6,
     "summary": {
-      "text": "岩洞ダム（がんどうダム）は、岩手県盛岡市薮川、一級河川・北上川水系丹藤川に建設されたダムである。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%B2%A9%E6%B4%9E%E3%83%80%E3%83%A0",
+      "text": "Gandō Dam (岩洞ダム, Gandō damu) is a dam on the Tandogawa River, a branch of the Kitakami River in Morioka, Iwate Prefecture, Japan, completed in 1960.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Gand%C5%8D_Dam",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -17761,11 +17893,11 @@
     "featured": false,
     "score": 64.88,
     "summary": {
-      "text": "御所ダム（ごしょダム）は、岩手県盛岡市繋地先、一級河川・北上川水系雫石川に建設されたダムである。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%BE%A1%E6%89%80%E3%83%80%E3%83%A0",
+      "text": "Gosho Dam (御所ダム, Gosho damu) is a multipurpose dam on the Shizukuishi River, a branch of the Kitakami River in Morioka, Iwate Prefecture, Japan, completed in 1981.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Gosho_Dam",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -18384,11 +18516,11 @@
     "featured": false,
     "score": 67.97,
     "summary": {
-      "text": "胆沢ダム（いさわダム）は、国土交通省東北地方整備局が岩手県奥州市、一級河川・北上川水系胆沢川に建設し管理している特定多目的ダムである。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E8%83%86%E6%B2%A2%E3%83%80%E3%83%A0",
+      "text": "Isawa Dam (胆沢ダム) is an embankment dam on the Isawa River in Iwate Prefecture, Japan. It was constructed between 1983 and 2013. Its reservoir, which submerged the smaller Ishibuchi Dam upstream, was full in May 2013. The dam's 15.7 MW power station was expected to be operational in July 2014.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Isawa_Dam",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -19999,16 +20131,21 @@
       }
     ],
     "external_ids": {
-      "wikidata": "Q60989982"
+      "wikidata": "Q60989982",
+      "osm": "way/1154421444"
     },
     "sources": [
       {
         "url": "https://www.wikidata.org/wiki/Q60989982",
         "fetched_at": "2026-09-28"
+      },
+      {
+        "url": "https://www.openstreetmap.org/way/1154421444",
+        "fetched_at": "2026-09-29"
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q60990088",
@@ -20903,7 +21040,7 @@
       "ja": "金田一温泉",
       "kana": "きんだいちおんせん",
       "romaji": "Kindaichionsen",
-      "zh_tw": "金田一温泉",
+      "zh_tw": "金田一溫泉",
       "en": "Kintaichi Onsen"
     },
     "kana_source": "wikipedia",
@@ -20949,7 +21086,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q65265493",
@@ -20957,7 +21094,7 @@
       "ja": "岩手県営運動公園",
       "kana": "いわてけんえいそうごううんどうこうえん",
       "romaji": "Iwatekeneisogoundokoen",
-      "zh_tw": "岩手縣營運動公園陸上競技場",
+      "zh_tw": "巖手縣營運動公園陸上競技場",
       "en": "Iwate Morioka Stadium"
     },
     "kana_source": "wikipedia",
@@ -20974,11 +21111,11 @@
     "featured": false,
     "score": 63.15,
     "summary": {
-      "text": "岩手県営運動公園（いわてけんえいそうごううんどうこうえん）は、岩手県盛岡市にある総合スポーツ施設である。施設は岩手県が所有し、岩手県スポーツ振興事業団が指定管理者として運営管理を行っている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%B2%A9%E6%89%8B%E7%9C%8C%E5%96%B6%E9%81%8B%E5%8B%95%E5%85%AC%E5%9C%92",
+      "text": "Iwate Morioka Stadium (岩手県営運動公園陸上競技場, Iwate ken'ei Undōkōen rikujō kyōgi-ba) is a multi-use stadium in the city of Morioka, Iwate, Japan.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Iwate_Morioka_Stadium",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -21018,7 +21155,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q6743807",
@@ -21041,11 +21178,11 @@
     "featured": false,
     "score": 64.58,
     "summary": {
-      "text": "マリオス（Malios）は、東日本旅客鉄道（JR東日本）盛岡駅西口にある高層ビル（地上20階、地下2階建て。高さ92m）と盛岡市民文化ホール（コンサートホール）からなる複合インテリジェントビルの総称。岩手県内で最も高い建築物である。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E3%83%9E%E3%83%AA%E3%82%AA%E3%82%B9",
+      "text": "The Malios (マリオス) is a skyscraper located in Morioka, Iwate Prefecture, Japan. Construction of the 92-metre, 20-storey skyscraper was finished in 1997.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Malios",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -21127,7 +21264,8 @@
       }
     ],
     "external_ids": {
-      "wikidata": "Q69483064"
+      "wikidata": "Q69483064",
+      "osm": "way/390961015"
     },
     "sources": [
       {
@@ -21135,12 +21273,16 @@
         "fetched_at": "2026-09-28"
       },
       {
+        "url": "https://www.openstreetmap.org/way/390961015",
+        "fetched_at": "2026-09-29"
+      },
+      {
         "url": "https://ja.wikipedia.org/wiki/%E7%9B%9B%E5%B2%A1%E5%B8%82%E5%AD%90%E3%81%A9%E3%82%82%E7%A7%91%E5%AD%A6%E9%A4%A8",
         "fetched_at": "2026-09-28"
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q713836",
@@ -21255,7 +21397,7 @@
       "ja": "久慈琥珀博物館",
       "kana": "くじこはくはくぶつかん",
       "romaji": "Kujikohakuhakubutsukan",
-      "zh_tw": "久慈琥珀博物馆",
+      "zh_tw": "久慈琥珀博物館",
       "en": "Kuji Amber Museum"
     },
     "kana_source": "wikipedia",
@@ -21305,7 +21447,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q7687066",
@@ -21328,11 +21470,11 @@
     "featured": false,
     "score": 71.05,
     "summary": {
-      "text": "田老町（たろうちょう）は、岩手県下閉伊郡に置かれていた町である。2005年（平成17年）に宮古市と合併して廃止された。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E7%94%B0%E8%80%81%E7%94%BA",
+      "text": "Tarō (田老町, Tarō-chō) was a town located in Shimohei District, Iwate Prefecture in Japan. Today it is part of the city of Miyako.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Tar%C5%8D%2C_Iwate",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -21388,11 +21530,11 @@
     "featured": false,
     "score": 66.61,
     "summary": {
-      "text": "湯田ダム（ゆだダム）は、岩手県和賀郡西和賀町杉名畑、一級河川・北上川水系和賀川に建設されたダムである。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%B9%AF%E7%94%B0%E3%83%80%E3%83%A0",
+      "text": "Yuda Dam (湯田ダム) is a multipurpose dam located in the town of Nishiwaga, Iwate, in the Tohoku region of northern Japan. Completed in 1964, it is managed by the Tohoku Regional Development Bureau of the Ministry of Land, Infrastructure and Transport. Located on the Waga River, a branch of the Kitakami River, it is the third largest of the dams built as part of the Kitakami Area Comprehensive Development Plan (KVA). The dam creates Lake Kinshu, a popular sightseeing spot.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Yuda_Dam",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -21723,11 +21865,11 @@
     "featured": false,
     "score": 59.24,
     "summary": {
-      "text": "珊琥島（さんごじま）は、岩手県大船渡市の大船渡湾にある無人島である。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E7%8F%8A%E7%90%A5%E5%B3%B6",
+      "text": "Sangojima (珊琥島) in an uninhabited islet located in the center of Ōfunato Bay, on the Sanriku Coast of Japan.  It has been designated a National Place of Scenic Beauty and Natural Monument since 1946.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Sangojima",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {

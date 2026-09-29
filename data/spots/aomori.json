@@ -862,6 +862,543 @@
     "updated_at": "2026-09-28"
   },
   {
+    "id": "osm-way-1561877833",
+    "name": {
+      "ja": "太宰治まなびの家",
+      "zh_tw": "太宰治まなびの家"
+    },
+    "location": {
+      "lat": 40.591269,
+      "lng": 140.478425
+    },
+    "prefecture": "aomori",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "博物館"
+    ],
+    "featured": false,
+    "score": 0.0,
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "弘前東高前",
+          "kana": "ひろさきひがしこうまえ",
+          "romaji": "Hirosaki Higashiko Mae",
+          "en": "Hirosaki-Higashikōmae"
+        },
+        "distance_m": 850
+      },
+      {
+        "name": {
+          "ja": "弘高下",
+          "en": "Hirokōshita"
+        },
+        "distance_m": 890
+      }
+    ],
+    "images": [],
+    "external_ids": {
+      "osm": "way/1561877833"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/way/1561877833",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
+  },
+  {
+    "id": "osm-way-179440667",
+    "name": {
+      "ja": "吉幾三コレクションミュージアム",
+      "zh_tw": "吉幾三コレクションミュージアム"
+    },
+    "location": {
+      "lat": 40.809638,
+      "lng": 140.443053
+    },
+    "prefecture": "aomori",
+    "city": "五所川原市",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "博物館"
+    ],
+    "featured": false,
+    "score": 0.0,
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "五所川原",
+          "kana": "ごしょがわら",
+          "romaji": "Goshogawara",
+          "en": "Goshogawara"
+        },
+        "distance_m": 430
+      },
+      {
+        "name": {
+          "ja": "津軽五所川原",
+          "kana": "つがるごしょがわら",
+          "romaji": "Tsugaru Goshogawara",
+          "en": "Tsugaru Goshogawara"
+        },
+        "distance_m": 470
+      }
+    ],
+    "images": [],
+    "external_ids": {
+      "osm": "way/179440667"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/way/179440667",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
+  },
+  {
+    "id": "osm-way-245399092",
+    "name": {
+      "ja": "先人記念館",
+      "zh_tw": "先人記念館"
+    },
+    "location": {
+      "lat": 40.785631,
+      "lng": 141.364012
+    },
+    "prefecture": "aomori",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "博物館"
+    ],
+    "featured": false,
+    "score": 0.0,
+    "images": [],
+    "external_ids": {
+      "osm": "way/245399092"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/way/245399092",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
+  },
+  {
+    "id": "osm-way-387385152",
+    "name": {
+      "ja": "奥谷旅館　龍飛岬観光案内所",
+      "zh_tw": "奥谷旅館　龍飛岬観光案内所",
+      "en": "Okuya Ryokan / Cape Tappi Tourist Information"
+    },
+    "location": {
+      "lat": 41.257963,
+      "lng": 140.348713
+    },
+    "prefecture": "aomori",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "博物館"
+    ],
+    "featured": false,
+    "score": 0.0,
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "竜飛定点"
+        },
+        "distance_m": 130
+      },
+      {
+        "name": {
+          "ja": "体験坑道",
+          "en": "Experience Tunnel"
+        },
+        "distance_m": 160
+      }
+    ],
+    "images": [],
+    "external_ids": {
+      "osm": "way/387385152"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/way/387385152",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
+  },
+  {
+    "id": "osm-way-404512950",
+    "name": {
+      "ja": "百石町展示館",
+      "zh_tw": "百石町展示館"
+    },
+    "location": {
+      "lat": 40.603524,
+      "lng": 140.471624
+    },
+    "prefecture": "aomori",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "博物館"
+    ],
+    "featured": false,
+    "score": 0.0,
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "中央弘前",
+          "en": "Chūō-Hirosaki"
+        },
+        "distance_m": 460
+      },
+      {
+        "name": {
+          "ja": "弘高下",
+          "en": "Hirokōshita"
+        },
+        "distance_m": 1210
+      }
+    ],
+    "images": [],
+    "external_ids": {
+      "osm": "way/404512950"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/way/404512950",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
+  },
+  {
+    "id": "osm-way-515633905",
+    "name": {
+      "ja": "キリストの里伝承館",
+      "zh_tw": "キリストの里伝承館"
+    },
+    "location": {
+      "lat": 40.453583,
+      "lng": 141.148117
+    },
+    "prefecture": "aomori",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "博物館"
+    ],
+    "featured": false,
+    "score": 0.0,
+    "images": [],
+    "external_ids": {
+      "osm": "way/515633905"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/way/515633905",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
+  },
+  {
+    "id": "osm-way-545269999",
+    "name": {
+      "ja": "八戸市児童科学館",
+      "zh_tw": "八戸市児童科学館",
+      "en": "Hachinohe Children's Sciense Museum"
+    },
+    "location": {
+      "lat": 40.507387,
+      "lng": 141.506407
+    },
+    "prefecture": "aomori",
+    "city": "八戸市",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "博物館"
+    ],
+    "featured": false,
+    "score": 0.0,
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "小中野",
+          "romaji": "Konakano",
+          "en": "Konakano"
+        },
+        "distance_m": 1300
+      }
+    ],
+    "images": [],
+    "external_ids": {
+      "osm": "way/545269999"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/way/545269999",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
+  },
+  {
+    "id": "osm-way-545794684",
+    "name": {
+      "ja": "大山将棋記念館",
+      "zh_tw": "大山将棋記念館"
+    },
+    "location": {
+      "lat": 40.604535,
+      "lng": 141.432967
+    },
+    "prefecture": "aomori",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "博物館"
+    ],
+    "featured": false,
+    "score": 0.0,
+    "images": [],
+    "external_ids": {
+      "osm": "way/545794684"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/way/545794684",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
+  },
+  {
+    "id": "osm-way-547845576",
+    "name": {
+      "ja": "大間町畜産資料館",
+      "zh_tw": "大間町畜産資料館"
+    },
+    "location": {
+      "lat": 41.516821,
+      "lng": 140.932187
+    },
+    "prefecture": "aomori",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "博物館"
+    ],
+    "featured": false,
+    "score": 0.0,
+    "images": [],
+    "external_ids": {
+      "osm": "way/547845576"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/way/547845576",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
+  },
+  {
+    "id": "osm-way-548369002",
+    "name": {
+      "ja": "板柳町立郷土資料館",
+      "zh_tw": "板柳町立郷土資料館"
+    },
+    "location": {
+      "lat": 40.702045,
+      "lng": 140.455865
+    },
+    "prefecture": "aomori",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "博物館"
+    ],
+    "featured": false,
+    "score": 0.0,
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "板柳",
+          "en": "Itayanagi"
+        },
+        "distance_m": 700
+      }
+    ],
+    "images": [],
+    "external_ids": {
+      "osm": "way/548369002"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/way/548369002",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
+  },
+  {
+    "id": "osm-way-554858602",
+    "name": {
+      "ja": "八戸市立民俗資料収蔵庫 浜小屋",
+      "zh_tw": "八戸市立民俗資料収蔵庫 浜小屋"
+    },
+    "location": {
+      "lat": 40.493695,
+      "lng": 141.629215
+    },
+    "prefecture": "aomori",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "博物館"
+    ],
+    "featured": false,
+    "score": 0.0,
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "大久喜",
+          "romaji": "Ōkuki",
+          "en": "Okuki"
+        },
+        "distance_m": 500
+      }
+    ],
+    "images": [],
+    "external_ids": {
+      "osm": "way/554858602"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/way/554858602",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
+  },
+  {
+    "id": "osm-way-555222041",
+    "name": {
+      "ja": "ツカハラミュージアム",
+      "kana": "つかはらみゅーじあむ",
+      "romaji": "Tsukaharamyujiamu",
+      "zh_tw": "ツカハラミュージアム"
+    },
+    "kana_source": "osm",
+    "location": {
+      "lat": 40.556093,
+      "lng": 141.428162
+    },
+    "prefecture": "aomori",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "博物館"
+    ],
+    "featured": false,
+    "score": 0.0,
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "陸奥市川",
+          "kana": "むついちかわ",
+          "romaji": "Mutsu-Ichikawa",
+          "en": "Mutsu-Ichikawa"
+        },
+        "distance_m": 1210
+      }
+    ],
+    "images": [],
+    "external_ids": {
+      "osm": "way/555222041"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/way/555222041",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
+  },
+  {
+    "id": "osm-way-557052463",
+    "name": {
+      "ja": "八戸市みなと体験学習館「みなっ知」",
+      "zh_tw": "八戸市みなと体験学習館「みなっ知」"
+    },
+    "location": {
+      "lat": 40.527519,
+      "lng": 141.522133
+    },
+    "prefecture": "aomori",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "博物館"
+    ],
+    "featured": false,
+    "score": 0.0,
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "陸奥湊",
+          "romaji": "Mutsu-Minato",
+          "en": "Mutsu-Minato"
+        },
+        "distance_m": 660
+      },
+      {
+        "name": {
+          "ja": "小中野",
+          "romaji": "Konakano",
+          "en": "Konakano"
+        },
+        "distance_m": 1400
+      }
+    ],
+    "images": [],
+    "external_ids": {
+      "osm": "way/557052463"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/way/557052463",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
+  },
+  {
     "id": "wd-Q101086086",
     "name": {
       "ja": "高岡の森弘前藩歴史館",
@@ -1180,11 +1717,11 @@
     "featured": false,
     "score": 72.56,
     "summary": {
-      "text": "宇曽利湖（うそりこ）は、下北半島のほぼ中心、恐山にある湖。湖全体が青森県むつ市に属し、下北半島国定公園に指定されている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%AE%87%E6%9B%BD%E5%88%A9%E6%B9%96",
+      "text": "Lake Usori (宇曽利湖, Usori-ko) is a volcanic crater lake in northern Honshū island, Japan. It is also referred to as Lake Usorisan (宇曽利山湖, Usorizan-ko). Located in the Shimokita Peninsula of Aomori Prefecture, it is within the borders of the city of Mutsu and Shimokita Hanto Quasi-National Park.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Lake_Usori",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -1542,7 +2079,7 @@
     "tags": [
       "特別名勝"
     ],
-    "featured": true,
+    "featured": false,
     "score": 83.63,
     "summary": {
       "text": "奧入瀨溪流是青森縣十和田市十和田湖畔子之口到燒山之間約14公里的奧入瀨川的溪流。屬於十和田八幡平國立公園。國指定之特別名勝及天然記念物（天然保護區域）。",
@@ -1573,7 +2110,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q109595525",
@@ -1872,11 +2409,11 @@
     "featured": false,
     "score": 59.36,
     "summary": {
-      "text": "くろくまの滝（くろくまのたき）は、青森県西津軽郡鰺ヶ沢町にある滝。日本の滝百選の1つ。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E3%81%8F%E3%82%8D%E3%81%8F%E3%81%BE%E3%81%AE%E6%BB%9D",
+      "text": "Kurokuma Falls (くろくまの滝, Kurokuma-no-taki) is a waterfall in the town of Ajigasawa, Higashitsugaru District Aomori Prefecture, Japan, on a tributary of the Akaishi River, which flows down from the World Heritage Site Shirakami Mountains. It is one of \"Japan’s Top 100 Waterfalls\", in a listing published by the Japanese Ministry of the Environment in 1990.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Kurokuma_Falls",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -1972,11 +2509,11 @@
     "featured": false,
     "score": 73.0,
     "summary": {
-      "text": "十三湖（じゅうさんこ）は、青森県津軽半島北西部の日本海岸にある汽水湖。いわゆる縄文海進によって海域が縮小する際に形成された海跡湖である。地元津軽地区では「十三潟（じゅうさんがた）」とも呼ばれる。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%8D%81%E4%B8%89%E6%B9%96",
+      "text": "Lake Jūsan (Japanese: 十三湖, Hepburn: Jūsan-ko), also known locally as Jūsan Lagoon (Japanese: 十三潟, Hepburn: Jūsan-gata) is a brackish-water lagoon-type estuary located in the city of Goshogawara in Aomori Prefecture, Japan. It is the third-largest lake in Aomori Prefecture, after Lake Towada and Lake Ogawara, with a  shoreline of 30 kilometers (19 mi) and a maximum depth of 3 meters.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Lake_J%C5%ABsan",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -2021,11 +2558,11 @@
     "featured": false,
     "score": 67.01,
     "summary": {
-      "text": "ねぶたの家 ワ・ラッセ（ねぶたのいえ ワ・ラッセ）は、青森県青森市にある青森市の文化観光交流施設である。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E3%81%AD%E3%81%B6%E3%81%9F%E3%81%AE%E5%AE%B6_%E3%83%AF%E3%83%BB%E3%83%A9%E3%83%83%E3%82%BB",
+      "text": "The Nebuta Museum Wa Rasse (ねぶたの家 ワ・ラッセ, Nebuta no ie Wa-Rasse) is a city-owned museum near Aomori Station in the city of Aomori in northern Japan. It displays a revolving exhibit of four Nebuta floats from the most recent Aomori Nebuta Matsuri summer festival, alongside media related to the festival. The museum opened in January 2011.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Nebuta_Museum_Wa_Rasse",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -2069,7 +2606,7 @@
       "ja": "みちのく北方漁船博物館",
       "kana": "みちのくほっぽうぎょせんはくぶつかん",
       "romaji": "Michinokuhoppogyosenhakubutsukan",
-      "zh_tw": "陆奥北方渔船博物馆",
+      "zh_tw": "陸奧北方漁船博物館",
       "en": "Michinoku Traditional Wooden Boat Museum"
     },
     "kana_source": "wikipedia",
@@ -2130,7 +2667,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11278995",
@@ -2343,7 +2880,7 @@
       "ja": "八戸大橋",
       "kana": "はちのへおおはし",
       "romaji": "Hachinoheohashi",
-      "zh_tw": "八户大桥",
+      "zh_tw": "八戶大橋",
       "en": "Hachinohe Bridge"
     },
     "kana_source": "wikipedia",
@@ -2398,7 +2935,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11286042",
@@ -2832,7 +3369,7 @@
       "ja": "エルムの街",
       "kana": "えるむのまち",
       "romaji": "Erumunomachi",
-      "zh_tw": "埃鲁穆街",
+      "zh_tw": "埃魯穆街",
       "en": "Elm no Machi"
     },
     "kana_source": "wikipedia",
@@ -2895,7 +3432,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11295408",
@@ -3356,11 +3893,11 @@
     "featured": false,
     "score": 66.62,
     "summary": {
-      "text": "七戸城（しちのへじょう）は、青森県上北郡七戸町にあった日本の城。別名柏葉城。国の史跡。中世から近世にかけての平山城で、七戸川支流の作田川左岸に位置し、標高40メートルの丘陵に置かれた。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E4%B8%83%E6%88%B8%E5%9F%8E",
+      "text": "Shichinohe Castle (七戸城, Shichinohe-jō) was a Japanese castle located in what is now the town of Shichinohe, in Kamikita District of Aomori Prefecture, in the Tōhoku region of far northern Japan. On December 13, 1941, the area was proclaimed a National Historic Site by the Japanese government.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Shichinohe_Castle",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -3607,11 +4144,11 @@
     "featured": true,
     "score": 96.0,
     "summary": {
-      "text": "亀ヶ岡遺跡（かめがおかいせき、亀ヶ岡石器時代遺跡）は、青森県つがる市木造にある縄文時代晩期の集落遺跡。国の史跡に指定され（指定名称は「亀ヶ岡石器時代遺跡」）、出土土偶・土面・注口土器は国の重要文化財に、その他の出土品の一部は青森県重宝に指定されている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E4%BA%80%E3%83%B6%E5%B2%A1%E9%81%BA%E8%B7%A1",
+      "text": "The Kamegaoka Site (亀ヶ岡石器時代遺跡, Kamegaoka sekki-jidai iseki) is an archaeological site in what is now part of the city of Tsugaru, Aomori Prefecture, in the Tōhoku region of northern Japan, containing the ruins of a Jōmon period settlement. The remains were designated a National Historic Site in 1944 by the Japanese government.  It is also referred to as the \"Kamegaoka Stone Age Site\", although the remains discovered are from the final Jōmon period (1,000 – 300 BC), rather than the Japanese Paleolithic period, as the name would imply.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Kamegaoka_Stone_Age_Site",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -3788,11 +4325,11 @@
     "featured": false,
     "score": 57.9,
     "summary": {
-      "text": "八戸市博物館（はちのへしはくぶつかん）は、青森県八戸市にある市営博物館である。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%85%AB%E6%88%B8%E5%B8%82%E5%8D%9A%E7%89%A9%E9%A4%A8",
+      "text": "Hachinohe City Museum (八戸市博物館, Hachinohe-shi Hakubutsukan) opened in Hachinohe, Aomori Prefecture, Japan in 1983. The displays document the archaeology, history, and folkways of the area, the collection including an assemblage of artefacts excavated from the Tangotai Kofun Cluster that has been designated an Important Cultural Property.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Hachinohe_City_Museum",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -3856,11 +4393,11 @@
     "featured": false,
     "score": 59.08,
     "summary": {
-      "text": "八戸市埋蔵文化財センター 是川縄文館（はちのへしまいぞうぶんかざいセンター これかわじょうもんかん）は青森県八戸市是川にあり、埋蔵文化財の保存・管理を行う施設である。いわゆる埋蔵文化財センターの一つ。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%85%AB%E6%88%B8%E5%B8%82%E5%9F%8B%E8%94%B5%E6%96%87%E5%8C%96%E8%B2%A1%E3%82%BB%E3%83%B3%E3%82%BF%E3%83%BC_%E6%98%AF%E5%B7%9D%E7%B8%84%E6%96%87%E9%A4%A8",
+      "text": "Korekawa Archaeological Institution (Korekawa Jōmon Kan) (八戸市埋蔵文化財センター 是川縄文館, Hachinohe-shi Maizō Bunkazai Sentā (Korekawa Jōmon-kan)), more literally the Hachinohe City Buried Cultural Property Center, opened in Hachinohe, Aomori Prefecture, Japan in 2011. It exhibits Jōmon materials from the nearby Korekawa Site and Kazahari I Site (風張１遺跡), finds at the latter including the \"Palms Together Dogū\" (合掌土偶) that has been designated a National Treasure.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Korekawa_Archaeological_Institution_%28Korekawa_J%C5%8Dmon_Kan%29",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -4184,14 +4721,14 @@
     "tags": [
       "博物館"
     ],
-    "featured": false,
+    "featured": true,
     "score": 69.21,
     "summary": {
-      "text": "十和田市現代美術館（とわだしげんだいびじゅつかん、Towada Art Center）とは、青森県十和田市に所在する現代美術館。十和田市が推進するアートによるまちづくりプロジェクト、Arts Towada（アーツ・トワダ）の拠点施設として2008年4月26日に開館した。十和田市官庁街通り（別名：駒街道）に位置する。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%8D%81%E5%92%8C%E7%94%B0%E5%B8%82%E7%8F%BE%E4%BB%A3%E7%BE%8E%E8%A1%93%E9%A4%A8",
+      "text": "The Towada Art Center (十和田市現代美術館, Towada-shi Gendai Bijutsukan) is an art museum in Towada, Aomori Prefecture, Japan.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Towada_Art_Center",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -4216,7 +4753,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11404956",
@@ -4421,7 +4958,7 @@
       "ja": "古牧温泉",
       "kana": "こまきおんせん",
       "romaji": "Komaki Onsen",
-      "zh_tw": "古牧温泉",
+      "zh_tw": "古牧溫泉",
       "en": "Komaki Onsen"
     },
     "kana_source": "wikidata",
@@ -4464,7 +5001,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11411718",
@@ -4532,11 +5069,11 @@
     "featured": false,
     "score": 63.3,
     "summary": {
-      "text": "合浦公園（がっぽこうえん）は、青森県青森市中心部から東部に位置する青森市立の都市公園（総合公園）。青森県で最も古い公園である。園内には青森市営野球場がある。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%90%88%E6%B5%A6%E5%85%AC%E5%9C%92",
+      "text": "Gappo Park (合浦公園, Gappo kōen) is an urban park in the city of Aomori, Japan, located in the eastern part of the city. Major features of the park include a public beach on Aomori Bay, various decorative trees, and the Aomori City Baseball Stadium.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Gappo_Park",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -4804,11 +5341,11 @@
     "featured": false,
     "score": 46.84,
     "summary": {
-      "text": "垂柳遺跡（たれやなぎいせき）は、青森県南津軽郡田舎館村にある弥生時代中期の遺跡。国の史跡に指定されている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%9E%82%E6%9F%B3%E9%81%BA%E8%B7%A1",
+      "text": "The Tareyanagi Site (垂柳遺跡, Tareyanagi iseki) is an archaeological site in the Tareyanagi and Takahi neighborhoods of the village of Inakadate, Aomori Prefecture, in the Tōhoku region of northern Japan. It contains the remains of rice paddy field from the middle of the Yayoi period (approx. 300 BC to 300 AD). The remains were designated a National Historic Site in 2000 by the Japanese government.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Tareyanagi_Site",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -4919,11 +5456,11 @@
     "featured": false,
     "score": 66.89,
     "summary": {
-      "text": "堀越城（ほりこしじょう）は、青森県弘前市堀越字川合・柏田にあった日本の城。国の史跡に指定されている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%A0%80%E8%B6%8A%E5%9F%8E",
+      "text": "Horikoshi Castle (堀越城, Horikoshi jō) was a Muromachi period Japanese castle located in what is now the city of Hirosaki, Aomori Prefecture, in the Tōhoku region of far northern Japan. It is protected by the central government as a National Historic Site, collectively with Hirosaki Castle and Tanesato Castle as the \"Tsugaru clan Castle Sites\".",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Horikoshi_Castle",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -5650,11 +6187,11 @@
     "featured": true,
     "score": 91.53,
     "summary": {
-      "text": "小牧野遺跡（こまきのいせき）は、青森県青森市野沢字小牧野にある縄文時代後期前半の遺跡。国の史跡に指定され、出土品は青森市指定有形文化財に指定されている。2021年（令和3年）、「北海道・北東北の縄文遺跡群」として世界文化遺産に登録された。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%B0%8F%E7%89%A7%E9%87%8E%E9%81%BA%E8%B7%A1",
+      "text": "The Komakino Site (小牧野遺跡, Komakino iseki) is an archaeological site located in the city of Aomori, Aomori Prefecture, in the Tōhoku region of northern Japan containing the ruins of a late Jōmon period (approx. 2000–1500 BC) settlement.  The remains were designated a National Historic Site in 1995 by the Japanese government. The site is located a short distance (approximately 20 minutes by car) to the south of the famous Sannai-Maruyama Site.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Komakino_Site",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -5760,11 +6297,11 @@
     "featured": false,
     "score": 65.73,
     "summary": {
-      "text": "尻屋埼灯台（しりやさきとうだい）は、青森県下北郡東通村の尻屋崎の突端に立つ白亜の灯台。国の重要文化財に指定され、日本の灯台50選に選ばれている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%B0%BB%E5%B1%8B%E5%9F%BC%E7%81%AF%E5%8F%B0",
+      "text": "Shiriyazaki Lighthouse (尻屋埼灯台, Shiriyazaki tōdai) is a lighthouse located on the outermost extremity of Cape Shiriyazaki, the northeasternmost point of Honshu, in Higashidōri, Aomori Prefecture, Japan. It received protection as a Registered Tangible Cultural Property in 2017.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Shiriyazaki_Lighthouse",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -5813,11 +6350,11 @@
     "featured": false,
     "score": 66.41,
     "summary": {
-      "text": "尻屋崎（しりやざき）は、青森県下北郡東通村にある下北半島の北東端をなす岬である。岬の北側は津軽海峡、東側は太平洋。潮の変わり目である。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%B0%BB%E5%B1%8B%E5%B4%8E",
+      "text": "Cape Shiriya (尻屋崎, Shiriyazaki) is a headland on the northeastern point of the island of Honshu in Japan. It is located within the borders of the town of Higashidōri, Aomori in northern Shimokita Peninsula, and is part of the Shimokita Hantō Quasi-National Park. The cape is on the border of Tsugaru Strait separating Honshu from Hokkaido, and the Pacific Ocean.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Cape_Shiriya",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -6492,11 +7029,11 @@
     "featured": false,
     "score": 61.57,
     "summary": {
-      "text": "弘前東照宮（ひろさきとうしょうぐう）は、青森県弘前市笹森町に鎮座する神社（東照宮）である。旧県社。法人名は東照宮。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%BC%98%E5%89%8D%E6%9D%B1%E7%85%A7%E5%AE%AE",
+      "text": "Hirosaki Tōshō-gū (弘前東照宮) was a Shinto shrine located in Hirosaki, Aomori Prefecture, Japan.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Hirosaki_T%C5%8Dsh%C5%8D-g%C5%AB",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -7114,11 +7651,11 @@
     "featured": true,
     "score": 92.51,
     "summary": {
-      "text": "是川遺跡（これかわいせき）は、青森県八戸市大字是川中居にある縄文時代晩期の遺跡。是川石器時代遺跡ともいう。1957年（昭和32年）7月1日、国の史跡に指定されている。2021年（令和3年）、「北海道・北東北の縄文遺跡群」として世界文化遺産に登録された。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%98%AF%E5%B7%9D%E9%81%BA%E8%B7%A1",
+      "text": "The Korekawa Site (是川遺跡, Korekawa iseki) is an archaeological site in the city of Hachinohe, Aomori Prefecture, in the Tōhoku region of northern Japan containing the ruins of a middle to late Jōmon period (3000-1000 BC) settlement.  The remains were designated a National Historic Site in 1957 by the Japanese government.   It is also referred to as the \"Korekawa Stone Age site\", although the remains discovered are from the Jōmon period, rather than the Japanese Paleolithic period.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Korekawa_Site",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -7315,11 +7852,11 @@
     "featured": false,
     "score": 58.27,
     "summary": {
-      "text": "松見の滝（まつみのたき）は、青森県十和田市にある滝。日本の滝百選の一つ。奥入瀬川の支流、黄瀬川の上流にあり、本流との合流点から約6.5kmの国有林内に位置する。国道102号線から徒歩で3時間（往復6時間）ほど要し、登山装備を必要とする。積雪のため冬期は近づけない。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%9D%BE%E8%A6%8B%E3%81%AE%E6%BB%9D",
+      "text": "Matsumi Falls (松見の滝, Matsumi-no-taki) is a waterfall in the city of Towada, Aomori Prefecture, Japan, on a tributary of the Oirase River, which flows down from Lake Towada. It is one of \"Japan’s Top 100 Waterfalls\", in a listing published by the Japanese Ministry of the Environment in 1990.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Matsumi_Falls",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -7502,11 +8039,11 @@
     "featured": false,
     "score": 62.21,
     "summary": {
-      "text": "棟方志功記念館（むなかたしこうきねんかん）は青森県青森市松原にあった板画（版画）作家棟方志功の作品を展示した博物館。1975年（昭和50年）11月に開館し、2024年（令和6年）3月31日に閉館した。一般財団法人棟方志功記念館が運営していた。閉館となった後、作品は青森県との事業連携協定により青森県立美術館に移管された。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%A3%9F%E6%96%B9%E5%BF%97%E5%8A%9F%E8%A8%98%E5%BF%B5%E9%A4%A8",
+      "text": "The Munakata Shiko Memorial Museum of Art (棟方志功記念館, Munakata Shikō Kinenkan) is a museum located in Aomori, Aomori Prefecture, Japan.  It features works from Shikō Munakata, a woodblock printmaker who was born in Aomori City.  The museum was serviced since 1975 to 2024.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Munakata_Shiko_Memorial_Museum_of_Art",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -7653,11 +8190,11 @@
     "featured": false,
     "score": 67.65,
     "summary": {
-      "text": "櫛引八幡宮（くしひきはちまんぐう）は、青森県八戸市にある神社（八幡宮）である。旧社格は郷社。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%AB%9B%E5%BC%95%E5%85%AB%E5%B9%A1%E5%AE%AE",
+      "text": "Kushihiki Hachimangū (櫛引八幡宮, Kushihiki Hachimangū) is a Shinto shrine located in Hachinohe, Aomori Prefecture, Japan. It is a Hachiman shrine, dedicated to the kami Hachiman. It was established c. 1190-1199. Its main festivals are held annually on April 15 and August 15 according to the lunar calendar, and on May 14. In the former Modern system of ranked Shinto shrines, it was classified as a district shrine (郷社, gōsha).",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Kushihiki_Hachimang%C5%AB",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -7984,11 +8521,11 @@
     "featured": false,
     "score": 61.48,
     "summary": {
-      "text": "津軽富士見湖（つがるふじみこ）または廻堰大溜池（まわりぜきおおためいけ）は、青森県北津軽郡鶴田町に存在する人造湖である。岩木山（津軽富士）の見晴らしが良いために、古くから「津軽富士見湖」の愛称で親しまれる岩木山を水源とする自然流水の貯水池で、青森県下最大の人造湖である。廻堰大溜池はこの貯水池の正式名称である。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%B4%A5%E8%BB%BD%E5%AF%8C%E5%A3%AB%E8%A6%8B%E6%B9%96",
+      "text": "Tsugaru Fujimi Lake (津軽富士見湖, Tsugaru Fujimi-ko) also known as Mawarizeki Ōtameike (廻堰大溜池) is a reservoir that is located almost entirely within the town of Tsuruta in Aomori Prefecture, Japan, though a portion of its southern shore lies within the city of Hirosaki. It was built in 1660 to collect snowmelt in order to irrigate the fields in the surrounding area.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Tsugaru_Fujimi_Lake",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -8151,11 +8688,11 @@
     "featured": true,
     "score": 73.08,
     "summary": {
-      "text": "浪岡城（なみおかじょう）は、青森県青森市浪岡（旧南津軽郡浪岡町）にあった日本の城（平山城）。1460年代に浪岡北畠氏によって築城され、1578年に大浦為信に攻められ落城した。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%B5%AA%E5%B2%A1%E5%9F%8E",
+      "text": "Namioka Castle (浪岡城, Namioka jō) was a Muromachi period Japanese castle located in what is now the city of Aomori, Aomori Prefecture, in the Tōhoku region of far northern Japan. The ruins were designated a National Historic Site in 1940 by the Japanese government.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Namioka_Castle",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -8261,11 +8798,11 @@
     "featured": false,
     "score": 60.4,
     "summary": {
-      "text": "淋代海岸（さびしろかいがん）は、青森県三沢市にある海岸。三沢市の南のおいらせ町付近から同市と六ヶ所村との境界となる高瀬川河口までの長さ20キロ、面積90ヘクタールである。日本の白砂青松100選に指定されている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%B7%8B%E4%BB%A3%E6%B5%B7%E5%B2%B8",
+      "text": "Sabishiro Beach (淋代海岸, sabishirokaigan) is a recreational beach in Misawa, Aomori, Japan. The beach is known for being the site where the Miss Veedol departed from to become the first plane to complete a non-stop flight across the Pacific Ocean. Between 1930 and 1932 five planes attempted the journey. The long, flat shoreline composed of a stable mixture of sand and clay was well suited for developing a runway for such attempts.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Sabishiro_Beach",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [],
     "external_ids": {
@@ -8799,7 +9336,7 @@
       "ja": "白神岳",
       "kana": "しらかみだけ",
       "romaji": "Shirakamidake",
-      "zh_tw": "白神岳",
+      "zh_tw": "白神嶽",
       "en": "Mount Shirakami"
     },
     "kana_source": "wikipedia",
@@ -8842,7 +9379,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11580779",
@@ -9233,11 +9770,11 @@
     "featured": false,
     "score": 60.01,
     "summary": {
-      "text": "種里城（たねさとじょう）は、青森県西津軽郡鯵ヶ沢町種里町にあった日本の城（山城）。国の史跡に指定されている（史跡「津軽氏城跡」のうち）。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E7%A8%AE%E9%87%8C%E5%9F%8E",
+      "text": "Tanesato Castle (種里城, Tanesato jō) was a Muromachi period Japanese castle located in what is now the town of Ajigasawa, Aomori Prefecture, in the Tōhoku region of far northern Japan. The site has been protected by the central government as a National Historic Site, collectively with Hirosaki Castle and Horikoshi Castle as the \"Tsugaru clan Castle Sites\" since 2002.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Tanesato_Castle",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -9330,11 +9867,11 @@
     "featured": false,
     "score": 62.2,
     "summary": {
-      "text": "立佞武多の館（たちねぷたのやかた）は、青森県五所川原市にある文化施設。五所川原立佞武多の常設展示・保管および展示ギャラリーにおける美術展示を主な目的とする。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E7%AB%8B%E4%BD%9E%E6%AD%A6%E5%A4%9A%E3%81%AE%E9%A4%A8",
+      "text": "The Tachineputa Museum (立佞武多の館, Tachineputa no Yakata) is a museum located in the city of Goshogawara, Aomori Prefecture, Japan.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Tachineputa_Museum",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -9476,11 +10013,11 @@
     "featured": false,
     "score": 66.54,
     "summary": {
-      "text": "龍飛崎あるいは竜飛崎（たっぴざき）は、青森県東津軽郡外ヶ浜町三厩龍浜にある津軽海峡に突き出た岬。津軽半島の最北端に位置する。津軽国定公園の一部。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E9%BE%8D%E9%A3%9B%E5%B4%8E",
+      "text": "Cape Tappi (竜飛崎/龍飛崎, Tappimisaki) is a headland on the northwestern point of the island of Honshu in Japan. The name is believed to be derived from tampa which means \"sword's edge\" in the Ainu language. It is located on the northern tip of the Tsugaru Peninsula within the borders of the town of Sotogahama in Aomori Prefecture. Much of the cape is also a part of the Tsugaru Quasi-National Park. The cape marks the western limit of the Tsugaru Strait, separating it from the Sea of Japan. The area is known for its almost constant strong winds.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Cape_Tappi",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -9581,7 +10118,7 @@
       "ja": "津軽令和大橋",
       "kana": "つがるれいわおおはし",
       "romaji": "Tsugarureiwaohashi",
-      "zh_tw": "津轻令和大桥"
+      "zh_tw": "津輕令和大橋"
     },
     "kana_source": "wikipedia",
     "location": {
@@ -9618,7 +10155,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11605268",
@@ -9692,11 +10229,11 @@
     "featured": false,
     "score": 60.47,
     "summary": {
-      "text": "聖寿寺館（しょうじゅじだて）は、青森県三戸郡南部町小向字聖寿寺にあった日本の城。別称本三戸城（もとさんのへじょう）。国の史跡。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E8%81%96%E5%AF%BF%E5%AF%BA%E9%A4%A8",
+      "text": "Shōjojidate Castle (聖寿寺館, Shōjojidate) was a Muromachi period Japanese castle located in what is now the town of Nanbu, in Sannohe District of Aomori Prefecture, in the Tōhoku region of far northern Japan.  It was also known as the Moto-Sannohe Castle (本三戸城, Moto-Sannohe jō) (i.e. former Sannohe Castle). It was located at a strategic junction of the Ōshū Kaidō with the Kakuno Kaidō and the Mabechi River.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Sh%C5%8Djujidate_Castle",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -10067,11 +10604,11 @@
     "featured": false,
     "score": 46.65,
     "summary": {
-      "text": "蕪島（かぶしま）は、青森県八戸市鮫町にある島である。ウミネコ繁殖地として、国の天然記念物に指定されている。また、2013年5月に三陸復興国立公園に指定されている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E8%95%AA%E5%B6%8B%E7%A5%9E%E7%A4%BE",
+      "text": "Kabushima Shrine (蕪島 神社, Kabushima Jinja), located in Hachinohe, Aomori, is a Shinto shrine in Japan. It was first built in 1269 on top of the Kabushima island by fishermen to pray for safety and good harvest at sea.  The shrine has been rebuilt several times throughout its history. It was burnt down in November 2015 and rebuilt in 2020.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Kabushima_Shrine",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -11329,9 +11866,12 @@
     "id": "wd-Q11640961",
     "name": {
       "ja": "道の駅みんまや",
+      "kana": "みちのえきみんまや",
+      "romaji": "Michinoekiminmaya",
       "zh_tw": "道之驛三廄#青函隧道紀念館",
       "en": "Roadside station Minmaya"
     },
+    "kana_source": "wikipedia",
     "location": {
       "lat": 41.253972,
       "lng": 140.346722
@@ -11342,6 +11882,13 @@
     "tags": [],
     "featured": false,
     "score": 65.89,
+    "summary": {
+      "text": "道の駅みんまや（みちのえきみんまや）は、青森県東津軽郡外ヶ浜町にある国道339号の道の駅である。愛称は龍飛岬。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E9%81%93%E3%81%AE%E9%A7%85%E3%81%BF%E3%82%93%E3%81%BE%E3%82%84",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
     "nearest_stations": [
       {
         "name": {
@@ -11373,6 +11920,10 @@
       {
         "url": "https://www.wikidata.org/wiki/Q11640961",
         "fetched_at": "2026-09-28"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E9%81%93%E3%81%AE%E9%A7%85%E3%81%BF%E3%82%93%E3%81%BE%E3%82%84",
+        "fetched_at": "2026-09-29"
       }
     ],
     "status": "published",
@@ -11624,11 +12175,11 @@
     "featured": false,
     "score": 55.2,
     "summary": {
-      "text": "野木和公園（のぎわこうえん）は青森県青森市にある青森市立の都市公園（総合公園）。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E9%87%8E%E6%9C%A8%E5%92%8C%E5%85%AC%E5%9C%92",
+      "text": "Nogiwa Park (野木和公園, Nogiwa kōen) is an urban park in the western part of the city of Aomori, Japan. Major features of the park include a reservoir, various decorative trees, wetlands, several footbridges, and an observatory.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Nogiwa_Park",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -11887,7 +12438,7 @@
       "ja": "長者山新羅神社",
       "kana": "ちょうじゃさんしんらじんじゃ",
       "romaji": "Chojasanshinrajinja",
-      "zh_tw": "长者山新罗神社",
+      "zh_tw": "長者山新羅神社",
       "en": "Chōjasan Shinra Shrine"
     },
     "kana_source": "wikidata",
@@ -11933,7 +12484,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11660084",
@@ -12234,11 +12785,11 @@
     "featured": false,
     "score": 62.74,
     "summary": {
-      "text": "青森市森林博物館（あおもりししんりんはくぶつかん）とは、青森県青森市柳川2丁目にある、森林に関する総合博物館。建物は旧林野庁青森営林局（現・青森市役所柳川庁舎）庁舎（ルネッサンス様式の木造洋風建築。明治41年築）。館内は、博物館向きに改装されているが、特別に復元されている営林局長室は、かつて映画「八甲田山」のロケが行われた場所でもある。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E9%9D%92%E6%A3%AE%E5%B8%82%E6%A3%AE%E6%9E%97%E5%8D%9A%E7%89%A9%E9%A4%A8",
+      "text": "The Aomori City Forestry Museum (青森市森林博物館, Aomori-shi Shinrin Hakubutsukan) is a natural history museum located in the city of Aomori in Aomori Prefecture, Japan. The museum focuses primarily on the forest ecosystems of Aomori Prefecture and the history of the lumber industry in the prefecture, though other unrelated exhibits are also maintained.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Aomori_City_Forestry_Museum",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -12364,11 +12915,11 @@
     "featured": false,
     "score": 66.84,
     "summary": {
-      "text": "青森県立三沢航空科学館（あおもりけんりつみさわこうくうかがくかん）とは、青森県三沢市にある博物館である。三沢市大空ひろばの一角にあり大空と飛翔をテーマとした航空と科学の博物館。2003年8月8日に開館した。三沢市大空ひろばについても述べる。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E9%9D%92%E6%A3%AE%E7%9C%8C%E7%AB%8B%E4%B8%89%E6%B2%A2%E8%88%AA%E7%A9%BA%E7%A7%91%E5%AD%A6%E9%A4%A8",
+      "text": "Misawa Aviation & Science Museum, Aomori (青森県立三沢航空科学館, Aomori Kenritsu Misawa Koku Kagaku Kan) is an aerospace museum in the city of Misawa, Aomori Prefecture, Japan. The museum was opened on August 8, 2003, and is located adjacent to Misawa Airport.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Misawa_Aviation_%26_Science_Museum",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -12416,11 +12967,11 @@
     "featured": false,
     "score": 60.35,
     "summary": {
-      "text": "青森県立郷土館（あおもりけんりつきょうどかん、Aomori Prefectural Museum）は、青森県青森市本町にある県立の博物館。1973年（昭和48年）9月に開館した青森県内唯一の総合博物館である。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E9%9D%92%E6%A3%AE%E7%9C%8C%E7%AB%8B%E9%83%B7%E5%9C%9F%E9%A4%A8",
+      "text": "The Aomori Prefectural Museum (青森県立郷土館, Aomori Kenritsu Kyōdokan) is a museum located in Aomori, Aomori Prefecture, Japan.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Aomori_Prefectural_Museum",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -12468,7 +13019,7 @@
       "ja": "青森県立美術館",
       "kana": "あおもりけんりつびじゅつかん",
       "romaji": "Aomorikenritsubijutsukan",
-      "zh_tw": "青森县立美術館",
+      "zh_tw": "青森縣立美術館",
       "en": "Aomori Museum of Art"
     },
     "kana_source": "wikipedia",
@@ -12518,7 +13069,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11662290",
@@ -12883,11 +13434,11 @@
     "featured": false,
     "score": 62.68,
     "summary": {
-      "text": "高瀬川（たかせがわ）は、青森県南東部を流れ太平洋に注ぐ一級河川。高瀬川水系の本流である。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E9%AB%98%E7%80%AC%E5%B7%9D",
+      "text": "The Takase River (高瀬川, Takasegawa) is a Class A river system that flows through Aomori Prefecture, Japan. It flows from Mt. Yahata, through Lake Ogawara into the Pacific Ocean.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Takase_River_%28Aomori%29",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -12976,11 +13527,11 @@
     "featured": false,
     "score": 44.7,
     "summary": {
-      "text": "鯛島（たいじま）は、青森県むつ市脇野沢（旧脇野沢村）の牛ノ首岬沖約800mの陸奥湾上にある無人島。下北半島国定公園に含まれ、1975年12月10日には海域公園（旧称：海中公園）に指定されている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E9%AF%9B%E5%B3%B6_%28%E9%9D%92%E6%A3%AE%E7%9C%8C%29",
+      "text": "Taijima (Japanese: 鯛島) is an uninhabited set of rocky islands off the coast of the Shimokita Peninsula in Mutsu Bay. The island is a part of the city of Mutsu in Aomori Prefecture. The island has 0.4 kilometers (0.25 mi) of coastline and an area of 0.016 square kilometers (0.0062 sq mi). It is a part of the prefecture-managed, Shimokita Hantō Quasi-National Park.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Taijima",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -13122,11 +13673,11 @@
     "featured": false,
     "score": 43.27,
     "summary": {
-      "text": "龍飛埼灯台（たっぴさきとうだい）は、青森県津軽半島の竜飛崎の突端に立つ白亜円形の大型灯台。周辺は津軽国定公園に指定され、津軽海峡から北海道も望める風光明媚の地。また日本の灯台50選にも選ばれている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E9%BE%8D%E9%A3%9B%E5%9F%BC%E7%81%AF%E5%8F%B0",
+      "text": "Tappizaki Lighthouse (龍飛埼灯台, Tappizaki tōdai) is a lighthouse located on the outermost extremity of Cape Tappi, the northernmost point of Tsugaru Peninsula, Honshu, in Sotogahama, Aomori Prefecture, Japan. It is located within the Tsugaru Quasi-National Park and on clear days, Hokkaido can be seen across the Tsugaru Strait.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Tappizaki_Lighthouse",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -13453,11 +14004,11 @@
     "featured": false,
     "score": 58.1,
     "summary": {
-      "text": "青森公立大学国際芸術センター青森（あおもりこうりつこくさいげいじゅつせんたーあおもり）は、青森県青森市にある公立の美術館で、青森公立大学の附属施設でもある。青森県内の美術館5館で構成する「AOMORI GOKAN」の一つである。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E9%9D%92%E6%A3%AE%E5%85%AC%E7%AB%8B%E5%A4%A7%E5%AD%A6%E5%9B%BD%E9%9A%9B%E8%8A%B8%E8%A1%93%E3%82%BB%E3%83%B3%E3%82%BF%E3%83%BC%E9%9D%92%E6%A3%AE",
+      "text": "Aomori Contemporary Art Centre (青森公立大学国際芸術センター青森, Aomori Kōritsu Daigaku Kokusai Geijutsu Sentā Aomori) opened in Aomori, Aomori Prefecture, Japan in 2001. Designed by architect Tadao Ando and operated by Aomori Public University, the institution's activities include exhibitions, education initiatives, and an artist-in-residence programme.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Aomori_Contemporary_Art_Centre",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -14275,11 +14826,11 @@
     "featured": false,
     "score": 59.57,
     "summary": {
-      "text": "金平成園（かねひらなりえん）とは、青森県黒石市にある日本庭園。別名「澤成園（さわなりえん）」。津軽で盛んであった大石武学流の造園を代表する庭園である。国の名勝。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E9%87%91%E5%B9%B3%E6%88%90%E5%9C%92",
+      "text": "Kanehiranari-en (金平成園), also known as Sawanari-en (澤成園) is a Japanese landscape garden and nationally designated Place of Scenic Beauty in the city of Kuroishi, Aomori Prefecture, Japan.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Kanehiranari-en",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -15498,7 +16049,7 @@
       "ja": "キリストの墓",
       "kana": "きりすとのはか",
       "romaji": "Kirisutonohaka",
-      "zh_tw": "十来冢",
+      "zh_tw": "十來冢",
       "en": "grave of Jesus in Shingō"
     },
     "kana_source": "wikipedia",
@@ -15541,7 +16092,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q18335691",
@@ -15908,11 +16459,11 @@
     "featured": false,
     "score": 56.17,
     "summary": {
-      "text": "夜越山森林公園（よごしやましんりんこうえん）は、青森県東津軽郡平内町にある町営の森林公園である。2015年から園内にある一部の施設を「株式会社クリーンシステム平内」が平内町より指定管理者の指定を受け管理運営を受任している。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%A4%9C%E8%B6%8A%E5%B1%B1%E6%A3%AE%E6%9E%97%E5%85%AC%E5%9C%92",
+      "text": "Yogoshiyama Forest Park (Japanese: 夜越山森林公園（よごしやましんりんこうえん）, Hepburn: Yogoshiyama Shinrin Kōen) is a forest park maintained by the municipal government of Hiranai located in Aomori Prefecture, Japan. Since 2015, Clean System Hiranai Co., Ltd. has been responsible for administrative duties within the park as appointed by the town government.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Yogoshiyama_Forest_Park",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [],
     "external_ids": {
@@ -15950,6 +16501,13 @@
     ],
     "featured": false,
     "score": 34.74,
+    "summary": {
+      "text": "Takayama Uichi Memorial Museum of Art (七戸町立鷹山宇一記念美術館, Shichinohe chōritsu Takayama Uichi kinen bijutsukan) opened in Shichinohe, Aomori Prefecture, Japan, in 1994 as a part of Roadside Station Shichinohe.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Takayama_Uichi_Memorial_Museum_of_Art",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
     "nearest_stations": [
       {
         "name": {
@@ -16296,11 +16854,11 @@
     "featured": false,
     "score": 69.04,
     "summary": {
-      "text": "高山稲荷神社（たかやまいなりじんじゃ）とは、青森県つがる市牛潟町鷲野沢にある神社である。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E9%AB%98%E5%B1%B1%E7%A8%B2%E8%8D%B7%E7%A5%9E%E7%A4%BE",
+      "text": "Takayama Inari Shrine (高山稲荷神社, Takayama Inari Jinja) is a Shinto shrine located in the city of  Tsugaru, Aomori Prefecture, Japan. The shrine is dedicated to  Inari Ōkami. Takayama Inari Shrine is notable for the many red torii that wind along its path. It is said that this shrine had already been established in the late 17th century. Next to the shrine is a memorial dedicated to American sailors who died in 1889 when full-rigged ship Cheseborough wrecked off the coast of Shariki Village (now a part of Tsugaru) during a typhoon.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Takayama_Inari_Shrine",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -16350,11 +16908,11 @@
     "featured": false,
     "score": 58.6,
     "summary": {
-      "text": "弘前市立博物館（ひろさきしりつはくぶつかん）は、青森県弘前市にある博物館である。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%BC%98%E5%89%8D%E5%B8%82%E7%AB%8B%E5%8D%9A%E7%89%A9%E9%A4%A8",
+      "text": "Hirosaki City Museum (弘前市立博物館, Hirosaki Shiritsu Hakubutsukan) opened in Hirosaki, Aomori Prefecture, Japan in 1977. It lies within Hirosaki Park, in the former grounds of Hirosaki Castle. As of March 2016, the collection numbered some eighteen thousand items, including an assemblage of artefacts excavated from the Sunazawa Site that have been designated an Important Cultural Property.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Hirosaki_City_Museum",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -16559,7 +17117,7 @@
       "ja": "二ツ森貝塚",
       "kana": "ふたつもりかいづか",
       "romaji": "Futatsumorikaizuka",
-      "zh_tw": "二森贝冢",
+      "zh_tw": "二森貝冢",
       "en": "Futatsumori Site"
     },
     "kana_source": "wikipedia",
@@ -16577,11 +17135,11 @@
     "featured": false,
     "score": 88.89,
     "summary": {
-      "text": "二ツ森貝塚（ふたつもりかいづか）は、青森県上北郡七戸町にある縄文時代前期前葉～中期末葉（およそ5,500年前から4,000年前）の貝塚を伴う集落遺跡。面積はおよそ30ヘクタールで、東西約600メートル×南北約170メートルの範囲に広がり、1998年1月16日に遺跡の東側約3.5ヘクタールが国の史跡に指定され、2015年10月7日に新たに約8.3ヘクタールが追加指定された。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E4%BA%8C%E3%83%84%E6%A3%AE%E8%B2%9D%E5%A1%9A",
+      "text": "The Futatsumori Site, known primarily in Japanese as the Futatsumori Shell Mound (二ツ森貝塚, Futatsumori Kaizuka), is an archaeological site consisting of a series of large shell middens and the remains of an adjacent settlement from the Jōmon period, located in what is now part of the town of Shichinohe in Aomori Prefecture in the Tōhoku region of northern Japan. It has been protected by the central government as a National Historic Site since 1998. The site covers an area of about 30 hectares.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Futatsumori_Site",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -16610,7 +17168,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q30922740",
@@ -16981,7 +17539,7 @@
       "ja": "岩木高原県立自然公園",
       "kana": "いわきこうげんけんりつしぜんこうえん",
       "romaji": "Iwakikogenkenritsushizenkoen",
-      "zh_tw": "岩木高原縣立自然公園",
+      "zh_tw": "巖木高原縣立自然公園",
       "en": "Iwaki Kōgen Prefectural Natural Park"
     },
     "kana_source": "wikidata",
@@ -16998,11 +17556,11 @@
     "featured": false,
     "score": 54.18,
     "summary": {
-      "text": "岩木高原県立自然公園（いわきこうげんけんりつしぜんこうえん）は、青森県弘前市にある青森県立自然公園である。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%B2%A9%E6%9C%A8%E9%AB%98%E5%8E%9F%E7%9C%8C%E7%AB%8B%E8%87%AA%E7%84%B6%E5%85%AC%E5%9C%92",
+      "text": "Iwaki Kōgen Prefectural Natural Park (岩木高原県立自然公園, Iwaki Kōgen kenritsu shizen-kōen) is a Prefectural Natural Park in southwest Aomori Prefecture, Japan. Established in 1958, the park lies wholly within the municipality of Hirosaki.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Iwaki_K%C5%8Dgen_Prefectural_Natural_Park",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -17022,7 +17580,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q3141155",
@@ -17045,11 +17603,11 @@
     "featured": false,
     "score": 59.82,
     "summary": {
-      "text": "仏沼（ほとけぬま）は、青森県三沢市の北部に位置し、小川原湖に隣接する低層湿原。小川原湖と太平洋の間に位置しており仏沼湿原ともいう。干拓地（仏沼干拓地、250ha）とその周辺の水田地帯（439ha）、それに隣接する小川原湖湖畔（55ha）の3地区で構成され、特に干拓地は半自然の湿地草原である。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E4%BB%8F%E6%B2%BC",
+      "text": "Hotokenuma (仏沼) is a wetland area located in the northern part of the city of Misawa, Aomori Prefecture, in the northern Tōhoku region of Japan. The wetland is connected to the eastern shores of Lake Ogawara at the base of the Shimokita Peninsula.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Hotokenuma",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -17159,11 +17717,11 @@
     "featured": false,
     "score": 65.45,
     "summary": {
-      "text": "猿賀神社（さるがじんじゃ、さるかじんじゃ）は、青森県平川市猿賀に鎮座する神社。旧社格は県社。807年（大同2年）に深砂宮（神蛇宮）として創始。戦後に神社本庁の別表神社となった。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E7%8C%BF%E8%B3%80%E7%A5%9E%E7%A4%BE",
+      "text": "Saruka Jinja (猿賀神社), sometimes rendered Saruga, is a Shinto shrine in Hirakawa, Aomori Prefecture, Japan. The shrine is said to have been founded in 807, when Sakanoue no Tamuramaro came north during the campaigns against the Ezo. The Honden, dating to 1826, is a Prefecturally-designated Important Cultural Property. Preserved building records (棟札) are a City-designated Important Cultural Property (Historic Materials). There is an annual rice-planting festival and a pond of pink lotus.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Saruka_Shrine",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -17224,11 +17782,11 @@
     "featured": false,
     "score": 67.7,
     "summary": {
-      "text": "青龍寺（せいりゅうじ）は、青森県青森市にある高野山の青森別院。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E9%9D%92%E9%BE%8D%E5%AF%BA_%28%E9%9D%92%E6%A3%AE%E5%B8%82%29",
+      "text": "Seiryū-ji (青龍寺) is a Kōyasan Betsuin (affiliate temple) located in Aomori, Aomori Prefecture. The temple was founded by a Great Acharya Ryūkou Oda (織田隆弘), who later built Shōwa Daibutsu (昭和大仏) in 1984. Roughly 21.35 meters in height, it is the tallest seated bronze figure of Buddha in Japan.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Seiry%C5%AB-ji",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -17333,11 +17891,11 @@
     "featured": false,
     "score": 62.58,
     "summary": {
-      "text": "大島（おおしま）は陸奥湾中央の夏泊半島突端部、夏泊崎の沖にある島。全島が平内町（青森県東津軽郡）に属する。島の北端には陸奥大島灯台があるほか、釣りスポットとしても人気がある。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E5%B3%B6_%28%E9%99%B8%E5%A5%A5%E6%B9%BE%29",
+      "text": "Ōshima (Japanese: 大島（おおしま）, Hepburn: Ōshima) is a rocky island off the northern coast of Natsudomari Peninsula in Mutsu Bay. The island is a part of Hiranai in Aomori Prefecture. The island has 3 km (1.9 mi) of coastline and an area of 0.16 km2 (0.062 sq mi). It is a part of the prefecture-maintained, Asamushi-Natsudomari Prefectural Natural Park.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/%C5%8Cshima_%28Aomori%29",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [],
     "external_ids": {
@@ -17379,11 +17937,11 @@
     "featured": false,
     "score": 69.01,
     "summary": {
-      "text": "新青森県総合運動公園（しんあおもりけんそうごううんどうこうえん）は青森県青森市大字宮田にある運動公園。施設は青森県が所有し、スポルト青い森グループが指定管理者として運営管理を行っている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%96%B0%E9%9D%92%E6%A3%AE%E7%9C%8C%E7%B7%8F%E5%90%88%E9%81%8B%E5%8B%95%E5%85%AC%E5%9C%92",
+      "text": "New Aomori Prefecture General Sports Park (Japanese: 新青森県総合運動公園) is a group of sports facilities in Aomori, Aomori, Japan.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/New_Aomori_Prefecture_General_Sports_Park",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -17429,7 +17987,7 @@
     "tags": [
       "橋"
     ],
-    "featured": false,
+    "featured": true,
     "score": 69.61,
     "summary": {
       "text": "青森灣大橋是日本青森縣青森市的一座橋梁。建設的目的是提供青森港的貨物運輸，是青森市的著名地標景點。",
@@ -17472,7 +18030,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q4778673",
@@ -17559,11 +18117,11 @@
     "featured": false,
     "score": 55.57,
     "summary": {
-      "text": "浅虫夏泊県立自然公園（あさむしなつどまりけんりつしぜんこうえん）は青森県中央部にある県立自然公園で、1953年（昭和28年）6月に指定を受けた。指定地域は夏泊半島や浅虫温泉などを含んで4,964ヘクタールの陸地と3,526ヘクタールの海域からなる。陸域のうち3,404ヘクタールが平内町（東津軽郡）、1,560ヘクタールが青森市。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%B5%85%E8%99%AB%E5%A4%8F%E6%B3%8A%E7%9C%8C%E7%AB%8B%E8%87%AA%E7%84%B6%E5%85%AC%E5%9C%92",
+      "text": "Asamushi-Natsudomari Prefectural Natural Park (浅虫夏泊県立自然公園, Asamushi-Natsudomari kenritsu shizen-kōen) is a Prefectural Natural Park on the north coast of Aomori Prefecture, Japan, overlooking Mutsu Bay. Established in 1953, the park spans the borders of the municipalities of Aomori and Hiranai. It encompasses Asamushi Onsen and the coastline of the Natsudomari Peninsula (夏泊半島).",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Asamushi-Natsudomari_Prefectural_Natural_Park",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -17606,11 +18164,11 @@
     "featured": false,
     "score": 66.83,
     "summary": {
-      "text": "青森県営浅虫水族館（あおもりけんえい あさむしすいぞくかん）は、青森県青森市浅虫にある水族館。青森湾を臨む本州最北端の水族館でもある。青森県内の水産資源や、世界の水生動物など約514種、1万1千点を飼育展示している。指定管理者制度により青森水族館管理株式会社が運営している。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E9%9D%92%E6%A3%AE%E7%9C%8C%E5%96%B6%E6%B5%85%E8%99%AB%E6%B0%B4%E6%97%8F%E9%A4%A8",
+      "text": "Asamushi Aquarium (浅虫水族館, Asamushi Suizokukan) also called Aquarium Asamushi, is an aquarium in the Asamushi area of Aomori, Aomori Prefecture, Japan. Overlooking Mutsu Bay, it is the northernmost aquarium in Honshū. It keeps and displays 11,000 marine organisms, including those from Aomori Prefecture's abundant marine resources and over 500 species of rare aquatic animals from around the world.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Asamushi_Aquarium",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -17672,11 +18230,11 @@
     "featured": false,
     "score": 74.27,
     "summary": {
-      "text": "浅虫温泉（あさむしおんせん）は、青森県青森市浅虫（旧国陸奥国）にある温泉。海水浴やスキー、水族館に遊園地といったさまざまなレジャー施設も兼ね備えた観光地として賑わい、「東北の熱海」、「青森の奥座敷」などと呼ばれた。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%B5%85%E8%99%AB%E6%B8%A9%E6%B3%89",
+      "text": "Asamushi Onsen (浅虫温泉) is the site of a hot spring, on the eastern edge of the city of Aomori in Aomori Prefecture, Japan. It was developed as the downtown beside the onsen town and is sometimes known as \"Atami in Tohoku\" after the famous Atami Onsen in Shizuoka, central Japan.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Asamushi_Onsen",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -17731,11 +18289,11 @@
     "featured": false,
     "score": 57.67,
     "summary": {
-      "text": "芦野池沼群県立自然公園（あしのちしょうぐんけんりつしぜんこうえん）は、青森県五所川原市と北津軽郡中泊町にある青森県立の自然公園。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E8%8A%A6%E9%87%8E%E6%B1%A0%E6%B2%BC%E7%BE%A4%E7%9C%8C%E7%AB%8B%E8%87%AA%E7%84%B6%E5%85%AC%E5%9C%92",
+      "text": "Ashino Chishōgun Prefectural Natural Park (芦野池沼群県立自然公園, Ashino Chishōgun kenritsu shizen-kōen) is a Prefectural Natural Park on the Tsugaru Peninsula in northwest Aomori Prefecture, Japan. Established in 1958, the park spans the borders of the municipalities of Goshogawara and Nakadomari. It encompasses Lake Ashino (芦野湖) and Ashino Park, which is planted with 2,300 cherry trees.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Ashino_Chish%C5%8Dgun_Prefectural_Natural_Park",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -17797,11 +18355,11 @@
     "featured": true,
     "score": 89.83,
     "summary": {
-      "text": "大森勝山遺跡（おおもりかつやまいせき）は、青森県弘前市大森勝山の岩木山北東に所在する縄文時代晩期初頭の環状列石を主体とする集落遺跡。国の史跡に指定されている。環状列石の構築過程を明らかにするとともに、環状列石としては最も新しく、その年代や性格について新知見が得られたという点できわめて貴重である。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E6%A3%AE%E5%8B%9D%E5%B1%B1%E9%81%BA%E8%B7%A1",
+      "text": "The Ōmori Katsuyama Site (大森勝山遺跡, Ōmori Katsuyama iseki) is an archaeological site in the city of Hirosaki, Aomori Prefecture, in the Tōhoku region of northern Japan that contains the ruins of a late Jōmon period settlement dating to approximately 2,000–1,500 BC. The remains were designated a National Historic Site in 2012 by the Japanese government.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/%C5%8Cmori_Katsuyama_Site",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -18133,7 +18691,7 @@
       "ja": "田小屋野貝塚",
       "kana": "たごやのかいづか",
       "romaji": "Tagoyanokaizuka",
-      "zh_tw": "田小屋野贝冢",
+      "zh_tw": "田小屋野貝冢",
       "en": "Tagoyano Shell Mound"
     },
     "kana_source": "wikipedia",
@@ -18151,11 +18709,11 @@
     "featured": false,
     "score": 87.38,
     "summary": {
-      "text": "田小屋野貝塚（たごやのかいづか）は、青森県つがる市木造にある、縄文時代前期から中期の貝塚遺跡。1944年（昭和19年）6月26日に国の史跡に指定されている。指定面積は約1万4千平方メートル。また2021年（令和3年）には「北海道・北東北の縄文遺跡群」として世界文化遺産に登録された。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E7%94%B0%E5%B0%8F%E5%B1%8B%E9%87%8E%E8%B2%9D%E5%A1%9A",
+      "text": "The Tagoyano Shell Midden (田小屋野貝塚, Tagoyano kaizuka) is an archaeological site in what is now the city of Tsugaru, Aomori Prefecture, in the Tōhoku region of northern Japan with an early Jōmon period shell midden.  The site was designated a  National Historic Site in 1944 by the Japanese government.  It is a rare example of a shell midden to be found near the coast of the Sea of Japan.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Tagoyano_Shell_Mound",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -18184,7 +18742,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q49500",
@@ -18353,11 +18911,11 @@
     "featured": false,
     "score": 62.87,
     "summary": {
-      "text": "八甲田ロープウェー (はっこうだロープウェー) は、青森県青森市の八甲田ローブウェー山麓駅と八甲田ローブウェー山頂公園駅とを結ぶ旅客営業用の索道である。八甲田ロープウェー株式会社により運営されている。山麓駅は国道103号からアクセスすることになる。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%85%AB%E7%94%B2%E7%94%B0%E3%83%AD%E3%83%BC%E3%83%97%E3%82%A6%E3%82%A7%E3%83%BC",
+      "text": "The Hakkōda Ropeway (八甲田ロープウェー, Hakkōda Rōpuwē) is the name of a Japanese aerial lift line, as well as its operator. Opened in 1968, the line climbs Mount Tamoyachi in the Hakkōda Mountains in Aomori, Aomori.  It transports skiers and rime spectators in winter, and hikers in other seasons.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Hakk%C5%8Dda_Ropeway",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -18854,11 +19412,11 @@
     "featured": true,
     "score": 99.43,
     "summary": {
-      "text": "大平山元Ⅰ遺跡（おおだいやまもといちいせき）は、青森県東津軽郡外ヶ浜町にある旧石器時代終末期から縄文時代草創期の遺跡である。国の史跡に指定され（指定名称は「大平山元遺跡」）、出土品は国の重要文化財に指定されている。。2021年（令和3年）7月27日、「北海道・北東北の縄文遺跡群」として世界文化遺産に登録された。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E5%B9%B3%E5%B1%B1%E5%85%83I%E9%81%BA%E8%B7%A1",
+      "text": "The Ōdai Yamamoto I Site (Japanese: 大平山元I遺跡, Hepburn: Ōdaiyamamoto ichi iseki) is a Jōmon archaeological site in the town of Sotogahama, Aomori Prefecture, in the Tōhoku region of northern Japan. Excavations in 1998 uncovered forty-six earthenware fragments which have been dated as early as 14,500 BCE (ca 16,500 BP); this places them among the earliest pottery currently known. As the earliest in Japan, this marks the transition from the Japanese Paleolithic to Incipient Jōmon.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/%C5%8Cdai_Yamamoto_I_Site",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -18964,7 +19522,7 @@
     "tags": [
       "名勝"
     ],
-    "featured": true,
+    "featured": false,
     "score": 71.75,
     "summary": {
       "text": "盛美園是位於日本青森縣平川市猿賀石林的一座日本庭園。盛美園是盛行於津輕地區的大石武學流造園的代表作，被日本政府指定為名勝。盛美園由當地資產家清藤盛美出資興建，耗時9年完成，被譽為武學流庭園的最高峰。庭園西南有一座融合和洋風格的洋館盛美館。吉卜力電影借物少女艾莉緹的世界觀參考了盛美園的建築。",
@@ -19011,7 +19569,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q7446759",
@@ -19101,11 +19659,11 @@
     "featured": false,
     "score": 79.34,
     "summary": {
-      "text": "酸ヶ湯（すかゆ）は、青森県青森市南部にある八甲田山系の火山起源の温泉。湯はその名の通り強い酸性を示し、pHは2.0を切る。元の温泉名は鹿湯（しかゆ）で、すかゆは読みの「しかゆ」が変化したもの。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E9%85%B8%E3%83%B6%E6%B9%AF",
+      "text": "Sukayu Onsen (酸ヶ湯, Sukayu) is an onsen (hot spring) in the Hakkōda Mountains in the city of Aomori, Aomori Prefecture in Japan. It is known for its \"Sen-nin-buro\" or \"Bath of a thousand bathers\", a large mixed gender public bath.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Sukayu_Onsen",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -19201,11 +19759,11 @@
     "featured": false,
     "score": 69.98,
     "summary": {
-      "text": "種差海岸（たねさしかいがん）は、青森県八戸市最東部に位置し、太平洋に面する海岸である。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E7%A8%AE%E5%B7%AE%E6%B5%B7%E5%B2%B8",
+      "text": "The Tanesashi Coast (種差海岸, Tanesashi kaigan) is section of the coastline on the Pacific Ocean, located in the southern portion of the city of Hachinohe, Aomori Prefecture, in the Tōhoku region of northern Japan. It is extends for 12 kilometres (7.5 mi) from the island of Kabushima south towards the city of Kuji in Iwate Prefecture. The coast was  nationally designated a Place of Scenic Beauty in 1937.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Tanesashi_Coast",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -19269,14 +19827,14 @@
     "tags": [
       "名勝"
     ],
-    "featured": true,
+    "featured": false,
     "score": 71.12,
     "summary": {
-      "text": "仏ヶ浦（ほとけがうら）は、青森県下北半島西岸の下北郡佐井村南部に所在する景勝地。古くは仏宇陀（ほとけうた、ほとけうだ）と称した。国の名勝および天然記念物に指定されている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E4%BB%8F%E3%83%B6%E6%B5%A6",
+      "text": "Hotokegaura (仏ヶ浦 also 仏宇多, Hotoke-ga-ura) is a series of rock formations along the sea cliffs on the west coast of Shimokita Peninsula at the entrance to Mutsu Bay in far northern Japan. These rock formations were designed a Natural Monument of Aomori Prefecture in 1934, and became further protected from April 23, 1941 as a nationally designated Place of Scenic Beauty and Natural Monument, From 1968, the rock formations were also located within the borders of the Shimokita Hantō Quasi-National Park.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Hotoke-ga-ura",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -19301,7 +19859,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q8030022",
@@ -19380,11 +19938,11 @@
     "featured": false,
     "score": 63.77,
     "summary": {
-      "text": "薬研温泉（やげんおんせん）は、青森県むつ市大畑町薬研にある温泉。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E8%96%AC%E7%A0%94%E6%B8%A9%E6%B3%89",
+      "text": "Yagen Onsen (薬研温泉) is a hot spring located in the former town of Ohata, which is now part of the city of Mutsu in northern Japan.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Yagen_Valley",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [],
     "external_ids": {
@@ -19427,11 +19985,11 @@
     "featured": false,
     "score": 61.65,
     "summary": {
-      "text": "瑞楽園（ずいらくえん）は、青森県弘前市宮舘字宮舘沢にある日本庭園。流派は大石武学流。国の名勝。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E7%91%9E%E6%A5%BD%E5%9C%92",
+      "text": "Zuiraku-en (瑞楽園) (also Tsushima Family Gardens) is a Japanese dry landscape garden and nationally designated Place of Scenic Beauty in the city of Hirosaki, Aomori Prefecture, Japan. The gardens are a nationally designated Place of Scenic Beauty.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Zuiraku-en",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -19483,11 +20041,11 @@
     "featured": false,
     "score": 60.42,
     "summary": {
-      "text": "大間埼灯台（おおまさきとうだい）は、本州最北端に当たる下北半島大間崎の沖合にある弁天島に位置し、白と黒のツートンカラーに塗り分けられている中型灯台で、「日本の灯台50選」にも選ばれている。周辺は、下北半島国定公園に指定され、大間崎から灯台と津軽海峡の向こうに、北海道を見渡せる。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E9%96%93%E5%9F%BC%E7%81%AF%E5%8F%B0",
+      "text": "The Ōmazaki Lighthouse (大間埼灯台, Ōmazaki tōdai) is a lighthouse located at the northernmost extremity of the Shimokita Peninsula of Honshū island in Ōma, Aomori Prefecture, Japan. It is maintained by the Japan Coast Guard.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/%C5%8Cmazaki_Lighthouse",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -20251,6 +20809,13 @@
     ],
     "featured": false,
     "score": 39.07,
+    "summary": {
+      "text": "Aoimori Park (青い森公園, Aoimori kōen) is a 1.8-hectare (4.4-acre) urban park in the central district of Aomori Prefecture's capital city, Aomori in northern Japan. Acting as an urban green space in the city's dense administrative district, it features various themed landscapes. It has been maintained by the prefectural government of Aomori since its opening in 1985. It is also the official ending point for National Route 4 and National Route 7. Various monuments and markers within and near the park denote the terminus of the two highways.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Aoimori_Park",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
     "nearest_stations": [
       {
         "name": {
@@ -20307,7 +20872,7 @@
     "tags": [
       "城"
     ],
-    "featured": false,
+    "featured": true,
     "score": 69.12,
     "summary": {
       "text": "八戶城（はちのへじょう）是日本古陸奧國三戶郡、現在的青森縣八戶市之城郭。江戶時代是八戶藩的藩廳所在。明治維新後，新政府下令拆除舊藩的所有防禦工事。",
@@ -20348,6 +20913,6 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   }
 ]

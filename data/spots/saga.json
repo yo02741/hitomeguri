@@ -80,6 +80,46 @@
     "updated_at": "2026-09-28"
   },
   {
+    "id": "osm-node-11385821799",
+    "name": {
+      "ja": "ミニ水族館",
+      "zh_tw": "ミニ水族館"
+    },
+    "location": {
+      "lat": 33.07586,
+      "lng": 130.145746
+    },
+    "prefecture": "saga",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "水族館"
+    ],
+    "featured": false,
+    "score": 0.0,
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "肥前七浦",
+          "en": "Hizen-Nanaura"
+        },
+        "distance_m": 560
+      }
+    ],
+    "images": [],
+    "external_ids": {
+      "osm": "node/11385821799"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/node/11385821799",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
+  },
+  {
     "id": "osm-node-12652529142",
     "name": {
       "ja": "ひがさす",
@@ -1284,6 +1324,38 @@
     "updated_at": "2026-09-28"
   },
   {
+    "id": "osm-way-552755593",
+    "name": {
+      "ja": "山茶花高原ピクニックパーク・ハーブ園",
+      "zh_tw": "山茶花高原ピクニックパーク・ハーブ園"
+    },
+    "location": {
+      "lat": 32.968926,
+      "lng": 130.142803
+    },
+    "prefecture": "saga",
+    "city": "諫早市",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "主題樂園"
+    ],
+    "featured": false,
+    "score": 0.0,
+    "images": [],
+    "external_ids": {
+      "osm": "way/552755593"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/way/552755593",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
+  },
+  {
     "id": "osm-way-560707734",
     "name": {
       "ja": "浜崎祇園山囃子保存会館",
@@ -1541,7 +1613,7 @@
       "ja": "佐賀県立佐賀城本丸歴史館",
       "kana": "さがけんりつさがじょうほんまるれきしかん",
       "romaji": "Sagakenritsu Sagajō-honmaru Rekishikan",
-      "zh_tw": "佐贺城本丸历史馆",
+      "zh_tw": "佐賀城本丸歷史館",
       "en": "Saga Castle History Museum"
     },
     "kana_source": "osm",
@@ -1581,7 +1653,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q104784035",
@@ -1654,11 +1726,11 @@
     "featured": false,
     "score": 42.0,
     "summary": {
-      "text": "土生遺跡（はぶいせき）は、 佐賀県小城市三日月町久米字土生にある弥生時代中期の集落跡。1973年6月2日、国の史跡に指定された。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%9C%9F%E7%94%9F%E9%81%BA%E8%B7%A1",
+      "text": "Habu Site (土生遺跡, Habu iseki) is an archeological site with a Yayoi period settlement trace located in the Mikazuki neighborhood of the city of Ogi, Saga Prefecture Japan. It was designated as a National Historic Site in 1973.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Habu_Site",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -1789,6 +1861,13 @@
     ],
     "featured": false,
     "score": 36.54,
+    "summary": {
+      "text": "The Yasunagata Site (安永田遺跡) is an archaeological site with the traces of a Yayoi period settlement and bronze casting center, located in the Yubi neighborhood of the city of Tosu,  Saga Prefecture, Japan. The site was designated a National Historic Site of Japan in 1982.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Yasunagata_Site",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
     "nearest_stations": [
       {
         "name": {
@@ -1847,11 +1926,11 @@
     "featured": true,
     "score": 72.72,
     "summary": {
-      "text": "筑後川昇開橋（ちくごがわしょうかいきょう、Chikugo River Lift bridge）は、日本国有鉄道（国鉄）佐賀線に存在し、筑後川をまたいで福岡県大川市と佐賀県佐賀市諸富町（廃線時・佐賀郡諸富町）を結んでいた鉄道用可動式橋梁である。佐賀線の廃線後も保存され、現在は歩道橋として活用されている。旧筑後川橋梁（筑後川昇開橋）として重要文化財および機械遺産に指定されている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E7%AD%91%E5%BE%8C%E5%B7%9D%E6%98%87%E9%96%8B%E6%A9%8B",
+      "text": "The Chikugo River Lift Bridge (筑後川昇開橋, Chikugo-gawa shōkaikyō) is a vertical lift railway bridge across the Chikugo River in Kyūshū, Japan. It was completed in 1935. The bridge has a total length of 507.2 metres (1,664 ft), with a moveable span of 24.2 metres (79 ft) long and a vertical rise of 23 metres (75 ft). It links Ōkawa, Fukuoka with Saga, Saga, and used to be part of the Saga Railway Line. When that line ceased operation in 1987 the bridge was closed to traffic.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Chikugo_River_Lift_Bridge",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -1897,11 +1976,11 @@
     "featured": false,
     "score": 59.12,
     "summary": {
-      "text": "帯隈山城（おぶくまやまじょう）は佐賀県佐賀市に所在する古代山城。国の史跡に指定されている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%B8%AF%E9%9A%88%E5%B1%B1%E5%9F%8E",
+      "text": "Obukumayama Kōgoishi (帯隈山神籠石) was an ancient Korean-style fortress located in the Kuboizumimachi neighborhood of Saga, Saga Prefecture, Japan. Its ruins have been protected as a National Historic Site since 1951.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Obukumayama_K%C5%8Dgoishi",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -2015,11 +2094,11 @@
     "featured": false,
     "score": 61.95,
     "summary": {
-      "text": "須古城（すこじょう）は、佐賀県杵島郡白石町にあった戦国時代の日本の城。平井氏の須古城、杵島城、男島城の3城での連携した防衛体制により難攻不落を誇り、佐賀県下でも最大規模の城郭群を成している。高城、隆城とも。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E9%A0%88%E5%8F%A4%E5%9F%8E",
+      "text": "Suko Castle (須古城, Suko-jō) is the site of a castle structure in Shiroishi, Saga Prefecture, Japan. Its ruins have been protected as a Prefectural Historic Site.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Suko_Castle",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -3145,16 +3224,21 @@
       }
     ],
     "external_ids": {
-      "wikidata": "Q11353344"
+      "wikidata": "Q11353344",
+      "osm": "node/5688817086"
     },
     "sources": [
       {
         "url": "https://www.wikidata.org/wiki/Q11353344",
         "fetched_at": "2026-09-28"
+      },
+      {
+        "url": "https://www.openstreetmap.org/node/5688817086",
+        "fetched_at": "2026-09-29"
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11356637",
@@ -3238,11 +3322,11 @@
     "featured": true,
     "score": 93.97,
     "summary": {
-      "text": "三重津海軍所（みえつかいぐんしょ）は佐賀県佐賀市川副町大字早津江字元海軍所に所在し、佐賀藩が1858年（安政5年)に設立した蒸気船等の船の修理・造船施設。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E4%B8%89%E9%87%8D%E6%B4%A5%E6%B5%B7%E8%BB%8D%E6%89%80",
+      "text": "The Mietsu Naval Dock (三重津海軍所, Mietsu Kaigunsho) was a Bakumatsu period repair and shipbuilding facility, located in what is now the Hayatsue, Kawasoe-machi, neighborhood of the city of Saga,  Saga Prefecture Japan. Established by Saga Domain in 1858, it  also served as an educational and training institute for the operation of Western ships. It site was designated a National Historic Site of Japan in 2013 In 2015, it was registered as a World Heritage Site as part of the \"Meiji Industrial Revolution Heritage Sites of Japan\".",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Mietsu_Naval_Dock",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -3877,11 +3961,11 @@
     "featured": false,
     "score": 51.39,
     "summary": {
-      "text": "加唐島（かからしま）は、東松浦半島最北端の波戸岬から約4km北の玄界灘にある島である。佐賀県唐津市に属し、大字は唐津市鎮西町加唐島。2009年に『百済武寧王生誕の伝承』で「島の宝100景」に選出された。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%8A%A0%E5%94%90%E5%B3%B6",
+      "text": "Kakarajima or Kagarashima (加唐島), also known as Kakara, is an island to the north of Yobuko, which is in the Higashimatsuura District of Saga Prefecture, Japan.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Kakarajima",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -3984,11 +4068,11 @@
     "featured": false,
     "score": 65.54,
     "summary": {
-      "text": "勝尾城（かつのおじょう）は、佐賀県鳥栖市河内町にあった日本の城（山城）。本城の勝尾城、鬼ヶ城、高取城、葛籠城、鏡城、若山砦等の支城群と当主の居館跡、家臣団屋敷跡、寺社跡、町屋跡で構成されたエリアは「勝尾城筑紫氏遺跡」として国の史跡に指定されている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%8B%9D%E5%B0%BE%E5%9F%8E",
+      "text": "Katsunoo Castle (勝尾城, Katsuno'o-jō) was a Muromachi to Sengoku period yamajiro-style Japanese castle located in the city of Tosu, Saga Prefecture, Japan.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Katsunoo_Castle",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [],
     "external_ids": {
@@ -4078,7 +4162,7 @@
       "ja": "千栗八幡宮",
       "kana": "ちりくはちまんぐう",
       "romaji": "Chiriku Hachimangu",
-      "zh_tw": "千栗八幡宮",
+      "zh_tw": "千慄八幡宮",
       "en": "Chiriku Hachimangū"
     },
     "kana_source": "wikidata",
@@ -4124,7 +4208,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11411432",
@@ -4465,11 +4549,11 @@
     "featured": true,
     "score": 80.12,
     "summary": {
-      "text": "基肄城（きいじょう / きいのき、椽城）は、福岡県筑紫野市と佐賀県三養基郡基山町にまたがる基山（きざん）に築かれた、日本の古代山城。城跡は、1954年（昭和29年）3月20日、国の特別史跡「基肄（椽）城跡」に指定されている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%9F%BA%E8%82%84%E5%9F%8E",
+      "text": "Kii Castle (基肄城, Kii-jō or Kii-no-ki) was an ancient castle (also known as a Korean-style fortresses in Japan (朝鮮式山城, Chōsen-shiki yamajiro) straddling Mt. Kizan(ja:基山) where the border between the city of Chikushino, Fukuoka and the town of Kiyama, Saga Prefecture Japan. Its ruins have been protected as a National Historic Site since 1937, and raised to a  Special Historic Site  since 1954.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Kii_Castle",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -4573,11 +4657,11 @@
     "featured": false,
     "score": 60.28,
     "summary": {
-      "text": "大興善寺（だいこうぜんじ）は、佐賀県三養基郡基山町大字園部に所在する天台宗の寺院である。別格本山。山号は小松山。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E8%88%88%E5%96%84%E5%AF%BA_%28%E4%BD%90%E8%B3%80%E7%9C%8C%E5%9F%BA%E5%B1%B1%E7%94%BA%29",
+      "text": "Daikōzen-ji (大興善寺) is a Tendai temple in Kiyama, Saga Prefecture, Japan. Its honorary sangō prefix is Komatsuzan (小松山).",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Daik%C5%8Dzen-ji_%28Saga%29",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -4679,11 +4763,11 @@
     "featured": false,
     "score": 61.69,
     "summary": {
-      "text": "姉川城（あねがわじょう）は、佐賀県神埼市にあった日本の城（平山城）。国の史跡。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%A7%89%E5%B7%9D%E5%9F%8E",
+      "text": "Anegawa Castle (姉川城, Anegawa-jō) was a hirayama-style Japanese castle located in the city of Kanzaki, Saga Prefecture, on the island of Kyushu, Japan. During the Sengoku period, it was the stronghold of Ryūzōji Takanobu. The castle site has been a National Historic Site since 2010.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Anegawa_Castle",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -6101,11 +6185,11 @@
     "featured": false,
     "score": 44.82,
     "summary": {
-      "text": "肥前国庁跡（ひぜんこくちょうあと）・肥前国庁跡資料館は、佐賀県佐賀市大和町大字久池井に所在する、律令制下における地方行政機関の中心施設跡である。1989年（平成元年）9月22日、国の史跡に指定される。現在歴史公園として整備され、南門と築地塀の一部が復元されている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E8%82%A5%E5%89%8D%E5%9B%BD%E5%BA%81%E8%B7%A1",
+      "text": "The Hizen Provincial Capital site (肥前国庁跡, Hizen Kokuchō ato) is an archaeological site consisting of the ruins of the Nara period to early Heian period Provincial Capital of Hizen Province, located in the Yamato neighborhood of the city of Saga, San'yō region of Japan. The site was designated a National Historic Site of Japan in 1989.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Hizen_Provincial_Capital",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -6239,7 +6323,7 @@
       "ja": "菜畑遺跡",
       "kana": "なばたけいせき",
       "romaji": "Nabatakeiseki",
-      "zh_tw": "菜畑遗迹",
+      "zh_tw": "菜畑遺蹟",
       "en": "Nabatake Site"
     },
     "kana_source": "osm",
@@ -6302,7 +6386,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11620748",
@@ -6328,11 +6412,11 @@
     "featured": false,
     "score": 37.88,
     "summary": {
-      "text": "葉山尻支石墓群（はやまじりしせきぼぐん）は、佐賀県唐津市大字半田字葉山尻に所在する弥生時代の支石墓群である。1966年（昭和41年）12月19日、国の史跡に指定され、2014年（平成26年）10月6日には、指定名称変更および追加指定により国の史跡「唐津松浦墳墓群（葉山尻支石墓群・大友遺跡・森田支石墓群・桜馬場遺跡）」の構成遺跡となった。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E8%91%89%E5%B1%B1%E5%B0%BB%E6%94%AF%E7%9F%B3%E5%A2%93%E7%BE%A4",
+      "text": "The Karatsu Matsuura Sites (唐津松浦墳墓群, Karatsu Matsuura funbo-gun) is a group of mostly Yayoi Period archaeological sites, located in the city of  Karatsu, Saga Prefecture,  Japan. The Hayamajiri Dolmen Cluster was designated a National Historic Site of Japan in 1966, and three more locations were added in 2014.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Hayamajiri_Dolmen_Cluster",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -7108,11 +7192,11 @@
     "featured": false,
     "score": 64.01,
     "summary": {
-      "text": "鏡神社（かがみじんじゃ）は、佐賀県唐津市の鏡山の麓にある神社である。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E9%8F%A1%E7%A5%9E%E7%A4%BE_%28%E5%94%90%E6%B4%A5%E5%B8%82%29",
+      "text": "Kagami-jinja (鏡神社) is a Shinto shrine located in Karatsu, Saga prefecture, Japan. The shrine is at the base of Mount Kagami (280 metres (920 ft)) in Genkai Quasi-National Park. It is now called Matsura Sōchinshu Kagami-jinja (松浦総鎮守鏡神社), and formerly known as the name of Kagami no mikoto Byōgū (鏡尊廟宮), Kagami-gū (鏡宮), Matsuura-gū (松浦宮), Itabitsu-sha (板櫃社) and Kuri Daimyōjin (久里大明神).",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Kagami_Shrine",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -7234,11 +7318,11 @@
     "featured": false,
     "score": 42.66,
     "summary": {
-      "text": "高伝寺（こうでんじ）は、佐賀県佐賀市にある曹洞宗の仏教寺院。山号は恵日山（えにちさん）。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E9%AB%98%E4%BC%9D%E5%AF%BA",
+      "text": "Kōden-ji (高傳寺) is a Sōtō Zen temple in Saga, Saga Prefecture, Japan. It was the bodaiji or family temple of the Ryūzōji and Nabeshima clans, many of whom are buried in its grounds.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/K%C5%8Dden-ji",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -7377,7 +7461,7 @@
       "ja": "鳥栖プレミアム・アウトレット",
       "kana": "とすぷれみあむあうとれっと",
       "romaji": "Tosupuremiamuautoretto",
-      "zh_tw": "鳥栖PREMIUM OUTLETS",
+      "zh_tw": "鳥棲PREMIUM OUTLETS",
       "en": "Tosu Premium Outlets"
     },
     "kana_source": "wikipedia",
@@ -7415,7 +7499,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11677106",
@@ -7825,11 +7909,11 @@
     "featured": false,
     "score": 60.92,
     "summary": {
-      "text": "おつぼ山城（おつぼやまじょう）は佐賀県武雄市に所在する古代山城。国の史跡に指定されている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E3%81%8A%E3%81%A4%E3%81%BC%E5%B1%B1%E5%9F%8E",
+      "text": "Otsuboyama Kōgoishi (おつぼ山神籠石) was an ancient Korean-style fortress located in the Tachibana neighborhood of the city of Takeo, Saga Prefecture, Japan. Its ruins have been protected as a National Historic Site since 1966.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Otsuboyama_K%C5%8Dgoishi",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -8604,6 +8688,57 @@
     "updated_at": "2026-09-28"
   },
   {
+    "id": "wd-Q141593070",
+    "name": {
+      "ja": "玄海海中展望塔",
+      "zh_tw": "玄海海中展望塔",
+      "en": "Genkai Undersea Observatory Tower"
+    },
+    "location": {
+      "lat": 33.555972,
+      "lng": 129.852278
+    },
+    "prefecture": "saga",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "水族館"
+    ],
+    "featured": false,
+    "score": 51.82,
+    "summary": {
+      "text": "唐津市玄海海中展望塔（からつしげんかいかいちゅうてんぼうとう）は、佐賀県唐津市鎮西町にある海中展望塔。1974年（昭和49年）12月1日に竣工・開館した。設計者は清家清。日本海側で唯一の海中展望塔である。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E5%94%90%E6%B4%A5%E5%B8%82%E7%8E%84%E6%B5%B7%E6%B5%B7%E4%B8%AD%E5%B1%95%E6%9C%9B%E5%A1%94",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4a/Cape_Hado_2.jpg/960px-Cape_Hado_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "さえぼー",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Cape_Hado_2.jpg"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q141593070",
+      "osm": "way/704120699"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q141593070",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.openstreetmap.org/way/704120699",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
+  },
+  {
     "id": "wd-Q1513575",
     "name": {
       "ja": "玄海原子力発電所",
@@ -8975,7 +9110,7 @@
       "ja": "波戸岬",
       "kana": "はどみさき",
       "romaji": "Hadomisaki",
-      "zh_tw": "波户岬",
+      "zh_tw": "波戶岬",
       "en": "Cape Hado"
     },
     "kana_source": "wikipedia",
@@ -9018,7 +9153,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q21655226",
@@ -9150,11 +9285,11 @@
     "featured": true,
     "score": 70.31,
     "summary": {
-      "text": "多久聖廟（たくせいびょう）は、佐賀県多久市に設けられた孔子廟。1708年（宝永5年）竣工。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%A4%9A%E4%B9%85%E8%81%96%E5%BB%9F",
+      "text": "Taku Seibyō (多久聖廟)  is a Confucian temple in the city of Taku, Saga Prefecture, Japan. It was designated a National Historic Site in 1921 and a National Important Cultural Property in 1933.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Taku_Seiby%C5%8D",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -9421,11 +9556,11 @@
     "featured": true,
     "score": 67.48,
     "summary": {
-      "text": "陶山神社（すえやまじんじゃ）は、佐賀県西松浦郡有田町大樽に鎮座する神社（八幡宮）である。神社名は俗に「とうざんじんじゃ」とも音読される。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E9%99%B6%E5%B1%B1%E7%A5%9E%E7%A4%BE_%28%E6%9C%89%E7%94%B0%E7%94%BA%29",
+      "text": "The Tōzan or Sueyama Shrine (陶山神社) is located in Arita, Nishimatsuura District, Saga Prefecture. The shrine has a porcelain archway and other items of porcelain which, at other shrines, are usually made of stone. This Shinto shrine was and still is particularly revered by Arita's ceramists.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/T%C5%8Dzan_Shrine",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -9930,11 +10065,11 @@
     "featured": false,
     "score": 46.15,
     "summary": {
-      "text": "東名遺跡（ひがしみょういせき）は、佐賀県佐賀市金立町大字千布にある縄文時代早期末葉の遺跡で、集落遺跡と貝塚からなる。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%9D%B1%E5%90%8D%E9%81%BA%E8%B7%A1",
+      "text": "The Higashimyō ruins (東名遺跡, Higashimyō iseki) is an archaeological site containing the ruins of a late early Jōmon period settlement and shell mound located in what is now the Chifu, Kinryū neighborhood of the city of Saga, Saga Prefecture, Japan. The site was designated a National Historic Site of Japan in 2016 and is where the oldest woven baskets, combs, wooden plates, and organic remains yet discovered in Japan have been found.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Higashimy%C5%8D_Site",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -10126,11 +10261,11 @@
     "featured": true,
     "score": 66.99,
     "summary": {
-      "text": "有田ポーセリンパーク（ありたポーセリンパーク）は、佐賀県西松浦郡有田町戸矢乙にある観光施設である。有田焼を主題とするテーマパークで、18世紀ドイツ・バロック建築のツヴィンガー宮殿を再現した建築と庭園をシンボルとする。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%9C%89%E7%94%B0%E3%83%9D%E3%83%BC%E3%82%BB%E3%83%AA%E3%83%B3%E3%83%91%E3%83%BC%E3%82%AF",
+      "text": "The Arita Porcelain Park is a theme park located in Arita town, Saga Prefecture, Japan.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Arita_Porcelain_Park",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -10184,11 +10319,11 @@
     "featured": false,
     "score": 62.89,
     "summary": {
-      "text": "佐賀県立名護屋城博物館（さがけんりつなごやじょうはくぶつかん、英語: Saga Prefectural Nagoya Castle Museum）は、佐賀県唐津市鎮西町にある博物館。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E4%BD%90%E8%B3%80%E7%9C%8C%E7%AB%8B%E5%90%8D%E8%AD%B7%E5%B1%8B%E5%9F%8E%E5%8D%9A%E7%89%A9%E9%A4%A8",
+      "text": "Saga Prefectural Nagoya Castle Museum (佐賀県立名護屋城博物館, Saga Kenritsu Nagoya-jō Hakubutsukan) opened in 1993 in Karatsu, Saga Prefecture, Japan, on the site of Nagoya Castle, built in 1591 as the base for Hideyoshi's invasions of Korea. It displays artefacts excavated from the castle site and other materials relating to three main themes: (1) the history of exchange between the Japanese archipelago and Korean peninsula; (2) the preservation of the Special Historic Site of Nagoya Castle; (3) cultural and academic exchange between Japan and Korea.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Saga_Prefectural_Nagoya_Castle_Museum",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -10295,11 +10430,11 @@
     "featured": false,
     "score": 63.53,
     "summary": {
-      "text": "東よか干潟（ひがしよかひがた）とは、佐賀県佐賀市東与賀町大授搦（だいじゅがらみ）の地先の干潟に設けられている鳥獣保護区で、有明海奥部の干潟の一部。シギ・チドリ類の渡来数が日本国内最多（環境省調査）の水鳥の渡来地で、ラムサール条約湿地に登録されている。紅葉する塩生生物「シチメンソウ」が自生する。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%9D%B1%E3%82%88%E3%81%8B%E5%B9%B2%E6%BD%9F",
+      "text": "Higashiyoka-higata (ja:東よか干潟) is a tidal flat in Japan at the north end of the Ariake Sea, in Saga prefecture. It is designated as a protected wetland under the Ramsar Convention.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Higashiyoka-higata",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -10331,7 +10466,7 @@
       "ja": "末盧館",
       "kana": "まつろかん",
       "romaji": "Matsurokan",
-      "zh_tw": "末卢馆",
+      "zh_tw": "末盧館",
       "en": "Matsurokan"
     },
     "kana_source": "osm",
@@ -10348,11 +10483,11 @@
     "featured": false,
     "score": 56.15,
     "summary": {
-      "text": "末盧館（まつろかん）は日本の佐賀県唐津市にある唐津市立の歴史博物館。日本最古の稲作遺跡である菜畑遺跡で知られる菜畑地区に在する。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%9C%AB%E7%9B%A7%E9%A4%A8",
+      "text": "Nabatake Site (菜畑遺跡, Nabatake iseki) is an archeological site with a late Jōmon period to late Yayoi period settlement located in the city of Karatsu, Saga Prefecture, Japan. Along with the Itazuke Site in Hakata-ku, Fukuoka, it is the oldest known rice-growing village site in Japan. It was designated as a National Historic Site in 1983.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Matsurokan",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -10393,7 +10528,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q5370854",
@@ -10467,7 +10602,7 @@
       "ja": "旧高取家住宅",
       "kana": "きゅうたかとりけじゅうたく",
       "romaji": "Kyutakatorikejutaku",
-      "zh_tw": "旧高取邸",
+      "zh_tw": "舊高取邸",
       "en": "Old Takatori Family Residence"
     },
     "kana_source": "wikidata",
@@ -10523,7 +10658,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q56055854",
@@ -10719,16 +10854,21 @@
       }
     ],
     "external_ids": {
-      "wikidata": "Q63406370"
+      "wikidata": "Q63406370",
+      "osm": "node/11078948455"
     },
     "sources": [
       {
         "url": "https://www.wikidata.org/wiki/Q63406370",
         "fetched_at": "2026-09-28"
+      },
+      {
+        "url": "https://www.openstreetmap.org/node/11078948455",
+        "fetched_at": "2026-09-29"
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q6371422",
@@ -10859,11 +10999,11 @@
     "featured": false,
     "score": 63.3,
     "summary": {
-      "text": "佐賀県立九州陶磁文化館（さがけんりつきゅうしゅうとうじぶんかかん）は、佐賀県西松浦郡有田町にある陶磁器専門の県立美術館である。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E4%BD%90%E8%B3%80%E7%9C%8C%E7%AB%8B%E4%B9%9D%E5%B7%9E%E9%99%B6%E7%A3%81%E6%96%87%E5%8C%96%E9%A4%A8",
+      "text": "The Kyushu Ceramics Museum (九州陶磁文化館, Kyūshū Toji Bunkakan) is a  museum located in Arita town, Saga Prefecture, Japan. It is one of Japan's many museums which are supported by a prefecture.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Kyushu_Ceramic_Museum",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -10927,11 +11067,11 @@
     "featured": false,
     "score": 59.91,
     "summary": {
-      "text": "徴古館（ちょうこかん）は佐賀県佐賀市にある歴史博物館である。公益財団法人鍋島報效会が運営。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%BE%B4%E5%8F%A4%E9%A4%A8_%28%E4%BD%90%E8%B3%80%E5%B8%82%29",
+      "text": "The Chōkokan (徴古館, Chōkokan) opened in Saga, Saga Prefecture, Japan, in 1927. Founded by Nabeshima Naomitsu (鍋島直映), son of Nabeshima Naohiro of the Nabeshima clan, the last daimyō of Saga Domain in Hizen Province, the collection comprises historical materials and artworks relating to the Saga Domain and the Nabeshima family. The museum closed in 1945 but was reopened by the Nabeshima Hōkokai Foundation (鍋島報效会) in 1998. The museum building itself is a Registered Tangible Cultural Property dating from 1927.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Ch%C5%8Dkokan",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -10962,7 +11102,7 @@
     "id": "wd-Q65243130",
     "name": {
       "ja": "メルヘン村",
-      "zh_tw": "森之遊园地童话村",
+      "zh_tw": "森之遊園地童話村",
       "en": "Meruhenmura"
     },
     "location": {
@@ -10998,7 +11138,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q65278507",
@@ -11023,11 +11163,11 @@
     "featured": false,
     "score": 57.77,
     "summary": {
-      "text": "綾部神社（あやべじんじゃ）は、佐賀県三養基郡みやき町にある神社。旧社格は村社。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E7%B6%BE%E9%83%A8%E7%A5%9E%E7%A4%BE",
+      "text": "Ayabe Shrine (綾部神社) is a shrine of the kami Hachiman, located in Miyaki, Saga, Saga Prefecture, Japan.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Ayabe_Shrine",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -11073,6 +11213,13 @@
     ],
     "featured": false,
     "score": 36.28,
+    "summary": {
+      "text": "Kawamura Art Museum (河村美術館, Kawamura Bijutsukan) is art museum in Karatsu, Saga Prefecture, Japan. The collection includes twenty works by Aoki Shigeru as well as paintings by Kuroda Seiki, Wada Eisaku, and Yamashita Shintarō. Temporary exhibitions are also mounted. In 2014 the museum became a Public Interest Incorporated Foundation.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Kawamura_Art_Museum",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
     "nearest_stations": [
       {
         "name": {
@@ -11130,11 +11277,11 @@
     "featured": false,
     "score": 56.93,
     "summary": {
-      "text": "荒穂神社（あらほじんじゃ）は、佐賀県三養基郡基山町にある神社。基山南麓にある宮浦字宮脇に鎮座している。社格は式内小社、県社。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E8%8D%92%E7%A9%82%E7%A5%9E%E7%A4%BE",
+      "text": "Araho Shrine (荒穂神社, Araho Jinja) is a Shinto shrine located in Kiyama, Saga Prefecture, Japan.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Araho_Shrine",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -11277,11 +11424,11 @@
     "featured": true,
     "score": 71.36,
     "summary": {
-      "text": "『佐賀インターナショナルバルーンフェスタ』（さがインターナショナルバルーンフェスタ、英 : SAGA International Balloon Fiesta）は、佐賀県佐賀市の嘉瀬川河川敷を主な会場として毎年秋に開催される熱気球競技大会である。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E4%BD%90%E8%B3%80%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%BC%E3%83%8A%E3%82%B7%E3%83%A7%E3%83%8A%E3%83%AB%E3%83%90%E3%83%AB%E3%83%BC%E3%83%B3%E3%83%95%E3%82%A7%E3%82%B9%E3%82%BF",
+      "text": "The Saga International Balloon Fiesta (佐賀インターナショナルバルーンフェスタ, Saga Intānashonaru Barūn Fesuta) is held at the beginning of November every year in Saga Prefecture, Japan. In 2014 it took place between October 30 and November 3.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Saga_International_Balloon_Fiesta",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -11370,7 +11517,7 @@
       "ja": "鹿島市浜庄津町浜金屋町",
       "kana": "かしましはましょうづまちはまかなやまち",
       "romaji": "Kashimashihamashozumachihamakanayamachi",
-      "zh_tw": "鹿島市濱庄津町濱金屋町",
+      "zh_tw": "鹿島市濱莊津町濱金屋町",
       "en": "Hamashozumachi Hamakanayamachi"
     },
     "kana_source": "wikipedia",
@@ -11422,7 +11569,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q96707019",

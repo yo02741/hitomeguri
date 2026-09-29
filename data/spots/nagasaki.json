@@ -227,11 +227,11 @@
     "featured": false,
     "score": 65.25,
     "summary": {
-      "text": "シーボルト記念館（シーボルトきねんかん）は、長崎県長崎市にある、長崎市立の博物館。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E3%82%B7%E3%83%BC%E3%83%9C%E3%83%AB%E3%83%88%E8%A8%98%E5%BF%B5%E9%A4%A8",
+      "text": "Siebold Memorial Museum (シーボルト記念館, Shīboruto Kinenkan) was opened in Nagasaki city  on October 1, 1989 in honour of Philipp Franz von Siebold and his contributions to the development of modern science in Japan. The building is modeled on his former house in Leiden, and the entrance is modeled after the former home of Siebold's grandfather, Karl Caspar. The museum displays 206 items classified into six categories describing Von Siebold's six-year stay in Nagasaki, the so-called \"Siebold incident\", and his life work on Japan.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Siebold_Memorial_Museum",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -429,6 +429,80 @@
     ],
     "status": "published",
     "updated_at": "2026-09-28"
+  },
+  {
+    "id": "wd-Q107322760",
+    "name": {
+      "ja": "春徳寺",
+      "zh_tw": "春徳寺",
+      "en": "Shuntoku-ji Temple"
+    },
+    "location": {
+      "lat": 32.754805,
+      "lng": 129.88908
+    },
+    "prefecture": "nagasaki",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "寺院"
+    ],
+    "featured": false,
+    "score": 0.0,
+    "images": [],
+    "external_ids": {
+      "wikidata": "Q107322760",
+      "osm": "way/728108357"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q107322760",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.openstreetmap.org/way/728108357",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
+  },
+  {
+    "id": "wd-Q107323093",
+    "name": {
+      "ja": "ドロ神父記念館",
+      "zh_tw": "ドロ神父記念館",
+      "en": "De Rotz Memorial Hall"
+    },
+    "location": {
+      "lat": 32.843944,
+      "lng": 129.700917
+    },
+    "prefecture": "nagasaki",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "博物館"
+    ],
+    "featured": false,
+    "score": 0.0,
+    "images": [],
+    "external_ids": {
+      "wikidata": "Q107323093",
+      "osm": "way/793726175"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q107323093",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.openstreetmap.org/way/793726175",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q108415481",
@@ -838,7 +912,7 @@
       "ja": "長崎原爆資料館",
       "kana": "ながさきげんばくしりょうかん",
       "romaji": "Nagasakigenbakushiryokan",
-      "zh_tw": "长崎原爆资料馆",
+      "zh_tw": "長崎原爆資料館",
       "en": "Nagasaki Atomic Bomb Museum"
     },
     "kana_source": "wikipedia",
@@ -899,7 +973,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q111274293",
@@ -1266,7 +1340,7 @@
       "ja": "海栗島",
       "kana": "うにしま",
       "romaji": "Unishima",
-      "zh_tw": "海栗島",
+      "zh_tw": "海慄島",
       "en": "Uni Island"
     },
     "kana_source": "wikidata",
@@ -1307,7 +1381,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11271283",
@@ -3160,11 +3234,11 @@
     "featured": false,
     "score": 65.09,
     "summary": {
-      "text": "勝本城（かつもとじょう）は、長崎県壱岐市勝本町坂本触（壱岐国壱岐郡勝本）にあった安土桃山時代の日本の城。別称風本（かざもと）城・武末城・雨瀬包（あませかね）城。国の史跡に指定されている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%8B%9D%E6%9C%AC%E5%9F%8E",
+      "text": "Katsumoto Castle (勝本城, Katsumoto-jō) was an Sengoku period yamajiro-style Japanese castle located in the Katsumoto neighborhood of the city of Iki, Nagasaki Prefecture, Japan.  Its ruins have been protected as a National Historic Site since 2002. It was also known as Azamoto Castle (別称風本) or Amasekane Castle (武末城・雨瀬包).",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Katsumoto_Castle",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -3926,7 +4000,7 @@
       "ja": "壱岐市立一支国博物館",
       "kana": "いきしりついきこくはくぶつかん",
       "romaji": "Ikishiritsuikikokuhakubutsukan",
-      "zh_tw": "壹岐市立一支国博物館",
+      "zh_tw": "壹岐市立一支國博物館",
       "en": "Iki City Ikikoku Museum"
     },
     "kana_source": "wikipedia",
@@ -3971,7 +4045,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11429630",
@@ -3991,7 +4065,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 51.93,
+    "score": 51.97,
     "summary": {
       "text": "壱岐湯ノ本温泉（いきゆのもとおんせん）は、日本の長崎県壱岐市（旧国壱岐国）湯本浦、立石西触、本宮南触に跨る温泉である。単に湯ノ本温泉ともいう。壱岐随一のいで湯として昔から知られていた。",
       "lang": "ja",
@@ -4021,7 +4095,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11429635",
@@ -4822,11 +4896,11 @@
     "featured": false,
     "score": 59.94,
     "summary": {
-      "text": "大野台支石墓群（おおのだいしせきぼぐん）は、旧北松浦郡鹿町町深江免（現 佐世保市鹿町町深江）に所在する縄文時代から弥生時代にかけての遺跡である。国の史跡に指定されている。島原半島の原山支石墓群と同様に日本列島最大級の支石墓群である。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E9%87%8E%E5%8F%B0%E6%94%AF%E7%9F%B3%E5%A2%93%E7%BE%A4",
+      "text": "The Ōnodai Dolmen Cluster (大野台支石墓群, Ōnodai shisekibo-gun)  is an archaeological site with a late Jōmon cemetery containing at least 71 dolmens, located in the Shikamachi neighbourhood of city of Sasebo, Nagasaki Prefecture Japan. The site was designated a National Historic Site of Japan in 1985. It is the oldest in Japan, along with the Harayama Dolmen Cluster on the Shimabara Peninsula.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/%C5%8Cnodai_Dolmen_Cluster",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -5134,7 +5208,7 @@
       "ja": "女神大橋",
       "kana": "めがみおおはし",
       "romaji": "Megamiohashi",
-      "zh_tw": "女神大桥",
+      "zh_tw": "女神大橋",
       "en": "Megami Bridge"
     },
     "kana_source": "wikipedia",
@@ -5179,7 +5253,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11447444",
@@ -5408,11 +5482,11 @@
     "featured": false,
     "score": 68.6,
     "summary": {
-      "text": "安満岳（やすまんだけ）は、長崎県平戸市の平戸島北西部にある山である。標高530m。平戸市及び平戸島の最高峰である。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%AE%89%E6%BA%80%E5%B2%B3",
+      "text": "Mount Yasumandake (安満岳) is the highest peak on the island of Hirado, Japan. The mountain was sacred to Buddhists and Shintoists, and as Christianity became prevalent in Hirado it also became an object of Hidden Christian worship. In 2018 the mountain became a World Heritage Site as part of the \"Hidden Christian Sites in the Nagasaki Region\".",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Mount_Yasumandake",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -6053,11 +6127,11 @@
     "featured": false,
     "score": 76.02,
     "summary": {
-      "text": "長崎くんち（ながさきくんち）は、長崎県長崎市の諏訪神社の祭礼である。10月7日から9日までの3日間催される。国の重要無形民俗文化財に指定されている（昭和54年指定、指定名称は「長崎くんちの奉納踊」）。地元では「おくんち」と呼ばれ親しまれている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E9%95%B7%E5%B4%8E%E3%81%8F%E3%82%93%E3%81%A1",
+      "text": "Kunchi (くんち), also Nagasaki Kunchi (長崎くんち) or Nagasaki Okunchi (長崎おくんち), is the most famous festival held in Nagasaki, Japan. From October 7–9, the presentations of the festival, which vividly reflect Nagasaki's colourful history, spill over from the three festival sites into the streets and create an atmosphere of celebration throughout the city.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Nagasaki_Kunchi",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -6669,11 +6743,11 @@
     "featured": false,
     "score": 53.7,
     "summary": {
-      "text": "御橋観音寺（おはしかんのんじ）は、長崎県佐世保市 吉井町（旧北松浦郡 吉井町）にある仏教寺院（真言宗智山派）。山号は石橋山（せっきょうざん）。本尊は十一面観音坐像。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%BE%A1%E6%A9%8B%E8%A6%B3%E9%9F%B3%E5%AF%BA",
+      "text": "Ohashi Kannon-ji (御橋観音寺) is a Buddhist temple of the Shingon-shū Chizan-ha in Sasebo, Nagasaki, Japan.  Its honorary sangō prefix is Sekkyōzan (石橋山).",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Ohashi_Kannon-ji",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -7386,7 +7460,7 @@
       "ja": "旧長崎英国領事館",
       "kana": "きゅうながさきえいこくりょうじかん",
       "romaji": "Kyunagasakieikokuryojikan",
-      "zh_tw": "旧长崎英国领事馆",
+      "zh_tw": "舊長崎英國領事館",
       "en": "Former British Consulate, Nagasaki"
     },
     "kana_source": "wikipedia",
@@ -7445,7 +7519,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11511154",
@@ -7885,7 +7959,7 @@
       "ja": "東山手",
       "kana": "ひがしやまて",
       "romaji": "Higashiyamate",
-      "zh_tw": "东山手",
+      "zh_tw": "東山手",
       "en": "Higashiyamate"
     },
     "kana_source": "wikipedia",
@@ -7942,7 +8016,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11526710",
@@ -8083,11 +8157,11 @@
     "featured": false,
     "score": 61.61,
     "summary": {
-      "text": "松浦史料博物館（まつらしりょうはくぶつかん）は、長崎県平戸市にある旧平戸藩主松浦家と平戸の歴史に関する史料を収蔵した長崎県の登録博物館。運営は、公益財団法人松浦史料博物館。建物は「旧松浦家住宅」として長崎県指定有形文化財となっている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%9D%BE%E6%B5%A6%E5%8F%B2%E6%96%99%E5%8D%9A%E7%89%A9%E9%A4%A8",
+      "text": "Matsura Historical Museum (松浦史料博物館, Matsura Shiryō Hakubutsukan) opened in Hirado, Nagasaki Prefecture, Japan, in 1955. The museum is housed in the 1893 Tsurugamine Mansion of the Matsura family, former daimyō of the Hirado Domain.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Matsura_Historical_Museum",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -8292,11 +8366,11 @@
     "featured": false,
     "score": 64.27,
     "summary": {
-      "text": "樺島（かばしま）は、九州西部の長崎半島の南、天草灘上に位置する島である。全島が長崎県長崎市に属する。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%A8%BA%E5%B3%B6",
+      "text": "Kabashima (樺島), also known as Kabajima, is a small Japanese island off the southern coast of Nagasaki Prefecture on the Kyushu island.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Kabashima%2C_Nagasaki",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [],
     "external_ids": {
@@ -8489,11 +8563,11 @@
     "featured": true,
     "score": 90.82,
     "summary": {
-      "text": "江上天主堂（えがみてんしゅどう）は、長崎県五島市の奈留島（旧南松浦郡奈留町）にあるキリスト教（カトリック教会）の聖堂である。国の重要文化財であり、ユネスコの世界遺産（文化遺産）候補で2018年に登録審査が決まり、同年6月30日に登録が決まった「長崎と天草地方の潜伏キリシタン関連遺産」を構成する「江上集落」に包括される教会である。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%B1%9F%E4%B8%8A%E5%A4%A9%E4%B8%BB%E5%A0%82",
+      "text": "Egami Church (江上天主堂, Egami Tenshudō) is a Catholic church in Gotō, Nagasaki, Japan.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Egami_Church",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -8713,11 +8787,11 @@
     "featured": false,
     "score": 48.09,
     "summary": {
-      "text": "泉福寺洞窟（せんぷくじどうくつ）もしくは泉福寺洞窟遺跡（せんぷくじどうくついせき）は、旧北松浦郡 大野（現 佐世保市瀬戸越）にある旧石器時代から弥生時代の岩陰遺跡である。世界最古であった豆粒文土器が出土。国の史跡に指定されている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%B3%89%E7%A6%8F%E5%AF%BA%E6%B4%9E%E7%AA%9F",
+      "text": "The Senpukuji Cave (泉福寺洞窟, Senpukuji dōkutsu) is an archaeological site consisting of a Japanese Paleolithic period to the Yayoi period rock shelter dwelling in the Setogoshi neighborhood of the city of Sasebo, Nagasaki Prefecture on the island of  Kyushu, Japan. The site was designated a National Historic Site of Japan in 1986. The world's oldest bean-patterned pottery was excavated here.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Senpukuji_Cave",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -10280,11 +10354,11 @@
     "featured": false,
     "score": 70.81,
     "summary": {
-      "text": "福井洞窟（ふくいどうくつ　英語: Fukui Cave）は、長崎県佐世保市吉井町（旧北松浦郡 吉井町）にある後期旧石器時代から縄文時代草創期の岩陰遺跡。旧石器時代の遺跡で初めて国の特別史跡に指定され、出土品は国の重要文化財に指定されている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E7%A6%8F%E4%BA%95%E6%B4%9E%E7%AA%9F",
+      "text": "The Fukui Cave (福井洞窟, Fukui dōkutsu) is an archaeological site consisting of a Japanese Paleolithic period to the early incipient Jōmon period cave dwelling in the Yoshii neighborhood of the city of Sasebo, Nagasaki Prefecture on the island of  Kyushu, Japan. The site was designated a National Historic Site of Japan in 1978. Humans have been occupying the site since at least 30,000 years ago Pottery discovered at this site dates back to around 12,700 years ago and are among the oldest found in the world.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Fukui_cave",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -11934,11 +12008,11 @@
     "featured": false,
     "score": 50.64,
     "summary": {
-      "text": "針尾島（はりおじま）は長崎県佐世保市の南西部に位置し、大村湾と佐世保湾の間に浮かぶ島。西海市と針尾瀬戸（伊ノ浦瀬戸）を境に接する。温州みかんの栽培が盛んである。大村家家臣の針尾氏が築いた針尾城（小鯛城）の発掘調査で、トルコ・イタリアに次ぎ世界で3例目となる、16世紀頃の景徳鎮窯の六角脚付瓶が出土した 。なお、本項では佐世保市の一地域としての針尾（旧東彼杵郡崎針尾村 ）と江上（えがみ、旧東彼杵郡江上村 ）についても記述する。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E9%87%9D%E5%B0%BE%E5%B3%B6",
+      "text": "Hario Island (針尾島) is a large island located in the mouth of Ōmura Bay, part of Nagasaki Prefecture, Japan. The island, 33.16 km² in area, had 9767 inhabitants as of 2015, making it the 7th largest and 6th most populous island in the prefecture. The island is dominated by Citrus unshiu plantations.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Hario_Island",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [],
     "external_ids": {
@@ -12175,7 +12249,7 @@
       "ja": "長崎ペンギン水族館",
       "kana": "ながさきぺんぎんすいぞくかん",
       "romaji": "Nagasakipenginsuizokukan",
-      "zh_tw": "长崎企鹅水族馆",
+      "zh_tw": "長崎企鵝水族館",
       "en": "Nagasaki Penguin Aquarium"
     },
     "kana_source": "wikipedia",
@@ -12225,7 +12299,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11652469",
@@ -12317,11 +12391,11 @@
     "featured": false,
     "score": 61.04,
     "summary": {
-      "text": "長崎市総合運動公園（ながさきしそうごううんどうこうえん, 英語: Nagasaki Municipal General Recreation Park）は、長崎県長崎市柿泊町（かきどまりまち）にあるスポーツ施設群を有する公園。命名権により「ベネックス総合運動公園」とも称し、略称では、その地名から「かきどまり」ともいう。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E9%95%B7%E5%B4%8E%E5%B8%82%E7%B7%8F%E5%90%88%E9%81%8B%E5%8B%95%E5%85%AC%E5%9C%92",
+      "text": "Nagasaki City Kakidomari Stadium (長崎市総合運動公園かきどまり陸上競技場) is an athletic stadium in Nagasaki, Nagasaki, Japan.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Nagasaki_City_Kakidomari_Stadium",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -12639,11 +12713,11 @@
     "featured": false,
     "score": 61.88,
     "summary": {
-      "text": "長崎縣護國神社（ながさきけんごこくじんじゃ）は、長崎県長崎市にある神社（護国神社）である。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E9%95%B7%E5%B4%8E%E7%B8%A3%E8%AD%B7%E5%9C%8B%E7%A5%9E%E7%A4%BE",
+      "text": "Nagasaki Gokoku Shrine (Japanese: 長崎護国神社) is a Gokoku Shrine located in Nagasaki, Nagasaki Prefecture, Japan. It is dedicated to the spirits of the approximately 60,000 people from Nagasaki Prefecture who died between the Meiji Restoration and Pacific War (World War II).",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Nagasaki_Gokoku_Shrine",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -12903,11 +12977,11 @@
     "featured": false,
     "score": 58.04,
     "summary": {
-      "text": "霊丘神社（れいきゅうじんじゃ）は、長崎県島原市に鎮座する神社である。旧社格は県社。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E9%9C%8A%E4%B8%98%E7%A5%9E%E7%A4%BE",
+      "text": "Reikyū Shrine (霊丘神社, Reikyū Jinja) is a Shinto shrine in Shimabara, Nagasaki Prefecture, Japan. It enshrines the first Shōgun of the Tokugawa Shogunate, Tokugawa Ieyasu.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Reiky%C5%AB_Shrine",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -13247,11 +13321,11 @@
     "featured": true,
     "score": 91.28,
     "summary": {
-      "text": "頭ヶ島天主堂（かしらがしまてんしゅどう）は、長崎県南松浦郡新上五島町の頭ヶ島にあるキリスト教（カトリック教会）の聖堂である。2001年（平成13年）に国の重要文化財に指定されており、ユネスコの世界遺産（文化遺産）候補で2018年に登録審査が決まり、同年6月30日に登録が決まった「長崎と天草地方の潜伏キリシタン関連遺産」を構成する「頭ヶ島の集落」に包括される教会である。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E9%A0%AD%E3%83%B6%E5%B3%B6%E5%A4%A9%E4%B8%BB%E5%A0%82",
+      "text": "Kashiragashima Church is a Catholic church in Shin-Kamigotō, Nagasaki, Japan.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Kashiragashima_Church",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -13477,11 +13551,11 @@
     "featured": true,
     "score": 99.4,
     "summary": {
-      "text": "高島炭鉱（たかしまたんこう）は、長崎県長崎市高島（旧西彼杵郡高島町）にあった日本の炭鉱。日本最古の大手資本による採鉱で栄えたが、1986年（昭和61年）11月27日をもって閉山された。端島炭鉱とともに、「明治日本の産業革命遺産 製鉄・製鋼、造船、石炭産業」（全23資産）の構成資産として世界遺産リストに登録されている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E9%AB%98%E5%B3%B6%E7%82%AD%E9%89%B1",
+      "text": "Takashima coal mine (高島炭鉱, Takashima Tankō) was a coal mine in Japan, located on the island of Takashima off the northern shore of the Nagasaki Peninsula.  It was known as the town of Takashima but is now part of the city of Nagasaki, Nagasaki Prefecture. The entire 1.23 square kilometre island, including the areas under the ocean off the coast of the island, was a coal mine. There were 22 mining shafts covering 12,480 hectares.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Takashima_Coal_Mine",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -13771,7 +13845,7 @@
       "ja": "長崎市恐竜博物館",
       "kana": "ながさきしきょうりゅうはくぶつかん",
       "romaji": "Nagasakishikyoryuhakubutsukan",
-      "zh_tw": "长崎市恐龙博物馆",
+      "zh_tw": "長崎市恐龍博物館",
       "en": "Nagasaki City Dinosaur Museum"
     },
     "kana_source": "wikipedia",
@@ -13816,7 +13890,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q117301937",
@@ -14425,11 +14499,11 @@
     "featured": false,
     "score": 48.77,
     "summary": {
-      "text": "オランダ商館（オランダしょうかん）は、オランダ東インド会社によって設けられた貿易の拠点。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%B9%B3%E6%88%B8%E3%82%AA%E3%83%A9%E3%83%B3%E3%83%80%E5%95%86%E9%A4%A8",
+      "text": "The Hirado Dutch Trading Post (平戸和蘭商館, Hirado Oranda shōkan ato) was a trading base of the Dutch East India Company on the island of Hirado, Nagasaki Prefecture Japan.  It was established in 1609 and lasted for 33 years. The site was designated a National Historic Site of Japan in 1922.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Hirado_Dutch_Trading_Post",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [],
     "external_ids": {
@@ -14752,6 +14826,59 @@
     "updated_at": "2026-09-28"
   },
   {
+    "id": "wd-Q1333790",
+    "name": {
+      "ja": "五島列島",
+      "kana": "ごとうれっとう",
+      "romaji": "Gotoretto",
+      "zh_tw": "五島群島",
+      "en": "Gotō Islands"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 32.9,
+      "lng": 129.05
+    },
+    "prefecture": "nagasaki",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "島"
+    ],
+    "featured": false,
+    "score": 87.79,
+    "summary": {
+      "text": "五島列島為日本長崎縣西部的群島。以南部的福江島、久賀島、奈留島、若松島、中通島五個島嶼為中心，共計有140個島嶼，面積696.7平方公里。行政區域分為五島市、新上五島町、小值賀町，北端的宇久島屬佐世保市管轄。距長崎港有100公里的距離。由長崎縣管轄，是九州地方的最西端。中田永一所著小說《再會吧！青春小鳥》（くちびるに歌を）也以此地為背景，亦是作者故鄉。",
+      "lang": "zh",
+      "source_url": "https://zh.wikipedia.org/wiki/%E4%BA%94%E5%B3%B6%E5%88%97%E5%B3%B6",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a8/Map-GotoRetto-en.png/960px-Map-GotoRetto-en.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "User:Akanemoto",
+        "license": "Public domain",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Map-GotoRetto-en.png"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q1333790"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q1333790",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E4%BA%94%E5%B3%B6%E5%88%97%E5%B3%B6",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
+  },
+  {
     "id": "wd-Q133628",
     "name": {
       "ja": "国立長崎原爆死没者追悼平和祈念館",
@@ -14772,11 +14899,11 @@
     "featured": false,
     "score": 70.26,
     "summary": {
-      "text": "国立長崎原爆死没者追悼平和祈念館（こくりつながさきげんばくしぼつしゃついとうへいわきねんかん）は、1945年（昭和20年）8月9日の長崎市に投下された原子爆弾により死亡した人々や、その後に亡くなった被爆者を追悼し、世界平和を願う施設である。所在地は長崎県長崎市平野町7番8号。2003年（平成15年）7月開館。長崎市における国の追悼施設は同館が初めてである。長崎平和推進協会が運営・管理を行っている。入館は無料。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%9B%BD%E7%AB%8B%E9%95%B7%E5%B4%8E%E5%8E%9F%E7%88%86%E6%AD%BB%E6%B2%A1%E8%80%85%E8%BF%BD%E6%82%BC%E5%B9%B3%E5%92%8C%E7%A5%88%E5%BF%B5%E9%A4%A8",
+      "text": "The Nagasaki National Peace Memorial Hall for the Atomic Bomb Victims (国立長崎原爆死没者追悼平和祈念館, Kokuritsu Nagasaki Genbaku Shibotsusha Tsuitō Heiwa Kinenkan) is a commemorative monument in Nagasaki, Japan, situated next to its Atomic Bomb Museum. The Peace Park is nearby.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Nagasaki_National_Peace_Memorial_Hall_for_the_Atomic_Bomb_Victims",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -15093,7 +15220,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 19.5,
+    "score": 20.12,
     "summary": {
       "text": "白木峰高原（しらきみねこうげん）は、長崎県諫早市白木峰町にある、標高1,057メートルの五家原岳の中腹に広がる標高約350メートルの丘陵地。",
       "lang": "ja",
@@ -15123,7 +15250,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q15231937",
@@ -15201,11 +15328,11 @@
     "featured": false,
     "score": 61.72,
     "summary": {
-      "text": "諫早公園（いさはやこうえん）は、日本の長崎県諫早市高城町にある公園で、上山公園の一部である。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E8%AB%AB%E6%97%A9%E5%85%AC%E5%9C%92",
+      "text": "Isahaya Park (also known as Azalea Park) is in Isahaya in Nagasaki Prefecture, Japan. It was built on the ruins of Isahaya castle (also known as Takashiro) during the Taishō period. The park is famous for its azalea blooms, and the \"Azalea Festival\" is held here, on and around April 10 every year. The park is also known for its \"Spectacles Bridge\" (see below) over the pond. The park is about 50 minutes by bus from Nagasaki city.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Isahaya_Park",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -15423,7 +15550,7 @@
     "id": "wd-Q17213152",
     "name": {
       "ja": "島原武家屋敷街",
-      "zh_tw": "岛原武家屋敷街",
+      "zh_tw": "島原武家屋敷街",
       "en": "Shimabara Bukeyashiki"
     },
     "location": {
@@ -15470,7 +15597,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q17214084",
@@ -15718,11 +15845,11 @@
     "featured": false,
     "score": 48.31,
     "summary": {
-      "text": "鷹島神崎遺跡（たかしまこうざきいせき）は、日本の長崎県松浦市鷹島東岸（神崎免）沖にある水中遺跡。2012年3月27日に、水中遺跡として初めて国の史跡に指定された。広さは38万4000平方メートル。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E9%B7%B9%E5%B3%B6%E7%A5%9E%E5%B4%8E%E9%81%BA%E8%B7%A1",
+      "text": "The Takashima Kōzaki Site (鷹島神崎遺跡, Takashima kōzaki iseki) is an underwater archaeological site containing artifacts from the Kamakura period Mongol invasions of Japan located offshore the east coast of the island of Takashima in the city of Matsuura, Nagasaki Prefecture Japan.  The 384,000 square meter area of the seabed was designated a National Historic Site of Japan in 2012, and is the first underwater site so designated in Japan.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Takashima_K%C5%8Dzaki_Site",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -15866,6 +15993,50 @@
     ],
     "status": "published",
     "updated_at": "2026-09-28"
+  },
+  {
+    "id": "wd-Q17629550",
+    "name": {
+      "ja": "サン・ジワン枯松神社",
+      "zh_tw": "サン・ジワン枯松神社",
+      "en": "Kurematsu Shrine"
+    },
+    "location": {
+      "lat": 32.839234,
+      "lng": 129.723126
+    },
+    "prefecture": "nagasaki",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "神社"
+    ],
+    "featured": false,
+    "score": 1.5,
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/23/Karematsu_shrine.jpg/960px-Karematsu_shrine.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Indiana jo",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Karematsu_shrine.jpg"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q17629550",
+      "osm": "way/794228080"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q17629550",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.openstreetmap.org/way/794228080",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q17991450",
@@ -16577,11 +16748,11 @@
     "featured": false,
     "score": 70.19,
     "summary": {
-      "text": "和多都美神社（わたづみじんじゃ）は、長崎県対馬市にある神社。式内社論社、旧社格は村社。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%92%8C%E5%A4%9A%E9%83%BD%E7%BE%8E%E7%A5%9E%E7%A4%BE",
+      "text": "Watazumi Shrine, also known as Watatsumi Shrine, is a Shinto shrine in Tsushima, Nagasaki.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Watazumi_Shrine",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -17546,11 +17717,11 @@
     "featured": false,
     "score": 69.08,
     "summary": {
-      "text": "中江ノ島（なかえのしま）は、長崎県の平戸島と生月島双方から約2キロの沖合にある長さ400m、幅50mの無人島で、キリスト教が禁止された17世紀前半に平戸藩によってキリシタンの処刑が行われたことから、いわゆる隠れキリシタンの聖地となった。住所区分は平戸市下中野町に属すが、上陸は不可。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E4%B8%AD%E6%B1%9F%E3%83%8E%E5%B3%B6",
+      "text": "Nakaenoshima (中江ノ島) is an uninhabited island 2 km off the coast of Hirado, Japan. It is located in the East China Sea.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Nakaenoshima",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -17969,7 +18140,7 @@
       "ja": "雲仙岳災害記念館",
       "kana": "うんぜんだけさいがいきねんかん",
       "romaji": "Unzendakesaigaikinenkan",
-      "zh_tw": "雲仙岳災害紀念館",
+      "zh_tw": "雲仙嶽災害紀念館",
       "en": "Mt. Unzen Disaster Memorial Hall"
     },
     "kana_source": "wikipedia",
@@ -18019,7 +18190,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q28691774",
@@ -18579,6 +18750,59 @@
     "updated_at": "2026-09-28"
   },
   {
+    "id": "wd-Q491950",
+    "name": {
+      "ja": "男女群島",
+      "kana": "だんじょぐんとう",
+      "romaji": "Danjogunto",
+      "zh_tw": "男女群島",
+      "en": "Danjo Islands"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 32.023611,
+      "lng": 128.376111
+    },
+    "prefecture": "nagasaki",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "島"
+    ],
+    "featured": false,
+    "score": 76.06,
+    "summary": {
+      "text": "男女群島是五島列島西南，東海上的一個群島。為無人島。屬長崎縣五島市。",
+      "lang": "zh",
+      "source_url": "https://zh.wikipedia.org/wiki/%E7%94%B7%E5%A5%B3%E7%BE%A4%E5%B3%B6",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b3/Me-Shima_Island_of_Danjo_Islands_Aerial_photograph.jpg/960px-Me-Shima_Island_of_Danjo_Islands_Aerial_photograph.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "国土交通省",
+        "license": "Attribution",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Me-Shima_Island_of_Danjo_Islands_Aerial_photograph.jpg"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q491950"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q491950",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E7%94%B7%E5%A5%B3%E7%BE%A4%E5%B3%B6",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
+  },
+  {
     "id": "wd-Q494914",
     "name": {
       "ja": "壱岐島",
@@ -18630,6 +18854,46 @@
     ],
     "status": "published",
     "updated_at": "2026-09-28"
+  },
+  {
+    "id": "wd-Q49509260",
+    "name": {
+      "ja": "亀岡公園",
+      "kana": "かめおかこうえん",
+      "romaji": "Kameoka-kōen",
+      "zh_tw": "亀岡公園",
+      "en": "Kameoka Park"
+    },
+    "kana_source": "osm",
+    "location": {
+      "lat": 33.36743,
+      "lng": 129.55637
+    },
+    "prefecture": "nagasaki",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "公園"
+    ],
+    "featured": false,
+    "score": 1.5,
+    "images": [],
+    "external_ids": {
+      "wikidata": "Q49509260",
+      "osm": "relation/8616811"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q49509260",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.openstreetmap.org/relation/8616811",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q49631490",
@@ -19136,11 +19400,11 @@
     "featured": false,
     "score": 67.45,
     "summary": {
-      "text": "外海町（そとめちょう）は1960年から2005年まで長崎県の西彼杵半島南西部にあった町。西彼杵郡に属していた。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%A4%96%E6%B5%B7%E7%94%BA",
+      "text": "Sotome (外海町, Sotome-chō) was a town located in Nishisonogi District, Nagasaki Prefecture, Japan.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Sotome%2C_Nagasaki",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -19506,11 +19770,11 @@
     "featured": false,
     "score": 58.5,
     "summary": {
-      "text": "伊王島灯台（いおうじまとうだい）は、長崎県長崎市の伊王島にある灯台。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E4%BC%8A%E7%8E%8B%E5%B3%B6%E7%81%AF%E5%8F%B0",
+      "text": "Iojimazaki Lighthouse (伊王島灯台, iōjima tōdai) is a lighthouse in Iōjima, Nagasaki, Japan.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Iojimazaki_Lighthouse",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -19890,11 +20154,11 @@
     "featured": false,
     "score": 67.57,
     "summary": {
-      "text": "神崎鼻（こうざきはな）は、旧北松浦郡 小佐々町（2006年佐世保市に編入合併）楠泊にある岬。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E7%A5%9E%E5%B4%8E%E9%BC%BB",
+      "text": "The extreme points of Japan include the coordinates that are the farthest north, south, east and west in Japan, and the ones that are at the highest and the lowest elevations in the country. Japan's northernmost point is disputed, because Japan considers it to be on Iturup, an island de facto governed by Russia. The southernmost point is Okinotorishima; the westernmost is Tuishi near Yonaguni Island in Okinawa Prefecture, and the easternmost is Minami Torishima. The highest point in Japan is the summit of Mount Fuji at 3,776.24 m (12,389 ft).",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/K%C5%8Dzakihana",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -20012,11 +20276,11 @@
     "featured": false,
     "score": 62.79,
     "summary": {
-      "text": "長崎県亜熱帯植物園（ながさきけんあねったいしょくぶつえん）は、長崎県長崎市脇岬町にあった県立の植物園。別名「サザンパーク野母崎」。1969年（昭和44年）開園、東京ドーム約7個分の敷地内に1,200種類、45,000本の亜熱帯植物が植栽されていた。1991年から発生していた地すべりによる問題が解決に至らず、2017年（平成29年）3月末に閉園した。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E9%95%B7%E5%B4%8E%E7%9C%8C%E4%BA%9C%E7%86%B1%E5%B8%AF%E6%A4%8D%E7%89%A9%E5%9C%92",
+      "text": "Nagasaki subtropical botanical garden (長崎",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Nagasaki_Subtropical_Botanical_Garden",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -20110,11 +20374,11 @@
     "featured": false,
     "score": 69.12,
     "summary": {
-      "text": "小浜温泉（おばまおんせん）は、長崎県雲仙市小浜町にある温泉。島原半島の西側、雲仙国立公園の西麓に位置し、橘湾に臨む風光明媚な温泉地でリウマチ・神経痛に効果のある高温で湯量の豊富な温泉として昔から多くの人に親しまれており、『湧出量×湯温』で求められる放熱量が日本一といわれている。また、2013年には小浜温泉の未利用温泉を活用した210kW級の小浜温泉バイナリー発電所が稼働を始めた。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%B0%8F%E6%B5%9C%E6%B8%A9%E6%B3%89",
+      "text": "Obama Onsen (小浜温泉) is an onsen (hot spring resort) in Obama, Unzen, Nagasaki Prefecture, Japan. The hot springs system is located in the foothills of Mount Unzen Volcano.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Obama_Onsen",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -20160,11 +20424,11 @@
     "featured": true,
     "score": 90.32,
     "summary": {
-      "text": "小菅修船場跡（こすげしゅうせんばあと）は、長崎県長崎市小菅町にある国の史跡。船台式ドック、煉瓦造りの機械室、英国製巻上げ機などがらなる。遺構の外見からソロバンドックの名で親しまれている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%B0%8F%E8%8F%85%E4%BF%AE%E8%88%B9%E5%A0%B4%E8%B7%A1",
+      "text": "The Kosuge Ship Repair Dock (小菅修船場跡, Kosuge shūsen-ba ato) is the remains of Japan's first western-style dock, erected in the Bakumatsu period in what is now the Kosuge neighborhood of the city of Nagasaki of Japan. The site was designated a National Historic Site in 2009. and was later designed as a component of the Sites of Japan's Meiji Industrial Revolution: Iron and Steel, Shipbuilding and Coal Mining, which received UNESCO World Heritage Site status in 2015.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Kosuge_Slip_Dock",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -20227,11 +20491,11 @@
     "featured": false,
     "score": 61.99,
     "summary": {
-      "text": "聖福寺（しょうふくじ）は長崎県長崎市にある黄檗宗の仏教寺院。山号は万寿山（まんじゅさん）。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E8%81%96%E7%A6%8F%E5%AF%BA_%28%E9%95%B7%E5%B4%8E%E5%B8%82%29",
+      "text": "Shōfuku-ji (聖福寺) is an Ōbaku Zen temple in Nagasaki, Nagasaki, Japan. Its honorary sangō prefix is Manjusan (万寿山).",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Sh%C5%8Dfuku-ji_%28Nagasaki%29",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -20402,11 +20666,11 @@
     "featured": false,
     "score": 60.97,
     "summary": {
-      "text": "西海国立公園九十九島動植物園（さいかいこくりつこうえんくじゅうくしまどうしょくぶつえん）は、長崎県佐世保市にある市営の動物園・植物園である。以前は近くにある山・石岳（197m）から石岳動植物園という愛称で親しまれていた。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E8%A5%BF%E6%B5%B7%E5%9B%BD%E7%AB%8B%E5%85%AC%E5%9C%92%E4%B9%9D%E5%8D%81%E4%B9%9D%E5%B3%B6%E5%8B%95%E6%A4%8D%E7%89%A9%E5%9C%92",
+      "text": "The Sasebo Zoological Park and Botanical Garden (西海国立公園九十九島動植物園, Saikai Kokuritsu Kōen Kujūkushima Dōshokubutsuen) is a zoo and botanical garden located at 2172, Funakoshi-cho, Sasebo, Nagasaki, Japan. It is open daily; an admission fee is charged.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Sasebo_Zoological_Park_and_Botanical_Garden",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [],
     "external_ids": {

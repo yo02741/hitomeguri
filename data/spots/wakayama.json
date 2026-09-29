@@ -268,6 +268,37 @@
     "updated_at": "2026-09-28"
   },
   {
+    "id": "osm-node-1423067377",
+    "name": {
+      "ja": "御坊市歴史民俗資料館",
+      "zh_tw": "御坊市歴史民俗資料館"
+    },
+    "location": {
+      "lat": 33.861091,
+      "lng": 135.16907
+    },
+    "prefecture": "wakayama",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "博物館"
+    ],
+    "featured": false,
+    "score": 0.0,
+    "images": [],
+    "external_ids": {
+      "osm": "node/1423067377"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/node/1423067377",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
+  },
+  {
     "id": "wd-Q105070952",
     "name": {
       "ja": "堀越癪観音",
@@ -344,11 +375,11 @@
     "featured": false,
     "score": 50.95,
     "summary": {
-      "text": "西有田県立自然公園（にしありだけんりつしぜんこうえん）は、和歌山県にある県立自然公園である。面積6.53km2。1956年指定。宮崎ノ鼻（有田市）から唐尾湾（広川町）に至る典型的なリアス式海岸が特色。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E8%A5%BF%E6%9C%89%E7%94%B0%E7%9C%8C%E7%AB%8B%E8%87%AA%E7%84%B6%E5%85%AC%E5%9C%92",
+      "text": "Nishiarida Prefectural Natural Park (西有田県立自然公園, Nishiarida kenritsu shizen kōen) is a Prefectural Natural Park in Wakayama Prefecture, Japan. Established in 1956, the park spans the borders of the municipalities of Arida, Hirogawa, and Yuasa. The park comprises the stretch of ria coast between Miyazaki-no-Hana (宮崎ノ鼻) in Arida and Karao Bay (唐尾湾) in Hirogawa, as well as the islands of Karumo-jima (苅藻島), Kenashi-jima (毛無島), and Takashima (鷹島).",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Nishiarida_Prefectural_Natural_Park",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [],
     "external_ids": {
@@ -1312,7 +1343,7 @@
       "ja": "橋杭岩",
       "kana": "はしくいいわ",
       "romaji": "Hashikui Iwa",
-      "zh_tw": "橋杭岩",
+      "zh_tw": "橋杭巖",
       "en": "Hashigui-iwa"
     },
     "kana_source": "osm",
@@ -1369,7 +1400,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11153117",
@@ -1769,7 +1800,7 @@
       "ja": "ひき岩群",
       "kana": "ひきいわぐん",
       "romaji": "Hikiiwa Gun",
-      "zh_tw": "蟇岩群",
+      "zh_tw": "蟇巖群",
       "en": "Hikiiwa-gun"
     },
     "kana_source": "wikipedia",
@@ -1812,7 +1843,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11278847",
@@ -2151,11 +2182,11 @@
     "featured": false,
     "score": 69.62,
     "summary": {
-      "text": "トルコ記念館（トルコきねんかん、トルコ語: Türk Müzesi）は、和歌山県串本町の紀伊大島にある町立の博物館。1890年（明治23年）9月16日に紀伊大島沖で遭難したオスマン帝国（現在のトルコ）のフリゲート艦エルトゥールル号の模型や乗員の遺品のほか、トルコ政府から寄贈された品々を展示している。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E3%83%88%E3%83%AB%E3%82%B3%E8%A8%98%E5%BF%B5%E9%A4%A8",
+      "text": "The Kushimoto Turkish Memorial and Museum (Japanese: トルコ軍艦遭難記念碑), aka Frigate Ertuğrul Memorial and Museum (Turkish: Ertuğrul Anıtı ve Müzesi,), is a monument and a museum to commemorate the sailors of the Ottoman frigate Ertuğrul, which sunk in 1890 off Kushimoto, Wakayama in Japan.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Kushimoto_Turkish_Memorial_and_Museum",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -3025,11 +3056,11 @@
     "featured": false,
     "score": 60.09,
     "summary": {
-      "text": "串本応挙芦雪館（くしもとおうきょろせつかん）は和歌山県東牟婁郡串本町にある美術館。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E4%B8%B2%E6%9C%AC%E5%BF%9C%E6%8C%99%E8%8A%A6%E9%9B%AA%E9%A4%A8",
+      "text": "The Kushimoto Ōkyo Rosetsu Art Museum (串本応挙芦雪館, Kushimoto Ōkyo Rosetsu Kan) is an art museum in Kushimoto, Wakayama Prefecture, Japan. The museum opened on the grounds of Muryō-ji in 1961 and comprises five exhibition rooms in two single-story reinforced concrete buildings.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Kushimoto_%C5%8Ckyo_Rosetsu_Art_Museum",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -3411,7 +3442,7 @@
       "ja": "伊達神社",
       "kana": "いたてじんじゃ",
       "romaji": "Itatejinja",
-      "zh_tw": "伊达神社",
+      "zh_tw": "伊達神社",
       "en": "Itate Shrine"
     },
     "kana_source": "wikipedia",
@@ -3465,7 +3496,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11384093",
@@ -3473,7 +3504,7 @@
       "ja": "佐藤春夫記念館",
       "kana": "さとうはるおきねんかん",
       "romaji": "Satō Haruo kinenkan",
-      "zh_tw": "佐藤春夫纪念馆",
+      "zh_tw": "佐藤春夫紀念館",
       "en": "Satō Haruo Memorial Museum"
     },
     "kana_source": "osm",
@@ -3530,7 +3561,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11385071",
@@ -4763,11 +4794,11 @@
     "featured": false,
     "score": 58.27,
     "summary": {
-      "text": "和歌山市立博物館（わかやましりつはくぶつかん、Wakayama City Museum）は、和歌山県和歌山市にある博物館。和歌山城の築城から400年経ったのを記念して昭和60年（1985年）11月1日に開館した",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%92%8C%E6%AD%8C%E5%B1%B1%E5%B8%82%E7%AB%8B%E5%8D%9A%E7%89%A9%E9%A4%A8",
+      "text": "Wakayama City Museum (和歌山市立博物館, Wakayama shiritsu hakubutsukan) is a local history museum located in the city of  Wakayama, Wakayama Prefecture, Japan. It opened in November 1985 to commemorate the 400th anniversary of the construction of Wakayama Castle. The facility is adjacent to the Wakayama Civic Library.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Wakayama_City_Museum",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -4910,7 +4941,7 @@
       "ja": "和歌山県書道資料館",
       "kana": "わかやまけんしょどうしりょうかん",
       "romaji": "Wakayamaken Shodo Shiryo Kan",
-      "zh_tw": "和歌山县书道资料馆",
+      "zh_tw": "和歌山縣書道資料館",
       "en": "Wakayamaken Shodōshiryōkan"
     },
     "kana_source": "wikipedia",
@@ -4966,7 +4997,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11417436",
@@ -5052,11 +5083,11 @@
     "featured": false,
     "score": 61.39,
     "summary": {
-      "text": "和歌山県立紀伊風土記の丘（わかやまけんりつきいふどきのおか）は和歌山県和歌山市にある風土記の丘。国の特別史跡である「岩橋千塚古墳群」（いわせせんづかこふんぐん）の保全・研究・公開を主たる目的として1971年（昭和46年）8月に開館した考古学・民俗学系の登録博物館および歴史公園である。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%92%8C%E6%AD%8C%E5%B1%B1%E7%9C%8C%E7%AB%8B%E7%B4%80%E4%BC%8A%E9%A2%A8%E5%9C%9F%E8%A8%98%E3%81%AE%E4%B8%98",
+      "text": "Wakayama Prefecture Kii-fudoki-no-oka Museum of Archaeology and Folklore (和歌山県立紀伊風土記の丘, Wakayama kenritsu fudoki-no-oka) is an archaeology museum located in the outskirts of the city of Wakayama, Wakayama Prefecture, Japan.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Wakayama_Prefecture_Kii-fudoki-no-oka_Museum_of_Archaeology_and_Folklore",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -5114,11 +5145,11 @@
     "featured": false,
     "score": 60.05,
     "summary": {
-      "text": "和歌山県立自然博物館（わかやまけんりつしぜんはくぶつかん）は和歌山県海南市にある自然をテーマにした博物館。1979年に国際児童年の記念事業として計画立案され、植物・生物・地学等自然科学に関する資料の収集・保管・展示と調査研究を目的として1982年に開館した。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%92%8C%E6%AD%8C%E5%B1%B1%E7%9C%8C%E7%AB%8B%E8%87%AA%E7%84%B6%E5%8D%9A%E7%89%A9%E9%A4%A8",
+      "text": "Wakayama Prefectural Museum of Natural History (和歌山県立自然博物館, Wakayama Kenritsu Shizen Hakubutsukan) opened in Kainan, Wakayama Prefecture in 1982. The displays relate to the geology, flora, and fauna of the area, while the research collection includes some 167,000 specimens. The first exhibition room is an aquarium, and many specimens are displayed in the second room. The Museum is accredited as a Registered Museum by the Museum Act from Ministry of Education, Culture, Sports, Science and Technology.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Wakayama_Prefectural_Museum_of_Natural_History",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -5173,11 +5204,11 @@
     "featured": false,
     "score": 63.64,
     "summary": {
-      "text": "和歌山県立近代美術館（わかやまけんりつきんだいびじゅつかん、The Museum of Modern Art, Wakayama）は和歌山県和歌山市にある美術館。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%92%8C%E6%AD%8C%E5%B1%B1%E7%9C%8C%E7%AB%8B%E8%BF%91%E4%BB%A3%E7%BE%8E%E8%A1%93%E9%A4%A8",
+      "text": "The Museum of Modern Art, Wakayama (和歌山県立近代美術館, Wakayama Kenritsu Kindai Bijutsukan) is a museum of modern art in the city of Wakayama, Wakayama Prefecture, Japan. The Museum first opened as the Wakayama Prefectural Museum of Art (和歌山県立美術館) in the grounds of Wakayama Castle in 1963, before reopening on the first floor of the Wakayama Prefectural Cultural Hall (和歌山県民文化会館) in 1970; in July 1994, together with the adjacent Wakayama Prefectural Museum, the Museum of Modern Art, Wakayama reopened in a new location close to the castle.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/The_Museum_of_Modern_Art%2C_Wakayama",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -5434,11 +5465,11 @@
     "featured": false,
     "score": 71.34,
     "summary": {
-      "text": "和泉葛城山（いずみかつらぎさん）は、大阪府と和歌山県の境にある標高858mの山。和泉山脈を構成する一峰。葛城連峰の中心として昔から親しまれている山である。1996年（平成8年）10月2日に和泉山脈一帯が金剛生駒紀泉国定公園に編入された。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%92%8C%E6%B3%89%E8%91%9B%E5%9F%8E%E5%B1%B1",
+      "text": "Mount Izumi Katsuragi (和泉葛城山, Izumi Katsuragi-san) is a mountain in the Kongō Range straddling the border between Osaka and Wakayama Prefectures in Japan. Its peak elevation is 858 metres (2,815 ft).",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Mount_Izumi_Katsuragi",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -6224,11 +6255,11 @@
     "featured": true,
     "score": 99.82,
     "summary": {
-      "text": "大峯奥駈道（おおみねおくがけみち）は、吉野と熊野を結ぶ大峯山を縦走する、修験道の修行の道。1000-1900m級の険しい峰々を踏破する「奥駈」という峰入修行を行なう約80kmに渡る古道を指す。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E5%B3%AF%E5%A5%A5%E9%A7%88%E9%81%93",
+      "text": "The Ōmine Okugakemichi (大峯奥駈道, lit. “deep inner path of the grand peaks”) is a pilgrimage route on the Kii Peninsula in the Kansai region of Japan. It begins in Yanagi-no-shuku, a former ferry station on the Yoshino River in Nara prefecture, leads through the 1200-1900 meter Ōmine mountain region of Yoshino and Kumano in Wakayama Prefecture and ends after about 170 kilometers at the Kumano Hongū Taisha.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/%C5%8Cmine_Okugakemichi",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -7631,11 +7662,11 @@
     "featured": false,
     "score": 64.13,
     "summary": {
-      "text": "旧名手宿本陣（きゅうなてじゅくほんじん）は和歌山県紀の川市にある歴史的建造物。旧名手本陣妹背家住宅（きゅうなてほんじんいもせけじゅうたく）の名称で主屋・米蔵・南倉の3棟が国の重要文化財に指定され、敷地を含めた全体が国の史跡に指定されている。華岡青洲夫人の加恵の実家としても知られる。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%97%A7%E5%90%8D%E6%89%8B%E5%AE%BF%E6%9C%AC%E9%99%A3",
+      "text": "The Former Nate-juku Honjin (旧名手宿本陣, Kyū-Nate-juku honjin) is a  surviving Edo Period honjin complex located in the city of Kinokawa, Wakayama Prefecture in the Kansai region of Japan. Three of the buildings of the complex (the main building and two warehouses) have been designated National Important Cultural Properties and the entire complex was designated a National Historic Site in 1970.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Former_Nate-juku_Honjin",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -9286,11 +9317,11 @@
     "featured": true,
     "score": 97.87,
     "summary": {
-      "text": "湯の峰温泉（ゆのみねおんせん）は、和歌山県田辺市本宮町（旧国紀伊国牟婁郡）湯の峰にある温泉。4世紀頃に熊野の国造、大阿刀足尼によって発見され、後に歴代上皇の熊野御幸によってその名を全国に知らしめた日本最古の湯で、古くから熊野詣の旅人達にとっての湯垢離と休息の場として知られていた。2004年には紀伊山地の霊場と参詣道の構成資産の一部として、温泉としては初の世界遺産にも登録されている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%B9%AF%E3%81%AE%E5%B3%B0%E6%B8%A9%E6%B3%89",
+      "text": "Yunomine Onsen is a hot spring system and resort town in Tanabe, near Hongu Town in southern Wakayama Prefecture, Japan. The Tsuboyu bath is located there, a UNESCO World Heritage site.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Yunomine_Onsen",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -9654,11 +9685,11 @@
     "featured": false,
     "score": 64.09,
     "summary": {
-      "text": "潮岬灯台（しおのみさきとうだい）は、紀伊半島南端の和歌山県東牟婁郡串本町にある太平洋に突き出た潮岬に建つ白亜の灯台である。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%BD%AE%E5%B2%AC%E7%81%AF%E5%8F%B0",
+      "text": "Shionomisaki Lighthouse (潮岬灯台, Shionomisaki tōdai) is a lighthouse located on Cape Shionomisaki, on the southern coast of Kii Peninsula in the Kansai region of Japan. Administratively, it is within the town of Kushimoto, Wakayama Prefecture.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Shionomisaki_Lighthouse",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -10263,11 +10294,11 @@
     "featured": false,
     "score": 56.38,
     "summary": {
-      "text": "生石高原県立自然公園（おいしこうげんけんりつしぜんこうえん）は、1975年1月25日に和歌山県に指定された県立自然公園。その区域には海南市、紀美野町、有田川町が含まれている。面積は12.91ha。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E7%94%9F%E7%9F%B3%E9%AB%98%E5%8E%9F%E7%9C%8C%E7%AB%8B%E8%87%AA%E7%84%B6%E5%85%AC%E5%9C%92",
+      "text": "Oishi Kōgen Prefectural Natural Park (生石高原県立自然公園, Oishi Kōgen kenritsu shizen kōen) is a Prefectural Natural Park in Wakayama Prefecture, Japan. Established in 1955, the park spans the borders of the municipalities of Aridagawa and Kimino. The park's central feature is the eponymous Oishi Plateau (生石高原).",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Oishi_K%C5%8Dgen_Prefectural_Natural_Park",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [],
     "external_ids": {
@@ -10908,11 +10939,11 @@
     "featured": false,
     "score": 41.12,
     "summary": {
-      "text": "磯間岩陰遺跡（いそまいわかげいせき）は、和歌山県田辺市磯間に所在する古墳時代の岩陰内集団墓である。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E7%A3%AF%E9%96%93%E5%B2%A9%E9%99%B0%E9%81%BA%E8%B7%A1",
+      "text": ".",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Isoma_Rock_Shelter_Site",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -11024,7 +11055,7 @@
       "ja": "神島",
       "kana": "かしま",
       "romaji": "Kashima",
-      "zh_tw": "神岛",
+      "zh_tw": "神島",
       "en": "Kashima"
     },
     "kana_source": "wikipedia",
@@ -11069,7 +11100,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11590313",
@@ -11201,11 +11232,11 @@
     "featured": false,
     "score": 69.61,
     "summary": {
-      "text": "竈山神社（かまやまじんじゃ、釜山神社）は、和歌山県和歌山市にある神社。式内社、旧社格は官幣大社で、現在は神社本庁の別表神社。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E7%AB%88%E5%B1%B1%E7%A5%9E%E7%A4%BE",
+      "text": "Kamayama Shrine (竈山神社, Kamayama jinja) is a Shinto shrine in the city of Wakayama, Wakayama Prefecture, Japan.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Kamayama_Shrine",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -11631,11 +11662,11 @@
     "featured": false,
     "score": 58.04,
     "summary": {
-      "text": "紀三井寺公園（きみいでらこうえん）は、和歌山県和歌山市紀三井寺にある和歌山県立の都市公園（運動公園）である。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E7%B4%80%E4%B8%89%E4%BA%95%E5%AF%BA%E5%85%AC%E5%9C%92",
+      "text": "Kimiidera Park (Japanese: 紀三井寺公園, Hepburn: Kimiidera kōen) is a park and athletics facility in Wakayama, Wakayama Prefecture, Japan.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Kimiidera_Park",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -11690,11 +11721,11 @@
     "featured": false,
     "score": 62.64,
     "summary": {
-      "text": "紀伊国分寺（きいこくぶんじ）は、和歌山県紀の川市東国分にある新義真言宗の寺院。山号は八光山、院号は醫王院。本尊は薬師如来。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E7%B4%80%E4%BC%8A%E5%9B%BD%E5%88%86%E5%AF%BA",
+      "text": "The Kii Kokubun-ji (紀伊国分寺) is a Buddhist temple located in the Higashikokubu neighborhood of the city of Kinokawa, Wakayama, Japan. It was one of the provincial temples per the system established by Emperor Shōmu during the Nara period (710 – 794) for the purpose of promoting Buddhism as the national religion of Japan and standardising imperial rule over the provinces. The modern temple belongs to the Shingi Shingon sect and its main image is a statue of Yakushi Nyōrai.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Kii_Kokubun-ji",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -11904,11 +11935,11 @@
     "featured": false,
     "score": 68.82,
     "summary": {
-      "text": "紀州東照宮（きしゅうとうしょうぐう）は、和歌山県和歌山市和歌浦西にある神社。旧社格は県社。江戸幕府初代将軍の徳川家康（東照大権現）と紀州藩初代藩主・徳川頼宣（南龍大神）を祀る。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E7%B4%80%E5%B7%9E%E6%9D%B1%E7%85%A7%E5%AE%AE",
+      "text": "Kishū Tōshō-gū (紀州東照宮) is a Shinto shrine located in the city of Wakayama Wakayama Prefecture, Japan. It enshrines the deified first Shōgun of the Tokugawa shogunate, Tokugawa Ieyasu. It is also known as the Wakayama Tōshō-gū (和歌山東照宮)",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Kish%C5%AB_T%C5%8Dsh%C5%8D-g%C5%AB",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -12219,7 +12250,7 @@
       "ja": "花園の御田舞",
       "kana": "はなぞののおんだまい",
       "romaji": "Hanazononondamai",
-      "zh_tw": "花园御田舞",
+      "zh_tw": "花園御田舞",
       "en": "Hanazono Onta-mai"
     },
     "kana_source": "wikipedia",
@@ -12255,7 +12286,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11620580",
@@ -13339,7 +13370,7 @@
       "ja": "道の駅紀の川万葉の里",
       "kana": "みちのえききのかわまんようのさと",
       "romaji": "Michinoekikinokawamanyonosato",
-      "zh_tw": "道之驛紀之川萬葉之里",
+      "zh_tw": "道之驛紀之川萬葉之裡",
       "en": "Roadside station Kinokawa Manyo-no-sato"
     },
     "kana_source": "wikipedia",
@@ -13391,7 +13422,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11641587",
@@ -14004,7 +14035,7 @@
       "ja": "青洲の里",
       "kana": "せいしゅうのさと",
       "romaji": "Seishu No Sato",
-      "zh_tw": "青洲之里",
+      "zh_tw": "青洲之裡",
       "en": "Seishu-no-sato"
     },
     "kana_source": "wikipedia",
@@ -14063,7 +14094,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11664501",
@@ -14446,11 +14477,11 @@
     "featured": false,
     "score": 52.18,
     "summary": {
-      "text": "高野山町石道玉川峡県立自然公園（こうやさんちょういしみちたまがわきょうけんりつしぜんこうえん）は、和歌山県北部に位置する県立自然公園。1968年（昭和43年）1月6日にかつらぎ高野山系県立自然公園（かつらぎこうやさんけいけんりつしぜんこうえん）として指定。1996年（平成8年）10月2日に一部区域が金剛生駒紀泉国定公園へ編入された。指定区域には橋本市、かつらぎ町、九度山町が含まれている。面積は746ha。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E9%AB%98%E9%87%8E%E5%B1%B1%E7%94%BA%E7%9F%B3%E9%81%93%E7%8E%89%E5%B7%9D%E5%B3%A1%E7%9C%8C%E7%AB%8B%E8%87%AA%E7%84%B6%E5%85%AC%E5%9C%92",
+      "text": "Kōyasanchō Ishimichi-Tamagawakyō Prefectural Natural Park (高野山町石道玉川峡県立自然公園, Kōyasan-chō Ishimichi Tamagawa-kyō kenritsu shizen kōen) is a Prefectural Natural Park in Wakayama Prefecture, Japan. Established in 1968, the park spans the borders of the municipalities of Hashimoto, Katsuragi, Kōya, and Kudoyama. The park comprises three non-contiguous areas, centred in turn upon Horaisan Jinja (宝来山神社) and the eponymous Kōyasan chōishi-michi and Tamagawa-kyō (玉川峡).",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/K%C5%8Dyasanch%C5%8D_Ishimichi-Tamagawaky%C5%8D_Prefectural_Natural_Park",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -14497,11 +14528,11 @@
     "featured": false,
     "score": 62.98,
     "summary": {
-      "text": "高野山霊宝館（こうやさんれいほうかん）は、和歌山県伊都郡高野町高野山にある博物館相当施設。仏教の高野山真言宗に関連する文化財約10万点を所蔵し、公益財団法人高野山文化財保存会が運営している。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E9%AB%98%E9%87%8E%E5%B1%B1%E9%9C%8A%E5%AE%9D%E9%A4%A8",
+      "text": "Kōyasan Reihōkan (高野山　霊宝館; lit. \"Kōyasan Museum of Sacred Treasures\") is an art museum on Kōya-san, Wakayama Prefecture, Japan, preserving and displaying Buddhist art owned by temples on Kōya-san. The collection is centered around articles from the Heian and Kamakura periods and includes paintings, calligraphy, sutras, sculpture and Buddhist ritual objects. Among these are a set of the complete Buddhist canon (issaikyō), writings of Kūkai and  Minamoto no Yoritomo, founder of the Kamakura Shogunate, mandalas and portraits of priests.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Koyasan_Reih%C5%8Dkan",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -14793,11 +14824,11 @@
     "featured": false,
     "score": 68.38,
     "summary": {
-      "text": "龍神温泉（りゅうじんおんせん）は、和歌山県田辺市龍神村（旧紀伊国日高郡）にある温泉。美肌効果の高い泉質で日本三美人の湯のひとつに数えられる。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E9%BE%8D%E7%A5%9E%E6%B8%A9%E6%B3%89",
+      "text": "Ryūjin Onsen (龍神温泉) is an onsen (hot spring) located in Ryūjin village, now a part of Tanabe, Wakayama City in Wakayama Prefecture, Japan. Ryūjin Onsen was discovered in the 7th century by En no Gyōja, the founder of Shugendō. Kōbō Daishi, founder of Shingon Buddhism visited the spot in the 9th century. During the Edo period (1603-1868), the onsen was used as a resort area by the Tokugawa ruling family, whose castle was in Wakayama city.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Ryujin_Onsen",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -17377,11 +17408,11 @@
     "featured": false,
     "score": 57.1,
     "summary": {
-      "text": "ソビエトは、「和歌山県西牟婁郡すさみ町」にある無人島である。地元ではソビエットとも呼ばれる。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E3%82%BD%E3%83%93%E3%82%A8%E3%83%88_%28%E5%92%8C%E6%AD%8C%E5%B1%B1%E7%9C%8C%29",
+      "text": "Sobieto (Japanese: ソビエト) is an uninhabited islet in Wakayama Prefecture, Japan. It is famous for its unusual name resembling the Soviet Union (\"sobieto\" means \"Soviet\" in Japanese) and the unknown origin of the name.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Sobieto",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -17473,7 +17504,7 @@
       "ja": "河西橋",
       "kana": "かせいばし",
       "romaji": "Kaseibashi",
-      "zh_tw": "河西桥"
+      "zh_tw": "河西橋"
     },
     "kana_source": "wikipedia",
     "location": {
@@ -17528,7 +17559,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q18456141",
@@ -18365,11 +18396,11 @@
     "featured": false,
     "score": 77.75,
     "summary": {
-      "text": "アドベンチャーワールド（英語: ADVENTURE WORLD）は、和歌山県西牟婁郡白浜町で動物園、水族館、遊園地を併設するテーマパークである。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E3%82%A2%E3%83%89%E3%83%99%E3%83%B3%E3%83%81%E3%83%A3%E3%83%BC%E3%83%AF%E3%83%BC%E3%83%AB%E3%83%89",
+      "text": "Adventure World (アドベンチャーワールド; Adobenchā Wārudo) is an amusement park with a zoo and public aquarium located in the town of Shirahama, Wakayama Prefecture, Japan. It is operated by Hours Co., Ltd. (AWS), an affiliate of Marusue Co., Ltd. headquartered in Matsubara, Osaka Prefecture. The park opened on April 22, 1978, as Nanki Shirahama World Safari.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Adventure_World_%28Japan%29",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -18582,11 +18613,11 @@
     "featured": false,
     "score": 76.71,
     "summary": {
-      "text": "長保寺（ちょうほうじ）は、和歌山県海南市にある天台宗の寺院。山号は慶徳山。本尊は釈迦如来。開山は性空（しょうくう）である。3棟の国宝建築と紀州藩主紀州徳川家歴代の墓所（国の史跡）がある寺として知られている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E9%95%B7%E4%BF%9D%E5%AF%BA",
+      "text": "Chōhō-ji (Japanese: 長保寺) is a Buddhist temple in the city of Kainan, Wakayama Prefecture, Japan.  It belongs to the Tendai school of Japanese Buddhism. Its main image is a statue of Shaka Nyorai. Its main hall, pagoda and daimon are National Treasures of Japan, and its daimyō cemetery is a National Historic Site.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Ch%C5%8Dh%C5%8D-ji_%28Kainan%29",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -19096,11 +19127,11 @@
     "featured": true,
     "score": 95.78,
     "summary": {
-      "text": "慈尊院（じそんいん）は、和歌山県伊都郡九度山町慈尊院にある高野山真言宗の寺院。山号は万年山。本尊は弥勒仏（慈尊と呼ばれる）。高野山の政所（高野政所）として創建され、高野山町石道の登り口にある。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%85%88%E5%B0%8A%E9%99%A2",
+      "text": "Jison-in (慈尊院) is a Buddhist temple in the town of Kudoyama that marks the entrance to the pilgrimage route of Koyasan.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Jison-in",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -19221,11 +19252,11 @@
     "featured": true,
     "score": 102.2,
     "summary": {
-      "text": "金剛三昧院（こんごうさんまいいん）は、和歌山県伊都郡高野町高野山にある高野山真言宗の別格本山の寺院、宿坊。本尊は愛染明王。仏塔古寺十八尊第11番霊場。西国愛染十七霊場第17番霊場。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E9%87%91%E5%89%9B%E4%B8%89%E6%98%A7%E9%99%A2",
+      "text": "Kongō Sanmai-in (金剛三昧院, Kongō Sanmai-in) is a minor temple complex on Mount Kōya in Japan, founded in 1211 by order of Hōjō Masako for posthumous soul of Minamoto no Yoritomo and renamed \"Kongō Sanmai-in\" in 1219 for that of Minamoto no Sanetomo.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Kong%C5%8D_Sanmai-in",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -19618,6 +19649,13 @@
     ],
     "featured": false,
     "score": 88.86,
+    "summary": {
+      "text": "Okunoin or Oku-no-in (Japanese: 奥之院, lit. 'inner sanctuary') is a sacred Buddhist site and cemetery on Mount Kōya, in Wakayama Prefecture, Japan. Opened in 835, it houses the mausoleum of Kūkai, founder of the Shingon school of esoteric Buddhism. It is considered the largest cemetery in Japan, with more than two hundred thousand graves and memorial monuments.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Okunoin",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
     "images": [
       {
         "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ad/Gobyoubasi.jpg/960px-Gobyoubasi.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -19735,11 +19773,11 @@
     "featured": false,
     "score": 61.44,
     "summary": {
-      "text": "和歌山県立博物館（わかやまけんりつはくぶつかん、Wakayama Prefectural Museum）は和歌山県和歌山市にある博物館。設立は1971年（昭和46年）、現在の施設は1994年（平成6年）に開館した。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%92%8C%E6%AD%8C%E5%B1%B1%E7%9C%8C%E7%AB%8B%E5%8D%9A%E7%89%A9%E9%A4%A8",
+      "text": "Wakayama Prefectural Museum (和歌山県立博物館, Wakayama Kenritsu Hakubutsukan) is a history museum in located in the city of Wakayama, Wakayama Prefecture, Japan.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Wakayama_Prefectural_Museum",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -19803,6 +19841,13 @@
     ],
     "featured": false,
     "score": 35.87,
+    "summary": {
+      "text": "Muryōkōin (無量光院) is a temple of Koyasan Shingon Buddhism, located on Mount Kōya (高野山, Kōya-san), Wakayama prefecture, Japan. Its name means \"Temple of limitless light\" and is the Japanese transliteration of Amitābha.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Mury%C5%8Dk%C5%8Din",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
     "images": [
       {
         "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/15/Muryokoin_%E7%84%A1%E9%87%8F%E5%85%89%E9%99%A2.png/960px-Muryokoin_%E7%84%A1%E9%87%8F%E5%85%89%E9%99%A2.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -20510,7 +20555,7 @@
       "ja": "門前の大岩",
       "kana": "もんぜんのおおいわ",
       "romaji": "Monzen No Oiwa",
-      "zh_tw": "門前之大岩",
+      "zh_tw": "門前之大巖",
       "en": "Monzen no Oiwa"
     },
     "kana_source": "wikipedia",
@@ -20555,7 +20600,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q6374339",
@@ -20580,11 +20625,11 @@
     "featured": false,
     "score": 68.91,
     "summary": {
-      "text": "樫野埼灯台（かしのさきとうだい）は、和歌山県東牟婁郡串本町沖の紀伊大島の東端断崖の樫野埼に建つ灯台である。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%A8%AB%E9%87%8E%E5%9F%BC%E7%81%AF%E5%8F%B0",
+      "text": "Kashinosaki Lighthouse (樫野埼灯台, Kashinosaki tōdai) is a lighthouse located on the island of Kii Ōshima, off the southwestern coast of Kii Peninsula in the Kansai region of Japan. Administratively, the island is part of the town of Kushimoto, Wakayama Prefecture.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Kashinosaki_Lighthouse",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -20679,11 +20724,11 @@
     "featured": false,
     "score": 58.25,
     "summary": {
-      "text": "九龍島（くろしま）と鯛島（たいじま）は、和歌山県東牟婁郡串本町にある古座川の河口から約1kmの沖合いに浮かぶ島。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E4%B9%9D%E9%BE%8D%E5%B3%B6%E3%81%A8%E9%AF%9B%E5%B3%B6",
+      "text": "Kuroshima and Taijima (九龍島と鯛島, Kuroshima to Taijima) are a set of islands about one kilometer off the coast of Honshū in Japan by the mouth of the Koza River, a five-minute ride by ferry from Koza Port. The islands are part of Kushimoto, Wakayama Prefecture. The islands were used as a naval base of operations during the Genpei War.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Kuroshima_and_Taijima",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [],
     "external_ids": {
@@ -21257,11 +21302,11 @@
     "featured": false,
     "score": 63.19,
     "summary": {
-      "text": "熊野速玉神社のナギ（くまのはやたまじんじゃのナギ）は、和歌山県新宮市新宮の熊野速玉大社境内にある、国の天然記念物に指定されたナギ（梛）の巨樹である、熊野速玉大社のご神木である。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E7%86%8A%E9%87%8E%E9%80%9F%E7%8E%89%E7%A5%9E%E7%A4%BE%E3%81%AE%E3%83%8A%E3%82%AE",
+      "text": "The Sacred Nagi Tree of Kumano Hayatama Taisha is one of the Natural Monuments of Japan and is situated in Kumano Hayatama Taisha in Shingu city, Wakayama, Japan. Kumano Hayatama Taisha is one of three Kumano Sanzan shrine/temple sites, and is part of the UNESCO World Heritage Site \"Sacred Sites and Pilgrimage Routes in the Kii Mountain Range\". The nagi tree, Nageia nagi, is also called the broadleaf podocarpus.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Sacred_Nagi_Tree_of_Kumano_Hayatama_Taisha",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -21321,11 +21366,11 @@
     "featured": false,
     "score": 68.44,
     "summary": {
-      "text": "雑賀崎（さいかざき）は、和歌山県和歌山市にある岬。和歌山市南西部に位置する海岸和歌浦の一部で奥和歌浦（おくわかうら）とも呼ばれる。1933年（昭和8年）からは和歌山市の大字名となる。瀬戸内海国立公園の指定特別地域。雑賀崎漁港周囲の丘陵部に家々が建ち並ぶ風景から「日本のアマルフィ」とも称される。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E9%9B%91%E8%B3%80%E5%B4%8E",
+      "text": "Saikazaki (雑賀崎, Saika-Zaki) is a cape in the southern part of Wakayama, Wakayama Prefecture, and is a specially designated region by Setonaikai National Park.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Saikazaki",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -21431,11 +21476,11 @@
     "featured": false,
     "score": 61.31,
     "summary": {
-      "text": "京都大学フィールド科学教育研究センター瀬戸臨海実験所水族館（きょうとだいがくフィールドかがくきょういくけんきゅうセンターせとりんかいじっけんじょすいぞくかん）は和歌山県西牟婁郡白浜町にある水族館。京都大学フィールド科学教育研究センター瀬戸臨海実験所の附属施設。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E4%BA%AC%E9%83%BD%E5%A4%A7%E5%AD%A6%E3%83%95%E3%82%A3%E3%83%BC%E3%83%AB%E3%83%89%E7%A7%91%E5%AD%A6%E6%95%99%E8%82%B2%E7%A0%94%E7%A9%B6%E3%82%BB%E3%83%B3%E3%82%BF%E3%83%BC%E7%80%AC%E6%88%B8%E8%87%A8%E6%B5%B7%E5%AE%9F%E9%A8%93%E6%89%80%E6%B0%B4%E6%97%8F%E9%A4%A8",
+      "text": "The Seto Marine Biological Laboratory  (瀬戸臨海実験所, also known as SMBL), is a marine biology field station of Kyoto University. It is located in the small town of Shirahama in Wakayama Prefecture about 230 km from Kyoto.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Seto_Marine_Biological_Laboratory",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -21485,11 +21530,11 @@
     "featured": false,
     "score": 39.55,
     "summary": {
-      "text": "三栖廃寺跡（みすはいじあと）は、和歌山県田辺市下三栖にある古代寺院跡。塔跡は国の史跡に指定されている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E4%B8%89%E6%A0%96%E5%BB%83%E5%AF%BA%E8%B7%A1",
+      "text": "The Misuji temple ruins (三栖廃寺塔跡, Misu Haiji ato), is an archaeological site with the ruins of a late Hakuhō period Buddhist temple located in the Shimomisu neighborhood of the city of Tanabe, Wakayama, Japan. The temple no longer exists, but the temple grounds were designated as a National Historic Site in 1935, with the area under protection expanded in 1985.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Misuji_temple_ruins",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -21659,11 +21704,11 @@
     "featured": false,
     "score": 55.93,
     "summary": {
-      "text": "和歌山県植物公園緑花センター（わかやまけんしょくぶつこうえんりょっかセンター）とは、和歌山県岩出市にある公園である。通称は緑花センター。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%92%8C%E6%AD%8C%E5%B1%B1%E7%9C%8C%E6%A4%8D%E7%89%A9%E5%85%AC%E5%9C%92%E7%B7%91%E8%8A%B1%E3%82%BB%E3%83%B3%E3%82%BF%E3%83%BC",
+      "text": "The Wakayama Prefecture Botanical Park (和歌山県植物公園緑花センター, Wakayama-ken Shokubutsu Kōen Ryokka Sentā) is a park with botanical garden located at Higashi Sakamoto 672, Iwade, Wakayama, Japan. It is open daily except Tuesdays; an admission fee is charged.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Wakayama_Prefecture_Botanical_Park",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {

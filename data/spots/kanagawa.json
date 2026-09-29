@@ -158,6 +158,76 @@
     "updated_at": "2026-09-28"
   },
   {
+    "id": "wd-Q10364044",
+    "name": {
+      "ja": "横浜指路教会",
+      "kana": "よこはましろきょうかい",
+      "romaji": "Yokohamashirokyokai",
+      "zh_tw": "橫濱指路教會"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 35.447306,
+      "lng": 139.633444
+    },
+    "prefecture": "kanagawa",
+    "kind": "major",
+    "themes": [],
+    "tags": [],
+    "featured": false,
+    "score": 62.34,
+    "summary": {
+      "text": "橫濱指路教會是日本基督教團的一座教堂，位於日本橫濱市中區尾上町，靠近根岸線的關內站。",
+      "lang": "zh",
+      "source_url": "https://zh.wikipedia.org/wiki/%E6%A8%AA%E6%BB%A8%E6%8C%87%E8%B7%AF%E6%95%99%E4%BC%9A",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "桜木町",
+          "kana": "さくらぎちょう",
+          "romaji": "Sakuragichō",
+          "en": "Sakuragicho"
+        },
+        "distance_m": 350
+      },
+      {
+        "name": {
+          "ja": "関内",
+          "kana": "かんない",
+          "romaji": "Kannai",
+          "en": "Kannai"
+        },
+        "distance_m": 370
+      }
+    ],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f2/United_Church_of_Christ_in_Japan_Yokohama_Shiloh_Charch.JPG/960px-United_Church_of_Christ_in_Japan_Yokohama_Shiloh_Charch.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Tokumeigakarinoaoshima",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:United_Church_of_Christ_in_Japan_Yokohama_Shiloh_Charch.JPG"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q10364044"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q10364044",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E6%A8%AA%E6%B5%9C%E6%8C%87%E8%B7%AF%E6%95%99%E4%BC%9A",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
+  },
+  {
     "id": "wd-Q10395095",
     "name": {
       "ja": "湘南平",
@@ -424,12 +494,83 @@
     "updated_at": "2026-09-28"
   },
   {
+    "id": "wd-Q104903807",
+    "name": {
+      "ja": "横浜地方気象台",
+      "kana": "よこはまちほうきしょうだい",
+      "romaji": "Yokohamachihokishodai",
+      "zh_tw": "橫濱地方氣象臺",
+      "en": "Yokohama Local Meteorological Observatory"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 35.434167,
+      "lng": 139.650278
+    },
+    "prefecture": "kanagawa",
+    "kind": "major",
+    "themes": [],
+    "tags": [],
+    "featured": false,
+    "score": 62.59,
+    "summary": {
+      "text": "橫濱地方氣象臺是位於日本神奈川縣橫濱市中區山手町的一座地方氣象臺。氣象臺的建築修建於1927年，是新藝術風格，亦是現存日本的氣象臺建築中歷史第三古老的建築。",
+      "lang": "zh",
+      "source_url": "https://zh.wikipedia.org/wiki/%E6%A9%AB%E6%BF%B1%E5%9C%B0%E6%96%B9%E6%B0%A3%E8%B1%A1%E5%8F%B0",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "山手",
+          "kana": "やまて",
+          "romaji": "Yamate",
+          "en": "Yamate"
+        },
+        "distance_m": 840
+      },
+      {
+        "name": {
+          "ja": "石川町",
+          "kana": "いしかわちょう",
+          "romaji": "Ishikawachō",
+          "en": "Ishikawacho"
+        },
+        "distance_m": 880
+      }
+    ],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8a/Yokohama_Local_Meteorological_Observatory.JPG/960px-Yokohama_Local_Meteorological_Observatory.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Abasaa",
+        "license": "Public domain",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Yokohama_Local_Meteorological_Observatory.JPG"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q104903807"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q104903807",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E6%A8%AA%E6%B5%9C%E5%9C%B0%E6%96%B9%E6%B0%97%E8%B1%A1%E5%8F%B0",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
+  },
+  {
     "id": "wd-Q104905343",
     "name": {
       "ja": "YOKOHAMA AIR CABIN",
       "kana": "よこはまえあきゃびん",
       "romaji": "Yokohamaeakyabin",
-      "zh_tw": "横滨空中缆车",
+      "zh_tw": "橫濱空中纜車",
       "en": "Yokohama Air Cabin"
     },
     "kana_source": "wikidata",
@@ -488,7 +629,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q105438533",
@@ -633,11 +774,11 @@
     "featured": false,
     "score": 71.45,
     "summary": {
-      "text": "横濱カレーミュージアム（よこはまカレーミュージアム）は、神奈川県横浜市中区伊勢佐木町1丁目2番地3にあったフードテーマパーク。2001年1月26日にオープンし、2007年3月31日に閉館した。略称はYCMまたはカレミュー。所有・運営は株式会社マタハリー。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%A8%AA%E6%BF%B1%E3%82%AB%E3%83%AC%E3%83%BC%E3%83%9F%E3%83%A5%E3%83%BC%E3%82%B8%E3%82%A2%E3%83%A0",
+      "text": "The Yokohama Curry Museum (横濱カレーミュージアム, Yokohama Karē Myūjiamu) was a restaurant and historic museum of curry in the Isezakichō district of the port city of Yokohama, Japan, between 2001 and 2007. Different types of curry were available from a selection or restaurants, ranging from a full meal to a quick taste option.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Yokohama_Curry_Museum",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -682,6 +823,72 @@
     ],
     "status": "published",
     "updated_at": "2026-09-28"
+  },
+  {
+    "id": "wd-Q106583104",
+    "name": {
+      "ja": "鎌倉城",
+      "kana": "かまくらじょう",
+      "romaji": "Kamakurajo",
+      "zh_tw": "鎌倉城",
+      "en": "Kamakura Castle"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 35.319194,
+      "lng": 139.546944
+    },
+    "prefecture": "kanagawa",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "城"
+    ],
+    "featured": false,
+    "score": 62.49,
+    "summary": {
+      "text": "鎌倉城（かまくらじょう）は、現在の神奈川県鎌倉市域にあたる中世鎌倉の地を示す呼称。中世当時の史料に見える言葉だが、その解釈には諸説があり、鎌倉全域を軍事要塞=城郭都市と見なしたとする説のほか、そうではなく源頼朝=源氏の「本拠地」を意味する言葉とする説などがある。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E9%8E%8C%E5%80%89%E5%9F%8E",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "鎌倉",
+          "kana": "かまくら",
+          "romaji": "Kamakura",
+          "en": "Kamakura"
+        },
+        "distance_m": 300
+      },
+      {
+        "name": {
+          "ja": "和田塚",
+          "kana": "わだづか",
+          "romaji": "Wadazuka",
+          "en": "Wadazuka"
+        },
+        "distance_m": 620
+      }
+    ],
+    "images": [],
+    "external_ids": {
+      "wikidata": "Q106583104"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q106583104",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E9%8E%8C%E5%80%89%E5%9F%8E",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q106705825",
@@ -789,6 +996,79 @@
     "updated_at": "2026-09-28"
   },
   {
+    "id": "wd-Q107263998",
+    "name": {
+      "ja": "江の島大橋",
+      "kana": "えのしまおおはし",
+      "romaji": "Enoshimaohashi",
+      "zh_tw": "江の島大橋",
+      "en": "Enoshima Bridge"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 35.303611,
+      "lng": 139.481944
+    },
+    "prefecture": "kanagawa",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "橋"
+    ],
+    "featured": false,
+    "score": 62.42,
+    "summary": {
+      "text": "江の島大橋（えのしまおおはし）は神奈川県藤沢市の江の島と本土とを結ぶ湘南港臨港道路の橋梁である。西側には並行して神奈川県道305号江の島線の人道橋である江の島弁天橋（えのしまべんてんばし）が架かっている。このため、江の島大橋は自動車・自転車専用となっており、自転車を除く軽車両及び歩行者の通行は禁止されている。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E6%B1%9F%E3%81%AE%E5%B3%B6%E5%A4%A7%E6%A9%8B",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "片瀬江ノ島",
+          "kana": "かたせえのしま",
+          "romaji": "Katase-Enoshima",
+          "en": "Katase-Enoshima"
+        },
+        "distance_m": 600
+      },
+      {
+        "name": {
+          "ja": "江ノ島",
+          "kana": "えのしま",
+          "romaji": "Enoshima",
+          "en": "Enoshima"
+        },
+        "distance_m": 970
+      }
+    ],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/36/Enoshima%2C_Japan_%2815662062438%29.jpg/960px-Enoshima%2C_Japan_%2815662062438%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "wellflat .",
+        "license": "CC BY 2.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Enoshima,_Japan_(15662062438).jpg"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q107263998"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q107263998",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E6%B1%9F%E3%81%AE%E5%B3%B6%E5%A4%A7%E6%A9%8B",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
+  },
+  {
     "id": "wd-Q10749928",
     "name": {
       "ja": "江の島サムエル・コッキング苑",
@@ -812,11 +1092,11 @@
     "featured": false,
     "score": 68.44,
     "summary": {
-      "text": "江の島サムエル・コッキング苑（えのしまサムエル・コッキングえん）は、神奈川県藤沢市江の島二丁目にある、藤沢市立の有料観光施設。苑内に江ノ島電鉄の経営する江の島展望灯台などを含む。また日本で初めてのフレンチトースト専門店『LON CAFE』がある。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%B1%9F%E3%81%AE%E5%B3%B6%E3%82%B5%E3%83%A0%E3%82%A8%E3%83%AB%E3%83%BB%E3%82%B3%E3%83%83%E3%82%AD%E3%83%B3%E3%82%B0%E8%8B%91",
+      "text": "The Samuel Cocking Garden (江の島サムエル・コッキング苑, Enoshima Samueru Kokkingu En), also known as the Enoshima Tropical Plants Garden, is a small botanical garden on the small island of Enoshima in Japan. The address is 2-3-28 Enoshima, Fujisawa, Kanagawa.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Samuel_Cocking_Garden",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -1057,11 +1337,11 @@
     "featured": false,
     "score": 66.48,
     "summary": {
-      "text": "日本丸メモリアルパーク（にっぽんまるメモリアルパーク）は、神奈川県横浜市西区のみなとみらい地区（23街区の一部）にある同地区で最初に整備された公園（港湾緑地）。展示施設として帆船日本丸および展示ドック、海事博物館の横浜みなと博物館がある。日本丸と展示ドックは国の重要文化財に指定されている（後述参照）。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%97%A5%E6%9C%AC%E4%B8%B8%E3%83%A1%E3%83%A2%E3%83%AA%E3%82%A2%E3%83%AB%E3%83%91%E3%83%BC%E3%82%AF",
+      "text": "Nippon Maru Memorial Park (日本丸メモリアルパーク, Nippon Maru Memoriaru Pāku) is a park in Yokohama, Kanagawa Prefecture, Japan.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Nippon_Maru_Memorial_Park",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -1128,11 +1408,11 @@
     "featured": false,
     "score": 64.75,
     "summary": {
-      "text": "大室山（おおむろやま、地形図では「おおむろざん」）は、丹沢山地北部の山梨県と神奈川県の境にある標高1,587 mの山。かつては「大群山（おおむれやま）」と呼ばれていた。堂々とした山容から「富士隠し」の異名を持ち、「大室権現」を祀る信仰の山である。山梨百名山に数えられており、神奈川県側は丹沢大山国定公園に指定されている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E5%AE%A4%E5%B1%B1_%28%E4%B8%B9%E6%B2%A2%29",
+      "text": "Mount Ōmuro (大室山, Ōmuroyama) is a mountain at an altitude of 1,588 m on the border between Yamanashi and Kanagawa Prefectures in the northern part of the Tanzawa Mountains. It used to be called \"Omureyama\". It is counted as one of the 100 famous mountains in Yamanashi, and the Kanagawa side is designated as Tanzawa-Ōyama National Monument.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Mount_%C5%8Cmuro_%28Tanzawa%29",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -1179,11 +1459,11 @@
     "featured": false,
     "score": 66.68,
     "summary": {
-      "text": "弘法山（こうぼうやま）は、神奈川県秦野市東部にある標高235 mの山である。丹沢山塊の南端に位置し、隣接する権現山（ごんげんやま、243m）、浅間山（せんげんやま、196m）とあわせて一帯を弘法山公園として整備しており、これらの山々を指して弘法山とも呼ぶ。県立丹沢大山自然公園の一部。年間観光客数は77.1万人（2021年）。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%BC%98%E6%B3%95%E5%B1%B1",
+      "text": "Mount Kōbō (弘法山, Kōbō-yama) lies east of Hadano in Kanagawa Prefecture, Japan.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Mount_K%C5%8Db%C5%8D",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -1210,6 +1490,57 @@
     "updated_at": "2026-09-28"
   },
   {
+    "id": "wd-Q10871917",
+    "name": {
+      "ja": "明神ヶ岳",
+      "kana": "みょうじんがたけ",
+      "romaji": "Myojingatake",
+      "zh_tw": "明神嶽",
+      "en": "Mount Myōjin"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 35.279167,
+      "lng": 139.052222
+    },
+    "prefecture": "kanagawa",
+    "kind": "major",
+    "themes": [],
+    "tags": [],
+    "featured": false,
+    "score": 62.15,
+    "summary": {
+      "text": "Mount Myōjin or Myōjin-ga-take (Japanese: 明神ヶ岳) is a mountain with an altitude of 1,169 meters on the border of Minamiashigara and Hakone, Kanagawa.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Mount_My%C5%8Djin_%28Kanagawa%29",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d1/Hakone_Myojingatake_05.jpg/960px-Hakone_Myojingatake_05.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Σ64",
+        "license": "CC BY 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Hakone_Myojingatake_05.jpg"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q10871917"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q10871917",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E6%98%8E%E7%A5%9E%E3%83%B6%E5%B2%B3_%28%E7%A5%9E%E5%A5%88%E5%B7%9D%E7%9C%8C%29",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
+  },
+  {
     "id": "wd-Q10871928",
     "name": {
       "ja": "神山",
@@ -1230,11 +1561,11 @@
     "featured": false,
     "score": 70.59,
     "summary": {
-      "text": "神山（かみやま）は神奈川県足柄下郡箱根町にある標高1,438mの山。箱根山（箱根火山）の中央火口丘の一つでその最高峰である。古くから神の山として崇められてきたことからこの名がついた。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E7%A5%9E%E5%B1%B1",
+      "text": "Mount Kami (Kami-yama (神山; lit. 'god mountain')) is the highest peak of Mount Hakone, at  1,438 metres (4,718 ft), in Hakone, Kanagawa, Japan. Worshipping Mount Hakone with its highest peak is recorded in a 12th-century document, as having started at the time of the legendary Emperor Kōshō (475 BC to 393 BC).",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Mount_Kami_%28Hakone%29",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -1279,11 +1610,11 @@
     "featured": false,
     "score": 63.75,
     "summary": {
-      "text": "石垣山（いしがきやま）は、神奈川県小田原市にある山。標高261.9メートル。豊臣秀吉が石垣山一夜城を築城したことで知られる。1959年に「石垣山」の名称で国の史跡に指定された。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E7%9F%B3%E5%9E%A3%E5%B1%B1",
+      "text": "Mount Ishigaki (Japanese: 石垣山) is a mountain located in Odawara, Kanagawa Prefecture. The altitude is 241 meters. It was designated as a national historic site in 1959.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Mount_Ishigaki",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -1576,6 +1907,61 @@
     "updated_at": "2026-09-28"
   },
   {
+    "id": "wd-Q109597657",
+    "name": {
+      "ja": "OSC湘南シティ",
+      "kana": "おーえすしーしょうなんしてぃ",
+      "romaji": "Oesushishonanshiti",
+      "zh_tw": "OSC湘南シティ",
+      "en": "OSC Shonan-City"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 35.328472,
+      "lng": 139.358361
+    },
+    "prefecture": "kanagawa",
+    "kind": "major",
+    "themes": [],
+    "tags": [],
+    "featured": false,
+    "score": 62.81,
+    "summary": {
+      "text": "OSC湘南シティ（オーエスシーしょうなんシティ）とは、神奈川県平塚市にある、Olympicグループ運営の複合商業施設・ショッピングセンター。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/OSC%E6%B9%98%E5%8D%97%E3%82%B7%E3%83%86%E3%82%A3",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "平塚",
+          "kana": "ひらつか",
+          "romaji": "Hiratsuka",
+          "en": "Hiratsuka"
+        },
+        "distance_m": 840
+      }
+    ],
+    "images": [],
+    "external_ids": {
+      "wikidata": "Q109597657"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q109597657",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/OSC%E6%B9%98%E5%8D%97%E3%82%B7%E3%83%86%E3%82%A3",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
+  },
+  {
     "id": "wd-Q11006813",
     "name": {
       "ja": "常立寺",
@@ -1796,7 +2182,7 @@
       "ja": "横浜市開港記念会館",
       "kana": "よこはましかいこうきねんかいかん",
       "romaji": "Yokohamashikaikokinenkaikan",
-      "zh_tw": "横滨市开港纪念会馆",
+      "zh_tw": "橫濱市開港紀念會館",
       "en": "Yokohama Port Opening Memorial Hall"
     },
     "kana_source": "wikipedia",
@@ -1861,7 +2247,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11122287",
@@ -2137,11 +2523,11 @@
     "featured": false,
     "score": 63.91,
     "summary": {
-      "text": "新横浜公園（しんよこはまこうえん）は、神奈川県横浜市港北区小机町にある都市公園（運動公園）。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%96%B0%E6%A8%AA%E6%B5%9C%E5%85%AC%E5%9C%92",
+      "text": "Shin-Yokohama Park (新横浜公園, Shin-Yokohama Kōen) is a public park in Kōhoku Ward, Yokohama, Japan. It contains Nissan Stadium, a number of sporting fields and a birdwatching area. Nissan stadium is the largest stadium in Yokohama city and has a capacity of 72,000 spectators.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Shin-Yokohama_Park",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -2332,11 +2718,11 @@
     "name": {
       "ja": "江島神社",
       "kana": "えのしまじんじゃ",
-      "romaji": "Enoshimajinja",
+      "romaji": "Enoshima-jinja",
       "zh_tw": "江島神社",
       "en": "Enoshima Shrine"
     },
-    "kana_source": "wikipedia",
+    "kana_source": "wikidata",
     "location": {
       "lat": 35.300361,
       "lng": 139.479611
@@ -2403,7 +2789,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11262867",
@@ -3183,6 +3569,84 @@
     "updated_at": "2026-09-28"
   },
   {
+    "id": "wd-Q11300416",
+    "name": {
+      "ja": "グランモール公園",
+      "kana": "ぐらんもーるこうえん",
+      "romaji": "Guranmorukoen",
+      "zh_tw": "グランモール公園",
+      "en": "Grand Mall Park"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 35.457167,
+      "lng": 139.631167
+    },
+    "prefecture": "kanagawa",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "公園"
+    ],
+    "featured": false,
+    "score": 62.6,
+    "summary": {
+      "text": "グランモール公園（グランモールこうえん）は、神奈川県横浜市西区にある都市公園（近隣公園）。横浜みなとみらい21の中央地区を約700メートルにわたって南北に貫いている。なお、同地区の開発計画において35街区などに当たる。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E3%82%B0%E3%83%A9%E3%83%B3%E3%83%A2%E3%83%BC%E3%83%AB%E5%85%AC%E5%9C%92",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "みなとみらい",
+          "kana": "みなとみらい",
+          "romaji": "Minatomirai",
+          "en": "Minatomirai"
+        },
+        "distance_m": 150
+      },
+      {
+        "name": {
+          "ja": "新高島",
+          "kana": "しんたかしま",
+          "romaji": "Shin Takashima",
+          "en": "Shin-Takashima"
+        },
+        "distance_m": 670
+      }
+    ],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/54/Granmole_Park_-01R_%282017%29.jpg/960px-Granmole_Park_-01R_%282017%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Thirteen-fri",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Granmole_Park_-01R_(2017).jpg"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q11300416",
+      "osm": "relation/6165981"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q11300416",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.openstreetmap.org/relation/6165981",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E3%82%B0%E3%83%A9%E3%83%B3%E3%83%A2%E3%83%BC%E3%83%AB%E5%85%AC%E5%9C%92",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
+  },
+  {
     "id": "wd-Q11302232",
     "name": {
       "ja": "コットンハーバー地区",
@@ -3376,7 +3840,7 @@
       "ja": "チャッキラコ",
       "kana": "ちゃっきらこ",
       "romaji": "Chakkirako",
-      "zh_tw": "女孩舞蹈节",
+      "zh_tw": "女孩舞蹈節",
       "en": "Chakkirako"
     },
     "kana_source": "wikidata",
@@ -3391,11 +3855,11 @@
     "featured": false,
     "score": 67.21,
     "summary": {
-      "text": "チャッキラコは、神奈川県三浦市三崎の仲崎・花暮地域に伝わる小正月の伝統行事。浜の乙女が踊りを神前に奉納し、大漁や商売繁盛を願う祭礼である。左義長の舞、初瀬踊とも。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E3%83%81%E3%83%A3%E3%83%83%E3%82%AD%E3%83%A9%E3%82%B3",
+      "text": "Chakkirako (Japanese: チャッキラコ) is a dance performed at a festival in Miura, Japan, to celebrate the New Year and bring good fortune, especially in fishing.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Chakkirako",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [],
     "external_ids": {
@@ -3408,7 +3872,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11319393",
@@ -4091,7 +4555,7 @@
       "ja": "ヤビツ峠",
       "kana": "やびつとうげ",
       "romaji": "Yabitsutoge",
-      "zh_tw": "矢柜山口",
+      "zh_tw": "矢櫃山口",
       "en": "Yabitsu Pass"
     },
     "kana_source": "wikidata",
@@ -4130,7 +4594,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11346263",
@@ -4456,6 +4920,52 @@
     "updated_at": "2026-09-28"
   },
   {
+    "id": "wd-Q11355306",
+    "name": {
+      "ja": "三崎城",
+      "kana": "みさきじょう",
+      "romaji": "Misakijo",
+      "zh_tw": "三崎城",
+      "en": "Misaki Castle"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 35.144,
+      "lng": 139.621361
+    },
+    "prefecture": "kanagawa",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "城"
+    ],
+    "featured": false,
+    "score": 62.66,
+    "summary": {
+      "text": "三崎城（みさきじょう）は、神奈川県三浦市城山町にあった日本の城。別名三浦城。相模三浦氏の本拠地で後に後北条氏が領する。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E4%B8%89%E5%B4%8E%E5%9F%8E",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "images": [],
+    "external_ids": {
+      "wikidata": "Q11355306"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q11355306",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E4%B8%89%E5%B4%8E%E5%9F%8E",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
+  },
+  {
     "id": "wd-Q11357150",
     "name": {
       "ja": "三菱重工横浜ビル",
@@ -4655,11 +5165,11 @@
     "featured": false,
     "score": 69.84,
     "summary": {
-      "text": "仙石原（せんごくはら、せんごくばら）は神奈川県足柄下郡箱根町の地名。ススキの草原や仙石原温泉で知られる。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E4%BB%99%E7%9F%B3%E5%8E%9F",
+      "text": "Sengokuhara (仙石原), sometimes called Sengokubara, is a district in Hakone, Kanagawa, Japan.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Sengokuhara",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -5209,6 +5719,65 @@
     "updated_at": "2026-09-28"
   },
   {
+    "id": "wd-Q11397865",
+    "name": {
+      "ja": "前鳥神社",
+      "kana": "さきとりじんじゃ",
+      "romaji": "Sakitorijinja",
+      "zh_tw": "前鳥神社",
+      "en": "Sakitori Shrine"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 35.357134,
+      "lng": 139.364658
+    },
+    "prefecture": "kanagawa",
+    "city": "平塚市",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "神社"
+    ],
+    "featured": false,
+    "score": 62.44,
+    "summary": {
+      "text": "前鳥神社（さきとりじんじゃ）は、神奈川県平塚市四之宮にある神社。旧社格は郷社。古くより「前鳥さん」とも呼ばれている。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E5%89%8D%E9%B3%A5%E7%A5%9E%E7%A4%BE",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/42/Sakitori_jinja_Haiden.jpg/960px-Sakitori_jinja_Haiden.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "ChiefHira",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Sakitori_jinja_Haiden.jpg"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q11397865",
+      "osm": "way/1389129031"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q11397865",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.openstreetmap.org/way/1389129031",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E5%89%8D%E9%B3%A5%E7%A5%9E%E7%A4%BE",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
+  },
+  {
     "id": "wd-Q11399712",
     "name": {
       "ja": "加賀町警察署",
@@ -5301,11 +5870,11 @@
     "featured": false,
     "score": 64.61,
     "summary": {
-      "text": "勝坂遺跡（かつさかいせき/かっさかいせき）は、神奈川県相模原市南区磯部にある縄文時代の遺跡。国の史跡に指定されている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%8B%9D%E5%9D%82%E9%81%BA%E8%B7%A1",
+      "text": "The Katsusaka Site (勝坂遺跡, Katsusaka iseki) is an archaeological site containing the ruins of a large Jōmon period settlement located in what is now the Isobe neighborhood of Minami-ku, Sagamihara, Kanagawa Prefecture in the southern Kantō region of Japan. The site was designated a National Historic Site of Japan in 1974, with the area designated expanded in 1980, 1984, 2006 and 2019. The site was first discovered by Kashiwa Oyama (the son of General Oyama Iwao) in 1926.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Katsusaka_Site",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -5593,6 +6162,52 @@
     "updated_at": "2026-09-28"
   },
   {
+    "id": "wd-Q11425936",
+    "name": {
+      "ja": "城ヶ島大橋",
+      "zh_tw": "城ヶ島大橋",
+      "en": "Jogashima Bridge"
+    },
+    "location": {
+      "lat": 35.1378,
+      "lng": 139.622658
+    },
+    "prefecture": "kanagawa",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "橋"
+    ],
+    "featured": false,
+    "score": 62.69,
+    "summary": {
+      "text": "城ケ島大橋（じょうがしまおおはし）は、神奈川県三浦市、三浦半島先端から、海をまたぎ城ヶ島に至る橋。管理は神奈川県東部漁港事務所。城ヶ島へ渡る唯一の道路で、有料道路であったが、神奈川県が2018年11月13日に将来の無料化を発表、2020年4月1日に無料開放された。歩行者や自転車は従前より無料で通行できた。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E5%9F%8E%E3%83%B6%E5%B3%B6%E5%A4%A7%E6%A9%8B",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/04/Jogashima_ohashi_bridge_2.jpg/960px-Jogashima_ohashi_bridge_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Tx-re",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Jogashima_ohashi_bridge_2.jpg"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q11425936"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q11425936",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
+  },
+  {
     "id": "wd-Q11428033",
     "name": {
       "ja": "報徳二宮神社",
@@ -5616,11 +6231,11 @@
     "featured": false,
     "score": 64.95,
     "summary": {
-      "text": "報徳二宮神社（ほうとくにのみやじんじゃ）は、神奈川県小田原市にある二宮尊徳を祀る神社である。旧社格は県社で、現在は神社本庁の別表神社となっている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%A0%B1%E5%BE%B3%E4%BA%8C%E5%AE%AE%E7%A5%9E%E7%A4%BE_%28%E5%B0%8F%E7%94%B0%E5%8E%9F%E5%B8%82%29",
+      "text": "Hōtoku Ninomiya Shrine (報徳二宮神社) is a Japanese Shinto shrine dedicated to Ninomiya Sontoku (二宮尊徳) and is located in the City of Odawara in Kanagawa prefecture, Japan.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/H%C5%8Dtoku_Ninomiya_Shrine",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -5835,11 +6450,11 @@
     "featured": false,
     "score": 68.2,
     "summary": {
-      "text": "大塚・歳勝土遺跡（おおつか・さいかちどいせき）は、神奈川県横浜市都筑区大棚西（港北ニュータウン内）にある弥生時代中期の遺跡。港北ニュータウン遺跡群の1つに含まれる。環濠集落の大塚遺跡と、その墓域の歳勝土遺跡から構成されている。国の史跡。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E5%A1%9A%E3%83%BB%E6%AD%B3%E5%8B%9D%E5%9C%9F%E9%81%BA%E8%B7%A1",
+      "text": "The Ōtsuka-Saikachido Site (大塚・歳勝土遺跡, Ōtsuka-Saikachido iseki) is an archaeological site located in the Nakagawa neighborhood of Tsuzuki-ku, Yokohama, Kanagawa Prefecture, in the southern Kantō region of Japan. The site contains traces of a Yayoi period settlement trace and was designated a National Historic Site in 1986.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/%C5%8Ctsuka-Saikachido_Site",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -6136,6 +6751,84 @@
     "updated_at": "2026-09-28"
   },
   {
+    "id": "wd-Q11439323",
+    "name": {
+      "ja": "大通り公園",
+      "kana": "おおどおりこうえん",
+      "romaji": "Odorikoen",
+      "zh_tw": "大通公園",
+      "en": "Odori Park (Yokohama)"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 35.440333,
+      "lng": 139.631111
+    },
+    "prefecture": "kanagawa",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "公園"
+    ],
+    "featured": false,
+    "score": 62.86,
+    "summary": {
+      "text": "大通り公園（おおどおりこうえん）は、神奈川県横浜市中区にある公園。JR関内駅方面から、横浜市営地下鉄伊勢佐木長者町駅をほぼ中央とし、阪東橋駅にまで至る帯状の公園である。昭和53年（1978年）9月9日に開園した。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E9%80%9A%E3%82%8A%E5%85%AC%E5%9C%92",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "伊勢佐木長者町",
+          "kana": "いせざきちょうじゃまち",
+          "romaji": "Isezaki Chōjamachi",
+          "en": "Isezaki-chojamachi"
+        },
+        "distance_m": 170
+      },
+      {
+        "name": {
+          "ja": "関内",
+          "kana": "かんない",
+          "romaji": "Kannai",
+          "en": "Kannai"
+        },
+        "distance_m": 610
+      }
+    ],
+    "images": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/8/88/Oodoripark.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+        "author": "ウェルワィ",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Oodoripark.jpg"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q11439323",
+      "osm": "way/219060716"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q11439323",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.openstreetmap.org/way/219060716",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E9%80%9A%E3%82%8A%E5%85%AC%E5%9C%92",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
+  },
+  {
     "id": "wd-Q11442063",
     "name": {
       "ja": "大黒埠頭",
@@ -6156,11 +6849,11 @@
     "featured": false,
     "score": 70.41,
     "summary": {
-      "text": "大黒埠頭（だいこくふとう）は、神奈川県横浜市鶴見区にある横浜港の人工島式埠頭の名称である。貨物の拠点として造られたが、他地域と横浜港背後圏の間の交通のショートカットや、首都高速道路や大型クルーズ客船への乗降など、交通結節点としての機能も持つ。多種多様な経済活動のハブであるため、大黒大橋や横浜ベイブリッジといった巨大な橋も架けられている。扇島や東扇島と並んで存在している。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E9%BB%92%E5%9F%A0%E9%A0%AD",
+      "text": "Daikoku Pier (大黒埠頭, Daikokufutō) is an area of Tsurumi-ku, Yokohama, Kanagawa Prefecture. Originally constructed as a freight base, it now serves as a transportation hub for traffic around Port of Yokohama. It provides access to the Shuto Expressway and serves as a docking point for large cruise ships. Due to its role as a hub for diverse economic activities, significant bridges such as the Daikoku Ohashi Bridge and Yokohama Bay Bridge have been constructed.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Daikoku_Pier",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -6459,6 +7152,80 @@
     ],
     "status": "published",
     "updated_at": "2026-09-28"
+  },
+  {
+    "id": "wd-Q11462957",
+    "name": {
+      "ja": "小田原城址公園",
+      "kana": "おだわらじょうしこうえん",
+      "romaji": "Odawarajō-kōen",
+      "zh_tw": "小田原城址公園",
+      "en": "Odawara Castle Park"
+    },
+    "kana_source": "osm",
+    "location": {
+      "lat": 35.25075,
+      "lng": 139.154778
+    },
+    "prefecture": "kanagawa",
+    "city": "小田原市",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "公園"
+    ],
+    "featured": false,
+    "score": 62.39,
+    "summary": {
+      "text": "小田原城址公園（おだわらじょうしこうえん）は、神奈川県小田原市城内に位置する都市公園（総合公園）である。小田原城の本丸及び1960年（昭和35年）に復興された天守閣を中心として整備されている。城址公園の大部分は、国の指定史跡の区域となっている。日本さくら名所100選に選定されている。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E5%B0%8F%E7%94%B0%E5%8E%9F%E5%9F%8E%E5%9D%80%E5%85%AC%E5%9C%92",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "小田原",
+          "kana": "おだわら",
+          "romaji": "Odawara",
+          "en": "Odawara"
+        },
+        "distance_m": 600
+      },
+      {
+        "name": {
+          "ja": "緑町",
+          "romaji": "Midorichō",
+          "en": "Midoricho"
+        },
+        "distance_m": 1060
+      }
+    ],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e4/Odawara_Castle_01.jpg/960px-Odawara_Castle_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Σ64",
+        "license": "CC BY 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Odawara_Castle_01.jpg"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q11462957",
+      "osm": "way/232722951"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q11462957",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.openstreetmap.org/way/232722951",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11465928",
@@ -6939,6 +7706,84 @@
     "updated_at": "2026-09-28"
   },
   {
+    "id": "wd-Q11478414",
+    "name": {
+      "ja": "川崎市平和館",
+      "kana": "かわさきしへいわかん",
+      "romaji": "Kawasakishiheiwakan",
+      "zh_tw": "川崎市和平館",
+      "en": "Kawasaki Peace Museum"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 35.568744,
+      "lng": 139.659
+    },
+    "prefecture": "kanagawa",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "博物館"
+    ],
+    "featured": false,
+    "score": 62.16,
+    "summary": {
+      "text": "川崎市和平館，是位於日本神奈川縣川崎市的一所以戰爭與和平為主題的博物館，常設展出「日本與戰爭」、「戰爭與人類」、「另一場戰爭」等主題。1992年開館。",
+      "lang": "zh",
+      "source_url": "https://zh.wikipedia.org/wiki/%E5%B7%9D%E5%B4%8E%E5%B8%82%E5%92%8C%E5%B9%B3%E9%A6%86",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "元住吉",
+          "kana": "もとすみよし",
+          "romaji": "Motosumiyoshi",
+          "en": "Motosumiyoshi"
+        },
+        "distance_m": 650
+      },
+      {
+        "name": {
+          "ja": "武蔵小杉",
+          "kana": "むさしこすぎ",
+          "romaji": "Musashi-Kosugi",
+          "en": "Musashi-kosugi"
+        },
+        "distance_m": 730
+      }
+    ],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ce/Japanese_Kawasaki_Peace_Museum.jpg/960px-Japanese_Kawasaki_Peace_Museum.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "不明",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Japanese_Kawasaki_Peace_Museum.jpg"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q11478414",
+      "osm": "way/593859422"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q11478414",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.openstreetmap.org/way/593859422",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E5%B7%9D%E5%B4%8E%E5%B8%82%E5%B9%B3%E5%92%8C%E9%A4%A8",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
+  },
+  {
     "id": "wd-Q11481110",
     "name": {
       "ja": "師岡熊野神社",
@@ -7306,11 +8151,11 @@
     "featured": false,
     "score": 73.13,
     "summary": {
-      "text": "弘明寺（ぐみょうじ）は、神奈川県横浜市南区弘明寺町にある高野山真言宗の寺院。瑞應山蓮華院と号し、横浜市内最古の寺院である。本尊の木造十一面観世音菩薩立像（通称「弘明寺観音」）は国の重要文化財。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%BC%98%E6%98%8E%E5%AF%BA",
+      "text": "Gumyō-ji (弘明寺) is a Buddhist temple located in Minami-ku, Yokohama, Japan. It belongs to the Kōyasan Shingon-shū sect and its honzon is a hibutsu statue of Jūichimen Kannon Bosatsu ( Sahasrabhūja).  The temple's full name is Zuio-zan Renge-in Gunmyō-ji (瑞應山 蓮華院  弘明寺).The temple is the 14th stop on the Bandō Sanjūsankasho pilgrimage route. It is also called the \"Gumyō Kannon\".",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Gumy%C5%8D-ji",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -7592,11 +8437,11 @@
     "featured": false,
     "score": 64.67,
     "summary": {
-      "text": "掃部山公園（かもんやまこうえん）は、神奈川県横浜市西区紅葉ケ丘にある公園。横浜みなとみらい21を見下ろす高台にあり、園内には横浜開港に関わった井伊直弼の銅像が立つ。遊具広場のほか横浜能楽堂が所在し、花見の名所として知られる。毎年夏には「虫の音を聞く会」が行われる。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%8E%83%E9%83%A8%E5%B1%B1%E5%85%AC%E5%9C%92",
+      "text": "Kamonyama Park (Japanese: 掃部山公園) is a park in Nishi-ku, Yokohama City, Kanagawa Prefecture, Japan. Located on a hill overlooking Minato Mirai 21, a statue of Naosuke Li, who played key role in the opening of Yokohama Port in 1859, stands in the park. the park is also a popular destination for cherry blossoms during spring.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Kamonyama_Park",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -7873,11 +8718,11 @@
     "featured": false,
     "score": 72.61,
     "summary": {
-      "text": "新江ノ島水族館（しんえのしますいぞくかん）は、神奈川県藤沢市片瀬海岸の湘南海岸公園にある水族館。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%96%B0%E6%B1%9F%E3%83%8E%E5%B3%B6%E6%B0%B4%E6%97%8F%E9%A4%A8",
+      "text": "Enoshima Aquarium or  New Enoshima Aquarium (新江ノ島水族館, Shin Enoshima Suizokukan) is a public aquarium located on Katase Beach in Fujisawa City, Kanagawa Prefecture, Japan. Its nickname is \"Enosui,\" an abbreviation of the Japanese name. The aquarium is accredited as a Museum-equivalent facilities by the Museum Act from Ministry of Education, Culture, Sports, Science and Technology.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Enoshima_Aquarium",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -8005,7 +8850,7 @@
       "ja": "日向薬師",
       "kana": "ひなたやくし",
       "romaji": "Hinatayakushi",
-      "zh_tw": "日向药师",
+      "zh_tw": "日向藥師",
       "en": "Hinata Yakushi Temple"
     },
     "kana_source": "osm",
@@ -8052,7 +8897,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11507771",
@@ -8359,11 +9204,11 @@
     "featured": false,
     "score": 63.78,
     "summary": {
-      "text": "旧相模川橋脚（きゅうさがみがわきょうきゃく）は、神奈川県茅ヶ崎市下町屋1丁目にある、鎌倉時代に相模川に架けられた橋を支えた木製橋脚10本の遺跡。国の史跡および天然記念物に指定されている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%97%A7%E7%9B%B8%E6%A8%A1%E5%B7%9D%E6%A9%8B%E8%84%9A",
+      "text": "The Former Sagami River Bridge (旧相模川橋脚, kyū-Sagami-gawa kyōkyaku) is the ruins of a Kamakura period bridge over the former course of the Sagami River, located in what is now the city of Chigasaki, Kanagawa Prefecture in the southern Kantō region of Japan. The site was designated a National Historic Site of Japan in 1926, with the area under protection expanded in 2007. It was further designated as a Natural Monument in 2013.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Sagami_River_Bridge_ruins",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [],
     "external_ids": {
@@ -8390,6 +9235,84 @@
     ],
     "status": "published",
     "updated_at": "2026-09-28"
+  },
+  {
+    "id": "wd-Q11513031",
+    "name": {
+      "ja": "星谷寺",
+      "kana": "しょうこくじほしやでら",
+      "romaji": "Shokokujihoshiyadera",
+      "zh_tw": "星谷寺",
+      "en": "Shōkoku-ji Temple"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 35.484889,
+      "lng": 139.398889
+    },
+    "prefecture": "kanagawa",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "寺院"
+    ],
+    "featured": false,
+    "score": 62.61,
+    "summary": {
+      "text": "Shōkoku-ji (星谷寺) is a Buddhist temple located in the Iriya-nishi neighborhood of the city of  Zama, Kanagawa Prefecture, Japan. It belongs to the Shingon-shū Daikaku-ha sect and its honzon is a statue of Shō-Kannon Bosatsu.  The temple's full name is Myōhō-san Jihō-in Shōkoku-ji (妙法山 持寶院  星谷寺).The temple is the 8th stop on the Bandō Sanjūsankasho pilgrimage route.  It is also called the \"Hoshiya Kannon\".",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Sh%C5%8Dkoku-ji_%28Zama%29",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "座間",
+          "kana": "Zama",
+          "romaji": "Zama",
+          "en": "Zama"
+        },
+        "distance_m": 470
+      },
+      {
+        "name": {
+          "ja": "入谷",
+          "kana": "いりや",
+          "romaji": "Iriya",
+          "en": "Iriya"
+        },
+        "distance_m": 950
+      }
+    ],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f7/Bando_08_Shokoku-ji_02.jpg/960px-Bando_08_Shokoku-ji_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "tak1701d",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Bando_08_Shokoku-ji_02.jpg"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q11513031",
+      "osm": "way/61235017"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q11513031",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.openstreetmap.org/way/61235017",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E6%98%9F%E8%B0%B7%E5%AF%BA",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11515473",
@@ -8633,6 +9556,77 @@
     "updated_at": "2026-09-28"
   },
   {
+    "id": "wd-Q11520812",
+    "name": {
+      "ja": "本覚寺",
+      "zh_tw": "本覺寺",
+      "en": "Hongaku-ji Temple"
+    },
+    "location": {
+      "lat": 35.472222,
+      "lng": 139.626389
+    },
+    "prefecture": "kanagawa",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "寺院"
+    ],
+    "featured": false,
+    "score": 62.81,
+    "summary": {
+      "text": "本覺寺（ほんがくじ、本覚寺、英語: Hongakuji Temple）は、神奈川県横浜市神奈川区高島台にある曹洞宗の寺院。山号は青木山。京急本線神奈川駅と第二京浜青木橋交差点のそばの高台にある。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E6%9C%AC%E8%A6%9A%E5%AF%BA_%28%E6%A8%AA%E6%B5%9C%E5%B8%82%29",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "神奈川",
+          "kana": "かながわ",
+          "romaji": "Kanagawa",
+          "en": "Kanagawa"
+        },
+        "distance_m": 130
+      },
+      {
+        "name": {
+          "ja": "反町",
+          "kana": "たんまち",
+          "romaji": "Tammachi",
+          "en": "Tammachi"
+        },
+        "distance_m": 290
+      }
+    ],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a5/Hongakuji_01.jpg/960px-Hongakuji_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Aimaimyi",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Hongakuji_01.jpg"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q11520812",
+      "osm": "node/5967917376"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q11520812",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.openstreetmap.org/node/5967917376",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
+  },
+  {
     "id": "wd-Q11520814",
     "name": {
       "ja": "本覚寺",
@@ -8703,6 +9697,145 @@
     ],
     "status": "published",
     "updated_at": "2026-09-28"
+  },
+  {
+    "id": "wd-Q11521945",
+    "name": {
+      "ja": "杉山神社 (横浜市緑区西八朔町)",
+      "kana": "すぎやまじんじゃ",
+      "romaji": "Sugiyamajinja",
+      "zh_tw": "杉山神社",
+      "en": "Sugiyama Shrine"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 35.52848,
+      "lng": 139.527073
+    },
+    "prefecture": "kanagawa",
+    "kind": "major",
+    "themes": [],
+    "tags": [],
+    "featured": false,
+    "score": 62.22,
+    "summary": {
+      "text": "杉山神社（すぎやまじんじゃ）は、神奈川県横浜市緑区西八朔町にある神社。式内社論社、武蔵国六宮。旧社格は郷社。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E6%9D%89%E5%B1%B1%E7%A5%9E%E7%A4%BE_%28%E6%A8%AA%E6%B5%9C%E5%B8%82%E7%B7%91%E5%8C%BA%E8%A5%BF%E5%85%AB%E6%9C%94%E7%94%BA%29",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "十日市場",
+          "kana": "とおかいちば",
+          "romaji": "Tokaichiba",
+          "en": "Tokaichiba"
+        },
+        "distance_m": 980
+      }
+    ],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7f/Sugiyama-jinja_%28Nishihassaku-cho%2C_Midori-ku%2C_Yokohama%29%2C_haiden-2.jpg/960px-Sugiyama-jinja_%28Nishihassaku-cho%2C_Midori-ku%2C_Yokohama%29%2C_haiden-2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Saigen Jiro",
+        "license": "CC0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Sugiyama-jinja_(Nishihassaku-cho,_Midori-ku,_Yokohama),_haiden-2.jpg"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q11521945",
+      "osm": "way/318921019"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q11521945",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.openstreetmap.org/way/318921019",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E6%9D%89%E5%B1%B1%E7%A5%9E%E7%A4%BE_%28%E6%A8%AA%E6%B5%9C%E5%B8%82%E7%B7%91%E5%8C%BA%E8%A5%BF%E5%85%AB%E6%9C%94%E7%94%BA%29",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
+  },
+  {
+    "id": "wd-Q11528774",
+    "name": {
+      "ja": "東高根森林公園",
+      "zh_tw": "東高根森林公園",
+      "en": "Higashitakane Site"
+    },
+    "location": {
+      "lat": 35.604444,
+      "lng": 139.586389
+    },
+    "prefecture": "kanagawa",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "公園",
+      "史跡"
+    ],
+    "featured": false,
+    "score": 62.64,
+    "summary": {
+      "text": "The Higashitakane site (東高根遺跡, Higashitakane iseki) is an archaeological site with the traces of a settlement group existing from the Yayoi to Kofun period, located in Miyamae-ku, Kawasaki, Kanagawa Prefecture in the Kantō region of Japan. It was designated a Kanagawa Prefecture Historic Site in 1971.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Higashitakane_Site",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "久地",
+          "kana": "くじ",
+          "romaji": "Kuji",
+          "en": "Kuji"
+        },
+        "distance_m": 880
+      },
+      {
+        "name": {
+          "ja": "津田山",
+          "kana": "つだやま",
+          "romaji": "Tsudayama",
+          "en": "Tsudayama"
+        },
+        "distance_m": 1270
+      }
+    ],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bb/%E6%9D%B1%E9%AB%98%E6%A0%B9%E6%A3%AE%E6%9E%97%E5%85%AC%E5%9C%92%EF%BD%A4%E5%B7%9D%E5%B4%8E%E5%B8%82_-_panoramio.jpg/960px-%E6%9D%B1%E9%AB%98%E6%A0%B9%E6%A3%AE%E6%9E%97%E5%85%AC%E5%9C%92%EF%BD%A4%E5%B7%9D%E5%B4%8E%E5%B8%82_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Toshihiro Matsui",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:%E6%9D%B1%E9%AB%98%E6%A0%B9%E6%A3%AE%E6%9E%97%E5%85%AC%E5%9C%92%EF%BD%A4%E5%B7%9D%E5%B4%8E%E5%B8%82_-_panoramio.jpg"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q11528774",
+      "osm": "way/86645041"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q11528774",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.openstreetmap.org/way/86645041",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11536319",
@@ -9127,7 +10260,7 @@
       "ja": "横浜メディアタワー",
       "kana": "よこはまめでぃあたわー",
       "romaji": "Yokohamamediatawa",
-      "zh_tw": "横滨媒体塔",
+      "zh_tw": "橫濱媒體塔",
       "en": "Yokohama Media Tower"
     },
     "kana_source": "wikipedia",
@@ -9190,7 +10323,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11542907",
@@ -9549,7 +10682,7 @@
       "ja": "横浜山手聖公会",
       "kana": "よこはまやまてせいこうかい",
       "romaji": "Yokohamayamateseikokai",
-      "zh_tw": "横滨山手圣公会",
+      "zh_tw": "橫濱山手聖公會",
       "en": "Yokohama Christ Church"
     },
     "kana_source": "wikipedia",
@@ -9617,7 +10750,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11543018",
@@ -10259,7 +11392,7 @@
       "ja": "江の島灯台",
       "kana": "えのしまとうだい",
       "romaji": "Enoshimatodai",
-      "zh_tw": "江之岛展望灯台",
+      "zh_tw": "江之島展望燈臺",
       "en": "Enoshima Sea Candle"
     },
     "kana_source": "wikidata",
@@ -10309,7 +11442,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11552380",
@@ -10406,11 +11539,11 @@
     "featured": false,
     "score": 65.04,
     "summary": {
-      "text": "河村城（かわむらじょう）は、神奈川県足柄上郡山北町にあった日本の城。平安時代末期に築城されたと伝えられ、相模・甲斐・駿河三国の境界線が交差する要衝の近くに築かれた山城である。神奈川県指定史跡。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%B2%B3%E6%9D%91%E5%9F%8E",
+      "text": "Kawamura Castle (河村城, Kawamura-jō) is a Kamakura period  Japanese castle located in what is now the town of Yamakita, Kanagawa Prefecture, Japan.  Its ruins have been protected as a Kanagawa Prefectural Historic Site since 1996. It is said to have been built in the late Heian period and was a mountain castle built near a strategic point where the borders of Sagami, Kai, and Suruga Provinces intersected.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Kawamura_Castle",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -10445,6 +11578,140 @@
     ],
     "status": "published",
     "updated_at": "2026-09-28"
+  },
+  {
+    "id": "wd-Q11554678",
+    "name": {
+      "ja": "泉の森",
+      "kana": "いずみのもり",
+      "romaji": "Izumi No Mori",
+      "zh_tw": "泉の森",
+      "en": "Izumi no Mori"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 35.479167,
+      "lng": 139.442778
+    },
+    "prefecture": "kanagawa",
+    "kind": "major",
+    "themes": [],
+    "tags": [],
+    "featured": false,
+    "score": 62.36,
+    "summary": {
+      "text": "Izumi no Mori (泉の森; lit. \"Forest of Springs\") is a park in Yamato, Kanagawa Prefecture, Japan. The springs in the park are the source of the Hikiji River that flows into Sagami Bay.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Izumi_no_Mori",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "相模大塚",
+          "kana": "さがみおおつか",
+          "romaji": "Sagami Otsuka",
+          "en": "Sagami-Otsuka"
+        },
+        "distance_m": 970
+      },
+      {
+        "name": {
+          "ja": "鶴間",
+          "romaji": "Tsuruma",
+          "en": "Tsuruma"
+        },
+        "distance_m": 1430
+      }
+    ],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5b/Izuminomori_Park_01.jpg/960px-Izuminomori_Park_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "椎林 隆夫",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Izuminomori_Park_01.jpg"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q11554678"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q11554678",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E6%B3%89%E3%81%AE%E6%A3%AE",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
+  },
+  {
+    "id": "wd-Q11555666",
+    "name": {
+      "ja": "泥亀",
+      "kana": "でいき",
+      "romaji": "Deiki",
+      "zh_tw": "泥亀",
+      "en": "Deiki"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 35.337775,
+      "lng": 139.624222
+    },
+    "prefecture": "kanagawa",
+    "kind": "major",
+    "themes": [],
+    "tags": [],
+    "featured": false,
+    "score": 62.59,
+    "summary": {
+      "text": "泥亀（でいき）は、神奈川県横浜市金沢区の町名。現行行政地名は泥亀一丁目及び泥亀二丁目。住居表示実施済み区域。1939年（昭和14年）7月1日に廃止された金沢泥亀町（かなざわでいきちょう）、1986年（昭和61年）7月26日に廃止された泥亀町（でいきちょう）についても本項で述べる。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E6%B3%A5%E4%BA%80",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "金沢文庫",
+          "kana": "かなざわぶんこ",
+          "romaji": "Kanazawa-Bunko",
+          "en": "Kanazawa-Bunko"
+        },
+        "distance_m": 620
+      },
+      {
+        "name": {
+          "ja": "海の公園南口",
+          "kana": "うみのこうえんみなみぐち",
+          "romaji": "Uminokōen minamiguchi",
+          "en": "Uminokoen-Minamiguchi"
+        },
+        "distance_m": 710
+      }
+    ],
+    "images": [],
+    "external_ids": {
+      "wikidata": "Q11555666"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q11555666",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E6%B3%A5%E4%BA%80",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11555910",
@@ -10598,11 +11865,11 @@
     "featured": false,
     "score": 72.84,
     "summary": {
-      "text": "海老名サービスエリア（えびなサービスエリア）は、神奈川県海老名市大谷南にある、東名高速道路のサービスエリア。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%B5%B7%E8%80%81%E5%90%8D%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9%E3%82%A8%E3%83%AA%E3%82%A2",
+      "text": "The Ebina Service Area (海老名サービスエリア, Ebina Sābisueria) is a rest area located on the Tōmei Expressway in Ebina, Kanagawa Prefecture, Japan, and is operated by Central Nippon Expressway Company. It is the only service area in Kanagawa, the first service area when coming from Tokyo, and the last service area when heading from Nagoya to Tokyo.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Ebina_Service_Area",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -10956,11 +12223,11 @@
     "featured": false,
     "score": 72.5,
     "summary": {
-      "text": "玉縄城（たまなわじょう）は、神奈川県鎌倉市玉縄地域城廻（旧相模国鎌倉郡玉縄村）にあった日本の城（平山城）。甘縄城ともいう。「玉縄城址」として特別緑地保全地区に指定されている（2003年6月17日指定）。最寄の鉄道駅はJR大船駅。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E7%8E%89%E7%B8%84%E5%9F%8E",
+      "text": "Tamanawa Castle (玉縄城, Tamanawa-jō) was a castle structure in Tamanawa ward of Kamakura, Kanagawa Prefecture, Japan. The adopted brother of Hōjō Ujiyasu, Hōjō Tsunashige, was commander of the castle.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Tamanawa_Castle",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -11228,11 +12495,11 @@
     "featured": false,
     "score": 69.01,
     "summary": {
-      "text": "神奈川県立県民ホール（かながわけんりつけんみんホール、Kanagawa Kenmin Hall）は、神奈川県横浜市中区山下町にある県営の複合文化施設の総称である。神奈川県民ホール本館とKAAT 神奈川芸術劇場（カートかながわげいじゅつげきじょう、KAnagawa Arts Theatre）の二棟から構成され、大小5つの劇場で約4,600名の収容人数を誇る大型複合文化施設である。公益財団法人神奈川芸術文化財団が管理運営を行っている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E7%A5%9E%E5%A5%88%E5%B7%9D%E7%9C%8C%E7%AB%8B%E7%9C%8C%E6%B0%91%E3%83%9B%E3%83%BC%E3%83%AB",
+      "text": "Kanagawa Kenmin Hall (神奈川県立県民ホール) is a 2,493-seat performing arts venue located in Yokohama, Japan. The complex opened in 1975. Many international artists have performed at Kanagawa Kenmin Hall, including Mireille Mathieu, Linda Ronstadt, King Crimson, Chicago, Cheap Trick, Alanis Morissette, The Black Crowes, The Doobie Brothers, Diana Ross and Paul Rodgers.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Kanagawa_Kenmin_Hall",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -11333,7 +12600,7 @@
       "ja": "神奈川県立生命の星・地球博物館",
       "kana": "かながわけんりつせいめいのほしちきゅうはくぶつかん",
       "romaji": "Kanagawakenritsuseimeinohoshichikyuhakubutsukan",
-      "zh_tw": "神奈川县立生命之星·地球博物馆",
+      "zh_tw": "神奈川縣立生命之星·地球博物館",
       "en": "Kanagawa Prefectural Museum of Natural History"
     },
     "kana_source": "wikipedia",
@@ -11404,7 +12671,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11589187",
@@ -11561,7 +12828,7 @@
       "ja": "神奈川近代文学館",
       "kana": "かながわきんだいぶんがくかん",
       "romaji": "Kanagawakindaibungakukan",
-      "zh_tw": "神奈川近代文学馆",
+      "zh_tw": "神奈川近代文學館",
       "en": "Kanagawa Museum of Modern Literature"
     },
     "kana_source": "wikipedia",
@@ -11629,7 +12896,80 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
+  },
+  {
+    "id": "wd-Q11590439",
+    "name": {
+      "ja": "神武寺",
+      "kana": "じんむじ",
+      "romaji": "Jinmuji",
+      "zh_tw": "神武寺",
+      "en": "Jimmu-ji Temple"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 35.303942,
+      "lng": 139.605978
+    },
+    "prefecture": "kanagawa",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "寺院"
+    ],
+    "featured": false,
+    "score": 62.24,
+    "summary": {
+      "text": "神武寺（じんむじ）は神奈川県逗子市沼間にある天台宗の寺院である。山号は医王山。詳しくは医王山来迎院神武寺（いおうざん らいごういん じんむじ）という。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E7%A5%9E%E6%AD%A6%E5%AF%BA",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "東逗子",
+          "kana": "ひがしずし",
+          "romaji": "Higashi-Zushi",
+          "en": "Higashi-Zushi"
+        },
+        "distance_m": 690
+      },
+      {
+        "name": {
+          "ja": "神武寺",
+          "kana": "じんむじ",
+          "romaji": "Jimmuji",
+          "en": "Jimmuji"
+        },
+        "distance_m": 1190
+      }
+    ],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6a/Jinmuji_01.jpg/960px-Jinmuji_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Quercus acuta",
+        "license": "CC0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Jinmuji_01.jpg"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q11590439"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q11590439",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E7%A5%9E%E6%AD%A6%E5%AF%BA",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11596183",
@@ -11785,6 +13125,84 @@
     "updated_at": "2026-09-28"
   },
   {
+    "id": "wd-Q11596691",
+    "name": {
+      "ja": "稲毛神社",
+      "kana": "いなげじんじゃ",
+      "romaji": "Inagejinja",
+      "zh_tw": "稲毛神社",
+      "en": "Inage Shrine"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 35.530833,
+      "lng": 139.704444
+    },
+    "prefecture": "kanagawa",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "神社"
+    ],
+    "featured": false,
+    "score": 62.38,
+    "summary": {
+      "text": "稲毛神社（いなげじんじゃ）は、神奈川県川崎市川崎区にある神社である。旧社格は郷社で、現在は神社本庁の別表神社。旧称は山王権現、武甕槌神社で、現在も山王様の通称で呼ばれる。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E7%A8%B2%E6%AF%9B%E7%A5%9E%E7%A4%BE",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "京急川崎",
+          "kana": "けいきゅうかわさき",
+          "romaji": "Keikyū-Kawasaki",
+          "en": "Keikyu-Kawasaki"
+        },
+        "distance_m": 400
+      },
+      {
+        "name": {
+          "ja": "川崎",
+          "kana": "かわさき",
+          "romaji": "Kawasaki",
+          "en": "Kawasaki"
+        },
+        "distance_m": 690
+      }
+    ],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3f/Kawasaki_Inage-jinja_Torii.jpg/960px-Kawasaki_Inage-jinja_Torii.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "妖精書士",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Kawasaki_Inage-jinja_Torii.jpg"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q11596691",
+      "osm": "node/1971580260"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q11596691",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.openstreetmap.org/node/1971580260",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E7%A8%B2%E6%AF%9B%E7%A5%9E%E7%A4%BE",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
+  },
+  {
     "id": "wd-Q11603346",
     "name": {
       "ja": "箱根ガラスの森美術館",
@@ -11912,11 +13330,11 @@
     "featured": false,
     "score": 65.69,
     "summary": {
-      "text": "箱根園（はこねえん）は、神奈川県足柄下郡箱根町元箱根の芦ノ湖湖畔東側と神奈川県道75号線沿いにある、コテージ・植物園・水族館・ショッピングモールなどの複合リゾート施設である。関係施設と併せて、芦ノ湖周辺の観光エリアの一つを形成している。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E7%AE%B1%E6%A0%B9%E5%9C%92",
+      "text": "The Hakone Resort Complex or Hakone-en (Japanese:箱根園, meaning the \"Hakone Garden\") is a resort complex located on the east side of Lake Ashi, along Kanagawa Prefectural Route 75 in Motohakone, Hakone-machi, Ashigarashimo-gun, Kanagawa Prefecture. It is run by Prince Hotels & Resorts (until March 2006, Kokudo and Seibu Railway). It consists of cottages, a botanical garden, an aquarium, a shopping mall, a ropeway to Mount Koma, and a pier of the sightseeing ships on Lake Ashi.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Hakone_Resort_Complex",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -12011,7 +13429,7 @@
       "ja": "臨港パーク",
       "kana": "りんこうぱーく",
       "romaji": "Rinkopaku",
-      "zh_tw": "临港公园",
+      "zh_tw": "臨港公園",
       "en": "Rinkō Park"
     },
     "kana_source": "osm",
@@ -12077,7 +13495,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11616891",
@@ -12104,11 +13522,11 @@
     "featured": false,
     "score": 70.42,
     "summary": {
-      "text": "英勝寺（えいしょうじ）は、神奈川県鎌倉市扇ガ谷にある浄土宗の寺院であり、現在、鎌倉唯一の尼寺である。山号は東光山。寺域は、開基英勝院尼の祖先であり、扇谷上杉氏の家宰であった太田道灌邸跡地とされる。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E8%8B%B1%E5%8B%9D%E5%AF%BA",
+      "text": "Eisho-ji (英勝寺) is a Jōdo-shū temple in Ogigayatsu, Kamakura, Kanagawa, Japan, and is the sole nunnery in Kamakura. The mountain name is Tokozan.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Eish%C5%8D-ji",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -12249,11 +13667,11 @@
     "featured": false,
     "score": 65.57,
     "summary": {
-      "text": "茅ヶ崎館（ちがさきかん）は、神奈川県茅ヶ崎市にある日本旅館。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E8%8C%85%E3%83%B6%E5%B4%8E%E9%A4%A8",
+      "text": "The Chigasakikan (茅ヶ崎館) is a traditional Japanese inn situated in Chigasaki, Kanagawa, Japan. Chigasakikan opened in 1899, and is one of the last remaining seaside ryokan in the Shonan region, which were once abundant. Film directors such as Yasujirō Ozu and Kaneto Shindo were among those who regularly used the area as their holiday home.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Chigasakikan",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -12356,6 +13774,63 @@
     ],
     "status": "published",
     "updated_at": "2026-09-28"
+  },
+  {
+    "id": "wd-Q11626397",
+    "name": {
+      "ja": "衣笠城",
+      "kana": "きぬがさじょう",
+      "romaji": "Kinugasajo",
+      "zh_tw": "衣笠城",
+      "en": "Kinugasa Castle"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 35.245592,
+      "lng": 139.654992
+    },
+    "prefecture": "kanagawa",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "城"
+    ],
+    "featured": false,
+    "score": 62.6,
+    "summary": {
+      "text": "衣笠城（きぬがさじょう）は、神奈川県横須賀市（相模国三浦郡）衣笠町にあった日本の城（山城※異説あり）。三浦半島中央部に立地する。横須賀市指定史跡。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E8%A1%A3%E7%AC%A0%E5%9F%8E",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "衣笠",
+          "kana": "きぬがさ",
+          "romaji": "Kinugasa",
+          "en": "Kinugasa"
+        },
+        "distance_m": 1400
+      }
+    ],
+    "images": [],
+    "external_ids": {
+      "wikidata": "Q11626397"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q11626397",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E8%A1%A3%E7%AC%A0%E5%9F%8E",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11628518",
@@ -12503,11 +13978,11 @@
     "featured": false,
     "score": 67.05,
     "summary": {
-      "text": "観音崎（かんのんざき）は、神奈川県横須賀市鴨居4丁目に位置する岬。岬周辺の地域を表す地名として用いられることもある。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E8%A6%B3%E9%9F%B3%E5%B4%8E_%28%E7%A5%9E%E5%A5%88%E5%B7%9D%E7%9C%8C%29",
+      "text": "Cape Kannon (Japanese: 観音崎, Kannonzaki) is a cape at the easternmost point of the Miura Peninsula, which divides Tokyo Bay from the Pacific Ocean.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Cape_Kannon_%28Kanagawa%2C_Japan%29",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -12612,6 +14087,57 @@
     "updated_at": "2026-09-28"
   },
   {
+    "id": "wd-Q11636076",
+    "name": {
+      "ja": "走水神社 (横須賀市)",
+      "kana": "はしりみずじんじゃ",
+      "romaji": "Hashirimizujinja",
+      "zh_tw": "走水神社",
+      "en": "Hashirimizu Shrine"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 35.261444,
+      "lng": 139.730917
+    },
+    "prefecture": "kanagawa",
+    "kind": "major",
+    "themes": [],
+    "tags": [],
+    "featured": false,
+    "score": 62.67,
+    "summary": {
+      "text": "走水神社（はしりみずじんじゃ）は、神奈川県横須賀市走水にある神社である。三浦半島の東端近く、東京湾にほど近い場所に位置する。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E8%B5%B0%E6%B0%B4%E7%A5%9E%E7%A4%BE_%28%E6%A8%AA%E9%A0%88%E8%B3%80%E5%B8%82%29",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e0/Hashirimizu_Jinja_14.jpg/960px-Hashirimizu_Jinja_14.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Aimaimyi",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Hashirimizu_Jinja_14.jpg"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q11636076"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q11636076",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E8%B5%B0%E6%B0%B4%E7%A5%9E%E7%A4%BE_%28%E6%A8%AA%E9%A0%88%E8%B3%80%E5%B8%82%29",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
+  },
+  {
     "id": "wd-Q11636901",
     "name": {
       "ja": "足柄峠",
@@ -12632,11 +14158,11 @@
     "featured": false,
     "score": 69.13,
     "summary": {
-      "text": "足柄峠（あしがらとうげ）は、静岡県駿東郡小山町と神奈川県南足柄市の間にある峠。箱根外輪山から北に伸びた尾根上に位置し、箱根峠とともに東海道を構成する。標高 759m。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E8%B6%B3%E6%9F%84%E5%B3%A0",
+      "text": "Ashigara Pass (足柄峠, Ashigara-tōge) is a mountain pass on the border of Kanagawa and Shizuoka Prefectures, near Mount Kintoki in Japan. The pass traverses the mountains at 759 metres (2,490 ft).",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Ashigara_Pass",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -12685,11 +14211,11 @@
     "featured": false,
     "score": 63.49,
     "summary": {
-      "text": "辻堂海浜公園（つじどうかいひんこうえん）は、神奈川県藤沢市辻堂西海岸にある、神奈川県立の都市公園（総合公園）。かながわの公園50選に選ばれている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E8%BE%BB%E5%A0%82%E6%B5%B7%E6%B5%9C%E5%85%AC%E5%9C%92",
+      "text": "Tshujido Seaside Park (Japanese: 辻堂海浜公園)  is a 19.9-hectare Kanagawa prefectural city park, located on the west coast of Tsujido, Fujisawa City, Kanagawa, Japan. It has been selected as one of the 50 best parks in Kanagawa.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Tsujido_Seaside_Park",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -12721,6 +14247,77 @@
     "updated_at": "2026-09-28"
   },
   {
+    "id": "wd-Q11639497",
+    "name": {
+      "ja": "逗子海岸",
+      "kana": "ずしかいがん",
+      "romaji": "Zushikaigan",
+      "zh_tw": "逗子海岸",
+      "en": "Zushi Beach"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 35.2925,
+      "lng": 139.572222
+    },
+    "prefecture": "kanagawa",
+    "kind": "major",
+    "themes": [],
+    "tags": [],
+    "featured": false,
+    "score": 62.72,
+    "summary": {
+      "text": "逗子海岸（ずしかいがん）は、神奈川県逗子市新宿に位置する相模湾に面した海岸である。逗子海水浴場として知られる。新宿海岸、新宿浜、東郷浜とも呼ばれていた。キャッチフレーズは「太陽が生まれたハーフマイルビーチ」。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E9%80%97%E5%AD%90%E6%B5%B7%E5%B2%B8",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "逗子・葉山",
+          "kana": "ずしはやま",
+          "romaji": "Zushi Hayama",
+          "en": "Zushi・Hayama"
+        },
+        "distance_m": 760
+      },
+      {
+        "name": {
+          "ja": "逗子",
+          "kana": "ずし",
+          "romaji": "Zushi",
+          "en": "Zushi"
+        },
+        "distance_m": 850
+      }
+    ],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/91/Zushi_Beach_02.jpg/960px-Zushi_Beach_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Tadashi Okoshi",
+        "license": "CC BY 2.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Zushi_Beach_02.jpg"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q11639497"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q11639497",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E9%80%97%E5%AD%90%E6%B5%B7%E5%B2%B8",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
+  },
+  {
     "id": "wd-Q11641728",
     "name": {
       "ja": "道志ダム",
@@ -12741,11 +14338,11 @@
     "featured": false,
     "score": 64.38,
     "summary": {
-      "text": "道志ダム（どうしダム）は、神奈川県相模原市緑区、一級河川・相模川水系道志川に建設されたダム。高さ32.8メートルの重力式コンクリートダムで、神奈川県営の発電用ダムである。神奈川県企業庁の水力発電所・道志第1発電所・道志第2発電所・道志第4発電所・道志ダム発電所に送水し、合計最大1万1,659キロワットの電力を発生する。ダム湖（人造湖）の名は奥相模湖（おくさがみこ）という。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E9%81%93%E5%BF%97%E3%83%80%E3%83%A0",
+      "text": "Doshi Dam (Japanese: 道志ダム) is a gravity dam located in Kanagawa Prefecture in Japan. The dam is used for power production. The catchment area of the dam is 112.5 km2. The dam impounds about 14 hectares of land when full and can store 1525 thousand cubic meters of water. The construction of the dam was started on 1952 and completed in 1955.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Doshi_Dam",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -13453,11 +15050,11 @@
     "featured": false,
     "score": 63.03,
     "summary": {
-      "text": "鴫立庵（しぎたつあん）は神奈川県大磯町にある俳諧道場。京都の落柿舎、滋賀の無名庵と並び、日本三大俳諧道場の一つとされる。敷地内に建てられた石碑にある銘文「著盡湘南清絶地」から、「湘南発祥の地」とされることもある。場所は大磯の国道1号線（旧・東海道）沿いの鴫立沢にある。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E9%B4%AB%E7%AB%8B%E5%BA%B5",
+      "text": "Shigitatsu-an (Japanese: 鴫立庵) is a haikai dojo (Japanese: 俳諧道場) in Ōiso, Kanagawa, Japan, where people learn haiku poetry from the master there or from each other. It is one of the three important such dojo, the other two being Rakushi-sha (落柿舎) in Sagano, Kyoto, and Mumei-an (無名庵) in Ōtsu, Shiga.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Shigitatsu-an",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -13562,6 +15159,83 @@
     ],
     "status": "published",
     "updated_at": "2026-09-28"
+  },
+  {
+    "id": "wd-Q11675783",
+    "name": {
+      "ja": "皇大神宮",
+      "kana": "こうだいじんぐう",
+      "romaji": "Ko Dai Jingu",
+      "zh_tw": "皇大神宮",
+      "en": "Kōdai-jingū"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 35.341713,
+      "lng": 139.47279
+    },
+    "prefecture": "kanagawa",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "神社"
+    ],
+    "featured": false,
+    "score": 62.27,
+    "summary": {
+      "text": "皇大神宮（こうだいじんぐう）は、日本の神奈川県藤沢市の鵠沼にある神社である。神明宮（しんめいぐう）、烏森神社（からすもりじんじゃ）とも称される。旧社格は村社。土甘（とかみ）郷（鵠沼村）の総鎮守とされ、「神明様（しんめいさま）」として知られている。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E7%9A%87%E5%A4%A7%E7%A5%9E%E5%AE%AE_%28%E8%97%A4%E6%B2%A2%E5%B8%82%29",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "藤沢本町",
+          "romaji": "Fujisawa-Honmachi",
+          "en": "Fujisawa-Hommachi"
+        },
+        "distance_m": 760
+      },
+      {
+        "name": {
+          "ja": "本鵠沼",
+          "kana": "ほんくげぬま",
+          "romaji": "Hon-Kugenuma",
+          "en": "Hon-Kugenuma"
+        },
+        "distance_m": 1230
+      }
+    ],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/44/Kugenuma_K%C5%8Ddai-jing%C5%AB_02.jpg/960px-Kugenuma_K%C5%8Ddai-jing%C5%AB_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "007 Tanuki",
+        "license": "CC BY-SA 2.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Kugenuma_K%C5%8Ddai-jing%C5%AB_02.jpg"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q11675783",
+      "osm": "way/256415267"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q11675783",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.openstreetmap.org/way/256415267",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E7%9A%87%E5%A4%A7%E7%A5%9E%E5%AE%AE_%28%E8%97%A4%E6%B2%A2%E5%B8%82%29",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11676016",
@@ -14156,11 +15830,11 @@
     "featured": false,
     "score": 63.64,
     "summary": {
-      "text": "チュアベトナム（ベトナム語: Chùa Việt Nam / 𫴶越南）は、神奈川県愛甲郡愛川町にあるベトナム仏教の寺院。2006年に寺院として設立され、2017年に現在の建物が完成した。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E3%83%81%E3%83%A5%E3%82%A2%E3%83%99%E3%83%88%E3%83%8A%E3%83%A0",
+      "text": "Chua Vietnam (Vietnamese: Chùa Việt Nam / 厨越南) is a Vietnamese Buddhist temple in Aikawa town, Aikō District, Kanagawa Prefecture, Japan. It was established in 2006 and the current building was completed in 2017.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Chua_Vietnam",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -14222,11 +15896,11 @@
     "featured": false,
     "score": 65.71,
     "summary": {
-      "text": "高徳院（こうとくいん）は、神奈川県鎌倉市長谷にある浄土宗の寺院。本尊は国宝銅造阿弥陀如来坐像の鎌倉大仏。正式には大異山高徳院清浄泉寺（だいいざん こうとくいん しょうじょうせんじ）と号する。開基（創立者）と開山（初代住職）はともに不詳。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E9%8E%8C%E5%80%89%E5%A4%A7%E4%BB%8F",
+      "text": "Kōtoku-in (高徳院) is a Buddhist temple of the Jōdo-shū sect in the city of Kamakura in Kanagawa Prefecture, Japan. Its mountain name is Daii-zan (大異山), and its common temple name is Shōjōsen-ji (清浄泉寺).",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Great_Buddha_of_Kamakura",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -14507,11 +16181,11 @@
     "featured": true,
     "score": 80.35,
     "summary": {
-      "text": "ポケパーク カントー（英: Poképark KANTO）は、東京都稲城市、神奈川県川崎市多摩区のよみうりランド内にある、ポケットモンスターをモチーフとした屋外型テーマパーク。2005年に開催されていた「Pokémon The Park 2005（ポケモン ザ パーク 2005）」とは異なる。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E3%83%9D%E3%82%B1%E3%83%91%E3%83%BC%E3%82%AF_%E3%82%AB%E3%83%B3%E3%83%88%E3%83%BC",
+      "text": "PokéPark Kanto is a Pokémon-branded theme park within Yomiuriland that opened to the public on February 5, 2026. The park is located in the Tama area. The theme park is a collaboration between The Pokémon Company and Yomiuriland. The name was chosen in reference to the fictional Kanto Region, the setting of Pokémon Red, Blue, and Yellow, which was inspired by the real-world Kantō region that Yomiuriland itself is also located in.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Pok%C3%A9Park_Kanto",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -14553,6 +16227,126 @@
     ],
     "status": "published",
     "updated_at": "2026-09-28"
+  },
+  {
+    "id": "wd-Q134051895",
+    "name": {
+      "ja": "PLOT48",
+      "zh_tw": "PLOT48",
+      "en": "PLOT48"
+    },
+    "location": {
+      "lat": 35.458556,
+      "lng": 139.625444
+    },
+    "prefecture": "kanagawa",
+    "kind": "major",
+    "themes": [],
+    "tags": [],
+    "featured": false,
+    "score": 62.43,
+    "summary": {
+      "text": "プロット48（ぷろっとよんじゅうはち、英語: PLOT48）は、神奈川県横浜市西区みなとみらいに所在する施設。都市再生機構（UR都市機構）が土地を所有するみなとみらい地区48街区に位置する。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E3%83%97%E3%83%AD%E3%83%83%E3%83%8848",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "高島町",
+          "kana": "たかしまちょう",
+          "romaji": "Takashimachō",
+          "en": "Takashimacho"
+        },
+        "distance_m": 140
+      },
+      {
+        "name": {
+          "ja": "新高島",
+          "kana": "しんたかしま",
+          "romaji": "Shin Takashima",
+          "en": "Shin-Takashima"
+        },
+        "distance_m": 390
+      }
+    ],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8e/Yokohama_Anpanman_Children%27s_Museum_%26_Mall_%28State_as_of_July_2019_after_closing%29.jpg/960px-Yokohama_Anpanman_Children%27s_Museum_%26_Mall_%28State_as_of_July_2019_after_closing%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Thirteen-fri",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Yokohama_Anpanman_Children%27s_Museum_%26_Mall_(State_as_of_July_2019_after_closing).jpg"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q134051895"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q134051895",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
+  },
+  {
+    "id": "wd-Q134435438",
+    "name": {
+      "ja": "みなとみらい21中央地区52街区",
+      "zh_tw": "みなとみらい21中央地区52街区"
+    },
+    "location": {
+      "lat": 35.462231,
+      "lng": 139.629269
+    },
+    "prefecture": "kanagawa",
+    "kind": "major",
+    "themes": [],
+    "tags": [],
+    "featured": false,
+    "score": 62.48,
+    "summary": {
+      "text": "みなとみらい21中央地区52街区（みなとみらい21ちゅうおうちく52がいく）は、神奈川県横浜市西区にある再開発計画街区の名称。開発事業者はDKみなとみらい52街区特定目的会社（大和ハウス工業と光優が出資する特定目的会社）、設計は久米設計、施工はフジタ・大和ハウス工業共同企業体。2024年2月に着工し、2027年5月に竣工する予定。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E3%81%BF%E3%81%AA%E3%81%A8%E3%81%BF%E3%82%89%E3%81%8421%E4%B8%AD%E5%A4%AE%E5%9C%B0%E5%8C%BA52%E8%A1%97%E5%8C%BA",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "新高島",
+          "kana": "しんたかしま",
+          "romaji": "Shin Takashima",
+          "en": "Shin-Takashima"
+        },
+        "distance_m": 240
+      },
+      {
+        "name": {
+          "ja": "みなとみらい",
+          "kana": "みなとみらい",
+          "romaji": "Minatomirai",
+          "en": "Minatomirai"
+        },
+        "distance_m": 640
+      }
+    ],
+    "images": [],
+    "external_ids": {
+      "wikidata": "Q134435438"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q134435438",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q137112533",
@@ -14645,11 +16439,11 @@
     "featured": false,
     "score": 65.13,
     "summary": {
-      "text": "大野山（おおのやま）は、神奈川県足柄上郡山北町にある標高723.1mの山である。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E9%87%8E%E5%B1%B1_%28%E7%A5%9E%E5%A5%88%E5%B7%9D%E7%9C%8C%29",
+      "text": "Mount Ōno (大野山, Ōnoyama) is a mountain located in Yamakita, Kanagawa.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Mount_%C5%8Cno",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [],
     "external_ids": {
@@ -15668,6 +17462,69 @@
     "updated_at": "2026-09-28"
   },
   {
+    "id": "wd-Q17217635",
+    "name": {
+      "ja": "ボーノ相模大野",
+      "kana": "ぼーのさがみおおの",
+      "romaji": "Bonosagamiono",
+      "zh_tw": "Bono相模大野"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 35.531111,
+      "lng": 139.435
+    },
+    "prefecture": "kanagawa",
+    "kind": "major",
+    "themes": [],
+    "tags": [],
+    "featured": false,
+    "score": 62.26,
+    "summary": {
+      "text": "ボーノ相模大野（ボーノさがみおおの、bono SAGAMIONO）は、神奈川県相模原市南区相模大野にある大型複合施設。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E3%83%9C%E3%83%BC%E3%83%8E%E7%9B%B8%E6%A8%A1%E5%A4%A7%E9%87%8E",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "相模大野",
+          "kana": "さがみおおの",
+          "romaji": "Sagami Ōno",
+          "en": "Sagami-Ono"
+        },
+        "distance_m": 290
+      },
+      {
+        "name": {
+          "ja": "東林間",
+          "kana": "ひがしりんかん",
+          "romaji": "Higashi-Rinkan",
+          "en": "Higashi-Rinkan"
+        },
+        "distance_m": 1270
+      }
+    ],
+    "images": [],
+    "external_ids": {
+      "wikidata": "Q17217635"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q17217635",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E3%83%9C%E3%83%BC%E3%83%8E%E7%9B%B8%E6%A8%A1%E5%A4%A7%E9%87%8E",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
+  },
+  {
     "id": "wd-Q17219243",
     "name": {
       "ja": "勝長寿院",
@@ -15747,11 +17604,11 @@
     "featured": false,
     "score": 74.01,
     "summary": {
-      "text": "岡田美術館（おかだびじゅつかん）は、神奈川県足柄下郡箱根町にある私設美術館。ユニバーサルエンターテインメント系列。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%B2%A1%E7%94%B0%E7%BE%8E%E8%A1%93%E9%A4%A8",
+      "text": "Okada Museum of Art (岡田美術館, Okada Bijutsukan) opened in Hakone, Kanagawa Prefecture, Japan, in 2013. The private museum was created by the Japanese billionaire Kazuo Okada and specializes in Asian art; the collection of some 450 pieces centers on early modern and modern Japanese painting while also including Chinese bronzes, lacquer, ceramics, and Buddhist sculpture. It has the largest indoor exhibition space in Hakone, extending over five floors..",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Okada_Museum_of_Art",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -15892,11 +17749,11 @@
     "featured": false,
     "score": 64.29,
     "summary": {
-      "text": "観音崎公園（かんのんざきこうえん）は、神奈川県横須賀市の観音崎に位置する神奈川県立の都市公園（風致公園）。神奈川県下最大の公園である。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E8%A6%B3%E9%9F%B3%E5%B4%8E%E5%85%AC%E5%9C%92",
+      "text": "Kannonzaki Park (Japanese: 観音崎公園) is a prefectural-level combined scenic-city park, located at Cape Kannon (Kannonzaki), the northeastern tip of the Miura Peninsula, Yokosuka City, Kanagawa, Japan. It is a park that makes the most of the rich nature, such as the laurel forest and the coastal rocky shore of the area.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Kannonzaki_Park",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -15944,11 +17801,11 @@
     "featured": false,
     "score": 77.53,
     "summary": {
-      "text": "宮ヶ瀬ダム（みやがせダム）は、日本の神奈川県に位置する、一級水系 相模川水系中津川に建設されたダム。愛甲郡愛川町半原、相模原市緑区青山、愛甲郡清川村宮ヶ瀬という、神奈川県の3市町村に跨る地域に所在する。形成されたダム湖は宮ヶ瀬湖という。2000年（平成12年）竣工の重力式コンクリートダムで、治水を主とする特定多目的ダム。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%AE%AE%E3%83%B6%E7%80%AC%E3%83%80%E3%83%A0",
+      "text": "The Miyagase Dam (宮ヶ瀬ダム, Miyagase damu) is a dam on the Nakatsu River, a main tributary of the Sagami River in Aikō District, Kanagawa Prefecture, Japan. It straddles the border between the village of Kiyokawa, town of Aikawa and the former town of Tsukui (now part of the city of Sagamihara).",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Miyagase_Dam",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -16242,11 +18099,11 @@
     "featured": false,
     "score": 75.52,
     "summary": {
-      "text": "金時山（きんときやま・きんときさん）は、箱根山の北西部に位置する標高1,212mの山。別名は猪鼻岳で頂上に猪鼻神社が祀られている（古くは猪鼻嶽や猪鼻ヶ嶽と称された）。日本三百名山のひとつ。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E9%87%91%E6%99%82%E5%B1%B1",
+      "text": "Mount Ashigara (足柄山), also known as Mount Kintoki (金時山), is the northernmost peak of the Hakone caldera, on the border of Kanagawa and Shizuoka prefectures, in the Fuji-Hakone-Izu National Park in Japan. Ashigara is not a remnant of the collapse of the old Hakone volcano itself, but rather a parasitic cone growing from its flank.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Mount_Ashigara",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -16550,11 +18407,11 @@
     "featured": false,
     "score": 71.52,
     "summary": {
-      "text": "宮ヶ瀬湖（みやがせこ）は、神奈川県北西部の東丹沢にある宮ヶ瀬ダム建設によってできたダム湖である。神奈川県愛甲郡愛川町、同郡清川村、相模原市緑区の3市町村にまたがる。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%AE%AE%E3%83%B6%E7%80%AC%E6%B9%96",
+      "text": "Lake Miyagase (宮ヶ瀬湖) is a lake within the Aiko District of Kanagawa, Japan, located between Sagamihara and Atsugi. The lake offers views of Tanzawa Mountains, including Mount Hiru. The lake is a man-made reservoir and formed by the Miyagase Dam, and is a source of drinking water for Yokohama and Tokyo.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Lake_Miyagase",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -16601,11 +18458,11 @@
     "featured": false,
     "score": 70.39,
     "summary": {
-      "text": "横浜アンパンマンこどもミュージアム（よこはまアンパンマンこどもミュージアム）は、神奈川県横浜市西区のみなとみらい地区（61街区）に所在する、『アンパンマン』をテーマとした参加型ミュージアムとショッピングモールの複合施設である。事業主体は日本テレビ音楽株式会社、運営主体は株式会社ACM。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%A8%AA%E6%B5%9C%E3%82%A2%E3%83%B3%E3%83%91%E3%83%B3%E3%83%9E%E3%83%B3%E3%81%93%E3%81%A9%E3%82%82%E3%83%9F%E3%83%A5%E3%83%BC%E3%82%B8%E3%82%A2%E3%83%A0",
+      "text": "Yokohama Anpanman Children's Museum (横浜アンパンマンこどもミュージアム, Yokohama Anpanman Kodomo Myūjiamu) is a complex in Minato Mirai 21, Yokohama, Kanagawa Prefecture, Japan. It is a complex facility combining a participatory museum and shopping mall themed around 'Anpanman'. Dedicated to Takashi Yanase's popular Anpanman franchise. It is one of five such complexes in Japan (the others being in Kobe, Sendai, Nagoya and Fukuoka).",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Yokohama_Anpanman_Children%27s_Museum_%26_Mall",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -16742,11 +18599,11 @@
     "featured": false,
     "score": 64.56,
     "summary": {
-      "text": "甘縄神明神社（あまなわしんめいじんじゃ）は、神奈川県鎌倉市長谷に所在する神社。旧社格は村社。鎌倉市最古の神社とされている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E7%94%98%E7%B8%84%E7%A5%9E%E6%98%8E%E7%A5%9E%E7%A4%BE",
+      "text": "Amanawa Shinmei Shrine (甘縄神明神社, Amanawa Shinmei Jinja) was founded in 710 and is the oldest Shinto shrine in Kamakura. It is dedicated to the sun goddess Amaterasu. According to the ancient document History of Amanawa-ji Shinmei-gū kept by the shrine, the founder of the shrine is famous priest Gyōki; a powerful and rich man named Tokitada Someya supported the construction.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Amanawa_Shinmei_Shrine",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -16803,7 +18660,7 @@
       "ja": "安国論寺",
       "kana": "あんこくろんじ",
       "romaji": "Ankokuronji",
-      "zh_tw": "安国論寺",
+      "zh_tw": "安國論寺",
       "en": "Ankokuron-ji Temple"
     },
     "kana_source": "wikidata",
@@ -16821,11 +18678,11 @@
     "featured": false,
     "score": 63.54,
     "summary": {
-      "text": "安国論寺（あんこくろんじ）は、神奈川県鎌倉市大町（名越）にある日蓮宗の寺院。山号は妙法華經山。旧本山は比企谷妙本寺。池上・土富店法縁。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%AE%89%E5%9B%BD%E8%AB%96%E5%AF%BA",
+      "text": "Myōhōkekyōzan Ankokuron-ji (妙法華経山安国論寺) is a Buddhist temple of the Nichiren sect in Kamakura, Kanagawa, Japan. It is one of a group of three built near the site in Matsubagayatsu (Valley of Pine Needles (松葉ヶ谷) where Nichiren, founder of the Buddhist sect that bears his name, is supposed to have had his hut.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Ankokuron-ji",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -16870,7 +18727,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q28656762",
@@ -16935,6 +18792,82 @@
     ],
     "status": "published",
     "updated_at": "2026-09-28"
+  },
+  {
+    "id": "wd-Q28685470",
+    "name": {
+      "ja": "エリスマン邸",
+      "kana": "えりすまんてい",
+      "romaji": "Erisumantei",
+      "zh_tw": "埃里斯曼邸",
+      "en": "Ehrismann Residence"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 35.437556,
+      "lng": 139.65125
+    },
+    "prefecture": "kanagawa",
+    "kind": "major",
+    "themes": [],
+    "tags": [],
+    "featured": false,
+    "score": 62.73,
+    "summary": {
+      "text": "Ehrismann Residence (Japanese: エリスマン邸) is a western-style residence built for Fritz Ehrismann, a 20th-century Swiss merchant, located at Motomachi, Naka-ku, Yokohama.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Ehrismann_Residence",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "元町・中華街",
+          "kana": "もとまちちゅうかがい",
+          "romaji": "Motomachi chūkagai",
+          "en": "Motomachi-chukagai"
+        },
+        "distance_m": 510
+      },
+      {
+        "name": {
+          "ja": "石川町",
+          "kana": "いしかわちょう",
+          "romaji": "Ishikawachō",
+          "en": "Ishikawacho"
+        },
+        "distance_m": 790
+      }
+    ],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ed/Ehrisman_house.jpg/960px-Ehrisman_house.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Kakidai",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Ehrisman_house.jpg"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q28685470",
+      "osm": "way/205727799"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q28685470",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.openstreetmap.org/way/205727799",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E3%82%A8%E3%83%AA%E3%82%B9%E3%83%9E%E3%83%B3%E9%82%B8",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q2888684",
@@ -17032,11 +18965,11 @@
     "featured": false,
     "score": 74.09,
     "summary": {
-      "text": "小机城（こづくえじょう）は、現在の神奈川県横浜市港北区小机町付近に相当する武蔵国橘樹郡小机郷にあった日本の城（平山城）。史跡指定等はされていないが、「小机城址」として神奈川県の特別緑地保全地区に指定されている（2006年5月15日指定）。周辺は市民の森として城の遺構が整備されている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%B0%8F%E6%9C%BA%E5%9F%8E",
+      "text": "Kozukue Castle (小机城, Kozukue-jō) is the name for the earthly remains of a castle structure in Kozukue, Kōho-ku ward of Yokohama, Kanagawa Prefecture, Japan.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Kozukue_Castle",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -17179,11 +19112,11 @@
     "featured": false,
     "score": 63.99,
     "summary": {
-      "text": "長勝寺（ちょうしょうじ）は、神奈川県鎌倉市にある日蓮宗の寺院。山号は石井山（せきせいざん）。本尊は大曼荼羅。大本山本圀寺（六条門流）の旧末寺。小西法縁。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E9%95%B7%E5%8B%9D%E5%AF%BA_%28%E9%8E%8C%E5%80%89%E5%B8%82%29",
+      "text": "Ishiizan Chōshō-ji (石井山長勝寺) is a Buddhist temple of the Nichiren Shū  in Kamakura, Kanagawa, Japan. It's one of a group of three built near the site in Matsubagayatsu (Valley of Pine Needles (松葉ヶ谷)) where Nichiren, founder of the Buddhist sect that bears his name, is supposed to have had his hut. The first part of its name is derived from the founder's last name (Ishii), the second is an alternative reading of the characters for Nagakatsu, the founder's first name.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Ch%C5%8Dsh%C5%8D-ji",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -17472,11 +19405,11 @@
     "featured": false,
     "score": 64.99,
     "summary": {
-      "text": "妙法寺（みょうほうじ）は、神奈川県鎌倉市大町（名越）にある日蓮宗の寺院。山号は楞厳山。旧本山は大本山本圀寺（六条門流）。苔に覆われた石段があることから「苔寺」ともよばれている。通師・堀ノ内法縁。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%A6%99%E6%B3%95%E5%AF%BA_%28%E9%8E%8C%E5%80%89%E5%B8%82%E5%A4%A7%E7%94%BA%29",
+      "text": "Ryōgonzan Renge-in Myōhō-ji (楞厳山蓮華院妙法寺) is a Buddhist temple of the Nichiren sect in Kamakura, Kanagawa, Japan. It is one of a group of three built near the site in Matsubagayatsu, or the Valley of Pine Needles (松葉ヶ谷), where Nichiren, founder of the Buddhist sect that bears his name, is supposed to have had his hut. The temple has also close ties with Prince Morinaga and the Imperial House.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/My%C5%8Dh%C5%8D-ji",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -17618,11 +19551,11 @@
     "featured": false,
     "score": 67.66,
     "summary": {
-      "text": "早川（はやかわ）は、神奈川県足柄下郡箱根町および小田原市を流れる河川。二級水系早川の本流。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%97%A9%E5%B7%9D_%28%E7%A5%9E%E5%A5%88%E5%B7%9D%E7%9C%8C%29",
+      "text": "The Haya River (Japanese: 早川 = Hayakawa, literally a fast-flowing river) is a river that flows in Hakone and Odawara, Kanagawa, Japan. It is a 26 kilometres (16 mi) long river, starting from the Kojiri Water Gate (湖尻水門) at the northern tip of Lake Ashi, gathering rain and hot spring water as it flows in the Sengoku, the Mount Hakone caldera, running down beside the towns of Hakone Hot Springs, and emptying near Odawara Fishing Port (35°14′23.38″N 139°8′50.86″E) into Sagami Bay of the Pacific Ocean.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Haya_River_%28Kanagawa%29",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -17687,11 +19620,11 @@
     "featured": false,
     "score": 72.83,
     "summary": {
-      "text": "丹沢湖（たんざわこ）は、1978年（昭和53年）に酒匂川水系の河内川に造られた三保ダムによって誕生した人造湖である。神奈川県足柄上郡山北町にあり、西丹沢の玄倉川（くろくらがわ）、世附川（よづくがわ）、中川川（なかがわがわ）の3つの支流からの水が流れ込む湖である。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E4%B8%B9%E6%B2%A2%E6%B9%96",
+      "text": "Lake Tanzawa (丹沢湖, Tanzawa-ko), is a lake located to the east of Mt. Fuji in Yamakita town, Ashigarakami district, in the Kanagawa Prefecture of Japan.  The lake and its surroundings are frequently visited during fall to admire autumn colors.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Lake_Tanzawa",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -17740,11 +19673,11 @@
     "featured": false,
     "score": 72.55,
     "summary": {
-      "text": "大船観音寺（おおふなかんのんじ）は、神奈川県鎌倉市岡本一丁目にある曹洞宗の寺。大船観音と通称される全長約25メートルの巨大白衣観音像で知られる。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E8%88%B9%E8%A6%B3%E9%9F%B3%E5%AF%BA",
+      "text": "Ōfuna Kannon Temple (大船観音寺, Ōfuna Kannonji) is a Buddhist temple in Kamakura, Kanagawa Prefecture, Japan. The statue stands at 25 meters/82 feet tall and weighs nearly 2,000 tons. It depicts the East Asian bodhisattva (a being that foregoes their nirvana in order to stay on Earth and help people) known as Guanyin or Kannon. Specifically, the Byakue (White-robed) Kannon, one of 33 forms of the Buddhist deity, said to prevent natural disasters, cure the sick, and assist women in childbirth.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/%C5%8Cfuna_Kannon",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -17796,7 +19729,7 @@
       "ja": "箱根駒ヶ岳",
       "kana": "はこねこまがたけ",
       "romaji": "Hakonekomagatake",
-      "zh_tw": "箱根駒岳",
+      "zh_tw": "箱根駒嶽",
       "en": "Mount Koma"
     },
     "kana_source": "wikipedia",
@@ -17811,11 +19744,11 @@
     "featured": false,
     "score": 64.75,
     "summary": {
-      "text": "箱根駒ヶ岳（はこねこまがたけ）は、神奈川県足柄下郡箱根町にある標高1,356メートルの山。箱根山（箱根火山）の中央火口丘を構成している一峰である。単に駒ヶ岳とも表記される。頂上は草地で見晴らしがよく、芦ノ湖に面する箱根園から箱根 駒ヶ岳ロープウェーで頂上部まで登ることができる。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E7%AE%B1%E6%A0%B9%E9%A7%92%E3%83%B6%E5%B2%B3",
+      "text": "Mount Koma or Hakone Komagatake (Japanese: 箱根駒ヶ岳), with the altitude of 1,356 meters, is one of the peaks of the central cone of Mount Hakone, located in Hakone, Kanagawa Prefecture. Its summit, a grass field that offers a great view of its surroundings, is visited by many hikers, using the 1,800-meter-long Hakone Komagatake Ropeway from 　the Hakone Resort Complex on Lake Ashi.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Mount_Koma_%28Hakone%29",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -17839,7 +19772,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q3146362",
@@ -17865,11 +19798,11 @@
     "featured": false,
     "score": 68.5,
     "summary": {
-      "text": "宝戒寺（ほうかいじ）は、神奈川県鎌倉市小町にある天台宗の寺院。山号は金龍山。詳名を金龍山釈満院 円頓宝戒寺と称し、本尊は地蔵菩薩。萩（ハギ）の名所として知られ、「萩の寺」とも呼ばれる。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%AE%9D%E6%88%92%E5%AF%BA",
+      "text": "Kinryūzan Shakuman-in Endon Hōkai-ji (金龍山釈満院円頓宝戒寺) is a Buddhist temple in Kamakura, Kanagawa Prefecture, Japan. Often called Hagidera (萩寺), or \"bush-clover temple\", because those flowers are numerous in its garden, its existence is directly linked to a famous tragedy that on July 4, 1333 wiped out almost the entire Hōjō clan, ruler of Japan for 135 years.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/H%C5%8Dkai-ji",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -18243,6 +20176,79 @@
     "updated_at": "2026-09-28"
   },
   {
+    "id": "wd-Q3482769",
+    "name": {
+      "ja": "勝福寺 (小田原市)",
+      "kana": "しょうふくじ",
+      "romaji": "Shofukuji",
+      "zh_tw": "勝福寺",
+      "en": "Shōfuku-ji Temple"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 35.280028,
+      "lng": 139.164333
+    },
+    "prefecture": "kanagawa",
+    "kind": "major",
+    "themes": [],
+    "tags": [],
+    "featured": false,
+    "score": 62.68,
+    "summary": {
+      "text": "Shōfuku-ji (勝福寺) is a Buddhist temple located in the Iizumi neighborhood of the city of Odawara, Kanagawa Prefecture, Japan. It belongs to the Shingon-shū Tōji-ha school of Japanese Buddhism and its honzon is a statue of Jūichimen Kannon Bosatsu.  The temple's full name is Iizumi-san Shōfuku-ji (飯泉山 勝福寺).The temple is the 5th stop on the Bandō Sanjūsankasho pilgrimage route.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Sh%C5%8Dfuku-ji_%28Odawara%29",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "五百羅漢",
+          "romaji": "Gohyakurakan",
+          "en": "Gohyakurakan"
+        },
+        "distance_m": 950
+      },
+      {
+        "name": {
+          "ja": "螢田",
+          "en": "Hotaruda"
+        },
+        "distance_m": 1240
+      }
+    ],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c0/Odawara_Shofuku-ji_01.jpg/960px-Odawara_Shofuku-ji_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "tak1701d",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Odawara_Shofuku-ji_01.jpg"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q3482769",
+      "osm": "way/323743857"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q3482769",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.openstreetmap.org/way/323743857",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E5%8B%9D%E7%A6%8F%E5%AF%BA_%28%E5%B0%8F%E7%94%B0%E5%8E%9F%E5%B8%82%29",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
+  },
+  {
     "id": "wd-Q3503094",
     "name": {
       "ja": "杉本寺",
@@ -18266,11 +20272,11 @@
     "featured": false,
     "score": 69.17,
     "summary": {
-      "text": "杉本寺（すぎもとでら）は、神奈川県鎌倉市二階堂にある天台宗の寺院。山号は大蔵山。本尊は十一面観世音菩薩で、坂東三十三観音・鎌倉三十三箇所の第1番札所である。鎌倉最古の寺とされ、参道途中に苔むした石段があることでも知られている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%9D%89%E6%9C%AC%E5%AF%BA",
+      "text": "Sugimoto-dera (杉本寺) is a Buddhist temple located in the city of Kamakura, Kanagawa Prefecture, Japan. The temple's full name is Taizō-zan Kannon-in Sugimoto-dera (大蔵山観音院杉本寺). It is one of the oldest temples in Kamakura and, together with Hōkai-ji, the only one of the Tendai denomination. The temple is Number one of the Bandō Sanjūsankasho pilgrimage circuit. Two of the three statues of Jūichimen Kannon Bosatsu it enshrines are Important Cultural Properties.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Sugimoto-dera",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -18398,11 +20404,11 @@
     "featured": false,
     "score": 74.77,
     "summary": {
-      "text": "東勝寺（とうしょうじ）は、かつて神奈川県鎌倉市葛西ケ谷にあった寺院で、鎌倉幕府の執権として活躍した北条氏の菩提寺のひとつ。関東十刹の一つであった。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%9D%B1%E5%8B%9D%E5%AF%BA_%28%E9%8E%8C%E5%80%89%E5%B8%82%29",
+      "text": "Tōshō-ji (東勝寺) was the Hōjō clan's family temple (bodaiji) in Kamakura during the Kamakura period. Its founder was Taikō Gyōyū and it was constructed in 1237 by Hōjō Yasutoki in memory of his mother, who had her tomb there. According to the Taiheiki, from its foundation until the end of the Kamakura shogunate every regent (shikken) was buried there. The temple no longer exists, since it was set on fire by the Hōjō themselves when the entire family committed suicide after Nitta Yoshisada's invasion of Kamakura on July 4, 1333.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/T%C5%8Dsh%C5%8D-ji",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -18472,11 +20478,11 @@
     "featured": false,
     "score": 73.44,
     "summary": {
-      "text": "よこはま動物園ズーラシア（よこはまどうぶつえん ズーラシア）は、神奈川県横浜市旭区にある動物園である。正式名称は「横浜市立よこはま動物園」。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E3%82%88%E3%81%93%E3%81%AF%E3%81%BE%E5%8B%95%E7%89%A9%E5%9C%92%E3%82%BA%E3%83%BC%E3%83%A9%E3%82%B7%E3%82%A2",
+      "text": "Asahi-ku (旭) is one of the 18 wards of the city of Yokohama in Kanagawa Prefecture, Japan. As of 2010, the ward has an estimated population of 249,045 and a population density of 7,600 persons per km2. The total area is 32.77  km2.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Yokohama_Zoo",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -18513,7 +20519,7 @@
       "ja": "丹沢山",
       "kana": "たんざわさんたんざわやま",
       "romaji": "Tanzawasantanzawayama",
-      "zh_tw": "丹泽山",
+      "zh_tw": "丹澤山",
       "en": "Mount Tanzawa"
     },
     "kana_source": "wikipedia",
@@ -18528,11 +20534,11 @@
     "featured": false,
     "score": 73.29,
     "summary": {
-      "text": "丹沢山（たんざわさん・たんざわやま）は、神奈川県相模原市緑区・愛甲郡清川村・足柄上郡山北町の境界に位置する標高1,567 mの山である。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E4%B8%B9%E6%B2%A2%E5%B1%B1",
+      "text": "Mount Tanzawa (丹沢山, Tanzawa-san, -yama) is a mountain of the Tanzawa Mountains, with an elevation of 1,567.1 metres (5,141 ft). Its summit marks the border between Sagamihara,  Kiyokawa  in Aikō District, and Yamakita in Ashigarakami District.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Mount_Tanzawa",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -18556,7 +20562,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q38154",
@@ -18579,11 +20585,11 @@
     "featured": false,
     "score": 65.79,
     "summary": {
-      "text": "洒水の滝（しゃすいのたき）は、神奈川県足柄上郡山北町にある二級河川酒匂川水系滝沢川にある滝で、滝沢川とともに洒水の滝・滝沢川として1985年（昭和60年）名水百選に選ばれるとともに、洒水の滝は日本の滝百選・「かながわの景勝50選」・「かながわ未来遺産100」にも選定されている。「洒水」は身を清める水を意味する密教の語。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%B4%92%E6%B0%B4%E3%81%AE%E6%BB%9D",
+      "text": "Shasui Falls (洒水の滝, Shasui-no-taki) is a waterfall on the Tanzawa River in Yamakita, Ashigarakami District, Kanagawa Prefecture, Japan.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Shasui_Falls",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -18873,11 +20879,11 @@
     "featured": false,
     "score": 67.1,
     "summary": {
-      "text": "元箱根石仏群（もとはこねせきぶつぐん）は、神奈川県足柄下郡箱根町元箱根にある磨崖仏群。国の史跡および重要文化財に指定されている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%85%83%E7%AE%B1%E6%A0%B9%E7%9F%B3%E4%BB%8F%E7%BE%A4",
+      "text": "The Moto-Hakone Stone Buddhas (元箱根石仏群, Moto-Hakone sekibutsu) is a grouping of stone sculptures and associated tō (stone pagodas), dating from the late Kamakura period and located in the former village of Moto-Hakone, now merged into the town of Hakone in Kanagawa Prefecture, Japan. The group has been designated an National Historic Site and includes a number of Important Cultural Properties.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Moto-Hakone_Stone_Buddhas",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -18927,11 +20933,11 @@
     "featured": false,
     "score": 70.63,
     "summary": {
-      "text": "佐助稲荷神社（さすけいなりじんじゃ）は、神奈川県鎌倉市佐助にある神社。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E4%BD%90%E5%8A%A9%E7%A8%B2%E8%8D%B7%E7%A5%9E%E7%A4%BE",
+      "text": "Sasuke Inari Shrine (佐助稲荷神社, Sasuke Inari Jinja) is a Shinto shrine in Kamakura and the site of the Hidden Village of Kamakura. It is located very near the Zeniarai Benzaiten Ugafuku Shrine.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Sasuke_Inari_Shrine",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -18999,11 +21005,11 @@
     "featured": false,
     "score": 69.34,
     "summary": {
-      "text": "油壺（あぶらつぼ）は、神奈川県三浦半島に存在する湾（油壺湾）とその付近（三浦市三崎町小網代の一部）を指す地名。観光地や別荘地、日本水準原点の標高を検定する国土地理院の油壺験潮場があることで有名。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%B2%B9%E5%A3%BA",
+      "text": "Aburatsubo (油壺) is an inlet on the west side of the Miura Peninsula in Kanagawa, Japan, facing Sagami Bay on the Pacific Ocean. It exits into neighbouring Moroiso inlet.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Aburatsubo",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -19233,7 +21239,7 @@
       "ja": "鎌倉文学館",
       "kana": "かまくらぶんがくかん",
       "romaji": "Kamakurabungakukan",
-      "zh_tw": "镰仓文学馆",
+      "zh_tw": "鎌倉文學館",
       "en": "Kamakura Museum of Literature"
     },
     "kana_source": "wikipedia",
@@ -19303,7 +21309,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q5353635",
@@ -19326,11 +21332,11 @@
     "featured": false,
     "score": 64.28,
     "summary": {
-      "text": "中川の箒スギ（なかがわのほうきスギ）は、神奈川県足柄上郡山北町の中川地区に生育しているスギの巨木である。推定の樹齢は2000年以上といわれ、1934年（昭和9年）3月26日に国の天然記念物に指定された（指定名称は箒スギ）。関東地方では、千葉県鴨川市の「清澄の大スギ」（国の天然記念物）と並ぶスギの巨木といわれる。この名木は、大火と土砂崩れという2度の災害から付近の住民を守った経緯があり、地元の人々から崇敬の念を集めている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E4%B8%AD%E5%B7%9D%E3%81%AE%E7%AE%92%E3%82%B9%E3%82%AE",
+      "text": "Houkisugi or Hōkisugi at Nakagawa (箒スギ) is a 2000-year-old Japanese cedar (Cryptomeria) at Nakagawa Settlement, Yamakita town, Ashigarakami District, Kanagawa Prefecture, Japan.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Houkisugi_at_Nakagawa",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -19377,11 +21383,11 @@
     "featured": false,
     "score": 66.38,
     "summary": {
-      "text": "TOY MUSEUM（トイ ミュージアム）は、神奈川県横浜市西区みなとみらいのPLOT48内にある玩具博物館。「ブリキのおもちゃ博物館」（ブリキのおもちゃはくぶつかん）として中区山手町に所在したが、2025年（令和7年）8月に閉館し、同年10月17日に名称を「TOY MUSEUM」に改め移転・再開館した。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/TOY_MUSEUM",
+      "text": "Museum of Tin Toys (ブリキのおもちゃ博物館, Buriki no Omocha Hakubutsukan) is a museum in Yokohama, Kanagawa Prefecture, Japan. It was founded by Teruhisa Kitahara, a prominent tin toy collector, in 1986. In addition to the museum's permanent exhibition in Yokohama, Japan, it also has created a changing collection in Haneda Airport in Tokyo.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Museum_of_Tin_Toys",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -19662,7 +21668,7 @@
       "ja": "鶴見つばさ橋",
       "kana": "つるみつばさばし",
       "romaji": "Tsurumitsubasabashi",
-      "zh_tw": "鹤见翼桥",
+      "zh_tw": "鶴見翼橋",
       "en": "Tsurumi Tsubasa Bridge"
     },
     "kana_source": "wikipedia",
@@ -19707,7 +21713,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q5372158",
@@ -19786,6 +21792,70 @@
     ],
     "status": "published",
     "updated_at": "2026-09-28"
+  },
+  {
+    "id": "wd-Q5517009",
+    "name": {
+      "ja": "横浜ゲーテ座",
+      "kana": "よこはまげーてざ",
+      "romaji": "Yokohamageteza",
+      "zh_tw": "歡樂劇院",
+      "en": "Gaiety Theatre, Yokohama"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 35.439694,
+      "lng": 139.651722
+    },
+    "prefecture": "kanagawa",
+    "kind": "major",
+    "themes": [],
+    "tags": [],
+    "featured": false,
+    "score": 62.37,
+    "summary": {
+      "text": "The Gaiety Theatre (ゲーテ座) was a public hall in Naka-ku, Yokohama, Japan. It was built in 1866 by Dutch merchant MJB Noordhoek Hegt behind his office at Settlement plot 68. An amateur dramatic club was organized and performed at the public hall. Hegt rented the hall at a very reasonable price for the dramatic club's performances but it soon proved to be too small and was also being used for many other activities so, in 1870, another small theater was built on Honmachi Street and became the original Gaiety Theatre.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Gaiety_Theatre%2C_Yokohama",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "元町・中華街",
+          "kana": "もとまちちゅうかがい",
+          "romaji": "Motomachi chūkagai",
+          "en": "Motomachi-chukagai"
+        },
+        "distance_m": 280
+      },
+      {
+        "name": {
+          "ja": "石川町",
+          "kana": "いしかわちょう",
+          "romaji": "Ishikawachō",
+          "en": "Ishikawacho"
+        },
+        "distance_m": 810
+      }
+    ],
+    "images": [],
+    "external_ids": {
+      "wikidata": "Q5517009"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q5517009",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E6%A8%AA%E6%B5%9C%E3%82%B2%E3%83%BC%E3%83%86%E5%BA%A7",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q55521278",
@@ -20013,11 +22083,11 @@
     "featured": false,
     "score": 64.0,
     "summary": {
-      "text": "箱根町立箱根湿生花園（はこねちょうりつ はこねしっせいかえん）は、神奈川県足柄下郡箱根町仙石原にある植物園。売店や喫茶のほか、展示室といった施設も付帯した日本で初めての湿生植物園。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E7%AE%B1%E6%A0%B9%E7%94%BA%E7%AB%8B%E7%AE%B1%E6%A0%B9%E6%B9%BF%E7%94%9F%E8%8A%B1%E5%9C%92",
+      "text": "The Hakone Botanical Garden of Wetlands (箱根湿生花園, Hakone Shisseikaen) is a botanical garden located within the Fuji-Hakone-Izu National Park at 817 Sengokuhara, Hakone, Kanagawa, Japan. It is open daily in the warmer months; an admission fee is charged.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Hakone_Botanical_Garden_of_Wetlands",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -20072,11 +22142,11 @@
     "featured": false,
     "score": 69.98,
     "summary": {
-      "text": "原鉄道模型博物館（はらてつどうもけいはくぶつかん、英語: Hara Model Railway Museum）は、神奈川県横浜市西区の横浜三井ビルディング2階（テツモポート内）に所在する、三井不動産が運営する鉄道模型等を展示する博物館である。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%8E%9F%E9%89%84%E9%81%93%E6%A8%A1%E5%9E%8B%E5%8D%9A%E7%89%A9%E9%A4%A8",
+      "text": "The Hara Model Railway Museum (原鉄道模型博物館, Hara Tetsudō Mokei Hakubutsukan) is a model railway museum in Nishi-ku, Yokohama, Japan, which opened on 10 July 2012. Managed by Mitsui Fudosan, the museum houses the extensive collection of model trains built and amassed by the Japanese model railway enthusiast Nobutaro Hara (原 信太郎, Hara Nobutarō). The museum covers an area of approximately 1,700 m², with the display area covering an area of approximately 1,200 m².",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Hara_Model_Railway_Museum",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -20133,7 +22203,7 @@
       "ja": "聘珍樓",
       "kana": "へいちんろう",
       "romaji": "Heichinro",
-      "zh_tw": "聘珍楼",
+      "zh_tw": "聘珍樓",
       "en": "Heichinrou"
     },
     "kana_source": "wikipedia",
@@ -20196,7 +22266,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q587108",
@@ -20287,11 +22357,11 @@
     "featured": false,
     "score": 63.15,
     "summary": {
-      "text": "神奈川県立大船フラワーセンター（かながわけんりつおおふなフラワーセンター）、愛称「日比谷花壇大船フラワーセンター」（ひびやかだんおおふなふらわーせんたー）は、神奈川県鎌倉市岡本にある総面積63,900平方メートルの植物園。1967年（昭和42年）に神奈川県農業試験場の跡地に開設された。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E7%A5%9E%E5%A5%88%E5%B7%9D%E7%9C%8C%E7%AB%8B%E5%A4%A7%E8%88%B9%E3%83%95%E3%83%A9%E3%83%AF%E3%83%BC%E3%82%BB%E3%83%B3%E3%82%BF%E3%83%BC",
+      "text": "The Kanagawa Prefectural Ofuna Botanical Garden (神奈川県立フラワーセンター 大船植物園, Kanagawa Kenritsu Furawāsentā Ōfuna Shokubutsuen) is a botanical garden located at 1018 Okamoto, Kamakura, Kanagawa, Japan. It is open daily except Mondays; an admission fee is charged.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Kanagawa_Prefectural_Ofuna_Botanical_Garden",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -20354,11 +22424,11 @@
     "featured": false,
     "score": 75.55,
     "summary": {
-      "text": "伊勢佐木町（いせざきちょう）は、神奈川県横浜市中区の町名。現行行政地名は伊勢佐木町1丁目 - 7丁目（字丁目）からなり、伊勢佐木町通りに沿って北東 - 南西方向に約1.4キロメートル続く。住居表示未実施区域。北東端から地上は、吉田橋を抜けると馬車道につながり、一方、地下にはマリナード地下街があり、馬車道や関内駅につながっている。風俗街の曙町とも隣接している。また、南西端は南区に接する。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E4%BC%8A%E5%8B%A2%E4%BD%90%E6%9C%A8%E7%94%BA",
+      "text": "Isezakichō (伊勢佐木町) is a district of Naka Ward in Yokohama, Japan, consisting mainly of the Isezakichō Shopping Street (伊勢佐木町商店街, Isezakichō shōtengai).  The shopping street is 1.2 km (0.75 mi) long, running from Isezakicho 1-chōme (-１丁目, -icchōme) in the northeast, to Isezakicho 7-chōme (-７丁目, -nanachōme) in the southwest, approximately parallel to the course of the Ōoka River.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Isezakich%C5%8D",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -20425,11 +22495,11 @@
     "featured": false,
     "score": 79.52,
     "summary": {
-      "text": "ぴあアリーナMM（ぴあアリーナエムエム）は、神奈川県横浜市西区のみなとみらい地区 （38街区）にある音楽アリーナ。恒久施設ではなく30年間の定期借地となっており、ぴあ株式会社が土地を借り受け運営を行っている。最大収容人数は12141人。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E3%81%B4%E3%81%82%E3%82%A2%E3%83%AA%E3%83%BC%E3%83%8AMM",
+      "text": "Pia Arena MM (ぴあアリーナMM) is a dedicated music arena in Minatomirai, Nishi-ku, Yokohama, Kanagawa Prefecture, Japan, operated by Pia Corporation. It has a capacity of 12,141 people.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Pia_Arena_MM",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -20474,6 +22544,77 @@
     ],
     "status": "published",
     "updated_at": "2026-09-28"
+  },
+  {
+    "id": "wd-Q60989050",
+    "name": {
+      "ja": "勝烈庵",
+      "kana": "かつれつあん",
+      "romaji": "Katsuretsu An",
+      "zh_tw": "勝烈庵",
+      "en": "Katsuretsu-an"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 35.447167,
+      "lng": 139.634889
+    },
+    "prefecture": "kanagawa",
+    "kind": "major",
+    "themes": [],
+    "tags": [],
+    "featured": false,
+    "score": 62.14,
+    "summary": {
+      "text": "勝烈庵（かつれつあん）は、神奈川県横浜市中区にある株式会社勝烈庵が運営する洋食店。後述のように複数店舗展開もしている。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E5%8B%9D%E7%83%88%E5%BA%B5",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "関内",
+          "kana": "かんない",
+          "romaji": "Kannai",
+          "en": "Kannai"
+        },
+        "distance_m": 260
+      },
+      {
+        "name": {
+          "ja": "馬車道",
+          "kana": "ばしゃみち",
+          "romaji": "Bashamichi",
+          "en": "Bashamichi"
+        },
+        "distance_m": 360
+      }
+    ],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/89/Katsuretsu-an.jpg/960px-Katsuretsu-an.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "妖精書士",
+        "license": "CC0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Katsuretsu-an.jpg"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q60989050"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q60989050",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E5%8B%9D%E7%83%88%E5%BA%B5",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q60990150",
@@ -20683,11 +22824,11 @@
     "featured": false,
     "score": 74.58,
     "summary": {
-      "text": "安養院（あんよういん）は、神奈川県鎌倉市大町にある浄土宗の寺院。山号は祇園山。寺号は長楽寺。本尊は阿弥陀如来。千手観世音菩薩（田代観音）を安置し、坂東三十三観音・鎌倉三十三観音霊場第3番札所である。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%AE%89%E9%A4%8A%E9%99%A2_%28%E9%8E%8C%E5%80%89%E5%B8%82%29",
+      "text": "An’yō-in (安養院) is a Buddhist temple located in the Ōmachi neighborhood of the city of Kamakura, Kanagawa Prefecture, Japan. The temple's full name is Gionzan An'yō-in Chōraku-ji (祇園山安養院長楽寺). It belongs to the  Jōdo shū  sect and its honzon is a statue of Amida Nyorai; however, the temple is more famous for enshrining an image of Senjū Kannon Bosatsu ( Sahasrabhūja), which makes it the 4th stop on the Bandō Sanjūsankasho pilgrimage route. It is also called the \"Tashirō Kannon\".",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/An%27y%C5%8D-in_%28Kamakura%29",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -20739,6 +22880,53 @@
     "updated_at": "2026-09-28"
   },
   {
+    "id": "wd-Q6322184",
+    "name": {
+      "ja": "城ヶ島灯台",
+      "kana": "じょうがしまとうだい",
+      "romaji": "Jogashimatodai",
+      "zh_tw": "城ヶ島灯台",
+      "en": "Jōgashima Lighthouse"
+    },
+    "kana_source": "wikidata",
+    "location": {
+      "lat": 35.135,
+      "lng": 139.611111
+    },
+    "prefecture": "kanagawa",
+    "kind": "major",
+    "themes": [],
+    "tags": [],
+    "featured": false,
+    "score": 62.53,
+    "summary": {
+      "text": "Jōgashima Lighthouse (城ヶ島灯台, Jōgashima tōdai) is a lighthouse located on the island of Jōgashima (Japanese: 城ヶ島) in the city of Miura, Kanagawa Prefecture, Japan, off the southernmost and western tip of Miura Peninsula, facing Sagami Bay. It is the fourth oldest western style lighthouse to be built in Japan, and the second oldest surviving to the present day.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/J%C5%8Dgashima_Lighthouse",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/da/Jogashima_Lighthouse_ac_%281%29.jpg/960px-Jogashima_Lighthouse_ac_%281%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Asturio Cantabrio",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Jogashima_Lighthouse_ac_(1).jpg"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q6322184"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q6322184",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
+  },
+  {
     "id": "wd-Q6364109",
     "name": {
       "ja": "観音埼灯台",
@@ -20759,11 +22947,11 @@
     "featured": false,
     "score": 69.08,
     "summary": {
-      "text": "観音埼灯台（かんのんさきとうだい）は、日本の灯台。日本最古の洋式灯台として神奈川県横須賀市、三浦半島東端の観音崎に立っている。白色八角形の中型灯台で、日本の灯台50選に選ばれている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E8%A6%B3%E9%9F%B3%E5%9F%BC%E7%81%AF%E5%8F%B0",
+      "text": "Kannonzaki Lighthouse (観音埼灯台) is a lighthouse on Cape Kannon, on Miura Peninsula, in Yokosuka, Kanagawa, Japan.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Kannonzaki_Lighthouse",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -20870,11 +23058,11 @@
     "featured": false,
     "score": 67.48,
     "summary": {
-      "text": "川崎競輪場（かわさきけいりんじょう）は、神奈川県川崎市川崎区にある競輪場。施設所有および主な主催は川崎市。競技実施はJKA東日本地区本部南関東支部。電話投票での競輪場コードは34#。2017年よりトータリゼータエンジニアリング（富士通の子会社）に包括委託して運営している。実況は東京電設工業で担当は特別競輪、記念競輪、FI開催は主に西山栄一、FII開催は主に佐藤聖、美甘伊織が担当している。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%B7%9D%E5%B4%8E%E7%AB%B6%E8%BC%AA%E5%A0%B4",
+      "text": "Kawasaki Velodrome (川崎競輪場, Kawasaki Keirinjyō) is a velodrome located in Kawasaki, Kanagawa that conducts pari-mutuel Keirin racing - one of Japan's four authorized \"Public Sports\" (公営競技, kōei kyōgi) where gambling is permitted. Its Keirin identification number for betting purposes is 34# (34 sharp).",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Kawasaki_Velodrome",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -21068,7 +23256,7 @@
       "ja": "蛭ヶ岳",
       "kana": "ひるがたけ",
       "romaji": "Hirugatake",
-      "zh_tw": "蛭岳",
+      "zh_tw": "蛭嶽",
       "en": "Mount Hiru"
     },
     "kana_source": "wikipedia",
@@ -21083,11 +23271,11 @@
     "featured": false,
     "score": 70.27,
     "summary": {
-      "text": "蛭ヶ岳（ひるがたけ）は丹沢山地中央部にある標高1,673 mの山。丹沢山地の最高峰であり神奈川県の最高峰でもある。神奈川県相模原市緑区と足柄上郡山北町の境界線上に位置し、丹沢大山国定公園に属す。別名、薬師岳や毘盧ヶ岳とも呼ばれる。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E8%9B%AD%E3%83%B6%E5%B2%B3",
+      "text": "Mount Hiru (蛭ヶ岳 Hiru-ga-take) is the tallest mountain of the Tanzawa Mountains with a height of 1,675 metres (5,495 ft).",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Mount_Hiru",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -21111,7 +23299,89 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
+  },
+  {
+    "id": "wd-Q65263822",
+    "name": {
+      "ja": "小町通り",
+      "kana": "こまちどおり",
+      "romaji": "Komachi-dōri",
+      "zh_tw": "小町通り",
+      "en": "Komachi Street"
+    },
+    "kana_source": "osm",
+    "location": {
+      "lat": 35.32153,
+      "lng": 139.55232
+    },
+    "prefecture": "kanagawa",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "街區"
+    ],
+    "featured": false,
+    "score": 62.74,
+    "summary": {
+      "text": "小町通り（こまちどおり）は神奈川県鎌倉市の通りの一つ。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E5%B0%8F%E7%94%BA%E9%80%9A%E3%82%8A",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "鎌倉",
+          "kana": "かまくら",
+          "romaji": "Kamakura",
+          "en": "Kamakura"
+        },
+        "distance_m": 310
+      },
+      {
+        "name": {
+          "ja": "和田塚",
+          "kana": "わだづか",
+          "romaji": "Wadazuka",
+          "en": "Wadazuka"
+        },
+        "distance_m": 1070
+      }
+    ],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8c/Komachi_Dori-Kamakura.jpg/960px-Komachi_Dori-Kamakura.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Urashimataro",
+        "license": "Public domain",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Komachi_Dori-Kamakura.jpg"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q65263822",
+      "osm": "way/460141218"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q65263822",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.openstreetmap.org/way/460141218",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.openstreetmap.org/way/718511002",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.openstreetmap.org/way/1154160042",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q672056",
@@ -21213,11 +23483,11 @@
     "featured": false,
     "score": 70.11,
     "summary": {
-      "text": "三笠公園（みかさこうえん）は、神奈川県横須賀市にある都市公園（歴史公園）である。横須賀新港に面しており、大日本帝国海軍の戦艦「三笠」が保存・公開されている",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E4%B8%89%E7%AC%A0%E5%85%AC%E5%9C%92",
+      "text": "Mikasa Park (三笠公園, Mikasa Kōen) is a park located in Yokosuka, Kanagawa, Japan.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Mikasa_Park",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -21442,6 +23712,52 @@
     "updated_at": "2026-09-28"
   },
   {
+    "id": "wd-Q70762479",
+    "name": {
+      "ja": "新井城",
+      "kana": "あらいじょう",
+      "romaji": "Araijo",
+      "zh_tw": "新井城",
+      "en": "Arai Castle"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 35.159889,
+      "lng": 139.612972
+    },
+    "prefecture": "kanagawa",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "城"
+    ],
+    "featured": false,
+    "score": 62.61,
+    "summary": {
+      "text": "新井城（あらいじょう）は、神奈川県三浦市三崎町小網代（こあじろ）にあった日本の城。荒井城・小網代城・三崎城とも。相模三浦氏の本拠地とされる。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E6%96%B0%E4%BA%95%E5%9F%8E",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "images": [],
+    "external_ids": {
+      "wikidata": "Q70762479"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q70762479",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E6%96%B0%E4%BA%95%E5%9F%8E",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
+  },
+  {
     "id": "wd-Q710351",
     "name": {
       "ja": "鎌倉宮",
@@ -21578,11 +23894,11 @@
     "featured": false,
     "score": 70.85,
     "summary": {
-      "text": "サンモール・インターナショナルスクール（英: Saint Maur International School）は、神奈川県横浜市中区にある、現存するアジア最古かつ日本国内最古のインターナショナルスクールである。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E3%82%B5%E3%83%B3%E3%83%A2%E3%83%BC%E3%83%AB%E3%83%BB%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%BC%E3%83%8A%E3%82%B7%E3%83%A7%E3%83%8A%E3%83%AB%E3%83%BB%E3%82%B9%E3%82%AF%E3%83%BC%E3%83%AB",
+      "text": "Saint Maur International School, established in 1872 in Yokohama within the Greater Tokyo Area, is the oldest international school in Japan. The school, which is co-educational, caters to students of all nationalities and faiths from ages 2½ through high school age. Saint Maur International School is located in a historically international district in Yokohama, Japan, one of the few places where foreigners were allowed entrance into the country during the Sakoku policy of the late Edo period.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Saint_Maur_International_School",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -21758,11 +24074,11 @@
     "featured": false,
     "score": 71.28,
     "summary": {
-      "text": "城山ダム（しろやまダム）は、神奈川県相模原市緑区、相模川本川に建設され1965年に完成したダムで、神奈川県、横浜市、川崎市、横須賀市の共同施設である。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%9F%8E%E5%B1%B1%E3%83%80%E3%83%A0",
+      "text": "The Shiroyama Dam (城山ダム, Shiroyama damu) is a multi-purpose dam on the main stream Sagami River in Sagamihara, Kanagawa Prefecture on the island of Honshū, Japan.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Shiroyama_Dam",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -21847,7 +24163,7 @@
       "ja": "川崎市岡本太郎美術館",
       "kana": "かわさきしおかもとたろうびじゅつかん",
       "romaji": "Kawasakishiokamototarobijutsukan",
-      "zh_tw": "川崎市冈本太郎美术馆",
+      "zh_tw": "川崎市岡本太郎美術館",
       "en": "Taro Okamoto Museum of Art"
     },
     "kana_source": "wikipedia",
@@ -21908,7 +24224,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q7812852",
@@ -22009,11 +24325,11 @@
     "featured": false,
     "score": 70.9,
     "summary": {
-      "text": "川崎市とどろきアリーナ（かわさきしとどろきアリーナ）は、神奈川県川崎市中原区の等々力緑地内にある体育館。屋内競技の他、イベント等にも使用できる多目的ホールである。施設は川崎市が所有し、川崎市スポーツ協会・三井物産ファシリティーズ共同事業体（公益財団法人川崎市スポーツ協会、三井物産ファシリティーズ株式会社による共同事業体）が指定管理者として運営管理を行っている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%B7%9D%E5%B4%8E%E5%B8%82%E3%81%A8%E3%81%A9%E3%82%8D%E3%81%8D%E3%82%A2%E3%83%AA%E3%83%BC%E3%83%8A",
+      "text": "Todoroki Arena is a multi-purpose indoor arena in the Todoroki Park in Kawasaki, Kanagawa, Japan. The capacity of the arena is 6,500 and was opened in 1995.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Kawasaki_City_Todoroki_Arena",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -22071,11 +24387,11 @@
     "featured": false,
     "score": 66.1,
     "summary": {
-      "text": "剱埼灯台（つるぎさきとうだい）は、神奈川県三浦市東部、剱崎突端に立つ白亜塔形の大型灯台である。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%89%B1%E5%9F%BC%E7%81%AF%E5%8F%B0",
+      "text": "Tsurugisaki Lighthouse (剱埼灯台, Tsurugisaki tōdai) is a lighthouse located on Cape Tsurugi on the southeastern extremity of the city of Miura, Kanagawa Prefecture, Japan on the southernmost and eastern tip of Miura Peninsula. (On the southernmost western tip of Miura Peninsula stands the Jōgashima Lighthouse.)",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Tsurugisaki_Lighthouse",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -22201,11 +24517,11 @@
     "featured": false,
     "score": 64.67,
     "summary": {
-      "text": "山ノ内（やまのうち）は、鎌倉市の大字。住居表示未実施区域。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%B1%B1%E3%83%8E%E5%86%85_%28%E9%8E%8C%E5%80%89%E5%B8%82%29",
+      "text": "Yamanouchi (山ノ内 or 山之内) is a neighborhood of Kamakura, Kanagawa Prefecture, Japan. Because of the presence of East Japan Railway Company's (JR) Kita-Kamakura Station, it is better known as Kita-Kamakura. It lies within the Ofuna administrative subdivision of the city of Kamakura.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Yamanouchi%2C_Kamakura",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -22263,11 +24579,11 @@
     "featured": false,
     "score": 74.56,
     "summary": {
-      "text": "山手（やまて）は、神奈川県横浜市中区の地域名。狭義には1867年（慶応3年）から1899年（明治32年）まで外国人居留地（山手居留地）であった山手町（やまてちょう）を指す。広義には山手町の南側一帯も含む。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%B1%B1%E6%89%8B_%28%E6%A8%AA%E6%B5%9C%E5%B8%82%29",
+      "text": "Yamate (山手) is the name of a historic neighbourhood in Naka-ku, Yokohama often referred to in English as The Bluff. The neighbourhood is famous as having been a foreigners' residential area in the Bakumatsu, Meiji and Taishō periods. While still dominantly residential in character, with views over downtown Yokohama, historic residential properties, ornamental gardens and public parks, the area is also a popular visitor destination.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Yamate",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -22375,11 +24691,11 @@
     "featured": false,
     "score": 71.3,
     "summary": {
-      "text": "横浜インターナショナルスクール (Yokohama International School, YIS) は、神奈川県横浜市中区にあるインターナショナルスクール。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%A8%AA%E6%B5%9C%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%BC%E3%83%8A%E3%82%B7%E3%83%A7%E3%83%8A%E3%83%AB%E3%82%B9%E3%82%AF%E3%83%BC%E3%83%AB",
+      "text": "Yokohama International School (横浜インターナショナルスクール) is a co-educational international school located in Naka-ku, Yokohama, Japan.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Yokohama_International_School",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -22438,11 +24754,11 @@
     "featured": false,
     "score": 71.02,
     "summary": {
-      "text": "横浜国際プール（よこはまこくさいプール）は、神奈川県横浜市都筑区にある、横浜市営の国際規格の水泳用プールである。1998年に完成し、かながわ・ゆめ国体会場として使用された。公募で決定された愛称は、「WATER ARENA ウォーターアリーナ」。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%A8%AA%E6%B5%9C%E5%9B%BD%E9%9A%9B%E3%83%97%E3%83%BC%E3%83%AB",
+      "text": "Yokohama International Swimming Pool (横浜国際プール, Yokohama Kokusai Pūru) is a swimming venue in Yokohama, Japan. The main pool is converted to a basketball arena in fall and winter by setting up panels on the floor. This sports court can be slippery.  This arena is home of the B.League basketball club Yokohama B-Corsairs.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Yokohama_International_Swimming_Pool",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -22571,11 +24887,11 @@
     "featured": false,
     "score": 72.72,
     "summary": {
-      "text": "読売ジャイアンツ球場（よみうりジャイアンツきゅうじょう）は、神奈川県川崎市多摩区のよみうりランド内にある野球場。プロ野球・読売ジャイアンツ（巨人）の練習場で、グラウンド3塁側には室内練習場やクラブハウス・トレーニング棟・寮などの施設が併設されている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E8%AA%AD%E5%A3%B2%E3%82%B8%E3%83%A3%E3%82%A4%E3%82%A2%E3%83%B3%E3%83%84%E7%90%83%E5%A0%B4",
+      "text": "Yomiuri Giants Stadium is a baseball stadium in Kawasaki, Kanagawa, Japan. The stadium, which holds 4,000 people, also serves as the training home of the Yomiuri Giants.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Yomiuri_Giants_Stadium",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -22694,6 +25010,77 @@
     "updated_at": "2026-09-28"
   },
   {
+    "id": "wd-Q8064809",
+    "name": {
+      "ja": "材木座海岸",
+      "kana": "ざいもくざかいがん",
+      "romaji": "Zaimokuzakaigan",
+      "zh_tw": "材木座海岸",
+      "en": "Zaimokuza Beach"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 35.306244,
+      "lng": 139.548611
+    },
+    "prefecture": "kanagawa",
+    "kind": "major",
+    "themes": [],
+    "tags": [],
+    "featured": false,
+    "score": 62.86,
+    "summary": {
+      "text": "材木座海岸（ざいもくざかいがん）は神奈川県鎌倉市材木座の海岸。海岸のほぼ中央に河口を持つ滑川（なめりがわ）を境に、東側を「材木座海岸」、西側を「由比ヶ浜」という。東端では藤沢市の江の島が見える。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E6%9D%90%E6%9C%A8%E5%BA%A7%E6%B5%B7%E5%B2%B8",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "和田塚",
+          "kana": "わだづか",
+          "romaji": "Wadazuka",
+          "en": "Wadazuka"
+        },
+        "distance_m": 880
+      },
+      {
+        "name": {
+          "ja": "由比ヶ浜",
+          "kana": "ゆいがはま",
+          "romaji": "Yuigahama",
+          "en": "Yuigahama"
+        },
+        "distance_m": 980
+      }
+    ],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ea/Kamakura_zaimokuza_20180619.jpg/960px-Kamakura_zaimokuza_20180619.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Kaba-maru",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Kamakura_zaimokuza_20180619.jpg"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q8064809"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q8064809",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E6%9D%90%E6%9C%A8%E5%BA%A7%E6%B5%B7%E5%B2%B8",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
+  },
+  {
     "id": "wd-Q81733862",
     "name": {
       "ja": "横浜関帝廟",
@@ -22786,11 +25173,11 @@
     "featured": false,
     "score": 70.57,
     "summary": {
-      "text": "塔ノ岳（とうのだけ）は丹沢山地の南部にある標高1,491 mの山。神奈川県秦野市、愛甲郡清川村、足柄上郡山北町の境に位置する。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%A1%94%E3%83%8E%E5%B2%B3",
+      "text": "Mount Tō (塔ノ岳, Tō-no-dake) is a 1,490.9 m (4,891 ft) mountain of Tanzawa Mountains, located on the border of Kiyokawa, Hadano and Yamakita in Kanagawa, Japan.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Mount_T%C5%8D",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -23461,11 +25848,11 @@
     "featured": false,
     "score": 65.41,
     "summary": {
-      "text": "横須賀芸術劇場（よこすかげいじゅつげきじょう）は、神奈川県横須賀市にある横須賀市立の劇場施設。ベイスクエアよこすか一番館（鉄骨鉄筋コンクリート造、地上20階地下3階建て）の地下2階から地上8階に位置する。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%A8%AA%E9%A0%88%E8%B3%80%E8%8A%B8%E8%A1%93%E5%8A%87%E5%A0%B4",
+      "text": "Yokosuka Arts Theatre (横須賀芸術劇場, Yokosuka Geijutsu Gekijō) is part of the mixed-use Bay Square complex in Yokosuka, Kanagawa Prefecture, Japan. It opened in 1994. The horseshoe-shaped theatre seats 1,806 and there is a smaller hall, the Yokosuka Bayside Pocket, with a capacity of 600. The Bay Square complex is by Kenzo Tange, with acoustical design of the halls by Nagata Acoustics.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Yokosuka_Arts_Theatre",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -23534,11 +25921,11 @@
     "featured": false,
     "score": 75.12,
     "summary": {
-      "text": "城ヶ島（じょうがしま）は、神奈川県三浦半島の南端に位置する島。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%9F%8E%E3%83%B6%E5%B3%B6",
+      "text": "Jōgashima (城ヶ島, Jōgashima) is an island in the municipality of Miura, Kanagawa Prefecture, Japan, off the southernmost tip of Miura Peninsula, facing Sagami Bay.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/J%C5%8Dgashima",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -23778,6 +26165,73 @@
     "updated_at": "2026-09-28"
   },
   {
+    "id": "wd-Q96096732",
+    "name": {
+      "ja": "オーシャンゲートみなとみらい",
+      "kana": "おーしゃんげーとみなとみらい",
+      "romaji": "Oshangetominatomirai",
+      "zh_tw": "オーシャンゲートみなとみらい",
+      "en": "Ocean Gate Minato Mirai"
+    },
+    "kana_source": "wikidata",
+    "location": {
+      "lat": 35.458111,
+      "lng": 139.634361
+    },
+    "prefecture": "kanagawa",
+    "kind": "major",
+    "themes": [],
+    "tags": [],
+    "featured": false,
+    "score": 62.85,
+    "summary": {
+      "text": "オーシャンゲートみなとみらい (OCEAN GATE MINATO MIRAI) は、神奈川県横浜市西区のみなとみらい地区（32街区）にあるオフィスビル。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E3%82%AA%E3%83%BC%E3%82%B7%E3%83%A3%E3%83%B3%E3%82%B2%E3%83%BC%E3%83%88%E3%81%BF%E3%81%AA%E3%81%A8%E3%81%BF%E3%82%89%E3%81%84",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "みなとみらい",
+          "kana": "みなとみらい",
+          "romaji": "Minatomirai",
+          "en": "Minatomirai"
+        },
+        "distance_m": 170
+      },
+      {
+        "name": {
+          "ja": "新高島",
+          "kana": "しんたかしま",
+          "romaji": "Shin Takashima",
+          "en": "Shin-Takashima"
+        },
+        "distance_m": 820
+      }
+    ],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f0/OCEAN_GATE_MINATO_MIRAI_02.jpg/960px-OCEAN_GATE_MINATO_MIRAI_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "NEO-NEED",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:OCEAN_GATE_MINATO_MIRAI_02.jpg"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q96096732"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q96096732",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
+  },
+  {
     "id": "wd-Q967723",
     "name": {
       "ja": "瑞泉寺",
@@ -23833,6 +26287,78 @@
     ],
     "status": "published",
     "updated_at": "2026-09-28"
+  },
+  {
+    "id": "wd-Q97169050",
+    "name": {
+      "ja": "カワスイ 川崎水族館",
+      "kana": "かわすいかわさきすいぞくかん",
+      "romaji": "Kawasuikawasakisuizokukan",
+      "zh_tw": "カワスイ 川崎水族館",
+      "en": "Kawasui Kawasaki Aquarium"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 35.529611,
+      "lng": 139.696306
+    },
+    "prefecture": "kanagawa",
+    "city": "川崎市",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "水族館"
+    ],
+    "featured": false,
+    "score": 62.77,
+    "summary": {
+      "text": "カワスイ 川崎水族館（カワスイ かわさきすいぞくかん）は、神奈川県川崎市川崎区・川崎ルフロンの9階 - 10階にある水族館。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E3%82%AB%E3%83%AF%E3%82%B9%E3%82%A4_%E5%B7%9D%E5%B4%8E%E6%B0%B4%E6%97%8F%E9%A4%A8",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "川崎",
+          "kana": "かわさき",
+          "romaji": "Kawasaki",
+          "en": "Kawasaki"
+        },
+        "distance_m": 210
+      },
+      {
+        "name": {
+          "ja": "京急川崎",
+          "kana": "けいきゅうかわさき",
+          "romaji": "Keikyū-Kawasaki",
+          "en": "Keikyu-Kawasaki"
+        },
+        "distance_m": 540
+      }
+    ],
+    "images": [],
+    "external_ids": {
+      "wikidata": "Q97169050",
+      "osm": "node/7731662125"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q97169050",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.openstreetmap.org/node/7731662125",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E3%82%AB%E3%83%AF%E3%82%B9%E3%82%A4_%E5%B7%9D%E5%B4%8E%E6%B0%B4%E6%97%8F%E9%A4%A8",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q989803",

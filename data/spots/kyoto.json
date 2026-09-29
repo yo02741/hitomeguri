@@ -12245,7 +12245,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q1046403",
@@ -12322,7 +12322,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q1049901",
@@ -12621,7 +12621,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q1060966",
@@ -12697,7 +12697,80 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
+  },
+  {
+    "id": "wd-Q106852642",
+    "name": {
+      "ja": "熊野神社",
+      "kana": "くまのじんじゃ",
+      "romaji": "Kumano Jinja",
+      "zh_tw": "熊野神社",
+      "en": "Kumano Shrine"
+    },
+    "kana_source": "wikidata",
+    "location": {
+      "lat": 35.017683,
+      "lng": 135.77806
+    },
+    "prefecture": "kyoto",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "神社"
+    ],
+    "featured": false,
+    "score": 62.2,
+    "summary": {
+      "text": "熊野神社（くまのじんじゃ）は、京都市左京区聖護院山王町にある神社。旧社格は郷社。かつては聖護院の鎮守社であった。旧称は熊野社。京都三熊野の一つ。地名を冠して京都熊野神社（きょうとくまのじんじゃ）とも称される。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E7%86%8A%E9%87%8E%E7%A5%9E%E7%A4%BE_%28%E4%BA%AC%E9%83%BD%E5%B8%82%29",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "神宮丸太町",
+          "kana": "じんぐうまるたまち",
+          "romaji": "Jingū-Marutamachi",
+          "en": "Jingu-marutamachi"
+        },
+        "distance_m": 540
+      },
+      {
+        "name": {
+          "ja": "東山",
+          "romaji": "Higashiyama",
+          "en": "Higashiyama"
+        },
+        "distance_m": 930
+      }
+    ],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/05/Kyoto_Kumano-jinja_006.jpg/960px-Kyoto_Kumano-jinja_006.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Brakeet",
+        "license": "CC0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Kyoto_Kumano-jinja_006.jpg"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q106852642",
+      "osm": "way/327569236"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q106852642",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.openstreetmap.org/way/327569236",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q1072538",
@@ -12754,7 +12827,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q107306769",
@@ -12814,7 +12887,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q1075034",
@@ -12871,7 +12944,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q1082935",
@@ -12951,7 +13024,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q10856308",
@@ -12976,11 +13049,11 @@
     "featured": false,
     "score": 71.24,
     "summary": {
-      "text": "田辺城（たなべじょう）は、京都府舞鶴市にある日本の城。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E7%94%B0%E8%BE%BA%E5%9F%8E_%28%E4%B8%B9%E5%BE%8C%E5%9B%BD%29",
+      "text": "Tanabe Castle (田辺城, Tanabe-jō) is a flatland-style Japanese castle located in  Maizuru, northern Kyoto Prefecture, Japan. At the end of the Edo period, Tanabe Castle was home to a branch of the Makino, daimyō of Tango-Tanabe Domain. The castle was nicknamed Maizuru Castle (舞鶴城, Maizuru-jō), and during the early Meiji period, the city was named \"Maizuru\" to avoid confusion with the city in southern Kyoto now known as Kyōtanabe.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Tanabe_Castle_%28Tango%29",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -13132,7 +13205,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q10896675",
@@ -13184,7 +13257,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q1089767",
@@ -13260,7 +13333,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q10919351",
@@ -13335,7 +13408,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q10927539",
@@ -13407,7 +13480,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q10928238",
@@ -13484,7 +13557,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q10934650",
@@ -13554,7 +13627,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q1093645",
@@ -13617,7 +13690,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q10938466",
@@ -13691,7 +13764,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q10940452",
@@ -13889,7 +13962,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q10943057",
@@ -13965,7 +14038,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q10956279",
@@ -14114,7 +14187,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11054653",
@@ -14254,7 +14327,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11064894",
@@ -14334,7 +14407,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q1108695",
@@ -14485,7 +14558,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11123495",
@@ -14545,7 +14618,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11126319",
@@ -14621,7 +14694,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11143738",
@@ -14697,7 +14770,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11149639",
@@ -14754,7 +14827,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11263444",
@@ -14777,11 +14850,11 @@
     "featured": false,
     "score": 77.6,
     "summary": {
-      "text": "ウトロ地区（ウトロちく）は、京都府宇治市伊勢田町51番地に所在する地区（伊勢田町小字ウトロ）。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E3%82%A6%E3%83%88%E3%83%AD%E5%9C%B0%E5%8C%BA",
+      "text": "Utoro (Japanese: ウトロ地区, Hepburn: Utoro Chiku; Korean: 우토로) is a district in Uji, Kyoto Prefecture, Japan. The district has historically been populated by Zainichi Koreans (Koreans who arrived during the Japanese colonial period and their descendants) ever since they were compelled to work in difficult conditions in the area in 1943.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Utoro",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -14822,6 +14895,50 @@
     ],
     "status": "published",
     "updated_at": "2026-09-28"
+  },
+  {
+    "id": "wd-Q11264280",
+    "name": {
+      "ja": "かやぶきの里・北村",
+      "kana": "かやぶきのさときたむら",
+      "romaji": "Kayabukinosato Kitamura",
+      "zh_tw": "草屋之裡",
+      "en": "Kayabukinosato-Kitamura"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 35.314286,
+      "lng": 135.622617
+    },
+    "prefecture": "kyoto",
+    "kind": "major",
+    "themes": [],
+    "tags": [],
+    "featured": false,
+    "score": 62.65,
+    "summary": {
+      "text": "かやぶきの里・北村（かやぶきのさと きたむら）は、京都府南丹市美山町北にある山村集落。今では珍しくなった茅葺き屋根の家屋がここには数多く残っている。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E3%81%8B%E3%82%84%E3%81%B6%E3%81%8D%E3%81%AE%E9%87%8C%E3%83%BB%E5%8C%97%E6%9D%91",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "images": [],
+    "external_ids": {
+      "wikidata": "Q11264280"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q11264280",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E3%81%8B%E3%82%84%E3%81%B6%E3%81%8D%E3%81%AE%E9%87%8C%E3%83%BB%E5%8C%97%E6%9D%91",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11269244",
@@ -14893,7 +15010,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11281162",
@@ -15049,7 +15166,7 @@
       "ja": "三室戸寺",
       "kana": "みむろとじ",
       "romaji": "Mimuroto-ji",
-      "zh_tw": "三室户寺",
+      "zh_tw": "三室戶寺",
       "en": "Mimuroto-ji Temple"
     },
     "kana_source": "osm",
@@ -15116,7 +15233,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11359018",
@@ -15192,7 +15309,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11359541",
@@ -15253,7 +15370,7 @@
       "ja": "上賀茂",
       "kana": "かみがもむら",
       "romaji": "Kamigamomura",
-      "zh_tw": "上贺茂",
+      "zh_tw": "上賀茂",
       "en": "Kamigamo"
     },
     "kana_source": "wikidata",
@@ -15301,7 +15418,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11360904",
@@ -15445,6 +15562,46 @@
     ],
     "status": "published",
     "updated_at": "2026-09-28"
+  },
+  {
+    "id": "wd-Q11369266",
+    "name": {
+      "ja": "久多",
+      "kana": "くたむら",
+      "romaji": "Kutamura",
+      "zh_tw": "久多",
+      "en": "Kuta"
+    },
+    "kana_source": "wikidata",
+    "location": {
+      "lat": 35.265306,
+      "lng": 135.818861
+    },
+    "prefecture": "kyoto",
+    "kind": "major",
+    "themes": [],
+    "tags": [],
+    "featured": false,
+    "score": 62.04,
+    "summary": {
+      "text": "久多（くた）は京都府京都市左京区の最北端に位置する地区名である。本項では同地域にかつて存在した愛宕郡久多村（くたむら）についても述べる。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E4%B9%85%E5%A4%9A",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "images": [],
+    "external_ids": {
+      "wikidata": "Q11369266"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q11369266",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11369656",
@@ -16098,7 +16255,7 @@
       "ja": "京都市平安京創生館",
       "kana": "きょうとしへいあんきょうそうせいかん",
       "romaji": "Kyotoshiheiankyososeikan",
-      "zh_tw": "京都市平安京创世馆",
+      "zh_tw": "京都市平安京創世館",
       "en": "Kyoto City Heiankyo Sosei-Kan Museum"
     },
     "kana_source": "wikipedia",
@@ -16166,7 +16323,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11375236",
@@ -16243,7 +16400,7 @@
       "ja": "京都文化博物館",
       "kana": "きょうとぶんかはくぶつかん",
       "romaji": "Kyotobunkahakubutsukan",
-      "zh_tw": "京都文化博物馆",
+      "zh_tw": "京都文化博物館",
       "en": "Museum of Kyoto"
     },
     "kana_source": "wikidata",
@@ -16309,7 +16466,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11375621",
@@ -16470,11 +16627,11 @@
     "featured": false,
     "score": 72.29,
     "summary": {
-      "text": "伊根の舟屋（いねのふなや）は、京都府与謝郡伊根町の伊根湾（伊根浦）沿いの海面すれすれに立ち並ぶ船倉兼民家で、1階に船の収納庫、上階に住居を備えた、この地区独特の伝統的建造物である。この景観に人口2千人ほどの町に年間30万人超の観光客が訪れている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E4%BC%8A%E6%A0%B9%E3%81%AE%E8%88%9F%E5%B1%8B",
+      "text": "Ine-ura (伊根浦) a.k.a.  Ine-chō Ine-ura (伊根町伊根浦) is a coastal settlement that extends along the shores of Ine Bay and is situated in Ine Town, Yoza District, Kyoto Prefecture, Japan. It is designated as a national preservation district for traditional buildings. The residential cluster that lines the coast of Ine Bay is known as \"Funaya,\" which are famous as National Preservation District for traditional buildings.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Ine-ura",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -16689,7 +16846,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11388426",
@@ -16750,7 +16907,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11390907",
@@ -16832,11 +16989,11 @@
     "featured": false,
     "score": 67.63,
     "summary": {
-      "text": "六孫王神社（ろくそんのうじんじゃ）は、京都市南区にある神社。旧社格は郷社。平安時代の建立で清和源氏始祖の源経基を祭神とする。多田神社（兵庫県川西市）、壺井八幡宮（大阪府羽曳野市）とともに「源氏三神社」の1つとされる。桜が有名である。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%85%AD%E5%AD%AB%E7%8E%8B%E7%A5%9E%E7%A4%BE",
+      "text": "Rokusonnō Shrine (六孫王神社) is a Shinto shrine located in Minami-ku, Kyoto, Kyoto Prefecture, Japan. It is one of the Three Genji Shrines, a group of three Japanese Shinto shrines connected with the Seiwa Genji group (the descent from Emperor Seiwa) of the Minamoto clan.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Rokusonn%C5%8D_Shrine",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -16880,7 +17037,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11398627",
@@ -16927,6 +17084,60 @@
     "updated_at": "2026-09-28"
   },
   {
+    "id": "wd-Q11400358",
+    "name": {
+      "ja": "勝林院",
+      "kana": "しょうりんいん",
+      "romaji": "Shōrin-in",
+      "zh_tw": "勝林院",
+      "en": "Shōrin-in Temple"
+    },
+    "kana_source": "osm",
+    "location": {
+      "lat": 35.121222,
+      "lng": 135.834528
+    },
+    "prefecture": "kyoto",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "寺院"
+    ],
+    "featured": false,
+    "score": 62.96,
+    "summary": {
+      "text": "勝林院（しょうりんいん）は、京都市左京区大原勝林院町にある天台宗の寺院。山号は魚山。本尊は阿弥陀如来。魚山大原寺勝林院（ぎょざんだいげんじしょうりんいん）と号する。魚山大原寺は往生極楽院、勝林院、来迎院とその子院の汎称で、声明の中心地であった唐の長安の外にある山東省に所在する声明の聖地「魚山」の名称に由来する。法然上人二十五霊跡第21番札所で三千院の北にある。別称として「問答寺」、「証拠堂」とも呼ばれる。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E5%8B%9D%E6%9E%97%E9%99%A2",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/29/Shorinin.jpg/960px-Shorinin.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "不明",
+        "license": "Public domain",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Shorinin.jpg"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q11400358",
+      "osm": "way/481697824"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q11400358",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.openstreetmap.org/way/481697824",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
+  },
+  {
     "id": "wd-Q11408325",
     "name": {
       "ja": "南禅院",
@@ -16953,11 +17164,11 @@
     "featured": false,
     "score": 67.78,
     "summary": {
-      "text": "南禅院（なんぜんいん）は、京都市左京区南禅寺福地町にある臨済宗南禅寺派の寺院。大本山南禅寺の塔頭。本尊は亀山法皇像。南禅寺の発祥地といわれている。門前には琵琶湖疏水事業の一環として建設された水路閣が通る。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%8D%97%E7%A6%85%E9%99%A2",
+      "text": "Nanzen-in (南禅院) is one of the tatchu sub-temples of Nanzen-ji, a Rinzai school Zen Buddhist temple in the Fukuchi neighborhood of Sakyō-ku in the city of Kyoto Japan. Its honzon is a Kamakura period statue of Emperor Kameyama, which is a National Important Cultural Property.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Nanzen-in",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -17000,7 +17211,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11410134",
@@ -17076,7 +17287,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11414206",
@@ -17084,7 +17295,7 @@
       "ja": "吉祥院天満宮",
       "kana": "きっしょういんてんまんぐう",
       "romaji": "Kisshoin Tenmangu",
-      "zh_tw": "吉祥院天满宫",
+      "zh_tw": "吉祥院天滿宮",
       "en": "Kisshoin Tenmangu"
     },
     "kana_source": "wikipedia",
@@ -17140,7 +17351,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11415986",
@@ -17216,7 +17427,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11418947",
@@ -17307,11 +17518,11 @@
     "featured": false,
     "score": 63.85,
     "summary": {
-      "text": "喜撰山ダム（きせんやまダム）は、京都府宇治市、淀川水系寒谷川に建設されたダム。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%96%9C%E6%92%B0%E5%B1%B1%E3%83%80%E3%83%A0",
+      "text": "Kisenyama Dam (Japanese: 喜撰山ダム) is a rockfill dam located in Kyoto Prefecture in Japan. The dam is used for power production. The catchment area of the dam is 0.9 km2. The dam impounds about 31 hectares of land when full and can store 7,227 m3 of water. The construction of the dam was started in 1966 and was completed in 1970.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Kisenyama_Dam",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [],
     "external_ids": {
@@ -17336,7 +17547,7 @@
       "ja": "四条大橋",
       "kana": "しじょうおおはし",
       "romaji": "Shijoohashi",
-      "zh_tw": "四条大桥",
+      "zh_tw": "四條大橋",
       "en": "Shijō Bridge"
     },
     "kana_source": "wikipedia",
@@ -17401,7 +17612,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11422904",
@@ -17482,7 +17693,89 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
+  },
+  {
+    "id": "wd-Q11424695",
+    "name": {
+      "ja": "地蔵院",
+      "kana": "じぞういん",
+      "romaji": "Jizoin",
+      "zh_tw": "地藏院",
+      "en": "Jizō-in Temple"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 34.990417,
+      "lng": 135.686
+    },
+    "prefecture": "kyoto",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "寺院"
+    ],
+    "featured": false,
+    "score": 62.57,
+    "summary": {
+      "text": "地蔵院（じぞういん）は、京都市西京区にある臨済宗系単立の寺院。山号は衣笠山（えりゅうざん）。本尊は地蔵菩薩。周囲が竹林で囲まれていることから竹寺、竹の寺の通称で知られる。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E5%9C%B0%E8%94%B5%E9%99%A2_%28%E4%BA%AC%E9%83%BD%E5%B8%82%E8%A5%BF%E4%BA%AC%E5%8C%BA%29",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "上桂",
+          "kana": "かみかつら",
+          "romaji": "Kamikatsura",
+          "en": "Kamikatsura"
+        },
+        "distance_m": 900
+      },
+      {
+        "name": {
+          "ja": "松尾大社",
+          "kana": "まつおたいしゃ",
+          "romaji": "Matsuo-taisha",
+          "en": "Matsuo-taisha"
+        },
+        "distance_m": 1120
+      }
+    ],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5e/Jizoin4.jpg/960px-Jizoin4.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Ibaraki101c",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Jizoin4.jpg"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q11424695",
+      "osm": "way/462950538"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q11424695",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.openstreetmap.org/way/462950538",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.openstreetmap.org/node/4317581591",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E5%9C%B0%E8%94%B5%E9%99%A2_%28%E4%BA%AC%E9%83%BD%E5%B8%82%E8%A5%BF%E4%BA%AC%E5%8C%BA%29",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11426034",
@@ -17558,7 +17851,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11430227",
@@ -17684,7 +17977,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11436814",
@@ -17707,11 +18000,11 @@
     "featured": false,
     "score": 74.61,
     "summary": {
-      "text": "大江山（おおえやま）は京都府丹後半島の付け根に位置し与謝野町、福知山市、宮津市にまたがる連山である。標高832メートル。別称、大枝山・与謝大山・千丈ヶ嶽。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E6%B1%9F%E5%B1%B1",
+      "text": "Located at the base of the Tango Peninsula in Kyoto Prefecture, Ōeyama (大江山) mountain range extends over Yosano-cho, Fukuchiyama and Miyazu. The highest peak, Senjogatake (千丈ヶ嶽) has an elevation of 832.5 meters. The range is also called Yosa-no-oyama (与謝大山) and is best known for the legend of Shuten-dōji. It is also known for the sea of clouds that is visible from points of high elevation. On August 3, 2007, the mountain range was designated as a Quasi-National Park under the name Tango-Amanohashidate-Ōeyama Quasi-National Park.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/%C5%8Ceyama_%28mountain_range%29",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -17805,6 +18098,78 @@
     ],
     "status": "published",
     "updated_at": "2026-09-28"
+  },
+  {
+    "id": "wd-Q11442700",
+    "name": {
+      "ja": "天橋立ビューランド",
+      "kana": "あまのはしだてびゅーらんど",
+      "romaji": "Amanohashidatebyurando",
+      "zh_tw": "天橋立View Land",
+      "en": "Amanohashidate View Land"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 35.5525,
+      "lng": 135.18175
+    },
+    "prefecture": "kyoto",
+    "city": "宮津市",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "展望"
+    ],
+    "featured": false,
+    "score": 62.17,
+    "summary": {
+      "text": "天橋立ビューランド（あまのはしだてビューランド）は、京都府宮津市にある天橋立を眺められる展望台のある遊園地である。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E5%A4%A9%E6%A9%8B%E7%AB%8B%E3%83%93%E3%83%A5%E3%83%BC%E3%83%A9%E3%83%B3%E3%83%89",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "天橋立",
+          "en": "Amanohashidate"
+        },
+        "distance_m": 570
+      }
+    ],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c3/%E3%83%AA%E3%83%95%E3%83%88%E5%B1%B1%E9%A0%82%E9%A7%85.jpg/960px-%E3%83%AA%E3%83%95%E3%83%88%E5%B1%B1%E9%A0%82%E9%A7%85.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "天橋立ビューランド2019",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:%E3%83%AA%E3%83%95%E3%83%88%E5%B1%B1%E9%A0%82%E9%A7%85.jpg"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q11442700",
+      "osm": "node/832671775"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q11442700",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.openstreetmap.org/node/832671775",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.openstreetmap.org/way/539368280",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E5%A4%A9%E6%A9%8B%E7%AB%8B%E3%83%93%E3%83%A5%E3%83%BC%E3%83%A9%E3%83%B3%E3%83%89",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11443243",
@@ -18082,7 +18447,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11449502",
@@ -18239,7 +18604,133 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
+  },
+  {
+    "id": "wd-Q11450871",
+    "name": {
+      "ja": "安楽寺",
+      "kana": "あんらくじ",
+      "romaji": "Anraku-ji",
+      "zh_tw": "安楽寺",
+      "en": "Anraku-ji Temple"
+    },
+    "kana_source": "osm",
+    "location": {
+      "lat": 35.021639,
+      "lng": 135.796528
+    },
+    "prefecture": "kyoto",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "寺院"
+    ],
+    "featured": false,
+    "score": 62.29,
+    "summary": {
+      "text": "安楽寺（あんらくじ）は、京都市左京区鹿ケ谷御所ノ段町にある浄土宗系単立の寺院。山号は住蓮山。本尊は阿弥陀如来。鎌倉時代のはじめ、浄土宗の開祖法然の弟子である住蓮房（以下住蓮という）と安楽房（以下安楽という）が、専修念仏の道場として結んだ草庵にはじまる。7月に中風除けを祈願するカボチャ供養で有名である。通称として松虫鈴虫寺（まつむしすずむしでら）ともいわれる。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E5%AE%89%E6%A5%BD%E5%AF%BA_%28%E4%BA%AC%E9%83%BD%E5%B8%82%29",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/90/Anraku-ji_Hond%C3%B4.jpg/960px-Anraku-ji_Hond%C3%B4.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Yanajin33",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Anraku-ji_Hond%C3%B4.jpg"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q11450871",
+      "osm": "way/684545299"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q11450871",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.openstreetmap.org/way/684545299",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
+  },
+  {
+    "id": "wd-Q11451941",
+    "name": {
+      "ja": "宗忠神社",
+      "kana": "むねただじんじゃ",
+      "romaji": "Munetadajinja",
+      "zh_tw": "宗忠神社",
+      "en": "Munetada Shrines"
+    },
+    "kana_source": "wikidata",
+    "location": {
+      "lat": 35.023056,
+      "lng": 135.785556
+    },
+    "prefecture": "kyoto",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "神社"
+    ],
+    "featured": false,
+    "score": 62.41,
+    "summary": {
+      "text": "宗忠神社（むねただじんじゃ）は、黒住教の教祖である黒住宗忠を祀る神社である。京都および、黒住宗忠の生地で黒住教の本部のある岡山にある。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E5%AE%97%E5%BF%A0%E7%A5%9E%E7%A4%BE",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "神宮丸太町",
+          "kana": "じんぐうまるたまち",
+          "romaji": "Jingū-Marutamachi",
+          "en": "Jingu-marutamachi"
+        },
+        "distance_m": 1310
+      },
+      {
+        "name": {
+          "ja": "元田中",
+          "en": "Mototanaka"
+        },
+        "distance_m": 1380
+      }
+    ],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d0/Munetada_Jinja_worship_hall.jpg/960px-Munetada_Jinja_worship_hall.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Kuroshio no Neko",
+        "license": "CC BY 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Munetada_Jinja_worship_hall.jpg"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q11451941",
+      "osm": "node/11272994330"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q11451941",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.openstreetmap.org/node/11272994330",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11452346",
@@ -18313,7 +18804,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11452598",
@@ -18340,11 +18831,11 @@
     "featured": false,
     "score": 72.78,
     "summary": {
-      "text": "宝泉院（ほうせんいん）は、京都市左京区大原勝林院町にある天台宗の寺院。大原寺勝林院の塔頭。山号は魚山。本尊は阿弥陀如来。天台宗の三門跡寺院の1つである三千院の参道奥にある。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%AE%9D%E6%B3%89%E9%99%A2",
+      "text": "Hōsen-in (宝泉院) is a Buddhist temple of the Tendai-shū, located in Sakyō-ku of Kyoto-shi, in the prefecture of Kyoto, Japan. It is specified as a natural monument by the Kyoto government.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/H%C5%8Dsen-in",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -18373,7 +18864,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11452661",
@@ -18454,7 +18945,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11452823",
@@ -18551,11 +19042,11 @@
     "featured": false,
     "score": 69.35,
     "summary": {
-      "text": "宮津城（みやづじょう）は、丹後国与謝郡宮津（京都府宮津市鶴賀）にあった日本の城。現存していれば日本の海城を代表する城であった。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%AE%AE%E6%B4%A5%E5%9F%8E",
+      "text": "Miyazu Castle (宮津城, Miyazu-jō) is a flatland-style Japanese castle located in  Miyazu, northern Kyoto Prefecture, Japan. At the end of the Edo period, Miyazu Castle was home to a branch of the Honjō-Matsudaira, daimyō of Miyazu Domain.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Miyazu_Castle",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -18727,7 +19218,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11472816",
@@ -18800,6 +19291,78 @@
     ],
     "status": "published",
     "updated_at": "2026-09-28"
+  },
+  {
+    "id": "wd-Q11472971",
+    "name": {
+      "ja": "岡崎神社",
+      "kana": "おかざきじんじゃ",
+      "romaji": "Okazaki-jinja",
+      "zh_tw": "岡崎神社",
+      "en": "Okazaki Shrine"
+    },
+    "kana_source": "wikidata",
+    "location": {
+      "lat": 35.017417,
+      "lng": 135.788778
+    },
+    "prefecture": "kyoto",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "神社"
+    ],
+    "featured": false,
+    "score": 62.62,
+    "summary": {
+      "text": "岡崎神社（おかざきじんじゃ）は、京都市左京区岡崎東天王町にある神社。旧社格は郷社。別名「東天王」ともいわれる。かつて付近一帯が野兎の生息地であったことから、兎が氏神の神使とされ、境内には兎の石像が点在する。また、兎は多産であること、祭神の速素盞鳴尊と奇稲田姫命に子供が多いことから、安産・子授けの神とされる。また、神社創建の由来から方除けの神ともされている。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E5%B2%A1%E5%B4%8E%E7%A5%9E%E7%A4%BE",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "蹴上",
+          "romaji": "Keage",
+          "en": "Keage"
+        },
+        "distance_m": 1100
+      },
+      {
+        "name": {
+          "ja": "東山",
+          "romaji": "Higashiyama",
+          "en": "Higashiyama"
+        },
+        "distance_m": 1210
+      }
+    ],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fe/Okazaki-jinja_haiden.jpg/960px-Okazaki-jinja_haiden.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "KENPEI",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Okazaki-jinja_haiden.jpg"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q11472971",
+      "osm": "way/1155362848"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q11472971",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.openstreetmap.org/way/1155362848",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11474132",
@@ -18894,11 +19457,11 @@
     "featured": false,
     "score": 68.93,
     "summary": {
-      "text": "岩船寺（がんせんじ）は、京都府木津川市加茂町岩船にある真言律宗の寺院。山号は高雄山（こうゆうざん）。本尊は阿弥陀如来。アジサイの名所として知られる。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%B2%A9%E8%88%B9%E5%AF%BA",
+      "text": "Gansen-ji (Japanese: 岩船寺) is a Japanese Buddhist temple of the Shingon Risshu sect in the city of Kizugawa in Kyoto Prefecture, Japan.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Gansen-ji",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -18927,7 +19490,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11477104",
@@ -18999,7 +19562,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11477322",
@@ -19128,7 +19691,81 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
+  },
+  {
+    "id": "wd-Q11482406",
+    "name": {
+      "ja": "平安神宮神苑",
+      "kana": "へいあんじんぐうしんえん",
+      "romaji": "Heian-jingū shinen",
+      "zh_tw": "平安神宮神苑",
+      "en": "Shin'en"
+    },
+    "kana_source": "osm",
+    "location": {
+      "lat": 35.016472,
+      "lng": 135.783333
+    },
+    "prefecture": "kyoto",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "公園",
+      "名勝"
+    ],
+    "featured": false,
+    "score": 62.24,
+    "summary": {
+      "text": "平安神宮神苑（へいあんじんぐうしんえん）は京都府京都市左京区にある池泉回遊式の近代日本庭園。平安神宮の大極殿背後の周囲三方に配された南神苑、西神苑、中神苑、東神苑で構成される。面積は33,000平方メートル、作庭は小川治兵衛、1975年（昭和50年）に国の名勝に指定されている。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E5%B9%B3%E5%AE%89%E7%A5%9E%E5%AE%AE%E7%A5%9E%E8%8B%91",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "東山",
+          "romaji": "Higashiyama",
+          "en": "Higashiyama"
+        },
+        "distance_m": 850
+      },
+      {
+        "name": {
+          "ja": "神宮丸太町",
+          "kana": "じんぐうまるたまち",
+          "romaji": "Jingū-Marutamachi",
+          "en": "Jingu-marutamachi"
+        },
+        "distance_m": 1040
+      }
+    ],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e1/Heian-jingu_shinen10bs3216.jpg/960px-Heian-jingu_shinen10bs3216.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "663highland",
+        "license": "CC BY 2.5",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Heian-jingu_shinen10bs3216.jpg"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q11482406",
+      "osm": "way/429329452"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q11482406",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.openstreetmap.org/way/429329452",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11485497",
@@ -19330,7 +19967,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11495765",
@@ -19357,11 +19994,11 @@
     "featured": false,
     "score": 67.92,
     "summary": {
-      "text": "成相寺（なりあいじ）は、京都府宮津市成相寺にある橋立真言宗の寺院。山号は成相山。本尊は聖観世音菩薩。西国三十三所第28番札所。境内からは日本三景のひとつ天橋立が一望できる。2017年（平成29年）4月、文化庁により地域の歴史的魅力や特色を通じて日本の文化・伝統を語るストーリー「日本遺産」の「丹後ちりめん回廊」を構成する文化財のひとつに認定された。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%88%90%E7%9B%B8%E5%AF%BA",
+      "text": "Nariai-ji (成相寺) is a Buddhist temple located in the Nariai neighborhood of the city of Miyazu, Kyoto Prefecture, Japan. It belongs to the  Hashidate Shingon sect of Japanese Buddhism and its honzon (primary image) is a hibutsu (secret / hidden image) statue of Sho-Kannon Bosatsu. The temple's full name is Nariai-san Nariai-ji (成相山 成相寺).The temple is the 28th stop on the 33 temple Saigoku Kannon Pilgrimage route.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Nariai-ji",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -19397,7 +20034,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11498617",
@@ -19454,7 +20091,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11502342",
@@ -19620,11 +20257,11 @@
     "featured": false,
     "score": 66.94,
     "summary": {
-      "text": "日吉ダム（ひよしダム）は、京都府南丹市日吉町中地先、淀川の主要支川の一つである桂川中流部に位置するダムである。1999年日本建築学会賞業績賞受賞（周辺整備）、2003年土木学会デザイン賞受賞。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%97%A5%E5%90%89%E3%83%80%E3%83%A0",
+      "text": "Hiyoshi Dam (日吉ダム) is a concrete gravity dam in Nantan, Kyoto Prefecture, Japan. Constructed from 1992 to 1996, the dam has a height of 67.4 m and a length of 438 m. It creates the artificial lake Amawaka (天若湖, Amawaka-ko), with an area of 2.74 km2. Initial planning for its construction started in 1961, as a measure to protect downstream area from frequent floods by the Katsura river.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Hiyoshi_Dam",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -19723,7 +20360,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11514773",
@@ -19793,7 +20430,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11516217",
@@ -19818,11 +20455,11 @@
     "featured": false,
     "score": 71.92,
     "summary": {
-      "text": "月読神社（つきよみじんじゃ、月讀神社）は、京都市西京区にある神社。式内社（名神大社）で、現在は松尾大社の摂社。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%9C%88%E8%AA%AD%E7%A5%9E%E7%A4%BE_%28%E4%BA%AC%E9%83%BD%E5%B8%82%29",
+      "text": "Tsukiyomi Shrine (月読神社, Tsukiyomi jinja) is a Shinto shrine located in Nishikyō Ward, Kyoto, Japan. It was named as a Myōjin Taisha (名神大社, lit \"Great shrine for notable god\") in the ancient Japanese religious book Engishiki. Tsukiyomi Shrine is one of the \"Matsuo Seven Shrines\" (松尾七社), and a subsidiary shrine of Matsunoo Taisha 400 meters to the north. Its annual festival is on October 3.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Tsukiyomi_Shrine_%28Kyoto%29",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -19944,7 +20581,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11520503",
@@ -19971,11 +20608,11 @@
     "featured": false,
     "score": 66.81,
     "summary": {
-      "text": "本法寺（ほんぽうじ）は、京都市上京区本法寺前町にある日蓮宗の本山（由緒寺院）の寺院。山号は叡昌山。本尊は三宝尊。塔頭が3院（尊陽院・教行院・教蔵院）ある。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%9C%AC%E6%B3%95%E5%AF%BA_%28%E4%BA%AC%E9%83%BD%E5%B8%82%29",
+      "text": "Honpō-ji (本法寺) is a Nichiren Buddhist (specifically Nichiren-shū) temple in Kyoto, Japan. Its sangō (山号; lit., \"mountain name\"; a type of appellation carried by many Buddhist temples) is \"Eishōzan\" (叡昌山).",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Honp%C5%8D-ji_%28Kyoto%29",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -20020,7 +20657,62 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
+  },
+  {
+    "id": "wd-Q11523758",
+    "name": {
+      "ja": "来迎院",
+      "kana": "らいごういん",
+      "romaji": "Raigō-in",
+      "zh_tw": "来迎院",
+      "en": "Raigō-in Temple"
+    },
+    "kana_source": "osm",
+    "location": {
+      "lat": 35.118639,
+      "lng": 135.837639
+    },
+    "prefecture": "kyoto",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "寺院",
+      "重要文化財"
+    ],
+    "featured": false,
+    "score": 62.04,
+    "summary": {
+      "text": "来迎院（らいごういん）は、京都市左京区大原来迎院町にある天台宗の寺院。総本山延暦寺別院。山号は魚山。本尊は薬師如来。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E6%9D%A5%E8%BF%8E%E9%99%A2_%28%E4%BA%AC%E9%83%BD%E5%B8%82%E5%B7%A6%E4%BA%AC%E5%8C%BA%29",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6d/%E4%BA%AC%E9%83%BD%E3%83%BB%E5%A4%A7%E5%8E%9F%E3%81%AB%E3%81%A6_%E6%9D%A5%E8%BF%8E%E9%99%A2_Raig%C5%8D-in_2011.8.28_-_panoramio.jpg/960px-%E4%BA%AC%E9%83%BD%E3%83%BB%E5%A4%A7%E5%8E%9F%E3%81%AB%E3%81%A6_%E6%9D%A5%E8%BF%8E%E9%99%A2_Raig%C5%8D-in_2011.8.28_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Nankou Oronain (as36…",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:%E4%BA%AC%E9%83%BD%E3%83%BB%E5%A4%A7%E5%8E%9F%E3%81%AB%E3%81%A6_%E6%9D%A5%E8%BF%8E%E9%99%A2_Raig%C5%8D-in_2011.8.28_-_panoramio.jpg"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q11523758",
+      "osm": "way/556023680"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q11523758",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.openstreetmap.org/way/556023680",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11527253",
@@ -20176,11 +20868,11 @@
     "featured": false,
     "score": 66.21,
     "summary": {
-      "text": "松尾寺（まつのおでら）は、京都府舞鶴市松尾にある真言宗醍醐派の寺院。山号は青葉山。本尊は馬頭観音菩薩。西国三十三所第29番札所。舞鶴市と福井県大飯郡高浜町との境にある「若狭富士」と呼称されている青葉山（標高693メートル）の南山腹の標高250メートル辺りに位置する。毎年5月8日に行われる仏舞はひと月遅れの灌仏会、舞儀音楽法要として奉納される。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%9D%BE%E5%B0%BE%E5%AF%BA_%28%E8%88%9E%E9%B6%B4%E5%B8%82%29",
+      "text": "Matsunoo-dera (松尾寺) is a Buddhist temple located in the Matsuo neighborhood of the city of Maizuru, Kyoto Prefecture, Japan. It belongs to the  Shingon-shū Daigo-ha sect of Japanese Buddhism and its honzon (primary image) is a hibutsu hidden image, a statue of Batō Kannon Bosatsu. The temple's full name is Aoba-san Matsunoo-ji (青葉山松尾寺).The temple is the 29th stop on the 33 temple Saigoku Kannon Pilgrimage route.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Matsunoo-dera",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -20233,11 +20925,11 @@
     "featured": false,
     "score": 70.32,
     "summary": {
-      "text": "松花堂（しょうかどう）は、江戸時代初期の僧侶（石清水八幡宮の社僧）で文化人であった松花堂昭乗がその晩年の寛永14年（1637年）に構えた草庵の名称である。現在の京都府八幡市、石清水八幡宮のある男山の東麓に泉坊という宿坊があり、その中にこの草庵があった。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%9D%BE%E8%8A%B1%E5%A0%82",
+      "text": "The Shōka-dō  (松花堂) is a hermitage built in the early Edo period, located in the city of Yawata, Kyoto, Japan. It was designated as a National Historic Site in 1957 under the name \"Shōka-dō and its ruins\" and its gardens were designated a National Place of Scenic Beauty under the name \"Shōka-dō and Shoin Garden\" the same year.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Sh%C5%8Dka-d%C5%8D",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -20265,7 +20957,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11536768",
@@ -20294,11 +20986,11 @@
     "featured": false,
     "score": 68.27,
     "summary": {
-      "text": "桂春院（けいしゅんいん）は、京都市右京区花園にある臨済宗の寺院。臨済宗妙心寺派大本山妙心寺の塔頭である。退蔵院・大心院とともに通年公開されている妙心寺塔頭の1つである。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%A1%82%E6%98%A5%E9%99%A2",
+      "text": "Keishun-in (桂春院) is one of the 48  tatchu sub-temples  Myōshin-ji, a Rinzai school Zen Buddhist temple in the Hanazono neighborhood of Ukyō-ku in the city of Kyoto Japan. It is one of the Myōshin-ji's sub-temples which are normally open to the public.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Keishun-in",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -20347,7 +21039,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11538444",
@@ -20501,7 +21193,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11541116",
@@ -20561,7 +21253,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11541932",
@@ -20632,6 +21324,60 @@
     "updated_at": "2026-09-28"
   },
   {
+    "id": "wd-Q11545356",
+    "name": {
+      "ja": "正伝寺",
+      "kana": "しょうでんじ",
+      "romaji": "Shōden-ji",
+      "zh_tw": "正傳寺",
+      "en": "Shōden-ji Temple"
+    },
+    "kana_source": "osm",
+    "location": {
+      "lat": 35.062361,
+      "lng": 135.736889
+    },
+    "prefecture": "kyoto",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "寺院"
+    ],
+    "featured": false,
+    "score": 62.75,
+    "summary": {
+      "text": "正伝寺（しょうでんじ）は、京都市北区にある臨済宗南禅寺派の寺院。山号は吉祥山。本尊は釈迦如来。寺号は詳しくは正伝護国禅寺という。諸山の格式を持つ。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E6%AD%A3%E4%BC%9D%E5%AF%BA",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7d/%E6%AD%A3%E4%BC%9D%E5%AF%BA%E6%AD%A3%E9%96%80.jpg/960px-%E6%AD%A3%E4%BC%9D%E5%AF%BA%E6%AD%A3%E9%96%80.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Junichi Morita",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:%E6%AD%A3%E4%BC%9D%E5%AF%BA%E6%AD%A3%E9%96%80.jpg"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q11545356",
+      "osm": "way/1287982454"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q11545356",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.openstreetmap.org/way/1287982454",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
+  },
+  {
     "id": "wd-Q11547467",
     "name": {
       "ja": "比沼麻奈為神社",
@@ -20685,7 +21431,109 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
+  },
+  {
+    "id": "wd-Q11548445",
+    "name": {
+      "ja": "水尾",
+      "zh_tw": "水尾",
+      "en": "Mizuo"
+    },
+    "location": {
+      "lat": 35.045306,
+      "lng": 135.624444
+    },
+    "prefecture": "kyoto",
+    "kind": "major",
+    "themes": [],
+    "tags": [],
+    "featured": false,
+    "score": 62.29,
+    "summary": {
+      "text": "嵯峨水尾（さが みずお）は、京都府京都市右京区の地名。「柚子の里」や「清和天皇陵」などで知られている。「きれいな水が湧く所」という意味がある。古くは水ノ尾とも水雄とも書き、「みずのお」「みのお」とも呼ばれたが、集落の位置が清滝の川尻にあたることから水尾という表記になった。京都市の元学区では「水尾」全域にあたる。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E6%B0%B4%E5%B0%BE",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "images": [],
+    "external_ids": {
+      "wikidata": "Q11548445"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q11548445",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
+  },
+  {
+    "id": "wd-Q11548558",
+    "name": {
+      "ja": "水度神社",
+      "kana": "みとじんじゃ",
+      "romaji": "Mitojinja",
+      "zh_tw": "水度神社",
+      "en": "Mito Shrine"
+    },
+    "kana_source": "wikidata",
+    "location": {
+      "lat": 34.854739,
+      "lng": 135.789565
+    },
+    "prefecture": "kyoto",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "神社"
+    ],
+    "featured": false,
+    "score": 62.01,
+    "summary": {
+      "text": "水度神社（みとじんじゃ）は、京都府城陽市寺田水度坂にある神社。式内社で、旧社格は府社。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E6%B0%B4%E5%BA%A6%E7%A5%9E%E7%A4%BE",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "城陽",
+          "en": "Jōyō"
+        },
+        "distance_m": 810
+      },
+      {
+        "name": {
+          "ja": "長池",
+          "en": "Nagaike"
+        },
+        "distance_m": 1370
+      }
+    ],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/65/Mito-Jinja_%28Joyo%29%2C_keidai.jpg/960px-Mito-Jinja_%28Joyo%29%2C_keidai.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Saigen Jiro",
+        "license": "CC0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Mito-Jinja_(Joyo),_keidai.jpg"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q11548558"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q11548558",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11548940",
@@ -20693,7 +21541,7 @@
       "ja": "水火天満宮",
       "kana": "すいかてんまんぐう",
       "romaji": "Suika Tenmangu",
-      "zh_tw": "水火天满宫",
+      "zh_tw": "水火天滿宮",
       "en": "Suika Tenmangū"
     },
     "kana_source": "wikipedia",
@@ -20761,7 +21609,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11552439",
@@ -20786,11 +21634,11 @@
     "featured": false,
     "score": 66.66,
     "summary": {
-      "text": "沓島（くつじま）は、京都府舞鶴市に存在する島である。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%B2%93%E5%B3%B6",
+      "text": "Kutsujima (沓島, Kutsu-jima), also known as Meshima (沓島, Me-shima) in the Oomoto religion, is a volcanic island in the Sea of Japan, 2.5 km from the coast of the Kyoto Prefecture in Japan. Kutsujima Island is administered as part of Maizuru city.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Kutsujima%2C_Kyoto",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -20993,7 +21841,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11555272",
@@ -21063,7 +21911,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11555353",
@@ -21140,7 +21988,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11558239",
@@ -21196,7 +22044,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11559693",
@@ -21462,6 +22310,50 @@
     "updated_at": "2026-09-28"
   },
   {
+    "id": "wd-Q11563428",
+    "name": {
+      "ja": "湯の花温泉 (京都府)",
+      "kana": "ゆのはなおんせん",
+      "romaji": "Yunohana Onsen",
+      "zh_tw": "湯之花溫泉",
+      "en": "Yunohana Onsen"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 35.020111,
+      "lng": 135.511694
+    },
+    "prefecture": "kyoto",
+    "kind": "major",
+    "themes": [],
+    "tags": [],
+    "featured": false,
+    "score": 62.76,
+    "summary": {
+      "text": "湯の花温泉（ゆのはなおんせん）は、京都府亀岡市（旧国丹波国）にある温泉。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E6%B9%AF%E3%81%AE%E8%8A%B1%E6%B8%A9%E6%B3%89_%28%E4%BA%AC%E9%83%BD%E5%BA%9C%29",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "images": [],
+    "external_ids": {
+      "wikidata": "Q11563428"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q11563428",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E6%B9%AF%E3%81%AE%E8%8A%B1%E6%B8%A9%E6%B3%89_%28%E4%BA%AC%E9%83%BD%E5%BA%9C%29",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
+  },
+  {
     "id": "wd-Q11564007",
     "name": {
       "ja": "源光庵",
@@ -21515,7 +22407,71 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
+  },
+  {
+    "id": "wd-Q11574857",
+    "name": {
+      "ja": "生身天満宮",
+      "kana": "いきみてんまんぐう",
+      "romaji": "Ikimi Tenmangu",
+      "zh_tw": "生身天満宮",
+      "en": "Ikimi Tenmangū"
+    },
+    "kana_source": "wikidata",
+    "location": {
+      "lat": 35.104156,
+      "lng": 135.474325
+    },
+    "prefecture": "kyoto",
+    "city": "京都府南丹市園部町美園町１号６７",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "神社"
+    ],
+    "featured": false,
+    "score": 62.81,
+    "summary": {
+      "text": "生身天満宮（いきみてんまんぐう）は、京都府南丹市園部町美園町にある神社。旧社格は府社。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E7%94%9F%E8%BA%AB%E5%A4%A9%E6%BA%80%E5%AE%AE",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "園部",
+          "en": "Sonobe"
+        },
+        "distance_m": 820
+      }
+    ],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/ff/Ikimitenmang%C5%AB_keidai.JPG/960px-Ikimitenmang%C5%AB_keidai.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Saigen Jiro",
+        "license": "CC0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Ikimitenmang%C5%AB_keidai.JPG"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q11574857",
+      "osm": "way/343925277"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q11574857",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.openstreetmap.org/way/343925277",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11574990",
@@ -21523,7 +22479,7 @@
       "ja": "産寧坂",
       "kana": "さんねいざか",
       "romaji": "Sanneizaka",
-      "zh_tw": "产宁坂",
+      "zh_tw": "產寧坂",
       "en": "Three-year Slope"
     },
     "kana_source": "wikipedia",
@@ -21591,7 +22547,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q1157535",
@@ -21669,7 +22625,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q1157585",
@@ -21750,7 +22706,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11577577",
@@ -21825,7 +22781,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11577617",
@@ -21848,11 +22804,11 @@
     "featured": false,
     "score": 71.18,
     "summary": {
-      "text": "由良川（ゆらがわ）は、京都府北部を流れる一級水系の本流。アユの漁場としても知られている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E7%94%B1%E8%89%AF%E5%B7%9D",
+      "text": "The Yura River (由良川, Yuragawa) is a Class A river in Kyoto Prefecture and Hyōgo Prefecture, Japan",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Yura_River_%28Japan%29",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -21896,7 +22852,7 @@
       "ja": "百万遍交差点",
       "kana": "ひゃくまんべんこうさてん",
       "romaji": "Hyakumanbenkosaten",
-      "zh_tw": "百万遍交差点",
+      "zh_tw": "百萬遍交差點",
       "en": "Hyakumanben crossing"
     },
     "kana_source": "wikipedia",
@@ -21957,7 +22913,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11581010",
@@ -22026,7 +22982,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11583323",
@@ -22105,7 +23061,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11584591",
@@ -22172,7 +23128,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11587799",
@@ -22380,7 +23336,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11590468",
@@ -22464,7 +23420,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11594599",
@@ -22593,7 +23549,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11599951",
@@ -22619,11 +23575,11 @@
     "featured": false,
     "score": 74.72,
     "summary": {
-      "text": "笠置山（かさぎやま）は、京都府相楽郡笠置町にある山。標高は288mもしくは289mとされている。1932年（昭和7年）に国の史跡および名勝に指定され、1964年（昭和39年）4月1日に京都府立笠置山自然公園が設けられた。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E7%AC%A0%E7%BD%AE%E5%B1%B1_%28%E4%BA%AC%E9%83%BD%E5%BA%9C%29",
+      "text": "Mount Kasagi (笠置山, Kasagi-yama) is a 289-meter mountain located in the town of Kasagi, Soraku District, Kyoto Prefecture in the Kansai area of Japan. The mountain is known for its many oddly shaped rocks and as a battlefield during the wars of the Kenmu Restoration at the end of the Kamakura period. The mountain has been protected from 1932 as a nationally designated Place of Scenic Beauty and National Historic Site. The mountain is also located within the borders of the Kasagiyama Prefectural Natural Park.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Mount_Kasagi",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -22727,7 +23683,83 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
+  },
+  {
+    "id": "wd-Q11604632",
+    "name": {
+      "ja": "粟田神社",
+      "kana": "あわたじんじゃ",
+      "romaji": "Awatajinja",
+      "zh_tw": "粟田神社",
+      "en": "Awata Shrine"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 35.008222,
+      "lng": 135.785417
+    },
+    "prefecture": "kyoto",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "神社"
+    ],
+    "featured": false,
+    "score": 62.47,
+    "summary": {
+      "text": "粟田神社（あわたじんじゃ）は、京都市東山区粟田口鍛冶町にある神社。旧社格は府社。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E7%B2%9F%E7%94%B0%E7%A5%9E%E7%A4%BE",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "蹴上",
+          "romaji": "Keage",
+          "en": "Keage"
+        },
+        "distance_m": 470
+      },
+      {
+        "name": {
+          "ja": "東山",
+          "romaji": "Higashiyama",
+          "en": "Higashiyama"
+        },
+        "distance_m": 530
+      }
+    ],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/60/Awata-jinja_Shrine%2C_Kyoto.jpg/960px-Awata-jinja_Shrine%2C_Kyoto.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Daderot",
+        "license": "Public domain",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Awata-jinja_Shrine,_Kyoto.jpg"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q11604632",
+      "osm": "way/440751886"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q11604632",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.openstreetmap.org/way/440751886",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E7%B2%9F%E7%94%B0%E7%A5%9E%E7%A4%BE",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11606115",
@@ -22752,11 +23784,11 @@
     "featured": false,
     "score": 68.26,
     "summary": {
-      "text": "細見美術館（ほそみびじゅつかん）は、京都市左京区岡崎にある日本の古美術を中心とした京都府の登録博物館。細見亮市・細見實・細見良行の収集品を収蔵展示、管理・運営は公益財団法人細見美術財団、元文部科学省所管。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E7%B4%B0%E8%A6%8B%E7%BE%8E%E8%A1%93%E9%A4%A8",
+      "text": "Hosomi Museum (細見美術館, Hosomi Bijutsukan) opened near Okazaki Park (岡崎公園) in Kyoto, Japan, in 1998. The collection, begun by Osaka industrialist Hosomi Ryō (細見良; 1901－1978), numbers some one thousand pieces including thirty Important Cultural Properties, ranging from haniwa and tea utensils to paintings of the Heian and Kamakura periods as well as by Itō Jakuchū and Katsushika Hokusai. These are exhibited on a rotating basis with four or five exhibitions each year.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Hosomi_Museum",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -22931,7 +23963,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11612891",
@@ -23030,11 +24062,11 @@
     "featured": false,
     "score": 67.99,
     "summary": {
-      "text": "興聖寺（こうしょうじ）は、京都府宇治市宇治山田にある曹洞宗の寺院。山号は仏徳山（ぶっとくさん）。本尊は釈迦三尊。日本曹洞宗最初の寺院で、道元が「観音導利院興聖宝林禅寺」を建立したことから始まるが元は藤原家の極楽寺だったとも記載がある。参道は「琴坂」と称し、紅葉の名所として人気を博している。「春岸の山吹」「興聖の晩鐘」は宇治十二景に含まれている。境内は京都府の興聖寺文化財環境保全地区に決定されている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E8%88%88%E8%81%96%E5%AF%BA_%28%E5%AE%87%E6%B2%BB%E5%B8%82%29",
+      "text": "Kōshō-ji (Japanese: 興聖寺) is a Sōtō Zen in temple in Japan. It bears an abbreviated form of the name of the temple established by Eihei Dōgen in Kyoto, Kōshōhōrin-ji, but it was established four centuries after that temple was destroyed, and in a different location.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/K%C5%8Dsh%C5%8D-ji_%28Uji%29",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -23138,6 +24170,57 @@
     "updated_at": "2026-09-28"
   },
   {
+    "id": "wd-Q11613725",
+    "name": {
+      "ja": "舞鶴湾",
+      "kana": "まいづるわん",
+      "romaji": "Maizuruwan",
+      "zh_tw": "舞鶴灣",
+      "en": "Maizuru Bay"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 35.49645,
+      "lng": 135.35945
+    },
+    "prefecture": "kyoto",
+    "kind": "major",
+    "themes": [],
+    "tags": [],
+    "featured": false,
+    "score": 62.48,
+    "summary": {
+      "text": "舞鶴湾（まいづるわん）は、京都府舞鶴市の海岸の地形を形成する湾。若狭湾の南西部にあり、支湾となっている。湾奥には大きく二つに分かれ、舞鶴東港と舞鶴西港がある。英語表記はMaizuru Bay。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E8%88%9E%E9%B6%B4%E6%B9%BE",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1c/Maizuru_bay.jpg/960px-Maizuru_bay.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Sea of Japan",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Maizuru_bay.jpg"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q11613725"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q11613725",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E8%88%9E%E9%B6%B4%E6%B9%BE",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
+  },
+  {
     "id": "wd-Q11614050",
     "name": {
       "ja": "船岡温泉",
@@ -23158,11 +24241,11 @@
     "featured": false,
     "score": 66.17,
     "summary": {
-      "text": "船岡温泉（ふなおかおんせん）は、京都市北区紫野南舟岡町にある公衆浴場（風呂屋）。船岡山南麓、鞍馬口通の南側に位置する。脱衣場（下駄箱やフロント、休憩所などを含む建物）や浴場（脱衣場の奥に繋がる浴室の建物）などが国の登録有形文化財に登録されている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E8%88%B9%E5%B2%A1%E6%B8%A9%E6%B3%89",
+      "text": "Funaoka Onsen (船岡温泉) is an onsen (public bath house) in Kyoto, Japan.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Funaoka_Onsen",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -23196,6 +24279,121 @@
     ],
     "status": "published",
     "updated_at": "2026-09-28"
+  },
+  {
+    "id": "wd-Q11615644",
+    "name": {
+      "ja": "花脊峠",
+      "kana": "はなせとうげ",
+      "romaji": "Hanasetoge",
+      "zh_tw": "花脊峠",
+      "en": "Hanase Pass"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 35.158722,
+      "lng": 135.786111
+    },
+    "prefecture": "kyoto",
+    "kind": "major",
+    "themes": [],
+    "tags": [],
+    "featured": false,
+    "score": 62.11,
+    "summary": {
+      "text": "花脊峠（はなせとうげ）は、京都府京都市左京区内にある国道477号上の峠である。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E8%8A%B1%E8%84%8A%E5%B3%A0",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "images": [],
+    "external_ids": {
+      "wikidata": "Q11615644"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q11615644",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E8%8A%B1%E8%84%8A%E5%B3%A0",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
+  },
+  {
+    "id": "wd-Q11616253",
+    "name": {
+      "ja": "若宮八幡宮社",
+      "kana": "わかみやはちまんぐうしゃ",
+      "romaji": "Wakamiyahachimangusha",
+      "zh_tw": "若宮八幡宮社",
+      "en": "Wakamiya Hachimangū"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 34.995389,
+      "lng": 135.774889
+    },
+    "prefecture": "kyoto",
+    "kind": "major",
+    "themes": [],
+    "tags": [],
+    "featured": false,
+    "score": 62.31,
+    "summary": {
+      "text": "若宮八幡宮社（わかみやはちまんぐうしゃ）は、京都市東山区にある神社。旧社格は郷社。陶器神社とも呼ばれる。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E8%8B%A5%E5%AE%AE%E5%85%AB%E5%B9%A1%E5%AE%AE%E7%A4%BE",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "清水五条",
+          "kana": "きよみずごじょう",
+          "romaji": "Kiyomizu-Gojō",
+          "en": "Kiyomizu-gojo"
+        },
+        "distance_m": 590
+      },
+      {
+        "name": {
+          "ja": "祇園四条",
+          "kana": "ぎおんしじょう",
+          "romaji": "Gion-shijō",
+          "en": "Gion-shijo"
+        },
+        "distance_m": 910
+      }
+    ],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/93/%E8%8B%A5%E5%AE%AE%E5%85%AB%E5%B9%A1%E5%AE%AE_-_%E6%9C%AC%E6%AE%BF.jpg/960px-%E8%8B%A5%E5%AE%AE%E5%85%AB%E5%B9%A1%E5%AE%AE_-_%E6%9C%AC%E6%AE%BF.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Cakoko23",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:%E8%8B%A5%E5%AE%AE%E5%85%AB%E5%B9%A1%E5%AE%AE_-_%E6%9C%AC%E6%AE%BF.jpg"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q11616253"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q11616253",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E8%8B%A5%E5%AE%AE%E5%85%AB%E5%B9%A1%E5%AE%AE%E7%A4%BE",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11620048",
@@ -23275,7 +24473,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11620650",
@@ -23359,7 +24557,7 @@
       "ja": "藤井斉成会有鄰館",
       "kana": "ふじいさいせいかいゆうりんかん",
       "romaji": "Fujiisaiseikaiyurinkan",
-      "zh_tw": "藤井有邻馆",
+      "zh_tw": "藤井有鄰館",
       "en": "Yūrinkan Museum"
     },
     "kana_source": "wikipedia",
@@ -23427,7 +24625,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11624431",
@@ -23503,7 +24701,119 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
+  },
+  {
+    "id": "wd-Q11628431",
+    "name": {
+      "ja": "西明寺",
+      "kana": "さいみょうじ",
+      "romaji": "Saimyoji",
+      "zh_tw": "西明寺",
+      "en": "Saimyō-ji Temple"
+    },
+    "kana_source": "wikidata",
+    "location": {
+      "lat": 35.057214,
+      "lng": 135.674969
+    },
+    "prefecture": "kyoto",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "寺院"
+    ],
+    "featured": false,
+    "score": 62.81,
+    "summary": {
+      "text": "西明寺（さいみょうじ）是位在日本京都府京都市右京區的寺院，真言宗大覺寺派準別格本山。山號「槙尾山」（まきおざん）。本尊釋迦如來、開基（創立者）為空海（弘法大師）之高弟智泉。別稱「平等心王院」。紅葉之名所，是和高雄山・神護寺、栂尾山・高山寺並稱三尾的名剎。",
+      "lang": "zh",
+      "source_url": "https://zh.wikipedia.org/wiki/%E8%A5%BF%E6%98%8E%E5%AF%BA_%28%E4%BA%AC%E9%83%BD%E5%B8%82%29",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d3/Saimyoji_Kyoto_Kyoto16n4592.jpg/960px-Saimyoji_Kyoto_Kyoto16n4592.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "663highland",
+        "license": "CC BY 2.5",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Saimyoji_Kyoto_Kyoto16n4592.jpg"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q11628431",
+      "osm": "node/4355966389"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q11628431",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.openstreetmap.org/node/4355966389",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
+  },
+  {
+    "id": "wd-Q11630594",
+    "name": {
+      "ja": "観音寺",
+      "kana": "かんのんじ",
+      "romaji": "Kannonji",
+      "zh_tw": "観音寺",
+      "en": "Kannon-ji Temple"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 34.795333,
+      "lng": 135.761889
+    },
+    "prefecture": "kyoto",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "寺院"
+    ],
+    "featured": false,
+    "score": 62.43,
+    "summary": {
+      "text": "観音寺（かんのんじ）は、京都府京田辺市にある真言宗智山派の寺院。山号は息長山。本尊は十一面観音。別名は大御堂、大御堂観音寺など。現在、山号は息長山とされるが、これは偽書である「椿井文書」を由来としており、歴史的にも、地元の伝承としても正しくない。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E8%A6%B3%E9%9F%B3%E5%AF%BA_%28%E4%BA%AC%E7%94%B0%E8%BE%BA%E5%B8%82%29",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/73/Kannnonnjioomidou.jpg/960px-Kannnonnjioomidou.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "NoharaR",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Kannnonnjioomidou.jpg"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q11630594",
+      "osm": "way/504236077"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q11630594",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.openstreetmap.org/way/504236077",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E8%A6%B3%E9%9F%B3%E5%AF%BA_%28%E4%BA%AC%E7%94%B0%E8%BE%BA%E5%B8%82%29",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11630696",
@@ -23608,11 +24918,11 @@
     "featured": false,
     "score": 70.97,
     "summary": {
-      "text": "護王神社（ごおうじんじゃ）は、京都市上京区にある神社。旧社格は別格官幣社で、現在は神社本庁の別表神社。境内にあるのは狛犬ではなくイノシシである。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E8%AD%B7%E7%8E%8B%E7%A5%9E%E7%A4%BE",
+      "text": "Goō Shrine (護王神社 ごおうじんじゃ Goō Jinja) is a Shinto shrine located in the Kamigyō-ku district of Kyoto, Japan.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Go%C5%8D_Shrine",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -23661,7 +24971,77 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
+  },
+  {
+    "id": "wd-Q11633342",
+    "name": {
+      "ja": "豊受大神社",
+      "kana": "とゆけだいじんじゃ",
+      "romaji": "Toyukedaijinja",
+      "zh_tw": "豐受大神社",
+      "en": "Toyōke Daijinja"
+    },
+    "kana_source": "wikidata",
+    "location": {
+      "lat": 35.402556,
+      "lng": 135.151389
+    },
+    "prefecture": "kyoto",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "神社"
+    ],
+    "featured": false,
+    "score": 62.78,
+    "summary": {
+      "text": "豊受大神社（とゆけだいじんじゃ）は、京都府福知山市大江町天田内にある神社。旧社格は府社。元伊勢伝承地の1つ。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E8%B1%8A%E5%8F%97%E5%A4%A7%E7%A5%9E%E7%A4%BE",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "大江高校前",
+          "en": "Ōe-Kōkōmae"
+        },
+        "distance_m": 790
+      },
+      {
+        "name": {
+          "ja": "二俣",
+          "en": "Futamata"
+        },
+        "distance_m": 1210
+      }
+    ],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/98/Toyukedaijinja_shrine.jpg/960px-Toyukedaijinja_shrine.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "As6022014",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Toyukedaijinja_shrine.jpg"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q11633342",
+      "osm": "way/1119464906"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q11633342",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.openstreetmap.org/way/1119464906",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11637305",
@@ -24094,7 +25474,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11650427",
@@ -24102,7 +25482,7 @@
       "ja": "錦天満宮",
       "kana": "にしきてんまんぐう",
       "romaji": "Nishiki Tenman-gū",
-      "zh_tw": "锦天满宫",
+      "zh_tw": "錦天滿宮",
       "en": "Nishiki Tenmangū"
     },
     "kana_source": "osm",
@@ -24170,7 +25550,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11650434",
@@ -24318,7 +25698,83 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
+  },
+  {
+    "id": "wd-Q11653106",
+    "name": {
+      "ja": "長楽寺",
+      "kana": "ちょうらくじ",
+      "romaji": "Chorakuji",
+      "zh_tw": "長楽寺",
+      "en": "Chōraku-ji Temple"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 35.002583,
+      "lng": 135.783472
+    },
+    "prefecture": "kyoto",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "寺院"
+    ],
+    "featured": false,
+    "score": 62.13,
+    "summary": {
+      "text": "長楽寺（ちょうらくじ）は、京都市東山区円山町にある時宗（遊行派）の寺院。山号は黄台山（おうだいさん）。本尊は准胝観音。円山公園の東南方に位置する。かつての境内地は円山公園の大部分や真宗大谷派の大谷祖廟（東大谷）の大半の境内地を含む広大なものであった。洛陽三十三所観音霊場第7番札所。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E9%95%B7%E6%A5%BD%E5%AF%BA_%28%E4%BA%AC%E9%83%BD%E5%B8%82%29",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "東山",
+          "romaji": "Higashiyama",
+          "en": "Higashiyama"
+        },
+        "distance_m": 830
+      },
+      {
+        "name": {
+          "ja": "蹴上",
+          "romaji": "Keage",
+          "en": "Keage"
+        },
+        "distance_m": 850
+      }
+    ],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/99/Cyourakuji-sanmon.jpg/960px-Cyourakuji-sanmon.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "小倉商事",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Cyourakuji-sanmon.jpg"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q11653106",
+      "osm": "way/328903230"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q11653106",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.openstreetmap.org/way/328903230",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E9%95%B7%E6%A5%BD%E5%AF%BA_%28%E4%BA%AC%E9%83%BD%E5%B8%82%29",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11658945",
@@ -24395,7 +25851,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11659484",
@@ -24471,7 +25927,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11660652",
@@ -24547,7 +26003,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11660689",
@@ -24555,7 +26011,7 @@
       "ja": "霊光殿天満宮",
       "kana": "れいこうでんてんまんぐう",
       "romaji": "Reiko Den Tenmangu",
-      "zh_tw": "灵光殿天满宫",
+      "zh_tw": "靈光殿天滿宮",
       "en": "Reikōden Tenmangū"
     },
     "kana_source": "wikipedia",
@@ -24616,7 +26072,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11662735",
@@ -24639,11 +26095,11 @@
     "featured": false,
     "score": 67.28,
     "summary": {
-      "text": "青葉山（あおばさん・あおばやま）は、福井県大飯郡高浜町と京都府舞鶴市にまたがる山である。関西百名山に選定されている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E9%9D%92%E8%91%89%E5%B1%B1_%28%E4%BA%AC%E9%83%BD%E5%BA%9C%E3%83%BB%E7%A6%8F%E4%BA%95%E7%9C%8C%29",
+      "text": "Mount Aoba is a mountain in Japan, located across the municipal divisions of the town of Takahama in Fukui Prefecture and the city of Maizuru in Kyoto Prefecture.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Mount_Aoba",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -24734,7 +26190,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11666843",
@@ -24815,7 +26271,58 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
+  },
+  {
+    "id": "wd-Q11669307",
+    "name": {
+      "ja": "高山ダム",
+      "kana": "たかやまだむ",
+      "romaji": "Takayamadamu",
+      "zh_tw": "高山ダム",
+      "en": "Takayama Dam"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 34.753056,
+      "lng": 136.011389
+    },
+    "prefecture": "kyoto",
+    "kind": "major",
+    "themes": [],
+    "tags": [],
+    "featured": false,
+    "score": 62.23,
+    "summary": {
+      "text": "高山ダム（たかやまダム）は、京都府相楽郡南山城村の、一級河川・淀川水系名張川に建設されたダムである。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E9%AB%98%E5%B1%B1%E3%83%80%E3%83%A0",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2d/Takayama-1405-r1.jpg/960px-Takayama-1405-r1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "河川一等兵",
+        "license": "Public domain",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Takayama-1405-r1.jpg"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q11669307"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q11669307",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E9%AB%98%E5%B1%B1%E3%83%80%E3%83%A0",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11673228",
@@ -24986,7 +26493,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11679216",
@@ -25365,7 +26872,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q123688246",
@@ -25517,7 +27024,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q129949871",
@@ -25779,7 +27286,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q143683",
@@ -25909,7 +27416,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q147286",
@@ -26124,7 +27631,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q15229013",
@@ -26149,11 +27656,11 @@
     "featured": false,
     "score": 75.09,
     "summary": {
-      "text": "嵐山モンキーパークいわたやま（あらしやまモンキーパークいわたやま）は、京都市西京区の嵐山の支峰・岩田山中腹（標高160メートル）にある野猿公苑。餌付けされた約120頭の野生のニホンザルが施設一帯に自由に滞留しており、間近に観察できる。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%B5%90%E5%B1%B1%E3%83%A2%E3%83%B3%E3%82%AD%E3%83%BC%E3%83%91%E3%83%BC%E3%82%AF%E3%81%84%E3%82%8F%E3%81%9F%E3%82%84%E3%81%BE",
+      "text": "Iwatayama Monkey Park (Japanese: 嵐山モンキーパーク, Arashiyama Monkī Pāku) is a commercial park located in Arashiyama in Kyoto, Japan. The park is located atop Mount Arashiyama, on the opposite side of the Ōi River of the train station. It is inhabited by a troop of over 120 Japanese macaque monkeys. The animals are wild but can be fed by the staff and visitors with food exclusively purchased at the site. The main reason why these wild macaques choose to stay in the park is so that they can feed on the food given by the staff.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Iwatayama_Monkey_Park",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -26204,7 +27711,7 @@
       "ja": "善峯寺",
       "kana": "よしみねでら",
       "romaji": "Yoshimine-dera",
-      "zh_tw": "善峯寺",
+      "zh_tw": "善峰寺",
       "en": "Yoshimine-dera Temple"
     },
     "kana_source": "osm",
@@ -26253,7 +27760,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q17193229",
@@ -26402,7 +27909,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q17209556",
@@ -26480,7 +27987,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q17213428",
@@ -26629,7 +28136,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q17214466",
@@ -26706,7 +28213,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q17218751",
@@ -26782,7 +28289,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q17220389",
@@ -26920,11 +28427,11 @@
     "featured": false,
     "score": 63.85,
     "summary": {
-      "text": "古田織部美術館（ふるたおりべびじゅつかん）は、京都市北区にある古田織部（重然）ゆかりの茶道具、古美術、歴史資料等を展示する美術館。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%8F%A4%E7%94%B0%E7%B9%94%E9%83%A8%E7%BE%8E%E8%A1%93%E9%A4%A8",
+      "text": "Museum of Furuta Oribe (古田織部美術館) is a museum in Kita-ku, Kyoto, dedicated to works of Lord Furuta Oribe.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Museum_of_Furuta_Oribe",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -26971,11 +28478,11 @@
     "featured": false,
     "score": 73.49,
     "summary": {
-      "text": "舞鶴基地（まいづるきち）とは、京都府舞鶴市字余部下1190、大字北吸小字北宿1059、大字浜小字浜2018、大字泉源寺小字知中175-2、大字長浜小字長浜1007、1008の複数の地区に所在している、舞鶴地方隊（JMSDF Maizuru District）の施設や所在部隊を総称しての通称であり、日本では海上自衛隊基地などという場合がある。日本海における海上自衛隊の最重要拠点。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E8%88%9E%E9%B6%B4%E5%9F%BA%E5%9C%B0",
+      "text": "The Maizuru Naval Base (Japanese: 舞鶴基地, Hepburn: Maidzuru Kichi), also simply known as the JMSDF Maizuru Naval Base, is a group of ports and land facilities of the Japan Maritime Self-Defense Force (JMSDF), which are scattered in multiple districts of Maizuru City, Kansai region, and where the Maizuru District Force, etc. are located. It is not officially called a base, but it is used as a common name.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/JMSDF_Maizuru_Naval_Base",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -27151,7 +28658,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q1786709",
@@ -27228,7 +28735,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q1795135",
@@ -27373,7 +28880,7 @@
       "ja": "白雲神社",
       "kana": "しらくもじんじゃ",
       "romaji": "Shirakumo-jinja",
-      "zh_tw": "白云神社",
+      "zh_tw": "白雲神社",
       "en": "Shirakumo Shrine"
     },
     "kana_source": "osm",
@@ -27439,7 +28946,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q18337635",
@@ -27860,7 +29367,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q221716",
@@ -28128,7 +29635,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q24014029",
@@ -28278,7 +29785,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q257473",
@@ -28342,7 +29849,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q259727",
@@ -28479,7 +29986,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q270983",
@@ -28511,11 +30018,11 @@
     "featured": true,
     "score": 162.93,
     "summary": {
-      "text": "鹿苑寺（ろくおんじ）は、京都市北区金閣寺町にある臨済宗相国寺派の寺院。大本山相国寺の境外塔頭。山号は北山（ほくざん）。本尊は聖観音。正式名称は北山鹿苑禅寺（ほくざんろくおんぜんじ）である。舎利殿「金閣」の建物の内外に金箔が貼られていることから金閣寺（きんかくじ）という通称で呼ばれることも多い。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E9%B9%BF%E8%8B%91%E5%AF%BA",
+      "text": "Kinkaku-ji (金閣寺; Japanese pronunciation: [kʲiꜜŋ.ka.kɯ.dʑi], lit. 'Temple of the Golden Pavilion'), officially named Rokuon-ji (鹿苑寺; [ɾoꜜ.kɯ.oɲ.dʑi], lit. 'Deer Garden Temple'), is a Zen Buddhist temple in Kyoto, Japan and a tourist attraction. It is designated as a World Heritage Site, a National Special Historic Site, a National Special Landscape, and one of the 17 Historic Monuments of Ancient Kyoto. The temple is nicknamed after its reliquary (shariden), the Golden Pavilion (金閣, Kinkaku), whose top two floors are coated in 0.5 μm gold leaf.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Kinkaku-ji",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -28562,7 +30069,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q27218",
@@ -28757,7 +30264,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q276830",
@@ -28829,7 +30336,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q27921552",
@@ -28916,11 +30423,11 @@
     "featured": false,
     "score": 72.58,
     "summary": {
-      "text": "化野念仏寺（あだしのねんぶつじ）は、京都市右京区嵯峨鳥居本化野町にある浄土宗の寺院。山号は華西山。本尊は阿弥陀如来。化野は東山の鳥辺野（とりべの）、洛北の蓮台野と並ぶ平安時代以来の墓地であり、風葬の地でもある。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%8C%96%E9%87%8E%E5%BF%B5%E4%BB%8F%E5%AF%BA",
+      "text": "Adashino Nenbutsu-ji (化野念仏寺, Adashino Nenbutsuji) is a Buddhist temple in Ukyo-ku, Kyoto, Japan. In 811 Kūkai is said to have founded a temple, then Honen altered it to the present Nenbutsuji. Situated high on a hill overlooking the city from the northwest, it sits in an area where since the Heian period people abandoned the bodies of the dead, exposing them to the wind and rain. Now, some eight thousand Buddhist statuettes, which had been scattered around Adashino then collected about 1903, memorialize the souls of the dead.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Adashino_Nenbutsu-ji",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -28954,7 +30461,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q2859566",
@@ -29034,7 +30541,7 @@
       "ja": "宮津湾",
       "kana": "みやづわん",
       "romaji": "Miyazuwan",
-      "zh_tw": "宫津湾",
+      "zh_tw": "宮津灣",
       "en": "Miyazu Bay"
     },
     "kana_source": "wikipedia",
@@ -29077,7 +30584,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q2969288",
@@ -29293,11 +30800,11 @@
     "featured": false,
     "score": 93.18,
     "summary": {
-      "text": "大仙院（だいせんいん）は、京都府京都市北区にある臨済宗の大徳寺内にある塔頭寺院。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E4%BB%99%E9%99%A2",
+      "text": "The Daisen-in (大仙院) is a sub-temple of Daitoku-ji, a temple of the Rinzai school of Zen in  Buddhism, one of the five most important Zen temples of Kyoto. The name means \"The Academy of the Great Immortals.\" Daisen-in was founded by the Zen priest Kogaku Sōkō (古岳宗亘; 1464–1548), and was built between 1509 and 1513. The Daisen-in is noted for its screen paintings and for its kare-sansui, or dry landscape garden.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Daisen-in",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -29339,7 +30846,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q3015355",
@@ -29366,11 +30873,11 @@
     "featured": false,
     "score": 65.68,
     "summary": {
-      "text": "檀林寺（だんりんじ）は、平安時代初期に嵯峨天皇の皇后・橘嘉智子が唐の僧侶・義空を招いて京都の嵯峨に開山させた禅宗の尼寺。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%AA%80%E6%9E%97%E5%AF%BA",
+      "text": "Danrin-ji (檀林寺) was Japan's first Zen temple, founded in Saga, Kyōto, by order of Empress Danrin during the Jōwa era.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Danrin-ji",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -29415,7 +30922,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q3028486",
@@ -29494,7 +31001,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q304501",
@@ -29593,11 +31100,11 @@
     "featured": false,
     "score": 69.01,
     "summary": {
-      "text": "円光寺（えんこうじ）は、京都市左京区一乗寺にある臨済宗南禅寺派の寺院。山号は瑞巌山（ずいがんさん）。本尊は千手観音。開基（創立者）は徳川家康。正式には圓光寺と表記する。当寺では徳川家康の命により、日本における初期の活字本のひとつである「伏見版」の印刷事業が行われた。秋は紅葉の名所となり多くの人が訪れる。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%86%86%E5%85%89%E5%AF%BA_%28%E4%BA%AC%E9%83%BD%E5%B8%82%E5%B7%A6%E4%BA%AC%E5%8C%BA%29",
+      "text": "Enkō-ji (圓光寺), is a Zen Buddhist temple located near the Shugakuin Imperial Villa at Sakyō-ku, Ichijo-ji, Kotani-cho, in northeast Kyoto, Japan. It is famous for its fall foliage and suikinkutsu.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Enk%C5%8D-ji",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -29640,7 +31147,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q3076920",
@@ -29721,7 +31228,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q3076940",
@@ -29796,7 +31303,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q3076987",
@@ -29823,11 +31330,11 @@
     "featured": false,
     "score": 66.83,
     "summary": {
-      "text": "高桐院（こうとういん）は、京都市北区紫野大徳寺町にある臨済宗大徳寺派の寺院。大本山大徳寺の塔頭。本尊は釈迦如来。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E9%AB%98%E6%A1%90%E9%99%A2",
+      "text": "Kōtō-in (高桐院) is a sub-temple of Daitoku-ji, Kyoto, Japan. It was founded by Hosokawa Tadaoki. There is a teahouse, the Shōkō-ken, and the gardens are celebrated for their momiji. A pair of Southern Song monochrome hanging scrolls with landscape have been designated a National Treasure. Many other works are aired annually in October.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/K%C5%8Dt%C5%8D-in",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -29866,7 +31373,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q3080421",
@@ -29894,11 +31401,11 @@
     "featured": false,
     "score": 79.37,
     "summary": {
-      "text": "愛宕念仏寺（おたぎねんぶつじ）は、京都市右京区嵯峨にある天台宗の寺院。山号は等覚山。本尊は厄除千手観音。別名千二百羅漢の寺。愛宕山愛宕神社参道の山麓の入り口に位置する「嵯峨野めぐりの始発点」として知られる。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%84%9B%E5%AE%95%E5%BF%B5%E4%BB%8F%E5%AF%BA",
+      "text": "Otagi Nenbutsu-ji (Japanese: 愛宕念仏寺) is a Buddhist temple located in the hillside of the Arashiyama neighborhood of Kyoto, Japan. It is known for the 1,200 moss-covered arhat statues that cover the hillside around the temple grounds.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Otagi_Nenbutsu-ji",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -29923,7 +31430,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q3087620",
@@ -29991,6 +31498,78 @@
     ],
     "status": "published",
     "updated_at": "2026-09-28"
+  },
+  {
+    "id": "wd-Q30933052",
+    "name": {
+      "ja": "龍谷ミュージアム",
+      "kana": "りゅうこくみゅーじあむ",
+      "romaji": "Ryukokumyujiamu",
+      "zh_tw": "龍谷博物館",
+      "en": "Ryūkoku Museum"
+    },
+    "kana_source": "wikidata",
+    "location": {
+      "lat": 34.991111,
+      "lng": 135.753361
+    },
+    "prefecture": "kyoto",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "博物館"
+    ],
+    "featured": false,
+    "score": 62.66,
+    "summary": {
+      "text": "The Ryūkoku Museum (龍谷ミュージアム) is a museum of Buddhist art and history in Kyōto, Japan. Conceived as part of the 370th anniversary celebrations of the foundation of what is now Ryūkoku University, it opened facing Nishi Hongan-ji in 2011. The museum displays works from its \"vast\" collection and there is also a digital recreation of the corridor of Cave 15 at Bezeklik. The façade has four thousand ceramic louvers, intended to give a feeling of traditional Kyōto while also helping regulate light and temperature within.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Ry%C5%ABkoku_Museum",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "五条",
+          "en": "Gojō"
+        },
+        "distance_m": 720
+      },
+      {
+        "name": {
+          "ja": "京都",
+          "kana": "きょうと",
+          "romaji": "Kyōto",
+          "en": "Kyoto"
+        },
+        "distance_m": 810
+      }
+    ],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a3/170128_Ryukoku_Museum_Kyoto_Japan02n.jpg/960px-170128_Ryukoku_Museum_Kyoto_Japan02n.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "663highland",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:170128_Ryukoku_Museum_Kyoto_Japan02n.jpg"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q30933052",
+      "osm": "way/569708632"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q30933052",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.openstreetmap.org/way/569708632",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q3096514",
@@ -30068,7 +31647,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q3106834",
@@ -30215,7 +31794,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q3141015",
@@ -30240,11 +31819,11 @@
     "featured": false,
     "score": 71.15,
     "summary": {
-      "text": "法勝寺（ほっしょうじ）は、平安時代から室町時代まで平安京の東郊、白河にあった仏教の寺院である。白河天皇が1076年（承保3年）に建立した。院政期に造られた六勝寺の一つで、六つのうち最初にして最大の寺である。皇室から厚く保護されたが、応仁の乱以後は衰微廃絶した。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%B3%95%E5%8B%9D%E5%AF%BA",
+      "text": "Hosshō-ji (Japanese: 法勝寺, Hepburn: Hosshō-ji) was a  Buddhist temple in northeastern Kyoto, Japan, endowed by Emperor Shirakawa in fulfillment of a sacred vow.  The temple complex was located east of the Kamo River in the Shirakawa district; and its chief architectural feature was a nine-storied octagonal pagoda.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Hossh%C5%8D-ji",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -30309,11 +31888,11 @@
     "featured": false,
     "score": 68.22,
     "summary": {
-      "text": "法輪寺（ほうりんじ）は、京都市西京区嵐山虚空蔵山町にある真言宗五智教団の寺院。山号は智福山。本尊は虚空蔵菩薩。3月13日 - 5月13日には十三まいりが行われている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%B3%95%E8%BC%AA%E5%AF%BA_%28%E4%BA%AC%E9%83%BD%E5%B8%82%E8%A5%BF%E4%BA%AC%E5%8C%BA%29",
+      "text": "Hōrin-ji (法輪寺; the 'temple of the Dharma Wheel') is a Shingon Buddhist temple in Arashiyama, Kyoto Prefecture, Japan.  The honorary sangō prefix is Chifuku-san (智福山).  The temple is said to have been constructed by Gyōki in 713 AD, and was originally named Kadonoi-dera (葛井寺).  It is dedicated to Ākāśagarbha (Sanskrit: आकाशकर्भ; Japanese: 虚空蔵, Japanese: kokūzō) the bodhisattva (Sanskrit: बोधिसत्त्वः; Japanese: 菩薩) of the boundless space.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/H%C5%8Drin-ji_%28Kyoto%29",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -30362,7 +31941,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q3147665",
@@ -30385,11 +31964,11 @@
     "featured": false,
     "score": 73.68,
     "summary": {
-      "text": "一力茶屋（いちりきちゃや）もしくは、一力亭（いちりきてい）は、京都にある歴史的お茶屋。四条通と花見小路通の南東隅に位置し、玄関は祇園甲部地区の中心にある。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E4%B8%80%E5%8A%9B%E8%8C%B6%E5%B1%8B",
+      "text": "The Ichiriki Teahouse (一力茶屋, Ichiriki Chaya), formerly Ichiriki Mansion (一力亭, Ichiriki-tei), is an historic ochaya (\"tea house\") in Kyoto, Japan. It is located on the southeast corner of Shijō Street and Hanami Lane, its entrance right at the heart of Gion's Kobu district.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Ichiriki_Chaya",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -30462,11 +32041,11 @@
     "featured": false,
     "score": 74.29,
     "summary": {
-      "text": "聚光院（じゅこういん）は、京都市北区紫野大徳寺町にある臨済宗大徳寺派の寺院。大本山大徳寺の塔頭。本尊は釈迦如来。聚光院という名は三好長慶の法名「聚光院殿前匠作眠室進近大禅定門」から採られたものである。寺内は通常は公開されていない。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E8%81%9A%E5%85%89%E9%99%A2",
+      "text": "Jukō-in (聚光院) is a sub-temple of Daitoku-ji, Kyoto, Japan. It was founded in 1566 as the mortuary temple of Miyoshi Nagayoshi. In 1589 Sen no Rikyū designated it as the mortuary temple for his family. The Hondō (1583) and chashitsu (1739) are Important Cultural Properties and the gardens have been designated a Place of Scenic Beauty. A painting of Miyoshi Nagayoshi (1566) has also been designated an Important Cultural Property. The temple also contains a great number of fusuma paintings done by Kanō Eitoku.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Juk%C5%8D-in",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -30508,7 +32087,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q3195151",
@@ -30578,7 +32157,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q3196329",
@@ -30663,11 +32242,11 @@
     "featured": false,
     "score": 64.43,
     "summary": {
-      "text": "金福寺（こんぷくじ）は、京都市左京区一乗寺にある臨済宗南禅寺派の寺である。山号は佛日山。本尊は聖観音菩薩。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E9%87%91%E7%A6%8F%E5%AF%BA",
+      "text": "Konpuku-ji (金福寺) is a Zen Buddhist temple in Sakyō-ku, Kyoto, Japan.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Konpuku-ji",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -30710,7 +32289,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q3200978",
@@ -30806,11 +32385,11 @@
     "featured": false,
     "score": 72.25,
     "summary": {
-      "text": "京都霊山護国神社（きょうとりょうぜんごこくじんじゃ）は、京都市東山区清閑寺霊山町にある神社（護国神社）。現在は神社本庁の管理を離れた別表神社。神紋は桜に菊。境内の東側は維新の志士らを祀る霊山墓地となっている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E4%BA%AC%E9%83%BD%E9%9C%8A%E5%B1%B1%E8%AD%B7%E5%9B%BD%E7%A5%9E%E7%A4%BE",
+      "text": "The Kyoto Ryozen Gokoku Shrine (京都霊山護国神社, Kyōto Ryōzen Gokoku Jinja) is a Shinto Shrine located in Kyoto, Japan. It honors the heroes of Japan, especially from the period of the Bakumatsu period and the Meiji Restoration, most famously Sakamoto Ryōma and his associate Nakaoka Shintarō, who are buried side by side in the shrine. Within the shrine is a monument in memory of the Indian jurist Radhabinod Pal.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Kyoto_Ryozen_Gokoku_Shrine",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -30858,7 +32437,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q3328153",
@@ -30884,11 +32463,11 @@
     "featured": false,
     "score": 75.71,
     "summary": {
-      "text": "無鄰菴（むりんあん）は、山縣有朋の別邸で、七代目小川治兵衛の作庭による日本庭園。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E7%84%A1%E9%84%B0%E8%8F%B4",
+      "text": "Murin-an (無鄰菴) is a Japanese garden in Kyoto, owned by political and military leader Gensui Prince Yamagata Aritomo, designed by Ogawa Jihei and built between 1894 and 1898. It is an example of a classical Japanese promenade garden of the Meiji Period.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Murin-an",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -30954,11 +32533,11 @@
     "featured": false,
     "score": 66.75,
     "summary": {
-      "text": "霊山歴史館（りょうぜんれきしかん）は、京都府京都市東山区にある歴史博物館である。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E9%9C%8A%E5%B1%B1%E6%AD%B4%E5%8F%B2%E9%A4%A8",
+      "text": "The Ryozen Museum of History (幕末維新ミュージアム 霊山歴史館, Bakumatsu Ishin Myūjiamu: Ryōzen Rekishikan) is a history museum located in Kyoto, Japan. It specializes in the history of the Bakumatsu period and the Meiji Restoration.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Ryozen_Museum_of_History",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -31175,11 +32754,11 @@
     "featured": false,
     "score": 68.25,
     "summary": {
-      "text": "龍源院（りょうげんいん）は、京都市北区紫野大徳寺町にある臨済宗大徳寺派の寺院。大本山大徳寺の塔頭。本尊は釈迦如来。大仙院を本庵とする大徳寺北派に対して、南派の本庵とされている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E9%BE%8D%E6%BA%90%E9%99%A2",
+      "text": "Ryōgen-in (龍源院) is a subtemple of the Daitoku-ji Buddhist complex, located in Kita-ku, Kyoto, Japan. It was constructed in 1502.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Ry%C5%8Dgen-in",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -31221,7 +32800,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q3471686",
@@ -31299,7 +32878,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q3478488",
@@ -31397,11 +32976,11 @@
     "featured": false,
     "score": 75.47,
     "summary": {
-      "text": "退蔵院（たいぞういん）は、京都市右京区花園妙心寺町にある臨済宗妙心寺派の寺院。大本山妙心寺の塔頭。本尊は無因宗因禅師像。初期水墨画の代表作である国宝「瓢鮎図」を所蔵することで知られる。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E9%80%80%E8%94%B5%E9%99%A2",
+      "text": "Taizō-in (退蔵院) is one of the tatchū (塔頭) sub-temples of Myōshin-ji, a Rinzai school Zen Buddhist temple in the Hanazono neighborhood of Ukyō-ku in the city of Kyoto, Japan.  It is one of the few of Myōshin-ji's sub-temples which are normally open to the public.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Taiz%C5%8D-in",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -31446,7 +33025,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q3551943",
@@ -31475,11 +33054,11 @@
     "featured": false,
     "score": 67.08,
     "summary": {
-      "text": "雲龍院（うんりゅういん）は、京都市東山区泉涌寺山内町にある真言宗泉涌寺派の別格本山の寺院。総本山泉涌寺の別院。山号は瑠璃山。本尊は薬師如来。総本山泉涌寺の南隣にある。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E9%9B%B2%E9%BE%8D%E9%99%A2",
+      "text": "Unryū-in (雲竜院) is a sub-temple of Sennyū-ji in Kyoto, Japan. Founded in 1372, it was rebuilt after destruction in the Ōnin War. The Hondō of 1646 (13.8m x 12.9m, irimoya-zukuri, shake roof) is an Important Cultural Property. The Hōjō or abbot's quarters also date from the Edo period. A Kamakura period copy of the Lotus sutra has been designated an Important Cultural Property.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Unry%C5%AB-in",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -31523,7 +33102,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q3571897",
@@ -31550,11 +33129,11 @@
     "featured": false,
     "score": 69.51,
     "summary": {
-      "text": "金剛寺（こんごうじ）は、京都市東山区にある天台宗の寺院。山号は大黒山。本尊は青面金剛。正式には大黒山 金剛寺 庚申堂と号し、通称は八坂庚申堂という。大阪の四天王寺庚申堂、東京の入谷庚申堂（現存せず）とともに日本三庚申の一つとされている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E9%87%91%E5%89%9B%E5%AF%BA_%28%E4%BA%AC%E9%83%BD%E5%B8%82%E6%9D%B1%E5%B1%B1%E5%8C%BA%E9%87%91%E5%9C%92%E7%94%BA%29",
+      "text": "Yasaka Kōshin-dō (八坂庚申堂), or in its full name Daikoku-san Kongō-ji Kōshin-dō (大黒山金剛寺庚申堂) is a small temple located in Higashiyama, Kyoto, Japan. The temple is located near Kiyomizu-dera.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Yasaka_K%C5%8Dshin-d%C5%8D",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -31599,7 +33178,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q3594017",
@@ -31706,7 +33285,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q376288",
@@ -31787,7 +33366,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q377386",
@@ -31862,7 +33441,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q385141",
@@ -31939,7 +33518,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q410132",
@@ -32035,11 +33614,11 @@
     "featured": false,
     "score": 67.2,
     "summary": {
-      "text": "穴太寺（あなおじ）は、京都府亀岡市曽我部町穴太東辻にある天台宗の寺院。山号は菩提山（ぼだいさん）。本尊は薬師如来。札所本尊は聖観世音菩薩（聖観音）。西国三十三所第21番札所。「あなおおじ」「あなうじ」「あのうじ」「あなおうじ」と読まれることもあり、「穴穂寺」「穴生寺」とも表記された。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E7%A9%B4%E5%A4%AA%E5%AF%BA",
+      "text": "Anao-ji (穴太寺) is a Buddhist temple located in the Sogabechō Anao, Higashi-no-tsuji neighborhood of the city of Kameoka, Kyoto Prefecture, Japan. It belongs to the  Tendai sect of Japanese Buddhism and its honzon (primary image) is a  statue of Yakushi Nyorai. The temple's full name is Bōdai-san Anao-ji (菩提山 穴太寺).The temple's Shō-Kannon Bosatsu kannon statue is the 21st stop on the Saigoku Kannon Pilgrimage route.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Anao-ji",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -32064,7 +33643,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q4739121",
@@ -32087,11 +33666,11 @@
     "featured": false,
     "score": 72.53,
     "summary": {
-      "text": "天ヶ瀬ダム（あまがせダム）は、京都府宇治市にある、一級河川・淀川本川中流部、通称宇治川に建設されたダムである。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%A4%A9%E3%83%B6%E7%80%AC%E3%83%80%E3%83%A0",
+      "text": "The Amagase Dam (天ヶ瀬ダム) is an arch dam on the Uji River just upstream from Uji, Kyoto Prefecture, Japan. The main purpose of the dam is flood control but it supports a hydroelectric power station and creates the lower reservoir for the Kisenyama Pumped Storage Plant. The dam itself serves a 92 MW power station while the pumped-storage power station upstream has a 466 MW capacity. Construction on the dam began in 1955 and it was complete in 1964. The pumped-storage power station became operational in 1970.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Amagase_Dam",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -32175,7 +33754,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q4986990",
@@ -32253,11 +33832,11 @@
     "featured": false,
     "score": 72.63,
     "summary": {
-      "text": "今宮神社（いまみやじんじゃ）は、京都市北区紫野今宮町にある神社。社格は旧府社。別名「玉の輿（たまのこし）神社」とも呼ばれる。京都市北区・上京区において大きな氏子区域を持ち、祭礼の規模が比較的大きな神社として知られている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E4%BB%8A%E5%AE%AE%E7%A5%9E%E7%A4%BE_%28%E4%BA%AC%E9%83%BD%E5%B8%82%29",
+      "text": "Imamiya Shrine (今宮神社, Imamiya-jinja) is a Shinto shrine located in Kita-ku, Kyoto, Japan. It was originally established for patrons to pray for safety from an epidemic, though it has evolved into a shrine where patrons can pray for general good health. The shrine complex is embedded in a forest of large trees northwest of Daitoku-ji and includes many minor shrines in addition to the main shrine, or honden. On every second Sunday in April, one of the 3 major festivals in Kyoto, Yasurai Matsuri, is held at the shrine.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Imamiya_Shrine",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -32282,7 +33861,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q501266",
@@ -32360,7 +33939,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q534101",
@@ -32432,7 +34011,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q5359359",
@@ -32503,7 +34082,7 @@
       "ja": "先斗町",
       "kana": "ぽんとちょう",
       "romaji": "Ponto Cho",
-      "zh_tw": "先斗町",
+      "zh_tw": "先鬥町",
       "en": "Ponto-chō"
     },
     "kana_source": "wikidata",
@@ -32565,7 +34144,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q54152981",
@@ -32638,7 +34217,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q54152983",
@@ -32698,7 +34277,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q5677900",
@@ -32723,11 +34302,11 @@
     "featured": false,
     "score": 69.42,
     "summary": {
-      "text": "宇治市源氏物語ミュージアム（うじしげんじものがたりミュージアム）は、京都府宇治市にある公立博物館。『源氏物語』の幻の写本とよばれる「大沢本」など「源氏物語」に関する資料の収集・保管等を行う。1998年に開館し、開館10周年にあたる2008年9月にリニューアルが行われた。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%AE%87%E6%B2%BB%E5%B8%82%E6%BA%90%E6%B0%8F%E7%89%A9%E8%AA%9E%E3%83%9F%E3%83%A5%E3%83%BC%E3%82%B8%E3%82%A2%E3%83%A0",
+      "text": "The Tale of Genji Museum is in Uji, Kyoto, Japan. It displays the world of  the early 11th century Japanese classic novel The Tale of Genji with projected images, models, and exhibitions. The culture of the Imperial Court of the Heian period, the aristocrats' costumes, and the furnishings of their residences are shown.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/The_Tale_of_Genji_Museum",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -32853,7 +34432,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q583589",
@@ -33014,7 +34593,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q599378",
@@ -33089,7 +34668,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q608668",
@@ -33189,11 +34768,11 @@
     "featured": false,
     "score": 65.95,
     "summary": {
-      "text": "嵯峨嵐山文華館（さがあらしやまぶんかかん）は京都市右京区にある、公益財団法人小倉百人一首文化財団が運営する、小倉百人一首や日本画をはじめとする京都ゆかりの芸術・文化を展示、振興するための施設。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%B5%AF%E5%B3%A8%E5%B5%90%E5%B1%B1%E6%96%87%E8%8F%AF%E9%A4%A8",
+      "text": "The Saga Arashiyama Museum of Arts and Culture (SAMAC; formerly known as Shigureden (時雨殿)) is a museum in Arashiyama, Kyoto, Japan, centered on the Ogura Hyakunin Isshu anthology of waka poems compiled by Fujiwara no Teika in the 13th century. The museum was founded by former Nintendo president Hiroshi Yamauchi, who invested more than $20 million in the facility. Shigureden's Autumn Shower Palace hall was designed by Nintendo game producer Shigeru Miyamoto.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Saga_Arashiyama_Museum_of_Arts_and_Culture",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -33398,7 +34977,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q626535",
@@ -33477,7 +35056,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q6363834",
@@ -33502,11 +35081,11 @@
     "featured": false,
     "score": 68.72,
     "summary": {
-      "text": "冠島（かんむりじま）は、京都府舞鶴市の若狭湾内に存在する島である。現在は無人島であるが、古代には宗教的な儀式が行われていた痕跡がある。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%86%A0%E5%B3%B6",
+      "text": "Kanmurijima (冠島), also known as Oshima (冠島, O-shima) in the Oomoto religion, is an island in the Sea of Japan administered under Maizuru in Kyoto Prefecture. It is about 2 km from Kutsujima, a similar smaller island. Nakatsu reef (中津ぐり, Nakatsu-guri) is located just midway between islands. A breeding ground for streaked shearwaters, the island was designated a Japanese natural monument (天然記念物, tennen-kinenbutsu) in 1924. It has also been recognised as an Important Bird Area (IBA) by BirdLife International.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Kanmurijima",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -33553,11 +35132,11 @@
     "featured": false,
     "score": 64.66,
     "summary": {
-      "text": "加悦町（かやちょう）は、京都府の丹後半島内陸部に位置していた町。2006年3月1日、隣接の与謝郡岩滝町、野田川町と新設合併し与謝郡与謝野町となった。町役場は支所及び議会棟となっている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%8A%A0%E6%82%A6%E7%94%BA",
+      "text": "Kaya (加悦町, Kaya-chō) was a town located in Yosa District, Kyoto Prefecture, Japan.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Kaya%2C_Kyoto",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -33665,11 +35244,11 @@
     "featured": false,
     "score": 68.6,
     "summary": {
-      "text": "琴引浜（ことひきはま）は、丹後天橋立大江山国定公園の丹後半島海岸地区の一部で、京都府京丹後市網野町掛津地区および遊地区にまたがる海岸線の砂浜である。古くは琴曳浜、琴弾浜とも表記された。摩擦係数の大きな石英を多く含むため、砂の乾燥した時期に歩くと砂の振動から「キュッキュッ」あるいは「ブブゥブブゥ」という音が鳴る。鳴き砂の浜としては、日本最大級の規模をもつ。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E7%90%B4%E5%BC%95%E6%B5%9C",
+      "text": "Kotohiki Beach (琴引浜, Kotohikihama) is located in Kyōtango, Kyōto Prefecture, Japan. It is a nationally designated Natural Monument and Place of Scenic Beauty, and forms part of the Tango-Amanohashidate-Ōeyama Quasi-National Park. In 1996, the Ministry of the Environment selected the sound of the sands as one of the 100 Soundscapes of Japan. Its name refers to playing the koto stringed musical instrument.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Kotohiki_Beach",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -33723,11 +35302,11 @@
     "featured": false,
     "score": 63.09,
     "summary": {
-      "text": "京都芸術センター（きょうとげいじゅつセンター）は、京都府京都市中京区室町通蛸薬師下る山伏山町546-2にある芸術振興拠点施設。建物は登録有形文化財。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E4%BA%AC%E9%83%BD%E8%8A%B8%E8%A1%93%E3%82%BB%E3%83%B3%E3%82%BF%E3%83%BC",
+      "text": "The Kyoto Art Center (京都芸術センター, Kyōto Geijutsu Sentā) is a venue for promoting the arts which is located in the heart of Kyoto, Japan. The center, a three-story reinforced-concrete building, occupies the site of the former Meirin Elementary School (founded by the people of Kyoto during the Meiji era).",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Kyoto_Art_Center",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -33782,7 +35361,7 @@
       "ja": "京都コンピュータ学院",
       "kana": "きょうとこんぴゅーたがくいん",
       "romaji": "Kyotokonpyutagakuin",
-      "zh_tw": "京都计算机学院",
+      "zh_tw": "京都計算機學院",
       "en": "Kyoto Computer Gakuin"
     },
     "kana_source": "wikipedia",
@@ -33846,7 +35425,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q6452137",
@@ -33869,11 +35448,11 @@
     "featured": false,
     "score": 68.96,
     "summary": {
-      "text": "京都コンサートホール（きょうとコンサートホール）は、京都市左京区にある京都市立のクラシックコンサート専用のコンサートホール。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E4%BA%AC%E9%83%BD%E3%82%B3%E3%83%B3%E3%82%B5%E3%83%BC%E3%83%88%E3%83%9B%E3%83%BC%E3%83%AB",
+      "text": "Kyoto Concert Hall (京都コンサートホール, Kyōto Konsāto Hōlu) is a concert hall in Sakyō-ku, Kyoto, Japan. It opened in 1995 as part of the 1200th anniversary celebrations of the foundation of Heian-kyō. The shoebox-style Main Hall seats 1833 and the Ensemble Hall Murata 500. It is the home of the Kyoto Symphony Orchestra (京都市交響楽団). Arata Isozaki was the architect, with acoustical design by Nagata Acoustics.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Kyoto_Concert_Hall",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -34010,11 +35589,11 @@
     "featured": false,
     "score": 64.47,
     "summary": {
-      "text": "立命館大学国際平和ミュージアム（りつめいかんだいがくこくさいへいわミュージアム）は、立命館大学が設立した『平和』をテーマとした博物館。同大学衣笠キャンパス（京都市北区）にある。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E7%AB%8B%E5%91%BD%E9%A4%A8%E5%A4%A7%E5%AD%A6%E5%9B%BD%E9%9A%9B%E5%B9%B3%E5%92%8C%E3%83%9F%E3%83%A5%E3%83%BC%E3%82%B8%E3%82%A2%E3%83%A0",
+      "text": "The Kyoto Museum for World Peace (立命館大学国際平和ミュージアム, Ritsumeikan Daigaku Kokusai Heiwa Myūjiamu) is part of Ritsumeikan University in Kita-ku, Kyoto, Japan. The Museum is accessible to the public for a 200–400 Yen fee. The displays and materials are mostly in Japanese but there is a 25-page English booklet describing the exhibits. The museum is near Kinkaku-ji and just east of the main Ritsumeikan University campus.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Kyoto_Museum_for_World_Peace",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -34080,11 +35659,11 @@
     "featured": false,
     "score": 68.11,
     "summary": {
-      "text": "京都薬科大学（きょうとやっかだいがく、英語: Kyoto Pharmaceutical University）は、京都市山科区に本部を置く日本の私立大学。略称は京薬、KPU。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E4%BA%AC%E9%83%BD%E8%96%AC%E7%A7%91%E5%A4%A7%E5%AD%A6",
+      "text": "Kyoto Pharmaceutical University (京都薬科大学, Kyoto yakka daigaku) is a private university in Kyoto, Kyoto, Japan. The school's predecessor was founded in 1884. It was chartered as a university in 1949. Because it trains pharmacist-scientists, pharmacists that also possess research skills, Kyoto Pharmaceutical University has laboratories in a wide range of fields. Each laboratory has about 10 members that focus on their research. Students perform research for their pharmaceutical specializations.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Kyoto_Pharmaceutical_University",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -34206,11 +35785,11 @@
     "featured": false,
     "score": 69.53,
     "summary": {
-      "text": "嵯峨美術大学（さがびじゅつだいがく、英語: Kyoto Saga University of Arts）は、京都市右京区嵯峨五島町1に本部を置く日本の私立大学。1971年創立、2001年大学設置。大学の略称は嵯峨美。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%B5%AF%E5%B3%A8%E7%BE%8E%E8%A1%93%E5%A4%A7%E5%AD%A6",
+      "text": "Kyoto Saga University of Arts (京都嵯峨芸術大学, Kyoto saga geijutsu daigaku) is a private university in Ukyo-ku, Kyoto, Kyoto, Japan. The school first opened as a junior college in 1971 and became a four-year college in 2001.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Kyoto_Saga_University_of_Arts",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -34255,6 +35834,80 @@
     ],
     "status": "published",
     "updated_at": "2026-09-28"
+  },
+  {
+    "id": "wd-Q65248501",
+    "name": {
+      "ja": "京都ゑびす神社",
+      "kana": "きょうとえびすじんじゃ",
+      "romaji": "ebisujinja",
+      "zh_tw": "京都ゑびす神社",
+      "en": "Kyoto Ebisu Shrine"
+    },
+    "kana_source": "wikidata",
+    "location": {
+      "lat": 34.999861,
+      "lng": 135.771722
+    },
+    "prefecture": "kyoto",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "神社"
+    ],
+    "featured": false,
+    "score": 62.43,
+    "summary": {
+      "text": "京都ゑびす神社（きょうとえびすじんじゃ）は、京都市東山区にある神社。旧社格は郷社。商売繁盛、家運隆盛、旅行安全で民衆の信仰を集めている。登記上の宗教法人名称は恵美須神社（えびすじんじゃ）。西宮神社・今宮戎神社と並んで日本三大えびすと称され、「えべっさん」の名で親しまれる。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E4%BA%AC%E9%83%BD%E3%82%91%E3%81%B3%E3%81%99%E7%A5%9E%E7%A4%BE",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "祇園四条",
+          "kana": "ぎおんしじょう",
+          "romaji": "Gion-shijō",
+          "en": "Gion-shijo"
+        },
+        "distance_m": 380
+      },
+      {
+        "name": {
+          "ja": "京都河原町",
+          "kana": "きょうとかわらまち",
+          "romaji": "Kyoto-Kawaramachi",
+          "en": "Kyoto Kawaramachi"
+        },
+        "distance_m": 470
+      }
+    ],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/85/Kyoto_Ebisu_Shrine.jpg/960px-Kyoto_Ebisu_Shrine.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Bittercup",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Kyoto_Ebisu_Shrine.jpg"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q65248501",
+      "osm": "way/484247133"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q65248501",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.openstreetmap.org/way/484247133",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q653319",
@@ -34332,7 +35985,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q6540880",
@@ -34406,7 +36059,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q662176",
@@ -34481,7 +36134,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q669494",
@@ -34508,11 +36161,11 @@
     "featured": false,
     "score": 66.09,
     "summary": {
-      "text": "春光院（しゅんこういん）は、京都市右京区花園の臨済宗大本山妙心寺の塔頭寺院で、大庫裏の北に位置する。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%98%A5%E5%85%89%E9%99%A2",
+      "text": "Shunkō-in (春光院, Temple of the Ray of Spring Light) is a Zen Buddhist temple in Kyoto, Japan and belongs to the Myōshin-ji (Temple of Excellent Mind) school, which is the largest among 14 Japanese Rinzai Zen Buddhist schools. The temple was established in 1590 by Horio Yoshiharu, who was a feudal lord, or daimyō, of Matsue in present-day Shimane Prefecture.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Shunk%C5%8D-in",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -34561,7 +36214,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q692714",
@@ -34638,7 +36291,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q700448",
@@ -34697,7 +36350,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q701620",
@@ -34778,7 +36431,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q705126",
@@ -34854,7 +36507,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q705635",
@@ -34926,7 +36579,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q707668",
@@ -35076,7 +36729,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q710098",
@@ -35153,7 +36806,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q710302",
@@ -35230,7 +36883,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q713021",
@@ -35287,7 +36940,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q713177",
@@ -35362,7 +37015,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q714828",
@@ -35604,11 +37257,11 @@
     "featured": false,
     "score": 74.94,
     "summary": {
-      "text": "るり渓（るりけい）は、京都府南丹市園部町大河内に位置し、大堰川支流、園部川が流れる全長4kmの渓谷である。1932年に国の名勝に指定され、府立自然公園にも指定されている。日本の音風景100選にも選定されている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E3%82%8B%E3%82%8A%E6%B8%93",
+      "text": "Rurikei Prefectural Natural Park (府立るり渓自然公園, Furitsu Rurikei shizen kōen) is a Prefectural Natural Park in central Kyōto Prefecture, Japan. The park flanks the Sonobe River (園部川) within the municipality of Nantan. Rurikei is a nationally designated Place of Scenic Beauty.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Rurikei_Prefectural_Natural_Park",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -35659,11 +37312,11 @@
     "featured": false,
     "score": 71.24,
     "summary": {
-      "text": "霊山観音（りょうぜんかんのん、英語: Ryozenn Kannon）は、京都府京都市東山区にある観音像であり、太平洋戦争の犠牲者の仏教式慰霊施設である。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E9%9C%8A%E5%B1%B1%E8%A6%B3%E9%9F%B3",
+      "text": "The Ryōzen Kannon (霊山観音) is a war memorial commemorating the dead of the Great East Asia war located in Eastern Kyoto. The concrete and steel statue of the Bodhisattva Avalokiteśvara (Kannon) was built by Hirosuke Ishikawa (founder of Teisan Kanko Bus Co., Ltd.) and unveiled on 8 June 1955. The statue is 24 m (80 ft) high and weighs approximately 500 tons.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Ry%C5%8Dzen_Kannon",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -35707,7 +37360,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q738971",
@@ -35782,7 +37435,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q7496444",
@@ -35930,7 +37583,7 @@
       "ja": "四条通",
       "kana": "しじょうどおり",
       "romaji": "Shijodori",
-      "zh_tw": "四条通",
+      "zh_tw": "四條通",
       "en": "Shijō Street"
     },
     "kana_source": "wikipedia",
@@ -35992,7 +37645,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q7677301",
@@ -36133,7 +37786,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q783923",
@@ -36307,11 +37960,11 @@
     "featured": false,
     "score": 65.92,
     "summary": {
-      "text": "京都府立山城総合運動公園（きょうとふりつ やましろそうごううんどうこうえん）は、京都府宇治市に位置する都市公園（広域公園）である。指定管理者制度に基づき、京都パークリソース創生パートナーズ(公財京都府公園公社・(株)ザイマックス関西・美津濃(株)・(株)クロスプロジェクトグループ）が管理・運営している。愛称は「太陽が丘」である。公園の総面積は約108ヘクタール（1,082,000平方メートル）。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E4%BA%AC%E9%83%BD%E5%BA%9C%E7%AB%8B%E5%B1%B1%E5%9F%8E%E7%B7%8F%E5%90%88%E9%81%8B%E5%8B%95%E5%85%AC%E5%9C%92",
+      "text": "Yamashiro Park Taiyogaoka Stadium is an athletic stadium in Uji, Kyoto, Japan.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Yamashiro_Park_Taiyogaoka_Stadium",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [],
     "external_ids": {
@@ -36353,11 +38006,11 @@
     "featured": false,
     "score": 72.52,
     "summary": {
-      "text": "大河内山荘（おおこうちさんそう）は京都市右京区嵯峨にある日本庭園。時代劇などで知られる俳優大河内傳次郎が別荘として造営した回遊式庭園である。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E6%B2%B3%E5%86%85%E5%B1%B1%E8%8D%98",
+      "text": "Ōkōchi Sansō (大河内山荘, Ōkōchi Sansō; literally \"Okochi Mountain Villa\") is the former home and garden of the Japanese jidaigeki (period film) actor Denjirō Ōkōchi in Arashiyama, Kyoto. The villa is open to the public for an admission fee and is known for its gardens and views of the Kyoto area. Several of the buildings are recorded as cultural properties by the national government.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/%C5%8Ck%C5%8Dchi_Sans%C5%8D",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -36627,11 +38280,11 @@
     "featured": false,
     "score": 63.12,
     "summary": {
-      "text": "京都府立京都学・歴彩館（きょうとふりつきょうとがく・れきさいかん）は京都府京都市左京区にある図書館・文書館・博物館、また京都府立大学の付属図書館及び教室・講義室の機能を兼ね備えた総合文化施設である。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E4%BA%AC%E9%83%BD%E5%BA%9C%E7%AB%8B%E4%BA%AC%E9%83%BD%E5%AD%A6%E3%83%BB%E6%AD%B4%E5%BD%A9%E9%A4%A8",
+      "text": "Kyoto Institute, Library and Archives (京都府立京都学・歴彩館, Kyōto Furitsu Kyōto Gaku・Rekisaikan) opened in Sakyō-ku, Kyoto, Japan, in 2017, superseding and replacing the former Kyoto Prefectural Library and Archives [ja], which opened in 1963 and closed in 2016. The facility collects, preserves, researches, and makes public materials relating to Kyoto and its culture. The collection includes the Hyakugō Archives of Tō-ji, a National Treasure.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Kyoto_Institute%2C_Library_and_Archives",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -36753,7 +38406,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q87101624",
@@ -36894,7 +38547,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q901256",
@@ -36970,7 +38623,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q903868",
@@ -36978,7 +38631,7 @@
       "ja": "宮川町",
       "kana": "みやがわちょう",
       "romaji": "Miyagawa Cho",
-      "zh_tw": "宫川町",
+      "zh_tw": "宮川町",
       "en": "Miyagawa-chō"
     },
     "kana_source": "wikipedia",
@@ -37041,7 +38694,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q909444",
@@ -37250,7 +38903,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q911985",
@@ -37306,7 +38959,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q919524",
@@ -37530,6 +39183,64 @@
     "updated_at": "2026-09-28"
   },
   {
+    "id": "wd-Q97311555",
+    "name": {
+      "ja": "周山城",
+      "kana": "しゅうざんじょう",
+      "romaji": "Shuzanjo",
+      "zh_tw": "周山城",
+      "en": "Shūzan Castle"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 35.156667,
+      "lng": 135.6225
+    },
+    "prefecture": "kyoto",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "城"
+    ],
+    "featured": false,
+    "score": 62.18,
+    "summary": {
+      "text": "周山城（しゅうざんじょう）は、京都府京都市右京区京北周山町（かつての丹波国桑田郡）にあった日本の城。明智光秀の築城で、明智光忠が入ったとされる。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E5%91%A8%E5%B1%B1%E5%9F%8E",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ea/Syuzan-jo_03.jpg/960px-Syuzan-jo_03.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "京都新観光提言懇談会メンバー",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Syuzan-jo_03.jpg"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q97311555",
+      "osm": "node/12810796925"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q97311555",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.openstreetmap.org/node/12810796925",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E5%91%A8%E5%B1%B1%E5%9F%8E",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
+  },
+  {
     "id": "wd-Q986750",
     "name": {
       "ja": "高山寺",
@@ -37586,6 +39297,6 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   }
 ]

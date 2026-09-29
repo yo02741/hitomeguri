@@ -1962,6 +1962,100 @@
     "updated_at": "2026-09-28"
   },
   {
+    "id": "osm-way-931690935",
+    "name": {
+      "ja": "五和歴史民俗資料館",
+      "zh_tw": "五和歴史民俗資料館"
+    },
+    "location": {
+      "lat": 32.55043,
+      "lng": 130.114616
+    },
+    "prefecture": "kumamoto",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "博物館"
+    ],
+    "featured": false,
+    "score": 0.0,
+    "images": [],
+    "external_ids": {
+      "osm": "way/931690935"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/way/931690935",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
+  },
+  {
+    "id": "osm-way-940882219",
+    "name": {
+      "ja": "天草市立有明歴史民俗資料館",
+      "zh_tw": "天草市立有明歴史民俗資料館"
+    },
+    "location": {
+      "lat": 32.48644,
+      "lng": 130.28913
+    },
+    "prefecture": "kumamoto",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "博物館"
+    ],
+    "featured": false,
+    "score": 0.0,
+    "images": [],
+    "external_ids": {
+      "osm": "way/940882219"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/way/940882219",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
+  },
+  {
+    "id": "osm-way-946385410",
+    "name": {
+      "ja": "倉岳歴史民俗資料館",
+      "zh_tw": "倉岳歴史民俗資料館"
+    },
+    "location": {
+      "lat": 32.410209,
+      "lng": 130.343662
+    },
+    "prefecture": "kumamoto",
+    "city": "天草市",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "博物館"
+    ],
+    "featured": false,
+    "score": 0.0,
+    "images": [],
+    "external_ids": {
+      "osm": "way/946385410"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/way/946385410",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
+  },
+  {
     "id": "wd-Q104761036",
     "name": {
       "ja": "芦北海浜総合公園",
@@ -2585,6 +2679,13 @@
     ],
     "featured": true,
     "score": 72.69,
+    "summary": {
+      "text": "Sakitsu Church is a Catholic church in Amakusa, Kumamoto, Japan.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Sakitsu_Church",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
     "images": [
       {
         "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/db/SakitsuCatholicChurch.jpg/960px-SakitsuCatholicChurch.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -4656,11 +4757,11 @@
     "featured": false,
     "score": 65.35,
     "summary": {
-      "text": "佐敷城（さしきじょう）は、熊本県葦北郡芦北町（肥後国南部）にあった日本の城。加藤清正によって築城された近世の佐敷城は佐敷花岡城とも呼ばれる。佐敷城の城下は薩摩街道と人吉街道（相良往還）が通る交通の要地であり、戦国時代中期までは相良氏、戦国時代末期には島津氏の勢力拡大をめぐって佐敷城の攻防が繰り返された。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E4%BD%90%E6%95%B7%E5%9F%8E_%28%E8%82%A5%E5%BE%8C%E5%9B%BD%29",
+      "text": "Sashiki Castle (佐敷城, Sashiki-jō) was a Sengoku period yamajiro-style Japanese castle located in the town of Ashikita, Kumamoto Prefecture, Japan.  Its ruins have been protected as a National Historic Site since 2008. It is also referred to as Sashiki Hanaoka Castle (佐敷花岡城, Sashiki Hanaoka-jō).",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Sashiki_Castle_%28Higo%29",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -4755,11 +4856,11 @@
     "featured": true,
     "score": 78.2,
     "summary": {
-      "text": "八代城（やつしろじょう）は、熊本県八代市（旧 肥後国八代郡）にあった日本の城。江戸時代初期に球磨川河口の松江に幕府の許可を得て建築されたことから松江城（現八代城趾）とも言う。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%85%AB%E4%BB%A3%E5%9F%8E",
+      "text": "Yatsushiro Castle (八代城, Yatsushiro-jō) is the remains of a castle structure in Yatsushiro, Kumamoto Prefecture, Japan.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Yatsushiro_Castle",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -5138,7 +5239,7 @@
       "ja": "北岡神社",
       "kana": "きたおかじんじゃ",
       "romaji": "Kitaokajinja",
-      "zh_tw": "北冈神社",
+      "zh_tw": "北岡神社",
       "en": "Kitaoka Shrine"
     },
     "kana_source": "wikidata",
@@ -5195,7 +5296,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11404246",
@@ -5820,11 +5921,11 @@
     "featured": false,
     "score": 58.35,
     "summary": {
-      "text": "堅志田城（かたしだじょう）は、熊本県下益城郡美里町にあった中世の日本の城（山城）。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%A0%85%E5%BF%97%E7%94%B0%E5%9F%8E",
+      "text": "Katashida Castle (堅志田城, Katashida-jō) was a Sengoku period yamajiro-style Japanese castle located in the Katashida neighborhood of the town of Misato, Kumamoto Prefecture, Japan. Its ruins have been protected as a National Historic Site since 2006.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Katashida_Castle",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [],
     "external_ids": {
@@ -6024,11 +6125,11 @@
     "featured": false,
     "score": 45.93,
     "summary": {
-      "text": "大矢野島（おおやのじま）は、熊本県の天草諸島の北端にあり、天草の玄関口になる島である。同諸島では天草下島・天草上島についで3番目に大きい。人口は14,729人（2005年国勢調査）で、上天草市の全人口の半数近くが住んでいる。面積は29.88km2。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E7%9F%A2%E9%87%8E%E5%B3%B6",
+      "text": "Ōyano-jima (大矢野島), also spelt as Ōyanojima  It is administered as part of the city of Kami-Amakusa. It is connected to the Japanese mainland since 1966 by Five Bridges of Amakusa. The Japan National Route 266 passes through the island. The island primary industry is aquaculture of fish and shrimps. Large part of island belongs to Unzen-Amakusa National Park.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/%C5%8Cyano-jima",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -6126,11 +6227,11 @@
     "featured": false,
     "score": 63.31,
     "summary": {
-      "text": "天草キリシタン館（あまくさキリシタンかん）は、熊本県天草市にある市立の文化施設。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%A4%A9%E8%8D%89%E5%88%87%E6%94%AF%E4%B8%B9%E9%A4%A8",
+      "text": "Amakusa Christian Museum (天草市立天草キリシタン館, Amakusa shiritsu Amakusa kirishitankan) opened in Amakusa, Japan, in 1966 and in March 2014 received its four millionth visitor. The museum includes exhibits relating to the Shimabara Rebellion and Kakure kirishitan ('hidden Christians').",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Amakusa_Christian_Museum",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -6624,7 +6725,7 @@
       "ja": "山鹿温泉",
       "kana": "やまがおんせん",
       "romaji": "Yamaga Onsen",
-      "zh_tw": "山鹿温泉",
+      "zh_tw": "山鹿溫泉",
       "en": "Yamaga Onsen"
     },
     "kana_source": "wikidata",
@@ -6663,7 +6764,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11474364",
@@ -7742,7 +7843,7 @@
     "tags": [
       "名勝"
     ],
-    "featured": true,
+    "featured": false,
     "score": 72.87,
     "summary": {
       "text": "松浜軒（松濱軒、しょうひんけん）は熊本県八代市北の丸町にある、肥後熊本藩細川氏の筆頭家老で八代城代であった松井家の邸宅と庭園。別名：浜の茶屋。国の名勝に指定されている。名勝としての指定名称は旧熊本藩八代城主浜御茶屋（松浜軒）庭園。建物は八代市指定の有形文化財になっている。",
@@ -7773,7 +7874,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11536189",
@@ -8015,11 +8116,11 @@
     "featured": false,
     "score": 65.26,
     "summary": {
-      "text": "水島（みずしま）は、熊本県八代市植柳下町・水島町に位置し、球磨川河口の堤防近くにある無人島。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%B0%B4%E5%B3%B6_%28%E7%86%8A%E6%9C%AC%E7%9C%8C%29",
+      "text": "Mizushima (水島) is a small uninhabited coastal limestone island at the mouth of the Kuma River at the northern end of the Yatsushiro Sea in Yatsushiro, Kumamoto Prefecture, Japan. An episode in the Nihon Shoki explains how the isle gained its name: on the eleventh day of the fourth month of the eighteenth year of the reign of Emperor Keikō (AD 88), the Emperor, near the end of his tour of inspection of Tsukushi, laid anchor at the island and partook of food.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Mizushima_%28Yatsushiro%29",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -8653,11 +8754,11 @@
     "featured": false,
     "score": 66.82,
     "summary": {
-      "text": "湯島（ゆしま）は、天草諸島の大矢野島と島原半島の間に位置する島。熊本県上天草市大矢野町に属する。本項ではかつて同区域に所在した天草郡湯島村（ゆしまむら）についても述べる。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%B9%AF%E5%B3%B6_%28%E5%A4%A9%E8%8D%89%E8%AB%B8%E5%B3%B6%29",
+      "text": "Yushima is an island situated between Ōyano-jima in the Amakusa Islands and the Shimabara Peninsula.. It is located in Oyano-machi, Kamiamakusa City, Kumamoto Prefecture. This article also covers Yushima Village (Yushima-mura), Amakusa District, which was formerly situated within this same area.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Yushima_%28island%29",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -9013,11 +9114,11 @@
     "featured": false,
     "score": 65.27,
     "summary": {
-      "text": "熊本市動植物園 （くまもとしどうしょくぶつえん）は、熊本県熊本市東区健軍にある、熊本市営の動物園兼植物園。遊園地を併設している。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E7%86%8A%E6%9C%AC%E5%B8%82%E5%8B%95%E6%A4%8D%E7%89%A9%E5%9C%92",
+      "text": "Kumamoto City Zoological and Botanical Gardens (Japanese: 熊本市動植物園) is a 24 acre (9.7 ha) zoo and botanical garden located in Higasi-ku of Kumamoto, Japan. It was opened in 1969 and houses 550 animals, representing 110 species, and 70,000 plants across 700 species. In 2024, the park received 590,000 visitors; it offers educational programs for elementary and junior secondary schools.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Kumamoto_City_Zoological_and_Botanical_Gardens",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -9276,7 +9377,7 @@
       "ja": "熊本県護国神社",
       "kana": "くまもとけんごこくじんじゃ",
       "romaji": "Kumamotokengokokujinja",
-      "zh_tw": "熊本县护国神社",
+      "zh_tw": "熊本縣護國神社",
       "en": "Kumamoto Gokoku Shrine"
     },
     "kana_source": "wikipedia",
@@ -9337,7 +9438,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q115685772",
@@ -9598,11 +9699,11 @@
     "featured": false,
     "score": 61.49,
     "summary": {
-      "text": "田中城（たなかじょう）は、熊本県玉名郡和水町和仁にあった日本の城。別名和仁城。中世に熊本県旧三加和町一帯を支配した肥後国の国人和仁氏が本拠とした。天正15年（1587年）に発生した肥後国人一揆において、最後まで抗戦を続けた城のひとつである。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E7%94%B0%E4%B8%AD%E5%9F%8E_%28%E8%82%A5%E5%BE%8C%E5%9B%BD%29",
+      "text": "Tanaka Castle (田中城, Tanaka-jō) was a Sengoku period Japanese castle located in the town of Nagomi, Kumamoto Prefecture, Japan Its ruins have been protected as a National Historic Site since 2002.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Tanaka_Castle_%28Higo_Province%29",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [],
     "external_ids": {
@@ -9696,11 +9797,11 @@
     "featured": false,
     "score": 68.28,
     "summary": {
-      "text": "白川（しらかわ）は、熊本県中北部を流れる一級河川。一級水系白川の本流である。水源は環境省により、名水百選に選定されている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E7%99%BD%E5%B7%9D_%28%E7%86%8A%E6%9C%AC%E7%9C%8C%29",
+      "text": "The Shirakawa river (Japanese: 白川) is a first-class river that runs down from Mount Aso through Kumamoto. In the past the Shirakawa River has overflowed and led to severe flooding such as during the 1953 North Kyushu flood.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Shirakawa_River_%28Kumamoto%29",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -10591,11 +10692,11 @@
     "featured": false,
     "score": 62.85,
     "summary": {
-      "text": "菊池渓谷（きくちけいこく）は、熊本県の菊池川上流、水源にある渓谷で、阿蘇市と菊池市に属する。避暑地、紅葉の名所として知られている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E8%8F%8A%E6%B1%A0%E6%B8%93%E8%B0%B7",
+      "text": "Kikuchi Valley is the located in Aso and Kikuchi, Kumamoto cities in Kumamoto Prefecture, on the island of Kyushu, Japan. It is the source of the Kikuchi River. The valley is an area known for its resorts and autumn leaves.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Kikuchi_Valley",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -10702,11 +10803,11 @@
     "featured": false,
     "score": 66.12,
     "summary": {
-      "text": "蓮華院誕生寺（れんげいんたんじょうじ）は、熊本県玉名市築地にある真言律宗の寺院。山号は高原山（たかはらさん）で、本尊は皇円大菩薩。寺格は別格本山であり、奈良の西大寺を総本山とする。平安時代後期か鎌倉時代初期に創建され戦国時代に焼失した浄光寺蓮華院の跡地に、皇円から霊告を受けた初代住職の川原是信が昭和5年（1930年）に、蓮華院誕生寺として中興した。檀家はなく、信者や一般の人のために祈祷をする祈祷寺である。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E8%93%AE%E8%8F%AF%E9%99%A2%E8%AA%95%E7%94%9F%E5%AF%BA",
+      "text": "Renge-in Tanjō-ji (蓮華院誕生寺) is a Buddhist temple of the Shingon Risshu, or Shingon-Vinaya Buddhism, in Tamana, Kumamoto Prefecture. It is the head temple of the Shingon Ritsu school in Kyūshū and a branch temple of Saidai-ji (西大寺) in Nara (奈良). It venerates Mahābodhisattva Kōen (皇円大菩薩, Kōen Daibosatsu) as its patron deity. The temple stands on the site of Jōkō-ji Renge-in which was founded either at the end of the Heian period or the beginning of the Kamakura period and burnt down during the wars of the Sengoku period.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Renge-in_Tanj%C5%8D-ji",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -10749,7 +10850,7 @@
       "ja": "藤崎台県営野球場",
       "kana": "ふじさきだいけんえいやきゅうじょう",
       "romaji": "Fujisakidaikeneiyakyujo",
-      "zh_tw": "藤崎台縣營棒球場",
+      "zh_tw": "藤崎臺縣營棒球場",
       "en": "Fujisakidai Baseball Stadium"
     },
     "kana_source": "wikipedia",
@@ -10808,7 +10909,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11627963",
@@ -11027,7 +11128,7 @@
       "zh_tw": "貝洲加藤神社",
       "en": "Kaizukatō Shrine (Yatsushiro)"
     },
-    "kana_source": "wikipedia",
+    "kana_source": "wikidata",
     "location": {
       "lat": 32.564194,
       "lng": 130.625222
@@ -11069,7 +11170,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11635319",
@@ -12154,11 +12255,11 @@
     "featured": false,
     "score": 64.42,
     "summary": {
-      "text": "鍋ヶ滝（なべがたき）は、熊本県阿蘇郡小国町にある滝。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E9%8D%8B%E3%83%B6%E6%BB%9D",
+      "text": "The Nabegataki Falls is a waterfall located in Oguni, Aso District, Japan, on the border between Kumamoto and Ōita Prefectures. The waterfall is 9m tall with a width of 20m.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Nabegataki_Falls",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -12385,11 +12486,11 @@
     "featured": true,
     "score": 78.18,
     "summary": {
-      "text": "阿蘇カルデラ（あそカルデラ）は、九州の熊本県にある、阿蘇山を中心としたカルデラ地形である。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E9%98%BF%E8%98%87%E3%82%AB%E3%83%AB%E3%83%87%E3%83%A9",
+      "text": "Aso Caldera (also known as Asosan, the Aso Volcano or Mount Aso, although the later term usually is used related to its currently active vents) is a geographical feature of Kumamoto Prefecture, Japan. It stretches 25 kilometers north to south and 18 kilometers east to west. The central core \"Aso Gogaku\" is the five major mountains in the area. Aso valley (Asodani) runs along the northern base of Mount Aso and Nango valley (Nangodani) along the south. According to research of caldera sediment, lakes used to exist in these valleys.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Aso_Caldera",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -12683,11 +12784,11 @@
     "featured": false,
     "score": 59.95,
     "summary": {
-      "text": "隈部館（くまべやかた）は、熊本県山鹿市菊鹿町上永野にあった戦国時代の日本の城（城館）。永野城（ながのじょう）とも称される。肥後の有力国人・隈部氏の居館で、館跡は「隈部氏館跡」の名称で国の史跡に指定されている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E9%9A%88%E9%83%A8%E9%A4%A8",
+      "text": "Kumabe clan yakata ruins (隈部氏館跡, Kumabe-shi yakata ato) is the site of a Sengoku period fortified manor located  in the present-day Furushiro-cho neighborhood of the city of Yamaga, Kumamoto Prefecture, Japan. Its ruins have been protected as a National Historic Site since 2013. It is also called Nagano Castle (永野城跡).",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Kumabe_Clan_Yakata",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [],
     "external_ids": {
@@ -12816,7 +12917,7 @@
       "ja": "霊台橋",
       "kana": "れいだいきょう",
       "romaji": "Reidaikyo",
-      "zh_tw": "靈台橋",
+      "zh_tw": "靈臺橋",
       "en": "Reidai Bridge"
     },
     "kana_source": "wikipedia",
@@ -12867,7 +12968,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11663924",
@@ -12892,11 +12993,11 @@
     "featured": false,
     "score": 69.19,
     "summary": {
-      "text": "鞠智城（きくちじょう/くくちのき）は、熊本県の山鹿市と菊池市にまたがる台地状の丘陵に築かれた、日本の古代山城。城跡は、2004年（平成16年）2月27日、国指定の史跡「鞠智城跡」に指定されている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E9%9E%A0%E6%99%BA%E5%9F%8E",
+      "text": "Kikuchi Castle (鞠智城, Kikuchi-jo) was an ancient castle (also known as a Korean-style fortresses in Japan (朝鮮式山城, Chōsen-shiki yamajiro) in the city of Kikuchi, Kumamoto Prefecture Japan. Its ruins have been protected as a National Historic Site since 2004.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Kikuchi_Castle",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -12950,11 +13051,11 @@
     "featured": false,
     "score": 63.92,
     "summary": {
-      "text": "高橋稲荷神社（たかはしいいなりじんじゃ）は、熊本県熊本市西区にある神社である。登記上の宗教法人名称は高の異体字である髙（はしごだか）を使用した髙橋稲荷神社。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E9%AB%98%E6%A9%8B%E7%A8%B2%E8%8D%B7%E7%A5%9E%E7%A4%BE",
+      "text": "Takahashi Inari Shrine (高橋稲荷神社, Takahashi inari jinja) is a Shinto Inari shrine, dedicated to the worship of the kami Inari. It is located in Kumamoto, Kumamoto Prefecture. Its main festival is held annually on November 8. It was founded in 1496.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Takahashi_Inari_Shrine",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -13116,7 +13217,7 @@
     "kind": "major",
     "themes": [],
     "tags": [],
-    "featured": false,
+    "featured": true,
     "score": 76.21,
     "summary": {
       "text": "黑川溫泉是位於日本熊本縣阿蘇郡南小國町的溫泉區，屬於南小國溫泉鄉之一。由於位於阿蘇山北方約20公里處，有時也被列為阿蘇溫泉鄉的一部分。在2008年觀光經濟新聞社公佈的「日本溫泉100選」中，黑川溫泉為「氛圍」項目第一名。在2009年的「日本米其林旅遊指南」（Michelin Travel Guide Japan）中被列為二星等級的溫泉區。",
@@ -13143,7 +13244,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q117221173",
@@ -13168,11 +13269,11 @@
     "featured": false,
     "score": 66.32,
     "summary": {
-      "text": "宮崎兄弟の生家（みやざききょうだいのせいか）は、熊本県荒尾市にある史跡。熊本県指定史跡。宮崎滔天、宮崎八郎、宮崎民蔵、宮崎彌蔵ら宮崎兄弟と「中国革命の父」孫文との交流を主題とする施設。敷地内には荒尾市宮崎兄弟資料館（あらおしみやざききょうだいしりょうかん）がある。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%AE%AE%E5%B4%8E%E5%85%84%E5%BC%9F%E3%81%AE%E7%94%9F%E5%AE%B6",
+      "text": "Birthplace of the Miyazaki Brothers (Japanese: 宮崎兄弟の生家, Hepburn: Miyazaki Kyōdai no Seika) is a cultural heritage site and museum in Arao City, Japan. It is a designated historical property of Kumamoto Prefecture. The site is dedicated to the Miyazaki Brothers: Hachirō, Tōten, Tamizō, and Yazō, and their connection to Sun Yat-sen, the leader of the 1911 Revolution. There is also a museum, the Miyazaki Brothers Museum built on the property.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Birthplace_of_the_Miyazaki_Brothers",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -13610,11 +13711,11 @@
     "featured": false,
     "score": 54.15,
     "summary": {
-      "text": "陣ノ内城（じんのうちじょう）は、熊本県上益城郡甲佐町大字豊内（肥後国益城郡）にあった日本の城。かつては陣ノ内館（じんのうちやかた）と呼ばれ、阿蘇大宮司家の居館跡と伝えられていた。発掘調査と関連史料の検討により、阿蘇氏の拠点が存在した場所に豊臣系大名の小西行長が築いた支城と考えられるようになり、2019年（令和元年）度に遺跡名が「陣ノ内館跡」から「陣ノ内城跡」へ変更された。2021年（令和3年）10月11日、国の史跡に指定された。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E9%99%A3%E3%83%8E%E5%86%85%E5%9F%8E",
+      "text": "Jinnouchi Castle (陣ノ内城, Jinnouchi-jō)  was a flatlands-style Japanese castle located in the Nishikatahonjō neighborhood of the town of  Kōsa,  Kumamoto Prefecture, Japan.  The ruins were designated a National Historic Site in 2021.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Jinnouchi_Castle",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [],
     "external_ids": {
@@ -13653,6 +13754,13 @@
     ],
     "featured": false,
     "score": 36.07,
+    "summary": {
+      "text": "Tanasoko Castle (棚底城跡, Tanasoko-jō) was a Muromachi period Japanese castle located in the Kuratake neighborhood of the city of Amakusa, Kumamoto Prefecture, Japan.  Its ruins have been protected as a National Historic Site since 2009.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Tanasoko_Castle",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
     "images": [],
     "external_ids": {
       "wikidata": "Q128378685",
@@ -13857,6 +13965,13 @@
     ],
     "featured": false,
     "score": 40.74,
+    "summary": {
+      "text": "Chihen-ji ruins (池辺寺跡, Chihen-ji ato) is an archeological site  with the ruins of a Heian period Buddhist temple located in the Ikegami neighborhood of the city of Kumamoto, Japan. The temple no longer exists, and its ruins were designated a National Historic Site in 1997.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Chihen-ji",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
     "images": [],
     "external_ids": {
       "wikidata": "Q132859242",
@@ -14091,11 +14206,11 @@
     "featured": false,
     "score": 66.18,
     "summary": {
-      "text": "加藤神社（かとうじんじゃ）は、熊本県熊本市の熊本城内にある神社である。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%8A%A0%E8%97%A4%E7%A5%9E%E7%A4%BE",
+      "text": "Katō Shrine (加藤神社, Katō-jinja) is a shrine in Kumamoto Castle, Chūō-ku, Kumamoto, Kumamoto, Japan, in which daimyō or powerful territorial lord Katō Kiyomasa (1562–1611) is enshrined. Alongside Ōki Kaneyoshi and Kin Kan, who made junshi, are enshrined.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Kat%C5%8D_Shrine",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -14302,6 +14417,13 @@
     "tags": [],
     "featured": false,
     "score": 60.26,
+    "summary": {
+      "text": "A Peace Pagoda is a Buddhist stupa: a monument to inspire peace, designed to provide a focus for people of all races and creeds, and to help unite them in their search for world peace. Most, though not all, peace pagodas built since World War II have been built under the guidance of Nichidatsu Fujii (1885–1985), a Buddhist monk from Japan and founder of the Nipponzan-Myōhōji Buddhist Order. Fujii was greatly inspired by his meeting with Mahatma Gandhi in 1931 and decided to devote his life to promoting non-violence.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Peace_Pagoda",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
     "nearest_stations": [
       {
         "name": {
@@ -14408,11 +14530,11 @@
     "featured": false,
     "score": 68.48,
     "summary": {
-      "text": "健軍神社（けんぐんじんじゃ）は、熊本県熊本市東区にある神社である。阿蘇神社（阿蘇市）、甲佐神社（こうさじんじゃ、甲佐町）、郡浦神社（こうのうらじんじゃ、宇城市）と共に阿蘇四社とも称せられる。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%81%A5%E8%BB%8D%E7%A5%9E%E7%A4%BE",
+      "text": "Kengun Shrine (健軍神社) is the oldest traditional shrine in Kumamoto City, Kumamoto Prefecture, Japan. It is one of the 4 shrines of Aso Shrine group (Aso Shrine, Kohsa Shrine and Kohnoura Shrine).",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Kengun_Shrine",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -14820,11 +14942,11 @@
     "featured": false,
     "score": 62.35,
     "summary": {
-      "text": "御船町恐竜博物館（みふねまちきょうりゅうはくぶつかん）は、熊本県上益城郡御船町大字御船995-6にある町立の自然史博物館。化石発掘体験場として「みふね化石ひろば」を持つ。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%BE%A1%E8%88%B9%E7%94%BA%E6%81%90%E7%AB%9C%E5%8D%9A%E7%89%A9%E9%A4%A8",
+      "text": "Mifune Dinosaur Museum (御船町恐竜博物館, Mifune-machi Kyōryū Hakubutsukan) opened in Mifune, Kumamoto Prefecture, Japan in 1998. The museum collects, preserves, researches, and displays the dinosaur fossils found in the area; the collection, which includes Japan's first fossil from a meat-eating dinosaur, Mifunesaurus, numbers some 15,000 items.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Mifune_Dinosaur_Museum",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -16247,7 +16369,7 @@
       "ja": "荒尾干潟",
       "kana": "あらおひがた",
       "romaji": "Arao Higata",
-      "zh_tw": "荒尾干潟",
+      "zh_tw": "荒尾幹潟",
       "en": "Arao Higata"
     },
     "kana_source": "wikipedia",
@@ -16292,7 +16414,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q20662421",
@@ -16894,11 +17016,11 @@
     "featured": true,
     "score": 79.08,
     "summary": {
-      "text": "青井阿蘇神社（あおいあそじんじゃ）は、熊本県人吉市上青井町にある神社。旧社格は県社で、現在は神社本庁の別表神社。地元では親しみを込めて「青井さん」と称されている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E9%9D%92%E4%BA%95%E9%98%BF%E8%98%87%E7%A5%9E%E7%A4%BE",
+      "text": "Aoi Aso Shrine (青井阿蘇神社, Aoi Aso Jinja) is a Shinto shrine in Hitoyoshi, Kumamoto Prefecture, Japan. It is colloquially known as Aoi-san (青井さん). It was originally established as a prefectural shrine, but is currently designated as a national shrine (別表神社, Beppyo Jinja). Five of the structures within the shrine are listed as National Treasures of Japan.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Aoi_Aso_Shrine",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -17000,7 +17122,7 @@
       "ja": "横井小楠記念館",
       "kana": "よこいしょうなんきねんかん",
       "romaji": "Yokoishonankinenkan",
-      "zh_tw": "横井小楠紀念館"
+      "zh_tw": "橫井小楠紀念館"
     },
     "kana_source": "wikipedia",
     "location": {
@@ -17044,7 +17166,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q2970819",
@@ -17240,11 +17362,11 @@
     "featured": false,
     "score": 68.77,
     "summary": {
-      "text": "本妙寺（ほんみょうじ）は、熊本市西区の熊本城北西にある日蓮宗六条門流の寺で大本山本圀寺から「六条門流九州総導師」の特別寺格を与えられている。山号は発星山。本尊は十界曼荼羅。親師法縁。日蓮宗の熱心な信者であり肥後熊本藩の初代藩主・加藤清正を祀る浄池廟（じょうちびょう）があることで知られる。浄池廟の奥には長い石段があり、これを上ると清正の銅像がある。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%9C%AC%E5%A6%99%E5%AF%BA_%28%E7%86%8A%E6%9C%AC%E5%B8%82%29",
+      "text": "Honmyō-ji (本妙寺) is a Buddhist temple of the Nichiren sect, Rokujōmon-ryū (六条門流), in Nishi-ku, Kumamoto, Japan. It is the most high-ranking temple of the sect in Kyushu. In Honmyō-ji is the grave of Katō Kiyomasa, (1562–1611), a Japanese daimyō, builder of Kumamoto Castle and a dedicated buddhist of Nichiren Buddhism.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Honmy%C5%8D-ji",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -17559,11 +17681,11 @@
     "featured": false,
     "score": 60.39,
     "summary": {
-      "text": "市房ダム（いちふさダム）は、熊本県球磨郡水上村、一級河川・球磨川水系球磨川本流に建設されたダム。旧名は新橋ダム（しんばしダム）。高さ78.5メートルの重力式コンクリートダムで、洪水調節・不特定利水・発電を目的とする、建設省（現・国土交通省）が建設し、完成後熊本県営となった多目的ダムである。ダム湖（人造湖）の名は市房湖という。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%B8%82%E6%88%BF%E3%83%80%E3%83%A0",
+      "text": "Ichifusa Dam (Japanese: 市房ダム) is a gravity dam located in Kumamoto Prefecture in Japan. The dam is used for flood control and power production. The catchment area of the dam is 157.8 km2. The dam impounds about 165  ha of land when full and can store 40200 thousand cubic meters of water. The construction of the dam was started on 1953 and completed in 1959.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Ichifusa_Dam",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -17682,6 +17804,59 @@
     ],
     "status": "published",
     "updated_at": "2026-09-28"
+  },
+  {
+    "id": "wd-Q452622",
+    "name": {
+      "ja": "天草諸島",
+      "kana": "あまくさしょとう",
+      "romaji": "Amakusashoto",
+      "zh_tw": "天草群島",
+      "en": "Amakusa island group"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 32.4,
+      "lng": 130.116667
+    },
+    "prefecture": "kumamoto",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "島"
+    ],
+    "featured": false,
+    "score": 63.95,
+    "summary": {
+      "text": "天草群島是日本天草灘與有明海、八代海之間的群島。別稱「苓州」・「苓洲」（れいしゅう）。行政上分屬熊本縣和鹿兒島縣。",
+      "lang": "zh",
+      "source_url": "https://zh.wikipedia.org/wiki/%E5%A4%A9%E8%8D%89%E7%BE%A4%E5%B3%B6",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d4/Sunset_from_AmakusaFiveBridgesNo.4.jpg/960px-Sunset_from_AmakusaFiveBridgesNo.4.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "STA3816",
+        "license": "CC BY 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Sunset_from_AmakusaFiveBridgesNo.4.jpg"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q452622"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q452622",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E5%A4%A9%E8%8D%89%E8%AB%B8%E5%B3%B6",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q4556482",
@@ -18239,11 +18414,11 @@
     "featured": false,
     "score": 64.18,
     "summary": {
-      "text": "熊本県立劇場（くまもとけんりつげきじょう）は、熊本県熊本市にある劇場。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E7%86%8A%E6%9C%AC%E7%9C%8C%E7%AB%8B%E5%8A%87%E5%A0%B4",
+      "text": "Kumamoto Prefectural Theater (熊本県立劇場, Kumamoto kenritsu gekijō) is a centre for the performing arts in Kumamoto, Kumamoto Prefecture, Japan.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Kumamoto_Prefectural_Theater",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -18537,11 +18712,11 @@
     "featured": false,
     "score": 56.24,
     "summary": {
-      "text": "金峰山県立自然公園（きんぼうざんけんりつしぜんこうえん）は、熊本県が指定する県立自然公園である。金峰山をはじめ、立田山や田原坂周辺一体を含んでいる。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E9%87%91%E5%B3%B0%E5%B1%B1%E7%9C%8C%E7%AB%8B%E8%87%AA%E7%84%B6%E5%85%AC%E5%9C%92",
+      "text": "Kinpōzan Prefectural Natural Park (金峰山県立自然公園, Kinpōzan kenritsu shizen kōen) is a Prefectural Natural Park in northwest Kumamoto Prefecture, Japan. Established in 1955, the park spans the municipalities of Gyokutō, Kumamoto, and Tamana. The park derives its name from Mount Kinbō and encompasses Honmyōji, Ohagi gardens, and Mount Sanno.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Kinp%C5%8Dzan_Prefectural_Natural_Park",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -18856,11 +19031,11 @@
     "featured": false,
     "score": 70.84,
     "summary": {
-      "text": "トンカラリンは、熊本県玉名郡和水町瀬川にある隧道型遺構。熊本県指定史跡に指定されている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E3%83%88%E3%83%B3%E3%82%AB%E3%83%A9%E3%83%AA%E3%83%B3",
+      "text": "The Tonkararin (トンカラリン, Tonkararin) or Tonkararin tunnel structure is a 464.6 m (1,524 ft) long, tunnel-like structure of unknown origin, situated in Nagomi, Kumamoto Prefecture, Japan. It lies on a plateau called Seibaru Daichi, around which are many kofun or tumuli, such as Eda-Funayama Kofun. It consists of very shallow natural slits of the ground covered with stones and man-made stone-structured underdrains. The name of Tonkararin came from the sound of a stone, when the stone is thrown into the tunnel.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Tonkararin_Tunnel_Structure",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -19278,7 +19453,7 @@
       "ja": "天城橋",
       "kana": "てんじょうきょう",
       "romaji": "Tenjokyo",
-      "zh_tw": "天城桥",
+      "zh_tw": "天城橋",
       "en": "Shintenmon Bridge"
     },
     "kana_source": "wikidata",
@@ -19328,7 +19503,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q91615400",
@@ -19776,11 +19951,11 @@
     "featured": false,
     "score": 42.72,
     "summary": {
-      "text": "大村横穴群（おおむらよこあなぐん、大村横穴墓群/城本横穴群）は、熊本県人吉市城本町にある横穴墓群。国の史跡に指定されている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E6%9D%91%E6%A8%AA%E7%A9%B4%E7%BE%A4",
+      "text": "The Ōmura Cave Tomb Cluster (大村横穴群, Ōmura yokoana-gun) is a cluster of yokoanabo tombs dug in artificial caves in a tuff cliff of located in the Shiromoto-machi neighborhood of the city of Hitoyoshi, Kumamoto Prefecture in Kyushu Japan. It was designated as a National Historic Site in 1921.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/%C5%8Cmura_Cave_Tomb_Cluster",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {

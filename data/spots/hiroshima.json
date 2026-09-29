@@ -186,6 +186,52 @@
     "updated_at": "2026-09-28"
   },
   {
+    "id": "wd-Q104438752",
+    "name": {
+      "ja": "柏島神社",
+      "kana": "かしわじまじんじゃ",
+      "romaji": "Kashiwajimajinja",
+      "zh_tw": "柏島神社",
+      "en": "Kashiwajima Shrine"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 34.268278,
+      "lng": 132.774722
+    },
+    "prefecture": "hiroshima",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "神社"
+    ],
+    "featured": false,
+    "score": 49.05,
+    "summary": {
+      "text": "柏島神社（かしわじまじんじゃ）は、広島県呉市三津口町柏島にある神社。主祭神は大山祇神。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E6%9F%8F%E5%B3%B6%E7%A5%9E%E7%A4%BE",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "images": [],
+    "external_ids": {
+      "wikidata": "Q104438752"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q104438752",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E6%9F%8F%E5%B3%B6%E7%A5%9E%E7%A4%BE",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
+  },
+  {
     "id": "wd-Q104660635",
     "name": {
       "ja": "甘南備神社",
@@ -393,11 +439,11 @@
     "featured": false,
     "score": 68.08,
     "summary": {
-      "text": "湯本豪一記念日本妖怪博物館（ゆもとこういちきねんにほんようかいはくぶつかん）は、広島県三次市にある博物館。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%B9%AF%E6%9C%AC%E8%B1%AA%E4%B8%80%E8%A8%98%E5%BF%B5%E6%97%A5%E6%9C%AC%E5%A6%96%E6%80%AA%E5%8D%9A%E7%89%A9%E9%A4%A8",
+      "text": "The Miyoshi Mononoke Museum, also known as the Yumoto Koichi Memorial Japan Yōkai Museum, or shortened to the Yōkai Museum, is located in Miyoshi, Hiroshima Prefecture, in western Honshu, Japan. The museum collection holds over 5,000 artworks and objects that represent yōkai, supernatural beings in Japanese folklore.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Miyoshi_Mononoke_Museum",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -1115,11 +1161,11 @@
     "featured": false,
     "score": 70.56,
     "summary": {
-      "text": "お好み村（おこのみむら）は、広島県広島市中区新天地5-13にある、広島風お好み焼きのフードテーマパーク。広島 お好み村（ひろしま おこのみむら）とも呼ばれる。「フードテーマパーク」という言葉が一般化する前より営業し、フードテーマパークというよりも、お好み屋の集合体という方が正しいかもしれない。運営団体は広島お好み村組合。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E3%81%8A%E5%A5%BD%E3%81%BF%E6%9D%91",
+      "text": "Okonomi-mura (お好み村; literally \"Okonomiyaki Village\") is a Hiroshima-style okonomiyaki food theme park located at 5-13 Shintenchi in Naka-ku, Hiroshima, Hiroshima Prefecture, Japan. It is near the east end of Hondōri and has over 25 okonomiyaki restaurants, each with a slightly different style and set of ingredients. The restaurants there use a specialty okonomiyaki sauce created especially for Okonomi-mura by Sun Foods.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Okonomi-mura",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -1251,11 +1297,11 @@
     "featured": false,
     "score": 57.54,
     "summary": {
-      "text": "なかた美術館は、広島県尾道市潮見町6番11号にある私立美術館。ナカタ・マックコーポレーションが運営する。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E3%81%AA%E3%81%8B%E3%81%9F%E7%BE%8E%E8%A1%93%E9%A4%A8",
+      "text": "Nakata Museum (なかた美術館, Nakata bijutsukan) opened in Onomichi, Hiroshima Prefecture, Japan, in 1997. The collection includes works by Corot, Renoir, Cézanne, Kobayashi Wasaku (小林和作), and Umehara Ryūzaburō.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Nakata_Museum",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -1742,11 +1788,11 @@
     "featured": false,
     "score": 62.46,
     "summary": {
-      "text": "ウッドワン美術館（ウッドワンびじゅつかん、WOOD ONE MUSEUM OF ART）は、広島県廿日市市吉和にある広島県の登録博物館。公益財団法人ウッドワン美術館が運営している。同地を発祥とする住宅建材メーカーのウッドワンが所蔵する美術品の寄託を受け作品展示をしている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E3%82%A6%E3%83%83%E3%83%89%E3%83%AF%E3%83%B3%E7%BE%8E%E8%A1%93%E9%A4%A8",
+      "text": "Wood One Museum of Art (ウッドワン美術館, Uddo-Wan Bijutsukan) opened in Hatsukaichi, Hiroshima Prefecture, Japan in 1996. The collection of some 800 works acquired by the Wood One Company (株式会社ウッドワン) centres around Modern Japanese Painting, Meissen porcelain, Art Nouveau glass, Qing ceramics, and Satsuma ware of the Bakumatsu and Meiji periods, and includes paintings by Kishida Ryūsei, Renoir, and Van Gogh.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Wood_One_Museum_of_Art",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -1992,6 +2038,53 @@
     "updated_at": "2026-09-28"
   },
   {
+    "id": "wd-Q11341148",
+    "name": {
+      "ja": "マリーナホップ",
+      "kana": "まりーなほっぷ",
+      "romaji": "Marinahoppu",
+      "zh_tw": "廣島Marina Hop",
+      "en": "Marina Hop"
+    },
+    "kana_source": "wikidata",
+    "location": {
+      "lat": 34.360389,
+      "lng": 132.415
+    },
+    "prefecture": "hiroshima",
+    "kind": "major",
+    "themes": [],
+    "tags": [],
+    "featured": false,
+    "score": 48.47,
+    "summary": {
+      "text": "マリーナホップは、広島市西区観音新町に存在したショッピングモール。レストランや観覧車もあり、広島観音マリーナの付帯施設として総合レジャー施設を形成していた。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E3%83%9E%E3%83%AA%E3%83%BC%E3%83%8A%E3%83%9B%E3%83%83%E3%83%97",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/60/%E3%83%9E%E3%83%AA%E3%83%BC%E3%83%8A%E3%83%9B%E3%83%83%E3%83%97%E6%96%BD%E8%A8%AD%E5%86%85.jpg/960px-%E3%83%9E%E3%83%AA%E3%83%BC%E3%83%8A%E3%83%9B%E3%83%83%E3%83%97%E6%96%BD%E8%A8%AD%E5%86%85.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Marinahop",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:%E3%83%9E%E3%83%AA%E3%83%BC%E3%83%8A%E3%83%9B%E3%83%83%E3%83%97%E6%96%BD%E8%A8%AD%E5%86%85.jpg"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q11341148"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q11341148",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
+  },
+  {
     "id": "wd-Q11349625",
     "name": {
       "ja": "レストハウス",
@@ -2060,6 +2153,55 @@
     ],
     "status": "published",
     "updated_at": "2026-09-28"
+  },
+  {
+    "id": "wd-Q11354008",
+    "name": {
+      "ja": "三ツ子島",
+      "kana": "みつごじま",
+      "romaji": "Mitsugojima",
+      "zh_tw": "三子島",
+      "en": "Mitsukojima"
+    },
+    "kana_source": "wikidata",
+    "location": {
+      "lat": 34.195444,
+      "lng": 132.513056
+    },
+    "prefecture": "hiroshima",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "島"
+    ],
+    "featured": false,
+    "score": 48.66,
+    "summary": {
+      "text": "三ツ子島（みつごじま）は、広島県呉市の倉橋島の北約100 mの広島湾上に浮かぶ無人島である。三子島の表記もある。南側の大きな島と北側の小さな島の2島を総称した名前で、面積は約0.1 平方キロメートルある。呉市音戸町渡子に属する。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E4%B8%89%E3%83%84%E5%AD%90%E5%B3%B6_%28%E5%BA%83%E5%B3%B6%E7%9C%8C%29",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/18/Mitucozima.jpg/960px-Mitucozima.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "00340",
+        "license": "CC BY 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Mitucozima.jpg"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q11354008"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q11354008",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11356072",
@@ -2230,7 +2372,7 @@
       "ja": "中川美術館",
       "kana": "なかがわびじゅつかん",
       "romaji": "Nakagawabijutsukan",
-      "zh_tw": "中川美术馆",
+      "zh_tw": "中川美術館",
       "en": "Nakagawa Museum of Art"
     },
     "kana_source": "wikipedia",
@@ -2280,7 +2422,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11370817",
@@ -2757,11 +2899,11 @@
     "featured": false,
     "score": 52.14,
     "summary": {
-      "text": "倉橋島（くらはしじま）は、広島県呉市に属する島である。別名「宝島」とも呼ばれる。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%80%89%E6%A9%8B%E5%B3%B6",
+      "text": "Kurahashi-jima (倉橋島), also called Nagato-jima (長門島) in ancient texts, is an island in Hiroshima Bay located in southwestern Hiroshima Prefecture, Japan.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Kurahashi-jima",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -2786,6 +2928,64 @@
     ],
     "status": "published",
     "updated_at": "2026-09-28"
+  },
+  {
+    "id": "wd-Q11387212",
+    "name": {
+      "ja": "健康科学館",
+      "kana": "けんこうかがくかん",
+      "romaji": "Kenkokagakukan",
+      "zh_tw": "健康科學館",
+      "en": "Hiroshima City Health Promotion Center Health Sciences Museum"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 34.376278,
+      "lng": 132.457139
+    },
+    "prefecture": "hiroshima",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "博物館"
+    ],
+    "featured": false,
+    "score": 48.81,
+    "summary": {
+      "text": "健康科学館（けんこうかがくかん）は、広島県広島市中区にある、健康、身体分野をテーマにした科学館。運営は、（公財）広島原爆障害対策協議会。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E5%81%A5%E5%BA%B7%E7%A7%91%E5%AD%A6%E9%A4%A8",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3f/Hiroshima_Koto_Kogyo_Gakko_140811.JPG/960px-Hiroshima_Koto_Kogyo_Gakko_140811.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Taisyo",
+        "license": "CC BY 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Hiroshima_Koto_Kogyo_Gakko_140811.JPG"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q11387212",
+      "osm": "node/1423636288"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q11387212",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.openstreetmap.org/node/1423636288",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E5%81%A5%E5%BA%B7%E7%A7%91%E5%AD%A6%E9%A4%A8",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11387373",
@@ -3237,6 +3437,73 @@
     "updated_at": "2026-09-28"
   },
   {
+    "id": "wd-Q11405511",
+    "name": {
+      "ja": "千手寺",
+      "kana": "せんじゅじ",
+      "romaji": "Senjuji",
+      "zh_tw": "千手寺"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 34.903083,
+      "lng": 133.274694
+    },
+    "prefecture": "hiroshima",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "寺院"
+    ],
+    "featured": false,
+    "score": 48.4,
+    "summary": {
+      "text": "千手寺（せんじゅじ）は、広島県庄原市（旧比婆郡東城町）にある曹洞宗の寺院。山号は花谷山。峰号は吉祥峰。本尊は千手観音。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E5%8D%83%E6%89%8B%E5%AF%BA_%28%E5%BA%84%E5%8E%9F%E5%B8%82%29",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "東城",
+          "romaji": "Tōjō",
+          "en": "Tōjō"
+        },
+        "distance_m": 190
+      }
+    ],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4f/Senju-ji%2C_Tojo.jpg/960px-Senju-ji%2C_Tojo.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "運動会プロテインパワー",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Senju-ji,_Tojo.jpg"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q11405511",
+      "osm": "node/9767211549"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q11405511",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.openstreetmap.org/node/9767211549",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E5%8D%83%E6%89%8B%E5%AF%BA_%28%E5%BA%84%E5%8E%9F%E5%B8%82%29",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
+  },
+  {
     "id": "wd-Q114055118",
     "name": {
       "ja": "安楽寺",
@@ -3502,11 +3769,11 @@
     "featured": false,
     "score": 67.96,
     "summary": {
-      "text": "国立広島原爆死没者追悼平和祈念館（こくりつひろしまげんばくしぼつしゃついとうへいわきねんかん）は、広島県広島市中区中島町の平和記念公園内にある、被爆者を追悼する国立の施設である。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%9B%BD%E7%AB%8B%E5%BA%83%E5%B3%B6%E5%8E%9F%E7%88%86%E6%AD%BB%E6%B2%A1%E8%80%85%E8%BF%BD%E6%82%BC%E5%B9%B3%E5%92%8C%E7%A5%88%E5%BF%B5%E9%A4%A8",
+      "text": "Hiroshima National Peace Memorial Hall for the Atomic Bomb Victims is one of the National Memorial Halls in Hiroshima, Japan.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Hiroshima_National_Peace_Memorial_Hall_for_the_Atomic_Bomb_Victims",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -3687,11 +3954,11 @@
     "featured": false,
     "score": 52.2,
     "summary": {
-      "text": "向島（むかいしま）は、広島県尾道市に属する島。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%90%91%E5%B3%B6_%28%E5%BA%83%E5%B3%B6%E7%9C%8C%29",
+      "text": "Mukaishima (向島, Mukaishima) is the northernmost island in the Geiyo Islands chain accommodating Nishiseto Expressway connecting Honshu and Shikoku islands. Its coasts are washed by Seto Inland Sea. The island's highest peak is Takamiyama (高見山) 283.2 m (929 ft) high.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Mukaishima",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -4042,11 +4309,11 @@
     "featured": false,
     "score": 58.68,
     "summary": {
-      "text": "因島（いんのしま）は、広島県尾道市に属する島である。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%9B%A0%E5%B3%B6",
+      "text": "Innoshima (因島) is an island in Onomichi, Hiroshima Prefecture, Japan. Originally, there was a city of the same name on this island, but it was merged into Onomichi in 2016.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Innoshima",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -4398,11 +4665,11 @@
     "featured": false,
     "score": 67.53,
     "summary": {
-      "text": "多治比猿掛城（たじひさるがけじょう）は、広島県安芸高田市にあった日本の城。「毛利氏城跡 多治比猿掛城跡 郡山城跡」として、吉田郡山城と共に国の史跡に指定されている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%A4%9A%E6%B2%BB%E6%AF%94%E7%8C%BF%E6%8E%9B%E5%9F%8E",
+      "text": "Tajihi-Sarugake Castle (多治比猿掛城, Tajihi-Sarugake-jō) was a Japanese castle located in Akitakata, Hiroshima Prefecture.  Its ruins have been protected by the central government as a National Historic Site together with Yoshida-Kōriyama Castle since 1940.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Tajihi-Sarugake_Castle",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -4576,11 +4843,11 @@
     "featured": false,
     "score": 49.19,
     "summary": {
-      "text": "大崎上島（おおさきかみじま）は、瀬戸内海芸予諸島の島。広島県豊田郡大崎上島町に属する。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E5%B4%8E%E4%B8%8A%E5%B3%B6",
+      "text": "Ōsakikamijima Island (大崎上島, Ōsakikamijima) is an island in the Inland Sea of Japan which is administratively part of the town of Ōsakikamijima, Hiroshima Prefecture. As of 2020, the population was about 7,158.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/%C5%8Csakikamijima_Island",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -4629,11 +4896,11 @@
     "featured": false,
     "score": 50.86,
     "summary": {
-      "text": "大崎下島（おおさきしもじま）は、瀬戸内海の中部にある下大崎群島の島。行政上は広島県呉市の豊町と豊浜町からなり、本土である東広島市安芸津町の南約15kmの海上に位置する離島である。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E5%B4%8E%E4%B8%8B%E5%B3%B6",
+      "text": "Ōsakishimojima (大崎下島) is an island in the Geiyo Islands of the Seto Inland Sea, off the southern coast of Honshu in the prefecture of Hiroshima in Japan. The island is best known for the town of Mitarai (御手洗), an important port of call for ships during the Edo era.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/%C5%8Csakishimojima",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -5080,11 +5347,11 @@
     "featured": false,
     "score": 53.37,
     "summary": {
-      "text": "宮の前廃寺跡（みやのまえはいじあと）は、広島県福山市蔵王町にある古代寺院跡。国の史跡に指定されている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%AE%AE%E3%81%AE%E5%89%8D%E5%BB%83%E5%AF%BA%E8%B7%A1",
+      "text": "Miyanomae temple ruins (宮の前廃寺跡, Miyanomae haiji ato) is an archeological site  with the ruins of a Nara period Buddhist temple located in the Zaō neighborhood of the city of Fukuyama, Hiroshima, Japan. It was designated as a National Historic Site in 1969.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Miyanomae_temple_ruins",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [],
     "external_ids": {
@@ -5213,11 +5480,11 @@
     "featured": false,
     "score": 59.74,
     "summary": {
-      "text": "小倉山城（おぐらやまじょう）は、広島県山県郡北広島町新庄字小倉山にあった城（日本の城）。吉川氏の居城で、別称で小蔵山城・紅葉山城・小倉城とも言われる。城跡は国の史跡に指定されている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%B0%8F%E5%80%89%E5%B1%B1%E5%9F%8E_%28%E5%AE%89%E8%8A%B8%E5%9B%BD%29",
+      "text": "Ogurayama Castle (小倉山城, Ogurayama-jō) was a Japanese castle located in  Kitahiroshima, Hiroshima Prefecture.  Its ruins have been protected by the central government as a National Historic Site since 1986 as part of the \"Kikkawa clan fortification ruins\" along with Surugamaru Castle and Hinoyama Castle.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Ogurayama_Castle",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -6408,11 +6675,11 @@
     "featured": false,
     "score": 62.96,
     "summary": {
-      "text": "広島市江波山気象館（ひろしましえばやまきしょうかん）は、広島市中区の江波山公園内にある気象科学館（登録博物館）である。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%BA%83%E5%B3%B6%E5%B8%82%E6%B1%9F%E6%B3%A2%E5%B1%B1%E6%B0%97%E8%B1%A1%E9%A4%A8",
+      "text": "The Hiroshima City Ebayama Museum of Meteorology (広島市江波山気象館, Hiroshima-shi Ebayama Kishōkan) was the first museum of meteorology in Japan. It is located in Ebayama Park in the city of Hiroshima, Hiroshima Prefecture, Japan.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Hiroshima_City_Ebayama_Museum_of_Meteorology",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -6530,11 +6797,11 @@
     "featured": false,
     "score": 66.48,
     "summary": {
-      "text": "広島東照宮（ひろしまとうしょうぐう）は、広島県広島市東区の二葉山山麓の約300 ｍの高台にある東照宮で、尾長東照宮ともよばれている。現存する被爆建物の一つであり、それらは広島市指定文化財となっている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%BA%83%E5%B3%B6%E6%9D%B1%E7%85%A7%E5%AE%AE",
+      "text": "Hiroshima Tōshō-gū (広島東照宮) is a Shinto shrine in Hiroshima, Hiroshima Prefecture, Japan. It is Tōshō-gū shrine, which enshrines the first Shōgun of the Tokugawa Shogunate, Tokugawa Ieyasu.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Hiroshima_T%C5%8Dsh%C5%8D-g%C5%AB",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -7080,11 +7347,11 @@
     "featured": false,
     "score": 72.91,
     "summary": {
-      "text": "廉塾（れんじゅく）は、江戸時代備後国神辺（現・広島県福山市神辺町）に、菅茶山によって開かれた私塾を元に開校した備後福山藩の郷校。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%BB%89%E5%A1%BE",
+      "text": "The Renjuku (廉塾) was a private academy in Edo period Japan. Located in the Kannabe neighborhood of the city of Fukuyama, Hiroshima Prefecture, it was designated a Special National Historic Site in 1934.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Renjuku",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -7492,11 +7759,11 @@
     "featured": false,
     "score": 59.98,
     "summary": {
-      "text": "持光寺（じこうじ）は、広島県尾道市西土堂町にある浄土宗西山禅林寺派の寺院。山号は日輪山。院号は金剛台院。本尊は阿弥陀如来。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%8C%81%E5%85%89%E5%AF%BA",
+      "text": "Jikō-ji (持光寺) is a Buddhist temple in Onomichi, Hiroshima Prefecture, belonging to the Seizan Zenrin-ji of Jōdo-shū Buddhism. Its principal image is a seated image of Amida Nyōrai. The temple houses a National Treasure, an 1153 Heian Period hanging scroll of Fugen Enmei (Samantabhadra).",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Jik%C5%8D-ji",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -7562,11 +7829,11 @@
     "featured": false,
     "score": 68.79,
     "summary": {
-      "text": "新高山城（にいたかやまじょう）は、広島県三原市本郷町にあった日本の城。城跡は国の史跡に指定されている。2017年（平成29年）4月6日、続日本100名城（173番）に選定された。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%96%B0%E9%AB%98%E5%B1%B1%E5%9F%8E",
+      "text": "Niitakayama Castle (新高山城, Niitakayama-jō) of Aki Province was a yamajiro-style Japanese castle located in what is today the  Hongō neighborhood of the city of  Mihara in Hiroshima Prefecture. Its ruins have been protected by the central government as a National Historic Site since 1957.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Niitakayama_Castle",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -7743,11 +8010,11 @@
     "featured": false,
     "score": 62.01,
     "summary": {
-      "text": "日野山城（日山城、ひのやまじょう）は、広島県北広島町新庄にあった日本の城（山城）。城跡は国の史跡に指定されている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%97%A5%E9%87%8E%E5%B1%B1%E5%9F%8E",
+      "text": "Hinoyama Castle (日野山城, Hinoyama-jō) was a Japanese castle located in the town of Kitahiroshima, Hiroshima Prefecture. Its ruins have been protected by the central government as a National Historic Site since 1940 as part of the Kikkawa clan castle ruins.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Hinoyama_Castle",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -7968,7 +8235,7 @@
       "ja": "曽場ヶ城",
       "kana": "そばがじょう",
       "romaji": "Sobagajo",
-      "zh_tw": "曾场城",
+      "zh_tw": "曾場城",
       "en": "Sobagajo Castle"
     },
     "kana_source": "wikipedia",
@@ -8006,7 +8273,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11521056",
@@ -8201,11 +8468,11 @@
     "featured": false,
     "score": 52.82,
     "summary": {
-      "text": "横見廃寺跡（よこみはいじあと）は、広島県三原市本郷町下北方（しもきたがた）にある古代寺院跡。国の史跡に指定されている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%A8%AA%E8%A6%8B%E5%BB%83%E5%AF%BA%E8%B7%A1",
+      "text": "Yokomi temple ruins (横見廃寺跡, Yokomi haiji ato) is an archeological site  with the ruins of a Nara period Buddhist temple located in the Hongō neighborhood of the city of Mihara, Hiroshima, Japan. It was designated as a National Historic Site in 1978.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Yokomi_temple_ruins",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [],
     "external_ids": {
@@ -9175,11 +9442,11 @@
     "featured": false,
     "score": 71.17,
     "summary": {
-      "text": "瓢箪島（ひょうたんじま）は瀬戸内海に浮かぶ無人島。広島県と愛媛県の県境にある。国の登録記念物。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E7%93%A2%E7%AE%AA%E5%B3%B6",
+      "text": "Hyōtanjima (Japanese: 瓢箪島) is an uninhabited island in the Geiyo Islands chain in the Seto Inland Sea, in Japan. The island is split between Hiroshima Prefecture and Ehime Prefecture at a point where it is 74 metres (243 ft) wide, the country's shortest prefectural border.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Hy%C5%8Dtanjima",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -9228,11 +9495,11 @@
     "featured": false,
     "score": 55.84,
     "summary": {
-      "text": "生口島（いくちじま）は、瀬戸内海の芸予諸島に属する島。平成の大合併により、全域が広島県尾道市に属する。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E7%94%9F%E5%8F%A3%E5%B3%B6",
+      "text": "Ikuchijima (生口島) is one of the Geiyo Islands in the Seto Inland Sea, belonging to Hiroshima Prefecture in Japan. Ikuchijima is administered as part of Onomichi city. There are bridges connecting Ikuchijima to the mainland (Honshū) via Innoshima and to Shikoku via Ōmishima Island. The highest peak of this 31.21 km2 island is Mount Kanno at 472.3 m (1,550 ft).",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Ikuchijima",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -9480,7 +9747,7 @@
       "ja": "磐台寺",
       "kana": "ばんだいじ",
       "romaji": "Bandaiji",
-      "zh_tw": "磐台寺觀音堂",
+      "zh_tw": "磐臺寺觀音堂",
       "en": "Bandai-ji Temple"
     },
     "kana_source": "wikipedia",
@@ -9526,7 +9793,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11589592",
@@ -9598,11 +9865,11 @@
     "featured": false,
     "score": 62.45,
     "summary": {
-      "text": "福山八幡宮（ふくやまはちまんぐう）は、広島県福山市北吉津町にある八幡宮である。福山城の北側にある松廼尾山に祀られている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E7%A6%8F%E5%B1%B1%E5%85%AB%E5%B9%A1%E5%AE%AE",
+      "text": "Fukuyama Hachimangū (福山八幡宮, Fukuyama Hachimangū) is a Shinto shrine located in Fukuyama, Hiroshima Prefecture, Japan. It is a Hachiman shrine, dedicated to the kami Hachiman. The kami it enshrines include Emperor Ōjin, Empress Jingū, and Himegami (比売神).",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Fukuyama_Hachimang%C5%AB",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -9874,11 +10141,11 @@
     "featured": false,
     "score": 64.0,
     "summary": {
-      "text": "福禅寺（ふくぜんじ）は、広島県福山市にある真言宗大覚寺派の仏教寺院。山号は海岸山、院号は千手院。境内は「朝鮮通信使遺跡鞆福禅寺境内」として国の史跡に指定されている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E7%A6%8F%E7%A6%85%E5%AF%BA_%28%E7%A6%8F%E5%B1%B1%E5%B8%82%29",
+      "text": "Fukuzen-ji (福禅寺) is a Buddhist temple located in the Tomo-machi neighborhood of the city of Fukuyama, Hiroshima Prefecture, Japan.  The temple's full name is Kaigan-zan Senjū-in Fukuzen-ji (海岸山 千手院 福禅寺), and it belongs Daikaku-ji branch of the Shingon-shu of Japanese Buddhism.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Fukuzen-ji",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -10134,7 +10401,7 @@
       "ja": "糸碕神社",
       "kana": "いとさきじんじゃ",
       "romaji": "Itosakijinja",
-      "zh_tw": "丝碕神社",
+      "zh_tw": "絲碕神社",
       "en": "Itosaki Shrine"
     },
     "kana_source": "wikipedia",
@@ -10195,7 +10462,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11605512",
@@ -11702,11 +11969,11 @@
     "featured": false,
     "score": 61.24,
     "summary": {
-      "text": "鈴尾城（すずおじょう）は、広島県安芸高田市福原にあった日本の城（山城）。別名福原城。「毛利元就誕生伝説地（鈴尾城跡）」として1940年（昭和15年）11月10日付で広島県指定史跡。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E9%88%B4%E5%B0%BE%E5%9F%8E",
+      "text": "Suzuo Castle (鈴尾城) was the main castle of the Fukubara clan. It is located in Fukubara of Akitakata, Hiroshima, in what used to be Aki Province. It is also known as \"Fukubara Castle\" (福原城). It is also famous as the birthplace of the warlord Mōri Motonari.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Suzuo_Castle",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [],
     "external_ids": {
@@ -11799,11 +12066,11 @@
     "featured": false,
     "score": 66.69,
     "summary": {
-      "text": "音戸大橋（おんどおおはし）は、広島県呉市の本土と倉橋島（旧安芸郡音戸町）を結ぶ道路橋。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E9%9F%B3%E6%88%B8%E5%A4%A7%E6%A9%8B",
+      "text": "Ondō Bridge (音戸大橋, Ondō Ōhashi) also known as Ondoo Bridge and Ondo Bridge is a red road bridge that connects the mainland of Kure City, Hiroshima, with Kurahashi Island (formerly Ondo Town, Aki District).",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Ond%C5%8D_Bridge",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -11850,11 +12117,11 @@
     "featured": false,
     "score": 49.74,
     "summary": {
-      "text": "音戸町（おんどちょう）は、広島県のかつての町。安芸郡に属した。町域は呉市南方の瀬戸内海に浮かぶ倉橋島の北側約3分の1を占めていた。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E9%9F%B3%E6%88%B8%E7%94%BA",
+      "text": "Ondo (音戸町, Ondo-chō) was a town located in Aki District, Hiroshima Prefecture, Japan.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Ondo%2C_Hiroshima",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [],
     "external_ids": {
@@ -12088,11 +12355,11 @@
     "featured": false,
     "score": 56.5,
     "summary": {
-      "text": "駿河丸城（するがまるじょう）は、広島県北広島町にあった日本の城。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E9%A7%BF%E6%B2%B3%E4%B8%B8%E5%9F%8E",
+      "text": "Surugamaru Castle (駿河丸城, Surugamaru-jō) was a Japanese castle located in  Kitahiroshima, Hiroshima Prefecture.  Its ruins have been protected by the central government as a National Historic Site since 1986 as part of the \"Kikkawa clan fortification ruins\" along with Ogurayama Castle and Hinoyama Castle.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Surugamaru_Castle",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [],
     "external_ids": {
@@ -12135,11 +12402,11 @@
     "featured": false,
     "score": 64.81,
     "summary": {
-      "text": "高山城（たかやまじょう）は、広島県三原市本郷町にあった日本の城。城跡は国の史跡に指定されている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E9%AB%98%E5%B1%B1%E5%9F%8E_%28%E5%AE%89%E8%8A%B8%E5%9B%BD%29",
+      "text": "Takayama Castle (高山城, Takayama-jō) of Aki Province was a yamajiro-style Japanese castle located in what is today the Hongō neighborhood of the city of Mihara in Hiroshima Prefecture. Its ruins have been protected by the central government as a National Historic Site since 1957.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Takayama_Castle_%28Mihara%29",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -12740,11 +13007,11 @@
     "featured": false,
     "score": 74.52,
     "summary": {
-      "text": "広島県立総合体育館（ひろしまけんりつそうごうたいいくかん）は、広島県広島市中区基町の広島市中央公園内にある体育館。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%BA%83%E5%B3%B6%E7%9C%8C%E7%AB%8B%E7%B7%8F%E5%90%88%E4%BD%93%E8%82%B2%E9%A4%A8",
+      "text": "Hiroshima Prefectural Sports Center (広島県立総合体育館, Hiroshima Kenritsu Sōgō Taiikukan) is an indoor arena located in Hiroshima, Japan. The original arena was built sometime shortly after World War II. The arena was rebuilt for the 1994 Asian Games. It hosted some of the group games for the 2006 FIVB Men's World Championship and the official 2006 Basketball World Championship.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Hiroshima_Prefectural_Sports_Center",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -12809,11 +13076,11 @@
     "featured": false,
     "score": 58.36,
     "summary": {
-      "text": "広島大学大学院統合生命科学研究科附属宮島自然植物実験所（ひろしまだいがくだいがくいんとうごうせいめいかがくけんきゅうかふぞく みやじましぜんしょくぶつじっけんじょ、Miyajima Natural Botanical Garden of Hiroshima University）は、広島県廿日市市宮島町にある植物園。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%BA%83%E5%B3%B6%E5%A4%A7%E5%AD%A6%E5%A4%A7%E5%AD%A6%E9%99%A2%E7%90%86%E5%AD%A6%E7%A0%94%E7%A9%B6%E7%A7%91%E9%99%84%E5%B1%9E%E5%AE%AE%E5%B3%B6%E8%87%AA%E7%84%B6%E6%A4%8D%E7%89%A9%E5%AE%9F%E9%A8%93%E6%89%80",
+      "text": "The Miyajima Natural Botanical Garden (宮島自然植物実験所, Miyajima Shizen Shokubutsu Jikkensho; 11.5 hectares) is a botanical garden operated by Hiroshima University and located at Mitsumaruko-yama 1156-2, Miyajima-cho, Hatsukaichi, Hiroshima, Japan. It is open daily except New Years and August; admission is free.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Miyajima_Natural_Botanical_Garden",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -12972,6 +13239,61 @@
     ],
     "status": "published",
     "updated_at": "2026-09-28"
+  },
+  {
+    "id": "wd-Q120967486",
+    "name": {
+      "ja": "ekie エキキタパーク",
+      "zh_tw": "ekie エキキタパーク",
+      "en": "ekie Ekikita Park"
+    },
+    "location": {
+      "lat": 34.399361,
+      "lng": 132.476806
+    },
+    "prefecture": "hiroshima",
+    "kind": "major",
+    "themes": [],
+    "tags": [],
+    "featured": false,
+    "score": 49.03,
+    "summary": {
+      "text": "ekie エキキタパークは広島県広島市東区の広島駅北口にあった多目的広場。JR西日本広島支社の跡地に2022年9月17日にオープンした。略称はエキパ。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/Ekie_%E3%82%A8%E3%82%AD%E3%82%AD%E3%82%BF%E3%83%91%E3%83%BC%E3%82%AF",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "広島",
+          "kana": "ひろしま",
+          "romaji": "Hiroshima",
+          "en": "Hiroshima"
+        },
+        "distance_m": 160
+      }
+    ],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/92/Ekie_%E3%82%A8%E3%82%AD%E3%82%AD%E3%82%BF%E3%83%91%E3%83%BC%E3%82%AF.jpg/960px-Ekie_%E3%82%A8%E3%82%AD%E3%82%AD%E3%82%BF%E3%83%91%E3%83%BC%E3%82%AF.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "ポケットティッシュ",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Ekie_%E3%82%A8%E3%82%AD%E3%82%AD%E3%82%BF%E3%83%91%E3%83%BC%E3%82%AF.jpg"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q120967486"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q120967486",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q121367781",
@@ -13160,6 +13482,42 @@
     ],
     "status": "published",
     "updated_at": "2026-09-28"
+  },
+  {
+    "id": "wd-Q124479402",
+    "name": {
+      "ja": "SOIL Setoda",
+      "zh_tw": "SOIL Setoda"
+    },
+    "location": {
+      "lat": 34.304278,
+      "lng": 133.084278
+    },
+    "prefecture": "hiroshima",
+    "kind": "major",
+    "themes": [],
+    "tags": [],
+    "featured": false,
+    "score": 48.56,
+    "summary": {
+      "text": "SOIL SETODA（ソイル セトダ）は、広島県尾道市瀬戸田町にある複合商業施設。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/SOIL_Setoda",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "images": [],
+    "external_ids": {
+      "wikidata": "Q124479402"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q124479402",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q124480253",
@@ -13847,12 +14205,75 @@
     "updated_at": "2026-09-28"
   },
   {
+    "id": "wd-Q132154392",
+    "name": {
+      "ja": "世界にここだけ釣具博物館",
+      "kana": "せかいにここだけつりぐはくぶつかん",
+      "romaji": "Sekainikokodaketsuriguhakubutsukan",
+      "zh_tw": "世界にここだけ釣具博物館"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 34.40786,
+      "lng": 132.454061
+    },
+    "prefecture": "hiroshima",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "博物館"
+    ],
+    "featured": false,
+    "score": 48.88,
+    "summary": {
+      "text": "世界にここだけ釣具博物館（せかいにここだけつりぐはくぶつかん）は、広島県広島市西区楠木町にある釣具専門の博物館である。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E4%B8%96%E7%95%8C%E3%81%AB%E3%81%93%E3%81%93%E3%81%A0%E3%81%91%E9%87%A3%E5%85%B7%E5%8D%9A%E7%89%A9%E9%A4%A8",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "横川",
+          "kana": "よこがわ",
+          "romaji": "Yokogawa",
+          "en": "Yokogawa"
+        },
+        "distance_m": 410
+      },
+      {
+        "name": {
+          "ja": "城北",
+          "en": "Jōhoku"
+        },
+        "distance_m": 520
+      }
+    ],
+    "images": [],
+    "external_ids": {
+      "wikidata": "Q132154392"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q132154392",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E4%B8%96%E7%95%8C%E3%81%AB%E3%81%93%E3%81%93%E3%81%A0%E3%81%91%E9%87%A3%E5%85%B7%E5%8D%9A%E7%89%A9%E9%A4%A8",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
+  },
+  {
     "id": "wd-Q132176507",
     "name": {
       "ja": "下瀬美術館",
       "kana": "しもせびじゅつかん",
       "romaji": "Shimose bijutsukan",
-      "zh_tw": "下濑美术馆",
+      "zh_tw": "下瀨美術館",
       "en": "Simose Art Museum"
     },
     "kana_source": "osm",
@@ -13898,7 +14319,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q133534",
@@ -13923,11 +14344,11 @@
     "featured": false,
     "score": 67.67,
     "summary": {
-      "text": "安芸灘大橋（あきなだおおはし）は、広島県呉市の本州側と下蒲刈島を結ぶ道路橋および橋を中心とした道路。「安芸灘大橋有料道路」の有料橋である。1999年全建賞道路部門受賞、同年土木学会田中賞作品部門受賞。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%AE%89%E8%8A%B8%E7%81%98%E5%A4%A7%E6%A9%8B",
+      "text": "The Akinada Bridge (安芸灘大橋, Akinada Ō-hashi) is a suspension bridge in Kure, Hiroshima, Japan that crosses the Seto Inland Sea. Completed in 1999, it has a main span of 750 m (2,460 ft). The first and largest bridge on the Akinada Tobishima Kaido, it was constructed by Penta-Ocean Construction, at a cost of 50 billion yen.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Akinada_Bridge",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -14203,11 +14624,11 @@
     "featured": false,
     "score": 69.07,
     "summary": {
-      "text": "温井ダム（ぬくいダム）は、広島県山県郡安芸太田町にある、一級河川太田川水系滝山川に建設されたダムである。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%B8%A9%E4%BA%95%E3%83%80%E3%83%A0",
+      "text": "Nukui Dam (温井ダム) is a dam in Akiōta (former Kake), Hiroshima Prefecture, Japan. In Japan, it is the second highest arch dam, and it generates a powerful discharge from a height of 156 meters (500 liters per second).",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Nukui_Dam",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -14239,7 +14660,7 @@
       "ja": "江田島",
       "kana": "えたじま",
       "romaji": "Etajima",
-      "zh_tw": "江田岛",
+      "zh_tw": "江田島",
       "en": "Etajima"
     },
     "kana_source": "wikipedia",
@@ -14284,7 +14705,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q17192215",
@@ -15422,6 +15843,57 @@
     "updated_at": "2026-09-28"
   },
   {
+    "id": "wd-Q17230203",
+    "name": {
+      "ja": "法宣寺の天蓋マツ",
+      "kana": "ほうせんじのてんがいまつ",
+      "romaji": "Hosenjinotengaimatsu",
+      "zh_tw": "法宣寺の天蓋マツ",
+      "en": "Tengai Pine Tree"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 34.385078,
+      "lng": 133.379503
+    },
+    "prefecture": "hiroshima",
+    "kind": "major",
+    "themes": [],
+    "tags": [],
+    "featured": false,
+    "score": 48.57,
+    "summary": {
+      "text": "法宣寺の天蓋マツ（ほうせんじのてんがいマツ）は、広島県福山市鞆町後地の法宣寺境内に生育していたクロマツの巨木である。法宣寺の開基大覚大僧正手植えの木と伝えられ、推定の樹齢は630年とされていた。「まれに見るクロマツの名木」として1944年（昭和19年）に国の天然記念物に指定されたが、1991年（平成3年）夏に枯死している。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E6%B3%95%E5%AE%A3%E5%AF%BA%E3%81%AE%E5%A4%A9%E8%93%8B%E3%83%9E%E3%83%84",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/86/Housenji01_1024.jpg/960px-Housenji01_1024.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "663highland",
+        "license": "CC BY 2.5",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Housenji01_1024.jpg"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q17230203"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q17230203",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E6%B3%95%E5%AE%A3%E5%AF%BA%E3%81%AE%E5%A4%A9%E8%93%8B%E3%83%9E%E3%83%84",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
+  },
+  {
     "id": "wd-Q1770596",
     "name": {
       "ja": "広島本通商店街",
@@ -15444,11 +15916,11 @@
     "featured": false,
     "score": 51.59,
     "summary": {
-      "text": "広島本通商店街（ひろしまほんどおりしょうてんがい）は、広島市中区にある商店街。この項目では、行政区の本通についても合わせて扱う。通称「本通り」として親しまれている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%BA%83%E5%B3%B6%E6%9C%AC%E9%80%9A%E5%95%86%E5%BA%97%E8%A1%97",
+      "text": "Hondōri (本通) is a commercial area in Naka-ku, Hiroshima, Japan, which centers on the Hondōri street which today is a shopping arcade.  Hondōri, which means \"Main Street\", runs from Hatchōbori to the Hiroshima Peace Memorial Park.  Hondōri was also previously called Hirataya-chō.  Hondōri prospered in the early 20th century, and in 1931, lily-of-the-valley lanterns were installed which allowed shops to stay open late.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Hond%C5%8Dri",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -16451,11 +16923,11 @@
     "featured": true,
     "score": 78.84,
     "summary": {
-      "text": "明王院（みょうおういん）は、広島県福山市草戸町にある真言宗大覚寺派の仏教寺院である。空海が開基と伝わる。本堂、五重塔が国宝に指定されている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%98%8E%E7%8E%8B%E9%99%A2_%28%E7%A6%8F%E5%B1%B1%E5%B8%82%29",
+      "text": "Myōō-in (明王院) is a Buddhist temple in Fukuyama, Hiroshima, Japan.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/My%C5%8D%C5%8D-in",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -17352,11 +17824,11 @@
     "featured": false,
     "score": 65.32,
     "summary": {
-      "text": "安国寺（あんこくじ）は、広島県福山市鞆町後地にある臨済宗妙心寺派の仏教寺院。山号は瑞雲山。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%AE%89%E5%9B%BD%E5%AF%BA_%28%E7%A6%8F%E5%B1%B1%E5%B8%82%29",
+      "text": "Ankoku-ji (安国寺) is a Buddhist temple of the Kokutai-ji branch of Rinzai school of Buddhism in Fukuyama, Hiroshima Prefecture, Japan. This temple was built by the priest Kakushin in 1273. Afterwards, it was revived by Ankokuji Ekei in 1579, though it remained in decline. This temple is classified as an Important Cultural Property.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Ankoku-ji_%28Fukuyama%29",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -17912,6 +18384,125 @@
     "updated_at": "2026-09-28"
   },
   {
+    "id": "wd-Q29408069",
+    "name": {
+      "ja": "慈光寺",
+      "kana": "じこうじ",
+      "romaji": "Jikoji",
+      "zh_tw": "慈光寺"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 34.381806,
+      "lng": 132.403639
+    },
+    "prefecture": "hiroshima",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "寺院"
+    ],
+    "featured": false,
+    "score": 49.03,
+    "summary": {
+      "text": "慈光寺（じこうじ）は、広島県広島市西区草津東にある日蓮宗の寺院。山号は普門山。通称、草津の妙見さん。旧本山は京都市左京区の満願寺、奠師法縁（奠統会）。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E6%85%88%E5%85%89%E5%AF%BA_%28%E5%BA%83%E5%B3%B6%E5%B8%82%29",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "草津",
+          "en": "Kusatsu"
+        },
+        "distance_m": 40
+      },
+      {
+        "name": {
+          "ja": "草津南",
+          "en": "Kusatsu-minami"
+        },
+        "distance_m": 610
+      }
+    ],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/20/Jikouji_temple.jpg/960px-Jikouji_temple.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Lumi iori",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Jikouji_temple.jpg"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q29408069",
+      "osm": "way/1227385430"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q29408069",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.openstreetmap.org/way/1227385430",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E6%85%88%E5%85%89%E5%AF%BA_%28%E5%BA%83%E5%B3%B6%E5%B8%82%29",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
+  },
+  {
+    "id": "wd-Q29408240",
+    "name": {
+      "ja": "妙顕寺",
+      "kana": "みょうけんじ",
+      "romaji": "Myokenji",
+      "zh_tw": "妙顕寺",
+      "en": "Myōken-ji Temple"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 34.447194,
+      "lng": 133.376
+    },
+    "prefecture": "hiroshima",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "寺院"
+    ],
+    "featured": false,
+    "score": 48.46,
+    "summary": {
+      "text": "妙顕寺（みょうけんじ）は、広島県福山市水呑町にある日蓮宗の寺院。山号は妙性山。西龍華。旧本山は大本山妙顕寺(四条門流)、奠師法縁(奠統会)。境内には福山市指定樹木のイチョウがある。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E5%A6%99%E9%A1%95%E5%AF%BA_%28%E7%A6%8F%E5%B1%B1%E5%B8%82%29",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "images": [],
+    "external_ids": {
+      "wikidata": "Q29408240"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q29408240",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E5%A6%99%E9%A1%95%E5%AF%BA_%28%E7%A6%8F%E5%B1%B1%E5%B8%82%29",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
+  },
+  {
     "id": "wd-Q2969891",
     "name": {
       "ja": "三原城",
@@ -17935,11 +18526,11 @@
     "featured": false,
     "score": 76.41,
     "summary": {
-      "text": "三原城（みはらじょう）は、備後国御調郡三原（広島県三原市）にあった日本の城。国の史跡。2017年（平成29年）4月6日、続日本100名城（172番）に選定された。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E4%B8%89%E5%8E%9F%E5%9F%8E",
+      "text": "Mihara Castle (三原城, Mihara-jō) was a hirajiro-style Japanese castle located in what is today the city of Mihara in Hiroshima Prefecture. Its ruins have been protected by the central government as a National Historic Site since 1957.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Mihara_Castle",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -17982,7 +18573,7 @@
       "ja": "宮尾城",
       "kana": "みやおじょう",
       "romaji": "Miyaojo",
-      "zh_tw": "宫尾城",
+      "zh_tw": "宮尾城",
       "en": "Miyao Castle"
     },
     "kana_source": "wikipedia",
@@ -18027,7 +18618,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q3012169",
@@ -18541,11 +19132,11 @@
     "featured": true,
     "score": 82.98,
     "summary": {
-      "text": "浄土寺（じょうどじ）は、広島県尾道市東久保町にある真言宗泉涌寺派大本山の寺院。山号は転法輪山（てんぽうりんざん）。院号は大乗院。本尊は十一面観音で、中国三十三観音霊場第九番札所である。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%B5%84%E5%9C%9F%E5%AF%BA_%28%E5%B0%BE%E9%81%93%E5%B8%82%29",
+      "text": "Jōdo-ji (浄土寺) is a temple of Shingon Buddhism in Onomichi, Hiroshima Prefecture, Japan. As a site sacred to the boddhisattva Kannon, it is the 9th temple on the Chūgoku 33 Kannon Pilgrimage. The temple, built at the end of the Kamakura period, is noted for two national treasures: the temple's main hall (hondō) and the treasure pagoda (tahōtō). In addition it holds a number of Important Cultural Property structures and artworks.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/J%C5%8Ddo-ji_%28Onomichi%29",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -18594,11 +19185,11 @@
     "featured": false,
     "score": 72.72,
     "summary": {
-      "text": "耕三寺（こうさんじ）は、広島県尾道市（瀬戸内海・生口島）に所在する浄土真宗本願寺派の仏教寺院。山号は潮声山（潮聲山）。「西の日光」「母の寺」とも呼ばれる。1936年（昭和11年）から伽藍の建立が始められた新しい寺院で、日本各地の古建築を模して建てられた堂塔が建ち並ぶ。このうち、山門・本堂をはじめとした15の建造物が国の登録有形文化財として登録されている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E8%80%95%E4%B8%89%E5%AF%BA",
+      "text": "Kōsan-ji (耕三寺) is a Hongan-ji school Jōdo Shinshū temple on the island of Ikuchijima in Onomichi, Hiroshima Prefecture, Japan. Founded by the industrialist Kōzō Kanamoto (later Koso Kōsanji) in 1936 in honour of his deceased mother, and with an area of approximately fifty thousand square metres, many of its structures are modelled upon the country's most famous historic temples and shrines.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/K%C5%8Dsan-ji",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -18767,6 +19358,59 @@
     "updated_at": "2026-09-28"
   },
   {
+    "id": "wd-Q3593532",
+    "name": {
+      "ja": "芸予諸島",
+      "kana": "げいよしょとう",
+      "romaji": "Geiyoshoto",
+      "zh_tw": "藝予群島",
+      "en": "Geiyo Islands"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 34.283967,
+      "lng": 133.084169
+    },
+    "prefecture": "hiroshima",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "島"
+    ],
+    "featured": false,
+    "score": 74.56,
+    "summary": {
+      "text": "藝予群島是位於日本瀨戶內海西部、廣島縣和愛媛縣之間的群島。名稱取自兩縣的舊國名安藝國和伊予國的各一字。以前被稱作藝豫叢島（日語：藝豫叢島）。",
+      "lang": "zh",
+      "source_url": "https://zh.wikipedia.org/wiki/%E8%97%9D%E4%BA%88%E7%BE%A4%E5%B3%B6",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bf/View_of_Imabari.jpg/960px-View_of_Imabari.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Wolfiewolf",
+        "license": "CC BY 2.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:View_of_Imabari.jpg"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q3593532"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q3593532",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E8%8A%B8%E4%BA%88%E8%AB%B8%E5%B3%B6",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
+  },
+  {
     "id": "wd-Q3805303",
     "name": {
       "ja": "海上自衛隊呉史料館",
@@ -18894,6 +19538,58 @@
     ],
     "status": "published",
     "updated_at": "2026-09-28"
+  },
+  {
+    "id": "wd-Q38276407",
+    "name": {
+      "ja": "光明寺",
+      "kana": "こうみょうじ",
+      "romaji": "Komyoji",
+      "zh_tw": "光明寺"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 34.320694,
+      "lng": 133.167472
+    },
+    "prefecture": "hiroshima",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "寺院"
+    ],
+    "featured": false,
+    "score": 48.85,
+    "summary": {
+      "text": "光明寺（こうみょうじ）は、広島県因島市中庄町（現在の尾道市因島中庄町）にある寺院。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E5%85%89%E6%98%8E%E5%AF%BA_%28%E5%B0%BE%E9%81%93%E5%B8%82%E5%9B%A0%E5%B3%B6%E4%B8%AD%E5%BA%84%E7%94%BA%29",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fe/%E7%B7%8F%E6%9C%AC%E5%B1%B1_%E5%85%89%E6%98%8E%E5%AF%BA.jpg/960px-%E7%B7%8F%E6%9C%AC%E5%B1%B1_%E5%85%89%E6%98%8E%E5%AF%BA.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Koumyoji",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:%E7%B7%8F%E6%9C%AC%E5%B1%B1_%E5%85%89%E6%98%8E%E5%AF%BA.jpg"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q38276407"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q38276407",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E5%85%89%E6%98%8E%E5%AF%BA_%28%E5%B0%BE%E9%81%93%E5%B8%82%E5%9B%A0%E5%B3%B6%E4%B8%AD%E5%BA%84%E7%94%BA%29",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q386095",
@@ -19535,11 +20231,11 @@
     "featured": false,
     "score": 67.13,
     "summary": {
-      "text": "広島市交通科学館（ひろしましこうつうかがくかん）は、広島市安佐南区にある屋内型の科学館（登録博物館）である。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%BA%83%E5%B3%B6%E5%B8%82%E4%BA%A4%E9%80%9A%E7%A7%91%E5%AD%A6%E9%A4%A8",
+      "text": "The Hiroshima City Transportation Museum (広島市交通科学館, Hiroshima-shi Kōtsū Kagakukan) is a transport museum in Hiroshima, Japan, opened in March 1995.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Hiroshima_City_Transportation_Museum",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -19609,11 +20305,11 @@
     "featured": false,
     "score": 73.18,
     "summary": {
-      "text": "似島（にのしま）とは、瀬戸内海の広島湾に浮かぶ島。行政区分としては広島県広島市南区似島町に属し、市域の最南端に位置する。広島市内の島としては最も大きい。2025年3月末時点の人口は652人、世帯数は444世帯。郵便番号は734-0017。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E4%BC%BC%E5%B3%B6",
+      "text": "Ninoshima (Japanese: 似島) is an island in the Seto Inland Sea, located near Hiroshima. Gakuen-mae pier on Ninoshima is located 4 km (2.5 mi) from Hiroshima (Ujina) Port. It takes only half an hour to get to Ninoshima from wharf 4 of Hiroshima Port (Ujina Port) by ferry. The island is 3.87 km2 (1.49 sq mi) in size, and topped with the mountain Aki-no-Kofuji (278 m). In Japanese, the mountain's name means \"Little Fuji of Aki\" (the former name of the Hiroshima area).",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Ninoshima",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -19660,11 +20356,11 @@
     "featured": false,
     "score": 77.11,
     "summary": {
-      "text": "原爆傷害調査委員会（げんばくしょうがいちょうさいいんかい、Atomic Bomb Casualty Commission、ABCC）は、原子爆弾による傷害の実態を詳細に調査記録するために、広島市への原子爆弾投下の直後にアメリカ合衆国が設置した民間機関である。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%8E%9F%E7%88%86%E5%82%B7%E5%AE%B3%E8%AA%BF%E6%9F%BB%E5%A7%94%E5%93%A1%E4%BC%9A",
+      "text": "The Atomic Bomb Casualty Commission (ABCC) (Japanese:原爆傷害調査委員会, Genbakushōgaichōsaiinkai) was a commission established in 1946 in accordance with a presidential directive from Harry S. Truman to the National Academy of Sciences-National Research Council to conduct investigations of the late effects of radiation among the atomic-bomb survivors in Hiroshima and Nagasaki.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Atomic_Bomb_Casualty_Commission",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -19834,11 +20530,11 @@
     "featured": false,
     "score": 66.92,
     "summary": {
-      "text": "福山市立動物園（ふくやましりつどうぶつえん）は、広島県福山市にある公立動物園である。国内で唯一のボルネオゾウが飼育されている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E7%A6%8F%E5%B1%B1%E5%B8%82%E7%AB%8B%E5%8B%95%E7%89%A9%E5%9C%92",
+      "text": "Fukuyama City Zoo (福山市立動物園, Fukuyama Shiritsu Dōbutsuen)  is a zoological park in Fukuyama, Hiroshima, Japan.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Fukuyama_City_Zoo",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [],
     "external_ids": {
@@ -19975,11 +20671,11 @@
     "featured": false,
     "score": 55.44,
     "summary": {
-      "text": "寺町廃寺跡（てらまちはいじあと）は、広島県三次市向江田町にある古代寺院跡。元々の寺名は「三谷寺（三谿寺）」と推定される。国の史跡に指定されている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%AF%BA%E7%94%BA%E5%BB%83%E5%AF%BA%E8%B7%A1",
+      "text": "The Teramachi temple ruins (寺町廃寺跡, Teramachi Haiji ato) is an archaeological site with the ruins of a Hakuho period Buddhist temple located in the Mukaeda neighbourhood of what is now the city of Miyoshi, Hiroshima, in the San'yō region of Japan. The temple no longer exists, but the temple grounds were designated as a National Historic Site in 1984.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Teramachi_temple_ruins",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [],
     "external_ids": {
@@ -20063,11 +20759,11 @@
     "featured": false,
     "score": 63.67,
     "summary": {
-      "text": "土師ダム（はじダム）は、広島県安芸高田市八千代町大字下土師地先、一級河川・江の川本川上流部（かつては可愛川と呼ばれていた）に建設されたダムである。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%9C%9F%E5%B8%AB%E3%83%80%E3%83%A0",
+      "text": "Haji Dam (土師ダム, Haji damu) is a dam in Akitakata, Hiroshima Prefecture, Japan.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Haji_Dam",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -20208,11 +20904,11 @@
     "featured": false,
     "score": 64.1,
     "summary": {
-      "text": "八田原ダム（はったばらダム）は、広島県世羅郡世羅町大字小谷、一級河川・芦田川本川中流部に建設されたダムである。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%85%AB%E7%94%B0%E5%8E%9F%E3%83%80%E3%83%A0",
+      "text": "Hattabara Dam (八田原ダム, Hattabara damu) is a dam in Sera, Hiroshima Prefecture, Japan.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Hattabara_Dam",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -20312,11 +21008,11 @@
     "featured": false,
     "score": 62.02,
     "summary": {
-      "text": "広島市こども文化科学館（ひろしましこどもぶんかかがくかん）は、広島市中区の広島市中央公園内にある、子ども向け科学館である。プラネタリウムが設置されている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%BA%83%E5%B3%B6%E5%B8%82%E3%81%93%E3%81%A9%E3%82%82%E6%96%87%E5%8C%96%E7%A7%91%E5%AD%A6%E9%A4%A8",
+      "text": "The Hiroshima Children's Culture and Science Museum (広島市こども文化科学館 Hiroshima-shi Kodomo Bunka Kagakukan), also known as the 5-Days Children's Culture and Science Museum, is a culture and science museum for children in Hiroshima, Japan.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Hiroshima_Children%27s_Culture_and_Science_Museum",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -20388,11 +21084,11 @@
     "featured": false,
     "score": 60.25,
     "summary": {
-      "text": "広島市郷土資料館（ひろしましきょうどしりょうかん）は、広島県広島市南区宇品にある歴史系博物館（登録博物館）である。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%BA%83%E5%B3%B6%E5%B8%82%E9%83%B7%E5%9C%9F%E8%B3%87%E6%96%99%E9%A4%A8",
+      "text": "The Hiroshima City Museum of History and Traditional Crafts is a history museum in Ujina-nishi Park in Hiroshima, Japan.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Hiroshima_City_Museum_of_History_and_Traditional_Crafts",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -20447,11 +21143,11 @@
     "featured": false,
     "score": 65.82,
     "summary": {
-      "text": "広島県立歴史博物館（ひろしまけんりつれきしはくぶつかん）は、広島県福山市の福山城公園文化ゾーンにある歴史博物館。愛称はふくやま草戸千軒ミュージアム。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%BA%83%E5%B3%B6%E7%9C%8C%E7%AB%8B%E6%AD%B4%E5%8F%B2%E5%8D%9A%E7%89%A9%E9%A4%A8",
+      "text": "Hiroshima Prefectural Museum of History (広島県立歴史博物館, Hiroshima Kenritsu Rekishi Hakubutsukan) is a prefectural museum in Fukuyama, Japan, dedicated to the history and culture of the Setouchi region. It has a particular focus upon the medieval settlement of Kusado Sengen. The museum opened in the grounds of Fukuyama Castle in 1989.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Hiroshima_Prefectural_Museum_of_History",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -20594,11 +21290,11 @@
     "featured": false,
     "score": 62.96,
     "summary": {
-      "text": "広島市植物公園（ひろしまししょくぶつこうえん）とは広島県広島市佐伯区倉重にある都市公園（植物園）である。指定管理者制度により、公益財団法人広島市みどり生きもの協会が管理・運営を行っている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%BA%83%E5%B3%B6%E5%B8%82%E6%A4%8D%E7%89%A9%E5%85%AC%E5%9C%92",
+      "text": "The Hiroshima Botanical Garden (広島市植物公園, Hiroshima-shi Shokubutsu Kōen) is located in Saeki-ku, Hiroshima in western Honshū, on the hill facing the Seto Inland Sea. The Garden was opened to the public on 3 November 1976.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Hiroshima_Botanical_Garden",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -20648,11 +21344,11 @@
     "featured": false,
     "score": 71.11,
     "summary": {
-      "text": "三瀧寺（みたきでら）は広島県広島市西区の三滝山（宗箇山）の中腹にある高野山真言宗の寺院。三滝寺とも。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E4%B8%89%E7%80%A7%E5%AF%BA",
+      "text": "Mitaki-dera (三瀧寺) is a historic Japanese temple in the city of Hiroshima, Japan.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Mitaki-dera",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -20696,7 +21392,7 @@
       "ja": "ひろしま美術館",
       "kana": "ひろしまびじゅつかん",
       "romaji": "Hiroshimabijutsukan",
-      "zh_tw": "广岛美术馆",
+      "zh_tw": "廣島美術館",
       "en": "Hiroshima Museum of Art"
     },
     "kana_source": "osm",
@@ -20760,7 +21456,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q6404042",
@@ -20935,7 +21631,7 @@
       "ja": "宮島水族館",
       "kana": "みやじますいぞくかん",
       "romaji": "Miyajimasuizokukan",
-      "zh_tw": "宫岛水族馆",
+      "zh_tw": "宮島水族館",
       "en": "Miyajima Public Aquarium"
     },
     "kana_source": "osm",
@@ -20985,7 +21681,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q6884215",
@@ -21054,11 +21750,11 @@
     "featured": false,
     "score": 60.27,
     "summary": {
-      "text": "紅葉谷公園（もみじだにこうえん、英語: Momijidani Park）は、日本で最も有名なカエデを主体とした公園の1つであり、広島県廿日市市の厳島神社の背後、紅葉谷川沿いの弥山のふもとに位置する。110種類のイロハモミジ、60種類のヤマモミジ、10種類のウリハダカエデ、トウカエデ、コハウチワカエデとオオモミジを含む200以上のもみじがある。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E7%B4%85%E8%91%89%E8%B0%B7%E5%85%AC%E5%9C%92",
+      "text": "Momijidani Park (紅葉谷公園, Momijidani-Kōen) is one of the most famous maple leaves valley parks in Japan. The park is located at the foot of Mt. Misen, along Momijidani River, behind Itsukushima Shrine in Miyajima, Hatsukaichi, Hiroshima. There are more than 200 maples, including 110 Acer palmatum thunberg, 60 Palmatum var. matsumurae, 10 Acer rufinerve, Acer buergerianum, Acer sieboldianum miquel and Acer amoenum carriere var. amoenum.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Momijidani_Park",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -21106,11 +21802,11 @@
     "featured": false,
     "score": 68.9,
     "summary": {
-      "text": "比婆山（ひばやま）は、日本神話においてイザナミが葬られたと記される地。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%AF%94%E5%A9%86%E5%B1%B1",
+      "text": "Mount Hiba (比婆山, Hiba-yama) may refer to:",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Mount_Hiba",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -21157,11 +21853,11 @@
     "featured": false,
     "score": 64.77,
     "summary": {
-      "text": "野呂山（のろさん）は、広島県呉市に位置する標高839mの山で、膳棚山と弘法寺山を結ぶ東西2kmの高原の総称である。瀬戸内海国立公園の区域に指定されている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E9%87%8E%E5%91%82%E5%B1%B1",
+      "text": "Mount Noro (野呂山, Noro-san) is a mountain around Hiroshima, Japan. It is part of the Setonaikai National Park.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Mount_Noro",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [],
     "external_ids": {
@@ -21201,11 +21897,11 @@
     "featured": false,
     "score": 71.97,
     "summary": {
-      "text": "音戸の瀬戸（おんどのせと）は、広島県の呉市にある本州と倉橋島の間に存在する海峡。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E9%9F%B3%E6%88%B8%E3%81%AE%E7%80%AC%E6%88%B8",
+      "text": "Ondo-no-seto (音戸の瀬戸) is a strait in Seto Inland Sea in Kure, Hiroshima between the main island of Japan and Kurahashi Island.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Ondo-no-seto",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -21458,11 +22154,11 @@
     "featured": false,
     "score": 76.55,
     "summary": {
-      "text": "広島市民球場（ひろしましみんきゅうじょう）は、広島県広島市中区基町の広島市中央公園内にかつて存在した野球場。広島市が所有および運営管理を行っていた。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%BA%83%E5%B3%B6%E5%B8%82%E6%B0%91%E7%90%83%E5%A0%B4_%28%E5%88%9D%E4%BB%A3%29",
+      "text": "First Hiroshima Municipal Stadium (初代広島市民球場, Shodai Hiroshima Shimin Kyūjō) was a stadium in Hiroshima, Japan.  It was primarily used for baseball, and was the home field of the Hiroshima Toyo Carp. It opened in 1957 and held 31,984 people, standing in the central area of Hiroshima across from the Hiroshima Peace Memorial.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Hiroshima_Municipal_Stadium_%281957%29",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -21529,11 +22225,11 @@
     "featured": false,
     "score": 68.11,
     "summary": {
-      "text": "広島市安佐動物公園（ひろしましあさどうぶつこうえん）は、広島県広島市安佐北区安佐町動物園にある動物園。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%BA%83%E5%B3%B6%E5%B8%82%E5%AE%89%E4%BD%90%E5%8B%95%E7%89%A9%E5%85%AC%E5%9C%92",
+      "text": "Hiroshima City Asa Zoological Park (広島市安佐動物公園, Hiroshima-shi Asa Dōbutsukōen) is a zoo in Hiroshima, Japan.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Hiroshima_City_Asa_Zoological_Park",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -21694,11 +22390,11 @@
     "featured": false,
     "score": 72.26,
     "summary": {
-      "text": "廣島護國神社（ひろしまごこくじんじゃ）は、広島県広島市中区にある護国神社。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%BA%83%E5%B3%B6%E8%AD%B7%E5%9B%BD%E7%A5%9E%E7%A4%BE",
+      "text": "Hiroshima Gokoku Jinja (広島護国神社) is a Japanese Shinto Shrine in Hiroshima, Japan.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Hiroshima_Gokoku_Shrine",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -21812,11 +22508,11 @@
     "featured": false,
     "score": 63.59,
     "summary": {
-      "text": "安芸国分寺（あきこくぶんじ）は、広島県東広島市西条町吉行にある真言宗御室派の寺院。山号は金嶽山、院号は常光院。本尊は薬師如来。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%AE%89%E8%8A%B8%E5%9B%BD%E5%88%86%E5%AF%BA",
+      "text": "Aki Kokubun-ji (安芸国分寺) is an Omuro-school Shingon-sect Buddhist temple in the Yoshiyuki Saijomachi neighborhood of the city of Higashihiroshima, Hiroshima, Japan. It is one of the few surviving provincial temples established by Emperor Shōmu during the Nara period (710–794). Due to this connection, the foundation stones of the Nara period temple were designated as a National Historic Site in 1932, with the area under protection expanded in 1977, and again in 2002.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Aki_Kokubunji",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -22199,11 +22895,11 @@
     "featured": false,
     "score": 51.8,
     "summary": {
-      "text": "瀬戸田町（せとだちょう）は、かつての広島県の町。旧豊田郡。現在の尾道市の一部にあたる。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E7%80%AC%E6%88%B8%E7%94%B0%E7%94%BA",
+      "text": "Setoda (瀬戸田町, Setoda-chō) was a town located in Toyota District, Hiroshima Prefecture, Japan.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Setoda%2C_Hiroshima",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {

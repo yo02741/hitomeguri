@@ -3,7 +3,7 @@
     "id": "osm-node-1468149327",
     "name": {
       "ja": "サイロ展望台",
-      "zh_tw": "洞爺湖展望台"
+      "zh_tw": "洞爺湖展望臺"
     },
     "location": {
       "lat": 42.625785,
@@ -32,7 +32,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "osm-node-2993887299",
@@ -395,7 +395,7 @@
     "id": "osm-way-360821577",
     "name": {
       "ja": "地球岬展望台",
-      "zh_tw": "地球岬展望台",
+      "zh_tw": "地球岬展望臺",
       "en": "Cape Chikyu View Point"
     },
     "location": {
@@ -425,7 +425,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "osm-way-434694967",
@@ -870,6 +870,35 @@
     ],
     "status": "published",
     "updated_at": "2026-09-28"
+  },
+  {
+    "id": "visithokkaido-10263",
+    "name": {
+      "ja": "能取岬",
+      "zh_tw": "能取岬"
+    },
+    "location": {
+      "lat": 44.113428,
+      "lng": 144.243433
+    },
+    "prefecture": "hokkaido",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "岬"
+    ],
+    "featured": false,
+    "score": 63.95,
+    "images": [],
+    "external_ids": {},
+    "sources": [
+      {
+        "url": "https://www.visit-hokkaido.jp/spot/detail_10263.html",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
   },
   {
     "id": "visithokkaido-10355",
@@ -1447,11 +1476,11 @@
     "featured": false,
     "score": 68.4,
     "summary": {
-      "text": "アイヌ民族博物館（アイヌみんぞくはくぶつかん）は、北海道白老郡白老町にあった博物館。アイヌ語で「大きい湖の集落」を意味する「ポロトコタン」と呼ばれる野外博物館の施設の一つでもあった。2018年3月31日まではポロトコタンと共に一般社団法人アイヌ民族博物館によって運営されていた。2020年7月、同博物館を母体とした国立アイヌ民族博物館が同地で開業しており、「ウポポイ」（民族共生象徴空間）を構成する中核的施設に位置付けられている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E3%82%A2%E3%82%A4%E3%83%8C%E6%B0%91%E6%97%8F%E5%8D%9A%E7%89%A9%E9%A4%A8",
+      "text": "The Ainu Museum (アイヌ民族博物館, Ainu Minzoku Hakubutsukan), also known as Porotokotan, is a former museum in Shiraoi, Hokkaidō, Japan. The facility began its existence in 1976 as the Shiraoi Foundation for the Preservation of Ainu Culture. In 1984 this was extended to include the Ainu Folk Museum. In 1990 it reopened under the auspices of The Ainu Museum Foundation.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Ainu_Museum",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -1548,7 +1577,7 @@
       "ja": "北黄金貝塚",
       "kana": "きたこがねかいづか",
       "romaji": "Kitakoganekaizuka",
-      "zh_tw": "北黄金贝冢",
+      "zh_tw": "北黃金貝冢",
       "en": "Kitakogane Shell Mound"
     },
     "kana_source": "wikipedia",
@@ -1594,7 +1623,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q104858264",
@@ -1619,11 +1648,11 @@
     "featured": false,
     "score": 69.15,
     "summary": {
-      "text": "萬念寺（まんねんじ）は、北海道岩見沢市栗沢町にある浄土宗西山禅林寺派の寺院。山号は慈光山。本尊は阿弥陀如来である。髪の毛が伸びる人形「お菊人形」で有名。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E8%90%AC%E5%BF%B5%E5%AF%BA",
+      "text": "Mannenji Temple is a temple dedicated to the Jodo sect of Buddhism. It is located in the town of Iwamizawa, Japan. It is known to house the haunted doll Okiku. There are many versions of how the doll arrived at the temple, but all involve a girl dying and her family leaving the doll there.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Mannenji_Temple",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [],
     "external_ids": {
@@ -2521,6 +2550,57 @@
     "updated_at": "2026-09-28"
   },
   {
+    "id": "wd-Q111743877",
+    "name": {
+      "ja": "カシュニの滝",
+      "kana": "かしゅにのたき",
+      "romaji": "Kashuninotaki",
+      "zh_tw": "カシュニの滝",
+      "en": "Kashuni Falls"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 44.246417,
+      "lng": 145.225667
+    },
+    "prefecture": "hokkaido",
+    "kind": "major",
+    "themes": [],
+    "tags": [],
+    "featured": false,
+    "score": 63.87,
+    "summary": {
+      "text": "カシュニの滝（カシュニのたき）とは、北海道斜里郡斜里町知床国立公園内にある滝。観光名所として知られる場所である。カシュニはアイヌ語で「仮小屋のあるところ」・「狩小屋のあるところ」の意味。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E3%82%AB%E3%82%B7%E3%83%A5%E3%83%8B%E3%81%AE%E6%BB%9D",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/96/%E7%9F%A5%E5%BA%8A%E5%B2%B3_-_panoramio.jpg/960px-%E7%9F%A5%E5%BA%8A%E5%B2%B3_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Mamusi Taka",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:%E7%9F%A5%E5%BA%8A%E5%B2%B3_-_panoramio.jpg"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q111743877"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q111743877",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E3%82%AB%E3%82%B7%E3%83%A5%E3%83%8B%E3%81%AE%E6%BB%9D",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
+  },
+  {
     "id": "wd-Q11249476",
     "name": {
       "ja": "札幌芸術の森",
@@ -2758,11 +2838,11 @@
     "featured": false,
     "score": 127.64,
     "summary": {
-      "text": "おたる水族館（おたるすいぞくかん英：OTARU AQUARIUM）は、小樽水族館公社が北海道小樽市で運営する水族館。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E3%81%8A%E3%81%9F%E3%82%8B%E6%B0%B4%E6%97%8F%E9%A4%A8",
+      "text": "Otaru Aquarium (おたる水族館, Otaru-suizokukan) is a public aquarium operated by Otaru Public Aquarium Corporation, Third Sector, in Otaru City, Hokkaido, Japan. It is one of the largest aquariums in Hokkaido, and It is a member of the Japanese Association of Zoos and Aquariums (JAZA). The aquarium is accredited as a Museum-equivalent facilities by the Museum Act from Ministry of Education, Culture, Sports, Science and Technology.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Otaru_Aquarium",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -3316,11 +3396,11 @@
     "featured": false,
     "score": 136.59,
     "summary": {
-      "text": "ウトナイ湖（ウトナイこ）は、北海道苫小牧市の東部にある淡水湖。ウトナイトー（ウトナイト）、ウトナイ沼などとも呼ばれる。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E3%82%A6%E3%83%88%E3%83%8A%E3%82%A4%E6%B9%96",
+      "text": "Lake Utonai (ウトナイ湖, Utonai-ko) is a shallow freshwater lake in Tomakomai, Iburi Subprefecture, Hokkaidō, Japan. It is within the Lake Utonai Sanctuary, created in 1981 as the first bird sanctuary designated in Japan. It later became the fourth Ramsar site in Japan in 1989.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Lake_Utonai",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -3533,11 +3613,11 @@
     "featured": false,
     "score": 128.99,
     "summary": {
-      "text": "オホーツクとっかりセンターは北海道紋別市海洋公園2番地にある日本で唯一の海獣専門保護施設。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E3%82%AA%E3%83%9B%E3%83%BC%E3%83%84%E3%82%AF%E3%81%A8%E3%81%A3%E3%81%8B%E3%82%8A%E3%82%BB%E3%83%B3%E3%82%BF%E3%83%BC",
+      "text": "Okhotsk Tokkari Center – Seal Land (Japanese: オホーツクとっかりセンター（アザラシランド）) is a seal rescue center and sanctuary located in Monbetsu, Hokkaido, Japan. It is currently the only dedicated marine mammal rescue and rehabilitation facility in Japan, with a focus on caring for seals native to the Sea of Okhotsk.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Okhotsk_Tokkari_Center",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [],
     "external_ids": {
@@ -3750,11 +3830,11 @@
     "featured": false,
     "score": 71.9,
     "summary": {
-      "text": "カナディアンワールド（カナディアンワールド）は、北海道芦別市にある民営公園である。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E3%82%AB%E3%83%8A%E3%83%87%E3%82%A3%E3%82%A2%E3%83%B3%E3%83%AF%E3%83%BC%E3%83%AB%E3%83%89",
+      "text": "Canadian World (Japanese: カナディアンワールド), or Canadian World Park (カナディアンワールド公園), is a privately-run park and former theme park in Ashibetsu, Hokkaido, Japan. It was a failed business venture intended to boost tourism in Ashibetsu, a former coal mining town. The park contains various replicas of landmarks in the Canadian province of Prince Edward Island (PEI), notably buildings featured in the film adaptation of the Canadian novel Anne of Green Gables, which is popular in Japan due to its inclusion in the Japanese curriculum.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Canadian_World",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -3848,11 +3928,11 @@
     "featured": false,
     "score": 92.14,
     "summary": {
-      "text": "キウス周堤墓群（キウスしゅうていぼぐん）は、北海道千歳市にある縄文後期の集団墓8基で構成される史跡。石狩低地帯を臨む緩斜面に位置する。1979年10月23日に国指定の史跡となった。2021年（令和3年）、「北海道・北東北の縄文遺跡群」として世界文化遺産に登録された。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E3%82%AD%E3%82%A6%E3%82%B9%E5%91%A8%E5%A0%A4%E5%A2%93%E7%BE%A4",
+      "text": "The Kiusu Earthwork Burial Circles (キウス周堤墓群, Kiusu shūtei bogun) is an archaeological site with multiple burial mounds believed to have been constructed during the late Jōmon period (approximately 3200 years ago) located in the city of Chitose, Hokkaidō, Japan. The site was designated a National Historic Site in 1979.  It became a component of  UNESCO World Heritage Site Jōmon Prehistoric Sites in Northern Japan on 27 July 2021.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Kiusu_Earthwork_Burial_Circles",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -3885,7 +3965,7 @@
       "ja": "キロロスノーワールド",
       "kana": "きろろすのーわーるど",
       "romaji": "Kirorosunowarudo",
-      "zh_tw": "喜乐乐滑雪世界",
+      "zh_tw": "喜樂樂滑雪世界",
       "en": "Kiroro Snow World"
     },
     "kana_source": "wikidata",
@@ -3928,7 +4008,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11297812",
@@ -3936,7 +4016,7 @@
       "ja": "キロロリゾート",
       "kana": "きろろりぞーと",
       "romaji": "Kirororizoto",
-      "zh_tw": "喜乐乐度假区",
+      "zh_tw": "喜樂樂度假區",
       "en": "Kiroro Resort"
     },
     "kana_source": "wikidata",
@@ -3980,7 +4060,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11305053",
@@ -4318,11 +4398,11 @@
     "featured": false,
     "score": 125.79,
     "summary": {
-      "text": "天使の聖母トラピスチヌ修道院（てんしのせいぼトラピスチヌしゅうどういん）は、北海道函館市上湯川町にあるトラピスト会（厳律シトー会）系の女子修道院である。通称天使園とも呼ばれる。日本最初の観想女子修道院である。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%A4%A9%E4%BD%BF%E3%81%AE%E8%81%96%E6%AF%8D%E3%83%88%E3%83%A9%E3%83%94%E3%82%B9%E3%83%81%E3%83%8C%E4%BF%AE%E9%81%93%E9%99%A2",
+      "text": "Our Lady of the Angels Trappistine Abbey (天使の聖母トラピスチヌ修道院, Tenshi No Seibo Torasupichinu Shūdōin) is a women's abbey of Trappists located in the outskirts of Hakodate, Hokkaido, Japan.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Our_Lady_of_the_Angels_Trappistine_Abbey",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -4726,11 +4806,11 @@
     "featured": false,
     "score": 67.49,
     "summary": {
-      "text": "モヨロ貝塚（モヨロかいづか）は、北海道網走市北1条から北3条東2丁目にかけてあるオホーツク文化の代表的遺跡である。網走川河口左岸、オホーツク海のそばに位置する。国の史跡に指定されている（指定名称は最寄貝塚）。本貝塚名は、当時のアイヌ人がモヨロ・コタンと呼んでいたことから、1918年（大正7年）に米村喜男衛によって付けられた。モヨロはアイヌ語で「入江の内、あるいは所」という意味。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E3%83%A2%E3%83%A8%E3%83%AD%E8%B2%9D%E5%A1%9A",
+      "text": "The Moyoro Shell Midden (モヨロ貝塚, Moyoro kaizuka) is an archaeological site in the Kita 1-jo and Kita 3-jo Higashi 2-chome neighborhood of the city of Abashiri, Hokkaido, Japan with an Okhotsk culture shell midden.  The site was designated a  National Historic Site in 1936. Its name is also written in kanji as \"最寄貝塚\".",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Moyoro_Shell_Mound",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -5022,11 +5102,11 @@
     "featured": false,
     "score": 65.46,
     "summary": {
-      "text": "上川神社（かみかわじんじゃ）は、北海道旭川市にある神社。旧社格は県社。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E4%B8%8A%E5%B7%9D%E7%A5%9E%E7%A4%BE",
+      "text": "Kamikawa Shrine (上川神社, Kamikawa jinja) is a Shinto shrine located in Asahikawa, Hokkaido. Established in 1883, it is dedicated to the kami Amaterasu (天照皇大御神), Ōkuninushi (大己貴大神), Sukunabikona no Ōkami (少彦名大神), Toyoukebime (豊受姫神), Ōmononushi (大物主神), Ame-no-Kaguyama-no-Mikoto (天乃香久山神), Takeminakata (建御名方神), Emperor Ōjin as Hondawake no Mikoto (譽田分命), and others. Its annual festival is on July 21.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Kamikawa_Shrine",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -5212,11 +5292,11 @@
     "featured": false,
     "score": 65.61,
     "summary": {
-      "text": "丸瀬布森林公園いこいの森（まるせっぷしんりんこうえんいこいのもり）は、北海道紋別郡遠軽町にある森林公園である。本項では公園に隣接する丸瀬布昆虫生態館および丸瀬布温泉「やまびこ」についても述べる。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E4%B8%B8%E7%80%AC%E5%B8%83%E6%A3%AE%E6%9E%97%E5%85%AC%E5%9C%92%E3%81%84%E3%81%93%E3%81%84%E3%81%AE%E6%A3%AE",
+      "text": "The Hokkaido Maruseppu Recreation Forest Park Railway or Maruseppu Forest Park Ikoi-no-Mori Railway (Japanese: 丸瀬布森林公園いこいの森鉄道, Maruseppu Shinrinkōen Ikoi no Mori Tetsudō) is an approximately 1.24 miles (2.00 km) long narrow gauge heritage railway with a track gauge of 2 ft 6 in (762 mm) near the Japanese City of Engaru near Mombetsu in the Okhotsk Subprefecture on the island Hokkaidō.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Hokkaido_Maruseppu_Recreation_Forest_Park_Railway",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -5253,7 +5333,7 @@
       "ja": "二条市場",
       "kana": "にじょういちば",
       "romaji": "Nijoichiba",
-      "zh_tw": "二条市場",
+      "zh_tw": "二條市場",
       "en": "Nijō fish market"
     },
     "kana_source": "wikipedia",
@@ -5322,7 +5402,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11371763",
@@ -5384,11 +5464,11 @@
     "featured": false,
     "score": 95.09,
     "summary": {
-      "text": "平取町立二風谷アイヌ文化博物館（びらとりちょうりつにぶたにあいぬぶんかはくぶつかん）は北海道沙流郡平取町二風谷にある博物館。平取町が管理・運営をおこなう。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E4%BA%8C%E9%A2%A8%E8%B0%B7%E3%82%A2%E3%82%A4%E3%83%8C%E6%96%87%E5%8C%96%E5%8D%9A%E7%89%A9%E9%A4%A8",
+      "text": "Nibutani Ainu Culture Museum (平取町立二風谷アイヌ文化博物館, Biratori-chō Nibutani Ainu Bunka Hakubutsukan) opened in the Nibutani area of Biratori, Hokkaidō, Japan in 1992. The collection includes 919 items relating to the daily life of the local Ainu that have been jointly designated an Important Tangible Folk Cultural Property; a further 202 items from the same designation may be found at the nearby Kayano Shigeru Nibutani Ainu Museum (萱野茂二風谷アイヌ資料館).",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Nibutani_Ainu_Culture_Museum",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -5492,11 +5572,11 @@
     "featured": false,
     "score": 102.62,
     "summary": {
-      "text": "住吉神社（すみよしじんじゃ）は、北海道小樽市に鎮座する住吉神社。住吉神（底筒男神・中筒男神・表筒男神・息長帯姫命）を祀る。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E4%BD%8F%E5%90%89%E7%A5%9E%E7%A4%BE_%28%E5%B0%8F%E6%A8%BD%E5%B8%82%29",
+      "text": "Sumiyoshi Shrine (住吉神社, Sumiyoshi Jinja) is a Shinto shrine located in Otaru, Hokkaido. Its annual festival is on July 15. The kami Kamitsusu no O no Ōkami (上筒之男大神), Nakatsutsu no O no Ōkami (中筒之男大神), Sokotsutsu no O no Ōkami (底筒之男大神), Okinagaranushihime no Ōkami (息長足姫大神), Onamochi no Ōkami (大名持大神), Sukunabikona no Ōkami (少彦名大神) and others are enshrined here.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Sumiyoshi_Shrine_%28Hokkaid%C5%8D%29",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -5564,11 +5644,11 @@
     "featured": false,
     "score": 64.09,
     "summary": {
-      "text": "八窓庵（はっそうあん）は、北海道札幌市中央区の中島公園にある茶室である。当初は近江国小室城（滋賀県長浜市）に建てられていた。重要文化財（1936年9月18日指定）。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%85%AB%E7%AA%93%E5%BA%B5",
+      "text": "Hassō-an (八窓庵) is a historic chashitsu located today in Sapporo, Hokkaido, northern Japan. The name means “eight-window tea house”.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Hass%C5%8D-an",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -5693,11 +5773,11 @@
     "featured": false,
     "score": 66.41,
     "summary": {
-      "text": "函館八幡宮（はこだてはちまんぐう）は、北海道函館市にある神社である。旧社格は国幣中社で現在は神社本庁の別表神社。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%87%BD%E9%A4%A8%E5%85%AB%E5%B9%A1%E5%AE%AE",
+      "text": "Hakodate Hachiman Shrine (函館八幡宮, Hakodate Hachimangū) is a Shinto shrine located in Hakodate, Hokkaido. It is a Hachiman shrine, dedicated to the kami Hachiman. It is also a Sōja shrine that  enshrines all the deities of its region, although it technically does not have a province.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Hakodate_Hachimang%C5%AB",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -5752,11 +5832,11 @@
     "featured": false,
     "score": 93.54,
     "summary": {
-      "text": "函館市青函連絡船記念館摩周丸（はこだてし せいかんれんらくせんきねんかん ましゅうまる）は北海道函館市にある博物館船である。日本国有鉄道（→北海道旅客鉄道）青函航路に就航していた津軽丸型連絡船「摩周丸（2代目）」の船体を使用（博物館船）し、内部も一部現役当時のものを残している。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%87%BD%E9%A4%A8%E5%B8%82%E9%9D%92%E5%87%BD%E9%80%A3%E7%B5%A1%E8%88%B9%E8%A8%98%E5%BF%B5%E9%A4%A8%E6%91%A9%E5%91%A8%E4%B8%B8",
+      "text": "Mashu Maru was a Tsugaru Maru-class ferry operated by JNR, and shortly, JR Hokkaido, before finally being taken out of service on March 13, 1988 with the opening of the undersea Seikan Tunnel.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Mashu_Maru",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -5821,11 +5901,11 @@
     "featured": false,
     "score": 68.17,
     "summary": {
-      "text": "創成川（そうせいがわ）は、北海道札幌市の中心を流れる石狩川水系伏籠川支流の一級河川に分類される、人工河川である。札幌市を東西に画する起点となっている。江戸時代に「大友堀」として作られ、1874年（明治7年）に「創成川」と改名された。長さ14.2km、流域面積は19.0km2ある。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%89%B5%E6%88%90%E5%B7%9D",
+      "text": "The Sōsei River is a man-made river that runs through the center of Sapporo City, Hokkaidō, Japan. It was built under the supervision of Otomo Kametaro in the late 1860s, and was one of the first things constructed on the city site. When it was built, the river ran in a straight line to the Ishikari River. It is the dividing point between east and west in Sapporo's grid-based address system.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/S%C5%8Dsei_River",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -6290,11 +6370,11 @@
     "featured": false,
     "score": 65.58,
     "summary": {
-      "text": "北海道立北方民族博物館（ほっかいどうりつほっぽうみんぞくはくぶつかん）は、北海道網走市にある博物館。北海道教育委員会が設置し、財団法人北方文化振興協会が指定管理者として管理をしている。英語名はHokkaido Museum of Northern Peoples。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%8C%97%E6%B5%B7%E9%81%93%E7%AB%8B%E5%8C%97%E6%96%B9%E6%B0%91%E6%97%8F%E5%8D%9A%E7%89%A9%E9%A4%A8",
+      "text": "The Hokkaido Museum of Northern Peoples (北海道立北方民族博物館, Hokkaidō-ritsu Hoppō Minzoku Hakubutsukan) opened in Abashiri, Hokkaidō, Japan in 1991. Dedicated to the various peoples of the North, across Eurasia and the Americas, the collection includes items relating to the Sámi, Nanai, Nivkhs, and Northwest Coast Indians, as well as the more local Okhotsk culture and Ainu.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Hokkaido_Museum_of_Northern_Peoples",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -6349,11 +6429,11 @@
     "featured": false,
     "score": 109.45,
     "summary": {
-      "text": "北海道立近代美術館（ほっかいどうりつきんだいびじゅつかん、英称：The Hokkaido Museum of Modern Art）は、北海道札幌市中央区にある、道立の美術館である。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%8C%97%E6%B5%B7%E9%81%93%E7%AB%8B%E8%BF%91%E4%BB%A3%E7%BE%8E%E8%A1%93%E9%A4%A8",
+      "text": "The Hokkaido Museum of Modern Art (北海道立近代美術館, Hokkaidō-ritsu Kindai Bijutsukan) opened in Sapporo, Hokkaidō, Japan in 1977. The collection includes works by Jules Pascin and the École de Paris as well as by modern Japanese artists, in particular those with a connection to Hokkaidō.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Hokkaido_Museum_of_Modern_Art",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -6607,11 +6687,11 @@
     "featured": false,
     "score": 65.32,
     "summary": {
-      "text": "北鎮記念館（ほくちんきねんかん）は、北海道旭川市にある資料館。屯田兵や旧陸軍第七師団についての資料を展示している。入館料は無料。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%8C%97%E9%8E%AE%E8%A8%98%E5%BF%B5%E9%A4%A8",
+      "text": "Hokuchin Memorial Museum (Japanese: 北鎮記念館) is a history museum located in Asahikawa, Hokkaido, Japan. The museum is a JGSDF Public Relations facility displaying as many as 2,500 items concerning the history of the Tondenhei Army, which developed Hokkaido, the 7th Division of the old Imperial Japanese Army, and the activities of the 2nd Division of today's JGSDF. Admission is free.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Hokuchin_Memorial_Museum",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -6659,11 +6739,11 @@
     "featured": false,
     "score": 92.47,
     "summary": {
-      "text": "北防波堤ドーム（きたぼうはていドーム）とは、北海道稚内市の稚内港にある大型の防波堤である。「稚内港北防波堤ドーム」として土木学会選奨土木遺産、北海道遺産に選定されている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%8C%97%E9%98%B2%E6%B3%A2%E5%A0%A4%E3%83%89%E3%83%BC%E3%83%A0",
+      "text": "The North Breakwater Dome (北防波堤ドーム, kita bōhatei dōmu) is a long arched \"semi-domical\" structure in the port area of Wakkanai, Hokkaidō, Japan. Rising to a height of 13.6 metres (45 ft) above the sea and extending some 427 metres (1,401 ft), with seventy columns, an intercolumniation of 6 metres (20 ft), and a width from column to wall of 8 metres (26 ft), the form, inspired by a Roman arcade, is said to be without parallel.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/North_Breakwater_Dome",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -6824,11 +6904,11 @@
     "featured": false,
     "score": 125.29,
     "summary": {
-      "text": "サケのふるさと 千歳水族館（さけのふるさと ちとせすいぞくかん）は、北海道千歳市にある水族館。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E3%82%B5%E3%82%B1%E3%81%AE%E3%81%B5%E3%82%8B%E3%81%95%E3%81%A8_%E5%8D%83%E6%AD%B3%E6%B0%B4%E6%97%8F%E9%A4%A8",
+      "text": "Chitose Aquarium or The Salmon Hometown Chitose Aquarium (サケのふるさと 千歳水族館, Sake no furusato Chitose Suizokukan) is a public aquarium located in Chitose City, Hokkaido, Japan. The aquarium specializes in freshwater fish, Researching in salmon and sturgeon. It is a member of the Japanese Association of Zoos and Aquariums (JAZA), and the aquarium is accredited as a Museum-equivalent facilities by the Museum Act from Ministry of Education, Culture, Sports, Science and Technology.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Chitose_Aquarium",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -7137,7 +7217,7 @@
       "ja": "夕張市石炭博物館",
       "kana": "ゆうばりしせきたんはくぶつかん",
       "romaji": "Yubarishisekitanhakubutsukan",
-      "zh_tw": "夕张市石炭博物馆",
+      "zh_tw": "夕張市石炭博物館",
       "en": "Yūbari Coal Mine Museum"
     },
     "kana_source": "wikipedia",
@@ -7196,7 +7276,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q1143974",
@@ -7370,11 +7450,11 @@
     "featured": false,
     "score": 113.63,
     "summary": {
-      "text": "宮島沼（みやじまぬま）は、北海道美唄市大富に所在する沼。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%AE%AE%E5%B3%B6%E6%B2%BC",
+      "text": "Miyajima-numa (宮島沼) is a near-circular shallow freshwater oxbow lake located some 45 kilometres (28 mi) northeast of Sapporo on the Japanese island of Hokkaidō. Situated in the Ishikari peatlands and formed by the meandering Ishikari River that flows a short distance to the west, with the Kabato Mountains rising behind, there is no river inflow; instead it is fed by rainwater and melting snow, while being drawn on for the irrigation of the surrounding rice fields, developed since the Taishō era.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Miyajima-numa",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [],
     "external_ids": {
@@ -8122,11 +8202,11 @@
     "featured": false,
     "score": 72.29,
     "summary": {
-      "text": "戸切地陣屋（へきりちじんや、史跡名称：松前藩戸切地陣屋跡（まつまえはんへきりちじんやあと）、英名：Hekirichi Bastion Fort of Matsumae clan）は、現在の北海道北斗市野崎にあった幕末期松前藩の陣屋で、日本で初めて稜堡式築城術に基づく星形堡塁（星堡）および19世紀当時の欧州軍事理論上における砲戦防衛のための選地・構造を採用した（後述）城郭である。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%88%B8%E5%88%87%E5%9C%B0%E9%99%A3%E5%B1%8B",
+      "text": "Hekirichi Bastion Fort (Japanese: 戸切地陣屋, romanized: Hekirichi Jinya, as historic site name: Hekirichi Bastion Fort of Matsumae clan site (松前藩戸切地陣屋跡, Matsumae Han Hekirichi Jinya ato) was a fortified administrative center of the Matsumae clan during the late Edo period, located in present-day Nozaki, Hokuto City, Hokkaido.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Hekirichi_Bastion_Fort",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -8373,11 +8453,11 @@
     "featured": false,
     "score": 66.26,
     "summary": {
-      "text": "旭山記念公園（あさひやまきねんこうえん）は、北海道札幌市中央区にある公園。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%97%AD%E5%B1%B1%E8%A8%98%E5%BF%B5%E5%85%AC%E5%9C%92",
+      "text": "Asahiyama Memorial Park (旭山記念公園, Asahiyama Kinen Kōen) is a park located in Chūō-ku, Sapporo, Hokkaidō, Japan. The park's peak, at 137.5 metres (451 ft) above sea level, offers a great panoramic view of Sapporo, and the Sea of Japan beyond.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Asahiyama_Memorial_Park",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -8974,11 +9054,11 @@
     "featured": false,
     "score": 83.88,
     "summary": {
-      "text": "札幌市アイヌ文化交流センター サッポロピリカコタン（さっぽろしアイヌぶんかこうりゅうセンター サッポロピリカコタン、英語名：Sapporo AINU Culture Promotion Center \"Sapporo Pirka Kotan\"）は北海道札幌市南区小金湯27番地にあるアイヌ民族の生活・文化・歴史をテーマとする文化交流施設である。札幌市が運営・管理をおこなう。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%9C%AD%E5%B9%8C%E5%B8%82%E3%82%A2%E3%82%A4%E3%83%8C%E6%96%87%E5%8C%96%E4%BA%A4%E6%B5%81%E3%82%BB%E3%83%B3%E3%82%BF%E3%83%BC",
+      "text": "The Sapporo Ainu Culture Promotion Center (札幌市アイヌ文化交流センター, Sapporo-shi Ainu Bunka Kōryū Sentā), also known as Sapporo Pirka Kotan (サッポロピㇼカコタン) or \"Beautiful Village\", opened in Sapporo, Hokkaido, Japan, in 2003. Dedicated to the Ainu people, their history, culture, and way of life, the museum has some three hundred artefacts on display and there is also a traditional-style cise (dwelling).",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Sapporo_Ainu_Culture_Promotion_Center",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -9406,7 +9486,7 @@
       "ja": "桃岩荘ユースホステル",
       "kana": "ももいわそうゆーすほすてる",
       "romaji": "Momoiwasoyusuhosuteru",
-      "zh_tw": "桃岩莊",
+      "zh_tw": "桃巖莊",
       "en": "Momoiwa-so Youth Hostel"
     },
     "kana_source": "wikipedia",
@@ -9449,7 +9529,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11542208",
@@ -9475,11 +9555,11 @@
     "featured": false,
     "score": 103.43,
     "summary": {
-      "text": "標津サーモン科学館（しべつサーモンかがくかん）は、北海道標津町にある鮭、鱒の生態系を扱う標津町立の科学館である。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%A8%99%E6%B4%A5%E3%82%B5%E3%83%BC%E3%83%A2%E3%83%B3%E7%A7%91%E5%AD%A6%E9%A4%A8",
+      "text": "Shibetsu Salmon Science Museum (標津サーモン科学館, Shibetsu Sāmon Kagaku-kan) opened in Shibetsu, Hokkaidō, Japan in 1991. It is dedicated to the ecology of the world's salmonids and to Hokkaidō's salmon culture. In 1992 there were 130,000 visitors, while in 2011 the number dropped to 50,000.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Shibetsu_Salmon_Science_Museum",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -9905,11 +9985,11 @@
     "featured": false,
     "score": 122.28,
     "summary": {
-      "text": "登別マリンパークニクス（のぼりべつマリンパークニクス）は、北海道登別市に所在する日本の水族館。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E7%99%BB%E5%88%A5%E3%83%9E%E3%83%AA%E3%83%B3%E3%83%91%E3%83%BC%E3%82%AF%E3%83%8B%E3%82%AF%E3%82%B9",
+      "text": "Noboribetsu Marine Park Nixe (登別マリンパークニクス, Noboribetsu marinpāku nikusu) is a Japanese public aquarium located in Noboribetsu, Hokkaido, Japan. It is the one of largest aquariums in Hokkaido, with several buildings constructed around a copy of Egeskov Castle. It is a member of the Japanese Association of Zoos and Aquariums (JAZA) and the aquarium is accredited as a Museum-equivalent facility by the Museum Act from the Ministry of Education, Culture, Sports, Science and Technology.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Noboribetsu_Marine_Park_Nixe",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -10549,11 +10629,11 @@
     "featured": false,
     "score": 69.49,
     "summary": {
-      "text": "石狩炭田（いしかりたんでん）とは、北海道の夕張・空知両山地にある炭田。日本最大の炭田であり、地質構造の違いから北部を空知炭田、南部を夕張炭田という。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E7%9F%B3%E7%8B%A9%E7%82%AD%E7%94%B0",
+      "text": "The Ishikari coal basin lies in the tertiary mountains of the mining region of Sorachi, east of the Ishikari Plain in central Hokkaido. These coal veins contain the largest quantity of coal of Japan. Because of its late discovery the historical role of the coalfield could not be compared with that of the Chikuho coalfield, but its economic importance since the Japanese industrial revolution is comparable with that of the southern Chikuhō coalfield.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Ishikari_coalfield",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -11043,11 +11123,11 @@
     "featured": false,
     "score": 64.62,
     "summary": {
-      "text": "笹流ダム（ささながれダム）は、北海道函館市を流れる二級河川・亀田川水系笹流川に建設されたダムである。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E7%AC%B9%E6%B5%81%E3%83%80%E3%83%A0",
+      "text": "Sasanagare Dam (Japanese: 笹流ダム) is a buttress dam located in Hokkaido Prefecture in Japan. The dam is used for water supply. The catchment area of the dam is 5.4 km2. The dam impounds about 7  ha of land when full and can store 606 thousand cubic meters of water. The construction of the dam was completed in 1923.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Sasanagare_Dam",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -11094,11 +11174,11 @@
     "featured": false,
     "score": 66.12,
     "summary": {
-      "text": "糠平ダム（ぬかびらダム）は、北海道十勝総合振興局河東郡上士幌町にある十勝川水系一級河川音更川中流部に築造されたダム。大雪山国立公園内に位置する。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E7%B3%A0%E5%B9%B3%E3%83%80%E3%83%A0",
+      "text": "Nukabira Dam (Japanese: 糠平ダム) is a gravity dam located in Hokkaido Prefecture in Japan. The dam is used for power production. The catchment area of the dam is 387.8 km2. The dam impounds about 822  ha of land when full and can store 193900 thousand cubic meters of water. The construction of the dam was started on 1953 and completed in 1956.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Nukabira_Dam",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -11976,11 +12056,11 @@
     "featured": false,
     "score": 87.96,
     "summary": {
-      "text": "釧路市立博物館（くしろしりつはくぶつかん）は、北海道釧路市にある博物館。釧路市埋蔵文化財調査センターを併設している。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E9%87%A7%E8%B7%AF%E5%B8%82%E7%AB%8B%E5%8D%9A%E7%89%A9%E9%A4%A8",
+      "text": "Kushiro City Museum (Japanese: 釧路市立博物館, Hepburn: Kushiro Shiritsu Hakubutsukan) is a registered museum in Kushiro, Hokkaidō, Japan. The Museum's predecessor institution, the Kushiro City Folk Museum (釧路市立郷土博物館), began as an exhibition room at the offices of the local water board in 1936, before moving to a department store, then from 1949 to the relocated former Kushiro City Police Station. Upon completion of the new, dedicated museum building in 1983, the museum was renamed the Kushiro City Museum.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Kushiro_City_Museum",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -13092,11 +13172,11 @@
     "featured": true,
     "score": 134.89,
     "summary": {
-      "text": "モエレ沼公園（モエレぬまこうえん）は、札幌市東区にある総合公園。札幌市の市街地を公園や緑地の帯で包み込もうという「環状グリーンベルト構想」における北東部緑地ゾーンの拠点として計画された。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E3%83%A2%E3%82%A8%E3%83%AC%E6%B2%BC%E5%85%AC%E5%9C%92",
+      "text": "Moerenuma Park (モエレ沼公園, Moerenuma Kōen) is a municipal park in Sapporo, Japan. It has playground equipment, outdoor sports fields, and objects that are designed by Isamu Noguchi, a Japanese American artist. Construction began in 1988; the park opened in 2005. It won the Good Design Award in 2002.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Moerenuma_Park",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -13768,11 +13848,11 @@
     "featured": false,
     "score": 92.94,
     "summary": {
-      "text": "垣ノ島遺跡（かきのしまいせき）は、北海道函館市に所在する縄文時代の遺跡。道内での同時代の遺跡として最大規模であり、縄文時代早期前半（約9000年前）の墓制、駒ヶ岳噴火による集落断絶、後期初頭の盛土遺構から後期後半（約3500年前）に至るまでの縄文集落の変遷と生活痕跡が確認できる。2011年（平成23年）2月7日に国の史跡に指定された。2021年（令和3年）、「北海道・北東北の縄文遺跡群」として世界文化遺産に登録された。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%9E%A3%E3%83%8E%E5%B3%B6%E9%81%BA%E8%B7%A1",
+      "text": "The Kakinoshima site (垣ノ島遺跡, Kakinoshima iseki) is an archaeological site consisting of a series of large shell middens and the remains of an adjacent settlement from the Jōmon period. The site is in what is now part of the city of Hakodate in Oshima Subprefecture on the island of Hokkaido in northern Japan. It has been protected by the central government as a Historic Site since 7 February 2011. The site covers an area of 92.749 square kilometers (35.811 mi2).",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Kakinoshima_site",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -14249,7 +14329,7 @@
       "ja": "利尻山",
       "kana": "りしりざん",
       "romaji": "Rishirizan",
-      "zh_tw": "利尻岳",
+      "zh_tw": "利尻嶽",
       "en": "Mount Rishiri"
     },
     "kana_source": "wikipedia",
@@ -14292,7 +14372,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q21652600",
@@ -14360,7 +14440,7 @@
       "ja": "北大ポプラ並木",
       "kana": "ほくだいぽぷらなみき",
       "romaji": "Hokudaipopuranamiki",
-      "zh_tw": "北大白杨林荫道",
+      "zh_tw": "北大白楊林蔭道",
       "en": "Hokkaido University poplar avenue"
     },
     "kana_source": "wikipedia",
@@ -14425,7 +14505,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q21654596",
@@ -14534,11 +14614,11 @@
     "featured": false,
     "score": 64.68,
     "summary": {
-      "text": "有珠善光寺（うすぜんこうじ）は、北海道伊達市にある寺院。「善光寺跡」として国の史跡に指定されている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%9C%89%E7%8F%A0%E5%96%84%E5%85%89%E5%AF%BA",
+      "text": "Zenkō-ji (有珠善光寺, Usu Zenkō-ji) is a Buddhist temple located in the Usu neighborhood of the city of Date, Hokkaido, Japan. It belongs to the Jōdō-shū sect of Japanese Buddhism and its honzon is a statue of Amida Nyorai. The temple has been designed a National Historic Site since 1974.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Zenk%C5%8D-ji_%28Date%29",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -14595,11 +14675,11 @@
     "featured": false,
     "score": 64.62,
     "summary": {
-      "text": "旧ロシア領事館（きゅうロシアりょうじかん、ロシア語: Старое русское консульство、英語: Old Russian Consulate）は、北海道函館市船見町にあるかつてのロシア帝国およびソビエト連邦の領事館建物である。函館市の「景観形成指定建築物」に指定されており、日本で現存する唯一のロシア帝国による在外公館建築である。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%97%A7%E3%83%AD%E3%82%B7%E3%82%A2%E9%A0%98%E4%BA%8B%E9%A4%A8_%28%E5%87%BD%E9%A4%A8%E5%B8%82%29",
+      "text": "The Old Russian Consulate (Japanese: 旧ロシア領事館, Hepburn: Kyū Roshia ryōjikan; Russian: Старое русское консульство, romanized: Staroye russkoye konsul'stvo) is a former consulate of the Russian Empire in the port city of Hakodate, Japan. It hosted the first foreign consulate building and first Russian Orthodox church in the country.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Old_Russian_Consulate_in_Hakodate",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -15110,11 +15190,11 @@
     "featured": false,
     "score": 118.17,
     "summary": {
-      "text": "サッポロさとらんど（Sapporo Satoland）は、札幌市東区にある施設。正式名称は札幌市農業体験交流施設。「さとらんど」の名称は一般公募によってふる里の「さと」とランド（大地）の「らんど」を合わせた造語であり、市民に愛される里づくりを願って名づけられた。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E3%82%B5%E3%83%83%E3%83%9D%E3%83%AD%E3%81%95%E3%81%A8%E3%82%89%E3%82%93%E3%81%A9",
+      "text": "Sapporo Satoland (サッポロさとらんど, Sapporo Satorando) is an amusement park located in Higashi-ku, Sapporo, Hokkaidō, Japan. Sapporo Satoland, which has an agricultural theme, was opened in 1995. Its official name is Sapporo Facility of Agricultural Experience and Interchange (札幌市農業体験交流施設, Sapporo Nōgyō Taiken Kōryū Shisetsu).",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Sapporo_Satoland",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -15168,11 +15248,11 @@
     "featured": false,
     "score": 73.96,
     "summary": {
-      "text": "四稜郭（しりょうかく）は、箱館戦争において蝦夷共和国（箱館政権）が、1869年（明治2年）に五稜郭の北北東の段丘上（現在の北海道函館市陣川町）に築造した台場。新台場、神山台場、新五稜郭などとも呼ばれる。国の史跡。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%9B%9B%E7%A8%9C%E9%83%AD",
+      "text": "Shiryōkaku (四稜郭) (literally, \"four-point fort\") is a fort in the city of Hakodate in southern Hokkaidō, Japan. It was constructed in April 1869, during the Battle of Hakodate, three kilometres to the northeast of Goryōkaku by 200 soldiers of the former Tokugawa shogunate and 100 local villagers, likely under the direction of Ōtori Keisuke.  Shiryōkaku  has four bastions, and is sometimes known as the \"butterfly fort\" as opposed to the \"star fort\".",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Shiry%C5%8Dkaku",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -15376,11 +15456,11 @@
     "featured": false,
     "score": 65.33,
     "summary": {
-      "text": "真宗大谷派函館別院（しんしゅうおおたにははこだてべついん）は、北海道函館市元町にある真宗大谷派の寺院である。同派の別院。「真宗本廟」（「東本願寺」）を本山と仰ぐ。「東本願寺函館別院」とも呼ばれる。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E7%9C%9F%E5%AE%97%E5%A4%A7%E8%B0%B7%E6%B4%BE%E5%87%BD%E9%A4%A8%E5%88%A5%E9%99%A2",
+      "text": "Ōtani Hongan-ji Hakodate Betsu-in (大谷派本願寺函館別院) is a branch temple of Higashi Hongan-ji in Hakodate, Hokkaidō, Japan. Rebuilt after a fire in 1907, it is the first temple in Japan built with reinforced concrete. The Hondō (1915), Shōrō (1912–1925), and Shōmon (1912–1925) have all been designated Important Cultural Properties.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/%C5%8Ctani_Hongan-ji_Hakodate_Betsu-in",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -15496,11 +15576,11 @@
     "featured": false,
     "score": 90.41,
     "summary": {
-      "text": "函館市縄文文化交流センター（はこだてしじょうもんぶんかこうりゅうせんたー、英語: Hakodate Jomon Culture Center）は、2011年（平成23年）10月1日に開館した歴史博物館で、愛称は茅空(かっくう)センターである。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%87%BD%E9%A4%A8%E5%B8%82%E7%B8%84%E6%96%87%E6%96%87%E5%8C%96%E4%BA%A4%E6%B5%81%E3%82%BB%E3%83%B3%E3%82%BF%E3%83%BC",
+      "text": "Hakodate Jōmon Culture Center (函館市縄文文化交流センター, Hakodate Jōmon Bunka Kōryū Senta—) is a history museum in Hakodate, Hokkaidō, Japan, opened in 2011. It has four exhibition rooms dedicated to the Jōmon period, displaying some 1,200 pieces of earthenware and stoneware excavated in Hakodate as well as the only National Treasure in Hokkaidō, the so-called \"Hollow Dogū\", excavated from the Chobonaino Site (著保内野遺跡) (designated in 2007). Hands-on activities, including magatama-making and \"angin (編布)-knitting\", are also available.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Hakodate_J%C5%8Dmon_Culture_Center",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -15560,11 +15640,11 @@
     "featured": false,
     "score": 90.93,
     "summary": {
-      "text": "大船遺跡（おおふねいせき）は、北海道函館市に所在する縄文時代の遺跡である。縄文時代前期後半（約5,200年前）から中期後半（約4,000年前）頃に至るまでの大規模な集落遺跡であり、盛土遺構や竪穴建物、フラスコ状土坑などが発見されている。2001年（平成13年）8月13日、国の史跡に指定された。2021年（令和3年）には「北海道・北東北の縄文遺跡群」として世界文化遺産に登録された。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E8%88%B9%E9%81%BA%E8%B7%A1",
+      "text": "The Ōfune Site (大船遺跡, Ōfune iseki) is an archaeological site consisting of a series of large shell middens and the remains of an adjacent settlement from the Jōmon period. The site is in what is now part of the city of Hakodate in Oshima Subprefecture on the island of Hokkaido in northern Japan. It has been protected by the central government as a Historic Site since 13 August 2001. The site covers an area of 71.832 square kilometers (7,183.2 ha; 27.734 mi2).",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/%C5%8Cfune_Site",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -16184,11 +16264,11 @@
     "featured": false,
     "score": 69.98,
     "summary": {
-      "text": "サロベツ原野（サロベツげんや）は、北海道北部（道北）にある豊富町と幌延町の海岸線沿いに広がる湿原。湿原としては日本で3番目に広く、高層湿原としては日本最大規模である。サロベツ湿原とも呼ばれる。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E3%82%B5%E3%83%AD%E3%83%99%E3%83%84%E5%8E%9F%E9%87%8E",
+      "text": "The Sarobetsu Plain (サロベツ原野), derived from the Ainu sar (marsh) and pet (river), is a coastal plain and low-lying moor in northwestern Hokkaidō, Japan. With an area of approximately 20,000 ha or 200 km2 (77 mi2), it forms part of the Rishiri-Rebun-Sarobetsu National Park, and its wetlands are a Ramsar Site.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Sarobetsu_Plain",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -16395,11 +16475,11 @@
     "featured": false,
     "score": 64.32,
     "summary": {
-      "text": "姥神大神宮（うばがみだいじんぐう）は、北海道檜山郡江差町にある神社である。旧社格は県社。社伝では鎌倉時代の創建と伝える、北海道最古の神社とされる。渡島国の一宮と称されており、姥神大神宮渡御祭にて配られる名刺にその記載がある事からもそれがうかがえる。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%A7%A5%E7%A5%9E%E5%A4%A7%E7%A5%9E%E5%AE%AE",
+      "text": "Ubagami Daijingū (姥神大神宮) is a Shinto shrine in Esashi, Hokkaidō, Japan. Its foundation date is uncertain but its existence is documented from the Edo period. It is considered the oldest Shinto Shrine in Hokkaido. The Ubagami Daijingū Togyosai, when floats decked out with lanterns are paraded through the town, is celebrated in August.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Ubagami_Daijing%C5%AB",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -16447,11 +16527,11 @@
     "featured": false,
     "score": 142.1,
     "summary": {
-      "text": "余市蒸溜所（よいちじょうりゅうしょ、英: Yoichi Distillery）は、北海道余市郡余市町にあるアサヒグループホールディングスの機能子会社であるニッカウヰスキーの工場（蒸溜所）。正式名称は、ニッカウヰスキー北海道工場余市蒸溜所。10棟が国の重要文化財に指定されている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E4%BD%99%E5%B8%82%E8%92%B8%E6%BA%9C%E6%89%80",
+      "text": "Yoichi distillery (Japanese: 余市蒸溜所, Hepburn: Yoichi jōryūsho) is a Japanese whisky distillery.  It is located at Yoichi, (余市町, Yoichi-chō) a town in the Yoichi District, Shiribeshi Subprefecture, Hokkaido, Japan.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Yoichi_distillery",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -16513,11 +16593,11 @@
     "featured": false,
     "score": 69.06,
     "summary": {
-      "text": "太田山神社（おおたさんじんじゃ）とは、北海道久遠郡せたな町にある神社である。北海道本土で最も西に位置する神社であり、また道南五大霊場の一つであるとされている。地元では太田神社または太田の神社とも呼ばれ、猿田彦大神を祀る。旧社格は村社（太田神社）。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%A4%AA%E7%94%B0%E5%B1%B1%E7%A5%9E%E7%A4%BE",
+      "text": "Ōta Jinja (太田神社)",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/%C5%8Cta_Shrine",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -16557,11 +16637,11 @@
     "featured": false,
     "score": 73.99,
     "summary": {
-      "text": "十勝スピードウェイ（TOKACHI SPEEDWAY）は、北海道河西郡更別村にあるサーキット。この項目では、太陽光発電所の更別・十勝メガソーラースピードウェイ発電所についても記載している。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%8D%81%E5%8B%9D%E3%82%B9%E3%83%94%E3%83%BC%E3%83%89%E3%82%A6%E3%82%A7%E3%82%A4",
+      "text": "Tokachi International Speedway (十勝インターナショナルスピードウェイ) is a motor racing circuit in Takikubo, Sarabetsu, Hokkaido, Japan.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Tokachi_International_Speedway",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [],
     "external_ids": {
@@ -16689,7 +16769,7 @@
       "ja": "大倉山ジャンプ競技場",
       "kana": "おおくらやまじゃんぷきょうぎじょう",
       "romaji": "Okurayamajanpukyogijo",
-      "zh_tw": "大倉山跳台競技場",
+      "zh_tw": "大倉山跳臺競技場",
       "en": "Okurayama Ski Jump Stadium"
     },
     "kana_source": "wikipedia",
@@ -16732,7 +16812,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q3888689",
@@ -16868,11 +16948,11 @@
     "featured": false,
     "score": 69.19,
     "summary": {
-      "text": "湯の川温泉（ゆのかわおんせん）は、北海道函館市にある温泉。「名湯百選」選定。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%B9%AF%E3%81%AE%E5%B7%9D%E6%B8%A9%E6%B3%89_%28%E5%8C%97%E6%B5%B7%E9%81%93%29",
+      "text": "The Yunokawa Onsen (湯の川温泉) is a well known onsen in Japan on the northern island of Hokkaidō. It is located on the outskirts of Hakodate city close to Hakodate Airport.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Yunokawa_Onsen_%28Hokkaido%29",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -16916,11 +16996,11 @@
     "featured": false,
     "score": 70.51,
     "summary": {
-      "text": "知床硫黄山（しれとこいおうざん）は、北海道羅臼町と斜里町にまたがる知床国立公園の知床半島に位置する活火山である。山頂部は斜里町に属していて、一等三角点に指定されており、そこの標高は1,562.5mである。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E7%9F%A5%E5%BA%8A%E7%A1%AB%E9%BB%84%E5%B1%B1",
+      "text": "Mount Iō (硫黄山, Iō-zan) also Mount Iwo is an active andesitic stratovolcano on the Shiretoko Peninsula of Hokkaidō, Japan. It sits within the borders of the town of Shari. Mount Iō is known for erupting liquid sulphur in the eruptions of 1889 and 1936. Mount Iō literally means, sulphur mountain. There are two explosion craters and a lava dome at the summit of the volcano.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Mount_I%C5%8D_%28Shiretoko%29",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -17018,11 +17098,11 @@
     "featured": false,
     "score": 64.73,
     "summary": {
-      "text": "摩周岳（ましゅうだけ）は、北海道釧路総合振興局弟子屈町にある標高857mの山。カルデラ湖である摩周湖の外輪山の最高峰で湖面標高は502m。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%91%A9%E5%91%A8%E5%B2%B3",
+      "text": "Mount Kamui (カムイヌプリ, Kamui-nupuri ), also Kamuinupuri or Mount Mashū, a potentially active volcano, is a parasitic stratovolcano of the Mashū caldera (itself originally a parasitic cone of Lake Kussharo) located in the Akan National Park of Hokkaido, Japan.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Mount_Kamui_%28Lake_Mash%C5%AB_caldera%29",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -17331,11 +17411,11 @@
     "featured": false,
     "score": 66.48,
     "summary": {
-      "text": "中原悌二郎記念旭川市彫刻美術館（なかはらていじろうきねんあさひかわしちょうこくびじゅつかん）は、北海道旭川市にある美術館。旭川市にゆかりのある彫刻家・中原悌二郎の作品を数多く収蔵し、彫刻に関連した作品の展示や企画展・講座などを開催している。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E4%B8%AD%E5%8E%9F%E6%82%8C%E4%BA%8C%E9%83%8E%E8%A8%98%E5%BF%B5%E6%97%AD%E5%B7%9D%E5%B8%82%E5%BD%AB%E5%88%BB%E7%BE%8E%E8%A1%93%E9%A4%A8",
+      "text": "Asahikawa Museum of Sculpture in Honor of Teijiro Nakahara (中原悌二郎記念旭川市彫刻美術館, Nakahara Teijirō Kinen Asahikawashi Chōkoku Bijutsukan) is a sculpture museum in Asahikawa, Hokkaidō, Japan. The building was called the Asahikawa Kaikōsha (旭川偕行社) and used as the officer's social club by the 7th Division of the Imperial Japanese Army from 1902 until 1945.  In 1968, it became the Asahikawa Museum of Local History (旭川市立旭川郷土博物館, Asahikawashiritsu Asahikawa Kyōdo Hakubutsukan). The building is designated an Important Cultural Property.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Asahikawa_Museum_of_Sculpture",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -17387,11 +17467,11 @@
     "featured": false,
     "score": 66.04,
     "summary": {
-      "text": "朝里ダム（あさりダム）は、北海道小樽市朝里川温泉、二級河川・朝里川水系朝里川に建設されたダムである。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%9C%9D%E9%87%8C%E3%83%80%E3%83%A0",
+      "text": "Asari Dam (朝里ダム) is a dam in Otaru, Hokkaidō, Japan, completed in 1993. It is a Gravity dam of 73.9 m which is currently managed by the Hokkaido Construction Department. The man-made lake which resulted from the construction of the dam is called Otarunai Lake.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Asari_Dam",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -17437,11 +17517,11 @@
     "featured": false,
     "score": 133.86,
     "summary": {
-      "text": "小樽オルゴール堂は、北海道小樽市にあるオルゴールショップ・博物館である。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%B0%8F%E6%A8%BD%E3%82%AA%E3%83%AB%E3%82%B4%E3%83%BC%E3%83%AB%E5%A0%82",
+      "text": "Otaru Music Box Museum (小樽オルゴール堂) is a music museum in the Otaru Orgel-do II building in Otaru, Japan. It includes various examples of music boxes as well as CDs that have music box-esque versions of various songs. Chris Bamforth of The Japan Times wrote that it had an \"absolutely phenomenal\" variety of music.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Otaru_Music_Box_Museum",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -17964,11 +18044,11 @@
     "featured": false,
     "score": 133.36,
     "summary": {
-      "text": "恵山（えさん）は、北海道函館市にある標高618 mの活火山。常時観測火山。渡島半島の東南端で太平洋に突き出すように位置する。山頂には三等三角点（点名「恵山」）が設置されている。恵山道立自然公園に指定されているほか、新日本百名山、北海道百名山、北海道の百名山に選定されている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%81%B5%E5%B1%B1_%28%E7%81%AB%E5%B1%B1%29",
+      "text": "Mount E (恵山, E-san) is an active stratovolcano of the Kameda peninsula, which is itself part of the larger Oshima Peninsula. It is in the rural, eastern region of Hakodate, Hokkaido, Japan. Mount E is part of Esan Prefectural Natural Park.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Mount_E",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -18148,11 +18228,11 @@
     "featured": false,
     "score": 116.45,
     "summary": {
-      "text": "中島公園（なかじまこうえん）は、北海道札幌市中央区にある公園。「日本の都市公園100選」、「日本の歴史公園100選」に選定。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E4%B8%AD%E5%B3%B6%E5%85%AC%E5%9C%92",
+      "text": "Nakajima Park (中島公園, Nakajima Kōen) is a city park in Chūō-ku, Sapporo, Hokkaido, Japan. The park has a lake, two streams, a museum, a concert hall, an observatory, a historical building housing a tea shop, and several lawns and forests. At the south end, there are two shrines.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Nakajima_Park",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -18228,11 +18308,11 @@
     "featured": false,
     "score": 70.35,
     "summary": {
-      "text": "富良野スキー場（ふらのスキーじょう）は、北海道富良野市にあるスキー場。運営会社は株式会社西武・プリンスホテルズワールドワイド。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%AF%8C%E8%89%AF%E9%87%8E%E3%82%B9%E3%82%AD%E3%83%BC%E5%A0%B4",
+      "text": "Furano Ski Resort (富良野スキー場, Furano Sukii-jō), also known as Furano Ski Area, is a resort in Furano, Hokkaido, Japan, owned and operated by Prince Hotels. The resort has hosted events by the International Ski Federation (FIS) Alpine Ski World Cup. In recent years, it has hosted the mid-February Snowboarding World Cup. Growing interest from international winter sports enthusiasts, particularly from Australia, has led to an annual rise in tourist numbers.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Furano_Ski_Resort",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -18487,11 +18567,11 @@
     "featured": false,
     "score": 64.91,
     "summary": {
-      "text": "函館競輪場（はこだてけいりんじょう）は、北海道函館市にある競輪場。施設所有および主催は函館市。競技実施はJKA東日本地区本部北日本競技部。電話投票における競輪場コードは11#。実況担当は池田牧人が担当し、一般開催ではレース実況及びSPEEDチャンネル向け放送の進行を兼任している。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%87%BD%E9%A4%A8%E7%AB%B6%E8%BC%AA%E5%A0%B4",
+      "text": "Hakodate Velodrome (函館競輪場, Hakodate Keirinjyō) is a velodrome located in Hakodate, Hokkaido that conducts pari-mutuel Keirin racing - one of Japan's four authorized \"Public Sports\" (公営競技, kōei kyōgi) where gambling is permitted. Its Keirin identification number for betting purposes is 11# (11 sharp).",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Hakodate_Velodrome",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -18523,7 +18603,7 @@
       "ja": "北海道医療大学",
       "kana": "ほっかいどういりょうだいがく",
       "romaji": "Hokkaidoiryodaigaku",
-      "zh_tw": "北海道医療大学",
+      "zh_tw": "北海道醫療大學",
       "en": "Health Sciences University of Hokkaido"
     },
     "kana_source": "wikipedia",
@@ -18575,7 +18655,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q572825",
@@ -18807,11 +18887,11 @@
     "featured": false,
     "score": 118.46,
     "summary": {
-      "text": "豊平峡ダム（ほうへいきょうダム）は、札幌市南区定山渓、一級河川・石狩川水系豊平川の上流部に建設されたダムである。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E8%B1%8A%E5%B9%B3%E5%B3%A1%E3%83%80%E3%83%A0",
+      "text": "Hōheikyō Dam (Japanese: 豊平峡ダム, Hepburn: Hōhei-kyō Damu) is a concrete Arch dam in Sapporo, Hokkaidō; Japan. It dams the Toyohira River. It is situated in Toya National Park. The dam was created for Irrigation as well as Flood control. The road leading to the dam has been closed off for regular car use, instead Hybrid electric buses are operated so the natural environment is protected. The dam's lake is known as Jozan Lake (定山湖),",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/H%C5%8Dheiky%C5%8D_Dam",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -18862,11 +18942,11 @@
     "featured": false,
     "score": 69.75,
     "summary": {
-      "text": "アポイ岳（アポイだけ）は、北海道様似郡様似町にある標高810.5 mの山である。日高山脈支稜線の西南端に位置し、一等三角点（点名「冬島」）が設置されている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E3%82%A2%E3%83%9D%E3%82%A4%E5%B2%B3",
+      "text": "Mount Apoi (アポイ岳, Apoi-dake) is located in the Hidaka Mountains, Hokkaidō, Japan. It is near the town of Samani. It is well known for hosting a large number of plants that are found only on Hokkaidō, such as Callianthemum miyabeanum (ヒダカソウ, Hidaka-sō). The mountain is made from ultramafic rock of unknown age.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Mount_Apoi",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -18966,11 +19046,11 @@
     "featured": false,
     "score": 107.34,
     "summary": {
-      "text": "十勝千年の森（とかちせんねんのもり、英: TOKACHI MILLENNIUM FOREST）は、北海道上川郡清水町にある庭園。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%8D%81%E5%8B%9D%E5%8D%83%E5%B9%B4%E3%81%AE%E6%A3%AE",
+      "text": "Tokachi Millennium Forest is a project initiated by newspaper owner Mitsushige Hayashi. In 1990 he bought 400 hectares in Tokachi on the island Hokkaido, in the far north of Japan. His plan was to off-set the carbon footprint of his newspaper Tokachi Mainichi, creating a public park. The project is made up of woodland, gardens, productive areas, \"land forms\" earthworks, goat farm, rose garden, orchards, meadows and a cafe. It was designed by Dan Pearson, with head gardener Midori Shintani and her assistant Shintaro Sasagawa.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Tokachi_Millennium_Forest",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [],
     "external_ids": {
@@ -19128,11 +19208,11 @@
     "featured": false,
     "score": 70.76,
     "summary": {
-      "text": "狩勝峠（かりかちとうげ）は、北海道空知郡南富良野町と上川郡新得町の境界にある峠。道路の峠の標高は644m。峠の西側は石狩川水系、東側は十勝川水系で、日本海側と太平洋側の分水界である。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E7%8B%A9%E5%8B%9D%E5%B3%A0",
+      "text": "Karikachi Pass (狩勝峠, Karikachi-tōge) is a mountain pass at the north end of the Hidaka Mountains of Hokkaidō, Japan. The pass traverses the mountains at 644 metres (2,113 ft) and is 21 kilometres (13.0 mi) long. The road is 5.5 metres (18.0 ft) wide with a maximum grade of 5.3%. The minimum curve radius is 90 metres (295 ft). Snow is possible on the pass from October to May. Japan National Route 38 crosses the pass between Minamifurano and Shintoku.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Karikachi_Pass",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -19179,11 +19259,11 @@
     "featured": false,
     "score": 64.02,
     "summary": {
-      "text": "桂沢ダム（かつらざわダム）は、北海道三笠市、一級河川・石狩川水系幾春別川に建設されたダムである。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%A1%82%E6%B2%A2%E3%83%80%E3%83%A0",
+      "text": "The Katsurazawa Dam is a dam in Hokkaidō, Japan. It was Hokkaido's first multipurpose dam and the post-war Ishikari River watershed development plan's starting point. The dam is a 63.6m in height Concrete Gravity dam, immediately downstream from the Shinkatsurazawa Dam. The artificial lake resulting from the construction of the Katsurazawa Dam is known as the Katsurazawa Lake.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Katsurazawa_Dam",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -19230,11 +19310,11 @@
     "featured": false,
     "score": 65.71,
     "summary": {
-      "text": "霧多布湿原（きりたっぷしつげん）は、北海道厚岸郡浜中町にある湿原。厚岸霧多布昆布森国定公園に含まれる。面積は3,168 haで、釧路湿原、別寒辺牛川流域湿原、根釧原野湿原群、サロベツ原野に次いで国内5番目の広さである。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E9%9C%A7%E5%A4%9A%E5%B8%83%E6%B9%BF%E5%8E%9F",
+      "text": "Kiritappu Wetland (霧多布湿原; きりたっぷしつげん) is a 3,168ha. wetland area in Hamanaka-cho, Akkeshi District, Hokkaidō, Japan. It is also called Wetland of flowers (花の湿原) because numerous flowers can be seen in summer.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Kiritappu_Wetland",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [],
     "external_ids": {
@@ -19341,11 +19421,11 @@
     "featured": false,
     "score": 65.98,
     "summary": {
-      "text": "北海道立真駒内公園（ほっかいどうりつまこまないこうえん）は、札幌市南区にある公園。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%8C%97%E6%B5%B7%E9%81%93%E7%AB%8B%E7%9C%9F%E9%A7%92%E5%86%85%E5%85%AC%E5%9C%92",
+      "text": "Makomanai Park (真駒内公園) is a city park in Minami-ku, Sapporo, Hokkaido, Japan. It is home to attractions such as Makomanai Open Stadium, Makomanai Ice Arena and the Sapporo Salmon Museum. It also contains a small gymnasium, restaurant and a shop.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Makomanai_Park",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -19532,7 +19612,7 @@
       "ja": "恵庭岳",
       "kana": "えにわだけ",
       "romaji": "Eniwadake",
-      "zh_tw": "惠庭岳",
+      "zh_tw": "惠庭嶽",
       "en": "Mount Eniwa"
     },
     "kana_source": "wikipedia",
@@ -19575,7 +19655,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q6920840",
@@ -19598,11 +19678,11 @@
     "featured": false,
     "score": 76.6,
     "summary": {
-      "text": "風不死岳（ふっぷしだけ）は、北海道千歳市にある火山。標高は1,102.5 mで三等三角点（点名「風不止」）がある。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E9%A2%A8%E4%B8%8D%E6%AD%BB%E5%B2%B3",
+      "text": "Mount Fuppushi (風不死岳, Fuppushi-dake) is a dormant volcano located in Shikotsu-Toya National Park in Hokkaido, Japan. It sits adjacent to Mount Tarumae and opposite Mount Eniwa. Mount Fuppushi is on the south shore of Lake Shikotsu, the caldera lake that spawned the volcanoes.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Mount_Fuppushi",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -19645,11 +19725,11 @@
     "featured": false,
     "score": 64.85,
     "summary": {
-      "text": "石狩岳（いしかりだけ）は、北海道のほぼ中央部、石狩山地にある標高1,967 mの山。山頂は上川町（石狩国）と上士幌町（十勝国）の境にある。名称は石狩川の水源であることから付けられた。大雪山国立公園に属している。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E7%9F%B3%E7%8B%A9%E5%B2%B3",
+      "text": "Mount Ishikari (石狩岳, Ishikari-dake) is part of the Ishikari Mountains, Hokkaidō, Japan. On its slopes are the head waters of the Ishikari River.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Mount_Ishikari",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -19728,7 +19808,7 @@
       "ja": "礼文岳",
       "kana": "れぶんだけ",
       "romaji": "Rebundake",
-      "zh_tw": "禮文岳",
+      "zh_tw": "禮文嶽",
       "en": "Mount Rebun"
     },
     "kana_source": "wikipedia",
@@ -19743,11 +19823,11 @@
     "featured": false,
     "score": 64.71,
     "summary": {
-      "text": "礼文岳（れぶんだけ）は北海道礼文郡礼文町にある標高490mの山である。花の百名山、新花の百名山、北海道百名山、新日本百名山。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E7%A4%BC%E6%96%87%E5%B2%B3",
+      "text": "Mount Rebun (礼文岳, Rebun-dake) is the highest point on Rebun Island in Rebun,  Hokkaidō, Japan. The mountain consists of marine sedimentary rocks from the Early Cretaceous period, 149–97 million years ago.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Mount_Rebun",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [],
     "external_ids": {
@@ -19764,7 +19844,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q6924714",
@@ -19787,11 +19867,11 @@
     "featured": false,
     "score": 65.5,
     "summary": {
-      "text": "夕張岳（ゆうばりだけ）は、北海道のほぼ中央部を南北に走る夕張山地の南端に位置する標高1,668 mの山。夕張市と空知郡南富良野町にまたがり、山域は北側の芦別岳と共に「富良野芦別道立自然公園」に指定されている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%A4%95%E5%BC%B5%E5%B2%B3",
+      "text": "Mount Yūbari (夕張岳, Yūbari-dake) is a mountain of the Yūbari Mountains. It is located on the border of Minamifurano, Yūbari, Hokkaido, Japan.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Mount_Y%C5%ABbari",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -19836,11 +19916,11 @@
     "featured": false,
     "score": 87.97,
     "summary": {
-      "text": "道立自然公園野幌森林公園（どうりつしぜんこうえんのっぽろしんりんこうえん）は、北海道江別市・札幌市・北広島市にある公園（道立自然公園）。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E9%81%93%E7%AB%8B%E8%87%AA%E7%84%B6%E5%85%AC%E5%9C%92%E9%87%8E%E5%B9%8C%E6%A3%AE%E6%9E%97%E5%85%AC%E5%9C%92",
+      "text": "Nopporo Shinrin Kōen Prefectural Natural Park (道立自然公園野幌森林公園, Dōritsu shizen kōen Nopporo Shinrin Kōen) is a Prefectural Natural Park in western Hokkaidō, Japan. Established in 1968, the park spans the municipalities of Ebetsu, Kitahiroshima, and Sapporo.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Nopporo_Shinrin_K%C5%8Den_Prefectural_Natural_Park",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -20226,11 +20306,11 @@
     "featured": false,
     "score": 111.66,
     "summary": {
-      "text": "ルスツリゾート（英：RUSUTSU RESORT）は、北海道虻田郡留寿都村（ゴルフ場コースの一部は喜茂別町）にあるリゾート施設。1972年に開業したのち、1981年より加森観光が運営している。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E3%83%AB%E3%82%B9%E3%83%84%E3%83%AA%E3%82%BE%E3%83%BC%E3%83%88",
+      "text": "The Rusutsu Resort (ルスツリゾート, Rusutsu Rizōto) is the largest resort in Hokkaidō, Japan, operated by Kamori Kankō. The resort is famous for its ski slopes but also offers year-round attractions including an amusement park and golf courses.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Rusutsu_Resort",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -20282,11 +20362,11 @@
     "featured": false,
     "score": 69.06,
     "summary": {
-      "text": "札幌コンサートホール Kitara（さっぽろコンサートホール キタラ）は、札幌市中央区にあるコンサートホール。「優良ホール100選」選定。愛称の「Kitara」は公募による。札幌市の音楽講師・内村直子氏の発案が選定された。ギリシャ神話の芸術の神・アポローンの楽器「キタラ」と方位の「北」の意味が込められている。竪琴である「キタラ」のまっすぐに張られた弦には調和や未来への希望の意味があることなどが選定理由。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%9C%AD%E5%B9%8C%E3%82%B3%E3%83%B3%E3%82%B5%E3%83%BC%E3%83%88%E3%83%9B%E3%83%BC%E3%83%ABKitara",
+      "text": "Sapporo Concert Hall Kitara (札幌コンサートホールKitara), is a municipal musical venue located in Nakajima Park, Sapporo, established in 1997, the building is owned by Sapporo City, The vineyard style  music hall, known for having a huge organ built by Alfred Kern & Fils Manufacture D'Orgues in the main music hall. When Simon Rattle visited with the City of Birmingham Symphony Orchestra in 1998, he described the hall as \"the best modern concert hall in the world\".",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Sapporo_Concert_Hall",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -20571,11 +20651,11 @@
     "featured": false,
     "score": 73.37,
     "summary": {
-      "text": "サッポロテイネ（英: SAPPORO TEINE）は、北海道札幌市手稲区にある加森観光が運営するレジャー施設。本稿では「手稲山シャンツェ」（ていねやまシャンツェ）についても記す。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E3%82%B5%E3%83%83%E3%83%9D%E3%83%AD%E3%83%86%E3%82%A4%E3%83%8D",
+      "text": "Sapporo Teine (サッポロテイネ) is a recreational center in Teine-ku, Sapporo, Hokkaido, Japan. It comprises many facilities, such as the ski resort (with other facilities, besides ski), the Teineyama Ropeway, and the Sapporo Teine Golf Club fields.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Sapporo_Teine",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -20603,7 +20683,7 @@
       "ja": "社台スタリオンステーション",
       "kana": "しゃだいすたりおんすてーしょん",
       "romaji": "Shadaisutarionsuteshon",
-      "zh_tw": "社台種馬場",
+      "zh_tw": "社臺種馬場",
       "en": "Shadai Stallion Station"
     },
     "kana_source": "wikipedia",
@@ -20618,11 +20698,11 @@
     "featured": false,
     "score": 80.62,
     "summary": {
-      "text": "社台スタリオンステーション（しゃだいスタリオンステーション）とは、北海道勇払郡安平町（旧：早来町）早来源武にある種牡馬を繋養するための牧場である。運営会社は、有限会社社台コーポレーション。社台グループに属する。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E7%A4%BE%E5%8F%B0%E3%82%B9%E3%82%BF%E3%83%AA%E3%82%AA%E3%83%B3%E3%82%B9%E3%83%86%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3",
+      "text": "Shadai Stallion Station (社台スタリオンステーション, Shadai Sutarion Sutēshon) is a thoroughbred breeding facility located in Abira on the island of Hokkaido in Japan. The farm was begun in the late 1970s to early 1980s by the late Zenya Yoshida, and is now run jointly by his sons (Katsumi, Haruya, and Teruya Yoshida), known collectively as the Shadai Group. As of 2006, the brothers own 3,000 horses worldwide. The farm houses stallions from Japan and many other countries and racing circuits.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Shadai_Stallion_Station",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [],
     "external_ids": {
@@ -20639,7 +20719,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q76283211",
@@ -20665,11 +20745,11 @@
     "featured": false,
     "score": 132.89,
     "summary": {
-      "text": "ウポポイ（Upopoy）は、北海道白老郡白老町にある「民族共生象徴空間」の愛称。主要施設として国立アイヌ民族博物館、国立民族共生公園、慰霊施設を整備しており、アイヌ文化の復興・創造・発展のための拠点となるナショナルセンター。「ウポポイ」とはアイヌ語で「（大勢で）歌う」を意味している。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E3%82%A6%E3%83%9D%E3%83%9D%E3%82%A4",
+      "text": "The National Ainu Museum (国立アイヌ民族博物館, Kokuritsu Ainu Minzoku Hakubutsukan) is a museum located in Shiraoi, Hokkaidō, Japan. It is situated within the grounds of Upopoy (ウポポイ), a park complex that serves as a \"symbolic space for ethnic harmony\". The museum's mission is \"to promote a proper understanding and awareness of Ainu history and culture in Japan and elsewhere out of respect for the dignity of the indigenous Ainu people, while contributing to the creation and development of new aspects of Ainu culture\".",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Upopoy",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -20732,11 +20812,11 @@
     "featured": false,
     "score": 64.61,
     "summary": {
-      "text": "大樹町多目的航空公園（たいきちょうたもくてきこうくうこうえん）は、北海道広尾郡大樹町にある場外離着陸場。1995年（平成7年）にオープンした。現在、JAXA、大学研究所、防衛省技術研究本部(現防衛装備庁)等が、協定により使用し、航空に関する各種実験を行っている他、農薬散布やグライダー滑空場としても施設が提供されている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E6%A8%B9%E7%94%BA%E5%A4%9A%E7%9B%AE%E7%9A%84%E8%88%AA%E7%A9%BA%E5%85%AC%E5%9C%92",
+      "text": "The Taiki Multi-Purpose Aerospace Park (Japanese: 大樹町多目的航空公園, Hepburn: Taiki-chō Tamokuteki Kōkū Kōen) is an aerodrome in the town of Taiki, Hokkaido, Japan.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Taiki_Multi-Purpose_Aerospace_Park",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -20786,11 +20866,11 @@
     "featured": false,
     "score": 117.39,
     "summary": {
-      "text": "滝野すずらん丘陵公園（たきのすずらんきゅうりょうこうえん）は、北海道札幌市南区にある公園。正式名称は「国営滝野すずらん丘陵公園」で北海道唯一の国営公園である。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%BB%9D%E9%87%8E%E3%81%99%E3%81%9A%E3%82%89%E3%82%93%E4%B8%98%E9%99%B5%E5%85%AC%E5%9C%92",
+      "text": "Takino Suzuran Hillside National Government Park (国営滝野すずらん丘陵公園, Kokuei Takino Suzuran Kyūryō Kōen) is a Japanese national government park located in Sapporo, Hokkaido.  It is the only national government park in the northern island of Hokkaido.  The park area spreads over 395.7m hectares of hilly country and ranges in altitude between 160 and 320 m above sea level.  Currently, 192.3m is accessible to the public.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Takino_Suzuran_Hillside_National_Government_Park",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -20842,11 +20922,11 @@
     "featured": false,
     "score": 113.55,
     "summary": {
-      "text": "天人峡温泉（てんにんきょうおんせん）は、北海道上川郡東川町の忠別川沿いにある温泉。大雪山国立公園内にあり柱状節理の深い渓谷の底に位置する。かつては旭川市の奥座敷として知られ、大雪山の登山拠点のひとつにもなっていたが、宿泊施設の閉鎖・廃業が相次ぎ、2026年時点では宿泊施設は1軒のみとなっている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%A4%A9%E4%BA%BA%E5%B3%A1%E6%B8%A9%E6%B3%89",
+      "text": "Tenninkyō Onsen (天人峡温泉) is a geothermal hot spring village with a small onsen resort in the Daisetsuzan National Park, Hokkaidō, Japan.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Tenninkyo_Onsen",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -20893,11 +20973,11 @@
     "featured": false,
     "score": 131.76,
     "summary": {
-      "text": "有珠山ロープウェイ（うすざんロープウェイ）は、北海道有珠郡壮瞥町にあるロープウェイである。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%9C%89%E7%8F%A0%E5%B1%B1%E3%83%AD%E3%83%BC%E3%83%97%E3%82%A6%E3%82%A7%E3%82%A4",
+      "text": "The Usuzan Ropeway (有珠山ロープウェイ, Usuzan Rōpuwei) is a Japanese aerial lift line in Sōbetsu, Hokkaidō, operated by Wakasa Resort (ワカサリゾート). Opened in 1965, the line climbs Mount Usu, the active volcano in Shikotsu-Tōya National Park. The observatory has a view of Lake Tōya, Shōwa Shinzan, and the central crater of Mount Usu. The ropeway provides access to hiking trails that lead to several crater viewing platforms of the volcanic landscape formed by past eruptions.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Usuzan_Ropeway",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -20948,11 +21028,11 @@
     "featured": false,
     "score": 134.68,
     "summary": {
-      "text": "日勝峠（にっしょうとうげ）は、北海道沙流郡日高町と上川郡清水町の境界にある峠。峠の東側は十勝川水系、西側は沙流川水系である。日高山脈の分水界であるが、両水系とも太平洋に注いでいる。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%97%A5%E5%8B%9D%E5%B3%A0",
+      "text": "Nisshō Pass (日勝峠, Nisshō-tōge) is a mountain pass 1,022 metres (3,353 ft) high at the north-end of the Hidaka Mountains of Hokkaidō, Japan. The east side feeds into the Tokachi River system and the west side the Saru River system.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Nissh%C5%8D_Pass",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -21101,11 +21181,11 @@
     "featured": false,
     "score": 64.85,
     "summary": {
-      "text": "富良野岳（ふらのだけ）は、石狩山地の十勝岳連峰の南西部に位置し、富良野市と上富良野町にまたがる標高1,912mの山である。山域は大雪山国立公園に指定されている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%AF%8C%E8%89%AF%E9%87%8E%E5%B2%B3",
+      "text": "Mount Furano (富良野岳, Furano-dake) is a mountain located in the Tokachi Volcanic Group, Hokkaidō, Japan.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Mount_Furano",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -21137,7 +21217,7 @@
       "ja": "雄阿寒岳",
       "kana": "おあかんだけ",
       "romaji": "Oakandake",
-      "zh_tw": "雄阿寒岳",
+      "zh_tw": "雄阿寒嶽",
       "en": "Mount Oakan"
     },
     "kana_source": "wikidata",
@@ -21176,7 +21256,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q8528441",
@@ -21199,11 +21279,11 @@
     "featured": false,
     "score": 64.92,
     "summary": {
-      "text": "知床岳（しれとこだけ）は、北海道羅臼町、斜里町にまたがる知床半島の中の第四紀火山である。標高は1254.2m。山体は両町にまたがるが、ピークは斜里町に属する。その原始のままの自然は常人を近づけない。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E7%9F%A5%E5%BA%8A%E5%B2%B3",
+      "text": "Mount Shiretoko (知床岳, Shiretoko-dake) is a volcano located on the Shiretoko Peninsula in Hokkaido, Japan. The mountain consists of non-alkali mafic rocks and andesite. Mount Shiretoko is in Shari town, in Shari District of Okhotsk Subprefecture.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Mount_Shiretoko",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -21446,11 +21526,11 @@
     "featured": false,
     "score": 69.42,
     "summary": {
-      "text": "鷗島（かもめじま）は、北海道檜山郡江差町（檜山振興局）に存在する島・字である。かもめ島とも呼ばれる。郵便番号は043-0045。人口は7人、世帯数は2世帯。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E9%B4%8E%E5%B3%B6_%28%E6%B1%9F%E5%B7%AE%E7%94%BA%29",
+      "text": "Kamome Island (鷗島, Kamome Jima) is an island (or more precisely, peninsula) in the Sea of Japan just off the coast of the town of Esashi, Hokkaidō, Japan. The island serves as a breakwater for the Esashi port. It has several historical sites and is protected as a part of the Hiyama Prefectural Natural Park. Every July, there is a two-day festival that attracts tourists to the island. People visit the island throughout the year for swimming, camping, fishing and other recreational activities.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Kamome_Island",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {

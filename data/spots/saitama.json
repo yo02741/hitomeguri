@@ -97,7 +97,7 @@
     "tags": [
       "博物館"
     ],
-    "featured": true,
+    "featured": false,
     "score": 72.96,
     "summary": {
       "text": "所澤航空發祥紀念館位於日本埼玉縣所澤市，用以紀念該國航空史。它擁有飛機以及其它展示品（很多都可以與參觀者進行互動）和一個IMAX劇院。它坐落於日本的第一個飛機場上，這個飛機場於1911年啟用，德川好敏進行了日本第一次飛行，原始的單跑道目前還存在。它已經合併到臨近的更大的多功能公園內。",
@@ -153,7 +153,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q105097853",
@@ -248,10 +248,10 @@
         "name": {
           "ja": "北与野",
           "kana": "きたよの",
-          "romaji": "Kita Yono",
+          "romaji": "Kita-Yono",
           "en": "Kita-Yono"
         },
-        "distance_m": 530
+        "distance_m": 510
       }
     ],
     "images": [
@@ -277,7 +277,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q1058730",
@@ -300,11 +300,11 @@
     "featured": false,
     "score": 74.49,
     "summary": {
-      "text": "ジョン・レノン・ミュージアム (John Lennon Museum、JLM) は、かつて2000年から2010年まで、さいたま市に存在していたジョン・レノンをテーマとした展示施設。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E3%82%B8%E3%83%A7%E3%83%B3%E3%83%BB%E3%83%AC%E3%83%8E%E3%83%B3%E3%83%BB%E3%83%9F%E3%83%A5%E3%83%BC%E3%82%B8%E3%82%A2%E3%83%A0",
+      "text": "John Lennon Museum (ジョン・レノン・ミュージアム, Jon Renon Myūjiamu) was a museum located inside the Saitama Super Arena in Chūō-ku, Saitama, Saitama Prefecture, Japan.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/John_Lennon_Museum",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -320,10 +320,10 @@
         "name": {
           "ja": "北与野",
           "kana": "きたよの",
-          "romaji": "Kita Yono",
+          "romaji": "Kita-Yono",
           "en": "Kita-Yono"
         },
-        "distance_m": 530
+        "distance_m": 510
       }
     ],
     "images": [
@@ -344,7 +344,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q106836629",
@@ -966,6 +966,45 @@
     "updated_at": "2026-09-28"
   },
   {
+    "id": "wd-Q108677196",
+    "name": {
+      "ja": "柴原温泉",
+      "kana": "しばはらおんせん",
+      "romaji": "Shibaharaonsen",
+      "zh_tw": "柴原温泉"
+    },
+    "kana_source": "wikidata",
+    "location": {
+      "lat": 35.971568,
+      "lng": 139.007338
+    },
+    "prefecture": "saitama",
+    "kind": "major",
+    "themes": [],
+    "tags": [],
+    "featured": false,
+    "score": 54.89,
+    "summary": {
+      "text": "柴原温泉（しばはらおんせん）は、埼玉県秩父市（旧武蔵国）にある温泉。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E6%9F%B4%E5%8E%9F%E6%B8%A9%E6%B3%89",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "images": [],
+    "external_ids": {
+      "wikidata": "Q108677196"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q108677196",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
+  },
+  {
     "id": "wd-Q10891237",
     "name": {
       "ja": "入間インターチェンジ",
@@ -1015,6 +1054,68 @@
     ],
     "status": "published",
     "updated_at": "2026-09-28"
+  },
+  {
+    "id": "wd-Q109367090",
+    "name": {
+      "ja": "本庄早稲田の杜ミュージアム",
+      "kana": "ほんじょうわせだのもりみゅーじあむ",
+      "romaji": "Honjowasedanomorimyujiamu",
+      "zh_tw": "本庄早稲田の杜ミュージアム",
+      "en": "Honjō-Waseda no Mori Museum"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 36.217846,
+      "lng": 139.177235
+    },
+    "prefecture": "saitama",
+    "kind": "major",
+    "themes": [],
+    "tags": [],
+    "featured": false,
+    "score": 54.8,
+    "summary": {
+      "text": "本庄早稲田の杜ミュージアム（ほんじょうわせだのもりミュージアム）は、埼玉県本庄市西富田の早稲田リサーチパーク地区内にある博物館。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E6%9C%AC%E5%BA%84%E6%97%A9%E7%A8%B2%E7%94%B0%E3%81%AE%E6%9D%9C%E3%83%9F%E3%83%A5%E3%83%BC%E3%82%B8%E3%82%A2%E3%83%A0",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "本庄早稲田",
+          "kana": "ほんじょうわせだ",
+          "romaji": "Honjō-Waseda",
+          "en": "Honjō-Waseda"
+        },
+        "distance_m": 230
+      }
+    ],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/58/Waseda_University_Honjo_Campus.JPG/960px-Waseda_University_Honjo_Campus.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Nyao148",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Waseda_University_Honjo_Campus.JPG"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q109367090"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q109367090",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E6%9C%AC%E5%BA%84%E6%97%A9%E7%A8%B2%E7%94%B0%E3%81%AE%E6%9D%9C%E3%83%9F%E3%83%A5%E3%83%BC%E3%82%B8%E3%82%A2%E3%83%A0",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q110197348",
@@ -1555,6 +1656,84 @@
     "updated_at": "2026-09-28"
   },
   {
+    "id": "wd-Q11248596",
+    "name": {
+      "ja": "さいたま市立博物館",
+      "kana": "さいたましりつはくぶつかん",
+      "romaji": "Saitamashiritsuhakubutsukan",
+      "zh_tw": "埼玉市立博物館",
+      "en": "Saitama Municipal Museum"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 35.911333,
+      "lng": 139.631611
+    },
+    "prefecture": "saitama",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "博物館"
+    ],
+    "featured": false,
+    "score": 54.78,
+    "summary": {
+      "text": "さいたま市立博物館（さいたましりつはくぶつかん）は、埼玉県さいたま市大宮区にある博物館。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E3%81%95%E3%81%84%E3%81%9F%E3%81%BE%E5%B8%82%E7%AB%8B%E5%8D%9A%E7%89%A9%E9%A4%A8",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "大宮",
+          "kana": "おおみや",
+          "romaji": "Ōmiya",
+          "en": "Omiya"
+        },
+        "distance_m": 760
+      },
+      {
+        "name": {
+          "ja": "北大宮",
+          "kana": "きたおおみや",
+          "romaji": "Kita-ōmiya",
+          "en": "Kita-omiya"
+        },
+        "distance_m": 930
+      }
+    ],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/33/Saitama_Municipal_Museum.JPG/960px-Saitama_Municipal_Museum.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Abasaa",
+        "license": "Public domain",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Saitama_Municipal_Museum.JPG"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q11248596",
+      "osm": "way/203544402"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q11248596",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.openstreetmap.org/way/203544402",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E3%81%95%E3%81%84%E3%81%9F%E3%81%BE%E5%B8%82%E7%AB%8B%E5%8D%9A%E7%89%A9%E9%A4%A8",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
+  },
+  {
     "id": "wd-Q11248598",
     "name": {
       "ja": "さいたま市営大宮球場",
@@ -1704,11 +1883,11 @@
     "featured": false,
     "score": 64.74,
     "summary": {
-      "text": "埼玉県立歴史と民俗の博物館（さいたまけんりつれきしとみんぞくのはくぶつかん）は、埼玉県さいたま市大宮区高鼻町の大宮公園内にある、歴史と民俗、美術の総合博物館である。前身は1971年に現在地に開館した埼玉県立博物館で、2006年に埼玉県立民俗文化センターと統合して現名称となった。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%9F%BC%E7%8E%89%E7%9C%8C%E7%AB%8B%E6%AD%B4%E5%8F%B2%E3%81%A8%E6%B0%91%E4%BF%97%E3%81%AE%E5%8D%9A%E7%89%A9%E9%A4%A8",
+      "text": "Saitama Prefectural Museum of History and Folklore (埼玉県立歴史と民俗の博物館, Saitama Kenritsu Rekishi to Minzoku no Hakubutsukan) is a prefectural museum in Saitama, Japan, dedicated to the history and folklore of Saitama Prefecture. The museum opened in 1971.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Saitama_Prefectural_Museum_of_History_and_Folklore",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -1862,7 +2041,7 @@
         "name": {
           "ja": "南与野",
           "kana": "みなみよの",
-          "romaji": "Minami Yono",
+          "romaji": "Minami-Yono",
           "en": "Minami-Yono"
         },
         "distance_m": 580
@@ -1871,10 +2050,10 @@
         "name": {
           "ja": "与野本町",
           "kana": "よのほんまち",
-          "romaji": "Yono hommachi",
+          "romaji": "Yono-hommachi",
           "en": "Yono-Hommachi"
         },
-        "distance_m": 1020
+        "distance_m": 1030
       }
     ],
     "images": [],
@@ -1892,7 +2071,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11260799",
@@ -1937,7 +2116,7 @@
         "name": {
           "ja": "北浦和",
           "kana": "きたうらわ",
-          "romaji": "Kita Urawa",
+          "romaji": "Kita-Urawa",
           "en": "Kita-Urawa"
         },
         "distance_m": 1400
@@ -1970,7 +2149,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11265970",
@@ -2013,10 +2192,10 @@
         "name": {
           "ja": "北与野",
           "kana": "きたよの",
-          "romaji": "Kita Yono",
+          "romaji": "Kita-Yono",
           "en": "Kita-Yono"
         },
-        "distance_m": 440
+        "distance_m": 410
       }
     ],
     "images": [
@@ -2037,7 +2216,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11266568",
@@ -3151,10 +3330,10 @@
         "name": {
           "ja": "北与野",
           "kana": "きたよの",
-          "romaji": "Kita Yono",
+          "romaji": "Kita-Yono",
           "en": "Kita-Yono"
         },
-        "distance_m": 830
+        "distance_m": 810
       }
     ],
     "images": [
@@ -3175,7 +3354,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11304884",
@@ -3610,11 +3789,11 @@
     "featured": false,
     "score": 66.49,
     "summary": {
-      "text": "三宝山（さんぽうざん）は、埼玉県秩父市と長野県南佐久郡川上村の境にある標高2,483mの山で、奥秩父山域にある。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E4%B8%89%E5%AE%9D%E5%B1%B1",
+      "text": "Mount Sanpō (三宝山, Sanpō-yama) is a mountain on the border between Chichibu, Saitama and Kawakami, Nagano in the Okuchichibu Mountains of Japan. At a height of 2,483 m (8,146 ft), it is the highest point in Saitama.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Mount_Sanp%C5%8D",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -3779,11 +3958,11 @@
     "featured": false,
     "score": 65.78,
     "summary": {
-      "text": "三波石峡（さんばせききょう、さんばせっきょう）は、神流川上流に位置し、群馬県と埼玉県に跨る景勝地である。国の史蹟名勝天然記念物（名勝・天然記念物）に指定されている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E4%B8%89%E6%B3%A2%E7%9F%B3%E5%B3%A1",
+      "text": "Sanbaseki Gorge (三波石峡, Sanbaseki-kyō) is a ravine on the Kanna River in the city of Fujioka, Gunma Prefecture, and the town of Kamikawa, Saitama Prefecture, Japan. It has been designated a National Place of Scenic Beauty and a Natural Monument since 1957.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Sanbaseki_Gorge",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -4013,7 +4192,7 @@
         "name": {
           "ja": "与野本町",
           "kana": "よのほんまち",
-          "romaji": "Yono hommachi",
+          "romaji": "Yono-hommachi",
           "en": "Yono-Hommachi"
         },
         "distance_m": 720
@@ -4022,10 +4201,10 @@
         "name": {
           "ja": "北与野",
           "kana": "きたよの",
-          "romaji": "Kita Yono",
+          "romaji": "Kita-Yono",
           "en": "Kita-Yono"
         },
-        "distance_m": 1420
+        "distance_m": 1440
       }
     ],
     "images": [
@@ -4055,7 +4234,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11362665",
@@ -4263,11 +4442,11 @@
     "featured": false,
     "score": 61.21,
     "summary": {
-      "text": "中院（なかいん）は、埼玉県川越市小仙波町にある天台宗の寺院である。山号は星野山。寺号は無量寿寺。院号は中院。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E4%B8%AD%E9%99%A2",
+      "text": "Naka-in is a Tendai Buddhist temple in Kawagoe City, Saitama Prefecture.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Naka-in",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -4375,6 +4554,73 @@
     ],
     "status": "published",
     "updated_at": "2026-09-28"
+  },
+  {
+    "id": "wd-Q113682391",
+    "name": {
+      "ja": "龍門寺",
+      "kana": "りゅうもんじ",
+      "romaji": "Ryumonji",
+      "zh_tw": "龍門寺",
+      "en": "Ryūmon-ji Temple"
+    },
+    "kana_source": "wikidata",
+    "location": {
+      "lat": 35.960278,
+      "lng": 139.696389
+    },
+    "prefecture": "saitama",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "寺院"
+    ],
+    "featured": false,
+    "score": 54.88,
+    "summary": {
+      "text": "龍門寺（りゅうもんじ）は、埼玉県さいたま市岩槻区にある曹洞宗の寺院。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E9%BE%8D%E9%96%80%E5%AF%BA_%28%E3%81%95%E3%81%84%E3%81%9F%E3%81%BE%E5%B8%82%29",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "岩槻",
+          "romaji": "Iwatsuki",
+          "en": "Iwatsuki"
+        },
+        "distance_m": 1170
+      },
+      {
+        "name": {
+          "ja": "東岩槻",
+          "romaji": "Higashi-Iwatsuki",
+          "en": "Higashi-Iwatsuki"
+        },
+        "distance_m": 1470
+      }
+    ],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/93/Ryumon-ji%2C_Saitama_3.jpg/960px-Ryumon-ji%2C_Saitama_3.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Beryllium Transistor",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Ryumon-ji,_Saitama_3.jpg"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q113682391"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q113682391",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11368412",
@@ -4733,11 +4979,11 @@
     "featured": false,
     "score": 66.99,
     "summary": {
-      "text": "仙波東照宮（せんばとうしょうぐう）は、埼玉県川越市小仙波町にある神社（東照宮）。日光・久能山と並ぶ日本三大東照宮の1つ。旧社格は無格社。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E4%BB%99%E6%B3%A2%E6%9D%B1%E7%85%A7%E5%AE%AE",
+      "text": "Semba Tōshō-gū (仙波東照宮) is a Shinto shrine in Kawagoe, Saitama Prefecture, Japan. It enshrines the first Shōgun of the Tokugawa Shogunate, Tokugawa Ieyasu. It is enumerated as one of the Three Great Tōshō-gū Shrines (日本三大東照宮). The shrine was founded in 1617.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Senba_T%C5%8Dsh%C5%8D-g%C5%AB",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -5165,7 +5411,7 @@
         "name": {
           "ja": "中浦和",
           "kana": "なかうらわ",
-          "romaji": "Naka Urawa",
+          "romaji": "Naka-Urawa",
           "en": "Naka-Urawa"
         },
         "distance_m": 420
@@ -5174,7 +5420,7 @@
         "name": {
           "ja": "武蔵浦和",
           "kana": "むさしうらわ",
-          "romaji": "Musashi Urawa",
+          "romaji": "Musashi-Urawa",
           "en": "Musashi-Urawa"
         },
         "distance_m": 1280
@@ -5202,7 +5448,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11396892",
@@ -5664,7 +5910,7 @@
       "ja": "古代蓮の里",
       "kana": "こだいはすのさと",
       "romaji": "Kodaihasunosato",
-      "zh_tw": "古代蓮之里",
+      "zh_tw": "古代蓮之裡",
       "en": "Ancient Lotus Park"
     },
     "kana_source": "wikipedia",
@@ -5714,7 +5960,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q114116571",
@@ -5848,11 +6094,11 @@
     "featured": false,
     "score": 64.13,
     "summary": {
-      "text": "和銅遺跡（わどういせき）、または和銅採掘遺跡（わどうさいくついせき）は、埼玉県秩父市黒谷に所在する、銅の採掘露天掘跡を中心とする遺跡。「和銅採掘遺跡」の名称で埼玉県指定旧跡に指定されている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%92%8C%E9%8A%85%E9%81%BA%E8%B7%A1",
+      "text": "Wadō Archaeological Site (和銅遺跡 (Wadō Iseki)) is the preserved remains of Japan’s earliest known copper mine, located in Chichibu, Saitama Prefecture. The site is famous for the 708 CE discovery of native copper, which prompted the issuance of Japan’s first official coin, the Wadōkaichin (和同開珎), and the start of the Wadō era.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Wad%C5%8D_Archaeological_Site",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -5912,11 +6158,11 @@
     "featured": false,
     "score": 70.25,
     "summary": {
-      "text": "国営武蔵丘陵森林公園（こくえい むさしきゅうりょうしんりんこうえん）は、埼玉県比企郡滑川町と熊谷市（北口周辺のみ）にまたがる比企北丘陵にある国営公園。国の明治百年記念事業の一環として開設された。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%9B%BD%E5%96%B6%E6%AD%A6%E8%94%B5%E4%B8%98%E9%99%B5%E6%A3%AE%E6%9E%97%E5%85%AC%E5%9C%92",
+      "text": "Musashi Kyūryō National Government Park (国営武蔵丘陵森林公園, Kokuei Musashi Kyūryō Shinrin Kōen) is a national government park located on the Hiki Hills (比企丘陵, Hiki Kyūryō) of the town of Namegawa, Saitama Prefecture, Japan. It is also known as a National forest park. In 1974, it opened as the first National Government Park. The park covers a vast area of forest and offers opportunities for various outdoor activities. The park has four entrances: the Central, North, West, and South Entrances.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Musashi_Ky%C5%ABry%C5%8D_National_Government_Park",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -5977,7 +6223,7 @@
         "name": {
           "ja": "与野本町",
           "kana": "よのほんまち",
-          "romaji": "Yono hommachi",
+          "romaji": "Yono-hommachi",
           "en": "Yono-Hommachi"
         },
         "distance_m": 520
@@ -5986,10 +6232,10 @@
         "name": {
           "ja": "北与野",
           "kana": "きたよの",
-          "romaji": "Kita Yono",
+          "romaji": "Kita-Yono",
           "en": "Kita-Yono"
         },
-        "distance_m": 1210
+        "distance_m": 1230
       }
     ],
     "images": [
@@ -6015,7 +6261,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q114260461",
@@ -6166,11 +6412,11 @@
     "featured": false,
     "score": 61.16,
     "summary": {
-      "text": "埼玉県平和資料館（さいたまけんへいわしりょうかん）は、埼玉県東松山市の物見山公園内にある埼玉県立の資料館である。愛称は「埼玉ピースミュージアム」。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%9F%BC%E7%8E%89%E7%9C%8C%E5%B9%B3%E5%92%8C%E8%B3%87%E6%96%99%E9%A4%A8",
+      "text": "The Peace Museum of Saitama (埼玉県平和資料館, Saitama-ken Heiwa Shiryōkan) opened in Higashimatsuyama, Saitama Prefecture, Japan, in 1993. The museum collects and exhibits materials relating to the burgeoning militarism of the early Shōwa era and to the Pacific War, with a particular focus on the connection of these events with Saitama Prefecture.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Peace_Museum_of_Saitama",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -6235,7 +6481,7 @@
         "name": {
           "ja": "北浦和",
           "kana": "きたうらわ",
-          "romaji": "Kita Urawa",
+          "romaji": "Kita-Urawa",
           "en": "Kita-Urawa"
         },
         "distance_m": 330
@@ -6244,7 +6490,7 @@
         "name": {
           "ja": "南与野",
           "kana": "みなみよの",
-          "romaji": "Minami Yono",
+          "romaji": "Minami-Yono",
           "en": "Minami-Yono"
         },
         "distance_m": 1140
@@ -6272,7 +6518,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11426657",
@@ -6366,11 +6612,11 @@
     "featured": false,
     "score": 62.19,
     "summary": {
-      "text": "埼玉県立自然の博物館（さいたまけんりつしぜんのはくぶつかん）は埼玉県秩父郡長瀞町にある埼玉県立博物館の中で唯一の自然史博物館。秩父鉄道株式会社が設立した秩父鉱物植物標本陳列所（後に秩父自然科学博物館に改名）の流れを汲み、90年以上にわたる日本有数の長い歴史を持つ登録博物館である。日本の自然史博物館としては国立科学博物館（東京）に次ぐ歴史を持つ。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%9F%BC%E7%8E%89%E7%9C%8C%E7%AB%8B%E8%87%AA%E7%84%B6%E3%81%AE%E5%8D%9A%E7%89%A9%E9%A4%A8",
+      "text": "Saitama Museum of Natural History (埼玉県立自然の博物館, Saitama kenritsu shizen no hakubutsukan) is a prefectural museum of natural history in Nagatoro, Saitama Prefecture, Japan. The museum opened in 1981 and replaced \"史\" with \"の\" in its Japanese name in 2006. The Museum supersedes the Chichibu Natural Science Museum (秩父自然科学博物館) (1949–1980) and the Mineral and Plant Specimen Gallery (鑛物植物標本陳列所) (1921–1949), founded by the Chichibu Railway Company.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Saitama_Museum_of_Natural_History",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -6455,7 +6701,7 @@
         "name": {
           "ja": "北浦和",
           "kana": "きたうらわ",
-          "romaji": "Kita Urawa",
+          "romaji": "Kita-Urawa",
           "en": "Kita-Urawa"
         },
         "distance_m": 400
@@ -6464,7 +6710,7 @@
         "name": {
           "ja": "南与野",
           "kana": "みなみよの",
-          "romaji": "Minami Yono",
+          "romaji": "Minami-Yono",
           "en": "Minami-Yono"
         },
         "distance_m": 1090
@@ -6497,7 +6743,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q114267790",
@@ -6990,11 +7236,11 @@
     "featured": false,
     "score": 61.42,
     "summary": {
-      "text": "大正浪漫夢通り（たいしょうろまんゆめどおり）は、埼玉県川越市仲町・連雀町にある商店街。歴史的には猪鼻町または銀座通りと呼ばれていた。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E6%AD%A3%E6%B5%AA%E6%BC%AB%E5%A4%A2%E9%80%9A%E3%82%8A",
+      "text": "Taisho-roman Street, meaning Taisho Romance Street, is a local shopping street in Kawagoe City, Saitama Prefecture, Japan.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Taisho-roman_Street",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -7443,11 +7689,11 @@
     "featured": false,
     "score": 61.93,
     "summary": {
-      "text": "安楽寺（あんらくじ）は、埼玉県比企郡吉見町御所にある真言宗智山派の寺院。山号は岩殿山。院号は光明院。本尊は聖観世音菩薩で、坂東三十三観音11番札所、関東八十八箇所75番札所、東国花の寺百ヶ寺埼玉5番である。吉見観音とも称される。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%AE%89%E6%A5%BD%E5%AF%BA_%28%E5%9F%BC%E7%8E%89%E7%9C%8C%E5%90%89%E8%A6%8B%E7%94%BA%29",
+      "text": "Anraku-ji (安楽寺) is a Buddhist temple located in the town of Yoshimi, Saitama Prefecture, Japan. It belongs to the  Shingon-shū Chisan-ha sect and its honzon is a hibutsu statue of Senjū Kannon Bosatsu (Sahasrabhūja), displayed only on June 18 annually.  The temple's full name is Iwadono-zan Kōmyō-in Anraku-ji (岩殿山 光明院  安楽寺).The temple is the 11th stop on the Bandō Sanjūsankasho pilgrimage route. It is also called the \"Yoshimi Kannon\".",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Anraku-ji_%28Yoshimi%29",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -7984,7 +8230,7 @@
       "ja": "岩槻城",
       "kana": "いわつきじょう",
       "romaji": "Iwatsukijo",
-      "zh_tw": "岩槻城",
+      "zh_tw": "巖槻城",
       "en": "Iwatsuki Castle"
     },
     "kana_source": "wikipedia",
@@ -8039,7 +8285,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11476936",
@@ -8370,11 +8616,11 @@
     "featured": false,
     "score": 58.22,
     "summary": {
-      "text": "川越まつり会館（かわごえまつりかいかん）は、埼玉県川越市にある川越市立の郷土博物館。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%B7%9D%E8%B6%8A%E3%81%BE%E3%81%A4%E3%82%8A%E4%BC%9A%E9%A4%A8",
+      "text": "Kawagoe Festival Museum (川越まつり会館) is a Kawagoe City local museum in Kawagoe City, Saitama Prefecture.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Kawagoe_Festival_Museum",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -8715,11 +8961,11 @@
     "featured": false,
     "score": 60.93,
     "summary": {
-      "text": "川越運動公園（かわごえ うんどうこうえん）は、埼玉県川越市下老袋に所在する運動公園。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%B7%9D%E8%B6%8A%E9%81%8B%E5%8B%95%E5%85%AC%E5%9C%92",
+      "text": "Kawagoe Sports Park Athletics Stadium (川越運動公園陸上競技場) is an athletics stadium in  Kawagoe, Saitama, Japan. It is located within the Kawagoe Sports Park, which also includes a general gymnasium, and tennis courts.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Kawagoe_Sports_Park_Athletics_Stadium",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -8953,7 +9199,7 @@
         "name": {
           "ja": "与野本町",
           "kana": "よのほんまち",
-          "romaji": "Yono hommachi",
+          "romaji": "Yono-hommachi",
           "en": "Yono-Hommachi"
         },
         "distance_m": 580
@@ -8962,7 +9208,7 @@
         "name": {
           "ja": "南与野",
           "kana": "みなみよの",
-          "romaji": "Minami Yono",
+          "romaji": "Minami-Yono",
           "en": "Minami-Yono"
         },
         "distance_m": 1330
@@ -8990,7 +9236,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11488014",
@@ -9074,11 +9320,11 @@
     "featured": false,
     "score": 67.1,
     "summary": {
-      "text": "慈光寺（じこうじ）は、埼玉県比企郡ときがわ町にある天台宗の寺院である。山号は都幾山。院号は一乗法華院。本尊は十一面千手千眼観世音菩薩で、坂東三十三観音第9番札所。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%85%88%E5%85%89%E5%AF%BA_%28%E5%9F%BC%E7%8E%89%E7%9C%8C%E3%81%A8%E3%81%8D%E3%81%8C%E3%82%8F%E7%94%BA%29",
+      "text": "Jikō-ji (慈光寺) is a Buddhist temple located in the Nishidaira neighborhood of the town of Tokigawa, Saitama Prefecture, Japan. It belongs to the  Tendai sect and its honzon is a statue of Jūichimen Kannon Bosatsu.  The temple's full name is Toki-zan Ichijōhōren-in Jikō-ji  (都幾山 一乗法華院 慈光寺).The temple is the 9th stop on the Bandō Sanjūsankasho pilgrimage route.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Jik%C5%8D-ji_%28Tokigawa%29",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -9285,7 +9531,7 @@
         "name": {
           "ja": "北戸田",
           "kana": "きたとだ",
-          "romaji": "Kita Toda",
+          "romaji": "Kita-Toda",
           "en": "Kita-Toda"
         },
         "distance_m": 870
@@ -9313,7 +9559,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11496502",
@@ -9355,7 +9601,7 @@
         "name": {
           "ja": "戸田公園",
           "kana": "とだこうえん",
-          "romaji": "Todakoen",
+          "romaji": "Toda-kōen",
           "en": "Todakoen"
         },
         "distance_m": 1080
@@ -9383,7 +9629,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11496503",
@@ -9416,7 +9662,7 @@
         "name": {
           "ja": "北戸田",
           "kana": "きたとだ",
-          "romaji": "Kita Toda",
+          "romaji": "Kita-Toda",
           "en": "Kita-Toda"
         },
         "distance_m": 520
@@ -9449,7 +9695,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11496545",
@@ -9955,7 +10201,7 @@
         "name": {
           "ja": "北朝霞",
           "kana": "きたあさか",
-          "romaji": "Kita Asaka",
+          "romaji": "Kita-Asaka",
           "en": "Kita-Asaka"
         },
         "distance_m": 880
@@ -9972,7 +10218,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11517754",
@@ -10052,11 +10298,11 @@
     "featured": false,
     "score": 70.13,
     "summary": {
-      "text": "杉山城（すぎやまじょう）は、埼玉県比企郡嵐山町（武蔵国比企郡）にあった日本の城。別名初雁城。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%9D%89%E5%B1%B1%E5%9F%8E",
+      "text": "Sugiyama Castle (杉山城, Sugiyama-jō), also known as Makino Castle,  was a Sengoku period Japanese castle located in what is now part of  the town of Ranzan, Hiki District, Saitama, in the Kantō region of Japan. The site was designated a National Historic Site. Its ruins have been protected as a National Historic Site, since 2008.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Sugiyama_Castle",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [],
     "external_ids": {
@@ -10154,11 +10400,11 @@
     "featured": false,
     "score": 59.9,
     "summary": {
-      "text": "東明寺（とうみょうじ）は、埼玉県川越市志多町にある時宗の寺院である。山号は稲荷山（いなりさん）、院号は称名院（しょうみょういん）、本尊は虚空蔵菩薩。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%9D%B1%E6%98%8E%E5%AF%BA_%28%E5%B7%9D%E8%B6%8A%E5%B8%82%29",
+      "text": "Tōmyō-ji (Japanese: 東明寺, Hepburn: Eastern Bright Temple) is a Buddhist temple in Kawagoe, Saitama, Japan. It is noted as a principle location of the night battle during the Siege of Kawagoe Castle on April 20, 1546.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/T%C5%8Dmy%C5%8D-ji_%28Kawagoe%29",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -10256,11 +10502,11 @@
     "featured": true,
     "score": 76.16,
     "summary": {
-      "text": "東武動物公園（とうぶどうぶつこうえん）は、埼玉県南埼玉郡宮代町と埼玉県白岡市にまたがる、動物園と遊園地を併設した複合型レジャー施設。総面積は54ha。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%9D%B1%E6%AD%A6%E5%8B%95%E7%89%A9%E5%85%AC%E5%9C%92",
+      "text": "Tobu Zoo (東武動物公園, Tōbu dōbutsu kōen lit. '’Tōbu Zoological Park’') is a combination of a zoo and an amusement park located in Miyashiro, Saitama Prefecture, Japan, owned by Tobu Railway.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Tobu_Zoo",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -10326,11 +10572,11 @@
     "featured": false,
     "score": 72.54,
     "summary": {
-      "text": "松山城（まつやまじょう）は、埼玉県比企郡吉見町大字南吉見字城山（武蔵国横見郡松山）にあった日本の城。別名武州松山城・武蔵松山城。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%9D%BE%E5%B1%B1%E5%9F%8E_%28%E6%AD%A6%E8%94%B5%E5%9B%BD%29",
+      "text": "Matsuyama Castle  (松山城, Matsuyama-jō) was a  Sengoku period Japanese castle located in what is now part of  the town of Yoshimi, Hiki District, Saitama, in the Kantō region of Japan. Its ruins have been protected as a National Historic Site, since 2008. It is also referred to as Musashi-Matsuyama Castle, to distinguish it from the more famous Bitchū Matsuyama Castle or Iyo Matsuyama Castle.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Matsuyama_Castle_%28Ranzan%29",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -10377,11 +10623,11 @@
     "featured": false,
     "score": 67.52,
     "summary": {
-      "text": "浦山ダム（うらやまダム）は、埼玉県秩父市浦山地先、荒川水系浦山川に建設されたダムである。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%B5%A6%E5%B1%B1%E3%83%80%E3%83%A0",
+      "text": "Urayama dam is a roller compacted concrete gravity dam located in Saitama prefecture in Japan. The dam serves for multiple purpose including water-supply for domestic purpose, power generation, and flood control. The catchment area of the dam is 51.6 km2. The dam impounds about 120ha of land when full and can store 58 million cubic meters of water. The construction of the dam was started on 1972 and completed in 1988. The dam is constructed across the Urayama river which is a tributary of Arakawa River.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Urayama_Dam",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -10808,11 +11054,11 @@
     "featured": true,
     "score": 80.64,
     "summary": {
-      "text": "歓喜院（かんぎいん）は、埼玉県熊谷市妻沼（めぬま）にある高野山真言宗の仏教寺院である。日本三大聖天の一つとされる。一般的には山号に地名を冠した「妻沼聖天山（めぬましょうでんざん）」と呼称され、公式でも主にその名で案内される。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%AD%93%E5%96%9C%E9%99%A2_%28%E7%86%8A%E8%B0%B7%E5%B8%82%29",
+      "text": "Kangi-in (歓喜院) is a Buddhist temple in Kumagaya, Saitama Prefecture, Japan. It was founded in 1179 and is affiliated with the Kōyasan Shingon-shū sect of Buddhism. The temple's Shōden Hall (聖天堂, shōden-dō) was designated as a Japanese National Treasure in 1984. It is the only building in Saitama to have been designated as a national treasure.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Kangi-in",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -10849,7 +11095,7 @@
       "ja": "正法寺",
       "kana": "しょうぼうじ",
       "romaji": "Shoboji",
-      "zh_tw": "岩殿觀音 正法寺",
+      "zh_tw": "巖殿觀音 正法寺",
       "en": "Shōbō-ji Temple"
     },
     "kana_source": "wikipedia",
@@ -10866,11 +11112,11 @@
     "featured": false,
     "score": 62.56,
     "summary": {
-      "text": "正法寺（しょうぼうじ）は、埼玉県東松山市にある真言宗智山派の寺院である。山号は巌殿山。本尊は千手観世音菩薩で、坂東三十三観音の十番札所である。一般には岩殿観音の通称で知られる。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%AD%A3%E6%B3%95%E5%AF%BA_%28%E6%9D%B1%E6%9D%BE%E5%B1%B1%E5%B8%82%29",
+      "text": "Shōbō-ji (正法寺) is a Buddhist temple located in the city of Higashimatsuyama, Saitama Prefecture, Japan. It belongs to the  Shingon-shū Chisan-ha sect and its honzon is a statue of Senjū Kannon Bosatsu (Sahasrabhūja).  The temple's full name is Iwadono-san Shōbō-ji (巌殿山  正法寺).The temple is the 10th stop on the Bandō Sanjūsankasho pilgrimage route. It is also called the \"Iwadono Kannon\".",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Sh%C5%8Db%C5%8D-ji_%28Higashimatsuyama%29",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -10899,7 +11145,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11546374",
@@ -10932,7 +11178,7 @@
         "name": {
           "ja": "武蔵浦和",
           "kana": "むさしうらわ",
-          "romaji": "Musashi Urawa",
+          "romaji": "Musashi-Urawa",
           "en": "Musashi-Urawa"
         },
         "distance_m": 140
@@ -10941,10 +11187,10 @@
         "name": {
           "ja": "中浦和",
           "kana": "なかうらわ",
-          "romaji": "Naka Urawa",
+          "romaji": "Naka-Urawa",
           "en": "Naka-Urawa"
         },
-        "distance_m": 1240
+        "distance_m": 1250
       }
     ],
     "images": [
@@ -10969,7 +11215,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11548688",
@@ -11334,11 +11580,11 @@
     "featured": false,
     "score": 64.9,
     "summary": {
-      "text": "河越館（かわごえやかた/かわごえかん）は、埼玉県川越市上戸（うわど）にあった日本の城。川越市の北西部、入間川左岸に位置し、約二町（218メートル）四方の占地規模を持つ中世居館の遺跡である。国の史跡に指定されている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%B2%B3%E8%B6%8A%E9%A4%A8",
+      "text": "The Kawagoekan (河越館) was a hirayama-style Heian period Japanese castle located in the Uwado neighborhood of what is now the city of Kawagoe, Saitama Prefecture, in the Kantō region of Japan. The ruins been protected as a National Historic Site since 1984.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Kawagoekan",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -11417,7 +11663,7 @@
         "name": {
           "ja": "西川口",
           "kana": "にしかわぐち",
-          "romaji": "Nishi Kawaguchi",
+          "romaji": "Nishi-Kawaguchi",
           "en": "Nishi-Kawaguchi"
         },
         "distance_m": 1000
@@ -11463,7 +11709,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11554480",
@@ -11497,7 +11743,7 @@
         "name": {
           "ja": "武蔵浦和",
           "kana": "むさしうらわ",
-          "romaji": "Musashi Urawa",
+          "romaji": "Musashi-Urawa",
           "en": "Musashi-Urawa"
         },
         "distance_m": 660
@@ -11525,7 +11771,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11554901",
@@ -11577,6 +11823,70 @@
     ],
     "status": "published",
     "updated_at": "2026-09-28"
+  },
+  {
+    "id": "wd-Q11556808",
+    "name": {
+      "ja": "浄国寺",
+      "kana": "じょうこくじ",
+      "romaji": "Jokokuji",
+      "zh_tw": "淨國寺",
+      "en": "Jōkoku-ji Temple"
+    },
+    "kana_source": "wikidata",
+    "location": {
+      "lat": 35.945222,
+      "lng": 139.689139
+    },
+    "prefecture": "saitama",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "寺院"
+    ],
+    "featured": false,
+    "score": 54.79,
+    "summary": {
+      "text": "浄国寺（じょうこくじ）は、埼玉県さいたま市岩槻区にある浄土宗の寺院である。山号は仏眼山。院号は英隆院。本尊は阿弥陀如来。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E6%B5%84%E5%9B%BD%E5%AF%BA_%28%E3%81%95%E3%81%84%E3%81%9F%E3%81%BE%E5%B8%82%29",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "岩槻",
+          "romaji": "Iwatsuki",
+          "en": "Iwatsuki"
+        },
+        "distance_m": 650
+      }
+    ],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8d/Saitama_Jokokuji_Hondo_1.JPG/960px-Saitama_Jokokuji_Hondo_1.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "京浜にけ",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Saitama_Jokokuji_Hondo_1.JPG"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q11556808",
+      "osm": "node/3792703311"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q11556808",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.openstreetmap.org/node/3792703311",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11558172",
@@ -12092,11 +12402,11 @@
     "featured": false,
     "score": 64.78,
     "summary": {
-      "text": "狭山不動尊（さやまふどうそん）は、埼玉県所沢市上山口にある天台宗別格本山の寺院である。山号は狭山山、寺号は不動寺。本尊は不動明王。埼玉西武ライオンズが毎年シーズン開幕直前の3月下旬に必勝祈願を行う寺として知られる。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E7%8B%AD%E5%B1%B1%E4%B8%8D%E5%8B%95%E5%B0%8A",
+      "text": "Sayama Fudōson (Japanese: 狭山不動尊) is a Tendai sect temple located in Kamiyamaguchi, Tokorozawa, Saitama. It is noted for it containing a number of historically significant structures that were relocated from other parts of Japan.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Sayama_Fud%C5%8Dson",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -12329,7 +12639,7 @@
         "name": {
           "ja": "西浦和",
           "kana": "にしうらわ",
-          "romaji": "Nishi Urawa",
+          "romaji": "Nishi-Urawa",
           "en": "Nishi-Urawa"
         },
         "distance_m": 1350
@@ -12357,7 +12667,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11579622",
@@ -13674,11 +13984,11 @@
     "featured": false,
     "score": 68.65,
     "summary": {
-      "text": "菅谷館（すがややかた）は、埼玉県比企郡嵐山町（武蔵国比企郡）にあった日本の城。菅谷城（すがやじょう）とも呼ばれる。昭和48年（1973年）、国の史跡に指定された。館跡には埼玉県立嵐山史跡の博物館が設けられている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E8%8F%85%E8%B0%B7%E9%A4%A8",
+      "text": "Sugaya Yakata (菅谷館) was a Japanese castle located in what is now the town of Ranzan, Hiki District, Saitama, Japan. Its ruins have been protected as a National Historic Site, since 2008.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Sugaya_Yakata",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -13743,11 +14053,11 @@
     "featured": false,
     "score": 63.95,
     "summary": {
-      "text": "菓子屋横丁（かしやよこちょう）は、埼玉県川越市元町にある菓子屋・駄菓子屋が立ち並ぶ商店街。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E8%8F%93%E5%AD%90%E5%B1%8B%E6%A8%AA%E4%B8%81",
+      "text": "Kashiya Yokocho (Penny Candy Lane) is a shopping street in Kawagoe City, Saitama Prefecture. Confectionery stores including penny candy stores line both sides of the street.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Kashiya_Yokocho",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -13862,11 +14172,11 @@
     "featured": false,
     "score": 63.67,
     "summary": {
-      "text": "蓮馨寺（れんけいじ）は、埼玉県川越市連雀町にある浄土宗の寺院である。山号は孤峰山。院号は宝池院。本尊は阿弥陀如来。小江戸川越七福神第5番札所であり福禄寿を祀る。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E8%93%AE%E9%A6%A8%E5%AF%BA",
+      "text": "Renkei-ji (蓮馨寺) is a Buddhist temple of the Jōdo-shū sect in Kawagoe City, Saitama Prefecture. Its mountain name (sangō) is Kōhozan, while its monastery name (ingō) is Hōchi-in. The temple is dedicated to Amida Buddha.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Renkei-ji",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -13936,11 +14246,11 @@
     "featured": true,
     "score": 76.63,
     "summary": {
-      "text": "西武園ゆうえんち（せいぶえんゆうえんち）は、埼玉県所沢市山口にあるレトロテーマパーク。メインゲート前に埼玉県と東京都の都県境があり、駐車場の一部が東京都東村山市に属する。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E8%A5%BF%E6%AD%A6%E5%9C%92%E3%82%86%E3%81%86%E3%81%88%E3%82%93%E3%81%A1",
+      "text": "Seibu-en (西武園ゆうえんち, Seibuen Yuenchi) is an amusement park located near Tokyo in Tokorozawa, Saitama Prefecture. It is just outside the Seibuen-yūenchi Station, which is also owned and operated by the Seibu Railway. The park underwent a significant expansion and redesign for the 2021 season, focused around a Showa era themed marketplace, a Godzilla motion simulator attraction, and a children's area based on the work of Osamu Tezuka. An Ultraman attraction opened for the 2023 season, which shared the Yuhikan Theater with the Godzilla attraction.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Seibu-en",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -14090,7 +14400,7 @@
           "romaji": "Koshigaya-Reikutaun",
           "en": "Koshigaya-Laketown"
         },
-        "distance_m": 190
+        "distance_m": 170
       }
     ],
     "images": [
@@ -14115,7 +14425,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11630617",
@@ -14230,7 +14540,7 @@
         "name": {
           "ja": "武蔵浦和",
           "kana": "むさしうらわ",
-          "romaji": "Musashi Urawa",
+          "romaji": "Musashi-Urawa",
           "en": "Musashi-Urawa"
         },
         "distance_m": 1150
@@ -14259,7 +14569,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11636583",
@@ -14768,6 +15078,57 @@
     "updated_at": "2026-09-28"
   },
   {
+    "id": "wd-Q11641297",
+    "name": {
+      "ja": "道の駅庄和",
+      "kana": "みちのえきしょうわ",
+      "romaji": "Michinoekishowa",
+      "zh_tw": "道之驛莊和",
+      "en": "Roadside station Showa"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 35.99675,
+      "lng": 139.794694
+    },
+    "prefecture": "saitama",
+    "kind": "major",
+    "themes": [],
+    "tags": [],
+    "featured": false,
+    "score": 54.8,
+    "summary": {
+      "text": "道の駅庄和（みちのえき しょうわ）は、埼玉県春日部市上柳にある国道4号の道の駅である。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E9%81%93%E3%81%AE%E9%A7%85%E5%BA%84%E5%92%8C",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/37/Michinoeki_Showa_Kasukabe_Saitama_Japan_001.jpg/960px-Michinoeki_Showa_Kasukabe_Saitama_Japan_001.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "ebiebi3",
+        "license": "Public domain",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Michinoeki_Showa_Kasukabe_Saitama_Japan_001.jpg"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q11641297"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q11641297",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E9%81%93%E3%81%AE%E9%A7%85%E5%BA%84%E5%92%8C",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
+  },
+  {
     "id": "wd-Q11641343",
     "name": {
       "ja": "道の駅果樹公園 あしがくぼ",
@@ -15044,6 +15405,75 @@
     ],
     "status": "published",
     "updated_at": "2026-09-28"
+  },
+  {
+    "id": "wd-Q11651161",
+    "name": {
+      "ja": "鎮守氷川神社",
+      "kana": "ちんじゅひかわじんじゃ",
+      "romaji": "Chinjuhikawajinja",
+      "zh_tw": "鎮守氷川神社",
+      "en": "Chinju Hikawa Shrine"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 35.817245,
+      "lng": 139.723015
+    },
+    "prefecture": "saitama",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "神社"
+    ],
+    "featured": false,
+    "score": 54.84,
+    "summary": {
+      "text": "鎮守氷川神社（ちんじゅひかわじんじゃ）は、埼玉県川口市青木にある氷川信仰の神社である。登記上の宗教法人名称は氷川神社（ひかわじんじゃ）。元の下青木村の鎮守であり、旧・青木村の村社である。横尾忠則作の絵画、「自立の炎」が奉納されている。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E9%8E%AE%E5%AE%88%E6%B0%B7%E5%B7%9D%E7%A5%9E%E7%A4%BE",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "南鳩ヶ谷",
+          "kana": "みなみはとがや",
+          "romaji": "Minami Hatogaya",
+          "en": "Minami-hatogaya"
+        },
+        "distance_m": 1190
+      }
+    ],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7d/Chinju_Hikawa_Jinja.JPG/960px-Chinju_Hikawa_Jinja.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Abasaa",
+        "license": "Public domain",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Chinju_Hikawa_Jinja.JPG"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q11651161",
+      "osm": "node/1994605486"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q11651161",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.openstreetmap.org/node/1994605486",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E9%8E%AE%E5%AE%88%E6%B0%B7%E5%B7%9D%E7%A5%9E%E7%A4%BE",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11653371",
@@ -15346,7 +15776,7 @@
         "name": {
           "ja": "西川口",
           "kana": "にしかわぐち",
-          "romaji": "Nishi Kawaguchi",
+          "romaji": "Nishi-Kawaguchi",
           "en": "Nishi-Kawaguchi"
         },
         "distance_m": 950
@@ -15372,7 +15802,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11665091",
@@ -15501,7 +15931,7 @@
       "ja": "騎西城",
       "kana": "きさいじょう",
       "romaji": "Kisaijo",
-      "zh_tw": "骑西城",
+      "zh_tw": "騎西城",
       "en": "Kisai Castle"
     },
     "kana_source": "wikipedia",
@@ -15551,7 +15981,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11669030",
@@ -16734,6 +17164,75 @@
     "updated_at": "2026-09-28"
   },
   {
+    "id": "wd-Q122675225",
+    "name": {
+      "ja": "鷲神社",
+      "kana": "わしじんじゃ",
+      "romaji": "Washijinja",
+      "zh_tw": "鷲神社",
+      "en": "Washi Shrine"
+    },
+    "kana_source": "wikidata",
+    "location": {
+      "lat": 36.026694,
+      "lng": 139.6675
+    },
+    "prefecture": "saitama",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "神社"
+    ],
+    "featured": false,
+    "score": 54.84,
+    "summary": {
+      "text": "鷲神社（わしじんじゃ）は、埼玉県白岡市の神社。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E9%B7%B2%E7%A5%9E%E7%A4%BE_%28%E7%99%BD%E5%B2%A1%E5%B8%82%E5%AF%BA%E5%A1%9A%29",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "白岡",
+          "kana": "しらおか",
+          "romaji": "Shiraoka",
+          "en": "Shiraoka"
+        },
+        "distance_m": 1030
+      },
+      {
+        "name": {
+          "ja": "新白岡",
+          "kana": "しんしらおか",
+          "romaji": "Shinshiraoka",
+          "en": "Shin-Shiraoka"
+        },
+        "distance_m": 1390
+      }
+    ],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7e/Washi_Jinja_%28Teratsuka%2C_Shiraoka%29.JPG/960px-Washi_Jinja_%28Teratsuka%2C_Shiraoka%29.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Abasaa",
+        "license": "Public domain",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Washi_Jinja_(Teratsuka,_Shiraoka).JPG"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q122675225"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q122675225",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
+  },
+  {
     "id": "wd-Q124483190",
     "name": {
       "ja": "航空神社",
@@ -16839,7 +17338,7 @@
         "name": {
           "ja": "北朝霞",
           "kana": "きたあさか",
-          "romaji": "Kita Asaka",
+          "romaji": "Kita-Asaka",
           "en": "Kita-Asaka"
         },
         "distance_m": 970
@@ -16865,7 +17364,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q128866568",
@@ -17091,7 +17590,7 @@
       "ja": "川口市立美術館",
       "kana": "かわぐちしりつびじゅつかん",
       "romaji": "Kawaguchishiritsubijutsukan",
-      "zh_tw": "川口市立美术馆",
+      "zh_tw": "川口市立美術館",
       "en": "Kawaguchi Museum of Art"
     },
     "kana_source": "wikipedia",
@@ -17156,7 +17655,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q17189670",
@@ -17164,7 +17663,7 @@
       "ja": "天覧山",
       "kana": "てんらんざん",
       "romaji": "Tenranzan",
-      "zh_tw": "天览山",
+      "zh_tw": "天覽山",
       "en": "Mount Tenran"
     },
     "kana_source": "wikipedia",
@@ -17207,7 +17706,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q17213329",
@@ -17367,11 +17866,11 @@
     "featured": false,
     "score": 62.84,
     "summary": {
-      "text": "小倉城（おぐらじょう）は、埼玉県比企郡ときがわ町にあった日本の城（山城）。戦国時代の関東の城では珍しい石塁を随所に用いている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%B0%8F%E5%80%89%E5%9F%8E_%28%E6%AD%A6%E8%94%B5%E5%9B%BD%29",
+      "text": "Ogura Castle (小倉城, Ogura-jō) was a  Sengoku period Japanese castle located in what is now part of the town of Ranzan, Hiki District, Saitama, in the Kantō region of Japan. The site has been protected by the central government as a National Historic Site, since 2008.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Ogura_Castle",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [],
     "external_ids": {
@@ -17524,7 +18023,7 @@
       "ja": "さいたま市大宮盆栽美術館",
       "kana": "さいたましおおみやぼんさいびじゅつかん",
       "romaji": "Saitamashiomiyabonsaibijutsukan",
-      "zh_tw": "大宫盆栽美术馆",
+      "zh_tw": "大宮盆栽美術館",
       "en": "Omiya Bonsai Art Museum, Saitama"
     },
     "kana_source": "wikipedia",
@@ -17594,7 +18093,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q18336826",
@@ -17639,7 +18138,7 @@
         "name": {
           "ja": "中浦和",
           "kana": "なかうらわ",
-          "romaji": "Naka Urawa",
+          "romaji": "Naka-Urawa",
           "en": "Naka-Urawa"
         },
         "distance_m": 1430
@@ -17668,7 +18167,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q1887758",
@@ -18210,6 +18709,50 @@
     "updated_at": "2026-09-28"
   },
   {
+    "id": "wd-Q21652946",
+    "name": {
+      "ja": "旧和田家住宅",
+      "kana": "きゅうわだけじゅうたく",
+      "romaji": "Kyuwadakejutaku",
+      "zh_tw": "旧和田家住宅",
+      "en": "Kurosuke's House"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 35.791194,
+      "lng": 139.407056
+    },
+    "prefecture": "saitama",
+    "kind": "major",
+    "themes": [],
+    "tags": [],
+    "featured": false,
+    "score": 54.78,
+    "summary": {
+      "text": "旧和田家住宅（きゅうわだけじゅうたく）は、埼玉県所沢市三ヶ島にある古民家。国の登録有形文化財に登録されている。愛称はクロスケの家。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E6%97%A7%E5%92%8C%E7%94%B0%E5%AE%B6%E4%BD%8F%E5%AE%85",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "images": [],
+    "external_ids": {
+      "wikidata": "Q21652946"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q21652946",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E6%97%A7%E5%92%8C%E7%94%B0%E5%AE%B6%E4%BD%8F%E5%AE%85",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
+  },
+  {
     "id": "wd-Q21653068",
     "name": {
       "ja": "高麗郷古民家",
@@ -18499,11 +19042,11 @@
     "featured": false,
     "score": 67.7,
     "summary": {
-      "text": "遠山記念館（とおやまきねんかん）は、埼玉県比企郡川島町にある博物館。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E9%81%A0%E5%B1%B1%E8%A8%98%E5%BF%B5%E9%A4%A8",
+      "text": "Tōyama Memorial Museum (遠山記念館, Tōyama Kinenkan) opened in Kawajima, Saitama Prefecture, Japan, in 1970. The dedicated museum building is situated amongst those of the residence built by founder of Nikkō Securities Tōyama Genichi. The collection, his forming its core, includes six Important Cultural Properties.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/T%C5%8Dyama_Memorial_Museum",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -18568,10 +19111,10 @@
         "name": {
           "ja": "戸田公園",
           "kana": "とだこうえん",
-          "romaji": "Todakoen",
+          "romaji": "Toda-kōen",
           "en": "Todakoen"
         },
-        "distance_m": 700
+        "distance_m": 710
       }
     ],
     "images": [
@@ -18601,7 +19144,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q21653941",
@@ -18686,7 +19229,7 @@
           "romaji": "Kodama",
           "en": "Kodama"
         },
-        "distance_m": 710
+        "distance_m": 700
       }
     ],
     "images": [
@@ -18716,7 +19259,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q21654779",
@@ -18741,11 +19284,11 @@
     "featured": false,
     "score": 63.26,
     "summary": {
-      "text": "水子貝塚（みずこかいづか）は、埼玉県富士見市にある貝塚および環状集落の遺跡。国の史跡に指定されており、水子貝塚公園として整備されている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%B0%B4%E5%AD%90%E8%B2%9D%E5%A1%9A",
+      "text": "The Mizuko Shell Midden (水子貝塚, Mizuko kaizuka) is an archaeological site in the Mizuko neighborhood of the city of Fujimi, Saitama Prefecture, in the Kantō region of Japan containing am early Jōmon period  shell midden and settlement ruin. The site was designated a National Historic Site of Japan in 1969.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Mizuko_Shell_Mound",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -18839,11 +19382,11 @@
     "featured": false,
     "score": 73.13,
     "summary": {
-      "text": "メッツァ（フィンランド語: Metsä）は、埼玉県飯能市にある郊外型レジャー施設。ムーミンテーマパーク「ムーミンバレーパーク」と、北欧の生活をテーマにした複合施設「メッツァビレッジ」から構成される。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E3%83%A1%E3%83%83%E3%83%84%E3%82%A1_%28%E3%83%86%E3%83%BC%E3%83%9E%E3%83%91%E3%83%BC%E3%82%AF%29",
+      "text": "Metsä (Finnish: [ˈmetsæ]; lit. 'forest') is a Moomin theme park in Hannō, Saitama Prefecture, Japan.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Mets%C3%A4_%28theme_park%29",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -18971,7 +19514,7 @@
         "name": {
           "ja": "北浦和",
           "kana": "きたうらわ",
-          "romaji": "Kita Urawa",
+          "romaji": "Kita-Urawa",
           "en": "Kita-Urawa"
         },
         "distance_m": 1240
@@ -18999,7 +19542,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q22120897",
@@ -19142,11 +19685,11 @@
     "featured": false,
     "score": 59.05,
     "summary": {
-      "text": "高麗村石器時代住居跡（こまむらせっきじだいじゅうきょあと）は、埼玉県日高市にある遺跡。国の史跡に指定されている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E9%AB%98%E9%BA%97%E6%9D%91%E7%9F%B3%E5%99%A8%E6%99%82%E4%BB%A3%E4%BD%8F%E5%B1%85%E8%B7%A1",
+      "text": "The Koma Village Stone Age Dwelling Site (高麗村石器時代住居跡, Koma-mura sekki-jidai jūkyo ato) is an archaeological site in the city of Hidaka, Saitama Prefecture, in the Kantō region of Japan containing a Jōmon period settlement ruin. The site was designated a National Historic Site of Japan in 1951.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Komae_Village_Stone_Age_Dwelling_Site",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -19224,7 +19767,7 @@
         "name": {
           "ja": "北浦和",
           "kana": "きたうらわ",
-          "romaji": "Kita Urawa",
+          "romaji": "Kita-Urawa",
           "en": "Kita-Urawa"
         },
         "distance_m": 1180
@@ -19245,7 +19788,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q22131014",
@@ -19319,11 +19862,11 @@
     "featured": false,
     "score": 65.01,
     "summary": {
-      "text": "所沢市民文化センター ミューズ（ところざわしみんぶんかセンター ミューズ）は、埼玉県所沢市並木に所在する、コンサートホールなど複数のホール等から成る所沢市立の複合文化施設。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%89%80%E6%B2%A2%E5%B8%82%E6%B0%91%E6%96%87%E5%8C%96%E3%82%BB%E3%83%B3%E3%82%BF%E3%83%BC_%E3%83%9F%E3%83%A5%E3%83%BC%E3%82%BA",
+      "text": "Tokorozawa Civic Cultural Centre Muse (所沢市民文化センター ミューズ, Tokorozawa Shimin Bunka Sentā Myūzu) is a concert hall complex consisting of the main \"Ark Hall\", with a pipe organ, and other facilities, located in Tokorozawa, Saitama, west of Tokyo, Japan. It opened in 1993, and is operated by the Tokorozawa Cultural Foundation. It is also called \"Tokorozawa Muse\", or sometimes just \"Muse\" for short.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Tokorozawa_Civic_Cultural_Centre_Muse",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -19394,7 +19937,7 @@
         "name": {
           "ja": "北浦和",
           "kana": "きたうらわ",
-          "romaji": "Kita Urawa",
+          "romaji": "Kita-Urawa",
           "en": "Kita-Urawa"
         },
         "distance_m": 360
@@ -19432,7 +19975,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q24869361",
@@ -19511,11 +20054,11 @@
     "featured": false,
     "score": 56.34,
     "summary": {
-      "text": "新光寺（しんこうじ）は、埼玉県所沢市にある真言宗豊山派の寺院。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%96%B0%E5%85%89%E5%AF%BA_%28%E6%89%80%E6%B2%A2%E5%B8%82%29",
+      "text": "Shinko-ji (新光寺; \"New Light Temple\") is a Shingon Sect Buzan School Buddhist temple in Tokorozawa, Saitama, Japan. It is along the ancient Kamakura Kaidō road and traces its history to its founding by Minamoto no Yoritomo in 1193.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Shinko-ji",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -19650,10 +20193,10 @@
         "name": {
           "ja": "東浦和",
           "kana": "ひがしうらわ",
-          "romaji": "Higashi Urawa",
+          "romaji": "Higashi-Urawa",
           "en": "Higashi-Urawa"
         },
-        "distance_m": 560
+        "distance_m": 570
       }
     ],
     "images": [
@@ -19678,7 +20221,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q28682714",
@@ -20123,11 +20666,11 @@
     "featured": false,
     "score": 55.91,
     "summary": {
-      "text": "川越市産業観光館（かわごえしさんぎょうかんこうかん）は、埼玉県川越市新富町にある商業施設。旧酒造会社の建物を転用した上で川越市が設置し、株式会社まちづくり川越が指定管理者となっている。愛称は「小江戸蔵里（こえど くらり）」で、2010年（平成22年）10月1日に開業した。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%B7%9D%E8%B6%8A%E5%B8%82%E7%94%A3%E6%A5%AD%E8%A6%B3%E5%85%89%E9%A4%A8",
+      "text": "The Kawagoe City Industry and Tourism Center is a commercial facility in Kawagoe City, Saitama Prefecture. It was established by Kawagoe  City after converting sake storehouses (酒蔵) of the former sake brewery.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Kawagoe_City_Industry_and_Tourism_Center",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -20252,21 +20795,21 @@
     "featured": false,
     "score": 73.07,
     "summary": {
-      "text": "ところざわサクラタウンは、埼玉県所沢市東所沢和田にあるKADOKAWAおよび角川文化振興財団が所有・運営する複合施設。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E3%81%A8%E3%81%93%E3%82%8D%E3%81%96%E3%82%8F%E3%82%B5%E3%82%AF%E3%83%A9%E3%82%BF%E3%82%A6%E3%83%B3",
+      "text": "Tokorozawa Sakura Town (Japanese: ところざわサクラタウン, Hepburn: Tokorozawa Sakura Taun) is a pop cultural attraction complex in Tokorozawa, Saitama, Japan which opened in the fall of 2020.  It is a joint project of the Kadokawa Corporation and the city of Tokorozawa. The development has five main components; the Kadokawa Culture Center, the Da Vinci store, the EJ Anime hotel (closed down in 2022) Japan Pavilion, and the Musashino Reiwa Shrine. It had a partial opening on April 1, 2020, and opened fully on November 6 of the same year.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Tokorozawa_Sakura_Town",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
         "name": {
           "ja": "東所沢",
           "kana": "ひがしところざわ",
-          "romaji": "Higashi Tokorozawa",
+          "romaji": "Higashi-Tokorozawa",
           "en": "Higashi-Tokorozawa"
         },
-        "distance_m": 660
+        "distance_m": 710
       }
     ],
     "images": [
@@ -20287,7 +20830,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q28686228",
@@ -20338,6 +20881,74 @@
     ],
     "status": "published",
     "updated_at": "2026-09-28"
+  },
+  {
+    "id": "wd-Q28686406",
+    "name": {
+      "ja": "庄和総合公園",
+      "kana": "しょうわそうごうこうえん",
+      "romaji": "Showasogokoen",
+      "zh_tw": "庄和総合公園",
+      "en": "Shōwa General Public Park"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 35.99122,
+      "lng": 139.80152
+    },
+    "prefecture": "saitama",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "公園"
+    ],
+    "featured": false,
+    "score": 54.85,
+    "summary": {
+      "text": "庄和総合公園 (しょうわそうごうこうえん) とは埼玉県春日部市に所在する都市計画公園である。この公園は道路を挟み、東西二つに分かれている。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E5%BA%84%E5%92%8C%E7%B7%8F%E5%90%88%E5%85%AC%E5%9C%92",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "南桜井",
+          "romaji": "Minami-Sakurai",
+          "en": "Minami-Sakurai"
+        },
+        "distance_m": 1330
+      }
+    ],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/34/Kasukabe_Showa_General_Park_1.JPG/960px-Kasukabe_Showa_General_Park_1.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "京浜にけ",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Kasukabe_Showa_General_Park_1.JPG"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q28686406",
+      "osm": "relation/6995654"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q28686406",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.openstreetmap.org/relation/6995654",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E5%BA%84%E5%92%8C%E7%B7%8F%E5%90%88%E5%85%AC%E5%9C%92",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q28686473",
@@ -20530,11 +21141,11 @@
     "featured": false,
     "score": 66.21,
     "summary": {
-      "text": "所澤神明社（ところさわしんめいしゃ）は、埼玉県所沢市宮本町にある神社である。所澤総鎮守であり「武蔵国（むさしのくに）のお伊勢さま」としても知られる。現在の御本殿・玉串門は明治35年（1902年）、幣殿・拝殿は昭和9年（1934年）に竣工したもので、関東有数の大規模な神明造の御社殿である。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%89%80%E6%BE%A4%E7%A5%9E%E6%98%8E%E7%A4%BE",
+      "text": "Tokorozawa Shimei Shrine (所澤神明社, Tokorosawa shinmei-sha) is a Shinto shrine in Tokorozawa, Saitama, Japan.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Tokorozawa_Shinmei_Shrine",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -20666,11 +21277,11 @@
     "featured": true,
     "score": 73.76,
     "summary": {
-      "text": "秩父神社（ちちぶじんじゃ）は、埼玉県秩父市番場町にある神社。式内社、武蔵国四宮。旧社格は国幣小社で、現在は神社本庁の別表神社。知知夫国の一之宮。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E7%A7%A9%E7%88%B6%E7%A5%9E%E7%A4%BE",
+      "text": "The Chichibu Shrine (秩父神社, Chichibu-jinja) is a Japanese Shinto shrine at Chichibu in Saitama Prefecture.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Chichibu_Shrine",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -20723,7 +21334,7 @@
       "ja": "鉢形城",
       "kana": "はちがたじょう",
       "romaji": "Hachigata-jō",
-      "zh_tw": "鉢形城",
+      "zh_tw": "缽形城",
       "en": "Hachigata Castle"
     },
     "kana_source": "osm",
@@ -20786,7 +21397,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q2970751",
@@ -20811,11 +21422,11 @@
     "featured": false,
     "score": 66.6,
     "summary": {
-      "text": "滝の城（たきのじょう）は、埼玉県所沢市城にあった日本の城。同市の東端で隣接する東京都清瀬市との都県境、柳瀬川の北岸に位置し、豊かな緑に覆われた断崖の上に 曲輪や空掘り跡などが残っている。 今日では本丸跡に「城山神社」が祀られ、その南側を中心に滝の城址公園（たきのじょうしこうえん）として整備され、梅･桜の木や運動施設などが揃う公園となっている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%BB%9D%E3%81%AE%E5%9F%8E",
+      "text": "Taki-no Castle (滝の城, Taki-no-jō; literally means \"waterfall castle\") is a flatland-hilltop Japanese castle ruin located in Tokorozawa, Saitama Prefecture. It was on a key route between the northern Kanto Plain and Hachioji.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Taki-no_Castle",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -21046,6 +21657,64 @@
     "updated_at": "2026-09-28"
   },
   {
+    "id": "wd-Q30934286",
+    "name": {
+      "ja": "旧坂東家住宅見沼くらしっく館",
+      "kana": "きゅうばんどうけじゅうたくみぬまくらしっくかん",
+      "romaji": "Kyubandokejutakuminumakurashikkukan",
+      "zh_tw": "旧坂東家住宅見沼くらしっく館",
+      "en": "Old House of the Bando Family (Minuma Kurashikku-Kan)"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 35.906194,
+      "lng": 139.690778
+    },
+    "prefecture": "saitama",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "博物館"
+    ],
+    "featured": false,
+    "score": 54.81,
+    "summary": {
+      "text": "旧坂東家住宅見沼くらしっく館（きゅうばんどうけじゅうたく みぬまくらしっくかん）は、埼玉県さいたま市見沼区にある、古民家を活用した博物館である。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E6%97%A7%E5%9D%82%E6%9D%B1%E5%AE%B6%E4%BD%8F%E5%AE%85%E8%A6%8B%E6%B2%BC%E3%81%8F%E3%82%89%E3%81%97%E3%81%A3%E3%81%8F%E9%A4%A8",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/99/Minuma_Classic_museum.jpg/960px-Minuma_Classic_museum.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "妖精書士",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Minuma_Classic_museum.jpg"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q30934286",
+      "osm": "node/1420196878"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q30934286",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.openstreetmap.org/node/1420196878",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E6%97%A7%E5%9D%82%E6%9D%B1%E5%AE%B6%E4%BD%8F%E5%AE%85%E8%A6%8B%E6%B2%BC%E3%81%8F%E3%82%89%E3%81%97%E3%81%A3%E3%81%8F%E9%A4%A8",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
+  },
+  {
     "id": "wd-Q3128320",
     "name": {
       "ja": "鳩峯八幡神社",
@@ -21068,11 +21737,11 @@
     "featured": false,
     "score": 59.98,
     "summary": {
-      "text": "鳩峯八幡神社（はとみねはちまんじんじゃ）は埼玉県所沢市久米にある神社である。旧社格は郷社。登記上の宗教法人名称は八幡神社（はちまんじんじゃ）。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E9%B3%A9%E5%B3%AF%E5%85%AB%E5%B9%A1%E7%A5%9E%E7%A4%BE_%28%E6%89%80%E6%B2%A2%E5%B8%82%29",
+      "text": "Hatogamine Hachiman Shrine (鳩峰八幡神社, Hatogamine Hachiman Jinja) is a Shintō shrine in Tokorozawa, Saitama Prefecture, Japan. In the former Modern system of ranked Shinto shrines, it was classified as a district shrine (郷社, gōsha).",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Hatogamine_Hachiman_Shrine",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -21143,11 +21812,11 @@
     "featured": false,
     "score": 70.12,
     "summary": {
-      "text": "平林寺（へいりんじ）は、埼玉県新座市野火止にある臨済宗妙心寺派の寺院で、野火止台地に約40ヘクタールの広大な境内を有する。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%B9%B3%E6%9E%97%E5%AF%BA",
+      "text": "Heirin-ji (平林寺) is a Rinzai temple of the Myoshin-ji branch located in Niiza city, Saitama prefecture, Japan, a city just outside Tokyo.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Heirin-ji",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -21244,11 +21913,11 @@
     "featured": false,
     "score": 72.61,
     "summary": {
-      "text": "入間川（いるまがわ）は、埼玉県を流れる荒川水系の一級河川である。上流部は名栗川（なぐりがわ）とも呼ばれる。荒川の支流としては最長である。川越市古谷付近で荒川に合流する。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%85%A5%E9%96%93%E5%B7%9D_%28%E5%9F%BC%E7%8E%89%E7%9C%8C%29",
+      "text": "The Iruma River (入間川, Iruma-gawa), is a river in Saitama Prefecture, Japan. It is 63 kilometres (39 mi) long and has a watershed of 721 square kilometres (278 sq mi).",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Iruma_River",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -21443,11 +22112,11 @@
     "featured": false,
     "score": 65.7,
     "summary": {
-      "text": "秋ヶ瀬公園（あきがせこうえん）は、埼玉県さいたま市桜区大字栄和、大字大久保領家、大字山久保、大字神田、大字下大久保、大字上大久保、大字町谷、大字西堀、大字道場ほか地内（飛地）の荒川左岸と鴨川右岸に挟まれた場所に位置する埼玉県営の都市公園（都市緑地）である。荒川第一調節池内にある。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E7%A7%8B%E3%83%B6%E7%80%AC%E5%85%AC%E5%9C%92",
+      "text": "Akigase Park (秋ヶ瀬公園, Akigase kōen) is a park in Japan that occupies a section of flood plain of the Arakawa River, which is located at the western edge of Saitama City.  The park covers an area of 100.1ha on the eastern side of the river between its northern boundary, 3 km north of the Akigase Bridge, and the southern boundary, the Hanekura Bridge.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Akigase_Park",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -21498,11 +22167,11 @@
     "featured": false,
     "score": 57.55,
     "summary": {
-      "text": "越谷アリタキ植物園は、埼玉県越谷市にある植物園である。名称に含まれる「アリタキ」は、植物学者の有瀧龍雄にちなんでおり、越谷市に遺贈される前はアリタキアーボレータムとして私有地に開園していた。アーボレータム（アーバリータム、英: Arboretum）とは、英語で樹木園を意味する。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E8%B6%8A%E8%B0%B7%E3%82%A2%E3%83%AA%E3%82%BF%E3%82%AD%E6%A4%8D%E7%89%A9%E5%9C%92",
+      "text": "The Aritaki Arboretum (アリタキアーボレータム, Aritaki Āborētamu) is a private arboretum located at 2566 Koshigaya, Koshigaya, Saitama, Japan. Its curator, Tadahiko Aritaki, traveled and collected plants throughout Asia.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Aritaki_Arboretum",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -21612,6 +22281,78 @@
     "updated_at": "2026-09-28"
   },
   {
+    "id": "wd-Q49584159",
+    "name": {
+      "ja": "大和田公園",
+      "kana": "おおわだこうえん",
+      "romaji": "Owadakoen",
+      "zh_tw": "大和田公園",
+      "en": "Ōwada Park"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 35.921944,
+      "lng": 139.641667
+    },
+    "prefecture": "saitama",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "公園"
+    ],
+    "featured": false,
+    "score": 54.87,
+    "summary": {
+      "text": "大和田公園（おおわだこうえん）はさいたま市大宮区寿能町及び見沼区大和田町に所在する同市営の都市公園である。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E5%92%8C%E7%94%B0%E5%85%AC%E5%9C%92",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "大宮公園",
+          "kana": "おおみやこうえん",
+          "romaji": "Ōmiya-kōen",
+          "en": "Omiya Park"
+        },
+        "distance_m": 810
+      },
+      {
+        "name": {
+          "ja": "大和田",
+          "romaji": "Ōwada",
+          "en": "Ōwada"
+        },
+        "distance_m": 1150
+      }
+    ],
+    "images": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/4/4a/%E5%B8%82%E5%96%B6%E5%A4%A7%E5%AE%AE%E7%90%83%E5%A0%B4.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+        "author": "神前",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:%E5%B8%82%E5%96%B6%E5%A4%A7%E5%AE%AE%E7%90%83%E5%A0%B4.jpg"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q49584159"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q49584159",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E5%92%8C%E7%94%B0%E5%85%AC%E5%9C%92",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
+  },
+  {
     "id": "wd-Q5017775",
     "name": {
       "ja": "埼玉県立さきたま史跡の博物館",
@@ -21635,11 +22376,11 @@
     "featured": false,
     "score": 64.7,
     "summary": {
-      "text": "埼玉県立さきたま史跡の博物館（さいたまけんりつさきたましせきのはくぶつかん）は、埼玉県行田市のさきたま古墳公園（9基の大型古墳からなる埼玉古墳群（国の特別史跡）を整備した公園）内にある博物館である。1969年（昭和44年）開館。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%9F%BC%E7%8E%89%E7%9C%8C%E7%AB%8B%E3%81%95%E3%81%8D%E3%81%9F%E3%81%BE%E5%8F%B2%E8%B7%A1%E3%81%AE%E5%8D%9A%E7%89%A9%E9%A4%A8",
+      "text": "The Saitama Prefectural Museum of the Sakitama Ancient Burial Mounds (埼玉県立さきたま史跡の博物館, Saitama Kenritsu Sakitama Shiseki no Hakubutsukan) is a museum  in Gyōda, Saitama, Japan. The building is inside of Sakitama Kofun Park.  It is one of Japan's many museums which are supported by a prefecture.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Saitama_Prefectural_Museum_of_the_Sakitama_Ancient_Burial_Mounds",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -21691,11 +22432,11 @@
     "featured": false,
     "score": 61.38,
     "summary": {
-      "text": "地球観測センター（ちきゅうかんそくセンター、英称：Earth Observation Center、略称：EOC）は、埼玉県比企郡鳩山町にある宇宙航空研究開発機構(JAXA)の施設である。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%9C%B0%E7%90%83%E8%A6%B3%E6%B8%AC%E3%82%BB%E3%83%B3%E3%82%BF%E3%83%BC",
+      "text": "The Earth Observation Center is a Japanese Aerospace Exploration Agency (JAXA) aeronautical research facility located in Hatoyama, Saitama, Japan. It utilizes remote sensing technologies such as satellites to study Earth's environment from outer space. The research done by this center has a substantial impact on the study of the Earth's environmental phenomena, such as global warming.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Earth_Observation_Center",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -21742,11 +22483,11 @@
     "featured": false,
     "score": 67.98,
     "summary": {
-      "text": "大宮競輪場（おおみやけいりんじょう）は、埼玉県さいたま市大宮区高鼻町四丁目にある競輪場。施設所有および主催は埼玉県。競技実施はJKA東日本地区本部関東支部。実況は東京電設工業で担当は主に西山栄一、佐藤聖、美甘伊織。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E5%AE%AE%E7%AB%B6%E8%BC%AA%E5%A0%B4",
+      "text": "Ōmiya Velodrome (大宮競輪場, Ōmiya Keirinjyō) is a velodrome located in Ōmiya-ku, Saitama that conducts pari-mutuel Keirin racing - one of Japan's four authorized \"Public Sports\" (公営競技, kōei kyōgi) where gambling is permitted. Its Keirin identification number for betting purposes is 25# (25 sharp).",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/%C5%8Cmiya_Velodrome",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -21815,11 +22556,11 @@
     "featured": false,
     "score": 68.63,
     "summary": {
-      "text": "大宮公園（おおみやこうえん）は、埼玉県さいたま市大宮区および見沼区にある、67.8 haの面積を有する埼玉県営の都市公園（広域公園）である。1990年（平成2年）に日本さくら名所100選に選定。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E5%AE%AE%E5%85%AC%E5%9C%92",
+      "text": "Ōmiya Park (大宮公園, Ōmiya Kōen) is a public park located 1 km (0.62 mi) northeast of Ōmiya Station and the most visited park in Saitama. The park encompasses a huge area of 67.9 ha (168 acres) (as of 2004) and is famous for Japanese Red Pine forest and cherry blossoms. In particular, the park ranks in the Top 100 Locations in Japan for Cherry Blossoms.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/%C5%8Cmiya_Park",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -22403,11 +23144,11 @@
     "featured": false,
     "score": 68.1,
     "summary": {
-      "text": "日本栄養大学（にほんえいようだいがく、英語: Japan Nutrition University）は、日本の私立大学。埼玉県坂戸市に本部を置く。1961年に女子栄養大学として設置され、2026年4月、男女共学化にあわせて現校名に改称した。略称は栄大（えいだい）。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%97%A5%E6%9C%AC%E6%A0%84%E9%A4%8A%E5%A4%A7%E5%AD%A6",
+      "text": "Kagawa Nutrition University (女子栄養大学, Joshi Eiyō Daigaku) is a private university in Japan.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Kagawa_Nutrition_University",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -22462,7 +23203,7 @@
     "kind": "major",
     "themes": [],
     "tags": [],
-    "featured": false,
+    "featured": true,
     "score": 77.69,
     "summary": {
       "text": "武甲山是位於日本埼玉縣秩父地方秩父市和橫瀨町交界處的一座山峰，標高1,304米，是日本二百名山之一。武甲山是秩父地方的總社秩父神社的神奈備山。",
@@ -22493,7 +23234,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q6379501",
@@ -22516,11 +23257,11 @@
     "featured": false,
     "score": 64.25,
     "summary": {
-      "text": "川口市立グリーンセンター（かわぐちしりつグリーンセンター）は、埼玉県川口市新井宿にある植物園。2017年のグリーンセンター開園50周年や2018年の川口市の中核市移行を機に施設の更新が行われている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%B7%9D%E5%8F%A3%E5%B8%82%E7%AB%8B%E3%82%B0%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%BB%E3%83%B3%E3%82%BF%E3%83%BC",
+      "text": "The Kawaguchi Green Center (川口市立グリーンセンター, Kawaguchi Shiritsu Gurīnsentā), sometimes also called the Botanical Garden of Kawaguchi-City, is a city park and botanical garden located at Araijuku 700, Kawaguchi, Saitama, Japan.  Admission is 300 yen for adults and 100 yen for children.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Kawaguchi_Green_Center",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -22912,21 +23653,21 @@
     "featured": false,
     "score": 67.68,
     "summary": {
-      "text": "見沼通船堀（みぬまつうせんぼり）は、見沼代用水（東縁、西縁）と芝川とを結ぶ閘門式運河である。1731年（享保16年）に作られた。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E8%A6%8B%E6%B2%BC%E9%80%9A%E8%88%B9%E5%A0%80",
+      "text": "The Minuma Tsūsen-bori (見沼通船堀) is Japan's oldest canal with a lock system. Built during the Edo period, it is located in what is now part of the cities of Saitama and Kawaguchi, Saitama Prefecture, Japan. It was designated a National Historic Site in 1982.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Minuma_Ts%C5%ABsen-bori",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
         "name": {
           "ja": "東浦和",
           "kana": "ひがしうらわ",
-          "romaji": "Higashi Urawa",
+          "romaji": "Higashi-Urawa",
           "en": "Higashi-Urawa"
         },
-        "distance_m": 840
+        "distance_m": 860
       }
     ],
     "images": [
@@ -22951,7 +23692,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q70280025",
@@ -23102,11 +23843,11 @@
     "featured": false,
     "score": 67.52,
     "summary": {
-      "text": "西武園競輪場（せいぶえんけいりんじょう）は、埼玉県所沢市荒幡にある競輪場。施設の所有者は西武不動産。主催は埼玉県（過去については後述）。競技実施はJKA東日本地区本部関東支部。電話投票での競輪場コードは26#。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E8%A5%BF%E6%AD%A6%E5%9C%92%E7%AB%B6%E8%BC%AA%E5%A0%B4",
+      "text": "Seibu-en Velodrome (西武園競輪場, Seibuen Keirinjyō) is a velodrome located in Tokorozawa, Saitama that conducts pari-mutuel Keirin racing - one of Japan's four authorized \"Public Sports\" (公営競技, kōei kyōgi) where gambling is permitted. Its Keirin identification number for betting purposes is 26# (26 sharp).",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Seibu-en_Velodrome",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -23224,18 +23965,18 @@
     "featured": false,
     "score": 67.11,
     "summary": {
-      "text": "戸田漕艇場（とだそうていじょう）は、埼玉県戸田市の戸田公園内にあるローイング競技（ボート競技）コースである。別名「戸田ボートコース」。ナショナルトレーニングセンターボート強化拠点施設に指定されている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%88%B8%E7%94%B0%E6%BC%95%E8%89%87%E5%A0%B4",
+      "text": "The Toda Rowing Course (戸田漕艇場, Toda Sōteijō) is a purpose-built rowing venue that hosted the rowing event at the 1964 Summer Olympics. Originally completed in 1939 for the 1940 Summer Olympics that were cancelled due to World War II. After World War II, the venue was left in disrepair. When Tokyo was awarded the 1964 Summer Olympics in 1958, the venue was expanded and reconstructed.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Toda_Rowing_Course",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
         "name": {
           "ja": "戸田公園",
           "kana": "とだこうえん",
-          "romaji": "Todakoen",
+          "romaji": "Toda-kōen",
           "en": "Todakoen"
         },
         "distance_m": 680
@@ -23263,7 +24004,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q8081624",
@@ -23286,11 +24027,11 @@
     "featured": false,
     "score": 68.24,
     "summary": {
-      "text": "大宮盆栽村（おおみやぼんさいむら）は、埼玉県さいたま市北区盆栽町にある、盆栽業者が集団移住して形成された地区。単に盆栽村と表記されることもあり、「盆栽の聖地」と称されている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E5%AE%AE%E7%9B%86%E6%A0%BD%E6%9D%91",
+      "text": "Ōmiya Bonsai Village (大宮盆栽村, Ōmiya Bonsai-mura) is the nickname for the bonsai nursery precinct in Bonsai-chō (盆栽町, Bonsai-chō), Kita-ku, Saitama, Japan.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/%C5%8Cmiya_Bonsai_Village",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -23545,11 +24286,11 @@
     "featured": false,
     "score": 70.74,
     "summary": {
-      "text": "熊谷ラグビー場（くまがやラグビーじょう）は、埼玉県熊谷市の熊谷スポーツ文化公園内にあるラグビー場。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E7%86%8A%E8%B0%B7%E3%83%A9%E3%82%B0%E3%83%93%E3%83%BC%E5%A0%B4",
+      "text": "Kumagaya Rugby Stadium (熊谷ラグビー場), is a rugby stadium in Kumagaya, Saitama Prefecture, Japan. It is currently used mostly for rugby union matches. The stadium was built in 1991 and renovated between 2016 and 2018. Its capacity expanded from 20,000 (10,000 seated) to 24,000 (fully seated). The stadium is part of a larger sports complex which includes the Kumagaya Athletic Stadium, a smaller athletics stadium and a large arena. The complex is located in the Kumagaya Park.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Kumagaya_Rugby_Ground",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {

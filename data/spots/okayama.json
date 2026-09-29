@@ -59,7 +59,7 @@
     "id": "wd-Q10345405",
     "name": {
       "ja": "ブラジリアンパーク 鷲羽山ハイランド",
-      "zh_tw": "巴西公园鹫羽山游乐场",
+      "zh_tw": "巴西公園鷲羽山遊樂場",
       "en": "Brazilian Park Washuzan Highland"
     },
     "location": {
@@ -104,7 +104,58 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
+  },
+  {
+    "id": "wd-Q104660370",
+    "name": {
+      "ja": "関戸廃寺跡",
+      "kana": "せきどはいじあと",
+      "romaji": "Sekidohaijiato",
+      "zh_tw": "関戸廃寺跡",
+      "en": "Sekido Haiji"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 34.557833,
+      "lng": 133.529528
+    },
+    "prefecture": "okayama",
+    "kind": "major",
+    "themes": [],
+    "tags": [],
+    "featured": false,
+    "score": 46.57,
+    "summary": {
+      "text": "関戸廃寺跡（せきどはいじあと）は、岡山県笠岡市関戸にある古代寺院跡。塔跡は岡山県指定史跡に指定されている（指定名称は「関戸の廃寺跡」）。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E9%96%A2%E6%88%B8%E5%BB%83%E5%AF%BA%E8%B7%A1",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/91/Sekido_Haiji%2C_tou-1.jpg/960px-Sekido_Haiji%2C_tou-1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Saigen Jiro",
+        "license": "CC0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Sekido_Haiji,_tou-1.jpg"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q104660370"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q104660370",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E9%96%A2%E6%88%B8%E5%BB%83%E5%AF%BA%E8%B7%A1",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q104815654",
@@ -704,6 +755,66 @@
     "updated_at": "2026-09-28"
   },
   {
+    "id": "wd-Q107298192",
+    "name": {
+      "ja": "久米廃寺跡",
+      "kana": "くめはいじあと",
+      "romaji": "Kumehaijiato",
+      "zh_tw": "久米廃寺跡",
+      "en": "Kume Haiji"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 35.056778,
+      "lng": 133.920833
+    },
+    "prefecture": "okayama",
+    "kind": "major",
+    "themes": [],
+    "tags": [],
+    "featured": false,
+    "score": 46.44,
+    "summary": {
+      "text": "久米廃寺跡（くめはいじあと）は、岡山県津山市宮尾にある古代寺院跡。岡山県指定史跡に指定されている。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E4%B9%85%E7%B1%B3%E5%BB%83%E5%AF%BA%E8%B7%A1",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "美作千代",
+          "en": "Mimasaka-Sendai"
+        },
+        "distance_m": 1350
+      }
+    ],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a3/Kume_Haiji%2C_tou.jpg/960px-Kume_Haiji%2C_tou.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Saigen Jiro",
+        "license": "CC0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Kume_Haiji,_tou.jpg"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q107298192"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q107298192",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E4%B9%85%E7%B1%B3%E5%BB%83%E5%AF%BA%E8%B7%A1",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
+  },
+  {
     "id": "wd-Q107922287",
     "name": {
       "ja": "法泉寺",
@@ -995,7 +1106,7 @@
       "寺院",
       "史跡"
     ],
-    "featured": true,
+    "featured": false,
     "score": 71.08,
     "summary": {
       "text": "備中國分寺（びっちゅうこくぶんじ）是位在日本岡山縣總社市的真言宗御室派寺院。山號「日照山」。本尊藥師如來、開基（創立者）為聖武天皇。田園風景之中的國分寺五重塔是觀光地吉備路的象徵。",
@@ -1031,7 +1142,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q10917015",
@@ -1409,7 +1520,7 @@
       "ja": "RSK山陽放送吉備ラジオ送信所",
       "kana": "あーるえすけーさんようほうそうきびらじおそうしんじょ",
       "romaji": "Aruesukesanyohosokibirajiososhinjo",
-      "zh_tw": "山阳广播吉备无线电发射站",
+      "zh_tw": "山陽廣播吉備無線電發射站",
       "en": "RSK Kibi Radio Transmitting Station"
     },
     "kana_source": "wikipedia",
@@ -1463,7 +1574,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11258761",
@@ -1884,11 +1995,11 @@
     "featured": false,
     "score": 61.93,
     "summary": {
-      "text": "福山城（ふくやまじょう）は、岡山県総社市清音三因（きよねみより）にあった日本の城。国の史跡。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E7%A6%8F%E5%B1%B1%E5%9F%8E_%28%E5%82%99%E4%B8%AD%E5%9B%BD%29",
+      "text": "Fukuyama Castle (福山城, Fukuyama-jō) of Bitchū Province was a Nanboku-chō period yamajiro-style Japanese castle located in what is today the Kiyonemiyori neighborhood of the city of Sōja in Okayama Prefecture. Its ruins have been protected by the central government as a National Historic Site since 1936.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Fukuyama_Castle_%28S%C5%8Dja%29",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -2243,7 +2354,7 @@
       "ja": "三井アウトレットパーク 倉敷",
       "kana": "みついあうとれっとぱーくくらしき",
       "romaji": "Mitsuiautorettopakukurashiki",
-      "zh_tw": "三井奥特莱斯购物城 仓敷",
+      "zh_tw": "三井奧特萊斯購物城 倉敷",
       "en": "Mitsui Outlet Park Kurashiki"
     },
     "kana_source": "wikipedia",
@@ -2304,7 +2415,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11355528",
@@ -2596,11 +2707,11 @@
     "featured": false,
     "score": 63.66,
     "summary": {
-      "text": "亀山城（かめやまじょう）は、岡山県岡山市東区沼にあった日本の城（平山城）。別名沼城。岡山市指定史跡。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E4%BA%80%E5%B1%B1%E5%9F%8E_%28%E5%82%99%E5%89%8D%E5%9B%BD%29",
+      "text": "Kameyama Castle (沼城, Kameyama-jō), also well known as Numa Castle, is the remains of a castle structure in Higashi-ku, Okayama Prefecture, Japan. Its ruins have been protected as an Okayama City Designated Historic Site.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Kameyama_Castle_%28Okayama%29",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -2993,11 +3104,11 @@
     "featured": false,
     "score": 63.97,
     "summary": {
-      "text": "伊部町（いんべちょう）は、かつて岡山県南東部（備前地域）に存在していた和気郡の町。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E4%BC%8A%E9%83%A8%E7%94%BA",
+      "text": "Imbe (伊部町), or Inbe, is a township in the Bizen, Okayama prefecture in western Japan. It is known for the traditional production of Bizen ware.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Imbe%2C_Okayama",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -3044,11 +3155,11 @@
     "featured": false,
     "score": 61.97,
     "summary": {
-      "text": "作楽神社（さくらじんじゃ）は、岡山県津山市神戸にある神社である。鎌倉時代から室町時代にかけて美作国守護の館（「院庄館」）があった地に、後醍醐天皇とその忠臣児島高徳を祭神として、明治2年（1869年）、津山藩主松平慶倫により創建された。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E4%BD%9C%E6%A5%BD%E7%A5%9E%E7%A4%BE",
+      "text": "Sakura Shrine (作楽神社, Sakura Jinja) is a Shinto shrine in the Jingo neighborhood of the city of Tsuyama in Okayama Prefecture, Japan. The main festival of the shrine is held annually on the second Sunday of April.The entire 30,189 square meters precincts of the shrine was designated a National Historic Site in 1922 as the 'Innoshō-no-yakata (Kojima Takanori Legendary place)'.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Sakura_Shrine",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -3170,7 +3281,7 @@
       "ja": "倉敷刀剣美術館",
       "kana": "くらしきとうけんびじゅつかん",
       "romaji": "Kurashikitokenbijutsukan",
-      "zh_tw": "仓敷刀剑美术馆",
+      "zh_tw": "倉敷刀劍美術館",
       "en": "Kurashiki Art Sword Museum"
     },
     "kana_source": "wikipedia",
@@ -3229,7 +3340,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11386690",
@@ -3669,11 +3780,11 @@
     "featured": false,
     "score": 58.55,
     "summary": {
-      "text": "備前国分寺跡（びぜんこくぶんじあと）は、岡山県赤磐市馬屋（まや）にある古代寺院跡。国の史跡に指定されている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%82%99%E5%89%8D%E5%9B%BD%E5%88%86%E5%AF%BA%E8%B7%A1",
+      "text": "The Bizen Kokubun-ji (備前国分寺) was a Buddhist temple located in what is now the city of Akaiwa, Okayama, Japan. It was one of the provincial temples per the system established by Emperor Shōmu during the Nara period (710 – 794) for the purpose of promoting Buddhism as the national religion of Japan and standardising imperial rule over the provinces. The temple no longer exists, but the temple grounds were designated as a National Historic Site in 1975.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Bizen_Kokubun-ji",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [],
     "external_ids": {
@@ -4873,11 +4984,11 @@
     "featured": false,
     "score": 55.47,
     "summary": {
-      "text": "大多羅寄宮（おおだらよせみや）は、岡山県岡山市東区大多羅町にあった神社。跡地は「大多羅寄宮跡」として国の史跡に指定されている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E5%A4%9A%E7%BE%85%E5%AF%84%E5%AE%AE",
+      "text": "The Ōdara Yosemiya (大多羅寄宮) was a Shinto shrine located in the Ōdara neighbourhood of what is now Naka-ku in the city of Okayama, in the San'yō region of Japan. The shrine no longer exists, but its ruins were designated as a National Historic Site in 1927.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/%C5%8Cdara_Yosemiya",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -5197,11 +5308,11 @@
     "featured": false,
     "score": 67.05,
     "summary": {
-      "text": "天神山城（てんじんやまじょう）は、岡山県和気郡和気町田土（備前国和気郡）にあった日本の城。岡山県指定史跡。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%A4%A9%E7%A5%9E%E5%B1%B1%E5%9F%8E_%28%E5%82%99%E5%89%8D%E5%9B%BD%29",
+      "text": "Tenjinyama Castle (天神山城, Tenjinyama-jō) was a castle located in Tatsuchi, Wake of the former Bizen Province (now Okayama Prefecture) in Japan. Its ruined remains have been protected as a Prefectural Historic Site.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Tenjinyama_Castle_%28Bizen%29",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -5816,11 +5927,11 @@
     "featured": false,
     "score": 62.03,
     "summary": {
-      "text": "宝福寺（ほうふくじ）は、岡山県総社市井尻野にある臨済宗東福寺派の寺院である。山号は井山（いやま）。本尊は虚空蔵菩薩。宝福禅寺とも呼ばれる。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%AE%9D%E7%A6%8F%E5%AF%BA_%28%E7%B7%8F%E7%A4%BE%E5%B8%82%29",
+      "text": "Hōfuku-ji (宝福寺) is a Buddhist temple located in the Ijirino neighborhood of the city of Sōja, Okayama, Japan. It belongs to the Tōfuku-ji sect of the Rinzai school of Japanese Zen and its honzon is a statue of Kokuzō Bosatsu. It is noted for its connection with the Muromachi period painter-monk Sesshū. The graves of politicians Ryugo Hashimoto (who served as Minister of Education and Minister of Health) and his son Ryutaro Hashimoto (82nd and 83rd Prime Minister of Japan) are located here.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/H%C5%8Dfuku-ji",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -5872,11 +5983,11 @@
     "featured": false,
     "score": 56.05,
     "summary": {
-      "text": "寒風古窯跡群（さぶかぜこようせきぐん）は、岡山県瀬戸内市牛窓町長浜にある古代窯業遺跡。邑久古窯跡群を構成する窯跡群の1つ。国の史跡に指定されている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%AF%92%E9%A2%A8%E5%8F%A4%E7%AA%AF%E8%B7%A1%E7%BE%A4",
+      "text": "Sabukaze kiln ruins (寒風古窯跡群, Sabukaze koyōseki-gun) is an archaeological site consisting of the remains of kilns for firing Sue ware pottery from the start of the Asuka period to the Heian period  located in the Ushimado neighborhood of the city of Setouchi, Okayama Prefecture in the San'yō region of Japan. The site was the largest production area of Sue ware in western Japan, and the Sue ware from these kilns evolved into the current Bizen ware.  The site has been protected by the central government as a National Historic Site since 1986.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Sabukaze_Kiln_Sites",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -6539,11 +6650,11 @@
     "featured": false,
     "score": 54.48,
     "summary": {
-      "text": "幡多廃寺塔跡（はたはいじとうあと）は岡山県岡山市中区赤田にある仏教寺院跡に残る塔跡の遺跡である。国の史跡。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%B9%A1%E5%A4%9A%E5%BB%83%E5%AF%BA%E5%A1%94%E8%B7%A1",
+      "text": "The Hata temple ruins (幡多廃寺跡, Hata Haiji ato) is an archaeological site with the ruins of a Hakuhō period Buddhist temple located in the Akoda neighbourhood of what is now Naka-ku in the city of Okayama, Okayama Prefecture, in the San'yō region of Japan. The temple no longer exists, but the foundation stone of the pagoda which once existed in the temple grounds was designated as a National Historic Site in 1944.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Hata_temple_ruins",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -7587,11 +7698,11 @@
     "featured": false,
     "score": 65.99,
     "summary": {
-      "text": "本蓮寺（ほんれんじ）は、岡山県瀬戸内市牛窓町にある仏教寺院。山号は経王山、大本山本興寺末。宗派は法華宗本門流である。境内は朝鮮通信使遺跡として国の史跡に指定されている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%9C%AC%E8%93%AE%E5%AF%BA",
+      "text": "Honren-ji (本蓮寺) is a Buddhist temple located in the Ushimado neighborhood of the city of Setouchi, Okayama Prefecture, Japan.  The temple's full name is Kyōōsan Honren-ji (経王山 本蓮寺), and it belongs jointly to the Hokkeshū Honmonryū branch of the Nichiren-shu of Japanese Buddhism.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Honren-ji",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -7736,7 +7847,7 @@
       "ja": "楯築遺跡",
       "kana": "たてつきいせき",
       "romaji": "Tatetsukiiseki",
-      "zh_tw": "楯筑坟丘墓",
+      "zh_tw": "楯築墳丘墓",
       "en": "Tatetsuki Site"
     },
     "kana_source": "wikidata",
@@ -7770,7 +7881,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11543413",
@@ -8394,11 +8505,11 @@
     "featured": false,
     "score": 63.13,
     "summary": {
-      "text": "津島遺跡（つしまいせき）は、岡山県岡山市北区いずみ町の岡山県総合グラウンドおよびその周辺にひろがる、縄文時代晩期から弥生時代・古墳時代にかけての複合遺跡。1971年（昭和46年）1月5日に国の史跡に指定されている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%B4%A5%E5%B3%B6%E9%81%BA%E8%B7%A1",
+      "text": "Tsushima Site (津島遺跡, Tsushima Iseki)  is an archaeological site with the traces of a Yayoi period settlement, located in the Izumi neighborhood of Kita-ku, Okayama,  Okayama Prefecture, in the San'yō region of Japan. It was designated a National Historic Site of Japan in 1971, with the area under protection expanded in 2002.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Tsushima_Site",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -8722,11 +8833,11 @@
     "featured": false,
     "score": 66.53,
     "summary": {
-      "text": "熊山遺跡（くまやまいせき）は、岡山県赤磐市の熊山山上にある仏教遺跡である。国の史跡。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E7%86%8A%E5%B1%B1%E9%81%BA%E8%B7%A1",
+      "text": "The Kumayama ruins (熊山遺跡, Kumayama iseki) is a presumed Buddhist temple ruin located on Mount Kumayama of what is now the city of Akaiwa, Okayama, in the San'yō region of Japan. It consists of a stone stepped pyramid of unknown date and origin, and was designated as a National Historic Site in 1956.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Kumayama_ruins",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -8946,6 +9057,59 @@
     ],
     "status": "published",
     "updated_at": "2026-09-28"
+  },
+  {
+    "id": "wd-Q11571226",
+    "name": {
+      "ja": "犬島諸島",
+      "kana": "いぬじましょとう",
+      "romaji": "Inujimashoto",
+      "zh_tw": "犬島諸島",
+      "en": "Inujima Islands"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 34.563333,
+      "lng": 134.101944
+    },
+    "prefecture": "okayama",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "島"
+    ],
+    "featured": false,
+    "score": 55.01,
+    "summary": {
+      "text": "犬島諸島（いぬじましょとう）は、瀬戸内海の東部、備讃瀬戸地域に位置する諸島である。岡山県の岡山水道や児島半島、香川県の小豆島や豊島に囲まれており、瀬戸内海国立公園に指定されている。岡山市宝伝（本州）の沖合い3km前後に、比較的まとまって位置しており、また最大の犬島で0.54km2と、小さな島々である。諸島全域が岡山県岡山市東区に属する。これらの島々はしばしば犬島本島の属島とみなされる。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E7%8A%AC%E5%B3%B6%E8%AB%B8%E5%B3%B6",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5b/%E7%8A%AC%E5%B3%B6%E8%AB%B8%E5%B3%B6.jpg/960px-%E7%8A%AC%E5%B3%B6%E8%AB%B8%E5%B3%B6.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "国土地理院",
+        "license": "Attribution",
+        "source_url": "https://commons.wikimedia.org/wiki/File:%E7%8A%AC%E5%B3%B6%E8%AB%B8%E5%B3%B6.jpg"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q11571226"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q11571226",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E7%8A%AC%E5%B3%B6%E8%AB%B8%E5%B3%B6",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11571293",
@@ -9227,7 +9391,7 @@
       "ja": "現代医学教育博物館",
       "kana": "げんだいいがくきょういくはくぶつかん",
       "romaji": "Gendaiigakukyoikuhakubutsukan",
-      "zh_tw": "现代医学教育博物馆",
+      "zh_tw": "現代醫學教育博物館",
       "en": "Medical Museum, Kawasaki Medical School"
     },
     "kana_source": "wikipedia",
@@ -9283,13 +9447,13 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11573422",
     "name": {
       "ja": "現代玩具博物館",
-      "zh_tw": "现代玩具博物馆",
+      "zh_tw": "現代玩具博物館",
       "en": "Modern Toy Museum & Music Box Hall"
     },
     "location": {
@@ -9334,7 +9498,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11577570",
@@ -10229,7 +10393,7 @@
       "ja": "笹畝坑道",
       "kana": "ささうねこうどう",
       "romaji": "Sasaunekodo",
-      "zh_tw": "笹畝铜矿坑道",
+      "zh_tw": "笹畝銅礦坑道",
       "en": "Sasaune Gallery"
     },
     "kana_source": "wikipedia",
@@ -10272,7 +10436,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11603099",
@@ -10328,6 +10492,55 @@
     ],
     "status": "published",
     "updated_at": "2026-09-28"
+  },
+  {
+    "id": "wd-Q11604819",
+    "name": {
+      "ja": "糸崎八幡神社",
+      "kana": "いとさきはちまんじんじゃ",
+      "romaji": "Itosakihachimanjinja",
+      "zh_tw": "糸崎八幡神社",
+      "en": "Itosaki hachiman Shrine"
+    },
+    "kana_source": "wikidata",
+    "location": {
+      "lat": 34.719361,
+      "lng": 133.392389
+    },
+    "prefecture": "okayama",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "神社"
+    ],
+    "featured": false,
+    "score": 46.51,
+    "summary": {
+      "text": "糸崎八幡神社（いとさきはちまんじんじゃ）は、岡山県井原市芳井町西三原に鎮座する神社である。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E7%B3%B8%E5%B4%8E%E5%85%AB%E5%B9%A1%E7%A5%9E%E7%A4%BE",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/af/Itozaki-hachiman-jinja.jpg/960px-Itozaki-hachiman-jinja.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "運動会プロテインパワー",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Itozaki-hachiman-jinja.jpg"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q11604819"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q11604819",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11608173",
@@ -10553,7 +10766,7 @@
       "ja": "美星天文台",
       "kana": "びせいてんもんだい",
       "romaji": "Biseitenmondai",
-      "zh_tw": "美星天文台",
+      "zh_tw": "美星天文臺",
       "en": "Bisei Astronomical Observatory"
     },
     "kana_source": "wikipedia",
@@ -10596,7 +10809,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11610436",
@@ -11794,11 +12007,11 @@
     "featured": false,
     "score": 56.76,
     "summary": {
-      "text": "賞田廃寺跡（しょうだはいじあと）は、岡山県岡山市中区賞田にある仏教寺院の遺跡。国の史跡に指定されている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E8%B3%9E%E7%94%B0%E5%BB%83%E5%AF%BA%E8%B7%A1",
+      "text": "The Shōda temple ruins (賞田廃寺跡, Shōda Haiji ato) is an archaeological site with the ruins of a Hakuho period Buddhist temple located in the Shōda neighbourhood of what is now Naka-ku in the city of Okayama, in the San'yō region of Japan. The temple no longer exists, but the temple grounds were designated as a National Historic Site in 1972.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Sh%C5%8Dda_temple_ruins",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -12332,7 +12545,7 @@
       "ja": "道の駅久米の里",
       "kana": "みちのえきくめのさと",
       "romaji": "Michinoekikumenosato",
-      "zh_tw": "道之驛久米之里",
+      "zh_tw": "道之驛久米之裡",
       "en": "Roadside station Kume-no-sato"
     },
     "kana_source": "wikipedia",
@@ -12375,7 +12588,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11641244",
@@ -13518,57 +13731,6 @@
     "updated_at": "2026-09-28"
   },
   {
-    "id": "wd-Q11670671",
-    "name": {
-      "ja": "高梁市立吹屋小学校",
-      "kana": "たかはししりつふきやしょうがっこう",
-      "romaji": "Takahashishiritsufukiyashogakko",
-      "zh_tw": "高梁市立吹屋小学校",
-      "en": "Fukiya Elementary School"
-    },
-    "kana_source": "wikipedia",
-    "location": {
-      "lat": 34.863028,
-      "lng": 133.470694
-    },
-    "prefecture": "okayama",
-    "kind": "major",
-    "themes": [],
-    "tags": [],
-    "featured": false,
-    "score": 60.27,
-    "summary": {
-      "text": "高梁市立吹屋小学校（たかはししりつ ふきやしょうがっこう）は岡山県高梁市成羽町吹屋にあった市立小学校である。児童数減少により2012年（平成24年）3月末に廃校となった。廃校後は「旧吹屋小学校」と呼ばれる。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E9%AB%98%E6%A2%81%E5%B8%82%E7%AB%8B%E5%90%B9%E5%B1%8B%E5%B0%8F%E5%AD%A6%E6%A0%A1",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ab/Fukiya_elementary_school02s3200.jpg/960px-Fukiya_elementary_school02s3200.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "663highland",
-        "license": "CC BY 2.5",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Fukiya_elementary_school02s3200.jpg"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q11670671"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q11670671",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://ja.wikipedia.org/wiki/%E9%AB%98%E6%A2%81%E5%B8%82%E7%AB%8B%E5%90%B9%E5%B1%8B%E5%B0%8F%E5%AD%A6%E6%A0%A1",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
     "id": "wd-Q11673131",
     "name": {
       "ja": "高野神社",
@@ -14070,11 +14232,11 @@
     "featured": false,
     "score": 68.19,
     "summary": {
-      "text": "鷲羽山（わしゅうざん）は、岡山県倉敷市下津井田ノ浦にある山である。児島半島最南端付近に位置する。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E9%B7%B2%E7%BE%BD%E5%B1%B1",
+      "text": "Mount Washu or Washū-zan (Japanese: 鷲羽山) is a 133 meter hill in Shimotsui (下津井), Kurashiki, Japan, but famous traditionally for viewing the Seto Inland Sea dotted with various small islands, and now for commanding the majestic view of the Great Seto Bridge, one of the three bridges connecting Shikoku Island with the main Honshu Island.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Mount_Washu",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -15026,11 +15188,11 @@
     "featured": false,
     "score": 63.98,
     "summary": {
-      "text": "奈義町現代美術館（なぎちょうげんだいびじゅつかん、Nagi Museum Of Contemporary Art）、通称Nagi MOCA（ナギ・モカ）は、岡山県勝田郡奈義町にある美術館。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%A5%88%E7%BE%A9%E7%94%BA%E7%8F%BE%E4%BB%A3%E7%BE%8E%E8%A1%93%E9%A4%A8",
+      "text": "The Nagi Museum of Contemporary Art (Nagi MOCA) (奈義町現代美術館, Nagi-chō Gendai Bijutsukan) is a museum in Nagi, Okayama, Japan. It was jointly created by architect Arata Isozaki and artists whose works are displayed.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Nagi_Museum_of_Contemporary_Art",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -15080,11 +15242,11 @@
     "featured": false,
     "score": 58.17,
     "summary": {
-      "text": "美作国分寺（みまさかこくぶんじ）は、岡山県津山市国分寺にある天台宗の寺院。山号は龍壽山。本尊は薬師如来。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E7%BE%8E%E4%BD%9C%E5%9B%BD%E5%88%86%E5%AF%BA",
+      "text": "Mimasaka Kokubun-ji (美作国分寺) is a Tendai sect Buddhist temple in the Kokubunji neighborhood of the city of Tsuyama, Okayama, Japan. Its honzon is a hibutsu statue of Yakushi Nyōrai. The temple claims to be the successor to one of the provincial temples established by Emperor Shōmu during the Nara period (710–794). Due to this connection, the foundation stones of the Nara period temple were designated as a National Historic Site in 2004 with the area under protection expanded in 2009.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Mimasaka_Kokubun-ji",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -15563,6 +15725,61 @@
     ],
     "status": "published",
     "updated_at": "2026-09-28"
+  },
+  {
+    "id": "wd-Q17219552",
+    "name": {
+      "ja": "クレド岡山",
+      "kana": "くれどおかやま",
+      "romaji": "Kuredokayama",
+      "zh_tw": "Cred岡山",
+      "en": "NTT CRED Okayama"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 34.66275,
+      "lng": 133.926778
+    },
+    "prefecture": "okayama",
+    "kind": "major",
+    "themes": [],
+    "tags": [],
+    "featured": false,
+    "score": 46.67,
+    "summary": {
+      "text": "クレド岡山（クレドおかやま）は岡山県岡山市北区中山下にある複合型のビルである。正式名称はNTTクレド岡山ビル（エヌティティクレドおかやまビル、NTT Cred Okayama Building）。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E3%82%AF%E3%83%AC%E3%83%89%E5%B2%A1%E5%B1%B1",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "岡山",
+          "kana": "おかやま",
+          "romaji": "Okayama",
+          "en": "Okayama"
+        },
+        "distance_m": 870
+      }
+    ],
+    "images": [],
+    "external_ids": {
+      "wikidata": "Q17219552"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q17219552",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E3%82%AF%E3%83%AC%E3%83%89%E5%B2%A1%E5%B1%B1",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q17223389",
@@ -16259,11 +16476,11 @@
     "featured": false,
     "score": 66.99,
     "summary": {
-      "text": "牛窓町（うしまどちょう）は、かつて岡山県の南東部、邑久郡に存在した町である。2004年11月1日、同郡の邑久町・長船町と合併して瀬戸内市となり、町役場は瀬戸内市役所牛窓支所となっている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E7%89%9B%E7%AA%93%E7%94%BA",
+      "text": "Ushimado (牛窓町, Ushimado-chō) was a town located in Oku District, Okayama Prefecture, Japan.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Ushimado%2C_Okayama",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [],
     "external_ids": {
@@ -16395,11 +16612,11 @@
     "featured": false,
     "score": 69.58,
     "summary": {
-      "text": "津山まなびの鉄道館（つやままなびのてつどうかん、英語：Tsuyama Railroad Educational Museum）は、岡山県津山市にある鉄道に関する事物を展示する博物館（鉄道保存展示施設）である。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%B4%A5%E5%B1%B1%E3%81%BE%E3%81%AA%E3%81%B3%E3%81%AE%E9%89%84%E9%81%93%E9%A4%A8",
+      "text": "Tsuyama Railroad Educational Museum (津山まなびの鉄道館, Tsuyama Manabi no Tetsudōkan) is a railway museum in Tsuyama, Okayama, Japan, operated by West Japan Railway Company (JR West) since 2 April 2016. It is based around the former Tsuyama Depot roundhouse, which was used to house a number of preserved locomotives since 2007.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Tsuyama_Railroad_Educational_Museum",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -16599,11 +16816,11 @@
     "featured": false,
     "score": 65.12,
     "summary": {
-      "text": "頼久寺（らいきゅうじ）は、岡山県高梁市にある臨済宗永源寺派の寺院である。山号は天柱山。本尊は聖観世音菩薩（しょうかんぜおんぼさつ）。備中西国第五番札所、瀬戸内観音霊場第十三番札所となっている。国指定名勝の庭園は小堀遠州の初期の作。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E9%A0%BC%E4%B9%85%E5%AF%BA",
+      "text": "Raikyū-ji (頼久寺) is a Buddhist temple located in the Raikyūcho neighborhood of the city of Takahashi, Okayama Prefecture, Japan.  The temple's full name is Tenchū-zan Ankoku Raikyū-ji (天柱山安国頼久寺).  It belongs to the Eigen-ji branch of Rinzai school of Japanese Buddhism, and its honzon is a statue of Kannon Bosatsu. It is known for its Japanese garden, which was designated a NationalPlace of Scenic Beauty in 1974, with the area under protection expanded in 2009 to include the Main Hall and Shoin of the temple.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Raiky%C5%AB-ji",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -16657,11 +16874,11 @@
     "featured": false,
     "score": 63.71,
     "summary": {
-      "text": "夢二郷土美術館（ゆめじきょうどびじゅつかん、Yumeji Art Museum）は岡山県岡山市中区（本館）と瀬戸内市（別館）にある岡山県の登録博物館。運営は、両備グループが設立した公益財団法人両備文化振興財団。館長は両備グループ代表の小嶋光信。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%A4%A2%E4%BA%8C%E9%83%B7%E5%9C%9F%E7%BE%8E%E8%A1%93%E9%A4%A8",
+      "text": "Yumeji Art Museum (夢二郷土美術館, Yumeji Kyōdo Bijutsukan) is an art museum in Okayama Prefecture split between the main museum in Naka-ku, Okayama and the Yumeji Seika and Shonen Sanso annex built in Setouchi, the birthplace of Yumeji Takehisa, a poet and artist who was active in the early 1900s.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Yumeji_Art_Museum",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -16828,7 +17045,7 @@
       "ja": "王子が岳",
       "kana": "おうじがたけ",
       "romaji": "O Jigatake",
-      "zh_tw": "王子岳",
+      "zh_tw": "王子嶽",
       "en": "Ōjigatake"
     },
     "kana_source": "wikipedia",
@@ -16878,7 +17095,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q2866291",
@@ -16898,7 +17115,7 @@
     "kind": "major",
     "themes": [],
     "tags": [],
-    "featured": false,
+    "featured": true,
     "score": 72.51,
     "summary": {
       "text": "旭川是日本本州島上的一條河流。主要流經岡山縣，幹流全長142公里，流域面積約1,810平方公里，在日本《河川法》的劃分下，該河流屬於一級水系，並與吉井川、高梁川並稱為岡山縣三大水系。其發源於縣域北隅的朝鍋鷲之山，流經縣域中部及縣廳所在地岡山市，最終在岡山市以南的兒島灣注入瀨戶內海。岡山市的兩大名勝岡山城及後樂園即位於該河在岡山市區的南北兩岸。",
@@ -16925,7 +17142,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q28683819",
@@ -17570,11 +17787,11 @@
     "featured": false,
     "score": 57.12,
     "summary": {
-      "text": "真鍋島（まなべしま）は、岡山県笠岡市にある笠岡諸島に属する島である。古い漁村の面影を残した家並みがあり岡山県のふるさと村に指定されており、1977年（昭和52年）の映画『獄門島』や1984年（昭和59年）の映画『瀬戸内少年野球団』のロケ地となった。中四国沿岸部に多い真鍋姓の発祥地でもある。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E7%9C%9F%E9%8D%8B%E5%B3%B6",
+      "text": "Manabeshima (真鍋島, Manabe-shima) is an island in the Seto Inland Sea, part of the municipality of Kasaoka, Okayama Prefecture, Japan. The island has an area of 1.49 square kilometers (0.57 square miles) and is one of the seven inhabited islands of the Kasaoka Islands group. The island's main commercial activity is fishing.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Manabeshima",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -18501,6 +18718,63 @@
     "updated_at": "2026-09-28"
   },
   {
+    "id": "wd-Q43594055",
+    "name": {
+      "ja": "妙龍寺",
+      "zh_tw": "妙龍寺"
+    },
+    "location": {
+      "lat": 34.681771,
+      "lng": 133.93802
+    },
+    "prefecture": "okayama",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "寺院"
+    ],
+    "featured": false,
+    "score": 46.71,
+    "summary": {
+      "text": "レッツゴー！陰妙寺（おんみょうじ）は、ツライト県カナ市イトキにあるドワンゴの寺院。山号は遺影。旧本山は市内の仏住山蓮昌寺。うううううううううう",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E5%A6%99%E9%BE%8D%E5%AF%BA_%28%E5%B2%A1%E5%B1%B1%E5%B8%82%29",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "西川原",
+          "kana": "にしがわら",
+          "romaji": "Nishigawara",
+          "en": "Nishigawara"
+        },
+        "distance_m": 320
+      },
+      {
+        "name": {
+          "ja": "法界院",
+          "romaji": "Hōkaiin",
+          "en": "Hōkaiin"
+        },
+        "distance_m": 1020
+      }
+    ],
+    "images": [],
+    "external_ids": {
+      "wikidata": "Q43594055"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q43594055",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
+  },
+  {
     "id": "wd-Q43594194",
     "name": {
       "ja": "朝日寺",
@@ -18634,11 +18908,11 @@
     "featured": false,
     "score": 64.47,
     "summary": {
-      "text": "岡山シンフォニーホール（おかやまシンフォニーホール）は、岡山県岡山市北区にある音響に定評のあるコンサートホール。2001席の大ホールの他、和風ホールや小規模コンサートのできるイベントホールなど多様な施設を備える。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%B2%A1%E5%B1%B1%E3%82%B7%E3%83%B3%E3%83%95%E3%82%A9%E3%83%8B%E3%83%BC%E3%83%9B%E3%83%BC%E3%83%AB",
+      "text": "Okayama Symphony Hall (岡山シンフォニーホール, Okayama Shinfonī Hōlu) is a concert hall in Okayama, Okayama, Japan. It opened in 1991 and seats 2,001. Yoshinobu Ashihara was the architect, with acoustical design by Nagata Acoustics.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Okayama_Symphony_Hall",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -18773,11 +19047,11 @@
     "featured": false,
     "score": 64.23,
     "summary": {
-      "text": "岡山市立オリエント美術館（おかやましりつオリエントびじゅつかん）は、岡山県岡山市北区にある美術館。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%B2%A1%E5%B1%B1%E5%B8%82%E7%AB%8B%E3%82%AA%E3%83%AA%E3%82%A8%E3%83%B3%E3%83%88%E7%BE%8E%E8%A1%93%E9%A4%A8",
+      "text": "Okayama Orient Museum (岡山市立オリエント美術館, Okayama Shiritsu Oriento Bijutsukan) is a museum of Ancient Near Eastern, Roman provincial, Byzantine, Sassanian, and Islamic Art in  Kita-ku, Okayama, Okayama Prefecture, Japan. As of 2007 there were some 4,852 items, including a winged Assyrian relief from the palace of Ashurnasirpal II in Nimrud, Mesopotamia, acquired to mark the institution's 25th anniversary.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Okayama_Orient_Museum",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -18842,11 +19116,11 @@
     "featured": false,
     "score": 67.06,
     "summary": {
-      "text": "林原美術館（はやしばらびじゅつかん、Hayashibara Museum of Art）は、岡山県岡山市北区の岡山城址にある岡山県の登録博物館。一般財団法人林原美術館が運営を行っている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%9E%97%E5%8E%9F%E7%BE%8E%E8%A1%93%E9%A4%A8",
+      "text": "The Hayashibara Museum of Art (林原美術館, Hayashibara Bijutsukan) is an art museum owned by the Hayashibara Group, and located at 2-7-15 Marunouchi, Kita-ku, Okayama, Japan. It is on the site of a former guesthouse beside the inner moat of Okayama Castle. Its 6,832 square meter interior was designed by Kunio Maekawa.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Hayashibara_Museum_of_Art",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -18909,11 +19183,11 @@
     "featured": false,
     "score": 61.16,
     "summary": {
-      "text": "旭川ダム（あさひがわダム）は、岡山県岡山市北区建部地域町鶴田（たづた）と加賀郡吉備中央町大字神瀬にまたがる、一級河川・旭川本川中流部に建設されたダムである。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%97%AD%E5%B7%9D%E3%83%80%E3%83%A0",
+      "text": "Asahigawa Dam (Japanese: 旭川ダム) is a dam on Asahi River straddling the border between Kibichūō and northern Takebe, Okayama in Okayama Prefecture, Japan. The dam was completed in 1954.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Asahigawa_Dam",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -19078,11 +19352,11 @@
     "featured": false,
     "score": 58.17,
     "summary": {
-      "text": "大廻小廻山城（おおめぐりこめぐりさんじょう/おおめぐりこめぐりやまじょう、築地山城<ついじさんじょう>）は、備前国上道郡の大廻・小廻山（現在の岡山県岡山市東区草ヶ部・瀬戸町観音寺・瀬戸町笹岡）にあった日本の古代山城。城跡は国の史跡に指定されている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E5%BB%BB%E5%B0%8F%E5%BB%BB%E5%B1%B1%E5%9F%8E",
+      "text": "Ōmeguri-Komeguri Mountain Castle (大廻小廻山城, Ōmeguri-Komeguri yamajirō) was an ancient castle (also known as a Korean-style fortresses in Japan (朝鮮式山城, Chōsen-shiki yamajiro) located in what is now the Kusakabe neighborhood of Higashi-ku of the city of Okayama, Okayama Prefecture, in the San'yō region of Japan.  Its ruins have been protected as a National Historic Site since 2005.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/%C5%8Cmeguri-Komeguri_Mountain_Castle",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -19316,7 +19590,7 @@
       "romaji": "Myohoji",
       "zh_tw": "妙法寺"
     },
-    "kana_source": "wikipedia",
+    "kana_source": "wikidata",
     "location": {
       "lat": 34.627944,
       "lng": 133.945444
@@ -19356,7 +19630,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q48756308",
@@ -19907,11 +20181,11 @@
     "featured": false,
     "score": 61.53,
     "summary": {
-      "text": "豪渓（ごうけい）は、岡山県の総社市北端から加賀郡吉備中央町にわたる、高梁川支流槙谷川の上流に位置する渓谷である。日本五大名峡の一つに数えられる。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E8%B1%AA%E6%B8%93",
+      "text": "The Gōkei area (豪渓, Gōkei) is a river valley formed by the Makidani River (a tributary of the Takahashi River) which stretched from the extreme northern part of Sōja to Kibichūō (formerly Kayō) in Okayama Prefecture, Japan. The area is only about 600m long, but the area is filled with strange granite rock formations resulting from wind and rain erosion. The area has become a local attraction for those wanting to view the scenic beauty and the strange formations, leading to its listing in 1923 as a national scenic spot in Japan.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/G%C5%8Dkei_area",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -19960,11 +20234,11 @@
     "featured": false,
     "score": 60.91,
     "summary": {
-      "text": "岡山市半田山植物園（おかやましはんだやましょくぶつえん、英: Handayama Botanical Garden）は、岡山県岡山市北区にある植物園。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%B2%A1%E5%B1%B1%E5%B8%82%E5%8D%8A%E7%94%B0%E5%B1%B1%E6%A4%8D%E7%89%A9%E5%9C%92",
+      "text": "The Handayama Botanical Garden (岡山市半田山植物園, Okayama-shi Handayama Shokubutsuen) is a botanical garden located at 2-1319 Kitagata, Kita-ku, Okayama, Japan. It is open daily except Tuesdays; an admission fee is charged.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Handayama_Botanical_Garden",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -20082,11 +20356,11 @@
     "featured": false,
     "score": 63.65,
     "summary": {
-      "text": "北房町（ほくぼうちょう）は、かつて岡山県の北部（上房郡）にあった町。現在は合併により真庭市となっており、旧町役場は真庭市役所北房支局（後に北房振興局に改称）となっている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%8C%97%E6%88%BF%E7%94%BA",
+      "text": "Hokubō (北房町, Hokubō-chō) was a town located in Jōbō District, Okayama, Japan.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Hokub%C5%8D%2C_Okayama",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [],
     "external_ids": {
@@ -20253,11 +20527,11 @@
     "featured": false,
     "score": 67.28,
     "summary": {
-      "text": "満奇洞（まきどう）は、岡山県新見市の阿哲台（豊永台）にある鍾乳洞（石灰洞）である。岡山県指定天然記念物で、岡山県高梁川上流県立自然公園特別地域に含まれる。二次生成物の発達した鍾乳洞として知られる。槇の穴（槙の穴、まきのあな）とも呼ばれる。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%BA%80%E5%A5%87%E6%B4%9E",
+      "text": "Makidō (満奇洞) is one of many limestone caves located in the city of Niimi, in northwestern Okayama Prefecture, Japan.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Maki-d%C5%8D",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -20304,11 +20578,11 @@
     "featured": false,
     "score": 60.29,
     "summary": {
-      "text": "犬島アートプロジェクト（いぬじまあーとぷろじぇくと、Inujima Art Project）は、瀬戸内海に浮かぶ離島・犬島（岡山県岡山市）で活動するアートプロジェクトを指す。構想の末2008年に“精錬所”と呼ばれる施設が開館し、建築、現代アート、近代化産業遺産の銅精錬所（犬島精錬所）跡地を一般公開している。また施設にはカフェやミュージアムショップが併設されている。鑑賞料は有料（2,060円）。島へは船を利用して来島する。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E7%8A%AC%E5%B3%B6%E3%82%A2%E3%83%BC%E3%83%88%E3%83%97%E3%83%AD%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88",
+      "text": "Inujima (犬島; [inɯdʑima], lit. \"Dog Island\") is a Japanese island in the Seto Inland Sea, located near the coast of Okayama Prefecture. It is part of Higashi-ku, Okayama.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Inujima_Art_Project",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -20333,6 +20607,113 @@
     ],
     "status": "published",
     "updated_at": "2026-09-28"
+  },
+  {
+    "id": "wd-Q60987300",
+    "name": {
+      "ja": "本成寺",
+      "kana": "ほんじょうじ",
+      "romaji": "Honjoji",
+      "zh_tw": "本成寺"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 34.802972,
+      "lng": 134.146278
+    },
+    "prefecture": "okayama",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "寺院"
+    ],
+    "featured": false,
+    "score": 46.73,
+    "summary": {
+      "text": "本成寺（ほんじょうじ）は、岡山県和気町にある慶長6年（1601年）に創建された顕本法華宗の寺院。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E6%9C%AC%E6%88%90%E5%AF%BA_%28%E5%B2%A1%E5%B1%B1%E7%9C%8C%E5%92%8C%E6%B0%97%E7%94%BA%29",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "和気",
+          "en": "Wake"
+        },
+        "distance_m": 870
+      }
+    ],
+    "images": [],
+    "external_ids": {
+      "wikidata": "Q60987300"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q60987300",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E6%9C%AC%E6%88%90%E5%AF%BA_%28%E5%B2%A1%E5%B1%B1%E7%9C%8C%E5%92%8C%E6%B0%97%E7%94%BA%29",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
+  },
+  {
+    "id": "wd-Q6374018",
+    "name": {
+      "ja": "笠岡諸島",
+      "kana": "かさおかしょとう",
+      "romaji": "Kasaokashoto",
+      "zh_tw": "笠岡群",
+      "en": "Kasaoka Islands"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 34.441111,
+      "lng": 133.395278
+    },
+    "prefecture": "okayama",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "島"
+    ],
+    "featured": false,
+    "score": 68.83,
+    "summary": {
+      "text": "The Kasaoka Islands (笠岡諸島, Kasaoka Shotō) are a group of 31 islands in the Seto Inland Sea of Okayama Prefecture. They are part of the city of Kasaoka.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Kasaoka_Islands",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0b/Shiraishijima_01.jpg/960px-Shiraishijima_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Prue Simmons",
+        "license": "CC BY 2.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Shiraishijima_01.jpg"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q6374018"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q6374018",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E7%AC%A0%E5%B2%A1%E8%AB%B8%E5%B3%B6",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q65248889",
@@ -20604,11 +20985,11 @@
     "featured": false,
     "score": 55.33,
     "summary": {
-      "text": "髙顯寺（こうけんじ）は、岡山県備前市吉永町八塔寺ふるさと村にある高野山真言宗の仏教寺院。山号は恵日山（えにちさん）。本尊は定朝作と伝えられる不動明王像・毘沙門天像（秘仏）",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E9%AB%98%E9%A1%95%E5%AF%BA_%28%E5%82%99%E5%89%8D%E5%B8%82%29",
+      "text": "Kōken-ji (高顕寺) is a Buddhist temple of the Kōyasan Shingon school located in Bizen, Okayama Prefecture, Japan.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/K%C5%8Dken-ji",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -20761,11 +21142,11 @@
     "featured": false,
     "score": 64.61,
     "summary": {
-      "text": "高越城（たかこしじょう）は、備中国後月郡荏原荘（岡山県井原市）にあった日本の城。戦国時代には備中伊勢氏の城であった。最近の研究では伊勢盛時（北条早雲）の出生地とされる。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E9%AB%98%E8%B6%8A%E5%9F%8E",
+      "text": "Takakoshi Castle (高越城, Takakoshi-jō) also well known as Takakoshi-yama Castle is the remains of a castle structure in Ibara, Okayama Prefecture, Japan. The castle was built in the Nanboku-chō period against a possible invasion of Kublai Khan's force.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Takakoshi_Castle",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -20823,14 +21204,14 @@
       "島",
       "名勝"
     ],
-    "featured": true,
+    "featured": false,
     "score": 71.25,
     "summary": {
-      "text": "白石島（しらいしじま）は、岡山県笠岡市にある笠岡諸島に属する、面積2.86km2、最高点169m（立石山）、人口346人（令和2年）の島で全島が国の名勝に指定されている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E7%99%BD%E7%9F%B3%E5%B3%B6",
+      "text": "Shiraishi Island (白石島, Shiraishi-jima) is an island in the Inland Sea of Japan and is considered part of the municipality of Kasaoka, Okayama Prefecture. It is one of six inhabited islands in the Kasaoka Islands, a chain of islands most easily reached from the port city of Kasaoka on Japan's main island, Honshū.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Shiraishi_Island",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -20854,7 +21235,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q7506089",
@@ -20877,11 +21258,11 @@
     "featured": false,
     "score": 61.75,
     "summary": {
-      "text": "勝北町（しょうぼくちょう）は、かつて岡山県の北部（勝田郡）に位置し鳥取県と境を接していた町。現在は津山市に編入合併され、同市の一部となり、旧勝北町役場は津山市役所勝北支所となっている。津山市勝北地区に一致。勝北の地名は当地域には残っていない。町名の由来は勝北郡（＝勝田郡の北部）で、構成する旧3村がすべて古くはこの郡に属していた。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%8B%9D%E5%8C%97%E7%94%BA",
+      "text": "Shōboku (勝北町, Shōboku-chō) was a town located in Katsuta District, Okayama Prefecture, Japan.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Sh%C5%8Dboku%2C_Okayama",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -21049,11 +21430,11 @@
     "featured": false,
     "score": 62.08,
     "summary": {
-      "text": "鶴島（つるしま）は岡山県備前市の日生諸島に属する無人島。個人が所有している。北西岸にわずかに砂浜があり、全体的にはなだらかな丘陵だが、播磨灘に面する東海岸は断崖である。キリスト教徒の受難地として有名。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E9%B6%B4%E5%B3%B6",
+      "text": "Tsuru Shima (鶴島) is part of Okayama Prefecture, Japan. It is a small, uninhabited island located in the Inland Sea of Japan, hidden from the land by the much larger Kakuijima, and approximately 6 km off the border of Hyōgo and Okayama prefectures. During the early Meiji Period the island was used as a penal colony for Christians. The name means literally \"Crane (bird) Island\".",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Tsuru_Shima",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [],
     "external_ids": {
@@ -21093,11 +21474,11 @@
     "featured": false,
     "score": 69.11,
     "summary": {
-      "text": "湯郷温泉（ゆのごうおんせん）は、岡山県美作市湯郷、（旧国美作国）にある温泉。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%B9%AF%E9%83%B7%E6%B8%A9%E6%B3%89",
+      "text": "Yunogo Onsen (湯郷温泉, Yunogō Onsen) or simply Yunogō is a hot spring town located in Mimasaka city of Okayama Prefecture, Japan. The waters of the Yunogo hot springs (onsen in Japanese) are a mixture of sodium chloride and calcium chloride, with the amount of discharge at 540 L/min. The waters are said to have healing effects on those suffering from various health problems.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Yunogo_Onsen",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [],
     "external_ids": {
@@ -21242,14 +21623,14 @@
     "kind": "major",
     "themes": [],
     "tags": [],
-    "featured": false,
+    "featured": true,
     "score": 71.95,
     "summary": {
-      "text": "蒜山（ひるぜん）は、岡山県の真庭市北部、鳥取県の倉吉市南部および日野郡江府町北東部に跨って位置する火山。中心となる中蒜山、上蒜山、下蒜山の3つの峰を蒜山三座という。蒜山地域の一部は大山隠岐国立公園の国立公園地域となっている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E8%92%9C%E5%B1%B1",
+      "text": "Hiruzen (蒜山; ひるぜん) is the name of an area located in the north of Maniwa City in the north of Okayama Prefecture, Japan. Hiruzen was formed of 3 small towns: Chuka, Yatsuka, and Kawakami, which together were known as the town of Hiruzen, which was merged with several other towns to become current Maniwa City in 2005. Its main feature is the Hiruzen Sanza (蒜山三座), a mountain located on the border of Okayama and Tottori prefectures on the main island of Honshu in Japan.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Hiruzen",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -21273,7 +21654,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q85878312",

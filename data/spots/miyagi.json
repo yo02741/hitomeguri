@@ -5,7 +5,7 @@
       "ja": "宝鏡寺 (気仙沼市)",
       "kana": "ほうきょうじ",
       "romaji": "Ho Kyo Ji",
-      "zh_tw": "宝鏡寺",
+      "zh_tw": "寶鏡寺",
       "en": "Hōkyō-ji"
     },
     "kana_source": "wikipedia",
@@ -68,7 +68,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q1037902",
@@ -573,6 +573,49 @@
     "updated_at": "2026-09-28"
   },
   {
+    "id": "wd-Q108864508",
+    "name": {
+      "ja": "台ヶ森温泉",
+      "kana": "だいがもりおんせん",
+      "romaji": "Daigamorionsen",
+      "zh_tw": "台ヶ森温泉"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 38.438306,
+      "lng": 140.809972
+    },
+    "prefecture": "miyagi",
+    "kind": "major",
+    "themes": [],
+    "tags": [],
+    "featured": false,
+    "score": 49.63,
+    "summary": {
+      "text": "台ヶ森温泉（だいがもりおんせん）は、宮城県黒川郡大和町（旧国陸奥国、明治以降は磐城国）にある温泉。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E5%8F%B0%E3%83%B6%E6%A3%AE%E6%B8%A9%E6%B3%89",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "images": [],
+    "external_ids": {
+      "wikidata": "Q108864508"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q108864508",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E5%8F%B0%E3%83%B6%E6%A3%AE%E6%B8%A9%E6%B3%89",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
+  },
+  {
     "id": "wd-Q109255730",
     "name": {
       "ja": "みやぎ東日本大震災津波伝承館",
@@ -942,11 +985,11 @@
     "featured": false,
     "score": 59.87,
     "summary": {
-      "text": "二柱神社（ふたはしらじんじゃ）は、宮城県仙台市泉区市名坂にある神社。神社の名称は、2柱の神を祀ることに由来する。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E4%BA%8C%E6%9F%B1%E7%A5%9E%E7%A4%BE",
+      "text": "Futahashira Shrine (二柱神社, Futahashira jinja) is a Shinto shrine located in Sendai, Miyagi Prefecture, Japan. The main kami enshrined here are Izanagi and Izanami.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Futahashira_Shrine",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -1935,6 +1978,7 @@
       {
         "name": {
           "ja": "中野栄",
+          "romaji": "Nakanosakae",
           "en": "Nakanosakae"
         },
         "distance_m": 740
@@ -1962,7 +2006,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11358292",
@@ -1985,11 +2029,11 @@
     "featured": false,
     "score": 59.97,
     "summary": {
-      "text": "三階の滝（さんかいのたき、三階滝とも）は、宮城県刈田郡蔵王町にある滝。落差181mを三段に落ちる壮大な段瀑は東北屈指であり、日本の滝百選の一つ。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E4%B8%89%E9%9A%8E%E3%81%AE%E6%BB%9D",
+      "text": "Sankai Falls (三階の滝, Sankai-no-taki) is a waterfall in Zaō, Katta District, Miyagi Prefecture, Japan, in on the Sumikawa River. It is one of \"Japan’s Top 100 Waterfalls\", in a listing published by the Japanese Ministry of the Environment in 1990.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Sankai_Falls",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -2063,6 +2107,71 @@
     ],
     "status": "published",
     "updated_at": "2026-09-28"
+  },
+  {
+    "id": "wd-Q11360748",
+    "name": {
+      "ja": "下増田神社",
+      "kana": "しもますだじんじゃ",
+      "romaji": "Shimomasudajinja",
+      "zh_tw": "下增田神社",
+      "en": "Shimomasuda Shrine"
+    },
+    "kana_source": "wikidata",
+    "location": {
+      "lat": 38.137083,
+      "lng": 140.935667
+    },
+    "prefecture": "miyagi",
+    "city": "名取市",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "神社"
+    ],
+    "featured": false,
+    "score": 49.87,
+    "summary": {
+      "text": "下増田神社（しもますだじんじゃ）は、宮城県名取市の北釜地区に所在する神社。かつては「神明宮」と称した。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E4%B8%8B%E5%A2%97%E7%94%B0%E7%A5%9E%E7%A4%BE",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "仙台空港",
+          "romaji": "Sendai Airport",
+          "en": "Sendai Airport"
+        },
+        "distance_m": 580
+      }
+    ],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/53/Honden_of_Shimomasuda-jinja_shrine_after_Earthquake_of_11_March_2011.JPG/960px-Honden_of_Shimomasuda-jinja_shrine_after_Earthquake_of_11_March_2011.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Bachstelze",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Honden_of_Shimomasuda-jinja_shrine_after_Earthquake_of_11_March_2011.JPG"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q11360748",
+      "osm": "node/2574316240"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q11360748",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.openstreetmap.org/node/2574316240",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11364155",
@@ -3104,6 +3213,7 @@
       {
         "name": {
           "ja": "苦竹",
+          "romaji": "Nigatake",
           "en": "Nigatake"
         },
         "distance_m": 790
@@ -3139,7 +3249,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11378117",
@@ -4642,11 +4752,11 @@
     "featured": false,
     "score": 65.39,
     "summary": {
-      "text": "地底の森ミュージアム（ちていのもりミュージアム）は、宮城県仙台市太白区長町南にある博物館である。条例上の名称は仙台市富沢遺跡保存館。1996年（平成8年）に開館した。富沢遺跡は旧石器時代から近世にかけての遺構が堆積した遺跡であり、館内では約2万年前に当たる旧石器時代の遺跡面が保存、展示されている。また、館外の屋外展示は氷河期の植生を再現したものである。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%9C%B0%E5%BA%95%E3%81%AE%E6%A3%AE%E3%83%9F%E3%83%A5%E3%83%BC%E3%82%B8%E3%82%A2%E3%83%A0",
+      "text": "The Sendai City Tomizawa Site Museum (仙台市富沢遺跡保存館, Sendai-shi Tomizawa iseki hozonkan) is an archaeology museum in the city of Sendai in northern Japan that preserves a fossilized forest, where the remains of human habitation that occurred 20,000 years ago were discovered during surveying work in 1988. The museum opened in 1996.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Sendai_City_Tomizawa_Site_Museum",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -4718,11 +4828,11 @@
     "featured": false,
     "score": 58.11,
     "summary": {
-      "text": "城生柵跡（じょうのさくあと）は、宮城県加美郡加美町城生にある奈良時代の城柵遺跡。「城生」は現在の地名によるもので、かつてのどの施設に比定するかについては諸説ある。国の史跡に指定されている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%9F%8E%E7%94%9F%E6%9F%B5%E8%B7%A1",
+      "text": "The Jō Palisade site (城生柵跡, Jō-no-saku ato) is an archaeological site with the ruins of a Nara period jōsaku-style Japanese castle, located in what is now part of the town of Kami in Kami District, Miyagi prefecture in the Tōhoku region of far northern Honshu, Japan. The site was proclaimed a National National Historic Site in 1979.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/J%C5%8D_Palisade_Site",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [],
     "external_ids": {
@@ -4913,7 +5023,7 @@
         "name": {
           "ja": "多賀城",
           "kana": "たがじょう",
-          "romaji": "Tagajo",
+          "romaji": "Tagajō",
           "en": "Tagajo"
         },
         "distance_m": 1190
@@ -4942,7 +5052,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11431092",
@@ -6091,11 +6201,11 @@
     "featured": false,
     "score": 67.72,
     "summary": {
-      "text": "宮城県民会館（みやぎけんみんかいかん）は、宮城県仙台市青葉区国分町三丁目にあるコンサートホールと会議室等の文化施設である。開館は1964年（昭和39年）。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%AE%AE%E5%9F%8E%E7%9C%8C%E6%B0%91%E4%BC%9A%E9%A4%A8",
+      "text": "Miyagi Prefectural Auditorium (宮城県民会館) is a 1,590-seat multi-purpose hall located in Sendai, Japan. It opened in 1964 and has hosted artists such as Cheap Trick, Whitesnake and Mötley Crüe. After the sale of the naming rights, Tokyo Electron Hall Miyagi became, on April 1, 2008, the preferred nickname for Miyagi Prefectural Auditorium.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Miyagi_Prefectural_Auditorium",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -6200,7 +6310,7 @@
       "ja": "宮城県美術館",
       "kana": "みやぎけんびじゅつかん",
       "romaji": "Miyagikenbijutsukan",
-      "zh_tw": "宮城县美术馆",
+      "zh_tw": "宮城縣美術館",
       "en": "Miyagi Museum of Art"
     },
     "kana_source": "wikipedia",
@@ -6268,7 +6378,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11453957",
@@ -6348,11 +6458,11 @@
     "featured": false,
     "score": 64.25,
     "summary": {
-      "text": "宮城縣護國神社（みやぎけんごこくじんじゃ）は、宮城県仙台市青葉区川内にある神社（護国神社）。仙臺伍社巡り（仙台五社巡り）の一社である。青葉山の仙台城（青葉城）本丸跡に創建された。明治維新以降の諸事変、戦役における宮城県関係あるいは縁故のある戦死・殉難者、5万6千余柱を祀る。神紋は十五菊に桜。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%AE%AE%E5%9F%8E%E7%B8%A3%E8%AD%B7%E5%9C%8B%E7%A5%9E%E7%A4%BE",
+      "text": "Miyagiken Gokoku Shrine (宮城縣護國神社, Miyagiken gokoku jinja) is a Shinto shrine located in Sendai, Miyagi Prefecture, Japan. It enshrines the kami of \"martyrs of the state\" (国事殉難者) and its annual festivals take place on April 30, May 1, and October 23. It was established in 1904 and originally referred to as Shōkonsha (招魂社). Its current name dates to 1939.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Miyagiken_Gokoku_Shrine",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -6690,6 +6800,60 @@
     "updated_at": "2026-09-28"
   },
   {
+    "id": "wd-Q11458649",
+    "name": {
+      "ja": "尊久老稲荷神社",
+      "kana": "そうくろいなりじんじゃ",
+      "romaji": "Sokuroinarijinja",
+      "zh_tw": "尊久老稻荷神社",
+      "en": "Sōkuro Inari Shrine"
+    },
+    "kana_source": "wikidata",
+    "location": {
+      "lat": 38.021806,
+      "lng": 140.849389
+    },
+    "prefecture": "miyagi",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "神社"
+    ],
+    "featured": false,
+    "score": 49.33,
+    "summary": {
+      "text": "尊久老稲荷神社（そうくろいなりじんじゃ）は、宮城県亘理郡亘理町にある神社である。旧社格は村社。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E5%B0%8A%E4%B9%85%E8%80%81%E7%A8%B2%E8%8D%B7%E7%A5%9E%E7%A4%BE",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/26/Sonkurou-inari_jinja_shrine.JPG/960px-Sonkurou-inari_jinja_shrine.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Bachstelze",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Sonkurou-inari_jinja_shrine.JPG"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q11458649",
+      "osm": "node/8133486626"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q11458649",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.openstreetmap.org/node/8133486626",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
+  },
+  {
     "id": "wd-Q11459249",
     "name": {
       "ja": "小原温泉",
@@ -6755,11 +6919,11 @@
     "featured": false,
     "score": 57.05,
     "summary": {
-      "text": "山王囲遺跡（さんのうがこいいせき）は、宮城県栗原市（旧栗原郡一迫町真坂字山王・道満）に所在する縄文時代晩期から弥生時代中期の集落跡を中心とする複合遺跡。1971年（昭和46年）9月9日、国の史跡に指定された。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%B1%B1%E7%8E%8B%E5%9B%B2%E9%81%BA%E8%B7%A1",
+      "text": "The Sannō-Gakoi Site (山王囲遺跡, Sannō-Gakoi iseki) is an archaeological site located in the city of Kurihara, Miyagi Prefecture, in the Tōhoku region of northern Japan, containing the ruins of a  late Jōmon period to Yayoi period (approximately 500 BC to 0 BC) settlement. The site was designated a National Historic Site in 1991 by the Japanese government.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Sann%C5%8D-Gakoi_Site",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -6867,11 +7031,11 @@
     "featured": false,
     "score": 69.45,
     "summary": {
-      "text": "岩切城（いわきりじょう）は、宮城県仙台市宮城野区岩切にあった峻険な日本の城（山城）。高森山にあることから、別名を高森城（たかもりじょう）という。周辺は高森山公園として整備されている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%B2%A9%E5%88%87%E5%9F%8E",
+      "text": "Iwakiri Castle (岩切城, Iwakiri-jō) was a Muromachi period Japanese castle located in what is now the ward of Miyagino-ku, in the city of Sendai, Miyagi Prefecture, in the Tōhoku region of northern Japan. The site has been protected as a National Historic Site since 1982. It was also referred to as Takamori Castle (高森城, Takamori-jō) The castle was home castle of Rusu clan.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Iwakiri_Castle",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -7301,7 +7465,7 @@
         "name": {
           "ja": "本塩釜",
           "kana": "ほんしおがま",
-          "romaji": "Hon Shiogama",
+          "romaji": "Hon-Shiogama",
           "en": "Hon-Shiogama"
         },
         "distance_m": 470
@@ -7310,7 +7474,7 @@
         "name": {
           "ja": "西塩釜",
           "kana": "にししおがま",
-          "romaji": "Nishi Shiogama",
+          "romaji": "Nishishiogama",
           "en": "Nishi-Shiogama"
         },
         "distance_m": 470
@@ -7339,7 +7503,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11493829",
@@ -7435,11 +7599,11 @@
     "featured": false,
     "score": 62.56,
     "summary": {
-      "text": "宮城県仙台市太白区向山四丁目にある愛宕神社（あたごじんじゃ）は、愛宕信仰にもとづく愛宕神社の一つ。仙臺伍社巡り（仙台五社巡り）の一社である。広瀬川の南側にある標高75メートルの愛宕山の頂上に鎮座する。もと米沢にあった愛宕神社が、伊達政宗の移封とともにまず岩出山へ、ついで仙台へ移転したもので、火防鎮護、辰巳歳生一代守護の利益があるとされる。仙台総鎮守。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%84%9B%E5%AE%95%E7%A5%9E%E7%A4%BE_%28%E4%BB%99%E5%8F%B0%E5%B8%82%29",
+      "text": "Atago Shrine (愛宕神社, Atago jinja) is a Shinto shrine located in Sendai, Miyagi Prefecture, Japan. It enshrines the kami Kagu-tsuchi (軻遇土神), and its annual festival takes place on July 24.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Atago_Shrine_%28Sendai%29",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -7484,6 +7648,74 @@
     ],
     "status": "published",
     "updated_at": "2026-09-28"
+  },
+  {
+    "id": "wd-Q11493864",
+    "name": {
+      "ja": "愛宕神社",
+      "kana": "あたごじんじゃ",
+      "romaji": "Atagojinja",
+      "zh_tw": "愛宕神社",
+      "en": "Atago Shrine"
+    },
+    "kana_source": "wikidata",
+    "location": {
+      "lat": 38.393853,
+      "lng": 141.068425
+    },
+    "prefecture": "miyagi",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "神社"
+    ],
+    "featured": false,
+    "score": 49.75,
+    "summary": {
+      "text": "愛宕神社（あたごじんじゃ）は、宮城県宮城郡松島町高城にある愛宕信仰にもとづく神社で、全国に多数ある愛宕神社の一つである。本尊は将軍地蔵であった。瑞巌寺・陽徳院の北東にある愛宕山という低山の上に立ち、瑞巌寺の鎮守の一つでもある。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E6%84%9B%E5%AE%95%E7%A5%9E%E7%A4%BE_%28%E6%9D%BE%E5%B3%B6%E7%94%BA%29",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "愛宕",
+          "kana": "あたご",
+          "romaji": "Atago",
+          "en": "Atago"
+        },
+        "distance_m": 480
+      },
+      {
+        "name": {
+          "ja": "高城町",
+          "romaji": "Takagimachi",
+          "en": "Takagimachi"
+        },
+        "distance_m": 1310
+      }
+    ],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8a/Matsushima_Atago_Jinja_in_2007.jpg/960px-Matsushima_Atago_Jinja_in_2007.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Kinori",
+        "license": "Public domain",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Matsushima_Atago_Jinja_in_2007.jpg"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q11493864"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q11493864",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11494971",
@@ -8203,11 +8435,11 @@
     "featured": false,
     "score": 58.28,
     "summary": {
-      "text": "東北大学総合学術博物館（とうほくだいがくそうごうがくじゅつはくぶつかん）は、国立大学法人東北大学学術資源研究公開センターに附属する研究機関、ならびに将来的に建設が予定されている大学博物館の名称である。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%9D%B1%E5%8C%97%E5%A4%A7%E5%AD%A6%E7%B7%8F%E5%90%88%E5%AD%A6%E8%A1%93%E5%8D%9A%E7%89%A9%E9%A4%A8",
+      "text": "The Tohoku University Museum (東北大学総合学術博物館, Tōhoku Daigaku Sōgō Gakujutsu Hakubutsukan) is a university museum affiliated with Tohoku University in Sendai, Miyagi Prefecture, Japan. From the collection of over 2,000,000 items, including rocks, minerals, fossils, archaeological materials, and maps, approximately 1,000 are on display at any one time.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Tohoku_University_Museum",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -8580,7 +8812,7 @@
       "ja": "櫻田山神社",
       "kana": "さくらださんじんじゃ",
       "romaji": "Sakuradasanjinja",
-      "zh_tw": "樱田山神社",
+      "zh_tw": "櫻田山神社",
       "en": "Sakuradasan Shrine"
     },
     "kana_source": "wikidata",
@@ -8627,7 +8859,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11548030",
@@ -8688,7 +8920,7 @@
       "ja": "気仙沼湾",
       "kana": "けせんぬまわん",
       "romaji": "Kesennumawan",
-      "zh_tw": "气仙沼湾",
+      "zh_tw": "氣仙沼灣",
       "en": "Kesennuma Bay"
     },
     "kana_source": "wikipedia",
@@ -8742,7 +8974,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11548175",
@@ -9183,6 +9415,45 @@
     ],
     "status": "published",
     "updated_at": "2026-09-28"
+  },
+  {
+    "id": "wd-Q11563729",
+    "name": {
+      "ja": "湯浜温泉",
+      "kana": "ゆばまおんせん",
+      "romaji": "Yubamaonsen",
+      "zh_tw": "湯浜温泉"
+    },
+    "kana_source": "wikidata",
+    "location": {
+      "lat": 38.917656,
+      "lng": 140.732431
+    },
+    "prefecture": "miyagi",
+    "kind": "major",
+    "themes": [],
+    "tags": [],
+    "featured": false,
+    "score": 49.83,
+    "summary": {
+      "text": "湯浜温泉（ゆはまおんせん）は、宮城県栗原市（旧国陸奥国、明治以降は陸前国）にある温泉。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E6%B9%AF%E6%B5%9C%E6%B8%A9%E6%B3%89",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "images": [],
+    "external_ids": {
+      "wikidata": "Q11563729"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q11563729",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11563928",
@@ -10150,11 +10421,11 @@
     "featured": true,
     "score": 80.93,
     "summary": {
-      "text": "石巻市立大川小学校（いしのまきしりつ おおかわしょうがっこう）は、宮城県石巻市釜谷山根（旧桃生郡河北町）にかつて存在した公立小学校である。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E7%9F%B3%E5%B7%BB%E5%B8%82%E7%AB%8B%E5%A4%A7%E5%B7%9D%E5%B0%8F%E5%AD%A6%E6%A0%A1",
+      "text": "Okawa Elementary School (Japanese: 大川小学校, Hepburn: Ōkawa Shōgakkō) was an educational institution in Ishinomaki City, Miyagi Prefecture, Japan. The school was destroyed in the 2011 Tōhoku earthquake and tsunami. 74 of its 108 students, who had remained at the school on the instructions of their teachers rather than evacuating to higher ground, were killed as the tsunami ran up the nearby Kitakami River. Only four of the students present when the tsunami struck the school survived. Ten of the school's eleven teachers also died.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Okawa_Elementary_School",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -10237,6 +10508,57 @@
     ],
     "status": "published",
     "updated_at": "2026-09-28"
+  },
+  {
+    "id": "wd-Q11587793",
+    "name": {
+      "ja": "碧玉渓",
+      "kana": "へきぎょくけい",
+      "romaji": "Hekigyokukei",
+      "zh_tw": "碧玉渓",
+      "en": "Hekigyokukei"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 37.995247,
+      "lng": 140.563339
+    },
+    "prefecture": "miyagi",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "展望"
+    ],
+    "featured": false,
+    "score": 49.71,
+    "summary": {
+      "text": "碧玉渓（へきぎょくけい）は宮城県白石市にある白石川の渓谷である。白石川のうち、市の西部にある小原温泉より下流方向に当たる谷を指す。地名から小原渓谷とも呼ばれる。碧玉渓の命名は明治時代にこの渓谷を訪れ、透き通るような碧と、玉のような美しさに感銘した徳富蘇峰によってなされた。「碧」の時はその美しい色合いを表すと共に、また分解すると「白石王」ともなり、そのため蘇峰はこの地をことさら気に入っていたとも言われる。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E7%A2%A7%E7%8E%89%E6%B8%93",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "images": [],
+    "external_ids": {
+      "wikidata": "Q11587793",
+      "osm": "node/5114987232"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q11587793",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.openstreetmap.org/node/5114987232",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E7%A2%A7%E7%8E%89%E6%B8%93",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11587847",
@@ -10491,11 +10813,11 @@
     "featured": false,
     "score": 66.98,
     "summary": {
-      "text": "網地島（あじしま）は、宮城県石巻市の太平洋上に浮かぶ島である。牡鹿半島の先端の南西に位置する。島内には網地と長渡（ふたわたし）の2つの集落がある。島の面積6.49平方キロメートル、島の周囲20.7キロメートル、島の人口247人（2020年国勢調査）。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E7%B6%B2%E5%9C%B0%E5%B3%B6",
+      "text": "Aji Island (網地島, Ajishima), an island in the Pacific Ocean off the eastern coast of Honshu, Japan's largest island is situated in the Miyagi Prefecture, southwest of the Oshika Peninsula. Aji Island neighbors Tashirojima Island, which is commonly known as \"Cat Island\" due to its large population of stray cats.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Aji_Island",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -10846,6 +11168,7 @@
       {
         "name": {
           "ja": "下馬",
+          "romaji": "Geba",
           "en": "Geba"
         },
         "distance_m": 1050
@@ -10871,7 +11194,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11620624",
@@ -11144,11 +11467,11 @@
     "featured": false,
     "score": 68.15,
     "summary": {
-      "text": "西方寺（さいほうじ）は、宮城県仙台市青葉区大倉字上下にある浄土宗の寺院。山号は極楽山。本尊は阿弥陀如来画像軸。観蓮社良念により開基された。正式名称で呼ばれることはまれで、一般に定義如来（じょうげにょらい、じょうぎにょらい）と呼ばれる。年間約100万人の観光客が訪れており、門前町を含む観光地でもある。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E8%A5%BF%E6%96%B9%E5%AF%BA_%28%E4%BB%99%E5%8F%B0%E5%B8%82%29",
+      "text": "Saihō-ji (西方寺) is a Buddhist temple built in 1706 belonging to the Jōdo-shū sect in Aoba-ku, Sendai, Miyagi Prefecture, Japan. It is rarely called by its formal name by locals, and is more often called Jogi Nyorai or Jogi-san.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Saih%C5%8D-ji_%28Sendai%29",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -12891,6 +13214,75 @@
     "updated_at": "2026-09-28"
   },
   {
+    "id": "wd-Q11662744",
+    "name": {
+      "ja": "青葉神社",
+      "kana": "あおばじんじゃ",
+      "romaji": "Aobajinja",
+      "zh_tw": "青葉神社",
+      "en": "Aoba Shrine"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 38.434444,
+      "lng": 141.265333
+    },
+    "prefecture": "miyagi",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "神社"
+    ],
+    "featured": false,
+    "score": 49.64,
+    "summary": {
+      "text": "青葉神社（あおばじんじゃ）は、宮城県石巻市門脇字青葉東にある神社である。武振彦命（たけふるひこのみこと。仙台藩祖伊達政宗の神号）を祀る。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E9%9D%92%E8%91%89%E7%A5%9E%E7%A4%BE_%28%E7%9F%B3%E5%B7%BB%E5%B8%82%29",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "石巻あゆみ野",
+          "en": "Ishinomakiayumino"
+        },
+        "distance_m": 560
+      },
+      {
+        "name": {
+          "ja": "蛇田",
+          "kana": "へびた",
+          "romaji": "Hebita",
+          "en": "Hebita"
+        },
+        "distance_m": 1150
+      }
+    ],
+    "images": [],
+    "external_ids": {
+      "wikidata": "Q11662744",
+      "osm": "node/4656258195"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q11662744",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.openstreetmap.org/node/4656258195",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E9%9D%92%E8%91%89%E7%A5%9E%E7%A4%BE_%28%E7%9F%B3%E5%B7%BB%E5%B8%82%29",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
+  },
+  {
     "id": "wd-Q11662833",
     "name": {
       "ja": "青麻神社",
@@ -13606,11 +13998,11 @@
     "featured": false,
     "score": 62.8,
     "summary": {
-      "text": "黄金山神社（こがねやまじんじゃ）は宮城県遠田郡涌谷町黄金迫（こがねはざま）に鎮座する神社。日本で初めて金を産出した場所である。延喜式神名帳の「陸奥国小田郡 黄金山神社」に比定される。旧社格は県社。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E9%BB%84%E9%87%91%E5%B1%B1%E7%A5%9E%E7%A4%BE_%28%E6%B6%8C%E8%B0%B7%E7%94%BA%29",
+      "text": "The Koganeyama Jinja (黄金山神社) is a Shintō shrine in the town of Wakuya  Tōda District, Miyagi Prefecture in the Tōhoku region of northern Japan. It claims to have been built on the site of the first gold mine in Japan, and is protected by the central government as a National Historic Site.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Koganeyama_Shrine",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -14559,7 +14951,7 @@
         "name": {
           "ja": "本塩釜",
           "kana": "ほんしおがま",
-          "romaji": "Hon Shiogama",
+          "romaji": "Hon-Shiogama",
           "en": "Hon-Shiogama"
         },
         "distance_m": 900
@@ -14568,7 +14960,7 @@
         "name": {
           "ja": "西塩釜",
           "kana": "にししおがま",
-          "romaji": "Nishi Shiogama",
+          "romaji": "Nishishiogama",
           "en": "Nishi-Shiogama"
         },
         "distance_m": 910
@@ -14592,7 +14984,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q134704964",
@@ -14867,11 +15259,11 @@
     "featured": false,
     "score": 71.28,
     "summary": {
-      "text": "宮城峡蒸溜所（みやぎきょうじょうりゅうしょ、英: Miyagikyo Distillery）は、宮城県仙台市青葉区ニッカ1番地にある、アサヒグループホールディングスの子会社であるニッカウヰスキーのウイスキー蒸溜所である。正式名称は「ニッカウヰスキー株式会社仙台工場」であるが、「ニッカウヰスキー仙台工場」「ニッカ仙台工場」「ニッカウヰスキー仙台工場宮城峡蒸溜所」「ニッカウヰスキー宮城峡蒸溜所」「仙台宮城峡蒸溜所」などとも表記される。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%AE%AE%E5%9F%8E%E5%B3%A1%E8%92%B8%E6%BA%9C%E6%89%80",
+      "text": "Miyagikyo distillery (Japanese: 宮城峡蒸溜所, Hepburn: Miyagikyō jōryūsho) is a Japanese whisky distillery. It is located near Sendai (仙台市, Sendai-shi), the capital city of Miyagi Prefecture, Tōhoku region, Japan.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Miyagikyo_distillery",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -14973,11 +15365,11 @@
     "featured": false,
     "score": 52.63,
     "summary": {
-      "text": "阿武隈渓谷県立自然公園（あぶくまけいこくけんりつしぜんこうえん）は、宮城県伊具郡丸森町筆甫付近に広がる県立自然公園である。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E9%98%BF%E6%AD%A6%E9%9A%88%E6%B8%93%E8%B0%B7%E7%9C%8C%E7%AB%8B%E8%87%AA%E7%84%B6%E5%85%AC%E5%9C%92",
+      "text": "Abukuma Keikoku Prefectural Natural Park (阿武隈渓谷県立自然公園, Abukuma Keikoku kenritsu shizen kōen) is a Prefectural Natural Park in southern Miyagi Prefecture, Japan. First designated for protection in 1988, the park is within the municipality of Marumori and centres upon the Abukuma River valley.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Abukuma_Keikoku_Prefectural_Natural_Park",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -15268,16 +15660,17 @@
     "featured": false,
     "score": 71.35,
     "summary": {
-      "text": "仙台うみの杜水族館（せんだいうみのもりすいぞくかん）は、宮城県仙台市宮城野区の高砂中央公園に所在する水族館である。かつて宮城県宮城郡松島町に存在したマリンピア松島水族館の後継館として2015年（平成27年）にオープンした。仙台水族館開発が施設を所有し、横浜八景島が運営主体を担う。水族館の公式キャラクターはペンギンのモーリーである。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E4%BB%99%E5%8F%B0%E3%81%86%E3%81%BF%E3%81%AE%E6%9D%9C%E6%B0%B4%E6%97%8F%E9%A4%A8",
+      "text": "Sendai Umino-Mori Aquarium (仙台うみの杜水族館, Sendai Umino-Mori Suizokukan; lit. 'Sendai Ocean's Forest Aquarium') is a public aquarium located in Sendai, Miyagi Prefecture, Japan. It opened in 2015 as a successor to the Marinepia Matsushima Aquarium, which had been open for 88 years.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Sendai_Umino-Mori_Aquarium",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
         "name": {
           "ja": "中野栄",
+          "romaji": "Nakanosakae",
           "en": "Nakanosakae"
         },
         "distance_m": 1110
@@ -15285,6 +15678,7 @@
       {
         "name": {
           "ja": "陸前高砂",
+          "romaji": "Rikuzen-Takasago",
           "en": "Rikuzen-Takasago"
         },
         "distance_m": 1140
@@ -15313,7 +15707,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q17223553",
@@ -15508,6 +15902,65 @@
     "updated_at": "2026-09-28"
   },
   {
+    "id": "wd-Q18991698",
+    "name": {
+      "ja": "観音寺",
+      "kana": "かんのんじ",
+      "romaji": "Kannonji",
+      "zh_tw": "観音寺",
+      "en": "Kan'non-ji Temple"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 38.335556,
+      "lng": 141.156389
+    },
+    "prefecture": "miyagi",
+    "city": "東松島市",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "寺院"
+    ],
+    "featured": false,
+    "score": 49.36,
+    "summary": {
+      "text": "観音寺（かんのんじ）は、宮城県東松島市宮戸門前にある曹洞宗の寺院。三陸三十三観音の第4番霊場である。日本人として初めて世界一周をした太十郎の墓は現在、道路拡張の為に生家直近の室浜から観音寺に移されている。儀兵衛の正式な墓はみつかっていない。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E8%A6%B3%E9%9F%B3%E5%AF%BA_%28%E6%9D%B1%E6%9D%BE%E5%B3%B6%E5%B8%82%29",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f7/KannonjiHigashiMatsushima.JPG/960px-KannonjiHigashiMatsushima.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "ToshiJapon",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:KannonjiHigashiMatsushima.JPG"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q18991698",
+      "osm": "node/10107617896"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q18991698",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://www.openstreetmap.org/node/10107617896",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E8%A6%B3%E9%9F%B3%E5%AF%BA_%28%E6%9D%B1%E6%9D%BE%E5%B3%B6%E5%B8%82%29",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
+  },
+  {
     "id": "wd-Q20042885",
     "name": {
       "ja": "青い鯉のぼりプロジェクト",
@@ -15625,11 +16078,11 @@
     "featured": false,
     "score": 56.77,
     "summary": {
-      "text": "牛野ダム（うしのダム）は、宮城県黒川郡大衡村、一級河川・鳴瀬川水系善川に建設された県営ダムで、吉田川の治水と大衡村等の耕作地への灌漑用水供給を目的としている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E7%89%9B%E9%87%8E%E3%83%80%E3%83%A0",
+      "text": "Ushino Dam (Japanese: 牛野ダム) is a rockfill dam located in Miyagi Prefecture in Japan. The dam is used for irrigation. The catchment area of the dam is 3 km2. The dam impounds about 12  ha of land when full and can store 500 thousand cubic meters of water. The construction of the dam was completed in 1972.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Ushino_Dam",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -16368,11 +16821,11 @@
     "featured": false,
     "score": 57.82,
     "summary": {
-      "text": "長沼フートピア公園（ながぬまフートピアこうえん）は宮城県登米市迫町北方にある公園。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E9%95%B7%E6%B2%BC%E3%83%95%E3%83%BC%E3%83%88%E3%83%94%E3%82%A2%E5%85%AC%E5%9C%92",
+      "text": "Naganuma Futopia Park is a park in Hasamachokitakata in Tome, Miyagi, Japan. The park is known for its Dutch windmill, which was built in 1991.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Naganuma_Futopia_Park",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -16667,6 +17120,52 @@
     ],
     "status": "published",
     "updated_at": "2026-09-28"
+  },
+  {
+    "id": "wd-Q21653622",
+    "name": {
+      "ja": "築館城",
+      "kana": "つきだてじょう",
+      "romaji": "Tsukidatejo",
+      "zh_tw": "築館城",
+      "en": "Tsukidate Castle"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 38.432667,
+      "lng": 141.02025
+    },
+    "prefecture": "miyagi",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "城"
+    ],
+    "featured": false,
+    "score": 49.64,
+    "summary": {
+      "text": "築館城（つきだてじょう）は、宮城県黒川郡大郷町羽生にあった日本の城（丘城）。別名葦が城。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E7%AF%89%E9%A4%A8%E5%9F%8E",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "images": [],
+    "external_ids": {
+      "wikidata": "Q21653622"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q21653622",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E7%AF%89%E9%A4%A8%E5%9F%8E",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q21653779",
@@ -17156,11 +17655,11 @@
     "featured": false,
     "score": 65.45,
     "summary": {
-      "text": "陸奥国分尼寺（むつこくぶんにじ）は、宮城県仙台市若林区白萩町にある曹洞宗の寺院。正式名称は「国分尼寺」。山号は護国山。本尊は正観世音菩薩。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E9%99%B8%E5%A5%A5%E5%9B%BD%E5%88%86%E5%B0%BC%E5%AF%BA",
+      "text": "Mutsu Kokubun-niji (陸奥国分尼寺) is a Buddhist temple in Wakabayashi-ku, Sendai, Japan,  belonging to the Sōtō Zen sect, and is the  provincial convent (\"kokubun-niji\") of former Mutsu Province. The grounds of the temple are  a National Historic Site.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Mutsu_Kokubun-niji",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -17388,7 +17887,7 @@
         "name": {
           "ja": "西塩釜",
           "kana": "にししおがま",
-          "romaji": "Nishi Shiogama",
+          "romaji": "Nishishiogama",
           "en": "Nishi-Shiogama"
         },
         "distance_m": 460
@@ -17397,7 +17896,7 @@
         "name": {
           "ja": "本塩釜",
           "kana": "ほんしおがま",
-          "romaji": "Hon Shiogama",
+          "romaji": "Hon-Shiogama",
           "en": "Hon-Shiogama"
         },
         "distance_m": 580
@@ -17426,7 +17925,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q22119124",
@@ -17777,11 +18276,11 @@
     "featured": false,
     "score": 71.27,
     "summary": {
-      "text": "岩出山城（いわでやまじょう）は、陸奥国（のち陸前国）玉造郡（現・宮城県大崎市）にあった日本の城（一国一城令ののち要害）。伊達氏以前は「岩手沢城」と呼ばれており、古くは足利氏一門で奥州探題であった大崎氏の家臣氏家氏の居城であった。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%B2%A9%E5%87%BA%E5%B1%B1%E5%9F%8E",
+      "text": "Iwadeyama Castle (岩出山城, Iwadeyama-jō) was a castle in Ōsaki, Miyagi Prefecture, Japan.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Iwadeyama_Castle",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -17846,11 +18345,11 @@
     "featured": false,
     "score": 70.46,
     "summary": {
-      "text": "陸奥国仙台藩の一門家臣である岩出山城主家伊達氏の学問所。本項にて解説。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%9C%89%E5%82%99%E9%A4%A8",
+      "text": "The Yūbikan (有備館) is an Edo period structure located in what is now the city of Ōsaki, Miyagi Prefecture, Japan. It served as a han school for the Date clan of Sendai Domain, and is the oldest existing educational structure in Japan. The building, together with its surrounding gardens, were designated a nationally designated Historic Site and Place of Scenic Beauty in 1932.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Y%C5%ABbikan",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -17913,11 +18412,11 @@
     "featured": false,
     "score": 67.46,
     "summary": {
-      "text": "青葉神社（あおばじんじゃ）は、宮城県仙台市青葉区青葉町にある神社。仙臺伍社巡り（仙台五社巡り）の一社である。旧社格は県社。1874年に創建され、武振彦命（たけふるひこのみこと、仙台藩祖伊達政宗の神号）を祀る。江戸時代後期から明治時代初期に流行した藩祖を祀った神社のひとつ。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E9%9D%92%E8%91%89%E7%A5%9E%E7%A4%BE",
+      "text": "Aoba Shrine (青葉神社, Aoba Jinja) is the memorial shrine of Date Masamune, located in Aoba-ku, Sendai, Miyagi Prefecture, Japan, near the site of the former Aoba Castle. The shrine was built in 1873 by petition of former retainers of the Date clan of former Sendai Domain to enshrine the deified spirit (kami) of Date Masamune under the name of Takefuruhiko-no-mikoto.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Aoba_Shrine",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -18274,11 +18773,11 @@
     "featured": false,
     "score": 67.89,
     "summary": {
-      "text": "円通院（えんつういん。旧字体：圓通院）は、宮城県宮城郡松島町（日本三景・松島）にある臨済宗妙心寺派の寺院である。本尊は聖観世音菩薩。瑞巌寺の南側に隣接してある。通称「バラ寺」「薔薇寺」。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%86%86%E9%80%9A%E9%99%A2_%28%E5%AE%AE%E5%9F%8E%E7%9C%8C%E6%9D%BE%E5%B3%B6%E7%94%BA%29",
+      "text": "Entsū-in (円通院) is a Buddhist temple located in the town of  Matsushima, Miyagi Prefecture, Japan. Belonging to the  Myōshin-ji-branch of Rinzai Zen, it was founded in 1647 next to Zuigan-ji as the memorial temple for Date Mitsumune, the grandson of Date Masamune. The temple is noted for its rose gardens. The mausoleum of Date Mitsumune is decorated with Namban art motifs inspired by late Sengoku period contact with the West, and has been designated an Important Cultural Property. The temple also has a Japanese garden attributed to Kobori Enshū.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Ents%C5%AB-in_%28Matsushima%29",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -18515,11 +19014,11 @@
     "featured": false,
     "score": 61.46,
     "summary": {
-      "text": "高蔵寺（こうぞうじ）は、宮城県角田市にある真言宗智山派の寺である。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E9%AB%98%E8%94%B5%E5%AF%BA_%28%E8%A7%92%E7%94%B0%E5%B8%82%29",
+      "text": "Kōzō-ji (高蔵寺) is a Buddhist temple located in the city of Kakuda, Miyagi Prefecture, Japan.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/K%C5%8Dz%C5%8D-ji_%28Kakuda%29",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -18882,7 +19381,7 @@
       "ja": "仙台市天文台",
       "kana": "せんだいしてんもんだい",
       "romaji": "Sendaishitenmondai",
-      "zh_tw": "仙台天文台",
+      "zh_tw": "仙台天文臺",
       "en": "Sendai Astronomical Observatory"
     },
     "kana_source": "osm",
@@ -18928,7 +19427,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q4701257",
@@ -18950,14 +19449,14 @@
     "tags": [
       "名勝"
     ],
-    "featured": true,
+    "featured": false,
     "score": 72.89,
     "summary": {
-      "text": "秋保大滝（あきうおおたき）は、宮城県仙台市太白区の秋保（旧秋保町）にある滝である。名取川上流部において、落差55メートル、幅6メートルで流れ落ちる。国の名勝に指定されており、日本の滝百選の1つにも数えられる。諸説あるが「日本三大名瀑」あるいは「日本三名瀑」の1つに数えられることもある。厳冬期の2月上旬頃には滝が凍る場合がある。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E7%A7%8B%E4%BF%9D%E5%A4%A7%E6%BB%9D",
+      "text": "Akiu Great Falls (秋保大滝, Akiu Ōtaki) is a waterfall located in  Taihaku-ku, Sendai, Miyagi Prefecture, Japan. It is a nationally designated Place of Scenic Beauty. It is one of \"Japan’s Top 100 Waterfalls\", in a listing published by the Japanese Ministry of the Environment in 1990.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Akiu_Great_Falls",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -18977,7 +19476,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q486400",
@@ -19173,11 +19672,11 @@
     "featured": false,
     "score": 58.97,
     "summary": {
-      "text": "亀岡八幡宮（かめおかはちまんぐう）は、宮城県仙台市青葉区川内亀岡町にある神社。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E4%BA%80%E5%B2%A1%E5%85%AB%E5%B9%A1%E5%AE%AE_%28%E4%BB%99%E5%8F%B0%E5%B8%82%29",
+      "text": "Kameoka Hachimangū (亀岡八幡宮) is a Shinto shrine in Aoba-ku, Sendai, Miyagi, Japan.  It is the tutelary shrine of the Date clan.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Kameoka_Hachimang%C5%AB",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -19316,11 +19815,11 @@
     "featured": false,
     "score": 58.63,
     "summary": {
-      "text": "東北大学学術資源研究公開センター植物園（とうほくだいがくがくじゅつしげんけんきゅうこうかいセンターしょくぶつえん）は、東北大学が設置する自然植物園。略称は「東北大学植物園」。公益社団法人日本植物園協会及び植物園自然保護国際機構 (BGCI) 加盟園。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%9D%B1%E5%8C%97%E5%A4%A7%E5%AD%A6%E5%AD%A6%E8%A1%93%E8%B3%87%E6%BA%90%E7%A0%94%E7%A9%B6%E5%85%AC%E9%96%8B%E3%82%BB%E3%83%B3%E3%82%BF%E3%83%BC%E6%A4%8D%E7%89%A9%E5%9C%92",
+      "text": "The Botanical Garden of Tohoku University (東北大学植物園, Tōhoku Daigaku Shokubutsuen; 490,000 m2) is a botanical garden operated by Tohoku University at Kawauchi 12-2, Aoba-ku, Sendai, Miyagi Prefecture, Japan. It is open daily.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Botanical_Garden_of_Tohoku_University",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -19432,11 +19931,11 @@
     "featured": false,
     "score": 71.16,
     "summary": {
-      "text": "竹駒神社（たけこまじんじゃ）は、宮城県岩沼市中心部にある稲荷神社である。旧社格は県社で、第二次大戦後は神社本庁の別表神社となった。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E7%AB%B9%E9%A7%92%E7%A5%9E%E7%A4%BE",
+      "text": "The Takekoma Inari Shrine (竹駒稲荷神社) is a Shintō shrine in the city of Iwanuma in Miyagi Prefecture, Japan. It is considered one of the three main shrines dedicated to the kami Inari, and claims to be the second-oldest Inari shrine in Japan. It was also referred to as the Takekoma Myojin (武隈明神)",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Takekoma_Inari_Shrine",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -20287,7 +20786,7 @@
       "ja": "シャークミュージアム",
       "kana": "しゃーくみゅーじあむ",
       "romaji": "Shakumyujiamu",
-      "zh_tw": "鲨鱼博物馆",
+      "zh_tw": "鯊魚博物館",
       "en": "Shark Museum"
     },
     "kana_source": "wikidata",
@@ -20353,7 +20852,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q61058067",
@@ -20796,11 +21295,11 @@
     "featured": false,
     "score": 64.69,
     "summary": {
-      "text": "釜房ダム（かまふさダム）は、宮城県柴田郡川崎町大字小野と大字支倉にまたがる、一級河川・名取川水系碁石川に建設されたダムである。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E9%87%9C%E6%88%BF%E3%83%80%E3%83%A0",
+      "text": "Kamafusa Dam (釜房ダム, Kamafusa damu) is a multi-purpose concrete gravity dam in Kawasaki, Miyagi Prefecture, Japan, completed in 1970.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Kamafusa_Dam",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -20847,11 +21346,11 @@
     "featured": false,
     "score": 68.24,
     "summary": {
-      "text": "アエル (AER) は、宮城県仙台市青葉区中央にある超高層ビルである。ビルの規模は地下3階・地上31階（塔屋2階）建て、延床面積は7万3131平方メートル。地下の駐車場、1階から4階の商業施設「Shop & Wonder AER」、5階から8階の多目的ホール等の公共施設、9階から30階のオフィスフロアから構成され、最上階の31階には無料の展望テラスがある。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E3%82%A2%E3%82%A8%E3%83%AB_%28%E4%BB%99%E5%8F%B0%E5%B8%82%29",
+      "text": "Aer (アエル, aeru) is a skyscraper in Sendai, Miyagi Prefecture, Japan. Rising 31 stories to a height of 145.5 m, Aer was the tallest building in the Tōhoku region until 2010 and the completion of the Sendai Trust Tower (37 stories/180 m) and was partially constructed by robots.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Aer_%28Sendai%29",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -20913,11 +21412,11 @@
     "featured": false,
     "score": 60.25,
     "summary": {
-      "text": "化女沼ダム（けじょぬまダム）は、宮城県大崎市にある宮城県土木部河川課・大崎地方ダム総合事務所が管理する県営ダム。一級河川・北上川水系長者川の水源であり、田尻川の治水ダムであるが、流域農地への不特定利水も行う。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%8C%96%E5%A5%B3%E6%B2%BC%E3%83%80%E3%83%A0",
+      "text": "Kejonuma Dam (Japanese: 化女沼ダム) is an earthen dam in the city of Ōsaki, Miyagi Prefecture, Japan, completed in 1995. The dam crosses the Tajiri River, a branch of the Kitakami River and utilises the basin of a pre-existing natural lake.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Kejyonuma_Dam",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -20977,7 +21476,7 @@
         "name": {
           "ja": "多賀城",
           "kana": "たがじょう",
-          "romaji": "Tagajo",
+          "romaji": "Tagajō",
           "en": "Tagajo"
         },
         "distance_m": 500
@@ -21005,7 +21504,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q6413909",
@@ -21028,11 +21527,11 @@
     "featured": false,
     "score": 75.18,
     "summary": {
-      "text": "金華山（きんかさん）は、宮城県石巻市の太平洋上にある島で、牡鹿半島の先端の東側に位置する。島の周囲26キロメートル、面積約12平方キロメートル。人口は5人。これは全員が後述の神社の神職であり、他に一般の居住者はいない。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E9%87%91%E8%8F%AF%E5%B1%B1_%28%E5%AE%AE%E5%9F%8E%E7%9C%8C%29",
+      "text": "Kinkasan (金華山, Kinkasan; or Kinkazan) is a small island in Miyagi Prefecture in north-eastern Japan. It lies in the Pacific Ocean approximately one kilometer off the Oshika Peninsula.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Kinkasan",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -21248,6 +21747,77 @@
     "updated_at": "2026-09-28"
   },
   {
+    "id": "wd-Q65249618",
+    "name": {
+      "ja": "千田家住宅",
+      "kana": "ちだけじゅうたく",
+      "romaji": "Chidakejutaku",
+      "zh_tw": "千田家住宅",
+      "en": "Chida's House"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 38.905444,
+      "lng": 141.572472
+    },
+    "prefecture": "miyagi",
+    "kind": "major",
+    "themes": [],
+    "tags": [],
+    "featured": false,
+    "score": 49.5,
+    "summary": {
+      "text": "千田家住宅（ちだけじゅうたく）は、宮城県気仙沼市内湾地区にある、歴史的建築物。主屋等が日本国の登録有形文化財となっている。同地区では当住宅を含めた多くの文化財群が東北地方太平洋沖地震の津波によって被害を受け、復旧作業が求められている。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E5%8D%83%E7%94%B0%E5%AE%B6%E4%BD%8F%E5%AE%85",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "内湾入口（八日町）",
+          "kana": "ないわんいりぐち(ようかまち)",
+          "romaji": "Naiwaniriguchi(yokamachi)",
+          "en": "Naiwan-Iriguchi (Yōkamachi)"
+        },
+        "distance_m": 420
+      },
+      {
+        "name": {
+          "ja": "不動の沢",
+          "kana": "ふどうのさわ",
+          "romaji": "Fudōnosawa",
+          "en": "Fudōnosawa"
+        },
+        "distance_m": 1150
+      }
+    ],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a0/Chida_house%2CKesennuma.jpg/960px-Chida_house%2CKesennuma.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Ty19080914",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Chida_house,Kesennuma.jpg"
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q65249618"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q65249618",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E5%8D%83%E7%94%B0%E5%AE%B6%E4%BD%8F%E5%AE%85",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
+  },
+  {
     "id": "wd-Q65259089",
     "name": {
       "ja": "天守閣自然公園",
@@ -21362,11 +21932,11 @@
     "featured": false,
     "score": 60.6,
     "summary": {
-      "text": "長沼ダム（ながぬまダム）は、宮城県登米市にある、一級河川・北上川水系の天然湖「長沼」に建設されたダムである。宮城県土木部の施工による県営ダムであり、自然湖をダム化する例としては過去最大規模の事業である。堤高が15.3メートルあり、アースダムとしては総貯水容量（3180万立方メートル）と湛水面積（ダム湖の面積6.1平方キロメートル）で日本一の規模を誇る。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E9%95%B7%E6%B2%BC%E3%83%80%E3%83%A0",
+      "text": "Naganuma Dam (Japanese: 長沼ダム) is a dam in the city of Tome, Miyagi, Japan, completed in May 2014. The dam is located on the Hasama River, a branch of the Kitakami River system.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Naganuma_Dam_%28Miyagi%29",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -21413,11 +21983,11 @@
     "featured": false,
     "score": 64.96,
     "summary": {
-      "text": "鳴子ダム（なるこダム）は、宮城県大崎市、一級河川・北上川水系江合川に建設されたダムである。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E9%B3%B4%E5%AD%90%E3%83%80%E3%83%A0",
+      "text": "Naruko Dam (Japanese: 鳴子ダム, Naruko Damu) is a concrete gravity-arch dam on the Eaigawa River, a tributary of the Kitakami River system, located in the city of Ōsaki, Miyagi Prefecture, Japan. Completed in 1958 by Kajima Corporation, it is managed by the Tohoku Regional Development Bureau of the Ministry of Land, Infrastructure, Transport and Tourism.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Naruko_Dam",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -21534,11 +22104,11 @@
     "featured": false,
     "score": 63.72,
     "summary": {
-      "text": "齋藤氏庭園（さいとうしていえん）は、宮城県石巻市前谷地（旧桃生郡河南町）にある明治時代後期に造られた日本庭園。当地の旧家で大地主であった齋藤氏の庭園である。2005年（平成17年）7月14日に国の名勝に指定された。2011年（平成23年）3月11日に発生した東日本大震災により被災し休園していたが、同年7月31日から観覧を再開した。一部見学できない施設等があり、観覧料は無料となっている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E9%BD%8B%E8%97%A4%E6%B0%8F%E5%BA%AD%E5%9C%92",
+      "text": "Saitō Garden (齋藤氏庭園, Saitōshi-teien) is a Japanese garden in the city of Ishinomaki, Miyagi Prefecture, in the Tōhoku region of northern Japan. It was established in the Meiji period by the ninth-generation head of the Saitō family, a prominent regional landlord.  In 2005 Saitōshi-teien was designated a national Place of Scenic Beauty.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Sait%C5%8D_Garden_%28Ishinomaki%29",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -21595,11 +22165,11 @@
     "featured": false,
     "score": 69.04,
     "summary": {
-      "text": "作並温泉（さくなみおんせん）は、宮城県仙台市青葉区作並にある温泉である。かつては陸奥国、明治以降は陸前国に位置した。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E4%BD%9C%E4%B8%A6%E6%B8%A9%E6%B3%89",
+      "text": "Sakunami Onsen (作並温泉) is a hot spring resort district in northern Japan about 25 kilometres (16 mi) to the northwest of downtown Sendai, Miyagi Prefecture.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Sakunami_Onsen",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -21642,11 +22212,11 @@
     "featured": false,
     "score": 75.62,
     "summary": {
-      "text": "仙台ハイランド（せんだいハイランド）は、宮城県仙台市青葉区にあった、遊園地・ゴルフ場・サーキットから構成される複合レジャー施設である。かつては西仙台ハイランドともいった。スキー場の営業もあった。1973年（昭和48年）にゴルフ場が開場し、その後、遊園地やサーキットがオープンした。2014年（平成26年）から2016年（平成28年）にかけて各施設の営業が順次終了し閉鎖された。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E4%BB%99%E5%8F%B0%E3%83%8F%E3%82%A4%E3%83%A9%E3%83%B3%E3%83%89",
+      "text": "Sendai Hi-Land Raceway was a 4.030 km (2.504 mi) motor racing circuit in 12 Hayasaka, Shinkawa, Aoba-ku, Sendai, Miyagi Prefecture, Japan.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Sendai_Hi-Land_Raceway",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [],
     "external_ids": {
@@ -21688,11 +22258,11 @@
     "featured": false,
     "score": 64.33,
     "summary": {
-      "text": "七ヶ宿ダム（しちかしゅくダム）は、宮城県刈田郡七ヶ宿町、一級河川・阿武隈川水系白石川に建設されたダムである。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E4%B8%83%E3%83%B6%E5%AE%BF%E3%83%80%E3%83%A0",
+      "text": "Shichikashuku Dam (Japanese: 七ヶ宿ダム) is a rock-fill dam in the town of Shichikashuku, Miyagi, Japan, completed in 1991. The dam crosses the Shiroishi River, a branch of the Abukuma River system.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Shichikashuku_Dam",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -21729,7 +22299,7 @@
       "ja": "氷の水族館",
       "kana": "こおりのすいぞくかん",
       "romaji": "Korinosuizokukan",
-      "zh_tw": "冰水族馆",
+      "zh_tw": "冰水族館",
       "en": "Ice Museum"
     },
     "kana_source": "wikipedia",
@@ -21746,11 +22316,11 @@
     "featured": false,
     "score": 59.56,
     "summary": {
-      "text": "氷の水族館（こおりのすいぞくかん）は、水産物を氷の中に凍らせて、それをみせる施設、または催しのこと。日本では宮城県気仙沼市魚市場前の「氷の水族館」が知られる。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%B0%B7%E3%81%AE%E6%B0%B4%E6%97%8F%E9%A4%A8",
+      "text": "The Ice Aquarium (氷の水族館, Kōri no Suizokukan) is a tourist attraction in the north-eastern port of Kesennuma, Miyagi, Japan, operated by the Okamoto Ice Refrigeration Plant. It features approximately 450 marine creatures that were flash-frozen into blocks of ice after being caught by local fishermen. The attraction was established in 2002. It showcases more than 70 different species of sea creatures, including crab, squid and octopus, Due to the extreme cold temperature inside the Ice Aquarium, visitors are advised to stay for only five minutes.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/The_Ice_Aquarium",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -21799,7 +22369,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q7830685",
@@ -21824,11 +22394,11 @@
     "featured": false,
     "score": 64.41,
     "summary": {
-      "text": "旧登米高等尋常小学校校舎（きゅうとよまじんじょうしょうがっこうこうしゃ）は、宮城県登米市登米町寺池にある歴史的建造物。国の重要文化財に指定されている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%97%A7%E7%99%BB%E7%B1%B3%E9%AB%98%E7%AD%89%E5%B0%8B%E5%B8%B8%E5%B0%8F%E5%AD%A6%E6%A0%A1%E6%A0%A1%E8%88%8E",
+      "text": "Toyoma Education Museum exhibits the history of education in Japan since the Meiji period. It is housed in the former Tome Elementary School Building (旧登米高等尋常小学校校舎) of 1888 in the city of Tome, Miyagi Prefecture. The U-shaped two-storey building around a courtyard, lined with balconies and with half-hexagons at the end of each wing, was designed by Kisaburo Yamazoe. It is representative of the western-inspired architecture of the Meiji period and in 1981 was designated an Important Cultural Property.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Toyoma_Education_Museum",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -22170,6 +22740,67 @@
     "updated_at": "2026-09-28"
   },
   {
+    "id": "wd-Q85876158",
+    "name": {
+      "ja": "仙台市若林区文化センター",
+      "kana": "せんだいしわかばやしくぶんかせんたー",
+      "romaji": "Sendaishiwakabayashikubunkasenta",
+      "zh_tw": "仙台市若林区文化センター"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 38.2425,
+      "lng": 140.901111
+    },
+    "prefecture": "miyagi",
+    "kind": "major",
+    "themes": [],
+    "tags": [],
+    "featured": false,
+    "score": 49.33,
+    "summary": {
+      "text": "仙台市若林区文化センター（せんだいしわかばやしくぶんかセンター）は、宮城県仙台市若林区にある複合施設。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E4%BB%99%E5%8F%B0%E5%B8%82%E8%8B%A5%E6%9E%97%E5%8C%BA%E6%96%87%E5%8C%96%E3%82%BB%E3%83%B3%E3%82%BF%E3%83%BC",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-09-29"
+    },
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "薬師堂",
+          "romaji": "Yakushido",
+          "en": "Yakushido"
+        },
+        "distance_m": 900
+      },
+      {
+        "name": {
+          "ja": "河原町",
+          "romaji": "Kawaramachi",
+          "en": "Kawaramachi"
+        },
+        "distance_m": 1170
+      }
+    ],
+    "images": [],
+    "external_ids": {
+      "wikidata": "Q85876158"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q85876158",
+        "fetched_at": "2026-09-29"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E4%BB%99%E5%8F%B0%E5%B8%82%E8%8B%A5%E6%9E%97%E5%8C%BA%E6%96%87%E5%8C%96%E3%82%BB%E3%83%B3%E3%82%BF%E3%83%BC",
+        "fetched_at": "2026-09-29"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-29"
+  },
+  {
     "id": "wd-Q85883348",
     "name": {
       "ja": "花座",
@@ -22477,11 +23108,11 @@
     "featured": false,
     "score": 58.13,
     "summary": {
-      "text": "仙台市歴史民俗資料館（せんだいしれきしみんぞくしりょうかん）は、宮城県仙台市宮城野区の榴岡公園の中にある仙台市立の資料館である。1979年（昭和54年）に開館した。近代以降の仙台地域における庶民生活に関わるものを資料として、これを調査、研究、展示している。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E4%BB%99%E5%8F%B0%E5%B8%82%E6%AD%B4%E5%8F%B2%E6%B0%91%E4%BF%97%E8%B3%87%E6%96%99%E9%A4%A8",
+      "text": "Sendai City Museum of History and Folklore (仙台市歴史民俗資料館, Sendai-shi Rekishi Minzoku Shiryōkan) opened in Tsutsujigaoka Park, Sendai, Miyagi Prefecture, Japan in 1979. The museum building, the former barracks of the 4th Infantry Regiment, built in 1874 and extended in 1876, is the oldest surviving Western-style building in the prefecture and a Prefectural Tangible Cultural Property.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Sendai_City_Museum_of_History_and_Folklore",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "nearest_stations": [
       {
@@ -22624,11 +23255,11 @@
     "featured": true,
     "score": 81.13,
     "summary": {
-      "text": "スポーツランドSUGO（スポーツランドすごう）は、宮城県柴田郡村田町菅生にある総合モータースポーツ施設である。ヤマハ発動機の子会社である株式会社菅生によって運営され、国際自動車連盟（FIA）公認の国際レーシングコース（グレード2）を含む4つの専用コースを有する、モトクロス世界選手権・日本グランプリの開催地である。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E3%82%B9%E3%83%9D%E3%83%BC%E3%83%84%E3%83%A9%E3%83%B3%E3%83%89SUGO",
+      "text": "Sportsland Sugo (スポーツランドSUGO, Supōtsurando Sugo) is a motorsports facility in the town of Murata, Shibata District, Miyagi Prefecture, Japan.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Sportsland_Sugo",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-09-29"
     },
     "images": [
       {
@@ -22727,7 +23358,7 @@
     "kind": "major",
     "themes": [],
     "tags": [],
-    "featured": false,
+    "featured": true,
     "score": 79.44,
     "summary": {
       "text": "仙台媒體中心，是在仙台市青葉區開設的複合文化設施。於2001年1月開館，由伊東豊雄設計。",
@@ -22773,6 +23404,6 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-29"
   }
 ]
