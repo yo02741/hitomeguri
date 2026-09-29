@@ -40,6 +40,8 @@ OFFICIAL_TOP_N = 400
 # 第 N 名加 OFFICIAL_BONUS_MIN（沒有維基條目的購物中心、市場也能進前段）
 OFFICIAL_BONUS_MAX = 80.0
 OFFICIAL_BONUS_MIN = 20.0
+# 官方網站沒有熱門排序（東京、京都、大阪）：列出的景點一律加這麼多（使用者：接上但不加權排序）
+OFFICIAL_BONUS_UNRANKED = 20.0
 # 官方網站上的地點併入既有候選：名稱相同的距離上限
 OFFICIAL_MATCH_DISTANCE_M = 2000
 # 名稱完全相同時的距離上限（湖、山、半島這類大範圍景點）

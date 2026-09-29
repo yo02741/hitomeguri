@@ -733,7 +733,9 @@ def score(drafts: dict[str, Draft]) -> None:
             s += config.GUIDE_TIER_BONUS.get(d.tier, 0.0)
         if d.listed:
             s += config.TOURISM_LIST_BONUS
-        if d.official:
+        if d.official and d.official.rank is None:
+            s += config.OFFICIAL_BONUS_UNRANKED
+        elif d.official and d.official.rank is not None:
             share = max(1 - (d.official.rank - 1) / config.OFFICIAL_TOP_N, 0)
             span = config.OFFICIAL_BONUS_MAX - config.OFFICIAL_BONUS_MIN
             s += config.OFFICIAL_BONUS_MIN + span * share

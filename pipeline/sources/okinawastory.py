@@ -29,7 +29,7 @@ class OfficialSpot:
     id: str
     name: str
     url: str
-    rank: int
+    rank: int | None  # 官方網站沒有熱門排序時為 None（東京、京都、大阪）
     lat: float | None = None
     lng: float | None = None
     categories: list[str] = field(default_factory=list)
