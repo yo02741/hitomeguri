@@ -8,6 +8,7 @@ import {
   fetchFeatured,
   fetchFestivals,
   fetchFlights,
+  fetchPhrases,
   fetchSeasons,
   fetchSpecialties,
   type FlightRoute,
@@ -185,6 +186,13 @@ export const useCatalogStore = defineStore('catalog', () => {
     })
   }
 
+  /** 旅前準備的會話：開旅前準備頁時才載入 */
+  const phrases = shallowRef<import('../services/prep').Phrase[] | null>(null)
+  async function loadPhrases() {
+    if (phrases.value) return phrases.value
+    return once('phrases', async () => (phrases.value = await fetchPhrases()))
+  }
+
   /** 全國搜尋索引：第一次搜尋時才載入 */
   let searchLoaded = false
   async function loadSearch(): Promise<void> {
@@ -204,6 +212,6 @@ export const useCatalogStore = defineStore('catalog', () => {
   return {
     loadSearch,
     index, mapSpots, featured, loadFeatured, details, specialties, flights, seasons, festivals, loadFestivals, rail, loadRail, loadExtras, loadIndex, available,
-    loadMap, loadAllMaps, loadDetail, getSpot, packs, loadPack,
+    loadMap, loadAllMaps, loadDetail, getSpot, packs, loadPack, phrases, loadPhrases,
   }
 })

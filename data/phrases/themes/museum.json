@@ -1,0 +1,128 @@
+[
+  {
+    "id": "museum-josetsu",
+    "context": {
+      "spot_kind": "museum",
+      "situation": "museum_ticket"
+    },
+    "direction": "read",
+    "ja": "常設展",
+    "kana": "じょうせつてん",
+    "romaji": "Jōsetsuten",
+    "zh_tw": "常設展",
+    "priority": 2,
+    "reviewed": false
+  },
+  {
+    "id": "museum-kikaku",
+    "context": {
+      "spot_kind": "museum",
+      "situation": "museum_ticket"
+    },
+    "direction": "read",
+    "ja": "企画展",
+    "kana": "きかくてん",
+    "romaji": "Kikakuten",
+    "zh_tw": "特展",
+    "priority": 2,
+    "reviewed": false
+  },
+  {
+    "id": "museum-kyukanbi",
+    "context": {
+      "spot_kind": "museum",
+      "situation": "museum_ticket"
+    },
+    "direction": "read",
+    "ja": "休館日",
+    "kana": "きゅうかんび",
+    "romaji": "Kyūkanbi",
+    "zh_tw": "休館日",
+    "priority": 1,
+    "reviewed": false
+  },
+  {
+    "id": "museum-locker",
+    "context": {
+      "spot_kind": "museum",
+      "situation": "museum_ticket"
+    },
+    "direction": "hear",
+    "ja": "ロッカーをご利用ください",
+    "kana": "ろっかーをごりようください",
+    "romaji": "Rokkā o go-riyō kudasai",
+    "zh_tw": "請使用置物櫃",
+    "priority": 3,
+    "reviewed": false
+  },
+  {
+    "id": "museum-nyukanryo",
+    "context": {
+      "spot_kind": "museum",
+      "situation": "museum_ticket"
+    },
+    "direction": "read",
+    "ja": "入館料",
+    "kana": "にゅうかんりょう",
+    "romaji": "Nyūkanryō",
+    "zh_tw": "入館費",
+    "priority": 1,
+    "reviewed": false
+  },
+  {
+    "id": "museum-otona",
+    "context": {
+      "spot_kind": "museum",
+      "situation": "museum_ticket"
+    },
+    "direction": "say",
+    "ja": "大人二枚お願いします",
+    "kana": "おとなにまいおねがいします",
+    "romaji": "Otona ni-mai onegai shimasu",
+    "zh_tw": "兩張全票",
+    "priority": 1,
+    "reviewed": false
+  },
+  {
+    "id": "museum-sainyukan",
+    "context": {
+      "spot_kind": "museum",
+      "situation": "museum_ticket"
+    },
+    "direction": "read",
+    "ja": "再入館不可",
+    "kana": "さいにゅうかんふか",
+    "romaji": "Sai-nyūkan fuka",
+    "zh_tw": "不可再入館",
+    "priority": 3,
+    "reviewed": false
+  },
+  {
+    "id": "museum-saishu",
+    "context": {
+      "spot_kind": "museum",
+      "situation": "museum_ticket"
+    },
+    "direction": "read",
+    "ja": "最終入館",
+    "kana": "さいしゅうにゅうかん",
+    "romaji": "Saishū nyūkan",
+    "zh_tw": "最後入館時間",
+    "priority": 2,
+    "reviewed": false
+  },
+  {
+    "id": "museum-satsuei",
+    "context": {
+      "spot_kind": "museum",
+      "situation": "museum_ticket"
+    },
+    "direction": "read",
+    "ja": "撮影禁止",
+    "kana": "さつえいきんし",
+    "romaji": "Satsuei kinshi",
+    "zh_tw": "禁止攝影",
+    "priority": 1,
+    "reviewed": false
+  }
+]

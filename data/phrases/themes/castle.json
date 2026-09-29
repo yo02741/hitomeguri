@@ -1,0 +1,72 @@
+[
+  {
+    "id": "castle-ashimoto",
+    "context": {
+      "spot_kind": "castle",
+      "situation": "castle_visit"
+    },
+    "direction": "read",
+    "ja": "足元注意",
+    "kana": "あしもとちゅうい",
+    "romaji": "Ashimoto chūi",
+    "zh_tw": "小心腳步",
+    "priority": 2,
+    "reviewed": false
+  },
+  {
+    "id": "castle-junro",
+    "context": {
+      "spot_kind": "castle",
+      "situation": "castle_visit"
+    },
+    "direction": "read",
+    "ja": "順路",
+    "kana": "じゅんろ",
+    "romaji": "Junro",
+    "zh_tw": "參觀路線",
+    "priority": 2,
+    "reviewed": false
+  },
+  {
+    "id": "castle-kutsu",
+    "context": {
+      "spot_kind": "castle",
+      "situation": "castle_visit"
+    },
+    "direction": "read",
+    "ja": "靴を脱いでください",
+    "kana": "くつをぬいでください",
+    "romaji": "Kutsu o nuide kudasai",
+    "zh_tw": "請脫鞋",
+    "priority": 1,
+    "reviewed": false
+  },
+  {
+    "id": "castle-nyujoryo",
+    "context": {
+      "spot_kind": "castle",
+      "situation": "castle_visit"
+    },
+    "direction": "read",
+    "ja": "入城料",
+    "kana": "にゅうじょうりょう",
+    "romaji": "Nyūjōryō",
+    "zh_tw": "入城費",
+    "priority": 2,
+    "reviewed": false
+  },
+  {
+    "id": "castle-tenshu",
+    "context": {
+      "spot_kind": "castle",
+      "situation": "castle_visit"
+    },
+    "direction": "read",
+    "ja": "天守閣",
+    "kana": "てんしゅかく",
+    "romaji": "Tenshukaku",
+    "zh_tw": "天守閣",
+    "priority": 2,
+    "reviewed": false
+  }
+]

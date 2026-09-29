@@ -18,6 +18,27 @@ export const router = createRouter({
       meta: { title: '深度探索' },
     },
     { path: '/trips', name: 'trips', component: () => import('../views/TripsView.vue'), meta: { title: '行程' } },
+    {
+      path: '/trips/:id',
+      name: 'trip',
+      component: () => import('../views/TripView.vue'),
+      props: true,
+      meta: { title: '行程' },
+    },
+    {
+      path: '/trips/:id/prep',
+      name: 'prep',
+      component: () => import('../views/PrepView.vue'),
+      props: true,
+      meta: { title: '旅前準備' },
+    },
+    {
+      path: '/trips/:id/prep/practice',
+      name: 'practice',
+      component: () => import('../views/PracticeView.vue'),
+      props: true,
+      meta: { title: '練習' },
+    },
     { path: '/log', name: 'log', component: () => import('../views/LogView.vue'), meta: { title: '紀錄' } },
     { path: '/me', name: 'me', component: () => import('../views/MeView.vue'), meta: { title: '收藏與清單' } },
     {

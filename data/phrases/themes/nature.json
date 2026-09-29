@@ -1,0 +1,44 @@
+[
+  {
+    "id": "nature-kaien",
+    "context": {
+      "spot_kind": "nature",
+      "situation": "outdoors"
+    },
+    "direction": "read",
+    "ja": "開園時間",
+    "kana": "かいえんじかん",
+    "romaji": "Kaien jikan",
+    "zh_tw": "開園時間",
+    "priority": 2,
+    "reviewed": false
+  },
+  {
+    "id": "nature-tachiiri",
+    "context": {
+      "spot_kind": "nature",
+      "situation": "outdoors"
+    },
+    "direction": "read",
+    "ja": "立入禁止",
+    "kana": "たちいりきんし",
+    "romaji": "Tachiiri kinshi",
+    "zh_tw": "禁止進入",
+    "priority": 2,
+    "reviewed": false
+  },
+  {
+    "id": "nature-tenbodai",
+    "context": {
+      "spot_kind": "nature",
+      "situation": "outdoors"
+    },
+    "direction": "read",
+    "ja": "展望台",
+    "kana": "てんぼうだい",
+    "romaji": "Tenbōdai",
+    "zh_tw": "展望台",
+    "priority": 3,
+    "reviewed": false
+  }
+]

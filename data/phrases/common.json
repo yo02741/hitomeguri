@@ -1,0 +1,573 @@
+[
+  {
+    "id": "common-general-daijobu",
+    "context": {
+      "situation": "general"
+    },
+    "direction": "say",
+    "ja": "大丈夫です",
+    "kana": "だいじょうぶです",
+    "romaji": "Daijōbu desu",
+    "zh_tw": "不用了（婉拒）",
+    "priority": 1,
+    "reviewed": false
+  },
+  {
+    "id": "common-general-kinen",
+    "context": {
+      "situation": "general"
+    },
+    "direction": "read",
+    "ja": "禁煙",
+    "kana": "きんえん",
+    "romaji": "Kin'en",
+    "zh_tw": "禁菸",
+    "priority": 3,
+    "reviewed": false
+  },
+  {
+    "id": "common-general-kore",
+    "context": {
+      "situation": "shopping"
+    },
+    "direction": "say",
+    "ja": "これをください",
+    "kana": "これをください",
+    "romaji": "Kore o kudasai",
+    "zh_tw": "請給我這個",
+    "priority": 1,
+    "reviewed": false
+  },
+  {
+    "id": "common-general-shashin",
+    "context": {
+      "situation": "general"
+    },
+    "direction": "say",
+    "ja": "写真を撮ってもいいですか？",
+    "kana": "しゃしんをとってもいいですか？",
+    "romaji": "Shashin o totte mo ii desu ka?",
+    "zh_tw": "可以拍照嗎？",
+    "priority": 2,
+    "reviewed": false
+  },
+  {
+    "id": "common-general-shosho",
+    "context": {
+      "situation": "general"
+    },
+    "direction": "hear",
+    "ja": "少々お待ちください",
+    "kana": "しょうしょうおまちください",
+    "romaji": "Shōshō o-machi kudasai",
+    "zh_tw": "請稍等",
+    "priority": 1,
+    "reviewed": false
+  },
+  {
+    "id": "common-general-sumimasen",
+    "context": {
+      "situation": "general"
+    },
+    "direction": "say",
+    "ja": "すみません",
+    "kana": "すみません",
+    "romaji": "Sumimasen",
+    "zh_tw": "不好意思（叫人、道歉）",
+    "priority": 1,
+    "reviewed": false
+  },
+  {
+    "id": "common-general-toire",
+    "context": {
+      "situation": "general"
+    },
+    "direction": "say",
+    "ja": "トイレはどこですか？",
+    "kana": "といれはどこですか？",
+    "romaji": "Toire wa doko desu ka?",
+    "zh_tw": "廁所在哪裡？",
+    "priority": 1,
+    "reviewed": false
+  },
+  {
+    "id": "common-konbini-atatame",
+    "context": {
+      "situation": "konbini_checkout"
+    },
+    "direction": "hear",
+    "ja": "温めますか？",
+    "kana": "あたためますか？",
+    "romaji": "Atatamemasu ka?",
+    "zh_tw": "要加熱嗎？",
+    "answer_hint": {
+      "ja": "お願いします／大丈夫です",
+      "kana": "おねがいします／だいじょうぶです",
+      "zh_tw": "麻煩你／不用了"
+    },
+    "note_zh": "便當、飯糰結帳時會問",
+    "priority": 1,
+    "reviewed": false
+  },
+  {
+    "id": "common-konbini-fukuro",
+    "context": {
+      "situation": "konbini_checkout"
+    },
+    "direction": "hear",
+    "ja": "袋はご利用ですか？",
+    "kana": "ふくろはごりようですか？",
+    "romaji": "Fukuro wa go-riyō desu ka?",
+    "zh_tw": "需要袋子嗎？",
+    "answer_hint": {
+      "ja": "大丈夫です／お願いします",
+      "kana": "だいじょうぶです／おねがいします",
+      "zh_tw": "不用了／麻煩你"
+    },
+    "note_zh": "袋子要另外付費",
+    "priority": 1,
+    "reviewed": false
+  },
+  {
+    "id": "common-konbini-hashi",
+    "context": {
+      "situation": "konbini_checkout"
+    },
+    "direction": "hear",
+    "ja": "お箸はお付けしますか？",
+    "kana": "おはしはおつけしますか？",
+    "romaji": "O-hashi wa o-tsuke shimasu ka?",
+    "zh_tw": "需要筷子嗎？",
+    "answer_hint": {
+      "ja": "お願いします／大丈夫です",
+      "kana": "おねがいします／だいじょうぶです",
+      "zh_tw": "麻煩你／不用了"
+    },
+    "priority": 2,
+    "reviewed": false
+  },
+  {
+    "id": "common-konbini-point",
+    "context": {
+      "situation": "konbini_checkout"
+    },
+    "direction": "hear",
+    "ja": "ポイントカードはお持ちですか？",
+    "kana": "ぽいんとかーどはおもちですか？",
+    "romaji": "Pointo kādo wa o-mochi desu ka?",
+    "zh_tw": "有集點卡嗎？",
+    "answer_hint": {
+      "ja": "ないです",
+      "kana": "ないです",
+      "zh_tw": "沒有"
+    },
+    "priority": 1,
+    "reviewed": false
+  },
+  {
+    "id": "common-pack-chiiki",
+    "context": {
+      "situation": "packaging"
+    },
+    "direction": "read",
+    "ja": "地域限定",
+    "kana": "ちいきげんてい",
+    "romaji": "Chiiki gentei",
+    "zh_tw": "地區限定",
+    "priority": 2,
+    "reviewed": false
+  },
+  {
+    "id": "common-pack-kisetsu",
+    "context": {
+      "situation": "packaging"
+    },
+    "direction": "read",
+    "ja": "季節限定",
+    "kana": "きせつげんてい",
+    "romaji": "Kisetsu gentei",
+    "zh_tw": "季節限定",
+    "priority": 2,
+    "reviewed": false
+  },
+  {
+    "id": "common-pack-shinhatsu",
+    "context": {
+      "situation": "packaging"
+    },
+    "direction": "read",
+    "ja": "新発売",
+    "kana": "しんはつばい",
+    "romaji": "Shin-hatsubai",
+    "zh_tw": "新上市",
+    "priority": 2,
+    "reviewed": false
+  },
+  {
+    "id": "common-pack-shomi",
+    "context": {
+      "situation": "packaging"
+    },
+    "direction": "read",
+    "ja": "賞味期限",
+    "kana": "しょうみきげん",
+    "romaji": "Shōmi kigen",
+    "zh_tw": "最佳賞味期限",
+    "priority": 2,
+    "reviewed": false
+  },
+  {
+    "id": "common-pack-suryo",
+    "context": {
+      "situation": "packaging"
+    },
+    "direction": "read",
+    "ja": "数量限定",
+    "kana": "すうりょうげんてい",
+    "romaji": "Sūryō gentei",
+    "zh_tw": "數量限定",
+    "priority": 3,
+    "reviewed": false
+  },
+  {
+    "id": "common-pay-card",
+    "context": {
+      "situation": "checkout"
+    },
+    "direction": "say",
+    "ja": "カードは使えますか？",
+    "kana": "かーどはつかえますか？",
+    "romaji": "Kādo wa tsukaemasu ka?",
+    "zh_tw": "可以刷卡嗎？",
+    "priority": 1,
+    "reviewed": false
+  },
+  {
+    "id": "common-pay-how",
+    "context": {
+      "situation": "checkout"
+    },
+    "direction": "hear",
+    "ja": "お支払いはどうされますか？",
+    "kana": "おしはらいはどうされますか？",
+    "romaji": "O-shiharai wa dō saremasu ka?",
+    "zh_tw": "要怎麼付款？",
+    "answer_hint": {
+      "ja": "カードで／現金で",
+      "kana": "かーどで／げんきんで",
+      "zh_tw": "刷卡／付現"
+    },
+    "priority": 1,
+    "reviewed": false
+  },
+  {
+    "id": "common-price-zeikomi",
+    "context": {
+      "situation": "shopping"
+    },
+    "direction": "read",
+    "ja": "税込",
+    "kana": "ぜいこみ",
+    "romaji": "Zeikomi",
+    "zh_tw": "含稅",
+    "priority": 1,
+    "reviewed": false
+  },
+  {
+    "id": "common-price-zeinuki",
+    "context": {
+      "situation": "shopping"
+    },
+    "direction": "read",
+    "ja": "税抜",
+    "kana": "ぜいぬき",
+    "romaji": "Zeinuki",
+    "zh_tw": "未稅",
+    "priority": 1,
+    "reviewed": false
+  },
+  {
+    "id": "common-rest-kaikei",
+    "context": {
+      "situation": "restaurant"
+    },
+    "direction": "say",
+    "ja": "お会計お願いします",
+    "kana": "おかいけいおねがいします",
+    "romaji": "O-kaikei onegai shimasu",
+    "zh_tw": "麻煩結帳",
+    "priority": 1,
+    "reviewed": false
+  },
+  {
+    "id": "common-rest-nanmei",
+    "context": {
+      "situation": "restaurant"
+    },
+    "direction": "hear",
+    "ja": "何名様ですか？",
+    "kana": "なんめいさまですか？",
+    "romaji": "Nan-mei-sama desu ka?",
+    "zh_tw": "幾位？",
+    "answer_hint": {
+      "ja": "二人です",
+      "kana": "ふたりです",
+      "zh_tw": "兩位"
+    },
+    "priority": 1,
+    "reviewed": false
+  },
+  {
+    "id": "common-rest-reji",
+    "context": {
+      "situation": "restaurant"
+    },
+    "direction": "hear",
+    "ja": "お会計はレジでお願いします",
+    "kana": "おかいけいはれじでおねがいします",
+    "romaji": "O-kaikei wa reji de onegai shimasu",
+    "zh_tw": "請到收銀台結帳",
+    "priority": 2,
+    "reviewed": false
+  },
+  {
+    "id": "common-rest-tennai",
+    "context": {
+      "situation": "restaurant"
+    },
+    "direction": "hear",
+    "ja": "店内でお召し上がりですか？",
+    "kana": "てんないでおめしあがりですか？",
+    "romaji": "Tennai de o-meshiagari desu ka?",
+    "zh_tw": "內用嗎？",
+    "answer_hint": {
+      "ja": "はい／持ち帰りで",
+      "kana": "はい／もちかえりで",
+      "zh_tw": "內用／外帶"
+    },
+    "priority": 1,
+    "reviewed": false
+  },
+  {
+    "id": "common-shop-eigyochu",
+    "context": {
+      "situation": "shopping"
+    },
+    "direction": "read",
+    "ja": "営業中",
+    "kana": "えいぎょうちゅう",
+    "romaji": "Eigyō-chū",
+    "zh_tw": "營業中",
+    "priority": 2,
+    "reviewed": false
+  },
+  {
+    "id": "common-shop-genkin",
+    "context": {
+      "situation": "checkout"
+    },
+    "direction": "read",
+    "ja": "現金のみ",
+    "kana": "げんきんのみ",
+    "romaji": "Genkin nomi",
+    "zh_tw": "只收現金",
+    "priority": 1,
+    "reviewed": false
+  },
+  {
+    "id": "common-shop-junbichu",
+    "context": {
+      "situation": "shopping"
+    },
+    "direction": "read",
+    "ja": "準備中",
+    "kana": "じゅんびちゅう",
+    "romaji": "Junbi-chū",
+    "zh_tw": "準備中（尚未營業）",
+    "priority": 2,
+    "reviewed": false
+  },
+  {
+    "id": "common-shop-menzei",
+    "context": {
+      "situation": "shopping"
+    },
+    "direction": "say",
+    "ja": "免税できますか？",
+    "kana": "めんぜいできますか？",
+    "romaji": "Menzei dekimasu ka?",
+    "zh_tw": "可以免稅嗎？",
+    "note_zh": "要出示護照",
+    "priority": 2,
+    "reviewed": false
+  },
+  {
+    "id": "common-shop-teikyubi",
+    "context": {
+      "situation": "shopping"
+    },
+    "direction": "read",
+    "ja": "定休日",
+    "kana": "ていきゅうび",
+    "romaji": "Teikyūbi",
+    "zh_tw": "公休日",
+    "priority": 2,
+    "reviewed": false
+  },
+  {
+    "id": "common-station-deguchi",
+    "context": {
+      "situation": "train"
+    },
+    "direction": "read",
+    "ja": "出口",
+    "kana": "でぐち",
+    "romaji": "Deguchi",
+    "zh_tw": "出口",
+    "priority": 1,
+    "reviewed": false
+  },
+  {
+    "id": "common-station-iriguchi",
+    "context": {
+      "situation": "train"
+    },
+    "direction": "read",
+    "ja": "入口",
+    "kana": "いりぐち",
+    "romaji": "Iriguchi",
+    "zh_tw": "入口",
+    "priority": 1,
+    "reviewed": false
+  },
+  {
+    "id": "common-station-jiyu",
+    "context": {
+      "situation": "train"
+    },
+    "direction": "read",
+    "ja": "自由席",
+    "kana": "じゆうせき",
+    "romaji": "Jiyūseki",
+    "zh_tw": "自由座",
+    "priority": 2,
+    "reviewed": false
+  },
+  {
+    "id": "common-station-kaisatsu",
+    "context": {
+      "situation": "train"
+    },
+    "direction": "read",
+    "ja": "改札",
+    "kana": "かいさつ",
+    "romaji": "Kaisatsu",
+    "zh_tw": "剪票口",
+    "priority": 1,
+    "reviewed": false
+  },
+  {
+    "id": "common-station-kaisoku",
+    "context": {
+      "situation": "train"
+    },
+    "direction": "read",
+    "ja": "快速",
+    "kana": "かいそく",
+    "romaji": "Kaisoku",
+    "zh_tw": "快速（部分站不停）",
+    "priority": 2,
+    "reviewed": false
+  },
+  {
+    "id": "common-station-kakueki",
+    "context": {
+      "situation": "train"
+    },
+    "direction": "read",
+    "ja": "各駅停車",
+    "kana": "かくえきていしゃ",
+    "romaji": "Kakueki teisha",
+    "zh_tw": "每站停車",
+    "priority": 2,
+    "reviewed": false
+  },
+  {
+    "id": "common-station-noriba",
+    "context": {
+      "situation": "train"
+    },
+    "direction": "read",
+    "ja": "のりば",
+    "kana": "のりば",
+    "romaji": "Noriba",
+    "zh_tw": "乘車處",
+    "priority": 1,
+    "reviewed": false
+  },
+  {
+    "id": "common-station-norikae",
+    "context": {
+      "situation": "train"
+    },
+    "direction": "read",
+    "ja": "乗り換え",
+    "kana": "のりかえ",
+    "romaji": "Norikae",
+    "zh_tw": "轉乘",
+    "priority": 1,
+    "reviewed": false
+  },
+  {
+    "id": "common-station-seisan",
+    "context": {
+      "situation": "train"
+    },
+    "direction": "read",
+    "ja": "精算機",
+    "kana": "せいさんき",
+    "romaji": "Seisanki",
+    "zh_tw": "補票機",
+    "priority": 2,
+    "reviewed": false
+  },
+  {
+    "id": "common-station-shitei",
+    "context": {
+      "situation": "train"
+    },
+    "direction": "read",
+    "ja": "指定席",
+    "kana": "していせき",
+    "romaji": "Shiteiseki",
+    "zh_tw": "對號座",
+    "priority": 2,
+    "reviewed": false
+  },
+  {
+    "id": "common-station-tokkyu",
+    "context": {
+      "situation": "train"
+    },
+    "direction": "read",
+    "ja": "特急",
+    "kana": "とっきゅう",
+    "romaji": "Tokkyū",
+    "zh_tw": "特急（多半要另買特急券）",
+    "priority": 2,
+    "reviewed": false
+  },
+  {
+    "id": "common-train-norikae-say",
+    "context": {
+      "situation": "train"
+    },
+    "direction": "say",
+    "ja": "乗り換えはどこですか？",
+    "kana": "のりかえはどこですか？",
+    "romaji": "Norikae wa doko desu ka?",
+    "zh_tw": "在哪裡轉乘？",
+    "priority": 2,
+    "reviewed": false
+  }
+]

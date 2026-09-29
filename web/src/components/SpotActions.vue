@@ -1,27 +1,33 @@
 <script setup lang="ts">
 import { computed, nextTick, onBeforeUnmount, ref, watch } from 'vue'
 
+import { dayDate, hasSpot, shortDate, TRIP_NAME_MAX, tripStatus } from '../services/trip'
+import { todayIso } from '../services/userdb'
 import { LIST_NAME_MAX, type SpotRef, useMarksStore } from '../stores/marks'
+import { useTripsStore } from '../stores/trips'
 import { useUserStore } from '../stores/user'
 
 // 景點卡片的收藏、去過、清單（UX-FLOW.md B4、§3）。未登入時按下去先登入，登入後完成動作。
 const props = defineProps<{ spot: SpotRef }>()
 const marks = useMarksStore()
+const trips = useTripsStore()
 const userStore = useUserStore()
 
 const mark = computed(() => marks.markOf(props.spot.id))
 const disabled = computed(() => !userStore.canSignIn)
 
-// 清單選單
-const listOpen = ref(false)
+// 清單、行程的選單（一次開一個）
+const open = ref<'lists' | 'trips' | null>(null)
 const root = ref<HTMLElement | null>(null)
 const newName = ref('')
 const nameInput = ref<HTMLInputElement | null>(null)
+const newTrip = ref('')
+const tripInput = ref<HTMLInputElement | null>(null)
 
 function onPointerDown(e: PointerEvent) {
-  if (root.value && !root.value.contains(e.target as Node)) listOpen.value = false
+  if (root.value && !root.value.contains(e.target as Node)) open.value = null
 }
-watch(listOpen, (o) => {
+watch(open, (o) => {
   if (o) document.addEventListener('pointerdown', onPointerDown)
   else document.removeEventListener('pointerdown', onPointerDown)
 })
@@ -29,14 +35,15 @@ onBeforeUnmount(() => document.removeEventListener('pointerdown', onPointerDown)
 watch(
   () => props.spot.id,
   () => {
-    listOpen.value = false
+    open.value = null
     newName.value = ''
+    newTrip.value = ''
   },
 )
 
-async function openLists() {
-  if (listOpen.value) {
-    listOpen.value = false
+async function toggle(which: 'lists' | 'trips') {
+  if (open.value === which) {
+    open.value = null
     return
   }
   // 未登入：先登入再打開
@@ -47,9 +54,29 @@ async function openLists() {
       return
     }
   }
-  listOpen.value = true
+  open.value = which
   await nextTick()
-  if (!marks.lists.length) nameInput.value?.focus()
+  if (which === 'lists' && !marks.lists.length) nameInput.value?.focus()
+  if (which === 'trips' && !openTrips.value.length) tripInput.value?.focus()
+}
+
+// 加入行程（UX-FLOW.md C2）：還沒結束的行程；選「待排」或某一天
+const openTrips = computed(() => trips.sorted.filter((t) => tripStatus(t, todayIso()) !== 'done'))
+const inTrips = computed(() => openTrips.value.filter((t) => hasSpot(t, props.spot.id)).length)
+const target = ref<Record<string, string>>({})
+function dayLabel(t: (typeof openTrips.value)[number], i: number): string {
+  const d = dayDate(t, i)
+  return `DAY ${i + 1}${d ? `　${shortDate(d)}` : ''}`
+}
+async function addTo(tripId: string) {
+  const v = target.value[tripId] ?? ''
+  await trips.addStop(tripId, props.spot, v === '' ? null : Number(v))
+}
+async function addTrip() {
+  const name = newTrip.value.trim()
+  if (!name) return
+  newTrip.value = ''
+  await trips.create({ name }, props.spot)
 }
 
 async function addList() {
@@ -60,12 +87,12 @@ async function addList() {
 }
 
 const inLists = computed(() => mark.value?.lists?.length ?? 0)
-const today = new Date().toISOString().slice(0, 10)
+const today = todayIso()
 </script>
 
 <template>
   <div class="flex flex-col gap-2">
-    <div ref="root" class="relative grid grid-cols-3 gap-2">
+    <div ref="root" class="relative grid grid-cols-2 gap-2">
       <button
         type="button"
         class="flex h-11 items-center justify-center gap-1.5 rounded-control text-body-sm active:translate-y-px disabled:cursor-not-allowed disabled:opacity-40"
@@ -105,20 +132,87 @@ const today = new Date().toISOString().slice(0, 10)
         class="flex h-11 items-center justify-center gap-1.5 rounded-control text-body-sm active:translate-y-px disabled:cursor-not-allowed disabled:opacity-40"
         :class="inLists ? 'border-[1.5px] border-ink bg-surface font-bold text-ink' : 'border border-line bg-paper text-ink hover:bg-surface'"
         aria-haspopup="true"
-        :aria-expanded="listOpen"
+        :aria-expanded="open === 'lists'"
         :disabled="disabled"
-        @click="openLists"
+        @click="toggle('lists')"
       >
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true">
           <path d="M9 6h11M9 12h11M9 18h11" /><circle cx="4.5" cy="6" r="1" /><circle cx="4.5" cy="12" r="1" /><circle cx="4.5" cy="18" r="1" />
         </svg>
         清單<span v-if="inLists" class="font-latin">{{ inLists }}</span>
       </button>
+      <button
+        type="button"
+        class="flex h-11 items-center justify-center gap-1.5 rounded-control text-body-sm active:translate-y-px disabled:cursor-not-allowed disabled:opacity-40"
+        :class="inTrips ? 'border-[1.5px] border-ink bg-surface font-bold text-ink' : 'border border-line bg-paper text-ink hover:bg-surface'"
+        aria-haspopup="true"
+        :aria-expanded="open === 'trips'"
+        :disabled="disabled"
+        @click="toggle('trips')"
+      >
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M4 5h16v15H4z M4 10h16 M9 3v4 M15 3v4" />
+        </svg>
+        加入行程<span v-if="inTrips" class="font-latin">{{ inTrips }}</span>
+      </button>
+
+      <!-- 行程選單：每個行程選「待排」或某一天後加入；最下面新增行程 -->
+      <div
+        v-if="open === 'trips'"
+        class="absolute right-0 bottom-full left-0 z-30 mb-2 flex max-h-[50dvh] flex-col rounded-card bg-paper p-1.5 shadow-float"
+        role="group"
+        aria-label="加入行程"
+      >
+        <div class="scroll-quiet flex flex-col overflow-y-auto">
+          <div v-for="t in openTrips" :key="t.id" class="flex min-h-tap items-center gap-2 rounded-control px-2.5">
+            <span class="min-w-0 flex-1 truncate text-body-sm">{{ t.name || '未命名行程' }}</span>
+            <template v-if="hasSpot(t, spot.id)">
+              <span class="shrink-0 text-caption text-sub">已加入</span>
+            </template>
+            <template v-else>
+              <select
+                :value="target[t.id] ?? ''"
+                :aria-label="`加入「${t.name || '未命名行程'}」的哪一天`"
+                class="h-9 shrink-0 rounded-control border border-line bg-paper px-1.5 text-caption text-ink"
+                @change="target = { ...target, [t.id]: ($event.target as HTMLSelectElement).value }"
+              >
+                <option value="">待排</option>
+                <option v-for="(_, i) in t.days" :key="i" :value="String(i)">{{ dayLabel(t, i) }}</option>
+              </select>
+              <button
+                type="button"
+                class="h-9 shrink-0 rounded-control border border-line bg-paper px-2.5 text-caption text-ink hover:bg-surface"
+                @click="addTo(t.id)"
+              >
+                加入
+              </button>
+            </template>
+          </div>
+        </div>
+        <form class="mt-1 flex gap-1.5 border-t border-line-soft px-1 pt-2" @submit.prevent="addTrip">
+          <input
+            ref="tripInput"
+            v-model="newTrip"
+            type="text"
+            :maxlength="TRIP_NAME_MAX"
+            placeholder="新行程名稱"
+            aria-label="新行程名稱"
+            class="h-10 min-w-0 flex-1 rounded-control border border-line bg-paper px-2.5 text-body-sm text-ink outline-none placeholder:text-sub focus:border-region-strong"
+          />
+          <button
+            type="submit"
+            class="h-10 shrink-0 rounded-control border border-line bg-paper px-3 text-body-sm text-ink hover:bg-surface disabled:cursor-not-allowed disabled:opacity-40"
+            :disabled="!newTrip.trim()"
+          >
+            新增
+          </button>
+        </form>
+      </div>
 
       <!-- 清單選單：勾選加入或移出；最下面新增清單 -->
       <div
-        v-if="listOpen"
-        class="absolute right-0 bottom-13 left-0 z-30 flex max-h-[50dvh] flex-col rounded-card bg-paper p-1.5 shadow-float"
+        v-if="open === 'lists'"
+        class="absolute right-0 bottom-full left-0 z-30 mb-2 flex max-h-[50dvh] flex-col rounded-card bg-paper p-1.5 shadow-float"
         role="group"
         aria-label="加入清單"
       >

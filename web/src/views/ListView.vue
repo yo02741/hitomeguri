@@ -5,6 +5,7 @@ import { useRouter } from 'vue-router'
 import ExportButtons from '../components/ExportButtons.vue'
 import MarkedSpotList from '../components/MarkedSpotList.vue'
 import { type MarkedSpot, useMarkedSpots } from '../composables/markedSpots'
+import { markRow } from '../services/export'
 import { LIST_NAME_MAX, useMarksStore } from '../stores/marks'
 import { useUserStore } from '../stores/user'
 
@@ -73,7 +74,7 @@ async function del() {
           <span class="font-latin text-body font-normal tracking-normal text-sub">{{ rows.length }}</span>
         </h1>
         <div v-if="!editing" class="ml-auto flex flex-wrap gap-2">
-          <ExportButtons :title="list.name" :rows="rows" />
+          <ExportButtons :title="list.name" :rows="rows.map(markRow)" />
           <button type="button" class="h-9 rounded-control border border-line bg-paper px-3 text-label text-ink hover:bg-surface" @click="startEdit">
             改名
           </button>

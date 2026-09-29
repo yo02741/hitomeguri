@@ -1,0 +1,53 @@
+<script setup lang="ts">
+import { computed } from 'vue'
+
+import { regionOf } from '../data/regions'
+import { allStops, dayPref, shortDate, type Trip, tripPrefs, tripStatus } from '../services/trip'
+import { todayIso } from '../services/userdb'
+
+// 行程卡片（/trips、/log）：封面是經過的縣的分段色帶（UX-FLOW.md §2.4），下面是名稱、日期、天數、地點數。
+const props = defineProps<{ trip: Trip }>()
+
+const prefs = computed(() => tripPrefs(props.trip))
+const status = computed(() => tripStatus(props.trip, todayIso()))
+const dates = computed(() => {
+  const { start_date: s, end_date: e } = props.trip
+  if (!s) return ''
+  return e && e !== s ? `${shortDate(s)} – ${shortDate(e)}` : shortDate(s)
+})
+const count = computed(() => allStops(props.trip).length)
+const band = computed(() => {
+  const w = new Map<string, number>()
+  for (const d of props.trip.days) {
+    const p = dayPref(d)
+    if (p) w.set(p, (w.get(p) ?? 0) + 1)
+  }
+  // 還沒排進天數的縣（只在待排）也給一小段
+  for (const p of prefs.value) if (!w.has(p)) w.set(p, 0.5)
+  return [...w.entries()].map(([pref, weight]) => ({ pref, weight }))
+})
+</script>
+
+<template>
+  <RouterLink
+    :to="`/trips/${trip.id}`"
+    class="flex flex-col overflow-hidden rounded-card border border-line bg-paper text-ink no-underline hover:bg-surface"
+  >
+    <!-- 分段色帶（DESIGN.md §7.9）：每個縣一段，長度依那個縣的天數 -->
+    <span class="flex h-2.5 w-full bg-placeholder" aria-hidden="true">
+      <span v-for="b in band" :key="b.pref" :data-pref="b.pref" class="h-full bg-region" :style="{ flexGrow: b.weight }"></span>
+    </span>
+    <span class="flex flex-col gap-1 px-4 pt-3 pb-4">
+      <span class="flex items-baseline gap-2">
+        <span class="min-w-0 truncate text-body font-bold">{{ trip.name || '未命名行程' }}</span>
+        <span v-if="status === 'ongoing'" class="shrink-0 rounded-tag bg-region-strong px-1.5 text-caption font-bold text-white">旅途中</span>
+      </span>
+      <span class="flex flex-wrap gap-x-3 text-caption text-sub">
+        <span v-if="dates" class="font-latin">{{ dates }}</span>
+        <span>{{ trip.days.length }} 天</span>
+        <span>{{ count }} 個地點</span>
+      </span>
+      <span v-if="prefs.length" lang="ja" class="truncate text-caption text-sub">{{ prefs.map((p) => regionOf(p)?.name.ja).join('・') }}</span>
+    </span>
+  </RouterLink>
+</template>

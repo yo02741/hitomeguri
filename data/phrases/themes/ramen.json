@@ -1,0 +1,201 @@
+[
+  {
+    "id": "ramen-ajitama",
+    "context": {
+      "theme": "ramen",
+      "situation": "ramen_shop_order"
+    },
+    "direction": "read",
+    "ja": "味玉",
+    "kana": "あじたま",
+    "romaji": "Ajitama",
+    "zh_tw": "溏心蛋",
+    "priority": 3,
+    "reviewed": false
+  },
+  {
+    "id": "ramen-chashu",
+    "context": {
+      "theme": "ramen",
+      "situation": "ramen_shop_order"
+    },
+    "direction": "read",
+    "ja": "チャーシュー",
+    "kana": "ちゃーしゅー",
+    "romaji": "Chāshū",
+    "zh_tw": "叉燒",
+    "priority": 3,
+    "reviewed": false
+  },
+  {
+    "id": "ramen-kaedama",
+    "context": {
+      "theme": "ramen",
+      "situation": "ramen_shop_order"
+    },
+    "direction": "say",
+    "ja": "替え玉お願いします",
+    "kana": "かえだまおねがいします",
+    "romaji": "Kaedama onegai shimasu",
+    "zh_tw": "加麵",
+    "note_zh": "博多豚骨拉麵常見：只加麵，湯不加",
+    "priority": 2,
+    "reviewed": false
+  },
+  {
+    "id": "ramen-katasa",
+    "context": {
+      "theme": "ramen",
+      "situation": "ramen_shop_order"
+    },
+    "direction": "hear",
+    "ja": "麺のかたさはどうしますか？",
+    "kana": "めんのかたさはどうしますか？",
+    "romaji": "Men no katasa wa dō shimasu ka?",
+    "zh_tw": "麵要什麼硬度？",
+    "answer_hint": {
+      "ja": "普通で",
+      "kana": "ふつうで",
+      "zh_tw": "普通"
+    },
+    "priority": 1,
+    "reviewed": false
+  },
+  {
+    "id": "ramen-katasa-read",
+    "context": {
+      "theme": "ramen",
+      "situation": "ramen_shop_order"
+    },
+    "direction": "read",
+    "ja": "かため／ふつう／やわらかめ",
+    "kana": "かため／ふつう／やわらかめ",
+    "romaji": "Katame / futsū / yawarakame",
+    "zh_tw": "偏硬／普通／偏軟",
+    "priority": 1,
+    "reviewed": false
+  },
+  {
+    "id": "ramen-koime",
+    "context": {
+      "theme": "ramen",
+      "situation": "ramen_shop_order"
+    },
+    "direction": "read",
+    "ja": "濃いめ／薄め",
+    "kana": "こいめ／うすめ",
+    "romaji": "Koime / usume",
+    "zh_tw": "味道重／淡",
+    "priority": 3,
+    "reviewed": false
+  },
+  {
+    "id": "ramen-koisa",
+    "context": {
+      "theme": "ramen",
+      "situation": "ramen_shop_order"
+    },
+    "direction": "hear",
+    "ja": "味の濃さはどうしますか？",
+    "kana": "あじのこさはどうしますか？",
+    "romaji": "Aji no kosa wa dō shimasu ka?",
+    "zh_tw": "湯頭要多濃？",
+    "answer_hint": {
+      "ja": "普通で",
+      "kana": "ふつうで",
+      "zh_tw": "普通"
+    },
+    "priority": 2,
+    "reviewed": false
+  },
+  {
+    "id": "ramen-nami",
+    "context": {
+      "theme": "ramen",
+      "situation": "ramen_shop_order"
+    },
+    "direction": "read",
+    "ja": "並",
+    "kana": "なみ",
+    "romaji": "Nami",
+    "zh_tw": "普通份量",
+    "priority": 2,
+    "reviewed": false
+  },
+  {
+    "id": "ramen-ninniku",
+    "context": {
+      "theme": "ramen",
+      "situation": "ramen_shop_order"
+    },
+    "direction": "hear",
+    "ja": "にんにく入れますか？",
+    "kana": "にんにくいれますか？",
+    "romaji": "Ninniku iremasu ka?",
+    "zh_tw": "要加蒜頭嗎？",
+    "answer_hint": {
+      "ja": "お願いします／なしで",
+      "kana": "おねがいします／なしで",
+      "zh_tw": "要／不要"
+    },
+    "priority": 2,
+    "reviewed": false
+  },
+  {
+    "id": "ramen-omori",
+    "context": {
+      "theme": "ramen",
+      "situation": "ramen_shop_order"
+    },
+    "direction": "say",
+    "ja": "大盛りで",
+    "kana": "おおもりで",
+    "romaji": "Ōmori de",
+    "zh_tw": "大碗",
+    "priority": 2,
+    "reviewed": false
+  },
+  {
+    "id": "ramen-shokken",
+    "context": {
+      "theme": "ramen",
+      "situation": "ramen_shop_order"
+    },
+    "direction": "read",
+    "ja": "食券",
+    "kana": "しょっけん",
+    "romaji": "Shokken",
+    "zh_tw": "餐券",
+    "note_zh": "很多拉麵店要先在門口的販賣機買券再入座",
+    "priority": 1,
+    "reviewed": false
+  },
+  {
+    "id": "ramen-shokken-hear",
+    "context": {
+      "theme": "ramen",
+      "situation": "ramen_shop_order"
+    },
+    "direction": "hear",
+    "ja": "食券をお願いします",
+    "kana": "しょっけんをおねがいします",
+    "romaji": "Shokken o onegai shimasu",
+    "zh_tw": "請給我餐券",
+    "priority": 1,
+    "reviewed": false
+  },
+  {
+    "id": "ramen-topping",
+    "context": {
+      "theme": "ramen",
+      "situation": "ramen_shop_order"
+    },
+    "direction": "read",
+    "ja": "トッピング",
+    "kana": "とっぴんぐ",
+    "romaji": "Toppingu",
+    "zh_tw": "加料",
+    "priority": 2,
+    "reviewed": false
+  }
+]

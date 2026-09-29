@@ -1,6 +1,7 @@
 import { defineStore } from 'pinia'
 import { computed, ref, shallowRef, watch } from 'vue'
 
+import { ensureSignedIn, firestore, waitFor } from '../services/userdb'
 import { useUserStore } from './user'
 
 // 收藏、去過、清單（UX-FLOW.md §3）。存在 Firestore 的 users/{uid}/marks、users/{uid}/lists，只有本人讀寫。
@@ -34,30 +35,6 @@ export interface SpotRef {
 // firestore.rules 的上限
 export const LIST_NAME_MAX = 80
 const LISTS_PER_SPOT_MAX = 50
-
-type Firestore = typeof import('firebase/firestore')
-
-async function firestore(): Promise<{ fs: Firestore; db: import('firebase/firestore').Firestore }> {
-  const [{ db }, fs] = await Promise.all([import('../services/firebase'), import('firebase/firestore')])
-  if (!db) throw new Error('Firebase 未設定')
-  return { fs, db }
-}
-
-/** 等到 cond 成立（最多 ms 毫秒） */
-function waitFor(cond: () => boolean, ms = 10000): Promise<void> {
-  if (cond()) return Promise.resolve()
-  return new Promise((resolve) => {
-    const stop = watch(cond, (ok) => {
-      if (ok) done()
-    })
-    const timer = setTimeout(done, ms)
-    function done() {
-      stop()
-      clearTimeout(timer)
-      resolve()
-    }
-  })
-}
 
 export const useMarksStore = defineStore('marks', () => {
   const userStore = useUserStore()
@@ -110,16 +87,7 @@ export const useMarksStore = defineStore('marks', () => {
 
   /** 未登入時先登入，登入後完成原本的動作（UX-FLOW.md B4）；取消登入就什麼都不做 */
   async function withUser<T>(fn: (uid: string) => Promise<T>): Promise<T | undefined> {
-    if (!userStore.user) {
-      if (!userStore.canSignIn) return undefined
-      try {
-        await userStore.signIn()
-      } catch {
-        return undefined
-      }
-      await waitFor(() => Boolean(userStore.user))
-    }
-    const uid = userStore.user?.uid
+    const uid = await ensureSignedIn(userStore)
     if (!uid) return undefined
     // 寫入是整份覆蓋：先等讀到這個帳號現有的資料，免得剛登入時蓋掉原本的收藏與清單
     await waitFor(() => marksLoaded.value)

@@ -16,12 +16,13 @@ from pathlib import Path
 from typing import Any
 
 from pipeline import config
-from pipeline.models import Festival, FlightRoute, RailData, SeasonData, Specialty, Spot
+from pipeline.models import Festival, FlightRoute, Phrase, RailData, SeasonData, Specialty, Spot
 from pipeline.paths import (
     BUNDLES_DIR,
     FESTIVALS_DIR,
     FLIGHTS_JSON,
     PACKS_DIR,
+    PHRASES_DIR,
     RAIL_DIR,
     SEASONS_JSON,
     SPECIALTIES_DIR,
@@ -263,8 +264,21 @@ def build_festivals(dst: Path) -> dict[str, tuple[Path, dict[str, Any]]]:
     return out
 
 
+def load_phrases(src: Path = PHRASES_DIR) -> list[dict[str, Any]]:
+    """旅前準備的會話（data/phrases/common.json、themes/*.json），依 id 排序；id 不可重複。"""
+    out: list[dict[str, Any]] = []
+    for path in sorted(src.rglob("*.json")) if src.exists() else []:
+        for p in json.loads(path.read_text(encoding="utf-8")):
+            out.append(Phrase.model_validate(p).model_dump(mode="json", exclude_none=True))
+    ids = [p["id"] for p in out]
+    dup = {i for i in ids if ids.count(i) > 1}
+    if dup:
+        raise ValueError(f"phrase id 重複：{sorted(dup)}")
+    return sorted(out, key=lambda p: p["id"])
+
+
 def build_extras(dst: Path = BUNDLES_DIR) -> list[Path]:
-    """地區特色（全部縣一個檔）、季節平年值與直飛航線（只含已驗證，PLAN.md §5.2b）。"""
+    """地區特色（全部縣一個檔）、旅前準備會話、季節平年值、直飛航線（只含已驗證，§5.2b）。"""
     specs: list[dict[str, Any]] = []
     zh = _translations()
     for path in sorted(SPECIALTIES_DIR.glob("*.json")) if SPECIALTIES_DIR.exists() else []:
@@ -277,7 +291,11 @@ def build_extras(dst: Path = BUNDLES_DIR) -> list[Path]:
             route = FlightRoute.model_validate(r)
             if route.verified:
                 flights.append(route.model_dump(mode="json", exclude_none=True))
-    out = [_write(dst / "specialties.json", specs), _write(dst / "flights.json", flights)]
+    out = [
+        _write(dst / "specialties.json", specs),
+        _write(dst / "flights.json", flights),
+        _write(dst / "phrases.json", load_phrases()),
+    ]
     if SEASONS_JSON.exists():
         seasons = SeasonData.model_validate_json(SEASONS_JSON.read_text(encoding="utf-8"))
         out.append(_write(dst / "seasons.json", seasons.model_dump(mode="json")))

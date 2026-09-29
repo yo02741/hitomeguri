@@ -110,7 +110,9 @@ users/{uid}/lists/{listId}
 ```
 
 ```ts
-// Trip
+// Trip（Phase 7 實作：web/src/stores/trips.ts、services/trip.ts。
+//   實作差異：每天的日期由 start_date 推算不另存；停留點另存 pref、name；cover_pref、source 尚未使用；
+//   status 每次儲存時依日期重算，畫面上一律依日期推算）
 {
   name?: string,
   status: "planning" | "ongoing" | "done",   // 依日期自動推算，可手動覆寫
@@ -118,7 +120,7 @@ users/{uid}/lists/{listId}
   cover_pref?: string,                        // 手動指定封面縣；空值則自動計算
   days: [{
     date?: string,
-    stops: ({ type: "catalog", spot_id: string } | { type: "custom", place_id: string })[],
+    stops: ({ type: "catalog", spot_id: string, pref: string, name: string } | { type: "custom", place_id: string })[],
     note?: string
   }],
   unscheduled: (同 stops 元素)[],             // 想去但還沒排進某天
@@ -235,6 +237,7 @@ users/{uid}/lists/{listId}
 ### F. 帳號與設定
 - **F0** 我想隨時知道自己有沒有登入、一鍵進到帳號設定。
   ✅ 右上角固定一個帳號位置：未登入是「登入」按鈕；登入後是 Google 大頭貼，點開向下展開帳號選單（名稱與 email、我的行程、旅行紀錄、收藏與清單、登出），在這幾頁時頭像加外框。
+  ✅ Phase 7：景點卡片「加入行程」（選行程與待排／某天、新增行程）；`/trips` 行程列表與新增；`/trips/:id` 編輯（名稱、日期→天數、DAY 標記縣色、拖曳或「移到」選單排序換天、待排、點某天地圖只顯示當天並連線、相鄰停留點的 Google Maps 大眾運輸連結、每天一個 folder 的 KML／CSV）；`/log` 已結束的旅行卡片、補登旅行、去過含已結束行程的停留點；`/trips/:id/prep` 旅前準備（今天、地名與車站、聽／說／讀、地區特色、只看必備、發音）；`/trips/:id/prep/practice` Leitner 練習。
   ✅ Phase 5：景點卡片「收藏」「去過」（可填日期）「清單」（勾選加入、新增清單）；地圖上收藏畫外圈、去過右上印章色小圓點，上方「收藏」開關只顯示收藏；`/me` 收藏與清單（匯出 KML / CSV）、`/me/lists/:id` 清單（改名、刪除、移除景點、匯出）；`/log` 全部去過地圖＋去過列表（依日期）。
 - **F1** 我想不登入也能瀏覽。
   ✅ 探索、景點、搜尋、期間限定都不需登入；收藏 / 行程 / 紀錄需要。

@@ -442,6 +442,10 @@ users/{uid}/lists/{listId}
 - **Flashcard 練習**：正面日文（或聽音）、背面中文與情境；簡單 Leitner box 間隔重複，進度存 `users/{uid}/trips/{tripId}/progress`。
 - **旅途模式**：手機版依行程天數排序，當天會用到的詞排最上面；支援離線（PWA 快取 phrases bundle）。
 - **（之後再做）客製化加強**：若想針對特定景點即時生成更細的詞彙（例：德島拉麵的生卵、ライス），前端寫入 `users/{uid}/prep_requests/{id}`，由排程 workflow 撿起來生成後寫回；Spark 下不使用 Cloud Functions。
+- 實作（2026-09-29）：`stores/trips.ts`、`services/trip.ts`、`views/TripsView.vue`、`TripView.vue`、`PrepView.vue`、`PracticeView.vue`、`services/prep.ts`；
+  會話在 `data/phrases/common.json`、`themes/*.json`（109 句，`reviewed: false`，待人工校對），`build-bundles` 產生 `bundles/phrases.json`。
+  主題依行程景點類型（寺社、博物館、城、樂園、公園）、名稱含「温泉」、所在縣的地區特色（拉麵、茶、酒）選取。
+  尚未做：旅途模式的離線（PWA）、客製化加強、期間限定詞（Phase 4 之後接上）、自訂地點、照片匯入、行程頁的直飛航線。
 - ✅ 驗收：建立一個「京都＋宇治 3 天」行程 → 旅前準備頁列出所有景點與車站念法、茶／拉麵等主題會話（hear/say/read 分區）、宇治茶等特色詞；每個詞可發音；flashcard 可練習並保存進度。
 
 ---

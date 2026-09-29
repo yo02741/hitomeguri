@@ -1,0 +1,119 @@
+[
+  {
+    "id": "onsen-gensen",
+    "context": {
+      "theme": "onsen",
+      "situation": "onsen_entry"
+    },
+    "direction": "read",
+    "ja": "源泉かけ流し",
+    "kana": "げんせんかけながし",
+    "romaji": "Gensen kakenagashi",
+    "zh_tw": "源泉放流",
+    "priority": 3,
+    "reviewed": false
+  },
+  {
+    "id": "onsen-irezumi",
+    "context": {
+      "theme": "onsen",
+      "situation": "onsen_entry"
+    },
+    "direction": "read",
+    "ja": "入れ墨・タトゥーお断り",
+    "kana": "いれずみ・たとぅーおことわり",
+    "romaji": "Irezumi / tatū o-kotowari",
+    "zh_tw": "謝絕刺青",
+    "priority": 1,
+    "reviewed": false
+  },
+  {
+    "id": "onsen-kashikiri",
+    "context": {
+      "theme": "onsen",
+      "situation": "onsen_entry"
+    },
+    "direction": "read",
+    "ja": "貸切風呂",
+    "kana": "かしきりぶろ",
+    "romaji": "Kashikiri-buro",
+    "zh_tw": "包租浴池",
+    "priority": 3,
+    "reviewed": false
+  },
+  {
+    "id": "onsen-onnayu",
+    "context": {
+      "theme": "onsen",
+      "situation": "onsen_entry"
+    },
+    "direction": "read",
+    "ja": "女湯",
+    "kana": "おんなゆ",
+    "romaji": "Onnayu",
+    "zh_tw": "女湯",
+    "priority": 1,
+    "reviewed": false
+  },
+  {
+    "id": "onsen-otokoyu",
+    "context": {
+      "theme": "onsen",
+      "situation": "onsen_entry"
+    },
+    "direction": "read",
+    "ja": "男湯",
+    "kana": "おとこゆ",
+    "romaji": "Otokoyu",
+    "zh_tw": "男湯",
+    "priority": 1,
+    "reviewed": false
+  },
+  {
+    "id": "onsen-taoru-hear",
+    "context": {
+      "theme": "onsen",
+      "situation": "onsen_entry"
+    },
+    "direction": "hear",
+    "ja": "タオルはお持ちですか？",
+    "kana": "たおるはおもちですか？",
+    "romaji": "Taoru wa o-mochi desu ka?",
+    "zh_tw": "有帶毛巾嗎？",
+    "answer_hint": {
+      "ja": "持っていません",
+      "kana": "もっていません",
+      "zh_tw": "沒有帶"
+    },
+    "priority": 2,
+    "reviewed": false
+  },
+  {
+    "id": "onsen-taoru-say",
+    "context": {
+      "theme": "onsen",
+      "situation": "onsen_entry"
+    },
+    "direction": "say",
+    "ja": "タオルを借りられますか？",
+    "kana": "たおるをかりられますか？",
+    "romaji": "Taoru o kariraremasu ka?",
+    "zh_tw": "可以借毛巾嗎？",
+    "priority": 2,
+    "reviewed": false
+  },
+  {
+    "id": "onsen-yu",
+    "context": {
+      "theme": "onsen",
+      "situation": "onsen_entry"
+    },
+    "direction": "read",
+    "ja": "ゆ",
+    "kana": "ゆ",
+    "romaji": "Yu",
+    "zh_tw": "湯（浴場，常寫在門簾上）",
+    "priority": 2,
+    "reviewed": false
+  }
+]

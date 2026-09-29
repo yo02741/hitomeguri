@@ -1,0 +1,119 @@
+[
+  {
+    "id": "sake-amakuchi",
+    "context": {
+      "theme": "sake",
+      "situation": "sake_brewery"
+    },
+    "direction": "read",
+    "ja": "甘口",
+    "kana": "あまくち",
+    "romaji": "Amakuchi",
+    "zh_tw": "甘口（偏甜）",
+    "priority": 2,
+    "reviewed": false
+  },
+  {
+    "id": "sake-ginjo",
+    "context": {
+      "theme": "sake",
+      "situation": "sake_brewery"
+    },
+    "direction": "read",
+    "ja": "吟醸",
+    "kana": "ぎんじょう",
+    "romaji": "Ginjō",
+    "zh_tw": "吟釀",
+    "priority": 3,
+    "reviewed": false
+  },
+  {
+    "id": "sake-hiya-kan",
+    "context": {
+      "theme": "sake",
+      "situation": "sake_brewery"
+    },
+    "direction": "hear",
+    "ja": "冷やと燗、どちらにしますか？",
+    "kana": "ひやとかん、どちらにしますか？",
+    "romaji": "Hiya to kan, dochira ni shimasu ka?",
+    "zh_tw": "要冷的還是溫的？",
+    "answer_hint": {
+      "ja": "冷やで",
+      "kana": "ひやで",
+      "zh_tw": "冷的"
+    },
+    "priority": 2,
+    "reviewed": false
+  },
+  {
+    "id": "sake-junmai",
+    "context": {
+      "theme": "sake",
+      "situation": "sake_brewery"
+    },
+    "direction": "read",
+    "ja": "純米",
+    "kana": "じゅんまい",
+    "romaji": "Junmai",
+    "zh_tw": "純米",
+    "priority": 3,
+    "reviewed": false
+  },
+  {
+    "id": "sake-karakuchi",
+    "context": {
+      "theme": "sake",
+      "situation": "sake_brewery"
+    },
+    "direction": "read",
+    "ja": "辛口",
+    "kana": "からくち",
+    "romaji": "Karakuchi",
+    "zh_tw": "辛口（不甜、偏乾）",
+    "priority": 2,
+    "reviewed": false
+  },
+  {
+    "id": "sake-nomikurabe",
+    "context": {
+      "theme": "sake",
+      "situation": "sake_brewery"
+    },
+    "direction": "read",
+    "ja": "飲み比べ",
+    "kana": "のみくらべ",
+    "romaji": "Nomikurabe",
+    "zh_tw": "品飲組合（幾種各一小杯）",
+    "priority": 2,
+    "reviewed": false
+  },
+  {
+    "id": "sake-osusume",
+    "context": {
+      "theme": "sake",
+      "situation": "sake_brewery"
+    },
+    "direction": "say",
+    "ja": "おすすめはどれですか？",
+    "kana": "おすすめはどれですか？",
+    "romaji": "Osusume wa dore desu ka?",
+    "zh_tw": "推薦哪一款？",
+    "priority": 2,
+    "reviewed": false
+  },
+  {
+    "id": "sake-shiin",
+    "context": {
+      "theme": "sake",
+      "situation": "sake_brewery"
+    },
+    "direction": "say",
+    "ja": "試飲できますか？",
+    "kana": "しいんできますか？",
+    "romaji": "Shiin dekimasu ka?",
+    "zh_tw": "可以試喝嗎？",
+    "priority": 1,
+    "reviewed": false
+  }
+]

@@ -1,0 +1,63 @@
+[
+  {
+    "id": "fun-machi",
+    "context": {
+      "spot_kind": "fun",
+      "situation": "park_ticket"
+    },
+    "direction": "read",
+    "ja": "待ち時間",
+    "kana": "まちじかん",
+    "romaji": "Machi jikan",
+    "zh_tw": "等待時間",
+    "priority": 2,
+    "reviewed": false
+  },
+  {
+    "id": "fun-nanmai",
+    "context": {
+      "spot_kind": "fun",
+      "situation": "park_ticket"
+    },
+    "direction": "hear",
+    "ja": "何枚ですか？",
+    "kana": "なんまいですか？",
+    "romaji": "Nan-mai desu ka?",
+    "zh_tw": "幾張？",
+    "answer_hint": {
+      "ja": "二枚です",
+      "kana": "にまいです",
+      "zh_tw": "兩張"
+    },
+    "priority": 2,
+    "reviewed": false
+  },
+  {
+    "id": "fun-sainyujo",
+    "context": {
+      "spot_kind": "fun",
+      "situation": "park_ticket"
+    },
+    "direction": "read",
+    "ja": "再入場",
+    "kana": "さいにゅうじょう",
+    "romaji": "Sai-nyūjō",
+    "zh_tw": "再入場",
+    "priority": 2,
+    "reviewed": false
+  },
+  {
+    "id": "fun-shincho",
+    "context": {
+      "spot_kind": "fun",
+      "situation": "park_ticket"
+    },
+    "direction": "read",
+    "ja": "身長制限",
+    "kana": "しんちょうせいげん",
+    "romaji": "Shinchō seigen",
+    "zh_tw": "身高限制",
+    "priority": 3,
+    "reviewed": false
+  }
+]

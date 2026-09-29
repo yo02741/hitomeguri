@@ -1,9 +1,13 @@
 <script setup lang="ts">
-import type { MarkedSpot } from '../composables/markedSpots'
-import { download, toCsv, toKml } from '../services/export'
+import { computed } from 'vue'
 
-// 匯出：KML（可匯入 Google My Maps）、CSV
-const props = defineProps<{ title: string; rows: MarkedSpot[] }>()
+import { download, type ExportFolder, type ExportRow, foldersByPref, toCsv, toKml } from '../services/export'
+
+// 匯出：KML（可匯入 Google My Maps）、CSV。只給 rows 時依縣分 folder。
+const props = defineProps<{ title: string; rows?: ExportRow[]; folders?: ExportFolder[]; leading?: string[] }>()
+
+const folders = computed(() => props.folders ?? foldersByPref(props.rows ?? []))
+const rows = computed(() => folders.value.flatMap((f) => f.rows))
 </script>
 
 <template>
@@ -12,7 +16,7 @@ const props = defineProps<{ title: string; rows: MarkedSpot[] }>()
       type="button"
       class="h-9 rounded-control border border-line bg-paper px-3 text-label text-ink hover:bg-surface disabled:cursor-not-allowed disabled:opacity-40"
       :disabled="!rows.length"
-      @click="download(props.title, 'kml', toKml(props.title, props.rows))"
+      @click="download(title, 'kml', toKml(title, folders))"
     >
       匯出 KML
     </button>
@@ -20,7 +24,7 @@ const props = defineProps<{ title: string; rows: MarkedSpot[] }>()
       type="button"
       class="h-9 rounded-control border border-line bg-paper px-3 text-label text-ink hover:bg-surface disabled:cursor-not-allowed disabled:opacity-40"
       :disabled="!rows.length"
-      @click="download(props.title, 'csv', toCsv(props.rows))"
+      @click="download(title, 'csv', toCsv(rows, leading))"
     >
       匯出 CSV
     </button>

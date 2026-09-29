@@ -89,6 +89,8 @@
 
 ## 之後
 - Phase 4 期間限定等，見 PLAN.md §9。
+- Phase 7（2026-09-29）：行程（trips）、旅前準備、練習。資料在 Firestore `users/{uid}/trips`、`trips/{id}/progress`。
+  測試時 Pinia 的 trips store 只有在元件用到時才建立：Playwright 裡先 `import('/src/stores/trips.ts')` 再 `useTripsStore()`。
 - Phase 5（2026-09-29）：收藏、去過、清單、KML / CSV 匯出。資料在 Firestore `users/{uid}/marks`、`lists`（UX-FLOW.md §3）。
   測試方式：`npx firebase emulators:start --project demo-hitomeguri --only auth,firestore` ＋ `npm run dev`，
   Playwright 用 `signInWithCredential(GoogleAuthProvider.credential('{"sub":…}'))` 登入 emulator（uid 由 emulator 指派）。

@@ -25,16 +25,32 @@ service cloud.firestore {
         && (!('home_airport' in request.resource.data) || request.resource.data.home_airport in ['TPE', 'TSA', 'RMQ', 'KHH', 'TNN']);
       allow delete: if isOwner(uid);
 
+      function isDate(v) {
+        return v is string && v.matches('[0-9]{4}-[0-9]{2}-[0-9]{2}');
+      }
+
+      // 行程與旅行紀錄（web/src/stores/trips.ts）
       match /trips/{tripId} {
         allow read, delete: if isOwner(uid);
         allow create, update: if isOwner(uid)
+          && request.resource.data.keys().hasOnly(['name', 'status', 'start_date', 'end_date', 'days', 'unscheduled', 'created_at', 'updated_at'])
           && request.resource.data.status in ['planning', 'ongoing', 'done']
           && request.resource.data.days is list
           && request.resource.data.days.size() <= 60
-          && (!('name' in request.resource.data) || isString(request.resource.data.name, 80));
+          && request.resource.data.unscheduled is list
+          && request.resource.data.unscheduled.size() <= 300
+          && (!('name' in request.resource.data) || isString(request.resource.data.name, 80))
+          && (!('start_date' in request.resource.data) || isDate(request.resource.data.start_date))
+          && (!('end_date' in request.resource.data) || isDate(request.resource.data.end_date));
 
-        match /progress/{phraseId} {
-          allow read, write: if isOwner(uid);
+        // 旅前準備的練習進度（Leitner box 1–5）
+        match /progress/{itemId} {
+          allow read, delete: if isOwner(uid);
+          allow create, update: if isOwner(uid)
+            && itemId.size() <= 120
+            && request.resource.data.keys().hasOnly(['box', 'updated_at'])
+            && request.resource.data.box is int
+            && request.resource.data.box >= 1 && request.resource.data.box <= 5;
         }
       }
 

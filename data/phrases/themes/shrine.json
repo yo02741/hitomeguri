@@ -1,0 +1,148 @@
+[
+  {
+    "id": "shrine-dosoku",
+    "context": {
+      "spot_kind": "shrine",
+      "situation": "shrine_visit"
+    },
+    "direction": "read",
+    "ja": "土足厳禁",
+    "kana": "どそくげんきん",
+    "romaji": "Dosoku genkin",
+    "zh_tw": "禁止穿鞋進入",
+    "priority": 2,
+    "reviewed": false
+  },
+  {
+    "id": "shrine-goshuin",
+    "context": {
+      "spot_kind": "shrine",
+      "situation": "shrine_visit"
+    },
+    "direction": "say",
+    "ja": "御朱印をお願いします",
+    "kana": "ごしゅいんをおねがいします",
+    "romaji": "Goshuin o onegai shimasu",
+    "zh_tw": "麻煩幫我寫御朱印",
+    "priority": 2,
+    "reviewed": false
+  },
+  {
+    "id": "shrine-haikan-jikan",
+    "context": {
+      "spot_kind": "shrine",
+      "situation": "shrine_visit"
+    },
+    "direction": "read",
+    "ja": "拝観時間",
+    "kana": "はいかんじかん",
+    "romaji": "Haikan jikan",
+    "zh_tw": "參觀時間",
+    "priority": 1,
+    "reviewed": false
+  },
+  {
+    "id": "shrine-haikanryo",
+    "context": {
+      "spot_kind": "shrine",
+      "situation": "shrine_visit"
+    },
+    "direction": "read",
+    "ja": "拝観料",
+    "kana": "はいかんりょう",
+    "romaji": "Haikanryō",
+    "zh_tw": "參觀費",
+    "priority": 1,
+    "reviewed": false
+  },
+  {
+    "id": "shrine-juyosho",
+    "context": {
+      "spot_kind": "shrine",
+      "situation": "shrine_visit"
+    },
+    "direction": "read",
+    "ja": "授与所",
+    "kana": "じゅよしょ",
+    "romaji": "Juyosho",
+    "zh_tw": "授與所（御守、御朱印）",
+    "priority": 2,
+    "reviewed": false
+  },
+  {
+    "id": "shrine-kakioki",
+    "context": {
+      "spot_kind": "shrine",
+      "situation": "shrine_visit"
+    },
+    "direction": "hear",
+    "ja": "書き置きでもよろしいですか？",
+    "kana": "かきおきでもよろしいですか？",
+    "romaji": "Kakioki demo yoroshii desu ka?",
+    "zh_tw": "預先寫好的紙本可以嗎？",
+    "answer_hint": {
+      "ja": "はい、大丈夫です",
+      "kana": "はい、だいじょうぶです",
+      "zh_tw": "可以"
+    },
+    "note_zh": "書き置き是事先寫好的御朱印紙，不是直接寫在御朱印帳上",
+    "priority": 3,
+    "reviewed": false
+  },
+  {
+    "id": "shrine-omamori",
+    "context": {
+      "spot_kind": "shrine",
+      "situation": "shrine_visit"
+    },
+    "direction": "read",
+    "ja": "お守り",
+    "kana": "おまもり",
+    "romaji": "O-mamori",
+    "zh_tw": "御守",
+    "priority": 2,
+    "reviewed": false
+  },
+  {
+    "id": "shrine-omikuji",
+    "context": {
+      "spot_kind": "shrine",
+      "situation": "shrine_visit"
+    },
+    "direction": "read",
+    "ja": "おみくじ",
+    "kana": "おみくじ",
+    "romaji": "Omikuji",
+    "zh_tw": "籤",
+    "priority": 3,
+    "reviewed": false
+  },
+  {
+    "id": "shrine-satsuei",
+    "context": {
+      "spot_kind": "shrine",
+      "situation": "shrine_visit"
+    },
+    "direction": "read",
+    "ja": "撮影禁止",
+    "kana": "さつえいきんし",
+    "romaji": "Satsuei kinshi",
+    "zh_tw": "禁止攝影",
+    "priority": 1,
+    "reviewed": false
+  },
+  {
+    "id": "shrine-temizuya",
+    "context": {
+      "spot_kind": "shrine",
+      "situation": "shrine_visit"
+    },
+    "direction": "read",
+    "ja": "手水舎",
+    "kana": "てみずや",
+    "romaji": "Temizuya",
+    "zh_tw": "手水舍（洗手處）",
+    "priority": 3,
+    "reviewed": false
+  }
+]

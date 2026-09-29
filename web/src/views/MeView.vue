@@ -5,6 +5,7 @@ import { useRouter } from 'vue-router'
 import ExportButtons from '../components/ExportButtons.vue'
 import MarkedSpotList from '../components/MarkedSpotList.vue'
 import { useMarkedSpots } from '../composables/markedSpots'
+import { markRow } from '../services/export'
 import { LIST_NAME_MAX, useMarksStore } from '../stores/marks'
 import { useUserStore } from '../stores/user'
 
@@ -46,7 +47,7 @@ async function logOut() {
           <h2 id="fav-title" class="flex items-baseline gap-1.5 text-h3 font-black tracking-[2px]">
             收藏<span class="font-latin text-body font-normal tracking-normal text-sub">{{ favorites.length }}</span>
           </h2>
-          <ExportButtons class="ml-auto" title="ひとめぐり 收藏" :rows="favorites" />
+          <ExportButtons class="ml-auto" title="ひとめぐり 收藏" :rows="favorites.map(markRow)" />
         </div>
         <MarkedSpotList v-if="favorites.length" :rows="favorites" :loading="loading" />
         <p v-else-if="marks.loaded" class="text-body-sm text-sub">還沒有收藏的地方</p>

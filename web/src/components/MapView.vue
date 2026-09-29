@@ -28,6 +28,8 @@ const props = defineProps<{
   rail?: { lines: GeoJSON.FeatureCollection; stations: GeoJSON.FeatureCollection } | null
   /** 使用者的收藏、去過（景點 id → 狀態）：收藏畫外圈，去過在右上疊印章色小圓點 */
   marked?: Record<string, { favorite?: boolean; visited?: boolean }> | null
+  /** 行程某一天的順序連線（依停留點順序的座標） */
+  route?: [number, number][] | null
 }>()
 
 export interface PackPoint {
@@ -64,7 +66,18 @@ const SELECTED_SOURCE = 'selected-spot'
 const OUTLINE_SOURCE = 'outline'
 const RAIL_SOURCE = 'rail'
 const STATION_SOURCE = 'rail-stations'
+const ROUTE_SOURCE = 'route'
 const EMPTY: GeoJSON.FeatureCollection = { type: 'FeatureCollection', features: [] }
+
+function routeData(coords: [number, number][] | null | undefined): GeoJSON.FeatureCollection {
+  return {
+    type: 'FeatureCollection',
+    features:
+      coords && coords.length > 1
+        ? [{ type: 'Feature', properties: {}, geometry: { type: 'LineString', coordinates: coords } }]
+        : [],
+  }
+}
 
 function outlineData(f: GeoJSON.Feature | null | undefined): GeoJSON.FeatureCollection {
   return { type: 'FeatureCollection', features: f ? [f] : [] }
@@ -235,6 +248,7 @@ function applyColors() {
   map.setPaintProperty('rail-station-labels', 'text-color', ink)
   map.setPaintProperty('rail-station-labels', 'text-halo-color', paper)
   map.setPaintProperty('outline-line', 'line-color', strong)
+  map.setPaintProperty('route-line', 'line-color', strong)
   const packColor = token(`--color-t-${props.pack?.color ?? 'major'}`)
   map.setPaintProperty('pack-clusters', 'circle-color', packColor)
   map.setPaintProperty('pack-clusters', 'circle-stroke-color', paper)
@@ -330,6 +344,14 @@ function addLayers() {
       'text-optional': true,
     },
     paint: { 'text-halo-width': 1.5 },
+  })
+  map.addSource(ROUTE_SOURCE, { type: 'geojson', data: routeData(props.route) })
+  map.addLayer({
+    id: 'route-line',
+    type: 'line',
+    source: ROUTE_SOURCE,
+    layout: { 'line-cap': 'round', 'line-join': 'round' },
+    paint: { 'line-width': 3, 'line-dasharray': [1.5, 1.5] },
   })
   map.addSource(SOURCE, {
     type: 'geojson',
@@ -823,6 +845,13 @@ watch(
     if (!map || !ready) return
     syncSources()
     setHover(null)
+  },
+)
+
+watch(
+  () => props.route,
+  (r) => {
+    if (map && ready) (map.getSource(ROUTE_SOURCE) as GeoJSONSource | undefined)?.setData(routeData(r))
   },
 )
 

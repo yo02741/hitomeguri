@@ -1,0 +1,119 @@
+[
+  {
+    "id": "tea-chasoba",
+    "context": {
+      "theme": "tea",
+      "situation": "tea_shop"
+    },
+    "direction": "read",
+    "ja": "茶そば",
+    "kana": "ちゃそば",
+    "romaji": "Chasoba",
+    "zh_tw": "抹茶蕎麥麵",
+    "priority": 3,
+    "reviewed": false
+  },
+  {
+    "id": "tea-gyokuro",
+    "context": {
+      "theme": "tea",
+      "situation": "tea_shop"
+    },
+    "direction": "read",
+    "ja": "玉露",
+    "kana": "ぎょくろ",
+    "romaji": "Gyokuro",
+    "zh_tw": "玉露",
+    "priority": 2,
+    "reviewed": false
+  },
+  {
+    "id": "tea-hojicha",
+    "context": {
+      "theme": "tea",
+      "situation": "tea_shop"
+    },
+    "direction": "read",
+    "ja": "ほうじ茶",
+    "kana": "ほうじちゃ",
+    "romaji": "Hōjicha",
+    "zh_tw": "焙茶",
+    "priority": 2,
+    "reviewed": false
+  },
+  {
+    "id": "tea-ikaga",
+    "context": {
+      "theme": "tea",
+      "situation": "tea_shop"
+    },
+    "direction": "hear",
+    "ja": "お抹茶はいかがですか？",
+    "kana": "おまっちゃはいかがですか？",
+    "romaji": "O-matcha wa ikaga desu ka?",
+    "zh_tw": "要不要來杯抹茶？",
+    "answer_hint": {
+      "ja": "いただきます",
+      "kana": "いただきます",
+      "zh_tw": "好，謝謝"
+    },
+    "priority": 3,
+    "reviewed": false
+  },
+  {
+    "id": "tea-matcha",
+    "context": {
+      "theme": "tea",
+      "situation": "tea_shop"
+    },
+    "direction": "read",
+    "ja": "抹茶",
+    "kana": "まっちゃ",
+    "romaji": "Matcha",
+    "zh_tw": "抹茶",
+    "priority": 1,
+    "reviewed": false
+  },
+  {
+    "id": "tea-sencha",
+    "context": {
+      "theme": "tea",
+      "situation": "tea_shop"
+    },
+    "direction": "read",
+    "ja": "煎茶",
+    "kana": "せんちゃ",
+    "romaji": "Sencha",
+    "zh_tw": "煎茶",
+    "priority": 2,
+    "reviewed": false
+  },
+  {
+    "id": "tea-shiin",
+    "context": {
+      "theme": "tea",
+      "situation": "tea_shop"
+    },
+    "direction": "say",
+    "ja": "試飲できますか？",
+    "kana": "しいんできますか？",
+    "romaji": "Shiin dekimasu ka?",
+    "zh_tw": "可以試喝嗎？",
+    "priority": 2,
+    "reviewed": false
+  },
+  {
+    "id": "tea-tsumetai",
+    "context": {
+      "theme": "tea",
+      "situation": "tea_shop"
+    },
+    "direction": "say",
+    "ja": "冷たいのをください",
+    "kana": "つめたいのをください",
+    "romaji": "Tsumetai no o kudasai",
+    "zh_tw": "請給我冰的",
+    "priority": 2,
+    "reviewed": false
+  }
+]

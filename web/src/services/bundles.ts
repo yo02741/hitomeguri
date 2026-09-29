@@ -198,6 +198,15 @@ export async function fetchSeasons(): Promise<SeasonData | null> {
   }
 }
 
+/** 旅前準備的會話（data/phrases） */
+export async function fetchPhrases(): Promise<import('./prep').Phrase[]> {
+  try {
+    return await getJson<import('./prep').Phrase[]>('phrases.json')
+  } catch {
+    return []
+  }
+}
+
 export async function fetchFlights(): Promise<FlightRoute[]> {
   try {
     return await getJson<FlightRoute[]>('flights.json')
