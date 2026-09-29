@@ -1,6 +1,6 @@
-from pipeline.rail import base_name, build_lines, clip, colour
+from pipeline.rail import base_name, build_lines, clip, colour, in_box
 
-BOX = (26.0, 127.0, 27.0, 128.0)  # 南、西、北、東
+BOX = in_box((26.0, 127.0, 27.0, 128.0))  # 南、西、北、東
 
 
 def test_base_name_strips_direction_and_section():
@@ -8,13 +8,27 @@ def test_base_name_strips_direction_and_section():
     assert base_name("東海道本線 (上り)") == "東海道本線"
     assert base_name("ゆいレール: 那覇空港 => てだこ浦西") == "ゆいレール"
     assert base_name("阪急京都本線 急行") == "阪急京都本線"
-    assert base_name("JR奈良線 みやこ路快速") == "JR奈良線 みやこ路"
+    assert base_name("JR奈良線 みやこ路快速") == "JR奈良線"
+    assert base_name("つくばエクスプレス線上り") == "つくばエクスプレス線"
+    assert base_name("北総線各駅") == "北総線"
+    assert base_name("京急本線・久里浜線 快特") == "京急本線・久里浜線"
+    assert base_name("東急電鉄世田谷線 三軒茶屋→下高井戸") == "東急電鉄世田谷線"
+    assert base_name("JR中央線・青梅線\u3000立川 => 西立川") == "JR中央線・青梅線"
 
 
 def test_is_service():
     from pipeline.rail import is_service
 
-    for name in ("のぞみ", "サンダーバード", "大和路快速", "区間快速", "近鉄特急", "特急はるか"):
+    for name in (
+        "のぞみ",
+        "サンダーバード",
+        "大和路快速",
+        "区間快速",
+        "近鉄特急",
+        "特急はるか",
+        "東京地下鉄の直通運転 - 中央線",
+        "小田急電鉄 千代田線直通列車",
+    ):
         assert is_service(name), name
     for name in (
         "JR山手線",
@@ -87,3 +101,17 @@ def test_shared_track_drawn_once():
     }
     lines = build_lines(data, BOX)
     assert [x.name for x in lines] == ["京都市営地下鉄烏丸線"]
+
+
+def test_same_name_different_operator_tags_merge():
+    a = (1, [(26.2, 127.65), (26.21, 127.66)])
+    b = (2, [(26.3, 127.65), (26.31, 127.66)])
+    data = {
+        "elements": [
+            _rel(1, "JR奈良線", [a], operator="西日本旅客鉄道"),
+            _rel(2, "JR奈良線", [b], operator=""),
+        ]
+    }
+    lines = build_lines(data, BOX)
+    assert len(lines) == 1 and len(lines[0].coords) == 2
+    assert lines[0].operator == "西日本旅客鉄道"
