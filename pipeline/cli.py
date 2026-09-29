@@ -104,6 +104,14 @@ def cmd_seed_pokecen(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_seed_rail(args: argparse.Namespace) -> int:
+    from pipeline.geo import pref_slugs
+    from pipeline.rail import seed_rail
+
+    _emit(seed_rail(args.prefectures or pref_slugs()), args.report)
+    return 0
+
+
 def cmd_seed_festivals(args: argparse.Namespace) -> int:
     from pipeline.festivals import seed_festivals
     from pipeline.geo import pref_slugs
@@ -179,6 +187,11 @@ def main(argv: list[str] | None = None) -> int:
     p = sub.add_parser("seed-pokecen", help="擴充包：寶可夢中心與商店（OSM 全國）→ data/packs/")
     p.add_argument("--report")
     p.set_defaults(func=cmd_seed_pokecen)
+
+    p = sub.add_parser("seed-rail", help="鐵路路線圖層：OSM 路線與車站 → data/rail/")
+    p.add_argument("prefectures", nargs="*", help="省略時處理全部縣")
+    p.add_argument("--report")
+    p.set_defaults(func=cmd_seed_rail)
 
     p = sub.add_parser("seed-festivals", help="祭典：日文維基「{縣}の祭り」→ data/festivals/")
     p.add_argument("prefectures", nargs="*", help="省略時處理全部縣")

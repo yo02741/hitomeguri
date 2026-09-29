@@ -16,12 +16,13 @@ from pathlib import Path
 from typing import Any
 
 from pipeline import config
-from pipeline.models import Festival, FlightRoute, SeasonData, Specialty, Spot
+from pipeline.models import Festival, FlightRoute, RailData, SeasonData, Specialty, Spot
 from pipeline.paths import (
     BUNDLES_DIR,
     FESTIVALS_DIR,
     FLIGHTS_JSON,
     PACKS_DIR,
+    RAIL_DIR,
     SEASONS_JSON,
     SPECIALTIES_DIR,
     SPOTS_DIR,
@@ -123,6 +124,9 @@ def build(src: Path = SPOTS_DIR, dst: Path = BUNDLES_DIR) -> list[Path]:
     packs = build_packs(dst / "packs")
     index["packs"] = {key: meta for key, (_, meta) in packs.items()}
     written += [path for path, _ in packs.values()]
+    rail = build_rail(dst / "rail")
+    index["rail"] = {pref: meta for pref, (_, meta) in rail.items()}
+    written += [path for path, _ in rail.values()]
     festivals = build_festivals(dst / "festivals")
     index["festivals"] = {pref: meta for pref, (_, meta) in festivals.items()}
     written += [path for path, _ in festivals.values()]
@@ -181,6 +185,32 @@ def build_packs(dst: Path) -> dict[str, tuple[Path, dict[str, Any]]]:
         body = json.dumps(items, ensure_ascii=False, separators=(",", ":"))
         version = hashlib.sha1(body.encode()).hexdigest()[:10]
         out[key] = (_write(dst / f"{key}.json", items), {"count": len(items), "version": version})
+    return out
+
+
+def build_rail(dst: Path) -> dict[str, tuple[Path, dict[str, Any]]]:
+    """鐵路路線圖層：一縣一檔（打開鐵路圖層時才載入）。欄位縮寫：n 名稱、e 英文、c 顏色、
+    k 種類、o 營運者、g 線段座標；車站 n、e、lat、lng。"""
+    out = {}
+    for path in sorted(RAIL_DIR.glob("*.json")) if RAIL_DIR.exists() else []:
+        data = RailData.model_validate_json(path.read_text(encoding="utf-8"))
+        body = {
+            "lines": [
+                {k: v for k, v in {
+                    "n": x.name, "e": x.name_en, "c": x.colour, "k": x.kind,
+                    "o": x.operator, "g": x.coords,
+                }.items() if v is not None}
+                for x in data.lines
+            ],
+            "stations": [
+                {k: v for k, v in {
+                    "n": st.name, "e": st.name_en, "lat": st.lat, "lng": st.lng,
+                }.items() if v is not None}
+                for st in data.stations
+            ],
+        }  # fmt: skip
+        version = hashlib.sha1(path.read_bytes()).hexdigest()[:10]
+        out[path.stem] = (_write(dst / path.name, body), {"version": version})
     return out
 
 

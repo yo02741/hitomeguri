@@ -53,6 +53,33 @@ def _run(query: str) -> list[OsmElement]:
     return out
 
 
+def raw(query: str) -> dict:
+    """Overpass 原始回應（需要幾何的查詢用，例如鐵路路線）。"""
+    last_err: Exception | None = None
+    for url in ENDPOINTS:
+        try:
+            data = post_json(url, data={"data": query}, min_interval=2.0, retries=3)
+            remark = data.get("remark", "")
+            if "runtime error" in remark or "timed out" in remark:
+                raise RuntimeError(remark)
+            return data
+        except Exception as e:  # noqa: BLE001 — 換下一個鏡像
+            last_err = e
+    raise RuntimeError(f"Overpass 全部失敗：{last_err}")
+
+
+RAIL_ROUTES = "^(train|subway|light_rail|monorail|tram)$"
+
+
+def rail_routes(iso: str) -> dict:
+    """縣內的鐵路路線 relation（含成員路段的幾何）。"""
+    q = f"""[out:json][timeout:900];
+{_area(iso)}
+relation["type"="route"]["route"~"{RAIL_ROUTES}"](area.a);
+out tags geom;"""
+    return raw(q)
+
+
 def _area(iso: str) -> str:
     return f'area["ISO3166-2"="{iso}"]["admin_level"="4"]->.a;'
 

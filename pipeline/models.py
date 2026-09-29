@@ -159,6 +159,35 @@ class Festival(StrictModel):
     updated_at: str
 
 
+class RailLine(StrictModel):
+    """一條鐵路路線（上下行合併）；coords 為多段 [[經度, 緯度], …]。"""
+
+    id: str
+    name: str
+    name_en: str | None = None
+    ref: str | None = None
+    operator: str | None = None
+    kind: str
+    colour: str | None = None
+    coords: list[list[list[float]]]
+
+
+class RailStation(StrictModel):
+    id: str
+    name: str
+    name_en: str | None = None
+    lat: float
+    lng: float
+
+
+class RailData(StrictModel):
+    """鐵路路線圖層（data/rail/{prefecture}.json），來源 OpenStreetMap。"""
+
+    source: Source
+    lines: list[RailLine]
+    stations: list[RailStation]
+
+
 class SeasonStation(StrictModel):
     """氣象廳生物季節観測的一個觀測站：現象 key → 平年值（"MM-DD"）。"""
 
