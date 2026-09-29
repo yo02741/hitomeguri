@@ -313,3 +313,21 @@ def test_non_spot_kind():
     assert not major.non_spot_kind({"神社"})
     assert not major.non_spot_kind({"道の駅"})
     assert not major.non_spot_kind({"湾"})
+
+
+def test_non_spot_names_schools_roads_and_islands():
+    from pipeline.major import non_spot_reason
+
+    assert non_spot_reason(set(), "京都文教中学校・高等学校") == "學校"
+    assert non_spot_reason(set(), "京都府立洛北高等学校・附属中学校") == "學校"
+    assert non_spot_reason(set(), "国道367号") == "道路"
+    assert non_spot_reason(set(), "伊豆半島") == "廣域地名"
+    # 文化財、震災遺構、舊校舍、道の駅的學校保留
+    assert non_spot_reason(set(), "高梁市立吹屋小学校", designated=True) is None
+    assert non_spot_reason({"震災遺構"}, "石巻市立大川小学校") is None
+    assert non_spot_reason(set(), "旧鮎川小学校") is None
+    assert non_spot_reason(set(), "道の駅保田小学校") is None
+    # 大學、島群是景點
+    assert non_spot_reason(set(), "北海道大学") is None
+    assert non_spot_reason(set(), "慶良間諸島") is None
+    assert non_spot_reason(set(), "五島列島") is None

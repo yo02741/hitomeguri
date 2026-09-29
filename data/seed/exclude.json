@@ -50,6 +50,12 @@
       "reason": "總稱（沖繩的城），不是單一地點"
     },
     {
+      "id": "wd-Q1056187",
+      "prefecture": "hokkaido",
+      "name": "国道12号",
+      "reason": "道路"
+    },
+    {
       "id": "wd-Q1063133",
       "prefecture": "tochigi",
       "name": "日光の社寺",
@@ -60,6 +66,12 @@
       "prefecture": "nagano",
       "name": "土偶／長野県中ッ原遺跡出土",
       "reason": "出土品"
+    },
+    {
+      "id": "wd-Q10883254",
+      "prefecture": "kyoto",
+      "name": "京都府立北稜高等学校",
+      "reason": "學校（上課中）"
     },
     {
       "id": "wd-Q11076020",
@@ -86,6 +98,24 @@
       "reason": "迪士尼園區內的遊樂設施"
     },
     {
+      "id": "wd-Q11325890",
+      "prefecture": "kyoto",
+      "name": "ノートルダム女学院中学校・高等学校",
+      "reason": "學校（上課中）"
+    },
+    {
+      "id": "wd-Q11325891",
+      "prefecture": "kyoto",
+      "name": "ノートルダム学院小学校",
+      "reason": "學校（上課中）"
+    },
+    {
+      "id": "wd-Q11332730",
+      "prefecture": "kanagawa",
+      "name": "フェリス女学院中学校・高等学校",
+      "reason": "學校（上課中）"
+    },
+    {
       "id": "wd-Q11332978",
       "prefecture": "chiba",
       "name": "フォートレス・エクスプロレーション",
@@ -104,10 +134,106 @@
       "reason": "迪士尼園區內的遊樂設施"
     },
     {
+      "id": "wd-Q11356692",
+      "prefecture": "hyogo",
+      "name": "三田学園中学校・高等学校",
+      "reason": "學校（上課中）"
+    },
+    {
+      "id": "wd-Q11367999",
+      "prefecture": "kagawa",
+      "name": "丸亀市立広島小学校",
+      "reason": "學校（上課中）"
+    },
+    {
+      "id": "wd-Q11368000",
+      "prefecture": "kagawa",
+      "name": "丸亀市立本島中学校",
+      "reason": "學校（上課中）"
+    },
+    {
+      "id": "wd-Q11368001",
+      "prefecture": "kagawa",
+      "name": "丸亀市立本島小学校",
+      "reason": "學校（上課中）"
+    },
+    {
+      "id": "wd-Q11375250",
+      "prefecture": "kyoto",
+      "name": "京都府立嵯峨野高等学校",
+      "reason": "學校（上課中）"
+    },
+    {
+      "id": "wd-Q11375260",
+      "prefecture": "kyoto",
+      "name": "京都府立洛北高等学校・附属中学校",
+      "reason": "學校（上課中）"
+    },
+    {
+      "id": "wd-Q11375595",
+      "prefecture": "kyoto",
+      "name": "京都文教中学校・高等学校",
+      "reason": "學校（上課中）"
+    },
+    {
+      "id": "wd-Q11392981",
+      "prefecture": "hyogo",
+      "name": "兵庫県立姫路東高等学校",
+      "reason": "學校（上課中）"
+    },
+    {
+      "id": "wd-Q11406022",
+      "prefecture": "chiba",
+      "name": "千葉市立打瀬中学校",
+      "reason": "學校（上課中）"
+    },
+    {
+      "id": "wd-Q11406023",
+      "prefecture": "chiba",
+      "name": "千葉市立打瀬小学校",
+      "reason": "學校（上課中）"
+    },
+    {
+      "id": "wd-Q11406273",
+      "prefecture": "chiba",
+      "name": "千葉県立幕張総合高等学校",
+      "reason": "學校（上課中）"
+    },
+    {
+      "id": "wd-Q11414639",
+      "prefecture": "kyoto",
+      "name": "同志社小学校",
+      "reason": "學校（上課中）"
+    },
+    {
+      "id": "wd-Q11421422",
+      "prefecture": "oita",
+      "name": "国道213号",
+      "reason": "道路"
+    },
+    {
+      "id": "wd-Q11421447",
+      "prefecture": "fukui",
+      "name": "国道364号",
+      "reason": "道路"
+    },
+    {
       "id": "wd-Q11435617",
       "prefecture": "akita",
       "name": "大日堂舞楽",
       "reason": "表演藝術，不是地點"
+    },
+    {
+      "id": "wd-Q11441445",
+      "prefecture": "osaka",
+      "name": "大阪教育大学附属天王寺中学校",
+      "reason": "學校（上課中）"
+    },
+    {
+      "id": "wd-Q11441446",
+      "prefecture": "osaka",
+      "name": "大阪教育大学附属天王寺小学校",
+      "reason": "學校（上課中）"
     },
     {
       "id": "wd-Q11444847",
@@ -116,16 +242,196 @@
       "reason": "世界遺產總稱"
     },
     {
+      "id": "wd-Q11456537",
+      "prefecture": "toyama",
+      "name": "富山県立高岡工芸高等学校",
+      "reason": "學校（上課中）"
+    },
+    {
+      "id": "wd-Q11465460",
+      "prefecture": "hiroshima",
+      "name": "尾道中学校・高等学校",
+      "reason": "學校（上課中）"
+    },
+    {
+      "id": "wd-Q11484790",
+      "prefecture": "hiroshima",
+      "name": "広島県立因島高等学校",
+      "reason": "學校（上課中）"
+    },
+    {
+      "id": "wd-Q11495757",
+      "prefecture": "chiba",
+      "name": "成田高等学校・付属中学校",
+      "reason": "學校（上課中）"
+    },
+    {
+      "id": "wd-Q11506281",
+      "prefecture": "ehime",
+      "name": "日本ウェルネス高等学校",
+      "reason": "學校（上課中）"
+    },
+    {
+      "id": "wd-Q11514066",
+      "prefecture": "chiba",
+      "name": "昭和学院秀英中学校・高等学校",
+      "reason": "學校（上課中）"
+    },
+    {
       "id": "wd-Q1151821",
       "prefecture": "tokyo",
       "name": "北硫黄島",
       "reason": "一般不可登島"
     },
     {
+      "id": "wd-Q11542925",
+      "prefecture": "kanagawa",
+      "name": "横浜共立学園中学校・高等学校",
+      "reason": "學校（上課中）"
+    },
+    {
+      "id": "wd-Q11542962",
+      "prefecture": "kanagawa",
+      "name": "横浜女学院中学校・高等学校",
+      "reason": "學校（上課中）"
+    },
+    {
+      "id": "wd-Q11543038",
+      "prefecture": "kanagawa",
+      "name": "横浜市立みなと総合高等学校",
+      "reason": "學校（上課中）"
+    },
+    {
+      "id": "wd-Q11543158",
+      "prefecture": "kanagawa",
+      "name": "横浜市立金沢高等学校",
+      "reason": "學校（上課中）"
+    },
+    {
+      "id": "wd-Q11543281",
+      "prefecture": "kanagawa",
+      "name": "横浜雙葉中学校・高等学校",
+      "reason": "學校（上課中）"
+    },
+    {
       "id": "wd-Q11545893",
       "prefecture": "kanagawa",
       "name": "武家の古都・鎌倉",
       "reason": "世界遺產候補總稱"
+    },
+    {
+      "id": "wd-Q11560345",
+      "prefecture": "hyogo",
+      "name": "淳心学院中学校・高等学校",
+      "reason": "學校（上課中）"
+    },
+    {
+      "id": "wd-Q11561733",
+      "prefecture": "chiba",
+      "name": "渋谷教育学園幕張中学校・高等学校",
+      "reason": "學校（上課中）"
+    },
+    {
+      "id": "wd-Q11589950",
+      "prefecture": "hyogo",
+      "name": "神戸市立六甲アイランド高等学校",
+      "reason": "學校（上課中）"
+    },
+    {
+      "id": "wd-Q11589952",
+      "prefecture": "hyogo",
+      "name": "神戸市立六甲山小学校",
+      "reason": "學校（上課中）"
+    },
+    {
+      "id": "wd-Q11592588",
+      "prefecture": "fukuoka",
+      "name": "福岡県立糸島高等学校",
+      "reason": "學校（上課中）"
+    },
+    {
+      "id": "wd-Q11595321",
+      "prefecture": "akita",
+      "name": "秋田市立勝平中学校",
+      "reason": "學校（上課中）"
+    },
+    {
+      "id": "wd-Q11595322",
+      "prefecture": "akita",
+      "name": "秋田市立勝平小学校",
+      "reason": "學校（上課中）"
+    },
+    {
+      "id": "wd-Q11595332",
+      "prefecture": "akita",
+      "name": "秋田市立将軍野中学校",
+      "reason": "學校（上課中）"
+    },
+    {
+      "id": "wd-Q11595342",
+      "prefecture": "akita",
+      "name": "秋田市立秋田商業高等学校",
+      "reason": "學校（上課中）"
+    },
+    {
+      "id": "wd-Q11622295",
+      "prefecture": "kagoshima",
+      "name": "薩摩川内市立上甑中学校",
+      "reason": "學校（上課中）"
+    },
+    {
+      "id": "wd-Q11622316",
+      "prefecture": "kagoshima",
+      "name": "薩摩川内市立里中学校",
+      "reason": "學校（上課中）"
+    },
+    {
+      "id": "wd-Q11635086",
+      "prefecture": "hyogo",
+      "name": "賢明女子学院中学校・高等学校",
+      "reason": "學校（上課中）"
+    },
+    {
+      "id": "wd-Q11643180",
+      "prefecture": "fukushima",
+      "name": "郡山市立金透小学校",
+      "reason": "學校（上課中）"
+    },
+    {
+      "id": "wd-Q11652756",
+      "prefecture": "nagasaki",
+      "name": "長崎県立長崎式見高等学校",
+      "reason": "學校（上課中）"
+    },
+    {
+      "id": "wd-Q11670366",
+      "prefecture": "kagawa",
+      "name": "高松市立屋島東小学校",
+      "reason": "學校（上課中）"
+    },
+    {
+      "id": "wd-Q11670367",
+      "prefecture": "kagawa",
+      "name": "高松市立屋島小学校",
+      "reason": "學校（上課中）"
+    },
+    {
+      "id": "wd-Q11670368",
+      "prefecture": "kagawa",
+      "name": "高松市立屋島西小学校",
+      "reason": "學校（上課中）"
+    },
+    {
+      "id": "wd-Q11676107",
+      "prefecture": "aomori",
+      "name": "鶴田町立水元小学校",
+      "reason": "學校（上課中）"
+    },
+    {
+      "id": "wd-Q11676675",
+      "prefecture": "kagoshima",
+      "name": "鹿児島市立鹿児島女子高等学校",
+      "reason": "學校（上課中）"
     },
     {
       "id": "wd-Q117455432",
@@ -164,6 +470,18 @@
       "reason": "USJ 園區內的遊樂設施"
     },
     {
+      "id": "wd-Q17218850",
+      "prefecture": "kagawa",
+      "name": "丸亀市立広島中学校",
+      "reason": "學校（上課中）"
+    },
+    {
+      "id": "wd-Q17226000",
+      "prefecture": "toyama",
+      "name": "小矢部市立大谷中学校",
+      "reason": "學校（上課中）"
+    },
+    {
       "id": "wd-Q1737305",
       "prefecture": "tottori",
       "name": "C-1",
@@ -174,6 +492,12 @@
       "prefecture": "kanagawa",
       "name": "陸奥",
       "reason": "軍艦（已不存在）"
+    },
+    {
+      "id": "wd-Q2041916",
+      "prefecture": "wakayama",
+      "name": "国道370号",
+      "reason": "道路"
     },
     {
       "id": "wd-Q215727",
@@ -254,10 +578,22 @@
       "reason": "迪士尼園區內的遊樂設施"
     },
     {
+      "id": "wd-Q28689553",
+      "prefecture": "ibaraki",
+      "name": "大子町立上岡小学校",
+      "reason": "學校（上課中）"
+    },
+    {
       "id": "wd-Q2896261",
       "prefecture": "iwate",
       "name": "平泉",
       "reason": "世界遺產總稱"
+    },
+    {
+      "id": "wd-Q2914024",
+      "prefecture": "aichi",
+      "name": "東海中学校・高等学校",
+      "reason": "學校（上課中）"
     },
     {
       "id": "wd-Q2975212",
@@ -314,6 +650,12 @@
       "reason": "迪士尼園區內的遊樂設施"
     },
     {
+      "id": "wd-Q405076",
+      "prefecture": "kyoto",
+      "name": "国道367号",
+      "reason": "道路"
+    },
+    {
       "id": "wd-Q48514",
       "prefecture": "okayama",
       "name": "雪舟",
@@ -326,10 +668,70 @@
       "reason": "迪士尼園區內的遊樂設施"
     },
     {
+      "id": "wd-Q5507712",
+      "prefecture": "hiroshima",
+      "name": "広島市立袋町小学校",
+      "reason": "學校（上課中）"
+    },
+    {
+      "id": "wd-Q55522831",
+      "prefecture": "tochigi",
+      "name": "宇都宮市立城山西小学校",
+      "reason": "學校（上課中）"
+    },
+    {
       "id": "wd-Q605492",
       "prefecture": "chiba",
       "name": "東京ディズニーリゾート",
       "reason": "總稱（與東京ディズニーランド、東京ディズニーシー重複）"
+    },
+    {
+      "id": "wd-Q60986928",
+      "prefecture": "kyoto",
+      "name": "京都市立錦林小学校",
+      "reason": "學校（上課中）"
+    },
+    {
+      "id": "wd-Q6156773",
+      "prefecture": "kanagawa",
+      "name": "国道133号",
+      "reason": "道路"
+    },
+    {
+      "id": "wd-Q6156846",
+      "prefecture": "osaka",
+      "name": "国道165号",
+      "reason": "道路"
+    },
+    {
+      "id": "wd-Q6156899",
+      "prefecture": "yamaguchi",
+      "name": "国道191号",
+      "reason": "道路"
+    },
+    {
+      "id": "wd-Q6157276",
+      "prefecture": "hokkaido",
+      "name": "国道336号",
+      "reason": "道路"
+    },
+    {
+      "id": "wd-Q6157281",
+      "prefecture": "aomori",
+      "name": "国道339号",
+      "reason": "道路"
+    },
+    {
+      "id": "wd-Q6157289",
+      "prefecture": "akita",
+      "name": "国道341号",
+      "reason": "道路"
+    },
+    {
+      "id": "wd-Q6157429",
+      "prefecture": "aomori",
+      "name": "国道394号",
+      "reason": "道路"
     },
     {
       "id": "wd-Q65042943",
@@ -348,6 +750,12 @@
       "prefecture": "chiba",
       "name": "ファンタジースプリングス",
       "reason": "迪士尼園區內的遊樂設施"
+    },
+    {
+      "id": "wd-Q65282660",
+      "prefecture": "kagawa",
+      "name": "観音寺市立伊吹小学校・伊吹中学校",
+      "reason": "學校（上課中）"
     },
     {
       "id": "wd-Q6600319",
@@ -408,6 +816,12 @@
       "prefecture": "chiba",
       "name": "ビッグサンダー・マウンテン",
       "reason": "迪士尼園區內的遊樂設施"
+    },
+    {
+      "id": "wd-Q900533",
+      "prefecture": "osaka",
+      "name": "国道26号",
+      "reason": "道路"
     },
     {
       "id": "wd-Q935409",

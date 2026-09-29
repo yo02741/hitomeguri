@@ -570,13 +570,22 @@ EVENT_P31_SUBSTR = (
     "festival", "battle", "recurring event",
 )  # fmt: skip
 # 廣域地名：地圖上一個點代表不了。以名稱結尾判斷（P31 判斷會誤殺六甲山、上高地這類景點）；
-# 世界遺產例外（白神山地）
-REGION_NAME_RE = re.compile(
-    r"(国立公園|国定公園|半島|山地|山脈|山系|連峰|連山|丘陵|平野|盆地|諸島|列島|群島)$"
+# 世界遺產例外（白神山地）。諸島、列島、群島是旅行目的地，不排除（使用者決定）
+REGION_NAME_RE = re.compile(r"(国立公園|国定公園|半島|山地|山脈|山系|連峰|連山|丘陵|平野|盆地)$")
+# 學校（小學到高中；大學常是景點，不排除）與道路編號：以名稱判斷（P31 標籤寫法太多）
+SCHOOL_NAME_RE = re.compile(
+    r"(小学校|中学校|高等学校|中等教育学校|義務教育学校|特別支援学校|養護学校|幼稚園|保育園|保育所)$"
 )
+ROAD_NAME_RE = re.compile(r"^(国道|都道|道道|府道|県道)\d+号")
 
 
-def non_spot_reason(kinds: set[str], name: str = "", world_heritage: bool = False) -> str | None:
+# 學校的例外：文化財、震災遺構、廢校改成的設施（道の駅保田小学校）
+SCHOOL_KEEP_P31 = ("震災遺構", "廃校", "文化財", "記念館", "博物館", "資料館")
+
+
+def non_spot_reason(
+    kinds: set[str], name: str = "", world_heritage: bool = False, designated: bool = False
+) -> str | None:
     """不是景點的理由（命中的 P31 標籤或名稱規則）；是景點回傳 None。
 
     行政區、事件與活動、既有的排除類型看 P31；廣域地名看名稱結尾。
@@ -589,13 +598,27 @@ def non_spot_reason(kinds: set[str], name: str = "", world_heritage: bool = Fals
         # 道の駅是景點，不當車站排除
         if any(s in k and not (s == "駅" and "道の駅" in k) for s in EXCLUDE_P31_SUBSTR):
             return k
-    if not world_heritage and REGION_NAME_RE.search(strip_disambiguation(name)):
+    base = strip_disambiguation(name)
+    if not world_heritage and REGION_NAME_RE.search(base):
         return "廣域地名"
+    # 上課中的學校不是景點；有文化指定、震災遺構、廢校、舊校舍、道の駅的保留
+    if (
+        SCHOOL_NAME_RE.search(base)
+        and not designated
+        and not base.startswith("旧")
+        and "道の駅" not in base
+        and not any(w in k for k in kinds for w in SCHOOL_KEEP_P31)
+    ):
+        return "學校"
+    if ROAD_NAME_RE.search(base):
+        return "道路"
     return None
 
 
-def non_spot_kind(kinds: set[str], world_heritage: bool = False, name: str = "") -> bool:
-    return non_spot_reason(kinds, name, world_heritage) is not None
+def non_spot_kind(
+    kinds: set[str], world_heritage: bool = False, name: str = "", designated: bool = False
+) -> bool:
+    return non_spot_reason(kinds, name, world_heritage, designated) is not None
 
 
 # 總稱條目（世界遺產登錄名、古墳群）：以名稱判斷
@@ -633,10 +656,13 @@ def excluded_ids() -> set[str]:
 
 
 def name_excluded(name_ja: str | None) -> bool:
-    """以名稱判斷的排除：總稱條目、古墳（使用者決定：一般旅客不會專程去）。"""
+    """以名稱判斷的排除：總稱條目、古墳（使用者決定：一般旅客不會專程去）、道路編號。"""
     name = strip_disambiguation(unicodedata.normalize("NFKC", name_ja or ""))
     return bool(
-        COLLECTIVE_NAME_RE.search(name) or KOFUN_DROP_RE.search(name) or GENERIC_NAME_RE.match(name)
+        COLLECTIVE_NAME_RE.search(name)
+        or KOFUN_DROP_RE.search(name)
+        or GENERIC_NAME_RE.match(name)
+        or ROAD_NAME_RE.search(name)
     )
 
 
@@ -663,7 +689,8 @@ def drop_non_spots(drafts: dict[str, Draft]) -> list[str]:
         kinds = {labels.get(q, "") for q in d.ent.instance_of} - {""}
         heritage = {labels_h.get(h, "") for h in d.ent.heritage}
         world = any("世界遺産" in h for h in heritage)
-        if non_spot_kind(kinds, world, d.name_ja or "") or name_excluded(d.name_ja):
+        designated = bool(heritage - {""})
+        if non_spot_kind(kinds, world, d.name_ja or "", designated) or name_excluded(d.name_ja):
             dropped.append(d.name_ja or key)
             del drafts[key]
     return dropped
