@@ -1,0 +1,71 @@
+name: Firebase Hosting
+
+# main 有變更時把前端部署到 Firebase Hosting（https://<專案 ID>.web.app/）。只用 Hosting（Spark 免費方案）。
+# 需要：
+#   secrets.FIREBASE_SERVICE_ACCOUNT  服務帳戶 JSON 金鑰（角色：Firebase Hosting 管理員、API 金鑰檢視者）
+#   vars.VITE_FIREBASE_*               Firebase Web 設定（與 pages.yml 共用；PROJECT_ID 未設定時用 .firebaserc 的 hitomeguri）
+# 沒有設定 secret 時只建置、不部署。
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: firebase-hosting
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    env:
+      PROJECT_ID: ${{ vars.VITE_FIREBASE_PROJECT_ID || 'hitomeguri' }}
+    steps:
+      - name: 檢查部署金鑰
+        id: check
+        env:
+          SA: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
+        run: |
+          if [ -n "$SA" ]; then
+            echo "ready=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "::notice::尚未設定 secrets.FIREBASE_SERVICE_ACCOUNT，只建置不部署"
+          fi
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: web/package-lock.json
+      - uses: astral-sh/setup-uv@v6
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: 產生景點 bundle
+        run: |
+          uv venv && uv pip install -e .
+          .venv/bin/python -m pipeline.cli build-bundles
+      - run: npm ci
+        working-directory: web
+      - run: npm run build
+        working-directory: web
+        env:
+          VITE_BASE: /
+          VITE_USE_EMULATORS: "0"
+          VITE_FIREBASE_API_KEY: ${{ vars.VITE_FIREBASE_API_KEY }}
+          VITE_FIREBASE_AUTH_DOMAIN: ${{ vars.VITE_FIREBASE_AUTH_DOMAIN }}
+          VITE_FIREBASE_PROJECT_ID: ${{ vars.VITE_FIREBASE_PROJECT_ID }}
+          VITE_FIREBASE_APP_ID: ${{ vars.VITE_FIREBASE_APP_ID }}
+      # firebase.json 的 hosting 設定：public=web/dist、SPA rewrite、bundles 快取標頭
+      - uses: FirebaseExtended/action-hosting-deploy@v0
+        if: steps.check.outputs.ready == 'true'
+        with:
+          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
+          projectId: ${{ env.PROJECT_ID }}
+          channelId: live
+      - name: 摘要
+        if: steps.check.outputs.ready == 'true'
+        run: echo "部署到 https://${PROJECT_ID}.web.app/" >> "$GITHUB_STEP_SUMMARY"
