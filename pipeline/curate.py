@@ -12,10 +12,9 @@ from typing import Any
 
 from pipeline import config
 from pipeline.build_bundles import spot_type
-from pipeline.major import excluded_ids, log, name_excluded, non_spot_reason
+from pipeline.major import OFFICIAL_HOSTS, excluded_ids, log, name_excluded, non_spot_reason
 from pipeline.paths import SPOTS_DIR
 
-OFFICIAL_HOSTS = ("okinawastory.jp", "crossroadfukuoka.jp", "visit-hokkaido.jp")
 SPOT_LIKE_TYPES = {
     "海灘",
     "岬",

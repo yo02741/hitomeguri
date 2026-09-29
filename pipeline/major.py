@@ -30,7 +30,10 @@ from pipeline.paths import REGIONS_JSON, SEED_DIR, SPOTS_DIR
 from pipeline.sources import (
     commons,
     crossroadfukuoka,
+    gotokyo,
+    kyototravel,
     okinawastory,
+    osakainfo,
     osm,
     pageviews,
     visithokkaido,
@@ -230,8 +233,19 @@ OFFICIAL_SOURCES = {
     "okinawa": okinawastory.spots,
     "fukuoka": crossroadfukuoka.spots,
     "hokkaido": visithokkaido.spots,
+    # 沒有熱門排序：列出的景點一律加同樣的分數，只併入既有候選、不新增
+    "tokyo": lambda _n: gotokyo.spots(config.OFFICIAL_UNRANKED_MAX),
+    "kyoto": lambda _n: kyototravel.spots(config.OFFICIAL_UNRANKED_MAX),
+    "osaka": lambda _n: osakainfo.spots(config.OFFICIAL_UNRANKED_MAX),
 }
-OFFICIAL_HOSTS = ("okinawastory.jp", "crossroadfukuoka.jp", "visit-hokkaido.jp")
+OFFICIAL_HOSTS = (
+    "okinawastory.jp",
+    "crossroadfukuoka.jp",
+    "visit-hokkaido.jp",
+    "gotokyo.org",
+    "kyoto.travel",
+    "osaka-info.jp",
+)
 
 
 def _names_overlap(a: set[str], b: set[str]) -> bool:
@@ -268,7 +282,9 @@ def merge_official(pref: str, drafts: dict[str, Draft]) -> None:
     log(f"[{pref}] 官方觀光網站熱門排行…")
     items = fetch(config.OFFICIAL_TOP_N)
     matched = added = 0
-    skipped: dict[str, list[str]] = {"沒有座標": [], "縣外": [], "住宿等": [], "活動、花況": []}
+    skipped: dict[str, list[str]] = {
+        "沒有座標": [], "縣外": [], "住宿等": [], "活動、花況": [], "沒有對應的候選": [],
+    }  # fmt: skip
     south, west, north, east = geo.bbox(pref)
     for o in items:
         if o.lat is None or o.lng is None:
@@ -329,6 +345,9 @@ def merge_official(pref: str, drafts: dict[str, Draft]) -> None:
         if target:
             target.official = o
             matched += 1
+        elif o.rank is None:
+            # 沒有熱門排序的清單分不出輕重（東京都內數千筆），不拿來新增景點
+            skipped["沒有對應的候選"].append(o.name)
         else:
             key = f"{o.source}-{o.id}"
             drafts[key] = Draft(key=key, lat=o.lat, lng=o.lng, official=o)

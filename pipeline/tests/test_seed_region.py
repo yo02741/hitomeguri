@@ -129,6 +129,7 @@ def fake_sources(monkeypatch, tmp_path):
     monkeypatch.setattr(major, "tourism_qids", lambda pref: {"Q5"})
     monkeypatch.setattr(major, "extra_category_qids", lambda pref: set())
     monkeypatch.setattr(major, "SPOTS_DIR", tmp_path / "spots")
+    monkeypatch.setattr(major, "OFFICIAL_SOURCES", {})
     return tmp_path
 
 

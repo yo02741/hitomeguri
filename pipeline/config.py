@@ -42,6 +42,8 @@ OFFICIAL_BONUS_MAX = 80.0
 OFFICIAL_BONUS_MIN = 20.0
 # 官方網站沒有熱門排序（東京、京都、大阪）：列出的景點一律加這麼多（使用者：接上但不加權排序）
 OFFICIAL_BONUS_UNRANKED = 20.0
+# 沒有熱門排序的官方網站：sitemap 上的景點頁全取（每秒一頁；上限只為了不讓採集跑超過時限）
+OFFICIAL_UNRANKED_MAX = 4000
 # 官方網站上的地點併入既有候選：名稱相同的距離上限
 OFFICIAL_MATCH_DISTANCE_M = 2000
 # 名稱完全相同時的距離上限（湖、山、半島這類大範圍景點）
