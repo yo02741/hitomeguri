@@ -61,3 +61,42 @@ def test_tea_only_for_tea_names():
 
 def test_instant_noodles_not_food():
     assert not specialties.is_food(["インスタントラーメン"])
+
+
+def test_maff_detail():
+    from pipeline.sources import maff
+
+    page = """
+<a href="https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/1153/index.html">English</a>
+<h2 class="tit06"><span class="name">ずんだ餅（ずんだもち）</span></h2>
+<h3 class="tit06"><span class="pref">主な伝承地域</span></h3><p class="mt10">県全域</p>
+<h3 class="tit06 mb10"><span class="pref">歴史・由来・関連行事</span></h3>
+<p>宮城県では餅を食べる機会が多く、<br>正月には餅が食べられている。</p>
+<h3 class="tit06 mb10"><span class="pref">飲食方法</span></h3>
+<p>つきたての餅に絡めて食べる。</p>
+"""
+    d = maff.parse_detail(page)
+    assert d.reading == "ずんだもち"
+    assert d.summary == "宮城県では餅を食べる機会が多く、正月には餅が食べられている。"
+    assert d.sections["飲食方法"] == "つきたての餅に絡めて食べる。"
+    assert (
+        d.en_url == "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/1153/index.html"
+    )
+    assert maff.parse_detail('<span class="name">いちご煮</span>').reading is None
+
+
+def test_maff_english_detail():
+    from pipeline.sources import maff
+
+    page = """
+<h2 class="tit06"><span class="name">Zunda mochi</span></h2>
+<p>These images of local cuisine may not be downloaded.</p>
+<h3 class="tit06"><span class="pref">History/origin/related events</span></h3>
+<p class="mt10">In Miyagi Prefecture, there are many opportunities to eat mochi.</p>
+<h3 class="tit06"><span class="pref">Efforts for Preservation and Succession</span></h3>
+<p class="mt10">(Outline of the people who have passed it on, preservation groups)</p>
+"""
+    d = maff.parse_detail(page)
+    assert d.name == "Zunda mochi" and d.reading is None
+    assert d.summary == "In Miyagi Prefecture, there are many opportunities to eat mochi."
+    assert "Efforts for Preservation and Succession" not in d.sections

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed, onMounted, ref, watch } from 'vue'
 
-import { regionOf } from '../data/regions'
+import { prefectureFullName, regionOf } from '../data/regions'
 import { SPECIALTY_GROUPS, specialtyGroup } from '../data/specialties'
 import type { Specialty } from '../services/bundles'
 import { useCatalogStore } from '../stores/catalog'
@@ -9,6 +9,7 @@ import { useExploreStore } from '../stores/explore'
 import CollapseChevron from '../components/CollapseChevron.vue'
 import FestivalList from '../components/FestivalList.vue'
 import SeasonCalendar from '../components/SeasonCalendar.vue'
+import WebSearchLink from '../components/WebSearchLink.vue'
 
 // 深度探索（UX-FLOW.md A8）：一個縣的季節、祭典、地區特色、期間限定。
 // 地圖頁負責「去哪」，這一頁負責「這個地方有什麼、什麼時候去」。沒有資料的段落不顯示。
@@ -73,7 +74,7 @@ function sourceLabel(url: string): string {
     if (host.includes('wikidata')) return 'Wikidata'
     if (host === 'ja.wikipedia.org') return '維基百科（日文）'
     if (host === 'zh.wikipedia.org') return '維基百科（中文）'
-    if (host === 'maff.go.jp') return '農林水產省'
+    if (host === 'maff.go.jp') return url.includes('/e/') ? '農林水產省（英文）' : '農林水產省'
     return host
   } catch {
     return url
@@ -144,14 +145,17 @@ function sourceLabel(url: string): string {
                 />
               </div>
               <div class="flex flex-1 flex-col gap-2 px-4 pt-3 pb-4">
-                <div class="flex flex-col">
-                  <span v-if="s.name.kana" lang="ja" class="text-caption tracking-kana text-sub">{{ s.name.kana }}</span>
-                  <span class="flex flex-wrap items-baseline gap-x-2">
-                    <span lang="ja" class="text-body font-bold">{{ s.name.ja }}</span>
-                    <span v-if="s.name.zh_tw && s.name.zh_tw !== s.name.ja" class="text-body-sm text-sub">{{ s.name.zh_tw }}</span>
-                <!-- 沒有中文名時放英文名（取自 Wikidata） -->
-                <span v-else-if="s.name.en" lang="en" class="text-body-sm text-sub">{{ s.name.en }}</span>
-                  </span>
+                <div class="flex items-start gap-2">
+                  <div class="flex min-w-0 flex-1 flex-col">
+                    <span v-if="s.name.kana" lang="ja" class="text-caption tracking-kana text-sub">{{ s.name.kana }}</span>
+                    <span class="flex flex-wrap items-baseline gap-x-2">
+                      <span lang="ja" class="text-body font-bold">{{ s.name.ja }}</span>
+                      <span v-if="s.name.zh_tw && s.name.zh_tw !== s.name.ja" class="text-body-sm text-sub">{{ s.name.zh_tw }}</span>
+                      <!-- 沒有中文名時放英文名（Wikidata、農林水產省英文版） -->
+                      <span v-else-if="s.name.en" lang="en" class="text-body-sm text-sub">{{ s.name.en }}</span>
+                    </span>
+                  </div>
+                  <WebSearchLink :name="s.name.ja" :context="prefectureFullName(pref)" class="-mt-1 -mr-2" />
                 </div>
                 <p
                   v-if="s.summary"

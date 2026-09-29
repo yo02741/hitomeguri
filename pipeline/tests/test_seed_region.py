@@ -263,6 +263,8 @@ def test_merge_official(monkeypatch):
         OfficialSpot("okinawastory", "3", "某ホテル", "https://x/3", 3, 26.2, 127.6, ["宿泊施設"]),
     ]
     monkeypatch.setattr(major, "OFFICIAL_SOURCES", {"okinawa": lambda n: items})
+    # data/seed/official 的存檔不讀，用上面的假資料
+    monkeypatch.setattr("pipeline.official.load_official", lambda pref: None)
     major.merge_official("okinawa", drafts)
     assert existing.official and existing.official.rank == 1
     assert set(drafts) == {"Q10", "okinawastory-2"}

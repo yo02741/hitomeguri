@@ -2,7 +2,9 @@
 import { computed, ref, watch } from 'vue'
 
 import type { Festival } from '../services/bundles'
+import { prefectureFullName } from '../data/regions'
 import CollapseChevron from './CollapseChevron.vue'
+import WebSearchLink from './WebSearchLink.vue'
 
 // 深度探索「祭典」：依舉行月份分組（跨月的放在第一個月），1 到 12 月，組內依日文維基瀏覽量。
 // 月份列可篩選；沒有月份的放最後「月份未載」。
@@ -106,15 +108,18 @@ function mapLink(f: Festival) {
             />
           </div>
           <div class="flex min-w-0 flex-1 flex-col gap-1.5">
-            <div class="flex flex-col">
-              <span v-if="f.name.kana" lang="ja" class="truncate text-caption tracking-kana text-sub">{{ f.name.kana }}</span>
-              <span class="flex flex-wrap items-baseline gap-x-2">
-                <span lang="ja" class="text-body font-bold">{{ f.name.ja }}</span>
-                <span v-if="f.name.zh_tw && f.name.zh_tw !== f.name.ja" class="text-body-sm text-sub">{{ f.name.zh_tw }}</span>
-                <!-- 沒有中文名時放英文名（取自 Wikidata） -->
-                <span v-else-if="f.name.en" lang="en" class="text-body-sm text-sub">{{ f.name.en }}</span>
-                <span v-if="monthsText(f)" class="font-latin text-caption font-bold">{{ monthsText(f) }}</span>
-              </span>
+            <div class="flex items-start gap-2">
+              <div class="flex min-w-0 flex-1 flex-col">
+                <span v-if="f.name.kana" lang="ja" class="truncate text-caption tracking-kana text-sub">{{ f.name.kana }}</span>
+                <span class="flex flex-wrap items-baseline gap-x-2">
+                  <span lang="ja" class="text-body font-bold">{{ f.name.ja }}</span>
+                  <span v-if="f.name.zh_tw && f.name.zh_tw !== f.name.ja" class="text-body-sm text-sub">{{ f.name.zh_tw }}</span>
+                  <!-- 沒有中文名時放英文名（取自 Wikidata） -->
+                  <span v-else-if="f.name.en" lang="en" class="text-body-sm text-sub">{{ f.name.en }}</span>
+                  <span v-if="monthsText(f)" class="font-latin text-caption font-bold">{{ monthsText(f) }}</span>
+                </span>
+              </div>
+              <WebSearchLink :name="f.name.ja" :context="prefectureFullName(f.prefecture)" class="-mt-1 -mr-1" />
             </div>
             <p
               v-if="f.summary"

@@ -54,6 +54,8 @@ def test_unranked_official_only_matches(monkeypatch):
         OfficialSpot("osakainfo", "x", "どこかの施設", "https://x/2", None, 34.66, 135.52),
     ]
     monkeypatch.setattr(major, "OFFICIAL_SOURCES", {"osaka": lambda n: items})
+    # data/seed/official 的存檔不讀，用上面的假資料
+    monkeypatch.setattr("pipeline.official.load_official", lambda pref: None)
     major.merge_official("osaka", drafts)
     assert existing.official and existing.official.rank is None
     assert set(drafts) == {"Q1"}

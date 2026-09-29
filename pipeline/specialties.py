@@ -254,6 +254,20 @@ def merge_drafts(drafts: list[Draft]) -> list[Draft]:
     return merged
 
 
+def maff_summary(
+    detail: maff.Detail | None, url: str | None, lang: str, today: str
+) -> dict[str, str] | None:
+    if not detail or not detail.summary or not url:
+        return None
+    return {
+        "text": detail.summary,
+        "lang": lang,
+        "source_url": url,
+        "license": maff.LICENSE,
+        "fetched_at": today,
+    }
+
+
 def seed_specialties(prefs: list[str]) -> str:
     from pipeline.wiki import (
         lead_images,
@@ -289,14 +303,36 @@ def seed_specialties(prefs: list[str]) -> str:
     extracts = summary_extracts(ents)
     images = lead_images(ents)
 
+    # 郷土料理：農林水產省料理頁的念法與介紹，以及英文版的英文名與介紹（PDL1.0，標示出處）
+    maff_ja: dict[str, maff.Detail] = {}
+    maff_en: dict[str, maff.Detail] = {}
+    with_maff = [d for d in drafts if d.maff]
+    log(f"農林水產省料理頁：{len(with_maff)} 道")
+    for i, d in enumerate(with_maff):
+        assert d.maff
+        ja_detail = maff.detail(d.maff.url)
+        if ja_detail:
+            maff_ja[d.maff.id] = ja_detail
+            if ja_detail.en_url:
+                en_detail = maff.detail(ja_detail.en_url)
+                if en_detail:
+                    maff_en[d.maff.id] = en_detail
+        if (i + 1) % 100 == 0:
+            log(f"  {i + 1}/{len(with_maff)}")
+
     by_pref: dict[str, list[dict[str, Any]]] = {p: [] for p in prefs}
     for d in drafts:
         ent = d.ent
         labels = ent.labels if ent else {}
         ja = d.name
         kana, kana_source = None, None
+        ja_detail = maff_ja.get(d.maff.id) if d.maff else None
+        en_detail = maff_en.get(d.maff.id) if d.maff else None
         if is_kana(ja):
             kana = normalize_kana(ja)
+        elif ja_detail and ja_detail.reading and is_kana(ja_detail.reading):
+            kana = normalize_kana(ja_detail.reading)
+            kana_source = "maff"
         elif ent:
             kana = next((normalize_kana(k) for k in ent.kana_all if is_kana(k)), None)
             kana_source = "wikidata" if kana else None
@@ -309,11 +345,28 @@ def seed_specialties(prefs: list[str]) -> str:
         sources: list[Source] = []
         if d.maff:
             sources.append(Source(url=d.maff.url, fetched_at=today))
+        if en_detail and ja_detail and ja_detail.en_url:
+            sources.append(Source(url=ja_detail.en_url, fetched_at=today))
+        wiki_summary = pick_summary(ent, extracts, today) if ent else None
         if ent:
             sources.append(Source(url=ent.url, fetched_at=today))
-            summary = pick_summary(ent, extracts, today)
-            if summary:
-                sources.append(Source(url=summary["source_url"], fetched_at=today))
+        # 簡介：中文維基 → 農林水產省英文版 → 英文維基 → 農林水產省 → 日文維基（都是原文，不翻譯）
+        maff_en_summary = maff_summary(
+            en_detail, ja_detail.en_url if ja_detail else None, "en", today
+        )
+        maff_ja_summary = maff_summary(ja_detail, d.maff.url if d.maff else None, "ja", today)
+        for cand in (
+            wiki_summary if wiki_summary and wiki_summary["lang"] == "zh" else None,
+            maff_en_summary,
+            wiki_summary if wiki_summary and wiki_summary["lang"] == "en" else None,
+            maff_ja_summary,
+            wiki_summary,
+        ):
+            if cand:
+                summary = cand
+                break
+        if summary and summary is wiki_summary:
+            sources.append(Source(url=summary["source_url"], fetched_at=today))
         img = []
         if ent and ent.qid in images:
             i = images[ent.qid]
@@ -329,7 +382,7 @@ def seed_specialties(prefs: list[str]) -> str:
                 kana=kana,
                 romaji=romaji_with_spacing(kana, labels.get("en")) if kana else None,
                 zh_tw=zh,
-                en=labels.get("en"),
+                en=labels.get("en") or (en_detail.name if en_detail else None),
             ),
             kana_source=kana_source,
             prefecture=d.prefecture,
