@@ -56,6 +56,11 @@ def is_service(name: str) -> bool:
     return "直通" in name or not _LINE_WORD.search(base_name(name))
 
 
+# 路段標籤仍是營運中軌道、但不是旅客路線的：貨物線、建設中（山梨實驗線是現役軌道）、
+# 廃線與現役線共用車站附近路段的（志布志線）
+NOT_PASSENGER = re.compile(r"(貨物|^中央新幹線$|^志布志線$)")
+
+
 def is_defunct(tags: dict[str, str]) -> bool:
     """廃線、休止中的線（route=railway 裡有，軌道已不在或沒有列車）。"""
     name = tags.get("name:ja") or tags.get("name") or ""
@@ -63,6 +68,7 @@ def is_defunct(tags: dict[str, str]) -> bool:
         any(k in tags for k in ("disused", "abandoned", "razed"))
         or any(k.startswith(("disused:", "abandoned:")) for k in tags)
         or bool(re.search(r"(廃線|旧線|休止|跡$)", name))
+        or bool(NOT_PASSENGER.search(name))
     )
 
 

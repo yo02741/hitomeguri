@@ -136,6 +136,8 @@ def test_defunct_railway_skipped():
     assert is_defunct({"name": "国鉄士幌線", "disused": "yes"})
     assert is_defunct({"name": "三江線（廃線）"})
     assert is_defunct({"name": "倉吉線跡"})
+    assert is_defunct({"name": "山手貨物線"})
+    assert is_defunct({"name": "中央新幹線"})
     assert is_defunct({"name": "x", "abandoned:railway": "rail"})
     assert not is_defunct({"name": "函館本線", "route": "railway"})
 
