@@ -1,0 +1,65 @@
+[
+  {
+    "id": "jma-sakura-2026-稚内",
+    "kind": "seasonal",
+    "category": "sakura",
+    "brand": "気象庁",
+    "title": {
+      "ja": "稚内　さくら満開",
+      "zh_tw": "稚内 櫻花滿開"
+    },
+    "summary_zh": "稚内的氣象台 5月1日 觀測到櫻花開花，比平年早 12 天；5月6日 滿開，比平年早 10 天。",
+    "scope": "regional",
+    "prefectures": [
+      "hokkaido"
+    ],
+    "valid_from": "2026-05-01",
+    "valid_to": "2026-05-13",
+    "relevance": 0.0,
+    "source_url": "https://www.data.jma.go.jp/sakura/data/sakura_mankai.html",
+    "source_label": "出典：気象庁ホームページ（生物季節観測）を加工して作成",
+    "updated_at": "2026-09-29T13:05:16+00:00"
+  },
+  {
+    "id": "jma-sakura-2026-網走",
+    "kind": "seasonal",
+    "category": "sakura",
+    "brand": "気象庁",
+    "title": {
+      "ja": "網走　さくら満開",
+      "zh_tw": "網走 櫻花滿開"
+    },
+    "summary_zh": "網走的氣象台 5月3日 觀測到櫻花開花，比平年早 7 天；5月7日 滿開，比平年早 6 天。",
+    "scope": "regional",
+    "prefectures": [
+      "hokkaido"
+    ],
+    "valid_from": "2026-05-03",
+    "valid_to": "2026-05-14",
+    "relevance": 0.0,
+    "source_url": "https://www.data.jma.go.jp/sakura/data/sakura_mankai.html",
+    "source_label": "出典：気象庁ホームページ（生物季節観測）を加工して作成",
+    "updated_at": "2026-09-29T13:05:16+00:00"
+  },
+  {
+    "id": "jma-sakura-2026-釧路",
+    "kind": "seasonal",
+    "category": "sakura",
+    "brand": "気象庁",
+    "title": {
+      "ja": "釧路　さくら満開",
+      "zh_tw": "釧路 櫻花滿開"
+    },
+    "summary_zh": "釧路的氣象台 5月3日 觀測到櫻花開花，比平年早 13 天；5月6日 滿開，比平年早 13 天。",
+    "scope": "regional",
+    "prefectures": [
+      "hokkaido"
+    ],
+    "valid_from": "2026-05-03",
+    "valid_to": "2026-05-13",
+    "relevance": 0.0,
+    "source_url": "https://www.data.jma.go.jp/sakura/data/sakura_mankai.html",
+    "source_label": "出典：気象庁ホームページ（生物季節観測）を加工して作成",
+    "updated_at": "2026-09-29T13:05:16+00:00"
+  }
+]

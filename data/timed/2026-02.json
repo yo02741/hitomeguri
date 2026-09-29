@@ -1,0 +1,44 @@
+[
+  {
+    "id": "jma-sakura-2026-名瀬",
+    "kind": "seasonal",
+    "category": "sakura",
+    "brand": "気象庁",
+    "title": {
+      "ja": "名瀬　さくら開花",
+      "zh_tw": "名瀬 櫻花開花"
+    },
+    "summary_zh": "名瀬的氣象台 2月1日 觀測到櫻花開花，比平年晚 12 天。",
+    "scope": "regional",
+    "prefectures": [
+      "kagoshima"
+    ],
+    "valid_from": "2026-02-01",
+    "valid_to": "2026-02-15",
+    "relevance": 0.0,
+    "source_url": "https://www.data.jma.go.jp/sakura/data/sakura_kaika.html",
+    "source_label": "出典：気象庁ホームページ（生物季節観測）を加工して作成",
+    "updated_at": "2026-09-29T13:05:16+00:00"
+  },
+  {
+    "id": "jma-sakura-2026-石垣島",
+    "kind": "seasonal",
+    "category": "sakura",
+    "brand": "気象庁",
+    "title": {
+      "ja": "石垣島　さくら満開",
+      "zh_tw": "石垣島 櫻花滿開"
+    },
+    "summary_zh": "石垣島的氣象台 2月4日 觀測到櫻花開花，比平年晚 17 天；2月18日 滿開，比平年晚 8 天。",
+    "scope": "regional",
+    "prefectures": [
+      "okinawa"
+    ],
+    "valid_from": "2026-02-04",
+    "valid_to": "2026-02-25",
+    "relevance": 0.0,
+    "source_url": "https://www.data.jma.go.jp/sakura/data/sakura_mankai.html",
+    "source_label": "出典：気象庁ホームページ（生物季節観測）を加工して作成",
+    "updated_at": "2026-09-29T13:05:16+00:00"
+  }
+]

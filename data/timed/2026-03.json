@@ -1,0 +1,884 @@
+[
+  {
+    "id": "jma-sakura-2026-下関",
+    "kind": "seasonal",
+    "category": "sakura",
+    "brand": "気象庁",
+    "title": {
+      "ja": "下関　さくら満開",
+      "zh_tw": "下関 櫻花滿開"
+    },
+    "summary_zh": "下関的氣象台 3月24日 觀測到櫻花開花，比平年早 2 天；4月6日 滿開，比平年晚 2 天。",
+    "scope": "regional",
+    "prefectures": [
+      "yamaguchi"
+    ],
+    "valid_from": "2026-03-24",
+    "valid_to": "2026-04-13",
+    "relevance": 0.0,
+    "source_url": "https://www.data.jma.go.jp/sakura/data/sakura_mankai.html",
+    "source_label": "出典：気象庁ホームページ（生物季節観測）を加工して作成",
+    "updated_at": "2026-09-29T13:05:16+00:00"
+  },
+  {
+    "id": "jma-sakura-2026-京都",
+    "kind": "seasonal",
+    "category": "sakura",
+    "brand": "気象庁",
+    "title": {
+      "ja": "京都　さくら満開",
+      "zh_tw": "京都 櫻花滿開"
+    },
+    "summary_zh": "京都的氣象台 3月23日 觀測到櫻花開花，比平年早 3 天；3月30日 滿開，比平年早 5 天。",
+    "scope": "regional",
+    "prefectures": [
+      "kyoto"
+    ],
+    "valid_from": "2026-03-23",
+    "valid_to": "2026-04-06",
+    "relevance": 0.0,
+    "source_url": "https://www.data.jma.go.jp/sakura/data/sakura_mankai.html",
+    "source_label": "出典：気象庁ホームページ（生物季節観測）を加工して作成",
+    "updated_at": "2026-09-29T13:05:16+00:00"
+  },
+  {
+    "id": "jma-sakura-2026-仙台",
+    "kind": "seasonal",
+    "category": "sakura",
+    "brand": "気象庁",
+    "title": {
+      "ja": "仙台　さくら満開",
+      "zh_tw": "仙台 櫻花滿開"
+    },
+    "summary_zh": "仙台的氣象台 3月31日 觀測到櫻花開花，比平年早 8 天；4月4日 滿開，比平年早 9 天。",
+    "scope": "regional",
+    "prefectures": [
+      "miyagi"
+    ],
+    "valid_from": "2026-03-31",
+    "valid_to": "2026-04-11",
+    "relevance": 0.0,
+    "source_url": "https://www.data.jma.go.jp/sakura/data/sakura_mankai.html",
+    "source_label": "出典：気象庁ホームページ（生物季節観測）を加工して作成",
+    "updated_at": "2026-09-29T13:05:16+00:00"
+  },
+  {
+    "id": "jma-sakura-2026-佐賀",
+    "kind": "seasonal",
+    "category": "sakura",
+    "brand": "気象庁",
+    "title": {
+      "ja": "佐賀　さくら満開",
+      "zh_tw": "佐賀 櫻花滿開"
+    },
+    "summary_zh": "佐賀的氣象台 3月21日 觀測到櫻花開花，比平年早 3 天；4月3日 滿開，比平年晚 1 天。",
+    "scope": "regional",
+    "prefectures": [
+      "saga"
+    ],
+    "valid_from": "2026-03-21",
+    "valid_to": "2026-04-10",
+    "relevance": 0.0,
+    "source_url": "https://www.data.jma.go.jp/sakura/data/sakura_mankai.html",
+    "source_label": "出典：気象庁ホームページ（生物季節観測）を加工して作成",
+    "updated_at": "2026-09-29T13:05:16+00:00"
+  },
+  {
+    "id": "jma-sakura-2026-前橋",
+    "kind": "seasonal",
+    "category": "sakura",
+    "brand": "気象庁",
+    "title": {
+      "ja": "前橋　さくら満開",
+      "zh_tw": "前橋 櫻花滿開"
+    },
+    "summary_zh": "前橋的氣象台 3月22日 觀測到櫻花開花，比平年早 7 天；4月1日 滿開，比平年早 4 天。",
+    "scope": "regional",
+    "prefectures": [
+      "gunma"
+    ],
+    "valid_from": "2026-03-22",
+    "valid_to": "2026-04-08",
+    "relevance": 0.0,
+    "source_url": "https://www.data.jma.go.jp/sakura/data/sakura_mankai.html",
+    "source_label": "出典：気象庁ホームページ（生物季節観測）を加工して作成",
+    "updated_at": "2026-09-29T13:05:16+00:00"
+  },
+  {
+    "id": "jma-sakura-2026-南大東島",
+    "kind": "seasonal",
+    "category": "sakura",
+    "brand": "気象庁",
+    "title": {
+      "ja": "南大東島　さくら開花",
+      "zh_tw": "南大東島 櫻花開花"
+    },
+    "summary_zh": "南大東島的氣象台 3月2日 觀測到櫻花開花，比平年晚 41 天。",
+    "scope": "regional",
+    "prefectures": [
+      "okinawa"
+    ],
+    "valid_from": "2026-03-02",
+    "valid_to": "2026-03-16",
+    "relevance": 0.0,
+    "source_url": "https://www.data.jma.go.jp/sakura/data/sakura_kaika.html",
+    "source_label": "出典：気象庁ホームページ（生物季節観測）を加工して作成",
+    "updated_at": "2026-09-29T13:05:16+00:00"
+  },
+  {
+    "id": "jma-sakura-2026-名古屋",
+    "kind": "seasonal",
+    "category": "sakura",
+    "brand": "気象庁",
+    "title": {
+      "ja": "名古屋　さくら満開",
+      "zh_tw": "名古屋 櫻花滿開"
+    },
+    "summary_zh": "名古屋的氣象台 3月17日 觀測到櫻花開花，比平年早 7 天；3月30日 滿開，比平年早 3 天。",
+    "scope": "regional",
+    "prefectures": [
+      "aichi"
+    ],
+    "valid_from": "2026-03-17",
+    "valid_to": "2026-04-06",
+    "relevance": 0.0,
+    "source_url": "https://www.data.jma.go.jp/sakura/data/sakura_mankai.html",
+    "source_label": "出典：気象庁ホームページ（生物季節観測）を加工して作成",
+    "updated_at": "2026-09-29T13:05:16+00:00"
+  },
+  {
+    "id": "jma-sakura-2026-和歌山",
+    "kind": "seasonal",
+    "category": "sakura",
+    "brand": "気象庁",
+    "title": {
+      "ja": "和歌山　さくら満開",
+      "zh_tw": "和歌山 櫻花滿開"
+    },
+    "summary_zh": "和歌山的氣象台 3月24日 觀測到櫻花開花，與平年同日；4月2日 滿開，比平年早 1 天。",
+    "scope": "regional",
+    "prefectures": [
+      "wakayama"
+    ],
+    "valid_from": "2026-03-24",
+    "valid_to": "2026-04-09",
+    "relevance": 0.0,
+    "source_url": "https://www.data.jma.go.jp/sakura/data/sakura_mankai.html",
+    "source_label": "出典：気象庁ホームページ（生物季節観測）を加工して作成",
+    "updated_at": "2026-09-29T13:05:16+00:00"
+  },
+  {
+    "id": "jma-sakura-2026-大分",
+    "kind": "seasonal",
+    "category": "sakura",
+    "brand": "気象庁",
+    "title": {
+      "ja": "大分　さくら満開",
+      "zh_tw": "大分 櫻花滿開"
+    },
+    "summary_zh": "大分的氣象台 3月24日 觀測到櫻花開花，與平年同日；4月5日 滿開，比平年晚 1 天。",
+    "scope": "regional",
+    "prefectures": [
+      "oita"
+    ],
+    "valid_from": "2026-03-24",
+    "valid_to": "2026-04-12",
+    "relevance": 0.0,
+    "source_url": "https://www.data.jma.go.jp/sakura/data/sakura_mankai.html",
+    "source_label": "出典：気象庁ホームページ（生物季節観測）を加工して作成",
+    "updated_at": "2026-09-29T13:05:16+00:00"
+  },
+  {
+    "id": "jma-sakura-2026-大阪",
+    "kind": "seasonal",
+    "category": "sakura",
+    "brand": "気象庁",
+    "title": {
+      "ja": "大阪　さくら満開",
+      "zh_tw": "大阪 櫻花滿開"
+    },
+    "summary_zh": "大阪的氣象台 3月26日 觀測到櫻花開花，比平年早 1 天；4月3日 滿開，比平年早 1 天。",
+    "scope": "regional",
+    "prefectures": [
+      "osaka"
+    ],
+    "valid_from": "2026-03-26",
+    "valid_to": "2026-04-10",
+    "relevance": 0.0,
+    "source_url": "https://www.data.jma.go.jp/sakura/data/sakura_mankai.html",
+    "source_label": "出典：気象庁ホームページ（生物季節観測）を加工して作成",
+    "updated_at": "2026-09-29T13:05:16+00:00"
+  },
+  {
+    "id": "jma-sakura-2026-奈良",
+    "kind": "seasonal",
+    "category": "sakura",
+    "brand": "気象庁",
+    "title": {
+      "ja": "奈良　さくら満開",
+      "zh_tw": "奈良 櫻花滿開"
+    },
+    "summary_zh": "奈良的氣象台 3月24日 觀測到櫻花開花，比平年早 4 天；3月31日 滿開，比平年早 4 天。",
+    "scope": "regional",
+    "prefectures": [
+      "nara"
+    ],
+    "valid_from": "2026-03-24",
+    "valid_to": "2026-04-07",
+    "relevance": 0.0,
+    "source_url": "https://www.data.jma.go.jp/sakura/data/sakura_mankai.html",
+    "source_label": "出典：気象庁ホームページ（生物季節観測）を加工して作成",
+    "updated_at": "2026-09-29T13:05:16+00:00"
+  },
+  {
+    "id": "jma-sakura-2026-宇都宮",
+    "kind": "seasonal",
+    "category": "sakura",
+    "brand": "気象庁",
+    "title": {
+      "ja": "宇都宮　さくら満開",
+      "zh_tw": "宇都宮 櫻花滿開"
+    },
+    "summary_zh": "宇都宮的氣象台 3月24日 觀測到櫻花開花，比平年早 6 天；4月3日 滿開，比平年早 3 天。",
+    "scope": "regional",
+    "prefectures": [
+      "tochigi"
+    ],
+    "valid_from": "2026-03-24",
+    "valid_to": "2026-04-10",
+    "relevance": 0.0,
+    "source_url": "https://www.data.jma.go.jp/sakura/data/sakura_mankai.html",
+    "source_label": "出典：気象庁ホームページ（生物季節観測）を加工して作成",
+    "updated_at": "2026-09-29T13:05:16+00:00"
+  },
+  {
+    "id": "jma-sakura-2026-宮崎",
+    "kind": "seasonal",
+    "category": "sakura",
+    "brand": "気象庁",
+    "title": {
+      "ja": "宮崎　さくら満開",
+      "zh_tw": "宮崎 櫻花滿開"
+    },
+    "summary_zh": "宮崎的氣象台 3月24日 觀測到櫻花開花，比平年晚 1 天；4月3日 滿開，比平年晚 1 天。",
+    "scope": "regional",
+    "prefectures": [
+      "miyazaki"
+    ],
+    "valid_from": "2026-03-24",
+    "valid_to": "2026-04-10",
+    "relevance": 0.0,
+    "source_url": "https://www.data.jma.go.jp/sakura/data/sakura_mankai.html",
+    "source_label": "出典：気象庁ホームページ（生物季節観測）を加工して作成",
+    "updated_at": "2026-09-29T13:05:16+00:00"
+  },
+  {
+    "id": "jma-sakura-2026-富山",
+    "kind": "seasonal",
+    "category": "sakura",
+    "brand": "気象庁",
+    "title": {
+      "ja": "富山　さくら満開",
+      "zh_tw": "富山 櫻花滿開"
+    },
+    "summary_zh": "富山的氣象台 3月29日 觀測到櫻花開花，比平年早 5 天；4月2日 滿開，比平年早 6 天。",
+    "scope": "regional",
+    "prefectures": [
+      "toyama"
+    ],
+    "valid_from": "2026-03-29",
+    "valid_to": "2026-04-09",
+    "relevance": 0.0,
+    "source_url": "https://www.data.jma.go.jp/sakura/data/sakura_mankai.html",
+    "source_label": "出典：気象庁ホームページ（生物季節観測）を加工して作成",
+    "updated_at": "2026-09-29T13:05:16+00:00"
+  },
+  {
+    "id": "jma-sakura-2026-岐阜",
+    "kind": "seasonal",
+    "category": "sakura",
+    "brand": "気象庁",
+    "title": {
+      "ja": "岐阜　さくら満開",
+      "zh_tw": "岐阜 櫻花滿開"
+    },
+    "summary_zh": "岐阜的氣象台 3月16日 觀測到櫻花開花，比平年早 9 天；3月26日 滿開，比平年早 7 天。",
+    "scope": "regional",
+    "prefectures": [
+      "gifu"
+    ],
+    "valid_from": "2026-03-16",
+    "valid_to": "2026-04-02",
+    "relevance": 0.0,
+    "source_url": "https://www.data.jma.go.jp/sakura/data/sakura_mankai.html",
+    "source_label": "出典：気象庁ホームページ（生物季節観測）を加工して作成",
+    "updated_at": "2026-09-29T13:05:16+00:00"
+  },
+  {
+    "id": "jma-sakura-2026-岡山",
+    "kind": "seasonal",
+    "category": "sakura",
+    "brand": "気象庁",
+    "title": {
+      "ja": "岡山　さくら満開",
+      "zh_tw": "岡山 櫻花滿開"
+    },
+    "summary_zh": "岡山的氣象台 3月25日 觀測到櫻花開花，比平年早 3 天；3月31日 滿開，比平年早 4 天。",
+    "scope": "regional",
+    "prefectures": [
+      "okayama"
+    ],
+    "valid_from": "2026-03-25",
+    "valid_to": "2026-04-07",
+    "relevance": 0.0,
+    "source_url": "https://www.data.jma.go.jp/sakura/data/sakura_mankai.html",
+    "source_label": "出典：気象庁ホームページ（生物季節観測）を加工して作成",
+    "updated_at": "2026-09-29T13:05:16+00:00"
+  },
+  {
+    "id": "jma-sakura-2026-広島",
+    "kind": "seasonal",
+    "category": "sakura",
+    "brand": "気象庁",
+    "title": {
+      "ja": "広島　さくら満開",
+      "zh_tw": "広島 櫻花滿開"
+    },
+    "summary_zh": "広島的氣象台 3月19日 觀測到櫻花開花，比平年早 6 天；3月30日 滿開，比平年早 4 天。",
+    "scope": "regional",
+    "prefectures": [
+      "hiroshima"
+    ],
+    "valid_from": "2026-03-19",
+    "valid_to": "2026-04-06",
+    "relevance": 0.0,
+    "source_url": "https://www.data.jma.go.jp/sakura/data/sakura_mankai.html",
+    "source_label": "出典：気象庁ホームページ（生物季節観測）を加工して作成",
+    "updated_at": "2026-09-29T13:05:16+00:00"
+  },
+  {
+    "id": "jma-sakura-2026-彦根",
+    "kind": "seasonal",
+    "category": "sakura",
+    "brand": "気象庁",
+    "title": {
+      "ja": "彦根　さくら満開",
+      "zh_tw": "彦根 櫻花滿開"
+    },
+    "summary_zh": "彦根的氣象台 3月29日 觀測到櫻花開花，比平年早 3 天；4月2日 滿開，比平年早 6 天。",
+    "scope": "regional",
+    "prefectures": [
+      "shiga"
+    ],
+    "valid_from": "2026-03-29",
+    "valid_to": "2026-04-09",
+    "relevance": 0.0,
+    "source_url": "https://www.data.jma.go.jp/sakura/data/sakura_mankai.html",
+    "source_label": "出典：気象庁ホームページ（生物季節観測）を加工して作成",
+    "updated_at": "2026-09-29T13:05:16+00:00"
+  },
+  {
+    "id": "jma-sakura-2026-徳島",
+    "kind": "seasonal",
+    "category": "sakura",
+    "brand": "気象庁",
+    "title": {
+      "ja": "徳島　さくら満開",
+      "zh_tw": "徳島 櫻花滿開"
+    },
+    "summary_zh": "徳島的氣象台 3月28日 觀測到櫻花開花，與平年同日；4月6日 滿開，比平年晚 2 天。",
+    "scope": "regional",
+    "prefectures": [
+      "tokushima"
+    ],
+    "valid_from": "2026-03-28",
+    "valid_to": "2026-04-13",
+    "relevance": 0.0,
+    "source_url": "https://www.data.jma.go.jp/sakura/data/sakura_mankai.html",
+    "source_label": "出典：気象庁ホームページ（生物季節観測）を加工して作成",
+    "updated_at": "2026-09-29T13:05:16+00:00"
+  },
+  {
+    "id": "jma-sakura-2026-新潟",
+    "kind": "seasonal",
+    "category": "sakura",
+    "brand": "気象庁",
+    "title": {
+      "ja": "新潟　さくら満開",
+      "zh_tw": "新潟 櫻花滿開"
+    },
+    "summary_zh": "新潟的氣象台 3月31日 觀測到櫻花開花，比平年早 8 天；4月3日 滿開，比平年早 10 天。",
+    "scope": "regional",
+    "prefectures": [
+      "niigata"
+    ],
+    "valid_from": "2026-03-31",
+    "valid_to": "2026-04-10",
+    "relevance": 0.0,
+    "source_url": "https://www.data.jma.go.jp/sakura/data/sakura_mankai.html",
+    "source_label": "出典：気象庁ホームページ（生物季節観測）を加工して作成",
+    "updated_at": "2026-09-29T13:05:16+00:00"
+  },
+  {
+    "id": "jma-sakura-2026-東京",
+    "kind": "seasonal",
+    "category": "sakura",
+    "brand": "気象庁",
+    "title": {
+      "ja": "東京　さくら満開",
+      "zh_tw": "東京 櫻花滿開"
+    },
+    "summary_zh": "東京的氣象台 3月19日 觀測到櫻花開花，比平年早 5 天；3月28日 滿開，比平年早 3 天。",
+    "scope": "regional",
+    "prefectures": [
+      "tokyo"
+    ],
+    "valid_from": "2026-03-19",
+    "valid_to": "2026-04-04",
+    "relevance": 0.0,
+    "source_url": "https://www.data.jma.go.jp/sakura/data/sakura_mankai.html",
+    "source_label": "出典：気象庁ホームページ（生物季節観測）を加工して作成",
+    "updated_at": "2026-09-29T13:05:16+00:00"
+  },
+  {
+    "id": "jma-sakura-2026-松山",
+    "kind": "seasonal",
+    "category": "sakura",
+    "brand": "気象庁",
+    "title": {
+      "ja": "松山　さくら満開",
+      "zh_tw": "松山 櫻花滿開"
+    },
+    "summary_zh": "松山的氣象台 3月24日 觀測到櫻花開花，與平年同日；4月4日 滿開，比平年晚 1 天。",
+    "scope": "regional",
+    "prefectures": [
+      "ehime"
+    ],
+    "valid_from": "2026-03-24",
+    "valid_to": "2026-04-11",
+    "relevance": 0.0,
+    "source_url": "https://www.data.jma.go.jp/sakura/data/sakura_mankai.html",
+    "source_label": "出典：気象庁ホームページ（生物季節観測）を加工して作成",
+    "updated_at": "2026-09-29T13:05:16+00:00"
+  },
+  {
+    "id": "jma-sakura-2026-松江",
+    "kind": "seasonal",
+    "category": "sakura",
+    "brand": "気象庁",
+    "title": {
+      "ja": "松江　さくら満開",
+      "zh_tw": "松江 櫻花滿開"
+    },
+    "summary_zh": "松江的氣象台 3月27日 觀測到櫻花開花，比平年早 2 天；3月31日 滿開，比平年早 5 天。",
+    "scope": "regional",
+    "prefectures": [
+      "shimane"
+    ],
+    "valid_from": "2026-03-27",
+    "valid_to": "2026-04-07",
+    "relevance": 0.0,
+    "source_url": "https://www.data.jma.go.jp/sakura/data/sakura_mankai.html",
+    "source_label": "出典：気象庁ホームページ（生物季節観測）を加工して作成",
+    "updated_at": "2026-09-29T13:05:16+00:00"
+  },
+  {
+    "id": "jma-sakura-2026-横浜",
+    "kind": "seasonal",
+    "category": "sakura",
+    "brand": "気象庁",
+    "title": {
+      "ja": "横浜　さくら満開",
+      "zh_tw": "横浜 櫻花滿開"
+    },
+    "summary_zh": "横浜的氣象台 3月22日 觀測到櫻花開花，比平年早 3 天；4月1日 滿開，與平年同日。",
+    "scope": "regional",
+    "prefectures": [
+      "kanagawa"
+    ],
+    "valid_from": "2026-03-22",
+    "valid_to": "2026-04-08",
+    "relevance": 0.0,
+    "source_url": "https://www.data.jma.go.jp/sakura/data/sakura_mankai.html",
+    "source_label": "出典：気象庁ホームページ（生物季節観測）を加工して作成",
+    "updated_at": "2026-09-29T13:05:16+00:00"
+  },
+  {
+    "id": "jma-sakura-2026-水戸",
+    "kind": "seasonal",
+    "category": "sakura",
+    "brand": "気象庁",
+    "title": {
+      "ja": "水戸　さくら満開",
+      "zh_tw": "水戸 櫻花滿開"
+    },
+    "summary_zh": "水戸的氣象台 3月25日 觀測到櫻花開花，比平年早 5 天；4月3日 滿開，比平年早 3 天。",
+    "scope": "regional",
+    "prefectures": [
+      "ibaraki"
+    ],
+    "valid_from": "2026-03-25",
+    "valid_to": "2026-04-10",
+    "relevance": 0.0,
+    "source_url": "https://www.data.jma.go.jp/sakura/data/sakura_mankai.html",
+    "source_label": "出典：気象庁ホームページ（生物季節観測）を加工して作成",
+    "updated_at": "2026-09-29T13:05:16+00:00"
+  },
+  {
+    "id": "jma-sakura-2026-津",
+    "kind": "seasonal",
+    "category": "sakura",
+    "brand": "気象庁",
+    "title": {
+      "ja": "津　さくら満開",
+      "zh_tw": "津 櫻花滿開"
+    },
+    "summary_zh": "津的氣象台 3月24日 觀測到櫻花開花，比平年早 5 天；3月29日 滿開，比平年早 5 天。",
+    "scope": "regional",
+    "prefectures": [
+      "mie"
+    ],
+    "valid_from": "2026-03-24",
+    "valid_to": "2026-04-05",
+    "relevance": 0.0,
+    "source_url": "https://www.data.jma.go.jp/sakura/data/sakura_mankai.html",
+    "source_label": "出典：気象庁ホームページ（生物季節観測）を加工して作成",
+    "updated_at": "2026-09-29T13:05:16+00:00"
+  },
+  {
+    "id": "jma-sakura-2026-熊本",
+    "kind": "seasonal",
+    "category": "sakura",
+    "brand": "気象庁",
+    "title": {
+      "ja": "熊本　さくら満開",
+      "zh_tw": "熊本 櫻花滿開"
+    },
+    "summary_zh": "熊本的氣象台 3月23日 觀測到櫻花開花，比平年晚 1 天；4月2日 滿開，比平年晚 1 天。",
+    "scope": "regional",
+    "prefectures": [
+      "kumamoto"
+    ],
+    "valid_from": "2026-03-23",
+    "valid_to": "2026-04-09",
+    "relevance": 0.0,
+    "source_url": "https://www.data.jma.go.jp/sakura/data/sakura_mankai.html",
+    "source_label": "出典：気象庁ホームページ（生物季節観測）を加工して作成",
+    "updated_at": "2026-09-29T13:05:16+00:00"
+  },
+  {
+    "id": "jma-sakura-2026-熊谷",
+    "kind": "seasonal",
+    "category": "sakura",
+    "brand": "気象庁",
+    "title": {
+      "ja": "熊谷　さくら満開",
+      "zh_tw": "熊谷 櫻花滿開"
+    },
+    "summary_zh": "熊谷的氣象台 3月23日 觀測到櫻花開花，比平年早 4 天；4月3日 滿開，與平年同日。",
+    "scope": "regional",
+    "prefectures": [
+      "saitama"
+    ],
+    "valid_from": "2026-03-23",
+    "valid_to": "2026-04-10",
+    "relevance": 0.0,
+    "source_url": "https://www.data.jma.go.jp/sakura/data/sakura_mankai.html",
+    "source_label": "出典：気象庁ホームページ（生物季節観測）を加工して作成",
+    "updated_at": "2026-09-29T13:05:16+00:00"
+  },
+  {
+    "id": "jma-sakura-2026-甲府",
+    "kind": "seasonal",
+    "category": "sakura",
+    "brand": "気象庁",
+    "title": {
+      "ja": "甲府　さくら満開",
+      "zh_tw": "甲府 櫻花滿開"
+    },
+    "summary_zh": "甲府的氣象台 3月16日 觀測到櫻花開花，比平年早 9 天；3月24日 滿開，比平年早 9 天。",
+    "scope": "regional",
+    "prefectures": [
+      "yamanashi"
+    ],
+    "valid_from": "2026-03-16",
+    "valid_to": "2026-03-31",
+    "relevance": 0.0,
+    "source_url": "https://www.data.jma.go.jp/sakura/data/sakura_mankai.html",
+    "source_label": "出典：気象庁ホームページ（生物季節観測）を加工して作成",
+    "updated_at": "2026-09-29T13:05:16+00:00"
+  },
+  {
+    "id": "jma-sakura-2026-神戸",
+    "kind": "seasonal",
+    "category": "sakura",
+    "brand": "気象庁",
+    "title": {
+      "ja": "神戸　さくら満開",
+      "zh_tw": "神戸 櫻花滿開"
+    },
+    "summary_zh": "神戸的氣象台 3月27日 觀測到櫻花開花，與平年同日；4月5日 滿開，與平年同日。",
+    "scope": "regional",
+    "prefectures": [
+      "hyogo"
+    ],
+    "valid_from": "2026-03-27",
+    "valid_to": "2026-04-12",
+    "relevance": 0.0,
+    "source_url": "https://www.data.jma.go.jp/sakura/data/sakura_mankai.html",
+    "source_label": "出典：気象庁ホームページ（生物季節観測）を加工して作成",
+    "updated_at": "2026-09-29T13:05:16+00:00"
+  },
+  {
+    "id": "jma-sakura-2026-福井",
+    "kind": "seasonal",
+    "category": "sakura",
+    "brand": "気象庁",
+    "title": {
+      "ja": "福井　さくら満開",
+      "zh_tw": "福井 櫻花滿開"
+    },
+    "summary_zh": "福井的氣象台 3月29日 觀測到櫻花開花，比平年早 3 天；3月31日 滿開，比平年早 7 天。",
+    "scope": "regional",
+    "prefectures": [
+      "fukui"
+    ],
+    "valid_from": "2026-03-29",
+    "valid_to": "2026-04-07",
+    "relevance": 0.0,
+    "source_url": "https://www.data.jma.go.jp/sakura/data/sakura_mankai.html",
+    "source_label": "出典：気象庁ホームページ（生物季節観測）を加工して作成",
+    "updated_at": "2026-09-29T13:05:16+00:00"
+  },
+  {
+    "id": "jma-sakura-2026-福岡",
+    "kind": "seasonal",
+    "category": "sakura",
+    "brand": "気象庁",
+    "title": {
+      "ja": "福岡　さくら満開",
+      "zh_tw": "福岡 櫻花滿開"
+    },
+    "summary_zh": "福岡的氣象台 3月24日 觀測到櫻花開花，比平年晚 2 天；4月3日 滿開，比平年晚 3 天。",
+    "scope": "regional",
+    "prefectures": [
+      "fukuoka"
+    ],
+    "valid_from": "2026-03-24",
+    "valid_to": "2026-04-10",
+    "relevance": 0.0,
+    "source_url": "https://www.data.jma.go.jp/sakura/data/sakura_mankai.html",
+    "source_label": "出典：気象庁ホームページ（生物季節観測）を加工して作成",
+    "updated_at": "2026-09-29T13:05:16+00:00"
+  },
+  {
+    "id": "jma-sakura-2026-福島",
+    "kind": "seasonal",
+    "category": "sakura",
+    "brand": "気象庁",
+    "title": {
+      "ja": "福島　さくら満開",
+      "zh_tw": "福島 櫻花滿開"
+    },
+    "summary_zh": "福島的氣象台 3月29日 觀測到櫻花開花，比平年早 9 天；4月3日 滿開，比平年早 8 天。",
+    "scope": "regional",
+    "prefectures": [
+      "fukushima"
+    ],
+    "valid_from": "2026-03-29",
+    "valid_to": "2026-04-10",
+    "relevance": 0.0,
+    "source_url": "https://www.data.jma.go.jp/sakura/data/sakura_mankai.html",
+    "source_label": "出典：気象庁ホームページ（生物季節観測）を加工して作成",
+    "updated_at": "2026-09-29T13:05:16+00:00"
+  },
+  {
+    "id": "jma-sakura-2026-金沢",
+    "kind": "seasonal",
+    "category": "sakura",
+    "brand": "気象庁",
+    "title": {
+      "ja": "金沢　さくら満開",
+      "zh_tw": "金沢 櫻花滿開"
+    },
+    "summary_zh": "金沢的氣象台 3月29日 觀測到櫻花開花，比平年早 5 天；4月3日 滿開，比平年早 5 天。",
+    "scope": "regional",
+    "prefectures": [
+      "ishikawa"
+    ],
+    "valid_from": "2026-03-29",
+    "valid_to": "2026-04-10",
+    "relevance": 0.0,
+    "source_url": "https://www.data.jma.go.jp/sakura/data/sakura_mankai.html",
+    "source_label": "出典：気象庁ホームページ（生物季節観測）を加工して作成",
+    "updated_at": "2026-09-29T13:05:16+00:00"
+  },
+  {
+    "id": "jma-sakura-2026-銚子",
+    "kind": "seasonal",
+    "category": "sakura",
+    "brand": "気象庁",
+    "title": {
+      "ja": "銚子　さくら満開",
+      "zh_tw": "銚子 櫻花滿開"
+    },
+    "summary_zh": "銚子的氣象台 3月25日 觀測到櫻花開花，比平年早 5 天；4月3日 滿開，比平年早 3 天。",
+    "scope": "regional",
+    "prefectures": [
+      "chiba"
+    ],
+    "valid_from": "2026-03-25",
+    "valid_to": "2026-04-10",
+    "relevance": 0.0,
+    "source_url": "https://www.data.jma.go.jp/sakura/data/sakura_mankai.html",
+    "source_label": "出典：気象庁ホームページ（生物季節観測）を加工して作成",
+    "updated_at": "2026-09-29T13:05:16+00:00"
+  },
+  {
+    "id": "jma-sakura-2026-長崎",
+    "kind": "seasonal",
+    "category": "sakura",
+    "brand": "気象庁",
+    "title": {
+      "ja": "長崎　さくら満開",
+      "zh_tw": "長崎 櫻花滿開"
+    },
+    "summary_zh": "長崎的氣象台 3月27日 觀測到櫻花開花，比平年晚 4 天；4月3日 滿開，比平年晚 1 天。",
+    "scope": "regional",
+    "prefectures": [
+      "nagasaki"
+    ],
+    "valid_from": "2026-03-27",
+    "valid_to": "2026-04-10",
+    "relevance": 0.0,
+    "source_url": "https://www.data.jma.go.jp/sakura/data/sakura_mankai.html",
+    "source_label": "出典：気象庁ホームページ（生物季節観測）を加工して作成",
+    "updated_at": "2026-09-29T13:05:16+00:00"
+  },
+  {
+    "id": "jma-sakura-2026-長野",
+    "kind": "seasonal",
+    "category": "sakura",
+    "brand": "気象庁",
+    "title": {
+      "ja": "長野　さくら満開",
+      "zh_tw": "長野 櫻花滿開"
+    },
+    "summary_zh": "長野的氣象台 3月31日 觀測到櫻花開花，比平年早 11 天；4月6日 滿開，比平年早 10 天。",
+    "scope": "regional",
+    "prefectures": [
+      "nagano"
+    ],
+    "valid_from": "2026-03-31",
+    "valid_to": "2026-04-13",
+    "relevance": 0.0,
+    "source_url": "https://www.data.jma.go.jp/sakura/data/sakura_mankai.html",
+    "source_label": "出典：気象庁ホームページ（生物季節観測）を加工して作成",
+    "updated_at": "2026-09-29T13:05:16+00:00"
+  },
+  {
+    "id": "jma-sakura-2026-静岡",
+    "kind": "seasonal",
+    "category": "sakura",
+    "brand": "気象庁",
+    "title": {
+      "ja": "静岡　さくら満開",
+      "zh_tw": "静岡 櫻花滿開"
+    },
+    "summary_zh": "静岡的氣象台 3月20日 觀測到櫻花開花，比平年早 4 天；4月2日 滿開，與平年同日。",
+    "scope": "regional",
+    "prefectures": [
+      "shizuoka"
+    ],
+    "valid_from": "2026-03-20",
+    "valid_to": "2026-04-09",
+    "relevance": 0.0,
+    "source_url": "https://www.data.jma.go.jp/sakura/data/sakura_mankai.html",
+    "source_label": "出典：気象庁ホームページ（生物季節観測）を加工して作成",
+    "updated_at": "2026-09-29T13:05:16+00:00"
+  },
+  {
+    "id": "jma-sakura-2026-高松",
+    "kind": "seasonal",
+    "category": "sakura",
+    "brand": "気象庁",
+    "title": {
+      "ja": "高松　さくら満開",
+      "zh_tw": "高松 櫻花滿開"
+    },
+    "summary_zh": "高松的氣象台 3月25日 觀測到櫻花開花，比平年早 2 天；4月1日 滿開，比平年早 3 天。",
+    "scope": "regional",
+    "prefectures": [
+      "kagawa"
+    ],
+    "valid_from": "2026-03-25",
+    "valid_to": "2026-04-08",
+    "relevance": 0.0,
+    "source_url": "https://www.data.jma.go.jp/sakura/data/sakura_mankai.html",
+    "source_label": "出典：気象庁ホームページ（生物季節観測）を加工して作成",
+    "updated_at": "2026-09-29T13:05:16+00:00"
+  },
+  {
+    "id": "jma-sakura-2026-高知",
+    "kind": "seasonal",
+    "category": "sakura",
+    "brand": "気象庁",
+    "title": {
+      "ja": "高知　さくら満開",
+      "zh_tw": "高知 櫻花滿開"
+    },
+    "summary_zh": "高知的氣象台 3月16日 觀測到櫻花開花，比平年早 6 天；3月31日 滿開，比平年晚 1 天。",
+    "scope": "regional",
+    "prefectures": [
+      "kochi"
+    ],
+    "valid_from": "2026-03-16",
+    "valid_to": "2026-04-07",
+    "relevance": 0.0,
+    "source_url": "https://www.data.jma.go.jp/sakura/data/sakura_mankai.html",
+    "source_label": "出典：気象庁ホームページ（生物季節観測）を加工して作成",
+    "updated_at": "2026-09-29T13:05:16+00:00"
+  },
+  {
+    "id": "jma-sakura-2026-鳥取",
+    "kind": "seasonal",
+    "category": "sakura",
+    "brand": "気象庁",
+    "title": {
+      "ja": "鳥取　さくら満開",
+      "zh_tw": "鳥取 櫻花滿開"
+    },
+    "summary_zh": "鳥取的氣象台 3月28日 觀測到櫻花開花，比平年早 1 天；3月31日 滿開，比平年早 5 天。",
+    "scope": "regional",
+    "prefectures": [
+      "tottori"
+    ],
+    "valid_from": "2026-03-28",
+    "valid_to": "2026-04-07",
+    "relevance": 0.0,
+    "source_url": "https://www.data.jma.go.jp/sakura/data/sakura_mankai.html",
+    "source_label": "出典：気象庁ホームページ（生物季節観測）を加工して作成",
+    "updated_at": "2026-09-29T13:05:16+00:00"
+  },
+  {
+    "id": "jma-sakura-2026-鹿児島",
+    "kind": "seasonal",
+    "category": "sakura",
+    "brand": "気象庁",
+    "title": {
+      "ja": "鹿児島　さくら満開",
+      "zh_tw": "鹿児島 櫻花滿開"
+    },
+    "summary_zh": "鹿児島的氣象台 3月27日 觀測到櫻花開花，比平年晚 1 天；4月5日 滿開，與平年同日。",
+    "scope": "regional",
+    "prefectures": [
+      "kagoshima"
+    ],
+    "valid_from": "2026-03-27",
+    "valid_to": "2026-04-12",
+    "relevance": 0.0,
+    "source_url": "https://www.data.jma.go.jp/sakura/data/sakura_mankai.html",
+    "source_label": "出典：気象庁ホームページ（生物季節観測）を加工して作成",
+    "updated_at": "2026-09-29T13:05:16+00:00"
+  }
+]

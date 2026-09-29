@@ -1,0 +1,44 @@
+[
+  {
+    "id": "jma-sakura-2026-宮古島",
+    "kind": "seasonal",
+    "category": "sakura",
+    "brand": "気象庁",
+    "title": {
+      "ja": "宮古島　さくら満開",
+      "zh_tw": "宮古島 櫻花滿開"
+    },
+    "summary_zh": "宮古島的氣象台 1月9日 觀測到櫻花開花，比平年早 8 天；2月6日 滿開，比平年早 3 天。",
+    "scope": "regional",
+    "prefectures": [
+      "okinawa"
+    ],
+    "valid_from": "2026-01-09",
+    "valid_to": "2026-02-13",
+    "relevance": 0.0,
+    "source_url": "https://www.data.jma.go.jp/sakura/data/sakura_mankai.html",
+    "source_label": "出典：気象庁ホームページ（生物季節観測）を加工して作成",
+    "updated_at": "2026-09-29T13:05:16+00:00"
+  },
+  {
+    "id": "jma-sakura-2026-那覇",
+    "kind": "seasonal",
+    "category": "sakura",
+    "brand": "気象庁",
+    "title": {
+      "ja": "那覇　さくら満開",
+      "zh_tw": "那覇 櫻花滿開"
+    },
+    "summary_zh": "那覇的氣象台 1月18日 觀測到櫻花開花，比平年晚 2 天；2月3日 滿開，比平年早 1 天。",
+    "scope": "regional",
+    "prefectures": [
+      "okinawa"
+    ],
+    "valid_from": "2026-01-18",
+    "valid_to": "2026-02-10",
+    "relevance": 0.0,
+    "source_url": "https://www.data.jma.go.jp/sakura/data/sakura_mankai.html",
+    "source_label": "出典：気象庁ホームページ（生物季節観測）を加工して作成",
+    "updated_at": "2026-09-29T13:05:16+00:00"
+  }
+]
