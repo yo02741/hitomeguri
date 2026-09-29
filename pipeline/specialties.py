@@ -257,10 +257,14 @@ def merge_drafts(drafts: list[Draft]) -> list[Draft]:
 def maff_summary(
     detail: maff.Detail | None, url: str | None, lang: str, today: str
 ) -> dict[str, str] | None:
+    from pipeline.wiki import first_paragraph
+
     if not detail or not detail.summary or not url:
         return None
+    # 和維基簡介同樣長度（整句截斷）；第一句就太長時保留整段
+    text = first_paragraph(detail.summary, lang=lang) or detail.summary
     return {
-        "text": detail.summary,
+        "text": text,
         "lang": lang,
         "source_url": url,
         "license": maff.LICENSE,

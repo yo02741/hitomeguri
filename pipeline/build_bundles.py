@@ -29,6 +29,30 @@ from pipeline.paths import (
 )
 
 
+def _translations() -> dict[str, str]:
+    """英文簡介的中文譯文（translate-summaries）：原文雜湊 → 譯文。"""
+    from pipeline.translate import TRANSLATIONS_JSON, load_cache
+
+    return {k: v["zh"] for k, v in load_cache().items()} if TRANSLATIONS_JSON.exists() else {}
+
+
+def _translation_tag() -> bytes:
+    """譯文更新時 bundle 版本也要變（瀏覽器才會重新下載）。"""
+    from pipeline.translate import TRANSLATIONS_JSON
+
+    return TRANSLATIONS_JSON.read_bytes() if TRANSLATIONS_JSON.exists() else b""
+
+
+def with_translation(item: dict[str, Any], zh: dict[str, str]) -> dict[str, Any]:
+    """英文簡介附上中文譯文（summary.text_zh），介面英文一行、中文一行。"""
+    from pipeline.translate import key_of
+
+    s = item.get("summary")
+    if s and s.get("lang") == "en" and (t := zh.get(key_of(s["text"]))):
+        s["text_zh"] = t
+    return item
+
+
 def _write(path: Path, data: Any) -> Path:
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(data, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
@@ -99,12 +123,17 @@ def build(src: Path = SPOTS_DIR, dst: Path = BUNDLES_DIR) -> list[Path]:
     index: dict[str, Any] = {"prefectures": {}}
     featured: dict[str, list[dict[str, Any]]] = {}
     search: list[list[Any]] = []
+    zh = _translations()
+    tag = _translation_tag()
     for path in sorted(src.glob("*.json")):
         pref = path.stem
         raw = json.loads(path.read_text(encoding="utf-8"))
-        spots = [Spot.model_validate(s).model_dump(mode="json", exclude_none=True) for s in raw]
+        spots = [
+            with_translation(Spot.model_validate(s).model_dump(mode="json", exclude_none=True), zh)
+            for s in raw
+        ]
         published = [s for s in spots if s["status"] == "published"]
-        version = hashlib.sha1(path.read_bytes()).hexdigest()[:10]
+        version = hashlib.sha1(path.read_bytes() + tag).hexdigest()[:10]
         # 地圖 bundle 只放大點（主題層暫停，PLAN.md §5）；主題小店仍在 detail
         majors = [map_entry(s) for s in published if s["kind"] == "major"]
         written.append(_write(dst / "map" / f"{pref}.json", majors))
@@ -217,12 +246,19 @@ def build_rail(dst: Path) -> dict[str, tuple[Path, dict[str, Any]]]:
 def build_festivals(dst: Path) -> dict[str, tuple[Path, dict[str, Any]]]:
     """深度探索「祭典」：一縣一檔（開深度探索頁時才載入）；回傳 {縣: (路徑, 索引資訊)}。"""
     out = {}
+    zh = _translations()
+    tag = _translation_tag()
     for path in sorted(FESTIVALS_DIR.glob("*.json")) if FESTIVALS_DIR.exists() else []:
         raw = json.loads(path.read_text(encoding="utf-8"))
-        items = [Festival.model_validate(f).model_dump(mode="json", exclude_none=True) for f in raw]
+        items = [
+            with_translation(
+                Festival.model_validate(f).model_dump(mode="json", exclude_none=True), zh
+            )
+            for f in raw
+        ]
         if not items:
             continue
-        version = hashlib.sha1(path.read_bytes()).hexdigest()[:10]
+        version = hashlib.sha1(path.read_bytes() + tag).hexdigest()[:10]
         out[path.stem] = (_write(dst / path.name, items), {"count": len(items), "version": version})
     return out
 
@@ -230,9 +266,11 @@ def build_festivals(dst: Path) -> dict[str, tuple[Path, dict[str, Any]]]:
 def build_extras(dst: Path = BUNDLES_DIR) -> list[Path]:
     """地區特色（全部縣一個檔）、季節平年值與直飛航線（只含已驗證，PLAN.md §5.2b）。"""
     specs: list[dict[str, Any]] = []
+    zh = _translations()
     for path in sorted(SPECIALTIES_DIR.glob("*.json")) if SPECIALTIES_DIR.exists() else []:
         for s in json.loads(path.read_text(encoding="utf-8")):
-            specs.append(Specialty.model_validate(s).model_dump(mode="json", exclude_none=True))
+            spec = Specialty.model_validate(s).model_dump(mode="json", exclude_none=True)
+            specs.append(with_translation(spec, zh))
     flights: list[dict[str, Any]] = []
     if FLIGHTS_JSON.exists():
         for r in json.loads(FLIGHTS_JSON.read_text(encoding="utf-8")):

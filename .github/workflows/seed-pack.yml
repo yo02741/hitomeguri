@@ -11,9 +11,9 @@ on:
         required: true
         default: seed-pokefuta
         type: choice
-        options: [seed-pokefuta, seed-pokecen, seed-specialties, seed-festivals, seed-seasons, seed-rail, seed-official, prune-spots]
+        options: [seed-pokefuta, seed-pokecen, seed-specialties, seed-festivals, seed-seasons, seed-rail, seed-official, translate-summaries, prune-spots]
       prefectures:
-        description: "都道府縣 slug，空白分隔；空白表示全部（seed-pokecen 不用）"
+        description: "都道府縣 slug，空白分隔；空白表示全部（seed-pokecen 不用）。translate-summaries：填數字表示只翻前 N 筆"
         required: false
         default: ""
 
@@ -39,9 +39,17 @@ jobs:
       - name: ${{ inputs.command }}
         env:
           PREFS: ${{ inputs.prefectures }}
+          # 只有 translate-summaries 用得到（Claude API 翻譯英文簡介）
+          ANTHROPIC_API_KEY: ${{ inputs.command == 'translate-summaries' && secrets.ANTHROPIC_API_KEY || '' }}
         run: |
           case "${{ inputs.command }}" in
             seed-pokecen|seed-seasons) args="" ;;
+            translate-summaries)
+              if [ -z "$ANTHROPIC_API_KEY" ]; then
+                echo "::error::請在 Settings → Secrets and variables → Actions 新增 ANTHROPIC_API_KEY"
+                exit 1
+              fi
+              args="${PREFS:+--limit $PREFS}" ;;
             prune-spots) args="$PREFS --wikidata" ;;  # 重新查 Wikidata 類型，排除非景點
             *) args="$PREFS" ;;
           esac
@@ -51,8 +59,9 @@ jobs:
           branch="pipeline/${{ inputs.command }}-${{ github.run_number }}"
           git config user.name "hitomeguri-pipeline"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          cat /tmp/report.md >> "$GITHUB_STEP_SUMMARY" || true
           git checkout -b "$branch"
-          for d in data/packs data/specialties data/festivals data/rail data/seed/official data/flights data/spots data/seasons.json; do if [ -e "$d" ]; then git add "$d"; fi; done
+          for d in data/packs data/specialties data/festivals data/rail data/seed/official data/translations data/flights data/spots data/seasons.json; do if [ -e "$d" ]; then git add "$d"; fi; done
           if git diff --cached --quiet; then
             echo "沒有變更" >> "$GITHUB_STEP_SUMMARY"
             exit 0

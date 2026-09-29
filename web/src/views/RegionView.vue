@@ -10,6 +10,7 @@ import CollapseChevron from '../components/CollapseChevron.vue'
 import FestivalList from '../components/FestivalList.vue'
 import SeasonCalendar from '../components/SeasonCalendar.vue'
 import WebSearchLink from '../components/WebSearchLink.vue'
+import SummaryText from '../components/SummaryText.vue'
 
 // 深度探索（UX-FLOW.md A8）：一個縣的季節、祭典、地區特色、期間限定。
 // 地圖頁負責「去哪」，這一頁負責「這個地方有什麼、什麼時候去」。沒有資料的段落不顯示。
@@ -157,11 +158,7 @@ function sourceLabel(url: string): string {
                   </div>
                   <WebSearchLink :name="s.name.ja" :context="prefectureFullName(pref)" class="-mt-1 -mr-2" />
                 </div>
-                <p
-                  v-if="s.summary"
-                  :lang="s.summary.lang === 'zh' ? undefined : s.summary.lang"
-                  class="line-clamp-4 text-body-sm leading-[1.75]"
-                >{{ s.summary.text }}</p>
+                <SummaryText v-if="s.summary" :summary="s.summary" :clamp="s.summary.text_zh ? 3 : 4" />
                 <p v-else-if="s.summary_zh" class="line-clamp-4 text-body-sm leading-[1.75]">{{ s.summary_zh }}</p>
                 <div class="mt-auto flex flex-wrap gap-x-3 pt-1 text-caption text-sub">
                   <span v-if="s.summary">{{ s.summary.license }}</span>

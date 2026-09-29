@@ -120,6 +120,13 @@ def cmd_seed_official(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_translate_summaries(args: argparse.Namespace) -> int:
+    from pipeline.translate import translate_summaries
+
+    _emit(translate_summaries(args.limit), args.report)
+    return 0
+
+
 def cmd_seed_festivals(args: argparse.Namespace) -> int:
     from pipeline.festivals import seed_festivals
     from pipeline.geo import pref_slugs
@@ -205,6 +212,11 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("prefectures", nargs="*", help="省略時處理有官方網站來源的全部縣")
     p.add_argument("--report")
     p.set_defaults(func=cmd_seed_official)
+
+    p = sub.add_parser("translate-summaries", help="英文簡介翻成繁體中文 → data/translations/")
+    p.add_argument("--limit", type=int, help="只翻前 N 筆（先小量驗證）")
+    p.add_argument("--report")
+    p.set_defaults(func=cmd_translate_summaries)
 
     p = sub.add_parser("seed-festivals", help="祭典：日文維基「{縣}の祭り」→ data/festivals/")
     p.add_argument("prefectures", nargs="*", help="省略時處理全部縣")

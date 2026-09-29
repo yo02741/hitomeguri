@@ -5,6 +5,7 @@ import type { Festival } from '../services/bundles'
 import { prefectureFullName } from '../data/regions'
 import CollapseChevron from './CollapseChevron.vue'
 import WebSearchLink from './WebSearchLink.vue'
+import SummaryText from './SummaryText.vue'
 
 // 深度探索「祭典」：依舉行月份分組（跨月的放在第一個月），1 到 12 月，組內依日文維基瀏覽量。
 // 月份列可篩選；沒有月份的放最後「月份未載」。
@@ -121,11 +122,7 @@ function mapLink(f: Festival) {
               </div>
               <WebSearchLink :name="f.name.ja" :context="prefectureFullName(f.prefecture)" class="-mt-1 -mr-1" />
             </div>
-            <p
-              v-if="f.summary"
-              :lang="f.summary.lang === 'zh' ? undefined : f.summary.lang"
-              class="line-clamp-3 text-body-sm leading-[1.75]"
-            >{{ f.summary.text }}</p>
+            <SummaryText v-if="f.summary" :summary="f.summary" :clamp="f.summary.text_zh ? 2 : 3" />
             <div class="mt-auto flex flex-wrap gap-x-3 text-caption text-sub">
               <span v-if="f.summary">{{ f.summary.license }}</span>
               <a :href="f.summary?.source_url ?? f.sources[0]!.url" target="_blank" rel="noopener" class="text-sub">維基百科</a>
