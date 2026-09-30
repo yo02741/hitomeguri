@@ -75,22 +75,22 @@ def castle_record(
 
 
 def name_variants(c: meijo.Castle) -> list[str]:
-    base = list(dict.fromkeys([c.name, c.title]))
-    return [v for b in base for v in (b, f"{b}跡", f"{b}址", f"{b}跡地")]
+    """OSM 比對用的名稱。表格名稱和條目不同時（「品川台場」連到泛稱的「台場」）只用表格名稱。"""
+    return [v for v in (c.name, f"{c.name}跡", f"{c.name}址", f"{c.name}跡地")]
 
 
-def osm_fallback(castles: list[meijo.Castle]) -> dict[int, tuple[float, float]]:
-    """OSM 上名稱完全相同的點（史跡優先）；名城番號 → 座標。"""
+def osm_fallback(castles: list[meijo.Castle]) -> dict[int, tuple[float, float, str]]:
+    """OSM 上名稱完全相同的點（史跡優先）；名城番號 →（緯度, 經度, OSM 網址）。"""
     names = [v for c in castles for v in name_variants(c)]
     # 名稱完全相同用 = 比對（走索引；全國的正規表示式比對會逾時）
     els = osm.japan([f'["name"="{n}"]' for n in dict.fromkeys(names) if '"' not in n])
-    out: dict[int, tuple[float, float]] = {}
+    out: dict[int, tuple[float, float, str]] = {}
     for c in castles:
         vs = name_variants(c)
         cands = [el for el in els if el.tags.get("name") in vs]
         cands.sort(key=lambda el: (not el.tags.get("historic"), el.osm_id))
         if cands:
-            out[c.no] = (cands[0].lat, cands[0].lng)
+            out[c.no] = (cands[0].lat, cands[0].lng, cands[0].url)
     return out
 
 
@@ -123,8 +123,11 @@ def seed_castles() -> str:
     for c in castles:
         qid = qids.get(c.title)
         ent = ents.get(qid) if qid else None
-        coord = wiki_coords.get(c.title) or osm_coords.get(c.no)
+        osm_hit = osm_coords.get(c.no)
+        coord = wiki_coords.get(c.title) or (osm_hit[:2] if osm_hit else None)
         rec = castle_record(c, qid, ent, coord, spots.get(qid or ""), today)
+        if rec and osm_hit and not wiki_coords.get(c.title) and not rec.get("spot"):
+            rec["sources"].append({"url": osm_hit[2], "fetched_at": today})
         if rec:
             out.append({k: v for k, v in rec.items() if v not in (None, [])})
         else:
