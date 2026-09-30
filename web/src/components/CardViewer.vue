@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { onBeforeUnmount, onMounted, ref, watch } from 'vue'
+import { nextTick, onBeforeUnmount, onMounted, ref, watch } from 'vue'
 import type { RouteLocationRaw } from 'vue-router'
 
 import { useTilt } from '../composables/tilt'
@@ -8,6 +8,7 @@ import SpotCard from './SpotCard.vue'
 
 // 收集卡放大檢視（DESIGN.md §7.19）：畫面中央一張大卡，點卡片翻面；手機可以用傾斜角度讓卡片轉動。
 // 收集冊裡可以左右切換上一張、下一張（方向鍵、左右滑）。Esc、點背景或「關閉」離開。
+// 打開時焦點在卡片上：Space、Enter 翻面。
 const props = defineProps<{
   card: CardFace
   rarity: Rarity
@@ -30,10 +31,14 @@ const touch = typeof matchMedia !== 'undefined' && matchMedia('(pointer: coarse)
 
 // 換卡時回到正面，並從滑動的方向進場
 const enterFrom = ref<'left' | 'right' | null>(null)
+const cardEl = ref<HTMLElement | null>(null)
 watch(
   () => props.card.id,
-  () => {
+  async () => {
     flipped.value = false
+    // 換卡時卡片元素重建，焦點跟著移到新的卡片
+    await nextTick()
+    cardEl.value?.focus()
   },
 )
 function step(delta: -1 | 1) {
@@ -81,10 +86,9 @@ function onCardClick() {
   flipped.value = !flipped.value
 }
 
-const closeBtn = ref<HTMLButtonElement | null>(null)
 onMounted(() => {
   document.addEventListener('keydown', onKey)
-  closeBtn.value?.focus()
+  cardEl.value?.focus()
 })
 onBeforeUnmount(() => document.removeEventListener('keydown', onKey))
 </script>
@@ -111,6 +115,7 @@ onBeforeUnmount(() => document.removeEventListener('keydown', onKey))
         </button>
         <div
           :key="card.id"
+          ref="cardEl"
           role="button"
           tabindex="0"
           class="viewer-card cursor-pointer rounded-[16px]"
@@ -166,7 +171,7 @@ onBeforeUnmount(() => document.removeEventListener('keydown', onKey))
         >
           地圖
         </RouterLink>
-        <button ref="closeBtn" type="button" class="h-10 rounded-full bg-paper px-4 text-label font-bold text-ink" @click="emit('close')">
+        <button type="button" class="h-10 rounded-full bg-paper px-4 text-label font-bold text-ink" @click="emit('close')">
           關閉
         </button>
       </div>
