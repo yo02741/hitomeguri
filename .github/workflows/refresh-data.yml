@@ -193,12 +193,17 @@ jobs:
             echo "沒有變更，不開 PR" >> "$GITHUB_STEP_SUMMARY"
             exit 0
           fi
+          # 依字元截斷（head -c 會切斷中文字），在換行處截並註明
+          cut_chars() {
+            python3 -c 'import sys; n = int(sys.argv[1]); t = sys.stdin.read()
+          print(t if len(t) <= n else t[:n].rsplit("\n", 1)[0] + "\n\n…（太長，截斷；完整內容見執行紀錄）")' "$1"
+          }
           branch="pipeline/refresh-${{ github.run_number }}"
           git config user.name "hitomeguri-pipeline"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git checkout -q -b "$branch"
           git add data
-          git commit -q -m "資料更新（$SCOPE）#${{ github.run_number }}" -m "$(head -c 20000 /tmp/diff.md)"
+          git commit -q -m "資料更新（$SCOPE）#${{ github.run_number }}" -m "$(cut_chars 20000 < /tmp/diff.md)"
           git push -q origin "$branch"
           sha=$(git rev-parse HEAD)
           desc="通過"
@@ -220,11 +225,11 @@ jobs:
             echo
             echo "<details><summary>各項採集報告</summary>"
             echo
-            head -c 30000 /tmp/reports.md
+            cut_chars 30000 < /tmp/reports.md
             echo
             echo "</details>"
           } > /tmp/body.md
-          head -c 60000 /tmp/body.md > /tmp/body-cut.md
+          cut_chars 60000 < /tmp/body.md > /tmp/body-cut.md
 
           if url=$(gh pr create --base main --head "$branch" --title "資料更新（$SCOPE）#${{ github.run_number }}" --body-file /tmp/body-cut.md); then
             echo "PR：$url" >> "$GITHUB_STEP_SUMMARY"
