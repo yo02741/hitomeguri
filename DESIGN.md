@@ -230,6 +230,11 @@
 - 底線式：`h-full px-4 border-b-3`；選取 `border-region-strong font-bold text-ink`，未選 `border-transparent text-sub`。
 - 手機底部 tab：圖示＋文字，選取時圖示與文字 `text-ink`，未選 `text-sub`；不使用底色塊。
 
+### 7.2a 段落目錄 SectionNav（旅前準備）
+- 桌機左側直列（`sticky top-8`，寬 168px）：每項 `border-l-2 pl-3.5 py-1.5 text-body-sm`；目前段落 `border-region-strong font-bold text-ink`，其餘 `border-line text-sub`；數量用 `font-latin text-caption`。目前段落有子段落時展開（`pl-6 text-caption`，目前子段落 `font-bold text-ink`）。
+- 手機頂部橫列（`sticky top-0`，`border-b border-line bg-paper`）：`h-8 rounded-full px-3 text-label`，目前段落 `bg-region-strong text-white font-bold`，換段時自動捲到中間。
+- 每項都是 `#錨點` 連結；段落 `scroll-mt-16 lg:scroll-mt-8`。
+
 ### 7.3 Search
 header 右側、登入鈕左邊（`SearchBox.vue`，每一頁都在；在行程、紀錄頁選了結果會回到探索頁）：`h-10 w-72 rounded-full border border-line bg-paper px-3.5`，聚焦時外框 `border-region-strong`，左側放大鏡圖示，placeholder「搜尋景點、地區」，input 帶 `aria-label`。結果是同寬的浮動卡（`rounded-card bg-paper shadow-float`，最高 60dvh），每列：縣色小方塊 14px＋假名／日文名（繁中名不同時接在後面、`text-sub`）＋右側縣名（縣的結果標「地區」）。上下鍵移動、Enter 選取、Esc 清除。
 
@@ -327,6 +332,27 @@ header 右側、登入鈕左邊（`SearchBox.vue`，每一頁都在；在行程�
 
 ### 7.15 空狀態
 一行 `text-body-sm text-sub` 置中，必要時加一個次要按鈕。不使用插畫、不使用 emoji。
+
+### 7.16 日期選擇器 DatePicker / DateRangePicker
+不用原生 `<input type="date">`（各瀏覽器長相不一，手機上還會跳系統滾輪）。
+- 觸發鈕長得像輸入框：`h-10 rounded-control border border-line bg-paper px-2.5`＋月曆圖示；日期 `font-latin`，格式 `2026/10/12（一）`，區間 `2026/10/31（六） → 11/03（二）`。打開時外框 `border-region-strong`。
+- 面板：`w-[304px] rounded-card bg-paper p-3 shadow-float`，Teleport 到 body、`fixed` 定位，下方放不下就翻到上方；沿用觸發鈕所在的 `data-pref`。
+- 表頭：‹ 年月 ›，點年月往上一層（日 → 月 → 年，月、年都是 3 欄格子）。星期列：日 `text-danger`、六 `text-visited`（日本月曆的習慣），其餘 `text-sub`。
+- 日期格 `size-10 rounded-control font-latin text-body-sm`：選取 `bg-region-strong text-white font-bold`；區間中間 `bg-region-tint`（連成一條，兩端圓角）；今天在數字下方加 4px 圓點；範圍外 `text-line`；非本月 `text-sub/50`。
+- 底部：單日有「今天」「清除」；區間顯示「出發 → 回程」或「N 天」與「清除」。
+- 鍵盤：方向鍵移動、Home／End 到週首週末、PageUp／PageDown 換月（加 Shift 換年）、Enter 選取、Esc 關閉並回到觸發鈕。
+- 景點卡片的「去過」：標了之後按鈕右半邊是日期（`border-l border-visited/30`，今年只寫月日），點開同一個月曆。
+
+### 7.17 截圖 gallery
+- 瀑布流：`columns-2 sm:columns-3 lg:columns-4 gap-3`，每張 `break-inside-avoid mb-3`；圖片用原圖比例（`aspect-ratio: w / h`），最高 360px，太長的截圖 `object-cover object-top` 只露上半部。
+- 卡片：`rounded-card border border-line bg-paper`，圖片下方品牌（`text-caption text-sub`）、品項（`text-body-sm font-bold`）、說明（`text-caption text-ink-2`，最多兩行）。
+- 大圖：`<dialog>` 近全螢幕，左邊圖片可捲動（長截圖照原寬看得清楚字），右邊 300px 的文字欄：上一張／下一張、品牌、品項、說明、行程、編輯、刪除。手機改上下排。
+- 新增／編輯：`<dialog>` 寬 560px；沒有圖時是虛線外框的「選擇圖片」區，可以拖曳或貼上；欄位：品牌（有建議清單）、品項、說明、行程。
+
+### 7.18 旅前小書（列印）
+- 螢幕上：頂部工具列（紙張 A5／A4、各段勾選、只放必備會話、「列印／存成 PDF」Primary），下面是照紙寬（148mm／210mm）預覽的白紙 `bg-white shadow-float`；換頁的位置用虛線標出。
+- 列印：`@page` 依紙張設定大小與邊界；header、底部 tab、工具列 `print:hidden`；App 的固定高度捲動版面 `print:block print:h-auto print:overflow-visible` 攤開；縣色帶、DAY 標記 `print-color-adjust: exact`。
+- 每一大段 `break-before: page`；列 `break-inside: avoid`。字級在紙上用 13px（A5）／14px（A4）為基準的相對大小。
 
 ---
 

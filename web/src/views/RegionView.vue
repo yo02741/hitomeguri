@@ -12,6 +12,7 @@ import SeasonCalendar from '../components/SeasonCalendar.vue'
 import WebSearchLink from '../components/WebSearchLink.vue'
 import SummaryText from '../components/SummaryText.vue'
 import TimedList from '../components/TimedList.vue'
+import ChainSearch from '../components/ChainSearch.vue'
 import { currentTimed } from '../services/timed'
 import { todayIso } from '../services/userdb'
 
@@ -68,7 +69,7 @@ const sections = computed(() =>
     { id: 'seasons', label: '季節', show: stations.value.length > 0 },
     { id: 'festivals', label: '祭典', show: festivals.value.length > 0 },
     { id: 'specialties', label: '地區特色', show: groups.value.length > 0 },
-    { id: 'timed', label: '期間限定', show: timed.value.length > 0 },
+    { id: 'timed', label: '期間限定', show: true },
   ].filter((s) => s.show),
 )
 
@@ -189,12 +190,17 @@ function sourceLabel(url: string): string {
         </div>
       </section>
 
-      <section v-if="timed.length" id="timed" class="flex flex-col gap-4" aria-labelledby="timed-title">
-        <h2 id="timed-title" class="text-h3 font-black tracking-[2px]">期間限定</h2>
-        <TimedList :items="timed" detailed />
-      </section>
+      <p v-if="sections.length === 1" class="text-body-sm text-sub">資料準備中。</p>
 
-      <p v-if="!sections.length" class="text-body-sm text-sub">資料準備中。</p>
+      <!-- 期間限定：這個縣的季節觀測，另外可以直接搜尋連鎖店的限定、看自己存的截圖 -->
+      <section id="timed" class="flex flex-col gap-4" aria-labelledby="timed-title">
+        <h2 id="timed-title" class="text-h3 font-black tracking-[2px]">期間限定</h2>
+        <TimedList v-if="timed.length" :items="timed" detailed />
+        <div class="flex flex-wrap items-center gap-x-4 gap-y-2">
+          <ChainSearch />
+          <RouterLink to="/limited" class="text-label text-sub">截圖</RouterLink>
+        </div>
+      </section>
     </main>
   </div>
 </template>

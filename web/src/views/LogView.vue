@@ -2,11 +2,13 @@
 import { computed, ref } from 'vue'
 import { useRouter } from 'vue-router'
 
+import DatePicker from '../components/DatePicker.vue'
+import DateRangePicker from '../components/DateRangePicker.vue'
 import ExportButtons from '../components/ExportButtons.vue'
 import MapView from '../components/MapView.vue'
 import MarkedSpotList from '../components/MarkedSpotList.vue'
 import TripCard from '../components/TripCard.vue'
-import { useMarkedSpots } from '../composables/markedSpots'
+import { type MarkedSpot, useMarkedSpots } from '../composables/markedSpots'
 import { markRow } from '../services/export'
 import type { MapSpot } from '../services/bundles'
 import { dayDate, TRIP_NAME_MAX, tripStatus } from '../services/trip'
@@ -16,7 +18,7 @@ import { type Mark, useMarksStore } from '../stores/marks'
 import { useTripsStore } from '../stores/trips'
 import { useUserStore } from '../stores/user'
 
-// 旅行紀錄（UX-FLOW.md E1、E4、E5）：上方「全部去過」地圖，接著已結束的旅行，最後是去過的景點（依日期新到舊）。
+// 旅行紀錄（UX-FLOW.md E1、E4、E5、E6）：上方「全部去過」地圖，接著已結束的旅行，最後是去過的景點（依日期新到舊，可批次補日期）。
 // 「去過」＝已結束的行程裡的停留點 ∪ 標了去過的景點（UX-FLOW.md §3）。
 const userStore = useUserStore()
 const marks = useMarksStore()
@@ -68,6 +70,31 @@ async function addPast() {
   if (id) await router.push(`/trips/${id}`)
 }
 
+// 批次補日期（UX-FLOW.md E6）：從清單快捷標的去過沒有日期，這裡一次補
+const picking = ref(false)
+const selected = ref(new Set<string>())
+const batchDate = ref('')
+const applying = ref(false)
+const undated = computed(() => rows.value.filter((r) => !r.mark.visited_on))
+function startPicking() {
+  picking.value = true
+  selected.value = new Set(undated.value.map((r) => r.id))
+}
+function toggleRow(r: MarkedSpot) {
+  const next = new Set(selected.value)
+  if (next.has(r.id)) next.delete(r.id)
+  else next.add(r.id)
+  selected.value = next
+}
+async function applyDate() {
+  const spots = rows.value.filter((r) => selected.value.has(r.id)).map((r) => ({ id: r.id, pref: r.pref, name: r.name }))
+  if (!spots.length || !batchDate.value) return
+  applying.value = true
+  await marks.setVisitedOnMany(spots, batchDate.value)
+  applying.value = false
+  selected.value = new Set()
+}
+
 function open(id: string) {
   const r = rows.value.find((x) => x.id === id)
   if (r) void router.push({ path: `/map/${r.pref}`, query: { spot: id } })
@@ -101,14 +128,10 @@ function open(id: string) {
               class="h-10 rounded-control border border-line bg-paper px-3 text-body-sm text-ink outline-none placeholder:text-sub focus:border-region-strong"
             />
           </label>
-          <label class="flex flex-col gap-1 text-caption text-sub">
-            出發
-            <input v-model="start" type="date" :max="today" required class="h-10 rounded-control border border-line bg-paper px-2 font-latin text-body-sm text-ink outline-none focus:border-region-strong" />
-          </label>
-          <label class="flex flex-col gap-1 text-caption text-sub">
-            回程
-            <input v-model="end" type="date" :min="start || undefined" :max="today" class="h-10 rounded-control border border-line bg-paper px-2 font-latin text-body-sm text-ink outline-none focus:border-region-strong" />
-          </label>
+          <div class="flex flex-col gap-1 text-caption text-sub">
+            <span>日期</span>
+            <DateRangePicker label="日期" :start="start" :end="end" :max="today" @change="(s, e) => ((start = s), (end = e))" />
+          </div>
           <button
             type="submit"
             :disabled="!start"
@@ -124,10 +147,66 @@ function open(id: string) {
           <h2 id="visited-title" class="flex items-baseline gap-1.5 text-h3 font-black tracking-[2px]">
             去過<span class="font-latin text-body font-normal tracking-normal text-sub">{{ rows.length }}</span>
           </h2>
-          <ExportButtons class="ml-auto" title="ひとめぐり 去過" :rows="sorted.map(markRow)" />
+          <div class="ml-auto flex flex-wrap gap-2">
+            <button
+              v-if="rows.length && !picking"
+              type="button"
+              class="h-9 rounded-control border border-line bg-paper px-3 text-label text-ink hover:bg-surface"
+              @click="startPicking"
+            >
+              補日期
+            </button>
+            <ExportButtons title="ひとめぐり 去過" :rows="sorted.map(markRow)" />
+          </div>
         </div>
-        <MarkedSpotList v-if="rows.length" :rows="sorted" :loading="loading" show-date />
+
+        <!-- 批次補日期：勾選景點 → 選日期 → 套用 -->
+        <div
+          v-if="picking"
+          class="sticky top-2 z-10 flex flex-wrap items-center gap-2 rounded-card bg-paper p-2 shadow-float"
+          role="group"
+          aria-label="補日期"
+        >
+          <button
+            type="button"
+            class="h-9 rounded-control border border-line bg-paper px-3 text-label text-ink hover:bg-surface disabled:cursor-not-allowed disabled:opacity-40"
+            :disabled="!undated.length"
+            @click="selected = new Set(undated.map((r) => r.id))"
+          >
+            沒有日期的<span class="ml-1 font-latin">{{ undated.length }}</span>
+          </button>
+          <button
+            type="button"
+            class="h-9 rounded-control border border-line bg-paper px-3 text-label text-ink hover:bg-surface"
+            @click="selected = selected.size === rows.length ? new Set() : new Set(rows.map((r) => r.id))"
+          >
+            {{ selected.size === rows.length ? '全不選' : '全選' }}
+          </button>
+          <span class="px-1 text-label text-sub" aria-live="polite">已選 <span class="font-latin text-ink">{{ selected.size }}</span></span>
+          <DatePicker v-model="batchDate" label="去過日期" size="sm" :max="today" :clearable="false" class="ml-auto" />
+          <button
+            type="button"
+            class="h-9 rounded-control bg-region-strong px-3.5 text-label font-bold text-white active:translate-y-px disabled:cursor-not-allowed disabled:opacity-40"
+            :disabled="!selected.size || !batchDate || applying"
+            @click="applyDate"
+          >
+            套用
+          </button>
+          <button type="button" class="h-9 rounded-control px-3 text-label text-sub hover:bg-surface hover:text-ink" @click="picking = false">
+            完成
+          </button>
+        </div>
+
+        <MarkedSpotList
+          v-if="rows.length"
+          :rows="sorted"
+          :loading="loading"
+          show-date
+          :selected="picking ? selected : null"
+          @toggle="toggleRow"
+        />
         <p v-else-if="marks.loaded" class="text-body-sm text-sub">還沒有去過的地方</p>
+        <p v-if="marks.error" class="text-caption text-danger" role="alert">{{ marks.error }}</p>
       </section>
     </template>
     <p v-else class="text-body-sm text-sub">收藏、行程與紀錄需要登入。</p>

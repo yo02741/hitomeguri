@@ -2,7 +2,9 @@
 
 ## 需要你做的事
 
-- Phase 4、Phase 5、Phase 7 驗收：見 `docs/Phase4驗收.md`、`docs/Phase5驗收.md`、`docs/Phase7驗收.md`（含更新 Firestore 規則、校對旅前準備的會話、期間限定要不要改走審核分支）。
+- 更新 Firestore 規則：這一輪新增截圖收藏（`finds`、`find_images`），請再把 `firestore.rules` 貼到 Firebase Console 發布。
+- 回饋修改的驗收：見 `docs/回饋修改驗收.md`（日期選擇器、快捷去過與批次補日期、旅前準備目錄、連鎖店搜尋、截圖收藏、旅前小書）。
+- Phase 4、Phase 5、Phase 7 驗收：見 `docs/Phase4驗收.md`、`docs/Phase5驗收.md`、`docs/Phase7驗收.md`（含校對旅前準備的會話、期間限定要不要改走審核分支）。
 - Google 登入：在 Actions variables 新增 `VITE_FIREBASE_API_KEY`、`VITE_FIREBASE_APP_ID`（專案 ID 與 authDomain 已有預設值 hitomeguri-7d87a），並在 Firebase Authentication 啟用 Google 登入。
 - 英文簡介翻成中文（`translate-summaries`）程式已寫好，使用者決定先不翻；日後要用時在 Actions secrets 新增 `ANTHROPIC_API_KEY`。
 
@@ -24,7 +26,7 @@
 
 ## 需要你決定
 
-- 目前沒有。
+- 行程共編：邀請方式（連結／指定 email）、權限（都能編輯／分可編輯與只能看）、要不要現在做。評估見 `docs/回饋修改驗收.md` 第 7 節。
 
 ## 想法（之後做）
 

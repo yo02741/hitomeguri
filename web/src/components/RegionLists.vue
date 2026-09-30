@@ -5,10 +5,11 @@ import { CATEGORY_GROUPS, categoryGroup } from '../data/categories'
 import { mapThumbUrl, type MapSpot } from '../services/bundles'
 import { useExploreStore } from '../stores/explore'
 import CollapseChevron from './CollapseChevron.vue'
+import VisitedToggle from './VisitedToggle.vue'
 
 // 地區的景點清單（全部大點）。地區特色在深度探索頁（views/RegionView.vue）。
 // 類型列可篩選（清單與地圖一起）；不篩選時清單依類型分段排列。
-// 清單與地圖連動：滑過一列在地圖上標出，點選則選取並飛過去。
+// 清單與地圖連動：滑過一列在地圖上標出，點選則選取並飛過去。每列右側是「去過」快捷鈕。
 const props = defineProps<{ pref: string; spots: MapSpot[]; selectedId?: string | null }>()
 const emit = defineEmits<{ select: [id: string]; highlight: [id: string | null] }>()
 const explore = useExploreStore()
@@ -70,7 +71,7 @@ const failed = ref(new Set<string>())
     </nav>
 
     <div
-      class="scroll-quiet flex min-h-0 flex-col overflow-y-auto pr-3 pb-1 pl-1.5"
+      class="scroll-quiet flex min-h-0 flex-col overflow-y-auto pr-1.5 pb-1 pl-1.5"
       @mouseleave="emit('highlight', null)"
     >
       <template v-for="g in shown" :key="g.key">
@@ -85,34 +86,39 @@ const failed = ref(new Set<string>())
             {{ g.label }}<span class="font-latin font-normal tracking-normal">{{ g.rows.length }}</span>
           </button>
         </h3>
-        <button
+        <div
           v-for="s in isOpen(g.key) ? g.rows : []"
           :key="s.id"
-          type="button"
-          class="flex min-h-tap shrink-0 items-center gap-3 rounded-control px-1.5 py-1.5 text-left text-ink hover:bg-surface"
-          :class="s.id === selectedId ? 'bg-region-tint' : ''"
-          :aria-current="s.id === selectedId ? 'true' : undefined"
+          class="flex min-h-tap shrink-0 items-center rounded-control"
+          :class="s.id === selectedId ? 'bg-region-tint' : 'hover:bg-surface'"
           @mouseenter="emit('highlight', s.id)"
-          @focus="emit('highlight', s.id)"
-          @click="emit('select', s.id)"
         >
-          <span class="size-11 shrink-0 overflow-hidden rounded-control bg-placeholder">
-            <img
-              v-if="s.i && !failed.has(s.i)"
-              :src="mapThumbUrl(s.i)"
-              alt=""
-              loading="lazy"
-              referrerpolicy="no-referrer"
-              class="size-full object-cover"
-              @error="failed = new Set(failed).add(s.i)"
-            />
-          </span>
-          <span class="flex min-w-0 flex-col">
-            <span v-if="s.h" lang="ja" class="truncate text-caption tracking-kana text-sub">{{ s.h }}</span>
-            <span lang="ja" class="truncate text-body-sm font-bold">{{ s.n }}</span>
-          </span>
-          <span v-if="s.c && g.tags.length > 1" class="ml-auto shrink-0 text-caption text-sub">{{ s.c }}</span>
-        </button>
+          <button
+            type="button"
+            class="flex min-w-0 flex-1 items-center gap-3 px-1.5 py-1.5 text-left text-ink"
+            :aria-current="s.id === selectedId ? 'true' : undefined"
+            @focus="emit('highlight', s.id)"
+            @click="emit('select', s.id)"
+          >
+            <span class="size-11 shrink-0 overflow-hidden rounded-control bg-placeholder">
+              <img
+                v-if="s.i && !failed.has(s.i)"
+                :src="mapThumbUrl(s.i)"
+                alt=""
+                loading="lazy"
+                referrerpolicy="no-referrer"
+                class="size-full object-cover"
+                @error="failed = new Set(failed).add(s.i)"
+              />
+            </span>
+            <span class="flex min-w-0 flex-col">
+              <span v-if="s.h" lang="ja" class="truncate text-caption tracking-kana text-sub">{{ s.h }}</span>
+              <span lang="ja" class="truncate text-body-sm font-bold">{{ s.n }}</span>
+            </span>
+            <span v-if="s.c && g.tags.length > 1" class="ml-auto shrink-0 text-caption text-sub">{{ s.c }}</span>
+          </button>
+          <VisitedToggle :spot="{ id: s.id, pref, name: s.n }" />
+        </div>
       </template>
       <p v-if="!shown.length" class="px-1.5 py-3 text-body-sm text-sub">資料準備中。</p>
     </div>

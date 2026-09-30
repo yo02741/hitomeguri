@@ -93,6 +93,9 @@
   沙箱連不到氣象廳：頁面格式用 `probe.yml` 看；測試的網頁片段取自實際格式。
 - Phase 7（2026-09-29）：行程（trips）、旅前準備、練習。資料在 Firestore `users/{uid}/trips`、`trips/{id}/progress`。
   測試時 Pinia 的 trips store 只有在元件用到時才建立：Playwright 裡先 `import('/src/stores/trips.ts')` 再 `useTripsStore()`。
+- 驗收回饋第一輪（2026-09-30）：見 docs/回饋修改驗收.md。截圖收藏存在 Firestore `users/{uid}/finds`（縮圖）與 `find_images`（原圖），
+  圖片在瀏覽器壓縮（web/src/services/image.ts）。改了 firestore.rules 之後，模擬器的熱重載會被沙箱的代理擋下（Unable to parse JSON），要重開模擬器。
+  旅前小書用瀏覽器列印：App 的固定高度捲動版面要加 `print:` 變體攤開（寫在 base layer 的 @media print 會被 utility 蓋掉）。
 - Phase 5（2026-09-29）：收藏、去過、清單、KML / CSV 匯出。資料在 Firestore `users/{uid}/marks`、`lists`（UX-FLOW.md §3）。
   測試方式：`npx firebase emulators:start --project demo-hitomeguri --only auth,firestore` ＋ `npm run dev`，
   Playwright 用 `signInWithCredential(GoogleAuthProvider.credential('{"sub":…}'))` 登入 emulator（uid 由 emulator 指派）。

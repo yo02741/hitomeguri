@@ -6,14 +6,14 @@ const route = useRoute()
 
 const tabs = [
   { to: '/', label: '探索', match: ['home', 'explore', 'map'], icon: 'M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z M12 12.2a2.6 2.6 0 1 0 0-5.2 2.6 2.6 0 0 0 0 5.2z' },
-  { to: '/trips', label: '行程', match: ['trips', 'trip', 'prep', 'practice'], icon: 'M4 5h16v15H4z M4 10h16 M9 3v4 M15 3v4' },
+  { to: '/trips', label: '行程', match: ['trips', 'trip', 'prep', 'practice', 'book'], icon: 'M4 5h16v15H4z M4 10h16 M9 3v4 M15 3v4' },
   { to: '/log', label: '紀錄', match: ['log'], icon: 'M5 4h11l3 3v13H5z M9 11h7 M9 15h7' },
 ]
 </script>
 
 <template>
   <nav
-    class="flex h-14 shrink-0 border-t border-line bg-header pb-[env(safe-area-inset-bottom)] md:hidden"
+    class="flex h-14 shrink-0 border-t border-line bg-header pb-[env(safe-area-inset-bottom)] md:hidden print:hidden"
     aria-label="主要"
   >
     <RouterLink

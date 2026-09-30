@@ -11,10 +11,11 @@ const explore = useExploreStore()
   <div
     id="app-root"
     :data-pref="explore.activePref ?? undefined"
-    class="flex h-dvh flex-col bg-paper text-ink transition-colors duration-200"
+    class="flex h-dvh flex-col bg-paper text-ink transition-colors duration-200 print:block print:h-auto"
   >
     <AppHeader />
-    <main class="flex min-h-0 flex-1 flex-col overflow-y-auto">
+    <!-- 列印（旅前小書）時攤開固定高度的捲動版面，否則只印得出第一頁 -->
+    <main class="flex min-h-0 flex-1 flex-col overflow-y-auto print:block print:overflow-visible">
       <RouterView />
     </main>
     <TabBar />

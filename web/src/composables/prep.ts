@@ -47,5 +47,5 @@ export function usePrep(tripId: () => string) {
     return i >= 0 && i < t.days.length ? i : null
   })
 
-  return { trip, prefs, places, phrases, words, deck, themes, loading, status, todayIndex }
+  return { trip, prefs, details, byId, places, phrases, words, deck, themes, loading, status, todayIndex }
 }

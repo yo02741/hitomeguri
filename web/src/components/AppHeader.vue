@@ -22,7 +22,7 @@ function onPick(hit: SearchHit) {
 
 const tabs = [
   { to: '/', label: '探索', match: ['home', 'explore', 'map', 'region'] },
-  { to: '/trips', label: '行程', match: ['trips', 'trip', 'prep', 'practice'] },
+  { to: '/trips', label: '行程', match: ['trips', 'trip', 'prep', 'practice', 'book'] },
   { to: '/log', label: '紀錄', match: ['log'] },
 ]
 
@@ -32,7 +32,7 @@ function isActive(tab: (typeof tabs)[number]) {
 </script>
 
 <template>
-  <header class="flex h-header shrink-0 items-center gap-8 border-b border-line bg-header px-4 md:px-6">
+  <header class="flex h-header shrink-0 items-center gap-8 border-b border-line bg-header px-4 md:px-6 print:hidden">
     <Wordmark />
 
     <nav class="flex h-full max-md:hidden" aria-label="主要">

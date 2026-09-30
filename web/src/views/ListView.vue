@@ -83,7 +83,7 @@ async function del() {
           </button>
         </div>
       </div>
-      <MarkedSpotList v-if="rows.length" :rows="rows" :loading="loading" remove-label="從清單移除" @remove="remove" />
+      <MarkedSpotList v-if="rows.length" :rows="rows" :loading="loading" visit-toggle remove-label="從清單移除" @remove="remove" />
       <p v-else class="text-body-sm text-sub">清單裡還沒有景點</p>
     </template>
     <p v-else-if="!userStore.user" class="text-body-sm text-sub">收藏、行程與紀錄需要登入。</p>

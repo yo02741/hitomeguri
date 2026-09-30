@@ -39,6 +39,14 @@ export const router = createRouter({
       props: true,
       meta: { title: '練習' },
     },
+    {
+      path: '/trips/:id/book',
+      name: 'book',
+      component: () => import('../views/BookView.vue'),
+      props: true,
+      meta: { title: '旅前小書' },
+    },
+    { path: '/limited', name: 'limited', component: () => import('../views/LimitedView.vue'), meta: { title: '期間限定' } },
     { path: '/log', name: 'log', component: () => import('../views/LogView.vue'), meta: { title: '紀錄' } },
     { path: '/me', name: 'me', component: () => import('../views/MeView.vue'), meta: { title: '收藏與清單' } },
     {

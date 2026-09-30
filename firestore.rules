@@ -85,6 +85,30 @@ service cloud.firestore {
           && isString(request.resource.data.name, 80)
           && request.resource.data.name.size() > 0;
       }
+
+      // 截圖收藏（web/src/stores/finds.ts）：文字欄位＋縮圖；原圖在 find_images（同 id）
+      match /finds/{findId} {
+        allow read, delete: if isOwner(uid);
+        allow create, update: if isOwner(uid)
+          && request.resource.data.keys().hasOnly(['brand', 'item', 'note', 'thumb', 'w', 'h', 'trip_id', 'created_at', 'updated_at'])
+          && isString(request.resource.data.brand, 40)
+          && isString(request.resource.data.item, 80)
+          && isString(request.resource.data.note, 500)
+          && isString(request.resource.data.thumb, 200000)
+          && request.resource.data.w is int && request.resource.data.w > 0
+          && request.resource.data.h is int && request.resource.data.h > 0
+          && (!('trip_id' in request.resource.data) || isString(request.resource.data.trip_id, 64))
+          && request.resource.data.created_at is timestamp
+          && request.resource.data.updated_at is timestamp;
+      }
+
+      match /find_images/{findId} {
+        allow read, delete: if isOwner(uid);
+        allow create, update: if isOwner(uid)
+          && request.resource.data.keys().hasOnly(['data', 'created_at'])
+          && isString(request.resource.data.data, 1000000)
+          && request.resource.data.created_at is timestamp;
+      }
     }
 
     // 其餘路徑一律拒絕。

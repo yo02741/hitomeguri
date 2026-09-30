@@ -6,6 +6,7 @@ import { todayIso } from '../services/userdb'
 import { LIST_NAME_MAX, type SpotRef, useMarksStore } from '../stores/marks'
 import { useTripsStore } from '../stores/trips'
 import { useUserStore } from '../stores/user'
+import DatePicker from './DatePicker.vue'
 
 // 景點卡片的收藏、去過、清單（UX-FLOW.md B4、§3）。未登入時按下去先登入，登入後完成動作。
 const props = defineProps<{ spot: SpotRef }>()
@@ -88,6 +89,13 @@ async function addList() {
 
 const inLists = computed(() => mark.value?.lists?.length ?? 0)
 const today = todayIso()
+// 今年的只寫月日
+const visitedShort = computed(() => {
+  const d = mark.value?.visited_on
+  if (!d) return ''
+  const [y, m, day] = d.split('-').map(Number)
+  return y === Number(today.slice(0, 4)) ? `${m}/${day}` : `${y}/${m}/${day}`
+})
 </script>
 
 <template>
@@ -110,23 +118,45 @@ const today = todayIso()
         </svg>
         收藏
       </button>
-      <button
-        type="button"
-        class="flex h-11 items-center justify-center gap-1.5 rounded-control text-body-sm active:translate-y-px disabled:cursor-not-allowed disabled:opacity-40"
+      <!-- 去過：標了之後右半邊是日期（點開月曆補填） -->
+      <div
+        class="flex h-11 overflow-hidden rounded-control text-body-sm"
         :class="
           mark?.visited
             ? 'border-[1.5px] border-visited bg-visited-tint font-bold text-visited'
-            : 'border border-line bg-paper text-ink hover:bg-surface'
+            : 'border border-line bg-paper text-ink'
         "
-        :aria-pressed="Boolean(mark?.visited)"
-        :disabled="disabled"
-        @click="marks.toggleVisited(spot)"
       >
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <circle cx="12" cy="12" r="8.5" /><path d="M8.5 12.2l2.4 2.4 4.6-4.9" />
-        </svg>
-        去過
-      </button>
+        <button
+          type="button"
+          class="flex min-w-0 flex-1 items-center justify-center gap-1.5 active:translate-y-px disabled:cursor-not-allowed disabled:opacity-40"
+          :class="mark?.visited ? '' : 'hover:bg-surface'"
+          :aria-pressed="Boolean(mark?.visited)"
+          :disabled="disabled"
+          @click="marks.toggleVisited(spot)"
+        >
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="8.5" /><path d="M8.5 12.2l2.4 2.4 4.6-4.9" />
+          </svg>
+          去過
+        </button>
+        <DatePicker
+          v-if="mark?.visited"
+          bare
+          align="end"
+          label="去過日期"
+          :model-value="mark.visited_on ?? ''"
+          :max="today"
+          class="flex shrink-0 items-center gap-1 border-l border-visited/30 px-2.5 font-latin text-label font-normal hover:bg-visited/10"
+          @update:model-value="marks.setVisitedOn(spot, $event)"
+        >
+          <template #default>
+            <span v-if="mark.visited_on">{{ visitedShort }}</span>
+            <span v-else class="font-sans">日期</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6" /></svg>
+          </template>
+        </DatePicker>
+      </div>
       <button
         type="button"
         class="flex h-11 items-center justify-center gap-1.5 rounded-control text-body-sm active:translate-y-px disabled:cursor-not-allowed disabled:opacity-40"
@@ -252,16 +282,6 @@ const today = todayIso()
       </div>
     </div>
 
-    <label v-if="mark?.visited" class="flex items-center gap-2.5 text-body-sm text-sub">
-      <span class="w-[72px] shrink-0">去過日期</span>
-      <input
-        type="date"
-        :value="mark.visited_on ?? ''"
-        :max="today"
-        class="h-9 rounded-control border border-line bg-paper px-2 font-latin text-body-sm text-ink outline-none focus:border-region-strong"
-        @change="marks.setVisitedOn(spot, ($event.target as HTMLInputElement).value)"
-      />
-    </label>
     <p v-if="marks.error" class="text-caption text-danger" role="alert">{{ marks.error }}</p>
   </div>
 </template>

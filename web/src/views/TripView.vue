@@ -2,6 +2,7 @@
 import { computed, nextTick, ref, watch } from 'vue'
 import { useRouter } from 'vue-router'
 
+import DateRangePicker from '../components/DateRangePicker.vue'
 import ExportButtons from '../components/ExportButtons.vue'
 import MapView from '../components/MapView.vue'
 import TripStopList from '../components/TripStopList.vue'
@@ -196,35 +197,25 @@ async function del() {
           @blur="saveName"
           @keydown.enter="($event.target as HTMLInputElement).blur()"
         />
-        <div class="flex flex-wrap items-end gap-2">
-          <label class="flex flex-col gap-1 text-caption text-sub">
-            出發
-            <input
-              type="date"
-              :value="trip.start_date ?? ''"
-              class="h-10 rounded-control border border-line bg-paper px-2 font-latin text-body-sm text-ink outline-none focus:border-region-strong"
-              @change="setDates(($event.target as HTMLInputElement).value, trip.end_date ?? '')"
-            />
-          </label>
-          <label class="flex flex-col gap-1 text-caption text-sub">
-            回程
-            <input
-              type="date"
-              :value="trip.end_date ?? ''"
-              :min="trip.start_date"
-              :disabled="!trip.start_date"
-              class="h-10 rounded-control border border-line bg-paper px-2 font-latin text-body-sm text-ink outline-none focus:border-region-strong disabled:opacity-40"
-              @change="setDates(trip.start_date ?? '', ($event.target as HTMLInputElement).value)"
-            />
-          </label>
-          <span class="pb-2.5 text-caption text-sub">{{ trip.days.length }} 天</span>
-          <span v-if="status === 'ongoing'" class="mb-2.5 rounded-tag bg-region-strong px-1.5 text-caption font-bold text-white">旅途中</span>
+        <div class="flex flex-wrap items-center gap-2.5">
+          <DateRangePicker
+            label="日期"
+            :start="trip.start_date ?? ''"
+            :end="trip.end_date ?? ''"
+            @change="setDates"
+          />
+          <span class="text-caption text-sub">{{ trip.days.length }} 天</span>
+          <span v-if="status === 'ongoing'" class="rounded-tag bg-region-strong px-1.5 text-caption font-bold text-white">旅途中</span>
         </div>
         <div class="flex flex-wrap gap-2">
           <RouterLink
             :to="`/trips/${trip.id}/prep`"
             class="flex h-9 items-center rounded-control bg-region-strong px-3.5 text-label font-bold text-white no-underline active:translate-y-px"
           >旅前準備</RouterLink>
+          <RouterLink
+            :to="`/trips/${trip.id}/book`"
+            class="flex h-9 items-center rounded-control border border-line bg-paper px-3 text-label text-ink no-underline hover:bg-surface"
+          >旅前小書</RouterLink>
           <ExportButtons :title="trip.name || 'ひとめぐり 行程'" :folders="folders" :leading="['日', '順序']" />
           <button type="button" class="h-9 rounded-control border border-line bg-paper px-3 text-label text-danger hover:bg-surface" @click="del">刪除</button>
         </div>

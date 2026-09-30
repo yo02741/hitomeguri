@@ -49,7 +49,7 @@ async function logOut() {
           </h2>
           <ExportButtons class="ml-auto" title="ひとめぐり 收藏" :rows="favorites.map(markRow)" />
         </div>
-        <MarkedSpotList v-if="favorites.length" :rows="favorites" :loading="loading" />
+        <MarkedSpotList v-if="favorites.length" :rows="favorites" :loading="loading" visit-toggle />
         <p v-else-if="marks.loaded" class="text-body-sm text-sub">還沒有收藏的地方</p>
       </section>
 

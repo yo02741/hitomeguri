@@ -2,6 +2,7 @@
 import { computed, ref } from 'vue'
 import { useRouter } from 'vue-router'
 
+import DateRangePicker from '../components/DateRangePicker.vue'
 import TripCard from '../components/TripCard.vue'
 import { TRIP_NAME_MAX, tripStatus } from '../services/trip'
 import { useTripsStore } from '../stores/trips'
@@ -42,14 +43,10 @@ async function create() {
             class="h-11 rounded-control border border-line bg-paper px-3 text-body-sm text-ink outline-none placeholder:text-sub focus:border-region-strong"
           />
         </label>
-        <label class="flex flex-col gap-1 text-caption text-sub">
-          出發
-          <input v-model="start" type="date" class="h-11 rounded-control border border-line bg-paper px-2.5 font-latin text-body-sm text-ink outline-none focus:border-region-strong" />
-        </label>
-        <label class="flex flex-col gap-1 text-caption text-sub">
-          回程
-          <input v-model="end" type="date" :min="start || undefined" class="h-11 rounded-control border border-line bg-paper px-2.5 font-latin text-body-sm text-ink outline-none focus:border-region-strong" />
-        </label>
+        <div class="flex flex-col gap-1 text-caption text-sub">
+          <span>日期</span>
+          <DateRangePicker label="日期" size="lg" :start="start" :end="end" @change="(s, e) => ((start = s), (end = e))" />
+        </div>
         <button type="submit" class="h-11 rounded-control bg-region-strong px-4 text-body-sm font-bold text-white active:translate-y-px">
           新增行程
         </button>

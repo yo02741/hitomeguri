@@ -110,6 +110,15 @@ export const useMarksStore = defineStore('marks', () => {
     return !m.favorite && !m.visited && !m.lists?.length
   }
 
+  function markData(m: Mark, now: unknown): Record<string, unknown> {
+    const data: Record<string, unknown> = { pref: m.pref, name: m.name, updated_at: now }
+    if (m.favorite) data.favorite = true
+    if (m.visited) data.visited = true
+    if (m.visited && m.visited_on) data.visited_on = m.visited_on
+    if (m.lists?.length) data.lists = m.lists
+    return data
+  }
+
   async function writeMark(uid: string, id: string, m: Mark): Promise<void> {
     const { fs, db } = await firestore()
     const ref = fs.doc(db, 'users', uid, 'marks', id)
@@ -117,12 +126,7 @@ export const useMarksStore = defineStore('marks', () => {
       await fs.deleteDoc(ref)
       return
     }
-    const data: Record<string, unknown> = { pref: m.pref, name: m.name, updated_at: fs.serverTimestamp() }
-    if (m.favorite) data.favorite = true
-    if (m.visited) data.visited = true
-    if (m.visited && m.visited_on) data.visited_on = m.visited_on
-    if (m.lists?.length) data.lists = m.lists
-    await fs.setDoc(ref, data)
+    await fs.setDoc(ref, markData(m, fs.serverTimestamp()))
   }
 
   function current(s: SpotRef): Mark {
@@ -149,6 +153,22 @@ export const useMarksStore = defineStore('marks', () => {
     return withUser((uid) => {
       const m = current(s)
       return writeMark(uid, s.id, { ...m, visited: true, visited_on: /^\d{4}-\d{2}-\d{2}$/.test(date) ? date : undefined })
+    })
+  }
+
+  /** 批次補去過日期（紀錄頁）：一次寫入，每批最多 400 筆 */
+  function setVisitedOnMany(spots: SpotRef[], date: string) {
+    const d = /^\d{4}-\d{2}-\d{2}$/.test(date) ? date : undefined
+    return withUser(async (uid) => {
+      const { fs, db } = await firestore()
+      for (let i = 0; i < spots.length; i += 400) {
+        const batch = fs.writeBatch(db)
+        for (const s of spots.slice(i, i + 400)) {
+          const m = { ...current(s), visited: true, visited_on: d }
+          batch.set(fs.doc(db, 'users', uid, 'marks', s.id), markData(m, fs.serverTimestamp()))
+        }
+        await batch.commit()
+      }
     })
   }
 
@@ -218,6 +238,6 @@ export const useMarksStore = defineStore('marks', () => {
 
   return {
     marks, lists, loaded, error, markOf, favorites, visited, listEntries,
-    toggleFavorite, toggleVisited, setVisitedOn, toggleInList, createList, renameList, deleteList,
+    toggleFavorite, toggleVisited, setVisitedOn, setVisitedOnMany, toggleInList, createList, renameList, deleteList,
   }
 })
