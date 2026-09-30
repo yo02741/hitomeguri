@@ -93,3 +93,96 @@ def test_new_pack_bundles(tmp_path):
     [s] = build_bundles.pack_items_shinise(tmp_path)
     assert s["g"] == "incense" and s["z"] == "松榮堂" and s["f"] == "1705年"
     assert build_bundles.pack_items_chara(tmp_path) == []
+
+
+def test_seed_shinise_end_to_end(tmp_path, monkeypatch):
+    """外部來源換成假資料，整個流程跑一遍（Actions 上 OSM 查詢要一小時，錯在最後很貴）。"""
+    import json
+
+    from pipeline.sources import wikidata as wd
+
+    monkeypatch.setattr(pack_shinise, "PACKS_DIR", tmp_path)
+    monkeypatch.setattr(pack_shinise, "_pref_of", lambda lat, lng: "kyoto" if lat > 34.9 else "tokyo")
+    cats = {"日本の線香メーカー": ["松栄堂"], "和菓子の店舗・メーカー": ["鶴屋吉信", "新しい店"],
+            "日本の製茶メーカー": []}  # fmt: skip
+    monkeypatch.setattr(pack_shinise.wikipedia, "category_members", lambda site, cat, depth=0: cats[cat])
+    monkeypatch.setattr(pack_shinise.wikipedia, "page_categories", lambda site, titles: {
+        "松栄堂": ["18世紀設立の企業"], "鶴屋吉信": ["19世紀の日本の設立"], "新しい店": ["1990年設立の企業"],
+    })  # fmt: skip
+    monkeypatch.setattr(pack_shinise.wikipedia, "qids", lambda site, titles: {"松栄堂": "Q1", "鶴屋吉信": "Q2"})
+    monkeypatch.setattr(pack_shinise.wikipedia, "coordinates", lambda site, titles: {})
+    ents = {
+        "Q1": wd.Entity("Q1", labels={"zh-tw": "松榮堂"}, lat=35.01, lng=135.76),
+        "Q2": wd.Entity("Q2", headquarters=["Q9"]),
+        "Q9": wd.Entity("Q9", lat=35.02, lng=135.75),
+    }
+    monkeypatch.setattr(pack_shinise.wikidata, "entities", lambda ids: {i: ents[i] for i in ids if i in ents})
+    els = [
+        OsmElement("node/1", 35.03, 135.75, {"name": "鶴屋吉信 本店", "shop": "confectionery"}),
+        OsmElement("node/2", 35.0, 135.7, {"name": "山田松香木店", "shop": "gift"}),
+        OsmElement("node/3", 35.0, 135.77, {"name": "茶寮 都", "amenity": "cafe", "website": "x"}),
+        OsmElement("node/4", 35.0, 135.78, {"name": "茶屋カフェ", "amenity": "cafe"}),
+        OsmElement("node/5", 35.0, 135.79, {"name": "香草ヘア", "shop": "hairdresser"}),
+    ]
+    monkeypatch.setattr(pack_shinise.osm, "by_prefecture", lambda filters: (els, ["okinawa"]))
+    report = pack_shinise.seed_shinise()
+    out = {r["id"]: r for r in json.loads((tmp_path / "shinise.json").read_text(encoding="utf-8"))}
+    assert out["shinise-q1"]["kind"] == "incense" and out["shinise-q1"]["name"]["zh_tw"] == "松榮堂"
+    # 沒有座標的老舖：總部所在縣的 OSM 本店
+    assert out["shinise-q2"]["location"] == {"lat": 35.03, "lng": 135.75}
+    assert out["shinise-node-2"]["kind"] == "incense"
+    assert out["shinise-node-3"]["kind"] == "teahouse"
+    # 咖啡店、美容院不收；1990 年創業的不是老舖
+    assert "shinise-node-4" not in out and "shinise-node-5" not in out
+    assert "新しい店" in report and "okinawa" in report
+
+
+def test_seed_chara_end_to_end(tmp_path, monkeypatch):
+    import json
+
+    monkeypatch.setattr(pack_chara, "PACKS_DIR", tmp_path)
+    monkeypatch.setattr(pack_chara, "_pref_of", lambda lat, lng: "tokyo")
+    els = [
+        OsmElement("node/1", 35.6, 139.7, {"name": "Nintendo TOKYO", "shop": "video_games"}),
+        OsmElement("node/2", 35.6, 139.7, {"name": "ちいかわらんど", "shop": "gift"}),
+        OsmElement("node/3", 35.6, 139.7, {"name": "ワンピース", "shop": "clothes"}),
+    ]
+    monkeypatch.setattr(pack_chara.osm, "by_prefecture", lambda filters: (els, []))
+    report = pack_chara.seed_chara()
+    out = json.loads((tmp_path / "charashop.json").read_text(encoding="utf-8"))
+    assert [(r["id"], r["kind"]) for r in out] == [("chara-node-1", "nintendo"), ("chara-node-2", "chiikawa")]
+    assert "任天堂（1）" in report
+
+
+def test_seed_castles_end_to_end(tmp_path, monkeypatch):
+    import json
+
+    from pipeline.sources import wikidata as wd
+
+    monkeypatch.setattr(pack_castles, "PACKS_DIR", tmp_path)
+    monkeypatch.setattr(pack_castles, "_pref_of", lambda lat, lng: "tokyo")
+    monkeypatch.setattr(pack_castles, "spot_index", lambda: {})
+    castles = [
+        meijo.Castle(21, "100", "江戸城", "江戸城", ["楠公休憩場"], "日本100名城"),
+        meijo.Castle(124, "zoku", "台場", "品川台場", ["潮風公園"], "続日本100名城"),
+    ]
+    monkeypatch.setattr(pack_castles.meijo, "castles", lambda: castles)
+    monkeypatch.setattr(pack_castles.wikipedia, "qids", lambda site, titles: {"江戸城": "Q1", "台場": "Q2"})
+    monkeypatch.setattr(pack_castles.wikipedia, "coordinates", lambda site, titles: {})
+    monkeypatch.setattr(pack_castles.wikidata, "entities", lambda ids: {
+        "Q1": wd.Entity("Q1", lat=35.68, lng=139.75), "Q2": wd.Entity("Q2"),
+    })  # fmt: skip
+    seen = {}
+
+    def fake_japan(filters):
+        seen["filters"] = filters
+        return [OsmElement("way/7", 35.63, 139.77, {"name": "品川台場", "historic": "fort"})]
+
+    monkeypatch.setattr(pack_castles.osm, "japan", fake_japan)
+    pack_castles.seed_castles()
+    out = {r["no"]: r for r in json.loads((tmp_path / "castles.json").read_text(encoding="utf-8"))}
+    # 泛稱的條目標題「台場」不拿去比對
+    assert '["name"="台場"]' not in seen["filters"]
+    assert out[124]["location"] == {"lat": 35.63, "lng": 139.77}
+    assert out[124]["sources"][-1]["url"] == "https://www.openstreetmap.org/way/7"
+    assert out[21]["location"] == {"lat": 35.68, "lng": 139.75}

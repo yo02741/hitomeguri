@@ -160,7 +160,7 @@ def osm_record(el: osm.OsmElement, kind: str, today: str) -> dict[str, Any] | No
         (
             normalize_kana(el.tags[k])
             for k in ("name:ja-Hira", "name:ja_kana")
-            if is_kana(el.tags.get(k))
+            if is_kana(el.tags.get(k) or "")
         ),
         None,
     )
