@@ -100,6 +100,23 @@
     0% { transform: scale(1); opacity: 0.75; }
     80%, 100% { transform: scale(2.8); opacity: 0; }
   }
+  /* 蓋章（去過）：印章從上方壓下去、微微回彈（只在自己按下時播放一次） */
+  --animate-stamp-press: stamp-press 0.42s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+  @keyframes stamp-press {
+    0% { transform: scale(1.8) rotate(-16deg); opacity: 0; }
+    55% { transform: scale(0.84) rotate(3deg); opacity: 1; }
+    100% { transform: none; opacity: 1; }
+  }
+  /* 換景點時卡片內容淡入、往上滑一點 */
+  --animate-panel-in: panel-in 0.26s var(--ease-out-soft) both;
+  @keyframes panel-in {
+    from { opacity: 0; transform: translateY(10px); }
+  }
+  /* 手機的景點卡片從下方升上來 */
+  --animate-sheet-in: sheet-in 0.32s var(--ease-out-soft) both;
+  @keyframes sheet-in {
+    from { transform: translateY(100%); }
+  }
 }
 
 /* 地區色與中性色：值由 [data-pref] 在執行時決定（沒有 data-pref 時為 :root 的全國色）。
@@ -230,4 +247,57 @@
   to {
     background-position: -50% 0;
   }
+}
+/* 蓋章的墨暈：按下去時從中心往外擴一圈淡掉（DESIGN.md §9） */
+@utility stamp-ring {
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    inset: -2px;
+    border-radius: 9999px;
+    border: 2px solid var(--color-visited);
+    animation: stamp-ring 0.55s var(--ease-out-soft) 0.12s both;
+    pointer-events: none;
+  }
+}
+@keyframes stamp-ring {
+  from {
+    transform: scale(0.6);
+    opacity: 0.8;
+  }
+  to {
+    transform: scale(2.1);
+    opacity: 0;
+  }
+}
+/* 換頁過場（DESIGN.md §9、web/src/services/viewTransition.ts）：整頁淡入淡出；
+ * 地區標籤 ↔ 深度探索標頭（色塊、縣名、假名、紋樣圓）從一個長成另一個 */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 0.22s;
+}
+::view-transition-group(region-hero),
+::view-transition-group(region-name),
+::view-transition-group(region-kana),
+::view-transition-group(region-romaji),
+::view-transition-group(region-motif) {
+  animation-duration: 0.45s;
+  animation-timing-function: var(--ease-out-soft);
+}
+/* 色塊的長寬比差很多：新舊兩張都撐滿，交叉淡化 */
+::view-transition-old(region-hero),
+::view-transition-new(region-hero) {
+  height: 100%;
+}
+/* 頂部與底部的分頁列換頁時不淡入淡出：只顯示新的那張，選中線自己滑過去 */
+::view-transition-old(app-header),
+::view-transition-old(app-tabbar) {
+  display: none;
+}
+::view-transition-new(app-header),
+::view-transition-new(app-tabbar),
+::view-transition-group(app-header),
+::view-transition-group(app-tabbar) {
+  animation: none;
 }

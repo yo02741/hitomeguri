@@ -22,9 +22,9 @@ const routes = computed(() =>
   <div
     v-if="region"
     :data-pref="pref"
-    class="paper-grain relative flex shrink-0 flex-col overflow-hidden rounded-card bg-region py-3 pr-4 pl-2 text-on-region shadow-float"
+    class="paper-grain relative flex shrink-0 flex-col overflow-hidden rounded-card bg-region py-3 pr-4 pl-2 text-on-region shadow-float [view-transition-name:region-hero]"
   >
-    <RegionMotif :pref="pref" class="absolute -top-9 -right-7 size-[104px]" />
+    <RegionMotif :pref="pref" class="absolute -top-9 -right-7 size-[104px] [view-transition-name:region-motif]" />
     <span class="relative flex items-center gap-2">
       <RouterLink
         to="/"
@@ -39,13 +39,13 @@ const routes = computed(() =>
       </RouterLink>
       <span class="h-8 w-px shrink-0 bg-on-region opacity-25" aria-hidden="true"></span>
       <span class="flex shrink-0 flex-col pl-1 whitespace-nowrap">
-        <span lang="ja" class="text-caption tracking-kana opacity-85">{{ region.name.kana }}</span>
-        <span lang="ja" class="text-h3 leading-tight font-black tracking-name">{{ region.name.ja }}</span>
+        <span lang="ja" class="w-fit text-caption tracking-kana opacity-85 [view-transition-name:region-kana]">{{ region.name.kana }}</span>
+        <span lang="ja" class="w-fit text-h3 leading-tight font-black tracking-name [view-transition-name:region-name]">{{ region.name.ja }}</span>
       </span>
       <span class="ml-auto flex min-w-0 flex-col items-end self-end">
         <!-- 長的羅馬拼音（KAGOSHIMA 等）收緊字距，縣名不換行 -->
         <span
-          class="font-latin text-body-sm font-bold whitespace-nowrap uppercase"
+          class="font-latin text-body-sm font-bold whitespace-nowrap uppercase [view-transition-name:region-romaji]"
           :class="region.name.romaji.length > 7 ? 'tracking-[0.12em]' : 'tracking-[0.3em]'"
           >{{ region.name.romaji }}</span
         >

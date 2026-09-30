@@ -222,5 +222,19 @@ function distance(m: number): string {
       @close="cardOpen = false"
     />
   </section>
-  <section v-else-if="loading" class="grid h-full place-items-center bg-paper text-body-sm text-sub">載入中</section>
+  <!-- 載入中：照片、名稱、按鈕的佔位（DESIGN.md §9 skeleton） -->
+  <section v-else-if="loading" class="flex h-full flex-col bg-paper" aria-busy="true" aria-label="景點">
+    <div class="skeleton h-[170px] shrink-0"></div>
+    <div class="flex flex-col gap-2 bg-region px-5 py-4">
+      <div class="skeleton h-3 w-24 rounded-full"></div>
+      <div class="skeleton h-7 w-44 rounded-full"></div>
+      <div class="skeleton h-3 w-32 rounded-full"></div>
+    </div>
+    <div class="grid grid-cols-2 gap-2 px-5 pt-4">
+      <div v-for="n in 4" :key="n" class="skeleton h-11 rounded-control"></div>
+    </div>
+    <div class="flex flex-col gap-2 px-5 pt-5">
+      <div v-for="n in 4" :key="n" class="skeleton h-3 rounded-full" :class="n === 4 ? 'w-2/3' : 'w-full'"></div>
+    </div>
+  </section>
 </template>

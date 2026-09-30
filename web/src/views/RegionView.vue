@@ -128,8 +128,8 @@ function sourceLabel(url: string): string {
 <template>
   <div v-if="region" :data-pref="pref" class="flex min-h-0 flex-1 flex-col overflow-y-auto bg-paper text-ink">
     <!-- 海報區：地區色、正圓裝飾，只用正圓（DESIGN.md §7.5） -->
-    <header class="paper-grain relative shrink-0 overflow-hidden bg-region text-on-region">
-      <RegionMotif :pref="pref" class="absolute -top-24 -right-16 size-[320px]" />
+    <header class="paper-grain relative shrink-0 overflow-hidden bg-region text-on-region [view-transition-name:region-hero]">
+      <RegionMotif :pref="pref" class="absolute -top-24 -right-16 size-[320px] [view-transition-name:region-motif]" />
       <div class="relative mx-auto flex w-full max-w-5xl flex-col gap-4 px-6 pt-5 pb-8">
         <RouterLink
           :to="`/map/${pref}`"
@@ -142,11 +142,11 @@ function sourceLabel(url: string): string {
         </RouterLink>
         <div class="flex flex-wrap items-end gap-x-6 gap-y-1">
           <div class="flex flex-col">
-            <span lang="ja" class="text-body tracking-kana opacity-85">{{ region.name.kana }}</span>
-            <h1 lang="ja" class="text-display font-black tracking-name">{{ region.name.ja }}</h1>
+            <span lang="ja" class="w-fit text-body tracking-kana opacity-85 [view-transition-name:region-kana]">{{ region.name.kana }}</span>
+            <h1 lang="ja" class="w-fit text-display font-black tracking-name [view-transition-name:region-name]">{{ region.name.ja }}</h1>
           </div>
           <div class="flex flex-col pb-2">
-            <span class="font-latin text-body font-bold tracking-[0.4em] uppercase">{{ region.name.romaji }}</span>
+            <span class="w-fit font-latin text-body font-bold tracking-[0.4em] uppercase [view-transition-name:region-romaji]">{{ region.name.romaji }}</span>
             <span class="text-body-sm font-bold">{{ region.area_name }}</span>
           </div>
         </div>

@@ -4,11 +4,13 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import { router } from './router'
 import { sealSplash, trackSplash, webfontsReady } from './services/splash'
+import { installViewTransitions } from './services/viewTransition'
 import './styles/theme.css'
 
 const app = createApp(App)
 app.use(createPinia())
 app.use(router)
+installViewTransitions(router)
 trackSplash(webfontsReady(), 'fonts')
 trackSplash(router.isReady(), 'router')
 app.mount('#app')

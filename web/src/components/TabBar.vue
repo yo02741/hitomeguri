@@ -1,21 +1,37 @@
 <script setup lang="ts">
+import { ref } from 'vue'
 import { useRoute } from 'vue-router'
+
+import { useIndicator } from '../composables/indicator'
 
 // 手機底部分頁（UX-FLOW.md §1.1）：探索／行程／紀錄；「我的」在頂部右側頭像。
 const route = useRoute()
 
 const tabs = [
-  { to: '/', label: '探索', match: ['home', 'explore', 'map'], icon: 'M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z M12 12.2a2.6 2.6 0 1 0 0-5.2 2.6 2.6 0 0 0 0 5.2z' },
+  { to: '/', label: '探索', match: ['home', 'explore', 'map', 'region'], icon: 'M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z M12 12.2a2.6 2.6 0 1 0 0-5.2 2.6 2.6 0 0 0 0 5.2z' },
   { to: '/trips', label: '行程', match: ['trips', 'trip', 'prep', 'practice', 'book'], icon: 'M4 5h16v15H4z M4 10h16 M9 3v4 M15 3v4' },
   { to: '/log', label: '紀錄', match: ['log', 'cards'], icon: 'M5 4h11l3 3v13H5z M9 11h7 M9 15h7' },
 ]
+// 選中分頁上緣的線滑過去（DESIGN.md §9）
+const nav = ref<HTMLElement | null>(null)
+const { rect, animate } = useIndicator(nav, () => nav.value?.querySelector<HTMLElement>('[aria-current="page"]'), () => route.name)
 </script>
 
 <template>
   <nav
-    class="flex h-14 shrink-0 border-t border-line bg-header pb-[env(safe-area-inset-bottom)] md:hidden print:hidden"
+    ref="nav"
+    class="relative flex h-14 shrink-0 border-t border-line bg-header pb-[env(safe-area-inset-bottom)] md:hidden print:hidden [view-transition-name:app-tabbar]"
     aria-label="主要"
   >
+    <span
+      v-if="rect"
+      class="pointer-events-none absolute top-0 left-0 flex justify-center"
+      :class="animate ? 'transition-[translate,width] duration-300 ease-out-soft' : ''"
+      :style="{ translate: `${rect.x}px 0`, width: `${rect.w}px` }"
+      aria-hidden="true"
+    >
+      <span class="h-[3px] w-10 rounded-b-full bg-region-strong"></span>
+    </span>
     <RouterLink
       v-for="tab in tabs"
       :key="tab.to"

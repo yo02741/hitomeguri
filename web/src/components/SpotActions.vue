@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed, nextTick, onBeforeUnmount, ref, watch } from 'vue'
 
+import { useStampPress } from '../composables/stampPress'
 import { dayDate, hasSpot, shortDate, TRIP_NAME_MAX, tripStatus } from '../services/trip'
 import { todayIso } from '../services/userdb'
 import { LIST_NAME_MAX, type SpotRef, useMarksStore } from '../stores/marks'
@@ -16,6 +17,13 @@ const userStore = useUserStore()
 
 const mark = computed(() => marks.markOf(props.spot.id))
 const disabled = computed(() => !userStore.canSignIn)
+
+// 按下去過時蓋章（DESIGN.md §9）
+const { pressing, key: stampKey, arm } = useStampPress(() => Boolean(mark.value?.visited), () => props.spot.id)
+function toggleVisited() {
+  arm()
+  void marks.toggleVisited(props.spot)
+}
 
 // 清單、行程的選單（一次開一個）
 const open = ref<'lists' | 'trips' | null>(null)
@@ -133,9 +141,15 @@ const visitedShort = computed(() => {
           :class="mark?.visited ? '' : 'hover:bg-surface'"
           :aria-pressed="Boolean(mark?.visited)"
           :disabled="disabled"
-          @click="marks.toggleVisited(spot)"
+          @click="toggleVisited"
         >
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <span v-if="mark?.visited" :key="stampKey" class="grid size-4 place-items-center rounded-full" :class="pressing ? 'stamp-ring' : ''">
+            <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" :class="pressing ? 'animate-stamp-press' : ''">
+              <circle cx="12" cy="12" r="9.5" fill="currentColor" />
+              <path d="M8.3 12.3l2.5 2.5 4.9-5.1" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </span>
+          <svg v-else width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <circle cx="12" cy="12" r="8.5" /><path d="M8.5 12.2l2.4 2.4 4.6-4.9" />
           </svg>
           去過

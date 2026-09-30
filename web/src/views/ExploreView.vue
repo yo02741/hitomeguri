@@ -173,6 +173,8 @@ const castleOfSpot = computed(() => {
   return { no: it.no, label, stamp: it.st ?? [] }
 })
 const prefSpots = computed(() => (props.pref ? (catalog.mapSpots[props.pref] ?? []) : []))
+// 右側卡片換內容時重播淡入：擴充包的點看 id，景點等詳細資料到了才換（載入中不算一次）
+const panelKey = computed(() => (selectedPack.value ? (selectedId.value ?? '') : (selectedSpot.value?.id ?? 'loading')))
 
 // 桌機：左上浮動面板蓋住地圖左側，地圖定位時扣掉這塊（寬 w-float＋左右間距）
 const desktop = ref(false)
@@ -587,26 +589,29 @@ function onMoveEnd(view: MapViewState) {
       </div>
     </div>
 
+    <!-- 手機的景點卡片從下方升上來；換景點時內容淡入（DESIGN.md §9） -->
     <aside
       v-if="selectedId"
-      class="shrink-0 border-line lg:w-panel lg:border-l max-lg:absolute max-lg:inset-x-0 max-lg:bottom-0 max-lg:z-20 max-lg:h-[60dvh] max-lg:overflow-hidden max-lg:rounded-t-sheet max-lg:shadow-sheet"
+      class="shrink-0 border-line lg:w-panel lg:border-l max-lg:absolute max-lg:inset-x-0 max-lg:bottom-0 max-lg:z-20 max-lg:h-[60dvh] max-lg:animate-sheet-in max-lg:overflow-hidden max-lg:rounded-t-sheet max-lg:shadow-sheet"
     >
-      <PackPanel
-        v-if="selectedPack"
-        :item="selectedPack.item"
-        :pack="selectedPack.pack"
-        @close="closeSpot"
-        @open-spot="select"
-      />
-      <SpotPanel
-        v-else
-        :spot="selectedSpot"
-        :loading="loadingSpot"
-        :nearby="nearby"
-        :castle="castleOfSpot"
-        @close="closeSpot"
-        @select-pack="select"
-      />
+      <div :key="panelKey" class="h-full animate-panel-in">
+        <PackPanel
+          v-if="selectedPack"
+          :item="selectedPack.item"
+          :pack="selectedPack.pack"
+          @close="closeSpot"
+          @open-spot="select"
+        />
+        <SpotPanel
+          v-else
+          :spot="selectedSpot"
+          :loading="loadingSpot"
+          :nearby="nearby"
+          :castle="castleOfSpot"
+          @close="closeSpot"
+          @select-pack="select"
+        />
+      </div>
     </aside>
   </div>
 </template>

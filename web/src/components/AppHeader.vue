@@ -1,5 +1,8 @@
 <script setup lang="ts">
+import { ref } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
+
+import { useIndicator } from '../composables/indicator'
 
 import type { SearchHit } from '../services/search'
 import { useExploreStore } from '../stores/explore'
@@ -29,23 +32,33 @@ const tabs = [
 function isActive(tab: (typeof tabs)[number]) {
   return tab.match.includes(String(route.name))
 }
+// 選中分頁的底線滑過去（DESIGN.md §9）
+const nav = ref<HTMLElement | null>(null)
+const { rect, animate } = useIndicator(nav, () => nav.value?.querySelector<HTMLElement>('[aria-current="page"]'), () => route.name)
 </script>
 
 <template>
-  <header class="flex h-header shrink-0 items-center gap-8 border-b border-line bg-header px-4 md:px-6 print:hidden">
+  <header class="flex h-header shrink-0 items-center gap-8 border-b border-line bg-header px-4 md:px-6 print:hidden [view-transition-name:app-header]">
     <Wordmark />
 
-    <nav class="flex h-full max-md:hidden" aria-label="主要">
+    <nav ref="nav" class="relative flex h-full max-md:hidden" aria-label="主要">
       <RouterLink
         v-for="tab in tabs"
         :key="tab.to"
         :to="tab.to"
-        class="flex items-center border-b-3 px-4 text-body no-underline"
-        :class="isActive(tab) ? 'border-region-strong font-bold text-ink' : 'border-transparent text-sub'"
+        class="flex items-center border-b-3 border-transparent px-4 text-body no-underline"
+        :class="isActive(tab) ? 'font-bold text-ink' : 'text-sub'"
         :aria-current="isActive(tab) ? 'page' : undefined"
       >
         {{ tab.label }}
       </RouterLink>
+      <span
+        v-if="rect"
+        class="pointer-events-none absolute bottom-0 left-0 h-[3px] bg-region-strong"
+        :class="animate ? 'transition-[translate,width] duration-300 ease-out-soft' : ''"
+        :style="{ translate: `${rect.x}px 0`, width: `${rect.w}px` }"
+        aria-hidden="true"
+      ></span>
     </nav>
 
     <div class="ml-auto flex items-center gap-2.5">
