@@ -73,7 +73,7 @@ def chara_record(el: osm.OsmElement, today: str) -> dict[str, Any] | None:
 def seed_chara() -> str:
     today = dt.date.today().isoformat()
     rx = "|".join(r for _, r in BRANDS).replace('"', '\\"')
-    elements = osm.japan([
+    elements, failed = osm.by_prefecture([
         f'["shop"]["name"~"{rx}",i]',
         f'["amenity"~"^(cafe|restaurant)$"]["name"~"{rx}",i]',
         f'["tourism"~"^(museum|attraction|theme_park)$"]["name"~"{rx}",i]',
@@ -86,6 +86,8 @@ def seed_chara() -> str:
     path.write_text(json.dumps(out, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
     lines = ["## 角色商店", "", f"共 {len(out)} 家（OSM {len(elements)} 筆）", ""]
+    if failed:
+        lines += [f"OSM 查詢失敗的縣（這次沒有資料）：{'、'.join(failed)}", ""]
     for key, label in GROUP_LABEL.items():
         rows = [r for r in out if r["kind"] == key]
         lines.append(f"### {label}（{len(rows)}）")

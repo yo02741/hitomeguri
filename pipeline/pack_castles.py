@@ -8,7 +8,6 @@ from __future__ import annotations
 
 import datetime as dt
 import json
-import re
 from pathlib import Path
 from typing import Any
 
@@ -83,8 +82,8 @@ def name_variants(c: meijo.Castle) -> list[str]:
 def osm_fallback(castles: list[meijo.Castle]) -> dict[int, tuple[float, float]]:
     """OSM 上名稱完全相同的點（史跡優先）；名城番號 → 座標。"""
     names = [v for c in castles for v in name_variants(c)]
-    rx = "^(" + "|".join(re.escape(n) for n in names) + ")$"
-    els = osm.japan([f'["name"~"{rx}"]'])
+    # 名稱完全相同用 = 比對（走索引；全國的正規表示式比對會逾時）
+    els = osm.japan([f'["name"="{n}"]' for n in dict.fromkeys(names) if '"' not in n])
     out: dict[int, tuple[float, float]] = {}
     for c in castles:
         vs = name_variants(c)

@@ -176,6 +176,38 @@ out center tags;"""
     return _run(q)
 
 
+def by_prefecture(filters: list[str], timeout: int = 180) -> tuple[list[OsmElement], list[str]]:
+    """各縣分開查（全國一次查名稱比對太重，Overpass 會逾時）；縣的 area 查詢失敗就改用範圍框。
+
+    回傳（去重後的物件, 兩種查詢都失敗的縣）。範圍框的結果會含鄰縣的點，呼叫端依座標判斷所屬縣。
+    """
+    from pipeline import geo
+
+    seen: dict[str, OsmElement] = {}
+    failed: list[str] = []
+    for pref in geo.pref_slugs():
+        body = "\n".join(f"  nwr{f}(area.a);" for f in filters)
+        q = f"""[out:json][timeout:{timeout}];
+{_area(geo.iso_code(pref))}
+(
+{body}
+);
+out center tags;"""
+        try:
+            els = _run(q)
+        except RuntimeError:
+            s, w, n, e = geo.bbox(pref)
+            body = "\n".join(f"  nwr{f}({s},{w},{n},{e});" for f in filters)
+            try:
+                els = _run(f"[out:json][timeout:{timeout}];\n(\n{body}\n);\nout center tags;")
+            except RuntimeError:
+                failed.append(pref)
+                continue
+        for el in els:
+            seen.setdefault(el.osm_id, el)
+    return list(seen.values()), failed
+
+
 def themed(iso: str, bbox: tuple[float, float, float, float]) -> dict[str, list[OsmElement]]:
     """各主題的 OSM 物件。先用縣的 area 查詢；逾時就改用範圍框（呼叫端再用縣界過濾）。
 

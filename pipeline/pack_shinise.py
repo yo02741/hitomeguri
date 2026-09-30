@@ -226,15 +226,23 @@ def seed_shinise() -> str:
     need = [s for s in need if s.lat is None]
     hq_ids = [h for s in need if s.ent for h in s.ent.headquarters[:1]]
     hq = wikidata.entities(hq_ids) if hq_ids else {}
-    stores = osm.japan([
-        f'["shop"]["name"~"{_rx([s.name for s in need])}"]',
-        f'["amenity"~"^(cafe|restaurant)$"]["name"~"{_rx([s.name for s in need])}"]',
-    ]) if need else []  # fmt: skip
+
+    # OSM：同名的店、香舖、茶屋，各縣一次查詢（全國一次查會逾時）
+    filters = [
+        f'["shop"]["name"~"{INCENSE_NAME}"]',
+        '["shop"~"^(religion|incense|perfumery)$"]["name"~"香"]',
+        f'["amenity"~"^(cafe|restaurant)$"]["name"~"{TEAHOUSE_NAME}"]',
+    ]
+    if need:
+        rx = _rx([s.name for s in need])
+        filters += [f'["shop"]["name"~"{rx}"]', f'["amenity"~"^(cafe|restaurant)$"]["name"~"{rx}"]']
+    elements, failed_prefs = osm.by_prefecture(filters)
+
     no_place: list[str] = []
     for s in need:
         h = hq.get(s.ent.headquarters[0]) if s.ent and s.ent.headquarters else None
         pref = _pref_of(h.lat, h.lng) if h and h.lat is not None and h.lng is not None else None
-        el = pick_store(s.name, pref, stores)
+        el = pick_store(s.name, pref, elements)
         if el:
             s.osm, s.lat, s.lng = el, el.lat, el.lng
         else:
@@ -247,14 +255,21 @@ def seed_shinise() -> str:
             out.append(_clean(rec))
 
     # 香舖：OSM 補維基沒有條目的店（同名的店 1 km 內已有就略過）
-    incense = osm.japan([
-        f'["shop"]["name"~"{INCENSE_NAME}"]',
-        '["shop"~"^(religion|incense|perfumery)$"]["name"~"香"]',
-    ])  # fmt: skip
+    incense = [
+        el
+        for el in elements
+        if el.tags.get("shop")
+        and el.tags["shop"] not in SHOP_EXCLUDE
+        and (
+            re.search(INCENSE_NAME, el.tags.get("name", ""))
+            or (
+                el.tags["shop"] in ("religion", "incense", "perfumery")
+                and "香" in el.tags.get("name", "")
+            )
+        )
+    ]
     added_incense = 0
     for el in incense:
-        if el.tags.get("shop") in SHOP_EXCLUDE:
-            continue
         name = _norm(osm_name(el.tags))
         if any(
             r["kind"] == "incense"
@@ -271,8 +286,10 @@ def seed_shinise() -> str:
     # 茶屋・甘味處：OSM，依資料完整度每縣取前幾家
     teahouses = [
         el
-        for el in osm.japan([f'["amenity"~"^(cafe|restaurant)$"]["name"~"{TEAHOUSE_NAME}"]'])
-        if not TEAHOUSE_EXCLUDE.search(osm_name(el.tags) + " " + el.tags.get("cuisine", ""))
+        for el in elements
+        if el.tags.get("amenity") in ("cafe", "restaurant")
+        and re.search(TEAHOUSE_NAME, el.tags.get("name", ""))
+        and not TEAHOUSE_EXCLUDE.search(osm_name(el.tags) + " " + el.tags.get("cuisine", ""))
     ]
     by_pref: dict[str, list[osm.OsmElement]] = {}
     for el in teahouses:
@@ -305,6 +322,8 @@ def seed_shinise() -> str:
         "",
         f"查不到創業年而不收（{len(unknown)}）：{'、'.join(unknown)}",
     ]
+    if failed_prefs:
+        lines += ["", f"OSM 查詢失敗的縣（這次沒有 OSM 的店）：{'、'.join(failed_prefs)}"]
     if no_place:
         lines += ["", f"找不到店的位置而略過（{len(no_place)}）：{'、'.join(no_place)}"]
     lines += ["", "| 縣 | 家數 |", "|---|---|"]
