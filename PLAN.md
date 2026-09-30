@@ -3,6 +3,7 @@
 > 本文件是交給 Claude Code 的開工規格。請依「開發階段」逐階段實作，每階段完成驗收條件後再進下一階段。
 > 前端的資訊架構、路由、User Stories、UI flow 與地區色規則見 **`UX-FLOW.md`**；視覺規格見 **`DESIGN.md`**。衝突時前端以這兩份為準。
 > **成本前提：Firebase 維持免費的 Spark 方案，不升級 Blaze。** 唯一付費項目是 Claude API 用量。
+> 本文件是最初的規格，後來的使用者決定以「決策更新」引用框或各 Phase 的「實作」說明標示；目前狀態與交接見 `docs/PROGRESS.md`。
 
 ---
 
@@ -13,17 +14,19 @@
 
 **一句話**：一個「行程上游的發現層 + 旅前準備」—— 幫我決定日本某地「去哪、為什麼、什麼時候」，挑好後排成簡單行程匯出到 Google Maps，並在出發前學會這趟會用到的日文。
 
-- **不做**：交通時間計算、多人協作（Google Maps、去趣已做得很好）。
+- **不做**：交通時間計算。
+  - 原本也不做多人協作；使用者 2026-09-30 決定加入行程共編（邀請連結，成員都能編輯，見 `docs/行程共編驗收.md`）。
 - **要做**：
   1. **大點層**：各地主要景點（依類型分段），先搭行程骨架。
   2. **主題層**：茶、酒（精釀）、香（老香鋪/香道）、溫泉、拉麵、寶可夢（寶可夢中心、ポケふた、Pokémon GO 活動）、御朱印・御守…可各自開關的主題地圖，用來「塞小點」。
+     - 決策更新：主題層改為「擴充包」，只收筆數精簡、值得專程去的。目前是寶可夢、城（100 名城・續 100 名城）、老舖・茶屋、角色商店；溫泉、酒、拉麵、居酒屋因筆數多或不影響行程規劃而不做（使用者 2026-09-30 決定）。
   3. **地區特色**：名產與特色（例：愛媛柑橘、道後溫泉、岡山白桃/葡萄），附產季。
   4. **期間限定層**：超商限定、麥當勞限定、祭典、花火、賞楓等，有時間區間，依日期自動浮現。
   5. **個人化**：Google 登入、收藏、去過、自訂清單。
   6. **行程**：選景點 → 手動排進每一天 → 匯出 Google Maps / KML / CSV。
   7. **旅前準備**：依行程自動整理「這趟會遇到的日文」—— 地名念法、場景會話（分「會聽到的」與「要說的」）、地區特色詞彙、包裝常見字，出發前用 flashcard 練習。
   8. **台灣直飛**：各地區有哪些台灣機場（TPE / RMQ / KHH / TNN）可直飛、哪些航空公司，顯示在地區面板。
-- **MVP 範圍**：名古屋（愛知，含岐阜近郊）與關西（京都、大阪、兵庫、奈良，含滋賀近郊）。種子清單見 `data/seed/seed_from_guides.json`（§5.0）。
+- **MVP 範圍**：名古屋（愛知，含岐阜近郊）與關西（京都、大阪、兵庫、奈良，含滋賀近郊）。種子清單見 `data/seed/seed_from_guides.json`（§5.0）。現已擴展到全國 47 縣。
 - **視覺 mockup**：https://claude.ai/artifact/L6mTRQ4a9c44uNik145pS5 （以「v7 定稿」頁與 `DESIGN.md` 為準）。
 - **參考**：traveldoko.com（地圖＋圓形照片 marker、精選/全部切換、地區篩選、右下角「本週限定」統計卡、匯出）。**不可爬取或複製其資料**。
 
@@ -42,7 +45,7 @@
 | 資料 pipeline / 排程 | **GitHub Actions**（cron 排程 workflow）+ Python | 取代 Cloud Functions / Cloud Scheduler |
 | 景點資料庫 | **Git repo 內的 JSON 檔（data/）** | 取代 Firestore 主資料與 Cloud Storage；PR 即審核佇列 |
 | 語音 | 瀏覽器 Web Speech API（ja-JP） | 旅前準備的發音，免費、不存音檔 |
-| LLM | Anthropic Claude API（Python SDK） | 補全用 Message Batches API；驗證用帶 web search tool 的呼叫 |
+| LLM | Anthropic Claude API（Python SDK） | 只用於查證與翻譯實際來源（§5 決策更新）：`translate-summaries` 翻譯英文簡介、`verify-flights` 帶 web search 查證航線 |
 
 ### 為什麼這樣換
 - **Cloud Functions** 需要 Blaze → 改用 GitHub Actions 定時跑 Python。
@@ -54,8 +57,8 @@
 - `ANTHROPIC_API_KEY` 存在 **GitHub Actions secrets**，不可寫進程式或 commit；前端**絕不**直接呼叫 Claude API。
 - 在 Anthropic Console 設定月用量上限。
 - 模型（實作時到 https://docs.claude.com 確認最新 model string 與 Batch / web search 用法）：
-  - 大量補全（翻譯、簡介、tags、日文詞彙）：`claude-haiku-4-5-20251001`，走 Batch API。
-  - 驗證、判斷、冷門主題搜尋：`claude-sonnet-5` + web search tool。
+  - model string 以程式為準：`pipeline/translate.py`（翻譯）、`pipeline/verify_flights.py`（查證航線）。
+  - 原本規劃的「LLM 大量補全簡介、tags、詞彙」已停用（§5 決策更新）。
 
 ---
 
@@ -70,39 +73,49 @@
 ├── firestore.rules
 ├── firestore.indexes.json
 ├── .github/workflows/
-│   ├── harvest-timed.yml         # 每日：期間限定
-│   ├── poll-batches.yml          # 每數小時：收 Batch 結果
-│   ├── refresh-themes.yml        # 每月：主題小店
-│   ├── refresh-major.yml         # 每季：大點、地區特色
-│   └── deploy.yml                # main 有變更 → build 前端 + 產生 bundles → 部署 Hosting
-├── data/                         # ★ 景點主資料（source of truth，人可讀、可 diff）
-│   ├── spots/{prefecture}.json
+│   ├── ci.yml                    # 每次推送：前端 typecheck + build、pipeline lint + test + 資料檢查
+│   ├── firebase-hosting.yml      # main 有變更 → 部署 Firebase Hosting
+│   ├── pages.yml                 # main 有變更 → 部署 GitHub Pages
+│   ├── harvest-timed.yml         # 每日：期間限定（直接提交 main）
+│   ├── refresh-data.yml          # 每週／每月／每季：重新採集並開 PR（Phase 6）
+│   ├── pipeline-pr-closed.yml    # 自動 PR 關閉後刪分支
+│   ├── seed-region.yml           # 手動：各縣大點（推到 pipeline/* 分支）
+│   ├── seed-pack.yml             # 手動：全國一次抓的項目（擴充包、地區特色、祭典、季節、鐵路…）
+│   ├── verify-flights.yml        # 手動：查證直飛航線（需 ANTHROPIC_API_KEY）
+│   ├── probe.yml                 # 手動：取回網頁看結構與使用條款（沙箱連不到外站時用）
+│   └── cleanup-branches.yml      # 手動：刪除 pipeline/* 分支
+├── data/                         # ★ 主資料（source of truth，人可讀、可 diff；依 id 排序）
+│   ├── regions.json              # 47 縣名稱、地方、地區色
+│   ├── spots/{prefecture}.json   # 大點
 │   ├── specialties/{prefecture}.json
-│   ├── timed/{yyyy-mm}.json
-│   ├── phrases/themes/{theme}.json
-│   ├── phrases/common.json       # 通用：車站、超商、包裝字等
-│   ├── flights/taiwan_direct.json # 台灣直飛航線
-│   ├── seed/seed_from_guides.json # 攻略抽出的候選清單（§5.0）
-│   └── _state/batch_jobs.json    # 進行中的 Anthropic batch
+│   ├── festivals/{prefecture}.json
+│   ├── rail/{prefecture}.json    # 鐵路路線與車站
+│   ├── packs/*.json              # 擴充包（寶可夢、城、老舖・茶屋、角色商店）
+│   ├── timed/{yyyy-mm}.json      # 期間限定
+│   ├── seasons.json              # 氣象廳生物季節平年值
+│   ├── phrases/                  # 旅前準備的會話與詞彙
+│   ├── translations/             # 英文簡介的中文翻譯
+│   ├── flights/taiwan_direct.json # 台灣直飛航線（未查證的不顯示）
+│   └── seed/                     # 攻略候選、官方觀光網站清單、排除清單
 ├── pipeline/                     # Python 資料 pipeline
-│   ├── sources/                  # wikidata.py, osm.py, wikipedia.py, gi.py, prtimes.py, ...
-│   ├── dedupe.py
-│   ├── enrich.py                 # LLM 補全（Batch API）
-│   ├── verify.py                 # LLM + web search 驗證
-│   ├── phrases.py                # 旅前準備詞彙生成
-│   ├── scoring.py
+│   ├── sources/                  # wikidata、wikipedia、osm、jma、maff、pokefuta、meijo、官方觀光網站…
+│   ├── major.py                  # 大點（seed-region）
+│   ├── wiki.py                   # 維基簡介與念法
+│   ├── specialties.py、festivals.py、seasons.py、rail.py、timed.py
+│   ├── packs.py、pack_castles.py、pack_shinise.py、pack_chara.py  # 擴充包
+│   ├── validate.py、diff_report.py  # 資料檢查、PR 變更報告
 │   ├── build_bundles.py          # data/ → web/public/bundles/ 精簡 JSON
 │   ├── models.py                 # pydantic schema（與 §4 對應）
-│   └── cli.py                    # seed-region / refresh / poll 等指令
+│   └── cli.py                    # 所有指令的入口
 └── web/                          # Vue 前端
     ├── public/bundles/           # build 時產生，不 commit
     └── src/
-        ├── components/           # MapView, SpotCard, LayerToggle, TimedWidget, TripEditor, PrepPack, Flashcard, ...
-        ├── stores/               # Pinia: catalog, layers, user, trips
-        ├── services/             # firebase.ts, bundles.ts, export.ts, tts.ts
+        ├── components/           # MapView、SpotPanel、PackBar、PackList、SectionNav、DatePicker…
+        ├── composables/          # scrollSpy、prep、markedSpots、floating…
+        ├── stores/               # Pinia：catalog、explore、user、marks、trips、finds
+        ├── services/             # firebase、bundles、export、calendar、image…
+        ├── data/                 # 擴充包、主題、地區、類型等前端定義
         ├── styles/               # theme.css（Tailwind token）、regions.css（自動產生）
-        ├── assets/symbols/       # 主題符號 SVG
-        ├── map/style.json        # MapLibre 樣式
         └── views/
 ```
 
@@ -228,7 +241,7 @@ users/{uid}/lists/{listId}
 
 ### 流程
 ```
-採集 harvest → 去重 dedupe → LLM 補全 enrich → 驗證 verify → 開 PR（= 審核佇列）→ 我 review 合併 → deploy.yml 自動部署
+採集（GitHub Actions）→ 去重、對齊 Wikidata → 資料檢查（validate-data）＋變更報告（diff-report）→ 開 PR（= 審核佇列）→ 使用者 review 合併 → main 的推送自動部署（firebase-hosting.yml、pages.yml）
 ```
 原則：**能用結構化開放資料撈的不交給 LLM 想；LLM 負責翻譯、摘要、分類、判斷、驗證與詞彙生成，且必須保留來源 URL。**
 
@@ -308,18 +321,18 @@ users/{uid}/lists/{listId}
 - 座標距離（例 < 80m）+ 名稱相似度（ja 正規化後）；有 OSM `wikidata=*` tag 時優先使用。
 
 ### 5.7 LLM 補全與驗證
-- **enrich**：新資料用 Message Batches API 送出，batch id 記在 `data/_state/batch_jobs.json`；`poll-batches.yml` 定期取回結果、寫入 data/、開 PR。輸出以 pydantic 驗證，失敗的重試或在 PR 中標註。
+- **enrich**（已停用，見 §5 決策更新）：原本規劃用 Message Batches API 讓 LLM 補寫簡介與念法。
 - **verify**：針對低分、有衝突或久未檢查的資料，以 web search 確認營業狀態、限定商品/活動真實性與日期，結果寫入 `verification` 並保存來源 URL。
 - **審核 = PR review**：每次 pipeline 產出開一個 PR，PR 描述列出新增/修改/下架筆數與需要特別看的項目（驗證衝突、LLM 補的念法）。我合併後才上線。
 
 ### 5.8 排程（GitHub Actions）
 | Workflow | 頻率 | 內容 |
 |---|---|---|
-| `harvest-timed.yml` | 每日 | 期間限定增量採集 + 過期項目從 current bundle 移除 |
-| `poll-batches.yml` | 每 4–6 小時 | 收 Batch 結果 → 開 PR |
-| `refresh-themes.yml` | 每月 | 主題小店更新 / 歇業檢查（依都道府縣分批） |
-| `refresh-major.yml` | 每季 | 大點、地區特色 |
-| `deploy.yml` | push 到 main | 產生 bundles → build 前端 → `firebase deploy --only hosting,firestore:rules`（用 service account secret；可用官方 action `FirebaseExtended/action-hosting-deploy`） |
+| `harvest-timed.yml` | 每日 17:50 JST | 期間限定（氣象廳），有變更直接提交 main 並觸發部署 |
+| `refresh-data.yml` | 每週一；每月、每季第一週範圍較大 | 擴充包、祭典、地區特色、維基簡介、各縣大點重採 → 開 PR（Phase 6） |
+| `pipeline-pr-closed.yml` | 自動 PR 關閉時 | 刪除 pipeline/* 分支 |
+| `firebase-hosting.yml`、`pages.yml` | push 到 main | 產生 bundles → build 前端 → 部署（只部署 Hosting，Firestore 規則由使用者在 Console 發布） |
+| `ci.yml` | 每次推送 | 前端 typecheck + build；pipeline lint + test + 資料檢查 |
 
 - 所有 workflow 支援 `workflow_dispatch` 手動觸發，並可指定都道府縣。
 - 注意 GitHub Actions 單一 job 時間上限與每月分鐘數；大範圍任務依都道府縣分批、跨多次執行。
@@ -329,7 +342,7 @@ users/{uid}/lists/{listId}
 
 ## 6. 前端功能
 
-- **地圖**：MapLibre，主題符號 marker（`DESIGN.md` §6）+ clustering；縣內顯示全部大點、可依類型篩選；主題開關（多選）；地圖跨縣界自動切換地區（`UX-FLOW.md` §1.3）。
+- **地圖**：MapLibre，主題符號 marker（`DESIGN.md` §6）+ clustering；縣內顯示全部大點、可依類型篩選；擴充包（一次開一個，地圖上方的列）；鐵路路線；地圖跨縣界自動切換地區（`UX-FLOW.md` §1.3）。
 - **景點卡片**：照片（含 credit）、日文名稱＋假名＋羅馬拼音、繁中簡介、最佳季節、建議停留、最近車站、來源連結、「在 Google Maps 開啟」、收藏 / 去過 / 加入行程。
 - **地區頁**：該都道府縣的地區特色（名產、產季）。
 - **期間限定**：探索頁左欄列出目前焦點縣＋全國、尚未過期的 timed items，依結束日排序，點擊在地圖標示（`UX-FLOW.md` A6）。
@@ -395,15 +408,18 @@ users/{uid}/lists/{listId}
 - ✅ 驗收：`firebase emulators:start` 可跑，前端能登入並顯示空白地圖；確認專案沒有啟用任何需要 Blaze 的服務。
 
 ### Phase 1 — 名古屋＋關西大點（端到端打通）
+- 狀態：完成；之後擴展到全國 47 縣（Phase 6 的一部分）。簡介與念法改取自維基百科，不用 LLM 補全。
 - 先用京都府跑通整條 pipeline：`seed-region kyoto`：Wikidata + OSM + 種子清單 → 去重 → 精選分數 → Batch 補全 → `data/spots/kyoto.json` → `build_bundles.py` → 地圖顯示。
 - 跑通後依序擴到 aichi、osaka、hyogo、nara，再補 gifu、shiga（近郊一日遊）。
 - ✅ 驗收：六個以上府縣的精選與全部景點上圖；`seed_from_guides.json` 的 S 級景點都在精選內（例：伏見稻荷、清水寺、名古屋城、熱田神宮、東大寺、北野異人館）；照片有 credit，卡片有假名與最近車站。
 
 ### Phase 2 — 主題層（MVP 範圍）
+- 狀態：主題層改為「擴充包」（寶可夢、城、老舖・茶屋、角色商店，見 §1）；原本 OSM 撈的茶、酒、拉麵、溫泉小店資料保留在 7 縣的 `data/spots`，前端不顯示。
 - OSM 撈茶、酒、拉麵、溫泉；agent 搜尋老香鋪/香道；寶可夢中心、ポケふた；寺社御朱印・御守欄位；LayerToggle。
 - ✅ 驗收：宇治、西尾看得到茶的主題點；京都市內看得到老香鋪；大阪、京都、名古屋的寶可夢中心上圖；伏見稻荷、熱田神宮卡片有御朱印資訊。
 
 ### Phase 3 — 地區特色＋台灣直飛
+- 狀態：地區特色完成（農林水產省郷土料理＋維基分類）；GI 與地域團體商標還沒接。直飛航線候選未查證（需 `ANTHROPIC_API_KEY`），網站不顯示。
 - 接 GI、地域團體商標、郷土料理資料，全國先匯入（量不大）；種子清單的 specialties 一併對齊。
 - 驗證台灣直飛航線，地區面板顯示。
 - ✅ 驗收：選京都府顯示宇治茶等與產季；選愛知顯示八丁味噌、西尾抹茶；地區面板顯示已驗證的直飛航線與來源。
@@ -424,7 +440,7 @@ users/{uid}/lists/{listId}
 - ✅ 驗收：登入後收藏幾個點 → 匯出 KML 可成功匯入 Google My Maps。
 
 ### Phase 6 — 自動化排程 + PR 審核流程 + 擴展全國
-- 所有 GitHub Actions workflow、自動開 PR、`deploy.yml` 自動部署；依都道府縣逐步 seed 全國。
+- 所有 GitHub Actions workflow、自動開 PR、自動部署；依都道府縣逐步 seed 全國。
 - 實作：`refresh-data.yml` 每週一（寶可夢、城、祭典）、每月第一週（再加老舖、角色商店、地區特色、各縣維基簡介與念法）、每季第一週（再加各縣大點重採）自動採集，推到 `pipeline/refresh-<run>` 並開 PR；PR 描述附 `diff-report`（各檔新增、刪除、修改，簡介／念法／中文名／座標的變更）與 `validate-data`（格式、依 id 排序、schema、來源、禁用詞、bundle 能否建出），檢查結果也寫成 commit 狀態「資料檢查」。新的自動 PR 取代還沒合併的舊 PR；PR 關閉後 `pipeline-pr-closed.yml` 刪除分支。期間限定維持每天直接提交 main（`harvest-timed.yml`）。
 - ✅ 驗收：排程連續跑一週無錯誤、每次產出都是可 review 的 PR；合併後網站自動更新；全國 bundles 產生完成；GitHub Actions 分鐘數與 Firestore 用量都在免費額度內。
 

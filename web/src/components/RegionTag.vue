@@ -4,6 +4,7 @@ import { computed } from 'vue'
 import { AIRPORT_AREA } from '../data/airports'
 import { regionOf } from '../data/regions'
 import { useCatalogStore } from '../stores/catalog'
+import RegionMotif from './RegionMotif.vue'
 
 // 地區標籤（DESIGN.md §7.5）：浮在地圖左上。左側是返回鍵，回到首頁的日本地圖。
 // 已驗證的台灣直飛航線列在下方（UX-FLOW.md A7）。
@@ -21,9 +22,9 @@ const routes = computed(() =>
   <div
     v-if="region"
     :data-pref="pref"
-    class="relative flex shrink-0 flex-col overflow-hidden rounded-card bg-region py-3 pr-4 pl-2 text-on-region shadow-float"
+    class="paper-grain relative flex shrink-0 flex-col overflow-hidden rounded-card bg-region py-3 pr-4 pl-2 text-on-region shadow-float"
   >
-    <span class="absolute -top-9 -right-7 size-[104px] rounded-full bg-region-accent"></span>
+    <RegionMotif :pref="pref" class="absolute -top-9 -right-7 size-[104px]" />
     <span class="relative flex items-center gap-2">
       <RouterLink
         to="/"
