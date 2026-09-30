@@ -1,0 +1,94 @@
+"""擴充包「角色商店」（seed-chara 指令）：任天堂、吉卜力、三麗鷗…的官方店與咖啡廳。
+
+全國一次查 OSM（店名比對品牌），依品牌分組。寶可夢另有擴充包，不在這裡。
+介面不使用角色圖、logo 或官方圖片；只存店名、座標與官方網站連結。
+"""
+
+from __future__ import annotations
+
+import datetime as dt
+import json
+import re
+from typing import Any
+
+from pipeline.packs import _pref_of, log, osm_address, osm_name
+from pipeline.paths import PACKS_DIR
+from pipeline.sources import osm
+
+# (組別, 店名比對)；比對不分大小寫
+BRANDS: list[tuple[str, str]] = [
+    ("nintendo", r"Nintendo (TOKYO|OSAKA|KYOTO|FUKUOKA)|ニンテンドー(ミュージアム|トウキョウ|オオサカ|キョウト|フクオカ)|Nintendo Museum"),  # noqa: E501
+    ("ghibli", r"どんぐり共和国|Donguri Republic|ジブリ美術館|ジブリパーク|Ghibli Museum|Ghibli Park"),  # noqa: E501
+    ("sanrio", r"サンリオ|Sanrio|ハローキティ|Hello Kitty"),
+    ("chiikawa", r"ちいかわ|Chiikawa"),
+    ("kirby", r"カービィ|Kirby Caf"),
+    ("onepiece", r"麦わらストア|Mugiwara Store|ONE PIECE"),
+    ("jump", r"ジャンプショップ|JUMP SHOP"),
+    ("snoopy", r"スヌーピー|Snoopy|PEANUTS Cafe"),
+    ("disney", r"ディズニーストア|Disney Store"),
+]  # fmt: skip
+GROUP_LABEL = {
+    "nintendo": "任天堂",
+    "ghibli": "吉卜力",
+    "sanrio": "三麗鷗",
+    "chiikawa": "吉伊卡哇",
+    "kirby": "星之卡比",
+    "onepiece": "航海王",
+    "jump": "Jump Shop",
+    "snoopy": "史努比",
+    "disney": "迪士尼",
+}
+# 住宿、停車場等名稱剛好含品牌的不收
+EXCLUDE_TOURISM = {"hotel", "motel", "guest_house", "hostel", "apartment"}
+
+
+def brand_of(name: str) -> str | None:
+    for key, rx in BRANDS:
+        if re.search(rx, name, re.I):
+            return key
+    return None
+
+
+def chara_record(el: osm.OsmElement, today: str) -> dict[str, Any] | None:
+    t = el.tags
+    names = " ".join(v for k, v in t.items() if k.startswith(("name", "brand")))
+    kind = brand_of(names)
+    pref = _pref_of(el.lat, el.lng)
+    name = osm_name(t)
+    if not kind or not pref or not name or t.get("tourism") in EXCLUDE_TOURISM:
+        return None
+    rec = {
+        "id": f"chara-{el.osm_id.replace('/', '-')}",
+        "kind": kind,
+        "prefecture": pref,
+        "name": {k: v for k, v in {"ja": name, "en": t.get("name:en")}.items() if v},
+        "address": osm_address(t) or None,
+        "location": {"lat": round(el.lat, 6), "lng": round(el.lng, 6)},
+        "website": t.get("website") or t.get("contact:website"),
+        "sources": [{"url": el.url, "fetched_at": today}],
+    }
+    return {k: v for k, v in rec.items() if v is not None}
+
+
+def seed_chara() -> str:
+    today = dt.date.today().isoformat()
+    rx = "|".join(r for _, r in BRANDS).replace('"', '\\"')
+    elements = osm.japan([
+        f'["shop"]["name"~"{rx}",i]',
+        f'["amenity"~"^(cafe|restaurant)$"]["name"~"{rx}",i]',
+        f'["tourism"~"^(museum|attraction|theme_park)$"]["name"~"{rx}",i]',
+    ])  # fmt: skip
+    out = [r for el in elements if (r := chara_record(el, today))]
+    out = sorted({r["id"]: r for r in out}.values(), key=lambda r: r["id"])
+    log(f"[chara] OSM {len(elements)} 筆 → {len(out)} 家")
+    PACKS_DIR.mkdir(parents=True, exist_ok=True)
+    path = PACKS_DIR / "charashop.json"
+    path.write_text(json.dumps(out, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+
+    lines = ["## 角色商店", "", f"共 {len(out)} 家（OSM {len(elements)} 筆）", ""]
+    for key, label in GROUP_LABEL.items():
+        rows = [r for r in out if r["kind"] == key]
+        lines.append(f"### {label}（{len(rows)}）")
+        lines += [f"- {r['name']['ja']}（{r['prefecture']}）" for r in rows]
+        lines.append("")
+    return "\n".join(lines)

@@ -1,6 +1,6 @@
 name: seed-pack
 
-# 手動觸發：採集全國一次抓完的資料（擴充包：寶可夢；深度探索：地區特色、祭典、季節；鐵路路線），
+# 手動觸發：採集全國一次抓完的資料（擴充包：寶可夢、城、老舖、角色商店；深度探索：地區特色、祭典、季節；鐵路路線），
 # 結果推到 pipeline/<command>-<run> 分支，檢查後再合併。全國一個 job 依序抓（同一網站，每秒最多一次請求）。
 
 on:
@@ -11,7 +11,7 @@ on:
         required: true
         default: seed-pokefuta
         type: choice
-        options: [seed-pokefuta, seed-pokecen, seed-specialties, seed-festivals, seed-seasons, seed-rail, seed-official, translate-summaries, prune-spots]
+        options: [seed-pokefuta, seed-pokecen, seed-castles, seed-shinise, seed-chara, seed-specialties, seed-festivals, seed-seasons, seed-rail, seed-official, translate-summaries, prune-spots]
       prefectures:
         description: "都道府縣 slug，空白分隔；空白表示全部（seed-pokecen 不用）。translate-summaries：填數字表示只翻前 N 筆"
         required: false
@@ -43,7 +43,7 @@ jobs:
           ANTHROPIC_API_KEY: ${{ inputs.command == 'translate-summaries' && secrets.ANTHROPIC_API_KEY || '' }}
         run: |
           case "${{ inputs.command }}" in
-            seed-pokecen|seed-seasons) args="" ;;
+            seed-pokecen|seed-seasons|seed-castles|seed-shinise|seed-chara) args="" ;;
             translate-summaries)
               if [ -z "$ANTHROPIC_API_KEY" ]; then
                 echo "::error::請在 Settings → Secrets and variables → Actions 新增 ANTHROPIC_API_KEY"

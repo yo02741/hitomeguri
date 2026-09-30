@@ -30,6 +30,9 @@ class Entity:
     sitelinks: dict[str, str] = field(default_factory=dict)  # 例 {"jawiki": "伏見稲荷大社"}
     # 定期活動的日期與月份（P837 day in year for periodic occurrence、P2922 month of the year）
     occurs: list[str] = field(default_factory=list)
+    # 創立（P571）的年份；總部所在地（P159）的 QID
+    inception: list[int] = field(default_factory=list)
+    headquarters: list[str] = field(default_factory=list)
 
     @property
     def url(self) -> str:
@@ -107,8 +110,27 @@ def entities(qids: list[str]) -> dict[str, Entity]:
                 for v in _claim_values(claims, prop)
                 if isinstance(v, dict) and "id" in v
             ]
+            ent.inception = [
+                y
+                for v in _claim_values(claims, "P571")
+                if isinstance(v, dict) and (y := _year(v)) is not None
+            ]
+            ent.headquarters = [
+                v["id"] for v in _claim_values(claims, "P159") if isinstance(v, dict) and "id" in v
+            ]
             out[qid] = ent
     return out
+
+
+def _year(time_value: dict[str, Any]) -> int | None:
+    """Wikidata 時間值（+1600-00-00T00:00:00Z）→ 年份；精度不到年（世紀、千年）的不取。"""
+    t = time_value.get("time")
+    if not isinstance(t, str) or time_value.get("precision", 0) < 9:
+        return None
+    try:
+        return int(t[1:].split("-", 1)[0]) * (-1 if t.startswith("-") else 1)
+    except ValueError:
+        return None
 
 
 def labels_ja(qids: list[str]) -> dict[str, str]:

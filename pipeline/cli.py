@@ -149,6 +149,27 @@ def cmd_harvest_timed(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_seed_castles(args: argparse.Namespace) -> int:
+    from pipeline.pack_castles import seed_castles
+
+    _emit(seed_castles(), args.report)
+    return 0
+
+
+def cmd_seed_shinise(args: argparse.Namespace) -> int:
+    from pipeline.pack_shinise import seed_shinise
+
+    _emit(seed_shinise(), args.report)
+    return 0
+
+
+def cmd_seed_chara(args: argparse.Namespace) -> int:
+    from pipeline.pack_chara import seed_chara
+
+    _emit(seed_chara(), args.report)
+    return 0
+
+
 def cmd_seed_wiki(args: argparse.Namespace) -> int:
     from pipeline.wiki import seed_wiki
 
@@ -209,6 +230,24 @@ def main(argv: list[str] | None = None) -> int:
     p = sub.add_parser("seed-pokecen", help="擴充包：寶可夢中心與商店（OSM 全國）→ data/packs/")
     p.add_argument("--report")
     p.set_defaults(func=cmd_seed_pokecen)
+
+    for name, func, desc in [
+        (
+            "seed-castles",
+            cmd_seed_castles,
+            "擴充包：日本100名城・続日本100名城（維基）→ data/packs/",
+        ),
+        (
+            "seed-shinise",
+            cmd_seed_shinise,
+            "擴充包：老舖（香舖、和菓子、茶舖）與茶屋 → data/packs/",
+        ),
+        ("seed-chara", cmd_seed_chara, "擴充包：角色商店（OSM 全國）→ data/packs/"),
+    ]:
+        p = sub.add_parser(name, help=desc)
+        p.add_argument("prefectures", nargs="*", help="不使用（全國一次抓）")
+        p.add_argument("--report")
+        p.set_defaults(func=func)
 
     p = sub.add_parser("seed-rail", help="鐵路路線圖層：OSM 路線與車站 → data/rail/")
     p.add_argument("prefectures", nargs="*", help="省略時處理全部縣")

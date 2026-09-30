@@ -164,6 +164,18 @@ out center tags;"""
     return _run(q)
 
 
+def japan(filters: list[str], timeout: int = 300) -> list[OsmElement]:
+    """全國一次查詢：filters 是 Overpass 的 tag 條件（例 '["shop"]["name"~"…"]'），取聯集。"""
+    body = "\n".join(f"  nwr{f}(area.a);" for f in filters)
+    q = f"""[out:json][timeout:{timeout}];
+area["ISO3166-1"="JP"]["admin_level"="2"]->.a;
+(
+{body}
+);
+out center tags;"""
+    return _run(q)
+
+
 def themed(iso: str, bbox: tuple[float, float, float, float]) -> dict[str, list[OsmElement]]:
     """各主題的 OSM 物件。先用縣的 area 查詢；逾時就改用範圍框（呼叫端再用縣界過濾）。
 

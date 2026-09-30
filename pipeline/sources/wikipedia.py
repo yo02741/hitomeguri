@@ -152,3 +152,71 @@ def page_images(site: str, titles: list[str]) -> dict[str, str]:
                 original = back.get(title, title)
                 out[back.get(original, original)] = name
     return out
+
+
+def _batched_pages(site: str, titles: list[str], params: dict[str, object]) -> dict[str, dict]:
+    """依標題分批查 prop=…；回傳「原本的標題」→ page（跟隨重新導向；分頁的結果合併）。"""
+    out: dict[str, dict] = {}
+    uniq = list(dict.fromkeys(titles))
+    for i in range(0, len(uniq), 50):
+        chunk = uniq[i : i + 50]
+        q_params: dict[str, object] = {
+            **params,
+            "action": "query",
+            "titles": "|".join(chunk),
+            "redirects": 1,
+            "format": "json",
+            "formatversion": 2,
+        }
+        while True:
+            data = get_json(_api(site), params=q_params, min_interval=0.3)
+            q = data.get("query", {})
+            back = {r["to"]: r["from"] for r in q.get("redirects", [])}
+            back.update({n["to"]: n["from"] for n in q.get("normalized", [])})
+            for page in q.get("pages", []):
+                if page.get("missing"):
+                    continue
+                title = page["title"]
+                original = back.get(title, title)
+                key = back.get(original, original)
+                prev = out.setdefault(key, {"title": title})
+                for k, v in page.items():
+                    if isinstance(v, list):
+                        prev[k] = prev.get(k, []) + v
+                    else:
+                        prev.setdefault(k, v)
+            if "continue" not in data:
+                break
+            q_params.update(data["continue"])
+    return out
+
+
+def page_categories(site: str, titles: list[str]) -> dict[str, list[str]]:
+    """條目的分類（不含隱藏分類，不含「Category:」前綴）。"""
+    pages = _batched_pages(
+        site, titles, {"prop": "categories", "clshow": "!hidden", "cllimit": "max"}
+    )
+    return {
+        t: [c["title"].split(":", 1)[1] for c in p.get("categories", [])] for t, p in pages.items()
+    }
+
+
+def coordinates(site: str, titles: list[str]) -> dict[str, tuple[float, float]]:
+    """條目的主座標（{{coord}} 樣板）；沒有的不列。"""
+    pages = _batched_pages(site, titles, {"prop": "coordinates", "coprimary": "primary"})
+    out: dict[str, tuple[float, float]] = {}
+    for t, p in pages.items():
+        coords = p.get("coordinates") or []
+        if coords:
+            out[t] = (coords[0]["lat"], coords[0]["lon"])
+    return out
+
+
+def qids(site: str, titles: list[str]) -> dict[str, str]:
+    """條目標題 → Wikidata QID，key 是傳入的標題（重新導向前）。"""
+    pages = _batched_pages(site, titles, {"prop": "pageprops", "ppprop": "wikibase_item"})
+    return {
+        t: p["pageprops"]["wikibase_item"]
+        for t, p in pages.items()
+        if p.get("pageprops", {}).get("wikibase_item")
+    }

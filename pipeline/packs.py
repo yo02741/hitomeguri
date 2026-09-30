@@ -81,19 +81,28 @@ def _pref_of(lat: float, lng: float) -> str | None:
     return None
 
 
+def osm_name(tags: dict[str, str]) -> str:
+    """店名；很多店的 name 只有品牌（「ポケモンセンター」），分店名在 branch。"""
+    name = tags.get("name:ja") or tags.get("name", "")
+    branch = tags.get("branch", "")
+    if name and branch and branch not in name:
+        name = f"{name} {branch}"
+    return name
+
+
+def osm_address(tags: dict[str, str]) -> str:
+    return "".join(
+        tags.get(k, "") for k in ("addr:province", "addr:city", "addr:quarter", "addr:full")
+    )
+
+
 def shop_record(el: osm.OsmElement, today: str) -> dict[str, Any] | None:
     pref = _pref_of(el.lat, el.lng)
     t = el.tags
-    name = t.get("name", "")
+    name = osm_name(t)
     if not pref or not name:
         return None
-    # 很多店的 name 只有「ポケモンセンター」，分店名在 branch
-    branch = t.get("branch", "")
-    if branch and branch not in name:
-        name = f"{name} {branch}"
-    address = "".join(
-        t.get(k, "") for k in ("addr:province", "addr:city", "addr:quarter", "addr:full")
-    )
+    address = osm_address(t)
     return {
         # 前綴與景點（osm-…）區分，前端依前綴判斷是擴充包的點
         "id": f"pokecen-{el.osm_id.replace('/', '-')}",
