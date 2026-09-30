@@ -7,6 +7,7 @@ import FindGallery from '../components/FindGallery.vue'
 import PhraseRow from '../components/PhraseRow.vue'
 import RegionChip from '../components/RegionChip.vue'
 import SectionNav from '../components/SectionNav.vue'
+import SkeletonRows from '../components/SkeletonRows.vue'
 import SpeakButton from '../components/SpeakButton.vue'
 import TimedList from '../components/TimedList.vue'
 import { usePrep } from '../composables/prep'
@@ -135,7 +136,7 @@ watch(
       </aside>
 
       <div class="flex min-w-0 flex-col gap-10">
-        <p v-if="loading" class="text-body-sm text-sub">載入中</p>
+        <SkeletonRows v-if="loading" :rows="5" />
 
         <section v-if="todayPlaces.length" id="today" class="flex scroll-mt-16 flex-col gap-2 lg:scroll-mt-8" aria-labelledby="today-title">
           <h2 id="today-title" class="text-h3 font-black tracking-[2px]">今天</h2>

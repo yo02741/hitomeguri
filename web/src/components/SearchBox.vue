@@ -5,6 +5,7 @@ import RegionChip from './RegionChip.vue'
 import { regionOf } from '../data/regions'
 import type { SearchHit } from '../services/search'
 import { useCatalogStore } from '../stores/catalog'
+import SkeletonRows from './SkeletonRows.vue'
 
 // header 右側的景點搜尋（全國）。第一次聚焦時才下載索引。
 // 結果先列縣名，再列景點（完全相同 > 開頭相同 > 包含，同級依分數）。
@@ -107,9 +108,8 @@ function onKey(e: KeyboardEvent) {
           {{ h.kind === 'pref' ? '地區' : regionOf(h.pref)?.name.ja }}
         </span>
       </li>
-      <li v-if="!hits.length" class="px-2 py-2.5 text-body-sm text-sub">
-        {{ catalog.index ? '找不到符合的景點' : '載入中' }}
-      </li>
+      <li v-if="!hits.length && catalog.index" class="px-2 py-2.5 text-body-sm text-sub">找不到符合的景點</li>
+      <li v-else-if="!hits.length"><SkeletonRows :rows="3" /></li>
     </ul>
   </div>
 </template>

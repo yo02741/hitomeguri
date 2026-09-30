@@ -2,6 +2,7 @@
 import { ref, watch } from 'vue'
 import { useRouter } from 'vue-router'
 
+import SkeletonRows from '../components/SkeletonRows.vue'
 import { type InviteInfo, useTripsStore } from '../stores/trips'
 import { useUserStore } from '../stores/user'
 
@@ -65,7 +66,7 @@ async function join() {
       </button>
     </template>
 
-    <p v-else-if="state === 'loading'" class="text-body-sm text-sub">載入中</p>
+    <SkeletonRows v-else-if="state === 'loading'" :rows="2" />
 
     <template v-else-if="state === 'ready' && invite">
       <div class="flex flex-col gap-1">

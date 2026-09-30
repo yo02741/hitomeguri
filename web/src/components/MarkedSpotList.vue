@@ -2,6 +2,7 @@
 import type { MarkedSpot } from '../composables/markedSpots'
 import { regionOf } from '../data/regions'
 import RegionChip from './RegionChip.vue'
+import SkeletonRows from './SkeletonRows.vue'
 import VisitedToggle from './VisitedToggle.vue'
 
 // 收藏、清單、去過的景點列：點了回到地圖選取這個景點。
@@ -64,6 +65,6 @@ const emit = defineEmits<{ remove: [row: MarkedSpot]; toggle: [row: MarkedSpot] 
         </svg>
       </button>
     </li>
-    <li v-if="loading && !rows.length" class="px-2 py-2.5 text-body-sm text-sub">載入中</li>
+    <li v-if="loading && !rows.length"><SkeletonRows :rows="3" /></li>
   </ul>
 </template>

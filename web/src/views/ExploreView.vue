@@ -9,6 +9,7 @@ import PackList from '../components/PackList.vue'
 import PackPanel from '../components/PackPanel.vue'
 import RegionLists from '../components/RegionLists.vue'
 import RegionTag from '../components/RegionTag.vue'
+import RollingNumber from '../components/RollingNumber.vue'
 import SpotPanel, { type NearbyPack } from '../components/SpotPanel.vue'
 import TimedList from '../components/TimedList.vue'
 import { categoryGroup } from '../data/categories'
@@ -522,7 +523,7 @@ function onMoveEnd(view: MapViewState) {
           <svg width="16" height="16" viewBox="0 0 24 24" :fill="explore.onlyFavorites ? 'currentColor' : 'none'" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true">
             <path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.9l-5.2 2.7 1-5.8-4.3-4.1 5.9-.9z" />
           </svg>
-          收藏<span class="font-latin">{{ marks.favorites.length }}</span>
+          收藏<RollingNumber :value="marks.favorites.length" class="font-latin" />
         </button>
         <PackBar :pref="pref && regionOf(pref) ? pref : null" />
       </div>

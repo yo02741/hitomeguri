@@ -5,6 +5,7 @@ import { useRouter } from 'vue-router'
 import DateRangePicker from '../components/DateRangePicker.vue'
 import ExportButtons from '../components/ExportButtons.vue'
 import MapView from '../components/MapView.vue'
+import SkeletonRows from '../components/SkeletonRows.vue'
 import TripMembers from '../components/TripMembers.vue'
 import TripStopList from '../components/TripStopList.vue'
 import { useCatalogSpots } from '../composables/catalogSpots'
@@ -343,7 +344,7 @@ async function del() {
           @focus="focusStop"
         />
       </section>
-      <p v-if="loading" class="text-caption text-sub">載入中</p>
+      <SkeletonRows v-if="loading" :rows="3" thumb />
       <p v-if="trips.error" class="text-caption text-danger" role="alert">{{ trips.error }}</p>
     </section>
 

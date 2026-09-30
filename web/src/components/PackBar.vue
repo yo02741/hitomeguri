@@ -4,6 +4,7 @@ import { computed, onBeforeUnmount, onMounted, ref } from 'vue'
 import { PACKS } from '../data/packs'
 import { useCatalogStore } from '../stores/catalog'
 import { useExploreStore } from '../stores/explore'
+import RollingNumber from './RollingNumber.vue'
 
 // 地圖左側、地區標籤下方的擴充包列（UX-FLOW.md A4）：一次開一個；件數跟著目前的縣，首頁為全國。
 // 最右邊的圖示打開設定，勾選要顯示哪些擴充包（存在這台瀏覽器）。
@@ -73,7 +74,7 @@ const chip = 'flex h-9 shrink-0 items-center gap-1.5 rounded-full px-3.5 text-la
         <path :d="p.icon" />
       </svg>
       {{ p.label }}
-      <span v-if="count(p.key) !== null" class="font-latin font-semibold">{{ count(p.key) }}</span>
+      <RollingNumber v-if="count(p.key) !== null" :value="count(p.key) ?? 0" class="font-latin font-semibold" />
     </button>
 
     <div class="relative">

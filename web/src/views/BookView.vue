@@ -10,6 +10,7 @@ import { dayCount, dayDate, dayPref, shortDate, type Stop } from '../services/tr
 import { useCatalogStore } from '../stores/catalog'
 import { useFindsStore } from '../stores/finds'
 import { useUserStore } from '../stores/user'
+import SkeletonRows from '../components/SkeletonRows.vue'
 
 // 旅前小書（UX-FLOW.md D6）：把行程與旅前準備排成可以列印、存成 PDF 的小冊子。
 // 用瀏覽器的列印（存成 PDF），不經過伺服器。紙張 A5（對折成小冊）或 A4；各段可以取捨。
@@ -164,7 +165,7 @@ function print() {
       </div>
     </div>
 
-    <p v-if="loading" class="mx-auto px-6 pt-6 text-body-sm text-sub print:hidden">載入中</p>
+    <SkeletonRows v-if="loading" :rows="4" class="mx-auto w-full max-w-3xl px-6 pt-6 print:hidden" />
 
     <!-- 紙面：螢幕上照紙寬預覽，列印時交給 @page -->
     <article

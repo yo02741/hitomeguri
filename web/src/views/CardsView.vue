@@ -3,6 +3,7 @@ import { computed, ref, watch } from 'vue'
 
 import CardViewer from '../components/CardViewer.vue'
 import RegionMotif from '../components/RegionMotif.vue'
+import RollingNumber from '../components/RollingNumber.vue'
 import SpotCard from '../components/SpotCard.vue'
 import { type CollectionCard, useCollection } from '../composables/collection'
 import { useVisitedEntries } from '../composables/visited'
@@ -92,7 +93,7 @@ function onCardKey(e: KeyboardEvent, id: string) {
         紀錄
       </RouterLink>
       <h1 class="relative flex items-baseline gap-3 text-h1 font-black tracking-[4px]">
-        收集冊<span class="font-latin text-h3 font-semibold tracking-normal">{{ cards.length }}</span>
+        收集冊<RollingNumber :value="cards.length" class="font-latin text-h3 font-semibold tracking-normal" />
       </h1>
       <div class="relative flex max-w-[640px] flex-col gap-1.5">
         <p class="flex items-baseline gap-2 text-label font-bold">
@@ -132,7 +133,7 @@ function onCardKey(e: KeyboardEvent, id: string) {
         >
           <span v-if="f.key !== 'all'" class="swatch size-3 rounded-full" :class="`swatch-${f.key}`" aria-hidden="true"></span>
           {{ f.label }}
-          <span class="font-latin">{{ counts[f.key] }}</span>
+          <RollingNumber :value="counts[f.key]" class="font-latin" />
         </button>
       </div>
 

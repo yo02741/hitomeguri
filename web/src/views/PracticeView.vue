@@ -128,7 +128,7 @@ function onKey(e: KeyboardEvent) {
         <span class="text-caption text-sub">熟練 <span class="font-latin">{{ mastered }}</span> ／ <span class="font-latin">{{ deck.length }}</span></span>
       </div>
 
-      <p v-if="loading || !progressLoaded" class="text-body-sm text-sub">載入中</p>
+      <div v-if="loading || !progressLoaded" class="skeleton h-[280px] rounded-card" aria-busy="true"><span class="sr-only">載入中</span></div>
 
       <template v-else-if="card">
         <div class="flex items-center justify-between text-caption text-sub">

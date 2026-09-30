@@ -9,6 +9,7 @@ import { useExploreStore } from '../stores/explore'
 import { useMarksStore } from '../stores/marks'
 import { useUserStore } from '../stores/user'
 import CollapseChevron from './CollapseChevron.vue'
+import SkeletonRows from './SkeletonRows.vue'
 import VisitedToggle from './VisitedToggle.vue'
 
 // 擴充包清單：開啟擴充包時取代左側的景點清單（UX-FLOW.md A4）。
@@ -150,9 +151,8 @@ const visitedCount = computed(() => rows.value.filter((it) => marks.markOf(it.s 
           <VisitedToggle :spot="visitRef(it)" />
         </div>
       </template>
-      <p v-if="!sections.length" class="px-1.5 py-3 text-body-sm text-sub">
-        {{ catalog.packs[explore.pack ?? ''] ? '這個地區沒有資料。' : '載入中' }}
-      </p>
+      <p v-if="!sections.length && catalog.packs[explore.pack ?? '']" class="px-1.5 py-3 text-body-sm text-sub">這個地區沒有資料。</p>
+      <SkeletonRows v-else-if="!sections.length" :rows="5" />
     </div>
   </section>
 </template>
