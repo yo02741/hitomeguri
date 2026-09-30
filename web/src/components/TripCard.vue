@@ -4,6 +4,7 @@ import { computed } from 'vue'
 import { regionOf } from '../data/regions'
 import { allStops, dayPref, shortDate, type Trip, tripPrefs, tripStatus } from '../services/trip'
 import { todayIso } from '../services/userdb'
+import MemberAvatar from './MemberAvatar.vue'
 
 // 行程卡片（/trips、/log）：封面是經過的縣的分段色帶（UX-FLOW.md §2.4），下面是名稱、日期、天數、地點數。
 const props = defineProps<{ trip: Trip }>()
@@ -48,6 +49,13 @@ const band = computed(() => {
         <span>{{ count }} 個地點</span>
       </span>
       <span v-if="prefs.length" lang="ja" class="truncate text-caption text-sub">{{ prefs.map((p) => regionOf(p)?.name.ja).join('・') }}</span>
+      <!-- 共編：成員頭像 -->
+      <span v-if="trip.members.length > 1" class="mt-1 flex items-center gap-2 text-caption text-sub">
+        <span class="flex -space-x-1.5">
+          <MemberAvatar v-for="m in trip.members.slice(0, 5)" :key="m" :member="trip.member_info[m]" :size="20" class="ring-2 ring-paper" />
+        </span>
+        共編 <span class="font-latin">{{ trip.members.length }}</span> 人
+      </span>
     </span>
   </RouterLink>
 </template>

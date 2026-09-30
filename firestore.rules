@@ -17,6 +17,74 @@ service cloud.firestore {
       return v is string && v.size() <= max;
     }
 
+    function isDate(v) {
+      return v is string && v.matches('[0-9]{4}-[0-9]{2}-[0-9]{2}');
+    }
+
+    // 行程與旅行紀錄（web/src/stores/trips.ts）：共編，members 裡的人都能讀寫（UX-FLOW.md C7）
+    function validTrip(d) {
+      return d.keys().hasOnly(['name', 'status', 'start_date', 'end_date', 'days', 'unscheduled',
+                               'owner', 'members', 'member_info', 'invite', 'created_at', 'updated_at'])
+        && d.status in ['planning', 'ongoing', 'done']
+        && d.days is list && d.days.size() <= 60
+        && d.unscheduled is list && d.unscheduled.size() <= 300
+        && (!('name' in d) || isString(d.name, 80))
+        && (!('start_date' in d) || isDate(d.start_date))
+        && (!('end_date' in d) || isDate(d.end_date))
+        && d.owner is string
+        && d.members is list && d.members.size() >= 1 && d.members.size() <= 20
+        && d.owner in d.members
+        && d.member_info is map
+        && (!('invite' in d) || isString(d.invite, 64));
+    }
+
+    match /trips/{tripId} {
+      allow read: if signedIn() && request.auth.uid in resource.data.members;
+      allow create: if signedIn()
+        && validTrip(request.resource.data)
+        && request.resource.data.owner == request.auth.uid
+        && request.resource.data.members == [request.auth.uid];
+      allow update: if signedIn()
+        && validTrip(request.resource.data)
+        && request.resource.data.owner == resource.data.owner
+        && (
+          // 成員：改內容（成員名單不變）；自己離開（建立者不能離開）；建立者移除其他成員
+          (request.auth.uid in resource.data.members && (
+            request.resource.data.members == resource.data.members
+            || (request.auth.uid != resource.data.owner
+                && request.resource.data.members == resource.data.members.removeAll([request.auth.uid]))
+            || (request.auth.uid == resource.data.owner
+                && resource.data.members.hasAll(request.resource.data.members))
+          ))
+          // 用邀請連結加入：只能把自己加進名單；邀請碼寫在自己這次新增的 member_info.{uid}.via，
+          // 必須對應到這個行程（不能沿用文件裡別人留下的值）
+          || (!(request.auth.uid in resource.data.members)
+            && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['members', 'member_info', 'updated_at'])
+            && request.resource.data.members == resource.data.members.concat([request.auth.uid])
+            && request.resource.data.member_info.diff(resource.data.member_info).addedKeys().hasOnly([request.auth.uid])
+            && request.resource.data.member_info.diff(resource.data.member_info).affectedKeys().hasOnly([request.auth.uid])
+            && isString(request.resource.data.member_info[request.auth.uid].via, 64)
+            && get(/databases/$(database)/documents/invites/$(request.resource.data.member_info[request.auth.uid].via)).data.trip_id == tripId)
+        );
+      allow delete: if signedIn() && request.auth.uid == resource.data.owner;
+    }
+
+    // 邀請連結：知道邀請碼的人（登入後）可以讀，不能列出；成員可以建立、刪除
+    match /invites/{code} {
+      allow get: if signedIn();
+      allow create: if signedIn()
+        && code.size() >= 16 && code.size() <= 64
+        && request.resource.data.keys().hasOnly(['trip_id', 'trip_name', 'inviter', 'created_by', 'created_at'])
+        && request.resource.data.created_by == request.auth.uid
+        && isString(request.resource.data.trip_id, 64)
+        && isString(request.resource.data.trip_name, 80)
+        && isString(request.resource.data.inviter, 80)
+        && request.auth.uid in get(/databases/$(database)/documents/trips/$(request.resource.data.trip_id)).data.members;
+      allow delete: if signedIn()
+        && (resource.data.created_by == request.auth.uid
+            || request.auth.uid in get(/databases/$(database)/documents/trips/$(resource.data.trip_id)).data.members);
+    }
+
     match /users/{uid} {
       allow read: if isOwner(uid);
       allow create, update: if isOwner(uid)
@@ -25,23 +93,10 @@ service cloud.firestore {
         && (!('home_airport' in request.resource.data) || request.resource.data.home_airport in ['TPE', 'TSA', 'RMQ', 'KHH', 'TNN']);
       allow delete: if isOwner(uid);
 
-      function isDate(v) {
-        return v is string && v.matches('[0-9]{4}-[0-9]{2}-[0-9]{2}');
-      }
-
-      // 行程與旅行紀錄（web/src/stores/trips.ts）
+      // 舊的行程位置：登入時搬到最上層的 trips/（只剩讀取與刪除）。
+      // 練習進度仍放在這裡，每個成員各自一份。
       match /trips/{tripId} {
         allow read, delete: if isOwner(uid);
-        allow create, update: if isOwner(uid)
-          && request.resource.data.keys().hasOnly(['name', 'status', 'start_date', 'end_date', 'days', 'unscheduled', 'created_at', 'updated_at'])
-          && request.resource.data.status in ['planning', 'ongoing', 'done']
-          && request.resource.data.days is list
-          && request.resource.data.days.size() <= 60
-          && request.resource.data.unscheduled is list
-          && request.resource.data.unscheduled.size() <= 300
-          && (!('name' in request.resource.data) || isString(request.resource.data.name, 80))
-          && (!('start_date' in request.resource.data) || isDate(request.resource.data.start_date))
-          && (!('end_date' in request.resource.data) || isDate(request.resource.data.end_date));
 
         // 旅前準備的練習進度（Leitner box 1–5）
         match /progress/{itemId} {

@@ -51,7 +51,7 @@ Claude Code 的雲端沙箱連不到 Wikidata、OSM、Wikimedia，也沒有 Clau
 - `data/`：景點主資料（source of truth）。`regions.json` 47 縣名稱、地方、地區色；`seed/` 攻略候選清單。
 - `pipeline/`：Python 資料 pipeline，`models.py` 對應 PLAN.md §4 的 schema，`cli.py` 為指令入口。
 - `web/`：Vue 3 + Vite + TypeScript + Pinia + Vue Router + Tailwind v4 + MapLibre。token 在 `src/styles/theme.css`。
-- `firebase.json`、`firestore.rules`：只有 Hosting、Firestore、Auth。`users/{uid}/**` 僅本人可讀寫。
+- `firebase.json`、`firestore.rules`：只有 Hosting、Firestore、Auth。`users/{uid}/**` 僅本人可讀寫；`trips/{id}` 僅成員可讀寫（共編）。
 
 ## 目前進度
 - Phase 0 完成：骨架、Emulator、Google 登入、空白地圖、GitHub Pages 部署。
@@ -59,4 +59,4 @@ Claude Code 的雲端沙箱連不到 Wikidata、OSM、Wikimedia，也沒有 Clau
 - Phase 5（收藏、去過、清單、KML / CSV 匯出）完成，等使用者驗收（docs/Phase5驗收.md）。
 - Phase 4 v1（期間限定：氣象廳觀測）完成，等使用者驗收（docs/Phase4驗收.md）；超商、麥當勞、PR TIMES 因使用條款不收。
 - Phase 7（行程、旅前準備、練習）完成，等使用者驗收（docs/Phase7驗收.md）。
-- 驗收回饋第一輪（docs/回饋修改驗收.md）：自製日期選擇器、清單快捷去過與批次補日期、旅前準備段落目錄、連鎖店 Google 快捷搜尋、截圖收藏（圖片壓縮後存 Firestore，不用 Cloud Storage）、旅前小書（瀏覽器列印存 PDF）。行程共編只做了評估，等使用者決定。會話 `data/phrases` 是編輯整理的內容（非來源擷取），`reviewed: false` 待使用者校對。Firestore 規則在 `firestore.rules`，改了要請使用者貼到 Firebase Console 發布。
+- 驗收回饋第一輪（docs/回饋修改驗收.md）：自製日期選擇器、清單快捷去過與批次補日期、旅前準備段落目錄、連鎖店 Google 快捷搜尋、截圖收藏（圖片壓縮後存 Firestore，不用 Cloud Storage）、旅前小書（瀏覽器列印存 PDF）。行程共編已實作（docs/行程共編驗收.md）：行程在最上層 `trips/{id}`，成員都能編輯，邀請連結 `invites/{code}`。會話 `data/phrases` 是編輯整理的內容（非來源擷取），`reviewed: false` 待使用者校對。Firestore 規則在 `firestore.rules`，改了要請使用者貼到 Firebase Console 發布。

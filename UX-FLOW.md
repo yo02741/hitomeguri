@@ -102,8 +102,9 @@ v4 mockup 的問題：header 同時放了「名古屋 / 関西」（地理）與
 **行程與旅行紀錄是同一個 entity**，差別只在狀態：規劃中的行程出發後變進行中，結束後就是一筆旅行紀錄；補登過去的旅行也是直接建立 `done` 狀態的 trip。
 
 ```
-users/{uid}/trips/{tripId}
-users/{uid}/trips/{tripId}/progress/{phraseId}   // 旅前準備學習進度
+trips/{tripId}                                   // 行程（共編：members 裡的人都能讀寫，C7）
+invites/{code}                                   // 共編邀請連結（知道邀請碼才能讀）
+users/{uid}/trips/{tripId}/progress/{phraseId}   // 旅前準備學習進度（每個成員各自一份）
 users/{uid}/places/{placeId}                     // 自訂地點（在地小店等，不在公開目錄）
 users/{uid}/marks/{spotId}                       // 收藏、未歸入任何行程的「去過」
 users/{uid}/lists/{listId}
@@ -127,8 +128,15 @@ users/{uid}/find_images/{findId}                 // 截圖原圖（同 id，打�
   }],
   unscheduled: (同 stops 元素)[],             // 想去但還沒排進某天
   source?: "manual" | "photo_import" | "kml_import",
+  owner: string,                              // 建立者：可以移除成員、刪除行程
+  members: string[],                          // 共編成員 uid（含建立者，上限 20）；成員都能編輯
+  member_info: { [uid]: { name, photo?, via? } },  // 顯示用的名稱與大頭貼；via 是加入時用的邀請碼
+  invite?: string,                            // 目前有效的邀請碼；重新產生時舊的失效
   created_at, updated_at
 }
+// 以前放在 users/{uid}/trips 的行程，登入時搬到 trips/（同一個 id）。
+
+// Invite：{ trip_id, trip_name, inviter, created_by, created_at }  // 加入前顯示行程名稱與邀請人
 
 // Place（自訂地點）
 {
@@ -224,6 +232,10 @@ users/{uid}/find_images/{findId}                 // 截圖原圖（同 id，打�
   ✅ 每天的標頭與 DAY 標記使用當天的縣色；封面顯示分段色帶（§2.4）。
 - **C5** 我想把某一天丟到 Google Maps 導航。
   ✅ 每天有「Google Maps 路線」按鈕（Maps URLs，超過 waypoint 上限時拆段）；整趟可匯出 KML / CSV。
+- **C7** 我想和旅伴一起排行程。
+  ✅ 行程頁「共編」→ 複製邀請連結傳給對方；對方打開 `/join/:code`、登入、按「加入」後，這個行程就在他帳號的「我的行程」（結束後在紀錄），成員都能編輯、即時同步。
+  ✅ 同時編輯不互蓋：每個修改在交易裡讀最新的一份再套用；移動、刪除停留點以景點 id 找現在的位置。
+  ✅ 建立者可以移除成員、重新產生連結（舊連結失效）、刪除行程；其他成員可以離開。練習進度、截圖、收藏仍是個人的。
 - **C6** 我想看通趟行程的直飛航線。
   ✅ 行程頁顯示第一天所在地方與最後一天所在地方的直飛航線（去程、回程可能不同機場）。
 
@@ -326,6 +338,7 @@ flowchart TD
 | `/trips` | 行程列表 | 卡片格線（封面色帶） | 單欄卡片 | 是 |
 | `/trips/:id` | 行程編輯 | 左：天數清單（拖曳）／右：行程地圖 | 上：天數 tab／下：當天清單；地圖以切換按鈕顯示 | 是 |
 | `/trips/:id/prep` | 旅前準備 | 左：段落目錄（sticky）／右：內容 | 頂部段落橫列（sticky）＋單欄 | 是 |
+| `/join/:code` | 加入共編 | 行程名稱、邀請人、「加入」 | 同左 | 是 |
 | `/trips/:id/book` | 旅前小書 | 工具列＋紙面預覽（A5／A4），列印存 PDF | 同左 | 是 |
 | `/trips/:id/prep/practice` | Flashcard | 置中卡片 | 全螢幕卡片 | 是 |
 | `/log` | 旅行紀錄 | 上：全部去過地圖／下：旅行卡片 | 同左，地圖較矮 | 是 |

@@ -5,6 +5,7 @@ import { useRouter } from 'vue-router'
 import DateRangePicker from '../components/DateRangePicker.vue'
 import ExportButtons from '../components/ExportButtons.vue'
 import MapView from '../components/MapView.vue'
+import TripMembers from '../components/TripMembers.vue'
 import TripStopList from '../components/TripStopList.vue'
 import { useCatalogSpots } from '../composables/catalogSpots'
 import { regionOf } from '../data/regions'
@@ -16,14 +17,17 @@ import {
   dayCount,
   dayDate,
   dayPref,
+  findStop,
   MAX_DAYS,
   moveStop,
   removeStop,
   resizeDays,
   shortDate,
   type Stop,
+  stopAt,
   type StopPos,
   type Trip,
+  type TripContent,
   TRIP_NAME_MAX,
   tripStatus,
 } from '../services/trip'
@@ -38,11 +42,13 @@ const trips = useTripsStore()
 const router = useRouter()
 
 const trip = computed(() => trips.get(props.id))
+const isOwner = computed(() => Boolean(trip.value && trip.value.owner === userStore.user?.uid))
 const status = computed(() => (trip.value ? tripStatus(trip.value, trips.today) : 'planning'))
 const { byId, loading } = useCatalogSpots(() => (trip.value ? allStops(trip.value).map((s) => ({ id: s.spot_id, pref: s.pref })) : []))
 
-function save(patch: Partial<Trip>) {
-  if (trip.value) void trips.save({ ...trip.value, ...patch })
+// 每個修改都在最新的一份上套用（共編時對方可能剛改過，UX-FLOW.md C7）
+function mutate(fn: (t: Trip) => Partial<TripContent> | null) {
+  void trips.mutate(props.id, fn)
 }
 
 // 名稱
@@ -53,39 +59,53 @@ watch(
   { immediate: true },
 )
 function saveName() {
-  if (trip.value && nameDraft.value.trim() !== trip.value.name) save({ name: nameDraft.value.trim() })
+  const name = nameDraft.value.trim()
+  if (trip.value && name !== trip.value.name) mutate(() => ({ name }))
 }
 
 // 日期：起訖都有時天數跟著日期；只填出發日時回程預設同一天
 function setDates(start: string, end: string) {
-  const t = trip.value
-  if (!t) return
-  const s = start || undefined
-  let e = end || undefined
-  if (s && (!e || e < s)) e = addDays(s, Math.max(t.days.length, 1) - 1)
-  if (!s) e = undefined
-  const n = dayCount(s, e)
-  save({ start_date: s, end_date: e, ...(n ? resizeDays(t, n) : {}) })
+  mutate((t) => {
+    const s = start || undefined
+    let e = end || undefined
+    if (s && (!e || e < s)) e = addDays(s, Math.max(t.days.length, 1) - 1)
+    if (!s) e = undefined
+    const n = dayCount(s, e)
+    return { start_date: s, end_date: e, ...(n ? resizeDays(t, n) : {}) }
+  })
 }
 const hasDates = computed(() => Boolean(trip.value?.start_date && trip.value?.end_date))
 
 function addDay() {
-  const t = trip.value
-  if (t && t.days.length < MAX_DAYS) save(resizeDays(t, t.days.length + 1))
+  mutate((t) => (t.days.length < MAX_DAYS ? resizeDays(t, t.days.length + 1) : null))
 }
 function removeDay(i: number) {
-  const t = trip.value
-  if (!t || t.days.length <= 1) return
-  const days = t.days.filter((_, j) => j !== i).map((d) => ({ stops: [...d.stops] }))
-  save({ days, unscheduled: [...t.unscheduled, ...t.days[i]!.stops] })
+  mutate((t) => {
+    if (t.days.length <= 1 || !t.days[i]) return null
+    const days = t.days.filter((_, j) => j !== i).map((d) => ({ stops: [...d.stops] }))
+    return { days, unscheduled: [...t.unscheduled, ...t.days[i]!.stops] }
+  })
+}
+
+/** 畫面上的位置 → 景點 id；寫入時再到最新的一份裡找它現在的位置 */
+function spotAt(at: StopPos): string | undefined {
+  return trip.value ? stopAt(trip.value, at)?.spot_id : undefined
+}
+function moveSpot(spotId: string | undefined, to: (t: Trip, from: StopPos) => StopPos | null) {
+  if (!spotId) return
+  mutate((t) => {
+    const from = findStop(t, spotId)
+    const dest = from && to(t, from)
+    return from && dest ? moveStop(t, from, dest) : null
+  })
 }
 
 // 拖曳
 const dragging = ref<StopPos | null>(null)
 const dropAt = ref<StopPos | null>(null)
 function onDrop() {
-  const t = trip.value
-  if (t && dragging.value && dropAt.value) save(moveStop(t, dragging.value, dropAt.value))
+  const at = dropAt.value
+  if (dragging.value && at) moveSpot(spotAt(dragging.value), () => at)
   dragging.value = null
   dropAt.value = null
 }
@@ -94,18 +114,23 @@ function onDragEnd() {
   dropAt.value = null
 }
 function onMove(from: StopPos, toDay: number) {
-  const t = trip.value
-  if (!t || toDay === from.day) return
-  const len = toDay === -1 ? t.unscheduled.length : (t.days[toDay]?.stops.length ?? 0)
-  save(moveStop(t, from, { day: toDay, idx: len }))
+  if (toDay === from.day) return
+  moveSpot(spotAt(from), (t, cur) => {
+    if (cur.day === toDay) return null
+    const len = toDay === -1 ? t.unscheduled.length : t.days[toDay]?.stops.length
+    return len === undefined ? null : { day: toDay, idx: len }
+  })
 }
 function onShift(from: StopPos, delta: -1 | 1) {
-  const t = trip.value
-  if (t) save(moveStop(t, from, { day: from.day, idx: from.idx + (delta === 1 ? 2 : -1) }))
+  moveSpot(spotAt(from), (_, cur) => ({ day: cur.day, idx: cur.idx + (delta === 1 ? 2 : -1) }))
 }
 function onRemove(at: StopPos) {
-  const t = trip.value
-  if (t) save(removeStop(t, at))
+  const spotId = spotAt(at)
+  if (!spotId) return
+  mutate((t) => {
+    const cur = findStop(t, spotId)
+    return cur ? removeStop(t, cur) : null
+  })
 }
 
 const targets = computed(() => [
@@ -171,7 +196,9 @@ const folders = computed<ExportFolder[]>(() => {
 
 async function del() {
   const t = trip.value
-  if (!t || !window.confirm(`刪除行程「${t.name || '未命名行程'}」？`)) return
+  const others = t ? t.members.length - 1 : 0
+  const msg = `刪除行程「${t?.name || '未命名行程'}」？${others ? `共編的 ${others} 位成員也會看不到。` : ''}`
+  if (!t || !window.confirm(msg)) return
   await trips.remove(t.id)
   await router.push(status.value === 'done' ? '/log' : '/trips')
 }
@@ -207,6 +234,7 @@ async function del() {
           <span class="text-caption text-sub">{{ trip.days.length }} 天</span>
           <span v-if="status === 'ongoing'" class="rounded-tag bg-region-strong px-1.5 text-caption font-bold text-white">旅途中</span>
         </div>
+        <TripMembers :trip="trip" />
         <div class="flex flex-wrap gap-2">
           <RouterLink
             :to="`/trips/${trip.id}/prep`"
@@ -217,7 +245,12 @@ async function del() {
             class="flex h-9 items-center rounded-control border border-line bg-paper px-3 text-label text-ink no-underline hover:bg-surface"
           >旅前小書</RouterLink>
           <ExportButtons :title="trip.name || 'ひとめぐり 行程'" :folders="folders" :leading="['日', '順序']" />
-          <button type="button" class="h-9 rounded-control border border-line bg-paper px-3 text-label text-danger hover:bg-surface" @click="del">刪除</button>
+          <button
+            v-if="isOwner"
+            type="button"
+            class="h-9 rounded-control border border-line bg-paper px-3 text-label text-danger hover:bg-surface"
+            @click="del"
+          >刪除</button>
         </div>
       </div>
 

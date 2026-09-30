@@ -333,6 +333,11 @@ header 右側、登入鈕左邊（`SearchBox.vue`，每一頁都在；在行程�
 ### 7.15 空狀態
 一行 `text-body-sm text-sub` 置中，必要時加一個次要按鈕。不使用插畫、不使用 emoji。
 
+### 7.15a 共編成員
+- 行程頁：`h-9` 外框按鈕，左邊最多 4 個 24px 頭像（`-space-x-1.5`、`ring-2 ring-paper`）＋「共編 N」；點開是浮動卡（`rounded-card shadow-float`，寬 340px）：邀請連結（唯讀輸入框＋Primary「複製」、「重新產生連結」）與成員名單（頭像、名稱、建立者／移除／離開）。
+- 頭像：Google 大頭貼圓形裁切；沒有時 `bg-region-tint` 圓底＋名字第一個字。
+- 行程卡片：共編時多一行 20px 頭像＋「共編 N 人」。
+
 ### 7.16 日期選擇器 DatePicker / DateRangePicker
 不用原生 `<input type="date">`（各瀏覽器長相不一，手機上還會跳系統滾輪）。
 - 觸發鈕長得像輸入框：`h-10 rounded-control border border-line bg-paper px-2.5`＋月曆圖示；日期 `font-latin`，格式 `2026/10/12（一）`，區間 `2026/10/31（六） → 11/03（二）`。打開時外框 `border-region-strong`。

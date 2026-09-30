@@ -16,6 +16,14 @@ export interface TripDay {
 
 export type TripStatus = 'planning' | 'ongoing' | 'done'
 
+/** 共編成員的顯示資料（取自 Google 帳號的名稱與大頭貼） */
+export interface Member {
+  name: string
+  photo?: string
+  /** 用哪個邀請碼加入（firestore.rules 檢查用） */
+  via?: string
+}
+
 export interface Trip {
   id: string
   name: string
@@ -24,8 +32,18 @@ export interface Trip {
   days: TripDay[]
   /** 想去但還沒排進某天 */
   unscheduled: Stop[]
+  /** 建立者（可以移除成員、刪除行程） */
+  owner: string
+  /** 共編成員（含建立者）；成員都能編輯 */
+  members: string[]
+  member_info: Record<string, Member>
+  /** 目前有效的邀請碼（invites/{code}） */
+  invite?: string
   created: number
 }
+
+/** 行程內容（成員都能改的部分） */
+export type TripContent = Pick<Trip, 'name' | 'start_date' | 'end_date' | 'days' | 'unscheduled'>
 
 /** 停留點位置：day 為 -1 表示「待排」 */
 export interface StopPos {
@@ -107,6 +125,20 @@ export function removeStop(t: Pick<Trip, 'days' | 'unscheduled'>, at: StopPos): 
 
 export function allStops(t: Pick<Trip, 'days' | 'unscheduled'>): Stop[] {
   return [...t.days.flatMap((d) => d.stops), ...t.unscheduled]
+}
+
+/** 停留點現在的位置（共編時以景點 id 找，對方可能已經移動過） */
+export function findStop(t: Pick<Trip, 'days' | 'unscheduled'>, spotId: string): StopPos | null {
+  for (let day = 0; day < t.days.length; day++) {
+    const idx = t.days[day]!.stops.findIndex((s) => s.spot_id === spotId)
+    if (idx >= 0) return { day, idx }
+  }
+  const idx = t.unscheduled.findIndex((s) => s.spot_id === spotId)
+  return idx >= 0 ? { day: -1, idx } : null
+}
+
+export function stopAt(t: Pick<Trip, 'days' | 'unscheduled'>, at: StopPos): Stop | undefined {
+  return at.day === -1 ? t.unscheduled[at.idx] : t.days[at.day]?.stops[at.idx]
 }
 
 export function hasSpot(t: Pick<Trip, 'days' | 'unscheduled'>, spotId: string): boolean {

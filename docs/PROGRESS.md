@@ -93,6 +93,8 @@
   沙箱連不到氣象廳：頁面格式用 `probe.yml` 看；測試的網頁片段取自實際格式。
 - Phase 7（2026-09-29）：行程（trips）、旅前準備、練習。資料在 Firestore `users/{uid}/trips`、`trips/{id}/progress`。
   測試時 Pinia 的 trips store 只有在元件用到時才建立：Playwright 裡先 `import('/src/stores/trips.ts')` 再 `useTripsStore()`。
+- 行程共編（2026-09-30）：行程搬到最上層 `trips/{id}`（members 可讀寫），邀請 `invites/{code}`，加入時邀請碼寫在 `member_info.{uid}.via` 讓規則檢查。
+  測試：Auth 模擬器會把同 email 的 Google 登入併成同一個帳號，多帳號測試要用不同 sub 與 email（登入過的 sub 會一直連到原帳號）。
 - 驗收回饋第一輪（2026-09-30）：見 docs/回饋修改驗收.md。截圖收藏存在 Firestore `users/{uid}/finds`（縮圖）與 `find_images`（原圖），
   圖片在瀏覽器壓縮（web/src/services/image.ts）。改了 firestore.rules 之後，模擬器的熱重載會被沙箱的代理擋下（Unable to parse JSON），要重開模擬器。
   旅前小書用瀏覽器列印：App 的固定高度捲動版面要加 `print:` 變體攤開（寫在 base layer 的 @media print 會被 utility 蓋掉）。
