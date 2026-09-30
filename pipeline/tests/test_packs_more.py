@@ -68,3 +68,28 @@ def test_chara_brand_and_record(monkeypatch):
     assert rec["id"] == "chara-node-9" and rec["kind"] == "sanrio"
     hotel = OsmElement("way/1", 35.6, 139.7, {"name": "ハローキティルーム", "tourism": "hotel"})
     assert pack_chara.chara_record(hotel, "d") is None
+
+
+def test_new_pack_bundles(tmp_path):
+    import json
+
+    from pipeline import build_bundles
+
+    castle = {"id": "castle-044", "no": 44, "group": "100", "prefecture": "aichi",
+              "name": {"ja": "名古屋城", "kana": "なごやじょう", "zh_tw": "名古屋城"},
+              "location": {"lat": 35.185556, "lng": 136.898611}, "stamp": ["正門改札所"],
+              "spot": "wd-Q648629", "sources": [{"url": "https://ja.wikipedia.org/wiki/日本100名城"}]}  # fmt: skip
+    shop = {"id": "shinise-q1", "kind": "incense", "prefecture": "kyoto",
+            "name": {"ja": "松栄堂", "zh_tw": "松榮堂"}, "founded": "1705年",
+            "location": {"lat": 35.0, "lng": 135.7}, "wikipedia": "https://ja.wikipedia.org/wiki/松栄堂",
+            "sources": [{"url": "https://ja.wikipedia.org/wiki/松栄堂"}]}  # fmt: skip
+    (tmp_path / "castles.json").write_text(json.dumps([castle]), encoding="utf-8")
+    (tmp_path / "shinise.json").write_text(json.dumps([shop]), encoding="utf-8")
+    [c] = build_bundles.pack_items_castle(tmp_path)
+    # 中文名與日文相同時不重複
+    assert c == {"id": "castle-044", "g": "100", "p": "aichi", "n": "名古屋城", "h": "なごやじょう",
+                 "lat": 35.18556, "lng": 136.89861, "u": "https://ja.wikipedia.org/wiki/日本100名城",
+                 "no": 44, "st": ["正門改札所"], "s": "wd-Q648629"}  # fmt: skip
+    [s] = build_bundles.pack_items_shinise(tmp_path)
+    assert s["g"] == "incense" and s["z"] == "松榮堂" and s["f"] == "1705年"
+    assert build_bundles.pack_items_chara(tmp_path) == []

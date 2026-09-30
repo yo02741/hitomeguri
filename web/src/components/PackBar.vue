@@ -42,7 +42,7 @@ const chip = 'flex h-9 shrink-0 items-center gap-1.5 rounded-full px-3.5 text-la
 </script>
 
 <template>
-  <div ref="root" class="flex items-start gap-2">
+  <div ref="root" class="flex flex-wrap items-start justify-end gap-2">
     <button
       v-for="p in shown"
       :key="p.key"
@@ -91,7 +91,7 @@ const chip = 'flex h-9 shrink-0 items-center gap-1.5 rounded-full px-3.5 text-la
       </button>
       <div
         v-if="menuOpen"
-        class="absolute top-11 left-0 z-20 flex w-72 flex-col rounded-card bg-paper p-1.5 shadow-float"
+        class="absolute top-11 right-0 z-20 flex w-72 flex-col rounded-card bg-paper p-1.5 shadow-float"
         role="menu"
       >
         <span class="px-2.5 pt-1.5 pb-1 text-caption font-bold tracking-section text-sub">擴充包</span>

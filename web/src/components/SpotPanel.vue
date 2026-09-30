@@ -14,7 +14,13 @@ export interface NearbyPack {
   items: { id: string; n: string; group: string; d: number }[]
 }
 
-const props = defineProps<{ spot: Spot | null; loading?: boolean; nearby?: NearbyPack[] }>()
+const props = defineProps<{
+  spot: Spot | null
+  loading?: boolean
+  nearby?: NearbyPack[]
+  /** 這個景點是 100 名城／續 100 名城時（擴充包「城」） */
+  castle?: { no: number; label: string; stamp: string[] }
+}>()
 const emit = defineEmits<{ close: []; selectPack: [id: string] }>()
 
 // 圖片載入失敗（Commons 暫時無法取得等）時退回底色，不顯示破圖
@@ -113,6 +119,13 @@ function distance(m: number): string {
       </div>
       <div v-if="category.length" class="flex border-b border-line-soft py-2.5 text-body-sm">
         <span class="w-[72px] shrink-0 text-sub">分類</span><span>{{ category.join('　') }}</span>
+      </div>
+      <div v-if="castle" class="flex border-b border-line-soft py-2.5 text-body-sm">
+        <span class="w-[72px] shrink-0 text-sub">名城</span>
+        <span class="flex min-w-0 flex-col gap-0.5">
+          <span><span class="font-latin font-semibold">No.{{ castle.no }}</span><span lang="ja" class="ml-2">{{ castle.label }}</span></span>
+          <span v-if="castle.stamp.length" lang="ja" class="text-caption text-sub">スタンプ：{{ castle.stamp.join('、') }}</span>
+        </span>
       </div>
       <!-- 主題列暫停（PLAN.md §5：主題層暫停），資料保留 -->
     </div>

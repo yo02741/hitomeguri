@@ -1,0 +1,239 @@
+name: refresh-data
+
+# 定期重跑資料採集，結果開成 PR（PLAN.md §9 Phase 6）：
+# - 每週（週一 03:23 日本時間）：擴充包（寶可夢人孔蓋、寶可夢中心、城、老舖・茶屋、角色商店）與祭典。
+# - 每月第一週：再加地區特色（全國）與各縣的維基簡介、念法（seed-wiki）。
+# - 每季（1、4、7、10 月第一週）：各縣大點整個重採（seed-region，含簡介與念法），取代 seed-wiki。
+# 結果推到 pipeline/refresh-<run> 分支並開 PR。PR 描述附資料變更報告與資料檢查結果，
+# 檢查結果也寫成這個 commit 的狀態「資料檢查」（用 GITHUB_TOKEN 開的 PR 不會觸發 CI，所以檢查在這裡跑）。
+# 新的自動 PR 開好後，還沒合併的舊自動 PR 會關閉並刪除分支。合併後 main 的推送會觸發部署。
+# 需要：Settings → Actions → General →「Allow GitHub Actions to create and approve pull requests」。
+# 沒有勾選時只推分支、不開 PR（Actions 摘要會提示）。
+
+on:
+  schedule:
+    - cron: "23 18 * * 0"
+  workflow_dispatch:
+    inputs:
+      scope:
+        description: "weekly：擴充包、祭典／monthly：再加地區特色、維基簡介／quarterly：再加各縣大點重採"
+        type: choice
+        options: [weekly, monthly, quarterly]
+        default: weekly
+      prefectures:
+        description: "monthly、quarterly 的各縣部分只跑這些縣（slug，空白分隔）；空白表示全部"
+        required: false
+        default: ""
+
+permissions:
+  contents: write
+  pull-requests: write
+  statuses: write
+
+concurrency:
+  group: refresh-data
+  cancel-in-progress: false
+
+jobs:
+  plan:
+    runs-on: ubuntu-latest
+    outputs:
+      scope: ${{ steps.p.outputs.scope }}
+      prefs: ${{ steps.p.outputs.prefs }}
+      per_pref: ${{ steps.p.outputs.per_pref }}
+    steps:
+      - uses: actions/checkout@v4
+      - id: p
+        env:
+          INPUT_SCOPE: ${{ inputs.scope }}
+          INPUT_PREFS: ${{ inputs.prefectures }}
+        run: |
+          scope="$INPUT_SCOPE"
+          if [ -z "$scope" ]; then
+            # 排程：依日本時間的日期決定範圍
+            day=$(TZ=Asia/Tokyo date +%-d)
+            month=$(TZ=Asia/Tokyo date +%-m)
+            scope=weekly
+            if [ "$day" -le 7 ]; then
+              scope=monthly
+              case "$month" in 1|4|7|10) scope=quarterly ;; esac
+            fi
+          fi
+          prefs="$INPUT_PREFS"
+          if [ -z "$prefs" ]; then prefs=$(jq -r '.regions[].prefecture' data/regions.json | tr '\n' ' '); fi
+          case "$scope" in
+            monthly) per_pref=seed-wiki ;;
+            quarterly) per_pref=seed-region ;;
+            *) per_pref="" ;;
+          esac
+          {
+            echo "scope=$scope"
+            echo "per_pref=$per_pref"
+            echo "prefs=$(python3 -c 'import json,sys; print(json.dumps(sys.argv[1].split()))' "$prefs")"
+          } >> "$GITHUB_OUTPUT"
+          echo "範圍：$scope ${per_pref:+（各縣：$per_pref）}" >> "$GITHUB_STEP_SUMMARY"
+
+  nationwide:
+    needs: plan
+    runs-on: ubuntu-latest
+    timeout-minutes: 240
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: uv venv && uv pip install -e ".[dev]"
+      - name: 全國一次抓的項目
+        env:
+          SCOPE: ${{ needs.plan.outputs.scope }}
+        run: |
+          cmds="seed-pokefuta seed-pokecen seed-castles seed-shinise seed-chara seed-festivals"
+          if [ "$SCOPE" != weekly ]; then cmds="$cmds seed-specialties"; fi
+          : > report-nationwide.md
+          : > failed-nationwide.txt
+          for cmd in $cmds; do
+            # 每個指令在最後才寫檔，失敗時不會留下寫一半的資料
+            if .venv/bin/python -m pipeline.cli "$cmd" --report /tmp/r.md; then
+              cat /tmp/r.md >> report-nationwide.md
+            else
+              echo "$cmd" >> failed-nationwide.txt
+              echo "::warning::$cmd 失敗"
+            fi
+            echo >> report-nationwide.md
+          done
+      - uses: actions/upload-artifact@v4
+        with:
+          name: refresh-nationwide
+          path: |
+            data/packs
+            data/festivals
+            data/specialties
+            data/flights
+            report-nationwide.md
+            failed-nationwide.txt
+
+  per-pref:
+    needs: plan
+    if: needs.plan.outputs.per_pref != ''
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    strategy:
+      fail-fast: false
+      max-parallel: 8
+      matrix:
+        pref: ${{ fromJSON(needs.plan.outputs.prefs) }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: uv venv && uv pip install -e ".[dev]"
+      - name: ${{ needs.plan.outputs.per_pref }} ${{ matrix.pref }}
+        run: .venv/bin/python -m pipeline.cli ${{ needs.plan.outputs.per_pref }} ${{ matrix.pref }} --report report-${{ matrix.pref }}.md
+      - uses: actions/upload-artifact@v4
+        with:
+          name: refresh-${{ matrix.pref }}
+          path: |
+            data/spots/${{ matrix.pref }}.json
+            report-${{ matrix.pref }}.md
+          if-no-files-found: ignore
+
+  pr:
+    needs: [plan, nationwide, per-pref]
+    if: always() && needs.plan.result == 'success'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: astral-sh/setup-uv@v6
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: uv venv && uv pip install -e ".[dev]"
+      - uses: actions/download-artifact@v4
+        with:
+          path: /tmp/art
+      - name: 套用結果
+        run: |
+          : > /tmp/reports.md
+          : > /tmp/failed.txt
+          for dir in /tmp/art/refresh-*; do
+            [ -d "$dir" ] || continue
+            if [ -d "$dir/data" ]; then cp -r "$dir/data/." data/; fi
+            cat "$dir"/report-*.md >> /tmp/reports.md 2>/dev/null || true
+            cat "$dir"/failed-*.txt >> /tmp/failed.txt 2>/dev/null || true
+          done
+          # 各縣的 job 失敗（沒有產出）
+          for pref in $(echo '${{ needs.plan.outputs.prefs }}' | jq -r '.[]'); do
+            if [ -n "${{ needs.plan.outputs.per_pref }}" ] && [ ! -d "/tmp/art/refresh-$pref" ]; then
+              echo "${{ needs.plan.outputs.per_pref }} $pref" >> /tmp/failed.txt
+            fi
+          done
+      - name: 檢查與變更報告
+        id: check
+        run: |
+          if .venv/bin/python -m pipeline.cli validate-data --report /tmp/validate.md; then
+            echo "state=success" >> "$GITHUB_OUTPUT"
+          else
+            echo "state=failure" >> "$GITHUB_OUTPUT"
+          fi
+          .venv/bin/python -m pipeline.cli diff-report --base origin/main --report /tmp/diff.md
+          cat /tmp/diff.md /tmp/validate.md >> "$GITHUB_STEP_SUMMARY"
+      - name: 推到審核分支並開 PR
+        env:
+          GH_TOKEN: ${{ github.token }}
+          SCOPE: ${{ needs.plan.outputs.scope }}
+          STATE: ${{ steps.check.outputs.state }}
+        run: |
+          if [ -z "$(git status --porcelain data)" ]; then
+            echo "沒有變更，不開 PR" >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+          branch="pipeline/refresh-${{ github.run_number }}"
+          git config user.name "hitomeguri-pipeline"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -q -b "$branch"
+          git add data
+          git commit -q -m "資料更新（$SCOPE）#${{ github.run_number }}" -m "$(head -c 20000 /tmp/diff.md)"
+          git push -q origin "$branch"
+          sha=$(git rev-parse HEAD)
+          desc="通過"
+          [ "$STATE" = success ] || desc="沒有通過，詳見 PR 描述"
+          gh api "repos/${{ github.repository }}/statuses/$sha" -f state="$STATE" -f context="資料檢查" \
+            -f description="$desc" -f target_url="${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}" > /dev/null
+
+          {
+            echo "自動採集（$SCOPE，[執行紀錄](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})）。檢查報告後合併；合併後會自動部署。"
+            echo
+            cat /tmp/diff.md
+            echo
+            cat /tmp/validate.md
+            if [ -s /tmp/failed.txt ]; then
+              echo
+              echo "## 失敗的項目（這次沒有更新，沿用 main 的資料）"
+              sed 's/^/- /' /tmp/failed.txt
+            fi
+            echo
+            echo "<details><summary>各項採集報告</summary>"
+            echo
+            head -c 30000 /tmp/reports.md
+            echo
+            echo "</details>"
+          } > /tmp/body.md
+          head -c 60000 /tmp/body.md > /tmp/body-cut.md
+
+          if url=$(gh pr create --base main --head "$branch" --title "資料更新（$SCOPE）#${{ github.run_number }}" --body-file /tmp/body-cut.md); then
+            echo "PR：$url" >> "$GITHUB_STEP_SUMMARY"
+            # 還沒合併的舊自動 PR：由這個取代
+            for n in $(gh pr list --state open --json number,headRefName \
+                --jq ".[] | select(.headRefName | startswith(\"pipeline/refresh-\")) | select(.headRefName != \"$branch\") | .number"); do
+              gh pr close "$n" --delete-branch --comment "由 $url 取代。" || true
+            done
+          else
+            echo "::warning::沒辦法開 PR。請到 Settings → Actions → General 勾選「Allow GitHub Actions to create and approve pull requests」。結果在分支 $branch。"
+            echo "沒辦法開 PR，結果在分支 \`$branch\`" >> "$GITHUB_STEP_SUMMARY"
+          fi

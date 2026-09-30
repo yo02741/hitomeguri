@@ -8,6 +8,7 @@ from __future__ import annotations
 
 import datetime as dt
 import json
+import re
 from pathlib import Path
 from typing import Any
 
@@ -15,7 +16,7 @@ from pipeline import geo
 from pipeline.kana import is_kana, normalize_kana
 from pipeline.packs import _pref_of, log
 from pipeline.paths import PACKS_DIR, SPOTS_DIR
-from pipeline.sources import meijo, wikidata, wikipedia
+from pipeline.sources import meijo, osm, wikidata, wikipedia
 
 GROUP_LABEL = {"100": "日本100名城", "zoku": "続日本100名城"}
 
@@ -74,6 +75,26 @@ def castle_record(
     return rec
 
 
+def name_variants(c: meijo.Castle) -> list[str]:
+    base = list(dict.fromkeys([c.name, c.title]))
+    return [v for b in base for v in (b, f"{b}跡", f"{b}址", f"{b}跡地")]
+
+
+def osm_fallback(castles: list[meijo.Castle]) -> dict[int, tuple[float, float]]:
+    """OSM 上名稱完全相同的點（史跡優先）；名城番號 → 座標。"""
+    names = [v for c in castles for v in name_variants(c)]
+    rx = "^(" + "|".join(re.escape(n) for n in names) + ")$"
+    els = osm.japan([f'["name"~"{rx}"]'])
+    out: dict[int, tuple[float, float]] = {}
+    for c in castles:
+        vs = name_variants(c)
+        cands = [el for el in els if el.tags.get("name") in vs]
+        cands.sort(key=lambda el: (not el.tags.get("historic"), el.osm_id))
+        if cands:
+            out[c.no] = (cands[0].lat, cands[0].lng)
+    return out
+
+
 def seed_castles() -> str:
     """回傳 markdown 報告；結果寫到 data/packs/castles.json。"""
     today = dt.date.today().isoformat()
@@ -88,12 +109,23 @@ def seed_castles() -> str:
     wiki_coords = wikipedia.coordinates("jawiki", missing_coord) if missing_coord else {}
     spots = spot_index()
 
+    # Wikidata、條目都沒有座標的（「台場」這類泛稱條目）：OSM 找同名的史跡
+    no_coord = [
+        c
+        for c in castles
+        if c.title not in wiki_coords
+        and not (ents.get(qids.get(c.title, "")) and ents[qids[c.title]].lat is not None)
+        and qids.get(c.title) not in spots
+    ]
+    osm_coords = osm_fallback(no_coord) if no_coord else {}
+
     out: list[dict[str, Any]] = []
     skipped: list[str] = []
     for c in castles:
         qid = qids.get(c.title)
         ent = ents.get(qid) if qid else None
-        rec = castle_record(c, qid, ent, wiki_coords.get(c.title), spots.get(qid or ""), today)
+        coord = wiki_coords.get(c.title) or osm_coords.get(c.no)
+        rec = castle_record(c, qid, ent, coord, spots.get(qid or ""), today)
         if rec:
             out.append({k: v for k, v in rec.items() if v not in (None, [])})
         else:
@@ -109,7 +141,8 @@ def seed_castles() -> str:
     wrong_pref = [
         f"{r['no']} {r['name']['ja']}（{r['prefecture']}）"
         for r in out
-        if not geo.contains(r["prefecture"], r["location"]["lat"], r["location"]["lng"])
+        if not r.get("spot")
+        and not geo.contains(r["prefecture"], r["location"]["lat"], r["location"]["lng"])
     ]
     lines = [
         "## 城（日本100名城・続日本100名城）",

@@ -1,0 +1,23 @@
+name: pipeline-pr-closed
+
+# 自動採集的 PR（pipeline/* 分支）合併或關閉後，刪除它的分支。
+# 合併後的部署由 main 的推送觸發（firebase-hosting.yml、pages.yml）。
+
+on:
+  pull_request:
+    types: [closed]
+
+permissions:
+  contents: write
+
+jobs:
+  delete-branch:
+    if: startsWith(github.event.pull_request.head.ref, 'pipeline/') && github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+    steps:
+      - name: 刪除分支
+        env:
+          GH_TOKEN: ${{ github.token }}
+          BRANCH: ${{ github.event.pull_request.head.ref }}
+        run: |
+          gh api -X DELETE "repos/${{ github.repository }}/git/refs/heads/$BRANCH" && echo "已刪除 $BRANCH" || echo "$BRANCH 已經不存在"

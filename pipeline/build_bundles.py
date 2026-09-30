@@ -219,7 +219,55 @@ def pack_items_pokemon(src: Path = PACKS_DIR) -> list[dict[str, Any]]:
     return [{k: v for k, v in it.items() if v not in (None, [])} for it in items]
 
 
-PACK_BUILDERS = {"pokemon": pack_items_pokemon}
+def _base(r: dict[str, Any], group: str) -> dict[str, Any]:
+    name = r["name"]
+    return {
+        "id": r["id"], "g": group, "p": r["prefecture"], "n": name["ja"],
+        "h": name.get("kana"), "z": name.get("zh_tw") if name.get("zh_tw") != name["ja"] else None,
+        "lat": round(r["location"]["lat"], 5), "lng": round(r["location"]["lng"], 5),
+        "a": r.get("address") or None,
+        "u": r.get("website") or r.get("wikipedia") or r["sources"][0]["url"],
+    }  # fmt: skip
+
+
+def _compact(items: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    return [{k: v for k, v in it.items() if v not in (None, [], "")} for it in items]
+
+
+def pack_items_castle(src: Path = PACKS_DIR) -> list[dict[str, Any]]:
+    """城：日本100名城（g=100）、続日本100名城（zoku）。no 名城番號、st スタンプ設置場所、
+    s 對應的景點 id、u 維基的一覽條目。"""
+    items = []
+    for r in _read(src / "castles.json"):
+        it = _base(r, r["group"])
+        it.update({"no": r["no"], "st": r.get("stamp"), "s": r.get("spot")})
+        it["u"] = r["sources"][0]["url"]
+        items.append(it)
+    return _compact(items)
+
+
+def pack_items_shinise(src: Path = PACKS_DIR) -> list[dict[str, Any]]:
+    """老舖・茶屋：香舖（incense）、和菓子（wagashi）、茶舖（tea）、茶屋・甘味處（teahouse）。
+    f 創業、w 維基條目。"""
+    items = []
+    for r in _read(src / "shinise.json"):
+        it = _base(r, r["kind"])
+        it.update({"f": r.get("founded"), "w": r.get("wikipedia")})
+        items.append(it)
+    return _compact(items)
+
+
+def pack_items_chara(src: Path = PACKS_DIR) -> list[dict[str, Any]]:
+    """角色商店：依品牌分組（pipeline/pack_chara.py 的 BRANDS）。"""
+    return _compact([_base(r, r["kind"]) for r in _read(src / "charashop.json")])
+
+
+PACK_BUILDERS = {
+    "pokemon": pack_items_pokemon,
+    "castle": pack_items_castle,
+    "shinise": pack_items_shinise,
+    "chara": pack_items_chara,
+}
 
 
 def build_packs(dst: Path) -> dict[str, tuple[Path, dict[str, Any]]]:

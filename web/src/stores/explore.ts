@@ -4,7 +4,9 @@ import { ref, shallowRef, watch } from 'vue'
 import { PACKS } from '../data/packs'
 import type { SearchHit } from '../services/search'
 
-const PACKS_KEY = 'hitomeguri:packs'
+// 關掉的擴充包（存關掉的，之後新增的擴充包預設開啟）；舊版存的是開啟清單（當時只有寶可夢）
+const PACKS_OFF_KEY = 'hitomeguri:packs-off'
+const LEGACY_PACKS_KEY = 'hitomeguri:packs'
 const RAIL_KEY = 'hitomeguri:rail'
 
 function loadFlag(key: string): boolean {
@@ -22,17 +24,24 @@ function saveFlag(key: string, on: boolean) {
   }
 }
 
+function readList(key: string): string[] | null {
+  const raw = localStorage.getItem(key)
+  if (!raw) return null
+  const list = JSON.parse(raw) as unknown
+  return Array.isArray(list) ? list.filter((k): k is string => typeof k === 'string') : null
+}
+
 function loadEnabled(): string[] {
+  const all = PACKS.map((p) => p.key)
   try {
-    const raw = localStorage.getItem(PACKS_KEY)
-    if (raw) {
-      const list = JSON.parse(raw) as unknown
-      if (Array.isArray(list)) return list.filter((k): k is string => typeof k === 'string')
-    }
+    const off = readList(PACKS_OFF_KEY)
+    if (off) return all.filter((k) => !off.includes(k))
+    const legacy = readList(LEGACY_PACKS_KEY)
+    if (legacy) return all.filter((k) => k !== 'pokemon' || legacy.includes(k))
   } catch {
     /* 私密模式等情況：用預設 */
   }
-  return PACKS.map((p) => p.key)
+  return all
 }
 
 // 探索頁狀態（UX-FLOW.md §5.3）。pack 與 URL query `?pack=` 同步（A4）。
@@ -48,7 +57,7 @@ export const useExploreStore = defineStore('explore', () => {
   const enabledPacks = ref<string[]>(loadEnabled())
   watch(enabledPacks, (list) => {
     try {
-      localStorage.setItem(PACKS_KEY, JSON.stringify(list))
+      localStorage.setItem(PACKS_OFF_KEY, JSON.stringify(PACKS.map((p) => p.key).filter((k) => !list.includes(k))))
     } catch {
       /* 略過 */
     }

@@ -6,7 +6,10 @@ import { regions } from '../data/regions'
 import type { PackItem } from '../services/bundles'
 import { useCatalogStore } from '../stores/catalog'
 import { useExploreStore } from '../stores/explore'
+import { useMarksStore } from '../stores/marks'
+import { useUserStore } from '../stores/user'
 import CollapseChevron from './CollapseChevron.vue'
+import VisitedToggle from './VisitedToggle.vue'
 
 // 擴充包清單：開啟擴充包時取代左側的景點清單（UX-FLOW.md A4）。
 // 地區頁依組別分段；首頁（全國）依縣分段。組別列同時篩選清單與地圖。
@@ -14,6 +17,8 @@ const props = defineProps<{ pref?: string | null; selectedId?: string | null }>(
 const emit = defineEmits<{ select: [id: string]; highlight: [id: string | null] }>()
 const catalog = useCatalogStore()
 const explore = useExploreStore()
+const marks = useMarksStore()
+const userStore = useUserStore()
 
 const def = computed(() => (explore.pack ? packByKey.get(explore.pack) : undefined))
 const all = computed(() => (explore.pack ? (catalog.packs[explore.pack] ?? []) : []))
@@ -38,11 +43,17 @@ const sections = computed<{ key: string; label: string; rows: PackItem[] }[]>(()
 
 const isOpen = (key: string) => !explore.collapsed.includes(`pack:${key}`)
 
-/** 第二行：人孔蓋列出寶可夢，其他列出地址 */
+/** 第二行：人孔蓋列出寶可夢，城是名城番號，老舖是創業，其他列出地址 */
 function detail(it: PackItem): string {
   if (it.pk?.length) return it.pk.map(([, name]) => name).join('・')
+  if (it.no) return `No.${it.no}`
+  if (it.f) return `創業 ${it.f}`
   return it.a ?? ''
 }
+
+// 「去過」記在對到的景點上（城），沒有的記在這個點
+const visitRef = (it: PackItem) => ({ id: it.s ?? it.id, pref: it.p, name: it.n })
+const visitedCount = computed(() => rows.value.filter((it) => marks.markOf(it.s ?? it.id)?.visited).length)
 </script>
 
 <template>
@@ -67,6 +78,7 @@ function detail(it: PackItem): string {
           <path :d="def.icon" />
         </svg>
         {{ def.label }}<span class="font-latin font-semibold">{{ inPref.length }}</span>
+        <span v-if="userStore.user && visitedCount" class="font-normal text-sub">去過 <span class="font-latin">{{ visitedCount }}</span></span>
       </span>
     </div>
 
@@ -110,25 +122,30 @@ function detail(it: PackItem): string {
             <span :lang="pref ? undefined : 'ja'">{{ s.label }}</span><span class="font-latin font-normal tracking-normal">{{ s.rows.length }}</span>
           </button>
         </h3>
-        <button
+        <div
           v-for="it in isOpen(s.key) ? s.rows : []"
           :key="it.id"
-          type="button"
-          class="flex min-h-tap shrink-0 items-center gap-3 rounded-control px-1.5 py-1.5 text-left text-ink hover:bg-surface"
-          :class="it.id === selectedId ? 'bg-region-tint' : ''"
-          :aria-current="it.id === selectedId ? 'true' : undefined"
-          @mouseenter="emit('highlight', it.id)"
-          @focus="emit('highlight', it.id)"
-          @click="emit('select', it.id)"
+          class="flex shrink-0 items-center rounded-control"
+          :class="it.id === selectedId ? 'bg-region-tint' : 'hover:bg-surface'"
         >
-          <span class="size-2.5 shrink-0 rounded-full bg-(--pack)" aria-hidden="true"></span>
-          <span class="flex min-w-0 flex-col">
-            <span lang="ja" class="truncate text-body-sm font-bold">{{ it.n }}</span>
-            <span v-if="detail(it)" lang="ja" class="truncate text-caption text-sub">{{ detail(it) }}</span>
-          </span>
-          <!-- 首頁依縣分段，組別標在右側；地區頁已依組別分段 -->
-          <span v-if="!pref" class="ml-auto shrink-0 text-caption text-sub">{{ groupLabel.get(it.g) }}</span>
-        </button>
+          <button
+            type="button"
+            class="flex min-h-tap min-w-0 flex-1 items-center gap-3 px-1.5 py-1.5 text-left text-ink"
+            :aria-current="it.id === selectedId ? 'true' : undefined"
+            @mouseenter="emit('highlight', it.id)"
+            @focus="emit('highlight', it.id)"
+            @click="emit('select', it.id)"
+          >
+            <span class="size-2.5 shrink-0 rounded-full bg-(--pack)" aria-hidden="true"></span>
+            <span class="flex min-w-0 flex-col">
+              <span lang="ja" class="truncate text-body-sm font-bold">{{ it.n }}</span>
+              <span v-if="detail(it)" lang="ja" class="truncate text-caption text-sub">{{ detail(it) }}</span>
+            </span>
+            <!-- 首頁依縣分段，組別標在右側；地區頁已依組別分段 -->
+            <span v-if="!pref" class="ml-auto shrink-0 text-caption text-sub">{{ groupLabel.get(it.g) }}</span>
+          </button>
+          <VisitedToggle :spot="visitRef(it)" />
+        </div>
       </template>
       <p v-if="!sections.length" class="px-1.5 py-3 text-body-sm text-sub">
         {{ catalog.packs[explore.pack ?? ''] ? '這個地區沒有資料。' : '載入中' }}

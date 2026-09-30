@@ -170,6 +170,21 @@ def cmd_seed_chara(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_validate_data(args: argparse.Namespace) -> int:
+    from pipeline.validate import report, validate
+
+    res = validate(bundles=not args.no_bundles)
+    _emit(report(res), args.report)
+    return 0 if res.ok else 1
+
+
+def cmd_diff_report(args: argparse.Namespace) -> int:
+    from pipeline.diff_report import diff_report
+
+    _emit(diff_report(args.base), args.report)
+    return 0
+
+
 def cmd_seed_wiki(args: argparse.Namespace) -> int:
     from pipeline.wiki import seed_wiki
 
@@ -278,6 +293,18 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("prefectures", nargs="*", help="不使用（全國一次抓）")
     p.add_argument("--report")
     p.set_defaults(func=cmd_harvest_timed)
+
+    p = sub.add_parser(
+        "validate-data", help="檢查 data/ 的格式、schema、來源與禁用詞，並試建 bundle"
+    )
+    p.add_argument("--no-bundles", action="store_true", help="不試建 bundle")
+    p.add_argument("--report")
+    p.set_defaults(func=cmd_validate_data)
+
+    p = sub.add_parser("diff-report", help="data/ 和基準分支比較的變更報告（PR 描述用）")
+    p.add_argument("--base", default="origin/main")
+    p.add_argument("--report")
+    p.set_defaults(func=cmd_diff_report)
 
     p = sub.add_parser("build-bundles", help="data/ → web/public/bundles/")
     p.set_defaults(func=cmd_build_bundles)

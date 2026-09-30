@@ -91,6 +91,13 @@ export interface PackItem {
   a?: string // 地址
   pk?: [string, string][] // 人孔蓋上的寶可夢（圖鑑編號、日文名）
   u: string // 官方頁面或來源
+  h?: string // 假名
+  z?: string // 繁中名（與日文相同時省略）
+  no?: number // 名城番號
+  st?: string[] // スタンプ設置場所
+  s?: string // 對應的景點 id（城）
+  f?: string // 創業（「1705年」「16世紀」）
+  w?: string // 維基百科條目
 }
 
 const base = `${import.meta.env.BASE_URL}bundles/`

@@ -151,6 +151,7 @@ const nearby = computed<NearbyPack[]>(() => {
   return PACKS.filter((p) => explore.enabledPacks.includes(p.key)).flatMap((p) => {
     const labels = new Map(p.groups.map((g) => [g.key, g.label]))
     const items = (catalog.packs[p.key] ?? [])
+      .filter((it) => it.s !== s.id)
       .map((it) => ({ it, d: distanceM(lat, lng, it.lat, it.lng) }))
       .filter((x) => x.d <= NEARBY_M)
       .sort((a, b) => a.d - b.d)
@@ -158,6 +159,14 @@ const nearby = computed<NearbyPack[]>(() => {
       .map(({ it, d }) => ({ id: it.id, n: it.n, group: labels.get(it.g) ?? '', d: Math.round(d / 10) * 10 }))
     return items.length ? [{ pack: p.key, label: p.label, color: p.color, items }] : []
   })
+})
+// 景點是名城時：名城番號與スタンプ設置場所（擴充包「城」載入後）
+const castleOfSpot = computed(() => {
+  const s = selectedSpot.value
+  const it = s ? catalog.packs.castle?.find((x) => x.s === s.id) : undefined
+  if (!it?.no) return undefined
+  const label = packByKey.get('castle')?.groups.find((g) => g.key === it.g)?.label ?? ''
+  return { no: it.no, label, stamp: it.st ?? [] }
 })
 const prefSpots = computed(() => (props.pref ? (catalog.mapSpots[props.pref] ?? []) : []))
 
@@ -479,7 +488,7 @@ function onMoveEnd(view: MapViewState) {
 
       <!-- 地圖上方：深度探索入口（地區頁）＋擴充包列（桌機；手機版面暫緩） -->
       <div
-        class="pointer-events-none absolute top-4 right-4 z-10 flex items-start gap-2 *:pointer-events-auto max-lg:hidden"
+        class="pointer-events-none absolute top-4 right-4 left-[calc(var(--spacing-float)+2rem)] z-10 flex flex-wrap items-start justify-end gap-2 *:pointer-events-auto max-lg:hidden"
         :style="{ left: `${insetLeft}px` }"
       >
         <RouterLink
@@ -575,12 +584,19 @@ function onMoveEnd(view: MapViewState) {
       v-if="selectedId"
       class="shrink-0 border-line lg:w-panel lg:border-l max-lg:absolute max-lg:inset-x-0 max-lg:bottom-0 max-lg:z-20 max-lg:h-[60dvh] max-lg:overflow-hidden max-lg:rounded-t-sheet max-lg:shadow-sheet"
     >
-      <PackPanel v-if="selectedPack" :item="selectedPack.item" :pack="selectedPack.pack" @close="closeSpot" />
+      <PackPanel
+        v-if="selectedPack"
+        :item="selectedPack.item"
+        :pack="selectedPack.pack"
+        @close="closeSpot"
+        @open-spot="select"
+      />
       <SpotPanel
         v-else
         :spot="selectedSpot"
         :loading="loadingSpot"
         :nearby="nearby"
+        :castle="castleOfSpot"
         @close="closeSpot"
         @select-pack="select"
       />

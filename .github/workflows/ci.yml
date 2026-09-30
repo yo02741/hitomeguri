@@ -26,7 +26,7 @@ jobs:
           VITE_USE_EMULATORS: "0"
 
   pipeline:
-    name: pipeline lint + test + regions.css 一致
+    name: pipeline lint + test + 資料檢查 + regions.css 一致
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -37,6 +37,8 @@ jobs:
       - run: uv venv && uv pip install -e ".[dev]"
       - run: .venv/bin/ruff check pipeline
       - run: .venv/bin/pytest -q
+      - name: 資料檢查（格式、schema、來源、禁用詞、bundle）
+        run: .venv/bin/python -m pipeline.cli validate-data
       - name: regions.css 必須由 regions.json 產生
         run: |
           .venv/bin/python -m pipeline.cli build-region-css
