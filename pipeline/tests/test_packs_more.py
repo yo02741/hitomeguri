@@ -52,25 +52,71 @@ def test_pick_store_prefers_main_store(monkeypatch):
     assert pack_shinise.pick_store("鶴屋吉信", "kyoto", els).osm_id == "node/1"
     # 沒有本店、同縣又有好幾家：不猜
     assert pack_shinise.pick_store("鶴屋吉信", "kyoto", els[1:2] + [
-        OsmElement("node/2", 2, 0, {"name": "鶴屋吉信 京都駅店"})]) is None  # fmt: skip
+        OsmElement("node/2", 2.02, 0, {"name": "鶴屋吉信 京都駅店"})]) is None  # fmt: skip
     assert pack_shinise.pick_store("鶴屋吉信", "tokyo", els).osm_id == "node/3"
     # 不知道縣、各縣都有：只有一家本店時用本店
     assert pack_shinise.pick_store("鶴屋吉信", None, els).osm_id == "node/1"
     assert pack_shinise.pick_store("鶴屋吉信", None, els[1:]) is None
-    # 店名前後有其他字（香老舗 松栄堂 京都本店）也算；兩個字的短名只比開頭
+    # 前面有「香老舗」「御菓子司」也算；名稱只是剛好含這幾個字的別家不算
     shop = [OsmElement("node/1", 1, 0, {"name": "香老舗 松栄堂 京都本店"})]
     assert pack_shinise.pick_store("松栄堂", "kyoto", shop).osm_id == "node/1"
     assert pack_shinise.pick_store("虎屋", "kyoto", [OsmElement("node/1", 1, 0, {"name": "大虎屋"})]) is None
+    ena = [OsmElement("node/1", 1, 0, {"name": "恵那川上屋 本社恵那峡店"})]
+    assert pack_shinise.pick_store("川上屋", "kyoto", ena) is None
 
 
-def test_infobox_founded():
-    box = "{{基礎情報 会社\n| 社名 = 一保堂茶舗\n| 創業 = [[1717年]]（[[享保]]2年）<ref>社史</ref>\n| 設立 = 1948年\n}}"
-    assert pack_shinise.infobox_founded(box) == (1717, "1717年")
-    assert pack_shinise.infobox_founded("| 創業 = 寛永年間（1624年 - 1644年）") == (1624, "1624年")
-    assert pack_shinise.infobox_founded("| 創業 = 17世紀初め") == (1601, "17世紀")
-    assert pack_shinise.infobox_founded("| 創業 = 享保2年") is None
-    # 公司登記（設立）比創業晚：取資訊框的創業
-    assert pack_shinise.founded(["1948年設立の企業"], [1948], box) == (1717, "1717年")
+def test_text_founded_from_real_articles():
+    # 設立欄括號裡的創業（山本山）
+    yamamotoyama = (
+        "{{基礎情報 会社\n|本社所在地 = 東京都中央区日本橋2丁目5番1号\n"
+        "|設立 = [[1941年]]（[[昭和]]16年）[[5月7日]]<br />（創業：[[1690年]]（[[元禄]]3年））\n}}\n"
+        "創業者の嘉兵衛は宇治で茶を作っていた。創業330年を迎えた。"
+    )
+    assert pack_shinise.text_founded(yamamotoyama) == (1690, "1690年")
+    # 第一段：年份在「創業」前面，中間有和曆的括號
+    harimaya = "播磨屋本店は、[[1862年]]（[[文久]]2年）に油屋として創業した<ref>x</ref>。設立は[[1947年]]。"
+    assert pack_shinise.text_founded(harimaya) == (1862, "1862年")
+    ippodo = "享保2年（1717年）、近江屋として創業し、茶や陶器を商う。\n== 歴史 ==\n1990年に創業した分家"
+    assert pack_shinise.text_founded(ippodo) == (1717, "1717年")
+    # 沒有年份（室町時代後期）查不到；「創業者」不算
+    assert pack_shinise.text_founded("設立 = [[1947年]]<br />創業は[[室町時代]]後期") is None
+    assert pack_shinise.text_founded("1985年、創業者の孫が社長に就任した。") is None
+    # 章節以後的內容不看（別家的創業）；開頭沒有時看「歴史」章節的第一段
+    assert pack_shinise.text_founded("和菓子店。\n== 関連 ==\n1650年に創業した分家がある。") is None
+    akafuku = "赤福は和菓子屋。\n== 歴史 ==\n1707年（宝永4年）を創業年としている。\n\n1954年に株式会社となる。"
+    assert pack_shinise.text_founded(akafuku) == (1707, "1707年")
+    # 公司登記（設立）比創業晚：取創業
+    assert pack_shinise.founded(["1941年設立の企業"], [1941], yamamotoyama) == (1690, "1690年")
+
+
+def test_hq_pref_from_infobox():
+    shoeido = (
+        "|本社所在地 = [[京都府]][[京都市]][[中京区]]車屋町通夷川下る真如堂町306番地\n"
+        "|本店所在地 = <!-- 本社と登記上の本店所在地が異なる場合に記載 -->\n"
+    )
+    assert pack_shinise.hq_pref(shoeido) == "kyoto"
+    # 本店所在地有寫就用本店
+    assert pack_shinise.hq_pref("|本社所在地 = [[東京都]]港区\n|本店所在地 = [[大阪府]]大阪市\n") == "osaka"
+    assert pack_shinise.hq_pref("|本社所在地 = [[名古屋市]]中区\n") == "aichi"
+    assert pack_shinise.hq_pref("|社名 = 松栄堂\n") is None
+
+
+def test_pick_store_same_place_and_own_name(monkeypatch):
+    monkeypatch.setattr(pack_shinise, "_pref_of", lambda lat, lng: "kyoto")
+    # 同一個地方的點與建築物：一家
+    kyukyodo = [
+        OsmElement("node/1", 35.0100, 135.7680, {"name": "鳩居堂", "craft": "handicraft"}),
+        OsmElement("way/2", 35.0101, 135.7681, {"name": "鳩居堂", "craft": "handicraft", "building": "yes"}),
+    ]
+    assert pack_shinise.pick_store("鳩居堂", "kyoto", kyukyodo).osm_id == "way/2"
+    # 店名本身含「総本店」：兩家同名在不同地方，不猜
+    shogoin = [
+        OsmElement("node/3", 35.0200, 135.7800, {"name": "聖護院八ツ橋総本店"}),
+        OsmElement("node/4", 34.9900, 135.7700, {"name": "聖護院八ツ橋総本店"}),
+    ]
+    assert pack_shinise.pick_store("聖護院八ツ橋総本店", "kyoto", shogoin) is None
+    ippodo = [OsmElement("node/5", 35.0150, 135.7670, {"name": "一保堂茶舗 京都本店", "shop": "tea"})]
+    assert pack_shinise.pick_store("一保堂茶舗", "kyoto", ippodo).osm_id == "node/5"
 
 
 def test_chara_brand_and_record(monkeypatch):
@@ -148,8 +194,10 @@ def test_seed_shinise_end_to_end(tmp_path, monkeypatch):
     cats = {"日本の線香メーカー": ["松栄堂"], "和菓子の店舗・メーカー": ["鶴屋吉信", "新しい店"],
             "日本の製茶メーカー": []}  # fmt: skip
     monkeypatch.setattr(pack_shinise.wikipedia, "category_members", lambda site, cat, depth=0: cats[cat])
+    cats["和菓子の店舗・メーカー"] += ["鶴屋吉信 (薬)"]
     monkeypatch.setattr(pack_shinise.wikipedia, "page_categories", lambda site, titles: {
         "松栄堂": ["18世紀設立の企業"], "鶴屋吉信": ["19世紀の日本の設立"], "新しい店": ["1990年設立の企業"],
+        "鶴屋吉信 (薬)": ["1850年設立の企業"],
     })  # fmt: skip
     monkeypatch.setattr(pack_shinise.wikipedia, "qids", lambda site, titles: {"松栄堂": "Q1", "鶴屋吉信": "Q2"})
     monkeypatch.setattr(pack_shinise.wikipedia, "wikitexts", lambda site, titles: {"鶴屋吉信": "| 創業 = 1803年"})
@@ -165,6 +213,8 @@ def test_seed_shinise_end_to_end(tmp_path, monkeypatch):
         OsmElement("node/2", 35.0, 135.7, {"name": "山田松香木店", "shop": "gift"}),
         OsmElement("node/3", 35.0, 135.77, {"name": "茶寮 都", "amenity": "cafe", "website": "x"}),
         OsmElement("node/4", 35.0, 135.78, {"name": "茶屋カフェ", "amenity": "cafe"}),
+        OsmElement("node/6", 35.0, 135.781, {"name": "お茶屋Bar 一葉", "amenity": "cafe"}),
+        OsmElement("node/7", 35.0, 135.782, {"name": "中華麺飯茶屋 佳", "amenity": "restaurant"}),
         OsmElement("node/5", 35.0, 135.79, {"name": "香草ヘア", "shop": "hairdresser"}),
     ]
     monkeypatch.setattr(pack_shinise.osm, "by_prefecture", lambda filters: (els, ["okinawa"]))
@@ -177,7 +227,11 @@ def test_seed_shinise_end_to_end(tmp_path, monkeypatch):
     assert out["shinise-node-3"]["kind"] == "teahouse"
     # 咖啡店、美容院不收；1990 年創業的不是老舖
     assert "shinise-node-4" not in out and "shinise-node-5" not in out
+    # 名稱有茶屋但是酒吧、中華料理
+    assert "shinise-node-6" not in out and "shinise-node-7" not in out
     assert "新しい店" in report and "okinawa" in report
+    # 同一家店的兩個條目（同名、同一個位置）只留創業早的
+    assert [r["id"] for r in out.values() if r["name"]["ja"] == "鶴屋吉信"] == ["shinise-q2"]
 
 
 def test_seed_chara_end_to_end(tmp_path, monkeypatch):
