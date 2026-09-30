@@ -50,6 +50,8 @@ const bounds = shallowRef<[number, number, number, number] | null>(null)
 let panSwitch = false
 // 從搜尋選了別縣的景點：進入該縣後飛到這個景點，不做整縣定位
 let flyAfterLoad: string | null = null
+// 從首頁（全國）選了擴充包的點：進入該縣後飛到這個位置
+let flyAfterLoadPoint: { lng: number; lat: number } | null = null
 
 const available = computed(() => Object.keys(catalog.index?.prefectures ?? {}))
 // 已載入完整地圖 bundle 的縣用全部大點，其餘縣先用全國總覽（各縣分數前段，bundles/featured.json）
@@ -130,14 +132,9 @@ const packMap = computed(() => {
   const def = explore.pack ? packByKey.get(explore.pack) : undefined
   if (!def) return null
   const items = catalog.packs[def.key] ?? []
-  return { color: def.color, points: items.filter((it) => !explore.packGroup || it.g === explore.packGroup) }
-})
-
-// 擴充包開著、選到的是名城對到的景點時，地圖上標出名城的點
-const mapSelectedId = computed(() => {
-  const id = selectedId.value
-  if (!id || !explore.pack) return id
-  return catalog.packs[explore.pack]?.find((it) => it.s === id)?.id ?? id
+  // 選到的名城已經以景點（有照片）標出，對到的擴充包點不重複畫
+  const points = items.filter((it) => (!explore.packGroup || it.g === explore.packGroup) && !(it.s && it.s === selectedId.value))
+  return { color: def.color, points }
 })
 
 /** 選取中的擴充包點 */
@@ -301,8 +298,9 @@ watch(
       return
     }
     const spots = await trackSplash(catalog.loadMap(pref), 'map-bundle')
-    const target = flyAfterLoad ? spots.find((s) => s.id === flyAfterLoad) : undefined
+    const target = flyAfterLoad ? spots.find((s) => s.id === flyAfterLoad) : flyAfterLoadPoint ?? undefined
     flyAfterLoad = null
+    flyAfterLoadPoint = null
     if (target) {
       await nextTick()
       mapRef.value?.flyTo(target.lng, target.lat, 15)
@@ -358,6 +356,12 @@ async function select(id: string) {
   if (pack && explore.pack !== pack) explore.pack = pack
   // 已經是景點的點（名城）：直接開景點卡片，名城番號等顯示在卡片上
   const target = item?.s ?? id
+  // 首頁（全國）選了擴充包的點：和搜尋一樣進入那個縣（地圖、地區色、清單都換到該縣）
+  if (item && !props.pref && regionOf(item.p)) {
+    flyAfterLoadPoint = { lng: item.lng, lat: item.lat }
+    await router.push({ path: `/map/${item.p}`, query: { spot: target, pack } })
+    return
+  }
   // 選了景點就收起地點標記
   const { at: _at, label: _label, ...rest } = route.query
   await router.replace({ query: { ...rest, spot: target, ...(pack ? { pack } : {}) } })
@@ -486,7 +490,7 @@ function onMoveEnd(view: MapViewState) {
       <MapView
         ref="mapRef"
         :spots="visibleSpots"
-        :selected-id="mapSelectedId"
+        :selected-id="selectedId"
         :bounds="bounds"
         :color-key="explore.activePref"
         :inset-left="insetLeft"
