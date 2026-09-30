@@ -2,8 +2,12 @@
 import { computed, ref, watch } from 'vue'
 
 import type { Spot } from '../services/bundles'
+import { cardNumberOf, rarityOf } from '../services/card'
 import { googleMapsUrl } from '../services/maps'
 import { canSpeak, speakJa } from '../services/tts'
+import { useCatalogStore } from '../stores/catalog'
+import { useMarksStore } from '../stores/marks'
+import CardViewer from './CardViewer.vue'
 import SpotActions from './SpotActions.vue'
 import SummaryText from './SummaryText.vue'
 
@@ -28,6 +32,22 @@ const imageFailed = ref(false)
 watch(() => props.spot?.id, () => (imageFailed.value = false))
 const image = computed(() => (imageFailed.value ? undefined : props.spot?.images[0]))
 const category = computed(() => props.spot?.tags.filter((t) => !t.startsWith('guide-')) ?? [])
+// 景點收集卡（DESIGN.md §7.19）：名稱帶右側的卡片鈕放大檢視
+const catalog = useCatalogStore()
+const marks = useMarksStore()
+const cardOpen = ref(false)
+watch(() => props.spot?.id, () => (cardOpen.value = false))
+const card = computed(() => {
+  const s = props.spot
+  if (!s) return null
+  const m = marks.markOf(s.id)
+  return {
+    rarity: rarityOf(s, Boolean(props.castle)),
+    number: props.castle ? `No.${props.castle.no}` : cardNumberOf(s.id, catalog.mapSpots[s.prefecture]),
+    visited: Boolean(m?.visited),
+    visitedOn: m?.visited_on ?? null,
+  }
+})
 const station = computed(() => props.spot?.nearest_stations?.[0])
 const showZh = computed(() => props.spot && props.spot.name.zh_tw !== props.spot.name.ja)
 const mapsUrl = computed(() => (props.spot ? googleMapsUrl(props.spot.name.ja, props.spot.prefecture) : ''))
@@ -93,10 +113,21 @@ function distance(m: number): string {
         <span v-if="spot.name.romaji" class="font-latin text-base font-semibold tracking-romaji uppercase">{{ spot.name.romaji }}</span>
       </div>
       <button
+        type="button"
+        :aria-label="`${spot.name.ja} 的卡片`"
+        title="卡片"
+        class="ml-auto grid size-tap shrink-0 place-items-center rounded-full border-[1.5px] border-on-region bg-transparent text-on-region"
+        @click="cardOpen = true"
+      >
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect x="5.5" y="3" width="13" height="18" rx="2" /><path d="M8.5 13.5h7M8.5 16.5h4.5" /><rect x="8.5" y="6" width="7" height="5" rx="1" />
+        </svg>
+      </button>
+      <button
         v-if="canSpeak()"
         type="button"
         :aria-label="`播放 ${spot.name.ja}`"
-        class="ml-auto grid size-tap shrink-0 place-items-center rounded-full border-[1.5px] border-on-region bg-transparent text-on-region"
+        class="grid size-tap shrink-0 place-items-center rounded-full border-[1.5px] border-on-region bg-transparent text-on-region"
         @click="speakJa(spot.name.kana || spot.name.ja)"
       >
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -177,6 +208,15 @@ function distance(m: number): string {
         class="flex h-11 grow items-center justify-center rounded-control bg-region-strong px-4 text-body-sm font-bold text-white no-underline active:translate-y-px"
       >在 Google Maps 開啟</a>
     </div>
+    <CardViewer
+      v-if="cardOpen && card"
+      :spot="spot"
+      :rarity="card.rarity"
+      :number="card.number"
+      :visited="card.visited"
+      :visited-on="card.visitedOn"
+      @close="cardOpen = false"
+    />
   </section>
   <section v-else-if="loading" class="grid h-full place-items-center bg-paper text-body-sm text-sub">載入中</section>
 </template>

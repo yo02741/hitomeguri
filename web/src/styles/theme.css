@@ -28,6 +28,18 @@
   --color-t-shinise: #7A5230;
   --color-t-chara: #6D4FC2;
 
+  /* ---------- 景點收集卡（只用在收集卡，DESIGN.md §7.19） ---------- */
+  --color-foil-1: #FF9CB0;
+  --color-foil-2: #FFE08A;
+  --color-foil-3: #A6F0C6;
+  --color-foil-4: #8ED8FF;
+  --color-foil-5: #C7A6FF;
+  --color-gold-1: #F7E7A1;
+  --color-gold-2: #D8B45A;
+  --color-gold-3: #FFF6D8;
+  --color-glare: #FFFFFF;
+  --color-shade: #000000;
+
   /* ---------- 功能色 ---------- */
   --color-visited: #1F4E8C;       /* 去過印章 */
   --color-visited-tint: #EEF3F9;
