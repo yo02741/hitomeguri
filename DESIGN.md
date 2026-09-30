@@ -123,6 +123,14 @@
 
 ---
 
+### 3.6 和風紋樣與紙紋
+- **紋樣**（`RegionMotif.vue`、`web/src/data/patterns.ts`）：海報區的裝飾圓裡填入傳統紋樣，依地方分配：北海道 亀甲、東北 麻の葉、關東 市松、中部 鱗、近畿 七宝、中國 矢絣、四國 菱、九州・沖繩 青海波；全國用青海波。
+  - 圓是 `bg-region-accent`，紋樣以 `bg-region`（base 色）畫出；圖塊是白色＋透明的 SVG，當 alpha 遮罩（`wa-pattern wa-*` utility，定義在 `theme.css`）。不寫死色碼、不用 opacity 淡化地區色。
+  - 只放在裝飾圓裡，不鋪滿海報區，不壓到地名文字；靜態，不動。
+- **紙紋**（`paper-grain` utility）：feTurbulence 產生的極淡灰色顆粒，以 `background-blend-mode: multiply` 疊在 `bg-region` 底色上，只影響背景、不影響文字。用在地區標籤、深度探索頁標頭、景點卡片與擴充包卡片的名稱帶、旅前準備標頭。
+
+---
+
 ## 4. 字體
 
 ### 4.1 字族
@@ -402,7 +410,7 @@ MVP 不做。token 已集中在 `theme.css` 與 `regions.css`，之後以 `@cust
 ## 12. 禁止清單
 - 寫死任何縣的色碼或主題色碼（一律用 token）。
 - 地區色用在主題 marker；主題色用在按鈕或大面積底色。
-- 漸層、毛玻璃、大圓角卡片堆疊（圓角上限 `rounded-card` 10px，sheet 除外）。
+- 漸層、毛玻璃、大圓角卡片堆疊（圓角上限 `rounded-card` 10px，sheet 除外）。紋樣與紙紋只用 §3.6 的方式。
 - 襯線字、斜體、emoji、sparkle 圖示、「AI」字樣。
 - 以 CSS `opacity` 做地區色的淡化（淡化已在 token 產生時算好）。
 - 使用純白 `#FFFFFF` 當頁面底色或純黑當文字色（白色只用於主按鈕文字、marker 底、卡片內層）。

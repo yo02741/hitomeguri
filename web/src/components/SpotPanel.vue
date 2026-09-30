@@ -86,7 +86,7 @@ function distance(m: number): string {
       </button>
     </div>
 
-    <div class="flex items-center gap-3.5 bg-region px-5 py-4 text-on-region">
+    <div class="paper-grain flex items-center gap-3.5 bg-region px-5 py-4 text-on-region">
       <div class="flex min-w-0 flex-col gap-px">
         <span v-if="spot.name.kana" lang="ja" class="text-caption tracking-kana opacity-85">{{ spot.name.kana }}</span>
         <h2 lang="ja" class="text-h2 font-black tracking-name">{{ spot.name.ja }}</h2>
