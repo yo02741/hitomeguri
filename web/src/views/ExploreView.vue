@@ -8,7 +8,6 @@ import PackBar from '../components/PackBar.vue'
 import PackList from '../components/PackList.vue'
 import PackPanel from '../components/PackPanel.vue'
 import RegionLists from '../components/RegionLists.vue'
-import RegionModeSwitch from '../components/RegionModeSwitch.vue'
 import RegionTag from '../components/RegionTag.vue'
 import SpotPanel, { type NearbyPack } from '../components/SpotPanel.vue'
 import TimedList from '../components/TimedList.vue'
@@ -522,17 +521,6 @@ function onMoveEnd(view: MapViewState) {
         <PackBar :pref="pref && regionOf(pref) ? pref : null" />
       </div>
 
-      <!-- 地圖左下、左側面板旁：「地圖｜深度探索」小切換（使用者決定） -->
-      <RegionModeSwitch
-        v-if="pref && regionOf(pref)"
-        :pref="pref"
-        active="map"
-        floating
-        :data-pref="pref"
-        class="absolute bottom-4 z-10 max-lg:hidden"
-        :style="{ left: `${insetLeft}px` }"
-      />
-
       <!-- 左上浮動面板：地區標籤／地區清單、主題篩選、景點與地區特色 -->
       <div
         class="pointer-events-none absolute top-4 bottom-4 left-4 z-10 flex w-float flex-col gap-2.5 *:pointer-events-auto max-lg:right-4 max-lg:bottom-auto max-lg:w-auto"
@@ -563,6 +551,24 @@ function onMoveEnd(view: MapViewState) {
             @select="select"
             @highlight="(id) => mapRef?.highlight(id)"
           />
+          <!-- 深度探索入口：左欄最下方獨立一顆，和清單分開（使用者決定） -->
+          <RouterLink
+            :to="`/region/${pref}`"
+            class="flex shrink-0 items-center gap-3 rounded-card bg-paper py-2.5 pr-3 pl-2.5 text-ink no-underline shadow-float hover:bg-surface max-lg:hidden"
+          >
+            <span class="grid size-10 shrink-0 place-items-center rounded-full bg-region text-on-region" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 5.5c3-1.3 6-1.3 9 0v14c-3-1.3-6-1.3-9 0z M12 5.5c3-1.3 6-1.3 9 0v14c-3-1.3-6-1.3-9 0z" />
+              </svg>
+            </span>
+            <span class="flex min-w-0 flex-col">
+              <span class="text-body-sm font-bold">深度探索</span>
+              <span class="truncate text-caption text-sub">季節・祭典・地區特色・期間限定</span>
+            </span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="ml-auto shrink-0 text-sub" aria-hidden="true">
+              <path d="M9 5l7 7-7 7" />
+            </svg>
+          </RouterLink>
         </template>
         <template v-else>
           <PackList

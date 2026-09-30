@@ -47,6 +47,11 @@ function monthsText(f: Festival): string {
 }
 
 const failed = ref(new Set<string>())
+// 圖片載入失敗時改用底色；error 可能觸發不只一次，用原始網址記錄
+function markFailed(f: Festival) {
+  const url = f.images?.[0]?.url
+  if (url && !failed.value.has(url)) failed.value = new Set(failed.value).add(url)
+}
 function image(f: Festival) {
   const img = f.images?.[0]
   return img && !failed.value.has(img.url) ? img : undefined
@@ -105,7 +110,7 @@ function mapLink(f: Festival) {
               loading="lazy"
               referrerpolicy="no-referrer"
               class="size-full object-cover"
-              @error="failed = new Set(failed).add(image(f)!.url)"
+              @error="markFailed(f)"
             />
           </div>
           <div class="flex min-w-0 flex-1 flex-col gap-1.5">
