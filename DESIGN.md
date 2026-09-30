@@ -96,7 +96,7 @@
 | 角色商店（擴充包） | `t-chara` | `#6D4FC2` | 貓耳臉 |
 | 自訂地點 | `t-custom` | 跟 `sub` | 依分類，虛線外框 |
 
-- 主題色只出現在：符號描邊、主題開關的勾選色、區塊小標旁的小符號。**不用作大面積底色、不用作按鈕**。
+- 主題色只出現在：符號描邊、擴充包的勾選色與開啟中的膠囊鈕、區塊小標旁的小符號。**不用作大面積底色**。
 
 ### 3.3 地區色（執行時決定）
 | Tailwind | CSS 變數 | 用途 |
@@ -120,6 +120,14 @@
 - 文字對底色 ≥ 4.5:1；24px 以上粗體 ≥ 3:1。
 - 符號與外框（非文字）對背景 ≥ 3:1。
 - 白字只能放在 `bg-region-strong` 或 `bg-ink` 上。
+
+---
+
+### 3.6 和風紋樣與紙紋
+- **紋樣**（`RegionMotif.vue`、`web/src/data/patterns.ts`）：海報區的裝飾圓裡填入傳統紋樣，依地方分配：北海道 亀甲、東北 麻の葉、關東 市松、中部 鱗、近畿 七宝、中國 矢絣、四國 菱、九州・沖繩 青海波；全國用青海波。
+  - 圓是 `bg-region-accent`，紋樣以 `bg-region`（base 色）畫出；圖塊是白色＋透明的 SVG，當 alpha 遮罩（`wa-pattern wa-*` utility，定義在 `theme.css`）。不寫死色碼、不用 opacity 淡化地區色。
+  - 只放在裝飾圓裡，不鋪滿海報區，不壓到地名文字；靜態，不動。
+- **紙紋**（`paper-grain` utility）：feTurbulence 產生的極淡灰色顆粒，以 `background-blend-mode: multiply` 疊在 `bg-region` 底色上，只影響背景、不影響文字。用在地區標籤、深度探索頁標頭、景點卡片與擴充包卡片的名稱帶、旅前準備標頭。
 
 ---
 
@@ -194,7 +202,7 @@
 | 選取中 | 40 | 同上＋外圈 `ring-3 ring-paper` 再加 `outline-3 outline-region-strong` |
 | 未開啟的主題 | 32 | `opacity-35`（仍顯示，讓人知道附近有） |
 | 自訂地點 | 32 | 虛線外框 `border-dashed border-t-custom` |
-| 主題開關列 | 26 | 同一般 |
+| 擴充包列 | 26 | 同一般 |
 | 名稱區塊旁 | 36–42 | 同一般；在地區色底上維持白底 |
 
 ```html
@@ -389,7 +397,7 @@ header 右側、登入鈕左邊（`SearchBox.vue`，每一頁都在；在行程�
 ## 10. 無障礙
 - 所有互動元素用原生 `<button>`、`<a>`、`<input>`；圖示按鈕必有 `aria-label`。
 - Focus ring：2px `--region-strong`＋2px offset（`theme.css` 全域設定），不可移除。
-- 主題開關、tab、toggle 要有 `aria-pressed` 或 `aria-selected`。
+- 擴充包開關、tab、toggle 要有 `aria-pressed` 或 `aria-selected`。
 - 顏色不是唯一辨識：主題靠符號形狀、自訂地點靠虛線與「自訂」標籤、去過靠印章。
 
 ---
@@ -402,7 +410,7 @@ MVP 不做。token 已集中在 `theme.css` 與 `regions.css`，之後以 `@cust
 ## 12. 禁止清單
 - 寫死任何縣的色碼或主題色碼（一律用 token）。
 - 地區色用在主題 marker；主題色用在按鈕或大面積底色。
-- 漸層、毛玻璃、大圓角卡片堆疊（圓角上限 `rounded-card` 10px，sheet 除外）。
+- 漸層、毛玻璃、大圓角卡片堆疊（圓角上限 `rounded-card` 10px，sheet 除外）。紋樣與紙紋只用 §3.6 的方式。
 - 襯線字、斜體、emoji、sparkle 圖示、「AI」字樣。
 - 以 CSS `opacity` 做地區色的淡化（淡化已在 token 產生時算好）。
 - 使用純白 `#FFFFFF` 當頁面底色或純黑當文字色（白色只用於主按鈕文字、marker 底、卡片內層）。

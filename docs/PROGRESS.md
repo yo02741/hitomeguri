@@ -1,27 +1,52 @@
 # 進度與交接（給下一段工作的 Claude）
 
-使用者指示：Phase 1 完成後直接繼續 Phase 2、3（不用等確認）。工作分支 `main`（repo 預設分支，GitHub Pages 由它部署；原本叫 `claude/charming-hawking-gngkes`，2026-09-29 改名）。
+工作分支 `main`（repo 預設分支；推上去就部署 Firebase Hosting 與 GitHub Pages）。
 
-## 環境限制
+## 目前狀態（2026-09-30）
+
+**網站**：https://hitomeguri-7d87a.web.app/ 、https://yo02741.github.io/hitomeguri/
+
+| 範圍 | 狀態 | 文件 |
+|---|---|---|
+| 探索（47 縣大點、搜尋、鐵路、類型篩選） | 完成 | PLAN.md §9 Phase 1、6 |
+| 擴充包（寶可夢、城、老舖・茶屋、角色商店） | 城、寶可夢上線；老舖、角色商店採集中 | UX-FLOW.md A4 |
+| 深度探索（季節、祭典、地區特色、期間限定；左側段落目錄） | 完成 | UX-FLOW.md A8 |
+| 期間限定 v1（氣象廳） | 等驗收 | docs/Phase4驗收.md |
+| 收藏、去過、清單、匯出 | 等驗收 | docs/Phase5驗收.md |
+| 自動化排程＋PR 審核 | 等第一次自動 PR 與一週排程 | docs/Phase6驗收.md |
+| 行程、旅前準備、練習、旅前小書 | 等驗收 | docs/Phase7驗收.md、docs/回饋修改驗收.md |
+| 行程共編 | 等驗收 | docs/行程共編驗收.md |
+| 設計質感（和風紋樣、紙紋已做；蓋章、轉場、收集卡等待決定） | 研究完成 | docs/設計質感研究.md |
+
+**原則的變更**（詳見 PLAN.md 的決策更新）：
+- 內容一律取自實際來源，不用 LLM 寫簡介或念法；LLM 只用於翻譯與查證。原本的 enrich 已移除。
+- 主題層改為擴充包；溫泉、酒、拉麵、居酒屋不做。7 縣舊的主題小店資料（`data/spots` 裡 `kind: theme`）保留但前端不顯示。
+- 不標示「精選」；分數只用於排序與首頁總覽。
+
+**待辦**：見根目錄 `TODO.md`。
+
+## 開發紀錄（依時間；早期內容有些已過時，以上方「目前狀態」為準）
+
+### 環境限制
 - 沙箱連不到 Wikidata / OSM / Wikimedia / openfreemap；raw.githubusercontent.com 與 api.github.com 可以。
-- 外部資料採集一律在 GitHub Actions：`seed-region.yml`（輸入縣 slug，各縣平行，結果推到 `pipeline/seed-<run_number>`）、`enrich.yml`（需 `ANTHROPIC_API_KEY` secret，使用者尚未設定）。
+- 外部資料採集一律在 GitHub Actions（見 CLAUDE.md「資料 pipeline 在 GitHub Actions 上跑」）。早期的 `enrich.yml`（LLM 補全）已移除。
 - 觸發：GitHub MCP `actions_run_trigger`（workflow_id=seed-region.yml, ref=main）。等待：`curl https://api.github.com/repos/yo02741/hitomeguri/actions/runs/<id>` 看 status。
 - 結果檢查：`git fetch origin pipeline/seed-N`，看 commit 訊息的報告，再 `git checkout origin/pipeline/seed-N -- data/spots` 合併。
 
-## Phase 1 狀態
+### Phase 1 狀態
 - pipeline：`pipeline/major.py`（seed-region）、`enrich.py`、`build_bundles.py`、`geo.py`、`kana.py`、`sources/`；測試 `pipeline/tests`（pytest 全過）。
 - 前端：`web/src/views/ExploreView.vue`、`components/MapView.vue`、`SpotPanel.vue`、`RegionSidebar.vue`、`HomeSidebar.vue`、`TabBar.vue`、`stores/catalog.ts`。
 - 七縣（kyoto aichi osaka hyogo nara gifu shiga）已採集；S 級種子都在精選。
 - 未完成：簡介與缺漏假名需要 enrich（等使用者設定 ANTHROPIC_API_KEY）。
 
-## Phase 2、3 狀態（已完成，資料已上線）
+### Phase 2、3 狀態（已完成，資料已上線）
 - Phase 2：主題小店七縣已採集（茶、酒、拉麵、溫泉、寶可夢；寺社大點加 goshuin 主題）。前端主題開關、主題色標記、`?themes=` 同步。
 - Phase 3：地區特色 12 筆（種子 × Wikidata）；直飛航線 7 條候選皆 `verified: false`，網站不顯示。
 - 需要使用者：repo secret `ANTHROPIC_API_KEY` → 跑 `enrich.yml`（task=enrich，先 limit 20；之後 limit 0 跑全部）與 `enrich.yml`（task=verify-flights）。enrich 目前只補大點與主題小店，地區特色的簡介尚未接上。
 - 已知資料缺口：香（incense）主題與御朱印授與細節需 agent + web search；官方 GI／地域團體商標／郷土料理來源未接；種子對不上的景點見各次 seed-region 報告（大須商店街、中部電力 MIRAI TOWER、常滑やきもの散歩道、川原町、高山 古い町並、灘五郷、伏見 酒蔵、伊根の舟屋）。
 - 重跑順序：seed-region（保留主題小店）→ seed-themes → seed-specialties；每次合併 `git checkout origin/pipeline/<command>-N -- data/`。
 
-## 桌機介面調整（Phase 3 後，使用者回饋）
+### 桌機介面調整（Phase 3 後，使用者回饋）
 - 左欄改為地圖左上的浮動面板；地區標籤縮小。
 - 拉遠到縮放 10 以下關閉景點卡片；hover 放大景點，縮放 12 以上顯示照片（map bundle 新增 `i` 縮圖欄位）。
 - 平移時地區跟著畫面中心的縣；範圍涵蓋太多縣時不指定。
@@ -54,7 +79,7 @@
   Wikivoyage 那霸篇把它和玉陵、識名園並列），分數只反映知名度。清單改為「景點／地區特色」，縣內地圖顯示全部大點；
   分數只用於段內排序、照片與名稱標籤的優先順序，以及首頁全國總覽（各縣前 20）。
 
-## 擴充包、搜尋、深度探索（9/28）
+### 擴充包、搜尋、深度探索（9/28）
 - 擴充包列（地圖上方）：一次開一個，左側清單換成擴充包清單，景點變淡；目前只有寶可夢（人孔蓋 482 個、寶可夢中心與商店 30 間），
   設定可隱藏；網址 `?pack=`；景點卡片列出 2 km 內的擴充包項目。
 - 景點搜尋（header 右側）：全國索引 `bundles/search.json`，第一次點搜尋框才載入；日文、假名、中文、羅馬拼音都能搜。
@@ -69,7 +94,7 @@
 - 官方觀光網站熱門排行（景點分數加成）：福岡 クロスロードふくおか（瀏覽次數排序，run 24：前 400 中 190 個對上）、北海道 HOKKAIDO LOVE!（人気順，run 26：218 個對上）。官方清單裡的活動與季節花況不當景點；同名比對距離放寬到 5 km。東京、京都、大阪的官方網站沒有熱門排序。
 - `seed-pack.yml` 的 concurrency 改為依指令分組（同一組只保留一個等待中的 run，不同指令排在一起會互相取消）。
 
-## 鐵路、官方網站、祭典（9/29）
+### 鐵路、官方網站、祭典（9/29）
 - 鐵路路線圖層（`pipeline/rail.py`、seed-rail）：OSM 鐵路路線 relation（`out geom`），上下行與列車種別合併為一條線、
   直通運轉與列車名稱（のぞみ、大和路快速）不當路線、同一段軌道只畫一次；只留縣界內的路段與車站，同名車站 500 m 內只留一個。
   沖繩 1 線、京都 29 線、東京 89 線、大阪 55 線（run 26）；東京 bundle 390 KB（gzip 92 KB），開啟「鐵路」才載入。
@@ -87,7 +112,7 @@
   照片與食譜有第三方提供者（條款要求事先向負責單位確認），使用者決定不取。卡片與祭典右上角加 Google 搜尋按鈕（日文名＋縣名）。
 - 採集 workflow 推送前先併入最新的工作分支（跑的期間 workflow 檔有改時，GitHub App 推送會被拒）。
 
-## 之後
+### 之後
 - Phase 4 期間限定等，見 PLAN.md §9。
 - Phase 4 v1（2026-09-29）：期間限定只接氣象廳（`pipeline/timed.py`、`pipeline/sources/jma.py` 的 parse_sakura／parse_autumn）。
   沙箱連不到氣象廳：頁面格式用 `probe.yml` 看；測試的網頁片段取自實際格式。

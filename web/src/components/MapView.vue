@@ -675,7 +675,8 @@ const photoPins = new Map<string, maplibregl.Marker>()
 function syncPhotos() {
   if (!map) return
   const want = new Map<string, { lng: number; lat: number; thumb: string; s: number }>()
-  for (const f of props.pack ? [] : map.queryRenderedFeatures({ layers: ['spots', 'selected'] })) {
+  // 開啟擴充包時照片收起，只留選取中的景點（名城對到的景點要看得到照片）
+  for (const f of map.queryRenderedFeatures({ layers: props.pack ? ['selected'] : ['spots', 'selected'] })) {
     const fp = f.properties as { id: string; i?: string; s: number }
     if (!fp.i || failedThumbs.has(fp.i) || want.has(fp.id)) continue
     const [lng, lat] = (f.geometry as GeoJSON.Point).coordinates as [number, number]

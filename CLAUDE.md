@@ -36,7 +36,7 @@ uv venv && uv pip install -e ".[dev]" # pipeline 環境
 
 ## 資料 pipeline 在 GitHub Actions 上跑
 Claude Code 的雲端沙箱連不到 Wikidata、OSM、Wikimedia，也沒有 Claude API key，所以採集與補全放在 Actions：
-- `refresh-data.yml`（排程，Phase 6）：每週一擴充包與祭典、每月第一週再加地區特色與各縣維基簡介、每季第一週再加各縣大點重採。結果推到 `pipeline/refresh-<run>` 並開 PR，描述附 `diff-report` 與 `validate-data`（commit 狀態「資料檢查」）。使用者在 GitHub 看完按合併就部署；新的自動 PR 會取代還沒合併的舊 PR，PR 關閉後 `pipeline-pr-closed.yml` 刪分支。
+- `refresh-data.yml`（排程，Phase 6）：每週一寶可夢、城、祭典，每月第一週再加老舖、角色商店、地區特色與各縣維基簡介、每季第一週再加各縣大點重採。結果推到 `pipeline/refresh-<run>` 並開 PR，描述附 `diff-report` 與 `validate-data`（commit 狀態「資料檢查」）。使用者在 GitHub 看完按合併就部署；新的自動 PR 會取代還沒合併的舊 PR，PR 關閉後 `pipeline-pr-closed.yml` 刪分支。
 - `seed-pack.yml`（手動）：全國一次抓的項目（擴充包：寶可夢、城 `seed-castles`、老舖・茶屋 `seed-shinise`、角色商店 `seed-chara`；地區特色、祭典、季節、鐵路…），推到 `pipeline/<指令>-<run>`。
 - `seed-region.yml`（手動）：輸入縣 slug，各縣平行採集，結果推到 `pipeline/seed-<run>` 分支。command=seed-region 會連同維基百科簡介與念法一起做；seed-wiki 只更新已有大點的縣的簡介與念法（`pipeline/wiki.py`）。
 - `harvest-timed.yml`（每天 17:50 JST＋手動）：期間限定（氣象廳本季觀測，`pipeline/timed.py`）。只改 `data/timed/`，有變更直接提交 main 並觸發 Firebase Hosting、Pages 部署（例外：不走 pipeline/* 審核分支）。
@@ -45,22 +45,20 @@ Claude Code 的雲端沙箱連不到 Wikidata、OSM、Wikimedia，也沒有 Clau
 
 ## 分支
 - `main`：預設分支，也是工作分支；推上去就會部署 Firebase Hosting 與 GitHub Pages（`pages.yml` 只部署預設分支）。
-- `pipeline/<指令>-<run 編號>`（例：`pipeline/seed-region-23`）：Actions 採集結果的暫存審核分支。檢查報告後用
-  `git checkout origin/pipeline/... -- data/...` 合併進 `main`，之後用 `cleanup-branches.yml`（手動）刪除；
-  還沒合併的填在 keep 保留。Claude Code 的雲端 session 只能推自己的工作分支，不能直接刪別的分支。
+- `pipeline/<指令>-<run 編號>`（例：`pipeline/seed-region-23`）：Actions 採集結果的暫存審核分支。
+  - 自動採集（`pipeline/refresh-*`）開 PR，由使用者在 GitHub 合併；PR 關閉後分支自動刪除。
+  - 手動採集：檢查報告後用 `git checkout origin/pipeline/... -- data/...` 合併進 `main`，之後用 `cleanup-branches.yml`（手動）刪除，還沒合併的填在 keep 保留。
 
 ## 結構速覽
-- `data/`：景點主資料（source of truth）。`regions.json` 47 縣名稱、地方、地區色；`seed/` 攻略候選清單。
-- `pipeline/`：Python 資料 pipeline，`models.py` 對應 PLAN.md §4 的 schema，`cli.py` 為指令入口。
-- `web/`：Vue 3 + Vite + TypeScript + Pinia + Vue Router + Tailwind v4 + MapLibre。token 在 `src/styles/theme.css`。
+- `data/`：主資料（source of truth）。`regions.json` 47 縣名稱、地方、地區色；`packs/` 擴充包；`seed/` 攻略候選、官方觀光網站清單、排除清單。
+- `pipeline/`：Python 資料 pipeline，`models.py` 對應 PLAN.md §4 的 schema，`cli.py` 為指令入口；`validate.py` 資料檢查、`diff_report.py` PR 變更報告。
+- `web/`：Vue 3 + Vite + TypeScript + Pinia + Vue Router + Tailwind v4 + MapLibre。token 在 `src/styles/theme.css`（含和風紋樣 `wa-*` 與紙紋 `paper-grain`）。
+- `docs/`：`PROGRESS.md`（目前狀態與開發紀錄）、各次驗收說明、設計研究。
 - `firebase.json`、`firestore.rules`：只有 Hosting、Firestore、Auth。`users/{uid}/**` 僅本人可讀寫；`trips/{id}` 僅成員可讀寫（共編）。
 
-## 目前進度
-- Phase 0 完成：骨架、Emulator、Google 登入、空白地圖、GitHub Pages 部署。
-- Phase 1–3 完成；47 縣都有景點資料（Phase 6 的全國擴展），簡介與念法取自維基百科。詳見 docs/PROGRESS.md。
-- 擴充包：寶可夢、城（100 名城・續 100 名城）、老舖・茶屋、角色商店（老舖、角色商店的資料採集中）。
-- Phase 6（自動化排程＋PR 審核）進行中：refresh-data.yml、validate-data、diff-report 已完成，待試跑。
-- Phase 5（收藏、去過、清單、KML / CSV 匯出）完成，等使用者驗收（docs/Phase5驗收.md）。
-- Phase 4 v1（期間限定：氣象廳觀測）完成，等使用者驗收（docs/Phase4驗收.md）；超商、麥當勞、PR TIMES 因使用條款不收。
-- Phase 7（行程、旅前準備、練習）完成，等使用者驗收（docs/Phase7驗收.md）。
-- 驗收回饋第一輪（docs/回饋修改驗收.md）：自製日期選擇器、清單快捷去過與批次補日期、旅前準備段落目錄、連鎖店 Google 快捷搜尋、截圖收藏（圖片壓縮後存 Firestore，不用 Cloud Storage）、旅前小書（瀏覽器列印存 PDF）。行程共編已實作（docs/行程共編驗收.md）：行程在最上層 `trips/{id}`，成員都能編輯，邀請連結 `invites/{code}`。會話 `data/phrases` 是編輯整理的內容（非來源擷取），`reviewed: false` 待使用者校對。Firestore 規則在 `firestore.rules`，改了要請使用者貼到 Firebase Console 發布。
+## 目前進度（詳見 docs/PROGRESS.md 的「目前狀態」）
+- Phase 0–3、5、7 完成；47 縣都有景點（簡介與念法取自維基百科）。Phase 4 v1（期間限定只有氣象廳）完成。
+- 擴充包：寶可夢、城（100 名城・續 100 名城）、老舖・茶屋、角色商店。
+- Phase 6（自動化排程＋PR 審核）：`refresh-data.yml`、`validate-data`、`diff-report` 已上線，等第一次自動 PR 與一週的排程驗收（docs/Phase6驗收.md）。
+- 等使用者驗收：Phase 4、5、6、7，回饋修改第一輪，行程共編（各 `docs/*驗收.md`）。會話 `data/phrases` 是編輯整理的內容（非來源擷取），`reviewed: false` 待使用者校對。
+- Firestore 規則在 `firestore.rules`，改了要請使用者貼到 Firebase Console 發布。

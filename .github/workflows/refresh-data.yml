@@ -1,8 +1,8 @@
 name: refresh-data
 
 # 定期重跑資料採集，結果開成 PR（PLAN.md §9 Phase 6）：
-# - 每週（週一 03:23 日本時間）：擴充包（寶可夢人孔蓋、寶可夢中心、城、老舖・茶屋、角色商店）與祭典。
-# - 每月第一週：再加地區特色（全國）與各縣的維基簡介、念法（seed-wiki）。
+# - 每週（週一 03:23 日本時間）：擴充包（寶可夢人孔蓋、寶可夢中心、城）與祭典。
+# - 每月第一週：再加老舖・茶屋、角色商店（OSM 各縣查詢，各約一小時）、地區特色（全國）與各縣的維基簡介、念法（seed-wiki）。
 # - 每季（1、4、7、10 月第一週）：各縣大點整個重採（seed-region，含簡介與念法），取代 seed-wiki。
 # 結果推到 pipeline/refresh-<run> 分支並開 PR。PR 描述附資料變更報告與資料檢查結果，
 # 檢查結果也寫成這個 commit 的狀態「資料檢查」（用 GITHUB_TOKEN 開的 PR 不會觸發 CI，所以檢查在這裡跑）。
@@ -16,7 +16,7 @@ on:
   workflow_dispatch:
     inputs:
       scope:
-        description: "weekly：擴充包、祭典／monthly：再加地區特色、維基簡介／quarterly：再加各縣大點重採"
+        description: "weekly：寶可夢、城、祭典／monthly：再加老舖、角色商店、地區特色、維基簡介／quarterly：再加各縣大點重採"
         type: choice
         options: [weekly, monthly, quarterly]
         default: weekly
@@ -76,7 +76,7 @@ jobs:
   nationwide:
     needs: plan
     runs-on: ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 350
     steps:
       - uses: actions/checkout@v4
       - uses: astral-sh/setup-uv@v6
@@ -88,8 +88,8 @@ jobs:
         env:
           SCOPE: ${{ needs.plan.outputs.scope }}
         run: |
-          cmds="seed-pokefuta seed-pokecen seed-castles seed-shinise seed-chara seed-festivals"
-          if [ "$SCOPE" != weekly ]; then cmds="$cmds seed-specialties"; fi
+          cmds="seed-pokefuta seed-pokecen seed-castles seed-festivals"
+          if [ "$SCOPE" != weekly ]; then cmds="$cmds seed-shinise seed-chara seed-specialties"; fi
           : > report-nationwide.md
           : > failed-nationwide.txt
           for cmd in $cmds; do

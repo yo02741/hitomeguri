@@ -99,7 +99,7 @@ watch(
 
 <template>
   <div v-if="trip" ref="root" :data-pref="prefs[0]" class="flex flex-col">
-    <header class="bg-region text-on-region">
+    <header class="paper-grain bg-region text-on-region">
       <div class="mx-auto flex w-full max-w-5xl flex-col gap-3 px-6 pt-5 pb-6">
         <RouterLink :to="`/trips/${trip.id}`" class="flex w-fit items-center gap-1 text-label font-bold text-on-region no-underline">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7" /></svg>
