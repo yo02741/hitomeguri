@@ -194,8 +194,10 @@ def test_seed_shinise_end_to_end(tmp_path, monkeypatch):
     cats = {"日本の線香メーカー": ["松栄堂"], "和菓子の店舗・メーカー": ["鶴屋吉信", "新しい店"],
             "日本の製茶メーカー": []}  # fmt: skip
     monkeypatch.setattr(pack_shinise.wikipedia, "category_members", lambda site, cat, depth=0: cats[cat])
+    cats["和菓子の店舗・メーカー"] += ["鶴屋吉信 (薬)"]
     monkeypatch.setattr(pack_shinise.wikipedia, "page_categories", lambda site, titles: {
         "松栄堂": ["18世紀設立の企業"], "鶴屋吉信": ["19世紀の日本の設立"], "新しい店": ["1990年設立の企業"],
+        "鶴屋吉信 (薬)": ["1850年設立の企業"],
     })  # fmt: skip
     monkeypatch.setattr(pack_shinise.wikipedia, "qids", lambda site, titles: {"松栄堂": "Q1", "鶴屋吉信": "Q2"})
     monkeypatch.setattr(pack_shinise.wikipedia, "wikitexts", lambda site, titles: {"鶴屋吉信": "| 創業 = 1803年"})
@@ -211,6 +213,8 @@ def test_seed_shinise_end_to_end(tmp_path, monkeypatch):
         OsmElement("node/2", 35.0, 135.7, {"name": "山田松香木店", "shop": "gift"}),
         OsmElement("node/3", 35.0, 135.77, {"name": "茶寮 都", "amenity": "cafe", "website": "x"}),
         OsmElement("node/4", 35.0, 135.78, {"name": "茶屋カフェ", "amenity": "cafe"}),
+        OsmElement("node/6", 35.0, 135.781, {"name": "お茶屋Bar 一葉", "amenity": "cafe"}),
+        OsmElement("node/7", 35.0, 135.782, {"name": "中華麺飯茶屋 佳", "amenity": "restaurant"}),
         OsmElement("node/5", 35.0, 135.79, {"name": "香草ヘア", "shop": "hairdresser"}),
     ]
     monkeypatch.setattr(pack_shinise.osm, "by_prefecture", lambda filters: (els, ["okinawa"]))
@@ -223,7 +227,11 @@ def test_seed_shinise_end_to_end(tmp_path, monkeypatch):
     assert out["shinise-node-3"]["kind"] == "teahouse"
     # 咖啡店、美容院不收；1990 年創業的不是老舖
     assert "shinise-node-4" not in out and "shinise-node-5" not in out
+    # 名稱有茶屋但是酒吧、中華料理
+    assert "shinise-node-6" not in out and "shinise-node-7" not in out
     assert "新しい店" in report and "okinawa" in report
+    # 同一家店的兩個條目（同名、同一個位置）只留創業早的
+    assert [r["id"] for r in out.values() if r["name"]["ja"] == "鶴屋吉信"] == ["shinise-q2"]
 
 
 def test_seed_chara_end_to_end(tmp_path, monkeypatch):

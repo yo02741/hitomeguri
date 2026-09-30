@@ -43,7 +43,9 @@ INCENSE_NAME = "香老舗|香舗|香木店|薫玉堂|山田松香木店|香十|�
 TEAHOUSE_NAME = "茶屋|茶寮|茶房|甘味|甘党"
 # 名稱像茶屋但其實是咖啡店、酒館、料理店
 TEAHOUSE_EXCLUDE = re.compile(
-    r"珈琲|コーヒー|カフェ|cafe|coffee|喫茶|居酒屋|酒場|ラーメン|そば|蕎麦|うどん|寿司|焼肉|茶屋町|茶屋ヶ坂|茶屋が坂",
+    r"珈琲|コーヒー|カフェ|cafe|coffee|喫茶|居酒屋|酒場|ラーメン|そば|蕎麦|うどん|寿司|焼肉|茶屋町|茶屋ヶ坂|茶屋が坂"
+    # 第二次試跑：中華料理、食堂、餐廳、酒吧、咖哩、連鎖店的分店、道の駅
+    r"|中華|酒家|飯店|食堂|レストラン|(?<![a-z])bar(?![a-z])|バー|カレー|号店|道の駅",
     re.I,
 )
 # 店家以外的 shop（美容院等名稱剛好有「香」）
@@ -384,9 +386,15 @@ def seed_shinise() -> str:
             no_place.append(s.name)
 
     out: list[dict[str, Any]] = []
-    for s, since in kept:
+    # 同一家店的兩個條目（「ういろう (企業)」與「ういろう (薬品)」都在和菓子分類）：留創業早的
+    placed: set[tuple[str, float, float]] = set()
+    for s, since in sorted(kept, key=lambda x: (x[1][0], x[0].title)):
         rec = shop_record(s, since, today)
-        if rec:
+        if not rec:
+            continue
+        key = (rec["name"]["ja"], rec["location"]["lat"], rec["location"]["lng"])
+        if key not in placed:
+            placed.add(key)
             out.append(_clean(rec))
 
     # 香舖：OSM 補維基沒有條目的店（同名的店 1 km 內已有就略過）
