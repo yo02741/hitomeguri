@@ -4,11 +4,10 @@ import { computed } from 'vue'
 import { AIRPORT_AREA } from '../data/airports'
 import { regionOf } from '../data/regions'
 import { useCatalogStore } from '../stores/catalog'
-import RegionModeSwitch from './RegionModeSwitch.vue'
 
 // 地區標籤（DESIGN.md §7.5）：浮在地圖左上。左側是返回鍵，回到首頁的日本地圖。
-// 已驗證的台灣直飛航線列在下方（UX-FLOW.md A7）。explore 時最下方是「地圖｜深度探索」切換。
-const props = defineProps<{ pref: string; explore?: boolean }>()
+// 已驗證的台灣直飛航線列在下方（UX-FLOW.md A7）。
+const props = defineProps<{ pref: string }>()
 const region = computed(() => regionOf(props.pref))
 const catalog = useCatalogStore()
 const routes = computed(() =>
@@ -53,6 +52,5 @@ const routes = computed(() =>
       </span>
     </span>
     <span v-if="routes.length" class="relative mt-1.5 pl-2 font-latin text-caption font-semibold tracking-[1px]">{{ routes.join('　') }}</span>
-    <RegionModeSwitch v-if="explore" :pref="pref" active="map" class="mt-2.5 ml-2" />
   </div>
 </template>

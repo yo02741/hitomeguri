@@ -8,6 +8,7 @@ import PackBar from '../components/PackBar.vue'
 import PackList from '../components/PackList.vue'
 import PackPanel from '../components/PackPanel.vue'
 import RegionLists from '../components/RegionLists.vue'
+import RegionModeSwitch from '../components/RegionModeSwitch.vue'
 import RegionTag from '../components/RegionTag.vue'
 import SpotPanel, { type NearbyPack } from '../components/SpotPanel.vue'
 import TimedList from '../components/TimedList.vue'
@@ -521,11 +522,22 @@ function onMoveEnd(view: MapViewState) {
         <PackBar :pref="pref && regionOf(pref) ? pref : null" />
       </div>
 
+      <!-- 地圖左下、左側面板旁：「地圖｜深度探索」小切換（使用者決定） -->
+      <RegionModeSwitch
+        v-if="pref && regionOf(pref)"
+        :pref="pref"
+        active="map"
+        floating
+        :data-pref="pref"
+        class="absolute bottom-4 z-10 max-lg:hidden"
+        :style="{ left: `${insetLeft}px` }"
+      />
+
       <!-- 左上浮動面板：地區標籤／地區清單、主題篩選、景點與地區特色 -->
       <div
         class="pointer-events-none absolute top-4 bottom-4 left-4 z-10 flex w-float flex-col gap-2.5 *:pointer-events-auto max-lg:right-4 max-lg:bottom-auto max-lg:w-auto"
       >
-        <RegionTag v-if="pref && regionOf(pref)" :pref="pref" explore class="max-lg:hidden" />
+        <RegionTag v-if="pref && regionOf(pref)" :pref="pref" class="max-lg:hidden" />
         <template v-if="pref && regionOf(pref)">
           <section v-if="timedHere.length && !explore.pack" class="shrink-0 rounded-card bg-paper px-3.5 pt-2.5 pb-2 shadow-float max-lg:hidden" aria-labelledby="timed-here">
             <h2 id="timed-here" class="flex items-baseline gap-1.5 text-label font-bold">
