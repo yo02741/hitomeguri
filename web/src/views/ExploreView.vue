@@ -500,28 +500,32 @@ function onMoveEnd(view: MapViewState) {
         @moveend="onMoveEnd"
       />
 
+      <!-- 地圖上方、左側面板旁：只看收藏（登入且有收藏時）＋擴充包列，靠左排（桌機；手機版面暫緩） -->
+      <div
+        class="pointer-events-none absolute top-4 right-4 z-10 flex flex-wrap items-start gap-2 *:pointer-events-auto max-lg:hidden"
+        :style="{ left: `${insetLeft}px` }"
+      >
+        <button
+          v-if="userStore.user && marks.favorites.length"
+          type="button"
+          class="flex h-9 shrink-0 items-center gap-1.5 rounded-full px-3.5 text-label font-bold shadow-float"
+          :class="explore.onlyFavorites ? 'bg-ink text-paper' : 'bg-paper text-ink hover:bg-surface'"
+          :aria-pressed="explore.onlyFavorites"
+          @click="explore.onlyFavorites = !explore.onlyFavorites"
+        >
+          <svg width="16" height="16" viewBox="0 0 24 24" :fill="explore.onlyFavorites ? 'currentColor' : 'none'" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.9l-5.2 2.7 1-5.8-4.3-4.1 5.9-.9z" />
+          </svg>
+          收藏<span class="font-latin">{{ marks.favorites.length }}</span>
+        </button>
+        <PackBar :pref="pref && regionOf(pref) ? pref : null" />
+      </div>
+
       <!-- 左上浮動面板：地區標籤／地區清單、主題篩選、景點與地區特色 -->
       <div
         class="pointer-events-none absolute top-4 bottom-4 left-4 z-10 flex w-float flex-col gap-2.5 *:pointer-events-auto max-lg:right-4 max-lg:bottom-auto max-lg:w-auto"
       >
         <RegionTag v-if="pref && regionOf(pref)" :pref="pref" explore class="max-lg:hidden" />
-        <!-- 只看收藏（登入且有收藏時）＋擴充包列（桌機；手機版面暫緩） -->
-        <div class="flex shrink-0 flex-wrap items-start gap-2 max-lg:hidden">
-          <button
-            v-if="userStore.user && marks.favorites.length"
-            type="button"
-            class="flex h-9 shrink-0 items-center gap-1.5 rounded-full px-3.5 text-label font-bold shadow-float"
-            :class="explore.onlyFavorites ? 'bg-ink text-paper' : 'bg-paper text-ink hover:bg-surface'"
-            :aria-pressed="explore.onlyFavorites"
-            @click="explore.onlyFavorites = !explore.onlyFavorites"
-          >
-            <svg width="16" height="16" viewBox="0 0 24 24" :fill="explore.onlyFavorites ? 'currentColor' : 'none'" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true">
-              <path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.9l-5.2 2.7 1-5.8-4.3-4.1 5.9-.9z" />
-            </svg>
-            收藏<span class="font-latin">{{ marks.favorites.length }}</span>
-          </button>
-          <PackBar :pref="pref && regionOf(pref) ? pref : null" />
-        </div>
         <template v-if="pref && regionOf(pref)">
           <section v-if="timedHere.length && !explore.pack" class="shrink-0 rounded-card bg-paper px-3.5 pt-2.5 pb-2 shadow-float max-lg:hidden" aria-labelledby="timed-here">
             <h2 id="timed-here" class="flex items-baseline gap-1.5 text-label font-bold">

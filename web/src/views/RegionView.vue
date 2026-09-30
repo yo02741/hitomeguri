@@ -8,6 +8,7 @@ import { useCatalogStore } from '../stores/catalog'
 import { useExploreStore } from '../stores/explore'
 import CollapseChevron from '../components/CollapseChevron.vue'
 import FestivalList from '../components/FestivalList.vue'
+import RegionModeSwitch from '../components/RegionModeSwitch.vue'
 import SeasonCalendar from '../components/SeasonCalendar.vue'
 import WebSearchLink from '../components/WebSearchLink.vue'
 import SummaryText from '../components/SummaryText.vue'
@@ -98,15 +99,7 @@ function sourceLabel(url: string): string {
     <header class="relative shrink-0 overflow-hidden bg-region text-on-region">
       <span class="absolute -top-24 -right-16 size-[320px] rounded-full bg-region-accent" aria-hidden="true"></span>
       <div class="relative mx-auto flex w-full max-w-5xl flex-col gap-4 px-6 pt-5 pb-8">
-        <RouterLink
-          :to="`/map/${pref}`"
-          class="flex h-9 w-fit items-center gap-1 rounded-control pr-2.5 pl-1.5 text-label font-bold text-on-region no-underline hover:bg-region-accent"
-        >
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M15 5l-7 7 7 7" />
-          </svg>
-          地圖
-        </RouterLink>
+        <RegionModeSwitch :pref="pref" active="explore" class="w-64" />
         <div class="flex flex-wrap items-end gap-x-6 gap-y-1">
           <div class="flex flex-col">
             <span lang="ja" class="text-body tracking-kana opacity-85">{{ region.name.kana }}</span>
