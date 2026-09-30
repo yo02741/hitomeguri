@@ -51,6 +51,9 @@ function detail(it: PackItem): string {
   return it.a ?? ''
 }
 
+// 名城選取後打開的是對到的景點
+const isSelected = (it: PackItem) => !!props.selectedId && (it.id === props.selectedId || it.s === props.selectedId)
+
 // 「去過」記在對到的景點上（城），沒有的記在這個點
 const visitRef = (it: PackItem) => ({ id: it.s ?? it.id, pref: it.p, name: it.n })
 const visitedCount = computed(() => rows.value.filter((it) => marks.markOf(it.s ?? it.id)?.visited).length)
@@ -126,12 +129,12 @@ const visitedCount = computed(() => rows.value.filter((it) => marks.markOf(it.s 
           v-for="it in isOpen(s.key) ? s.rows : []"
           :key="it.id"
           class="flex shrink-0 items-center rounded-control"
-          :class="it.id === selectedId ? 'bg-region-tint' : 'hover:bg-surface'"
+          :class="isSelected(it) ? 'bg-region-tint' : 'hover:bg-surface'"
         >
           <button
             type="button"
             class="flex min-h-tap min-w-0 flex-1 items-center gap-3 px-1.5 py-1.5 text-left text-ink"
-            :aria-current="it.id === selectedId ? 'true' : undefined"
+            :aria-current="isSelected(it) ? 'true' : undefined"
             @mouseenter="emit('highlight', it.id)"
             @focus="emit('highlight', it.id)"
             @click="emit('select', it.id)"

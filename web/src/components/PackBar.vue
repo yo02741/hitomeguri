@@ -5,7 +5,7 @@ import { PACKS } from '../data/packs'
 import { useCatalogStore } from '../stores/catalog'
 import { useExploreStore } from '../stores/explore'
 
-// 地圖上方的擴充包列（UX-FLOW.md A4）：一次開一個；件數跟著目前的縣，首頁為全國。
+// 地圖左側、地區標籤下方的擴充包列（UX-FLOW.md A4）：一次開一個；件數跟著目前的縣，首頁為全國。
 // 最右邊的圖示打開設定，勾選要顯示哪些擴充包（存在這台瀏覽器）。
 const props = defineProps<{ pref?: string | null }>()
 const catalog = useCatalogStore()
@@ -42,7 +42,8 @@ const chip = 'flex h-9 shrink-0 items-center gap-1.5 rounded-full px-3.5 text-la
 </script>
 
 <template>
-  <div ref="root" class="flex flex-wrap items-start justify-end gap-2">
+  <!-- contents：擴充包鈕和外層的其他鈕（收藏）排在同一列、一起換行 -->
+  <div ref="root" class="contents">
     <button
       v-for="p in shown"
       :key="p.key"
@@ -91,7 +92,7 @@ const chip = 'flex h-9 shrink-0 items-center gap-1.5 rounded-full px-3.5 text-la
       </button>
       <div
         v-if="menuOpen"
-        class="absolute top-11 right-0 z-20 flex w-72 flex-col rounded-card bg-paper p-1.5 shadow-float"
+        class="absolute top-11 left-0 z-20 flex w-72 flex-col rounded-card bg-paper p-1.5 shadow-float"
         role="menu"
       >
         <span class="px-2.5 pt-1.5 pb-1 text-caption font-bold tracking-section text-sub">擴充包</span>
@@ -109,7 +110,7 @@ const chip = 'flex h-9 shrink-0 items-center gap-1.5 rounded-full px-3.5 text-la
             :checked="explore.enabledPacks.includes(p.key)"
             @change="explore.setPackEnabled(p.key, ($event.target as HTMLInputElement).checked)"
           />
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-(--pack)" aria-hidden="true">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 text-(--pack)" aria-hidden="true">
             <path :d="p.icon" />
           </svg>
           <span class="flex min-w-0 flex-col py-1.5">

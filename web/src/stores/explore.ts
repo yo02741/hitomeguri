@@ -7,22 +7,6 @@ import type { SearchHit } from '../services/search'
 // 關掉的擴充包（存關掉的，之後新增的擴充包預設開啟）；舊版存的是開啟清單（當時只有寶可夢）
 const PACKS_OFF_KEY = 'hitomeguri:packs-off'
 const LEGACY_PACKS_KEY = 'hitomeguri:packs'
-const RAIL_KEY = 'hitomeguri:rail'
-
-function loadFlag(key: string): boolean {
-  try {
-    return localStorage.getItem(key) === '1'
-  } catch {
-    return false
-  }
-}
-function saveFlag(key: string, on: boolean) {
-  try {
-    localStorage.setItem(key, on ? '1' : '0')
-  } catch {
-    /* 略過 */
-  }
-}
 
 function readList(key: string): string[] | null {
   const raw = localStorage.getItem(key)
@@ -71,9 +55,6 @@ export const useExploreStore = defineStore('explore', () => {
       ? collapsed.value.filter((k) => k !== key)
       : [...collapsed.value, key]
   }
-  // 鐵路圖層（地圖上方的開關）；存在這台瀏覽器
-  const rail = ref(loadFlag(RAIL_KEY))
-  watch(rail, (on) => saveFlag(RAIL_KEY, on))
   // 地圖只顯示收藏的景點（地圖上方的開關；不存）
   const onlyFavorites = ref(false)
   // header 搜尋選到的結果，由探索頁接手（進入該縣、選取景點）
@@ -100,7 +81,7 @@ export const useExploreStore = defineStore('explore', () => {
   }
 
   return {
-    activePref, category, pack, packGroup, enabledPacks, searchPick, collapsed, rail, onlyFavorites,
+    activePref, category, pack, packGroup, enabledPacks, searchPick, collapsed, onlyFavorites,
     setActivePref, togglePack, setPackEnabled, toggleCollapsed,
   }
 })

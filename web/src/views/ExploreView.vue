@@ -133,6 +133,13 @@ const packMap = computed(() => {
   return { color: def.color, points: items.filter((it) => !explore.packGroup || it.g === explore.packGroup) }
 })
 
+// 擴充包開著、選到的是名城對到的景點時，地圖上標出名城的點
+const mapSelectedId = computed(() => {
+  const id = selectedId.value
+  if (!id || !explore.pack) return id
+  return catalog.packs[explore.pack]?.find((it) => it.s === id)?.id ?? id
+})
+
 /** 選取中的擴充包點 */
 const selectedPack = computed<{ pack: string; item: PackItem } | null>(() => {
   const id = selectedId.value
@@ -215,21 +222,20 @@ function union(
   return [Math.min(a[0], b[0]), Math.min(a[1], b[1]), Math.max(a[2], b[2]), Math.max(a[3], b[3])]
 }
 
-// 鐵路圖層：開關打開且在地區頁時載入該縣的路線與車站，轉成地圖用的 GeoJSON
+// 鐵路圖層：地區頁一律顯示該縣的路線與車站（使用者決定，不需開關），轉成地圖用的 GeoJSON
 const railBundle = shallowRef<RailBundle | null>(null)
 watch(
-  () => [explore.rail, props.pref] as const,
-  async ([on, pref]) => {
-    if (!on || !pref || !regionOf(pref)) {
+  () => props.pref,
+  async (pref) => {
+    if (!pref || !regionOf(pref)) {
       railBundle.value = null
       return
     }
     const data = await catalog.loadRail(pref)
-    if (explore.rail && props.pref === pref) railBundle.value = data
+    if (props.pref === pref) railBundle.value = data
   },
   { immediate: true },
 )
-const railAvailable = computed(() => Boolean(props.pref && catalog.index?.rail?.[props.pref]))
 const railMap = computed(() => {
   const r = railBundle.value
   if (!r) return null
@@ -328,7 +334,12 @@ watch(
     if (pack) {
       selectedSpot.value = null
       const items = await catalog.loadPack(pack)
-      if (!items.some((it) => it.id === id) && selectedId.value === id) closeSpot()
+      const item = items.find((it) => it.id === id)
+      if (item?.s && selectedId.value === id) {
+        await router.replace({ query: { ...route.query, spot: item.s } })
+        return
+      }
+      if (!item && selectedId.value === id) closeSpot()
       return
     }
     loadingSpot.value = true
@@ -342,13 +353,16 @@ watch(
 
 async function select(id: string) {
   const pack = packOfId(id)
+  const item = pack ? catalog.packs[pack]?.find((x) => x.id === id) : undefined
   // 從景點卡片的「附近」點進擴充包的點：一併開啟那個擴充包
   if (pack && explore.pack !== pack) explore.pack = pack
+  // 已經是景點的點（名城）：直接開景點卡片，名城番號等顯示在卡片上
+  const target = item?.s ?? id
   // 選了景點就收起地點標記
   const { at: _at, label: _label, ...rest } = route.query
-  await router.replace({ query: { ...rest, spot: id, ...(pack ? { pack } : {}) } })
+  await router.replace({ query: { ...rest, spot: target, ...(pack ? { pack } : {}) } })
   await nextTick()
-  const s = pack ? catalog.packs[pack]?.find((x) => x.id === id) : allSpots.value.find((x) => x.id === id)
+  const s = item ?? allSpots.value.find((x) => x.id === id)
   // 縮放 15：群集全部散開（clusterMaxZoom 14），看得出選到的是哪一個點
   if (s) mapRef.value?.flyTo(s.lng, s.lat, 15)
 }
@@ -472,7 +486,7 @@ function onMoveEnd(view: MapViewState) {
       <MapView
         ref="mapRef"
         :spots="visibleSpots"
-        :selected-id="selectedId"
+        :selected-id="mapSelectedId"
         :bounds="bounds"
         :color-key="explore.activePref"
         :inset-left="insetLeft"
@@ -486,62 +500,29 @@ function onMoveEnd(view: MapViewState) {
         @moveend="onMoveEnd"
       />
 
-      <!-- 地圖上方：深度探索入口（地區頁）＋擴充包列（桌機；手機版面暫緩） -->
-      <div
-        class="pointer-events-none absolute top-4 right-4 left-[calc(var(--spacing-float)+2rem)] z-10 flex flex-wrap items-start justify-end gap-2 *:pointer-events-auto max-lg:hidden"
-        :style="{ left: `${insetLeft}px` }"
-      >
-        <RouterLink
-          v-if="pref && regionOf(pref)"
-          :to="`/region/${pref}`"
-          :aria-label="`深度探索 ${regionOf(pref)!.name.ja}`"
-          class="flex h-9 shrink-0 items-center gap-1.5 rounded-full bg-region-strong pr-3 pl-3.5 text-label font-bold text-white no-underline shadow-float hover:opacity-90"
-        >
-          深度探索
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M9 5l7 7-7 7" />
-          </svg>
-        </RouterLink>
-        <!-- 只看收藏：登入且有收藏時出現 -->
-        <button
-          v-if="userStore.user && marks.favorites.length"
-          type="button"
-          class="flex h-9 shrink-0 items-center gap-1.5 rounded-full px-3.5 text-label font-bold shadow-float"
-          :class="explore.onlyFavorites ? 'bg-ink text-paper' : 'bg-paper text-ink hover:bg-surface'"
-          :aria-pressed="explore.onlyFavorites"
-          @click="explore.onlyFavorites = !explore.onlyFavorites"
-        >
-          <svg width="16" height="16" viewBox="0 0 24 24" :fill="explore.onlyFavorites ? 'currentColor' : 'none'" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true">
-            <path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.9l-5.2 2.7 1-5.8-4.3-4.1 5.9-.9z" />
-          </svg>
-          收藏<span class="font-latin">{{ marks.favorites.length }}</span>
-        </button>
-        <!-- 鐵路圖層開關：路線與車站，和擴充包可以同時開 -->
-        <button
-          v-if="pref && regionOf(pref)"
-          type="button"
-          class="flex h-9 shrink-0 items-center gap-1.5 rounded-full px-3.5 text-label font-bold shadow-float disabled:opacity-50"
-          :class="explore.rail ? 'bg-ink text-paper' : 'bg-paper text-ink hover:bg-surface'"
-          :aria-pressed="explore.rail"
-          :disabled="!railAvailable"
-          @click="explore.rail = !explore.rail"
-        >
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <rect x="6" y="3" width="12" height="13" rx="3" />
-            <path d="M6 10h12M9 16l-2 5M15 16l2 5M9.5 13h.01M14.5 13h.01" />
-          </svg>
-          鐵路
-        </button>
-        <span v-if="pref && regionOf(pref)" class="h-9 w-px shrink-0 bg-line" aria-hidden="true"></span>
-        <PackBar :pref="pref && regionOf(pref) ? pref : null" />
-      </div>
-
       <!-- 左上浮動面板：地區標籤／地區清單、主題篩選、景點與地區特色 -->
       <div
         class="pointer-events-none absolute top-4 bottom-4 left-4 z-10 flex w-float flex-col gap-2.5 *:pointer-events-auto max-lg:right-4 max-lg:bottom-auto max-lg:w-auto"
       >
+        <RegionTag v-if="pref && regionOf(pref)" :pref="pref" explore class="max-lg:hidden" />
+        <!-- 只看收藏（登入且有收藏時）＋擴充包列（桌機；手機版面暫緩） -->
+        <div class="flex shrink-0 flex-wrap items-start gap-2 max-lg:hidden">
+          <button
+            v-if="userStore.user && marks.favorites.length"
+            type="button"
+            class="flex h-9 shrink-0 items-center gap-1.5 rounded-full px-3.5 text-label font-bold shadow-float"
+            :class="explore.onlyFavorites ? 'bg-ink text-paper' : 'bg-paper text-ink hover:bg-surface'"
+            :aria-pressed="explore.onlyFavorites"
+            @click="explore.onlyFavorites = !explore.onlyFavorites"
+          >
+            <svg width="16" height="16" viewBox="0 0 24 24" :fill="explore.onlyFavorites ? 'currentColor' : 'none'" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.9l-5.2 2.7 1-5.8-4.3-4.1 5.9-.9z" />
+            </svg>
+            收藏<span class="font-latin">{{ marks.favorites.length }}</span>
+          </button>
+          <PackBar :pref="pref && regionOf(pref) ? pref : null" />
+        </div>
         <template v-if="pref && regionOf(pref)">
-          <RegionTag :pref="pref" class="max-lg:hidden" />
           <section v-if="timedHere.length && !explore.pack" class="shrink-0 rounded-card bg-paper px-3.5 pt-2.5 pb-2 shadow-float max-lg:hidden" aria-labelledby="timed-here">
             <h2 id="timed-here" class="flex items-baseline gap-1.5 text-label font-bold">
               期間限定<span class="font-latin font-normal text-sub">{{ timedHere.length }}</span>

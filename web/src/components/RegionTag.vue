@@ -6,8 +6,8 @@ import { regionOf } from '../data/regions'
 import { useCatalogStore } from '../stores/catalog'
 
 // 地區標籤（DESIGN.md §7.5）：浮在地圖左上。左側是返回鍵，回到首頁的日本地圖。
-// 已驗證的台灣直飛航線列在下方（UX-FLOW.md A7）。
-const props = defineProps<{ pref: string }>()
+// 已驗證的台灣直飛航線列在下方（UX-FLOW.md A7）。explore 時最下方是深度探索的入口。
+const props = defineProps<{ pref: string; explore?: boolean }>()
 const region = computed(() => regionOf(props.pref))
 const catalog = useCatalogStore()
 const routes = computed(() =>
@@ -52,5 +52,16 @@ const routes = computed(() =>
       </span>
     </span>
     <span v-if="routes.length" class="relative mt-1.5 pl-2 font-latin text-caption font-semibold tracking-[1px]">{{ routes.join('　') }}</span>
+    <RouterLink
+      v-if="explore"
+      :to="`/region/${pref}`"
+      :aria-label="`深度探索 ${region.name.ja}`"
+      class="relative mt-2.5 ml-2 flex h-9 items-center justify-between rounded-control bg-region-strong pr-2.5 pl-3.5 text-label font-bold text-white no-underline hover:opacity-90"
+    >
+      深度探索
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M9 5l7 7-7 7" />
+      </svg>
+    </RouterLink>
   </div>
 </template>
