@@ -220,3 +220,16 @@ def qids(site: str, titles: list[str]) -> dict[str, str]:
         for t, p in pages.items()
         if p.get("pageprops", {}).get("wikibase_item")
     }
+
+
+def wikitexts(site: str, titles: list[str]) -> dict[str, str]:
+    """條目目前的原始碼（wikitext），key 是傳入的標題（重新導向前）。"""
+    pages = _batched_pages(
+        site, titles, {"prop": "revisions", "rvprop": "content", "rvslots": "main"}
+    )
+    out: dict[str, str] = {}
+    for t, p in pages.items():
+        revs = p.get("revisions") or []
+        if revs:
+            out[t] = revs[0].get("slots", {}).get("main", {}).get("content", "")
+    return out

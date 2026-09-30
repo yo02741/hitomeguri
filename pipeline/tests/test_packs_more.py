@@ -54,7 +54,23 @@ def test_pick_store_prefers_main_store(monkeypatch):
     assert pack_shinise.pick_store("鶴屋吉信", "kyoto", els[1:2] + [
         OsmElement("node/2", 2, 0, {"name": "鶴屋吉信 京都駅店"})]) is None  # fmt: skip
     assert pack_shinise.pick_store("鶴屋吉信", "tokyo", els).osm_id == "node/3"
-    assert pack_shinise.pick_store("鶴屋吉信", None, els) is None
+    # 不知道縣、各縣都有：只有一家本店時用本店
+    assert pack_shinise.pick_store("鶴屋吉信", None, els).osm_id == "node/1"
+    assert pack_shinise.pick_store("鶴屋吉信", None, els[1:]) is None
+    # 店名前後有其他字（香老舗 松栄堂 京都本店）也算；兩個字的短名只比開頭
+    shop = [OsmElement("node/1", 1, 0, {"name": "香老舗 松栄堂 京都本店"})]
+    assert pack_shinise.pick_store("松栄堂", "kyoto", shop).osm_id == "node/1"
+    assert pack_shinise.pick_store("虎屋", "kyoto", [OsmElement("node/1", 1, 0, {"name": "大虎屋"})]) is None
+
+
+def test_infobox_founded():
+    box = "{{基礎情報 会社\n| 社名 = 一保堂茶舗\n| 創業 = [[1717年]]（[[享保]]2年）<ref>社史</ref>\n| 設立 = 1948年\n}}"
+    assert pack_shinise.infobox_founded(box) == (1717, "1717年")
+    assert pack_shinise.infobox_founded("| 創業 = 寛永年間（1624年 - 1644年）") == (1624, "1624年")
+    assert pack_shinise.infobox_founded("| 創業 = 17世紀初め") == (1601, "17世紀")
+    assert pack_shinise.infobox_founded("| 創業 = 享保2年") is None
+    # 公司登記（設立）比創業晚：取資訊框的創業
+    assert pack_shinise.founded(["1948年設立の企業"], [1948], box) == (1717, "1717年")
 
 
 def test_chara_brand_and_record(monkeypatch):
@@ -68,6 +84,32 @@ def test_chara_brand_and_record(monkeypatch):
     assert rec["id"] == "chara-node-9" and rec["kind"] == "sanrio"
     hotel = OsmElement("way/1", 35.6, 139.7, {"name": "ハローキティルーム", "tourism": "hotel"})
     assert pack_chara.chara_record(hotel, "d") is None
+    # 遊樂設施、園區裡的看板不收；園區本身收
+    ride = {"name": "フライング・スヌーピー", "tourism": "attraction", "attraction": "roller_coaster"}
+    assert pack_chara.chara_record(OsmElement("node/2", 34.6, 135.4, ride), "d") is None
+    sign = {"name": "キャラクター身長計（ONE PIECE）", "tourism": "attraction"}
+    assert pack_chara.chara_record(OsmElement("node/3", 34.6, 135.4, sign), "d") is None
+    park = {"name": "サンリオピューロランド", "tourism": "attraction"}
+    assert pack_chara.chara_record(OsmElement("node/4", 35.6, 139.4, park), "d")["kind"] == "sanrio"
+
+
+def test_chara_dedupe():
+    def rec(i, kind, name, lat, lng, **kw):
+        return {"id": f"chara-node-{i}", "kind": kind, "name": {"ja": name},
+                "location": {"lat": lat, "lng": lng}, **kw}  # fmt: skip
+
+    recs = [
+        rec(1, "ghibli", "三鷹の森ジブリ美術館", 35.6962, 139.5704),
+        rec(2, "ghibli", "三鷹の森ジブリ美術館", 35.6963, 139.5706, website="x"),
+        rec(3, "sanrio", "HELLO KITTY HAPPY FLIGHT", 42.7876, 141.6800),
+        rec(4, "sanrio", "ハローキティハッピーフライト", 42.7877, 141.6801),
+        # 同名但在不同地方：兩家
+        rec(5, "sanrio", "Sanrio Gift Gate", 35.690, 139.700),
+        rec(6, "sanrio", "Sanrio Gift Gate", 35.660, 139.700),
+    ]
+    out = {r["id"] for r in pack_chara.dedupe(recs)}
+    assert out == {"chara-node-2", "chara-node-4", "chara-node-5", "chara-node-6"} or out == {
+        "chara-node-2", "chara-node-3", "chara-node-5", "chara-node-6"}  # fmt: skip
 
 
 def test_new_pack_bundles(tmp_path):
@@ -110,6 +152,7 @@ def test_seed_shinise_end_to_end(tmp_path, monkeypatch):
         "松栄堂": ["18世紀設立の企業"], "鶴屋吉信": ["19世紀の日本の設立"], "新しい店": ["1990年設立の企業"],
     })  # fmt: skip
     monkeypatch.setattr(pack_shinise.wikipedia, "qids", lambda site, titles: {"松栄堂": "Q1", "鶴屋吉信": "Q2"})
+    monkeypatch.setattr(pack_shinise.wikipedia, "wikitexts", lambda site, titles: {"鶴屋吉信": "| 創業 = 1803年"})
     monkeypatch.setattr(pack_shinise.wikipedia, "coordinates", lambda site, titles: {})
     ents = {
         "Q1": wd.Entity("Q1", labels={"zh-tw": "松榮堂"}, lat=35.01, lng=135.76),
