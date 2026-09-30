@@ -45,7 +45,15 @@ const isDrop = (idx: number) => props.dropAt?.day === props.day && props.dropAt.
 </script>
 
 <template>
-  <ol class="flex min-h-12 flex-col rounded-control" :class="dropAt?.day === day ? 'bg-surface' : ''" @dragover="onOverList" @drop.prevent="emit('drop')">
+  <!-- 排序、換天時停留點滑到新的位置（DESIGN.md §9） -->
+  <TransitionGroup
+    tag="ol"
+    name="stop"
+    class="flex min-h-12 flex-col rounded-control"
+    :class="dropAt?.day === day ? 'bg-surface' : ''"
+    @dragover="onOverList"
+    @drop.prevent="emit('drop')"
+  >
     <template v-for="(s, i) in stops" :key="s.spot_id">
       <li
         v-if="day >= 0 && i > 0"
@@ -102,12 +110,32 @@ const isDrop = (idx: number) => props.dropAt?.day === props.day && props.dropAt.
     </template>
     <li
       v-if="!stops.length"
+      key="empty"
       class="px-2 py-3 text-caption text-sub"
       :class="isDrop(0) ? 'border-t-2 border-region-strong' : ''"
       @dragover.prevent="emit('dragover', { day, idx: 0 })"
     >
       {{ day >= 0 ? '這天還沒有地點' : '沒有待排的地點' }}
     </li>
-    <li v-else-if="isDrop(stops.length)" class="h-0 border-t-2 border-region-strong" aria-hidden="true"></li>
-  </ol>
+    <li v-else-if="isDrop(stops.length)" key="drop-end" class="h-0 border-t-2 border-region-strong" aria-hidden="true"></li>
+  </TransitionGroup>
 </template>
+
+<style scoped>
+.stop-move {
+  transition: transform 0.25s var(--ease-out-soft);
+}
+.stop-enter-active {
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s var(--ease-out-soft);
+}
+.stop-enter-from {
+  opacity: 0;
+  transform: translateY(-4px);
+}
+/* 離開不做動畫：換天時直接從這天拿掉 */
+.stop-leave-active {
+  display: none;
+}
+</style>

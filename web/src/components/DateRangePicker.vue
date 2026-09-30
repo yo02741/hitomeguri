@@ -101,7 +101,7 @@ const days = computed(() => dayCount(draftStart.value || undefined, (draftEnd.va
       v-if="open"
       ref="panel"
       :data-pref="pref"
-      class="fixed z-50"
+      class="fixed z-50 animate-pop-in"
       :style="style"
       role="dialog"
       :aria-label="label"

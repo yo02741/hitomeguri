@@ -127,7 +127,7 @@ async function logOut() {
       ref="menu"
       role="menu"
       aria-label="帳號選單"
-      class="absolute top-12 right-0 z-30 flex w-60 flex-col rounded-card bg-paper p-1.5 shadow-float"
+      class="absolute top-12 right-0 z-30 flex w-60 origin-top-right animate-pop-in flex-col rounded-card bg-paper p-1.5 shadow-float"
       @keydown="onMenuKey"
     >
       <div class="flex flex-col px-2.5 pt-1.5 pb-2.5">

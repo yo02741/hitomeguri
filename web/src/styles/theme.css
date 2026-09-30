@@ -112,6 +112,22 @@
   @keyframes panel-in {
     from { opacity: 0; transform: translateY(10px); }
   }
+  /* 選單、日期選擇、搜尋結果打開時淡入（往下開的從上方、往上開的從下方） */
+  --animate-pop-in: pop-in 0.16s var(--ease-out-soft) both;
+  --animate-pop-up: pop-up 0.16s var(--ease-out-soft) both;
+  @keyframes pop-in {
+    from { opacity: 0; transform: translateY(-4px) scale(0.98); }
+  }
+  @keyframes pop-up {
+    from { opacity: 0; transform: translateY(4px) scale(0.98); }
+  }
+  /* 收藏：星星彈一下（只在自己按下時） */
+  --animate-star-pop: star-pop 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+  @keyframes star-pop {
+    0% { transform: scale(0.4) rotate(-30deg); }
+    60% { transform: scale(1.25) rotate(8deg); }
+    100% { transform: none; }
+  }
   /* 手機的景點卡片從下方升上來 */
   --animate-sheet-in: sheet-in 0.32s var(--ease-out-soft) both;
   @keyframes sheet-in {

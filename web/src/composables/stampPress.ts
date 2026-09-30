@@ -1,7 +1,7 @@
 import { ref, watch } from 'vue'
 
 /**
- * 去過的蓋章動畫（DESIGN.md §9）：只在自己按下「去過」、狀態真的變成去過時播放一次；
+ * 按下切換時的動畫（去過的蓋章、收藏的星星，DESIGN.md §9）：只在自己按下、狀態真的變成開啟時播放一次；
  * 換景點、其他裝置同步過來的變化不播。arm() 在按下時呼叫，key 變了就換新元素讓動畫重播。
  */
 export function useStampPress(on: () => boolean, id: () => string) {

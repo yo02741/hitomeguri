@@ -83,7 +83,7 @@ function onKey(e: KeyboardEvent) {
       v-if="showList"
       id="search-results"
       role="listbox"
-      class="scroll-quiet absolute top-12 right-0 z-30 flex max-h-[60dvh] w-full flex-col overflow-y-auto rounded-card bg-paper p-1.5 shadow-float"
+      class="scroll-quiet absolute top-12 right-0 z-30 flex max-h-[60dvh] w-full origin-top animate-pop-in flex-col overflow-y-auto rounded-card bg-paper p-1.5 shadow-float"
     >
       <li
         v-for="(h, i) in hits"

@@ -18,11 +18,18 @@ const userStore = useUserStore()
 const mark = computed(() => marks.markOf(props.spot.id))
 const disabled = computed(() => !userStore.canSignIn)
 
-// 按下去過時蓋章（DESIGN.md §9）
+// 按下去過時蓋章、按下收藏時星星彈一下（DESIGN.md §9）
 const { pressing, key: stampKey, arm } = useStampPress(() => Boolean(mark.value?.visited), () => props.spot.id)
 function toggleVisited() {
   arm()
   void marks.toggleVisited(props.spot)
+}
+const star = useStampPress(() => Boolean(mark.value?.favorite), () => props.spot.id)
+const starPop = star.pressing
+const starKey = star.key
+function toggleFavorite() {
+  star.arm()
+  void marks.toggleFavorite(props.spot)
 }
 
 // 清單、行程的選單（一次開一個）
@@ -119,9 +126,20 @@ const visitedShort = computed(() => {
         "
         :aria-pressed="Boolean(mark?.favorite)"
         :disabled="disabled"
-        @click="marks.toggleFavorite(spot)"
+        @click="toggleFavorite"
       >
-        <svg width="16" height="16" viewBox="0 0 24 24" :fill="mark?.favorite ? 'currentColor' : 'none'" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true">
+        <svg
+          :key="starKey"
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          :fill="mark?.favorite ? 'currentColor' : 'none'"
+          stroke="currentColor"
+          stroke-width="1.8"
+          stroke-linejoin="round"
+          aria-hidden="true"
+          :class="starPop ? 'animate-star-pop' : ''"
+        >
           <path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.9l-5.2 2.7 1-5.8-4.3-4.1 5.9-.9z" />
         </svg>
         收藏
@@ -203,7 +221,7 @@ const visitedShort = computed(() => {
       <!-- 行程選單：每個行程選「待排」或某一天後加入；最下面新增行程 -->
       <div
         v-if="open === 'trips'"
-        class="absolute right-0 bottom-full left-0 z-30 mb-2 flex max-h-[50dvh] flex-col rounded-card bg-paper p-1.5 shadow-float"
+        class="absolute right-0 bottom-full left-0 z-30 mb-2 flex max-h-[50dvh] origin-bottom animate-pop-up flex-col rounded-card bg-paper p-1.5 shadow-float"
         role="group"
         aria-label="加入行程"
       >
@@ -256,7 +274,7 @@ const visitedShort = computed(() => {
       <!-- 清單選單：勾選加入或移出；最下面新增清單 -->
       <div
         v-if="open === 'lists'"
-        class="absolute right-0 bottom-full left-0 z-30 mb-2 flex max-h-[50dvh] flex-col rounded-card bg-paper p-1.5 shadow-float"
+        class="absolute right-0 bottom-full left-0 z-30 mb-2 flex max-h-[50dvh] origin-bottom animate-pop-up flex-col rounded-card bg-paper p-1.5 shadow-float"
         role="group"
         aria-label="加入清單"
       >
