@@ -14,6 +14,7 @@ export interface MapSpot {
   t?: string[] // 主題
   c?: string // 分類
   i?: string // 地圖用小圖：Commons 縮圖路徑（省略前綴）或完整網址
+  d?: string // 最高的文化指定（世界遺產、國寶、特別史跡、特別名勝）：收集卡的稀有度
 }
 
 const COMMONS_THUMB_PREFIX = 'https://thumb.wikimedia.org/wikipedia/commons/thumb/'

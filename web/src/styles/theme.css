@@ -215,3 +215,19 @@
   background-size: 220px 220px;
   background-blend-mode: multiply;
 }
+/* 載入中的佔位（DESIGN.md §9）：佔位底色上一道淡光掃過，取代「載入中」文字 */
+@utility skeleton {
+  background-color: var(--region-placeholder);
+  background-image: linear-gradient(100deg, transparent 30%, color-mix(in oklab, var(--region-paper) 65%, transparent) 50%, transparent 70%);
+  background-size: 250% 100%;
+  background-repeat: no-repeat;
+  animation: skeleton-sweep 1.4s ease-in-out infinite;
+}
+@keyframes skeleton-sweep {
+  from {
+    background-position: 150% 0;
+  }
+  to {
+    background-position: -50% 0;
+  }
+}

@@ -7,14 +7,17 @@ import DateRangePicker from '../components/DateRangePicker.vue'
 import ExportButtons from '../components/ExportButtons.vue'
 import MapView from '../components/MapView.vue'
 import MarkedSpotList from '../components/MarkedSpotList.vue'
+import SpotCard from '../components/SpotCard.vue'
 import TripCard from '../components/TripCard.vue'
 import { type MarkedSpot, useMarkedSpots } from '../composables/markedSpots'
+import { useVisitedEntries } from '../composables/visited'
+import { useCollection } from '../composables/collection'
 import { markRow } from '../services/export'
 import type { MapSpot } from '../services/bundles'
-import { dayDate, TRIP_NAME_MAX, tripStatus } from '../services/trip'
+import { TRIP_NAME_MAX } from '../services/trip'
 import { todayIso } from '../services/userdb'
 import { useCatalogStore } from '../stores/catalog'
-import { type Mark, useMarksStore } from '../stores/marks'
+import { useMarksStore } from '../stores/marks'
 import { useTripsStore } from '../stores/trips'
 import { useUserStore } from '../stores/user'
 
@@ -26,21 +29,17 @@ const trips = useTripsStore()
 const catalog = useCatalogStore()
 const router = useRouter()
 
-const doneTrips = computed(() => trips.sorted.filter((t) => tripStatus(t, trips.today) === 'done'))
-const visitedEntries = computed<Array<[string, Mark]>>(() => {
-  const out = new Map<string, Mark>()
-  for (const t of doneTrips.value) {
-    t.days.forEach((d, i) => {
-      for (const s of d.stops) {
-        if (!out.has(s.spot_id)) out.set(s.spot_id, { pref: s.pref, name: s.name, visited: true, visited_on: dayDate(t, i) })
-      }
-    })
-  }
-  // 自己標的去過優先（日期以自己填的為準）
-  for (const [id, m] of marks.visited) out.set(id, { ...m, visited_on: m.visited_on ?? out.get(id)?.visited_on })
-  return [...out.entries()]
-})
+const { doneTrips, entries: visitedEntries } = useVisitedEntries()
 const { rows, loading } = useMarkedSpots(() => visitedEntries.value)
+
+// 收集冊入口：最近去過的三張卡片疊成扇形（DESIGN.md §7.19）
+const { cards, prefDone } = useCollection(() => visitedEntries.value)
+const fan = computed(() =>
+  [...cards.value]
+    .sort((a, b) => (b.visitedOn ?? '').localeCompare(a.visitedOn ?? '') || b.score - a.score)
+    .slice(0, 3)
+    .reverse(),
+)
 const sorted = computed(() =>
   [...rows.value].sort((a, b) => (b.mark.visited_on ?? '').localeCompare(a.mark.visited_on ?? '')),
 )
@@ -106,6 +105,40 @@ function open(id: string) {
     <h1 class="text-h2 font-black tracking-[2px]">紀錄</h1>
 
     <template v-if="userStore.user">
+      <RouterLink
+        to="/log/cards"
+        class="collect paper-grain group relative flex h-[132px] items-center gap-3 overflow-hidden rounded-card bg-region pr-5 text-on-region no-underline"
+      >
+        <div class="relative h-full w-[172px] shrink-0" aria-hidden="true">
+          <template v-if="fan.length">
+            <div
+              v-for="(e, i) in fan"
+              :key="e.face.id"
+              class="fan-card pointer-events-none absolute top-[20px] left-[48px] w-[76px] @container"
+              :style="{ '--k': i - (fan.length - 1) / 2 }"
+            >
+              <SpotCard :card="e.face" :rarity="e.rarity" :label="e.label" :number="e.number" size="fluid" />
+            </div>
+          </template>
+          <template v-else>
+            <div
+              v-for="k in 3"
+              :key="k"
+              class="fan-card absolute top-[20px] left-[48px] aspect-[5/7] w-[76px] rounded-[8px] border-2 border-dashed border-on-region/40"
+              :style="{ '--k': k - 2 }"
+            ></div>
+          </template>
+        </div>
+        <div class="flex min-w-0 flex-col gap-0.5">
+          <span class="text-title font-black tracking-[2px]">收集冊</span>
+          <span class="text-label">
+            <span class="font-latin text-body-sm font-semibold">{{ cards.length }}</span> 張・都道府縣
+            <span class="font-latin text-body-sm font-semibold">{{ prefDone.size }}</span> / 47
+          </span>
+        </div>
+        <svg class="ml-auto shrink-0 transition-transform group-hover:translate-x-1" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7" /></svg>
+      </RouterLink>
+
       <div class="relative h-[360px] overflow-hidden rounded-card border border-line max-md:h-[260px]">
         <MapView :spots="spots" :bounds="bounds" :marked="visitedOnly" @select="open" />
       </div>
@@ -212,3 +245,16 @@ function open(id: string) {
     <p v-else class="text-body-sm text-sub">收藏、行程與紀錄需要登入。</p>
   </section>
 </template>
+
+<style scoped>
+/* 收集冊入口的扇形：滑過時展開 */
+.fan-card {
+  transform-origin: 50% 130%;
+  transform: rotate(calc(var(--k) * 11deg)) translateX(calc(var(--k) * 10px));
+  transition: transform 0.35s var(--ease-out-soft);
+}
+.collect:hover .fan-card,
+.collect:focus-visible .fan-card {
+  transform: translateY(-6px) rotate(calc(var(--k) * 15deg)) translateX(calc(var(--k) * 16px));
+}
+</style>

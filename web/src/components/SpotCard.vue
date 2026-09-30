@@ -1,35 +1,36 @@
 <script setup lang="ts">
-import { computed, ref } from 'vue'
+import { computed, ref, watch } from 'vue'
 
 import { useTilt } from '../composables/tilt'
 import { NATIONAL_PATTERN, PATTERN_BY_AREA } from '../data/patterns'
 import { regionOf } from '../data/regions'
-import type { Spot } from '../services/bundles'
-import { RARITY_LABEL, type Rarity } from '../services/card'
+import { type CardFace, commonsThumb, type Rarity } from '../services/card'
 import RegionMotif from './RegionMotif.vue'
 
 // 景點收集卡（DESIGN.md §7.19）：卡面是景點的照片與名稱區塊，框是地區色＋紙紋；
-// 稀有卡有箔片（世界遺產＝虹、名城＝地方紋樣、特別指定＝金），滑鼠或手機傾斜時卡片轉動、反光移動。
-// 尺寸全部用 em，外層 font-size 決定大小（sm 清單、lg 放大檢視）。
+// 稀有卡有箔片（世界遺產＝虹、名城＝地方紋樣、國寶・特別史跡・特別名勝＝金），滑鼠或手機傾斜時卡片轉動、反光移動。
+// 尺寸全部用 em：sm 固定 200px 寬、lg 320px 寬；fluid 跟著外層容器寬（外層要有 container-type: inline-size）。
 const props = withDefaults(
   defineProps<{
-    spot: Spot
+    card: CardFace
     rarity: Rarity
+    /** 右上的指定標示（世界遺產、100名城…） */
+    label?: string
     number?: string
     visitedOn?: string | null
     visited?: boolean
-    size?: 'sm' | 'lg'
+    size?: 'sm' | 'lg' | 'fluid'
     flipped?: boolean
     /** 放大檢視時由外層傳入（手機傾斜也在外層啟動） */
     tilt?: ReturnType<typeof useTilt>
   }>(),
-  { size: 'sm', number: '', visitedOn: null, visited: false, flipped: false, tilt: undefined },
+  { label: '', size: 'sm', number: '', visitedOn: null, visited: false, flipped: false, tilt: undefined },
 )
 
 const own = useTilt(props.size === 'lg' ? 16 : 12)
 const t = computed(() => props.tilt ?? own)
 
-const region = computed(() => regionOf(props.spot.prefecture))
+const region = computed(() => regionOf(props.card.pref))
 const pattern = computed(() => (region.value && PATTERN_BY_AREA[region.value.area]) || NATIONAL_PATTERN)
 const PATTERN_CLASS: Record<string, string> = {
   seigaiha: 'wa-seigaiha',
@@ -42,52 +43,58 @@ const PATTERN_CLASS: Record<string, string> = {
   hishi: 'wa-hishi',
 }
 
-const failed = ref(false)
-const image = computed(() => (failed.value ? undefined : props.spot.images[0]))
-const category = computed(() => props.spot.tags.filter((x) => !x.startsWith('guide-')).slice(0, 2))
+// 照片：小卡用 500px 縮圖；縮圖取不到時改用原網址，再不行就退回紋樣
+const tries = ref(0)
+watch(() => props.card.image?.url, () => (tries.value = 0))
+const imageSrc = computed(() => {
+  const url = props.card.image?.url
+  if (!url) return undefined
+  const thumb = commonsThumb(url, props.size === 'lg' ? 960 : 500)
+  const list = thumb === url ? [url] : [thumb, url]
+  return list[tries.value]
+})
 // 名稱越長字越小，一行放得下
 const nameSize = computed(() => {
-  const n = props.spot.name.ja.length
+  const n = props.card.name.ja.length
   return n <= 4 ? 'text-[2em]' : n <= 7 ? 'text-[1.6em]' : n <= 10 ? 'text-[1.25em]' : 'text-[1.02em]'
 })
-const summary = computed(() => {
-  const s = props.spot.summary
-  return s ? (s.text_zh ?? s.text) : ''
-})
 const dateText = computed(() => (props.visitedOn ? props.visitedOn.replaceAll('-', '.') : ''))
+const sizeClass = { sm: 'text-[10px]', lg: 'text-[16px]', fluid: 'fluid' }
 </script>
 
 <template>
   <div
     class="card-scene select-none"
-    :class="size === 'lg' ? 'text-[16px]' : 'text-[10px]'"
+    :class="sizeClass[size]"
     :style="t.style.value"
     @pointermove="tilt ? undefined : own.onPointerMove($event)"
     @pointerleave="tilt ? undefined : own.reset()"
   >
-    <div class="card relative aspect-[5/7] w-[20em]" :class="[{ 'is-flipped': flipped }, `rarity-${rarity}`]" :data-pref="spot.prefecture">
+    <div class="card relative aspect-[5/7] w-[20em]" :class="[{ 'is-flipped': flipped }, `rarity-${rarity}`]" :data-pref="card.pref">
       <!-- 正面 -->
       <div class="face paper-grain absolute inset-0 flex flex-col gap-[0.55em] overflow-hidden rounded-[1em] bg-region p-[0.75em] text-on-region">
-        <div class="flex items-center gap-[0.5em] px-[0.2em] text-[0.8em] leading-none font-bold">
+        <div class="flex items-center gap-[0.5em] px-[0.2em] text-[0.8em] leading-none font-bold whitespace-nowrap">
           <span lang="ja">{{ region?.name.ja }}</span>
-          <span class="font-latin tracking-[0.2em] uppercase opacity-80">{{ region?.name.romaji }}</span>
-          <span v-if="rarity !== 'normal'" class="ml-auto rounded-full bg-paper px-[0.6em] py-[0.25em] text-ink">{{ RARITY_LABEL[rarity] }}</span>
-          <span class="font-latin" :class="rarity === 'normal' ? 'ml-auto' : ''">{{ number }}</span>
+          <span class="truncate font-latin tracking-[0.2em] uppercase opacity-80">{{ region?.name.romaji }}</span>
+          <span v-if="label" class="ml-auto shrink-0 rounded-full bg-paper px-[0.6em] py-[0.25em] text-ink">{{ label }}</span>
+          <span class="shrink-0 font-latin" :class="label ? '' : 'ml-auto'">{{ number }}</span>
         </div>
 
         <div class="relative aspect-[4/3] shrink-0 overflow-hidden rounded-[0.6em] bg-region-accent">
           <img
-            v-if="image"
-            :src="image.url"
-            :alt="spot.name.ja"
+            v-if="imageSrc"
+            :src="imageSrc"
+            :alt="card.name.ja"
             class="size-full object-cover"
             referrerpolicy="no-referrer"
+            :loading="size === 'lg' ? 'eager' : 'lazy'"
+            decoding="async"
             draggable="false"
-            @error="failed = true"
+            @error="tries++"
           />
           <template v-else>
-            <RegionMotif :pref="spot.prefecture" class="absolute -right-[3em] -bottom-[3em] size-[14em]" />
-            <span lang="ja" class="absolute top-[0.2em] left-[0.35em] text-[4.2em] leading-none font-black text-on-region">{{ spot.name.ja.slice(0, 1) }}</span>
+            <RegionMotif :pref="card.pref" class="absolute -right-[3em] -bottom-[3em] size-[14em]" />
+            <span lang="ja" class="absolute top-[0.2em] left-[0.35em] text-[4.2em] leading-none font-black text-on-region">{{ card.name.ja.slice(0, 1) }}</span>
           </template>
           <!-- 箔片：稀有卡才有，只在照片窗裡（像實體閃卡的圖框）；名城用地方紋樣的形狀 -->
           <div
@@ -108,13 +115,13 @@ const dateText = computed(() => (props.visitedOn ? props.visitedOn.replaceAll('-
         </div>
 
         <div class="flex min-h-0 flex-1 flex-col justify-center px-[0.2em]">
-          <span v-if="spot.name.kana" lang="ja" class="truncate text-[0.72em] tracking-kana opacity-85">{{ spot.name.kana }}</span>
-          <span lang="ja" class="truncate leading-tight font-black tracking-name" :class="nameSize">{{ spot.name.ja }}</span>
-          <span v-if="spot.name.romaji" class="truncate font-latin text-[0.8em] font-semibold tracking-romaji uppercase">{{ spot.name.romaji }}</span>
+          <span v-if="card.name.kana" lang="ja" class="truncate text-[0.72em] tracking-kana opacity-85">{{ card.name.kana }}</span>
+          <span lang="ja" class="truncate leading-tight font-black tracking-name" :class="nameSize">{{ card.name.ja }}</span>
+          <span v-if="card.name.romaji" class="truncate font-latin text-[0.8em] font-semibold tracking-romaji uppercase">{{ card.name.romaji }}</span>
         </div>
 
         <div class="flex items-center gap-[0.5em] border-t border-on-region/25 px-[0.2em] pt-[0.45em] text-[0.72em] leading-none">
-          <span>{{ category.join('・') }}</span>
+          <span>{{ card.kind }}</span>
           <span class="ml-auto font-bold">ひとめぐり</span>
         </div>
 
@@ -124,14 +131,14 @@ const dateText = computed(() => (props.visitedOn ? props.visitedOn.replaceAll('-
       <!-- 背面 -->
       <div class="face back paper-grain absolute inset-0 flex flex-col overflow-hidden rounded-[1em] bg-region p-[0.75em] text-ink">
         <div class="relative flex min-h-0 flex-1 flex-col gap-[0.6em] overflow-hidden rounded-[0.6em] bg-paper p-[1em]">
-          <RegionMotif :pref="spot.prefecture" class="absolute -top-[4em] -right-[4em] size-[12em]" />
-          <span class="relative text-[0.75em] font-bold text-sub">{{ region?.name.ja }}・{{ category.join('・') }}</span>
-          <span lang="ja" class="relative text-[1.3em] leading-tight font-black">{{ spot.name.ja }}</span>
-          <span v-if="spot.name.zh_tw !== spot.name.ja" class="relative text-[0.85em]">{{ spot.name.zh_tw }}</span>
-          <p class="relative line-clamp-[9] text-[0.78em] leading-relaxed text-ink-2">{{ summary }}</p>
+          <RegionMotif :pref="card.pref" class="absolute -top-[4em] -right-[4em] size-[12em]" />
+          <span class="relative text-[0.75em] font-bold text-sub">{{ [region?.name.ja, card.kind, card.designation].filter(Boolean).join('・') }}</span>
+          <span lang="ja" class="relative text-[1.3em] leading-tight font-black">{{ card.name.ja }}</span>
+          <span v-if="card.name.zh" class="relative text-[0.85em]">{{ card.name.zh }}</span>
+          <p class="relative line-clamp-[9] text-[0.78em] leading-relaxed text-ink-2">{{ card.summary?.text }}</p>
           <div class="relative mt-auto flex flex-col gap-[0.2em] text-[0.62em] text-sub">
-            <span v-if="spot.summary">簡介：維基百科・{{ spot.summary.license }}</span>
-            <span v-if="spot.images[0]" class="truncate">照片：{{ spot.images[0].author }}・{{ spot.images[0].license }}</span>
+            <span v-if="card.summary">簡介：維基百科・{{ card.summary.license }}</span>
+            <span v-if="card.image?.author" class="truncate">照片：{{ card.image.author }}・{{ card.image.license }}</span>
           </div>
         </div>
         <span class="pt-[0.5em] text-center text-[0.72em] font-bold tracking-[0.3em] text-on-region">ひとめぐり</span>
@@ -145,6 +152,10 @@ const dateText = computed(() => (props.visitedOn ? props.visitedOn.replaceAll('-
 .card-scene {
   perspective: 60em;
   touch-action: pan-y;
+}
+/* 跟著外層容器寬：卡寬 20em＝容器寬 */
+.fluid {
+  font-size: 5cqi;
 }
 .card {
   transform-style: preserve-3d;

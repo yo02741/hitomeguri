@@ -92,6 +92,14 @@ DESIGNATION_FALLBACK = {"特別史跡": "史跡", "史跡": "史跡", "特別名
 
 FEATURED_KEYS = {"id", "n", "lat", "lng", "k", "f", "s", "c", "i"}
 
+# 景點收集卡的稀有度看這幾個指定（web/src/services/card.ts）；map bundle 只記最高的一個，
+# 收集冊不必為了稀有度載入詳細資料
+CARD_DESIGNATIONS = ("世界遺產", "國寶", "特別史跡", "特別名勝")
+
+
+def designation(tags: list[str]) -> str | None:
+    return next((d for d in CARD_DESIGNATIONS if d in tags), None)
+
 
 def spot_type(tags: list[str]) -> str | None:
     tags = [t for t in tags if not t.startswith("guide-")]
@@ -125,6 +133,8 @@ def map_entry(s: dict[str, Any]) -> dict[str, Any]:
         entry["t"] = s["themes"]
     if cat := spot_type(s.get("tags", [])):
         entry["c"] = cat
+    if d := designation(s.get("tags", [])):
+        entry["d"] = d
     if s.get("images") and (thumb := map_thumb(s["images"][0]["url"])):
         entry["i"] = thumb
     return entry

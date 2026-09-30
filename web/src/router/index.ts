@@ -49,6 +49,7 @@ export const router = createRouter({
     { path: '/join/:code', name: 'join', component: () => import('../views/JoinView.vue'), props: true, meta: { title: '共編行程' } },
     { path: '/limited', name: 'limited', component: () => import('../views/LimitedView.vue'), meta: { title: '期間限定' } },
     { path: '/log', name: 'log', component: () => import('../views/LogView.vue'), meta: { title: '紀錄' } },
+    { path: '/log/cards', name: 'cards', component: () => import('../views/CardsView.vue'), meta: { title: '收集冊' } },
     { path: '/me', name: 'me', component: () => import('../views/MeView.vue'), meta: { title: '收藏與清單' } },
     {
       path: '/me/lists/:id',

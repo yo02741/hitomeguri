@@ -2,7 +2,7 @@
 import { computed, ref, watch } from 'vue'
 
 import type { Spot } from '../services/bundles'
-import { cardNumberOf, rarityOf } from '../services/card'
+import { cardFromSpot, cardNumberFor, designationOf, rarityLabel, rarityOf } from '../services/card'
 import { googleMapsUrl } from '../services/maps'
 import { canSpeak, speakJa } from '../services/tts'
 import { useCatalogStore } from '../stores/catalog'
@@ -41,9 +41,12 @@ const card = computed(() => {
   const s = props.spot
   if (!s) return null
   const m = marks.markOf(s.id)
+  const d = designationOf(s.tags)
   return {
-    rarity: rarityOf(s, Boolean(props.castle)),
-    number: props.castle ? `No.${props.castle.no}` : cardNumberOf(s.id, catalog.mapSpots[s.prefecture]),
+    face: cardFromSpot(s),
+    rarity: rarityOf(d, Boolean(props.castle)),
+    label: rarityLabel(d, props.castle),
+    number: cardNumberFor(s.id, catalog.mapSpots[s.prefecture], props.castle, d),
     visited: Boolean(m?.visited),
     visitedOn: m?.visited_on ?? null,
   }
@@ -210,8 +213,9 @@ function distance(m: number): string {
     </div>
     <CardViewer
       v-if="cardOpen && card"
-      :spot="spot"
+      :card="card.face"
       :rarity="card.rarity"
+      :label="card.label"
       :number="card.number"
       :visited="card.visited"
       :visited-on="card.visitedOn"
