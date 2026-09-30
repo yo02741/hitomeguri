@@ -425,7 +425,7 @@ users/{uid}/lists/{listId}
 
 ### Phase 6 — 自動化排程 + PR 審核流程 + 擴展全國
 - 所有 GitHub Actions workflow、自動開 PR、`deploy.yml` 自動部署；依都道府縣逐步 seed 全國。
-- 實作：`refresh-data.yml` 每週一（擴充包、祭典）、每月第一週（再加地區特色、各縣維基簡介與念法）、每季第一週（再加各縣大點重採）自動採集，推到 `pipeline/refresh-<run>` 並開 PR；PR 描述附 `diff-report`（各檔新增、刪除、修改，簡介／念法／中文名／座標的變更）與 `validate-data`（格式、依 id 排序、schema、來源、禁用詞、bundle 能否建出），檢查結果也寫成 commit 狀態「資料檢查」。新的自動 PR 取代還沒合併的舊 PR；PR 關閉後 `pipeline-pr-closed.yml` 刪除分支。期間限定維持每天直接提交 main（`harvest-timed.yml`）。
+- 實作：`refresh-data.yml` 每週一（寶可夢、城、祭典）、每月第一週（再加老舖、角色商店、地區特色、各縣維基簡介與念法）、每季第一週（再加各縣大點重採）自動採集，推到 `pipeline/refresh-<run>` 並開 PR；PR 描述附 `diff-report`（各檔新增、刪除、修改，簡介／念法／中文名／座標的變更）與 `validate-data`（格式、依 id 排序、schema、來源、禁用詞、bundle 能否建出），檢查結果也寫成 commit 狀態「資料檢查」。新的自動 PR 取代還沒合併的舊 PR；PR 關閉後 `pipeline-pr-closed.yml` 刪除分支。期間限定維持每天直接提交 main（`harvest-timed.yml`）。
 - ✅ 驗收：排程連續跑一週無錯誤、每次產出都是可 review 的 PR；合併後網站自動更新；全國 bundles 產生完成；GitHub Actions 分鐘數與 Firestore 用量都在免費額度內。
 
 ### Phase 7 — 行程 + 旅前準備

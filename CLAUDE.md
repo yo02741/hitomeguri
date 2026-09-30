@@ -36,7 +36,7 @@ uv venv && uv pip install -e ".[dev]" # pipeline 環境
 
 ## 資料 pipeline 在 GitHub Actions 上跑
 Claude Code 的雲端沙箱連不到 Wikidata、OSM、Wikimedia，也沒有 Claude API key，所以採集與補全放在 Actions：
-- `refresh-data.yml`（排程，Phase 6）：每週一擴充包與祭典、每月第一週再加地區特色與各縣維基簡介、每季第一週再加各縣大點重採。結果推到 `pipeline/refresh-<run>` 並開 PR，描述附 `diff-report` 與 `validate-data`（commit 狀態「資料檢查」）。使用者在 GitHub 看完按合併就部署；新的自動 PR 會取代還沒合併的舊 PR，PR 關閉後 `pipeline-pr-closed.yml` 刪分支。
+- `refresh-data.yml`（排程，Phase 6）：每週一寶可夢、城、祭典，每月第一週再加老舖、角色商店、地區特色與各縣維基簡介、每季第一週再加各縣大點重採。結果推到 `pipeline/refresh-<run>` 並開 PR，描述附 `diff-report` 與 `validate-data`（commit 狀態「資料檢查」）。使用者在 GitHub 看完按合併就部署；新的自動 PR 會取代還沒合併的舊 PR，PR 關閉後 `pipeline-pr-closed.yml` 刪分支。
 - `seed-pack.yml`（手動）：全國一次抓的項目（擴充包：寶可夢、城 `seed-castles`、老舖・茶屋 `seed-shinise`、角色商店 `seed-chara`；地區特色、祭典、季節、鐵路…），推到 `pipeline/<指令>-<run>`。
 - `seed-region.yml`（手動）：輸入縣 slug，各縣平行採集，結果推到 `pipeline/seed-<run>` 分支。command=seed-region 會連同維基百科簡介與念法一起做；seed-wiki 只更新已有大點的縣的簡介與念法（`pipeline/wiki.py`）。
 - `harvest-timed.yml`（每天 17:50 JST＋手動）：期間限定（氣象廳本季觀測，`pipeline/timed.py`）。只改 `data/timed/`，有變更直接提交 main 並觸發 Firebase Hosting、Pages 部署（例外：不走 pipeline/* 審核分支）。

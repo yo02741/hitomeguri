@@ -70,13 +70,54 @@ def chara_record(el: osm.OsmElement, today: str) -> dict[str, Any] | None:
     return {k: v for k, v in rec.items() if v is not None}
 
 
+# Overpass 查詢用：不分大小寫的比對（,i）在 Overpass 很慢，改列出常見寫法
+OSM_NAMES = "|".join(
+    [
+        "Nintendo",
+        "NINTENDO",
+        "ニンテンドー",
+        "任天堂",
+        "どんぐり共和国",
+        "Donguri",
+        "ジブリ",
+        "Ghibli",
+        "GHIBLI",
+        "サンリオ",
+        "Sanrio",
+        "SANRIO",
+        "ハローキティ",
+        "Hello Kitty",
+        "HELLO KITTY",
+        "ちいかわ",
+        "Chiikawa",
+        "カービィ",
+        "Kirby",
+        "KIRBY",
+        "麦わらストア",
+        "Mugiwara",
+        "ONE PIECE",
+        "ジャンプショップ",
+        "JUMP SHOP",
+        "Jump Shop",
+        "スヌーピー",
+        "Snoopy",
+        "SNOOPY",
+        "PEANUTS",
+        "ディズニーストア",
+        "Disney Store",
+        "DISNEY STORE",
+    ]
+)
+
+
 def seed_chara() -> str:
     today = dt.date.today().isoformat()
-    rx = "|".join(r for _, r in BRANDS).replace('"', '\\"')
+    rx = OSM_NAMES
+    # 品牌的判斷（brand_of）在本機做，這裡只撈候選
     elements, failed = osm.by_prefecture([
-        f'["shop"]["name"~"{rx}",i]',
-        f'["amenity"~"^(cafe|restaurant)$"]["name"~"{rx}",i]',
-        f'["tourism"~"^(museum|attraction|theme_park)$"]["name"~"{rx}",i]',
+        f'["shop"]["name"~"{rx}"]',
+        f'["amenity"~"^(cafe|restaurant)$"]["name"~"{rx}"]',
+        f'["tourism"~"^(museum|attraction|theme_park)$"]["name"~"{rx}"]',
     ])  # fmt: skip
     out = [r for el in elements if (r := chara_record(el, today))]
     out = sorted({r["id"]: r for r in out}.values(), key=lambda r: r["id"])
