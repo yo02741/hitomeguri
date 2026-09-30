@@ -11,6 +11,7 @@ import json
 import re
 from typing import Any
 
+from pipeline import geo
 from pipeline.packs import _pref_of, log, osm_address, osm_name
 from pipeline.paths import PACKS_DIR
 from pipeline.sources import osm
@@ -40,6 +41,13 @@ GROUP_LABEL = {
 }
 # 住宿、停車場等名稱剛好含品牌的不收
 EXCLUDE_TOURISM = {"hotel", "motel", "guest_house", "hostel", "apartment"}
+# tourism=attraction 只收園區、博物館（主題樂園裡的遊樂設施、看板不收）
+ATTRACTION_OK = re.compile(
+    r"パーク|ランド|ミュージアム|美術館|ワールド|Museum|Park|Land|World", re.I
+)
+# 同品牌、這個距離內視為同一家（OSM 常同時有建築物與店家節點、日文與英文各一筆）
+SAME_PLACE_M = 60
+SAME_NAME_M = 300
 
 
 def brand_of(name: str) -> str | None:
@@ -56,6 +64,11 @@ def chara_record(el: osm.OsmElement, today: str) -> dict[str, Any] | None:
     pref = _pref_of(el.lat, el.lng)
     name = osm_name(t)
     if not kind or not pref or not name or t.get("tourism") in EXCLUDE_TOURISM:
+        return None
+    # 遊樂設施（attraction=*）、園區裡的看板等
+    if "attraction" in t or (
+        t.get("tourism") == "attraction" and not t.get("shop") and not ATTRACTION_OK.search(name)
+    ):
         return None
     rec = {
         "id": f"chara-{el.osm_id.replace('/', '-')}",
@@ -110,6 +123,31 @@ OSM_NAMES = "|".join(
 )
 
 
+def _richness(r: dict[str, Any]) -> int:
+    return len(r.get("address") or "") + (10 if r.get("website") else 0) + len(r["name"])
+
+
+def dedupe(recs: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    """同品牌的同一個地方只留一筆：60 m 內，或 300 m 內且店名相同；留資料多的那筆。"""
+
+    def norm(r: dict[str, Any]) -> str:
+        return re.sub(r"\s", "", r["name"]["ja"]).lower()
+
+    kept: list[dict[str, Any]] = []
+    for r in sorted(recs, key=lambda r: (-_richness(r), r["id"])):
+        la, ln = r["location"]["lat"], r["location"]["lng"]
+        dup = any(
+            k["kind"] == r["kind"]
+            and (d := geo.haversine_m(la, ln, k["location"]["lat"], k["location"]["lng"]))
+            <= SAME_NAME_M
+            and (d <= SAME_PLACE_M or norm(k) == norm(r))
+            for k in kept
+        )
+        if not dup:
+            kept.append(r)
+    return kept
+
+
 def seed_chara() -> str:
     today = dt.date.today().isoformat()
     rx = OSM_NAMES
@@ -120,7 +158,8 @@ def seed_chara() -> str:
         f'["tourism"~"^(museum|attraction|theme_park)$"]["name"~"{rx}"]',
     ])  # fmt: skip
     out = [r for el in elements if (r := chara_record(el, today))]
-    out = sorted({r["id"]: r for r in out}.values(), key=lambda r: r["id"])
+    out = dedupe(list({r["id"]: r for r in out}.values()))
+    out.sort(key=lambda r: r["id"])
     log(f"[chara] OSM {len(elements)} 筆 → {len(out)} 家")
     PACKS_DIR.mkdir(parents=True, exist_ok=True)
     path = PACKS_DIR / "charashop.json"

@@ -1,9 +1,10 @@
 """擴充包「老舖・茶屋」（seed-shinise 指令）。
 
 - 香舖、和菓子、茶舖：日文維基百科分類裡的店家條目，只收創業在 FOUNDED_MAX 年以前的（老舖）。
-  創業年取 Wikidata 的創立（P571）與條目分類（「16世紀設立の企業」「1832年設立の企業」）中最早的。
-  座標依序取 Wikidata、條目的座標；都沒有時到 OSM 找同名的店（限總部所在的縣，優先本店）。
-- 香舖另外從 OSM 找名稱像香舖的店（「香老舗」「香木店」…），補維基沒有條目的店。
+  創業年取條目資訊框的「創業」、Wikidata 的創立（P571）與條目分類（「16世紀設立の企業」
+  「1832年設立の企業」）中最早的；公司登記（設立）常比創業晚很多，資訊框的創業才是老舖的年份。
+  座標依序取 Wikidata、條目的座標；都沒有時到 OSM 找名稱含店名的店（限總部所在的縣，優先本店）。
+- 香舖另外從 OSM 找名稱是香老舗、香舗、香木店或知名香舖的店，補維基沒有條目的店。
 - 茶屋・甘味處：OSM 名稱含「茶屋」「茶寮」「茶房」「甘味」的店，
   依資料完整度每縣最多 TEAHOUSE_PER_PREF 家。
 """
@@ -36,7 +37,8 @@ KIND_LABEL = {"incense": "香舖", "wagashi": "和菓子", "tea": "茶舖", "tea
 FOUNDED_MAX = 1926
 TEAHOUSE_PER_PREF = 12
 
-INCENSE_NAME = "香老舗|香舗|香木店|御香|お香|線香|薫玉堂|山田松香木店|香十"
+# 香舖：名稱是香老舗、香舗、香木店，或知名的香舖（「お香」「線香」太寬，會撈到雜貨、化妝品、佛具店）
+INCENSE_NAME = "香老舗|香舗|香木店|薫玉堂|山田松香木店|香十|松栄堂|松榮堂|林龍昇堂|玉初堂"
 TEAHOUSE_NAME = "茶屋|茶寮|茶房|甘味|甘党"
 # 名稱像茶屋但其實是咖啡店、酒館、料理店
 TEAHOUSE_EXCLUDE = re.compile(
@@ -56,9 +58,34 @@ SHOP_EXCLUDE = {
 MAIN_STORE = ("総本店", "総本家", "本店", "本舗", "本家")
 
 
-def founded(categories: list[str], inception: list[int]) -> tuple[int, str] | None:
+INFOBOX_FOUNDED = re.compile(r"^\s*\|\s*創業\s*=\s*(.+?)\s*$", re.M)
+
+
+def infobox_founded(wikitext: str) -> tuple[int, str] | None:
+    """資訊框（基礎情報 会社）的「創業」欄。
+
+    例：1717年（享保2年）、[[1590年]]、寛永年間（1624年 - 1644年）、17世紀。
+    """
+    m = INFOBOX_FOUNDED.search(wikitext)
+    if not m:
+        return None
+    v = re.sub(r"<ref[^>]*/>|<ref.*?</ref>|<!--.*?-->", "", m.group(1))
+    years = [int(y) for y in re.findall(r"(?<!\d)(\d{3,4})年", v) if 500 <= int(y) <= 2100]
+    if years:
+        return (min(years), f"{min(years)}年")
+    if c := re.search(r"(\d{1,2})世紀", v):
+        cent = int(c.group(1))
+        return ((cent - 1) * 100 + 1, f"{cent}世紀")
+    return None
+
+
+def founded(
+    categories: list[str], inception: list[int], wikitext: str = ""
+) -> tuple[int, str] | None:
     """最早的創業年與顯示文字：(1600, "1600年") 或 (1501, "16世紀")。"""
     cands: list[tuple[int, str]] = [(y, f"{y}年") for y in inception]
+    if box := infobox_founded(wikitext):
+        cands.append(box)
     for c in categories:
         if m := re.match(r"^(\d{1,2})世紀(?:の日本の)?設立", c):
             cent = int(m.group(1))
@@ -92,27 +119,34 @@ def _norm(s: str) -> str:
     return re.sub(r"[\s・　]", "", s)
 
 
+def _same_shop(key: str, osm_name: str) -> bool:
+    """OSM 店名含這個店名（「香老舗 松栄堂 京都本店」）；兩個字以內的短名只比開頭，避免撈到別家。"""
+    n = _norm(osm_name)
+    return n.startswith(key) if len(key) <= 2 else key in n
+
+
 def pick_store(name: str, pref: str | None, els: list[osm.OsmElement]) -> osm.OsmElement | None:
-    """OSM 上同名的店：限同縣；有本店用本店，只有一家用那一家，其他情況不猜。"""
+    """OSM 上的店：限同縣（不知道縣時要全部同縣，或只有一家本店）；
+    有本店用本店，只有一家用那一家，其他情況不猜。"""
     key = _norm(name)
     cands = [
         el
         for el in els
-        if _norm(el.tags.get("name", "")).startswith(key)
+        if _same_shop(key, el.tags.get("name", ""))
         and (pref is None or _pref_of(el.lat, el.lng) == pref)
     ]
-    if pref is None and len({_pref_of(el.lat, el.lng) for el in cands}) > 1:
-        return None
     main = [el for el in cands if any(w in el.tags.get("name", "") for w in MAIN_STORE)]
+    if pref is None and len({_pref_of(el.lat, el.lng) for el in cands}) > 1:
+        return main[0] if len(main) == 1 else None
     if len(main) == 1:
         return main[0]
     return cands[0] if len(cands) == 1 else None
 
 
 def _rx(names: list[str]) -> str:
-    """Overpass 的名稱正規表示式（跳脫特殊字元）。"""
+    """Overpass 的名稱正規表示式（跳脫特殊字元；不限開頭，店名前面常有「香老舗」「御菓子司」）。"""
     esc = [re.sub(r'([\\.^$|?*+()\[\]{}"])', r"\\\1", n) for n in names if n]
-    return "^(" + "|".join(esc) + ")"
+    return "(" + "|".join(esc) + ")"
 
 
 def shop_record(s: Shop, since: tuple[int, str], today: str) -> dict[str, Any] | None:
@@ -185,6 +219,11 @@ def _near(a: dict[str, Any], lat: float, lng: float, m: float) -> bool:
     return geo.haversine_m(a["location"]["lat"], a["location"]["lng"], lat, lng) <= m
 
 
+def _incense_label(r: dict[str, Any]) -> str:
+    since = f"・{r['founded']}" if r.get("founded") else ""
+    return f"{r['name']['ja']}（{r['prefecture']}{since}）"
+
+
 def seed_shinise() -> str:
     today = dt.date.today().isoformat()
     shops: list[Shop] = []
@@ -196,6 +235,7 @@ def seed_shinise() -> str:
     cats = wikipedia.page_categories("jawiki", titles)
     qids = wikipedia.qids("jawiki", titles)
     ents = wikidata.entities(list(qids.values()))
+    texts = wikipedia.wikitexts("jawiki", titles)
     for s in shops:
         s.categories = cats.get(s.title, [])
         s.qid = qids.get(s.title)
@@ -206,7 +246,7 @@ def seed_shinise() -> str:
     too_new: list[str] = []
     unknown: list[str] = []
     for s in shops:
-        since = founded(s.categories, s.ent.inception if s.ent else [])
+        since = founded(s.categories, s.ent.inception if s.ent else [], texts.get(s.title, ""))
         if since is None:
             unknown.append(s.name)
         elif since[0] > FOUNDED_MAX:
@@ -230,7 +270,6 @@ def seed_shinise() -> str:
     # OSM：同名的店、香舖、茶屋，各縣一次查詢（全國一次查會逾時）
     filters = [
         f'["shop"]["name"~"{INCENSE_NAME}"]',
-        '["shop"~"^(religion|incense|perfumery)$"]["name"~"香"]',
         f'["amenity"~"^(cafe|restaurant)$"]["name"~"{TEAHOUSE_NAME}"]',
     ]
     if need:
@@ -260,13 +299,7 @@ def seed_shinise() -> str:
         for el in elements
         if el.tags.get("shop")
         and el.tags["shop"] not in SHOP_EXCLUDE
-        and (
-            re.search(INCENSE_NAME, el.tags.get("name", ""))
-            or (
-                el.tags["shop"] in ("religion", "incense", "perfumery")
-                and "香" in el.tags.get("name", "")
-            )
-        )
+        and re.search(INCENSE_NAME, el.tags.get("name", ""))
     ]
     added_incense = 0
     for el in incense:
@@ -317,6 +350,8 @@ def seed_shinise() -> str:
         f"共 {len(out)} 家：" + "、".join(f"{KIND_LABEL[k]} {n}" for k, n in counts.items()),
         f"香舖其中 {added_incense} 家來自 OSM（維基沒有條目）。",
         f"茶屋・甘味處：OSM 符合的 {len(teahouses)} 家，每縣最多 {TEAHOUSE_PER_PREF} 家。",
+        "",
+        "香舖：" + "、".join(_incense_label(r) for r in out if r["kind"] == "incense"),
         "",
         f"創業晚於 {FOUNDED_MAX} 年而不收（{len(too_new)}）：{'、'.join(too_new)}",
         "",
