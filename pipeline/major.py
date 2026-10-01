@@ -85,6 +85,7 @@ class Draft:
     score: float = 0.0
     listed: bool = False  # 列在維基「{縣}の観光地」
     official: OfficialSpot | None = None  # 縣的官方觀光網站
+    seed_name: str | None = None  # 種子指定的日文名（Wikidata 沒有日文標籤時用）
 
     @property
     def qid(self) -> str | None:
@@ -118,6 +119,8 @@ class Draft:
         t = self.osm_tags
         if t.get("name:ja") or t.get("name"):
             return t.get("name:ja") or t.get("name")
+        if self.seed_name:
+            return self.seed_name
         if self.official:  # 官方名稱去掉括號裡的讀音、說明
             clean = re.sub(r"\s*[（(][^）)]*[）)]", "", self.official.name).strip()
             return clean or self.official.name
@@ -270,7 +273,8 @@ def _names_overlap(a: set[str], b: set[str]) -> bool:
 def official_names(name: str) -> set[str]:
     """官方名稱的比對用變體：去掉括號（讀音、說明）、拆開「A／B」「A / B」合寫。"""
     base = re.sub(r"[（(][^）)]*[）)]", "", unicodedata.normalize("NFKC", name)).strip()
-    parts = [p.strip() for p in re.split(r"[／/]", base)]
+    # 「A／B」合寫，與「A – 副標題」（スタジオツアー東京 – メイキング・オブ・ハリー・ポッター）
+    parts = [p.strip() for p in re.split(r"[／/]|\s[–—-]\s", base)]
     return {norm_name(p) for p in [base, *parts] if p} - {""}
 
 
@@ -468,6 +472,16 @@ def apply_seeds(pref: str, drafts: dict[str, Draft]) -> list[str]:
     """把種子對到候選上（找不到就用 Wikidata 搜尋補查）。回傳對不上的種子名稱。"""
     unmatched = []
     for seed in load_seeds(pref):
+        # 種子直接指定 Wikidata 項目（日文標籤缺漏、名稱搜尋找不到的：スタジオツアー東京）
+        if seed.get("wikidata"):
+            pinned = _pinned_seed(seed["wikidata"], seed["name_ja"], drafts)
+            if pinned is None:
+                unmatched.append(seed["name_ja"])
+            else:
+                tier = seed.get("guide_tier")
+                if tier and (pinned.tier is None or tier < pinned.tier):
+                    pinned.tier = tier
+            continue
         variants = name_variants(seed["name_ja"])
         best: Draft | None = None
         for d in drafts.values():
@@ -490,6 +504,19 @@ def apply_seeds(pref: str, drafts: dict[str, Draft]) -> list[str]:
             best.tier = tier
         best.seed_themes = sorted(set(best.seed_themes) | set(seed.get("themes", [])))
     return unmatched
+
+
+def _pinned_seed(qid: str, name_ja: str, drafts: dict[str, Draft]) -> Draft | None:
+    d = drafts.get(qid) or next((x for x in drafts.values() if x.qid == qid), None)
+    if d is None:
+        ent = wikidata.entities([qid]).get(qid)
+        if not ent or ent.lat is None or ent.lng is None:
+            return None
+        d = Draft(key=qid, lat=ent.lat, lng=ent.lng, ent=ent)
+        drafts[qid] = d
+    if not (d.ent and d.ent.labels.get("ja")):
+        d.seed_name = name_ja
+    return d
 
 
 def _substring_match(variants: list[str], drafts: dict[str, Draft]) -> Draft | None:
@@ -576,7 +603,7 @@ EXCLUDE_P31_SUBSTR = (
     # 人物、物品、園區內遊樂設施、住宿（全國擴展時發現混入精選）
     "人間", "ヒト", "妖怪", "機関車", "航空機", "軍艦", "戦艦", "艦船", "舞楽", "郷土芸能",
     "アトラクション", "コースター", "ダークライド", "ホテル", "印章", "土偶", "出土品", "飛行隊",
-    "空港", "飛行場", "港湾", "フェリーターミナル",
+    "空港", "飛行場", "港湾", "フェリーターミナル", "破壊・解体された",
     "airport", "aerodrome",
     "human", "yōkai", "locomotive", "aircraft", "battleship", "amusement ride", "roller coaster",
     "dark ride", "hotel",
@@ -589,12 +616,21 @@ EXCLUDE_P31_SUBSTR = (
 # 以 P31 標籤的部分文字判斷（Wikidata 的標籤寫法不一：「政令指定都市の区」「廃止市町村」…）
 # 行政區（區、已廢止的市町村）、令制國。不用「市町村」「行政区画」做部分比對：
 # 會誤殺市町村道（天神西通り）、市町村營的水壩、銀座這類街區
-ADMIN_P31_SUBSTR = ("廃止市町村", "都市の区", "日本の区", "令制国", "旧国")
+ADMIN_P31_SUBSTR = ("廃止市町村", "都市の区", "日本の区", "令制国", "旧国", "特別区")
 # 活動、事件：祭典之後放在深度探索頁，不當景點
 EVENT_P31_SUBSTR = (
     "祭り", "祭礼", "例祭", "年中行事", "行事", "戦闘", "合戦", "紛争", "事変", "政変", "反乱",
     "festival", "battle", "recurring event",
+    # 事件（「秋葉原通り魔事件」的 P31 是大量殺人、乗物による突入攻撃）
+    "殺人", "暗殺", "突入攻撃", "テロ", "murder", "assassination", "terrorist attack",
 )  # fmt: skip
+# 地區、街區：淺草、新宿、銀座、秋葉原、中目黑這類地名不是景點（使用者決定）。
+# 只有在 P31「全部」都是地區類時才排除：嵐山（山）、アメ横（商店街）這類另有景點類型的保留。
+DISTRICT_P31 = {
+    "町丁", "都市の地区", "広域地名", "繁華街", "歓楽街", "風俗街", "ゲイ・タウン", "電気街",
+    "都心等拠点地区", "商業地域", "歴史的地域", "地域", "地区", "行政区画", "領域", "大字", "花街",
+    "neighborhood", "city district", "quarter", "urban area",
+}  # fmt: skip
 # 廣域地名：地圖上一個點代表不了。以名稱結尾判斷（P31 判斷會誤殺六甲山、上高地這類景點）；
 # 世界遺產例外（白神山地）。諸島、列島、群島是旅行目的地，不排除（使用者決定）
 REGION_NAME_RE = re.compile(r"(国立公園|国定公園|半島|山地|山脈|山系|連峰|連山|丘陵|平野|盆地)$")
@@ -624,6 +660,8 @@ def non_spot_reason(
         # 道の駅是景點，不當車站排除
         if any(s in k and not (s == "駅" and "道の駅" in k) for s in EXCLUDE_P31_SUBSTR):
             return k
+    if kinds and kinds <= DISTRICT_P31 and not world_heritage and not designated:
+        return "地區：" + "、".join(sorted(kinds))
     base = strip_disambiguation(name)
     if not world_heritage and REGION_NAME_RE.search(base):
         return "廣域地名"
@@ -708,7 +746,7 @@ def drop_non_spots(drafts: dict[str, Draft]) -> list[str]:
                 dropped.append(d.name_ja or key)
                 del drafts[key]
             continue
-        if f"wd-{d.ent.qid}" in manual:
+        if f"wd-{d.ent.qid}" in manual or d.ent.closed:
             dropped.append(d.name_ja or key)
             del drafts[key]
             continue

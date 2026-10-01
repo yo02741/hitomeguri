@@ -296,6 +296,10 @@ def test_official_names():
     assert major.norm_name("今帰仁城跡") in major.official_names("今帰仁城跡（なきじんじょうあと）")
     got = major.official_names("古宇利島／ティーヌ浜／トケイ浜")
     assert {major.norm_name("古宇利島"), major.norm_name("ティーヌ浜")} <= got
+    got = major.official_names(
+        "ワーナー ブラザース スタジオツアー東京 – メイキング・オブ・ハリー・ポッター"
+    )
+    assert major.norm_name("ワーナー ブラザース スタジオツアー東京") in got
 
 
 def test_non_spot_kind():
@@ -303,7 +307,16 @@ def test_non_spot_kind():
     assert major.non_spot_kind({"廃止市町村"})
     assert major.non_spot_kind({"日本の区"})
     assert not major.non_spot_kind({"幹線二級市町村道"})
-    assert not major.non_spot_kind({"行政区画"})
+    # 只有地區類 P31 的是地名（淺草、銀座、秋葉原：使用者決定排除）；另有景點類型的保留
+    assert major.non_spot_kind({"行政区画"})
+    assert major.non_spot_reason({"町丁", "都市の地区"}) == "地區：町丁、都市の地区"
+    assert major.non_spot_kind({"都市の地区", "都心等拠点地区", "電気街"})
+    assert not major.non_spot_kind({"山", "地域"})
+    assert not major.non_spot_kind({"商店街", "繁華街"})
+    assert not major.non_spot_kind({"町丁"}, designated=True)
+    assert major.non_spot_kind({"日本の特別区"})
+    assert major.non_spot_kind({"大量殺人", "乗物による突入攻撃"})
+    assert major.non_spot_kind({"破壊・解体された建築物または構造物", "遊園地"})
     assert not major.non_spot_kind({"市町村営水道用ダム"})
     assert major.non_spot_kind({"令制国"})
     assert major.non_spot_kind({"祭り"})
@@ -334,3 +347,27 @@ def test_non_spot_names_schools_roads_and_islands():
     assert non_spot_reason(set(), "北海道大学") is None
     assert non_spot_reason(set(), "慶良間諸島") is None
     assert non_spot_reason(set(), "五島列島") is None
+
+
+def test_pinned_seed_uses_seed_name_without_ja_label(monkeypatch):
+    from pipeline.sources.wikidata import Entity
+
+    ent = Entity(
+        qid="Q117148543", labels={"en": "Warner Bros. Studio Tour Tokyo"}, lat=35.745, lng=139.645
+    )
+    monkeypatch.setattr(major.wikidata, "entities", lambda qids: {"Q117148543": ent})
+    drafts: dict = {}
+    d = major._pinned_seed("Q117148543", "ワーナー ブラザース スタジオツアー東京", drafts)
+    assert d is not None and drafts["Q117148543"] is d
+    assert d.name_ja == "ワーナー ブラザース スタジオツアー東京"
+
+
+def test_closed_entities_are_dropped(monkeypatch):
+    from pipeline.sources.wikidata import Entity
+
+    ent = Entity(qid="Q423559", labels={"ja": "としまえん"}, lat=35.74, lng=139.64, closed=True)
+    monkeypatch.setattr(major.wikidata, "labels_ja", lambda qids: {})
+    monkeypatch.setattr(major, "excluded_ids", lambda: set())
+    drafts = {"Q423559": major.Draft(key="Q423559", lat=35.74, lng=139.64, ent=ent)}
+    assert major.drop_non_spots(drafts) == ["としまえん"]
+    assert not drafts

@@ -15,6 +15,9 @@ from pipeline.build_bundles import spot_type
 from pipeline.major import OFFICIAL_HOSTS, excluded_ids, log, name_excluded, non_spot_reason
 from pipeline.paths import SPOTS_DIR
 
+# 景點的文化指定標籤（有指定的不當地區排除：例 史跡的町並み）
+DESIGNATION_TAGS = {"世界遺產", "國寶", "特別史跡", "特別名勝", "重要文化財", "史跡", "名勝"}
+
 SPOT_LIKE_TYPES = {
     "海灘",
     "岬",
@@ -86,7 +89,13 @@ def wikidata_non_spots(spots: list[dict[str, Any]]) -> dict[str, str]:
     for qid, e in ents.items():
         s = info[by_qid[qid]]
         kinds = {labels.get(q, "") for q in e.instance_of} - {""}
-        reason = non_spot_reason(kinds, s["name"]["ja"], "世界遺產" in s.get("tags", []))
+        tags = set(s.get("tags", []))
+        designated = bool(tags & DESIGNATION_TAGS)
+        reason = (
+            "已關閉"
+            if e.closed
+            else non_spot_reason(kinds, s["name"]["ja"], "世界遺產" in tags, designated)
+        )
         if reason:
             out[s["id"]] = reason
     return out

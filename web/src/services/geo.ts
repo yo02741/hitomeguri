@@ -119,11 +119,31 @@ const TOLERANCE = 0.45
 
 let outline: JapanOutline | null = null
 
+const px = (x: number) => (x - LNG0) * KX
+const py = (y: number) => (LAT0 - y) * 10
+
+/** 沖繩一帶（照日本地圖的慣例畫在左上框裡的範圍） */
+export function inOkinawaInset(lng: number, lat: number): boolean {
+  return lat < 27.05 && lng < 131.5
+}
+
+/** 經緯度 → 日本地圖 SVG 座標；沖繩一帶移到左上的框 */
+export function japanProject(lng: number, lat: number, inset = inOkinawaInset(lng, lat)): [number, number] {
+  return inset ? [px(lng + OKINAWA_SHIFT[0]), py(lat + OKINAWA_SHIFT[1])] : [px(lng), py(lat)]
+}
+
+/** 日本地圖 SVG 座標 → 經緯度（點在沖繩框裡時換回原本的位置） */
+export function japanUnproject(x: number, y: number): [number, number] {
+  const lng = x / KX + LNG0
+  const lat = LAT0 - y / 10
+  const [ix, iy, iw, ih] = outline?.inset ?? [0, 0, 0, 0]
+  if (x >= ix && x <= ix + iw && y >= iy && y <= iy + ih) return [lng - OKINAWA_SHIFT[0], lat - OKINAWA_SHIFT[1]]
+  return [lng, lat]
+}
+
 export async function japanOutline(): Promise<JapanOutline> {
   if (outline) return outline
   const fs = await loadPrefectureShapes()
-  const px = (x: number) => (x - LNG0) * KX
-  const py = (y: number) => (LAT0 - y) * 10
   const paths = fs.map((f) => {
     const pref = f.properties.pref
     const [sx, sy] = pref === 'okinawa' ? OKINAWA_SHIFT : [0, 0]

@@ -8,6 +8,7 @@ import { JAPAN_CENTER, JAPAN_ZOOM, MAP_STYLE_URL } from '../map/style'
 import { THEMES } from '../data/themes'
 import { mapThumbUrl, type MapSpot } from '../services/bundles'
 import { trackSplash } from '../services/splash'
+import JapanLocator from './JapanLocator.vue'
 
 const props = defineProps<{
   spots: MapSpot[]
@@ -824,6 +825,22 @@ function thumbFailed(h: Hover) {
   hover.value = { ...h, thumb: undefined }
 }
 
+// 角落的日本全圖（JapanLocator）：放大到看不出在哪裡時才出現；移動中每一格畫面更新一次
+const LOCATOR_ZOOM = 6.5
+const locator = shallowRef<{ bounds: [number, number, number, number]; zoom: number } | null>(null)
+let locatorFrame = 0
+function updateLocator() {
+  if (locatorFrame) return
+  locatorFrame = requestAnimationFrame(() => {
+    locatorFrame = 0
+    const v = visibleView(false)
+    locator.value = v ? { bounds: v.bounds, zoom: v.zoom } : null
+  })
+}
+function goTo(lng: number, lat: number) {
+  map?.easeTo({ center: [lng, lat], offset: [(props.insetLeft ?? 0) / 2, 0], duration: 800 }, { user: true })
+}
+
 /** 可見範圍：扣掉左側被浮動面板蓋住的部分 */
 function visibleView(user: boolean): MapView | null {
   if (!map) return null
@@ -873,6 +890,7 @@ onMounted(() => {
     if (props.bounds) fit(props.bounds, false)
     drawRoute(props.route)
   })
+  map.on('move', updateLocator)
   map.on('moveend', (e: { originalEvent?: Event; user?: boolean }) => {
     const view = visibleView(Boolean(e.originalEvent || e.user))
     if (view) emit('moveend', view)
@@ -881,6 +899,7 @@ onMounted(() => {
 
 onBeforeUnmount(() => {
   cancelAnimationFrame(routeFrame)
+  cancelAnimationFrame(locatorFrame)
   photoPins.clear()
   pulse = null
   pinMarker = null
@@ -1021,6 +1040,15 @@ defineExpose({
   <!-- overflow-hidden：hover 標籤落在畫面外時（例如從清單滑過畫面外的景點）不撐出整頁捲軸 -->
   <div class="absolute inset-0 overflow-hidden bg-map-land" role="region" aria-label="地圖">
     <div ref="container" class="isolate size-full"></div>
+    <Transition name="locator">
+      <JapanLocator
+        v-if="locator && locator.zoom >= LOCATOR_ZOOM"
+        :bounds="locator.bounds"
+        :pref="colorKey"
+        class="absolute right-2.5 bottom-[124px] z-[2] w-[124px] max-md:top-2.5 max-md:bottom-auto max-md:w-[96px] print:hidden"
+        @go="goTo"
+      />
+    </Transition>
     <div
       v-if="hover && edge"
       class="pointer-events-none absolute z-[1] flex -translate-x-1/2 -translate-y-1/2 items-center gap-1.5"
@@ -1065,3 +1093,17 @@ defineExpose({
     </div>
   </div>
 </template>
+
+<style scoped>
+.locator-enter-active,
+.locator-leave-active {
+  transition:
+    opacity 0.25s var(--ease-out-soft),
+    transform 0.25s var(--ease-out-soft);
+}
+.locator-enter-from,
+.locator-leave-to {
+  opacity: 0;
+  transform: scale(0.9);
+}
+</style>

@@ -1,7 +1,8 @@
 {
-  "_readme": "從使用者先前兩份 AI 生成的攻略（名古屋、關西）抽出的種子清單。只當『候選名單』使用：座標、營業狀態、開業年份、航線等全部要經 pipeline 對齊 Wikidata/OSM/官網並驗證，不可直接上線。guide_tier S/A 可作為 featured 的加分訊號。",
+  "_readme": "從使用者先前兩份 AI 生成的攻略（名古屋、關西）抽出的種子清單。只當『候選名單』使用：座標、營業狀態、開業年份、航線等全部要經 pipeline 對齊 Wikidata/OSM/官網並驗證，不可直接上線。使用者另外指定的（source: user-request-*）可以帶 wikidata 直接指定項目。guide_tier S/A 可作為 featured 的加分訊號。",
   "spots": [
     {"name_ja":"名古屋城","name_zh":"名古屋城・本丸御殿","prefecture":"aichi","kind":"major","themes":[],"guide_tier":"S","source":"guide-2026-nagoya"},
+    {"name_ja":"ワーナー ブラザース スタジオツアー東京","name_zh":"華納兄弟東京影城之旅","prefecture":"tokyo","kind":"major","themes":[],"guide_tier":"A","source":"user-request-2026-10","wikidata":"Q117148543"},
     {"name_ja":"熱田神宮","name_zh":"熱田神宮","prefecture":"aichi","kind":"major","themes":["goshuin"],"guide_tier":"S","source":"guide-2026-nagoya"},
     {"name_ja":"大須商店街","name_zh":"大須商店街","prefecture":"aichi","kind":"major","themes":[],"guide_tier":"S","source":"guide-2026-nagoya"},
     {"name_ja":"オアシス21","name_zh":"綠洲21","prefecture":"aichi","kind":"major","themes":[],"guide_tier":"S","source":"guide-2026-nagoya"},
