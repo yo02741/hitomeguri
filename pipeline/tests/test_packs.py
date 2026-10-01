@@ -76,7 +76,9 @@ def test_shop_record_and_bundle(tmp_path, monkeypatch):
 
     (tmp_path / "pokecen.json").write_text(json.dumps([center]), encoding="utf-8")
     lid = packs.lid_record(
-        pokefuta.Lid("446", "okinawa", "那覇市", "https://x", 26.22005, 127.71657, "", [("058", "ガーディ")]),
+        pokefuta.Lid(
+            "446", "okinawa", "那覇市", "https://x", 26.22005, 127.71657, "", [("058", "ガーディ")]
+        ),
         "d",
     )
     (tmp_path / "pokefuta.json").write_text(json.dumps([lid]), encoding="utf-8")

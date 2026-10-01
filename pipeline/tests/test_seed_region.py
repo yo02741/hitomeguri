@@ -365,9 +365,26 @@ def test_pinned_seed_uses_seed_name_without_ja_label(monkeypatch):
 def test_closed_entities_are_dropped(monkeypatch):
     from pipeline.sources.wikidata import Entity
 
-    ent = Entity(qid="Q423559", labels={"ja": "としまえん"}, lat=35.74, lng=139.64, closed=True)
+    ent = Entity(
+        qid="Q423559", labels={"ja": "としまえん"}, lat=35.74, lng=139.64, closed_year=2020
+    )
     monkeypatch.setattr(major.wikidata, "labels_ja", lambda qids: {})
     monkeypatch.setattr(major, "excluded_ids", lambda: set())
     drafts = {"Q423559": major.Draft(key="Q423559", lat=35.74, lng=139.64, ent=ent)}
     assert major.drop_non_spots(drafts) == ["としまえん"]
     assert not drafts
+
+
+def test_closed_reason():
+    assert major.closed_reason(2020, {"遊園地"}, False) == "已關閉（2020）"
+    # 城、陣屋的歷史上的廢止；有文化指定；遺構
+    assert major.closed_reason(1877, {"日本の城"}, False) is None
+    assert major.closed_reason(1987, {"工場"}, True) is None
+    assert major.closed_reason(2013, {"震災遺構", "小学校"}, False) is None
+    assert major.closed_reason(None, {"博物館"}, False) is None
+
+
+def test_district_keeps_walks_and_shopping_streets():
+    assert major.non_spot_reason({"都市の地区"}, "長町武家屋敷跡") is None
+    assert major.non_spot_reason({"商業地域"}, "上通") is None
+    assert major.non_spot_reason({"町丁"}, "嵯峨野") is not None

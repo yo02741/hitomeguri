@@ -20,7 +20,11 @@ def test_parse_mmdd():
 
 def test_parse_normals_reads_normal_column_and_skips_missing():
     rows = parse_normals(SAMPLE)
-    assert [(n.station, n.month, n.day) for n in rows] == [("稚内", 5, 13), ("札幌", 5, 1), ("那覇", 1, 16)]
+    assert [(n.station, n.month, n.day) for n in rows] == [
+        ("稚内", 5, 13),
+        ("札幌", 5, 1),
+        ("那覇", 1, 16),
+    ]
 
 
 def test_build_stations_groups_by_station_in_prefecture_order():
@@ -28,6 +32,10 @@ def test_build_stations_groups_by_station_in_prefecture_order():
         "sakura_kaika": [Normal("札幌", 5, 1), Normal("那覇", 1, 16), Normal("どこか", 4, 1)],
         "kaede": [Normal("札幌", 11, 6), Normal("稚内", 10, 30)],
     })  # fmt: skip
-    assert [(s.name, s.prefecture) for s in stations] == [("札幌", "hokkaido"), ("稚内", "hokkaido"), ("那覇", "okinawa")]
+    assert [(s.name, s.prefecture) for s in stations] == [
+        ("札幌", "hokkaido"),
+        ("稚内", "hokkaido"),
+        ("那覇", "okinawa"),
+    ]
     assert stations[0].normals == {"kaede": "11-06", "sakura_kaika": "05-01"}
     assert unknown == {"どこか"}

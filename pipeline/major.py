@@ -628,9 +628,26 @@ EVENT_P31_SUBSTR = (
 # 只有在 P31「全部」都是地區類時才排除：嵐山（山）、アメ横（商店街）這類另有景點類型的保留。
 DISTRICT_P31 = {
     "町丁", "都市の地区", "広域地名", "繁華街", "歓楽街", "風俗街", "ゲイ・タウン", "電気街",
-    "都心等拠点地区", "商業地域", "歴史的地域", "地域", "地区", "行政区画", "領域", "大字", "花街",
+    "都心等拠点地区", "歴史的地域", "地域", "地区", "行政区画", "領域", "大字", "花街",
     "neighborhood", "city district", "quarter", "urban area",
 }  # fmt: skip
+# 地區類但名稱是散步路線、史跡的保留（長町武家屋敷跡、坂の町並み、法善寺横丁）
+DISTRICT_KEEP_NAME_RE = re.compile(r"(跡|通り?|横丁|小路|町並み?|街並み?)$")
+
+# 已關閉：Wikidata 有廢止日或關閉日，且在這一年以後（城、陣屋的「廢止」在江戶、明治，遺址仍是景點）
+# 有文化指定的、遺構、遺跡、紀念設施不算（大川小學校、富岡製糸場）。
+CLOSED_SINCE = 1950
+CLOSED_KEEP_P31 = ("遺構", "遺跡", "跡", "記念", "史跡", "城", "廃墟", "遺産")
+
+
+def closed_reason(closed_year: int | None, kinds: set[str], designated: bool) -> str | None:
+    if closed_year is None or closed_year < CLOSED_SINCE or designated:
+        return None
+    if any(w in k for k in kinds for w in CLOSED_KEEP_P31):
+        return None
+    return f"已關閉（{closed_year}）"
+
+
 # 廣域地名：地圖上一個點代表不了。以名稱結尾判斷（P31 判斷會誤殺六甲山、上高地這類景點）；
 # 世界遺產例外（白神山地）。諸島、列島、群島是旅行目的地，不排除（使用者決定）
 REGION_NAME_RE = re.compile(r"(国立公園|国定公園|半島|山地|山脈|山系|連峰|連山|丘陵|平野|盆地)$")
@@ -660,9 +677,15 @@ def non_spot_reason(
         # 道の駅是景點，不當車站排除
         if any(s in k and not (s == "駅" and "道の駅" in k) for s in EXCLUDE_P31_SUBSTR):
             return k
-    if kinds and kinds <= DISTRICT_P31 and not world_heritage and not designated:
-        return "地區：" + "、".join(sorted(kinds))
     base = strip_disambiguation(name)
+    if (
+        kinds
+        and kinds <= DISTRICT_P31
+        and not world_heritage
+        and not designated
+        and not DISTRICT_KEEP_NAME_RE.search(base)
+    ):
+        return "地區：" + "、".join(sorted(kinds))
     if not world_heritage and REGION_NAME_RE.search(base):
         return "廣域地名"
     # 上課中的學校不是景點；有文化指定、震災遺構、廢校、舊校舍、道の駅的保留
@@ -746,7 +769,7 @@ def drop_non_spots(drafts: dict[str, Draft]) -> list[str]:
                 dropped.append(d.name_ja or key)
                 del drafts[key]
             continue
-        if f"wd-{d.ent.qid}" in manual or d.ent.closed:
+        if f"wd-{d.ent.qid}" in manual:
             dropped.append(d.name_ja or key)
             del drafts[key]
             continue
@@ -754,7 +777,11 @@ def drop_non_spots(drafts: dict[str, Draft]) -> list[str]:
         heritage = {labels_h.get(h, "") for h in d.ent.heritage}
         world = any("世界遺産" in h for h in heritage)
         designated = bool(heritage - {""})
-        if non_spot_kind(kinds, world, d.name_ja or "", designated) or name_excluded(d.name_ja):
+        if (
+            closed_reason(d.ent.closed_year, kinds, designated)
+            or non_spot_kind(kinds, world, d.name_ja or "", designated)
+            or name_excluded(d.name_ja)
+        ):
             dropped.append(d.name_ja or key)
             del drafts[key]
     return dropped

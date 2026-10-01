@@ -12,7 +12,14 @@ from typing import Any
 
 from pipeline import config
 from pipeline.build_bundles import spot_type
-from pipeline.major import OFFICIAL_HOSTS, excluded_ids, log, name_excluded, non_spot_reason
+from pipeline.major import (
+    OFFICIAL_HOSTS,
+    closed_reason,
+    excluded_ids,
+    log,
+    name_excluded,
+    non_spot_reason,
+)
 from pipeline.paths import SPOTS_DIR
 
 # 景點的文化指定標籤（有指定的不當地區排除：例 史跡的町並み）
@@ -90,11 +97,10 @@ def wikidata_non_spots(spots: list[dict[str, Any]]) -> dict[str, str]:
         s = info[by_qid[qid]]
         kinds = {labels.get(q, "") for q in e.instance_of} - {""}
         tags = set(s.get("tags", []))
-        designated = bool(tags & DESIGNATION_TAGS)
-        reason = (
-            "已關閉"
-            if e.closed
-            else non_spot_reason(kinds, s["name"]["ja"], "世界遺產" in tags, designated)
+        # 文化指定：景點的標籤，或 Wikidata 有任何 P1435（重要伝統的建造物群保存地区等）
+        designated = bool(tags & DESIGNATION_TAGS) or bool(e.heritage)
+        reason = closed_reason(e.closed_year, kinds, designated) or non_spot_reason(
+            kinds, s["name"]["ja"], "世界遺產" in tags, designated
         )
         if reason:
             out[s["id"]] = reason

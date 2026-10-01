@@ -33,8 +33,9 @@ class Entity:
     # 創立（P571）的年份；總部所在地（P159）的 QID
     inception: list[int] = field(default_factory=list)
     headquarters: list[str] = field(default_factory=list)
-    # 已關閉、拆除：有廢止日（P576 dissolved, abolished or demolished）或關閉日（P3999）
-    closed: bool = False
+    # 廢止、拆除、關閉的年份（P576 dissolved, abolished or demolished、P3999 closing date）；
+    # 城、陣屋這類歷史上「廢止」的也有，是否當成已關閉由 major.closed_reason 判斷
+    closed_year: int | None = None
 
     @property
     def url(self) -> str:
@@ -120,7 +121,13 @@ def entities(qids: list[str]) -> dict[str, Entity]:
             ent.headquarters = [
                 v["id"] for v in _claim_values(claims, "P159") if isinstance(v, dict) and "id" in v
             ]
-            ent.closed = bool(claims.get("P576") or claims.get("P3999"))
+            closed = [
+                y
+                for prop in ("P576", "P3999")
+                for v in _claim_values(claims, prop)
+                if isinstance(v, dict) and (y := _year(v)) is not None
+            ]
+            ent.closed_year = max(closed) if closed else None
             out[qid] = ent
     return out
 

@@ -11,7 +11,12 @@ def _write(path, data, indent=2):
 def test_validate_flags_format_order_and_sources(tmp_path):
     ok = {"id": "castle-001", "prefecture": "hokkaido", "location": {"lat": 43.3, "lng": 145.6},
           "sources": [{"url": "https://ja.wikipedia.org/wiki/x", "fetched_at": "2026-09-30"}]}  # fmt: skip
-    bad = {"id": "castle-000", "prefecture": "atlantis", "location": {"lat": 0, "lng": 0}, "sources": []}
+    bad = {
+        "id": "castle-000",
+        "prefecture": "atlantis",
+        "location": {"lat": 0, "lng": 0},
+        "sources": [],
+    }
     _write(tmp_path / "packs" / "castles.json", [ok, bad])
     _write(tmp_path / "packs" / "loose.json", [ok], indent=1)
     res = validate.validate(tmp_path, bundles=False)

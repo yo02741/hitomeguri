@@ -215,6 +215,7 @@ def pick_store(name: str, pref: str | None, els: list[osm.OsmElement]) -> osm.Os
             and (pref is None or _pref_of(el.lat, el.lng) == pref)
         ]
     )
+
     # 「聖護院八ツ橋総本店」這種店名本身含「総本店」的，要看店名以外的部分
     def is_main(el: osm.OsmElement) -> bool:
         rest = _norm(el.tags.get("name", "")).replace(key, "")
@@ -348,6 +349,7 @@ def seed_shinise() -> str:
     for s in need:
         if s.title in coords:
             s.lat, s.lng = coords[s.title]
+
     # 座標和本店所在縣不同（例：座標是東京的分店、本店在京都）：也到本店所在縣找一次
     def elsewhere(s: Shop) -> bool:
         hq = hq_pref(texts.get(s.title, ""))
