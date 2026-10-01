@@ -45,7 +45,6 @@ Claude Code 的雲端沙箱連不到 Wikidata、OSM、Wikimedia，也沒有 Clau
 
 ## 分支
 - `main`：預設分支，也是工作分支；推上去就會部署 Firebase Hosting 與 GitHub Pages（`pages.yml` 只部署預設分支）。
-- `claude/visual-effects`：特效（景點收集卡、收集冊、開場動畫、操作過渡），等使用者看過再合併進 `main`；說明在該分支的 `docs/特效分支說明.md`。
 - `pipeline/<指令>-<run 編號>`（例：`pipeline/seed-region-23`）：Actions 採集結果的暫存審核分支。
   - 自動採集（`pipeline/refresh-*`）開 PR，由使用者在 GitHub 合併；PR 關閉後分支自動刪除。
   - 手動採集：檢查報告後用 `git checkout origin/pipeline/... -- data/...` 合併進 `main`，之後用 `cleanup-branches.yml`（手動）刪除，還沒合併的填在 keep 保留。

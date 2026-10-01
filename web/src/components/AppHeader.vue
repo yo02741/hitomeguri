@@ -38,7 +38,8 @@ const { rect, animate } = useIndicator(nav, () => nav.value?.querySelector<HTMLE
 </script>
 
 <template>
-  <header class="flex h-header shrink-0 items-center gap-8 border-b border-line bg-header px-4 md:px-6 print:hidden [view-transition-name:app-header]">
+  <!-- view-transition-name 讓 header 自成一層：要比 main 高，搜尋結果、帳號選單才不會被地圖蓋住 -->
+  <header class="relative z-40 flex h-header shrink-0 items-center gap-8 border-b border-line bg-header px-4 md:px-6 print:hidden [view-transition-name:app-header]">
     <Wordmark />
 
     <nav ref="nav" class="relative flex h-full max-md:hidden" aria-label="主要">
