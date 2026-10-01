@@ -4,6 +4,7 @@ import { useRouter } from 'vue-router'
 
 import DateRangePicker from '../components/DateRangePicker.vue'
 import ExportButtons from '../components/ExportButtons.vue'
+import OfflineButton from '../components/OfflineButton.vue'
 import MapView from '../components/MapView.vue'
 import SkeletonRows from '../components/SkeletonRows.vue'
 import TripMembers from '../components/TripMembers.vue'
@@ -246,6 +247,7 @@ async function del() {
             class="flex h-9 items-center rounded-control border border-line bg-paper px-3 text-label text-ink no-underline hover:bg-surface"
           >旅前小書</RouterLink>
           <ExportButtons :title="trip.name || 'ひとめぐり 行程'" :folders="folders" :leading="['日', '順序']" />
+          <OfflineButton :trip="trip" />
           <button
             v-if="isOwner"
             type="button"

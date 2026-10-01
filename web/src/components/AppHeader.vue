@@ -3,6 +3,7 @@ import { ref } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 
 import { useIndicator } from '../composables/indicator'
+import { useOnline } from '../composables/online'
 
 import type { SearchHit } from '../services/search'
 import { useExploreStore } from '../stores/explore'
@@ -12,6 +13,7 @@ import UserMenu from './UserMenu.vue'
 import Wordmark from './Wordmark.vue'
 
 const userStore = useUserStore()
+const online = useOnline()
 const explore = useExploreStore()
 
 const route = useRoute()
@@ -41,6 +43,7 @@ const { rect, animate } = useIndicator(nav, () => nav.value?.querySelector<HTMLE
   <!-- view-transition-name 讓 header 自成一層：要比 main 高，搜尋結果、帳號選單才不會被地圖蓋住 -->
   <header class="relative z-40 flex h-header shrink-0 items-center gap-8 border-b border-line bg-header px-4 md:px-6 print:hidden [view-transition-name:app-header]">
     <Wordmark />
+    <span v-if="!online" class="-ml-4 rounded-tag bg-ink px-1.5 text-caption font-bold text-paper md:-ml-5" role="status">離線</span>
 
     <nav ref="nav" class="relative flex h-full max-md:hidden" aria-label="主要">
       <RouterLink

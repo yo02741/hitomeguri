@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import AppHeader from './components/AppHeader.vue'
+import AppUpdate from './components/AppUpdate.vue'
 import CardReveal from './components/CardReveal.vue'
 import TabBar from './components/TabBar.vue'
 import { useExploreStore } from './stores/explore'
@@ -21,5 +22,6 @@ const explore = useExploreStore()
     </main>
     <TabBar />
     <CardReveal />
+    <AppUpdate />
   </div>
 </template>
