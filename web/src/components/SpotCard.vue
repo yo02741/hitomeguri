@@ -58,6 +58,14 @@ const nameSize = computed(() => {
   const n = props.card.name.ja.length
   return n <= 4 ? 'text-[2em]' : n <= 7 ? 'text-[1.6em]' : n <= 10 ? 'text-[1.25em]' : 'text-[1.02em]'
 })
+// 箔片的樣式（DESIGN.md §7.19）：世界遺產＝虹＋亮片、國寶＝金＋亮片、
+// 特別史跡・特別名勝＝反向閃卡（照片窗外的卡框發亮，照片不加箔片）、名城＝地方紋樣
+const foil = computed(() => {
+  if (props.rarity === 'rainbow') return 'cosmos'
+  if (props.rarity === 'castle') return 'pattern'
+  if (props.rarity === 'gold') return props.card.designation === '國寶' ? 'gold' : 'reverse'
+  return 'none'
+})
 const dateText = computed(() => (props.visitedOn ? props.visitedOn.replaceAll('-', '.') : ''))
 const sizeClass = { sm: 'text-[10px]', lg: 'text-[16px]', fluid: 'fluid' }
 </script>
@@ -73,7 +81,9 @@ const sizeClass = { sm: 'text-[10px]', lg: 'text-[16px]', fluid: 'fluid' }
     <div class="card relative aspect-[5/7] w-[20em]" :class="[{ 'is-flipped': flipped }, `rarity-${rarity}`]" :data-pref="card.pref">
       <!-- 正面 -->
       <div class="face paper-grain absolute inset-0 flex flex-col gap-[0.55em] overflow-hidden rounded-[1em] bg-region p-[0.75em] text-on-region">
-        <div class="flex items-center gap-[0.5em] px-[0.2em] text-[0.8em] leading-none font-bold whitespace-nowrap">
+        <!-- 反向閃卡：卡框發亮（照片窗與文字在上面） -->
+        <div v-if="foil === 'reverse'" class="frame-foil pointer-events-none absolute inset-0"></div>
+        <div class="relative flex items-center gap-[0.5em] px-[0.2em] text-[0.8em] leading-none font-bold whitespace-nowrap">
           <span lang="ja">{{ region?.name.ja }}</span>
           <span class="truncate font-latin tracking-[0.2em] uppercase opacity-80">{{ region?.name.romaji }}</span>
           <span v-if="label" class="ml-auto shrink-0 rounded-full bg-paper px-[0.6em] py-[0.25em] text-ink">{{ label }}</span>
@@ -98,10 +108,12 @@ const sizeClass = { sm: 'text-[10px]', lg: 'text-[16px]', fluid: 'fluid' }
           </template>
           <!-- 箔片：稀有卡才有，只在照片窗裡（像實體閃卡的圖框）；名城用地方紋樣的形狀 -->
           <div
-            v-if="rarity !== 'normal'"
+            v-if="foil !== 'none' && foil !== 'reverse'"
             class="foil pointer-events-none absolute inset-0"
-            :class="rarity === 'castle' ? ['wa-pattern', PATTERN_CLASS[pattern.key]] : ''"
+            :class="foil === 'pattern' ? ['wa-pattern', PATTERN_CLASS[pattern.key]] : ''"
           ></div>
+          <!-- 亮片：虹卡、金卡；傾斜時一閃一閃 -->
+          <div v-if="foil === 'cosmos' || foil === 'gold'" class="sparkle pointer-events-none absolute inset-0" :class="`sparkle-${foil}`"></div>
           <!-- 去過的印章 -->
           <span
             v-if="visited"
@@ -114,13 +126,13 @@ const sizeClass = { sm: 'text-[10px]', lg: 'text-[16px]', fluid: 'fluid' }
           </span>
         </div>
 
-        <div class="flex min-h-0 flex-1 flex-col justify-center px-[0.2em]">
+        <div class="relative flex min-h-0 flex-1 flex-col justify-center px-[0.2em]">
           <span v-if="card.name.kana" lang="ja" class="truncate text-[0.72em] tracking-kana opacity-85">{{ card.name.kana }}</span>
           <span lang="ja" class="truncate leading-tight font-black tracking-name" :class="nameSize">{{ card.name.ja }}</span>
           <span v-if="card.name.romaji" class="truncate font-latin text-[0.8em] font-semibold tracking-romaji uppercase">{{ card.name.romaji }}</span>
         </div>
 
-        <div class="flex items-center gap-[0.5em] border-t border-on-region/25 px-[0.2em] pt-[0.45em] text-[0.72em] leading-none">
+        <div class="relative flex items-center gap-[0.5em] border-t border-on-region/25 px-[0.2em] pt-[0.45em] text-[0.72em] leading-none">
           <span>{{ card.kind }}</span>
           <span class="ml-auto font-bold">ひとめぐり</span>
         </div>
@@ -229,6 +241,49 @@ const sizeClass = { sm: 'text-[10px]', lg: 'text-[16px]', fluid: 'fluid' }
     var(--color-gold-2) 20%,
     var(--color-gold-1) 28%
   );
+}
+
+/* 亮片：兩層不同間距的小光點，位置跟著光源移動，傾斜時閃爍 */
+.sparkle {
+  border-radius: inherit;
+  mix-blend-mode: color-dodge;
+  background-image:
+    radial-gradient(circle, var(--spark) 0 0.06em, transparent 0.11em),
+    radial-gradient(circle, var(--spark) 0 0.05em, transparent 0.09em),
+    radial-gradient(circle, var(--spark) 0 0.04em, transparent 0.08em);
+  background-size:
+    1.7em 2.3em,
+    2.9em 1.9em,
+    1.3em 3.1em;
+  background-position:
+    calc(var(--mx) * 0.6) calc(var(--my) * 0.4),
+    calc(var(--mx) * -0.5) calc(var(--my) * 0.7),
+    calc(var(--mx) * 0.3) calc(var(--my) * -0.6);
+  opacity: calc(var(--o) * (0.25 + var(--hyp) * 0.75));
+  mask-image: radial-gradient(farthest-corner circle at var(--mx) var(--my), #000 0%, transparent 70%);
+}
+.sparkle-cosmos {
+  --spark: var(--color-glare);
+}
+.sparkle-gold {
+  --spark: var(--color-gold-3);
+}
+/* 反向閃卡：卡框是金色的光澤，照片窗不加 */
+.frame-foil {
+  border-radius: inherit;
+  mix-blend-mode: color-dodge;
+  background-image: repeating-linear-gradient(
+    125deg,
+    var(--color-gold-1) 0%,
+    var(--color-glare) 4%,
+    var(--color-gold-2) 9%,
+    var(--color-gold-3) 14%,
+    var(--color-gold-1) 20%
+  );
+  background-size: 260% 260%;
+  background-position: calc(100% - var(--mx)) calc(100% - var(--my));
+  opacity: calc(0.05 + var(--o) * (0.12 + var(--hyp) * 0.28));
+  filter: brightness(0.5) contrast(1.6) saturate(1.3);
 }
 
 /* 去過的印章：蓋上時壓下去（只在出現時播放一次） */
