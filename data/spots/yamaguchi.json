@@ -2544,71 +2544,6 @@
     "updated_at": "2026-09-28"
   },
   {
-    "id": "wd-Q1064830",
-    "name": {
-      "ja": "萩城",
-      "kana": "はぎじょう",
-      "romaji": "Hagi-jō",
-      "zh_tw": "萩城",
-      "en": "Hagi Castle"
-    },
-    "kana_source": "osm",
-    "location": {
-      "lat": 34.417592,
-      "lng": 131.382478
-    },
-    "prefecture": "yamaguchi",
-    "kind": "major",
-    "themes": [],
-    "tags": [
-      "城",
-      "世界遺產",
-      "史跡"
-    ],
-    "featured": true,
-    "score": 107.77,
-    "summary": {
-      "text": "萩（ㄑㄧㄡ）城是過去於17世紀至19世紀期間屬於長州藩的一座日式城堡，別稱指月城，也曾是長州藩的藩廳；萩城已於19世紀末被拆除，其遺址位於現今日本山口縣萩市。",
-      "lang": "zh",
-      "source_url": "https://zh.wikipedia.org/wiki/%E8%90%A9%E5%9F%8E",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "nearest_stations": [
-      {
-        "name": {
-          "ja": "玉江",
-          "en": "Tamae"
-        },
-        "distance_m": 1380
-      }
-    ],
-    "images": [
-      {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/8/80/Hagi_Castle_oldphoto.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-        "author": "Unknown authorUnknown author",
-        "license": "Public domain",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Hagi_Castle_oldphoto.jpg"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q1064830",
-      "osm": "node/11630385962"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q1064830",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://www.openstreetmap.org/node/11630385962",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
     "id": "wd-Q106646264",
     "name": {
       "ja": "信田ノ丸城",
@@ -2973,7 +2908,7 @@
       "重要文化財",
       "史跡"
     ],
-    "featured": false,
+    "featured": true,
     "score": 70.24,
     "summary": {
       "text": "周防國分寺（すおうこくぶんじ）是位在日本山口縣防府市的寺院，高野山真言宗別格本山。山號「淨瑠璃山」。本尊藥師如來、開基（創立者）為聖武天皇。",
@@ -10028,64 +9963,6 @@
     "updated_at": "2026-09-28"
   },
   {
-    "id": "wd-Q1156906",
-    "name": {
-      "ja": "岩国城",
-      "kana": "いわくにじょう",
-      "romaji": "Iwakunijo",
-      "zh_tw": "岩國城",
-      "en": "Iwakuni Castle"
-    },
-    "kana_source": "wikidata",
-    "location": {
-      "lat": 34.175256,
-      "lng": 132.174231
-    },
-    "prefecture": "yamaguchi",
-    "kind": "major",
-    "themes": [],
-    "tags": [
-      "博物館"
-    ],
-    "featured": true,
-    "score": 82.44,
-    "summary": {
-      "text": "巖國城（いわくにじょう），別名橫山城，是一座位於日本山口縣巖國市橫山地區的城堡。最初建造於1608年，但在1615年因江戶幕府頒布一國一城令後被廢城；現在的巖國城是於1962年重建，是日本100名城之一。",
-      "lang": "zh",
-      "source_url": "https://zh.wikipedia.org/wiki/%E5%B2%A9%E5%9C%8B%E5%9F%8E",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b2/20100724_Iwakuni_Castle_5262.jpg/960px-20100724_Iwakuni_Castle_5262.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Jakub Hałun",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:20100724_Iwakuni_Castle_5262.jpg"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q1156906",
-      "osm": "way/436641226"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q1156906",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://www.openstreetmap.org/way/436641226",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://www.openstreetmap.org/node/1423656100",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
     "id": "wd-Q11569533",
     "name": {
       "ja": "片倉温泉",
@@ -12830,59 +12707,6 @@
     "sources": [
       {
         "url": "https://www.wikidata.org/wiki/Q11652977",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
-    "id": "wd-Q11653520",
-    "name": {
-      "ja": "長登銅山",
-      "kana": "ながのぼりどうざん",
-      "romaji": "Naganoboridozan",
-      "zh_tw": "長登銅山",
-      "en": "Naganobori copper mine"
-    },
-    "kana_source": "wikipedia",
-    "location": {
-      "lat": 34.244944,
-      "lng": 131.336111
-    },
-    "prefecture": "yamaguchi",
-    "kind": "major",
-    "themes": [],
-    "tags": [
-      "史跡"
-    ],
-    "featured": false,
-    "score": 50.56,
-    "summary": {
-      "text": "長登銅山（ながのぼりどうざん）位於山口縣美禰市，和東南邊的秋吉臺連接，主要為產銅的礦山。長登銅山在七世紀末到八世紀初開始成為產銅中心。此地特別以可能為奈良時代東大寺的大佛佛像銅身來源而聞名。之後在1960年(昭和35年)封山之前，斷斷續續地有所產出。",
-      "lang": "zh",
-      "source_url": "https://zh.wikipedia.org/wiki/%E9%95%B7%E7%99%BB%E9%8A%85%E5%B1%B1",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/53/Naganobori_Copper_Mine_Ruins.jpg/960px-Naganobori_Copper_Mine_Ruins.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Miné-Akiyoshidai Karst Plateau Geopark",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Naganobori_Copper_Mine_Ruins.jpg"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q11653520"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q11653520",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://ja.wikipedia.org/wiki/%E9%95%B7%E7%99%BB%E9%8A%85%E5%B1%B1",
         "fetched_at": "2026-09-28"
       }
     ],
@@ -16343,7 +16167,7 @@
     "tags": [
       "神社"
     ],
-    "featured": false,
+    "featured": true,
     "score": 70.92,
     "summary": {
       "text": "元乃隅神社是位於日本山口縣長門市油谷津黃的神社，神社的正面為面對日本海的斷崖，其下方的海蝕洞在波浪拍打時，空氣會連同海水一同被往上噴出，因此被稱為「龍宮的潮吹」；而神社前有123座紅色的鳥居，全長超過100公尺，一路延伸至「龍宮的潮吹」。",
@@ -16418,74 +16242,6 @@
       },
       {
         "url": "https://ja.wikipedia.org/wiki/%E3%82%86%E3%82%81%E3%82%BF%E3%82%A6%E3%83%B3%E5%AE%87%E9%83%A8",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
-    "id": "wd-Q2326743",
-    "name": {
-      "ja": "松下村塾",
-      "kana": "しょうかそんじゅく",
-      "romaji": "Shokasonjuku",
-      "zh_tw": "松下村塾",
-      "en": "Shōkasonjuku Academy"
-    },
-    "kana_source": "wikipedia",
-    "location": {
-      "lat": 34.412169,
-      "lng": 131.417344
-    },
-    "prefecture": "yamaguchi",
-    "kind": "major",
-    "themes": [],
-    "tags": [
-      "世界遺產",
-      "史跡"
-    ],
-    "featured": true,
-    "score": 110.57,
-    "summary": {
-      "text": "松下村塾是日本在19世紀後半期位於長州藩萩城下松本村（位於現在的山口縣萩市）的私塾；由於明治維新的精神領袖及理論奠基者吉田松陰曾在1857年至1858年期間在此授課，當時在此上課的學生又包括多位後來明治維新的重要人物，使得松下村塾不但成為明治維新的象徵之一，其校舍舊址現在也成為萩市的觀光景點。",
-      "lang": "zh",
-      "source_url": "https://zh.wikipedia.org/wiki/%E6%9D%BE%E4%B8%8B%E6%9D%91%E5%A1%BE",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "nearest_stations": [
-      {
-        "name": {
-          "ja": "東萩",
-          "en": "Higashi-Hagi"
-        },
-        "distance_m": 820
-      }
-    ],
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e8/%E6%9D%BE%E4%B8%8B%E6%9D%91%E5%A1%BE.jpg/960px-%E6%9D%BE%E4%B8%8B%E6%9D%91%E5%A1%BE.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "ぽこるん",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:%E6%9D%BE%E4%B8%8B%E6%9D%91%E5%A1%BE.jpg"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q2326743",
-      "osm": "way/555592247"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q2326743",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://www.openstreetmap.org/way/555592247",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://ja.wikipedia.org/wiki/%E6%9D%BE%E4%B8%8B%E6%9D%91%E5%A1%BE",
         "fetched_at": "2026-09-28"
       }
     ],
@@ -19744,7 +19500,7 @@
     "tags": [
       "島"
     ],
-    "featured": false,
+    "featured": true,
     "score": 71.06,
     "summary": {
       "text": "Tsunoshima (角島) is an island located in the Sea of Japan. Located in the north west of Yamaguchi Prefecture, it is a part of Shimonoseki city. The island has an area of 4.1 square kilometers (1.6 sq mi) and has a coastline of 17.1 kilometres (10.6 mi). The island consists primarily of basalt, and is a part of the Kita-Nagato Kaigan Quasi-National Park. As of 28 August 2008, the population of Tsunoshima is 907.",

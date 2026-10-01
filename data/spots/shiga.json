@@ -4908,73 +4908,6 @@
     "updated_at": "2026-09-28"
   },
   {
-    "id": "wd-Q1013195",
-    "name": {
-      "ja": "長浜城",
-      "kana": "ながはまじょう",
-      "romaji": "Nagahamajo",
-      "zh_tw": "長濱城",
-      "en": "Nagahama Castle"
-    },
-    "kana_source": "wikipedia",
-    "location": {
-      "lat": 35.3775,
-      "lng": 136.261111
-    },
-    "prefecture": "shiga",
-    "kind": "major",
-    "themes": [],
-    "tags": [
-      "城"
-    ],
-    "featured": true,
-    "score": 82.43,
-    "summary": {
-      "text": "長濱城（ながはまじょう）是位在滋賀縣長濱市的一座平城。羽柴秀吉（豐臣秀吉）築城之城。別稱今濱城（いまはまじょう）。現在的天守是1983年以犬山城、伏見城為模型模擬復元，作為長濱城歷史博物館營運。",
-      "lang": "zh",
-      "source_url": "https://zh.wikipedia.org/wiki/%E9%95%B7%E6%BF%B1%E5%9F%8E_%28%E8%BF%91%E6%B1%9F%E5%9C%8B%29",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "nearest_stations": [
-      {
-        "name": {
-          "ja": "長浜",
-          "en": "Nagahama"
-        },
-        "distance_m": 380
-      }
-    ],
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c9/180922_Nagahama_Castle_Nagahama_Shiga_pref_Japan01.JPG/960px-180922_Nagahama_Castle_Nagahama_Shiga_pref_Japan01.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "663highland",
-        "license": "CC BY 2.5",
-        "source_url": "https://commons.wikimedia.org/wiki/File:180922_Nagahama_Castle_Nagahama_Shiga_pref_Japan01.JPG"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q1013195",
-      "osm": "way/412923591"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q1013195",
-        "fetched_at": "2026-09-27"
-      },
-      {
-        "url": "https://www.openstreetmap.org/way/412923591",
-        "fetched_at": "2026-09-27"
-      },
-      {
-        "url": "https://ja.wikipedia.org/wiki/%E9%95%B7%E6%B5%9C%E5%9F%8E_%28%E8%BF%91%E6%B1%9F%E5%9B%BD%29",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
     "id": "wd-Q104082588",
     "name": {
       "ja": "滋賀サファリ博物館",
@@ -5665,77 +5598,6 @@
       },
       {
         "url": "https://ja.wikipedia.org/wiki/%E6%97%A7%E5%92%8C%E4%B8%AD%E6%95%A3%E6%9C%AC%E8%88%97",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
-    "id": "wd-Q10928494",
-    "name": {
-      "ja": "坂本城",
-      "kana": "さかもとじょう",
-      "romaji": "Sakamotojo",
-      "zh_tw": "坂本城",
-      "en": "Sakamoto Castle"
-    },
-    "kana_source": "wikipedia",
-    "location": {
-      "lat": 35.059826,
-      "lng": 135.877151
-    },
-    "prefecture": "shiga",
-    "kind": "major",
-    "themes": [],
-    "tags": [
-      "城"
-    ],
-    "featured": false,
-    "score": 79.69,
-    "summary": {
-      "text": "坂本城（さかもとじょう）是位在近江國滋賀郡坂本（滋賀縣大津市之坂本城址公園內）的一座平城。面對琵琶湖，是監視比叡山延曆寺和控制琵琶湖制海權的據點。明智光秀所築之城。山崎之戰後，明智秀滿將城內的寶物（名刀「不動國行」、「二字國俊」、脇差「吉光」、「虛堂之墨蹟」等天下之名物）移交給堀秀政的家老－堀直政後切腹，並點燃天守閣周遭的柴火自焚。",
-      "lang": "zh",
-      "source_url": "https://zh.wikipedia.org/wiki/%E5%9D%82%E6%9C%AC%E5%9F%8E",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "nearest_stations": [
-      {
-        "name": {
-          "ja": "松ノ馬場",
-          "kana": "まつのばんば",
-          "romaji": "Matsunobamba",
-          "en": "Matsunobamba"
-        },
-        "distance_m": 890
-      },
-      {
-        "name": {
-          "ja": "比叡山坂本",
-          "en": "Hieizan-Sakamoto"
-        },
-        "distance_m": 1210
-      }
-    ],
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b3/Sakamotojo09.jpg/960px-Sakamotojo09.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "投稿者が撮影",
-        "license": "Public domain",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Sakamotojo09.jpg"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q10928494"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q10928494",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://ja.wikipedia.org/wiki/%E5%9D%82%E6%9C%AC%E5%9F%8E",
         "fetched_at": "2026-09-28"
       }
     ],
@@ -9334,59 +9196,6 @@
     "updated_at": "2026-09-28"
   },
   {
-    "id": "wd-Q11427927",
-    "name": {
-      "ja": "堅田",
-      "kana": "かたた",
-      "romaji": "Katata",
-      "zh_tw": "堅田",
-      "en": "Katata"
-    },
-    "kana_source": "wikipedia",
-    "location": {
-      "lat": 35.111332,
-      "lng": 135.917771
-    },
-    "prefecture": "shiga",
-    "kind": "major",
-    "themes": [],
-    "tags": [],
-    "featured": false,
-    "score": 67.45,
-    "summary": {
-      "text": "堅田（かたた）は、滋賀県大津市北部の地名である。現行行政地名は堅田一丁目及び堅田二丁目、本堅田一丁目から本堅田六丁目、今堅田一丁目から今堅田三丁目から成るが、広義には真野や仰木などの周辺地区も含む（大津市編入以前の旧堅田町の範囲）。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%A0%85%E7%94%B0_%28%E5%A4%A7%E6%B4%A5%E5%B8%82%29",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "nearest_stations": [
-      {
-        "name": {
-          "ja": "堅田",
-          "en": "Katata"
-        },
-        "distance_m": 1090
-      }
-    ],
-    "images": [],
-    "external_ids": {
-      "wikidata": "Q11427927"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q11427927",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://ja.wikipedia.org/wiki/%E5%A0%85%E7%94%B0_%28%E5%A4%A7%E6%B4%A5%E5%B8%82%29",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
     "id": "wd-Q11430798",
     "name": {
       "ja": "多景島",
@@ -9662,72 +9471,6 @@
       },
       {
         "url": "https://ja.wikipedia.org/wiki/Oh%21Me%E5%A4%A7%E6%B4%A5%E3%83%86%E3%83%A9%E3%82%B9",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
-    "id": "wd-Q11437266",
-    "name": {
-      "ja": "大津城",
-      "kana": "おおつじょう",
-      "romaji": "Otsujo",
-      "zh_tw": "大津城",
-      "en": "Ōtsu Castle"
-    },
-    "kana_source": "wikipedia",
-    "location": {
-      "lat": 35.012056,
-      "lng": 135.86425
-    },
-    "prefecture": "shiga",
-    "kind": "major",
-    "themes": [],
-    "tags": [
-      "城"
-    ],
-    "featured": false,
-    "score": 70.91,
-    "summary": {
-      "text": "大津城（おおつじょう）は、安土桃山時代に近江国滋賀郡大津にあった日本の城。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E6%B4%A5%E5%9F%8E",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "nearest_stations": [
-      {
-        "name": {
-          "ja": "びわ湖浜大津",
-          "kana": "びわこはまおおつ",
-          "romaji": "Biwako-hamaotsu",
-          "en": "Biwako-hamaotsu"
-        },
-        "distance_m": 100
-      },
-      {
-        "name": {
-          "ja": "三井寺",
-          "kana": "みいでら",
-          "romaji": "Miidera",
-          "en": "Miidera"
-        },
-        "distance_m": 440
-      }
-    ],
-    "images": [],
-    "external_ids": {
-      "wikidata": "Q11437266"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q11437266",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E6%B4%A5%E5%9F%8E",
         "fetched_at": "2026-09-28"
       }
     ],
@@ -15952,49 +15695,6 @@
     "updated_at": "2026-09-28"
   },
   {
-    "id": "wd-Q11577981",
-    "name": {
-      "ja": "甲賀ファミリーランド",
-      "kana": "こうがふぁみりーらんど",
-      "romaji": "Kogafamirirando",
-      "zh_tw": "甲賀家庭樂園"
-    },
-    "kana_source": "wikipedia",
-    "location": {
-      "lat": 34.953,
-      "lng": 136.108528
-    },
-    "prefecture": "shiga",
-    "kind": "major",
-    "themes": [],
-    "tags": [],
-    "featured": false,
-    "score": 64.15,
-    "summary": {
-      "text": "甲賀家庭樂園是一個過去位於日本滋賀縣甲賀郡甲西町（現湖南市）甲賀鄉村俱樂部南側的遊樂園，已於1985年關閉；現在土地仍是甲賀鄉村俱樂部所有。",
-      "lang": "zh",
-      "source_url": "https://zh.wikipedia.org/wiki/%E7%94%B2%E8%B3%80FamilyLand",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "images": [],
-    "external_ids": {
-      "wikidata": "Q11577981"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q11577981",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://ja.wikipedia.org/wiki/%E7%94%B2%E8%B3%80%E3%83%95%E3%82%A1%E3%83%9F%E3%83%AA%E3%83%BC%E3%83%A9%E3%83%B3%E3%83%89",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
     "id": "wd-Q11579598",
     "name": {
       "ja": "白山神社",
@@ -17272,79 +16972,6 @@
     "sources": [
       {
         "url": "https://www.wikidata.org/wiki/Q11611119",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
-    "id": "wd-Q11612409",
-    "name": {
-      "ja": "膳所城",
-      "kana": "ぜぜじょう",
-      "romaji": "Zezejo",
-      "zh_tw": "膳所城",
-      "en": "Zeze Castle"
-    },
-    "kana_source": "wikipedia",
-    "location": {
-      "lat": 34.995272,
-      "lng": 135.895358
-    },
-    "prefecture": "shiga",
-    "kind": "major",
-    "themes": [],
-    "tags": [
-      "城"
-    ],
-    "featured": false,
-    "score": 73.64,
-    "summary": {
-      "text": "膳所城（ぜぜじょう）是位在滋賀縣大津市（舊為近江國滋賀郡）的一座城。別名石鹿城、望湖城。為江戶時代膳所藩之藩城。日本三大湖城之一，亦與大津城、坂本城、瀬田城被稱為「琵琶湖的浮城」。",
-      "lang": "zh",
-      "source_url": "https://zh.wikipedia.org/wiki/%E8%86%B3%E6%89%80%E5%9F%8E",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "nearest_stations": [
-      {
-        "name": {
-          "ja": "膳所本町",
-          "kana": "ぜぜほんまち",
-          "romaji": "Zeze-hommachi",
-          "en": "Zeze-hommachi"
-        },
-        "distance_m": 560
-      },
-      {
-        "name": {
-          "ja": "中ノ庄",
-          "kana": "なかのしょう",
-          "romaji": "Nakanosho",
-          "en": "Nakanosho"
-        },
-        "distance_m": 560
-      }
-    ],
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/16/Zeze_castle_2.jpg/960px-Zeze_castle_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "by Monado",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Zeze_castle_2.jpg"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q11612409"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q11612409",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://ja.wikipedia.org/wiki/%E8%86%B3%E6%89%80%E5%9F%8E",
         "fetched_at": "2026-09-28"
       }
     ],
@@ -20876,7 +20503,7 @@
     "tags": [
       "城"
     ],
-    "featured": false,
+    "featured": true,
     "score": 81.4,
     "summary": {
       "text": "佐和山城是位於滋賀縣彥根市（古近江國東城郡的山城。是近江國一個重要的據點，在16世紀末為石田三成的居城最為出名。",
@@ -23526,56 +23153,6 @@
     "updated_at": "2026-09-28"
   },
   {
-    "id": "wd-Q2436937",
-    "name": {
-      "ja": "小谷城",
-      "kana": "おだにじょう",
-      "romaji": "Odanijo",
-      "zh_tw": "小谷城",
-      "en": "Odani Castle"
-    },
-    "kana_source": "wikidata",
-    "location": {
-      "lat": 35.45917,
-      "lng": 136.27694
-    },
-    "prefecture": "shiga",
-    "kind": "major",
-    "themes": [],
-    "tags": [
-      "城",
-      "史跡"
-    ],
-    "featured": true,
-    "score": 85.31,
-    "summary": {
-      "text": "小谷城（おだにじょう）是位於滋賀縣長濱市湖北町伊部（舊近江國淺井郡）的日本戰國時代的山城。小谷城是日本五大山城之一。為戰國時代大名淺井家的居城。在元龜・天正之亂中被織田信長攻下。之後被廢城。是日本100名城之一。",
-      "lang": "zh",
-      "source_url": "https://zh.wikipedia.org/wiki/%E5%B0%8F%E8%B0%B7%E5%9F%8E",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/35/Odanij10.jpg/960px-Odanij10.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "投稿者が撮影",
-        "license": "Public domain",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Odanij10.jpg"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q2436937"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q2436937",
-        "fetched_at": "2026-09-27"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
     "id": "wd-Q24864985",
     "name": {
       "ja": "奥石神社",
@@ -23932,59 +23509,6 @@
     "updated_at": "2026-09-28"
   },
   {
-    "id": "wd-Q262438",
-    "name": {
-      "ja": "紫香楽宮",
-      "kana": "しがらきのみや",
-      "romaji": "Shigarakinomiya",
-      "zh_tw": "紫香樂宮",
-      "en": "Shigaraki Palace"
-    },
-    "kana_source": "wikipedia",
-    "location": {
-      "lat": 34.934722,
-      "lng": 136.084444
-    },
-    "prefecture": "shiga",
-    "kind": "major",
-    "themes": [],
-    "tags": [
-      "史跡"
-    ],
-    "featured": false,
-    "score": 77.83,
-    "summary": {
-      "text": "紫香樂宮是指日本奈良時代聖武天皇在近江國甲賀郡（現在的滋賀縣甲賀市信樂町）建立的離宮。之後更名為甲賀宮（こうかのみや）並成為了首都。",
-      "lang": "zh",
-      "source_url": "https://zh.wikipedia.org/wiki/%E7%B4%AB%E9%A6%99%E6%A8%82%E5%AE%AE",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/97/Albacete_-_La_Purisima.jpg/960px-Albacete_-_La_Purisima.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Zarateman",
-        "license": "Public domain",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Albacete_-_La_Purisima.jpg"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q262438"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q262438",
-        "fetched_at": "2026-09-27"
-      },
-      {
-        "url": "https://ja.wikipedia.org/wiki/%E7%B4%AB%E9%A6%99%E6%A5%BD%E5%AE%AE",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
     "id": "wd-Q2753954",
     "name": {
       "ja": "琵琶湖疏水",
@@ -24170,7 +23694,7 @@
       "城",
       "史跡"
     ],
-    "featured": false,
+    "featured": true,
     "score": 81.47,
     "summary": {
       "text": "觀音寺城（かんのんじじょう）是位於滋賀縣近江八幡市安土町的一座山城，為國家指定史跡。另有和田山城、佐生城、箕作城等支城。觀音寺城是近江國守護六角氏的居城。現在正確的築城年代已經不明。在該城曾爆發過多次戰鬥。1568年，該城被廢城。是全日本本州島最中央的城，是日本100名城之一。",
@@ -25265,7 +24789,7 @@
       "神社",
       "名勝"
     ],
-    "featured": false,
+    "featured": true,
     "score": 79.29,
     "summary": {
       "text": "多賀大社（たがたいしゃ）是位在日本滋賀縣犬上郡多賀町的神社。為式內社、舊社格為官幣大社（現神社本廳的別表神社）。在神佛習合的中世期稱作「多賀大明神」，受到崇敬。",
@@ -27604,62 +27128,6 @@
       },
       {
         "url": "https://www.openstreetmap.org/way/753621499",
-        "fetched_at": "2026-09-27"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
-    "id": "wd-Q786888",
-    "name": {
-      "ja": "安土城",
-      "kana": "あづちじょう",
-      "romaji": "Adzuchi-jō",
-      "zh_tw": "安土城",
-      "en": "Azuchi Castle"
-    },
-    "kana_source": "osm",
-    "location": {
-      "lat": 35.156022,
-      "lng": 136.139361
-    },
-    "prefecture": "shiga",
-    "kind": "major",
-    "themes": [],
-    "tags": [
-      "城",
-      "史跡",
-      "特別史跡"
-    ],
-    "featured": true,
-    "score": 103.56,
-    "summary": {
-      "text": "安土城，是安土時代織田信長的居城、織田政權的中心，位於日本滋賀縣近江八幡市安土町。號稱「天下布武」之城。",
-      "lang": "zh",
-      "source_url": "https://zh.wikipedia.org/wiki/%E5%AE%89%E5%9C%9F%E5%9F%8E",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/10/Azuchi_Castle_Tower.jpg/960px-Azuchi_Castle_Tower.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Akonnchiroll",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Azuchi_Castle_Tower.jpg"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q786888",
-      "osm": "way/753925745"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q786888",
-        "fetched_at": "2026-09-27"
-      },
-      {
-        "url": "https://www.openstreetmap.org/way/753925745",
         "fetched_at": "2026-09-27"
       }
     ],

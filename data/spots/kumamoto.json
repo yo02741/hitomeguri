@@ -4089,68 +4089,6 @@
     "updated_at": "2026-09-28"
   },
   {
-    "id": "wd-Q11360188",
-    "name": {
-      "ja": "上通",
-      "kana": "かみとおり",
-      "romaji": "Kamitori",
-      "zh_tw": "上通",
-      "en": "Kamitori"
-    },
-    "kana_source": "wikipedia",
-    "location": {
-      "lat": 32.804861,
-      "lng": 130.711083
-    },
-    "prefecture": "kumamoto",
-    "kind": "major",
-    "themes": [],
-    "tags": [],
-    "featured": false,
-    "score": 60.93,
-    "summary": {
-      "text": "上通（かみとおり）は、熊本県熊本市中央区の目抜き通りである通町筋の市電停留所付近から見て北へ伸びるアーケードと並木坂で構成される通りである。また、広義では一帯の繁華街を上通と呼称することもある。町名は「上通町」、商店街の名前では「上通」だが、一般には「上通り」とも書き、店舗名などでも用いられる。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E4%B8%8A%E9%80%9A",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "nearest_stations": [
-      {
-        "name": {
-          "ja": "藤崎宮前",
-          "en": "Fujisakigu-mae"
-        },
-        "distance_m": 470
-      }
-    ],
-    "images": [],
-    "external_ids": {
-      "wikidata": "Q11360188",
-      "osm": "way/405408517"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q11360188",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://www.openstreetmap.org/way/405408517",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://www.openstreetmap.org/way/660423964",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://ja.wikipedia.org/wiki/%E4%B8%8A%E9%80%9A",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
     "id": "wd-Q11360189",
     "name": {
       "ja": "上通A地区第一種市街地再開発事業",
@@ -4337,60 +4275,6 @@
       },
       {
         "url": "https://ja.wikipedia.org/wiki/%E4%B8%8B%E7%94%B0%E6%B8%A9%E6%B3%89_%28%E7%86%8A%E6%9C%AC%E7%9C%8C%29",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
-    "id": "wd-Q11361350",
-    "name": {
-      "ja": "下通",
-      "kana": "しもとおり",
-      "romaji": "Shimotori",
-      "zh_tw": "下通",
-      "en": "Shimotori"
-    },
-    "kana_source": "osm",
-    "location": {
-      "lat": 32.800667,
-      "lng": 130.708222
-    },
-    "prefecture": "kumamoto",
-    "kind": "major",
-    "themes": [],
-    "tags": [],
-    "featured": false,
-    "score": 47.9,
-    "summary": {
-      "text": "下通（しもとおり）は、熊本県熊本市中央区に位置するアーケード商店街を中心とした繁華街。熊本市の中心市街地にあたる。町名や商店街の名前では「下通」だが、一般には「下通り」とも書き、店舗名などでも用いられる。アーケードを指して「下通り商店街」などとも呼称される。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E4%B8%8B%E9%80%9A",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "nearest_stations": [
-      {
-        "name": {
-          "ja": "藤崎宮前",
-          "en": "Fujisakigu-mae"
-        },
-        "distance_m": 1000
-      }
-    ],
-    "images": [],
-    "external_ids": {
-      "wikidata": "Q11361350",
-      "osm": "way/562015312"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q11361350",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://www.openstreetmap.org/way/562015312",
         "fetched_at": "2026-09-28"
       }
     ],
@@ -7843,7 +7727,7 @@
     "tags": [
       "名勝"
     ],
-    "featured": false,
+    "featured": true,
     "score": 72.87,
     "summary": {
       "text": "松浜軒（松濱軒、しょうひんけん）は熊本県八代市北の丸町にある、肥後熊本藩細川氏の筆頭家老で八代城代であった松井家の邸宅と庭園。別名：浜の茶屋。国の名勝に指定されている。名勝としての指定名称は旧熊本藩八代城主浜御茶屋（松浜軒）庭園。建物は八代市指定の有形文化財になっている。",
@@ -17169,64 +17053,6 @@
     "updated_at": "2026-09-29"
   },
   {
-    "id": "wd-Q2970819",
-    "name": {
-      "ja": "富岡城",
-      "kana": "とみおかじょう",
-      "romaji": "Tomiokajo",
-      "zh_tw": "富岡城",
-      "en": "Tomioka Castle"
-    },
-    "kana_source": "wikipedia",
-    "location": {
-      "lat": 32.5289,
-      "lng": 130.032
-    },
-    "prefecture": "kumamoto",
-    "kind": "major",
-    "themes": [],
-    "tags": [
-      "城"
-    ],
-    "featured": false,
-    "score": 70.22,
-    "summary": {
-      "text": "富岡城は，是位於肥後國天草郡（今熊本縣天草郡苓北町富岡）的一座城堡。",
-      "lang": "zh",
-      "source_url": "https://zh.wikipedia.org/wiki/%E5%AF%8C%E5%B2%A1%E5%9F%8E",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b2/Tomioka_Castle_01.jpg/960px-Tomioka_Castle_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Taken by YAPON(ja:利用者:YAPON)",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Tomioka_Castle_01.jpg"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q2970819",
-      "osm": "node/6054684623"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q2970819",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://www.openstreetmap.org/node/6054684623",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://ja.wikipedia.org/wiki/%E5%AF%8C%E5%B2%A1%E5%9F%8E",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
     "id": "wd-Q3077059",
     "name": {
       "ja": "通潤橋",
@@ -18562,80 +18388,6 @@
     "sources": [
       {
         "url": "https://www.wikidata.org/wiki/Q60986269",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
-    "id": "wd-Q613355",
-    "name": {
-      "ja": "熊本城",
-      "kana": "くまもとじょう",
-      "romaji": "Kumamoto-jō",
-      "zh_tw": "熊本城",
-      "en": "Kumamoto Castle"
-    },
-    "kana_source": "wikidata",
-    "location": {
-      "lat": 32.806064,
-      "lng": 130.705972
-    },
-    "prefecture": "kumamoto",
-    "city": "熊本市",
-    "kind": "major",
-    "themes": [],
-    "tags": [
-      "城",
-      "重要文化財",
-      "史跡",
-      "特別史跡"
-    ],
-    "featured": true,
-    "score": 108.15,
-    "summary": {
-      "text": "熊本城位於日本熊本縣熊本市中央區。別稱銀杏城（日語：銀杏城）。日本三大名城之一。",
-      "lang": "zh",
-      "source_url": "https://zh.wikipedia.org/wiki/%E7%86%8A%E6%9C%AC%E5%9F%8E",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "nearest_stations": [
-      {
-        "name": {
-          "ja": "藤崎宮前",
-          "en": "Fujisakigu-mae"
-        },
-        "distance_m": 740
-      },
-      {
-        "name": {
-          "ja": "上熊本",
-          "en": "Kami-Kumamoto"
-        },
-        "distance_m": 1450
-      }
-    ],
-    "images": [
-      {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/9/9f/Kumamotojo.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-        "author": "Birdman at Japanese Wikipedia",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Kumamotojo.jpg"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q613355",
-      "osm": "way/375062710"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q613355",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://www.openstreetmap.org/way/375062710",
         "fetched_at": "2026-09-28"
       }
     ],

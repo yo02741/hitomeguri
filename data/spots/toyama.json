@@ -2190,70 +2190,6 @@
     "updated_at": "2026-09-28"
   },
   {
-    "id": "wd-Q11377244",
-    "name": {
-      "ja": "今泉城 (越中国)",
-      "kana": "いまいずみじょう",
-      "romaji": "Imaizumijo",
-      "zh_tw": "今泉城",
-      "en": "Etchu Imaizumi Castle"
-    },
-    "kana_source": "wikipedia",
-    "location": {
-      "lat": 36.669722,
-      "lng": 137.213889
-    },
-    "prefecture": "toyama",
-    "kind": "major",
-    "themes": [],
-    "tags": [],
-    "featured": false,
-    "score": 50.19,
-    "summary": {
-      "text": "今泉城（いまいずみじょう）は、富山県富山市今泉に在った日本の城。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E4%BB%8A%E6%B3%89%E5%9F%8E_%28%E8%B6%8A%E4%B8%AD%E5%9B%BD%29",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "nearest_stations": [
-      {
-        "name": {
-          "ja": "南富山",
-          "kana": "みなみとやま",
-          "romaji": "Minami-Toyama",
-          "en": "Minami-Toyama"
-        },
-        "distance_m": 590
-      },
-      {
-        "name": {
-          "ja": "朝菜町",
-          "kana": "あさなまち",
-          "romaji": "Asana-machi",
-          "en": "Asana-machi"
-        },
-        "distance_m": 1420
-      }
-    ],
-    "images": [],
-    "external_ids": {
-      "wikidata": "Q11377244"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q11377244",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://ja.wikipedia.org/wiki/%E4%BB%8A%E6%B3%89%E5%9F%8E_%28%E8%B6%8A%E4%B8%AD%E5%9B%BD%29",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
     "id": "wd-Q11377353",
     "name": {
       "ja": "今石動城",
@@ -3962,63 +3898,6 @@
       },
       {
         "url": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E4%BD%9B%E5%AF%BA_%28%E9%AB%98%E5%B2%A1%E5%B8%82%29",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
-    "id": "wd-Q11434793",
-    "name": {
-      "ja": "大峪城",
-      "kana": "おおがけじょう",
-      "romaji": "Ogakejo",
-      "zh_tw": "大峪城",
-      "en": "Oyama Castle"
-    },
-    "kana_source": "wikipedia",
-    "location": {
-      "lat": 36.698056,
-      "lng": 137.183056
-    },
-    "prefecture": "toyama",
-    "kind": "major",
-    "themes": [],
-    "tags": [
-      "城"
-    ],
-    "featured": false,
-    "score": 51.05,
-    "summary": {
-      "text": "大峪城（おおがけじょう）は、現在の富山県富山市五福である越中国婦負郡五福にあった日本の城。伊賀城、大掛城、大懸城ともいう。なお伊賀城の呼称はこの城の守将であった片山「伊賀守」延高にちなむ。とやま城郭カードNo.60。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E5%B3%AA%E5%9F%8E",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "nearest_stations": [
-      {
-        "name": {
-          "ja": "西富山",
-          "kana": "にしとやま",
-          "romaji": "Nishi-Toyama",
-          "en": "Nishi-Toyama"
-        },
-        "distance_m": 520
-      }
-    ],
-    "images": [],
-    "external_ids": {
-      "wikidata": "Q11434793"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q11434793",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E5%B3%AA%E5%9F%8E",
         "fetched_at": "2026-09-28"
       }
     ],
@@ -6212,52 +6091,6 @@
       },
       {
         "url": "https://ja.wikipedia.org/wiki/%E5%B0%84%E6%B0%B4%E7%A5%9E%E7%A4%BE",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
-    "id": "wd-Q11459097",
-    "name": {
-      "ja": "小出城",
-      "kana": "こいでじょう",
-      "romaji": "Koidejo",
-      "zh_tw": "小出城",
-      "en": "Koide Castle"
-    },
-    "kana_source": "wikipedia",
-    "location": {
-      "lat": 36.733611,
-      "lng": 137.312778
-    },
-    "prefecture": "toyama",
-    "kind": "major",
-    "themes": [],
-    "tags": [
-      "城"
-    ],
-    "featured": false,
-    "score": 53.71,
-    "summary": {
-      "text": "小出城（こいでじょう）または小井出城（読み同じ）は、現在の富山県富山市水橋小出にあたる越中国新川郡小出にあった日本の城（平城）。とやま城郭カードNo.57。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%B0%8F%E5%87%BA%E5%9F%8E",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "images": [],
-    "external_ids": {
-      "wikidata": "Q11459097"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q11459097",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://ja.wikipedia.org/wiki/%E5%B0%8F%E5%87%BA%E5%9F%8E",
         "fetched_at": "2026-09-28"
       }
     ],
@@ -9101,63 +8934,6 @@
     "updated_at": "2026-09-28"
   },
   {
-    "id": "wd-Q11580549",
-    "name": {
-      "ja": "白鳥城",
-      "kana": "しらとりじょう",
-      "romaji": "Shiratorijo",
-      "zh_tw": "白鳥城",
-      "en": "Shiratori Castle"
-    },
-    "kana_source": "wikipedia",
-    "location": {
-      "lat": 36.698056,
-      "lng": 137.164056
-    },
-    "prefecture": "toyama",
-    "kind": "major",
-    "themes": [],
-    "tags": [
-      "城"
-    ],
-    "featured": false,
-    "score": 59.79,
-    "summary": {
-      "text": "白鳥城（しらとりじょう）は、越中国婦負郡白鳥（現在の富山県富山市吉作）にあった日本の城。とやま城郭カードNo.17。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E7%99%BD%E9%B3%A5%E5%9F%8E",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "nearest_stations": [
-      {
-        "name": {
-          "ja": "西富山",
-          "kana": "にしとやま",
-          "romaji": "Nishi-Toyama",
-          "en": "Nishi-Toyama"
-        },
-        "distance_m": 1220
-      }
-    ],
-    "images": [],
-    "external_ids": {
-      "wikidata": "Q11580549"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q11580549",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://ja.wikipedia.org/wiki/%E7%99%BD%E9%B3%A5%E5%9F%8E",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
     "id": "wd-Q11580592",
     "name": {
       "ja": "白鳥神社 (富山市)",
@@ -9619,50 +9395,6 @@
       },
       {
         "url": "https://ja.wikipedia.org/wiki/%E7%AB%8B%E5%B1%B1%E5%B1%B1%E9%BA%93%E3%82%B9%E3%82%AD%E3%83%BC%E5%A0%B4",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
-    "id": "wd-Q11597838",
-    "name": {
-      "ja": "立山温泉",
-      "kana": "たてやまおんせん",
-      "romaji": "Tateyama Onsen",
-      "zh_tw": "立山温泉",
-      "en": "Tateyama Onsen"
-    },
-    "kana_source": "wikipedia",
-    "location": {
-      "lat": 36.5469,
-      "lng": 137.55244
-    },
-    "prefecture": "toyama",
-    "kind": "major",
-    "themes": [],
-    "tags": [],
-    "featured": false,
-    "score": 63.89,
-    "summary": {
-      "text": "立山温泉（たてやまおんせん）は、富山県富山市（旧上新川郡大山町、旧国越中国）にかつてあった温泉。山田温泉、小川温泉、大牧温泉とともに越中四名湯といわれ、古くは立山下温泉、多枝原温泉とも呼ばれていた。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E7%AB%8B%E5%B1%B1%E6%B8%A9%E6%B3%89",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "images": [],
-    "external_ids": {
-      "wikidata": "Q11597838"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q11597838",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://ja.wikipedia.org/wiki/%E7%AB%8B%E5%B1%B1%E6%B8%A9%E6%B3%89",
         "fetched_at": "2026-09-28"
       }
     ],
@@ -10826,68 +10558,6 @@
     "updated_at": "2026-09-28"
   },
   {
-    "id": "wd-Q11646932",
-    "name": {
-      "ja": "金屋町",
-      "kana": "かなやまち",
-      "romaji": "Kanayamachi",
-      "zh_tw": "金屋町",
-      "en": "Kanayamachi"
-    },
-    "kana_source": "wikipedia",
-    "location": {
-      "lat": 36.750833,
-      "lng": 137.005453
-    },
-    "prefecture": "toyama",
-    "kind": "major",
-    "themes": [],
-    "tags": [],
-    "featured": false,
-    "score": 61.19,
-    "summary": {
-      "text": "金屋町（かなやまち）は、富山県高岡市の地名。中心市街地にもほど近く、かつては高岡銅器産業の中心として栄えた。郵便番号は933-0841。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E9%87%91%E5%B1%8B%E7%94%BA_%28%E9%AB%98%E5%B2%A1%E5%B8%82%29",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "nearest_stations": [
-      {
-        "name": {
-          "ja": "高岡",
-          "kana": "たかおか",
-          "romaji": "Takaoka",
-          "en": "Takaoka"
-        },
-        "distance_m": 1360
-      }
-    ],
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/Takaoka-shi_Kanayamachi%2C_Toyama%2C_historic_industrial_town%28metal%29.JPG/960px-Takaoka-shi_Kanayamachi%2C_Toyama%2C_historic_industrial_town%28metal%29.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Isoyan",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Takaoka-shi_Kanayamachi,_Toyama,_historic_industrial_town(metal).JPG"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q11646932"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q11646932",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://ja.wikipedia.org/wiki/%E9%87%91%E5%B1%8B%E7%94%BA_%28%E9%AB%98%E5%B2%A1%E5%B8%82%29",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
     "id": "wd-Q11651337",
     "name": {
       "ja": "鐘釣温泉",
@@ -11228,7 +10898,7 @@
     "tags": [
       "名勝"
     ],
-    "featured": false,
+    "featured": true,
     "score": 76.9,
     "summary": {
       "text": "雨晴海岸是日本富山縣高岡市北部的一處海岸，該海岸同時也是能登半島國定公園的一部分。雨晴海岸在2014年被錄入「世界百大海灣名錄」；同時也被列入「日本海岸百選」及「白沙青松百選」名錄。在該景點臨近處設有道之驛雨晴 ，JR西日本冰見線亦在此處設置雨晴站。",
@@ -12952,57 +12622,6 @@
     "updated_at": "2026-09-28"
   },
   {
-    "id": "wd-Q1203890",
-    "name": {
-      "ja": "五箇山",
-      "kana": "ごかやま",
-      "romaji": "Gokayama",
-      "zh_tw": "五箇山",
-      "en": "Gokayama"
-    },
-    "kana_source": "wikipedia",
-    "location": {
-      "lat": 36.425556,
-      "lng": 136.935722
-    },
-    "prefecture": "toyama",
-    "kind": "major",
-    "themes": [],
-    "tags": [],
-    "featured": true,
-    "score": 80.3,
-    "summary": {
-      "text": "五箇山，是日本富山縣西南端的南礪市舊平村、舊上平村、舊利賀村所構成之地域。",
-      "lang": "zh",
-      "source_url": "https://zh.wikipedia.org/wiki/%E4%BA%94%E7%AE%87%E5%B1%B1",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e9/Gokayama_ainokura_gassho_shuraku_20050504_5.jpg/960px-Gokayama_ainokura_gassho_shuraku_20050504_5.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "ja:User:Minque",
-        "license": "Public domain",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Gokayama_ainokura_gassho_shuraku_20050504_5.jpg"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q1203890"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q1203890",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://ja.wikipedia.org/wiki/%E4%BA%94%E7%AE%87%E5%B1%B1",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
     "id": "wd-Q1208749",
     "name": {
       "ja": "黒部ダム",
@@ -13794,51 +13413,6 @@
       },
       {
         "url": "https://ja.wikipedia.org/wiki/%E5%98%89%E4%BE%8B%E6%B2%A2%E6%A3%AE%E6%9E%97%E5%85%AC%E5%9C%92",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
-    "id": "wd-Q131324902",
-    "name": {
-      "ja": "富山市八尾化石資料館",
-      "kana": "とやましやつおかせきしりょうかん",
-      "romaji": "Toyamashiyatsuokasekishiryokan",
-      "zh_tw": "富山市八尾化石資料館"
-    },
-    "kana_source": "wikipedia",
-    "location": {
-      "lat": 36.51721,
-      "lng": 137.17922
-    },
-    "prefecture": "toyama",
-    "kind": "major",
-    "themes": [],
-    "tags": [
-      "博物館"
-    ],
-    "featured": false,
-    "score": 48.6,
-    "summary": {
-      "text": "富山市八尾化石資料館（とやましやつおかせきしりょうかん）は、富山県富山市八尾町桐谷地区に2004年（平成16年）に開館した博物館。富山県内唯一の化石専門資料館であった。「海韻館」の愛称をもつ。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%AF%8C%E5%B1%B1%E5%B8%82%E5%85%AB%E5%B0%BE%E5%8C%96%E7%9F%B3%E8%B3%87%E6%96%99%E9%A4%A8",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "images": [],
-    "external_ids": {
-      "wikidata": "Q131324902"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q131324902",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://ja.wikipedia.org/wiki/%E5%AF%8C%E5%B1%B1%E5%B8%82%E5%85%AB%E5%B0%BE%E5%8C%96%E7%9F%B3%E8%B3%87%E6%96%99%E9%A4%A8",
         "fetched_at": "2026-09-28"
       }
     ],
@@ -16231,64 +15805,6 @@
     "updated_at": "2026-09-28"
   },
   {
-    "id": "wd-Q30925818",
-    "name": {
-      "ja": "松村外次郎記念庄川美術館",
-      "kana": "まつむらそとじろうきねんしょうがわびじゅつかん",
-      "romaji": "Matsumurasotojirokinenshogawabijutsukan",
-      "zh_tw": "松村外次郎記念庄川美術館",
-      "en": "Shogawa Memorial Museum of Sotojiro Matsumura"
-    },
-    "kana_source": "wikipedia",
-    "location": {
-      "lat": 36.572389,
-      "lng": 136.994806
-    },
-    "prefecture": "toyama",
-    "kind": "major",
-    "themes": [],
-    "tags": [
-      "博物館"
-    ],
-    "featured": false,
-    "score": 48.44,
-    "summary": {
-      "text": "松村外次郎記念 庄川美術館（まつむらそとじろうきねんしょうがわびじゅつかん、 Shogawa Memorial Museum of Sotojiro Matsumura）は、富山県砺波市庄川町金屋にあった、彫刻家松村外次郎の作品を中心とした公立美術館。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%9D%BE%E6%9D%91%E5%A4%96%E6%AC%A1%E9%83%8E%E8%A8%98%E5%BF%B5%E5%BA%84%E5%B7%9D%E7%BE%8E%E8%A1%93%E9%A4%A8",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/85/Shogawa_Memorial_Museum_of_Sotojiro_Matsumura.jpg/960px-Shogawa_Memorial_Museum_of_Sotojiro_Matsumura.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Opqr",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Shogawa_Memorial_Museum_of_Sotojiro_Matsumura.jpg"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q30925818",
-      "osm": "node/1420916595"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q30925818",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://www.openstreetmap.org/node/1420916595",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://ja.wikipedia.org/wiki/%E6%9D%BE%E6%9D%91%E5%A4%96%E6%AC%A1%E9%83%8E%E8%A8%98%E5%BF%B5%E5%BA%84%E5%B7%9D%E7%BE%8E%E8%A1%93%E9%A4%A8",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
     "id": "wd-Q30931030",
     "name": {
       "ja": "高岡市伏木気象資料館",
@@ -17969,53 +17485,6 @@
     "updated_at": "2026-09-28"
   },
   {
-    "id": "wd-Q6013507",
-    "name": {
-      "ja": "井波町",
-      "kana": "いなみまち",
-      "romaji": "Inamimachi",
-      "zh_tw": "井波町",
-      "en": "Inami"
-    },
-    "kana_source": "wikidata",
-    "location": {
-      "lat": 36.564944,
-      "lng": 136.971583
-    },
-    "prefecture": "toyama",
-    "kind": "major",
-    "themes": [],
-    "tags": [],
-    "featured": false,
-    "score": 67.85,
-    "summary": {
-      "text": "Inami (井波町, Inami-machi) was a town located in Higashitonami District,",
-      "lang": "en",
-      "source_url": "https://en.wikipedia.org/wiki/Inami%2C_Toyama",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-29"
-    },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2e/Inami_Castle.JPG/960px-Inami_Castle.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Negitan (talk)",
-        "license": "Public domain",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Inami_Castle.JPG"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q6013507"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q6013507",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
     "id": "wd-Q60745033",
     "name": {
       "ja": "不動堂遺跡",
@@ -18174,77 +17643,6 @@
     "sources": [
       {
         "url": "https://www.wikidata.org/wiki/Q6446257",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
-    "id": "wd-Q6446260",
-    "name": {
-      "ja": "黒部ダム駅",
-      "kana": "くろべだむえき",
-      "romaji": "Kurobedamueki",
-      "zh_tw": "黑部大壩站",
-      "en": "Kurobe Dam Station"
-    },
-    "kana_source": "wikipedia",
-    "location": {
-      "lat": 36.566667,
-      "lng": 137.666111
-    },
-    "prefecture": "toyama",
-    "kind": "major",
-    "themes": [],
-    "tags": [],
-    "featured": false,
-    "score": 67.71,
-    "summary": {
-      "text": "黑部大壩站是位於富山縣中新川郡立山町蘆峅寺，屬於關西電力關電隧道電氣巴士的巴士站。本站位於立山黑部阿爾卑斯山脈路線上，乘客可透過此站穿越黑部水壩，並步行約15分鐘到達立山黑部貫光黑部登山纜車的黑部湖站。",
-      "lang": "zh",
-      "source_url": "https://zh.wikipedia.org/wiki/%E9%BB%91%E9%83%A8%E5%A4%A7%E5%A3%A9%E7%AB%99",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "nearest_stations": [
-      {
-        "name": {
-          "ja": "黒部湖",
-          "kana": "くろべこ",
-          "romaji": "Kurobeko",
-          "en": "Kurobeko"
-        },
-        "distance_m": 700
-      },
-      {
-        "name": {
-          "ja": "黒部平",
-          "kana": "くろべだいら",
-          "romaji": "Kurobedaira",
-          "en": "Kurobedaira"
-        },
-        "distance_m": 1430
-      }
-    ],
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9e/Kurobe_Dam_station_platform.jpg/960px-Kurobe_Dam_station_platform.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Qurren",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Kurobe_Dam_station_platform.jpg"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q6446260"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q6446260",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://ja.wikipedia.org/wiki/%E9%BB%92%E9%83%A8%E3%83%80%E3%83%A0%E9%A7%85",
         "fetched_at": "2026-09-28"
       }
     ],
@@ -18442,83 +17840,6 @@
     "updated_at": "2026-09-28"
   },
   {
-    "id": "wd-Q6940951",
-    "name": {
-      "ja": "富山県立近代美術館",
-      "kana": "とやまけんりつきんだいびじゅつかん",
-      "romaji": "Toyamakenritsukindaibijutsukan",
-      "zh_tw": "富山縣立近代美術館",
-      "en": "Museum of Modern Art"
-    },
-    "kana_source": "wikipedia",
-    "location": {
-      "lat": 36.680139,
-      "lng": 137.212778
-    },
-    "prefecture": "toyama",
-    "kind": "major",
-    "themes": [],
-    "tags": [
-      "博物館"
-    ],
-    "featured": false,
-    "score": 64.27,
-    "summary": {
-      "text": "The Museum of Modern Art, Toyama (富山県立近代美術館, Toyama Kenritsu Kindai Bijutsukan) was a public prefectural art museum in Toyama, Toyama Prefecture.",
-      "lang": "en",
-      "source_url": "https://en.wikipedia.org/wiki/Museum_of_Modern_Art%2C_Toyama",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-29"
-    },
-    "nearest_stations": [
-      {
-        "name": {
-          "ja": "南富山",
-          "kana": "みなみとやま",
-          "romaji": "Minami-Toyama",
-          "en": "Minami-Toyama"
-        },
-        "distance_m": 1290
-      },
-      {
-        "name": {
-          "ja": "大泉",
-          "romaji": "Ōizumi",
-          "en": "Oizumi"
-        },
-        "distance_m": 1460
-      }
-    ],
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e4/Toyama_Museum_of_Modern_Art.jpg/960px-Toyama_Museum_of_Modern_Art.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Twilight2640 at ja.wikipedia",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Toyama_Museum_of_Modern_Art.jpg"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q6940951",
-      "osm": "way/199752713"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q6940951",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://www.openstreetmap.org/way/199752713",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://ja.wikipedia.org/wiki/%E5%AF%8C%E5%B1%B1%E7%9C%8C%E7%AB%8B%E8%BF%91%E4%BB%A3%E7%BE%8E%E8%A1%93%E9%A4%A8",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
     "id": "wd-Q72073327",
     "name": {
       "ja": "刈込池",
@@ -18577,7 +17898,7 @@
     "tags": [
       "名勝"
     ],
-    "featured": false,
+    "featured": true,
     "score": 78.08,
     "summary": {
       "text": "稱名瀑布位在日本富山縣，被指定為日本天然紀念物，稱名瀑布是號稱日本第一的最大瀑布，落差高達350公尺，分成四段曲折奔流而下: 第1段70m、第2段58m、第3段96m、及第4段126m。每年4月~6月白雪溶化時，稱名瀑布的右邊還會出現500公尺高的夢幻瀑布—稱為榛之木瀑布。",
@@ -18913,80 +18234,6 @@
     "sources": [
       {
         "url": "https://www.wikidata.org/wiki/Q79633240",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
-    "id": "wd-Q8011764",
-    "name": {
-      "ja": "高岡城",
-      "kana": "たかおかじょう",
-      "romaji": "Takaokajo",
-      "zh_tw": "高岡城",
-      "en": "Takaoka Castle"
-    },
-    "kana_source": "wikipedia",
-    "location": {
-      "lat": 36.749167,
-      "lng": 137.020556
-    },
-    "prefecture": "toyama",
-    "kind": "major",
-    "themes": [],
-    "tags": [
-      "城",
-      "史跡"
-    ],
-    "featured": true,
-    "score": 77.18,
-    "summary": {
-      "text": "高岡城是日本古越中國射水郡関野（富山縣高岡市城堡），1609年（慶長14年）築城於平城。城跡在今日的高岡古城公園（たかおかこじょうこうえん）。",
-      "lang": "zh",
-      "source_url": "https://zh.wikipedia.org/wiki/%E9%AB%98%E5%B2%A1%E5%9F%8E",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "nearest_stations": [
-      {
-        "name": {
-          "ja": "越中中川",
-          "kana": "えっちゅうなかがわ",
-          "romaji": "Etchū-Nakagawa",
-          "en": "Etchu-Nakagawa"
-        },
-        "distance_m": 650
-      },
-      {
-        "name": {
-          "ja": "高岡",
-          "kana": "たかおか",
-          "romaji": "Takaoka",
-          "en": "Takaoka"
-        },
-        "distance_m": 1030
-      }
-    ],
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5e/Prunus_sp_in_Takaoka_Kojo_Park_13.jpg/960px-Prunus_sp_in_Takaoka_Kojo_Park_13.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "kahusi (會話)",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Prunus_sp_in_Takaoka_Kojo_Park_13.jpg"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q8011764"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q8011764",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://ja.wikipedia.org/wiki/%E9%AB%98%E5%B2%A1%E5%9F%8E",
         "fetched_at": "2026-09-28"
       }
     ],

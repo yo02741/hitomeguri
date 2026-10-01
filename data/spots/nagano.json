@@ -398,71 +398,6 @@
     "updated_at": "2026-09-29"
   },
   {
-    "id": "wd-Q10856395",
-    "name": {
-      "ja": "高島城",
-      "kana": "たかしまじょう",
-      "romaji": "Takashimajo",
-      "zh_tw": "高島城",
-      "en": "Takashima Castle"
-    },
-    "kana_source": "wikidata",
-    "location": {
-      "lat": 36.039792,
-      "lng": 138.112019
-    },
-    "prefecture": "nagano",
-    "kind": "major",
-    "themes": [],
-    "tags": [
-      "城"
-    ],
-    "featured": false,
-    "score": 77.05,
-    "summary": {
-      "text": "高島城是位於日本長野縣諏訪市高島的一座城郭。又稱諏訪的浮城或島崎城。高島城是連郭式平城，過去因為是一座突入諏訪湖中的水城而被稱為諏訪的浮城。但在江戶時代初期因諏訪湖填湖而失去水城風貌，但仍是日本三大湖城之一。高島城天守外觀為三重五層，現在的天守是復興天守。",
-      "lang": "zh",
-      "source_url": "https://zh.wikipedia.org/wiki/%E9%AB%98%E5%B3%B6%E5%9F%8E",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "nearest_stations": [
-      {
-        "name": {
-          "ja": "上諏訪",
-          "kana": "かみすわ",
-          "romaji": "Kami-Suwa",
-          "en": "Kami-Suwa"
-        },
-        "distance_m": 850
-      }
-    ],
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4f/160603_Takashima_Castle_Suwa_Nagano_pref_Japan03n.jpg/960px-160603_Takashima_Castle_Suwa_Nagano_pref_Japan03n.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "663highland",
-        "license": "CC BY 2.5",
-        "source_url": "https://commons.wikimedia.org/wiki/File:160603_Takashima_Castle_Suwa_Nagano_pref_Japan03n.jpg"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q10856395",
-      "osm": "way/233643278"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q10856395",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://www.openstreetmap.org/way/233643278",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
     "id": "wd-Q108808349",
     "name": {
       "ja": "赤岳鉱泉",
@@ -4266,57 +4201,6 @@
     "updated_at": "2026-09-28"
   },
   {
-    "id": "wd-Q11434798",
-    "name": {
-      "ja": "大峰城",
-      "kana": "おおみねじょう",
-      "romaji": "Ominejo",
-      "zh_tw": "大峰城",
-      "en": "Ōmine Castle"
-    },
-    "kana_source": "wikipedia",
-    "location": {
-      "lat": 36.675604,
-      "lng": 138.176962
-    },
-    "prefecture": "nagano",
-    "kind": "major",
-    "themes": [],
-    "tags": [
-      "城"
-    ],
-    "featured": false,
-    "score": 59.93,
-    "summary": {
-      "text": "大峰城（おおみねじょう）は、長野県長野市にあった日本の城。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E5%B3%B0%E5%9F%8E",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "images": [],
-    "external_ids": {
-      "wikidata": "Q11434798",
-      "osm": "node/6392271236"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q11434798",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://www.openstreetmap.org/node/6392271236",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E5%B3%B0%E5%9F%8E",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
     "id": "wd-Q11434870",
     "name": {
       "ja": "大島城",
@@ -6890,66 +6774,6 @@
     "updated_at": "2026-09-28"
   },
   {
-    "id": "wd-Q11518569",
-    "name": {
-      "ja": "木曽平沢",
-      "kana": "きそひらさわ",
-      "romaji": "Kiso Hirasawa",
-      "zh_tw": "木曽平沢",
-      "en": "Kiso-Hirasawa"
-    },
-    "kana_source": "wikipedia",
-    "location": {
-      "lat": 35.981944,
-      "lng": 137.8325
-    },
-    "prefecture": "nagano",
-    "kind": "major",
-    "themes": [],
-    "tags": [],
-    "featured": false,
-    "score": 59.66,
-    "summary": {
-      "text": "木曽平沢（きそひらさわ）は、長野県塩尻市南部の山岳地帯にある地区。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%9C%A8%E6%9B%BD%E5%B9%B3%E6%B2%A2",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "nearest_stations": [
-      {
-        "name": {
-          "ja": "木曽平沢",
-          "en": "Kiso-Hirasawa"
-        },
-        "distance_m": 390
-      }
-    ],
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f3/Kiso-Hirasawa01n3200.jpg/960px-Kiso-Hirasawa01n3200.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "663highland",
-        "license": "CC BY 2.5",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Kiso-Hirasawa01n3200.jpg"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q11518569"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q11518569",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://ja.wikipedia.org/wiki/%E6%9C%A8%E6%9B%BD%E5%B9%B3%E6%B2%A2",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
     "id": "wd-Q11520497",
     "name": {
       "ja": "本沢温泉",
@@ -7586,64 +7410,6 @@
     "updated_at": "2026-09-28"
   },
   {
-    "id": "wd-Q11532910",
-    "name": {
-      "ja": "林城",
-      "kana": "はやしじょう",
-      "romaji": "Hayashijo",
-      "zh_tw": "林城",
-      "en": "Hayashi Castle"
-    },
-    "kana_source": "wikipedia",
-    "location": {
-      "lat": 36.224944,
-      "lng": 138.009444
-    },
-    "prefecture": "nagano",
-    "kind": "major",
-    "themes": [],
-    "tags": [
-      "城"
-    ],
-    "featured": false,
-    "score": 67.07,
-    "summary": {
-      "text": "The Ogasawara clan castle sites (小笠原氏城跡, Ogasawara-shi jō-seki) were a number Sengoku period yamashiro-style Japanese castles located in what is now part of the city of Matsumoto, Nagano prefecture. These fortifications were built in the Muromachi period by the Ogasawara clan, who ruled the area at the time. Two of the castle ruins, that of Igawa Castle and Hayashi Castle, have been protected collectively as a National Historic Sites since 2017.",
-      "lang": "en",
-      "source_url": "https://en.wikipedia.org/wiki/Hayashi_Castle",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-29"
-    },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d7/Hayasijyo%28oojyo%29.jpg/960px-Hayasijyo%28oojyo%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "デジタルカメラ",
-        "license": "Public domain",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Hayasijyo(oojyo).jpg"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q11532910",
-      "osm": "node/9075118505"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q11532910",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://www.openstreetmap.org/node/9075118505",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://ja.wikipedia.org/wiki/%E6%9E%97%E5%9F%8E",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
     "id": "wd-Q11535075",
     "name": {
       "ja": "栂池高原",
@@ -8194,59 +7960,6 @@
       },
       {
         "url": "https://www.openstreetmap.org/way/482457022",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
-    "id": "wd-Q11552021",
-    "name": {
-      "ja": "池田満寿夫美術館",
-      "kana": "いけだますおびじゅつかん",
-      "romaji": "Ikedamasuobijutsukan",
-      "zh_tw": "池田滿壽夫美術館",
-      "en": "Ikeda Masuo Art Museum"
-    },
-    "kana_source": "wikipedia",
-    "location": {
-      "lat": 36.564444,
-      "lng": 138.196667
-    },
-    "prefecture": "nagano",
-    "kind": "major",
-    "themes": [],
-    "tags": [
-      "美術館"
-    ],
-    "featured": false,
-    "score": 58.35,
-    "summary": {
-      "text": "池田満寿夫美術館（いけだますおびじゅつかん、英: Ikeda Masuo Art Museum）は、長野県長野市松代町にある美術館。松代城南側に立地する。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%B1%A0%E7%94%B0%E6%BA%80%E5%AF%BF%E5%A4%AB%E7%BE%8E%E8%A1%93%E9%A4%A8",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e4/Ikeda_Masuo_Art_Museum.jpg/960px-Ikeda_Masuo_Art_Museum.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "photo: Qurren (talk) Taken with Canon IXY 10S (Digital IXUS 210)",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Ikeda_Masuo_Art_Museum.jpg"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q11552021"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q11552021",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://ja.wikipedia.org/wiki/%E6%B1%A0%E7%94%B0%E6%BA%80%E5%AF%BF%E5%A4%AB%E7%BE%8E%E8%A1%93%E9%A4%A8",
         "fetched_at": "2026-09-28"
       }
     ],
@@ -10922,77 +10635,6 @@
       },
       {
         "url": "https://ja.wikipedia.org/wiki/%E7%B1%B3%E5%AD%90%E5%A4%A7%E7%80%91%E5%B8%83",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
-    "id": "wd-Q11608106",
-    "name": {
-      "ja": "縄手通り商店街",
-      "kana": "なわてどおりしょうてんがい",
-      "romaji": "Nawatedorishotengai",
-      "zh_tw": "繩手通",
-      "en": "Nawate-dōri"
-    },
-    "kana_source": "wikipedia",
-    "location": {
-      "lat": 36.234623,
-      "lng": 137.971978
-    },
-    "prefecture": "nagano",
-    "kind": "major",
-    "themes": [],
-    "tags": [
-      "街區"
-    ],
-    "featured": false,
-    "score": 61.63,
-    "summary": {
-      "text": "縄手通り商店街（なわてどおりしょうてんがい）、縄手通り（なわてどおり）、ナワテ通り（なわてどおり）、松本なわて通り（まつもとなわてどおり）は、長野県松本市大手にある商店街である。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E7%B8%84%E6%89%8B%E9%80%9A%E3%82%8A%E5%95%86%E5%BA%97%E8%A1%97",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "nearest_stations": [
-      {
-        "name": {
-          "ja": "松本",
-          "kana": "まつもと",
-          "romaji": "Matsumoto",
-          "en": "Matsumoto"
-        },
-        "distance_m": 800
-      },
-      {
-        "name": {
-          "ja": "北松本",
-          "en": "Kita-Matsumoto"
-        },
-        "distance_m": 1040
-      }
-    ],
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b7/130608_Nawate_shop_street_Matsumoto_Nagano_pref_Japan02n.jpg/960px-130608_Nawate_shop_street_Matsumoto_Nagano_pref_Japan02n.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "663highland",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:130608_Nawate_shop_street_Matsumoto_Nagano_pref_Japan02n.jpg"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q11608106"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q11608106",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://ja.wikipedia.org/wiki/%E7%B8%84%E6%89%8B%E9%80%9A%E3%82%8A%E5%95%86%E5%BA%97%E8%A1%97",
         "fetched_at": "2026-09-28"
       }
     ],
@@ -15602,57 +15244,6 @@
     "updated_at": "2026-09-28"
   },
   {
-    "id": "wd-Q17190581",
-    "name": {
-      "ja": "安曇野アートヒルズミュージアム",
-      "kana": "あづみのあーとひるずみゅーじあむ",
-      "romaji": "Azuminoatohiruzumyujiamu",
-      "zh_tw": "安曇野アートヒルズミュージアム",
-      "en": "Azumino Arthills Museum"
-    },
-    "kana_source": "wikipedia",
-    "location": {
-      "lat": 36.340139,
-      "lng": 137.842056
-    },
-    "prefecture": "nagano",
-    "kind": "major",
-    "themes": [],
-    "tags": [],
-    "featured": false,
-    "score": 60.5,
-    "summary": {
-      "text": "安曇野アートヒルズミュージアム（あづみのアートヒルズミュージアム）は、長野県安曇野市穂高有明に存在した、ガラス工芸をテーマとした観光施設。安曇野アートライン加盟。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%AE%89%E6%9B%87%E9%87%8E%E3%82%A2%E3%83%BC%E3%83%88%E3%83%92%E3%83%AB%E3%82%BA%E3%83%9F%E3%83%A5%E3%83%BC%E3%82%B8%E3%82%A2%E3%83%A0",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cb/Azumino_Arthills_Museum.jpg/960px-Azumino_Arthills_Museum.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "photo: Qurren (talk) Taken with Canon PowerShot G9 X",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Azumino_Arthills_Museum.jpg"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q17190581"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q17190581",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://ja.wikipedia.org/wiki/%E5%AE%89%E6%9B%87%E9%87%8E%E3%82%A2%E3%83%BC%E3%83%88%E3%83%92%E3%83%AB%E3%82%BA%E3%83%9F%E3%83%A5%E3%83%BC%E3%82%B8%E3%82%A2%E3%83%A0",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
     "id": "wd-Q17192303",
     "name": {
       "ja": "アルプス公園",
@@ -20004,46 +19595,6 @@
     "updated_at": "2026-09-28"
   },
   {
-    "id": "wd-Q6347595",
-    "name": {
-      "ja": "開田村",
-      "kana": "かいだむら",
-      "romaji": "Kaidamura",
-      "zh_tw": "開田村",
-      "en": "Kaida"
-    },
-    "kana_source": "wikidata",
-    "location": {
-      "lat": 35.940861,
-      "lng": 137.600583
-    },
-    "prefecture": "nagano",
-    "kind": "major",
-    "themes": [],
-    "tags": [],
-    "featured": false,
-    "score": 64.33,
-    "summary": {
-      "text": "Kaida (開田村, Kaida-mura) was a village located in Kiso District, Nagano Prefecture, Japan.",
-      "lang": "en",
-      "source_url": "https://en.wikipedia.org/wiki/Kaida%2C_Nagano",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-29"
-    },
-    "images": [],
-    "external_ids": {
-      "wikidata": "Q6347595"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q6347595",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
     "id": "wd-Q63565237",
     "name": {
       "ja": "北野美術館",
@@ -21036,97 +20587,6 @@
       },
       {
         "url": "https://www.openstreetmap.org/way/300077872",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
-    "id": "wd-Q7813035",
-    "name": {
-      "ja": "戸隠村",
-      "kana": "とがくしむら",
-      "romaji": "Togakushimura",
-      "zh_tw": "戶隱村",
-      "en": "Togakushi"
-    },
-    "kana_source": "wikidata",
-    "location": {
-      "lat": 36.701917,
-      "lng": 138.089028
-    },
-    "prefecture": "nagano",
-    "kind": "major",
-    "themes": [],
-    "tags": [],
-    "featured": false,
-    "score": 74.28,
-    "summary": {
-      "text": "Togakushi (戸隠村, Togakushi-mura) was a village located in the mountainous Kamiminochi District, Nagano Prefecture, Japan.",
-      "lang": "en",
-      "source_url": "https://en.wikipedia.org/wiki/Togakushi%2C_Nagano",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-29"
-    },
-    "images": [],
-    "external_ids": {
-      "wikidata": "Q7813035"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q7813035",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
-    "id": "wd-Q8081476",
-    "name": {
-      "ja": "扇沢駅",
-      "kana": "おうぎざわえき",
-      "romaji": "Ogizawaeki",
-      "zh_tw": "扇澤站",
-      "en": "Ōgizawa Station"
-    },
-    "kana_source": "wikipedia",
-    "location": {
-      "lat": 36.558131,
-      "lng": 137.722042
-    },
-    "prefecture": "nagano",
-    "kind": "major",
-    "themes": [],
-    "tags": [],
-    "featured": false,
-    "score": 70.78,
-    "summary": {
-      "text": "扇澤站是位於長野縣大町市平，關西電力關電隧道電氣巴士的巴士站。",
-      "lang": "zh",
-      "source_url": "https://zh.wikipedia.org/wiki/%E6%89%87%E6%BE%A4%E7%AB%99",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ea/Ogizawa_Station_%282016-07-12%29.jpg/960px-Ogizawa_Station_%282016-07-12%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Alpsdake",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Ogizawa_Station_(2016-07-12).jpg"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q8081476"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q8081476",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://ja.wikipedia.org/wiki/%E6%89%87%E6%B2%A2%E9%A7%85",
         "fetched_at": "2026-09-28"
       }
     ],

@@ -3048,70 +3048,6 @@
     "updated_at": "2026-09-29"
   },
   {
-    "id": "wd-Q1037684",
-    "name": {
-      "ja": "高山城",
-      "kana": "たかやまじょう",
-      "romaji": "Takayamajo",
-      "zh_tw": "高山城",
-      "en": "Takayama Castle"
-    },
-    "kana_source": "wikipedia",
-    "location": {
-      "lat": 36.138185,
-      "lng": 137.263583
-    },
-    "prefecture": "gifu",
-    "kind": "major",
-    "themes": [],
-    "tags": [
-      "城"
-    ],
-    "featured": false,
-    "score": 71.95,
-    "summary": {
-      "text": "Takayama Castle (高山城, Takayama-jō) was a Japanese castle located in the city of Takayama, Gifu Prefecture, Japan. The castle was built on a mountain nearly 687 m (2,254 ft) in height and had many typical castle features, including a stone base, earthen walls and a surrounding moat.",
-      "lang": "en",
-      "source_url": "https://en.wikipedia.org/wiki/Takayama_Castle",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-29"
-    },
-    "nearest_stations": [
-      {
-        "name": {
-          "ja": "高山",
-          "kana": "たかやま",
-          "romaji": "Takayama",
-          "en": "Takayama"
-        },
-        "distance_m": 1150
-      }
-    ],
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bb/Japan_110416_Takayama_03.jpg/960px-Japan_110416_Takayama_03.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Oren Rozen",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Japan_110416_Takayama_03.jpg"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q1037684"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q1037684",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://ja.wikipedia.org/wiki/%E9%AB%98%E5%B1%B1%E5%9F%8E_%28%E9%A3%9B%E9%A8%A8%E5%9B%BD%29",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
     "id": "wd-Q104710272",
     "name": {
       "ja": "戦国山城ミュージアム",
@@ -3246,7 +3182,7 @@
     "tags": [
       "城"
     ],
-    "featured": false,
+    "featured": true,
     "score": 79.3,
     "summary": {
       "text": "大垣城位於岐阜縣大垣市中心部的平城。別名為糜城及鉅鹿城。全盛期有四層堀。現時只有留下現存天守閣，內部主要為關原之戰的資料館。",
@@ -5056,68 +4992,6 @@
       },
       {
         "url": "https://ja.wikipedia.org/wiki/%E4%B8%89%E7%94%B2%E7%BE%8E%E8%A1%93%E9%A4%A8",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
-    "id": "wd-Q11356789",
-    "name": {
-      "ja": "三町",
-      "kana": "さんまち",
-      "romaji": "Sanmachi",
-      "zh_tw": "三町",
-      "en": "Sanmachi"
-    },
-    "kana_source": "wikipedia",
-    "location": {
-      "lat": 36.140175,
-      "lng": 137.259461
-    },
-    "prefecture": "gifu",
-    "kind": "major",
-    "themes": [],
-    "tags": [],
-    "featured": false,
-    "score": 59.11,
-    "summary": {
-      "text": "三町（さんまち）は、岐阜県高山市の伝統的建造物群保存地区の名称。上三之町、上二之町、上一之町、片原町、神明町4丁目に跨る東西約150m、南北約420mの区域。通称として平仮名でさんまち通りと表記されることが多い。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E4%B8%89%E7%94%BA_%28%E9%AB%98%E5%B1%B1%E5%B8%82%29",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "nearest_stations": [
-      {
-        "name": {
-          "ja": "高山",
-          "kana": "たかやま",
-          "romaji": "Takayama",
-          "en": "Takayama"
-        },
-        "distance_m": 740
-      }
-    ],
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bd/260923_Sanmachi_Takayama_Japan03s3.jpg/960px-260923_Sanmachi_Takayama_Japan03s3.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "663highland",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:260923_Sanmachi_Takayama_Japan03s3.jpg"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q11356789"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q11356789",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://ja.wikipedia.org/wiki/%E4%B8%89%E7%94%BA_%28%E9%AB%98%E5%B1%B1%E5%B8%82%29",
         "fetched_at": "2026-09-28"
       }
     ],
@@ -9723,59 +9597,6 @@
     "updated_at": "2026-09-28"
   },
   {
-    "id": "wd-Q11481281",
-    "name": {
-      "ja": "帰雲城",
-      "kana": "かえりくもじょう",
-      "romaji": "Kaerikumojo",
-      "zh_tw": "歸雲城",
-      "en": "Kaerikumo Castle"
-    },
-    "kana_source": "wikipedia",
-    "location": {
-      "lat": 36.210056,
-      "lng": 136.892833
-    },
-    "prefecture": "gifu",
-    "kind": "major",
-    "themes": [],
-    "tags": [
-      "城"
-    ],
-    "featured": false,
-    "score": 76.7,
-    "summary": {
-      "text": "Kaerikumo Castle (Japanese: 帰雲城, Hepburn: Kaerikumo-jō / Kaerigumo-jō / Kiun-jō; lit. 'Castle Clouds Back') is a castle that is said to have existed in Shirakawa Village in the Hida region, Japan, being served as the castle of the Uchigashima clan, from the end of the Muromachi period to the end of the Azuchi–Momoyama period. It is well known a castle that was buried overnight by 1586 Tenshō earthquake. The exact location of this castle is unknown.",
-      "lang": "en",
-      "source_url": "https://en.wikipedia.org/wiki/Kaerikumo_Castle",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-29"
-    },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/66/Monument_of_Kaerikumo_Castle_Ruins_001.JPG/960px-Monument_of_Kaerikumo_Castle_Ruins_001.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "NALA Wiki (talk)",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Monument_of_Kaerikumo_Castle_Ruins_001.JPG"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q11481281"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q11481281",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://ja.wikipedia.org/wiki/%E5%B8%B0%E9%9B%B2%E5%9F%8E",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
     "id": "wd-Q11481653",
     "name": {
       "ja": "常葉神社",
@@ -10152,7 +9973,7 @@
     "tags": [
       "主題樂園"
     ],
-    "featured": false,
+    "featured": true,
     "score": 68.11,
     "summary": {
       "text": "恵那峡ワンダーランド（えなきょうワンダーランド）は、岐阜県中津川市にある遊園地である。",
@@ -11138,68 +10959,6 @@
     "updated_at": "2026-09-28"
   },
   {
-    "id": "wd-Q11512250",
-    "name": {
-      "ja": "明智城",
-      "kana": "あけちじょう",
-      "romaji": "Akechijo",
-      "zh_tw": "明智城跡",
-      "en": "Akechi Castle"
-    },
-    "kana_source": "wikipedia",
-    "location": {
-      "lat": 35.421222,
-      "lng": 137.0845
-    },
-    "prefecture": "gifu",
-    "kind": "major",
-    "themes": [],
-    "tags": [
-      "城"
-    ],
-    "featured": false,
-    "score": 69.21,
-    "summary": {
-      "text": "明智城（あけちじょう）は、岐阜県可児市瀬田長山（美濃国可児郡）にあった日本の城。長山城または明智長山城とも呼ばれている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%98%8E%E6%99%BA%E5%9F%8E_%28%E7%BE%8E%E6%BF%83%E5%9B%BD%E5%8F%AF%E5%85%90%E9%83%A1%29",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "nearest_stations": [
-      {
-        "name": {
-          "ja": "明智",
-          "en": "Akechi"
-        },
-        "distance_m": 1360
-      }
-    ],
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/28/Trace_of_Akechi_Castle-B.JPG/960px-Trace_of_Akechi_Castle-B.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "onaonan",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Trace_of_Akechi_Castle-B.JPG"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q11512250"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q11512250",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://ja.wikipedia.org/wiki/%E6%98%8E%E6%99%BA%E5%9F%8E_%28%E7%BE%8E%E6%BF%83%E5%9B%BD%E5%8F%AF%E5%85%90%E9%83%A1%29",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
     "id": "wd-Q11512353",
     "name": {
       "ja": "明治座 (岐阜県)",
@@ -11236,61 +10995,6 @@
     "sources": [
       {
         "url": "https://www.wikidata.org/wiki/Q11512353",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
-    "id": "wd-Q11512461",
-    "name": {
-      "ja": "明知城",
-      "kana": "あけちじょう",
-      "romaji": "Akechijo",
-      "zh_tw": "明知城",
-      "en": "Akechi Castle"
-    },
-    "kana_source": "wikipedia",
-    "location": {
-      "lat": 35.305,
-      "lng": 137.393056
-    },
-    "prefecture": "gifu",
-    "kind": "major",
-    "themes": [],
-    "tags": [
-      "城"
-    ],
-    "featured": false,
-    "score": 66.73,
-    "summary": {
-      "text": "明知城（あけちじょう）は、美濃国明知（岐阜県恵那市明智町）にあった戦国時代の日本の城（山城）。別名白鷹城（しらたかじょう）。岐阜県指定史跡。なお、美濃国には、可児郡明智荘にも明智城（長山城）が存在していたので、混同への注意が必要である。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%98%8E%E7%9F%A5%E5%9F%8E",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "nearest_stations": [
-      {
-        "name": {
-          "ja": "明智",
-          "en": "Akechi"
-        },
-        "distance_m": 520
-      }
-    ],
-    "images": [],
-    "external_ids": {
-      "wikidata": "Q11512461"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q11512461",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://ja.wikipedia.org/wiki/%E6%98%8E%E7%9F%A5%E5%9F%8E",
         "fetched_at": "2026-09-28"
       }
     ],
@@ -13093,68 +12797,6 @@
     "updated_at": "2026-09-28"
   },
   {
-    "id": "wd-Q11573909",
-    "name": {
-      "ja": "瑞浪市地球回廊",
-      "kana": "みずなみしちきゅうかいろう",
-      "romaji": "Mizunamishichikyukairo",
-      "zh_tw": "瑞浪市地球回廊",
-      "en": "Mizunami Earth Corridor"
-    },
-    "kana_source": "wikipedia",
-    "location": {
-      "lat": 35.374106,
-      "lng": 137.237256
-    },
-    "prefecture": "gifu",
-    "kind": "major",
-    "themes": [],
-    "tags": [],
-    "featured": false,
-    "score": 55.24,
-    "summary": {
-      "text": "瑞浪市地球回廊（みずなみしちきゅうかいろう）は、岐阜県瑞浪市の瑞浪市民公園にあった地球史に関する博物館。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E7%91%9E%E6%B5%AA%E5%B8%82%E5%9C%B0%E7%90%83%E5%9B%9E%E5%BB%8A",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "nearest_stations": [
-      {
-        "name": {
-          "ja": "瑞浪",
-          "kana": "みずなみ",
-          "romaji": "Mizunami",
-          "en": "Mizunami"
-        },
-        "distance_m": 1490
-      }
-    ],
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/52/Mizunami_city_chikyu_kairo.jpg/960px-Mizunami_city_chikyu_kairo.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Opqr",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Mizunami_city_chikyu_kairo.jpg"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q11573909"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q11573909",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://ja.wikipedia.org/wiki/%E7%91%9E%E6%B5%AA%E5%B8%82%E5%9C%B0%E7%90%83%E5%9B%9E%E5%BB%8A",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
     "id": "wd-Q11573910",
     "name": {
       "ja": "瑞浪市化石博物館",
@@ -13954,115 +13596,6 @@
       },
       {
         "url": "https://ja.wikipedia.org/wiki/%E7%9F%B3%E5%BE%B9%E7%99%BD%E3%81%AE%E5%A4%A7%E6%9D%89",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
-    "id": "wd-Q11589569",
-    "name": {
-      "ja": "神岡城",
-      "kana": "かみおかじょう",
-      "romaji": "Kamiokajo",
-      "zh_tw": "神岡城",
-      "en": "Kamioka Castle"
-    },
-    "kana_source": "wikipedia",
-    "location": {
-      "lat": 36.329583,
-      "lng": 137.30239
-    },
-    "prefecture": "gifu",
-    "kind": "major",
-    "themes": [],
-    "tags": [
-      "城"
-    ],
-    "featured": false,
-    "score": 63.63,
-    "summary": {
-      "text": "神岡城（かみおかじょう）は、飛騨国吉城郡神岡（現・岐阜県飛騨市神岡町城ヶ丘1）にあった日本の城（平山城）。「東町城跡」として飛騨市指定史跡。歴史上の名称は東町城（ひがしまちじょう）で、「神岡城」は通称である。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E7%A5%9E%E5%B2%A1%E5%9F%8E",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/09/Kamiokajo.jpg/960px-Kamiokajo.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "As6673",
-        "license": "Public domain",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Kamiokajo.jpg"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q11589569",
-      "osm": "way/619683555"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q11589569",
-        "fetched_at": "2026-09-27"
-      },
-      {
-        "url": "https://www.openstreetmap.org/way/619683555",
-        "fetched_at": "2026-09-27"
-      },
-      {
-        "url": "https://ja.wikipedia.org/wiki/%E7%A5%9E%E5%B2%A1%E5%9F%8E",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
-    "id": "wd-Q11589583",
-    "name": {
-      "ja": "神岡鉱山",
-      "kana": "かみおかこうざん",
-      "romaji": "Kamiokakozan",
-      "zh_tw": "神岡礦山",
-      "en": "Kamioka mine"
-    },
-    "kana_source": "wikipedia",
-    "location": {
-      "lat": 36.348833,
-      "lng": 137.295194
-    },
-    "prefecture": "gifu",
-    "kind": "major",
-    "themes": [],
-    "tags": [],
-    "featured": false,
-    "score": 72.32,
-    "summary": {
-      "text": "神岡鉱山（かみおかこうざん）は、岐阜県飛騨市（旧吉城郡神岡町）にある亜鉛・鉛・銀 ・石灰鉱山。2001年（平成13年）6月に亜鉛・鉛・銀の採掘を中止した。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E7%A5%9E%E5%B2%A1%E9%89%B1%E5%B1%B1",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/46/Kamiokakozan2.jpg/960px-Kamiokakozan2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "As6673",
-        "license": "Public domain",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Kamiokakozan2.jpg"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q11589583"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q11589583",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://ja.wikipedia.org/wiki/%E7%A5%9E%E5%B2%A1%E9%89%B1%E5%B1%B1",
         "fetched_at": "2026-09-28"
       }
     ],
@@ -18559,72 +18092,6 @@
     "updated_at": "2026-09-28"
   },
   {
-    "id": "wd-Q11669454",
-    "name": {
-      "ja": "高山陣屋",
-      "kana": "たかやまじんや",
-      "romaji": "Takayama Jin Ya",
-      "zh_tw": "高山陣屋",
-      "en": "Takayama Jin'ya"
-    },
-    "kana_source": "osm",
-    "location": {
-      "lat": 36.1397,
-      "lng": 137.258
-    },
-    "prefecture": "gifu",
-    "kind": "major",
-    "themes": [],
-    "tags": [
-      "博物館",
-      "史跡"
-    ],
-    "featured": true,
-    "score": 76.91,
-    "summary": {
-      "text": "高山陣屋是江戶幕府將飛驒國作為直轄領管理而設置的代官所、飛驒郡代役所（陣屋），位於現在的岐阜縣高山市八軒町。",
-      "lang": "zh",
-      "source_url": "https://zh.wikipedia.org/wiki/%E9%AB%98%E5%B1%B1%E9%99%A3%E5%B1%8B",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "nearest_stations": [
-      {
-        "name": {
-          "ja": "高山",
-          "kana": "たかやま",
-          "romaji": "Takayama",
-          "en": "Takayama"
-        },
-        "distance_m": 620
-      }
-    ],
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e6/Takayama_Jinya_inside_view_201706.jpg/960px-Takayama_Jinya_inside_view_201706.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Wpcpey",
-        "license": "CC BY 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Takayama_Jinya_inside_view_201706.jpg"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q11669454",
-      "osm": "way/240742820"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q11669454",
-        "fetched_at": "2026-09-27"
-      },
-      {
-        "url": "https://www.openstreetmap.org/way/240742820",
-        "fetched_at": "2026-09-27"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
     "id": "wd-Q11672195",
     "name": {
       "ja": "高田神社 (飛騨市)",
@@ -19872,62 +19339,6 @@
       {
         "url": "https://ja.wikipedia.org/wiki/%E6%81%B5%E9%82%A3%E5%B1%B1",
         "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
-    "id": "wd-Q1367052",
-    "name": {
-      "ja": "岐阜城",
-      "kana": "ぎふじょう",
-      "romaji": "Gifu-jō",
-      "zh_tw": "岐阜城",
-      "en": "Gifu Castle"
-    },
-    "kana_source": "osm",
-    "location": {
-      "lat": 35.433889,
-      "lng": 136.782222
-    },
-    "prefecture": "gifu",
-    "kind": "major",
-    "themes": [],
-    "tags": [
-      "城",
-      "史跡",
-      "guide-A"
-    ],
-    "featured": true,
-    "score": 103.79,
-    "summary": {
-      "text": "岐阜城是位於美濃國井之口（今岐阜縣岐阜市）的一座日式城堡。在織田信長統治該城之前，稱為稻葉山城。",
-      "lang": "zh",
-      "source_url": "https://zh.wikipedia.org/wiki/%E5%B2%90%E9%98%9C%E5%9F%8E",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/01/Gifu_Castle.jpg/960px-Gifu_Castle.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Alpsdake",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Gifu_Castle.jpg"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q1367052",
-      "osm": "way/363719558"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q1367052",
-        "fetched_at": "2026-09-27"
-      },
-      {
-        "url": "https://www.openstreetmap.org/way/363719558",
-        "fetched_at": "2026-09-27"
       }
     ],
     "status": "published",
@@ -21526,52 +20937,6 @@
       },
       {
         "url": "https://ja.wikipedia.org/wiki/%E9%B7%BA%E5%B1%B1%E5%9F%8E",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
-    "id": "wd-Q2970612",
-    "name": {
-      "ja": "桜洞城",
-      "kana": "さくらぼらじょう",
-      "romaji": "Sakuraborajo",
-      "zh_tw": "桜洞城",
-      "en": "Sakurabora Castle"
-    },
-    "kana_source": "wikipedia",
-    "location": {
-      "lat": 35.886029,
-      "lng": 137.229023
-    },
-    "prefecture": "gifu",
-    "kind": "major",
-    "themes": [],
-    "tags": [
-      "城"
-    ],
-    "featured": false,
-    "score": 64.5,
-    "summary": {
-      "text": "Sakurabora Castle (桜洞城, Sakurabora-jō) was a medieval Japanese castle built in the Hida Province. It is now located in the present-day city of Gero, Gifu Prefecture.  It was constructed by the daimyō Mitsuki Naoyori (三木直頼) in 1544, near the end of the Sengoku period.",
-      "lang": "en",
-      "source_url": "https://en.wikipedia.org/wiki/Sakurabora_Castle",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-29"
-    },
-    "images": [],
-    "external_ids": {
-      "wikidata": "Q2970612"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q2970612",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://ja.wikipedia.org/wiki/%E6%A1%9C%E6%B4%9E%E5%9F%8E",
         "fetched_at": "2026-09-28"
       }
     ],
@@ -23465,59 +22830,6 @@
     "sources": [
       {
         "url": "https://www.wikidata.org/wiki/Q5371109",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
-    "id": "wd-Q5371400",
-    "name": {
-      "ja": "松倉城",
-      "kana": "まつくらじょう",
-      "romaji": "Matsukurajo",
-      "zh_tw": "松倉城",
-      "en": "Matsukura Castle"
-    },
-    "kana_source": "wikipedia",
-    "location": {
-      "lat": 36.126101,
-      "lng": 137.234097
-    },
-    "prefecture": "gifu",
-    "kind": "major",
-    "themes": [],
-    "tags": [
-      "城"
-    ],
-    "featured": false,
-    "score": 66.75,
-    "summary": {
-      "text": "Matsukura Castle (松倉城, Matsukura-jō) was a castle in Takayama, Gifu Prefecture, Japan (formerly Hida Province). It was built by, and ruled from, by Yasutane Shiina during the 16th century.",
-      "lang": "en",
-      "source_url": "https://en.wikipedia.org/wiki/Matsukura_Castle_%28Hida_Province%29",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-29"
-    },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c3/Matsukura_castle%2C_Takayama%2C_2021.jpg/960px-Matsukura_castle%2C_Takayama%2C_2021.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "大野 一将",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Matsukura_castle,_Takayama,_2021.jpg"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q5371400"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q5371400",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://ja.wikipedia.org/wiki/%E6%9D%BE%E5%80%89%E5%9F%8E_%28%E9%A3%9B%E9%A8%A8%E5%9B%BD%29",
         "fetched_at": "2026-09-28"
       }
     ],

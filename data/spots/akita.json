@@ -3481,7 +3481,7 @@
     "tags": [
       "史跡"
     ],
-    "featured": false,
+    "featured": true,
     "score": 69.37,
     "summary": {
       "text": "檜山安東氏城館跡是秋田縣能代市的檜山集落之東側丘陵的宏偉山城。檜山城跡附近還有大館跡、茶臼館跡、國清寺跡等，是日本國內指定史跡。",
@@ -6665,51 +6665,6 @@
       },
       {
         "url": "https://ja.wikipedia.org/wiki/%E5%8F%B2%E8%B7%A1_%E5%B0%BE%E5%8E%BB%E6%B2%A2%E9%89%B1%E5%B1%B1",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
-    "id": "wd-Q11416015",
-    "name": {
-      "ja": "向浜",
-      "kana": "むかいはま",
-      "romaji": "Mukaihama",
-      "zh_tw": "向浜"
-    },
-    "kana_source": "wikipedia",
-    "location": {
-      "lat": 39.730047,
-      "lng": 140.065706
-    },
-    "prefecture": "akita",
-    "kind": "major",
-    "themes": [],
-    "tags": [
-      "海灘"
-    ],
-    "featured": false,
-    "score": 33.64,
-    "summary": {
-      "text": "向浜（むかいはま）は、秋田市北西部の町名。現行行政地名は向浜一丁目及び向浜二丁目。郵便番号は010-1601。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%90%91%E6%B5%9C_%28%E7%A7%8B%E7%94%B0%E5%B8%82%29",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "images": [],
-    "external_ids": {
-      "wikidata": "Q11416015"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q11416015",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://ja.wikipedia.org/wiki/%E5%90%91%E6%B5%9C_%28%E7%A7%8B%E7%94%B0%E5%B8%82%29",
         "fetched_at": "2026-09-28"
       }
     ],
@@ -10371,75 +10326,6 @@
       },
       {
         "url": "https://ja.wikipedia.org/wiki/%E6%B3%A5%E6%B9%AF%E6%B8%A9%E6%B3%89",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
-    "id": "wd-Q11563138",
-    "name": {
-      "ja": "湊城",
-      "kana": "みなとじょう",
-      "romaji": "Minatojo",
-      "zh_tw": "湊城",
-      "en": "Minato Castle"
-    },
-    "kana_source": "wikipedia",
-    "location": {
-      "lat": 39.756944,
-      "lng": 140.070833
-    },
-    "prefecture": "akita",
-    "kind": "major",
-    "themes": [],
-    "tags": [
-      "城"
-    ],
-    "featured": true,
-    "score": 67.5,
-    "summary": {
-      "text": "湊城是日本室町時代出羽國土崎湊（秋田縣秋田市）曾經存在的一座平城。",
-      "lang": "zh",
-      "source_url": "https://zh.wikipedia.org/wiki/%E6%B9%8A%E5%9F%8E",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "nearest_stations": [
-      {
-        "name": {
-          "ja": "土崎",
-          "romaji": "Tsuchizaki",
-          "en": "Tsuchizaki"
-        },
-        "distance_m": 300
-      },
-      {
-        "name": {
-          "ja": "秋田港"
-        },
-        "distance_m": 860
-      }
-    ],
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ce/Tsuchizaki_Gaiku_Park.jpg/960px-Tsuchizaki_Gaiku_Park.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "掬茶",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Tsuchizaki_Gaiku_Park.jpg"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q11563138"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q11563138",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://ja.wikipedia.org/wiki/%E6%B9%8A%E5%9F%8E",
         "fetched_at": "2026-09-28"
       }
     ],
@@ -17827,56 +17713,6 @@
     "updated_at": "2026-09-28"
   },
   {
-    "id": "wd-Q20043562",
-    "name": {
-      "ja": "田沢湖町立生保内小学校潟分校",
-      "kana": "たざわこちょうりつおぼないしょうがっこうかたぶんこう",
-      "romaji": "Tazawakochoritsuobonaishogakkokatabunko",
-      "zh_tw": "田沢湖町立生保内小学校潟分校"
-    },
-    "kana_source": "wikipedia",
-    "location": {
-      "lat": 39.696978,
-      "lng": 140.672628
-    },
-    "prefecture": "akita",
-    "kind": "major",
-    "themes": [],
-    "tags": [],
-    "featured": false,
-    "score": 51.75,
-    "summary": {
-      "text": "田沢湖町立生保内小学校潟分校（たざわこちょうりつ おぼないしょうがっこう かたぶんこう）は、秋田県仙北市田沢湖にあった生保内小学校の分校である。「おぼない」というのはアイヌ語で「深い川」を意味する。現在は、思い出の潟分校という名で一般公開されている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E7%94%B0%E6%B2%A2%E6%B9%96%E7%94%BA%E7%AB%8B%E7%94%9F%E4%BF%9D%E5%86%85%E5%B0%8F%E5%AD%A6%E6%A0%A1%E6%BD%9F%E5%88%86%E6%A0%A1",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4d/Omoide_no_Katabunkou-1.jpg/960px-Omoide_no_Katabunkou-1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "掬茶",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Omoide_no_Katabunkou-1.jpg"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q20043562"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q20043562",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://ja.wikipedia.org/wiki/%E7%94%B0%E6%B2%A2%E6%B9%96%E7%94%BA%E7%AB%8B%E7%94%9F%E4%BF%9D%E5%86%85%E5%B0%8F%E5%AD%A6%E6%A0%A1%E6%BD%9F%E5%88%86%E6%A0%A1",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
     "id": "wd-Q20043861",
     "name": {
       "ja": "川原毛地獄",
@@ -18603,64 +18439,6 @@
       },
       {
         "url": "https://ja.wikipedia.org/wiki/%E6%97%A7%E9%AE%8E%E5%B7%9D%E5%B0%8F%E5%AD%A6%E6%A0%A1",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
-    "id": "wd-Q2969455",
-    "name": {
-      "ja": "角館城",
-      "kana": "かくのだてじょう",
-      "romaji": "Kakunodatejo",
-      "zh_tw": "角館城",
-      "en": "Kakunodate Castle"
-    },
-    "kana_source": "wikipedia",
-    "location": {
-      "lat": 39.604722,
-      "lng": 140.560833
-    },
-    "prefecture": "akita",
-    "kind": "major",
-    "themes": [],
-    "tags": [
-      "城"
-    ],
-    "featured": false,
-    "score": 67.39,
-    "summary": {
-      "text": "Kakunodate Castle (角館城, Kakunodate-jō), also known as Asakura Castle and Ryugasaki Castle, was a mountaintop castle (yamashiro) located in Kakunodate, Akita Prefecture, Japan. Its roots can be traced to when Moriyasu Tozawa was given the area in 1590, though it may have been constructed prior to this. Due to a Shogunal decree that each domain was to retain only one castle, it was demolished in 1620. Only ruins remain at the site on Mount Furushiro.",
-      "lang": "en",
-      "source_url": "https://en.wikipedia.org/wiki/Kakunodate_Castle",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-29"
-    },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3c/Kakunodate_Castle_remains%2C_April_2023_02.jpg/960px-Kakunodate_Castle_remains%2C_April_2023_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Calistemon",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Kakunodate_Castle_remains,_April_2023_02.jpg"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q2969455",
-      "osm": "node/2819591252"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q2969455",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://www.openstreetmap.org/node/2819591252",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://ja.wikipedia.org/wiki/%E8%A7%92%E9%A4%A8%E5%9F%8E",
         "fetched_at": "2026-09-28"
       }
     ],

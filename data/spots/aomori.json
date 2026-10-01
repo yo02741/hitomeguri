@@ -2079,7 +2079,7 @@
     "tags": [
       "特別名勝"
     ],
-    "featured": false,
+    "featured": true,
     "score": 83.63,
     "summary": {
       "text": "奧入瀨溪流是青森縣十和田市十和田湖畔子之口到燒山之間約14公里的奧入瀨川的溪流。屬於十和田八幡平國立公園。國指定之特別名勝及天然記念物（天然保護區域）。",
@@ -2599,75 +2599,6 @@
     ],
     "status": "published",
     "updated_at": "2026-09-28"
-  },
-  {
-    "id": "wd-Q11278985",
-    "name": {
-      "ja": "みちのく北方漁船博物館",
-      "kana": "みちのくほっぽうぎょせんはくぶつかん",
-      "romaji": "Michinokuhoppogyosenhakubutsukan",
-      "zh_tw": "陸奧北方漁船博物館",
-      "en": "Michinoku Traditional Wooden Boat Museum"
-    },
-    "kana_source": "wikipedia",
-    "location": {
-      "lat": 40.837278,
-      "lng": 140.72525
-    },
-    "prefecture": "aomori",
-    "kind": "major",
-    "themes": [],
-    "tags": [
-      "博物館"
-    ],
-    "featured": false,
-    "score": 57.61,
-    "summary": {
-      "text": "みちのく北方漁船博物館（みちのくほっぽうぎょせんはくぶつかん）は、かつて青森県青森市沖館にあった博物館。2014年（平成26年）閉館。現在は、青森市が施設等の譲渡を受け、改修工事等ののち、2015年（平成27年）7月に「あおもり北のまほろば歴史館（あおもりきたのまほろばれきしかん）」としてオープンしている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E3%81%BF%E3%81%A1%E3%81%AE%E3%81%8F%E5%8C%97%E6%96%B9%E6%BC%81%E8%88%B9%E5%8D%9A%E7%89%A9%E9%A4%A8",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "nearest_stations": [
-      {
-        "name": {
-          "ja": "青森",
-          "kana": "あおもり",
-          "romaji": "Aomori",
-          "en": "Aomori"
-        },
-        "distance_m": 1110
-      }
-    ],
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/db/Michinoku_Traditional_Wooden_Boat_Museum.JPG/960px-Michinoku_Traditional_Wooden_Boat_Museum.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Morigen",
-        "license": "Public domain",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Michinoku_Traditional_Wooden_Boat_Museum.JPG"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q11278985",
-      "osm": "node/2350408300"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q11278985",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://www.openstreetmap.org/node/2350408300",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://ja.wikipedia.org/wiki/%E3%81%BF%E3%81%A1%E3%81%AE%E3%81%8F%E5%8C%97%E6%96%B9%E6%BC%81%E8%88%B9%E5%8D%9A%E7%89%A9%E9%A4%A8",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11278995",
@@ -14912,52 +14843,6 @@
     "updated_at": "2026-09-28"
   },
   {
-    "id": "wd-Q17191666",
-    "name": {
-      "ja": "油川城",
-      "kana": "あぶらかわじょう",
-      "romaji": "Aburakawajo",
-      "zh_tw": "油川城",
-      "en": "Aburakawa Castle"
-    },
-    "kana_source": "wikipedia",
-    "location": {
-      "lat": 40.860806,
-      "lng": 140.671306
-    },
-    "prefecture": "aomori",
-    "kind": "major",
-    "themes": [],
-    "tags": [
-      "城"
-    ],
-    "featured": false,
-    "score": 55.3,
-    "summary": {
-      "text": "油川城（あぶらかわじょう）は、青森県青森市大字西田沢字浜田・字山辺（旧陸奥国）にあった日本の城。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%B2%B9%E5%B7%9D%E5%9F%8E",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "images": [],
-    "external_ids": {
-      "wikidata": "Q17191666"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q17191666",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://ja.wikipedia.org/wiki/%E6%B2%B9%E5%B7%9D%E5%9F%8E",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
     "id": "wd-Q17192800",
     "name": {
       "ja": "イオンタウン平賀",
@@ -20065,65 +19950,6 @@
       },
       {
         "url": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E9%96%93%E5%9F%BC%E7%81%AF%E5%8F%B0",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
-    "id": "wd-Q8140388",
-    "name": {
-      "ja": "根城",
-      "kana": "ねじょう",
-      "romaji": "Nejo",
-      "zh_tw": "根城",
-      "en": "Ne Castle"
-    },
-    "kana_source": "wikipedia",
-    "location": {
-      "lat": 40.506189,
-      "lng": 141.459611
-    },
-    "prefecture": "aomori",
-    "kind": "major",
-    "themes": [],
-    "tags": [
-      "公園",
-      "史跡"
-    ],
-    "featured": true,
-    "score": 76.99,
-    "summary": {
-      "text": "根城日本之古城。所在地位於青森縣八戶市根城。日本國內指定史跡。日本100名城之一。",
-      "lang": "zh",
-      "source_url": "https://zh.wikipedia.org/wiki/%E6%A0%B9%E5%9F%8E",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/06/%E6%A0%B9%E5%9F%8E%E5%BE%A9%E5%85%83%E4%B8%BB%E6%AE%BF.JPG/960px-%E6%A0%B9%E5%9F%8E%E5%BE%A9%E5%85%83%E4%B8%BB%E6%AE%BF.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "小池 隆",
-        "license": "CC BY 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:%E6%A0%B9%E5%9F%8E%E5%BE%A9%E5%85%83%E4%B8%BB%E6%AE%BF.JPG"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q8140388",
-      "osm": "way/554500495"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q8140388",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://www.openstreetmap.org/way/554500495",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://ja.wikipedia.org/wiki/%E6%A0%B9%E5%9F%8E",
         "fetched_at": "2026-09-28"
       }
     ],

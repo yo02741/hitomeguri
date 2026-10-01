@@ -7324,71 +7324,6 @@
     "updated_at": "2026-09-28"
   },
   {
-    "id": "wd-Q11486322",
-    "name": {
-      "ja": "廉塾",
-      "kana": "れんじゅく",
-      "romaji": "Renjuku",
-      "zh_tw": "廉塾",
-      "en": "Renjuku"
-    },
-    "kana_source": "wikipedia",
-    "location": {
-      "lat": 34.544722,
-      "lng": 133.384444
-    },
-    "prefecture": "hiroshima",
-    "kind": "major",
-    "themes": [],
-    "tags": [
-      "史跡",
-      "特別史跡"
-    ],
-    "featured": false,
-    "score": 72.91,
-    "summary": {
-      "text": "The Renjuku (廉塾) was a private academy in Edo period Japan. Located in the Kannabe neighborhood of the city of Fukuyama, Hiroshima Prefecture, it was designated a Special National Historic Site in 1934.",
-      "lang": "en",
-      "source_url": "https://en.wikipedia.org/wiki/Renjuku",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-29"
-    },
-    "nearest_stations": [
-      {
-        "name": {
-          "ja": "湯野",
-          "kana": "ゆお",
-          "romaji": "Yuo",
-          "en": "Yuno"
-        },
-        "distance_m": 940
-      },
-      {
-        "name": {
-          "ja": "神辺",
-          "en": "Kannabe"
-        },
-        "distance_m": 990
-      }
-    ],
-    "images": [],
-    "external_ids": {
-      "wikidata": "Q11486322"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q11486322",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://ja.wikipedia.org/wiki/%E5%BB%89%E5%A1%BE",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
     "id": "wd-Q11486911",
     "name": {
       "ja": "弁天島",
@@ -7799,188 +7734,6 @@
       },
       {
         "url": "https://ja.wikipedia.org/wiki/%E6%8C%81%E5%85%89%E5%AF%BA",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
-    "id": "wd-Q11504315",
-    "name": {
-      "ja": "新高山城",
-      "kana": "にいたかやまじょう",
-      "romaji": "Niitakayamajo",
-      "zh_tw": "新高山城",
-      "en": "Niitakayama Castle"
-    },
-    "kana_source": "wikipedia",
-    "location": {
-      "lat": 34.420167,
-      "lng": 132.975556
-    },
-    "prefecture": "hiroshima",
-    "kind": "major",
-    "themes": [],
-    "tags": [
-      "城",
-      "史跡"
-    ],
-    "featured": false,
-    "score": 68.79,
-    "summary": {
-      "text": "Niitakayama Castle (新高山城, Niitakayama-jō) of Aki Province was a yamajiro-style Japanese castle located in what is today the  Hongō neighborhood of the city of  Mihara in Hiroshima Prefecture. Its ruins have been protected by the central government as a National Historic Site since 1957.",
-      "lang": "en",
-      "source_url": "https://en.wikipedia.org/wiki/Niitakayama_Castle",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-29"
-    },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/29/Site_of_Niitakayama_Castle_and_Nutagawa_River_from_train_of_Sanyo_Main_Line.jpg/960px-Site_of_Niitakayama_Castle_and_Nutagawa_River_from_train_of_Sanyo_Main_Line.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "そらみみ",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Site_of_Niitakayama_Castle_and_Nutagawa_River_from_train_of_Sanyo_Main_Line.jpg"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q11504315"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q11504315",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://ja.wikipedia.org/wiki/%E6%96%B0%E9%AB%98%E5%B1%B1%E5%9F%8E",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
-    "id": "wd-Q11506184",
-    "name": {
-      "ja": "日本はきもの博物館",
-      "kana": "にほんはきものはくぶつかん",
-      "romaji": "Nihonhakimonohakubutsukan",
-      "zh_tw": "日本鞋博物館",
-      "en": "Japan Footwear Museum"
-    },
-    "kana_source": "wikipedia",
-    "location": {
-      "lat": 34.450431,
-      "lng": 133.260875
-    },
-    "prefecture": "hiroshima",
-    "kind": "major",
-    "themes": [],
-    "tags": [
-      "博物館"
-    ],
-    "featured": false,
-    "score": 57.8,
-    "summary": {
-      "text": "日本はきもの博物館（にほんはきものはくぶつかん）は、かつて広島県福山市松永町にあった履物をテーマにした広島県の登録博物館である。JR西日本松永駅南口東方に位置し、同じ敷地内に日本郷土玩具博物館も併設されていた。財団法人遺芳文化財団が運営管理していたが、2013年（平成25年）に閉館となる。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%97%A5%E6%9C%AC%E3%81%AF%E3%81%8D%E3%82%82%E3%81%AE%E5%8D%9A%E7%89%A9%E9%A4%A8",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "nearest_stations": [
-      {
-        "name": {
-          "ja": "松永",
-          "kana": "まつなが",
-          "romaji": "Matsunaga",
-          "en": "Matsunaga"
-        },
-        "distance_m": 210
-      }
-    ],
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/Japan_sweeping_one_museum.JPG/960px-Japan_sweeping_one_museum.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Carpkazu",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Japan_sweeping_one_museum.JPG"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q11506184"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q11506184",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://ja.wikipedia.org/wiki/%E6%97%A5%E6%9C%AC%E3%81%AF%E3%81%8D%E3%82%82%E3%81%AE%E5%8D%9A%E7%89%A9%E9%A4%A8",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
-    "id": "wd-Q11509272",
-    "name": {
-      "ja": "日本郷土玩具博物館",
-      "kana": "にほんきょうどがんぐはくぶつかん",
-      "romaji": "Nihonkyodoganguhakubutsukan",
-      "zh_tw": "日本鄉土玩具博物館",
-      "en": "Japan Folk Toy & Doll Museum"
-    },
-    "kana_source": "wikipedia",
-    "location": {
-      "lat": 34.450678,
-      "lng": 133.260264
-    },
-    "prefecture": "hiroshima",
-    "kind": "major",
-    "themes": [],
-    "tags": [
-      "博物館"
-    ],
-    "featured": false,
-    "score": 50.55,
-    "summary": {
-      "text": "日本郷土玩具博物館（にほんきょうどがんぐはくぶつかん）は、かつて広島県福山市松永町にあった郷土玩具をテーマにした博物館である。JR西日本松永駅南口東方に位置し、同じ敷地内に日本はきもの博物館も併設され、財団法人遺芳文化財団が運営管理していたが、2013年（平成25年）に閉館となる。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%97%A5%E6%9C%AC%E9%83%B7%E5%9C%9F%E7%8E%A9%E5%85%B7%E5%8D%9A%E7%89%A9%E9%A4%A8",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "nearest_stations": [
-      {
-        "name": {
-          "ja": "松永",
-          "kana": "まつなが",
-          "romaji": "Matsunaga",
-          "en": "Matsunaga"
-        },
-        "distance_m": 150
-      }
-    ],
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/Japan_sweeping_one_museum.JPG/960px-Japan_sweeping_one_museum.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Carpkazu",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Japan_sweeping_one_museum.JPG"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q11509272"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q11509272",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://ja.wikipedia.org/wiki/%E6%97%A5%E6%9C%AC%E9%83%B7%E5%9C%9F%E7%8E%A9%E5%85%B7%E5%8D%9A%E7%89%A9%E9%A4%A8",
         "fetched_at": "2026-09-28"
       }
     ],
@@ -12097,46 +11850,6 @@
     "updated_at": "2026-09-28"
   },
   {
-    "id": "wd-Q11664189",
-    "name": {
-      "ja": "音戸町",
-      "kana": "おんどちょう",
-      "romaji": "Ondocho",
-      "zh_tw": "音戶町",
-      "en": "Ondo"
-    },
-    "kana_source": "wikidata",
-    "location": {
-      "lat": 34.194333,
-      "lng": 132.536333
-    },
-    "prefecture": "hiroshima",
-    "kind": "major",
-    "themes": [],
-    "tags": [],
-    "featured": false,
-    "score": 49.74,
-    "summary": {
-      "text": "Ondo (音戸町, Ondo-chō) was a town located in Aki District, Hiroshima Prefecture, Japan.",
-      "lang": "en",
-      "source_url": "https://en.wikipedia.org/wiki/Ondo%2C_Hiroshima",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-29"
-    },
-    "images": [],
-    "external_ids": {
-      "wikidata": "Q11664189"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q11664189",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
     "id": "wd-Q11664933",
     "name": {
       "ja": "頭崎城",
@@ -12372,71 +12085,6 @@
       },
       {
         "url": "https://ja.wikipedia.org/wiki/%E9%A7%BF%E6%B2%B3%E4%B8%B8%E5%9F%8E",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
-    "id": "wd-Q11669343",
-    "name": {
-      "ja": "高山城",
-      "kana": "たかやまじょう",
-      "romaji": "Takayamajo",
-      "zh_tw": "高山城",
-      "en": "Takayama Castle"
-    },
-    "kana_source": "wikipedia",
-    "location": {
-      "lat": 34.419444,
-      "lng": 132.983972
-    },
-    "prefecture": "hiroshima",
-    "kind": "major",
-    "themes": [],
-    "tags": [
-      "城",
-      "史跡"
-    ],
-    "featured": false,
-    "score": 64.81,
-    "summary": {
-      "text": "Takayama Castle (高山城, Takayama-jō) of Aki Province was a yamajiro-style Japanese castle located in what is today the Hongō neighborhood of the city of Mihara in Hiroshima Prefecture. Its ruins have been protected by the central government as a National Historic Site since 1957.",
-      "lang": "en",
-      "source_url": "https://en.wikipedia.org/wiki/Takayama_Castle_%28Mihara%29",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-29"
-    },
-    "nearest_stations": [
-      {
-        "name": {
-          "ja": "本郷",
-          "kana": "ほんごう",
-          "romaji": "Hongo",
-          "en": "Hongō"
-        },
-        "distance_m": 1080
-      }
-    ],
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a4/Takayamajyo.jpg/960px-Takayamajyo.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "前田左衛門佐",
-        "license": "Public domain",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Takayamajyo.jpg"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q11669343"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q11669343",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://ja.wikipedia.org/wiki/%E9%AB%98%E5%B1%B1%E5%9F%8E_%28%E5%AE%89%E8%8A%B8%E5%9B%BD%29",
         "fetched_at": "2026-09-28"
       }
     ],
@@ -13239,61 +12887,6 @@
     ],
     "status": "published",
     "updated_at": "2026-09-28"
-  },
-  {
-    "id": "wd-Q120967486",
-    "name": {
-      "ja": "ekie エキキタパーク",
-      "zh_tw": "ekie エキキタパーク",
-      "en": "ekie Ekikita Park"
-    },
-    "location": {
-      "lat": 34.399361,
-      "lng": 132.476806
-    },
-    "prefecture": "hiroshima",
-    "kind": "major",
-    "themes": [],
-    "tags": [],
-    "featured": false,
-    "score": 49.03,
-    "summary": {
-      "text": "ekie エキキタパークは広島県広島市東区の広島駅北口にあった多目的広場。JR西日本広島支社の跡地に2022年9月17日にオープンした。略称はエキパ。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/Ekie_%E3%82%A8%E3%82%AD%E3%82%AD%E3%82%BF%E3%83%91%E3%83%BC%E3%82%AF",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-29"
-    },
-    "nearest_stations": [
-      {
-        "name": {
-          "ja": "広島",
-          "kana": "ひろしま",
-          "romaji": "Hiroshima",
-          "en": "Hiroshima"
-        },
-        "distance_m": 160
-      }
-    ],
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/92/Ekie_%E3%82%A8%E3%82%AD%E3%82%AD%E3%82%BF%E3%83%91%E3%83%BC%E3%82%AF.jpg/960px-Ekie_%E3%82%A8%E3%82%AD%E3%82%AD%E3%82%BF%E3%83%91%E3%83%BC%E3%82%AF.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "ポケットティッシュ",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Ekie_%E3%82%A8%E3%82%AD%E3%82%AD%E3%82%BF%E3%83%91%E3%83%BC%E3%82%AF.jpg"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q120967486"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q120967486",
-        "fetched_at": "2026-09-29"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q121367781",
@@ -16647,53 +16240,6 @@
     "updated_at": "2026-09-28"
   },
   {
-    "id": "wd-Q2238519",
-    "name": {
-      "ja": "海軍兵学校",
-      "kana": "かいぐんへいがっこう",
-      "romaji": "Kaigunheigakko",
-      "zh_tw": "海軍兵學校",
-      "en": "Imperial Japanese Naval Academy"
-    },
-    "kana_source": "wikidata",
-    "location": {
-      "lat": 34.244861,
-      "lng": 132.473917
-    },
-    "prefecture": "hiroshima",
-    "kind": "major",
-    "themes": [],
-    "tags": [],
-    "featured": true,
-    "score": 85.3,
-    "summary": {
-      "text": "海軍兵學校，是舊大日本帝國海軍培養軍官的軍校。",
-      "lang": "zh",
-      "source_url": "https://zh.wikipedia.org/wiki/%E6%B5%B7%E8%BB%8D%E5%85%B5%E5%AD%B8%E6%A0%A1",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/50/JMSDF-Officer-Candidate-School-Former-Japanese-Naval-Academy.png/960px-JMSDF-Officer-Candidate-School-Former-Japanese-Naval-Academy.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Japan Ministry of Defense",
-        "license": "CC BY 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:JMSDF-Officer-Candidate-School-Former-Japanese-Naval-Academy.png"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q2238519"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q2238519",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
     "id": "wd-Q22661322",
     "name": {
       "ja": "平山郁夫美術館",
@@ -18640,7 +18186,7 @@
     "tags": [
       "寺院"
     ],
-    "featured": false,
+    "featured": true,
     "score": 78.69,
     "summary": {
       "text": "大聖院是位於日本廣島縣廿日市市宮島町的一座佛寺，山號為多喜山，全稱是多喜山水精寺大聖院，是真言宗御室派大本山。相傳寺院由真言宗開山祖師空海於806年登上彌山修行後創建，為宮島歷史最悠久的佛寺之一，並被列為「日本三大消災開運大師」之一。",
@@ -18767,53 +18313,6 @@
       },
       {
         "url": "https://ja.wikipedia.org/wiki/%E5%B8%9D%E9%87%88%E5%B3%A1",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
-    "id": "wd-Q3085146",
-    "name": {
-      "ja": "宮島町",
-      "kana": "みやじまちょう",
-      "romaji": "Miyajimacho",
-      "zh_tw": "宮島町",
-      "en": "Miyajima"
-    },
-    "kana_source": "wikidata",
-    "location": {
-      "lat": 34.302056,
-      "lng": 132.322194
-    },
-    "prefecture": "hiroshima",
-    "kind": "major",
-    "themes": [],
-    "tags": [],
-    "featured": false,
-    "score": 73.68,
-    "summary": {
-      "text": "宮島町是過去曾經存於日本瀨戶內海宮島上的行政區劃，屬廣島縣；已於2005年11月13日與大野町一同併入廿日市市，過去的轄區即為宮島全境。",
-      "lang": "zh",
-      "source_url": "https://zh.wikipedia.org/wiki/%E5%AE%AE%E5%B3%B6%E7%94%BA",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d6/Miyajima.jpg/960px-Miyajima.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Bernard Gagnon",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Miyajima.jpg"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q3085146"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q3085146",
         "fetched_at": "2026-09-28"
       }
     ],
@@ -19783,57 +19282,6 @@
     "updated_at": "2026-09-28"
   },
   {
-    "id": "wd-Q432039",
-    "name": {
-      "ja": "因島市",
-      "kana": "いんのしまし",
-      "romaji": "Innoshimashi",
-      "zh_tw": "因島市",
-      "en": "Innoshima"
-    },
-    "kana_source": "wikipedia",
-    "location": {
-      "lat": 34.294583,
-      "lng": 133.16925
-    },
-    "prefecture": "hiroshima",
-    "kind": "major",
-    "themes": [],
-    "tags": [],
-    "featured": false,
-    "score": 58.79,
-    "summary": {
-      "text": "因島市是過去位於廣島縣東南部沿海的一市，轄區包括因島、細島、小細島以及生口島的部分地區，主要市區位於因島上；已於2006年1月10日與隣接的豐田郡瀨戶田町一併編入尾道市。",
-      "lang": "zh",
-      "source_url": "https://zh.wikipedia.org/wiki/%E5%9B%A0%E5%B3%B6%E5%B8%82",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "images": [
-      {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/a/a8/Innoshima_Big_Bridge.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-        "author": "Chihaya+ Sakura from OSAKA, Japan",
-        "license": "CC BY-SA 2.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Innoshima_Big_Bridge.jpg"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q432039"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q432039",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://ja.wikipedia.org/wiki/%E5%9B%A0%E5%B3%B6%E5%B8%82",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
     "id": "wd-Q43593886",
     "name": {
       "ja": "妙風寺",
@@ -20329,57 +19777,6 @@
       },
       {
         "url": "https://ja.wikipedia.org/wiki/%E4%BC%BC%E5%B3%B6",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
-    "id": "wd-Q539091",
-    "name": {
-      "ja": "原爆傷害調査委員会",
-      "kana": "げんばくしょうがいちょうさいいんかい",
-      "romaji": "Genbakushogaichosaiinkai",
-      "zh_tw": "核爆炸傷害調査委員會",
-      "en": "Atomic Bomb Casualty Commission"
-    },
-    "kana_source": "wikipedia",
-    "location": {
-      "lat": 34.383056,
-      "lng": 132.472778
-    },
-    "prefecture": "hiroshima",
-    "kind": "major",
-    "themes": [],
-    "tags": [],
-    "featured": false,
-    "score": 77.11,
-    "summary": {
-      "text": "The Atomic Bomb Casualty Commission (ABCC) (Japanese:原爆傷害調査委員会, Genbakushōgaichōsaiinkai) was a commission established in 1946 in accordance with a presidential directive from Harry S. Truman to the National Academy of Sciences-National Research Council to conduct investigations of the late effects of radiation among the atomic-bomb survivors in Hiroshima and Nagasaki.",
-      "lang": "en",
-      "source_url": "https://en.wikipedia.org/wiki/Atomic_Bomb_Casualty_Commission",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-29"
-    },
-    "images": [
-      {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/b/be/ABCC_Building.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-        "author": "Unknown authorUnknown author",
-        "license": "Public domain",
-        "source_url": "https://commons.wikimedia.org/wiki/File:ABCC_Building.JPG"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q539091"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q539091",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://ja.wikipedia.org/wiki/%E5%8E%9F%E7%88%86%E5%82%B7%E5%AE%B3%E8%AA%BF%E6%9F%BB%E5%A7%94%E5%93%A1%E4%BC%9A",
         "fetched_at": "2026-09-28"
       }
     ],
@@ -22134,75 +21531,6 @@
     "updated_at": "2026-09-28"
   },
   {
-    "id": "wd-Q8012748",
-    "name": {
-      "ja": "広島市民球場",
-      "kana": "ひろしましみんきゅうじょう",
-      "romaji": "Hiroshimashiminkyujo",
-      "zh_tw": "廣島市民球場",
-      "en": "Hiroshima Municipal Stadium"
-    },
-    "kana_source": "wikipedia",
-    "location": {
-      "lat": 34.396983,
-      "lng": 132.454958
-    },
-    "prefecture": "hiroshima",
-    "kind": "major",
-    "themes": [],
-    "tags": [],
-    "featured": false,
-    "score": 76.55,
-    "summary": {
-      "text": "First Hiroshima Municipal Stadium (初代広島市民球場, Shodai Hiroshima Shimin Kyūjō) was a stadium in Hiroshima, Japan.  It was primarily used for baseball, and was the home field of the Hiroshima Toyo Carp. It opened in 1957 and held 31,984 people, standing in the central area of Hiroshima across from the Hiroshima Peace Memorial.",
-      "lang": "en",
-      "source_url": "https://en.wikipedia.org/wiki/Hiroshima_Municipal_Stadium_%281957%29",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-29"
-    },
-    "nearest_stations": [
-      {
-        "name": {
-          "ja": "県庁前",
-          "en": "Kenchō-mae"
-        },
-        "distance_m": 300
-      },
-      {
-        "name": {
-          "ja": "本通",
-          "kana": "ほんどおり",
-          "romaji": "Hondo Ri",
-          "en": "Hondōri"
-        },
-        "distance_m": 460
-      }
-    ],
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/08/Hiroshima_Municipal_Baseball_Stadium_2008.JPG/960px-Hiroshima_Municipal_Baseball_Stadium_2008.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Taisyo",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Hiroshima_Municipal_Baseball_Stadium_2008.JPG"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q8012748"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q8012748",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://ja.wikipedia.org/wiki/%E5%BA%83%E5%B3%B6%E5%B8%82%E6%B0%91%E7%90%83%E5%A0%B4_%28%E5%88%9D%E4%BB%A3%29",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
     "id": "wd-Q81821",
     "name": {
       "ja": "広島市安佐動物公園",
@@ -22868,53 +22196,6 @@
       },
       {
         "url": "https://ja.wikipedia.org/wiki/%E5%8E%B3%E5%B3%B6%E7%A5%9E%E7%A4%BE%E5%A4%A7%E9%B3%A5%E5%B1%85",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
-    "id": "wd-Q98381078",
-    "name": {
-      "ja": "瀬戸田町",
-      "kana": "せとだまち",
-      "romaji": "Setodamachi",
-      "zh_tw": "瀬戸田町",
-      "en": "Setoda"
-    },
-    "kana_source": "wikidata",
-    "location": {
-      "lat": 34.304778,
-      "lng": 133.085083
-    },
-    "prefecture": "hiroshima",
-    "kind": "major",
-    "themes": [],
-    "tags": [],
-    "featured": false,
-    "score": 51.8,
-    "summary": {
-      "text": "Setoda (瀬戸田町, Setoda-chō) was a town located in Toyota District, Hiroshima Prefecture, Japan.",
-      "lang": "en",
-      "source_url": "https://en.wikipedia.org/wiki/Setoda%2C_Hiroshima",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-29"
-    },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a1/Setoda.jpg/960px-Setoda.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "RitikaPahwa4444",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Setoda.jpg"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q98381078"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q98381078",
         "fetched_at": "2026-09-28"
       }
     ],

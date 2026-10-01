@@ -398,69 +398,6 @@
     "updated_at": "2026-09-28"
   },
   {
-    "id": "wd-Q1071856",
-    "name": {
-      "ja": "今治城",
-      "kana": "いまばりじょう",
-      "romaji": "Imabari-jō",
-      "zh_tw": "今治城",
-      "en": "Imabari Castle"
-    },
-    "kana_source": "osm",
-    "location": {
-      "lat": 34.063336,
-      "lng": 133.006806
-    },
-    "prefecture": "ehime",
-    "kind": "major",
-    "themes": [],
-    "tags": [
-      "博物館"
-    ],
-    "featured": true,
-    "score": 80.24,
-    "summary": {
-      "text": "今治城是位於日本伊予國越智郡今治（現在的愛媛縣今治市通町）的城堡，又名「吹揚城」，現被列為愛媛縣史跡。今治城與大分縣的中津城和香川縣的高松城並列為日本三大水城，也是日本100名城之一。",
-      "lang": "zh",
-      "source_url": "https://zh.wikipedia.org/wiki/%E4%BB%8A%E6%B2%BB%E5%9F%8E",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "nearest_stations": [
-      {
-        "name": {
-          "ja": "今治",
-          "en": "Imabari"
-        },
-        "distance_m": 1210
-      }
-    ],
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/15/Imabari_Castle_01.JPG/960px-Imabari_Castle_01.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Reggaeman",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Imabari_Castle_01.JPG"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q1071856",
-      "osm": "node/1423730110"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q1071856",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://www.openstreetmap.org/node/1423730110",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
     "id": "wd-Q107922251",
     "name": {
       "ja": "法寿院",
@@ -4506,68 +4443,6 @@
     "updated_at": "2026-09-28"
   },
   {
-    "id": "wd-Q11391254",
-    "name": {
-      "ja": "八日市護国",
-      "kana": "ようかいちごこく",
-      "romaji": "Yo Kaichi Gokoku",
-      "zh_tw": "八日市護國",
-      "en": "Yōkaichi-Gokoku"
-    },
-    "kana_source": "wikipedia",
-    "location": {
-      "lat": 33.555572,
-      "lng": 132.653336
-    },
-    "prefecture": "ehime",
-    "kind": "major",
-    "themes": [],
-    "tags": [],
-    "featured": false,
-    "score": 60.31,
-    "summary": {
-      "text": "八日市護國，是位於日本愛媛縣喜多郡內子町的重要傳統的建造物群保存地區，由於此地區過去為製蠟產業為主，建築過去多為製臘使用。",
-      "lang": "zh",
-      "source_url": "https://zh.wikipedia.org/wiki/%E5%85%AB%E6%97%A5%E5%B8%82%E8%AD%B7%E5%9C%8B",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "nearest_stations": [
-      {
-        "name": {
-          "ja": "内子",
-          "kana": "うちこ",
-          "romaji": "Uchiko",
-          "en": "Uchiko"
-        },
-        "distance_m": 960
-      }
-    ],
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d2/Uchiko1%2CUchiko-town%2CJapan.JPG/960px-Uchiko1%2CUchiko-town%2CJapan.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "katorisi",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Uchiko1,Uchiko-town,Japan.JPG"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q11391254"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q11391254",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://ja.wikipedia.org/wiki/%E5%85%AB%E6%97%A5%E5%B8%82%E8%AD%B7%E5%9B%BD",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
     "id": "wd-Q11391728",
     "name": {
       "ja": "八股榎大明神",
@@ -7478,7 +7353,7 @@
       "重要文化財",
       "名勝"
     ],
-    "featured": false,
+    "featured": true,
     "score": 69.51,
     "summary": {
       "text": "Iwaya-ji (Japanese: 岩屋寺) is a Buddhist temple belonging to the Shingon-shū Buzan-ha sect, located in Nanatori, Kumakogen Town, Kamiukena District, Ehime Prefecture. Its sangō (mountain name) is Kaiganzan. The principal deity is Fudō Myōō. It is the 45th temple on the Shikoku Pilgrimage of 88 Temples.",
@@ -8400,70 +8275,6 @@
     "updated_at": "2026-09-29"
   },
   {
-    "id": "wd-Q11493620",
-    "name": {
-      "ja": "愛媛県立博物館",
-      "kana": "えひめけんりつはくぶつかん",
-      "romaji": "Ehimekenritsuhakubutsukan",
-      "zh_tw": "愛媛県立博物館",
-      "en": "Ehime Prefectural Museum"
-    },
-    "kana_source": "wikipedia",
-    "location": {
-      "lat": 33.840111,
-      "lng": 132.7625
-    },
-    "prefecture": "ehime",
-    "kind": "major",
-    "themes": [],
-    "tags": [
-      "博物館"
-    ],
-    "featured": false,
-    "score": 49.85,
-    "summary": {
-      "text": "愛媛県立博物館（えひめけんりつはくぶつかん）は、愛媛県松山市にかつて存在した県立博物館。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%84%9B%E5%AA%9B%E7%9C%8C%E7%AB%8B%E5%8D%9A%E7%89%A9%E9%A4%A8",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "nearest_stations": [
-      {
-        "name": {
-          "ja": "松山市",
-          "romaji": "Matsuyamashi",
-          "en": "Matsuyama City"
-        },
-        "distance_m": 510
-      },
-      {
-        "name": {
-          "ja": "大手町",
-          "romaji": "Otemachi",
-          "en": "Otemachi"
-        },
-        "distance_m": 660
-      }
-    ],
-    "images": [],
-    "external_ids": {
-      "wikidata": "Q11493620"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q11493620",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://ja.wikipedia.org/wiki/%E6%84%9B%E5%AA%9B%E7%9C%8C%E7%AB%8B%E5%8D%9A%E7%89%A9%E9%A4%A8",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
     "id": "wd-Q11493663",
     "name": {
       "ja": "愛媛県立道後動物園",
@@ -8944,59 +8755,6 @@
       },
       {
         "url": "https://ja.wikipedia.org/wiki/%E6%96%B0%E5%B1%85%E5%A4%A7%E5%B3%B6",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
-    "id": "wd-Q11501954",
-    "name": {
-      "ja": "新居浜市立郷土美術館",
-      "kana": "にいはましりつきょうどびじゅつかん",
-      "romaji": "Niihamashiritsukyodobijutsukan",
-      "zh_tw": "新居浜市立郷土美術館",
-      "en": "Niihama City Native Museum"
-    },
-    "kana_source": "wikipedia",
-    "location": {
-      "lat": 33.96025,
-      "lng": 133.282806
-    },
-    "prefecture": "ehime",
-    "kind": "major",
-    "themes": [],
-    "tags": [
-      "美術館"
-    ],
-    "featured": false,
-    "score": 48.88,
-    "summary": {
-      "text": "新居浜市立郷土美術館（にいはましりつきょうどびじゅつかん）は、1981年に開館し2016年に閉館した、愛媛県新居浜市内の美術・歴史民俗・考古資料などを集め展示・調査・研究する施設だった。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%96%B0%E5%B1%85%E6%B5%9C%E5%B8%82%E7%AB%8B%E9%83%B7%E5%9C%9F%E7%BE%8E%E8%A1%93%E9%A4%A8",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1b/Niihama_City_Native_Museum.JPG/960px-Niihama_City_Native_Museum.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Fffkk",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Niihama_City_Native_Museum.JPG"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q11501954"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q11501954",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://ja.wikipedia.org/wiki/%E6%96%B0%E5%B1%85%E6%B5%9C%E5%B8%82%E7%AB%8B%E9%83%B7%E5%9C%9F%E7%BE%8E%E8%A1%93%E9%A4%A8",
         "fetched_at": "2026-09-28"
       }
     ],
@@ -12325,53 +12083,6 @@
     "sources": [
       {
         "url": "https://www.wikidata.org/wiki/Q11611629",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
-    "id": "wd-Q11611955",
-    "name": {
-      "ja": "能島城",
-      "zh_tw": "能島城",
-      "en": "Noshima Castle"
-    },
-    "location": {
-      "lat": 34.182778,
-      "lng": 133.080833
-    },
-    "prefecture": "ehime",
-    "kind": "major",
-    "themes": [],
-    "tags": [
-      "城",
-      "史跡"
-    ],
-    "featured": false,
-    "score": 49.48,
-    "summary": {
-      "text": "能島城是位在愛媛縣今治市，建於能島上的一座城。為國家指定史蹟。在戰國時代為能島村上氏的居城。",
-      "lang": "zh",
-      "source_url": "https://zh.wikipedia.org/wiki/%E8%83%BD%E5%B3%B6%E5%9F%8E",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c5/Noshima_Castle_Ruins.C.jpg/960px-Noshima_Castle_Ruins.C.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "さかおり",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Noshima_Castle_Ruins.C.jpg"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q11611955"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q11611955",
         "fetched_at": "2026-09-28"
       }
     ],
@@ -20598,53 +20309,6 @@
     "updated_at": "2026-09-28"
   },
   {
-    "id": "wd-Q5640351",
-    "name": {
-      "ja": "伯方町",
-      "kana": "はかたちょう",
-      "romaji": "Hakatacho",
-      "zh_tw": "伯方町",
-      "en": "Hakata"
-    },
-    "kana_source": "wikidata",
-    "location": {
-      "lat": 34.204944,
-      "lng": 133.113694
-    },
-    "prefecture": "ehime",
-    "kind": "major",
-    "themes": [],
-    "tags": [],
-    "featured": false,
-    "score": 46.41,
-    "summary": {
-      "text": "Hakata (伯方町, Hakata-chō) was a town located in Ochi District, Ehime Prefecture, Japan.",
-      "lang": "en",
-      "source_url": "https://en.wikipedia.org/wiki/Hakata%2C_Ehime",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-29"
-    },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/21/Hakata_zousen.JPG/960px-Hakata_zousen.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Opqr",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Hakata_zousen.JPG"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q5640351"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q5640351",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
     "id": "wd-Q5817606",
     "name": {
       "ja": "中島",
@@ -20792,46 +20456,6 @@
       },
       {
         "url": "https://ja.wikipedia.org/wiki/%E5%A6%99%E9%9B%B2%E5%AF%BA_%28%E8%A5%BF%E6%9D%A1%E5%B8%82%29",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
-    "id": "wd-Q6358599",
-    "name": {
-      "ja": "上浦町",
-      "kana": "かみうらちょう",
-      "romaji": "Kamiuracho",
-      "zh_tw": "上浦町",
-      "en": "Kamiura"
-    },
-    "kana_source": "wikidata",
-    "location": {
-      "lat": 34.263417,
-      "lng": 133.04025
-    },
-    "prefecture": "ehime",
-    "kind": "major",
-    "themes": [],
-    "tags": [],
-    "featured": false,
-    "score": 43.09,
-    "summary": {
-      "text": "Kamiura (上浦町, Kamiura-chō) was a town located in Ochi District, Ehime Prefecture, Japan.",
-      "lang": "en",
-      "source_url": "https://en.wikipedia.org/wiki/Kamiura%2C_Ehime",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-29"
-    },
-    "images": [],
-    "external_ids": {
-      "wikidata": "Q6358599"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q6358599",
         "fetched_at": "2026-09-28"
       }
     ],
@@ -21405,46 +21029,6 @@
       },
       {
         "url": "https://ja.wikipedia.org/wiki/%E3%82%A8%E3%83%AB%E3%83%B3%E3%83%86%E5%A4%A7%E6%B4%B2",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
-    "id": "wd-Q8081621",
-    "name": {
-      "ja": "大三島町",
-      "kana": "おおみしまちょう",
-      "romaji": "Omishimacho",
-      "zh_tw": "大三島町",
-      "en": "Ōmishima"
-    },
-    "kana_source": "wikidata",
-    "location": {
-      "lat": 34.249028,
-      "lng": 132.99575
-    },
-    "prefecture": "ehime",
-    "kind": "major",
-    "themes": [],
-    "tags": [],
-    "featured": false,
-    "score": 45.48,
-    "summary": {
-      "text": "Ōmishima (大三島町, Ōmishima-chō) was a town located in Ōmishima Island, Ochi District, Ehime Prefecture, Japan.",
-      "lang": "en",
-      "source_url": "https://en.wikipedia.org/wiki/%C5%8Cmishima%2C_Ehime",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-29"
-    },
-    "images": [],
-    "external_ids": {
-      "wikidata": "Q8081621"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q8081621",
         "fetched_at": "2026-09-28"
       }
     ],
@@ -22505,7 +22089,7 @@
     "tags": [
       "公園"
     ],
-    "featured": false,
+    "featured": true,
     "score": 69.61,
     "summary": {
       "text": "能島為瀨戶內海上藝予群島的一個無人島，屬於愛媛縣今治市宮窪町。",
@@ -22533,57 +22117,6 @@
       },
       {
         "url": "https://www.openstreetmap.org/way/131078652",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
-    "id": "wd-Q994193",
-    "name": {
-      "ja": "別子銅山",
-      "kana": "べっしどうざん",
-      "romaji": "Besshidozan",
-      "zh_tw": "別子銅山",
-      "en": "Besshi copper mine"
-    },
-    "kana_source": "wikipedia",
-    "location": {
-      "lat": 33.865278,
-      "lng": 133.328056
-    },
-    "prefecture": "ehime",
-    "kind": "major",
-    "themes": [],
-    "tags": [],
-    "featured": true,
-    "score": 77.69,
-    "summary": {
-      "text": "別子銅山是愛媛縣新居濱市山間的一片銅礦區。1690年（元祿3年）發現，從翌年至1973年（昭和48年）約280年間共生產出了70萬噸銅。為日本的貿易與近代化做出貢獻。一直由住友家經營（閉山時為住友金屬礦山）、可說是住友家成為日本大財閥的基石。",
-      "lang": "zh",
-      "source_url": "https://zh.wikipedia.org/wiki/%E5%88%A5%E5%AD%90%E9%8A%85%E5%B1%B1",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "images": [
-      {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/3/37/Besshi_copper_mine.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-        "author": "Unknown authorUnknown author",
-        "license": "Public domain",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Besshi_copper_mine.JPG"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q994193"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q994193",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://ja.wikipedia.org/wiki/%E5%88%A5%E5%AD%90%E9%8A%85%E5%B1%B1",
         "fetched_at": "2026-09-28"
       }
     ],

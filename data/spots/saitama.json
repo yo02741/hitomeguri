@@ -97,7 +97,7 @@
     "tags": [
       "博物館"
     ],
-    "featured": false,
+    "featured": true,
     "score": 72.96,
     "summary": {
       "text": "所澤航空發祥紀念館位於日本埼玉縣所澤市，用以紀念該國航空史。它擁有飛機以及其它展示品（很多都可以與參觀者進行互動）和一個IMAX劇院。它坐落於日本的第一個飛機場上，這個飛機場於1911年啟用，德川好敏進行了日本第一次飛行，原始的單跑道目前還存在。它已經合併到臨近的更大的多功能公園內。",
@@ -273,73 +273,6 @@
       },
       {
         "url": "https://www.openstreetmap.org/way/23876795",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-29"
-  },
-  {
-    "id": "wd-Q1058730",
-    "name": {
-      "ja": "ジョン・レノン・ミュージアム",
-      "kana": "じょんれのんみゅーじあむ",
-      "romaji": "Jonrenonmyujiamu",
-      "zh_tw": "約翰·列儂博物館",
-      "en": "John Lennon Museum"
-    },
-    "kana_source": "wikidata",
-    "location": {
-      "lat": 35.894889,
-      "lng": 139.630833
-    },
-    "prefecture": "saitama",
-    "kind": "major",
-    "themes": [],
-    "tags": [],
-    "featured": false,
-    "score": 74.49,
-    "summary": {
-      "text": "John Lennon Museum (ジョン・レノン・ミュージアム, Jon Renon Myūjiamu) was a museum located inside the Saitama Super Arena in Chūō-ku, Saitama, Saitama Prefecture, Japan.",
-      "lang": "en",
-      "source_url": "https://en.wikipedia.org/wiki/John_Lennon_Museum",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-29"
-    },
-    "nearest_stations": [
-      {
-        "name": {
-          "ja": "さいたま新都心",
-          "kana": "さいたましんとしん",
-          "romaji": "Saitama shintoshin",
-          "en": "Saitama-Shintoshin"
-        },
-        "distance_m": 310
-      },
-      {
-        "name": {
-          "ja": "北与野",
-          "kana": "きたよの",
-          "romaji": "Kita-Yono",
-          "en": "Kita-Yono"
-        },
-        "distance_m": 510
-      }
-    ],
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4a/John_Lennon_Museum.jpg/960px-John_Lennon_Museum.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "BillyTFried at English Wikipedia",
-        "license": "Public domain",
-        "source_url": "https://commons.wikimedia.org/wiki/File:John_Lennon_Museum.jpg"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q1058730"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q1058730",
         "fetched_at": "2026-09-28"
       }
     ],
@@ -611,80 +544,6 @@
       },
       {
         "url": "https://www.openstreetmap.org/node/2948787992",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
-    "id": "wd-Q1074393",
-    "name": {
-      "ja": "忍城",
-      "kana": "おしじょう",
-      "romaji": "Oshijo",
-      "zh_tw": "忍城",
-      "en": "Oshi Castle"
-    },
-    "kana_source": "wikipedia",
-    "location": {
-      "lat": 36.1371,
-      "lng": 139.453
-    },
-    "prefecture": "saitama",
-    "kind": "major",
-    "themes": [],
-    "tags": [
-      "城"
-    ],
-    "featured": true,
-    "score": 83.35,
-    "summary": {
-      "text": "忍城（おしじょう）是位在埼玉縣行田市的一座城。別名忍之浮城、龜城。為埼玉縣指定史蹟。是日本戰國關東七名城之一，亦是江戶時代忍藩之藩廳所在地。忍城水攻是日本三大水攻之一。",
-      "lang": "zh",
-      "source_url": "https://zh.wikipedia.org/wiki/%E5%BF%8D%E5%9F%8E",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "nearest_stations": [
-      {
-        "name": {
-          "ja": "行田市",
-          "en": "Gyōdashi"
-        },
-        "distance_m": 920
-      },
-      {
-        "name": {
-          "ja": "持田",
-          "en": "Mochida"
-        },
-        "distance_m": 980
-      }
-    ],
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ae/Oshi_Castle%2C_yagura-1.jpg/960px-Oshi_Castle%2C_yagura-1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Saigen Jiro",
-        "license": "CC0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Oshi_Castle,_yagura-1.jpg"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q1074393",
-      "osm": "node/257072641"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q1074393",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://www.openstreetmap.org/node/257072641",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://ja.wikipedia.org/wiki/%E5%BF%8D%E5%9F%8E",
         "fetched_at": "2026-09-28"
       }
     ],
@@ -4104,61 +3963,6 @@
     "updated_at": "2026-09-28"
   },
   {
-    "id": "wd-Q11358845",
-    "name": {
-      "ja": "上山口",
-      "kana": "かみやまぐち",
-      "romaji": "Kami Yamaguchi",
-      "zh_tw": "上山口",
-      "en": "Kami-Yamaguchi"
-    },
-    "kana_source": "wikipedia",
-    "location": {
-      "lat": 35.7758,
-      "lng": 139.4196
-    },
-    "prefecture": "saitama",
-    "kind": "major",
-    "themes": [],
-    "tags": [],
-    "featured": false,
-    "score": 58.53,
-    "summary": {
-      "text": "上山口（かみやまぐち）は、埼玉県所沢市の大字。郵便番号359-1153。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E4%B8%8A%E5%B1%B1%E5%8F%A3",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "nearest_stations": [
-      {
-        "name": {
-          "ja": "西武球場前",
-          "kana": "せいぶきゅじょうまえ",
-          "romaji": "Seibu Kyūjō mae",
-          "en": "Seibukyujo-mae"
-        },
-        "distance_m": 590
-      }
-    ],
-    "images": [],
-    "external_ids": {
-      "wikidata": "Q11358845"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q11358845",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://ja.wikipedia.org/wiki/%E4%B8%8A%E5%B1%B1%E5%8F%A3",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
     "id": "wd-Q11361959",
     "name": {
       "ja": "与野公園",
@@ -4804,70 +4608,6 @@
     "updated_at": "2026-09-28"
   },
   {
-    "id": "wd-Q11369569",
-    "name": {
-      "ja": "久米",
-      "kana": "くめ",
-      "romaji": "Kume",
-      "zh_tw": "久米",
-      "en": "Kume"
-    },
-    "kana_source": "wikipedia",
-    "location": {
-      "lat": 35.779167,
-      "lng": 139.455778
-    },
-    "prefecture": "saitama",
-    "kind": "major",
-    "themes": [],
-    "tags": [],
-    "featured": false,
-    "score": 57.13,
-    "summary": {
-      "text": "久米（くめ）は、埼玉県所沢市の大字。郵便番号359-1131。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E4%B9%85%E7%B1%B3_%28%E6%89%80%E6%B2%A2%E5%B8%82%29",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "nearest_stations": [
-      {
-        "name": {
-          "ja": "西所沢",
-          "kana": "にしところざわ",
-          "romaji": "Nishi Tokorozawa",
-          "en": "Nishi-Tokorozawa"
-        },
-        "distance_m": 1090
-      },
-      {
-        "name": {
-          "ja": "下山口",
-          "kana": "しもやまぐち",
-          "romaji": "Shimo Yamaguchi",
-          "en": "Shimo-Yamaguchi"
-        },
-        "distance_m": 1290
-      }
-    ],
-    "images": [],
-    "external_ids": {
-      "wikidata": "Q11369569"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q11369569",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://ja.wikipedia.org/wiki/%E4%B9%85%E7%B1%B3_%28%E6%89%80%E6%B2%A2%E5%B8%82%29",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
     "id": "wd-Q11371444",
     "name": {
       "ja": "二子山 (埼玉県小鹿野町)",
@@ -4905,50 +4645,6 @@
       },
       {
         "url": "https://ja.wikipedia.org/wiki/%E4%BA%8C%E5%AD%90%E5%B1%B1_%28%E5%9F%BC%E7%8E%89%E7%9C%8C%E5%B0%8F%E9%B9%BF%E9%87%8E%E7%94%BA%29",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
-    "id": "wd-Q11372062",
-    "name": {
-      "ja": "五十子陣",
-      "kana": "いかっこじん",
-      "romaji": "Ikakkojin",
-      "zh_tw": "五十子陣",
-      "en": "Ikakko Castle"
-    },
-    "kana_source": "wikipedia",
-    "location": {
-      "lat": 36.228806,
-      "lng": 139.217278
-    },
-    "prefecture": "saitama",
-    "kind": "major",
-    "themes": [],
-    "tags": [],
-    "featured": false,
-    "score": 65.79,
-    "summary": {
-      "text": "五十子陣（いかっこじん/いかっこのじん）は、埼玉県本庄市大字東五十子及び大字西五十子の一部（武蔵国児玉郡五十子）にあった室町時代中期の日本の城（平山城）。「いらこのじん」「いかごのじん」などと読まれることもある。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E4%BA%94%E5%8D%81%E5%AD%90%E9%99%A3",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "images": [],
-    "external_ids": {
-      "wikidata": "Q11372062"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q11372062",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://ja.wikipedia.org/wiki/%E4%BA%94%E5%8D%81%E5%AD%90%E9%99%A3",
         "fetched_at": "2026-09-28"
       }
     ],
@@ -5680,52 +5376,6 @@
       },
       {
         "url": "https://ja.wikipedia.org/wiki/%E5%8A%A0%E9%A0%88%E3%81%AF%E3%81%AA%E3%81%95%E3%81%8D%E5%85%AC%E5%9C%92",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
-    "id": "wd-Q11400361",
-    "name": {
-      "ja": "勝楽寺",
-      "kana": "しょうらくじ",
-      "romaji": "Sho Rakuji",
-      "zh_tw": "勝樂寺",
-      "en": "Shōrakuji"
-    },
-    "kana_source": "wikipedia",
-    "location": {
-      "lat": 35.7729,
-      "lng": 139.3969
-    },
-    "prefecture": "saitama",
-    "kind": "major",
-    "themes": [],
-    "tags": [
-      "寺院"
-    ],
-    "featured": false,
-    "score": 58.49,
-    "summary": {
-      "text": "勝楽寺（しょうらくじ）は、埼玉県所沢市の南西部の大字。郵便番号は359-1154。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%8B%9D%E6%A5%BD%E5%AF%BA_%28%E6%89%80%E6%B2%A2%E5%B8%82%29",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "images": [],
-    "external_ids": {
-      "wikidata": "Q11400361"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q11400361",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://ja.wikipedia.org/wiki/%E5%8B%9D%E6%A5%BD%E5%AF%BA_%28%E6%89%80%E6%B2%A2%E5%B8%82%29",
         "fetched_at": "2026-09-28"
       }
     ],
@@ -8019,70 +7669,6 @@
       },
       {
         "url": "https://ja.wikipedia.org/wiki/%E5%B0%8F%E5%B7%9D%E6%B8%A9%E6%B3%89_%28%E5%9F%BC%E7%8E%89%E7%9C%8C%29",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
-    "id": "wd-Q11466558",
-    "name": {
-      "ja": "山口",
-      "kana": "やまぐち",
-      "romaji": "Yamaguchi",
-      "zh_tw": "山口",
-      "en": "Yamaguchi"
-    },
-    "kana_source": "wikipedia",
-    "location": {
-      "lat": 35.7787,
-      "lng": 139.437
-    },
-    "prefecture": "saitama",
-    "kind": "major",
-    "themes": [],
-    "tags": [],
-    "featured": false,
-    "score": 58.73,
-    "summary": {
-      "text": "山口（やまぐち）は、埼玉県所沢市の南西部の大字。旧入間郡山口村。郵便番号は359-1145。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%B1%B1%E5%8F%A3_%28%E6%89%80%E6%B2%A2%E5%B8%82%29",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "nearest_stations": [
-      {
-        "name": {
-          "ja": "下山口",
-          "kana": "しもやまぐち",
-          "romaji": "Shimo Yamaguchi",
-          "en": "Shimo-Yamaguchi"
-        },
-        "distance_m": 410
-      },
-      {
-        "name": {
-          "ja": "西武園ゆうえんち",
-          "kana": "せいぶえんゆうえんち",
-          "romaji": "Seibuen Yu Enchi",
-          "en": "Seibuen-yūenchi"
-        },
-        "distance_m": 1070
-      }
-    ],
-    "images": [],
-    "external_ids": {
-      "wikidata": "Q11466558"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q11466558",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://ja.wikipedia.org/wiki/%E5%B1%B1%E5%8F%A3_%28%E6%89%80%E6%B2%A2%E5%B8%82%29",
         "fetched_at": "2026-09-28"
       }
     ],
@@ -15926,64 +15512,6 @@
     "updated_at": "2026-09-28"
   },
   {
-    "id": "wd-Q11668528",
-    "name": {
-      "ja": "騎西城",
-      "kana": "きさいじょう",
-      "romaji": "Kisaijo",
-      "zh_tw": "騎西城",
-      "en": "Kisai Castle"
-    },
-    "kana_source": "wikipedia",
-    "location": {
-      "lat": 36.102018,
-      "lng": 139.58729
-    },
-    "prefecture": "saitama",
-    "kind": "major",
-    "themes": [],
-    "tags": [
-      "城"
-    ],
-    "featured": false,
-    "score": 67.44,
-    "summary": {
-      "text": "騎西城（きさいじょう）は、埼玉県加須市騎西地域（武蔵国埼玉郡）にあった日本の城。残存する土塁が「騎西城土塁跡」として加須市指定史跡。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E9%A8%8E%E8%A5%BF%E5%9F%8E",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/76/%E9%A8%8E%E8%A5%BF%E5%9F%8E%E5%9C%9F%E5%A1%81%E8%B7%A1.jpg/960px-%E9%A8%8E%E8%A5%BF%E5%9F%8E%E5%9C%9F%E5%A1%81%E8%B7%A1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Newriver0104",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:%E9%A8%8E%E8%A5%BF%E5%9F%8E%E5%9C%9F%E5%A1%81%E8%B7%A1.jpg"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q11668528",
-      "osm": "node/4950552922"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q11668528",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://www.openstreetmap.org/node/4950552922",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://ja.wikipedia.org/wiki/%E9%A8%8E%E8%A5%BF%E5%9F%8E",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-29"
-  },
-  {
     "id": "wd-Q11669030",
     "name": {
       "ja": "高坂館",
@@ -23521,70 +23049,6 @@
     "updated_at": "2026-09-28"
   },
   {
-    "id": "wd-Q6788089",
-    "name": {
-      "ja": "松が丘",
-      "kana": "まつがおか",
-      "romaji": "Matsugaoka",
-      "zh_tw": "松丘",
-      "en": "Matsugaoka"
-    },
-    "kana_source": "wikipedia",
-    "location": {
-      "lat": 35.77286,
-      "lng": 139.46087
-    },
-    "prefecture": "saitama",
-    "kind": "major",
-    "themes": [],
-    "tags": [],
-    "featured": false,
-    "score": 56.58,
-    "summary": {
-      "text": "松が丘（まつがおか）は、埼玉県所沢市の町名。現行行政地名は松が丘一丁目および二丁目。郵便番号359-1132。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%9D%BE%E3%81%8C%E4%B8%98_%28%E6%89%80%E6%B2%A2%E5%B8%82%29",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "nearest_stations": [
-      {
-        "name": {
-          "ja": "西武園",
-          "kana": "せいぶえん",
-          "romaji": "Seibuen",
-          "en": "Seibuen"
-        },
-        "distance_m": 1230
-      },
-      {
-        "name": {
-          "ja": "東村山",
-          "kana": "ひがしむらやま",
-          "romaji": "Higashi Murayama",
-          "en": "Higashi-Murayama"
-        },
-        "distance_m": 1450
-      }
-    ],
-    "images": [],
-    "external_ids": {
-      "wikidata": "Q6788089"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q6788089",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://ja.wikipedia.org/wiki/%E6%9D%BE%E3%81%8C%E4%B8%98_%28%E6%89%80%E6%B2%A2%E5%B8%82%29",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
     "id": "wd-Q68537489",
     "name": {
       "ja": "みか神社",
@@ -24005,77 +23469,6 @@
     ],
     "status": "published",
     "updated_at": "2026-09-29"
-  },
-  {
-    "id": "wd-Q8081624",
-    "name": {
-      "ja": "大宮盆栽村",
-      "kana": "おおみやぼんさいむら",
-      "romaji": "Omiyabonsaimura",
-      "zh_tw": "大宮盆栽村",
-      "en": "Ōmiya Bonsai Village"
-    },
-    "kana_source": "wikipedia",
-    "location": {
-      "lat": 35.927763,
-      "lng": 139.631513
-    },
-    "prefecture": "saitama",
-    "kind": "major",
-    "themes": [],
-    "tags": [],
-    "featured": false,
-    "score": 68.24,
-    "summary": {
-      "text": "Ōmiya Bonsai Village (大宮盆栽村, Ōmiya Bonsai-mura) is the nickname for the bonsai nursery precinct in Bonsai-chō (盆栽町, Bonsai-chō), Kita-ku, Saitama, Japan.",
-      "lang": "en",
-      "source_url": "https://en.wikipedia.org/wiki/%C5%8Cmiya_Bonsai_Village",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-29"
-    },
-    "nearest_stations": [
-      {
-        "name": {
-          "ja": "土呂",
-          "kana": "とろ",
-          "romaji": "Toro",
-          "en": "Toro"
-        },
-        "distance_m": 450
-      },
-      {
-        "name": {
-          "ja": "大宮公園",
-          "kana": "おおみやこうえん",
-          "romaji": "Ōmiya-kōen",
-          "en": "Omiya Park"
-        },
-        "distance_m": 460
-      }
-    ],
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b4/Saitama_Bonsaishiki-no-ie_1.JPG/960px-Saitama_Bonsaishiki-no-ie_1.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "京浜にけ",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Saitama_Bonsaishiki-no-ie_1.JPG"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q8081624"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q8081624",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E5%AE%AE%E7%9B%86%E6%A0%BD%E6%9D%91",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q8193063",

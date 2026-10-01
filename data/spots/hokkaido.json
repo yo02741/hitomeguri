@@ -1414,113 +1414,6 @@
     "updated_at": "2026-09-28"
   },
   {
-    "id": "wd-Q1000083",
-    "name": {
-      "ja": "大滝村",
-      "kana": "おおたきむら",
-      "romaji": "Otakimura",
-      "zh_tw": "大瀧村",
-      "en": "Ōtaki"
-    },
-    "kana_source": "wikidata",
-    "location": {
-      "lat": 42.671694,
-      "lng": 141.079528
-    },
-    "prefecture": "hokkaido",
-    "kind": "major",
-    "themes": [],
-    "tags": [],
-    "featured": false,
-    "score": 68.25,
-    "summary": {
-      "text": "大瀧村為過去位於北海道膽振支廳西部的行政區劃，周圍多山，冬季積雪較多。已於2006年3月1日併入伊達市，因轄區未與原本的伊達市相接，成為伊達市的飛地，目前為伊達市的地域自治區「大瀧區」。",
-      "lang": "zh",
-      "source_url": "https://zh.wikipedia.org/wiki/%E5%A4%A7%E7%80%A7%E6%9D%91_%28%E5%8C%97%E6%B5%B7%E9%81%93%29",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "images": [],
-    "external_ids": {
-      "wikidata": "Q1000083"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q1000083",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
-    "id": "wd-Q10333378",
-    "name": {
-      "ja": "アイヌ民族博物館",
-      "kana": "あいぬみんぞくはくぶつかん",
-      "romaji": "Ainuminzokuhakubutsukan",
-      "zh_tw": "阿伊努民族博物館",
-      "en": "Ainu Museum"
-    },
-    "kana_source": "wikipedia",
-    "location": {
-      "lat": 42.561389,
-      "lng": 141.366944
-    },
-    "prefecture": "hokkaido",
-    "kind": "major",
-    "themes": [],
-    "tags": [
-      "博物館"
-    ],
-    "featured": false,
-    "score": 68.4,
-    "summary": {
-      "text": "The Ainu Museum (アイヌ民族博物館, Ainu Minzoku Hakubutsukan), also known as Porotokotan, is a former museum in Shiraoi, Hokkaidō, Japan. The facility began its existence in 1976 as the Shiraoi Foundation for the Preservation of Ainu Culture. In 1984 this was extended to include the Ainu Folk Museum. In 1990 it reopened under the auspices of The Ainu Museum Foundation.",
-      "lang": "en",
-      "source_url": "https://en.wikipedia.org/wiki/Ainu_Museum",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-29"
-    },
-    "nearest_stations": [
-      {
-        "name": {
-          "ja": "白老",
-          "en": "Shiraoi"
-        },
-        "distance_m": 930
-      }
-    ],
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d7/Ainu_Museum_building.JPG/960px-Ainu_Museum_building.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Abasaa",
-        "license": "Public domain",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Ainu_Museum_building.JPG"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q10333378",
-      "osm": "way/825705608"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q10333378",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://www.openstreetmap.org/way/825705608",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://ja.wikipedia.org/wiki/%E3%82%A2%E3%82%A4%E3%83%8C%E6%B0%91%E6%97%8F%E5%8D%9A%E7%89%A9%E9%A4%A8",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
     "id": "wd-Q1036851",
     "name": {
       "ja": "弁天台場",
@@ -4171,55 +4064,6 @@
     "updated_at": "2026-09-28"
   },
   {
-    "id": "wd-Q11315863",
-    "name": {
-      "ja": "タウシュベツ橋梁",
-      "zh_tw": "多牛別川橋梁",
-      "en": "Taushubetsu Bridge"
-    },
-    "location": {
-      "lat": 43.415556,
-      "lng": 143.189167
-    },
-    "prefecture": "hokkaido",
-    "kind": "major",
-    "themes": [],
-    "tags": [],
-    "featured": false,
-    "score": 74.52,
-    "summary": {
-      "text": "タウシュベツ川橋梁（タウシュベツがわきょうりょう）は、北海道上士幌町の糠平湖にある、旧国鉄士幌線（廃線）のコンクリート製アーチ橋である。名称に関しては「川」を省略しタウシュベツ橋梁と称されることもあるが、鉄道橋としての本来の正式名称ではなく、また上士幌町や保存会も正式名を継承している。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E3%82%BF%E3%82%A6%E3%82%B7%E3%83%A5%E3%83%99%E3%83%84%E5%B7%9D%E6%A9%8B%E6%A2%81",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7b/Taushubetsu-Bridge.jpg/960px-Taushubetsu-Bridge.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "MaedaAkihiko",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Taushubetsu-Bridge.jpg"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q11315863",
-      "osm": "node/13171597529"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q11315863",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://www.openstreetmap.org/node/13171597529",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
     "id": "wd-Q11317889",
     "name": {
       "ja": "チキウ岬",
@@ -4520,53 +4364,6 @@
     "sources": [
       {
         "url": "https://www.wikidata.org/wiki/Q11324364",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
-    "id": "wd-Q11325868",
-    "name": {
-      "ja": "ノースサファリサッポロ",
-      "kana": "のーすさふぁりさっぽろ",
-      "romaji": "Nosusafarisapporo",
-      "zh_tw": "ノースサファリサッポロ",
-      "en": "North Safari Sapporo"
-    },
-    "kana_source": "wikidata",
-    "location": {
-      "lat": 42.947028,
-      "lng": 141.223028
-    },
-    "prefecture": "hokkaido",
-    "kind": "major",
-    "themes": [],
-    "tags": [],
-    "featured": false,
-    "score": 75.81,
-    "summary": {
-      "text": "ノースサファリサッポロは、北海道札幌市南区にかつて存在した動物園兼レジャー施設である。2005年7月開園、2025年9月閉園。運営する有限会社サクセス観光（本社：北海道札幌市）が無許可で設置していた（後述）。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E3%83%8E%E3%83%BC%E3%82%B9%E3%82%B5%E3%83%95%E3%82%A1%E3%83%AA%E3%82%B5%E3%83%83%E3%83%9D%E3%83%AD",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e2/Enter_front.JPG/960px-Enter_front.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "(Y_umezawa)",
-        "license": "CC BY 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Enter_front.JPG"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q11325868"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q11325868",
         "fetched_at": "2026-09-28"
       }
     ],
@@ -6281,66 +6078,6 @@
     "sources": [
       {
         "url": "https://www.wikidata.org/wiki/Q11402784",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
-    "id": "wd-Q11402928",
-    "name": {
-      "ja": "北海道百年記念塔",
-      "kana": "ほっかいどうひゃくねんきねんとう",
-      "romaji": "Hokkaidohyakunenkinento",
-      "zh_tw": "北海道百年紀念塔",
-      "en": "Centennial Memorial Tower"
-    },
-    "kana_source": "wikipedia",
-    "location": {
-      "lat": 43.0565,
-      "lng": 141.496342
-    },
-    "prefecture": "hokkaido",
-    "kind": "major",
-    "themes": [],
-    "tags": [],
-    "featured": false,
-    "score": 71.7,
-    "summary": {
-      "text": "北海道百年紀念塔是一座位於日本北海道札幌市厚別區道立自然公園野幌森林公園內的紀念建築物。該塔於1968年11月動工，以紀念北海道開埠100週年，1970年7月完工，隔年1971年4月對外開放。毗鄰北海道博物館和北海道開拓村，但由於其年久失修，以致2022年秋季起將其拆除。",
-      "lang": "zh",
-      "source_url": "https://zh.wikipedia.org/wiki/%E5%8C%97%E6%B5%B7%E9%81%93%E7%99%BE%E5%B9%B4%E7%B4%80%E5%BF%B5%E5%A1%94",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "nearest_stations": [
-      {
-        "name": {
-          "ja": "森林公園",
-          "en": "Shinrin-Kōen"
-        },
-        "distance_m": 1210
-      }
-    ],
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/87/HOKKAIDO_100YEARS_MEMORIAL_TOWER_-_panoramio.jpg/960px-HOKKAIDO_100YEARS_MEMORIAL_TOWER_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "t-konno",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:HOKKAIDO_100YEARS_MEMORIAL_TOWER_-_panoramio.jpg"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q11402928"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q11402928",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://ja.wikipedia.org/wiki/%E5%8C%97%E6%B5%B7%E9%81%93%E7%99%BE%E5%B9%B4%E8%A8%98%E5%BF%B5%E5%A1%94",
         "fetched_at": "2026-09-28"
       }
     ],
@@ -10494,73 +10231,6 @@
     "updated_at": "2026-09-28"
   },
   {
-    "id": "wd-Q11585314",
-    "name": {
-      "ja": "石原裕次郎記念館",
-      "kana": "いしはらゆうじろうきねんかん",
-      "romaji": "Ishiharayujirokinenkan",
-      "zh_tw": "石原裕次郎記念館",
-      "en": "Yujiro Memorial Hall"
-    },
-    "kana_source": "wikidata",
-    "location": {
-      "lat": 43.185278,
-      "lng": 141.022778
-    },
-    "prefecture": "hokkaido",
-    "kind": "major",
-    "themes": [],
-    "tags": [
-      "博物館"
-    ],
-    "featured": false,
-    "score": 68.71,
-    "summary": {
-      "text": "石原裕次郎記念館（いしはらゆうじろうきねんかん）は、かつて北海道小樽市にあった石原裕次郎に関する記念館。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E7%9F%B3%E5%8E%9F%E8%A3%95%E6%AC%A1%E9%83%8E%E8%A8%98%E5%BF%B5%E9%A4%A8",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "nearest_stations": [
-      {
-        "name": {
-          "ja": "小樽築港",
-          "romaji": "Otaru-Chikkō",
-          "en": "Otaru-Chikkō"
-        },
-        "distance_m": 640
-      },
-      {
-        "name": {
-          "ja": "南小樽",
-          "romaji": "Minami-Otaru",
-          "en": "Minami-Otaru"
-        },
-        "distance_m": 1270
-      }
-    ],
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6e/Yujiro_kinenkan.jpg/960px-Yujiro_kinenkan.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Komatta",
-        "license": "Public domain",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Yujiro_kinenkan.jpg"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q11585314"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q11585314",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
     "id": "wd-Q11585542",
     "name": {
       "ja": "石山緑地",
@@ -11728,50 +11398,6 @@
       },
       {
         "url": "https://ja.wikipedia.org/wiki/%E9%81%93%E3%81%AE%E9%A7%85%E3%81%BE%E3%82%8B%E3%81%9B%E3%81%A3%E3%81%B7",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
-    "id": "wd-Q11641061",
-    "name": {
-      "ja": "道の駅フォーレスト276大滝",
-      "zh_tw": "道の駅フォーレスト276大滝",
-      "en": "Roadside station forest276 Otaki"
-    },
-    "location": {
-      "lat": 42.698056,
-      "lng": 141.130333
-    },
-    "prefecture": "hokkaido",
-    "kind": "major",
-    "themes": [],
-    "tags": [],
-    "featured": false,
-    "score": 66.71,
-    "summary": {
-      "text": "道の駅フォーレスト276大滝（みちのえき フォーレスト276おおたき）は、かつて北海道伊達市大滝区三階滝町の国道276号に所在していた道の駅である。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E9%81%93%E3%81%AE%E9%A7%85%E3%83%95%E3%82%A9%E3%83%BC%E3%83%AC%E3%82%B9%E3%83%88276%E5%A4%A7%E6%BB%9D",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/63/Michinoeki_Forest_276_Ohtaki.jpg/960px-Michinoeki_Forest_276_Ohtaki.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Him56",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Michinoeki_Forest_276_Ohtaki.jpg"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q11641061"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q11641061",
         "fetched_at": "2026-09-28"
       }
     ],

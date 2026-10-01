@@ -2311,54 +2311,6 @@
     "updated_at": "2026-09-28"
   },
   {
-    "id": "wd-Q11248197",
-    "name": {
-      "ja": "佐渡鉱山",
-      "zh_tw": "佐渡金山",
-      "en": "Sado Mine"
-    },
-    "location": {
-      "lat": 38.0416,
-      "lng": 138.256
-    },
-    "prefecture": "niigata",
-    "kind": "major",
-    "themes": [],
-    "tags": [
-      "世界遺產",
-      "史跡",
-      "重要文化財"
-    ],
-    "featured": true,
-    "score": 111.75,
-    "summary": {
-      "text": "佐渡金山，是一座位於日本新潟縣佐渡市的金礦。此礦中產出的礦石主要成分為被稱為「銀黑」的石英，其中夾雜有帶狀的輝銀礦與金微粒。",
-      "lang": "zh",
-      "source_url": "https://zh.wikipedia.org/wiki/%E4%BD%90%E6%B8%A1%E9%87%91%E5%B1%B1",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7d/Dohyu_no_Warito_ac_%283%29.jpg/960px-Dohyu_no_Warito_ac_%283%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Asturio Cantabrio",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Dohyu_no_Warito_ac_(3).jpg"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q11248197"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q11248197",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
     "id": "wd-Q11263630",
     "name": {
       "ja": "かぐらスキー場",
@@ -3055,76 +3007,6 @@
     "updated_at": "2026-09-28"
   },
   {
-    "id": "wd-Q11353761",
-    "name": {
-      "ja": "万代シテイ",
-      "kana": "ばんだいしてぃ",
-      "romaji": "Bandaishiti",
-      "zh_tw": "萬代City",
-      "en": "Bandai City"
-    },
-    "kana_source": "wikipedia",
-    "location": {
-      "lat": 37.916306,
-      "lng": 139.055722
-    },
-    "prefecture": "niigata",
-    "kind": "major",
-    "themes": [],
-    "tags": [],
-    "featured": false,
-    "score": 51.97,
-    "summary": {
-      "text": "Bandai City (万代シテイ) is a commercial district in Chūō-ku, Niigata City. It is located north-west of Niigata Station, and faces the Shinano River.",
-      "lang": "en",
-      "source_url": "https://en.wikipedia.org/wiki/Bandai_City",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-29"
-    },
-    "nearest_stations": [
-      {
-        "name": {
-          "ja": "新潟",
-          "romaji": "Niigata",
-          "en": "Niigata"
-        },
-        "distance_m": 670
-      },
-      {
-        "name": {
-          "ja": "上所",
-          "kana": "かみところ",
-          "romaji": "Kamitokoro",
-          "en": "Kamitokoro"
-        },
-        "distance_m": 1390
-      }
-    ],
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9e/%E4%B8%87%E4%BB%A3%E3%82%B7%E3%83%86%E3%82%A42015.JPG/960px-%E4%B8%87%E4%BB%A3%E3%82%B7%E3%83%86%E3%82%A42015.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Koba20",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:%E4%B8%87%E4%BB%A3%E3%82%B7%E3%83%86%E3%82%A42015.JPG"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q11353761"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q11353761",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://ja.wikipedia.org/wiki/%E4%B8%87%E4%BB%A3%E3%82%B7%E3%83%86%E3%82%A4",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
     "id": "wd-Q11354742",
     "name": {
       "ja": "三国峠",
@@ -3169,61 +3051,6 @@
       },
       {
         "url": "https://ja.wikipedia.org/wiki/%E4%B8%89%E5%9B%BD%E5%B3%A0_%28%E7%BE%A4%E9%A6%AC%E7%9C%8C%E3%83%BB%E6%96%B0%E6%BD%9F%E7%9C%8C%29",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
-    "id": "wd-Q11355825",
-    "name": {
-      "ja": "三条城",
-      "kana": "さんじょうじょう",
-      "romaji": "Sanjojo",
-      "zh_tw": "三條城",
-      "en": "Kinjō Castle"
-    },
-    "kana_source": "wikipedia",
-    "location": {
-      "lat": 37.633556,
-      "lng": 138.943278
-    },
-    "prefecture": "niigata",
-    "kind": "major",
-    "themes": [],
-    "tags": [
-      "城"
-    ],
-    "featured": false,
-    "score": 62.03,
-    "summary": {
-      "text": "三条城（さんじょうじょう）は、新潟県三条市にあった日本の城。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E4%B8%89%E6%9D%A1%E5%9F%8E",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "nearest_stations": [
-      {
-        "name": {
-          "ja": "北三条",
-          "en": "Kita-Sanjo"
-        },
-        "distance_m": 1100
-      }
-    ],
-    "images": [],
-    "external_ids": {
-      "wikidata": "Q11355825"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q11355825",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://ja.wikipedia.org/wiki/%E4%B8%89%E6%9D%A1%E5%9F%8E",
         "fetched_at": "2026-09-28"
       }
     ],
@@ -9060,7 +8887,7 @@
     "tags": [
       "名勝"
     ],
-    "featured": false,
+    "featured": true,
     "score": 66.97,
     "summary": {
       "text": "清水園（しみずえん）は、新潟県新発田市にある日本庭園。江戸時代の旧新発田藩下屋敷である。",
@@ -9124,7 +8951,7 @@
     "tags": [
       "名勝"
     ],
-    "featured": false,
+    "featured": true,
     "score": 74.81,
     "summary": {
       "text": "Kiyotsu Gorge (清津峡, Kiyotsu-kyō) is a nationally designated Place of Scenic Beauty and Natural Monument  on the border between Yuzawa and Tōkamachi, Niigata Prefecture, Japan.",
@@ -9888,53 +9715,6 @@
       },
       {
         "url": "https://ja.wikipedia.org/wiki/%E7%9B%B4%E5%B3%B0%E5%9F%8E",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
-    "id": "wd-Q11582006",
-    "name": {
-      "ja": "相川町",
-      "kana": "あいかわまち",
-      "romaji": "Aikawamachi",
-      "zh_tw": "相川町",
-      "en": "Aikawa"
-    },
-    "kana_source": "wikidata",
-    "location": {
-      "lat": 38.033639,
-      "lng": 138.239444
-    },
-    "prefecture": "niigata",
-    "kind": "major",
-    "themes": [],
-    "tags": [],
-    "featured": false,
-    "score": 68.44,
-    "summary": {
-      "text": "Aikawa (相川町, Aikawa-machi) was a town located in Sado Island, Niigata Prefecture, Japan.",
-      "lang": "en",
-      "source_url": "https://en.wikipedia.org/wiki/Aikawa%2C_Niigata",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-29"
-    },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7d/Dohyu_no_Warito_ac_%283%29.jpg/960px-Dohyu_no_Warito_ac_%283%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Asturio Cantabrio",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Dohyu_no_Warito_ac_(3).jpg"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q11582006"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q11582006",
         "fetched_at": "2026-09-28"
       }
     ],
@@ -10788,59 +10568,6 @@
       },
       {
         "url": "https://ja.wikipedia.org/wiki/%E8%8B%97%E5%90%8D%E6%BB%9D",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
-    "id": "wd-Q11618653",
-    "name": {
-      "ja": "荒戸城",
-      "kana": "あらとじょう",
-      "romaji": "Aratojo",
-      "zh_tw": "荒戸城",
-      "en": "Arato Castle"
-    },
-    "kana_source": "wikipedia",
-    "location": {
-      "lat": 36.9075,
-      "lng": 138.792222
-    },
-    "prefecture": "niigata",
-    "kind": "major",
-    "themes": [],
-    "tags": [
-      "城"
-    ],
-    "featured": false,
-    "score": 56.24,
-    "summary": {
-      "text": "荒戸城（あらとじょう）は、新潟県南魚沼郡湯沢町にあった日本の城（山城）。城跡は新潟県の史跡に指定されている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E8%8D%92%E6%88%B8%E5%9F%8E",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/72/%E8%8D%92%E6%88%B8%E5%9F%8E%E5%9C%9F%E5%A1%81.jpg/960px-%E8%8D%92%E6%88%B8%E5%9F%8E%E5%9C%9F%E5%A1%81.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "兵どもが夢の跡山さん",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:%E8%8D%92%E6%88%B8%E5%9F%8E%E5%9C%9F%E5%A1%81.jpg"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q11618653"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q11618653",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://ja.wikipedia.org/wiki/%E8%8D%92%E6%88%B8%E5%9F%8E",
         "fetched_at": "2026-09-28"
       }
     ],
@@ -14157,59 +13884,6 @@
     "updated_at": "2026-09-28"
   },
   {
-    "id": "wd-Q118342381",
-    "name": {
-      "ja": "西三川砂金山",
-      "kana": "にしみかわさきんざん",
-      "romaji": "Nishimikawasakinzan",
-      "zh_tw": "西三川砂金山",
-      "en": "Nishimikawa Placer Gold Mine"
-    },
-    "kana_source": "wikipedia",
-    "location": {
-      "lat": 37.912596,
-      "lng": 138.324601
-    },
-    "prefecture": "niigata",
-    "kind": "major",
-    "themes": [],
-    "tags": [
-      "世界遺產"
-    ],
-    "featured": true,
-    "score": 83.37,
-    "summary": {
-      "text": "西三川砂金山（にしみかわさきんざん）は新潟県佐渡市（佐渡島）の旧西三川村にあった砂金を産出した金山群の総称。世界的にも珍しく、国内では唯一の埋没鉱床である。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E8%A5%BF%E4%B8%89%E5%B7%9D%E7%A0%82%E9%87%91%E5%B1%B1",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fc/%E8%A5%BF%E4%B8%89%E5%B7%9D%E9%98%BF%E5%BC%A5%E9%99%80%E5%A0%82.jpg/960px-%E8%A5%BF%E4%B8%89%E5%B7%9D%E9%98%BF%E5%BC%A5%E9%99%80%E5%A0%82.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "番記者",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:%E8%A5%BF%E4%B8%89%E5%B7%9D%E9%98%BF%E5%BC%A5%E9%99%80%E5%A0%82.jpg"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q118342381"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q118342381",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://ja.wikipedia.org/wiki/%E8%A5%BF%E4%B8%89%E5%B7%9D%E7%A0%82%E9%87%91%E5%B1%B1",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
     "id": "wd-Q1197131",
     "name": {
       "ja": "春日山城",
@@ -15017,56 +14691,6 @@
     "updated_at": "2026-09-28"
   },
   {
-    "id": "wd-Q135438404",
-    "name": {
-      "ja": "金割鉱泉",
-      "kana": "かなわりこうせん",
-      "romaji": "Kanawarikosen",
-      "zh_tw": "金割鉱泉"
-    },
-    "kana_source": "wikipedia",
-    "location": {
-      "lat": 37.651667,
-      "lng": 139.134722
-    },
-    "prefecture": "niigata",
-    "kind": "major",
-    "themes": [],
-    "tags": [],
-    "featured": false,
-    "score": 57.71,
-    "summary": {
-      "text": "金割鉱泉（かなわりこうせん）は、新潟県五泉市（旧村松町）高松にあった温泉施設で、現在は廃墟となっている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E9%87%91%E5%89%B2%E9%89%B1%E6%B3%89",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5e/OnsenNiigata_Kanewarikousen1.jpg/960px-OnsenNiigata_Kanewarikousen1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Siriusplot",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:OnsenNiigata_Kanewarikousen1.jpg"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q135438404"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q135438404",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://ja.wikipedia.org/wiki/%E9%87%91%E5%89%B2%E9%89%B1%E6%B3%89",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
     "id": "wd-Q135459146",
     "name": {
       "ja": "小丹生神社",
@@ -15738,67 +15362,6 @@
       },
       {
         "url": "https://ja.wikipedia.org/wiki/%E3%82%84%E3%81%99%E3%82%89%E3%81%8E%E5%A0%A4",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
-    "id": "wd-Q17225142",
-    "name": {
-      "ja": "長岡市青少年文化センター",
-      "kana": "ながおかしせいしょうねんぶんかせんたー",
-      "romaji": "Nagaokashiseishonenbunkasenta",
-      "zh_tw": "長岡市青少年文化センター",
-      "en": "Nagaoka City Youth Culture Center"
-    },
-    "kana_source": "wikipedia",
-    "location": {
-      "lat": 37.446111,
-      "lng": 138.861944
-    },
-    "prefecture": "niigata",
-    "kind": "major",
-    "themes": [],
-    "tags": [],
-    "featured": false,
-    "score": 54.37,
-    "summary": {
-      "text": "長岡市青少年文化センター（ながおかしせいしょうねんぶんかセンター）は、新潟県長岡市にかつて所在した文化施設である。愛称は「文化センター」。2019年3月末をもって閉館した。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E9%95%B7%E5%B2%A1%E5%B8%82%E9%9D%92%E5%B0%91%E5%B9%B4%E6%96%87%E5%8C%96%E3%82%BB%E3%83%B3%E3%82%BF%E3%83%BC",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "nearest_stations": [
-      {
-        "name": {
-          "ja": "長岡",
-          "romaji": "Nagaoka",
-          "en": "Nagaoka"
-        },
-        "distance_m": 710
-      }
-    ],
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/14/Nagaoka_City_Seisyonen_Bunka_Center.jpg/960px-Nagaoka_City_Seisyonen_Bunka_Center.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Rebirth10",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Nagaoka_City_Seisyonen_Bunka_Center.jpg"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q17225142"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q17225142",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://ja.wikipedia.org/wiki/%E9%95%B7%E5%B2%A1%E5%B8%82%E9%9D%92%E5%B0%91%E5%B9%B4%E6%96%87%E5%8C%96%E3%82%BB%E3%83%B3%E3%82%BF%E3%83%BC",
         "fetched_at": "2026-09-28"
       }
     ],
@@ -16527,59 +16090,6 @@
       },
       {
         "url": "https://ja.wikipedia.org/wiki/%E5%85%AB%E6%B5%B7%E7%A5%9E%E7%A4%BE_%28%E5%8D%97%E9%AD%9A%E6%B2%BC%E5%B8%82%E5%B1%B1%E5%8F%A3%29",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
-    "id": "wd-Q22123454",
-    "name": {
-      "ja": "沼垂テラス",
-      "zh_tw": "沼垂テラス"
-    },
-    "location": {
-      "lat": 37.920833,
-      "lng": 139.070833
-    },
-    "prefecture": "niigata",
-    "kind": "major",
-    "themes": [],
-    "tags": [],
-    "featured": false,
-    "score": 52.95,
-    "summary": {
-      "text": "沼垂テラス商店街（ぬったりてらすしょうてんがい）は、新潟県新潟市中央区沼垂東3丁目にある商店街の名称。株式会社テラスオフィスが運営。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%B2%BC%E5%9E%82%E3%83%86%E3%83%A9%E3%82%B9",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "nearest_stations": [
-      {
-        "name": {
-          "ja": "新潟",
-          "romaji": "Niigata",
-          "en": "Niigata"
-        },
-        "distance_m": 1270
-      }
-    ],
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/27/Nuttariterasu2013.jpg/960px-Nuttariterasu2013.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Inomata toshiyuki",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Nuttariterasu2013.jpg"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q22123454"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q22123454",
         "fetched_at": "2026-09-28"
       }
     ],
@@ -17392,50 +16902,6 @@
     "updated_at": "2026-09-28"
   },
   {
-    "id": "wd-Q4274645",
-    "name": {
-      "ja": "佐渡奉行",
-      "kana": "さどぶぎょう",
-      "romaji": "Sado Bugyo",
-      "zh_tw": "佐渡奉行",
-      "en": "Sado bugyō"
-    },
-    "kana_source": "wikipedia",
-    "location": {
-      "lat": 38.035833,
-      "lng": 138.239722
-    },
-    "prefecture": "niigata",
-    "kind": "major",
-    "themes": [],
-    "tags": [],
-    "featured": false,
-    "score": 67.01,
-    "summary": {
-      "text": "Sado bugyō (佐渡奉行) were officials of the Tokugawa shogunate responsible for administration of the mining operations at Sado.",
-      "lang": "en",
-      "source_url": "https://en.wikipedia.org/wiki/Sado_bugy%C5%8D",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-29"
-    },
-    "images": [],
-    "external_ids": {
-      "wikidata": "Q4274645"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q4274645",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://ja.wikipedia.org/wiki/%E4%BD%90%E6%B8%A1%E5%A5%89%E8%A1%8C",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
     "id": "wd-Q43594542",
     "name": {
       "ja": "普明神社",
@@ -17903,53 +17369,6 @@
     "sources": [
       {
         "url": "https://www.wikidata.org/wiki/Q54883245",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
-    "id": "wd-Q5509807",
-    "name": {
-      "ja": "古町",
-      "kana": "ふるまち",
-      "romaji": "Furumachi",
-      "zh_tw": "古町",
-      "en": "Furumachi"
-    },
-    "kana_source": "wikidata",
-    "location": {
-      "lat": 37.921557,
-      "lng": 139.044639
-    },
-    "prefecture": "niigata",
-    "kind": "major",
-    "themes": [],
-    "tags": [],
-    "featured": false,
-    "score": 53.68,
-    "summary": {
-      "text": "Furumachi (古町, Furu-machi), literally meaning \"Old Town\", is the name of a central business district in Niigata City, Niigata Prefecture, Japan. The district is centered on Furumachi-dori street and extends north to Honcho-dori street and south to Nishibori-dori street. Furumachi is located north of the Bandai Bridge and Shinano River, and is one of two major commercial areas of Niigata City, the other being Bandai City south of the river.",
-      "lang": "en",
-      "source_url": "https://en.wikipedia.org/wiki/Furumachi_%28Niigata%29",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-29"
-    },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9d/Niigata_Furumachi-dori8_20131021.JPG/960px-Niigata_Furumachi-dori8_20131021.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "DAI-nk",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Niigata_Furumachi-dori8_20131021.JPG"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q5509807"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q5509807",
         "fetched_at": "2026-09-28"
       }
     ],
@@ -18794,78 +18213,6 @@
       },
       {
         "url": "https://ja.wikipedia.org/wiki/%E5%A6%99%E9%AB%98%E3%82%B5%E3%83%B3%E3%82%B7%E3%83%A3%E3%82%A4%E3%83%B3%E3%83%A9%E3%83%B3%E3%83%89",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
-    "id": "wd-Q62898987",
-    "name": {
-      "ja": "人情横丁",
-      "kana": "にんじょうよこちょう",
-      "romaji": "Ninjoyokocho",
-      "zh_tw": "人情横丁",
-      "en": "Niigata Ninjo-yokocho"
-    },
-    "kana_source": "wikipedia",
-    "location": {
-      "lat": 37.9195,
-      "lng": 139.047167
-    },
-    "prefecture": "niigata",
-    "kind": "major",
-    "themes": [],
-    "tags": [
-      "街區"
-    ],
-    "featured": false,
-    "score": 54.39,
-    "summary": {
-      "text": "人情横丁（にんじょうよこちょう）は、新潟市中央区に所在する商店街。正式名称は、本町中央市場商店街である。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E4%BA%BA%E6%83%85%E6%A8%AA%E4%B8%81",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "nearest_stations": [
-      {
-        "name": {
-          "ja": "上所",
-          "kana": "かみところ",
-          "romaji": "Kamitokoro",
-          "en": "Kamitokoro"
-        },
-        "distance_m": 1400
-      },
-      {
-        "name": {
-          "ja": "新潟",
-          "romaji": "Niigata",
-          "en": "Niigata"
-        },
-        "distance_m": 1480
-      }
-    ],
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0c/Niigata_Ninjo-yokocho_20131018-01.JPG/960px-Niigata_Ninjo-yokocho_20131018-01.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "DAI-nk",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Niigata_Ninjo-yokocho_20131018-01.JPG"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q62898987"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q62898987",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://ja.wikipedia.org/wiki/%E4%BA%BA%E6%83%85%E6%A8%AA%E4%B8%81",
         "fetched_at": "2026-09-28"
       }
     ],
@@ -19739,57 +19086,6 @@
     "sources": [
       {
         "url": "https://www.wikidata.org/wiki/Q717458",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
-    "id": "wd-Q72988253",
-    "name": {
-      "ja": "北沢浮遊選鉱場",
-      "kana": "きたざわふゆうせんこうば",
-      "romaji": "Kitazawafuyusenkoba",
-      "zh_tw": "北澤浮遊選鑛場",
-      "en": "Kitazawa Flotation Plant"
-    },
-    "kana_source": "wikipedia",
-    "location": {
-      "lat": 38.036667,
-      "lng": 138.241667
-    },
-    "prefecture": "niigata",
-    "kind": "major",
-    "themes": [],
-    "tags": [],
-    "featured": false,
-    "score": 66.02,
-    "summary": {
-      "text": "北沢浮遊選鉱場（きたざわふゆうせんこうば）は、かつて新潟県相川町（現・佐渡市）にあった佐渡金山（相川金銀山）の選鉱所。2012年（平成24年）に国指定史跡「佐渡金銀山遺跡」に指定され、2015年（平成27年）には重要文化的景観「佐渡相川の鉱山及び鉱山町の文化的景観」の構成要素にも選定された。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%8C%97%E6%B2%A2%E6%B5%AE%E9%81%8A%E9%81%B8%E9%89%B1%E5%A0%B4",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9d/%E5%8F%B2%E8%B7%A1%E4%BD%90%E6%B8%A1%E9%87%91%E5%B1%B1_-_panoramio.jpg/960px-%E5%8F%B2%E8%B7%A1%E4%BD%90%E6%B8%A1%E9%87%91%E5%B1%B1_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "伊藤善行",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:%E5%8F%B2%E8%B7%A1%E4%BD%90%E6%B8%A1%E9%87%91%E5%B1%B1_-_panoramio.jpg"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q72988253"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q72988253",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://ja.wikipedia.org/wiki/%E5%8C%97%E6%B2%A2%E6%B5%AE%E9%81%8A%E9%81%B8%E9%89%B1%E5%A0%B4",
         "fetched_at": "2026-09-28"
       }
     ],

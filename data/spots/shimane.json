@@ -2577,77 +2577,6 @@
     "updated_at": "2026-09-28"
   },
   {
-    "id": "wd-Q1039004",
-    "name": {
-      "ja": "月山富田城",
-      "kana": "がっさんとだじょう",
-      "romaji": "Gassantodajo",
-      "zh_tw": "月山富田城",
-      "en": "Gassantoda Castle"
-    },
-    "kana_source": "wikipedia",
-    "location": {
-      "lat": 35.360967,
-      "lng": 133.184875
-    },
-    "prefecture": "shimane",
-    "kind": "major",
-    "themes": [],
-    "tags": [
-      "城",
-      "史跡"
-    ],
-    "featured": true,
-    "score": 83.04,
-    "summary": {
-      "text": "月山富田城為日本古代城郭之一，位於現今島根縣安來市廣瀨町。",
-      "lang": "zh",
-      "source_url": "https://zh.wikipedia.org/wiki/%E6%9C%88%E5%B1%B1%E5%AF%8C%E7%94%B0%E5%9F%8E",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "nearest_stations": [
-      {
-        "name": {
-          "ja": "旧出雲広瀬駅"
-        },
-        "distance_m": 1030
-      }
-    ],
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/96/Gassan_Toda_Castle_Gassan.jpg/960px-Gassan_Toda_Castle_Gassan.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "by monado",
-        "license": "CC BY-SA 2.5",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Gassan_Toda_Castle_Gassan.jpg"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q1039004",
-      "osm": "node/2459202190"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q1039004",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://www.openstreetmap.org/node/2459202190",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://www.openstreetmap.org/way/1077956027",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://ja.wikipedia.org/wiki/%E6%9C%88%E5%B1%B1%E5%AF%8C%E7%94%B0%E5%9F%8E",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
     "id": "wd-Q10449219",
     "name": {
       "ja": "知夫里島",
@@ -3665,7 +3594,7 @@
       "城",
       "史跡"
     ],
-    "featured": false,
+    "featured": true,
     "score": 72.33,
     "summary": {
       "text": "濱田城是一個位於日本石見國濱田（現島根縣濱田市殿町）的城堡，在江戶時代曾是濱田藩的藩廳所在地，於1620年開始築城。濱田城位於濱田市中心的一座被濱田川環繞的高68米的丘陵上。城郭建築在長州征伐時大部分被燒毀。現在濱田城作為城山公園對公眾開放。",
@@ -6222,59 +6151,6 @@
     "sources": [
       {
         "url": "https://www.wikidata.org/wiki/Q11466267",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
-    "id": "wd-Q11467653",
-    "name": {
-      "ja": "山吹城",
-      "kana": "やまぶきじょう",
-      "romaji": "Yamabukijo",
-      "zh_tw": "山吹城",
-      "en": "Yamabuki Castle"
-    },
-    "kana_source": "wikipedia",
-    "location": {
-      "lat": 35.104167,
-      "lng": 132.43075
-    },
-    "prefecture": "shimane",
-    "kind": "major",
-    "themes": [],
-    "tags": [
-      "城"
-    ],
-    "featured": false,
-    "score": 62.16,
-    "summary": {
-      "text": "山吹城（やまぶきじょう）は、石見国（現：島根県大田市大森町）にあった日本の城（山城）。石見銀山防衛のため築城された。城跡は国の史跡「石見銀山遺跡」の範囲に含まれている。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%B1%B1%E5%90%B9%E5%9F%8E",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5a/Yamabuki_castle_overview.JPG/960px-Yamabuki_castle_overview.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "TT mk2",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Yamabuki_castle_overview.JPG"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q11467653"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q11467653",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://ja.wikipedia.org/wiki/%E5%B1%B1%E5%90%B9%E5%9F%8E",
         "fetched_at": "2026-09-28"
       }
     ],
@@ -10005,7 +9881,7 @@
       "遺跡",
       "史跡"
     ],
-    "featured": false,
+    "featured": true,
     "score": 72.69,
     "summary": {
       "text": "The Kōjindani Site (荒神谷遺跡, Kōjindani iseki) is an archaeological site consisting of the remains of a Yayoi period ritual site located in the Hikawa-cho neighborhood of the city of Izumo, Shimane Prefecture in the San'in region of Japan. The site was designated a National Historic Site of Japan in 1987.",
@@ -14486,71 +14362,6 @@
     "updated_at": "2026-09-28"
   },
   {
-    "id": "wd-Q151776",
-    "name": {
-      "ja": "松江城",
-      "kana": "まつえじょう",
-      "romaji": "Matsue-jō",
-      "zh_tw": "松江城",
-      "en": "Matsue Castle"
-    },
-    "kana_source": "osm",
-    "location": {
-      "lat": 35.474978,
-      "lng": 133.050556
-    },
-    "prefecture": "shimane",
-    "kind": "major",
-    "themes": [],
-    "tags": [
-      "城",
-      "國寶",
-      "史跡"
-    ],
-    "featured": true,
-    "score": 101.53,
-    "summary": {
-      "text": "松江城是位於日本島根縣松江市殿町的城堡。因其飛揚的簷角形似飛鳥展翅，因此又名「千鳥城」。松江城的現存天守是日本國寶之一，城址是政府認定的史跡。松江城還是日本櫻名所100選和都市景觀100選之一。",
-      "lang": "zh",
-      "source_url": "https://zh.wikipedia.org/wiki/%E6%9D%BE%E6%B1%9F%E5%9F%8E",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "nearest_stations": [
-      {
-        "name": {
-          "ja": "松江しんじ湖温泉",
-          "en": "Matsue-Shinjiko-Onsen"
-        },
-        "distance_m": 960
-      }
-    ],
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/db/Matsue_castle01bs4592.jpg/960px-Matsue_castle01bs4592.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "663highland",
-        "license": "CC BY 2.5",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Matsue_castle01bs4592.jpg"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q151776",
-      "osm": "way/299654325"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q151776",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://www.openstreetmap.org/way/299654325",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
     "id": "wd-Q16092819",
     "name": {
       "ja": "独島のマサキ",
@@ -14763,65 +14574,6 @@
       },
       {
         "url": "https://ja.wikipedia.org/wiki/%E6%AF%94%E5%A9%86%E5%B1%B1%E4%B9%85%E7%B1%B3%E7%A5%9E%E7%A4%BE",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
-    "id": "wd-Q174139",
-    "name": {
-      "ja": "石見銀山",
-      "kana": "いわみぎんざん",
-      "romaji": "Iwamiginzan",
-      "zh_tw": "石見銀山",
-      "en": "Iwami Ginzan Silver Mine"
-    },
-    "kana_source": "wikipedia",
-    "location": {
-      "lat": 35.107222,
-      "lng": 132.4375
-    },
-    "prefecture": "shimane",
-    "kind": "major",
-    "themes": [],
-    "tags": [
-      "世界遺產",
-      "史跡"
-    ],
-    "featured": true,
-    "score": 114.47,
-    "summary": {
-      "text": "石見銀山是日本戰國時代後期、江戶時代前期日本最大的銀礦山，其產量曾佔當時全球的30％，產量相當驚人，於明治時期也曾生產銅、鐵等礦產，但已於大正12年（1923年）閉山。",
-      "lang": "zh",
-      "source_url": "https://zh.wikipedia.org/wiki/%E7%9F%B3%E8%A6%8B%E9%8A%80%E5%B1%B1%E9%81%BA%E8%B7%A1%E5%8F%8A%E5%85%B6%E6%96%87%E5%8C%96%E6%99%AF%E8%A7%80",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d4/180504_Shimizudani_Refinery_Ruins_of_Iwami_Ginzan_Silver_Mine_Oda_Shimane_pref_Japan03s.jpg/960px-180504_Shimizudani_Refinery_Ruins_of_Iwami_Ginzan_Silver_Mine_Oda_Shimane_pref_Japan03s.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "663highland",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:180504_Shimizudani_Refinery_Ruins_of_Iwami_Ginzan_Silver_Mine_Oda_Shimane_pref_Japan03s.jpg"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q174139",
-      "osm": "node/1184306054"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q174139",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://www.openstreetmap.org/node/1184306054",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://ja.wikipedia.org/wiki/%E7%9F%B3%E8%A6%8B%E9%8A%80%E5%B1%B1",
         "fetched_at": "2026-09-28"
       }
     ],
@@ -16629,7 +16381,7 @@
     "tags": [
       "神社"
     ],
-    "featured": false,
+    "featured": true,
     "score": 72.82,
     "summary": {
       "text": "美保神社是日本島根縣松江市美保關町美保關的神社，社格是式內小社、國幣中社和別表神社，祭神是三穗津姬命和事代主神，為日本3385座供奉事代主神的惠比壽社的總本宮，與出雲大社形成雙參拜。",
@@ -18564,55 +18316,6 @@
       },
       {
         "url": "https://www.openstreetmap.org/way/52958212",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
-    "id": "wd-Q8061374",
-    "name": {
-      "ja": "温泉津町",
-      "kana": "ゆのつちょう",
-      "romaji": "Yunotsucho",
-      "zh_tw": "溫泉津町",
-      "en": "Yunotsu"
-    },
-    "kana_source": "wikidata",
-    "location": {
-      "lat": 35.090083,
-      "lng": 132.357056
-    },
-    "prefecture": "shimane",
-    "kind": "major",
-    "themes": [],
-    "tags": [],
-    "featured": false,
-    "score": 66.57,
-    "summary": {
-      "text": "Yunotsu (温泉津町, Yunotsu-machi) was a coastal town located in Nima District, Shimane Prefecture, Japan.",
-      "lang": "en",
-      "source_url": "https://en.wikipedia.org/wiki/Yunotsu%2C_Shimane",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-29"
-    },
-    "nearest_stations": [
-      {
-        "name": {
-          "ja": "温泉津",
-          "en": "Yunotsu"
-        },
-        "distance_m": 590
-      }
-    ],
-    "images": [],
-    "external_ids": {
-      "wikidata": "Q8061374"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q8061374",
         "fetched_at": "2026-09-28"
       }
     ],
