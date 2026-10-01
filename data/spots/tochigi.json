@@ -2739,78 +2739,6 @@
     "updated_at": "2026-09-28"
   },
   {
-    "id": "wd-Q11273192",
-    "name": {
-      "ja": "とちぎ蔵の街美術館",
-      "kana": "とちぎくらのまちびじゅつかん",
-      "romaji": "Tochigikuranomachibijutsukan",
-      "zh_tw": "とちぎ蔵の街美術館",
-      "en": "Tochigi Kuranomachi Museum of Art"
-    },
-    "kana_source": "wikipedia",
-    "location": {
-      "lat": 36.380944,
-      "lng": 139.733398
-    },
-    "prefecture": "tochigi",
-    "kind": "major",
-    "themes": [],
-    "tags": [
-      "美術館"
-    ],
-    "featured": false,
-    "score": 51.75,
-    "summary": {
-      "text": "とちぎ蔵の街美術館（とちぎくらのまちびじゅつかん）は、栃木県栃木市にあった栃木市立の美術館。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E3%81%A8%E3%81%A1%E3%81%8E%E8%94%B5%E3%81%AE%E8%A1%97%E7%BE%8E%E8%A1%93%E9%A4%A8",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "nearest_stations": [
-      {
-        "name": {
-          "ja": "栃木",
-          "kana": "とちぎ",
-          "romaji": "Tochigi",
-          "en": "Tochigi"
-        },
-        "distance_m": 1040
-      },
-      {
-        "name": {
-          "ja": "新栃木",
-          "romaji": "Shin-Tochigi",
-          "en": "Shin-Tochigi"
-        },
-        "distance_m": 1280
-      }
-    ],
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9f/Tochigi_Kuranomachi_Museum_of_Art.jpg/960px-Tochigi_Kuranomachi_Museum_of_Art.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Kitakoshigaya This photo was taken with NTT DoCoMo Sony Ericsson SO704i",
-        "license": "Public domain",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Tochigi_Kuranomachi_Museum_of_Art.jpg"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q11273192"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q11273192",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://ja.wikipedia.org/wiki/%E3%81%A8%E3%81%A1%E3%81%8E%E8%94%B5%E3%81%AE%E8%A1%97%E7%BE%8E%E8%A1%93%E9%A4%A8",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
     "id": "wd-Q11273193",
     "name": {
       "ja": "とちのきファミリーランド",
@@ -3121,73 +3049,6 @@
       },
       {
         "url": "https://ja.wikipedia.org/wiki/%E3%82%A4%E3%82%BF%E3%83%AA%E3%82%A2%E5%A4%A7%E4%BD%BF%E9%A4%A8%E5%88%A5%E8%8D%98%E8%A8%98%E5%BF%B5%E5%85%AC%E5%9C%92",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
-    "id": "wd-Q11288492",
-    "name": {
-      "ja": "ウェスタン村",
-      "kana": "うぇすたんむら",
-      "romaji": "Wesutanmura",
-      "zh_tw": "ウェスタン村",
-      "en": "Western Village"
-    },
-    "kana_source": "wikipedia",
-    "location": {
-      "lat": 36.772972,
-      "lng": 139.710083
-    },
-    "prefecture": "tochigi",
-    "kind": "major",
-    "themes": [],
-    "tags": [],
-    "featured": false,
-    "score": 71.52,
-    "summary": {
-      "text": "ウェスタン村（ウェスタンむら）は、かつて栃木県日光市にあった、アメリカの西部開拓時代を主題としたテーマパークである。2006年12月7日に休園した。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E3%82%A6%E3%82%A7%E3%82%B9%E3%82%BF%E3%83%B3%E6%9D%91",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "nearest_stations": [
-      {
-        "name": {
-          "ja": "新高徳",
-          "romaji": "Shin-Takatoku",
-          "en": "Shin-Takatoku Station"
-        },
-        "distance_m": 730
-      },
-      {
-        "name": {
-          "ja": "大桑",
-          "romaji": "Ōkuwa",
-          "en": "Okuwa"
-        },
-        "distance_m": 1420
-      }
-    ],
-    "images": [],
-    "external_ids": {
-      "wikidata": "Q11288492",
-      "osm": "node/10132665793"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q11288492",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://www.openstreetmap.org/node/10132665793",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://ja.wikipedia.org/wiki/%E3%82%A6%E3%82%A7%E3%82%B9%E3%82%BF%E3%83%B3%E6%9D%91",
         "fetched_at": "2026-09-28"
       }
     ],
@@ -20200,64 +20061,6 @@
     "updated_at": "2026-09-28"
   },
   {
-    "id": "wd-Q56349920",
-    "name": {
-      "ja": "那須アルパカ牧場",
-      "kana": "なすあるぱかぼくじょう",
-      "romaji": "Nasuarupakabokujo",
-      "zh_tw": "那須アルパカ牧場",
-      "en": "Nasu Alpaca Farm"
-    },
-    "kana_source": "wikipedia",
-    "location": {
-      "lat": 37.12285,
-      "lng": 140.05555
-    },
-    "prefecture": "tochigi",
-    "kind": "major",
-    "themes": [],
-    "tags": [
-      "主題樂園"
-    ],
-    "featured": false,
-    "score": 60.18,
-    "summary": {
-      "text": "那須アルパカ牧場（なすアルパカぼくじょう、Nasu Alpaca Farm）は、栃木県那須郡那須町にある那須ビッグファームが運営するアルパカ専門の牧場である。2023年2月28日に、当年度をもって営業終了することが発表された。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E9%82%A3%E9%A0%88%E3%82%A2%E3%83%AB%E3%83%91%E3%82%AB%E7%89%A7%E5%A0%B4",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b3/%E3%82%A2%E3%83%AB%E3%83%91%E3%82%AB%E7%89%A7%E5%A0%B4_-_panoramio.jpg/960px-%E3%82%A2%E3%83%AB%E3%83%91%E3%82%AB%E7%89%A7%E5%A0%B4_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Tomokazu Kitjaima",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:%E3%82%A2%E3%83%AB%E3%83%91%E3%82%AB%E7%89%A7%E5%A0%B4_-_panoramio.jpg"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q56349920",
-      "osm": "way/618387002"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q56349920",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://www.openstreetmap.org/way/618387002",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://ja.wikipedia.org/wiki/%E9%82%A3%E9%A0%88%E3%82%A2%E3%83%AB%E3%83%91%E3%82%AB%E7%89%A7%E5%A0%B4",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
     "id": "wd-Q57617988",
     "name": {
       "ja": "間々田八幡宮",
@@ -21684,53 +21487,6 @@
       },
       {
         "url": "https://ja.wikipedia.org/wiki/%E6%99%BA%E8%B3%80%E9%83%BD%E7%A5%9E%E7%A4%BE",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
-    "id": "wd-Q99228875",
-    "name": {
-      "ja": "豊郷台",
-      "kana": "とよさとだい",
-      "romaji": "Toyosatodai",
-      "zh_tw": "豊郷台",
-      "en": "Toyosatodai"
-    },
-    "kana_source": "wikidata",
-    "location": {
-      "lat": 36.6045,
-      "lng": 139.8855
-    },
-    "prefecture": "tochigi",
-    "kind": "major",
-    "themes": [],
-    "tags": [],
-    "featured": false,
-    "score": 57.34,
-    "summary": {
-      "text": "豊郷台（とよさとだい）は、栃木県宇都宮市の町。豊郷台一丁目から豊郷台三丁目まであり、全域が住居表示未実施地域である。不動産会社によって計画的に開発された地域で、帝京大学宇都宮キャンパスやショッピングセンターを除けばベッドタウン機能に特化している。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E8%B1%8A%E9%83%B7%E5%8F%B0",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/03/Toyosatodai_2_chome_in_Utsunomiya.jpg/960px-Toyosatodai_2_chome_in_Utsunomiya.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Miyuki Meinaka",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Toyosatodai_2_chome_in_Utsunomiya.jpg"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q99228875"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q99228875",
         "fetched_at": "2026-09-28"
       }
     ],

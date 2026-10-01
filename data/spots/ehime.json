@@ -8400,70 +8400,6 @@
     "updated_at": "2026-09-29"
   },
   {
-    "id": "wd-Q11493620",
-    "name": {
-      "ja": "愛媛県立博物館",
-      "kana": "えひめけんりつはくぶつかん",
-      "romaji": "Ehimekenritsuhakubutsukan",
-      "zh_tw": "愛媛県立博物館",
-      "en": "Ehime Prefectural Museum"
-    },
-    "kana_source": "wikipedia",
-    "location": {
-      "lat": 33.840111,
-      "lng": 132.7625
-    },
-    "prefecture": "ehime",
-    "kind": "major",
-    "themes": [],
-    "tags": [
-      "博物館"
-    ],
-    "featured": false,
-    "score": 49.85,
-    "summary": {
-      "text": "愛媛県立博物館（えひめけんりつはくぶつかん）は、愛媛県松山市にかつて存在した県立博物館。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%84%9B%E5%AA%9B%E7%9C%8C%E7%AB%8B%E5%8D%9A%E7%89%A9%E9%A4%A8",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "nearest_stations": [
-      {
-        "name": {
-          "ja": "松山市",
-          "romaji": "Matsuyamashi",
-          "en": "Matsuyama City"
-        },
-        "distance_m": 510
-      },
-      {
-        "name": {
-          "ja": "大手町",
-          "romaji": "Otemachi",
-          "en": "Otemachi"
-        },
-        "distance_m": 660
-      }
-    ],
-    "images": [],
-    "external_ids": {
-      "wikidata": "Q11493620"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q11493620",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://ja.wikipedia.org/wiki/%E6%84%9B%E5%AA%9B%E7%9C%8C%E7%AB%8B%E5%8D%9A%E7%89%A9%E9%A4%A8",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
     "id": "wd-Q11493663",
     "name": {
       "ja": "愛媛県立道後動物園",
@@ -8944,59 +8880,6 @@
       },
       {
         "url": "https://ja.wikipedia.org/wiki/%E6%96%B0%E5%B1%85%E5%A4%A7%E5%B3%B6",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
-    "id": "wd-Q11501954",
-    "name": {
-      "ja": "新居浜市立郷土美術館",
-      "kana": "にいはましりつきょうどびじゅつかん",
-      "romaji": "Niihamashiritsukyodobijutsukan",
-      "zh_tw": "新居浜市立郷土美術館",
-      "en": "Niihama City Native Museum"
-    },
-    "kana_source": "wikipedia",
-    "location": {
-      "lat": 33.96025,
-      "lng": 133.282806
-    },
-    "prefecture": "ehime",
-    "kind": "major",
-    "themes": [],
-    "tags": [
-      "美術館"
-    ],
-    "featured": false,
-    "score": 48.88,
-    "summary": {
-      "text": "新居浜市立郷土美術館（にいはましりつきょうどびじゅつかん）は、1981年に開館し2016年に閉館した、愛媛県新居浜市内の美術・歴史民俗・考古資料などを集め展示・調査・研究する施設だった。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E6%96%B0%E5%B1%85%E6%B5%9C%E5%B8%82%E7%AB%8B%E9%83%B7%E5%9C%9F%E7%BE%8E%E8%A1%93%E9%A4%A8",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1b/Niihama_City_Native_Museum.JPG/960px-Niihama_City_Native_Museum.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Fffkk",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Niihama_City_Native_Museum.JPG"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q11501954"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q11501954",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://ja.wikipedia.org/wiki/%E6%96%B0%E5%B1%85%E6%B5%9C%E5%B8%82%E7%AB%8B%E9%83%B7%E5%9C%9F%E7%BE%8E%E8%A1%93%E9%A4%A8",
         "fetched_at": "2026-09-28"
       }
     ],
@@ -20598,53 +20481,6 @@
     "updated_at": "2026-09-28"
   },
   {
-    "id": "wd-Q5640351",
-    "name": {
-      "ja": "伯方町",
-      "kana": "はかたちょう",
-      "romaji": "Hakatacho",
-      "zh_tw": "伯方町",
-      "en": "Hakata"
-    },
-    "kana_source": "wikidata",
-    "location": {
-      "lat": 34.204944,
-      "lng": 133.113694
-    },
-    "prefecture": "ehime",
-    "kind": "major",
-    "themes": [],
-    "tags": [],
-    "featured": false,
-    "score": 46.41,
-    "summary": {
-      "text": "Hakata (伯方町, Hakata-chō) was a town located in Ochi District, Ehime Prefecture, Japan.",
-      "lang": "en",
-      "source_url": "https://en.wikipedia.org/wiki/Hakata%2C_Ehime",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-29"
-    },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/21/Hakata_zousen.JPG/960px-Hakata_zousen.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Opqr",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Hakata_zousen.JPG"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q5640351"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q5640351",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
     "id": "wd-Q5817606",
     "name": {
       "ja": "中島",
@@ -20792,46 +20628,6 @@
       },
       {
         "url": "https://ja.wikipedia.org/wiki/%E5%A6%99%E9%9B%B2%E5%AF%BA_%28%E8%A5%BF%E6%9D%A1%E5%B8%82%29",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
-    "id": "wd-Q6358599",
-    "name": {
-      "ja": "上浦町",
-      "kana": "かみうらちょう",
-      "romaji": "Kamiuracho",
-      "zh_tw": "上浦町",
-      "en": "Kamiura"
-    },
-    "kana_source": "wikidata",
-    "location": {
-      "lat": 34.263417,
-      "lng": 133.04025
-    },
-    "prefecture": "ehime",
-    "kind": "major",
-    "themes": [],
-    "tags": [],
-    "featured": false,
-    "score": 43.09,
-    "summary": {
-      "text": "Kamiura (上浦町, Kamiura-chō) was a town located in Ochi District, Ehime Prefecture, Japan.",
-      "lang": "en",
-      "source_url": "https://en.wikipedia.org/wiki/Kamiura%2C_Ehime",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-29"
-    },
-    "images": [],
-    "external_ids": {
-      "wikidata": "Q6358599"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q6358599",
         "fetched_at": "2026-09-28"
       }
     ],
@@ -21405,46 +21201,6 @@
       },
       {
         "url": "https://ja.wikipedia.org/wiki/%E3%82%A8%E3%83%AB%E3%83%B3%E3%83%86%E5%A4%A7%E6%B4%B2",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
-    "id": "wd-Q8081621",
-    "name": {
-      "ja": "大三島町",
-      "kana": "おおみしまちょう",
-      "romaji": "Omishimacho",
-      "zh_tw": "大三島町",
-      "en": "Ōmishima"
-    },
-    "kana_source": "wikidata",
-    "location": {
-      "lat": 34.249028,
-      "lng": 132.99575
-    },
-    "prefecture": "ehime",
-    "kind": "major",
-    "themes": [],
-    "tags": [],
-    "featured": false,
-    "score": 45.48,
-    "summary": {
-      "text": "Ōmishima (大三島町, Ōmishima-chō) was a town located in Ōmishima Island, Ochi District, Ehime Prefecture, Japan.",
-      "lang": "en",
-      "source_url": "https://en.wikipedia.org/wiki/%C5%8Cmishima%2C_Ehime",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-29"
-    },
-    "images": [],
-    "external_ids": {
-      "wikidata": "Q8081621"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q8081621",
         "fetched_at": "2026-09-28"
       }
     ],
