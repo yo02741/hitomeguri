@@ -603,7 +603,7 @@ EXCLUDE_P31_SUBSTR = (
     # 人物、物品、園區內遊樂設施、住宿（全國擴展時發現混入精選）
     "人間", "ヒト", "妖怪", "機関車", "航空機", "軍艦", "戦艦", "艦船", "舞楽", "郷土芸能",
     "アトラクション", "コースター", "ダークライド", "ホテル", "印章", "土偶", "出土品", "飛行隊",
-    "空港", "飛行場", "港湾", "フェリーターミナル", "破壊・解体された",
+    "空港", "飛行場", "港湾", "フェリーターミナル",
     "airport", "aerodrome",
     "human", "yōkai", "locomotive", "aircraft", "battleship", "amusement ride", "roller coaster",
     "dark ride", "hotel",
@@ -637,7 +637,11 @@ DISTRICT_KEEP_NAME_RE = re.compile(r"(跡|通り?|横丁|小路|町並み?|街�
 # 已關閉：Wikidata 有廢止日或關閉日，且在這一年以後（城、陣屋的「廢止」在江戶、明治，遺址仍是景點）
 # 有文化指定的、遺構、遺跡、紀念設施不算（大川小學校、富岡製糸場）。
 CLOSED_SINCE = 1950
-CLOSED_KEEP_P31 = ("遺構", "遺跡", "跡", "記念", "史跡", "城", "廃墟", "遺産")
+CLOSED_KEEP_P31 = (
+    "遺構", "遺跡", "跡", "記念", "史跡", "城", "廃墟", "遺産",
+    # 廢礦、廢橋、廢線的遺構仍是景點（別子銅山、タウシュベツ橋梁、蹴上インクライン、北沢浮遊選鉱場）
+    "鉱山", "銅山", "炭鉱", "選鉱", "橋", "インクライン", "傾斜鉄道",
+)  # fmt: skip
 
 
 def closed_reason(closed_year: int | None, kinds: set[str], designated: bool) -> str | None:
@@ -677,6 +681,13 @@ def non_spot_reason(
         # 道の駅是景點，不當車站排除
         if any(s in k and not (s == "駅" and "道の駅" in k) for s in EXCLUDE_P31_SUBSTR):
             return k
+    # 拆除的建築（凌雲閣）；城跡另外看（坂本城、真田丸：城沒了，城跡仍標在地圖上）
+    if (
+        any("破壊・解体" in k for k in kinds)
+        and not designated
+        and not any("城" in k or "跡" in k for k in kinds)
+    ):
+        return next(k for k in sorted(kinds) if "破壊・解体" in k)
     base = strip_disambiguation(name)
     if (
         kinds

@@ -6,6 +6,7 @@ import DateRangePicker from '../components/DateRangePicker.vue'
 import ExportButtons from '../components/ExportButtons.vue'
 import OfflineButton from '../components/OfflineButton.vue'
 import MapView from '../components/MapView.vue'
+import PackOpening, { packOpened } from '../components/PackOpening.vue'
 import ShareImage from '../components/ShareImage.vue'
 import SkeletonRows from '../components/SkeletonRows.vue'
 import TripMembers from '../components/TripMembers.vue'
@@ -47,6 +48,14 @@ const trips = useTripsStore()
 const router = useRouter()
 
 const trip = computed(() => trips.get(props.id))
+// 開卡包（DESIGN.md §7.19）：結束的行程；這台裝置還沒開過的加紅點
+const packOpen = ref(false)
+const opened = ref(packOpened(props.id))
+function closePack() {
+  packOpen.value = false
+  opened.value = packOpened(props.id)
+}
+
 // 旅行回顧圖（DESIGN.md §7.22）
 const catalog = useCatalogStore()
 const recapOpen = ref(false)
@@ -247,6 +256,15 @@ async function del() {
         </div>
         <TripMembers :trip="trip" />
         <div class="flex flex-wrap gap-2">
+          <button
+            v-if="status === 'done'"
+            type="button"
+            class="relative flex h-9 items-center rounded-control bg-region-strong px-3.5 text-label font-bold text-white active:translate-y-px"
+            @click="packOpen = true"
+          >
+            開卡包
+            <span v-if="!opened" class="absolute -top-1 -right-1 size-2.5 rounded-full border-2 border-paper bg-danger" aria-label="還沒開"></span>
+          </button>
           <RouterLink
             :to="`/trips/${trip.id}/prep`"
             class="flex h-9 items-center rounded-control bg-region-strong px-3.5 text-label font-bold text-white no-underline active:translate-y-px"
@@ -369,6 +387,7 @@ async function del() {
     <div class="relative min-h-0 flex-1 max-lg:order-1 max-lg:h-[36dvh] max-lg:flex-none">
       <MapView :spots="mapSpots" :bounds="bounds" :route="route" :selected-id="focusId" @select="focusStop" />
     </div>
+    <PackOpening v-if="packOpen" :trip="trip" @close="closePack" />
     <ShareImage v-if="recapOpen" title="旅行回顧" :file-name="`ひとめぐり ${trip.name || '行程'}`" :render="renderRecap" @close="recapOpen = false" />
   </div>
   <section v-else class="mx-auto w-full max-w-5xl px-6 py-9">

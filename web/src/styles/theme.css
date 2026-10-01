@@ -324,6 +324,34 @@
 ::view-transition-new(region-hero) {
   height: 100%;
 }
+/* 換縣：新的地區色像墨水從點的位置暈開（services/viewTransition.ts 設 data-vt="ink"）。
+ * 墨暈的邊緣是 SVG 的 feTurbulence 擾動過的圓；所有具名的過場這時都關掉，整個畫面一起暈開。 */
+@property --ink-r {
+  syntax: '<length>';
+  inherits: false;
+  initial-value: 0px;
+}
+:root[data-vt='ink'] * {
+  view-transition-name: none !important;
+}
+:root[data-vt='ink']::view-transition-old(root) {
+  animation: none;
+}
+:root[data-vt='ink']::view-transition-new(root) {
+  animation: ink-spread 0.8s cubic-bezier(0.3, 0.6, 0.2, 1) both;
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cfilter id='f' x='-20%25' y='-20%25' width='140%25' height='140%25'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.035' numOctaves='3' seed='7'/%3E%3CfeDisplacementMap in='SourceGraphic' scale='26'/%3E%3CfeGaussianBlur stdDeviation='1.2'/%3E%3C/filter%3E%3Ccircle cx='100' cy='100' r='78' fill='black' filter='url(%23f)'/%3E%3C/svg%3E");
+  mask-repeat: no-repeat;
+  mask-size: calc(var(--ink-r) * 2) calc(var(--ink-r) * 2);
+  mask-position: calc(var(--vt-x, 50vw) - var(--ink-r)) calc(var(--vt-y, 50vh) - var(--ink-r));
+}
+@keyframes ink-spread {
+  from {
+    --ink-r: 0px;
+  }
+  to {
+    --ink-r: 190vmax;
+  }
+}
 /* 頂部與底部的分頁列換頁時不淡入淡出：只顯示新的那張，選中線自己滑過去 */
 ::view-transition-old(app-header),
 ::view-transition-old(app-tabbar) {

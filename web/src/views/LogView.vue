@@ -160,7 +160,7 @@ function open(id: string) {
       </div>
 
       <div class="relative h-[360px] overflow-hidden rounded-card border border-line max-md:h-[260px]">
-        <MapView :spots="spots" :bounds="bounds" :marked="visitedOnly" @select="open" />
+        <MapView :spots="spots" :bounds="bounds" :marked="visitedOnly" no-terrain @select="open" />
       </div>
 
       <section class="flex flex-col gap-3" aria-labelledby="trips-title">

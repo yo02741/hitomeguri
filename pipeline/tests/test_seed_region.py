@@ -317,6 +317,7 @@ def test_non_spot_kind():
     assert major.non_spot_kind({"日本の特別区"})
     assert major.non_spot_kind({"大量殺人", "乗物による突入攻撃"})
     assert major.non_spot_kind({"破壊・解体された建築物または構造物", "遊園地"})
+    assert not major.non_spot_kind({"破壊・解体された建築物または構造物", "日本の城"})
     assert not major.non_spot_kind({"市町村営水道用ダム"})
     assert major.non_spot_kind({"令制国"})
     assert major.non_spot_kind({"祭り"})
@@ -382,6 +383,8 @@ def test_closed_reason():
     assert major.closed_reason(1987, {"工場"}, True) is None
     assert major.closed_reason(2013, {"震災遺構", "小学校"}, False) is None
     assert major.closed_reason(None, {"博物館"}, False) is None
+    assert major.closed_reason(1955, {"橋梁"}, False) is None
+    assert major.closed_reason(1973, {"銅山"}, False) is None
 
 
 def test_district_keeps_walks_and_shopping_streets():

@@ -8,6 +8,7 @@ import { JAPAN_CENTER, JAPAN_ZOOM, MAP_STYLE_URL } from '../map/style'
 import { THEMES } from '../data/themes'
 import { mapThumbUrl, type MapSpot } from '../services/bundles'
 import { trackSplash } from '../services/splash'
+import { DEM_SOURCE, GSI_ATTRIBUTION, GSI_DEM_URL, registerGsiDem, setTerrainPreferred, terrainPreferred } from '../map/terrain'
 import JapanLocator from './JapanLocator.vue'
 
 const props = defineProps<{
@@ -31,6 +32,8 @@ const props = defineProps<{
   marked?: Record<string, { favorite?: boolean; visited?: boolean }> | null
   /** 行程某一天的順序連線（依停留點順序的座標） */
   route?: [number, number][] | null
+  /** 不顯示「立體」切換（紀錄頁的小地圖） */
+  noTerrain?: boolean
 }>()
 
 export interface PackPoint {
@@ -304,6 +307,11 @@ function applyColors() {
   map.setPaintProperty('outline-line', 'line-color', strong)
   map.setPaintProperty('route-line', 'line-color', strong)
   map.setPaintProperty('route-head', 'circle-color', strong)
+  if (map.getLayer('hillshade')) {
+    map.setPaintProperty('hillshade', 'hillshade-shadow-color', ink)
+    map.setPaintProperty('hillshade', 'hillshade-highlight-color', paper)
+    map.setPaintProperty('hillshade', 'hillshade-accent-color', token('--region-sub'))
+  }
   map.setPaintProperty('route-head', 'circle-stroke-color', paper)
   const packColor = token(`--color-t-${props.pack?.color ?? 'major'}`)
   map.setPaintProperty('pack-clusters', 'circle-color', packColor)
@@ -825,6 +833,53 @@ function thumbFailed(h: Hover) {
   hover.value = { ...h, thumb: undefined }
 }
 
+// 立體地形（DESIGN.md §8，map/terrain.ts）：国土地理院の標高タイル＋陰影，鏡頭傾斜 55°。偏好存在這台裝置。
+const terrainOn = ref(!props.noTerrain && terrainPreferred())
+function applyTerrain(animate: boolean) {
+  if (!map || !ready) return
+  const on = terrainOn.value && !props.noTerrain
+  if (on) {
+    registerGsiDem()
+    if (!map.getSource(DEM_SOURCE)) {
+      map.addSource(DEM_SOURCE, {
+        type: 'raster-dem',
+        tiles: [GSI_DEM_URL.replace('https://', 'gsidem://')],
+        tileSize: 256,
+        maxzoom: 14,
+        encoding: 'terrarium',
+        attribution: GSI_ATTRIBUTION,
+      })
+      // 陰影畫在縣界之上、鐵路與景點之下
+      map.addLayer(
+        {
+          id: 'hillshade',
+          type: 'hillshade',
+          source: DEM_SOURCE,
+          paint: {
+            'hillshade-exaggeration': 0.45,
+            'hillshade-shadow-color': token('--region-ink'),
+            'hillshade-highlight-color': token('--region-paper'),
+            'hillshade-accent-color': token('--region-sub'),
+          },
+        },
+        'rail-casing',
+      )
+    }
+    map.setLayoutProperty('hillshade', 'visibility', 'visible')
+    map.setTerrain({ source: DEM_SOURCE, exaggeration: 1.4 })
+    map.easeTo({ pitch: 55, duration: animate ? 900 : 0 })
+  } else {
+    if (map.getLayer('hillshade')) map.setLayoutProperty('hillshade', 'visibility', 'none')
+    map.setTerrain(null)
+    if (map.getPitch() || map.getBearing()) map.easeTo({ pitch: 0, bearing: 0, duration: animate ? 700 : 0 })
+  }
+}
+function toggleTerrain() {
+  terrainOn.value = !terrainOn.value
+  setTerrainPreferred(terrainOn.value)
+  applyTerrain(true)
+}
+
 // 角落的日本全圖（JapanLocator）：放大到看不出在哪裡時才出現；移動中每一格畫面更新一次
 const LOCATOR_ZOOM = 6.5
 const locator = shallowRef<{ bounds: [number, number, number, number]; zoom: number } | null>(null)
@@ -889,6 +944,7 @@ onMounted(() => {
     syncPin()
     if (props.bounds) fit(props.bounds, false)
     drawRoute(props.route)
+    applyTerrain(false)
   })
   map.on('move', updateLocator)
   map.on('moveend', (e: { originalEvent?: Event; user?: boolean }) => {
@@ -1040,12 +1096,23 @@ defineExpose({
   <!-- overflow-hidden：hover 標籤落在畫面外時（例如從清單滑過畫面外的景點）不撐出整頁捲軸 -->
   <div class="absolute inset-0 overflow-hidden bg-map-land" role="region" aria-label="地圖">
     <div ref="container" class="isolate size-full"></div>
+    <button
+      v-if="!noTerrain"
+      type="button"
+      class="absolute right-2.5 bottom-[122px] z-[2] grid h-10 w-[29px] place-items-center rounded-[4px] text-[11px] leading-tight font-bold shadow-[0_0_0_2px_rgb(0_0_0/0.1)] print:hidden"
+      :class="terrainOn ? 'bg-region-strong text-white' : 'bg-paper text-ink hover:bg-surface'"
+      :aria-pressed="terrainOn"
+      title="立體地形"
+      @click="toggleTerrain"
+    >
+      立<br />體
+    </button>
     <Transition name="locator">
       <JapanLocator
         v-if="locator && locator.zoom >= LOCATOR_ZOOM"
         :bounds="locator.bounds"
         :pref="colorKey"
-        class="absolute right-2.5 bottom-[124px] z-[2] w-[124px] max-md:top-2.5 max-md:bottom-auto max-md:w-[96px] print:hidden"
+        class="absolute right-2.5 bottom-[172px] z-[2] w-[124px] max-md:top-2.5 max-md:bottom-auto max-md:w-[96px] print:hidden"
         @go="goTo"
       />
     </Transition>
