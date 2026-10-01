@@ -3,6 +3,7 @@ import { readFileSync } from 'node:fs'
 import tailwindcss from '@tailwindcss/vite'
 import vue from '@vitejs/plugin-vue'
 import { defineConfig, type Plugin } from 'vite'
+import { VitePWA } from 'vite-plugin-pwa'
 
 // index.html 的開場畫面在 CSS bundle 載入前就要顯示，不能用 token：
 // 建置時把 %REGION_PAPER% 這類佔位字換成 data/regions.json 的全國色（不在原始碼寫死色碼），
@@ -35,10 +36,94 @@ function splashColors(): Plugin {
   }
 }
 
+// 離線（PWA，DESIGN.md §7.20）：app 本身預先快取；資料、地圖圖磚、字型、照片在用到時存下來。
+// 資料 bundle 的網址帶版本（?v=），存了就不必再問；_index.json 先問網路、離線時用存的。
+const nationalColor = (
+  JSON.parse(readFileSync(new URL('../data/regions.json', import.meta.url), 'utf-8')) as {
+    national: { color: Record<string, string> }
+  }
+).national.color
+const DAY = 24 * 60 * 60
+function pwa() {
+  return VitePWA({
+    registerType: 'prompt',
+    injectRegister: false,
+    manifest: {
+      name: 'ひとめぐり',
+      short_name: 'ひとめぐり',
+      description: '來一趟日本，才知道它有多大。',
+      lang: 'zh-Hant-TW',
+      display: 'standalone',
+      start_url: '.',
+      scope: '.',
+      theme_color: nationalColor.header,
+      background_color: nationalColor.paper,
+      icons: [{ src: 'favicon.svg', sizes: 'any', type: 'image/svg+xml', purpose: 'any' }],
+    },
+    workbox: {
+      globPatterns: ['**/*.{js,css,html,svg,woff2}'],
+      // bundles/ 由下方依需要快取，不預先下載（全部約 40 MB）
+      globIgnores: ['bundles/**', 'geo/**'],
+      navigateFallback: 'index.html',
+      navigateFallbackDenylist: [/^\/__/],
+      cleanupOutdatedCaches: true,
+      runtimeCaching: [
+        {
+          urlPattern: ({ url }) => url.pathname.endsWith('/bundles/_index.json'),
+          handler: 'NetworkFirst',
+          options: { cacheName: 'hm-index', networkTimeoutSeconds: 4 },
+        },
+        {
+          urlPattern: ({ url }) => url.pathname.includes('/bundles/') && url.searchParams.has('v'),
+          handler: 'CacheFirst',
+          options: { cacheName: 'hm-data', expiration: { maxEntries: 600, maxAgeSeconds: 90 * DAY } },
+        },
+        {
+          urlPattern: ({ url }) => url.pathname.includes('/bundles/') || url.pathname.includes('/geo/'),
+          handler: 'StaleWhileRevalidate',
+          options: { cacheName: 'hm-data-latest' },
+        },
+        {
+          urlPattern: ({ url }) => url.hostname === 'tiles.openfreemap.org' && url.pathname.startsWith('/styles/'),
+          handler: 'StaleWhileRevalidate',
+          options: { cacheName: 'hm-map-style' },
+        },
+        {
+          urlPattern: ({ url }) => url.hostname === 'tiles.openfreemap.org',
+          handler: 'CacheFirst',
+          options: {
+            cacheName: 'hm-map-tiles',
+            expiration: { maxEntries: 6000, maxAgeSeconds: 60 * DAY },
+            cacheableResponse: { statuses: [0, 200] },
+          },
+        },
+        {
+          urlPattern: ({ url }) => url.hostname === 'fonts.googleapis.com' || url.hostname === 'fonts.gstatic.com',
+          handler: 'CacheFirst',
+          options: {
+            cacheName: 'hm-fonts',
+            expiration: { maxEntries: 120, maxAgeSeconds: 365 * DAY },
+            cacheableResponse: { statuses: [0, 200] },
+          },
+        },
+        {
+          urlPattern: ({ url }) => url.hostname === 'upload.wikimedia.org' || url.hostname === 'thumb.wikimedia.org',
+          handler: 'CacheFirst',
+          options: {
+            cacheName: 'hm-photos',
+            expiration: { maxEntries: 1500, maxAgeSeconds: 90 * DAY },
+            cacheableResponse: { statuses: [0, 200] },
+          },
+        },
+      ],
+    },
+  })
+}
+
 // GitHub Pages 部署在 /hitomeguri/ 子路徑，由 workflow 設 VITE_BASE；本機與 Firebase Hosting 用 /。
 export default defineConfig({
   base: process.env.VITE_BASE ?? '/',
-  plugins: [splashColors(), vue(), tailwindcss()],
+  plugins: [splashColors(), vue(), tailwindcss(), pwa()],
   server: {
     port: 5173,
     // 前端直接 import repo 根目錄的 data/regions.json
