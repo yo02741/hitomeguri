@@ -12,11 +12,13 @@ import TripCard from '../components/TripCard.vue'
 import { type MarkedSpot, useMarkedSpots } from '../composables/markedSpots'
 import { useVisitedEntries } from '../composables/visited'
 import { useCollection } from '../composables/collection'
+import { regions } from '../data/regions'
 import { markRow } from '../services/export'
 import type { MapSpot } from '../services/bundles'
 import { TRIP_NAME_MAX } from '../services/trip'
 import { todayIso } from '../services/userdb'
 import { useCatalogStore } from '../stores/catalog'
+import { KEIKEN_MAX, useKeikenStore } from '../stores/keiken'
 import { useMarksStore } from '../stores/marks'
 import { useTripsStore } from '../stores/trips'
 import { useUserStore } from '../stores/user'
@@ -28,6 +30,8 @@ const marks = useMarksStore()
 const trips = useTripsStore()
 const catalog = useCatalogStore()
 const router = useRouter()
+const keiken = useKeikenStore()
+const keikenTotal = computed(() => regions.reduce((n, r) => n + keiken.levelOf(r.prefecture), 0))
 
 const { doneTrips, entries: visitedEntries } = useVisitedEntries()
 const { rows, loading } = useMarkedSpots(() => visitedEntries.value)
@@ -105,6 +109,7 @@ function open(id: string) {
     <h1 class="text-h2 font-black tracking-[2px]">紀錄</h1>
 
     <template v-if="userStore.user">
+      <div class="grid gap-4 md:grid-cols-[minmax(0,2fr)_minmax(0,1fr)]">
       <RouterLink
         to="/log/cards"
         class="collect paper-grain group relative flex h-[132px] items-center gap-3 overflow-hidden rounded-card bg-region pr-5 text-on-region no-underline"
@@ -138,6 +143,21 @@ function open(id: string) {
         </div>
         <svg class="ml-auto shrink-0 transition-transform group-hover:translate-x-1" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7" /></svg>
       </RouterLink>
+      <!-- 經縣值入口（DESIGN.md §7.21） -->
+      <RouterLink
+        to="/log/keiken"
+        class="group flex h-[132px] flex-col justify-center gap-2 rounded-card border border-line bg-paper px-5 text-ink no-underline hover:bg-surface"
+      >
+        <span class="flex items-center text-title font-black tracking-[2px]">
+          經縣值
+          <svg class="ml-auto shrink-0 transition-transform group-hover:translate-x-1" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7" /></svg>
+        </span>
+        <span class="flex items-baseline gap-1 font-latin"><span class="text-h2 font-bold">{{ keikenTotal }}</span><span class="text-body-sm text-sub">/ {{ KEIKEN_MAX }}</span></span>
+        <span class="flex h-2 overflow-hidden rounded-full bg-surface" aria-hidden="true">
+          <span class="h-full bg-keiken-3" :style="{ width: `${(keikenTotal / KEIKEN_MAX) * 100}%` }"></span>
+        </span>
+      </RouterLink>
+      </div>
 
       <div class="relative h-[360px] overflow-hidden rounded-card border border-line max-md:h-[260px]">
         <MapView :spots="spots" :bounds="bounds" :marked="visitedOnly" @select="open" />

@@ -118,6 +118,17 @@ service cloud.firestore {
           && isString(request.resource.data.prefecture, 20);
       }
 
+      // 經縣值（web/src/stores/keiken.ts）：各縣 0–5 級
+      match /meta/{docId} {
+        allow read, delete: if isOwner(uid);
+        allow create, update: if isOwner(uid)
+          && docId == 'keiken'
+          && request.resource.data.keys().hasOnly(['levels', 'updated_at'])
+          && request.resource.data.levels is map
+          && request.resource.data.levels.size() <= 47
+          && request.resource.data.updated_at is timestamp;
+      }
+
       // 收藏、去過、所屬清單（web/src/stores/marks.ts）
       match /marks/{spotId} {
         allow read, delete: if isOwner(uid);

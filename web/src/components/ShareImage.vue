@@ -1,0 +1,73 @@
+<script setup lang="ts">
+import { onBeforeUnmount, onMounted, ref } from 'vue'
+
+// 分享圖（旅行回顧、經縣值，DESIGN.md §7.22）：畫在 canvas 上預覽，可以下載 PNG，手機可以直接分享。
+const props = defineProps<{
+  title: string
+  fileName: string
+  render: (canvas: HTMLCanvasElement) => Promise<void>
+}>()
+const emit = defineEmits<{ close: [] }>()
+
+const canvas = ref<HTMLCanvasElement | null>(null)
+const ready = ref(false)
+const failed = ref(false)
+const canShare = typeof navigator !== 'undefined' && typeof navigator.canShare === 'function'
+
+onMounted(async () => {
+  document.addEventListener('keydown', onKey)
+  if (!canvas.value) return
+  try {
+    await props.render(canvas.value)
+    ready.value = true
+  } catch {
+    failed.value = true
+  }
+})
+onBeforeUnmount(() => document.removeEventListener('keydown', onKey))
+function onKey(e: KeyboardEvent) {
+  if (e.key === 'Escape') emit('close')
+}
+
+function blob(): Promise<Blob | null> {
+  return new Promise((resolve) => canvas.value?.toBlob((b) => resolve(b), 'image/png') ?? resolve(null))
+}
+async function save() {
+  const b = await blob()
+  if (!b) return
+  const a = document.createElement('a')
+  a.href = URL.createObjectURL(b)
+  a.download = `${props.fileName}.png`
+  a.click()
+  setTimeout(() => URL.revokeObjectURL(a.href), 1000)
+}
+async function share() {
+  const b = await blob()
+  if (!b) return
+  const file = new File([b], `${props.fileName}.png`, { type: 'image/png' })
+  if (navigator.canShare?.({ files: [file] })) {
+    await navigator.share({ files: [file], title: props.title }).catch(() => {})
+  } else {
+    await save()
+  }
+}
+</script>
+
+<template>
+  <div class="fixed inset-0 z-[65] flex items-center justify-center bg-ink/70 p-4 print:hidden" role="dialog" aria-modal="true" :aria-label="title" @click.self="emit('close')">
+    <div class="flex max-h-full w-full max-w-[440px] animate-pop-in flex-col gap-3 rounded-card bg-paper p-3 shadow-float">
+      <div class="relative min-h-0 overflow-auto rounded-[6px] bg-surface">
+        <canvas ref="canvas" class="block h-auto w-full" :class="ready ? '' : 'opacity-0'"></canvas>
+        <div v-if="!ready && !failed" class="skeleton absolute inset-0" aria-hidden="true"></div>
+        <p v-if="failed" class="absolute inset-0 grid place-items-center text-body-sm text-sub">圖片做不出來</p>
+      </div>
+      <div class="flex gap-2">
+        <button type="button" class="h-11 flex-1 rounded-control bg-region-strong text-body-sm font-bold text-white disabled:opacity-40" :disabled="!ready" @click="canShare ? share() : save()">
+          {{ canShare ? '分享' : '下載' }}
+        </button>
+        <button v-if="canShare" type="button" class="h-11 rounded-control border border-line px-4 text-body-sm hover:bg-surface disabled:opacity-40" :disabled="!ready" @click="save">下載</button>
+        <button type="button" class="h-11 rounded-control border border-line px-4 text-body-sm hover:bg-surface" @click="emit('close')">關閉</button>
+      </div>
+    </div>
+  </div>
+</template>

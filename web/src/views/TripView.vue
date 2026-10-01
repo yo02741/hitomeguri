@@ -6,6 +6,7 @@ import DateRangePicker from '../components/DateRangePicker.vue'
 import ExportButtons from '../components/ExportButtons.vue'
 import OfflineButton from '../components/OfflineButton.vue'
 import MapView from '../components/MapView.vue'
+import ShareImage from '../components/ShareImage.vue'
 import SkeletonRows from '../components/SkeletonRows.vue'
 import TripMembers from '../components/TripMembers.vue'
 import TripStopList from '../components/TripStopList.vue'
@@ -13,6 +14,7 @@ import { useCatalogSpots } from '../composables/catalogSpots'
 import { regionOf } from '../data/regions'
 import type { MapSpot } from '../services/bundles'
 import type { ExportFolder, ExportRow } from '../services/export'
+import { drawTripRecap } from '../services/shareImage'
 import {
   addDays,
   allStops,
@@ -33,6 +35,7 @@ import {
   TRIP_NAME_MAX,
   tripStatus,
 } from '../services/trip'
+import { useCatalogStore } from '../stores/catalog'
 import { useTripsStore } from '../stores/trips'
 import { useUserStore } from '../stores/user'
 
@@ -44,6 +47,12 @@ const trips = useTripsStore()
 const router = useRouter()
 
 const trip = computed(() => trips.get(props.id))
+// 旅行回顧圖（DESIGN.md §7.22）
+const catalog = useCatalogStore()
+const recapOpen = ref(false)
+async function renderRecap(canvas: HTMLCanvasElement) {
+  if (trip.value) await drawTripRecap(canvas, trip.value, catalog)
+}
 const isOwner = computed(() => Boolean(trip.value && trip.value.owner === userStore.user?.uid))
 const status = computed(() => (trip.value ? tripStatus(trip.value, trips.today) : 'planning'))
 const { byId, loading } = useCatalogSpots(() => (trip.value ? allStops(trip.value).map((s) => ({ id: s.spot_id, pref: s.pref })) : []))
@@ -249,6 +258,12 @@ async function del() {
           <ExportButtons :title="trip.name || 'ひとめぐり 行程'" :folders="folders" :leading="['日', '順序']" />
           <OfflineButton :trip="trip" />
           <button
+            type="button"
+            class="h-9 rounded-control border border-line bg-paper px-3 text-label text-ink hover:bg-surface disabled:cursor-not-allowed disabled:opacity-40"
+            :disabled="!trip.days.some((d) => d.stops.length)"
+            @click="recapOpen = true"
+          >回顧圖</button>
+          <button
             v-if="isOwner"
             type="button"
             class="h-9 rounded-control border border-line bg-paper px-3 text-label text-danger hover:bg-surface"
@@ -354,6 +369,7 @@ async function del() {
     <div class="relative min-h-0 flex-1 max-lg:order-1 max-lg:h-[36dvh] max-lg:flex-none">
       <MapView :spots="mapSpots" :bounds="bounds" :route="route" :selected-id="focusId" @select="focusStop" />
     </div>
+    <ShareImage v-if="recapOpen" title="旅行回顧" :file-name="`ひとめぐり ${trip.name || '行程'}`" :render="renderRecap" @close="recapOpen = false" />
   </div>
   <section v-else class="mx-auto w-full max-w-5xl px-6 py-9">
     <p v-if="!userStore.user" class="text-body-sm text-sub">收藏、行程與紀錄需要登入。</p>

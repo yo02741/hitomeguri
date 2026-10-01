@@ -51,6 +51,13 @@
   --color-snow: #FFFFFF;
   --color-hotaru: #DDF58A;
 
+  /* ---------- 經縣值（DESIGN.md §7.21）：路過 1 → 住過 5，越深越久 ---------- */
+  --color-keiken-1: #DCE4EE;
+  --color-keiken-2: #B5C7DC;
+  --color-keiken-3: #7E9CC2;
+  --color-keiken-4: #4B6E9F;
+  --color-keiken-5: #26446F;
+
   /* ---------- 功能色 ---------- */
   --color-visited: #1F4E8C;       /* 去過印章 */
   --color-visited-tint: #EEF3F9;

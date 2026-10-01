@@ -13,6 +13,8 @@ export interface Region {
   area: string
   area_name: string
   motif_zh: string
+  /** 地區色（regions.json 產生的 token 值）：canvas 畫分享圖時用，CSS 一律用 regions.css 的變數 */
+  color: Record<string, string>
 }
 
 export const regions: Region[] = raw.regions
