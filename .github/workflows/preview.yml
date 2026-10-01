@@ -1,0 +1,68 @@
+name: Firebase Hosting 預覽
+
+# 特效分支（claude/visual-effects）推送時部署到 Firebase Hosting 的預覽網址（preview channel），
+# 不影響正式網站。預覽網址 30 天後失效，再推一次會延長。Spark 免費方案可用。
+# 設定與 firebase-hosting.yml 共用：secrets.FIREBASE_SERVICE_ACCOUNT、vars.VITE_FIREBASE_*。
+
+on:
+  push:
+    branches: [claude/visual-effects]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: preview-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  preview:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 檢查部署金鑰
+        id: check
+        env:
+          SA: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
+          PROJECT_VAR: ${{ vars.VITE_FIREBASE_PROJECT_ID }}
+        run: |
+          if [ -z "$SA" ]; then
+            echo "::error::尚未設定 secrets.FIREBASE_SERVICE_ACCOUNT"
+            exit 1
+          fi
+          project="${PROJECT_VAR:-$(printf '%s' "$SA" | jq -r '.project_id // empty')}"
+          echo "project=$project" >> "$GITHUB_OUTPUT"
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: web/package-lock.json
+      - uses: astral-sh/setup-uv@v6
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: 產生景點 bundle
+        run: |
+          uv venv && uv pip install -e .
+          .venv/bin/python -m pipeline.cli build-bundles
+      - run: npm ci
+        working-directory: web
+      - run: npm run build
+        working-directory: web
+        env:
+          VITE_BASE: /
+          VITE_USE_EMULATORS: "0"
+          VITE_FIREBASE_API_KEY: ${{ vars.VITE_FIREBASE_API_KEY }}
+          VITE_FIREBASE_AUTH_DOMAIN: ${{ vars.VITE_FIREBASE_AUTH_DOMAIN }}
+          VITE_FIREBASE_PROJECT_ID: ${{ vars.VITE_FIREBASE_PROJECT_ID }}
+          VITE_FIREBASE_APP_ID: ${{ vars.VITE_FIREBASE_APP_ID }}
+      - uses: FirebaseExtended/action-hosting-deploy@v0
+        id: deploy
+        with:
+          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
+          projectId: ${{ steps.check.outputs.project }}
+          channelId: effects
+          expires: 30d
+      - name: 摘要
+        run: echo "預覽網址：${{ steps.deploy.outputs.details_url }}（到期 ${{ steps.deploy.outputs.expire_time }}）" >> "$GITHUB_STEP_SUMMARY"
