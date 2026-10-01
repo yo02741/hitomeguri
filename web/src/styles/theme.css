@@ -40,6 +40,17 @@
   --color-glare: #FFFFFF;
   --color-shade: #000000;
 
+  /* ---------- 季節飄落（海報區，DESIGN.md §9） ---------- */
+  --color-sakura-1: #F2A9BC;
+  --color-sakura-2: #F8D0DA;
+  --color-momiji-1: #D2462B;
+  --color-momiji-2: #E5772F;
+  --color-momiji-3: #B8322A;
+  --color-ichou-1: #EBC23C;
+  --color-ichou-2: #F2D670;
+  --color-snow: #FFFFFF;
+  --color-hotaru: #DDF58A;
+
   /* ---------- 功能色 ---------- */
   --color-visited: #1F4E8C;       /* 去過印章 */
   --color-visited-tint: #EEF3F9;

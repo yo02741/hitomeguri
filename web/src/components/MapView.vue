@@ -67,6 +67,7 @@ const OUTLINE_SOURCE = 'outline'
 const RAIL_SOURCE = 'rail'
 const STATION_SOURCE = 'rail-stations'
 const ROUTE_SOURCE = 'route'
+const ROUTE_HEAD_SOURCE = 'route-head'
 const EMPTY: GeoJSON.FeatureCollection = { type: 'FeatureCollection', features: [] }
 
 function routeData(coords: [number, number][] | null | undefined): GeoJSON.FeatureCollection {
@@ -77,6 +78,58 @@ function routeData(coords: [number, number][] | null | undefined): GeoJSON.Featu
         ? [{ type: 'Feature', properties: {}, geometry: { type: 'LineString', coordinates: coords } }]
         : [],
   }
+}
+
+// 行程路線像用筆畫出來（DESIGN.md §9）：路線改變時從起點畫到終點，筆尖是一個圓點。「減少動態」時直接畫好。
+const reducedMotion = typeof matchMedia !== 'undefined' && matchMedia('(prefers-reduced-motion: reduce)').matches
+let routeFrame = 0
+let drawnRoute = ''
+function drawRoute(coords: [number, number][] | null | undefined) {
+  if (!map) return
+  const line = map.getSource(ROUTE_SOURCE) as GeoJSONSource | undefined
+  const head = map.getSource(ROUTE_HEAD_SOURCE) as GeoJSONSource | undefined
+  if (!line || !head) return
+  // 同一條路線（行程其他欄位更新）不重畫
+  const sig = JSON.stringify(coords ?? null)
+  if (sig === drawnRoute) return
+  drawnRoute = sig
+  cancelAnimationFrame(routeFrame)
+  if (!coords || coords.length < 2 || reducedMotion) {
+    line.setData(routeData(coords))
+    head.setData(EMPTY)
+    return
+  }
+  // 各段長度（經度依緯度縮放，近似實際距離）
+  const cum = [0]
+  for (let i = 1; i < coords.length; i++) {
+    const [x1, y1] = coords[i - 1]!
+    const [x2, y2] = coords[i]!
+    const k = Math.cos((((y1 + y2) / 2) * Math.PI) / 180)
+    cum.push(cum[i - 1]! + Math.hypot((x2 - x1) * k, y2 - y1))
+  }
+  const total = cum[cum.length - 1]!
+  const duration = Math.min(2400, 800 + coords.length * 140)
+  const start = performance.now()
+  const step = (now: number) => {
+    const t = Math.min(1, (now - start) / duration)
+    // 前後慢、中間快
+    const e = t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2
+    const at = e * total
+    let i = 1
+    while (i < coords.length - 1 && cum[i]! < at) i++
+    const seg = cum[i]! - cum[i - 1]!
+    const f = seg ? (at - cum[i - 1]!) / seg : 1
+    const [x1, y1] = coords[i - 1]!
+    const [x2, y2] = coords[i]!
+    const tip: [number, number] = [x1 + (x2 - x1) * f, y1 + (y2 - y1) * f]
+    line.setData(routeData([...coords.slice(0, i), tip]))
+    head.setData(
+      t < 1 ? { type: 'FeatureCollection', features: [{ type: 'Feature', properties: {}, geometry: { type: 'Point', coordinates: tip } }] } : EMPTY,
+    )
+    if (t < 1) routeFrame = requestAnimationFrame(step)
+    else line.setData(routeData(coords))
+  }
+  routeFrame = requestAnimationFrame(step)
 }
 
 function outlineData(f: GeoJSON.Feature | null | undefined): GeoJSON.FeatureCollection {
@@ -249,6 +302,8 @@ function applyColors() {
   map.setPaintProperty('rail-station-labels', 'text-halo-color', paper)
   map.setPaintProperty('outline-line', 'line-color', strong)
   map.setPaintProperty('route-line', 'line-color', strong)
+  map.setPaintProperty('route-head', 'circle-color', strong)
+  map.setPaintProperty('route-head', 'circle-stroke-color', paper)
   const packColor = token(`--color-t-${props.pack?.color ?? 'major'}`)
   map.setPaintProperty('pack-clusters', 'circle-color', packColor)
   map.setPaintProperty('pack-clusters', 'circle-stroke-color', paper)
@@ -345,13 +400,20 @@ function addLayers() {
     },
     paint: { 'text-halo-width': 1.5 },
   })
-  map.addSource(ROUTE_SOURCE, { type: 'geojson', data: routeData(props.route) })
+  map.addSource(ROUTE_SOURCE, { type: 'geojson', data: EMPTY })
   map.addLayer({
     id: 'route-line',
     type: 'line',
     source: ROUTE_SOURCE,
     layout: { 'line-cap': 'round', 'line-join': 'round' },
     paint: { 'line-width': 3, 'line-dasharray': [1.5, 1.5] },
+  })
+  map.addSource(ROUTE_HEAD_SOURCE, { type: 'geojson', data: EMPTY })
+  map.addLayer({
+    id: 'route-head',
+    type: 'circle',
+    source: ROUTE_HEAD_SOURCE,
+    paint: { 'circle-radius': 6, 'circle-stroke-width': 2.5 },
   })
   map.addSource(SOURCE, {
     type: 'geojson',
@@ -809,6 +871,7 @@ onMounted(() => {
     applyDim()
     syncPin()
     if (props.bounds) fit(props.bounds, false)
+    drawRoute(props.route)
   })
   map.on('moveend', (e: { originalEvent?: Event; user?: boolean }) => {
     const view = visibleView(Boolean(e.originalEvent || e.user))
@@ -817,6 +880,7 @@ onMounted(() => {
 })
 
 onBeforeUnmount(() => {
+  cancelAnimationFrame(routeFrame)
   photoPins.clear()
   pulse = null
   pinMarker = null
@@ -852,7 +916,7 @@ watch(
 watch(
   () => props.route,
   (r) => {
-    if (map && ready) (map.getSource(ROUTE_SOURCE) as GeoJSONSource | undefined)?.setData(routeData(r))
+    if (map && ready) drawRoute(r)
   },
 )
 

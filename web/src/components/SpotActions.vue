@@ -11,6 +11,8 @@ import DatePicker from './DatePicker.vue'
 
 // 景點卡片的收藏、去過、清單（UX-FLOW.md B4、§3）。未登入時按下去先登入，登入後完成動作。
 const props = defineProps<{ spot: SpotRef }>()
+// 自己按下去過、狀態變成去過時（景點卡片接著播新卡入手）
+const emit = defineEmits<{ stamped: [] }>()
 const marks = useMarksStore()
 const trips = useTripsStore()
 const userStore = useUserStore()
@@ -20,6 +22,9 @@ const disabled = computed(() => !userStore.canSignIn)
 
 // 按下去過時蓋章、按下收藏時星星彈一下（DESIGN.md §9）
 const { pressing, key: stampKey, arm } = useStampPress(() => Boolean(mark.value?.visited), () => props.spot.id)
+watch(pressing, (p) => {
+  if (p) emit('stamped')
+})
 function toggleVisited() {
   arm()
   void marks.toggleVisited(props.spot)

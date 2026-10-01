@@ -46,6 +46,7 @@ const { rect, animate } = useIndicator(nav, () => nav.value?.querySelector<HTMLE
         v-for="tab in tabs"
         :key="tab.to"
         :to="tab.to"
+      :data-nav="tab.to === '/log' ? 'log' : undefined"
         class="flex items-center border-b-3 border-transparent px-4 text-body no-underline"
         :class="isActive(tab) ? 'font-bold text-ink' : 'text-sub'"
         :aria-current="isActive(tab) ? 'page' : undefined"

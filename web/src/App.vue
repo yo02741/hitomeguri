@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import AppHeader from './components/AppHeader.vue'
+import CardReveal from './components/CardReveal.vue'
 import TabBar from './components/TabBar.vue'
 import { useExploreStore } from './stores/explore'
 
@@ -19,5 +20,6 @@ const explore = useExploreStore()
       <RouterView />
     </main>
     <TabBar />
+    <CardReveal />
   </div>
 </template>

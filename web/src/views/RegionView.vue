@@ -10,6 +10,7 @@ import { useExploreStore } from '../stores/explore'
 import CollapseChevron from '../components/CollapseChevron.vue'
 import FestivalList from '../components/FestivalList.vue'
 import RegionMotif from '../components/RegionMotif.vue'
+import SeasonDrift from '../components/SeasonDrift.vue'
 import SectionNav from '../components/SectionNav.vue'
 import SeasonCalendar from '../components/SeasonCalendar.vue'
 import WebSearchLink from '../components/WebSearchLink.vue'
@@ -130,6 +131,7 @@ function sourceLabel(url: string): string {
     <!-- 海報區：地區色、正圓裝飾，只用正圓（DESIGN.md §7.5） -->
     <header class="paper-grain relative shrink-0 overflow-hidden bg-region text-on-region [view-transition-name:region-hero]">
       <RegionMotif :pref="pref" class="absolute -top-24 -right-16 size-[320px] [view-transition-name:region-motif]" />
+      <SeasonDrift :pref="pref" />
       <div class="relative mx-auto flex w-full max-w-5xl flex-col gap-4 px-6 pt-5 pb-8">
         <RouterLink
           :to="`/map/${pref}`"

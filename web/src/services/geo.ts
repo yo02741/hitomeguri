@@ -95,3 +95,62 @@ export function distanceM(lat1: number, lng1: number, lat2: number, lng2: number
   const a = Math.sin(dLat / 2) ** 2 + Math.cos(lat1 * rad) * Math.cos(lat2 * rad) * Math.sin(dLng / 2) ** 2
   return 2 * r * Math.asin(Math.sqrt(a))
 }
+
+/** 收集冊的日本地圖（DESIGN.md §7.19）：一縣一條 SVG path */
+export interface PrefPath {
+  pref: string
+  d: string
+}
+export interface JapanOutline {
+  viewBox: string
+  paths: PrefPath[]
+  /** 沖繩移到左上的框（x, y, w, h） */
+  inset: [number, number, number, number]
+}
+
+// 等距圓柱投影，經度依北緯 36.5 度縮放；沖繩依日本地圖的慣例移到左上角的框裡。
+const LNG0 = 128.3
+const LAT0 = 45.7
+const KX = Math.cos((36.5 * Math.PI) / 180) * 10
+const OKINAWA_SHIFT: [number, number] = [5.67, 18.3]
+// 離島：外框小於這個（度）的島不畫；東京的小笠原（北緯 32 度以南）不畫
+const MIN_ISLAND = 0.06
+const TOLERANCE = 0.45
+
+let outline: JapanOutline | null = null
+
+export async function japanOutline(): Promise<JapanOutline> {
+  if (outline) return outline
+  const fs = await loadPrefectureShapes()
+  const px = (x: number) => (x - LNG0) * KX
+  const py = (y: number) => (LAT0 - y) * 10
+  const paths = fs.map((f) => {
+    const pref = f.properties.pref
+    const [sx, sy] = pref === 'okinawa' ? OKINAWA_SHIFT : [0, 0]
+    const polys = f.geometry.coordinates.filter((poly) => {
+      const ring = poly[0] ?? []
+      const xs = ring.map((p) => p[0])
+      const ys = ring.map((p) => p[1])
+      if (pref === 'tokyo' && Math.max(...ys) < 32) return false
+      return Math.max(Math.max(...xs) - Math.min(...xs), Math.max(...ys) - Math.min(...ys)) >= MIN_ISLAND || f.geometry.coordinates.length === 1
+    })
+    let d = ''
+    for (const poly of polys) {
+      for (const ring of poly) {
+        const pts: [number, number][] = []
+        for (const [x, y] of ring) {
+          const p: [number, number] = [px(x + sx), py(y + sy)]
+          const l = pts[pts.length - 1]
+          if (!l || Math.hypot(p[0] - l[0], p[1] - l[1]) >= TOLERANCE) pts.push(p)
+        }
+        if (pts.length < 3) continue
+        d += 'M' + pts.map(([x, y]) => `${x.toFixed(1)} ${y.toFixed(1)}`).join('L') + 'Z'
+      }
+    }
+    return { pref, d }
+  })
+  const w = px(148.95)
+  const h = py(26.95)
+  outline = { viewBox: `0 0 ${w.toFixed(1)} ${h.toFixed(1)}`, paths, inset: [px(128.4), py(45.62), px(137.4) - px(128.4), py(41.95) - py(45.62)] }
+  return outline
+}

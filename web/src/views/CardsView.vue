@@ -2,8 +2,9 @@
 import { computed, ref, watch } from 'vue'
 
 import CardViewer from '../components/CardViewer.vue'
-import RegionMotif from '../components/RegionMotif.vue'
+import JapanMap from '../components/JapanMap.vue'
 import RollingNumber from '../components/RollingNumber.vue'
+import SeasonDrift from '../components/SeasonDrift.vue'
 import SpotCard from '../components/SpotCard.vue'
 import { type CollectionCard, useCollection } from '../composables/collection'
 import { useVisitedEntries } from '../composables/visited'
@@ -58,6 +59,16 @@ const groups = computed<Group[]>(() => {
     return items.length || pending ? [{ region: r, items, pending }] : []
   })
 })
+// 地圖上每縣的張數；點縣跳到那一縣
+const perPref = computed(() => {
+  const m = new Map<string, number>()
+  for (const e of cards.value) m.set(e.face.pref, (m.get(e.face.pref) ?? 0) + 1)
+  return m
+})
+function jumpTo(pref: string) {
+  filter.value = 'all'
+  document.querySelector(`section[data-pref="${pref}"]`)?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+}
 const flat = computed(() => groups.value.flatMap((g) => g.items))
 
 // 放大檢視：依目前的篩選左右切換；打開時載入該縣的詳細資料換上簡介與照片出處
@@ -86,37 +97,30 @@ function onCardKey(e: KeyboardEvent, id: string) {
 
 <template>
   <section class="mx-auto flex w-full max-w-5xl flex-col gap-7 px-6 py-9 max-sm:px-4">
-    <header class="paper-grain relative flex flex-col gap-4 overflow-hidden rounded-card bg-region p-6 text-on-region max-sm:p-5">
-      <RegionMotif class="absolute -top-16 -right-14 size-[260px] max-sm:size-[200px]" />
-      <RouterLink to="/log" class="relative flex w-fit items-center gap-1 text-label font-bold text-on-region no-underline hover:underline">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7" /></svg>
-        紀錄
-      </RouterLink>
-      <h1 class="relative flex items-baseline gap-3 text-h1 font-black tracking-[4px]">
-        收集冊<RollingNumber :value="cards.length" class="font-latin text-h3 font-semibold tracking-normal" />
-      </h1>
-      <div class="relative flex max-w-[640px] flex-col gap-1.5">
-        <p class="flex items-baseline gap-2 text-label font-bold">
-          都道府縣<span class="font-latin text-body-sm">{{ prefDone.size }} / 47</span>
-        </p>
-        <ol class="grid grid-cols-[repeat(47,minmax(0,1fr))] gap-[2px]" aria-hidden="true">
-          <li
-            v-for="r in regions"
-            :key="r.prefecture"
-            :data-pref="r.prefecture"
-            :title="r.name.ja"
-            class="h-3.5 rounded-[2px]"
-            :class="prefDone.has(r.prefecture) ? 'bg-region-strong' : 'bg-paper/55'"
-          ></li>
-        </ol>
-      </div>
-      <div v-if="castleTotal" class="relative flex max-w-[640px] flex-col gap-1.5">
-        <p class="flex items-baseline gap-2 text-label font-bold">
-          日本100名城・続日本100名城<span class="font-latin text-body-sm">{{ castleDone }} / {{ castleTotal }}</span>
-        </p>
-        <div class="h-3.5 overflow-hidden rounded-[2px] bg-paper/55" aria-hidden="true">
-          <div class="h-full rounded-[2px] bg-t-castle" :style="{ width: `${(castleDone / castleTotal) * 100}%` }"></div>
+    <header class="paper-grain relative overflow-hidden rounded-card bg-region p-6 text-on-region max-sm:p-5">
+      <SeasonDrift :pref="null" />
+      <div class="relative grid grid-cols-[minmax(0,1fr)_minmax(0,44%)] items-center gap-6 max-sm:gap-2 sm:grid-cols-[minmax(0,1fr)_260px] lg:grid-cols-[minmax(0,1fr)_320px]">
+        <div class="flex min-w-0 flex-col gap-4">
+          <RouterLink to="/log" class="flex w-fit items-center gap-1 text-label font-bold text-on-region no-underline hover:underline">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7" /></svg>
+            紀錄
+          </RouterLink>
+          <h1 class="flex items-baseline gap-3 text-h1 font-black tracking-[4px]">
+            收集冊<RollingNumber :value="cards.length" class="font-latin text-h3 font-semibold tracking-normal" />
+          </h1>
+          <p class="flex items-baseline gap-2 text-label font-bold">
+            都道府縣<span class="font-latin text-body-sm">{{ prefDone.size }} / 47</span>
+          </p>
+          <div v-if="castleTotal" class="flex max-w-[420px] flex-col gap-1.5">
+            <p class="flex flex-wrap items-baseline gap-x-2 text-label font-bold">
+              日本100名城・続日本100名城<span class="font-latin text-body-sm">{{ castleDone }} / {{ castleTotal }}</span>
+            </p>
+            <div class="h-3.5 overflow-hidden rounded-[2px] bg-paper/55" aria-hidden="true">
+              <div class="h-full rounded-[2px] bg-t-castle" :style="{ width: `${(castleDone / castleTotal) * 100}%` }"></div>
+            </div>
+          </div>
         </div>
+        <JapanMap :done="prefDone" :counts="perPref" @pick="jumpTo" />
       </div>
     </header>
 

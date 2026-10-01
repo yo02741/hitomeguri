@@ -3,6 +3,7 @@ import { computed, ref, watch } from 'vue'
 
 import type { Spot } from '../services/bundles'
 import { cardFromSpot, cardNumberFor, designationOf, rarityLabel, rarityOf } from '../services/card'
+import { showReveal } from '../services/cardReveal'
 import { googleMapsUrl } from '../services/maps'
 import { canSpeak, speakJa } from '../services/tts'
 import { useCatalogStore } from '../stores/catalog'
@@ -51,6 +52,11 @@ const card = computed(() => {
     visitedOn: m?.visited_on ?? null,
   }
 })
+// 按下去過：收集卡飛出來亮相，再收進紀錄分頁
+function onStamped() {
+  const c = card.value
+  if (c) showReveal({ face: c.face, rarity: c.rarity, label: c.label, number: c.number })
+}
 const station = computed(() => props.spot?.nearest_stations?.[0])
 const showZh = computed(() => props.spot && props.spot.name.zh_tw !== props.spot.name.ja)
 const mapsUrl = computed(() => (props.spot ? googleMapsUrl(props.spot.name.ja, props.spot.prefecture) : ''))
@@ -203,7 +209,7 @@ function distance(m: number): string {
     </div>
 
     <div class="mt-auto flex flex-col gap-2 border-t border-line px-5 pt-3.5 pb-5">
-      <SpotActions v-if="spotRef" :spot="spotRef" />
+      <SpotActions v-if="spotRef" :spot="spotRef" @stamped="onStamped" />
       <a
         :href="mapsUrl"
         target="_blank"
