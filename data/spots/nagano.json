@@ -15602,57 +15602,6 @@
     "updated_at": "2026-09-28"
   },
   {
-    "id": "wd-Q17190581",
-    "name": {
-      "ja": "安曇野アートヒルズミュージアム",
-      "kana": "あづみのあーとひるずみゅーじあむ",
-      "romaji": "Azuminoatohiruzumyujiamu",
-      "zh_tw": "安曇野アートヒルズミュージアム",
-      "en": "Azumino Arthills Museum"
-    },
-    "kana_source": "wikipedia",
-    "location": {
-      "lat": 36.340139,
-      "lng": 137.842056
-    },
-    "prefecture": "nagano",
-    "kind": "major",
-    "themes": [],
-    "tags": [],
-    "featured": false,
-    "score": 60.5,
-    "summary": {
-      "text": "安曇野アートヒルズミュージアム（あづみのアートヒルズミュージアム）は、長野県安曇野市穂高有明に存在した、ガラス工芸をテーマとした観光施設。安曇野アートライン加盟。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%AE%89%E6%9B%87%E9%87%8E%E3%82%A2%E3%83%BC%E3%83%88%E3%83%92%E3%83%AB%E3%82%BA%E3%83%9F%E3%83%A5%E3%83%BC%E3%82%B8%E3%82%A2%E3%83%A0",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cb/Azumino_Arthills_Museum.jpg/960px-Azumino_Arthills_Museum.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "photo: Qurren (talk) Taken with Canon PowerShot G9 X",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Azumino_Arthills_Museum.jpg"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q17190581"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q17190581",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://ja.wikipedia.org/wiki/%E5%AE%89%E6%9B%87%E9%87%8E%E3%82%A2%E3%83%BC%E3%83%88%E3%83%92%E3%83%AB%E3%82%BA%E3%83%9F%E3%83%A5%E3%83%BC%E3%82%B8%E3%82%A2%E3%83%A0",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
     "id": "wd-Q17192303",
     "name": {
       "ja": "アルプス公園",
@@ -20004,46 +19953,6 @@
     "updated_at": "2026-09-28"
   },
   {
-    "id": "wd-Q6347595",
-    "name": {
-      "ja": "開田村",
-      "kana": "かいだむら",
-      "romaji": "Kaidamura",
-      "zh_tw": "開田村",
-      "en": "Kaida"
-    },
-    "kana_source": "wikidata",
-    "location": {
-      "lat": 35.940861,
-      "lng": 137.600583
-    },
-    "prefecture": "nagano",
-    "kind": "major",
-    "themes": [],
-    "tags": [],
-    "featured": false,
-    "score": 64.33,
-    "summary": {
-      "text": "Kaida (開田村, Kaida-mura) was a village located in Kiso District, Nagano Prefecture, Japan.",
-      "lang": "en",
-      "source_url": "https://en.wikipedia.org/wiki/Kaida%2C_Nagano",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-29"
-    },
-    "images": [],
-    "external_ids": {
-      "wikidata": "Q6347595"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q6347595",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
     "id": "wd-Q63565237",
     "name": {
       "ja": "北野美術館",
@@ -21036,97 +20945,6 @@
       },
       {
         "url": "https://www.openstreetmap.org/way/300077872",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
-    "id": "wd-Q7813035",
-    "name": {
-      "ja": "戸隠村",
-      "kana": "とがくしむら",
-      "romaji": "Togakushimura",
-      "zh_tw": "戶隱村",
-      "en": "Togakushi"
-    },
-    "kana_source": "wikidata",
-    "location": {
-      "lat": 36.701917,
-      "lng": 138.089028
-    },
-    "prefecture": "nagano",
-    "kind": "major",
-    "themes": [],
-    "tags": [],
-    "featured": false,
-    "score": 74.28,
-    "summary": {
-      "text": "Togakushi (戸隠村, Togakushi-mura) was a village located in the mountainous Kamiminochi District, Nagano Prefecture, Japan.",
-      "lang": "en",
-      "source_url": "https://en.wikipedia.org/wiki/Togakushi%2C_Nagano",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-29"
-    },
-    "images": [],
-    "external_ids": {
-      "wikidata": "Q7813035"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q7813035",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
-    "id": "wd-Q8081476",
-    "name": {
-      "ja": "扇沢駅",
-      "kana": "おうぎざわえき",
-      "romaji": "Ogizawaeki",
-      "zh_tw": "扇澤站",
-      "en": "Ōgizawa Station"
-    },
-    "kana_source": "wikipedia",
-    "location": {
-      "lat": 36.558131,
-      "lng": 137.722042
-    },
-    "prefecture": "nagano",
-    "kind": "major",
-    "themes": [],
-    "tags": [],
-    "featured": false,
-    "score": 70.78,
-    "summary": {
-      "text": "扇澤站是位於長野縣大町市平，關西電力關電隧道電氣巴士的巴士站。",
-      "lang": "zh",
-      "source_url": "https://zh.wikipedia.org/wiki/%E6%89%87%E6%BE%A4%E7%AB%99",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ea/Ogizawa_Station_%282016-07-12%29.jpg/960px-Ogizawa_Station_%282016-07-12%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Alpsdake",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Ogizawa_Station_(2016-07-12).jpg"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q8081476"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q8081476",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://ja.wikipedia.org/wiki/%E6%89%87%E6%B2%A2%E9%A7%85",
         "fetched_at": "2026-09-28"
       }
     ],

@@ -2427,46 +2427,6 @@
     "updated_at": "2026-09-28"
   },
   {
-    "id": "wd-Q11414229",
-    "name": {
-      "ja": "吉良川町",
-      "kana": "きらがわちょう",
-      "romaji": "Kiragawacho",
-      "zh_tw": "吉良川町",
-      "en": "Kiragawacho"
-    },
-    "kana_source": "wikidata",
-    "location": {
-      "lat": 33.331353,
-      "lng": 134.099067
-    },
-    "prefecture": "kochi",
-    "kind": "major",
-    "themes": [],
-    "tags": [],
-    "featured": false,
-    "score": 57.06,
-    "summary": {
-      "text": "吉良川町（きらがわちょう）は、高知県室戸市北西部にある町丁。",
-      "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E5%90%89%E8%89%AF%E5%B7%9D%E7%94%BA",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
-    },
-    "images": [],
-    "external_ids": {
-      "wikidata": "Q11414229"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q11414229",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
     "id": "wd-Q11418945",
     "name": {
       "ja": "善楽寺",
@@ -11037,75 +10997,6 @@
       },
       {
         "url": "https://ja.wikipedia.org/wiki/%E8%A6%81%E6%B3%95%E5%AF%BA_%28%E9%AB%98%E7%9F%A5%E5%B8%82%29",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
-    "id": "wd-Q3541354",
-    "name": {
-      "ja": "土佐山内家宝物資料館",
-      "zh_tw": "土佐山内家宝物資料館",
-      "en": "Tosa Yamauchi Family Treasury and Archives"
-    },
-    "location": {
-      "lat": 33.5554,
-      "lng": 133.531
-    },
-    "prefecture": "kochi",
-    "kind": "major",
-    "themes": [],
-    "tags": [
-      "博物館"
-    ],
-    "featured": false,
-    "score": 36.89,
-    "summary": {
-      "text": "The Tosa Yamauchi Family Treasury and Archives (土佐山内家宝物資料館, Tosa Yamauchi-ke Hōmotsu Shiryōkan) in Takajō-machi, Kōchi, Kōchi Prefecture, Japan, now permanently closed, formerly housed historical materials related to the Yamauchi clan, rulers of the Tosa Domain.",
-      "lang": "en",
-      "source_url": "https://en.wikipedia.org/wiki/Tosa_Yamauchi_Family_Treasury_and_Archives",
-      "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-29"
-    },
-    "nearest_stations": [
-      {
-        "name": {
-          "ja": "入明",
-          "en": "Iriake"
-        },
-        "distance_m": 1320
-      },
-      {
-        "name": {
-          "ja": "円行寺口",
-          "kana": "えんぎょうじぐち",
-          "romaji": "Engyo Jiguchi",
-          "en": "Engyōjiguchi"
-        },
-        "distance_m": 1490
-      }
-    ],
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/80/080228_Tosa_Yamauchi_Family_Treasury_and_Archives_Kochi_Japan01s3.jpg/960px-080228_Tosa_Yamauchi_Family_Treasury_and_Archives_Kochi_Japan01s3.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "663highland",
-        "license": "CC BY 2.5",
-        "source_url": "https://commons.wikimedia.org/wiki/File:080228_Tosa_Yamauchi_Family_Treasury_and_Archives_Kochi_Japan01s3.jpg"
-      }
-    ],
-    "external_ids": {
-      "wikidata": "Q3541354",
-      "osm": "node/1423732303"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q3541354",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://www.openstreetmap.org/node/1423732303",
         "fetched_at": "2026-09-28"
       }
     ],
