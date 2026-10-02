@@ -231,7 +231,7 @@ const visitedShort = computed(() => {
         role="group"
         aria-label="加入行程"
       >
-        <div class="scroll-quiet flex flex-col overflow-y-auto">
+        <div class="scroll-quiet flex flex-col overflow-y-auto overscroll-contain">
           <div v-for="t in openTrips" :key="t.id" class="flex min-h-tap items-center gap-2 rounded-control px-2.5">
             <span class="min-w-0 flex-1 truncate text-body-sm">{{ t.name || '未命名行程' }}</span>
             <template v-if="hasSpot(t, spot.id)">
@@ -263,6 +263,7 @@ const visitedShort = computed(() => {
             :maxlength="TRIP_NAME_MAX"
             placeholder="新行程名稱"
             aria-label="新行程名稱"
+            enterkeyhint="done"
             class="h-10 min-w-0 flex-1 rounded-control border border-line bg-paper px-2.5 text-body-sm text-ink outline-none placeholder:text-sub focus:border-region-strong"
           />
           <button
@@ -282,7 +283,7 @@ const visitedShort = computed(() => {
         role="group"
         aria-label="加入清單"
       >
-        <div class="scroll-quiet flex flex-col overflow-y-auto">
+        <div class="scroll-quiet flex flex-col overflow-y-auto overscroll-contain">
           <label
             v-for="l in marks.lists"
             :key="l.id"
@@ -305,6 +306,7 @@ const visitedShort = computed(() => {
             :maxlength="LIST_NAME_MAX"
             placeholder="新清單名稱"
             aria-label="新清單名稱"
+            enterkeyhint="done"
             class="h-10 min-w-0 flex-1 rounded-control border border-line bg-paper px-2.5 text-body-sm text-ink outline-none placeholder:text-sub focus:border-region-strong"
           />
           <button

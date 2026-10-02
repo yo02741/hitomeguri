@@ -96,7 +96,7 @@ watch(active, async () => {
       :aria-activedescendant="`${id}-${active}`"
       tabindex="-1"
       :data-pref="pref"
-      class="scroll-quiet fixed z-[80] flex max-h-72 min-w-32 animate-pop-in flex-col overflow-y-auto rounded-card border border-line bg-paper p-1 shadow-float outline-none"
+      class="scroll-quiet fixed z-[80] flex max-h-72 min-w-32 animate-pop-in flex-col overflow-y-auto overscroll-contain rounded-card border border-line bg-paper p-1 shadow-float outline-none"
       :style="style"
       @keydown="onPanelKey"
     >

@@ -40,6 +40,7 @@ async function create() {
             type="text"
             :maxlength="TRIP_NAME_MAX"
             placeholder="例：京都・宇治 3 天"
+            enterkeyhint="go"
             class="h-11 rounded-control border border-line bg-paper px-3 text-body-sm text-ink outline-none placeholder:text-sub focus:border-region-strong"
           />
         </label>

@@ -62,6 +62,7 @@ async function del() {
             type="text"
             :maxlength="LIST_NAME_MAX"
             aria-label="清單名稱"
+            enterkeyhint="done"
             class="h-11 min-w-0 flex-1 rounded-control border border-region-strong bg-paper px-3 text-body text-ink outline-none"
             @keydown.esc="editing = false"
           />

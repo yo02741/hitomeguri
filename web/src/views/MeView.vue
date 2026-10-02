@@ -75,6 +75,7 @@ async function logOut() {
             :maxlength="LIST_NAME_MAX"
             placeholder="新清單名稱"
             aria-label="新清單名稱"
+            enterkeyhint="done"
             class="h-11 min-w-0 flex-1 rounded-control border border-line bg-paper px-3 text-body-sm text-ink outline-none placeholder:text-sub focus:border-region-strong"
           />
           <button

@@ -117,7 +117,7 @@ function distance(m: number): string {
   <section
     v-if="spot"
     :data-pref="spot.prefecture"
-    class="flex h-full flex-col overflow-y-auto bg-paper text-ink"
+    class="flex h-full flex-col overflow-y-auto overscroll-contain bg-paper text-ink"
     aria-label="景點"
   >
     <div class="photo-frame relative h-[170px] shrink-0 overflow-hidden bg-placeholder">

@@ -567,6 +567,9 @@ header 右側、登入鈕左邊（`SearchBox.vue`，每一頁都在；在行程�
 - Focus ring：2px `--region-strong`＋2px offset（`theme.css` 全域設定），不可移除。
 - 擴充包開關、tab、toggle 要有 `aria-pressed` 或 `aria-selected`。
 - 顏色不是唯一辨識：主題靠符號形狀、自訂地點靠虛線與「自訂」標籤、去過靠印章。
+- 觸控裝置（`pointer: coarse`）的輸入框至少 16px（`theme.css` 把 caption／label／body-sm／body 字級的欄位蓋成 1rem），iOS 聚焦時才不會放大整頁；viewport 不加 `maximum-scale`。單一欄位的表單加 `enterkeyhint`（新增清單、行程名稱 `done`，建立行程 `go`，搜尋 `search`）。
+- 按鈕、`role=button`、分頁、`summary` 長按不選字、不跳系統選單（`theme.css` base 的 `user-select: none`、`-webkit-touch-callout: none`）；label 與內容文字照常可以選。
+- 浮動或內層的捲動區（景點卡片、擴充包卡片、下拉、搜尋結果、規則對話框、加入行程／清單的選單）加 `overscroll-contain`，捲到底不帶動後面的頁面或地圖。
 
 ---
 

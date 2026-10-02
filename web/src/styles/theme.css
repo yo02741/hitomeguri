@@ -258,6 +258,15 @@
   label[for] {
     cursor: pointer;
   }
+  /* 長按按鈕、分頁、chip 不選字、不跳系統選單（DESIGN.md §10）；label 與內容文字（地址、名稱）照常可以選 */
+  button,
+  [role='button'],
+  [role='tab'],
+  summary {
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
+  }
   @media (prefers-reduced-motion: reduce) {
     /* 依序出現的延遲也拿掉：不然 fill-mode both 的項目在延遲結束前一直是透明的 */
     *, *::before, *::after {
@@ -266,6 +275,14 @@
       transition-duration: 0.01ms !important;
       transition-delay: 0s !important;
     }
+  }
+}
+
+/* 觸控裝置的輸入框至少 16px（DESIGN.md §10）：iOS Safari 聚焦小於 16px 的欄位會放大整頁。
+ * 放在 @layer 外面才蓋得過 utilities 的字級；只動四個小字級，行程名稱（text-h3）不受影響 */
+@media (pointer: coarse) {
+  :is(input:not([type='checkbox'], [type='radio'], [type='range'], [type='file'], [type='color']), textarea, select):is(.text-caption, .text-label, .text-body-sm, .text-body) {
+    font-size: 1rem;
   }
 }
 
