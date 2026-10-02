@@ -27,7 +27,7 @@ const PREF_ORDER = new Map(regions.map((r, i) => [r.prefecture, i]))
 export function useMarkedSpots(entries: () => Array<[string, Mark]>) {
   const catalog = useCatalogStore()
   const prefs = computed(() => [...new Set(entries().map(([, m]) => m.pref))])
-  watch(prefs, (ps) => ps.forEach((p) => void catalog.loadMap(p)), { immediate: true })
+  watch(prefs, (ps) => ps.forEach((p) => void catalog.loadMap(p).catch(() => {})), { immediate: true })
 
   // 擴充包的點（去過的城、老舖…）：載入所屬擴充包
   const packs = computed(() => [...new Set(entries().map(([id]) => packOfId(id)).filter((k): k is string => !!k))])

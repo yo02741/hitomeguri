@@ -50,7 +50,7 @@ async function logOut() {
           <ExportButtons class="ml-auto" title="ひとめぐり 收藏" :rows="favorites.map(markRow)" />
         </div>
         <MarkedSpotList v-if="favorites.length" :rows="favorites" :loading="loading" visit-toggle />
-        <p v-else-if="marks.loaded" class="text-body-sm text-sub">還沒有收藏的地方</p>
+        <p v-else-if="marks.loaded" class="flex flex-wrap items-center gap-x-3 text-body-sm text-sub">還沒有收藏的地方<RouterLink to="/" class="inline-flex min-h-tap items-center font-bold text-region-strong">到地圖找地方</RouterLink></p>
       </section>
 
       <section class="flex flex-col gap-3" aria-labelledby="lists-title">

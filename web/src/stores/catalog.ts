@@ -34,6 +34,8 @@ export const useCatalogStore = defineStore('catalog', () => {
   const index = shallowRef<BundleIndex | null>(null)
   const mapSpots = shallowRef<Record<string, MapSpot[]>>({})
   const details = shallowRef<Record<string, Record<string, Spot>>>({})
+  /** 地圖 bundle 讀取失敗的縣（清單顯示「讀不到」與重試；重試成功就拿掉） */
+  const mapFailed = shallowRef(new Set<string>())
   const prefOfSpot = new Map<string, string>()
   const pending = new Map<string, Promise<unknown>>()
 
@@ -64,12 +66,28 @@ export const useCatalogStore = defineStore('catalog', () => {
     if (!meta) return []
     if (mapSpots.value[pref]) return mapSpots.value[pref]
     return once(`map:${pref}`, async () => {
-      const spots = await fetchMap(pref, meta.version)
+      let spots: MapSpot[]
+      try {
+        spots = await fetchMap(pref, meta.version)
+      } catch (e) {
+        mapFailed.value.add(pref)
+        triggerRef(mapFailed)
+        throw e
+      }
+      if (mapFailed.value.delete(pref)) triggerRef(mapFailed)
       for (const s of spots) prefOfSpot.set(s.id, pref)
       mapSpots.value[pref] = spots
       triggerRef(mapSpots)
       return spots
     })
+  }
+
+  /** 一個縣的景點清單：讀取中、讀取失敗（可重試）、讀好了（可能沒有景點） */
+  function mapState(pref: string): 'loading' | 'failed' | 'ready' {
+    if (mapSpots.value[pref]) return 'ready'
+    if (mapFailed.value.has(pref)) return 'failed'
+    if (index.value && !index.value.prefectures[pref]) return 'ready'
+    return 'loading'
   }
 
   /** 各縣精選：首頁與還沒載入完整地圖 bundle 的縣用這份 */
@@ -268,7 +286,7 @@ export const useCatalogStore = defineStore('catalog', () => {
   return {
     loadSearch,
     index, mapSpots, featured, loadFeatured, details, specialties, flights, seasons, festivals, loadFestivals, rail, loadRail, loadExtras, loadFlights, loadIndex, available,
-    loadMap, loadAllMaps, loadDetail, getSpot, packs, loadPack, phrases, loadPhrases, timed, loadTimed,
+    loadMap, mapState, loadAllMaps, loadDetail, getSpot, packs, loadPack, phrases, loadPhrases, timed, loadTimed,
     achv, achvState, loadAchievements,
   }
 })

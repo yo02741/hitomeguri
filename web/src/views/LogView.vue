@@ -332,7 +332,7 @@ function open(id: string) {
           :selected="picking ? selected : null"
           @toggle="toggleRow"
         />
-        <p v-else-if="marks.loaded" class="text-body-sm text-sub">還沒有去過的地方</p>
+        <p v-else-if="marks.loaded" class="flex flex-wrap items-center gap-x-3 text-body-sm text-sub">還沒有去過的地方<RouterLink to="/" class="inline-flex min-h-tap items-center font-bold text-region-strong">到地圖找地方</RouterLink></p>
         <p v-if="marks.error" class="text-caption text-danger" role="alert">{{ marks.error }}</p>
       </section>
     </template>

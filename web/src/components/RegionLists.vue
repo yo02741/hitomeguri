@@ -2,17 +2,29 @@
 import { computed, ref, watch } from 'vue'
 
 import { CATEGORY_GROUPS, categoryGroup } from '../data/categories'
+import { regionOf } from '../data/regions'
 import { mapThumbUrl, type MapSpot } from '../services/bundles'
+import { useCatalogStore } from '../stores/catalog'
 import { useExploreStore } from '../stores/explore'
 import CollapseChevron from './CollapseChevron.vue'
+import SkeletonRows from './SkeletonRows.vue'
 import VisitedToggle from './VisitedToggle.vue'
 
 // 地區的景點清單（全部大點）。地區特色在深度探索頁（views/RegionView.vue）。
 // 類型列可篩選（清單與地圖一起）；不篩選時清單依類型分段排列。
 // 清單與地圖連動：滑過一列在地圖上標出，點選則選取並飛過去。每列右側是「去過」快捷鈕。
-const props = defineProps<{ pref: string; spots: MapSpot[]; selectedId?: string | null }>()
+// 讀取中放佔位；讀不到（旅途中網路不穩）寫出來並可以重試；讀好了真的沒有景點才寫「資料準備中」。
+const props = withDefaults(
+  defineProps<{ pref: string; spots: MapSpot[]; selectedId?: string | null; state?: 'loading' | 'failed' | 'ready' }>(),
+  { selectedId: null, state: 'ready' },
+)
 const emit = defineEmits<{ select: [id: string]; highlight: [id: string | null] }>()
 const explore = useExploreStore()
+const catalog = useCatalogStore()
+const prefName = computed(() => regionOf(props.pref)?.name.zh_tw ?? '')
+function retry() {
+  catalog.loadMap(props.pref).catch(() => {})
+}
 
 const majors = computed(() => props.spots.filter((s) => s.k === 'major').sort((a, b) => b.s - a.s))
 // 依類型分段（CATEGORY_GROUPS 的順序），段內依分數
@@ -34,7 +46,17 @@ const failed = ref(new Set<string>())
 </script>
 
 <template>
-  <section v-if="!majors.length" class="rounded-card bg-paper px-4 py-3 text-body-sm text-sub shadow-float">
+  <section v-if="!majors.length && state === 'loading'" class="rounded-card bg-paper p-1.5 shadow-float">
+    <SkeletonRows :rows="6" thumb />
+  </section>
+  <section
+    v-else-if="!majors.length && state === 'failed'"
+    class="flex flex-wrap items-center gap-x-3 rounded-card bg-paper px-4 py-1.5 text-body-sm text-sub shadow-float"
+  >
+    讀不到{{ prefName }}的景點。
+    <button type="button" class="h-tap px-3 text-body-sm font-bold text-region-strong" @click="retry">重試</button>
+  </section>
+  <section v-else-if="!majors.length" class="rounded-card bg-paper px-4 py-3 text-body-sm text-sub shadow-float">
     資料準備中。
   </section>
   <section v-else class="flex min-h-0 flex-col rounded-card bg-paper p-1.5 shadow-float">

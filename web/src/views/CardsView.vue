@@ -184,7 +184,7 @@ function onCardKey(e: KeyboardEvent, id: string) {
         </dl>
       </div>
 
-      <div role="group" aria-label="篩選" class="flex flex-wrap gap-2">
+      <div v-if="entries.length" role="group" aria-label="篩選" class="flex flex-wrap gap-2">
         <button
           v-for="f in FILTERS"
           :key="f.key"
@@ -228,8 +228,11 @@ function onCardKey(e: KeyboardEvent, id: string) {
         </ul>
       </section>
 
-      <p v-if="marks.loaded && !entries.length" class="text-body-sm text-sub">還沒有去過的地方</p>
-      <p v-else-if="cards.length && !groups.length" class="text-body-sm text-sub">沒有符合的卡片</p>
+      <p v-if="marks.loaded && !entries.length" class="flex flex-wrap items-center gap-x-3 text-body-sm text-sub">還沒有去過的地方<RouterLink to="/" class="inline-flex min-h-tap items-center font-bold text-region-strong">到地圖找地方</RouterLink></p>
+      <p v-else-if="cards.length && !groups.length" class="flex flex-wrap items-center gap-x-3 text-body-sm text-sub">
+        沒有符合的卡片
+        <button type="button" class="inline-flex min-h-tap items-center font-bold text-region-strong" @click="filter = 'all'">看全部</button>
+      </p>
       <p v-if="cards.length" class="text-caption text-sub">照片：Wikimedia Commons，作者與授權在卡片背面。</p>
     </template>
     <p v-else class="text-body-sm text-sub">收藏、行程與紀錄需要登入。</p>

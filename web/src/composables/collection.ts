@@ -33,7 +33,7 @@ export function useCollection(entries: () => Array<[string, Mark]>, datesOf?: (i
   const catalog = useCatalogStore()
   const cardsStore = useCardsStore()
   const prefs = computed(() => [...new Set(entries().map(([, m]) => m.pref))])
-  watch(prefs, (ps) => ps.forEach((p) => void catalog.loadMap(p)), { immediate: true })
+  watch(prefs, (ps) => ps.forEach((p) => void catalog.loadMap(p).catch(() => {})), { immediate: true })
   void catalog.loadPack('castle')
 
   const castleLabel = new Map(packByKey.get('castle')?.groups.map((g) => [g.key, g.label]))

@@ -7,7 +7,7 @@ import { useCatalogStore } from '../stores/catalog'
 export function useCatalogSpots(refs: () => Array<{ id: string; pref: string }>) {
   const catalog = useCatalogStore()
   const prefs = computed(() => [...new Set(refs().map((r) => r.pref))].sort())
-  watch(prefs, (ps) => ps.forEach((p) => void catalog.loadMap(p)), { immediate: true })
+  watch(prefs, (ps) => ps.forEach((p) => void catalog.loadMap(p).catch(() => {})), { immediate: true })
 
   const byId = computed(() => {
     const out = new Map<string, MapSpot>()

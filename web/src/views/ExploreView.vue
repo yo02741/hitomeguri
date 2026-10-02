@@ -85,7 +85,7 @@ const favoritePrefs = computed(() => [...new Set(marks.favorites.map(([, m]) => 
 watch(
   () => [explore.onlyFavorites, favoritePrefs.value] as const,
   ([on, prefs]) => {
-    if (on) prefs.forEach((p) => catalog.loadMap(p))
+    if (on) prefs.forEach((p) => catalog.loadMap(p).catch(() => {}))
   },
   { immediate: true },
 )
@@ -94,7 +94,7 @@ watch(
   () => explore.onlyFavorites,
   async (on) => {
     if (!on) return
-    const spots = (await Promise.all(favoritePrefs.value.map((p) => catalog.loadMap(p))))
+    const spots = (await Promise.all(favoritePrefs.value.map((p) => catalog.loadMap(p).catch(() => [] as MapSpot[]))))
       .flat()
       .filter((s) => marks.marks[s.id]?.favorite)
     const b = spotBounds(spots)
@@ -341,7 +341,8 @@ watch(
       bounds.value = [...JAPAN_BOUNDS]
       return
     }
-    const spots = await trackSplash(catalog.loadMap(pref), 'map-bundle')
+    // 讀不到時清單顯示「讀不到」與重試（RegionLists）；這裡當作沒有景點，不留未處理的 rejection
+    const spots = await trackSplash(catalog.loadMap(pref).catch(() => [] as MapSpot[]), 'map-bundle')
     const target = flyAfterLoad ? spots.find((s) => s.id === flyAfterLoad) : flyAfterLoadPoint ?? undefined
     flyAfterLoad = null
     flyAfterLoadPoint = null
@@ -512,7 +513,7 @@ function onMoveEnd(view: MapViewState) {
   if (view.zoom < CLOSE_SPOT_ZOOM) delete query.spot
   panSwitch = true
   router.replace({ path: target ? `/map/${target}` : '/', query })
-  if (target) catalog.loadMap(target)
+  if (target) catalog.loadMap(target).catch(() => {})
 }
 </script>
 
@@ -595,6 +596,7 @@ function onMoveEnd(view: MapViewState) {
             v-else-if="desktop"
             :pref="pref"
             :spots="prefSpots"
+            :state="catalog.mapState(pref)"
             :selected-id="selectedId"
             class="max-lg:hidden"
             @select="select"
