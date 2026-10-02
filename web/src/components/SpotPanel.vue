@@ -117,7 +117,7 @@ function distance(m: number): string {
         :key="image.url"
         :src="image.url"
         :alt="spot.name.ja"
-        class="kenburns size-full object-cover"
+        class="size-full object-cover"
         referrerpolicy="no-referrer"
         @error="imageFailed = true"
       />
@@ -273,19 +273,4 @@ function distance(m: number): string {
 </template>
 
 <style scoped>
-/* 照片慢慢拉近、平移（Ken Burns），換景點時重新開始；只播一次 */
-.kenburns {
-  animation: kenburns 14s cubic-bezier(0.25, 0.1, 0.25, 1) both;
-  transform-origin: 60% 40%;
-}
-@keyframes kenburns {
-  from {
-    transform: scale(1.14) translate(-2%, 1.5%);
-  }
-}
-@media (prefers-reduced-motion: reduce) {
-  .kenburns {
-    animation: none;
-  }
-}
 </style>

@@ -651,10 +651,10 @@ function nearestSpot(pt: { x: number; y: number }): Hover | null {
   let best: Hover | null = null
   let bestD = Infinity
   for (const f of feats) {
-    const [lng, lat] = (f.geometry as GeoJSON.Point).coordinates as [number, number]
+    const fp = f.properties as { id: string; n: string; i?: string }
+    const [lng, lat] = coordsOf(fp.id) ?? ((f.geometry as GeoJSON.Point).coordinates as [number, number])
     const p = map.project([lng, lat])
     const d = Math.hypot(p.x - pt.x, p.y - pt.y)
-    const fp = f.properties as { id: string; n: string; i?: string }
     const reach = photoPins.has(fp.id) ? PHOTO_PIN / 2 : HOVER_HIT
     if (d > reach || d >= bestD) continue
     bestD = d
@@ -743,6 +743,12 @@ function syncPin() {
 // 照片模式：畫面內有照片的景點各放一個圓形照片 marker（不接收滑鼠事件，點擊仍走地圖）
 const photoPins = new Map<string, maplibregl.Marker>()
 
+/** 景點的座標：queryRenderedFeatures 回傳的幾何是圖磚座標換算的，可能偏掉；一律用資料的 */
+function coordsOf(id: string): [number, number] | undefined {
+  const s = props.spots.find((x) => x.id === id) ?? props.pack?.points.find((p) => p.id === id)
+  return s ? [s.lng, s.lat] : undefined
+}
+
 function syncPhotos() {
   if (!map) return
   const want = new Map<string, { lng: number; lat: number; thumb: string; s: number }>()
@@ -750,7 +756,7 @@ function syncPhotos() {
   for (const f of map.queryRenderedFeatures({ layers: props.pack ? ['selected'] : ['spots', 'selected'] })) {
     const fp = f.properties as { id: string; i?: string; s: number }
     if (!fp.i || failedThumbs.has(fp.i) || want.has(fp.id)) continue
-    const [lng, lat] = (f.geometry as GeoJSON.Point).coordinates as [number, number]
+    const [lng, lat] = coordsOf(fp.id) ?? ((f.geometry as GeoJSON.Point).coordinates as [number, number])
     want.set(fp.id, { lng, lat, thumb: fp.i, s: fp.s })
   }
   const keep = new Set(

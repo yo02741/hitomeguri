@@ -2,6 +2,7 @@
 import { regionOf } from '../data/regions'
 import type { MapSpot } from '../services/bundles'
 import { type Stop, type StopPos, transitUrl } from '../services/trip'
+import Dropdown from './Dropdown.vue'
 
 // 行程某一天（或「待排」）的停留點。拖曳排序／換天，另有「移到」選單與上下移動（觸控、鍵盤用）。
 // 天與天之間的相鄰停留點放 Google Maps 大眾運輸路線連結。
@@ -87,14 +88,15 @@ const isDrop = (idx: number) => props.dropAt?.day === props.day && props.dropAt.
             <span lang="ja" class="ml-1.5 text-caption text-sub">{{ regionOf(s.pref)?.name.ja }}</span>
           </span>
         </button>
-        <select
-          :value="day"
-          :aria-label="`${s.name} 移到`"
-          class="h-8 w-[5.5rem] shrink-0 rounded-control border border-line bg-paper px-1 text-caption text-ink"
-          @change="emit('move', { day, idx: i }, Number(($event.target as HTMLSelectElement).value))"
-        >
-          <option v-for="t in targets" :key="t.value" :value="t.value">{{ t.label }}</option>
-        </select>
+        <Dropdown
+          :model-value="String(day)"
+          :options="targets.map((t) => ({ value: String(t.value), label: t.label }))"
+          :label="`${s.name} 移到`"
+          size="sm"
+          align="end"
+          class="w-[5.5rem]"
+          @update:model-value="emit('move', { day, idx: i }, Number($event))"
+        />
         <span class="flex shrink-0 flex-col">
           <button type="button" :aria-label="`${s.name} 往前`" :disabled="i === 0" class="grid h-4 w-6 place-items-center text-sub hover:text-ink disabled:opacity-30" @click="emit('shift', { day, idx: i }, -1)">
             <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 15l6-6 6 6" /></svg>

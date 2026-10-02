@@ -1,4 +1,6 @@
-"""收集卡的季節照片（DESIGN.md §7.19a）：從景點的 Commons 分類（Wikidata P373）找春夏秋冬的照片。
+"""收集卡的季節、夜景照片（DESIGN.md §7.19a）。
+
+從景點的 Commons 分類（Wikidata P373）找春夏秋冬與夜晚的照片。
 
 1. 子分類名稱有季節字樣的（例：Kiyomizu-dera in autumn、Cherry blossoms at …）→ 取裡面最合適的一張；
 2. 沒有就在主分類的檔名裡找季節字樣。
@@ -19,8 +21,11 @@ from pipeline.paths import SPOTS_DIR
 from pipeline.sources import commons, wikidata
 
 API = commons.API
-SEASONS = ("spring", "summer", "autumn", "winter")
+SEASONS = ("spring", "summer", "autumn", "winter", "night")
 SEASON_RE: dict[str, re.Pattern[str]] = {
+    "night": re.compile(
+        r"\bnights?\b|\bevening\b|illuminat|light[ _-]?up|ライトアップ|夜景|夜", re.I
+    ),
     "spring": re.compile(r"cherry[ _-]?blossoms?|sakura|\bspring\b|桜|春", re.I),
     "summer": re.compile(r"\bsummer\b|夏", re.I),
     "autumn": re.compile(r"\bautumn\b|fall[ _]foliage|\bfall\b|紅葉|momiji|秋", re.I),
@@ -33,9 +38,10 @@ NOT_SEASON = re.compile(
 
 
 def season_of(title: str) -> str | None:
+    """標題屬於哪一季或夜景；「Autumn illumination」這種算夜景（夜景優先）。"""
     if NOT_SEASON.search(title):
         return None
-    for s in SEASONS:
+    for s in ("night", *SEASONS[:4]):
         if SEASON_RE[s].search(title):
             return s
     return None

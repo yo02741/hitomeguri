@@ -17,6 +17,8 @@ const burstKind = computed(() => {
   const v = r.value?.variant?.kind
   if (v === 'special') return 'rainbow'
   if (v === 'gold') return 'gold'
+  if (v === 'silver') return 'silver'
+  if (v && v !== 'base' && v !== 'season') return 'castle'
   return r.value?.rarity ?? 'normal'
 })
 const visitedOn = computed(() => (r.value ? (marks.markOf(r.value.face.id)?.visited_on ?? null) : null))
@@ -31,7 +33,7 @@ let intro: Animation[] = []
 let timers: number[] = []
 let leaving = false
 
-const HOLD: Record<string, number> = { rainbow: 2600, gold: 2300, castle: 2300, normal: 1900 }
+const HOLD: Record<string, number> = { rainbow: 2600, gold: 2300, silver: 2300, castle: 2300, normal: 1900 }
 // 有縣的紀念章時多停一下
 const STAMP_HOLD = 700
 
@@ -197,6 +199,9 @@ onBeforeUnmount(() => {
 }
 .burst-castle {
   --ray: color-mix(in oklab, var(--region-accent) 80%, transparent);
+}
+.burst-silver {
+  --ray: color-mix(in oklab, var(--color-silver-1) 85%, transparent);
 }
 .burst-gold {
   --ray: color-mix(in oklab, var(--color-gold-2) 85%, transparent);

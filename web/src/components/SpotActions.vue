@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { computed, nextTick, onBeforeUnmount, ref, watch } from 'vue'
+import Dropdown from './Dropdown.vue'
 
 import { useStampPress } from '../composables/stampPress'
 import { dayDate, hasSpot, shortDate, TRIP_NAME_MAX, tripStatus } from '../services/trip'
@@ -237,15 +238,13 @@ const visitedShort = computed(() => {
               <span class="shrink-0 text-caption text-sub">已加入</span>
             </template>
             <template v-else>
-              <select
-                :value="target[t.id] ?? ''"
-                :aria-label="`加入「${t.name || '未命名行程'}」的哪一天`"
-                class="h-9 shrink-0 rounded-control border border-line bg-paper px-1.5 text-caption text-ink"
-                @change="target = { ...target, [t.id]: ($event.target as HTMLSelectElement).value }"
-              >
-                <option value="">待排</option>
-                <option v-for="(_, i) in t.days" :key="i" :value="String(i)">{{ dayLabel(t, i) }}</option>
-              </select>
+              <Dropdown
+                :model-value="target[t.id] ?? ''"
+                :options="[{ value: '', label: '待排' }, ...t.days.map((_, i) => ({ value: String(i), label: dayLabel(t, i) }))]"
+                :label="`加入「${t.name || '未命名行程'}」的哪一天`"
+                size="sm"
+                @update:model-value="target = { ...target, [t.id]: $event }"
+              />
               <button
                 type="button"
                 class="h-9 shrink-0 rounded-control border border-line bg-paper px-2.5 text-caption text-ink hover:bg-surface"

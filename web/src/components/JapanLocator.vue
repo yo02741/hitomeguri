@@ -46,7 +46,6 @@ const name = computed(() => regionOf(props.pref)?.name.ja ?? '')
       <path v-for="p in shape.paths" :key="p.pref" :d="p.d" :data-pref="p.pref === pref ? p.pref : undefined" class="pref" :class="{ 'is-here': p.pref === pref }" />
       <g class="here">
         <template v-if="view.tiny">
-          <circle :cx="view.cx" :cy="view.cy" r="7" class="ring" />
           <circle :cx="view.cx" :cy="view.cy" r="3" class="dot" />
         </template>
         <rect v-else :x="view.x" :y="view.y" :width="view.width" :height="view.height" rx="1.2" class="frame" />
@@ -92,23 +91,5 @@ const name = computed(() => regionOf(props.pref)?.name.ja ?? '')
   fill: var(--frame);
   stroke: var(--region-paper);
   stroke-width: 1.2;
-}
-.ring {
-  fill: none;
-  stroke: var(--frame);
-  stroke-width: 1.4;
-  transform-box: fill-box;
-  transform-origin: center;
-  animation: locator-ring 2s var(--ease-out-soft) infinite;
-}
-@keyframes locator-ring {
-  from {
-    transform: scale(0.5);
-    opacity: 1;
-  }
-  to {
-    transform: scale(1.6);
-    opacity: 0;
-  }
 }
 </style>

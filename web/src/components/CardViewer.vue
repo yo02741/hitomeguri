@@ -8,6 +8,7 @@ import { reveal, showReveal } from '../services/cardReveal'
 import { BASE_VARIANT, randomDraw, UNLIMITED_DRAWS, type Variant } from '../services/cardVariants'
 import { todayIso } from '../services/userdb'
 import { useCardsStore } from '../stores/cards'
+import PackOpening, { type Pull } from './PackOpening.vue'
 import SpotCard from './SpotCard.vue'
 
 // 收集卡放大檢視（DESIGN.md §7.19）：畫面中央一張大卡，點卡片翻面；手機可以用傾斜角度讓卡片轉動。
@@ -40,6 +41,28 @@ function drawAgain() {
   drawnKey = top.key
   void cards.add(props.card.id, drawn)
   showReveal({ face: props.card, rarity: props.rarity, label: props.label ?? '', number: props.number ?? '', variant: top })
+}
+// 十連抽：抽十次包成一包，用開卡包的方式翻開
+const tenPull = ref<Pull[] | null>(null)
+function drawTen() {
+  const draws = Array.from({ length: 10 }, () => randomDraw(props.rarity, todayIso()))
+  void cards.add(props.card.id, draws.flat())
+  tenPull.value = draws.map((d) => ({
+    face: props.card,
+    rarity: props.rarity,
+    label: props.label ?? '',
+    number: props.number ?? '',
+    visitedOn: props.visitedOn ?? null,
+    variant: [...d].sort((a, b) => b.rank - a.rank)[0]!,
+  }))
+}
+function closeTenPull() {
+  const best = tenPull.value?.map((p) => p.variant).sort((a, b) => b.rank - a.rank)[0]
+  tenPull.value = null
+  if (!best) return
+  const i = props.variants?.findIndex((v) => v.key === best.key) ?? -1
+  if (i >= 0) vi.value = i
+  else drawnKey = best.key
 }
 // 抽完樣式清單更新時，切到剛抽到的那種
 watch(
@@ -86,8 +109,8 @@ async function startGyro() {
   gyro.value = await tilt.useGyro()
 }
 function onKey(e: KeyboardEvent) {
-  // 新卡入手正在亮相時，Esc 只收起那張，不關檢視器
-  if (reveal.value) return
+  // 新卡入手正在亮相、十連抽的卡包開著時，Esc 只關那一層
+  if (reveal.value || tenPull.value) return
   if (e.key === 'Escape') emit('close')
   else if (e.key === 'ArrowRight') step(1)
   else if (e.key === 'ArrowLeft') step(-1)
@@ -215,6 +238,9 @@ onBeforeUnmount(() => document.removeEventListener('keydown', onKey))
         <button v-if="canDraw" type="button" class="h-10 rounded-full bg-paper px-4 text-label font-bold text-ink" @click="drawAgain">
           再抽一張
         </button>
+        <button v-if="canDraw" type="button" class="h-10 rounded-full bg-paper px-4 text-label font-bold text-ink" @click="drawTen">
+          十連抽
+        </button>
         <button type="button" class="h-10 rounded-full bg-paper px-4 text-label font-bold text-ink" @click="flipped = !flipped">
           {{ flipped ? '正面' : '背面' }}
         </button>
@@ -230,6 +256,7 @@ onBeforeUnmount(() => document.removeEventListener('keydown', onKey))
         </button>
       </div>
     </div>
+    <PackOpening v-if="tenPull" :pulls="tenPull" :title="`${card.name.ja}　十連抽`" @close="closeTenPull" />
   </Teleport>
 </template>
 

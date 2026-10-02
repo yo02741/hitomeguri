@@ -75,7 +75,7 @@ export interface CardFace {
   /** 第二張照片（全景卡用；沒有就用第一張） */
   altImage?: { url: string; author?: string; license?: string }
   /** 季節照片（DESIGN.md §7.19a）：季節卡、全景、金箔、特別全景依抽到的季節換照片 */
-  seasonImages?: Partial<Record<'spring' | 'summer' | 'autumn' | 'winter', { url: string; author?: string; license?: string }>>
+  seasonImages?: Partial<Record<'spring' | 'summer' | 'autumn' | 'winter' | 'night', { url: string; author?: string; license?: string }>>
   /** 類型（寺院、城…） */
   kind?: string
   designation?: string

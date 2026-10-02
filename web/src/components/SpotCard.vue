@@ -30,6 +30,7 @@ const props = withDefaults(
   { label: '', size: 'sm', number: '', visitedOn: null, visited: false, flipped: false, tilt: undefined, variant: () => BASE_VARIANT },
 )
 
+const SPARKLE: Record<string, string> = { gold: 'sparkle-gold', silver: 'sparkle-silver', night: 'sparkle-night' }
 const own = useTilt(props.size === 'lg' ? 16 : 12)
 const t = computed(() => props.tilt ?? own)
 
@@ -49,7 +50,9 @@ const PATTERN_CLASS: Record<string, string> = {
 // 照片：小卡用 500px 縮圖；縮圖取不到時改用原網址，再不行就退回紋樣
 const tries = ref(0)
 // 全景卡（全景、特別全景）照片鋪滿整張卡，有第二張照片時用第二張
-const fullArt = computed(() => props.variant.kind === 'full' || props.variant.kind === 'special')
+const fullArt = computed(() => ['full', 'special', 'night'].includes(props.variant.kind))
+// 夜景卡沒有夜景照片時，照片用 CSS 壓暗
+const noNightPhoto = computed(() => props.variant.kind === 'night' && !props.card.seasonImages?.night)
 // 不是基本卡的照片（DESIGN.md §7.19a）：抽到那個季節的照片 → 第二張照片 → 其他季節的照片 → 基本卡的照片
 const photo = computed(() => {
   const c = props.card
@@ -94,7 +97,7 @@ const sizeClass = { sm: 'text-[10px]', lg: 'text-[16px]', fluid: 'fluid' }
   >
     <div
       class="card relative aspect-[5/7] w-[20em]"
-      :class="[{ 'is-flipped': flipped, 'full-art': fullArt }, `rarity-${rarity}`, `v-${variant.kind}`, variant.season ? `season-${variant.season}` : '']"
+      :class="[{ 'is-flipped': flipped, 'full-art': fullArt, 'no-night-photo': noNightPhoto }, `rarity-${rarity}`, `v-${variant.kind}`, variant.season ? `season-${variant.season}` : '']"
       :data-pref="card.pref"
     >
       <!-- 正面 -->
@@ -158,16 +161,26 @@ const sizeClass = { sm: 'text-[10px]', lg: 'text-[16px]', fluid: 'fluid' }
           <span v-if="card.name.romaji" class="truncate font-latin text-[0.8em] font-semibold tracking-romaji uppercase">{{ card.name.romaji }}</span>
         </div>
 
-        <div class="card-foot relative flex items-center gap-[0.5em] border-t border-on-region/25 px-[0.2em] pt-[0.45em] text-[0.72em] leading-none">
+        <div class="card-foot relative flex h-[1.9em] shrink-0 items-center gap-[0.5em] border-t border-on-region/25 px-[0.2em] text-[0.72em] leading-none">
           <span>{{ card.kind }}</span>
           <span v-if="variant.kind !== 'base'" class="variant-chip ml-auto rounded-full px-[0.6em] py-[0.2em] font-bold">{{ variant.label }}</span>
           <span class="font-bold" :class="variant.kind === 'base' ? 'ml-auto' : ''">ひとめぐり</span>
         </div>
 
-        <!-- 全景、金箔、特別全景：整張卡的蝕刻紋、虹、亮片 -->
-        <div v-if="variant.kind === 'full' || variant.kind === 'gold' || variant.kind === 'special'" class="etched pointer-events-none absolute inset-0"></div>
+        <!-- 切手：消印 -->
+        <svg v-if="variant.kind === 'stamp'" class="postmark pointer-events-none absolute" viewBox="0 0 100 60" aria-hidden="true">
+          <circle cx="30" cy="30" r="26" fill="none" stroke="currentColor" stroke-width="2.5" />
+          <circle cx="30" cy="30" r="20" fill="none" stroke="currentColor" stroke-width="1.2" />
+          <path d="M58 18q6-5 12 0t12 0 12 0M58 30q6-5 12 0t12 0 12 0M58 42q6-5 12 0t12 0 12 0" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" />
+        </svg>
+        <!-- 全景、夜景、金箔、銀箔、特別全景：整張卡的蝕刻紋、虹、亮片 -->
+        <div v-if="['full', 'gold', 'silver', 'special'].includes(variant.kind)" class="etched pointer-events-none absolute inset-0"></div>
         <div v-if="variant.kind === 'special'" class="foil whole pointer-events-none absolute inset-0"></div>
-        <div v-if="variant.kind === 'special' || variant.kind === 'gold'" class="sparkle whole pointer-events-none absolute inset-0" :class="variant.kind === 'gold' ? 'sparkle-gold' : 'sparkle-cosmos'"></div>
+        <div
+          v-if="['special', 'gold', 'silver', 'night'].includes(variant.kind)"
+          class="sparkle whole pointer-events-none absolute inset-0"
+          :class="SPARKLE[variant.kind] ?? 'sparkle-cosmos'"
+        ></div>
         <div class="glare pointer-events-none absolute inset-0"></div>
       </div>
 
@@ -296,6 +309,17 @@ const sizeClass = { sm: 'text-[10px]', lg: 'text-[16px]', fluid: 'fluid' }
 .sparkle-cosmos {
   --spark: var(--color-glare);
 }
+.sparkle-silver {
+  --spark: var(--color-silver-3);
+}
+/* 夜景：星點，不隨光源移動，傾斜時一閃一閃 */
+.sparkle-night {
+  --spark: var(--color-night-star);
+  mix-blend-mode: screen;
+  background-position: 10% 20%, 60% 70%, 30% 90%;
+  mask-image: linear-gradient(to bottom, #000 0%, transparent 60%);
+  opacity: calc(0.35 + var(--o) * (0.2 + var(--hyp) * 0.45));
+}
 .sparkle-gold {
   --spark: var(--color-gold-3);
 }
@@ -419,7 +443,134 @@ const sizeClass = { sm: 'text-[10px]', lg: 'text-[16px]', fluid: 'fluid' }
   color: var(--color-gold-3);
 }
 
-/* 蝕刻紋：細密的斜線，跟著光源亮起來（全景、金箔、特別全景） */
+/* 銀箔卡：整張銀框 */
+.v-silver .face:not(.back) {
+  background: linear-gradient(
+    135deg,
+    var(--color-silver-2) 0%,
+    var(--color-silver-1) 35%,
+    var(--color-silver-3) 50%,
+    var(--color-silver-1) 65%,
+    var(--color-silver-2) 100%
+  );
+  color: var(--color-shade);
+}
+.v-silver .window {
+  box-shadow: 0 0 0 0.2em var(--color-silver-2);
+}
+.v-silver .card-foot {
+  border-color: color-mix(in oklab, currentColor 35%, transparent);
+}
+.v-silver .variant-chip {
+  background: var(--color-shade);
+  color: var(--color-silver-3);
+}
+.v-silver .etched {
+  mix-blend-mode: soft-light;
+}
+
+/* 夜景卡：夜晚的照片鋪滿，深藍卡面與暗面；沒有夜景照片時把照片壓暗、偏藍 */
+.v-night .face:not(.back) {
+  background: var(--color-night);
+  color: var(--color-glare);
+}
+.v-night .scrim {
+  background:
+    linear-gradient(to bottom, color-mix(in oklab, var(--color-night) 70%, transparent) 0%, transparent 28%),
+    linear-gradient(to top, color-mix(in oklab, var(--color-night) 88%, transparent) 0%, transparent 45%);
+}
+.no-night-photo .window img {
+  filter: brightness(0.5) saturate(0.6) contrast(1.1) sepia(0.2) hue-rotate(190deg);
+}
+.v-night .variant-chip {
+  background: var(--color-night-star);
+  color: var(--color-night);
+}
+
+/* 墨繪卡：照片變水墨，和紙卡面、墨框、墨色文字 */
+.v-sumi .face:not(.back) {
+  background: color-mix(in oklab, var(--color-glare) 88%, var(--region-base));
+  color: var(--region-ink);
+}
+.v-sumi .window {
+  border-radius: 0.1em;
+  box-shadow:
+    0 0 0 0.1em var(--region-ink),
+    0.12em 0.12em 0 0.1em color-mix(in oklab, var(--region-ink) 35%, transparent);
+}
+.v-sumi .window img {
+  filter: grayscale(1) contrast(1.4) brightness(1.08);
+}
+.v-sumi .window::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: var(--region-ink);
+  mix-blend-mode: soft-light;
+  opacity: 0.25;
+}
+.v-sumi .card-foot {
+  border-color: color-mix(in oklab, var(--region-ink) 40%, transparent);
+}
+.v-sumi .variant-chip {
+  background: var(--region-ink);
+  color: var(--color-glare);
+}
+
+/* 切手卡：白邊、四邊齒孔、照片窗外一圈地區色、消印 */
+.v-stamp {
+  border-radius: 0;
+}
+.v-stamp .face {
+  border-radius: 0;
+  background: var(--color-glare);
+  color: var(--region-ink);
+  padding: 0.95em;
+  mask-image:
+    linear-gradient(#000, #000),
+    radial-gradient(circle, #000 0.22em, transparent 0.24em),
+    radial-gradient(circle, #000 0.22em, transparent 0.24em),
+    radial-gradient(circle, #000 0.22em, transparent 0.24em),
+    radial-gradient(circle, #000 0.22em, transparent 0.24em);
+  mask-size:
+    100% 100%,
+    0.72em 0.72em,
+    0.72em 0.72em,
+    0.72em 0.72em,
+    0.72em 0.72em;
+  mask-repeat: no-repeat, repeat-x, repeat-x, repeat-y, repeat-y;
+  mask-position:
+    0 0,
+    0.36em -0.36em,
+    0.36em calc(100% + 0.36em),
+    -0.36em 0.36em,
+    calc(100% + 0.36em) 0.36em;
+  mask-composite: exclude;
+}
+.v-stamp .window {
+  border-radius: 0;
+  box-shadow: 0 0 0 0.12em var(--region-base);
+}
+.v-stamp .card-foot {
+  border-color: color-mix(in oklab, var(--region-ink) 40%, transparent);
+}
+.v-stamp .variant-chip {
+  background: var(--region-strong);
+  color: var(--color-glare);
+}
+.postmark {
+  right: -0.3em;
+  bottom: 2.1em;
+  width: 9em;
+  color: var(--region-ink);
+  opacity: 0.6;
+  transform: rotate(-12deg);
+  mix-blend-mode: multiply;
+}
+
+/* 蝕刻紋：細密的斜線，跟著光源亮起來（全景、金箔、銀箔、特別全景） */
 .etched {
   border-radius: inherit;
   mix-blend-mode: overlay;

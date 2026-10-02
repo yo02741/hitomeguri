@@ -46,6 +46,9 @@ class Summary(StrictModel):
     fetched_at: str
 
 
+PhotoKey = Literal["spring", "summer", "autumn", "winter", "night"]
+
+
 class Image(StrictModel):
     url: str
     author: str
@@ -107,8 +110,8 @@ class Spot(StrictModel):
     stay_minutes: int | None = None
     nearest_stations: list[NearestStation] | None = None
     images: list[Image] = Field(default_factory=list)
-    # 收集卡的季節照片（Commons，pipeline/season_photos.py）；查過沒有時是空的 dict
-    season_images: dict[Literal["spring", "summer", "autumn", "winter"], Image] | None = None
+    # 收集卡的季節、夜景照片（Commons，pipeline/season_photos.py）；查過沒有時是空的 dict
+    season_images: dict[PhotoKey, Image] | None = None
     external_ids: ExternalIds = Field(default_factory=ExternalIds)
     sources: list[Source] = Field(default_factory=list)
     goshuin: Goshuin | None = None

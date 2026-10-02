@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { computed, nextTick, onBeforeUnmount, ref, watch } from 'vue'
+import Dropdown from './Dropdown.vue'
 
 import { prepareImage, type PreparedImage } from '../services/image'
 import { tripStatus } from '../services/trip'
@@ -32,6 +33,7 @@ const tripOptions = computed(() =>
   trips.sorted.filter((t) => tripStatus(t, todayIso()) !== 'done' || t.id === trip.value || t.id === props.tripId),
 )
 const brandOptions = computed(() => [...new Set([...finds.brands, '7-11', '全家', 'LAWSON', '麥當勞'])])
+const brandSuggestions = computed(() => brandOptions.value.filter((b) => b !== brand.value && (!brand.value || b.startsWith(brand.value))).slice(0, 8))
 
 watch(
   () => props.open,
@@ -195,13 +197,21 @@ function close() {
           <input
             v-model="brand"
             type="text"
-            list="find-brands"
             :maxlength="FIND_LIMITS.brand"
             class="h-10 rounded-control border border-line bg-paper px-3 text-body-sm text-ink outline-none focus:border-region-strong"
           />
-          <datalist id="find-brands">
-            <option v-for="b in brandOptions" :key="b" :value="b" />
-          </datalist>
+          <!-- 用過的品牌：點了帶入（取代原生 datalist） -->
+          <span v-if="brandSuggestions.length" class="flex flex-wrap gap-1.5 pt-1">
+            <button
+              v-for="b in brandSuggestions"
+              :key="b"
+              type="button"
+              class="h-7 rounded-full border border-line bg-paper px-2.5 text-caption text-ink hover:bg-surface"
+              @click="brand = b"
+            >
+              {{ b }}
+            </button>
+          </span>
         </label>
         <label class="flex flex-col gap-1 text-caption text-sub">
           品項
@@ -223,13 +233,12 @@ function close() {
         </label>
         <label v-if="tripOptions.length" class="flex flex-col gap-1 text-caption text-sub">
           行程
-          <select
+          <Dropdown
             v-model="trip"
-            class="h-10 rounded-control border border-line bg-paper px-2.5 text-body-sm text-ink outline-none focus:border-region-strong"
-          >
-            <option value="">不指定</option>
-            <option v-for="t in tripOptions" :key="t.id" :value="t.id">{{ t.name || '未命名行程' }}</option>
-          </select>
+            :options="[{ value: '', label: '不指定' }, ...tripOptions.map((t) => ({ value: t.id, label: t.name || '未命名行程' }))]"
+            label="行程"
+            class="w-full"
+          />
         </label>
         <p v-if="finds.error" class="text-caption text-danger" role="alert">{{ finds.error }}</p>
       </div>

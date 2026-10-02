@@ -7,6 +7,8 @@ def test_season_of():
     assert sp.season_of("Kiyomizu-dera in autumn") == "autumn"
     assert sp.season_of("Cherry blossoms at Himeji Castle") == "spring"
     assert sp.season_of("Kinkaku-ji in snow") == "winter"
+    assert sp.season_of("Kiyomizu-dera at night") == "night"
+    assert sp.season_of("Autumn illumination at Kodai-ji") == "night"
     assert sp.season_of("Hot springs in Beppu") is None
     assert sp.season_of("Kasuga-taisha") is None
     assert sp.season_of("Kegon Falls") is None
@@ -41,11 +43,15 @@ def test_best_prefers_large_landscape_jpeg():
 
 def test_find_season_photos(monkeypatch):
     def fake_subcats(cat: str) -> list[str]:
-        return ["Kiyomizu-dera in autumn", "Kiyomizu-dera at night"]
+        return ["Kiyomizu-dera in autumn", "Kiyomizu-dera at night", "Kiyomizu-dera interior"]
 
     def fake_files(cat: str, limit: int = 50) -> list[dict[str, Any]]:
         if cat == "Kiyomizu-dera in autumn":
             return [_file("Kiyomizu autumn leaves.jpg")]
+        if cat == "Kiyomizu-dera at night":
+            return [_file("Kiyomizu-dera illumination 2018.jpg")]
+        if cat == "Kiyomizu-dera interior":
+            return []
         return [
             _file("Kiyomizu sakura 2019.jpg"),
             _file("Kiyomizu main.jpg"),
@@ -55,6 +61,7 @@ def test_find_season_photos(monkeypatch):
     monkeypatch.setattr(sp, "subcategories", fake_subcats)
     monkeypatch.setattr(sp, "files_in", fake_files)
     got = sp.find_season_photos("Kiyomizu-dera", "Kiyomizu main.jpg")
-    assert set(got) == {"autumn", "spring"}
+    assert set(got) == {"autumn", "spring", "night"}
+    assert got["night"]["source_url"].endswith("illumination_2018.jpg") or "illumination" in got["night"]["source_url"]
     assert got["autumn"]["author"] == "Someone"
     assert got["spring"]["source_url"].endswith("Kiyomizu sakura 2019.jpg")
