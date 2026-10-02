@@ -9,7 +9,7 @@
 3. 標了「描繪：這個景點」的檔案，檔名或分類有季節字樣的。
 只收拍得到景點的：要「描繪」標的是這個景點，或檔名有景點名稱
 （只在「姬路城的櫻花」分類裡、檔名只寫 sakura 的不算）。
-檔名像特寫、室內、看板、地圖的扣分；
+畫、版畫、明信片、館藏掃描、老照片不收；檔名像特寫、室內、看板、地圖、人潮的扣分；
 Commons 的優質圖片（Quality images）、精選圖片（Featured pictures）加分。
 JPEG、寬 1000px 以上、橫幅（寬高比 1.2–2.1）。分數最高的一張；沒有合格的就不放（寧缺勿濫）。
 照片一律附作者、授權、Commons 頁面網址（卡片背面顯示）。只動 data/spots 的 season_images 欄位。
@@ -186,6 +186,16 @@ DETAIL = re.compile(
     r"information[ _]board|\bomamori\b|\bema\b|goshuin|stamp|poster|内部|看板|案内",
     re.I,
 )
+# 不是現代的照片：畫、版畫、明信片、館藏掃描、老照片
+NOT_PHOTO = re.compile(
+    r"painting|\bprints?\b|ukiyo|woodblock|illustration|drawing|engraving|lithograph|postcard|"
+    r"\bDPLA\b|library of congress|\bLOC\b|NYPL|brooklyn museum|rijksmuseum|"
+    r"metropolitan museum|smithsonian|hiroshige|hokusai|"
+    r"\b1[0-8]\d\d\b|\b19[0-6]\d\b|浮世絵|錦絵|版画|絵葉書|名所江戸|名所図会|百景|三十六景|岷雪",
+    re.I,
+)
+# 人潮、遊客是主角
+CROWD = re.compile(r"crowd|throngs?|tourists|people|visitors|人出|混雑", re.I)
 QUALITY = {
     "Category:Featured pictures on Wikimedia Commons": 50,
     "Category:Quality images": 40,
@@ -217,6 +227,8 @@ def score(
     relevant = f["title"] in depicts or mentions(f["title"], toks)
     if not relevant or not usable(f):
         return None
+    if NOT_PHOTO.search(f["title"]) or any(NOT_PHOTO.search(c) for c in f.get("cats", [])):
+        return None
     sc = 0.0
     if f["title"] in depicts:
         sc += 50
@@ -225,6 +237,8 @@ def score(
     sc += quality.get(f["title"], 0)
     if DETAIL.search(f["title"]):
         sc -= 60
+    if CROWD.search(f["title"]):
+        sc -= 25
     sc += min(10.0, f["width"] * f["height"] / 1e6)
     if 1.3 <= f["width"] / f["height"] <= 1.8:
         sc += 5

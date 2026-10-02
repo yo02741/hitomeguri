@@ -62,6 +62,16 @@ def test_score_requires_the_spot():
     )
     assert near is not None and far is not None and qi is not None
     assert near < 40 <= far < qi
+    # 畫、老照片不收；人潮扣分
+    fuji = sp.name_tokens("Mount Fuji", "富士山")
+    assert sp.score(_file("Minsetsu Fuji 1767.jpg"), fuji, {"Minsetsu Fuji 1767.jpg"}, {}) is None
+    assert sp.score(_file("Mt. Fuji framed by cherry blossoms - DPLA.jpg"), fuji, set(), {}) is None
+    assert (
+        sp.score({**_file("Fuji view.jpg"), "cats": ["Ukiyo-e of Mount Fuji"]}, fuji, set(), {})
+        is None
+    )
+    crowd = sp.score(_file("Crowds walking to Himeji Castle in spring.jpg"), toks, set(), {})
+    assert crowd is not None and far is not None and crowd < far
 
 
 def test_find_season_photos(monkeypatch):
