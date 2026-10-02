@@ -131,8 +131,10 @@ export const useCatalogStore = defineStore('catalog', () => {
   /** 地區特色、航線、季節：深度探索與旅前準備用（specialties 約 1.8 MB，首頁、地圖頁不載） */
   async function loadExtras(): Promise<void> {
     if (extrasLoaded) return
+    await loadIndex()
+    const v = index.value?.extras ?? {}
     await once('extras', async () => {
-      const [s, f, se] = await Promise.all([fetchSpecialties(), flightsLoaded ? flights.value : fetchFlights(), fetchSeasons()])
+      const [s, f, se] = await Promise.all([fetchSpecialties(v.specialties), flightsLoaded ? flights.value : fetchFlights(v.flights), fetchSeasons(v.seasons)])
       specialties.value = s
       flights.value = f
       seasons.value = se
@@ -142,8 +144,9 @@ export const useCatalogStore = defineStore('catalog', () => {
   /** 只要航線（地區標籤的直飛航線） */
   async function loadFlights(): Promise<void> {
     if (flightsLoaded) return
+    await loadIndex()
     await once('flights', async () => {
-      flights.value = await fetchFlights()
+      flights.value = await fetchFlights(index.value?.extras?.flights)
       flightsLoaded = true
     })
   }
@@ -214,7 +217,8 @@ export const useCatalogStore = defineStore('catalog', () => {
   const phrases = shallowRef<import('../services/prep').Phrase[] | null>(null)
   async function loadPhrases() {
     if (phrases.value) return phrases.value
-    return once('phrases', async () => (phrases.value = await fetchPhrases()))
+    await loadIndex()
+    return once('phrases', async () => (phrases.value = await fetchPhrases(index.value?.extras?.phrases)))
   }
 
   /** 全國搜尋索引：第一次搜尋時才載入 */
