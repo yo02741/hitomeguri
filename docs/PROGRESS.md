@@ -22,6 +22,7 @@
 | 收集卡樣式（基本、季節、全景、金箔、特別全景） | 等驗收 | docs/特效說明.md §9 |
 | 年代主題（江戶～令和、時間軸）、收集卡無限抽、新卡種、十連抽、季節照片 | 等驗收；cards 規則要貼 | docs/年代主題驗收.md、DESIGN.md §13、§7.19a |
 | 旅人第三版（157 件、散步的旅人）＋抽獎券（共用、不重複、NEW） | 等驗收；meta/wallet 規則要貼 | docs/旅人驗收.md、DESIGN.md §7.19b、§7.24 |
+| 成就（紀念章帳：初訪 47 格＋40 個成就、新卡入手的成就章、這趟的成就、抽獎券） | 等驗收（分支 `feat/achievements`）；規則不用改 | docs/成就驗收.md、DESIGN.md §7.25 |
 
 **原則的變更**（詳見 PLAN.md 的決策更新）：
 - 內容一律取自實際來源，不用 LLM 寫簡介或念法；LLM 只用於翻譯與查證。原本的 enrich 已移除。
@@ -128,6 +129,12 @@
 - 驗收回饋第一輪（2026-09-30）：見 docs/回饋修改驗收.md。截圖收藏存在 Firestore `users/{uid}/finds`（縮圖）與 `find_images`（原圖），
   圖片在瀏覽器壓縮（web/src/services/image.ts）。改了 firestore.rules 之後，模擬器的熱重載會被沙箱的代理擋下（Unable to parse JSON），要重開模擬器。
   旅前小書用瀏覽器列印：App 的固定高度捲動版面要加 `print:` 變體攤開（寫在 base layer 的 @media print 會被 utility 蓋掉）。
+- 成就（2026-10-02）：`data/achievements.ts`（目錄、規則文案）、`services/achievements.ts`（純函式：上下界推算達成日、evaluate、diffKnown）、
+  `stores/achievements.ts`（NEW 比對、takeRecent、inTrip）、`bundles/achievements.json`（`build_achievements`）。前端第一次有單元測試：
+  `cd web && npm run test`（vitest，只測純函式；`vitest.config.ts` 不載入 PWA plugin）。
+  marks、trips store 加 `synced`（`includeMetadataChanges`，只有 metadata 變的 snapshot 不重建）。
+  emulator 的 uid 不是登入時給的 sub，測 localStorage（`hitomeguri:achv-known:<uid>`）要從 user store 取 uid。
+  成就頁沒有用 `content-visibility: auto`：段落還沒畫時高度是估的，手機段落目錄跳過去會停錯位置。
 - Phase 5（2026-09-29）：收藏、去過、清單、KML / CSV 匯出。資料在 Firestore `users/{uid}/marks`、`lists`（UX-FLOW.md §3）。
   測試方式：`npx firebase emulators:start --project demo-hitomeguri --only auth,firestore` ＋ `npm run dev`，
   Playwright 用 `signInWithCredential(GoogleAuthProvider.credential('{"sub":…}'))` 登入 emulator（uid 由 emulator 指派）。

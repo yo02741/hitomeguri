@@ -27,6 +27,7 @@
 ```bash
 cd web && npm run dev                 # 前端（預設連本機 emulator）
 cd web && npm run typecheck && npm run build
+cd web && npm run test                # vitest（services/*.test.ts）
 npx firebase emulators:start --project demo-hitomeguri --only auth,firestore
 uv venv && uv pip install -e ".[dev]" # pipeline 環境
 .venv/bin/python -m pipeline.cli build-region-css
@@ -61,6 +62,7 @@ Claude Code 的雲端沙箱連不到 Wikidata、OSM、Wikimedia，也沒有 Clau
 - 擴充包：寶可夢、城（100 名城・續 100 名城）、老舖・茶屋、角色商店。
 - 旅人（紙娃娃，`/log/avatar`）：外觀、157 件服裝（各縣 3 件，代表單品去過就送）、扭蛋、散步的旅人（DESIGN.md §7.24、docs/旅人驗收.md）。
 - 抽獎券（景點卡與旅人共用，由去過的地方算出來、只抽沒有的、NEW 標記；DESIGN.md §7.19b）。
+- 成就（`/log/achievements`，紀念章帳）：初訪 47 格＋40 個成就，由去過的紀錄、已結束的旅行與 `bundles/achievements.json` 算出來，不另外存；地方、旅行、時節每個 5 張抽獎券（DESIGN.md §7.25、docs/成就驗收.md）。前端單元測試 `cd web && npm run test`（vitest）。
 - 年代主題：江戶、明治、大正、昭和、平成、令和（時間軸切換；DESIGN.md §13、docs/年代主題驗收.md）。各年代的地區色與 `theme-colors.json` 由 `build-region-css` 一起產生。收集卡測試期可無限抽（`UNLIMITED_DRAWS`，上線前關掉並清空 `users/*/cards`）。
 - 特效、離線（PWA）、經縣值、分享圖、位置小框已上線（docs/特效說明.md、docs/第三輪驗收.md）；經縣值的 Firestore 規則要使用者貼到 Console。
 - Phase 6（自動化排程＋PR 審核）：`refresh-data.yml`、`validate-data`、`diff-report` 已上線，等第一次自動 PR 與一週的排程驗收（docs/Phase6驗收.md）。
