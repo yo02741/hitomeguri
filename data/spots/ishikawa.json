@@ -9179,14 +9179,7 @@
     ],
     "status": "published",
     "updated_at": "2026-10-02",
-    "season_images": {
-      "winter": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/68/260718_Nakaya_Ukichiro_Museum_of_Snow_and_Ice_Kaga_Ishikawa_pref_Japan01s4.jpg/960px-260718_Nakaya_Ukichiro_Museum_of_Snow_and_Ice_Kaga_Ishikawa_pref_Japan01s4.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "663highland",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:260718_Nakaya_Ukichiro_Museum_of_Snow_and_Ice_Kaga_Ishikawa_pref_Japan01s4.jpg"
-      }
-    }
+    "season_images": {}
   },
   {
     "id": "wd-Q11569932",
@@ -17018,8 +17011,15 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-10-02",
+    "season_images": {
+      "spring": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/67/Mount_Haku_from_Mount_Hideri.jpg/960px-Mount_Haku_from_Mount_Hideri.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Alpsdake",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Mount_Haku_from_Mount_Hideri.jpg"
+      }
+    }
   },
   {
     "id": "wd-Q29407949",
@@ -17913,10 +17913,16 @@
     "updated_at": "2026-10-02",
     "season_images": {
       "winter": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a9/%E9%87%91%E6%B2%A221%E4%B8%96%E7%B4%80%E7%BE%8E%E8%A1%93%E9%A4%A8%EF%BC%91.jpg/960px-%E9%87%91%E6%B2%A221%E4%B8%96%E7%B4%80%E7%BE%8E%E8%A1%93%E9%A4%A8%EF%BC%91.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "金沢市",
-        "license": "CC BY 2.1 jp",
-        "source_url": "https://commons.wikimedia.org/wiki/File:%E9%87%91%E6%B2%A221%E4%B8%96%E7%B4%80%E7%BE%8E%E8%A1%93%E9%A4%A8%EF%BC%91.jpg"
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9a/21st_Century_Museum_260123.jpg/960px-21st_Century_Museum_260123.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Aspere",
+        "license": "CC0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:21st_Century_Museum_260123.jpg"
+      },
+      "night": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/84/%E9%87%91%E6%B2%A221%E4%B8%96%E7%B4%80%E7%BE%8E%E8%A1%93%E9%A4%A820221105-IMG_5198.jpg/960px-%E9%87%91%E6%B2%A221%E4%B8%96%E7%B4%80%E7%BE%8E%E8%A1%93%E9%A4%A820221105-IMG_5198.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "くろふね",
+        "license": "CC BY 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:%E9%87%91%E6%B2%A221%E4%B8%96%E7%B4%80%E7%BE%8E%E8%A1%93%E9%A4%A820221105-IMG_5198.jpg"
       }
     }
   },
@@ -18874,23 +18880,23 @@
     "status": "published",
     "updated_at": "2026-10-02",
     "season_images": {
-      "winter": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a5/%E7%9F%B3%E5%B7%9D%E6%A9%8B%EF%BC%91.jpg/960px-%E7%9F%B3%E5%B7%9D%E6%A9%8B%EF%BC%91.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "金沢市",
-        "license": "CC BY 2.1 jp",
-        "source_url": "https://commons.wikimedia.org/wiki/File:%E7%9F%B3%E5%B7%9D%E6%A9%8B%EF%BC%91.jpg"
-      },
-      "night": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/37/Kanazawa_Castle_20200819_01.jpg/960px-Kanazawa_Castle_20200819_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "先従隗始",
-        "license": "CC0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Kanazawa_Castle_20200819_01.jpg"
-      },
       "autumn": {
         "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1c/Momiji_at_Kanazawa_castle.jpg/960px-Momiji_at_Kanazawa_castle.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
         "author": "sergejf",
         "license": "CC BY 2.0",
         "source_url": "https://commons.wikimedia.org/wiki/File:Momiji_at_Kanazawa_castle.jpg"
+      },
+      "winter": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/71/Kanazawa_Castle_260123_01.jpg/960px-Kanazawa_Castle_260123_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Aspere",
+        "license": "CC0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Kanazawa_Castle_260123_01.jpg"
+      },
+      "night": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/51/%E5%A4%9C%E3%81%AE%E9%87%91%E6%B2%A2%E5%9F%8E20221105-IMG_5023.jpg/960px-%E5%A4%9C%E3%81%AE%E9%87%91%E6%B2%A2%E5%9F%8E20221105-IMG_5023.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "くろふね",
+        "license": "CC BY 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:%E5%A4%9C%E3%81%AE%E9%87%91%E6%B2%A2%E5%9F%8E20221105-IMG_5023.jpg"
       }
     }
   },
@@ -20529,11 +20535,17 @@
     "status": "published",
     "updated_at": "2026-10-02",
     "season_images": {
+      "spring": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c6/Kenroku-en_Gankobashi_under_blooming_sakura.jpg/960px-Kenroku-en_Gankobashi_under_blooming_sakura.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "SOHAFun",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Kenroku-en_Gankobashi_under_blooming_sakura.jpg"
+      },
       "winter": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/95/Snow_in_Kanazawa_%2820250222_~_Image_2%29.jpg/960px-Snow_in_Kanazawa_%2820250222_~_Image_2%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Fumikas Sagisavas",
-        "license": "CC0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Snow_in_Kanazawa_(20250222_~_Image_2).jpg"
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f9/%E5%85%BC%E5%85%AD%E5%9C%92_-_panoramio_%281%29.jpg/960px-%E5%85%BC%E5%85%AD%E5%9C%92_-_panoramio_%281%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "alonfloc",
+        "license": "CC BY 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:%E5%85%BC%E5%85%AD%E5%9C%92_-_panoramio_(1).jpg"
       },
       "night": {
         "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/58/Ishikawa_Kenrokuen_at_night_608_xl.jpg/960px-Ishikawa_Kenrokuen_at_night_608_xl.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -20616,13 +20628,6 @@
     ],
     "status": "published",
     "updated_at": "2026-10-02",
-    "season_images": {
-      "winter": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/24/Snow_in_Kanazawa_%2820250222_~_Image_3%29.jpg/960px-Snow_in_Kanazawa_%2820250222_~_Image_3%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Fumikas Sagisavas",
-        "license": "CC0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Snow_in_Kanazawa_(20250222_~_Image_3).jpg"
-      }
-    }
+    "season_images": {}
   }
 ]
