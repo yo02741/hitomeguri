@@ -136,7 +136,7 @@ function open(id: string) {
 
 <template>
   <section class="mx-auto flex w-full max-w-5xl flex-col gap-6 px-6 pt-9 pb-24">
-    <h1 class="text-h2 font-black tracking-[2px]">紀錄</h1>
+    <h1 class="text-h2 font-black tracking-title">紀錄</h1>
 
     <template v-if="userStore.user">
       <div class="grid gap-4 md:grid-cols-[minmax(0,2fr)_minmax(0,1fr)_minmax(0,1fr)]">
@@ -165,7 +165,7 @@ function open(id: string) {
           </template>
         </div>
         <div class="flex min-w-0 flex-col gap-0.5">
-          <span class="text-title font-black tracking-[2px]">收集冊</span>
+          <span class="text-title font-black tracking-title">收集冊</span>
           <span class="flex flex-wrap gap-x-3 text-label">
             <span class="whitespace-nowrap"><span class="font-latin text-body-sm font-semibold">{{ cards.length }}</span> 張</span>
             <span class="whitespace-nowrap">都道府縣 <span class="font-latin"><span class="text-body-sm font-semibold">{{ prefDone.size }}</span> / 47</span></span>
@@ -178,7 +178,7 @@ function open(id: string) {
         to="/log/keiken"
         class="group flex h-[132px] flex-col justify-center gap-2 rounded-card border border-line bg-paper px-5 text-ink no-underline hover:bg-surface"
       >
-        <span class="flex items-center text-title font-black tracking-[2px]">
+        <span class="flex items-center text-title font-black tracking-title">
           經縣值
           <svg class="ml-auto shrink-0 transition-transform group-hover:translate-x-1" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7" /></svg>
         </span>
@@ -196,7 +196,7 @@ function open(id: string) {
           <PaperDoll :parts="avatar.parts" :equipped="{ ...avatar.equipped, buddy: undefined }" crop="36 8 168 196" class="absolute inset-0 size-full" />
         </span>
         <span class="flex min-w-0 flex-col gap-0.5">
-          <span class="text-title font-black tracking-[2px]">旅人</span>
+          <span class="text-title font-black tracking-title">旅人</span>
           <span class="text-label">服裝 <span class="whitespace-nowrap font-latin"><span class="text-body-sm font-semibold">{{ avatar.ownedIds.size }}</span> / {{ OUTFITS.length }}</span></span>
         </span>
         <svg class="ml-auto shrink-0 transition-transform group-hover:translate-x-1" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7" /></svg>
@@ -207,7 +207,7 @@ function open(id: string) {
         class="group relative flex h-[96px] items-center gap-4 rounded-card border border-line bg-paper px-5 text-ink no-underline hover:bg-surface md:col-span-3"
       >
         <span class="flex shrink-0 flex-col">
-          <span class="text-title font-black tracking-[2px]">成就</span>
+          <span class="text-title font-black tracking-title">成就</span>
           <span class="whitespace-nowrap font-latin"><span class="text-h3 font-bold">{{ achv.counts.n }}</span><span class="text-body-sm text-sub"> / {{ achv.counts.N }}</span></span>
         </span>
         <span class="flex min-w-0 items-center pl-2" aria-hidden="true">
@@ -237,7 +237,7 @@ function open(id: string) {
       </div>
 
       <section class="flex flex-col gap-3" aria-labelledby="trips-title">
-        <h2 id="trips-title" class="flex items-baseline gap-1.5 text-h3 font-black tracking-[2px]">
+        <h2 id="trips-title" class="flex items-baseline gap-1.5 text-h3 font-black tracking-title">
           旅行<span class="font-latin text-body font-normal tracking-normal text-sub">{{ doneTrips.length }}</span>
         </h2>
         <ul v-if="doneTrips.length" class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -271,7 +271,7 @@ function open(id: string) {
 
       <section class="flex flex-col gap-3" aria-labelledby="visited-title">
         <div class="flex flex-wrap items-center gap-x-4 gap-y-2">
-          <h2 id="visited-title" class="flex items-baseline gap-1.5 text-h3 font-black tracking-[2px]">
+          <h2 id="visited-title" class="flex items-baseline gap-1.5 text-h3 font-black tracking-title">
             去過<span class="font-latin text-body font-normal tracking-normal text-sub">{{ rows.length }}</span>
           </h2>
           <div class="ml-auto flex flex-wrap gap-2">

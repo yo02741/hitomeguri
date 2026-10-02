@@ -27,7 +27,7 @@ onMounted(async () => {
     <div class="grid size-full place-items-center p-4" @click.self="emit('close')">
       <section data-reduce="fade" class="scroll-quiet flex max-h-full w-full max-w-[520px] animate-modal-in flex-col gap-5 overflow-y-auto overscroll-contain rounded-card bg-paper p-6 text-ink shadow-float max-sm:p-5">
         <header class="flex items-center">
-          <h2 id="rules-title" class="text-h3 font-black tracking-[2px]">{{ title }}</h2>
+          <h2 id="rules-title" class="text-h3 font-black tracking-title">{{ title }}</h2>
           <button ref="closeBtn" type="button" class="ml-auto h-9 rounded-control px-3 text-label font-bold text-sub hover:bg-surface hover:text-ink" @click="emit('close')">關閉</button>
         </header>
         <slot />

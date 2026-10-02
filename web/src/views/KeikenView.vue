@@ -65,7 +65,7 @@ async function render(canvas: HTMLCanvasElement) {
     <header class="paper-grain relative flex flex-col gap-5 overflow-hidden rounded-card bg-region p-6 text-on-region max-sm:p-5">
       <BackLink to="/log" on-region>紀錄</BackLink>
       <div class="flex flex-wrap items-end gap-x-6 gap-y-2">
-        <h1 class="text-h1 font-black tracking-[4px]">經縣值</h1>
+        <h1 class="text-h1 font-black tracking-title">經縣值</h1>
         <p class="flex items-baseline gap-1.5 font-latin">
           <RollingNumber :value="total" class="text-display leading-none font-bold" />
           <span class="text-title font-semibold">/ {{ KEIKEN_MAX }}</span>

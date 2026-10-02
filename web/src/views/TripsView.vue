@@ -37,7 +37,7 @@ async function create() {
 
 <template>
   <section class="mx-auto flex w-full max-w-5xl flex-col gap-8 px-6 pt-9 pb-24">
-    <h1 class="text-h2 font-black tracking-[2px]">行程</h1>
+    <h1 class="text-h2 font-black tracking-title">行程</h1>
 
     <template v-if="userStore.user">
       <form class="flex flex-wrap items-end gap-3" @submit.prevent="create">

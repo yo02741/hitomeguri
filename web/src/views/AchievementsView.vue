@@ -153,7 +153,7 @@ onBeforeUnmount(() => fresh.seen([...fresh.keys].filter((k) => k.startsWith('a:'
       <div class="relative grid grid-cols-[minmax(0,1fr)_160px] items-center gap-6 max-md:grid-cols-1">
         <div class="flex min-w-0 flex-col gap-4">
           <BackLink to="/log" on-region>紀錄</BackLink>
-          <h1 class="flex items-baseline gap-3 text-h1 font-black tracking-[4px]">
+          <h1 class="flex items-baseline gap-3 text-h1 font-black tracking-title">
             成就<RollingNumber :value="achv.counts.n" class="font-latin text-h3 font-semibold tracking-normal" /><span class="-ml-1.5 font-latin text-body-sm tracking-normal">/ {{ achv.counts.N }}</span>
           </h1>
           <div class="h-3.5 max-w-[420px] overflow-hidden rounded-[2px] bg-paper/55" aria-hidden="true">
@@ -185,7 +185,7 @@ onBeforeUnmount(() => fresh.seen([...fresh.keys].filter((k) => k.startsWith('a:'
 
       <!-- 初訪：47 格 -->
       <section id="achv-pref" class="flex scroll-mt-14 flex-col gap-3" aria-labelledby="achv-pref-title">
-        <h2 id="achv-pref-title" class="flex items-baseline gap-1.5 text-h3 font-black tracking-[2px]">
+        <h2 id="achv-pref-title" class="flex items-baseline gap-1.5 text-h3 font-black tracking-title">
           初訪<span class="whitespace-nowrap font-latin text-body font-normal tracking-normal text-sub">{{ stampsDone }} / 47</span>
         </h2>
         <div class="dot-sheet paper-grain flex flex-col gap-4 rounded-card border border-line bg-paper p-4 sm:p-5">
@@ -231,7 +231,7 @@ onBeforeUnmount(() => fresh.seen([...fresh.keys].filter((k) => k.startsWith('a:'
         class="flex scroll-mt-14 flex-col gap-3"
         :aria-labelledby="`${sec.id}-title`"
       >
-        <h2 :id="`${sec.id}-title`" class="flex items-baseline gap-1.5 text-h3 font-black tracking-[2px]">
+        <h2 :id="`${sec.id}-title`" class="flex items-baseline gap-1.5 text-h3 font-black tracking-title">
           {{ sec.label }}<span v-if="sec.dataState === 'ok' && !loading" class="whitespace-nowrap font-latin text-body font-normal tracking-normal text-sub">{{ sec.done }} / {{ sec.items.length }}</span>
         </h2>
         <div class="dot-sheet paper-grain rounded-card border border-line bg-paper p-4 sm:p-5">

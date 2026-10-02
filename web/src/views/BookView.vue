@@ -177,7 +177,7 @@ function print() {
         </div>
         <div class="mt-[18mm] flex flex-col gap-3">
           <span class="text-label font-bold tracking-section text-sub">旅前小書</span>
-          <h1 class="text-h1 leading-tight font-black tracking-[2px]">{{ trip.name || '未命名行程' }}</h1>
+          <h1 class="text-h1 leading-tight font-black tracking-title">{{ trip.name || '未命名行程' }}</h1>
           <p v-if="dates" class="font-latin text-title">
             {{ dates }}<span class="ml-2 font-sans text-body-sm text-sub">{{ days }} 天</span>
           </p>
@@ -202,7 +202,7 @@ function print() {
 
       <!-- 行程：每天的停留點、念法、最近車站 -->
       <section v-if="parts.days" class="mt-8 break-before-page border-t border-dashed border-line pt-8 print:mt-0 print:border-0 print:pt-0">
-        <h2 class="mb-4 border-b-2 border-ink pb-1.5 text-h3 font-black tracking-[2px]">行程</h2>
+        <h2 class="mb-4 border-b-2 border-ink pb-1.5 text-h3 font-black tracking-title">行程</h2>
         <div v-for="(d, i) in trip.days" :key="i" class="mb-5 break-inside-avoid-page">
           <div class="mb-2 flex items-center gap-3" :data-pref="dayPref(d) ?? prefs[0]">
             <span class="grid size-10 shrink-0 place-items-center rounded-badge bg-region text-on-region leading-none">
@@ -247,7 +247,7 @@ function print() {
 
       <!-- 會話：聽／說／讀，依情境 -->
       <section v-if="parts.phrases && phraseGroups.length" class="mt-8 break-before-page border-t border-dashed border-line pt-8 print:mt-0 print:border-0 print:pt-0">
-        <h2 class="mb-4 border-b-2 border-ink pb-1.5 text-h3 font-black tracking-[2px]">會話</h2>
+        <h2 class="mb-4 border-b-2 border-ink pb-1.5 text-h3 font-black tracking-title">會話</h2>
         <div v-for="t in phraseGroups" :key="t.key" class="mb-4">
           <h3 class="mb-1 flex items-baseline gap-2 text-title font-black">
             {{ t.label }}<span class="text-[0.85em] font-normal text-sub">{{ t.sub }}</span>
@@ -273,7 +273,7 @@ function print() {
 
       <!-- 地區特色詞 -->
       <section v-if="parts.words && words.length" class="mt-8 break-before-page border-t border-dashed border-line pt-8 print:mt-0 print:border-0 print:pt-0">
-        <h2 class="mb-4 border-b-2 border-ink pb-1.5 text-h3 font-black tracking-[2px]">地區特色</h2>
+        <h2 class="mb-4 border-b-2 border-ink pb-1.5 text-h3 font-black tracking-title">地區特色</h2>
         <ul class="grid grid-cols-2 gap-x-5">
           <li v-for="w in words" :key="w.key" class="flex flex-col border-b border-line-soft py-1.5 break-inside-avoid">
             <span lang="ja" class="text-[0.8em] tracking-kana text-sub">{{ w.kana }}</span>
@@ -285,7 +285,7 @@ function print() {
 
       <!-- 期間限定：季節觀測與截圖 -->
       <section v-if="parts.limited && hasLimited" class="mt-8 break-before-page border-t border-dashed border-line pt-8 print:mt-0 print:border-0 print:pt-0">
-        <h2 class="mb-4 border-b-2 border-ink pb-1.5 text-h3 font-black tracking-[2px]">期間限定</h2>
+        <h2 class="mb-4 border-b-2 border-ink pb-1.5 text-h3 font-black tracking-title">期間限定</h2>
         <ul v-if="timed.length" class="mb-4 flex flex-col">
           <li v-for="t in timed" :key="t.id" class="flex items-baseline gap-3 border-b border-line-soft py-1.5 break-inside-avoid last:border-b-0">
             <span class="flex min-w-0 flex-1 flex-col">
@@ -312,7 +312,7 @@ function print() {
 
       <!-- 筆記頁 -->
       <section v-if="parts.notes" class="mt-8 break-before-page border-t border-dashed border-line pt-8 print:mt-0 print:border-0 print:pt-0">
-        <h2 class="mb-4 border-b-2 border-ink pb-1.5 text-h3 font-black tracking-[2px]">筆記</h2>
+        <h2 class="mb-4 border-b-2 border-ink pb-1.5 text-h3 font-black tracking-title">筆記</h2>
         <div
           :class="paper === 'A5' ? 'h-[150mm]' : 'h-[220mm]'"
           :style="{

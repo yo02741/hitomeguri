@@ -73,7 +73,7 @@ function wear() {
     <header class="flex flex-col gap-2">
       <BackLink to="/log">紀錄</BackLink>
       <div class="flex items-baseline gap-4">
-        <h1 class="text-h1 font-black tracking-[6px]">旅人</h1>
+        <h1 class="text-h2 font-black tracking-title">旅人</h1>
         <p class="text-label text-sub">服裝 <span class="whitespace-nowrap font-latin"><span class="text-body font-bold text-ink">{{ ownedCount }}</span> / {{ OUTFITS.length }}</span></p>
         <button
           v-if="userStore.user"

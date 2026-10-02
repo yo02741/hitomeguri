@@ -53,7 +53,7 @@
 
 - Tailwind CSS v4，CSS-first 設定，不使用 `tailwind.config.js`。
 - Vite 專案使用 `@tailwindcss/vite` plugin；入口 CSS 為 `web/src/styles/theme.css`（已 `@import "tailwindcss"`）。
-- 字體以 Google Fonts 載入：Noto Sans TC（400/500/700/900）、Noto Sans JP（400/700/900）、Barlow Semi Condensed（500/600/700），`display=swap`。
+- 字體以 Google Fonts 載入：Noto Sans TC（400/700/900）、Noto Sans JP（400/700/900）、Barlow Semi Condensed（500/600/700），`display=swap`。
 - `regions.css` 由 `data/regions.json` 產生（pipeline 指令 `build-region-css`），**不可手改**。
 - 共用樣式組合寫成 Vue 元件，不用 `@apply` 堆 class；只有在 MapLibre 等第三方 DOM 無法套 class 時才用 CSS。
 
@@ -149,17 +149,18 @@
 | token | px | 字重 | 用途 |
 |---|---|---|---|
 | `text-display` | 58 | 900 | 海報區縣名 |
-| `text-h1` | 36 | 900 | 手機景點名、旅行紀錄標題 |
-| `text-h2` | 30 | 900 | 桌機景點名 |
-| `text-h3` | 22 | 900 | 頁面標題、wordmark |
+| `text-h1` | 36 | 900 | 地區色海報區內的頁面標題（收集冊、經縣值、成就）、旅前小書封面 |
+| `text-h2` | 30 | 900 | 頁面標題（紀錄、行程、旅人…）、景點名（桌機與手機） |
+| `text-h3` | 22 | 900 | 區塊標題、wordmark |
 | `text-title` | 18 | 700 | 片語、地名清單的漢字 |
-| `text-body` | 15 | 400 | 簡介內文（行高 1.8） |
+| `text-body` | 15 | 400 | 簡介內文（行高 1.8）；CJK 內文用 15px，因為漢字的字面比拉丁字大，14px 讀長文吃力。卡片上限制行數的簡介維持 `text-body-sm` |
 | `text-body-sm` | 14 | 400 | 資訊列、清單、按鈕 |
 | `text-label` | 13 | 400–700 | 次要標籤、小標 |
 | `text-caption` | 12 | 400 | 假名行、credit、說明；要讀的資訊（出處、羅馬拼音、按鈕字）最小到這一級 |
 | `text-micro` | 11 | 700 | 膠囊標籤、徽章（NEW、縣名標、「全國」、DAY） |
 
 - 標題一律 `font-black`（900），不使用襯線字、不使用斜體。
+- 頁面標題（h1）、區塊標題（h2）與紀錄頁卡片標題的字距一律 `tracking-title`（0.06em，年代主題的大標也用這個 token）。站名標式的地名（`tracking-name`）、Wordmark 不在此列。
 - 字級一律用 token（rem），會跟著瀏覽器的預設字級放大；不寫 `text-[Npx]`。例外：Wordmark 上的裝飾假名、旅前小書的列印版面、收集卡卡面以 em 縮放的微縮字、§7.12 的印章、旅人衣櫃的「穿」封印。
 - 羅馬拼音：`font-latin font-semibold uppercase tracking-romaji`（海報區、景點名）；清單中可用首字大寫、不加字距。
 - 假名行：`text-caption tracking-kana text-sub`（在地區色底上改 `text-on-region/80`）。
@@ -188,7 +189,7 @@
 |---|---|
 | Header | `h-header`（60） |
 | 地區標籤（桌機地圖左上） | 高約 64，隨內容 |
-| 手機海報條 | 高 88，只放縣名＋羅馬拼音 |
+| 手機海報條 | 高 56，只放縣名＋羅馬拼音 |
 | 底部 tab | 高 56＋safe area |
 | Bottom sheet | 收合 120／半開 55vh／全開 100vh−header |
 
@@ -297,7 +298,7 @@ header 右側、登入鈕左邊（`SearchBox.vue`，每一頁都在；在行程�
 - 景點在可見範圍外（或被左上浮動面板蓋住）時，改在可見範圍邊緣畫 36px 圓形箭頭（`bg-region-strong text-white`，旋轉指向景點）＋名稱小標。
 - 回首頁（含點左上地區標籤）時地圖拉回整個日本版圖（`JAPAN_BOUNDS`，含沖繩）。
 - 地區頁畫出縣界：`--region-strong` 虛線（寬 1.5→2.5 隨縮放、dash 2.5/1.5），縣內疊 `--region-base` 14% 不透明度，畫在景點下面。縣界是簡化線（約 400 m 精度），縮放 11→13 淡出到 0.35，避免拉近時和海岸線對不齊。進入地區時定位到「縣的主要陸地＋主要景點」，看得到整個縣的形狀，離島（八重山、伊豆諸島）不算進去。
-- 選取中的景點：另外放在不群集的來源，不會被併進群集數字；外面一圈固定的 `region-strong` 外框，加兩圈錯開半週期往外擴散、淡出的呼吸燈（半透明填色＋外框，2s，`--animate-pulse-ring`）；`prefers-reduced-motion` 時只留固定外框。從清單或搜尋選取時飛到縮放 15（群集全部散開）。
+- 選取中的景點：另外放在不群集的來源，不會被併進群集數字；外面一圈固定的 `region-strong` 外框（不做擴散的呼吸燈；`--animate-pulse-ring` 只用在祭典「在地圖上看」的位置標記）。從清單或搜尋選取時飛到縮放 15（群集全部散開）。
 - hover 照片再放大成 88px；整張照片都算命中範圍。觸控裝置沒有 hover，點擊時直接取點擊位置附近最近的景點。
 - 位置小框（`JapanLocator.vue`）：縮放 6.5 以上時出現日本全圖（像手機相機放大時的全景小窗）。桌機在左側浮動面板右邊、和「深度探索」卡底部對齊（132px 寬）；手機在地圖右上（96px）。`bg-paper/90 rounded-card shadow-float`，各縣 `--region-line`、目前的縣 `--region-accent`，目前看的範圍畫成 `--region-strong` 框（太小時改成一個點加擴散的圈），下方一行縣名與倍率（以日本全圖為 ×1，縮放每加 1 放大 2 倍，例「長野 ×8.2」）。只顯示，不能點。沖繩照日本地圖的慣例放在左上的虛線框。
 
@@ -319,7 +320,7 @@ header 右側、登入鈕左邊（`SearchBox.vue`，每一頁都在；在行程�
 | 情境 | 版式 |
 |---|---|
 | 景點詳情（桌機右欄） | `bg-region text-on-region px-5 py-4`，左側 42px badge，右側三行靠左；漢字 `text-h2` |
-| 景點詳情（手機） | 頂部整塊地區色，三行置中或靠左；漢字 `text-h1` |
+| 景點詳情（手機） | 頂部整塊地區色，三行靠左；漢字 `text-h2`（同桌機） |
 | 清單列（旅前準備地名、行程） | 白底，假名 `text-caption`、漢字 `text-title font-black`、羅馬拼音靠右 `font-latin` |
 
 名稱旁一律有播放鈕（§7.10）。

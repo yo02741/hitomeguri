@@ -70,7 +70,7 @@ async function del() {
             儲存
           </button>
         </form>
-        <h1 v-else class="flex min-w-0 items-baseline gap-2 text-h2 font-black tracking-[2px]">
+        <h1 v-else class="flex min-w-0 items-baseline gap-2 text-h2 font-black tracking-title">
           <span class="truncate">{{ list.name }}</span>
           <span class="font-latin text-body font-normal tracking-normal text-sub">{{ rows.length }}</span>
         </h1>

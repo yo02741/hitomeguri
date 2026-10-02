@@ -104,7 +104,7 @@ watch(
     <header class="paper-grain bg-region text-on-region">
       <div class="mx-auto flex w-full max-w-5xl flex-col gap-3 px-6 pt-5 pb-6">
         <BackLink :to="`/trips/${trip.id}`" on-region>{{ trip.name || '未命名行程' }}</BackLink>
-        <h1 class="text-h2 font-black tracking-[2px]">旅前準備</h1>
+        <h1 class="text-h2 font-black tracking-title">旅前準備</h1>
         <div class="flex flex-wrap items-center gap-3">
           <RouterLink
             :to="`/trips/${trip.id}/prep/practice`"
@@ -137,7 +137,7 @@ watch(
         <SkeletonRows v-if="loading" :rows="5" />
 
         <section v-if="todayPlaces.length" id="today" class="flex scroll-mt-16 flex-col gap-2 lg:scroll-mt-8" aria-labelledby="today-title">
-          <h2 id="today-title" class="text-h3 font-black tracking-[2px]">今天</h2>
+          <h2 id="today-title" class="text-h3 font-black tracking-title">今天</h2>
           <ul class="flex flex-col">
             <li v-for="p in todayPlaces" :key="p.key" class="flex items-center gap-3 border-b border-line-soft py-2.5 last:border-b-0">
               <RegionChip :pref="p.pref" :size="10" class="rounded-full" />
@@ -155,7 +155,7 @@ watch(
         </section>
 
         <section id="places" class="flex scroll-mt-16 flex-col gap-2 lg:scroll-mt-8" aria-labelledby="places-title">
-          <h2 id="places-title" class="flex items-baseline gap-1.5 text-h3 font-black tracking-[2px]">
+          <h2 id="places-title" class="flex items-baseline gap-1.5 text-h3 font-black tracking-title">
             地名與車站<span class="font-latin text-body font-normal tracking-normal text-sub">{{ places.length }}</span>
           </h2>
           <ul class="flex flex-col">
@@ -184,7 +184,7 @@ watch(
           class="flex scroll-mt-16 flex-col gap-4 lg:scroll-mt-8"
           :aria-labelledby="`${t.key}-title`"
         >
-          <h2 :id="`${t.key}-title`" class="flex items-baseline gap-2 text-h3 font-black tracking-[2px]">
+          <h2 :id="`${t.key}-title`" class="flex items-baseline gap-2 text-h3 font-black tracking-title">
             {{ t.label }}<span class="text-body-sm font-normal tracking-normal text-sub">{{ t.sub }}</span>
           </h2>
           <div v-for="g in t.groups" :id="`${t.key}-${g.situation}`" :key="g.situation" class="flex scroll-mt-16 flex-col lg:scroll-mt-8">
@@ -199,7 +199,7 @@ watch(
         </section>
 
         <section v-if="words.length && !onlyMust" id="words" class="flex scroll-mt-16 flex-col gap-2 lg:scroll-mt-8" aria-labelledby="words-title">
-          <h2 id="words-title" class="flex items-baseline gap-1.5 text-h3 font-black tracking-[2px]">
+          <h2 id="words-title" class="flex items-baseline gap-1.5 text-h3 font-black tracking-title">
             地區特色<span class="font-latin text-body font-normal tracking-normal text-sub">{{ words.length }}</span>
           </h2>
           <ul class="grid grid-cols-1 gap-x-6 sm:grid-cols-2">
@@ -216,7 +216,7 @@ watch(
         </section>
 
         <section v-if="!onlyMust" id="limited" class="flex scroll-mt-16 flex-col gap-5 lg:scroll-mt-8" aria-labelledby="limited-title">
-          <h2 id="limited-title" class="flex items-baseline gap-1.5 text-h3 font-black tracking-[2px]">
+          <h2 id="limited-title" class="flex items-baseline gap-1.5 text-h3 font-black tracking-title">
             期間限定<span v-if="timed.length + tripFinds.length" class="font-latin text-body font-normal tracking-normal text-sub">{{ timed.length + tripFinds.length }}</span>
           </h2>
           <TimedList v-if="timed.length" :items="timed" detailed />

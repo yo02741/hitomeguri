@@ -24,16 +24,16 @@ const gallery = ref<InstanceType<typeof FindGallery> | null>(null)
 
 <template>
   <section class="mx-auto flex w-full max-w-5xl flex-col gap-10 px-6 pt-9 pb-24">
-    <h1 class="text-h2 font-black tracking-[2px]">期間限定</h1>
+    <h1 class="text-h2 font-black tracking-title">期間限定</h1>
 
     <section class="flex flex-col gap-3" aria-labelledby="chain-title">
-      <h2 id="chain-title" class="text-h3 font-black tracking-[2px]">連鎖店</h2>
+      <h2 id="chain-title" class="text-h3 font-black tracking-title">連鎖店</h2>
       <ChainSearch />
     </section>
 
     <section class="flex flex-col gap-4" aria-labelledby="finds-title">
       <div class="flex flex-wrap items-center gap-x-4 gap-y-2">
-        <h2 id="finds-title" class="flex items-baseline gap-1.5 text-h3 font-black tracking-[2px]">
+        <h2 id="finds-title" class="flex items-baseline gap-1.5 text-h3 font-black tracking-title">
           截圖<span v-if="finds.finds.length" class="font-latin text-body font-normal tracking-normal text-sub">{{ finds.finds.length }}</span>
         </h2>
         <button
@@ -73,7 +73,7 @@ const gallery = ref<InstanceType<typeof FindGallery> | null>(null)
     </section>
 
     <section v-if="timed.length" class="flex flex-col gap-3" aria-labelledby="season-title">
-      <h2 id="season-title" class="flex items-baseline gap-1.5 text-h3 font-black tracking-[2px]">
+      <h2 id="season-title" class="flex items-baseline gap-1.5 text-h3 font-black tracking-title">
         季節<span class="font-latin text-body font-normal tracking-normal text-sub">{{ timed.length }}</span>
       </h2>
       <TimedList :items="timed" detailed />

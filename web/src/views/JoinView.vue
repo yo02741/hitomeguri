@@ -55,7 +55,7 @@ async function join() {
 
 <template>
   <section class="mx-auto flex w-full max-w-md flex-col items-start gap-5 px-6 py-16">
-    <h1 class="text-h2 font-black tracking-[2px]">共編行程</h1>
+    <h1 class="text-h2 font-black tracking-title">共編行程</h1>
 
     <template v-if="!userStore.user">
       <p class="text-body text-ink-2">登入後加入這個行程。</p>

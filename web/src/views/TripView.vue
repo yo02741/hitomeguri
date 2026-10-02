@@ -242,7 +242,7 @@ async function del() {
           :maxlength="TRIP_NAME_MAX"
           placeholder="未命名行程"
           aria-label="行程名稱"
-          class="h-12 rounded-control border border-transparent bg-transparent px-1 text-h3 font-black tracking-[1px] text-ink outline-none placeholder:text-sub hover:border-line focus:border-region-strong"
+          class="h-12 rounded-control border border-transparent bg-transparent px-1 text-h3 font-black tracking-title text-ink outline-none placeholder:text-sub hover:border-line focus:border-region-strong"
           @blur="saveName"
           @keydown.enter="($event.target as HTMLInputElement).blur()"
         />

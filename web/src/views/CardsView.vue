@@ -136,7 +136,7 @@ function onCardKey(e: KeyboardEvent, id: string) {
       <div class="relative grid grid-cols-[minmax(0,1fr)_minmax(0,44%)] items-center gap-6 max-sm:gap-2 sm:grid-cols-[minmax(0,1fr)_260px] lg:grid-cols-[minmax(0,1fr)_320px]">
         <div class="flex min-w-0 flex-col gap-4">
           <BackLink to="/log" on-region>紀錄</BackLink>
-          <h1 class="flex items-baseline gap-3 text-h1 font-black tracking-[4px]">
+          <h1 class="flex items-baseline gap-3 text-h1 font-black tracking-title">
             收集冊<RollingNumber :value="cards.length" class="font-latin text-h3 font-semibold tracking-normal" />
           </h1>
           <p class="flex items-baseline gap-2 text-label font-bold">

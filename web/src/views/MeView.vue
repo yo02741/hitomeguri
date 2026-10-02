@@ -39,12 +39,12 @@ async function logOut() {
 
 <template>
   <section class="mx-auto flex w-full max-w-3xl flex-col gap-10 px-6 pt-9 pb-24">
-    <h1 class="text-h2 font-black tracking-[2px]">收藏與清單</h1>
+    <h1 class="text-h2 font-black tracking-title">收藏與清單</h1>
 
     <template v-if="userStore.user">
       <section class="flex flex-col gap-3" aria-labelledby="fav-title">
         <div class="flex flex-wrap items-center gap-x-4 gap-y-2">
-          <h2 id="fav-title" class="flex items-baseline gap-1.5 text-h3 font-black tracking-[2px]">
+          <h2 id="fav-title" class="flex items-baseline gap-1.5 text-h3 font-black tracking-title">
             收藏<span class="font-latin text-body font-normal tracking-normal text-sub">{{ favorites.length }}</span>
           </h2>
           <ExportButtons class="ml-auto" title="ひとめぐり 收藏" :rows="favorites.map(markRow)" />
@@ -54,7 +54,7 @@ async function logOut() {
       </section>
 
       <section class="flex flex-col gap-3" aria-labelledby="lists-title">
-        <h2 id="lists-title" class="flex items-baseline gap-1.5 text-h3 font-black tracking-[2px]">
+        <h2 id="lists-title" class="flex items-baseline gap-1.5 text-h3 font-black tracking-title">
           清單<span class="font-latin text-body font-normal tracking-normal text-sub">{{ marks.lists.length }}</span>
         </h2>
         <ul v-if="marks.lists.length" class="grid grid-cols-1 gap-3 sm:grid-cols-2">
@@ -89,7 +89,7 @@ async function logOut() {
       </section>
 
       <section class="flex flex-col gap-3" aria-labelledby="account-title">
-        <h2 id="account-title" class="text-h3 font-black tracking-[2px]">帳號</h2>
+        <h2 id="account-title" class="text-h3 font-black tracking-title">帳號</h2>
         <div class="flex flex-col">
           <span class="text-body">{{ userStore.user.displayName }}</span>
           <span v-if="userStore.user.email" class="text-body-sm text-sub">{{ userStore.user.email }}</span>

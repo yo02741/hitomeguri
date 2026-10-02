@@ -10,7 +10,7 @@ const CLAMP = { 2: 'line-clamp-2', 3: 'line-clamp-3', 4: 'line-clamp-4' } as con
 </script>
 
 <template>
-  <div class="flex flex-col gap-1.5 text-body-sm leading-[1.75]">
+  <div class="flex flex-col gap-1.5" :class="clamp ? 'text-body-sm leading-[1.75]' : 'text-body'">
     <p :lang="summary.lang === 'zh' ? undefined : summary.lang" class="text-pretty" :class="[clamp && CLAMP[clamp], summary.text_zh && 'text-sub']">
       {{ summary.text }}
     </p>

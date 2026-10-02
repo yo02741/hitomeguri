@@ -178,17 +178,17 @@ function sourceLabel(url: string): string {
 
       <main class="flex min-w-0 flex-col gap-12">
         <section v-if="stations.length" id="seasons" class="flex scroll-mt-16 flex-col lg:scroll-mt-8 gap-4" aria-labelledby="seasons-title">
-          <h2 id="seasons-title" class="text-h3 font-black tracking-[2px]">季節</h2>
+          <h2 id="seasons-title" class="text-h3 font-black tracking-title">季節</h2>
           <SeasonCalendar :stations="stations" :source-url="catalog.seasons!.source.url" />
         </section>
 
         <section v-if="festivals.length" id="festivals" class="flex scroll-mt-16 flex-col lg:scroll-mt-8 gap-4" aria-labelledby="festivals-title">
-          <h2 id="festivals-title" class="text-h3 font-black tracking-[2px]">祭典</h2>
+          <h2 id="festivals-title" class="text-h3 font-black tracking-title">祭典</h2>
           <FestivalList :festivals="festivals" />
         </section>
 
         <section v-if="groups.length" id="specialties" class="flex scroll-mt-16 flex-col lg:scroll-mt-8 gap-6" aria-labelledby="specialties-title">
-          <h2 id="specialties-title" class="text-h3 font-black tracking-[2px]">地區特色</h2>
+          <h2 id="specialties-title" class="text-h3 font-black tracking-title">地區特色</h2>
           <div v-for="g in groups" :id="`specialties-${g.key}`" :key="g.key" class="flex scroll-mt-16 flex-col gap-3 lg:scroll-mt-8">
             <h3 class="flex items-baseline gap-1.5 text-caption font-bold tracking-section text-sub">
               {{ g.label }}<span class="font-latin font-normal tracking-normal">{{ g.items.length }}</span>
@@ -248,7 +248,7 @@ function sourceLabel(url: string): string {
 
         <!-- 期間限定：這個縣的季節觀測，另外可以直接搜尋連鎖店的限定、看自己存的截圖 -->
         <section id="timed" class="flex scroll-mt-16 flex-col lg:scroll-mt-8 gap-4" aria-labelledby="timed-title">
-          <h2 id="timed-title" class="text-h3 font-black tracking-[2px]">期間限定</h2>
+          <h2 id="timed-title" class="text-h3 font-black tracking-title">期間限定</h2>
           <TimedList v-if="timed.length" :items="timed" detailed />
           <div class="flex flex-wrap items-center gap-x-4 gap-y-2">
             <ChainSearch />
