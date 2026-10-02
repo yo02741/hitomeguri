@@ -35,6 +35,38 @@ export function prefectureFullName(pref: string): string {
   return `${ja}県`
 }
 
+/** 地方的繁中名稱（regions.json 的 area_name 是日文，「中国」在台灣會讀成 China） */
+export const AREA_ZH: Record<string, string> = {
+  hokkaido: '北海道',
+  tohoku: '東北',
+  kanto: '關東',
+  chubu: '中部',
+  kinki: '近畿',
+  chugoku: '中國地方',
+  shikoku: '四國',
+  kyushu: '九州・沖繩',
+}
+
+/** 這個地方的縣（regions.json 的順序） */
+export function areaPrefs(area: string): string[] {
+  return regions.filter((r) => r.area === area).map((r) => r.prefecture)
+}
+
+/** 地方的都道府縣數，字尾照 prefectureFullName 的規則：關東「1 都 6 縣」、近畿「2 府 5 縣」、其他「n 縣」 */
+export function areaCountLabel(area: string): string {
+  const count = { 都: 0, 道: 0, 府: 0, 縣: 0 }
+  for (const p of areaPrefs(area)) {
+    const suffix = prefectureFullName(p).slice(-1)
+    if (suffix === '都' || suffix === '府') count[suffix] += 1
+    else if (suffix === '県') count['縣'] += 1
+    else count['道'] += 1
+  }
+  return Object.entries(count)
+    .filter(([, n]) => n > 0)
+    .map(([s, n]) => `${n} ${s}`)
+    .join(' ')
+}
+
 /** 依地方分組，保留 regions.json 的順序（JIS 順）。 */
 export function groupByArea(prefs: string[]): { area: string; areaName: string; items: Region[] }[] {
   const groups: { area: string; areaName: string; items: Region[] }[] = []

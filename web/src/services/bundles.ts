@@ -77,6 +77,22 @@ export interface BundleIndex {
   timed?: { count: number; version: string }
   /** 地區特色、會話、季節、航線：檔名 → 版本 */
   extras?: Partial<Record<'specialties' | 'flights' | 'phrases' | 'seasons', string>>
+  /** 成就用的小索引（achievements.json） */
+  achievements?: { version: string }
+}
+
+/**
+ * 成就用的小索引（pipeline/build_bundles.py build_achievements）：
+ * tags 文化指定 → 帶這個指定的大點 id（一個景點有幾種指定就列在幾種底下）；
+ * castle 名城組別 → [名城 id, 對應景點 id 或 null]。
+ */
+export interface AchvData {
+  tags: Record<string, string[]>
+  castle: Record<'100' | 'zoku', Array<[string, string | null]>>
+}
+
+export function fetchAchievements(v: string): Promise<AchvData> {
+  return getJson<AchvData>(`achievements.json?v=${v}`)
 }
 
 /** 有版本就加 ?v=（舊的 _index.json 沒有版本時照舊抓） */
