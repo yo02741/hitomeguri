@@ -157,11 +157,19 @@ const selectedPack = computed<{ pack: string; item: PackItem } | null>(() => {
   return pack && item ? { pack, item } : null
 })
 
+// 卡片關閉時往下收（手機）：收的那 0.2 秒裡照樣顯示剛才的內容，不閃成載入中
+const held = shallowRef<{ pack: { pack: string; item: PackItem } | null; spot: Spot | null }>({ pack: null, spot: null })
+watch([selectedPack, selectedSpot], ([pack, spot]) => {
+  if (selectedId.value) held.value = { pack, spot }
+})
+const shownPack = computed(() => (selectedId.value ? selectedPack.value : held.value.pack))
+const shownSpot = computed(() => (selectedId.value ? selectedSpot.value : held.value.spot))
+
 // 景點附近（2 km 內）的擴充包點，每個擴充包最多 6 個
 const NEARBY_M = 2000
 const NEARBY_MAX = 6
 const nearby = computed<NearbyPack[]>(() => {
-  const s = selectedSpot.value
+  const s = shownSpot.value
   if (!s) return []
   const { lat, lng } = s.location
   return PACKS.filter((p) => explore.enabledPacks.includes(p.key)).flatMap((p) => {
@@ -178,7 +186,7 @@ const nearby = computed<NearbyPack[]>(() => {
 })
 // 景點是名城時：名城番號與スタンプ設置場所（擴充包「城」載入後）
 const castleOfSpot = computed(() => {
-  const s = selectedSpot.value
+  const s = shownSpot.value
   const it = s ? catalog.packs.castle?.find((x) => x.s === s.id) : undefined
   if (!it?.no) return undefined
   const label = packByKey.get('castle')?.groups.find((g) => g.key === it.g)?.label ?? ''
@@ -186,7 +194,28 @@ const castleOfSpot = computed(() => {
 })
 const prefSpots = computed(() => (props.pref ? (catalog.mapSpots[props.pref] ?? []) : []))
 // 右側卡片換內容時重播淡入：擴充包的點看 id，景點等詳細資料到了才換（載入中不算一次）
-const panelKey = computed(() => (selectedPack.value ? (selectedId.value ?? '') : (selectedSpot.value?.id ?? 'loading')))
+const panelKey = computed(() => (shownPack.value ? shownPack.value.item.id : (shownSpot.value?.id ?? 'loading')))
+// 手機第一次打開：卡片升上來（sheet transition）時內容不再另外淡入，升上來途中換掉的內容（載入中 → 景點）也不播；
+// quietKey 記住這段期間的內容，之後換景點才播 panel-in
+const sheetEntering = ref(false)
+const quietKey = ref<string | null>(null)
+watch(
+  selectedId,
+  (id, old) => {
+    if (id && !old && !desktop.value) {
+      sheetEntering.value = true
+      quietKey.value = panelKey.value
+    }
+  },
+  { flush: 'pre' },
+)
+watch(
+  panelKey,
+  (k) => {
+    if (sheetEntering.value) quietKey.value = k
+  },
+  { flush: 'pre' },
+)
 
 // 桌機：左上浮動面板蓋住地圖左側，地圖定位時扣掉這塊（寬 w-float＋左右間距）
 const desktop = ref(false)
@@ -603,29 +632,47 @@ function onMoveEnd(view: MapViewState) {
       </div>
     </div>
 
-    <!-- 手機的景點卡片從下方升上來；換景點時內容淡入（DESIGN.md §9） -->
-    <aside
-      v-if="selectedId"
-      class="shrink-0 border-line lg:w-panel lg:border-l max-lg:absolute max-lg:inset-x-0 max-lg:bottom-0 max-lg:z-20 max-lg:h-[60dvh] max-lg:animate-sheet-in max-lg:overflow-hidden max-lg:rounded-t-sheet max-lg:shadow-sheet"
-    >
-      <div :key="panelKey" class="h-full animate-panel-in">
-        <PackPanel
-          v-if="selectedPack"
-          :item="selectedPack.item"
-          :pack="selectedPack.pack"
-          @close="closeSpot"
-          @open-spot="select"
-        />
-        <SpotPanel
-          v-else
-          :spot="selectedSpot"
-          :loading="loadingSpot"
-          :nearby="nearby"
-          :castle="castleOfSpot"
-          @close="closeSpot"
-          @select-pack="select"
-        />
-      </div>
-    </aside>
+    <!-- 手機的景點卡片從下方升上來、關閉時往下收；換景點時內容淡入（DESIGN.md §9）。桌機沒有 transition，直接出現與移除 -->
+    <Transition name="sheet" @after-enter="sheetEntering = false" @enter-cancelled="sheetEntering = false">
+      <aside
+        v-if="selectedId"
+        class="shrink-0 border-line lg:w-panel lg:border-l max-lg:absolute max-lg:inset-x-0 max-lg:bottom-0 max-lg:z-20 max-lg:h-[60dvh] max-lg:overflow-hidden max-lg:rounded-t-sheet max-lg:shadow-sheet"
+      >
+        <div :key="panelKey" class="h-full" :class="panelKey === quietKey ? '' : 'animate-panel-in'">
+          <PackPanel
+            v-if="shownPack"
+            :item="shownPack.item"
+            :pack="shownPack.pack"
+            @close="closeSpot"
+            @open-spot="select"
+          />
+          <SpotPanel
+            v-else
+            :spot="shownSpot"
+            :loading="loadingSpot"
+            :nearby="nearby"
+            :castle="castleOfSpot"
+            @close="closeSpot"
+            @select-pack="select"
+          />
+        </div>
+      </aside>
+    </Transition>
   </div>
 </template>
+
+<style scoped>
+/* 手機的景點卡片（DESIGN.md §9）：升上來 0.32s、往下收 0.2s；開到一半又關會直接反轉 */
+@media (max-width: 1023.98px) {
+  .sheet-enter-active {
+    transition: transform 0.32s var(--ease-out-soft);
+  }
+  .sheet-leave-active {
+    transition: transform 0.2s var(--ease-out-soft);
+  }
+  .sheet-enter-from,
+  .sheet-leave-to {
+    transform: translateY(100%);
+  }
+}
+</style>
