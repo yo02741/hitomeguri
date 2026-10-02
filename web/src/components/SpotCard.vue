@@ -135,7 +135,7 @@ const sizeClass = { sm: 'text-[10px]', lg: 'text-[16px]', fluid: 'fluid' }
         </div>
         <div class="relative flex items-center gap-[0.5em] px-[0.2em] text-[0.8em] leading-none font-bold whitespace-nowrap">
           <span lang="ja">{{ region?.name.ja }}</span>
-          <span class="truncate font-latin tracking-[0.2em] uppercase opacity-80">{{ region?.name.romaji }}</span>
+          <span class="truncate font-latin tracking-[0.2em] uppercase">{{ region?.name.romaji }}</span>
           <span v-if="label" class="ml-auto shrink-0 rounded-full bg-paper px-[0.6em] py-[0.25em] text-ink">{{ label }}</span>
           <span class="shrink-0 font-latin" :class="label ? '' : 'ml-auto'">{{ number }}</span>
         </div>
@@ -180,7 +180,7 @@ const sizeClass = { sm: 'text-[10px]', lg: 'text-[16px]', fluid: 'fluid' }
         <!-- 全景卡：照片上下加暗面，文字壓在照片上 -->
         <div v-if="fullArt" class="scrim pointer-events-none absolute inset-0"></div>
         <div class="name-block relative flex min-h-0 flex-1 flex-col justify-center px-[0.2em]">
-          <span v-if="card.name.kana" lang="ja" class="truncate text-[0.72em] tracking-kana opacity-85">{{ card.name.kana }}</span>
+          <span v-if="card.name.kana" lang="ja" class="truncate text-[0.72em] tracking-kana">{{ card.name.kana }}</span>
           <span lang="ja" class="card-name truncate leading-tight font-black tracking-name" :class="nameSize">{{ card.name.ja }}</span>
           <span v-if="card.name.romaji" class="truncate font-latin text-[0.8em] font-semibold tracking-romaji uppercase">{{ card.name.romaji }}</span>
         </div>

@@ -163,7 +163,7 @@
 - 頁面標題（h1）、區塊標題（h2）與紀錄頁卡片標題的字距一律 `tracking-title`（0.06em，年代主題的大標也用這個 token）。站名標式的地名（`tracking-name`）、Wordmark 不在此列。
 - 字級一律用 token（rem），會跟著瀏覽器的預設字級放大；不寫 `text-[Npx]`。例外：Wordmark 上的裝飾假名、旅前小書的列印版面、收集卡卡面以 em 縮放的微縮字、§7.12 的印章、旅人衣櫃的「穿」封印。
 - 羅馬拼音：`font-latin font-semibold uppercase tracking-romaji`（海報區、景點名）；清單中可用首字大寫、不加字距。
-- 假名行：`text-caption tracking-kana text-sub`（在地區色底上改 `text-on-region/80`）。
+- 假名行：`text-caption tracking-kana text-sub`（在地區色底上用 `text-on-region`，不加透明度；和漢字的層次靠字級、`tracking-kana` 與字重。羅馬拼音同樣不加透明度）。
 - 清單裡的名稱（景點、擴充包、停留點、紀錄）可以換兩行（`line-clamp-2 break-words`，列 `items-start`）；假名行與其他次要資訊才單行截斷，截斷的假名加 `title`。
 - 長名稱：日文標題（h1–h3、`text-title`）依文節斷行（base 的 `word-break: auto-phrase`，Safari 不支援時維持原樣）；不加 `text-wrap: balance`、`line-break: strict`，Safari 會把片假名從字中間切開。羅馬拼音加 `wrap-anywhere`，不撐出面板；清單裡靠右的羅馬拼音最多佔 40%。
 
@@ -357,7 +357,8 @@ header 右側、登入鈕左邊（`SearchBox.vue`，每一頁都在；在行程�
 
 ### 7.14 照片
 - 比例：桌機右欄高 150～170、手機 170～200，`object-cover`。
-- 右下 credit：`text-caption text-sub`（在照片上改白字＋`bg-ink/50 px-1.5 rounded-tag`）。
+- 右下 credit：`text-caption text-sub`（在照片上改白字＋`bg-ink/70 px-1.5 rounded-tag`，疊在白色照片上也有 4.5:1 以上）。
+- 年代質感層（`.photo-frame::after`，網點、暈影、光澤）在控制項之下：照片上的 credit 與關閉鈕加 `z-[1]`。
 - 無照片：`bg-placeholder`＋景點的主題符號（48px、`text-sub`）置中，不顯示「無照片」文字。
 
 ### 7.15 空狀態

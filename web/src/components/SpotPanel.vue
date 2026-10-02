@@ -136,12 +136,12 @@ function distance(m: number): string {
         :href="image.source_url"
         target="_blank"
         rel="noopener"
-        class="absolute right-2 bottom-2 max-w-[85%] truncate rounded-tag bg-ink/50 px-1.5 text-caption text-white no-underline"
+        class="absolute right-2 bottom-2 z-[1] max-w-[85%] truncate rounded-tag bg-ink/70 px-1.5 text-caption text-white no-underline"
       >{{ image.author }} / {{ image.license }}</a>
       <button
         type="button"
         aria-label="關閉"
-        class="absolute top-2 right-2 grid size-tap place-items-center rounded-full bg-paper/90 text-ink active:not-disabled:translate-y-px"
+        class="absolute top-2 right-2 z-[1] grid size-tap place-items-center rounded-full bg-paper/90 text-ink active:not-disabled:translate-y-px"
         @click="emit('close')"
       >
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true">
@@ -152,7 +152,7 @@ function distance(m: number): string {
 
     <div class="paper-grain flex items-center gap-3.5 bg-region px-5 py-4 text-on-region">
       <div class="flex min-w-0 flex-col gap-px">
-        <span v-if="spot.name.kana" lang="ja" class="text-caption tracking-kana opacity-85">{{ spot.name.kana }}</span>
+        <span v-if="spot.name.kana" lang="ja" class="text-caption tracking-kana">{{ spot.name.kana }}</span>
         <h2 lang="ja" class="text-h2 font-black tracking-name">{{ spot.name.ja }}</h2>
         <span v-if="spot.name.romaji" class="font-latin text-base font-semibold tracking-romaji uppercase wrap-anywhere">{{ spot.name.romaji }}</span>
       </div>

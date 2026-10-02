@@ -144,7 +144,7 @@ function sourceLabel(url: string): string {
         </RouterLink>
         <div class="flex flex-wrap items-end gap-x-6 gap-y-1">
           <div class="flex flex-col">
-            <span lang="ja" class="w-fit text-body tracking-kana opacity-85 [view-transition-name:region-kana]">{{ region.name.kana }}</span>
+            <span lang="ja" class="w-fit text-body tracking-kana [view-transition-name:region-kana]">{{ region.name.kana }}</span>
             <h1 lang="ja" class="w-fit text-display font-black tracking-name [view-transition-name:region-name]">{{ region.name.ja }}</h1>
           </div>
           <div class="flex flex-col pb-2">

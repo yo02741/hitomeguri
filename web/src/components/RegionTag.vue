@@ -91,7 +91,7 @@ const routes = computed(() =>
       </RouterLink>
       <span class="h-8 w-px shrink-0 bg-on-region opacity-25" aria-hidden="true"></span>
       <span class="flex shrink-0 flex-col pl-1 whitespace-nowrap">
-        <span lang="ja" class="w-fit text-caption tracking-kana opacity-85 [view-transition-name:region-kana]">{{ region.name.kana }}</span>
+        <span lang="ja" class="w-fit text-caption tracking-kana [view-transition-name:region-kana]">{{ region.name.kana }}</span>
         <span lang="ja" class="w-fit text-h3 leading-tight font-black tracking-name [view-transition-name:region-name]">{{ region.name.ja }}</span>
       </span>
       <span class="ml-auto flex min-w-0 flex-col items-end self-end">
