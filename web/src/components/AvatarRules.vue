@@ -40,7 +40,7 @@ const prefCount = OUTFITS.filter((o) => o.pref).length
           <svg width="18" height="18" viewBox="0 0 120 120" aria-label="小扭蛋"><path d="M14 60 A46 46 0 0 1 106 60Z" class="ball-top" /><path d="M14 60 A46 46 0 0 0 106 60Z" class="ball-bottom" /></svg>
         </dt>
         <dd>扭蛋抽得到、還沒抽到</dd>
-        <dt class="grid place-items-center"><span class="pref-tag rounded-tag px-1.5 text-[10px] leading-[16px] font-bold">縣名</span></dt>
+        <dt class="grid place-items-center"><span class="pref-tag rounded-tag px-1.5 text-micro font-bold">縣名</span></dt>
         <dd>那個縣的單品；剪影的是還沒去過、還沒拿到</dd>
         <dt class="grid place-items-center"><span class="seal grid size-6 place-items-center rounded-full text-[11px] font-black">穿</span></dt>
         <dd>正在穿</dd>

@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <span class="new-tag pointer-events-none inline-flex items-center rounded-full px-1.5 font-latin text-[10px] leading-[16px] font-bold tracking-[0.08em]" aria-label="新">NEW</span>
+  <span class="new-tag pointer-events-none inline-flex items-center rounded-full px-1.5 font-latin text-micro font-bold tracking-[0.08em]" aria-label="新">NEW</span>
 </template>
 
 <style scoped>

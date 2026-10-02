@@ -136,7 +136,7 @@ function distance(m: number): string {
         :href="image.source_url"
         target="_blank"
         rel="noopener"
-        class="absolute right-2 bottom-2 max-w-[85%] truncate rounded-tag bg-ink/50 px-1.5 text-[11px] text-white no-underline"
+        class="absolute right-2 bottom-2 max-w-[85%] truncate rounded-tag bg-ink/50 px-1.5 text-caption text-white no-underline"
       >{{ image.author }} / {{ image.license }}</a>
       <button
         type="button"

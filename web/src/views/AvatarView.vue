@@ -238,7 +238,7 @@ function wear() {
                   <g :filter="avatar.has(o.id) ? 'url(#doll-cut-sm)' : 'url(#doll-ghost)'" v-html="o.svg"></g>
                 </svg>
                 <span class="text-caption font-bold text-balance" :class="avatar.has(o.id) ? 'text-ink' : 'text-sub'">{{ o.name }}</span>
-                <span v-if="o.pref" lang="ja" class="pref-tag rounded-tag px-1.5 text-[10px] leading-[16px] font-bold" :data-pref="o.pref">{{ prefName(o.pref) }}</span>
+                <span v-if="o.pref" lang="ja" class="pref-tag rounded-tag px-1.5 text-micro font-bold" :data-pref="o.pref">{{ prefName(o.pref) }}</span>
                 <span v-if="avatar.equipped[o.slot] === o.id" class="seal absolute top-1 right-1 grid size-6 place-items-center rounded-full text-[11px] font-black" aria-hidden="true">穿</span>
                 <NewTag v-if="avatar.has(o.id) && fresh.has(outfitKey(o.id))" class="absolute top-1 left-1" />
                 <!-- 扭蛋抽得到、還沒抽到 -->

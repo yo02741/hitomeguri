@@ -324,7 +324,7 @@ async function del() {
               class="flex size-11 shrink-0 flex-col items-center justify-center rounded-badge font-latin font-bold leading-none"
               :class="dayPref(d) ? 'bg-region text-on-region' : 'bg-placeholder text-ink'"
             >
-              <span class="text-[10px]">DAY</span><span class="text-[18px]">{{ i + 1 }}</span>
+              <span class="text-micro leading-none">DAY</span><span class="text-[18px]">{{ i + 1 }}</span>
             </span>
             <span v-if="dayDate(trip, i)" class="font-latin text-body-sm text-ink">{{ shortDate(dayDate(trip, i)!) }}</span>
             <span v-if="dayPref(d)" lang="ja" class="text-caption text-sub">{{ regionOf(dayPref(d))?.name.ja }}</span>

@@ -156,9 +156,11 @@
 | `text-body` | 15 | 400 | 簡介內文（行高 1.8） |
 | `text-body-sm` | 14 | 400 | 資訊列、清單、按鈕 |
 | `text-label` | 13 | 400–700 | 次要標籤、小標 |
-| `text-caption` | 12 | 400 | 假名行、credit、說明 |
+| `text-caption` | 12 | 400 | 假名行、credit、說明；要讀的資訊（出處、羅馬拼音、按鈕字）最小到這一級 |
+| `text-micro` | 11 | 700 | 膠囊標籤、徽章（NEW、縣名標、「全國」、DAY） |
 
 - 標題一律 `font-black`（900），不使用襯線字、不使用斜體。
+- 字級一律用 token（rem），會跟著瀏覽器的預設字級放大；不寫 `text-[Npx]`。例外：Wordmark 上的裝飾假名、旅前小書的列印版面、收集卡卡面以 em 縮放的微縮字、§7.12 的印章、旅人衣櫃的「穿」封印。
 - 羅馬拼音：`font-latin font-semibold uppercase tracking-romaji`（海報區、景點名）；清單中可用首字大寫、不加字距。
 - 假名行：`text-caption tracking-kana text-sub`（在地區色底上改 `text-on-region/80`）。
 - 長名稱：日文標題（h1–h3、`text-title`）依文節斷行（base 的 `word-break: auto-phrase`，Safari 不支援時維持原樣）；不加 `text-wrap: balance`、`line-break: strict`，Safari 會把片假名從字中間切開。羅馬拼音加 `wrap-anywhere`，不撐出面板；清單裡靠右的羅馬拼音最多佔 40%。
@@ -331,7 +333,7 @@ header 右側、登入鈕左邊（`SearchBox.vue`，每一頁都在；在行程�
 ### 7.9 行程封面 TripCover 與 DAY 標記
 - 分段色帶：`flex h-2.5`，每段 `style="flex-grow: 天數"` 並設該段的 `data-pref` 與 `bg-region`。
 - 封面：`bg-region text-on-region px-4 py-3.5`（封面主縣）；標題 `text-h3`～`text-2xl font-black`。
-- DAY 標記：`size-11 rounded-badge bg-region text-on-region font-latin font-bold`，上方 `DAY`（10px）、下方數字（18px）；每個標記設當天主縣的 `data-pref`。
+- DAY 標記：`size-11 rounded-badge bg-region text-on-region font-latin font-bold`，上方 `DAY`（`text-micro` 11px）、下方數字（18px）；每個標記設當天主縣的 `data-pref`。
 
 ### 7.10 播放鈕（發音）
 `size-tap rounded-full border border-line bg-paper grid place-items-center`；播放中改 `bg-region-tint`。`aria-label="播放 {漢字}"`。
@@ -351,7 +353,7 @@ header 右側、登入鈕左邊（`SearchBox.vue`，每一頁都在；在行程�
 
 ### 7.14 照片
 - 比例：桌機右欄高 150～170、手機 170～200，`object-cover`。
-- 右下 credit：`text-[11px] text-sub`（在照片上改白字＋`bg-ink/50 px-1.5 rounded-tag`）。
+- 右下 credit：`text-caption text-sub`（在照片上改白字＋`bg-ink/50 px-1.5 rounded-tag`）。
 - 無照片：`bg-placeholder`＋景點的主題符號（48px、`text-sub`）置中，不顯示「無照片」文字。
 
 ### 7.15 空狀態
