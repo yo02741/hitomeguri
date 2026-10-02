@@ -13,6 +13,9 @@ def test_season_of():
     assert sp.season_of("Kasuga-taisha") is None
     assert sp.season_of("Kegon Falls") is None
     assert sp.season_of("Interior of the main hall") is None
+    # 景點名稱裡的季節字樣不算
+    assert sp.season_of("SPring-8 central administration building", "SPring-8") is None
+    assert sp.season_of("SPring-8 at night", "SPring-8") == "night"
 
 
 def _file(
@@ -95,7 +98,7 @@ def test_find_season_photos(monkeypatch):
             _file("Kiyomizu-dera in snow.jpg", lic="CC BY-NC 2.0"),
         ]
 
-    def fake_depicts(qid: str) -> list[dict[str, Any]]:
+    def fake_depicts(qid: str, seasonal: bool = False) -> list[dict[str, Any]]:
         return [{**_file("IMG_2041.jpg"), "cats": ["Kiyomizu-dera in summer"]}]
 
     monkeypatch.setattr(sp, "subcategories", fake_subcats)

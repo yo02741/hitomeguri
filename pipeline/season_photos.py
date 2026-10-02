@@ -44,8 +44,13 @@ NOT_SEASON = re.compile(
 )
 
 
-def season_of(title: str) -> str | None:
-    """標題屬於哪一季或夜景；「Autumn illumination」這種算夜景（夜景優先）。"""
+def season_of(title: str, own: str = "") -> str | None:
+    """標題屬於哪一季或夜景；「Autumn illumination」這種算夜景（夜景優先）。
+
+    own 是景點自己的名稱（例：SPring-8、春日山），名稱裡的季節字樣不算。
+    """
+    if own:
+        title = re.sub(re.escape(own), " ", title, flags=re.I)
     if NOT_SEASON.search(title):
         return None
     for s in ("night", *SEASONS[:4]):
@@ -245,14 +250,24 @@ def score(
     return sc
 
 
-def depicting_files(qid: str) -> list[dict[str, Any]]:
-    """Commons 結構化資料標了「描繪」（P180）這個景點的檔案，附分類（找季節用）"""
+SEASON_WORDS = (
+    "spring OR sakura OR cherry OR summer OR autumn OR foliage OR winter OR snow OR night "
+    "OR illumination OR 桜 OR 紅葉 OR 雪 OR 夜景 OR ライトアップ"
+)
+
+
+def depicting_files(qid: str, seasonal: bool = False) -> list[dict[str, Any]]:
+    """Commons 結構化資料標了「描繪」（P180）這個景點的檔案，附分類（找季節用）。
+
+    seasonal=True 時只找說明或分類有季節字樣的（富士山這種檔案多的景點，前 50 筆不一定有季節照片）。
+    """
+    search = f"haswbstatement:P180={qid}" + (f" ({SEASON_WORDS})" if seasonal else "")
     data = get_json(
         API,
         params={
             "action": "query",
             "generator": "search",
-            "gsrsearch": f"haswbstatement:P180={qid}",
+            "gsrsearch": search,
             "gsrnamespace": 6,
             "gsrlimit": 50,
             "prop": "imageinfo|categories",
@@ -318,24 +333,30 @@ def find_season_photos(
     cat: str, main_file: str | None, qid: str = "", ja: str = ""
 ) -> dict[str, dict[str, str]]:
     toks = name_tokens(cat, ja)
+    own = cat  # 景點自己的名稱（分類名）裡的季節字樣不算
     pool: dict[str, tuple[dict[str, Any], str]] = {}
     # 1. 季節子分類（每季最多看兩個）
     subs = subcategories(cat)
     for s in SEASONS:
-        for sub in [x for x in subs if season_of(x) == s][:2]:
+        for sub in [x for x in subs if season_of(x, own) == s][:2]:
             for f in files_in(sub):
                 pool.setdefault(f["title"], (f, s))
     # 2. 主分類裡檔名有季節字樣的
     for f in files_in(cat, 500):
-        if s := season_of(f["title"]):
+        if s := season_of(f["title"], own):
             pool.setdefault(f["title"], (f, s))
-    # 3. 描繪這個景點的檔案
+    # 3. 描繪這個景點的檔案（全部的前 50 筆＋有季節字樣的前 50 筆）
     depicts: set[str] = set()
     if qid:
-        for f in depicting_files(qid):
+        found_files = depicting_files(qid)
+        try:
+            found_files += depicting_files(qid, seasonal=True)
+        except Exception:  # 搜尋語法不支援時只用第一批
+            pass
+        for f in found_files:
             depicts.add(f["title"])
-            s = season_of(f["title"]) or next(
-                (x for c in f.get("cats", []) if (x := season_of(c))), None
+            s = season_of(f["title"], own) or next(
+                (x for c in f.get("cats", []) if (x := season_of(c, own))), None
             )
             if s:
                 pool.setdefault(f["title"], (f, s))
