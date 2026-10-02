@@ -4,11 +4,14 @@ import { computed, ref, watch } from 'vue'
 import type { Spot } from '../services/bundles'
 import { cardFromSpot, cardNumberFor, designationOf, rarityLabel, rarityOf } from '../services/card'
 import { showReveal } from '../services/cardReveal'
-import { allVariants, drawVariants, ownedVariants, randomDraw, UNLIMITED_DRAWS } from '../services/cardVariants'
+import { allVariants, drawVariants, hasNight, ownedVariants } from '../services/cardVariants'
 import { todayIso } from '../services/userdb'
+import { useCardDraw } from '../composables/cardDraw'
 import { useVisitedEntries } from '../composables/visited'
+import { giftOf } from '../data/outfits'
 import { useCardsStore } from '../stores/cards'
-import { useUserStore } from '../stores/user'
+import { outfitKey, useFreshStore } from '../stores/fresh'
+import { useWalletStore } from '../stores/wallet'
 import { googleMapsUrl } from '../services/maps'
 import { canSpeak, speakJa } from '../services/tts'
 import { useCatalogStore } from '../stores/catalog'
@@ -41,7 +44,6 @@ const category = computed(() => props.spot?.tags.filter((t) => !t.startsWith('gu
 // 景點收集卡（DESIGN.md §7.19）：名稱帶右側的卡片鈕放大檢視
 const catalog = useCatalogStore()
 const marks = useMarksStore()
-const userStore = useUserStore()
 const { datesById } = useVisitedEntries()
 const cardOpen = ref(false)
 watch(() => props.spot?.id, () => (cardOpen.value = false))
@@ -61,11 +63,14 @@ const card = computed(() => {
 })
 // 收集到的樣式（去過的才有；沒去過只有基本卡）
 const cardsStore = useCardsStore()
+const wallet = useWalletStore()
+const fresh = useFreshStore()
+const cardDraw = useCardDraw()
 const cardVariants = computed(() => {
   const c = card.value
   if (!c) return []
   const dates = datesById.value.get(c.face.id)
-  return dates ? ownedVariants(userStore.user?.uid ?? '', c.face.id, dates, c.rarity, cardsStore.extraOf(c.face.id)) : []
+  return dates ? ownedVariants(dates, c.rarity, hasNight(c.face), cardsStore.extraOf(c.face.id)) : []
 })
 // 按下去過：收集卡飛出來亮相，再收進紀錄分頁
 function onStamped() {
@@ -73,11 +78,16 @@ function onStamped() {
   if (!c) return
   // 這個縣還沒有其他去過的景點：第一次到這個縣
   const firstInPref = !Object.entries(marks.marks).some(([id, m]) => id !== c.face.id && m.visited && m.pref === c.face.pref)
-  // 這一次去過抽到的樣式（今天的日期）：最稀有的那張
-  // 測試期可以無限抽：每次按去過都隨機抽一次並存起來
-  const drawn = UNLIMITED_DRAWS ? randomDraw(c.rarity, todayIso()) : drawVariants(userStore.user?.uid ?? '', c.face.id, todayIso(), c.rarity)
-  if (UNLIMITED_DRAWS) void cardsStore.add(c.face.id, drawn)
-  const variant = drawn.sort((a, b) => b.rank - a.rank)[0]
+  // 今天去過：基本卡＋今天的季節卡；這個景點第一次去過再送一次免費抽（只送一次，取消再勾不會再送）
+  const today = drawVariants(todayIso())
+  const owned = [...new Set([...cardVariants.value.map((v) => v.key), ...today.map((v) => v.key)])]
+  const gift = wallet.claimFree(c.face.id) ? cardDraw.drawFor({ spotId: c.face.id, rarity: c.rarity, night: hasNight(c.face), owned }, true) : null
+  const variant = [...today, ...(gift ? [gift] : [])].sort((a, b) => b.rank - a.rank)[0]
+  // 第一次到這個縣：送那個縣的代表服裝（旅人），標 NEW
+  if (firstInPref) {
+    const g = giftOf(c.face.pref)
+    if (g) fresh.add([outfitKey(g.id)])
+  }
   showReveal({ face: c.face, rarity: c.rarity, label: c.label, number: c.number, firstInPref, variant })
 }
 const station = computed(() => props.spot?.nearest_stations?.[0])
@@ -251,7 +261,7 @@ function distance(m: number): string {
       :visited="card.visited"
       :visited-on="card.visitedOn"
       :variants="cardVariants.length ? cardVariants : undefined"
-      :variant-total="cardVariants.length ? allVariants(card.rarity).length : undefined"
+      :variant-total="cardVariants.length ? allVariants(card.rarity, hasNight(card.face)).length : undefined"
       @close="cardOpen = false"
     />
   </section>

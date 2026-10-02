@@ -2,24 +2,23 @@ import { defineStore } from 'pinia'
 import { computed, ref, shallowRef, watch } from 'vue'
 
 import { useVisitedEntries } from '../composables/visited'
-import { DEFAULT_EQUIPPED, type EyeStyle, type HairStyle, OUTFITS, outfitById, type Outfit, type Slot, STARTER_IDS } from '../data/outfits'
-import { UNLIMITED_DRAWS } from '../services/cardVariants'
+import { DEFAULT_EQUIPPED, type EyeStyle, type HairColor, type HairStyle, OUTFITS, outfitById, type Outfit, type Skin, type Slot, STARTER_IDS } from '../data/outfits'
 import { ensureSignedIn, firestore } from '../services/userdb'
+import { outfitKey, useFreshStore } from './fresh'
 import { useUserStore } from './user'
+import { useWalletStore } from './wallet'
 
 /**
- * 旅人（紙娃娃，DESIGN.md §7.24）：外觀、穿著、有的服裝、抽過幾次。存在 users/{uid}/meta/avatar，
+ * 旅人（紙娃娃，DESIGN.md §7.24）：外觀、穿著、有的服裝。存在 users/{uid}/meta/avatar，
  * 只有本人讀寫；規則還沒發布或離線寫不進去時先存在這台裝置。
- * 各縣的特色單品去過那個縣就有（不用存）；其他服裝用旅行得到的抽獎機會抽：
- * 去過一個景點 1 次、結束一趟旅行 3 次。測試期（UNLIMITED_DRAWS）不限。
+ * 每個縣的代表單品（gift）去過那個縣就有（不用存）；其他的用抽獎券抽（stores/wallet.ts，與景點卡共用）：
+ * 扭蛋的範圍是不限縣的＋去過的縣的其他單品，只抽還沒有的（不會重複），都有了就不能抽。
  */
 export interface AvatarParts {
-  skin: 1 | 2 | 3
+  skin: Skin
   hair: HairStyle
-  hairColor: 1 | 2 | 3 | 4 | 5
+  hairColor: HairColor
   eyes: EyeStyle
-  /** 舞台的背景：去過的縣（沒選就是最近去的縣） */
-  stage?: string
 }
 interface Saved {
   parts: AvatarParts
@@ -33,7 +32,9 @@ const WEIGHT: Record<Outfit['rarity'], number> = { 1: 6, 2: 3, 3: 1 }
 
 export const useAvatarStore = defineStore('avatar', () => {
   const userStore = useUserStore()
-  const { entries, doneTrips } = useVisitedEntries()
+  const { entries } = useVisitedEntries()
+  const wallet = useWalletStore()
+  const fresh = useFreshStore()
   const parts = shallowRef<AvatarParts>(DEFAULT_PARTS)
   const equipped = shallowRef<Partial<Record<Slot, string>>>(DEFAULT_EQUIPPED)
   const owned = shallowRef<string[]>(STARTER_IDS)
@@ -109,15 +110,14 @@ export const useAvatarStore = defineStore('avatar', () => {
 
   /** 去過的縣 */
   const visitedPrefs = computed(() => new Set(entries.value.map(([, m]) => m.pref)))
-  /** 有的服裝：抽到的＋去過的縣的特色單品 */
-  const ownedIds = computed(() => new Set([...owned.value, ...OUTFITS.filter((o) => o.pref && visitedPrefs.value.has(o.pref)).map((o) => o.id)]))
+  /** 有的服裝：抽到的＋去過的縣的代表單品 */
+  const ownedIds = computed(() => new Set([...owned.value, ...OUTFITS.filter((o) => o.gift && o.pref && visitedPrefs.value.has(o.pref)).map((o) => o.id)]))
   const has = (id: string) => ownedIds.value.has(id)
-  /** 抽獎機會：去過一個景點 1 次、結束一趟旅行 3 次，扣掉抽過的 */
-  const earned = computed(() => entries.value.length + doneTrips.value.length * 3)
-  const ticketsLeft = computed(() => Math.max(0, earned.value - used.value))
-  const canDraw = computed(() => UNLIMITED_DRAWS || ticketsLeft.value > 0)
-  /** 抽得到的：不是各縣限定的，加上去過的縣的 */
-  const pool = computed(() => OUTFITS.filter((o) => !o.pref || visitedPrefs.value.has(o.pref)))
+  /** 扭蛋抽得到的：不限縣的，加上去過的縣的其他單品 */
+  const pool = computed(() => OUTFITS.filter((o) => !o.gift && (!o.pref || visitedPrefs.value.has(o.pref))))
+  /** 還沒有、抽得到的 */
+  const remaining = computed(() => pool.value.filter((o) => !ownedIds.value.has(o.id)))
+  const canDraw = computed(() => remaining.value.length > 0 && wallet.canSpend(1))
 
   function setParts(p: Partial<AvatarParts>) {
     parts.value = { ...parts.value, ...p }
@@ -130,11 +130,10 @@ export const useAvatarStore = defineStore('avatar', () => {
     equipped.value = next
     void save()
   }
-  /** 抽一件：還沒有的優先（都有了就隨便抽，當作重複） */
+  /** 抽一件：只從還沒有的裡抽（不會重複）；都有了或抽獎券不夠回傳 null */
   function draw(): { outfit: Outfit; duplicate: boolean } | null {
-    if (!canDraw.value) return null
-    const fresh = pool.value.filter((o) => !ownedIds.value.has(o.id))
-    const from = fresh.length ? fresh : pool.value
+    const from = remaining.value
+    if (!from.length || !wallet.spend(1)) return null
     const total = from.reduce((s, o) => s + WEIGHT[o.rarity], 0)
     let r = Math.random() * total
     let picked = from[from.length - 1]!
@@ -145,12 +144,11 @@ export const useAvatarStore = defineStore('avatar', () => {
         break
       }
     }
-    const duplicate = ownedIds.value.has(picked.id)
-    if (!duplicate) owned.value = [...owned.value, picked.id]
-    used.value += 1
+    owned.value = [...owned.value, picked.id]
+    fresh.add([outfitKey(picked.id)])
     void save()
-    return { outfit: picked, duplicate }
+    return { outfit: picked, duplicate: false }
   }
 
-  return { parts, equipped, owned, used, loaded, visitedPrefs, ownedIds, has, earned, ticketsLeft, canDraw, pool, setParts, equip, draw }
+  return { parts, equipped, owned, used, loaded, visitedPrefs, ownedIds, has, canDraw, pool, remaining, setParts, equip, draw }
 })

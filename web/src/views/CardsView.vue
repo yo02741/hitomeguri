@@ -1,16 +1,23 @@
 <script setup lang="ts">
 import { computed, ref, watch } from 'vue'
 
+import CardRules from '../components/CardRules.vue'
 import CardViewer from '../components/CardViewer.vue'
+import NewTag from '../components/NewTag.vue'
 import JapanMap from '../components/JapanMap.vue'
 import RollingNumber from '../components/RollingNumber.vue'
 import SeasonDrift from '../components/SeasonDrift.vue'
 import SpotCard from '../components/SpotCard.vue'
+import TenPull, { type Pull } from '../components/TenPull.vue'
+import { useCardDraw } from '../composables/cardDraw'
 import { type CollectionCard, useCollection } from '../composables/collection'
 import { useVisitedEntries } from '../composables/visited'
 import { type Region, regions } from '../data/regions'
 import { cardFromSpot } from '../services/card'
+import { hasNight } from '../services/cardVariants'
 import { useCatalogStore } from '../stores/catalog'
+import { useFreshStore } from '../stores/fresh'
+import { TICKET_RULES, useWalletStore } from '../stores/wallet'
 import { useMarksStore } from '../stores/marks'
 import { useUserStore } from '../stores/user'
 
@@ -91,6 +98,28 @@ function step(delta: -1 | 1) {
   const e = flat.value[openIndex.value + delta]
   if (e) openId.value = e.face.id
 }
+// 十連抽（DESIGN.md §7.19b）：用 10 張抽獎券，從去過、還沒收齊的景點裡抽 10 種還沒有的樣式（剩不到 10 種就抽剩下的）
+const wallet = useWalletStore()
+const fresh = useFreshStore()
+const cardDraw = useCardDraw()
+const missingTotal = computed(() => cards.value.reduce((s, e) => s + e.variantTotal - e.variants.length, 0))
+const variantTotal = computed(() => cards.value.reduce((s, e) => s + e.variantTotal, 0))
+const tenCount = computed(() => Math.min(10, missingTotal.value))
+const tenPull = ref<Pull[] | null>(null)
+const tenKey = ref(0)
+function drawTen() {
+  const byId = new Map(cards.value.map((e) => [e.face.id, e]))
+  const got = cardDraw.drawAcross(cards.value.map((e) => ({ spotId: e.face.id, rarity: e.rarity, night: hasNight(e.face), owned: e.variants.map((v) => v.key) })), 10)
+  if (!got.length) return
+  tenKey.value++
+  tenPull.value = got.map(([t, v]) => {
+    const e = byId.get(t.spotId)!
+    return { face: e.face, rarity: e.rarity, label: e.label, number: e.number, visitedOn: e.visitedOn, variant: v }
+  })
+}
+const showTickets = ref(false)
+const showRules = ref(false)
+
 function onCardKey(e: KeyboardEvent, id: string) {
   if (e.key === 'Enter' || e.key === ' ') {
     e.preventDefault()
@@ -129,6 +158,31 @@ function onCardKey(e: KeyboardEvent, id: string) {
     </header>
 
     <template v-if="userStore.user">
+      <!-- 抽卡：抽獎券、十連抽 -->
+      <div v-if="cards.length" class="flex flex-wrap items-center gap-x-4 gap-y-2 rounded-card border border-line bg-paper px-4 py-3">
+        <button type="button" class="flex items-baseline gap-1.5 text-label text-sub hover:text-ink" :aria-expanded="showTickets" @click="showTickets = !showTickets">
+          抽獎券<span class="font-latin text-h3 font-bold text-ink">{{ wallet.left }}</span>
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" class="self-center transition-transform" :class="showTickets ? 'rotate-180' : ''" aria-hidden="true"><path d="M6 9l6 6 6-6" /></svg>
+        </button>
+        <span class="text-label text-sub">樣式 <span class="font-latin font-bold text-ink">{{ variantTotal - missingTotal }}</span> / {{ variantTotal }}</span>
+        <button type="button" class="h-8 rounded-control px-2 text-label font-bold text-sub hover:bg-surface hover:text-ink" @click="showRules = true">規則</button>
+        <button
+          type="button"
+          class="ml-auto h-10 rounded-full bg-ink px-5 text-label font-bold text-paper disabled:opacity-40"
+          :disabled="!tenCount || !wallet.canSpend(tenCount)"
+          @click="drawTen"
+        >
+          {{ !missingTotal ? '已收齊' : tenCount < 10 ? `抽 ${tenCount} 張` : '十連抽' }}
+        </button>
+        <dl v-if="showTickets" class="grid w-full grid-cols-[auto_auto_1fr] gap-x-4 gap-y-1 border-t border-line pt-3 text-caption text-sub">
+          <dt>去過的景點</dt><dd class="font-latin text-ink">{{ wallet.breakdown.spots }} × {{ TICKET_RULES.spot }}</dd><dd></dd>
+          <dt>去過的縣</dt><dd class="font-latin text-ink">{{ wallet.breakdown.prefs }} × {{ TICKET_RULES.pref }}</dd><dd></dd>
+          <dt>去過的地方</dt><dd class="font-latin text-ink">{{ wallet.breakdown.areas }} × {{ TICKET_RULES.area }}</dd><dd></dd>
+          <dt>每 10 個景點</dt><dd class="font-latin text-ink">{{ wallet.breakdown.bonus }} × {{ TICKET_RULES.every10 }}</dd><dd></dd>
+          <dt>用掉</dt><dd class="font-latin text-ink">{{ wallet.used }}</dd><dd></dd>
+        </dl>
+      </div>
+
       <div role="group" aria-label="篩選" class="flex flex-wrap gap-2">
         <button
           v-for="f in FILTERS"
@@ -153,7 +207,7 @@ function onCardKey(e: KeyboardEvent, id: string) {
           <span class="ml-auto font-latin text-body-sm text-sub">{{ g.items.length || g.pending }}</span>
         </h2>
         <ul class="grid grid-cols-2 gap-x-4 gap-y-5 sm:grid-cols-3 lg:grid-cols-4">
-          <li v-for="(e, i) in g.items" :key="e.face.id" class="deal @container" :style="{ '--i': Math.min(i, 12) }">
+          <li v-for="(e, i) in g.items" :key="e.face.id" class="deal relative @container" :style="{ '--i': Math.min(i, 12) }">
             <div
               role="button"
               tabindex="0"
@@ -164,6 +218,7 @@ function onCardKey(e: KeyboardEvent, id: string) {
             >
               <SpotCard :card="e.face" :rarity="e.rarity" :label="e.label" :number="e.number" visited :visited-on="e.visitedOn" size="fluid" :variant="shownVariant(e)" />
             </div>
+            <NewTag v-if="fresh.spotHasNew(e.face.id)" class="absolute -top-1.5 -left-1.5 z-10" />
             <p v-if="e.variants.length > 1" class="mt-1.5 flex justify-center gap-1 text-caption text-sub">
               <span class="font-latin">{{ e.variants.length }} / {{ e.variantTotal }}</span> 種
             </p>
@@ -178,6 +233,7 @@ function onCardKey(e: KeyboardEvent, id: string) {
     </template>
     <p v-else class="text-body-sm text-sub">收藏、行程與紀錄需要登入。</p>
 
+    <CardRules v-if="showRules" @close="showRules = false" />
     <CardViewer
       v-if="opened && openedFace"
       :card="openedFace"
@@ -193,6 +249,7 @@ function onCardKey(e: KeyboardEvent, id: string) {
       @step="step"
       @close="openId = null"
     />
+    <TenPull v-if="tenPull" :key="tenKey" :pulls="tenPull" title="十連抽" :can-again="tenCount > 0 && wallet.canSpend(tenCount)" @again="drawTen" @close="tenPull = null" />
   </section>
 </template>
 

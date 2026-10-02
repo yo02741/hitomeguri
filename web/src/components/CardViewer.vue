@@ -5,14 +5,17 @@ import type { RouteLocationRaw } from 'vue-router'
 import { useTilt } from '../composables/tilt'
 import type { CardFace, Rarity } from '../services/card'
 import { reveal, showReveal } from '../services/cardReveal'
-import { BASE_VARIANT, randomDraw, UNLIMITED_DRAWS, type Variant } from '../services/cardVariants'
-import { todayIso } from '../services/userdb'
+import { BASE_VARIANT, hasNight, missingVariants, type Variant } from '../services/cardVariants'
+import { useCardDraw } from '../composables/cardDraw'
 import { useCardsStore } from '../stores/cards'
+import { cardKey, useFreshStore } from '../stores/fresh'
+import { useWalletStore } from '../stores/wallet'
+import NewTag from './NewTag.vue'
 import SpotCard from './SpotCard.vue'
-import TenPull, { type Pull } from './TenPull.vue'
 
 // 收集卡放大檢視（DESIGN.md §7.19）：畫面中央一張大卡，點卡片翻面；手機可以用傾斜角度讓卡片轉動。
 // 收集冊裡可以左右切換上一張、下一張（方向鍵、左右滑）。Esc、點背景或「關閉」離開。
+// 去過的景點可以「抽一張」（用一張抽獎券，只抽還沒有的）；新拿到還沒看過的樣式標 NEW。
 // 收集到兩種以上時可以把目前這種設為收集冊的封面（stores/cards.ts）。
 // 打開時焦點在卡片上：Space、Enter 翻面。
 const props = defineProps<{
@@ -32,40 +35,19 @@ const props = defineProps<{
 }>()
 const emit = defineEmits<{ close: []; step: [delta: -1 | 1] }>()
 
-// 無限抽（測試期，services/cardVariants.ts 的 UNLIMITED_DRAWS）：去過的景點可以再抽一張，抽到的存起來
+// 抽一張（DESIGN.md §7.19b）：用一張抽獎券，從這個景點還沒有的樣式裡抽，不會重複；都有了就不能抽
 const cards = useCardsStore()
-const canDraw = computed(() => UNLIMITED_DRAWS && props.visited && Boolean(props.variants))
+const wallet = useWalletStore()
+const fresh = useFreshStore()
+const cardDraw = useCardDraw()
+const missing = computed(() => (props.variants ? missingVariants(props.rarity, hasNight(props.card), props.variants.map((v) => v.key)).length : 0))
+const canDraw = computed(() => props.visited && Boolean(props.variants))
 let drawnKey: string | null = null
-function drawAgain() {
-  const drawn = randomDraw(props.rarity, todayIso()).sort((a, b) => b.rank - a.rank)
-  const top = drawn[0]!
-  drawnKey = top.key
-  void cards.add(props.card.id, drawn)
-  showReveal({ face: props.card, rarity: props.rarity, label: props.label ?? '', number: props.number ?? '', variant: top })
-}
-// 十連抽：抽十次，5×2 排開依序翻（TenPull）
-const tenPull = ref<Pull[] | null>(null)
-const tenKey = ref(0)
-function drawTen() {
-  tenKey.value++
-  const draws = Array.from({ length: 10 }, () => randomDraw(props.rarity, todayIso()))
-  void cards.add(props.card.id, draws.flat())
-  tenPull.value = draws.map((d) => ({
-    face: props.card,
-    rarity: props.rarity,
-    label: props.label ?? '',
-    number: props.number ?? '',
-    visitedOn: props.visitedOn ?? null,
-    variant: [...d].sort((a, b) => b.rank - a.rank)[0]!,
-  }))
-}
-function closeTenPull() {
-  const best = tenPull.value?.map((p) => p.variant).sort((a, b) => b.rank - a.rank)[0]
-  tenPull.value = null
-  if (!best) return
-  const i = props.variants?.findIndex((v) => v.key === best.key) ?? -1
-  if (i >= 0) vi.value = i
-  else drawnKey = best.key
+function drawOneCard() {
+  const v = cardDraw.drawFor({ spotId: props.card.id, rarity: props.rarity, night: hasNight(props.card), owned: props.variants?.map((x) => x.key) ?? [] })
+  if (!v) return
+  drawnKey = v.key
+  showReveal({ face: props.card, rarity: props.rarity, label: props.label ?? '', number: props.number ?? '', variant: v })
 }
 // 抽完樣式清單更新時，切到剛抽到的那種
 watch(
@@ -87,6 +69,12 @@ function setCover() {
   void cards.setCover(props.card.id, variant.value.key)
 }
 const variant = computed(() => props.variants?.[vi.value] ?? props.variants?.[0] ?? BASE_VARIANT)
+// 看到的那一種就不是 NEW 了
+watch(
+  () => [props.card.id, variant.value.key] as const,
+  ([id, key]) => fresh.seen([cardKey(id, key)]),
+  { immediate: true },
+)
 const flipped = ref(false)
 const gyro = ref(false)
 // 觸控裝置才顯示「傾斜手機」
@@ -118,7 +106,7 @@ async function startGyro() {
 }
 function onKey(e: KeyboardEvent) {
   // 新卡入手正在亮相、十連抽的卡包開著時，Esc 只關那一層
-  if (reveal.value || tenPull.value) return
+  if (reveal.value) return
   if (e.key === 'Escape') emit('close')
   else if (e.key === 'ArrowRight') step(1)
   else if (e.key === 'ArrowLeft') step(-1)
@@ -224,12 +212,13 @@ onBeforeUnmount(() => document.removeEventListener('keydown', onKey))
           v-for="(v, i) in variants"
           :key="v.key"
           type="button"
-          class="h-8 rounded-full px-3 text-caption font-bold"
+          class="relative h-8 rounded-full px-3 text-caption font-bold"
           :class="i === vi ? 'bg-paper text-ink' : 'bg-paper/15 text-white hover:bg-paper/25'"
           :aria-pressed="i === vi"
           @click="vi = i"
         >
           {{ v.label }}
+          <NewTag v-if="fresh.has(cardKey(card.id, v.key))" class="absolute -top-2 -right-1.5" />
         </button>
         <span v-if="variantTotal" class="ml-1 font-latin text-caption text-white/70">{{ variants.length }} / {{ variantTotal }}</span>
       </div>
@@ -255,11 +244,15 @@ onBeforeUnmount(() => document.removeEventListener('keydown', onKey))
         >
           {{ gyro ? '傾斜手機看看' : '用手機傾斜' }}
         </button>
-        <button v-if="canDraw" type="button" class="h-10 rounded-full bg-paper px-4 text-label font-bold text-ink" @click="drawAgain">
-          再抽一張
-        </button>
-        <button v-if="canDraw" type="button" class="h-10 rounded-full bg-paper px-4 text-label font-bold text-ink" @click="drawTen">
-          十連抽
+        <button
+          v-if="canDraw"
+          type="button"
+          class="flex h-10 items-center gap-2 rounded-full bg-paper px-4 text-label font-bold text-ink disabled:opacity-50"
+          :disabled="!missing || !wallet.canSpend(1)"
+          @click="drawOneCard"
+        >
+          {{ missing ? '抽一張' : '已收齊' }}
+          <span v-if="missing" class="font-latin text-caption font-semibold text-sub">券 {{ wallet.left }}</span>
         </button>
         <button type="button" class="h-10 rounded-full bg-paper px-4 text-label font-bold text-ink" @click="flipped = !flipped">
           {{ flipped ? '正面' : '背面' }}
@@ -276,7 +269,6 @@ onBeforeUnmount(() => document.removeEventListener('keydown', onKey))
         </button>
       </div>
     </div>
-    <TenPull v-if="tenPull" :key="tenKey" :pulls="tenPull" :title="`${card.name.ja}　十連抽`" :can-again="canDraw" @again="drawTen" @close="closeTenPull" />
   </Teleport>
 </template>
 

@@ -1,74 +1,55 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
 
+import AvatarRules from '../components/AvatarRules.vue'
 import DollGacha from '../components/DollGacha.vue'
+import NewTag from '../components/NewTag.vue'
+import DollSpin from '../components/DollSpin.vue'
 import PaperDoll from '../components/PaperDoll.vue'
-import { useVisitedEntries } from '../composables/visited'
 import { EYE_STYLES, HAIR_COLORS, HAIR_STYLES, OUTFITS, type Outfit, SKINS, type Slot, SLOTS } from '../data/outfits'
-import { NATIONAL_PATTERN, PATTERN_BY_AREA } from '../data/patterns'
 import { regionOf, regions } from '../data/regions'
 import { type AvatarParts, useAvatarStore } from '../stores/avatar'
+import { outfitKey, useFreshStore } from '../stores/fresh'
 import { useUserStore } from '../stores/user'
+import { useWalletStore } from '../stores/wallet'
 
-// 旅人（紙娃娃，DESIGN.md §7.24）：左邊是舞台（去過的縣的地區色與紋樣，下面的站名標換縣），
-// 右邊是衣櫃：外觀與五個位置的服裝，單品是貼紙；還沒有的只剩剪影。舞台下「抽服裝」用旅行得到的抽獎機會抽。
+// 旅人（紙娃娃，DESIGN.md §7.24）：左邊是角色與「抽服裝」，右邊是衣櫃：外觀與五個位置的服裝，單品是貼紙；
+// 還沒有的只剩剪影，新拿到還沒點過的標 NEW。抽服裝用抽獎券（與景點卡共用），只抽還沒有的。
 const userStore = useUserStore()
 const avatar = useAvatarStore()
-const { entries } = useVisitedEntries()
-
-// ---------- 舞台 ----------
-/** 去過的縣（都道府縣代碼順） */
-const visitedRegions = computed(() => regions.filter((r) => avatar.visitedPrefs.has(r.prefecture)))
-/** 最近去的縣 */
-const latestPref = computed(() => {
-  let best: { pref: string; on: string } | null = null
-  for (const [, m] of entries.value) if (!best || (m.visited_on ?? '') > best.on) best = { pref: m.pref, on: m.visited_on ?? '' }
-  return best?.pref ?? null
-})
-const stagePref = computed(() => {
-  const s = avatar.parts.stage
-  return s && avatar.visitedPrefs.has(s) ? s : latestPref.value
-})
-const stageRegion = computed(() => (stagePref.value ? regionOf(stagePref.value) : undefined))
-const PATTERN_CLASS: Record<string, string> = {
-  seigaiha: 'wa-seigaiha',
-  asanoha: 'wa-asanoha',
-  kikko: 'wa-kikko',
-  ichimatsu: 'wa-ichimatsu',
-  uroko: 'wa-uroko',
-  shippo: 'wa-shippo',
-  yagasuri: 'wa-yagasuri',
-  hishi: 'wa-hishi',
-}
-const stagePattern = computed(() => PATTERN_CLASS[((stageRegion.value && PATTERN_BY_AREA[stageRegion.value.area]) || NATIONAL_PATTERN).key])
-function stepStage(delta: -1 | 1) {
-  const list = visitedRegions.value
-  if (list.length < 2) return
-  const i = list.findIndex((r) => r.prefecture === stagePref.value)
-  const next = list[(i + delta + list.length) % list.length]!
-  avatar.setParts({ stage: next.prefecture })
-}
-const neighbor = (delta: -1 | 1) => {
-  const list = visitedRegions.value
-  if (list.length < 2) return undefined
-  const i = list.findIndex((r) => r.prefecture === stagePref.value)
-  return list[(i + delta + list.length) % list.length]
-}
+const wallet = useWalletStore()
+const fresh = useFreshStore()
 
 // ---------- 衣櫃 ----------
 type Tab = 'look' | Slot
 const tab = ref<Tab>('body')
 const TABS: Array<{ key: Tab; label: string }> = [{ key: 'look', label: '外觀' }, ...SLOTS]
-const items = computed(() => (tab.value === 'look' ? [] : OUTFITS.filter((o) => o.slot === tab.value)))
+// 有的在前；同一類裡不限縣的在前，各縣依都道府縣代碼順
+const PREF_ORDER = new Map(regions.map((r, i) => [r.prefecture, i]))
+const onlyOwned = ref(false)
+const items = computed(() =>
+  tab.value === 'look'
+    ? []
+    : OUTFITS.filter((o) => o.slot === tab.value && (!onlyOwned.value || avatar.has(o.id))).sort(
+        (a, b) => Number(avatar.has(b.id)) - Number(avatar.has(a.id)) || (a.pref ? (PREF_ORDER.get(a.pref) ?? 99) + 1 : 0) - (b.pref ? (PREF_ORDER.get(b.pref) ?? 99) + 1 : 0),
+      ),
+)
 const prefName = (pref: string) => regionOf(pref)?.name.ja ?? pref
 const ownedCount = computed(() => avatar.ownedIds.size)
+// 扭蛋抽得到但還沒抽到的；要去那個縣才會加進扭蛋的
+const drawable = computed(() => new Set(avatar.remaining.map((o) => o.id)))
+const prefLocked = computed(() => OUTFITS.filter((o) => o.pref && !avatar.visitedPrefs.has(o.pref)).length)
 function toggle(o: Outfit) {
   if (!avatar.has(o.id)) return
+  fresh.seen([outfitKey(o.id)])
   avatar.equip(o.slot, avatar.equipped[o.slot] === o.id && o.slot !== 'body' ? null : o.id)
 }
 // 外觀選項的頭像：目前的樣子，只換那一項
 const look = (p: Partial<AvatarParts>): AvatarParts => ({ ...avatar.parts, ...p })
 const HEAD_CROP = '48 14 144 150'
+
+// 規則（使用者自己打開）
+const showRules = ref(false)
 
 // ---------- 扭蛋 ----------
 const result = ref<{ outfit: Outfit; duplicate: boolean } | null>(null)
@@ -77,13 +58,17 @@ function draw() {
   if (r) result.value = r
 }
 function wear() {
-  if (result.value) avatar.equip(result.value.outfit.slot, result.value.outfit.id)
+  if (result.value) {
+    avatar.equip(result.value.outfit.slot, result.value.outfit.id)
+    fresh.seen([outfitKey(result.value.outfit.id)])
+  }
   result.value = null
 }
 </script>
 
 <template>
-  <section class="mx-auto flex w-full max-w-5xl flex-col gap-6 px-6 py-8 max-sm:px-4">
+  <!-- 桌機：整頁不捲動，左邊固定、右邊衣櫃自己捲 -->
+  <section class="mx-auto flex w-full max-w-5xl flex-col gap-6 px-6 py-8 max-sm:px-4 lg:min-h-0 lg:flex-1 lg:overflow-hidden lg:pb-6">
     <header class="flex flex-col gap-2">
       <RouterLink to="/log" class="flex w-fit items-center gap-1 text-label font-bold text-sub no-underline hover:text-ink">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7" /></svg>
@@ -92,39 +77,31 @@ function wear() {
       <div class="flex items-baseline gap-4">
         <h1 class="text-h1 font-black tracking-[6px]">旅人</h1>
         <p class="text-label text-sub">服裝 <span class="font-latin text-body font-bold text-ink">{{ ownedCount }}</span> / {{ OUTFITS.length }}</p>
+        <button
+          v-if="userStore.user"
+          type="button"
+          class="ml-auto flex h-9 items-center gap-1.5 self-center rounded-full border border-line bg-paper px-3.5 text-label font-bold text-ink hover:bg-surface"
+          aria-haspopup="dialog"
+          @click="showRules = true"
+        >
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h11a3 3 0 0 1 3 3v13H8a3 3 0 0 1-3-3z" /><path d="M9 9h6M9 13h6" /></svg>
+          規則
+        </button>
       </div>
     </header>
 
     <p v-if="!userStore.user" class="text-body-sm text-sub">收藏、行程與紀錄需要登入。</p>
-    <div v-else class="grid items-start gap-8 lg:grid-cols-[380px_minmax(0,1fr)]">
-      <!-- 舞台 -->
-      <div class="flex w-full flex-col gap-4 max-lg:mx-auto max-lg:max-w-[440px] lg:sticky lg:top-6" :data-pref="stagePref ?? undefined">
-        <div class="stage paper-grain relative overflow-hidden rounded-card bg-region-tint">
-          <span class="wa-pattern pointer-events-none absolute inset-0 bg-region opacity-30" :class="stagePattern" aria-hidden="true"></span>
+    <div v-else class="grid items-start gap-8 lg:min-h-0 lg:flex-1 lg:grid-cols-[380px_minmax(0,1fr)] lg:grid-rows-[minmax(0,1fr)] lg:items-stretch">
+      <!-- 角色：3D 展示窗 -->
+      <div class="flex w-full flex-col gap-4 max-lg:mx-auto max-lg:max-w-[440px] lg:min-h-0">
+        <div class="stage paper-grain relative overflow-hidden rounded-card bg-region-tint lg:min-h-0 lg:flex-1">
+          <span class="wa-pattern wa-seigaiha pointer-events-none absolute inset-0 bg-region opacity-25" aria-hidden="true"></span>
           <span class="floor pointer-events-none absolute inset-x-0 bottom-0 h-[17%] bg-region" aria-hidden="true"></span>
-          <PaperDoll :parts="avatar.parts" :equipped="avatar.equipped" animate class="doll-main relative mx-auto h-auto pt-[6%]" />
-        </div>
-        <!-- 站名標：換舞台的縣 -->
-        <div class="sign overflow-hidden rounded-card bg-paper shadow-float">
-          <div class="flex flex-col items-center px-3 pt-2.5 pb-2">
-            <span lang="ja" class="font-display text-h2 leading-tight tracking-[0.3em] max-sm:text-h3">{{ stageRegion?.name.ja ?? '日本' }}</span>
-            <span class="text-caption font-bold tracking-[0.4em] text-sub uppercase">{{ stageRegion?.name.romaji ?? 'Nippon' }}</span>
-          </div>
-          <div class="flex items-center justify-between bg-region-strong px-1 text-caption font-bold text-white" :class="visitedRegions.length > 1 ? 'h-9' : 'h-2'">
-            <button v-if="neighbor(-1)" type="button" class="flex h-full items-center gap-1.5 px-2" :aria-label="`舞台換成${neighbor(-1)!.name.ja}`" @click="stepStage(-1)">
-              <svg width="9" height="9" viewBox="0 0 10 10" aria-hidden="true"><path d="M8 0L0 5l8 5z" fill="currentColor" /></svg>
-              <span lang="ja">{{ neighbor(-1)!.name.ja }}</span>
-            </button>
-            <span v-else></span>
-            <button v-if="neighbor(1)" type="button" class="flex h-full items-center gap-1.5 px-2" :aria-label="`舞台換成${neighbor(1)!.name.ja}`" @click="stepStage(1)">
-              <span lang="ja">{{ neighbor(1)!.name.ja }}</span>
-              <svg width="9" height="9" viewBox="0 0 10 10" aria-hidden="true"><path d="M2 0l8 5-8 5z" fill="currentColor" /></svg>
-            </button>
-          </div>
+          <DollSpin :parts="avatar.parts" :equipped="avatar.equipped" class="absolute inset-0" />
         </div>
         <button
           type="button"
-          class="draw flex h-14 items-center gap-3 rounded-card bg-ink px-4 text-paper disabled:cursor-not-allowed disabled:opacity-40"
+          class="draw flex h-14 shrink-0 items-center gap-3 rounded-card bg-ink px-4 text-paper disabled:cursor-not-allowed disabled:opacity-40"
           :disabled="!avatar.canDraw"
           @click="draw"
         >
@@ -132,13 +109,14 @@ function wear() {
             <path d="M14 60 A46 46 0 0 1 106 60Z" class="ball-top" />
             <path d="M14 60 A46 46 0 0 0 106 60Z" class="ball-bottom" />
           </svg>
-          <span class="text-body font-bold">抽服裝</span>
-          <span class="ml-auto text-label opacity-80">抽獎券 <span class="font-latin text-body font-bold">{{ avatar.ticketsLeft }}</span></span>
+          <span class="text-body font-bold">{{ avatar.remaining.length ? '抽服裝' : prefLocked ? '去過的縣都抽齊了' : '都抽齊了' }}</span>
+          <span v-if="avatar.remaining.length" class="ml-auto text-label opacity-80">抽獎券 <span class="font-latin text-body font-bold">{{ wallet.left }}</span></span>
+          <span v-else-if="prefLocked" class="ml-auto text-label opacity-80">沒去過的縣 <span class="font-latin text-body font-bold">{{ prefLocked }}</span> 件</span>
         </button>
       </div>
 
       <!-- 衣櫃 -->
-      <section class="flex min-w-0 flex-col" aria-label="衣櫃">
+      <section class="flex min-w-0 flex-col lg:min-h-0" aria-label="衣櫃">
         <div class="flex items-end gap-1 overflow-x-auto px-2" role="tablist" aria-label="衣櫃">
           <button
             v-for="t in TABS"
@@ -154,7 +132,7 @@ function wear() {
           </button>
         </div>
 
-        <div class="sheet rounded-card bg-surface p-5 max-sm:p-3 lg:min-h-[520px]" role="tabpanel">
+        <div class="sheet scroll-quiet rounded-card bg-surface p-5 max-sm:p-3 lg:min-h-0 lg:flex-1 lg:overflow-y-auto" role="tabpanel">
           <!-- 外觀 -->
           <div v-if="tab === 'look'" class="flex flex-col gap-6">
             <fieldset class="flex flex-col gap-2">
@@ -194,7 +172,7 @@ function wear() {
             <div class="flex flex-wrap gap-x-10 gap-y-5">
               <fieldset>
                 <legend class="mb-2 text-label font-bold text-sub">膚色</legend>
-                <div class="flex gap-2.5">
+                <div class="flex flex-wrap gap-2.5">
                   <button
                     v-for="s in SKINS"
                     :key="s"
@@ -210,7 +188,7 @@ function wear() {
               </fieldset>
               <fieldset>
                 <legend class="mb-2 text-label font-bold text-sub">髮色</legend>
-                <div class="flex gap-2.5">
+                <div class="flex flex-wrap gap-2.5">
                   <button
                     v-for="c in HAIR_COLORS"
                     :key="c"
@@ -228,7 +206,12 @@ function wear() {
           </div>
 
           <!-- 服裝：貼紙 -->
-          <ul v-else class="grid grid-cols-4 gap-x-2 gap-y-4 max-sm:grid-cols-3 xl:grid-cols-5">
+          <div v-if="tab !== 'look'" class="mb-3 flex justify-end">
+            <button type="button" class="flex h-8 items-center gap-1.5 rounded-full px-3 text-caption font-bold" :class="onlyOwned ? 'bg-ink text-paper' : 'bg-paper text-ink'" :aria-pressed="onlyOwned" @click="onlyOwned = !onlyOwned">
+              只看有的
+            </button>
+          </div>
+          <ul v-if="tab !== 'look'" class="grid grid-cols-4 gap-x-2 gap-y-4 max-sm:grid-cols-3 xl:grid-cols-5">
             <li v-if="tab !== 'body'">
               <button
                 type="button"
@@ -250,7 +233,7 @@ function wear() {
                 :class="{ 'is-on': avatar.equipped[o.slot] === o.id, 'is-locked': !avatar.has(o.id) }"
                 :disabled="!avatar.has(o.id)"
                 :aria-pressed="avatar.equipped[o.slot] === o.id"
-                :aria-label="avatar.has(o.id) ? o.name : o.pref ? `${o.name}（${prefName(o.pref)}）` : `${o.name}（還沒抽到）`"
+                :aria-label="avatar.has(o.id) ? o.name : drawable.has(o.id) ? `${o.name}（扭蛋抽得到）` : `${o.name}（去過${prefName(o.pref!)}就有）`"
                 @click="toggle(o)"
               >
                 <svg :viewBox="o.icon" class="aspect-square w-full overflow-visible p-[8%]" aria-hidden="true">
@@ -259,6 +242,12 @@ function wear() {
                 <span class="text-caption font-bold" :class="avatar.has(o.id) ? 'text-ink' : 'text-sub'">{{ o.name }}</span>
                 <span v-if="o.pref" lang="ja" class="pref-tag rounded-tag px-1.5 text-[10px] leading-[16px] font-bold" :data-pref="o.pref">{{ prefName(o.pref) }}</span>
                 <span v-if="avatar.equipped[o.slot] === o.id" class="seal absolute top-1 right-1 grid size-6 place-items-center rounded-full text-[11px] font-black" aria-hidden="true">穿</span>
+                <NewTag v-if="avatar.has(o.id) && fresh.has(outfitKey(o.id))" class="absolute top-1 left-1" />
+                <!-- 扭蛋抽得到、還沒抽到 -->
+                <svg v-if="drawable.has(o.id)" class="absolute top-1.5 right-1.5" width="16" height="16" viewBox="0 0 120 120" aria-hidden="true">
+                  <path d="M14 60 A46 46 0 0 1 106 60Z" class="ball-top-line" />
+                  <path d="M14 60 A46 46 0 0 0 106 60Z" class="ball-bottom" />
+                </svg>
               </button>
             </li>
           </ul>
@@ -266,11 +255,11 @@ function wear() {
       </section>
     </div>
 
+    <AvatarRules v-if="showRules" @close="showRules = false" />
     <DollGacha
       v-if="result"
       :result="result"
       :can-draw="avatar.canDraw"
-      :pref="stagePref"
       @wear="wear"
       @again="draw"
       @close="result = null"
@@ -279,19 +268,10 @@ function wear() {
 </template>
 
 <style scoped>
-.stage {
-  aspect-ratio: 5 / 6;
-}
-.doll-main {
-  width: 78%;
-}
-/* 手機：舞台矮一點，抽服裝與衣櫃不用捲很遠 */
+/* 手機：展示窗正方形；桌機填滿左欄的高度 */
 @media (max-width: 1023px) {
   .stage {
     aspect-ratio: 1;
-  }
-  .doll-main {
-    width: 64%;
   }
 }
 .floor {
@@ -346,6 +326,11 @@ function wear() {
   box-shadow:
     0 0 0 3px var(--color-item-white),
     0 0 0 5px var(--color-ink);
+}
+.ball-top-line {
+  fill: var(--color-paper);
+  stroke: var(--color-line);
+  stroke-width: 8;
 }
 .ball-top {
   fill: var(--color-item-white);
