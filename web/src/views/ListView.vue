@@ -46,7 +46,7 @@ async function del() {
 
 <template>
   <section class="mx-auto flex w-full max-w-3xl flex-col gap-6 px-6 pt-9 pb-24">
-    <RouterLink to="/me" class="flex w-fit items-center gap-1 text-label text-sub no-underline hover:text-ink">
+    <RouterLink to="/me" class="flex w-fit items-center gap-1 text-label text-sub no-underline hover:text-ink active:text-ink">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
         <path d="M15 5l-7 7 7 7" />
       </svg>
@@ -66,7 +66,7 @@ async function del() {
             class="h-11 min-w-0 flex-1 rounded-control border border-region-strong bg-paper px-3 text-body text-ink outline-none"
             @keydown.esc="editing = false"
           />
-          <button type="submit" class="h-11 shrink-0 rounded-control border border-line bg-paper px-3.5 text-body-sm text-ink hover:bg-surface">
+          <button type="submit" class="h-11 shrink-0 rounded-control border border-line bg-paper px-3.5 text-body-sm text-ink hover:bg-surface active:not-disabled:translate-y-px">
             儲存
           </button>
         </form>
@@ -76,10 +76,10 @@ async function del() {
         </h1>
         <div v-if="!editing" class="ml-auto flex flex-wrap gap-2">
           <ExportButtons :title="list.name" :rows="rows.map(markRow)" />
-          <button type="button" class="h-9 rounded-control border border-line bg-paper px-3 text-label text-ink hover:bg-surface" @click="startEdit">
+          <button type="button" class="h-9 rounded-control border border-line bg-paper px-3 text-label text-ink hover:bg-surface active:not-disabled:translate-y-px" @click="startEdit">
             改名
           </button>
-          <button type="button" class="h-9 rounded-control border border-line bg-paper px-3 text-label text-danger hover:bg-surface" @click="del">
+          <button type="button" class="h-9 rounded-control border border-line bg-paper px-3 text-label text-danger hover:bg-surface active:not-disabled:translate-y-px" @click="del">
             刪除
           </button>
         </div>

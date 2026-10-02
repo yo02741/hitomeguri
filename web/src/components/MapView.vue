@@ -1122,7 +1122,7 @@ defineExpose({
       <button
         type="button"
         class="!grid place-items-center text-caption leading-none font-bold print:hidden"
-        :class="terrainOn ? '!bg-region-strong text-white' : '!bg-paper text-ink hover:!bg-surface'"
+        :class="terrainOn ? '!bg-region-strong text-white' : '!bg-paper text-ink hover:!bg-surface active:!bg-surface'"
         :aria-pressed="terrainOn"
         aria-label="立體地形"
         title="立體地形"

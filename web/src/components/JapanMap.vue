@@ -85,8 +85,10 @@ function title(pref: string): string {
   animation: pref-stamp 0.55s var(--ease-stamp) both;
   animation-delay: calc(0.25s + var(--i) * var(--step));
 }
-.pref.is-done:hover {
-  fill: color-mix(in oklab, var(--region-strong) 80%, var(--region-ink));
+@media (hover: hover) and (pointer: fine) {
+  .pref.is-done:hover {
+    fill: color-mix(in oklab, var(--region-strong) 80%, var(--region-ink));
+  }
 }
 @keyframes pref-stamp {
   from {

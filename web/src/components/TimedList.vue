@@ -24,7 +24,7 @@ const sources = computed(() => {
   <div class="flex flex-col">
     <ul class="flex flex-col">
       <li v-for="t in items" :key="t.id" class="flex items-start gap-3 border-b border-line-soft py-2 text-body-sm last:border-b-0">
-        <a :href="t.source_url" target="_blank" rel="noopener" class="flex min-w-0 flex-1 flex-col text-ink no-underline hover:underline">
+        <a :href="t.source_url" target="_blank" rel="noopener" class="flex min-w-0 flex-1 flex-col text-ink no-underline hover:underline active:underline">
           <span lang="ja" class="font-bold">{{ t.title.ja }}</span>
           <span class="text-caption text-sub">{{ t.title.zh_tw }}</span>
           <span v-if="detailed && t.summary_zh" class="mt-0.5 text-caption text-ink-2">{{ t.summary_zh }}</span>

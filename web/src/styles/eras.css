@@ -74,8 +74,14 @@
     repeating-linear-gradient(45deg, color-mix(in oklab, var(--region-ink) 7%, transparent) 0 1px, transparent 1px 6px),
     repeating-linear-gradient(-45deg, color-mix(in oklab, var(--region-ink) 7%, transparent) 0 1px, transparent 1px 6px);
 }
-:root[data-theme] .trip-card:hover {
+/* 按下時同 hover 的顏色；hover 只給有滑鼠的裝置，觸控點過後才不會黏住 */
+:root[data-theme] .trip-card:active {
   background-color: color-mix(in oklab, var(--color-era-ticket) 88%, var(--region-ink));
+}
+@media (hover: hover) and (pointer: fine) {
+  :root[data-theme] .trip-card:hover {
+    background-color: color-mix(in oklab, var(--color-era-ticket) 88%, var(--region-ink));
+  }
 }
 :root[data-theme] .trip-card::before,
 :root[data-theme] .trip-card::after {

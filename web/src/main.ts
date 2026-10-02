@@ -16,6 +16,8 @@ installViewTransitions(router)
 trackSplash(webfontsReady(), 'fonts')
 trackSplash(router.isReady(), 'router')
 app.mount('#app')
+// iOS Safari 要文件上有 touchstart 監聽才套用 :active（按下的 1px 下壓、清單列底色）
+document.addEventListener('touchstart', () => {}, { passive: true })
 // 初始路由的頁面在 isReady 後的 microtask 內渲染、登記要等的資料與地圖；
 // 用 setTimeout 排在那之後再封口
 void router.isReady().then(() => setTimeout(sealSplash, 0))

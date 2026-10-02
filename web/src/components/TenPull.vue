@@ -139,9 +139,9 @@ const zoomed = computed(() => (zoom.value === null ? null : props.pulls[zoom.val
       </ol>
 
       <div class="flex gap-2">
-        <button v-if="!done" ref="firstBtn" type="button" class="h-11 rounded-control bg-paper px-5 text-body-sm font-bold text-ink" @click="flipAll">全部翻開</button>
-        <button v-else-if="canAgain" type="button" class="h-11 rounded-control bg-paper px-5 text-body-sm font-bold text-ink" @click="emit('again')">再十連抽</button>
-        <button type="button" class="h-11 rounded-control border border-paper/50 px-4 text-body-sm text-paper" @click="emit('close')">關閉</button>
+        <button v-if="!done" ref="firstBtn" type="button" class="h-11 rounded-control bg-paper px-5 text-body-sm font-bold text-ink active:not-disabled:translate-y-px" @click="flipAll">全部翻開</button>
+        <button v-else-if="canAgain" type="button" class="h-11 rounded-control bg-paper px-5 text-body-sm font-bold text-ink active:not-disabled:translate-y-px" @click="emit('again')">再十連抽</button>
+        <button type="button" class="h-11 rounded-control border border-paper/50 px-4 text-body-sm text-paper active:not-disabled:translate-y-px" @click="emit('close')">關閉</button>
       </div>
 
       <!-- 放大看一張 -->

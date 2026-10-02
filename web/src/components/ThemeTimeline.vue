@@ -49,7 +49,7 @@ onMounted(preloadThemeFonts)
         type="button"
         tabindex="-1"
         class="absolute top-7 flex h-6 w-10 -translate-x-1/2 items-center justify-center text-caption"
-        :class="i === index ? 'font-bold text-ink' : 'text-sub hover:text-ink'"
+        :class="i === index ? 'font-bold text-ink' : 'text-sub hover:text-ink active:text-ink'"
         :style="{ left: `calc(11px + (100% - 22px) * ${i / (ERAS.length - 1)})` }"
         :aria-label="`${e.label}（${e.years}）`"
         @click="setTheme(e.key)"

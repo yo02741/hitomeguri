@@ -218,10 +218,10 @@ function markOpened(tripId: string) {
       </ul>
 
       <div class="flex gap-2">
-        <button v-if="stage === 'sealed'" type="button" class="h-11 rounded-control bg-paper px-5 text-body-sm font-bold text-ink" :disabled="!deck.length" @click="open">打開</button>
-        <button v-if="stage === 'dealing'" type="button" class="h-11 rounded-control border border-paper/50 px-4 text-body-sm text-paper" @click="revealAll">全部翻開</button>
-        <RouterLink v-if="stage === 'done'" to="/log/cards" class="flex h-11 items-center rounded-control bg-paper px-5 text-body-sm font-bold text-ink no-underline" @click="emit('close')">收集冊</RouterLink>
-        <button type="button" class="h-11 rounded-control border border-paper/50 px-4 text-body-sm text-paper" @click="emit('close')">關閉</button>
+        <button v-if="stage === 'sealed'" type="button" class="h-11 rounded-control bg-paper px-5 text-body-sm font-bold text-ink active:not-disabled:translate-y-px" :disabled="!deck.length" @click="open">打開</button>
+        <button v-if="stage === 'dealing'" type="button" class="h-11 rounded-control border border-paper/50 px-4 text-body-sm text-paper active:not-disabled:translate-y-px" @click="revealAll">全部翻開</button>
+        <RouterLink v-if="stage === 'done'" to="/log/cards" class="flex h-11 items-center rounded-control bg-paper px-5 text-body-sm font-bold text-ink no-underline active:not-disabled:translate-y-px" @click="emit('close')">收集冊</RouterLink>
+        <button type="button" class="h-11 rounded-control border border-paper/50 px-4 text-body-sm text-paper active:not-disabled:translate-y-px" @click="emit('close')">關閉</button>
       </div>
     </div>
   </dialog>

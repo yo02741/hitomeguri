@@ -116,7 +116,7 @@ async function logOut() {
       aria-haspopup="menu"
       :aria-expanded="open"
       aria-controls="user-menu"
-      class="grid size-10 place-items-center overflow-hidden rounded-full border border-line bg-placeholder text-sub"
+      class="grid size-10 place-items-center overflow-hidden rounded-full border border-line bg-placeholder text-sub active:not-disabled:translate-y-px"
       :class="open || items.some(isActive) ? 'outline-2 outline-offset-2 outline-region-strong' : ''"
       @click="peek = false; open ? hide() : show()"
       @keydown="onTriggerKey"
@@ -167,7 +167,7 @@ async function logOut() {
       @keydown="onMenuKey"
     >
       <div class="flex items-center gap-3 px-2.5 pt-1.5 pb-2.5">
-        <RouterLink to="/log/avatar" role="menuitem" tabindex="-1" aria-label="旅人" class="paper-grain relative h-14 w-12 shrink-0 overflow-hidden rounded-control bg-region-tint" @click="hide()">
+        <RouterLink to="/log/avatar" role="menuitem" tabindex="-1" aria-label="旅人" class="paper-grain relative h-14 w-12 shrink-0 overflow-hidden rounded-control bg-region-tint active:not-disabled:translate-y-px" @click="hide()">
           <UserMenuDoll kind="bust" />
         </RouterLink>
         <span class="flex min-w-0 flex-col">
@@ -182,7 +182,7 @@ async function logOut() {
         :to="it.to"
         role="menuitem"
         tabindex="-1"
-        class="mt-1 flex min-h-tap items-center rounded-control px-2.5 text-body-sm text-ink no-underline hover:bg-surface focus-visible:bg-surface"
+        class="mt-1 flex min-h-tap items-center rounded-control px-2.5 text-body-sm text-ink no-underline hover:bg-surface focus-visible:bg-surface active:bg-surface"
         :class="isActive(it) ? 'font-bold' : ''"
         :aria-current="isActive(it) ? 'page' : undefined"
         @click="hide()"
@@ -197,7 +197,7 @@ async function logOut() {
         role="menuitemcheckbox"
         tabindex="-1"
         :aria-checked="walkerOn"
-        class="mt-1 flex min-h-tap items-center justify-between rounded-control px-2.5 text-left text-body-sm text-ink hover:bg-surface focus-visible:bg-surface"
+        class="mt-1 flex min-h-tap items-center justify-between rounded-control px-2.5 text-left text-body-sm text-ink hover:bg-surface focus-visible:bg-surface active:bg-surface"
         @click="walkerOn = !walkerOn"
       >
         散步的旅人
@@ -210,7 +210,7 @@ async function logOut() {
         type="button"
         role="menuitem"
         tabindex="-1"
-        class="mt-1 flex min-h-tap items-center rounded-control px-2.5 text-left text-body-sm text-ink hover:bg-surface focus-visible:bg-surface"
+        class="mt-1 flex min-h-tap items-center rounded-control px-2.5 text-left text-body-sm text-ink hover:bg-surface focus-visible:bg-surface active:bg-surface"
         @click="logOut"
       >
         登出

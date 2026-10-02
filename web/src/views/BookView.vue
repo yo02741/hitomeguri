@@ -135,7 +135,7 @@ function print() {
             v-for="p in ['A5', 'A4'] as const"
             :key="p"
             type="button"
-            class="h-8 rounded-control px-2.5 font-latin"
+            class="h-8 rounded-control px-2.5 font-latin active:not-disabled:translate-y-px"
             :class="paper === p ? 'bg-region-tint font-bold text-ink' : 'text-sub hover:text-ink'"
             :aria-pressed="paper === p"
             @click="paper = p"

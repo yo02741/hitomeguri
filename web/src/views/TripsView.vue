@@ -70,7 +70,7 @@ async function create() {
         <li v-for="t in upcoming" :key="t.id"><TripCard :trip="t" /></li>
       </ul>
       <p v-else-if="trips.loaded" class="text-body-sm text-sub">還沒有行程</p>
-      <RouterLink v-if="doneCount" to="/log" class="w-fit text-body-sm text-sub">已結束的旅行 {{ doneCount }}</RouterLink>
+      <RouterLink v-if="doneCount" to="/log" class="w-fit text-body-sm text-sub active:text-ink">已結束的旅行 {{ doneCount }}</RouterLink>
       <p v-if="trips.error" class="text-caption text-danger" role="alert">{{ trips.error }}</p>
     </template>
     <p v-else class="text-body-sm text-sub">收藏、行程與紀錄需要登入。</p>

@@ -68,7 +68,7 @@ const thisMonth = new Date().getMonth() + 1
         type="button"
         lang="ja"
         class="border-b-2 pb-0.5 text-label"
-        :class="i === current ? 'border-region-strong font-bold text-ink' : 'border-transparent text-sub hover:text-ink'"
+        :class="i === current ? 'border-region-strong font-bold text-ink' : 'border-transparent text-sub hover:text-ink active:text-ink'"
         :aria-pressed="i === current"
         @click="current = i"
       >

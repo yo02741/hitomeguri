@@ -37,7 +37,7 @@ watch(activeTop, async (id) => {
       <a
         :href="`#${it.id}`"
         class="flex items-baseline gap-1.5 py-1.5 pl-3.5 no-underline"
-        :class="activeTop === it.id ? 'font-bold text-ink' : 'text-sub hover:text-ink'"
+        :class="activeTop === it.id ? 'font-bold text-ink' : 'text-sub hover:text-ink active:text-ink'"
         :aria-current="activeTop === it.id ? 'location' : undefined"
         @click.prevent="emit('go', it.id)"
       >
@@ -49,7 +49,7 @@ watch(activeTop, async (id) => {
           :key="c.id"
           :href="`#${c.id}`"
           class="py-1 pl-6 text-caption no-underline"
-          :class="active === c.id ? 'font-bold text-ink' : 'text-sub hover:text-ink'"
+          :class="active === c.id ? 'font-bold text-ink' : 'text-sub hover:text-ink active:text-ink'"
           :aria-current="active === c.id ? 'location' : undefined"
           @click.prevent="emit('go', c.id)"
         >
@@ -80,7 +80,7 @@ watch(activeTop, async (id) => {
       :data-group="it.id"
       :href="`#${it.id}`"
       class="relative flex h-8 shrink-0 items-center rounded-full px-3 text-label no-underline transition-colors duration-300 ease-out-soft"
-      :class="activeTop === it.id ? ['font-bold text-white', rect ? '' : 'bg-region-strong'] : 'text-sub hover:bg-surface hover:text-ink'"
+      :class="activeTop === it.id ? ['font-bold text-white', rect ? '' : 'bg-region-strong'] : 'text-sub hover:bg-surface hover:text-ink active:bg-surface active:text-ink'"
       :aria-current="activeTop === it.id ? 'location' : undefined"
       @click.prevent="emit('go', it.id)"
     >

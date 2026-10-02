@@ -62,7 +62,7 @@ function onFocusOut(e: FocusEvent) {
       bare
         ? ''
         : [
-            'flex items-center gap-2 rounded-control border bg-paper px-2.5 text-left text-body-sm hover:bg-surface disabled:cursor-not-allowed disabled:opacity-40',
+            'flex items-center gap-2 rounded-control border bg-paper px-2.5 text-left text-body-sm hover:bg-surface disabled:cursor-not-allowed disabled:opacity-40 active:not-disabled:translate-y-px',
             HEIGHT[size],
             open ? 'border-region-strong' : 'border-line',
           ]
@@ -99,7 +99,7 @@ function onFocusOut(e: FocusEvent) {
             <button
               v-if="todayOk"
               type="button"
-              class="h-9 rounded-control px-3 text-label text-ink hover:bg-surface"
+              class="h-9 rounded-control px-3 text-label text-ink hover:bg-surface active:not-disabled:translate-y-px"
               @click="set(today)"
             >
               今天
@@ -107,7 +107,7 @@ function onFocusOut(e: FocusEvent) {
             <button
               v-if="clearable && modelValue"
               type="button"
-              class="ml-auto h-9 rounded-control px-3 text-label text-sub hover:bg-surface hover:text-ink"
+              class="ml-auto h-9 rounded-control px-3 text-label text-sub hover:bg-surface hover:text-ink active:not-disabled:translate-y-px"
               @click="set('')"
             >
               清除

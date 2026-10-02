@@ -14,7 +14,7 @@ const rows = computed(() => folders.value.flatMap((f) => f.rows))
   <div class="flex gap-2">
     <button
       type="button"
-      class="h-9 rounded-control border border-line bg-paper px-3 text-label text-ink hover:bg-surface disabled:cursor-not-allowed disabled:opacity-40"
+      class="h-9 rounded-control border border-line bg-paper px-3 text-label text-ink hover:bg-surface disabled:cursor-not-allowed disabled:opacity-40 active:not-disabled:translate-y-px"
       :disabled="!rows.length"
       @click="download(title, 'kml', toKml(title, folders))"
     >
@@ -22,7 +22,7 @@ const rows = computed(() => folders.value.flatMap((f) => f.rows))
     </button>
     <button
       type="button"
-      class="h-9 rounded-control border border-line bg-paper px-3 text-label text-ink hover:bg-surface disabled:cursor-not-allowed disabled:opacity-40"
+      class="h-9 rounded-control border border-line bg-paper px-3 text-label text-ink hover:bg-surface disabled:cursor-not-allowed disabled:opacity-40 active:not-disabled:translate-y-px"
       :disabled="!rows.length"
       @click="download(title, 'csv', toCsv(rows, leading))"
     >

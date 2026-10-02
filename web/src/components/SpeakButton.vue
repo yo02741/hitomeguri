@@ -18,7 +18,7 @@ function play() {
     v-if="canSpeak()"
     type="button"
     :aria-label="`播放 ${label}`"
-    class="grid size-tap shrink-0 place-items-center rounded-full border border-line text-ink"
+    class="grid size-tap shrink-0 place-items-center rounded-full border border-line text-ink active:not-disabled:translate-y-px"
     :class="playing ? 'bg-region-tint' : 'bg-paper hover:bg-surface'"
     @click="play"
   >

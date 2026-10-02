@@ -158,15 +158,15 @@ function onCardKey(e: KeyboardEvent, id: string) {
     <template v-if="userStore.user">
       <!-- 抽卡：抽獎券、十連抽 -->
       <div v-if="cards.length" class="flex flex-wrap items-center gap-x-4 gap-y-2 rounded-card border border-line bg-paper px-4 py-3">
-        <button type="button" class="flex items-baseline gap-1.5 text-label text-sub hover:text-ink" :aria-expanded="showTickets" @click="showTickets = !showTickets">
+        <button type="button" class="flex items-baseline gap-1.5 text-label text-sub hover:text-ink active:text-ink" :aria-expanded="showTickets" @click="showTickets = !showTickets">
           抽獎券<span class="font-latin text-h3 font-bold text-ink">{{ wallet.left }}</span>
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" class="self-center transition-transform" :class="showTickets ? 'rotate-180' : ''" aria-hidden="true"><path d="M6 9l6 6 6-6" /></svg>
         </button>
         <span class="text-label text-sub">樣式 <span class="whitespace-nowrap font-latin"><span class="font-bold text-ink">{{ variantTotal - missingTotal }}</span> / {{ variantTotal }}</span></span>
-        <button type="button" class="h-8 rounded-control px-2 text-label font-bold text-sub hover:bg-surface hover:text-ink" @click="showRules = true">規則</button>
+        <button type="button" class="h-8 rounded-control px-2 text-label font-bold text-sub hover:bg-surface hover:text-ink active:not-disabled:translate-y-px" @click="showRules = true">規則</button>
         <button
           type="button"
-          class="ml-auto h-10 rounded-full bg-ink px-5 text-label font-bold text-paper disabled:opacity-40"
+          class="ml-auto h-10 rounded-full bg-ink px-5 text-label font-bold text-paper disabled:opacity-40 active:not-disabled:translate-y-px"
           :disabled="!tenCount || !wallet.canSpend(tenCount)"
           @click="drawTen"
         >
@@ -187,7 +187,7 @@ function onCardKey(e: KeyboardEvent, id: string) {
           v-for="f in FILTERS"
           :key="f.key"
           type="button"
-          class="flex h-9 items-center gap-2 rounded-full border px-3.5 text-label"
+          class="flex h-9 items-center gap-2 rounded-full border px-3.5 text-label active:not-disabled:translate-y-px"
           :class="filter === f.key ? 'border-ink bg-ink font-bold text-paper' : 'border-line bg-paper text-ink hover:bg-surface'"
           :aria-pressed="filter === f.key"
           @click="filter = f.key"
@@ -226,10 +226,10 @@ function onCardKey(e: KeyboardEvent, id: string) {
         </ul>
       </section>
 
-      <p v-if="marks.loaded && !entries.length" class="flex flex-wrap items-center gap-x-3 text-body-sm text-sub">還沒有去過的地方<RouterLink to="/" class="inline-flex min-h-tap items-center font-bold text-region-strong">到地圖找地方</RouterLink></p>
+      <p v-if="marks.loaded && !entries.length" class="flex flex-wrap items-center gap-x-3 text-body-sm text-sub">還沒有去過的地方<RouterLink to="/" class="inline-flex min-h-tap items-center font-bold text-region-strong active:not-disabled:translate-y-px">到地圖找地方</RouterLink></p>
       <p v-else-if="cards.length && !groups.length" class="flex flex-wrap items-center gap-x-3 text-body-sm text-sub">
         沒有符合的卡片
-        <button type="button" class="inline-flex min-h-tap items-center font-bold text-region-strong" @click="filter = 'all'">看全部</button>
+        <button type="button" class="inline-flex min-h-tap items-center font-bold text-region-strong active:not-disabled:translate-y-px" @click="filter = 'all'">看全部</button>
       </p>
       <p v-if="cards.length" class="text-caption text-sub">照片：Wikimedia Commons，作者與授權在卡片背面。</p>
     </template>

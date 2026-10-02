@@ -244,7 +244,9 @@
 | Icon | `size-tap grid place-items-center rounded-control border border-line bg-paper`＋`aria-label` |
 | 在地區色底上的 Icon | `border-[1.5px] border-on-region text-on-region bg-transparent` |
 
-- 一個畫面只有一個 Primary。按下 `active:translate-y-px`，不做縮放動畫。
+- 一個畫面只有一個 Primary。按下 `active:not-disabled:translate-y-px`（1px 下壓），不做縮放動畫；Secondary、Icon、chip、篩選膠囊同一個寫法。
+- 清單列（地區清單、擴充包清單、側欄縣列、收藏清單、選單項目、Dropdown 選項）按下 `active:bg-surface`，和 hover 同色；底線分頁、文字鈕按下 `active:text-ink`；底部分頁列 `active:translate-y-px active:text-ink`，不加底色。全站可按的元素都有按下狀態，文中的連結除外。
+- 寫在 `<style>` 裡的 `:hover` 一律包進 `@media (hover: hover) and (pointer: fine)`（Tailwind 的 `hover:` 已經是這樣），觸控點過後樣式才不會黏住；選中狀態（例：經縣值地圖的 `.pref.on`）留在 media 外面。`main.ts` 在 document 上掛一個空的 passive `touchstart`，iOS Safari 才會套用 `:active`。
 - 停用：`opacity-40 cursor-not-allowed`，並加 `disabled`。
 - 送出中（新增行程、補登旅行、加入共編）同樣停用並加 `aria-busy`，文字不變；有兩個同等的實心按鈕時，次要的那個降為 Secondary（例：行程結束後「開卡包」是 Primary，「旅前準備」是 Secondary）。
 - 頁面上方的返回連結用 `BackLink.vue`：`text-label font-bold`、14px 左箭頭＋上一層的名字；一般底 `text-sub hover:text-ink`，地區色頁首上 `on-region`（`text-on-region hover:underline`）。

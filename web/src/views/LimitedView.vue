@@ -49,7 +49,7 @@ const gallery = ref<InstanceType<typeof FindGallery> | null>(null)
         <button
           type="button"
           class="border-b-2 pb-0.5 text-label"
-          :class="brand === null ? 'border-region-strong font-bold text-ink' : 'border-transparent text-sub hover:text-ink'"
+          :class="brand === null ? 'border-region-strong font-bold text-ink' : 'border-transparent text-sub hover:text-ink active:text-ink'"
           :aria-pressed="brand === null"
           @click="brand = null"
         >
@@ -60,7 +60,7 @@ const gallery = ref<InstanceType<typeof FindGallery> | null>(null)
           :key="b"
           type="button"
           class="border-b-2 pb-0.5 text-label"
-          :class="brand === b ? 'border-region-strong font-bold text-ink' : 'border-transparent text-sub hover:text-ink'"
+          :class="brand === b ? 'border-region-strong font-bold text-ink' : 'border-transparent text-sub hover:text-ink active:text-ink'"
           :aria-pressed="brand === b"
           @click="brand = brand === b ? null : b"
         >

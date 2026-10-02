@@ -21,7 +21,7 @@ const hasData = computed(() => new Set(props.available))
       <template v-for="g in groups" :key="g.area">
         <button
           type="button"
-          class="flex items-center gap-2 rounded-control px-2 pt-2.5 pb-1 text-left text-caption font-bold tracking-section text-sub first:pt-0 hover:text-ink"
+          class="flex items-center gap-2 rounded-control px-2 pt-2.5 pb-1 text-left text-caption font-bold tracking-section text-sub first:pt-0 hover:text-ink active:text-ink"
           :aria-expanded="isOpen(g.area)"
           @click="explore.toggleCollapsed(`area:${g.area}`)"
         >
@@ -33,7 +33,7 @@ const hasData = computed(() => new Set(props.available))
           v-for="r in isOpen(g.area) ? g.items : []"
           :key="r.prefecture"
           :to="`/map/${r.prefecture}`"
-          class="flex h-9 shrink-0 items-center gap-2 rounded-control px-2 no-underline hover:bg-surface"
+          class="flex h-9 shrink-0 items-center gap-2 rounded-control px-2 no-underline hover:bg-surface active:bg-surface"
           :class="hasData.has(r.prefecture) ? 'text-ink' : 'text-sub'"
         >
           <RegionChip :pref="r.prefecture" :size="18" />

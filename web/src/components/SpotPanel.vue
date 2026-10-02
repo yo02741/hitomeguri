@@ -141,7 +141,7 @@ function distance(m: number): string {
       <button
         type="button"
         aria-label="關閉"
-        class="absolute top-2 right-2 grid size-tap place-items-center rounded-full bg-paper/90 text-ink"
+        class="absolute top-2 right-2 grid size-tap place-items-center rounded-full bg-paper/90 text-ink active:not-disabled:translate-y-px"
         @click="emit('close')"
       >
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true">
@@ -160,7 +160,7 @@ function distance(m: number): string {
         type="button"
         :aria-label="`${spot.name.ja} 的卡片`"
         title="卡片"
-        class="ml-auto grid size-tap shrink-0 place-items-center rounded-full border-[1.5px] border-on-region bg-transparent text-on-region"
+        class="ml-auto grid size-tap shrink-0 place-items-center rounded-full border-[1.5px] border-on-region bg-transparent text-on-region active:not-disabled:translate-y-px"
         @click="cardOpen = true"
       >
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -171,7 +171,7 @@ function distance(m: number): string {
         v-if="canSpeak()"
         type="button"
         :aria-label="`播放 ${spot.name.ja}`"
-        class="grid size-tap shrink-0 place-items-center rounded-full border-[1.5px] border-on-region bg-transparent text-on-region"
+        class="grid size-tap shrink-0 place-items-center rounded-full border-[1.5px] border-on-region bg-transparent text-on-region active:not-disabled:translate-y-px"
         @click="speakJa(spot.name.kana || spot.name.ja)"
       >
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -228,7 +228,7 @@ function distance(m: number): string {
         v-for="it in nb.items"
         :key="it.id"
         type="button"
-        class="-mx-1.5 flex min-h-tap items-center gap-3 rounded-control px-1.5 text-left hover:bg-surface"
+        class="-mx-1.5 flex min-h-tap items-center gap-3 rounded-control px-1.5 text-left hover:bg-surface active:bg-surface"
         @click="emit('selectPack', it.id)"
       >
         <span class="size-2.5 shrink-0 rounded-full bg-(--pack)" aria-hidden="true"></span>

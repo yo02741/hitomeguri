@@ -54,7 +54,7 @@ const failed = ref(new Set<string>())
     class="flex flex-wrap items-center gap-x-3 rounded-card bg-paper px-4 py-1.5 text-body-sm text-sub shadow-float"
   >
     讀不到{{ prefName }}的景點。
-    <button type="button" class="h-tap px-3 text-body-sm font-bold text-region-strong" @click="retry">重試</button>
+    <button type="button" class="h-tap px-3 text-body-sm font-bold text-region-strong active:not-disabled:translate-y-px" @click="retry">重試</button>
   </section>
   <section v-else-if="!majors.length" class="rounded-card bg-paper px-4 py-3 text-body-sm text-sub shadow-float">
     資料準備中。
@@ -73,7 +73,7 @@ const failed = ref(new Set<string>())
       <button
         type="button"
         class="border-b-2 pb-0.5 text-label"
-        :class="explore.category === null ? 'border-region-strong font-bold text-ink' : 'border-transparent text-sub hover:text-ink'"
+        :class="explore.category === null ? 'border-region-strong font-bold text-ink' : 'border-transparent text-sub hover:text-ink active:text-ink'"
         :aria-pressed="explore.category === null"
         @click="explore.category = null"
       >
@@ -84,7 +84,7 @@ const failed = ref(new Set<string>())
         :key="g.key"
         type="button"
         class="border-b-2 pb-0.5 text-label"
-        :class="explore.category === g.key ? 'border-region-strong font-bold text-ink' : 'border-transparent text-sub hover:text-ink'"
+        :class="explore.category === g.key ? 'border-region-strong font-bold text-ink' : 'border-transparent text-sub hover:text-ink active:text-ink'"
         :aria-pressed="explore.category === g.key"
         @click="explore.category = explore.category === g.key ? null : g.key"
       >
@@ -100,7 +100,7 @@ const failed = ref(new Set<string>())
         <h3 class="sticky top-0 z-[1] shrink-0 bg-paper">
           <button
             type="button"
-            class="flex w-full items-center gap-2 px-1.5 pt-2.5 pb-1 text-left text-caption font-bold tracking-section text-sub hover:text-ink"
+            class="flex w-full items-center gap-2 px-1.5 pt-2.5 pb-1 text-left text-caption font-bold tracking-section text-sub hover:text-ink active:text-ink"
             :aria-expanded="isOpen(g.key)"
             @click="explore.toggleCollapsed(`cat:${g.key}`)"
           >
@@ -112,7 +112,7 @@ const failed = ref(new Set<string>())
           v-for="s in isOpen(g.key) ? g.rows : []"
           :key="s.id"
           class="flex min-h-tap shrink-0 items-center rounded-control"
-          :class="s.id === selectedId ? 'bg-region-tint' : 'hover:bg-surface'"
+          :class="s.id === selectedId ? 'bg-region-tint' : 'hover:bg-surface active:bg-surface'"
           @mouseenter="emit('highlight', s.id)"
         >
           <button

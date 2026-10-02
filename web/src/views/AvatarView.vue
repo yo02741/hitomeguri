@@ -78,7 +78,7 @@ function wear() {
         <button
           v-if="userStore.user"
           type="button"
-          class="ml-auto flex h-9 items-center gap-1.5 self-center rounded-full border border-line bg-paper px-3.5 text-label font-bold text-ink hover:bg-surface"
+          class="ml-auto flex h-9 items-center gap-1.5 self-center rounded-full border border-line bg-paper px-3.5 text-label font-bold text-ink hover:bg-surface active:not-disabled:translate-y-px"
           aria-haspopup="dialog"
           @click="showRules = true"
         >
@@ -99,7 +99,7 @@ function wear() {
         </div>
         <button
           type="button"
-          class="draw flex h-14 shrink-0 items-center gap-3 rounded-card bg-ink px-4 text-paper disabled:cursor-not-allowed disabled:opacity-40"
+          class="draw flex h-14 shrink-0 items-center gap-3 rounded-card bg-ink px-4 text-paper disabled:cursor-not-allowed disabled:opacity-40 active:not-disabled:translate-y-px"
           :disabled="!avatar.canDraw"
           @click="draw"
         >
@@ -122,7 +122,7 @@ function wear() {
             type="button"
             role="tab"
             :aria-selected="tab === t.key"
-            class="tab h-10 shrink-0 rounded-t-control px-4 text-label font-bold"
+            class="tab h-10 shrink-0 rounded-t-control px-4 text-label font-bold active:text-ink"
             :class="tab === t.key ? 'is-on bg-surface text-ink' : 'text-sub hover:text-ink'"
             @click="tab = t.key"
           >
@@ -175,7 +175,7 @@ function wear() {
                     v-for="s in SKINS"
                     :key="s"
                     type="button"
-                    class="swatch size-10 rounded-full"
+                    class="swatch size-10 rounded-full active:not-disabled:translate-y-px"
                     :class="{ 'is-on': avatar.parts.skin === s }"
                     :aria-pressed="avatar.parts.skin === s"
                     :aria-label="`膚色 ${s}`"
@@ -191,7 +191,7 @@ function wear() {
                     v-for="c in HAIR_COLORS"
                     :key="c"
                     type="button"
-                    class="swatch size-10 rounded-full"
+                    class="swatch size-10 rounded-full active:not-disabled:translate-y-px"
                     :class="{ 'is-on': avatar.parts.hairColor === c }"
                     :aria-pressed="avatar.parts.hairColor === c"
                     :aria-label="`髮色 ${c}`"
@@ -205,7 +205,7 @@ function wear() {
 
           <!-- 服裝：貼紙 -->
           <div v-if="tab !== 'look'" class="mb-3 flex justify-end">
-            <button type="button" class="flex h-8 items-center gap-1.5 rounded-full px-3 text-caption font-bold" :class="onlyOwned ? 'bg-ink text-paper' : 'bg-paper text-ink'" :aria-pressed="onlyOwned" @click="onlyOwned = !onlyOwned">
+            <button type="button" class="flex h-8 items-center gap-1.5 rounded-full px-3 text-caption font-bold active:not-disabled:translate-y-px" :class="onlyOwned ? 'bg-ink text-paper' : 'bg-paper text-ink'" :aria-pressed="onlyOwned" @click="onlyOwned = !onlyOwned">
               只看有的
             </button>
           </div>
@@ -292,8 +292,10 @@ function wear() {
 .tile {
   transition: background-color 0.15s;
 }
-.tile:not(:disabled):hover {
-  background: color-mix(in oklab, var(--color-paper) 70%, transparent);
+@media (hover: hover) and (pointer: fine) {
+  .tile:not(:disabled):hover {
+    background: color-mix(in oklab, var(--color-paper) 70%, transparent);
+  }
 }
 .tile.is-on {
   background: var(--color-paper);

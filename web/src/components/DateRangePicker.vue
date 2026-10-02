@@ -85,7 +85,7 @@ const days = computed(() => dayCount(draftStart.value || undefined, (draftEnd.va
     aria-haspopup="dialog"
     :aria-expanded="open"
     :aria-label="`${label}：${text || '未選'}`"
-    class="flex items-center gap-2 rounded-control border bg-paper px-2.5 text-left text-body-sm hover:bg-surface disabled:cursor-not-allowed disabled:opacity-40"
+    class="flex items-center gap-2 rounded-control border bg-paper px-2.5 text-left text-body-sm hover:bg-surface disabled:cursor-not-allowed disabled:opacity-40 active:not-disabled:translate-y-px"
     :class="[HEIGHT[size], open ? 'border-region-strong' : 'border-line']"
     @click="open = !open"
     @keydown.down.prevent="open = true"
@@ -124,7 +124,7 @@ const days = computed(() => dayCount(draftStart.value || undefined, (draftEnd.va
             <button
               v-if="start || draftStart"
               type="button"
-              class="ml-auto h-9 rounded-control px-3 text-sub hover:bg-surface hover:text-ink"
+              class="ml-auto h-9 rounded-control px-3 text-sub hover:bg-surface hover:text-ink active:not-disabled:translate-y-px"
               @click="clear"
             >
               清除

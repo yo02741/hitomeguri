@@ -145,9 +145,9 @@ onBeforeUnmount(() => {
       </div>
       <div ref="actions" class="flex min-h-11 gap-2">
         <template v-if="stage === 'open'">
-          <button type="button" class="h-11 rounded-control bg-paper px-5 text-body-sm font-bold text-ink" @click="emit('wear')">穿上</button>
-          <button type="button" class="h-11 rounded-control border border-paper/50 px-4 text-body-sm text-paper disabled:opacity-40" :disabled="!canDraw" @click="emit('again')">再抽一次</button>
-          <button type="button" class="h-11 rounded-control border border-paper/50 px-4 text-body-sm text-paper" @click="emit('close')">關閉</button>
+          <button type="button" class="h-11 rounded-control bg-paper px-5 text-body-sm font-bold text-ink active:not-disabled:translate-y-px" @click="emit('wear')">穿上</button>
+          <button type="button" class="h-11 rounded-control border border-paper/50 px-4 text-body-sm text-paper disabled:opacity-40 active:not-disabled:translate-y-px" :disabled="!canDraw" @click="emit('again')">再抽一次</button>
+          <button type="button" class="h-11 rounded-control border border-paper/50 px-4 text-body-sm text-paper active:not-disabled:translate-y-px" @click="emit('close')">關閉</button>
         </template>
       </div>
     </div>

@@ -50,7 +50,7 @@ async function logOut() {
           <ExportButtons class="ml-auto" title="ひとめぐり 收藏" :rows="favorites.map(markRow)" />
         </div>
         <MarkedSpotList v-if="favorites.length" :rows="favorites" :loading="loading" visit-toggle />
-        <p v-else-if="marks.loaded" class="flex flex-wrap items-center gap-x-3 text-body-sm text-sub">還沒有收藏的地方<RouterLink to="/" class="inline-flex min-h-tap items-center font-bold text-region-strong">到地圖找地方</RouterLink></p>
+        <p v-else-if="marks.loaded" class="flex flex-wrap items-center gap-x-3 text-body-sm text-sub">還沒有收藏的地方<RouterLink to="/" class="inline-flex min-h-tap items-center font-bold text-region-strong active:not-disabled:translate-y-px">到地圖找地方</RouterLink></p>
       </section>
 
       <section class="flex flex-col gap-3" aria-labelledby="lists-title">
@@ -61,7 +61,7 @@ async function logOut() {
           <li v-for="l in marks.lists" :key="l.id">
             <RouterLink
               :to="`/me/lists/${l.id}`"
-              class="flex min-h-tap items-center gap-3 rounded-card border border-line bg-paper px-4 py-3 text-ink no-underline hover:bg-surface"
+              class="flex min-h-tap items-center gap-3 rounded-card border border-line bg-paper px-4 py-3 text-ink no-underline hover:bg-surface active:not-disabled:translate-y-px"
             >
               <span class="min-w-0 truncate text-body font-bold">{{ l.name }}</span>
               <span class="ml-auto shrink-0 font-latin text-body-sm text-sub">{{ listCounts.get(l.id) ?? 0 }}</span>
@@ -80,7 +80,7 @@ async function logOut() {
           />
           <button
             type="submit"
-            class="h-11 shrink-0 rounded-control border border-line bg-paper px-3.5 text-body-sm text-ink hover:bg-surface disabled:cursor-not-allowed disabled:opacity-40"
+            class="h-11 shrink-0 rounded-control border border-line bg-paper px-3.5 text-body-sm text-ink hover:bg-surface disabled:cursor-not-allowed disabled:opacity-40 active:not-disabled:translate-y-px"
             :disabled="!newName.trim()"
           >
             新增清單

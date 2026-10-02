@@ -157,7 +157,7 @@ function close() {
         <span v-if="queue.length > 1" class="font-latin text-body-sm text-sub">{{ index + 1 }} / {{ queue.length }}</span>
         <button
           type="button"
-          class="ml-auto grid size-9 place-items-center rounded-control text-sub hover:bg-surface hover:text-ink"
+          class="ml-auto grid size-9 place-items-center rounded-control text-sub hover:bg-surface hover:text-ink active:not-disabled:translate-y-px"
           aria-label="關閉"
           @click="close"
         >
@@ -169,7 +169,7 @@ function close() {
         <button
           v-if="!preview"
           type="button"
-          class="flex h-48 flex-col items-center justify-center gap-2 rounded-card border-[1.5px] border-dashed border-line bg-surface text-body-sm text-sub hover:border-region-strong hover:text-ink"
+          class="flex h-48 flex-col items-center justify-center gap-2 rounded-card border-[1.5px] border-dashed border-line bg-surface text-body-sm text-sub hover:border-region-strong hover:text-ink active:not-disabled:translate-y-px"
           @click="fileInput?.click()"
         >
           <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -183,7 +183,7 @@ function close() {
           <button
             v-if="!editing && queue.length <= 1"
             type="button"
-            class="absolute top-2 right-2 h-8 rounded-control bg-paper/90 px-2.5 text-caption text-ink shadow-float hover:bg-paper"
+            class="absolute top-2 right-2 h-8 rounded-control bg-paper/90 px-2.5 text-caption text-ink shadow-float hover:bg-paper active:not-disabled:translate-y-px"
             @click="fileInput?.click()"
           >
             換一張
@@ -206,7 +206,7 @@ function close() {
               v-for="b in brandSuggestions"
               :key="b"
               type="button"
-              class="h-7 rounded-full border border-line bg-paper px-2.5 text-caption text-ink hover:bg-surface"
+              class="h-7 rounded-full border border-line bg-paper px-2.5 text-caption text-ink hover:bg-surface active:not-disabled:translate-y-px"
               @click="brand = b"
             >
               {{ b }}
@@ -247,7 +247,7 @@ function close() {
         <button
           v-if="queue.length > 1"
           type="button"
-          class="h-10 rounded-control px-3.5 text-body-sm text-sub hover:bg-surface hover:text-ink"
+          class="h-10 rounded-control px-3.5 text-body-sm text-sub hover:bg-surface hover:text-ink active:not-disabled:translate-y-px"
           @click="skip"
         >
           略過這張

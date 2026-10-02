@@ -78,7 +78,7 @@ async function leave() {
     <button
       ref="toggleBtn"
       type="button"
-      class="flex h-9 items-center gap-2 rounded-control border border-line bg-paper pr-3 pl-1.5 text-label text-ink hover:bg-surface"
+      class="flex h-9 items-center gap-2 rounded-control border border-line bg-paper pr-3 pl-1.5 text-label text-ink hover:bg-surface active:not-disabled:translate-y-px"
       aria-haspopup="true"
       :aria-expanded="open"
       @click="toggle"
@@ -122,7 +122,7 @@ async function leave() {
         </div>
         <button
           type="button"
-          class="w-fit text-caption text-sub hover:text-ink disabled:opacity-40"
+          class="w-fit text-caption text-sub hover:text-ink disabled:opacity-40 active:text-ink"
           :disabled="busy || !link"
           @click="renew"
         >
@@ -141,7 +141,7 @@ async function leave() {
           <button
             v-else-if="isOwner"
             type="button"
-            class="h-8 shrink-0 rounded-control px-2.5 text-caption text-sub hover:bg-surface hover:text-danger"
+            class="h-8 shrink-0 rounded-control px-2.5 text-caption text-sub hover:bg-surface hover:text-danger active:not-disabled:translate-y-px"
             @click="remove(m)"
           >
             移除
@@ -149,7 +149,7 @@ async function leave() {
           <button
             v-else-if="m === uid"
             type="button"
-            class="h-8 shrink-0 rounded-control px-2.5 text-caption text-danger hover:bg-surface"
+            class="h-8 shrink-0 rounded-control px-2.5 text-caption text-danger hover:bg-surface active:not-disabled:translate-y-px"
             @click="leave"
           >
             離開

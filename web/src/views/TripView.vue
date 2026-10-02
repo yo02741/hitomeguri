@@ -276,20 +276,20 @@ async function del() {
           >旅前準備</RouterLink>
           <RouterLink
             :to="`/trips/${trip.id}/book`"
-            class="flex h-9 items-center rounded-control border border-line bg-paper px-3 text-label text-ink no-underline hover:bg-surface"
+            class="flex h-9 items-center rounded-control border border-line bg-paper px-3 text-label text-ink no-underline hover:bg-surface active:not-disabled:translate-y-px"
           >旅前小書</RouterLink>
           <ExportButtons :title="trip.name || 'ひとめぐり 行程'" :folders="folders" :leading="['日', '順序']" />
           <OfflineButton :trip="trip" />
           <button
             type="button"
-            class="h-9 rounded-control border border-line bg-paper px-3 text-label text-ink hover:bg-surface disabled:cursor-not-allowed disabled:opacity-40"
+            class="h-9 rounded-control border border-line bg-paper px-3 text-label text-ink hover:bg-surface disabled:cursor-not-allowed disabled:opacity-40 active:not-disabled:translate-y-px"
             :disabled="!trip.days.some((d) => d.stops.length)"
             @click="recapOpen = true"
           >回顧圖</button>
           <button
             v-if="isOwner"
             type="button"
-            class="h-9 rounded-control border border-line bg-paper px-3 text-label text-danger hover:bg-surface"
+            class="h-9 rounded-control border border-line bg-paper px-3 text-label text-danger hover:bg-surface active:not-disabled:translate-y-px"
             @click="del"
           >刪除</button>
         </div>
@@ -301,7 +301,7 @@ async function del() {
         <button
           type="button"
           class="border-b-2 pb-0.5"
-          :class="selectedDay === null ? 'border-region-strong font-bold text-ink' : 'border-transparent text-sub hover:text-ink'"
+          :class="selectedDay === null ? 'border-region-strong font-bold text-ink' : 'border-transparent text-sub hover:text-ink active:text-ink'"
           :aria-pressed="selectedDay === null"
           @click="selectedDay = null"
         >
@@ -314,7 +314,7 @@ async function del() {
         <div class="flex items-center gap-2" :data-pref="dayPref(d)">
           <button
             type="button"
-            class="flex items-center gap-2 rounded-control py-1 pr-2 pl-0.5"
+            class="flex items-center gap-2 rounded-control py-1 pr-2 pl-0.5 active:not-disabled:translate-y-px"
             :class="selectedDay === i ? 'bg-region-tint' : 'hover:bg-surface'"
             :aria-pressed="selectedDay === i"
             @click="selectedDay = selectedDay === i ? null : i"
@@ -333,7 +333,7 @@ async function del() {
             v-if="!hasDates && trip.days.length > 1"
             type="button"
             :aria-label="`刪除 DAY ${i + 1}`"
-            class="ml-auto text-caption text-sub hover:text-ink"
+            class="ml-auto text-caption text-sub hover:text-ink active:text-ink"
             @click="removeDay(i)"
           >
             刪除這天
@@ -359,7 +359,7 @@ async function del() {
       <button
         v-if="!hasDates"
         type="button"
-        class="h-10 w-fit rounded-control border border-line bg-paper px-3.5 text-body-sm text-ink hover:bg-surface"
+        class="h-10 w-fit rounded-control border border-line bg-paper px-3.5 text-body-sm text-ink hover:bg-surface active:not-disabled:translate-y-px"
         @click="addDay"
       >
         加一天

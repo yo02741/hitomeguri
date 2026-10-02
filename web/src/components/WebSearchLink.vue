@@ -18,7 +18,7 @@ const href = computed(() => {
     rel="noopener"
     :aria-label="`在 Google 搜尋「${name}」`"
     :title="`在 Google 搜尋「${name}」`"
-    class="grid size-8 shrink-0 place-items-center rounded-control text-sub hover:bg-surface hover:text-ink"
+    class="grid size-8 shrink-0 place-items-center rounded-control text-sub hover:bg-surface hover:text-ink active:not-disabled:translate-y-px"
   >
     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
       <circle cx="11" cy="11" r="6.5" /><path d="M16 16l4.5 4.5" />

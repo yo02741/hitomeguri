@@ -142,7 +142,7 @@ function open(id: string) {
       <div class="grid gap-4 md:grid-cols-[minmax(0,2fr)_minmax(0,1fr)_minmax(0,1fr)]">
       <RouterLink
         to="/log/cards"
-        class="collect paper-grain group relative flex h-[132px] items-center gap-3 overflow-hidden rounded-card bg-region pr-5 text-on-region no-underline"
+        class="collect paper-grain group relative flex h-[132px] items-center gap-3 overflow-hidden rounded-card bg-region pr-5 text-on-region no-underline active:not-disabled:translate-y-px"
       >
         <div class="relative h-full w-[172px] shrink-0" aria-hidden="true">
           <template v-if="fan.length">
@@ -176,7 +176,7 @@ function open(id: string) {
       <!-- 經縣值入口（DESIGN.md §7.21） -->
       <RouterLink
         to="/log/keiken"
-        class="group flex h-[132px] flex-col justify-center gap-2 rounded-card border border-line bg-paper px-5 text-ink no-underline hover:bg-surface"
+        class="group flex h-[132px] flex-col justify-center gap-2 rounded-card border border-line bg-paper px-5 text-ink no-underline hover:bg-surface active:not-disabled:translate-y-px"
       >
         <span class="flex items-center text-title font-black tracking-title">
           經縣值
@@ -190,7 +190,7 @@ function open(id: string) {
       <!-- 旅人入口（DESIGN.md §7.24） -->
       <RouterLink
         to="/log/avatar"
-        class="group flex h-[132px] items-center gap-3 rounded-card border border-line bg-paper px-4 text-ink no-underline hover:bg-surface"
+        class="group flex h-[132px] items-center gap-3 rounded-card border border-line bg-paper px-4 text-ink no-underline hover:bg-surface active:not-disabled:translate-y-px"
       >
         <span class="paper-grain relative h-[108px] w-[92px] shrink-0 overflow-hidden rounded-control bg-region-tint" aria-hidden="true">
           <PaperDoll :parts="avatar.parts" :equipped="{ ...avatar.equipped, buddy: undefined }" crop="36 8 168 196" class="absolute inset-0 size-full" />
@@ -204,7 +204,7 @@ function open(id: string) {
       <!-- 成就入口（DESIGN.md §7.25） -->
       <RouterLink
         to="/log/achievements"
-        class="group relative flex h-[96px] items-center gap-4 rounded-card border border-line bg-paper px-5 text-ink no-underline hover:bg-surface md:col-span-3"
+        class="group relative flex h-[96px] items-center gap-4 rounded-card border border-line bg-paper px-5 text-ink no-underline hover:bg-surface md:col-span-3 active:not-disabled:translate-y-px"
       >
         <span class="flex shrink-0 flex-col">
           <span class="text-title font-black tracking-title">成就</span>
@@ -262,7 +262,7 @@ function open(id: string) {
             type="submit"
             :disabled="!start || adding"
             :aria-busy="adding"
-            class="h-10 rounded-control border border-line bg-paper px-3.5 text-body-sm text-ink hover:bg-surface disabled:cursor-not-allowed disabled:opacity-40"
+            class="h-10 rounded-control border border-line bg-paper px-3.5 text-body-sm text-ink hover:bg-surface disabled:cursor-not-allowed disabled:opacity-40 active:not-disabled:translate-y-px"
           >
             新增
           </button>
@@ -278,7 +278,7 @@ function open(id: string) {
             <button
               v-if="rows.length && !picking"
               type="button"
-              class="h-9 rounded-control border border-line bg-paper px-3 text-label text-ink hover:bg-surface"
+              class="h-9 rounded-control border border-line bg-paper px-3 text-label text-ink hover:bg-surface active:not-disabled:translate-y-px"
               @click="startPicking"
             >
               補日期
@@ -296,7 +296,7 @@ function open(id: string) {
         >
           <button
             type="button"
-            class="h-9 rounded-control border border-line bg-paper px-3 text-label text-ink hover:bg-surface disabled:cursor-not-allowed disabled:opacity-40"
+            class="h-9 rounded-control border border-line bg-paper px-3 text-label text-ink hover:bg-surface disabled:cursor-not-allowed disabled:opacity-40 active:not-disabled:translate-y-px"
             :disabled="!undated.length"
             @click="selected = new Set(undated.map((r) => r.id))"
           >
@@ -304,7 +304,7 @@ function open(id: string) {
           </button>
           <button
             type="button"
-            class="h-9 rounded-control border border-line bg-paper px-3 text-label text-ink hover:bg-surface"
+            class="h-9 rounded-control border border-line bg-paper px-3 text-label text-ink hover:bg-surface active:not-disabled:translate-y-px"
             @click="selected = selected.size === rows.length ? new Set() : new Set(rows.map((r) => r.id))"
           >
             {{ selected.size === rows.length ? '全不選' : '全選' }}
@@ -319,7 +319,7 @@ function open(id: string) {
           >
             套用
           </button>
-          <button type="button" class="h-9 rounded-control px-3 text-label text-sub hover:bg-surface hover:text-ink" @click="picking = false">
+          <button type="button" class="h-9 rounded-control px-3 text-label text-sub hover:bg-surface hover:text-ink active:not-disabled:translate-y-px" @click="picking = false">
             完成
           </button>
         </div>
@@ -332,7 +332,7 @@ function open(id: string) {
           :selected="picking ? selected : null"
           @toggle="toggleRow"
         />
-        <p v-else-if="marks.loaded" class="flex flex-wrap items-center gap-x-3 text-body-sm text-sub">還沒有去過的地方<RouterLink to="/" class="inline-flex min-h-tap items-center font-bold text-region-strong">到地圖找地方</RouterLink></p>
+        <p v-else-if="marks.loaded" class="flex flex-wrap items-center gap-x-3 text-body-sm text-sub">還沒有去過的地方<RouterLink to="/" class="inline-flex min-h-tap items-center font-bold text-region-strong active:not-disabled:translate-y-px">到地圖找地方</RouterLink></p>
         <p v-if="marks.error" class="text-caption text-danger" role="alert">{{ marks.error }}</p>
       </section>
     </template>
@@ -347,8 +347,13 @@ function open(id: string) {
   transform: rotate(calc(var(--k) * 11deg)) translateX(calc(var(--k) * 10px));
   transition: transform 0.35s var(--ease-out-soft);
 }
-.collect:hover .fan-card,
 .collect:focus-visible .fan-card {
   transform: translateY(-6px) rotate(calc(var(--k) * 15deg)) translateX(calc(var(--k) * 16px));
+}
+/* 觸控點過後 :hover 會黏住，只給有滑鼠的裝置 */
+@media (hover: hover) and (pointer: fine) {
+  .collect:hover .fan-card {
+    transform: translateY(-6px) rotate(calc(var(--k) * 15deg)) translateX(calc(var(--k) * 16px));
+  }
 }
 </style>

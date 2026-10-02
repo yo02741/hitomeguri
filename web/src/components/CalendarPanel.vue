@@ -161,7 +161,7 @@ defineExpose({ focus: focusActive })
     <div class="flex items-center gap-1">
       <button
         type="button"
-        class="grid size-9 place-items-center rounded-control text-sub hover:bg-surface hover:text-ink disabled:cursor-not-allowed disabled:opacity-40"
+        class="grid size-9 place-items-center rounded-control text-sub hover:bg-surface hover:text-ink disabled:cursor-not-allowed disabled:opacity-40 active:not-disabled:translate-y-px"
         :disabled="prevDisabled"
         :aria-label="view === 'days' ? '上個月' : view === 'months' ? '前一年' : '前 12 年'"
         @click="go(-1)"
@@ -170,7 +170,7 @@ defineExpose({ focus: focusActive })
       </button>
       <button
         type="button"
-        class="flex h-9 flex-1 items-center justify-center gap-1 rounded-control font-latin text-body font-bold hover:bg-surface disabled:cursor-default disabled:hover:bg-transparent"
+        class="flex h-9 flex-1 items-center justify-center gap-1 rounded-control font-latin text-body font-bold hover:bg-surface disabled:cursor-default disabled:hover:bg-transparent active:not-disabled:translate-y-px"
         :disabled="view === 'years'"
         :aria-label="view === 'days' ? `${title}，選月份` : view === 'months' ? `${year}年，選年份` : undefined"
         aria-live="polite"
@@ -183,7 +183,7 @@ defineExpose({ focus: focusActive })
       </button>
       <button
         type="button"
-        class="grid size-9 place-items-center rounded-control text-sub hover:bg-surface hover:text-ink disabled:cursor-not-allowed disabled:opacity-40"
+        class="grid size-9 place-items-center rounded-control text-sub hover:bg-surface hover:text-ink disabled:cursor-not-allowed disabled:opacity-40 active:not-disabled:translate-y-px"
         :disabled="nextDisabled"
         :aria-label="view === 'days' ? '下個月' : view === 'months' ? '後一年' : '後 12 年'"
         @click="go(1)"
@@ -212,7 +212,7 @@ defineExpose({ focus: focusActive })
             :aria-pressed="isEdge(d)"
             :aria-current="d === today ? 'date' : undefined"
             :aria-disabled="disabled(d) || undefined"
-            class="relative mx-auto grid size-10 place-items-center rounded-control font-latin text-body-sm"
+            class="relative mx-auto grid size-10 place-items-center rounded-control font-latin text-body-sm active:not-disabled:translate-y-px"
             :class="dayClass(d)"
             @click="pick(d)"
             @mouseenter="hover = d"
@@ -235,7 +235,7 @@ defineExpose({ focus: focusActive })
         v-for="m in 12"
         :key="m"
         type="button"
-        class="h-12 rounded-control text-body-sm disabled:cursor-not-allowed disabled:text-line"
+        class="h-12 rounded-control text-body-sm disabled:cursor-not-allowed disabled:text-line active:not-disabled:translate-y-px"
         :class="
           `${year}-${String(m).padStart(2, '0')}` === monthOf(value || end || start || '')
             ? 'bg-region-strong font-bold text-white'
@@ -253,7 +253,7 @@ defineExpose({ focus: focusActive })
         v-for="y in 12"
         :key="y"
         type="button"
-        class="h-12 rounded-control font-latin text-body-sm disabled:cursor-not-allowed disabled:text-line"
+        class="h-12 rounded-control font-latin text-body-sm disabled:cursor-not-allowed disabled:text-line active:not-disabled:translate-y-px"
         :class="decade + y - 1 === year ? 'bg-region-strong font-bold text-white' : 'hover:bg-surface'"
         :disabled="yearDisabled(decade + y - 1)"
         @click="pickYear(decade + y - 1)"

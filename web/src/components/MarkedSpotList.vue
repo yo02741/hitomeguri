@@ -33,7 +33,7 @@ const emit = defineEmits<{ remove: [row: MarkedSpot]; toggle: [row: MarkedSpot] 
       </label>
       <RouterLink
         :to="{ path: `/map/${r.pref}`, query: { spot: r.id } }"
-        class="flex min-h-tap min-w-0 flex-1 items-start gap-3 rounded-control px-2 py-2 text-ink no-underline hover:bg-surface"
+        class="flex min-h-tap min-w-0 flex-1 items-start gap-3 rounded-control px-2 py-2 text-ink no-underline hover:bg-surface active:bg-surface"
       >
         <RegionChip :pref="r.pref" :size="14" class="mt-0.5" />
         <span class="flex min-w-0 flex-col">
@@ -57,7 +57,7 @@ const emit = defineEmits<{ remove: [row: MarkedSpot]; toggle: [row: MarkedSpot] 
         v-if="removeLabel"
         type="button"
         :aria-label="`${removeLabel}：${r.name}`"
-        class="grid size-tap shrink-0 place-items-center rounded-control text-sub hover:bg-surface hover:text-ink"
+        class="grid size-tap shrink-0 place-items-center rounded-control text-sub hover:bg-surface hover:text-ink active:not-disabled:translate-y-px"
         @click="emit('remove', r)"
       >
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true">

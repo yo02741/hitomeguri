@@ -252,7 +252,7 @@ const visitedShort = computed(() => {
               />
               <button
                 type="button"
-                class="h-9 shrink-0 rounded-control border border-line bg-paper px-2.5 text-caption text-ink hover:bg-surface"
+                class="h-9 shrink-0 rounded-control border border-line bg-paper px-2.5 text-caption text-ink hover:bg-surface active:not-disabled:translate-y-px"
                 @click="addTo(t.id)"
               >
                 加入
@@ -273,7 +273,7 @@ const visitedShort = computed(() => {
           />
           <button
             type="submit"
-            class="h-10 shrink-0 rounded-control border border-line bg-paper px-3 text-body-sm text-ink hover:bg-surface disabled:cursor-not-allowed disabled:opacity-40"
+            class="h-10 shrink-0 rounded-control border border-line bg-paper px-3 text-body-sm text-ink hover:bg-surface disabled:cursor-not-allowed disabled:opacity-40 active:not-disabled:translate-y-px"
             :disabled="!newTrip.trim()"
           >
             新增
@@ -317,7 +317,7 @@ const visitedShort = computed(() => {
           />
           <button
             type="submit"
-            class="h-10 shrink-0 rounded-control border border-line bg-paper px-3 text-body-sm text-ink hover:bg-surface disabled:cursor-not-allowed disabled:opacity-40"
+            class="h-10 shrink-0 rounded-control border border-line bg-paper px-3 text-body-sm text-ink hover:bg-surface disabled:cursor-not-allowed disabled:opacity-40 active:not-disabled:translate-y-px"
             :disabled="!newName.trim()"
           >
             新增

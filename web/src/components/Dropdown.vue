@@ -76,7 +76,7 @@ watch(active, async () => {
     aria-haspopup="listbox"
     :aria-expanded="open"
     :aria-controls="id"
-    class="inline-flex shrink-0 items-center gap-1 rounded-control border border-line bg-paper text-left text-ink hover:bg-surface"
+    class="inline-flex shrink-0 items-center gap-1 rounded-control border border-line bg-paper text-left text-ink hover:bg-surface active:not-disabled:translate-y-px"
     :class="size === 'sm' ? 'h-8 pr-1.5 pl-2 text-caption pointer-coarse:h-tap' : 'h-10 pr-2 pl-3 text-body-sm'"
     @click="open ? (open = false) : show()"
     @keydown="onTriggerKey"
@@ -113,7 +113,7 @@ watch(active, async () => {
         :aria-selected="o.value === modelValue"
         :data-active="i === active"
         class="flex min-h-tap items-center gap-2 rounded-control px-2.5 text-left text-body-sm whitespace-nowrap text-ink"
-        :class="i === active ? 'bg-surface' : ''"
+        :class="i === active ? 'bg-surface' : 'active:bg-surface'"
         @pointermove="active = i"
         @click="pick(i)"
       >

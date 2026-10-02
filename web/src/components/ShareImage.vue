@@ -71,11 +71,11 @@ async function share() {
           <p v-if="failed" class="absolute inset-0 grid place-items-center text-body-sm text-sub">圖片做不出來</p>
         </div>
         <div class="flex gap-2">
-          <button ref="primary" type="button" class="h-11 flex-1 rounded-control bg-region-strong text-body-sm font-bold text-white disabled:opacity-40" :disabled="!ready" @click="canShare ? share() : save()">
+          <button ref="primary" type="button" class="h-11 flex-1 rounded-control bg-region-strong text-body-sm font-bold text-white disabled:opacity-40 active:not-disabled:translate-y-px" :disabled="!ready" @click="canShare ? share() : save()">
             {{ canShare ? '分享' : '下載' }}
           </button>
-          <button v-if="canShare" type="button" class="h-11 rounded-control border border-line px-4 text-body-sm hover:bg-surface disabled:opacity-40" :disabled="!ready" @click="save">下載</button>
-          <button type="button" class="h-11 rounded-control border border-line px-4 text-body-sm hover:bg-surface" @click="emit('close')">關閉</button>
+          <button v-if="canShare" type="button" class="h-11 rounded-control border border-line px-4 text-body-sm hover:bg-surface disabled:opacity-40 active:not-disabled:translate-y-px" :disabled="!ready" @click="save">下載</button>
+          <button type="button" class="h-11 rounded-control border border-line px-4 text-body-sm hover:bg-surface active:not-disabled:translate-y-px" @click="emit('close')">關閉</button>
         </div>
       </div>
     </div>

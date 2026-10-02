@@ -35,7 +35,7 @@ const band = computed(() => {
 <template>
   <RouterLink
     :to="`/trips/${trip.id}`"
-    class="trip-card flex flex-col overflow-hidden rounded-card border border-line bg-paper text-ink no-underline hover:bg-surface"
+    class="trip-card flex flex-col overflow-hidden rounded-card border border-line bg-paper text-ink no-underline hover:bg-surface active:bg-surface"
   >
     <!-- 分段色帶（DESIGN.md §7.9）：每個縣一段，長度依那個縣的天數 -->
     <span class="flex h-2.5 w-full bg-placeholder" aria-hidden="true">

@@ -69,7 +69,7 @@ function mapLink(f: Festival) {
       <button
         type="button"
         class="border-b-2 pb-0.5 text-label"
-        :class="month === null ? 'border-region-strong font-bold text-ink' : 'border-transparent text-sub hover:text-ink'"
+        :class="month === null ? 'border-region-strong font-bold text-ink' : 'border-transparent text-sub hover:text-ink active:text-ink'"
         :aria-pressed="month === null"
         @click="month = null"
       >
@@ -81,7 +81,7 @@ function mapLink(f: Festival) {
         type="button"
         class="border-b-2 pb-0.5 font-latin text-label disabled:opacity-40"
         :class="[
-          month === String(m) ? 'border-region-strong font-bold text-ink' : 'border-transparent text-sub hover:text-ink',
+          month === String(m) ? 'border-region-strong font-bold text-ink' : 'border-transparent text-sub hover:text-ink active:text-ink',
           m === thisMonth && month !== String(m) ? 'text-ink' : '',
         ]"
         :disabled="!hasMonth.has(String(m))"
@@ -140,7 +140,7 @@ function mapLink(f: Festival) {
       <button
         v-if="!month && g.items.length > FIRST && !expanded.has(g.key)"
         type="button"
-        class="flex h-10 w-fit items-center gap-2 rounded-control border border-line px-4 text-label font-bold text-ink hover:bg-surface"
+        class="flex h-10 w-fit items-center gap-2 rounded-control border border-line px-4 text-label font-bold text-ink hover:bg-surface active:not-disabled:translate-y-px"
         @click="expanded = new Set(expanded).add(g.key)"
       >
         <CollapseChevron :open="true" />

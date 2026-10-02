@@ -524,7 +524,7 @@ function onMoveEnd(view: MapViewState) {
       v-if="pref && regionOf(pref)"
       to="/"
       aria-label="切換地區"
-      class="flex h-[56px] shrink-0 items-center gap-3 bg-region px-4 text-on-region no-underline lg:hidden"
+      class="flex h-[56px] shrink-0 items-center gap-3 bg-region px-4 text-on-region no-underline lg:hidden active:not-disabled:translate-y-px"
     >
       <span lang="ja" class="text-h3 font-black tracking-name">{{ regionOf(pref)!.name.ja }}</span>
       <span class="font-latin text-body-sm font-semibold tracking-romaji uppercase">{{ regionOf(pref)!.name.romaji }}</span>
@@ -557,7 +557,7 @@ function onMoveEnd(view: MapViewState) {
         <button
           v-if="userStore.user && marks.favorites.length"
           type="button"
-          class="flex h-9 shrink-0 items-center gap-1.5 rounded-full px-3.5 text-label font-bold shadow-float"
+          class="flex h-9 shrink-0 items-center gap-1.5 rounded-full px-3.5 text-label font-bold shadow-float active:not-disabled:translate-y-px"
           :class="explore.onlyFavorites ? 'bg-ink text-paper' : 'bg-paper text-ink hover:bg-surface'"
           :aria-pressed="explore.onlyFavorites"
           @click="explore.onlyFavorites = !explore.onlyFavorites"
@@ -579,7 +579,7 @@ function onMoveEnd(view: MapViewState) {
           <section v-if="timedHere.length && !explore.pack" class="shrink-0 rounded-card bg-paper px-3.5 pt-2.5 pb-2 shadow-float max-lg:hidden" aria-labelledby="timed-here">
             <h2 id="timed-here" class="flex items-baseline gap-1.5 text-label font-bold">
               期間限定<span class="font-latin font-normal text-sub">{{ timedHere.length }}</span>
-              <RouterLink v-if="timedHere.length > 3" :to="`/region/${pref}#timed`" class="ml-auto text-caption font-normal text-sub">全部</RouterLink>
+              <RouterLink v-if="timedHere.length > 3" :to="`/region/${pref}#timed`" class="ml-auto text-caption font-normal text-sub active:text-ink">全部</RouterLink>
             </h2>
             <TimedList :items="timedHere.slice(0, 3)" />
           </section>
@@ -605,7 +605,7 @@ function onMoveEnd(view: MapViewState) {
           <!-- 深度探索入口：左欄最下方獨立一顆，和清單分開（使用者決定） -->
           <RouterLink
             :to="`/region/${pref}`"
-            class="flex shrink-0 items-center gap-3 rounded-card bg-paper py-2.5 pr-3 pl-2.5 text-ink no-underline shadow-float hover:bg-surface max-lg:hidden"
+            class="flex shrink-0 items-center gap-3 rounded-card bg-paper py-2.5 pr-3 pl-2.5 text-ink no-underline shadow-float hover:bg-surface max-lg:hidden active:not-disabled:translate-y-px"
           >
             <span class="grid size-10 shrink-0 place-items-center rounded-full bg-region text-on-region" aria-hidden="true">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">

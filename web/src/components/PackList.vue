@@ -69,7 +69,7 @@ const visitedCount = computed(() => rows.value.filter((it) => marks.markOf(it.s 
     <div class="flex h-9 shrink-0 items-center gap-2 px-1">
       <button
         type="button"
-        class="flex h-8 items-center gap-1 rounded-control px-1.5 text-label text-sub hover:bg-surface hover:text-ink"
+        class="flex h-8 items-center gap-1 rounded-control px-1.5 text-label text-sub hover:bg-surface hover:text-ink active:not-disabled:translate-y-px"
         @click="explore.pack = null"
       >
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -94,7 +94,7 @@ const visitedCount = computed(() => rows.value.filter((it) => marks.markOf(it.s 
       <button
         type="button"
         class="border-b-2 pb-0.5 text-label"
-        :class="explore.packGroup === null ? 'border-(--pack) font-bold text-ink' : 'border-transparent text-sub hover:text-ink'"
+        :class="explore.packGroup === null ? 'border-(--pack) font-bold text-ink' : 'border-transparent text-sub hover:text-ink active:text-ink'"
         :aria-pressed="explore.packGroup === null"
         @click="explore.packGroup = null"
       >
@@ -105,7 +105,7 @@ const visitedCount = computed(() => rows.value.filter((it) => marks.markOf(it.s 
         :key="g.key"
         type="button"
         class="border-b-2 pb-0.5 text-label"
-        :class="explore.packGroup === g.key ? 'border-(--pack) font-bold text-ink' : 'border-transparent text-sub hover:text-ink'"
+        :class="explore.packGroup === g.key ? 'border-(--pack) font-bold text-ink' : 'border-transparent text-sub hover:text-ink active:text-ink'"
         :aria-pressed="explore.packGroup === g.key"
         @click="explore.packGroup = explore.packGroup === g.key ? null : g.key"
       >
@@ -118,7 +118,7 @@ const visitedCount = computed(() => rows.value.filter((it) => marks.markOf(it.s 
         <h3 class="sticky top-0 z-[1] shrink-0 bg-paper">
           <button
             type="button"
-            class="flex w-full items-center gap-2 px-1.5 pt-2.5 pb-1 text-left text-caption font-bold tracking-section text-sub hover:text-ink"
+            class="flex w-full items-center gap-2 px-1.5 pt-2.5 pb-1 text-left text-caption font-bold tracking-section text-sub hover:text-ink active:text-ink"
             :aria-expanded="isOpen(s.key)"
             @click="explore.toggleCollapsed(`pack:${s.key}`)"
           >
@@ -130,7 +130,7 @@ const visitedCount = computed(() => rows.value.filter((it) => marks.markOf(it.s 
           v-for="it in isOpen(s.key) ? s.rows : []"
           :key="it.id"
           class="flex shrink-0 items-center rounded-control"
-          :class="isSelected(it) ? 'bg-region-tint' : 'hover:bg-surface'"
+          :class="isSelected(it) ? 'bg-region-tint' : 'hover:bg-surface active:bg-surface'"
         >
           <button
             type="button"

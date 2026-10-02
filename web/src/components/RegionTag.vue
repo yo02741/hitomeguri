@@ -36,7 +36,7 @@ const routes = computed(() =>
         to="/"
         aria-label="回到全國地圖"
         title="回到全國地圖"
-        class="absolute top-1 left-1 flex min-h-tap items-center gap-0.5 rounded-control px-1.5 text-caption font-bold text-ink no-underline hover:bg-surface"
+        class="absolute top-1 left-1 flex min-h-tap items-center gap-0.5 rounded-control px-1.5 text-caption font-bold text-ink no-underline hover:bg-surface active:not-disabled:translate-y-px"
       >
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
           <path d="M15 5l-7 7 7 7" />
@@ -52,7 +52,7 @@ const routes = computed(() =>
       <RouterLink
         v-if="neighbors.prev"
         :to="`/map/${neighbors.prev.prefecture}`"
-        class="flex h-full items-center gap-1 px-1.5 text-white no-underline"
+        class="flex h-full items-center gap-1 px-1.5 text-white no-underline active:not-disabled:translate-y-px"
         :aria-label="`前一個縣：${neighbors.prev.name.ja}`"
       >
         <svg width="9" height="9" viewBox="0 0 10 10" aria-hidden="true"><path d="M8 0L0 5l8 5z" fill="currentColor" /></svg>
@@ -62,7 +62,7 @@ const routes = computed(() =>
       <RouterLink
         v-if="neighbors.next"
         :to="`/map/${neighbors.next.prefecture}`"
-        class="flex h-full items-center gap-1 px-1.5 text-white no-underline"
+        class="flex h-full items-center gap-1 px-1.5 text-white no-underline active:not-disabled:translate-y-px"
         :aria-label="`下一個縣：${neighbors.next.name.ja}`"
       >
         <span lang="ja">{{ neighbors.next.name.kana }}</span>
@@ -82,7 +82,7 @@ const routes = computed(() =>
         to="/"
         aria-label="回到全國地圖"
         title="回到全國地圖"
-        class="flex size-11 shrink-0 flex-col items-center justify-center rounded-control text-on-region no-underline hover:bg-region-accent"
+        class="flex size-11 shrink-0 flex-col items-center justify-center rounded-control text-on-region no-underline hover:bg-region-accent active:not-disabled:translate-y-px"
       >
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
           <path d="M15 5l-7 7 7 7" />

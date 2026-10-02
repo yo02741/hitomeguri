@@ -164,7 +164,7 @@ function onKey(e: KeyboardEvent) {
             記得
           </button>
         </div>
-        <button v-else type="button" class="h-12 rounded-control border border-line bg-paper text-body-sm text-ink hover:bg-surface" @click="flipped = true">
+        <button v-else type="button" class="h-12 rounded-control border border-line bg-paper text-body-sm text-ink hover:bg-surface active:not-disabled:translate-y-px" @click="flipped = true">
           看答案
         </button>
       </template>

@@ -226,10 +226,10 @@ watch(
               <span class="h-px flex-1 bg-line" aria-hidden="true"></span>
               <button
                 type="button"
-                class="h-8 rounded-control border border-line bg-paper px-3 text-caption font-normal tracking-normal text-ink hover:bg-surface"
+                class="h-8 rounded-control border border-line bg-paper px-3 text-caption font-normal tracking-normal text-ink hover:bg-surface active:not-disabled:translate-y-px"
                 @click="gallery?.add()"
               >新增</button>
-              <RouterLink v-if="finds.finds.length" to="/limited" class="text-caption font-normal tracking-normal text-sub">全部</RouterLink>
+              <RouterLink v-if="finds.finds.length" to="/limited" class="text-caption font-normal tracking-normal text-sub active:text-ink">全部</RouterLink>
             </h3>
             <FindGallery ref="gallery" :finds="tripFinds" :trip-id="trip.id" columns="narrow" />
           </div>

@@ -31,7 +31,7 @@ async function run() {
 <template>
   <button
     type="button"
-    class="relative flex h-9 items-center gap-1.5 overflow-hidden rounded-control border border-line bg-paper px-3 text-label text-ink hover:bg-surface disabled:cursor-wait"
+    class="relative flex h-9 items-center gap-1.5 overflow-hidden rounded-control border border-line bg-paper px-3 text-label text-ink hover:bg-surface disabled:cursor-wait active:not-disabled:translate-y-px"
     :disabled="Boolean(progress)"
     :title="readyAt && !progress ? `${readyAt} 存到這台裝置` : undefined"
     @click="run"

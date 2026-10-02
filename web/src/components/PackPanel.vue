@@ -54,7 +54,7 @@ const sourceLabel = computed(() => {
       <button
         type="button"
         aria-label="關閉"
-        class="ml-auto grid size-tap shrink-0 place-items-center rounded-full bg-paper/90 text-ink"
+        class="ml-auto grid size-tap shrink-0 place-items-center rounded-full bg-paper/90 text-ink active:not-disabled:translate-y-px"
         @click="emit('close')"
       >
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true">
@@ -94,7 +94,7 @@ const sourceLabel = computed(() => {
       <button
         v-if="item.s"
         type="button"
-        class="flex min-h-tap items-center justify-between border-b border-line-soft py-2.5 text-left text-body-sm font-bold text-ink hover:text-sub"
+        class="flex min-h-tap items-center justify-between border-b border-line-soft py-2.5 text-left text-body-sm font-bold text-ink hover:text-sub active:text-sub"
         @click="emit('openSpot', item.s)"
       >
         景點介紹
@@ -107,7 +107,7 @@ const sourceLabel = computed(() => {
         :href="item.w"
         target="_blank"
         rel="noopener"
-        class="flex min-h-tap items-center border-b border-line-soft py-2.5 text-body-sm text-ink no-underline hover:text-sub"
+        class="flex min-h-tap items-center border-b border-line-soft py-2.5 text-body-sm text-ink no-underline hover:text-sub active:text-sub"
       >維基百科</a>
     </div>
 
@@ -118,7 +118,7 @@ const sourceLabel = computed(() => {
         :href="item.u"
         target="_blank"
         rel="noopener"
-        class="flex h-11 items-center justify-center rounded-control border border-line px-4 text-body-sm font-bold whitespace-nowrap text-ink no-underline hover:bg-surface"
+        class="flex h-11 items-center justify-center rounded-control border border-line px-4 text-body-sm font-bold whitespace-nowrap text-ink no-underline hover:bg-surface active:not-disabled:translate-y-px"
       >{{ sourceLabel }}</a>
       <a
         :href="mapsUrl"

@@ -135,7 +135,7 @@ function sourceLabel(url: string): string {
       <div class="relative mx-auto flex w-full max-w-5xl flex-col gap-4 px-6 pt-5 pb-8">
         <RouterLink
           :to="`/map/${pref}`"
-          class="flex h-9 w-fit items-center gap-1 rounded-control pr-2.5 pl-1.5 text-label font-bold text-on-region no-underline hover:bg-region-accent lg:hidden"
+          class="flex h-9 w-fit items-center gap-1 rounded-control pr-2.5 pl-1.5 text-label font-bold text-on-region no-underline hover:bg-region-accent lg:hidden active:not-disabled:translate-y-px"
         >
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <path d="M15 5l-7 7 7 7" />
@@ -165,7 +165,7 @@ function sourceLabel(url: string): string {
         <div class="sticky top-8 flex flex-col gap-5">
           <RouterLink
             :to="`/map/${pref}`"
-            class="flex h-10 items-center gap-2 rounded-control border border-line bg-paper pr-3 pl-2 text-label font-bold text-ink no-underline hover:bg-surface"
+            class="flex h-10 items-center gap-2 rounded-control border border-line bg-paper pr-3 pl-2 text-label font-bold text-ink no-underline hover:bg-surface active:not-disabled:translate-y-px"
           >
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <path d="M15 5l-7 7 7 7" />
@@ -235,7 +235,7 @@ function sourceLabel(url: string): string {
             <button
               v-if="g.items.length > FIRST && !expanded.has(g.key)"
               type="button"
-              class="flex h-10 w-fit items-center gap-2 rounded-control border border-line px-4 text-label font-bold text-ink hover:bg-surface"
+              class="flex h-10 w-fit items-center gap-2 rounded-control border border-line px-4 text-label font-bold text-ink hover:bg-surface active:not-disabled:translate-y-px"
               @click="expanded = new Set(expanded).add(g.key)"
             >
               <CollapseChevron :open="true" />
@@ -252,7 +252,7 @@ function sourceLabel(url: string): string {
           <TimedList v-if="timed.length" :items="timed" detailed />
           <div class="flex flex-wrap items-center gap-x-4 gap-y-2">
             <ChainSearch />
-            <RouterLink to="/limited" class="text-label text-sub">截圖</RouterLink>
+            <RouterLink to="/limited" class="text-label text-sub active:text-ink">截圖</RouterLink>
           </div>
         </section>
       </main>

@@ -79,7 +79,7 @@ async function join() {
       <RouterLink
         v-if="trips.get(invite.trip_id)"
         :to="`/trips/${invite.trip_id}`"
-        class="flex h-11 items-center rounded-control bg-region-strong px-5 text-body-sm font-bold text-white no-underline"
+        class="flex h-11 items-center rounded-control bg-region-strong px-5 text-body-sm font-bold text-white no-underline active:not-disabled:translate-y-px"
       >
         打開行程
       </RouterLink>
@@ -98,7 +98,7 @@ async function join() {
 
     <template v-else-if="state === 'invalid'">
       <p class="text-body text-ink-2">這個邀請連結已經失效。</p>
-      <RouterLink to="/trips" class="text-body-sm text-sub">我的行程</RouterLink>
+      <RouterLink to="/trips" class="text-body-sm text-sub active:text-ink">我的行程</RouterLink>
     </template>
   </section>
 </template>

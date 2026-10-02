@@ -73,7 +73,7 @@ async function render(canvas: HTMLCanvasElement) {
         <button
           v-if="userStore.user"
           type="button"
-          class="ml-auto h-9 rounded-control border-[1.5px] border-on-region px-3 text-label font-bold text-on-region hover:bg-region-accent"
+          class="ml-auto h-9 rounded-control border-[1.5px] border-on-region px-3 text-label font-bold text-on-region hover:bg-region-accent active:not-disabled:translate-y-px"
           @click="imageOpen = true"
         >
           存成圖片
@@ -120,14 +120,14 @@ async function render(canvas: HTMLCanvasElement) {
             type="button"
             role="menuitemradio"
             :aria-checked="keiken.levelOf(picking.pref) === l.level"
-            class="flex min-h-tap items-center gap-2 rounded-control px-2.5 text-body-sm hover:bg-surface"
+            class="flex min-h-tap items-center gap-2 rounded-control px-2.5 text-body-sm hover:bg-surface active:bg-surface"
             :class="keiken.levelOf(picking.pref) === l.level ? 'font-bold' : ''"
             @click="choose(picking.pref, l.level)"
           >
             <span class="size-3 rounded-[3px] border border-line" :class="`lv-${l.level}`" aria-hidden="true"></span>
             {{ l.label }}
           </button>
-          <button type="button" class="min-h-tap rounded-control text-caption text-sub hover:bg-surface" @click="picking = null">取消</button>
+          <button type="button" class="min-h-tap rounded-control text-caption text-sub hover:bg-surface active:bg-surface" @click="picking = null">取消</button>
         </div>
       </div>
 
@@ -147,7 +147,7 @@ async function render(canvas: HTMLCanvasElement) {
                 role="radio"
                 :aria-checked="keiken.levelOf(r.prefecture) === l.level"
                 :title="l.label"
-                class="h-8 min-w-9 rounded-control border px-1.5 text-caption"
+                class="h-8 min-w-9 rounded-control border px-1.5 text-caption active:not-disabled:translate-y-px"
                 :class="
                   keiken.levelOf(r.prefecture) === l.level
                     ? [`lv-${l.level}`, 'border-ink font-bold', l.level >= 4 ? 'text-paper' : 'text-ink', keiken.isAuto(r.prefecture) ? 'border-dashed' : '']
@@ -182,10 +182,16 @@ async function render(canvas: HTMLCanvasElement) {
   cursor: pointer;
   transition: fill 0.3s var(--ease-out-soft);
 }
-.pref:hover,
 .pref.on {
   stroke: var(--region-ink);
   stroke-width: 0.9;
+}
+/* 觸控點過後 :hover 會黏住，看起來像還選著；只給有滑鼠的裝置，而且比選中的框細 */
+@media (hover: hover) and (pointer: fine) {
+  .pref:hover:not(.on) {
+    stroke: var(--region-ink);
+    stroke-width: 0.7;
+  }
 }
 .pref.auto {
   stroke-dasharray: 1 0.8;
