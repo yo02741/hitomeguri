@@ -72,14 +72,28 @@ function finish() {
   render()
 }
 
+// 開場畫面拿掉之後才做的事（例如註冊 service worker，不和首次載入搶頻寬）
+const after: Array<() => void> = []
+let gone = !el
+
 function exit() {
   if (finished || !el) return
   finished = true
   const wait = Math.max(0, MIN_MS - (performance.now() - started)) + 220
   setTimeout(() => {
     el.classList.add('is-done')
-    setTimeout(() => el.remove(), EXIT_MS)
+    setTimeout(() => {
+      el.remove()
+      gone = true
+      after.splice(0).forEach((fn) => fn())
+    }, EXIT_MS)
   }, wait)
+}
+
+/** 開場畫面拿掉之後執行（沒有開場畫面或已經拿掉時馬上執行） */
+export function afterSplash(fn: () => void) {
+  if (gone) fn()
+  else after.push(fn)
 }
 
 function check() {
