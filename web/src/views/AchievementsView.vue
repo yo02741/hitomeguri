@@ -4,6 +4,7 @@ import { computed, nextTick, onBeforeUnmount, onMounted, ref, watch } from 'vue'
 import AchvDetail from '../components/AchvDetail.vue'
 import AchvRules from '../components/AchvRules.vue'
 import AchvSeal from '../components/AchvSeal.vue'
+import BackLink from '../components/BackLink.vue'
 import NewTag from '../components/NewTag.vue'
 import PrefStamp from '../components/PrefStamp.vue'
 import RollingNumber from '../components/RollingNumber.vue'
@@ -151,10 +152,7 @@ onBeforeUnmount(() => fresh.seen([...fresh.keys].filter((k) => k.startsWith('a:'
     <header class="paper-grain relative overflow-hidden rounded-card bg-region p-6 text-on-region max-sm:p-5">
       <div class="relative grid grid-cols-[minmax(0,1fr)_160px] items-center gap-6 max-md:grid-cols-1">
         <div class="flex min-w-0 flex-col gap-4">
-          <RouterLink to="/log" class="flex w-fit items-center gap-1 text-label font-bold text-on-region no-underline hover:underline">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7" /></svg>
-            紀錄
-          </RouterLink>
+          <BackLink to="/log" on-region>紀錄</BackLink>
           <h1 class="flex items-baseline gap-3 text-h1 font-black tracking-[4px]">
             成就<RollingNumber :value="achv.counts.n" class="font-latin text-h3 font-semibold tracking-normal" /><span class="-ml-1.5 font-latin text-body-sm tracking-normal">/ {{ achv.counts.N }}</span>
           </h1>

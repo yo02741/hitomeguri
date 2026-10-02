@@ -2,6 +2,7 @@
 import { computed, onMounted, ref, watch } from 'vue'
 import { useRoute } from 'vue-router'
 
+import BackLink from '../components/BackLink.vue'
 import ChainSearch from '../components/ChainSearch.vue'
 import FindGallery from '../components/FindGallery.vue'
 import PhraseRow from '../components/PhraseRow.vue'
@@ -102,10 +103,7 @@ watch(
   <div v-if="trip" ref="root" :data-pref="prefs[0]" class="flex flex-col">
     <header class="paper-grain bg-region text-on-region">
       <div class="mx-auto flex w-full max-w-5xl flex-col gap-3 px-6 pt-5 pb-6">
-        <RouterLink :to="`/trips/${trip.id}`" class="flex w-fit items-center gap-1 text-label font-bold text-on-region no-underline">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7" /></svg>
-          {{ trip.name || '未命名行程' }}
-        </RouterLink>
+        <BackLink :to="`/trips/${trip.id}`" on-region>{{ trip.name || '未命名行程' }}</BackLink>
         <h1 class="text-h2 font-black tracking-[2px]">旅前準備</h1>
         <div class="flex flex-wrap items-center gap-3">
           <RouterLink

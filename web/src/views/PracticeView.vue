@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed, ref, shallowRef, watch } from 'vue'
 
+import BackLink from '../components/BackLink.vue'
 import SpeakButton from '../components/SpeakButton.vue'
 import { usePrep } from '../composables/prep'
 import type { Card } from '../services/prep'
@@ -105,10 +106,7 @@ function onKey(e: KeyboardEvent) {
   <div v-if="trip" :data-pref="prefs[0]" class="flex min-h-full flex-col bg-surface" tabindex="-1" @keydown="onKey">
     <div class="mx-auto flex w-full max-w-xl flex-1 flex-col gap-5 px-6 py-6">
       <div class="flex items-center gap-3">
-        <RouterLink :to="`/trips/${trip.id}/prep`" class="flex items-center gap-1 text-label text-sub no-underline hover:text-ink">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7" /></svg>
-          旅前準備
-        </RouterLink>
+        <BackLink :to="`/trips/${trip.id}/prep`">旅前準備</BackLink>
         <label class="ml-auto flex cursor-pointer items-center gap-2 text-label text-ink">
           <input v-model="listenMode" type="checkbox" class="size-4 accent-(--region-strong)" />
           聽音

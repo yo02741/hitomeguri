@@ -2,6 +2,7 @@
 import { computed, nextTick, ref, watch } from 'vue'
 import { useRouter } from 'vue-router'
 
+import BackLink from '../components/BackLink.vue'
 import DateRangePicker from '../components/DateRangePicker.vue'
 import ExportButtons from '../components/ExportButtons.vue'
 import OfflineButton from '../components/OfflineButton.vue'
@@ -232,10 +233,7 @@ async function del() {
   <div v-if="trip" class="flex min-h-0 flex-1 max-lg:flex-col">
     <!-- 左：行程內容 -->
     <section class="flex min-h-0 flex-col gap-5 overflow-y-auto border-line px-5 pt-6 pb-24 lg:w-[460px] lg:shrink-0 lg:border-r max-lg:order-2">
-      <RouterLink :to="status === 'done' ? '/log' : '/trips'" class="flex w-fit items-center gap-1 text-label text-sub no-underline hover:text-ink">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7" /></svg>
-        {{ status === 'done' ? '紀錄' : '行程' }}
-      </RouterLink>
+      <BackLink :to="status === 'done' ? '/log' : '/trips'">{{ status === 'done' ? '紀錄' : '行程' }}</BackLink>
 
       <div class="flex flex-col gap-3">
         <input
@@ -270,9 +268,11 @@ async function del() {
             開卡包
             <span v-if="!opened" class="absolute -top-1 -right-1 size-2.5 rounded-full border-2 border-paper bg-danger" aria-label="還沒開"></span>
           </button>
+          <!-- 一個畫面只有一個 Primary（DESIGN §7.1）：結束後「開卡包」是 Primary，「旅前準備」退成 Secondary -->
           <RouterLink
             :to="`/trips/${trip.id}/prep`"
-            class="flex h-9 items-center rounded-control bg-region-strong px-3.5 text-label font-bold text-white no-underline active:translate-y-px"
+            class="flex h-9 items-center rounded-control px-3.5 text-label no-underline active:translate-y-px"
+            :class="status === 'done' ? 'border border-line bg-paper text-ink hover:bg-surface' : 'bg-region-strong font-bold text-white'"
           >旅前準備</RouterLink>
           <RouterLink
             :to="`/trips/${trip.id}/book`"

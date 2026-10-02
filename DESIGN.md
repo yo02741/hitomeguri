@@ -239,6 +239,8 @@
 
 - 一個畫面只有一個 Primary。按下 `active:translate-y-px`，不做縮放動畫。
 - 停用：`opacity-40 cursor-not-allowed`，並加 `disabled`。
+- 送出中（新增行程、補登旅行、加入共編）同樣停用並加 `aria-busy`，文字不變；有兩個同等的實心按鈕時，次要的那個降為 Secondary（例：行程結束後「開卡包」是 Primary，「旅前準備」是 Secondary）。
+- 頁面上方的返回連結用 `BackLink.vue`：`text-label font-bold`、14px 左箭頭＋上一層的名字；一般底 `text-sub hover:text-ink`，地區色頁首上 `on-region`（`text-on-region hover:underline`）。
 
 ### 7.2 Tabs（功能導覽、頁內分頁）
 - 底線式：`h-full px-4 border-b-3`；選取 `border-region-strong font-bold text-ink`，未選 `border-transparent text-sub`。

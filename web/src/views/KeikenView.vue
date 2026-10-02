@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed, nextTick, onMounted, ref, shallowRef, watch } from 'vue'
 
+import BackLink from '../components/BackLink.vue'
 import RollingNumber from '../components/RollingNumber.vue'
 import ShareImage from '../components/ShareImage.vue'
 import { useDismiss } from '../composables/floating'
@@ -62,10 +63,7 @@ async function render(canvas: HTMLCanvasElement) {
 <template>
   <section class="mx-auto flex w-full max-w-5xl flex-col gap-7 px-6 pt-9 pb-24 max-sm:px-4">
     <header class="paper-grain relative flex flex-col gap-5 overflow-hidden rounded-card bg-region p-6 text-on-region max-sm:p-5">
-      <RouterLink to="/log" class="flex w-fit items-center gap-1 text-label font-bold text-on-region no-underline hover:underline">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7" /></svg>
-        紀錄
-      </RouterLink>
+      <BackLink to="/log" on-region>紀錄</BackLink>
       <div class="flex flex-wrap items-end gap-x-6 gap-y-2">
         <h1 class="text-h1 font-black tracking-[4px]">經縣值</h1>
         <p class="flex items-baseline gap-1.5 font-latin">

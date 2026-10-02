@@ -10,6 +10,7 @@ import { dayCount, dayDate, dayPref, shortDate, type Stop } from '../services/tr
 import { useCatalogStore } from '../stores/catalog'
 import { useFindsStore } from '../stores/finds'
 import { useUserStore } from '../stores/user'
+import BackLink from '../components/BackLink.vue'
 import SkeletonRows from '../components/SkeletonRows.vue'
 
 // 旅前小書（UX-FLOW.md D6）：把行程與旅前準備排成可以列印、存成 PDF 的小冊子。
@@ -128,10 +129,7 @@ function print() {
     <!-- 工具列：只在螢幕上 -->
     <div class="sticky top-0 z-10 border-b border-line bg-paper print:hidden">
       <div class="mx-auto flex w-full max-w-5xl flex-wrap items-center gap-x-4 gap-y-2 px-6 py-3">
-        <RouterLink :to="`/trips/${trip.id}/prep`" class="flex items-center gap-1 text-label text-sub no-underline hover:text-ink">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7" /></svg>
-          旅前準備
-        </RouterLink>
+        <BackLink :to="`/trips/${trip.id}/prep`">旅前準備</BackLink>
         <div class="flex items-center gap-1 text-label" role="group" aria-label="紙張">
           <button
             v-for="p in ['A5', 'A4'] as const"

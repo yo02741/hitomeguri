@@ -2,6 +2,7 @@
 import { computed, ref } from 'vue'
 
 import AvatarRules from '../components/AvatarRules.vue'
+import BackLink from '../components/BackLink.vue'
 import DollGacha from '../components/DollGacha.vue'
 import NewTag from '../components/NewTag.vue'
 import DollSpin from '../components/DollSpin.vue'
@@ -70,10 +71,7 @@ function wear() {
   <!-- 桌機：整頁不捲動，左邊固定、右邊衣櫃自己捲 -->
   <section class="mx-auto flex w-full max-w-5xl flex-col gap-6 px-6 py-8 max-sm:px-4 lg:min-h-0 lg:flex-1 lg:overflow-hidden lg:pb-6">
     <header class="flex flex-col gap-2">
-      <RouterLink to="/log" class="flex w-fit items-center gap-1 text-label font-bold text-sub no-underline hover:text-ink">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7" /></svg>
-        紀錄
-      </RouterLink>
+      <BackLink to="/log">紀錄</BackLink>
       <div class="flex items-baseline gap-4">
         <h1 class="text-h1 font-black tracking-[6px]">旅人</h1>
         <p class="text-label text-sub">服裝 <span class="font-latin text-body font-bold text-ink">{{ ownedCount }}</span> / {{ OUTFITS.length }}</p>
