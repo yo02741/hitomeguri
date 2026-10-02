@@ -5,19 +5,17 @@ import { useRoute } from 'vue-router'
 import { giftOf } from '../data/outfits'
 import { AREA_ZH, regionOf } from '../data/regions'
 import { daysUntil, tripStatus } from '../services/trip'
-import { walkerOn } from '../services/walker'
 import { useAchievementsStore } from '../stores/achievements'
 import { useAvatarStore } from '../stores/avatar'
 import { useFreshStore } from '../stores/fresh'
 import { useTripsStore } from '../stores/trips'
-import { useUserStore } from '../stores/user'
 import { useWalletStore } from '../stores/wallet'
 import PaperDoll from './PaperDoll.vue'
 
 // 散步的旅人（DESIGN.md §7.24）：登入後在畫面下緣走來走去，偶爾跳一下、轉一圈、鞠躬，或說一句話。
 // 說的話都來自自己的資料：下一趟出發倒數、目前地圖的縣、抽獎券、還沒看過的新衣服與新卡、新的成就、差一兩縣的地方。
 // 點它會說一句話。帳號選單可以關（存在這台裝置）；旅人頁、列印時不出現；減少動態時站著不動。
-const userStore = useUserStore()
+// App.vue 只在登入且開著時非同步掛上：沒登入的人不下載紙娃娃與服裝，也沒有計時器與換頁的監聽。
 const avatar = useAvatarStore()
 const wallet = useWalletStore()
 const achv = useAchievementsStore()
@@ -25,7 +23,7 @@ const fresh = useFreshStore()
 const trips = useTripsStore()
 const route = useRoute()
 
-const visible = computed(() => Boolean(userStore.user) && walkerOn.value && route.name !== 'avatar')
+const visible = computed(() => route.name !== 'avatar')
 const reduced = typeof matchMedia !== 'undefined' && matchMedia('(prefers-reduced-motion: reduce)').matches
 
 const SIZE = 64
@@ -39,10 +37,12 @@ const actKey = ref(0)
 
 let timer = 0
 let sayTimer = 0
+// 視窗寬度記在變數裡、resize 時更新：換頁的 watcher 裡讀 window.innerWidth 會在 Vue 更新途中強制排版
+let vw = typeof window !== 'undefined' ? window.innerWidth : 0
 // 桌機的探索頁（首頁、地區地圖）：左邊是浮動的清單（300px），旅人只在清單右邊走
 const PANEL_ROUTES = ['home', 'explore', 'map']
-const minX = () => (PANEL_ROUTES.includes(String(route.name)) && window.innerWidth >= 1024 ? 340 : 16)
-const maxX = () => Math.max(minX(), window.innerWidth - SIZE - 16)
+const minX = () => (PANEL_ROUTES.includes(String(route.name)) && vw >= 1024 ? 340 : 16)
+const maxX = () => Math.max(minX(), vw - SIZE - 16)
 
 function lines(): string[] {
   const out: string[] = []
@@ -122,7 +122,10 @@ function clamp() {
     x.value = v
   }
 }
-const onResize = clamp
+function onResize() {
+  vw = window.innerWidth
+  clamp()
+}
 onMounted(() => {
   x.value = minX() + Math.random() * Math.min(240, maxX() - minX())
   timer = window.setTimeout(tick, 2500)

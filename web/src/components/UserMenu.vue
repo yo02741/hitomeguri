@@ -1,18 +1,21 @@
 <script setup lang="ts">
-import { nextTick, onBeforeUnmount, ref, watch } from 'vue'
+import { defineAsyncComponent, nextTick, onBeforeUnmount, ref, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 
+import { whenIdle } from '../services/idle'
+import { afterSplash } from '../services/splash'
 import { walkerOn } from '../services/walker'
-import { useAvatarStore } from '../stores/avatar'
 import { useUserStore } from '../stores/user'
-import { useWalletStore } from '../stores/wallet'
-import PaperDoll from './PaperDoll.vue'
 import ThemeTimeline from './ThemeTimeline.vue'
 
 // 右上角頭像：點開向下展開的帳號選單（UX-FLOW.md F0）。
 // 滑鼠移到頭像上（桌機）：旅人的小卡片（DESIGN.md §7.24）；選單上方是旅人的半身像，連到旅人頁，
 // 「散步的旅人」開關（DollWalker）。
+// 紙娃娃（UserMenuDoll，含全部服裝的 SVG）不放進入口程式：這個元件只在登入後掛上，開場之後閒下來先抓。
 const userStore = useUserStore()
+const loadDoll = () => import('./UserMenuDoll.vue')
+const UserMenuDoll = defineAsyncComponent(loadDoll)
+afterSplash(() => whenIdle(() => void loadDoll()))
 const route = useRoute()
 const router = useRouter()
 
@@ -24,8 +27,6 @@ const items = [
 ]
 const isActive = (it: (typeof items)[number]) => it.match.includes(String(route.name))
 
-const avatar = useAvatarStore()
-const wallet = useWalletStore()
 const open = ref(false)
 // 桌機 hover 頭像：停一下才出現，移開就收
 const peek = ref(false)
@@ -33,6 +34,7 @@ const canHover = typeof matchMedia !== 'undefined' && matchMedia('(hover: hover)
 let peekTimer = 0
 function onEnter() {
   if (!canHover) return
+  void loadDoll()
   clearTimeout(peekTimer)
   peekTimer = window.setTimeout(() => (peek.value = true), 220)
 }
@@ -150,9 +152,7 @@ async function logOut() {
       class="peek paper-grain absolute top-12 right-0 z-30 flex w-44 flex-col items-center gap-1 rounded-card bg-region-tint px-3 pt-3 pb-2.5 text-ink no-underline shadow-float"
       @click="peek = false"
     >
-      <PaperDoll :parts="avatar.parts" :equipped="avatar.equipped" animate class="h-auto w-32" />
-      <span class="text-label font-black tracking-[2px]">旅人</span>
-      <span class="text-caption text-sub">服裝 <span class="font-latin font-bold text-ink">{{ avatar.ownedIds.size }}</span>　抽獎券 <span class="font-latin font-bold text-ink">{{ wallet.left }}</span></span>
+      <UserMenuDoll kind="peek" />
     </RouterLink>
 
     <div
@@ -166,7 +166,7 @@ async function logOut() {
     >
       <div class="flex items-center gap-3 px-2.5 pt-1.5 pb-2.5">
         <RouterLink to="/log/avatar" role="menuitem" tabindex="-1" aria-label="旅人" class="paper-grain relative h-14 w-12 shrink-0 overflow-hidden rounded-control bg-region-tint" @click="hide()">
-          <PaperDoll :parts="avatar.parts" :equipped="{ ...avatar.equipped, buddy: undefined }" crop="40 12 160 190" class="absolute inset-0 size-full" />
+          <UserMenuDoll kind="bust" />
         </RouterLink>
         <span class="flex min-w-0 flex-col">
           <span class="truncate text-body-sm font-bold text-ink">{{ userStore.user.displayName }}</span>

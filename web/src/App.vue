@@ -1,14 +1,21 @@
 <script setup lang="ts">
+import { defineAsyncComponent } from 'vue'
+
 import AppHeader from './components/AppHeader.vue'
 import AppUpdate from './components/AppUpdate.vue'
 import CardReveal from './components/CardReveal.vue'
-import DollDefs from './components/DollDefs.vue'
-import DollWalker from './components/DollWalker.vue'
 import TabBar from './components/TabBar.vue'
+import { walkerOn } from './services/walker'
 import { useExploreStore } from './stores/explore'
+import { useUserStore } from './stores/user'
 
 // 整頁地區色由根元素的 data-pref 決定（DESIGN.md §3.4）；沒有地區語境時不設，落到 :root 的全國色。
 const explore = useExploreStore()
+const userStore = useUserStore()
+
+// 登入後才用到的不放進入口程式：紙娃娃的 SVG 定義、散步的旅人（沒登入的人不下載服裝的 SVG）。
+const DollDefs = defineAsyncComponent(() => import('./components/DollDefs.vue'))
+const DollWalker = defineAsyncComponent(() => import('./components/DollWalker.vue'))
 </script>
 
 <template>
@@ -25,7 +32,9 @@ const explore = useExploreStore()
     <TabBar />
     <CardReveal />
     <AppUpdate />
-    <DollDefs />
-    <DollWalker />
+    <template v-if="userStore.user">
+      <DollDefs />
+      <DollWalker v-if="walkerOn" />
+    </template>
   </div>
 </template>

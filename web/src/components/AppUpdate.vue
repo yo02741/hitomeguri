@@ -2,17 +2,18 @@
 import { registerSW } from 'virtual:pwa-register'
 import { ref } from 'vue'
 
+import { whenIdle } from '../services/idle'
 import { afterSplash } from '../services/splash'
 
 // 有新版本時底部一行提示（service worker 已下載好新版，按了才換，不在操作中途重新整理）
 // 開場畫面拿掉、瀏覽器空下來之後才註冊：預先快取約 2.7 MB，不和首次載入的資料搶頻寬
 const needRefresh = ref(false)
 let update: ((reload?: boolean) => Promise<void>) | null = null
-afterSplash(() => {
-  const go = () => (update = registerSW({ immediate: true, onNeedRefresh: () => (needRefresh.value = true) }))
-  if ('requestIdleCallback' in window) requestIdleCallback(go, { timeout: 4000 })
-  else setTimeout(go, 1500)
-})
+afterSplash(() =>
+  whenIdle(() => {
+    update = registerSW({ immediate: true, onNeedRefresh: () => (needRefresh.value = true) })
+  }),
+)
 function updateServiceWorker(reload: boolean) {
   void update?.(reload)
 }

@@ -8,7 +8,7 @@ import { allVariants, drawVariants, hasNight, ownedVariants } from '../services/
 import { todayIso } from '../services/userdb'
 import { useCardDraw } from '../composables/cardDraw'
 import { useVisitedEntries } from '../composables/visited'
-import { giftOf } from '../data/outfits'
+import { PREF_GIFT_IDS } from '../data/outfitGifts'
 import { useCardsStore } from '../stores/cards'
 import { outfitKey, useFreshStore } from '../stores/fresh'
 import { useWalletStore } from '../stores/wallet'
@@ -85,8 +85,8 @@ function onStamped() {
   const variant = [...today, ...(gift ? [gift] : [])].sort((a, b) => b.rank - a.rank)[0]
   // 第一次到這個縣：送那個縣的代表服裝（旅人），標 NEW
   if (firstInPref) {
-    const g = giftOf(c.face.pref)
-    if (g) fresh.add([outfitKey(g.id)])
+    const outfit = PREF_GIFT_IDS[c.face.pref]
+    if (outfit) fresh.add([outfitKey(outfit)])
   }
   showReveal({ face: c.face, rarity: c.rarity, label: c.label, number: c.number, firstInPref, variant })
 }
