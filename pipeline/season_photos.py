@@ -234,6 +234,9 @@ def score(
         return None
     if NOT_PHOTO.search(f["title"]) or any(NOT_PHOTO.search(c) for c in f.get("cats", [])):
         return None
+    # 人潮照拍的是人不是景點：不收（扣分的話，沒有別張時還是會被選上）
+    if CROWD.search(f["title"]):
+        return None
     sc = 0.0
     if f["title"] in depicts:
         sc += 50
@@ -242,8 +245,6 @@ def score(
     sc += quality.get(f["title"], 0)
     if DETAIL.search(f["title"]):
         sc -= 60
-    if CROWD.search(f["title"]):
-        sc -= 25
     sc += min(10.0, f["width"] * f["height"] / 1e6)
     if 1.3 <= f["width"] / f["height"] <= 1.8:
         sc += 5
