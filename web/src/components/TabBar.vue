@@ -20,7 +20,7 @@ const { rect, animate } = useIndicator(nav, () => nav.value?.querySelector<HTMLE
 <template>
   <nav
     ref="nav"
-    class="relative flex h-14 shrink-0 border-t border-line bg-header pb-[env(safe-area-inset-bottom)] md:hidden print:hidden [view-transition-name:app-tabbar]"
+    class="app-tabbar relative flex h-14 shrink-0 border-t border-line bg-header pb-[env(safe-area-inset-bottom)] md:hidden print:hidden [view-transition-name:app-tabbar]"
     aria-label="主要"
   >
     <span
@@ -30,7 +30,7 @@ const { rect, animate } = useIndicator(nav, () => nav.value?.querySelector<HTMLE
       :style="{ translate: `${rect.x}px 0`, width: `${rect.w}px` }"
       aria-hidden="true"
     >
-      <span class="h-[3px] w-10 rounded-b-full bg-region-strong"></span>
+      <span class="nav-indicator h-[3px] w-10 rounded-b-full bg-region-strong"></span>
     </span>
     <RouterLink
       v-for="tab in tabs"

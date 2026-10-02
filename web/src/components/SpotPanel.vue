@@ -105,9 +105,10 @@ function distance(m: number): string {
     class="flex h-full flex-col overflow-y-auto bg-paper text-ink"
     aria-label="景點"
   >
-    <div class="relative h-[170px] shrink-0 overflow-hidden bg-placeholder">
+    <div class="photo-frame relative h-[170px] shrink-0 overflow-hidden bg-placeholder">
       <img
         v-if="image"
+        data-photo
         :key="image.url"
         :src="image.url"
         :alt="spot.name.ja"

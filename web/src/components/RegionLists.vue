@@ -103,6 +103,7 @@ const failed = ref(new Set<string>())
             <span class="size-11 shrink-0 overflow-hidden rounded-control bg-placeholder">
               <img
                 v-if="s.i && !failed.has(s.i)"
+                data-photo
                 :src="mapThumbUrl(s.i)"
                 alt=""
                 loading="lazy"

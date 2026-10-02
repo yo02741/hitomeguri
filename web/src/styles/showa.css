@@ -1,0 +1,86 @@
+/* 昭和主題（DESIGN.md §13）：data-theme="showa" 時各元件的樣子。token 的覆寫在 theme.css，
+ * 地區色的昭和版本在 regions.css。這裡只放 token 換不到的部分：線條、照片、字型分工。 */
+
+/* 大標（22px 以上）用展示字型；Dela Gothic One 只有一種粗細，小字會糊成一團，所以只看字級不看標籤 */
+:root[data-theme='showa'] :is(.text-display, .text-h1, .text-h2, .text-h3) {
+  font-family: var(--font-display);
+  font-weight: 400;
+  letter-spacing: 0.08em;
+}
+
+/* 陰影：Tailwind 把 shadow-* 的值寫死在 utility 裡，token 換不到，這裡直接蓋過 */
+:root[data-theme='showa'] .shadow-float {
+  box-shadow: var(--shadow-float);
+}
+:root[data-theme='showa'] .shadow-marker {
+  box-shadow: var(--shadow-marker);
+}
+:root[data-theme='showa'] .shadow-sheet {
+  box-shadow: var(--shadow-sheet);
+}
+
+/* 頂部：下緣朱、青竹兩條線（像國鐵車身的帶色）；手機底部分頁列反過來 */
+:root[data-theme='showa'] .app-header {
+  margin-bottom: 8px;
+  border-bottom-color: var(--color-showa-shu);
+  border-bottom-width: 4px;
+  box-shadow:
+    0 2px 0 var(--region-paper),
+    0 4px 0 var(--color-showa-green);
+}
+:root[data-theme='showa'] .app-tabbar {
+  margin-top: 8px;
+  border-top-color: var(--color-showa-shu);
+  border-top-width: 4px;
+  box-shadow:
+    0 -2px 0 var(--region-paper),
+    0 -4px 0 var(--color-showa-green);
+}
+:root[data-theme='showa'] .nav-indicator {
+  background: var(--region-ink);
+}
+
+/* 照片：褐色調；大照片再加印刷網點 */
+:root[data-theme='showa'] img[data-photo] {
+  filter: sepia(0.55) saturate(0.8) contrast(1.05);
+}
+:root[data-theme='showa'] .photo-frame::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: radial-gradient(color-mix(in oklab, var(--region-ink) 30%, transparent) 0.9px, transparent 1.4px);
+  background-size: 4px 4px;
+  mix-blend-mode: multiply;
+}
+
+/* 行程卡：硬券。底紋、墨框、實心錯位陰影，左右兩個剪票缺口 */
+:root[data-theme='showa'] .trip-card {
+  position: relative;
+  border: 2px solid var(--region-ink);
+  background-color: var(--color-showa-ticket);
+  background-image:
+    repeating-linear-gradient(45deg, color-mix(in oklab, var(--region-ink) 7%, transparent) 0 1px, transparent 1px 6px),
+    repeating-linear-gradient(-45deg, color-mix(in oklab, var(--region-ink) 7%, transparent) 0 1px, transparent 1px 6px);
+  box-shadow: 3px 3px 0 var(--region-ink);
+}
+:root[data-theme='showa'] .trip-card:hover {
+  background-color: color-mix(in oklab, var(--color-showa-ticket) 85%, var(--region-ink));
+}
+:root[data-theme='showa'] .trip-card::before,
+:root[data-theme='showa'] .trip-card::after {
+  content: "";
+  position: absolute;
+  top: 55%;
+  width: 14px;
+  height: 14px;
+  border: 2px solid var(--region-ink);
+  border-radius: 50%;
+  background: var(--region-paper);
+}
+:root[data-theme='showa'] .trip-card::before {
+  left: -9px;
+}
+:root[data-theme='showa'] .trip-card::after {
+  right: -9px;
+}

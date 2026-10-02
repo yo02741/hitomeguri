@@ -107,6 +107,7 @@ const sizeClass = { sm: 'text-[10px]', lg: 'text-[16px]', fluid: 'fluid' }
         <div class="window relative aspect-[4/3] shrink-0 overflow-hidden rounded-[0.6em] bg-region-accent">
           <img
             v-if="imageSrc"
+            data-photo
             :src="imageSrc"
             :alt="card.name.ja"
             class="size-full object-cover"
@@ -144,7 +145,7 @@ const sizeClass = { sm: 'text-[10px]', lg: 'text-[16px]', fluid: 'fluid' }
         <div v-if="fullArt" class="scrim pointer-events-none absolute inset-0"></div>
         <div class="name-block relative flex min-h-0 flex-1 flex-col justify-center px-[0.2em]">
           <span v-if="card.name.kana" lang="ja" class="truncate text-[0.72em] tracking-kana opacity-85">{{ card.name.kana }}</span>
-          <span lang="ja" class="truncate leading-tight font-black tracking-name" :class="nameSize">{{ card.name.ja }}</span>
+          <span lang="ja" class="card-name truncate leading-tight font-black tracking-name" :class="nameSize">{{ card.name.ja }}</span>
           <span v-if="card.name.romaji" class="truncate font-latin text-[0.8em] font-semibold tracking-romaji uppercase">{{ card.name.romaji }}</span>
         </div>
 
@@ -454,6 +455,43 @@ const sizeClass = { sm: 'text-[10px]', lg: 'text-[16px]', fluid: 'fluid' }
   to {
     transform: rotate(-12deg) scale(1);
   }
+}
+
+/* 昭和主題（DESIGN.md §13）：舊照片卡。墨色框、實心錯位陰影、照片留白邊＋褐色網點、名稱用展示字型 */
+:root[data-theme='showa'] .card {
+  border-radius: 0.5em;
+  box-shadow: 0.25em 0.25em 0 var(--region-ink);
+}
+:root[data-theme='showa'] .face {
+  border: 0.12em solid var(--region-ink);
+  border-radius: 0.5em;
+}
+:root[data-theme='showa'] .face:not(.back) .window {
+  border: 0.12em solid var(--region-ink);
+  border-radius: 0;
+  padding: 0.28em;
+  background: var(--color-showa-card);
+}
+:root[data-theme='showa'] .full-art .face:not(.back) .window {
+  border: 0;
+  padding: 0;
+}
+:root[data-theme='showa'] .window::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: radial-gradient(color-mix(in oklab, var(--region-ink) 30%, transparent) 0.9px, transparent 1.4px);
+  background-size: 4px 4px;
+  mix-blend-mode: multiply;
+}
+:root[data-theme='showa'] .card-name {
+  font-family: var(--font-display);
+  font-weight: 400;
+}
+:root[data-theme='showa'] .stamp {
+  outline: 0.06em solid var(--color-visited);
+  outline-offset: -0.42em;
 }
 
 @media (prefers-reduced-motion: reduce) {

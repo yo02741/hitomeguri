@@ -8,6 +8,7 @@ import { JAPAN_CENTER, JAPAN_ZOOM, MAP_STYLE_URL } from '../map/style'
 import { THEMES } from '../data/themes'
 import { mapThumbUrl, type MapSpot } from '../services/bundles'
 import { trackSplash } from '../services/splash'
+import { theme } from '../services/theme'
 import { DEM_SOURCE, GSI_ATTRIBUTION, GSI_DEM_URL, registerGsiDem, setTerrainPreferred, terrainPreferred } from '../map/terrain'
 import JapanLocator from './JapanLocator.vue'
 
@@ -270,6 +271,7 @@ function applyDim() {
   syncPhotos()
 }
 
+const baseWater = new Map<string, unknown>()
 function applyColors() {
   if (!map || !ready) return
   const ink = token('--region-ink')
@@ -327,6 +329,11 @@ function applyColors() {
   map.setPaintProperty('pack-selected', 'circle-stroke-color', strong)
   for (const layer of map.getStyle().layers ?? []) {
     if (layer.type === 'background') map.setPaintProperty(layer.id, 'background-color', land)
+    // 昭和主題（DESIGN.md §13）：水面換成青磁色；切回現代時還原底圖原本的顏色
+    if (layer.type === 'fill' && layer.id.startsWith('water')) {
+      if (!baseWater.has(layer.id)) baseWater.set(layer.id, map.getPaintProperty(layer.id, 'fill-color'))
+      map.setPaintProperty(layer.id, 'fill-color', theme.value === 'showa' ? token('--color-map-water') : baseWater.get(layer.id))
+    }
   }
 }
 
@@ -1058,7 +1065,7 @@ watch(
 )
 
 watch(
-  () => props.colorKey,
+  () => [props.colorKey, theme.value],
   async () => {
     await nextTick()
     applyColors()
@@ -1143,6 +1150,7 @@ defineExpose({
         :style="{ width: `${PHOTO_SIZE}px`, height: `${PHOTO_SIZE}px` }"
       >
         <img
+          data-photo
           :src="mapThumbUrl(hover.thumb)"
           alt=""
           class="size-full object-cover"

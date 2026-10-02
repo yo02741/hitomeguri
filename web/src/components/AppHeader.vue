@@ -41,7 +41,7 @@ const { rect, animate } = useIndicator(nav, () => nav.value?.querySelector<HTMLE
 
 <template>
   <!-- view-transition-name 讓 header 自成一層：要比 main 高，搜尋結果、帳號選單才不會被地圖蓋住 -->
-  <header class="relative z-40 flex h-header shrink-0 items-center gap-8 border-b border-line bg-header px-4 md:px-6 print:hidden [view-transition-name:app-header]">
+  <header class="app-header relative z-40 flex h-header shrink-0 items-center gap-8 border-b border-line bg-header px-4 md:px-6 print:hidden [view-transition-name:app-header]">
     <Wordmark />
     <span v-if="!online" class="-ml-4 rounded-tag bg-ink px-1.5 text-caption font-bold text-paper md:-ml-5" role="status">離線</span>
 
@@ -59,7 +59,7 @@ const { rect, animate } = useIndicator(nav, () => nav.value?.querySelector<HTMLE
       </RouterLink>
       <span
         v-if="rect"
-        class="pointer-events-none absolute bottom-0 left-0 h-[3px] bg-region-strong"
+        class="nav-indicator pointer-events-none absolute bottom-0 left-0 h-[3px] bg-region-strong"
         :class="animate ? 'transition-[translate,width] duration-300 ease-out-soft' : ''"
         :style="{ translate: `${rect.x}px 0`, width: `${rect.w}px` }"
         aria-hidden="true"

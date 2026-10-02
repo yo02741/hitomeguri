@@ -2,6 +2,7 @@
 import { nextTick, onBeforeUnmount, ref, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 
+import { setTheme, theme, THEMES } from '../services/theme'
 import { useUserStore } from '../stores/user'
 
 // 右上角頭像：點開向下展開的帳號選單（UX-FLOW.md F0）。
@@ -23,7 +24,7 @@ const trigger = ref<HTMLButtonElement | null>(null)
 const menu = ref<HTMLElement | null>(null)
 
 function menuItems(): HTMLElement[] {
-  return Array.from(menu.value?.querySelectorAll<HTMLElement>('[role="menuitem"]') ?? [])
+  return Array.from(menu.value?.querySelectorAll<HTMLElement>('[role="menuitem"], [role="menuitemradio"]') ?? [])
 }
 
 async function show(focus: 'first' | 'last' | null = null) {
@@ -148,6 +149,24 @@ async function logOut() {
       >
         {{ it.label }}
       </RouterLink>
+      <div class="mx-1 mt-1 border-t border-line-soft" role="none"></div>
+      <!-- 主題（DESIGN.md §13）：存在這台裝置 -->
+      <div class="mt-1 flex items-center gap-1 px-2.5" role="group" aria-label="主題">
+        <span class="mr-auto text-body-sm text-sub">主題</span>
+        <button
+          v-for="t in THEMES"
+          :key="t.key"
+          type="button"
+          role="menuitemradio"
+          tabindex="-1"
+          :aria-checked="theme === t.key"
+          class="min-h-tap rounded-control px-3 text-body-sm"
+          :class="theme === t.key ? 'bg-ink font-bold text-paper' : 'text-ink hover:bg-surface focus-visible:bg-surface'"
+          @click="setTheme(t.key)"
+        >
+          {{ t.label }}
+        </button>
+      </div>
       <div class="mx-1 mt-1 border-t border-line-soft" role="none"></div>
       <button
         type="button"

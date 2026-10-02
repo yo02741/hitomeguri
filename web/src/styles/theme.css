@@ -3,12 +3,15 @@
  */
 @import "tailwindcss";
 @import "./regions.css";
+@import "./showa.css";
 
 @theme static {
   /* ---------- 字體 ---------- */
   --font-sans: "Noto Sans TC", "Noto Sans JP", system-ui, sans-serif;
   --font-ja: "Noto Sans JP", "Noto Sans TC", system-ui, sans-serif;
   --font-latin: "Barlow Semi Condensed", "Noto Sans TC", system-ui, sans-serif;
+  /* 大標（h1–h3、text-display／h1／h2／h3）：現代主題同 sans，昭和換成展示字型（§13） */
+  --font-display: "Noto Sans TC", "Noto Sans JP", system-ui, sans-serif;
 
   /* 中性色（paper、surface、line、ink…）改由地區色產生，定義在下方 @theme inline */
 
@@ -63,6 +66,13 @@
   --color-keiken-5: #26446F;
 
   /* ---------- 功能色 ---------- */
+  /* ---------- 昭和主題專用（§13，只在 data-theme="showa" 時用） ---------- */
+  --color-showa-shu: #C2402A;     /* 朱：header 上線、主按鈕 */
+  --color-showa-green: #1F6B5C;   /* 青竹：header 下線 */
+  --color-showa-sign: #E2A62B;    /* 山吹：琺瑯標牌 */
+  --color-showa-card: #FBF6EA;    /* 練色：照片白邊、硬券 */
+  --color-showa-ticket: #EAD9AC;  /* 硬券底色 */
+
   --color-visited: #1F4E8C;       /* 去過印章 */
   --color-visited-tint: #EEF3F9;
   --color-danger: #B42318;
@@ -218,6 +228,26 @@
   }
 }
 
+/* ---------- 昭和主題（DESIGN.md §13）：data-theme="showa" 時換掉的 token；地區色的昭和版本在 regions.css ---------- */
+:root[data-theme='showa'] {
+  --font-sans: "Huninn", "Zen Maru Gothic", "Noto Sans TC", system-ui, sans-serif;
+  --font-ja: "Zen Maru Gothic", "Huninn", "Noto Sans JP", system-ui, sans-serif;
+  --font-latin: "DotGothic16", "Huninn", monospace;
+  --font-display: "Dela Gothic One", "Huninn", "Noto Sans TC", sans-serif;
+  --radius-tag: 3px;
+  --radius-control: 4px;
+  --radius-badge: 4px;
+  --radius-card: 6px;
+  --radius-sheet: 12px;
+  /* 陰影改成墨色框＋實心錯位（印刷版錯開的感覺），不用模糊 */
+  --shadow-marker: 0 0 0 1.5px var(--region-ink);
+  --shadow-sheet: 0 -2px 0 var(--region-ink);
+  --shadow-float: 0 0 0 2px var(--region-ink), 4px 4px 0 2px var(--region-ink);
+  --color-visited: #5B3F8C;
+  --color-visited-tint: #ECE4F3;
+  --color-white: #FBF6EA;
+  --color-map-water: #9CC3C2;
+}
 /* 捲軸：平常不顯示，滑過容器才出現。macOS 接滑鼠或系統設定「永遠顯示」時，
  * 原生捲軸會一直顯示，這裡把顏色設成透明、hover 時才上色。 */
 @utility scroll-quiet {

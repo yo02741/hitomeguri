@@ -199,6 +199,7 @@ function sourceLabel(url: string): string {
                 <div v-if="s.images?.length" class="aspect-[16/10] shrink-0 bg-placeholder">
                   <img
                     v-if="image(s)"
+                    data-photo
                     :src="image(s)!.url"
                     :alt="s.name.ja"
                     loading="lazy"

@@ -105,6 +105,7 @@ function mapLink(f: Festival) {
           <div v-if="f.images?.length" class="size-24 shrink-0 overflow-hidden rounded-control bg-placeholder">
             <img
               v-if="image(f)"
+              data-photo
               :src="image(f)!.url"
               :alt="f.name.ja"
               loading="lazy"
