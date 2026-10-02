@@ -1,11 +1,10 @@
 <script setup lang="ts">
-import { computed, nextTick, onBeforeUnmount, ref, watch } from 'vue'
+import { computed, defineAsyncComponent, nextTick, onBeforeUnmount, ref, watch } from 'vue'
 
 import type { AchvDef } from '../data/achievements'
 import { reveal } from '../services/cardReveal'
 import { useAchievementsStore } from '../stores/achievements'
 import { useMarksStore } from '../stores/marks'
-import AchvSeal from './AchvSeal.vue'
 import PrefStamp from './PrefStamp.vue'
 import SpotCard from './SpotCard.vue'
 
@@ -15,6 +14,9 @@ import SpotCard from './SpotCard.vue'
 // 點任何地方、Esc 直接收進去。
 const marks = useMarksStore()
 const achv = useAchievementsStore()
+// 成就章只在這次去過剛好達成成就時才畫：不放進開站就載入的程式，卡片飛進來時（play）先抓
+const loadSeal = () => import('./AchvSeal.vue')
+const AchvSeal = defineAsyncComponent(loadSeal)
 const r = computed(() => reveal.value)
 // 光的顏色：抽到特別全景是虹、金箔是金，其他照稀有度
 const burstKind = computed(() => {
@@ -56,6 +58,7 @@ function clear() {
 
 async function play() {
   clear()
+  void loadSeal()
   leaving = false
   landed.value = false
   seal.value = null
@@ -189,9 +192,9 @@ onBeforeUnmount(() => {
           </div>
         </div>
         <!-- 這個縣第一次去：縣的紀念章蓋在卡片左下 -->
-        <PrefStamp v-if="landed && r.firstInPref" :pref="r.face.pref" :date="visitedOn" class="first-stamp absolute -bottom-5 -left-9 z-10 w-[148px]" />
+        <PrefStamp v-if="landed && r.firstInPref" :pref="r.face.pref" :date="visitedOn" class="first-stamp absolute -bottom-5 z-10 w-[148px]" />
         <!-- 這次達成的成就：成就章蓋在卡片右上 -->
-        <div v-if="landed && seal" class="seal-slam absolute -top-7 -right-9 z-10 w-[120px]" :class="r.firstInPref ? 'after-stamp' : ''">
+        <div v-if="landed && seal" class="seal-slam absolute -top-7 z-10 w-[120px]" :class="r.firstInPref ? 'after-stamp' : ''">
           <AchvSeal :def="seal" status="done" :at="sealAt" class="w-full" />
         </div>
       </div>
@@ -275,8 +278,10 @@ onBeforeUnmount(() => {
     opacity: 0;
   }
 }
-/* 縣的紀念章：從上方重重蓋下、微微回彈，墨色帶點透明（像蓋在卡上） */
+/* 縣的紀念章：從上方重重蓋下、微微回彈，墨色帶點透明（像蓋在卡上）。
+   卡片 320px 寬；比 390px 窄的手機往卡片裡收，斜放的章不超出畫面 */
 .first-stamp {
+  left: max(-36px, calc((320px - 100vw) / 2 + 20px));
   opacity: 0.92;
   filter: drop-shadow(0 1px 0 color-mix(in oklab, var(--region-paper) 70%, transparent));
   transform: rotate(-14deg);
@@ -296,8 +301,9 @@ onBeforeUnmount(() => {
     opacity: 0.92;
   }
 }
-/* 成就章：和縣的紀念章對稱，從上方蓋下、停在右傾；有縣的紀念章時晚一點蓋 */
+/* 成就章：和縣的紀念章對稱，從上方蓋下、停在右傾；有縣的紀念章時晚一點蓋。窄手機一樣往卡片裡收 */
 .seal-slam {
+  right: max(-36px, calc((320px - 100vw) / 2 + 12px));
   opacity: 0.94;
   filter: drop-shadow(0 1px 0 color-mix(in oklab, var(--region-paper) 70%, transparent));
   transform: rotate(8deg);

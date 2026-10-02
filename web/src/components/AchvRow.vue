@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 
+import { nameText } from '../data/achievements'
 import { regionOf } from '../data/regions'
 import type { Trip } from '../services/trip'
 import { useAchievementsStore } from '../stores/achievements'
@@ -48,7 +49,7 @@ const compact = computed(() => props.size < 48)
         :title="compact ? s.def.name : undefined"
       >
         <AchvSeal :def="s.def" status="done" :at="s.at" :size="size" :label="compact ? s.def.name : undefined" />
-        <span v-if="!compact" class="line-clamp-2 text-center text-caption leading-tight">{{ s.def.name }}</span>
+        <span v-if="!compact" class="line-clamp-2 text-center text-caption leading-tight break-keep">{{ nameText(s.def.name) }}</span>
       </li>
     </ul>
   </section>

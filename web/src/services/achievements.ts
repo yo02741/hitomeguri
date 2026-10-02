@@ -121,7 +121,6 @@ export interface AchvState {
   at: string | null
   /** 未達成時代替 x / n 的進度（「還沒去：秋田、山形」） */
   note?: string
-  items: Contrib[]
   /** 讓達成日算不出來的、沒有日期的地方數 */
   undated: number
 }
@@ -130,7 +129,6 @@ export interface PrefStampState {
   pref: string
   done: boolean
   at: string | null
-  items: Contrib[]
   undated: number
 }
 
@@ -214,6 +212,20 @@ export function derive(i: AchvInput): Derived {
   }
 }
 
+/**
+ * derive 用到的欄位的指紋（stores/achievements.ts）：收藏、清單、還沒結束的行程這些和成就無關的變動，
+ * 指紋不變就沿用上次的結果，不重算。achievements.json 另外比對。
+ */
+export function inputSig(i: Pick<AchvInput, 'entries' | 'datesById' | 'doneTrips'>): string {
+  const out: string[] = []
+  for (const [id, m] of i.entries) out.push(`${id}\t${m.pref}\t${m.name}\t${(i.datesById.get(id) ?? [m.visited_on ?? null]).join(',')}`)
+  out.push('#')
+  for (const t of i.doneTrips) {
+    out.push(`${t.id}\t${t.name}\t${t.start_date ?? ''}\t${t.end_date ?? ''}\t${t.members.length}\t${t.days.map((day) => day.stops.map((x) => x.pref).join(',')).join(';')}`)
+  }
+  return out.join('\n')
+}
+
 const exact = (b: Bound | undefined): string | null => (b && b.lo !== null && b.lo === b.hi ? b.lo : null)
 const byDate = (a: Contrib, b: Contrib) =>
   a.date === b.date ? 0 : a.date === null ? 1 : b.date === null ? -1 : a.date.localeCompare(b.date)
@@ -276,7 +288,8 @@ interface Judged {
   need: number
   at: string | null
   note?: string
-  items: Contrib[]
+  /** 詳細對話框的「有關的」：只在打開時才建（itemsOf），平常的判斷不建 */
+  items: () => Contrib[]
   /** 和日期有關的 id（算 undated 用） */
   related?: Iterable<string>
 }
@@ -297,7 +310,7 @@ function judge(d: Derived, rule: AchvRule): Judged | null {
         need,
         at: missing.length ? null : kthDate(ps.map((p) => d.prefFirst.get(p)!), ps.length),
         note,
-        items: prefItems(d, ps),
+        items: () => prefItems(d, ps),
         related: ps.flatMap((p) => d.byPref.get(p) ?? []),
       }
     }
@@ -307,7 +320,7 @@ function judge(d: Derived, rule: AchvRule): Judged | null {
         have: ps.length,
         need,
         at: kthDate(ps.map((p) => d.prefFirst.get(p)!), need),
-        items: prefItems(d, regions.map((r) => r.prefecture)),
+        items: () => prefItems(d, regions.map((r) => r.prefecture)),
         related: d.ids,
       }
     }
@@ -316,12 +329,12 @@ function judge(d: Derived, rule: AchvRule): Judged | null {
         have: d.ids.size,
         need,
         at: kthDate([...d.ids].map((id) => d.first.get(id)!), need),
-        items: spotItems(d, d.ids),
+        items: () => spotItems(d, d.ids),
         related: d.ids,
       }
     case 'trips': {
       const ends = d.trips.map(tripEnd)
-      return { have: ends.length, need, at: ends[need - 1] ?? null, items: tripItems(d.trips) }
+      return { have: ends.length, need, at: ends[need - 1] ?? null, items: () => tripItems(d.trips) }
     }
     case 'tripDays': {
       const hit = d.trips.filter((t) => tripDays(t) >= need)
@@ -329,7 +342,7 @@ function judge(d: Derived, rule: AchvRule): Judged | null {
         have: Math.max(0, ...d.trips.map(tripDays)),
         need,
         at: hit.map(tripEnd).sort()[0] ?? null,
-        items: tripItems(hit),
+        items: () => tripItems(hit),
       }
     }
     case 'tripPrefs': {
@@ -338,21 +351,22 @@ function judge(d: Derived, rule: AchvRule): Judged | null {
         have: Math.max(0, ...d.trips.map(tripPrefCount)),
         need,
         at: hit.map(tripEnd).sort()[0] ?? null,
-        items: tripItems(hit),
+        items: () => tripItems(hit),
       }
     }
     case 'tripShared': {
       const hit = d.trips.filter((t) => t.members.length >= 2)
-      return { have: hit.length ? 1 : 0, need, at: hit.map(tripEnd).sort()[0] ?? null, items: tripItems(hit) }
+      return { have: hit.length ? 1 : 0, need, at: hit.map(tripEnd).sort()[0] ?? null, items: () => tripItems(hit) }
     }
     case 'revisit': {
       const when = new Map<string, string>()
       for (const [id, ds] of d.datesOf) {
+        if (ds.length < 2) continue
         const again = ds.find((x) => diffDays(ds[0]!, x) >= rule.gap)
         if (again) when.set(id, again)
       }
       const at = [...when.values()].sort()[0] ?? null
-      const items = spotItems(d, when.keys()).map((c) => ({ ...c, date: when.get(c.key) ?? null })).sort(byDate)
+      const items = () => spotItems(d, when.keys()).map((c) => ({ ...c, date: when.get(c.key) ?? null })).sort(byDate)
       return { have: when.size ? 1 : 0, need, at, items }
     }
     case 'prefOccasions': {
@@ -364,27 +378,25 @@ function judge(d: Derived, rule: AchvRule): Judged | null {
         if (occ.length >= rule.need) when.set(r.prefecture, occ[rule.need - 1]!)
       }
       const at = [...when.values()].sort()[0] ?? null
-      const items = (when.size ? [...when.keys()] : best ? [best.pref] : []).map((p) => ({
-        key: p,
-        kind: 'pref' as const,
-        label: regionOf(p)?.name.zh_tw ?? p,
-        date: when.get(p) ?? null,
-        to: `/map/${p}`,
-      }))
+      const prefs = when.size ? [...when.keys()] : best ? [best.pref] : []
+      const items = () =>
+        prefs
+          .map((p): Contrib => ({ key: p, kind: 'pref', label: regionOf(p)?.name.zh_tw ?? p, date: when.get(p) ?? null, to: `/map/${p}` }))
+          .sort(byDate)
       return {
         have: best?.n ?? 0,
         need,
         at,
         note: best ? `${regionOf(best.pref)?.name.zh_tw ?? best.pref} ${Math.min(best.n, need)} / ${need}` : undefined,
-        items: items.sort(byDate),
+        items,
       }
     }
     case 'seasons':
-      return { ...walkDates(d.dates, (x) => seasonOfMonth(Number(x.slice(5, 7))), need), need, items: [] }
+      return { ...walkDates(d.dates, (x) => seasonOfMonth(Number(x.slice(5, 7))), need), need, items: () => [] }
     case 'months':
-      return { ...walkDates(d.dates, (x) => x.slice(5, 7), need), need, items: [] }
+      return { ...walkDates(d.dates, (x) => x.slice(5, 7), need), need, items: () => [] }
     case 'years':
-      return { ...walkDates(d.dates, (x) => x.slice(0, 4), need), need, items: [] }
+      return { ...walkDates(d.dates, (x) => x.slice(0, 4), need), need, items: () => [] }
     case 'tag': {
       if (!d.tagSets) return null
       const set = d.tagSets[rule.tag]
@@ -393,7 +405,7 @@ function judge(d: Derived, rule: AchvRule): Judged | null {
         have: hit.length,
         need,
         at: kthDate(hit.map((id) => d.first.get(id)!), need),
-        items: spotItems(d, hit),
+        items: () => spotItems(d, hit),
         related: hit,
       }
     }
@@ -402,16 +414,19 @@ function judge(d: Derived, rule: AchvRule): Judged | null {
       const hit = d.castles[rule.group].filter((c) => d.ids.has(c[0]) || (c[1] !== null && d.ids.has(c[1])))
       const visitedOf = (c: [string, string | null]) => [c[0], c[1]].filter((x): x is string => x !== null && d.ids.has(x))
       const bounds = hit.map((c) => minBound(visitedOf(c).map((id) => d.first.get(id)!)))
-      const items = hit.map((c, n) => {
-        const id = visitedOf(c)[0]!
-        const m = d.markOf.get(id)!
-        return { key: c[0], kind: 'spot' as const, label: m.name, lang: 'ja' as const, date: exact(bounds[n]), to: spotTo(id, m.pref) }
-      })
+      const items = () =>
+        hit
+          .map((c, n): Contrib => {
+            const id = visitedOf(c)[0]!
+            const m = d.markOf.get(id)!
+            return { key: c[0], kind: 'spot', label: m.name, lang: 'ja', date: exact(bounds[n]), to: spotTo(id, m.pref) }
+          })
+          .sort(byDate)
       return {
         have: hit.length,
         need,
         at: kthDate(bounds, need),
-        items: items.sort(byDate),
+        items,
         related: hit.flatMap(visitedOf),
       }
     }
@@ -421,7 +436,7 @@ function judge(d: Derived, rule: AchvRule): Judged | null {
         have: hit.length,
         need,
         at: kthDate(hit.map((id) => d.first.get(id)!), need),
-        items: spotItems(d, hit),
+        items: () => spotItems(d, hit),
         related: hit,
       }
     }
@@ -432,7 +447,7 @@ function judge(d: Derived, rule: AchvRule): Judged | null {
 export function evaluate(d: Derived, defs: AchvDef[] = ACHIEVEMENTS): AchvState[] {
   return defs.map((def) => {
     const r = judge(d, def.rule)
-    if (!r) return { def, status: 'unknown', have: 0, need: ruleNeed(def.rule), at: null, items: [], undated: 0 }
+    if (!r) return { def, status: 'unknown', have: 0, need: ruleNeed(def.rule), at: null, undated: 0 }
     const done = r.have >= r.need
     const at = done ? r.at : null
     const state: AchvState = {
@@ -441,12 +456,21 @@ export function evaluate(d: Derived, defs: AchvDef[] = ACHIEVEMENTS): AchvState[
       have: r.have,
       need: r.need,
       at,
-      items: r.items,
       undated: done && at === null && r.related ? undatedIn(d, r.related) : 0,
     }
     if (!done && r.note) state.note = r.note
     return state
   })
+}
+
+/** 詳細對話框裡「有關的」景點、旅行或縣（打開時才算） */
+export function itemsOf(d: Derived, def: AchvDef): Contrib[] {
+  return judge(d, def.rule)?.items() ?? []
+}
+
+/** 初訪章的「有關的地方」：那個縣去過的地方 */
+export function stampItems(d: Derived, pref: string): Contrib[] {
+  return spotItems(d, d.byPref.get(pref) ?? [])
 }
 
 /**
@@ -467,7 +491,6 @@ export function prefStamps(d: Derived): PrefStampState[] {
       pref: p,
       done: d.prefs.has(p),
       at,
-      items: spotItems(d, ids),
       undated: d.prefs.has(p) && at === null ? undatedIn(d, ids) : 0,
     }
   })
@@ -485,6 +508,18 @@ export function inTrip(states: AchvState[], stamps: PrefStampState[], t: Pick<Tr
   }
 }
 
+/**
+ * 只看 ids 裡的去過紀錄時達成的 data 成就（文化指定、名城只看去過的 id 與日期，不看旅行本身）：
+ * 這台裝置第一次載入 achievements.json 時的基準
+ */
+export function dataBaseline(i: AchvInput, ids: ReadonlySet<string>): string[] {
+  if (!i.data) return []
+  const d = derive({ ...i, entries: i.entries.filter(([id]) => ids.has(id)), doneTrips: [] })
+  return evaluate(d, ACHIEVEMENTS.filter((a) => a.dep === 'data'))
+    .filter((s) => s.status === 'done')
+    .map((s) => s.def.id)
+}
+
 /** 這台裝置看過的成就（localStorage）：比對出新達成的 */
 export interface Known {
   v: 1
@@ -494,13 +529,16 @@ export interface Known {
 }
 
 /**
- * 和上次看過的比：某個 dep 第一次 ready 時，把目前達成的靜靜記成基準（不標 NEW）；
- * 之後才出現的就是新的。known 只會增加，取消再勾回來不會再 NEW。
+ * 和上次看過的比：某個 dep 第一次 ready 時，把基準（沒給就是目前達成的）靜靜記下（不標 NEW）；
+ * 之後才出現的、不在基準裡的就是新的。known 只會增加，取消再勾回來不會再 NEW。
+ * base：data 晚到時，基準只算 core ready 那時已經去過的（stores/achievements.ts），
+ * 中間這段新去的地方達成的照樣是新的。
  */
 export function diffKnown(
   known: Known,
   doneByDep: Record<AchvDep, string[]>,
   ready: Record<AchvDep, boolean>,
+  base: Partial<Record<AchvDep, string[]>> = {},
 ): { known: Known; fresh: string[] } {
   const deps = [...known.deps]
   const ids = new Set(known.ids)
@@ -509,8 +547,7 @@ export function diffKnown(
     if (!ready[dep]) continue
     if (!deps.includes(dep)) {
       deps.push(dep)
-      for (const id of doneByDep[dep]) ids.add(id)
-      continue
+      for (const id of base[dep] ?? doneByDep[dep]) ids.add(id)
     }
     for (const id of doneByDep[dep]) {
       if (ids.has(id)) continue

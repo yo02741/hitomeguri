@@ -5,15 +5,23 @@ import { useVisitedEntries } from '../composables/visited'
 import { ACHV_AREAS, type AchvDef, type AchvDep, byRank } from '../data/achievements'
 import { areaPrefs, type Region, regionOf } from '../data/regions'
 import {
+  type AchvInput,
   type AchvState,
+  type Contrib,
+  dataBaseline,
   derive,
+  type Derived,
   diffKnown,
   evaluate,
+  inputSig,
   inTrip as tripSeals,
+  itemsOf,
   type Known,
   paidCount as countPaid,
   prefStamps,
+  stampItems,
 } from '../services/achievements'
+import type { AchvData } from '../services/bundles'
 import type { Trip } from '../services/trip'
 import { useCatalogStore } from './catalog'
 import { useExploreStore } from './explore'
@@ -48,9 +56,19 @@ export const useAchievementsStore = defineStore('achievements', () => {
   const fresh = useFreshStore()
   const { entries, datesById, doneTrips } = useVisitedEntries()
 
-  const derived = computed(() =>
-    derive({ entries: entries.value, datesById: datesById.value, doneTrips: doneTrips.value, data: catalog.achv }),
-  )
+  const input = (): AchvInput => ({ entries: entries.value, datesById: datesById.value, doneTrips: doneTrips.value, data: catalog.achv })
+  // marks、trips 每次 snapshot 都給新的陣列（收藏、清單、改還沒結束的行程也是）：
+  // 去過的紀錄的指紋沒變就沿用上次的結果，下游（states、stamps、錢包、旅人）都不重算
+  let lastSig = ''
+  let lastData: AchvData | null = null
+  const derived = computed<Derived>((prev) => {
+    const i = input()
+    const sig = inputSig(i)
+    if (prev && sig === lastSig && i.data === lastData) return prev
+    lastSig = sig
+    lastData = i.data
+    return derive(i)
+  })
   const states = computed(() => evaluate(derived.value))
   const stamps = computed(() => prefStamps(derived.value))
   const byId = computed(() => new Map(states.value.map((s) => [s.def.id, s])))
@@ -109,18 +127,24 @@ export const useAchievementsStore = defineStore('achievements', () => {
   const recent = shallowRef<Array<{ id: string; t: number }>>([])
 
   let knownUid: string | null = null
+  /** 這次登入、core 第一次 ready 時去過的 id：data（achievements.json）晚到時，基準只算這些 */
+  let coreIds: Set<string> | null = null
   function sync() {
     const uid = userStore.user?.uid ?? null
     if (uid !== knownUid) {
       knownUid = uid
       recent.value = []
+      coreIds = null
       known.value = uid ? readKnown(uid) : EMPTY
     }
     if (!uid) return
+    if (ready.value.core && !coreIds) coreIds = new Set(derived.value.ids)
     const doneByDep: Record<AchvDep, string[]> = { core: [], data: [] }
     for (const s of stamps.value) if (s.done) doneByDep.core.push(`pref-${s.pref}`)
     for (const s of states.value) if (s.status === 'done') doneByDep[s.def.dep].push(s.def.id)
-    const { known: next, fresh: newIds } = diffKnown(known.value, doneByDep, ready.value)
+    // 第一次載到 achievements.json：這次登入之後才去的地方（例：第一個「去過」就是東寺）達成的照樣標 NEW
+    const base = ready.value.data && coreIds && !known.value.deps.includes('data') ? { data: dataBaseline(input(), coreIds) } : {}
+    const { known: next, fresh: newIds } = diffKnown(known.value, doneByDep, ready.value, base)
     if (next.ids.length !== known.value.ids.length || next.deps.length !== known.value.deps.length) writeKnown(uid, next)
     if (!newIds.length) return
     fresh.add(newIds.map(achvKey))
@@ -130,9 +154,10 @@ export const useAchievementsStore = defineStore('achievements', () => {
   const doneKey = computed(() => [...doneIds.value].sort().join(','))
   watch([doneKey, () => ready.value.core, () => ready.value.data, () => userStore.user?.uid], sync, { immediate: true })
 
-  // achievements.json：登入、讀到去過的紀錄之後，閒下來再載入（約 4 KB gz）
+  // achievements.json：登入、讀到去過的紀錄之後，閒下來再載入（約 4 KB gz）。
+  // 還沒有去過的地方也先載：基準要在第一個「去過」之前建好
   watch(
-    () => Boolean(userStore.user) && marks.loaded && entries.value.length > 0,
+    () => Boolean(userStore.user) && marks.loaded,
     (on) => {
       if (on) idle(() => void catalog.loadAchievements())
     },
@@ -186,6 +211,10 @@ export const useAchievementsStore = defineStore('achievements', () => {
       .sort(byRank)
   }
 
+  /** 詳細對話框的「有關的」（打開時才算） */
+  const items = (def: AchvDef): Contrib[] => itemsOf(derived.value, def)
+  const prefItems = (pref: string): Contrib[] => stampItems(derived.value, pref)
+
   function inTrip(t: Trip) {
     return tripSeals(visible.value, stamps.value, t)
   }
@@ -196,6 +225,6 @@ export const useAchievementsStore = defineStore('achievements', () => {
 
   return {
     derived, states, stamps, byId, stampByPref, doneIds, paidCount, visible, counts, ready,
-    hasNew, isNew, latest, nearestArea, firstOpen, markOpened, takeRecent, inTrip, loadData,
+    hasNew, isNew, latest, nearestArea, firstOpen, markOpened, takeRecent, inTrip, loadData, items, prefItems,
   }
 })

@@ -92,7 +92,7 @@ const SEEDS: Seed[] = [
   { id: 'trip-5prefs', group: 'trip', name: '一趟 5 縣', hint: '一趟旅行去了 5 個都道府縣', face: { top: TOP, main: '5', sub: '縣' }, rule: { kind: 'tripPrefs', need: 5 }, tickets: 5 },
   { id: 'trip-shared', group: 'trip', name: '共編的旅行', hint: '有兩位以上成員的旅行結束', face: { top: TOP, main: '共編', sub: '旅行' }, rule: { kind: 'tripShared' }, tickets: 5 },
   { id: 'revisit', group: 'trip', name: '再訪', hint: '同一個地方，相隔 30 天以上再去', face: { top: TOP, main: '再訪' }, rule: { kind: 'revisit', gap: 30 }, tickets: 5 },
-  { id: 'pref-3times', group: 'trip', name: '同一縣 3 次', hint: '同一個縣，相隔 30 天以上去過 3 次', face: { top: TOP, main: '3', sub: '次' }, rule: { kind: 'prefOccasions', need: 3, gap: 30 }, tickets: 5 },
+  { id: 'samepref-3', group: 'trip', name: '同一縣 3 次', hint: '同一個縣，相隔 30 天以上去過 3 次', face: { top: TOP, main: '3', sub: '次' }, rule: { kind: 'prefOccasions', need: 3, gap: 30 }, tickets: 5 },
 
   // 時節
   { id: 'seasons-4', group: 'time', name: '四季', hint: '春夏秋冬都有去過的日子', face: { top: TOP, main: '四季', sub: '春夏秋冬' }, rule: { kind: 'seasons' }, tickets: 5 },
@@ -152,6 +152,11 @@ export function ruleNeed(rule: AchvRule): number {
   }
 }
 
+/** 名稱折行用：數字和單位不拆開（「8 縣」「10 城」）；搭配 break-keep，詞裡也不斷 */
+export function nameText(name: string): string {
+  return name.replace(/(\d+) /g, '$1\u00a0')
+}
+
 /** 沒有進度可寫的成就（未達成時格子下方空白） */
 export function hasProgress(def: AchvDef): boolean {
   return def.rule.kind !== 'tripShared' && def.rule.kind !== 'revisit'
@@ -170,33 +175,3 @@ export const achvById = new Map(ACHIEVEMENTS.map((a) => [a.id, a]))
 export function byRank(a: AchvDef, b: AchvDef): number {
   return b.rank - a.rank || ruleNeed(b.rule) - ruleNeed(a.rule)
 }
-
-/** 規則對話框（AchvRules.vue）的條列；抽獎券那段後面接 TicketTable */
-export const ACHV_RULES: Array<{ title: string; items: string[] }> = [
-  {
-    title: '成就',
-    items: [
-      '由去過的地方、已結束的旅行與去過的日期算出來。',
-      '取消去過、刪掉旅行，有關的成就跟著拿掉；標回去就回來。',
-      '去過的地方包含擴充包的點（人孔蓋、老舖、角色商店）。',
-      '旅行：結束日已過、至少排了一個景點。共編的旅行，每個成員都算。',
-      '季節：3–5 月春、6–8 月夏、9–11 月秋、12–2 月冬。',
-      '再訪、同一縣 3 次：兩個日期相隔 30 天以上才算另一次。',
-      '世界遺產、國寶、特別史跡、特別名勝：景點資料上的文化指定（Wikidata）。一個景點有幾種指定，每種都算。',
-      '日本100名城・続日本100名城：名城本身或所在的景點標了去過都算。',
-      '關掉的擴充包，還沒達成的成就不列出。',
-    ],
-  },
-  {
-    title: '日期',
-    items: ['依去過的日期推算達成那天。', '有關的地方沒有日期、算不出那天時，不寫日期。'],
-  },
-  {
-    title: '抽獎券',
-    items: ['地方、旅行、時節的成就，每個 5 張。'],
-  },
-  {
-    title: '記號',
-    items: ['NEW：新達成、還沒看過。', '虛線：還沒達成。'],
-  },
-]

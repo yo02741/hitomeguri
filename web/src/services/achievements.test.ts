@@ -1,22 +1,27 @@
 import { describe, expect, it } from 'vitest'
 
-import { ACHIEVEMENTS, ACHV_RULES, type AchvDef } from '../data/achievements'
+import { ACHIEVEMENTS, type AchvDef } from '../data/achievements'
+import { ACHV_RULES } from '../data/achvRules'
 import { AREA_ZH, areaPrefs, regions } from '../data/regions'
 import type { Mark } from '../stores/marks'
 import {
   type AchvState,
   type Bound,
+  dataBaseline,
   derive,
   diffDays,
   diffKnown,
   evaluate,
+  inputSig,
   inTrip,
+  itemsOf,
   kthDate,
   minBound,
   occasions,
   paidCount,
   prefStamps,
   recordedTrips,
+  stampItems,
   tiltOf,
 } from './achievements'
 import type { AchvData } from './bundles'
@@ -134,10 +139,10 @@ describe('minBound', () => {
     expect(minBound([b(null, null)])).toEqual({ lo: null, hi: null })
   })
   it('名城：用名城 id 或景點 id 標，各只算一座，日期取較早的', () => {
-    const { get } = run(mk([['castle-001', 'hokkaido', '2024-05-01'], ['wd-castle1', 'hokkaido', '2024-03-01'], ['wd-castle2', 'aomori', '2024-04-01']]), [], DATA)
+    const { d, get } = run(mk([['castle-001', 'hokkaido', '2024-05-01'], ['wd-castle1', 'hokkaido', '2024-03-01'], ['wd-castle2', 'aomori', '2024-04-01']]), [], DATA)
     const s = get('castle100-10')
     expect(s.have).toBe(2)
-    expect(s.items.map((c) => c.date)).toEqual(['2024-03-01', '2024-04-01'])
+    expect(itemsOf(d, s.def).map((c) => c.date)).toEqual(['2024-03-01', '2024-04-01'])
   })
 })
 
@@ -245,10 +250,10 @@ describe('再訪、同一縣 3 次', () => {
     expect(s.at).toBe('2024-05-01')
   })
   it('同一縣 3 次', () => {
-    const two = run(mk([['a', 'kyoto', '2024-01-01'], ['b', 'kyoto', '2024-03-01'], ['c', 'nara', '2024-06-01']])).get('pref-3times')
+    const two = run(mk([['a', 'kyoto', '2024-01-01'], ['b', 'kyoto', '2024-03-01'], ['c', 'nara', '2024-06-01']])).get('samepref-3')
     expect(two.status).toBe('locked')
     expect(two.note).toBe('京都 2 / 3')
-    const three = run(mk([['a', 'kyoto', '2024-01-01'], ['b', 'kyoto', '2024-03-01'], ['c', 'kyoto', '2024-03-20'], ['d', 'kyoto', '2024-06-01']])).get('pref-3times')
+    const three = run(mk([['a', 'kyoto', '2024-01-01'], ['b', 'kyoto', '2024-03-01'], ['c', 'kyoto', '2024-03-20'], ['d', 'kyoto', '2024-06-01']])).get('samepref-3')
     expect(three.status).toBe('done')
     expect(three.at).toBe('2024-06-01')
   })
@@ -342,6 +347,42 @@ describe('diffKnown', () => {
     const r = diffKnown({ ...empty, opened: true }, { core: ['a'], data: [] }, { core: true, data: false })
     expect(r.known.opened).toBe(true)
   })
+  it('data 晚到：基準只算 core ready 時已經去過的，之後才去的照樣 fresh', () => {
+    // 新使用者：core ready 時什麼都沒去過；第一個「去過」是同時有世界遺產與國寶的 wd-A，之後 achievements.json 才到
+    const k1 = diffKnown(empty, { core: [], data: [] }, { core: true, data: false }).known
+    const k2 = diffKnown(k1, { core: ['pref-nara'], data: [] }, { core: true, data: false })
+    expect(k2.fresh).toEqual(['pref-nara'])
+    const now = input(mk([['wd-A', 'nara', '2024-02-01']]), [], DATA)
+    const done = evaluate(derive(now)).filter((s) => s.status === 'done' && s.def.dep === 'data').map((s) => s.def.id)
+    expect(done.sort()).toEqual(['heritage-1', 'kokuho-1'])
+    const base = dataBaseline(now, new Set())
+    expect(base).toEqual([])
+    const r = diffKnown(k2.known, { core: ['pref-nara'], data: done }, { core: true, data: true }, { data: base })
+    expect(r.fresh.sort()).toEqual(['heritage-1', 'kokuho-1'])
+    expect(r.known.deps).toEqual(['core', 'data'])
+  })
+  it('data 晚到：core ready 前就去過的照樣靜靜記成基準', () => {
+    const now = input(mk([['wd-A', 'nara', '2024-02-01'], ['wd-B', 'nara', '2024-03-01']]), [], DATA)
+    const base = dataBaseline(now, new Set(['wd-A']))
+    expect(base.sort()).toEqual(['heritage-1', 'kokuho-1'])
+    const k1 = diffKnown(empty, { core: ['pref-nara'], data: [] }, { core: true, data: false }).known
+    const r = diffKnown(k1, { core: ['pref-nara'], data: ['heritage-1', 'kokuho-1'] }, { core: true, data: true }, { data: base })
+    expect(r.fresh).toEqual([])
+  })
+})
+
+describe('inputSig', () => {
+  it('和成就有關的欄位沒變就一樣；日期、旅行人數、停留點的縣變了就不一樣', () => {
+    const t = trip('t1', '2024-03-01', '2024-03-02', [[stop('a', 'aomori')], []])
+    const base = inputSig(input(mk([['x', 'kyoto', '2024-01-01']]), [t]))
+    // 收藏、清單不在指紋裡
+    const fav = { x: { ...mk([['x', 'kyoto', '2024-01-01']]).x!, favorite: true, lists: ['l1'] } }
+    expect(inputSig(input(fav, [t]))).toBe(base)
+    expect(inputSig(input(mk([['x', 'kyoto', '2024-01-02']]), [t]))).not.toBe(base)
+    expect(inputSig(input(mk([['x', 'kyoto', '2024-01-01']]), [{ ...t, members: ['u', 'v'] }]))).not.toBe(base)
+    const moved = trip('t1', '2024-03-01', '2024-03-02', [[stop('a', 'iwate')], []])
+    expect(inputSig(input(mk([['x', 'kyoto', '2024-01-01']]), [moved]))).not.toBe(base)
+  })
 })
 
 describe('inTrip', () => {
@@ -365,6 +406,8 @@ describe('初訪章', () => {
     expect(stamps.find((s) => s.pref === 'kyoto')).toMatchObject({ done: true, at: null, undated: 1 })
     expect(stamps.find((s) => s.pref === 'nara')).toMatchObject({ done: true, at: '2024-01-01', undated: 0 })
     expect(stamps.find((s) => s.pref === 'tokyo')?.done).toBe(false)
+    expect(stampItems(d, 'kyoto').map((c) => c.key)).toEqual(['a'])
+    expect(stampItems(d, 'tokyo')).toEqual([])
   })
 })
 
@@ -387,6 +430,9 @@ describe('目錄', () => {
     const ids = ACHIEVEMENTS.map((a) => a.id)
     expect(new Set(ids).size).toBe(ids.length)
     for (const id of ids) expect(id).toMatch(/^[a-z0-9]+(-[a-z0-9]+)*$/)
+  })
+  it('id 不用 pref- 開頭（初訪章的 id 是 pref-<縣>）', () => {
+    for (const a of ACHIEVEMENTS) expect(a.id.startsWith('pref-')).toBe(false)
   })
   it('給券的一律是 core，總和 95', () => {
     const paid = ACHIEVEMENTS.filter((a) => a.tickets > 0)

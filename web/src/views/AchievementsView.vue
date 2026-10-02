@@ -9,7 +9,7 @@ import PrefStamp from '../components/PrefStamp.vue'
 import RollingNumber from '../components/RollingNumber.vue'
 import SectionNav from '../components/SectionNav.vue'
 import { type NavItem, useScrollSpy } from '../composables/scrollSpy'
-import { ACHIEVEMENTS, GROUPS, type AchvGroup, hasProgress } from '../data/achievements'
+import { ACHIEVEMENTS, GROUPS, type AchvGroup, hasProgress, nameText } from '../data/achievements'
 import { AREA_ZH, regions, type Region } from '../data/regions'
 import { type AchvState, dotDate, type PrefStampState } from '../services/achievements'
 import { useAchievementsStore } from '../stores/achievements'
@@ -79,15 +79,17 @@ const { active, go, refresh } = useScrollSpy(root, () => nav.value.map((it) => i
 // 資料到了、段落變多之後重新判斷目前的段落（載入中頁面很短，會先標到最後一段）
 watch([loading, () => nav.value.length], () => void nextTick(refresh))
 
-// ---- aria-label ----
+// ---- aria-label（格子的字和 NEW 都寫進去：aria-label 會蓋掉按鈕裡的內容） ----
+const NEW = '，新'
 function sealLabel(s: AchvState): string {
   if (s.status === 'unknown') return `${s.def.name}，載入中`
-  if (s.status === 'done') return s.at ? `${s.def.name}，${dotDate(s.at)}` : s.def.name
+  if (s.status === 'done') return `${s.at ? `${s.def.name}，${dotDate(s.at)}` : s.def.name}${achv.isNew(s.def.id) ? NEW : ''}`
+  if (s.note) return `${s.def.name}，還沒達成，${s.note}`
   return hasProgress(s.def) ? `${s.def.name}，還沒達成，${Math.min(s.have, s.need)} / ${s.need}` : `${s.def.name}，還沒達成`
 }
 function stampLabel(r: Region, s: PrefStampState): string {
   if (!s.done) return `${r.name.ja}，還沒去過`
-  return s.at ? `${r.name.ja} 初訪 ${dotDate(s.at)}` : `${r.name.ja} 初訪`
+  return `${s.at ? `${r.name.ja} 初訪 ${dotDate(s.at)}` : `${r.name.ja} 初訪`}${achv.isNew(`pref-${r.prefecture}`) ? NEW : ''}`
 }
 
 // ---- 蓋章：這次進頁面時有 NEW 的蓋一次；這台裝置第一次打開時，達成的依序蓋上 ----
@@ -211,7 +213,11 @@ onBeforeUnmount(() => fresh.seen([...fresh.keys].filter((k) => k.startsWith('a:'
                     <PrefStamp :pref="r.prefecture" :date="s.at" aria-hidden="true" />
                   </div>
                   <span v-else class="grid aspect-square w-full place-items-center rounded-full border-2 border-dashed border-line text-body-sm text-sub" lang="ja">{{ r.name.ja }}</span>
-                  <NewTag v-if="s.done && achv.isNew(`pref-${r.prefecture}`)" class="absolute -top-1 -left-1" />
+                  <!-- 手機的章只有約 52px：NEW 放在上緣正中、壓在外圈上，不蓋住羅馬拼音 -->
+                  <NewTag
+                    v-if="s.done && achv.isNew(`pref-${r.prefecture}`)"
+                    class="absolute -top-1 -left-1 max-sm:-top-2.5 max-sm:left-1/2 max-sm:-translate-x-1/2 max-sm:scale-90"
+                  />
                 </button>
               </li>
             </ul>
@@ -255,7 +261,7 @@ onBeforeUnmount(() => fresh.seen([...fresh.keys].filter((k) => k.startsWith('a:'
                 >
                   <AchvSeal :def="s.def" :status="s.status" :at="s.at" class="w-full" />
                 </span>
-                <span class="line-clamp-2 text-label leading-tight font-bold" :class="s.status === 'done' ? '' : 'text-ink-2'">{{ s.def.name }}</span>
+                <span class="line-clamp-2 text-label leading-tight font-bold break-keep" :class="s.status === 'done' ? '' : 'text-ink-2'">{{ nameText(s.def.name) }}</span>
                 <span v-if="s.status === 'done' && s.at" class="font-latin text-caption text-sub">{{ dotDate(s.at) }}</span>
                 <span v-else-if="s.status === 'locked' && s.note" class="text-caption leading-tight text-sub">{{ s.note }}</span>
                 <span v-else-if="s.status === 'locked' && hasProgress(s.def)" class="font-latin text-caption text-sub">{{ Math.min(s.have, s.need) }} / {{ s.need }}</span>

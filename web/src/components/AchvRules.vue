@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import { ACHV_RULES } from '../data/achievements'
+import { ACHV_RULES } from '../data/achvRules'
 import NewTag from './NewTag.vue'
 import RulesDialog from './RulesDialog.vue'
 import TicketTable from './TicketTable.vue'
 
-// 成就的規則（DESIGN.md §7.25）：成就頁「規則」打開的說明書。文案在 data/achievements.ts 的 ACHV_RULES（測試會檢查）。
+// 成就的規則（DESIGN.md §7.25）：成就頁「規則」打開的說明書。文案在 data/achvRules.ts 的 ACHV_RULES（測試會檢查）。
 const emit = defineEmits<{ close: [] }>()
 
 /** 記號那段：「NEW：新達成、還沒看過。」→ 記號＋說明 */
@@ -22,7 +22,7 @@ function mark(item: string): [string, string] {
         <template v-for="item in r.items" :key="item">
           <dt>
             <NewTag v-if="mark(item)[0] === 'NEW'" />
-            <span v-else class="block size-7 rounded-full border-2 border-dashed border-line" aria-label="虛線"></span>
+            <span v-else class="block size-7 rounded-full border-2 border-dashed border-line" role="img" aria-label="虛線"></span>
           </dt>
           <dd>{{ mark(item)[1] }}</dd>
         </template>

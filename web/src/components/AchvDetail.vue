@@ -4,6 +4,7 @@ import { computed, onMounted } from 'vue'
 import { hasProgress } from '../data/achievements'
 import { regionOf } from '../data/regions'
 import { type AchvState, type Contrib, dotDate, type PrefStampState } from '../services/achievements'
+import { useAchievementsStore } from '../stores/achievements'
 import { achvKey, useFreshStore } from '../stores/fresh'
 import AchvSeal from './AchvSeal.vue'
 import PrefStamp from './PrefStamp.vue'
@@ -14,11 +15,12 @@ import RulesDialog from './RulesDialog.vue'
 const props = defineProps<{ state?: AchvState | null; stamp?: PrefStampState | null }>()
 const emit = defineEmits<{ close: [] }>()
 const fresh = useFreshStore()
+const achv = useAchievementsStore()
 
 const MAX = 12
 const region = computed(() => (props.stamp ? regionOf(props.stamp.pref) : undefined))
 const title = computed(() => (props.state ? props.state.def.name : `${region.value?.name.zh_tw ?? ''}　初訪`))
-const items = computed<Contrib[]>(() => props.state?.items ?? props.stamp?.items ?? [])
+const items = computed<Contrib[]>(() => (props.state ? achv.items(props.state.def) : props.stamp ? achv.prefItems(props.stamp.pref) : []))
 const at = computed(() => props.state?.at ?? props.stamp?.at ?? null)
 const done = computed(() => (props.state ? props.state.status === 'done' : Boolean(props.stamp?.done)))
 const undated = computed(() => props.state?.undated ?? props.stamp?.undated ?? 0)
@@ -43,7 +45,7 @@ onMounted(() => {
       <div class="w-[132px] shrink-0">
         <AchvSeal v-if="state" :def="state.def" :status="state.status" :at="state.at" class="w-full" />
         <div v-else-if="stamp?.done" :data-pref="stamp.pref"><PrefStamp :pref="stamp.pref" :date="stamp.at" /></div>
-        <span v-else class="grid aspect-square w-full place-items-center rounded-full border-2 border-dashed border-line text-h3 font-black text-sub" lang="ja">{{ region?.name.ja }}</span>
+        <span v-else class="grid aspect-square w-full place-items-center rounded-full border-2 border-dashed border-line text-h3 font-black text-sub" lang="ja" aria-hidden="true">{{ region?.name.ja }}</span>
       </div>
       <dl class="grid grid-cols-[auto_1fr] gap-x-4 gap-y-1 text-body-sm">
         <dt class="text-sub">條件</dt>
