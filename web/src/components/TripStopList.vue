@@ -3,8 +3,10 @@ import { regionOf } from '../data/regions'
 import type { MapSpot } from '../services/bundles'
 import { type Stop, type StopPos, transitUrl } from '../services/trip'
 import Dropdown from './Dropdown.vue'
+import StopMenu from './StopMenu.vue'
 
 // 行程某一天（或「待排」）的停留點。拖曳排序／換天，另有「移到」選單與上下移動（觸控、鍵盤用）。
+// 觸控裝置上，往前、往後、移除收進「⋯」選單（StopMenu）：24px 的小鈕手指點不到，兩顆 44px 又會擠掉名稱。
 // 天與天之間的相鄰停留點放 Google Maps 大眾運輸路線連結。
 const props = defineProps<{
   stops: Stop[]
@@ -97,7 +99,7 @@ const isDrop = (idx: number) => props.dropAt?.day === props.day && props.dropAt.
           class="w-[5.5rem]"
           @update:model-value="emit('move', { day, idx: i }, Number($event))"
         />
-        <span class="flex shrink-0 flex-col">
+        <span class="flex shrink-0 flex-col pointer-coarse:hidden">
           <button type="button" :aria-label="`${s.name} 往前`" :disabled="i === 0" class="grid h-4 w-6 place-items-center text-sub hover:text-ink disabled:opacity-30" @click="emit('shift', { day, idx: i }, -1)">
             <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 15l6-6 6 6" /></svg>
           </button>
@@ -105,9 +107,12 @@ const isDrop = (idx: number) => props.dropAt?.day === props.day && props.dropAt.
             <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6" /></svg>
           </button>
         </span>
-        <button type="button" :aria-label="`從行程移除：${s.name}`" class="grid size-8 shrink-0 place-items-center rounded-control text-sub hover:bg-surface hover:text-ink" @click="emit('remove', { day, idx: i })">
+        <button type="button" :aria-label="`從行程移除：${s.name}`" class="grid size-8 shrink-0 place-items-center rounded-control text-sub hover:bg-surface hover:text-ink pointer-coarse:hidden" @click="emit('remove', { day, idx: i })">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" /></svg>
         </button>
+        <span class="hidden pointer-coarse:contents">
+          <StopMenu :name="s.name" :first="i === 0" :last="i === stops.length - 1" @shift="emit('shift', { day, idx: i }, $event)" @remove="emit('remove', { day, idx: i })" />
+        </span>
       </li>
     </template>
     <li

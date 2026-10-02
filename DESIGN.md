@@ -526,7 +526,7 @@ header 右側、登入鈕左邊（`SearchBox.vue`，每一頁都在；在行程�
   - 水：`--color-map-water`
   - 鐵道：`--region-line`，1.5～2px，不加顏色區分路線（行程路線才用色）
   - 地名標籤：`--region-sub`，日文，`localIdeographFontFamily` 設為 `"Noto Sans JP", sans-serif`
-- 立體地形（`map/terrain.ts`）：地圖右下縮放鈕上方「立體」（29×40，開啟時 `bg-region-strong text-white`）。国土地理院の標高タイル（DEM10B PNG，`gsidem://` protocol 換成 terrarium 編碼，海上與無資料當 0 m）當地形（誇張 1.4 倍）＋陰影圖層（陰影 `--region-ink`、亮面 `--region-paper`，畫在縣界之上、鐵路之下），不改鏡頭（傾斜照舊用右鍵拖曳、手機兩指上下拖）；正上方看時靠陰影看出起伏，傾斜後山有高度。全日本都有資料（国土地理院 DEM10B），山區放大最明顯。偏好存在這台裝置；紀錄頁的小地圖不顯示。出處「標高：国土地理院」。
+- 立體地形（`map/terrain.ts`）：地圖右下縮放鈕上方「立體」：放進 MapLibre 右下角的控制列（`IControl`＋Teleport，由上而下是立體、縮放、attribution，位置跟著 attribution 展開走，不會疊住縮放鈕），外框交給 `maplibregl-ctrl-group`，開啟時 `bg-region-strong text-white`。觸控裝置（`pointer: coarse`）上控制鈕與 attribution 開關放大到 44px（`size-tap`）。国土地理院の標高タイル（DEM10B PNG，`gsidem://` protocol 換成 terrarium 編碼，海上與無資料當 0 m）當地形（誇張 1.4 倍）＋陰影圖層（陰影 `--region-ink`、亮面 `--region-paper`，畫在縣界之上、鐵路之下），不改鏡頭（傾斜照舊用右鍵拖曳、手機兩指上下拖）；正上方看時靠陰影看出起伏，傾斜後山有高度。全日本都有資料（国土地理院 DEM10B），山區放大最明顯。偏好存在這台裝置；紀錄頁的小地圖不顯示。出處「標高：国土地理院」。
 - 行程路線（行程頁）：當天主縣的 `--region-strong`，4px，端點圓頭；轉乘段用虛線。路線改變（開頁、換天、排序）時從起點畫到終點（0.8～2.4s，前後慢中間快），筆尖是 `--region-strong` 圓點加 `paper` 外框。
 - 市區棋盤道路等細節交給底圖，不自行繪製。
 

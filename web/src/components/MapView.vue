@@ -884,6 +884,20 @@ function toggleTerrain() {
   setTerrainPreferred(terrainOn.value)
   applyTerrain()
 }
+// 「立體」鈕放進 MapLibre 右下角的控制列（縮放鈕上面）：位置跟著 attribution 展開與縮放鈕走，不會疊在一起
+const terrainHost = shallowRef<HTMLElement | null>(null)
+class TerrainControl implements maplibregl.IControl {
+  el = document.createElement('div')
+  onAdd() {
+    this.el.className = 'maplibregl-ctrl maplibregl-ctrl-group'
+    terrainHost.value = this.el
+    return this.el
+  }
+  onRemove() {
+    this.el.remove()
+    terrainHost.value = null
+  }
+}
 
 // 角落的日本全圖（JapanLocator）：放大到看不出在哪裡時才出現；移動中每一格畫面更新一次
 const LOCATOR_ZOOM = 6.5
@@ -931,6 +945,8 @@ onMounted(() => {
     },
   })
   map.addControl(new maplibregl.NavigationControl({ showCompass: false }), 'bottom-right')
+  // 下方角落後加的排在上面：立體、縮放、attribution
+  if (!props.noTerrain) map.addControl(new TerrainControl(), 'bottom-right')
   // 開場畫面等到底圖第一次畫完（樣式或圖磚失敗也放行）
   const m = map
   trackSplash(
@@ -1101,17 +1117,20 @@ defineExpose({
   <!-- overflow-hidden：hover 標籤落在畫面外時（例如從清單滑過畫面外的景點）不撐出整頁捲軸 -->
   <div class="absolute inset-0 overflow-hidden bg-map-land" role="region" aria-label="地圖">
     <div ref="container" class="isolate size-full"></div>
-    <button
-      v-if="!noTerrain"
-      type="button"
-      class="absolute right-2.5 bottom-[122px] z-[2] grid h-10 w-[29px] place-items-center rounded-[4px] text-[11px] leading-tight font-bold shadow-[0_0_0_2px_rgb(0_0_0/0.1)] print:hidden"
-      :class="terrainOn ? 'bg-region-strong text-white' : 'bg-paper text-ink hover:bg-surface'"
-      :aria-pressed="terrainOn"
-      title="立體地形"
-      @click="toggleTerrain"
-    >
-      立<br />體
-    </button>
+    <!-- maplibre-gl.css 不在 layer 裡，會蓋過 utilities：底色與排版用 ! 才壓得過它的 button 樣式 -->
+    <Teleport v-if="terrainHost && !noTerrain" :to="terrainHost">
+      <button
+        type="button"
+        class="!grid place-items-center text-[11px] leading-tight font-bold print:hidden"
+        :class="terrainOn ? '!bg-region-strong text-white' : '!bg-paper text-ink hover:!bg-surface'"
+        :aria-pressed="terrainOn"
+        aria-label="立體地形"
+        title="立體地形"
+        @click="toggleTerrain"
+      >
+        <span aria-hidden="true">立<br />體</span>
+      </button>
+    </Teleport>
     <Transition name="locator">
       <JapanLocator
         v-if="locator && locator.zoom >= LOCATOR_ZOOM"
@@ -1180,5 +1199,26 @@ defineExpose({
 .locator-leave-to {
   opacity: 0;
   transform: scale(0.9);
+}
+</style>
+
+<style>
+/* 觸控裝置上地圖控制鈕放大到 44px（DESIGN.md §5.2、§8）。maplibre-gl.css 沒有 layer，這裡也不放 layer，並提高 specificity */
+@media (pointer: coarse) {
+  .maplibregl-ctrl.maplibregl-ctrl-group button,
+  .maplibregl-ctrl.maplibregl-ctrl-attrib .maplibregl-ctrl-attrib-button {
+    width: var(--spacing-tap);
+    height: var(--spacing-tap);
+  }
+  .maplibregl-ctrl.maplibregl-ctrl-attrib .maplibregl-ctrl-attrib-button {
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: calc(var(--spacing-tap) / 2);
+  }
+  .maplibregl-ctrl.maplibregl-ctrl-attrib.maplibregl-compact {
+    min-height: calc(var(--spacing-tap) - 4px);
+    padding-right: var(--spacing-tap);
+    border-radius: calc(var(--spacing-tap) / 2);
+  }
 }
 </style>
