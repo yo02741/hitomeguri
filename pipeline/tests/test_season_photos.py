@@ -18,6 +18,7 @@ def test_season_of():
     assert sp.season_of("SPring-8 at night", "SPring-8") == "night"
     # 攝影者名稱、湧水不是春天
     assert sp.season_of("SAKURAKO - Jozankei Spa. (25705274748).jpg") is None
+    assert sp.season_of("Volcanic_Ash_Fall_Layers_Izu_Oshima_Japan_3.jpg") is None
     assert sp.season_of("Furou spring water well.jpg") is None
     assert sp.season_of("Yotei spring water collection space.jpg") is None
     assert sp.season_of("Sakura at Ueno Park.jpg") == "spring"

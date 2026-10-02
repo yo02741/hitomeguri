@@ -40,10 +40,10 @@ SEASON_RE: dict[str, re.Pattern[str]] = {
     "winter": re.compile(r"\bwinter\b|\bsnow(y|fall)?\b|冬|雪", re.I),
 }
 # 季節字樣但不是季節：溫泉（hot spring）、湧水（spring water）、春日大社、秋葉原、雪舟、
-# 攝影者名稱 SAKURAKO…
+# 攝影者名稱 SAKURAKO、火山灰（ash fall）…
 NOT_SEASON = re.compile(
     r"hot[ _]springs?|onsen|spring[ _-]?(water|well)|湧水|kasuga|akihabara|akiba|sesshu|"
-    r"sakurako|雪舟|春日|秋葉|springs\b",
+    r"sakurako|雪舟|春日|秋葉|springs\b|(ash|rain)[ _-]?fall",
     re.I,
 )
 
