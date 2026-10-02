@@ -2,7 +2,7 @@
 import { computed, onBeforeUnmount, onMounted, ref } from 'vue'
 
 import { type CollectionCard, useCollection } from '../composables/collection'
-import type { CardFace, Rarity } from '../services/card'
+import type { Rarity } from '../services/card'
 import { randomDraw, UNLIMITED_DRAWS, type Variant } from '../services/cardVariants'
 import { dayDate, type Trip } from '../services/trip'
 import { todayIso } from '../services/userdb'
@@ -13,28 +13,19 @@ import SpotCard from './SpotCard.vue'
 
 // 開卡包（DESIGN.md §7.19）：行程結束後，這趟去過的地方包成一包卡。點一下撕開，
 // 卡片疊在中央，一張一張翻開（一般在前、最稀有的最後），稀有卡翻開時背後放光；翻完排成一覽。
-// 也用在收集卡的「十連抽」（§7.19a）：同一張卡抽十次，傳 pulls 進來。
-export interface Pull {
-  face: CardFace
-  rarity: Rarity
-  label: string
-  number: string
-  visitedOn: string | null
-  variant: Variant
-}
-const props = defineProps<{ trip?: Trip; pulls?: Pull[]; title?: string }>()
+// （收集卡的十連抽是另一個元件 TenPull.vue）
+const props = defineProps<{ trip: Trip }>()
 const emit = defineEmits<{ close: [] }>()
 
 const entries = computed<Array<[string, Mark]>>(() => {
   const t = props.trip
-  if (!t) return []
   return t.days.flatMap((d, i) => d.stops.map((s): [string, Mark] => [s.spot_id, { pref: s.pref, name: s.name, visited: true, visited_on: dayDate(t, i) }]))
 })
 // 這一趟的日期各抽一次樣式
 const tripDates = computed(() => {
   const m = new Map<string, Array<string | null>>()
   const t = props.trip
-  t?.days.forEach((d, i) => d.stops.forEach((s) => m.set(s.spot_id, [...(m.get(s.spot_id) ?? []), dayDate(t, i) ?? null])))
+  t.days.forEach((d, i) => d.stops.forEach((s) => m.set(s.spot_id, [...(m.get(s.spot_id) ?? []), dayDate(t, i) ?? null])))
   return m
 })
 const { cards } = useCollection(() => entries.value, (id) => tripDates.value.get(id))
@@ -45,22 +36,16 @@ const redraws = ref(new Map<string, Variant>())
 type DeckCard = CollectionCard & { key: string }
 /** 這張卡在卡包裡的樣子：這次抽到的，沒有就是收集到最稀有的 */
 const shown = (c: DeckCard): Variant => redraws.value.get(c.key) ?? c.variants[0]!
-// 同一個景點只算一張；稀有度、分數低的先翻。十連抽：十張同一個景點，依樣式排
+// 同一個景點只算一張；稀有度、分數低的先翻
 const deck = computed<DeckCard[]>(() => {
-  if (props.pulls) {
-    return props.pulls
-      .map((p, i) => ({ ...p, castle: false, score: 0, variants: [p.variant], variantTotal: 0, key: `${p.face.id}:${i}` }))
-      .sort((a, b) => a.variant.rank - b.variant.rank)
-  }
   const seen = new Set<string>()
   return cards.value
     .filter((c) => !seen.has(c.face.id) && seen.add(c.face.id))
     .map((c) => ({ ...c, key: c.face.id }))
     .sort((a, b) => shown(a).rank - shown(b).rank || RANK[a.rarity] - RANK[b.rarity] || a.score - b.score)
 })
-const title = computed(() => props.title ?? props.trip?.name ?? '未命名行程')
+const title = computed(() => props.trip.name || '未命名行程')
 const mainPref = computed(() => {
-  if (props.pulls) return props.pulls[0]?.face.pref ?? null
   const n = new Map<string, number>()
   for (const [, m] of entries.value) n.set(m.pref, (n.get(m.pref) ?? 0) + 1)
   return [...n.entries()].sort((a, b) => b[1] - a[1])[0]?.[0] ?? null
@@ -84,7 +69,7 @@ function raysKind(c: DeckCard): string {
 }
 function open() {
   if (stage.value !== 'sealed' || !deck.value.length) return
-  if (UNLIMITED_DRAWS && props.trip) {
+  if (UNLIMITED_DRAWS) {
     const next = new Map<string, Variant>()
     for (const c of deck.value) {
       const drawn = randomDraw(c.rarity, tripDates.value.get(c.face.id)?.find(Boolean) ?? todayIso())
@@ -116,7 +101,7 @@ function revealAll() {
 }
 function finish() {
   stage.value = 'done'
-  if (props.trip) markOpened(props.trip.id)
+  markOpened(props.trip.id)
 }
 
 function onKey(e: KeyboardEvent) {
@@ -184,7 +169,7 @@ function markOpened(tripId: string) {
     </div>
 
     <!-- 翻完：一覽 -->
-    <div v-else-if="stage === 'done'" class="flex max-h-full w-full max-w-3xl flex-col gap-4 overflow-y-auto">
+    <div v-else-if="stage === 'done'" class="flex max-h-full w-full max-w-3xl flex-col gap-4 overflow-x-hidden overflow-y-auto p-3">
       <p class="text-center text-h3 font-black text-paper">{{ title }}　<span class="font-latin">{{ deck.length }}</span> 張</p>
       <ul class="grid grid-cols-3 gap-3 sm:grid-cols-4 md:grid-cols-5">
         <li v-for="(c, i) in revealed" :key="c.key" class="deal-in @container" :style="{ '--i': Math.min(i, 15) }">
@@ -203,7 +188,7 @@ function markOpened(tripId: string) {
     <div class="flex gap-2">
       <button v-if="stage === 'sealed'" type="button" class="h-11 rounded-control bg-paper px-5 text-body-sm font-bold text-ink" :disabled="!deck.length" @click="open">打開</button>
       <button v-if="stage === 'dealing'" type="button" class="h-11 rounded-control border border-paper/50 px-4 text-body-sm text-paper" @click="revealAll">全部翻開</button>
-      <RouterLink v-if="stage === 'done' && trip" to="/log/cards" class="flex h-11 items-center rounded-control bg-paper px-5 text-body-sm font-bold text-ink no-underline" @click="emit('close')">收集冊</RouterLink>
+      <RouterLink v-if="stage === 'done'" to="/log/cards" class="flex h-11 items-center rounded-control bg-paper px-5 text-body-sm font-bold text-ink no-underline" @click="emit('close')">收集冊</RouterLink>
       <button type="button" class="h-11 rounded-control border border-paper/50 px-4 text-body-sm text-paper" @click="emit('close')">關閉</button>
     </div>
   </div>

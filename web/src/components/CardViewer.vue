@@ -8,11 +8,12 @@ import { reveal, showReveal } from '../services/cardReveal'
 import { BASE_VARIANT, randomDraw, UNLIMITED_DRAWS, type Variant } from '../services/cardVariants'
 import { todayIso } from '../services/userdb'
 import { useCardsStore } from '../stores/cards'
-import PackOpening, { type Pull } from './PackOpening.vue'
 import SpotCard from './SpotCard.vue'
+import TenPull, { type Pull } from './TenPull.vue'
 
 // 收集卡放大檢視（DESIGN.md §7.19）：畫面中央一張大卡，點卡片翻面；手機可以用傾斜角度讓卡片轉動。
 // 收集冊裡可以左右切換上一張、下一張（方向鍵、左右滑）。Esc、點背景或「關閉」離開。
+// 收集到兩種以上時可以把目前這種設為收集冊的封面（stores/cards.ts）。
 // 打開時焦點在卡片上：Space、Enter 翻面。
 const props = defineProps<{
   card: CardFace
@@ -42,9 +43,11 @@ function drawAgain() {
   void cards.add(props.card.id, drawn)
   showReveal({ face: props.card, rarity: props.rarity, label: props.label ?? '', number: props.number ?? '', variant: top })
 }
-// 十連抽：抽十次包成一包，用開卡包的方式翻開
+// 十連抽：抽十次，5×2 排開依序翻（TenPull）
 const tenPull = ref<Pull[] | null>(null)
+const tenKey = ref(0)
 function drawTen() {
+  tenKey.value++
   const draws = Array.from({ length: 10 }, () => randomDraw(props.rarity, todayIso()))
   void cards.add(props.card.id, draws.flat())
   tenPull.value = draws.map((d) => ({
@@ -76,8 +79,13 @@ watch(
 )
 
 const tilt = useTilt(18)
-// 樣式：預設看最稀有的那張；換卡時回到第一張
-const vi = ref(0)
+// 樣式：預設看封面那張（自己選的，沒選就是基本）；換卡時回到封面
+const coverIndex = () => Math.max(0, props.variants?.findIndex((v) => v.key === cards.coverOf(props.card.id)) ?? 0)
+const vi = ref(coverIndex())
+const isCover = computed(() => variant.value.key === cards.coverOf(props.card.id))
+function setCover() {
+  void cards.setCover(props.card.id, variant.value.key)
+}
 const variant = computed(() => props.variants?.[vi.value] ?? props.variants?.[0] ?? BASE_VARIANT)
 const flipped = ref(false)
 const gyro = ref(false)
@@ -91,7 +99,7 @@ watch(
   () => props.card.id,
   async () => {
     flipped.value = false
-    vi.value = 0
+    vi.value = coverIndex()
     // 換卡時卡片元素重建，焦點跟著移到新的卡片
     await nextTick()
     cardEl.value?.focus()
@@ -225,6 +233,18 @@ onBeforeUnmount(() => document.removeEventListener('keydown', onKey))
         </button>
         <span v-if="variantTotal" class="ml-1 font-latin text-caption text-white/70">{{ variants.length }} / {{ variantTotal }}</span>
       </div>
+      <!-- 收集冊的封面：這個景點在收集冊顯示哪一種 -->
+      <button
+        v-if="visited && variants && variants.length > 1"
+        type="button"
+        class="cover-btn -mt-2 flex h-8 items-center gap-1.5 rounded-full px-3 text-caption font-bold"
+        :class="isCover ? 'text-white/70' : 'text-white underline decoration-white/40 underline-offset-4 hover:decoration-white'"
+        :disabled="isCover"
+        @click="setCover"
+      >
+        <svg width="13" height="13" viewBox="0 0 24 24" :fill="isCover ? 'currentColor' : 'none'" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12v18l-6-4.5L6 21z" /></svg>
+        {{ isCover ? '收集冊的封面' : '設為收集冊的封面' }}
+      </button>
       <div class="flex flex-wrap justify-center gap-2">
         <button
           v-if="touch && !tilt.reduced"
@@ -256,7 +276,7 @@ onBeforeUnmount(() => document.removeEventListener('keydown', onKey))
         </button>
       </div>
     </div>
-    <PackOpening v-if="tenPull" :pulls="tenPull" :title="`${card.name.ja}　十連抽`" @close="closeTenPull" />
+    <TenPull v-if="tenPull" :key="tenKey" :pulls="tenPull" :title="`${card.name.ja}　十連抽`" :can-again="canDraw" @again="drawTen" @close="closeTenPull" />
   </Teleport>
 </template>
 
