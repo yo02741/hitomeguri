@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, ref, shallowRef, watch } from 'vue'
+import { computed, onMounted, ref, shallowRef, useId, watch } from 'vue'
 
 import RegionChip from './RegionChip.vue'
 import { regionOf } from '../data/regions'
@@ -9,8 +9,15 @@ import SkeletonRows from './SkeletonRows.vue'
 
 // header 右側的景點搜尋（全國）。第一次聚焦時才下載索引。
 // 結果先列縣名，再列景點（完全相同 > 開頭相同 > 包含，同級依分數）。
+// full：手機 header 展開的搜尋列（DESIGN.md §7.3），佔滿寬度，結果鋪滿 header 與底部分頁列之間。
+const props = defineProps<{ full?: boolean; autofocus?: boolean }>()
 const emit = defineEmits<{ pick: [hit: SearchHit] }>()
 const catalog = useCatalogStore()
+const uid = useId()
+const input = ref<HTMLInputElement | null>(null)
+onMounted(() => {
+  if (props.autofocus) input.value?.focus()
+})
 
 const query = ref('')
 const open = ref(false)
@@ -44,12 +51,10 @@ function pick(hit: SearchHit | undefined) {
 
 function onKey(e: KeyboardEvent) {
   if (e.isComposing) return
-  if (e.key === 'ArrowDown') {
-    active.value = Math.min(active.value + 1, hits.value.length - 1)
+  if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+    active.value = e.key === 'ArrowDown' ? Math.min(active.value + 1, hits.value.length - 1) : Math.max(active.value - 1, 0)
     e.preventDefault()
-  } else if (e.key === 'ArrowUp') {
-    active.value = Math.max(active.value - 1, 0)
-    e.preventDefault()
+    document.getElementById(`${uid}-${active.value}`)?.scrollIntoView({ block: 'nearest' })
   } else if (e.key === 'Enter') {
     pick(hits.value[active.value])
   } else if (e.key === 'Escape') {
@@ -60,33 +65,44 @@ function onKey(e: KeyboardEvent) {
 </script>
 
 <template>
-  <div class="relative w-72 shrink-0" @focusout="(e) => !($el as HTMLElement).contains(e.relatedTarget as Node) && (open = false)">
+  <div class="relative" :class="full ? 'w-full min-w-0' : 'w-56 shrink-0 lg:w-72'" @focusout="(e) => !($el as HTMLElement).contains(e.relatedTarget as Node) && (open = false)">
     <label class="flex h-10 items-center gap-2 rounded-full border border-line bg-paper px-3.5 text-sub focus-within:border-region-strong focus-within:text-ink">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
         <circle cx="11" cy="11" r="6.5" /><path d="M16 16l4.5 4.5" />
       </svg>
       <input
+        ref="input"
         v-model="query"
         type="search"
         placeholder="搜尋景點、地區"
         aria-label="搜尋景點、地區"
         role="combobox"
         :aria-expanded="showList"
-        aria-controls="search-results"
+        :aria-controls="`${uid}-list`"
+        :aria-activedescendant="showList && hits.length ? `${uid}-${active}` : undefined"
         autocomplete="off"
+        enterkeyhint="search"
         class="min-w-0 flex-1 bg-transparent text-body-sm text-ink outline-none placeholder:text-sub [&::-webkit-search-cancel-button]:appearance-none"
         @focus="prepare"
         @keydown="onKey"
       />
     </label>
+    <p class="sr-only" aria-live="polite">{{ showList && catalog.index ? `${hits.length} 筆` : '' }}</p>
     <ul
       v-if="showList"
-      id="search-results"
+      :id="`${uid}-list`"
       role="listbox"
-      class="scroll-quiet absolute top-12 right-0 z-30 flex max-h-[60dvh] w-full origin-top animate-pop-in flex-col overflow-y-auto rounded-card bg-paper p-1.5 shadow-float"
+      aria-label="搜尋結果"
+      class="scroll-quiet z-30 flex origin-top animate-pop-in flex-col overflow-y-auto overscroll-contain bg-paper p-1.5"
+      :class="
+        full
+          ? 'fixed inset-x-0 top-header bottom-[calc(3.5rem+env(safe-area-inset-bottom))] border-t border-line'
+          : 'absolute top-12 right-0 max-h-[60dvh] w-full rounded-card shadow-float'
+      "
     >
       <li
         v-for="(h, i) in hits"
+        :id="`${uid}-${i}`"
         :key="h.kind + h.id"
         role="option"
         :aria-selected="i === active"

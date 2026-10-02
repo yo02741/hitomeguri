@@ -167,14 +167,16 @@
 ### 5.1 斷點
 | 名稱 | 寬度 | 版面 |
 |---|---|---|
-| 手機 | < 768 | 單欄、底部 tab、bottom sheet |
-| 平板 | 768–1279 | 地圖＋右欄（左欄收成可開關的抽屜） |
+| 手機 | < 768 | 單欄、底部分頁列、景點卡片是 bottom sheet；header 只有 wordmark、搜尋鈕（§7.3）與帳號 |
+| 平板 | 768–1023 | header 同桌機（分頁、搜尋框；間距收成 `gap-4`、搜尋框 `w-56`）；地圖與景點卡片同手機（bottom sheet、海報條），沒有底部分頁列 |
 | 桌機 | ≥ 1024 | 地圖佔滿，左上浮動面板 `w-float` 300（地區標籤、主題篩選、景點／地區特色）；右欄 `w-panel` 400 |
 
 ### 5.2 間距
 - 基準 4px（Tailwind 預設 spacing）。面板內距 `px-5`（20）～`px-6`（24）；清單列 `py-2.5`；區塊間距 `gap-4`～`gap-6`。
 - 最小點擊區 44×44（`size-tap`、`min-h-tap`）。
-- 手機頁面上方預留 safe area：`pt-[max(env(safe-area-inset-top),12px)]`；底部 tab 與 sheet 同理。
+- 手機頁面上方預留 safe area：`pt-[max(env(safe-area-inset-top),12px)]`（只有 status bar 設成 `black-translucent` 時才需要；目前沒設，上方不留）。
+- 底部分頁列 `box-content h-14 pb-[env(safe-area-inset-bottom)]`：內容固定 56px，home indicator 的高度加在外面；貼著分頁列的浮動提示（AppUpdate）用 `bottom-[calc(5rem+env(safe-area-inset-bottom))]`。
+- 橫向時左右的瀏海：header 用 `pl-[max(1rem,env(safe-area-inset-left))]`、`pr-[max(1rem,env(safe-area-inset-right))]`（`md:` 起 1.5rem）。
 
 ### 5.3 固定尺寸
 | 元素 | 值 |
@@ -248,7 +250,8 @@
 - 每項都是 `#錨點` 連結；段落 `scroll-mt-16 lg:scroll-mt-8`。
 
 ### 7.3 Search
-header 右側、登入鈕左邊（`SearchBox.vue`，每一頁都在；在行程、紀錄頁選了結果會回到探索頁）：`h-10 w-72 rounded-full border border-line bg-paper px-3.5`，聚焦時外框 `border-region-strong`，左側放大鏡圖示，placeholder「搜尋景點、地區」，input 帶 `aria-label`。結果是同寬的浮動卡（`rounded-card bg-paper shadow-float`，最高 60dvh），每列：縣色小方塊 14px＋假名／日文名（繁中名不同時接在後面、`text-sub`）＋右側縣名（縣的結果標「地區」）。上下鍵移動、Enter 選取、Esc 清除。
+header 右側、登入鈕左邊（`SearchBox.vue`，每一頁都在；在行程、紀錄頁選了結果會回到探索頁；手機見下）：`h-10 w-56 lg:w-72 rounded-full border border-line bg-paper px-3.5`，聚焦時外框 `border-region-strong`，左側放大鏡圖示，placeholder「搜尋景點、地區」，input 帶 `aria-label`。結果是同寬的浮動卡（`rounded-card bg-paper shadow-float`，最高 60dvh），每列：縣色小方塊 14px＋假名／日文名（繁中名不同時接在後面、`text-sub`）＋右側縣名（縣的結果標「地區」）。上下鍵移動（清單跟著捲到選到的那一筆）、Enter 選取、Esc 清除。input 是 `role=combobox`，用 `aria-activedescendant` 指向選到的 option（id 由 `useId()` 產生，兩個實例不撞 id），結果筆數放在 `aria-live` 的隱藏文字；`enterkeyhint="search"`。
+- 手機（< 768）：header 右側、帳號左邊放一顆放大鏡鈕（`size-tap`，`aria-label`「搜尋景點、地區」、`aria-expanded`）。點了展開佔滿 header 的搜尋列（`bg-header`）：`SearchBox full` 自動聚焦＋右邊「取消」（`text-body-sm text-sub`）；結果鋪滿 header 與底部分頁列之間（`fixed inset-x-0 top-header`，`border-t border-line`，不圓角、不加陰影）。選了結果、按取消、按 Esc、換頁都會收起，焦點回到放大鏡鈕。
 
 ### 7.4 擴充包列（原主題開關列）
 - 地圖上方浮動列，左緣對齊左側浮動面板外（`left: insetLeft`），靠左排、寬度不夠時換行；「只看收藏」膠囊鈕排在最前面。
