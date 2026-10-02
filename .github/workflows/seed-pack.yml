@@ -21,9 +21,10 @@ on:
 permissions:
   contents: write
 
-# 同一個指令一次只跑一個（GitHub 每個 group 只保留一個等待中的 run，不同指令分開才不會互相取消）
+# 同一個指令、同一批縣一次只跑一個（GitHub 每個 group 只保留一個等待中的 run，不同指令分開才不會互相取消）。
+# 不同批的縣可以同時跑（例如季節照片分東西兩批），各自推到自己的分支。
 concurrency:
-  group: seed-pack-${{ inputs.command }}
+  group: seed-pack-${{ inputs.command }}-${{ inputs.prefectures }}
   cancel-in-progress: false
 
 jobs:
@@ -52,6 +53,7 @@ jobs:
               fi
               args="${PREFS:+--limit $PREFS}" ;;
             prune-spots) args="$PREFS --wikidata" ;;  # 重新查 Wikidata 類型，排除非景點
+            seed-season-photos) args="$PREFS --refresh" ;;  # 選圖規則改了就全部重選
             *) args="$PREFS" ;;
           esac
           .venv/bin/python -m pipeline.cli ${{ inputs.command }} $args --report /tmp/report.md

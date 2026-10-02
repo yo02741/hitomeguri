@@ -41,27 +41,61 @@ def test_best_prefers_large_landscape_jpeg():
     assert sp.best(files, {"b.jpg"}) is None
 
 
+def test_name_tokens():
+    assert sp.name_tokens("Himeji Castle", "姫路城") == ["himeji", "姫路"]
+    assert sp.name_tokens("Mount Fuji", "富士山") == ["fuji", "富士"]
+    assert sp.name_tokens("Kiyomizu-dera", "清水寺") == ["kiyomizu", "清水"]
+
+
+def test_score_requires_the_spot():
+    toks = sp.name_tokens("Himeji Castle", "姫路城")
+    # 「姬路城的櫻花」分類裡只寫 sakura 的：拍不拍得到城不知道，不收
+    assert sp.score(_file("Sakura 2019 03.jpg"), toks, set(), {}) is None
+    # 檔名有景點名稱、或標了描繪這個景點：收
+    assert sp.score(_file("Himeji Castle with cherry blossoms.jpg"), toks, set(), {}) is not None
+    assert sp.score(_file("DSC0001.jpg"), toks, {"DSC0001.jpg"}, {}) is not None
+    # 特寫扣分；優質圖片加分
+    near = sp.score(_file("Himeji castle roof detail.jpg"), toks, set(), {})
+    far = sp.score(_file("Himeji castle in spring.jpg"), toks, set(), {})
+    qi = sp.score(
+        _file("Himeji castle in spring 2.jpg"), toks, set(), {"Himeji castle in spring 2.jpg": 40}
+    )
+    assert near is not None and far is not None and qi is not None
+    assert near < 40 <= far < qi
+
+
 def test_find_season_photos(monkeypatch):
     def fake_subcats(cat: str) -> list[str]:
-        return ["Kiyomizu-dera in autumn", "Kiyomizu-dera at night", "Kiyomizu-dera interior"]
+        return [
+            "Kiyomizu-dera in autumn",
+            "Kiyomizu-dera at night",
+            "Cherry blossoms at Kiyomizu-dera",
+        ]
 
     def fake_files(cat: str, limit: int = 50) -> list[dict[str, Any]]:
         if cat == "Kiyomizu-dera in autumn":
-            return [_file("Kiyomizu autumn leaves.jpg")]
+            return [_file("Kiyomizu autumn leaves.jpg"), _file("Momiji 2020.jpg", 4000, 2667)]
         if cat == "Kiyomizu-dera at night":
             return [_file("Kiyomizu-dera illumination 2018.jpg")]
-        if cat == "Kiyomizu-dera interior":
-            return []
+        if cat == "Cherry blossoms at Kiyomizu-dera":
+            # 只有花的特寫（檔名沒有景點名稱）
+            return [_file("Sakura macro.jpg", 5000, 3333)]
         return [
-            _file("Kiyomizu sakura 2019.jpg"),
             _file("Kiyomizu main.jpg"),
             _file("Kiyomizu-dera in snow.jpg", lic="CC BY-NC 2.0"),
         ]
 
+    def fake_depicts(qid: str) -> list[dict[str, Any]]:
+        return [{**_file("IMG_2041.jpg"), "cats": ["Kiyomizu-dera in summer"]}]
+
     monkeypatch.setattr(sp, "subcategories", fake_subcats)
     monkeypatch.setattr(sp, "files_in", fake_files)
-    got = sp.find_season_photos("Kiyomizu-dera", "Kiyomizu main.jpg")
-    assert set(got) == {"autumn", "spring", "night"}
-    assert got["night"]["source_url"].endswith("illumination_2018.jpg") or "illumination" in got["night"]["source_url"]
+    monkeypatch.setattr(sp, "depicting_files", fake_depicts)
+    monkeypatch.setattr(sp, "quality_of", lambda titles: {})
+    got = sp.find_season_photos("Kiyomizu-dera", "Kiyomizu main.jpg", "Q123", "清水寺")
+    # 春：只有沒寫名稱的花特寫 → 不放；冬：非商用授權 → 不放；夏：描繪這個景點、分類是夏天
+    assert set(got) == {"autumn", "night", "summer"}
+    assert got["autumn"]["source_url"].endswith("Kiyomizu autumn leaves.jpg")
+    assert "illumination" in got["night"]["source_url"]
+    assert got["summer"]["source_url"].endswith("IMG_2041.jpg")
     assert got["autumn"]["author"] == "Someone"
-    assert got["spring"]["source_url"].endswith("Kiyomizu sakura 2019.jpg")

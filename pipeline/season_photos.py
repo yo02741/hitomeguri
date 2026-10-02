@@ -1,10 +1,17 @@
 """收集卡的季節、夜景照片（DESIGN.md §7.19a）。
 
-從景點的 Commons 分類（Wikidata P373）找春夏秋冬與夜晚的照片。
+從景點的 Commons 分類（Wikidata P373）與「描繪這個景點」的檔案（Commons 結構化資料 P180）
+找春夏秋冬與夜晚的照片。
 
-1. 子分類名稱有季節字樣的（例：Kiyomizu-dera in autumn、Cherry blossoms at …）→ 取裡面最合適的一張；
-2. 沒有就在主分類的檔名裡找季節字樣。
-「最合適」：JPEG、橫幅（寬高比 1.2–2.1）、寬 1000px 以上，取像素最多的。
+候選：
+1. 子分類名稱有季節字樣的（例：Kiyomizu-dera in autumn、Cherry blossoms at …）裡的檔案；
+2. 主分類裡檔名有季節字樣的；
+3. 標了「描繪：這個景點」的檔案，檔名或分類有季節字樣的。
+只收拍得到景點的：要「描繪」標的是這個景點，或檔名有景點名稱
+（只在「姬路城的櫻花」分類裡、檔名只寫 sakura 的不算）。
+檔名像特寫、室內、看板、地圖的扣分；
+Commons 的優質圖片（Quality images）、精選圖片（Featured pictures）加分。
+JPEG、寬 1000px 以上、橫幅（寬高比 1.2–2.1）。分數最高的一張；沒有合格的就不放（寧缺勿濫）。
 照片一律附作者、授權、Commons 頁面網址（卡片背面顯示）。只動 data/spots 的 season_images 欄位。
 """
 
@@ -102,15 +109,177 @@ def files_in(cat: str, limit: int = 50) -> list[dict[str, Any]]:
 
 
 def best(files: list[dict[str, Any]], exclude: set[str]) -> dict[str, Any] | None:
-    ok = [
-        f
-        for f in files
-        if f.get("mime") == "image/jpeg"
-        and f["title"] not in exclude
+    """格式與尺寸合格的裡面像素最多的（測試與沒有名稱可比對時用）"""
+    ok = [f for f in files if usable(f) and f["title"] not in exclude]
+    return max(ok, key=lambda f: f["width"] * f["height"], default=None)
+
+
+def usable(f: dict[str, Any]) -> bool:
+    return (
+        f.get("mime") == "image/jpeg"
         and f.get("width", 0) >= 1000
         and 1.2 <= f["width"] / max(f.get("height", 1), 1) <= 2.1
-    ]
-    return max(ok, key=lambda f: f["width"] * f["height"], default=None)
+    )
+
+
+# 名稱裡不能用來辨認景點的字
+GENERIC = {
+    "castle",
+    "temple",
+    "shrine",
+    "mount",
+    "park",
+    "lake",
+    "river",
+    "bridge",
+    "garden",
+    "gardens",
+    "japan",
+    "japanese",
+    "prefecture",
+    "station",
+    "tower",
+    "museum",
+    "falls",
+    "waterfall",
+    "island",
+    "islands",
+    "ruins",
+    "site",
+    "hall",
+    "gate",
+    "pond",
+    "beach",
+    "road",
+    "street",
+    "onsen",
+    "jinja",
+    "jingu",
+    "taisha",
+    "dera",
+    "tera",
+    "national",
+    "city",
+    "town",
+    "village",
+    "area",
+    "district",
+    "main",
+    "great",
+    "grand",
+    "old",
+    "new",
+    "north",
+    "south",
+    "east",
+    "west",
+    "upper",
+    "lower",
+}
+JA_SUFFIX = re.compile(
+    r"(城跡|城址|城|寺|神社|大社|神宮|宮|公園|庭園|山|岳|湖|川|橋|滝|島|温泉|駅|塔|タワー|美術館|博物館|遺跡|跡)$"
+)
+# 拍的不是景點本身
+DETAIL = re.compile(
+    r"detail|close[ _-]?up|macro|interior|inside|ceiling|signboard|\bsigns?\b|\bmaps?\b|"
+    r"ticket|menu|plaque|"
+    r"information[ _]board|\bomamori\b|\bema\b|goshuin|stamp|poster|内部|看板|案内",
+    re.I,
+)
+QUALITY = {
+    "Category:Featured pictures on Wikimedia Commons": 50,
+    "Category:Quality images": 40,
+}
+
+
+def name_tokens(cat: str, ja: str) -> list[str]:
+    """用來確認檔名拍的是這個景點。
+
+    Commons 分類名的特徵字（Himeji Castle → himeji）與日文名去掉字尾（姫路城 → 姫路）。
+    """
+    words = re.split(r"[\s_,()\-–.']+", cat.lower())
+    toks = [w for w in words if len(w) >= 4 and w not in GENERIC]
+    core = JA_SUFFIX.sub("", ja or "")
+    if len(core) >= 2:
+        toks.append(core)
+    return toks
+
+
+def mentions(title: str, toks: list[str]) -> bool:
+    t = title.lower().replace("_", " ")
+    return any(k in t for k in toks)
+
+
+def score(
+    f: dict[str, Any], toks: list[str], depicts: set[str], quality: dict[str, int]
+) -> float | None:
+    """拍得到景點才有分；None 表示不收"""
+    relevant = f["title"] in depicts or mentions(f["title"], toks)
+    if not relevant or not usable(f):
+        return None
+    sc = 0.0
+    if f["title"] in depicts:
+        sc += 50
+    if mentions(f["title"], toks):
+        sc += 35
+    sc += quality.get(f["title"], 0)
+    if DETAIL.search(f["title"]):
+        sc -= 60
+    sc += min(10.0, f["width"] * f["height"] / 1e6)
+    if 1.3 <= f["width"] / f["height"] <= 1.8:
+        sc += 5
+    return sc
+
+
+def depicting_files(qid: str) -> list[dict[str, Any]]:
+    """Commons 結構化資料標了「描繪」（P180）這個景點的檔案，附分類（找季節用）"""
+    data = get_json(
+        API,
+        params={
+            "action": "query",
+            "generator": "search",
+            "gsrsearch": f"haswbstatement:P180={qid}",
+            "gsrnamespace": 6,
+            "gsrlimit": 50,
+            "prop": "imageinfo|categories",
+            "iiprop": "url|size|mime|extmetadata",
+            "iiurlwidth": 960,
+            "cllimit": "max",
+            "clshow": "!hidden",
+            "format": "json",
+        },
+        min_interval=0.5,
+    )
+    out = []
+    for page in data.get("query", {}).get("pages", {}).values():
+        info = (page.get("imageinfo") or [None])[0]
+        if info:
+            cats = [c["title"].removeprefix("Category:") for c in page.get("categories", [])]
+            out.append({"title": page["title"].removeprefix("File:"), "cats": cats, **info})
+    return out
+
+
+def quality_of(titles: list[str]) -> dict[str, int]:
+    """優質、精選圖片的加分"""
+    out: dict[str, int] = {}
+    for i in range(0, len(titles), 50):
+        data = get_json(
+            API,
+            params={
+                "action": "query",
+                "titles": "|".join(f"File:{t}" for t in titles[i : i + 50]),
+                "prop": "categories",
+                "clcategories": "|".join(QUALITY),
+                "cllimit": "max",
+                "format": "json",
+            },
+            min_interval=0.5,
+        )
+        for page in data.get("query", {}).get("pages", {}).values():
+            for c in page.get("categories", []):
+                t = page["title"].removeprefix("File:")
+                out[t] = max(out.get(t, 0), QUALITY.get(c["title"], 0))
+    return out
 
 
 def to_image(f: dict[str, Any]) -> dict[str, str]:
@@ -131,27 +300,57 @@ def free_license(img: dict[str, str]) -> bool:
     return free and "nc" not in re.split(r"[\s-]", lic)
 
 
-def find_season_photos(cat: str, main_file: str | None) -> dict[str, dict[str, str]]:
-    found: dict[str, dict[str, str]] = {}
-    used = {main_file} if main_file else set()
+def find_season_photos(
+    cat: str, main_file: str | None, qid: str = "", ja: str = ""
+) -> dict[str, dict[str, str]]:
+    toks = name_tokens(cat, ja)
+    pool: dict[str, tuple[dict[str, Any], str]] = {}
+    # 1. 季節子分類（每季最多看兩個）
     subs = subcategories(cat)
     for s in SEASONS:
-        for sub in subs:
-            if season_of(sub) != s:
-                continue
-            f = best(files_in(sub), used)
-            if f and free_license(img := to_image(f)):
+        for sub in [x for x in subs if season_of(x) == s][:2]:
+            for f in files_in(sub):
+                pool.setdefault(f["title"], (f, s))
+    # 2. 主分類裡檔名有季節字樣的
+    for f in files_in(cat, 500):
+        if s := season_of(f["title"]):
+            pool.setdefault(f["title"], (f, s))
+    # 3. 描繪這個景點的檔案
+    depicts: set[str] = set()
+    if qid:
+        for f in depicting_files(qid):
+            depicts.add(f["title"])
+            s = season_of(f["title"]) or next(
+                (x for c in f.get("cats", []) if (x := season_of(c))), None
+            )
+            if s:
+                pool.setdefault(f["title"], (f, s))
+    used = {main_file} if main_file else set()
+    relevant = [
+        t
+        for t, (f, _) in pool.items()
+        if t not in used and (t in depicts or mentions(t, toks)) and usable(f)
+    ]
+    quality = quality_of(relevant[:100]) if relevant else {}
+    found: dict[str, dict[str, str]] = {}
+    for s in SEASONS:
+        ranked = sorted(
+            (
+                (sc, f)
+                for t, (f, fs) in pool.items()
+                if fs == s
+                and t not in used
+                and (sc := score(f, toks, depicts, quality)) is not None
+            ),
+            key=lambda x: -x[0],
+        )
+        for sc, f in ranked:
+            if sc < 40:
+                break
+            if free_license(img := to_image(f)):
                 found[s] = img
                 used.add(f["title"])
                 break
-    missing = [s for s in SEASONS if s not in found]
-    if missing:
-        files = files_in(cat, 500)
-        for s in missing:
-            f = best([x for x in files if season_of(x["title"]) == s], used)
-            if f and free_license(img := to_image(f)):
-                found[s] = img
-                used.add(f["title"])
     return found
 
 
@@ -183,7 +382,9 @@ def seed_season_photos(prefs: list[str], min_score: float = 70, refresh: bool = 
             if not cat:
                 continue
             try:
-                photos = find_season_photos(cat, _main_file(s))
+                photos = find_season_photos(
+                    cat, _main_file(s), s["external_ids"]["wikidata"], s["name"]["ja"]
+                )
             except Exception as e:  # 一筆失敗不影響其他
                 lines.append(f"- {pref} {s['name']['ja']}：{e}")
                 continue
