@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed, nextTick, onBeforeUnmount, onMounted, ref, watch } from 'vue'
 
+import { useModal } from '../composables/modal'
 import type { Outfit } from '../data/outfits'
 import { regionOf } from '../data/regions'
 import NewTag from './NewTag.vue'
@@ -9,6 +10,7 @@ import NewTag from './NewTag.vue'
 // 殼的顏色看稀有度（常見：地區色、少見：紅、稀有：金）。動畫中點一下直接打開；系統減少動態時直接打開。
 const props = defineProps<{ result: { outfit: Outfit; duplicate: boolean }; canDraw: boolean; pref?: string | null }>()
 const emit = defineEmits<{ wear: []; again: []; close: [] }>()
+const { cancel, closed } = useModal(() => emit('close'))
 
 type Stage = 'turn' | 'drop' | 'open'
 const reduced = typeof matchMedia !== 'undefined' && matchMedia('(prefers-reduced-motion: reduce)').matches
@@ -57,10 +59,9 @@ const BALLS: Array<[number, number, string]> = [
   [130, 58, 'var(--color-item-yellow)'],
 ]
 
-// Esc 關閉；動畫中 Enter、Space 直接打開
+// 動畫中 Enter、Space 直接打開（Esc 由 <dialog> 的 cancel 收起）
 function onKey(e: KeyboardEvent) {
-  if (e.key === 'Escape') emit('close')
-  else if ((e.key === 'Enter' || e.key === ' ') && stage.value !== 'open') {
+  if ((e.key === 'Enter' || e.key === ' ') && stage.value !== 'open') {
     e.preventDefault()
     open()
   }
@@ -77,75 +78,80 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <div
-    ref="root"
-    tabindex="-1"
-    class="gacha fixed inset-0 z-[70] flex flex-col items-center justify-center gap-5 overflow-hidden bg-ink/85 p-4 outline-none backdrop-blur-sm"
-    role="dialog"
-    aria-modal="true"
+  <dialog
+    ref="dlg"
+    class="m-0 size-full max-h-none max-w-none overflow-hidden bg-transparent p-0 text-ink backdrop:bg-transparent print:hidden"
     aria-label="抽服裝"
-    :data-pref="pref ?? undefined"
-    @click="stage !== 'open' && open()"
+    @cancel="cancel"
+    @close="closed"
   >
-    <div class="relative grid size-[300px] place-items-center max-sm:size-[260px]">
-      <!-- 扭蛋機 -->
-      <svg v-if="stage !== 'open'" viewBox="0 0 200 260" class="machine absolute inset-0 size-full" :class="stage" aria-hidden="true">
-        <g filter="url(#doll-cut)">
-          <rect x="86" y="10" width="28" height="14" rx="4" class="m-strong" />
-          <circle cx="100" cy="92" r="72" class="m-glass" />
-          <g class="balls">
-            <g v-for="([x, y, c], i) in BALLS" :key="i">
-              <circle :cx="x" :cy="y" r="16" class="m-ball-top" />
-              <path :d="`M${x - 16} ${y} A16 16 0 0 0 ${x + 16} ${y}Z`" :style="{ fill: c }" />
+    <div
+      ref="root"
+      tabindex="-1"
+      class="gacha flex size-full flex-col items-center justify-center gap-5 overflow-hidden bg-ink/85 p-4 outline-none backdrop-blur-sm"
+      :data-pref="pref ?? undefined"
+      @click="stage !== 'open' && open()"
+    >
+      <div class="relative grid size-[300px] place-items-center max-sm:size-[260px]">
+        <!-- 扭蛋機 -->
+        <svg v-if="stage !== 'open'" viewBox="0 0 200 260" class="machine absolute inset-0 size-full" :class="stage" aria-hidden="true">
+          <g filter="url(#doll-cut)">
+            <rect x="86" y="10" width="28" height="14" rx="4" class="m-strong" />
+            <circle cx="100" cy="92" r="72" class="m-glass" />
+            <g class="balls">
+              <g v-for="([x, y, c], i) in BALLS" :key="i">
+                <circle :cx="x" :cy="y" r="16" class="m-ball-top" />
+                <path :d="`M${x - 16} ${y} A16 16 0 0 0 ${x + 16} ${y}Z`" :style="{ fill: c }" />
+              </g>
+            </g>
+            <circle cx="100" cy="92" r="72" class="m-glass-shine" />
+            <path d="M44 150 L156 150 C164 150 170 156 170 164 L170 238 C170 246 164 252 156 252 L44 252 C36 252 30 246 30 238 L30 164 C30 156 36 150 44 150Z" class="m-strong" />
+            <rect x="52" y="160" width="96" height="22" rx="4" class="m-plate" />
+            <text x="100" y="176" text-anchor="middle" class="m-plate-text" lang="ja">一巡り</text>
+            <circle cx="100" cy="210" r="20" class="m-plate" />
+            <rect x="84" y="206" width="32" height="8" rx="4" class="m-strong handle" />
+            <rect x="76" y="234" width="48" height="12" rx="4" class="m-chute" />
+          </g>
+        </svg>
+
+        <!-- 掉出來的扭蛋 -->
+        <svg v-if="stage !== 'turn'" viewBox="0 0 120 120" class="capsule absolute size-[150px]" :class="[stage, shell]" aria-hidden="true">
+          <g filter="url(#doll-cut-sm)">
+            <g class="cap-top">
+              <path d="M14 60 A46 46 0 0 1 106 60Z" class="c-clear" />
+              <path d="M30 34 C40 24 54 20 66 20" class="c-shine" />
+            </g>
+            <g class="cap-bottom">
+              <path d="M14 60 A46 46 0 0 0 106 60Z" class="c-color" />
+              <path d="M14 60 L106 60" class="c-band" />
             </g>
           </g>
-          <circle cx="100" cy="92" r="72" class="m-glass-shine" />
-          <path d="M44 150 L156 150 C164 150 170 156 170 164 L170 238 C170 246 164 252 156 252 L44 252 C36 252 30 246 30 238 L30 164 C30 156 36 150 44 150Z" class="m-strong" />
-          <rect x="52" y="160" width="96" height="22" rx="4" class="m-plate" />
-          <text x="100" y="176" text-anchor="middle" class="m-plate-text" lang="ja">一巡り</text>
-          <circle cx="100" cy="210" r="20" class="m-plate" />
-          <rect x="84" y="206" width="32" height="8" rx="4" class="m-strong handle" />
-          <rect x="76" y="234" width="48" height="12" rx="4" class="m-chute" />
-        </g>
-      </svg>
-
-      <!-- 掉出來的扭蛋 -->
-      <svg v-if="stage !== 'turn'" viewBox="0 0 120 120" class="capsule absolute size-[150px]" :class="[stage, shell]" aria-hidden="true">
-        <g filter="url(#doll-cut-sm)">
-          <g class="cap-top">
-            <path d="M14 60 A46 46 0 0 1 106 60Z" class="c-clear" />
-            <path d="M30 34 C40 24 54 20 66 20" class="c-shine" />
-          </g>
-          <g class="cap-bottom">
-            <path d="M14 60 A46 46 0 0 0 106 60Z" class="c-color" />
-            <path d="M14 60 L106 60" class="c-band" />
-          </g>
-        </g>
-      </svg>
-
-      <!-- 打開：貼紙跳出來 -->
-      <template v-if="stage === 'open'">
-        <div class="rays" :class="`rays-${result.outfit.rarity}`" aria-hidden="true"></div>
-        <svg :viewBox="result.outfit.icon" class="prize relative size-[200px] overflow-visible" aria-hidden="true">
-          <g filter="url(#doll-cut)" v-html="result.outfit.svg"></g>
         </svg>
-      </template>
-    </div>
 
-    <div class="flex min-h-[76px] flex-col items-center gap-1 text-paper">
-      <template v-if="stage === 'open'">
-        <p class="reveal flex items-center gap-2 text-h3 font-black">{{ result.outfit.name }}<NewTag /></p>
-        <p v-if="prefName" lang="ja" class="reveal text-label">{{ prefName }}</p>
-      </template>
+        <!-- 打開：貼紙跳出來 -->
+        <template v-if="stage === 'open'">
+          <div class="rays" :class="`rays-${result.outfit.rarity}`" aria-hidden="true"></div>
+          <svg :viewBox="result.outfit.icon" class="prize relative size-[200px] overflow-visible" aria-hidden="true">
+            <g filter="url(#doll-cut)" v-html="result.outfit.svg"></g>
+          </svg>
+        </template>
+      </div>
+
+      <div class="flex min-h-[76px] flex-col items-center gap-1 text-paper">
+        <template v-if="stage === 'open'">
+          <p class="reveal flex items-center gap-2 text-h3 font-black">{{ result.outfit.name }}<NewTag /></p>
+          <p v-if="prefName" lang="ja" class="reveal text-label">{{ prefName }}</p>
+        </template>
+      </div>
+      <div ref="actions" class="flex min-h-11 gap-2">
+        <template v-if="stage === 'open'">
+          <button type="button" class="h-11 rounded-control bg-paper px-5 text-body-sm font-bold text-ink" @click="emit('wear')">穿上</button>
+          <button type="button" class="h-11 rounded-control border border-paper/50 px-4 text-body-sm text-paper disabled:opacity-40" :disabled="!canDraw" @click="emit('again')">再抽一次</button>
+          <button type="button" class="h-11 rounded-control border border-paper/50 px-4 text-body-sm text-paper" @click="emit('close')">關閉</button>
+        </template>
+      </div>
     </div>
-    <div ref="actions" class="flex min-h-11 gap-2">
-      <template v-if="stage === 'open'">
-        <button type="button" class="h-11 rounded-control bg-paper px-5 text-body-sm font-bold text-ink" @click="emit('wear')">穿上</button>
-        <button type="button" class="h-11 rounded-control border border-paper/50 px-4 text-body-sm text-paper disabled:opacity-40" :disabled="!canDraw" @click="emit('again')">再抽一次</button>
-        <button type="button" class="h-11 rounded-control border border-paper/50 px-4 text-body-sm text-paper" @click="emit('close')">關閉</button>
-      </template>
-    </div>
-  </div>
+  </dialog>
 </template>
 
 <style scoped>

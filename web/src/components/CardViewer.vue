@@ -2,6 +2,7 @@
 import { computed, nextTick, onBeforeUnmount, onMounted, ref, watch } from 'vue'
 import type { RouteLocationRaw } from 'vue-router'
 
+import { useModal } from '../composables/modal'
 import { useTilt } from '../composables/tilt'
 import type { CardFace, Rarity } from '../services/card'
 import { reveal, showReveal } from '../services/cardReveal'
@@ -14,7 +15,7 @@ import NewTag from './NewTag.vue'
 import SpotCard from './SpotCard.vue'
 
 // 收集卡放大檢視（DESIGN.md §7.19）：畫面中央一張大卡，點卡片翻面；手機可以用傾斜角度讓卡片轉動。
-// 收集冊裡可以左右切換上一張、下一張（方向鍵、左右滑）。Esc、點背景或「關閉」離開。
+// 收集冊裡可以左右切換上一張、下一張（方向鍵、左右滑）。Esc、點背景或「關閉」離開（原生 <dialog>，composables/modal.ts）。
 // 去過的景點可以「抽一張」（用一張抽獎券，只抽還沒有的）；新拿到還沒看過的樣式標 NEW。
 // 收集到兩種以上時可以把目前這種設為收集冊的封面（stores/cards.ts）。
 // 打開時焦點在卡片上：Space、Enter 翻面。
@@ -34,6 +35,7 @@ const props = defineProps<{
   variantTotal?: number
 }>()
 const emit = defineEmits<{ close: []; step: [delta: -1 | 1] }>()
+const { cancel, closed } = useModal(() => emit('close'))
 
 // 抽一張（DESIGN.md §7.19b）：用一張抽獎券，從這個景點還沒有的樣式裡抽，不會重複；都有了就不能抽
 const cards = useCardsStore()
@@ -105,10 +107,9 @@ async function startGyro() {
   gyro.value = await tilt.useGyro()
 }
 function onKey(e: KeyboardEvent) {
-  // 新卡入手正在亮相、十連抽的卡包開著時，Esc 只關那一層
+  // 新卡入手正在亮相時，按鍵只給那一層（Esc 由最上層的 <dialog> 收到）
   if (reveal.value) return
-  if (e.key === 'Escape') emit('close')
-  else if (e.key === 'ArrowRight') step(1)
+  if (e.key === 'ArrowRight') step(1)
   else if (e.key === 'ArrowLeft') step(-1)
   else if ((e.key === ' ' || e.key === 'Enter') && !(e.target instanceof HTMLButtonElement || e.target instanceof HTMLAnchorElement)) {
     e.preventDefault()
@@ -149,128 +150,133 @@ onBeforeUnmount(() => document.removeEventListener('keydown', onKey))
 
 <template>
   <Teleport to="body">
-    <div
-      data-reduce="fade"
-      class="viewer fixed inset-0 z-50 flex flex-col items-center justify-center gap-5 bg-ink/75 p-4"
-      role="dialog"
-      aria-modal="true"
+    <dialog
+      ref="dlg"
+      class="m-0 size-full max-h-none max-w-none overflow-hidden bg-transparent p-0 text-ink backdrop:bg-transparent"
       :aria-label="`${card.name.ja} 的卡片`"
-      @click.self="emit('close')"
+      @cancel="cancel"
+      @close="closed"
     >
-      <div class="flex items-center gap-3">
-        <button
-          v-if="position"
-          type="button"
-          class="nav grid size-11 place-items-center rounded-full bg-paper/90 text-ink disabled:opacity-30 max-sm:hidden"
-          aria-label="上一張"
-          :disabled="position.index === 0"
-          @click="step(-1)"
-        >
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7" /></svg>
-        </button>
-        <div
-          :key="card.id"
-          ref="cardEl"
-          role="button"
-          tabindex="0"
-          data-reduce="fade"
-          class="viewer-card cursor-pointer rounded-[16px]"
-          :class="enterFrom ? `from-${enterFrom}` : ''"
-          :aria-label="flipped ? '翻回正面' : '翻到背面'"
-          @click="onCardClick"
-          @pointerdown="onPointerDown"
-          @pointerup="onPointerUp"
-          @pointermove="tilt.onPointerMove"
-          @pointerleave="tilt.reset"
-        >
-          <SpotCard
-            :card="card"
-            :rarity="rarity"
-            :label="label"
-            :number="number"
-            :visited="visited"
-            :visited-on="visitedOn"
-            size="lg"
-            :flipped="flipped"
-            :tilt="tilt"
-            :variant="variant"
-          />
-        </div>
-        <button
-          v-if="position"
-          type="button"
-          class="nav grid size-11 place-items-center rounded-full bg-paper/90 text-ink disabled:opacity-30 max-sm:hidden"
-          aria-label="下一張"
-          :disabled="position.index >= position.total - 1"
-          @click="step(1)"
-        >
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7" /></svg>
-        </button>
-      </div>
-      <p v-if="position" class="font-latin text-label text-white/80" aria-live="polite">{{ position.index + 1 }} / {{ position.total }}</p>
-      <!-- 樣式：收集到的幾種之間切換 -->
-      <div v-if="variants && variants.length" class="flex flex-wrap items-center justify-center gap-1.5" role="group" aria-label="樣式">
-        <button
-          v-for="(v, i) in variants"
-          :key="v.key"
-          type="button"
-          class="relative h-8 rounded-full px-3 text-caption font-bold"
-          :class="i === vi ? 'bg-paper text-ink' : 'bg-paper/15 text-white hover:bg-paper/25'"
-          :aria-pressed="i === vi"
-          @click="vi = i"
-        >
-          {{ v.label }}
-          <NewTag v-if="fresh.has(cardKey(card.id, v.key))" class="absolute -top-2 -right-1.5" />
-        </button>
-        <span v-if="variantTotal" class="ml-1 font-latin text-caption text-white/70">{{ variants.length }} / {{ variantTotal }}</span>
-      </div>
-      <!-- 收集冊的封面：這個景點在收集冊顯示哪一種 -->
-      <button
-        v-if="visited && variants && variants.length > 1"
-        type="button"
-        class="cover-btn -mt-2 flex h-8 items-center gap-1.5 rounded-full px-3 text-caption font-bold"
-        :class="isCover ? 'text-white/70' : 'text-white underline decoration-white/40 underline-offset-4 hover:decoration-white'"
-        :disabled="isCover"
-        @click="setCover"
+      <div
+        data-reduce="fade"
+        class="viewer flex size-full flex-col items-center justify-center gap-5 bg-ink/75 p-4"
+        @click.self="emit('close')"
       >
-        <svg width="13" height="13" viewBox="0 0 24 24" :fill="isCover ? 'currentColor' : 'none'" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12v18l-6-4.5L6 21z" /></svg>
-        {{ isCover ? '收集冊的封面' : '設為收集冊的封面' }}
-      </button>
-      <div class="flex flex-wrap justify-center gap-2">
+        <div class="flex items-center gap-3">
+          <button
+            v-if="position"
+            type="button"
+            class="nav grid size-11 place-items-center rounded-full bg-paper/90 text-ink disabled:opacity-30 max-sm:hidden"
+            aria-label="上一張"
+            :disabled="position.index === 0"
+            @click="step(-1)"
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7" /></svg>
+          </button>
+          <div
+            :key="card.id"
+            ref="cardEl"
+            role="button"
+            tabindex="0"
+            data-reduce="fade"
+            class="viewer-card cursor-pointer rounded-[16px]"
+            :class="enterFrom ? `from-${enterFrom}` : ''"
+            :aria-label="flipped ? '翻回正面' : '翻到背面'"
+            @click="onCardClick"
+            @pointerdown="onPointerDown"
+            @pointerup="onPointerUp"
+            @pointermove="tilt.onPointerMove"
+            @pointerleave="tilt.reset"
+          >
+            <SpotCard
+              :card="card"
+              :rarity="rarity"
+              :label="label"
+              :number="number"
+              :visited="visited"
+              :visited-on="visitedOn"
+              size="lg"
+              :flipped="flipped"
+              :tilt="tilt"
+              :variant="variant"
+            />
+          </div>
+          <button
+            v-if="position"
+            type="button"
+            class="nav grid size-11 place-items-center rounded-full bg-paper/90 text-ink disabled:opacity-30 max-sm:hidden"
+            aria-label="下一張"
+            :disabled="position.index >= position.total - 1"
+            @click="step(1)"
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7" /></svg>
+          </button>
+        </div>
+        <p v-if="position" class="font-latin text-label text-white/80" aria-live="polite">{{ position.index + 1 }} / {{ position.total }}</p>
+        <!-- 樣式：收集到的幾種之間切換 -->
+        <div v-if="variants && variants.length" class="flex flex-wrap items-center justify-center gap-1.5" role="group" aria-label="樣式">
+          <button
+            v-for="(v, i) in variants"
+            :key="v.key"
+            type="button"
+            class="relative h-8 rounded-full px-3 text-caption font-bold"
+            :class="i === vi ? 'bg-paper text-ink' : 'bg-paper/15 text-white hover:bg-paper/25'"
+            :aria-pressed="i === vi"
+            @click="vi = i"
+          >
+            {{ v.label }}
+            <NewTag v-if="fresh.has(cardKey(card.id, v.key))" class="absolute -top-2 -right-1.5" />
+          </button>
+          <span v-if="variantTotal" class="ml-1 font-latin text-caption text-white/70">{{ variants.length }} / {{ variantTotal }}</span>
+        </div>
+        <!-- 收集冊的封面：這個景點在收集冊顯示哪一種 -->
         <button
-          v-if="touch && !tilt.reduced"
+          v-if="visited && variants && variants.length > 1"
           type="button"
-          class="h-10 rounded-full bg-paper px-4 text-label font-bold text-ink disabled:opacity-60"
-          :disabled="gyro"
-          @click="startGyro"
+          class="cover-btn -mt-2 flex h-8 items-center gap-1.5 rounded-full px-3 text-caption font-bold"
+          :class="isCover ? 'text-white/70' : 'text-white underline decoration-white/40 underline-offset-4 hover:decoration-white'"
+          :disabled="isCover"
+          @click="setCover"
         >
-          {{ gyro ? '傾斜手機看看' : '用手機傾斜' }}
+          <svg width="13" height="13" viewBox="0 0 24 24" :fill="isCover ? 'currentColor' : 'none'" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12v18l-6-4.5L6 21z" /></svg>
+          {{ isCover ? '收集冊的封面' : '設為收集冊的封面' }}
         </button>
-        <button
-          v-if="canDraw"
-          type="button"
-          class="flex h-10 items-center gap-2 rounded-full bg-paper px-4 text-label font-bold text-ink disabled:opacity-50"
-          :disabled="!missing || !wallet.canSpend(1)"
-          @click="drawOneCard"
-        >
-          {{ missing ? '抽一張' : '已收齊' }}
-          <span v-if="missing" class="font-latin text-caption font-semibold text-sub">券 {{ wallet.left }}</span>
-        </button>
-        <button type="button" class="h-10 rounded-full bg-paper px-4 text-label font-bold text-ink" @click="flipped = !flipped">
-          {{ flipped ? '正面' : '背面' }}
-        </button>
-        <RouterLink
-          v-if="to"
-          :to="to"
-          class="flex h-10 items-center rounded-full bg-paper px-4 text-label font-bold text-ink no-underline"
-        >
-          地圖
-        </RouterLink>
-        <button type="button" class="h-10 rounded-full bg-paper px-4 text-label font-bold text-ink" @click="emit('close')">
-          關閉
-        </button>
+        <div class="flex flex-wrap justify-center gap-2">
+          <button
+            v-if="touch && !tilt.reduced"
+            type="button"
+            class="h-10 rounded-full bg-paper px-4 text-label font-bold text-ink disabled:opacity-60"
+            :disabled="gyro"
+            @click="startGyro"
+          >
+            {{ gyro ? '傾斜手機看看' : '用手機傾斜' }}
+          </button>
+          <button
+            v-if="canDraw"
+            type="button"
+            class="flex h-10 items-center gap-2 rounded-full bg-paper px-4 text-label font-bold text-ink disabled:opacity-50"
+            :disabled="!missing || !wallet.canSpend(1)"
+            @click="drawOneCard"
+          >
+            {{ missing ? '抽一張' : '已收齊' }}
+            <span v-if="missing" class="font-latin text-caption font-semibold text-sub">券 {{ wallet.left }}</span>
+          </button>
+          <button type="button" class="h-10 rounded-full bg-paper px-4 text-label font-bold text-ink" @click="flipped = !flipped">
+            {{ flipped ? '正面' : '背面' }}
+          </button>
+          <RouterLink
+            v-if="to"
+            :to="to"
+            class="flex h-10 items-center rounded-full bg-paper px-4 text-label font-bold text-ink no-underline"
+          >
+            地圖
+          </RouterLink>
+          <button type="button" class="h-10 rounded-full bg-paper px-4 text-label font-bold text-ink" @click="emit('close')">
+            關閉
+          </button>
+        </div>
       </div>
-    </div>
+    </dialog>
   </Teleport>
 </template>
 

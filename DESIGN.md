@@ -490,7 +490,7 @@ header 右側、登入鈕左邊（`SearchBox.vue`，每一頁都在；在行程�
   - 手機在標頭下方放段落目錄（`SectionNav` bar，§7.2a），段落標題 `scroll-mt-14` 不被蓋住。
   - 段落：初訪、地方、旅行、時節、足跡、文化指定、名城、擴充包（各帶 `x / m`）。台紙 `rounded-card border-line bg-paper` 紙紋＋點點方格（點點畫在 `::before`，不蓋掉紙紋）。初訪依地方分行（小標 `text-caption tracking-section text-sub`），已去的是 `PrefStamp`，未去的是虛線圓＋日文縣名（`text-sub`）。成就格 3／4／6 欄，格子是按鈕（最小 44px）：章、名稱（`text-label` 兩行，數字和單位之間是不斷行空格、`break-keep`，折成「九州・沖繩／8 縣」「続日本100名城／10 城」）、日期或進度（`x / n`，地方差 3 縣以內寫「還沒去：秋田、山形」）。同一組已達成的在前。格子的 `aria-label` 寫名稱、日期或進度（有「還沒去：…」時寫那句），有 NEW 時接「，新」。手機的初訪章只有約 52px，NEW 放在上緣正中（壓在外圈上，不蓋住羅馬拼音），桌機在左上。
   - 關掉的擴充包，還沒達成的不列（已達成的照列）；整組都沒有就不列那段。
-  - 詳細（`AchvDetail.vue`，外框 `RulesDialog`）：章 132px、條件、日期（未達成是進度）、抽獎券「5 張」（給券的才有）、有關的地方／旅行／縣最多 12 筆（依日期，連到地圖或行程頁；超過寫「還有 n 處」；打開時才算，平常的判斷不建這份清單）。打開就算看過；Tab 在框裡繞（`RulesDialog` 共用，收集冊、旅人的規則也是）；關閉後焦點回到那一格。
+  - 詳細（`AchvDetail.vue`，外框 `RulesDialog`）：章 132px、條件、日期（未達成是進度）、抽獎券「5 張」（給券的才有）、有關的地方／旅行／縣最多 12 筆（依日期，連到地圖或行程頁；超過寫「還有 n 處」；打開時才算，平常的判斷不建這份清單）。打開就算看過；`RulesDialog` 是原生 `<dialog>`（收集冊、旅人的規則也是），Tab 只在框裡繞、後面的頁面 inert；關閉後焦點回到那一格。
   - 規則（`AchvRules.vue`）：條列文字在 `data/achvRules.ts` 的 `ACHV_RULES`（測試檢查文案；和目錄分開，開站不必載入），抽獎券那段接 `TicketTable`。
 - NEW：每台裝置記得看過哪些（localStorage `hitomeguri:achv-known:<uid>`），和現在達成的比對。某一類（core：只靠 marks、trips；data：還要 achievements.json）第一次可以比對時，把目前達成的靜靜記成基準，所以新裝置、第一次部署都不會冒出一大片 NEW。「可以比對」要等 marks、trips 和伺服器對過一次（`synced`，不是只讀到離線快取）。data 晚到時，基準只算這次登入 core 可以比對那時已經去過的地方：之後才去的（例：新帳號第一個去過就是東寺）達成的世界遺產、國寶照樣標 NEW。取消再勾回來不再 NEW。NEW key 是 `a:<id>`（初訪 `a:pref-<縣>`）；打開詳細拿掉那一個，離開成就頁拿掉全部。
 - 紀錄頁入口：三張卡下面一整列（`md:col-span-3`，高 96px），左邊「成就」與 n / N，中間最近達成的章 56px 疊在一起（新的在上，桌機 6 個、手機 3 個；沒有時三個虛線圓），有 NEW 時左上 `NewTag`。
@@ -545,6 +545,7 @@ header 右側、登入鈕左邊（`SearchBox.vue`，每一頁都在；在行程�
 - 只動 `transform` 與 `opacity`，不對 `width`、`left` 做動畫（進度條用 `scaleX`、開關圓鈕用 `translate`）。
 - 跟手的物理（收集卡傾斜、旅人立牌的慣性）依經過的時間算，60Hz 與 120Hz 的螢幕手感一樣；放開時的速度取最近 100ms 的拖拉。
 - 地圖飛行（flyTo）≤ 1.2s。
+- 對話框：遮罩淡入 0.2s（`animate-scrim-in`），面板淡入上移 8px（0.22s，`animate-modal-in`）。
 - 尊重 `prefers-reduced-motion`：以下全部關掉，只留淡入淡出。`theme.css` base 的做法：
   - 延遲一律拿掉，依序出現的項目不會一個一個等（收集冊的縣地圖進頁時就塗好）。
   - 其他動畫與 transition 縮到 0、不重複（光芒旋轉、骨架掃光停住）。
@@ -581,6 +582,7 @@ header 右側、登入鈕左邊（`SearchBox.vue`，每一頁都在；在行程�
 - 觸控裝置（`pointer: coarse`）的輸入框至少 16px（`theme.css` 把 caption／label／body-sm／body 字級的欄位蓋成 1rem），iOS 聚焦時才不會放大整頁；viewport 不加 `maximum-scale`。單一欄位的表單加 `enterkeyhint`（新增清單、行程名稱 `done`，建立行程 `go`，搜尋 `search`）。
 - 按鈕、`role=button`、分頁、`summary` 長按不選字、不跳系統選單（`theme.css` base 的 `user-select: none`、`-webkit-touch-callout: none`）；label 與內容文字照常可以選。
 - 浮動或內層的捲動區（景點卡片、擴充包卡片、下拉、搜尋結果、規則對話框、加入行程／清單的選單）加 `overscroll-contain`，捲到底不帶動後面的頁面或地圖。
+- 蓋住整個畫面的對話框（規則、成就的詳細、卡片檢視、回顧圖、十連抽、開卡包、扭蛋、新卡入手、截圖）用原生 `<dialog>` 的 `showModal()`（`composables/modal.ts`）：背後 inert、Tab 只在框裡繞、Esc 走 `cancel`、關閉前先 `close()` 讓焦點回到打開它的按鈕。對話框打開時 Teleport 到 body 的下拉、日期選擇會被 inert，要用的話掛在 `<dialog>` 裡面。
 
 ---
 

@@ -2,6 +2,7 @@
 import { computed, onBeforeUnmount, onMounted, ref } from 'vue'
 
 import { useCardDraw } from '../composables/cardDraw'
+import { useModal } from '../composables/modal'
 import { type CollectionCard, useCollection } from '../composables/collection'
 import { useVisitedEntries } from '../composables/visited'
 import type { Rarity } from '../services/card'
@@ -19,6 +20,7 @@ import SpotCard from './SpotCard.vue'
 // （收集卡的十連抽是另一個元件 TenPull.vue）
 const props = defineProps<{ trip: Trip }>()
 const emit = defineEmits<{ close: [] }>()
+const { cancel, closed } = useModal(() => emit('close'))
 
 const entries = computed<Array<[string, Mark]>>(() => {
   const t = props.trip
@@ -122,9 +124,9 @@ function finish() {
   markOpened(props.trip.id)
 }
 
+// Space、Enter 翻下一張（Esc 由 <dialog> 的 cancel 收起）
 function onKey(e: KeyboardEvent) {
-  if (e.key === 'Escape') emit('close')
-  else if (e.key === ' ' || e.key === 'Enter') {
+  if (e.key === ' ' || e.key === 'Enter') {
     e.preventDefault()
     next()
   }
@@ -157,64 +159,72 @@ function markOpened(tripId: string) {
 </script>
 
 <template>
-  <div class="fixed inset-0 z-[66] flex flex-col items-center justify-center gap-5 overflow-hidden bg-ink/80 p-4 print:hidden" role="dialog" aria-modal="true" aria-label="卡包" @click="stage === 'opening' && toDealing()">
-    <!-- 封著的卡包（撕開的途中點任何地方都直接發牌） -->
-    <div v-if="stage === 'sealed' || stage === 'opening'" class="pack-stage" :class="stage" :data-pref="mainPref ?? undefined">
-      <button type="button" class="pack paper-grain relative block overflow-hidden rounded-[18px] bg-region text-on-region" aria-label="打開卡包" @click.stop="next">
-        <span class="pack-top absolute inset-x-0 top-0 h-[14%] border-b-2 border-dashed border-on-region/40 bg-region-strong/30"></span>
-        <RegionMotif :pref="mainPref ?? undefined" class="absolute top-1/2 left-1/2 size-[220px] -translate-x-1/2 -translate-y-1/2 opacity-70" />
-        <span class="relative flex h-full flex-col items-center justify-end gap-1 px-4 pb-6 text-center">
-          <span lang="ja" class="text-[30px] leading-none font-black">一巡り</span>
-          <span class="line-clamp-2 text-label font-bold">{{ title }}</span>
-          <span class="font-latin text-body-sm font-semibold">{{ deck.length }} 張</span>
-        </span>
-        <span class="pack-sheen pointer-events-none absolute inset-0" aria-hidden="true"></span>
-      </button>
-    </div>
-
-    <!-- 一張一張翻 -->
-    <div v-else-if="stage === 'dealing' && current" class="relative flex flex-col items-center gap-4">
-      <div v-if="flipped && raysKind(current) !== 'normal'" class="rays" :class="`rays-${raysKind(current)}`" :data-pref="current.face.pref" aria-hidden="true"></div>
-      <button :key="current.key" type="button" class="deal-card relative [perspective:1400px]" :aria-label="flipped ? `下一張（${current.face.name.ja}）` : '翻開'" @click="next">
-        <span class="flip relative block [transform-style:preserve-3d]" :class="{ 'is-flipped': flipped }">
-          <span class="flip-back paper-grain absolute inset-0 grid place-items-center overflow-hidden rounded-[16px] bg-region text-on-region" :data-pref="mainPref ?? undefined">
-            <RegionMotif :pref="mainPref ?? undefined" class="absolute size-[260px] opacity-80" />
-            <span lang="ja" class="relative text-[34px] font-black">一巡り</span>
+  <dialog
+    ref="dlg"
+    class="m-0 size-full max-h-none max-w-none overflow-hidden bg-transparent p-0 text-ink backdrop:bg-transparent print:hidden"
+    aria-label="卡包"
+    @cancel="cancel"
+    @close="closed"
+  >
+    <div class="flex size-full flex-col items-center justify-center gap-5 overflow-hidden bg-ink/80 p-4" @click="stage === 'opening' && toDealing()">
+      <!-- 封著的卡包（撕開的途中點任何地方都直接發牌） -->
+      <div v-if="stage === 'sealed' || stage === 'opening'" class="pack-stage" :class="stage" :data-pref="mainPref ?? undefined">
+        <button type="button" class="pack paper-grain relative block overflow-hidden rounded-[18px] bg-region text-on-region" aria-label="打開卡包" @click.stop="next">
+          <span class="pack-top absolute inset-x-0 top-0 h-[14%] border-b-2 border-dashed border-on-region/40 bg-region-strong/30"></span>
+          <RegionMotif :pref="mainPref ?? undefined" class="absolute top-1/2 left-1/2 size-[220px] -translate-x-1/2 -translate-y-1/2 opacity-70" />
+          <span class="relative flex h-full flex-col items-center justify-end gap-1 px-4 pb-6 text-center">
+            <span lang="ja" class="text-[30px] leading-none font-black">一巡り</span>
+            <span class="line-clamp-2 text-label font-bold">{{ title }}</span>
+            <span class="font-latin text-body-sm font-semibold">{{ deck.length }} 張</span>
           </span>
-          <span class="flip-front block">
-            <SpotCard :card="current.face" :rarity="current.rarity" :label="current.label" :number="current.number" visited :visited-on="current.visitedOn" size="lg" :variant="shown(current)" />
-          </span>
-        </span>
-      </button>
-      <p class="font-latin text-body-sm text-paper/80">{{ index + 1 }} / {{ deck.length }}</p>
-    </div>
+          <span class="pack-sheen pointer-events-none absolute inset-0" aria-hidden="true"></span>
+        </button>
+      </div>
 
-    <!-- 翻完：一覽 -->
-    <div v-else-if="stage === 'done'" class="flex max-h-full w-full max-w-3xl flex-col gap-4 overflow-x-hidden overflow-y-auto p-3">
-      <p class="text-center text-h3 font-black text-paper">{{ title }}　<span class="font-latin">{{ deck.length }}</span> 張</p>
-      <ul class="grid grid-cols-3 gap-3 sm:grid-cols-4 md:grid-cols-5">
-        <li v-for="(c, i) in revealed" :key="c.key" class="deal-in @container" :style="{ '--i': Math.min(i, 15) }">
-          <SpotCard :card="c.face" :rarity="c.rarity" :label="c.label" :number="c.number" visited :visited-on="c.visitedOn" size="fluid" :variant="shown(c)" />
+      <!-- 一張一張翻 -->
+      <div v-else-if="stage === 'dealing' && current" class="relative flex flex-col items-center gap-4">
+        <div v-if="flipped && raysKind(current) !== 'normal'" class="rays" :class="`rays-${raysKind(current)}`" :data-pref="current.face.pref" aria-hidden="true"></div>
+        <button :key="current.key" type="button" class="deal-card relative [perspective:1400px]" :aria-label="flipped ? `下一張（${current.face.name.ja}）` : '翻開'" @click="next">
+          <span class="flip relative block [transform-style:preserve-3d]" :class="{ 'is-flipped': flipped }">
+            <span class="flip-back paper-grain absolute inset-0 grid place-items-center overflow-hidden rounded-[16px] bg-region text-on-region" :data-pref="mainPref ?? undefined">
+              <RegionMotif :pref="mainPref ?? undefined" class="absolute size-[260px] opacity-80" />
+              <span lang="ja" class="relative text-[34px] font-black">一巡り</span>
+            </span>
+            <span class="flip-front block">
+              <SpotCard :card="current.face" :rarity="current.rarity" :label="current.label" :number="current.number" visited :visited-on="current.visitedOn" size="lg" :variant="shown(current)" />
+            </span>
+          </span>
+        </button>
+        <p class="font-latin text-body-sm text-paper/80">{{ index + 1 }} / {{ deck.length }}</p>
+      </div>
+
+      <!-- 翻完：一覽 -->
+      <div v-else-if="stage === 'done'" class="flex max-h-full w-full max-w-3xl flex-col gap-4 overflow-x-hidden overflow-y-auto p-3">
+        <p class="text-center text-h3 font-black text-paper">{{ title }}　<span class="font-latin">{{ deck.length }}</span> 張</p>
+        <ul class="grid grid-cols-3 gap-3 sm:grid-cols-4 md:grid-cols-5">
+          <li v-for="(c, i) in revealed" :key="c.key" class="deal-in @container" :style="{ '--i': Math.min(i, 15) }">
+            <SpotCard :card="c.face" :rarity="c.rarity" :label="c.label" :number="c.number" visited :visited-on="c.visitedOn" size="fluid" :variant="shown(c)" />
+          </li>
+        </ul>
+        <!-- 這趟達成的初訪章與成就（DESIGN.md §7.25） -->
+        <AchvRow :trip="trip" animate />
+      </div>
+
+      <!-- 已翻開的排在下方 -->
+      <ul v-if="stage === 'dealing' && revealed.length" class="flex max-w-full gap-2 overflow-x-auto px-2 pb-1" aria-label="已翻開">
+        <li v-for="c in revealed" :key="c.key" class="mini w-12 shrink-0 @container">
+          <SpotCard :card="c.face" :rarity="c.rarity" :number="c.number" size="fluid" :variant="shown(c)" />
         </li>
       </ul>
-      <!-- 這趟達成的初訪章與成就（DESIGN.md §7.25） -->
-      <AchvRow :trip="trip" animate />
-    </div>
 
-    <!-- 已翻開的排在下方 -->
-    <ul v-if="stage === 'dealing' && revealed.length" class="flex max-w-full gap-2 overflow-x-auto px-2 pb-1" aria-label="已翻開">
-      <li v-for="c in revealed" :key="c.key" class="mini w-12 shrink-0 @container">
-        <SpotCard :card="c.face" :rarity="c.rarity" :number="c.number" size="fluid" :variant="shown(c)" />
-      </li>
-    </ul>
-
-    <div class="flex gap-2">
-      <button v-if="stage === 'sealed'" type="button" class="h-11 rounded-control bg-paper px-5 text-body-sm font-bold text-ink" :disabled="!deck.length" @click="open">打開</button>
-      <button v-if="stage === 'dealing'" type="button" class="h-11 rounded-control border border-paper/50 px-4 text-body-sm text-paper" @click="revealAll">全部翻開</button>
-      <RouterLink v-if="stage === 'done'" to="/log/cards" class="flex h-11 items-center rounded-control bg-paper px-5 text-body-sm font-bold text-ink no-underline" @click="emit('close')">收集冊</RouterLink>
-      <button type="button" class="h-11 rounded-control border border-paper/50 px-4 text-body-sm text-paper" @click="emit('close')">關閉</button>
+      <div class="flex gap-2">
+        <button v-if="stage === 'sealed'" type="button" class="h-11 rounded-control bg-paper px-5 text-body-sm font-bold text-ink" :disabled="!deck.length" @click="open">打開</button>
+        <button v-if="stage === 'dealing'" type="button" class="h-11 rounded-control border border-paper/50 px-4 text-body-sm text-paper" @click="revealAll">全部翻開</button>
+        <RouterLink v-if="stage === 'done'" to="/log/cards" class="flex h-11 items-center rounded-control bg-paper px-5 text-body-sm font-bold text-ink no-underline" @click="emit('close')">收集冊</RouterLink>
+        <button type="button" class="h-11 rounded-control border border-paper/50 px-4 text-body-sm text-paper" @click="emit('close')">關閉</button>
+      </div>
     </div>
-  </div>
+  </dialog>
 </template>
 
 <style scoped>

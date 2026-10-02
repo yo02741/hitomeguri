@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed, onBeforeUnmount, onMounted, ref } from 'vue'
 
+import { useModal } from '../composables/modal'
 import { useTilt } from '../composables/tilt'
 import type { CardFace, Rarity } from '../services/card'
 import type { Variant } from '../services/cardVariants'
@@ -76,14 +77,15 @@ function onCell(i: number) {
   else zoom.value = i
 }
 
-function onKey(e: KeyboardEvent) {
-  if (e.key !== 'Escape') return
-  e.stopPropagation()
-  if (zoom.value !== null) zoom.value = null
-  else emit('close')
-}
+// Esc（<dialog> 的 cancel）：放大檢視時先收起放大
+const { cancel, closed } = useModal(
+  () => {
+    if (zoom.value !== null) zoom.value = null
+    else emit('close')
+  },
+  () => emit('close'),
+)
 onMounted(() => {
-  document.addEventListener('keydown', onKey, true)
   firstBtn.value?.focus()
   void autoFlip()
 })
@@ -91,58 +93,65 @@ onBeforeUnmount(() => {
   running = false
   timers.forEach(clearTimeout)
   timers = []
-  document.removeEventListener('keydown', onKey, true)
 })
 
 const zoomed = computed(() => (zoom.value === null ? null : props.pulls[zoom.value]))
 </script>
 
 <template>
-  <div class="ten fixed inset-0 z-[66] flex flex-col items-center justify-center gap-[2.4vh] overflow-hidden bg-ink/90 px-4 backdrop-blur-sm print:hidden" role="dialog" aria-modal="true" :aria-label="title">
-    <p class="text-center text-h3 font-black text-paper">{{ title }}</p>
+  <dialog
+    ref="dlg"
+    class="m-0 size-full max-h-none max-w-none overflow-hidden bg-transparent p-0 text-ink backdrop:bg-transparent print:hidden"
+    :aria-label="title"
+    @cancel="cancel"
+    @close="closed"
+  >
+    <div class="ten relative flex size-full flex-col items-center justify-center gap-[2.4vh] overflow-hidden bg-ink/90 px-4 backdrop-blur-sm">
+      <p class="text-center text-h3 font-black text-paper">{{ title }}</p>
 
-    <ol class="grid grid-cols-[repeat(5,var(--cw))] gap-(--g)" aria-label="十張卡">
-      <li
-        v-for="(p, i) in pulls"
-        :key="i"
-        class="slot relative aspect-[5/7] @container"
-        :class="{ 'is-open': open[i], 'is-rare': rare(p.variant) }"
-        :style="{ '--i': i, '--col': i % 5, '--row': Math.floor(i / 5) }"
-      >
-        <span v-if="open[i] && glow(p.variant)" class="glow pointer-events-none absolute" :class="`glow-${glow(p.variant)}`" :data-pref="p.face.pref" aria-hidden="true"></span>
-        <button
-          type="button"
-          class="relative block size-full [perspective:900px]"
-          :aria-label="open[i] ? `放大（${p.variant.label}）` : `翻開第 ${i + 1} 張`"
-          @click="onCell(i)"
+      <ol class="grid grid-cols-[repeat(5,var(--cw))] gap-(--g)" aria-label="十張卡">
+        <li
+          v-for="(p, i) in pulls"
+          :key="i"
+          class="slot relative aspect-[5/7] @container"
+          :class="{ 'is-open': open[i], 'is-rare': rare(p.variant) }"
+          :style="{ '--i': i, '--col': i % 5, '--row': Math.floor(i / 5) }"
         >
-          <span class="flip relative block size-full [transform-style:preserve-3d]">
-            <span class="back paper-grain absolute inset-0 grid place-items-center overflow-hidden rounded-[5cqi] bg-region text-on-region" :data-pref="p.face.pref">
-              <RegionMotif :pref="p.face.pref" class="absolute size-[120cqi] opacity-80" />
-              <span lang="ja" class="relative text-[17cqi] leading-none font-black">一巡り</span>
+          <span v-if="open[i] && glow(p.variant)" class="glow pointer-events-none absolute" :class="`glow-${glow(p.variant)}`" :data-pref="p.face.pref" aria-hidden="true"></span>
+          <button
+            type="button"
+            class="relative block size-full [perspective:900px]"
+            :aria-label="open[i] ? `放大（${p.variant.label}）` : `翻開第 ${i + 1} 張`"
+            @click="onCell(i)"
+          >
+            <span class="flip relative block size-full [transform-style:preserve-3d]">
+              <span class="back paper-grain absolute inset-0 grid place-items-center overflow-hidden rounded-[5cqi] bg-region text-on-region" :data-pref="p.face.pref">
+                <RegionMotif :pref="p.face.pref" class="absolute size-[120cqi] opacity-80" />
+                <span lang="ja" class="relative text-[17cqi] leading-none font-black">一巡り</span>
+              </span>
+              <span class="front absolute inset-0 block">
+                <SpotCard :card="p.face" :rarity="p.rarity" :label="p.label" :number="p.number" size="fluid" :variant="p.variant" />
+              </span>
             </span>
-            <span class="front absolute inset-0 block">
-              <SpotCard :card="p.face" :rarity="p.rarity" :label="p.label" :number="p.number" size="fluid" :variant="p.variant" />
-            </span>
-          </span>
-        </button>
-        <NewTag v-if="open[i]" class="new absolute -top-2 -left-1.5 z-10" />
-      </li>
-    </ol>
+          </button>
+          <NewTag v-if="open[i]" class="new absolute -top-2 -left-1.5 z-10" />
+        </li>
+      </ol>
 
-    <div class="flex gap-2">
-      <button v-if="!done" ref="firstBtn" type="button" class="h-11 rounded-control bg-paper px-5 text-body-sm font-bold text-ink" @click="flipAll">全部翻開</button>
-      <button v-else-if="canAgain" type="button" class="h-11 rounded-control bg-paper px-5 text-body-sm font-bold text-ink" @click="emit('again')">再十連抽</button>
-      <button type="button" class="h-11 rounded-control border border-paper/50 px-4 text-body-sm text-paper" @click="emit('close')">關閉</button>
-    </div>
+      <div class="flex gap-2">
+        <button v-if="!done" ref="firstBtn" type="button" class="h-11 rounded-control bg-paper px-5 text-body-sm font-bold text-ink" @click="flipAll">全部翻開</button>
+        <button v-else-if="canAgain" type="button" class="h-11 rounded-control bg-paper px-5 text-body-sm font-bold text-ink" @click="emit('again')">再十連抽</button>
+        <button type="button" class="h-11 rounded-control border border-paper/50 px-4 text-body-sm text-paper" @click="emit('close')">關閉</button>
+      </div>
 
-    <!-- 放大看一張 -->
-    <div v-if="zoomed" class="zoom absolute inset-0 grid place-items-center bg-ink/70" @click="zoom = null">
-      <div class="cursor-pointer" role="button" tabindex="0" aria-label="收起" @pointermove="tilt.onPointerMove" @pointerleave="tilt.reset" @keydown.enter="zoom = null">
-        <SpotCard :card="zoomed.face" :rarity="zoomed.rarity" :label="zoomed.label" :number="zoomed.number" visited :visited-on="zoomed.visitedOn" size="lg" :tilt="tilt" :variant="zoomed.variant" />
+      <!-- 放大看一張 -->
+      <div v-if="zoomed" class="zoom absolute inset-0 grid place-items-center bg-ink/70" @click="zoom = null">
+        <div class="cursor-pointer" role="button" tabindex="0" aria-label="收起" @pointermove="tilt.onPointerMove" @pointerleave="tilt.reset" @keydown.enter="zoom = null">
+          <SpotCard :card="zoomed.face" :rarity="zoomed.rarity" :label="zoomed.label" :number="zoomed.number" visited :visited-on="zoomed.visitedOn" size="lg" :tilt="tilt" :variant="zoomed.variant" />
+        </div>
       </div>
     </div>
-  </div>
+  </dialog>
 </template>
 
 <style scoped>

@@ -208,6 +208,15 @@
   @keyframes sheet-in {
     from { transform: translateY(100%); }
   }
+  /* 對話框（原生 <dialog>）：遮罩淡入，面板淡入上移 8px */
+  --animate-scrim-in: scrim-in 0.2s ease both;
+  @keyframes scrim-in {
+    from { opacity: 0; }
+  }
+  --animate-modal-in: modal-in 0.22s var(--ease-out-soft) both;
+  @keyframes modal-in {
+    from { opacity: 0; transform: translateY(8px) scale(0.98); }
+  }
 }
 
 /* 地區色與中性色：值由 [data-pref] 在執行時決定（沒有 data-pref 時為 :root 的全國色）。

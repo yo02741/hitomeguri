@@ -12,7 +12,7 @@ import SpotCard from './SpotCard.vue'
 // 新卡入手（DESIGN.md §7.19）：卡片從下方轉兩圈飛到畫面中央，落定時背後放光、蓋上去過的印章、
 // 一道光掃過卡面；停一下之後縮小飛進「紀錄」分頁（頂部或手機底部，看得到的那個），分頁跳一下。
 // 這次去過剛好達成成就時，落定時在卡片右上多蓋一個成就章（rank 最高的那個；其他的只標 NEW，DESIGN.md §7.25）。
-// 點任何地方、Esc 直接收進去。
+// 點任何地方、Esc 直接收進去。原生 <dialog>：收集卡檢視（也是 <dialog>）裡抽到的卡要蓋在它上面，只有 top layer 做得到。
 // 減少動態：卡片與背景只淡入、淡出，不轉、不飛、不震；停留時間一樣，讀屏照樣唸出拿到哪一張。
 const marks = useMarksStore()
 const achv = useAchievementsStore()
@@ -32,6 +32,7 @@ const burstKind = computed(() => {
 })
 const visitedOn = computed(() => (r.value ? (marks.markOf(r.value.face.id)?.visited_on ?? null) : null))
 
+const dlg = ref<HTMLDialogElement | null>(null)
 const backdrop = ref<HTMLElement | null>(null)
 const burst = ref<HTMLElement | null>(null)
 const fly = ref<HTMLElement | null>(null)
@@ -67,6 +68,7 @@ async function play() {
   seal.value = null
   others.value = 0
   await nextTick()
+  if (dlg.value && !dlg.value.open) dlg.value.showModal()
   const s = spin.value
   if (!s || !backdrop.value || !burst.value) return
   if (reduced) {
@@ -181,32 +183,41 @@ function leave() {
   later(dur, () => (reveal.value = null))
 }
 
-function onKey(e: KeyboardEvent) {
-  if (e.key === 'Escape') leave()
+// 瀏覽器不讓擋的那次 Esc（連按）會直接關掉 <dialog>：這張就不飛了，直接收掉
+function onClosed(e: Event) {
+  if (e.target !== dlg.value || !reveal.value) return
+  clear()
+  reveal.value = null
 }
-// immediate：這個元件登入後才非同步掛上（App.vue），沒登入時按「去過」、登入完馬上要播的那張也播得到
+// immediate：這個元件登入後才非同步掛上（App.vue），沒登入時按「去過」、登入完馬上要播的那張也播得到。
+// 換下一張或收掉之前先 close()，焦點回到打開前的按鈕
 watch(
   () => r.value?.key,
   (k) => {
-    if (k) {
-      document.addEventListener('keydown', onKey)
-      void play()
-    } else {
-      document.removeEventListener('keydown', onKey)
-    }
+    if (dlg.value?.open) dlg.value.close()
+    if (k) void play()
   },
   { immediate: true },
 )
 // 登出時卸下：播到一半的不留到下次登入
 onBeforeUnmount(() => {
   clear()
-  document.removeEventListener('keydown', onKey)
+  if (dlg.value?.open) dlg.value.close()
   reveal.value = null
 })
 </script>
 
 <template>
-  <div v-if="r" :key="r.key" class="fixed inset-0 z-[70] overflow-hidden print:hidden" @click="leave">
+  <dialog
+    v-if="r"
+    :key="r.key"
+    ref="dlg"
+    class="m-0 size-full max-h-none max-w-none overflow-hidden bg-transparent p-0 text-ink backdrop:bg-transparent print:hidden"
+    aria-labelledby="reveal-status"
+    @cancel.prevent="leave"
+    @close="onClosed"
+    @click="leave"
+  >
     <div ref="backdrop" class="absolute inset-0 bg-ink/50"></div>
     <div ref="burst" class="burst" :class="`burst-${burstKind}`" :data-pref="r.face.pref" aria-hidden="true">
       <div class="rays"></div>
@@ -228,10 +239,10 @@ onBeforeUnmount(() => {
         </div>
       </div>
     </div>
-    <p class="sr-only" role="status">
+    <p id="reveal-status" class="sr-only" role="status">
       {{ r.face.name.ja }}　{{ r.variant?.label ?? '' }}　收進收集冊<template v-if="seal">　成就　{{ seal.name }}<template v-if="others">　等 {{ others + 1 }} 個</template></template>
     </p>
-  </div>
+  </dialog>
 </template>
 
 <style scoped>
