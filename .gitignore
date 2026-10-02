@@ -33,3 +33,6 @@ emulator-data/
 
 # python build
 *.egg-info/
+
+# Claude Code 的工作樹（多代理實作用，暫存）
+.claude/worktrees/

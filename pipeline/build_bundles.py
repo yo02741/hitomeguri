@@ -195,10 +195,13 @@ def build(src: Path = SPOTS_DIR, dst: Path = BUNDLES_DIR) -> list[Path]:
         "count": len(timed),
         "version": hashlib.sha1(json.dumps(timed).encode()).hexdigest()[:10],
     }
-    written.append(_write(dst / "_index.json", index))
     # 首頁只需要各縣精選：一個小檔，不必先載入全部縣的地圖 bundle
     written.append(_write(dst / "featured.json", featured))
-    written += build_extras(dst)
+    extras = build_extras(dst)
+    written += extras
+    # 地區特色、會話、季節、航線也帶版本（網址加 ?v=）：前端與 service worker 存了就不必每次再下載
+    index["extras"] = {p.stem: hashlib.sha1(p.read_bytes()).hexdigest()[:10] for p in extras}
+    written.append(_write(dst / "_index.json", index))
     return written
 
 

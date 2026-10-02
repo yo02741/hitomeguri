@@ -125,12 +125,29 @@ export const useCatalogStore = defineStore('catalog', () => {
   const flights = shallowRef<FlightRoute[]>([])
 
   const seasons = shallowRef<SeasonData | null>(null)
+  // 載過就不再抓（once 只合併同時進行的請求，結束後就忘了）
+  let extrasLoaded = false
+  let flightsLoaded = false
+  /** 地區特色、航線、季節：深度探索與旅前準備用（specialties 約 1.8 MB，首頁、地圖頁不載） */
   async function loadExtras(): Promise<void> {
+    if (extrasLoaded) return
+    await loadIndex()
+    const v = index.value?.extras ?? {}
     await once('extras', async () => {
-      const [s, f, se] = await Promise.all([fetchSpecialties(), fetchFlights(), fetchSeasons()])
+      const [s, f, se] = await Promise.all([fetchSpecialties(v.specialties), flightsLoaded ? flights.value : fetchFlights(v.flights), fetchSeasons(v.seasons)])
       specialties.value = s
       flights.value = f
       seasons.value = se
+      extrasLoaded = flightsLoaded = true
+    })
+  }
+  /** 只要航線（地區標籤的直飛航線） */
+  async function loadFlights(): Promise<void> {
+    if (flightsLoaded) return
+    await loadIndex()
+    await once('flights', async () => {
+      flights.value = await fetchFlights(index.value?.extras?.flights)
+      flightsLoaded = true
     })
   }
 
@@ -200,7 +217,8 @@ export const useCatalogStore = defineStore('catalog', () => {
   const phrases = shallowRef<import('../services/prep').Phrase[] | null>(null)
   async function loadPhrases() {
     if (phrases.value) return phrases.value
-    return once('phrases', async () => (phrases.value = await fetchPhrases()))
+    await loadIndex()
+    return once('phrases', async () => (phrases.value = await fetchPhrases(index.value?.extras?.phrases)))
   }
 
   /** 全國搜尋索引：第一次搜尋時才載入 */
@@ -221,7 +239,7 @@ export const useCatalogStore = defineStore('catalog', () => {
 
   return {
     loadSearch,
-    index, mapSpots, featured, loadFeatured, details, specialties, flights, seasons, festivals, loadFestivals, rail, loadRail, loadExtras, loadIndex, available,
+    index, mapSpots, featured, loadFeatured, details, specialties, flights, seasons, festivals, loadFestivals, rail, loadRail, loadExtras, loadFlights, loadIndex, available,
     loadMap, loadAllMaps, loadDetail, getSpot, packs, loadPack, phrases, loadPhrases, timed, loadTimed,
   }
 })

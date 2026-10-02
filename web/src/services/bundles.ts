@@ -75,7 +75,12 @@ export interface BundleIndex {
   festivals?: Record<string, { count: number; version: string }>
   /** 期間限定（全國一個檔） */
   timed?: { count: number; version: string }
+  /** 地區特色、會話、季節、航線：檔名 → 版本 */
+  extras?: Partial<Record<'specialties' | 'flights' | 'phrases' | 'seasons', string>>
 }
+
+/** 有版本就加 ?v=（舊的 _index.json 沒有版本時照舊抓） */
+const withV = (path: string, v?: string) => (v ? `${path}?v=${v}` : path)
 
 /** 搜尋索引一筆：[id, 縣, 日文名, 假名, 繁中名（同日文時空字串）, 羅馬拼音, 分數] */
 export type SearchRow = [string, string, string, string, string, string, number]
@@ -156,9 +161,9 @@ export interface FlightRoute {
   sources?: { url: string; fetched_at: string }[]
 }
 
-export async function fetchSpecialties(): Promise<Specialty[]> {
+export async function fetchSpecialties(v?: string): Promise<Specialty[]> {
   try {
-    return await getJson<Specialty[]>('specialties.json')
+    return await getJson<Specialty[]>(withV('specialties.json', v))
   } catch {
     return []
   }
@@ -203,9 +208,9 @@ export interface SeasonData {
   stations: SeasonStation[]
 }
 
-export async function fetchSeasons(): Promise<SeasonData | null> {
+export async function fetchSeasons(v?: string): Promise<SeasonData | null> {
   try {
-    return await getJson<SeasonData>('seasons.json')
+    return await getJson<SeasonData>(withV('seasons.json', v))
   } catch {
     return null
   }
@@ -238,17 +243,17 @@ export async function fetchTimed(version: string): Promise<TimedItem[]> {
 }
 
 /** 旅前準備的會話（data/phrases） */
-export async function fetchPhrases(): Promise<import('./prep').Phrase[]> {
+export async function fetchPhrases(v?: string): Promise<import('./prep').Phrase[]> {
   try {
-    return await getJson<import('./prep').Phrase[]>('phrases.json')
+    return await getJson<import('./prep').Phrase[]>(withV('phrases.json', v))
   } catch {
     return []
   }
 }
 
-export async function fetchFlights(): Promise<FlightRoute[]> {
+export async function fetchFlights(v?: string): Promise<FlightRoute[]> {
   try {
-    return await getJson<FlightRoute[]>('flights.json')
+    return await getJson<FlightRoute[]>(withV('flights.json', v))
   } catch {
     return []
   }

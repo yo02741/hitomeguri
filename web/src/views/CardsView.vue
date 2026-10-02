@@ -207,7 +207,7 @@ function onCardKey(e: KeyboardEvent, id: string) {
           <span class="ml-auto font-latin text-body-sm text-sub">{{ g.items.length || g.pending }}</span>
         </h2>
         <ul class="grid grid-cols-2 gap-x-4 gap-y-5 sm:grid-cols-3 lg:grid-cols-4">
-          <li v-for="(e, i) in g.items" :key="e.face.id" class="deal relative @container" :style="{ '--i': Math.min(i, 12) }">
+          <li v-for="(e, i) in g.items" :key="e.face.id" class="deal relative @container" :class="{ 'deal-in': i < 12 }" :style="{ '--i': i }">
             <div
               role="button"
               tabindex="0"
@@ -216,7 +216,7 @@ function onCardKey(e: KeyboardEvent, id: string) {
               @click="openId = e.face.id"
               @keydown="onCardKey($event, e.face.id)"
             >
-              <SpotCard :card="e.face" :rarity="e.rarity" :label="e.label" :number="e.number" visited :visited-on="e.visitedOn" size="fluid" :variant="shownVariant(e)" />
+              <SpotCard :card="e.face" :rarity="e.rarity" :label="e.label" :number="e.number" visited :visited-on="e.visitedOn" size="fluid" :variant="shownVariant(e)" lite />
             </div>
             <NewTag v-if="fresh.spotHasNew(e.face.id)" class="absolute -top-1.5 -left-1.5 z-10" />
             <p v-if="e.variants.length > 1" class="mt-1.5 flex justify-center gap-1 text-caption text-sub">
@@ -254,9 +254,21 @@ function onCardKey(e: KeyboardEvent, id: string) {
 </template>
 
 <style scoped>
-/* 發牌：卡片依序從下方翻上來 */
+/* 畫面外的卡先不畫（收集冊有上百張卡）。四周留 1rem 給 NEW 標記與卡片陰影，不被 paint containment 裁掉；
+ * 滑鼠移上去、聚焦時取消，傾斜時的大陰影才不會被裁 */
 .deal {
-  animation: deal-in 0.5s var(--ease-out-soft) both;
+  content-visibility: auto;
+  contain-intrinsic-size: auto 360px;
+  padding: 1rem;
+  margin: -1rem;
+}
+.deal:hover,
+.deal:focus-within {
+  content-visibility: visible;
+}
+/* 發牌：第一屏的卡依序從下方翻上來（只有前 12 張；動畫結束後不保留 transform，才不會一直佔著合成層） */
+.deal-in {
+  animation: deal-in 0.5s var(--ease-out-soft) backwards;
   animation-delay: calc(var(--i) * 45ms);
 }
 @keyframes deal-in {

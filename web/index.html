@@ -14,6 +14,11 @@
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- 資料索引（約 2 KB）：每個資料檔都要先等它，HTML 一到就開始抓，不必等 JS 跑完（web/src/services/bundles.ts） -->
+    <link rel="preload" as="fetch" href="%BASE_URL%bundles/_index.json" crossorigin />
+    <!-- 地圖圖磚、景點照片的主機先連線 -->
+    <link rel="preconnect" href="https://tiles.openfreemap.org" crossorigin />
+    <link rel="preconnect" href="https://upload.wikimedia.org" />
     <!-- 字型不擋首次繪製：先 preload，載完才套用（開場畫面先用系統字） -->
     <link
       id="webfonts"
