@@ -44,7 +44,7 @@ const category = computed(() => props.spot?.tags.filter((t) => !t.startsWith('gu
 // 景點收集卡（DESIGN.md §7.19）：名稱帶右側的卡片鈕放大檢視
 const catalog = useCatalogStore()
 const marks = useMarksStore()
-const { datesById } = useVisitedEntries()
+const { datesById, entries } = useVisitedEntries()
 const cardOpen = ref(false)
 watch(() => props.spot?.id, () => (cardOpen.value = false))
 const card = computed(() => {
@@ -76,8 +76,8 @@ const cardVariants = computed(() => {
 function onStamped() {
   const c = card.value
   if (!c) return
-  // 這個縣還沒有其他去過的景點：第一次到這個縣
-  const firstInPref = !Object.entries(marks.marks).some(([id, m]) => id !== c.face.id && m.visited && m.pref === c.face.pref)
+  // 這個縣還沒有其他去過的地方（含已結束的行程）：第一次到這個縣
+  const firstInPref = !entries.value.some(([id, m]) => id !== c.face.id && m.pref === c.face.pref)
   // 今天去過：基本卡＋今天的季節卡；這個景點第一次去過再送一次免費抽（只送一次，取消再勾不會再送）
   const today = drawVariants(todayIso())
   const owned = [...new Set([...cardVariants.value.map((v) => v.key), ...today.map((v) => v.key)])]

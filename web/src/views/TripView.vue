@@ -6,6 +6,7 @@ import DateRangePicker from '../components/DateRangePicker.vue'
 import ExportButtons from '../components/ExportButtons.vue'
 import OfflineButton from '../components/OfflineButton.vue'
 import MapView from '../components/MapView.vue'
+import AchvRow from '../components/AchvRow.vue'
 import PackOpening, { packOpened } from '../components/PackOpening.vue'
 import ShareImage from '../components/ShareImage.vue'
 import SplitFlap from '../components/SplitFlap.vue'
@@ -292,6 +293,8 @@ async function del() {
             @click="del"
           >刪除</button>
         </div>
+        <!-- 這趟達成的初訪章與成就（DESIGN.md §7.25） -->
+        <AchvRow v-if="status === 'done'" :trip="trip" :size="40" />
       </div>
 
       <div class="flex items-center gap-3 text-label">

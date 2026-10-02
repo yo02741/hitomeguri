@@ -3,9 +3,10 @@ import { computed, onBeforeUnmount, onMounted, ref, watch } from 'vue'
 import { useRoute } from 'vue-router'
 
 import { giftOf } from '../data/outfits'
-import { regionOf } from '../data/regions'
+import { AREA_ZH, regionOf } from '../data/regions'
 import { daysUntil, tripStatus } from '../services/trip'
 import { walkerOn } from '../services/walker'
+import { useAchievementsStore } from '../stores/achievements'
 import { useAvatarStore } from '../stores/avatar'
 import { useFreshStore } from '../stores/fresh'
 import { useTripsStore } from '../stores/trips'
@@ -14,11 +15,12 @@ import { useWalletStore } from '../stores/wallet'
 import PaperDoll from './PaperDoll.vue'
 
 // 散步的旅人（DESIGN.md §7.24）：登入後在畫面下緣走來走去，偶爾跳一下、轉一圈、鞠躬，或說一句話。
-// 說的話都來自自己的資料：下一趟出發倒數、目前地圖的縣、抽獎券、還沒看過的新衣服與新卡。
+// 說的話都來自自己的資料：下一趟出發倒數、目前地圖的縣、抽獎券、還沒看過的新衣服與新卡、新的成就、差一兩縣的地方。
 // 點它會說一句話。帳號選單可以關（存在這台裝置）；旅人頁、列印時不出現；減少動態時站著不動。
 const userStore = useUserStore()
 const avatar = useAvatarStore()
 const wallet = useWalletStore()
+const achv = useAchievementsStore()
 const fresh = useFreshStore()
 const trips = useTripsStore()
 const route = useRoute()
@@ -64,6 +66,9 @@ function lines(): string[] {
   const keys = [...fresh.keys]
   if (keys.some((k) => k.startsWith('o:'))) out.push('有新衣服還沒穿')
   if (keys.some((k) => k.startsWith('c:'))) out.push('收集冊有新的卡')
+  if (achv.hasNew) out.push('有新的成就')
+  const near = achv.nearestArea
+  if (near) out.push(`${AREA_ZH[near.area]}還差${near.missing.map((r) => r.name.zh_tw).join('、')}`)
   if (avatar.visitedPrefs.size) out.push(`去過 ${avatar.visitedPrefs.size} 個縣了`)
   if (!out.length) out.push('下一趟去哪裡')
   return out
