@@ -60,14 +60,22 @@ const allSpots = computed<MapSpot[]>(() =>
   available.value.flatMap((p) => catalog.mapSpots[p] ?? catalog.featured[p] ?? []),
 )
 // 顯示規則：全部大點（可依類型篩選；開啟擴充包時不篩選，變淡當底圖）
-const visibleSpots = computed(() =>
+const filteredSpots = computed(() =>
   allSpots.value.filter((s) => {
-    if (s.id === selectedId.value) return true
     if (s.k !== 'major') return false
     if (explore.onlyFavorites && !explore.pack) return Boolean(marks.marks[s.id]?.favorite)
     return explore.pack || !explore.category || categoryGroup(s.c) === explore.category
   }),
 )
+// 選到的景點被篩掉時也要畫出來。選到的本來就在清單裡時沿用同一個陣列，
+// 地圖不會因為換選取而把全部景點重送一次（選取由 MapView 的 selectedId 另外處理）
+const visibleSpots = computed(() => {
+  const id = selectedId.value
+  const base = filteredSpots.value
+  if (!id || base.some((s) => s.id === id)) return base
+  const sel = allSpots.value.find((s) => s.id === id)
+  return sel ? [...base, sel] : base
+})
 
 // 只看收藏：收藏所在的縣載入完整地圖 bundle（全國總覽只有各縣前段的景點）；登出或沒有收藏時關閉
 const favoritePrefs = computed(() => [...new Set(marks.favorites.map(([, m]) => m.pref))])
@@ -278,7 +286,8 @@ function closePin() {
 const timedHere = computed(() => (props.pref ? currentTimed(catalog.timed ?? [], todayIso(), props.pref) : []))
 
 onMounted(() => {
-  catalog.loadExtras()
+  // 地區標籤只用到直飛航線；地區特色（約 1.8 MB）留給深度探索
+  void catalog.loadFlights()
   void catalog.loadTimed()
   trackSplash(catalog.loadFeatured(), 'featured')
   loadPrefectureShapes()
@@ -541,8 +550,9 @@ function onMoveEnd(view: MapViewState) {
             </h2>
             <TimedList :items="timedHere.slice(0, 3)" />
           </section>
+          <!-- 清單只在桌機畫（手機看不到，畫了又藏起來會多出幾千個節點） -->
           <PackList
-            v-if="explore.pack"
+            v-if="desktop && explore.pack"
             :pref="pref"
             :selected-id="selectedId"
             class="max-lg:hidden"
@@ -550,7 +560,7 @@ function onMoveEnd(view: MapViewState) {
             @highlight="(id) => mapRef?.highlight(id)"
           />
           <RegionLists
-            v-else
+            v-else-if="desktop"
             :pref="pref"
             :spots="prefSpots"
             :selected-id="selectedId"

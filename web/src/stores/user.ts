@@ -24,8 +24,8 @@ export const useUserStore = defineStore('user', () => {
   }
 
   async function signIn() {
-    const [{ auth, googleProvider }, { signInWithPopup }] = await loadFirebase()
-    if (auth) await signInWithPopup(auth, googleProvider)
+    const [{ auth, googleProvider }, { browserPopupRedirectResolver, signInWithPopup }] = await loadFirebase()
+    if (auth) await signInWithPopup(auth, googleProvider, browserPopupRedirectResolver)
   }
 
   async function logOut() {

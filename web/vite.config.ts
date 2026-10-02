@@ -147,6 +147,14 @@ function pwa() {
 export default defineConfig({
   base: process.env.VITE_BASE ?? '/',
   plugins: [splashColors(), vue(), tailwindcss(), pwa()],
+  build: {
+    rolldownOptions: {
+      output: {
+        // 地圖引擎（maplibre-gl，約 276 KB gzip）自成一檔：app 改版時它的檔名不變，瀏覽器不必重新下載
+        codeSplitting: { groups: [{ name: 'maplibre', test: /node_modules[\\/]maplibre-gl/ }] },
+      },
+    },
+  },
   server: {
     port: 5173,
     // 前端直接 import repo 根目錄的 data/regions.json

@@ -226,7 +226,7 @@ function wear() {
                 <span class="text-caption font-bold">不戴</span>
               </button>
             </li>
-            <li v-for="o in items" :key="o.id">
+            <li v-for="o in items" :key="o.id" class="item">
               <button
                 type="button"
                 class="tile relative flex w-full flex-col items-center gap-1.5 rounded-control p-1.5 disabled:cursor-default"
@@ -285,6 +285,11 @@ function wear() {
 .sheet {
   background-image: radial-gradient(color-mix(in oklab, var(--color-line) 70%, transparent) 1px, transparent 1.2px);
   background-size: 18px 18px;
+}
+/* 衣櫃一個分頁上百件：捲動窗外的先不畫（記號都在格子裡，不會被裁到） */
+.item {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 150px;
 }
 .tile {
   transition: background-color 0.15s;
