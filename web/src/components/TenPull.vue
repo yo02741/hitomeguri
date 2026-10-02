@@ -27,6 +27,8 @@ const open = ref<boolean[]>(props.pulls.map(() => false))
 const done = computed(() => open.value.every(Boolean))
 const zoom = ref<number | null>(null)
 const tilt = useTilt(16)
+// 打開時焦點移到對話框裡的第一個按鈕
+const firstBtn = ref<HTMLButtonElement | null>(null)
 
 // 翻開時背後的光：特別全景虹、金箔金、銀箔銀，全景・夜景・墨繪・切手淡淡的地區色
 function glow(v: Variant): string {
@@ -81,6 +83,7 @@ function onKey(e: KeyboardEvent) {
 }
 onMounted(() => {
   document.addEventListener('keydown', onKey, true)
+  firstBtn.value?.focus()
   void autoFlip()
 })
 onBeforeUnmount(() => {
@@ -126,7 +129,7 @@ const zoomed = computed(() => (zoom.value === null ? null : props.pulls[zoom.val
     </ol>
 
     <div class="flex gap-2">
-      <button v-if="!done" type="button" class="h-11 rounded-control bg-paper px-5 text-body-sm font-bold text-ink" @click="flipAll">全部翻開</button>
+      <button v-if="!done" ref="firstBtn" type="button" class="h-11 rounded-control bg-paper px-5 text-body-sm font-bold text-ink" @click="flipAll">全部翻開</button>
       <button v-else-if="canAgain" type="button" class="h-11 rounded-control bg-paper px-5 text-body-sm font-bold text-ink" @click="emit('again')">再十連抽</button>
       <button type="button" class="h-11 rounded-control border border-paper/50 px-4 text-body-sm text-paper" @click="emit('close')">關閉</button>
     </div>

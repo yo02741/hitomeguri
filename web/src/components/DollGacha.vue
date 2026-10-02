@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, onBeforeUnmount, onMounted, ref, watch } from 'vue'
+import { computed, nextTick, onBeforeUnmount, onMounted, ref, watch } from 'vue'
 
 import type { Outfit } from '../data/outfits'
 import { regionOf } from '../data/regions'
@@ -24,6 +24,8 @@ function play() {
   timers.push(window.setTimeout(() => (stage.value = 'drop'), 850))
   timers.push(window.setTimeout(open, 1550))
 }
+const root = ref<HTMLElement | null>(null)
+const actions = ref<HTMLElement | null>(null)
 function open() {
   timers.forEach(clearTimeout)
   timers = []
@@ -31,6 +33,12 @@ function open() {
   stage.value = 'open'
   navigator.vibrate?.(props.result.outfit.rarity === 3 ? 24 : 8)
 }
+// 打開後焦點移到第一個按鈕
+watch(stage, async (s) => {
+  if (s !== 'open') return
+  await nextTick()
+  actions.value?.querySelector('button')?.focus()
+})
 // 再抽：結果換了就重播
 watch(() => props.result, play)
 
@@ -48,12 +56,18 @@ const BALLS: Array<[number, number, string]> = [
   [130, 58, 'var(--color-item-yellow)'],
 ]
 
+// Esc 關閉；動畫中 Enter、Space 直接打開
 function onKey(e: KeyboardEvent) {
   if (e.key === 'Escape') emit('close')
+  else if ((e.key === 'Enter' || e.key === ' ') && stage.value !== 'open') {
+    e.preventDefault()
+    open()
+  }
 }
 onMounted(() => {
   play()
   document.addEventListener('keydown', onKey)
+  root.value?.focus()
 })
 onBeforeUnmount(() => {
   timers.forEach(clearTimeout)
@@ -63,7 +77,9 @@ onBeforeUnmount(() => {
 
 <template>
   <div
-    class="gacha fixed inset-0 z-[70] flex flex-col items-center justify-center gap-5 overflow-hidden bg-ink/85 p-4 backdrop-blur-sm"
+    ref="root"
+    tabindex="-1"
+    class="gacha fixed inset-0 z-[70] flex flex-col items-center justify-center gap-5 overflow-hidden bg-ink/85 p-4 outline-none backdrop-blur-sm"
     role="dialog"
     aria-modal="true"
     aria-label="抽服裝"
@@ -122,7 +138,7 @@ onBeforeUnmount(() => {
         <p v-if="result.duplicate" class="reveal text-label text-paper/70">已經有了</p>
       </template>
     </div>
-    <div class="flex min-h-11 gap-2">
+    <div ref="actions" class="flex min-h-11 gap-2">
       <template v-if="stage === 'open'">
         <button v-if="!result.duplicate" type="button" class="h-11 rounded-control bg-paper px-5 text-body-sm font-bold text-ink" @click="emit('wear')">穿上</button>
         <button type="button" class="h-11 rounded-control border border-paper/50 px-4 text-body-sm text-paper disabled:opacity-40" :disabled="!canDraw" @click="emit('again')">再抽一次</button>
