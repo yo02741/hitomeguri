@@ -51,8 +51,6 @@ const PATTERN_CLASS: Record<string, string> = {
 const tries = ref(0)
 // 全景卡（全景、特別全景）照片鋪滿整張卡，有第二張照片時用第二張
 const fullArt = computed(() => ['full', 'special', 'night'].includes(props.variant.kind))
-// 夜景卡沒有夜景照片時，照片用 CSS 壓暗
-const noNightPhoto = computed(() => props.variant.kind === 'night' && !props.card.seasonImages?.night)
 // 不是基本卡的照片（DESIGN.md §7.19a）：抽到那個季節的照片 → 第二張照片 → 其他季節的照片 → 基本卡的照片
 const photo = computed(() => {
   const c = props.card
@@ -97,7 +95,7 @@ const sizeClass = { sm: 'text-[10px]', lg: 'text-[16px]', fluid: 'fluid' }
   >
     <div
       class="card relative aspect-[5/7] w-[20em]"
-      :class="[{ 'is-flipped': flipped, 'full-art': fullArt, 'no-night-photo': noNightPhoto }, `rarity-${rarity}`, `v-${variant.kind}`, variant.season ? `season-${variant.season}` : '']"
+      :class="[{ 'is-flipped': flipped, 'full-art': fullArt }, `rarity-${rarity}`, `v-${variant.kind}`, variant.season ? `season-${variant.season}` : '']"
       :data-pref="card.pref"
     >
       <!-- 正面 -->
@@ -469,7 +467,7 @@ const sizeClass = { sm: 'text-[10px]', lg: 'text-[16px]', fluid: 'fluid' }
   mix-blend-mode: soft-light;
 }
 
-/* 夜景卡：夜晚的照片鋪滿，深藍卡面與暗面；沒有夜景照片時把照片壓暗、偏藍 */
+/* 夜景卡：夜晚的照片鋪滿，深藍卡面與暗面（只有真的夜景照片的景點才有這種卡） */
 .v-night .face:not(.back) {
   background: var(--color-night);
   color: var(--color-glare);
@@ -478,9 +476,6 @@ const sizeClass = { sm: 'text-[10px]', lg: 'text-[16px]', fluid: 'fluid' }
   background:
     linear-gradient(to bottom, color-mix(in oklab, var(--color-night) 70%, transparent) 0%, transparent 28%),
     linear-gradient(to top, color-mix(in oklab, var(--color-night) 88%, transparent) 0%, transparent 45%);
-}
-.no-night-photo .window img {
-  filter: brightness(0.5) saturate(0.6) contrast(1.1) sepia(0.2) hue-rotate(190deg);
 }
 .v-night .variant-chip {
   background: var(--color-night-star);

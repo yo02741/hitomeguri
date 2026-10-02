@@ -13,6 +13,7 @@ import { type CollectionCard, useCollection } from '../composables/collection'
 import { useVisitedEntries } from '../composables/visited'
 import { type Region, regions } from '../data/regions'
 import { cardFromSpot } from '../services/card'
+import { hasNight } from '../services/cardVariants'
 import { useCatalogStore } from '../stores/catalog'
 import { useFreshStore } from '../stores/fresh'
 import { TICKET_RULES, useWalletStore } from '../stores/wallet'
@@ -107,7 +108,7 @@ const tenPull = ref<Pull[] | null>(null)
 const tenKey = ref(0)
 function drawTen() {
   const byId = new Map(cards.value.map((e) => [e.face.id, e]))
-  const got = cardDraw.drawAcross(cards.value.map((e) => ({ spotId: e.face.id, rarity: e.rarity, owned: e.variants.map((v) => v.key) })), 10)
+  const got = cardDraw.drawAcross(cards.value.map((e) => ({ spotId: e.face.id, rarity: e.rarity, night: hasNight(e.face), owned: e.variants.map((v) => v.key) })), 10)
   if (!got.length) return
   tenKey.value++
   tenPull.value = got.map(([t, v]) => {

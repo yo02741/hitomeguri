@@ -5,7 +5,7 @@ import type { RouteLocationRaw } from 'vue-router'
 import { useTilt } from '../composables/tilt'
 import type { CardFace, Rarity } from '../services/card'
 import { reveal, showReveal } from '../services/cardReveal'
-import { BASE_VARIANT, missingVariants, type Variant } from '../services/cardVariants'
+import { BASE_VARIANT, hasNight, missingVariants, type Variant } from '../services/cardVariants'
 import { useCardDraw } from '../composables/cardDraw'
 import { useCardsStore } from '../stores/cards'
 import { cardKey, useFreshStore } from '../stores/fresh'
@@ -40,11 +40,11 @@ const cards = useCardsStore()
 const wallet = useWalletStore()
 const fresh = useFreshStore()
 const cardDraw = useCardDraw()
-const missing = computed(() => (props.variants ? missingVariants(props.rarity, props.variants.map((v) => v.key)).length : 0))
+const missing = computed(() => (props.variants ? missingVariants(props.rarity, hasNight(props.card), props.variants.map((v) => v.key)).length : 0))
 const canDraw = computed(() => props.visited && Boolean(props.variants))
 let drawnKey: string | null = null
 function drawOneCard() {
-  const v = cardDraw.drawFor({ spotId: props.card.id, rarity: props.rarity, owned: props.variants?.map((x) => x.key) ?? [] })
+  const v = cardDraw.drawFor({ spotId: props.card.id, rarity: props.rarity, night: hasNight(props.card), owned: props.variants?.map((x) => x.key) ?? [] })
   if (!v) return
   drawnKey = v.key
   showReveal({ face: props.card, rarity: props.rarity, label: props.label ?? '', number: props.number ?? '', variant: v })

@@ -4,7 +4,7 @@ import { computed, ref, watch } from 'vue'
 import type { Spot } from '../services/bundles'
 import { cardFromSpot, cardNumberFor, designationOf, rarityLabel, rarityOf } from '../services/card'
 import { showReveal } from '../services/cardReveal'
-import { allVariants, drawVariants, ownedVariants } from '../services/cardVariants'
+import { allVariants, drawVariants, hasNight, ownedVariants } from '../services/cardVariants'
 import { todayIso } from '../services/userdb'
 import { useCardDraw } from '../composables/cardDraw'
 import { useVisitedEntries } from '../composables/visited'
@@ -70,7 +70,7 @@ const cardVariants = computed(() => {
   const c = card.value
   if (!c) return []
   const dates = datesById.value.get(c.face.id)
-  return dates ? ownedVariants(dates, c.rarity, cardsStore.extraOf(c.face.id)) : []
+  return dates ? ownedVariants(dates, c.rarity, hasNight(c.face), cardsStore.extraOf(c.face.id)) : []
 })
 // 按下去過：收集卡飛出來亮相，再收進紀錄分頁
 function onStamped() {
@@ -81,7 +81,7 @@ function onStamped() {
   // 今天去過：基本卡＋今天的季節卡；這個景點第一次去過再送一次免費抽（只送一次，取消再勾不會再送）
   const today = drawVariants(todayIso())
   const owned = [...new Set([...cardVariants.value.map((v) => v.key), ...today.map((v) => v.key)])]
-  const gift = wallet.claimFree(c.face.id) ? cardDraw.drawFor({ spotId: c.face.id, rarity: c.rarity, owned }, true) : null
+  const gift = wallet.claimFree(c.face.id) ? cardDraw.drawFor({ spotId: c.face.id, rarity: c.rarity, night: hasNight(c.face), owned }, true) : null
   const variant = [...today, ...(gift ? [gift] : [])].sort((a, b) => b.rank - a.rank)[0]
   // 第一次到這個縣：送那個縣的代表服裝（旅人），標 NEW
   if (firstInPref) {
@@ -261,7 +261,7 @@ function distance(m: number): string {
       :visited="card.visited"
       :visited-on="card.visitedOn"
       :variants="cardVariants.length ? cardVariants : undefined"
-      :variant-total="cardVariants.length ? allVariants(card.rarity).length : undefined"
+      :variant-total="cardVariants.length ? allVariants(card.rarity, hasNight(card.face)).length : undefined"
       @close="cardOpen = false"
     />
   </section>

@@ -5,7 +5,7 @@ import { useCardDraw } from '../composables/cardDraw'
 import { type CollectionCard, useCollection } from '../composables/collection'
 import { useVisitedEntries } from '../composables/visited'
 import type { Rarity } from '../services/card'
-import { drawVariants, ownedVariants, type Variant } from '../services/cardVariants'
+import { drawVariants, hasNight, ownedVariants, type Variant } from '../services/cardVariants'
 import { dayDate, type Trip } from '../services/trip'
 import { useCardsStore } from '../stores/cards'
 import { useWalletStore } from '../stores/wallet'
@@ -82,8 +82,9 @@ function open() {
   for (const c of deck.value) {
     if (!wallet.claimFree(c.face.id)) continue
     const dates = [...(datesById.value.get(c.face.id) ?? []), ...(tripDates.value.get(c.face.id) ?? [])]
-    const owned = ownedVariants(dates, c.rarity, cardsStore.extraOf(c.face.id)).map((v) => v.key)
-    const v = cardDraw.drawFor({ spotId: c.face.id, rarity: c.rarity, owned }, true)
+    const night = hasNight(c.face)
+    const owned = ownedVariants(dates, c.rarity, night, cardsStore.extraOf(c.face.id)).map((v) => v.key)
+    const v = cardDraw.drawFor({ spotId: c.face.id, rarity: c.rarity, night, owned }, true)
     if (v) next.set(c.key, v)
   }
   redraws.value = next

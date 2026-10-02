@@ -6,7 +6,8 @@ import type { Rarity } from './card'
  * - 基本：去過就有
  * - 季節（春夏秋冬）：去的那天是什麼季節就有那一張（看日期）；也抽得到
  * - 全景：照片鋪滿整張卡，蝕刻紋光澤
- * - 夜景：夜晚的照片鋪滿整張卡，星點閃爍（沒有夜景照片時把照片壓暗）
+ * - 夜景：夜晚的照片鋪滿整張卡，星點閃爍。只有找得到真的夜景照片（season_images.night）的景點才有，
+ *   不拿白天的照片調暗充數
  * - 墨繪：照片變成水墨，和紙卡面、墨框
  * - 切手：郵票：白邊、齒孔、消印
  * - 銀箔、金箔：整張銀框、金框
@@ -65,6 +66,8 @@ export function decodeVariant(code: string): Variant | undefined {
   }
   const v = BY_KEY.get(key)
   if (!v) return undefined
+  // 夜景卡永遠用夜景照片
+  if (v.kind === 'night') return v
   return photo && PHOTO_KEYS.includes(photo) ? { ...v, photo } : v
 }
 
@@ -89,12 +92,17 @@ export function drawVariants(date: string | null | undefined): Variant[] {
   return out
 }
 
+/** 這個景點有沒有真的夜景照片（沒有就沒有夜景卡） */
+export function hasNight(face: { seasonImages?: Partial<Record<PhotoKey, unknown>> }): boolean {
+  return Boolean(face.seasonImages?.night)
+}
+
 /** 去過的每一天拿到的（基本、季節）加上抽到的（不重複，稀有的在前） */
-export function ownedVariants(dates: Array<string | null | undefined>, rarity: Rarity, extra: Variant[] = []): Variant[] {
+export function ownedVariants(dates: Array<string | null | undefined>, rarity: Rarity, night: boolean, extra: Variant[] = []): Variant[] {
   const seen = new Map<string, Variant>()
   for (const d of dates.length ? dates : [null]) for (const v of drawVariants(d)) seen.set(v.key, v)
-  // 特別全景只有稀有的景點才有，舊資料或換了稀有度時略過
-  for (const v of extra) if (!seen.has(v.key) && (v.kind !== 'special' || rareSpot(rarity))) seen.set(v.key, v)
+  // 特別全景只有稀有的景點才有、夜景只有有夜景照片的才有；舊資料或資料更新後不符合的略過
+  for (const v of extra) if (!seen.has(v.key) && (v.kind !== 'special' || rareSpot(rarity)) && (v.kind !== 'night' || night)) seen.set(v.key, v)
   return [...seen.values()].sort((a, b) => b.rank - a.rank || seasonIndex(a) - seasonIndex(b))
 }
 
@@ -102,23 +110,23 @@ function seasonIndex(v: Variant): number {
   return v.season ? SEASON_ORDER.indexOf(v.season) : -1
 }
 
-/** 這個景點全部的樣式（收集冊顯示「3 / 11 種」；稀有的景點 12 種） */
-export function allVariants(rarity: Rarity): Variant[] {
-  return [BASE, ...SEASON_ORDER.map(seasonVariant), FULL, NIGHT, SUMI, STAMP, SILVER, GOLD, ...(rareSpot(rarity) ? [SPECIAL] : [])]
+/** 這個景點全部的樣式（收集冊顯示「3 / 10 種」；有夜景照片的多夜景，稀有的多特別全景） */
+export function allVariants(rarity: Rarity, night: boolean): Variant[] {
+  return [BASE, ...SEASON_ORDER.map(seasonVariant), FULL, ...(night ? [NIGHT] : []), SUMI, STAMP, SILVER, GOLD, ...(rareSpot(rarity) ? [SPECIAL] : [])]
 }
 
 // 抽的權重：季節 5、全景・夜景・墨繪・切手 3、銀箔・金箔 1.2、特別全景 0.8
 const WEIGHT: Record<VariantKind, number> = { base: 0, season: 5, full: 3, night: 3, sumi: 3, stamp: 3, silver: 1.2, gold: 1.2, special: 0.8 }
 
 /** 這個景點還沒有的樣式 */
-export function missingVariants(rarity: Rarity, owned: Iterable<string>): Variant[] {
+export function missingVariants(rarity: Rarity, night: boolean, owned: Iterable<string>): Variant[] {
   const have = new Set(owned)
-  return allVariants(rarity).filter((v) => !have.has(v.key))
+  return allVariants(rarity, night).filter((v) => !have.has(v.key))
 }
 
 /** 從還沒有的樣式裡抽一種（不會重複）；都有了回傳 null。全景、金箔等的照片季節隨機 */
-export function drawOne(rarity: Rarity, owned: Iterable<string>, rand: () => number = Math.random): Variant | null {
-  const pool = missingVariants(rarity, owned)
+export function drawOne(rarity: Rarity, night: boolean, owned: Iterable<string>, rand: () => number = Math.random): Variant | null {
+  const pool = missingVariants(rarity, night, owned)
   const total = pool.reduce((s, v) => s + WEIGHT[v.kind], 0)
   if (!total) return null
   let r = rand() * total

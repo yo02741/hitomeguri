@@ -12,6 +12,8 @@ import { useWalletStore } from '../stores/wallet'
 export interface DrawTarget {
   spotId: string
   rarity: Rarity
+  /** 有沒有真的夜景照片（沒有就沒有夜景卡） */
+  night: boolean
   /** 已經有的樣式 key */
   owned: string[]
 }
@@ -27,9 +29,9 @@ export function useCardDraw() {
   }
 
   function drawFor(t: DrawTarget, free = false): Variant | null {
-    if (!missingVariants(t.rarity, t.owned).length) return null
+    if (!missingVariants(t.rarity, t.night, t.owned).length) return null
     if (!free && !wallet.spend(1)) return null
-    const v = drawOne(t.rarity, t.owned)
+    const v = drawOne(t.rarity, t.night, t.owned)
     if (v) record(t.spotId, [v])
     return v
   }
@@ -37,7 +39,7 @@ export function useCardDraw() {
   /** 還沒收齊的景點裡抽 n 張；回傳 [景點 id, 樣式]。抽獎券不夠或都收齊了回傳空陣列 */
   function drawAcross(targets: DrawTarget[], n = 10): Array<[DrawTarget, Variant]> {
     const owned = new Map(targets.map((t) => [t.spotId, new Set(t.owned)]))
-    const remaining = () => targets.map((t) => [t, missingVariants(t.rarity, owned.get(t.spotId)!).length] as const).filter(([, k]) => k > 0)
+    const remaining = () => targets.map((t) => [t, missingVariants(t.rarity, t.night, owned.get(t.spotId)!).length] as const).filter(([, k]) => k > 0)
     const count = Math.min(n, remaining().reduce((s, [, k]) => s + k, 0))
     if (!count || !wallet.spend(count)) return []
     const out: Array<[DrawTarget, Variant]> = []
@@ -54,7 +56,7 @@ export function useCardDraw() {
         }
       }
       const have = owned.get(t.spotId)!
-      const v = drawOne(t.rarity, have)
+      const v = drawOne(t.rarity, t.night, have)
       if (!v) continue
       have.add(v.key)
       out.push([t, v])
