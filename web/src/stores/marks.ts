@@ -44,6 +44,11 @@ export const useMarksStore = defineStore('marks', () => {
   const marksLoaded = ref(false)
   const listsLoaded = ref(false)
   const loaded = computed(() => marksLoaded.value && listsLoaded.value)
+  /**
+   * 收藏與去過已經和伺服器對過一次（不是只讀到這台裝置的離線快取）。
+   * 成就（stores/achievements.ts）等這個為 true 才建 NEW 的基準，避免新裝置讀到空的快取就建了基準。
+   */
+  const synced = ref(false)
   /** 最近一次寫入失敗；下次成功時清掉 */
   const error = ref<string | null>(null)
   let unsubscribe: Array<() => void> = []
@@ -57,20 +62,32 @@ export const useMarksStore = defineStore('marks', () => {
       lists.value = []
       marksLoaded.value = false
       listsLoaded.value = false
+      synced.value = false
       if (!uid) return
       const { fs, db } = await firestore()
       if (userStore.user?.uid !== uid) return
       const opts = { serverTimestamps: 'estimate' } as const
       unsubscribe.push(
-        fs.onSnapshot(fs.collection(db, 'users', uid, 'marks'), (snap) => {
-          const next: Record<string, Mark> = {}
-          snap.forEach((d) => {
-            const { updated_at: _updated, ...rest } = d.data(opts)
-            next[d.id] = rest as Mark
-          })
-          marks.value = next
-          marksLoaded.value = true
-        }),
+        fs.onSnapshot(
+          fs.collection(db, 'users', uid, 'marks'),
+          { includeMetadataChanges: true },
+          (snap) => {
+            if (!snap.metadata.fromCache) synced.value = true
+            // 只有 metadata 變了（寫入確認、連線狀態）：不重建，免得去過的景點、錢包、地圖跟著重算
+            if (marksLoaded.value && snap.docChanges().length === 0) return
+            const next: Record<string, Mark> = {}
+            snap.forEach((d) => {
+              const { updated_at: _updated, ...rest } = d.data(opts)
+              next[d.id] = rest as Mark
+            })
+            marks.value = next
+            marksLoaded.value = true
+          },
+          (e) => {
+            console.error('marks', e)
+            synced.value = true
+          },
+        ),
         fs.onSnapshot(fs.collection(db, 'users', uid, 'lists'), (snap) => {
           const next: UserList[] = []
           snap.forEach((d) => {
@@ -237,7 +254,7 @@ export const useMarksStore = defineStore('marks', () => {
   }
 
   return {
-    marks, lists, loaded, error, markOf, favorites, visited, listEntries,
+    marks, lists, loaded, synced, error, markOf, favorites, visited, listEntries,
     toggleFavorite, toggleVisited, setVisitedOn, setVisitedOnMany, toggleInList, createList, renameList, deleteList,
   }
 })

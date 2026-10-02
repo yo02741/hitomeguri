@@ -17,12 +17,14 @@ export interface Reveal {
   /** 這次抽到的樣式（最稀有的那張） */
   variant?: Variant
   key: number
+  /** 開始的時間（Date.now()）：落定時拿這之後新達成的成就（stores/achievements.ts 的 takeRecent） */
+  at: number
 }
 
 export const reveal = shallowRef<Reveal | null>(null)
 let seq = 0
 
-export function showReveal(r: Omit<Reveal, 'key'>) {
+export function showReveal(r: Omit<Reveal, 'key' | 'at'>) {
   if (typeof matchMedia !== 'undefined' && matchMedia('(prefers-reduced-motion: reduce)').matches) return
-  reveal.value = { ...r, key: ++seq }
+  reveal.value = { ...r, key: ++seq, at: Date.now() }
 }

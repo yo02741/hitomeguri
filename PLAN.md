@@ -73,7 +73,7 @@
 ├── firestore.rules
 ├── firestore.indexes.json
 ├── .github/workflows/
-│   ├── ci.yml                    # 每次推送：前端 typecheck + build、pipeline lint + test + 資料檢查
+│   ├── ci.yml                    # 每次推送：前端 typecheck + vitest + build、pipeline lint + test + 資料檢查
 │   ├── firebase-hosting.yml      # main 有變更 → 部署 Firebase Hosting
 │   ├── pages.yml                 # main 有變更 → 部署 GitHub Pages
 │   ├── harvest-timed.yml         # 每日：期間限定（直接提交 main）
@@ -332,7 +332,7 @@ users/{uid}/lists/{listId}
 | `refresh-data.yml` | 每週一；每月、每季第一週範圍較大 | 擴充包、祭典、地區特色、維基簡介、各縣大點重採 → 開 PR（Phase 6） |
 | `pipeline-pr-closed.yml` | 自動 PR 關閉時 | 刪除 pipeline/* 分支 |
 | `firebase-hosting.yml`、`pages.yml` | push 到 main | 產生 bundles → build 前端 → 部署（只部署 Hosting，Firestore 規則由使用者在 Console 發布） |
-| `ci.yml` | 每次推送 | 前端 typecheck + build；pipeline lint + test + 資料檢查 |
+| `ci.yml` | 每次推送 | 前端 typecheck + vitest + build；pipeline lint + test + 資料檢查 |
 
 - 所有 workflow 支援 `workflow_dispatch` 手動觸發，並可指定都道府縣。
 - 注意 GitHub Actions 單一 job 時間上限與每月分鐘數；大範圍任務依都道府縣分批、跨多次執行。

@@ -1,16 +1,22 @@
 <script setup lang="ts">
-import { computed, nextTick, onBeforeUnmount, ref, watch } from 'vue'
+import { computed, defineAsyncComponent, nextTick, onBeforeUnmount, ref, watch } from 'vue'
 
+import type { AchvDef } from '../data/achievements'
 import { reveal } from '../services/cardReveal'
+import { useAchievementsStore } from '../stores/achievements'
 import { useMarksStore } from '../stores/marks'
-import { todayIso } from '../services/userdb'
 import PrefStamp from './PrefStamp.vue'
 import SpotCard from './SpotCard.vue'
 
 // 新卡入手（DESIGN.md §7.19）：卡片從下方轉兩圈飛到畫面中央，落定時背後放光、蓋上去過的印章、
 // 一道光掃過卡面；停一下之後縮小飛進「紀錄」分頁（頂部或手機底部，看得到的那個），分頁跳一下。
+// 這次去過剛好達成成就時，落定時在卡片右上多蓋一個成就章（rank 最高的那個；其他的只標 NEW，DESIGN.md §7.25）。
 // 點任何地方、Esc 直接收進去。
 const marks = useMarksStore()
+const achv = useAchievementsStore()
+// 成就章只在這次去過剛好達成成就時才畫：不放進開站就載入的程式，卡片飛進來時（play）先抓
+const loadSeal = () => import('./AchvSeal.vue')
+const AchvSeal = defineAsyncComponent(loadSeal)
 const r = computed(() => reveal.value)
 // 光的顏色：抽到特別全景是虹、金箔是金，其他照稀有度
 const burstKind = computed(() => {
@@ -29,13 +35,18 @@ const fly = ref<HTMLElement | null>(null)
 const spin = ref<HTMLElement | null>(null)
 const sweep = ref<HTMLElement | null>(null)
 const landed = ref(false)
+/** 落定時拿到的成就章；others 是同時拿到的其他個數 */
+const seal = ref<AchvDef | null>(null)
+const others = ref(0)
+const sealAt = computed(() => (seal.value ? (achv.byId.get(seal.value.id)?.at ?? null) : null))
 let intro: Animation[] = []
 let timers: number[] = []
 let leaving = false
 
 const HOLD: Record<string, number> = { rainbow: 2600, gold: 2300, silver: 2300, castle: 2300, normal: 1900 }
-// 有縣的紀念章時多停一下
+// 有縣的紀念章時多停一下；有成就章時再多停一下
 const STAMP_HOLD = 700
+const SEAL_HOLD = 700
 
 function later(ms: number, fn: () => void) {
   timers.push(window.setTimeout(fn, ms))
@@ -47,8 +58,11 @@ function clear() {
 
 async function play() {
   clear()
+  void loadSeal()
   leaving = false
   landed.value = false
+  seal.value = null
+  others.value = 0
   await nextTick()
   const s = spin.value
   if (!s || !backdrop.value || !burst.value) return
@@ -74,9 +88,20 @@ async function play() {
   later(820 + (HOLD[burstKind.value] ?? 2000) + (r.value?.firstInPref ? STAMP_HOLD : 0), leave)
 }
 
-// 落定：蓋印章、光掃過、手機輕震一下
+// 落定：蓋印章、光掃過、手機輕震一下。
+// 成就的比對和這次 reveal 是同一次 marks snapshot 觸發的，先後不一定：往前多看 2 秒
 function land() {
   landed.value = true
+  const cur = r.value
+  const got = cur ? achv.takeRecent(cur.at - 2000) : []
+  if (got.length) {
+    seal.value = got[0]!
+    others.value = got.length - 1
+    if (!leaving) {
+      clear()
+      later((HOLD[burstKind.value] ?? 2000) + (cur?.firstInPref ? STAMP_HOLD : 0) + SEAL_HOLD, leave)
+    }
+  }
   sweep.value?.animate([{ transform: 'translateX(-120%)' }, { transform: 'translateX(120%)' }], {
     duration: 750,
     delay: 150,
@@ -167,10 +192,16 @@ onBeforeUnmount(() => {
           </div>
         </div>
         <!-- 這個縣第一次去：縣的紀念章蓋在卡片左下 -->
-        <PrefStamp v-if="landed && r.firstInPref" :pref="r.face.pref" :date="visitedOn ?? todayIso()" class="first-stamp absolute -bottom-5 -left-9 z-10 w-[148px]" />
+        <PrefStamp v-if="landed && r.firstInPref" :pref="r.face.pref" :date="visitedOn" class="first-stamp absolute -bottom-5 z-10 w-[148px]" />
+        <!-- 這次達成的成就：成就章蓋在卡片右上 -->
+        <div v-if="landed && seal" class="seal-slam absolute -top-7 z-10 w-[120px]" :class="r.firstInPref ? 'after-stamp' : ''">
+          <AchvSeal :def="seal" status="done" :at="sealAt" class="w-full" />
+        </div>
       </div>
     </div>
-    <p class="sr-only" role="status">{{ r.face.name.ja }}　{{ r.variant?.label ?? '' }}　收進收集冊</p>
+    <p class="sr-only" role="status">
+      {{ r.face.name.ja }}　{{ r.variant?.label ?? '' }}　收進收集冊<template v-if="seal">　成就　{{ seal.name }}<template v-if="others">　等 {{ others + 1 }} 個</template></template>
+    </p>
   </div>
 </template>
 
@@ -247,8 +278,10 @@ onBeforeUnmount(() => {
     opacity: 0;
   }
 }
-/* 縣的紀念章：從上方重重蓋下、微微回彈，墨色帶點透明（像蓋在卡上） */
+/* 縣的紀念章：從上方重重蓋下、微微回彈，墨色帶點透明（像蓋在卡上）。
+   卡片 320px 寬；比 390px 窄的手機往卡片裡收，斜放的章不超出畫面 */
 .first-stamp {
+  left: max(-36px, calc((320px - 100vw) / 2 + 20px));
   opacity: 0.92;
   filter: drop-shadow(0 1px 0 color-mix(in oklab, var(--region-paper) 70%, transparent));
   transform: rotate(-14deg);
@@ -266,6 +299,31 @@ onBeforeUnmount(() => {
   to {
     transform: rotate(-14deg) scale(1);
     opacity: 0.92;
+  }
+}
+/* 成就章：和縣的紀念章對稱，從上方蓋下、停在右傾；有縣的紀念章時晚一點蓋。窄手機一樣往卡片裡收 */
+.seal-slam {
+  right: max(-36px, calc((320px - 100vw) / 2 + 12px));
+  opacity: 0.94;
+  filter: drop-shadow(0 1px 0 color-mix(in oklab, var(--region-paper) 70%, transparent));
+  transform: rotate(8deg);
+  animation: seal-slam 0.5s 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+.seal-slam.after-stamp {
+  animation-delay: 0.8s;
+}
+@keyframes seal-slam {
+  from {
+    transform: rotate(20deg) scale(2.4);
+    opacity: 0;
+  }
+  60% {
+    transform: rotate(6deg) scale(0.9);
+    opacity: 0.96;
+  }
+  to {
+    transform: rotate(8deg) scale(1);
+    opacity: 0.94;
   }
 }
 /* 落定時掃過卡面的一道光 */

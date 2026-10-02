@@ -4,14 +4,16 @@ import { shallowRef, watch } from 'vue'
 import { useUserStore } from './user'
 
 /**
- * NEW 標記（DESIGN.md §7.19b）：新拿到、還沒看過的卡片樣式與服裝。
- * key：卡片 `c:<景點 id>:<樣式 key>`、服裝 `o:<服裝 id>`。看過（放大檢視那一種、點了那件）就拿掉。
+ * NEW 標記（DESIGN.md §7.19b）：新拿到、還沒看過的卡片樣式、服裝與成就。
+ * key：卡片 `c:<景點 id>:<樣式 key>`、服裝 `o:<服裝 id>`、成就 `a:<成就 id>`（初訪 `a:pref-<縣>`）。
+ * 看過（放大檢視那一種、點了那件、打開那個成就）就拿掉；離開成就頁時清掉全部 `a:`。
  * 只存在這台裝置（localStorage）。
  */
 const LOCAL = 'hitomeguri:fresh'
 
 export const cardKey = (spotId: string, variantKey: string) => `c:${spotId}:${variantKey}`
 export const outfitKey = (id: string) => `o:${id}`
+export const achvKey = (id: string) => `a:${id}`
 
 export const useFreshStore = defineStore('fresh', () => {
   const userStore = useUserStore()

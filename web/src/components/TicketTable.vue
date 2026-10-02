@@ -13,6 +13,7 @@ const wallet = useWalletStore()
       <tr class="border-b border-line-soft"><td class="py-1.5 font-sans">去過的縣</td><td class="text-sub">× {{ TICKET_RULES.pref }}</td><td class="text-right">{{ wallet.breakdown.prefs * TICKET_RULES.pref }}</td></tr>
       <tr class="border-b border-line-soft"><td class="py-1.5 font-sans">去過的地方（北海道、東北…）</td><td class="text-sub">× {{ TICKET_RULES.area }}</td><td class="text-right">{{ wallet.breakdown.areas * TICKET_RULES.area }}</td></tr>
       <tr class="border-b border-line-soft"><td class="py-1.5 font-sans">景點每 10 個</td><td class="text-sub">× {{ TICKET_RULES.every10 }}</td><td class="text-right">{{ wallet.breakdown.bonus * TICKET_RULES.every10 }}</td></tr>
+      <tr class="border-b border-line-soft"><td class="py-1.5 font-sans">成就（地方、旅行、時節）</td><td class="text-sub">× {{ TICKET_RULES.achv }}</td><td class="text-right">{{ wallet.breakdown.achv * TICKET_RULES.achv }}</td></tr>
       <tr class="border-b border-line-soft"><td class="py-1.5 font-sans">用掉</td><td></td><td class="text-right">− {{ wallet.used }}</td></tr>
       <tr><td class="py-1.5 font-sans font-bold">剩下</td><td></td><td class="text-right text-body font-bold">{{ wallet.left }}</td></tr>
     </tbody>
