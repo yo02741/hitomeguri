@@ -149,6 +149,7 @@ async function logOut() {
     <RouterLink
       v-if="peek && !open"
       to="/log/avatar"
+      data-reduce="fade"
       class="peek paper-grain absolute top-12 right-0 z-30 flex w-44 flex-col items-center gap-1 rounded-card bg-region-tint px-3 pt-3 pb-2.5 text-ink no-underline shadow-float"
       @click="peek = false"
     >
@@ -161,6 +162,7 @@ async function logOut() {
       ref="menu"
       role="menu"
       aria-label="帳號選單"
+      data-reduce="fade"
       class="absolute top-12 right-0 z-30 flex w-72 origin-top-right animate-pop-in flex-col rounded-card bg-paper p-1.5 shadow-float"
       @keydown="onMenuKey"
     >
@@ -225,11 +227,6 @@ async function logOut() {
   from {
     opacity: 0;
     transform: translateY(-6px);
-  }
-}
-@media (prefers-reduced-motion: reduce) {
-  .peek {
-    animation: none;
   }
 }
 </style>

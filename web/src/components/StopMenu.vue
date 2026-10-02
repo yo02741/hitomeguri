@@ -10,7 +10,7 @@ const emit = defineEmits<{ shift: [delta: -1 | 1]; remove: [] }>()
 
 const trigger = ref<HTMLButtonElement | null>(null)
 const menu = ref<HTMLElement | null>(null)
-const { open, style, pref } = useFloating(trigger, menu, { align: 'end' })
+const { open, style, pref, side, origin } = useFloating(trigger, menu, { align: 'end' })
 const id = useId()
 
 function items(): HTMLElement[] {
@@ -72,8 +72,11 @@ function run(fn: () => void) {
       role="menu"
       :aria-label="`${props.name} 的操作`"
       :data-pref="pref"
-      class="fixed z-[80] flex min-w-40 animate-pop-in flex-col rounded-card bg-paper p-1.5 shadow-float"
-      :style="style"
+      data-floating
+      data-reduce="fade"
+      class="fixed z-[80] flex min-w-40 flex-col rounded-card bg-paper p-1.5 shadow-float"
+      :class="side === 'top' ? 'animate-pop-up' : 'animate-pop-in'"
+      :style="{ ...style, transformOrigin: origin }"
       @keydown="onMenuKey"
     >
       <button type="button" role="menuitem" tabindex="-1" :disabled="first" class="flex min-h-tap items-center rounded-control px-3 text-left text-body-sm text-ink hover:bg-surface focus-visible:bg-surface disabled:opacity-40" @click="run(() => emit('shift', -1))">往前</button>

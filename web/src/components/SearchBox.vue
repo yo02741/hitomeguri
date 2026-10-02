@@ -93,6 +93,7 @@ function onKey(e: KeyboardEvent) {
       :id="`${uid}-list`"
       role="listbox"
       aria-label="搜尋結果"
+      data-reduce="fade"
       class="scroll-quiet z-30 flex origin-top animate-pop-in flex-col overflow-y-auto overscroll-contain bg-paper p-1.5"
       :class="
         full

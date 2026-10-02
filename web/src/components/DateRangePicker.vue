@@ -26,7 +26,7 @@ const emit = defineEmits<{ change: [start: string, end: string] }>()
 
 const trigger = ref<HTMLButtonElement | null>(null)
 const panel = ref<HTMLElement | null>(null)
-const { open, style, pref } = useFloating(trigger, panel)
+const { open, style, pref, side, origin } = useFloating(trigger, panel)
 
 // 面板開著時的草稿；關閉時才送出
 const draftStart = ref('')
@@ -101,8 +101,11 @@ const days = computed(() => dayCount(draftStart.value || undefined, (draftEnd.va
       v-if="open"
       ref="panel"
       :data-pref="pref"
-      class="fixed z-50 animate-pop-in"
-      :style="style"
+      data-floating
+      data-reduce="fade"
+      class="fixed z-50"
+      :class="side === 'top' ? 'animate-pop-up' : 'animate-pop-in'"
+      :style="{ ...style, transformOrigin: origin }"
       role="dialog"
       :aria-label="label"
       @keydown.esc.stop.prevent="close"

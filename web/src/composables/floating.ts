@@ -1,9 +1,11 @@
-import { nextTick, onBeforeUnmount, ref, type Ref, watch } from 'vue'
+import { computed, nextTick, onBeforeUnmount, ref, type Ref, watch } from 'vue'
 
 /**
  * 貼著觸發鈕的浮動面板（日期選擇器等）。面板 Teleport 到 body，避開外層的 overflow 與 bottom sheet：
  * 位置用 fixed 算，下方放不下就翻到上方；左右不超出畫面。點面板與觸發鈕以外的地方就收起。
  * 面板離開原本的 DOM 後吃不到地區色，所以沿用觸發鈕所在的 data-pref。
+ * side 與 origin（DESIGN.md §9）：往下開的從上方長出（animate-pop-in）、翻到上方的從下方長出（animate-pop-up），
+ * transform-origin 對準觸發鈕那一角。打開後第一次定位就決定方向，捲動時不換，進場動畫不重播。
  */
 export function useFloating(
   trigger: Ref<HTMLElement | null>,
@@ -15,6 +17,9 @@ export function useFloating(
   const OFFSCREEN = { top: '-9999px', left: '-9999px' }
   const style = ref<Record<string, string>>(OFFSCREEN)
   const pref = ref<string | undefined>()
+  const side = ref<'top' | 'bottom'>('bottom')
+  let sideFixed = false
+  const origin = computed(() => `${opts.align === 'end' ? 'right' : 'left'} ${side.value === 'top' ? 'bottom' : 'top'}`)
   let observer: ResizeObserver | null = null
 
   function place() {
@@ -29,7 +34,12 @@ export function useFloating(
     const vw = document.documentElement.clientWidth
     const vh = window.innerHeight
     let top = r.bottom + gap
-    if (top + h > vh - margin && r.top - gap - h >= margin) top = r.top - gap - h
+    const flip = top + h > vh - margin && r.top - gap - h >= margin
+    if (flip) top = r.top - gap - h
+    if (!sideFixed) {
+      side.value = flip ? 'top' : 'bottom'
+      sideFixed = true
+    }
     top = Math.max(margin, Math.min(top, vh - h - margin))
     let left = opts.align === 'end' ? r.right - w : r.left
     left = Math.max(margin, Math.min(left, vw - w - margin))
@@ -55,6 +65,7 @@ export function useFloating(
 
   watch(open, async (o) => {
     if (!o) {
+      sideFixed = false
       listen(false)
       observer?.disconnect()
       observer = null
@@ -76,5 +87,43 @@ export function useFloating(
     observer?.disconnect()
   })
 
-  return { open, style, pref, place }
+  return { open, style, pref, place, side, origin }
+}
+
+/**
+ * 不 Teleport 的小面板（清單、加入行程、成員、經縣值的級數選單）：打開時按 Esc 關閉並把焦點還給觸發鈕，
+ * 點 root 以外的地方也關閉。close 由呼叫端決定怎麼關（open 可能是 boolean 或「哪一個」）。
+ * 面板裡的 Dropdown、DatePicker 會 Teleport 到 body（標 data-floating）：點在那裡面不算外面；
+ * 它們自己處理掉的 Esc（preventDefault 或 stopPropagation）只關它們自己。
+ */
+export function useDismiss(
+  root: Ref<HTMLElement | null>,
+  open: Ref<unknown>,
+  close: () => void,
+  trigger?: () => HTMLElement | null | undefined,
+) {
+  function onKey(e: KeyboardEvent) {
+    if (e.key !== 'Escape' || e.defaultPrevented) return
+    e.preventDefault()
+    const t = trigger?.()
+    close()
+    t?.focus()
+  }
+  function onPointerDown(e: PointerEvent) {
+    const n = e.target as Element
+    if (root.value && !root.value.contains(n) && !n.closest?.('[data-floating]')) close()
+  }
+  function listen(on: boolean) {
+    if (on) {
+      document.addEventListener('keydown', onKey)
+      document.addEventListener('pointerdown', onPointerDown, true)
+    } else {
+      document.removeEventListener('keydown', onKey)
+      document.removeEventListener('pointerdown', onPointerDown, true)
+    }
+  }
+  watch(open, (o, old) => {
+    if (Boolean(o) !== Boolean(old)) listen(Boolean(o))
+  })
+  onBeforeUnmount(() => listen(false))
 }

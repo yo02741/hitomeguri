@@ -12,10 +12,12 @@ import SpotCard from './SpotCard.vue'
 // 一道光掃過卡面；停一下之後縮小飛進「紀錄」分頁（頂部或手機底部，看得到的那個），分頁跳一下。
 // 這次去過剛好達成成就時，落定時在卡片右上多蓋一個成就章（rank 最高的那個；其他的只標 NEW，DESIGN.md §7.25）。
 // 點任何地方、Esc 直接收進去。
+// 減少動態：卡片與背景只淡入、淡出，不轉、不飛、不震；停留時間一樣，讀屏照樣唸出拿到哪一張。
 const marks = useMarksStore()
 const achv = useAchievementsStore()
 // 成就章只在這次去過剛好達成成就時才畫：不放進開站就載入的程式，卡片飛進來時（play）先抓
 const loadSeal = () => import('./AchvSeal.vue')
+const reduced = typeof matchMedia !== 'undefined' && matchMedia('(prefers-reduced-motion: reduce)').matches
 const AchvSeal = defineAsyncComponent(loadSeal)
 const r = computed(() => reveal.value)
 // 光的顏色：抽到特別全景是虹、金箔是金，其他照稀有度
@@ -66,6 +68,13 @@ async function play() {
   await nextTick()
   const s = spin.value
   if (!s || !backdrop.value || !burst.value) return
+  if (reduced) {
+    const fade = { duration: 200, easing: 'ease', fill: 'both' } as const
+    intro = [backdrop.value, s, burst.value].map((el) => el.animate([{ opacity: 0 }, { opacity: 1 }], fade))
+    later(200, land)
+    later(200 + (HOLD[burstKind.value] ?? 2000) + (r.value?.firstInPref ? STAMP_HOLD : 0), leave)
+    return
+  }
   intro = [
     backdrop.value.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 220, fill: 'both' }),
     s.animate(
@@ -102,6 +111,7 @@ function land() {
       later((HOLD[burstKind.value] ?? 2000) + (cur?.firstInPref ? STAMP_HOLD : 0) + SEAL_HOLD, leave)
     }
   }
+  if (reduced) return
   sweep.value?.animate([{ transform: 'translateX(-120%)' }, { transform: 'translateX(120%)' }], {
     duration: 750,
     delay: 150,
@@ -126,6 +136,14 @@ function leave() {
   clear()
   for (const a of intro) a.finish()
   if (!landed.value) land()
+  if (reduced) {
+    const fade = { duration: 200, easing: 'ease', fill: 'both' } as const
+    fly.value.animate([{ opacity: 1 }, { opacity: 0 }], fade)
+    backdrop.value?.animate([{ opacity: 1 }, { opacity: 0 }], fade)
+    burst.value?.animate([{ opacity: 1 }, { opacity: 0 }], fade)
+    later(200, () => (reveal.value = null))
+    return
+  }
   const card = fly.value.getBoundingClientRect()
   const tab = logTab()
   const dur = 620
@@ -228,6 +246,11 @@ onBeforeUnmount(() => {
   background: repeating-conic-gradient(var(--ray) 0deg 3deg, transparent 3deg 12deg);
   opacity: 0.7;
   animation: rays-spin 24s linear infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .rays {
+    animation: none;
+  }
 }
 .burst-normal {
   --ray: color-mix(in oklab, var(--color-glare) 30%, transparent);

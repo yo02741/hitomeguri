@@ -1,7 +1,8 @@
 <script setup lang="ts">
-import { computed, nextTick, onBeforeUnmount, ref, watch } from 'vue'
+import { computed, nextTick, ref, watch } from 'vue'
 import Dropdown from './Dropdown.vue'
 
+import { useDismiss } from '../composables/floating'
 import { useStampPress } from '../composables/stampPress'
 import { dayDate, hasSpot, shortDate, TRIP_NAME_MAX, tripStatus } from '../services/trip'
 import { todayIso } from '../services/userdb'
@@ -46,14 +47,15 @@ const nameInput = ref<HTMLInputElement | null>(null)
 const newTrip = ref('')
 const tripInput = ref<HTMLInputElement | null>(null)
 
-function onPointerDown(e: PointerEvent) {
-  if (root.value && !root.value.contains(e.target as Node)) open.value = null
-}
-watch(open, (o) => {
-  if (o) document.addEventListener('pointerdown', onPointerDown)
-  else document.removeEventListener('pointerdown', onPointerDown)
-})
-onBeforeUnmount(() => document.removeEventListener('pointerdown', onPointerDown))
+const listsBtn = ref<HTMLButtonElement | null>(null)
+const tripsBtn = ref<HTMLButtonElement | null>(null)
+// Esc、點外面關閉；Esc 時焦點回到打開它的那顆鈕
+useDismiss(
+  root,
+  open,
+  () => (open.value = null),
+  () => (open.value === 'lists' ? listsBtn.value : tripsBtn.value),
+)
 watch(
   () => props.spot.id,
   () => {
@@ -196,6 +198,7 @@ const visitedShort = computed(() => {
         </DatePicker>
       </div>
       <button
+        ref="listsBtn"
         type="button"
         class="flex h-11 items-center justify-center gap-1.5 rounded-control text-body-sm active:translate-y-px disabled:cursor-not-allowed disabled:opacity-40"
         :class="inLists ? 'border-[1.5px] border-ink bg-surface font-bold text-ink' : 'border border-line bg-paper text-ink hover:bg-surface'"
@@ -210,6 +213,7 @@ const visitedShort = computed(() => {
         清單<span v-if="inLists" class="font-latin">{{ inLists }}</span>
       </button>
       <button
+        ref="tripsBtn"
         type="button"
         class="flex h-11 items-center justify-center gap-1.5 rounded-control text-body-sm active:translate-y-px disabled:cursor-not-allowed disabled:opacity-40"
         :class="inTrips ? 'border-[1.5px] border-ink bg-surface font-bold text-ink' : 'border border-line bg-paper text-ink hover:bg-surface'"
@@ -227,6 +231,7 @@ const visitedShort = computed(() => {
       <!-- 行程選單：每個行程選「待排」或某一天後加入；最下面新增行程 -->
       <div
         v-if="open === 'trips'"
+        data-reduce="fade"
         class="absolute right-0 bottom-full left-0 z-30 mb-2 flex max-h-[50dvh] origin-bottom animate-pop-up flex-col rounded-card bg-paper p-1.5 shadow-float"
         role="group"
         aria-label="加入行程"
@@ -279,6 +284,7 @@ const visitedShort = computed(() => {
       <!-- 清單選單：勾選加入或移出；最下面新增清單 -->
       <div
         v-if="open === 'lists'"
+        data-reduce="fade"
         class="absolute right-0 bottom-full left-0 z-30 mb-2 flex max-h-[50dvh] origin-bottom animate-pop-up flex-col rounded-card bg-paper p-1.5 shadow-float"
         role="group"
         aria-label="加入清單"

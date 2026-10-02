@@ -22,6 +22,7 @@ function updateServiceWorker(reload: boolean) {
 <template>
   <div
     v-if="needRefresh"
+    data-reduce="fade"
     class="fixed bottom-[calc(5rem+env(safe-area-inset-bottom))] left-1/2 z-[60] flex -translate-x-1/2 animate-pop-up items-center gap-3 rounded-card bg-ink py-2 pr-2 pl-4 text-body-sm text-paper shadow-float md:bottom-6 print:hidden"
     role="status"
   >

@@ -1,8 +1,9 @@
 <script setup lang="ts">
-import { computed, onMounted, ref, shallowRef } from 'vue'
+import { computed, nextTick, onMounted, ref, shallowRef, watch } from 'vue'
 
 import RollingNumber from '../components/RollingNumber.vue'
 import ShareImage from '../components/ShareImage.vue'
+import { useDismiss } from '../composables/floating'
 import { groupByArea, regionOf, regions } from '../data/regions'
 import { japanOutline, type JapanOutline } from '../services/geo'
 import { drawKeiken } from '../services/shareImage'
@@ -35,6 +36,17 @@ function pick(e: MouseEvent, pref: string) {
   if (!box) return
   picking.value = { pref, x: Math.min(e.clientX - box.left, box.width - 150), y: e.clientY - box.top }
 }
+// Esc、點地圖以外的地方關閉；打開時焦點放在目前的級數
+const menu = ref<HTMLElement | null>(null)
+useDismiss(mapBox, picking, () => (picking.value = null))
+watch(
+  () => picking.value?.pref,
+  async (p) => {
+    if (!p) return
+    await nextTick()
+    menu.value?.querySelector<HTMLElement>('[aria-checked="true"]')?.focus()
+  },
+)
 async function choose(pref: string, level: KeikenLevel | null) {
   picking.value = null
   await keiken.setLevel(pref, level)
@@ -96,6 +108,8 @@ async function render(canvas: HTMLCanvasElement) {
         </svg>
         <div
           v-if="picking"
+          ref="menu"
+          data-reduce="fade"
           class="absolute z-10 flex w-[140px] origin-top animate-pop-in flex-col rounded-card bg-paper p-1 shadow-float"
           :style="{ left: `${picking.x}px`, top: `${picking.y + 8}px` }"
           role="menu"
@@ -108,14 +122,14 @@ async function render(canvas: HTMLCanvasElement) {
             type="button"
             role="menuitemradio"
             :aria-checked="keiken.levelOf(picking.pref) === l.level"
-            class="flex h-9 items-center gap-2 rounded-control px-2.5 text-body-sm hover:bg-surface"
+            class="flex min-h-tap items-center gap-2 rounded-control px-2.5 text-body-sm hover:bg-surface"
             :class="keiken.levelOf(picking.pref) === l.level ? 'font-bold' : ''"
             @click="choose(picking.pref, l.level)"
           >
             <span class="size-3 rounded-[3px] border border-line" :class="`lv-${l.level}`" aria-hidden="true"></span>
             {{ l.label }}
           </button>
-          <button type="button" class="h-8 rounded-control text-caption text-sub hover:bg-surface" @click="picking = null">取消</button>
+          <button type="button" class="min-h-tap rounded-control text-caption text-sub hover:bg-surface" @click="picking = null">取消</button>
         </div>
       </div>
 

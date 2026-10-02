@@ -267,14 +267,30 @@
     user-select: none;
     -webkit-touch-callout: none;
   }
+  /* 減少動態（DESIGN.md §9）：只留淡入淡出。
+   * 依序出現的延遲一律拿掉（不然 fill-mode both 的項目在延遲結束前一直是透明的）；
+   * 其他動畫與 transition 壓成瞬間、不重複（光芒旋轉、骨架掃光這類沒有自己 reduce 規則的也停住）；
+   * 用 keyframes 進場的面板、對話框標 data-reduce="fade"，改播 0.2s 淡入，自己的 transition 照常 */
   @media (prefers-reduced-motion: reduce) {
-    /* 依序出現的延遲也拿掉：不然 fill-mode both 的項目在延遲結束前一直是透明的 */
     *, *::before, *::after {
-      animation-duration: 0.01ms !important;
       animation-delay: 0s !important;
-      transition-duration: 0.01ms !important;
       transition-delay: 0s !important;
     }
+    *:not([data-reduce='fade']), *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+    [data-reduce='fade'] {
+      animation: reduce-fade 0.2s ease both !important;
+    }
+  }
+}
+
+/* 減少動態時面板的淡入（上面 [data-reduce='fade'] 用） */
+@keyframes reduce-fade {
+  from {
+    opacity: 0;
   }
 }
 

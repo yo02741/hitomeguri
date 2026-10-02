@@ -25,7 +25,7 @@ const emit = defineEmits<{ 'update:modelValue': [value: string] }>()
 
 const trigger = ref<HTMLButtonElement | null>(null)
 const panel = ref<HTMLElement | null>(null)
-const { open, style, pref } = useFloating(trigger, panel, { align: props.align })
+const { open, style, pref, side, origin } = useFloating(trigger, panel, { align: props.align })
 const id = `dd-${Math.random().toString(36).slice(2, 8)}`
 const current = computed(() => props.options.find((o) => o.value === props.modelValue) ?? props.options[0])
 const active = ref(0)
@@ -96,8 +96,11 @@ watch(active, async () => {
       :aria-activedescendant="`${id}-${active}`"
       tabindex="-1"
       :data-pref="pref"
-      class="scroll-quiet fixed z-[80] flex max-h-72 min-w-32 animate-pop-in flex-col overflow-y-auto overscroll-contain rounded-card border border-line bg-paper p-1 shadow-float outline-none"
-      :style="style"
+      data-floating
+      data-reduce="fade"
+      class="scroll-quiet fixed z-[80] flex max-h-72 min-w-32 flex-col overflow-y-auto overscroll-contain rounded-card border border-line bg-paper p-1 shadow-float outline-none"
+      :class="side === 'top' ? 'animate-pop-up' : 'animate-pop-in'"
+      :style="{ ...style, transformOrigin: origin }"
       @keydown="onPanelKey"
     >
       <button

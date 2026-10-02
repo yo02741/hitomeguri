@@ -1,7 +1,8 @@
 <script setup lang="ts">
-import { computed, onBeforeUnmount, ref, watch } from 'vue'
+import { computed, ref } from 'vue'
 import { useRouter } from 'vue-router'
 
+import { useDismiss } from '../composables/floating'
 import type { Trip } from '../services/trip'
 import { useTripsStore } from '../stores/trips'
 import { useUserStore } from '../stores/user'
@@ -25,14 +26,8 @@ const members = computed(() =>
 
 const open = ref(false)
 const root = ref<HTMLElement | null>(null)
-function onPointerDown(e: PointerEvent) {
-  if (root.value && !root.value.contains(e.target as Node)) open.value = false
-}
-watch(open, (o) => {
-  if (o) document.addEventListener('pointerdown', onPointerDown)
-  else document.removeEventListener('pointerdown', onPointerDown)
-})
-onBeforeUnmount(() => document.removeEventListener('pointerdown', onPointerDown))
+const toggleBtn = ref<HTMLButtonElement | null>(null)
+useDismiss(root, open, () => (open.value = false), () => toggleBtn.value)
 
 const busy = ref(false)
 const copied = ref(false)
@@ -81,6 +76,7 @@ async function leave() {
 <template>
   <div ref="root" class="relative flex items-center gap-2">
     <button
+      ref="toggleBtn"
       type="button"
       class="flex h-9 items-center gap-2 rounded-control border border-line bg-paper pr-3 pl-1.5 text-label text-ink hover:bg-surface"
       aria-haspopup="true"

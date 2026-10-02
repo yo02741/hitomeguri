@@ -93,6 +93,7 @@ const chip = 'flex h-9 shrink-0 items-center gap-1.5 rounded-full px-3.5 text-la
       </button>
       <div
         v-if="menuOpen"
+        data-reduce="fade"
         class="absolute top-11 left-0 z-20 flex w-72 origin-top-left animate-pop-in flex-col rounded-card bg-paper p-1.5 shadow-float"
         role="menu"
       >

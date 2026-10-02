@@ -150,6 +150,7 @@ onBeforeUnmount(() => document.removeEventListener('keydown', onKey))
 <template>
   <Teleport to="body">
     <div
+      data-reduce="fade"
       class="viewer fixed inset-0 z-50 flex flex-col items-center justify-center gap-5 bg-ink/75 p-4"
       role="dialog"
       aria-modal="true"
@@ -172,6 +173,7 @@ onBeforeUnmount(() => document.removeEventListener('keydown', onKey))
           ref="cardEl"
           role="button"
           tabindex="0"
+          data-reduce="fade"
           class="viewer-card cursor-pointer rounded-[16px]"
           :class="enterFrom ? `from-${enterFrom}` : ''"
           :aria-label="flipped ? '翻回正面' : '翻到背面'"
@@ -308,12 +310,6 @@ onBeforeUnmount(() => document.removeEventListener('keydown', onKey))
   from {
     opacity: 0;
     transform: translateX(-64px) rotateY(24deg);
-  }
-}
-@media (prefers-reduced-motion: reduce) {
-  .viewer,
-  .viewer-card {
-    animation: none;
   }
 }
 @media (max-width: 400px) {

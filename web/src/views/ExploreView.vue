@@ -636,9 +636,15 @@ function onMoveEnd(view: MapViewState) {
     <Transition name="sheet" @after-enter="sheetEntering = false" @enter-cancelled="sheetEntering = false">
       <aside
         v-if="selectedId"
+        :data-reduce="desktop ? undefined : 'fade'"
         class="shrink-0 border-line lg:w-panel lg:border-l max-lg:absolute max-lg:inset-x-0 max-lg:bottom-0 max-lg:z-20 max-lg:h-[60dvh] max-lg:overflow-hidden max-lg:rounded-t-sheet max-lg:shadow-sheet"
       >
-        <div :key="panelKey" class="h-full" :class="panelKey === quietKey ? '' : 'animate-panel-in'">
+        <div
+          :key="panelKey"
+          class="h-full"
+          :class="panelKey === quietKey ? '' : 'animate-panel-in'"
+          :data-reduce="panelKey === quietKey ? undefined : 'fade'"
+        >
           <PackPanel
             v-if="shownPack"
             :item="shownPack.item"
@@ -673,6 +679,20 @@ function onMoveEnd(view: MapViewState) {
   .sheet-enter-from,
   .sheet-leave-to {
     transform: translateY(100%);
+  }
+}
+/* 減少動態：手機的卡片不升降，aside 的 data-reduce="fade" 淡入、關閉時淡出（桌機由內容的 panel-in 淡入） */
+@media (max-width: 1023.98px) and (prefers-reduced-motion: reduce) {
+  .sheet-enter-active {
+    transition: none;
+  }
+  .sheet-leave-active {
+    transition: opacity 0.2s ease;
+  }
+  .sheet-enter-from,
+  .sheet-leave-to {
+    transform: none;
+    opacity: 0;
   }
 }
 </style>

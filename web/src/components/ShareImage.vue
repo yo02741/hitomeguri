@@ -55,7 +55,7 @@ async function share() {
 
 <template>
   <div class="fixed inset-0 z-[65] flex items-center justify-center bg-ink/70 p-4 print:hidden" role="dialog" aria-modal="true" :aria-label="title" @click.self="emit('close')">
-    <div class="flex max-h-full w-full max-w-[440px] animate-pop-in flex-col gap-3 rounded-card bg-paper p-3 shadow-float">
+    <div data-reduce="fade" class="flex max-h-full w-full max-w-[440px] animate-pop-in flex-col gap-3 rounded-card bg-paper p-3 shadow-float">
       <div class="relative min-h-0 overflow-auto rounded-[6px] bg-surface">
         <canvas ref="canvas" class="block h-auto w-full" :class="ready ? '' : 'opacity-0'"></canvas>
         <div v-if="!ready && !failed" class="skeleton absolute inset-0" aria-hidden="true"></div>

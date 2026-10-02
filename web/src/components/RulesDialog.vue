@@ -36,7 +36,7 @@ onBeforeUnmount(() => document.removeEventListener('keydown', onKey))
 
 <template>
   <div class="fixed inset-0 z-[70] grid place-items-center bg-ink/60 p-4" @click.self="emit('close')">
-    <section ref="box" class="rules scroll-quiet flex max-h-full w-full max-w-[520px] flex-col gap-5 overflow-y-auto overscroll-contain rounded-card bg-paper p-6 text-ink shadow-float max-sm:p-5" role="dialog" aria-modal="true" aria-labelledby="rules-title">
+    <section ref="box" data-reduce="fade" class="rules scroll-quiet flex max-h-full w-full max-w-[520px] flex-col gap-5 overflow-y-auto overscroll-contain rounded-card bg-paper p-6 text-ink shadow-float max-sm:p-5" role="dialog" aria-modal="true" aria-labelledby="rules-title">
       <header class="flex items-center">
         <h2 id="rules-title" class="text-h3 font-black tracking-[2px]">{{ title }}</h2>
         <button ref="closeBtn" type="button" class="ml-auto h-9 rounded-control px-3 text-label font-bold text-sub hover:bg-surface hover:text-ink" @click="emit('close')">關閉</button>
@@ -54,11 +54,6 @@ onBeforeUnmount(() => document.removeEventListener('keydown', onKey))
   from {
     opacity: 0;
     transform: translateY(8px);
-  }
-}
-@media (prefers-reduced-motion: reduce) {
-  .rules {
-    animation: none;
   }
 }
 </style>
