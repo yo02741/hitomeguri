@@ -4,7 +4,7 @@ import type { RouteLocationRaw } from 'vue-router'
 
 import { useTilt } from '../composables/tilt'
 import type { CardFace, Rarity } from '../services/card'
-import { showReveal } from '../services/cardReveal'
+import { reveal, showReveal } from '../services/cardReveal'
 import { BASE_VARIANT, randomDraw, UNLIMITED_DRAWS, type Variant } from '../services/cardVariants'
 import { todayIso } from '../services/userdb'
 import { useCardsStore } from '../stores/cards'
@@ -86,6 +86,8 @@ async function startGyro() {
   gyro.value = await tilt.useGyro()
 }
 function onKey(e: KeyboardEvent) {
+  // 新卡入手正在亮相時，Esc 只收起那張，不關檢視器
+  if (reveal.value) return
   if (e.key === 'Escape') emit('close')
   else if (e.key === 'ArrowRight') step(1)
   else if (e.key === 'ArrowLeft') step(-1)
