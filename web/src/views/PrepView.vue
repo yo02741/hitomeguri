@@ -128,7 +128,7 @@ watch(
       <SectionNav :items="nav" :active="active" variant="bar" @go="go" />
     </div>
 
-    <div class="mx-auto grid w-full max-w-5xl gap-10 px-6 pt-8 pb-16 lg:grid-cols-[168px_minmax(0,1fr)]">
+    <div class="mx-auto grid w-full max-w-5xl gap-10 px-6 pt-8 pb-24 lg:grid-cols-[168px_minmax(0,1fr)]">
       <aside class="max-lg:hidden">
         <div class="scroll-quiet sticky top-8 max-h-[calc(100dvh-var(--spacing-header)-64px)] overflow-y-auto">
           <SectionNav :items="nav" :active="active" variant="side" @go="go" />

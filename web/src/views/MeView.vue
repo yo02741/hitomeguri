@@ -38,7 +38,7 @@ async function logOut() {
 </script>
 
 <template>
-  <section class="mx-auto flex w-full max-w-3xl flex-col gap-10 px-6 py-9">
+  <section class="mx-auto flex w-full max-w-3xl flex-col gap-10 px-6 pt-9 pb-24">
     <h1 class="text-h2 font-black tracking-[2px]">收藏與清單</h1>
 
     <template v-if="userStore.user">

@@ -128,7 +128,7 @@ function open(id: string) {
 </script>
 
 <template>
-  <section class="mx-auto flex w-full max-w-5xl flex-col gap-6 px-6 py-9">
+  <section class="mx-auto flex w-full max-w-5xl flex-col gap-6 px-6 pt-9 pb-24">
     <h1 class="text-h2 font-black tracking-[2px]">紀錄</h1>
 
     <template v-if="userStore.user">

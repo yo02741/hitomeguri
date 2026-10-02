@@ -231,7 +231,7 @@ async function del() {
 <template>
   <div v-if="trip" class="flex min-h-0 flex-1 max-lg:flex-col">
     <!-- 左：行程內容 -->
-    <section class="flex min-h-0 flex-col gap-5 overflow-y-auto border-line px-5 py-6 lg:w-[460px] lg:shrink-0 lg:border-r max-lg:order-2">
+    <section class="flex min-h-0 flex-col gap-5 overflow-y-auto border-line px-5 pt-6 pb-24 lg:w-[460px] lg:shrink-0 lg:border-r max-lg:order-2">
       <RouterLink :to="status === 'done' ? '/log' : '/trips'" class="flex w-fit items-center gap-1 text-label text-sub no-underline hover:text-ink">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7" /></svg>
         {{ status === 'done' ? '紀錄' : '行程' }}

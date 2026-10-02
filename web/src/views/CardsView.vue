@@ -129,7 +129,7 @@ function onCardKey(e: KeyboardEvent, id: string) {
 </script>
 
 <template>
-  <section class="mx-auto flex w-full max-w-5xl flex-col gap-7 px-6 py-9 max-sm:px-4">
+  <section class="mx-auto flex w-full max-w-5xl flex-col gap-7 px-6 pt-9 pb-24 max-sm:px-4">
     <header class="paper-grain relative overflow-hidden rounded-card bg-region p-6 text-on-region max-sm:p-5">
       <SeasonDrift :pref="null" />
       <div class="relative grid grid-cols-[minmax(0,1fr)_minmax(0,44%)] items-center gap-6 max-sm:gap-2 sm:grid-cols-[minmax(0,1fr)_260px] lg:grid-cols-[minmax(0,1fr)_320px]">

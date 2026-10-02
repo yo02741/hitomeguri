@@ -34,6 +34,8 @@ const act = ref<Act>('idle')
 const walkMs = ref(0)
 const say = ref<string | null>(null)
 const actKey = ref(0)
+// 讀屏器只在點了旅人之後讀出它說的話；自己說話時不打斷
+const heard = ref('')
 
 let timer = 0
 let sayTimer = 0
@@ -112,6 +114,7 @@ function tick() {
 }
 function onClick() {
   speak()
+  heard.value = say.value ?? ''
   if (!reduced) doAct('jump')
 }
 function clamp() {
@@ -150,18 +153,19 @@ const bubbleRight = computed(() => x.value > maxX() - 150)
 <template>
   <div
     v-if="visible"
-    class="walker pointer-events-none fixed left-0 z-[45] print:hidden"
+    class="walker pointer-events-none fixed left-0 z-[15] print:hidden"
     :style="{ transform: `translateX(${x}px)`, transitionDuration: `${act === 'walk' ? walkMs : 0}ms` }"
   >
     <p
       v-if="say"
       :key="say"
       class="bubble absolute bottom-full mb-1.5 w-max max-w-[200px] rounded-card bg-paper px-3 py-2 text-caption font-bold text-ink shadow-float"
-      :class="bubbleRight ? 'right-0' : 'left-0'"
-      role="status"
+      :class="bubbleRight ? 'right-0 origin-bottom-right' : 'left-0 origin-bottom-left'"
+      aria-hidden="true"
     >
       {{ say }}
     </p>
+    <p class="sr-only" aria-live="polite">{{ heard }}</p>
     <button type="button" class="pointer-events-auto block" :aria-label="say ? `旅人：${say}` : '旅人'" @click="onClick">
       <span :key="actKey" class="body block" :class="`act-${act}`" :style="{ '--face': facing }">
         <PaperDoll :parts="avatar.parts" :equipped="avatar.equipped" class="block h-auto w-16" />

@@ -169,7 +169,7 @@ function print() {
 
     <!-- 紙面：螢幕上照紙寬預覽，列印時交給 @page -->
     <article
-      class="mx-auto my-8 flex max-w-full flex-col bg-white text-ink shadow-float [print-color-adjust:exact] print:my-0 print:block print:w-auto print:max-w-none print:p-0 print:shadow-none"
+      class="mx-auto mt-8 mb-24 flex max-w-full flex-col bg-white text-ink shadow-float [print-color-adjust:exact] print:my-0 print:block print:w-auto print:max-w-none print:p-0 print:shadow-none"
       :class="paper === 'A5' ? 'w-[148mm] px-[12mm] py-[11mm] text-[13px]' : 'w-[210mm] px-[18mm] py-[16mm] text-[14px]'"
     >
       <!-- 封面 -->

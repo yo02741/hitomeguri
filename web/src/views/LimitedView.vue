@@ -23,7 +23,7 @@ const gallery = ref<InstanceType<typeof FindGallery> | null>(null)
 </script>
 
 <template>
-  <section class="mx-auto flex w-full max-w-5xl flex-col gap-10 px-6 py-9">
+  <section class="mx-auto flex w-full max-w-5xl flex-col gap-10 px-6 pt-9 pb-24">
     <h1 class="text-h2 font-black tracking-[2px]">期間限定</h1>
 
     <section class="flex flex-col gap-3" aria-labelledby="chain-title">

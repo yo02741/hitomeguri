@@ -159,7 +159,7 @@ function sourceLabel(url: string): string {
       <SectionNav :items="nav" :active="active" variant="bar" @go="go" />
     </div>
 
-    <div ref="content" class="mx-auto grid w-full max-w-5xl gap-10 px-6 pt-8 pb-16 lg:grid-cols-[168px_minmax(0,1fr)]">
+    <div ref="content" class="mx-auto grid w-full max-w-5xl gap-10 px-6 pt-8 pb-24 lg:grid-cols-[168px_minmax(0,1fr)]">
       <!-- 左欄：回地圖（和地圖頁的「深度探索」同一側）＋段落目錄 -->
       <aside class="max-lg:hidden">
         <div class="sticky top-8 flex flex-col gap-5">

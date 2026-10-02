@@ -45,7 +45,7 @@ async function del() {
 </script>
 
 <template>
-  <section class="mx-auto flex w-full max-w-3xl flex-col gap-6 px-6 py-9">
+  <section class="mx-auto flex w-full max-w-3xl flex-col gap-6 px-6 pt-9 pb-24">
     <RouterLink to="/me" class="flex w-fit items-center gap-1 text-label text-sub no-underline hover:text-ink">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
         <path d="M15 5l-7 7 7 7" />
