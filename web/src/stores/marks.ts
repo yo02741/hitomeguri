@@ -52,6 +52,8 @@ export const useMarksStore = defineStore('marks', () => {
   /** 最近一次寫入失敗；下次成功時清掉 */
   const error = ref<string | null>(null)
   let unsubscribe: Array<() => void> = []
+  // 取消去過時記住補好的日期（只在這次開啟期間，換帳號清掉）：清單每列一鍵切換，誤點再點回來日期還在
+  const lastVisitedOn = new Map<string, string>()
 
   watch(
     () => userStore.user?.uid,
@@ -59,6 +61,7 @@ export const useMarksStore = defineStore('marks', () => {
       unsubscribe.forEach((f) => f())
       unsubscribe = []
       marks.value = {}
+      lastVisitedOn.clear()
       lists.value = []
       marksLoaded.value = false
       listsLoaded.value = false
@@ -162,7 +165,9 @@ export const useMarksStore = defineStore('marks', () => {
   function toggleVisited(s: SpotRef) {
     return withUser((uid) => {
       const m = current(s)
-      return writeMark(uid, s.id, { ...m, visited: !m.visited, visited_on: m.visited ? undefined : m.visited_on })
+      if (m.visited && m.visited_on) lastVisitedOn.set(s.id, m.visited_on)
+      const visitedOn = m.visited ? undefined : (m.visited_on ?? lastVisitedOn.get(s.id))
+      return writeMark(uid, s.id, { ...m, visited: !m.visited, visited_on: visitedOn })
     })
   }
 

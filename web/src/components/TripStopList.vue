@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { nextTick, ref } from 'vue'
+
 import { regionOf } from '../data/regions'
 import type { MapSpot } from '../services/bundles'
 import { type Stop, type StopPos, transitUrl } from '../services/trip'
@@ -43,6 +45,15 @@ function onOverRow(idx: number, e: DragEvent) {
 function onOverList(e: DragEvent) {
   e.preventDefault()
   if (e.target === e.currentTarget) emit('dragover', { day: props.day, idx: props.stops.length })
+}
+// 移除後讀屏器讀出「已移除 ○○」（列表項目直接消失，沒有別的提示）；同一句再出現時先清空才會再唸
+const announce = ref('')
+async function remove(i: number) {
+  const name = props.stops[i]?.name ?? ''
+  emit('remove', { day: props.day, idx: i })
+  announce.value = ''
+  await nextTick()
+  announce.value = `已移除 ${name}`
 }
 const isDrop = (idx: number) => props.dropAt?.day === props.day && props.dropAt.idx === idx
 </script>
@@ -107,11 +118,11 @@ const isDrop = (idx: number) => props.dropAt?.day === props.day && props.dropAt.
             <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6" /></svg>
           </button>
         </span>
-        <button type="button" :aria-label="`從行程移除：${s.name}`" class="grid size-8 shrink-0 place-items-center rounded-control text-sub hover:bg-surface hover:text-ink pointer-coarse:hidden" @click="emit('remove', { day, idx: i })">
+        <button type="button" :aria-label="`從行程移除：${s.name}`" class="grid size-8 shrink-0 place-items-center rounded-control text-sub hover:bg-surface hover:text-ink pointer-coarse:hidden" @click="remove(i)">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" /></svg>
         </button>
         <span class="hidden pointer-coarse:contents">
-          <StopMenu :name="s.name" :first="i === 0" :last="i === stops.length - 1" @shift="emit('shift', { day, idx: i }, $event)" @remove="emit('remove', { day, idx: i })" />
+          <StopMenu :name="s.name" :first="i === 0" :last="i === stops.length - 1" @shift="emit('shift', { day, idx: i }, $event)" @remove="remove(i)" />
         </span>
       </li>
     </template>
@@ -126,6 +137,7 @@ const isDrop = (idx: number) => props.dropAt?.day === props.day && props.dropAt.
     </li>
     <li v-else-if="isDrop(stops.length)" key="drop-end" class="h-0 border-t-2 border-region-strong" aria-hidden="true"></li>
   </TransitionGroup>
+  <p class="sr-only" aria-live="polite">{{ announce }}</p>
 </template>
 
 <style scoped>
