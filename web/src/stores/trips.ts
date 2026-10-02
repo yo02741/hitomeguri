@@ -57,6 +57,8 @@ export const useTripsStore = defineStore('trips', () => {
   const userStore = useUserStore()
   const trips = shallowRef<Trip[]>([])
   const loaded = ref(false)
+  /** 已經和伺服器對過一次（不是只讀到離線快取）：成就等這個才建 NEW 的基準 */
+  const synced = ref(false)
   const error = ref<string | null>(null)
   let unsubscribe: (() => void) | null = null
 
@@ -95,6 +97,7 @@ export const useTripsStore = defineStore('trips', () => {
       unsubscribe = null
       trips.value = []
       loaded.value = false
+      synced.value = false
       if (!uid) return
       const { fs, db } = await firestore()
       if (userStore.user?.uid !== uid) return
@@ -107,7 +110,11 @@ export const useTripsStore = defineStore('trips', () => {
       const q = fs.query(fs.collection(db, 'trips'), fs.where('members', 'array-contains', uid))
       unsubscribe = fs.onSnapshot(
         q,
+        { includeMetadataChanges: true },
         (snap) => {
+          if (!snap.metadata.fromCache) synced.value = true
+          // 只有 metadata 變了（寫入確認、連線狀態）：不重建
+          if (loaded.value && snap.docChanges().length === 0) return
           const next: Trip[] = []
           snap.forEach((d) => next.push(parse(d.id, d.data({ serverTimestamps: 'estimate' }))))
           trips.value = next
@@ -116,6 +123,7 @@ export const useTripsStore = defineStore('trips', () => {
         (e) => {
           console.error('trips', e)
           loaded.value = true
+          synced.value = true
         },
       )
     },
@@ -323,6 +331,6 @@ export const useTripsStore = defineStore('trips', () => {
   }
 
   return {
-    trips, sorted, loaded, error, today, get, create, mutate, addStop, remove, removeMember, invite, readInvite, join, toStop,
+    trips, sorted, loaded, synced, error, today, get, create, mutate, addStop, remove, removeMember, invite, readInvite, join, toStop,
   }
 })

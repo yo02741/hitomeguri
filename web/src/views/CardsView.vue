@@ -179,6 +179,7 @@ function onCardKey(e: KeyboardEvent, id: string) {
           <dt>去過的縣</dt><dd class="font-latin text-ink">{{ wallet.breakdown.prefs }} × {{ TICKET_RULES.pref }}</dd><dd></dd>
           <dt>去過的地方</dt><dd class="font-latin text-ink">{{ wallet.breakdown.areas }} × {{ TICKET_RULES.area }}</dd><dd></dd>
           <dt>每 10 個景點</dt><dd class="font-latin text-ink">{{ wallet.breakdown.bonus }} × {{ TICKET_RULES.every10 }}</dd><dd></dd>
+          <dt>成就</dt><dd class="font-latin text-ink">{{ wallet.breakdown.achv }} × {{ TICKET_RULES.achv }}</dd><dd></dd>
           <dt>用掉</dt><dd class="font-latin text-ink">{{ wallet.used }}</dd><dd></dd>
         </dl>
       </div>
