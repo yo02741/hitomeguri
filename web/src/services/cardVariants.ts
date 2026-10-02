@@ -2,21 +2,20 @@ import type { Rarity } from './card'
 
 /**
  * 收集卡的樣式（DESIGN.md §7.19a）：像寶可夢卡同一隻有基本卡、全圖卡、特別插畫卡，
- * 同一個景點也有好幾種樣式。每「去過」一次（自己標的、每一趟結束的行程）抽一次：
- * - 基本：一定有
- * - 季節（春夏秋冬）：去的那天是什麼季節就拿到那一張（看日期，不是抽的）
- * - 全景：照片鋪滿整張卡，蝕刻紋光澤（12%）
- * - 夜景：夜晚的照片鋪滿整張卡，星點閃爍（8%；沒有夜景照片時把照片壓暗）
- * - 墨繪：照片變成水墨，和紙卡面、墨框（8%）
- * - 切手：郵票：白邊、齒孔、消印（8%）
- * - 銀箔：整張銀框（4%）
- * - 金箔：整張金框（3%）
- * - 特別全景：世界遺產、國寶、特別史跡、特別名勝才有，全景＋虹色亮片（8%）
- * 全景、夜景、墨繪、切手、銀箔、金箔、特別全景一次最多抽到一種。
- * 抽到什麼由「帳號＋景點＋日期」決定（雜湊），不另外存；換裝置、重新整理都一樣。
- * 測試期（UNLIMITED_DRAWS）另外可以無限抽：按去過、開卡包、收集卡的「再抽一張」都隨機抽一次，
- * 存在 Firestore users/{uid}/cards（stores/cards.ts）。正式上線前改成 false 並清空。
- * 全景、金箔、特別全景記得是在哪個季節抽到的（photo），卡面用那個季節的照片（有的話）。
+ * 同一個景點也有好幾種樣式：
+ * - 基本：去過就有
+ * - 季節（春夏秋冬）：去的那天是什麼季節就有那一張（看日期）；也抽得到
+ * - 全景：照片鋪滿整張卡，蝕刻紋光澤
+ * - 夜景：夜晚的照片鋪滿整張卡，星點閃爍（沒有夜景照片時把照片壓暗）
+ * - 墨繪：照片變成水墨，和紙卡面、墨框
+ * - 切手：郵票：白邊、齒孔、消印
+ * - 銀箔、金箔：整張銀框、金框
+ * - 特別全景：世界遺產、國寶、特別史跡、特別名勝才有，全景＋虹色亮片
+ * 抽（drawOne）：只從這個景點還沒有的樣式裡抽，不會重複；稀有的權重低。都有了就不能抽。
+ * 抽一次用一張抽獎券（stores/wallet.ts）；每個景點第一次去過時送一次免費抽。
+ * 抽到的存在 Firestore users/{uid}/cards（stores/cards.ts）。
+ * 全景、金箔等記得是在哪個季節抽到的（photo），卡面用那個季節的照片（有的話）。
+ * 測試期（UNLIMITED_DRAWS）不扣抽獎券；正式上線前改成 false 並清空所有人的 users/{uid}/cards。
  */
 export const UNLIMITED_DRAWS = true
 
@@ -76,66 +75,25 @@ export function seasonOfMonth(month: number): SeasonKey {
   return 'winter'
 }
 
-/** FNV-1a 32 位元 → [0, 1) */
-export function hash01(s: string): number {
-  let h = 0x811c9dc5
-  for (let i = 0; i < s.length; i++) {
-    h ^= s.charCodeAt(i)
-    h = Math.imul(h, 0x01000193)
-  }
-  return (h >>> 0) / 4294967296
-}
-
 const rareSpot = (r: Rarity) => r === 'rainbow' || r === 'gold'
-
-/** 一次「去過」抽到的樣式（基本一定有；有日期就有那個季節的） */
-export function drawVariants(uid: string, spotId: string, date: string | null | undefined, rarity: Rarity): Variant[] {
-  const out = [BASE]
-  if (date) out.push(seasonVariant(seasonOfMonth(Number(date.slice(5, 7)))))
-  const extra = pick(hash01(`${uid}|${spotId}|${date ?? 'undated'}`), rarity)
-  if (extra) out.push(withSeason(extra, date ? seasonOfMonth(Number(date.slice(5, 7))) : undefined))
-  return out
-}
 
 /** 照片跟季節走的樣式記下抽到的季節（夜景固定是夜景照片） */
 function withSeason(v: Variant, season: SeasonKey | undefined): Variant {
   return v.photo || !season ? v : { ...v, photo: season }
 }
 
-// 金箔 3%、銀箔 4%、特別全景 8%（稀有的景點才有）、全景 12%、夜景 8%、墨繪 8%、切手 8%。互斥，一次最多一種
-function pick(r: number, rarity: Rarity): Variant | null {
-  const rare = rareSpot(rarity)
-  if (r < 0.03) return GOLD
-  if (r < 0.07) return SILVER
-  if (rare && r < 0.15) return SPECIAL
-  const base = rare ? 0.15 : 0.07
-  if (r < base + 0.12) return FULL
-  if (r < base + 0.2) return NIGHT
-  if (r < base + 0.28) return SUMI
-  if (r < base + 0.36) return STAMP
-  return null
-}
-
-/** 無限抽（UNLIMITED_DRAWS）：隨機抽一次。季節也隨機（正式規則是看去的日期；測試期照日期就只抽得到當季） */
-export function randomDraw(rarity: Rarity, _date: string): Variant[] {
-  const season = SEASON_ORDER[Math.floor(Math.random() * SEASON_ORDER.length)]!
-  const out = [BASE, seasonVariant(season)]
-  const extra = pick(Math.random(), rarity)
-  if (extra) out.push(withSeason(extra, season))
+/** 一次「去過」拿到的樣式：基本卡，有日期就加那個季節的卡 */
+export function drawVariants(date: string | null | undefined): Variant[] {
+  const out = [BASE]
+  if (date) out.push(seasonVariant(seasonOfMonth(Number(date.slice(5, 7)))))
   return out
 }
 
-/** 每次去過抽到的合起來（不重複，稀有的在前） */
-export function ownedVariants(
-  uid: string,
-  spotId: string,
-  dates: Array<string | null | undefined>,
-  rarity: Rarity,
-  extra: Variant[] = [],
-): Variant[] {
+/** 去過的每一天拿到的（基本、季節）加上抽到的（不重複，稀有的在前） */
+export function ownedVariants(dates: Array<string | null | undefined>, rarity: Rarity, extra: Variant[] = []): Variant[] {
   const seen = new Map<string, Variant>()
-  for (const d of dates.length ? dates : [null]) for (const v of drawVariants(uid, spotId, d, rarity)) seen.set(v.key, v)
-  // 無限抽抽到的（特別全景只有稀有的景點才有，舊資料或換了稀有度時略過）
+  for (const d of dates.length ? dates : [null]) for (const v of drawVariants(d)) seen.set(v.key, v)
+  // 特別全景只有稀有的景點才有，舊資料或換了稀有度時略過
   for (const v of extra) if (!seen.has(v.key) && (v.kind !== 'special' || rareSpot(rarity))) seen.set(v.key, v)
   return [...seen.values()].sort((a, b) => b.rank - a.rank || seasonIndex(a) - seasonIndex(b))
 }
@@ -147,6 +105,32 @@ function seasonIndex(v: Variant): number {
 /** 這個景點全部的樣式（收集冊顯示「3 / 11 種」；稀有的景點 12 種） */
 export function allVariants(rarity: Rarity): Variant[] {
   return [BASE, ...SEASON_ORDER.map(seasonVariant), FULL, NIGHT, SUMI, STAMP, SILVER, GOLD, ...(rareSpot(rarity) ? [SPECIAL] : [])]
+}
+
+// 抽的權重：季節 5、全景・夜景・墨繪・切手 3、銀箔・金箔 1.2、特別全景 0.8
+const WEIGHT: Record<VariantKind, number> = { base: 0, season: 5, full: 3, night: 3, sumi: 3, stamp: 3, silver: 1.2, gold: 1.2, special: 0.8 }
+
+/** 這個景點還沒有的樣式 */
+export function missingVariants(rarity: Rarity, owned: Iterable<string>): Variant[] {
+  const have = new Set(owned)
+  return allVariants(rarity).filter((v) => !have.has(v.key))
+}
+
+/** 從還沒有的樣式裡抽一種（不會重複）；都有了回傳 null。全景、金箔等的照片季節隨機 */
+export function drawOne(rarity: Rarity, owned: Iterable<string>, rand: () => number = Math.random): Variant | null {
+  const pool = missingVariants(rarity, owned)
+  const total = pool.reduce((s, v) => s + WEIGHT[v.kind], 0)
+  if (!total) return null
+  let r = rand() * total
+  let picked = pool[pool.length - 1]!
+  for (const v of pool) {
+    r -= WEIGHT[v.kind]
+    if (r < 0) {
+      picked = v
+      break
+    }
+  }
+  return withSeason(picked, SEASON_ORDER[Math.floor(rand() * SEASON_ORDER.length)])
 }
 
 export const BASE_VARIANT = BASE

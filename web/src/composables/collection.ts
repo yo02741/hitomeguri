@@ -7,7 +7,6 @@ import { allVariants, ownedVariants, type Variant } from '../services/cardVarian
 import { useCardsStore } from '../stores/cards'
 import { useCatalogStore } from '../stores/catalog'
 import type { Mark } from '../stores/marks'
-import { useUserStore } from '../stores/user'
 
 /** 收集冊的一張卡（DESIGN.md §7.19） */
 export interface CollectionCard {
@@ -32,7 +31,6 @@ export interface CollectionCard {
  */
 export function useCollection(entries: () => Array<[string, Mark]>, datesOf?: (id: string) => Array<string | null> | undefined) {
   const catalog = useCatalogStore()
-  const userStore = useUserStore()
   const cardsStore = useCardsStore()
   const prefs = computed(() => [...new Set(entries().map(([, m]) => m.pref))])
   watch(prefs, (ps) => ps.forEach((p) => void catalog.loadMap(p)), { immediate: true })
@@ -57,7 +55,7 @@ export function useCollection(entries: () => Array<[string, Mark]>, datesOf?: (i
       const castle = castleBySpot.value.get(id)
       const rarity = rarityOf(s.d, Boolean(castle))
       const dates = datesOf?.(id) ?? [mark.visited_on ?? null]
-      const variants = ownedVariants(userStore.user?.uid ?? '', id, dates, rarity, cardsStore.extraOf(id))
+      const variants = ownedVariants(dates, rarity, cardsStore.extraOf(id))
       const chosen = cardsStore.covers[id]
       const cover = (chosen && variants.find((v) => v.key === chosen)) || variants.find((v) => v.kind === 'base') || variants[0]!
       return [
