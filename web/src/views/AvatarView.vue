@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
 
+import AvatarRules from '../components/AvatarRules.vue'
 import DollGacha from '../components/DollGacha.vue'
 import NewTag from '../components/NewTag.vue'
 import DollSpin from '../components/DollSpin.vue'
@@ -47,6 +48,9 @@ function toggle(o: Outfit) {
 const look = (p: Partial<AvatarParts>): AvatarParts => ({ ...avatar.parts, ...p })
 const HEAD_CROP = '48 14 144 150'
 
+// 規則（使用者自己打開）
+const showRules = ref(false)
+
 // ---------- 扭蛋 ----------
 const result = ref<{ outfit: Outfit; duplicate: boolean } | null>(null)
 function draw() {
@@ -73,6 +77,16 @@ function wear() {
       <div class="flex items-baseline gap-4">
         <h1 class="text-h1 font-black tracking-[6px]">旅人</h1>
         <p class="text-label text-sub">服裝 <span class="font-latin text-body font-bold text-ink">{{ ownedCount }}</span> / {{ OUTFITS.length }}</p>
+        <button
+          v-if="userStore.user"
+          type="button"
+          class="ml-auto flex h-9 items-center gap-1.5 self-center rounded-full border border-line bg-paper px-3.5 text-label font-bold text-ink hover:bg-surface"
+          aria-haspopup="dialog"
+          @click="showRules = true"
+        >
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h11a3 3 0 0 1 3 3v13H8a3 3 0 0 1-3-3z" /><path d="M9 9h6M9 13h6" /></svg>
+          規則
+        </button>
       </div>
     </header>
 
@@ -241,6 +255,7 @@ function wear() {
       </section>
     </div>
 
+    <AvatarRules v-if="showRules" @close="showRules = false" />
     <DollGacha
       v-if="result"
       :result="result"
