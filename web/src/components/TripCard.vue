@@ -2,9 +2,10 @@
 import { computed } from 'vue'
 
 import { regionOf } from '../data/regions'
-import { allStops, dayPref, shortDate, type Trip, tripPrefs, tripStatus } from '../services/trip'
+import { allStops, dayPref, daysUntil, shortDate, type Trip, tripPrefs, tripStatus } from '../services/trip'
 import { todayIso } from '../services/userdb'
 import MemberAvatar from './MemberAvatar.vue'
+import SplitFlap from './SplitFlap.vue'
 
 // 行程卡片（/trips、/log）：封面是經過的縣的分段色帶（UX-FLOW.md §2.4），下面是名稱、日期、天數、地點數。
 const props = defineProps<{ trip: Trip }>()
@@ -16,6 +17,8 @@ const dates = computed(() => {
   if (!s) return ''
   return e && e !== s ? `${shortDate(s)} – ${shortDate(e)}` : shortDate(s)
 })
+// 出發倒數：發車標的翻牌
+const until = computed(() => (status.value === 'planning' ? daysUntil(props.trip, todayIso()) : null))
 const count = computed(() => allStops(props.trip).length)
 const band = computed(() => {
   const w = new Map<string, number>()
@@ -42,6 +45,9 @@ const band = computed(() => {
       <span class="flex items-baseline gap-2">
         <span class="min-w-0 truncate text-body font-bold">{{ trip.name || '未命名行程' }}</span>
         <span v-if="status === 'ongoing'" class="shrink-0 rounded-tag bg-region-strong px-1.5 text-caption font-bold text-white">旅途中</span>
+        <span v-else-if="until !== null" class="ml-auto flex shrink-0 items-center gap-1 text-caption text-sub">
+          還有<SplitFlap :value="String(until)" class="text-body" />天
+        </span>
       </span>
       <span class="flex flex-wrap gap-x-3 text-caption text-sub">
         <span v-if="dates" class="font-latin">{{ dates }}</span>

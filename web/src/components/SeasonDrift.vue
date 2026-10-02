@@ -6,7 +6,7 @@ import { type Season, seasonFor, SEASONS } from '../services/season'
 import { todayIso } from '../services/userdb'
 import { useCatalogStore } from '../stores/catalog'
 
-// 海報區的季節飄落（DESIGN.md §9）：櫻花瓣、紅葉、銀杏、雪、螢火蟲。
+// 海報區的季節飄落（DESIGN.md §9）：櫻花瓣、紅葉、銀杏、雪、螢火蟲、煙火（8 月）。
 // 放在海報區裡（父元素要 relative），游標滑過時花瓣被風吹開。
 // 「減少動態」時不畫；離開畫面、分頁切到背景時暫停。網址加 ?season=sakura 等可以預覽其他季節。
 const props = defineProps<{ pref: string | null }>()
@@ -46,6 +46,7 @@ const COLORS: Record<Season, string[]> = {
   ichou: ['--color-ichou-1', '--color-ichou-2'],
   snow: ['--color-snow'],
   hotaru: ['--color-hotaru'],
+  hanabi: ['--color-hanabi-1', '--color-hanabi-2', '--color-hanabi-3', '--color-hanabi-4'],
 }
 
 let ctx: CanvasRenderingContext2D | null = null
@@ -99,7 +100,9 @@ function reset() {
   }
   const css = getComputedStyle(document.documentElement)
   palette = COLORS[s].map((v) => css.getPropertyValue(v).trim()).filter(Boolean)
-  particles = Array.from({ length: countFor(s) }, () => spawn(s, true))
+  sparks = []
+  nextLaunch = 0
+  particles = s === 'hanabi' ? [] : Array.from({ length: countFor(s) }, () => spawn(s, true))
 }
 
 function resize() {
@@ -206,6 +209,78 @@ function draw(c: CanvasRenderingContext2D, s: Season, p: Particle, t: number) {
   c.restore()
 }
 
+// 煙火（8 月）：從下方升起一顆，到高處炸開成一圈火花，火花受重力往下、慢慢淡出
+interface Spark {
+  x: number
+  y: number
+  vx: number
+  vy: number
+  life: number
+  max: number
+  color: string
+  rocket: boolean
+}
+let sparks: Spark[] = []
+let nextLaunch = 0
+function launch() {
+  const color = palette[Math.floor(Math.random() * palette.length)] ?? '#fff'
+  sparks.push({ x: rand(w * 0.12, w * 0.88), y: h + 6, vx: rand(-12, 12), vy: -rand(h * 0.9, h * 1.25), life: 0, max: rand(0.55, 0.8), color, rocket: true })
+}
+function burst(x: number, y: number, color: string) {
+  const n = Math.round(rand(34, 52))
+  const speed = rand(1, 1.3) * Math.max(h, 180) * 0.65
+  const second = palette[Math.floor(Math.random() * palette.length)] ?? color
+  for (let i = 0; i < n; i++) {
+    const a = (i / n) * Math.PI * 2 + rand(-0.05, 0.05)
+    const v = speed * rand(0.85, 1.05)
+    sparks.push({ x, y, vx: Math.cos(a) * v, vy: Math.sin(a) * v, life: 0, max: rand(1.1, 1.6), color: i % 3 ? color : second, rocket: false })
+  }
+}
+function hanabiFrame(c: CanvasRenderingContext2D, dt: number, t: number) {
+  if (t >= nextLaunch) {
+    launch()
+    nextLaunch = t + rand(0.6, 1.3)
+  }
+  const next: Spark[] = []
+  for (const s of sparks) {
+    s.life += dt
+    if (s.rocket) {
+      s.vy += h * 1.1 * dt
+      s.x += s.vx * dt
+      s.y += s.vy * dt
+      if (s.life >= s.max || s.vy > -h * 0.12) {
+        burst(s.x, s.y, s.color)
+        continue
+      }
+      c.globalAlpha = 0.9
+      c.fillStyle = s.color
+      c.beginPath()
+      c.arc(s.x, s.y, 1.6, 0, Math.PI * 2)
+      c.fill()
+      next.push(s)
+      continue
+    }
+    const k = Math.pow(0.45, dt)
+    s.vx *= k
+    s.vy = s.vy * k + h * 0.3 * dt
+    s.x += s.vx * dt
+    s.y += s.vy * dt
+    if (s.life >= s.max) continue
+    const fade = 1 - s.life / s.max
+    // 火花：拖著一段尾巴（速度方向），快燒完時一閃一閃
+    c.globalAlpha = fade * (s.life > s.max * 0.7 ? 0.45 + 0.55 * Math.abs(Math.sin(t * 30 + s.x)) : 1)
+    c.strokeStyle = s.color
+    c.lineWidth = 2.6
+    c.lineCap = 'round'
+    c.beginPath()
+    c.moveTo(s.x - s.vx * 0.09, s.y - s.vy * 0.09)
+    c.lineTo(s.x, s.y)
+    c.stroke()
+    next.push(s)
+  }
+  sparks = next
+}
+
 function frame(now: number) {
   raf = 0
   const c = ctx
@@ -216,6 +291,12 @@ function frame(now: number) {
   const t = now / 1000
   wind *= Math.pow(0.15, dt)
   c.clearRect(0, 0, w, h)
+  if (s === 'hanabi') {
+    hanabiFrame(c, dt, t)
+    c.globalAlpha = 1
+    raf = requestAnimationFrame(frame)
+    return
+  }
   for (let i = 0; i < particles.length; i++) {
     const p = particles[i]!
     // 游標附近被推開

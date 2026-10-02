@@ -11,6 +11,8 @@ export interface Reveal {
   rarity: Rarity
   label: string
   number: string
+  /** 這個縣第一個去過的景點：蓋上縣的紀念章 */
+  firstInPref?: boolean
   key: number
 }
 

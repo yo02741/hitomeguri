@@ -1,16 +1,19 @@
 <script setup lang="ts">
 import { computed, onMounted, shallowRef } from 'vue'
 
-import { japanOutline, type JapanOutline, japanProject, japanUnproject } from '../services/geo'
+import { regionOf } from '../data/regions'
+import { JAPAN_ZOOM } from '../map/style'
+import { japanOutline, type JapanOutline, japanProject } from '../services/geo'
 
-// 地圖放大時角落的日本全圖（像相機放大時的全景小框，DESIGN.md §7.5a）：
-// 目前看的範圍畫成框，範圍太小時改成一個點；目前的縣塗地區色。點小地圖飛到那個位置（縮放不變）。
+// 地圖放大時的日本全圖（像手機相機放大時的全景小窗，DESIGN.md §7.5a）：
+// 目前看的範圍畫成框，範圍太小時改成一個點；目前的縣塗地區色；下方寫縣名與放大倍率。只顯示，不能點。
 const props = defineProps<{
   /** 可見範圍 [west, south, east, north] */
   bounds: [number, number, number, number]
+  /** 目前的縮放（倍率以日本全圖的縮放為 1×） */
+  zoom: number
   pref?: string | null
 }>()
-const emit = defineEmits<{ go: [lng: number, lat: number] }>()
 
 const shape = shallowRef<JapanOutline | null>(null)
 onMounted(async () => {
@@ -28,19 +31,17 @@ const view = computed(() => {
   return { cx, cy, x: cx - width / 2, y: cy - height / 2, width, height, tiny: width < 7 && height < 7 }
 })
 
-const svg = shallowRef<SVGSVGElement | null>(null)
-function onClick(e: MouseEvent) {
-  const el = svg.value
-  if (!el) return
-  const pt = new DOMPoint(e.clientX, e.clientY).matrixTransform(el.getScreenCTM()?.inverse())
-  const [lng, lat] = japanUnproject(pt.x, pt.y)
-  emit('go', lng, lat)
-}
+// 倍率：縮放每加 1 放大 2 倍；10 倍以下留一位小數
+const factor = computed(() => {
+  const f = 2 ** (props.zoom - JAPAN_ZOOM)
+  return f < 10 ? f.toFixed(1) : String(Math.round(f))
+})
+const name = computed(() => regionOf(props.pref)?.name.ja ?? '')
 </script>
 
 <template>
-  <div class="locator rounded-card bg-paper p-1.5 shadow-float">
-    <svg v-if="shape" ref="svg" :viewBox="shape.viewBox" class="block h-auto w-full cursor-pointer" role="img" aria-label="目前在日本的位置" @click="onClick">
+  <div class="locator pointer-events-none flex flex-col gap-1 rounded-card bg-paper/90 p-1.5 shadow-float" role="img" :aria-label="`目前在日本的位置：${name}，${factor} 倍`">
+    <svg v-if="shape" :viewBox="shape.viewBox" class="block h-auto w-full" aria-hidden="true">
       <rect :x="shape.inset[0]" :y="shape.inset[1]" :width="shape.inset[2]" :height="shape.inset[3]" rx="2" class="inset" />
       <path v-for="p in shape.paths" :key="p.pref" :d="p.d" :data-pref="p.pref === pref ? p.pref : undefined" class="pref" :class="{ 'is-here': p.pref === pref }" />
       <g class="here">
@@ -51,6 +52,10 @@ function onClick(e: MouseEvent) {
         <rect v-else :x="view.x" :y="view.y" :width="view.width" :height="view.height" rx="1.2" class="frame" />
       </g>
     </svg>
+    <p class="flex items-baseline justify-between gap-1 px-0.5 leading-none" aria-hidden="true">
+      <span lang="ja" class="truncate text-caption font-bold text-ink">{{ name }}</span>
+      <span class="font-latin text-caption font-semibold text-sub">×{{ factor }}</span>
+    </p>
   </div>
 </template>
 

@@ -179,3 +179,9 @@ export function shortDate(d: string): string {
   const [, m, day] = d.split('-').map(Number)
   return `${m}/${day}（${WEEKDAY[new Date(parse(d)).getUTCDay()]}）`
 }
+
+/** 離出發還有幾天（今天出發是 0）；沒有日期或已經出發為 null */
+export function daysUntil(t: Pick<Trip, 'start_date'>, today: string): number | null {
+  if (!t.start_date || t.start_date < today) return null
+  return Math.round((Date.parse(t.start_date) - Date.parse(today)) / 86400000)
+}

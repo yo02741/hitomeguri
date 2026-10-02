@@ -3,6 +3,8 @@ import { computed, nextTick, onBeforeUnmount, ref, watch } from 'vue'
 
 import { reveal } from '../services/cardReveal'
 import { useMarksStore } from '../stores/marks'
+import { todayIso } from '../services/userdb'
+import PrefStamp from './PrefStamp.vue'
 import SpotCard from './SpotCard.vue'
 
 // 新卡入手（DESIGN.md §7.19）：卡片從下方轉兩圈飛到畫面中央，落定時背後放光、蓋上去過的印章、
@@ -23,6 +25,8 @@ let timers: number[] = []
 let leaving = false
 
 const HOLD: Record<string, number> = { rainbow: 2600, gold: 2300, castle: 2300, normal: 1900 }
+// 有縣的紀念章時多停一下
+const STAMP_HOLD = 700
 
 function later(ms: number, fn: () => void) {
   timers.push(window.setTimeout(fn, ms))
@@ -58,7 +62,7 @@ async function play() {
     }),
   ]
   later(820, land)
-  later(820 + (HOLD[r.value?.rarity ?? 'normal'] ?? 2000), leave)
+  later(820 + (HOLD[r.value?.rarity ?? 'normal'] ?? 2000) + (r.value?.firstInPref ? STAMP_HOLD : 0), leave)
 }
 
 // 落定：蓋印章、光掃過、手機輕震一下
@@ -146,13 +150,15 @@ onBeforeUnmount(() => {
       <span v-if="landed" class="ring"></span>
     </div>
     <div class="absolute inset-0 grid place-items-center">
-      <div ref="fly">
+      <div ref="fly" class="relative">
         <div ref="spin" class="relative [transform-style:preserve-3d]">
           <SpotCard :card="r.face" :rarity="r.rarity" :label="r.label" :number="r.number" :visited="landed" :visited-on="visitedOn" size="lg" />
           <div class="pointer-events-none absolute inset-0 overflow-hidden rounded-[16px] mix-blend-overlay" aria-hidden="true">
             <div ref="sweep" class="sweep absolute inset-0"></div>
           </div>
         </div>
+        <!-- 這個縣第一次去：縣的紀念章蓋在卡片左下 -->
+        <PrefStamp v-if="landed && r.firstInPref" :pref="r.face.pref" :date="visitedOn ?? todayIso()" class="first-stamp absolute -bottom-5 -left-9 z-10 w-[148px]" />
       </div>
     </div>
     <p class="sr-only" role="status">{{ r.face.name.ja }}　收進收集冊</p>
@@ -227,6 +233,27 @@ onBeforeUnmount(() => {
   to {
     transform: scale(2.6);
     opacity: 0;
+  }
+}
+/* 縣的紀念章：從上方重重蓋下、微微回彈，墨色帶點透明（像蓋在卡上） */
+.first-stamp {
+  opacity: 0.92;
+  filter: drop-shadow(0 1px 0 color-mix(in oklab, var(--region-paper) 70%, transparent));
+  transform: rotate(-14deg);
+  animation: stamp-slam 0.5s 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+@keyframes stamp-slam {
+  from {
+    transform: rotate(-26deg) scale(2.4);
+    opacity: 0;
+  }
+  60% {
+    transform: rotate(-12deg) scale(0.9);
+    opacity: 0.95;
+  }
+  to {
+    transform: rotate(-14deg) scale(1);
+    opacity: 0.92;
   }
 }
 /* 落定時掃過卡面的一道光 */

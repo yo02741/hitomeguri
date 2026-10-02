@@ -8,6 +8,7 @@ import OfflineButton from '../components/OfflineButton.vue'
 import MapView from '../components/MapView.vue'
 import PackOpening, { packOpened } from '../components/PackOpening.vue'
 import ShareImage from '../components/ShareImage.vue'
+import SplitFlap from '../components/SplitFlap.vue'
 import SkeletonRows from '../components/SkeletonRows.vue'
 import TripMembers from '../components/TripMembers.vue'
 import TripStopList from '../components/TripStopList.vue'
@@ -34,6 +35,7 @@ import {
   type Trip,
   type TripContent,
   TRIP_NAME_MAX,
+  daysUntil,
   tripStatus,
 } from '../services/trip'
 import { useCatalogStore } from '../stores/catalog'
@@ -62,6 +64,7 @@ const recapOpen = ref(false)
 async function renderRecap(canvas: HTMLCanvasElement) {
   if (trip.value) await drawTripRecap(canvas, trip.value, catalog)
 }
+const until = computed(() => (trip.value && status.value === 'planning' ? daysUntil(trip.value, trips.today) : null))
 const isOwner = computed(() => Boolean(trip.value && trip.value.owner === userStore.user?.uid))
 const status = computed(() => (trip.value ? tripStatus(trip.value, trips.today) : 'planning'))
 const { byId, loading } = useCatalogSpots(() => (trip.value ? allStops(trip.value).map((s) => ({ id: s.spot_id, pref: s.pref })) : []))
@@ -253,6 +256,7 @@ async function del() {
           />
           <span class="text-caption text-sub">{{ trip.days.length }} 天</span>
           <span v-if="status === 'ongoing'" class="rounded-tag bg-region-strong px-1.5 text-caption font-bold text-white">旅途中</span>
+          <span v-else-if="until !== null" class="flex items-center gap-1 text-caption text-sub">還有<SplitFlap :value="String(until)" class="text-title" />天</span>
         </div>
         <TripMembers :trip="trip" />
         <div class="flex flex-wrap gap-2">

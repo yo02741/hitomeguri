@@ -833,9 +833,10 @@ function thumbFailed(h: Hover) {
   hover.value = { ...h, thumb: undefined }
 }
 
-// 立體地形（DESIGN.md §8，map/terrain.ts）：国土地理院の標高タイル＋陰影，鏡頭傾斜 55°。偏好存在這台裝置。
+// 立體地形（DESIGN.md §8，map/terrain.ts）：国土地理院の標高タイル＋陰影。鏡頭的傾斜照舊用右鍵拖曳（手機兩指上下拖），
+// 這裡不改；正上方看時靠陰影看出起伏。偏好存在這台裝置。
 const terrainOn = ref(!props.noTerrain && terrainPreferred())
-function applyTerrain(animate: boolean) {
+function applyTerrain() {
   if (!map || !ready) return
   const on = terrainOn.value && !props.noTerrain
   if (on) {
@@ -856,7 +857,7 @@ function applyTerrain(animate: boolean) {
           type: 'hillshade',
           source: DEM_SOURCE,
           paint: {
-            'hillshade-exaggeration': 0.45,
+            'hillshade-exaggeration': 0.7,
             'hillshade-shadow-color': token('--region-ink'),
             'hillshade-highlight-color': token('--region-paper'),
             'hillshade-accent-color': token('--region-sub'),
@@ -866,18 +867,16 @@ function applyTerrain(animate: boolean) {
       )
     }
     map.setLayoutProperty('hillshade', 'visibility', 'visible')
-    map.setTerrain({ source: DEM_SOURCE, exaggeration: 1.4 })
-    map.easeTo({ pitch: 55, duration: animate ? 900 : 0 })
+    map.setTerrain({ source: DEM_SOURCE, exaggeration: 1.5 })
   } else {
     if (map.getLayer('hillshade')) map.setLayoutProperty('hillshade', 'visibility', 'none')
     map.setTerrain(null)
-    if (map.getPitch() || map.getBearing()) map.easeTo({ pitch: 0, bearing: 0, duration: animate ? 700 : 0 })
   }
 }
 function toggleTerrain() {
   terrainOn.value = !terrainOn.value
   setTerrainPreferred(terrainOn.value)
-  applyTerrain(true)
+  applyTerrain()
 }
 
 // 角落的日本全圖（JapanLocator）：放大到看不出在哪裡時才出現；移動中每一格畫面更新一次
@@ -891,9 +890,6 @@ function updateLocator() {
     const v = visibleView(false)
     locator.value = v ? { bounds: v.bounds, zoom: v.zoom } : null
   })
-}
-function goTo(lng: number, lat: number) {
-  map?.easeTo({ center: [lng, lat], offset: [(props.insetLeft ?? 0) / 2, 0], duration: 800 }, { user: true })
 }
 
 /** 可見範圍：扣掉左側被浮動面板蓋住的部分 */
@@ -944,7 +940,7 @@ onMounted(() => {
     syncPin()
     if (props.bounds) fit(props.bounds, false)
     drawRoute(props.route)
-    applyTerrain(false)
+    applyTerrain()
   })
   map.on('move', updateLocator)
   map.on('moveend', (e: { originalEvent?: Event; user?: boolean }) => {
@@ -1111,9 +1107,11 @@ defineExpose({
       <JapanLocator
         v-if="locator && locator.zoom >= LOCATOR_ZOOM"
         :bounds="locator.bounds"
+        :zoom="locator.zoom"
         :pref="colorKey"
-        class="absolute right-2.5 bottom-[172px] z-[2] w-[124px] max-md:top-2.5 max-md:bottom-auto max-md:w-[96px] print:hidden"
-        @go="goTo"
+        class="absolute z-[2] print:hidden"
+        :class="insetLeft ? 'bottom-4 w-[132px]' : 'top-2.5 right-2.5 w-[96px]'"
+        :style="insetLeft ? { left: `${insetLeft}px` } : undefined"
       />
     </Transition>
     <div

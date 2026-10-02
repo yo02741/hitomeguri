@@ -4,8 +4,8 @@ import type { TimedItem } from './bundles'
  * 海報區飄落的季節（DESIGN.md §9）。
  * 先看氣象廳本季觀測（期間限定裡這個縣正在開花、轉紅、轉黃的），沒有時依月份。
  */
-export type Season = 'sakura' | 'momiji' | 'ichou' | 'snow' | 'hotaru'
-export const SEASONS: Season[] = ['sakura', 'momiji', 'ichou', 'snow', 'hotaru']
+export type Season = 'sakura' | 'momiji' | 'ichou' | 'snow' | 'hotaru' | 'hanabi'
+export const SEASONS: Season[] = ['sakura', 'momiji', 'ichou', 'snow', 'hotaru', 'hanabi']
 
 function byObservation(items: TimedItem[], pref: string, today: string): Season | null {
   for (const t of items) {
@@ -18,6 +18,8 @@ function byObservation(items: TimedItem[], pref: string, today: string): Season 
 }
 
 function byMonth(pref: string | null, month: number): Season | null {
+  // 8 月：煙火大會的季節
+  if (month === 8) return 'hanabi'
   if (pref === 'okinawa') return month <= 2 ? 'sakura' : null
   if (pref === 'hokkaido') {
     if (month === 4 || month === 5) return 'sakura'
