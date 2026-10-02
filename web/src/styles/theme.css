@@ -46,6 +46,31 @@
   --color-silver-3: #FBFCFD;
   --color-night: #121A33;        /* 夜景卡的卡面 */
   --color-night-star: #FFF1BF;
+
+  /* ---------- 旅人（紙娃娃，§7.24）：膚色、髮色、單品的顏色；只用在 PaperDoll 與服裝 ---------- */
+  --color-doll-skin-1: #F6DBC6;
+  --color-doll-skin-2: #E3B88F;
+  --color-doll-skin-3: #B6805A;
+  --color-doll-hair-1: #2B2B33;
+  --color-doll-hair-2: #6B4A32;
+  --color-doll-hair-3: #B98C5E;
+  --color-doll-hair-4: #DAD3C9;
+  --color-doll-hair-5: #BE5A52;
+  --color-doll-line: #2A2A30;
+  --color-doll-blush: #F2A9BC;
+  --color-item-red: #D24A3C;
+  --color-item-pink: #F3A4B6;
+  --color-item-green: #5FA36A;
+  --color-item-matcha: #7FA64B;
+  --color-item-blue: #4D7DB5;
+  --color-item-navy: #2F3B5C;
+  --color-item-yellow: #F0C44C;
+  --color-item-orange: #E8853A;
+  --color-item-brown: #8A5A3B;
+  --color-item-cream: #FBF3E3;
+  --color-item-white: #FFFFFF;
+  --color-item-grey: #9AA3AD;
+  --color-item-purple: #8C6BB5;
   --color-glare: #FFFFFF;
   --color-shade: #000000;
 

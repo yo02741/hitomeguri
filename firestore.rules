@@ -133,11 +133,20 @@ service cloud.firestore {
       match /meta/{docId} {
         allow read, delete: if isOwner(uid);
         allow create, update: if isOwner(uid)
-          && docId == 'keiken'
-          && request.resource.data.keys().hasOnly(['levels', 'updated_at'])
-          && request.resource.data.levels is map
-          && request.resource.data.levels.size() <= 47
-          && request.resource.data.updated_at is timestamp;
+          && request.resource.data.updated_at is timestamp
+          && (
+            (docId == 'keiken'
+              && request.resource.data.keys().hasOnly(['levels', 'updated_at'])
+              && request.resource.data.levels is map
+              && request.resource.data.levels.size() <= 47)
+            // 旅人（紙娃娃，web/src/stores/avatar.ts）：外觀、穿著、有的服裝、抽過幾次
+            || (docId == 'avatar'
+              && request.resource.data.keys().hasOnly(['parts', 'equipped', 'owned', 'used', 'updated_at'])
+              && request.resource.data.parts is map
+              && request.resource.data.equipped is map
+              && request.resource.data.owned is list && request.resource.data.owned.size() <= 300
+              && request.resource.data.used is int && request.resource.data.used >= 0)
+          );
       }
 
       // 收藏、去過、所屬清單（web/src/stores/marks.ts）

@@ -424,6 +424,17 @@ header 右側、登入鈕左邊（`SearchBox.vue`，每一頁都在；在行程�
 ### 7.23 下拉選單
 `Dropdown.vue` 取代原生 `<select>`（原生的樣子跟著作業系統，與介面不搭）。觸發鈕 `rounded-control border-line bg-paper`，右側小箭頭；面板 Teleport 到 body（`composables/floating.ts`，下方放不下翻到上方），`rounded-card shadow-float`，每項 `min-h-tap`，選中的前面打勾、粗體，鍵盤移到的 `bg-surface`。`role="listbox"`／`option`，↑↓ 移動、Enter／Space 選、Esc 關。`size="sm"`（h-8）用在清單列。品牌這類可以自由輸入的欄位不用下拉，輸入框下面列建議（膠囊，點了帶入），取代原生 datalist。
 
+### 7.24 旅人（紙娃娃）
+`/log/avatar`，紀錄頁的第三張入口卡。2D 紙娃娃（`PaperDoll.vue`，240×320 的 SVG）沿用現在的扁平插畫風：圓頭、粗墨線（`--color-doll-line`）、腮紅。
+- 外觀：膚色 3、髮型 5（短髮、鮑伯、長髮、丸子頭、馬尾）、髮色 5、眼睛 3。顏色用 `--color-doll-skin-*`、`--color-doll-hair-*`。
+- 服裝（`data/outfits.ts`）分五個位置：衣服、頭上、臉上、手上、夥伴（腳邊）。每件是一段 SVG，顏色只用 `--color-item-*` 與金色 token；小圖用 `icon` 的 viewBox 裁出來。
+  - 各縣的特色單品去過那個縣就有（不用存）：北海道哈密瓜帽、宮城毛豆麻糬、東京提燈、山梨葡萄、長野信州蕎麥麵、靜岡富士山帽、愛知金鯱帽、京都抹茶、大阪章魚燒、奈良鹿角髮箍、廣島紅葉饅頭、香川讚岐烏龍麵、福岡明太子、沖繩風獅爺、青森蘋果、石川金箔霜淇淋。沒去過的在服裝格子裡灰掉，下面寫縣名。
+  - 其他的用抽的：T 恤、浴衣、法被、作務衣、棒球帽、斗笠、貝雷帽、眼鏡、太陽眼鏡、相機、和傘、御朱印帳、團扇、招財貓、達摩。
+- 抽獎：去過一個景點 1 次、結束一趟旅行 3 次，抽過的扣掉（`used`）。抽的範圍是不限縣的＋去過的縣的，權重 常見 6、少見 3、稀有 1，還沒有的優先。測試期（`UNLIMITED_DRAWS`）不限次數。
+  - 動畫：扭蛋殼（上半 `region-strong`、下半紙色）先左右搖 0.9 秒，再上下分開，單品從中間彈出，背後放射狀的光（稀有度決定顏色）；「穿上」「再抽」「關閉」。
+- 存檔：`users/{uid}/meta/avatar`（`stores/avatar.ts`）：parts、equipped、owned、used；規則還沒發布或離線時先存在這台裝置，之後合併（owned 取聯集、used 取大的）。
+- 不做付費；之後可以把旅人放進分享圖與年代主題（服裝跟著年代）。
+
 ### 7.20 離線
 - PWA（`vite.config.ts` 的 `pwa()`、vite-plugin-pwa）：app 本身預先快取；資料 bundle（網址帶 `?v=` 版本，cache-first）、`_index.json`（network-first）、地圖圖磚、字型、Commons 照片在用到時存下來。收藏、去過、行程由 Firestore 的本機快取（`persistentLocalCache`）處理，離線時的修改連線後送出。
 - 行程頁「離線用」（`OfflineButton.vue`、`services/offline.ts`）：抓停留點各縣的資料、照片、停留點附近的地圖圖磚（縮放 10–15，半徑約 1.5 km）與縣全圖（縮放 6–9）；按鈕底色是進度條，完成後改成「已存離線」（存在這台裝置的 localStorage，只是提示）。

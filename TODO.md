@@ -12,13 +12,13 @@
 - **校對會話**：`data/phrases` 的 109 句是編輯整理的內容，`reviewed: false`。
 - **期間限定**：要不要維持每天直接提交 main，或改走 PR 審核。
 - **設計**：`docs/設計質感研究.md` 最後「需要你決定的」（動態規範的例外、收集卡、開場動畫）。
-- **Firestore 規則**：收集卡無限抽新增 `users/{uid}/cards`（`firestore.rules`），請貼到 Firebase Console 發布；沒發布前抽到的只存在這台裝置。
+- **Firestore 規則**：收集卡無限抽新增 `users/{uid}/cards`、旅人新增 `users/{uid}/meta/avatar`（`firestore.rules`），請貼到 Firebase Console 發布；沒發布前抽到的只存在這台裝置。
 - **正式上線前**：`web/src/services/cardVariants.ts` 的 `UNLIMITED_DRAWS` 改成 false，清空 Firestore 的 `users/*/cards`。
 - **直飛航線與英文簡介翻譯**：要用時在 Actions secrets 新增 `ANTHROPIC_API_KEY`（`verify-flights`、`translate-summaries`）。
 
 ## 之後要做
 
-- **角色（紙娃娃）**：沿用現在的日式風格，做 2D 紙娃娃（不做 3D、不做付費）。服裝跟旅行掛鉤：去過福岡解鎖「明太子」、京都解鎖「抹茶」這類各地特色單品；用旅行得到的抽獎機會抽服裝，機制參考收集卡（去過、開卡包抽）。
+- **旅人（紙娃娃）第二版**：其他 31 縣的特色單品、放進分享圖、服裝跟著年代主題；第一版見 docs/旅人驗收.md。
 
 ## 已知限制
 

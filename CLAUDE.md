@@ -59,6 +59,7 @@ Claude Code 的雲端沙箱連不到 Wikidata、OSM、Wikimedia，也沒有 Clau
 ## 目前進度（詳見 docs/PROGRESS.md 的「目前狀態」）
 - Phase 0–3、5、7 完成；47 縣都有景點（簡介與念法取自維基百科）。Phase 4 v1（期間限定只有氣象廳）完成。
 - 擴充包：寶可夢、城（100 名城・續 100 名城）、老舖・茶屋、角色商店。
+- 旅人（紙娃娃，`/log/avatar`）：外觀、各縣特色服裝（去過就有）、旅行抽獎（DESIGN.md §7.24、docs/旅人驗收.md）。
 - 年代主題：江戶、明治、大正、昭和、平成、令和（時間軸切換；DESIGN.md §13、docs/年代主題驗收.md）。各年代的地區色與 `theme-colors.json` 由 `build-region-css` 一起產生。收集卡測試期可無限抽（`UNLIMITED_DRAWS`，上線前關掉並清空 `users/*/cards`）。
 - 特效、離線（PWA）、經縣值、分享圖、位置小框已上線（docs/特效說明.md、docs/第三輪驗收.md）；經縣值的 Firestore 規則要使用者貼到 Console。
 - Phase 6（自動化排程＋PR 審核）：`refresh-data.yml`、`validate-data`、`diff-report` 已上線，等第一次自動 PR 與一週的排程驗收（docs/Phase6驗收.md）。

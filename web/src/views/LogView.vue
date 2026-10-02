@@ -1,6 +1,9 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
 import { useRouter } from 'vue-router'
+import PaperDoll from '../components/PaperDoll.vue'
+import { OUTFITS } from '../data/outfits'
+import { useAvatarStore } from '../stores/avatar'
 
 import DatePicker from '../components/DatePicker.vue'
 import DateRangePicker from '../components/DateRangePicker.vue'
@@ -38,6 +41,7 @@ const { rows, loading } = useMarkedSpots(() => visitedEntries.value)
 
 // 收集冊入口：最近去過的三張卡片疊成扇形（DESIGN.md §7.19）
 const { cards, prefDone } = useCollection(() => visitedEntries.value)
+const avatar = useAvatarStore()
 const fan = computed(() =>
   [...cards.value]
     .sort((a, b) => (b.visitedOn ?? '').localeCompare(a.visitedOn ?? '') || b.score - a.score)
@@ -109,7 +113,7 @@ function open(id: string) {
     <h1 class="text-h2 font-black tracking-[2px]">紀錄</h1>
 
     <template v-if="userStore.user">
-      <div class="grid gap-4 md:grid-cols-[minmax(0,2fr)_minmax(0,1fr)]">
+      <div class="grid gap-4 md:grid-cols-[minmax(0,2fr)_minmax(0,1fr)_minmax(0,1fr)]">
       <RouterLink
         to="/log/cards"
         class="collect paper-grain group relative flex h-[132px] items-center gap-3 overflow-hidden rounded-card bg-region pr-5 text-on-region no-underline"
@@ -156,6 +160,18 @@ function open(id: string) {
         <span class="flex h-2 overflow-hidden rounded-full bg-surface" aria-hidden="true">
           <span class="h-full bg-keiken-3" :style="{ width: `${(keikenTotal / KEIKEN_MAX) * 100}%` }"></span>
         </span>
+      </RouterLink>
+      <!-- 旅人入口（DESIGN.md §7.24） -->
+      <RouterLink
+        to="/log/avatar"
+        class="group flex h-[132px] items-center gap-3 rounded-card border border-line bg-paper px-4 text-ink no-underline hover:bg-surface"
+      >
+        <PaperDoll :parts="avatar.parts" :equipped="avatar.equipped" class="h-[116px] w-[88px] shrink-0" />
+        <span class="flex min-w-0 flex-col gap-0.5">
+          <span class="text-title font-black tracking-[2px]">旅人</span>
+          <span class="text-label">服裝 <span class="font-latin text-body-sm font-semibold">{{ avatar.ownedIds.size }}</span> / {{ OUTFITS.length }}</span>
+        </span>
+        <svg class="ml-auto shrink-0 transition-transform group-hover:translate-x-1" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7" /></svg>
       </RouterLink>
       </div>
 

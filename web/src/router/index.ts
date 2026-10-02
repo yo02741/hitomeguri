@@ -51,6 +51,7 @@ export const router = createRouter({
     { path: '/log', name: 'log', component: () => import('../views/LogView.vue'), meta: { title: '紀錄' } },
     { path: '/log/cards', name: 'cards', component: () => import('../views/CardsView.vue'), meta: { title: '收集冊' } },
     { path: '/log/keiken', name: 'keiken', component: () => import('../views/KeikenView.vue'), meta: { title: '經縣值' } },
+    { path: '/log/avatar', name: 'avatar', component: () => import('../views/AvatarView.vue'), meta: { title: '旅人' } },
     { path: '/me', name: 'me', component: () => import('../views/MeView.vue'), meta: { title: '收藏與清單' } },
     {
       path: '/me/lists/:id',
