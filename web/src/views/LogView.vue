@@ -1,6 +1,8 @@
 <script setup lang="ts">
-import { computed, ref } from 'vue'
-import { useRouter } from 'vue-router'
+import { computed, nextTick, ref, watch } from 'vue'
+import { useRoute, useRouter } from 'vue-router'
+import AchvSeal from '../components/AchvSeal.vue'
+import NewTag from '../components/NewTag.vue'
 import PaperDoll from '../components/PaperDoll.vue'
 import { OUTFITS } from '../data/outfits'
 import { useAvatarStore } from '../stores/avatar'
@@ -20,6 +22,7 @@ import { markRow } from '../services/export'
 import type { MapSpot } from '../services/bundles'
 import { TRIP_NAME_MAX } from '../services/trip'
 import { todayIso } from '../services/userdb'
+import { useAchievementsStore } from '../stores/achievements'
 import { useCatalogStore } from '../stores/catalog'
 import { KEIKEN_MAX, useKeikenStore } from '../stores/keiken'
 import { useMarksStore } from '../stores/marks'
@@ -33,7 +36,11 @@ const marks = useMarksStore()
 const trips = useTripsStore()
 const catalog = useCatalogStore()
 const router = useRouter()
+const route = useRoute()
 const keiken = useKeikenStore()
+// 成就入口（DESIGN.md §7.25）：最近達成的章疊在一起
+const achv = useAchievementsStore()
+const recentSeals = computed(() => achv.latest.slice(0, 6))
 const keikenTotal = computed(() => regions.reduce((n, r) => n + keiken.levelOf(r.prefecture), 0))
 
 const { doneTrips, entries: visitedEntries } = useVisitedEntries()
@@ -87,6 +94,18 @@ function startPicking() {
   picking.value = true
   selected.value = new Set(undated.value.map((r) => r.id))
 }
+// 從成就的「補日期」來（/log?fill=1）：打開批次補日期、捲到「去過」
+watch(
+  () => route.query.fill === '1' && marks.loaded && !loading.value,
+  async (ok) => {
+    if (!ok) return
+    if (rows.value.length) startPicking()
+    await nextTick()
+    document.getElementById('visited-title')?.scrollIntoView({ block: 'start' })
+    void router.replace({ query: {} })
+  },
+  { immediate: true },
+)
 function toggleRow(r: MarkedSpot) {
   const next = new Set(selected.value)
   if (next.has(r.id)) next.delete(r.id)
@@ -173,6 +192,35 @@ function open(id: string) {
           <span class="text-title font-black tracking-[2px]">旅人</span>
           <span class="text-label">服裝 <span class="font-latin text-body-sm font-semibold">{{ avatar.ownedIds.size }}</span> / {{ OUTFITS.length }}</span>
         </span>
+        <svg class="ml-auto shrink-0 transition-transform group-hover:translate-x-1" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7" /></svg>
+      </RouterLink>
+      <!-- 成就入口（DESIGN.md §7.25） -->
+      <RouterLink
+        to="/log/achievements"
+        class="group relative flex h-[96px] items-center gap-4 rounded-card border border-line bg-paper px-5 text-ink no-underline hover:bg-surface md:col-span-3"
+      >
+        <span class="flex shrink-0 flex-col">
+          <span class="text-title font-black tracking-[2px]">成就</span>
+          <span><span class="font-latin text-h3 font-bold">{{ achv.counts.n }}</span><span class="text-body-sm text-sub"> / {{ achv.counts.N }}</span></span>
+        </span>
+        <span class="flex min-w-0 items-center pl-2" aria-hidden="true">
+          <template v-if="recentSeals.length">
+            <AchvSeal
+              v-for="(s, i) in recentSeals"
+              :key="s.def.id"
+              :def="s.def"
+              status="done"
+              :size="56"
+              class="-ml-3 first:ml-0"
+              :class="i >= 3 ? 'max-sm:hidden' : ''"
+              :style="{ zIndex: recentSeals.length - i }"
+            />
+          </template>
+          <template v-else>
+            <span v-for="k in 3" :key="k" class="-ml-3 block size-14 rounded-full border-2 border-dashed border-line first:ml-0"></span>
+          </template>
+        </span>
+        <NewTag v-if="achv.hasNew" class="absolute -top-1.5 -left-1.5" />
         <svg class="ml-auto shrink-0 transition-transform group-hover:translate-x-1" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7" /></svg>
       </RouterLink>
       </div>

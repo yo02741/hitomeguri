@@ -1,11 +1,18 @@
 <script setup lang="ts">
 // 紙娃娃共用的 SVG 定義（DESIGN.md §7.24）：剪紙的白邊與紙影（filter）、衣服與小物的花紋（pattern）。
+// 紀念章的墨邊（#stamp-ink，§7.25）也放在這裡：成就頁上約 90 個章共用一個濾鏡。
 // 放在 App 裡一次，娃娃與服裝小圖都用 url(#…) 參照。尺寸 0、不用 display:none（不然 pattern 畫不出來）。
 </script>
 
 <template>
   <svg class="pointer-events-none absolute size-0 overflow-hidden" aria-hidden="true" focusable="false">
     <defs>
+      <!-- 紀念章（PrefStamp、AchvSeal）：雜訊吃掉一點墨，像蓋印的斑駁 -->
+      <filter id="stamp-ink" x="-10%" y="-10%" width="120%" height="120%">
+        <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="3" result="n" />
+        <feColorMatrix in="n" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -1.4 1.75" result="m" />
+        <feComposite in="SourceGraphic" in2="m" operator="in" />
+      </filter>
       <!-- 剪下來的紙：外面一圈白邊，下面一層淡淡的影子 -->
       <filter id="doll-cut" x="-20%" y="-15%" width="140%" height="135%" color-interpolation-filters="sRGB">
         <feMorphology in="SourceAlpha" operator="dilate" radius="4.5" result="grow" />
