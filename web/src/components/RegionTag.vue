@@ -9,7 +9,7 @@ import RegionMotif from './RegionMotif.vue'
 
 // 地區標籤（DESIGN.md §7.5）：浮在地圖左上。左側是返回鍵，回到首頁的日本地圖。
 // 已驗證的台灣直飛航線列在下方（UX-FLOW.md A7）。
-// 昭和主題（DESIGN.md §13）換成車站的站名標：大字假名、上面漢字、下面羅馬拼音，
+// 年代主題（DESIGN.md §13）換成車站的站名標：大字假名、上面漢字、下面羅馬拼音，
 // 底下的色帶兩端是前後一個縣（都道府縣代碼順），可以直接換過去。
 const props = defineProps<{ pref: string }>()
 const region = computed(() => regionOf(props.pref))
@@ -27,7 +27,7 @@ const routes = computed(() =>
 
 <template>
   <div
-    v-if="region && theme === 'showa'"
+    v-if="region && theme !== 'modern'"
     :data-pref="pref"
     class="relative flex shrink-0 flex-col overflow-hidden rounded-card bg-paper text-ink shadow-float [view-transition-name:region-hero]"
   >

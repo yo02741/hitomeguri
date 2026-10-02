@@ -10,7 +10,12 @@ import type { Rarity } from './card'
  * - 特別全景：世界遺產、國寶、特別史跡、特別名勝才有，全景＋虹色亮片（10%）
  * 金箔、特別全景、全景一次最多抽到一種。
  * 抽到什麼由「帳號＋景點＋日期」決定（雜湊），不另外存；換裝置、重新整理都一樣。
+ * 測試期（UNLIMITED_DRAWS）另外可以無限抽：按去過、開卡包、收集卡的「再抽一張」都隨機抽一次，
+ * 存在 Firestore users/{uid}/cards（stores/cards.ts）。正式上線前改成 false 並清空。
+ * 全景、金箔、特別全景記得是在哪個季節抽到的（photo），卡面用那個季節的照片（有的話）。
  */
+export const UNLIMITED_DRAWS = true
+
 export type VariantKind = 'base' | 'season' | 'full' | 'gold' | 'special'
 export type SeasonKey = 'spring' | 'summer' | 'autumn' | 'winter'
 
@@ -22,6 +27,8 @@ export interface Variant {
   label: string
   /** 越大越稀有：收集冊顯示最稀有的那張 */
   rank: number
+  /** 卡面照片的季節：季節卡是自己的季節；全景、金箔、特別全景是抽到那天的季節 */
+  photo?: SeasonKey
 }
 
 export const SEASON_LABEL: Record<SeasonKey, string> = { spring: '春', summer: '夏', autumn: '秋', winter: '冬' }
@@ -32,7 +39,23 @@ const FULL: Variant = { kind: 'full', key: 'full', label: '全景', rank: 2 }
 const GOLD: Variant = { kind: 'gold', key: 'gold', label: '金箔', rank: 3 }
 const SPECIAL: Variant = { kind: 'special', key: 'special', label: '特別全景', rank: 4 }
 export function seasonVariant(s: SeasonKey): Variant {
-  return { kind: 'season', season: s, key: `season-${s}`, label: `${SEASON_LABEL[s]}景`, rank: 1 }
+  return { kind: 'season', season: s, key: `season-${s}`, label: `${SEASON_LABEL[s]}景`, rank: 1, photo: s }
+}
+const BY_KEY = new Map<string, Variant>([BASE, FULL, GOLD, SPECIAL].map((v) => [v.key, v]))
+
+/** 存檔用的代號：full@autumn、season-spring、base */
+export function encodeVariant(v: Variant): string {
+  return v.photo && v.kind !== 'season' ? `${v.key}@${v.photo}` : v.key
+}
+export function decodeVariant(code: string): Variant | undefined {
+  const [key, photo] = code.split('@') as [string, SeasonKey | undefined]
+  if (key.startsWith('season-')) {
+    const s = key.slice(7) as SeasonKey
+    return SEASON_ORDER.includes(s) ? seasonVariant(s) : undefined
+  }
+  const v = BY_KEY.get(key)
+  if (!v) return undefined
+  return photo && SEASON_ORDER.includes(photo) ? { ...v, photo } : v
 }
 
 export function seasonOfMonth(month: number): SeasonKey {
@@ -58,19 +81,41 @@ const rareSpot = (r: Rarity) => r === 'rainbow' || r === 'gold'
 export function drawVariants(uid: string, spotId: string, date: string | null | undefined, rarity: Rarity): Variant[] {
   const out = [BASE]
   if (date) out.push(seasonVariant(seasonOfMonth(Number(date.slice(5, 7)))))
-  const r = hash01(`${uid}|${spotId}|${date ?? 'undated'}`)
+  const extra = pick(hash01(`${uid}|${spotId}|${date ?? 'undated'}`), rarity)
+  if (extra) out.push(date ? { ...extra, photo: seasonOfMonth(Number(date.slice(5, 7))) } : extra)
+  return out
+}
+
+// 金箔 4%；特別全景 10%（稀有的景點才有）；全景 20%。三種互斥，一次最多一種
+function pick(r: number, rarity: Rarity): Variant | null {
   const rare = rareSpot(rarity)
-  // 金箔 4%；特別全景 10%（稀有的景點才有）；全景 20%。三種互斥，一次最多一種
-  if (r < 0.04) out.push(GOLD)
-  else if (rare && r < 0.14) out.push(SPECIAL)
-  else if (r < (rare ? 0.34 : 0.24)) out.push(FULL)
+  if (r < 0.04) return GOLD
+  if (rare && r < 0.14) return SPECIAL
+  if (r < (rare ? 0.34 : 0.24)) return FULL
+  return null
+}
+
+/** 無限抽（UNLIMITED_DRAWS）：隨機抽一次；季節照片用今天的季節 */
+export function randomDraw(rarity: Rarity, date: string): Variant[] {
+  const season = seasonOfMonth(Number(date.slice(5, 7)))
+  const out = [BASE, seasonVariant(season)]
+  const extra = pick(Math.random(), rarity)
+  if (extra) out.push({ ...extra, photo: season })
   return out
 }
 
 /** 每次去過抽到的合起來（不重複，稀有的在前） */
-export function ownedVariants(uid: string, spotId: string, dates: Array<string | null | undefined>, rarity: Rarity): Variant[] {
+export function ownedVariants(
+  uid: string,
+  spotId: string,
+  dates: Array<string | null | undefined>,
+  rarity: Rarity,
+  extra: Variant[] = [],
+): Variant[] {
   const seen = new Map<string, Variant>()
   for (const d of dates.length ? dates : [null]) for (const v of drawVariants(uid, spotId, d, rarity)) seen.set(v.key, v)
+  // 無限抽抽到的（特別全景只有稀有的景點才有，舊資料或換了稀有度時略過）
+  for (const v of extra) if (!seen.has(v.key) && (v.kind !== 'special' || rareSpot(rarity))) seen.set(v.key, v)
   return [...seen.values()].sort((a, b) => b.rank - a.rank || seasonIndex(a) - seasonIndex(b))
 }
 

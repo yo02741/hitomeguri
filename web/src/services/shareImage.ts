@@ -1,8 +1,10 @@
 import { national, regionOf } from '../data/regions'
+import themeColors from '../styles/theme-colors.json'
 import type { useCatalogStore } from '../stores/catalog'
 import type { KeikenLevel } from '../stores/keiken'
 import { KEIKEN_LEVELS, KEIKEN_MAX } from '../stores/keiken'
 import { japanOutline, loadPrefectureShapes } from './geo'
+import { theme } from './theme'
 import { dayDate, type Trip } from './trip'
 
 /**
@@ -11,14 +13,31 @@ import { dayDate, type Trip } from './trip'
  */
 const W = 1080
 const H = 1350
-const SANS = '"Noto Sans TC", "Noto Sans JP", system-ui, sans-serif'
-const JA = '"Noto Sans JP", "Noto Sans TC", system-ui, sans-serif'
-const LATIN = '"Barlow Semi Condensed", "Noto Sans TC", system-ui, sans-serif'
+// 字型跟著年代主題（DESIGN.md §13）：畫之前從 token 讀
+let SANS = '"Noto Sans TC", "Noto Sans JP", system-ui, sans-serif'
+let JA = '"Noto Sans JP", "Noto Sans TC", system-ui, sans-serif'
+let LATIN = '"Barlow Semi Condensed", "Noto Sans TC", system-ui, sans-serif'
+
+// 地區色跟著年代主題：canvas 讀不到 CSS 變數的 [data-pref]，用 build-region-css 一起產生的 theme-colors.json
+type Colors = Record<string, string>
+const ERA_COLORS = themeColors as Record<string, { national: Colors; regions: Record<string, Colors> }>
+function nationalColor(): Colors {
+  const t = ERA_COLORS[theme.value]
+  return t ? { ...national.color, ...t.national } : national.color
+}
+function prefColor(pref: string): Colors | undefined {
+  const base = regionOf(pref)?.color
+  const t = ERA_COLORS[theme.value]?.regions[pref]
+  return base && t ? { ...base, ...t } : base
+}
 const GSI_CREDIT = '縣界：地球地図日本（国土地理院）'
 
 type Catalog = ReturnType<typeof useCatalogStore>
 
 async function fonts() {
+  SANS = cssToken('--font-sans') || SANS
+  JA = cssToken('--font-ja') || JA
+  LATIN = cssToken('--font-latin') || LATIN
   const specs = [`900 64px ${JA}`, `700 32px ${SANS}`, `400 28px ${SANS}`, `700 64px ${LATIN}`, `600 28px ${LATIN}`]
   await Promise.race([Promise.all(specs.map((s) => document.fonts.load(s, '一巡りひとめぐり經縣值DAY0123'))), new Promise((r) => setTimeout(r, 3000))])
 }
@@ -96,7 +115,7 @@ async function drawJapan(
 export async function drawKeiken(canvas: HTMLCanvasElement, opts: { levelOf: (pref: string) => KeikenLevel; total: number }) {
   await fonts()
   const ctx = setup(canvas)
-  const c = national.color
+  const c = nationalColor()
   const level = (l: number) => (l === 0 ? c.line : cssToken(`--color-keiken-${l}`))
 
   ctx.fillStyle = c.paper
@@ -171,8 +190,8 @@ export async function drawTripRecap(canvas: HTMLCanvasElement, trip: Trip, catal
   const countBy = new Map<string, number>()
   for (const s of stops) countBy.set(s.pref, (countBy.get(s.pref) ?? 0) + 1)
   const main = [...countBy.entries()].sort((a, b) => b[1] - a[1])[0]?.[0]
-  const c = regionOf(main)?.color ?? national.color
-  const colorOf = (pref: string) => regionOf(pref)?.color ?? national.color
+  const c = prefColor(main) ?? nationalColor()
+  const colorOf = (pref: string) => prefColor(pref) ?? nationalColor()
 
   ctx.fillStyle = c.paper
   ctx.fillRect(0, 0, W, H)

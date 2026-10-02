@@ -15,6 +15,7 @@ export interface MapSpot {
   c?: string // 分類
   i?: string // 地圖用小圖：Commons 縮圖路徑（省略前綴）或完整網址
   d?: string // 最高的文化指定（世界遺產、國寶、特別史跡、特別名勝）：收集卡的稀有度
+  si?: Partial<Record<'spring' | 'summer' | 'autumn' | 'winter', [path: string, author: string, license: string]>> // 收集卡的季節照片
 }
 
 const COMMONS_THUMB_PREFIX = 'https://thumb.wikimedia.org/wikipedia/commons/thumb/'
@@ -55,6 +56,8 @@ export interface Spot {
   stay_minutes?: number
   nearest_stations?: { name: StationName; distance_m: number }[]
   images: SpotImage[]
+  /** 收集卡的季節照片（Commons） */
+  season_images?: Partial<Record<'spring' | 'summer' | 'autumn' | 'winter', SpotImage>>
   external_ids: { wikidata?: string; osm?: string; google_place_id?: string }
   sources: { url: string; fetched_at: string }[]
   status: 'published' | 'closed'

@@ -90,6 +90,15 @@ def cmd_prune_spots(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_seed_season_photos(args: argparse.Namespace) -> int:
+    from pipeline.paths import SPOTS_DIR
+    from pipeline.season_photos import seed_season_photos
+
+    prefs = args.prefectures or sorted(p.stem for p in SPOTS_DIR.glob("*.json"))
+    _emit(seed_season_photos(prefs, args.min_score, args.refresh), args.report)
+    return 0
+
+
 def cmd_seed_pokefuta(args: argparse.Namespace) -> int:
     from pipeline.packs import seed_pokefuta
 
@@ -231,6 +240,13 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("--wikidata", action="store_true", help="重新查 Wikidata 類型（要連網）")
     p.add_argument("--report")
     p.set_defaults(func=cmd_prune_spots)
+
+    p = sub.add_parser("seed-season-photos", help="收集卡的季節照片：Commons 分類裡春夏秋冬的照片")
+    p.add_argument("prefectures", nargs="*", help="省略時處理全部縣")
+    p.add_argument("--min-score", type=float, default=70, help="只查分數以上的景點")
+    p.add_argument("--refresh", action="store_true", help="已經查過的也重查")
+    p.add_argument("--report")
+    p.set_defaults(func=cmd_seed_season_photos)
 
     p = sub.add_parser("seed-wiki", help="由維基百科補簡介與缺漏念法（已有大點的縣）")
     p.add_argument("prefectures", nargs="+")

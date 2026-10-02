@@ -1,0 +1,2422 @@
+{
+ "edo": {
+  "national": {
+   "accent": "#CACAC9",
+   "base": "#9FA2A7",
+   "ink": "#1E1A17",
+   "line": "#B8AA90",
+   "map": "#E6DDC9",
+   "paper": "#ECE4D3",
+   "strong": "#314567",
+   "sub": "#5A4E44"
+  },
+  "regions": {
+   "aichi": {
+    "accent": "#DCCDAA",
+    "base": "#BDAA80",
+    "ink": "#1E1A17",
+    "line": "#BAAB8E",
+    "map": "#E8DEC7",
+    "paper": "#EEE5D0",
+    "strong": "#6C6041",
+    "sub": "#5A4E44"
+   },
+   "akita": {
+    "accent": "#DDD1B2",
+    "base": "#BDAF8A",
+    "ink": "#1E1A17",
+    "line": "#BAAB8F",
+    "map": "#E8DEC7",
+    "paper": "#EEE5D1",
+    "strong": "#635F49",
+    "sub": "#5A4E44"
+   },
+   "aomori": {
+    "accent": "#D9B9AD",
+    "base": "#B98E82",
+    "ink": "#1E1A17",
+    "line": "#BAA98E",
+    "map": "#E8DCC7",
+    "paper": "#EEE3D0",
+    "strong": "#693B3F",
+    "sub": "#5A4E44"
+   },
+   "chiba": {
+    "accent": "#E1D5B2",
+    "base": "#C3B58B",
+    "ink": "#1E1A17",
+    "line": "#BBAC8F",
+    "map": "#E9DFC7",
+    "paper": "#EFE5D1",
+    "strong": "#615F48",
+    "sub": "#5A4E44"
+   },
+   "ehime": {
+    "accent": "#E4CBAE",
+    "base": "#C8A885",
+    "ink": "#1E1A17",
+    "line": "#BBAB8E",
+    "map": "#E9DEC7",
+    "paper": "#EFE4D0",
+    "strong": "#715744",
+    "sub": "#5A4E44"
+   },
+   "fukui": {
+    "accent": "#CABFAF",
+    "base": "#A49886",
+    "ink": "#1E1A17",
+    "line": "#B9AA8E",
+    "map": "#E7DDC7",
+    "paper": "#EDE3D0",
+    "strong": "#4B4543",
+    "sub": "#5A4E44"
+   },
+   "fukuoka": {
+    "accent": "#DFC1BC",
+    "base": "#BF9A98",
+    "ink": "#1E1A17",
+    "line": "#BAAA8F",
+    "map": "#E9DDC8",
+    "paper": "#EEE4D2",
+    "strong": "#724A5A",
+    "sub": "#5A4E44"
+   },
+   "fukushima": {
+    "accent": "#E2CDC0",
+    "base": "#C6A99D",
+    "ink": "#1E1A17",
+    "line": "#BBAB90",
+    "map": "#E9DEC8",
+    "paper": "#EFE5D2",
+    "strong": "#6E595E",
+    "sub": "#5A4E44"
+   },
+   "gifu": {
+    "accent": "#BEC8BD",
+    "base": "#95A39A",
+    "ink": "#1E1A17",
+    "line": "#B8AB90",
+    "map": "#E6DDC8",
+    "paper": "#ECE4D2",
+    "strong": "#33545C",
+    "sub": "#5A4E44"
+   },
+   "gunma": {
+    "accent": "#CBCDB0",
+    "base": "#A6AA88",
+    "ink": "#1E1A17",
+    "line": "#B9AB8E",
+    "map": "#E7DEC7",
+    "paper": "#EDE5D1",
+    "strong": "#4A6048",
+    "sub": "#5A4E44"
+   },
+   "hiroshima": {
+    "accent": "#DABDB1",
+    "base": "#BA9489",
+    "ink": "#1E1A17",
+    "line": "#BAAA8E",
+    "map": "#E8DCC7",
+    "paper": "#EEE3D1",
+    "strong": "#6A4246",
+    "sub": "#5A4E44"
+   },
+   "hokkaido": {
+    "accent": "#CDC5CA",
+    "base": "#A89FAB",
+    "ink": "#1E1A17",
+    "line": "#B9AA91",
+    "map": "#E7DDC9",
+    "paper": "#EDE4D3",
+    "strong": "#504F75",
+    "sub": "#5A4E44"
+   },
+   "hyogo": {
+    "accent": "#BCC4C8",
+    "base": "#909EA9",
+    "ink": "#1E1A17",
+    "line": "#B8AA91",
+    "map": "#E6DDC9",
+    "paper": "#EBE4D3",
+    "strong": "#2D4C71",
+    "sub": "#5A4E44"
+   },
+   "ibaraki": {
+    "accent": "#C7CED2",
+    "base": "#A0AAB5",
+    "ink": "#1E1A17",
+    "line": "#B9AB91",
+    "map": "#E7DECA",
+    "paper": "#ECE5D4",
+    "strong": "#425E83",
+    "sub": "#5A4E44"
+   },
+   "ishikawa": {
+    "accent": "#DDD2B3",
+    "base": "#BEB08C",
+    "ink": "#1E1A17",
+    "line": "#BAAB8F",
+    "map": "#E8DEC7",
+    "paper": "#EEE5D1",
+    "strong": "#64614B",
+    "sub": "#5A4E44"
+   },
+   "iwate": {
+    "accent": "#BEC3B9",
+    "base": "#949C94",
+    "ink": "#1E1A17",
+    "line": "#B8AA8F",
+    "map": "#E6DDC8",
+    "paper": "#EBE4D1",
+    "strong": "#314B55",
+    "sub": "#5A4E44"
+   },
+   "kagawa": {
+    "accent": "#E2D6BD",
+    "base": "#C4B799",
+    "ink": "#1E1A17",
+    "line": "#BBAC8F",
+    "map": "#E9DFC8",
+    "paper": "#EFE5D2",
+    "strong": "#636156",
+    "sub": "#5A4E44"
+   },
+   "kagoshima": {
+    "accent": "#CEBCB0",
+    "base": "#A99388",
+    "ink": "#1E1A17",
+    "line": "#B9AA8E",
+    "map": "#E7DCC7",
+    "paper": "#EDE3D1",
+    "strong": "#523F44",
+    "sub": "#5A4E44"
+   },
+   "kanagawa": {
+    "accent": "#BBCBC6",
+    "base": "#91A7A5",
+    "ink": "#1E1A17",
+    "line": "#B8AB90",
+    "map": "#E6DEC9",
+    "paper": "#EBE4D3",
+    "strong": "#2B5A6B",
+    "sub": "#5A4E44"
+   },
+   "kochi": {
+    "accent": "#B7C3C1",
+    "base": "#8B9C9F",
+    "ink": "#1E1A17",
+    "line": "#B7AA90",
+    "map": "#E5DDC9",
+    "paper": "#EBE4D2",
+    "strong": "#254A63",
+    "sub": "#5A4E44"
+   },
+   "kumamoto": {
+    "accent": "#C5CAB0",
+    "base": "#9DA688",
+    "ink": "#1E1A17",
+    "line": "#B8AB8E",
+    "map": "#E6DEC7",
+    "paper": "#ECE4D1",
+    "strong": "#3E5947",
+    "sub": "#5A4E44"
+   },
+   "kyoto": {
+    "accent": "#C4B9C1",
+    "base": "#9B8F9F",
+    "ink": "#1E1A17",
+    "line": "#B8A990",
+    "map": "#E6DCC9",
+    "paper": "#ECE3D2",
+    "strong": "#3F3862",
+    "sub": "#5A4E44"
+   },
+   "mie": {
+    "accent": "#C6C9C7",
+    "base": "#9FA5A7",
+    "ink": "#1E1A17",
+    "line": "#B8AB90",
+    "map": "#E6DDC9",
+    "paper": "#ECE4D3",
+    "strong": "#41566F",
+    "sub": "#5A4E44"
+   },
+   "miyagi": {
+    "accent": "#BABBBD",
+    "base": "#8E9298",
+    "ink": "#1E1A17",
+    "line": "#B7A990",
+    "map": "#E5DCC8",
+    "paper": "#EBE3D2",
+    "strong": "#2A3C5A",
+    "sub": "#5A4E44"
+   },
+   "miyazaki": {
+    "accent": "#E6D1B2",
+    "base": "#C9AF8B",
+    "ink": "#1E1A17",
+    "line": "#BBAB8F",
+    "map": "#E9DEC7",
+    "paper": "#EFE5D1",
+    "strong": "#695948",
+    "sub": "#5A4E44"
+   },
+   "nagano": {
+    "accent": "#C5CAB4",
+    "base": "#9DA68D",
+    "ink": "#1E1A17",
+    "line": "#B8AB8F",
+    "map": "#E6DEC7",
+    "paper": "#ECE4D1",
+    "strong": "#3D594D",
+    "sub": "#5A4E44"
+   },
+   "nagasaki": {
+    "accent": "#C2C8C6",
+    "base": "#99A4A5",
+    "ink": "#1E1A17",
+    "line": "#B8AB90",
+    "map": "#E6DDC9",
+    "paper": "#ECE4D3",
+    "strong": "#38566D",
+    "sub": "#5A4E44"
+   },
+   "nara": {
+    "accent": "#C2CAB3",
+    "base": "#99A58B",
+    "ink": "#1E1A17",
+    "line": "#B8AB8F",
+    "map": "#E6DEC7",
+    "paper": "#ECE4D1",
+    "strong": "#37584B",
+    "sub": "#5A4E44"
+   },
+   "niigata": {
+    "accent": "#BEC5C2",
+    "base": "#949EA0",
+    "ink": "#1E1A17",
+    "line": "#B8AA90",
+    "map": "#E6DDC9",
+    "paper": "#EBE4D2",
+    "strong": "#324D64",
+    "sub": "#5A4E44"
+   },
+   "oita": {
+    "accent": "#C3D1C7",
+    "base": "#9BAFA6",
+    "ink": "#1E1A17",
+    "line": "#B8AB90",
+    "map": "#E6DEC9",
+    "paper": "#ECE5D3",
+    "strong": "#39656E",
+    "sub": "#5A4E44"
+   },
+   "okayama": {
+    "accent": "#E4D1C9",
+    "base": "#C8AFA9",
+    "ink": "#1E1A17",
+    "line": "#BBAB91",
+    "map": "#E9DEC9",
+    "paper": "#EFE5D3",
+    "strong": "#685865",
+    "sub": "#5A4E44"
+   },
+   "okinawa": {
+    "accent": "#E3C4C0",
+    "base": "#C59E9E",
+    "ink": "#1E1A17",
+    "line": "#BBAA90",
+    "map": "#E9DDC8",
+    "paper": "#EFE4D2",
+    "strong": "#794E63",
+    "sub": "#5A4E44"
+   },
+   "osaka": {
+    "accent": "#E1C6AE",
+    "base": "#C3A084",
+    "ink": "#1E1A17",
+    "line": "#BBAA8E",
+    "map": "#E9DDC7",
+    "paper": "#EFE4D0",
+    "strong": "#765245",
+    "sub": "#5A4E44"
+   },
+   "saga": {
+    "accent": "#BEC1C6",
+    "base": "#949AA5",
+    "ink": "#1E1A17",
+    "line": "#B8AA90",
+    "map": "#E6DDC9",
+    "paper": "#EBE4D3",
+    "strong": "#32476B",
+    "sub": "#5A4E44"
+   },
+   "saitama": {
+    "accent": "#C2C7B4",
+    "base": "#99A28E",
+    "ink": "#1E1A17",
+    "line": "#B8AA8F",
+    "map": "#E6DDC7",
+    "paper": "#ECE4D1",
+    "strong": "#37534D",
+    "sub": "#5A4E44"
+   },
+   "shiga": {
+    "accent": "#C0CACC",
+    "base": "#96A7AD",
+    "ink": "#1E1A17",
+    "line": "#B8AB91",
+    "map": "#E6DEC9",
+    "paper": "#ECE4D3",
+    "strong": "#345977",
+    "sub": "#5A4E44"
+   },
+   "shimane": {
+    "accent": "#D7BFB1",
+    "base": "#B69688",
+    "ink": "#1E1A17",
+    "line": "#BAAA8E",
+    "map": "#E8DDC7",
+    "paper": "#EEE3D1",
+    "strong": "#644446",
+    "sub": "#5A4E44"
+   },
+   "shizuoka": {
+    "accent": "#C9CDB0",
+    "base": "#A2AA88",
+    "ink": "#1E1A17",
+    "line": "#B9AB8E",
+    "map": "#E7DEC7",
+    "paper": "#ECE5D1",
+    "strong": "#456048",
+    "sub": "#5A4E44"
+   },
+   "tochigi": {
+    "accent": "#DEBFB5",
+    "base": "#C0978F",
+    "ink": "#1E1A17",
+    "line": "#BAAA8F",
+    "map": "#E9DDC7",
+    "paper": "#EEE3D1",
+    "strong": "#72464E",
+    "sub": "#5A4E44"
+   },
+   "tokushima": {
+    "accent": "#B9BCBD",
+    "base": "#8D939A",
+    "ink": "#1E1A17",
+    "line": "#B7AA90",
+    "map": "#E5DCC8",
+    "paper": "#EBE3D2",
+    "strong": "#293D5B",
+    "sub": "#5A4E44"
+   },
+   "tokyo": {
+    "accent": "#BDC1C7",
+    "base": "#9399A6",
+    "ink": "#1E1A17",
+    "line": "#B8AA91",
+    "map": "#E6DDC9",
+    "paper": "#EBE3D3",
+    "strong": "#31466D",
+    "sub": "#5A4E44"
+   },
+   "tottori": {
+    "accent": "#DED3C0",
+    "base": "#BFB29D",
+    "ink": "#1E1A17",
+    "line": "#BAAB90",
+    "map": "#E9DEC8",
+    "paper": "#EEE5D2",
+    "strong": "#5D5B59",
+    "sub": "#5A4E44"
+   },
+   "toyama": {
+    "accent": "#C4D0CB",
+    "base": "#9CADAD",
+    "ink": "#1E1A17",
+    "line": "#B8AB91",
+    "map": "#E6DEC9",
+    "paper": "#ECE5D3",
+    "strong": "#3C6377",
+    "sub": "#5A4E44"
+   },
+   "wakayama": {
+    "accent": "#E3D1B2",
+    "base": "#C5B08B",
+    "ink": "#1E1A17",
+    "line": "#BBAB8F",
+    "map": "#E9DEC7",
+    "paper": "#EFE5D1",
+    "strong": "#6E604B",
+    "sub": "#5A4E44"
+   },
+   "yamagata": {
+    "accent": "#D6B9B3",
+    "base": "#B58F8C",
+    "ink": "#1E1A17",
+    "line": "#BAA98F",
+    "map": "#E8DCC7",
+    "paper": "#EEE3D1",
+    "strong": "#643B49",
+    "sub": "#5A4E44"
+   },
+   "yamaguchi": {
+    "accent": "#CBCDC9",
+    "base": "#A5AAA9",
+    "ink": "#1E1A17",
+    "line": "#B9AB91",
+    "map": "#E7DEC9",
+    "paper": "#EDE5D3",
+    "strong": "#4A5E72",
+    "sub": "#5A4E44"
+   },
+   "yamanashi": {
+    "accent": "#CBBDC2",
+    "base": "#A6959F",
+    "ink": "#1E1A17",
+    "line": "#B9AA90",
+    "map": "#E7DCC9",
+    "paper": "#EDE3D2",
+    "strong": "#4D4064",
+    "sub": "#5A4E44"
+   }
+  }
+ },
+ "heisei": {
+  "national": {
+   "accent": "#C5CEDF",
+   "base": "#A6B5D0",
+   "ink": "#1F2233",
+   "line": "#CBCEDF",
+   "map": "#ECEDF5",
+   "paper": "#F2F3F8",
+   "strong": "#344B77",
+   "sub": "#4C5170"
+  },
+  "regions": {
+   "aichi": {
+    "accent": "#E7D29E",
+    "base": "#E0C175",
+    "ink": "#1F2233",
+    "line": "#CECFDB",
+    "map": "#EFEEF2",
+    "paper": "#F5F4F4",
+    "strong": "#946F00",
+    "sub": "#4C5170"
+   },
+   "akita": {
+    "accent": "#E7D8AC",
+    "base": "#DFC988",
+    "ink": "#1F2233",
+    "line": "#CED0DC",
+    "map": "#EFEFF2",
+    "paper": "#F5F4F5",
+    "strong": "#866F29",
+    "sub": "#4C5170"
+   },
+   "aomori": {
+    "accent": "#E7AFAA",
+    "base": "#DF8F87",
+    "ink": "#1F2233",
+    "line": "#CECDDB",
+    "map": "#EFEBF2",
+    "paper": "#F5F1F4",
+    "strong": "#8F2D26",
+    "sub": "#4C5170"
+   },
+   "chiba": {
+    "accent": "#EFDFAB",
+    "base": "#E9D287",
+    "ink": "#1F2233",
+    "line": "#CED0DC",
+    "map": "#EFEFF3",
+    "paper": "#F6F5F5",
+    "strong": "#836F27",
+    "sub": "#4C5170"
+   },
+   "ehime": {
+    "accent": "#F7CEA5",
+    "base": "#F6BB7F",
+    "ink": "#1F2233",
+    "line": "#CFCFDC",
+    "map": "#F0EEF2",
+    "paper": "#F6F4F5",
+    "strong": "#9D601B",
+    "sub": "#4C5170"
+   },
+   "fukui": {
+    "accent": "#CBBCAF",
+    "base": "#B7A490",
+    "ink": "#1F2233",
+    "line": "#CBCDDB",
+    "map": "#ECECF2",
+    "paper": "#F3F2F5",
+    "strong": "#604A33",
+    "sub": "#4C5170"
+   },
+   "fukuoka": {
+    "accent": "#EFBCC4",
+    "base": "#E8A3AE",
+    "ink": "#1F2233",
+    "line": "#CECEDD",
+    "map": "#EFEDF4",
+    "paper": "#F6F2F6",
+    "strong": "#9D4858",
+    "sub": "#4C5170"
+   },
+   "fukushima": {
+    "accent": "#F3D0C9",
+    "base": "#F0BDB4",
+    "ink": "#1F2233",
+    "line": "#CFCFDE",
+    "map": "#F0EEF4",
+    "paper": "#F6F4F7",
+    "strong": "#97645B",
+    "sub": "#4C5170"
+   },
+   "gifu": {
+    "accent": "#B0CCC9",
+    "base": "#92B8B6",
+    "ink": "#1F2233",
+    "line": "#CACEDD",
+    "map": "#EBEDF4",
+    "paper": "#F1F3F7",
+    "strong": "#326360",
+    "sub": "#4C5170"
+   },
+   "gunma": {
+    "accent": "#C8D4AD",
+    "base": "#B3C48C",
+    "ink": "#1F2233",
+    "line": "#CCCFDC",
+    "map": "#ECEEF2",
+    "paper": "#F3F4F5",
+    "strong": "#5C742C",
+    "sub": "#4C5170"
+   },
+   "hiroshima": {
+    "accent": "#E8B6B1",
+    "base": "#E09993",
+    "ink": "#1F2233",
+    "line": "#CECDDC",
+    "map": "#EFECF2",
+    "paper": "#F5F2F5",
+    "strong": "#923A35",
+    "sub": "#4C5170"
+   },
+   "hokkaido": {
+    "accent": "#CDC5E1",
+    "base": "#BAAFD7",
+    "ink": "#1F2233",
+    "line": "#CCCEDF",
+    "map": "#EDEDF6",
+    "paper": "#F3F3F8",
+    "strong": "#66598B",
+    "sub": "#4C5170"
+   },
+   "hyogo": {
+    "accent": "#ACC5E0",
+    "base": "#8AAFD6",
+    "ink": "#1F2233",
+    "line": "#CACEDF",
+    "map": "#EAEDF5",
+    "paper": "#F1F3F8",
+    "strong": "#285688",
+    "sub": "#4C5170"
+   },
+   "ibaraki": {
+    "accent": "#BDD3EF",
+    "base": "#A3C3EA",
+    "ink": "#1F2233",
+    "line": "#CBCFE0",
+    "map": "#ECEEF7",
+    "paper": "#F2F4F9",
+    "strong": "#4A71A2",
+    "sub": "#4C5170"
+   },
+   "ishikawa": {
+    "accent": "#E8DAAE",
+    "base": "#E0CB8D",
+    "ink": "#1F2233",
+    "line": "#CED0DC",
+    "map": "#EFEFF3",
+    "paper": "#F5F4F5",
+    "strong": "#87722E",
+    "sub": "#4C5170"
+   },
+   "iwate": {
+    "accent": "#B0C4C3",
+    "base": "#92AEAC",
+    "ink": "#1F2233",
+    "line": "#CACEDD",
+    "map": "#EBEDF3",
+    "paper": "#F1F2F6",
+    "strong": "#325555",
+    "sub": "#4C5170"
+   },
+   "kagawa": {
+    "accent": "#EFE1C1",
+    "base": "#EAD5A7",
+    "ink": "#1F2233",
+    "line": "#CED0DE",
+    "map": "#EFEFF4",
+    "paper": "#F6F5F7",
+    "strong": "#847449",
+    "sub": "#4C5170"
+   },
+   "kagoshima": {
+    "accent": "#D1B6B1",
+    "base": "#C19B93",
+    "ink": "#1F2233",
+    "line": "#CCCDDC",
+    "map": "#EDECF2",
+    "paper": "#F3F1F5",
+    "strong": "#6C3E36",
+    "sub": "#4C5170"
+   },
+   "kanagawa": {
+    "accent": "#A7D1D9",
+    "base": "#84C0CB",
+    "ink": "#1F2233",
+    "line": "#CACFDE",
+    "map": "#EAEEF5",
+    "paper": "#F1F3F8",
+    "strong": "#1A6C7A",
+    "sub": "#4C5170"
+   },
+   "kochi": {
+    "accent": "#A4C3D3",
+    "base": "#7FADC3",
+    "ink": "#1F2233",
+    "line": "#C9CEDE",
+    "map": "#EAEDF4",
+    "paper": "#F0F2F7",
+    "strong": "#165470",
+    "sub": "#4C5170"
+   },
+   "kumamoto": {
+    "accent": "#BCD0AF",
+    "base": "#A3BD8F",
+    "ink": "#1F2233",
+    "line": "#CBCFDC",
+    "map": "#EBEEF2",
+    "paper": "#F2F3F5",
+    "strong": "#486A31",
+    "sub": "#4C5170"
+   },
+   "kyoto": {
+    "accent": "#C0B1D3",
+    "base": "#A794C5",
+    "ink": "#1F2233",
+    "line": "#CBCDDE",
+    "map": "#EBEBF4",
+    "paper": "#F2F1F7",
+    "strong": "#4D3571",
+    "sub": "#4C5170"
+   },
+   "mie": {
+    "accent": "#BECCDB",
+    "base": "#A5BACF",
+    "ink": "#1F2233",
+    "line": "#CBCFDF",
+    "map": "#ECEEF5",
+    "paper": "#F2F3F8",
+    "strong": "#4C6580",
+    "sub": "#4C5170"
+   },
+   "miyagi": {
+    "accent": "#ADB7CC",
+    "base": "#8C9CB8",
+    "ink": "#1F2233",
+    "line": "#C9CDDD",
+    "map": "#EAECF4",
+    "paper": "#F1F1F6",
+    "strong": "#2B3F63",
+    "sub": "#4C5170"
+   },
+   "miyazaki": {
+    "accent": "#F8D8AC",
+    "base": "#F7C789",
+    "ink": "#1F2233",
+    "line": "#CFD0DC",
+    "map": "#F0EFF3",
+    "paper": "#F6F4F5",
+    "strong": "#8F6529",
+    "sub": "#4C5170"
+   },
+   "nagano": {
+    "accent": "#BCCEB6",
+    "base": "#A1BD99",
+    "ink": "#1F2233",
+    "line": "#CBCFDC",
+    "map": "#EBEEF3",
+    "paper": "#F2F3F5",
+    "strong": "#476A3F",
+    "sub": "#4C5170"
+   },
+   "nagasaki": {
+    "accent": "#B6CCDA",
+    "base": "#99B9CC",
+    "ink": "#1F2233",
+    "line": "#CACFDE",
+    "map": "#EBEEF5",
+    "paper": "#F2F3F8",
+    "strong": "#3B657E",
+    "sub": "#4C5170"
+   },
+   "nara": {
+    "accent": "#B6CFB5",
+    "base": "#99BD97",
+    "ink": "#1F2233",
+    "line": "#CACFDC",
+    "map": "#EBEEF2",
+    "paper": "#F2F3F5",
+    "strong": "#3B693C",
+    "sub": "#4C5170"
+   },
+   "niigata": {
+    "accent": "#B1C6D3",
+    "base": "#92B0C3",
+    "ink": "#1F2233",
+    "line": "#CACEDE",
+    "map": "#EBEDF4",
+    "paper": "#F1F3F7",
+    "strong": "#325971",
+    "sub": "#4C5170"
+   },
+   "oita": {
+    "accent": "#B4DAD9",
+    "base": "#96CCCA",
+    "ink": "#1F2233",
+    "line": "#CBD0DE",
+    "map": "#EBEFF5",
+    "paper": "#F2F4F8",
+    "strong": "#377C7B",
+    "sub": "#4C5170"
+   },
+   "okayama": {
+    "accent": "#F5D7DA",
+    "base": "#F3C7CB",
+    "ink": "#1F2233",
+    "line": "#CFD0DF",
+    "map": "#F0EFF5",
+    "paper": "#F6F4F8",
+    "strong": "#8C646A",
+    "sub": "#4C5170"
+   },
+   "okinawa": {
+    "accent": "#F5C0CC",
+    "base": "#F2A7B9",
+    "ink": "#1F2233",
+    "line": "#CFCEDE",
+    "map": "#F0EDF4",
+    "paper": "#F6F3F7",
+    "strong": "#A94D66",
+    "sub": "#4C5170"
+   },
+   "osaka": {
+    "accent": "#F3C4A8",
+    "base": "#EFAD83",
+    "ink": "#1F2233",
+    "line": "#CFCEDC",
+    "map": "#EFEDF2",
+    "paper": "#F6F3F5",
+    "strong": "#A5561F",
+    "sub": "#4C5170"
+   },
+   "saga": {
+    "accent": "#B2C0DB",
+    "base": "#94A8CF",
+    "ink": "#1F2233",
+    "line": "#CACEDE",
+    "map": "#EBEDF5",
+    "paper": "#F1F2F8",
+    "strong": "#364E7E",
+    "sub": "#4C5170"
+   },
+   "saitama": {
+    "accent": "#B7CAB8",
+    "base": "#9BB79E",
+    "ink": "#1F2233",
+    "line": "#CACEDC",
+    "map": "#EBEDF3",
+    "paper": "#F2F3F5",
+    "strong": "#3D6243",
+    "sub": "#4C5170"
+   },
+   "shiga": {
+    "accent": "#B1CFE4",
+    "base": "#92BEDB",
+    "ink": "#1F2233",
+    "line": "#CACFDF",
+    "map": "#EBEEF6",
+    "paper": "#F1F3F9",
+    "strong": "#316A8F",
+    "sub": "#4C5170"
+   },
+   "shimane": {
+    "accent": "#E2B9B0",
+    "base": "#D89E91",
+    "ink": "#1F2233",
+    "line": "#CDCDDC",
+    "map": "#EEECF2",
+    "paper": "#F5F2F5",
+    "strong": "#884234",
+    "sub": "#4C5170"
+   },
+   "shizuoka": {
+    "accent": "#C3D5AD",
+    "base": "#ABC58D",
+    "ink": "#1F2233",
+    "line": "#CBCFDC",
+    "map": "#ECEEF2",
+    "paper": "#F3F4F5",
+    "strong": "#54742D",
+    "sub": "#4C5170"
+   },
+   "tochigi": {
+    "accent": "#EEB9B8",
+    "base": "#EA9D9D",
+    "ink": "#1F2233",
+    "line": "#CECDDC",
+    "map": "#EFECF3",
+    "paper": "#F6F2F6",
+    "strong": "#9D4042",
+    "sub": "#4C5170"
+   },
+   "tokushima": {
+    "accent": "#AAB8CD",
+    "base": "#8A9DBB",
+    "ink": "#1F2233",
+    "line": "#C9CDDD",
+    "map": "#EAECF4",
+    "paper": "#F1F1F7",
+    "strong": "#274165",
+    "sub": "#4C5170"
+   },
+   "tokyo": {
+    "accent": "#B1BFDD",
+    "base": "#93A6D2",
+    "ink": "#1F2233",
+    "line": "#CACDDF",
+    "map": "#EBECF5",
+    "paper": "#F1F2F8",
+    "strong": "#334C82",
+    "sub": "#4C5170"
+   },
+   "tottori": {
+    "accent": "#E9DAC8",
+    "base": "#E1CDB2",
+    "ink": "#1F2233",
+    "line": "#CED0DE",
+    "map": "#EFEFF4",
+    "paper": "#F5F5F7",
+    "strong": "#7C6A54",
+    "sub": "#4C5170"
+   },
+   "toyama": {
+    "accent": "#B7D7E2",
+    "base": "#9AC9D8",
+    "ink": "#1F2233",
+    "line": "#CBCFDF",
+    "map": "#EBEEF6",
+    "paper": "#F2F4F9",
+    "strong": "#3D798D",
+    "sub": "#4C5170"
+   },
+   "wakayama": {
+    "accent": "#F3D8AD",
+    "base": "#EFC989",
+    "ink": "#1F2233",
+    "line": "#CFD0DC",
+    "map": "#F0EFF3",
+    "paper": "#F6F4F5",
+    "strong": "#976F29",
+    "sub": "#4C5170"
+   },
+   "yamagata": {
+    "accent": "#E1B0B6",
+    "base": "#D7929B",
+    "ink": "#1F2233",
+    "line": "#CDCDDC",
+    "map": "#EEECF2",
+    "paper": "#F5F1F5",
+    "strong": "#87303E",
+    "sub": "#4C5170"
+   },
+   "yamaguchi": {
+    "accent": "#C5D2DD",
+    "base": "#AFC2D1",
+    "ink": "#1F2233",
+    "line": "#CBCFDF",
+    "map": "#ECEEF5",
+    "paper": "#F3F4F8",
+    "strong": "#597183",
+    "sub": "#4C5170"
+   },
+   "yamanashi": {
+    "accent": "#CCB8D3",
+    "base": "#B99DC3",
+    "ink": "#1F2233",
+    "line": "#CCCDDE",
+    "map": "#ECECF4",
+    "paper": "#F3F2F7",
+    "strong": "#624071",
+    "sub": "#4C5170"
+   }
+  }
+ },
+ "meiji": {
+  "national": {
+   "accent": "#CBCDCF",
+   "base": "#A5AAB1",
+   "ink": "#1F2430",
+   "line": "#B5AB9A",
+   "map": "#E7E1D2",
+   "paper": "#EEE9DC",
+   "strong": "#314162",
+   "sub": "#4E5566"
+  },
+  "regions": {
+   "aichi": {
+    "accent": "#DED0AD",
+    "base": "#C6B287",
+    "ink": "#1F2430",
+    "line": "#B6AC98",
+    "map": "#E9E2CF",
+    "paper": "#F0E9DA",
+    "strong": "#6B5C3C",
+    "sub": "#4E5566"
+   },
+   "akita": {
+    "accent": "#DFD3B6",
+    "base": "#C6B891",
+    "ink": "#1F2430",
+    "line": "#B6AC98",
+    "map": "#E9E2D0",
+    "paper": "#F0EADA",
+    "strong": "#625B44",
+    "sub": "#4E5566"
+   },
+   "aomori": {
+    "accent": "#DBBAB0",
+    "base": "#C19489",
+    "ink": "#1F2430",
+    "line": "#B6AA98",
+    "map": "#E9E0CF",
+    "paper": "#F0E8DA",
+    "strong": "#67373A",
+    "sub": "#4E5566"
+   },
+   "chiba": {
+    "accent": "#E4D8B6",
+    "base": "#CDBE93",
+    "ink": "#1F2430",
+    "line": "#B7AD98",
+    "map": "#EAE2D0",
+    "paper": "#F0EADA",
+    "strong": "#605B43",
+    "sub": "#4E5566"
+   },
+   "ehime": {
+    "accent": "#E7CEB1",
+    "base": "#D2B08C",
+    "ink": "#1F2430",
+    "line": "#B7AC98",
+    "map": "#EAE2D0",
+    "paper": "#F1E9DA",
+    "strong": "#70533F",
+    "sub": "#4E5566"
+   },
+   "fukui": {
+    "accent": "#CBC1B3",
+    "base": "#AB9E8E",
+    "ink": "#1F2430",
+    "line": "#B5AB98",
+    "map": "#E8E0D0",
+    "paper": "#EEE8DA",
+    "strong": "#4A423E",
+    "sub": "#4E5566"
+   },
+   "fukuoka": {
+    "accent": "#E1C3C0",
+    "base": "#C9A1A0",
+    "ink": "#1F2430",
+    "line": "#B7AB99",
+    "map": "#EAE1D1",
+    "paper": "#F0E8DB",
+    "strong": "#704655",
+    "sub": "#4E5566"
+   },
+   "fukushima": {
+    "accent": "#E5CFC5",
+    "base": "#CFB2A6",
+    "ink": "#1F2430",
+    "line": "#B7AC99",
+    "map": "#EAE2D1",
+    "paper": "#F1E9DC",
+    "strong": "#6D5559",
+    "sub": "#4E5566"
+   },
+   "gifu": {
+    "accent": "#BECAC2",
+    "base": "#9BAAA2",
+    "ink": "#1F2430",
+    "line": "#B4AB99",
+    "map": "#E7E1D1",
+    "paper": "#EDE9DB",
+    "strong": "#335057",
+    "sub": "#4E5566"
+   },
+   "gunma": {
+    "accent": "#CCD0B4",
+    "base": "#ADB290",
+    "ink": "#1F2430",
+    "line": "#B5AC98",
+    "map": "#E8E2D0",
+    "paper": "#EFE9DA",
+    "strong": "#4A5C43",
+    "sub": "#4E5566"
+   },
+   "hiroshima": {
+    "accent": "#DCBEB4",
+    "base": "#C39A90",
+    "ink": "#1F2430",
+    "line": "#B6AB98",
+    "map": "#E9E0D0",
+    "paper": "#F0E8DA",
+    "strong": "#683D41",
+    "sub": "#4E5566"
+   },
+   "hokkaido": {
+    "accent": "#CEC7D0",
+    "base": "#AFA7B5",
+    "ink": "#1F2430",
+    "line": "#B5AB9A",
+    "map": "#E8E1D2",
+    "paper": "#EFE9DD",
+    "strong": "#4F4C6F",
+    "sub": "#4E5566"
+   },
+   "hyogo": {
+    "accent": "#BBC6CE",
+    "base": "#96A5B3",
+    "ink": "#1F2430",
+    "line": "#B4AB9A",
+    "map": "#E6E1D2",
+    "paper": "#EDE9DC",
+    "strong": "#2D486C",
+    "sub": "#4E5566"
+   },
+   "ibaraki": {
+    "accent": "#C7D0D8",
+    "base": "#A6B3C0",
+    "ink": "#1F2430",
+    "line": "#B5AC9B",
+    "map": "#E7E2D3",
+    "paper": "#EEE9DD",
+    "strong": "#425B7E",
+    "sub": "#4E5566"
+   },
+   "ishikawa": {
+    "accent": "#E0D5B7",
+    "base": "#C7B994",
+    "ink": "#1F2430",
+    "line": "#B6AC98",
+    "map": "#E9E2D0",
+    "paper": "#F0EADB",
+    "strong": "#635D46",
+    "sub": "#4E5566"
+   },
+   "iwate": {
+    "accent": "#BDC5BD",
+    "base": "#99A39C",
+    "ink": "#1F2430",
+    "line": "#B4AB99",
+    "map": "#E7E1D0",
+    "paper": "#EDE8DB",
+    "strong": "#314750",
+    "sub": "#4E5566"
+   },
+   "kagawa": {
+    "accent": "#E4DAC2",
+    "base": "#CEC0A2",
+    "ink": "#1F2430",
+    "line": "#B7AD99",
+    "map": "#EAE2D1",
+    "paper": "#F1EADB",
+    "strong": "#625D51",
+    "sub": "#4E5566"
+   },
+   "kagoshima": {
+    "accent": "#CFBDB3",
+    "base": "#B09A8F",
+    "ink": "#1F2430",
+    "line": "#B5AA98",
+    "map": "#E8E0D0",
+    "paper": "#EFE8DA",
+    "strong": "#513B3F",
+    "sub": "#4E5566"
+   },
+   "kanagawa": {
+    "accent": "#BACDCB",
+    "base": "#96AFAE",
+    "ink": "#1F2430",
+    "line": "#B4AC9A",
+    "map": "#E7E2D2",
+    "paper": "#EDE9DC",
+    "strong": "#2C5666",
+    "sub": "#4E5566"
+   },
+   "kochi": {
+    "accent": "#B7C4C6",
+    "base": "#90A3A8",
+    "ink": "#1F2430",
+    "line": "#B3AB99",
+    "map": "#E6E1D1",
+    "paper": "#EDE8DC",
+    "strong": "#25465E",
+    "sub": "#4E5566"
+   },
+   "kumamoto": {
+    "accent": "#C5CDB4",
+    "base": "#A3AE90",
+    "ink": "#1F2430",
+    "line": "#B4AC98",
+    "map": "#E7E1D0",
+    "paper": "#EEE9DA",
+    "strong": "#3E5542",
+    "sub": "#4E5566"
+   },
+   "kyoto": {
+    "accent": "#C4BAC5",
+    "base": "#A195A8",
+    "ink": "#1F2430",
+    "line": "#B4AA9A",
+    "map": "#E7E0D1",
+    "paper": "#EEE8DC",
+    "strong": "#3E355D",
+    "sub": "#4E5566"
+   },
+   "mie": {
+    "accent": "#C6CBCC",
+    "base": "#A5ACB1",
+    "ink": "#1F2430",
+    "line": "#B5AC9A",
+    "map": "#E7E1D2",
+    "paper": "#EEE9DC",
+    "strong": "#415369",
+    "sub": "#4E5566"
+   },
+   "miyagi": {
+    "accent": "#BABDC1",
+    "base": "#9398A1",
+    "ink": "#1F2430",
+    "line": "#B4AA99",
+    "map": "#E6E0D1",
+    "paper": "#EDE8DB",
+    "strong": "#2A3955",
+    "sub": "#4E5566"
+   },
+   "miyazaki": {
+    "accent": "#E9D4B6",
+    "base": "#D3B892",
+    "ink": "#1F2430",
+    "line": "#B7AC98",
+    "map": "#EAE2D0",
+    "paper": "#F1EADA",
+    "strong": "#685542",
+    "sub": "#4E5566"
+   },
+   "nagano": {
+    "accent": "#C5CCB8",
+    "base": "#A3AE94",
+    "ink": "#1F2430",
+    "line": "#B4AC98",
+    "map": "#E7E1D0",
+    "paper": "#EEE9DA",
+    "strong": "#3D5548",
+    "sub": "#4E5566"
+   },
+   "nagasaki": {
+    "accent": "#C2CBCC",
+    "base": "#9FACAF",
+    "ink": "#1F2430",
+    "line": "#B4AC9A",
+    "map": "#E7E1D2",
+    "paper": "#EEE9DC",
+    "strong": "#385268",
+    "sub": "#4E5566"
+   },
+   "nara": {
+    "accent": "#C2CCB7",
+    "base": "#9FAD93",
+    "ink": "#1F2430",
+    "line": "#B4AC98",
+    "map": "#E7E1D0",
+    "paper": "#EEE9DA",
+    "strong": "#375546",
+    "sub": "#4E5566"
+   },
+   "niigata": {
+    "accent": "#BEC6C7",
+    "base": "#9AA6A9",
+    "ink": "#1F2430",
+    "line": "#B4AB9A",
+    "map": "#E7E1D1",
+    "paper": "#EDE9DC",
+    "strong": "#324A5F",
+    "sub": "#4E5566"
+   },
+   "oita": {
+    "accent": "#C3D4CC",
+    "base": "#A1B7B0",
+    "ink": "#1F2430",
+    "line": "#B4AC9A",
+    "map": "#E7E2D2",
+    "paper": "#EEEADC",
+    "strong": "#3A6169",
+    "sub": "#4E5566"
+   },
+   "okayama": {
+    "accent": "#E7D4CF",
+    "base": "#D2B8B3",
+    "ink": "#1F2430",
+    "line": "#B7AC9A",
+    "map": "#EAE2D2",
+    "paper": "#F1EADC",
+    "strong": "#665460",
+    "sub": "#4E5566"
+   },
+   "okinawa": {
+    "accent": "#E5C6C5",
+    "base": "#CFA5A7",
+    "ink": "#1F2430",
+    "line": "#B7AB99",
+    "map": "#EAE1D1",
+    "paper": "#F1E9DC",
+    "strong": "#784A5E",
+    "sub": "#4E5566"
+   },
+   "osaka": {
+    "accent": "#E4C8B1",
+    "base": "#CDA78B",
+    "ink": "#1F2430",
+    "line": "#B7AB98",
+    "map": "#EAE1CF",
+    "paper": "#F1E9DA",
+    "strong": "#754E3F",
+    "sub": "#4E5566"
+   },
+   "saga": {
+    "accent": "#BEC3CB",
+    "base": "#9AA1AF",
+    "ink": "#1F2430",
+    "line": "#B4AB9A",
+    "map": "#E7E1D2",
+    "paper": "#EDE8DC",
+    "strong": "#324466",
+    "sub": "#4E5566"
+   },
+   "saitama": {
+    "accent": "#C2C9B8",
+    "base": "#9FAA96",
+    "ink": "#1F2430",
+    "line": "#B4AB98",
+    "map": "#E7E1D0",
+    "paper": "#EEE9DB",
+    "strong": "#375048",
+    "sub": "#4E5566"
+   },
+   "shiga": {
+    "accent": "#C0CDD1",
+    "base": "#9CAFB8",
+    "ink": "#1F2430",
+    "line": "#B4AC9A",
+    "map": "#E7E1D2",
+    "paper": "#EEE9DD",
+    "strong": "#355572",
+    "sub": "#4E5566"
+   },
+   "shimane": {
+    "accent": "#D9C0B4",
+    "base": "#BE9D90",
+    "ink": "#1F2430",
+    "line": "#B6AB98",
+    "map": "#E9E0D0",
+    "paper": "#F0E8DA",
+    "strong": "#634041",
+    "sub": "#4E5566"
+   },
+   "shizuoka": {
+    "accent": "#C9D0B4",
+    "base": "#A9B290",
+    "ink": "#1F2430",
+    "line": "#B5AC98",
+    "map": "#E8E2D0",
+    "paper": "#EEE9DA",
+    "strong": "#455C43",
+    "sub": "#4E5566"
+   },
+   "tochigi": {
+    "accent": "#E1C1B9",
+    "base": "#C99E97",
+    "ink": "#1F2430",
+    "line": "#B7AB98",
+    "map": "#EAE0D0",
+    "paper": "#F0E8DB",
+    "strong": "#704249",
+    "sub": "#4E5566"
+   },
+   "tokushima": {
+    "accent": "#B8BDC2",
+    "base": "#9399A2",
+    "ink": "#1F2430",
+    "line": "#B3AA99",
+    "map": "#E6E0D1",
+    "paper": "#EDE8DB",
+    "strong": "#293A56",
+    "sub": "#4E5566"
+   },
+   "tokyo": {
+    "accent": "#BDC2CC",
+    "base": "#999FB0",
+    "ink": "#1F2430",
+    "line": "#B4AB9A",
+    "map": "#E7E1D2",
+    "paper": "#EDE8DC",
+    "strong": "#314268",
+    "sub": "#4E5566"
+   },
+   "tottori": {
+    "accent": "#E0D6C5",
+    "base": "#C8BBA6",
+    "ink": "#1F2430",
+    "line": "#B7AC99",
+    "map": "#E9E2D1",
+    "paper": "#F0EADC",
+    "strong": "#5C5754",
+    "sub": "#4E5566"
+   },
+   "toyama": {
+    "accent": "#C4D2D1",
+    "base": "#A3B6B7",
+    "ink": "#1F2430",
+    "line": "#B4AC9A",
+    "map": "#E7E2D2",
+    "paper": "#EEEADD",
+    "strong": "#3D5F72",
+    "sub": "#4E5566"
+   },
+   "wakayama": {
+    "accent": "#E6D4B6",
+    "base": "#CFB992",
+    "ink": "#1F2430",
+    "line": "#B7AC98",
+    "map": "#EAE2D0",
+    "paper": "#F1EADA",
+    "strong": "#6D5C45",
+    "sub": "#4E5566"
+   },
+   "yamagata": {
+    "accent": "#D8BAB6",
+    "base": "#BD9693",
+    "ink": "#1F2430",
+    "line": "#B6AA98",
+    "map": "#E9E0D0",
+    "paper": "#F0E8DA",
+    "strong": "#623744",
+    "sub": "#4E5566"
+   },
+   "yamaguchi": {
+    "accent": "#CBCFCE",
+    "base": "#ACB2B3",
+    "ink": "#1F2430",
+    "line": "#B5AC9A",
+    "map": "#E8E2D2",
+    "paper": "#EEE9DC",
+    "strong": "#495A6D",
+    "sub": "#4E5566"
+   },
+   "yamanashi": {
+    "accent": "#CCBFC7",
+    "base": "#AD9BA8",
+    "ink": "#1F2430",
+    "line": "#B5AB9A",
+    "map": "#E8E0D1",
+    "paper": "#EFE8DC",
+    "strong": "#4C3C5F",
+    "sub": "#4E5566"
+   }
+  }
+ },
+ "showa": {
+  "national": {
+   "accent": "#CCCCCA",
+   "base": "#AFB0B2",
+   "ink": "#2A2019",
+   "line": "#BEAE91",
+   "map": "#E7DDC3",
+   "paper": "#EEE5D2",
+   "strong": "#3B455C",
+   "sub": "#5E4E3F"
+  },
+  "regions": {
+   "aichi": {
+    "accent": "#E0CFA8",
+    "base": "#CFB887",
+    "ink": "#2A2019",
+    "line": "#C0AF8E",
+    "map": "#E9DEC0",
+    "paper": "#F1E6CF",
+    "strong": "#78602B",
+    "sub": "#5E4E3F"
+   },
+   "akita": {
+    "accent": "#E1D3B0",
+    "base": "#D0BE91",
+    "ink": "#2A2019",
+    "line": "#C0AF8F",
+    "map": "#E9DEC1",
+    "paper": "#F1E6CF",
+    "strong": "#705F36",
+    "sub": "#5E4E3F"
+   },
+   "aomori": {
+    "accent": "#DDB9AB",
+    "base": "#CB9A8A",
+    "ink": "#2A2019",
+    "line": "#C0AD8E",
+    "map": "#E9DBC0",
+    "paper": "#F1E4CF",
+    "strong": "#73372E",
+    "sub": "#5E4E3F"
+   },
+   "chiba": {
+    "accent": "#E6D8B1",
+    "base": "#D6C492",
+    "ink": "#2A2019",
+    "line": "#C1B08F",
+    "map": "#EADEC1",
+    "paper": "#F1E7CF",
+    "strong": "#6D5F36",
+    "sub": "#5E4E3F"
+   },
+   "ehime": {
+    "accent": "#E9CDAC",
+    "base": "#DCB68C",
+    "ink": "#2A2019",
+    "line": "#C1AF8E",
+    "map": "#EADDC1",
+    "paper": "#F2E6CF",
+    "strong": "#7E5631",
+    "sub": "#5E4E3F"
+   },
+   "fukui": {
+    "accent": "#CDC0AE",
+    "base": "#B5A48E",
+    "ink": "#2A2019",
+    "line": "#BEAE8E",
+    "map": "#E7DCC1",
+    "paper": "#EFE5CF",
+    "strong": "#554434",
+    "sub": "#5E4E3F"
+   },
+   "fukuoka": {
+    "accent": "#E3C2BB",
+    "base": "#D2A7A1",
+    "ink": "#2A2019",
+    "line": "#C1AE90",
+    "map": "#E9DCC2",
+    "paper": "#F1E5D0",
+    "strong": "#7D484D",
+    "sub": "#5E4E3F"
+   },
+   "fukushima": {
+    "accent": "#E7CFC0",
+    "base": "#D9B8A7",
+    "ink": "#2A2019",
+    "line": "#C1AF90",
+    "map": "#EADEC3",
+    "paper": "#F2E6D1",
+    "strong": "#7A5850",
+    "sub": "#5E4E3F"
+   },
+   "gifu": {
+    "accent": "#C0C9BD",
+    "base": "#A4B0A3",
+    "ink": "#2A2019",
+    "line": "#BDAE90",
+    "map": "#E6DDC2",
+    "paper": "#EEE5D1",
+    "strong": "#3E5450",
+    "sub": "#5E4E3F"
+   },
+   "gunma": {
+    "accent": "#CECFAF",
+    "base": "#B7B890",
+    "ink": "#2A2019",
+    "line": "#BFAF8F",
+    "map": "#E7DEC1",
+    "paper": "#EFE6CF",
+    "strong": "#576136",
+    "sub": "#5E4E3F"
+   },
+   "hiroshima": {
+    "accent": "#DEBDAF",
+    "base": "#CCA091",
+    "ink": "#2A2019",
+    "line": "#C0AD8F",
+    "map": "#E9DCC1",
+    "paper": "#F1E4CF",
+    "strong": "#743E37",
+    "sub": "#5E4E3F"
+   },
+   "hokkaido": {
+    "accent": "#D0C7CB",
+    "base": "#B9ADB6",
+    "ink": "#2A2019",
+    "line": "#BFAE91",
+    "map": "#E7DDC4",
+    "paper": "#EFE5D2",
+    "strong": "#5A506A",
+    "sub": "#5E4E3F"
+   },
+   "hyogo": {
+    "accent": "#BDC5C9",
+    "base": "#9FABB4",
+    "ink": "#2A2019",
+    "line": "#BDAE91",
+    "map": "#E6DDC4",
+    "paper": "#EDE5D2",
+    "strong": "#374D67",
+    "sub": "#5E4E3F"
+   },
+   "ibaraki": {
+    "accent": "#C9D0D3",
+    "base": "#B0B9C2",
+    "ink": "#2A2019",
+    "line": "#BEAF92",
+    "map": "#E7DEC5",
+    "paper": "#EEE6D3",
+    "strong": "#4E607A",
+    "sub": "#5E4E3F"
+   },
+   "ishikawa": {
+    "accent": "#E1D4B1",
+    "base": "#D1BF94",
+    "ink": "#2A2019",
+    "line": "#C0AF8F",
+    "map": "#E9DEC1",
+    "paper": "#F1E7CF",
+    "strong": "#706139",
+    "sub": "#5E4E3F"
+   },
+   "iwate": {
+    "accent": "#BFC4B8",
+    "base": "#A3A99D",
+    "ink": "#2A2019",
+    "line": "#BDAE90",
+    "map": "#E6DCC2",
+    "paper": "#EDE5D0",
+    "strong": "#3B4B48",
+    "sub": "#5E4E3F"
+   },
+   "kagawa": {
+    "accent": "#E6D9BD",
+    "base": "#D8C6A2",
+    "ink": "#2A2019",
+    "line": "#C1B090",
+    "map": "#EADFC2",
+    "paper": "#F1E7D0",
+    "strong": "#6F6247",
+    "sub": "#5E4E3F"
+   },
+   "kagoshima": {
+    "accent": "#D1BDAE",
+    "base": "#BA9F8F",
+    "ink": "#2A2019",
+    "line": "#BFAD8F",
+    "map": "#E8DCC1",
+    "paper": "#EFE4CF",
+    "strong": "#5B3D35",
+    "sub": "#5E4E3F"
+   },
+   "kanagawa": {
+    "accent": "#BCCDC6",
+    "base": "#A0B5AF",
+    "ink": "#2A2019",
+    "line": "#BDAF91",
+    "map": "#E6DDC3",
+    "paper": "#EDE6D1",
+    "strong": "#385B60",
+    "sub": "#5E4E3F"
+   },
+   "kochi": {
+    "accent": "#B9C4C1",
+    "base": "#99A9A9",
+    "ink": "#2A2019",
+    "line": "#BDAE90",
+    "map": "#E5DCC3",
+    "paper": "#EDE5D1",
+    "strong": "#304A58",
+    "sub": "#5E4E3F"
+   },
+   "kumamoto": {
+    "accent": "#C7CCAF",
+    "base": "#ADB490",
+    "ink": "#2A2019",
+    "line": "#BEAF8F",
+    "map": "#E7DDC1",
+    "paper": "#EEE6CF",
+    "strong": "#4A5936",
+    "sub": "#5E4E3F"
+   },
+   "kyoto": {
+    "accent": "#C6B9C1",
+    "base": "#AB9BA9",
+    "ink": "#2A2019",
+    "line": "#BEAD91",
+    "map": "#E6DBC3",
+    "paper": "#EEE4D1",
+    "strong": "#473757",
+    "sub": "#5E4E3F"
+   },
+   "mie": {
+    "accent": "#C8CBC7",
+    "base": "#AFB3B2",
+    "ink": "#2A2019",
+    "line": "#BEAF91",
+    "map": "#E7DDC3",
+    "paper": "#EEE6D2",
+    "strong": "#4C5764",
+    "sub": "#5E4E3F"
+   },
+   "miyagi": {
+    "accent": "#BCBCBC",
+    "base": "#9C9EA2",
+    "ink": "#2A2019",
+    "line": "#BDAD90",
+    "map": "#E5DCC2",
+    "paper": "#EDE4D0",
+    "strong": "#333C4E",
+    "sub": "#5E4E3F"
+   },
+   "miyazaki": {
+    "accent": "#EAD4B1",
+    "base": "#DDBE92",
+    "ink": "#2A2019",
+    "line": "#C1AF8F",
+    "map": "#EADEC1",
+    "paper": "#F2E7CF",
+    "strong": "#755836",
+    "sub": "#5E4E3F"
+   },
+   "nagano": {
+    "accent": "#C7CBB2",
+    "base": "#ACB495",
+    "ink": "#2A2019",
+    "line": "#BEAF8F",
+    "map": "#E7DDC1",
+    "paper": "#EEE6CF",
+    "strong": "#49593D",
+    "sub": "#5E4E3F"
+   },
+   "nagasaki": {
+    "accent": "#C4CAC6",
+    "base": "#A8B2B0",
+    "ink": "#2A2019",
+    "line": "#BEAF91",
+    "map": "#E6DDC3",
+    "paper": "#EEE6D2",
+    "strong": "#445762",
+    "sub": "#5E4E3F"
+   },
+   "nara": {
+    "accent": "#C4CBB2",
+    "base": "#A8B393",
+    "ink": "#2A2019",
+    "line": "#BEAF8F",
+    "map": "#E6DDC1",
+    "paper": "#EEE6CF",
+    "strong": "#43593B",
+    "sub": "#5E4E3F"
+   },
+   "niigata": {
+    "accent": "#C0C6C2",
+    "base": "#A3ACAA",
+    "ink": "#2A2019",
+    "line": "#BDAE91",
+    "map": "#E6DDC3",
+    "paper": "#EDE5D1",
+    "strong": "#3C4E59",
+    "sub": "#5E4E3F"
+   },
+   "oita": {
+    "accent": "#C5D3C7",
+    "base": "#AABEB0",
+    "ink": "#2A2019",
+    "line": "#BEAF91",
+    "map": "#E7DEC3",
+    "paper": "#EEE6D2",
+    "strong": "#476763",
+    "sub": "#5E4E3F"
+   },
+   "okayama": {
+    "accent": "#E9D4C9",
+    "base": "#DCBEB4",
+    "ink": "#2A2019",
+    "line": "#C1AF91",
+    "map": "#EADEC4",
+    "paper": "#F2E6D2",
+    "strong": "#735858",
+    "sub": "#5E4E3F"
+   },
+   "okinawa": {
+    "accent": "#E7C5C0",
+    "base": "#D8ABA8",
+    "ink": "#2A2019",
+    "line": "#C1AE90",
+    "map": "#EADDC3",
+    "paper": "#F2E5D1",
+    "strong": "#854C56",
+    "sub": "#5E4E3F"
+   },
+   "osaka": {
+    "accent": "#E6C7AC",
+    "base": "#D6AD8B",
+    "ink": "#2A2019",
+    "line": "#C1AE8E",
+    "map": "#EADDC1",
+    "paper": "#F1E5CF",
+    "strong": "#825131",
+    "sub": "#5E4E3F"
+   },
+   "saga": {
+    "accent": "#C0C2C6",
+    "base": "#A3A7B0",
+    "ink": "#2A2019",
+    "line": "#BDAE91",
+    "map": "#E6DCC3",
+    "paper": "#EDE5D2",
+    "strong": "#3C4761",
+    "sub": "#5E4E3F"
+   },
+   "saitama": {
+    "accent": "#C4C9B3",
+    "base": "#A8AF96",
+    "ink": "#2A2019",
+    "line": "#BEAE8F",
+    "map": "#E6DDC1",
+    "paper": "#EEE5D0",
+    "strong": "#43533E",
+    "sub": "#5E4E3F"
+   },
+   "shiga": {
+    "accent": "#C2CCCC",
+    "base": "#A6B5B9",
+    "ink": "#2A2019",
+    "line": "#BDAF92",
+    "map": "#E6DDC4",
+    "paper": "#EEE6D2",
+    "strong": "#405A6D",
+    "sub": "#5E4E3F"
+   },
+   "shimane": {
+    "accent": "#DABFAF",
+    "base": "#C8A390",
+    "ink": "#2A2019",
+    "line": "#C0AD8F",
+    "map": "#E9DCC1",
+    "paper": "#F0E4CF",
+    "strong": "#6E4236",
+    "sub": "#5E4E3F"
+   },
+   "shizuoka": {
+    "accent": "#CBCFAF",
+    "base": "#B3B890",
+    "ink": "#2A2019",
+    "line": "#BEAF8F",
+    "map": "#E7DEC1",
+    "paper": "#EFE6CF",
+    "strong": "#526136",
+    "sub": "#5E4E3F"
+   },
+   "tochigi": {
+    "accent": "#E2C0B4",
+    "base": "#D2A497",
+    "ink": "#2A2019",
+    "line": "#C1AE8F",
+    "map": "#EADCC1",
+    "paper": "#F1E5D0",
+    "strong": "#7D433F",
+    "sub": "#5E4E3F"
+   },
+   "tokushima": {
+    "accent": "#BABDBD",
+    "base": "#9C9FA3",
+    "ink": "#2A2019",
+    "line": "#BDAD90",
+    "map": "#E5DCC2",
+    "paper": "#EDE4D1",
+    "strong": "#323D50",
+    "sub": "#5E4E3F"
+   },
+   "tokyo": {
+    "accent": "#BFC2C7",
+    "base": "#A2A6B1",
+    "ink": "#2A2019",
+    "line": "#BDAE91",
+    "map": "#E6DCC3",
+    "paper": "#EDE5D2",
+    "strong": "#3B4663",
+    "sub": "#5E4E3F"
+   },
+   "tottori": {
+    "accent": "#E2D5C0",
+    "base": "#D2C1A7",
+    "ink": "#2A2019",
+    "line": "#C0B090",
+    "map": "#E9DEC3",
+    "paper": "#F1E7D1",
+    "strong": "#695B4B",
+    "sub": "#5E4E3F"
+   },
+   "toyama": {
+    "accent": "#C6D2CC",
+    "base": "#ACBCB8",
+    "ink": "#2A2019",
+    "line": "#BEAF92",
+    "map": "#E7DEC4",
+    "paper": "#EEE6D2",
+    "strong": "#49646D",
+    "sub": "#5E4E3F"
+   },
+   "wakayama": {
+    "accent": "#E8D4B1",
+    "base": "#D9BF92",
+    "ink": "#2A2019",
+    "line": "#C1AF8F",
+    "map": "#EADEC1",
+    "paper": "#F1E7CF",
+    "strong": "#7B6038",
+    "sub": "#5E4E3F"
+   },
+   "yamagata": {
+    "accent": "#DABAB1",
+    "base": "#C69B94",
+    "ink": "#2A2019",
+    "line": "#C0AD8F",
+    "map": "#E9DBC1",
+    "paper": "#F0E4CF",
+    "strong": "#6D373A",
+    "sub": "#5E4E3F"
+   },
+   "yamaguchi": {
+    "accent": "#CDCFC9",
+    "base": "#B5B8B4",
+    "ink": "#2A2019",
+    "line": "#BEAF91",
+    "map": "#E7DEC4",
+    "paper": "#EFE6D2",
+    "strong": "#555F67",
+    "sub": "#5E4E3F"
+   },
+   "yamanashi": {
+    "accent": "#CEBEC2",
+    "base": "#B6A1A9",
+    "ink": "#2A2019",
+    "line": "#BEAD91",
+    "map": "#E7DCC3",
+    "paper": "#EFE4D1",
+    "strong": "#563F59",
+    "sub": "#5E4E3F"
+   }
+  }
+ },
+ "taisho": {
+  "national": {
+   "accent": "#CECED8",
+   "base": "#B2B2C3",
+   "ink": "#2B1E24",
+   "line": "#C2AFA8",
+   "map": "#EBE4DD",
+   "paper": "#F0EAE5",
+   "strong": "#41425F",
+   "sub": "#5E4652"
+  },
+  "regions": {
+   "aichi": {
+    "accent": "#E3D1B5",
+    "base": "#D5BC96",
+    "ink": "#2B1E24",
+    "line": "#C4B0A5",
+    "map": "#EEE4DA",
+    "paper": "#F3EBE2",
+    "strong": "#7D5C32",
+    "sub": "#5E4652"
+   },
+   "akita": {
+    "accent": "#E3D5BE",
+    "base": "#D6C2A1",
+    "ink": "#2B1E24",
+    "line": "#C4B0A6",
+    "map": "#EEE5DB",
+    "paper": "#F3EBE2",
+    "strong": "#745B3C",
+    "sub": "#5E4652"
+   },
+   "aomori": {
+    "accent": "#DFB9B7",
+    "base": "#D09B98",
+    "ink": "#2B1E24",
+    "line": "#C4AEA5",
+    "map": "#EEE2DA",
+    "paper": "#F3E9E2",
+    "strong": "#763233",
+    "sub": "#5E4652"
+   },
+   "chiba": {
+    "accent": "#E9DABE",
+    "base": "#DCC9A3",
+    "ink": "#2B1E24",
+    "line": "#C5B1A6",
+    "map": "#EEE5DB",
+    "paper": "#F3ECE2",
+    "strong": "#725B3B",
+    "sub": "#5E4652"
+   },
+   "ehime": {
+    "accent": "#ECCFB9",
+    "base": "#E2BA9C",
+    "ink": "#2B1E24",
+    "line": "#C5B0A5",
+    "map": "#EFE4DA",
+    "paper": "#F4EBE2",
+    "strong": "#815237",
+    "sub": "#5E4652"
+   },
+   "fukui": {
+    "accent": "#CEC1BA",
+    "base": "#B9A69D",
+    "ink": "#2B1E24",
+    "line": "#C2AEA5",
+    "map": "#ECE3DA",
+    "paper": "#F1E9E2",
+    "strong": "#594038",
+    "sub": "#5E4652"
+   },
+   "fukuoka": {
+    "accent": "#E6C3C8",
+    "base": "#D8A9B1",
+    "ink": "#2B1E24",
+    "line": "#C4AFA7",
+    "map": "#EEE3DC",
+    "paper": "#F3EAE3",
+    "strong": "#814351",
+    "sub": "#5E4652"
+   },
+   "fukushima": {
+    "accent": "#EAD1CE",
+    "base": "#DFBBB8",
+    "ink": "#2B1E24",
+    "line": "#C5B0A7",
+    "map": "#EFE4DC",
+    "paper": "#F3EBE4",
+    "strong": "#7E5455",
+    "sub": "#5E4652"
+   },
+   "gifu": {
+    "accent": "#C1CBCA",
+    "base": "#A7B3B3",
+    "ink": "#2B1E24",
+    "line": "#C1AFA7",
+    "map": "#EBE4DC",
+    "paper": "#EFEAE3",
+    "strong": "#455154",
+    "sub": "#5E4652"
+   },
+   "gunma": {
+    "accent": "#CFD1BC",
+    "base": "#BABC9F",
+    "ink": "#2B1E24",
+    "line": "#C2B0A5",
+    "map": "#ECE4DB",
+    "paper": "#F1EBE2",
+    "strong": "#5C5D3C",
+    "sub": "#5E4652"
+   },
+   "hiroshima": {
+    "accent": "#E1BEBC",
+    "base": "#D1A2A0",
+    "ink": "#2B1E24",
+    "line": "#C4AEA5",
+    "map": "#EEE2DB",
+    "paper": "#F3E9E2",
+    "strong": "#783A3B",
+    "sub": "#5E4652"
+   },
+   "hokkaido": {
+    "accent": "#D2C8D9",
+    "base": "#BDAFC7",
+    "ink": "#2B1E24",
+    "line": "#C2AFA8",
+    "map": "#ECE3DD",
+    "paper": "#F1EAE5",
+    "strong": "#5F4C6E",
+    "sub": "#5E4652"
+   },
+   "hyogo": {
+    "accent": "#BEC6D7",
+    "base": "#A2ADC4",
+    "ink": "#2B1E24",
+    "line": "#C1AFA8",
+    "map": "#EAE3DD",
+    "paper": "#EFEAE5",
+    "strong": "#3E496A",
+    "sub": "#5E4652"
+   },
+   "ibaraki": {
+    "accent": "#CAD1E2",
+    "base": "#B4BCD3",
+    "ink": "#2B1E24",
+    "line": "#C2B0A9",
+    "map": "#ECE4DE",
+    "paper": "#F0EBE6",
+    "strong": "#545C7D",
+    "sub": "#5E4652"
+   },
+   "ishikawa": {
+    "accent": "#E4D7BF",
+    "base": "#D6C3A4",
+    "ink": "#2B1E24",
+    "line": "#C4B0A6",
+    "map": "#EEE5DB",
+    "paper": "#F3EBE2",
+    "strong": "#755E3F",
+    "sub": "#5E4652"
+   },
+   "iwate": {
+    "accent": "#C0C5C5",
+    "base": "#A5ABAC",
+    "ink": "#2B1E24",
+    "line": "#C1AFA6",
+    "map": "#EBE3DB",
+    "paper": "#EFEAE3",
+    "strong": "#41474C",
+    "sub": "#5E4652"
+   },
+   "kagawa": {
+    "accent": "#E9DCCB",
+    "base": "#DECBB3",
+    "ink": "#2B1E24",
+    "line": "#C5B1A7",
+    "map": "#EEE5DC",
+    "paper": "#F3ECE4",
+    "strong": "#745E4C",
+    "sub": "#5E4652"
+   },
+   "kagoshima": {
+    "accent": "#D2BDBB",
+    "base": "#BEA19E",
+    "ink": "#2B1E24",
+    "line": "#C3AEA5",
+    "map": "#ECE2DA",
+    "paper": "#F1E9E2",
+    "strong": "#5F3939",
+    "sub": "#5E4652"
+   },
+   "kanagawa": {
+    "accent": "#BDCED4",
+    "base": "#A2B8C0",
+    "ink": "#2B1E24",
+    "line": "#C1B0A8",
+    "map": "#EAE4DD",
+    "paper": "#EFEBE4",
+    "strong": "#405864",
+    "sub": "#5E4652"
+   },
+   "kochi": {
+    "accent": "#B8C5CF",
+    "base": "#9BABB8",
+    "ink": "#2B1E24",
+    "line": "#C0AFA7",
+    "map": "#EAE3DC",
+    "paper": "#EFEAE4",
+    "strong": "#37475B",
+    "sub": "#5E4652"
+   },
+   "kumamoto": {
+    "accent": "#C8CEBC",
+    "base": "#B0B79F",
+    "ink": "#2B1E24",
+    "line": "#C2B0A5",
+    "map": "#EBE4DA",
+    "paper": "#F0EAE2",
+    "strong": "#50563B",
+    "sub": "#5E4652"
+   },
+   "kyoto": {
+    "accent": "#C7B9CE",
+    "base": "#AE9CB9",
+    "ink": "#2B1E24",
+    "line": "#C1AEA7",
+    "map": "#EBE2DC",
+    "paper": "#F0E9E4",
+    "strong": "#4B335A",
+    "sub": "#5E4652"
+   },
+   "mie": {
+    "accent": "#C9CCD5",
+    "base": "#B2B5C3",
+    "ink": "#2B1E24",
+    "line": "#C2B0A8",
+    "map": "#EBE4DD",
+    "paper": "#F0EAE5",
+    "strong": "#525467",
+    "sub": "#5E4652"
+   },
+   "miyagi": {
+    "accent": "#BCBCC9",
+    "base": "#9F9FB1",
+    "ink": "#2B1E24",
+    "line": "#C0AEA7",
+    "map": "#EAE2DC",
+    "paper": "#EFE9E3",
+    "strong": "#393852",
+    "sub": "#5E4652"
+   },
+   "miyazaki": {
+    "accent": "#EED6BE",
+    "base": "#E4C2A3",
+    "ink": "#2B1E24",
+    "line": "#C5B0A6",
+    "map": "#EFE5DB",
+    "paper": "#F4EBE2",
+    "strong": "#79553B",
+    "sub": "#5E4652"
+   },
+   "nagano": {
+    "accent": "#C8CDC0",
+    "base": "#B0B7A4",
+    "ink": "#2B1E24",
+    "line": "#C2B0A6",
+    "map": "#EBE4DB",
+    "paper": "#F0EAE2",
+    "strong": "#4F5642",
+    "sub": "#5E4652"
+   },
+   "nagasaki": {
+    "accent": "#C4CBD5",
+    "base": "#ABB4C1",
+    "ink": "#2B1E24",
+    "line": "#C1B0A8",
+    "map": "#EBE4DD",
+    "paper": "#F0EAE4",
+    "strong": "#4A5366",
+    "sub": "#5E4652"
+   },
+   "nara": {
+    "accent": "#C4CDBF",
+    "base": "#ABB6A3",
+    "ink": "#2B1E24",
+    "line": "#C1B0A6",
+    "map": "#EBE4DB",
+    "paper": "#F0EAE2",
+    "strong": "#495640",
+    "sub": "#5E4652"
+   },
+   "niigata": {
+    "accent": "#C1C7CF",
+    "base": "#A6AEBA",
+    "ink": "#2B1E24",
+    "line": "#C1AFA7",
+    "map": "#EBE3DC",
+    "paper": "#EFEAE4",
+    "strong": "#434A5C",
+    "sub": "#5E4652"
+   },
+   "oita": {
+    "accent": "#C5D5D5",
+    "base": "#ADC1C1",
+    "ink": "#2B1E24",
+    "line": "#C2B0A8",
+    "map": "#EBE5DD",
+    "paper": "#F0EBE4",
+    "strong": "#4E6367",
+    "sub": "#5E4652"
+   },
+   "okayama": {
+    "accent": "#ECD6D8",
+    "base": "#E2C2C6",
+    "ink": "#2B1E24",
+    "line": "#C5B0A8",
+    "map": "#EFE5DD",
+    "paper": "#F4EBE5",
+    "strong": "#78545C",
+    "sub": "#5E4652"
+   },
+   "okinawa": {
+    "accent": "#EAC6CE",
+    "base": "#DFADB8",
+    "ink": "#2B1E24",
+    "line": "#C5AFA7",
+    "map": "#EFE3DC",
+    "paper": "#F3EAE4",
+    "strong": "#89485A",
+    "sub": "#5E4652"
+   },
+   "osaka": {
+    "accent": "#E9C8B9",
+    "base": "#DCB09B",
+    "ink": "#2B1E24",
+    "line": "#C5AFA5",
+    "map": "#EFE3DA",
+    "paper": "#F3EAE2",
+    "strong": "#864C37",
+    "sub": "#5E4652"
+   },
+   "saga": {
+    "accent": "#C0C3D4",
+    "base": "#A6A9C0",
+    "ink": "#2B1E24",
+    "line": "#C1AFA8",
+    "map": "#EBE3DD",
+    "paper": "#EFE9E4",
+    "strong": "#424464",
+    "sub": "#5E4652"
+   },
+   "saitama": {
+    "accent": "#C4CAC0",
+    "base": "#ABB2A6",
+    "ink": "#2B1E24",
+    "line": "#C1AFA6",
+    "map": "#EBE4DB",
+    "paper": "#F0EAE3",
+    "strong": "#495042",
+    "sub": "#5E4652"
+   },
+   "shiga": {
+    "accent": "#C2CEDB",
+    "base": "#A9B8CA",
+    "ink": "#2B1E24",
+    "line": "#C1B0A8",
+    "map": "#EBE4DD",
+    "paper": "#F0EBE5",
+    "strong": "#475771",
+    "sub": "#5E4652"
+   },
+   "shimane": {
+    "accent": "#DDC0BC",
+    "base": "#CDA59F",
+    "ink": "#2B1E24",
+    "line": "#C4AEA5",
+    "map": "#EDE3DA",
+    "paper": "#F2E9E2",
+    "strong": "#723E3A",
+    "sub": "#5E4652"
+   },
+   "shizuoka": {
+    "accent": "#CCD1BC",
+    "base": "#B6BC9F",
+    "ink": "#2B1E24",
+    "line": "#C2B0A5",
+    "map": "#ECE4DB",
+    "paper": "#F0EBE2",
+    "strong": "#575D3B",
+    "sub": "#5E4652"
+   },
+   "tochigi": {
+    "accent": "#E5C1C1",
+    "base": "#D8A5A6",
+    "ink": "#2B1E24",
+    "line": "#C4AEA6",
+    "map": "#EEE3DB",
+    "paper": "#F3E9E3",
+    "strong": "#803E44",
+    "sub": "#5E4652"
+   },
+   "tokushima": {
+    "accent": "#BABDCA",
+    "base": "#9EA0B2",
+    "ink": "#2B1E24",
+    "line": "#C0AEA7",
+    "map": "#EAE2DC",
+    "paper": "#EFE9E3",
+    "strong": "#383953",
+    "sub": "#5E4652"
+   },
+   "tokyo": {
+    "accent": "#C0C2D5",
+    "base": "#A5A7C2",
+    "ink": "#2B1E24",
+    "line": "#C1AFA8",
+    "map": "#EBE3DD",
+    "paper": "#EFE9E5",
+    "strong": "#414266",
+    "sub": "#5E4652"
+   },
+   "tottori": {
+    "accent": "#E5D7CE",
+    "base": "#D8C5B8",
+    "ink": "#2B1E24",
+    "line": "#C4B1A7",
+    "map": "#EEE5DC",
+    "paper": "#F3EBE4",
+    "strong": "#6E5850",
+    "sub": "#5E4652"
+   },
+   "toyama": {
+    "accent": "#C7D4DB",
+    "base": "#AFC0C9",
+    "ink": "#2B1E24",
+    "line": "#C2B0A8",
+    "map": "#EBE4DD",
+    "paper": "#F0EBE5",
+    "strong": "#506171",
+    "sub": "#5E4652"
+   },
+   "wakayama": {
+    "accent": "#EBD6BE",
+    "base": "#DFC3A3",
+    "ink": "#2B1E24",
+    "line": "#C5B0A6",
+    "map": "#EFE5DB",
+    "paper": "#F3EBE2",
+    "strong": "#7F5C3E",
+    "sub": "#5E4652"
+   },
+   "yamagata": {
+    "accent": "#DCBABE",
+    "base": "#CB9CA2",
+    "ink": "#2B1E24",
+    "line": "#C4AEA6",
+    "map": "#EDE2DB",
+    "paper": "#F2E9E2",
+    "strong": "#71323E",
+    "sub": "#5E4652"
+   },
+   "yamaguchi": {
+    "accent": "#CFD1D8",
+    "base": "#B9BBC5",
+    "ink": "#2B1E24",
+    "line": "#C2B0A8",
+    "map": "#ECE4DD",
+    "paper": "#F1EBE5",
+    "strong": "#5B5C6B",
+    "sub": "#5E4652"
+   },
+   "yamanashi": {
+    "accent": "#CFBFCF",
+    "base": "#BAA2B9",
+    "ink": "#2B1E24",
+    "line": "#C2AEA7",
+    "map": "#ECE2DC",
+    "paper": "#F1E9E4",
+    "strong": "#5A3B5C",
+    "sub": "#5E4652"
+   }
+  }
+ }
+}

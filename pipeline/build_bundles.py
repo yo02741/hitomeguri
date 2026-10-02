@@ -137,6 +137,14 @@ def map_entry(s: dict[str, Any]) -> dict[str, Any]:
         entry["d"] = d
     if s.get("images") and (thumb := map_thumb(s["images"][0]["url"])):
         entry["i"] = thumb
+    # 收集卡的季節照片：[縮圖路徑, 作者, 授權]（卡片背面要列出處）
+    seasonal = {
+        season: [thumb, img["author"], img["license"]]
+        for season, img in (s.get("season_images") or {}).items()
+        if (thumb := map_thumb(img["url"]))
+    }
+    if seasonal:
+        entry["si"] = seasonal
     return entry
 
 

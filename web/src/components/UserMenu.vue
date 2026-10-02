@@ -2,8 +2,8 @@
 import { nextTick, onBeforeUnmount, ref, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 
-import { setTheme, theme, THEMES } from '../services/theme'
 import { useUserStore } from '../stores/user'
+import ThemeTimeline from './ThemeTimeline.vue'
 
 // 右上角頭像：點開向下展開的帳號選單（UX-FLOW.md F0）。
 const userStore = useUserStore()
@@ -24,7 +24,7 @@ const trigger = ref<HTMLButtonElement | null>(null)
 const menu = ref<HTMLElement | null>(null)
 
 function menuItems(): HTMLElement[] {
-  return Array.from(menu.value?.querySelectorAll<HTMLElement>('[role="menuitem"], [role="menuitemradio"]') ?? [])
+  return Array.from(menu.value?.querySelectorAll<HTMLElement>('[role="menuitem"], input[type="range"]') ?? [])
 }
 
 async function show(focus: 'first' | 'last' | null = null) {
@@ -128,7 +128,7 @@ async function logOut() {
       ref="menu"
       role="menu"
       aria-label="帳號選單"
-      class="absolute top-12 right-0 z-30 flex w-60 origin-top-right animate-pop-in flex-col rounded-card bg-paper p-1.5 shadow-float"
+      class="absolute top-12 right-0 z-30 flex w-72 origin-top-right animate-pop-in flex-col rounded-card bg-paper p-1.5 shadow-float"
       @keydown="onMenuKey"
     >
       <div class="flex flex-col px-2.5 pt-1.5 pb-2.5">
@@ -150,23 +150,8 @@ async function logOut() {
         {{ it.label }}
       </RouterLink>
       <div class="mx-1 mt-1 border-t border-line-soft" role="none"></div>
-      <!-- 主題（DESIGN.md §13）：存在這台裝置 -->
-      <div class="mt-1 flex items-center gap-1 px-2.5" role="group" aria-label="主題">
-        <span class="mr-auto text-body-sm text-sub">主題</span>
-        <button
-          v-for="t in THEMES"
-          :key="t.key"
-          type="button"
-          role="menuitemradio"
-          tabindex="-1"
-          :aria-checked="theme === t.key"
-          class="min-h-tap rounded-control px-3 text-body-sm"
-          :class="theme === t.key ? 'bg-ink font-bold text-paper' : 'text-ink hover:bg-surface focus-visible:bg-surface'"
-          @click="setTheme(t.key)"
-        >
-          {{ t.label }}
-        </button>
-      </div>
+      <!-- 年代主題（DESIGN.md §13）：存在這台裝置 -->
+      <ThemeTimeline />
       <div class="mx-1 mt-1 border-t border-line-soft" role="none"></div>
       <button
         type="button"

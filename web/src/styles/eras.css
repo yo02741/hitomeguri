@@ -1,0 +1,113 @@
+/* 年代主題（DESIGN.md §13）：data-theme 時各元件的樣子。token（字型、圓角、陰影、帶色、照片質感）在 theme.css，
+ * 地區色在 regions.css。這裡只放 token 換不到的部分。令和（預設）沒有 data-theme，這些規則都不套。 */
+
+/* 大標（22px 以上）用展示字型。日文、中文分開：日文字型缺很多繁體字，中文用有繁體的字型，才不會一句裡混兩種字 */
+:root[data-theme] :is(.text-display, .text-h1, .text-h2, .text-h3) {
+  font-family: var(--font-display-zh);
+  font-weight: var(--display-zh-weight);
+  letter-spacing: 0.06em;
+}
+:root[data-theme] :is(.text-display, .text-h1, .text-h2, .text-h3):lang(ja) {
+  font-family: var(--font-display);
+  font-weight: var(--display-weight);
+}
+
+/* 陰影：Tailwind 把 shadow-* 的值寫死在 utility 裡，token 換不到，這裡直接蓋過 */
+:root[data-theme] .shadow-float {
+  box-shadow: var(--shadow-float);
+}
+:root[data-theme] .shadow-marker {
+  box-shadow: var(--shadow-marker);
+}
+:root[data-theme] .shadow-sheet {
+  box-shadow: var(--shadow-sheet);
+}
+/* 地圖上的照片圓點：只留一圈框，不加錯位或陰影（太重） */
+:root[data-theme] .map-photo {
+  box-shadow: 0 0 0 1px color-mix(in oklab, var(--region-ink) 70%, transparent);
+}
+
+/* 頂部下緣、手機底部分頁列上緣的帶色：畫在既有的框裡，不改高度（切換時版面不跳） */
+:root[data-theme] .app-header {
+  border-bottom-color: transparent;
+  background-image: var(--era-rule);
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: 100% var(--era-rule-h);
+}
+:root[data-theme] .app-header .nav-indicator {
+  bottom: var(--era-rule-h);
+  background: var(--region-ink);
+}
+:root[data-theme] .app-tabbar {
+  border-top-color: transparent;
+  background-image: var(--era-rule-up);
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: 100% var(--era-rule-h);
+}
+:root[data-theme] .app-tabbar .nav-indicator {
+  translate: 0 var(--era-rule-h);
+  background: var(--region-ink);
+}
+
+/* 照片：年代的濾鏡；景點卡片上方的大照片再疊質感（網點、和紙、暈影、光澤） */
+:root[data-theme] img[data-photo] {
+  filter: var(--era-photo-filter);
+}
+:root[data-theme] .photo-frame::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: var(--era-photo-overlay);
+  background-size: var(--era-photo-overlay-size);
+  mix-blend-mode: var(--era-photo-blend);
+}
+
+/* 行程卡：昭和、明治、大正是硬券（斜格底紋、墨框、剪票缺口），江戶是通行手形（木札），平成是 IC 卡 */
+:root[data-theme] .trip-card {
+  position: relative;
+  border: 1.5px solid var(--region-ink);
+  background-color: var(--color-era-ticket);
+  background-image:
+    repeating-linear-gradient(45deg, color-mix(in oklab, var(--region-ink) 7%, transparent) 0 1px, transparent 1px 6px),
+    repeating-linear-gradient(-45deg, color-mix(in oklab, var(--region-ink) 7%, transparent) 0 1px, transparent 1px 6px);
+}
+:root[data-theme] .trip-card:hover {
+  background-color: color-mix(in oklab, var(--color-era-ticket) 88%, var(--region-ink));
+}
+:root[data-theme] .trip-card::before,
+:root[data-theme] .trip-card::after {
+  content: "";
+  position: absolute;
+  top: 55%;
+  width: 14px;
+  height: 14px;
+  border: 1.5px solid var(--region-ink);
+  border-radius: 50%;
+  background: var(--region-paper);
+}
+:root[data-theme] .trip-card::before {
+  left: -9px;
+}
+:root[data-theme] .trip-card::after {
+  right: -9px;
+}
+:root[data-theme='showa'] .trip-card {
+  box-shadow: 2px 2px 0 color-mix(in oklab, var(--region-ink) 80%, transparent);
+}
+:root[data-theme='edo'] .trip-card {
+  background-image: repeating-linear-gradient(90deg, color-mix(in oklab, var(--region-ink) 6%, transparent) 0 1px, transparent 1px 9px);
+}
+:root[data-theme='edo'] .trip-card::before,
+:root[data-theme='edo'] .trip-card::after,
+:root[data-theme='heisei'] .trip-card::before,
+:root[data-theme='heisei'] .trip-card::after {
+  content: none;
+}
+:root[data-theme='heisei'] .trip-card {
+  border: 0;
+  background-image: linear-gradient(135deg, var(--color-era-ticket), var(--color-white) 55%, color-mix(in oklab, var(--color-era-2) 12%, var(--color-white)));
+  box-shadow: var(--shadow-float);
+}

@@ -86,6 +86,8 @@ class Draft:
     listed: bool = False  # 列在維基「{縣}の観光地」
     official: OfficialSpot | None = None  # 縣的官方觀光網站
     seed_name: str | None = None  # 種子指定的日文名（Wikidata 沒有日文標籤時用）
+    seed_override: bool = False  # 種子的名稱優先（同縣同名時用正式名稱，例：川越氷川神社）
+    seed_kana: str | None = None
 
     @property
     def qid(self) -> str | None:
@@ -114,6 +116,8 @@ class Draft:
 
     @property
     def name_ja(self) -> str | None:
+        if self.seed_override and self.seed_name:
+            return self.seed_name
         if self.ent and self.ent.labels.get("ja"):
             return self.ent.labels["ja"]
         t = self.osm_tags
@@ -474,7 +478,11 @@ def apply_seeds(pref: str, drafts: dict[str, Draft]) -> list[str]:
     for seed in load_seeds(pref):
         # 種子直接指定 Wikidata 項目（日文標籤缺漏、名稱搜尋找不到的：スタジオツアー東京）
         if seed.get("wikidata"):
-            pinned = _pinned_seed(seed["wikidata"], seed["name_ja"], drafts)
+            pinned = _pinned_seed(
+                seed["wikidata"], seed["name_ja"], drafts, override=bool(seed.get("name_override"))
+            )
+            if pinned and seed.get("name_override"):
+                pinned.seed_kana = seed.get("name_kana")
             if pinned is None:
                 unmatched.append(seed["name_ja"])
             else:
@@ -506,7 +514,13 @@ def apply_seeds(pref: str, drafts: dict[str, Draft]) -> list[str]:
     return unmatched
 
 
-def _pinned_seed(qid: str, name_ja: str, drafts: dict[str, Draft]) -> Draft | None:
+def _pinned_seed(
+    qid: str, name_ja: str, drafts: dict[str, Draft], *, override: bool = False
+) -> Draft | None:
+    """種子直接指定的 Wikidata 項目。
+
+    override：同縣有同名的景點時改用種子的正式名稱（例：川越氷川神社）。
+    """
     d = drafts.get(qid) or next((x for x in drafts.values() if x.qid == qid), None)
     if d is None:
         ent = wikidata.entities([qid]).get(qid)
@@ -514,8 +528,9 @@ def _pinned_seed(qid: str, name_ja: str, drafts: dict[str, Draft]) -> Draft | No
             return None
         d = Draft(key=qid, lat=ent.lat, lng=ent.lng, ent=ent)
         drafts[qid] = d
-    if not (d.ent and d.ent.labels.get("ja")):
+    if override or not (d.ent and d.ent.labels.get("ja")):
         d.seed_name = name_ja
+    d.seed_override = d.seed_override or override
     return d
 
 
@@ -962,7 +977,9 @@ def build_names(d: Draft) -> tuple[LocalizedName, str | None]:
     en = labels.get("en") or t.get("name:en")
     kana, kana_source = None, None
     wd_kana = next((k for k in (d.ent.kana_all if d.ent else []) if is_kana(k)), None)
-    if is_kana(ja):  # 名稱本身就是假名
+    if d.seed_override and d.seed_kana:  # 種子指定的正式名稱：Wikidata 的讀音是另一個名字的
+        kana, kana_source = normalize_kana(d.seed_kana), "seed"
+    elif is_kana(ja):  # 名稱本身就是假名
         kana, kana_source = normalize_kana(ja), "wikidata" if d.ent else "osm"
     elif wd_kana:
         kana, kana_source = normalize_kana(wd_kana), "wikidata"

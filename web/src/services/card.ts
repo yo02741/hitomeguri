@@ -74,6 +74,8 @@ export interface CardFace {
   image?: { url: string; author?: string; license?: string }
   /** 第二張照片（全景卡用；沒有就用第一張） */
   altImage?: { url: string; author?: string; license?: string }
+  /** 季節照片（DESIGN.md §7.19a）：季節卡、全景、金箔、特別全景依抽到的季節換照片 */
+  seasonImages?: Partial<Record<'spring' | 'summer' | 'autumn' | 'winter', { url: string; author?: string; license?: string }>>
   /** 類型（寺院、城…） */
   kind?: string
   designation?: string
@@ -98,6 +100,9 @@ export function cardFromSpot(s: Spot): CardFace {
     name: { ja: s.name.ja, kana: s.name.kana, romaji: s.name.romaji, zh: s.name.zh_tw !== s.name.ja ? s.name.zh_tw : undefined },
     image: img ? { url: img.url, author: img.author, license: img.license } : undefined,
     altImage: alt ? { url: alt.url, author: alt.author, license: alt.license } : undefined,
+    seasonImages: s.season_images
+      ? Object.fromEntries(Object.entries(s.season_images).map(([k, v]) => [k, { url: v.url, author: v.author, license: v.license }]))
+      : undefined,
     kind: kindOf(s.tags),
     designation: designationOf(s.tags),
     summary: s.summary ? { text: s.summary.text_zh ?? s.summary.text, license: s.summary.license } : undefined,
@@ -112,6 +117,11 @@ export function cardFromMapSpot(s: MapSpot, pref: string): CardFace {
     pref,
     name: { ja: s.n, kana: s.h, romaji: s.r, zh: s.z && s.z !== s.n ? s.z : undefined },
     image: s.i ? { url: s.i.startsWith('https://') ? s.i : COMMONS_THUMB_PREFIX + s.i } : undefined,
+    seasonImages: s.si
+      ? Object.fromEntries(
+          Object.entries(s.si).map(([k, [path, author, license]]) => [k, { url: path.startsWith('https://') ? path : COMMONS_THUMB_PREFIX + path, author, license }]),
+        )
+      : undefined,
     kind: s.c,
     designation: s.d,
   }

@@ -3,7 +3,10 @@ import { computed, onBeforeUnmount, onMounted, ref } from 'vue'
 
 import { type CollectionCard, useCollection } from '../composables/collection'
 import type { Rarity } from '../services/card'
+import { randomDraw, UNLIMITED_DRAWS, type Variant } from '../services/cardVariants'
 import { dayDate, type Trip } from '../services/trip'
+import { todayIso } from '../services/userdb'
+import { useCardsStore } from '../stores/cards'
 import type { Mark } from '../stores/marks'
 import RegionMotif from './RegionMotif.vue'
 import SpotCard from './SpotCard.vue'
@@ -24,12 +27,17 @@ const tripDates = computed(() => {
 })
 const { cards } = useCollection(() => entries.value, (id) => tripDates.value.get(id))
 const RANK: Record<Rarity, number> = { normal: 0, castle: 1, gold: 2, rainbow: 3 }
+// 測試期可以無限抽（UNLIMITED_DRAWS）：每次打開都重抽一次，抽到的存起來
+const cardsStore = useCardsStore()
+const pulls = ref(new Map<string, Variant>())
+/** 這張卡在卡包裡的樣子：這次抽到的，沒有就是收集到最稀有的 */
+const shown = (c: CollectionCard): Variant => pulls.value.get(c.face.id) ?? c.variants[0]!
 // 同一個景點只算一張；稀有度、分數低的先翻
 const deck = computed(() => {
   const seen = new Set<string>()
   return cards.value
     .filter((c) => !seen.has(c.face.id) && seen.add(c.face.id))
-    .sort((a, b) => a.variants[0]!.rank - b.variants[0]!.rank || RANK[a.rarity] - RANK[b.rarity] || a.score - b.score)
+    .sort((a, b) => shown(a).rank - shown(b).rank || RANK[a.rarity] - RANK[b.rarity] || a.score - b.score)
 })
 const mainPref = computed(() => {
   const n = new Map<string, number>()
@@ -46,7 +54,7 @@ const current = computed(() => deck.value[index.value] ?? null)
 
 // 翻開時背後的光：特別全景是虹、金箔是金、全景是白光，其他照稀有度
 function raysKind(c: CollectionCard): string {
-  const k = c.variants[0]?.kind
+  const k = shown(c).kind
   if (k === 'special') return 'rainbow'
   if (k === 'gold') return 'gold'
   if (k === 'full' && c.rarity === 'normal') return 'castle'
@@ -54,6 +62,15 @@ function raysKind(c: CollectionCard): string {
 }
 function open() {
   if (stage.value !== 'sealed' || !deck.value.length) return
+  if (UNLIMITED_DRAWS) {
+    const next = new Map<string, Variant>()
+    for (const c of deck.value) {
+      const drawn = randomDraw(c.rarity, tripDates.value.get(c.face.id)?.find(Boolean) ?? todayIso())
+      next.set(c.face.id, [...drawn].sort((a, b) => b.rank - a.rank)[0]!)
+      void cardsStore.add(c.face.id, drawn)
+    }
+    pulls.value = next
+  }
   stage.value = 'opening'
   setTimeout(() => (stage.value = 'dealing'), 900)
 }
@@ -137,7 +154,7 @@ function markOpened(tripId: string) {
             <span lang="ja" class="relative text-[34px] font-black">一巡り</span>
           </span>
           <span class="flip-front block">
-            <SpotCard :card="current.face" :rarity="current.rarity" :label="current.label" :number="current.number" visited :visited-on="current.visitedOn" size="lg" :variant="current.variants[0]" />
+            <SpotCard :card="current.face" :rarity="current.rarity" :label="current.label" :number="current.number" visited :visited-on="current.visitedOn" size="lg" :variant="shown(current)" />
           </span>
         </span>
       </button>
@@ -149,7 +166,7 @@ function markOpened(tripId: string) {
       <p class="text-center text-h3 font-black text-paper">{{ trip.name || '未命名行程' }}　<span class="font-latin">{{ deck.length }}</span> 張</p>
       <ul class="grid grid-cols-3 gap-3 sm:grid-cols-4 md:grid-cols-5">
         <li v-for="(c, i) in revealed" :key="c.face.id" class="deal-in @container" :style="{ '--i': Math.min(i, 15) }">
-          <SpotCard :card="c.face" :rarity="c.rarity" :label="c.label" :number="c.number" visited :visited-on="c.visitedOn" size="fluid" :variant="c.variants[0]" />
+          <SpotCard :card="c.face" :rarity="c.rarity" :label="c.label" :number="c.number" visited :visited-on="c.visitedOn" size="fluid" :variant="shown(c)" />
         </li>
       </ul>
     </div>
@@ -157,7 +174,7 @@ function markOpened(tripId: string) {
     <!-- 已翻開的排在下方 -->
     <ul v-if="stage === 'dealing' && revealed.length" class="flex max-w-full gap-2 overflow-x-auto px-2 pb-1" aria-label="已翻開">
       <li v-for="c in revealed" :key="c.face.id" class="mini w-12 shrink-0 @container">
-        <SpotCard :card="c.face" :rarity="c.rarity" :number="c.number" size="fluid" :variant="c.variants[0]" />
+        <SpotCard :card="c.face" :rarity="c.rarity" :number="c.number" size="fluid" :variant="shown(c)" />
       </li>
     </ul>
 

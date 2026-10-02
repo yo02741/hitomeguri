@@ -111,19 +111,20 @@ const sourceLabel = computed(() => {
       >維基百科</a>
     </div>
 
-    <div class="mt-auto flex items-center gap-2 border-t border-line px-5 pt-3.5 pb-5">
+    <!-- 字寬的年代字型放不下一行時，Google Maps 換到下一行撐滿 -->
+    <div class="mt-auto flex flex-wrap items-center gap-2 border-t border-line px-5 pt-3.5 pb-5">
       <VisitedToggle :spot="visitRef" class="border border-line" />
       <a
         :href="item.u"
         target="_blank"
         rel="noopener"
-        class="flex h-11 items-center justify-center rounded-control border border-line px-4 text-body-sm font-bold text-ink no-underline hover:bg-surface"
+        class="flex h-11 items-center justify-center rounded-control border border-line px-4 text-body-sm font-bold whitespace-nowrap text-ink no-underline hover:bg-surface"
       >{{ sourceLabel }}</a>
       <a
         :href="mapsUrl"
         target="_blank"
         rel="noopener"
-        class="flex h-11 grow items-center justify-center rounded-control bg-region-strong px-4 text-body-sm font-bold text-white no-underline active:translate-y-px"
+        class="flex h-11 grow basis-44 items-center justify-center rounded-control bg-region-strong px-4 text-body-sm font-bold whitespace-nowrap text-white no-underline active:translate-y-px"
       >在 Google Maps 開啟</a>
     </div>
   </section>

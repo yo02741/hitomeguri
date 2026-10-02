@@ -21,17 +21,40 @@ function splashColors(): Plugin {
       const a = (i / n) * 2 * Math.PI
       const x = (92 + 86 * Math.cos(a)).toFixed(2)
       const y = (92 + 86 * Math.sin(a)).toFixed(2)
-      return `<circle class="dot" cx="${x}" cy="${y}" r="4.2" style="--c:${r.color.base};--i:${i}" />`
+      return `<circle class="dot" cx="${x}" cy="${y}" r="4.2" style="--c0:${r.color.base};--i:${i}" />`
     })
     .join('')
+  // 年代主題（DESIGN.md §13）：index.html 開頭先設好 data-theme，開場畫面也換成那個年代的顏色
+  const themes = JSON.parse(readFileSync(new URL('./src/styles/theme-colors.json', import.meta.url), 'utf-8')) as Record<
+    string,
+    { national: Record<string, string>; regions: Record<string, Record<string, string>> }
+  >
+  const themeCss = Object.entries(themes)
+    .map(([key, t]) => {
+      const sel = `html[data-theme="${key}"] #splash`
+      const c = t.national
+      const dotsCss = regions.regions
+        .map((r, i) => `${sel} .dot:nth-child(${i + 1}){--c:${t.regions[r.prefecture]!.base}}`)
+        .join('')
+      return (
+        `${sel}{background:${c.paper};color:${c.ink}}${sel} .ring-track{stroke:${c.line}}` +
+        `${sel} .dot:not(.on){fill:${c.line}}${sel} .kana,${sel} .latin{color:${c.sub}}` +
+        dotsCss
+      )
+    })
+    .join('\n')
   return {
     name: 'splash-colors',
-    transformIndexHtml(html) {
-      return html.replace('%SPLASH_DOTS%', dots).replace(/%REGION_([A-Z_]+)%/g, (_, key: string) => {
-        const v = color[key.toLowerCase()]
-        if (!v) throw new Error(`index.html：regions.json 的全國色沒有 ${key.toLowerCase()}`)
-        return v
-      })
+    // pre：在 inline CSS 壓縮之前換掉佔位字
+    transformIndexHtml: {
+      order: 'pre',
+      handler(html) {
+        return html.replace('%SPLASH_DOTS%', dots).replace('%SPLASH_THEMES%', themeCss).replace(/%REGION_([A-Z_]+)%/g, (_, key: string) => {
+          const v = color[key.toLowerCase()]
+          if (!v) throw new Error(`index.html：regions.json 的全國色沒有 ${key.toLowerCase()}`)
+          return v
+        })
+      },
     },
   }
 }

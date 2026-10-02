@@ -4,9 +4,10 @@ import { computed, ref, watch } from 'vue'
 import type { Spot } from '../services/bundles'
 import { cardFromSpot, cardNumberFor, designationOf, rarityLabel, rarityOf } from '../services/card'
 import { showReveal } from '../services/cardReveal'
-import { drawVariants, ownedVariants, allVariants } from '../services/cardVariants'
+import { allVariants, drawVariants, ownedVariants, randomDraw, UNLIMITED_DRAWS } from '../services/cardVariants'
 import { todayIso } from '../services/userdb'
 import { useVisitedEntries } from '../composables/visited'
+import { useCardsStore } from '../stores/cards'
 import { useUserStore } from '../stores/user'
 import { googleMapsUrl } from '../services/maps'
 import { canSpeak, speakJa } from '../services/tts'
@@ -59,11 +60,12 @@ const card = computed(() => {
   }
 })
 // 收集到的樣式（去過的才有；沒去過只有基本卡）
+const cardsStore = useCardsStore()
 const cardVariants = computed(() => {
   const c = card.value
   if (!c) return []
   const dates = datesById.value.get(c.face.id)
-  return dates ? ownedVariants(userStore.user?.uid ?? '', c.face.id, dates, c.rarity) : []
+  return dates ? ownedVariants(userStore.user?.uid ?? '', c.face.id, dates, c.rarity, cardsStore.extraOf(c.face.id)) : []
 })
 // 按下去過：收集卡飛出來亮相，再收進紀錄分頁
 function onStamped() {
@@ -72,7 +74,10 @@ function onStamped() {
   // 這個縣還沒有其他去過的景點：第一次到這個縣
   const firstInPref = !Object.entries(marks.marks).some(([id, m]) => id !== c.face.id && m.visited && m.pref === c.face.pref)
   // 這一次去過抽到的樣式（今天的日期）：最稀有的那張
-  const variant = drawVariants(userStore.user?.uid ?? '', c.face.id, todayIso(), c.rarity).sort((a, b) => b.rank - a.rank)[0]
+  // 測試期可以無限抽：每次按去過都隨機抽一次並存起來
+  const drawn = UNLIMITED_DRAWS ? randomDraw(c.rarity, todayIso()) : drawVariants(userStore.user?.uid ?? '', c.face.id, todayIso(), c.rarity)
+  if (UNLIMITED_DRAWS) void cardsStore.add(c.face.id, drawn)
+  const variant = drawn.sort((a, b) => b.rank - a.rank)[0]
   showReveal({ face: c.face, rarity: c.rarity, label: c.label, number: c.number, firstInPref, variant })
 }
 const station = computed(() => props.spot?.nearest_stations?.[0])

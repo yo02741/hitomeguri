@@ -33,3 +33,14 @@ def test_showa_rules_cover_every_prefecture():
     showa = showa_color(data["national"]["color"])
     assert set(showa) == {key for key, _ in TOKEN_ORDER}
     assert showa["ink"] == "#2A2019"
+
+
+def test_theme_colors_json_matches_generator():
+    from pipeline.paths import THEME_COLORS_JSON
+    from pipeline.region_css import ERA_THEMES, render_colors
+
+    data = json.loads(REGIONS_JSON.read_text(encoding="utf-8"))
+    assert THEME_COLORS_JSON.read_text(encoding="utf-8") == render_colors(data)
+    css = render(data)
+    for theme in ERA_THEMES:
+        assert f':root[data-theme="{theme.key}"] {{' in css

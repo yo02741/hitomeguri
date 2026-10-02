@@ -25,6 +25,7 @@ STATE_DIR = DATA / "_state"
 
 WEB = ROOT / "web"
 REGIONS_CSS = WEB / "src" / "styles" / "regions.css"
+THEME_COLORS_JSON = WEB / "src" / "styles" / "theme-colors.json"
 BUNDLES_DIR = WEB / "public" / "bundles"
 GEO_JSON = WEB / "public" / "geo" / "prefectures.json"
 CACHE_DIR = ROOT / "pipeline" / ".cache"

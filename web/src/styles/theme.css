@@ -3,15 +3,16 @@
  */
 @import "tailwindcss";
 @import "./regions.css";
-@import "./showa.css";
+@import "./eras.css";
 
 @theme static {
   /* ---------- 字體 ---------- */
   --font-sans: "Noto Sans TC", "Noto Sans JP", system-ui, sans-serif;
   --font-ja: "Noto Sans JP", "Noto Sans TC", system-ui, sans-serif;
   --font-latin: "Barlow Semi Condensed", "Noto Sans TC", system-ui, sans-serif;
-  /* 大標（h1–h3、text-display／h1／h2／h3）：現代主題同 sans，昭和換成展示字型（§13） */
-  --font-display: "Noto Sans TC", "Noto Sans JP", system-ui, sans-serif;
+  /* 大標（text-display／h1／h2／h3）：令和同 sans，各年代換成展示字型（§13）；日文、中文分開 */
+  --font-display: "Noto Sans JP", "Noto Sans TC", system-ui, sans-serif;
+  --font-display-zh: "Noto Sans TC", "Noto Sans JP", system-ui, sans-serif;
 
   /* 中性色（paper、surface、line、ink…）改由地區色產生，定義在下方 @theme inline */
 
@@ -66,12 +67,12 @@
   --color-keiken-5: #26446F;
 
   /* ---------- 功能色 ---------- */
-  /* ---------- 昭和主題專用（§13，只在 data-theme="showa" 時用） ---------- */
-  --color-showa-shu: #C2402A;     /* 朱：header 上線、主按鈕 */
-  --color-showa-green: #1F6B5C;   /* 青竹：header 下線 */
-  --color-showa-sign: #E2A62B;    /* 山吹：琺瑯標牌 */
-  --color-showa-card: #FBF6EA;    /* 練色：照片白邊、硬券 */
-  --color-showa-ticket: #EAD9AC;  /* 硬券底色 */
+  /* ---------- 年代主題（§13）：各年代在下方 :root[data-theme] 覆寫；令和（預設）不用 ---------- */
+  --color-era-1: #394C6F;         /* 頂部帶色線 1（昭和：朱） */
+  --color-era-2: #394C6F;         /* 頂部帶色線 2（昭和：青竹） */
+  --color-era-sign: #394C6F;      /* 標牌 */
+  --color-era-card: #FFFFFF;      /* 照片白邊、卡面紙 */
+  --color-era-ticket: #FFFFFF;    /* 行程卡（硬券、手形、IC 卡）底色 */
 
   --color-visited: #1F4E8C;       /* 去過印章 */
   --color-visited-tint: #EEF3F9;
@@ -228,26 +229,182 @@
   }
 }
 
-/* ---------- 昭和主題（DESIGN.md §13）：data-theme="showa" 時換掉的 token；地區色的昭和版本在 regions.css ---------- */
+/* ---------- 年代主題（DESIGN.md §13）：data-theme 時換掉的 token；地區色在 regions.css，元件的樣子在 eras.css ----------
+ * --display-*：大標字型的粗細（日文 --font-display、中文 --font-display-zh）
+ * --era-rule：頂部下緣的帶色（background-image，高 --era-rule-h）；--era-rule-up 是手機底部分頁列用的（上下顛倒）
+ * --era-photo-*：照片的濾鏡與疊在上面的質感（網點、和紙、暈影…） */
+:root[data-theme='edo'] {
+  --font-sans: "LXGW WenKai TC", "Klee One", "Noto Sans TC", system-ui, sans-serif;
+  --font-ja: "Klee One", "LXGW WenKai TC", "Noto Sans JP", system-ui, sans-serif;
+  --font-latin: "LXGW WenKai TC", "Klee One", serif;
+  --font-display: "Yuji Syuku", "LXGW WenKai TC", serif;
+  --font-display-zh: "LXGW WenKai TC", "Yuji Syuku", serif;
+  --display-weight: 400;
+  --display-zh-weight: 700;
+  --radius-tag: 0px;
+  --radius-control: 2px;
+  --radius-badge: 2px;
+  --radius-card: 2px;
+  --radius-sheet: 6px;
+  --shadow-marker: 0 0 0 1px var(--region-ink);
+  --shadow-sheet: 0 -1px 0 var(--region-ink);
+  --shadow-float: 0 0 0 1px var(--region-ink);
+  --color-visited: #B5352B;
+  --color-visited-tint: #F3E1DC;
+  --color-white: #F7F1E3;
+  --color-map-water: #8FA9B8;
+  --color-era-1: #2B4B7A;
+  --color-era-2: #B5352B;
+  --color-era-sign: #C9A23A;
+  --color-era-card: #F7F1E3;
+  --color-era-ticket: #D9C29B;
+  --era-rule-h: 5px;
+  --era-rule: linear-gradient(to top, var(--color-era-1) 0 3px, var(--color-white) 3px 4px, var(--color-era-1) 4px 5px);
+  --era-rule-up: linear-gradient(to bottom, var(--color-era-1) 0 3px, var(--color-white) 3px 4px, var(--color-era-1) 4px 5px);
+  --era-photo-filter: sepia(0.2) saturate(0.65) contrast(1.15);
+  --era-photo-overlay: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.55' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='160' height='160' fill='white'/%3E%3Crect width='160' height='160' filter='url%28%23n%29' opacity='.35'/%3E%3C/svg%3E");
+  --era-photo-overlay-size: 160px 160px;
+  --era-photo-blend: multiply;
+  --era-card-shadow: none;
+}
+:root[data-theme='meiji'] {
+  --font-sans: "Noto Serif TC", "Shippori Mincho", serif;
+  --font-ja: "Shippori Mincho", "Noto Serif TC", serif;
+  --font-latin: "IM Fell English SC", "Noto Serif TC", serif;
+  --font-display: "Shippori Mincho B1", "Noto Serif TC", serif;
+  --font-display-zh: "Noto Serif TC", "Shippori Mincho B1", serif;
+  --display-weight: 800;
+  --display-zh-weight: 900;
+  --radius-tag: 2px;
+  --radius-control: 3px;
+  --radius-badge: 3px;
+  --radius-card: 4px;
+  --radius-sheet: 8px;
+  --shadow-marker: 0 0 0 1px var(--region-ink);
+  --shadow-sheet: 0 -1px 0 var(--region-ink), 0 -3px 0 var(--region-paper), 0 -4px 0 var(--region-ink);
+  --shadow-float: 0 0 0 1px var(--region-ink), 0 0 0 3px var(--region-paper), 0 0 0 4px var(--region-ink);
+  --color-visited: #7A1F2B;
+  --color-visited-tint: #F1E0E0;
+  --color-white: #FAF6EC;
+  --color-map-water: #A7B9C2;
+  --color-era-1: #1F2A44;
+  --color-era-2: #B08D3C;
+  --color-era-sign: #B08D3C;
+  --color-era-card: #FAF6EC;
+  --color-era-ticket: #E8DDBF;
+  --era-rule-h: 6px;
+  --era-rule: linear-gradient(to top, var(--color-era-1) 0 3px, transparent 3px 5px, var(--color-era-2) 5px 6px);
+  --era-rule-up: linear-gradient(to bottom, var(--color-era-1) 0 3px, transparent 3px 5px, var(--color-era-2) 5px 6px);
+  --era-photo-filter: sepia(0.85) contrast(1.1) brightness(0.97);
+  --era-photo-overlay: radial-gradient(ellipse at center, transparent 50%, color-mix(in oklab, var(--region-ink) 45%, transparent) 100%);
+  --era-photo-overlay-size: 100% 100%;
+  --era-photo-blend: multiply;
+  --era-card-shadow: 0 0 0 0.06em var(--region-ink), 0 0 0 0.25em var(--color-era-card), 0 0 0 0.31em var(--region-ink);
+}
+:root[data-theme='taisho'] {
+  --font-sans: "Noto Serif TC", "Zen Old Mincho", serif;
+  --font-ja: "Zen Old Mincho", "Noto Serif TC", serif;
+  --font-latin: "Cormorant SC", "Noto Serif TC", serif;
+  --font-display: "Kaisei Decol", "Chiron Sung HK", serif;
+  --font-display-zh: "Chiron Sung HK", "Kaisei Decol", serif;
+  --display-weight: 700;
+  --display-zh-weight: 900;
+  --radius-tag: 4px;
+  --radius-control: 8px;
+  --radius-badge: 8px;
+  --radius-card: 12px;
+  --radius-sheet: 16px;
+  --shadow-marker: 0 0 0 1.5px var(--color-era-2);
+  --shadow-sheet: 0 -4px 14px color-mix(in oklab, var(--color-era-1) 22%, transparent);
+  --shadow-float: 0 0 0 1px color-mix(in oklab, var(--color-era-1) 60%, transparent), 0 6px 16px color-mix(in oklab, var(--color-era-1) 22%, transparent);
+  --color-visited: #6B2D5C;
+  --color-visited-tint: #F1E2EC;
+  --color-white: #FBF6F2;
+  --color-map-water: #A9C2C4;
+  --color-era-1: #6E2C2C;
+  --color-era-2: #5B3A6E;
+  --color-era-sign: #D98FA0;
+  --color-era-card: #FBF6F2;
+  --color-era-ticket: #EBD6D6;
+  --era-rule-h: 6px;
+  --era-rule: repeating-linear-gradient(120deg, var(--color-era-1) 0 7px, var(--color-white) 7px 9px, var(--color-era-2) 9px 16px, var(--color-white) 16px 18px);
+  --era-rule-up: var(--era-rule);
+  --era-photo-filter: sepia(0.45) saturate(0.95) hue-rotate(-12deg);
+  --era-photo-overlay: linear-gradient(170deg, color-mix(in oklab, var(--color-era-sign) 30%, transparent), color-mix(in oklab, var(--color-map-water) 30%, transparent));
+  --era-photo-overlay-size: 100% 100%;
+  --era-photo-blend: soft-light;
+  --era-card-shadow: 0 0 0 0.08em var(--color-era-2), 0 0.4em 1em color-mix(in oklab, var(--color-era-1) 25%, transparent);
+}
 :root[data-theme='showa'] {
   --font-sans: "Huninn", "Zen Maru Gothic", "Noto Sans TC", system-ui, sans-serif;
   --font-ja: "Zen Maru Gothic", "Huninn", "Noto Sans JP", system-ui, sans-serif;
   --font-latin: "DotGothic16", "Huninn", monospace;
-  --font-display: "Dela Gothic One", "Huninn", "Noto Sans TC", sans-serif;
+  --font-display: "Dela Gothic One", "Chiron GoRound TC", sans-serif;
+  --font-display-zh: "Chiron GoRound TC", "Dela Gothic One", sans-serif;
+  --display-weight: 400;
+  --display-zh-weight: 900;
   --radius-tag: 3px;
   --radius-control: 4px;
   --radius-badge: 4px;
   --radius-card: 6px;
   --radius-sheet: 12px;
-  /* 陰影改成墨色框＋實心錯位（印刷版錯開的感覺），不用模糊 */
+  /* 陰影：墨色框＋實心錯位（印刷版錯開的感覺），不用模糊 */
   --shadow-marker: 0 0 0 1.5px var(--region-ink);
   --shadow-sheet: 0 -2px 0 var(--region-ink);
-  --shadow-float: 0 0 0 2px var(--region-ink), 4px 4px 0 2px var(--region-ink);
+  --shadow-float: 0 0 0 1.5px var(--region-ink), 2px 2px 0 1.5px color-mix(in oklab, var(--region-ink) 80%, transparent);
   --color-visited: #5B3F8C;
   --color-visited-tint: #ECE4F3;
   --color-white: #FBF6EA;
   --color-map-water: #9CC3C2;
+  --color-era-1: #C2402A;
+  --color-era-2: #1F6B5C;
+  --color-era-sign: #E2A62B;
+  --color-era-card: #FBF6EA;
+  --color-era-ticket: #EAD9AC;
+  --era-rule-h: 8px;
+  --era-rule: linear-gradient(to top, var(--color-era-2) 0 2px, transparent 2px 4px, var(--color-era-1) 4px 8px);
+  --era-rule-up: linear-gradient(to bottom, var(--color-era-2) 0 2px, transparent 2px 4px, var(--color-era-1) 4px 8px);
+  --era-photo-filter: sepia(0.55) saturate(0.8) contrast(1.05);
+  --era-photo-overlay: radial-gradient(color-mix(in oklab, var(--region-ink) 30%, transparent) 0.9px, transparent 1.4px);
+  --era-photo-overlay-size: 4px 4px;
+  --era-photo-blend: multiply;
+  --era-card-shadow: 0.15em 0.15em 0 color-mix(in oklab, var(--region-ink) 80%, transparent);
 }
+:root[data-theme='heisei'] {
+  --font-sans: "Chiron GoRound TC", "M PLUS Rounded 1c", "Noto Sans TC", system-ui, sans-serif;
+  --font-ja: "M PLUS Rounded 1c", "Chiron GoRound TC", "Noto Sans JP", system-ui, sans-serif;
+  --font-latin: "VT323", "M PLUS Rounded 1c", monospace;
+  --font-display: "Mochiy Pop One", "Chiron GoRound TC", sans-serif;
+  --font-display-zh: "Chiron GoRound TC", "Mochiy Pop One", sans-serif;
+  --display-weight: 400;
+  --display-zh-weight: 900;
+  --radius-tag: 6px;
+  --radius-control: 12px;
+  --radius-badge: 10px;
+  --radius-card: 16px;
+  --radius-sheet: 24px;
+  --shadow-marker: 0 2px 6px rgb(31 34 51 / 0.25);
+  --shadow-sheet: 0 -6px 20px rgb(31 34 51 / 0.12);
+  --shadow-float: 0 6px 18px rgb(31 34 51 / 0.16), inset 0 1px 0 rgb(255 255 255 / 0.9);
+  --color-visited: #E4007F;
+  --color-visited-tint: #FDE3F1;
+  --color-white: #FFFFFF;
+  --color-map-water: #8ED8F8;
+  --color-era-1: #00A0E9;
+  --color-era-2: #E4007F;
+  --color-era-sign: #FFE600;
+  --color-era-card: #FFFFFF;
+  --color-era-ticket: #DDF3FF;
+  --era-rule-h: 4px;
+  --era-rule: linear-gradient(90deg, var(--color-era-1), var(--color-era-2), var(--color-era-sign));
+  --era-rule-up: var(--era-rule);
+  --era-photo-filter: saturate(1.25) contrast(1.06);
+  --era-photo-overlay: linear-gradient(160deg, rgb(255 255 255 / 0.45) 0 28%, transparent 28.5%);
+  --era-photo-overlay-size: 100% 100%;
+  --era-photo-blend: screen;
+  --era-card-shadow: 0 0.3em 0.9em rgb(31 34 51 / 0.2);
+}
+
 /* 捲軸：平常不顯示，滑過容器才出現。macOS 接滑鼠或系統設定「永遠顯示」時，
  * 原生捲軸會一直顯示，這裡把顏色設成透明、hover 時才上色。 */
 @utility scroll-quiet {

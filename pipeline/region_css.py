@@ -1,8 +1,8 @@
 """由 data/regions.json 產生 web/src/styles/regions.css。
 
 輸出格式固定（一縣一行），讓 git diff 容易讀；規則見 DESIGN.md §3、UX-FLOW.md §2。
-另外輸出昭和主題（DESIGN.md §13，`:root[data-theme="showa"]`）：中性色換成生成り紙與焦茶墨，
-只滲一點地區色；強調色往古紙色混，降低彩度。
+另外輸出各年代主題（DESIGN.md §13，`:root[data-theme="showa"]` 等）的地區色，
+以及開場畫面、分享圖用的 theme-colors.json。
 """
 
 from __future__ import annotations
@@ -10,7 +10,7 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
-from pipeline.paths import REGIONS_CSS, REGIONS_JSON
+from pipeline.paths import REGIONS_CSS, REGIONS_JSON, THEME_COLORS_JSON
 
 # JSON 欄位 → CSS 變數，順序即輸出順序。
 TOKEN_ORDER: list[tuple[str, str]] = [
@@ -38,33 +38,116 @@ HEADER = (
 )
 
 
-# 昭和主題的中性色（DESIGN.md §13）：紙、墨固定，紙類再滲 5% 的地區色
-SHOWA_NEUTRAL: dict[str, str] = {
-    "paper": "#F2E8D2",
-    "surface": "#E8DCC0",
-    "map": "#EADFC3",
-    "header": "#EFE3C8",
-    "placeholder": "#E2D4B4",
-    "line": "#BFAE8E",
-    "line_soft": "#DDCFAF",
-    "ink": "#2A2019",
-    "ink_2": "#3C2F24",
-    "sub": "#5E4E3F",
-}
-SHOWA_TINTED = ("paper", "surface", "map", "header", "placeholder", "line", "line_soft")
-SHOWA_TINT_RATIO = 0.05
-# 強調色：(混入的顏色, 比例)
-SHOWA_ACCENT: dict[str, tuple[str, float]] = {
-    "base": ("#B9A27A", 0.3),
-    "accent": ("#D9C7A0", 0.3),
-    "tint": ("#F2E8D2", 0.5),
-    "strong": ("#3C2F24", 0.25),
-}
+# ---------- 年代主題（DESIGN.md §13） ----------
+# 每個年代：中性色固定（紙、墨），紙類再滲一點地區色；強調色依年代換算（往古紙色混、或加彩度）。
+# 強調色的換算：("mix", 顏色, 比例) 在 OKLab 混入；("chroma", 倍數) 放大彩度。
+Op = tuple[str, str, float] | tuple[str, float]
 
-HEADER_SHOWA = (
-    "/* 昭和主題（DESIGN.md §13）：由上面的地區色換算，規則在 pipeline/region_css.py */\n"
-)
 
+class EraTheme:
+    def __init__(
+        self, key: str, label: str, neutral: dict[str, str], tint: float, accent: dict[str, Op]
+    ) -> None:
+        self.key, self.label, self.neutral, self.tint, self.accent = (
+            key,
+            label,
+            neutral,
+            tint,
+            accent,
+        )
+
+
+TINTED = ("paper", "surface", "map", "header", "placeholder", "line", "line_soft")
+
+
+def _neutral(*values: str) -> dict[str, str]:
+    keys = ("paper", "surface", "map", "header", "placeholder", "line", "line_soft")
+    keys += ("ink", "ink_2", "sub")
+    return dict(zip(keys, values, strict=True))
+
+
+ERA_THEMES: list[EraTheme] = [
+    # 江戶：和紙、墨、藍（浮世繪的ベロ藍）
+    EraTheme(
+        "edo",
+        "江戶",
+        _neutral(
+            "#EFE6D3", "#E5DAC2", "#E9DFC9", "#ECE2CC", "#DDD0B6",
+            "#B9AA8E", "#D9CCB2", "#1E1A17", "#2F2823", "#5A4E44",
+        ),
+        0.04,
+        {
+            "base": ("mix", "#8A7F6A", 0.35),
+            "accent": ("mix", "#CFC3A8", 0.35),
+            "tint": ("mix", "#EFE6D3", 0.5),
+            "strong": ("mix", "#1F3554", 0.3),
+        },
+    ),
+    # 明治：洋紙、濃紺、金
+    EraTheme(
+        "meiji",
+        "明治",
+        _neutral(
+            "#F1EBDD", "#E6DECB", "#EAE3D2", "#EDE5D3", "#DED4BF",
+            "#B5AB98", "#D8CFBC", "#1F2430", "#2C3242", "#4E5566",
+        ),
+        0.04,
+        {
+            "base": ("mix", "#9A8F7A", 0.3),
+            "accent": ("mix", "#D3C9B2", 0.3),
+            "tint": ("mix", "#F1EBDD", 0.5),
+            "strong": ("mix", "#1F2A44", 0.3),
+        },
+    ),
+    # 大正：淡紅的紙、海老茶、紫
+    EraTheme(
+        "taisho",
+        "大正",
+        _neutral(
+            "#F4EDE6", "#EADFD6", "#EFE6DE", "#F1E7DF", "#E3D5CB",
+            "#C3AFA6", "#DFD0C7", "#2B1E24", "#3B2A31", "#5E4652",
+        ),
+        0.05,
+        {
+            "base": ("mix", "#C9A9B0", 0.25),
+            "accent": ("mix", "#E2CCD0", 0.25),
+            "tint": ("mix", "#F4EDE6", 0.5),
+            "strong": ("mix", "#4A1F33", 0.25),
+        },
+    ),
+    # 昭和：生成り紙、焦茶墨，往古紙色混
+    EraTheme(
+        "showa",
+        "昭和",
+        _neutral(
+            "#F2E8D2", "#E8DCC0", "#EADFC3", "#EFE3C8", "#E2D4B4",
+            "#BFAE8E", "#DDCFAF", "#2A2019", "#3C2F24", "#5E4E3F",
+        ),
+        0.05,
+        {
+            "base": ("mix", "#B9A27A", 0.3),
+            "accent": ("mix", "#D9C7A0", 0.3),
+            "tint": ("mix", "#F2E8D2", 0.5),
+            "strong": ("mix", "#3C2F24", 0.25),
+        },
+    ),
+    # 平成：白、亮的顏色（彩度放大）
+    EraTheme(
+        "heisei",
+        "平成",
+        _neutral(
+            "#F7F7FB", "#EEEFF6", "#F0F1F8", "#FFFFFF", "#E4E6F0",
+            "#CDD0E0", "#E4E6F0", "#1F2233", "#2C3050", "#4C5170",
+        ),
+        0.06,
+        {
+            "base": ("chroma", 1.35),
+            "accent": ("chroma", 1.3),
+            "tint": ("chroma", 1.2),
+            "strong": ("chroma", 1.25),
+        },
+    ),
+]
 
 def _to_linear(c: float) -> float:
     return c / 12.92 if c <= 0.04045 else ((c + 0.055) / 1.055) ** 2.4
@@ -106,14 +189,26 @@ def mix(a: str, b: str, ratio: float) -> str:
     return _hex(tuple(x + (y - x) * ratio for x, y in zip(la, lb, strict=True)))  # type: ignore[arg-type]
 
 
-def showa_color(color: dict[str, str]) -> dict[str, str]:
-    out = dict(SHOWA_NEUTRAL)
-    for key in SHOWA_TINTED:
-        out[key] = mix(SHOWA_NEUTRAL[key], color["base"], SHOWA_TINT_RATIO)
-    for key, (other, ratio) in SHOWA_ACCENT.items():
-        out[key] = mix(color[key], other, ratio)
-    out["on_base"] = SHOWA_NEUTRAL["ink"]
+def _chroma(c: str, factor: float) -> str:
+    L, a, b = _oklab(c)
+    return _hex((L, a * factor, b * factor))
+
+
+def era_color(theme: EraTheme, color: dict[str, str]) -> dict[str, str]:
+    out = dict(theme.neutral)
+    for key in TINTED:
+        out[key] = mix(theme.neutral[key], color["base"], theme.tint)
+    for key, op in theme.accent.items():
+        if op[0] == "mix":
+            out[key] = mix(color[key], op[1], op[2])  # type: ignore[misc]
+        else:
+            out[key] = _chroma(color[key], op[1])  # type: ignore[arg-type]
+    out["on_base"] = theme.neutral["ink"]
     return out
+
+
+def showa_color(color: dict[str, str]) -> dict[str, str]:
+    return era_color(next(t for t in ERA_THEMES if t.key == "showa"), color)
 
 
 def _rule(selector: str, color: dict[str, str]) -> str:
@@ -125,16 +220,38 @@ def render(regions: dict) -> str:
     out = [HEADER, _rule(":root", regions["national"]["color"])]
     for r in regions["regions"]:
         out.append(_rule(f'[data-pref="{r["prefecture"]}"]', r["color"]))
-    out.append(HEADER_SHOWA)
-    out.append(_rule(':root[data-theme="showa"]', showa_color(regions["national"]["color"])))
-    for r in regions["regions"]:
-        selector = f'[data-theme="showa"] [data-pref="{r["prefecture"]}"]'
-        out.append(_rule(selector, showa_color(r["color"])))
+    for theme in ERA_THEMES:
+        out.append(f"/* {theme.label}主題（DESIGN.md §13）：由上面的地區色換算 */\n")
+        national = era_color(theme, regions["national"]["color"])
+        out.append(_rule(f':root[data-theme="{theme.key}"]', national))
+        for r in regions["regions"]:
+            selector = f'[data-theme="{theme.key}"] [data-pref="{r["prefecture"]}"]'
+            out.append(_rule(selector, era_color(theme, r["color"])))
     return "".join(out)
+
+
+# 開場畫面（index.html）與分享圖（canvas）用：CSS 變數讀不到的地方，各年代的地區色
+COLORS_KEYS = ("base", "accent", "strong", "paper", "map", "line", "ink", "sub")
+
+
+def render_colors(regions: dict) -> str:
+    def pick(c: dict[str, str]) -> dict[str, str]:
+        return {k: c[k] for k in COLORS_KEYS}
+
+    out: dict[str, dict] = {}
+    for theme in ERA_THEMES:
+        out[theme.key] = {
+            "national": pick(era_color(theme, regions["national"]["color"])),
+            "regions": {
+                r["prefecture"]: pick(era_color(theme, r["color"])) for r in regions["regions"]
+            },
+        }
+    return json.dumps(out, ensure_ascii=False, indent=1, sort_keys=True) + "\n"
 
 
 def build(src: Path = REGIONS_JSON, dst: Path = REGIONS_CSS) -> Path:
     regions = json.loads(src.read_text(encoding="utf-8"))
     dst.parent.mkdir(parents=True, exist_ok=True)
     dst.write_text(render(regions), encoding="utf-8")
+    THEME_COLORS_JSON.write_text(render_colors(regions), encoding="utf-8")
     return dst

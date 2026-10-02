@@ -4,6 +4,7 @@ import { packByKey } from '../data/packs'
 import type { MapSpot } from '../services/bundles'
 import { type CardFace, type CastleInfo, cardFromMapSpot, cardNumberFor, rarityLabel, rarityOf, type Rarity } from '../services/card'
 import { allVariants, ownedVariants, type Variant } from '../services/cardVariants'
+import { useCardsStore } from '../stores/cards'
 import { useCatalogStore } from '../stores/catalog'
 import type { Mark } from '../stores/marks'
 import { useUserStore } from '../stores/user'
@@ -29,6 +30,7 @@ export interface CollectionCard {
 export function useCollection(entries: () => Array<[string, Mark]>, datesOf?: (id: string) => Array<string | null> | undefined) {
   const catalog = useCatalogStore()
   const userStore = useUserStore()
+  const cardsStore = useCardsStore()
   const prefs = computed(() => [...new Set(entries().map(([, m]) => m.pref))])
   watch(prefs, (ps) => ps.forEach((p) => void catalog.loadMap(p)), { immediate: true })
   void catalog.loadPack('castle')
@@ -56,7 +58,7 @@ export function useCollection(entries: () => Array<[string, Mark]>, datesOf?: (i
         {
           face: cardFromMapSpot(s, mark.pref),
           rarity,
-          variants: ownedVariants(userStore.user?.uid ?? '', id, dates, rarity),
+          variants: ownedVariants(userStore.user?.uid ?? '', id, dates, rarity, cardsStore.extraOf(id)),
           variantTotal: allVariants(rarity).length,
           label: rarityLabel(s.d, castle),
           number: cardNumberFor(id, catalog.mapSpots[mark.pref], castle, s.d),

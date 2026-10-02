@@ -109,6 +109,17 @@ service cloud.firestore {
         }
       }
 
+      // 收集卡抽到的樣式（web/src/stores/cards.ts）：v 是樣式代號（full@autumn、season-spring…）。
+      // 目前測試期可以無限抽，正式上線前清空。
+      match /cards/{spotId} {
+        allow read, delete: if isOwner(uid);
+        allow create, update: if isOwner(uid)
+          && spotId.size() <= 120
+          && request.resource.data.keys().hasOnly(['v', 'updated_at'])
+          && request.resource.data.v is list
+          && request.resource.data.v.size() <= 40;
+      }
+
       match /places/{placeId} {
         allow read, delete: if isOwner(uid);
         allow create, update: if isOwner(uid)

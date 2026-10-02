@@ -9,7 +9,7 @@
     <script>
       try {
         var t = new URLSearchParams(location.search).get('theme') || localStorage.getItem('hitomeguri:theme')
-        if (t === 'showa') document.documentElement.dataset.theme = 'showa'
+        if (/^(edo|meiji|taisho|showa|heisei)$/.test(t || '')) document.documentElement.dataset.theme = t
       } catch (e) {}
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -82,6 +82,7 @@
         opacity: 0;
       }
       #splash .dot {
+        --c: var(--c0);
         fill: %REGION_LINE%;
         transform-box: fill-box;
         transform-origin: center;
@@ -148,6 +149,8 @@
         #splash .dot.on { transform: none; }
       }
     </style>
+    <!-- 年代主題的開場畫面顏色（vite.config.ts 由 theme-colors.json 帶入） -->
+    <style>%SPLASH_THEMES%</style>
     <title>ひとめぐり</title>
   </head>
   <body>

@@ -4,7 +4,10 @@ import type { RouteLocationRaw } from 'vue-router'
 
 import { useTilt } from '../composables/tilt'
 import type { CardFace, Rarity } from '../services/card'
-import { BASE_VARIANT, type Variant } from '../services/cardVariants'
+import { showReveal } from '../services/cardReveal'
+import { BASE_VARIANT, randomDraw, UNLIMITED_DRAWS, type Variant } from '../services/cardVariants'
+import { todayIso } from '../services/userdb'
+import { useCardsStore } from '../stores/cards'
 import SpotCard from './SpotCard.vue'
 
 // 收集卡放大檢視（DESIGN.md §7.19）：畫面中央一張大卡，點卡片翻面；手機可以用傾斜角度讓卡片轉動。
@@ -26,6 +29,28 @@ const props = defineProps<{
   variantTotal?: number
 }>()
 const emit = defineEmits<{ close: []; step: [delta: -1 | 1] }>()
+
+// 無限抽（測試期，services/cardVariants.ts 的 UNLIMITED_DRAWS）：去過的景點可以再抽一張，抽到的存起來
+const cards = useCardsStore()
+const canDraw = computed(() => UNLIMITED_DRAWS && props.visited && Boolean(props.variants))
+let drawnKey: string | null = null
+function drawAgain() {
+  const drawn = randomDraw(props.rarity, todayIso()).sort((a, b) => b.rank - a.rank)
+  const top = drawn[0]!
+  drawnKey = top.key
+  void cards.add(props.card.id, drawn)
+  showReveal({ face: props.card, rarity: props.rarity, label: props.label ?? '', number: props.number ?? '', variant: top })
+}
+// 抽完樣式清單更新時，切到剛抽到的那種
+watch(
+  () => props.variants,
+  (list) => {
+    if (!drawnKey || !list) return
+    const i = list.findIndex((v) => v.key === drawnKey)
+    if (i >= 0) vi.value = i
+    drawnKey = null
+  },
+)
 
 const tilt = useTilt(18)
 // 樣式：預設看最稀有的那張；換卡時回到第一張
@@ -184,6 +209,9 @@ onBeforeUnmount(() => document.removeEventListener('keydown', onKey))
           @click="startGyro"
         >
           {{ gyro ? '傾斜手機看看' : '用手機傾斜' }}
+        </button>
+        <button v-if="canDraw" type="button" class="h-10 rounded-full bg-paper px-4 text-label font-bold text-ink" @click="drawAgain">
+          再抽一張
         </button>
         <button type="button" class="h-10 rounded-full bg-paper px-4 text-label font-bold text-ink" @click="flipped = !flipped">
           {{ flipped ? '正面' : '背面' }}

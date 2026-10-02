@@ -414,6 +414,8 @@ header 右側、登入鈕左邊（`SearchBox.vue`，每一頁都在；在行程�
 - 卡面最下面一條右側的小膠囊寫樣式名稱（基本卡不寫）。全景、特別全景的卡不顯示上方縣名列，左上留名稱區。
 - 放大檢視：大卡下方一排樣式膠囊（`aria-pressed`），點了換成那個樣式；右邊「n / 總數」。
 - 新卡入手、開卡包：用這次抽到最稀有的樣式；抽到特別全景時背後放虹光、金箔放金光。開卡包依樣式稀有度排，最稀有的最後翻。
+- 照片：基本卡用景點的照片；其他樣式用抽到那天的季節照片（`season_images`，`pipeline/season_photos.py` 從 Commons 分類找），沒有就用第二張照片、其他季節的照片，最後才是基本卡的照片。卡片背面的出處跟著換。
+- 測試期可以無限抽（`UNLIMITED_DRAWS`）：按去過、每次打開卡包都隨機抽一次；放大檢視有「再抽一張」。抽到的存在 Firestore `users/{uid}/cards/{景點 id}`（`stores/cards.ts`，規則還沒發布時先存在這台裝置）。正式上線前改成 false 並清空。
 
 ### 7.20 離線
 - PWA（`vite.config.ts` 的 `pwa()`、vite-plugin-pwa）：app 本身預先快取；資料 bundle（網址帶 `?v=` 版本，cache-first）、`_index.json`（network-first）、地圖圖磚、字型、Commons 照片在用到時存下來。收藏、去過、行程由 Firestore 的本機快取（`persistentLocalCache`）處理，離線時的修改連線後送出。
@@ -497,20 +499,24 @@ MVP 不做。token 已集中在 `theme.css` 與 `regions.css`，之後以 `@cust
 - 使用純白 `#FFFFFF` 當頁面底色或純黑當文字色（白色只用於主按鈕文字、marker 底、卡片內層）。
 - 日文內容缺 `lang="ja"`。
 
-## 13. 主題：昭和
-帳號選單的「主題」可以切換「現代」（預設）與「昭和」，存在這台裝置（localStorage `hitomeguri:theme`）；網址加 `?theme=showa` 可以直接預覽。實作在 `web/src/services/theme.ts`，`<html data-theme="showa">`；`index.html` 開頭在繪製前先設好，避免閃一下。版面、資料、互動都不變，只換 token 與少數元件的樣子。視覺 mockup：https://claude.ai/artifact/ML2F8FTvJa9LDsKY263tXw
+## 13. 年代主題
+帳號選單的「年代」時間軸：江戶（1603–1868）、明治（1868–1912）、大正（1912–1926）、昭和（1926–1989）、平成（1989–2019）、令和（2019–，預設）。拖曳把手或點年代名稱就換主題，存在這台裝置（localStorage `hitomeguri:theme`）；網址加 `?theme=showa` 也會切換並記住。實作：`web/src/services/theme.ts`（`ERAS`）、`components/ThemeTimeline.vue`；`<html data-theme="…">`（令和不加），`index.html` 開頭在繪製前先設好。版面、資料、互動都不變，只換 token 與少數元件的樣子。昭和的視覺 mockup：https://claude.ai/artifact/ML2F8FTvJa9LDsKY263tXw
 
-- 方向：國鐵年代的車站與旅行。站名標、硬券、明信片照片、駅スタンプ。
-- 顏色：
-  - 地區色由 `pipeline/region_css.py` 換算，跟現代主題一起輸出在 `regions.css`（`:root[data-theme="showa"]`、`[data-theme="showa"] [data-pref]`）。中性色固定：紙 生成り `#F2E8D2`、墨 焦茶 `#2A2019`、次要文字 煤竹 `#5E4E3F`，紙類再滲 5% 的地區色；強調色在 OKLab 往古紙色混（base 30% `#B9A27A`、accent 30% `#D9C7A0`、tint 50% `#F2E8D2`、strong 25% `#3C2F24`）。
-  - 專用 token（theme.css）：`--color-showa-shu` 朱 `#C2402A`、`--color-showa-green` 青竹 `#1F6B5C`、`--color-showa-sign` 山吹 `#E2A62B`、`--color-showa-card` 練色 `#FBF6EA`、`--color-showa-ticket` `#EAD9AC`。只在昭和主題用。
-  - 去過印章改紫 `#5B3F8C`（駅スタンプ的印泥色）；`--color-white` 改練色 `#FBF6EA`；地圖水面 `#9CC3C2`（MapView 換主題時重新上色，切回現代還原底圖的顏色）。
-- 字體（選了才載入）：內文 粉圓 Huninn；日文 Zen Maru Gothic；數字、羅馬拼音 DotGothic16（`--font-latin`）；大標 Dela Gothic One（`--font-display`，只套在 `text-display`／`text-h1`／`text-h2`／`text-h3`，小字不用，會糊成一團）。
-- 形狀：圓角縮小（tag 3、control 4、card 6、sheet 12）；`shadow-float` 改成 2px 墨色框＋4px 實心錯位（印刷版錯開的感覺），不用模糊陰影。Tailwind 的 shadow utility 把值寫死，`showa.css` 直接蓋過 `.shadow-*`。
-- 元件（`web/src/styles/showa.css` 與各元件的 `:root[data-theme='showa']` 規則）：
-  - 頂部：下緣朱、青竹兩條線（國鐵車身的帶色）；手機底部分頁列反過來。選中分頁的底線用墨色。
-  - 地區標籤 → 站名標（`RegionTag.vue`）：上面漢字、中間大字假名、下面羅馬拼音，右上地方名；底下 `bg-region-strong` 色帶，兩端是前後一個縣（都道府縣代碼順，點了換過去）。
-  - 照片（`img[data-photo]`）：sepia .55、彩度 .8；景點卡片上方的大照片（`.photo-frame`）與收集卡再加 4px 網點。
-  - 收集卡：舊照片卡。墨色框、實心錯位陰影、照片窗留練色白邊、名稱用 Dela Gothic One、印章加內圈。
-  - 行程卡（`.trip-card`）：硬券。斜格底紋、墨框、錯位陰影、左右剪票缺口；出發倒數的翻牌本來就是墨底。
-- 分享圖（canvas）仍用現代主題的地區色。
+| 年代 | 方向 | 紙／墨 | 帶色、標牌 | 去過印章 | 字體（內文／日文／數字／大標 日・中） | 照片 | 形狀 |
+|---|---|---|---|---|---|---|---|
+| 江戶 | 浮世繪、和紙、藍 | `#EFE6D3`／`#1E1A17` | 藍 `#2B4B7A`、紅 `#B5352B` | 朱 `#B5352B` | 霞鶩文楷 TC／Klee One／霞鶩文楷／Yuji Syuku・霞鶩文楷 | 褪色、高對比＋和紙纖維 | 方角、細墨框、沒有陰影；行程卡是通行手形（木札） |
+| 明治 | 文明開化、活版印刷 | `#F1EBDD`／`#1F2430` | 濃紺 `#1F2A44`、金 `#B08D3C` | 臙脂 `#7A1F2B` | Noto Serif TC／Shippori Mincho／IM Fell English SC／Shippori Mincho B1・Noto Serif TC | 蛋白相片的褐色＋四角暗影 | 雙線框（墨－紙－墨） |
+| 大正 | 大正浪漫、矢絣 | `#F4EDE6`／`#2B1E24` | 海老茶 `#6E2C2C`、紫 `#5B3A6E`（帶色是矢絣紋） | 紫 `#6B2D5C` | Noto Serif TC／Zen Old Mincho／Cormorant SC／Kaisei Decol・Chiron Sung HK | 手工上色的淡彩 | 圓角大、柔和的陰影 |
+| 昭和 | 國鐵、硬券、明信片 | `#F2E8D2`／`#2A2019` | 朱 `#C2402A`、青竹 `#1F6B5C`、山吹 `#E2A62B` | 紫 `#5B3F8C` | 粉圓／Zen Maru Gothic／DotGothic16／Dela Gothic One・Chiron GoRound TC | 褐色調＋印刷網點 | 墨框＋實心錯位陰影（2px） |
+| 平成 | 早期網路、亮面 | `#F7F7FB`／`#1F2233` | 青 `#00A0E9`、洋紅 `#E4007F`、黃 `#FFE600`（漸層帶） | 洋紅 `#E4007F` | Chiron GoRound TC／M PLUS Rounded 1c／VT323／Mochiy Pop One・Chiron GoRound TC | 彩度加強＋亮面反光 | 大圓角、柔和陰影；行程卡是 IC 卡 |
+
+- 地區色：由 `pipeline/region_css.py` 的 `ERA_THEMES` 換算，跟令和一起輸出在 `regions.css`（`:root[data-theme="…"]`、`[data-theme="…"] [data-pref]`）。中性色固定（上表的紙、墨），紙類再滲 4–6% 的地區色；強調色依年代換算：江戶、明治、大正、昭和在 OKLab 往古紙色混，平成放大彩度。開場畫面與分享圖讀不到 CSS 變數，用同時產生的 `web/src/styles/theme-colors.json`。
+- token（theme.css 的 `:root[data-theme]`）：`--font-*`、`--font-display`（日文大標）、`--font-display-zh`（中文大標，日文字型缺繁體字，分開才不會一句混兩種字）、`--display-weight`／`--display-zh-weight`、`--radius-*`、`--shadow-*`、`--color-visited`、`--color-white`、`--color-map-water`、`--color-era-1/2/sign/card/ticket`、`--era-rule`（頂部下緣帶色，畫在 header 裡面不改高度）、`--era-photo-filter`／`--era-photo-overlay`（照片的濾鏡與質感）、`--era-card-shadow`。
+- 元件（`web/src/styles/eras.css` 與 SpotCard 的 `:root[data-theme]` 規則）：
+  - 大標（`text-display`／`text-h1`／`text-h2`／`text-h3`）用年代的展示字型；`lang="ja"` 用日文的，其他用中文的。
+  - Tailwind 的 shadow utility 把值寫死，`.shadow-*` 直接改用 token；地圖上的照片圓點只留一圈細框。
+  - 地區標籤 → 站名標（`RegionTag.vue`）：上面漢字、中間大字假名、下面羅馬拼音；底下 `bg-region-strong` 色帶兩端是前後一個縣（都道府縣代碼順，點了換過去）。
+  - 照片（`img[data-photo]`）套年代濾鏡；景點卡片上方的大照片（`.photo-frame`）與收集卡再疊質感。
+  - 收集卡：照片留紙邊、名稱用日文大標字型、印章加內圈；框與陰影依年代。
+  - 行程卡（`.trip-card`）：明治、大正、昭和是硬券（斜格底紋、剪票缺口），江戶是木札，平成是 IC 卡。
+- 開場畫面：`vite.config.ts` 由 `theme-colors.json` 產生各年代的底色與 47 縣圓點的顏色。分享圖：字型與地區色跟著目前的年代。

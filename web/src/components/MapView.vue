@@ -329,10 +329,10 @@ function applyColors() {
   map.setPaintProperty('pack-selected', 'circle-stroke-color', strong)
   for (const layer of map.getStyle().layers ?? []) {
     if (layer.type === 'background') map.setPaintProperty(layer.id, 'background-color', land)
-    // 昭和主題（DESIGN.md §13）：水面換成青磁色；切回現代時還原底圖原本的顏色
+    // 年代主題（DESIGN.md §13）：水面換成年代的顏色；切回令和時還原底圖原本的顏色
     if (layer.type === 'fill' && layer.id.startsWith('water')) {
       if (!baseWater.has(layer.id)) baseWater.set(layer.id, map.getPaintProperty(layer.id, 'fill-color'))
-      map.setPaintProperty(layer.id, 'fill-color', theme.value === 'showa' ? token('--color-map-water') : baseWater.get(layer.id))
+      map.setPaintProperty(layer.id, 'fill-color', theme.value !== 'modern' ? token('--color-map-water') : baseWater.get(layer.id))
     }
   }
 }
@@ -663,7 +663,7 @@ function nearestSpot(pt: { x: number; y: number }): Hover | null {
   return best
 }
 
-// 選取中的景點：外圈呼吸燈（兩圈錯開半個週期，看起來連續）。大小跟著照片或圓點
+// 選取中的景點：外圈一圈。大小跟著照片或圓點
 let pulse: maplibregl.Marker | null = null
 
 function selectedPoint(): { lng: number; lat: number } | undefined {
@@ -685,17 +685,10 @@ function syncPulse() {
     const el = document.createElement('div')
     el.className = 'pointer-events-none relative'
     el.setAttribute('aria-hidden', 'true')
-    // 固定的外圈＋兩圈往外擴散的光（半透明填色＋外框）
+    // 固定的外圈（原本往外擴散淡出的光圈依使用者回饋拿掉）
     const halo = document.createElement('span')
     halo.className = 'absolute -inset-[5px] rounded-full border-[2.5px] border-region-strong'
     el.append(halo)
-    for (const delay of ['0s', '1s']) {
-      const ring = document.createElement('span')
-      ring.className =
-        'absolute inset-0 rounded-full border-[3px] border-region-strong bg-region-strong/25 animate-pulse-ring motion-reduce:hidden'
-      ring.style.animationDelay = delay
-      el.append(ring)
-    }
     pulse = new maplibregl.Marker({ element: el }).setLngLat([p.lng, p.lat]).addTo(map)
   }
   const el = pulse.getElement()
@@ -777,13 +770,13 @@ function syncPhotos() {
     const w = want.get(id)!
     photoPins.set(id, new maplibregl.Marker({ element: photoEl(id, w.thumb, w.s) }).setLngLat([w.lng, w.lat]).addTo(map))
   }
-  // 照片出現或消失時，呼吸燈的大小跟著換
+  // 照片出現或消失時，選取外圈的大小跟著換
   syncPulse()
 }
 
 function photoEl(id: string, thumb: string, score: number): HTMLElement {
   const el = document.createElement('div')
-  el.className = `pointer-events-none relative rounded-full border-[3px] bg-placeholder shadow-float ${
+  el.className = `map-photo pointer-events-none relative rounded-full border-[3px] bg-placeholder shadow-float ${
     id === props.selectedId ? 'border-region-strong' : 'border-paper'
   }`
   el.style.width = `${PHOTO_PIN}px`
@@ -924,6 +917,8 @@ onMounted(() => {
     style: MAP_STYLE_URL,
     center: JAPAN_CENTER,
     zoom: JAPAN_ZOOM,
+    // 底圖圖磚只到 14 級，再放大就只是放大；17 級已看得到建物。放太大時立體地形上的照片與圓點也會錯開
+    maxZoom: 17,
     attributionControl: {
       compact: true,
       customAttribution: '景點資料 © OpenStreetMap contributors・Wikidata・Wikimedia Commons・維基百科（CC BY-SA 4.0）',

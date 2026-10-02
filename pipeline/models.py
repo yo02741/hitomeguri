@@ -93,7 +93,7 @@ class Spot(StrictModel):
     id: str
     name: LocalizedName
     # 假名的來源（一律來自實際資料，不由 LLM 補）
-    kana_source: Literal["wikidata", "osm", "wikipedia"] | None = None
+    kana_source: Literal["wikidata", "osm", "wikipedia", "seed"] | None = None
     location: Location
     prefecture: Prefecture
     city: str | None = None
@@ -107,6 +107,8 @@ class Spot(StrictModel):
     stay_minutes: int | None = None
     nearest_stations: list[NearestStation] | None = None
     images: list[Image] = Field(default_factory=list)
+    # 收集卡的季節照片（Commons，pipeline/season_photos.py）；查過沒有時是空的 dict
+    season_images: dict[Literal["spring", "summer", "autumn", "winter"], Image] | None = None
     external_ids: ExternalIds = Field(default_factory=ExternalIds)
     sources: list[Source] = Field(default_factory=list)
     goshuin: Goshuin | None = None

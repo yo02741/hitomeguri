@@ -50,7 +50,13 @@ const PATTERN_CLASS: Record<string, string> = {
 const tries = ref(0)
 // 全景卡（全景、特別全景）照片鋪滿整張卡，有第二張照片時用第二張
 const fullArt = computed(() => props.variant.kind === 'full' || props.variant.kind === 'special')
-const photo = computed(() => (fullArt.value ? (props.card.altImage ?? props.card.image) : props.card.image))
+// 不是基本卡的照片（DESIGN.md §7.19a）：抽到那個季節的照片 → 第二張照片 → 其他季節的照片 → 基本卡的照片
+const photo = computed(() => {
+  const c = props.card
+  if (props.variant.kind === 'base') return c.image
+  const seasonal = props.variant.photo ? c.seasonImages?.[props.variant.photo] : undefined
+  return seasonal ?? c.altImage ?? Object.values(c.seasonImages ?? {})[0] ?? c.image
+})
 watch(() => photo.value?.url, () => (tries.value = 0))
 const imageSrc = computed(() => {
   const url = photo.value?.url
@@ -96,7 +102,10 @@ const sizeClass = { sm: 'text-[10px]', lg: 'text-[16px]', fluid: 'fluid' }
         <!-- 反向閃卡：卡框發亮（照片窗與文字在上面） -->
         <div v-if="foil === 'reverse'" class="frame-foil pointer-events-none absolute inset-0"></div>
         <!-- 季節卡：卡框散落那個季節的花樣（櫻、煙火、楓、雪） -->
-        <div v-if="variant.kind === 'season'" class="season-pattern pointer-events-none absolute inset-0"></div>
+        <div v-if="variant.kind === 'season'" class="season-wash pointer-events-none absolute inset-0"></div>
+        <div v-if="variant.kind === 'season'" class="season-drop pointer-events-none absolute inset-0">
+          <div class="season-pattern absolute inset-0"></div>
+        </div>
         <div class="relative flex items-center gap-[0.5em] px-[0.2em] text-[0.8em] leading-none font-bold whitespace-nowrap">
           <span lang="ja">{{ region?.name.ja }}</span>
           <span class="truncate font-latin tracking-[0.2em] uppercase opacity-80">{{ region?.name.romaji }}</span>
@@ -172,7 +181,7 @@ const sizeClass = { sm: 'text-[10px]', lg: 'text-[16px]', fluid: 'fluid' }
           <p class="relative line-clamp-[9] text-[0.78em] leading-relaxed text-ink-2">{{ card.summary?.text }}</p>
           <div class="relative mt-auto flex flex-col gap-[0.2em] text-[0.62em] text-sub">
             <span v-if="card.summary">簡介：維基百科・{{ card.summary.license }}</span>
-            <span v-if="card.image?.author" class="truncate">照片：{{ card.image.author }}・{{ card.image.license }}</span>
+            <span v-if="photo?.author" class="truncate">照片：{{ photo.author }}・{{ photo.license }}</span>
           </div>
         </div>
         <span class="pt-[0.5em] text-center text-[0.72em] font-bold tracking-[0.3em] text-on-region">ひとめぐり</span>
@@ -314,11 +323,21 @@ const sizeClass = { sm: 'text-[10px]', lg: 'text-[16px]', fluid: 'fluid' }
   color: var(--color-shade);
 }
 /* 季節卡：卡框散落季節的花樣，照片窗加一圈季節色 */
-.season-pattern {
+/* 季節卡：卡框上半染季節色，花樣加一點影子（淡色的縣也看得出來），傾斜時跟著光源慢慢飄 */
+.season-wash {
   border-radius: inherit;
-  background-color: var(--season);
+  background: linear-gradient(165deg, color-mix(in oklab, var(--season) 70%, var(--region-base)) 0%, transparent 62%);
+}
+.season-drop {
+  border-radius: inherit;
+  overflow: hidden;
+  filter: drop-shadow(0 0.06em 0.04em color-mix(in oklab, var(--color-shade) 35%, transparent));
+}
+.season-pattern {
+  background-color: color-mix(in oklab, var(--season) 85%, var(--color-glare));
   mask-size: 3.4em 3.4em;
-  opacity: 0.5;
+  mask-position: calc(var(--mx, 50%) * 0.12) calc(var(--my, 50%) * 0.18);
+  opacity: 0.95;
 }
 .season-spring {
   --season: var(--color-sakura-1);
@@ -457,39 +476,46 @@ const sizeClass = { sm: 'text-[10px]', lg: 'text-[16px]', fluid: 'fluid' }
   }
 }
 
-/* 昭和主題（DESIGN.md §13）：舊照片卡。墨色框、實心錯位陰影、照片留白邊＋褐色網點、名稱用展示字型 */
-:root[data-theme='showa'] .card {
-  border-radius: 0.5em;
-  box-shadow: 0.25em 0.25em 0 var(--region-ink);
+/* 年代主題（DESIGN.md §13）：照片留紙邊、年代的照片濾鏡與質感、名稱用展示字型；框與陰影依年代 */
+:root[data-theme] .card {
+  border-radius: var(--radius-card);
+  box-shadow: var(--era-card-shadow);
 }
-:root[data-theme='showa'] .face {
-  border: 0.12em solid var(--region-ink);
-  border-radius: 0.5em;
+:root[data-theme] .face {
+  border-radius: var(--radius-card);
 }
-:root[data-theme='showa'] .face:not(.back) .window {
-  border: 0.12em solid var(--region-ink);
-  border-radius: 0;
+:root[data-theme='showa'] .face,
+:root[data-theme='edo'] .face {
+  border: 0.08em solid var(--region-ink);
+}
+:root[data-theme] .face:not(.back) .window {
+  border-radius: calc(var(--radius-card) / 2);
   padding: 0.28em;
-  background: var(--color-showa-card);
+  background: var(--color-era-card);
 }
-:root[data-theme='showa'] .full-art .face:not(.back) .window {
+:root[data-theme='showa'] .face:not(.back) .window,
+:root[data-theme='edo'] .face:not(.back) .window {
+  border: 0.08em solid var(--region-ink);
+  border-radius: 0;
+}
+:root[data-theme] .full-art .face:not(.back) .window {
   border: 0;
   padding: 0;
 }
-:root[data-theme='showa'] .window::after {
+:root[data-theme] .window::after {
   content: "";
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background-image: radial-gradient(color-mix(in oklab, var(--region-ink) 30%, transparent) 0.9px, transparent 1.4px);
-  background-size: 4px 4px;
-  mix-blend-mode: multiply;
+  background-image: var(--era-photo-overlay);
+  background-size: var(--era-photo-overlay-size);
+  mix-blend-mode: var(--era-photo-blend);
 }
-:root[data-theme='showa'] .card-name {
+:root[data-theme] .card-name {
   font-family: var(--font-display);
-  font-weight: 400;
+  font-weight: var(--display-weight);
 }
-:root[data-theme='showa'] .stamp {
+:root[data-theme] .stamp {
   outline: 0.06em solid var(--color-visited);
   outline-offset: -0.42em;
 }
