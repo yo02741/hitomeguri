@@ -172,7 +172,7 @@ function wear() {
             <div class="flex flex-wrap gap-x-10 gap-y-5">
               <fieldset>
                 <legend class="mb-2 text-label font-bold text-sub">膚色</legend>
-                <div class="flex gap-2.5">
+                <div class="flex flex-wrap gap-2.5">
                   <button
                     v-for="s in SKINS"
                     :key="s"
@@ -188,7 +188,7 @@ function wear() {
               </fieldset>
               <fieldset>
                 <legend class="mb-2 text-label font-bold text-sub">髮色</legend>
-                <div class="flex gap-2.5">
+                <div class="flex flex-wrap gap-2.5">
                   <button
                     v-for="c in HAIR_COLORS"
                     :key="c"

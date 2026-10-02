@@ -5,7 +5,7 @@
  * 服裝分五個位置：頭（帽子、髮箍）、臉（眼鏡）、身（衣服）、手（拿的東西，在右手）、夥伴（腳邊）。
  * 各縣的特色單品去過那個縣就有；其他的用旅行得到的抽獎機會抽。
  */
-import { C, E, line, SH, shape } from './dollArt'
+import { C, dots, E, line, SH, shape } from './dollArt'
 import { PREF_OUTFITS } from './outfitsPref'
 
 export type Slot = 'head' | 'face' | 'body' | 'hand' | 'buddy'
@@ -34,21 +34,37 @@ export interface Outfit {
 }
 
 // ---------- 身體的部位 ----------
-export const SKINS = [1, 2, 3] as const
-export const HAIR_COLORS = [1, 2, 3, 4, 5] as const
-export type HairStyle = 'short' | 'bob' | 'long' | 'bun' | 'ponytail'
-export type EyeStyle = 'round' | 'happy' | 'calm'
+/** 膚色、髮色的 token 號碼（--color-doll-skin-n、--color-doll-hair-n）；陣列順序就是選項的排列（淺到深） */
+export const SKINS = [4, 1, 2, 5, 3, 6] as const
+export type Skin = (typeof SKINS)[number]
+export const HAIR_COLORS = [1, 2, 3, 6, 4, 7, 5, 8, 9] as const
+export type HairColor = (typeof HAIR_COLORS)[number]
+export type HairStyle = 'short' | 'bob' | 'long' | 'bun' | 'ponytail' | 'buzz' | 'spiky' | 'sidepart' | 'curly' | 'wavy' | 'twintails' | 'twinbuns' | 'braid'
+export type EyeStyle = 'round' | 'happy' | 'calm' | 'wink' | 'lashes' | 'dot' | 'sharp' | 'sleepy'
 export const HAIR_STYLES: Array<{ key: HairStyle; label: string }> = [
   { key: 'bob', label: '妹妹頭' },
   { key: 'short', label: '短髮' },
+  { key: 'buzz', label: '平頭' },
+  { key: 'spiky', label: '刺刺頭' },
+  { key: 'sidepart', label: '旁分' },
+  { key: 'curly', label: '捲髮' },
   { key: 'long', label: '長髮' },
+  { key: 'wavy', label: '波浪長髮' },
   { key: 'bun', label: '丸子頭' },
+  { key: 'twinbuns', label: '雙丸子' },
   { key: 'ponytail', label: '馬尾' },
+  { key: 'twintails', label: '雙馬尾' },
+  { key: 'braid', label: '麻花辮' },
 ]
 export const EYE_STYLES: Array<{ key: EyeStyle; label: string }> = [
   { key: 'round', label: '圓眼' },
+  { key: 'dot', label: '豆豆眼' },
+  { key: 'lashes', label: '睫毛' },
+  { key: 'sharp', label: '鳳眼' },
   { key: 'happy', label: '笑眼' },
   { key: 'calm', label: '瞇眼' },
+  { key: 'sleepy', label: '睡眼' },
+  { key: 'wink', label: '眨眼' },
 ]
 
 const H = 'var(--hair)'
@@ -79,6 +95,69 @@ export const HAIR: Record<HairStyle, { back: string; front: string }> = {
     back: `<circle cx="120" cy="32" r="18" fill="${H}" ${E}/><path d="M106 45 C112 49 128 49 134 45" ${line(3, C.red)}/>`,
     front: shape(FRINGE(112), H) + HAIR_SHINE,
   },
+  buzz: {
+    back: shape('M63 104 C61 60 89 38 120 38 C151 38 179 60 177 104 C176 110 172 112 168 108 L72 108 C68 112 64 110 63 104Z', H),
+    front:
+      shape('M68 96 C66 62 90 42 120 42 C150 42 174 62 172 96 C166 82 156 74 144 71 C128 67 112 67 96 71 C84 74 74 82 68 96Z', H) +
+      shape('M66 96 L67 112 C67 116 72 116 72 112 L72 94Z', H) +
+      shape('M174 96 L173 112 C173 116 168 116 168 112 L168 94Z', H) +
+      HAIR_SHINE,
+  },
+  spiky: {
+    back: shape('M62 118 L58 92 L46 86 L62 74 L52 56 L74 58 L74 36 L94 46 L104 22 L120 38 L136 22 L146 46 L166 36 L166 58 L188 56 L178 74 L194 86 L182 92 L178 118Z', H),
+    front:
+      shape('M120 38 C152 38 176 60 176 98 L170 90 L166 102 L156 86 L150 100 L140 84 L132 100 L120 82 L108 100 L100 84 L90 100 L84 86 L74 102 L70 90 L64 98 C64 60 88 38 120 38Z', H) +
+      HAIR_SHINE,
+  },
+  sidepart: {
+    back: shape('M62 100 C62 62 88 38 120 38 C152 38 178 62 178 100 L180 146 C180 152 174 154 170 150 L70 150 C66 154 60 152 60 146Z', H),
+    front:
+      shape('M120 38 C154 38 180 62 178 104 L178 146 C178 153 169 153 169 146 L166 100 C148 98 118 90 98 74 L90 68 C84 80 76 92 72 104 L72 138 C72 145 63 145 63 138 L62 104 C60 62 86 38 120 38Z', H) +
+      `<path d="M91 50 C90 56 90 62 90 68" ${line(1.6, C.ink, 0.22)}/>` +
+      `<path d="M102 52 C118 50 140 54 156 64" ${line(4, C.white, 0.28)}/>`,
+  },
+  curly: {
+    back:
+      shape('M60 100 C60 60 88 36 120 36 C152 36 180 60 180 100 L182 150 L58 150Z', H) +
+      dots(H, 14, [[60, 150], [58, 128], [60, 106], [64, 84], [74, 64], [90, 48], [108, 38], [132, 38], [150, 48], [166, 64], [176, 84], [180, 106], [182, 128], [180, 150]], E),
+    front:
+      shape('M66 100 C64 60 90 40 120 40 C150 40 176 60 174 100 L160 88 L80 88Z', H) +
+      dots(H, 11, [[74, 94], [88, 86], [104, 82], [120, 80], [136, 82], [152, 86], [166, 94]], E) +
+      `<path d="M96 52 C106 46 120 44 132 46" ${line(4, C.white, 0.28)}/>`,
+  },
+  wavy: {
+    back: shape('M60 100 C60 60 88 38 120 38 C152 38 180 60 180 100 C186 120 176 136 184 156 C192 176 180 192 188 212 C192 226 184 236 172 232 L68 232 C56 236 48 226 52 212 C60 192 48 176 56 156 C64 136 54 120 60 100Z', H),
+    front:
+      shape('M120 38 C152 38 178 62 178 100 C182 120 174 140 180 160 C182 170 172 174 168 166 C164 150 172 128 168 104 C168 80 148 62 126 59 L120 52 L114 59 C92 62 72 80 72 104 C68 128 76 150 72 166 C68 174 58 170 60 160 C66 140 58 120 62 100 C62 62 88 38 120 38Z', H) +
+      `<path d="M112 46 C102 54 90 62 80 74" ${line(3.4, C.white, 0.26)}/>`,
+  },
+  twintails: {
+    back:
+      shape('M170 76 C204 84 212 128 202 172 C199 182 188 182 188 172 C194 136 188 108 168 94Z', H) +
+      shape('M70 76 C36 84 28 128 38 172 C41 182 52 182 52 172 C46 136 52 108 72 94Z', H),
+    front:
+      shape(FRINGE(118), H) +
+      `<circle cx="70" cy="82" r="7" fill="${C.red}" ${E}/><circle cx="170" cy="82" r="7" fill="${C.red}" ${E}/>` +
+      HAIR_SHINE,
+  },
+  twinbuns: {
+    back:
+      `<circle cx="78" cy="46" r="17" fill="${H}" ${E}/><circle cx="162" cy="46" r="17" fill="${H}" ${E}/>` +
+      `<path d="M66 58 C72 63 84 64 92 60" ${line(3, C.red)}/><path d="M174 58 C168 63 156 64 148 60" ${line(3, C.red)}/>`,
+    front: shape(FRINGE(112), H) + HAIR_SHINE,
+  },
+  braid: {
+    back: shape('M62 100 C62 62 88 38 120 38 C152 38 178 62 178 100 L178 132 L62 132Z', H),
+    front:
+      shape('M120 38 C154 38 180 62 177 104 C170 92 160 86 148 86 C130 86 104 92 84 100 C78 102 72 106 66 112 C60 66 86 38 120 38Z', H) +
+      shape('M66 104 L65 130 C65 135 72 135 72 130 L74 98Z', H) +
+      [[164, 128], [166, 146], [167, 164], [167, 182], [166, 199]]
+        .map(([x, y]) => `<ellipse cx="${x}" cy="${y}" rx="${y > 190 ? 8 : 10}" ry="11" fill="${H}" ${E}/><path d="M${x! - 6} ${y! - 4} Q${x} ${y! + 4} ${x! + 6} ${y! - 4}" ${line(1.5, C.ink, 0.22)}/>`)
+        .join('') +
+      `<path d="M159 208 L173 208" ${line(4, C.red)}/>` +
+      shape('M162 210 C160 220 172 220 170 210Z', H) +
+      HAIR_SHINE,
+  },
   ponytail: {
     back:
       shape('M158 60 C196 62 206 110 196 158 C193 168 182 168 182 158 C188 122 182 94 160 80Z', H) +
@@ -96,6 +175,21 @@ export const EYES: Record<EyeStyle, string> = {
     `<circle cx="103.8" cy="107.6" r="1.7" fill="${C.white}"/><circle cx="139.8" cy="107.6" r="1.7" fill="${C.white}"/>`,
   happy: `<path d="M96 112 Q102 104 108 112" ${line(2.8)}/><path d="M132 112 Q138 104 144 112" ${line(2.8)}/>`,
   calm: `<path d="M96 109 Q102 114 108 109" ${line(2.6)}/><path d="M132 109 Q138 114 144 109" ${line(2.6)}/>`,
+  wink:
+    `<ellipse cx="102" cy="110" rx="4.6" ry="5.8" fill="${C.ink}"/><circle cx="103.8" cy="107.6" r="1.7" fill="${C.white}"/>` +
+    `<path d="M132 111 Q138 104 144 111" ${line(2.8)}/>`,
+  lashes:
+    `<ellipse cx="102" cy="110" rx="4.6" ry="5.8" fill="${C.ink}"/><ellipse cx="138" cy="110" rx="4.6" ry="5.8" fill="${C.ink}"/>` +
+    `<circle cx="103.8" cy="107.6" r="1.7" fill="${C.white}"/><circle cx="139.8" cy="107.6" r="1.7" fill="${C.white}"/>` +
+    `<path d="M97.6 106 L93.6 102.6 M97.2 109 L92.8 108" ${line(1.7)}/><path d="M142.4 106 L146.4 102.6 M142.8 109 L147.2 108" ${line(1.7)}/>`,
+  dot: `<circle cx="102" cy="111" r="3.4" fill="${C.ink}"/><circle cx="138" cy="111" r="3.4" fill="${C.ink}"/>`,
+  sharp:
+    `<path d="M95 107.5 C99 104.6 105.5 105.4 109 110 C106 114.2 99 114.6 96.6 111.6 C95.6 110.4 95 109 95 107.5Z" fill="${C.ink}"/>` +
+    `<path d="M145 107.5 C141 104.6 134.5 105.4 131 110 C134 114.2 141 114.6 143.4 111.6 C144.4 110.4 145 109 145 107.5Z" fill="${C.ink}"/>` +
+    `<circle cx="102.6" cy="108.6" r="1.4" fill="${C.white}"/><circle cx="138.6" cy="108.6" r="1.4" fill="${C.white}"/>`,
+  sleepy:
+    `<path d="M96 109 C96 116 108 116 108 109Z" fill="${C.ink}"/><path d="M132 109 C132 116 144 116 144 109Z" fill="${C.ink}"/>` +
+    `<path d="M94.5 108.4 Q102 110.6 109.5 108.4" ${line(2.2)}/><path d="M130.5 108.4 Q138 110.6 145.5 108.4" ${line(2.2)}/>`,
 }
 
 // ---------- 服裝 ----------

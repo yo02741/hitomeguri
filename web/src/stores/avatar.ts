@@ -2,7 +2,7 @@ import { defineStore } from 'pinia'
 import { computed, ref, shallowRef, watch } from 'vue'
 
 import { useVisitedEntries } from '../composables/visited'
-import { DEFAULT_EQUIPPED, type EyeStyle, type HairStyle, OUTFITS, outfitById, type Outfit, type Slot, STARTER_IDS } from '../data/outfits'
+import { DEFAULT_EQUIPPED, type EyeStyle, type HairColor, type HairStyle, OUTFITS, outfitById, type Outfit, type Skin, type Slot, STARTER_IDS } from '../data/outfits'
 import { ensureSignedIn, firestore } from '../services/userdb'
 import { outfitKey, useFreshStore } from './fresh'
 import { useUserStore } from './user'
@@ -15,9 +15,9 @@ import { useWalletStore } from './wallet'
  * 扭蛋的範圍是不限縣的＋去過的縣的其他單品，只抽還沒有的（不會重複），都有了就不能抽。
  */
 export interface AvatarParts {
-  skin: 1 | 2 | 3
+  skin: Skin
   hair: HairStyle
-  hairColor: 1 | 2 | 3 | 4 | 5
+  hairColor: HairColor
   eyes: EyeStyle
 }
 interface Saved {
