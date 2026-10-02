@@ -74,7 +74,7 @@ function wear() {
       <BackLink to="/log">紀錄</BackLink>
       <div class="flex items-baseline gap-4">
         <h1 class="text-h1 font-black tracking-[6px]">旅人</h1>
-        <p class="text-label text-sub">服裝 <span class="font-latin text-body font-bold text-ink">{{ ownedCount }}</span> / {{ OUTFITS.length }}</p>
+        <p class="text-label text-sub">服裝 <span class="whitespace-nowrap font-latin"><span class="text-body font-bold text-ink">{{ ownedCount }}</span> / {{ OUTFITS.length }}</span></p>
         <button
           v-if="userStore.user"
           type="button"
@@ -237,7 +237,7 @@ function wear() {
                 <svg :viewBox="o.icon" class="aspect-square w-full overflow-visible p-[8%]" aria-hidden="true">
                   <g :filter="avatar.has(o.id) ? 'url(#doll-cut-sm)' : 'url(#doll-ghost)'" v-html="o.svg"></g>
                 </svg>
-                <span class="text-caption font-bold" :class="avatar.has(o.id) ? 'text-ink' : 'text-sub'">{{ o.name }}</span>
+                <span class="text-caption font-bold text-balance" :class="avatar.has(o.id) ? 'text-ink' : 'text-sub'">{{ o.name }}</span>
                 <span v-if="o.pref" lang="ja" class="pref-tag rounded-tag px-1.5 text-[10px] leading-[16px] font-bold" :data-pref="o.pref">{{ prefName(o.pref) }}</span>
                 <span v-if="avatar.equipped[o.slot] === o.id" class="seal absolute top-1 right-1 grid size-6 place-items-center rounded-full text-[11px] font-black" aria-hidden="true">穿</span>
                 <NewTag v-if="avatar.has(o.id) && fresh.has(outfitKey(o.id))" class="absolute top-1 left-1" />

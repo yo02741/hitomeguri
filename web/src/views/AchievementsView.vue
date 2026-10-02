@@ -160,7 +160,7 @@ onBeforeUnmount(() => fresh.seen([...fresh.keys].filter((k) => k.startsWith('a:'
             <div class="h-full origin-left bg-on-region transition-transform duration-500 ease-out-soft" :style="{ transform: `scaleX(${progress})` }"></div>
           </div>
           <p class="flex flex-wrap gap-x-4 text-label font-bold">
-            <span>初訪 <span class="font-latin text-body-sm">{{ stampsDone }} / 47</span></span>
+            <span>初訪 <span class="whitespace-nowrap font-latin text-body-sm">{{ stampsDone }} / 47</span></span>
             <span v-if="tripCount">旅行 <span class="font-latin text-body-sm">{{ tripCount }}</span> 趟</span>
             <span v-if="sinceYear"><span class="font-latin text-body-sm">{{ sinceYear }}</span> 年起</span>
           </p>
@@ -186,7 +186,7 @@ onBeforeUnmount(() => fresh.seen([...fresh.keys].filter((k) => k.startsWith('a:'
       <!-- 初訪：47 格 -->
       <section id="achv-pref" class="flex scroll-mt-14 flex-col gap-3" aria-labelledby="achv-pref-title">
         <h2 id="achv-pref-title" class="flex items-baseline gap-1.5 text-h3 font-black tracking-[2px]">
-          初訪<span class="font-latin text-body font-normal tracking-normal text-sub">{{ stampsDone }} / 47</span>
+          初訪<span class="whitespace-nowrap font-latin text-body font-normal tracking-normal text-sub">{{ stampsDone }} / 47</span>
         </h2>
         <div class="dot-sheet paper-grain flex flex-col gap-4 rounded-card border border-line bg-paper p-4 sm:p-5">
           <div v-for="g in areaGroups" :key="g.area" class="flex flex-col gap-2">
@@ -232,7 +232,7 @@ onBeforeUnmount(() => fresh.seen([...fresh.keys].filter((k) => k.startsWith('a:'
         :aria-labelledby="`${sec.id}-title`"
       >
         <h2 :id="`${sec.id}-title`" class="flex items-baseline gap-1.5 text-h3 font-black tracking-[2px]">
-          {{ sec.label }}<span v-if="sec.dataState === 'ok' && !loading" class="font-latin text-body font-normal tracking-normal text-sub">{{ sec.done }} / {{ sec.items.length }}</span>
+          {{ sec.label }}<span v-if="sec.dataState === 'ok' && !loading" class="whitespace-nowrap font-latin text-body font-normal tracking-normal text-sub">{{ sec.done }} / {{ sec.items.length }}</span>
         </h2>
         <div class="dot-sheet paper-grain rounded-card border border-line bg-paper p-4 sm:p-5">
           <p v-if="sec.dataState === 'failed'" class="flex flex-wrap items-center gap-3 text-body-sm text-sub">
@@ -262,7 +262,7 @@ onBeforeUnmount(() => fresh.seen([...fresh.keys].filter((k) => k.startsWith('a:'
                 <span class="line-clamp-2 text-label leading-tight font-bold break-keep" :class="s.status === 'done' ? '' : 'text-ink-2'">{{ nameText(s.def.name) }}</span>
                 <span v-if="s.status === 'done' && s.at" class="font-latin text-caption text-sub">{{ dotDate(s.at) }}</span>
                 <span v-else-if="s.status === 'locked' && s.note" class="text-caption leading-tight text-sub">{{ s.note }}</span>
-                <span v-else-if="s.status === 'locked' && hasProgress(s.def)" class="font-latin text-caption text-sub">{{ Math.min(s.have, s.need) }} / {{ s.need }}</span>
+                <span v-else-if="s.status === 'locked' && hasProgress(s.def)" class="whitespace-nowrap font-latin text-caption text-sub">{{ Math.min(s.have, s.need) }} / {{ s.need }}</span>
                 <NewTag v-if="s.status === 'done' && achv.isNew(s.def.id)" class="absolute -top-1 -left-1" />
               </button>
             </li>

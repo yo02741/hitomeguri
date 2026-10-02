@@ -148,7 +148,7 @@ watch(
                   <span v-if="p.kind === 'station'" class="text-caption text-sub">車站・{{ p.near }}</span>
                 </span>
               </span>
-              <span v-if="p.romaji" class="shrink-0 font-latin text-body-sm text-sub">{{ p.romaji }}</span>
+              <span v-if="p.romaji" class="min-w-0 max-w-[40%] text-right font-latin text-body-sm text-sub wrap-anywhere">{{ p.romaji }}</span>
               <SpeakButton :text="p.kana || p.ja" :label="p.ja" />
             </li>
           </ul>
@@ -170,7 +170,7 @@ watch(
                 </span>
                 <span class="text-caption text-sub">{{ dayLabel(p) }}<template v-if="p.en">・{{ p.en }}</template></span>
               </span>
-              <span v-if="p.romaji" class="shrink-0 font-latin text-body-sm text-sub max-sm:hidden">{{ p.romaji }}</span>
+              <span v-if="p.romaji" class="min-w-0 max-w-[40%] text-right font-latin text-body-sm text-sub wrap-anywhere max-sm:hidden">{{ p.romaji }}</span>
               <SpeakButton :text="p.kana || p.ja" :label="p.ja" />
             </li>
             <li v-if="!places.length && !loading" class="py-2.5 text-body-sm text-sub">行程裡還沒有景點</li>

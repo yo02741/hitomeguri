@@ -140,11 +140,11 @@ function onCardKey(e: KeyboardEvent, id: string) {
             收集冊<RollingNumber :value="cards.length" class="font-latin text-h3 font-semibold tracking-normal" />
           </h1>
           <p class="flex items-baseline gap-2 text-label font-bold">
-            都道府縣<span class="font-latin text-body-sm">{{ prefDone.size }} / 47</span>
+            都道府縣<span class="whitespace-nowrap font-latin text-body-sm">{{ prefDone.size }} / 47</span>
           </p>
           <div v-if="castleTotal" class="flex max-w-[420px] flex-col gap-1.5">
             <p class="flex flex-wrap items-baseline gap-x-2 text-label font-bold">
-              日本100名城・続日本100名城<span class="font-latin text-body-sm">{{ castleDone }} / {{ castleTotal }}</span>
+              日本100名城・続日本100名城<span class="whitespace-nowrap font-latin text-body-sm">{{ castleDone }} / {{ castleTotal }}</span>
             </p>
             <div class="h-3.5 overflow-hidden rounded-[2px] bg-paper/55" aria-hidden="true">
               <div class="h-full rounded-[2px] bg-t-castle" :style="{ width: `${(castleDone / castleTotal) * 100}%` }"></div>
@@ -162,7 +162,7 @@ function onCardKey(e: KeyboardEvent, id: string) {
           抽獎券<span class="font-latin text-h3 font-bold text-ink">{{ wallet.left }}</span>
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" class="self-center transition-transform" :class="showTickets ? 'rotate-180' : ''" aria-hidden="true"><path d="M6 9l6 6 6-6" /></svg>
         </button>
-        <span class="text-label text-sub">樣式 <span class="font-latin font-bold text-ink">{{ variantTotal - missingTotal }}</span> / {{ variantTotal }}</span>
+        <span class="text-label text-sub">樣式 <span class="whitespace-nowrap font-latin"><span class="font-bold text-ink">{{ variantTotal - missingTotal }}</span> / {{ variantTotal }}</span></span>
         <button type="button" class="h-8 rounded-control px-2 text-label font-bold text-sub hover:bg-surface hover:text-ink" @click="showRules = true">規則</button>
         <button
           type="button"
@@ -219,7 +219,7 @@ function onCardKey(e: KeyboardEvent, id: string) {
             </div>
             <NewTag v-if="fresh.spotHasNew(e.face.id)" class="absolute -top-1.5 -left-1.5 z-10" />
             <p v-if="e.variants.length > 1" class="mt-1.5 flex justify-center gap-1 text-caption text-sub">
-              <span class="font-latin">{{ e.variants.length }} / {{ e.variantTotal }}</span> 種
+              <span class="whitespace-nowrap font-latin">{{ e.variants.length }} / {{ e.variantTotal }}</span> 種
             </p>
           </li>
           <li v-for="n in g.pending" :key="`p${n}`" class="skeleton aspect-[5/7] rounded-[10px]" aria-hidden="true"></li>

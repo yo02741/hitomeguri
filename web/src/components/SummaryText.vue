@@ -11,9 +11,9 @@ const CLAMP = { 2: 'line-clamp-2', 3: 'line-clamp-3', 4: 'line-clamp-4' } as con
 
 <template>
   <div class="flex flex-col gap-1.5 text-body-sm leading-[1.75]">
-    <p :lang="summary.lang === 'zh' ? undefined : summary.lang" :class="[clamp && CLAMP[clamp], summary.text_zh && 'text-sub']">
+    <p :lang="summary.lang === 'zh' ? undefined : summary.lang" class="text-pretty" :class="[clamp && CLAMP[clamp], summary.text_zh && 'text-sub']">
       {{ summary.text }}
     </p>
-    <p v-if="summary.text_zh" :class="clamp && CLAMP[clamp]">{{ summary.text_zh }}</p>
+    <p v-if="summary.text_zh" class="text-pretty" :class="clamp && CLAMP[clamp]">{{ summary.text_zh }}</p>
   </div>
 </template>

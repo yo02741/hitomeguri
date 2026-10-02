@@ -154,7 +154,7 @@ function distance(m: number): string {
       <div class="flex min-w-0 flex-col gap-px">
         <span v-if="spot.name.kana" lang="ja" class="text-caption tracking-kana opacity-85">{{ spot.name.kana }}</span>
         <h2 lang="ja" class="text-h2 font-black tracking-name">{{ spot.name.ja }}</h2>
-        <span v-if="spot.name.romaji" class="font-latin text-base font-semibold tracking-romaji uppercase">{{ spot.name.romaji }}</span>
+        <span v-if="spot.name.romaji" class="font-latin text-base font-semibold tracking-romaji uppercase wrap-anywhere">{{ spot.name.romaji }}</span>
       </div>
       <button
         type="button"

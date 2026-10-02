@@ -168,7 +168,7 @@ function open(id: string) {
           <span class="text-title font-black tracking-[2px]">收集冊</span>
           <span class="flex flex-wrap gap-x-3 text-label">
             <span class="whitespace-nowrap"><span class="font-latin text-body-sm font-semibold">{{ cards.length }}</span> 張</span>
-            <span class="whitespace-nowrap">都道府縣 <span class="font-latin text-body-sm font-semibold">{{ prefDone.size }}</span> / 47</span>
+            <span class="whitespace-nowrap">都道府縣 <span class="font-latin"><span class="text-body-sm font-semibold">{{ prefDone.size }}</span> / 47</span></span>
           </span>
         </div>
         <svg class="ml-auto shrink-0 transition-transform group-hover:translate-x-1" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7" /></svg>
@@ -197,7 +197,7 @@ function open(id: string) {
         </span>
         <span class="flex min-w-0 flex-col gap-0.5">
           <span class="text-title font-black tracking-[2px]">旅人</span>
-          <span class="text-label">服裝 <span class="font-latin text-body-sm font-semibold">{{ avatar.ownedIds.size }}</span> / {{ OUTFITS.length }}</span>
+          <span class="text-label">服裝 <span class="whitespace-nowrap font-latin"><span class="text-body-sm font-semibold">{{ avatar.ownedIds.size }}</span> / {{ OUTFITS.length }}</span></span>
         </span>
         <svg class="ml-auto shrink-0 transition-transform group-hover:translate-x-1" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7" /></svg>
       </RouterLink>
@@ -208,7 +208,7 @@ function open(id: string) {
       >
         <span class="flex shrink-0 flex-col">
           <span class="text-title font-black tracking-[2px]">成就</span>
-          <span><span class="font-latin text-h3 font-bold">{{ achv.counts.n }}</span><span class="text-body-sm text-sub"> / {{ achv.counts.N }}</span></span>
+          <span class="whitespace-nowrap font-latin"><span class="text-h3 font-bold">{{ achv.counts.n }}</span><span class="text-body-sm text-sub"> / {{ achv.counts.N }}</span></span>
         </span>
         <span class="flex min-w-0 items-center pl-2" aria-hidden="true">
           <template v-if="recentSeals.length">

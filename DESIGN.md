@@ -141,6 +141,8 @@
 | 日文內容 | 加 `lang="ja"` 自動套用 | Noto Sans JP |
 | 羅馬拼音、數字、代碼、日期 | `font-latin` | Barlow Semi Condensed |
 
+- `font-latin` 一律等寬數字（theme.css 的 base 設 `tabular-nums`）。「n / 總數」整段放在同一個 `whitespace-nowrap font-latin` 裡，斜線與總數不換字型、不斷成兩行。
+
 **日文一定要標 `lang="ja"`**：同一個漢字在 TC 與 JP 字形不同（例：「骨」「直」），景點名、片語、地名若用 TC 字形會像錯字。
 
 ### 4.2 字級
@@ -159,6 +161,7 @@
 - 標題一律 `font-black`（900），不使用襯線字、不使用斜體。
 - 羅馬拼音：`font-latin font-semibold uppercase tracking-romaji`（海報區、景點名）；清單中可用首字大寫、不加字距。
 - 假名行：`text-caption tracking-kana text-sub`（在地區色底上改 `text-on-region/80`）。
+- 長名稱：日文標題（h1–h3、`text-title`）依文節斷行（base 的 `word-break: auto-phrase`，Safari 不支援時維持原樣）；不加 `text-wrap: balance`、`line-break: strict`，Safari 會把片假名從字中間切開。羅馬拼音加 `wrap-anywhere`，不撐出面板；清單裡靠右的羅馬拼音最多佔 40%。
 
 ---
 

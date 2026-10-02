@@ -261,6 +261,15 @@
   :lang(ja) {
     font-family: var(--font-ja);
   }
+  /* 日文標題依文節斷行（Chrome 119+），不在「アサヒグルー｜プ」這種字中間斷開；
+   * Safari 不支援就維持原樣。text-wrap: balance 與 line-break: strict 在 Safari 會切開片假名，不加 */
+  :is(h1, h2, h3, .text-title):lang(ja) {
+    word-break: auto-phrase;
+  }
+  /* 數字（日期、距離、件數）等寬，跳動與上下對齊時不晃；字型沒有 tnum 就沒有作用 */
+  .font-latin {
+    font-variant-numeric: tabular-nums;
+  }
   :focus-visible {
     outline: 2px solid var(--region-strong);
     outline-offset: 2px;
