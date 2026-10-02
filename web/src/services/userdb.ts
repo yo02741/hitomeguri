@@ -8,7 +8,7 @@ type Firestore = typeof import('firebase/firestore')
 
 /** Firestore SDK 與資料庫（動態載入：沒登入不下載） */
 export async function firestore(): Promise<{ fs: Firestore; db: import('firebase/firestore').Firestore }> {
-  const [{ db }, fs] = await Promise.all([import('./firebase'), import('firebase/firestore')])
+  const [{ db }, fs] = await Promise.all([import('./firestoreDb'), import('firebase/firestore')])
   if (!db) throw new Error('Firebase 未設定')
   return { fs, db }
 }
