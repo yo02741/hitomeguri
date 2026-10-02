@@ -35,6 +35,9 @@ const items = computed(() =>
 )
 const prefName = (pref: string) => regionOf(pref)?.name.ja ?? pref
 const ownedCount = computed(() => avatar.ownedIds.size)
+// 扭蛋抽得到但還沒抽到的；要去那個縣才會加進扭蛋的
+const drawable = computed(() => new Set(avatar.remaining.map((o) => o.id)))
+const prefLocked = computed(() => OUTFITS.filter((o) => o.pref && !avatar.visitedPrefs.has(o.pref)).length)
 function toggle(o: Outfit) {
   if (!avatar.has(o.id)) return
   fresh.seen([outfitKey(o.id)])
@@ -92,8 +95,9 @@ function wear() {
             <path d="M14 60 A46 46 0 0 1 106 60Z" class="ball-top" />
             <path d="M14 60 A46 46 0 0 0 106 60Z" class="ball-bottom" />
           </svg>
-          <span class="text-body font-bold">{{ avatar.remaining.length ? '抽服裝' : '都抽到了' }}</span>
-          <span class="ml-auto text-label opacity-80">抽獎券 <span class="font-latin text-body font-bold">{{ wallet.left }}</span></span>
+          <span class="text-body font-bold">{{ avatar.remaining.length ? '抽服裝' : prefLocked ? '去過的縣都抽齊了' : '都抽齊了' }}</span>
+          <span v-if="avatar.remaining.length" class="ml-auto text-label opacity-80">抽獎券 <span class="font-latin text-body font-bold">{{ wallet.left }}</span></span>
+          <span v-else-if="prefLocked" class="ml-auto text-label opacity-80">沒去過的縣 <span class="font-latin text-body font-bold">{{ prefLocked }}</span> 件</span>
         </button>
       </div>
 
@@ -215,7 +219,7 @@ function wear() {
                 :class="{ 'is-on': avatar.equipped[o.slot] === o.id, 'is-locked': !avatar.has(o.id) }"
                 :disabled="!avatar.has(o.id)"
                 :aria-pressed="avatar.equipped[o.slot] === o.id"
-                :aria-label="avatar.has(o.id) ? o.name : o.pref ? `${o.name}（${prefName(o.pref)}）` : `${o.name}（還沒抽到）`"
+                :aria-label="avatar.has(o.id) ? o.name : drawable.has(o.id) ? `${o.name}（扭蛋抽得到）` : `${o.name}（去過${prefName(o.pref!)}就有）`"
                 @click="toggle(o)"
               >
                 <svg :viewBox="o.icon" class="aspect-square w-full overflow-visible p-[8%]" aria-hidden="true">
@@ -225,6 +229,11 @@ function wear() {
                 <span v-if="o.pref" lang="ja" class="pref-tag rounded-tag px-1.5 text-[10px] leading-[16px] font-bold" :data-pref="o.pref">{{ prefName(o.pref) }}</span>
                 <span v-if="avatar.equipped[o.slot] === o.id" class="seal absolute top-1 right-1 grid size-6 place-items-center rounded-full text-[11px] font-black" aria-hidden="true">穿</span>
                 <NewTag v-if="avatar.has(o.id) && fresh.has(outfitKey(o.id))" class="absolute top-1 left-1" />
+                <!-- 扭蛋抽得到、還沒抽到 -->
+                <svg v-if="drawable.has(o.id)" class="absolute top-1.5 right-1.5" width="16" height="16" viewBox="0 0 120 120" aria-hidden="true">
+                  <path d="M14 60 A46 46 0 0 1 106 60Z" class="ball-top-line" />
+                  <path d="M14 60 A46 46 0 0 0 106 60Z" class="ball-bottom" />
+                </svg>
               </button>
             </li>
           </ul>
@@ -302,6 +311,11 @@ function wear() {
   box-shadow:
     0 0 0 3px var(--color-item-white),
     0 0 0 5px var(--color-ink);
+}
+.ball-top-line {
+  fill: var(--color-paper);
+  stroke: var(--color-line);
+  stroke-width: 8;
 }
 .ball-top {
   fill: var(--color-item-white);
