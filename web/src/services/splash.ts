@@ -87,6 +87,11 @@ function check() {
   if (sealed && settled >= total) finish()
 }
 
+/** 開場畫面還蓋著（還沒開始退場）：這時的地圖移動不必播動畫，反正看不到 */
+export function splashCovering(): boolean {
+  return Boolean(el) && !finished
+}
+
 /** 登記一件開場要等的工作（失敗也算完成）。開場結束後呼叫無作用。 */
 export function trackSplash<T>(p: Promise<T>, label = ''): Promise<T> {
   if (!el || finishing) return p

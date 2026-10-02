@@ -542,8 +542,9 @@ function onMoveEnd(view: MapViewState) {
             </h2>
             <TimedList :items="timedHere.slice(0, 3)" />
           </section>
+          <!-- 清單只在桌機畫（手機看不到，畫了又藏起來會多出幾千個節點） -->
           <PackList
-            v-if="explore.pack"
+            v-if="desktop && explore.pack"
             :pref="pref"
             :selected-id="selectedId"
             class="max-lg:hidden"
@@ -551,7 +552,7 @@ function onMoveEnd(view: MapViewState) {
             @highlight="(id) => mapRef?.highlight(id)"
           />
           <RegionLists
-            v-else
+            v-else-if="desktop"
             :pref="pref"
             :spots="prefSpots"
             :selected-id="selectedId"

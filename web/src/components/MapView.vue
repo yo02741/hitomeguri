@@ -7,7 +7,7 @@ import { computed, nextTick, onBeforeUnmount, onMounted, ref, shallowRef, watch 
 import { JAPAN_CENTER, JAPAN_ZOOM, MAP_STYLE_URL } from '../map/style'
 import { THEMES } from '../data/themes'
 import { mapThumbUrl, type MapSpot } from '../services/bundles'
-import { trackSplash } from '../services/splash'
+import { splashCovering, trackSplash } from '../services/splash'
 import { theme } from '../services/theme'
 import { DEM_SOURCE, GSI_ATTRIBUTION, GSI_DEM_URL, registerGsiDem, setTerrainPreferred, terrainPreferred } from '../map/terrain'
 import JapanLocator from './JapanLocator.vue'
@@ -1061,7 +1061,8 @@ watch(
 watch(
   () => props.bounds,
   (b) => {
-    if (b && ready) fit(b)
+    // 直接開某縣的網址時，資料在開場畫面後面載完：不播 0.9 秒的飛行，開場才不用等它
+    if (b && ready) fit(b, !splashCovering())
   },
 )
 
