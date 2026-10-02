@@ -125,12 +125,26 @@ export const useCatalogStore = defineStore('catalog', () => {
   const flights = shallowRef<FlightRoute[]>([])
 
   const seasons = shallowRef<SeasonData | null>(null)
+  // 載過就不再抓（once 只合併同時進行的請求，結束後就忘了）
+  let extrasLoaded = false
+  let flightsLoaded = false
+  /** 地區特色、航線、季節：深度探索與旅前準備用（specialties 約 1.8 MB，首頁、地圖頁不載） */
   async function loadExtras(): Promise<void> {
+    if (extrasLoaded) return
     await once('extras', async () => {
-      const [s, f, se] = await Promise.all([fetchSpecialties(), fetchFlights(), fetchSeasons()])
+      const [s, f, se] = await Promise.all([fetchSpecialties(), flightsLoaded ? flights.value : fetchFlights(), fetchSeasons()])
       specialties.value = s
       flights.value = f
       seasons.value = se
+      extrasLoaded = flightsLoaded = true
+    })
+  }
+  /** 只要航線（地區標籤的直飛航線） */
+  async function loadFlights(): Promise<void> {
+    if (flightsLoaded) return
+    await once('flights', async () => {
+      flights.value = await fetchFlights()
+      flightsLoaded = true
     })
   }
 
@@ -221,7 +235,7 @@ export const useCatalogStore = defineStore('catalog', () => {
 
   return {
     loadSearch,
-    index, mapSpots, featured, loadFeatured, details, specialties, flights, seasons, festivals, loadFestivals, rail, loadRail, loadExtras, loadIndex, available,
+    index, mapSpots, featured, loadFeatured, details, specialties, flights, seasons, festivals, loadFestivals, rail, loadRail, loadExtras, loadFlights, loadIndex, available,
     loadMap, loadAllMaps, loadDetail, getSpot, packs, loadPack, phrases, loadPhrases, timed, loadTimed,
   }
 })

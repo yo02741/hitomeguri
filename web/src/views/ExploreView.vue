@@ -278,7 +278,8 @@ function closePin() {
 const timedHere = computed(() => (props.pref ? currentTimed(catalog.timed ?? [], todayIso(), props.pref) : []))
 
 onMounted(() => {
-  catalog.loadExtras()
+  // 地區標籤只用到直飛航線；地區特色（約 1.8 MB）留給深度探索
+  void catalog.loadFlights()
   void catalog.loadTimed()
   trackSplash(catalog.loadFeatured(), 'featured')
   loadPrefectureShapes()

@@ -26,13 +26,36 @@ const props = withDefaults(
     tilt?: ReturnType<typeof useTilt>
     /** 樣式（DESIGN.md §7.19a）：基本、季節、全景、金箔、特別全景 */
     variant?: Variant
+    /** 收集冊的格子：靜止時畫成平面（不建 3D、反光、亮片的層），滑鼠移上去或聚焦時才換成完整的卡 */
+    lite?: boolean
   }>(),
-  { label: '', size: 'sm', number: '', visitedOn: null, visited: false, flipped: false, tilt: undefined, variant: () => BASE_VARIANT },
+  { label: '', size: 'sm', number: '', visitedOn: null, visited: false, flipped: false, tilt: undefined, variant: () => BASE_VARIANT, lite: false },
 )
 
 const SPARKLE: Record<string, string> = { gold: 'sparkle-gold', silver: 'sparkle-silver', night: 'sparkle-night' }
 const own = useTilt(props.size === 'lg' ? 16 : 12)
 const t = computed(() => props.tilt ?? own)
+
+// lite：一頁上百張卡都是 3D 時，瀏覽器要建上千個合成層，手機捲動會卡。靜止的卡畫成平面，
+// 滑鼠移上去、鍵盤聚焦時才「醒來」；離開後等傾斜回正再睡回去。
+const awake = ref(false)
+let sleepTimer = 0
+function wake() {
+  clearTimeout(sleepTimer)
+  awake.value = true
+}
+function sleep() {
+  clearTimeout(sleepTimer)
+  sleepTimer = window.setTimeout(() => (awake.value = false), 500)
+}
+const isLite = computed(() => props.lite && !awake.value && !props.flipped)
+function onEnter() {
+  if (props.lite) wake()
+}
+function onLeave() {
+  if (!props.tilt) own.reset()
+  if (props.lite) sleep()
+}
 
 const region = computed(() => regionOf(props.card.pref))
 const pattern = computed(() => (region.value && PATTERN_BY_AREA[region.value.area]) || NATIONAL_PATTERN)
@@ -88,10 +111,13 @@ const sizeClass = { sm: 'text-[10px]', lg: 'text-[16px]', fluid: 'fluid' }
 <template>
   <div
     class="card-scene select-none"
-    :class="sizeClass[size]"
+    :class="[sizeClass[size], { 'is-lite': isLite }]"
     :style="t.style.value"
+    @pointerenter="onEnter"
     @pointermove="tilt ? undefined : own.onPointerMove($event)"
-    @pointerleave="tilt ? undefined : own.reset()"
+    @pointerleave="onLeave"
+    @focusin="onEnter"
+    @focusout="lite && sleep()"
   >
     <div
       class="card relative aspect-[5/7] w-[20em]"
@@ -233,6 +259,22 @@ const sizeClass = { sm: 'text-[10px]', lg: 'text-[16px]', fluid: 'fluid' }
 }
 .back {
   transform: rotateY(180deg);
+}
+/* 靜止的格子卡（lite）：平面、不畫背面、反光與亮片（平放時本來就幾乎看不到） */
+.is-lite {
+  perspective: none;
+}
+.is-lite .card {
+  transform-style: flat;
+  transform: none;
+}
+.is-lite .face {
+  backface-visibility: visible;
+}
+.is-lite .back,
+.is-lite .glare,
+.is-lite .sparkle {
+  display: none;
 }
 
 /* 反光：跟著光源的柔光 */
