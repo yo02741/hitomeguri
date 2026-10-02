@@ -19,11 +19,19 @@ const doneCount = computed(() => trips.trips.length - upcoming.value.length)
 const name = ref('')
 const start = ref('')
 const end = ref('')
+// 送出中不能再按（雙擊會建兩個同名行程）；離線時要等連線恢復才寫得進去，按鈕就停用到那時候
+const busy = ref(false)
 async function create() {
-  const s = start.value || undefined
-  const e = end.value && (!s || end.value >= s) ? end.value : s
-  const id = await trips.create({ name: name.value.trim(), start_date: s, end_date: e })
-  if (id) await router.push(`/trips/${id}`)
+  if (busy.value) return
+  busy.value = true
+  try {
+    const s = start.value || undefined
+    const e = end.value && (!s || end.value >= s) ? end.value : s
+    const id = await trips.create({ name: name.value.trim(), start_date: s, end_date: e })
+    if (id) await router.push(`/trips/${id}`)
+  } finally {
+    busy.value = false
+  }
 }
 </script>
 
@@ -48,7 +56,12 @@ async function create() {
           <span>日期</span>
           <DateRangePicker label="日期" size="lg" :start="start" :end="end" @change="(s, e) => ((start = s), (end = e))" />
         </div>
-        <button type="submit" class="h-11 rounded-control bg-region-strong px-4 text-body-sm font-bold text-white active:translate-y-px">
+        <button
+          type="submit"
+          class="h-11 rounded-control bg-region-strong px-4 text-body-sm font-bold text-white active:translate-y-px disabled:cursor-not-allowed disabled:opacity-40"
+          :disabled="busy"
+          :aria-busy="busy"
+        >
           新增行程
         </button>
       </form>

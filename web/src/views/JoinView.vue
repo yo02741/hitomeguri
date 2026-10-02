@@ -42,11 +42,14 @@ async function signIn() {
 }
 
 async function join() {
-  if (!invite.value) return
+  if (!invite.value || joining.value) return
   joining.value = true
-  const id = await trips.join(invite.value)
-  joining.value = false
-  if (id) await router.replace(`/trips/${id}`)
+  try {
+    const id = await trips.join(invite.value)
+    if (id) await router.replace(`/trips/${id}`)
+  } finally {
+    joining.value = false
+  }
 }
 </script>
 
@@ -83,8 +86,9 @@ async function join() {
       <button
         v-else
         type="button"
-        class="h-11 rounded-control bg-region-strong px-5 text-body-sm font-bold text-white active:translate-y-px disabled:opacity-40"
+        class="h-11 rounded-control bg-region-strong px-5 text-body-sm font-bold text-white active:translate-y-px disabled:cursor-not-allowed disabled:opacity-40"
         :disabled="joining || !trips.loaded"
+        :aria-busy="joining"
         @click="join"
       >
         加入

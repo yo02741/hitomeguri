@@ -77,11 +77,18 @@ const name = ref('')
 const start = ref('')
 const end = ref('')
 const today = todayIso()
+// 送出中不能再按（雙擊會補登兩趟）
+const adding = ref(false)
 async function addPast() {
-  if (!start.value) return
-  const e = end.value && end.value >= start.value ? end.value : start.value
-  const id = await trips.create({ name: name.value.trim(), start_date: start.value, end_date: e })
-  if (id) await router.push(`/trips/${id}`)
+  if (!start.value || adding.value) return
+  adding.value = true
+  try {
+    const e = end.value && end.value >= start.value ? end.value : start.value
+    const id = await trips.create({ name: name.value.trim(), start_date: start.value, end_date: e })
+    if (id) await router.push(`/trips/${id}`)
+  } finally {
+    adding.value = false
+  }
 }
 
 // 批次補日期（UX-FLOW.md E6）：從清單快捷標的去過沒有日期，這裡一次補
@@ -253,7 +260,8 @@ function open(id: string) {
           </div>
           <button
             type="submit"
-            :disabled="!start"
+            :disabled="!start || adding"
+            :aria-busy="adding"
             class="h-10 rounded-control border border-line bg-paper px-3.5 text-body-sm text-ink hover:bg-surface disabled:cursor-not-allowed disabled:opacity-40"
           >
             新增
