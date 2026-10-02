@@ -5,6 +5,7 @@
 - detail/{pref}.json：完整景點資料，點選景點時才載入。
 - packs/{key}.json：擴充包（全國一個檔，data/packs/ 組合而成）。
 - search.json：全國景點搜尋索引（第一次搜尋時才載入）。
+- achievements.json：成就用的小索引（文化指定 → 大點 id、名城 → 對應景點）。
 """
 
 from __future__ import annotations
@@ -153,6 +154,8 @@ def build(src: Path = SPOTS_DIR, dst: Path = BUNDLES_DIR) -> list[Path]:
     index: dict[str, Any] = {"prefectures": {}}
     featured: dict[str, list[dict[str, Any]]] = {}
     search: list[list[Any]] = []
+    # 成就用：只留 id 與 tags，不把全部景點留在記憶體
+    achv_spots: list[dict[str, Any]] = []
     zh = _translations()
     tag = _translation_tag()
     for path in sorted(src.glob("*.json")):
@@ -173,6 +176,9 @@ def build(src: Path = SPOTS_DIR, dst: Path = BUNDLES_DIR) -> list[Path]:
         ]
         written.append(_write(dst / "detail" / f"{pref}.json", published))
         search += [search_entry(pref, e) for e in majors]
+        achv_spots += [
+            {"id": s["id"], "tags": s.get("tags", [])} for s in published if s["kind"] == "major"
+        ]
         index["prefectures"][pref] = {
             "count": len(published),
             "featured": sum(1 for s in published if s["featured"]),
@@ -183,6 +189,13 @@ def build(src: Path = SPOTS_DIR, dst: Path = BUNDLES_DIR) -> list[Path]:
     packs = build_packs(dst / "packs")
     index["packs"] = {key: meta for key, (_, meta) in packs.items()}
     written += [path for path, _ in packs.values()]
+    achv = build_achievements(achv_spots, pack_items_castle())
+    written.append(_write(dst / "achievements.json", achv))
+    index["achievements"] = {
+        "version": hashlib.sha1(
+            json.dumps(achv, ensure_ascii=False, sort_keys=True).encode()
+        ).hexdigest()[:10]
+    }
     rail = build_rail(dst / "rail")
     index["rail"] = {pref: meta for pref, (_, meta) in rail.items()}
     written += [path for path, _ in rail.values()]
@@ -203,6 +216,22 @@ def build(src: Path = SPOTS_DIR, dst: Path = BUNDLES_DIR) -> list[Path]:
     index["extras"] = {p.stem: hashlib.sha1(p.read_bytes()).hexdigest()[:10] for p in extras}
     written.append(_write(dst / "_index.json", index))
     return written
+
+
+def build_achievements(
+    spots: list[dict[str, Any]], castles: list[dict[str, Any]]
+) -> dict[str, Any]:
+    """成就用的小索引（web/src/services/achievements.ts）。
+
+    tags：每種文化指定 → 帶這個指定的已發布大點 id（全部指定，不是只有最高的那個）；
+    castle：名城組別 → [名城 id, 對應景點 id 或 None]。都依 id 排序。
+    """
+    tags = {d: sorted(s["id"] for s in spots if d in s["tags"]) for d in CARD_DESIGNATIONS}
+    ordered = sorted(castles, key=lambda c: c["id"])
+    castle = {
+        g: [[c["id"], c.get("s")] for c in ordered if c["g"] == g] for g in ("100", "zoku")
+    }
+    return {"tags": tags, "castle": castle}
 
 
 def search_entry(pref: str, e: dict[str, Any]) -> list[Any]:

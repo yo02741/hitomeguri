@@ -10,6 +10,7 @@ import { dayDate, type Trip } from '../services/trip'
 import { useCardsStore } from '../stores/cards'
 import { useWalletStore } from '../stores/wallet'
 import type { Mark } from '../stores/marks'
+import AchvRow from './AchvRow.vue'
 import RegionMotif from './RegionMotif.vue'
 import SpotCard from './SpotCard.vue'
 
@@ -186,6 +187,8 @@ function markOpened(tripId: string) {
           <SpotCard :card="c.face" :rarity="c.rarity" :label="c.label" :number="c.number" visited :visited-on="c.visitedOn" size="fluid" :variant="shown(c)" />
         </li>
       </ul>
+      <!-- 這趟達成的初訪章與成就（DESIGN.md §7.25） -->
+      <AchvRow :trip="trip" animate />
     </div>
 
     <!-- 已翻開的排在下方 -->

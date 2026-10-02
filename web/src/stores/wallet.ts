@@ -5,6 +5,7 @@ import { useVisitedEntries } from '../composables/visited'
 import { regionOf } from '../data/regions'
 import { UNLIMITED_DRAWS } from '../services/cardVariants'
 import { ensureSignedIn, firestore } from '../services/userdb'
+import { useAchievementsStore } from './achievements'
 import { useUserStore } from './user'
 
 /**
@@ -14,6 +15,7 @@ import { useUserStore } from './user'
  * - 每個去過的縣 3 張
  * - 每個去過的地方（北海道、東北、關東…8 個）5 張
  * - 景點每累積 10 個 5 張
+ * - 地方、旅行、時節的成就每個 5 張，也由現在的紀錄算出來（stores/achievements.ts 的 paidCount）
  * 用掉的張數（used）與「第一次去過的免費抽」用過的景點（free）存在 users/{uid}/meta/wallet；
  * 規則還沒發布或離線時先存在這台裝置，之後合併（used 取大的、free 取聯集）。
  * 測試期（UNLIMITED_DRAWS）不扣也能抽，張數照算。
@@ -24,11 +26,12 @@ interface Saved {
 }
 const LOCAL = 'hitomeguri:wallet'
 
-export const TICKET_RULES = { spot: 1, pref: 3, area: 5, every10: 5 } as const
+export const TICKET_RULES = { spot: 1, pref: 3, area: 5, every10: 5, achv: 5 } as const
 
 export const useWalletStore = defineStore('wallet', () => {
   const userStore = useUserStore()
   const { entries } = useVisitedEntries()
+  const achv = useAchievementsStore()
   const used = ref(0)
   const free = shallowRef<Set<string>>(new Set())
   let unsubscribe: (() => void) | null = null
@@ -104,11 +107,18 @@ export const useWalletStore = defineStore('wallet', () => {
       prefs: prefs.size,
       areas: areas.size,
       bonus: Math.floor(spots / 10),
+      achv: achv.paidCount,
     }
   })
   const earned = computed(() => {
     const b = breakdown.value
-    return b.spots * TICKET_RULES.spot + b.prefs * TICKET_RULES.pref + b.areas * TICKET_RULES.area + b.bonus * TICKET_RULES.every10
+    return (
+      b.spots * TICKET_RULES.spot +
+      b.prefs * TICKET_RULES.pref +
+      b.areas * TICKET_RULES.area +
+      b.bonus * TICKET_RULES.every10 +
+      b.achv * TICKET_RULES.achv
+    )
   })
   const left = computed(() => Math.max(0, earned.value - used.value))
   const canSpend = (n = 1) => UNLIMITED_DRAWS || left.value >= n

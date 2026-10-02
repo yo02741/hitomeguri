@@ -1,8 +1,10 @@
 import { defineStore } from 'pinia'
-import { shallowRef, triggerRef } from 'vue'
+import { ref, shallowRef, triggerRef } from 'vue'
 
 import {
+  type AchvData,
   type BundleIndex,
+  fetchAchievements,
   type Festival,
   fetchDetail,
   fetchFeatured,
@@ -221,6 +223,32 @@ export const useCatalogStore = defineStore('catalog', () => {
     return once('phrases', async () => (phrases.value = await fetchPhrases(index.value?.extras?.phrases)))
   }
 
+  /**
+   * 成就用的小索引（achievements.json）：index 沒有這個檔時是 absent；
+   * 載入失敗時是 failed、不寫成空資料（下次呼叫再試）。
+   */
+  const achv = shallowRef<AchvData | null>(null)
+  const achvState = ref<'idle' | 'loading' | 'ready' | 'failed' | 'absent'>('idle')
+  async function loadAchievements(): Promise<AchvData | null> {
+    if (achv.value) return achv.value
+    return once('achievements', async () => {
+      await loadIndex()
+      const meta = index.value?.achievements
+      if (!meta) {
+        achvState.value = 'absent'
+        return null
+      }
+      achvState.value = 'loading'
+      try {
+        achv.value = await fetchAchievements(meta.version)
+        achvState.value = 'ready'
+      } catch {
+        achvState.value = 'failed'
+      }
+      return achv.value
+    })
+  }
+
   /** 全國搜尋索引：第一次搜尋時才載入 */
   let searchLoaded = false
   async function loadSearch(): Promise<void> {
@@ -241,5 +269,6 @@ export const useCatalogStore = defineStore('catalog', () => {
     loadSearch,
     index, mapSpots, featured, loadFeatured, details, specialties, flights, seasons, festivals, loadFestivals, rail, loadRail, loadExtras, loadFlights, loadIndex, available,
     loadMap, loadAllMaps, loadDetail, getSpot, packs, loadPack, phrases, loadPhrases, timed, loadTimed,
+    achv, achvState, loadAchievements,
   }
 })

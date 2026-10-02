@@ -259,9 +259,12 @@
     cursor: pointer;
   }
   @media (prefers-reduced-motion: reduce) {
+    /* 依序出現的延遲也拿掉：不然 fill-mode both 的項目在延遲結束前一直是透明的 */
     *, *::before, *::after {
       animation-duration: 0.01ms !important;
+      animation-delay: 0s !important;
       transition-duration: 0.01ms !important;
+      transition-delay: 0s !important;
     }
   }
 }
