@@ -256,7 +256,7 @@ onBeforeUnmount(() => {
   fill: var(--color-gold-2);
 }
 .capsule.drop {
-  animation: capsule-drop 0.7s cubic-bezier(0.3, 1.4, 0.5, 1) both;
+  animation: capsule-drop 0.7s var(--ease-flip) both;
 }
 @keyframes capsule-drop {
   from {
@@ -269,11 +269,11 @@ onBeforeUnmount(() => {
   transform-origin: center bottom;
 }
 .capsule.open .cap-top {
-  animation: cap-top 0.55s cubic-bezier(0.2, 0.8, 0.3, 1) both;
+  animation: cap-top 0.55s var(--ease-out-soft) both;
 }
 .capsule.open .cap-bottom {
   transform-origin: center top;
-  animation: cap-bottom 0.55s cubic-bezier(0.2, 0.8, 0.3, 1) both;
+  animation: cap-bottom 0.55s var(--ease-out-soft) both;
 }
 @keyframes cap-top {
   to {
@@ -288,7 +288,7 @@ onBeforeUnmount(() => {
   }
 }
 .prize {
-  animation: prize-pop 0.55s 0.12s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+  animation: prize-pop 0.55s 0.12s var(--ease-stamp) both;
 }
 @keyframes prize-pop {
   from {

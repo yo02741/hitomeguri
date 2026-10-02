@@ -6,28 +6,36 @@ import { computed, onBeforeUnmount, reactive } from 'vue'
  * - --mx、--my：光源在卡面的位置（%）
  * - --hyp：光源離中心的距離（0～1），越斜箔片越亮
  * - --o：效果強度（0＝靜止，1＝正在互動）
- * 用簡單的彈簧（每格往目標靠近一段）讓動作順，不抖。系統設定減少動態時不動。
+ * 用簡單的彈簧（往目標靠近一段）讓動作順，不抖；靠近的比例依經過的時間算，60Hz 與 120Hz 的螢幕手感一樣。
+ * 系統設定減少動態時不動。
  */
 export function useTilt(max = 14) {
   const reduced = typeof matchMedia !== 'undefined' && matchMedia('(prefers-reduced-motion: reduce)').matches
   const cur = reactive({ rx: 0, ry: 0, mx: 50, my: 50, o: 0 })
   const target = { rx: 0, ry: 0, mx: 50, my: 50, o: 0 }
   let frame = 0
+  let last = 0
 
-  function step() {
+  // 每 16.67ms（60Hz 的一格）靠近剩下距離的 14%；一格最多算 64ms，切回分頁時不會一下跳到底
+  function step(now: number) {
     frame = 0
+    const dt = Math.min(64, Math.max(0, now - last))
+    last = now
+    const k = 1 - Math.pow(0.86, dt / 16.67)
     let moving = false
-    for (const k of ['rx', 'ry', 'mx', 'my', 'o'] as const) {
-      const d = target[k] - cur[k]
+    for (const key of ['rx', 'ry', 'mx', 'my', 'o'] as const) {
+      const d = target[key] - cur[key]
       if (Math.abs(d) > 0.01) {
-        cur[k] += d * 0.14
+        cur[key] += d * k
         moving = true
-      } else cur[k] = target[k]
+      } else cur[key] = target[key]
     }
     if (moving) frame = requestAnimationFrame(step)
   }
   function kick() {
-    if (!frame) frame = requestAnimationFrame(step)
+    if (frame) return
+    last = performance.now()
+    frame = requestAnimationFrame(step)
   }
 
   /** 以卡面上的相對位置（0～1）設定目標 */

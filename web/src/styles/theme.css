@@ -162,7 +162,12 @@
   --spacing-tap: 2.75rem;         /* 44 最小點擊區 */
 
   /* ---------- 動態 ---------- */
+  /* 曲線（DESIGN.md §9）：一般的轉場用 out-soft；回彈只給實體的隱喻 */
   --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
+  /* 實體的蓋章、彈出、回彈（印章、星星、扭蛋的獎品、旅人的泡泡、紀錄分頁跳一下） */
+  --ease-stamp: cubic-bezier(0.34, 1.56, 0.64, 1);
+  /* 翻牌、扭蛋落下、立牌回正 */
+  --ease-flip: cubic-bezier(0.3, 1.3, 0.5, 1);
   /* 地圖上選取中的景點：外圈往外擴散、淡出（呼吸燈） */
   --animate-pulse-ring: pulse-ring 2s var(--ease-out-soft) infinite;
 
@@ -171,7 +176,7 @@
     80%, 100% { transform: scale(2.8); opacity: 0; }
   }
   /* 蓋章（去過）：印章從上方壓下去、微微回彈（只在自己按下時播放一次） */
-  --animate-stamp-press: stamp-press 0.42s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+  --animate-stamp-press: stamp-press 0.42s var(--ease-stamp) both;
   @keyframes stamp-press {
     0% { transform: scale(1.8) rotate(-16deg); opacity: 0; }
     55% { transform: scale(0.84) rotate(3deg); opacity: 1; }
@@ -192,7 +197,7 @@
     from { opacity: 0; transform: translateY(4px) scale(0.98); }
   }
   /* 收藏：星星彈一下（只在自己按下時） */
-  --animate-star-pop: star-pop 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+  --animate-star-pop: star-pop 0.45s var(--ease-stamp) both;
   @keyframes star-pop {
     0% { transform: scale(0.4) rotate(-30deg); }
     60% { transform: scale(1.25) rotate(8deg); }

@@ -21,6 +21,8 @@ const order = computed(() => {
   for (const r of regions) if (props.done.has(r.prefecture)) m.set(r.prefecture, i++)
   return m
 })
+// 每縣的間隔：去過的少時 55ms，多了就縮短，整段最多約 0.6s（47 縣全去過約 1.4s 內結束）
+const step = computed(() => `${Math.min(55, 600 / Math.max(1, order.value.size))}ms`)
 
 function title(pref: string): string {
   const name = regionOf(pref)?.name.ja ?? pref
@@ -30,7 +32,7 @@ function title(pref: string): string {
 </script>
 
 <template>
-  <svg v-if="shape" :viewBox="shape.viewBox" class="japan block h-auto w-full" role="img" aria-label="去過的都道府縣">
+  <svg v-if="shape" :viewBox="shape.viewBox" class="japan block h-auto w-full" :style="{ '--step': step }" role="img" aria-label="去過的都道府縣">
     <rect
       :x="shape.inset[0]"
       :y="shape.inset[1]"
@@ -76,12 +78,12 @@ function title(pref: string): string {
   transform-box: fill-box;
   transform-origin: center;
 }
-/* 去過的縣：該縣的 strong 色，依序蓋上去（放大、壓下） */
+/* 去過的縣：該縣的 strong 色，依序蓋上去（放大、壓下）；--step 由去過的縣數決定 */
 .pref.is-done {
   fill: var(--region-strong);
   cursor: pointer;
-  animation: pref-stamp 0.55s cubic-bezier(0.34, 1.56, 0.64, 1) both;
-  animation-delay: calc(0.25s + var(--i) * 55ms);
+  animation: pref-stamp 0.55s var(--ease-stamp) both;
+  animation-delay: calc(0.25s + var(--i) * var(--step));
 }
 .pref.is-done:hover {
   fill: color-mix(in oklab, var(--region-strong) 80%, var(--region-ink));

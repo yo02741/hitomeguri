@@ -234,7 +234,7 @@ const bubbleRight = computed(() => x.value > maxX() - 150)
   }
 }
 .bubble {
-  animation: pop 0.25s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+  animation: pop 0.25s var(--ease-stamp) both;
 }
 @keyframes pop {
   from {

@@ -77,6 +77,12 @@ function raysKind(c: DeckCard): string {
   if (k !== 'base' && k !== 'season' && c.rarity === 'normal') return 'castle'
   return c.rarity
 }
+// 撕開（0.9s）的途中點一下、Space、Enter 就直接發牌（DESIGN.md §9：長的過場點一下就跳過）
+let openTimer = 0
+function toDealing() {
+  clearTimeout(openTimer)
+  if (stage.value === 'opening') stage.value = 'dealing'
+}
 function open() {
   if (stage.value !== 'sealed' || !deck.value.length) return
   const next = new Map<string, Variant>()
@@ -90,10 +96,11 @@ function open() {
   }
   redraws.value = next
   stage.value = 'opening'
-  setTimeout(() => (stage.value = 'dealing'), 900)
+  openTimer = window.setTimeout(toDealing, 900)
 }
 function next() {
   if (stage.value === 'sealed') return open()
+  if (stage.value === 'opening') return toDealing()
   if (stage.value !== 'dealing' || !current.value) return
   if (!flipped.value) {
     flipped.value = true
@@ -123,7 +130,10 @@ function onKey(e: KeyboardEvent) {
   }
 }
 onMounted(() => document.addEventListener('keydown', onKey))
-onBeforeUnmount(() => document.removeEventListener('keydown', onKey))
+onBeforeUnmount(() => {
+  document.removeEventListener('keydown', onKey)
+  clearTimeout(openTimer)
+})
 </script>
 
 <script lang="ts">
@@ -147,10 +157,10 @@ function markOpened(tripId: string) {
 </script>
 
 <template>
-  <div class="fixed inset-0 z-[66] flex flex-col items-center justify-center gap-5 overflow-hidden bg-ink/80 p-4 print:hidden" role="dialog" aria-modal="true" aria-label="卡包">
-    <!-- 封著的卡包 -->
+  <div class="fixed inset-0 z-[66] flex flex-col items-center justify-center gap-5 overflow-hidden bg-ink/80 p-4 print:hidden" role="dialog" aria-modal="true" aria-label="卡包" @click="stage === 'opening' && toDealing()">
+    <!-- 封著的卡包（撕開的途中點任何地方都直接發牌） -->
     <div v-if="stage === 'sealed' || stage === 'opening'" class="pack-stage" :class="stage" :data-pref="mainPref ?? undefined">
-      <button type="button" class="pack paper-grain relative block overflow-hidden rounded-[18px] bg-region text-on-region" aria-label="打開卡包" @click="open">
+      <button type="button" class="pack paper-grain relative block overflow-hidden rounded-[18px] bg-region text-on-region" aria-label="打開卡包" @click.stop="next">
         <span class="pack-top absolute inset-x-0 top-0 h-[14%] border-b-2 border-dashed border-on-region/40 bg-region-strong/30"></span>
         <RegionMotif :pref="mainPref ?? undefined" class="absolute top-1/2 left-1/2 size-[220px] -translate-x-1/2 -translate-y-1/2 opacity-70" />
         <span class="relative flex h-full flex-col items-center justify-end gap-1 px-4 pb-6 text-center">
@@ -238,7 +248,7 @@ function markOpened(tripId: string) {
   animation: pack-drop 0.7s 0.25s cubic-bezier(0.5, 0, 0.75, 0) both;
 }
 .opening .pack-top {
-  animation: pack-tear 0.45s cubic-bezier(0.2, 0.7, 0.3, 1) both;
+  animation: pack-tear 0.45s var(--ease-out-soft) both;
 }
 @keyframes pack-tear {
   to {
@@ -254,7 +264,7 @@ function markOpened(tripId: string) {
 }
 
 .deal-card {
-  animation: card-rise 0.5s cubic-bezier(0.2, 0.9, 0.3, 1) both;
+  animation: card-rise 0.5s var(--ease-out-soft) both;
 }
 @keyframes card-rise {
   from {
@@ -266,7 +276,7 @@ function markOpened(tripId: string) {
   width: 320px;
   aspect-ratio: 5 / 7;
   transform: rotateY(180deg);
-  transition: transform 0.65s cubic-bezier(0.3, 1.3, 0.5, 1);
+  transition: transform 0.65s var(--ease-flip);
 }
 .flip.is-flipped {
   transform: rotateY(0deg);

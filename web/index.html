@@ -50,7 +50,8 @@
         background: %REGION_PAPER%;
         color: %REGION_INK%;
         font-family: "Noto Sans JP", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", "Noto Sans TC", system-ui, sans-serif;
-        /* 結束時從圓心開一個洞，洞越開越大露出底下的畫面 */
+        /* 結束時從圓心開一個洞，洞越開越大露出底下的畫面。
+       * 開場比 app 的 CSS 先畫出來，曲線寫字面值：(0.22, 1, 0.36, 1) = --ease-out-soft、(0.34, 1.56, 0.64, 1) = --ease-stamp（theme.css） */
         --hole: 0px;
         -webkit-mask-image: radial-gradient(circle at 50% 50%, transparent var(--hole), #000 calc(var(--hole) + 1px));
         mask-image: radial-gradient(circle at 50% 50%, transparent var(--hole), #000 calc(var(--hole) + 1px));

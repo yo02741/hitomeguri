@@ -3,6 +3,7 @@ import { computed, defineAsyncComponent, nextTick, onBeforeUnmount, ref, watch }
 
 import type { AchvDef } from '../data/achievements'
 import { reveal } from '../services/cardReveal'
+import { ease } from '../services/motion'
 import { useAchievementsStore } from '../stores/achievements'
 import { useMarksStore } from '../stores/marks'
 import PrefStamp from './PrefStamp.vue'
@@ -84,12 +85,12 @@ async function play() {
         { transform: 'translateY(-4vh) scale(1.06) rotateY(-14deg) rotateZ(1.5deg)', offset: 0.72 },
         { transform: 'translateY(0) scale(1) rotateY(0deg) rotateZ(0deg)', opacity: 1 },
       ],
-      { duration: 1150, easing: 'cubic-bezier(0.2, 0.85, 0.3, 1)', fill: 'both' },
+      { duration: 1150, easing: ease('out-soft'), fill: 'both' },
     ),
     burst.value.animate([{ opacity: 0, transform: 'scale(0.3)' }, { opacity: 1, transform: 'scale(1)' }], {
       duration: 700,
       delay: 780,
-      easing: 'cubic-bezier(0.22, 1, 0.36, 1)',
+      easing: ease('out-soft'),
       fill: 'both',
     }),
   ]
@@ -146,30 +147,36 @@ function leave() {
   }
   const card = fly.value.getBoundingClientRect()
   const tab = logTab()
-  const dur = 620
-  const ease = 'cubic-bezier(0.55, 0, 0.7, 0.2)'
+  // 點了就先回應：前三成用 out-soft 立刻抬起、縮小，之後才加速飛進分頁（整段 480ms）
+  const dur = 480
+  const out = ease('out-soft')
   if (tab) {
     const t = tab.getBoundingClientRect()
     const dx = t.left + t.width / 2 - (card.left + card.width / 2)
     const dy = t.top + t.height / 2 - (card.top + card.height / 2)
     fly.value.animate(
       [
-        { transform: 'none', opacity: 1 },
-        { transform: `translate(${dx * 0.15}px, ${dy * 0.15 - 30}px) scale(0.8) rotate(-4deg)`, opacity: 1, offset: 0.3 },
+        { transform: 'none', opacity: 1, easing: out },
+        {
+          transform: `translate(${dx * 0.15}px, ${dy * 0.15 - 30}px) scale(0.8) rotate(-4deg)`,
+          opacity: 1,
+          offset: 0.3,
+          easing: 'cubic-bezier(0.55, 0, 0.7, 0.2)',
+        },
         { transform: `translate(${dx}px, ${dy}px) scale(0.05) rotate(-24deg)`, opacity: 0.4 },
       ],
-      { duration: dur, easing: ease, fill: 'both' },
+      { duration: dur, easing: 'linear', fill: 'both' },
     )
     later(dur - 40, () =>
       tab.animate(
         [{ transform: 'scale(1)' }, { transform: 'scale(1.28) translateY(-2px)' }, { transform: 'scale(1)' }],
-        { duration: 420, easing: 'cubic-bezier(0.34, 1.56, 0.64, 1)' },
+        { duration: 420, easing: ease('stamp') },
       ),
     )
   } else {
-    fly.value.animate([{ transform: 'none', opacity: 1 }, { transform: 'scale(0.6)', opacity: 0 }], { duration: dur, easing: ease, fill: 'both' })
+    fly.value.animate([{ transform: 'none', opacity: 1 }, { transform: 'scale(0.6)', opacity: 0 }], { duration: 240, easing: out, fill: 'both' })
   }
-  backdrop.value?.animate([{ opacity: 1 }, { opacity: 0 }], { duration: dur, easing: 'ease-in', fill: 'both' })
+  backdrop.value?.animate([{ opacity: 1 }, { opacity: 0 }], { duration: 240, easing: out, fill: 'both' })
   burst.value?.animate([{ opacity: 1 }, { opacity: 0, transform: 'scale(1.15)' }], { duration: dur * 0.7, fill: 'both' })
   later(dur, () => (reveal.value = null))
 }
@@ -312,7 +319,7 @@ onBeforeUnmount(() => {
   opacity: 0.92;
   filter: drop-shadow(0 1px 0 color-mix(in oklab, var(--region-paper) 70%, transparent));
   transform: rotate(-14deg);
-  animation: stamp-slam 0.5s 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+  animation: stamp-slam 0.5s 0.45s var(--ease-stamp) both;
 }
 @keyframes stamp-slam {
   from {
@@ -334,7 +341,7 @@ onBeforeUnmount(() => {
   opacity: 0.94;
   filter: drop-shadow(0 1px 0 color-mix(in oklab, var(--region-paper) 70%, transparent));
   transform: rotate(8deg);
-  animation: seal-slam 0.5s 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+  animation: seal-slam 0.5s 0.45s var(--ease-stamp) both;
 }
 .seal-slam.after-stamp {
   animation-delay: 0.8s;

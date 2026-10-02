@@ -159,7 +159,7 @@ const zoomed = computed(() => (zoom.value === null ? null : props.pulls[zoom.val
 }
 /* 發牌：從整排的中央飛到自己的位置 */
 .slot {
-  animation: deal 0.5s cubic-bezier(0.2, 0.9, 0.3, 1) both;
+  animation: deal 0.5s var(--ease-out-soft) both;
   animation-delay: calc(var(--i) * 60ms);
 }
 @keyframes deal {
@@ -170,7 +170,7 @@ const zoomed = computed(() => (zoom.value === null ? null : props.pulls[zoom.val
 }
 .flip {
   transform: rotateY(180deg);
-  transition: transform 0.55s cubic-bezier(0.3, 1.3, 0.5, 1);
+  transition: transform 0.55s var(--ease-flip);
 }
 .is-open .flip {
   transform: rotateY(0deg);

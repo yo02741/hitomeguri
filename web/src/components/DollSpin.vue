@@ -18,31 +18,38 @@ const rx = ref(0)
 const smooth = ref(false)
 let dragging = false
 let start = { x: 0, y: 0, ry: 0, rx: 0 }
-let last = { x: 0, t: 0 }
+/** 最近 100ms 的拖拉位置：放開時的速度用頭尾兩筆算（只看最後一筆會忽快忽慢） */
+let samples: Array<{ x: number; t: number }> = []
 let vel = 0
 let raf = 0
+let lastFrame = 0
 
 /** 紙的厚度：前後之間疊幾層切邊 */
 const EDGES = [-1.5, -0.5, 0.5, 1.5]
 
-/** 慣性與俯仰回正；兩個都停了就不再排下一格 */
-function frame() {
+/** 慣性與俯仰回正；兩個都停了就不再排下一格。衰減依經過的時間算（60Hz 一格的係數），120Hz 的螢幕滑得一樣遠 */
+function frame(now: number) {
   raf = 0
   if (dragging) return
+  const dt = Math.min(64, Math.max(0, now - lastFrame))
+  lastFrame = now
+  const f = dt / 16.67
   let moving = false
   if (Math.abs(vel) > 0.005) {
-    ry.value += vel * 16
-    vel *= 0.94
+    ry.value += vel * dt
+    vel *= Math.pow(0.94, f)
     moving = true
   } else vel = 0
   if (Math.abs(rx.value) > 0.05) {
-    rx.value *= 0.9
+    rx.value *= Math.pow(0.9, f)
     moving = true
   } else if (rx.value !== 0) rx.value = 0
   if (moving) raf = requestAnimationFrame(frame)
 }
 function settle() {
-  if (!raf) raf = requestAnimationFrame(frame)
+  if (raf) return
+  lastFrame = performance.now()
+  raf = requestAnimationFrame(frame)
 }
 function onDown(e: PointerEvent) {
   if (e.button !== 0) return
@@ -50,7 +57,7 @@ function onDown(e: PointerEvent) {
   smooth.value = false
   vel = 0
   start = { x: e.clientX, y: e.clientY, ry: ry.value, rx: rx.value }
-  last = { x: e.clientX, t: performance.now() }
+  samples = [{ x: e.clientX, t: performance.now() }]
   ;(e.currentTarget as HTMLElement).setPointerCapture(e.pointerId)
 }
 function onMove(e: PointerEvent) {
@@ -58,15 +65,17 @@ function onMove(e: PointerEvent) {
   ry.value = start.ry + (e.clientX - start.x) * 0.6
   if (e.pointerType === 'mouse') rx.value = Math.min(14, Math.max(-20, start.rx - (e.clientY - start.y) * 0.25))
   const now = performance.now()
-  const dt = Math.max(1, now - last.t)
-  vel = reduced ? 0 : (((e.clientX - last.x) * 0.6) / dt) * 0.9
-  last = { x: e.clientX, t: now }
+  samples.push({ x: e.clientX, t: now })
+  while (samples.length > 2 && now - samples[0]!.t > 100) samples.shift()
+  const a = samples[0]!
+  const dt = Math.max(1, now - a.t)
+  vel = reduced || samples.length < 2 ? 0 : (((e.clientX - a.x) * 0.6) / dt) * 0.9
 }
 function onUp() {
   if (!dragging) return
   dragging = false
   // 停很久才放開就不帶慣性
-  if (performance.now() - last.t > 80) vel = 0
+  if (performance.now() - (samples[samples.length - 1]?.t ?? 0) > 80) vel = 0
   settle()
 }
 /** 轉回正面（最近的 0、360、720…） */
@@ -136,7 +145,7 @@ onBeforeUnmount(() => cancelAnimationFrame(raf))
   transform-origin: 50% 88%;
 }
 .spinner.smooth {
-  transition: transform 0.6s cubic-bezier(0.3, 1.2, 0.5, 1);
+  transition: transform 0.6s var(--ease-flip);
 }
 .layer {
   position: absolute;
