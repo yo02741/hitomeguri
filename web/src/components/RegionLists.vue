@@ -117,7 +117,7 @@ const failed = ref(new Set<string>())
         >
           <button
             type="button"
-            class="flex min-w-0 flex-1 items-center gap-3 px-1.5 py-1.5 text-left text-ink"
+            class="flex min-w-0 flex-1 items-start gap-3 px-1.5 py-1.5 text-left text-ink"
             :aria-current="s.id === selectedId ? 'true' : undefined"
             @focus="emit('highlight', s.id)"
             @click="emit('select', s.id)"
@@ -135,8 +135,8 @@ const failed = ref(new Set<string>())
               />
             </span>
             <span class="flex min-w-0 flex-col">
-              <span v-if="s.h" lang="ja" class="truncate text-caption tracking-kana text-sub">{{ s.h }}</span>
-              <span lang="ja" class="truncate text-body-sm font-bold">{{ s.n }}</span>
+              <span v-if="s.h" lang="ja" class="truncate text-caption tracking-kana text-sub" :title="s.h">{{ s.h }}</span>
+              <span lang="ja" class="line-clamp-2 text-body-sm font-bold break-words">{{ s.n }}</span>
             </span>
             <span v-if="s.c && g.tags.length > 1" class="ml-auto shrink-0 text-caption text-sub">{{ s.c }}</span>
           </button>

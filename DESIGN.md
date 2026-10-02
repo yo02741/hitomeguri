@@ -164,6 +164,7 @@
 - 字級一律用 token（rem），會跟著瀏覽器的預設字級放大；不寫 `text-[Npx]`。例外：Wordmark 上的裝飾假名、旅前小書的列印版面、收集卡卡面以 em 縮放的微縮字、§7.12 的印章、旅人衣櫃的「穿」封印。
 - 羅馬拼音：`font-latin font-semibold uppercase tracking-romaji`（海報區、景點名）；清單中可用首字大寫、不加字距。
 - 假名行：`text-caption tracking-kana text-sub`（在地區色底上改 `text-on-region/80`）。
+- 清單裡的名稱（景點、擴充包、停留點、紀錄）可以換兩行（`line-clamp-2 break-words`，列 `items-start`）；假名行與其他次要資訊才單行截斷，截斷的假名加 `title`。
 - 長名稱：日文標題（h1–h3、`text-title`）依文節斷行（base 的 `word-break: auto-phrase`，Safari 不支援時維持原樣）；不加 `text-wrap: balance`、`line-break: strict`，Safari 會把片假名從字中間切開。羅馬拼音加 `wrap-anywhere`，不撐出面板；清單裡靠右的羅馬拼音最多佔 40%。
 
 ---

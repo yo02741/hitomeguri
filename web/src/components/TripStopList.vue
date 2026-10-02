@@ -95,10 +95,10 @@ const isDrop = (idx: number) => props.dropAt?.day === props.day && props.dropAt.
         </span>
         <span v-if="day >= 0" class="grid size-6 shrink-0 place-items-center rounded-full bg-ink font-latin text-caption font-bold text-paper">{{ i + 1 }}</span>
         <button type="button" class="flex min-w-0 flex-1 flex-col text-left" @click="emit('focus', s.spot_id)">
-          <span v-if="spots.get(s.spot_id)?.h" lang="ja" class="truncate text-caption tracking-kana text-sub">{{ spots.get(s.spot_id)?.h }}</span>
-          <span class="truncate text-body-sm">
+          <span v-if="spots.get(s.spot_id)?.h" lang="ja" class="truncate text-caption tracking-kana text-sub" :title="spots.get(s.spot_id)?.h">{{ spots.get(s.spot_id)?.h }}</span>
+          <span class="line-clamp-2 text-body-sm break-words">
             <span lang="ja" class="font-bold">{{ s.name }}</span>
-            <span lang="ja" class="ml-1.5 text-caption text-sub">{{ regionOf(s.pref)?.name.ja }}</span>
+            <span lang="ja" class="ml-1.5 text-caption whitespace-nowrap text-sub">{{ regionOf(s.pref)?.name.ja }}</span>
           </span>
         </button>
         <Dropdown

@@ -33,12 +33,12 @@ const emit = defineEmits<{ remove: [row: MarkedSpot]; toggle: [row: MarkedSpot] 
       </label>
       <RouterLink
         :to="{ path: `/map/${r.pref}`, query: { spot: r.id } }"
-        class="flex min-h-tap min-w-0 flex-1 items-center gap-3 rounded-control px-2 py-2 text-ink no-underline hover:bg-surface"
+        class="flex min-h-tap min-w-0 flex-1 items-start gap-3 rounded-control px-2 py-2 text-ink no-underline hover:bg-surface"
       >
-        <RegionChip :pref="r.pref" :size="14" />
+        <RegionChip :pref="r.pref" :size="14" class="mt-0.5" />
         <span class="flex min-w-0 flex-col">
-          <span v-if="r.kana" lang="ja" class="truncate text-caption tracking-kana text-sub">{{ r.kana }}</span>
-          <span class="truncate text-body-sm">
+          <span v-if="r.kana" lang="ja" class="truncate text-caption tracking-kana text-sub" :title="r.kana">{{ r.kana }}</span>
+          <span class="line-clamp-2 text-body-sm break-words">
             <span lang="ja" class="font-bold">{{ r.name }}</span>
             <span v-if="r.zh" class="ml-1.5 text-caption text-sub">{{ r.zh }}</span>
           </span>

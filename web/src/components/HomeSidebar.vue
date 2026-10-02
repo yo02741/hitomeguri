@@ -33,13 +33,13 @@ const hasData = computed(() => new Set(props.available))
           v-for="r in isOpen(g.area) ? g.items : []"
           :key="r.prefecture"
           :to="`/map/${r.prefecture}`"
-          class="flex h-9 shrink-0 items-center gap-3 rounded-control px-2 no-underline hover:bg-surface"
+          class="flex h-9 shrink-0 items-center gap-2 rounded-control px-2 no-underline hover:bg-surface"
           :class="hasData.has(r.prefecture) ? 'text-ink' : 'text-sub'"
         >
           <RegionChip :pref="r.prefecture" :size="18" />
           <span lang="ja" class="w-14 shrink-0 text-body-sm font-bold">{{ r.name.ja }}</span>
-          <span lang="ja" class="min-w-0 truncate text-caption tracking-[1px] text-sub">{{ r.name.kana }}</span>
-          <span class="ml-auto shrink-0 font-latin text-[11px] font-bold tracking-[2px] text-sub">{{ r.name.romaji }}</span>
+          <span lang="ja" class="min-w-0 truncate text-caption text-sub" :title="r.name.kana">{{ r.name.kana }}</span>
+          <span class="ml-auto shrink-0 font-latin text-caption font-bold tracking-[0.06em] text-sub">{{ r.name.romaji }}</span>
         </RouterLink>
       </template>
     </nav>

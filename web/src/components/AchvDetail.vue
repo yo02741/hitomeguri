@@ -77,7 +77,7 @@ onMounted(() => {
       <ul class="flex flex-col">
         <li v-for="c in items.slice(0, MAX)" :key="c.key" class="border-b border-line-soft last:border-b-0">
           <RouterLink :to="c.to" class="flex min-h-11 items-center gap-3 py-1.5 text-body-sm text-ink no-underline hover:text-region-strong" @click="emit('close')">
-            <span class="min-w-0 flex-1 truncate" :lang="c.lang">{{ c.label }}</span>
+            <span class="line-clamp-2 min-w-0 flex-1 break-words" :lang="c.lang">{{ c.label }}</span>
             <span v-if="c.date" class="shrink-0 font-latin text-caption text-sub">{{ dotDate(c.date) }}</span>
           </RouterLink>
         </li>

@@ -134,15 +134,15 @@ const visitedCount = computed(() => rows.value.filter((it) => marks.markOf(it.s 
         >
           <button
             type="button"
-            class="flex min-h-tap min-w-0 flex-1 items-center gap-3 px-1.5 py-1.5 text-left text-ink"
+            class="flex min-h-tap min-w-0 flex-1 items-start gap-3 px-1.5 py-1.5 text-left text-ink"
             :aria-current="isSelected(it) ? 'true' : undefined"
             @mouseenter="emit('highlight', it.id)"
             @focus="emit('highlight', it.id)"
             @click="emit('select', it.id)"
           >
-            <span class="size-2.5 shrink-0 rounded-full bg-(--pack)" aria-hidden="true"></span>
+            <span class="mt-1.5 size-2.5 shrink-0 rounded-full bg-(--pack)" aria-hidden="true"></span>
             <span class="flex min-w-0 flex-col">
-              <span lang="ja" class="truncate text-body-sm font-bold">{{ it.n }}</span>
+              <span lang="ja" class="line-clamp-2 text-body-sm font-bold break-words">{{ it.n }}</span>
               <span v-if="detail(it)" lang="ja" class="truncate text-caption text-sub">{{ detail(it) }}</span>
             </span>
             <!-- 首頁依縣分段，組別標在右側；地區頁已依組別分段 -->
