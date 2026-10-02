@@ -129,7 +129,7 @@
 - 驗收回饋第一輪（2026-09-30）：見 docs/回饋修改驗收.md。截圖收藏存在 Firestore `users/{uid}/finds`（縮圖）與 `find_images`（原圖），
   圖片在瀏覽器壓縮（web/src/services/image.ts）。改了 firestore.rules 之後，模擬器的熱重載會被沙箱的代理擋下（Unable to parse JSON），要重開模擬器。
   旅前小書用瀏覽器列印：App 的固定高度捲動版面要加 `print:` 變體攤開（寫在 base layer 的 @media print 會被 utility 蓋掉）。
-- 成就（2026-10-02）：`data/achievements.ts`（目錄、規則文案）、`services/achievements.ts`（純函式：上下界推算達成日、evaluate、diffKnown）、
+- 成就（2026-10-02）：`data/achievements.ts`（目錄）、`data/achvRules.ts`（規則文案）、`services/achievements.ts`（純函式：上下界推算達成日、evaluate、diffKnown）、
   `stores/achievements.ts`（NEW 比對、takeRecent、inTrip）、`bundles/achievements.json`（`build_achievements`）。前端第一次有單元測試：
   `cd web && npm run test`（vitest，只測純函式；`vitest.config.ts` 不載入 PWA plugin）。
   marks、trips store 加 `synced`（`includeMetadataChanges`，只有 metadata 變的 snapshot 不重建）。
