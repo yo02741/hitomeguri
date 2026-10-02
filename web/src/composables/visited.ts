@@ -24,5 +24,17 @@ export function useVisitedEntries() {
     for (const [id, m] of marks.visited) out.set(id, { ...m, visited_on: m.visited_on ?? out.get(id)?.visited_on })
     return [...out.entries()]
   })
-  return { doneTrips, entries }
+  /** 每個景點每一次去過的日期（自己標的＋每一趟結束的行程）：收集卡的樣式每次抽一次 */
+  const datesById = computed(() => {
+    const out = new Map<string, Array<string | null>>()
+    const add = (id: string, d: string | null) => {
+      const list = out.get(id) ?? []
+      if (!list.includes(d)) list.push(d)
+      out.set(id, list)
+    }
+    for (const t of doneTrips.value) t.days.forEach((d, i) => d.stops.forEach((s) => add(s.spot_id, dayDate(t, i) ?? null)))
+    for (const [id, m] of marks.visited) if (m.visited_on || !out.has(id)) add(id, m.visited_on ?? null)
+    return out
+  })
+  return { doneTrips, entries, datesById }
 }

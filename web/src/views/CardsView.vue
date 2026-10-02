@@ -19,23 +19,25 @@ import { useUserStore } from '../stores/user'
 const userStore = useUserStore()
 const marks = useMarksStore()
 const catalog = useCatalogStore()
-const { entries } = useVisitedEntries()
+const { entries, datesById } = useVisitedEntries()
 
-const { cards, pendingByPref, castleTotal, castleDone, prefDone } = useCollection(() => entries.value)
+const { cards, pendingByPref, castleTotal, castleDone, prefDone } = useCollection(() => entries.value, (id) => datesById.value.get(id))
 
 // 篩選：依屬性（一張卡可以同時是名城和國寶）
-type FilterKey = 'all' | 'heritage' | 'castle' | 'treasure'
+type FilterKey = 'all' | 'heritage' | 'castle' | 'treasure' | 'special'
 const FILTERS: { key: FilterKey; label: string }[] = [
   { key: 'all', label: '全部' },
   { key: 'heritage', label: '世界遺產' },
   { key: 'castle', label: '名城' },
   { key: 'treasure', label: '國寶・特別史跡・特別名勝' },
+  { key: 'special', label: '全景・金箔' },
 ]
 const matches: Record<FilterKey, (e: CollectionCard) => boolean> = {
   all: () => true,
   heritage: (e) => e.face.designation === '世界遺產',
   castle: (e) => e.castle,
   treasure: (e) => Boolean(e.face.designation && e.face.designation !== '世界遺產'),
+  special: (e) => e.variants.some((v) => v.rank >= 2),
 }
 const filter = ref<FilterKey>('all')
 const counts = computed(() => Object.fromEntries(FILTERS.map((f) => [f.key, cards.value.filter(matches[f.key]).length])) as Record<FilterKey, number>)
@@ -158,8 +160,11 @@ function onCardKey(e: KeyboardEvent, id: string) {
               @click="openId = e.face.id"
               @keydown="onCardKey($event, e.face.id)"
             >
-              <SpotCard :card="e.face" :rarity="e.rarity" :label="e.label" :number="e.number" visited :visited-on="e.visitedOn" size="fluid" />
+              <SpotCard :card="e.face" :rarity="e.rarity" :label="e.label" :number="e.number" visited :visited-on="e.visitedOn" size="fluid" :variant="e.variants[0]" />
             </div>
+            <p v-if="e.variants.length > 1" class="mt-1.5 flex justify-center gap-1 text-caption text-sub">
+              <span class="font-latin">{{ e.variants.length }} / {{ e.variantTotal }}</span> 種
+            </p>
           </li>
           <li v-for="n in g.pending" :key="`p${n}`" class="skeleton aspect-[5/7] rounded-[10px]" aria-hidden="true"></li>
         </ul>
@@ -180,6 +185,8 @@ function onCardKey(e: KeyboardEvent, id: string) {
       visited
       :visited-on="opened.visitedOn"
       :position="{ index: openIndex, total: flat.length }"
+      :variants="opened.variants"
+      :variant-total="opened.variantTotal"
       :to="{ path: `/map/${opened.face.pref}`, query: { spot: opened.face.id } }"
       @step="step"
       @close="openId = null"
@@ -205,6 +212,9 @@ function onCardKey(e: KeyboardEvent, id: string) {
 }
 .swatch-castle {
   background: var(--color-t-castle);
+}
+.swatch-special {
+  background: repeating-linear-gradient(62deg, var(--color-gold-2) 0 1.5px, var(--color-gold-3) 1.5px 3px);
 }
 .swatch-treasure {
   background: linear-gradient(135deg, var(--color-gold-1), var(--color-gold-2), var(--color-gold-3));

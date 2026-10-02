@@ -72,6 +72,8 @@ export interface CardFace {
   pref: string
   name: { ja: string; kana?: string; romaji?: string; zh?: string }
   image?: { url: string; author?: string; license?: string }
+  /** 第二張照片（全景卡用；沒有就用第一張） */
+  altImage?: { url: string; author?: string; license?: string }
   /** 類型（寺院、城…） */
   kind?: string
   designation?: string
@@ -89,11 +91,13 @@ export function kindOf(tags: string[]): string | undefined {
 
 export function cardFromSpot(s: Spot): CardFace {
   const img = s.images[0]
+  const alt = s.images[1]
   return {
     id: s.id,
     pref: s.prefecture,
     name: { ja: s.name.ja, kana: s.name.kana, romaji: s.name.romaji, zh: s.name.zh_tw !== s.name.ja ? s.name.zh_tw : undefined },
     image: img ? { url: img.url, author: img.author, license: img.license } : undefined,
+    altImage: alt ? { url: alt.url, author: alt.author, license: alt.license } : undefined,
     kind: kindOf(s.tags),
     designation: designationOf(s.tags),
     summary: s.summary ? { text: s.summary.text_zh ?? s.summary.text, license: s.summary.license } : undefined,

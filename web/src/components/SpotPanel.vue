@@ -4,6 +4,10 @@ import { computed, ref, watch } from 'vue'
 import type { Spot } from '../services/bundles'
 import { cardFromSpot, cardNumberFor, designationOf, rarityLabel, rarityOf } from '../services/card'
 import { showReveal } from '../services/cardReveal'
+import { drawVariants, ownedVariants, allVariants } from '../services/cardVariants'
+import { todayIso } from '../services/userdb'
+import { useVisitedEntries } from '../composables/visited'
+import { useUserStore } from '../stores/user'
 import { googleMapsUrl } from '../services/maps'
 import { canSpeak, speakJa } from '../services/tts'
 import { useCatalogStore } from '../stores/catalog'
@@ -36,6 +40,8 @@ const category = computed(() => props.spot?.tags.filter((t) => !t.startsWith('gu
 // 景點收集卡（DESIGN.md §7.19）：名稱帶右側的卡片鈕放大檢視
 const catalog = useCatalogStore()
 const marks = useMarksStore()
+const userStore = useUserStore()
+const { datesById } = useVisitedEntries()
 const cardOpen = ref(false)
 watch(() => props.spot?.id, () => (cardOpen.value = false))
 const card = computed(() => {
@@ -52,13 +58,22 @@ const card = computed(() => {
     visitedOn: m?.visited_on ?? null,
   }
 })
+// 收集到的樣式（去過的才有；沒去過只有基本卡）
+const cardVariants = computed(() => {
+  const c = card.value
+  if (!c) return []
+  const dates = datesById.value.get(c.face.id)
+  return dates ? ownedVariants(userStore.user?.uid ?? '', c.face.id, dates, c.rarity) : []
+})
 // 按下去過：收集卡飛出來亮相，再收進紀錄分頁
 function onStamped() {
   const c = card.value
   if (!c) return
   // 這個縣還沒有其他去過的景點：第一次到這個縣
   const firstInPref = !Object.entries(marks.marks).some(([id, m]) => id !== c.face.id && m.visited && m.pref === c.face.pref)
-  showReveal({ face: c.face, rarity: c.rarity, label: c.label, number: c.number, firstInPref })
+  // 這一次去過抽到的樣式（今天的日期）：最稀有的那張
+  const variant = drawVariants(userStore.user?.uid ?? '', c.face.id, todayIso(), c.rarity).sort((a, b) => b.rank - a.rank)[0]
+  showReveal({ face: c.face, rarity: c.rarity, label: c.label, number: c.number, firstInPref, variant })
 }
 const station = computed(() => props.spot?.nearest_stations?.[0])
 const showZh = computed(() => props.spot && props.spot.name.zh_tw !== props.spot.name.ja)
@@ -229,6 +244,8 @@ function distance(m: number): string {
       :number="card.number"
       :visited="card.visited"
       :visited-on="card.visitedOn"
+      :variants="cardVariants.length ? cardVariants : undefined"
+      :variant-total="cardVariants.length ? allVariants(card.rarity).length : undefined"
       @close="cardOpen = false"
     />
   </section>

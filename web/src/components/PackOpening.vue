@@ -16,14 +16,20 @@ const emit = defineEmits<{ close: [] }>()
 const entries = computed<Array<[string, Mark]>>(() =>
   props.trip.days.flatMap((d, i) => d.stops.map((s): [string, Mark] => [s.spot_id, { pref: s.pref, name: s.name, visited: true, visited_on: dayDate(props.trip, i) }])),
 )
-const { cards } = useCollection(() => entries.value)
+// 這一趟的日期各抽一次樣式
+const tripDates = computed(() => {
+  const m = new Map<string, Array<string | null>>()
+  props.trip.days.forEach((d, i) => d.stops.forEach((s) => m.set(s.spot_id, [...(m.get(s.spot_id) ?? []), dayDate(props.trip, i) ?? null])))
+  return m
+})
+const { cards } = useCollection(() => entries.value, (id) => tripDates.value.get(id))
 const RANK: Record<Rarity, number> = { normal: 0, castle: 1, gold: 2, rainbow: 3 }
 // 同一個景點只算一張；稀有度、分數低的先翻
 const deck = computed(() => {
   const seen = new Set<string>()
   return cards.value
     .filter((c) => !seen.has(c.face.id) && seen.add(c.face.id))
-    .sort((a, b) => RANK[a.rarity] - RANK[b.rarity] || a.score - b.score)
+    .sort((a, b) => a.variants[0]!.rank - b.variants[0]!.rank || RANK[a.rarity] - RANK[b.rarity] || a.score - b.score)
 })
 const mainPref = computed(() => {
   const n = new Map<string, number>()
@@ -38,6 +44,14 @@ const flipped = ref(false)
 const revealed = ref<CollectionCard[]>([])
 const current = computed(() => deck.value[index.value] ?? null)
 
+// 翻開時背後的光：特別全景是虹、金箔是金、全景是白光，其他照稀有度
+function raysKind(c: CollectionCard): string {
+  const k = c.variants[0]?.kind
+  if (k === 'special') return 'rainbow'
+  if (k === 'gold') return 'gold'
+  if (k === 'full' && c.rarity === 'normal') return 'castle'
+  return c.rarity
+}
 function open() {
   if (stage.value !== 'sealed' || !deck.value.length) return
   stage.value = 'opening'
@@ -48,7 +62,7 @@ function next() {
   if (stage.value !== 'dealing' || !current.value) return
   if (!flipped.value) {
     flipped.value = true
-    navigator.vibrate?.(current.value.rarity === 'normal' ? 8 : 20)
+    navigator.vibrate?.(raysKind(current.value) === 'normal' ? 8 : 20)
     return
   }
   revealed.value = [...revealed.value, current.value]
@@ -115,7 +129,7 @@ function markOpened(tripId: string) {
 
     <!-- 一張一張翻 -->
     <div v-else-if="stage === 'dealing' && current" class="relative flex flex-col items-center gap-4">
-      <div v-if="flipped && current.rarity !== 'normal'" class="rays" :class="`rays-${current.rarity}`" :data-pref="current.face.pref" aria-hidden="true"></div>
+      <div v-if="flipped && raysKind(current) !== 'normal'" class="rays" :class="`rays-${raysKind(current)}`" :data-pref="current.face.pref" aria-hidden="true"></div>
       <button :key="current.face.id" type="button" class="deal-card relative [perspective:1400px]" :aria-label="flipped ? `下一張（${current.face.name.ja}）` : '翻開'" @click="next">
         <span class="flip relative block [transform-style:preserve-3d]" :class="{ 'is-flipped': flipped }">
           <span class="flip-back paper-grain absolute inset-0 grid place-items-center overflow-hidden rounded-[16px] bg-region text-on-region" :data-pref="mainPref ?? undefined">
@@ -123,7 +137,7 @@ function markOpened(tripId: string) {
             <span lang="ja" class="relative text-[34px] font-black">一巡り</span>
           </span>
           <span class="flip-front block">
-            <SpotCard :card="current.face" :rarity="current.rarity" :label="current.label" :number="current.number" visited :visited-on="current.visitedOn" size="lg" />
+            <SpotCard :card="current.face" :rarity="current.rarity" :label="current.label" :number="current.number" visited :visited-on="current.visitedOn" size="lg" :variant="current.variants[0]" />
           </span>
         </span>
       </button>
@@ -135,7 +149,7 @@ function markOpened(tripId: string) {
       <p class="text-center text-h3 font-black text-paper">{{ trip.name || '未命名行程' }}　<span class="font-latin">{{ deck.length }}</span> 張</p>
       <ul class="grid grid-cols-3 gap-3 sm:grid-cols-4 md:grid-cols-5">
         <li v-for="(c, i) in revealed" :key="c.face.id" class="deal-in @container" :style="{ '--i': Math.min(i, 15) }">
-          <SpotCard :card="c.face" :rarity="c.rarity" :label="c.label" :number="c.number" visited :visited-on="c.visitedOn" size="fluid" />
+          <SpotCard :card="c.face" :rarity="c.rarity" :label="c.label" :number="c.number" visited :visited-on="c.visitedOn" size="fluid" :variant="c.variants[0]" />
         </li>
       </ul>
     </div>
@@ -143,7 +157,7 @@ function markOpened(tripId: string) {
     <!-- 已翻開的排在下方 -->
     <ul v-if="stage === 'dealing' && revealed.length" class="flex max-w-full gap-2 overflow-x-auto px-2 pb-1" aria-label="已翻開">
       <li v-for="c in revealed" :key="c.face.id" class="mini w-12 shrink-0 @container">
-        <SpotCard :card="c.face" :rarity="c.rarity" :number="c.number" size="fluid" />
+        <SpotCard :card="c.face" :rarity="c.rarity" :number="c.number" size="fluid" :variant="c.variants[0]" />
       </li>
     </ul>
 

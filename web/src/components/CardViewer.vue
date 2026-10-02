@@ -1,9 +1,10 @@
 <script setup lang="ts">
-import { nextTick, onBeforeUnmount, onMounted, ref, watch } from 'vue'
+import { computed, nextTick, onBeforeUnmount, onMounted, ref, watch } from 'vue'
 import type { RouteLocationRaw } from 'vue-router'
 
 import { useTilt } from '../composables/tilt'
 import type { CardFace, Rarity } from '../services/card'
+import { BASE_VARIANT, type Variant } from '../services/cardVariants'
 import SpotCard from './SpotCard.vue'
 
 // 收集卡放大檢視（DESIGN.md §7.19）：畫面中央一張大卡，點卡片翻面；手機可以用傾斜角度讓卡片轉動。
@@ -20,10 +21,16 @@ const props = defineProps<{
   position?: { index: number; total: number }
   /** 收集冊：到地圖上看這個景點 */
   to?: RouteLocationRaw
+  /** 收集到的樣式（DESIGN.md §7.19a）與全部樣式的數量 */
+  variants?: Variant[]
+  variantTotal?: number
 }>()
 const emit = defineEmits<{ close: []; step: [delta: -1 | 1] }>()
 
 const tilt = useTilt(18)
+// 樣式：預設看最稀有的那張；換卡時回到第一張
+const vi = ref(0)
+const variant = computed(() => props.variants?.[vi.value] ?? props.variants?.[0] ?? BASE_VARIANT)
 const flipped = ref(false)
 const gyro = ref(false)
 // 觸控裝置才顯示「傾斜手機」
@@ -36,6 +43,7 @@ watch(
   () => props.card.id,
   async () => {
     flipped.value = false
+    vi.value = 0
     // 換卡時卡片元素重建，焦點跟著移到新的卡片
     await nextTick()
     cardEl.value?.focus()
@@ -137,6 +145,7 @@ onBeforeUnmount(() => document.removeEventListener('keydown', onKey))
             size="lg"
             :flipped="flipped"
             :tilt="tilt"
+            :variant="variant"
           />
         </div>
         <button
@@ -151,6 +160,21 @@ onBeforeUnmount(() => document.removeEventListener('keydown', onKey))
         </button>
       </div>
       <p v-if="position" class="font-latin text-label text-white/80" aria-live="polite">{{ position.index + 1 }} / {{ position.total }}</p>
+      <!-- 樣式：收集到的幾種之間切換 -->
+      <div v-if="variants && variants.length" class="flex flex-wrap items-center justify-center gap-1.5" role="group" aria-label="樣式">
+        <button
+          v-for="(v, i) in variants"
+          :key="v.key"
+          type="button"
+          class="h-8 rounded-full px-3 text-caption font-bold"
+          :class="i === vi ? 'bg-paper text-ink' : 'bg-paper/15 text-white hover:bg-paper/25'"
+          :aria-pressed="i === vi"
+          @click="vi = i"
+        >
+          {{ v.label }}
+        </button>
+        <span v-if="variantTotal" class="ml-1 font-latin text-caption text-white/70">{{ variants.length }} / {{ variantTotal }}</span>
+      </div>
       <div class="flex flex-wrap justify-center gap-2">
         <button
           v-if="touch && !tilt.reduced"

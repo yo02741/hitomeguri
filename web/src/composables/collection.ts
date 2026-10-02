@@ -3,8 +3,10 @@ import { computed, watch } from 'vue'
 import { packByKey } from '../data/packs'
 import type { MapSpot } from '../services/bundles'
 import { type CardFace, type CastleInfo, cardFromMapSpot, cardNumberFor, rarityLabel, rarityOf, type Rarity } from '../services/card'
+import { allVariants, ownedVariants, type Variant } from '../services/cardVariants'
 import { useCatalogStore } from '../stores/catalog'
 import type { Mark } from '../stores/marks'
+import { useUserStore } from '../stores/user'
 
 /** 收集冊的一張卡（DESIGN.md §7.19） */
 export interface CollectionCard {
@@ -15,14 +17,18 @@ export interface CollectionCard {
   castle: boolean
   score: number
   visitedOn: string | null
+  /** 收集到的樣式（稀有的在前）與全部樣式的數量 */
+  variants: Variant[]
+  variantTotal: number
 }
 
 /**
  * 去過的景點 → 收集卡。卡面只用地圖 bundle（名稱、小圖、類型、文化指定），
  * 名城看擴充包「城」。擴充包的點（人孔蓋、老舖…）不做成卡。
  */
-export function useCollection(entries: () => Array<[string, Mark]>) {
+export function useCollection(entries: () => Array<[string, Mark]>, datesOf?: (id: string) => Array<string | null> | undefined) {
   const catalog = useCatalogStore()
+  const userStore = useUserStore()
   const prefs = computed(() => [...new Set(entries().map(([, m]) => m.pref))])
   watch(prefs, (ps) => ps.forEach((p) => void catalog.loadMap(p)), { immediate: true })
   void catalog.loadPack('castle')
@@ -44,10 +50,14 @@ export function useCollection(entries: () => Array<[string, Mark]>) {
       const s = spotsById.value.get(id)
       if (!s) return []
       const castle = castleBySpot.value.get(id)
+      const rarity = rarityOf(s.d, Boolean(castle))
+      const dates = datesOf?.(id) ?? [mark.visited_on ?? null]
       return [
         {
           face: cardFromMapSpot(s, mark.pref),
-          rarity: rarityOf(s.d, Boolean(castle)),
+          rarity,
+          variants: ownedVariants(userStore.user?.uid ?? '', id, dates, rarity),
+          variantTotal: allVariants(rarity).length,
           label: rarityLabel(s.d, castle),
           number: cardNumberFor(id, catalog.mapSpots[mark.pref], castle, s.d),
           castle: Boolean(castle),

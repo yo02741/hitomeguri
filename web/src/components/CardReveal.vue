@@ -12,6 +12,13 @@ import SpotCard from './SpotCard.vue'
 // 點任何地方、Esc 直接收進去。
 const marks = useMarksStore()
 const r = computed(() => reveal.value)
+// 光的顏色：抽到特別全景是虹、金箔是金，其他照稀有度
+const burstKind = computed(() => {
+  const v = r.value?.variant?.kind
+  if (v === 'special') return 'rainbow'
+  if (v === 'gold') return 'gold'
+  return r.value?.rarity ?? 'normal'
+})
 const visitedOn = computed(() => (r.value ? (marks.markOf(r.value.face.id)?.visited_on ?? null) : null))
 
 const backdrop = ref<HTMLElement | null>(null)
@@ -62,7 +69,7 @@ async function play() {
     }),
   ]
   later(820, land)
-  later(820 + (HOLD[r.value?.rarity ?? 'normal'] ?? 2000) + (r.value?.firstInPref ? STAMP_HOLD : 0), leave)
+  later(820 + (HOLD[burstKind.value] ?? 2000) + (r.value?.firstInPref ? STAMP_HOLD : 0), leave)
 }
 
 // 落定：蓋印章、光掃過、手機輕震一下
@@ -145,14 +152,14 @@ onBeforeUnmount(() => {
 <template>
   <div v-if="r" :key="r.key" class="fixed inset-0 z-[70] overflow-hidden print:hidden" @click="leave">
     <div ref="backdrop" class="absolute inset-0 bg-ink/50"></div>
-    <div ref="burst" class="burst" :class="`burst-${r.rarity}`" :data-pref="r.face.pref" aria-hidden="true">
+    <div ref="burst" class="burst" :class="`burst-${burstKind}`" :data-pref="r.face.pref" aria-hidden="true">
       <div class="rays"></div>
       <span v-if="landed" class="ring"></span>
     </div>
     <div class="absolute inset-0 grid place-items-center">
       <div ref="fly" class="relative">
         <div ref="spin" class="relative [transform-style:preserve-3d]">
-          <SpotCard :card="r.face" :rarity="r.rarity" :label="r.label" :number="r.number" :visited="landed" :visited-on="visitedOn" size="lg" />
+          <SpotCard :card="r.face" :rarity="r.rarity" :label="r.label" :number="r.number" :visited="landed" :visited-on="visitedOn" size="lg" :variant="r.variant" />
           <div class="pointer-events-none absolute inset-0 overflow-hidden rounded-[16px] mix-blend-overlay" aria-hidden="true">
             <div ref="sweep" class="sweep absolute inset-0"></div>
           </div>
@@ -161,7 +168,7 @@ onBeforeUnmount(() => {
         <PrefStamp v-if="landed && r.firstInPref" :pref="r.face.pref" :date="visitedOn ?? todayIso()" class="first-stamp absolute -bottom-5 -left-9 z-10 w-[148px]" />
       </div>
     </div>
-    <p class="sr-only" role="status">{{ r.face.name.ja }}　收進收集冊</p>
+    <p class="sr-only" role="status">{{ r.face.name.ja }}　{{ r.variant?.label ?? '' }}　收進收集冊</p>
   </div>
 </template>
 

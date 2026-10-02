@@ -1,6 +1,7 @@
 import { shallowRef } from 'vue'
 
 import type { CardFace, Rarity } from './card'
+import type { Variant } from './cardVariants'
 
 /**
  * 新卡入手（DESIGN.md §7.19）：在景點卡片按下「去過」時，收集卡轉著飛出來、亮相，
@@ -13,6 +14,8 @@ export interface Reveal {
   number: string
   /** 這個縣第一個去過的景點：蓋上縣的紀念章 */
   firstInPref?: boolean
+  /** 這次抽到的樣式（最稀有的那張） */
+  variant?: Variant
   key: number
 }
 
