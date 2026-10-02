@@ -18,6 +18,8 @@ export interface AvatarParts {
   hair: HairStyle
   hairColor: 1 | 2 | 3 | 4 | 5
   eyes: EyeStyle
+  /** 舞台的背景：去過的縣（沒選就是最近去的縣） */
+  stage?: string
 }
 interface Saved {
   parts: AvatarParts
@@ -25,7 +27,7 @@ interface Saved {
   owned: string[]
   used: number
 }
-const DEFAULT_PARTS: AvatarParts = { skin: 1, hair: 'short', hairColor: 1, eyes: 'round' }
+const DEFAULT_PARTS: AvatarParts = { skin: 1, hair: 'bob', hairColor: 1, eyes: 'round' }
 const LOCAL = 'hitomeguri:avatar'
 const WEIGHT: Record<Outfit['rarity'], number> = { 1: 6, 2: 3, 3: 1 }
 

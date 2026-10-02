@@ -2,6 +2,7 @@
 import AppHeader from './components/AppHeader.vue'
 import AppUpdate from './components/AppUpdate.vue'
 import CardReveal from './components/CardReveal.vue'
+import DollDefs from './components/DollDefs.vue'
 import TabBar from './components/TabBar.vue'
 import { useExploreStore } from './stores/explore'
 
@@ -23,5 +24,6 @@ const explore = useExploreStore()
     <TabBar />
     <CardReveal />
     <AppUpdate />
+    <DollDefs />
   </div>
 </template>

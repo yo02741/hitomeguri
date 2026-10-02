@@ -166,7 +166,9 @@ function open(id: string) {
         to="/log/avatar"
         class="group flex h-[132px] items-center gap-3 rounded-card border border-line bg-paper px-4 text-ink no-underline hover:bg-surface"
       >
-        <PaperDoll :parts="avatar.parts" :equipped="avatar.equipped" class="h-[116px] w-[88px] shrink-0" />
+        <span class="paper-grain relative h-[108px] w-[92px] shrink-0 overflow-hidden rounded-control bg-region-tint" aria-hidden="true">
+          <PaperDoll :parts="avatar.parts" :equipped="{ ...avatar.equipped, buddy: undefined }" crop="36 8 168 196" class="absolute inset-0 size-full" />
+        </span>
         <span class="flex min-w-0 flex-col gap-0.5">
           <span class="text-title font-black tracking-[2px]">旅人</span>
           <span class="text-label">服裝 <span class="font-latin text-body-sm font-semibold">{{ avatar.ownedIds.size }}</span> / {{ OUTFITS.length }}</span>
