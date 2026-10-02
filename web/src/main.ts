@@ -3,7 +3,8 @@ import { createApp } from 'vue'
 
 import App from './App.vue'
 import { router } from './router'
-import { sealSplash, trackSplash, webfontsReady } from './services/splash'
+import { whenIdle } from './services/idle'
+import { afterSplash, sealSplash, trackSplash, webfontsReady } from './services/splash'
 import './services/theme'
 import { installViewTransitions } from './services/viewTransition'
 import './styles/theme.css'
@@ -18,3 +19,11 @@ app.mount('#app')
 // 初始路由的頁面在 isReady 後的 microtask 內渲染、登記要等的資料與地圖；
 // 用 setTimeout 排在那之後再封口
 void router.isReady().then(() => setTimeout(sealSplash, 0))
+// 景點面板與新卡入手不在入口程式裡（ExploreView、App.vue 的 defineAsyncComponent）：
+// 開場畫面拿掉、瀏覽器空下來之後先抓，第一次點景點、第一次按「去過」不必等下載
+afterSplash(() =>
+  whenIdle(() => {
+    void import('./components/SpotPanel.vue')
+    void import('./components/CardReveal.vue')
+  }),
+)

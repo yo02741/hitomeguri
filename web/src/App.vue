@@ -3,7 +3,6 @@ import { defineAsyncComponent } from 'vue'
 
 import AppHeader from './components/AppHeader.vue'
 import AppUpdate from './components/AppUpdate.vue'
-import CardReveal from './components/CardReveal.vue'
 import TabBar from './components/TabBar.vue'
 import { walkerOn } from './services/walker'
 import { useExploreStore } from './stores/explore'
@@ -13,7 +12,9 @@ import { useUserStore } from './stores/user'
 const explore = useExploreStore()
 const userStore = useUserStore()
 
-// 登入後才用到的不放進入口程式：紙娃娃的 SVG 定義、散步的旅人（沒登入的人不下載服裝的 SVG）。
+// 登入後才用到的不放進入口程式：新卡入手（開場之後閒下來先抓，main.ts）、紙娃娃的 SVG 定義、散步的旅人。
+// 新卡入手登入就掛上：它用的成就 store 要在第一次「去過」之前建好基準（stores/achievements.ts）。
+const CardReveal = defineAsyncComponent(() => import('./components/CardReveal.vue'))
 const DollDefs = defineAsyncComponent(() => import('./components/DollDefs.vue'))
 const DollWalker = defineAsyncComponent(() => import('./components/DollWalker.vue'))
 </script>
@@ -30,9 +31,9 @@ const DollWalker = defineAsyncComponent(() => import('./components/DollWalker.vu
       <RouterView />
     </main>
     <TabBar />
-    <CardReveal />
     <AppUpdate />
     <template v-if="userStore.user">
+      <CardReveal />
       <DollDefs />
       <DollWalker v-if="walkerOn" />
     </template>

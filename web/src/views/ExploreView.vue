@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, nextTick, onBeforeUnmount, onMounted, ref, shallowRef, watch } from 'vue'
+import { computed, defineAsyncComponent, nextTick, onBeforeUnmount, onMounted, ref, shallowRef, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 
 import HomeSidebar from '../components/HomeSidebar.vue'
@@ -10,7 +10,7 @@ import PackPanel from '../components/PackPanel.vue'
 import RegionLists from '../components/RegionLists.vue'
 import RegionTag from '../components/RegionTag.vue'
 import RollingNumber from '../components/RollingNumber.vue'
-import SpotPanel, { type NearbyPack } from '../components/SpotPanel.vue'
+import type { NearbyPack } from '../components/SpotPanel.vue'
 import TimedList from '../components/TimedList.vue'
 import { categoryGroup } from '../data/categories'
 import { PACKS, packByKey, packOfId } from '../data/packs'
@@ -35,6 +35,9 @@ import { useMarksStore } from '../stores/marks'
 import { useUserStore } from '../stores/user'
 
 const props = defineProps<{ pref?: string }>()
+// 景點面板（含收藏・去過・行程按鈕、日期選擇、收集卡）選了景點才用到，不放進入口程式；
+// 開場之後閒下來先抓（main.ts），第一次點景點不必等
+const SpotPanel = defineAsyncComponent(() => import('../components/SpotPanel.vue'))
 const route = useRoute()
 const router = useRouter()
 const catalog = useCatalogStore()

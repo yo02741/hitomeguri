@@ -159,6 +159,7 @@ function leave() {
 function onKey(e: KeyboardEvent) {
   if (e.key === 'Escape') leave()
 }
+// immediate：這個元件登入後才非同步掛上（App.vue），沒登入時按「去過」、登入完馬上要播的那張也播得到
 watch(
   () => r.value?.key,
   (k) => {
@@ -169,10 +170,13 @@ watch(
       document.removeEventListener('keydown', onKey)
     }
   },
+  { immediate: true },
 )
+// 登出時卸下：播到一半的不留到下次登入
 onBeforeUnmount(() => {
   clear()
   document.removeEventListener('keydown', onKey)
+  reveal.value = null
 })
 </script>
 
