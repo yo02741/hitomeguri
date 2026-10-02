@@ -33,14 +33,17 @@ SEASON_RE: dict[str, re.Pattern[str]] = {
     "night": re.compile(
         r"\bnights?\b|\bevening\b|illuminat|light[ _-]?up|ライトアップ|夜景|夜", re.I
     ),
-    "spring": re.compile(r"cherry[ _-]?blossoms?|sakura|\bspring\b|桜|春", re.I),
+    "spring": re.compile(r"cherry[ _-]?blossoms?|\bsakura\b|\bspring\b|桜|春", re.I),
     "summer": re.compile(r"\bsummer\b|夏", re.I),
     "autumn": re.compile(r"\bautumn\b|fall[ _]foliage|\bfall\b|紅葉|momiji|秋", re.I),
     "winter": re.compile(r"\bwinter\b|\bsnow(y|fall)?\b|冬|雪", re.I),
 }
-# 季節字樣但不是季節：溫泉（hot spring）、春日大社、秋葉原、雪舟…
+# 季節字樣但不是季節：溫泉（hot spring）、湧水（spring water）、春日大社、秋葉原、雪舟、
+# 攝影者名稱 SAKURAKO…
 NOT_SEASON = re.compile(
-    r"hot[ _]springs?|onsen|kasuga|akihabara|akiba|sesshu|雪舟|春日|秋葉|springs\b", re.I
+    r"hot[ _]springs?|onsen|spring[ _-]?(water|well)|湧水|kasuga|akihabara|akiba|sesshu|"
+    r"sakurako|雪舟|春日|秋葉|springs\b",
+    re.I,
 )
 
 
@@ -336,14 +339,17 @@ def find_season_photos(
     toks = name_tokens(cat, ja)
     own = cat  # 景點自己的名稱（分類名）裡的季節字樣不算
     pool: dict[str, tuple[dict[str, Any], str]] = {}
+    in_cat: set[str] = set()  # 景點自己的分類（含季節子分類）裡的檔案
     # 1. 季節子分類（每季最多看兩個）
     subs = subcategories(cat)
     for s in SEASONS:
         for sub in [x for x in subs if season_of(x, own) == s][:2]:
             for f in files_in(sub):
                 pool.setdefault(f["title"], (f, s))
+                in_cat.add(f["title"])
     # 2. 主分類裡檔名有季節字樣的
     for f in files_in(cat, 500):
+        in_cat.add(f["title"])
         if s := season_of(f["title"], own):
             pool.setdefault(f["title"], (f, s))
     # 3. 描繪這個景點的檔案（全部的前 50 筆＋有季節字樣的前 50 筆）
@@ -361,6 +367,14 @@ def find_season_photos(
             )
             if s:
                 pool.setdefault(f["title"], (f, s))
+
+    # 只靠「描繪」找到的檔案，檔名或分類也要有景點名稱，或在景點自己的分類裡：
+    # 「描繪」常標上背景裡的地標（例：千鳥ヶ淵的櫻花標了東京鐵塔）
+    def on_target(f: dict[str, Any]) -> bool:
+        t = f["title"]
+        return t in in_cat or mentions(t, toks) or any(mentions(c, toks) for c in f.get("cats", []))
+
+    pool = {t: v for t, v in pool.items() if on_target(v[0])}
     used = {main_file} if main_file else set()
     relevant = [
         t

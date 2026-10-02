@@ -4907,11 +4907,23 @@
     "status": "published",
     "updated_at": "2026-10-02",
     "season_images": {
+      "spring": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b4/Sakura_in_Hikone_Castle_20170409.jpg/960px-Sakura_in_Hikone_Castle_20170409.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Suicasmo",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Sakura_in_Hikone_Castle_20170409.jpg"
+      },
       "autumn": {
         "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/97/Colored_leaves_at_Hikone_castle_%E5%BD%A6%E6%A0%B9%E5%9F%8E%E3%81%AE%E7%B4%85%E8%91%89_%282114707695%29.jpg/960px-Colored_leaves_at_Hikone_castle_%E5%BD%A6%E6%A0%B9%E5%9F%8E%E3%81%AE%E7%B4%85%E8%91%89_%282114707695%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
         "author": "Yamaguchi Yoshiaki from Japan",
         "license": "CC BY-SA 2.0",
         "source_url": "https://commons.wikimedia.org/wiki/File:Colored_leaves_at_Hikone_castle_%E5%BD%A6%E6%A0%B9%E5%9F%8E%E3%81%AE%E7%B4%85%E8%91%89_(2114707695).jpg"
+      },
+      "night": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/96/Dream_night_Hikone_%282117665607%29.jpg/960px-Dream_night_Hikone_%282117665607%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Yamaguchi Yoshiaki from Japan",
+        "license": "CC BY-SA 2.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Dream_night_Hikone_(2117665607).jpg"
       }
     }
   },
@@ -21272,14 +21284,7 @@
     ],
     "status": "published",
     "updated_at": "2026-10-02",
-    "season_images": {
-      "spring": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Cherry_Blossoms_Framed%2C_Mijo_Museum_Tunnel_2016_%2832176230205%29.jpg/960px-Cherry_Blossoms_Framed%2C_Mijo_Museum_Tunnel_2016_%2832176230205%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Stephen Kelly from San Francisco, CA, USA",
-        "license": "CC BY 2.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Cherry_Blossoms_Framed,_Mijo_Museum_Tunnel_2016_(32176230205).jpg"
-      }
-    }
+    "season_images": {}
   },
   {
     "id": "wd-Q127689356",
@@ -23176,10 +23181,10 @@
     "updated_at": "2026-10-02",
     "season_images": {
       "winter": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/85/Nagara_Shrine.jpg/960px-Nagara_Shrine.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/88/%E5%9C%92%E5%9F%8E%E5%AF%BA%EF%BC%88%E4%B8%89%E4%BA%95%E5%AF%BA%EF%BC%89_-_panoramio_%281%29.jpg/960px-%E5%9C%92%E5%9F%8E%E5%AF%BA%EF%BC%88%E4%B8%89%E4%BA%95%E5%AF%BA%EF%BC%89_-_panoramio_%281%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
         "author": "くろふね",
         "license": "CC BY 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Nagara_Shrine.jpg"
+        "source_url": "https://commons.wikimedia.org/wiki/File:%E5%9C%92%E5%9F%8E%E5%AF%BA%EF%BC%88%E4%B8%89%E4%BA%95%E5%AF%BA%EF%BC%89_-_panoramio_(1).jpg"
       }
     }
   },
@@ -23232,8 +23237,15 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-10-02",
+    "season_images": {
+      "summer": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4c/View_of_Otsu_from_Mount_Hiei_in_summer.jpg/960px-View_of_Otsu_from_Mount_Hiei_in_summer.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Benlisquare",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:View_of_Otsu_from_Mount_Hiei_in_summer.jpg"
+      }
+    }
   },
   {
     "id": "wd-Q2017235",
@@ -23901,8 +23913,21 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-10-02",
+    "season_images": {
+      "autumn": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ea/Mount_Ibuki_top_2013-09-21.jpg/960px-Mount_Ibuki_top_2013-09-21.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Alpsdake",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Mount_Ibuki_top_2013-09-21.jpg"
+      },
+      "winter": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b1/Mount_Ibuki_%28from_Kohoku_mizudori_station%29.JPG/960px-Mount_Ibuki_%28from_Kohoku_mizudori_station%29.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Alpsdake",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Mount_Ibuki_(from_Kohoku_mizudori_station).JPG"
+      }
+    }
   },
   {
     "id": "wd-Q262438",
@@ -24030,10 +24055,10 @@
     "updated_at": "2026-10-02",
     "season_images": {
       "spring": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/ba/Lake_Biwa_canal_rightup_of_cherry_blossom.jpg/960px-Lake_Biwa_canal_rightup_of_cherry_blossom.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "L26",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8f/Keage_Incline_Spring_2021.jpg/960px-Keage_Incline_Spring_2021.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Aw1805",
         "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Lake_Biwa_canal_rightup_of_cherry_blossom.jpg"
+        "source_url": "https://commons.wikimedia.org/wiki/File:Keage_Incline_Spring_2021.jpg"
       }
     }
   },
@@ -27418,8 +27443,15 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-10-02",
+    "season_images": {
+      "spring": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/63/Mt_Hiei_with_Cherry_Blossom.JPG/960px-Mt_Hiei_with_Cherry_Blossom.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Hahifuheho",
+        "license": "CC0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Mt_Hiei_with_Cherry_Blossom.JPG"
+      }
+    }
   },
   {
     "id": "wd-Q76820638",

@@ -16,6 +16,11 @@ def test_season_of():
     # 景點名稱裡的季節字樣不算
     assert sp.season_of("SPring-8 central administration building", "SPring-8") is None
     assert sp.season_of("SPring-8 at night", "SPring-8") == "night"
+    # 攝影者名稱、湧水不是春天
+    assert sp.season_of("SAKURAKO - Jozankei Spa. (25705274748).jpg") is None
+    assert sp.season_of("Furou spring water well.jpg") is None
+    assert sp.season_of("Yotei spring water collection space.jpg") is None
+    assert sp.season_of("Sakura at Ueno Park.jpg") == "spring"
 
 
 def _file(
@@ -100,14 +105,18 @@ def test_find_season_photos(monkeypatch):
         ]
 
     def fake_depicts(qid: str, seasonal: bool = False) -> list[dict[str, Any]]:
-        return [{**_file("IMG_2041.jpg"), "cats": ["Kiyomizu-dera in summer"]}]
+        return [
+            {**_file("IMG_2041.jpg"), "cats": ["Kiyomizu-dera in summer"]},
+            # 描繪標了這個景點，但拍的是別處（檔名、分類都沒有景點名稱）→ 不收
+            {**_file("Chidorigafuchi cherry blossoms.jpg", 6000, 4000), "cats": ["Chidorigafuchi"]},
+        ]
 
     monkeypatch.setattr(sp, "subcategories", fake_subcats)
     monkeypatch.setattr(sp, "files_in", fake_files)
     monkeypatch.setattr(sp, "depicting_files", fake_depicts)
     monkeypatch.setattr(sp, "quality_of", lambda titles: {})
     got = sp.find_season_photos("Kiyomizu-dera", "Kiyomizu main.jpg", "Q123", "清水寺")
-    # 春：只有沒寫名稱的花特寫 → 不放；冬：非商用授權 → 不放；夏：描繪這個景點、分類是夏天
+    # 春：沒寫名稱的花特寫、拍別處的 → 不放；冬：非商用授權 → 不放；夏：描繪這個景點、分類是夏天
     assert set(got) == {"autumn", "night", "summer"}
     assert got["autumn"]["source_url"].endswith("Kiyomizu autumn leaves.jpg")
     assert "illumination" in got["night"]["source_url"]

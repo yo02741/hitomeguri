@@ -1641,8 +1641,15 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-10-02",
+    "season_images": {
+      "night": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f3/Sapporo%2C_Hokkaido_%2850762129131%29.jpg/960px-Sapporo%2C_Hokkaido_%2850762129131%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Kzaral",
+        "license": "CC BY 2.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Sapporo,_Hokkaido_(50762129131).jpg"
+      }
+    }
   },
   {
     "id": "wd-Q1057199",
@@ -1879,20 +1886,7 @@
     ],
     "status": "published",
     "updated_at": "2026-10-02",
-    "season_images": {
-      "autumn": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9d/%E7%A7%8B%E5%87%BD%EF%BC%88Autumn_in_valley%EF%BC%89_-_panoramio.jpg/960px-%E7%A7%8B%E5%87%BD%EF%BC%88Autumn_in_valley%EF%BC%89_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "pakku",
-        "license": "CC BY 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:%E7%A7%8B%E5%87%BD%EF%BC%88Autumn_in_valley%EF%BC%89_-_panoramio.jpg"
-      },
-      "winter": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/45/Ishicari_river_2011_Winter_-_panoramio.jpg/960px-Ishicari_river_2011_Winter_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "t-konno",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Ishicari_river_2011_Winter_-_panoramio.jpg"
-      }
-    }
+    "season_images": {}
   },
   {
     "id": "wd-Q1063319",
@@ -2178,6 +2172,12 @@
         "author": "掬茶",
         "license": "CC BY-SA 4.0",
         "source_url": "https://commons.wikimedia.org/wiki/File:Late_autumn_in_Onuma_Quasi_National_Park.jpg"
+      },
+      "winter": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dc/Frozen_Lake_Onuma_%28Nanae%2C_Hokkaido%29_in_winter_20260118a.jpg/960px-Frozen_Lake_Onuma_%28Nanae%2C_Hokkaido%29_in_winter_20260118a.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "掬茶",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Frozen_Lake_Onuma_(Nanae,_Hokkaido)_in_winter_20260118a.jpg"
       }
     }
   },
@@ -2333,17 +2333,17 @@
     "status": "published",
     "updated_at": "2026-10-02",
     "season_images": {
-      "night": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6f/%E5%9C%9F%E7%A0%82%E9%99%8D%E3%82%8A%E3%81%A0%E3%81%A3%E3%81%9F%E3%81%91%E3%81%A9%E9%A0%91%E5%BC%B5%E3%81%A3%E3%81%A6%E6%92%AE%E3%81%A3%E3%81%A6%E3%81%BF%E3%81%9F%E5%B0%8F%E6%A8%BD%E9%81%8B%E6%B2%B3.JPG/960px-%E5%9C%9F%E7%A0%82%E9%99%8D%E3%82%8A%E3%81%A0%E3%81%A3%E3%81%9F%E3%81%91%E3%81%A9%E9%A0%91%E5%BC%B5%E3%81%A3%E3%81%A6%E6%92%AE%E3%81%A3%E3%81%A6%E3%81%BF%E3%81%9F%E5%B0%8F%E6%A8%BD%E9%81%8B%E6%B2%B3.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "pcs34560 from jawp This photo was taken with Canon EOS 6D",
-        "license": "Public domain",
-        "source_url": "https://commons.wikimedia.org/wiki/File:%E5%9C%9F%E7%A0%82%E9%99%8D%E3%82%8A%E3%81%A0%E3%81%A3%E3%81%9F%E3%81%91%E3%81%A9%E9%A0%91%E5%BC%B5%E3%81%A3%E3%81%A6%E6%92%AE%E3%81%A3%E3%81%A6%E3%81%BF%E3%81%9F%E5%B0%8F%E6%A8%BD%E9%81%8B%E6%B2%B3.JPG"
-      },
       "summer": {
         "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/62/Otaru_Canal_Dusk_in_summer.jpg/960px-Otaru_Canal_Dusk_in_summer.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
         "author": "Sho Horiuchi",
         "license": "CC BY-SA 3.0",
         "source_url": "https://commons.wikimedia.org/wiki/File:Otaru_Canal_Dusk_in_summer.jpg"
+      },
+      "night": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4f/Otaru_Canal_HDR1.jpg/960px-Otaru_Canal_HDR1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Tan Wei Liang Byorn",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Otaru_Canal_HDR1.jpg"
       }
     }
   },
@@ -2613,14 +2613,7 @@
     ],
     "status": "published",
     "updated_at": "2026-10-02",
-    "season_images": {
-      "spring": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b1/SAKURAKO_-_Andiamo%21_%2829958400301%29.jpg/960px-SAKURAKO_-_Andiamo%21_%2829958400301%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "MIKI Yoshihito from Sapporo City, Hokkaido, Japan",
-        "license": "CC BY 2.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:SAKURAKO_-_Andiamo!_(29958400301).jpg"
-      }
-    }
+    "season_images": {}
   },
   {
     "id": "wd-Q11260219",
@@ -2782,14 +2775,7 @@
     ],
     "status": "published",
     "updated_at": "2026-10-02",
-    "season_images": {
-      "spring": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/34/SAKURAKO_-_Organic_Restaurant._%2815720079756%29.jpg/960px-SAKURAKO_-_Organic_Restaurant._%2815720079756%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "MIKI Yoshihito from Sapporo City, Hokkaido, Japan",
-        "license": "CC BY 2.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:SAKURAKO_-_Organic_Restaurant._(15720079756).jpg"
-      }
-    }
+    "season_images": {}
   },
   {
     "id": "wd-Q11261729",
@@ -3230,8 +3216,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-10-02"
   },
   {
     "id": "wd-Q11277320",
@@ -4023,11 +4008,11 @@
     "status": "published",
     "updated_at": "2026-10-02",
     "season_images": {
-      "spring": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/69/SAKURAKO_-_Kiroro_Resort._%2824747729543%29.jpg/960px-SAKURAKO_-_Kiroro_Resort._%2824747729543%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "MIKI Yoshihito from Sapporo City,Hokkaido., JAPAN",
-        "license": "CC BY 2.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:SAKURAKO_-_Kiroro_Resort._(24747729543).jpg"
+      "winter": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/ba/%E3%82%AD%E3%83%AD%E3%83%AD_%2823%29_%282260163255%29.jpg/960px-%E3%82%AD%E3%83%AD%E3%83%AD_%2823%29_%282260163255%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "kuzyoken from JAPAN",
+        "license": "CC BY-SA 2.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:%E3%82%AD%E3%83%AD%E3%83%AD_(23)_(2260163255).jpg"
       }
     }
   },
@@ -4602,15 +4587,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-10-02",
-    "season_images": {
-      "spring": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a6/SAKURAKO._%2851303968576%29.jpg/960px-SAKURAKO._%2851303968576%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "MIKI Yoshihito from Sapporo City, Hokkaido, Japan",
-        "license": "CC BY 2.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:SAKURAKO._(51303968576).jpg"
-      }
-    }
+    "updated_at": "2026-10-02"
   },
   {
     "id": "wd-Q11335334",
@@ -6113,12 +6090,6 @@
     "status": "published",
     "updated_at": "2026-10-02",
     "season_images": {
-      "spring": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/77/SAKURAKO_-_Old_School_Amusement_Park._%2835342299046%29.jpg/960px-SAKURAKO_-_Old_School_Amusement_Park._%2835342299046%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "MIKI Yoshihito from Sapporo City,Hokkaido., JAPAN",
-        "license": "CC BY 2.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:SAKURAKO_-_Old_School_Amusement_Park._(35342299046).jpg"
-      },
       "night": {
         "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/50/Hokkaido-Greenland-amusement-park_evening-hours.JPG/960px-Hokkaido-Greenland-amusement-park_evening-hours.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
         "author": "SelEle-MS",
@@ -7014,22 +6985,16 @@
     "updated_at": "2026-10-02",
     "season_images": {
       "winter": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/27/Quiet_street._%2849617784956%29.jpg/960px-Quiet_street._%2849617784956%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "MIKI Yoshihito from Sapporo City,Hokkaido., JAPAN",
-        "license": "CC BY 2.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Quiet_street._(49617784956).jpg"
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a6/Sapporo_Tokeidai.JPG/960px-Sapporo_Tokeidai.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "aokomoriuta（青子守歌）",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Sapporo_Tokeidai.JPG"
       },
       "night": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8d/%E6%9C%AD%E5%B9%8C%E5%B8%82%E6%99%82%E8%A8%88%E5%8F%B0_-_panoramio_%281%29.jpg/960px-%E6%9C%AD%E5%B9%8C%E5%B8%82%E6%99%82%E8%A8%88%E5%8F%B0_-_panoramio_%281%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "くろふね",
-        "license": "CC BY 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:%E6%9C%AD%E5%B9%8C%E5%B8%82%E6%99%82%E8%A8%88%E5%8F%B0_-_panoramio_(1).jpg"
-      },
-      "spring": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2b/SAKURAKO_visits_Sapporo_Clock_Tower._%287921760500%29.jpg/960px-SAKURAKO_visits_Sapporo_Clock_Tower._%287921760500%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "MIKI Yoshihito from Sapporo City,Hokkaido., JAPAN",
-        "license": "CC BY 2.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:SAKURAKO_visits_Sapporo_Clock_Tower._(7921760500).jpg"
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/17/Sapporo_Clock_Tower_%E6%9C%AD%E5%B9%8C%E5%B8%82%E6%99%82%E8%A8%88%E5%8F%B0_02.jpg/960px-Sapporo_Clock_Tower_%E6%9C%AD%E5%B9%8C%E5%B8%82%E6%99%82%E8%A8%88%E5%8F%B0_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "ノボホショコロトソ",
+        "license": "CC BY 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Sapporo_Clock_Tower_%E6%9C%AD%E5%B9%8C%E5%B8%82%E6%99%82%E8%A8%88%E5%8F%B0_02.jpg"
       }
     }
   },
@@ -7388,12 +7353,6 @@
     "status": "published",
     "updated_at": "2026-10-02",
     "season_images": {
-      "spring": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c2/SAKURAKO_-_Jozankei_Spa._%2825705274748%29.jpg/960px-SAKURAKO_-_Jozankei_Spa._%2825705274748%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "MIKI Yoshihito from Sapporo City, Hokkaido, Japan",
-        "license": "CC BY 2.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:SAKURAKO_-_Jozankei_Spa._(25705274748).jpg"
-      },
       "night": {
         "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9f/Night_of_Jozankei%EF%BC%8F%E5%AE%9A%E5%B1%B1%E6%B8%93%E3%83%BB%E5%A4%9C%E3%81%AE%E6%A9%8B_-_panoramio.jpg/960px-Night_of_Jozankei%EF%BC%8F%E5%AE%9A%E5%B1%B1%E6%B8%93%E3%83%BB%E5%A4%9C%E3%81%AE%E6%A9%8B_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
         "author": "T DMY",
@@ -7546,8 +7505,15 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-10-02",
+    "season_images": {
+      "winter": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ac/JNR-DD14323.JPG/960px-JNR-DD14323.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Kone",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:JNR-DD14323.JPG"
+      }
+    }
   },
   {
     "id": "wd-Q11462664",
@@ -8322,20 +8288,7 @@
     ],
     "status": "published",
     "updated_at": "2026-10-02",
-    "season_images": {
-      "autumn": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/05/Nunojiki_Fall.JPG/960px-Nunojiki_Fall.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "禁樹なずな",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Nunojiki_Fall.JPG"
-      },
-      "winter": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d9/Remains_of_Hokkaido_University_Snow_Physical_Observatory.JPG/960px-Remains_of_Hokkaido_University_Snow_Physical_Observatory.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "禁樹なずな",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Remains_of_Hokkaido_University_Snow_Physical_Observatory.JPG"
-      }
-    }
+    "season_images": {}
   },
   {
     "id": "wd-Q11509315",
@@ -8652,15 +8605,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-10-02",
-    "season_images": {
-      "spring": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/09/SAKURAKO_rests_in_the_tree_hammock_-_Hoshino_Resort_TOMAMU._%2848616493762%29.jpg/960px-SAKURAKO_rests_in_the_tree_hammock_-_Hoshino_Resort_TOMAMU._%2848616493762%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "MIKI Yoshihito from Sapporo City,Hokkaido., JAPAN",
-        "license": "CC BY 2.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:SAKURAKO_rests_in_the_tree_hammock_-_Hoshino_Resort_TOMAMU._(48616493762).jpg"
-      }
-    }
+    "updated_at": "2026-10-02"
   },
   {
     "id": "wd-Q11516088",
@@ -9106,14 +9051,7 @@
     ],
     "status": "published",
     "updated_at": "2026-10-02",
-    "season_images": {
-      "spring": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/88/SAKURAKO_-_Colt_.45_Automatic_Pistol%21_%2815629404152%29.jpg/960px-SAKURAKO_-_Colt_.45_Automatic_Pistol%21_%2815629404152%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "MIKI Yoshihito from Sapporo City,Hokkaido., JAPAN",
-        "license": "CC BY 2.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:SAKURAKO_-_Colt_.45_Automatic_Pistol!_(15629404152).jpg"
-      }
-    }
+    "season_images": {}
   },
   {
     "id": "wd-Q11521197",
@@ -9789,14 +9727,7 @@
     ],
     "status": "published",
     "updated_at": "2026-10-02",
-    "season_images": {
-      "spring": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f5/SAKURAKO_-_Souvenir_shopping_at_the_Toya_Sun_Palace_Resort_%26_Spa._%2849383947403%29.jpg/960px-SAKURAKO_-_Souvenir_shopping_at_the_Toya_Sun_Palace_Resort_%26_Spa._%2849383947403%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "MIKI Yoshihito from Sapporo City, Hokkaido, Japan",
-        "license": "CC BY 2.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:SAKURAKO_-_Souvenir_shopping_at_the_Toya_Sun_Palace_Resort_%26_Spa._(49383947403).jpg"
-      }
-    }
+    "season_images": {}
   },
   {
     "id": "wd-Q11556437",
@@ -10070,11 +10001,17 @@
     "status": "published",
     "updated_at": "2026-10-02",
     "season_images": {
+      "spring": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/68/Daisetsuzan_Volcanic_Group_seen_from_Woody_Life%2C_April_2023_01.jpg/960px-Daisetsuzan_Volcanic_Group_seen_from_Woody_Life%2C_April_2023_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Calistemon",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Daisetsuzan_Volcanic_Group_seen_from_Woody_Life,_April_2023_01.jpg"
+      },
       "winter": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3a/%E3%83%8B%E3%83%9A%E3%82%BD%E3%83%84%E5%B1%B1%E3%81%AE%E5%89%8D%E5%A4%A9%E7%8B%97%E4%BB%98%E8%BF%91%E3%81%8B%E3%82%89%E8%A6%8B%E3%81%9F%E5%A4%A7%E9%9B%AA%E5%B1%B1%E3%81%A8%E7%9F%B3%E7%8B%A9%E5%B2%B3%EF%BC%92.jpg/960px-%E3%83%8B%E3%83%9A%E3%82%BD%E3%83%84%E5%B1%B1%E3%81%AE%E5%89%8D%E5%A4%A9%E7%8B%97%E4%BB%98%E8%BF%91%E3%81%8B%E3%82%89%E8%A6%8B%E3%81%9F%E5%A4%A7%E9%9B%AA%E5%B1%B1%E3%81%A8%E7%9F%B3%E7%8B%A9%E5%B2%B3%EF%BC%92.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c7/%E3%83%8B%E3%83%9A%E3%82%BD%E3%83%84%E5%B1%B1%E3%81%8B%E3%82%89%E3%81%AE%E8%A1%A8%E5%A4%A7%E9%9B%AA.jpg/960px-%E3%83%8B%E3%83%9A%E3%82%BD%E3%83%84%E5%B1%B1%E3%81%8B%E3%82%89%E3%81%AE%E8%A1%A8%E5%A4%A7%E9%9B%AA.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
         "author": "Koda6029",
         "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:%E3%83%8B%E3%83%9A%E3%82%BD%E3%83%84%E5%B1%B1%E3%81%AE%E5%89%8D%E5%A4%A9%E7%8B%97%E4%BB%98%E8%BF%91%E3%81%8B%E3%82%89%E8%A6%8B%E3%81%9F%E5%A4%A7%E9%9B%AA%E5%B1%B1%E3%81%A8%E7%9F%B3%E7%8B%A9%E5%B2%B3%EF%BC%92.jpg"
+        "source_url": "https://commons.wikimedia.org/wiki/File:%E3%83%8B%E3%83%9A%E3%82%BD%E3%83%84%E5%B1%B1%E3%81%8B%E3%82%89%E3%81%AE%E8%A1%A8%E5%A4%A7%E9%9B%AA.jpg"
       }
     }
   },
@@ -10344,12 +10281,6 @@
         "author": "Hiroaki Kaneko",
         "license": "CC BY-SA 3.0",
         "source_url": "https://commons.wikimedia.org/wiki/File:%E6%98%A5%E7%88%9B%E6%BC%AB%E3%81%AE%E7%99%BE%E5%90%88%E3%81%8C%E5%8E%9F%E5%85%AC%E5%9C%92(Yurigahara_Park_in_spring)_10_May,_2015_-_panoramio.jpg"
-      },
-      "winter": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5d/%E5%86%AC%E3%81%AE%E3%81%BE%E3%81%A1%E3%81%AB%E3%82%B9%E3%83%8E%E3%83%BC%E3%82%AD%E3%83%A3%E3%83%B3%E3%83%89%E3%83%AB%E3%81%AE%E7%81%AF%E3%82%8A%E3%82%92%E3%81%A8%E3%82%82%E3%81%9D%E3%81%86%EF%BC%812012_%28%EF%BC%A3andle_lights_in_the_town_of_Winter_Snow%5E_2012%29_-_panoramio_%281%29.jpg/960px-%E5%86%AC%E3%81%AE%E3%81%BE%E3%81%A1%E3%81%AB%E3%82%B9%E3%83%8E%E3%83%BC%E3%82%AD%E3%83%A3%E3%83%B3%E3%83%89%E3%83%AB%E3%81%AE%E7%81%AF%E3%82%8A%E3%82%92%E3%81%A8%E3%82%82%E3%81%9D%E3%81%86%EF%BC%812012_%28%EF%BC%A3andle_lights_in_the_town_of_Winter_Snow%5E_2012%29_-_panoramio_%281%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "t-konno",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:%E5%86%AC%E3%81%AE%E3%81%BE%E3%81%A1%E3%81%AB%E3%82%B9%E3%83%8E%E3%83%BC%E3%82%AD%E3%83%A3%E3%83%B3%E3%83%89%E3%83%AB%E3%81%AE%E7%81%AF%E3%82%8A%E3%82%92%E3%81%A8%E3%82%82%E3%81%9D%E3%81%86%EF%BC%812012_(%EF%BC%A3andle_lights_in_the_town_of_Winter_Snow%5E_2012)_-_panoramio_(1).jpg"
       }
     }
   },
@@ -11013,14 +10944,7 @@
     ],
     "status": "published",
     "updated_at": "2026-10-02",
-    "season_images": {
-      "autumn": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/39/%E7%A7%8B%E3%81%AE%E6%9C%A8%E9%81%93_-_panoramio.jpg/960px-%E7%A7%8B%E3%81%AE%E6%9C%A8%E9%81%93_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "pakku",
-        "license": "CC BY 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:%E7%A7%8B%E3%81%AE%E6%9C%A8%E9%81%93_-_panoramio.jpg"
-      }
-    }
+    "season_images": {}
   },
   {
     "id": "wd-Q11589515",
@@ -11596,20 +11520,7 @@
     ],
     "status": "published",
     "updated_at": "2026-10-02",
-    "season_images": {
-      "spring": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3f/SAKURAKO_-_3D_glasses._%286606021737%29.jpg/960px-SAKURAKO_-_3D_glasses._%286606021737%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "MIKI Yoshihito from Sapporo City, Hokkaido, Japan",
-        "license": "CC BY 2.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:SAKURAKO_-_3D_glasses._(6606021737).jpg"
-      },
-      "winter": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e0/Winter_in_Sapporpo%2C_Chuo_Ward.jpg/960px-Winter_in_Sapporpo%2C_Chuo_Ward.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Sgroey",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Winter_in_Sapporpo,_Chuo_Ward.jpg"
-      }
-    }
+    "season_images": {}
   },
   {
     "id": "wd-Q11627029",
@@ -11841,17 +11752,23 @@
     "status": "published",
     "updated_at": "2026-10-02",
     "season_images": {
-      "spring": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/39/SAKURAKO_-_The_seat_closest_to_the_window._%286843894884%29.jpg/960px-SAKURAKO_-_The_seat_closest_to_the_window._%286843894884%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "MIKI Yoshihito from Sapporo City,Hokkaido., JAPAN",
-        "license": "CC BY 2.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:SAKURAKO_-_The_seat_closest_to_the_window._(6843894884).jpg"
+      "summer": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/72/1_Nakajimak%C5%8Den%2C_Ch%C5%AB%C5%8D-ku%2C_Sapporo-shi%2C_Hokkaid%C5%8D_064-0931%2C_Japan_-_panoramio.jpg/960px-1_Nakajimak%C5%8Den%2C_Ch%C5%AB%C5%8D-ku%2C_Sapporo-shi%2C_Hokkaid%C5%8D_064-0931%2C_Japan_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "alonfloc",
+        "license": "CC BY 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:1_Nakajimak%C5%8Den,_Ch%C5%AB%C5%8D-ku,_Sapporo-shi,_Hokkaid%C5%8D_064-0931,_Japan_-_panoramio.jpg"
       },
       "winter": {
         "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/11/Hoheikan_in_snow%2C_Sapporo_-_Jan_8%2C_2011.jpg/960px-Hoheikan_in_snow%2C_Sapporo_-_Jan_8%2C_2011.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
         "author": "MIKI Yoshihito",
         "license": "CC BY 2.0",
         "source_url": "https://commons.wikimedia.org/wiki/File:Hoheikan_in_snow,_Sapporo_-_Jan_8,_2011.jpg"
+      },
+      "night": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/58/Hoheikan_20080901-01.jpg/960px-Hoheikan_20080901-01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "iyoupapa",
+        "license": "CC BY-SA 2.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Hoheikan_20080901-01.jpg"
       }
     }
   },
@@ -12032,17 +11949,17 @@
     "status": "published",
     "updated_at": "2026-10-02",
     "season_images": {
-      "night": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/66/Christmas_crowds_in_Hakodate.jpg/960px-Christmas_crowds_in_Hakodate.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "掬茶",
-        "license": "CC0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Christmas_crowds_in_Hakodate.jpg"
-      },
       "winter": {
         "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f7/Kanemori_Red_Brick_Warehouse_in_winter_20231224.jpg/960px-Kanemori_Red_Brick_Warehouse_in_winter_20231224.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
         "author": "掬茶",
         "license": "CC BY-SA 4.0",
         "source_url": "https://commons.wikimedia.org/wiki/File:Kanemori_Red_Brick_Warehouse_in_winter_20231224.jpg"
+      },
+      "night": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c6/Hakodate_Kanemori_Red_Brick_Warehouse_20231223a.jpg/960px-Hakodate_Kanemori_Red_Brick_Warehouse_20231223a.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "掬茶",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Hakodate_Kanemori_Red_Brick_Warehouse_20231223a.jpg"
       }
     }
   },
@@ -12726,17 +12643,17 @@
     "status": "published",
     "updated_at": "2026-10-02",
     "season_images": {
-      "night": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/57/Shirogane_Blue_Pond_by_night%2C_April_2023_01.jpg/960px-Shirogane_Blue_Pond_by_night%2C_April_2023_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Calistemon",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Shirogane_Blue_Pond_by_night,_April_2023_01.jpg"
-      },
       "summer": {
         "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8a/Shirogane-Blue-Pond_summer.jpg/960px-Shirogane-Blue-Pond_summer.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
         "author": "MaedaAkihiko",
         "license": "CC BY-SA 4.0",
         "source_url": "https://commons.wikimedia.org/wiki/File:Shirogane-Blue-Pond_summer.jpg"
+      },
+      "night": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/57/Shirogane_Blue_Pond_by_night%2C_April_2023_01.jpg/960px-Shirogane_Blue_Pond_by_night%2C_April_2023_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Calistemon",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Shirogane_Blue_Pond_by_night,_April_2023_01.jpg"
       }
     }
   },
@@ -12998,12 +12915,6 @@
     "status": "published",
     "updated_at": "2026-10-02",
     "season_images": {
-      "summer": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/52/Lake_Mashu_in_Summer_2025.jpg/960px-Lake_Mashu_in_Summer_2025.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Benlisquare",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Lake_Mashu_in_Summer_2025.jpg"
-      },
       "winter": {
         "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/64/%E5%88%9D%E5%86%AC%E3%81%AE%E6%91%A9%E5%91%A8%E6%B9%96%EF%BC%88Lake_Mashu_of_the_winter%EF%BC%89_-_panoramio.jpg/960px-%E5%88%9D%E5%86%AC%E3%81%AE%E6%91%A9%E5%91%A8%E6%B9%96%EF%BC%88Lake_Mashu_of_the_winter%EF%BC%89_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
         "author": "pakku",
@@ -13128,6 +13039,18 @@
         "author": "Goryokaku-Tower",
         "license": "CC BY 4.0",
         "source_url": "https://commons.wikimedia.org/wiki/File:Hokkaido-Goryokaku_Fort_in_Cherry_blossom-xl.jpg"
+      },
+      "summer": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1b/Hokkaido-Goryokaku_Fort_in_Summer-xl.jpg/960px-Hokkaido-Goryokaku_Fort_in_Summer-xl.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Goryokaku-Tower",
+        "license": "CC BY 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Hokkaido-Goryokaku_Fort_in_Summer-xl.jpg"
+      },
+      "autumn": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f3/Hokkaido-Goryokaku_Fort_in_Autumn-xl.jpg/960px-Hokkaido-Goryokaku_Fort_in_Autumn-xl.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Goryokaku-Tower",
+        "license": "CC BY 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Hokkaido-Goryokaku_Fort_in_Autumn-xl.jpg"
       },
       "winter": {
         "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e2/Hokkaido-Goryokaku_Fort_in_winter-xl.jpg/960px-Hokkaido-Goryokaku_Fort_in_winter-xl.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -13428,17 +13351,11 @@
     "status": "published",
     "updated_at": "2026-10-02",
     "season_images": {
-      "spring": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8c/SAKURAKO_in_the_mist._%2827887645373%29.jpg/960px-SAKURAKO_in_the_mist._%2827887645373%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "MIKI Yoshihito from Sapporo City, Hokkaido, Japan",
-        "license": "CC BY 2.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:SAKURAKO_in_the_mist._(27887645373).jpg"
-      },
       "winter": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c1/From_Mt.Moere_in_winter%EF%BC%8F%E3%83%A2%E3%82%A8%E3%83%AC%E5%B1%B1%E3%82%88%E3%82%8A%EF%BC%88%E5%86%AC%EF%BC%89_-_panoramio.jpg/960px-From_Mt.Moere_in_winter%EF%BC%8F%E3%83%A2%E3%82%A8%E3%83%AC%E5%B1%B1%E3%82%88%E3%82%8A%EF%BC%88%E5%86%AC%EF%BC%89_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "T DMY",
-        "license": "CC BY 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:From_Mt.Moere_in_winter%EF%BC%8F%E3%83%A2%E3%82%A8%E3%83%AC%E5%B1%B1%E3%82%88%E3%82%8A%EF%BC%88%E5%86%AC%EF%BC%89_-_panoramio.jpg"
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/06/Moerenuma_Park_Winter_-_panoramio_-_t-konno_%281%29.jpg/960px-Moerenuma_Park_Winter_-_panoramio_-_t-konno_%281%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "t-konno",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Moerenuma_Park_Winter_-_panoramio_-_t-konno_(1).jpg"
       }
     }
   },
@@ -13491,8 +13408,15 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-10-02",
+    "season_images": {
+      "summer": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/02/Mount_Showa-shinzan_and_touyako.JPG/960px-Mount_Showa-shinzan_and_touyako.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "クリオネサラダ",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Mount_Showa-shinzan_and_touyako.JPG"
+      }
+    }
   },
   {
     "id": "wd-Q1329031",
@@ -13601,12 +13525,6 @@
     "status": "published",
     "updated_at": "2026-10-02",
     "season_images": {
-      "summer": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dc/%E3%81%93%E3%82%8C%E3%81%A7%EF%BD%9E%E3%81%84%E3%81%84%E3%81%AE%E3%81%A0%EF%BD%9E%E2%99%AA%E5%A4%8F_-_panoramio.jpg/960px-%E3%81%93%E3%82%8C%E3%81%A7%EF%BD%9E%E3%81%84%E3%81%84%E3%81%AE%E3%81%A0%EF%BD%9E%E2%99%AA%E5%A4%8F_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "pakku",
-        "license": "CC BY 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:%E3%81%93%E3%82%8C%E3%81%A7%EF%BD%9E%E3%81%84%E3%81%84%E3%81%AE%E3%81%A0%EF%BD%9E%E2%99%AA%E5%A4%8F_-_panoramio.jpg"
-      },
       "winter": {
         "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f4/Lake-Kussharo_Winter.jpg/960px-Lake-Kussharo_Winter.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
         "author": "MaedaAkihiko",
@@ -13952,23 +13870,23 @@
     "status": "published",
     "updated_at": "2026-10-02",
     "season_images": {
-      "night": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ce/Night_view_of_Goryokaku_Tower.jpg/960px-Night_view_of_Goryokaku_Tower.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "掬茶",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Night_view_of_Goryokaku_Tower.jpg"
-      },
       "spring": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/35/SAKURAKO_and_SAKIKO_-_Goryokaku_Tower._%2843982336452%29.jpg/960px-SAKURAKO_and_SAKIKO_-_Goryokaku_Tower._%2843982336452%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "MIKI Yoshihito from Sapporo City,Hokkaido., JAPAN",
-        "license": "CC BY 2.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:SAKURAKO_and_SAKIKO_-_Goryokaku_Tower._(43982336452).jpg"
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e8/Hokkaido-Cherry_blossoms_are_fully_bloomed_in_Goryokaku_park-xl.jpg/960px-Hokkaido-Cherry_blossoms_are_fully_bloomed_in_Goryokaku_park-xl.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Goryokaku-Tower",
+        "license": "CC BY 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Hokkaido-Cherry_blossoms_are_fully_bloomed_in_Goryokaku_park-xl.jpg"
       },
       "winter": {
         "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/Goryokaku_Tower_in_winter_20231223a.jpg/960px-Goryokaku_Tower_in_winter_20231223a.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
         "author": "掬茶",
         "license": "CC BY-SA 4.0",
         "source_url": "https://commons.wikimedia.org/wiki/File:Goryokaku_Tower_in_winter_20231223a.jpg"
+      },
+      "night": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ce/Night_view_of_Goryokaku_Tower.jpg/960px-Night_view_of_Goryokaku_Tower.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "掬茶",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Night_view_of_Goryokaku_Tower.jpg"
       }
     }
   },
@@ -14410,10 +14328,10 @@
     "updated_at": "2026-10-02",
     "season_images": {
       "night": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fc/Hokkaido_University_Museum_at_night_02.jpg/960px-Hokkaido_University_Museum_at_night_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6f/Hokkaido_University_Museum_at_night_01.jpg/960px-Hokkaido_University_Museum_at_night_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
         "author": "ノボホショコロトソ",
         "license": "CC BY 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Hokkaido_University_Museum_at_night_02.jpg"
+        "source_url": "https://commons.wikimedia.org/wiki/File:Hokkaido_University_Museum_at_night_01.jpg"
       }
     }
   },
@@ -14677,14 +14595,7 @@
     ],
     "status": "published",
     "updated_at": "2026-10-02",
-    "season_images": {
-      "night": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b2/%E5%A4%9C%E6%98%8E%E3%81%91%E3%81%AE%E9%B4%9B%E6%B3%8A%E3%82%B3%E3%83%BC%E3%82%B9.jpg/960px-%E5%A4%9C%E6%98%8E%E3%81%91%E3%81%AE%E9%B4%9B%E6%B3%8A%E3%82%B3%E3%83%BC%E3%82%B9.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Koda6029",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:%E5%A4%9C%E6%98%8E%E3%81%91%E3%81%AE%E9%B4%9B%E6%B3%8A%E3%82%B3%E3%83%BC%E3%82%B9.jpg"
-      }
-    }
+    "season_images": {}
   },
   {
     "id": "wd-Q21652600",
@@ -14819,14 +14730,7 @@
     ],
     "status": "published",
     "updated_at": "2026-10-02",
-    "season_images": {
-      "winter": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a1/%E5%86%AC%E3%81%AE%E5%8C%97%E5%A4%A7%E8%BE%B2%E5%A0%B4_02.jpg/960px-%E5%86%AC%E3%81%AE%E5%8C%97%E5%A4%A7%E8%BE%B2%E5%A0%B4_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "ノボホショコロトソ",
-        "license": "CC BY 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:%E5%86%AC%E3%81%AE%E5%8C%97%E5%A4%A7%E8%BE%B2%E5%A0%B4_02.jpg"
-      }
-    }
+    "season_images": {}
   },
   {
     "id": "wd-Q21654596",
@@ -15192,12 +15096,6 @@
     "status": "published",
     "updated_at": "2026-10-02",
     "season_images": {
-      "summer": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1f/Daisetsu-zan_in_summer.jpg/960px-Daisetsu-zan_in_summer.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Miya.m",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Daisetsu-zan_in_summer.jpg"
-      },
       "winter": {
         "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/ba/Mount_Asahi_%28Daisetsuzan%29_under_snow%2C_April_2023_01.jpg/960px-Mount_Asahi_%28Daisetsuzan%29_under_snow%2C_April_2023_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
         "author": "Calistemon",
@@ -15563,14 +15461,7 @@
     ],
     "status": "published",
     "updated_at": "2026-10-02",
-    "season_images": {
-      "spring": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fe/SAKURAKO_-_Snow_Activities%21_%2823953766864%29.jpg/960px-SAKURAKO_-_Snow_Activities%21_%2823953766864%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "MIKI Yoshihito from Sapporo City,Hokkaido., JAPAN",
-        "license": "CC BY 2.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:SAKURAKO_-_Snow_Activities!_(23953766864).jpg"
-      }
-    }
+    "season_images": {}
   },
   {
     "id": "wd-Q2688247",
@@ -15781,10 +15672,10 @@
     "updated_at": "2026-10-02",
     "season_images": {
       "autumn": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e6/131103_Hokkaido_University_Botanical_Gardens_Sapporo_Hokkaido_Japan03s3.jpg/960px-131103_Hokkaido_University_Botanical_Gardens_Sapporo_Hokkaido_Japan03s3.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/80/131103_Hokkaido_University_Botanical_Gardens_Sapporo_Hokkaido_Japan12s5.jpg/960px-131103_Hokkaido_University_Botanical_Gardens_Sapporo_Hokkaido_Japan12s5.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
         "author": "663highland",
         "license": "CC BY 2.5",
-        "source_url": "https://commons.wikimedia.org/wiki/File:131103_Hokkaido_University_Botanical_Gardens_Sapporo_Hokkaido_Japan03s3.jpg"
+        "source_url": "https://commons.wikimedia.org/wiki/File:131103_Hokkaido_University_Botanical_Gardens_Sapporo_Hokkaido_Japan12s5.jpg"
       }
     }
   },
@@ -16387,17 +16278,17 @@
     "status": "published",
     "updated_at": "2026-10-02",
     "season_images": {
-      "night": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/64/Odori_Park_in_Sapporo_-_Hokkaido_Prefecture_at_night_in_March_2026.jpg/960px-Odori_Park_in_Sapporo_-_Hokkaido_Prefecture_at_night_in_March_2026.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "contri",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Odori_Park_in_Sapporo_-_Hokkaido_Prefecture_at_night_in_March_2026.jpg"
+      "winter": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0d/Hokkaido_Sapporo_Odori_Park.jpg/960px-Hokkaido_Sapporo_Odori_Park.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Nkns",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Hokkaido_Sapporo_Odori_Park.jpg"
       },
-      "spring": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/91/SAKURAKO._%2828803340817%29.jpg/960px-SAKURAKO._%2828803340817%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "MIKI Yoshihito from Sapporo City,Hokkaido., JAPAN",
-        "license": "CC BY 2.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:SAKURAKO._(28803340817).jpg"
+      "night": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3a/Sapporo_TV_Tower_and_Odori_park.JPG/960px-Sapporo_TV_Tower_and_Odori_park.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Qiuqizhenghong",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Sapporo_TV_Tower_and_Odori_park.JPG"
       }
     }
   },
@@ -16635,14 +16526,7 @@
     ],
     "status": "published",
     "updated_at": "2026-10-02",
-    "season_images": {
-      "spring": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e8/SAKURAKO_-_Snow_boat._%288430087756%29.jpg/960px-SAKURAKO_-_Snow_boat._%288430087756%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "MIKI Yoshihito from Sapporo City, Hokkaido, Japan",
-        "license": "CC BY 2.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:SAKURAKO_-_Snow_boat._(8430087756).jpg"
-      }
-    }
+    "season_images": {}
   },
   {
     "id": "wd-Q3390983",
@@ -16802,20 +16686,7 @@
     ],
     "status": "published",
     "updated_at": "2026-10-02",
-    "season_images": {
-      "autumn": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/94/%E7%A7%8B%E3%81%AE%E5%B1%A4%E9%9B%B2_-_panoramio.jpg/960px-%E7%A7%8B%E3%81%AE%E5%B1%A4%E9%9B%B2_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "pakku",
-        "license": "CC BY 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:%E7%A7%8B%E3%81%AE%E5%B1%A4%E9%9B%B2_-_panoramio.jpg"
-      },
-      "night": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/73/Night_sky_over_Sounkyo_Canyon_%2852266121468%29.jpg/960px-Night_sky_over_Sounkyo_Canyon_%2852266121468%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Big Ben in Japan from Kawasaki, Japan",
-        "license": "CC BY-SA 2.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Night_sky_over_Sounkyo_Canyon_(52266121468).jpg"
-      }
-    }
+    "season_images": {}
   },
   {
     "id": "wd-Q3526214",
@@ -16873,6 +16744,12 @@
         "author": "掬茶",
         "license": "CC BY-SA 4.0",
         "source_url": "https://commons.wikimedia.org/wiki/File:Kanemori_Red_Brick_Warehouse_and_Mount_Hakodate_in_winter.jpg"
+      },
+      "night": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2a/Hokkaido_Hakodate_night_view_xl.jpg/960px-Hokkaido_Hakodate_night_view_xl.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "洞内定晴",
+        "license": "CC BY 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Hokkaido_Hakodate_night_view_xl.jpg"
       }
     }
   },
@@ -17245,6 +17122,12 @@
         "author": "hfordsa",
         "license": "CC BY-SA 2.0",
         "source_url": "https://commons.wikimedia.org/wiki/File:Okurayama_Ski_Jump_in_Summer.jpg"
+      },
+      "winter": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/67/The_OKURAYAMA_Jump_Stadium..jpg/960px-The_OKURAYAMA_Jump_Stadium..jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "MIKI Yoshihito from Sapporo City,Hokkaido., JAPAN",
+        "license": "CC BY 2.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:The_OKURAYAMA_Jump_Stadium..jpg"
       }
     }
   },
@@ -17298,14 +17181,7 @@
     ],
     "status": "published",
     "updated_at": "2026-10-02",
-    "season_images": {
-      "spring": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ea/SAKURAKO_and_nephew_-_Spa_Vacation._%2832321580610%29.jpg/960px-SAKURAKO_and_nephew_-_Spa_Vacation._%2832321580610%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "MIKI Yoshihito from Sapporo City,Hokkaido., JAPAN",
-        "license": "CC BY 2.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:SAKURAKO_and_nephew_-_Spa_Vacation._(32321580610).jpg"
-      }
-    }
+    "season_images": {}
   },
   {
     "id": "wd-Q389239",
@@ -18270,8 +18146,15 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-10-02",
+    "season_images": {
+      "summer": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/81/130823_Cape_Kamui_Shakotan_Hokkaido_Japan06s3.jpg/960px-130823_Cape_Kamui_Shakotan_Hokkaido_Japan06s3.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "663highland",
+        "license": "CC BY 2.5",
+        "source_url": "https://commons.wikimedia.org/wiki/File:130823_Cape_Kamui_Shakotan_Hokkaido_Japan06s3.jpg"
+      }
+    }
   },
   {
     "id": "wd-Q5035050",
@@ -18435,14 +18318,7 @@
     ],
     "status": "published",
     "updated_at": "2026-10-02",
-    "season_images": {
-      "winter": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/af/%E5%86%AC%E3%81%AE%E3%83%91%E3%83%AB%E3%83%97%E5%B7%A5%E5%A0%B4%EF%BC%88Winter_pulp_factory%EF%BC%89.jpg/960px-%E5%86%AC%E3%81%AE%E3%83%91%E3%83%AB%E3%83%97%E5%B7%A5%E5%A0%B4%EF%BC%88Winter_pulp_factory%EF%BC%89.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "pakku",
-        "license": "CC BY 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:%E5%86%AC%E3%81%AE%E3%83%91%E3%83%AB%E3%83%97%E5%B7%A5%E5%A0%B4%EF%BC%88Winter_pulp_factory%EF%BC%89.jpg"
-      }
-    }
+    "season_images": {}
   },
   {
     "id": "wd-Q5355795",
@@ -18777,15 +18653,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-10-02",
-    "season_images": {
-      "spring": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f0/%E6%A1%9C_-_Flickr_-_iyoupapa.jpg/960px-%E6%A1%9C_-_Flickr_-_iyoupapa.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "iyoupapa from Sapporo, Japan",
-        "license": "CC BY-SA 2.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:%E6%A1%9C_-_Flickr_-_iyoupapa.jpg"
-      }
-    }
+    "updated_at": "2026-10-02"
   },
   {
     "id": "wd-Q5509476",
@@ -19060,6 +18928,12 @@
         "author": "masaminh",
         "license": "CC BY-SA 2.0",
         "source_url": "https://commons.wikimedia.org/wiki/File:%E5%A4%8F%E7%AB%B6%E9%A6%AC_(9384262174).jpg"
+      },
+      "winter": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fe/Hakodate_Racecource_20260214a.jpg/960px-Hakodate_Racecource_20260214a.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "掬茶",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Hakodate_Racecource_20260214a.jpg"
       }
     }
   },
@@ -20129,15 +20003,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-10-02",
-    "season_images": {
-      "spring": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ca/SAKURAKO_-_Maruyama_Park.._%2849977718857%29.jpg/960px-SAKURAKO_-_Maruyama_Park.._%2849977718857%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "MIKI Yoshihito from Sapporo City, Hokkaido, Japan",
-        "license": "CC BY 2.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:SAKURAKO_-_Maruyama_Park.._(49977718857).jpg"
-      }
-    }
+    "updated_at": "2026-10-02"
   },
   {
     "id": "wd-Q6920651",
@@ -20486,14 +20352,7 @@
     ],
     "status": "published",
     "updated_at": "2026-10-02",
-    "season_images": {
-      "spring": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/af/SAKURAKO_-_Snowshoe_Adventures%21_%2830911925803%29.jpg/960px-SAKURAKO_-_Snowshoe_Adventures%21_%2830911925803%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "MIKI Yoshihito from Sapporo City,Hokkaido., JAPAN",
-        "license": "CC BY 2.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:SAKURAKO_-_Snowshoe_Adventures!_(30911925803).jpg"
-      }
-    }
+    "season_images": {}
   },
   {
     "id": "wd-Q710826",
@@ -20573,18 +20432,6 @@
     "status": "published",
     "updated_at": "2026-10-02",
     "season_images": {
-      "spring": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0f/SAKURAKO_-_The_Grand_Shrine_of_HOKKAIDO._%2814108975875%29.jpg/960px-SAKURAKO_-_The_Grand_Shrine_of_HOKKAIDO._%2814108975875%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "MIKI Yoshihito from Sapporo City,Hokkaido., JAPAN",
-        "license": "CC BY 2.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:SAKURAKO_-_The_Grand_Shrine_of_HOKKAIDO._(14108975875).jpg"
-      },
-      "autumn": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ad/20181107_Jingu_6448_%2848437145026%29.jpg/960px-20181107_Jingu_6448_%2848437145026%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Ray Swi-hymn from Sijhih-Taipei, Taiwan",
-        "license": "CC BY-SA 2.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:20181107_Jingu_6448_(48437145026).jpg"
-      },
       "winter": {
         "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4f/Hokkaido_Jingu_Torii_with_snow.jpg/960px-Hokkaido_Jingu_Torii_with_snow.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
         "author": "bryan...",
@@ -20870,10 +20717,10 @@
         "source_url": "https://commons.wikimedia.org/wiki/File:%E7%B4%85%E8%91%89%E3%81%AE%E5%A4%A7%E6%B2%BC%E5%85%AC%E5%9C%9220191102-IMG_6406.jpg"
       },
       "winter": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1d/Hakodate_Bay_and_Mt._Komagatake_seen_from_Mt._Hakodate_in_winter.jpg/960px-Hakodate_Bay_and_Mt._Komagatake_seen_from_Mt._Hakodate_in_winter.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4a/Mount_Hokkaido_Komagatake_in_winter_202601.jpg/960px-Mount_Hokkaido_Komagatake_in_winter_202601.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
         "author": "掬茶",
         "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Hakodate_Bay_and_Mt._Komagatake_seen_from_Mt._Hakodate_in_winter.jpg"
+        "source_url": "https://commons.wikimedia.org/wiki/File:Mount_Hokkaido_Komagatake_in_winter_202601.jpg"
       }
     }
   },
@@ -20936,11 +20783,11 @@
     "status": "published",
     "updated_at": "2026-10-02",
     "season_images": {
-      "spring": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/15/SAKURAKO_-_RUSUTSU_Resort._%2828128275159%29.jpg/960px-SAKURAKO_-_RUSUTSU_Resort._%2828128275159%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "MIKI Yoshihito from Sapporo City,Hokkaido., JAPAN",
-        "license": "CC BY 2.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:SAKURAKO_-_RUSUTSU_Resort._(28128275159).jpg"
+      "winter": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1f/%E3%83%AB%E3%82%B9%E3%83%84%E3%83%AA%E3%82%BE%E3%83%BC%E3%83%88_-_panoramio.jpg/960px-%E3%83%AB%E3%82%B9%E3%83%84%E3%83%AA%E3%82%BE%E3%83%BC%E3%83%88_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "alonfloc",
+        "license": "CC BY 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:%E3%83%AB%E3%82%B9%E3%83%84%E3%83%AA%E3%82%BE%E3%83%BC%E3%83%88_-_panoramio.jpg"
       }
     }
   },
@@ -21085,14 +20932,7 @@
     ],
     "status": "published",
     "updated_at": "2026-10-02",
-    "season_images": {
-      "spring": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/07/SAKURAKO_and_SAKIKO_-_Christmas_Archway._%2849384369507%29.jpg/960px-SAKURAKO_and_SAKIKO_-_Christmas_Archway._%2849384369507%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "MIKI Yoshihito from Sapporo City, Hokkaido, Japan",
-        "license": "CC BY 2.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:SAKURAKO_and_SAKIKO_-_Christmas_Archway._(49384369507).jpg"
-      }
-    }
+    "season_images": {}
   },
   {
     "id": "wd-Q7421103",
@@ -21172,15 +21012,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-10-02",
-    "season_images": {
-      "spring": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/SAKURAKO_and_SAKIKO_-_MARUYAMA_Zoo._%2846339734485%29.jpg/960px-SAKURAKO_and_SAKIKO_-_MARUYAMA_Zoo._%2846339734485%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "MIKI Yoshihito from Sapporo City,Hokkaido., JAPAN",
-        "license": "CC BY 2.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:SAKURAKO_and_SAKIKO_-_MARUYAMA_Zoo._(46339734485).jpg"
-      }
-    }
+    "updated_at": "2026-10-02"
   },
   {
     "id": "wd-Q7421104",
@@ -21247,15 +21079,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-10-02",
-    "season_images": {
-      "spring": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/22/SAKURAKO_-_JRA_Sapporo_Racecourse._%2821912663356%29.jpg/960px-SAKURAKO_-_JRA_Sapporo_Racecourse._%2821912663356%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "MIKI Yoshihito from Sapporo City,Hokkaido., JAPAN",
-        "license": "CC BY 2.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:SAKURAKO_-_JRA_Sapporo_Racecourse._(21912663356).jpg"
-      }
-    }
+    "updated_at": "2026-10-02"
   },
   {
     "id": "wd-Q7421109",
@@ -21304,11 +21128,11 @@
     "status": "published",
     "updated_at": "2026-10-02",
     "season_images": {
-      "spring": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f7/SAKURAKO_-_Go_skiing%21_%2831279793701%29.jpg/960px-SAKURAKO_-_Go_skiing%21_%2831279793701%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "MIKI Yoshihito from Sapporo City, Hokkaido, JAPAN",
+      "winter": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cd/Sapporo_Teine_Ski_Resort._%2831025461710%29.jpg/960px-Sapporo_Teine_Ski_Resort._%2831025461710%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "MIKI Yoshihito from Sapporo City, Hokkaido, Japan",
         "license": "CC BY 2.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:SAKURAKO_-_Go_skiing!_(31279793701).jpg"
+        "source_url": "https://commons.wikimedia.org/wiki/File:Sapporo_Teine_Ski_Resort._(31025461710).jpg"
       }
     }
   },
@@ -21537,14 +21361,7 @@
     ],
     "status": "published",
     "updated_at": "2026-10-02",
-    "season_images": {
-      "autumn": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ea/Acala_at_Masumi_Fall.JPG/960px-Acala_at_Masumi_Fall.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "禁樹なずな",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Acala_at_Masumi_Fall.JPG"
-      }
-    }
+    "season_images": {}
   },
   {
     "id": "wd-Q7700292",
@@ -22099,16 +21916,16 @@
     "updated_at": "2026-10-02",
     "season_images": {
       "winter": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/09/Former_Hokkaido_Government_Office_Building_%28Red_Brick_Office%29.jpg/960px-Former_Hokkaido_Government_Office_Building_%28Red_Brick_Office%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "MIKI Yoshihito",
-        "license": "CC BY 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Former_Hokkaido_Government_Office_Building_(Red_Brick_Office).jpg"
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/62/Former_Hokkaido_Government_Office_Building_20100117-01.jpg/960px-Former_Hokkaido_Government_Office_Building_20100117-01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Kentaro Ohno",
+        "license": "CC BY 2.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Former_Hokkaido_Government_Office_Building_20100117-01.jpg"
       },
       "night": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/41/Former_Hokkaido_Government_Office_in_snow_01.jpg/960px-Former_Hokkaido_Government_Office_in_snow_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "ノボホショコロトソ",
-        "license": "CC BY 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Former_Hokkaido_Government_Office_in_snow_01.jpg"
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ec/Hokkaido_Prefectural_Office_201109.JPG/960px-Hokkaido_Prefectural_Office_201109.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Taisyo",
+        "license": "CC BY 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Hokkaido_Prefectural_Office_201109.JPG"
       }
     }
   },
@@ -22178,29 +21995,17 @@
     "status": "published",
     "updated_at": "2026-10-02",
     "season_images": {
-      "spring": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f1/SAKURAKO_-_Go_to_SUSUKINO._%2815007808304%29.jpg/960px-SAKURAKO_-_Go_to_SUSUKINO._%2815007808304%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "MIKI Yoshihito from Sapporo City,Hokkaido., JAPAN",
-        "license": "CC BY 2.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:SAKURAKO_-_Go_to_SUSUKINO._(15007808304).jpg"
-      },
-      "summer": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6e/Japanese_summer_KIMONO2.jpg/960px-Japanese_summer_KIMONO2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "https://www.flickr.com/photos/mujitra/",
-        "license": "CC BY 2.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Japanese_summer_KIMONO2.jpg"
-      },
       "winter": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a0/Snow_Miku_Tram_2024.jpg/960px-Snow_Miku_Tram_2024.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "禁樹なずな",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Snow_Miku_Tram_2024.jpg"
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7f/Sidewalk_Snow%2C_Susukino%2C_Sapporo_-_Jan_23%2C_2014.jpg/960px-Sidewalk_Snow%2C_Susukino%2C_Sapporo_-_Jan_23%2C_2014.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "daita saru",
+        "license": "CC BY 2.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Sidewalk_Snow,_Susukino,_Sapporo_-_Jan_23,_2014.jpg"
       },
       "night": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8d/Ferris_wheel_in_Susukino_at_night_20250725.jpg/960px-Ferris_wheel_in_Susukino_at_night_20250725.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "掬茶",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Ferris_wheel_in_Susukino_at_night_20250725.jpg"
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/34/Spectaculars_of_Susukino-Sapporo.jpg/960px-Spectaculars_of_Susukino-Sapporo.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Chatama",
+        "license": "Public domain",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Spectaculars_of_Susukino-Sapporo.jpg"
       }
     }
   },
@@ -22295,8 +22100,15 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-10-02",
+    "season_images": {
+      "winter": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/44/Es_Con_Field_Hokkaido_whole_view.jpg/960px-Es_Con_Field_Hokkaido_whole_view.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "キャンター",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Es_Con_Field_Hokkaido_whole_view.jpg"
+      }
+    }
   },
   {
     "id": "wd-Q993926",

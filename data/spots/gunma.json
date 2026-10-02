@@ -4063,14 +4063,7 @@
     ],
     "status": "published",
     "updated_at": "2026-10-02",
-    "season_images": {
-      "autumn": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fb/Fukiwari_Fall_-_panoramio.jpg/960px-Fukiwari_Fall_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Koichi Shibata",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Fukiwari_Fall_-_panoramio.jpg"
-      }
-    }
+    "season_images": {}
   },
   {
     "id": "wd-Q11416636",
@@ -9124,8 +9117,15 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-10-02",
+    "season_images": {
+      "autumn": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ed/%E7%A2%93%E6%B0%B7%E7%AC%AC%E4%B8%89%E6%A9%8B%E6%A2%8120211106-IMG_8014.jpg/960px-%E7%A2%93%E6%B0%B7%E7%AC%AC%E4%B8%89%E6%A9%8B%E6%A2%8120211106-IMG_8014.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "くろふね",
+        "license": "CC BY 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:%E7%A2%93%E6%B0%B7%E7%AC%AC%E4%B8%89%E6%A9%8B%E6%A2%8120211106-IMG_8014.jpg"
+      }
+    }
   },
   {
     "id": "wd-Q11587752",
@@ -22110,13 +22110,6 @@
     ],
     "status": "published",
     "updated_at": "2026-10-02",
-    "season_images": {
-      "spring": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7c/Myogisan_Sakurano_Sato_-_panoramio.jpg/960px-Myogisan_Sakurano_Sato_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Koichi Shibata",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Myogisan_Sakurano_Sato_-_panoramio.jpg"
-      }
-    }
+    "season_images": {}
   }
 ]
