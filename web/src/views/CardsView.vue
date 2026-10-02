@@ -40,6 +40,8 @@ const matches: Record<FilterKey, (e: CollectionCard) => boolean> = {
   special: (e) => e.variants.some((v) => v.rank >= 2),
 }
 const filter = ref<FilterKey>('all')
+// 卡面：自己選的封面；沒選時是基本卡，只有篩「全景・金箔」時顯示最稀有的那種
+const shownVariant = (e: CollectionCard) => (filter.value === 'special' && !e.coverChosen ? e.variants[0]! : e.cover)
 const counts = computed(() => Object.fromEntries(FILTERS.map((f) => [f.key, cards.value.filter(matches[f.key]).length])) as Record<FilterKey, number>)
 
 interface Group {
@@ -160,7 +162,7 @@ function onCardKey(e: KeyboardEvent, id: string) {
               @click="openId = e.face.id"
               @keydown="onCardKey($event, e.face.id)"
             >
-              <SpotCard :card="e.face" :rarity="e.rarity" :label="e.label" :number="e.number" visited :visited-on="e.visitedOn" size="fluid" :variant="e.variants[0]" />
+              <SpotCard :card="e.face" :rarity="e.rarity" :label="e.label" :number="e.number" visited :visited-on="e.visitedOn" size="fluid" :variant="shownVariant(e)" />
             </div>
             <p v-if="e.variants.length > 1" class="mt-1.5 flex justify-center gap-1 text-caption text-sub">
               <span class="font-latin">{{ e.variants.length }} / {{ e.variantTotal }}</span> 種

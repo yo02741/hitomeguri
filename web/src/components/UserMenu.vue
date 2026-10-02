@@ -12,7 +12,7 @@ const router = useRouter()
 
 const items = [
   { to: '/trips', label: '我的行程', match: ['trips', 'trip', 'prep', 'practice', 'book'] },
-  { to: '/log', label: '旅行紀錄', match: ['log', 'cards', 'keiken'] },
+  { to: '/log', label: '旅行紀錄', match: ['log', 'cards', 'keiken', 'avatar'] },
   { to: '/me', label: '收藏與清單', match: ['me', 'list'] },
   { to: '/limited', label: '期間限定', match: ['limited'] },
 ]

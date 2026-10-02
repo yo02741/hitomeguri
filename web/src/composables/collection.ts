@@ -21,6 +21,9 @@ export interface CollectionCard {
   /** 收集到的樣式（稀有的在前）與全部樣式的數量 */
   variants: Variant[]
   variantTotal: number
+  /** 收集冊的封面：自己選的那種，沒選是基本卡（coverChosen=false） */
+  cover: Variant
+  coverChosen: boolean
 }
 
 /**
@@ -54,11 +57,16 @@ export function useCollection(entries: () => Array<[string, Mark]>, datesOf?: (i
       const castle = castleBySpot.value.get(id)
       const rarity = rarityOf(s.d, Boolean(castle))
       const dates = datesOf?.(id) ?? [mark.visited_on ?? null]
+      const variants = ownedVariants(userStore.user?.uid ?? '', id, dates, rarity, cardsStore.extraOf(id))
+      const chosen = cardsStore.covers[id]
+      const cover = (chosen && variants.find((v) => v.key === chosen)) || variants.find((v) => v.kind === 'base') || variants[0]!
       return [
         {
           face: cardFromMapSpot(s, mark.pref),
           rarity,
-          variants: ownedVariants(userStore.user?.uid ?? '', id, dates, rarity, cardsStore.extraOf(id)),
+          variants,
+          cover,
+          coverChosen: Boolean(chosen && cover.key === chosen),
           variantTotal: allVariants(rarity).length,
           label: rarityLabel(s.d, castle),
           number: cardNumberFor(id, catalog.mapSpots[mark.pref], castle, s.d),
