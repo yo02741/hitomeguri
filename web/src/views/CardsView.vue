@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed, ref, watch } from 'vue'
 
+import CardRules from '../components/CardRules.vue'
 import CardViewer from '../components/CardViewer.vue'
 import NewTag from '../components/NewTag.vue'
 import JapanMap from '../components/JapanMap.vue'
@@ -116,6 +117,7 @@ function drawTen() {
     return { face: e.face, rarity: e.rarity, label: e.label, number: e.number, visitedOn: e.visitedOn, variant: v }
   })
 }
+const showTickets = ref(false)
 const showRules = ref(false)
 
 function onCardKey(e: KeyboardEvent, id: string) {
@@ -158,11 +160,12 @@ function onCardKey(e: KeyboardEvent, id: string) {
     <template v-if="userStore.user">
       <!-- 抽卡：抽獎券、十連抽 -->
       <div v-if="cards.length" class="flex flex-wrap items-center gap-x-4 gap-y-2 rounded-card border border-line bg-paper px-4 py-3">
-        <button type="button" class="flex items-baseline gap-1.5 text-label text-sub hover:text-ink" :aria-expanded="showRules" @click="showRules = !showRules">
+        <button type="button" class="flex items-baseline gap-1.5 text-label text-sub hover:text-ink" :aria-expanded="showTickets" @click="showTickets = !showTickets">
           抽獎券<span class="font-latin text-h3 font-bold text-ink">{{ wallet.left }}</span>
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" class="self-center transition-transform" :class="showRules ? 'rotate-180' : ''" aria-hidden="true"><path d="M6 9l6 6 6-6" /></svg>
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" class="self-center transition-transform" :class="showTickets ? 'rotate-180' : ''" aria-hidden="true"><path d="M6 9l6 6 6-6" /></svg>
         </button>
         <span class="text-label text-sub">樣式 <span class="font-latin font-bold text-ink">{{ variantTotal - missingTotal }}</span> / {{ variantTotal }}</span>
+        <button type="button" class="h-8 rounded-control px-2 text-label font-bold text-sub hover:bg-surface hover:text-ink" @click="showRules = true">規則</button>
         <button
           type="button"
           class="ml-auto h-10 rounded-full bg-ink px-5 text-label font-bold text-paper disabled:opacity-40"
@@ -171,7 +174,7 @@ function onCardKey(e: KeyboardEvent, id: string) {
         >
           {{ !missingTotal ? '已收齊' : tenCount < 10 ? `抽 ${tenCount} 張` : '十連抽' }}
         </button>
-        <dl v-if="showRules" class="grid w-full grid-cols-[auto_auto_1fr] gap-x-4 gap-y-1 border-t border-line pt-3 text-caption text-sub">
+        <dl v-if="showTickets" class="grid w-full grid-cols-[auto_auto_1fr] gap-x-4 gap-y-1 border-t border-line pt-3 text-caption text-sub">
           <dt>去過的景點</dt><dd class="font-latin text-ink">{{ wallet.breakdown.spots }} × {{ TICKET_RULES.spot }}</dd><dd></dd>
           <dt>去過的縣</dt><dd class="font-latin text-ink">{{ wallet.breakdown.prefs }} × {{ TICKET_RULES.pref }}</dd><dd></dd>
           <dt>去過的地方</dt><dd class="font-latin text-ink">{{ wallet.breakdown.areas }} × {{ TICKET_RULES.area }}</dd><dd></dd>
@@ -230,6 +233,7 @@ function onCardKey(e: KeyboardEvent, id: string) {
     </template>
     <p v-else class="text-body-sm text-sub">收藏、行程與紀錄需要登入。</p>
 
+    <CardRules v-if="showRules" @close="showRules = false" />
     <CardViewer
       v-if="opened && openedFace"
       :card="openedFace"
