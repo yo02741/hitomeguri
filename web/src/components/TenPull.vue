@@ -4,10 +4,11 @@ import { computed, onBeforeUnmount, onMounted, ref } from 'vue'
 import { useTilt } from '../composables/tilt'
 import type { CardFace, Rarity } from '../services/card'
 import type { Variant } from '../services/cardVariants'
+import NewTag from './NewTag.vue'
 import RegionMotif from './RegionMotif.vue'
 import SpotCard from './SpotCard.vue'
 
-// 十連抽（DESIGN.md §7.19a）：十張卡背面朝上一次排成 5×2，發完牌後由左上依序自動翻開；
+// 十連抽（DESIGN.md §7.19b）：收集冊從還沒收齊的景點抽十種（都是新的，標 NEW）。十張卡背面朝上一次排成 5×2，發完牌後由左上依序自動翻開；
 // 稀有的（銀箔、金箔、特別全景）翻開前停一下、翻開後背後放光。
 // 「全部翻開」一次翻完；點還沒翻的那張先翻那張；翻開的點一下放大看。
 // 版面用視窗寬高算卡寬，整個畫面放得下，不出捲軸。
@@ -125,6 +126,7 @@ const zoomed = computed(() => (zoom.value === null ? null : props.pulls[zoom.val
             </span>
           </span>
         </button>
+        <NewTag v-if="open[i]" class="new absolute -top-2 -left-1.5 z-10" />
       </li>
     </ol>
 
@@ -236,6 +238,9 @@ const zoomed = computed(() => (zoom.value === null ? null : props.pulls[zoom.val
   to {
     rotate: 1turn;
   }
+}
+.new {
+  animation: ten-in 0.3s 0.25s both;
 }
 .zoom {
   animation: ten-in 0.18s var(--ease-out-soft) both;

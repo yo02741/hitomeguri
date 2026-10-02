@@ -5,6 +5,9 @@
  * 服裝分五個位置：頭（帽子、髮箍）、臉（眼鏡）、身（衣服）、手（拿的東西，在右手）、夥伴（腳邊）。
  * 各縣的特色單品去過那個縣就有；其他的用旅行得到的抽獎機會抽。
  */
+import { C, E, line, SH, shape } from './dollArt'
+import { PREF_OUTFITS } from './outfitsPref'
+
 export type Slot = 'head' | 'face' | 'body' | 'hand' | 'buddy'
 export const SLOTS: Array<{ key: Slot; label: string }> = [
   { key: 'body', label: '衣服' },
@@ -26,32 +29,9 @@ export interface Outfit {
   svg: string
   /** 小圖的裁切範圍 viewBox：x y w h */
   icon: string
+  /** 那個縣的代表單品：第一次去那個縣就送；同縣的其他單品加進扭蛋 */
+  gift?: boolean
 }
-
-const C = {
-  red: 'var(--color-item-red)',
-  pink: 'var(--color-item-pink)',
-  green: 'var(--color-item-green)',
-  matcha: 'var(--color-item-matcha)',
-  blue: 'var(--color-item-blue)',
-  navy: 'var(--color-item-navy)',
-  yellow: 'var(--color-item-yellow)',
-  orange: 'var(--color-item-orange)',
-  brown: 'var(--color-item-brown)',
-  cream: 'var(--color-item-cream)',
-  white: 'var(--color-item-white)',
-  grey: 'var(--color-item-grey)',
-  purple: 'var(--color-item-purple)',
-  gold: 'var(--color-gold-2)',
-  ink: 'var(--color-doll-line)',
-}
-/** 紙的淡邊（同一張紙的切口，不是黑線） */
-const E = 'stroke="var(--color-doll-line)" stroke-opacity=".2" stroke-width="1.4" stroke-linejoin="round"'
-/** 陰影：疊一層半透明 */
-const SH = 'fill="var(--color-doll-line)" opacity=".16"'
-const line = (w = 2.4, color = C.ink, op = 1) => `fill="none" stroke="${color}" stroke-width="${w}" stroke-linecap="round" stroke-linejoin="round" stroke-opacity="${op}"`
-const shape = (d: string, fill: string, extra = '') => `<path d="${d}" fill="${fill}" ${E} ${extra}/>`
-const dots = (fill: string, r: number, pts: Array<[number, number]>, extra = '') => `<g fill="${fill}" ${extra}>${pts.map(([x, y]) => `<circle cx="${x}" cy="${y}" r="${r}"/>`).join('')}</g>`
 
 // ---------- 身體的部位 ----------
 export const SKINS = [1, 2, 3] as const
@@ -342,242 +322,14 @@ export const OUTFITS: Outfit[] = [
       `<path d="M46 280 Q58 286 70 280" ${line(2.2, C.gold)}/>`,
   },
 
-  // ----- 各縣的特色單品：去過就有 -----
-  {
-    id: 'hokkaido-melon',
-    name: '哈密瓜帽',
-    slot: 'head',
-    pref: 'hokkaido',
-    rarity: 2,
-    icon: '50 6 140 90',
-    svg:
-      shape('M64 80 C60 42 88 26 120 26 C152 26 180 42 176 80 C150 86 90 86 64 80Z', C.green) +
-      `<path d="M64 80 C60 42 88 26 120 26 C152 26 180 42 176 80 C150 86 90 86 64 80Z" fill="url(#doll-net)" opacity=".7"/>` +
-      `<path d="M140 30 C164 38 178 56 176 80 C164 83 150 84 140 84Z" ${SH}/>` +
-      `<path d="M118 26 L114 14" ${line(3.4, C.brown)}/>` +
-      shape('M114 18 C104 10 94 14 92 20 C102 22 108 22 114 18Z', C.matcha),
-  },
-  {
-    id: 'miyagi-zunda',
-    name: '毛豆麻糬',
-    slot: 'hand',
-    rarity: 2,
-    pref: 'miyagi',
-    icon: '130 182 70 60',
-    svg:
-      shape('M136 224 C136 216 192 216 192 224 C192 232 136 232 136 224Z', C.cream) +
-      shape('M146 216 C144 202 158 194 164 194 C172 194 186 202 182 216 C176 222 152 222 146 216Z', C.matcha) +
-      `<g fill="${C.green}"><ellipse cx="156" cy="204" rx="4" ry="3"/><ellipse cx="168" cy="200" rx="4" ry="3"/><ellipse cx="174" cy="210" rx="4" ry="3"/><ellipse cx="160" cy="213" rx="4" ry="3"/></g>` +
-      `<path d="M150 200 C154 196 160 195 164 195" ${line(2, C.white, 0.5)}/>`,
-  },
-  {
-    id: 'tokyo-chochin',
-    name: '提燈',
-    slot: 'hand',
-    pref: 'tokyo',
-    rarity: 2,
-    icon: '128 154 84 92',
-    svg:
-      `<path d="M156 226 L170 160 L170 168" ${line(3, C.brown)}/>` +
-      shape('M156 168 L184 168 L186 174 L154 174Z', C.ink) +
-      shape('M170 172 C192 172 198 190 198 204 C198 218 192 236 170 236 C148 236 142 218 142 204 C142 190 148 172 170 172Z', C.red) +
-      `<path d="M182 174 C194 180 198 192 198 204 C198 218 192 232 180 236 C188 222 190 190 182 174Z" ${SH}/>` +
-      `<path d="M144 190 L196 190 M142 204 L198 204 M144 218 L196 218" ${line(1, C.ink, 0.3)}/>` +
-      `<text x="170" y="210" font-size="16" font-weight="900" fill="${C.cream}" text-anchor="middle" font-family="var(--font-ja)">祭</text>` +
-      shape('M156 234 L184 234 L186 240 L154 240Z', C.ink),
-  },
-  {
-    id: 'yamanashi-budo',
-    name: '葡萄',
-    slot: 'hand',
-    pref: 'yamanashi',
-    rarity: 2,
-    icon: '134 172 70 70',
-    svg:
-      `<path d="M160 224 L168 186" ${line(2.6, C.brown)}/>` +
-      shape('M168 186 C178 176 192 178 196 184 C186 190 176 190 168 186Z', C.matcha) +
-      dots(C.purple, 7, [[152, 196], [166, 194], [180, 196], [159, 208], [173, 207], [187, 206], [166, 219], [180, 218], [173, 230]], E) +
-      dots(C.white, 2, [[150, 193], [164, 191], [178, 193], [157, 205], [171, 204], [164, 216]], 'opacity=".45"'),
-  },
-  {
-    id: 'nagano-soba',
-    name: '信州蕎麥麵',
-    slot: 'hand',
-    pref: 'nagano',
-    rarity: 2,
-    icon: '128 166 80 72',
-    svg:
-      shape('M132 214 L196 214 L192 232 L136 232Z', C.navy) +
-      shape('M134 214 C134 196 194 196 194 214Z', C.brown) +
-      `<path d="M138 212 C146 204 156 210 164 204 C172 210 182 202 190 212" ${line(2, C.cream, 0.7)}/>` +
-      `<path d="M142 208 C150 200 160 206 168 200 C176 206 184 200 188 206" ${line(2, C.ink, 0.35)}/>` +
-      `<path d="M176 190 L198 172 M180 194 L202 178" ${line(2.4, C.cream)}/>`,
-  },
-  {
-    id: 'kyoto-matcha',
-    name: '抹茶',
-    slot: 'hand',
-    pref: 'kyoto',
-    rarity: 2,
-    icon: '128 182 76 60',
-    svg:
-      shape('M134 206 L192 206 C192 226 180 236 163 236 C146 236 134 226 134 206Z', C.cream) +
-      `<path d="M176 208 L192 206 C192 226 180 236 163 236 C176 228 180 218 176 208Z" ${SH}/>` +
-      `<path d="M138 222 C150 226 176 226 188 222" ${line(3, C.matcha, 0.7)}/>` +
-      `<ellipse cx="163" cy="206" rx="29" ry="6" fill="${C.matcha}" ${E}/>` +
-      `<ellipse cx="160" cy="205" rx="10" ry="2.4" fill="${C.green}" opacity=".6"/>`,
-  },
-  {
-    id: 'osaka-takoyaki',
-    name: '章魚燒',
-    slot: 'hand',
-    pref: 'osaka',
-    rarity: 2,
-    icon: '128 174 84 66',
-    svg:
-      shape('M132 218 L198 218 L190 234 L140 234Z', C.cream) +
-      `<path d="M132 218 L198 218 L190 234 L140 234Z" fill="url(#doll-wood)" opacity=".5"/>` +
-      dots(C.brown, 10, [[150, 212], [167, 208], [182, 213]], E) +
-      `<path d="M143 207 C148 204 154 206 156 210 M160 203 C165 200 171 202 173 206 M175 208 C180 205 186 207 188 211" ${line(3, C.ink, 0.55)}/>` +
-      `<path d="M146 212 L148 211 M164 206 L166 207 M178 212 L180 211 M152 208 L153 210" ${line(2, C.green)}/>` +
-      `<path d="M188 204 L204 182" ${line(2, C.cream)}/>`,
-  },
-  {
-    id: 'nara-shika',
-    name: '鹿角髮箍',
-    slot: 'head',
-    pref: 'nara',
-    rarity: 2,
-    icon: '46 4 148 92',
-    svg:
-      `<path d="M68 82 C70 50 170 50 172 82" ${line(4, C.brown)}/>` +
-      `<path d="M84 60 C80 44 76 32 82 16 M80 36 L66 28 M82 48 L70 46 M82 22 L92 12" ${line(5, C.brown)}/>` +
-      `<path d="M156 60 C160 44 164 32 158 16 M160 36 L174 28 M158 48 L170 46 M158 22 L148 12" ${line(5, C.brown)}/>` +
-      shape('M70 66 C58 60 50 64 50 70 C58 74 66 72 72 70Z', C.brown) +
-      shape('M170 66 C182 60 190 64 190 70 C182 74 174 72 168 70Z', C.brown) +
-      `<path d="M56 68 C60 67 64 68 68 69 M184 68 C180 67 176 68 172 69" ${line(2, C.pink)}/>`,
-  },
-  {
-    id: 'shizuoka-fuji',
-    name: '富士山帽',
-    slot: 'head',
-    pref: 'shizuoka',
-    rarity: 3,
-    icon: '32 4 176 92',
-    svg:
-      shape('M100 14 L140 14 L204 82 C160 90 80 90 36 82Z', C.blue) +
-      `<path d="M140 14 L204 82 C186 86 166 88 150 88Z" ${SH}/>` +
-      shape('M100 14 L140 14 L160 36 C152 42 146 34 140 40 C134 34 126 44 120 38 C114 44 106 34 100 40 C94 34 88 42 80 36Z', C.white) +
-      `<path d="M36 82 C80 90 160 90 204 82" ${line(3, C.navy, 0.6)}/>`,
-  },
-  {
-    id: 'aichi-shachi',
-    name: '金鯱髮箍',
-    slot: 'head',
-    pref: 'aichi',
-    rarity: 3,
-    icon: '56 -2 128 96',
-    svg:
-      `<path d="M68 82 C70 50 170 50 172 82" ${line(4, C.navy)}/>` +
-      // 身體：頭朝下、尾巴翹起來
-      shape('M96 64 C88 48 98 32 114 28 C126 25 134 20 136 10 L144 18 C142 32 130 42 122 50 C116 56 116 60 118 64Z', C.gold) +
-      // 尾鰭
-      shape('M136 12 C130 4 134 -2 142 0 C144 6 150 8 156 6 C154 14 148 20 142 20Z', C.gold) +
-      // 背鰭
-      shape('M110 30 L104 20 L116 27Z M122 26 L120 14 L130 22Z', C.gold) +
-      `<path d="M122 50 C130 42 142 32 144 18 L138 14 C136 26 126 38 116 46Z" ${SH}/>` +
-      `<path d="M104 42 Q110 38 116 42 M106 50 Q112 46 118 50 M112 34 Q118 30 124 34" ${line(1.4, C.brown, 0.55)}/>` +
-      `<circle cx="101" cy="56" r="2.2" fill="${C.ink}"/>` +
-      `<path d="M96 62 Q100 60 104 63" ${line(1.4, C.brown, 0.7)}/>`,
-  },
-  {
-    id: 'hiroshima-momiji',
-    name: '紅葉饅頭',
-    slot: 'hand',
-    pref: 'hiroshima',
-    rarity: 2,
-    icon: '128 170 80 72',
-    svg:
-      shape('M168 178 L174 196 L190 188 L184 204 L200 208 L184 214 L190 228 L174 222 L168 236 L162 222 L146 228 L152 214 L136 208 L152 204 L146 188 L162 196Z', C.orange) +
-      `<path d="M168 178 L174 196 L190 188 L184 204 L200 208 L184 214 L190 228 L174 222 L168 236Z" ${SH}/>` +
-      `<path d="M168 190 L168 226 M168 206 L150 196 M168 206 L186 196 M168 214 L152 222 M168 214 L184 222" ${line(1.4, C.brown, 0.6)}/>`,
-  },
-  {
-    id: 'kagawa-udon',
-    name: '讚岐烏龍麵',
-    slot: 'hand',
-    pref: 'kagawa',
-    rarity: 2,
-    icon: '128 166 80 76',
-    svg:
-      shape('M134 208 C134 230 150 238 166 238 C182 238 198 230 198 208Z', C.red) +
-      `<path d="M182 210 L198 208 C198 230 184 238 168 238 C184 228 186 218 182 210Z" ${SH}/>` +
-      `<ellipse cx="166" cy="208" rx="32" ry="7" fill="${C.cream}" ${E}/>` +
-      `<path d="M142 208 C150 202 156 212 164 206 C172 212 180 202 190 208" ${line(2.6, C.white)}/>` +
-      `<circle cx="176" cy="205" r="4" fill="${C.green}" opacity=".8"/>` +
-      `<path d="M180 196 L196 172 M186 198 L202 174" ${line(2.4, C.brown)}/>`,
-  },
-  {
-    id: 'fukuoka-mentaiko',
-    name: '明太子',
-    slot: 'hand',
-    pref: 'fukuoka',
-    rarity: 2,
-    icon: '128 182 82 58',
-    svg:
-      shape('M132 222 C132 214 200 214 200 222 C200 230 132 230 132 222Z', C.white) +
-      shape('M140 214 C138 202 156 196 168 200 C176 202 178 210 174 216 C164 222 146 222 140 214Z', C.pink) +
-      shape('M162 214 C160 202 178 196 190 200 C198 204 198 212 194 216 C184 222 168 222 162 214Z', C.pink) +
-      dots(C.red, 1.6, [[150, 208], [158, 204], [164, 210], [176, 206], [184, 210], [180, 203]], 'opacity=".7"') +
-      `<path d="M148 202 C154 199 160 199 164 200 M170 202 C176 199 182 199 186 200" ${line(1.8, C.white, 0.5)}/>`,
-  },
-  {
-    id: 'okinawa-shisa',
-    name: '風獅爺',
-    slot: 'buddy',
-    pref: 'okinawa',
-    rarity: 3,
-    icon: '22 220 76 80',
-    svg:
-      shape('M36 294 C34 276 42 268 58 268 C74 268 82 276 80 294Z', C.orange) +
-      shape('M58 232 C76 232 84 242 84 254 C84 268 74 276 58 276 C42 276 32 268 32 254 C32 242 40 232 58 232Z', C.orange) +
-      `<path d="M34 244 C30 236 38 228 44 234 C40 226 50 222 54 230 C56 222 66 222 66 230 C70 222 80 228 76 234 C82 230 88 238 82 246" ${line(5, C.brown)}/>` +
-      dots(C.white, 4, [[50, 252], [66, 252]]) +
-      dots(C.ink, 2.2, [[50, 252], [66, 252]]) +
-      shape('M46 262 L70 262 C70 270 64 274 58 274 C52 274 46 270 46 262Z', C.red) +
-      `<path d="M48 262 L52 266 L56 262 L60 266 L64 262 L68 266" ${line(1.6, C.white)}/>`,
-  },
-  {
-    id: 'aomori-ringo',
-    name: '蘋果',
-    slot: 'hand',
-    pref: 'aomori',
-    rarity: 1,
-    icon: '132 176 70 66',
-    svg:
-      shape('M166 196 C150 186 136 198 138 214 C140 230 152 238 166 234 C180 238 192 230 194 214 C196 198 182 186 166 196Z', C.red) +
-      `<path d="M178 192 C190 196 196 206 194 216 C192 228 184 236 172 236 C184 226 186 206 178 192Z" ${SH}/>` +
-      `<path d="M148 200 C150 196 154 194 158 194" ${line(3, C.white, 0.55)}/>` +
-      `<path d="M166 196 L168 184" ${line(2.6, C.brown)}/>` +
-      shape('M168 188 C174 180 184 180 188 184 C182 190 174 190 168 188Z', C.green),
-  },
-  {
-    id: 'ishikawa-kinpaku',
-    name: '金箔霜淇淋',
-    slot: 'hand',
-    pref: 'ishikawa',
-    rarity: 3,
-    icon: '130 150 72 92',
-    svg:
-      shape('M152 204 L166 238 L180 204Z', C.yellow) +
-      `<path d="M152 204 L166 238 L180 204" fill="url(#doll-waffle)" opacity=".5"/>` +
-      shape('M150 206 C142 196 150 186 158 186 C152 174 162 162 166 156 C170 162 180 174 174 186 C182 186 190 196 182 206Z', C.cream) +
-      shape('M154 196 C152 186 160 176 166 170 C172 176 180 186 178 196 C172 200 160 200 154 196Z', C.gold) +
-      `<path d="M158 184 L164 180 M168 190 L174 186 M160 194 L166 192" ${line(1.4, C.white, 0.7)}/>`,
-  },
+  ...PREF_OUTFITS,
 ]
 
 export const outfitById = new Map(OUTFITS.map((o) => [o.id, o]))
+/** 這個縣的代表單品 */
+export function giftOf(pref: string): Outfit | undefined {
+  return OUTFITS.find((o) => o.pref === pref && o.gift)
+}
 /** 預設穿的（沒有存檔時） */
 export const DEFAULT_EQUIPPED: Partial<Record<Slot, string>> = { body: 'tee' }
 /** 一開始就有的 */

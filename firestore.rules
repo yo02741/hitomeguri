@@ -147,6 +147,11 @@ service cloud.firestore {
               && request.resource.data.equipped is map
               && request.resource.data.owned is list && request.resource.data.owned.size() <= 300
               && request.resource.data.used is int && request.resource.data.used >= 0)
+            // 抽獎券（web/src/stores/wallet.ts）：用掉的張數、用過「第一次去過的免費抽」的景點
+            || (docId == 'wallet'
+              && request.resource.data.keys().hasOnly(['used', 'free', 'updated_at'])
+              && request.resource.data.used is int && request.resource.data.used >= 0
+              && request.resource.data.free is list && request.resource.data.free.size() <= 5000)
           );
       }
 

@@ -3,6 +3,7 @@ import { computed, nextTick, onBeforeUnmount, onMounted, ref, watch } from 'vue'
 
 import type { Outfit } from '../data/outfits'
 import { regionOf } from '../data/regions'
+import NewTag from './NewTag.vue'
 
 // 旅人的扭蛋（DESIGN.md §7.24）：轉扭蛋機的把手 → 扭蛋從出口掉出來、彈到中央 → 殼分開，貼紙跳出來。
 // 殼的顏色看稀有度（常見：地區色、少見：紅、稀有：金）。動畫中點一下直接打開；系統減少動態時直接打開。
@@ -133,14 +134,13 @@ onBeforeUnmount(() => {
 
     <div class="flex min-h-[76px] flex-col items-center gap-1 text-paper">
       <template v-if="stage === 'open'">
-        <p class="reveal text-h3 font-black">{{ result.outfit.name }}</p>
+        <p class="reveal flex items-center gap-2 text-h3 font-black">{{ result.outfit.name }}<NewTag /></p>
         <p v-if="prefName" lang="ja" class="reveal text-label">{{ prefName }}</p>
-        <p v-if="result.duplicate" class="reveal text-label text-paper/70">已經有了</p>
       </template>
     </div>
     <div ref="actions" class="flex min-h-11 gap-2">
       <template v-if="stage === 'open'">
-        <button v-if="!result.duplicate" type="button" class="h-11 rounded-control bg-paper px-5 text-body-sm font-bold text-ink" @click="emit('wear')">穿上</button>
+        <button type="button" class="h-11 rounded-control bg-paper px-5 text-body-sm font-bold text-ink" @click="emit('wear')">穿上</button>
         <button type="button" class="h-11 rounded-control border border-paper/50 px-4 text-body-sm text-paper disabled:opacity-40" :disabled="!canDraw" @click="emit('again')">再抽一次</button>
         <button type="button" class="h-11 rounded-control border border-paper/50 px-4 text-body-sm text-paper" @click="emit('close')">關閉</button>
       </template>

@@ -1,12 +1,14 @@
 <script setup lang="ts">
 import { computed, onBeforeUnmount, onMounted, ref } from 'vue'
 
+import { useCardDraw } from '../composables/cardDraw'
 import { type CollectionCard, useCollection } from '../composables/collection'
+import { useVisitedEntries } from '../composables/visited'
 import type { Rarity } from '../services/card'
-import { randomDraw, UNLIMITED_DRAWS, type Variant } from '../services/cardVariants'
+import { drawVariants, ownedVariants, type Variant } from '../services/cardVariants'
 import { dayDate, type Trip } from '../services/trip'
-import { todayIso } from '../services/userdb'
 import { useCardsStore } from '../stores/cards'
+import { useWalletStore } from '../stores/wallet'
 import type { Mark } from '../stores/marks'
 import RegionMotif from './RegionMotif.vue'
 import SpotCard from './SpotCard.vue'
@@ -30,12 +32,19 @@ const tripDates = computed(() => {
 })
 const { cards } = useCollection(() => entries.value, (id) => tripDates.value.get(id))
 const RANK: Record<Rarity, number> = { normal: 0, castle: 1, gold: 2, rainbow: 3 }
-// 測試期可以無限抽（UNLIMITED_DRAWS）：每次打開都重抽一次，抽到的存起來
+// 卡包（DESIGN.md §7.19b）：這趟去過的景點，第一次去過的各送一次免費抽（每個景點只送一次，
+// 重開卡包、取消再勾去過都不會再送）；已經送過的顯示這趟的季節卡
 const cardsStore = useCardsStore()
+const wallet = useWalletStore()
+const cardDraw = useCardDraw()
+const { datesById } = useVisitedEntries()
 const redraws = ref(new Map<string, Variant>())
 type DeckCard = CollectionCard & { key: string }
-/** 這張卡在卡包裡的樣子：這次抽到的，沒有就是收集到最稀有的 */
-const shown = (c: DeckCard): Variant => redraws.value.get(c.key) ?? c.variants[0]!
+/** 這趟拿到的：這趟日期的季節卡（沒有日期是基本卡） */
+const tripCard = (c: DeckCard): Variant =>
+  (tripDates.value.get(c.face.id) ?? [null]).flatMap((d) => drawVariants(d)).sort((a, b) => b.rank - a.rank)[0]!
+/** 這張卡在卡包裡的樣子：這次抽到的，沒有就是這趟的季節卡 */
+const shown = (c: DeckCard): Variant => redraws.value.get(c.key) ?? tripCard(c)
 // 同一個景點只算一張；稀有度、分數低的先翻
 const deck = computed<DeckCard[]>(() => {
   const seen = new Set<string>()
@@ -69,15 +78,15 @@ function raysKind(c: DeckCard): string {
 }
 function open() {
   if (stage.value !== 'sealed' || !deck.value.length) return
-  if (UNLIMITED_DRAWS) {
-    const next = new Map<string, Variant>()
-    for (const c of deck.value) {
-      const drawn = randomDraw(c.rarity, tripDates.value.get(c.face.id)?.find(Boolean) ?? todayIso())
-      next.set(c.key, [...drawn].sort((a, b) => b.rank - a.rank)[0]!)
-      void cardsStore.add(c.face.id, drawn)
-    }
-    redraws.value = next
+  const next = new Map<string, Variant>()
+  for (const c of deck.value) {
+    if (!wallet.claimFree(c.face.id)) continue
+    const dates = [...(datesById.value.get(c.face.id) ?? []), ...(tripDates.value.get(c.face.id) ?? [])]
+    const owned = ownedVariants(dates, c.rarity, cardsStore.extraOf(c.face.id)).map((v) => v.key)
+    const v = cardDraw.drawFor({ spotId: c.face.id, rarity: c.rarity, owned }, true)
+    if (v) next.set(c.key, v)
   }
+  redraws.value = next
   stage.value = 'opening'
   setTimeout(() => (stage.value = 'dealing'), 900)
 }

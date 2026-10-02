@@ -120,7 +120,23 @@ const style = computed(() => ({
     transform: none;
   }
 }
+/* 赤牛的頭會點頭 */
+.is-animated :deep(.bob) {
+  transform-box: fill-box;
+  transform-origin: 100% 80%;
+  animation: bob 2.4s ease-in-out infinite;
+}
+@keyframes bob {
+  0%,
+  100% {
+    transform: rotate(0);
+  }
+  50% {
+    transform: rotate(-10deg);
+  }
+}
 @media (prefers-reduced-motion: reduce) {
+  .is-animated :deep(.bob),
   .is-animated .sway,
   .is-animated .buddy {
     animation: none;
