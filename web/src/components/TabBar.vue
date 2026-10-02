@@ -26,7 +26,7 @@ const { rect, animate } = useIndicator(nav, () => nav.value?.querySelector<HTMLE
     <span
       v-if="rect"
       class="pointer-events-none absolute top-0 left-0 flex justify-center"
-      :class="animate ? 'transition-[translate,width] duration-300 ease-out-soft' : ''"
+      :class="animate ? 'transition-[translate] duration-300 ease-out-soft' : ''"
       :style="{ translate: `${rect.x}px 0`, width: `${rect.w}px` }"
       aria-hidden="true"
     >

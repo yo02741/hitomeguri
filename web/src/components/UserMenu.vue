@@ -202,7 +202,7 @@ async function logOut() {
       >
         散步的旅人
         <span class="relative h-5 w-9 rounded-full transition-colors" :class="walkerOn ? 'bg-region-strong' : 'bg-line'" aria-hidden="true">
-          <span class="absolute top-0.5 size-4 rounded-full bg-paper transition-[left]" :class="walkerOn ? 'left-[18px]' : 'left-0.5'"></span>
+          <span class="absolute top-0.5 left-0.5 size-4 rounded-full bg-paper transition-transform duration-150 ease-out-soft" :class="walkerOn ? 'translate-x-4' : ''"></span>
         </span>
       </button>
       <div class="mx-1 mt-1 border-t border-line-soft" role="none"></div>

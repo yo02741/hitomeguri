@@ -79,7 +79,7 @@ watch(activeTop, async (id) => {
       :data-id="it.id"
       :data-group="it.id"
       :href="`#${it.id}`"
-      class="relative flex h-8 shrink-0 items-center rounded-full px-3 text-label no-underline transition-colors duration-200"
+      class="relative flex h-8 shrink-0 items-center rounded-full px-3 text-label no-underline transition-colors duration-300 ease-out-soft"
       :class="activeTop === it.id ? ['font-bold text-white', rect ? '' : 'bg-region-strong'] : 'text-sub hover:bg-surface hover:text-ink'"
       :aria-current="activeTop === it.id ? 'location' : undefined"
       @click.prevent="emit('go', it.id)"

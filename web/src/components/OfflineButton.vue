@@ -38,8 +38,8 @@ async function run() {
   >
     <span
       v-if="progress"
-      class="absolute inset-y-0 left-0 bg-region-tint transition-[width] duration-300"
-      :style="{ width: `${percent}%` }"
+      class="absolute inset-0 origin-left bg-region-tint transition-transform duration-300 ease-linear"
+      :style="{ transform: `scaleX(${percent / 100})` }"
       aria-hidden="true"
     ></span>
     <svg class="relative" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">

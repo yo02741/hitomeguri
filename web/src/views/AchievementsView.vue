@@ -159,7 +159,7 @@ onBeforeUnmount(() => fresh.seen([...fresh.keys].filter((k) => k.startsWith('a:'
             成就<RollingNumber :value="achv.counts.n" class="font-latin text-h3 font-semibold tracking-normal" /><span class="-ml-1.5 font-latin text-body-sm tracking-normal">/ {{ achv.counts.N }}</span>
           </h1>
           <div class="h-3.5 max-w-[420px] overflow-hidden rounded-[2px] bg-paper/55" aria-hidden="true">
-            <div class="h-full rounded-[2px] bg-on-region transition-[width] duration-500 ease-out-soft" :style="{ width: `${progress * 100}%` }"></div>
+            <div class="h-full origin-left bg-on-region transition-transform duration-500 ease-out-soft" :style="{ transform: `scaleX(${progress})` }"></div>
           </div>
           <p class="flex flex-wrap gap-x-4 text-label font-bold">
             <span>初訪 <span class="font-latin text-body-sm">{{ stampsDone }} / 47</span></span>

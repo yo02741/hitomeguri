@@ -81,11 +81,6 @@ const name = computed(() => regionOf(props.pref)?.name.ja ?? '')
   stroke: var(--frame);
   stroke-width: 1.6;
   vector-effect: non-scaling-stroke;
-  transition:
-    x 0.15s,
-    y 0.15s,
-    width 0.15s,
-    height 0.15s;
 }
 .dot {
   fill: var(--frame);
