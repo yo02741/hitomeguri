@@ -37,8 +37,9 @@ const actKey = ref(0)
 
 let timer = 0
 let sayTimer = 0
-// 桌機的地圖頁：左邊是浮動的景點清單（300px），旅人只在清單右邊走
-const minX = () => (route.name === 'map' && window.innerWidth >= 1024 ? 340 : 16)
+// 桌機的探索頁（首頁、地區地圖）：左邊是浮動的清單（300px），旅人只在清單右邊走
+const PANEL_ROUTES = ['home', 'explore', 'map']
+const minX = () => (PANEL_ROUTES.includes(String(route.name)) && window.innerWidth >= 1024 ? 340 : 16)
 const maxX = () => Math.max(minX(), window.innerWidth - SIZE - 16)
 
 function lines(): string[] {

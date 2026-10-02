@@ -13,13 +13,16 @@ const props = withDefaults(
     animate?: boolean
     /** 只畫一部分（viewBox：x y w h），例如外觀選項的頭像 */
     crop?: string
+    /** 剪紙的落影；3D 展示窗關掉，影子改畫在地上 */
+    shadow?: boolean
   }>(),
-  { animate: false, crop: '0 0 240 320' },
+  { animate: false, crop: '0 0 240 320', shadow: true },
 )
 
 const svgOf = (slot: Slot) => (props.equipped[slot] ? (outfitById.get(props.equipped[slot]!)?.svg ?? '') : '')
 const hair = computed(() => HAIR[props.parts.hair] ?? HAIR.bob)
 const eyes = computed(() => EYES[props.parts.eyes] ?? EYES.round)
+const cut = computed(() => (props.shadow ? 'url(#doll-cut)' : 'url(#doll-cut-ns)'))
 const style = computed(() => ({
   '--skin': `var(--color-doll-skin-${props.parts.skin})`,
   '--hair': `var(--color-doll-hair-${props.parts.hairColor})`,
@@ -28,9 +31,9 @@ const style = computed(() => ({
 
 <template>
   <svg :viewBox="crop" class="doll block" :class="[{ 'is-animated': animate }, crop === '0 0 240 320' ? 'overflow-visible' : 'overflow-hidden']" :style="style" role="img" aria-label="旅人">
-    <g v-if="equipped.buddy" class="buddy" filter="url(#doll-cut)" v-html="svgOf('buddy')"></g>
+    <g v-if="equipped.buddy" class="buddy" :filter="cut" v-html="svgOf('buddy')"></g>
     <g class="sway">
-      <g filter="url(#doll-cut)">
+      <g :filter="cut">
         <!-- 後髮 -->
         <g v-html="hair.back"></g>
         <!-- 腳、手臂 -->

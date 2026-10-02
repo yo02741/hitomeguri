@@ -3,6 +3,7 @@ import { computed, ref } from 'vue'
 
 import DollGacha from '../components/DollGacha.vue'
 import NewTag from '../components/NewTag.vue'
+import DollSpin from '../components/DollSpin.vue'
 import PaperDoll from '../components/PaperDoll.vue'
 import { EYE_STYLES, HAIR_COLORS, HAIR_STYLES, OUTFITS, type Outfit, SKINS, type Slot, SLOTS } from '../data/outfits'
 import { regionOf, regions } from '../data/regions'
@@ -59,7 +60,8 @@ function wear() {
 </script>
 
 <template>
-  <section class="mx-auto flex w-full max-w-5xl flex-col gap-6 px-6 py-8 max-sm:px-4">
+  <!-- 桌機：整頁不捲動，左邊固定、右邊衣櫃自己捲 -->
+  <section class="mx-auto flex w-full max-w-5xl flex-col gap-6 px-6 py-8 max-sm:px-4 lg:min-h-0 lg:flex-1 lg:overflow-hidden lg:pb-6">
     <header class="flex flex-col gap-2">
       <RouterLink to="/log" class="flex w-fit items-center gap-1 text-label font-bold text-sub no-underline hover:text-ink">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7" /></svg>
@@ -72,17 +74,17 @@ function wear() {
     </header>
 
     <p v-if="!userStore.user" class="text-body-sm text-sub">收藏、行程與紀錄需要登入。</p>
-    <div v-else class="grid items-start gap-8 lg:grid-cols-[380px_minmax(0,1fr)]">
-      <!-- 角色 -->
-      <div class="flex w-full flex-col gap-4 max-lg:mx-auto max-lg:max-w-[440px] lg:sticky lg:top-6">
-        <div class="stage paper-grain relative overflow-hidden rounded-card bg-region-tint">
+    <div v-else class="grid items-start gap-8 lg:min-h-0 lg:flex-1 lg:grid-cols-[380px_minmax(0,1fr)] lg:grid-rows-[minmax(0,1fr)] lg:items-stretch">
+      <!-- 角色：3D 展示窗 -->
+      <div class="flex w-full flex-col gap-4 max-lg:mx-auto max-lg:max-w-[440px] lg:min-h-0">
+        <div class="stage paper-grain relative overflow-hidden rounded-card bg-region-tint lg:min-h-0 lg:flex-1">
           <span class="wa-pattern wa-seigaiha pointer-events-none absolute inset-0 bg-region opacity-25" aria-hidden="true"></span>
           <span class="floor pointer-events-none absolute inset-x-0 bottom-0 h-[17%] bg-region" aria-hidden="true"></span>
-          <PaperDoll :parts="avatar.parts" :equipped="avatar.equipped" animate class="doll-main relative mx-auto h-auto pt-[6%]" />
+          <DollSpin :parts="avatar.parts" :equipped="avatar.equipped" class="absolute inset-0" />
         </div>
         <button
           type="button"
-          class="draw flex h-14 items-center gap-3 rounded-card bg-ink px-4 text-paper disabled:cursor-not-allowed disabled:opacity-40"
+          class="draw flex h-14 shrink-0 items-center gap-3 rounded-card bg-ink px-4 text-paper disabled:cursor-not-allowed disabled:opacity-40"
           :disabled="!avatar.canDraw"
           @click="draw"
         >
@@ -96,7 +98,7 @@ function wear() {
       </div>
 
       <!-- 衣櫃 -->
-      <section class="flex min-w-0 flex-col" aria-label="衣櫃">
+      <section class="flex min-w-0 flex-col lg:min-h-0" aria-label="衣櫃">
         <div class="flex items-end gap-1 overflow-x-auto px-2" role="tablist" aria-label="衣櫃">
           <button
             v-for="t in TABS"
@@ -112,7 +114,7 @@ function wear() {
           </button>
         </div>
 
-        <div class="sheet rounded-card bg-surface p-5 max-sm:p-3 lg:min-h-[520px]" role="tabpanel">
+        <div class="sheet scroll-quiet rounded-card bg-surface p-5 max-sm:p-3 lg:min-h-0 lg:flex-1 lg:overflow-y-auto" role="tabpanel">
           <!-- 外觀 -->
           <div v-if="tab === 'look'" class="flex flex-col gap-6">
             <fieldset class="flex flex-col gap-2">
@@ -242,19 +244,10 @@ function wear() {
 </template>
 
 <style scoped>
-.stage {
-  aspect-ratio: 5 / 6;
-}
-.doll-main {
-  width: 78%;
-}
-/* 手機：舞台矮一點，抽服裝與衣櫃不用捲很遠 */
+/* 手機：展示窗正方形；桌機填滿左欄的高度 */
 @media (max-width: 1023px) {
   .stage {
     aspect-ratio: 1;
-  }
-  .doll-main {
-    width: 64%;
   }
 }
 .floor {

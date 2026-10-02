@@ -36,6 +36,32 @@
           <feMergeNode in="SourceGraphic" />
         </feMerge>
       </filter>
+      <!-- 3D 展示窗用：只有白邊、沒有落影（影子改畫在地上） -->
+      <filter id="doll-cut-ns" x="-20%" y="-15%" width="140%" height="135%" color-interpolation-filters="sRGB">
+        <feMorphology in="SourceAlpha" operator="dilate" radius="4.5" result="grow" />
+        <feFlood class="flood-paper" result="paper" />
+        <feComposite in="paper" in2="grow" operator="in" result="margin" />
+        <feMerge>
+          <feMergeNode in="margin" />
+          <feMergeNode in="SourceGraphic" />
+        </feMerge>
+      </filter>
+      <!-- 紙的背面：整張紙色，透一點點正面的印刷 -->
+      <filter id="doll-back" color-interpolation-filters="sRGB">
+        <feFlood class="flood-back" result="back" />
+        <feComposite in="back" in2="SourceAlpha" operator="in" result="sheet" />
+        <feColorMatrix in="SourceGraphic" type="saturate" values="0" result="grey" />
+        <feComponentTransfer in="grey" result="faint"><feFuncA type="linear" slope="0.07" /></feComponentTransfer>
+        <feMerge>
+          <feMergeNode in="sheet" />
+          <feMergeNode in="faint" />
+        </feMerge>
+      </filter>
+      <!-- 紙的切邊（厚度） -->
+      <filter id="doll-edge" color-interpolation-filters="sRGB">
+        <feFlood class="flood-edge" result="edge" />
+        <feComposite in="edge" in2="SourceAlpha" operator="in" />
+      </filter>
       <!-- 還沒有的：只剩剪影 -->
       <filter id="doll-ghost" color-interpolation-filters="sRGB">
         <feFlood class="flood-ghost" result="ghost" />
@@ -107,6 +133,12 @@
 <style scoped>
 .flood-paper {
   flood-color: var(--color-item-white);
+}
+.flood-back {
+  flood-color: var(--color-item-cream);
+}
+.flood-edge {
+  flood-color: var(--color-item-grey);
 }
 .flood-ghost {
   flood-color: var(--color-line);
