@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, onBeforeUnmount, onMounted, ref } from 'vue'
+import { computed, onBeforeUnmount, ref } from 'vue'
 
 import type { Slot } from '../data/outfits'
 import type { AvatarParts } from '../stores/avatar'
@@ -7,43 +7,49 @@ import PaperDoll from './PaperDoll.vue'
 
 // 旅人的 3D 展示窗（DESIGN.md §7.24）：紙做的立牌，滑鼠或手指左右拖拉就轉，上下拖拉（滑鼠）稍微俯仰；
 // 放開會帶著慣性轉一下再停。轉過去看得到紙的背面（紙色、透一點正面）與切邊的厚度，地上的影子跟著變窄。
-// 沒在動的時候輕輕左右擺。雙擊轉回正面；鍵盤 ←→ 一次轉 30 度、Home 回正面。系統減少動態時不擺、沒有慣性。
+// 雙擊轉回正面；鍵盤 ←→ 一次轉 30 度、Home 回正面。系統減少動態時沒有慣性。
+// 停下來就完全不動：3D 的層只要角度一直在變，瀏覽器就用低解析度畫（放大看配件會糊），所以沒有待機擺動，
+// 動畫迴圈也只在轉動、慣性、回正時跑。
 const props = defineProps<{ parts: AvatarParts; equipped: Partial<Record<Slot, string>> }>()
 
 const reduced = typeof matchMedia !== 'undefined' && matchMedia('(prefers-reduced-motion: reduce)').matches
 const ry = ref(0)
 const rx = ref(0)
-const wobble = ref(0)
 const smooth = ref(false)
 let dragging = false
 let start = { x: 0, y: 0, ry: 0, rx: 0 }
 let last = { x: 0, t: 0 }
 let vel = 0
 let raf = 0
-let idleSince = performance.now()
 
 /** 紙的厚度：前後之間疊幾層切邊 */
 const EDGES = [-1.5, -0.5, 0.5, 1.5]
 
-function frame(t: number) {
-  if (!dragging && Math.abs(vel) > 0.005) {
+/** 慣性與俯仰回正；兩個都停了就不再排下一格 */
+function frame() {
+  raf = 0
+  if (dragging) return
+  let moving = false
+  if (Math.abs(vel) > 0.005) {
     ry.value += vel * 16
     vel *= 0.94
-    idleSince = t
-  } else if (!dragging && Math.abs(rx.value) > 0.05) {
+    moving = true
+  } else vel = 0
+  if (Math.abs(rx.value) > 0.05) {
     rx.value *= 0.9
-  }
-  wobble.value = reduced || dragging || t - idleSince < 1200 ? wobble.value * 0.9 : Math.sin((t - idleSince) / 1400) * 7
-  raf = requestAnimationFrame(frame)
+    moving = true
+  } else if (rx.value !== 0) rx.value = 0
+  if (moving) raf = requestAnimationFrame(frame)
+}
+function settle() {
+  if (!raf) raf = requestAnimationFrame(frame)
 }
 function onDown(e: PointerEvent) {
   if (e.button !== 0) return
   dragging = true
   smooth.value = false
   vel = 0
-  start = { x: e.clientX, y: e.clientY, ry: ry.value + wobble.value, rx: rx.value }
-  ry.value = start.ry
-  wobble.value = 0
+  start = { x: e.clientX, y: e.clientY, ry: ry.value, rx: rx.value }
   last = { x: e.clientX, t: performance.now() }
   ;(e.currentTarget as HTMLElement).setPointerCapture(e.pointerId)
 }
@@ -59,9 +65,9 @@ function onMove(e: PointerEvent) {
 function onUp() {
   if (!dragging) return
   dragging = false
-  idleSince = performance.now()
   // 停很久才放開就不帶慣性
   if (performance.now() - last.t > 80) vel = 0
+  settle()
 }
 /** 轉回正面（最近的 0、360、720…） */
 function home() {
@@ -79,16 +85,14 @@ function onKey(e: KeyboardEvent) {
   } else if (e.key === 'Home') home()
   else return
   e.preventDefault()
-  idleSince = performance.now()
 }
 
-const angle = computed(() => ry.value + wobble.value)
+const angle = computed(() => ry.value)
 const transform = computed(() => `rotateX(${rx.value}deg) rotateY(${angle.value}deg)`)
 // 地上的影子：正面、背面最寬，轉到側面最窄
 const shadowScale = computed(() => 0.45 + 0.55 * Math.abs(Math.cos((angle.value * Math.PI) / 180)))
 const look = computed(() => ({ ...props.equipped }))
 
-onMounted(() => (raf = requestAnimationFrame(frame)))
 onBeforeUnmount(() => cancelAnimationFrame(raf))
 </script>
 
