@@ -19,6 +19,7 @@ from __future__ import annotations
 
 import json
 import re
+import unicodedata
 from datetime import date
 from pathlib import Path
 from typing import Any
@@ -210,12 +211,18 @@ QUALITY = {
 }
 
 
+def fold(text: str) -> str:
+    """去掉長音、重音符號後轉小寫（Hōzen-ji → hozen-ji）：分類名常帶長音，檔名常常沒有"""
+    decomposed = unicodedata.normalize("NFKD", text)
+    return "".join(c for c in decomposed if not unicodedata.combining(c)).lower()
+
+
 def name_tokens(cat: str, ja: str) -> list[str]:
     """用來確認檔名拍的是這個景點。
 
     Commons 分類名的特徵字（Himeji Castle → himeji）與日文名去掉字尾（姫路城 → 姫路）。
     """
-    words = re.split(r"[\s_,()\-–.']+", cat.lower())
+    words = re.split(r"[\s_,()\-–.']+", fold(cat))
     toks = [w for w in words if len(w) >= 4 and w not in GENERIC]
     core = JA_SUFFIX.sub("", ja or "")
     if len(core) >= 2:
@@ -224,8 +231,8 @@ def name_tokens(cat: str, ja: str) -> list[str]:
 
 
 def mentions(title: str, toks: list[str]) -> bool:
-    t = title.lower().replace("_", " ")
-    return any(k in t for k in toks)
+    t = fold(title).replace("_", " ")
+    return any(fold(k) in t for k in toks)
 
 
 def score(

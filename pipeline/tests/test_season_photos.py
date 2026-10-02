@@ -122,3 +122,11 @@ def test_find_season_photos(monkeypatch):
     assert "illumination" in got["night"]["source_url"]
     assert got["summer"]["source_url"].endswith("IMG_2041.jpg")
     assert got["autumn"]["author"] == "Someone"
+
+
+def test_mentions_ignores_long_vowel_marks():
+    # 分類名「Hōzen-ji」、檔名「Hozen-ji」：長音符號不影響比對
+    toks = sp.name_tokens("Hōzen-ji (Osaka)", "法善寺")
+    assert sp.mentions("Hozen-ji Temple at night.jpg", toks)
+    assert sp.mentions("Kyoto-Ryoan-Ji MG 4512.jpg", sp.name_tokens("Ryōan-ji", "龍安寺"))
+    assert sp.mentions("Hōzen-ji at night.jpg", sp.name_tokens("Hozen-ji", "法善寺"))
