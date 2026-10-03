@@ -123,6 +123,7 @@
 - 符號與外框（非文字）對背景 ≥ 3:1。
 - 白字只能放在 `bg-region-strong`、`bg-ink` 或 `bg-danger`（NEW 小牌）上；白一律用 `--color-white`（`text-white`、`stroke-white`），年代主題換成那個年代的紙白，不寫 `white`。
 - 系統設定「增加對比」（`prefers-contrast: more`）時 `--region-line` 加深到 sub 70%（theme.css）。
+- 系統設定「減少透明度」（`prefers-reduced-transparency: reduce`）時，半透明的紙色底（`bg-paper/90`）改成不透明（theme.css）。
 
 ---
 

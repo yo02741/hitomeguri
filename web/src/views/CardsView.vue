@@ -157,7 +157,7 @@ function onCardKey(e: KeyboardEvent, id: string) {
 
     <template v-if="userStore.user">
       <!-- 抽卡：抽獎券、十連抽 -->
-      <div v-if="cards.length" class="flex flex-wrap items-center gap-x-4 gap-y-2 rounded-card border border-line bg-paper px-4 py-3">
+      <div v-if="cards.length" class="flex flex-wrap items-center gap-x-3 gap-y-2 rounded-card border border-line bg-paper px-4 py-3 sm:gap-x-4">
         <button type="button" class="flex items-baseline gap-1.5 text-label text-sub hover:text-ink active:text-ink" :aria-expanded="showTickets" @click="showTickets = !showTickets">
           抽獎券<span class="font-latin text-h3 font-bold text-ink">{{ wallet.left }}</span>
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" class="self-center transition-transform" :class="showTickets ? 'rotate-180' : ''" aria-hidden="true"><path d="M6 9l6 6 6-6" /></svg>
@@ -166,7 +166,7 @@ function onCardKey(e: KeyboardEvent, id: string) {
         <button type="button" class="h-8 rounded-control px-2 text-label font-bold text-sub hover:bg-surface hover:text-ink active:not-disabled:translate-y-px" @click="showRules = true">規則</button>
         <button
           type="button"
-          class="ml-auto h-10 rounded-full bg-ink px-5 text-label font-bold text-paper disabled:opacity-40 active:not-disabled:translate-y-px"
+          class="ml-auto h-10 rounded-full bg-ink px-4 text-label sm:px-5 font-bold text-paper disabled:opacity-40 active:not-disabled:translate-y-px"
           :disabled="!tenCount || !wallet.canSpend(tenCount)"
           @click="drawTen"
         >
