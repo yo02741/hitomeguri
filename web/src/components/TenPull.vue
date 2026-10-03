@@ -263,6 +263,12 @@ const zoomed = computed(() => (zoom.value === null ? null : props.pulls[zoom.val
     font-size: 14px;
   }
 }
+/* 手機打橫：放大的卡依高度算（卡寬 20em） */
+@media (orientation: landscape) and (max-height: 500px) {
+  .zoom :deep(.card-scene) {
+    font-size: calc(min(320px, (100dvh - 2rem) * 5 / 7) / 20);
+  }
+}
 @media (prefers-reduced-motion: reduce) {
   .ten,
   .slot,

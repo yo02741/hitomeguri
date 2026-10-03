@@ -181,7 +181,7 @@ function markOpened(tripId: string) {
     @cancel="cancel"
     @close="closed"
   >
-    <div class="flex size-full flex-col items-center justify-center gap-5 overflow-hidden bg-ink/80 p-4" @click="stage === 'opening' && toDealing()">
+    <div class="pack-root flex size-full flex-col items-center justify-center gap-5 overflow-hidden bg-ink/80 p-4" @click="stage === 'opening' && toDealing()">
       <!-- 封著的卡包（撕開的途中點任何地方都直接發牌） -->
       <div v-if="stage === 'sealed' || stage === 'opening'" class="pack-stage" :class="stage" :data-pref="mainPref ?? undefined">
         <button type="button" class="pack paper-grain relative block overflow-hidden rounded-[18px] bg-region text-on-region" aria-label="打開卡包" data-next @click.stop="next">
@@ -214,7 +214,7 @@ function markOpened(tripId: string) {
       </div>
 
       <!-- 翻完：一覽 -->
-      <div v-else-if="stage === 'done'" ref="summary" tabindex="-1" :aria-label="`${title} ${deck.length} 張`" class="flex max-h-full w-full max-w-3xl flex-col gap-4 overflow-x-hidden overflow-y-auto p-3 outline-none">
+      <div v-else-if="stage === 'done'" ref="summary" tabindex="-1" :aria-label="`${title} ${deck.length} 張`" class="summary flex max-h-full w-full max-w-3xl flex-col gap-4 overflow-x-hidden overflow-y-auto p-3 outline-none">
         <p class="text-center text-h3 font-black text-paper">{{ title }}　<span class="font-latin">{{ deck.length }}</span> 張</p>
         <ul class="grid grid-cols-3 gap-3 sm:grid-cols-4 md:grid-cols-5">
           <li v-for="(c, i) in revealed" :key="c.key" class="deal-in @container" :style="{ '--i': Math.min(i, 15) }">
@@ -225,26 +225,68 @@ function markOpened(tripId: string) {
         <AchvRow :trip="trip" animate />
       </div>
 
-      <!-- 已翻開的排在下方 -->
-      <ul v-if="stage === 'dealing' && revealed.length" class="flex max-w-full gap-2 overflow-x-auto px-2 pb-1" aria-label="已翻開">
-        <li v-for="c in revealed" :key="c.key" class="mini w-12 shrink-0 @container">
-          <SpotCard :card="c.face" :rarity="c.rarity" :number="c.number" size="fluid" :variant="shown(c)" />
-        </li>
-      </ul>
+      <!-- 直向排在下方；手機打橫時排成一欄放在右邊 -->
+      <div class="side">
+        <!-- 已翻開的 -->
+        <ul v-if="stage === 'dealing' && revealed.length" class="flex max-w-full gap-2 overflow-x-auto px-2 pb-1" aria-label="已翻開">
+          <li v-for="c in revealed" :key="c.key" class="mini w-12 shrink-0 @container">
+            <SpotCard :card="c.face" :rarity="c.rarity" :number="c.number" size="fluid" :variant="shown(c)" />
+          </li>
+        </ul>
 
-      <div class="flex gap-2">
-        <button v-if="stage === 'sealed'" type="button" class="h-11 rounded-control bg-paper px-5 text-body-sm font-bold text-ink active:not-disabled:translate-y-px" :disabled="!deck.length" @click="open">打開</button>
-        <button v-if="stage === 'dealing'" type="button" class="h-11 rounded-control border border-paper/50 px-4 text-body-sm text-paper active:not-disabled:translate-y-px" @click="revealAll">全部翻開</button>
-        <RouterLink v-if="stage === 'done'" to="/log/cards" class="flex h-11 items-center rounded-control bg-paper px-5 text-body-sm font-bold text-ink no-underline active:not-disabled:translate-y-px" @click="emit('close')">收集冊</RouterLink>
-        <button type="button" class="h-11 rounded-control border border-paper/50 px-4 text-body-sm text-paper active:not-disabled:translate-y-px" @click="emit('close')">關閉</button>
+        <div class="actions flex gap-2">
+          <button v-if="stage === 'sealed'" type="button" class="h-11 rounded-control bg-paper px-5 text-body-sm font-bold text-ink active:not-disabled:translate-y-px" :disabled="!deck.length" @click="open">打開</button>
+          <button v-if="stage === 'dealing'" type="button" class="h-11 rounded-control border border-paper/50 px-4 text-body-sm text-paper active:not-disabled:translate-y-px" @click="revealAll">全部翻開</button>
+          <RouterLink v-if="stage === 'done'" to="/log/cards" class="flex h-11 items-center justify-center rounded-control bg-paper px-5 text-body-sm font-bold text-ink no-underline active:not-disabled:translate-y-px" @click="emit('close')">收集冊</RouterLink>
+          <button type="button" class="h-11 rounded-control border border-paper/50 px-4 text-body-sm text-paper active:not-disabled:translate-y-px" @click="emit('close')">關閉</button>
+        </div>
       </div>
     </div>
   </dialog>
 </template>
 
 <style scoped>
+/* 卡寬：最寬 320px，也依高度算（扣掉張數、已翻開的一排與按鈕，約 290px）。卡片用 em 排版，寬 20em。
+   卡包寬 240px、5:8，同樣依高度縮小（扣掉按鈕） */
+.pack-root {
+  --cw: min(320px, calc(100vw - 32px), calc((100dvh - 290px) * 5 / 7));
+  --pw: min(240px, 60vw, calc((100dvh - 120px) * 5 / 8));
+}
+.flip-front :deep(.card-scene) {
+  font-size: calc(var(--cw) / 20);
+}
+.side {
+  display: contents;
+}
+/* 手機打橫：卡片（卡包、一覽）在左、高度撐滿；已翻開的一排與按鈕一欄放在右邊，用虛線隔開 */
+@media (orientation: landscape) and (max-height: 500px) {
+  .pack-root {
+    --cw: min(320px, calc((100dvh - 4.5rem) * 5 / 7));
+    --pw: min(240px, calc((100dvh - 3rem) * 5 / 8));
+    flex-direction: row;
+    gap: 1.5rem;
+    padding-inline: max(1rem, env(safe-area-inset-left)) max(1rem, env(safe-area-inset-right));
+  }
+  .side {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.75rem;
+    width: 13rem;
+    flex-shrink: 0;
+    padding: 0.25rem 0 0.25rem 1.5rem;
+    border-left: 2px dashed color-mix(in oklab, var(--color-paper) 35%, transparent);
+  }
+  .actions {
+    flex-direction: column;
+  }
+  .summary {
+    min-width: 0;
+    flex: 1;
+  }
+}
 .pack {
-  width: min(240px, 60vw);
+  width: var(--pw);
   aspect-ratio: 5 / 8;
   box-shadow: 0 1.5em 3em color-mix(in oklab, var(--color-shade) 45%, transparent);
   animation: pack-float 2.6s ease-in-out infinite;
@@ -298,7 +340,7 @@ function markOpened(tripId: string) {
   }
 }
 .flip {
-  width: 320px;
+  width: var(--cw);
   aspect-ratio: 5 / 7;
   transform: rotateY(180deg);
   transition: transform 0.65s var(--ease-flip);
