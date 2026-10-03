@@ -26,8 +26,8 @@ const props = defineProps<{
   insets?: { top: number; bottom: number } | null
   /** 下方的控制項（縮放、出處）往上移的高度（px）：手機的祭典小卡不蓋住縮放鈕 */
   controlsLift?: number
-  /** 手機：右上角日本小框的上緣（px）；chip 軌道在地圖上方時排在軌道下面 */
-  locatorTop?: number
+  /** 手機：日本小框靠左排在清單（或 chip 軌道）下緣下面（top），或景點卡片、祭典小卡上緣上面（bottom），72px 寬（決定事項 O1） */
+  locatorEdge?: { top: number } | { bottom: number } | null
   /** 目前地區的縣界：虛線外框＋淡淡的地區色，看出縣的範圍 */
   outline?: GeoJSON.Feature | null
   /** 開啟中的擴充包：用主題色畫在最上層，景點變淡當底圖 */
@@ -946,8 +946,23 @@ class TerrainControl implements maplibregl.IControl {
 
 // 角落的日本全圖（JapanLocator）：放大到看不出在哪裡時才出現；移動中每一格畫面更新一次
 const LOCATOR_ZOOM = 6.5
-// 手機：小框排在 chip 軌道下面時，和下方景點卡片之間放不下整個小框（約 130px 高）就先不顯示，不露出被卡片切掉的半個
-const locatorFits = computed(() => !props.locatorTop || size.value.h - (props.insets?.bottom ?? 0) - props.locatorTop - 10 >= 136)
+// 手機：上方清單（軌道）與下方卡片之間放不下整個小框（72px 寬時約 104px 高，倍率換行時約 122px）就先不顯示，不露出被切掉的半個
+const LOCATOR_EDGE_H = 124
+const locatorFits = computed(
+  () => !props.locatorEdge || size.value.h - (props.insets?.top ?? 0) - (props.insets?.bottom ?? 0) - 20 >= LOCATOR_EDGE_H,
+)
+const locatorClass = computed(() => {
+  if (props.insetLeft) return 'bottom-[calc(1rem+var(--map-inset-b))] w-[132px] land:hidden'
+  const edge = props.locatorEdge
+  const pos = !edge ? 'top-2.5 right-[calc(0.625rem+var(--map-inset-r))] w-[96px]' : `left-[calc(0.625rem+var(--map-inset-l))] w-[72px] ${'top' in edge ? '' : 'origin-bottom-left'}`
+  return `${pos} [@media(orientation:landscape)_and_(max-height:500px)]:hidden`
+})
+const locatorStyle = computed(() => {
+  if (props.insetLeft) return { left: `${props.insetLeft}px` }
+  const edge = props.locatorEdge
+  if (!edge) return undefined
+  return 'top' in edge ? { top: `${edge.top + 10}px` } : { bottom: `${edge.bottom + 10}px` }
+})
 const locator = shallowRef<{ bounds: [number, number, number, number]; zoom: number } | null>(null)
 let locatorFrame = 0
 function updateLocator() {
@@ -1218,8 +1233,8 @@ defineExpose({
         :zoom="locator.zoom"
         :pref="colorKey"
         class="absolute z-[2] print:hidden"
-        :class="insetLeft ? 'bottom-[calc(1rem+var(--map-inset-b))] w-[132px] land:hidden' : 'top-2.5 right-[calc(0.625rem+var(--map-inset-r))] w-[96px] [@media(orientation:landscape)_and_(max-height:500px)]:hidden'"
-        :style="insetLeft ? { left: `${insetLeft}px` } : locatorTop ? { top: `calc(${locatorTop}px + 0.625rem)` } : undefined"
+        :class="locatorClass"
+        :style="locatorStyle"
       />
     </Transition>
     <div

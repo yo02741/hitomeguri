@@ -778,7 +778,7 @@ function onMoveEnd(view: MapViewState) {
         :color-key="explore.activePref"
         :inset-left="insetLeft"
         :insets="insets"
-        :locator-top="!desktop && !side && !listShown && railShown ? insets.top : 0"
+        :locator-edge="desktop || side ? null : insets.bottom ? { bottom: insets.bottom } : { top: insets.top }"
         :controls-lift="pinCard || (selectedId && spotSheet && snap === 'peek') ? insets.bottom : 0"
         :pack="packMap"
         :outline="outline"
