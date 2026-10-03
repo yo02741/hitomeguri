@@ -397,7 +397,7 @@ users/{uid}/lists/{listId}
 
 - **CSV**：名稱（ja / zh）、座標、Google Maps 連結、備註。
 - **KML**：可匯入 Google My Maps；行程匯出時每天一個 folder。
-- **Google Maps 轉乘連結**：相鄰景點間用 Maps URLs（`https://www.google.com/maps/dir/?api=1&origin=...&destination=...&travelmode=transit`）；一天多點時可用 `waypoints`，但各平台支援的 waypoint 數量有限，實作時確認並在超過時拆段。
+- **Google Maps 轉乘連結**：相鄰景點間用 Maps URLs（`https://www.google.com/maps/dir/?api=1&origin=...&destination=...&travelmode=transit`）；一天多點時用 `waypoints`（`|` 分隔；手機瀏覽器最多 3 個、其他最多 9 個，網址最長 2,048 字元，大眾運輸不支援 waypoints），超過時拆段（`dayRouteUrls`）；不給 `origin` 時以裝置位置為起點（「從目前位置」）。
 
 ---
 

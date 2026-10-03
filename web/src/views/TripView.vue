@@ -23,7 +23,7 @@ import { confirmDialog } from '../services/confirm'
 import { download, type ExportFolder, type ExportRow, toCsv, toKml } from '../services/export'
 import { drawTripRecap } from '../services/shareImage'
 import { showToast } from '../services/toast'
-import { wide } from '../services/viewport'
+import { coarse, wide } from '../services/viewport'
 import {
   addDays,
   allStops,
@@ -31,6 +31,7 @@ import {
   dayDate,
   dayIndexOn,
   dayPref,
+  dayRouteUrls,
   edgeTarget,
   findStop,
   insertStop,
@@ -45,6 +46,8 @@ import {
   type Trip,
   type TripContent,
   TRIP_NAME_MAX,
+  WAYPOINTS_DESKTOP,
+  WAYPOINTS_MOBILE,
   daysUntil,
   tripStatus,
 } from '../services/trip'
@@ -197,6 +200,12 @@ const targets = computed(() => {
       return { value: i, label: `DAY ${i + 1}`, hint: date ? monthDay(date) : undefined }
     }),
   ]
+})
+
+// 每天的 Google Maps 路線（UX-FLOW.md C5）：觸控裝置或窄螢幕可能在手機瀏覽器打開，用手機的 waypoint 上限（3），桌機 9
+const routes = computed(() => {
+  const max = wide.value && !coarse.value ? WAYPOINTS_DESKTOP : WAYPOINTS_MOBILE
+  return (trip.value?.days ?? []).map((d) => dayRouteUrls(d.stops, max))
 })
 
 /** 10/3 */
@@ -595,6 +604,23 @@ async function del() {
           @remove="onRemove"
           @focus="focusStop"
         />
+        <!-- 這天的 Google Maps 路線：超過 waypoint 上限時拆段，按鈕寫這段從第幾站到第幾站 -->
+        <div v-if="routes[i]?.length" class="flex flex-wrap items-center gap-1.5 pl-9 pointer-coarse:pl-2.5" :data-pref="dayPref(d)">
+          <span v-if="routes[i]!.length > 1" class="mr-0.5 text-caption text-sub">Google Maps 路線</span>
+          <a
+            v-for="leg in routes[i]"
+            :key="leg.from"
+            :href="leg.url"
+            target="_blank"
+            rel="noopener"
+            :aria-label="routes[i]!.length > 1 ? `DAY ${i + 1} Google Maps 路線 第 ${leg.from + 1} 到 ${leg.to + 1} 站` : `DAY ${i + 1} Google Maps 路線`"
+            class="flex h-8 items-center gap-1.5 rounded-control border border-line bg-paper px-3 text-label text-ink no-underline hover:bg-surface active:translate-y-px pointer-coarse:h-tap"
+          >
+            <template v-if="routes[i]!.length > 1"><span class="font-latin">{{ leg.from + 1 }}–{{ leg.to + 1 }}</span></template>
+            <template v-else>Google Maps 路線</template>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="text-sub" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" /></svg>
+          </a>
+        </div>
       </section>
       <button
         v-if="!hasDates && activeDay !== -1"

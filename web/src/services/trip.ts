@@ -198,6 +198,55 @@ export function transitUrl(a: Stop, b: Stop): string {
   return `https://www.google.com/maps/dir/?${q}`
 }
 
+/**
+ * 從目前位置到這個停留點的大眾運輸路線：不給 origin，Google Maps 以裝置位置為起點（Maps URLs 的 origin 預設）。
+ */
+export function fromHereUrl(s: Stop): string {
+  const q = new URLSearchParams({ api: '1', destination: place(s), travelmode: 'transit' })
+  return `https://www.google.com/maps/dir/?${q}`
+}
+
+/**
+ * Maps URLs 的 waypoint 上限（https://developers.google.com/maps/documentation/urls/get-started）：
+ * 手機瀏覽器最多 3 個，其他最多 9 個；網址最長 2,048 字元。
+ */
+export const WAYPOINTS_MOBILE = 3
+export const WAYPOINTS_DESKTOP = 9
+export const MAPS_URL_MAX = 2048
+
+export interface RouteLeg {
+  /** 這段的第一站與最後一站（停留點的索引，從 0 起） */
+  from: number
+  to: number
+  url: string
+}
+
+function routeUrl(stops: Stop[]): string {
+  const q = new URLSearchParams({ api: '1', origin: place(stops[0]!), destination: place(stops[stops.length - 1]!) })
+  if (stops.length > 2) q.set('waypoints', stops.slice(1, -1).map(place).join('|'))
+  return `https://www.google.com/maps/dir/?${q}`
+}
+
+/**
+ * 一天的 Google Maps 路線（UX-FLOW.md C5）：依順序經過每個停留點。超過 waypoint 上限或網址太長時拆段，
+ * 下一段從上一段的終點出發。不指定交通方式：大眾運輸不支援 waypoints，由 Google Maps 決定、使用者在那邊切換。
+ */
+export function dayRouteUrls(stops: Stop[], maxWaypoints: number): RouteLeg[] {
+  const legs: RouteLeg[] = []
+  let from = 0
+  while (from < stops.length - 1) {
+    let to = Math.min(stops.length - 1, from + maxWaypoints + 1)
+    let url = routeUrl(stops.slice(from, to + 1))
+    while (url.length > MAPS_URL_MAX && to > from + 1) {
+      to--
+      url = routeUrl(stops.slice(from, to + 1))
+    }
+    legs.push({ from, to, url })
+    from = to
+  }
+  return legs
+}
+
 const WEEKDAY = ['日', '一', '二', '三', '四', '五', '六']
 
 /** 10/12（六） */

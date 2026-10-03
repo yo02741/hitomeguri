@@ -9,3 +9,8 @@ mq?.addEventListener('change', (e) => (wide.value = e.matches))
 const mqNarrow = typeof window !== 'undefined' ? window.matchMedia('(max-width: 639px)') : null
 export const narrow = ref(mqNarrow?.matches ?? false)
 mqNarrow?.addEventListener('change', (e) => (narrow.value = e.matches))
+
+/** 觸控為主的裝置（手機、平板）：Google Maps 路線用手機瀏覽器的 waypoint 上限，共編邀請用系統分享 */
+const mqCoarse = typeof window !== 'undefined' ? window.matchMedia('(pointer: coarse)') : null
+export const coarse = ref(mqCoarse?.matches ?? false)
+mqCoarse?.addEventListener('change', (e) => (coarse.value = e.matches))

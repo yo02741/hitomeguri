@@ -3,14 +3,14 @@ import { nextTick, ref, watch } from 'vue'
 
 import { regionOf } from '../data/regions'
 import type { MapSpot } from '../services/bundles'
-import { type Stop, type StopPos, transitUrl } from '../services/trip'
+import { fromHereUrl, type Stop, type StopPos, transitUrl } from '../services/trip'
 import Dropdown from './Dropdown.vue'
 import StopMenu from './StopMenu.vue'
 
 // 行程某一天（或「待排」）的停留點。拖曳排序／換天，另有「移到」選單與上下移動（鍵盤用）。
 // 觸控裝置上沒有拖曳把手（觸控不會觸發 dragstart）與「移到」下拉，排序、換天、移除收進「⋯」選單（StopMenu）：
 // 24px 的小鈕手指點不到，幾顆 44px 又會擠掉名稱。
-// 天與天之間的相鄰停留點放 Google Maps 大眾運輸路線連結。
+// 相鄰停留點之間放 Google Maps 大眾運輸路線連結；每天第一站上面是「從目前位置」（不給起點，Google Maps 用裝置位置）。
 const props = defineProps<{
   stops: Stop[]
   /** -1 為待排 */
@@ -119,6 +119,25 @@ const isDrop = (idx: number) => props.dropAt?.day === props.day && props.dropAt.
     @dragover="onOverList"
     @drop.prevent="emit('drop')"
   >
+    <li
+      v-if="day >= 0 && stops.length"
+      key="here"
+      class="flex items-center gap-2 py-0.5 pl-9 text-caption text-sub pointer-coarse:py-0 pointer-coarse:pl-2.5"
+      @dragover.prevent="emit('dragover', { day, idx: 0 })"
+    >
+      <a
+        :href="fromHereUrl(stops[0]!)"
+        target="_blank"
+        rel="noopener"
+        :aria-label="`從目前位置到 ${stops[0]!.name} 的轉乘路線`"
+        class="flex items-center gap-1 text-sub hover:text-ink active:text-ink pointer-coarse:min-h-tap pointer-coarse:pr-3"
+      >
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="3" /><path d="M12 2v4M12 18v4M2 12h4M18 12h4" />
+        </svg>
+        從目前位置
+      </a>
+    </li>
     <template v-for="(s, i) in stops" :key="s.spot_id">
       <li
         v-if="day >= 0 && i > 0"
