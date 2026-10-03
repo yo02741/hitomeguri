@@ -116,11 +116,13 @@
 - **頁面層級**：在 App 根元素（`#app`）設定 `data-pref`，並加上 `bg-paper text-ink`，整頁的中性色與強調色一起切換。值依 `UX-FLOW.md` §2.3 決定：探索頁＝焦點縣、行程與紀錄＝封面縣；首頁、景點模式、行程列表、紀錄總覽、我的＝不設（使用 `:root` 的全國色）。
 - **元件層級**：顏色與頁面不同的元件（景點卡片、DAY 標記、行程卡、縣色標籤）在自己的根元素設定 `data-pref`。
 - 切換 `data-pref` 時整頁顏色以 200ms 過場（`transition-colors`），地圖陸地同步以 `setPaintProperty` 更新。
+- 瀏覽器自帶的表面也跟著換：`<meta name="theme-color">`（手機狀態列、PWA 標題列）由 `App.vue` 依 `data-pref` 與年代設成 `--region-header`（讀變數，不讀過場中的底色）；`::selection` 用 region-strong 22% 疊 paper、字 ink；輸入框游標 `caret-color: region-strong`。
 
 ### 3.5 對比
 - 文字對底色 ≥ 4.5:1；24px 以上粗體 ≥ 3:1。
 - 符號與外框（非文字）對背景 ≥ 3:1。
 - 白字只能放在 `bg-region-strong`、`bg-ink` 或 `bg-danger`（NEW 小牌）上；白一律用 `--color-white`（`text-white`、`stroke-white`），年代主題換成那個年代的紙白，不寫 `white`。
+- 系統設定「增加對比」（`prefers-contrast: more`）時 `--region-line` 加深到 sub 70%（theme.css）。
 
 ---
 

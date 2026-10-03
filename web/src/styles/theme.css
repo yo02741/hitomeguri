@@ -277,6 +277,15 @@
     outline: 2px solid var(--region-strong);
     outline-offset: 2px;
   }
+  /* 瀏覽器自帶的表面也跟著地區色與年代：選取的反白、輸入游標 */
+  ::selection {
+    background: color-mix(in oklab, var(--region-strong) 22%, var(--region-paper));
+    color: var(--region-ink);
+  }
+  input,
+  textarea {
+    caret-color: var(--region-strong);
+  }
   /* Tailwind v4 的 preflight 讓 button 用預設游標；可以按的都改成手指 */
   button:not(:disabled),
   [role='button']:not([aria-disabled='true']),
@@ -325,6 +334,21 @@
 @media (pointer: coarse) {
   :is(input:not([type='checkbox'], [type='radio'], [type='range'], [type='file'], [type='color']), textarea, select):is(.text-caption, .text-label, .text-body-sm, .text-body) {
     font-size: 1rem;
+  }
+}
+
+/* 系統設定「增加對比」：框線加深到看得出來。縣的規則（[data-pref]、年代的 [data-pref]）較具體，要 !important */
+@media (prefers-contrast: more) {
+  :root,
+  [data-pref] {
+    --region-line: color-mix(in oklab, var(--region-sub) 70%, var(--region-paper)) !important;
+  }
+}
+
+/* 系統設定「減少透明度」：半透明的紙改成實色 */
+@media (prefers-reduced-transparency: reduce) {
+  .bg-paper\/90 {
+    background-color: var(--region-paper);
   }
 }
 
