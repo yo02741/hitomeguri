@@ -278,7 +278,7 @@ onBeforeUnmount(() => document.removeEventListener('keydown', onKey))
               v-for="(v, i) in variants"
               :key="v.key"
               type="button"
-              class="relative h-8 rounded-full px-3 text-caption font-bold active:not-disabled:translate-y-px"
+              class="relative h-8 rounded-full px-3 text-caption font-bold active:not-disabled:translate-y-px pointer-coarse:h-tap"
               :class="i === vi ? 'bg-paper text-ink' : 'bg-paper/15 text-white hover:bg-paper/25'"
               :aria-pressed="i === vi"
               @click="vi = i"
@@ -292,7 +292,7 @@ onBeforeUnmount(() => document.removeEventListener('keydown', onKey))
           <button
             v-if="visited && variants && variants.length > 1"
             type="button"
-            class="cover-btn -mt-2 flex h-8 items-center justify-center gap-1.5 rounded-full px-3 text-caption font-bold"
+            class="cover-btn -mt-2 flex h-8 items-center justify-center gap-1.5 rounded-full px-3 text-caption font-bold pointer-coarse:h-tap"
             :class="isCover ? 'text-white/70' : 'text-white underline decoration-white/40 underline-offset-4 hover:decoration-white'"
             :disabled="isCover"
             @click="setCover"
@@ -304,7 +304,7 @@ onBeforeUnmount(() => document.removeEventListener('keydown', onKey))
             <button
               v-if="touch && !tilt.reduced"
               type="button"
-              class="h-10 rounded-full bg-paper px-4 text-label font-bold text-ink disabled:opacity-60 active:not-disabled:translate-y-px"
+              class="h-10 rounded-full bg-paper px-4 text-label font-bold text-ink disabled:opacity-60 active:not-disabled:translate-y-px pointer-coarse:h-tap"
               :disabled="gyro"
               @click="startGyro"
             >
@@ -313,24 +313,24 @@ onBeforeUnmount(() => document.removeEventListener('keydown', onKey))
             <button
               v-if="canDraw"
               type="button"
-              class="flex h-10 items-center justify-center gap-2 rounded-full bg-paper px-4 text-label font-bold text-ink disabled:opacity-50 active:not-disabled:translate-y-px"
+              class="flex h-10 items-center justify-center gap-2 rounded-full bg-paper px-4 text-label font-bold text-ink disabled:opacity-50 active:not-disabled:translate-y-px pointer-coarse:h-tap"
               :disabled="!missing || !wallet.canSpend(1)"
               @click="drawOneCard"
             >
               {{ missing ? '抽一張' : '已收齊' }}
               <span v-if="missing" class="font-latin text-caption font-semibold text-sub">券 {{ wallet.left }}</span>
             </button>
-            <button type="button" class="h-10 rounded-full bg-paper px-4 text-label font-bold text-ink active:not-disabled:translate-y-px" @click="flipped = !flipped">
+            <button type="button" class="h-10 rounded-full bg-paper px-4 text-label font-bold text-ink active:not-disabled:translate-y-px pointer-coarse:h-tap" @click="flipped = !flipped">
               {{ flipped ? '正面' : '背面' }}
             </button>
             <RouterLink
               v-if="to"
               :to="to"
-              class="flex h-10 items-center justify-center rounded-full bg-paper px-4 text-label font-bold text-ink no-underline active:not-disabled:translate-y-px"
+              class="flex h-10 items-center justify-center rounded-full bg-paper px-4 text-label font-bold text-ink no-underline active:not-disabled:translate-y-px pointer-coarse:h-tap"
             >
               地圖
             </RouterLink>
-            <button type="button" class="h-10 rounded-full bg-paper px-4 text-label font-bold text-ink active:not-disabled:translate-y-px" @click="emit('close')">
+            <button type="button" class="h-10 rounded-full bg-paper px-4 text-label font-bold text-ink active:not-disabled:translate-y-px pointer-coarse:h-tap" @click="emit('close')">
               關閉
             </button>
           </div>

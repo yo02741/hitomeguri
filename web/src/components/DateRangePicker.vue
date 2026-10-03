@@ -67,7 +67,7 @@ function onFocusOut(e: FocusEvent) {
   if (n && !panel.value?.contains(n) && n !== trigger.value) open.value = false
 }
 
-const HEIGHT = { sm: 'h-9', md: 'h-10', lg: 'h-11' }
+const HEIGHT = { sm: 'h-9 pointer-coarse:h-tap', md: 'h-10 pointer-coarse:h-tap', lg: 'h-11' }
 const text = computed(() => {
   if (!isIsoDate(props.start)) return ''
   const e = isIsoDate(props.end) && props.end !== props.start ? props.end : ''
@@ -124,7 +124,7 @@ const days = computed(() => dayCount(draftStart.value || undefined, (draftEnd.va
             <button
               v-if="start || draftStart"
               type="button"
-              class="ml-auto h-9 rounded-control px-3 text-sub hover:bg-surface hover:text-ink active:not-disabled:translate-y-px"
+              class="ml-auto h-9 rounded-control px-3 text-sub hover:bg-surface hover:text-ink active:not-disabled:translate-y-px pointer-coarse:h-tap"
               @click="clear"
             >
               清除

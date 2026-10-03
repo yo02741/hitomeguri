@@ -66,10 +66,10 @@ const visitedCount = computed(() => rows.value.filter((it) => marks.markOf(it.s 
     class="flex min-h-0 flex-col rounded-card bg-paper p-1.5 shadow-float"
     :style="{ '--pack': `var(--color-t-${def.color})` }"
   >
-    <div class="flex h-9 shrink-0 items-center gap-2 px-1">
+    <div class="flex h-9 shrink-0 items-center gap-2 px-1 pointer-coarse:h-tap">
       <button
         type="button"
-        class="flex h-8 items-center gap-1 rounded-control px-1.5 text-label text-sub hover:bg-surface hover:text-ink active:not-disabled:translate-y-px"
+        class="flex h-8 items-center gap-1 rounded-control px-1.5 text-label text-sub hover:bg-surface hover:text-ink active:not-disabled:translate-y-px pointer-coarse:h-tap"
         @click="explore.pack = null"
       >
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -88,28 +88,28 @@ const visitedCount = computed(() => rows.value.filter((it) => marks.markOf(it.s 
 
     <nav
       v-if="groups.length > 1"
-      class="flex shrink-0 flex-wrap gap-x-3.5 gap-y-1 border-b border-line-soft px-2.5 pt-2 pb-2"
+      class="flex shrink-0 flex-wrap gap-x-3.5 gap-y-1 border-b border-line-soft px-2.5 pt-2 pb-2 pointer-coarse:gap-x-0.5 pointer-coarse:gap-y-0 pointer-coarse:px-1 pointer-coarse:py-0"
       aria-label="類別"
     >
       <button
         type="button"
-        class="border-b-2 pb-0.5 text-label"
+        class="text-label pointer-coarse:px-1.5 pointer-coarse:py-2.5"
         :class="explore.packGroup === null ? 'border-(--pack) font-bold text-ink' : 'border-transparent text-sub hover:text-ink active:text-ink'"
         :aria-pressed="explore.packGroup === null"
         @click="explore.packGroup = null"
       >
-        不限
+        <span class="block border-b-2 border-inherit pb-0.5">不限</span>
       </button>
       <button
         v-for="g in groups"
         :key="g.key"
         type="button"
-        class="border-b-2 pb-0.5 text-label"
+        class="text-label pointer-coarse:px-1.5 pointer-coarse:py-2.5"
         :class="explore.packGroup === g.key ? 'border-(--pack) font-bold text-ink' : 'border-transparent text-sub hover:text-ink active:text-ink'"
         :aria-pressed="explore.packGroup === g.key"
         @click="explore.packGroup = explore.packGroup === g.key ? null : g.key"
       >
-        {{ g.label }}
+        <span class="block border-b-2 border-inherit pb-0.5">{{ g.label }}</span>
       </button>
     </nav>
 

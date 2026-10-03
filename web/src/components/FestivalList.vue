@@ -65,21 +65,21 @@ function mapLink(f: Festival) {
 <template>
   <div class="flex flex-col gap-6">
     <!-- 月份：文字索引列，選中的加底線；沒有祭典的月份不能選 -->
-    <nav class="flex flex-wrap gap-x-3.5 gap-y-1" aria-label="月份">
+    <nav class="flex flex-wrap gap-x-3.5 gap-y-1 pointer-coarse:-mx-1.5 pointer-coarse:-my-2.5 pointer-coarse:gap-x-0.5 pointer-coarse:gap-y-0" aria-label="月份">
       <button
         type="button"
-        class="border-b-2 pb-0.5 text-label"
+        class="text-label pointer-coarse:px-1.5 pointer-coarse:py-2.5"
         :class="month === null ? 'border-region-strong font-bold text-ink' : 'border-transparent text-sub hover:text-ink active:text-ink'"
         :aria-pressed="month === null"
         @click="month = null"
       >
-        不限
+        <span class="block border-b-2 border-inherit pb-0.5">不限</span>
       </button>
       <button
         v-for="m in MONTHS"
         :key="m"
         type="button"
-        class="border-b-2 pb-0.5 font-latin text-label disabled:opacity-40"
+        class="font-latin text-label disabled:opacity-40 pointer-coarse:px-1.5 pointer-coarse:py-2.5"
         :class="[
           month === String(m) ? 'border-region-strong font-bold text-ink' : 'border-transparent text-sub hover:text-ink active:text-ink',
           m === thisMonth && month !== String(m) ? 'text-ink' : '',
@@ -88,7 +88,7 @@ function mapLink(f: Festival) {
         :aria-pressed="month === String(m)"
         @click="month = month === String(m) ? null : String(m)"
       >
-        {{ m }}月
+        <span class="block border-b-2 border-inherit pb-0.5">{{ m }}月</span>
       </button>
     </nav>
 
@@ -129,10 +129,10 @@ function mapLink(f: Festival) {
               <WebSearchLink :name="f.name.ja" :context="prefectureFullName(f.prefecture)" class="-mt-1 -mr-1" />
             </div>
             <SummaryText v-if="f.summary" :summary="f.summary" :clamp="f.summary.text_zh ? 2 : 3" />
-            <div class="mt-auto flex flex-wrap gap-x-3 text-caption text-sub">
+            <div class="mt-auto flex flex-wrap gap-x-3 text-caption text-sub pointer-coarse:-my-3.5 pointer-coarse:items-center">
               <span v-if="f.summary">{{ f.summary.license }}</span>
-              <a :href="f.summary?.source_url ?? f.sources[0]!.url" target="_blank" rel="noopener" class="text-sub">維基百科</a>
-              <RouterLink v-if="f.location" :to="mapLink(f)" class="text-sub">在地圖上看</RouterLink>
+              <a :href="f.summary?.source_url ?? f.sources[0]!.url" target="_blank" rel="noopener" class="text-sub pointer-coarse:py-3.5">維基百科</a>
+              <RouterLink v-if="f.location" :to="mapLink(f)" class="text-sub pointer-coarse:py-3.5">在地圖上看</RouterLink>
             </div>
           </div>
         </li>
@@ -140,7 +140,7 @@ function mapLink(f: Festival) {
       <button
         v-if="!month && g.items.length > FIRST && !expanded.has(g.key)"
         type="button"
-        class="flex h-10 w-fit items-center gap-2 rounded-control border border-line px-4 text-label font-bold text-ink hover:bg-surface active:not-disabled:translate-y-px"
+        class="flex h-10 w-fit items-center gap-2 rounded-control border border-line px-4 text-label font-bold text-ink hover:bg-surface active:not-disabled:translate-y-px pointer-coarse:h-tap"
         @click="expanded = new Set(expanded).add(g.key)"
       >
         <CollapseChevron :open="true" />

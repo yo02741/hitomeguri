@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <RouterLink to="/" aria-label="ひとめぐり 首頁" class="flex items-end gap-2.5 no-underline text-ink">
+  <RouterLink to="/" aria-label="ひとめぐり 首頁" class="flex items-end gap-2.5 no-underline text-ink pointer-coarse:-my-1.5 pointer-coarse:py-1.5">
     <span class="flex shrink-0 flex-col leading-none whitespace-nowrap">
       <span lang="ja" class="mb-[3px] text-[10px] tracking-[3px] text-sub">ひとめぐり</span>
       <span lang="ja" class="text-[22px] font-black tracking-[2px]">一巡り</span>

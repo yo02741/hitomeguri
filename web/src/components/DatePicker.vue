@@ -32,7 +32,7 @@ const { open, style, pref, side, origin } = useFloating(trigger, panel, { align:
 const text = computed(() => (isIsoDate(props.modelValue) ? longDate(props.modelValue) : ''))
 const today = todayIso()
 const todayOk = computed(() => !(props.min && today < props.min) && !(props.max && today > props.max))
-const HEIGHT = { sm: 'h-9', md: 'h-10', lg: 'h-11' }
+const HEIGHT = { sm: 'h-9 pointer-coarse:h-tap', md: 'h-10 pointer-coarse:h-tap', lg: 'h-11' }
 
 function set(v: string) {
   emit('update:modelValue', v)
@@ -99,7 +99,7 @@ function onFocusOut(e: FocusEvent) {
             <button
               v-if="todayOk"
               type="button"
-              class="h-9 rounded-control px-3 text-label text-ink hover:bg-surface active:not-disabled:translate-y-px"
+              class="h-9 rounded-control px-3 text-label text-ink hover:bg-surface active:not-disabled:translate-y-px pointer-coarse:h-tap"
               @click="set(today)"
             >
               今天
@@ -107,7 +107,7 @@ function onFocusOut(e: FocusEvent) {
             <button
               v-if="clearable && modelValue"
               type="button"
-              class="ml-auto h-9 rounded-control px-3 text-label text-sub hover:bg-surface hover:text-ink active:not-disabled:translate-y-px"
+              class="ml-auto h-9 rounded-control px-3 text-label text-sub hover:bg-surface hover:text-ink active:not-disabled:translate-y-px pointer-coarse:h-tap"
               @click="set('')"
             >
               清除

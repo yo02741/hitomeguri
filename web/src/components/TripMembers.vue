@@ -78,7 +78,7 @@ async function leave() {
     <button
       ref="toggleBtn"
       type="button"
-      class="flex h-9 items-center gap-2 rounded-control border border-line bg-paper pr-3 pl-1.5 text-label text-ink hover:bg-surface active:not-disabled:translate-y-px"
+      class="flex h-9 items-center gap-2 rounded-control border border-line bg-paper pr-3 pl-1.5 text-label text-ink hover:bg-surface active:not-disabled:translate-y-px pointer-coarse:h-tap"
       aria-haspopup="true"
       :aria-expanded="open"
       @click="toggle"
@@ -108,12 +108,12 @@ async function leave() {
             readonly
             :value="busy && !link ? '' : link"
             aria-label="邀請連結"
-            class="h-9 min-w-0 flex-1 rounded-control border border-line bg-surface px-2.5 font-latin text-caption text-ink outline-none"
+            class="h-9 min-w-0 flex-1 rounded-control border border-line bg-surface px-2.5 font-latin text-caption text-ink outline-none pointer-coarse:h-tap"
             @focus="($event.target as HTMLInputElement).select()"
           />
           <button
             type="button"
-            class="h-9 shrink-0 rounded-control bg-region-strong px-3 text-label font-bold text-white active:translate-y-px disabled:opacity-40"
+            class="h-9 shrink-0 rounded-control bg-region-strong px-3 text-label font-bold text-white active:translate-y-px disabled:opacity-40 pointer-coarse:h-tap"
             :disabled="!link"
             @click="copy"
           >
@@ -122,7 +122,7 @@ async function leave() {
         </div>
         <button
           type="button"
-          class="w-fit text-caption text-sub hover:text-ink disabled:opacity-40 active:text-ink"
+          class="w-fit text-caption text-sub hover:text-ink disabled:opacity-40 active:text-ink pointer-coarse:min-h-tap"
           :disabled="busy || !link"
           @click="renew"
         >
@@ -141,7 +141,7 @@ async function leave() {
           <button
             v-else-if="isOwner"
             type="button"
-            class="h-8 shrink-0 rounded-control px-2.5 text-caption text-sub hover:bg-surface hover:text-danger active:not-disabled:translate-y-px"
+            class="h-8 shrink-0 rounded-control px-2.5 text-caption text-sub hover:bg-surface hover:text-danger active:not-disabled:translate-y-px pointer-coarse:h-tap"
             @click="remove(m)"
           >
             移除
@@ -149,7 +149,7 @@ async function leave() {
           <button
             v-else-if="m === uid"
             type="button"
-            class="h-8 shrink-0 rounded-control px-2.5 text-caption text-danger hover:bg-surface active:not-disabled:translate-y-px"
+            class="h-8 shrink-0 rounded-control px-2.5 text-caption text-danger hover:bg-surface active:not-disabled:translate-y-px pointer-coarse:h-tap"
             @click="leave"
           >
             離開

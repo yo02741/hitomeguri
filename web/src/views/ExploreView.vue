@@ -653,7 +653,7 @@ function onMoveEnd(view: MapViewState) {
         <button
           v-if="userStore.user && marks.favorites.length"
           type="button"
-          class="flex h-9 shrink-0 items-center gap-1.5 rounded-full px-3.5 text-label font-bold shadow-float active:not-disabled:translate-y-px"
+          class="flex h-9 shrink-0 items-center gap-1.5 rounded-full px-3.5 text-label font-bold shadow-float active:not-disabled:translate-y-px pointer-coarse:h-tap"
           :class="explore.onlyFavorites ? 'bg-ink text-paper' : 'bg-paper text-ink hover:bg-surface'"
           :aria-pressed="explore.onlyFavorites"
           @click="explore.onlyFavorites = !explore.onlyFavorites"
@@ -676,7 +676,7 @@ function onMoveEnd(view: MapViewState) {
         <button
           v-if="currentPack"
           type="button"
-          class="flex h-9 w-fit shrink-0 items-center gap-1.5 rounded-full bg-(--pack) pr-2.5 pl-3.5 text-label font-bold text-white shadow-float lg:hidden active:not-disabled:translate-y-px"
+          class="flex h-9 w-fit shrink-0 items-center gap-1.5 rounded-full bg-(--pack) pr-2.5 pl-3.5 text-label font-bold text-white shadow-float lg:hidden active:not-disabled:translate-y-px pointer-coarse:h-tap"
           :style="{ '--pack': `var(--color-t-${currentPack.color})` }"
           :aria-label="`關閉${currentPack.label}`"
           @click="explore.pack = null"

@@ -102,7 +102,7 @@ async function render(canvas: HTMLCanvasElement) {
         <button
           v-if="userStore.user"
           type="button"
-          class="ml-auto h-9 rounded-control border-[1.5px] border-on-region px-3 text-label font-bold text-on-region hover:bg-region-accent active:not-disabled:translate-y-px"
+          class="ml-auto h-9 rounded-control border-[1.5px] border-on-region px-3 text-label font-bold text-on-region hover:bg-region-accent active:not-disabled:translate-y-px pointer-coarse:h-tap"
           @click="imageOpen = true"
         >
           存成圖片
@@ -174,7 +174,8 @@ async function render(canvas: HTMLCanvasElement) {
           <li v-for="r in g.items" :key="r.prefecture" :data-pref="r.prefecture" class="flex min-h-tap items-center gap-3 border-b border-line-soft">
             <span class="h-5 w-1.5 shrink-0 rounded-full bg-region-strong" aria-hidden="true"></span>
             <span lang="ja" class="w-14 shrink-0 text-body-sm font-bold">{{ r.name.ja }}</span>
-            <div role="radiogroup" :aria-label="`${r.name.ja}的經縣值`" class="ml-auto flex gap-1">
+            <!-- 觸控裝置：無間隙的分段條，每格 44px 高、平分剩下的寬度（最寬 44） -->
+            <div role="radiogroup" :aria-label="`${r.name.ja}的經縣值`" class="ml-auto flex gap-1 pointer-coarse:max-w-66 pointer-coarse:flex-1 pointer-coarse:gap-0">
               <button
                 v-for="l in [...KEIKEN_LEVELS].reverse()"
                 :key="l.level"
@@ -182,10 +183,10 @@ async function render(canvas: HTMLCanvasElement) {
                 role="radio"
                 :aria-checked="keiken.levelOf(r.prefecture) === l.level"
                 :title="l.label"
-                class="h-8 min-w-9 rounded-control border px-1.5 text-caption active:not-disabled:translate-y-px"
+                class="h-8 min-w-9 rounded-control border px-1.5 text-caption active:not-disabled:translate-y-px pointer-coarse:-ml-px pointer-coarse:h-tap pointer-coarse:min-w-0 pointer-coarse:flex-1 pointer-coarse:rounded-none pointer-coarse:px-0 pointer-coarse:first:ml-0 pointer-coarse:first:rounded-l-control pointer-coarse:last:rounded-r-control"
                 :class="
                   keiken.levelOf(r.prefecture) === l.level
-                    ? [`lv-${l.level}`, 'border-ink font-bold', l.level >= 4 ? 'text-paper' : 'text-ink', keiken.isAuto(r.prefecture) ? 'border-dashed' : '']
+                    ? [`lv-${l.level}`, 'relative z-[1] border-ink font-bold', l.level >= 4 ? 'text-paper' : 'text-ink', keiken.isAuto(r.prefecture) ? 'border-dashed' : '']
                     : 'border-line bg-paper text-sub hover:bg-surface'
                 "
                 @click="keiken.setLevel(r.prefecture, l.level)"

@@ -73,18 +73,24 @@ watch(activeTop, async (id) => {
       :style="{ translate: `${rect.x}px ${rect.y}px`, width: `${rect.w}px`, height: `${rect.h}px` }"
       aria-hidden="true"
     ></span>
+    <!-- 觸控裝置的點擊區撐到 44px 高，膠囊（底色、選中標示）仍是 32px -->
     <a
       v-for="it in items"
       :key="it.id"
       :data-id="it.id"
-      :data-group="it.id"
       :href="`#${it.id}`"
-      class="relative flex h-8 shrink-0 items-center rounded-full px-3 text-label no-underline transition-colors duration-300 ease-out-soft"
-      :class="activeTop === it.id ? ['font-bold text-white', rect ? '' : 'bg-region-strong'] : 'text-sub hover:bg-surface hover:text-ink active:bg-surface active:text-ink'"
+      class="group relative flex shrink-0 items-center text-label no-underline transition-colors duration-300 ease-out-soft pointer-coarse:h-tap"
+      :class="activeTop === it.id ? 'font-bold text-white' : 'text-sub hover:text-ink active:text-ink'"
       :aria-current="activeTop === it.id ? 'location' : undefined"
       @click.prevent="emit('go', it.id)"
     >
-      {{ it.label }}
+      <span
+        :data-group="it.id"
+        class="flex h-8 items-center rounded-full px-3 transition-colors duration-300 ease-out-soft"
+        :class="activeTop === it.id ? (rect ? '' : 'bg-region-strong') : 'group-hover:bg-surface group-active:bg-surface'"
+      >
+        {{ it.label }}
+      </span>
     </a>
   </nav>
 </template>

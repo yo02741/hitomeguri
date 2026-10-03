@@ -157,7 +157,7 @@ function close() {
         <span v-if="queue.length > 1" class="font-latin text-body-sm text-sub">{{ index + 1 }} / {{ queue.length }}</span>
         <button
           type="button"
-          class="ml-auto grid size-9 place-items-center rounded-control text-sub hover:bg-surface hover:text-ink active:not-disabled:translate-y-px"
+          class="ml-auto grid size-9 place-items-center rounded-control text-sub hover:bg-surface hover:text-ink active:not-disabled:translate-y-px pointer-coarse:size-tap"
           aria-label="關閉"
           @click="close"
         >
@@ -183,7 +183,7 @@ function close() {
           <button
             v-if="!editing && queue.length <= 1"
             type="button"
-            class="absolute top-2 right-2 h-8 rounded-control bg-paper/90 px-2.5 text-caption text-ink shadow-float hover:bg-paper active:not-disabled:translate-y-px"
+            class="absolute top-2 right-2 h-8 rounded-control bg-paper/90 px-2.5 text-caption text-ink shadow-float hover:bg-paper active:not-disabled:translate-y-px pointer-coarse:h-tap"
             @click="fileInput?.click()"
           >
             換一張
@@ -198,7 +198,7 @@ function close() {
             v-model="brand"
             type="text"
             :maxlength="FIND_LIMITS.brand"
-            class="h-10 rounded-control border border-line bg-paper px-3 text-body-sm text-ink outline-none focus:border-region-strong"
+            class="h-10 rounded-control border border-line bg-paper px-3 text-body-sm text-ink outline-none focus:border-region-strong pointer-coarse:h-tap"
           />
           <!-- 用過的品牌：點了帶入（取代原生 datalist） -->
           <span v-if="brandSuggestions.length" class="flex flex-wrap gap-1.5 pt-1">
@@ -219,7 +219,7 @@ function close() {
             v-model="item"
             type="text"
             :maxlength="FIND_LIMITS.item"
-            class="h-10 rounded-control border border-line bg-paper px-3 text-body-sm text-ink outline-none focus:border-region-strong"
+            class="h-10 rounded-control border border-line bg-paper px-3 text-body-sm text-ink outline-none focus:border-region-strong pointer-coarse:h-tap"
           />
         </label>
         <label class="flex flex-col gap-1 text-caption text-sub">
@@ -247,14 +247,14 @@ function close() {
         <button
           v-if="queue.length > 1"
           type="button"
-          class="h-10 rounded-control px-3.5 text-body-sm text-sub hover:bg-surface hover:text-ink active:not-disabled:translate-y-px"
+          class="h-10 rounded-control px-3.5 text-body-sm text-sub hover:bg-surface hover:text-ink active:not-disabled:translate-y-px pointer-coarse:h-tap"
           @click="skip"
         >
           略過這張
         </button>
         <button
           type="submit"
-          class="h-10 rounded-control bg-region-strong px-5 text-body-sm font-bold text-white active:translate-y-px disabled:cursor-not-allowed disabled:opacity-40"
+          class="h-10 rounded-control bg-region-strong px-5 text-body-sm font-bold text-white active:translate-y-px disabled:cursor-not-allowed disabled:opacity-40 pointer-coarse:h-tap"
           :disabled="busy || (!editing && !prepared)"
         >
           儲存

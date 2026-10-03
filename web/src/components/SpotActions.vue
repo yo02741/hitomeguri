@@ -153,7 +153,7 @@ const visitedShort = computed(() => {
         </svg>
         收藏
       </button>
-      <!-- 去過：標了之後右半邊是日期（點開月曆補填） -->
+      <!-- 去過：標了之後右半邊是日期（點開月曆補填）；手機的工作列不放箭頭，「去過」才不會被日期擠成直排 -->
       <div
         class="flex h-11 overflow-hidden rounded-control text-body-sm max-lg:h-tap max-lg:min-w-0 max-lg:flex-[1.5] max-lg:basis-0 max-lg:text-label"
         :class="
@@ -164,7 +164,7 @@ const visitedShort = computed(() => {
       >
         <button
           type="button"
-          class="flex min-w-0 flex-1 items-center justify-center gap-1.5 active:translate-y-px disabled:cursor-not-allowed disabled:opacity-40 max-lg:flex-col max-lg:gap-0.5"
+          class="flex min-w-0 flex-1 items-center justify-center gap-1.5 whitespace-nowrap active:translate-y-px disabled:cursor-not-allowed disabled:opacity-40 max-lg:flex-col max-lg:gap-0.5"
           :class="mark?.visited ? '' : 'hover:bg-surface'"
           :aria-pressed="Boolean(mark?.visited)"
           :disabled="disabled"
@@ -188,13 +188,13 @@ const visitedShort = computed(() => {
           label="去過日期"
           :model-value="mark.visited_on ?? ''"
           :max="today"
-          class="flex shrink-0 items-center gap-1 border-l border-visited/30 px-2.5 font-latin text-label font-normal hover:bg-visited/10 max-lg:px-2"
+          class="flex shrink-0 items-center gap-1 border-l border-visited/30 px-2.5 font-latin text-label font-normal hover:bg-visited/10 max-lg:px-1.5"
           @update:model-value="marks.setVisitedOn(spot, $event)"
         >
           <template #default>
             <span v-if="mark.visited_on">{{ visitedShort }}</span>
             <span v-else class="font-sans">日期</span>
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6" /></svg>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" class="max-lg:hidden" aria-hidden="true"><path d="M6 9l6 6 6-6" /></svg>
           </template>
         </DatePicker>
       </div>
@@ -253,7 +253,7 @@ const visitedShort = computed(() => {
               />
               <button
                 type="button"
-                class="h-9 shrink-0 rounded-control border border-line bg-paper px-2.5 text-caption text-ink hover:bg-surface active:not-disabled:translate-y-px"
+                class="h-9 shrink-0 rounded-control border border-line bg-paper px-2.5 text-caption text-ink hover:bg-surface active:not-disabled:translate-y-px pointer-coarse:h-tap"
                 @click="addTo(t.id)"
               >
                 加入
@@ -270,11 +270,11 @@ const visitedShort = computed(() => {
             placeholder="新行程名稱"
             aria-label="新行程名稱"
             enterkeyhint="done"
-            class="h-10 min-w-0 flex-1 rounded-control border border-line bg-paper px-2.5 text-body-sm text-ink outline-none placeholder:text-sub focus:border-region-strong"
+            class="h-10 min-w-0 flex-1 rounded-control border border-line bg-paper px-2.5 text-body-sm text-ink outline-none placeholder:text-sub focus:border-region-strong pointer-coarse:h-tap"
           />
           <button
             type="submit"
-            class="h-10 shrink-0 rounded-control border border-line bg-paper px-3 text-body-sm text-ink hover:bg-surface disabled:cursor-not-allowed disabled:opacity-40 active:not-disabled:translate-y-px"
+            class="h-10 shrink-0 rounded-control border border-line bg-paper px-3 text-body-sm text-ink hover:bg-surface disabled:cursor-not-allowed disabled:opacity-40 active:not-disabled:translate-y-px pointer-coarse:h-tap"
             :disabled="!newTrip.trim()"
           >
             新增
@@ -314,11 +314,11 @@ const visitedShort = computed(() => {
             placeholder="新清單名稱"
             aria-label="新清單名稱"
             enterkeyhint="done"
-            class="h-10 min-w-0 flex-1 rounded-control border border-line bg-paper px-2.5 text-body-sm text-ink outline-none placeholder:text-sub focus:border-region-strong"
+            class="h-10 min-w-0 flex-1 rounded-control border border-line bg-paper px-2.5 text-body-sm text-ink outline-none placeholder:text-sub focus:border-region-strong pointer-coarse:h-tap"
           />
           <button
             type="submit"
-            class="h-10 shrink-0 rounded-control border border-line bg-paper px-3 text-body-sm text-ink hover:bg-surface disabled:cursor-not-allowed disabled:opacity-40 active:not-disabled:translate-y-px"
+            class="h-10 shrink-0 rounded-control border border-line bg-paper px-3 text-body-sm text-ink hover:bg-surface disabled:cursor-not-allowed disabled:opacity-40 active:not-disabled:translate-y-px pointer-coarse:h-tap"
             :disabled="!newName.trim()"
           >
             新增

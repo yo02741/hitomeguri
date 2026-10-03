@@ -276,7 +276,7 @@ async function del() {
           <button
             v-if="status === 'done'"
             type="button"
-            class="relative flex h-9 items-center rounded-control bg-region-strong px-3.5 text-label font-bold text-white active:translate-y-px"
+            class="relative flex h-9 items-center rounded-control bg-region-strong px-3.5 text-label font-bold text-white active:translate-y-px pointer-coarse:h-tap"
             @click="packOpen = true"
           >
             開卡包
@@ -285,18 +285,18 @@ async function del() {
           <!-- 一個畫面只有一個 Primary（DESIGN §7.1）：結束後「開卡包」是 Primary，「旅前準備」退成 Secondary -->
           <RouterLink
             :to="`/trips/${trip.id}/prep`"
-            class="flex h-9 items-center rounded-control px-3.5 text-label no-underline active:translate-y-px"
+            class="flex h-9 items-center rounded-control px-3.5 text-label no-underline active:translate-y-px pointer-coarse:h-tap"
             :class="status === 'done' ? 'border border-line bg-paper text-ink hover:bg-surface' : 'bg-region-strong font-bold text-white'"
           >旅前準備</RouterLink>
           <RouterLink
             :to="`/trips/${trip.id}/book`"
-            class="flex h-9 items-center rounded-control border border-line bg-paper px-3 text-label text-ink no-underline hover:bg-surface active:not-disabled:translate-y-px"
+            class="flex h-9 items-center rounded-control border border-line bg-paper px-3 text-label text-ink no-underline hover:bg-surface active:not-disabled:translate-y-px pointer-coarse:h-tap"
           >旅前小書</RouterLink>
           <ExportButtons :title="trip.name || 'ひとめぐり 行程'" :folders="folders" :leading="['日', '順序']" />
           <OfflineButton :trip="trip" />
           <button
             type="button"
-            class="h-9 rounded-control border border-line bg-paper px-3 text-label text-ink hover:bg-surface disabled:cursor-not-allowed disabled:opacity-40 active:not-disabled:translate-y-px"
+            class="h-9 rounded-control border border-line bg-paper px-3 text-label text-ink hover:bg-surface disabled:cursor-not-allowed disabled:opacity-40 active:not-disabled:translate-y-px pointer-coarse:h-tap"
             :disabled="!trip.days.some((d) => d.stops.length)"
             @click="recapOpen = true"
           >回顧圖</button>
@@ -304,7 +304,7 @@ async function del() {
             v-if="isOwner"
             type="button"
             :disabled="locked"
-            class="h-9 rounded-control border border-line bg-paper px-3 text-label text-danger hover:not-disabled:bg-surface disabled:cursor-not-allowed disabled:opacity-40 active:not-disabled:translate-y-px"
+            class="h-9 rounded-control border border-line bg-paper px-3 text-label text-danger hover:not-disabled:bg-surface disabled:cursor-not-allowed disabled:opacity-40 active:not-disabled:translate-y-px pointer-coarse:h-tap"
             @click="del"
           >刪除</button>
         </div>
@@ -312,15 +312,15 @@ async function del() {
         <AchvRow v-if="status === 'done'" :trip="trip" :size="40" />
       </div>
 
-      <div class="flex items-center gap-3 text-label">
+      <div class="flex items-center gap-3 text-label pointer-coarse:-mx-1.5 pointer-coarse:-my-2.5">
         <button
           type="button"
-          class="border-b-2 pb-0.5"
+          class="pointer-coarse:px-1.5 pointer-coarse:py-2.5"
           :class="selectedDay === null ? 'border-region-strong font-bold text-ink' : 'border-transparent text-sub hover:text-ink active:text-ink'"
           :aria-pressed="selectedDay === null"
           @click="selectedDay = null"
         >
-          全部
+          <span class="block border-b-2 border-inherit pb-0.5">全部</span>
         </button>
       </div>
 
@@ -377,7 +377,7 @@ async function del() {
         v-if="!hasDates"
         type="button"
         :disabled="locked"
-        class="h-10 w-fit rounded-control border border-line bg-paper px-3.5 text-body-sm text-ink hover:not-disabled:bg-surface disabled:cursor-not-allowed disabled:opacity-40 active:not-disabled:translate-y-px"
+        class="h-10 w-fit rounded-control border border-line bg-paper px-3.5 text-body-sm text-ink hover:not-disabled:bg-surface disabled:cursor-not-allowed disabled:opacity-40 active:not-disabled:translate-y-px pointer-coarse:h-tap"
         @click="addDay"
       >
         加一天

@@ -107,7 +107,7 @@ function onKey(e: KeyboardEvent) {
     <div class="mx-auto flex w-full max-w-xl flex-1 flex-col gap-5 px-6 py-6">
       <div class="flex items-center gap-3">
         <BackLink :to="`/trips/${trip.id}/prep`">旅前準備</BackLink>
-        <label class="ml-auto flex cursor-pointer items-center gap-2 text-label text-ink">
+        <label class="ml-auto flex cursor-pointer items-center gap-2 text-label text-ink pointer-coarse:min-h-tap">
           <input v-model="listenMode" type="checkbox" class="size-4 accent-(--region-strong)" />
           聽音
         </label>

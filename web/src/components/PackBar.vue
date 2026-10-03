@@ -82,7 +82,7 @@ const chip = 'flex h-9 shrink-0 items-center gap-1.5 rounded-full px-3.5 text-la
         type="button"
         aria-label="選擇擴充包"
         :aria-expanded="menuOpen"
-        class="grid size-9 place-items-center rounded-full bg-paper text-ink shadow-float hover:bg-surface active:not-disabled:translate-y-px"
+        class="grid size-9 place-items-center rounded-full bg-paper text-ink shadow-float hover:bg-surface active:not-disabled:translate-y-px pointer-coarse:size-tap"
         @click="menuOpen = !menuOpen"
       >
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">

@@ -61,18 +61,18 @@ const thisMonth = new Date().getMonth() + 1
 <template>
   <div class="flex flex-col gap-4">
     <!-- 觀測站：文字索引列，選中的加底線（同地圖頁的類型列） -->
-    <nav v-if="stations.length > 1" class="flex flex-wrap gap-x-3.5 gap-y-1" aria-label="觀測地點">
+    <nav v-if="stations.length > 1" class="flex flex-wrap gap-x-3.5 gap-y-1 pointer-coarse:-mx-1.5 pointer-coarse:-my-2.5 pointer-coarse:gap-x-0.5 pointer-coarse:gap-y-0" aria-label="觀測地點">
       <button
         v-for="(s, i) in stations"
         :key="s.name"
         type="button"
         lang="ja"
-        class="border-b-2 pb-0.5 text-label"
+        class="text-label pointer-coarse:px-1.5 pointer-coarse:py-2.5"
         :class="i === current ? 'border-region-strong font-bold text-ink' : 'border-transparent text-sub hover:text-ink active:text-ink'"
         :aria-pressed="i === current"
         @click="current = i"
       >
-        {{ s.name }}
+        <span class="block border-b-2 border-inherit pb-0.5">{{ s.name }}</span>
       </button>
     </nav>
 
@@ -136,7 +136,7 @@ const thisMonth = new Date().getMonth() + 1
     </div>
 
     <p class="text-caption text-sub">
-      平年值・<span lang="ja">{{ station?.name }}</span>・<a :href="sourceUrl" target="_blank" rel="noopener" class="text-sub">氣象廳 生物季節觀測</a>
+      平年值・<span lang="ja">{{ station?.name }}</span>・<a :href="sourceUrl" target="_blank" rel="noopener" class="text-sub pointer-coarse:py-4">氣象廳 生物季節觀測</a>
     </p>
   </div>
 </template>

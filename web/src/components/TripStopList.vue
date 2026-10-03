@@ -93,10 +93,10 @@ const isDrop = (idx: number) => props.dropAt?.day === props.day && props.dropAt.
     <template v-for="(s, i) in stops" :key="s.spot_id">
       <li
         v-if="day >= 0 && i > 0"
-        class="flex items-center gap-2 py-0.5 pl-9 text-caption text-sub"
+        class="flex items-center gap-2 py-0.5 pl-9 text-caption text-sub pointer-coarse:py-0"
         @dragover="onOverRow(i - 1, $event)"
       >
-        <a :href="transitUrl(stops[i - 1]!, s)" target="_blank" rel="noopener" class="flex items-center gap-1 text-sub hover:text-ink active:text-ink">
+        <a :href="transitUrl(stops[i - 1]!, s)" target="_blank" rel="noopener" class="flex items-center gap-1 text-sub hover:text-ink active:text-ink pointer-coarse:min-h-tap pointer-coarse:pr-3">
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <path d="M12 5v14M6 13l6 6 6-6" />
           </svg>
@@ -116,7 +116,7 @@ const isDrop = (idx: number) => props.dropAt?.day === props.day && props.dropAt.
           <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><circle cx="9" cy="6" r="1.6" /><circle cx="15" cy="6" r="1.6" /><circle cx="9" cy="12" r="1.6" /><circle cx="15" cy="12" r="1.6" /><circle cx="9" cy="18" r="1.6" /><circle cx="15" cy="18" r="1.6" /></svg>
         </span>
         <span v-if="day >= 0" class="grid size-6 shrink-0 place-items-center rounded-full bg-ink font-latin text-caption font-bold text-paper">{{ i + 1 }}</span>
-        <button type="button" :data-stop="s.spot_id" class="flex min-w-0 flex-1 flex-col text-left active:not-disabled:translate-y-px" @click="emit('focus', s.spot_id)">
+        <button type="button" :data-stop="s.spot_id" class="flex min-w-0 flex-1 flex-col text-left active:not-disabled:translate-y-px pointer-coarse:-my-1.5 pointer-coarse:self-stretch pointer-coarse:justify-center pointer-coarse:py-1.5" @click="emit('focus', s.spot_id)">
           <span v-if="spots.get(s.spot_id)?.h" lang="ja" class="truncate text-caption tracking-kana text-sub" :title="spots.get(s.spot_id)?.h">{{ spots.get(s.spot_id)?.h }}</span>
           <span class="line-clamp-2 text-body-sm break-words">
             <span lang="ja" class="font-bold">{{ s.name }}</span>

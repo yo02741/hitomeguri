@@ -182,7 +182,13 @@
 
 ### 5.2 間距
 - 基準 4px（Tailwind 預設 spacing）。面板內距 `px-5`（20）～`px-6`（24）；清單列 `py-2.5`；區塊間距 `gap-4`～`gap-6`。
-- 最小點擊區 44×44（`size-tap`、`min-h-tap`）。
+- 最小點擊區 44×44（`size-tap`、`min-h-tap`）。觸控裝置（`pointer-coarse:`，手機與平板）一律撐到 44，滑鼠（桌機）的外觀與大小不變；只撐點擊區，盡量不改看起來的樣子。MapLibre 的縮放鈕等地圖控制項維持原本大小，不在此列。
+  - 有框或底色的按鈕（`h-8`／`h-9`／`h-10`、`size-8`／`size-9`）：加 `pointer-coarse:h-tap`（`size-tap`），同一列的輸入框一起加。
+  - 文字連結、沒有框的小按鈕（返回連結、出處連結、「已結束的旅行」…）：上下實際內距撐到 44，再用等量的負邊距抵掉，版面不動（例：`pointer-coarse:-my-3 pointer-coarse:py-3`）。行內的出處連結（句子中間）用 `pointer-coarse:py-4`，行內元素的上下內距不影響行高。不用 `::after` 撐大，相鄰的會重疊、點錯。換行時一列 44 高，不重疊。
+  - 底線索引列（類型、月份、觀測站、品牌、行程的「全部」）：按鈕加 `pointer-coarse:px-1.5 py-2.5`，2px 底線改畫在裡面的 `<span class="block border-b-2 border-inherit pb-0.5">`（顏色仍寫在按鈕上），看起來仍是一行字；列的間距與內距等量縮回（`pointer-coarse:gap-x-0.5 gap-y-0`、`-mx-1.5 -my-2.5`）。
+  - 選中標示是膠囊的（`SectionNav` bar）：連結 `pointer-coarse:h-tap`，膠囊仍是裡面 32px 高的 span。
+  - 經縣值的級數：觸控裝置上 6 格連成無間隙的分段條（每格 44 高、平分剩下的寬度，最寬 44），相鄰的框線疊在一起（`-ml-px`），選中的那格在上層。
+  - 首頁的 47 縣清單、景點清單的類型小標（全寬 32 高）等第二階段要重排的地方先不動（`docs/手機版計畫.md` §3）。
 - 手機頁面上方預留 safe area：`pt-[max(env(safe-area-inset-top),12px)]`（只有 status bar 設成 `black-translucent` 時才需要；目前沒設，上方不留）。
 - 底部分頁列 `box-content h-14 pb-[env(safe-area-inset-bottom)]`：內容固定 56px，home indicator 的高度加在外面；貼著分頁列的浮動提示（AppUpdate）用 `bottom-[calc(5rem+env(safe-area-inset-bottom))]`，≥1024 沒有分頁列時 `lg:bottom-6`。
 - 橫向時左右的瀏海：header 用 `pl-[max(1rem,env(safe-area-inset-left))]`、`pr-[max(1rem,env(safe-area-inset-right))]`（`md:` 起 1.5rem）。`<main>` 左右讓出 `env(safe-area-inset-*)`，≥1024（沒有分頁列）底部也讓出。地圖頁（路由 `meta.bleed`，`<main data-bleed>`）的地圖鋪回瀏海底下，MapLibre 控制項與位置小框用 `.map-root` 的 `--map-inset-*` 縮回安全區內（`theme.css`）；手機海報條也鋪滿，文字內縮。
@@ -264,7 +270,7 @@
 
 ### 7.2a 段落目錄 SectionNav（旅前準備）
 - 桌機左側直列（`sticky top-8`，寬 168px）：每項 `border-l-2 pl-3.5 py-1.5 text-body-sm`；目前段落 `border-region-strong font-bold text-ink`，其餘 `border-line text-sub`；數量用 `font-latin text-caption`。目前段落有子段落時展開（`pl-6 text-caption`，目前子段落 `font-bold text-ink`）。
-- 手機頂部橫列（`sticky top-0`，`border-b border-line bg-paper`）：`h-8 rounded-full px-3 text-label`，目前段落 `bg-region-strong text-white font-bold`，換段時自動捲到中間。
+- 手機頂部橫列（`sticky top-0`，`border-b border-line bg-paper`）：`h-8 rounded-full px-3 text-label`，目前段落 `bg-region-strong text-white font-bold`，換段時自動捲到中間。觸控裝置上每項的點擊區 44 高（連結 `pointer-coarse:h-tap`，膠囊是裡面的 span）。
 - 每項都是 `#錨點` 連結；段落 `scroll-mt-16 lg:scroll-mt-8`。
 - 目前段落（`composables/scrollSpy.ts`）：段落標題捲過容器頂端 96px 內就算進入；捲過（scrollTop > 0）而且到底時標最後一段。在頁頂一律標第一段（資料還沒到、頁面很短時也是）。內容高度變了（ResizeObserver）重新判斷。
 
@@ -366,7 +372,7 @@ header 右側、登入鈕左邊（`SearchBox.vue`，每一頁都在；在行程�
 
 ### 7.13 Bottom Sheet（手機）
 `rounded-t-sheet bg-paper shadow-sheet`。目前高 60dvh、不能拖；把手（`w-10 h-1 rounded-full bg-line mx-auto mt-2.5`）、三段高度與拖曳在第二階段（§5.3；拖曳用 pointer events，放開時吸附到最近的段，只綁在把手與名稱帶）。
-- 底部工作列：收藏・去過・清單・加入行程貼在 sheet 底部（`sticky bottom-0 border-t border-line bg-paper px-3 py-2`），一排四顆 `h-tap`，圖示在上、`text-label` 在下；去過的格子寬 1.5 倍，標了之後右邊是日期。清單、行程選單往上開，最高 `min(50dvh, 60dvh − 5rem)`。
+- 底部工作列：收藏・去過・清單・加入行程貼在 sheet 底部（`sticky bottom-0 border-t border-line bg-paper px-3 py-2`），一排四顆 `h-tap`，圖示在上、`text-label` 在下；去過的格子寬 1.5 倍，標了之後右邊是日期（不放下拉箭頭，「去過」兩字才不會被擠成直排）。清單、行程選單往上開，最高 `min(50dvh, 60dvh − 5rem)`。
 - 「在 Google Maps 開啟」在手機上是資訊列的最後一列（`min-h-tap`，右側 ↗），桌機仍是底部的實心鈕。
 - 打開時新增一筆歷史（從沒有選取到有選取時 push，之後換景點 replace），返回手勢先關 sheet；按 × 時上一筆就是同一頁，改用返回。
 
@@ -540,7 +546,7 @@ header 右側、登入鈕左邊（`SearchBox.vue`，每一頁都在；在行程�
 
 ### 7.21 經縣值（`/log/keiken`）
 - 每個都道府縣選 0–5 級：住過 5、過夜 4、玩過 3、踏上 2、路過 1、未踏 0（日本的「経県値」玩法），總分最高 235。沒選的縣，有去過的景點就算「玩過」（地圖上虛線框、列上的按鈕虛線框）。
-- 海報區（全國色）：標題、總分（`RollingNumber`，`text-display`）／235、各級數的色票與縣數、「存成圖片」。下方日本地圖（`japanOutline`，最寬 560px）依級數塗 `--color-keiken-1..5`（越深越久，未踏是 `--region-line`）；點縣在點的位置打開級數選單（下方放不下、例如手機畫面下半會被分頁列蓋到時，翻到點的上方；橫向仍放不下時貼齊可見區頂端、選單自己捲動；打開時焦點在目前的級數，不捲動頁面）。再下方依地方列出 47 縣，每縣一排 6 個按鈕（未踏→住過）。
+- 海報區（全國色）：標題、總分（`RollingNumber`，`text-display`）／235、各級數的色票與縣數、「存成圖片」。下方日本地圖（`japanOutline`，最寬 560px）依級數塗 `--color-keiken-1..5`（越深越久，未踏是 `--region-line`）；點縣在點的位置打開級數選單（下方放不下、例如手機畫面下半會被分頁列蓋到時，翻到點的上方；橫向仍放不下時貼齊可見區頂端、選單自己捲動；打開時焦點在目前的級數，不捲動頁面）。再下方依地方列出 47 縣，每縣一排 6 個按鈕（未踏→住過；觸控裝置上連成無間隙的分段條，每格 44 高，§5.2）。
 - 存在 `users/{uid}/meta/keiken`（`firestore.rules` 已加，要貼到 Firebase Console 發布）；寫不進去時先存在這台裝置。入口在紀錄頁收集冊旁。
 
 ### 7.22 分享圖（旅行回顧、經縣值）

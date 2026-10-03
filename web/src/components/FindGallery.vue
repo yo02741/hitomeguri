@@ -123,14 +123,14 @@ defineExpose({ add })
         </div>
         <div class="flex shrink-0 flex-col gap-3 border-line p-5 md:w-[300px] md:border-l max-md:max-h-[40%] max-md:overflow-y-auto max-md:border-t">
           <div class="flex items-center gap-1">
-            <button type="button" class="grid size-9 place-items-center rounded-control text-sub hover:bg-surface hover:text-ink active:not-disabled:translate-y-px" aria-label="上一張" @click="step(-1)">
+            <button type="button" class="grid size-9 place-items-center rounded-control text-sub hover:bg-surface hover:text-ink active:not-disabled:translate-y-px pointer-coarse:size-tap" aria-label="上一張" @click="step(-1)">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7" /></svg>
             </button>
             <span class="font-latin text-body-sm text-sub">{{ (viewing ?? 0) + 1 }} / {{ finds.length }}</span>
-            <button type="button" class="grid size-9 place-items-center rounded-control text-sub hover:bg-surface hover:text-ink active:not-disabled:translate-y-px" aria-label="下一張" @click="step(1)">
+            <button type="button" class="grid size-9 place-items-center rounded-control text-sub hover:bg-surface hover:text-ink active:not-disabled:translate-y-px pointer-coarse:size-tap" aria-label="下一張" @click="step(1)">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7" /></svg>
             </button>
-            <button type="button" class="ml-auto grid size-9 place-items-center rounded-control text-sub hover:bg-surface hover:text-ink active:not-disabled:translate-y-px" aria-label="關閉" @click="hide">
+            <button type="button" class="ml-auto grid size-9 place-items-center rounded-control text-sub hover:bg-surface hover:text-ink active:not-disabled:translate-y-px pointer-coarse:size-tap" aria-label="關閉" @click="hide">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" /></svg>
             </button>
           </div>
@@ -145,10 +145,10 @@ defineExpose({ add })
             >{{ tripName(current.trip_id) }}</RouterLink>
           </div>
           <div class="mt-auto flex gap-2">
-            <button type="button" class="h-9 rounded-control border border-line bg-paper px-3 text-label text-ink hover:bg-surface active:not-disabled:translate-y-px" @click="edit(current)">
+            <button type="button" class="h-9 rounded-control border border-line bg-paper px-3 text-label text-ink hover:bg-surface active:not-disabled:translate-y-px pointer-coarse:h-tap" @click="edit(current)">
               編輯
             </button>
-            <button type="button" class="h-9 rounded-control border border-line bg-paper px-3 text-label text-danger hover:bg-surface active:not-disabled:translate-y-px" @click="del(current)">
+            <button type="button" class="h-9 rounded-control border border-line bg-paper px-3 text-label text-danger hover:bg-surface active:not-disabled:translate-y-px pointer-coarse:h-tap" @click="del(current)">
               刪除
             </button>
           </div>

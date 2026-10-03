@@ -74,7 +74,7 @@ function onKey(e: KeyboardEvent) {
 
 <template>
   <div class="relative" :class="full ? 'w-full min-w-0' : 'w-72 shrink-0'" @focusout="(e) => !($el as HTMLElement).contains(e.relatedTarget as Node) && (open = false)">
-    <label class="flex h-10 items-center gap-2 rounded-full border border-line bg-paper px-3.5 text-sub focus-within:border-region-strong focus-within:text-ink">
+    <label class="flex h-10 items-center gap-2 rounded-full border border-line bg-paper px-3.5 text-sub focus-within:border-region-strong focus-within:text-ink pointer-coarse:h-tap">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
         <circle cx="11" cy="11" r="6.5" /><path d="M16 16l4.5 4.5" />
       </svg>

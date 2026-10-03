@@ -251,7 +251,7 @@ function open(id: string) {
               type="text"
               :maxlength="TRIP_NAME_MAX"
               placeholder="名稱"
-              class="h-10 rounded-control border border-line bg-paper px-3 text-body-sm text-ink outline-none placeholder:text-sub focus:border-region-strong"
+              class="h-10 rounded-control border border-line bg-paper px-3 text-body-sm text-ink outline-none placeholder:text-sub focus:border-region-strong pointer-coarse:h-tap"
             />
           </label>
           <div class="flex flex-col gap-1 text-caption text-sub">
@@ -262,7 +262,7 @@ function open(id: string) {
             type="submit"
             :disabled="!start || adding"
             :aria-busy="adding"
-            class="h-10 rounded-control border border-line bg-paper px-3.5 text-body-sm text-ink hover:bg-surface disabled:cursor-not-allowed disabled:opacity-40 active:not-disabled:translate-y-px"
+            class="h-10 rounded-control border border-line bg-paper px-3.5 text-body-sm text-ink hover:bg-surface disabled:cursor-not-allowed disabled:opacity-40 active:not-disabled:translate-y-px pointer-coarse:h-tap"
           >
             新增
           </button>
@@ -278,7 +278,7 @@ function open(id: string) {
             <button
               v-if="rows.length && !picking"
               type="button"
-              class="h-9 rounded-control border border-line bg-paper px-3 text-label text-ink hover:bg-surface active:not-disabled:translate-y-px"
+              class="h-9 rounded-control border border-line bg-paper px-3 text-label text-ink hover:bg-surface active:not-disabled:translate-y-px pointer-coarse:h-tap"
               @click="startPicking"
             >
               補日期
@@ -296,7 +296,7 @@ function open(id: string) {
         >
           <button
             type="button"
-            class="h-9 rounded-control border border-line bg-paper px-3 text-label text-ink hover:bg-surface disabled:cursor-not-allowed disabled:opacity-40 active:not-disabled:translate-y-px"
+            class="h-9 rounded-control border border-line bg-paper px-3 text-label text-ink hover:bg-surface disabled:cursor-not-allowed disabled:opacity-40 active:not-disabled:translate-y-px pointer-coarse:h-tap"
             :disabled="!undated.length"
             @click="selected = new Set(undated.map((r) => r.id))"
           >
@@ -304,7 +304,7 @@ function open(id: string) {
           </button>
           <button
             type="button"
-            class="h-9 rounded-control border border-line bg-paper px-3 text-label text-ink hover:bg-surface active:not-disabled:translate-y-px"
+            class="h-9 rounded-control border border-line bg-paper px-3 text-label text-ink hover:bg-surface active:not-disabled:translate-y-px pointer-coarse:h-tap"
             @click="selected = selected.size === rows.length ? new Set() : new Set(rows.map((r) => r.id))"
           >
             {{ selected.size === rows.length ? '全不選' : '全選' }}
@@ -313,13 +313,13 @@ function open(id: string) {
           <DatePicker v-model="batchDate" label="去過日期" size="sm" :max="today" :clearable="false" class="ml-auto" />
           <button
             type="button"
-            class="h-9 rounded-control bg-region-strong px-3.5 text-label font-bold text-white active:translate-y-px disabled:cursor-not-allowed disabled:opacity-40"
+            class="h-9 rounded-control bg-region-strong px-3.5 text-label font-bold text-white active:translate-y-px disabled:cursor-not-allowed disabled:opacity-40 pointer-coarse:h-tap"
             :disabled="!selected.size || !batchDate || applying"
             @click="applyDate"
           >
             套用
           </button>
-          <button type="button" class="h-9 rounded-control px-3 text-label text-sub hover:bg-surface hover:text-ink active:not-disabled:translate-y-px" @click="picking = false">
+          <button type="button" class="h-9 rounded-control px-3 text-label text-sub hover:bg-surface hover:text-ink active:not-disabled:translate-y-px pointer-coarse:h-tap" @click="picking = false">
             完成
           </button>
         </div>

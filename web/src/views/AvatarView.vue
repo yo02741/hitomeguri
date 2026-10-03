@@ -78,7 +78,7 @@ function wear() {
         <button
           v-if="userStore.user"
           type="button"
-          class="ml-auto flex h-9 items-center gap-1.5 self-center rounded-full border border-line bg-paper px-3.5 text-label font-bold text-ink hover:bg-surface active:not-disabled:translate-y-px"
+          class="ml-auto flex h-9 items-center gap-1.5 self-center rounded-full border border-line bg-paper px-3.5 text-label font-bold text-ink hover:bg-surface active:not-disabled:translate-y-px pointer-coarse:h-tap"
           aria-haspopup="dialog"
           @click="showRules = true"
         >
@@ -122,7 +122,7 @@ function wear() {
             type="button"
             role="tab"
             :aria-selected="tab === t.key"
-            class="tab h-10 shrink-0 rounded-t-control px-4 text-label font-bold active:text-ink"
+            class="tab h-10 shrink-0 rounded-t-control px-4 text-label font-bold active:text-ink pointer-coarse:h-tap"
             :class="tab === t.key ? 'is-on bg-surface text-ink' : 'text-sub hover:text-ink'"
             @click="tab = t.key"
           >
@@ -205,7 +205,7 @@ function wear() {
 
           <!-- 服裝：貼紙 -->
           <div v-if="tab !== 'look'" class="mb-3 flex justify-end">
-            <button type="button" class="flex h-8 items-center gap-1.5 rounded-full px-3 text-caption font-bold active:not-disabled:translate-y-px" :class="onlyOwned ? 'bg-ink text-paper' : 'bg-paper text-ink'" :aria-pressed="onlyOwned" @click="onlyOwned = !onlyOwned">
+            <button type="button" class="flex h-8 items-center gap-1.5 rounded-full px-3 text-caption font-bold active:not-disabled:translate-y-px pointer-coarse:h-tap" :class="onlyOwned ? 'bg-ink text-paper' : 'bg-paper text-ink'" :aria-pressed="onlyOwned" @click="onlyOwned = !onlyOwned">
               只看有的
             </button>
           </div>

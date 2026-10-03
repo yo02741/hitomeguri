@@ -219,7 +219,7 @@ function distance(m: number): string {
     <figure v-if="spot.summary" class="mx-5 mt-3.5 flex flex-col gap-1">
       <SummaryText :summary="spot.summary" />
       <figcaption class="text-caption text-sub">
-        <a :href="spot.summary.source_url" target="_blank" rel="noopener" class="text-sub"
+        <a :href="spot.summary.source_url" target="_blank" rel="noopener" class="text-sub pointer-coarse:py-4"
           >維基百科（{{ { zh: '中文', en: '英文', ja: '日文' }[spot.summary.lang] }}）</a
         >・{{ spot.summary.license }}
       </figcaption>
@@ -249,9 +249,9 @@ function distance(m: number): string {
       </button>
     </section>
 
-    <div class="mx-5 mt-2 flex flex-wrap gap-x-3 text-caption text-sub">
+    <div class="mx-5 mt-2 flex flex-wrap gap-x-3 text-caption text-sub pointer-coarse:-my-3.5 pointer-coarse:items-center">
       <span>來源</span>
-      <a v-for="s in spot.sources" :key="s.url" :href="s.url" target="_blank" rel="noopener" class="text-sub">{{ sourceLabel(s.url) }}</a>
+      <a v-for="s in spot.sources" :key="s.url" :href="s.url" target="_blank" rel="noopener" class="text-sub pointer-coarse:py-3.5">{{ sourceLabel(s.url) }}</a>
     </div>
 
     <!-- 手機：收藏・去過・清單・行程貼在 sheet 底部，不必先捲到最下面；Google Maps 移到上面的資訊列 -->

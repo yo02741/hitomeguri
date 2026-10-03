@@ -161,7 +161,7 @@ defineExpose({ focus: focusActive })
     <div class="flex items-center gap-1">
       <button
         type="button"
-        class="grid size-9 place-items-center rounded-control text-sub hover:bg-surface hover:text-ink disabled:cursor-not-allowed disabled:opacity-40 active:not-disabled:translate-y-px"
+        class="grid size-9 place-items-center rounded-control text-sub hover:bg-surface hover:text-ink disabled:cursor-not-allowed disabled:opacity-40 active:not-disabled:translate-y-px pointer-coarse:size-tap"
         :disabled="prevDisabled"
         :aria-label="view === 'days' ? '上個月' : view === 'months' ? '前一年' : '前 12 年'"
         @click="go(-1)"
@@ -170,7 +170,7 @@ defineExpose({ focus: focusActive })
       </button>
       <button
         type="button"
-        class="flex h-9 flex-1 items-center justify-center gap-1 rounded-control font-latin text-body font-bold hover:bg-surface disabled:cursor-default disabled:hover:bg-transparent active:not-disabled:translate-y-px"
+        class="flex h-9 flex-1 items-center justify-center gap-1 rounded-control font-latin text-body font-bold hover:bg-surface disabled:cursor-default disabled:hover:bg-transparent active:not-disabled:translate-y-px pointer-coarse:h-tap"
         :disabled="view === 'years'"
         :aria-label="view === 'days' ? `${title}，選月份` : view === 'months' ? `${year}年，選年份` : undefined"
         aria-live="polite"
@@ -183,7 +183,7 @@ defineExpose({ focus: focusActive })
       </button>
       <button
         type="button"
-        class="grid size-9 place-items-center rounded-control text-sub hover:bg-surface hover:text-ink disabled:cursor-not-allowed disabled:opacity-40 active:not-disabled:translate-y-px"
+        class="grid size-9 place-items-center rounded-control text-sub hover:bg-surface hover:text-ink disabled:cursor-not-allowed disabled:opacity-40 active:not-disabled:translate-y-px pointer-coarse:size-tap"
         :disabled="nextDisabled"
         :aria-label="view === 'days' ? '下個月' : view === 'months' ? '後一年' : '後 12 年'"
         @click="go(1)"

@@ -67,28 +67,28 @@ const failed = ref(new Set<string>())
     <!-- 類型：文字索引列，選中的加底線；再點一次取消 -->
     <nav
       v-if="sections.length > 1"
-      class="flex shrink-0 flex-wrap gap-x-3.5 gap-y-1 border-b border-line-soft px-2.5 pt-2.5 pb-2"
+      class="flex shrink-0 flex-wrap gap-x-3.5 gap-y-1 border-b border-line-soft px-2.5 pt-2.5 pb-2 pointer-coarse:gap-x-0.5 pointer-coarse:gap-y-0 pointer-coarse:px-1 pointer-coarse:py-0"
       aria-label="類型"
     >
       <button
         type="button"
-        class="border-b-2 pb-0.5 text-label"
+        class="text-label pointer-coarse:px-1.5 pointer-coarse:py-2.5"
         :class="explore.category === null ? 'border-region-strong font-bold text-ink' : 'border-transparent text-sub hover:text-ink active:text-ink'"
         :aria-pressed="explore.category === null"
         @click="explore.category = null"
       >
-        不限
+        <span class="block border-b-2 border-inherit pb-0.5">不限</span>
       </button>
       <button
         v-for="g in sections"
         :key="g.key"
         type="button"
-        class="border-b-2 pb-0.5 text-label"
+        class="text-label pointer-coarse:px-1.5 pointer-coarse:py-2.5"
         :class="explore.category === g.key ? 'border-region-strong font-bold text-ink' : 'border-transparent text-sub hover:text-ink active:text-ink'"
         :aria-pressed="explore.category === g.key"
         @click="explore.category = explore.category === g.key ? null : g.key"
       >
-        {{ g.label }}
+        <span class="block border-b-2 border-inherit pb-0.5">{{ g.label }}</span>
       </button>
     </nav>
 
