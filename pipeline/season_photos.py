@@ -25,7 +25,7 @@ from pathlib import Path
 from typing import Any
 
 from pipeline.http import get_json
-from pipeline.paths import SPOTS_DIR
+from pipeline.paths import SEED_DIR, SPOTS_DIR
 from pipeline.sources import commons, wikidata
 
 API = commons.API
@@ -205,6 +205,20 @@ NOT_PHOTO = re.compile(
 )
 # 人潮、遊客是主角
 CROWD = re.compile(r"crowd|throngs?|tourists|people|visitors|人出|混雑", re.I)
+# 活動與警備：拍的是當天的人，不是景點（例：澀谷十字路口的萬聖節、警察）
+EVENT = re.compile(r"halloween|police|riot|protest|demonstration|ハロウィン|警察|警備", re.I)
+
+
+def excluded_files() -> set[str]:
+    """使用者回報不適合的照片（data/seed/photo_exclude.json 的 Commons 檔名，空白或底線都可）"""
+    path = SEED_DIR / "photo_exclude.json"
+    if not path.exists():
+        return set()
+    rows = json.loads(path.read_text(encoding="utf-8"))
+    return {r["file"].replace("_", " ") for r in rows}
+
+
+EXCLUDED = excluded_files()
 QUALITY = {
     "Category:Featured pictures on Wikimedia Commons": 50,
     "Category:Quality images": 40,
@@ -245,7 +259,9 @@ def score(
     if NOT_PHOTO.search(f["title"]) or any(NOT_PHOTO.search(c) for c in f.get("cats", [])):
         return None
     # 人潮照拍的是人不是景點：不收（扣分的話，沒有別張時還是會被選上）
-    if CROWD.search(f["title"]):
+    if CROWD.search(f["title"]) or EVENT.search(f["title"]):
+        return None
+    if f["title"].removeprefix("File:").replace("_", " ") in EXCLUDED:
         return None
     sc = 0.0
     if f["title"] in depicts:

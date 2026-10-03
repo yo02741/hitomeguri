@@ -131,3 +131,17 @@ def test_mentions_ignores_long_vowel_marks():
     assert sp.mentions("Hozen-ji Temple at night.jpg", toks)
     assert sp.mentions("Kyoto-Ryoan-Ji MG 4512.jpg", sp.name_tokens("Ryōan-ji", "龍安寺"))
     assert sp.mentions("Hōzen-ji at night.jpg", sp.name_tokens("Hozen-ji", "法善寺"))
+
+
+def test_event_and_excluded_photos_are_not_used() -> None:
+    f = {
+        "title": "File:Shibuya Halloween 2016 night.jpg",
+        "mime": "image/jpeg",
+        "width": 2000,
+        "height": 1300,
+    }
+    assert sp.score(f, ["shibuya"], set(), {}) is None
+    f2 = {**f, "title": "File:Panshiro Bakery Shop Namba Dotonbori.jpg"}
+    assert sp.score(f2, ["dotonbori"], set(), {}) is None
+    f3 = {**f, "title": "File:Dotonbori Glico sign at night.jpg"}
+    assert sp.score(f3, ["dotonbori"], set(), {}) is not None
