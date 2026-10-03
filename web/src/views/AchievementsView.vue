@@ -151,6 +151,10 @@ onBeforeUnmount(() => fresh.seen([...fresh.keys].filter((k) => k.startsWith('a:'
   <section ref="root" class="mx-auto flex w-full max-w-5xl flex-col gap-7 px-6 pt-9 pb-24 max-sm:px-4">
     <header class="paper-grain relative overflow-hidden rounded-card bg-region p-6 text-on-region max-sm:p-5">
       <div class="relative grid grid-cols-[minmax(0,1fr)_160px] items-center gap-6 max-md:grid-cols-1">
+        <!-- 窄螢幕：最新一枚縮成 64px 放在右上；還沒有就不放 -->
+        <span v-if="hero" class="absolute top-0 right-0 w-16 md:hidden" aria-hidden="true">
+          <AchvSeal :def="hero.def" status="done" :at="hero.at" class="w-full" />
+        </span>
         <div class="flex min-w-0 flex-col gap-4">
           <BackLink to="/log" on-region>紀錄</BackLink>
           <h1 class="flex items-baseline gap-3 text-h1 font-black tracking-title">

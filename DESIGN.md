@@ -564,7 +564,7 @@ header 右側、登入鈕左邊（`SearchBox.vue`，每一頁都在；在行程�
   - 未達成：`--color-line` 虛線框（`stroke-dasharray: 4 3`），字是 `--color-sub`，不套濾鏡、不旋轉、沒有紋樣。
   - 年代主題不加專用 CSS：印泥跟著 `--color-visited`（江戶朱、明治臙脂…）、初訪章跟著 `--region-strong`，字型跟著 `--font-display-zh`、`--font-latin`。
 - 頁面（`AchievementsView.vue`）：容器同收集冊（`max-w-5xl`）。
-  - 標頭：`bg-region`＋紙紋；「‹ 紀錄」、「成就 n / N」（`RollingNumber`）、進度條（`bg-paper/55` 底、`bg-on-region` 填色）、事實列「初訪 x / 47　旅行 n 趟　yyyy 年起」（0 或不知道的不寫）、「規則」。右欄（md 以上）是最近達成的章 140px，沒有時是虛線圓。
+  - 標頭：`bg-region`＋紙紋；「‹ 紀錄」、「成就 n / N」（`RollingNumber`）、進度條（`bg-paper/55` 底、`bg-on-region` 填色）、事實列「初訪 x / 47　旅行 n 趟　yyyy 年起」（0 或不知道的不寫）、「規則」。右欄（md 以上）是最近達成的章 140px，沒有時是虛線圓；md 以下最近達成的章縮成 64px 放在標頭右上，沒有時不放（不加提示文字）。
   - 手機在標頭下方放段落目錄（`SectionNav` bar，§7.2a），段落標題 `scroll-mt-14` 不被蓋住。
   - 段落：初訪、地方、旅行、時節、足跡、文化指定、名城、擴充包（各帶 `x / m`）。台紙 `rounded-card border-line bg-paper` 紙紋＋點點方格（點點畫在 `::before`，不蓋掉紙紋）。初訪依地方分行（小標 `text-caption tracking-section text-sub`），已去的是 `PrefStamp`，未去的是虛線圓＋日文縣名（`text-sub`）。成就格 3／4／6 欄，格子是按鈕（最小 44px）：章、名稱（`text-label` 兩行，數字和單位之間是不斷行空格、`break-keep`，折成「九州・沖繩／8 縣」「続日本100名城／10 城」）、日期或進度（`x / n`，地方差 3 縣以內寫「還沒去：秋田、山形」）。同一組已達成的在前。格子的 `aria-label` 寫名稱、日期或進度（有「還沒去：…」時寫那句），有 NEW 時接「，新」。手機的初訪章只有約 52px，NEW 放在上緣正中（壓在外圈上，不蓋住羅馬拼音），桌機在左上。
   - 關掉的擴充包，還沒達成的不列（已達成的照列）；整組都沒有就不列那段。
