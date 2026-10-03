@@ -206,7 +206,22 @@ const FONT_REGULAR = ['Noto Sans Regular']
 // 顏色一律取自目前的地區色 token（DESIGN.md §3.3），不寫死色碼。
 function token(name: string): string {
   const el = document.getElementById('app-root') ?? document.documentElement
-  return getComputedStyle(el).getPropertyValue(name).trim() || '#1D222C'
+  const v = getComputedStyle(el).getPropertyValue(name).trim() || '#1D222C'
+  return v.startsWith('#') ? v : toRgb(v)
+}
+
+// MapLibre 讀不懂 color-mix() 等寫法（「增加對比」的 --region-line 會變成 color-mix），
+// 讀不懂時整條線變黑；先畫進 1×1 canvas 讀回 rgb 再交給地圖
+let probe: CanvasRenderingContext2D | null = null
+function toRgb(v: string): string {
+  probe ??= document.createElement('canvas').getContext('2d', { willReadFrequently: true })
+  if (!probe) return v
+  probe.clearRect(0, 0, 1, 1)
+  probe.fillStyle = '#000'
+  probe.fillStyle = v
+  probe.fillRect(0, 0, 1, 1)
+  const [r, g, b, a] = probe.getImageData(0, 0, 1, 1).data
+  return `rgba(${r}, ${g}, ${b}, ${Math.round(((a ?? 255) / 255) * 1000) / 1000})`
 }
 
 function unselected(): MapSpot[] {
