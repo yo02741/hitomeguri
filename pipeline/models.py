@@ -46,7 +46,8 @@ class Summary(StrictModel):
     fetched_at: str
 
 
-PhotoKey = Literal["spring", "summer", "autumn", "winter", "night"]
+# panorama：Wikidata 全景（P4291）或空拍（P8592），全景卡用
+PhotoKey = Literal["spring", "summer", "autumn", "winter", "night", "panorama"]
 
 
 class Image(StrictModel):

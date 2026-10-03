@@ -18,3 +18,18 @@ def test_verdict_agreement_and_alternatives() -> None:
     assert v["main_flags"] == ["警察"]
     assert v["alts"] == ["B.jpg", "C.jpg"]
     assert v["wiki_agree_other"] == ["C.jpg"]
+
+
+def test_exempt_keeps_flags_unless_the_spot_is_that_kind() -> None:
+    assert ps.exempt(["車輛"], "十国鋼索線", "Jukkoku cable car", []) == []
+    assert ps.exempt(["車輛"], "伊吹山", "Mount Ibuki", ["自然"]) == ["車輛"]
+    assert ps.exempt(["室內"], "秋田市立千秋美術館", "", ["美術館"]) == []
+    assert ps.exempt(["招牌", "店家"], "竹下通り", "Takeshita Street", ["購物"]) == []
+
+
+def test_pick_skips_excluded_and_non_photos(monkeypatch) -> None:
+    from pipeline import photos
+
+    monkeypatch.setattr(photos, "EXCLUDED", {"Bad.jpg"})
+    assert photos.pick(["Map.svg", "Bad.jpg", "Good.jpg"], lambda f: True) == "Good.jpg"
+    assert photos.pick(["Good.jpg"], lambda f: False) is None

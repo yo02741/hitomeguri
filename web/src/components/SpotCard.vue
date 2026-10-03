@@ -80,7 +80,9 @@ const photo = computed(() => {
   const c = props.card
   if (props.variant.kind === 'base') return c.image
   const seasonal = props.variant.photo ? c.seasonImages?.[props.variant.photo] : undefined
-  return seasonal ?? c.image
+  // 全景、特別全景：Wikidata 的全景或空拍照片（season_images.panorama）
+  const wide = props.variant.kind === 'full' || props.variant.kind === 'special' ? c.seasonImages?.panorama : undefined
+  return seasonal ?? wide ?? c.image
 })
 watch(() => photo.value?.url, () => (tries.value = 0))
 const imageSrc = computed(() => {

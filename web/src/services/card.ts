@@ -73,7 +73,7 @@ export interface CardFace {
   name: { ja: string; kana?: string; romaji?: string; zh?: string }
   image?: { url: string; author?: string; license?: string }
   /** 季節照片（DESIGN.md §7.19a）：季節卡、全景、金箔、特別全景依抽到的季節換照片 */
-  seasonImages?: Partial<Record<'spring' | 'summer' | 'autumn' | 'winter' | 'night', { url: string; author?: string; license?: string }>>
+  seasonImages?: Partial<Record<'spring' | 'summer' | 'autumn' | 'winter' | 'night' | 'panorama', { url: string; author?: string; license?: string }>>
   /** 類型（寺院、城…） */
   kind?: string
   designation?: string

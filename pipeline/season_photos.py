@@ -461,6 +461,10 @@ def seed_season_photos(prefs: list[str], min_score: float = 70, refresh: bool = 
             except Exception as e:  # 一筆失敗不影響其他
                 lines.append(f"- {pref} {s['name']['ja']}：{e}")
                 continue
+            # 全景（seed-photos 從 Wikidata 補的）保留；
+            # 夜景、冬景要用 Wikidata 的，重選後再跑一次 seed-photos
+            if pano := (s.get("season_images") or {}).get("panorama"):
+                photos["panorama"] = pano
             s["season_images"] = photos
             if photos:
                 n += 1

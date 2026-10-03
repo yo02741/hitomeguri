@@ -75,6 +75,26 @@ def subject_flags(cats: list[str], own: str) -> list[str]:
     return out
 
 
+# 景點本身就是那類東西時，那個原因不算
+# （纜車、觀光列車拍到車；美術館、教會拍室內；商店街拍到店家與招牌）
+EXEMPT = {
+    "車輛": re.compile(
+        r"ケーブル|ロープウェ|鉄道|電鉄|線$|号$|物語|サーキット|スピードウェイ|駅"
+        r"|cable|ropeway|railway|line$|circuit|speedway|station",
+        re.I,
+    ),
+    "室內": re.compile(r"博物館|美術館|教会|ホール|館$|museum|church|hall", re.I),
+    "店家": re.compile(r"購物|市場|街區|商店街|横丁|通り?$|村$|market|street|arcade", re.I),
+    "招牌": re.compile(r"購物|市場|街區|商店街|横丁|通り?$|交差点|market|street|crossing", re.I),
+    "活動": re.compile(r"スタジアム|球場|stadium|arena", re.I),
+}
+
+
+def exempt(flags: list[str], name: str, en: str, tags: list[str]) -> list[str]:
+    text = " ".join([name, en, *tags])
+    return [f for f in flags if not (f in EXEMPT and EXEMPT[f].search(text))]
+
+
 def verdict(sp: SpotPhotos) -> dict[str, Any]:
     """每個景點的判讀：主照片有沒有問題、各來源有沒有別張、來源之間同不同意。"""
     own = f"{sp.name} {sp.en}"
