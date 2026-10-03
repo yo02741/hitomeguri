@@ -12,7 +12,7 @@ on:
         required: true
         default: seed-pokefuta
         type: choice
-        options: [seed-pokefuta, seed-pokecen, seed-castles, seed-shinise, seed-chara, seed-specialties, seed-festivals, seed-seasons, seed-rail, seed-official, translate-summaries, prune-spots, seed-season-photos, photo-stats, seed-photos]
+        options: [seed-pokefuta, seed-pokecen, seed-castles, seed-shinise, seed-chara, seed-specialties, seed-festivals, seed-seasons, seed-rail, seed-official, translate-summaries, prune-spots, seed-season-photos, photo-stats, seed-photos, photo-review]
       prefectures:
         description: "都道府縣 slug，空白分隔；空白表示全部（seed-pokecen 不用）。translate-summaries：填數字表示只翻前 N 筆"
         required: false
