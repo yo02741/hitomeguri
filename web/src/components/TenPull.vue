@@ -192,6 +192,10 @@ const zoomed = computed(() => (zoom.value === null ? null : props.pulls[zoom.val
   transform: rotateY(180deg);
   box-shadow: 0 0.4em 1em color-mix(in oklab, var(--color-shade) 35%, transparent);
 }
+/* 年代主題：卡背的陰影跟著年代（江戶沒有陰影，§13），同 SpotCard */
+:root[data-theme] .back {
+  box-shadow: var(--era-card-shadow);
+}
 /* 稀有的翻開前：輕輕抖一下 */
 .is-rare:not(.is-open) .flip {
   animation: shiver 0.42s ease-in-out calc(var(--i) * 60ms + 0.5s) 1;

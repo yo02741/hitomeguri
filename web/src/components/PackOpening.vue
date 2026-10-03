@@ -299,6 +299,10 @@ function markOpened(tripId: string) {
   transform: rotateY(180deg);
   box-shadow: 0 0.6em 1.6em color-mix(in oklab, var(--color-shade) 35%, transparent);
 }
+/* 年代主題：卡背的陰影跟著年代（江戶沒有陰影，§13），同 SpotCard */
+:root[data-theme] .flip-back {
+  box-shadow: var(--era-card-shadow);
+}
 
 /* 稀有卡翻開時背後的光 */
 .rays {

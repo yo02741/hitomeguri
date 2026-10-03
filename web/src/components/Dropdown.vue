@@ -98,7 +98,7 @@ watch(active, async () => {
       :data-pref="pref"
       data-floating
       data-reduce="fade"
-      class="scroll-quiet fixed z-[80] flex max-h-72 min-w-32 flex-col overflow-y-auto overscroll-contain rounded-card border border-line bg-paper p-1 shadow-float outline-none"
+      class="scroll-quiet fixed z-[80] flex max-h-72 min-w-32 flex-col overflow-y-auto overscroll-contain rounded-card bg-paper p-1 shadow-float outline-none"
       :class="side === 'top' ? 'animate-pop-up' : 'animate-pop-in'"
       :style="{ ...style, transformOrigin: origin }"
       @keydown="onPanelKey"
