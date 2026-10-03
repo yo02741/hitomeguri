@@ -1,11 +1,16 @@
 import { nextTick } from 'vue'
 import type { RouteLocationNormalized, Router } from 'vue-router'
 
+import { TABS } from '../composables/tabNav'
+import { switchesTab } from './tabNav'
+import { wide } from './viewport'
+
 /**
  * 換頁過場（DESIGN.md §9）：換到另一個頁面時用 View Transitions API 淡入淡出；
  * 地圖頁的地區標籤與深度探索頁的標頭用同樣的 view-transition-name，從一個長成另一個。
  * 換縣（點了縣名、地區標籤、全國）時，新的地區色像墨水從點的位置暈開（data-vt="ink"，theme.css）；
  * 拖曳地圖跨縣、選景點不做。瀏覽器不支援或系統設定減少動態時照常換頁。
+ * 手機（<1024）換底部分頁（探索／行程／紀錄之間）不播淡入淡出：header 與分頁列本來就不動，直接換內容（第三階段 10）。
  *
  * 過場期間瀏覽器把整頁換成過場的截圖，點擊都落在 <html> 上（CSS 的 pointer-events 擋不掉），
  * 換到地圖頁時過場會拖到一秒以上，看起來就是「按了沒反應」。所以過場中一按下就結束過場，
@@ -51,6 +56,7 @@ export function installViewTransitions(router: Router) {
     const same = sameView(to, from)
     const ink = same && prefOf(to) !== prefOf(from) && performance.now() - lastClick.t < 600
     if (same && !ink) return
+    if (!wide.value && switchesTab(TABS, from.name, to.name)) return
     if (ink) {
       root.style.setProperty('--vt-x', `${lastClick.x}px`)
       root.style.setProperty('--vt-y', `${lastClick.y}px`)

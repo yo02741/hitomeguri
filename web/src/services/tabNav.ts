@@ -18,6 +18,13 @@ export function tabOf<T extends TabDef>(tabs: readonly T[], routeName: unknown):
   return tabs.find((t) => t.match.includes(String(routeName)))
 }
 
+/** 從一個分頁換到另一個分頁（兩邊都屬於某個分頁、而且不同）：手機上這時不播換頁的淡入淡出（第三階段 10） */
+export function switchesTab(tabs: readonly TabDef[], fromName: unknown, toName: unknown): boolean {
+  const a = tabOf(tabs, fromName)
+  const b = tabOf(tabs, toName)
+  return !!a && !!b && a.to !== b.to
+}
+
 /** 分頁的根：探索的根是首頁，/explore 也算 */
 export function atRoot(tab: TabDef, path: string): boolean {
   return path === tab.to || (tab.to === '/' && path === '/explore')

@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 
-import { atRoot, tabAction, tabOf } from './tabNav'
+import { atRoot, switchesTab, tabAction, tabOf } from './tabNav'
 
 const explore = { to: '/', match: ['home', 'explore', 'map', 'region'] }
 const trips = { to: '/trips', match: ['trips', 'trip', 'prep', 'practice', 'book'] }
@@ -40,5 +40,25 @@ describe('tabAction', () => {
     expect(tabAction(trips, trips, '/trips/abc', '/trips/abc', false)).toEqual({ kind: 'go', to: '/trips' })
     expect(tabAction(trips, trips, '/trips', '/trips', false)).toEqual({ kind: 'none' })
     expect(tabAction(explore, explore, '/explore', '/explore', false)).toEqual({ kind: 'none' })
+  })
+})
+
+describe('switchesTab（手機換分頁不播淡入淡出）', () => {
+  const tabs = [
+    { to: '/', match: ['home', 'map', 'region'] },
+    { to: '/trips', match: ['trips', 'trip'] },
+    { to: '/log', match: ['log', 'cards'] },
+  ]
+  it('不同分頁', () => {
+    expect(switchesTab(tabs, 'map', 'trips')).toBe(true)
+    expect(switchesTab(tabs, 'trip', 'cards')).toBe(true)
+  })
+  it('同一個分頁裡換頁', () => {
+    expect(switchesTab(tabs, 'map', 'region')).toBe(false)
+    expect(switchesTab(tabs, 'trips', 'trip')).toBe(false)
+  })
+  it('不屬於分頁的頁面（我的、加入共編）', () => {
+    expect(switchesTab(tabs, 'me', 'log')).toBe(false)
+    expect(switchesTab(tabs, 'home', 'join')).toBe(false)
   })
 })
