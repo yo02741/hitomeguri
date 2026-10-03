@@ -294,7 +294,14 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a7/Warabikojima.jpg/960px-Warabikojima.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "国土交通省 改変Sakoppi",
+        "license": "Attribution",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Warabikojima.jpg"
+      }
+    ],
     "external_ids": {
       "wikidata": "Q10513883"
     },
@@ -309,7 +316,15 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-28",
+    "season_images": {
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a7/Warabikojima.jpg/960px-Warabikojima.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "国土交通省 改変Sakoppi",
+        "license": "Attribution",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Warabikojima.jpg"
+      }
+    }
   },
   {
     "id": "wd-Q105557496",
@@ -679,7 +694,14 @@
     ],
     "status": "published",
     "updated_at": "2026-09-28",
-    "season_images": {}
+    "season_images": {
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c7/Nozaki_Island_Aerial_photograph.2014.jpg/960px-Nozaki_Island_Aerial_photograph.2014.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "国土地理院",
+        "license": "Attribution",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Nozaki_Island_Aerial_photograph.2014.jpg"
+      }
+    }
   },
   {
     "id": "wd-Q10860535",
@@ -1223,7 +1245,14 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9d/Mitsu-Shima_Island_Tsushima%2C_Nagasaki_Aerial_Photograph.jpg/960px-Mitsu-Shima_Island_Tsushima%2C_Nagasaki_Aerial_Photograph.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "国土交通省",
+        "license": "Attribution",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Mitsu-Shima_Island_Tsushima,_Nagasaki_Aerial_Photograph.jpg"
+      }
+    ],
     "external_ids": {
       "wikidata": "Q11242298"
     },
@@ -1287,7 +1316,15 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-28",
+    "season_images": {
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/88/Iroha-Jima_Islands_Matsuura_Nagasaki_Aerial_Photograph.jpg/960px-Iroha-Jima_Islands_Matsuura_Nagasaki_Aerial_Photograph.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "国土交通省",
+        "license": "Attribution",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Iroha-Jima_Islands_Matsuura_Nagasaki_Aerial_Photograph.jpg"
+      }
+    }
   },
   {
     "id": "wd-Q11261668",
@@ -1389,7 +1426,15 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-29"
+    "updated_at": "2026-09-29",
+    "season_images": {
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/69/Uni-Shima_Island_Tsushima%2C_Nagasaki_Aerial_Photograph.jpg/960px-Uni-Shima_Island_Tsushima%2C_Nagasaki_Aerial_Photograph.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "国土交通省",
+        "license": "Attribution",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Uni-Shima_Island_Tsushima,_Nagasaki_Aerial_Photograph.jpg"
+      }
+    }
   },
   {
     "id": "wd-Q11271283",
@@ -1491,7 +1536,14 @@
         "distance_m": 1220
       }
     ],
-    "images": [],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4e/Mirai_Nagasaki_Cocowalk.jpg/960px-Mirai_Nagasaki_Cocowalk.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Latest version: 氷鷺 aka Hisagi / First version: Marine-Blue",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Mirai_Nagasaki_Cocowalk.jpg"
+      }
+    ],
     "external_ids": {
       "wikidata": "Q11279356"
     },
@@ -2218,6 +2270,18 @@
         "author": "Marco Cheng",
         "license": "CC BY 3.0",
         "source_url": "https://commons.wikimedia.org/wiki/File:Ashigara_ter_reparatie,_Tosca_en_Sakura_Gas_in_aanbouw_bij_MHI_Nagasaki,_-19_november_2012_a.jpg"
+      },
+      "night": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f3/Night_Nagasaki_shipyard.jpg/960px-Night_Nagasaki_shipyard.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "mrhayata from Tokyo, Japan",
+        "license": "CC BY-SA 2.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Night_Nagasaki_shipyard.jpg"
+      },
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/88/Mitsubishi_panorama_-_panoramio.jpg/960px-Mitsubishi_panorama_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Masoud Akbari",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Mitsubishi_panorama_-_panoramio.jpg"
       }
     }
   },
@@ -2586,7 +2650,14 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/05/Kameyama-company01.jpg/960px-Kameyama-company01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Takasunrise0921",
+        "license": "CC BY 2.5",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Kameyama-company01.jpg"
+      }
+    ],
     "external_ids": {
       "wikidata": "Q11370877",
       "osm": "node/3828906058"
@@ -3085,7 +3156,14 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2e/Mt.Hachiroudake.jpg/960px-Mt.Hachiroudake.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Antake",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Mt.Hachiroudake.jpg"
+      }
+    ],
     "external_ids": {
       "wikidata": "Q11391764"
     },
@@ -3382,7 +3460,14 @@
         "distance_m": 1420
       }
     ],
-    "images": [],
+    "images": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/c/c8/Chiwatagawabashi0901.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+        "author": "ふうけ",
+        "license": "Public domain",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Chiwatagawabashi0901.jpg"
+      }
+    ],
     "external_ids": {
       "wikidata": "Q11405834"
     },
@@ -3568,7 +3653,14 @@
     ],
     "status": "published",
     "updated_at": "2026-09-28",
-    "season_images": {}
+    "season_images": {
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c3/Harunotsuji_Ruins%2C_enkei-2.jpg/960px-Harunotsuji_Ruins%2C_enkei-2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Saigen Jiro",
+        "license": "CC0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Harunotsuji_Ruins,_enkei-2.jpg"
+      }
+    }
   },
   {
     "id": "wd-Q11409587",
@@ -3960,7 +4052,15 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-28",
+    "season_images": {
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/%E5%A0%82%E5%B4%8E%E5%A4%A9%E4%B8%BB%E5%A0%82-%E7%A9%BA%E6%92%AE.png/960px-%E5%A0%82%E5%B4%8E%E5%A4%A9%E4%B8%BB%E5%A0%82-%E7%A9%BA%E6%92%AE.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Nami-ja",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:%E5%A0%82%E5%B4%8E%E5%A4%A9%E4%B8%BB%E5%A0%82-%E7%A9%BA%E6%92%AE.png"
+      }
+    }
   },
   {
     "id": "wd-Q11428859",
@@ -4707,7 +4807,14 @@
         "distance_m": 1450
       }
     ],
-    "images": [],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c5/Omura_Park_%28Nagasaki%29_01.jpg/960px-Omura_Park_%28Nagasaki%29_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "ja:User:Sanjo",
+        "license": "Public domain",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Omura_Park_(Nagasaki)_01.jpg"
+      }
+    ],
     "external_ids": {
       "wikidata": "Q11435973",
       "osm": "way/318091399"
@@ -5758,7 +5865,14 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2f/Seizanzi-YH.jpg/960px-Seizanzi-YH.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "As6022014",
+        "license": "CC BY 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Seizanzi-YH.jpg"
+      }
+    ],
     "external_ids": {
       "wikidata": "Q11458266"
     },
@@ -5858,7 +5972,14 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [],
+    "images": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/6/63/Koguro-jima_Island_Ojika%2C_Nagasaki_Aerial_photograph.2014.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+        "author": "国土地理院",
+        "license": "Attribution",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Koguro-jima_Island_Ojika,_Nagasaki_Aerial_photograph.2014.jpg"
+      }
+    ],
     "external_ids": {
       "wikidata": "Q11464517"
     },
@@ -5873,7 +5994,15 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-28",
+    "season_images": {
+      "panorama": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/6/63/Koguro-jima_Island_Ojika%2C_Nagasaki_Aerial_photograph.2014.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+        "author": "国土地理院",
+        "license": "Attribution",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Koguro-jima_Island_Ojika,_Nagasaki_Aerial_photograph.2014.jpg"
+      }
+    }
   },
   {
     "id": "wd-Q11465727",
@@ -6347,7 +6476,15 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-28",
+    "season_images": {
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/84/Sagano-Shima_Island_Aerial_photograph.jpg/960px-Sagano-Shima_Island_Aerial_photograph.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "国土交通省",
+        "license": "Attribution",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Sagano-Shima_Island_Aerial_photograph.jpg"
+      }
+    }
   },
   {
     "id": "wd-Q11482256",
@@ -6452,7 +6589,15 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-28",
+    "season_images": {
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/18/Hirashima_Island_Saikai%2C_Nagasaki_Aerial_photograph.2014.jpg/960px-Hirashima_Island_Saikai%2C_Nagasaki_Aerial_photograph.2014.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "国土地理院",
+        "license": "Attribution",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Hirashima_Island_Saikai,_Nagasaki_Aerial_photograph.2014.jpg"
+      }
+    }
   },
   {
     "id": "wd-Q11482964",
@@ -6480,7 +6625,14 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3d/Hirado_Youth_Hostel.jpg/960px-Hirado_Youth_Hostel.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Atsasebo",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Hirado_Youth_Hostel.jpg"
+      }
+    ],
     "external_ids": {
       "wikidata": "Q11482964"
     },
@@ -6641,7 +6793,15 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-28",
+    "season_images": {
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/eb/Takushima_Island%2C_Hirado_Nagasaki_Aerial_photograph.2013.jpg/960px-Takushima_Island%2C_Hirado_Nagasaki_Aerial_photograph.2013.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "国土地理院",
+        "license": "Attribution",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Takushima_Island,_Hirado_Nagasaki_Aerial_photograph.2013.jpg"
+      }
+    }
   },
   {
     "id": "wd-Q11486979",
@@ -7082,7 +7242,15 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-28",
+    "season_images": {
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b4/Kamigoto_oil_storage_01.jpg/960px-Kamigoto_oil_storage_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Asacyan",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Kamigoto_oil_storage_01.jpg"
+      }
+    }
   },
   {
     "id": "wd-Q11499110",
@@ -7215,7 +7383,14 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b6/Islands_of_Arifuku-shima%2C_Hino-shima%2C_Ryozegaura-shima_Shinkamigoto%2C_Nagasaki_Aerial_photograph.2014.jpg/960px-Islands_of_Arifuku-shima%2C_Hino-shima%2C_Ryozegaura-shima_Shinkamigoto%2C_Nagasaki_Aerial_photograph.2014.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "国土地理院",
+        "license": "Attribution",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Islands_of_Arifuku-shima,_Hino-shima,_Ryozegaura-shima_Shinkamigoto,_Nagasaki_Aerial_photograph.2014.jpg"
+      }
+    ],
     "external_ids": {
       "wikidata": "Q11505281"
     },
@@ -7877,7 +8052,14 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/63/Higashikoen%28Sasebo%29_201309.jpg/960px-Higashikoen%28Sasebo%29_201309.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Atsasebo",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Higashikoen(Sasebo)_201309.jpg"
+      }
+    ],
     "external_ids": {
       "wikidata": "Q11526060"
     },
@@ -7957,7 +8139,15 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-29"
+    "updated_at": "2026-09-29",
+    "season_images": {
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/37/Higashiyamate_landscape_from_minamiyamate.jpg/960px-Higashiyamate_landscape_from_minamiyamate.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "user:Atsasebo",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Higashiyamate_landscape_from_minamiyamate.jpg"
+      }
+    }
   },
   {
     "id": "wd-Q11526710",
@@ -8218,7 +8408,14 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/98/Ruins_of_Kajiya_Castle.jpg/960px-Ruins_of_Kajiya_Castle.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Heartoftheworld",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Ruins_of_Kajiya_Castle.jpg"
+      }
+    ],
     "external_ids": {
       "wikidata": "Q11538922"
     },
@@ -8313,7 +8510,14 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-29"
     },
-    "images": [],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/34/Nomozaki_Kabashima.jpg/960px-Nomozaki_Kabashima.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Marine-Blue",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Nomozaki_Kabashima.jpg"
+      }
+    ],
     "external_ids": {
       "wikidata": "Q11543672"
     },
@@ -8689,7 +8893,14 @@
         "distance_m": 420
       }
     ],
-    "images": [],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0e/Ikeshima_tanko%2C_Nagasaki_PB100215.jpg/960px-Ikeshima_tanko%2C_Nagasaki_PB100215.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Akiyoshi's Room",
+        "license": "Public domain",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Ikeshima_tanko,_Nagasaki_PB100215.jpg"
+      }
+    ],
     "external_ids": {
       "wikidata": "Q11551596"
     },
@@ -10522,7 +10733,14 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/74/Noshima_Island_Ojika%2C_Nagasaki_Aerial_photograph.2014.jpg/960px-Noshima_Island_Ojika%2C_Nagasaki_Aerial_photograph.2014.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "国土地理院",
+        "license": "Attribution",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Noshima_Island_Ojika,_Nagasaki_Aerial_photograph.2014.jpg"
+      }
+    ],
     "external_ids": {
       "wikidata": "Q11605347"
     },
@@ -10537,7 +10755,15 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-28",
+    "season_images": {
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/74/Noshima_Island_Ojika%2C_Nagasaki_Aerial_photograph.2014.jpg/960px-Noshima_Island_Ojika%2C_Nagasaki_Aerial_photograph.2014.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "国土地理院",
+        "license": "Attribution",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Noshima_Island_Ojika,_Nagasaki_Aerial_photograph.2014.jpg"
+      }
+    }
   },
   {
     "id": "wd-Q11605381",
@@ -11249,7 +11475,14 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d9/Uta-jima_island_Aerial_Photograph.JPG/960px-Uta-jima_island_Aerial_Photograph.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "国土交通省",
+        "license": "Attribution",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Uta-jima_island_Aerial_Photograph.JPG"
+      }
+    ],
     "external_ids": {
       "wikidata": "Q11631382"
     },
@@ -11264,7 +11497,15 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-28",
+    "season_images": {
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d9/Uta-jima_island_Aerial_Photograph.JPG/960px-Uta-jima_island_Aerial_Photograph.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "国土交通省",
+        "license": "Attribution",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Uta-jima_island_Aerial_Photograph.JPG"
+      }
+    }
   },
   {
     "id": "wd-Q11632019",
@@ -11607,7 +11848,14 @@
         "distance_m": 1470
       }
     ],
-    "images": [],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/44/Satotabaru_history_and_folk_museum%2C_Tabira.jpg/960px-Satotabaru_history_and_folk_museum%2C_Tabira.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "運動会プロテインパワー",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Satotabaru_history_and_folk_museum,_Tabira.jpg"
+      }
+    ],
     "external_ids": {
       "wikidata": "Q11644616"
     },
@@ -12639,7 +12887,15 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-28",
+    "season_images": {
+      "night": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/45/%E9%95%B7%E5%B4%8E%E7%9C%8C%E7%BE%8E%E8%A1%93%E9%A4%A8_-_panoramio_-_denki-kurage_%284%29.jpg/960px-%E9%95%B7%E5%B4%8E%E7%9C%8C%E7%BE%8E%E8%A1%93%E9%A4%A8_-_panoramio_-_denki-kurage_%284%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "denki-kurage",
+        "license": "CC BY 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:%E9%95%B7%E5%B4%8E%E7%9C%8C%E7%BE%8E%E8%A1%93%E9%A4%A8_-_panoramio_-_denki-kurage_(4).jpg"
+      }
+    }
   },
   {
     "id": "wd-Q11652880",
@@ -13479,7 +13735,15 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-28",
+    "season_images": {
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3f/Takashima_Island_Nagasaki%2C_Nagasaki_Aerial_photograph.2010.jpg/960px-Takashima_Island_Nagasaki%2C_Nagasaki_Aerial_photograph.2010.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "国土地理院",
+        "license": "Attribution",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Takashima_Island_Nagasaki,_Nagasaki_Aerial_photograph.2010.jpg"
+      }
+    }
   },
   {
     "id": "wd-Q11669662",
@@ -13639,7 +13903,15 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-28",
+    "season_images": {
+      "panorama": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/0/0c/Kurokojima_Cku-77-3_c15b_8.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+        "author": "国土地理院",
+        "license": "Attribution",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Kurokojima_Cku-77-3_c15b_8.jpg"
+      }
+    }
   },
   {
     "id": "wd-Q11678145",
@@ -13721,7 +13993,14 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dd/Kuroshima_Island_Ojika%2C_Nagasaki_Aerial_photograph.2014.jpg/960px-Kuroshima_Island_Ojika%2C_Nagasaki_Aerial_photograph.2014.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "国土地理院",
+        "license": "Attribution",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Kuroshima_Island_Ojika,_Nagasaki_Aerial_photograph.2014.jpg"
+      }
+    ],
     "external_ids": {
       "wikidata": "Q11678147"
     },
@@ -14083,7 +14362,20 @@
     ],
     "status": "published",
     "updated_at": "2026-09-28",
-    "season_images": {}
+    "season_images": {
+      "night": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0d/%E6%9C%88%E3%81%A8%E5%B9%B3%E6%88%B8%E5%9F%8E_The_moon_and_Hirado_castle_-_panoramio.jpg/960px-%E6%9C%88%E3%81%A8%E5%B9%B3%E6%88%B8%E5%9F%8E_The_moon_and_Hirado_castle_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "mahlervv",
+        "license": "CC BY 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:%E6%9C%88%E3%81%A8%E5%B9%B3%E6%88%B8%E5%9F%8E_The_moon_and_Hirado_castle_-_panoramio.jpg"
+      },
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6f/Hirado_Castle_air.jpg/960px-Hirado_Castle_air.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "不明",
+        "license": "Attribution",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Hirado_Castle_air.jpg"
+      }
+    }
   },
   {
     "id": "wd-Q123058661",
@@ -14463,7 +14755,14 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-29"
     },
-    "images": [],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6b/Dutch_Trading_Post_in_Hirado.jpg/960px-Dutch_Trading_Post_in_Hirado.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Hkusano",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Dutch_Trading_Post_in_Hirado.jpg"
+      }
+    ],
     "external_ids": {
       "wikidata": "Q126902601",
       "osm": "node/4583422658"
@@ -15429,7 +15728,14 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b6/Islands_of_Arifuku-shima%2C_Hino-shima%2C_Ryozegaura-shima_Shinkamigoto%2C_Nagasaki_Aerial_photograph.2014.jpg/960px-Islands_of_Arifuku-shima%2C_Hino-shima%2C_Ryozegaura-shima_Shinkamigoto%2C_Nagasaki_Aerial_photograph.2014.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "国土地理院",
+        "license": "Attribution",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Islands_of_Arifuku-shima,_Hino-shima,_Ryozegaura-shima_Shinkamigoto,_Nagasaki_Aerial_photograph.2014.jpg"
+      }
+    ],
     "external_ids": {
       "wikidata": "Q17192049"
     },
@@ -15589,7 +15895,14 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b6/Islands_of_Arifuku-shima%2C_Hino-shima%2C_Ryozegaura-shima_Shinkamigoto%2C_Nagasaki_Aerial_photograph.2014.jpg/960px-Islands_of_Arifuku-shima%2C_Hino-shima%2C_Ryozegaura-shima_Shinkamigoto%2C_Nagasaki_Aerial_photograph.2014.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "国土地理院",
+        "license": "Attribution",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Islands_of_Arifuku-shima,_Hino-shima,_Ryozegaura-shima_Shinkamigoto,_Nagasaki_Aerial_photograph.2014.jpg"
+      }
+    ],
     "external_ids": {
       "wikidata": "Q17214084"
     },
@@ -15834,7 +16147,15 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-28",
+    "season_images": {
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/ff/Takashima-Kouzaki_underwater_remains_Aerial_photograph.1977.jpg/960px-Takashima-Kouzaki_underwater_remains_Aerial_photograph.1977.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "国土交通省",
+        "license": "Attribution",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Takashima-Kouzaki_underwater_remains_Aerial_photograph.1977.jpg"
+      }
+    }
   },
   {
     "id": "wd-Q17228701",
@@ -16074,7 +16395,14 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [],
+    "images": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/3/32/Shirose_rock_reef_Ojika%2C_Nagasaki_Aerial_photograph.2014.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+        "author": "国土地理院",
+        "license": "Attribution",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Shirose_rock_reef_Ojika,_Nagasaki_Aerial_photograph.2014.jpg"
+      }
+    ],
     "external_ids": {
       "wikidata": "Q17993734"
     },
@@ -16175,7 +16503,14 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9b/Uujima_Island_Ojika%2C_Nagasaki_Aerial_photograph.2014.jpg/960px-Uujima_Island_Ojika%2C_Nagasaki_Aerial_photograph.2014.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "国土地理院",
+        "license": "Attribution",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Uujima_Island_Ojika,_Nagasaki_Aerial_photograph.2014.jpg"
+      }
+    ],
     "external_ids": {
       "wikidata": "Q18335728"
     },
@@ -16186,7 +16521,15 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-28",
+    "season_images": {
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9b/Uujima_Island_Ojika%2C_Nagasaki_Aerial_photograph.2014.jpg/960px-Uujima_Island_Ojika%2C_Nagasaki_Aerial_photograph.2014.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "国土地理院",
+        "license": "Attribution",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Uujima_Island_Ojika,_Nagasaki_Aerial_photograph.2014.jpg"
+      }
+    }
   },
   {
     "id": "wd-Q18336657",
@@ -16217,7 +16560,14 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/17/O-shima_Island_Ojika%2C_Nagasaki_Aerial_photograph.2014.jpg/960px-O-shima_Island_Ojika%2C_Nagasaki_Aerial_photograph.2014.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "国土地理院",
+        "license": "Attribution",
+        "source_url": "https://commons.wikimedia.org/wiki/File:O-shima_Island_Ojika,_Nagasaki_Aerial_photograph.2014.jpg"
+      }
+    ],
     "external_ids": {
       "wikidata": "Q18336657"
     },
@@ -16232,7 +16582,15 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-28",
+    "season_images": {
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/17/O-shima_Island_Ojika%2C_Nagasaki_Aerial_photograph.2014.jpg/960px-O-shima_Island_Ojika%2C_Nagasaki_Aerial_photograph.2014.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "国土地理院",
+        "license": "Attribution",
+        "source_url": "https://commons.wikimedia.org/wiki/File:O-shima_Island_Ojika,_Nagasaki_Aerial_photograph.2014.jpg"
+      }
+    }
   },
   {
     "id": "wd-Q18337391",
@@ -16263,7 +16621,14 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5b/Tsuburajima_Island%2C_Nagasaki%2C_Goto_Aerial_photograph.2014.jpg/960px-Tsuburajima_Island%2C_Nagasaki%2C_Goto_Aerial_photograph.2014.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "国土地理院",
+        "license": "Attribution",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Tsuburajima_Island,_Nagasaki,_Goto_Aerial_photograph.2014.jpg"
+      }
+    ],
     "external_ids": {
       "wikidata": "Q18337391"
     },
@@ -16278,7 +16643,15 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-28",
+    "season_images": {
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5b/Tsuburajima_Island%2C_Nagasaki%2C_Goto_Aerial_photograph.2014.jpg/960px-Tsuburajima_Island%2C_Nagasaki%2C_Goto_Aerial_photograph.2014.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "国土地理院",
+        "license": "Attribution",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Tsuburajima_Island,_Nagasaki,_Goto_Aerial_photograph.2014.jpg"
+      }
+    }
   },
   {
     "id": "wd-Q18337535",
@@ -16471,7 +16844,14 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/01/Hime-shima_Island_Nagasaki_prefecture_Aerial_photograph.jpg/960px-Hime-shima_Island_Nagasaki_prefecture_Aerial_photograph.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "国土地理院",
+        "license": "Attribution",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Hime-shima_Island_Nagasaki_prefecture_Aerial_photograph.jpg"
+      }
+    ],
     "external_ids": {
       "wikidata": "Q18339013"
     },
@@ -16486,7 +16866,15 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-28",
+    "season_images": {
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/01/Hime-shima_Island_Nagasaki_prefecture_Aerial_photograph.jpg/960px-Hime-shima_Island_Nagasaki_prefecture_Aerial_photograph.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "国土地理院",
+        "license": "Attribution",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Hime-shima_Island_Nagasaki_prefecture_Aerial_photograph.jpg"
+      }
+    }
   },
   {
     "id": "wd-Q18339362",
@@ -16517,7 +16905,14 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6d/Nagasaki_Madarajima_Pothole.jpg/960px-Nagasaki_Madarajima_Pothole.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "ぱちょぴ（pacyopi）",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Nagasaki_Madarajima_Pothole.jpg"
+      }
+    ],
     "external_ids": {
       "wikidata": "Q18339362"
     },
@@ -16532,7 +16927,15 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-28",
+    "season_images": {
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2d/Madarashima_Island_Aerial_photograph.2014.jpg/960px-Madarashima_Island_Aerial_photograph.2014.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "国土地理院",
+        "license": "Attribution",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Madarashima_Island_Aerial_photograph.2014.jpg"
+      }
+    }
   },
   {
     "id": "wd-Q18339489",
@@ -16616,7 +17019,14 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f5/Mushima_Island_Ojika%2C_Nagasaki_Aerial_photograph.2014.jpg/960px-Mushima_Island_Ojika%2C_Nagasaki_Aerial_photograph.2014.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "国土地理院",
+        "license": "Attribution",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Mushima_Island_Ojika,_Nagasaki_Aerial_photograph.2014.jpg"
+      }
+    ],
     "external_ids": {
       "wikidata": "Q18339537"
     },
@@ -16631,7 +17041,15 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-28",
+    "season_images": {
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f5/Mushima_Island_Ojika%2C_Nagasaki_Aerial_photograph.2014.jpg/960px-Mushima_Island_Ojika%2C_Nagasaki_Aerial_photograph.2014.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "国土地理院",
+        "license": "Attribution",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Mushima_Island_Ojika,_Nagasaki_Aerial_photograph.2014.jpg"
+      }
+    }
   },
   {
     "id": "wd-Q18457651",
@@ -16877,7 +17295,14 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3f/%E7%8E%89%E4%B9%8B%E6%B5%A6%E5%A4%A7%E6%A9%8B.jpg/960px-%E7%8E%89%E4%B9%8B%E6%B5%A6%E5%A4%A7%E6%A9%8B.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Louveteau sfm",
+        "license": "CC BY 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:%E7%8E%89%E4%B9%8B%E6%B5%A6%E5%A4%A7%E6%A9%8B.jpg"
+      }
+    ],
     "external_ids": {
       "wikidata": "Q20665543"
     },
@@ -16892,7 +17317,15 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-28",
+    "season_images": {
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/Simayama-Jima_Island_Goto%2C_Nagasaki_Aerial_photograph.2014.jpg/960px-Simayama-Jima_Island_Goto%2C_Nagasaki_Aerial_photograph.2014.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "国土地理院",
+        "license": "Attribution",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Simayama-Jima_Island_Goto,_Nagasaki_Aerial_photograph.2014.jpg"
+      }
+    }
   },
   {
     "id": "wd-Q20669474",
@@ -16945,7 +17378,15 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-28",
+    "season_images": {
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1e/Oushima_Island%2C_Goto_Nagasaki_Aerial_photograph.2014.jpg/960px-Oushima_Island%2C_Goto_Nagasaki_Aerial_photograph.2014.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "国土地理院",
+        "license": "Attribution",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Oushima_Island,_Goto_Nagasaki_Aerial_photograph.2014.jpg"
+      }
+    }
   },
   {
     "id": "wd-Q20670485",
@@ -16998,7 +17439,15 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-28",
+    "season_images": {
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f1/Akashima_Island%2C_Goto_Nagasaki_Aerial_photograph.2014.jpg/960px-Akashima_Island%2C_Goto_Nagasaki_Aerial_photograph.2014.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "国土地理院",
+        "license": "Attribution",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Akashima_Island,_Goto_Nagasaki_Aerial_photograph.2014.jpg"
+      }
+    }
   },
   {
     "id": "wd-Q20670802",
@@ -17029,7 +17478,14 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6e/Kushijima_Island%2C_Nagasaki_Aerial_photograph.2014.jpg/960px-Kushijima_Island%2C_Nagasaki_Aerial_photograph.2014.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "国土地理院",
+        "license": "Attribution",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Kushijima_Island,_Nagasaki_Aerial_photograph.2014.jpg"
+      }
+    ],
     "external_ids": {
       "wikidata": "Q20670802"
     },
@@ -17044,7 +17500,15 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-28",
+    "season_images": {
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6e/Kushijima_Island%2C_Nagasaki_Aerial_photograph.2014.jpg/960px-Kushijima_Island%2C_Nagasaki_Aerial_photograph.2014.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "国土地理院",
+        "license": "Attribution",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Kushijima_Island,_Nagasaki_Aerial_photograph.2014.jpg"
+      }
+    }
   },
   {
     "id": "wd-Q20670818",
@@ -17075,7 +17539,14 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ce/Shugenjima_Island%2C_Nagasaki_Aerial_photograph.2014.jpg/960px-Shugenjima_Island%2C_Nagasaki_Aerial_photograph.2014.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "国土地理院",
+        "license": "Attribution",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Shugenjima_Island,_Nagasaki_Aerial_photograph.2014.jpg"
+      }
+    ],
     "external_ids": {
       "wikidata": "Q20670818"
     },
@@ -17090,7 +17561,15 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-28",
+    "season_images": {
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ce/Shugenjima_Island%2C_Nagasaki_Aerial_photograph.2014.jpg/960px-Shugenjima_Island%2C_Nagasaki_Aerial_photograph.2014.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "国土地理院",
+        "license": "Attribution",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Shugenjima_Island,_Nagasaki_Aerial_photograph.2014.jpg"
+      }
+    }
   },
   {
     "id": "wd-Q20670842",
@@ -17136,7 +17615,15 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-28",
+    "season_images": {
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b3/Me-Shima_Island_of_Danjo_Islands_Aerial_photograph.jpg/960px-Me-Shima_Island_of_Danjo_Islands_Aerial_photograph.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "国土交通省",
+        "license": "Attribution",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Me-Shima_Island_of_Danjo_Islands_Aerial_photograph.jpg"
+      }
+    }
   },
   {
     "id": "wd-Q20680346",
@@ -17213,7 +17700,14 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/19/Iojima_Island_Nagasaki_Aerial_photograph.2014.jpg/960px-Iojima_Island_Nagasaki_Aerial_photograph.2014.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "国土地理院",
+        "license": "Attribution",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Iojima_Island_Nagasaki_Aerial_photograph.2014.jpg"
+      }
+    ],
     "external_ids": {
       "wikidata": "Q20681784"
     },
@@ -17312,7 +17806,14 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a2/Sazaejima_Island%2C_Nagasaki%2C_Goto_Aerial_photograph.2014.jpg/960px-Sazaejima_Island%2C_Nagasaki%2C_Goto_Aerial_photograph.2014.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "国土地理院",
+        "license": "Attribution",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Sazaejima_Island,_Nagasaki,_Goto_Aerial_photograph.2014.jpg"
+      }
+    ],
     "external_ids": {
       "wikidata": "Q20706579"
     },
@@ -17535,7 +18036,14 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [],
+    "images": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/c/ce/Kirinokojima_aerial_photograph.2014.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+        "author": "国土地理院",
+        "license": "CC BY 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Kirinokojima_aerial_photograph.2014.jpg"
+      }
+    ],
     "external_ids": {
       "wikidata": "Q21652956"
     },
@@ -17550,7 +18058,15 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-28",
+    "season_images": {
+      "panorama": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/c/ce/Kirinokojima_aerial_photograph.2014.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+        "author": "国土地理院",
+        "license": "CC BY 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Kirinokojima_aerial_photograph.2014.jpg"
+      }
+    }
   },
   {
     "id": "wd-Q21653043",
@@ -17823,7 +18339,15 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-28",
+    "season_images": {
+      "night": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a9/Hirado_Bridge-2.jpg/960px-Hirado_Bridge-2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Mahlervv",
+        "license": "CC BY 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Hirado_Bridge-2.jpg"
+      }
+    }
   },
   {
     "id": "wd-Q285468",
@@ -17879,7 +18403,14 @@
     ],
     "status": "published",
     "updated_at": "2026-09-28",
-    "season_images": {}
+    "season_images": {
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6b/Battle-Ship_Island_Nagasaki_Japan.jpg/960px-Battle-Ship_Island_Nagasaki_Japan.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Flickr user: kntrty https://www.flickr.com/photos/kntrty/",
+        "license": "CC BY 2.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Battle-Ship_Island_Nagasaki_Japan.jpg"
+      }
+    }
   },
   {
     "id": "wd-Q28682698",
@@ -17964,7 +18495,14 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/be/Terashima_Island_Uku_Sasebo%2C_Nagasaki_Aerial_photograph.2016.jpg/960px-Terashima_Island_Uku_Sasebo%2C_Nagasaki_Aerial_photograph.2016.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "国土地理院",
+        "license": "Attribution",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Terashima_Island_Uku_Sasebo,_Nagasaki_Aerial_photograph.2016.jpg"
+      }
+    ],
     "external_ids": {
       "wikidata": "Q28682901"
     },
@@ -17979,7 +18517,15 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-28",
+    "season_images": {
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/be/Terashima_Island_Uku_Sasebo%2C_Nagasaki_Aerial_photograph.2016.jpg/960px-Terashima_Island_Uku_Sasebo%2C_Nagasaki_Aerial_photograph.2016.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "国土地理院",
+        "license": "Attribution",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Terashima_Island_Uku_Sasebo,_Nagasaki_Aerial_photograph.2016.jpg"
+      }
+    }
   },
   {
     "id": "wd-Q28686283",
@@ -18344,7 +18890,14 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a6/Yaburogi_Island_Aerial_photograph.2014.jpg/960px-Yaburogi_Island_Aerial_photograph.2014.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "国土地理院",
+        "license": "Attribution",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Yaburogi_Island_Aerial_photograph.2014.jpg"
+      }
+    ],
     "external_ids": {
       "wikidata": "Q30931979"
     },
@@ -18359,7 +18912,15 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-28",
+    "season_images": {
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a6/Yaburogi_Island_Aerial_photograph.2014.jpg/960px-Yaburogi_Island_Aerial_photograph.2014.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "国土地理院",
+        "license": "Attribution",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Yaburogi_Island_Aerial_photograph.2014.jpg"
+      }
+    }
   },
   {
     "id": "wd-Q38278109",
@@ -18616,7 +19177,14 @@
     ],
     "status": "published",
     "updated_at": "2026-09-28",
-    "season_images": {}
+    "season_images": {
+      "night": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/04/Oura_Catholic_Church_-_Nagasaki%2CJapan.JPG/960px-Oura_Catholic_Church_-_Nagasaki%2CJapan.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Michael Crossroad",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Oura_Catholic_Church_-_Nagasaki,Japan.JPG"
+      }
+    }
   },
   {
     "id": "wd-Q4812258",
@@ -18903,7 +19471,14 @@
         "distance_m": 1030
       }
     ],
-    "images": [],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/19/Kashima_Island%2C_Nagasaki_Isahaya_Aerial_photograph.2010.jpg/960px-Kashima_Island%2C_Nagasaki_Isahaya_Aerial_photograph.2010.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "国土地理院",
+        "license": "Attribution",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Kashima_Island,_Nagasaki_Isahaya_Aerial_photograph.2010.jpg"
+      }
+    ],
     "external_ids": {
       "wikidata": "Q49644893"
     },
@@ -18949,7 +19524,14 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ee/Kuroshima_Island%2C_Matsuura_Nagasaki_Aerial_photograph.2013.jpg/960px-Kuroshima_Island%2C_Matsuura_Nagasaki_Aerial_photograph.2013.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "国土地理院",
+        "license": "Attribution",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Kuroshima_Island,_Matsuura_Nagasaki_Aerial_photograph.2013.jpg"
+      }
+    ],
     "external_ids": {
       "wikidata": "Q49649623"
     },
@@ -18964,7 +19546,15 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-28",
+    "season_images": {
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ee/Kuroshima_Island%2C_Matsuura_Nagasaki_Aerial_photograph.2013.jpg/960px-Kuroshima_Island%2C_Matsuura_Nagasaki_Aerial_photograph.2013.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "国土地理院",
+        "license": "Attribution",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Kuroshima_Island,_Matsuura_Nagasaki_Aerial_photograph.2013.jpg"
+      }
+    }
   },
   {
     "id": "wd-Q49655940",
@@ -19047,7 +19637,14 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/24/Maejima_and_Todomarijima_Islands%2C_Nagasaki_Sasebo_Aerial_photograph.2016.jpg/960px-Maejima_and_Todomarijima_Islands%2C_Nagasaki_Sasebo_Aerial_photograph.2016.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "国土地理院",
+        "license": "Attribution",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Maejima_and_Todomarijima_Islands,_Nagasaki_Sasebo_Aerial_photograph.2016.jpg"
+      }
+    ],
     "external_ids": {
       "wikidata": "Q49655942"
     },
@@ -19092,7 +19689,14 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5b/Maejima_Island_Togitsu%2C_Nagasaki_Aerial_photograph.2010.jpg/960px-Maejima_Island_Togitsu%2C_Nagasaki_Aerial_photograph.2010.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "国土地理院",
+        "license": "Attribution",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Maejima_Island_Togitsu,_Nagasaki_Aerial_photograph.2010.jpg"
+      }
+    ],
     "external_ids": {
       "wikidata": "Q49655948"
     },
@@ -19138,7 +19742,14 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/54/Makishima_Island_Nagasaki_Aerial_photograph.2014.jpg/960px-Makishima_Island_Nagasaki_Aerial_photograph.2014.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "国土地理院",
+        "license": "Attribution",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Makishima_Island_Nagasaki_Aerial_photograph.2014.jpg"
+      }
+    ],
     "external_ids": {
       "wikidata": "Q49656216"
     },
@@ -19153,7 +19764,15 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-28",
+    "season_images": {
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/54/Makishima_Island_Nagasaki_Aerial_photograph.2014.jpg/960px-Makishima_Island_Nagasaki_Aerial_photograph.2014.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "国土地理院",
+        "license": "Attribution",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Makishima_Island_Nagasaki_Aerial_photograph.2014.jpg"
+      }
+    }
   },
   {
     "id": "wd-Q49661449",
@@ -19229,7 +19848,14 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/25/Sumiyoshi_Bridge_on_Okinoshima.jpg/960px-Sumiyoshi_Bridge_on_Okinoshima.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "ブルーノ",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Sumiyoshi_Bridge_on_Okinoshima.jpg"
+      }
+    ],
     "external_ids": {
       "wikidata": "Q49665667"
     },
@@ -19727,7 +20353,20 @@
     ],
     "status": "published",
     "updated_at": "2026-09-28",
-    "season_images": {}
+    "season_images": {
+      "winter": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e0/Fugendake_01_Volcano_and_flow_channels.JPG/960px-Fugendake_01_Volcano_and_flow_channels.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "不明",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Fugendake_01_Volcano_and_flow_channels.JPG"
+      },
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/99/Mount_Unzen_20021120-1.jpg/960px-Mount_Unzen_20021120-1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Japan Coast Guard",
+        "license": "Attribution",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Mount_Unzen_20021120-1.jpg"
+      }
+    }
   },
   {
     "id": "wd-Q63208",
@@ -19867,10 +20506,10 @@
         "source_url": "https://commons.wikimedia.org/wiki/File:Chinatown_in_Nagasaki_during_the_Mid-Autumn_Festival.jpg"
       },
       "night": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5d/Chinatown_by_night.jpg/960px-Chinatown_by_night.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "STA3816",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Chinatown_by_night.jpg"
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/57/Chinatown_Nagasaki_Japan01s5.jpg/960px-Chinatown_Nagasaki_Japan01s5.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "663highland",
+        "license": "CC BY 2.5",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Chinatown_Nagasaki_Japan01s5.jpg"
       }
     }
   },
@@ -20515,7 +21154,14 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-29"
     },
-    "images": [],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/42/%E8%A5%BF%E6%B5%B7%E5%9B%BD%E7%AB%8B%E5%85%AC%E5%9C%92%E4%B9%9D%E5%8D%81%E4%B9%9D%E5%B3%B6%E5%8B%95%E6%A4%8D%E7%89%A9%E5%9C%92%E6%A3%AE%E3%81%8D%E3%82%89%E3%82%89.jpg/960px-%E8%A5%BF%E6%B5%B7%E5%9B%BD%E7%AB%8B%E5%85%AC%E5%9C%92%E4%B9%9D%E5%8D%81%E4%B9%9D%E5%B3%B6%E5%8B%95%E6%A4%8D%E7%89%A9%E5%9C%92%E6%A3%AE%E3%81%8D%E3%82%89%E3%82%89.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Dyamasan",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:%E8%A5%BF%E6%B5%B7%E5%9B%BD%E7%AB%8B%E5%85%AC%E5%9C%92%E4%B9%9D%E5%8D%81%E4%B9%9D%E5%B3%B6%E5%8B%95%E6%A4%8D%E7%89%A9%E5%9C%92%E6%A3%AE%E3%81%8D%E3%82%89%E3%82%89.jpg"
+      }
+    ],
     "external_ids": {
       "wikidata": "Q7425054"
     },
@@ -20603,10 +21249,10 @@
     "updated_at": "2026-10-02",
     "season_images": {
       "night": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/60/Furukawamachi%2C_Nagasaki%2C_Nagasaki_Prefecture_850-0851%2C_Japan_-_panoramio_%281%29.jpg/960px-Furukawamachi%2C_Nagasaki%2C_Nagasaki_Prefecture_850-0851%2C_Japan_-_panoramio_%281%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/31/Sakaemachi%2C_Nagasaki%2C_Nagasaki_Prefecture_850-0875%2C_Japan_-_panoramio_%286%29.jpg/960px-Sakaemachi%2C_Nagasaki%2C_Nagasaki_Prefecture_850-0875%2C_Japan_-_panoramio_%286%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
         "author": "Masoud Akbari",
         "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Furukawamachi,_Nagasaki,_Nagasaki_Prefecture_850-0851,_Japan_-_panoramio_(1).jpg"
+        "source_url": "https://commons.wikimedia.org/wiki/File:Sakaemachi,_Nagasaki,_Nagasaki_Prefecture_850-0875,_Japan_-_panoramio_(6).jpg"
       }
     }
   },
@@ -20757,7 +21403,20 @@
     ],
     "status": "published",
     "updated_at": "2026-09-28",
-    "season_images": {}
+    "season_images": {
+      "night": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d6/%E4%BA%8C%E5%8D%81%E5%85%AD%E8%81%96%E4%BA%BA%E6%AE%89%E6%95%99%E5%9C%B0_26_Martyrs_Museum_and_Monument_-_panoramio.jpg/960px-%E4%BA%8C%E5%8D%81%E5%85%AD%E8%81%96%E4%BA%BA%E6%AE%89%E6%95%99%E5%9C%B0_26_Martyrs_Museum_and_Monument_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "松永如庵",
+        "license": "CC BY 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:%E4%BA%8C%E5%8D%81%E5%85%AD%E8%81%96%E4%BA%BA%E6%AE%89%E6%95%99%E5%9C%B0_26_Martyrs_Museum_and_Monument_-_panoramio.jpg"
+      },
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/da/Twenty-Six_Martyrs_Museum_and_Monument_March_27_2022_various_17_36_35_129000.jpeg/960px-Twenty-Six_Martyrs_Museum_and_Monument_March_27_2022_various_17_36_35_129000.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Nesnad",
+        "license": "CC BY 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Twenty-Six_Martyrs_Museum_and_Monument_March_27_2022_various_17_36_35_129000.jpeg"
+      }
+    }
   },
   {
     "id": "wd-Q858061",
@@ -20863,7 +21522,15 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-28",
+    "season_images": {
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8e/Fukue_Island_ISS065.jpg/960px-Fukue_Island_ISS065.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Image Science and Analysis Laboratory, NASA - Johnson Space Center. \"The Gateway to Astronaut Photography of Earth.\"",
+        "license": "Public domain",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Fukue_Island_ISS065.jpg"
+      }
+    }
   },
   {
     "id": "wd-Q85880769",
@@ -21010,7 +21677,15 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-28",
+    "season_images": {
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/06/Tobishima_Island%2C_Matsuura_Nagasaki_Aerial_photograph.2013.jpg/960px-Tobishima_Island%2C_Matsuura_Nagasaki_Aerial_photograph.2013.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "国土地理院",
+        "license": "Attribution",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Tobishima_Island,_Matsuura_Nagasaki_Aerial_photograph.2013.jpg"
+      }
+    }
   },
   {
     "id": "wd-Q90575982",
@@ -21041,7 +21716,14 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/48/Takashima_Island%2C_Hirado_Nagasaki_Aerial_photograph.2017.jpg/960px-Takashima_Island%2C_Hirado_Nagasaki_Aerial_photograph.2017.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "国土地理院",
+        "license": "Attribution",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Takashima_Island,_Hirado_Nagasaki_Aerial_photograph.2017.jpg"
+      }
+    ],
     "external_ids": {
       "wikidata": "Q90575982"
     },
@@ -21056,7 +21738,15 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-28",
+    "season_images": {
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/48/Takashima_Island%2C_Hirado_Nagasaki_Aerial_photograph.2017.jpg/960px-Takashima_Island%2C_Hirado_Nagasaki_Aerial_photograph.2017.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "国土地理院",
+        "license": "Attribution",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Takashima_Island,_Hirado_Nagasaki_Aerial_photograph.2017.jpg"
+      }
+    }
   },
   {
     "id": "wd-Q91876075",
@@ -21087,7 +21777,14 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/24/Maejima_and_Todomarijima_Islands%2C_Nagasaki_Sasebo_Aerial_photograph.2016.jpg/960px-Maejima_and_Todomarijima_Islands%2C_Nagasaki_Sasebo_Aerial_photograph.2016.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "国土地理院",
+        "license": "Attribution",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Maejima_and_Todomarijima_Islands,_Nagasaki_Sasebo_Aerial_photograph.2016.jpg"
+      }
+    ],
     "external_ids": {
       "wikidata": "Q91876075"
     },
@@ -21155,7 +21852,15 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-28",
+    "season_images": {
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/05/Usejima_Island%2C_Nagasaki_Aerial_photograph.2010.jpg/960px-Usejima_Island%2C_Nagasaki_Aerial_photograph.2010.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "国土地理院",
+        "license": "Attribution",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Usejima_Island,_Nagasaki_Aerial_photograph.2010.jpg"
+      }
+    }
   },
   {
     "id": "wd-Q92008331",
@@ -21384,7 +22089,14 @@
     ],
     "status": "published",
     "updated_at": "2026-09-28",
-    "season_images": {}
+    "season_images": {
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9b/Peace_park_panorama_-_panoramio.jpg/960px-Peace_park_panorama_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Masoud Akbari",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Peace_park_panorama_-_panoramio.jpg"
+      }
+    }
   },
   {
     "id": "wd-Q93616",

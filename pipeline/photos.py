@@ -92,7 +92,12 @@ def seed_photos(prefs: list[str]) -> str:
                     pick_for["main"] = norm(c)
                     stats["chosen"] += 1
             elif not sp.main:
-                cands = [sp.wiki[k] for k in ("jawiki", "enwiki", "zhwiki") if k in sp.wiki]
+                # png 多半是地圖、空拍圖或古畫，主照片不收
+                cands = [
+                    sp.wiki[k]
+                    for k in ("jawiki", "enwiki", "zhwiki")
+                    if k in sp.wiki and not sp.wiki[k].lower().endswith(".png")
+                ]
 
                 def clean(
                     f: str,
