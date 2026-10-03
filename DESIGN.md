@@ -39,6 +39,14 @@
 - 不做斜體、描邊、漸層、陰影；不把三行拆開重排順序。
 - Logo 圖形尚未設計，目前只使用 wordmark；不要自行加上 icon 或 emoji。
 
+### 主畫面圖示（決定事項 Q2）
+- 加到手機主畫面、裝成 PWA 時的圖示，用開場畫面（§7.0）的 47 點圓環：全國 `paper` 底、`line` 細圓、47 縣圓點（JIS 順從正上方順時針，各縣 `base` 色，全部亮起時的大小）。中間不放字，也不另外畫 logo 圖形。
+- 建置時由 `web/build/icons.ts` 從 `data/regions.json` 畫成 PNG，原始碼不寫色碼；開發伺服器回應同樣的網址。
+  - `apple-touch-icon.png` 180（`index.html` 的 `<link rel="apple-touch-icon">`，不透明）
+  - `icons/icon-192.png`、`icon-512.png`（manifest `purpose: any`，圓環半徑 36%）
+  - `icons/maskable-192.png`、`maskable-512.png`（manifest `purpose: maskable`，圓環半徑 31%，圓點外緣在中心 40% 的安全區內）
+- 瀏覽器分頁的 `favicon.svg` 不在這次範圍內。
+
 ### 標語
 - 全文固定為：**來一趟日本，才知道它有多大。**（全形逗號與句號，不改字、不加驚嘆號）
 - 只出現在：首頁（地區模式）左欄標題、關於頁、商店上架描述與截圖、分享圖。
