@@ -7,9 +7,10 @@ import ExploreView from '../views/ExploreView.vue'
 export const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
-    { path: '/', name: 'home', component: ExploreView },
-    { path: '/explore', name: 'explore', component: ExploreView, meta: { title: '探索' } },
-    { path: '/map/:pref', name: 'map', component: ExploreView, props: true, meta: { title: '探索' } },
+    // bleed：地圖鋪到橫向瀏海底下（App.vue、theme.css 的 .map-root）
+    { path: '/', name: 'home', component: ExploreView, meta: { bleed: true } },
+    { path: '/explore', name: 'explore', component: ExploreView, meta: { title: '探索', bleed: true } },
+    { path: '/map/:pref', name: 'map', component: ExploreView, props: true, meta: { title: '探索', bleed: true } },
     {
       path: '/region/:pref',
       name: 'region',

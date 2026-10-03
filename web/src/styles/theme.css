@@ -686,3 +686,38 @@
 ::view-transition-group(app-tabbar) {
   animation: none;
 }
+
+/* 橫向的瀏海與 home indicator（DESIGN.md §5.2）：<main> 左右（≥1024 加底部）讓出安全區。
+ * 地圖頁（main[data-bleed]）的地圖本身鋪回瀏海底下，MapLibre 的控制項與位置小框再縮回安全區內。
+ * 不放在 @layer 裡：maplibre-gl.css 沒有 layer，layer 裡的規則壓不過它 */
+.map-root {
+  --map-inset-l: 0px;
+  --map-inset-r: 0px;
+  --map-inset-b: 0px;
+}
+@media screen {
+  main[data-bleed] .map-root {
+    --map-inset-l: env(safe-area-inset-left);
+    --map-inset-r: env(safe-area-inset-right);
+    margin-left: calc(var(--map-inset-l) * -1);
+    margin-right: calc(var(--map-inset-r) * -1);
+  }
+}
+@media screen and (min-width: 1024px) {
+  main[data-bleed] .map-root {
+    --map-inset-b: env(safe-area-inset-bottom);
+    margin-bottom: calc(var(--map-inset-b) * -1);
+  }
+}
+.map-root .maplibregl-ctrl-top-left,
+.map-root .maplibregl-ctrl-bottom-left {
+  left: var(--map-inset-l);
+}
+.map-root .maplibregl-ctrl-top-right,
+.map-root .maplibregl-ctrl-bottom-right {
+  right: var(--map-inset-r);
+}
+.map-root .maplibregl-ctrl-bottom-left,
+.map-root .maplibregl-ctrl-bottom-right {
+  bottom: var(--map-inset-b);
+}

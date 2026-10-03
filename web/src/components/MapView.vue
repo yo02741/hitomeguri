@@ -1132,7 +1132,7 @@ defineExpose({
 
 <template>
   <!-- overflow-hidden：hover 標籤落在畫面外時（例如從清單滑過畫面外的景點）不撐出整頁捲軸 -->
-  <div class="absolute inset-0 overflow-hidden bg-map-land" role="region" aria-label="地圖">
+  <div class="map-root absolute inset-0 overflow-hidden bg-map-land" role="region" aria-label="地圖">
     <div ref="container" class="isolate size-full"></div>
     <!-- maplibre-gl.css 不在 layer 裡，會蓋過 utilities：底色與排版用 ! 才壓得過它的 button 樣式 -->
     <Teleport v-if="terrainHost && !noTerrain" :to="terrainHost">
@@ -1155,7 +1155,7 @@ defineExpose({
         :zoom="locator.zoom"
         :pref="colorKey"
         class="absolute z-[2] print:hidden"
-        :class="insetLeft ? 'bottom-4 w-[132px]' : 'top-2.5 right-2.5 w-[96px]'"
+        :class="insetLeft ? 'bottom-[calc(1rem+var(--map-inset-b))] w-[132px]' : 'top-2.5 right-[calc(0.625rem+var(--map-inset-r))] w-[96px]'"
         :style="insetLeft ? { left: `${insetLeft}px` } : undefined"
       />
     </Transition>

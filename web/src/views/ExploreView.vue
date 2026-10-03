@@ -524,7 +524,7 @@ function onMoveEnd(view: MapViewState) {
       v-if="pref && regionOf(pref)"
       to="/"
       aria-label="切換地區"
-      class="flex h-[56px] shrink-0 items-center gap-3 bg-region px-4 text-on-region no-underline lg:hidden active:not-disabled:translate-y-px"
+      class="-mr-[env(safe-area-inset-right)] -ml-[env(safe-area-inset-left)] flex h-[56px] shrink-0 items-center gap-3 bg-region pr-[calc(1rem+env(safe-area-inset-right))] pl-[calc(1rem+env(safe-area-inset-left))] text-on-region no-underline lg:hidden active:not-disabled:translate-y-px"
     >
       <span lang="ja" class="text-h3 font-black tracking-name">{{ regionOf(pref)!.name.ja }}</span>
       <span class="font-latin text-body-sm font-semibold tracking-romaji uppercase">{{ regionOf(pref)!.name.romaji }}</span>
