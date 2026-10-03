@@ -9,6 +9,7 @@ import { THEMES } from '../data/themes'
 import { mapThumbUrl, type MapSpot } from '../services/bundles'
 import { splashCovering, trackSplash } from '../services/splash'
 import { theme } from '../services/theme'
+import { wide } from '../services/viewport'
 import { DEM_SOURCE, GSI_ATTRIBUTION, GSI_DEM_URL, registerGsiDem, setTerrainPreferred, terrainPreferred } from '../map/terrain'
 import JapanLocator from './JapanLocator.vue'
 
@@ -856,7 +857,8 @@ function thumbFailed(h: Hover) {
 
 // 立體地形（DESIGN.md §8，map/terrain.ts）：国土地理院の標高タイル＋陰影。鏡頭的傾斜照舊用右鍵拖曳（手機兩指上下拖），
 // 這裡不改；正上方看時靠陰影看出起伏。偏好存在這台裝置。
-const terrainOn = ref(!props.noTerrain && terrainPreferred())
+// 手機不放「立體」：鈕太多、地形也吃效能
+const terrainOn = ref(!props.noTerrain && wide.value && terrainPreferred())
 function applyTerrain() {
   if (!map || !ready) return
   const on = terrainOn.value && !props.noTerrain
@@ -961,7 +963,7 @@ onMounted(() => {
   })
   map.addControl(new maplibregl.NavigationControl({ showCompass: false }), 'bottom-right')
   // 下方角落後加的排在上面：立體、縮放、attribution
-  if (!props.noTerrain) map.addControl(new TerrainControl(), 'bottom-right')
+  if (!props.noTerrain && wide.value) map.addControl(new TerrainControl(), 'bottom-right')
   // 開場畫面等到底圖第一次畫完（樣式或圖磚失敗也放行）
   const m = map
   trackSplash(
@@ -1217,23 +1219,3 @@ defineExpose({
 }
 </style>
 
-<style>
-/* 觸控裝置上地圖控制鈕放大到 44px（DESIGN.md §5.2、§8）。maplibre-gl.css 沒有 layer，這裡也不放 layer，並提高 specificity */
-@media (pointer: coarse) {
-  .maplibregl-ctrl.maplibregl-ctrl-group button,
-  .maplibregl-ctrl.maplibregl-ctrl-attrib .maplibregl-ctrl-attrib-button {
-    width: var(--spacing-tap);
-    height: var(--spacing-tap);
-  }
-  .maplibregl-ctrl.maplibregl-ctrl-attrib .maplibregl-ctrl-attrib-button {
-    background-position: center;
-    background-repeat: no-repeat;
-    border-radius: calc(var(--spacing-tap) / 2);
-  }
-  .maplibregl-ctrl.maplibregl-ctrl-attrib.maplibregl-compact {
-    min-height: calc(var(--spacing-tap) - 4px);
-    padding-right: var(--spacing-tap);
-    border-radius: calc(var(--spacing-tap) / 2);
-  }
-}
-</style>

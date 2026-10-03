@@ -5,6 +5,7 @@ import AppHeader from './components/AppHeader.vue'
 import AppUpdate from './components/AppUpdate.vue'
 import TabBar from './components/TabBar.vue'
 import { theme } from './services/theme'
+import { wide } from './services/viewport'
 import { walkerOn } from './services/walker'
 import { useExploreStore } from './stores/explore'
 import { useUserStore } from './stores/user'
@@ -48,7 +49,7 @@ const DollWalker = defineAsyncComponent(() => import('./components/DollWalker.vu
     <template v-if="userStore.user">
       <CardReveal />
       <DollDefs />
-      <DollWalker v-if="walkerOn" />
+      <DollWalker v-if="walkerOn && wide" />
     </template>
   </div>
 </template>

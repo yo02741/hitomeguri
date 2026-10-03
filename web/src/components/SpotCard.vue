@@ -74,12 +74,13 @@ const PATTERN_CLASS: Record<string, string> = {
 const tries = ref(0)
 // 全景卡（全景、特別全景）照片鋪滿整張卡，有第二張照片時用第二張
 const fullArt = computed(() => ['full', 'special', 'night'].includes(props.variant.kind))
-// 不是基本卡的照片（DESIGN.md §7.19a）：抽到那個季節的照片 → 第二張照片 → 其他季節的照片 → 基本卡的照片
+// 不是基本卡的照片（DESIGN.md §7.19a）：抽到那個季節的照片，沒有就用基本卡的照片。
+// 不拿第二張或其他季節的照片補：地圖資料沒有第二張，詳細資料載入後照片會換一張；別的季節的照片也常拍到別處
 const photo = computed(() => {
   const c = props.card
   if (props.variant.kind === 'base') return c.image
   const seasonal = props.variant.photo ? c.seasonImages?.[props.variant.photo] : undefined
-  return seasonal ?? c.altImage ?? Object.values(c.seasonImages ?? {})[0] ?? c.image
+  return seasonal ?? c.image
 })
 watch(() => photo.value?.url, () => (tries.value = 0))
 const imageSrc = computed(() => {

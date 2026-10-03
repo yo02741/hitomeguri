@@ -4,6 +4,7 @@ import { useRoute, useRouter } from 'vue-router'
 
 import { whenIdle } from '../services/idle'
 import { afterSplash } from '../services/splash'
+import { wide } from '../services/viewport'
 import { walkerOn } from '../services/walker'
 import { useUserStore } from '../stores/user'
 import ThemeTimeline from './ThemeTimeline.vue'
@@ -193,6 +194,7 @@ async function logOut() {
       <!-- 年代主題（DESIGN.md §13）：存在這台裝置 -->
       <ThemeTimeline />
       <button
+        v-if="wide"
         type="button"
         role="menuitemcheckbox"
         tabindex="-1"

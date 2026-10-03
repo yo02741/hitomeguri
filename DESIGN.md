@@ -436,7 +436,7 @@ header 右側、登入鈕左邊（`SearchBox.vue`，每一頁都在；在行程�
 - 卡面最下面一條右側的小膠囊寫樣式名稱（基本卡不寫）。全景、特別全景的卡不顯示上方縣名列，左上留名稱區。
 - 放大檢視：大卡下方一排樣式膠囊（`aria-pressed`），點了換成那個樣式；右邊「n / 總數」。
 - 新卡入手、開卡包：顯示這次拿到最稀有的樣式；抽到特別全景時背後放虹光、金箔放金光。開卡包依樣式稀有度排，最稀有的最後翻。
-- 照片：基本卡用景點的照片；其他樣式用抽到的那個季節的照片（`season_images`，`pipeline/season_photos.py`），沒有就用第二張照片、其他季節的照片，最後才是基本卡的照片。卡片背面的出處跟著換。
+- 照片：基本卡用景點的照片；其他樣式用抽到的那個季節的照片（`season_images`，`pipeline/season_photos.py`），沒有就用基本卡的照片（不拿第二張或其他季節的照片補，以免詳細資料載入後照片換一張）。卡片背面的出處跟著換。
   - 選圖：候選要拍得到景點（Commons 結構化資料「描繪」標的是這個景點，或檔名有景點名稱）；畫、版畫、館藏掃描、老照片不收；特寫、室內、看板、人潮扣分；Commons 優質・精選圖片加分；分數不夠就不放。景點名稱裡的季節字樣（SPring-8、春日山）不算。
 - 放大檢視「抽一張」（右邊寫剩幾張券）：用一張抽獎券，從這個景點還沒有的樣式抽一種，新卡入手的動畫亮相；都有了按鈕變「已收齊」。新拿到還沒看過的樣式，膠囊右上角有 NEW，看過就拿掉。
 
@@ -542,7 +542,7 @@ header 右側、登入鈕左邊（`SearchBox.vue`，每一頁都在；在行程�
   - 水：`--color-map-water`
   - 鐵道：`--region-line`，1.5～2px，不加顏色區分路線（行程路線才用色）
   - 地名標籤：`--region-sub`，日文，`localIdeographFontFamily` 設為 `"Noto Sans JP", sans-serif`
-- 立體地形（`map/terrain.ts`）：地圖右下縮放鈕上方「立體」：放進 MapLibre 右下角的控制列（`IControl`＋Teleport，由上而下是立體、縮放、attribution，位置跟著 attribution 展開走，不會疊住縮放鈕），外框交給 `maplibregl-ctrl-group`，開啟時 `bg-region-strong text-white`。觸控裝置（`pointer: coarse`）上控制鈕與 attribution 開關放大到 44px（`size-tap`）。国土地理院の標高タイル（DEM10B PNG，`gsidem://` protocol 換成 terrarium 編碼，海上與無資料當 0 m）當地形（誇張 1.4 倍）＋陰影圖層（陰影 `--region-ink`、亮面 `--region-paper`，畫在縣界之上、鐵路之下），不改鏡頭（傾斜照舊用右鍵拖曳、手機兩指上下拖）；正上方看時靠陰影看出起伏，傾斜後山有高度。全日本都有資料（国土地理院 DEM10B），山區放大最明顯。偏好存在這台裝置；紀錄頁的小地圖不顯示。出處「標高：国土地理院」。
+- 立體地形（`map/terrain.ts`）：地圖右下縮放鈕上方「立體」：放進 MapLibre 右下角的控制列（`IControl`＋Teleport，由上而下是立體、縮放、attribution，位置跟著 attribution 展開走，不會疊住縮放鈕），外框交給 `maplibregl-ctrl-group`，開啟時 `bg-region-strong text-white`。手機（<1024）不放「立體」鈕、不開地形；控制鈕維持 MapLibre 原本的大小（使用者回饋放大到 44px 太大）。国土地理院の標高タイル（DEM10B PNG，`gsidem://` protocol 換成 terrarium 編碼，海上與無資料當 0 m）當地形（誇張 1.4 倍）＋陰影圖層（陰影 `--region-ink`、亮面 `--region-paper`，畫在縣界之上、鐵路之下），不改鏡頭（傾斜照舊用右鍵拖曳、手機兩指上下拖）；正上方看時靠陰影看出起伏，傾斜後山有高度。全日本都有資料（国土地理院 DEM10B），山區放大最明顯。偏好存在這台裝置；紀錄頁的小地圖不顯示。出處「標高：国土地理院」。
 - 行程路線（行程頁）：當天主縣的 `--region-strong`，4px，端點圓頭；轉乘段用虛線。路線改變（開頁、換天、排序）時從起點畫到終點（0.8～2.4s，前後慢中間快），筆尖是 `--region-strong` 圓點加 `paper` 外框。
 - 市區棋盤道路等細節交給底圖，不自行繪製。
 
