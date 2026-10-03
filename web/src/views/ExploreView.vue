@@ -237,6 +237,12 @@ const panel = ref<HTMLElement | null>(null)
 const sheet = ref<HTMLElement | null>(null)
 const pinCard = ref<HTMLElement | null>(null)
 const insets = shallowRef({ top: 0, bottom: 0 })
+// 景點卡片的高度：60dvh，但不超過海報條以下的地圖區減 2.5rem（手機打橫時地圖區只有兩百多 px）
+const sheetHeight = computed(() => {
+  const poster = !!(props.pref && regionOf(props.pref))
+  if (shownPack.value) return poster ? 'max-lg:max-h-[min(60dvh,calc(100%-6rem))]' : 'max-lg:max-h-[min(60dvh,calc(100%-2.5rem))]'
+  return poster ? 'max-lg:h-[min(60dvh,calc(100%-6rem))]' : 'max-lg:h-[min(60dvh,calc(100%-2.5rem))]'
+})
 function measureInsets() {
   if (desktop.value) {
     if (insets.value.top || insets.value.bottom) insets.value = { top: 0, bottom: 0 }
@@ -660,10 +666,11 @@ function onMoveEnd(view: MapViewState) {
         <PackBar :pref="pref && regionOf(pref) ? pref : null" />
       </div>
 
-      <!-- 左上浮動面板：地區標籤／地區清單、主題篩選、景點與地區特色 -->
+      <!-- 左上浮動面板：地區標籤／地區清單、主題篩選、景點與地區特色。
+           手機打橫時地圖只剩兩百多 px 高，清單右邊留出縮放鈕那一欄，縮放鈕不被清單蓋住 -->
       <div
         ref="panel"
-        class="pointer-events-none absolute top-4 bottom-4 left-4 z-10 flex w-float flex-col gap-2.5 *:pointer-events-auto max-lg:right-4 max-lg:bottom-auto max-lg:w-auto"
+        class="pointer-events-none absolute top-4 bottom-4 left-4 z-10 flex w-float flex-col gap-2.5 *:pointer-events-auto max-lg:right-4 max-lg:bottom-auto max-lg:w-auto max-lg:[@media(orientation:landscape)_and_(max-height:500px)]:right-14"
       >
         <!-- 手機：開著的擴充包（桌機在地圖上方的擴充包列）。點了關閉；完整的 chip 列在第二階段 -->
         <button
@@ -775,13 +782,14 @@ function onMoveEnd(view: MapViewState) {
 
     <!-- 手機的景點卡片從下方升上來、關閉時往下收；換景點時內容淡入（DESIGN.md §9）。桌機沒有 transition，直接出現與移除 -->
     <Transition name="sheet" @after-enter="sheetEntering = false" @enter-cancelled="sheetEntering = false">
-      <!-- 擴充包的點內容短：手機的卡片依內容高度，最高 60dvh（PackPanel 自己捲動） -->
+      <!-- 擴充包的點內容短：手機的卡片依內容高度，最高 60dvh（PackPanel 自己捲動）。
+           手機打橫時 60dvh 比地圖區還高：再限制在海報條以下、上面留 2.5rem 地圖 -->
       <aside
         v-if="selectedId"
         ref="sheet"
         :data-reduce="desktop ? undefined : 'fade'"
         class="shrink-0 border-line lg:w-panel lg:border-l max-lg:absolute max-lg:inset-x-0 max-lg:bottom-0 max-lg:z-20 max-lg:overflow-hidden max-lg:rounded-t-sheet max-lg:shadow-sheet"
-        :class="shownPack ? 'max-lg:max-h-[60dvh]' : 'max-lg:h-[60dvh]'"
+        :class="sheetHeight"
       >
         <div
           :key="panelKey"

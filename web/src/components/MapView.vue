@@ -1193,6 +1193,7 @@ defineExpose({
         <span aria-hidden="true">立<br />體</span>
       </button>
     </Teleport>
+    <!-- 手機打橫時地圖只剩兩百多 px 高，小框和縮放鈕疊在一起：不顯示小框 -->
     <Transition name="locator">
       <JapanLocator
         v-if="locator && locator.zoom >= LOCATOR_ZOOM"
@@ -1200,7 +1201,7 @@ defineExpose({
         :zoom="locator.zoom"
         :pref="colorKey"
         class="absolute z-[2] print:hidden"
-        :class="insetLeft ? 'bottom-[calc(1rem+var(--map-inset-b))] w-[132px]' : 'top-2.5 right-[calc(0.625rem+var(--map-inset-r))] w-[96px]'"
+        :class="insetLeft ? 'bottom-[calc(1rem+var(--map-inset-b))] w-[132px]' : 'top-2.5 right-[calc(0.625rem+var(--map-inset-r))] w-[96px] [@media(orientation:landscape)_and_(max-height:500px)]:hidden'"
         :style="insetLeft ? { left: `${insetLeft}px` } : undefined"
       />
     </Transition>
