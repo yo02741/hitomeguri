@@ -46,7 +46,8 @@ class Summary(StrictModel):
     fetched_at: str
 
 
-# panorama：Wikidata 全景（P4291）或空拍（P8592）。收集卡目前不用（多半很寬，裁成直向卡會糊、主體被裁掉）
+# panorama：Wikidata 全景（P4291）或空拍（P8592）。
+# 收集卡目前不用（多半很寬，裁成直向卡會糊、主體被裁掉）
 PhotoKey = Literal["spring", "summer", "autumn", "winter", "night", "panorama"]
 
 
