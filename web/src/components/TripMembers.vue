@@ -1,23 +1,20 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
-import { useRouter } from 'vue-router'
 
 import { useDismiss } from '../composables/floating'
-import { confirmDialog } from '../services/confirm'
 import type { Trip } from '../services/trip'
-import { useTripsStore } from '../stores/trips'
+import { wide } from '../services/viewport'
 import { useUserStore } from '../stores/user'
+import BottomDialog from './BottomDialog.vue'
 import MemberAvatar from './MemberAvatar.vue'
+import TripMembersPanel from './TripMembersPanel.vue'
 
-// 行程的共編成員（UX-FLOW.md C7）：頭像列＋「共編」選單。選單裡是邀請連結（複製、重新產生）與成員名單；
-// 建立者可以移除成員，其他成員可以離開。成員都能編輯。
+// 行程的共編成員（UX-FLOW.md C7）：頭像列＋「共編」選單（內容見 TripMembersPanel）。成員都能編輯。
+// 桌機是按鈕下面的浮動卡；手機（<1024）是從下方出現的 <dialog>，在最上層，不被底部分頁列蓋住。
 const props = defineProps<{ trip: Trip }>()
-const trips = useTripsStore()
 const userStore = useUserStore()
-const router = useRouter()
 
 const uid = computed(() => userStore.user?.uid)
-const isOwner = computed(() => uid.value === props.trip.owner)
 // 建立者排第一，自己第二
 const members = computed(() =>
   [...props.trip.members].sort(
@@ -28,57 +25,8 @@ const members = computed(() =>
 const open = ref(false)
 const root = ref<HTMLElement | null>(null)
 const toggleBtn = ref<HTMLButtonElement | null>(null)
-useDismiss(root, open, () => (open.value = false), () => toggleBtn.value)
-
-const busy = ref(false)
-const copied = ref(false)
-const link = computed(() => {
-  const code = props.trip.invite
-  return code ? new URL(router.resolve(`/join/${code}`).href, location.origin).href : ''
-})
-
-async function toggle() {
-  open.value = !open.value
-  // 第一次打開時產生邀請連結
-  if (open.value && !props.trip.invite) {
-    busy.value = true
-    await trips.invite(props.trip.id)
-    busy.value = false
-  }
-}
-async function copy() {
-  try {
-    await navigator.clipboard.writeText(link.value)
-    copied.value = true
-    setTimeout(() => (copied.value = false), 2000)
-  } catch {
-    // 不能寫入剪貼簿時選取文字讓使用者自己複製
-    root.value?.querySelector<HTMLInputElement>('input[readonly]')?.select()
-  }
-}
-async function renew() {
-  if (!(await confirmDialog({ title: '重新產生連結？', body: '舊的連結會失效。', ok: '重新產生' }))) return
-  busy.value = true
-  await trips.invite(props.trip.id, true)
-  busy.value = false
-}
-async function remove(m: string) {
-  const name = props.trip.member_info[m]?.name || '這位成員'
-  if (!(await confirmDialog({ title: `把 ${name} 移出這個行程？`, ok: '移出', danger: true }))) return
-  await trips.removeMember(props.trip.id, m)
-}
-async function leave() {
-  if (!uid.value) return
-  const ok = await confirmDialog({
-    title: `離開「${props.trip.name || '未命名行程'}」？`,
-    body: '離開後就看不到這個行程。',
-    ok: '離開',
-    danger: true,
-  })
-  if (!ok || !uid.value) return
-  await trips.removeMember(props.trip.id, uid.value)
-  await router.push('/trips')
-}
+// 浮動卡：點外面、Esc 收起。下方對話框自己處理 Esc 與點遮罩
+useDismiss(root, computed(() => open.value && wide.value), () => (open.value = false), () => toggleBtn.value)
 </script>
 
 <template>
@@ -87,9 +35,9 @@ async function leave() {
       ref="toggleBtn"
       type="button"
       class="flex h-9 items-center gap-2 rounded-control border border-line bg-paper pr-3 pl-1.5 text-label text-ink hover:bg-surface active:not-disabled:translate-y-px pointer-coarse:h-tap"
-      aria-haspopup="true"
+      :aria-haspopup="wide ? 'true' : 'dialog'"
       :aria-expanded="open"
-      @click="toggle"
+      @click="open = !open"
     >
       <span class="flex -space-x-1.5">
         <MemberAvatar
@@ -104,67 +52,15 @@ async function leave() {
     </button>
 
     <div
-      v-if="open"
-      class="absolute top-full left-0 z-30 mt-2 flex w-[min(340px,calc(100vw-40px))] flex-col gap-3 rounded-card bg-paper p-3.5 shadow-float"
+      v-if="open && wide"
+      class="absolute top-full left-0 z-30 mt-2 w-[min(340px,calc(100vw-40px))] rounded-card bg-paper p-3.5 shadow-float"
       role="group"
       aria-label="共編"
     >
-      <div class="flex flex-col gap-1.5">
-        <span class="text-caption text-sub">邀請連結</span>
-        <div class="flex gap-1.5">
-          <input
-            readonly
-            :value="busy && !link ? '' : link"
-            aria-label="邀請連結"
-            class="h-9 min-w-0 flex-1 rounded-control border border-line bg-surface px-2.5 font-latin text-caption text-ink outline-none pointer-coarse:h-tap"
-            @focus="($event.target as HTMLInputElement).select()"
-          />
-          <button
-            type="button"
-            class="h-9 shrink-0 rounded-control bg-region-strong px-3 text-label font-bold text-white active:translate-y-px disabled:opacity-40 pointer-coarse:h-tap"
-            :disabled="!link"
-            @click="copy"
-          >
-            {{ copied ? '已複製' : '複製' }}
-          </button>
-        </div>
-        <button
-          type="button"
-          class="w-fit text-caption text-sub hover:text-ink disabled:opacity-40 active:text-ink pointer-coarse:min-h-tap"
-          :disabled="busy || !link"
-          @click="renew"
-        >
-          重新產生連結
-        </button>
-      </div>
-
-      <ul class="flex flex-col border-t border-line-soft pt-2">
-        <li v-for="m in members" :key="m" class="flex min-h-tap items-center gap-2.5">
-          <MemberAvatar :member="trip.member_info[m]" />
-          <span class="min-w-0 flex-1 truncate text-body-sm">
-            {{ trip.member_info[m]?.name || '成員' }}
-            <span v-if="m === uid" class="text-caption text-sub">（你）</span>
-          </span>
-          <span v-if="m === trip.owner" class="shrink-0 text-caption text-sub">建立者</span>
-          <button
-            v-else-if="isOwner"
-            type="button"
-            class="h-8 shrink-0 rounded-control px-2.5 text-caption text-sub hover:bg-surface hover:text-danger active:not-disabled:translate-y-px pointer-coarse:h-tap"
-            @click="remove(m)"
-          >
-            移除
-          </button>
-          <button
-            v-else-if="m === uid"
-            type="button"
-            class="h-8 shrink-0 rounded-control px-2.5 text-caption text-danger hover:bg-surface active:not-disabled:translate-y-px pointer-coarse:h-tap"
-            @click="leave"
-          >
-            離開
-          </button>
-        </li>
-      </ul>
-      <p v-if="trips.error" class="text-caption text-danger" role="alert">{{ trips.error }}</p>
+      <TripMembersPanel :trip="trip" />
     </div>
+    <BottomDialog v-else-if="open" title="共編" @close="open = false">
+      <TripMembersPanel :trip="trip" />
+    </BottomDialog>
   </div>
 </template>

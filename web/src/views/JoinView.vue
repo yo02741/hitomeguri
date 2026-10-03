@@ -3,11 +3,13 @@ import { ref, watch } from 'vue'
 import { useRouter } from 'vue-router'
 
 import SkeletonRows from '../components/SkeletonRows.vue'
+import { inAppBrowser, withLineExternal } from '../services/inApp'
 import { type InviteInfo, useTripsStore } from '../stores/trips'
 import { useUserStore } from '../stores/user'
 
 // 用邀請連結加入共編（UX-FLOW.md C7）：登入 → 看到行程名稱與邀請人 → 加入後進到行程頁。
 // 加入後這個行程就在自己帳號的「我的行程」（結束後在紀錄）。
+// 在 App 內建的瀏覽器（LINE…）裡 Google 不給登入（決定事項 J3）：「登入」換成「用瀏覽器開啟」（只有 LINE 有官方參數）與「複製連結」。
 const props = defineProps<{ code: string }>()
 const userStore = useUserStore()
 const trips = useTripsStore()
@@ -16,6 +18,28 @@ const router = useRouter()
 const invite = ref<InviteInfo | null>(null)
 const state = ref<'idle' | 'loading' | 'ready' | 'invalid'>('idle')
 const joining = ref(false)
+
+const inApp = inAppBrowser(navigator.userAgent)
+const copied = ref(false)
+function openExternal() {
+  location.href = withLineExternal(location.href)
+}
+const plainLink = (() => {
+  const u = new URL(location.href)
+  u.searchParams.delete('openExternalBrowser')
+  return u.href
+})()
+const linkInput = ref<HTMLInputElement | null>(null)
+async function copyLink() {
+  try {
+    await navigator.clipboard.writeText(plainLink)
+    copied.value = true
+    setTimeout(() => (copied.value = false), 2000)
+  } catch {
+    // 不能寫入剪貼簿時選取文字讓使用者自己複製
+    linkInput.value?.select()
+  }
+}
 
 watch(
   () => [userStore.user?.uid, props.code] as const,
@@ -57,7 +81,37 @@ async function join() {
   <section class="mx-auto flex w-full max-w-md flex-col items-start gap-5 px-6 py-16">
     <h1 class="text-h2 font-black tracking-title">共編行程</h1>
 
-    <template v-if="!userStore.user">
+    <template v-if="!userStore.user && inApp">
+      <p class="text-body text-ink-2">App 內建的瀏覽器不能用 Google 登入。{{ inApp === 'line' ? '' : '複製連結後用 Safari 或 Chrome 開啟。' }}</p>
+      <input
+        ref="linkInput"
+        readonly
+        :value="plainLink"
+        aria-label="邀請連結"
+        class="h-tap w-full rounded-control border border-line bg-surface px-2.5 font-latin text-caption text-ink outline-none"
+        @focus="($event.target as HTMLInputElement).select()"
+      />
+      <div class="flex flex-wrap gap-2">
+        <button
+          v-if="inApp === 'line'"
+          type="button"
+          class="h-11 rounded-control bg-region-strong px-5 text-body-sm font-bold text-white active:translate-y-px"
+          @click="openExternal"
+        >
+          用瀏覽器開啟
+        </button>
+        <button
+          type="button"
+          class="h-11 rounded-control px-4 text-body-sm active:not-disabled:translate-y-px"
+          :class="inApp === 'line' ? 'border border-line bg-paper text-ink hover:bg-surface' : 'bg-region-strong font-bold text-white'"
+          @click="copyLink"
+        >
+          {{ copied ? '已複製' : '複製連結' }}
+        </button>
+      </div>
+    </template>
+
+    <template v-else-if="!userStore.user">
       <p class="text-body text-ink-2">登入後加入這個行程。</p>
       <button
         type="button"

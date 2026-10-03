@@ -412,7 +412,11 @@ header 右側、登入鈕左邊（`SearchBox.vue`，每一頁都在；在行程�
 一行 `text-body-sm text-sub` 置中，必要時加一個次要按鈕。不使用插畫、不使用 emoji。
 
 ### 7.15a 共編成員
-- 行程頁：`h-9` 外框按鈕，左邊最多 4 個 24px 頭像（`-space-x-1.5`、`ring-2 ring-paper`）＋「共編 N」；點開是浮動卡（`rounded-card shadow-float`，寬 340px）：邀請連結（唯讀輸入框＋Primary「複製」、「重新產生連結」）與成員名單（頭像、名稱、建立者／移除／離開）。
+- 行程頁：`h-9` 外框按鈕，左邊最多 4 個 24px 頭像（`-space-x-1.5`、`ring-2 ring-paper`）＋「共編 N」；點開是浮動卡（`rounded-card shadow-float`，寬 340px）：邀請連結（唯讀輸入框＋Primary「複製」、「重新產生連結」）與成員名單（頭像、名稱、建立者／移除／離開）。內容是 `TripMembersPanel.vue`。
+- 手機（<1024）：同樣的內容放在從下方出現的原生 `<dialog>`（`BottomDialog.vue`）：最上層、不被底部分頁列蓋住，遮罩 `bg-ink/60`；面板 `rounded-t-sheet bg-paper shadow-sheet px-5`，最寬 560 置中，`animate-sheet-in`（減少動態時淡入），最高到畫面頂端下 48px，內容多時自己捲。上緣一列標題「共編」（`text-body font-bold`）與「關閉」（`min-h-tap text-label font-bold text-sub`），打開時焦點在「關閉」；Esc、點遮罩、Android 返回鍵關閉。從裡面打開的確認框疊在上面。
+- 觸控或窄螢幕、瀏覽器有 `navigator.share` 時「複製」換成「傳送」（系統分享，標題是行程名、網址是邀請連結）；使用者取消不做事，其他失敗改成複製（「已複製」）。桌機照舊是複製。
+- 邀請連結帶 `?openExternalBrowser=1`（LINE 官方參數，從 LINE 打開時用外部瀏覽器，決定事項 J3）。
+- 加入頁（`JoinView.vue`）在 App 內建的瀏覽器（依 User-Agent：LINE、Facebook、Instagram、WeChat、KakaoTalk、Android WebView）裡、還沒登入時，「登入」換成一行「App 內建的瀏覽器不能用 Google 登入。」、唯讀的邀請連結與按鈕：LINE 是 Primary「用瀏覽器開啟」（導到帶 `openExternalBrowser=1` 的同一頁）＋Secondary「複製連結」；其他 App 沒有公開的參數，只有 Primary「複製連結」，說明多一句「複製連結後用 Safari 或 Chrome 開啟。」
 - 頭像：Google 大頭貼圓形裁切；沒有時 `bg-region-tint` 圓底＋名字第一個字。
 - 行程卡片：共編時多一行 20px 頭像＋「共編 N 人」。
 
