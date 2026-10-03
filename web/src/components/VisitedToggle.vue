@@ -23,7 +23,7 @@ function toggle() {
     v-if="userStore.canSignIn"
     type="button"
     class="grid size-tap shrink-0 place-items-center rounded-control active:translate-y-px"
-    :class="on ? 'text-visited' : 'text-line hover:bg-surface hover:text-sub'"
+    :class="on ? 'text-visited' : 'text-sub hover:bg-surface hover:text-ink'"
     :aria-pressed="on"
     :aria-label="`去過：${spot.name}`"
     :title="on ? '去過' : undefined"
@@ -32,7 +32,7 @@ function toggle() {
     <span v-if="on" :key="stampKey" class="grid size-5 place-items-center rounded-full" :class="pressing ? 'stamp-ring' : ''">
       <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" :class="pressing ? 'animate-stamp-press' : ''">
         <circle cx="12" cy="12" r="9.5" fill="currentColor" />
-        <path d="M8.3 12.3l2.5 2.5 4.9-5.1" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M8.3 12.3l2.5 2.5 4.9-5.1" fill="none" class="stroke-white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
       </svg>
     </span>
     <svg v-else width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">

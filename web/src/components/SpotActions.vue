@@ -172,7 +172,7 @@ const visitedShort = computed(() => {
           <span v-if="mark?.visited" :key="stampKey" class="grid size-4 place-items-center rounded-full" :class="pressing ? 'stamp-ring' : ''">
             <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" :class="pressing ? 'animate-stamp-press' : ''">
               <circle cx="12" cy="12" r="9.5" fill="currentColor" />
-              <path d="M8.3 12.3l2.5 2.5 4.9-5.1" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M8.3 12.3l2.5 2.5 4.9-5.1" fill="none" class="stroke-white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
             </svg>
           </span>
           <svg v-else width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">

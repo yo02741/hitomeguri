@@ -8,8 +8,8 @@
 
 <style scoped>
 .new-tag {
-  background: var(--color-item-red);
-  color: var(--color-item-white);
-  box-shadow: 0 0 0 2px var(--color-item-white);
+  background: var(--color-danger);
+  color: var(--color-white);
+  box-shadow: 0 0 0 2px var(--color-white);
 }
 </style>

@@ -88,8 +88,8 @@
 | 茶 | `t-tea` | `#3F8F35` | 茶碗 |
 | 酒 | `t-sake` | `#B0561C` | 德利 |
 | 香 | `t-incense` | `#A4508B` | 線香 |
-| 溫泉 | `t-onsen` | `#0E8FA0` | 湯氣 |
-| 拉麵 | `t-ramen` | `#B07A00` | 碗與筷 |
+| 溫泉 | `t-onsen` | `#0B8291` | 湯氣 |
+| 拉麵 | `t-ramen` | `#9E6E00` | 碗與筷 |
 | 寶可夢 | `t-pokemon` | `#1F6FC0` | 商店袋 |
 | 御朱印・御守 | `t-goshuin` | `#C8102E` | 御朱印帳 |
 | 城（擴充包） | `t-castle` | `#4F6475` | 天守 |
@@ -120,7 +120,7 @@
 ### 3.5 對比
 - 文字對底色 ≥ 4.5:1；24px 以上粗體 ≥ 3:1。
 - 符號與外框（非文字）對背景 ≥ 3:1。
-- 白字只能放在 `bg-region-strong` 或 `bg-ink` 上。
+- 白字只能放在 `bg-region-strong`、`bg-ink` 或 `bg-danger`（NEW 小牌）上；白一律用 `--color-white`（`text-white`、`stroke-white`），年代主題換成那個年代的紙白，不寫 `white`。
 
 ---
 
@@ -241,6 +241,7 @@
 | Primary | `h-11 px-4 rounded-control bg-region-strong text-white text-body-sm font-bold` |
 | Secondary | `h-11 px-3.5 rounded-control border border-line bg-paper text-ink text-body-sm` |
 | Toggle（已啟用，例：去過） | `border-[1.5px] border-visited bg-visited-tint text-visited`＋`aria-pressed="true"` |
+| 清單列的去過鈕（`VisitedToggle.vue`） | 未勾 `text-sub hover:bg-surface hover:text-ink`（圖示是唯一的視覺，不用 `text-line`）；勾了 `text-visited` 實心圓，勾勾 `stroke-white`（跟著年代的 `--color-white`） |
 | Icon | `size-tap grid place-items-center rounded-control border border-line bg-paper`＋`aria-label` |
 | 在地區色底上的 Icon | `border-[1.5px] border-on-region text-on-region bg-transparent` |
 
@@ -445,7 +446,7 @@ header 右側、登入鈕左邊（`SearchBox.vue`，每一頁都在；在行程�
   - 收集冊上方一條：抽獎券張數（點了展開來源明細：景點、縣、地方、每 10 個景點、成就、用掉）、「樣式 已有 / 全部」、「十連抽」：10 張券，從去過、還沒收齊的景點裡抽 10 種還沒有的樣式（依每個景點還缺幾種加權，同一批不重複）；剩不到 10 種時按鈕寫「抽 n 張」，全部收齊寫「已收齊」。樣式數旁「規則」（`CardRules.vue`，和旅人的規則共用外框 `RulesDialog.vue` 與抽獎券明細 `TicketTable.vue`）：使用者自己點才打開，條列卡片怎麼拿、樣式、抽卡、抽獎券明細、收集冊的記號。
   - 十連抽的畫面（`TenPull.vue`）：十張卡背面朝上一次排成 5×2，發完牌由左上依序自動翻開，銀箔以上翻開前抖一下、翻開後背後放光；每張翻開都標 NEW；「全部翻開」一次翻完，點還沒翻的先翻那張，翻開的點一下放大；卡寬依視窗寬高計算，整個畫面放得下、不出捲軸；翻完有「再十連抽」。
 - 旅人扭蛋（§7.24）：1 張券，只抽還沒有的服裝；扭蛋範圍是不限縣的＋去過的縣的，抽完按鈕變「去過的縣都抽齊了」，去新的縣就會加進新的。
-- NEW（`stores/fresh.ts`、`NewTag.vue`）：新拿到、還沒看過的卡片樣式、服裝與成就（§7.25）。紅底白字小牌「NEW」（照 §6a 不加驚嘆號）。卡片：收集冊格子左上、放大檢視的樣式膠囊；看那一種就拿掉。服裝：衣櫃貼紙左上；點了（穿上）就拿掉。只存在這台裝置。
+- NEW（`stores/fresh.ts`、`NewTag.vue`）：新拿到、還沒看過的卡片樣式、服裝與成就（§7.25）。紅底白字小牌「NEW」（`--color-danger` 底、`--color-white` 字與 2px 外框，跟著年代的紙白；照 §6a 不加驚嘆號）。卡片：收集冊格子左上、放大檢視的樣式膠囊；看那一種就拿掉。服裝：衣櫃貼紙左上；點了（穿上）就拿掉。只存在這台裝置。
 - 測試期（`UNLIMITED_DRAWS`）：券不夠也能抽（張數照算、照扣）。正式上線前改成 false，並清空 `users/*/cards`、`users/*/meta/wallet`。
 - 之後可以加：在景點附近（GPS）按去過多給券（現地打卡），讓真的去過的比只是標記的多一點。
 
@@ -622,7 +623,7 @@ MVP 不做。token 已集中在 `theme.css` 與 `regions.css`，之後以 `@cust
 | 明治 | 文明開化、活版印刷 | `#F1EBDD`／`#1F2430` | 濃紺 `#1F2A44`、金 `#B08D3C` | 臙脂 `#7A1F2B` | Noto Serif TC／Shippori Mincho／IM Fell English SC／Shippori Mincho B1・Noto Serif TC | 蛋白相片的褐色＋四角暗影 | 雙線框（墨－紙－墨） |
 | 大正 | 大正浪漫、矢絣 | `#F4EDE6`／`#2B1E24` | 海老茶 `#6E2C2C`、紫 `#5B3A6E`（帶色是矢絣紋） | 紫 `#6B2D5C` | Noto Serif TC／Zen Old Mincho／Cormorant SC／Kaisei Decol・Chiron Sung HK | 手工上色的淡彩 | 圓角大、柔和的陰影 |
 | 昭和 | 國鐵、硬券、明信片 | `#F2E8D2`／`#2A2019` | 朱 `#C2402A`、青竹 `#1F6B5C`、山吹 `#E2A62B` | 紫 `#5B3F8C` | 粉圓／Zen Maru Gothic／DotGothic16／Dela Gothic One・Chiron GoRound TC | 褐色調＋印刷網點 | 墨框＋實心錯位陰影（2px） |
-| 平成 | 早期網路、亮面 | `#F7F7FB`／`#1F2233` | 青 `#00A0E9`、洋紅 `#E4007F`、黃 `#FFE600`（漸層帶） | 洋紅 `#E4007F` | Chiron GoRound TC／M PLUS Rounded 1c／VT323／Mochiy Pop One・Chiron GoRound TC | 彩度加強＋亮面反光 | 大圓角、柔和陰影；行程卡是 IC 卡 |
+| 平成 | 早期網路、亮面 | `#F7F7FB`／`#1F2233` | 青 `#00A0E9`、洋紅 `#E4007F`、黃 `#FFE600`（漸層帶） | 洋紅 `#C8006F`（帶色 `#E4007F` 疊淺底不到 4.5:1，去過深一階） | Chiron GoRound TC／M PLUS Rounded 1c／VT323／Mochiy Pop One・Chiron GoRound TC | 彩度加強＋亮面反光 | 大圓角、柔和陰影；行程卡是 IC 卡 |
 
 - 地區色：由 `pipeline/region_css.py` 的 `ERA_THEMES` 換算，跟令和一起輸出在 `regions.css`（`:root[data-theme="…"]`、`[data-theme="…"] [data-pref]`）。中性色固定（上表的紙、墨），紙類再滲 4–6% 的地區色；強調色依年代換算：江戶、明治、大正、昭和在 OKLab 往古紙色混，平成放大彩度。開場畫面與分享圖讀不到 CSS 變數，用同時產生的 `web/src/styles/theme-colors.json`。
 - token（theme.css 的 `:root[data-theme]`）：`--font-*`、`--font-display`（日文大標）、`--font-display-zh`（中文大標，日文字型缺繁體字，分開才不會一句混兩種字）、`--display-weight`／`--display-zh-weight`、`--radius-*`、`--shadow-*`、`--color-visited`、`--color-white`、`--color-map-water`、`--color-era-1/2/sign/card/ticket`、`--era-rule`（頂部下緣帶色，畫在 header 裡面不改高度）、`--era-photo-filter`／`--era-photo-overlay`（照片的濾鏡與質感）、`--era-card-shadow`。

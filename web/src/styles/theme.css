@@ -24,8 +24,8 @@
   --color-t-tea: #3F8F35;
   --color-t-sake: #B0561C;
   --color-t-incense: #A4508B;
-  --color-t-onsen: #0E8FA0;
-  --color-t-ramen: #B07A00;
+  --color-t-onsen: #0B8291;
+  --color-t-ramen: #9E6E00;
   --color-t-pokemon: #1F6FC0;
   --color-t-goshuin: #C8102E;
   --color-t-castle: #4F6475;
@@ -485,7 +485,7 @@
   --shadow-marker: 0 2px 6px rgb(31 34 51 / 0.25);
   --shadow-sheet: 0 -6px 20px rgb(31 34 51 / 0.12);
   --shadow-float: 0 6px 18px rgb(31 34 51 / 0.16), inset 0 1px 0 rgb(255 255 255 / 0.9);
-  --color-visited: #E4007F;
+  --color-visited: #C8006F;       /* 帶色的洋紅 #E4007F 疊淺底不到 4.5:1，去過的字與印章深一階 */
   --color-visited-tint: #FDE3F1;
   --color-white: #FFFFFF;
   --color-map-water: #8ED8F8;
