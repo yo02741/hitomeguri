@@ -2,6 +2,7 @@
 import { defineAsyncComponent, nextTick, onBeforeUnmount, ref, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 
+import { useBackClose } from '../composables/backClose'
 import { whenIdle } from '../services/idle'
 import { afterSplash } from '../services/splash'
 import { wide } from '../services/viewport'
@@ -20,11 +21,12 @@ afterSplash(() => whenIdle(() => void loadDoll()))
 const route = useRoute()
 const router = useRouter()
 
+// tab：底部分頁列也有的兩項，手機與平板（<1024，有分頁列）不重複放
 const items = [
-  { to: '/trips', label: '我的行程', match: ['trips', 'trip', 'prep', 'practice', 'book'] },
-  { to: '/log', label: '旅行紀錄', match: ['log', 'cards', 'keiken', 'avatar', 'achievements'] },
-  { to: '/me', label: '收藏與清單', match: ['me', 'list'] },
-  { to: '/limited', label: '期間限定', match: ['limited'] },
+  { to: '/trips', label: '我的行程', match: ['trips', 'trip', 'prep', 'practice', 'book'], tab: true },
+  { to: '/log', label: '旅行紀錄', match: ['log', 'cards', 'keiken', 'avatar', 'achievements'], tab: true },
+  { to: '/me', label: '收藏與清單', match: ['me', 'list'], tab: false },
+  { to: '/limited', label: '期間限定', match: ['limited'], tab: false },
 ]
 const isActive = (it: (typeof items)[number]) => it.match.includes(String(route.name))
 
@@ -43,12 +45,14 @@ function onLeave() {
   clearTimeout(peekTimer)
   peek.value = false
 }
-const root = ref<HTMLElement | null>(null)
 const trigger = ref<HTMLButtonElement | null>(null)
 const menu = ref<HTMLElement | null>(null)
 
+// 鍵盤上下移動只走看得到的項目（手機與平板藏起來的「我的行程」「旅行紀錄」不算）
 function menuItems(): HTMLElement[] {
-  return Array.from(menu.value?.querySelectorAll<HTMLElement>('[role="menuitem"], [role="menuitemcheckbox"], input[type="range"]') ?? [])
+  return Array.from(menu.value?.querySelectorAll<HTMLElement>('[role="menuitem"], [role="menuitemcheckbox"], input[type="range"]') ?? []).filter(
+    (el) => el.getClientRects().length > 0,
+  )
 }
 
 async function show(focus: 'first' | 'last' | null = null) {
@@ -90,16 +94,11 @@ function onMenuKey(e: KeyboardEvent) {
   e.preventDefault()
 }
 
-// 點選單以外的地方就收起
-function onPointerDown(e: PointerEvent) {
-  if (root.value && !root.value.contains(e.target as Node)) hide()
-}
-watch(open, (o) => {
-  if (o) document.addEventListener('pointerdown', onPointerDown)
-  else document.removeEventListener('pointerdown', onPointerDown)
-})
-onBeforeUnmount(() => document.removeEventListener('pointerdown', onPointerDown))
+// 點選單以外的地方只會收起選單：選單開著時底下墊一層 scrim（模板），不會連帶點到底下的東西
 watch(() => route.fullPath, () => hide())
+// 返回手勢先收起選單（手機）
+useBackClose(open, () => hide())
+onBeforeUnmount(() => clearTimeout(peekTimer))
 
 async function logOut() {
   hide()
@@ -109,7 +108,7 @@ async function logOut() {
 </script>
 
 <template>
-  <div v-if="userStore.user" ref="root" class="relative" @mouseenter="onEnter" @mouseleave="onLeave">
+  <div v-if="userStore.user" class="relative" @mouseenter="onEnter" @mouseleave="onLeave">
     <button
       ref="trigger"
       type="button"
@@ -157,6 +156,8 @@ async function logOut() {
       <UserMenuDoll kind="peek" />
     </RouterLink>
 
+    <!-- 點選單外面只收起選單；手機與平板稍微壓暗。header 是 z-40 的疊層，scrim 在它裡面也蓋得到 main 與分頁列 -->
+    <div v-if="open" class="fixed inset-0 z-20 max-lg:bg-ink/10" aria-hidden="true" @click="hide()"></div>
     <div
       v-if="open"
       id="user-menu"
@@ -164,7 +165,7 @@ async function logOut() {
       role="menu"
       aria-label="帳號選單"
       data-reduce="fade"
-      class="absolute top-12 right-0 z-30 flex w-72 origin-top-right animate-pop-in flex-col rounded-card bg-paper p-1.5 shadow-float"
+      class="absolute top-12 right-0 z-30 flex max-h-[calc(100dvh-var(--spacing-header)-1rem)] w-72 origin-top-right animate-pop-in flex-col overflow-y-auto overscroll-contain rounded-card bg-paper p-1.5 shadow-float *:shrink-0"
       @keydown="onMenuKey"
     >
       <div class="flex items-center gap-3 px-2.5 pt-1.5 pb-2.5">
@@ -184,7 +185,7 @@ async function logOut() {
         role="menuitem"
         tabindex="-1"
         class="mt-1 flex min-h-tap items-center rounded-control px-2.5 text-body-sm text-ink no-underline hover:bg-surface focus-visible:bg-surface active:bg-surface"
-        :class="isActive(it) ? 'font-bold' : ''"
+        :class="[isActive(it) ? 'font-bold' : '', it.tab ? 'max-lg:hidden' : '']"
         :aria-current="isActive(it) ? 'page' : undefined"
         @click="hide()"
       >

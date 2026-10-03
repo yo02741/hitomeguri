@@ -2,6 +2,7 @@
 import { nextTick, ref, useId, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 
+import { useBackClose } from '../composables/backClose'
 import { useIndicator } from '../composables/indicator'
 import { useOnline } from '../composables/online'
 
@@ -26,18 +27,35 @@ function onPick(hit: SearchHit) {
   closeSearch()
 }
 
-// 手機：放大鏡鈕展開佔滿 header 的搜尋列；選了結果、取消、Esc 收起，焦點回到放大鏡鈕
+// 手機（<1024）：放大鏡鈕展開佔滿 header 的搜尋列；選了結果、取消、Esc 收起，焦點回到放大鏡鈕。
+// 搜尋列一直掛著（v-show），在點擊的同一個事件裡就把它顯示出來並聚焦：
+// iOS Safari 只有在使用者操作的事件當下呼叫 focus() 才會叫出鍵盤，等到 onMounted 就太晚了。
 const searchOpen = ref(false)
 const searchId = useId()
 const searchBtn = ref<HTMLButtonElement | null>(null)
+const searchBar = ref<HTMLElement | null>(null)
+const phoneSearch = ref<InstanceType<typeof SearchBox> | null>(null)
+function openSearch() {
+  searchOpen.value = true
+  // v-show 要等下一次更新才拿掉 display:none；先自己拿掉，focus() 才有作用
+  if (searchBar.value) searchBar.value.style.display = ''
+  phoneSearch.value?.focus()
+}
 function closeSearch() {
   if (!searchOpen.value) return
   searchOpen.value = false
+  phoneSearch.value?.clear()
   void nextTick(() => searchBtn.value?.focus())
 }
+// 返回手勢先收起搜尋列（手機）
+useBackClose(searchOpen, closeSearch)
 watch(
   () => route.fullPath,
-  () => (searchOpen.value = false),
+  () => {
+    if (!searchOpen.value) return
+    searchOpen.value = false
+    phoneSearch.value?.clear()
+  },
 )
 
 const tabs = [
@@ -58,9 +76,9 @@ const { rect, animate } = useIndicator(nav, () => nav.value?.querySelector<HTMLE
   <!-- view-transition-name 讓 header 自成一層：要比 main 高，搜尋結果、帳號選單才不會被地圖蓋住 -->
   <header class="app-header relative z-40 flex h-header shrink-0 items-center gap-4 border-b border-line bg-header pr-[max(1rem,env(safe-area-inset-right))] pl-[max(1rem,env(safe-area-inset-left))] md:pr-[max(1.5rem,env(safe-area-inset-right))] md:pl-[max(1.5rem,env(safe-area-inset-left))] lg:gap-8 print:hidden [view-transition-name:app-header]">
     <Wordmark />
-    <span v-if="!online" class="-ml-1 rounded-tag bg-ink px-1.5 text-caption font-bold text-paper lg:-ml-5" role="status">離線</span>
+    <span v-if="!online" class="-ml-1 shrink-0 rounded-tag bg-ink px-1.5 text-caption font-bold whitespace-nowrap text-paper lg:-ml-5" role="status">離線</span>
 
-    <nav ref="nav" class="relative flex h-full max-md:hidden" aria-label="主要">
+    <nav ref="nav" class="relative flex h-full max-lg:hidden" aria-label="主要">
       <RouterLink
         v-for="tab in tabs"
         :key="tab.to"
@@ -82,15 +100,15 @@ const { rect, animate } = useIndicator(nav, () => nav.value?.querySelector<HTMLE
     </nav>
 
     <div class="ml-auto flex items-center gap-2.5">
-      <SearchBox class="max-md:hidden" @pick="onPick" />
+      <SearchBox class="max-lg:hidden" @pick="onPick" />
       <button
         ref="searchBtn"
         type="button"
-        class="grid size-tap place-items-center rounded-control text-ink active:translate-y-px md:hidden"
+        class="grid size-tap place-items-center rounded-control text-ink active:translate-y-px lg:hidden"
         aria-label="搜尋景點、地區"
         :aria-expanded="searchOpen"
         :aria-controls="searchOpen ? searchId : undefined"
-        @click="searchOpen = true"
+        @click="openSearch"
       >
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
           <circle cx="11" cy="11" r="6.5" /><path d="M16 16l4.5 4.5" />
@@ -109,12 +127,13 @@ const { rect, animate } = useIndicator(nav, () => nav.value?.querySelector<HTMLE
     </div>
 
     <div
-      v-if="searchOpen"
+      v-show="searchOpen"
       :id="searchId"
-      class="absolute inset-0 z-10 flex items-center gap-2 bg-header pr-[max(1rem,env(safe-area-inset-right))] pl-[max(1rem,env(safe-area-inset-left))] md:hidden"
+      ref="searchBar"
+      class="absolute inset-0 z-10 flex items-center gap-2 bg-header pr-[max(1rem,env(safe-area-inset-right))] pl-[max(1rem,env(safe-area-inset-left))] lg:hidden"
       @keydown.esc="closeSearch"
     >
-      <SearchBox full autofocus @pick="onPick" />
+      <SearchBox ref="phoneSearch" full @pick="onPick" />
       <button type="button" class="h-tap shrink-0 px-2 text-body-sm whitespace-nowrap text-sub active:translate-y-px" @click="closeSearch">取消</button>
     </div>
   </header>

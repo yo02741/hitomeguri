@@ -44,6 +44,7 @@ const fresh = useFreshStore()
 const cardDraw = useCardDraw()
 const missing = computed(() => (props.variants ? missingVariants(props.rarity, hasNight(props.card), props.variants.map((v) => v.key)).length : 0))
 const canDraw = computed(() => props.visited && Boolean(props.variants))
+const flipped = ref(false)
 let drawnKey: string | null = null
 function drawOneCard() {
   const v = cardDraw.drawFor({ spotId: props.card.id, rarity: props.rarity, night: hasNight(props.card), owned: props.variants?.map((x) => x.key) ?? [] })
@@ -51,13 +52,16 @@ function drawOneCard() {
   drawnKey = v.key
   showReveal({ face: props.card, rarity: props.rarity, label: props.label ?? '', number: props.number ?? '', variant: v })
 }
-// 抽完樣式清單更新時，切到剛抽到的那種
+// 抽完樣式清單更新時，切到剛抽到的那種，翻回正面（翻到背面再抽，也是看到新卡的正面）
 watch(
   () => props.variants,
   (list) => {
     if (!drawnKey || !list) return
     const i = list.findIndex((v) => v.key === drawnKey)
-    if (i >= 0) vi.value = i
+    if (i >= 0) {
+      vi.value = i
+      flipped.value = false
+    }
     drawnKey = null
   },
 )
@@ -77,7 +81,6 @@ watch(
   ([id, key]) => fresh.seen([cardKey(id, key)]),
   { immediate: true },
 )
-const flipped = ref(false)
 const gyro = ref(false)
 // 觸控裝置才顯示「傾斜手機」
 const touch = typeof matchMedia !== 'undefined' && matchMedia('(pointer: coarse)').matches
@@ -266,68 +269,71 @@ onBeforeUnmount(() => document.removeEventListener('keydown', onKey))
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7" /></svg>
           </button>
         </div>
-        <p v-if="position" class="font-latin text-label text-white/80" aria-live="polite">{{ position.index + 1 }} / {{ position.total }}</p>
-        <!-- 樣式：收集到的幾種之間切換 -->
-        <div v-if="variants && variants.length" class="flex flex-wrap items-center justify-center gap-1.5" role="group" aria-label="樣式">
+        <!-- 控制列：直向排在卡片下面；橫向（手機打橫）排成一欄放在卡片右邊，像切符的副券 -->
+        <div class="controls">
+          <p v-if="position" class="font-latin text-label text-white/80" aria-live="polite">{{ position.index + 1 }} / {{ position.total }}</p>
+          <!-- 樣式：收集到的幾種之間切換 -->
+          <div v-if="variants && variants.length" class="variants flex flex-wrap items-center justify-center gap-1.5" role="group" aria-label="樣式">
+            <button
+              v-for="(v, i) in variants"
+              :key="v.key"
+              type="button"
+              class="relative h-8 rounded-full px-3 text-caption font-bold active:not-disabled:translate-y-px"
+              :class="i === vi ? 'bg-paper text-ink' : 'bg-paper/15 text-white hover:bg-paper/25'"
+              :aria-pressed="i === vi"
+              @click="vi = i"
+            >
+              {{ v.label }}
+              <NewTag v-if="fresh.has(cardKey(card.id, v.key))" class="absolute -top-2 -right-1.5" />
+            </button>
+            <span v-if="variantTotal" class="ml-1 font-latin text-caption text-white/70">{{ variants.length }} / {{ variantTotal }}</span>
+          </div>
+          <!-- 收集冊的封面：這個景點在收集冊顯示哪一種 -->
           <button
-            v-for="(v, i) in variants"
-            :key="v.key"
+            v-if="visited && variants && variants.length > 1"
             type="button"
-            class="relative h-8 rounded-full px-3 text-caption font-bold active:not-disabled:translate-y-px"
-            :class="i === vi ? 'bg-paper text-ink' : 'bg-paper/15 text-white hover:bg-paper/25'"
-            :aria-pressed="i === vi"
-            @click="vi = i"
+            class="cover-btn -mt-2 flex h-8 items-center justify-center gap-1.5 rounded-full px-3 text-caption font-bold"
+            :class="isCover ? 'text-white/70' : 'text-white underline decoration-white/40 underline-offset-4 hover:decoration-white'"
+            :disabled="isCover"
+            @click="setCover"
           >
-            {{ v.label }}
-            <NewTag v-if="fresh.has(cardKey(card.id, v.key))" class="absolute -top-2 -right-1.5" />
+            <svg width="13" height="13" viewBox="0 0 24 24" :fill="isCover ? 'currentColor' : 'none'" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12v18l-6-4.5L6 21z" /></svg>
+            {{ isCover ? '收集冊的封面' : '設為收集冊的封面' }}
           </button>
-          <span v-if="variantTotal" class="ml-1 font-latin text-caption text-white/70">{{ variants.length }} / {{ variantTotal }}</span>
-        </div>
-        <!-- 收集冊的封面：這個景點在收集冊顯示哪一種 -->
-        <button
-          v-if="visited && variants && variants.length > 1"
-          type="button"
-          class="cover-btn -mt-2 flex h-8 items-center gap-1.5 rounded-full px-3 text-caption font-bold"
-          :class="isCover ? 'text-white/70' : 'text-white underline decoration-white/40 underline-offset-4 hover:decoration-white'"
-          :disabled="isCover"
-          @click="setCover"
-        >
-          <svg width="13" height="13" viewBox="0 0 24 24" :fill="isCover ? 'currentColor' : 'none'" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12v18l-6-4.5L6 21z" /></svg>
-          {{ isCover ? '收集冊的封面' : '設為收集冊的封面' }}
-        </button>
-        <div class="flex flex-wrap justify-center gap-2">
-          <button
-            v-if="touch && !tilt.reduced"
-            type="button"
-            class="h-10 rounded-full bg-paper px-4 text-label font-bold text-ink disabled:opacity-60 active:not-disabled:translate-y-px"
-            :disabled="gyro"
-            @click="startGyro"
-          >
-            {{ gyro ? '傾斜手機看看' : '用手機傾斜' }}
-          </button>
-          <button
-            v-if="canDraw"
-            type="button"
-            class="flex h-10 items-center gap-2 rounded-full bg-paper px-4 text-label font-bold text-ink disabled:opacity-50 active:not-disabled:translate-y-px"
-            :disabled="!missing || !wallet.canSpend(1)"
-            @click="drawOneCard"
-          >
-            {{ missing ? '抽一張' : '已收齊' }}
-            <span v-if="missing" class="font-latin text-caption font-semibold text-sub">券 {{ wallet.left }}</span>
-          </button>
-          <button type="button" class="h-10 rounded-full bg-paper px-4 text-label font-bold text-ink active:not-disabled:translate-y-px" @click="flipped = !flipped">
-            {{ flipped ? '正面' : '背面' }}
-          </button>
-          <RouterLink
-            v-if="to"
-            :to="to"
-            class="flex h-10 items-center rounded-full bg-paper px-4 text-label font-bold text-ink no-underline active:not-disabled:translate-y-px"
-          >
-            地圖
-          </RouterLink>
-          <button type="button" class="h-10 rounded-full bg-paper px-4 text-label font-bold text-ink active:not-disabled:translate-y-px" @click="emit('close')">
-            關閉
-          </button>
+          <div class="actions flex flex-wrap justify-center gap-2">
+            <button
+              v-if="touch && !tilt.reduced"
+              type="button"
+              class="h-10 rounded-full bg-paper px-4 text-label font-bold text-ink disabled:opacity-60 active:not-disabled:translate-y-px"
+              :disabled="gyro"
+              @click="startGyro"
+            >
+              {{ gyro ? '傾斜手機看看' : '用手機傾斜' }}
+            </button>
+            <button
+              v-if="canDraw"
+              type="button"
+              class="flex h-10 items-center justify-center gap-2 rounded-full bg-paper px-4 text-label font-bold text-ink disabled:opacity-50 active:not-disabled:translate-y-px"
+              :disabled="!missing || !wallet.canSpend(1)"
+              @click="drawOneCard"
+            >
+              {{ missing ? '抽一張' : '已收齊' }}
+              <span v-if="missing" class="font-latin text-caption font-semibold text-sub">券 {{ wallet.left }}</span>
+            </button>
+            <button type="button" class="h-10 rounded-full bg-paper px-4 text-label font-bold text-ink active:not-disabled:translate-y-px" @click="flipped = !flipped">
+              {{ flipped ? '正面' : '背面' }}
+            </button>
+            <RouterLink
+              v-if="to"
+              :to="to"
+              class="flex h-10 items-center justify-center rounded-full bg-paper px-4 text-label font-bold text-ink no-underline active:not-disabled:translate-y-px"
+            >
+              地圖
+            </RouterLink>
+            <button type="button" class="h-10 rounded-full bg-paper px-4 text-label font-bold text-ink active:not-disabled:translate-y-px" @click="emit('close')">
+              關閉
+            </button>
+          </div>
         </div>
       </div>
     </dialog>
@@ -372,9 +378,62 @@ onBeforeUnmount(() => document.removeEventListener('keydown', onKey))
     transform: translateX(-64px) rotateY(24deg);
   }
 }
+/* 卡寬（DESIGN.md §7.19）：最寬 320px；也依高度算，扣掉控制列（約 360px）後放得下整張卡。
+   卡片用 em 排版，寬 20em：改 font-size 就是改卡寬 */
+.viewer {
+  --cw: min(320px, calc(100vw - 40px), calc((100dvh - 360px) * 5 / 7));
+}
 @media (max-width: 400px) {
-  .viewer-card :deep(.card-scene) {
-    font-size: 14px;
+  .viewer {
+    --cw: min(280px, calc((100dvh - 360px) * 5 / 7));
+  }
+}
+.viewer-card :deep(.card-scene) {
+  font-size: calc(var(--cw) / 20);
+}
+.controls {
+  display: contents;
+}
+/* 手機打橫：卡片在左、高度撐滿；控制列一欄在右，用虛線隔開；放不下時控制列自己捲 */
+@media (orientation: landscape) and (max-height: 500px) {
+  .viewer {
+    --cw: min(320px, calc((100dvh - 2rem) * 5 / 7));
+    flex-direction: row;
+    gap: 1.5rem;
+    padding-inline: max(1rem, env(safe-area-inset-left)) max(1rem, env(safe-area-inset-right));
+  }
+  .controls {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.5rem;
+    width: 13rem;
+    max-height: 100%;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    padding: 0.25rem 0 0.25rem 1.5rem;
+    border-left: 2px dashed color-mix(in oklab, var(--color-paper) 35%, transparent);
+  }
+  .controls > p {
+    text-align: center;
+  }
+  /* 樣式排成一行，多的往旁邊捲（上方留給 NEW 標記） */
+  .variants {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    flex-shrink: 0;
+    overflow-x: auto;
+    padding-top: 0.5rem;
+  }
+  .variants > * {
+    flex-shrink: 0;
+  }
+  .controls .cover-btn {
+    margin-top: 0;
+  }
+  .actions {
+    flex-direction: column;
+    flex-wrap: nowrap;
   }
 }
 </style>

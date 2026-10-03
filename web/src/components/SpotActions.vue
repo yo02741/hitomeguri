@@ -123,10 +123,11 @@ const visitedShort = computed(() => {
 
 <template>
   <div class="flex flex-col gap-2">
-    <div ref="root" class="relative grid grid-cols-2 gap-2">
+    <!-- 桌機 2×2；手機（<1024）是 sheet 底部工作列的一排四顆：圖示在上、字在下 -->
+    <div ref="root" class="relative grid grid-cols-2 gap-2 max-lg:flex max-lg:gap-1.5">
       <button
         type="button"
-        class="flex h-11 items-center justify-center gap-1.5 rounded-control text-body-sm active:translate-y-px disabled:cursor-not-allowed disabled:opacity-40"
+        class="flex h-11 items-center justify-center gap-1.5 rounded-control text-body-sm active:translate-y-px disabled:cursor-not-allowed disabled:opacity-40 max-lg:h-tap max-lg:min-w-0 max-lg:flex-1 max-lg:basis-0 max-lg:flex-col max-lg:gap-0.5 max-lg:text-label"
         :class="
           mark?.favorite
             ? 'border-[1.5px] border-region-strong bg-region-tint font-bold text-ink'
@@ -154,7 +155,7 @@ const visitedShort = computed(() => {
       </button>
       <!-- 去過：標了之後右半邊是日期（點開月曆補填） -->
       <div
-        class="flex h-11 overflow-hidden rounded-control text-body-sm"
+        class="flex h-11 overflow-hidden rounded-control text-body-sm max-lg:h-tap max-lg:min-w-0 max-lg:flex-[1.5] max-lg:basis-0 max-lg:text-label"
         :class="
           mark?.visited
             ? 'border-[1.5px] border-visited bg-visited-tint font-bold text-visited'
@@ -163,7 +164,7 @@ const visitedShort = computed(() => {
       >
         <button
           type="button"
-          class="flex min-w-0 flex-1 items-center justify-center gap-1.5 active:translate-y-px disabled:cursor-not-allowed disabled:opacity-40"
+          class="flex min-w-0 flex-1 items-center justify-center gap-1.5 active:translate-y-px disabled:cursor-not-allowed disabled:opacity-40 max-lg:flex-col max-lg:gap-0.5"
           :class="mark?.visited ? '' : 'hover:bg-surface'"
           :aria-pressed="Boolean(mark?.visited)"
           :disabled="disabled"
@@ -187,7 +188,7 @@ const visitedShort = computed(() => {
           label="去過日期"
           :model-value="mark.visited_on ?? ''"
           :max="today"
-          class="flex shrink-0 items-center gap-1 border-l border-visited/30 px-2.5 font-latin text-label font-normal hover:bg-visited/10"
+          class="flex shrink-0 items-center gap-1 border-l border-visited/30 px-2.5 font-latin text-label font-normal hover:bg-visited/10 max-lg:px-2"
           @update:model-value="marks.setVisitedOn(spot, $event)"
         >
           <template #default>
@@ -200,7 +201,7 @@ const visitedShort = computed(() => {
       <button
         ref="listsBtn"
         type="button"
-        class="flex h-11 items-center justify-center gap-1.5 rounded-control text-body-sm active:translate-y-px disabled:cursor-not-allowed disabled:opacity-40"
+        class="flex h-11 items-center justify-center gap-1.5 rounded-control text-body-sm active:translate-y-px disabled:cursor-not-allowed disabled:opacity-40 max-lg:h-tap max-lg:min-w-0 max-lg:flex-1 max-lg:basis-0 max-lg:flex-col max-lg:gap-0.5 max-lg:text-label"
         :class="inLists ? 'border-[1.5px] border-ink bg-surface font-bold text-ink' : 'border border-line bg-paper text-ink hover:bg-surface'"
         aria-haspopup="true"
         :aria-expanded="open === 'lists'"
@@ -210,12 +211,12 @@ const visitedShort = computed(() => {
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true">
           <path d="M9 6h11M9 12h11M9 18h11" /><circle cx="4.5" cy="6" r="1" /><circle cx="4.5" cy="12" r="1" /><circle cx="4.5" cy="18" r="1" />
         </svg>
-        清單<span v-if="inLists" class="font-latin">{{ inLists }}</span>
+        <span class="flex items-center gap-1.5 whitespace-nowrap max-lg:gap-1">清單<span v-if="inLists" class="font-latin">{{ inLists }}</span></span>
       </button>
       <button
         ref="tripsBtn"
         type="button"
-        class="flex h-11 items-center justify-center gap-1.5 rounded-control text-body-sm active:translate-y-px disabled:cursor-not-allowed disabled:opacity-40"
+        class="flex h-11 items-center justify-center gap-1.5 rounded-control text-body-sm active:translate-y-px disabled:cursor-not-allowed disabled:opacity-40 max-lg:h-tap max-lg:min-w-0 max-lg:flex-1 max-lg:basis-0 max-lg:flex-col max-lg:gap-0.5 max-lg:text-label"
         :class="inTrips ? 'border-[1.5px] border-ink bg-surface font-bold text-ink' : 'border border-line bg-paper text-ink hover:bg-surface'"
         aria-haspopup="true"
         :aria-expanded="open === 'trips'"
@@ -225,14 +226,14 @@ const visitedShort = computed(() => {
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
           <path d="M4 5h16v15H4z M4 10h16 M9 3v4 M15 3v4" />
         </svg>
-        加入行程<span v-if="inTrips" class="font-latin">{{ inTrips }}</span>
+        <span class="flex items-center gap-1.5 whitespace-nowrap max-lg:gap-1">加入行程<span v-if="inTrips" class="font-latin">{{ inTrips }}</span></span>
       </button>
 
       <!-- 行程選單：每個行程選「待排」或某一天後加入；最下面新增行程 -->
       <div
         v-if="open === 'trips'"
         data-reduce="fade"
-        class="absolute right-0 bottom-full left-0 z-30 mb-2 flex max-h-[50dvh] origin-bottom animate-pop-up flex-col rounded-card bg-paper p-1.5 shadow-float"
+        class="absolute right-0 bottom-full left-0 z-30 mb-2 flex max-h-[50dvh] max-lg:max-h-[min(50dvh,calc(60dvh-5rem))] origin-bottom animate-pop-up flex-col rounded-card bg-paper p-1.5 shadow-float"
         role="group"
         aria-label="加入行程"
       >
@@ -285,7 +286,7 @@ const visitedShort = computed(() => {
       <div
         v-if="open === 'lists'"
         data-reduce="fade"
-        class="absolute right-0 bottom-full left-0 z-30 mb-2 flex max-h-[50dvh] origin-bottom animate-pop-up flex-col rounded-card bg-paper p-1.5 shadow-float"
+        class="absolute right-0 bottom-full left-0 z-30 mb-2 flex max-h-[50dvh] max-lg:max-h-[min(50dvh,calc(60dvh-5rem))] origin-bottom animate-pop-up flex-col rounded-card bg-paper p-1.5 shadow-float"
         role="group"
         aria-label="加入清單"
       >

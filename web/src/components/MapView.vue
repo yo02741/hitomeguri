@@ -22,6 +22,10 @@ const props = defineProps<{
   colorKey?: string | null
   /** 左側被浮動面板蓋住的寬度（px）：定位與「目前看的範圍」都扣掉這一塊 */
   insetLeft?: number
+  /** 上方被清單卡、下方被景點卡片蓋住的高度（px，手機）：定位與「目前看的範圍」也扣掉 */
+  insets?: { top: number; bottom: number } | null
+  /** 下方的控制項（縮放、出處）往上移的高度（px）：手機的祭典小卡不蓋住縮放鈕 */
+  controlsLift?: number
   /** 目前地區的縣界：虛線外框＋淡淡的地區色，看出縣的範圍 */
   outline?: GeoJSON.Feature | null
   /** 開啟中的擴充包：用主題色畫在最上層，景點變淡當底圖 */
@@ -46,7 +50,7 @@ export interface PackPoint {
 }
 
 export interface MapView {
-  /** 可見範圍（扣掉 insetLeft）的中心 */
+  /** 可見範圍（扣掉 insetLeft、insets）的中心 */
   center: { lng: number; lat: number }
   /** 可見範圍 [west, south, east, north] */
   bounds: [number, number, number, number]
@@ -172,18 +176,38 @@ interface Edge {
   angle: number
   side: 'left' | 'right' | 'top' | 'bottom'
 }
+// 地圖容器的大小（MapLibre 的 resize 時更新）：蓋住的範圍不能大到看不到地圖
+const size = ref({ w: 0, h: 0 })
+// 蓋住之後至少留下這麼高的地圖（px）
+const MIN_VISIBLE = 96
+/** 被浮動面板、清單卡、景點卡片蓋住的部分；上下加起來太高時等比例縮小 */
+const cover = computed(() => {
+  const { w, h } = size.value
+  const left = Math.min(props.insetLeft ?? 0, w / 2)
+  let top = Math.max(0, props.insets?.top ?? 0)
+  let bottom = Math.max(0, props.insets?.bottom ?? 0)
+  const room = Math.max(0, h - MIN_VISIBLE)
+  if (top + bottom > room) {
+    const k = room / (top + bottom)
+    top = Math.round(top * k)
+    bottom = Math.round(bottom * k)
+  }
+  return { left, top, bottom }
+})
+/** 鏡頭中心往可見範圍的中心偏移 */
+const centerOffset = (): [number, number] => [cover.value.left / 2, (cover.value.top - cover.value.bottom) / 2]
 const edge = computed<Edge | null>(() => {
   const h = hover.value
   const el = container.value
   if (!h || !el) return null
   const w = el.clientWidth
   const ht = el.clientHeight
-  const inset = Math.min(props.insetLeft ?? 0, w / 2)
-  if (h.x >= inset && h.x <= w && h.y >= 0 && h.y <= ht) return null
-  const left = inset + EDGE_PAD
+  const c = cover.value
+  if (h.x >= c.left && h.x <= w && h.y >= c.top && h.y <= ht - c.bottom) return null
+  const left = c.left + EDGE_PAD
   const right = w - EDGE_PAD
-  const top = EDGE_PAD
-  const bottom = ht - EDGE_PAD
+  const top = c.top + EDGE_PAD
+  const bottom = ht - c.bottom - EDGE_PAD
   const cx = (left + right) / 2
   const cy = (top + bottom) / 2
   const dx = h.x - cx
@@ -628,7 +652,7 @@ async function expandCluster(f: maplibregl.MapGeoJSONFeature) {
   const src = map.getSource(f.source) as GeoJSONSource
   const zoom = await src.getClusterExpansionZoom(f.properties?.cluster_id as number)
   const center = (f.geometry as GeoJSON.Point).coordinates as [number, number]
-  map.easeTo({ center, zoom, offset: [(props.insetLeft ?? 0) / 2, 0] }, { user: true })
+  map.easeTo({ center, zoom, offset: centerOffset() }, { user: true })
 }
 
 function setHover(h: Hover | null) {
@@ -929,16 +953,16 @@ function updateLocator() {
   })
 }
 
-/** 可見範圍：扣掉左側被浮動面板蓋住的部分 */
+/** 可見範圍：扣掉左側被浮動面板、上下被清單卡與景點卡片蓋住的部分 */
 function visibleView(user: boolean): MapView | null {
   if (!map) return null
   const canvas = map.getCanvas()
   const w = canvas.clientWidth
   const h = canvas.clientHeight
-  const left = Math.min(props.insetLeft ?? 0, w / 2)
-  const nw = map.unproject([left, 0])
-  const se = map.unproject([w, h])
-  const c = map.unproject([(left + w) / 2, h / 2])
+  const { left, top, bottom } = cover.value
+  const nw = map.unproject([left, top])
+  const se = map.unproject([w, h - bottom])
+  const c = map.unproject([(left + w) / 2, (top + h - bottom) / 2])
   return {
     center: { lng: c.lng, lat: c.lat },
     bounds: [nw.lng, se.lat, se.lng, nw.lat],
@@ -961,6 +985,8 @@ onMounted(() => {
       customAttribution: '景點資料 © OpenStreetMap contributors・Wikidata・Wikimedia Commons・維基百科（CC BY-SA 4.0）',
     },
   })
+  // 手機：出處一開始只留 ⓘ，點了才展開（MapLibre 的 compact 一開始是展開的，會蓋住小地圖的下緣）
+  if (!wide.value) collapseAttribution()
   map.addControl(new maplibregl.NavigationControl({ showCompass: false }), 'bottom-right')
   // 下方角落後加的排在上面：立體、縮放、attribution
   if (!props.noTerrain && wide.value) map.addControl(new TerrainControl(), 'bottom-right')
@@ -974,6 +1000,7 @@ onMounted(() => {
     'map',
   )
   map.on('load', () => {
+    if (!wide.value) collapseAttribution()
     addLayers()
     ready = true
     applyColors()
@@ -983,12 +1010,23 @@ onMounted(() => {
     drawRoute(props.route)
     applyTerrain()
   })
+  const syncSize = () => {
+    const el = container.value
+    if (el) size.value = { w: el.clientWidth, h: el.clientHeight }
+  }
+  syncSize()
+  map.on('resize', syncSize)
   map.on('move', updateLocator)
   map.on('moveend', (e: { originalEvent?: Event; user?: boolean }) => {
     const view = visibleView(Boolean(e.originalEvent || e.user))
     if (view) emit('moveend', view)
   })
 })
+
+/** 收起 compact 出處（和 MapLibre 拖曳地圖時收起的做法相同：拿掉 compact-show） */
+function collapseAttribution() {
+  container.value?.querySelector('.maplibregl-ctrl-attrib.maplibregl-compact')?.classList.remove('maplibregl-compact-show')
+}
 
 onBeforeUnmount(() => {
   cancelAnimationFrame(routeFrame)
@@ -1007,9 +1045,11 @@ function fit(b: [number, number, number, number], animate = true) {
     [b[0], b[1]],
     [b[2], b[3]],
   ]
-  const pad = 48
+  const { left, top, bottom } = cover.value
+  // 蓋住之後剩下的高度不夠時，四周的留白跟著縮小
+  const pad = Math.min(48, Math.max(8, (size.value.h - top - bottom) / 4))
   map.fitBounds(bounds, {
-    padding: { top: pad, bottom: pad, right: pad, left: pad + (props.insetLeft ?? 0) },
+    padding: { top: pad + top, bottom: pad + bottom, right: pad, left: pad + left },
     maxZoom: 12,
     animate,
     duration: animate ? 900 : 0,
@@ -1123,7 +1163,7 @@ defineExpose({
     map?.flyTo({
       center: [lng, lat],
       zoom: Math.max(map.getZoom(), zoom),
-      offset: [(props.insetLeft ?? 0) / 2, 0],
+      offset: centerOffset(),
       duration: 1200,
     })
   },
@@ -1132,7 +1172,12 @@ defineExpose({
 
 <template>
   <!-- overflow-hidden：hover 標籤落在畫面外時（例如從清單滑過畫面外的景點）不撐出整頁捲軸 -->
-  <div class="absolute inset-0 overflow-hidden bg-map-land" role="region" aria-label="地圖">
+  <div
+    class="map-root absolute inset-0 overflow-hidden bg-map-land"
+    :style="controlsLift ? { '--map-lift-b': `${controlsLift}px` } : undefined"
+    role="region"
+    aria-label="地圖"
+  >
     <div ref="container" class="isolate size-full"></div>
     <!-- maplibre-gl.css 不在 layer 裡，會蓋過 utilities：底色與排版用 ! 才壓得過它的 button 樣式 -->
     <Teleport v-if="terrainHost && !noTerrain" :to="terrainHost">
@@ -1148,6 +1193,7 @@ defineExpose({
         <span aria-hidden="true">立<br />體</span>
       </button>
     </Teleport>
+    <!-- 手機打橫時地圖只剩兩百多 px 高，小框和縮放鈕疊在一起：不顯示小框 -->
     <Transition name="locator">
       <JapanLocator
         v-if="locator && locator.zoom >= LOCATOR_ZOOM"
@@ -1155,7 +1201,7 @@ defineExpose({
         :zoom="locator.zoom"
         :pref="colorKey"
         class="absolute z-[2] print:hidden"
-        :class="insetLeft ? 'bottom-4 w-[132px]' : 'top-2.5 right-2.5 w-[96px]'"
+        :class="insetLeft ? 'bottom-[calc(1rem+var(--map-inset-b))] w-[132px]' : 'top-2.5 right-[calc(0.625rem+var(--map-inset-r))] w-[96px] [@media(orientation:landscape)_and_(max-height:500px)]:hidden'"
         :style="insetLeft ? { left: `${insetLeft}px` } : undefined"
       />
     </Transition>

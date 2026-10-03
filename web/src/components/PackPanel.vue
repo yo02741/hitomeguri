@@ -37,7 +37,7 @@ const sourceLabel = computed(() => {
 <template>
   <section
     :data-pref="item.p"
-    class="flex h-full flex-col overflow-y-auto overscroll-contain bg-paper text-ink"
+    class="flex h-full flex-col overflow-y-auto overscroll-contain bg-paper text-ink max-lg:max-h-[60dvh]"
     :style="{ '--pack': `var(--color-t-${def?.color ?? 'major'})` }"
     aria-label="擴充包"
   >

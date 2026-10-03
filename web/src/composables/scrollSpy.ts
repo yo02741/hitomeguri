@@ -10,7 +10,7 @@ export interface NavItem {
 }
 
 /** 最近的可捲動祖先（App 的 <main> 或頁面自己的捲動容器） */
-function scrollParent(el: HTMLElement | null): HTMLElement | null {
+export function scrollParent(el: HTMLElement | null): HTMLElement | null {
   for (let n = el?.parentElement ?? null; n; n = n.parentElement) {
     const y = getComputedStyle(n).overflowY
     if (y === 'auto' || y === 'scroll') return n
@@ -20,7 +20,8 @@ function scrollParent(el: HTMLElement | null): HTMLElement | null {
 
 /**
  * 段落目錄的捲動連動（旅前準備的左側目錄）：捲到哪一段，目錄就標哪一段。
- * ids 依文件順序（含子段落）；段落標題捲過容器頂端 offset px 內就算進入。捲到底時標最後一段。
+ * ids 依文件順序（含子段落）；段落標題捲過容器頂端 offset px 內就算進入。捲過、而且捲到底時標最後一段
+ * （資料還沒到時頁面很短，一開始就「在底部」，這時仍標第一段）。內容高度變了會重新判斷。
  * go(id) 平滑捲到該段並把網址 hash 設成 #id；捲動途中目錄直接停在目標，不跟著閃過中間的段落。
  */
 export function useScrollSpy(root: Ref<HTMLElement | null>, ids: () => string[], offset = 96) {
@@ -30,6 +31,8 @@ export function useScrollSpy(root: Ref<HTMLElement | null>, ids: () => string[],
   let lock: string | null = null
   let unlockTimer = 0
   let frame = 0
+  // 資料到了、圖片載入後內容會變高，段落位置跟著變
+  const resize = typeof ResizeObserver === 'undefined' ? null : new ResizeObserver(() => onScroll())
 
   function update() {
     frame = 0
@@ -41,7 +44,8 @@ export function useScrollSpy(root: Ref<HTMLElement | null>, ids: () => string[],
       const el = document.getElementById(id)
       if (el && el.getBoundingClientRect().top - top <= offset) current = id
     }
-    if (container.scrollTop + container.clientHeight >= container.scrollHeight - 2) current = list[list.length - 1] ?? current
+    const { scrollTop, clientHeight, scrollHeight } = container
+    if (scrollTop > 0 && scrollTop + clientHeight >= scrollHeight - 2) current = list[list.length - 1] ?? current
     active.value = current
   }
   function onScroll() {
@@ -64,6 +68,7 @@ export function useScrollSpy(root: Ref<HTMLElement | null>, ids: () => string[],
   }
 
   function detach() {
+    resize?.disconnect()
     container?.removeEventListener('scroll', onScroll)
     container?.removeEventListener('scrollend', unlock)
     container = null
@@ -76,6 +81,7 @@ export function useScrollSpy(root: Ref<HTMLElement | null>, ids: () => string[],
       container = scrollParent(el)
       container?.addEventListener('scroll', onScroll, { passive: true })
       container?.addEventListener('scrollend', unlock)
+      if (el) resize?.observe(el)
       update()
     },
     { immediate: true, flush: 'post' },

@@ -5,7 +5,7 @@ import { useFloating } from '../composables/floating'
 
 // 行程停留點在觸控裝置上的「⋯」選單（TripStopList）：往前、往後、從行程移除。
 // 寫法照 UserMenu：role=menu、方向鍵移動、Esc 收起並把焦點還給「⋯」鈕。面板 Teleport 到 body，避開行程欄的捲動區。
-const props = defineProps<{ name: string; first: boolean; last: boolean }>()
+const props = defineProps<{ name: string; first: boolean; last: boolean; disabled?: boolean }>()
 const emit = defineEmits<{ shift: [delta: -1 | 1]; remove: [] }>()
 
 const trigger = ref<HTMLButtonElement | null>(null)
@@ -55,7 +55,8 @@ function run(fn: () => void, returnFocus = true) {
   <button
     ref="trigger"
     type="button"
-    class="grid size-tap shrink-0 place-items-center rounded-control text-sub hover:bg-surface hover:text-ink active:translate-y-px"
+    class="grid size-tap shrink-0 place-items-center rounded-control text-sub hover:not-disabled:bg-surface hover:not-disabled:text-ink disabled:cursor-not-allowed disabled:opacity-40 active:not-disabled:translate-y-px"
+    :disabled="disabled"
     :aria-label="`${props.name} 的操作`"
     aria-haspopup="menu"
     :aria-expanded="open"

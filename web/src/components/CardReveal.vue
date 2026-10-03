@@ -223,7 +223,7 @@ onBeforeUnmount(() => {
       <div class="rays"></div>
       <span v-if="landed" class="ring"></span>
     </div>
-    <div class="absolute inset-0 grid place-items-center">
+    <div class="stage absolute inset-0 grid place-items-center">
       <div ref="fly" class="relative">
         <div ref="spin" class="relative [transform-style:preserve-3d]">
           <SpotCard :card="r.face" :rarity="r.rarity" :label="r.label" :number="r.number" :visited="landed" :visited-on="visitedOn" size="lg" :variant="r.variant" />
@@ -232,9 +232,9 @@ onBeforeUnmount(() => {
           </div>
         </div>
         <!-- 這個縣第一次去：縣的紀念章蓋在卡片左下 -->
-        <PrefStamp v-if="landed && r.firstInPref" :pref="r.face.pref" :date="visitedOn" class="first-stamp absolute -bottom-5 z-10 w-[148px]" />
+        <PrefStamp v-if="landed && r.firstInPref" :pref="r.face.pref" :date="visitedOn" class="first-stamp absolute -bottom-5 z-10" />
         <!-- 這次達成的成就：成就章蓋在卡片右上 -->
-        <div v-if="landed && seal" class="seal-slam absolute -top-7 z-10 w-[120px]" :class="r.firstInPref ? 'after-stamp' : ''">
+        <div v-if="landed && seal" class="seal-slam absolute -top-7 z-10" :class="r.firstInPref ? 'after-stamp' : ''">
           <AchvSeal :def="seal" status="done" :at="sealAt" class="w-full" />
         </div>
       </div>
@@ -323,10 +323,19 @@ onBeforeUnmount(() => {
     opacity: 0;
   }
 }
+/* 卡寬：最寬 320px，也依高度算（手機打橫時整張卡放得下，上下留給兩個章）。
+   卡片用 em 排版，寬 20em；兩個章跟著卡寬等比例縮放 */
+.stage {
+  --cw: min(320px, calc(100vw - 32px), calc((100dvh - 64px) * 5 / 7));
+}
+.stage :deep(.card-scene) {
+  font-size: calc(var(--cw) / 20);
+}
 /* 縣的紀念章：從上方重重蓋下、微微回彈，墨色帶點透明（像蓋在卡上）。
-   卡片 320px 寬；比 390px 窄的手機往卡片裡收，斜放的章不超出畫面 */
+   比卡片寬 + 70px 窄的畫面往卡片裡收，斜放的章不超出畫面 */
 .first-stamp {
-  left: max(-36px, calc((320px - 100vw) / 2 + 20px));
+  width: calc(var(--cw) * 0.4625);
+  left: max(calc(var(--cw) * -0.1125), calc((var(--cw) - 100vw) / 2 + 20px));
   opacity: 0.92;
   filter: drop-shadow(0 1px 0 color-mix(in oklab, var(--region-paper) 70%, transparent));
   transform: rotate(-14deg);
@@ -348,7 +357,8 @@ onBeforeUnmount(() => {
 }
 /* 成就章：和縣的紀念章對稱，從上方蓋下、停在右傾；有縣的紀念章時晚一點蓋。窄手機一樣往卡片裡收 */
 .seal-slam {
-  right: max(-36px, calc((320px - 100vw) / 2 + 12px));
+  width: calc(var(--cw) * 0.375);
+  right: max(calc(var(--cw) * -0.1125), calc((var(--cw) - 100vw) / 2 + 12px));
   opacity: 0.94;
   filter: drop-shadow(0 1px 0 color-mix(in oklab, var(--region-paper) 70%, transparent));
   transform: rotate(8deg);

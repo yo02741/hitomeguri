@@ -3,8 +3,10 @@ import { ref } from 'vue'
 import { useRoute } from 'vue-router'
 
 import { useIndicator } from '../composables/indicator'
+import { typing } from '../services/keyboard'
 
-// 手機底部分頁（UX-FLOW.md §1.1）：探索／行程／紀錄；「我的」在頂部右側頭像。
+// 手機與平板（<1024）的底部分頁（UX-FLOW.md §1.1）：探索／行程／紀錄；「我的」在頂部右側頭像。
+// 觸控裝置上打字時收起，不蓋住輸入框（services/keyboard.ts）。
 const route = useRoute()
 
 const tabs = [
@@ -19,8 +21,9 @@ const { rect, animate } = useIndicator(nav, () => nav.value?.querySelector<HTMLE
 
 <template>
   <nav
+    v-show="!typing"
     ref="nav"
-    class="app-tabbar relative box-content flex h-14 shrink-0 border-t border-line bg-header pb-[env(safe-area-inset-bottom)] md:hidden print:hidden [view-transition-name:app-tabbar]"
+    class="app-tabbar relative box-content flex h-14 shrink-0 border-t border-line bg-header pb-[env(safe-area-inset-bottom)] lg:hidden print:hidden [view-transition-name:app-tabbar]"
     aria-label="主要"
   >
     <span
