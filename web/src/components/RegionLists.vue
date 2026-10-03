@@ -1,11 +1,12 @@
 <script setup lang="ts">
-import { computed, ref, watch } from 'vue'
+import { computed, watch } from 'vue'
 
 import { CATEGORY_GROUPS, categoryGroup } from '../data/categories'
 import { regionOf } from '../data/regions'
 import { mapThumbUrl, type MapSpot } from '../services/bundles'
 import { useCatalogStore } from '../stores/catalog'
 import { useExploreStore } from '../stores/explore'
+import { spotRef } from '../stores/marks'
 import CollapseChevron from './CollapseChevron.vue'
 import SkeletonRows from './SkeletonRows.vue'
 import VisitedToggle from './VisitedToggle.vue'
@@ -36,13 +37,15 @@ const sections = computed(() =>
 watch(sections, (list) => {
   if (explore.category && !list.some((g) => g.key === explore.category)) explore.category = null
 })
-const shown = computed(() =>
-  explore.category ? sections.value.filter((g) => g.key === explore.category) : sections.value,
-)
+// 篩選只切換各段的顯示（v-show），不重建清單：切回「不限」時幾百列不用重畫（手機版計畫第二階段 3）
+const shown = (key: string) => !explore.category || explore.category === key
 
 const isOpen = (key: string) => !explore.collapsed.includes(`cat:${key}`)
 
-const failed = ref(new Set<string>())
+// 照片讀不到就把那張藏起來（露出底色）；不用響應式狀態，離線時一次幾十張讀不到也不會整份清單重畫幾十次
+function hidePhoto(e: Event) {
+  ;(e.target as HTMLElement).hidden = true
+}
 </script>
 
 <template>
@@ -96,7 +99,7 @@ const failed = ref(new Set<string>())
       class="scroll-quiet flex min-h-0 flex-col overflow-y-auto overscroll-contain pr-1.5 pb-1 pl-1.5"
       @mouseleave="emit('highlight', null)"
     >
-      <template v-for="g in shown" :key="g.key">
+      <div v-for="g in sections" v-show="shown(g.key)" :key="g.key" class="contents">
         <h3 class="sticky top-0 z-[1] shrink-0 bg-paper">
           <button
             type="button"
@@ -124,14 +127,14 @@ const failed = ref(new Set<string>())
           >
             <span class="size-11 shrink-0 overflow-hidden rounded-control bg-placeholder">
               <img
-                v-if="s.i && !failed.has(s.i)"
+                v-if="s.i"
                 data-photo
                 :src="mapThumbUrl(s.i)"
                 alt=""
                 loading="lazy"
                 referrerpolicy="no-referrer"
                 class="size-full object-cover"
-                @error="failed = new Set(failed).add(s.i)"
+                @error="hidePhoto"
               />
             </span>
             <span class="flex min-w-0 flex-col">
@@ -140,10 +143,10 @@ const failed = ref(new Set<string>())
             </span>
             <span v-if="s.c && g.tags.length > 1" class="ml-auto shrink-0 text-caption text-sub">{{ s.c }}</span>
           </button>
-          <VisitedToggle :spot="{ id: s.id, pref, name: s.n }" />
+          <VisitedToggle :spot="spotRef(s.id, pref, s.n)" />
         </div>
-      </template>
-      <p v-if="!shown.length" class="px-1.5 py-3 text-body-sm text-sub">資料準備中。</p>
+      </div>
+      <p v-if="!sections.length" class="px-1.5 py-3 text-body-sm text-sub">資料準備中。</p>
     </div>
 
   </section>

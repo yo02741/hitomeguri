@@ -57,20 +57,31 @@ interface Group {
   items: CollectionCard[]
   pending: number
 }
+// 各縣的卡一律排出來，篩選只切換 hidden（手機版計畫第二階段 3）：切回「全部」時不用重建上百張卡
 const groups = computed<Group[]>(() => {
   const by = new Map<string, CollectionCard[]>()
   for (const e of cards.value) {
-    if (!matches[filter.value](e)) continue
     const list = by.get(e.face.pref) ?? []
     list.push(e)
     by.set(e.face.pref, list)
   }
   return regions.flatMap((r) => {
     const items = (by.get(r.prefecture) ?? []).sort((a, b) => b.score - a.score || a.face.id.localeCompare(b.face.id))
-    const pending = filter.value === 'all' ? (pendingByPref.value.get(r.prefecture) ?? 0) : 0
+    const pending = pendingByPref.value.get(r.prefecture) ?? 0
     return items.length || pending ? [{ region: r, items, pending }] : []
   })
 })
+const isShown = (e: CollectionCard) => matches[filter.value](e)
+/** 每縣符合篩選的張數；「全部」時沒有卡的縣顯示還在讀的張數 */
+const shownCount = computed(() => {
+  const m = new Map<string, number>()
+  for (const g of groups.value) {
+    const n = g.items.filter(isShown).length
+    m.set(g.region.prefecture, filter.value === 'all' ? n || g.pending : n)
+  }
+  return m
+})
+const anyShown = computed(() => [...shownCount.value.values()].some((n) => n > 0))
 // 地圖上每縣的張數；點縣跳到那一縣
 const perPref = computed(() => {
   const m = new Map<string, number>()
@@ -98,7 +109,7 @@ const above = computed(() => {
   const i = laidOut.value ? groups.value.findIndex((g) => g.region.prefecture === laidOut.value) : -1
   return new Set(groups.value.slice(0, Math.max(0, i)).map((g) => g.region.prefecture))
 })
-const flat = computed(() => groups.value.flatMap((g) => g.items))
+const flat = computed(() => groups.value.flatMap((g) => g.items.filter(isShown)))
 
 // 放大檢視：依目前的篩選左右切換；打開時載入該縣的詳細資料換上簡介與照片出處
 const openId = ref<string | null>(null)
@@ -215,15 +226,24 @@ function onCardKey(e: KeyboardEvent, id: string) {
         </button>
       </div>
 
-      <section v-for="g in groups" :key="g.region.prefecture" :data-pref="g.region.prefecture" class="flex flex-col gap-4" :class="{ 'lay-out': above.has(g.region.prefecture) }" :aria-label="g.region.name.ja">
+      <section v-for="g in groups" :key="g.region.prefecture" :hidden="!shownCount.get(g.region.prefecture)" :data-pref="g.region.prefecture" class="flex flex-col gap-4" :class="{ 'lay-out': above.has(g.region.prefecture) }" :aria-label="g.region.name.ja">
         <h2 class="flex items-center gap-2.5">
           <span class="h-5 w-1.5 rounded-full bg-region-strong" aria-hidden="true"></span>
           <span lang="ja" class="text-h3 font-black tracking-[2px]">{{ g.region.name.ja }}</span>
           <span class="font-latin text-label font-semibold tracking-[0.2em] text-sub uppercase">{{ g.region.name.romaji }}</span>
-          <span class="ml-auto font-latin text-body-sm text-sub">{{ g.items.length || g.pending }}</span>
+          <span class="ml-auto font-latin text-body-sm text-sub">{{ shownCount.get(g.region.prefecture) }}</span>
         </h2>
         <ul class="grid grid-cols-2 gap-x-4 gap-y-5 sm:grid-cols-3 lg:grid-cols-4">
-          <li v-for="(e, i) in g.items" :key="e.face.id" class="deal relative @container" :class="{ 'deal-in': i < 12 }" :style="{ '--i': i }">
+          <!-- 發牌只播一次：播完拿掉 deal-in，篩選後再顯示時不重播 -->
+          <li
+            v-for="(e, i) in g.items"
+            :key="e.face.id"
+            :hidden="!isShown(e)"
+            class="deal relative @container"
+            :class="{ 'deal-in': i < 12 }"
+            :style="{ '--i': i }"
+            @animationend.self="($event.currentTarget as HTMLElement).classList.remove('deal-in')"
+          >
             <div
               role="button"
               tabindex="0"
@@ -239,12 +259,12 @@ function onCardKey(e: KeyboardEvent, id: string) {
               <span class="whitespace-nowrap font-latin">{{ e.variants.length }} / {{ e.variantTotal }}</span> 種
             </p>
           </li>
-          <li v-for="n in g.pending" :key="`p${n}`" class="skeleton aspect-[5/7] rounded-[10px]" aria-hidden="true"></li>
+          <li v-for="n in filter === 'all' ? g.pending : 0" :key="`p${n}`" class="skeleton aspect-[5/7] rounded-[10px]" aria-hidden="true"></li>
         </ul>
       </section>
 
       <p v-if="marks.loaded && !entries.length" class="flex flex-wrap items-center gap-x-3 text-body-sm text-sub">還沒有去過的地方<RouterLink to="/" class="inline-flex min-h-tap items-center font-bold text-region-strong active:not-disabled:translate-y-px">到地圖找地方</RouterLink></p>
-      <p v-else-if="cards.length && !groups.length" class="flex flex-wrap items-center gap-x-3 text-body-sm text-sub">
+      <p v-else-if="cards.length && !anyShown" class="flex flex-wrap items-center gap-x-3 text-body-sm text-sub">
         沒有符合的卡片
         <button type="button" class="inline-flex min-h-tap items-center font-bold text-region-strong active:not-disabled:translate-y-px" @click="filter = 'all'">看全部</button>
       </p>

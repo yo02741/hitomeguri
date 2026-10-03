@@ -6,7 +6,7 @@ import { regions } from '../data/regions'
 import type { PackItem } from '../services/bundles'
 import { useCatalogStore } from '../stores/catalog'
 import { useExploreStore } from '../stores/explore'
-import { useMarksStore } from '../stores/marks'
+import { spotRef, useMarksStore } from '../stores/marks'
 import { useUserStore } from '../stores/user'
 import CollapseChevron from './CollapseChevron.vue'
 import SkeletonRows from './SkeletonRows.vue'
@@ -56,7 +56,7 @@ function detail(it: PackItem): string {
 const isSelected = (it: PackItem) => !!props.selectedId && (it.id === props.selectedId || it.s === props.selectedId)
 
 // 「去過」記在對到的景點上（城），沒有的記在這個點
-const visitRef = (it: PackItem) => ({ id: it.s ?? it.id, pref: it.p, name: it.n })
+const visitRef = (it: PackItem) => spotRef(it.s ?? it.id, it.p, it.n)
 const visitedCount = computed(() => rows.value.filter((it) => marks.markOf(it.s ?? it.id)?.visited).length)
 </script>
 

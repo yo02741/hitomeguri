@@ -33,6 +33,19 @@ export interface SpotRef {
   name: string
 }
 
+const refs = new Map<string, SpotRef>()
+/**
+ * 同一個景點每次拿到同一個物件：長清單每列的 VisitedToggle 用它當 prop，
+ * 清單重畫（篩選、選取）時 prop 沒變，幾百個去過鈕就不必跟著重畫。
+ */
+export function spotRef(id: string, pref: string, name: string): SpotRef {
+  const r = refs.get(id)
+  if (r && r.pref === pref && r.name === name) return r
+  const next = { id, pref, name }
+  refs.set(id, next)
+  return next
+}
+
 // firestore.rules 的上限
 export const LIST_NAME_MAX = 80
 const LISTS_PER_SPOT_MAX = 50

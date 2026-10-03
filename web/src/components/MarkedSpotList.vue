@@ -3,6 +3,7 @@ import { RouterLink } from 'vue-router'
 
 import type { MarkedSpot } from '../composables/markedSpots'
 import { regionOf } from '../data/regions'
+import { spotRef } from '../stores/marks'
 import RegionChip from './RegionChip.vue'
 import SkeletonRows from './SkeletonRows.vue'
 import VisitedToggle from './VisitedToggle.vue'
@@ -57,7 +58,7 @@ const emit = defineEmits<{ remove: [row: MarkedSpot]; toggle: [row: MarkedSpot] 
           <span v-if="r.missing">已不在目錄</span>
         </span>
       </component>
-      <VisitedToggle v-if="visitToggle" :spot="{ id: r.id, pref: r.pref, name: r.name }" />
+      <VisitedToggle v-if="visitToggle" :spot="spotRef(r.id, r.pref, r.name)" />
       <!-- 去過與移除之間隔開並加一條分隔線，不會一不小心點到移除（移除後底部可以復原） -->
       <span v-if="visitToggle && removeLabel" class="mx-1.5 h-6 w-px shrink-0 bg-line" aria-hidden="true" />
       <button

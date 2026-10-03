@@ -874,7 +874,9 @@ function positionHover() {
   hover.value = { ...h, x: p.x, y: p.y }
 }
 
-function thumbFailed(h: Hover) {
+function thumbFailed(h: Hover | null) {
+  // 照片讀不到的時候游標可能已經離開（hover 已清掉）
+  if (!h) return
   if (h.thumb) failedThumbs.add(h.thumb)
   hover.value = { ...h, thumb: undefined }
 }

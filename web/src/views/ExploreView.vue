@@ -25,6 +25,7 @@ import {
   prefectureMainBounds,
   prefectureShape,
 } from '../services/geo'
+import { afterPaint } from '../services/idle'
 import type { SearchHit } from '../services/search'
 import { trackSplash } from '../services/splash'
 import { currentTimed } from '../services/timed'
@@ -62,12 +63,20 @@ const available = computed(() => Object.keys(catalog.index?.prefectures ?? {}))
 const allSpots = computed<MapSpot[]>(() =>
   available.value.flatMap((p) => catalog.mapSpots[p] ?? catalog.featured[p] ?? []),
 )
+// 類型篩選：清單與按鈕先換（RegionLists 只切換顯示），地圖等那個畫面畫出來之後才跟上。
+// 地圖的點是分群（cluster）的來源，篩選要換掉資料才會重新分群（圖層的 filter、feature-state 只改得到畫不畫，
+// 群的數字還是全部），所以仍然 setData，只是不擋住按鈕的回應（手機版計畫第二階段 3）
+const mapCategory = ref(explore.category)
+watch(
+  () => explore.category,
+  () => afterPaint(() => (mapCategory.value = explore.category)),
+)
 // 顯示規則：全部大點（可依類型篩選；開啟擴充包時不篩選，變淡當底圖）
 const filteredSpots = computed(() =>
   allSpots.value.filter((s) => {
     if (s.k !== 'major') return false
     if (explore.onlyFavorites && !explore.pack) return Boolean(marks.marks[s.id]?.favorite)
-    return explore.pack || !explore.category || categoryGroup(s.c) === explore.category
+    return explore.pack || !mapCategory.value || categoryGroup(s.c) === mapCategory.value
   }),
 )
 // 選到的景點被篩掉時也要畫出來。選到的本來就在清單裡時沿用同一個陣列，
@@ -698,10 +707,11 @@ function onMoveEnd(view: MapViewState) {
             </h2>
             <TimedList :items="timedHere.slice(0, 3)" />
           </section>
-          <!-- 擴充包開著時清單換成擴充包清單；手機在上方 40dvh，打開景點卡片或地點標記時收起 -->
-          <template v-if="listShown">
+          <!-- 擴充包開著時清單換成擴充包清單；手機在上方 40dvh，打開景點卡片或地點標記時收起。
+               收起用 v-show：關掉卡片時不重建幾百列，捲動位置也留著 -->
           <PackList
             v-if="explore.pack"
+            v-show="listShown"
             :pref="pref"
             :selected-id="selectedId"
             class="max-lg:max-h-[40dvh]"
@@ -710,6 +720,7 @@ function onMoveEnd(view: MapViewState) {
           />
           <RegionLists
             v-else
+            v-show="listShown"
             :pref="pref"
             :spots="prefSpots"
             :state="catalog.mapState(pref)"
@@ -718,7 +729,6 @@ function onMoveEnd(view: MapViewState) {
             @select="select"
             @highlight="(id) => mapRef?.highlight(id)"
           />
-          </template>
           <!-- 深度探索入口：左欄最下方獨立一顆，和清單分開（使用者決定） -->
           <RouterLink
             :to="`/region/${pref}`"
@@ -738,15 +748,16 @@ function onMoveEnd(view: MapViewState) {
             </svg>
           </RouterLink>
         </template>
-        <template v-else-if="listShown">
+        <template v-else>
           <PackList
             v-if="explore.pack"
+            v-show="listShown"
             :selected-id="selectedId"
             class="max-lg:max-h-[40dvh]"
             @select="select"
             @highlight="(id) => mapRef?.highlight(id)"
           />
-          <HomeSidebar v-else :available="available" class="max-lg:max-h-[40dvh]" />
+          <HomeSidebar v-else v-show="listShown" :available="available" class="max-lg:max-h-[40dvh]" />
         </template>
       </div>
 
