@@ -3,6 +3,7 @@ import { computed, onBeforeUnmount, onMounted, ref } from 'vue'
 
 import { useModal } from '../composables/modal'
 import { useTilt } from '../composables/tilt'
+import { narrow } from '../services/viewport'
 import type { CardFace, Rarity } from '../services/card'
 import type { Variant } from '../services/cardVariants'
 import NewTag from './NewTag.vue'
@@ -12,7 +13,7 @@ import SpotCard from './SpotCard.vue'
 // 十連抽（DESIGN.md §7.19b）：收集冊從還沒收齊的景點抽十種（都是新的，標 NEW）。十張卡背面朝上一次排成 5×2，發完牌後由左上依序自動翻開；
 // 稀有的（銀箔、金箔、特別全景）翻開前停一下、翻開後背後放光。
 // 「全部翻開」一次翻完；點還沒翻的那張先翻那張；翻開的點一下放大看。
-// 版面用視窗寬高算卡寬，整個畫面放得下，不出捲軸。
+// 版面用視窗寬高算卡寬，整個畫面放得下，不出捲軸。手機（<640）排成 3 欄，最後一列置中（手機版計畫第二階段 26）。
 export interface Pull {
   face: CardFace
   rarity: Rarity
@@ -95,6 +96,17 @@ onBeforeUnmount(() => {
   timers = []
 })
 
+// 每張卡的位置：發牌從整排的中央飛過去，dx、dy 是離中央幾欄、幾列（最後一列不滿時置中）
+const cols = computed(() => (narrow.value ? 3 : 5))
+function place(i: number) {
+  const c = cols.value
+  const n = props.pulls.length
+  const row = Math.floor(i / c)
+  const inRow = Math.min(c, n - row * c)
+  const rows = Math.ceil(n / c)
+  return { '--i': i, '--dx': (inRow - 1) / 2 - (i % c), '--dy': (rows - 1) / 2 - row }
+}
+
 const zoomed = computed(() => (zoom.value === null ? null : props.pulls[zoom.value]))
 </script>
 
@@ -109,13 +121,13 @@ const zoomed = computed(() => (zoom.value === null ? null : props.pulls[zoom.val
     <div class="ten relative flex size-full flex-col items-center justify-center gap-[2.4vh] overflow-hidden bg-ink/90 px-4 backdrop-blur-sm">
       <p class="text-center text-h3 font-black text-paper">{{ title }}</p>
 
-      <ol class="grid grid-cols-[repeat(5,var(--cw))] gap-(--g)" aria-label="十張卡">
+      <ol class="gap-(--g)" :class="narrow ? 'flex w-[calc(3*var(--cw)+2*var(--g))] flex-wrap justify-center' : 'grid grid-cols-[repeat(5,var(--cw))]'" aria-label="十張卡">
         <li
           v-for="(p, i) in pulls"
           :key="i"
-          class="slot relative aspect-[5/7] @container"
+          class="slot relative aspect-[5/7] w-(--cw) @container"
           :class="{ 'is-open': open[i], 'is-rare': rare(p.variant) }"
-          :style="{ '--i': i, '--col': i % 5, '--row': Math.floor(i / 5) }"
+          :style="place(i)"
         >
           <span v-if="open[i] && glow(p.variant)" class="glow pointer-events-none absolute" :class="`glow-${glow(p.variant)}`" :data-pref="p.face.pref" aria-hidden="true"></span>
           <button
@@ -161,6 +173,12 @@ const zoomed = computed(() => (zoom.value === null ? null : props.pulls[zoom.val
   --cw: min(190px, calc((100vw - 32px - 4 * var(--g)) / 5), calc((100dvh - 190px - var(--g)) / 2 * 5 / 7));
   animation: ten-in 0.2s var(--ease-out-soft) both;
 }
+/* 手機：橫向 3 張、縱向 4 列 */
+@media (max-width: 639px) {
+  .ten {
+    --cw: min(190px, calc((100vw - 32px - 2 * var(--g)) / 3), calc((100dvh - 190px - 3 * var(--g)) / 4 * 5 / 7));
+  }
+}
 @keyframes ten-in {
   from {
     opacity: 0;
@@ -174,7 +192,7 @@ const zoomed = computed(() => (zoom.value === null ? null : props.pulls[zoom.val
 @keyframes deal {
   from {
     opacity: 0;
-    transform: translate(calc((2 - var(--col)) * (var(--cw) + var(--g))), calc((0.5 - var(--row)) * (var(--cw) * 1.4 + var(--g)) + 30vh)) rotate(-8deg) scale(0.8);
+    transform: translate(calc(var(--dx) * (var(--cw) + var(--g))), calc(var(--dy) * (var(--cw) * 1.4 + var(--g)) + 30vh)) rotate(-8deg) scale(0.8);
   }
 }
 .flip {

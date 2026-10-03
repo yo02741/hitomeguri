@@ -17,6 +17,7 @@ import SpotCard from './SpotCard.vue'
 
 // 收集卡放大檢視（DESIGN.md §7.19）：畫面中央一張大卡，點卡片翻面；手機可以用傾斜角度讓卡片轉動。
 // 收集冊裡可以左右切換上一張、下一張（方向鍵、左右滑）。Esc、點背景或「關閉」離開（原生 <dialog>，composables/modal.ts）。
+// 手機（<640）「關閉」在右上角；觸控裝置點卡片翻面，沒有「背面」鈕（手機版計畫第二階段 27）。
 // 去過的景點可以「抽一張」（用一張抽獎券，只抽還沒有的）；新拿到還沒看過的樣式標 NEW。
 // 收集到兩種以上時可以把目前這種設為收集冊的封面（stores/cards.ts）。
 // 打開時焦點在卡片上：Space、Enter 翻面。
@@ -165,7 +166,7 @@ onBeforeUnmount(() => document.removeEventListener('keydown', onKey))
     >
       <div
         data-reduce="fade"
-        class="viewer flex size-full flex-col items-center justify-center gap-5 bg-ink/75 p-4"
+        class="viewer relative flex size-full flex-col items-center justify-center gap-5 bg-ink/75 p-4"
         @click.self="emit('close')"
       >
         <div class="flex items-center gap-3">
@@ -270,7 +271,8 @@ onBeforeUnmount(() => document.removeEventListener('keydown', onKey))
               {{ missing ? '抽一張' : '已收齊' }}
               <span v-if="missing" class="font-latin text-caption font-semibold text-sub">券 {{ wallet.left }}</span>
             </button>
-            <button type="button" class="h-10 rounded-full bg-paper px-4 text-label font-bold text-ink active:not-disabled:translate-y-px pointer-coarse:h-tap" @click="flipped = !flipped">
+            <!-- 觸控裝置點卡片就會翻面，不另外放「背面」 -->
+            <button v-if="!touch" type="button" class="h-10 rounded-full bg-paper px-4 text-label font-bold text-ink active:not-disabled:translate-y-px pointer-coarse:h-tap" @click="flipped = !flipped">
               {{ flipped ? '正面' : '背面' }}
             </button>
             <RouterLink
@@ -280,11 +282,19 @@ onBeforeUnmount(() => document.removeEventListener('keydown', onKey))
             >
               地圖
             </RouterLink>
-            <button type="button" class="h-10 rounded-full bg-paper px-4 text-label font-bold text-ink active:not-disabled:translate-y-px pointer-coarse:h-tap" @click="emit('close')">
+            <button type="button" class="h-10 rounded-full bg-paper px-4 text-label font-bold text-ink active:not-disabled:translate-y-px max-sm:hidden pointer-coarse:h-tap" @click="emit('close')">
               關閉
             </button>
           </div>
         </div>
+        <!-- 手機（<640）：「關閉」在右上角，按鈕列放得進一行 -->
+        <button
+          type="button"
+          class="absolute top-[max(0.75rem,env(safe-area-inset-top))] right-[max(0.75rem,env(safe-area-inset-right))] flex h-10 items-center rounded-full bg-paper px-4 text-label font-bold text-ink active:not-disabled:translate-y-px sm:hidden pointer-coarse:h-tap"
+          @click="emit('close')"
+        >
+          關閉
+        </button>
       </div>
     </dialog>
   </Teleport>
