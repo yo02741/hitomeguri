@@ -203,6 +203,17 @@ function distance(m: number): string {
         </span>
       </div>
       <!-- 主題列暫停（PLAN.md §5：主題層暫停），資料保留 -->
+      <a
+        :href="mapsUrl"
+        target="_blank"
+        rel="noopener"
+        class="flex min-h-tap items-center justify-between border-b border-line-soft py-2.5 text-body-sm font-bold text-ink no-underline hover:text-sub active:text-sub lg:hidden"
+      >
+        在 Google Maps 開啟
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M7 17L17 7M9 7h8v8" />
+        </svg>
+      </a>
     </div>
 
     <figure v-if="spot.summary" class="mx-5 mt-3.5 flex flex-col gap-1">
@@ -243,13 +254,14 @@ function distance(m: number): string {
       <a v-for="s in spot.sources" :key="s.url" :href="s.url" target="_blank" rel="noopener" class="text-sub">{{ sourceLabel(s.url) }}</a>
     </div>
 
-    <div class="mt-auto flex flex-col gap-2 border-t border-line px-5 pt-3.5 pb-5">
+    <!-- 手機：收藏・去過・清單・行程貼在 sheet 底部，不必先捲到最下面；Google Maps 移到上面的資訊列 -->
+    <div class="mt-auto flex flex-col gap-2 border-t border-line px-5 pt-3.5 pb-5 max-lg:sticky max-lg:bottom-0 max-lg:z-[2] max-lg:bg-paper max-lg:px-3 max-lg:pt-2 max-lg:pb-2">
       <SpotActions v-if="spotRef" :spot="spotRef" @stamped="onStamped" />
       <a
         :href="mapsUrl"
         target="_blank"
         rel="noopener"
-        class="flex h-11 grow items-center justify-center rounded-control bg-region-strong px-4 text-body-sm font-bold text-white no-underline active:translate-y-px"
+        class="flex h-11 grow items-center justify-center rounded-control bg-region-strong px-4 text-body-sm font-bold text-white no-underline max-lg:hidden active:translate-y-px"
       >在 Google Maps 開啟</a>
     </div>
     <CardViewer
