@@ -260,6 +260,15 @@
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
   }
+  /* 整頁不捲動：捲的是 App.vue 的 <main> 與各頁自己的捲動區，header 與分頁列不會跟著跑掉。
+   * 下拉不重新整理、不回彈（DESIGN.md §5.2）；內層捲動區自己設 overscroll-contain。列印時照常攤開 */
+  @media screen {
+    html,
+    body {
+      overflow: hidden;
+      overscroll-behavior-y: none;
+    }
+  }
   /* 日文字形：TC 與 JP 的漢字字形不同，日文內容一律標 lang="ja" */
   :lang(ja) {
     font-family: var(--font-ja);
