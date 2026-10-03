@@ -84,7 +84,11 @@ def download(url: str) -> bytes:
     return r.content
 
 
-def photo_review(prefs: list[str], out_dir: Path) -> str:
+def photo_review(prefs: list[str], out_dir: Path, featured: bool = True) -> str:
+    """featured=False：非精選景點（已在 photo_choices.json 審過的跳過）"""
+    from pipeline.photos import load_choices
+
+    decided = load_choices()
     spots: list[SpotPhotos] = []
     meta: dict[str, dict[str, Any]] = {}
     for pref in prefs:
@@ -92,7 +96,7 @@ def photo_review(prefs: list[str], out_dir: Path) -> str:
         for s in data["spots"] if isinstance(data, dict) else data:
             qid = (s.get("external_ids") or {}).get("wikidata")
             imgs = s.get("images") or []
-            if not (qid and s.get("featured") and imgs):
+            if not (qid and bool(s.get("featured")) == featured and imgs) or qid in decided:
                 continue
             main = file_of(imgs[0].get("source_url", ""))
             spots.append(SpotPhotos(qid, pref, s["name"]["ja"], s["name"].get("en") or "", main))
@@ -148,4 +152,5 @@ def photo_review(prefs: list[str], out_dir: Path) -> str:
     (out_dir / "review.json").write_text(
         json.dumps(rows, ensure_ascii=False, indent=1) + "\n", encoding="utf-8"
     )
-    return f"## 照片審核圖\n\n- 精選景點裡要審的：{len(rows)} 個\n"
+    scope = "精選" if featured else "非精選"
+    return f"## 照片審核圖\n\n- {scope}景點裡要審的：{len(rows)} 個\n"
