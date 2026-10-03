@@ -72,8 +72,8 @@ const thisMonth = new Date().getMonth() + 1
 
 <template>
   <div class="flex flex-col gap-4">
-    <!-- 觀測站：文字索引列，選中的加底線（同地圖頁的類型列） -->
-    <nav v-if="stations.length > 1" class="flex flex-wrap gap-x-3.5 gap-y-1 pointer-coarse:-mx-1.5 pointer-coarse:-my-2.5 pointer-coarse:gap-x-0.5 pointer-coarse:gap-y-0" aria-label="觀測地點">
+    <!-- 觀測站：文字索引列，選中的加底線（同地圖頁的類型列）。觸控時每站左右 6px 已隔開，不另加間距：北海道 8 站在 360 寬排得進一行 -->
+    <nav v-if="stations.length > 1" class="flex flex-wrap gap-x-3.5 gap-y-1 pointer-coarse:-mx-1.5 pointer-coarse:-my-2.5 pointer-coarse:gap-x-0 pointer-coarse:gap-y-0" aria-label="觀測地點">
       <button
         v-for="(s, i) in stations"
         :key="s.name"
