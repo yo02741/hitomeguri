@@ -7,16 +7,17 @@ import { type Stop, type StopPos, transitUrl } from '../services/trip'
 import Dropdown from './Dropdown.vue'
 import StopMenu from './StopMenu.vue'
 
-// 行程某一天（或「待排」）的停留點。拖曳排序／換天，另有「移到」選單與上下移動（觸控、鍵盤用）。
-// 觸控裝置上，往前、往後、移除收進「⋯」選單（StopMenu）：24px 的小鈕手指點不到，兩顆 44px 又會擠掉名稱。
+// 行程某一天（或「待排」）的停留點。拖曳排序／換天，另有「移到」選單與上下移動（鍵盤用）。
+// 觸控裝置上沒有拖曳把手（觸控不會觸發 dragstart）與「移到」下拉，排序、換天、移除收進「⋯」選單（StopMenu）：
+// 24px 的小鈕手指點不到，幾顆 44px 又會擠掉名稱。
 // 天與天之間的相鄰停留點放 Google Maps 大眾運輸路線連結。
 const props = defineProps<{
   stops: Stop[]
   /** -1 為待排 */
   day: number
   spots: Map<string, MapSpot>
-  /** 「移到」選單的選項：值為天的索引（-1 待排） */
-  targets: { value: number; label: string }[]
+  /** 「移到」選單的選項：值為天的索引（-1 待排）；hint 是觸控選單裡右邊的日期 */
+  targets: { value: number; label: string; hint?: string }[]
   dropAt: StopPos | null
   focusId?: string | null
   /** 離線時不能修改：拖曳、移到、往前往後、移除都停用 */
@@ -29,6 +30,7 @@ const emit = defineEmits<{
   dragend: []
   move: [from: StopPos, toDay: number]
   shift: [from: StopPos, delta: -1 | 1]
+  edge: [from: StopPos, where: 'first' | 'last']
   remove: [pos: StopPos]
   focus: [spotId: string]
 }>()
@@ -57,15 +59,24 @@ const focusEmpty = ref(false)
 function focusName(spotId: string) {
   list.value?.$el.querySelector<HTMLElement>(`[data-stop="${CSS.escape(spotId)}"]`)?.focus()
 }
-async function remove(i: number) {
-  const name = props.stops[i]?.name ?? ''
+/** 停留點要離開這個清單（移除、從選單移到別天）：焦點先交給隔壁，再讀出結果 */
+async function leave(i: number, done: () => void, said: string) {
   const near = props.stops[i + 1] ?? props.stops[i - 1]
   if (near) focusName(near.spot_id)
   else focusEmpty.value = true
-  emit('remove', { day: props.day, idx: i })
+  done()
   announce.value = ''
   await nextTick()
-  announce.value = `已移除 ${name}`
+  announce.value = said
+}
+function remove(i: number) {
+  const name = props.stops[i]?.name ?? ''
+  void leave(i, () => emit('remove', { day: props.day, idx: i }), `已移除 ${name}`)
+}
+function moveTo(i: number, toDay: number) {
+  const name = props.stops[i]?.name ?? ''
+  const to = props.targets.find((t) => t.value === toDay)?.label ?? ''
+  void leave(i, () => emit('move', { day: props.day, idx: i }, toDay), `${name} 已移到 ${to}`)
 }
 watch(
   () => props.stops.length,
@@ -73,6 +84,24 @@ watch(
     if (!focusEmpty.value) return
     focusEmpty.value = false
     if (n === 0) list.value?.$el.querySelector<HTMLElement>('[data-empty]')?.focus()
+  },
+  { flush: 'post' },
+)
+// 換順序時 TransitionGroup 會搬動這一列的 DOM，焦點跟著掉到 <body>：寫入回來、清單重排之後還給原本的鈕（「⋯」、往前、往後）
+let keep: { id: string; label: string } | null = null
+function reorder(i: number, fn: () => void) {
+  const id = props.stops[i]?.spot_id
+  const label = (document.activeElement as HTMLElement | null)?.getAttribute('aria-label')
+  keep = id && label ? { id, label } : null
+  fn()
+}
+watch(
+  () => props.stops.map((s) => s.spot_id).join(','),
+  () => {
+    const k = keep
+    keep = null
+    if (!k || (document.activeElement && document.activeElement !== document.body)) return
+    list.value?.$el.querySelector<HTMLElement>(`#stop-${CSS.escape(k.id)} [aria-label="${CSS.escape(k.label)}"]`)?.focus()
   },
   { flush: 'post' },
 )
@@ -93,7 +122,7 @@ const isDrop = (idx: number) => props.dropAt?.day === props.day && props.dropAt.
     <template v-for="(s, i) in stops" :key="s.spot_id">
       <li
         v-if="day >= 0 && i > 0"
-        class="flex items-center gap-2 py-0.5 pl-9 text-caption text-sub pointer-coarse:py-0"
+        class="flex items-center gap-2 py-0.5 pl-9 text-caption text-sub pointer-coarse:py-0 pointer-coarse:pl-2.5"
         @dragover="onOverRow(i - 1, $event)"
       >
         <a :href="transitUrl(stops[i - 1]!, s)" target="_blank" rel="noopener" class="flex items-center gap-1 text-sub hover:text-ink active:text-ink pointer-coarse:min-h-tap pointer-coarse:pr-3">
@@ -112,7 +141,7 @@ const isDrop = (idx: number) => props.dropAt?.day === props.day && props.dropAt.
         @dragover="onOverRow(i, $event)"
         @dragend="emit('dragend')"
       >
-        <span class="grid w-7 shrink-0 place-items-center text-sub" :class="locked ? 'opacity-40' : 'cursor-grab'" aria-hidden="true">
+        <span class="grid w-7 shrink-0 place-items-center text-sub pointer-coarse:hidden" :class="locked ? 'opacity-40' : 'cursor-grab'" aria-hidden="true">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><circle cx="9" cy="6" r="1.6" /><circle cx="15" cy="6" r="1.6" /><circle cx="9" cy="12" r="1.6" /><circle cx="15" cy="12" r="1.6" /><circle cx="9" cy="18" r="1.6" /><circle cx="15" cy="18" r="1.6" /></svg>
         </span>
         <span v-if="day >= 0" class="grid size-6 shrink-0 place-items-center rounded-full bg-ink font-latin text-caption font-bold text-paper">{{ i + 1 }}</span>
@@ -123,21 +152,22 @@ const isDrop = (idx: number) => props.dropAt?.day === props.day && props.dropAt.
             <span lang="ja" class="ml-1.5 text-caption whitespace-nowrap text-sub">{{ regionOf(s.pref)?.name.ja }}</span>
           </span>
         </button>
-        <Dropdown
-          :model-value="String(day)"
-          :options="targets.map((t) => ({ value: String(t.value), label: t.label }))"
-          :label="`${s.name} 移到`"
-          size="sm"
-          align="end"
-          :disabled="locked"
-          class="w-[5.5rem]"
-          @update:model-value="emit('move', { day, idx: i }, Number($event))"
-        />
+        <span class="contents pointer-coarse:hidden">
+          <Dropdown
+            :model-value="String(day)"
+            :options="targets.map((t) => ({ value: String(t.value), label: t.label }))"
+            :label="`${s.name} 移到`"
+            size="sm"
+            align="end"
+            :disabled="locked"
+            @update:model-value="emit('move', { day, idx: i }, Number($event))"
+          />
+        </span>
         <span class="flex shrink-0 flex-col pointer-coarse:hidden">
-          <button type="button" :aria-label="`${s.name} 往前`" :disabled="locked || i === 0" class="grid h-4 w-6 place-items-center text-sub hover:text-ink disabled:opacity-30 active:not-disabled:translate-y-px" @click="emit('shift', { day, idx: i }, -1)">
+          <button type="button" :aria-label="`${s.name} 往前`" :disabled="locked || i === 0" class="grid h-4 w-6 place-items-center text-sub hover:text-ink disabled:opacity-30 active:not-disabled:translate-y-px" @click="reorder(i, () => emit('shift', { day, idx: i }, -1))">
             <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 15l6-6 6 6" /></svg>
           </button>
-          <button type="button" :aria-label="`${s.name} 往後`" :disabled="locked || i === stops.length - 1" class="grid h-4 w-6 place-items-center text-sub hover:text-ink disabled:opacity-30 active:not-disabled:translate-y-px" @click="emit('shift', { day, idx: i }, 1)">
+          <button type="button" :aria-label="`${s.name} 往後`" :disabled="locked || i === stops.length - 1" class="grid h-4 w-6 place-items-center text-sub hover:text-ink disabled:opacity-30 active:not-disabled:translate-y-px" @click="reorder(i, () => emit('shift', { day, idx: i }, 1))">
             <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6" /></svg>
           </button>
         </span>
@@ -145,7 +175,18 @@ const isDrop = (idx: number) => props.dropAt?.day === props.day && props.dropAt.
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" /></svg>
         </button>
         <span class="hidden pointer-coarse:contents">
-          <StopMenu :name="s.name" :disabled="locked" :first="i === 0" :last="i === stops.length - 1" @shift="emit('shift', { day, idx: i }, $event)" @remove="remove(i)" />
+          <StopMenu
+            :name="s.name"
+            :disabled="locked"
+            :first="i === 0"
+            :last="i === stops.length - 1"
+            :day="day"
+            :targets="targets"
+            @shift="(d) => reorder(i, () => emit('shift', { day, idx: i }, d))"
+            @edge="(w) => reorder(i, () => emit('edge', { day, idx: i }, w))"
+            @move="moveTo(i, $event)"
+            @remove="remove(i)"
+          />
         </span>
       </li>
     </template>

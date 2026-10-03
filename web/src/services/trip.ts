@@ -117,6 +117,20 @@ export function moveStop(
   return next
 }
 
+/** 移到這天（或待排）的最前、最後的目的地（給 moveStop）；已經在那裡就是 null */
+export function edgeTarget(t: Pick<Trip, 'days' | 'unscheduled'>, from: StopPos, where: 'first' | 'last'): StopPos | null {
+  const len = listAt(t, from.day)?.length ?? 0
+  if (where === 'first') return from.idx === 0 ? null : { day: from.day, idx: 0 }
+  return from.idx >= len - 1 ? null : { day: from.day, idx: len }
+}
+
+/** 今天是這趟的第幾天（索引）；沒有出發日或不在期間內是 null */
+export function dayIndexOn(t: Pick<Trip, 'start_date' | 'days'>, today: string): number | null {
+  if (!t.start_date) return null
+  const i = Math.round((parse(today) - parse(t.start_date)) / DAY_MS)
+  return i >= 0 && i < t.days.length ? i : null
+}
+
 export function removeStop(t: Pick<Trip, 'days' | 'unscheduled'>, at: StopPos): Pick<Trip, 'days' | 'unscheduled'> {
   const next = { days: t.days.map((d) => ({ stops: [...d.stops] })), unscheduled: [...t.unscheduled] }
   listAt(next, at.day)?.splice(at.idx, 1)
