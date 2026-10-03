@@ -44,8 +44,9 @@ function onMenuKey(e: KeyboardEvent) {
   else return
   e.preventDefault()
 }
-function run(fn: () => void) {
-  hide()
+// 移除時「⋯」鈕跟著整列消失，焦點不還給它，由 TripStopList 移到隔壁的停留點
+function run(fn: () => void, returnFocus = true) {
+  hide(returnFocus)
   fn()
 }
 </script>
@@ -82,7 +83,7 @@ function run(fn: () => void) {
       <button type="button" role="menuitem" tabindex="-1" :disabled="first" class="flex min-h-tap items-center rounded-control px-3 text-left text-body-sm text-ink hover:bg-surface focus-visible:bg-surface disabled:opacity-40 active:bg-surface" @click="run(() => emit('shift', -1))">往前</button>
       <button type="button" role="menuitem" tabindex="-1" :disabled="last" class="flex min-h-tap items-center rounded-control px-3 text-left text-body-sm text-ink hover:bg-surface focus-visible:bg-surface disabled:opacity-40 active:bg-surface" @click="run(() => emit('shift', 1))">往後</button>
       <div class="mx-1 my-1 border-t border-line-soft" role="none"></div>
-      <button type="button" role="menuitem" tabindex="-1" class="flex min-h-tap items-center rounded-control px-3 text-left text-body-sm text-ink hover:bg-surface focus-visible:bg-surface active:bg-surface" @click="run(() => emit('remove'))">從行程移除</button>
+      <button type="button" role="menuitem" tabindex="-1" class="flex min-h-tap items-center rounded-control px-3 text-left text-body-sm text-ink hover:bg-surface focus-visible:bg-surface active:bg-surface" @click="run(() => emit('remove'), false)">從行程移除</button>
     </div>
   </Teleport>
 </template>

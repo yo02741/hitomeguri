@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { nextTick, ref } from 'vue'
+import { nextTick, ref, watch } from 'vue'
 
 import { regionOf } from '../data/regions'
 import type { MapSpot } from '../services/bundles'
@@ -48,19 +48,39 @@ function onOverList(e: DragEvent) {
 }
 // 移除後讀屏器讀出「已移除 ○○」（列表項目直接消失，沒有別的提示）；同一句再出現時先清空才會再唸
 const announce = ref('')
+// 焦點移到下一個（沒有就上一個）停留點的名稱，按鈕跟著整列消失時才不會掉到 <body>；
+// 這天移空了，等寫入回來、出現「這天還沒有地點」再移過去
+const list = ref<{ $el: HTMLElement } | null>(null)
+const focusEmpty = ref(false)
+function focusName(spotId: string) {
+  list.value?.$el.querySelector<HTMLElement>(`[data-stop="${CSS.escape(spotId)}"]`)?.focus()
+}
 async function remove(i: number) {
   const name = props.stops[i]?.name ?? ''
+  const near = props.stops[i + 1] ?? props.stops[i - 1]
+  if (near) focusName(near.spot_id)
+  else focusEmpty.value = true
   emit('remove', { day: props.day, idx: i })
   announce.value = ''
   await nextTick()
   announce.value = `已移除 ${name}`
 }
+watch(
+  () => props.stops.length,
+  (n) => {
+    if (!focusEmpty.value) return
+    focusEmpty.value = false
+    if (n === 0) list.value?.$el.querySelector<HTMLElement>('[data-empty]')?.focus()
+  },
+  { flush: 'post' },
+)
 const isDrop = (idx: number) => props.dropAt?.day === props.day && props.dropAt.idx === idx
 </script>
 
 <template>
   <!-- 排序、換天時停留點滑到新的位置（DESIGN.md §9） -->
   <TransitionGroup
+    ref="list"
     tag="ol"
     name="stop"
     class="flex min-h-12 flex-col rounded-control"
@@ -94,7 +114,7 @@ const isDrop = (idx: number) => props.dropAt?.day === props.day && props.dropAt.
           <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><circle cx="9" cy="6" r="1.6" /><circle cx="15" cy="6" r="1.6" /><circle cx="9" cy="12" r="1.6" /><circle cx="15" cy="12" r="1.6" /><circle cx="9" cy="18" r="1.6" /><circle cx="15" cy="18" r="1.6" /></svg>
         </span>
         <span v-if="day >= 0" class="grid size-6 shrink-0 place-items-center rounded-full bg-ink font-latin text-caption font-bold text-paper">{{ i + 1 }}</span>
-        <button type="button" class="flex min-w-0 flex-1 flex-col text-left active:not-disabled:translate-y-px" @click="emit('focus', s.spot_id)">
+        <button type="button" :data-stop="s.spot_id" class="flex min-w-0 flex-1 flex-col text-left active:not-disabled:translate-y-px" @click="emit('focus', s.spot_id)">
           <span v-if="spots.get(s.spot_id)?.h" lang="ja" class="truncate text-caption tracking-kana text-sub" :title="spots.get(s.spot_id)?.h">{{ spots.get(s.spot_id)?.h }}</span>
           <span class="line-clamp-2 text-body-sm break-words">
             <span lang="ja" class="font-bold">{{ s.name }}</span>
@@ -129,6 +149,8 @@ const isDrop = (idx: number) => props.dropAt?.day === props.day && props.dropAt.
     <li
       v-if="!stops.length"
       key="empty"
+      data-empty
+      tabindex="-1"
       class="px-2 py-3 text-caption text-sub"
       :class="isDrop(0) ? 'border-t-2 border-region-strong' : ''"
       @dragover.prevent="emit('dragover', { day, idx: 0 })"

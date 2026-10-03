@@ -21,6 +21,7 @@ function play() {
   timers = []
   if (reduced) {
     stage.value = 'open'
+    void focusFirst()
     return
   }
   stage.value = 'turn'
@@ -36,11 +37,13 @@ function open() {
   stage.value = 'open'
   navigator.vibrate?.(props.result.outfit.rarity === 3 ? 24 : 8)
 }
-// 打開後焦點移到第一個按鈕
-watch(stage, async (s) => {
-  if (s !== 'open') return
+// 打開後焦點移到第一個按鈕（穿上）；減少動態時一開始就是打開的，掛上與再抽時也移過去
+async function focusFirst() {
   await nextTick()
   actions.value?.querySelector('button')?.focus()
+}
+watch(stage, (s) => {
+  if (s === 'open') void focusFirst()
 })
 // 再抽：結果換了就重播
 watch(() => props.result, play)
@@ -67,9 +70,9 @@ function onKey(e: KeyboardEvent) {
   }
 }
 onMounted(() => {
-  play()
   document.addEventListener('keydown', onKey)
   root.value?.focus()
+  play()
 })
 onBeforeUnmount(() => {
   timers.forEach(clearTimeout)

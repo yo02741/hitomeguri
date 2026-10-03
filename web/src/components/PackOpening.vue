@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, onBeforeUnmount, onMounted, ref } from 'vue'
+import { computed, onBeforeUnmount, onMounted, ref, watch } from 'vue'
 
 import { useCardDraw } from '../composables/cardDraw'
 import { useModal } from '../composables/modal'
@@ -124,8 +124,23 @@ function finish() {
   markOpened(props.trip.id)
 }
 
-// Space、Enter 翻下一張（Esc 由 <dialog> 的 cancel 收起）
+// 撕開後卡包鈕不見了、每翻一張卡鈕也換一顆：焦點跟著移到這一張，翻完移到一覽（不移到按鈕，
+// 連按 Enter 翻牌時才不會多按一下就離開），不讓它掉到 <body>，讀屏器與 Tab 從對話框裡接著走
+const dealBtn = ref<HTMLButtonElement | null>(null)
+const summary = ref<HTMLElement | null>(null)
+watch(
+  [stage, () => current.value?.key],
+  ([s]) => {
+    if (s === 'dealing') dealBtn.value?.focus({ preventScroll: true })
+    else if (s === 'done') summary.value?.focus({ preventScroll: true })
+  },
+  { flush: 'post' },
+)
+
+// Space、Enter 翻下一張（Esc 由 <dialog> 的 cancel 收起）；焦點在其他按鈕（全部翻開、關閉…）時照按鈕本身
 function onKey(e: KeyboardEvent) {
+  const el = e.target instanceof Element ? e.target.closest('button, a') : null
+  if (el && !el.hasAttribute('data-next')) return
   if (e.key === ' ' || e.key === 'Enter') {
     e.preventDefault()
     next()
@@ -169,7 +184,7 @@ function markOpened(tripId: string) {
     <div class="flex size-full flex-col items-center justify-center gap-5 overflow-hidden bg-ink/80 p-4" @click="stage === 'opening' && toDealing()">
       <!-- 封著的卡包（撕開的途中點任何地方都直接發牌） -->
       <div v-if="stage === 'sealed' || stage === 'opening'" class="pack-stage" :class="stage" :data-pref="mainPref ?? undefined">
-        <button type="button" class="pack paper-grain relative block overflow-hidden rounded-[18px] bg-region text-on-region" aria-label="打開卡包" @click.stop="next">
+        <button type="button" class="pack paper-grain relative block overflow-hidden rounded-[18px] bg-region text-on-region" aria-label="打開卡包" data-next @click.stop="next">
           <span class="pack-top absolute inset-x-0 top-0 h-[14%] border-b-2 border-dashed border-on-region/40 bg-region-strong/30"></span>
           <RegionMotif :pref="mainPref ?? undefined" class="absolute top-1/2 left-1/2 size-[220px] -translate-x-1/2 -translate-y-1/2 opacity-70" />
           <span class="relative flex h-full flex-col items-center justify-end gap-1 px-4 pb-6 text-center">
@@ -184,7 +199,7 @@ function markOpened(tripId: string) {
       <!-- 一張一張翻 -->
       <div v-else-if="stage === 'dealing' && current" class="relative flex flex-col items-center gap-4">
         <div v-if="flipped && raysKind(current) !== 'normal'" class="rays" :class="`rays-${raysKind(current)}`" :data-pref="current.face.pref" aria-hidden="true"></div>
-        <button :key="current.key" type="button" class="deal-card relative [perspective:1400px]" :aria-label="flipped ? `下一張（${current.face.name.ja}）` : '翻開'" @click="next">
+        <button :key="current.key" ref="dealBtn" type="button" data-next class="deal-card relative [perspective:1400px]" :aria-label="flipped ? `下一張（${current.face.name.ja}）` : '翻開'" @click="next">
           <span class="flip relative block [transform-style:preserve-3d]" :class="{ 'is-flipped': flipped }">
             <span class="flip-back paper-grain absolute inset-0 grid place-items-center overflow-hidden rounded-[16px] bg-region text-on-region" :data-pref="mainPref ?? undefined">
               <RegionMotif :pref="mainPref ?? undefined" class="absolute size-[260px] opacity-80" />
@@ -199,7 +214,7 @@ function markOpened(tripId: string) {
       </div>
 
       <!-- 翻完：一覽 -->
-      <div v-else-if="stage === 'done'" class="flex max-h-full w-full max-w-3xl flex-col gap-4 overflow-x-hidden overflow-y-auto p-3">
+      <div v-else-if="stage === 'done'" ref="summary" tabindex="-1" :aria-label="`${title} ${deck.length} 張`" class="flex max-h-full w-full max-w-3xl flex-col gap-4 overflow-x-hidden overflow-y-auto p-3 outline-none">
         <p class="text-center text-h3 font-black text-paper">{{ title }}　<span class="font-latin">{{ deck.length }}</span> 張</p>
         <ul class="grid grid-cols-3 gap-3 sm:grid-cols-4 md:grid-cols-5">
           <li v-for="(c, i) in revealed" :key="c.key" class="deal-in @container" :style="{ '--i': Math.min(i, 15) }">
