@@ -31,8 +31,13 @@ export function installScrollRestore(router: Router, getMain: () => HTMLElement 
   }
   // 畫面上正在顯示的那一筆歷史；popstate 時 history.state 已經換成目的地，所以自己記
   let shown = -1
-  let popped = false
-  window.addEventListener('popstate', () => (popped = true))
+  // 返回、往前的目的地。要掛在 router 自己的 history 上：window 的 popstate 監聽排在 router 之後，
+  // 頁面已載入時整個換頁會在 router 的監聽之後的 microtask 裡跑完，等 window 的監聽設旗標已經太晚，旗標還會留到下一次換頁。
+  // 記目的地而不是只記「有返回」：換頁出錯沒跑到 afterEach 時，舊旗標不會被下一次別的換頁拿去用。
+  let popTo: string | null = null
+  router.options.history.listen((to, _from, info) => {
+    if (info.type === 'pop') popTo = router.resolve(to).fullPath
+  })
 
   function persist() {
     try {
@@ -74,8 +79,8 @@ export function installScrollRestore(router: Router, getMain: () => HTMLElement 
   }
 
   router.afterEach(async (to, from, failure) => {
-    const pop = popped
-    popped = false
+    const pop = popTo !== null && (to.fullPath === popTo || to.redirectedFrom?.fullPath === popTo)
+    popTo = null
     if (failure) return
     shown = entryKey()
     if (!pop && saved.delete(shown)) persist() // 新的一筆歷史（或 replace）：這個鍵以前存的位置作廢，離開時再存
