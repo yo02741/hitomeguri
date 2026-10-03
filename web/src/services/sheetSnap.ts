@@ -38,6 +38,21 @@ export function snapAfterDrag(h: SnapHeights, height: number, velocity: number):
   return best
 }
 
+/** 放開前停了超過這麼久（ms）就不算甩 */
+export const FLICK_STALE = 80
+
+/**
+ * 放開時的速度（px/ms，往上長為正）：取最近 100ms 內的取樣；
+ * 最後一次移動離放開超過 FLICK_STALE（拖到一半停住才放）就是 0，照放開的位置吸附。
+ */
+export function releaseVelocity(samples: readonly { t: number; h: number }[], now: number): number {
+  const last = samples[samples.length - 1]
+  if (!last || now - last.t > FLICK_STALE) return 0
+  const recent = samples.filter((s) => last.t - s.t <= 100)
+  const first = recent[0]!
+  return last.t > first.t ? (last.h - first.h) / (last.t - first.t) : 0
+}
+
 /** 鍵盤、點把手：往上或往下一段（到頭就停）；dir 0 依序輪替（收合 → 半開 → 全開 → 收合） */
 export function stepSnap(s: Snap, dir: -1 | 0 | 1): Snap {
   const i = SNAPS.indexOf(s)

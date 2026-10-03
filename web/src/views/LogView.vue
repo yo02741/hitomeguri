@@ -142,7 +142,8 @@ watch(
     if (!ok) return
     if (rows.value.length) startPicking()
     await nextTick()
-    document.getElementById('visited-title')?.scrollIntoView({ block: 'start' })
+    // 捲整段（不是標題）：手機標題列的按鈕比標題高，停在段落上緣按鈕才不會被段落列蓋住
+    document.getElementById('log-visited')?.scrollIntoView({ block: 'start' })
     void router.replace({ query: {} })
   },
   { immediate: true },
@@ -311,7 +312,7 @@ function open(id: string) {
         <MapView v-if="mapOn" :spots="spots" :bounds="bounds" :marked="visitedOnly" no-terrain @select="open" />
       </div>
 
-      <section id="log-trips" class="flex flex-col gap-3 max-lg:scroll-mt-16" aria-labelledby="trips-title">
+      <section id="log-trips" class="flex flex-col gap-3 max-lg:scroll-mt-[4.25rem]" aria-labelledby="trips-title">
         <h2 id="trips-title" class="flex items-baseline gap-1.5 text-h3 font-black tracking-title">
           旅行<span class="font-latin text-body font-normal tracking-normal text-sub">{{ doneTrips.length }}</span>
         </h2>
@@ -344,9 +345,9 @@ function open(id: string) {
         </form>
       </section>
 
-      <section id="log-visited" class="flex flex-col gap-3 max-lg:scroll-mt-16" aria-labelledby="visited-title">
+      <section id="log-visited" class="flex flex-col gap-3 max-lg:scroll-mt-[4.25rem]" aria-labelledby="visited-title">
         <div class="flex flex-wrap items-center gap-x-4 gap-y-2">
-          <h2 id="visited-title" class="flex items-baseline max-lg:scroll-mt-16 gap-1.5 text-h3 font-black tracking-title">
+          <h2 id="visited-title" class="flex items-baseline gap-1.5 text-h3 font-black tracking-title">
             去過<span class="font-latin text-body font-normal tracking-normal text-sub">{{ rows.length }}</span>
           </h2>
           <div class="ml-auto flex flex-wrap gap-2">

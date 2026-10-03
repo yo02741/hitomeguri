@@ -114,7 +114,7 @@ function hidePhoto(e: Event) {
         <h3 class="sticky top-0 z-[1] shrink-0 bg-paper">
           <button
             type="button"
-            class="flex w-full items-center gap-2 px-1.5 pt-2.5 pb-1 text-left text-caption font-bold tracking-section text-sub hover:text-ink active:text-ink"
+            class="flex w-full items-center gap-2 px-1.5 pt-2.5 pb-1 text-left text-caption font-bold tracking-section text-sub hover:text-ink active:text-ink pointer-coarse:min-h-tap"
             :aria-expanded="isOpen(g.key)"
             @click="explore.toggleCollapsed(`cat:${g.key}`)"
           >

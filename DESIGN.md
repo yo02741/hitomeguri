@@ -286,7 +286,7 @@ header 右側、登入鈕左邊（`SearchBox.vue`，每一頁都在；在行程�
 - 深度探索頁：桌機左欄（168px，sticky）上方是「‹ 地圖」外框按鈕（和地圖頁的入口在同一側），下方是段落目錄（SectionNav side，地區特色展開各組）；手機是標頭的「‹ 地圖」＋頂部橫列目錄。
 - 每個擴充包一顆膠囊按鈕 `h-9 rounded-full px-3.5 text-label font-bold shadow-float`：圖示（主題色）＋名稱＋件數（`font-latin`）。開啟中改為主題色底白字（`bg-(--pack)`，`--pack` 設為 `var(--color-t-*)`，不寫死色碼）；目前地區沒有資料時 `opacity-50` 不能按。
 - 列尾 36px 圓形圖示鈕（滑桿圖示，`aria-label="選擇擴充包"`）往右下打開設定卡（`w-72 rounded-card bg-paper shadow-float`）：每個擴充包一列 checkbox＋圖示＋名稱，下方小字列出組別。
-- 手機（<1024）改成 chip 軌道（`ChipRail.vue`）：海報條下面、上方清單上面一行，橫向捲動（左右鋪到螢幕邊，`scroll-quiet`）。順序：收藏 n（登入且有收藏時；開著 `bg-ink text-paper`）→ 各擴充包（同上膠囊，開著 `bg-(--pack) text-white`，再點一下關閉）→「設定」（滑桿圖示＋「設定」，開著時 `bg-ink text-paper`）。看得到的膠囊 36px，觸控時點擊區撐到 44（外層按鈕 `pointer-coarse:h-tap`，膠囊在裡面）。軌道本身不吃點擊，膠囊之間照樣拖得動地圖；捲動區上下多留 12px 給陰影。設定卡放在捲動區外、軌道下方靠右（`PackSettings.vue`，和桌機同一張），Esc 或點外面關閉。景點卡片全開時、或半開會蓋到軌道時（手機打橫）軌道先收起；收合時照常顯示。擴充包開著時清單換成擴充包清單（上方 40dvh，開卡片時收起，和景點清單相同）。
+- 手機（<1024）改成 chip 軌道（`ChipRail.vue`）：海報條下面、上方清單上面一行，橫向捲動（左右鋪到螢幕邊，`scroll-quiet`）。順序：收藏 n（登入且有收藏時；開著 `bg-ink text-paper`）→ 各擴充包（同上膠囊，開著 `bg-(--pack) text-white`，再點一下關閉）→「設定」（滑桿圖示＋「設定」，開著時 `bg-ink text-paper`）。看得到的膠囊 36px，觸控時點擊區撐到 44（外層按鈕 `pointer-coarse:h-tap`，膠囊在裡面）。軌道本身不吃點擊，膠囊之間照樣拖得動地圖；捲動區上下多留 12px 給陰影。設定卡放在捲動區外、軌道下方靠右（`PackSettings.vue`，和桌機同一張），Esc 或點外面關閉；開著時底下墊一層透明 scrim，點外面只收起設定卡，不會連帶點到底下的清單或地圖（同帳號選單）。景點卡片全開時、或半開會蓋到軌道時（手機打橫）軌道先收起；收合時照常顯示。擴充包開著時清單換成擴充包清單（上方 40dvh，開卡片時收起，和景點清單相同）。
 - 手機的期間限定：這個縣有資料、沒開擴充包時，軌道下面一行連結（`rounded-card bg-region-tint shadow-float min-h-tap`）：「期間限定」＋件數＋第一筆的名稱（`lang="ja"`，過長截斷）＋ ›，連到 `/region/:pref#timed`；和清單一起在開卡片時收起。
 - 開啟擴充包時：左側清單換成擴充包清單（`PackList.vue`，頂端「‹ 景點」返回、右側擴充包名稱＋件數；組別列與景點類型列同樣式，底線用主題色；地區頁依組別分段、首頁依縣分段；每列左側 10px 主題色圓點）。地圖上景點（圓點、群集）不透明度 0.3、名稱標籤與照片收起，只有擴充包的點可以選；擴充包的點獨立群集（半徑 40、縮放 12 以上散開），主題色填色、paper 外框，縮放 12 以上顯示名稱。
 - 已經是景點的點（名城）點了直接開景點卡片，名城番號與スタンプ設置場所顯示在景點卡片的資訊列。其他擴充包的點的卡片（`PackPanel.vue`）：地區色標頭（主題色圓點＋「寶可夢・人孔蓋」小字、名稱）＋資訊列（地區、寶可夢與圖鑑編號、地址）＋底部「官方頁面」（外框按鈕）與「在 Google Maps 開啟」。人孔蓋不放圖片（著作權屬 The Pokémon Company），只連官方頁面。
@@ -310,7 +310,7 @@ header 右側、登入鈕左邊（`SearchBox.vue`，每一頁都在；在行程�
 - 卡片本身不可點。左側是返回鍵：44px、左箭頭＋「全國」小字，hover 時 `bg-region-accent` 底，`aria-label="回到全國地圖"`，點了回首頁的日本地圖；與縣名之間用一條 25% 透明的直線分隔。
 - 手機（<1024）改成地圖上方的海報條（`bg-region text-on-region`，高 56，鋪滿橫向的瀏海、文字內縮）：左端 44px「‹ 全國」（左箭頭＋`text-micro`「全國」，`aria-label="回到全國地圖"`）；中間假名（`text-caption tracking-kana`）疊在縣名（`text-h3 font-black`）上、右邊羅馬拼音（`font-latin text-caption`，超過 7 個字母不加字距，360 寬也放得下），不能點；右端「深度探索 ›」（`min-h-tap text-label font-bold`）。兩條分隔線都是 `bg-on-region opacity-25`，和桌機的地區標籤相同。直飛航線放在深度探索頁的海報（§7.5c）。手機打橫時海報條高 48。
 - 手機打橫（決定事項 N2）：chip 軌道、期間限定一行與清單卡和桌機一樣是地圖左側 `w-float` 300 的一欄（上下各留 16px），清單填滿欄高（不再是 40dvh）；地圖用 `insetLeft` 扣掉這一欄（332＝300＋左右 16）。景點卡片與擴充包的點也放在同一欄（見 §7.13），打開時軌道與清單收起；祭典小卡也是這一欄寬、貼著下緣。
-- 下方是景點清單卡（`rounded-card bg-paper shadow-float`）：清單標題「景點」（不標件數、不標示精選，PLAN.md §6），列出該縣全部大點，地圖也顯示全部大點。分頁下方是類型索引列（文字＋2px 底線，選中 `border-region-strong font-bold`；不限／寺社／城・史跡／博物館／自然／娛樂／其他，只列有景點的類型，再點一次取消），同時篩選清單與地圖；分組定義在 `web/src/data/categories.ts`。手機（<1024）不放「景點」標題列（海報條已經寫了縣名；標題留給讀屏器），類型索引列排成一行、橫向捲動（`scroll-quiet`，換縣時回到最左邊），390 寬時清單約露出 4.5 列。不篩選時清單依類型分段，段首為 sticky 小標（類型＋件數），段內依分數。每列左側 44px 圓角縮圖（lazy 載入）＋假名／名稱＋細類型；滑過一列在地圖上標出該景點，點選則選取並飛過去。捲動區用 `scroll-quiet`（theme.css）：捲軸平常透明、滑過才顯示，右側 `pr-3` 讓捲軸不貼字。
+- 下方是景點清單卡（`rounded-card bg-paper shadow-float`）：清單標題「景點」（不標件數、不標示精選，PLAN.md §6），列出該縣全部大點，地圖也顯示全部大點。分頁下方是類型索引列（文字＋2px 底線，選中 `border-region-strong font-bold`；不限／寺社／城・史跡／博物館／自然／娛樂／其他，只列有景點的類型，再點一次取消），同時篩選清單與地圖（按鈕與清單先換，清單只切換顯示；地圖等下一個畫面才換資料，分群的數字要跟著篩選，所以是 setData 而不是圖層 filter）；分組定義在 `web/src/data/categories.ts`。手機（<1024）不放「景點」標題列（海報條已經寫了縣名；標題留給讀屏器），類型索引列排成一行、橫向捲動（`scroll-quiet`，換縣時回到最左邊），390 寬時清單約露出 4.5 列。不篩選時清單依類型分段，段首為 sticky 小標（類型＋件數；觸控時 `min-h-tap`），段內依分數。每列左側 44px 圓角縮圖（lazy 載入）＋假名／名稱＋細類型；滑過一列在地圖上標出該景點，點選則選取並飛過去。捲動區用 `scroll-quiet`（theme.css）：捲軸平常透明、滑過才顯示，右側 `pr-3` 讓捲軸不貼字。
 - 主題篩選（茶、酒等）暫停，見 PLAN.md §1。
 - 首頁左上列出 47 都道府縣（依地方分組）；還沒有景點資料的縣字色用 `text-sub`，點進去用縣界範圍定位。
 - 手機（<1024）的首頁清單卡是依地方分組的站名板格（`HomeSidebar.vue`，決定事項 H2）：
@@ -331,7 +331,7 @@ header 右側、登入鈕左邊（`SearchBox.vue`，每一頁都在；在行程�
 - 祭典的「在地圖上看」（手機）：清單收起，地圖下緣一張小卡（`rounded-card bg-paper shadow-float`，`inset-x-4 bottom-4`）：左「‹ 祭典」回到 `/region/:pref#festivals`、分隔線、祭典名（`text-body-sm font-bold`，太長截斷）、右側 44px 關閉。縮放鈕與出處移到小卡上面（`--map-lift-b`）。
 - 選取中的景點：另外放在不群集的來源，不會被併進群集數字；外面一圈固定的 `region-strong` 外框（不做擴散的呼吸燈；`--animate-pulse-ring` 只用在祭典「在地圖上看」的位置標記）。從清單或搜尋選取時飛到縮放 15（群集全部散開）。
 - hover 照片再放大成 88px；整張照片都算命中範圍。觸控裝置沒有 hover，點擊時直接取點擊位置附近最近的景點。
-- 位置小框（`JapanLocator.vue`）：縮放 6.5 以上時出現日本全圖（像手機相機放大時的全景小窗）。桌機在左側浮動面板右邊、和「深度探索」卡底部對齊（132px 寬）；手機在地圖右上（96px）；手機打橫時地圖區太矮（左側欄旁、或和縮放鈕疊在一起），不顯示。`bg-paper/90 rounded-card shadow-float`，各縣 `--region-line`、目前的縣 `--region-accent`，目前看的範圍畫成 `--region-strong` 框（太小時改成一個點加擴散的圈），下方一行縣名與倍率（以日本全圖為 ×1，縮放每加 1 放大 2 倍，例「長野 ×8.2」）。只顯示，不能點。沖繩照日本地圖的慣例放在左上的虛線框。
+- 位置小框（`JapanLocator.vue`）：縮放 6.5 以上時出現日本全圖（像手機相機放大時的全景小窗）。桌機在左側浮動面板右邊、和「深度探索」卡底部對齊（132px 寬）；手機在地圖右上（96px），清單收起、chip 軌道還在時排在軌道下面 10px（`MapView` 的 `locatorTop`），和下方景點卡片之間放不下整個小框時先不顯示；手機打橫時地圖區太矮（左側欄旁、或和縮放鈕疊在一起），不顯示。`bg-paper/90 rounded-card shadow-float`，各縣 `--region-line`、目前的縣 `--region-accent`，目前看的範圍畫成 `--region-strong` 框（太小時改成一個點加擴散的圈），下方一行縣名與倍率（以日本全圖為 ×1，縮放每加 1 放大 2 倍，例「長野 ×8.2」）。只顯示，不能點。沖繩照日本地圖的慣例放在左上的虛線框。
 
 ### 7.5b 收合
 清單分段（首頁的地方、景點類型、擴充包的組別或縣）的小標可以點擊收合：左側 `CollapseChevron`（7px 直角兩邊 `border-r/b-[1.5px] border-current`，收合時 `-rotate-45` 朝右、展開時 `rotate-45` 朝下，150ms 轉動），收合時小標後面顯示件數。收合狀態存在探索頁 store，切換地區後保留。
@@ -371,11 +371,11 @@ header 右側、登入鈕左邊（`SearchBox.vue`，每一頁都在；在行程�
 - 分段色帶：`flex h-2.5`，每段 `style="flex-grow: 天數"` 並設該段的 `data-pref` 與 `bg-region`。
 - 封面：`bg-region text-on-region px-4 py-3.5`（封面主縣）；標題 `text-h3`～`text-2xl font-black`。
 - DAY 標記：`size-11 rounded-badge bg-region text-on-region font-latin font-bold`，上方 `DAY`（`text-micro` 11px）、下方數字（18px）；每個標記設當天主縣的 `data-pref`。
-- 旅途中的今天：DAY 標記下面一個「今日」牌，樣式同「旅途中」（`rounded-tag bg-region-strong px-1.5 text-caption font-bold text-white`）。進頁就選今天（地圖只顯示今天）：桌機左欄捲到那一天，手機見下。
+- 旅途中的今天：DAY 標記下面一個「今日」牌，樣式同「旅途中」（`rounded-tag bg-region-strong px-1.5 text-caption font-bold text-white`）。桌機照舊（地圖顯示全部、左欄從頭看起）；手機進頁就選今天，見下。
 
 ### 7.9b 行程頁（`TripView.vue`）
 - 按鈕列：桌機照舊（開卡包／旅前準備、旅前小書、匯出 KML、匯出 CSV、離線用、回顧圖、刪除）。手機（<1024，決定事項 D2）只留 旅前準備、旅前小書、離線用、「更多 ▾」（結束的行程前面再加開卡包）；更多是 `ActionMenu.vue` 的選單：匯出 KML、匯出 CSV、回顧圖，線下面 `text-danger` 的「刪除行程」（建立者才有）。寬度 <640 時按鈕 `px-2.5`、間距 `gap-1.5`，360 寬也排成一列。
-- 手機版面（決定事項 F3）：整頁在 `<main>` 裡捲，沒有內層捲動。日期、成員、按鈕列下面是 sticky（`top-0 z-10 bg-paper`）的天數條：左邊橫向捲動的格子（`h-tap min-w-14 rounded-control`，上 `DAY n` `font-latin text-label font-bold`、下日期 `text-micro`，今天寫「今日」；選中的是那天主縣的 `bg-region text-on-region`，沒有點的天 `bg-ink text-paper`，其他 `bg-surface`；最後一格「待排」＋筆數），右邊「地圖」鈕（地圖圖示＋字，打開時 `bg-ink text-paper`，`aria-expanded`）。一次只顯示選中的那天（沒選過是 DAY 1），沒有「全部」。地圖預設收起，打開時在天數條下面 `h-[40dvh]`（一起黏在上面；手機打橫 32dvh，下面還看得到兩三站），只顯示選中的那天並連線；待排不連線。往下捲過之後換天，頁面回到天數條剛黏住的位置；選中的格子捲進天數條。旅途中進頁就選今天、打開地圖，頁面捲到天數條黏在頂端（返回時回到原本的位置就不捲）。加一天之後換到新的那天。
+- 手機版面（決定事項 F3）：整頁在 `<main>` 裡捲，沒有內層捲動。日期、成員、按鈕列下面是 sticky（`top-0 z-10 bg-paper`）的天數條：左邊橫向捲動的格子（`h-tap min-w-14 rounded-control`，上 `DAY n` `font-latin text-label font-bold`、下日期 `text-micro`，今天寫「今日」；選中的是那天主縣的 `bg-region text-on-region`，沒有點的天 `bg-ink text-paper`，其他 `bg-surface`；最後一格「待排」＋筆數），格子超出時右緣淡出（`fade-x-end`，捲到底拿掉），看得出後面還有天數與待排；右邊「地圖」鈕（地圖圖示＋字，打開時 `bg-ink text-paper`，`aria-expanded`）。一次只顯示選中的那天（沒選過是 DAY 1），沒有「全部」。地圖預設收起，打開時在天數條下面 `h-[40dvh]`（一起黏在上面；手機打橫 32dvh，下面還看得到兩三站），只顯示選中的那天並連線；待排不連線。往下捲過之後換天，頁面回到天數條剛黏住的位置；選中的格子捲進天數條。旅途中進頁就選今天、打開地圖，頁面捲到天數條黏在頂端（返回時回到原本的位置就不捲）。加一天之後換到新的那天。
 - 停留點列：桌機照舊（⠿ 把手、號碼、名稱、「移到」下拉、往前往後、×）。觸控（`pointer-coarse:`）沒有 ⠿ 把手（觸控不會觸發 dragstart）與「移到」下拉，名稱多出約 100px；右邊「⋯」（`size-tap`）打開選單：移到最前、往前、往後、移到最後｜移到 待排、移到 DAY n（右邊日期）｜從行程移除。換順序之後焦點留在「⋯」；移到別天、移除時焦點移到隔壁的停留點，讀屏器讀出結果。選單項目多時自己捲（最高 70dvh）。
 - Google Maps 連結（UX-FLOW C5，桌機手機都有）：每天第一站上面一行「從目前位置」（準星圖示，樣式同「轉乘路線」：`text-caption text-sub`，觸控 `min-h-tap`），不給 origin、`travelmode=transit`，Google Maps 以裝置位置為起點。停留點下面是這天的「Google Maps 路線」外框小鈕（`h-8`，觸控 `h-tap`，右邊 ↗）：依順序經過每一站，不指定交通方式（大眾運輸不支援 waypoints）。超過 waypoint 上限時拆段（觸控或 <1024 用手機瀏覽器的 3 個，桌機 9 個；網址超過 2,048 字元也拆），前面一個 `text-caption text-sub` 的「Google Maps 路線」，後面每段一顆「1–5 ↗」「5–8 ↗」，下一段從上一段的終點出發（`services/trip.ts` 的 `dayRouteUrls`）。
 
@@ -395,10 +395,10 @@ header 右側、登入鈕左邊（`SearchBox.vue`，每一頁都在；在行程�
 ### 7.13 Bottom Sheet（手機）
 `rounded-t-sheet bg-paper shadow-sheet`。景點卡片在手機上是上下兩塊：上面是把手＋名稱帶（固定不捲、可以拖），照片以下在 sheet 裡捲動（桌機右欄照舊：照片在名稱帶上面、整張一起捲）。
 - 三段高度（決定事項 C3，`services/sheetSnap.ts`）：收合＝把手＋名稱帶（約 120，依名稱帶實際高度）／半開 55vh（不超過海報條以下的地圖區減 2.5rem）／全開（地圖區整塊，蓋過海報條與 chip 軌道）。每次打開從半開開始，開著時換景點維持目前的段。
-- 把手：名稱帶最上面一條 `h-1 w-10 rounded-full bg-on-region/40`，外面是整列寬、24px 高的按鈕（`aria-label`「展開卡片」，全開時「收合卡片」）：點一下依序換段（收合 → 半開 → 全開 → 收合），鍵盤 ↑ ↓ 往上、往下一段。
-- 拖曳：只綁在把手與名稱帶（`data-sheet-drag`，`touch-action: none`），pointer events，動了 6px 以上才算拖（名稱帶上的按鈕照樣點得到）。拖的時候高度跟著手指；放開時吸到最近的一段，甩得快（≥0.5px/ms）時往甩的方向換一段；比收合再低 48px 放開、或從收合往下甩，就關閉（從放開的位置往下收）。換段時高度 0.28s `ease-out-soft`，減少動態時直接換。換段之後選到的點被蓋住（或離邊 32px 內）才把鏡頭平移到剩下的地圖中間，不改縮放。
+- 把手：名稱帶最上面一條 `h-1 w-10 rounded-full bg-on-region/40`，外面是整列寬、24px 高的按鈕（觸控時 44 高、往下疊進名稱帶 20px，名稱帶上的按鈕疊在它上面；`aria-label`「展開卡片」，全開時「收合卡片」）：點一下依序換段（收合 → 半開 → 全開 → 收合），鍵盤 ↑ ↓ 往上、往下一段。
+- 拖曳：只綁在把手與名稱帶（`data-sheet-drag`，`touch-action: none`），pointer events，動了 6px 以上才算拖（名稱帶上的按鈕照樣點得到）。拖的時候高度跟著手指；放開時吸到最近的一段，甩得快（放開前 100ms 內 ≥0.5px/ms，且最後一次移動離放開不到 80ms；拖到一半停住再放不算甩）時往甩的方向換一段；比收合再低 48px 放開、或從收合往下甩，就關閉（從放開的位置往下收）。換段時高度 0.28s `ease-out-soft`，減少動態時直接換。換段之後選到的點被蓋住（或離邊 32px 內）才把鏡頭平移到剩下的地圖中間，不改縮放。
 - 名稱帶（手機）：左邊名稱，右邊依序是卡片、播放、關閉（關閉沒有外框，`text-on-region`）；三顆之間 4px。收合時卡片、播放換成「去過」膠囊（`h-tap rounded-full border-[1.5px]`，沒去過 `border-on-region text-on-region`，去過 `border-visited bg-visited-tint text-visited`＋印章圖示），按下去和工作列的去過一樣播新卡入手；收合時下面的內容 `inert`。手機打橫（高 ≤500px）時名稱帶只留日文名、`text-h3`。
-- 手機打橫（決定事項 N2）：不是 bottom sheet，而是地圖左側 `w-float` 300 的浮動欄（`rounded-card shadow-float`，海報條下 16px 到地圖下緣 16px，從左邊滑進來 0.32s、收回 0.2s），和清單同一個位置。版面同全開的 sheet：名稱帶固定、照片以下捲動，但沒有把手、不能拖、沒有三段高度（`SpotPanel` 的 `noHandle`）；擴充包的點也在這一欄、整欄高、自己捲動。轉成直向時回到 sheet，維持原本的段。
+- 手機打橫（決定事項 N2）：不是 bottom sheet，而是地圖左側 `w-float` 300 的浮動欄（`rounded-card shadow-float`，海報條下 16px 到地圖下緣 16px，從左邊滑進來 0.32s、收回 0.2s），和清單同一個位置。版面同全開的 sheet：名稱帶固定、照片以下捲動，但沒有把手、不能拖、沒有三段高度（`SpotPanel` 的 `noHandle`）；擴充包的點也在這一欄、整欄高、自己捲動，名稱帶（含關閉）固定在上面。轉成直向時回到 sheet，維持原本的段。
 - 收合時地圖的縮放鈕移到 sheet 上面（`controlsLift`），半開、全開時照舊被蓋住。
 - Esc（焦點在卡片、地圖或沒有焦點時）關閉；卡片裡的選單、對話框自己處理掉的 Esc 不算。
 - 底部工作列：收藏・去過・清單・加入行程貼在 sheet 底部（`sticky bottom-0 border-t border-line bg-paper px-3 py-2`），一排四顆 `h-tap`，圖示在上、`text-label` 在下；去過的格子寬 1.5 倍，標了之後右邊是日期（不放下拉箭頭，「去過」兩字才不會被擠成直排）。清單、行程選單往上開，最高 `min(50dvh, 60dvh − 5rem)`。
@@ -419,7 +419,7 @@ header 右側、登入鈕左邊（`SearchBox.vue`，每一頁都在；在行程�
 - 手機（<1024）：同樣的內容放在從下方出現的原生 `<dialog>`（`BottomDialog.vue`）：最上層、不被底部分頁列蓋住，遮罩 `bg-ink/60`；面板 `rounded-t-sheet bg-paper shadow-sheet px-5`，最寬 560 置中，`animate-sheet-in`（減少動態時淡入），最高到畫面頂端下 48px，內容多時自己捲。上緣一列標題「共編」（`text-body font-bold`）與「關閉」（`min-h-tap text-label font-bold text-sub`），打開時焦點在「關閉」；Esc、點遮罩、Android 返回鍵關閉。從裡面打開的確認框疊在上面。
 - 觸控或窄螢幕、瀏覽器有 `navigator.share` 時「複製」換成「傳送」（系統分享，標題是行程名、網址是邀請連結）；使用者取消不做事，其他失敗改成複製（「已複製」）。桌機照舊是複製。
 - 邀請連結帶 `?openExternalBrowser=1`（LINE 官方參數，從 LINE 打開時用外部瀏覽器，決定事項 J3）。
-- 加入頁（`JoinView.vue`）在 App 內建的瀏覽器（依 User-Agent：LINE、Facebook、Instagram、WeChat、KakaoTalk、Android WebView）裡、還沒登入時，「登入」換成一行「App 內建的瀏覽器不能用 Google 登入。」、唯讀的邀請連結與按鈕：LINE 是 Primary「用瀏覽器開啟」（導到帶 `openExternalBrowser=1` 的同一頁）＋Secondary「複製連結」；其他 App 沒有公開的參數，只有 Primary「複製連結」，說明多一句「複製連結後用 Safari 或 Chrome 開啟。」
+- 加入頁（`JoinView.vue`）在 App 內建的瀏覽器（依 User-Agent：LINE、Facebook、Instagram、WeChat、KakaoTalk、Android WebView）裡、還沒登入時，「登入」換成一行「App 內建的瀏覽器不能用 Google 登入。」、唯讀的邀請連結與按鈕：LINE 而且網址還沒帶 `openExternalBrowser=1`（舊連結）時是 Primary「用瀏覽器開啟」（導到帶參數的同一頁）＋Secondary「複製連結」；網址已經帶參數還停在 LINE 裡（再導一次是同一個網址）與其他 App（沒有公開的參數），只有 Primary「複製連結」，說明多一句「複製連結後用 Safari 或 Chrome 開啟。」
 - 頭像：Google 大頭貼圓形裁切；沒有時 `bg-region-tint` 圓底＋名字第一個字。
 - 行程卡片：共編時多一行 20px 頭像＋「共編 N 人」。
 
@@ -602,12 +602,12 @@ header 右側、登入鈕左邊（`SearchBox.vue`，每一頁都在；在行程�
 
 ### 7.27 紀錄頁（`/log`）
 - 桌機：第一列收集冊（2fr）、經縣值、旅人；第二列成就整列；下面去過的地圖、旅行、去過（不變）。
-- 手機與平板（<1024，決定事項 K2）：收集冊一張 96 高（扇形卡 60px 寬），下面經縣值、旅人、成就三格排一列（`grid-cols-3 gap-2`，每格 104 高、`p-3`）：左上標題（`text-body font-black`），左下數字（`text-title font-bold`＋`/ N` `text-caption text-sub`）；經縣值底下一條進度，旅人右上小窗（43×50）放半身像，成就右上最新的章。不放右箭頭。再下面一行「收藏 n ・ 清單 n ›」（`min-h-tap rounded-card border border-line`，連到 `/me`），接 sticky 的段落列「旅行・去過」（`SectionNav` bar，同成就頁），兩段 `scroll-mt-16`。
+- 手機與平板（<1024，決定事項 K2）：收集冊一張 96 高（扇形卡 60px 寬），下面經縣值、旅人、成就三格排一列（`grid-cols-3 gap-2`，每格 104 高、`p-3`）：左上標題（`text-body font-black`），左下數字（`text-title font-bold`＋`/ N` `text-caption text-sub`）；經縣值底下一條進度，旅人右上小窗（43×50）放半身像，成就右上最新的章。不放右箭頭。再下面一行「收藏 n ・ 清單 n ›」（`min-h-tap rounded-card border border-line`，連到 `/me`），接 sticky 的段落列「旅行・去過」（`SectionNav` bar，同成就頁），兩段 `scroll-mt-[4.25rem]`（比段落列多 7px，補日期時標題列 44px 的按鈕不會被蓋住；`/log?fill=1` 也捲整段，不是捲標題）。
 - 去過的地圖：桌機 360 高，768 以下 260；手機打橫是 `min(360px, 100dvh − header − 6rem)`，扣掉 sticky 的段落列後整張看得到。
 - 補日期：桌機是清單上方的 sticky 列（沒有日期的 n、全選、已選 n、日期、套用、完成）。手機改成貼在分頁列上方一行「已選 n・日期・套用・完成」（`bottom-dock`），日期只寫 `2026/10/03`；「沒有日期的 n」「全選」移到「去過」標題列（取代匯出鈕）。
 
 ### 7.26 復原與確認框（決定事項 L3）
-- 可以復原的移除：取消收藏、取消去過、從清單移除（清單頁的 ×、景點卡片清單選單取消勾選）、從行程移除停留點。做完立刻（不等寫入完成，離線也一樣）在底部出現一行提示：`已取消收藏`、`已取消去過`、`已從「清單名」移除`、`已從行程移除`，右邊「復原」與 ×。樣式、位置與「有新版本」相同（`AppUpdate.vue`：`bg-ink text-paper rounded-card shadow-float`，貼著分頁列；「復原」是 `bg-paper text-ink` 的小鈕），一次一則，新的取代舊的；約 6 秒收起，游標停在上面或焦點在鈕上時不倒數（`services/toast.ts`）。復原只補回那一個欄位（去過連同日期，停留點回到原本那一天的原本位置；那天已經刪掉就放回待排）。頁面載入失敗的提示優先，有新版本排在最後。
+- 可以復原的移除：取消收藏、取消去過、從清單移除（清單頁的 ×、景點卡片清單選單取消勾選）、從行程移除停留點。做完立刻（不等寫入完成，離線也一樣）在底部出現一行提示：`已取消收藏`、`已取消去過`、`已從「清單名」移除`、`已從行程移除`，右邊「復原」與 ×。樣式、位置與「有新版本」相同（`AppUpdate.vue`：`bg-ink text-paper rounded-card shadow-float`，貼著分頁列；「復原」是 `bg-paper text-ink` 的小鈕），寬度依文字、最寬 `min(520px, 100vw − 2rem)`，名稱太長時文字截斷，「復原」與 × 一定在畫面內；一次一則，新的取代舊的；約 6 秒收起，游標停在上面或焦點在鈕上時不倒數（`services/toast.ts`）。復原只補回那一個欄位（去過連同日期，停留點回到原本那一天的原本位置；那天已經刪掉就放回待排）。頁面載入失敗的提示優先，有新版本排在最後。
 - 不能復原的動作（刪除行程、清單、截圖，移出共編成員、離開共編、重新產生邀請連結）先問一次：站內確認框 `ConfirmDialog.vue`（`services/confirm.ts` 的 `confirmDialog()`），不用 `window.confirm`（手機上會顯示網域，樣式也不一致）。原生 `<dialog>`（§10），寬 400，`rounded-card bg-paper p-6 shadow-float`；問句 `text-body font-bold`（例「刪除清單「京都」？」），後果一行 `text-body-sm text-sub`；下面「取消」（Secondary）與動作鈕（刪除、移出、離開用 `bg-danger text-white`，其他用 Primary），手機兩顆各佔一半。打開時焦點在「取消」；Esc、點框外都算取消。
 - 清單頁的列：「去過」與移除鈕之間隔 `mx-1.5` 並加一條 `h-6 w-px bg-line` 的分隔線（`MarkedSpotList.vue`）。
 

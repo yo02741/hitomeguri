@@ -4,7 +4,6 @@ import { useRoute } from 'vue-router'
 
 import AppHeader from './components/AppHeader.vue'
 import AppUpdate from './components/AppUpdate.vue'
-import ConfirmDialog from './components/ConfirmDialog.vue'
 import TabBar from './components/TabBar.vue'
 import { confirmRequest } from './services/confirm'
 import { theme } from './services/theme'
@@ -33,6 +32,8 @@ watch([() => explore.activePref, theme], syncThemeColor, { flush: 'post' })
 // 登入後才用到的不放進入口程式：新卡入手（開場之後閒下來先抓，main.ts）、紙娃娃的 SVG 定義、散步的旅人。
 // 新卡入手登入就掛上：它用的成就 store 要在第一次「去過」之前建好基準（stores/achievements.ts）。
 const CardReveal = defineAsyncComponent(() => import('./components/CardReveal.vue'))
+// 站內確認框只在 confirmDialog() 之後才掛上：和 composables/modal 一起留在入口 chunk 外
+const ConfirmDialog = defineAsyncComponent(() => import('./components/ConfirmDialog.vue'))
 const DollDefs = defineAsyncComponent(() => import('./components/DollDefs.vue'))
 const DollWalker = defineAsyncComponent(() => import('./components/DollWalker.vue'))
 </script>

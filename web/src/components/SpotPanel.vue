@@ -181,20 +181,21 @@ function distance(m: number): string {
       :class="snap ? (noHandle ? 'shrink-0' : 'shrink-0 touch-none select-none') : ''"
       :data-sheet-drag="snap && !noHandle ? '' : undefined"
     >
-      <!-- 把手：拖曳或點一下換段；鍵盤上下鍵往上、往下一段 -->
+      <!-- 把手：拖曳或點一下換段；鍵盤上下鍵往上、往下一段。
+           觸控時點擊區撐到 44、往下疊進名稱帶 20px（名稱帶本來就能拖），名稱帶上的按鈕疊在把手上面（決定事項 B2） -->
       <button
         v-if="snap && !noHandle"
         type="button"
         :aria-label="handleLabel"
         :aria-expanded="snap !== 'peek'"
-        class="flex h-6 w-full items-start justify-center pt-2"
+        class="relative z-[1] flex h-6 w-full items-start justify-center pt-2 pointer-coarse:-mb-5 pointer-coarse:h-tap"
         @click="emit('snapStep', 0)"
         @keydown="onHandleKey"
       >
         <span class="h-1 w-10 rounded-full bg-on-region/40" aria-hidden="true"></span>
       </button>
       <!-- 手機：卡片、播放、關閉三顆並排，按鈕之間只留 4px，名稱才放得下一行 -->
-      <div class="flex items-center" :class="snap ? ['gap-1 pr-2 pb-3 pl-5', noHandle ? 'pt-3' : 'pt-0'] : 'gap-3.5 px-5 py-4'">
+      <div class="flex items-center" :class="snap ? ['gap-1 pr-2 pb-3 pl-5 [&>button]:relative [&>button]:z-[2]', noHandle ? 'pt-3' : 'pt-0'] : 'gap-3.5 px-5 py-4'">
         <!-- 手機打橫（高 ≤500px）：名稱帶只留日文名、字小一級，半開時下面還看得到內容 -->
         <div class="flex min-w-0 flex-col gap-px" :class="snap ? 'mr-2' : ''">
           <span v-if="spot.name.kana" lang="ja" class="text-caption tracking-kana" :class="snap ? short.hide : ''">{{ spot.name.kana }}</span>

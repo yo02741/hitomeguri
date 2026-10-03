@@ -3,7 +3,7 @@ import { ref, watch } from 'vue'
 import { useRouter } from 'vue-router'
 
 import SkeletonRows from '../components/SkeletonRows.vue'
-import { inAppBrowser, withLineExternal } from '../services/inApp'
+import { inAppBrowser, LINE_EXTERNAL_PARAM, withLineExternal } from '../services/inApp'
 import { type InviteInfo, useTripsStore } from '../stores/trips'
 import { useUserStore } from '../stores/user'
 
@@ -20,13 +20,15 @@ const state = ref<'idle' | 'loading' | 'ready' | 'invalid'>('idle')
 const joining = ref(false)
 
 const inApp = inAppBrowser(navigator.userAgent)
+// 網址已經帶 openExternalBrowser 還停在 LINE 裡：再導一次也是同一個網址，只留「複製連結」
+const lineCanOpen = inApp === 'line' && !new URL(location.href).searchParams.has(LINE_EXTERNAL_PARAM)
 const copied = ref(false)
 function openExternal() {
   location.href = withLineExternal(location.href)
 }
 const plainLink = (() => {
   const u = new URL(location.href)
-  u.searchParams.delete('openExternalBrowser')
+  u.searchParams.delete(LINE_EXTERNAL_PARAM)
   return u.href
 })()
 const linkInput = ref<HTMLInputElement | null>(null)
@@ -82,7 +84,7 @@ async function join() {
     <h1 class="text-h2 font-black tracking-title">共編行程</h1>
 
     <template v-if="!userStore.user && inApp">
-      <p class="text-body text-ink-2">App 內建的瀏覽器不能用 Google 登入。{{ inApp === 'line' ? '' : '複製連結後用 Safari 或 Chrome 開啟。' }}</p>
+      <p class="text-body text-ink-2">App 內建的瀏覽器不能用 Google 登入。{{ lineCanOpen ? '' : '複製連結後用 Safari 或 Chrome 開啟。' }}</p>
       <input
         ref="linkInput"
         readonly
@@ -93,7 +95,7 @@ async function join() {
       />
       <div class="flex flex-wrap gap-2">
         <button
-          v-if="inApp === 'line'"
+          v-if="lineCanOpen"
           type="button"
           class="h-11 rounded-control bg-region-strong px-5 text-body-sm font-bold text-white active:translate-y-px"
           @click="openExternal"
@@ -103,7 +105,7 @@ async function join() {
         <button
           type="button"
           class="h-11 rounded-control px-4 text-body-sm active:not-disabled:translate-y-px"
-          :class="inApp === 'line' ? 'border border-line bg-paper text-ink hover:bg-surface' : 'bg-region-strong font-bold text-white'"
+          :class="lineCanOpen ? 'border border-line bg-paper text-ink hover:bg-surface' : 'bg-region-strong font-bold text-white'"
           @click="copyLink"
         >
           {{ copied ? '已複製' : '複製連結' }}

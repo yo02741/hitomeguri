@@ -94,6 +94,8 @@ const pill = 'flex h-9 items-center gap-1.5 rounded-full px-3.5 text-label font-
         </span>
       </button>
     </div>
+    <!-- 點選單外面只收起選單，不會連帶點到底下的清單或地圖（和帳號選單一樣） -->
+    <div v-if="menuOpen" class="pointer-events-auto fixed inset-0 z-10" aria-hidden="true" @click="menuOpen = false"></div>
     <PackSettings v-if="menuOpen" class="pointer-events-auto absolute top-full right-0 z-20 mt-1 max-w-full origin-top-right" />
   </div>
 </template>

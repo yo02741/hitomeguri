@@ -27,7 +27,7 @@ import {
   prefectureShape,
 } from '../services/geo'
 import { afterPaint } from '../services/idle'
-import { type Snap, snapAfterDrag, snapHeights, stepSnap } from '../services/sheetSnap'
+import { releaseVelocity, type Snap, snapAfterDrag, snapHeights, stepSnap } from '../services/sheetSnap'
 import type { SearchHit } from '../services/search'
 import { trackSplash } from '../services/splash'
 import { currentTimed } from '../services/timed'
@@ -321,9 +321,7 @@ function onSheetUp(e: PointerEvent) {
     dragH.value = null
     return
   }
-  const first = d.samples[0]
-  const last = d.samples[d.samples.length - 1]
-  const v = first && last && last.t > first.t ? (last.h - first.h) / (last.t - first.t) : 0
+  const v = releaseVelocity(d.samples, performance.now())
   const target = snapAfterDrag(heights.value, dragH.value, v)
   if (target === null) {
     // 從目前的高度往下收（dragH 留到收完才清掉）
@@ -780,6 +778,7 @@ function onMoveEnd(view: MapViewState) {
         :color-key="explore.activePref"
         :inset-left="insetLeft"
         :insets="insets"
+        :locator-top="!desktop && !side && !listShown && railShown ? insets.top : 0"
         :controls-lift="pinCard || (selectedId && spotSheet && snap === 'peek') ? insets.bottom : 0"
         :pack="packMap"
         :outline="outline"

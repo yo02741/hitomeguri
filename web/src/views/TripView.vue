@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, nextTick, ref, watch } from 'vue'
+import { computed, nextTick, onBeforeUnmount, ref, watch } from 'vue'
 import { useRouter } from 'vue-router'
 
 import ActionMenu, { type MenuAction } from '../components/ActionMenu.vue'
@@ -283,8 +283,28 @@ watch(activeDay, async (d) => {
   await nextTick()
   revealChip(d)
 })
+// 天數條右邊還有沒露出來的格子（多天的行程、待排在最後）時右緣淡出
+const stripMore = ref(false)
+function syncStripMore() {
+  const s = strip.value
+  stripMore.value = !!s && s.scrollLeft + s.clientWidth < s.scrollWidth - 2
+}
+const stripObserver = typeof ResizeObserver !== 'undefined' ? new ResizeObserver(syncStripMore) : null
+watch(strip, (el, old) => {
+  if (old) {
+    stripObserver?.unobserve(old)
+    old.removeEventListener('scroll', syncStripMore)
+  }
+  if (el) {
+    stripObserver?.observe(el)
+    el.addEventListener('scroll', syncStripMore, { passive: true })
+  }
+  syncStripMore()
+})
+watch(() => trip.value?.days.length, () => void nextTick(syncStripMore))
+onBeforeUnmount(() => stripObserver?.disconnect())
 
-// 旅途中進頁就選今天（決定事項 F3、第二階段 12）：桌機左欄捲到 DAY n；手機打開地圖，
+// 旅途中進頁就選今天（決定事項 F3、第二階段 12，只有手機）：打開地圖，
 // 頁面捲到天數條黏在頂端（返回時回到原本的位置，就不捲）
 let initFor = ''
 watch(
@@ -293,23 +313,17 @@ watch(
     if (!has || initFor === id) return
     // 從一趟行程直接換到另一趟時元件不會重建：左欄的捲動位置不要沿用
     if (initFor && column.value) column.value.scrollTop = 0
+    if (initFor && strip.value) strip.value.scrollLeft = 0
     initFor = id
     selectedDay.value = null
     mapOpen.value = false
     const i = todayIdx.value
-    if (i === null) return
+    // 桌機照舊：地圖顯示全部、左欄從頭看起（今天那一天只標「今日」）
+    if (i === null || wide.value) return
     selectedDay.value = i
     mapOpen.value = true
     await nextTick()
     await new Promise((r) => requestAnimationFrame(r))
-    if (wide.value) {
-      const col = column.value
-      const el = col?.querySelector<HTMLElement>(`[data-day="${i}"]`)
-      if (!col || !el) return
-      const top = el.getBoundingClientRect().top - col.getBoundingClientRect().top
-      if (top > col.clientHeight / 2) col.scrollTop += top - 16
-      return
-    }
     revealChip(i)
     const main = appMain()
     const top = barTop()
@@ -506,7 +520,7 @@ async function del() {
       <div v-if="!wide" ref="anchor" class="h-0" aria-hidden="true"></div>
       <div v-if="!wide" ref="bar" class="sticky top-0 z-10 -mx-5 -mt-5 flex flex-col bg-paper">
         <div class="flex items-center gap-2 border-b border-line-soft py-1.5 pr-5">
-          <div ref="strip" class="scroll-quiet flex min-w-0 flex-1 gap-1.5 overflow-x-auto overscroll-x-contain pr-1 pl-5" role="group" aria-label="天數">
+          <div ref="strip" class="scroll-quiet flex min-w-0 flex-1 gap-1.5 overflow-x-auto overscroll-x-contain pr-1 pl-5" :class="stripMore ? 'fade-x-end' : ''" role="group" aria-label="天數">
             <button
               v-for="(d, i) in trip.days"
               :key="i"

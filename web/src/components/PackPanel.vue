@@ -41,7 +41,8 @@ const sourceLabel = computed(() => {
     :style="{ '--pack': `var(--color-t-${def?.color ?? 'major'})` }"
     aria-label="擴充包"
   >
-    <div class="paper-grain flex items-start gap-3 bg-region px-5 pt-4 pb-4 text-on-region">
+    <!-- 手機打橫的左側欄只有兩百多 px 高：名稱帶（含關閉）固定在上面，下面的內容捲動 -->
+    <div class="paper-grain flex shrink-0 items-start gap-3 bg-region px-5 pt-4 pb-4 text-on-region land:sticky land:top-0 land:z-[1]">
       <div class="flex min-w-0 flex-col gap-1">
         <span class="flex items-center gap-1.5 text-caption font-bold">
           <span class="size-2.5 rounded-full border-[1.5px] border-on-region bg-(--pack)" aria-hidden="true"></span>

@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 
-import { snapAfterDrag, snapHeights, stepSnap } from './sheetSnap'
+import { releaseVelocity, snapAfterDrag, snapHeights, stepSnap } from './sheetSnap'
 
 const h = { peek: 120, half: 460, full: 670 }
 
@@ -48,5 +48,23 @@ describe('stepSnap', () => {
     expect(stepSnap('peek', 0)).toBe('half')
     expect(stepSnap('half', 0)).toBe('full')
     expect(stepSnap('full', 0)).toBe('peek')
+  })
+})
+
+describe('releaseVelocity', () => {
+  const quick = [
+    { t: 0, h: 464 },
+    { t: 40, h: 400 },
+    { t: 80, h: 344 },
+  ]
+  it('放開時還在動：最近 100ms 的速度', () => {
+    expect(releaseVelocity(quick, 90)).toBeCloseTo(-1.5)
+  })
+  it('拖到一半停住再放：不算甩，照位置吸附', () => {
+    expect(releaseVelocity(quick, 480)).toBe(0)
+    expect(snapAfterDrag(h, 344, releaseVelocity(quick, 480))).toBe('half')
+  })
+  it('沒有取樣是 0', () => {
+    expect(releaseVelocity([], 10)).toBe(0)
   })
 })
