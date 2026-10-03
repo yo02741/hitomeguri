@@ -6,6 +6,7 @@ import { router } from './router'
 import { whenIdle } from './services/idle'
 import { afterSplash, sealSplash, trackSplash, webfontsReady } from './services/splash'
 import './services/theme'
+import { installScrollRestore } from './services/scrollRestore'
 import { installViewTransitions } from './services/viewTransition'
 import './styles/theme.css'
 
@@ -13,6 +14,7 @@ const app = createApp(App)
 app.use(createPinia())
 app.use(router)
 installViewTransitions(router)
+installScrollRestore(router, () => document.getElementById('app-main'))
 trackSplash(webfontsReady(), 'fonts')
 trackSplash(router.isReady(), 'router')
 app.mount('#app')

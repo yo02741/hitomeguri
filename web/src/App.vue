@@ -40,8 +40,9 @@ const DollWalker = defineAsyncComponent(() => import('./components/DollWalker.vu
     class="flex h-dvh flex-col bg-paper text-ink transition-colors duration-200 print:block print:h-auto"
   >
     <AppHeader />
-    <!-- 列印（旅前小書）時攤開固定高度的捲動版面，否則只印得出第一頁 -->
-    <main class="flex min-h-0 flex-1 flex-col overflow-y-auto print:block print:overflow-visible">
+    <!-- 列印（旅前小書）時攤開固定高度的捲動版面，否則只印得出第一頁。
+         id 給換頁的捲動位置用（services/scrollRestore.ts） -->
+    <main id="app-main" class="flex min-h-0 flex-1 flex-col overflow-y-auto print:block print:overflow-visible">
       <RouterView />
     </main>
     <TabBar />
