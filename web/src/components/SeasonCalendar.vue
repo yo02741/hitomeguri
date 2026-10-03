@@ -79,7 +79,7 @@ const thisMonth = new Date().getMonth() + 1
         :key="s.name"
         type="button"
         lang="ja"
-        class="text-label pointer-coarse:px-1.5 pointer-coarse:py-2.5"
+        class="text-body-sm pointer-coarse:px-1.5 pointer-coarse:py-2.5"
         :class="i === current ? 'border-region-strong font-bold text-ink' : 'border-transparent text-sub hover:text-ink active:text-ink'"
         :aria-pressed="i === current"
         @click="current = i"

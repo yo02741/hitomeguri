@@ -197,12 +197,12 @@ function onCardKey(e: KeyboardEvent, id: string) {
           <h1 class="flex items-baseline gap-3 text-h1 font-black tracking-title max-lg:text-h2">
             收集冊<RollingNumber :value="cards.length" class="font-latin text-h3 font-semibold tracking-normal max-lg:text-title" />
           </h1>
-          <p class="flex items-baseline gap-2 text-label font-bold">
+          <p class="flex items-baseline gap-2 text-body-sm font-bold">
             都道府縣<span class="whitespace-nowrap font-latin text-body-sm">{{ prefDone.size }} / 47</span>
           </p>
           <!-- 手機：名城的張數與進度條排成一行 -->
           <div v-if="castleTotal" class="flex max-w-[420px] flex-col gap-1.5 max-lg:flex-row max-lg:items-center max-lg:gap-2">
-            <p class="flex flex-wrap items-baseline gap-x-2 text-label font-bold max-lg:shrink-0">
+            <p class="flex flex-wrap items-baseline gap-x-2 text-body-sm font-bold max-lg:shrink-0">
               {{ wide ? '日本100名城・続日本100名城' : '名城' }}<span class="whitespace-nowrap font-latin text-body-sm">{{ castleDone }} / {{ castleTotal }}</span>
             </p>
             <div class="h-3.5 overflow-hidden rounded-[2px] bg-paper/55 max-lg:h-2 max-lg:min-w-0 max-lg:flex-1" aria-hidden="true">
@@ -222,16 +222,16 @@ function onCardKey(e: KeyboardEvent, id: string) {
       <div v-if="cards.length" class="flex flex-wrap items-center gap-x-3 gap-y-2 rounded-card border border-line bg-paper px-4 py-3 sm:gap-x-4">
         <!-- 手機：抽獎券與樣式疊成兩行 -->
         <div class="flex min-w-0 flex-col max-lg:gap-0.5 lg:contents">
-          <button type="button" class="flex items-baseline gap-1.5 text-label text-sub hover:text-ink active:text-ink pointer-coarse:-my-2 pointer-coarse:py-2" :aria-expanded="showTickets" @click="showTickets = !showTickets">
+          <button type="button" class="flex items-baseline gap-1.5 text-body-sm text-sub hover:text-ink active:text-ink pointer-coarse:-my-2 pointer-coarse:py-2" :aria-expanded="showTickets" @click="showTickets = !showTickets">
             抽獎券<span class="font-latin text-h3 font-bold text-ink">{{ wallet.left }}</span>
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" class="self-center transition-transform" :class="showTickets ? 'rotate-180' : ''" aria-hidden="true"><path d="M6 9l6 6 6-6" /></svg>
           </button>
-          <span class="text-label text-sub max-lg:text-caption">樣式 <span class="whitespace-nowrap font-latin"><span class="font-bold text-ink">{{ variantTotal - missingTotal }}</span> / {{ variantTotal }}</span></span>
+          <span class="text-body-sm text-sub max-lg:text-caption">樣式 <span class="whitespace-nowrap font-latin"><span class="font-bold text-ink">{{ variantTotal - missingTotal }}</span> / {{ variantTotal }}</span></span>
         </div>
-        <button type="button" class="h-8 shrink-0 rounded-control px-2 text-label font-bold text-sub hover:bg-surface hover:text-ink active:not-disabled:translate-y-px pointer-coarse:h-tap" @click="showRules = true">規則</button>
+        <button type="button" class="h-8 shrink-0 rounded-control px-2 text-body-sm font-bold text-sub hover:bg-surface hover:text-ink active:not-disabled:translate-y-px pointer-coarse:h-tap" @click="showRules = true">規則</button>
         <button
           type="button"
-          class="ml-auto h-10 shrink-0 rounded-full bg-ink px-4 text-label sm:px-5 font-bold text-paper disabled:opacity-40 active:not-disabled:translate-y-px pointer-coarse:h-tap"
+          class="ml-auto h-10 shrink-0 rounded-full bg-ink px-4 text-body-sm sm:px-5 font-bold text-paper disabled:opacity-40 active:not-disabled:translate-y-px pointer-coarse:h-tap"
           :disabled="!tenCount || !wallet.canSpend(tenCount)"
           @click="drawTen"
         >
@@ -258,7 +258,7 @@ function onCardKey(e: KeyboardEvent, id: string) {
           v-for="f in FILTERS"
           :key="f.key"
           type="button"
-          class="flex h-9 shrink-0 items-center gap-2 rounded-full border px-3.5 text-label whitespace-nowrap active:not-disabled:translate-y-px pointer-coarse:h-tap"
+          class="flex h-9 shrink-0 items-center gap-2 rounded-full border px-3.5 text-body-sm whitespace-nowrap active:not-disabled:translate-y-px pointer-coarse:h-tap"
           :class="filter === f.key ? 'border-ink bg-ink font-bold text-paper' : 'border-line bg-paper text-ink hover:bg-surface'"
           :aria-pressed="filter === f.key"
           @click="filter = f.key"
@@ -287,7 +287,7 @@ function onCardKey(e: KeyboardEvent, id: string) {
             :aria-current="activePref === g.region.prefecture ? 'location' : undefined"
             @click="jumpTo(g.region.prefecture, true)"
           >
-            <span lang="ja" class="text-label font-bold tracking-name">{{ g.region.name.ja }}</span>
+            <span lang="ja" class="text-body-sm font-bold tracking-name">{{ g.region.name.ja }}</span>
             <span class="font-latin text-micro">{{ shownCount.get(g.region.prefecture) }}</span>
             <span v-if="activePref !== g.region.prefecture" class="absolute inset-x-0 bottom-0 h-1 bg-region" aria-hidden="true"></span>
           </button>
@@ -307,7 +307,7 @@ function onCardKey(e: KeyboardEvent, id: string) {
         <h2 class="flex items-center gap-2.5">
           <span class="h-5 w-1.5 rounded-full bg-region-strong" aria-hidden="true"></span>
           <span lang="ja" class="text-h3 font-black tracking-[2px]">{{ g.region.name.ja }}</span>
-          <span class="font-latin text-label font-semibold tracking-[0.2em] text-sub uppercase">{{ g.region.name.romaji }}</span>
+          <span class="font-latin text-body-sm font-semibold tracking-[0.2em] text-sub uppercase">{{ g.region.name.romaji }}</span>
           <span class="ml-auto font-latin text-body-sm text-sub">{{ shownCount.get(g.region.prefecture) }}</span>
         </h2>
         <ul class="grid grid-cols-2 gap-x-4 gap-y-5 sm:grid-cols-3 lg:grid-cols-4">

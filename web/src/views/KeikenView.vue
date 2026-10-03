@@ -137,13 +137,13 @@ async function render(canvas: HTMLCanvasElement) {
         <button
           v-if="userStore.user"
           type="button"
-          class="ml-auto h-9 rounded-control border-[1.5px] border-on-region px-3 text-label font-bold text-on-region hover:bg-region-accent active:not-disabled:translate-y-px pointer-coarse:h-tap"
+          class="ml-auto h-9 rounded-control border-[1.5px] border-on-region px-3 text-body-sm font-bold text-on-region hover:bg-region-accent active:not-disabled:translate-y-px pointer-coarse:h-tap"
           @click="imageOpen = true"
         >
           存成圖片
         </button>
       </div>
-      <ul class="flex flex-wrap gap-x-4 gap-y-1.5 text-label">
+      <ul class="flex flex-wrap gap-x-4 gap-y-1.5 text-body-sm">
         <li v-for="l in KEIKEN_LEVELS" :key="l.level" class="flex items-center gap-1.5">
           <span class="size-3.5 rounded-[3px] border border-on-region/30" :class="`lv-${l.level}`" aria-hidden="true"></span>
           {{ l.label }}<span class="font-latin text-sub">{{ l.level }}</span>
@@ -191,7 +191,7 @@ async function render(canvas: HTMLCanvasElement) {
           role="menu"
           :aria-label="regionOf(picking.pref)?.name.ja"
         >
-          <p lang="ja" class="px-2.5 pt-1.5 pb-1 text-label font-black">{{ regionOf(picking.pref)?.name.ja }}</p>
+          <p lang="ja" class="px-2.5 pt-1.5 pb-1 text-body-sm font-black">{{ regionOf(picking.pref)?.name.ja }}</p>
           <button
             v-for="l in KEIKEN_LEVELS"
             :key="l.level"

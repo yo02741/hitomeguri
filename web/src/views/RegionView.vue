@@ -256,7 +256,7 @@ function sourceLabel(url: string): string {
       <div class="relative mx-auto flex w-full max-w-5xl flex-col gap-4 px-6 pt-5 pb-8">
         <RouterLink
           :to="`/map/${pref}`"
-          class="flex h-9 w-fit items-center gap-1 rounded-control pr-2.5 pl-1.5 text-label font-bold text-on-region no-underline hover:bg-region-accent lg:hidden active:not-disabled:translate-y-px pointer-coarse:-my-1 pointer-coarse:h-tap"
+          class="flex h-9 w-fit items-center gap-1 rounded-control pr-2.5 pl-1.5 text-body-sm font-bold text-on-region no-underline hover:bg-region-accent lg:hidden active:not-disabled:translate-y-px pointer-coarse:-my-1 pointer-coarse:h-tap"
         >
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <path d="M15 5l-7 7 7 7" />
@@ -289,7 +289,7 @@ function sourceLabel(url: string): string {
         <template v-if="stuck">
           <RouterLink
             :to="`/map/${pref}`"
-            class="-ml-2 flex h-8 shrink-0 items-center gap-0.5 rounded-control pr-2 pl-1 text-label font-bold text-on-region no-underline hover:bg-region-accent active:not-disabled:translate-y-px pointer-coarse:h-tap"
+            class="-ml-2 flex h-8 shrink-0 items-center gap-0.5 rounded-control pr-2 pl-1 text-body-sm font-bold text-on-region no-underline hover:bg-region-accent active:not-disabled:translate-y-px pointer-coarse:h-tap"
           >
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <path d="M15 5l-7 7 7 7" />
@@ -310,7 +310,7 @@ function sourceLabel(url: string): string {
         >
           <button
             type="button"
-            class="flex h-9 shrink-0 items-center px-1.5 text-label pointer-coarse:h-tap"
+            class="flex h-9 shrink-0 items-center px-1.5 text-body-sm pointer-coarse:h-tap"
             :class="festMonth === null ? 'border-on-region font-bold' : 'border-transparent'"
             :aria-pressed="festMonth === null"
             @click="pickMonth(null)"
@@ -321,7 +321,7 @@ function sourceLabel(url: string): string {
             v-for="m in FESTIVAL_MONTHS"
             :key="m"
             type="button"
-            class="flex h-9 shrink-0 items-center px-1.5 font-latin text-label disabled:opacity-40 pointer-coarse:h-tap"
+            class="flex h-9 shrink-0 items-center px-1.5 font-latin text-body-sm disabled:opacity-40 pointer-coarse:h-tap"
             :class="festMonth === String(m) ? 'border-on-region font-bold' : 'border-transparent'"
             :disabled="!festMonthsWithData.has(String(m))"
             :aria-pressed="festMonth === String(m)"
@@ -335,7 +335,7 @@ function sourceLabel(url: string): string {
             v-for="g in groups"
             :key="g.key"
             :href="`#specialties-${g.key}`"
-            class="flex h-9 shrink-0 items-center px-1.5 text-label text-on-region no-underline pointer-coarse:h-tap"
+            class="flex h-9 shrink-0 items-center px-1.5 text-body-sm text-on-region no-underline pointer-coarse:h-tap"
             :class="active === `specialties-${g.key}` ? 'border-on-region font-bold' : 'border-transparent'"
             :aria-current="active === `specialties-${g.key}` ? 'location' : undefined"
             @click.prevent="goSection(`specialties-${g.key}`)"
@@ -352,7 +352,7 @@ function sourceLabel(url: string): string {
         <div class="sticky top-8 flex flex-col gap-5">
           <RouterLink
             :to="`/map/${pref}`"
-            class="flex h-10 items-center gap-2 rounded-control border border-line bg-paper pr-3 pl-2 text-label font-bold text-ink no-underline hover:bg-surface active:not-disabled:translate-y-px pointer-coarse:h-tap"
+            class="flex h-10 items-center gap-2 rounded-control border border-line bg-paper pr-3 pl-2 text-body-sm font-bold text-ink no-underline hover:bg-surface active:not-disabled:translate-y-px pointer-coarse:h-tap"
           >
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <path d="M15 5l-7 7 7 7" />
@@ -433,7 +433,7 @@ function sourceLabel(url: string): string {
             <button
               v-if="g.items.length > FIRST && !expanded.has(g.key)"
               type="button"
-              class="flex h-10 w-fit items-center gap-2 rounded-control border border-line px-4 text-label font-bold text-ink hover:bg-surface active:not-disabled:translate-y-px pointer-coarse:h-tap"
+              class="flex h-10 w-fit items-center gap-2 rounded-control border border-line px-4 text-body-sm font-bold text-ink hover:bg-surface active:not-disabled:translate-y-px pointer-coarse:h-tap"
               @click="expanded = new Set(expanded).add(g.key)"
             >
               <CollapseChevron :open="true" />
@@ -450,7 +450,7 @@ function sourceLabel(url: string): string {
           <TimedList v-if="timed.length" :items="timed" detailed />
           <div class="flex flex-wrap items-center gap-x-4 gap-y-2">
             <ChainSearch />
-            <RouterLink to="/limited" class="text-label text-sub active:text-ink pointer-coarse:px-2 pointer-coarse:py-3">截圖</RouterLink>
+            <RouterLink to="/limited" class="text-body-sm text-sub active:text-ink pointer-coarse:px-2 pointer-coarse:py-3">截圖</RouterLink>
           </div>
         </section>
       </main>

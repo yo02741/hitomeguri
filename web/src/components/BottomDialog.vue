@@ -32,7 +32,7 @@ onMounted(async () => {
       >
         <header class="sticky top-0 z-10 -mx-5 flex items-center gap-3 bg-paper px-5 pt-3 pb-2">
           <h2 class="text-body font-bold">{{ props.title }}</h2>
-          <button ref="closeBtn" type="button" class="-mr-3 ml-auto min-h-tap rounded-control px-3 text-label font-bold text-sub hover:bg-surface hover:text-ink active:not-disabled:translate-y-px" @click="emit('close')">關閉</button>
+          <button ref="closeBtn" type="button" class="-mr-3 ml-auto min-h-tap rounded-control px-3 text-body-sm font-bold text-sub hover:bg-surface hover:text-ink active:not-disabled:translate-y-px" @click="emit('close')">關閉</button>
         </header>
         <slot />
       </section>

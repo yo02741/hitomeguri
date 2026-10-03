@@ -34,7 +34,7 @@ useDismiss(root, computed(() => open.value && wide.value), () => (open.value = f
     <button
       ref="toggleBtn"
       type="button"
-      class="flex h-9 items-center gap-2 rounded-control border border-line bg-paper pr-3 pl-1.5 text-label text-ink hover:bg-surface active:not-disabled:translate-y-px pointer-coarse:h-tap"
+      class="flex h-9 items-center gap-2 rounded-control border border-line bg-paper pr-3 pl-1.5 text-body-sm text-ink hover:bg-surface active:not-disabled:translate-y-px pointer-coarse:h-tap"
       :aria-haspopup="wide ? 'true' : 'dialog'"
       :aria-expanded="open"
       @click="open = !open"

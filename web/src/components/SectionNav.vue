@@ -82,7 +82,7 @@ watch(activeTop, async (id) => {
       :key="it.id"
       :data-id="it.id"
       :href="`#${it.id}`"
-      class="group relative flex shrink-0 items-center text-label no-underline transition-colors duration-300 ease-out-soft pointer-coarse:h-tap"
+      class="group relative flex shrink-0 items-center text-body-sm no-underline transition-colors duration-300 ease-out-soft pointer-coarse:h-tap"
       :class="
         activeTop === it.id
           ? tone === 'region'

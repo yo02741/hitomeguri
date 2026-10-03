@@ -102,7 +102,7 @@ async function leave() {
         />
         <button
           type="button"
-          class="h-9 shrink-0 rounded-control bg-region-strong px-3 text-label font-bold text-white active:translate-y-px disabled:opacity-40 pointer-coarse:h-tap"
+          class="h-9 shrink-0 rounded-control bg-region-strong px-3 text-body-sm font-bold text-white active:translate-y-px disabled:opacity-40 pointer-coarse:h-tap"
           :disabled="!link"
           @click="canShare ? send() : copy()"
         >

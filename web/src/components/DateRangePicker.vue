@@ -115,7 +115,7 @@ const days = computed(() => dayCount(draftStart.value || undefined, (draftEnd.va
     >
       <CalendarPanel :start="draftStart" :end="draftEnd" range :min="min" :max="max" :initial="initial" @pick="pick">
         <template #footer>
-          <div class="flex min-h-9 items-center gap-2 border-t border-line-soft pt-2 text-label">
+          <div class="flex min-h-9 items-center gap-2 border-t border-line-soft pt-2 text-body-sm">
             <span class="px-1 text-sub" aria-live="polite">
               <template v-if="!draftStart">出發</template>
               <template v-else-if="!draftEnd">

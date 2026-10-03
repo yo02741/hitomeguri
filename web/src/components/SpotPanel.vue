@@ -206,7 +206,7 @@ function distance(m: number): string {
         <button
           v-if="snap === 'peek'"
           type="button"
-          class="ml-auto flex h-tap shrink-0 items-center gap-1.5 rounded-full border-[1.5px] px-3.5 text-label font-bold active:not-disabled:translate-y-px disabled:cursor-not-allowed disabled:opacity-40"
+          class="ml-auto flex h-tap shrink-0 items-center gap-1.5 rounded-full border-[1.5px] px-3.5 text-body-sm font-bold active:not-disabled:translate-y-px disabled:cursor-not-allowed disabled:opacity-40"
           :class="visited ? 'border-visited bg-visited-tint text-visited' : 'border-on-region bg-transparent text-on-region'"
           :aria-pressed="visited"
           :disabled="!userStore.canSignIn"

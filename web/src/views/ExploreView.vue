@@ -760,7 +760,7 @@ function onMoveEnd(view: MapViewState) {
       <span class="ml-auto h-8 w-px shrink-0 bg-on-region opacity-25" aria-hidden="true"></span>
       <RouterLink
         :to="`/region/${pref}`"
-        class="flex min-h-tap shrink-0 items-center gap-0.5 rounded-control pr-1.5 pl-2.5 text-label font-bold whitespace-nowrap text-on-region no-underline hover:bg-region-accent active:not-disabled:translate-y-px"
+        class="flex min-h-tap shrink-0 items-center gap-0.5 rounded-control pr-1.5 pl-2.5 text-body-sm font-bold whitespace-nowrap text-on-region no-underline hover:bg-region-accent active:not-disabled:translate-y-px"
       >
         深度探索
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -798,7 +798,7 @@ function onMoveEnd(view: MapViewState) {
         <button
           v-if="userStore.user && marks.favorites.length"
           type="button"
-          class="flex h-9 shrink-0 items-center gap-1.5 rounded-full px-3.5 text-label font-bold shadow-float active:not-disabled:translate-y-px pointer-coarse:h-tap"
+          class="flex h-9 shrink-0 items-center gap-1.5 rounded-full px-3.5 text-body-sm font-bold shadow-float active:not-disabled:translate-y-px pointer-coarse:h-tap"
           :class="explore.onlyFavorites ? 'bg-ink text-paper' : 'bg-paper text-ink hover:bg-surface'"
           :aria-pressed="explore.onlyFavorites"
           @click="explore.onlyFavorites = !explore.onlyFavorites"
@@ -826,8 +826,8 @@ function onMoveEnd(view: MapViewState) {
           :to="`/region/${pref}#timed`"
           class="flex min-h-tap shrink-0 items-center gap-2 rounded-card bg-region-tint pr-2.5 pl-3.5 text-ink no-underline shadow-float active:not-disabled:translate-y-px"
         >
-          <span class="shrink-0 text-label font-bold">期間限定</span>
-          <span class="shrink-0 font-latin text-label text-sub">{{ timedHere.length }}</span>
+          <span class="shrink-0 text-body-sm font-bold">期間限定</span>
+          <span class="shrink-0 font-latin text-body-sm text-sub">{{ timedHere.length }}</span>
           <span lang="ja" class="min-w-0 truncate text-body-sm">{{ timedHere[0]!.title.ja }}</span>
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="ml-auto shrink-0 text-sub" aria-hidden="true">
             <path d="M9 5l7 7-7 7" />
@@ -836,7 +836,7 @@ function onMoveEnd(view: MapViewState) {
         <RegionTag v-if="pref && regionOf(pref)" :pref="pref" class="max-lg:hidden" />
         <template v-if="pref && regionOf(pref)">
           <section v-if="timedHere.length && !explore.pack" class="shrink-0 rounded-card bg-paper px-3.5 pt-2.5 pb-2 shadow-float max-lg:hidden" aria-labelledby="timed-here">
-            <h2 id="timed-here" class="flex items-baseline gap-1.5 text-label font-bold">
+            <h2 id="timed-here" class="flex items-baseline gap-1.5 text-body-sm font-bold">
               期間限定<span class="font-latin font-normal text-sub">{{ timedHere.length }}</span>
               <RouterLink v-if="timedHere.length > 3" :to="`/region/${pref}#timed`" class="ml-auto text-caption font-normal text-sub active:text-ink">全部</RouterLink>
             </h2>
@@ -905,7 +905,7 @@ function onMoveEnd(view: MapViewState) {
         <RouterLink v-slot="{ href }" :to="`/region/${pref}#festivals`" custom>
           <a
             :href="href"
-            class="flex min-h-tap shrink-0 items-center gap-0.5 rounded-control pr-2.5 pl-1.5 text-label font-bold text-ink no-underline hover:bg-surface active:not-disabled:translate-y-px"
+            class="flex min-h-tap shrink-0 items-center gap-0.5 rounded-control pr-2.5 pl-1.5 text-body-sm font-bold text-ink no-underline hover:bg-surface active:not-disabled:translate-y-px"
             @click="backToFestival"
           >
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">

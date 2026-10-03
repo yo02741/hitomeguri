@@ -752,7 +752,7 @@ function syncPin() {
   el.className = 'flex flex-col items-center'
   const chip = document.createElement('div')
   chip.className =
-    'mb-1.5 flex items-center gap-1 rounded-full bg-paper py-1 pr-1 pl-3 text-label font-bold text-ink shadow-float'
+    'mb-1.5 flex items-center gap-1 rounded-full bg-paper py-1 pr-1 pl-3 text-body-sm font-bold text-ink shadow-float'
   const name = document.createElement('span')
   name.lang = 'ja'
   name.textContent = p.label
@@ -1252,7 +1252,7 @@ defineExpose({
           <path d="M5 12h14M13 6l6 6-6 6" />
         </svg>
       </span>
-      <span lang="ja" class="rounded-tag bg-paper px-1.5 text-label font-bold whitespace-nowrap text-ink shadow-marker">{{ hover.name }}</span>
+      <span lang="ja" class="rounded-tag bg-paper px-1.5 text-body-sm font-bold whitespace-nowrap text-ink shadow-marker">{{ hover.name }}</span>
     </div>
     <div
       v-else-if="hover"
@@ -1276,7 +1276,7 @@ defineExpose({
       </span>
       <span
         lang="ja"
-        class="mt-1 rounded-tag bg-paper px-1.5 text-label font-bold whitespace-nowrap text-ink shadow-marker"
+        class="mt-1 rounded-tag bg-paper px-1.5 text-body-sm font-bold whitespace-nowrap text-ink shadow-marker"
         :class="hover.thumb && !failedThumbs.has(hover.thumb) ? '' : 'mt-[16px]'"
       >{{ hover.name }}</span>
     </div>

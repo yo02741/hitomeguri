@@ -26,7 +26,7 @@ useDismiss(root, menuOpen, () => (menuOpen.value = false), () => settingsBtn.val
 
 // 點擊區撐到 44（觸控），看得到的膠囊維持 36（決定事項 B2）
 const hit = 'pointer-events-auto flex h-9 shrink-0 items-center active:not-disabled:translate-y-px pointer-coarse:h-tap'
-const pill = 'flex h-9 items-center gap-1.5 rounded-full px-3.5 text-label font-bold whitespace-nowrap shadow-float'
+const pill = 'flex h-9 items-center gap-1.5 rounded-full px-3.5 text-body-sm font-bold whitespace-nowrap shadow-float'
 </script>
 
 <template>

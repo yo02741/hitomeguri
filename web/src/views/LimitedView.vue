@@ -48,7 +48,7 @@ const gallery = ref<InstanceType<typeof FindGallery> | null>(null)
       <nav v-if="finds.brands.length > 1" class="flex flex-wrap gap-x-3.5 gap-y-1 pointer-coarse:-mx-1.5 pointer-coarse:-my-2.5 pointer-coarse:gap-x-0.5 pointer-coarse:gap-y-0" aria-label="品牌">
         <button
           type="button"
-          class="text-label pointer-coarse:px-1.5 pointer-coarse:py-2.5"
+          class="text-body-sm pointer-coarse:px-1.5 pointer-coarse:py-2.5"
           :class="brand === null ? 'border-region-strong font-bold text-ink' : 'border-transparent text-sub hover:text-ink active:text-ink'"
           :aria-pressed="brand === null"
           @click="brand = null"
@@ -59,7 +59,7 @@ const gallery = ref<InstanceType<typeof FindGallery> | null>(null)
           v-for="b in finds.brands"
           :key="b"
           type="button"
-          class="text-label pointer-coarse:px-1.5 pointer-coarse:py-2.5"
+          class="text-body-sm pointer-coarse:px-1.5 pointer-coarse:py-2.5"
           :class="brand === b ? 'border-region-strong font-bold text-ink' : 'border-transparent text-sub hover:text-ink active:text-ink'"
           :aria-pressed="brand === b"
           @click="brand = brand === b ? null : b"

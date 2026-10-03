@@ -37,7 +37,7 @@ function onSelect(key: string) {
     <span class="contents max-lg:hidden">
       <button
         type="button"
-        class="h-9 rounded-control border border-line bg-paper px-3 text-label text-ink hover:bg-surface disabled:cursor-not-allowed disabled:opacity-40 active:not-disabled:translate-y-px pointer-coarse:h-tap"
+        class="h-9 rounded-control border border-line bg-paper px-3 text-body-sm text-ink hover:bg-surface disabled:cursor-not-allowed disabled:opacity-40 active:not-disabled:translate-y-px pointer-coarse:h-tap"
         :disabled="!rows.length"
         @click="run('kml')"
       >
@@ -45,7 +45,7 @@ function onSelect(key: string) {
       </button>
       <button
         type="button"
-        class="h-9 rounded-control border border-line bg-paper px-3 text-label text-ink hover:bg-surface disabled:cursor-not-allowed disabled:opacity-40 active:not-disabled:translate-y-px pointer-coarse:h-tap"
+        class="h-9 rounded-control border border-line bg-paper px-3 text-body-sm text-ink hover:bg-surface disabled:cursor-not-allowed disabled:opacity-40 active:not-disabled:translate-y-px pointer-coarse:h-tap"
         :disabled="!rows.length"
         @click="run('csv')"
       >
@@ -56,7 +56,7 @@ function onSelect(key: string) {
       <ActionMenu
         label="匯出"
         :items="items"
-        trigger-class="flex h-9 items-center gap-1 rounded-control border border-line bg-paper pr-2 pl-3 text-label text-ink hover:bg-surface active:not-disabled:translate-y-px pointer-coarse:h-tap"
+        trigger-class="flex h-9 items-center gap-1 rounded-control border border-line bg-paper pr-2 pl-3 text-body-sm text-ink hover:bg-surface active:not-disabled:translate-y-px pointer-coarse:h-tap"
         @select="onSelect"
       >
         匯出

@@ -189,7 +189,7 @@ function markOpened(tripId: string) {
           <RegionMotif :pref="mainPref ?? undefined" class="absolute top-1/2 left-1/2 size-[220px] -translate-x-1/2 -translate-y-1/2 opacity-70" />
           <span class="relative flex h-full flex-col items-center justify-end gap-1 px-4 pb-6 text-center">
             <span lang="ja" class="text-[30px] leading-none font-black">一巡り</span>
-            <span class="line-clamp-2 text-label font-bold">{{ title }}</span>
+            <span class="line-clamp-2 text-body-sm font-bold">{{ title }}</span>
             <span class="font-latin text-body-sm font-semibold">{{ deck.length }} 張</span>
           </span>
           <span class="pack-sheen pointer-events-none absolute inset-0" aria-hidden="true"></span>

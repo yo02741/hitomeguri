@@ -151,7 +151,7 @@ function print() {
           v-if="!wide"
           ref="contentBtn"
           type="button"
-          class="flex h-9 shrink-0 items-center gap-1 rounded-control border border-line bg-paper pr-2 pl-3 text-label text-ink hover:bg-surface active:not-disabled:translate-y-px pointer-coarse:h-tap"
+          class="flex h-9 shrink-0 items-center gap-1 rounded-control border border-line bg-paper pr-2 pl-3 text-body-sm text-ink hover:bg-surface active:not-disabled:translate-y-px pointer-coarse:h-tap"
           aria-haspopup="dialog"
           :aria-expanded="contentOpen"
           @click="contentOpen = !contentOpen"
@@ -159,7 +159,7 @@ function print() {
           內容
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" class="text-sub" aria-hidden="true"><path d="M6 9l6 6 6-6" /></svg>
         </button>
-        <div v-if="wide" class="flex items-center gap-1 text-label" role="group" aria-label="紙張">
+        <div v-if="wide" class="flex items-center gap-1 text-body-sm" role="group" aria-label="紙張">
           <button
             v-for="p in ['A5', 'A4'] as const"
             :key="p"
@@ -172,7 +172,7 @@ function print() {
             {{ p }}
           </button>
         </div>
-        <div v-if="wide" class="flex flex-wrap items-center gap-x-3 gap-y-1 text-label">
+        <div v-if="wide" class="flex flex-wrap items-center gap-x-3 gap-y-1 text-body-sm">
           <label v-for="p in PARTS" :key="p.key" class="flex cursor-pointer items-center gap-1.5 pointer-coarse:min-h-tap">
             <input v-model="parts[p.key]" type="checkbox" class="size-4 accent-(--region-strong)" />
             {{ p.label }}
@@ -245,7 +245,7 @@ function print() {
           <span v-for="[p, w] in band" :key="p" :data-pref="p" class="h-full bg-region" :style="{ flexGrow: w }"></span>
         </div>
         <div class="mt-[18mm] flex flex-col gap-3">
-          <span class="text-label font-bold tracking-section text-sub">旅前小書</span>
+          <span class="text-body-sm font-bold tracking-section text-sub">旅前小書</span>
           <h1 class="text-h1 leading-tight font-black tracking-title">{{ trip.name || '未命名行程' }}</h1>
           <p v-if="dates" class="font-latin text-title">
             {{ dates }}<span class="ml-2 font-sans text-body-sm text-sub">{{ days }} 天</span>

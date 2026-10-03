@@ -222,7 +222,7 @@ onBeforeUnmount(() => document.removeEventListener('keydown', onKey))
         </div>
         <!-- 控制列：直向排在卡片下面；橫向（手機打橫）排成一欄放在卡片右邊，像切符的副券 -->
         <div class="controls">
-          <p v-if="position" class="font-latin text-label text-white/80" aria-live="polite">{{ position.index + 1 }} / {{ position.total }}</p>
+          <p v-if="position" class="font-latin text-body-sm text-white/80" aria-live="polite">{{ position.index + 1 }} / {{ position.total }}</p>
           <!-- 樣式：收集到的幾種之間切換 -->
           <div v-if="variants && variants.length" class="variants flex flex-wrap items-center justify-center gap-1.5" role="group" aria-label="樣式">
             <button
@@ -255,7 +255,7 @@ onBeforeUnmount(() => document.removeEventListener('keydown', onKey))
             <button
               v-if="touch && !tilt.reduced"
               type="button"
-              class="h-10 rounded-full bg-paper px-4 text-label font-bold text-ink disabled:opacity-60 active:not-disabled:translate-y-px pointer-coarse:h-tap"
+              class="h-10 rounded-full bg-paper px-4 text-body-sm font-bold text-ink disabled:opacity-60 active:not-disabled:translate-y-px pointer-coarse:h-tap"
               :disabled="gyro"
               @click="startGyro"
             >
@@ -264,7 +264,7 @@ onBeforeUnmount(() => document.removeEventListener('keydown', onKey))
             <button
               v-if="canDraw"
               type="button"
-              class="flex h-10 items-center justify-center gap-2 rounded-full bg-paper px-4 text-label font-bold text-ink disabled:opacity-50 active:not-disabled:translate-y-px pointer-coarse:h-tap"
+              class="flex h-10 items-center justify-center gap-2 rounded-full bg-paper px-4 text-body-sm font-bold text-ink disabled:opacity-50 active:not-disabled:translate-y-px pointer-coarse:h-tap"
               :disabled="!missing || !wallet.canSpend(1)"
               @click="drawOneCard"
             >
@@ -272,17 +272,17 @@ onBeforeUnmount(() => document.removeEventListener('keydown', onKey))
               <span v-if="missing" class="font-latin text-caption font-semibold text-sub">券 {{ wallet.left }}</span>
             </button>
             <!-- 觸控裝置點卡片就會翻面，不另外放「背面」 -->
-            <button v-if="!touch" type="button" class="h-10 rounded-full bg-paper px-4 text-label font-bold text-ink active:not-disabled:translate-y-px pointer-coarse:h-tap" @click="flipped = !flipped">
+            <button v-if="!touch" type="button" class="h-10 rounded-full bg-paper px-4 text-body-sm font-bold text-ink active:not-disabled:translate-y-px pointer-coarse:h-tap" @click="flipped = !flipped">
               {{ flipped ? '正面' : '背面' }}
             </button>
             <RouterLink
               v-if="to"
               :to="to"
-              class="flex h-10 items-center justify-center rounded-full bg-paper px-4 text-label font-bold text-ink no-underline active:not-disabled:translate-y-px pointer-coarse:h-tap"
+              class="flex h-10 items-center justify-center rounded-full bg-paper px-4 text-body-sm font-bold text-ink no-underline active:not-disabled:translate-y-px pointer-coarse:h-tap"
             >
               地圖
             </RouterLink>
-            <button type="button" class="h-10 rounded-full bg-paper px-4 text-label font-bold text-ink active:not-disabled:translate-y-px max-sm:hidden pointer-coarse:h-tap" @click="emit('close')">
+            <button type="button" class="h-10 rounded-full bg-paper px-4 text-body-sm font-bold text-ink active:not-disabled:translate-y-px max-sm:hidden pointer-coarse:h-tap" @click="emit('close')">
               關閉
             </button>
           </div>
@@ -290,7 +290,7 @@ onBeforeUnmount(() => document.removeEventListener('keydown', onKey))
         <!-- 手機（<640）：「關閉」在右上角，按鈕列放得進一行 -->
         <button
           type="button"
-          class="absolute top-[max(0.75rem,env(safe-area-inset-top))] right-[max(0.75rem,env(safe-area-inset-right))] flex h-10 items-center rounded-full bg-paper px-4 text-label font-bold text-ink active:not-disabled:translate-y-px sm:hidden pointer-coarse:h-tap"
+          class="absolute top-[max(0.75rem,env(safe-area-inset-top))] right-[max(0.75rem,env(safe-area-inset-right))] flex h-10 items-center rounded-full bg-paper px-4 text-body-sm font-bold text-ink active:not-disabled:translate-y-px sm:hidden pointer-coarse:h-tap"
           @click="emit('close')"
         >
           關閉

@@ -73,7 +73,7 @@ function hidePhoto(e: Event) {
   </section>
   <section v-else class="flex min-h-0 flex-col rounded-card bg-paper p-1.5 shadow-float">
     <!-- 手機不放「景點」標題列（海報條已經寫了縣名），清單多露出一列多（手機版計畫第二階段 6） -->
-    <h2 class="flex h-9 shrink-0 items-center justify-center gap-1.5 rounded-control bg-region-tint text-label font-bold text-ink max-lg:sr-only">
+    <h2 class="flex h-9 shrink-0 items-center justify-center gap-1.5 rounded-control bg-region-tint text-body-sm font-bold text-ink max-lg:sr-only">
       景點
     </h2>
 
@@ -86,7 +86,7 @@ function hidePhoto(e: Event) {
     >
       <button
         type="button"
-        class="shrink-0 text-label whitespace-nowrap pointer-coarse:px-1.5 pointer-coarse:py-2.5"
+        class="shrink-0 text-body-sm whitespace-nowrap pointer-coarse:px-1.5 pointer-coarse:py-2.5"
         :class="explore.category === null ? 'border-region-strong font-bold text-ink' : 'border-transparent text-sub hover:text-ink active:text-ink'"
         :aria-pressed="explore.category === null"
         @click="explore.category = null"
@@ -97,7 +97,7 @@ function hidePhoto(e: Event) {
         v-for="g in sections"
         :key="g.key"
         type="button"
-        class="shrink-0 text-label whitespace-nowrap pointer-coarse:px-1.5 pointer-coarse:py-2.5"
+        class="shrink-0 text-body-sm whitespace-nowrap pointer-coarse:px-1.5 pointer-coarse:py-2.5"
         :class="explore.category === g.key ? 'border-region-strong font-bold text-ink' : 'border-transparent text-sub hover:text-ink active:text-ink'"
         :aria-pressed="explore.category === g.key"
         @click="explore.category = explore.category === g.key ? null : g.key"
