@@ -23,6 +23,11 @@ const shape = shallowRef<JapanOutline | null>(null)
 onMounted(async () => {
   shape.value = await japanOutline()
 })
+// 地圖的寬高比：手機打橫時依畫面高度限制寬度，整張地圖放得進一屏（第二階段 31）
+const aspect = computed(() => {
+  const [, , w, h] = shape.value?.viewBox.split(' ').map(Number) ?? []
+  return w && h ? w / h : 1
+})
 
 const total = computed(() => regions.reduce((n, r) => n + keiken.levelOf(r.prefecture), 0))
 const counts = computed(() => {
@@ -149,7 +154,7 @@ async function render(canvas: HTMLCanvasElement) {
 
     <p v-if="!userStore.user" class="text-body-sm text-sub">收藏、行程與紀錄需要登入。</p>
     <template v-else>
-      <div ref="mapBox" class="relative mx-auto w-full max-w-[560px]">
+      <div ref="mapBox" class="relative mx-auto w-full max-w-[560px] land:max-w-[min(560px,calc((100dvh-var(--spacing-header)-1.5rem)*var(--map-aspect)))]" :style="{ '--map-aspect': aspect }">
         <svg
           v-if="shape"
           :viewBox="shape.viewBox"

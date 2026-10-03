@@ -105,7 +105,7 @@ function onKey(e: KeyboardEvent) {
       class="scroll-quiet z-30 flex origin-top animate-pop-in flex-col overflow-y-auto overscroll-contain bg-paper p-1.5"
       :class="
         full
-          ? ['fixed inset-x-0 top-header border-t border-line', typing ? 'bottom-0' : 'bottom-[calc(3.5rem+env(safe-area-inset-bottom))]']
+          ? ['fixed inset-x-0 top-header border-t border-line', typing ? 'bottom-0' : 'bottom-[calc(var(--spacing-tabbar)+env(safe-area-inset-bottom))]']
           : 'absolute top-12 right-0 max-h-[60dvh] w-full rounded-card shadow-float'
       "
     >

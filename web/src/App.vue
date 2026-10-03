@@ -46,12 +46,12 @@ const DollWalker = defineAsyncComponent(() => import('./components/DollWalker.vu
     <AppHeader />
     <!-- 列印（旅前小書）時攤開固定高度的捲動版面，否則只印得出第一頁。
          id 給換頁的捲動位置用（services/scrollRestore.ts）。
-         橫向的瀏海：內容左右讓出安全區；沒有分頁列（≥1024）時底部也讓出。
+         橫向的瀏海：內容左右讓出安全區；沒有分頁列（≥1024、手機打橫）時底部也讓出。
          data-bleed：地圖頁的地圖本身鋪到瀏海底下，控制項再縮回來（theme.css 的 .map-root） -->
     <main
       id="app-main"
       :data-bleed="route.meta.bleed ? '' : undefined"
-      class="flex min-h-0 flex-1 flex-col overflow-y-auto pr-[env(safe-area-inset-right)] pl-[env(safe-area-inset-left)] lg:pb-[env(safe-area-inset-bottom)] print:block print:overflow-visible print:p-0"
+      class="flex min-h-0 flex-1 flex-col overflow-y-auto pr-[env(safe-area-inset-right)] pl-[env(safe-area-inset-left)] lg:pb-[env(safe-area-inset-bottom)] land:pb-[env(safe-area-inset-bottom)] print:block print:overflow-visible print:p-0"
     >
       <RouterView />
     </main>

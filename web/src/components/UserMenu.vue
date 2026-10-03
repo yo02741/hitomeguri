@@ -117,7 +117,7 @@ async function logOut() {
       :aria-expanded="open"
       aria-controls="user-menu"
       class="grid size-10 place-items-center overflow-hidden rounded-full border border-line bg-placeholder text-sub active:not-disabled:translate-y-px pointer-coarse:size-tap"
-      :class="open || items.some(isActive) ? 'outline-2 outline-offset-2 outline-region-strong' : ''"
+      :class="open || items.some(isActive) ? 'outline-2 outline-offset-2 outline-region-strong land:-outline-offset-2' : ''"
       @click="peek = false; open ? hide() : show()"
       @keydown="onTriggerKey"
     >

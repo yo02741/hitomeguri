@@ -66,7 +66,7 @@ const hasData = computed(() => new Set(props.available))
         >
           <span v-for="part in g.areaName.split(/(?<=・)/)" :key="part" class="whitespace-nowrap">{{ part }}</span>
         </span>
-        <div class="grid min-w-0 flex-1 grid-cols-3 gap-1 sm:grid-cols-6">
+        <div class="grid min-w-0 flex-1 grid-cols-3 gap-1 sm:grid-cols-6 land:grid-cols-3">
           <RouterLink
             v-for="r in g.items"
             :key="r.prefecture"

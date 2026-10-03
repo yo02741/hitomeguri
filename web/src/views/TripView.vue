@@ -546,7 +546,8 @@ async function del() {
             地圖
           </button>
         </div>
-        <div v-if="mapOpen" id="trip-map" class="relative h-[40dvh] border-b border-line-soft">
+        <!-- 手機打橫：天數條＋地圖都 sticky，地圖矮一點，下面還看得到兩三站 -->
+        <div v-if="mapOpen" id="trip-map" class="relative h-[40dvh] border-b border-line-soft land:h-[32dvh]">
           <MapView :spots="mapSpots" :bounds="bounds" :route="route" :selected-id="focusId" @select="focusStop" />
         </div>
       </div>

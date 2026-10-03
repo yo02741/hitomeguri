@@ -38,6 +38,8 @@ const props = defineProps<{
   castle?: { no: number; label: string; stamp: string[] }
   /** 手機 sheet 目前的段（桌機不傳）：有值時上方是把手＋名稱帶（可拖），收合時名稱帶放「去過」 */
   snap?: Snap
+  /** 手機打橫的左側欄（決定事項 N2）：版面同 sheet（名稱帶固定、以下捲動），但沒有把手、不能拖 */
+  noHandle?: boolean
 }>()
 const emit = defineEmits<{
   close: []
@@ -176,12 +178,12 @@ function distance(m: number): string {
     <div
       ref="head"
       class="paper-grain bg-region text-on-region"
-      :class="snap ? 'shrink-0 touch-none select-none' : ''"
-      :data-sheet-drag="snap ? '' : undefined"
+      :class="snap ? (noHandle ? 'shrink-0' : 'shrink-0 touch-none select-none') : ''"
+      :data-sheet-drag="snap && !noHandle ? '' : undefined"
     >
       <!-- 把手：拖曳或點一下換段；鍵盤上下鍵往上、往下一段 -->
       <button
-        v-if="snap"
+        v-if="snap && !noHandle"
         type="button"
         :aria-label="handleLabel"
         :aria-expanded="snap !== 'peek'"
@@ -192,7 +194,7 @@ function distance(m: number): string {
         <span class="h-1 w-10 rounded-full bg-on-region/40" aria-hidden="true"></span>
       </button>
       <!-- 手機：卡片、播放、關閉三顆並排，按鈕之間只留 4px，名稱才放得下一行 -->
-      <div class="flex items-center" :class="snap ? 'gap-1 pt-0 pr-2 pb-3 pl-5' : 'gap-3.5 px-5 py-4'">
+      <div class="flex items-center" :class="snap ? ['gap-1 pr-2 pb-3 pl-5', noHandle ? 'pt-3' : 'pt-0'] : 'gap-3.5 px-5 py-4'">
         <!-- 手機打橫（高 ≤500px）：名稱帶只留日文名、字小一級，半開時下面還看得到內容 -->
         <div class="flex min-w-0 flex-col gap-px" :class="snap ? 'mr-2' : ''">
           <span v-if="spot.name.kana" lang="ja" class="text-caption tracking-kana" :class="snap ? short.hide : ''">{{ spot.name.kana }}</span>

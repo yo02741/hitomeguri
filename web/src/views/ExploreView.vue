@@ -32,6 +32,7 @@ import type { SearchHit } from '../services/search'
 import { trackSplash } from '../services/splash'
 import { currentTimed } from '../services/timed'
 import { todayIso } from '../services/userdb'
+import { land } from '../services/viewport'
 import { useCatalogStore } from '../stores/catalog'
 import { useExploreStore } from '../stores/explore'
 import { useMarksStore } from '../stores/marks'
@@ -244,7 +245,9 @@ syncDesktop()
 mq?.addEventListener('change', syncDesktop)
 onBeforeUnmount(() => mq?.removeEventListener('change', syncDesktop))
 const FLOAT_INSET = 300 + 16 * 2
-const insetLeft = computed(() => (desktop.value ? FLOAT_INSET : 0))
+// 手機打橫（高 ≤500，決定事項 N2）：清單與景點卡片都是左側 300px 的浮動欄（和桌機的浮動面板同寬），地圖一樣扣掉左側
+const side = computed(() => !desktop.value && land.value)
+const insetLeft = computed(() => (desktop.value || side.value ? FLOAT_INSET : 0))
 
 // 手機景點卡片的三段高度（DESIGN.md §7.13、決定事項 C3）：收合（把手＋名稱帶，名稱帶放「去過」）／半開 55vh／全開。
 // 只有把手與名稱帶（SpotPanel 的 data-sheet-drag）可以拖；放開時吸到最近的一段，從收合再往下拉就關閉。
@@ -270,15 +273,19 @@ watch([root, poster], (els, old) => {
 })
 onBeforeUnmount(() => areaObserver?.disconnect())
 const heights = computed(() => snapHeights(area.value.h, area.value.poster, headPx.value, area.value.vh))
-/** 手機的景點卡片（可拖、三段高度）；桌機與擴充包的點不是 */
-const spotSheet = computed(() => !desktop.value && !shownPack.value)
+/** 手機的景點卡片（可拖、三段高度）；桌機、手機打橫（側欄）與擴充包的點不是 */
+const spotSheet = computed(() => !desktop.value && !side.value && !shownPack.value)
 // chip 軌道：景點卡片全開，或半開就蓋到軌道（手機打橫）時先收起
 const railShown = computed(() => {
+  // 打橫：卡片在側欄裡，蓋住軌道的位置
+  if (side.value) return !selectedId.value
   if (!selectedId.value || !spotSheet.value || snap.value === 'peek') return true
   if (snap.value === 'full') return false
   const a = area.value
   return heights.value.half <= a.h - a.poster - 80
 })
+// 打橫的左側欄：從海報條下面 16px 到地圖下緣 16px（和桌機的浮動面板一樣是整欄）
+const sideStyle = computed(() => ({ top: `${area.value.poster + 16}px`, bottom: '16px' }))
 const sheetStyle = computed(() =>
   spotSheet.value && area.value.h ? { height: `${dragH.value ?? heights.value[snap.value]}px` } : undefined,
 )
@@ -330,19 +337,22 @@ function onSnapStep(dir: -1 | 0 | 1) {
   snap.value = stepSnap(snap.value, dir)
 }
 // 換段之後鏡頭跟著：卡片高度變完（0.28s）再量一次蓋住的範圍，選到的點被蓋住就移到剩下的地圖中間
+// 手機轉向（直 ↔ 打橫）時卡片從下方換到左側欄（或反過來）：蓋住的範圍變了，同樣再看一次
 let revealTimer = 0
-watch(snap, () => {
+function revealSelected() {
   clearTimeout(revealTimer)
   revealTimer = window.setTimeout(async () => {
     measureInsets()
     await nextTick()
-    if (!selectedId.value || snap.value === 'full') return
+    if (!selectedId.value || (spotSheet.value && snap.value === 'full')) return
     const id = selectedId.value
     const s = allSpots.value.find((x) => x.id === id)
     const loc = s ? { lng: s.lng, lat: s.lat } : shownSpot.value?.id === id ? shownSpot.value.location : null
     if (loc) mapRef.value?.reveal(loc.lng, loc.lat)
   }, 300)
-})
+}
+watch(snap, revealSelected)
+watch(side, revealSelected)
 onBeforeUnmount(() => clearTimeout(revealTimer))
 // Esc 關閉景點卡片（手機；焦點在卡片、地圖或沒有焦點時）。卡片裡的選單、對話框自己處理掉的 Esc 不算
 function onKey(e: KeyboardEvent) {
@@ -363,13 +373,14 @@ const insets = shallowRef({ top: 0, bottom: 0 })
 // 擴充包的點：依內容高度，最高 60dvh，但不超過海報條以下的地圖區減 2.5rem（手機打橫時地圖區只有兩百多 px）
 const sheetHeight = computed(() => {
   const poster = !!(props.pref && regionOf(props.pref))
+  if (side.value) return ''
   if (shownPack.value) return poster ? 'max-lg:max-h-[min(60dvh,calc(100%-6rem))]' : 'max-lg:max-h-[min(60dvh,calc(100%-2.5rem))]'
   // 景點：三段高度由 sheetStyle 給（量到地圖區之前先用半開的 class）
   if (sheetStyle.value) return dragH.value === null ? 'sheet-snap' : ''
   return poster ? 'max-lg:h-[min(55dvh,calc(100%-6rem))]' : 'max-lg:h-[min(55dvh,calc(100%-2.5rem))]'
 })
 function measureInsets() {
-  if (desktop.value) {
+  if (desktop.value || side.value) {
     if (insets.value.top || insets.value.bottom) insets.value = { top: 0, bottom: 0 }
     return
   }
@@ -387,7 +398,7 @@ watch([panel, sheet, pinCard], (els, old) => {
   els.forEach((el) => el && insetObserver?.observe(el))
   measureInsets()
 })
-watch(desktop, measureInsets)
+watch([desktop, side], measureInsets)
 onBeforeUnmount(() => insetObserver?.disconnect())
 /** 飛到某個點：先量好清單與卡片蓋住的範圍（剛打開的卡片要等畫出來），再讓點落在看得到的地圖中間 */
 async function flyToVisible(lng: number, lat: number, zoom: number) {
@@ -723,7 +734,7 @@ function onMoveEnd(view: MapViewState) {
     <div
       v-if="pref && regionOf(pref)"
       ref="poster"
-      class="-mr-[env(safe-area-inset-right)] -ml-[env(safe-area-inset-left)] flex h-[56px] shrink-0 items-center gap-2 bg-region pr-[calc(0.5rem+env(safe-area-inset-right))] pl-[calc(0.25rem+env(safe-area-inset-left))] text-on-region lg:hidden"
+      class="-mr-[env(safe-area-inset-right)] -ml-[env(safe-area-inset-left)] flex h-[56px] shrink-0 items-center gap-2 bg-region land:h-12 pr-[calc(0.5rem+env(safe-area-inset-right))] pl-[calc(0.25rem+env(safe-area-inset-left))] text-on-region lg:hidden"
     >
       <RouterLink
         to="/"
@@ -802,10 +813,10 @@ function onMoveEnd(view: MapViewState) {
       </div>
 
       <!-- 左上浮動面板：地區標籤／地區清單、主題篩選、景點與地區特色。
-           手機打橫時地圖只剩兩百多 px 高，清單右邊留出縮放鈕那一欄，縮放鈕不被清單蓋住 -->
+           手機打橫（高 ≤500）：和桌機一樣是左側 300px 的欄，清單填滿欄高，地圖扣掉左側（決定事項 N2） -->
       <div
         ref="panel"
-        class="pointer-events-none absolute top-4 bottom-4 left-4 z-10 flex w-float flex-col gap-2.5 *:pointer-events-auto max-lg:right-4 max-lg:bottom-auto max-lg:w-auto max-lg:[@media(orientation:landscape)_and_(max-height:500px)]:right-14"
+        class="pointer-events-none absolute top-4 bottom-4 left-4 z-10 flex w-float flex-col gap-2.5 *:pointer-events-auto max-lg:right-4 max-lg:bottom-auto max-lg:w-auto land:right-auto land:bottom-4 land:w-float"
       >
         <!-- 手機：chip 軌道（收藏、擴充包、設定；桌機在地圖上方的擴充包列）。軌道不吃點擊，空白處照樣拖得動地圖 -->
         <ChipRail v-if="!desktop" v-show="railShown" :pref="pref && regionOf(pref) ? pref : null" class="pointer-events-none! shrink-0" />
@@ -839,7 +850,7 @@ function onMoveEnd(view: MapViewState) {
             v-show="listShown"
             :pref="pref"
             :selected-id="selectedId"
-            class="max-lg:max-h-[40dvh]"
+            class="max-lg:max-h-[40dvh] land:max-h-none"
             @select="select"
             @highlight="(id) => mapRef?.highlight(id)"
           />
@@ -850,7 +861,7 @@ function onMoveEnd(view: MapViewState) {
             :spots="prefSpots"
             :state="catalog.mapState(pref)"
             :selected-id="selectedId"
-            class="max-lg:max-h-[40dvh]"
+            class="max-lg:max-h-[40dvh] land:max-h-none"
             @select="select"
             @highlight="(id) => mapRef?.highlight(id)"
           />
@@ -878,11 +889,11 @@ function onMoveEnd(view: MapViewState) {
             v-if="explore.pack"
             v-show="listShown"
             :selected-id="selectedId"
-            class="max-lg:max-h-[40dvh]"
+            class="max-lg:max-h-[40dvh] land:max-h-none"
             @select="select"
             @highlight="(id) => mapRef?.highlight(id)"
           />
-          <HomeSidebar v-else v-show="listShown" :available="available" class="max-lg:max-h-[50dvh] max-lg:[@media(orientation:landscape)_and_(max-height:500px)]:max-h-[40dvh]" />
+          <HomeSidebar v-else v-show="listShown" :available="available" class="max-lg:max-h-[50dvh] land:max-h-none" />
         </template>
       </div>
 
@@ -890,7 +901,7 @@ function onMoveEnd(view: MapViewState) {
       <div
         v-if="pin && !selectedId && pref && regionOf(pref)"
         ref="pinCard"
-        class="absolute inset-x-4 bottom-4 z-10 flex items-center gap-1 rounded-card bg-paper p-1 text-ink shadow-float lg:hidden"
+        class="absolute inset-x-4 bottom-4 z-10 flex items-center gap-1 rounded-card bg-paper p-1 text-ink shadow-float lg:hidden land:right-auto land:w-float"
       >
         <RouterLink v-slot="{ href }" :to="`/region/${pref}#festivals`" custom>
           <a
@@ -920,16 +931,22 @@ function onMoveEnd(view: MapViewState) {
     </div>
 
     <!-- 手機的景點卡片從下方升上來、關閉時往下收；換景點時內容淡入（DESIGN.md §9）。桌機沒有 transition，直接出現與移除 -->
-    <Transition name="sheet" @after-enter="sheetEntering = false" @enter-cancelled="sheetEntering = false" @after-leave="dragH = null">
+    <!-- 手機打橫：卡片是左側欄，從左邊滑進來 -->
+    <Transition :name="side ? 'side' : 'sheet'" @after-enter="sheetEntering = false" @enter-cancelled="sheetEntering = false" @after-leave="dragH = null">
       <!-- 擴充包的點內容短：手機的卡片依內容高度，最高 60dvh（PackPanel 自己捲動）。
            手機打橫時 60dvh 比地圖區還高：再限制在海報條以下、上面留 2.5rem 地圖 -->
       <aside
         v-if="selectedId"
         ref="sheet"
         :data-reduce="desktop ? undefined : 'fade'"
-        class="shrink-0 border-line lg:w-panel lg:border-l max-lg:absolute max-lg:inset-x-0 max-lg:bottom-0 max-lg:z-20 max-lg:overflow-hidden max-lg:rounded-t-sheet max-lg:shadow-sheet"
-        :class="sheetHeight"
-        :style="sheetStyle"
+        class="shrink-0 border-line"
+        :class="[
+          side
+            ? 'absolute left-4 z-20 w-float overflow-hidden rounded-card shadow-float'
+            : 'lg:w-panel lg:border-l max-lg:absolute max-lg:inset-x-0 max-lg:bottom-0 max-lg:z-20 max-lg:overflow-hidden max-lg:rounded-t-sheet max-lg:shadow-sheet',
+          sheetHeight,
+        ]"
+        :style="side ? sideStyle : sheetStyle"
         @pointerdown="onSheetDown"
         @pointermove="onSheetMove"
         @pointerup="onSheetUp"
@@ -954,7 +971,8 @@ function onMoveEnd(view: MapViewState) {
             :loading="loadingSpot"
             :nearby="nearby"
             :castle="castleOfSpot"
-            :snap="spotSheet ? snap : undefined"
+            :snap="spotSheet ? snap : side ? 'full' : undefined"
+            :no-handle="side"
             @close="closeSpot"
             @select-pack="select"
             @snap-step="onSnapStep"
@@ -970,6 +988,16 @@ function onMoveEnd(view: MapViewState) {
 /* 手機的景點卡片（DESIGN.md §9）：升上來 0.32s、往下收 0.2s；開到一半又關會直接反轉。
    換段（收合、半開、全開）時高度 0.28s；拖曳中跟著手指，不加 transition */
 @media (max-width: 1023.98px) {
+  .side-enter-active {
+    transition: transform 0.32s var(--ease-out-soft);
+  }
+  .side-leave-active {
+    transition: transform 0.2s var(--ease-out-soft);
+  }
+  .side-enter-from,
+  .side-leave-to {
+    transform: translateX(calc(-100% - 1rem));
+  }
   .sheet-snap {
     transition: height 0.28s var(--ease-out-soft);
   }
@@ -989,14 +1017,18 @@ function onMoveEnd(view: MapViewState) {
   .sheet-snap {
     transition: none;
   }
-  .sheet-enter-active {
+  .sheet-enter-active,
+  .side-enter-active {
     transition: none;
   }
-  .sheet-leave-active {
+  .sheet-leave-active,
+  .side-leave-active {
     transition: opacity 0.2s ease;
   }
   .sheet-enter-from,
-  .sheet-leave-to {
+  .sheet-leave-to,
+  .side-enter-from,
+  .side-leave-to {
     transform: none;
     opacity: 0;
   }

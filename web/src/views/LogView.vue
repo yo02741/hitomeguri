@@ -306,7 +306,8 @@ function open(id: string) {
         <SectionNav :items="nav" :active="active" variant="bar" @go="go" />
       </div>
 
-      <div ref="mapBox" class="relative h-[360px] overflow-hidden rounded-card border border-line bg-placeholder max-md:h-[260px]">
+      <!-- 手機打橫：扣掉 header 與段落列，整張小地圖放得進一屏（第二階段 31） -->
+      <div ref="mapBox" class="relative h-[360px] overflow-hidden rounded-card border border-line bg-placeholder max-md:h-[260px] land:h-[min(360px,calc(100dvh-var(--spacing-header)-6rem))]">
         <MapView v-if="mapOn" :spots="spots" :bounds="bounds" :marked="visitedOnly" no-terrain @select="open" />
       </div>
 

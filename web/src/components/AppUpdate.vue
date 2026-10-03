@@ -38,7 +38,7 @@ function updateServiceWorker() {
   <div
     v-if="pageLoadError"
     data-reduce="fade"
-    class="fixed bottom-[calc(5rem+env(safe-area-inset-bottom))] left-1/2 z-[60] flex -translate-x-1/2 animate-pop-up items-center gap-3 rounded-card bg-ink py-2 pr-2 pl-4 text-body-sm whitespace-nowrap text-paper shadow-float lg:bottom-6 print:hidden"
+    class="fixed bottom-[calc(var(--spacing-tabbar)+1.5rem+env(safe-area-inset-bottom))] left-1/2 z-[60] flex -translate-x-1/2 animate-pop-up items-center gap-3 rounded-card bg-ink py-2 pr-2 pl-4 text-body-sm whitespace-nowrap text-paper shadow-float lg:bottom-6 print:hidden"
     role="status"
   >
     {{ pageLoadError === 'offline' ? '離線中，無法開啟這一頁' : '無法開啟這一頁' }}
@@ -52,7 +52,7 @@ function updateServiceWorker() {
     v-else-if="toast"
     :key="toast.id"
     data-reduce="fade"
-    class="fixed inset-x-4 bottom-[calc(5rem+env(safe-area-inset-bottom))] z-[60] mx-auto flex w-fit max-w-[520px] animate-pop-up items-center gap-3 rounded-card bg-ink py-2 pr-2 pl-4 text-body-sm text-paper shadow-float lg:bottom-6 print:hidden"
+    class="fixed inset-x-4 bottom-[calc(var(--spacing-tabbar)+1.5rem+env(safe-area-inset-bottom))] z-[60] mx-auto flex w-fit max-w-[520px] animate-pop-up items-center gap-3 rounded-card bg-ink py-2 pr-2 pl-4 text-body-sm text-paper shadow-float lg:bottom-6 print:hidden"
     role="status"
     @pointerenter="holdToast"
     @pointerleave="releaseToast"
@@ -68,7 +68,7 @@ function updateServiceWorker() {
   <div
     v-else-if="needRefresh"
     data-reduce="fade"
-    class="fixed bottom-[calc(5rem+env(safe-area-inset-bottom))] left-1/2 z-[60] flex -translate-x-1/2 animate-pop-up items-center gap-3 rounded-card bg-ink py-2 pr-2 pl-4 text-body-sm text-paper shadow-float lg:bottom-6 print:hidden"
+    class="fixed bottom-[calc(var(--spacing-tabbar)+1.5rem+env(safe-area-inset-bottom))] left-1/2 z-[60] flex -translate-x-1/2 animate-pop-up items-center gap-3 rounded-card bg-ink py-2 pr-2 pl-4 text-body-sm text-paper shadow-float lg:bottom-6 print:hidden"
     role="status"
   >
     有新版本

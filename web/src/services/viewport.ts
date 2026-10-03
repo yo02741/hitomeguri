@@ -14,3 +14,8 @@ mqNarrow?.addEventListener('change', (e) => (narrow.value = e.matches))
 const mqCoarse = typeof window !== 'undefined' ? window.matchMedia('(pointer: coarse)') : null
 export const coarse = ref(mqCoarse?.matches ?? false)
 mqCoarse?.addEventListener('change', (e) => (coarse.value = e.matches))
+
+/** 手機打橫（高 ≤500、寬 <1024，Tailwind 的 land:，決定事項 N2）：分頁放進 header、地圖頁的清單與景點卡片改成左側欄 */
+const mqLand = typeof window !== 'undefined' ? window.matchMedia('(orientation: landscape) and (max-height: 500px) and (max-width: 1023.98px)') : null
+export const land = ref(mqLand?.matches ?? false)
+mqLand?.addEventListener('change', (e) => (land.value = e.matches))
