@@ -29,7 +29,7 @@ onBeforeUnmount(() => {
   document.removeEventListener('keydown', onKey)
 })
 
-const chip = 'flex h-9 shrink-0 items-center gap-1.5 rounded-full px-3.5 text-label font-bold shadow-float active:not-disabled:translate-y-px'
+const chip = 'flex h-9 shrink-0 items-center gap-1.5 rounded-full px-3.5 text-body-sm font-bold shadow-float active:not-disabled:translate-y-px'
 </script>
 
 <template>

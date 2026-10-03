@@ -171,7 +171,7 @@ defineExpose({ add })
             </button>
           </div>
           <div class="flex flex-col gap-1">
-            <span v-if="current.brand" class="text-label text-sub">{{ current.brand }}</span>
+            <span v-if="current.brand" class="text-body-sm text-sub">{{ current.brand }}</span>
             <span v-if="current.item" class="text-title font-black">{{ current.item }}</span>
             <p v-if="current.note" class="text-body-sm whitespace-pre-line text-ink-2">{{ current.note }}</p>
             <RouterLink
@@ -181,10 +181,10 @@ defineExpose({ add })
             >{{ tripName(current.trip_id) }}</RouterLink>
           </div>
           <div class="mt-auto flex gap-2">
-            <button type="button" class="h-9 rounded-control border border-line bg-paper px-3 text-label text-ink hover:bg-surface active:not-disabled:translate-y-px pointer-coarse:h-tap" @click="edit(current)">
+            <button type="button" class="h-9 rounded-control border border-line bg-paper px-3 text-body-sm text-ink hover:bg-surface active:not-disabled:translate-y-px pointer-coarse:h-tap" @click="edit(current)">
               編輯
             </button>
-            <button type="button" class="h-9 rounded-control border border-line bg-paper px-3 text-label text-danger hover:bg-surface active:not-disabled:translate-y-px pointer-coarse:h-tap" @click="del(current)">
+            <button type="button" class="h-9 rounded-control border border-line bg-paper px-3 text-body-sm text-danger hover:bg-surface active:not-disabled:translate-y-px pointer-coarse:h-tap" @click="del(current)">
               刪除
             </button>
           </div>

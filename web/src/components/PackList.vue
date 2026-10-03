@@ -69,7 +69,7 @@ const visitedCount = computed(() => rows.value.filter((it) => marks.markOf(it.s 
     <div class="flex h-9 shrink-0 items-center gap-2 px-1 pointer-coarse:h-tap">
       <button
         type="button"
-        class="flex h-8 items-center gap-1 rounded-control px-1.5 text-label text-sub hover:bg-surface hover:text-ink active:not-disabled:translate-y-px pointer-coarse:h-tap"
+        class="flex h-8 items-center gap-1 rounded-control px-1.5 text-body-sm text-sub hover:bg-surface hover:text-ink active:not-disabled:translate-y-px pointer-coarse:h-tap"
         @click="explore.pack = null"
       >
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -77,7 +77,7 @@ const visitedCount = computed(() => rows.value.filter((it) => marks.markOf(it.s 
         </svg>
         景點
       </button>
-      <span class="ml-auto flex items-center gap-1.5 pr-1.5 text-label font-bold text-ink">
+      <span class="ml-auto flex items-center gap-1.5 pr-1.5 text-body-sm font-bold text-ink">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-(--pack)" aria-hidden="true">
           <path :d="def.icon" />
         </svg>
@@ -93,7 +93,7 @@ const visitedCount = computed(() => rows.value.filter((it) => marks.markOf(it.s 
     >
       <button
         type="button"
-        class="text-label pointer-coarse:px-1.5 pointer-coarse:py-2.5"
+        class="text-body-sm pointer-coarse:px-1.5 pointer-coarse:py-2.5"
         :class="explore.packGroup === null ? 'border-(--pack) font-bold text-ink' : 'border-transparent text-sub hover:text-ink active:text-ink'"
         :aria-pressed="explore.packGroup === null"
         @click="explore.packGroup = null"
@@ -104,7 +104,7 @@ const visitedCount = computed(() => rows.value.filter((it) => marks.markOf(it.s 
         v-for="g in groups"
         :key="g.key"
         type="button"
-        class="text-label pointer-coarse:px-1.5 pointer-coarse:py-2.5"
+        class="text-body-sm pointer-coarse:px-1.5 pointer-coarse:py-2.5"
         :class="explore.packGroup === g.key ? 'border-(--pack) font-bold text-ink' : 'border-transparent text-sub hover:text-ink active:text-ink'"
         :aria-pressed="explore.packGroup === g.key"
         @click="explore.packGroup = explore.packGroup === g.key ? null : g.key"

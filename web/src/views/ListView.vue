@@ -2,6 +2,7 @@
 import { computed, nextTick, ref } from 'vue'
 import { useRouter } from 'vue-router'
 
+import type { MenuAction } from '../components/ActionMenu.vue'
 import ExportButtons from '../components/ExportButtons.vue'
 import MarkedSpotList from '../components/MarkedSpotList.vue'
 import { type MarkedSpot, useMarkedSpots } from '../composables/markedSpots'
@@ -38,6 +39,15 @@ function remove(r: MarkedSpot) {
   void marks.toggleInList({ id: r.id, pref: r.pref, name: r.name }, props.id)
 }
 
+const listActions: MenuAction[] = [
+  { key: 'rename', label: '改名', leaves: true },
+  { key: 'delete', label: '刪除清單', danger: true, group: 1 },
+]
+function onListAction(key: string) {
+  if (key === 'rename') void startEdit()
+  else if (key === 'delete') void del()
+}
+
 async function del() {
   if (!list.value) return
   const ok = await confirmDialog({
@@ -54,7 +64,7 @@ async function del() {
 
 <template>
   <section class="mx-auto flex w-full max-w-3xl flex-col gap-6 px-6 pt-9 pb-24">
-    <RouterLink to="/me" class="flex w-fit items-center gap-1 text-label text-sub no-underline hover:text-ink active:text-ink pointer-coarse:-my-3 pointer-coarse:py-3">
+    <RouterLink to="/me" class="flex w-fit items-center gap-1 text-body-sm text-sub no-underline hover:text-ink active:text-ink pointer-coarse:-my-3 pointer-coarse:py-3">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
         <path d="M15 5l-7 7 7 7" />
       </svg>
@@ -83,11 +93,12 @@ async function del() {
           <span class="font-latin text-body font-normal tracking-normal text-sub">{{ rows.length }}</span>
         </h1>
         <div v-if="!editing" class="ml-auto flex flex-wrap gap-2">
-          <ExportButtons :title="list.name" :rows="rows.map(markRow)" />
-          <button type="button" class="h-9 rounded-control border border-line bg-paper px-3 text-label text-ink hover:bg-surface active:not-disabled:translate-y-px pointer-coarse:h-tap" @click="startEdit">
+          <!-- 手機：改名、刪除和匯出收在同一個「匯出 ▾」（決定事項 P2） -->
+          <ExportButtons :title="list.name" :rows="rows.map(markRow)" :more="listActions" @select="onListAction" />
+          <button type="button" class="h-9 rounded-control border border-line bg-paper px-3 text-body-sm text-ink hover:bg-surface active:not-disabled:translate-y-px pointer-coarse:h-tap max-lg:hidden" @click="startEdit">
             改名
           </button>
-          <button type="button" class="h-9 rounded-control border border-line bg-paper px-3 text-label text-danger hover:bg-surface active:not-disabled:translate-y-px pointer-coarse:h-tap" @click="del">
+          <button type="button" class="h-9 rounded-control border border-line bg-paper px-3 text-body-sm text-danger hover:bg-surface active:not-disabled:translate-y-px pointer-coarse:h-tap max-lg:hidden" @click="del">
             刪除
           </button>
         </div>

@@ -1,9 +1,11 @@
 <script setup lang="ts">
-import { computed, onBeforeUnmount, onMounted, ref, watch, watchEffect } from 'vue'
+import { computed, nextTick, onBeforeUnmount, onMounted, ref, watch, watchEffect } from 'vue'
 
+import { useFloating } from '../composables/floating'
 import { usePrep } from '../composables/prep'
 import { regionOf } from '../data/regions'
 import { googleMapsUrl } from '../services/maps'
+import { wide } from '../services/viewport'
 import { type Phrase, SITUATION_LABEL } from '../services/prep'
 import { overlapping, dateRange } from '../services/timed'
 import { dayCount, dayDate, dayPref, shortDate, type Stop } from '../services/trip'
@@ -32,6 +34,21 @@ const PARTS = [
   { key: 'limited', label: '期間限定' },
   { key: 'notes', label: '筆記' },
 ] as const
+
+// 手機（<1024）：紙張與各段勾選收進「內容 ▾」，工具列只留一列（旅前準備・內容・列印）
+const contentBtn = ref<HTMLButtonElement | null>(null)
+const contentPanel = ref<HTMLElement | null>(null)
+const { open: contentOpen, style: contentStyle, side: contentSide, origin: contentOrigin } = useFloating(contentBtn, contentPanel)
+watch(contentOpen, async (o) => {
+  if (!o) return
+  await nextTick()
+  contentPanel.value?.querySelector<HTMLElement>('button, input')?.focus()
+})
+function closeContent() {
+  contentOpen.value = false
+  contentBtn.value?.focus()
+}
+watch(wide, (w) => w && (contentOpen.value = false))
 
 // 列印的紙張大小：@page 只能寫在樣式表裡，這一頁開著時加一段 <style>
 const pageStyle = document.createElement('style')
@@ -128,9 +145,21 @@ function print() {
   <div v-if="trip" :data-pref="prefs[0]" class="flex flex-col bg-surface print:block print:bg-transparent">
     <!-- 工具列：只在螢幕上 -->
     <div class="sticky top-0 z-10 border-b border-line bg-paper print:hidden">
-      <div class="mx-auto flex w-full max-w-5xl flex-wrap items-center gap-x-4 gap-y-2 px-6 py-3">
+      <div class="mx-auto flex w-full max-w-5xl flex-wrap items-center gap-x-4 gap-y-2 px-6 py-3 max-lg:flex-nowrap max-lg:gap-x-2 max-sm:px-4">
         <BackLink :to="`/trips/${trip.id}/prep`">旅前準備</BackLink>
-        <div class="flex items-center gap-1 text-label" role="group" aria-label="紙張">
+        <button
+          v-if="!wide"
+          ref="contentBtn"
+          type="button"
+          class="flex h-9 shrink-0 items-center gap-1 rounded-control border border-line bg-paper pr-2 pl-3 text-body-sm text-ink hover:bg-surface active:not-disabled:translate-y-px pointer-coarse:h-tap"
+          aria-haspopup="dialog"
+          :aria-expanded="contentOpen"
+          @click="contentOpen = !contentOpen"
+        >
+          內容
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" class="text-sub" aria-hidden="true"><path d="M6 9l6 6 6-6" /></svg>
+        </button>
+        <div v-if="wide" class="flex items-center gap-1 text-body-sm" role="group" aria-label="紙張">
           <button
             v-for="p in ['A5', 'A4'] as const"
             :key="p"
@@ -143,7 +172,7 @@ function print() {
             {{ p }}
           </button>
         </div>
-        <div class="flex flex-wrap items-center gap-x-3 gap-y-1 text-label">
+        <div v-if="wide" class="flex flex-wrap items-center gap-x-3 gap-y-1 text-body-sm">
           <label v-for="p in PARTS" :key="p.key" class="flex cursor-pointer items-center gap-1.5 pointer-coarse:min-h-tap">
             <input v-model="parts[p.key]" type="checkbox" class="size-4 accent-(--region-strong)" />
             {{ p.label }}
@@ -155,13 +184,53 @@ function print() {
         </div>
         <button
           type="button"
-          class="ml-auto h-10 rounded-control bg-region-strong px-4 text-body-sm font-bold text-white active:translate-y-px pointer-coarse:h-tap"
+          class="ml-auto h-10 shrink-0 rounded-control bg-region-strong px-4 text-body-sm font-bold whitespace-nowrap text-white active:translate-y-px pointer-coarse:h-tap"
           @click="print"
         >
           列印／存成 PDF
         </button>
       </div>
     </div>
+    <Teleport to="body">
+      <div
+        v-if="contentOpen"
+        ref="contentPanel"
+        :data-pref="prefs[0]"
+        data-floating
+        data-reduce="fade"
+        class="fixed z-50 flex min-w-52 flex-col rounded-card bg-paper p-1.5 text-body-sm text-ink shadow-float print:hidden"
+        :class="contentSide === 'top' ? 'animate-pop-up' : 'animate-pop-in'"
+        :style="{ ...contentStyle, transformOrigin: contentOrigin }"
+        role="dialog"
+        aria-label="內容"
+        @keydown.esc.stop.prevent="closeContent"
+      >
+        <div class="flex min-h-tap items-center gap-3 px-3" role="group" aria-label="紙張">
+          <span class="flex-1 text-sub">紙張</span>
+          <button
+            v-for="p in ['A5', 'A4'] as const"
+            :key="p"
+            type="button"
+            class="h-tap rounded-control px-3 font-latin active:not-disabled:translate-y-px"
+            :class="paper === p ? 'bg-region-tint font-bold text-ink' : 'text-sub'"
+            :aria-pressed="paper === p"
+            @click="paper = p"
+          >
+            {{ p }}
+          </button>
+        </div>
+        <div class="mx-1 my-1 border-t border-line-soft" role="none"></div>
+        <label v-for="p in PARTS" :key="p.key" class="flex min-h-tap cursor-pointer items-center gap-3 rounded-control px-3 active:bg-surface">
+          <input v-model="parts[p.key]" type="checkbox" class="size-4 accent-(--region-strong)" />
+          {{ p.label }}
+        </label>
+        <div class="mx-1 my-1 border-t border-line-soft" role="none"></div>
+        <label class="flex min-h-tap cursor-pointer items-center gap-3 rounded-control px-3 active:bg-surface">
+          <input v-model="onlyMust" type="checkbox" class="size-4 accent-(--region-strong)" />
+          只放必備會話
+        </label>
+      </div>
+    </Teleport>
 
     <SkeletonRows v-if="loading" :rows="4" class="mx-auto w-full max-w-3xl px-6 pt-6 print:hidden" />
 
@@ -176,7 +245,7 @@ function print() {
           <span v-for="[p, w] in band" :key="p" :data-pref="p" class="h-full bg-region" :style="{ flexGrow: w }"></span>
         </div>
         <div class="mt-[18mm] flex flex-col gap-3">
-          <span class="text-label font-bold tracking-section text-sub">旅前小書</span>
+          <span class="text-body-sm font-bold tracking-section text-sub">旅前小書</span>
           <h1 class="text-h1 leading-tight font-black tracking-title">{{ trip.name || '未命名行程' }}</h1>
           <p v-if="dates" class="font-latin text-title">
             {{ dates }}<span class="ml-2 font-sans text-body-sm text-sub">{{ days }} 天</span>

@@ -15,11 +15,13 @@ const props = defineProps<{
   range?: boolean
   min?: string
   max?: string
+  /** 還沒選日期時先打開的那一天所在的月（例：補登旅行開在上個月）；預設今天 */
+  initial?: string
 }>()
 const emit = defineEmits<{ pick: [date: string] }>()
 
 const today = todayIso()
-const initial = clampDate(props.value || props.end || props.start || today, props.min, props.max)
+const initial = clampDate(props.value || props.end || props.start || props.initial || today, props.min, props.max)
 const view = ref<'days' | 'months' | 'years'>('days')
 const month = ref(monthOf(initial))
 /** 鍵盤焦點所在的日期 */

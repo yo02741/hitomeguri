@@ -5,6 +5,8 @@ import vue from '@vitejs/plugin-vue'
 import { defineConfig, type Plugin } from 'vite'
 import { VitePWA } from 'vite-plugin-pwa'
 
+import { homeIcons, manifestIcons } from './build/icons.ts'
+
 // index.html 的開場畫面在 CSS bundle 載入前就要顯示，不能用 token：
 // 建置時把 %REGION_PAPER% 這類佔位字換成 data/regions.json 的全國色（不在原始碼寫死色碼），
 // %SPLASH_DOTS% 換成 47 都道府縣的圓點（JIS 順、從正上方順時針排一圈，各縣的地區色）。
@@ -81,7 +83,8 @@ function pwa() {
       scope: '.',
       theme_color: nationalColor.header,
       background_color: nationalColor.paper,
-      icons: [{ src: 'favicon.svg', sizes: 'any', type: 'image/svg+xml', purpose: 'any' }],
+      // 主畫面圖示由 build/icons.ts 從 regions.json 產生（決定事項 Q2）
+      icons: manifestIcons,
     },
     workbox: {
       globPatterns: ['**/*.{js,css,html,svg,woff2}'],
@@ -146,7 +149,7 @@ function pwa() {
 // GitHub Pages 部署在 /hitomeguri/ 子路徑，由 workflow 設 VITE_BASE；本機與 Firebase Hosting 用 /。
 export default defineConfig({
   base: process.env.VITE_BASE ?? '/',
-  plugins: [splashColors(), vue(), tailwindcss(), pwa()],
+  plugins: [splashColors(), homeIcons(new URL('../data/regions.json', import.meta.url)), vue(), tailwindcss(), pwa()],
   build: {
     rolldownOptions: {
       output: {

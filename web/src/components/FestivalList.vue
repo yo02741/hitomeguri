@@ -59,7 +59,7 @@ function onMap(e: MouseEvent, f: Festival) {
     <nav class="flex flex-wrap gap-x-3.5 gap-y-1 pointer-coarse:-mx-1.5 pointer-coarse:-my-2.5 pointer-coarse:gap-x-0.5 pointer-coarse:gap-y-0" aria-label="月份">
       <button
         type="button"
-        class="text-label pointer-coarse:px-1.5 pointer-coarse:py-2.5"
+        class="text-body-sm pointer-coarse:px-1.5 pointer-coarse:py-2.5"
         :class="month === null ? 'border-region-strong font-bold text-ink' : 'border-transparent text-sub hover:text-ink active:text-ink'"
         :aria-pressed="month === null"
         @click="month = null"
@@ -70,7 +70,7 @@ function onMap(e: MouseEvent, f: Festival) {
         v-for="m in MONTHS"
         :key="m"
         type="button"
-        class="font-latin text-label disabled:opacity-40 pointer-coarse:px-1.5 pointer-coarse:py-2.5"
+        class="font-latin text-body-sm disabled:opacity-40 pointer-coarse:px-1.5 pointer-coarse:py-2.5"
         :class="[
           month === String(m) ? 'border-region-strong font-bold text-ink' : 'border-transparent text-sub hover:text-ink active:text-ink',
           m === thisMonth && month !== String(m) ? 'text-ink' : '',
@@ -135,7 +135,7 @@ function onMap(e: MouseEvent, f: Festival) {
       <button
         v-if="!month && g.items.length > FIRST && !expanded.has(g.key)"
         type="button"
-        class="flex h-10 w-fit items-center gap-2 rounded-control border border-line px-4 text-label font-bold text-ink hover:bg-surface active:not-disabled:translate-y-px pointer-coarse:h-tap"
+        class="flex h-10 w-fit items-center gap-2 rounded-control border border-line px-4 text-body-sm font-bold text-ink hover:bg-surface active:not-disabled:translate-y-px pointer-coarse:h-tap"
         @click="expanded = new Set(expanded).add(g.key)"
       >
         <CollapseChevron :open="true" />

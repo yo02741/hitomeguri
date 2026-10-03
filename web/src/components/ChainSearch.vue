@@ -25,7 +25,7 @@ function href(q: string): string {
       target="_blank"
       rel="noopener"
       :title="c.q"
-      class="flex h-9 items-center gap-1.5 rounded-control border border-line bg-paper px-3 text-label text-ink no-underline hover:bg-surface active:not-disabled:translate-y-px pointer-coarse:h-tap"
+      class="flex h-9 items-center gap-1.5 rounded-control border border-line bg-paper px-3 text-body-sm text-ink no-underline hover:bg-surface active:not-disabled:translate-y-px pointer-coarse:h-tap"
     >
       {{ c.label }}
       <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-sub" aria-hidden="true">

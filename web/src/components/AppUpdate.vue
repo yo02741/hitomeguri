@@ -42,7 +42,7 @@ function updateServiceWorker() {
     role="status"
   >
     {{ pageLoadError === 'offline' ? '離線中，無法開啟這一頁' : '無法開啟這一頁' }}
-    <button v-if="pageLoadError === 'failed'" type="button" class="h-9 rounded-control bg-paper px-3 text-label font-bold text-ink active:not-disabled:translate-y-px pointer-coarse:h-tap" @click="reloadOnce">重新整理</button>
+    <button v-if="pageLoadError === 'failed'" type="button" class="h-9 rounded-control bg-paper px-3 text-body-sm font-bold text-ink active:not-disabled:translate-y-px pointer-coarse:h-tap" @click="reloadOnce">重新整理</button>
     <button type="button" class="grid size-9 place-items-center rounded-control text-paper/80 hover:text-paper active:not-disabled:translate-y-px pointer-coarse:size-tap" aria-label="關閉" @click="pageLoadError = null">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" /></svg>
     </button>
@@ -60,7 +60,7 @@ function updateServiceWorker() {
     @focusout="releaseToast"
   >
     <span class="min-w-0 truncate">{{ toast.text }}</span>
-    <button v-if="toast.undo" type="button" class="h-9 shrink-0 rounded-control bg-paper px-3 text-label font-bold text-ink active:not-disabled:translate-y-px pointer-coarse:h-tap" @click="undoToast">復原</button>
+    <button v-if="toast.undo" type="button" class="h-9 shrink-0 rounded-control bg-paper px-3 text-body-sm font-bold text-ink active:not-disabled:translate-y-px pointer-coarse:h-tap" @click="undoToast">復原</button>
     <button type="button" class="grid size-9 shrink-0 place-items-center rounded-control text-paper/80 hover:text-paper active:not-disabled:translate-y-px pointer-coarse:size-tap" aria-label="關閉" @click="dismissToast">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" /></svg>
     </button>
@@ -72,7 +72,7 @@ function updateServiceWorker() {
     role="status"
   >
     有新版本
-    <button type="button" class="h-9 rounded-control bg-paper px-3 text-label font-bold text-ink active:not-disabled:translate-y-px pointer-coarse:h-tap" @click="updateServiceWorker">重新整理</button>
+    <button type="button" class="h-9 rounded-control bg-paper px-3 text-body-sm font-bold text-ink active:not-disabled:translate-y-px pointer-coarse:h-tap" @click="updateServiceWorker">重新整理</button>
     <button type="button" class="grid size-9 place-items-center rounded-control text-paper/80 hover:text-paper active:not-disabled:translate-y-px pointer-coarse:size-tap" aria-label="稍後" @click="needRefresh = false">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" /></svg>
     </button>

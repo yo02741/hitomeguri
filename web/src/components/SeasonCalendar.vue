@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, ref, watch } from 'vue'
+import { computed, onBeforeUnmount, ref, watch } from 'vue'
 
 import type { SeasonStation } from '../services/bundles'
 
@@ -55,19 +55,31 @@ function label(md: string): string {
   return `${m}.${d}`
 }
 const nearEnd = (r: Row) => pos(r.to ?? r.from) > 78
+
+// 時間軸的寬度（px）：始、終兩點（12px）的間隔不到一個點寬時會疊成「(●」，改畫成一條（例：360 寬的櫻花開花～滿開）
+const DOT = 12
+const axis = ref<HTMLElement | null>(null)
+const axisW = ref(0)
+const axisObserver = typeof ResizeObserver !== 'undefined' ? new ResizeObserver(([e]) => (axisW.value = e?.contentRect.width ?? 0)) : null
+watch(axis, (el, old) => {
+  if (old) axisObserver?.unobserve(old)
+  if (el) axisObserver?.observe(el)
+})
+onBeforeUnmount(() => axisObserver?.disconnect())
+const merged = (r: Row) => !!r.to && axisW.value > 0 && ((pos(r.to) - pos(r.from)) / 100) * axisW.value < DOT
 const thisMonth = new Date().getMonth() + 1
 </script>
 
 <template>
   <div class="flex flex-col gap-4">
-    <!-- 觀測站：文字索引列，選中的加底線（同地圖頁的類型列） -->
-    <nav v-if="stations.length > 1" class="flex flex-wrap gap-x-3.5 gap-y-1 pointer-coarse:-mx-1.5 pointer-coarse:-my-2.5 pointer-coarse:gap-x-0.5 pointer-coarse:gap-y-0" aria-label="觀測地點">
+    <!-- 觀測站：文字索引列，選中的加底線（同地圖頁的類型列）。觸控時每站左右 6px 已隔開，不另加間距：北海道 8 站在 360 寬排得進一行 -->
+    <nav v-if="stations.length > 1" class="flex flex-wrap gap-x-3.5 gap-y-1 pointer-coarse:-mx-1.5 pointer-coarse:-my-2.5 pointer-coarse:gap-x-0 pointer-coarse:gap-y-0" aria-label="觀測地點">
       <button
         v-for="(s, i) in stations"
         :key="s.name"
         type="button"
         lang="ja"
-        class="text-label pointer-coarse:px-1.5 pointer-coarse:py-2.5"
+        class="text-body-sm pointer-coarse:px-1.5 pointer-coarse:py-2.5"
         :class="i === current ? 'border-region-strong font-bold text-ink' : 'border-transparent text-sub hover:text-ink active:text-ink'"
         :aria-pressed="i === current"
         @click="current = i"
@@ -80,12 +92,13 @@ const thisMonth = new Date().getMonth() + 1
       <!-- 月份 -->
       <div class="flex items-end">
         <span class="w-24 shrink-0 sm:w-32"></span>
-        <div class="grid flex-1 grid-cols-12">
+        <!-- 窄螢幕只標奇數月（格線照舊 12 格） -->
+        <div ref="axis" class="grid flex-1 grid-cols-12">
           <span
             v-for="m in MONTHS"
             :key="m"
             class="pb-1.5 text-center font-latin text-caption"
-            :class="m === thisMonth ? 'font-bold text-ink' : 'text-sub'"
+            :class="[m === thisMonth ? 'font-bold text-ink' : 'text-sub', m % 2 === 0 ? 'max-sm:invisible' : '']"
           >{{ m }}<span class="hidden sm:inline">月</span></span>
         </div>
       </div>
@@ -108,23 +121,32 @@ const thisMonth = new Date().getMonth() + 1
               :class="m === thisMonth ? 'bg-region-tint' : ''"
             ></span>
           </div>
+          <!-- 始、終兩點太近：一條從始點左緣到終點右緣的膠囊 -->
           <span
-            v-if="r.to && pos(r.to) > pos(r.from)"
-            class="absolute top-1/2 h-2 -translate-y-1/2 rounded-full bg-region-strong"
-            :style="{ left: `${pos(r.from)}%`, width: `${pos(r.to) - pos(r.from)}%` }"
+            v-if="merged(r)"
+            class="absolute top-1/2 h-3 -translate-y-1/2 rounded-full border-2 border-paper bg-region-strong"
+            :style="{ left: `calc(${pos(r.from)}% - ${DOT / 2}px)`, width: `calc(${pos(r.to!) - pos(r.from)}% + ${DOT}px)` }"
             aria-hidden="true"
           ></span>
-          <span
-            class="absolute top-1/2 size-3 -translate-x-1/2 -translate-y-1/2 rounded-full border-2 border-paper bg-region-strong"
-            :style="{ left: `${pos(r.from)}%` }"
-            aria-hidden="true"
-          ></span>
-          <span
-            v-if="r.to"
-            class="absolute top-1/2 size-3 -translate-x-1/2 -translate-y-1/2 rounded-full border-2 border-paper bg-region-strong"
-            :style="{ left: `${pos(r.to)}%` }"
-            aria-hidden="true"
-          ></span>
+          <template v-else>
+            <span
+              v-if="r.to && pos(r.to) > pos(r.from)"
+              class="absolute top-1/2 h-2 -translate-y-1/2 rounded-full bg-region-strong"
+              :style="{ left: `${pos(r.from)}%`, width: `${pos(r.to) - pos(r.from)}%` }"
+              aria-hidden="true"
+            ></span>
+            <span
+              class="absolute top-1/2 size-3 -translate-x-1/2 -translate-y-1/2 rounded-full border-2 border-paper bg-region-strong"
+              :style="{ left: `${pos(r.from)}%` }"
+              aria-hidden="true"
+            ></span>
+            <span
+              v-if="r.to"
+              class="absolute top-1/2 size-3 -translate-x-1/2 -translate-y-1/2 rounded-full border-2 border-paper bg-region-strong"
+              :style="{ left: `${pos(r.to)}%` }"
+              aria-hidden="true"
+            ></span>
+          </template>
           <!-- 日期：靠近年底時放在點的左邊 -->
           <span
             class="absolute top-1/2 -translate-y-1/2 font-latin text-caption font-bold whitespace-nowrap"

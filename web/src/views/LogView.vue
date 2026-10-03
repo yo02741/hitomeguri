@@ -19,6 +19,7 @@ import { useVisitedEntries } from '../composables/visited'
 import { useCollection } from '../composables/collection'
 import { type NavItem, useScrollSpy } from '../composables/scrollSpy'
 import { regions } from '../data/regions'
+import { addMonths, monthOf } from '../services/calendar'
 import { markRow } from '../services/export'
 import { whenIdle } from '../services/idle'
 import type { MapSpot } from '../services/bundles'
@@ -111,6 +112,8 @@ const name = ref('')
 const start = ref('')
 const end = ref('')
 const today = todayIso()
+// 補登的多半是之前的旅行：月曆先打開上個月
+const lastMonth = `${addMonths(monthOf(today), -1)}-01`
 // 送出中不能再按（雙擊會補登兩趟）
 const adding = ref(false)
 async function addPast() {
@@ -227,7 +230,7 @@ function open(id: string) {
         </div>
         <div class="flex min-w-0 flex-col gap-0.5">
           <span class="text-title font-black tracking-title">收集冊</span>
-          <span class="flex flex-wrap gap-x-3 text-label">
+          <span class="flex flex-wrap gap-x-3 text-body-sm">
             <span class="whitespace-nowrap"><span class="font-latin text-body-sm font-semibold">{{ cards.length }}</span> 張</span>
             <span class="whitespace-nowrap">都道府縣 <span class="font-latin"><span class="text-body-sm font-semibold">{{ prefDone.size }}</span> / 47</span></span>
           </span>
@@ -258,7 +261,7 @@ function open(id: string) {
         </span>
         <span class="flex min-w-0 flex-col gap-0.5 max-lg:justify-between">
           <span class="text-title font-black tracking-title max-lg:text-body">旅人</span>
-          <span class="text-label"><span class="max-lg:sr-only">服裝 </span><span class="whitespace-nowrap font-latin"><span class="text-body-sm font-semibold max-lg:text-title max-lg:font-bold">{{ avatar.ownedIds.size }}</span> <span class="max-lg:text-caption max-lg:text-sub">/ {{ OUTFITS.length }}</span></span></span>
+          <span class="text-body-sm"><span class="max-lg:sr-only">服裝 </span><span class="whitespace-nowrap font-latin"><span class="text-body-sm font-semibold max-lg:text-title max-lg:font-bold">{{ avatar.ownedIds.size }}</span> <span class="max-lg:text-caption max-lg:text-sub">/ {{ OUTFITS.length }}</span></span></span>
         </span>
         <svg class="ml-auto shrink-0 max-lg:hidden transition-transform group-hover:translate-x-1" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7" /></svg>
       </RouterLink>
@@ -320,7 +323,7 @@ function open(id: string) {
           <li v-for="t in doneTrips" :key="t.id"><TripCard :trip="t" /></li>
         </ul>
         <form class="flex flex-wrap items-end gap-3" @submit.prevent="addPast">
-          <label class="flex min-w-[180px] flex-1 flex-col gap-1 text-caption text-sub">
+          <label class="flex min-w-[180px] flex-1 flex-col gap-1 text-caption text-sub max-lg:basis-full">
             補登旅行
             <input
               v-model="name"
@@ -332,7 +335,7 @@ function open(id: string) {
           </label>
           <div class="flex flex-col gap-1 text-caption text-sub">
             <span>日期</span>
-            <DateRangePicker label="日期" :start="start" :end="end" :max="today" @change="(s, e) => ((start = s), (end = e))" />
+            <DateRangePicker label="日期" :start="start" :end="end" :max="today" :initial="lastMonth" @change="(s, e) => ((start = s), (end = e))" />
           </div>
           <button
             type="submit"
@@ -354,7 +357,7 @@ function open(id: string) {
             <button
               v-if="rows.length && !picking"
               type="button"
-              class="h-9 rounded-control border border-line bg-paper px-3 text-label text-ink hover:bg-surface active:not-disabled:translate-y-px pointer-coarse:h-tap"
+              class="h-9 rounded-control border border-line bg-paper px-3 text-body-sm text-ink hover:bg-surface active:not-disabled:translate-y-px pointer-coarse:h-tap"
               @click="startPicking"
             >
               補日期
@@ -365,7 +368,7 @@ function open(id: string) {
                 v-for="b in pickButtons"
                 :key="b.key"
                 type="button"
-                class="h-9 rounded-control border border-line bg-paper px-3 text-label text-ink hover:bg-surface disabled:cursor-not-allowed disabled:opacity-40 active:not-disabled:translate-y-px pointer-coarse:h-tap"
+                class="h-9 rounded-control border border-line bg-paper px-3 text-body-sm text-ink hover:bg-surface disabled:cursor-not-allowed disabled:opacity-40 active:not-disabled:translate-y-px pointer-coarse:h-tap"
                 :disabled="b.disabled"
                 @click="b.run"
               >
@@ -391,14 +394,14 @@ function open(id: string) {
               v-for="b in pickButtons"
               :key="b.key"
               type="button"
-              class="h-9 rounded-control border border-line bg-paper px-3 text-label text-ink hover:bg-surface disabled:cursor-not-allowed disabled:opacity-40 active:not-disabled:translate-y-px pointer-coarse:h-tap"
+              class="h-9 rounded-control border border-line bg-paper px-3 text-body-sm text-ink hover:bg-surface disabled:cursor-not-allowed disabled:opacity-40 active:not-disabled:translate-y-px pointer-coarse:h-tap"
               :disabled="b.disabled"
               @click="b.run"
             >
               {{ b.label }}<span v-if="b.count != null" class="ml-1 font-latin">{{ b.count }}</span>
             </button>
           </template>
-          <span class="shrink-0 px-1 text-label whitespace-nowrap text-sub" aria-live="polite">已選 <span class="font-latin text-ink">{{ selected.size }}</span></span>
+          <span class="shrink-0 px-1 text-body-sm whitespace-nowrap text-sub" aria-live="polite">已選 <span class="font-latin text-ink">{{ selected.size }}</span></span>
           <DatePicker
             v-model="batchDate"
             label="去過日期"
@@ -417,13 +420,13 @@ function open(id: string) {
           </DatePicker>
           <button
             type="button"
-            class="h-9 shrink-0 rounded-control bg-region-strong px-3.5 text-label font-bold text-white active:translate-y-px disabled:cursor-not-allowed disabled:opacity-40 pointer-coarse:h-tap"
+            class="h-9 shrink-0 rounded-control bg-region-strong px-3.5 text-body-sm font-bold text-white active:translate-y-px disabled:cursor-not-allowed disabled:opacity-40 pointer-coarse:h-tap"
             :disabled="!selected.size || !batchDate || applying"
             @click="applyDate"
           >
             套用
           </button>
-          <button type="button" class="h-9 shrink-0 rounded-control px-3 text-label text-sub hover:bg-surface hover:text-ink active:not-disabled:translate-y-px pointer-coarse:h-tap" @click="picking = false">
+          <button type="button" class="h-9 shrink-0 rounded-control px-3 text-body-sm text-sub hover:bg-surface hover:text-ink active:not-disabled:translate-y-px pointer-coarse:h-tap" @click="picking = false">
             完成
           </button>
         </div>

@@ -15,7 +15,7 @@ const prefCount = OUTFITS.filter((o) => o.pref).length
 <template>
   <RulesDialog title="旅人的規則" @close="emit('close')">
     <section class="flex flex-col gap-2" aria-labelledby="r-outfit">
-      <h3 id="r-outfit" class="text-label font-bold text-sub">服裝</h3>
+      <h3 id="r-outfit" class="text-body-sm font-bold text-sub">服裝</h3>
       <ul class="flex flex-col gap-1.5 text-body-sm leading-relaxed">
         <li>每個縣有 3 件，共 <span class="font-latin">{{ prefCount }}</span> 件；另外不限縣的 <span class="font-latin">{{ generic }}</span> 件。</li>
         <li>第一次去一個縣，送那個縣的代表單品。</li>
@@ -25,7 +25,7 @@ const prefCount = OUTFITS.filter((o) => o.pref).length
     </section>
 
     <section class="flex flex-col gap-2" aria-labelledby="r-ticket">
-      <h3 id="r-ticket" class="text-label font-bold text-sub">抽獎券（與收集卡共用）</h3>
+      <h3 id="r-ticket" class="text-body-sm font-bold text-sub">抽獎券（與收集卡共用）</h3>
       <ul class="flex flex-col gap-1.5 text-body-sm leading-relaxed">
         <li>抽一次扭蛋、抽一張卡都用 1 張；十連抽用 10 張。</li>
         <li>張數由去過的地方算出來：取消去過、再勾回來不會變多。</li>
@@ -34,7 +34,7 @@ const prefCount = OUTFITS.filter((o) => o.pref).length
     </section>
 
     <section class="flex flex-col gap-2" aria-labelledby="r-mark">
-      <h3 id="r-mark" class="text-label font-bold text-sub">衣櫃的記號</h3>
+      <h3 id="r-mark" class="text-body-sm font-bold text-sub">衣櫃的記號</h3>
       <dl class="grid grid-cols-[2.25rem_1fr] items-center gap-x-3 gap-y-2 text-body-sm">
         <dt class="grid place-items-center">
           <svg width="18" height="18" viewBox="0 0 120 120" aria-label="小扭蛋"><path d="M14 60 A46 46 0 0 1 106 60Z" class="ball-top" /><path d="M14 60 A46 46 0 0 0 106 60Z" class="ball-bottom" /></svg>
@@ -50,7 +50,7 @@ const prefCount = OUTFITS.filter((o) => o.pref).length
     </section>
 
     <section class="flex flex-col gap-2" aria-labelledby="r-stage">
-      <h3 id="r-stage" class="text-label font-bold text-sub">展示窗</h3>
+      <h3 id="r-stage" class="text-body-sm font-bold text-sub">展示窗</h3>
       <ul class="flex flex-col gap-1.5 text-body-sm leading-relaxed">
         <li>左右拖拉可以轉，看得到紙的背面；雙擊轉回正面。</li>
         <li>穿上的會跟著在網站下方散步（帳號選單可以關）。</li>

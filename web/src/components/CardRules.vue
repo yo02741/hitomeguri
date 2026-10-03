@@ -21,7 +21,7 @@ const KINDS: Array<[string, string]> = [
 <template>
   <RulesDialog title="收集冊的規則" @close="emit('close')">
     <section class="flex flex-col gap-2" aria-labelledby="c-card">
-      <h3 id="c-card" class="text-label font-bold text-sub">卡片</h3>
+      <h3 id="c-card" class="text-body-sm font-bold text-sub">卡片</h3>
       <ul class="flex flex-col gap-1.5 text-body-sm leading-relaxed">
         <li>去過的景點就有一張卡。</li>
         <li>去的日期決定季節卡：3–5 月春、6–8 月夏、9–11 月秋、12–2 月冬。不同季節去，季節卡就不只一張。</li>
@@ -31,7 +31,7 @@ const KINDS: Array<[string, string]> = [
     </section>
 
     <section class="flex flex-col gap-2" aria-labelledby="c-kind">
-      <h3 id="c-kind" class="text-label font-bold text-sub">樣式</h3>
+      <h3 id="c-kind" class="text-body-sm font-bold text-sub">樣式</h3>
       <dl class="grid grid-cols-[auto_1fr] gap-x-4 gap-y-1.5 text-body-sm">
         <template v-for="[k, d] in KINDS" :key="k">
           <dt class="font-bold whitespace-nowrap">{{ k }}</dt>
@@ -42,7 +42,7 @@ const KINDS: Array<[string, string]> = [
     </section>
 
     <section class="flex flex-col gap-2" aria-labelledby="c-draw">
-      <h3 id="c-draw" class="text-label font-bold text-sub">抽卡</h3>
+      <h3 id="c-draw" class="text-body-sm font-bold text-sub">抽卡</h3>
       <ul class="flex flex-col gap-1.5 text-body-sm leading-relaxed">
         <li>每個景點第一次去過，送一次免費抽（在景點按「去過」，或打開行程的卡包；只送一次）。</li>
         <li>放大檢視的「抽一張」：用 1 張抽獎券，抽這個景點。</li>
@@ -52,7 +52,7 @@ const KINDS: Array<[string, string]> = [
     </section>
 
     <section class="flex flex-col gap-2" aria-labelledby="c-ticket">
-      <h3 id="c-ticket" class="text-label font-bold text-sub">抽獎券（與旅人共用）</h3>
+      <h3 id="c-ticket" class="text-body-sm font-bold text-sub">抽獎券（與旅人共用）</h3>
       <ul class="flex flex-col gap-1.5 text-body-sm leading-relaxed">
         <li>張數由去過的地方算出來：取消去過、再勾回來不會變多。</li>
       </ul>
@@ -60,7 +60,7 @@ const KINDS: Array<[string, string]> = [
     </section>
 
     <section class="flex flex-col gap-2" aria-labelledby="c-book">
-      <h3 id="c-book" class="text-label font-bold text-sub">收集冊</h3>
+      <h3 id="c-book" class="text-body-sm font-bold text-sub">收集冊</h3>
       <dl class="grid grid-cols-[3rem_1fr] items-center gap-x-3 gap-y-2 text-body-sm">
         <dt class="font-latin text-caption text-sub">3 / 10</dt>
         <dd>這個景點收集到幾種</dd>

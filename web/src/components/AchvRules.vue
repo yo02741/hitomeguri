@@ -17,7 +17,7 @@ function mark(item: string): [string, string] {
 <template>
   <RulesDialog title="成就的規則" @close="emit('close')">
     <section v-for="(r, i) in ACHV_RULES" :key="r.title" class="flex flex-col gap-2" :aria-labelledby="`a-rule-${i}`">
-      <h3 :id="`a-rule-${i}`" class="text-label font-bold text-sub">{{ r.title }}</h3>
+      <h3 :id="`a-rule-${i}`" class="text-body-sm font-bold text-sub">{{ r.title }}</h3>
       <dl v-if="r.title === '記號'" class="grid grid-cols-[3rem_1fr] items-center gap-x-3 gap-y-2 text-body-sm">
         <template v-for="item in r.items" :key="item">
           <dt>

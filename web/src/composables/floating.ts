@@ -2,7 +2,7 @@ import { computed, nextTick, onBeforeUnmount, ref, type Ref, watch } from 'vue'
 
 /**
  * 貼著觸發鈕的浮動面板（日期選擇器等）。面板 Teleport 到 body，避開外層的 overflow 與 bottom sheet：
- * 位置用 fixed 算，下方放不下就翻到上方；左右不超出畫面。點面板與觸發鈕以外的地方就收起。
+ * 位置用 fixed 算，下方放不下就翻到上方；左右不超出畫面，手機也不超過底部分頁列。點面板與觸發鈕以外的地方就收起。
  * 面板離開原本的 DOM 後吃不到地區色，所以沿用觸發鈕所在的 data-pref。
  * side 與 origin（DESIGN.md §9）：往下開的從上方長出（animate-pop-in）、翻到上方的從下方長出（animate-pop-up），
  * transform-origin 對準觸發鈕那一角。打開後第一次定位就決定方向，捲動時不換，進場動畫不重播。
@@ -32,7 +32,10 @@ export function useFloating(
     const gap = opts.gap ?? 6
     const margin = 8
     const vw = document.documentElement.clientWidth
-    const vh = window.innerHeight
+    // 手機的底部分頁列（app-tabbar）在畫面上時，面板的下緣不超過分頁列
+    const tab = document.querySelector<HTMLElement>('.app-tabbar')
+    const tabTop = tab && tab.offsetHeight ? tab.getBoundingClientRect().top : 0
+    const vh = tabTop > 0 ? Math.min(window.innerHeight, tabTop) : window.innerHeight
     let top = r.bottom + gap
     const flip = top + h > vh - margin && r.top - gap - h >= margin
     if (flip) top = r.top - gap - h

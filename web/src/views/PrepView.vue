@@ -188,7 +188,7 @@ watch(
             {{ t.label }}<span class="text-body-sm font-normal tracking-normal text-sub">{{ t.sub }}</span>
           </h2>
           <div v-for="g in t.groups" :id="`${t.key}-${g.situation}`" :key="g.situation" class="flex scroll-mt-16 flex-col lg:scroll-mt-8">
-            <h3 class="flex items-center gap-2 text-label font-bold tracking-section">
+            <h3 class="flex items-center gap-2 text-body-sm font-bold tracking-section">
               {{ SITUATION_LABEL[g.situation] ?? g.situation }}
               <span class="h-px flex-1 bg-line" aria-hidden="true"></span>
             </h3>
@@ -221,7 +221,7 @@ watch(
           </h2>
           <TimedList v-if="timed.length" :items="timed" detailed />
           <div class="flex flex-col gap-3">
-            <h3 class="flex items-center gap-2 text-label font-bold tracking-section">
+            <h3 class="flex items-center gap-2 text-body-sm font-bold tracking-section">
               截圖
               <span class="h-px flex-1 bg-line" aria-hidden="true"></span>
               <button
@@ -234,7 +234,7 @@ watch(
             <FindGallery ref="gallery" :finds="tripFinds" :trip-id="trip.id" columns="narrow" />
           </div>
           <div class="flex flex-col gap-3">
-            <h3 class="flex items-center gap-2 text-label font-bold tracking-section">
+            <h3 class="flex items-center gap-2 text-body-sm font-bold tracking-section">
               連鎖店<span class="h-px flex-1 bg-line" aria-hidden="true"></span>
             </h3>
             <ChainSearch />

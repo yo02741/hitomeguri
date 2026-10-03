@@ -39,7 +39,11 @@ function hide(returnFocus = true) {
   if (returnFocus) trigger.value?.focus()
 }
 function onTriggerKey(e: KeyboardEvent) {
-  if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+  // 項目全停用時焦點留在觸發鈕上，Esc 也要能收起
+  if (e.key === 'Escape' && open.value) {
+    e.preventDefault()
+    hide()
+  } else if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
     e.preventDefault()
     void show(e.key === 'ArrowDown' ? 'first' : 'last')
   }

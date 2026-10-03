@@ -143,7 +143,7 @@ onBeforeUnmount(() => {
       <div class="flex min-h-[76px] flex-col items-center gap-1 text-paper">
         <template v-if="stage === 'open'">
           <p class="reveal flex items-center gap-2 text-h3 font-black">{{ result.outfit.name }}<NewTag /></p>
-          <p v-if="prefName" lang="ja" class="reveal text-label">{{ prefName }}</p>
+          <p v-if="prefName" lang="ja" class="reveal text-body-sm">{{ prefName }}</p>
         </template>
       </div>
       <div ref="actions" class="flex min-h-11 gap-2">

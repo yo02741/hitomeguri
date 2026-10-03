@@ -99,7 +99,7 @@ function onFocusOut(e: FocusEvent) {
             <button
               v-if="todayOk"
               type="button"
-              class="h-9 rounded-control px-3 text-label text-ink hover:bg-surface active:not-disabled:translate-y-px pointer-coarse:h-tap"
+              class="h-9 rounded-control px-3 text-body-sm text-ink hover:bg-surface active:not-disabled:translate-y-px pointer-coarse:h-tap"
               @click="set(today)"
             >
               今天
@@ -107,7 +107,7 @@ function onFocusOut(e: FocusEvent) {
             <button
               v-if="clearable && modelValue"
               type="button"
-              class="ml-auto h-9 rounded-control px-3 text-label text-sub hover:bg-surface hover:text-ink active:not-disabled:translate-y-px pointer-coarse:h-tap"
+              class="ml-auto h-9 rounded-control px-3 text-body-sm text-sub hover:bg-surface hover:text-ink active:not-disabled:translate-y-px pointer-coarse:h-tap"
               @click="set('')"
             >
               清除

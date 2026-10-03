@@ -127,7 +127,7 @@ const visitedShort = computed(() => {
     <div ref="root" class="relative grid grid-cols-2 gap-2 max-lg:flex max-lg:gap-1.5">
       <button
         type="button"
-        class="flex h-11 items-center justify-center gap-1.5 rounded-control text-body-sm active:translate-y-px disabled:cursor-not-allowed disabled:opacity-40 max-lg:h-tap max-lg:min-w-0 max-lg:flex-1 max-lg:basis-0 max-lg:flex-col max-lg:gap-0.5 max-lg:text-label"
+        class="flex h-11 items-center justify-center gap-1.5 rounded-control text-body-sm active:translate-y-px disabled:cursor-not-allowed disabled:opacity-40 max-lg:h-tap max-lg:min-w-0 max-lg:flex-1 max-lg:basis-0 max-lg:flex-col max-lg:gap-0.5 max-lg:text-caption"
         :class="
           mark?.favorite
             ? 'border-[1.5px] border-region-strong bg-region-tint font-bold text-ink'
@@ -155,7 +155,7 @@ const visitedShort = computed(() => {
       </button>
       <!-- 去過：標了之後右半邊是日期（點開月曆補填）；手機的工作列不放箭頭，「去過」才不會被日期擠成直排 -->
       <div
-        class="flex h-11 overflow-hidden rounded-control text-body-sm max-lg:h-tap max-lg:min-w-0 max-lg:flex-[1.5] max-lg:basis-0 max-lg:text-label"
+        class="flex h-11 overflow-hidden rounded-control text-body-sm max-lg:h-tap max-lg:min-w-0 max-lg:flex-[1.5] max-lg:basis-0 max-lg:text-caption"
         :class="
           mark?.visited
             ? 'border-[1.5px] border-visited bg-visited-tint font-bold text-visited'
@@ -188,7 +188,7 @@ const visitedShort = computed(() => {
           label="去過日期"
           :model-value="mark.visited_on ?? ''"
           :max="today"
-          class="flex shrink-0 items-center gap-1 border-l border-visited/30 px-2.5 font-latin text-label font-normal hover:bg-visited/10 max-lg:px-1.5"
+          class="flex shrink-0 items-center gap-1 border-l border-visited/30 px-2.5 font-latin text-body-sm font-normal max-lg:text-caption hover:bg-visited/10 max-lg:px-1.5"
           @update:model-value="marks.setVisitedOn(spot, $event)"
         >
           <template #default>
@@ -201,7 +201,7 @@ const visitedShort = computed(() => {
       <button
         ref="listsBtn"
         type="button"
-        class="flex h-11 items-center justify-center gap-1.5 rounded-control text-body-sm active:translate-y-px disabled:cursor-not-allowed disabled:opacity-40 max-lg:h-tap max-lg:min-w-0 max-lg:flex-1 max-lg:basis-0 max-lg:flex-col max-lg:gap-0.5 max-lg:text-label"
+        class="flex h-11 items-center justify-center gap-1.5 rounded-control text-body-sm active:translate-y-px disabled:cursor-not-allowed disabled:opacity-40 max-lg:h-tap max-lg:min-w-0 max-lg:flex-1 max-lg:basis-0 max-lg:flex-col max-lg:gap-0.5 max-lg:text-caption"
         :class="inLists ? 'border-[1.5px] border-ink bg-surface font-bold text-ink' : 'border border-line bg-paper text-ink hover:bg-surface'"
         aria-haspopup="true"
         :aria-expanded="open === 'lists'"
@@ -216,7 +216,7 @@ const visitedShort = computed(() => {
       <button
         ref="tripsBtn"
         type="button"
-        class="flex h-11 items-center justify-center gap-1.5 rounded-control text-body-sm active:translate-y-px disabled:cursor-not-allowed disabled:opacity-40 max-lg:h-tap max-lg:min-w-0 max-lg:flex-1 max-lg:basis-0 max-lg:flex-col max-lg:gap-0.5 max-lg:text-label"
+        class="flex h-11 items-center justify-center gap-1.5 rounded-control text-body-sm active:translate-y-px disabled:cursor-not-allowed disabled:opacity-40 max-lg:h-tap max-lg:min-w-0 max-lg:flex-1 max-lg:basis-0 max-lg:flex-col max-lg:gap-0.5 max-lg:text-caption"
         :class="inTrips ? 'border-[1.5px] border-ink bg-surface font-bold text-ink' : 'border border-line bg-paper text-ink hover:bg-surface'"
         aria-haspopup="true"
         :aria-expanded="open === 'trips'"

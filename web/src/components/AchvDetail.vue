@@ -67,13 +67,13 @@ onMounted(() => {
       </dl>
     </div>
 
-    <p v-if="done && !at && undated > 0" class="text-label text-sub">
+    <p v-if="done && !at && undated > 0" class="text-body-sm text-sub">
       沒有日期 <span class="font-latin">{{ undated }}</span> 處
       <RouterLink to="/log?fill=1" class="ml-2 font-bold text-ink underline-offset-2 hover:underline" @click="emit('close')">補日期</RouterLink>
     </p>
 
     <section v-if="items.length" class="flex flex-col gap-2" aria-labelledby="achv-items">
-      <h3 id="achv-items" class="text-label font-bold text-sub">{{ HEADING[kind] }}</h3>
+      <h3 id="achv-items" class="text-body-sm font-bold text-sub">{{ HEADING[kind] }}</h3>
       <ul class="flex flex-col">
         <li v-for="c in items.slice(0, MAX)" :key="c.key" class="border-b border-line-soft last:border-b-0">
           <RouterLink :to="c.to" class="flex min-h-11 items-center gap-3 py-1.5 text-body-sm text-ink no-underline hover:text-region-strong active:text-region-strong" @click="emit('close')">

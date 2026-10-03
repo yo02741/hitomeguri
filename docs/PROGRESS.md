@@ -23,7 +23,7 @@
 | 年代主題（江戶～令和、時間軸）、收集卡無限抽、新卡種、十連抽、季節照片 | 等驗收；cards 規則要貼 | docs/年代主題驗收.md、DESIGN.md §13、§7.19a |
 | 旅人第三版（157 件、散步的旅人）＋抽獎券（共用、不重複、NEW） | 等驗收；meta/wallet 規則要貼 | docs/旅人驗收.md、DESIGN.md §7.19b、§7.24 |
 | 成就（紀念章帳：初訪 47 格＋40 個成就、新卡入手的成就章、這趟的成就、抽獎券） | 等驗收（分支 `feat/achievements`）；規則不用改 | docs/成就驗收.md、DESIGN.md §7.25 |
-| 手機版面（1024 以下）：第一階段（到得了、不壞）、第二階段（單手、少捲動：景點卡片三段高度、chip 軌道、站名板首頁、行程天數條、復原、打橫精簡 header 等） | 第一階段在 main；第二階段等驗收（分支 `feat/mobile-2`）；規則不用改 | docs/手機版計畫.md、docs/手機版第一階段驗收.md、docs/手機版第二階段驗收.md |
+| 手機版面（1024 以下）：第一階段（到得了、不壞）、第二階段（單手、少捲動：景點卡片三段高度、chip 軌道、站名板首頁、行程天數條、復原、打橫精簡 header 等） | 第一、二階段在 main；第三階段（位置小框、匯出選單、主畫面圖示、小字級三階等）等驗收（分支 `feat/mobile-3`）；規則不用改 | docs/手機版計畫.md、docs/手機版第一階段驗收.md、docs/手機版第二階段驗收.md、docs/手機版第三階段驗收.md |
 
 **原則的變更**（詳見 PLAN.md 的決策更新）：
 - 內容一律取自實際來源，不用 LLM 寫簡介或念法；LLM 只用於翻譯與查證。原本的 enrich 已移除。
@@ -123,6 +123,9 @@
 - 手機版面第二階段（2026-10-03，分支 `feat/mobile-2`）：`docs/手機版計畫.md` §3 的 1–31 項。新增的共用件：`services/toast.ts`（復原）、`services/confirm.ts`（站內確認框）、
   `services/sheetSnap.ts`（景點卡片三段高度）、`composables/tabNav.ts`（分頁記憶）、`composables/swipe.ts`、`viewport.ts` 的 `coarse`、`land`，Tailwind 變體 `land:`、token `--spacing-tabbar`。
   地區特色 bundle 改成一縣一檔（`bundles/specialties/{縣}.json`）。Google Maps 與 LINE 的官方文件沙箱打不開，依搜尋摘錄實作。驗收見 docs/手機版第二階段驗收.md。
+- 手機版面第三階段（2026-10-03，分支 `feat/mobile-3`）：`docs/手機版計畫.md` §4 的 1–11 項（決定 O1、P2、Q2、R3）。`services/export.ts` 的 `shareOrDownload`（canShare 說可以才分享）、
+  `web/build/icons.ts`（建置時從 regions.json 畫主畫面圖示，不加套件）、`composables/floating.ts` 不超過分頁列、`tabNav.ts` 的 `switchesTab`；`--text-label` 拿掉，小字只剩 body-sm／caption／micro。
+  扭蛋的黑色小方塊是沙箱軟體繪圖造成，沒有改。分享檔案的官方文件沙箱打不開，依搜尋摘錄實作。驗收見 docs/手機版第三階段驗收.md。
 - Phase 4 期間限定等，見 PLAN.md §9。
 - Phase 4 v1（2026-09-29）：期間限定只接氣象廳（`pipeline/timed.py`、`pipeline/sources/jma.py` 的 parse_sakura／parse_autumn）。
   沙箱連不到氣象廳：頁面格式用 `probe.yml` 看；測試的網頁片段取自實際格式。

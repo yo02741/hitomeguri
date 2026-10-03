@@ -130,11 +130,11 @@ function wear() {
       <BackLink to="/log">紀錄</BackLink>
       <div class="flex items-baseline gap-4">
         <h1 class="text-h2 font-black tracking-title">旅人</h1>
-        <p class="text-label text-sub">服裝 <span class="whitespace-nowrap font-latin"><span class="text-body font-bold text-ink">{{ ownedCount }}</span> / {{ OUTFITS.length }}</span></p>
+        <p class="text-body-sm text-sub">服裝 <span class="whitespace-nowrap font-latin"><span class="text-body font-bold text-ink">{{ ownedCount }}</span> / {{ OUTFITS.length }}</span></p>
         <button
           v-if="userStore.user"
           type="button"
-          class="ml-auto flex h-9 items-center gap-1.5 self-center rounded-full border border-line bg-paper px-3.5 text-label font-bold text-ink hover:bg-surface active:not-disabled:translate-y-px pointer-coarse:h-tap"
+          class="ml-auto flex h-9 items-center gap-1.5 self-center rounded-full border border-line bg-paper px-3.5 text-body-sm font-bold text-ink hover:bg-surface active:not-disabled:translate-y-px pointer-coarse:h-tap"
           aria-haspopup="dialog"
           @click="showRules = true"
         >
@@ -171,8 +171,8 @@ function wear() {
             <path d="M14 60 A46 46 0 0 0 106 60Z" class="ball-bottom" />
           </svg>
           <span class="text-body font-bold">{{ avatar.remaining.length ? '抽服裝' : prefLocked ? '去過的縣都抽齊了' : '都抽齊了' }}</span>
-          <span v-if="avatar.remaining.length" class="ml-auto text-label opacity-80">抽獎券 <span class="font-latin text-body font-bold">{{ wallet.left }}</span></span>
-          <span v-else-if="prefLocked" class="ml-auto text-label opacity-80">沒去過的縣 <span class="font-latin text-body font-bold">{{ prefLocked }}</span> 件</span>
+          <span v-if="avatar.remaining.length" class="ml-auto text-body-sm opacity-80">抽獎券 <span class="font-latin text-body font-bold">{{ wallet.left }}</span></span>
+          <span v-else-if="prefLocked" class="ml-auto text-body-sm opacity-80">沒去過的縣 <span class="font-latin text-body font-bold">{{ prefLocked }}</span> 件</span>
         </button>
       </div>
 
@@ -187,7 +187,7 @@ function wear() {
             type="button"
             role="tab"
             :aria-selected="tab === t.key"
-            class="tab h-10 shrink-0 rounded-t-control px-4 text-label font-bold whitespace-nowrap active:text-ink max-lg:min-w-0 max-lg:flex-1 max-lg:shrink max-lg:px-0 pointer-coarse:h-tap"
+            class="tab h-10 shrink-0 rounded-t-control px-4 text-body-sm font-bold whitespace-nowrap active:text-ink max-lg:min-w-0 max-lg:flex-1 max-lg:shrink max-lg:px-0 pointer-coarse:h-tap"
             :class="tab === t.key ? 'is-on bg-surface text-ink' : 'text-sub hover:text-ink'"
             @click="tab = t.key"
           >
@@ -199,7 +199,7 @@ function wear() {
           <!-- 外觀 -->
           <div v-if="tab === 'look'" class="flex flex-col gap-6">
             <fieldset class="flex flex-col gap-2">
-              <legend class="mb-2 text-label font-bold text-sub">髮型</legend>
+              <legend class="mb-2 text-body-sm font-bold text-sub">髮型</legend>
               <div class="grid grid-cols-5 gap-2 max-sm:grid-cols-3">
                 <button
                   v-for="h in HAIR_STYLES"
@@ -216,7 +216,7 @@ function wear() {
               </div>
             </fieldset>
             <fieldset class="flex flex-col gap-2">
-              <legend class="mb-2 text-label font-bold text-sub">眼睛</legend>
+              <legend class="mb-2 text-body-sm font-bold text-sub">眼睛</legend>
               <div class="grid grid-cols-5 gap-2 max-sm:grid-cols-3">
                 <button
                   v-for="e in EYE_STYLES"
@@ -234,7 +234,7 @@ function wear() {
             </fieldset>
             <div class="flex flex-wrap gap-x-10 gap-y-5">
               <fieldset>
-                <legend class="mb-2 text-label font-bold text-sub">膚色</legend>
+                <legend class="mb-2 text-body-sm font-bold text-sub">膚色</legend>
                 <div class="flex flex-wrap gap-2.5">
                   <button
                     v-for="s in SKINS"
@@ -250,7 +250,7 @@ function wear() {
                 </div>
               </fieldset>
               <fieldset>
-                <legend class="mb-2 text-label font-bold text-sub">髮色</legend>
+                <legend class="mb-2 text-body-sm font-bold text-sub">髮色</legend>
                 <div class="flex flex-wrap gap-2.5">
                   <button
                     v-for="c in HAIR_COLORS"

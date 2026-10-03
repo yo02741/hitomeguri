@@ -12,7 +12,7 @@ defineProps<{ phrase: Phrase }>()
       <span lang="ja" class="text-caption tracking-kana text-sub">{{ phrase.kana }}</span>
       <span lang="ja" class="text-title font-bold">{{ phrase.ja }}</span>
       <span class="text-body-sm text-ink-2">{{ phrase.zh_tw }}</span>
-      <span v-if="phrase.answer_hint" class="mt-1.5 flex w-fit flex-wrap items-baseline gap-x-2 rounded-tag border border-ink px-2.5 py-1 text-label">
+      <span v-if="phrase.answer_hint" class="mt-1.5 flex w-fit flex-wrap items-baseline gap-x-2 rounded-tag border border-ink px-2.5 py-1 text-body-sm">
         <span lang="ja">{{ phrase.answer_hint.ja }}</span>
         <span class="text-sub">{{ phrase.answer_hint.zh_tw }}</span>
       </span>

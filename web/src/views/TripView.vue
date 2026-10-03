@@ -20,7 +20,7 @@ import { useOnline } from '../composables/online'
 import { regionOf } from '../data/regions'
 import type { MapSpot } from '../services/bundles'
 import { confirmDialog } from '../services/confirm'
-import { download, type ExportFolder, type ExportRow, toCsv, toKml } from '../services/export'
+import { type ExportFolder, type ExportRow, shareOrDownload, toCsv, toKml } from '../services/export'
 import { drawTripRecap } from '../services/shareImage'
 import { showToast } from '../services/toast'
 import { coarse, wide } from '../services/viewport'
@@ -396,8 +396,9 @@ const moreItems = computed<MenuAction[]>(() => {
 })
 function onMore(key: string) {
   const title = trip.value?.name || 'ひとめぐり 行程'
-  if (key === 'kml') download(title, 'kml', toKml(title, folders.value))
-  else if (key === 'csv') download(title, 'csv', toCsv(folders.value.flatMap((f) => f.rows), ['日', '順序']))
+  // 手機的匯出能分享檔案時走系統分享（決定事項 P2）
+  if (key === 'kml') void shareOrDownload(title, 'kml', toKml(title, folders.value))
+  else if (key === 'csv') void shareOrDownload(title, 'csv', toCsv(folders.value.flatMap((f) => f.rows), ['日', '順序']))
   else if (key === 'recap') recapOpen.value = true
   else if (key === 'delete') void del()
 }
@@ -456,7 +457,7 @@ async function del() {
           <button
             v-if="status === 'done'"
             type="button"
-            class="relative flex h-9 items-center rounded-control bg-region-strong px-3.5 text-label font-bold text-white active:translate-y-px pointer-coarse:h-tap max-sm:px-2.5"
+            class="relative flex h-9 items-center rounded-control bg-region-strong px-3.5 text-body-sm font-bold text-white active:translate-y-px pointer-coarse:h-tap max-sm:px-2.5"
             @click="packOpen = true"
           >
             開卡包
@@ -465,18 +466,18 @@ async function del() {
           <!-- 一個畫面只有一個 Primary（DESIGN §7.1）：結束後「開卡包」是 Primary，「旅前準備」退成 Secondary -->
           <RouterLink
             :to="`/trips/${trip.id}/prep`"
-            class="flex h-9 items-center rounded-control px-3.5 text-label no-underline active:translate-y-px pointer-coarse:h-tap max-sm:px-2.5"
+            class="flex h-9 items-center rounded-control px-3.5 text-body-sm no-underline active:translate-y-px pointer-coarse:h-tap max-sm:px-2.5"
             :class="status === 'done' ? 'border border-line bg-paper text-ink hover:bg-surface' : 'bg-region-strong font-bold text-white'"
           >旅前準備</RouterLink>
           <RouterLink
             :to="`/trips/${trip.id}/book`"
-            class="flex h-9 items-center rounded-control border border-line bg-paper px-3 text-label text-ink no-underline hover:bg-surface active:not-disabled:translate-y-px pointer-coarse:h-tap max-sm:px-2.5"
+            class="flex h-9 items-center rounded-control border border-line bg-paper px-3 text-body-sm text-ink no-underline hover:bg-surface active:not-disabled:translate-y-px pointer-coarse:h-tap max-sm:px-2.5"
           >旅前小書</RouterLink>
           <ExportButtons class="max-lg:hidden" :title="trip.name || 'ひとめぐり 行程'" :folders="folders" :leading="['日', '順序']" />
           <OfflineButton :trip="trip" class="max-sm:px-2.5" />
           <button
             type="button"
-            class="h-9 rounded-control max-lg:hidden border border-line bg-paper px-3 text-label text-ink hover:bg-surface disabled:cursor-not-allowed disabled:opacity-40 active:not-disabled:translate-y-px pointer-coarse:h-tap"
+            class="h-9 rounded-control max-lg:hidden border border-line bg-paper px-3 text-body-sm text-ink hover:bg-surface disabled:cursor-not-allowed disabled:opacity-40 active:not-disabled:translate-y-px pointer-coarse:h-tap"
             :disabled="!trip.days.some((d) => d.stops.length)"
             @click="recapOpen = true"
           >回顧圖</button>
@@ -484,7 +485,7 @@ async function del() {
             v-if="isOwner"
             type="button"
             :disabled="locked"
-            class="h-9 rounded-control border border-line bg-paper px-3 text-label text-danger max-lg:hidden hover:not-disabled:bg-surface disabled:cursor-not-allowed disabled:opacity-40 active:not-disabled:translate-y-px pointer-coarse:h-tap"
+            class="h-9 rounded-control border border-line bg-paper px-3 text-body-sm text-danger max-lg:hidden hover:not-disabled:bg-surface disabled:cursor-not-allowed disabled:opacity-40 active:not-disabled:translate-y-px pointer-coarse:h-tap"
             @click="del"
           >刪除</button>
           <!-- 手機：匯出、回顧圖、刪除收進「更多」（決定事項 D2） -->
@@ -492,7 +493,7 @@ async function del() {
             <ActionMenu
               label="更多"
               :items="moreItems"
-              trigger-class="flex h-9 items-center gap-1 rounded-control border border-line bg-paper pr-2 pl-3 text-label max-sm:pr-1.5 max-sm:pl-2.5 text-ink hover:bg-surface active:not-disabled:translate-y-px pointer-coarse:h-tap"
+              trigger-class="flex h-9 items-center gap-1 rounded-control border border-line bg-paper pr-2 pl-3 text-body-sm max-sm:pr-1.5 max-sm:pl-2.5 text-ink hover:bg-surface active:not-disabled:translate-y-px pointer-coarse:h-tap"
               @select="onMore"
             >
               更多
@@ -504,7 +505,7 @@ async function del() {
         <AchvRow v-if="status === 'done'" :trip="trip" :size="40" />
       </div>
 
-      <div v-if="wide" class="flex items-center gap-3 text-label pointer-coarse:-mx-1.5 pointer-coarse:-my-2.5">
+      <div v-if="wide" class="flex items-center gap-3 text-body-sm pointer-coarse:-mx-1.5 pointer-coarse:-my-2.5">
         <button
           type="button"
           class="pointer-coarse:px-1.5 pointer-coarse:py-2.5"
@@ -532,7 +533,7 @@ async function del() {
               :aria-pressed="activeDay === i"
               @click="selectDay(i)"
             >
-              <span class="font-latin text-label font-bold">DAY {{ i + 1 }}</span>
+              <span class="font-latin text-body-sm font-bold">DAY {{ i + 1 }}</span>
               <span v-if="i === todayIdx" class="text-micro font-bold">今日</span>
               <span v-else-if="dayDate(trip, i)" class="font-latin text-micro">{{ monthDay(dayDate(trip, i)!) }}</span>
             </button>
@@ -544,13 +545,13 @@ async function del() {
               :aria-pressed="activeDay === -1"
               @click="selectDay(-1)"
             >
-              <span class="text-label font-bold">待排</span>
+              <span class="text-body-sm font-bold">待排</span>
               <span class="font-latin text-micro">{{ trip.unscheduled.length }}</span>
             </button>
           </div>
           <button
             type="button"
-            class="flex h-tap shrink-0 items-center gap-1.5 rounded-control border px-3 text-label font-bold active:translate-y-px"
+            class="flex h-tap shrink-0 items-center gap-1.5 rounded-control border px-3 text-body-sm font-bold active:translate-y-px"
             :class="mapOpen ? 'border-ink bg-ink text-paper' : 'border-line bg-paper text-ink'"
             :aria-expanded="mapOpen"
             :aria-controls="mapOpen ? 'trip-map' : undefined"
@@ -629,7 +630,7 @@ async function del() {
             target="_blank"
             rel="noopener"
             :aria-label="routes[i]!.length > 1 ? `DAY ${i + 1} Google Maps 路線 第 ${leg.from + 1} 到 ${leg.to + 1} 站` : `DAY ${i + 1} Google Maps 路線`"
-            class="flex h-8 items-center gap-1.5 rounded-control border border-line bg-paper px-3 text-label text-ink no-underline hover:bg-surface active:translate-y-px pointer-coarse:h-tap"
+            class="flex h-8 items-center gap-1.5 rounded-control border border-line bg-paper px-3 text-body-sm text-ink no-underline hover:bg-surface active:translate-y-px pointer-coarse:h-tap"
           >
             <template v-if="routes[i]!.length > 1"><span class="font-latin">{{ leg.from + 1 }}–{{ leg.to + 1 }}</span></template>
             <template v-else>Google Maps 路線</template>
