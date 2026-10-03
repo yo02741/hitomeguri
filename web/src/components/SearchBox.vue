@@ -1,23 +1,22 @@
 <script setup lang="ts">
-import { computed, onMounted, ref, shallowRef, useId, watch } from 'vue'
+import { computed, ref, shallowRef, useId, watch } from 'vue'
 
 import RegionChip from './RegionChip.vue'
 import { regionOf } from '../data/regions'
 import type { SearchHit } from '../services/search'
+import { typing } from '../services/keyboard'
 import { useCatalogStore } from '../stores/catalog'
 import SkeletonRows from './SkeletonRows.vue'
 
 // header 右側的景點搜尋（全國）。第一次聚焦時才下載索引。
 // 結果先列縣名，再列景點（完全相同 > 開頭相同 > 包含，同級依分數）。
-// full：手機 header 展開的搜尋列（DESIGN.md §7.3），佔滿寬度，結果鋪滿 header 與底部分頁列之間。
-const props = defineProps<{ full?: boolean; autofocus?: boolean }>()
+// full：手機 header 展開的搜尋列（DESIGN.md §7.3），佔滿寬度，結果鋪滿 header 與底部分頁列之間
+// （打字時分頁列收起，結果鋪到底，services/keyboard.ts）。
+defineProps<{ full?: boolean }>()
 const emit = defineEmits<{ pick: [hit: SearchHit] }>()
 const catalog = useCatalogStore()
 const uid = useId()
 const input = ref<HTMLInputElement | null>(null)
-onMounted(() => {
-  if (props.autofocus) input.value?.focus()
-})
 
 const query = ref('')
 const open = ref(false)
@@ -38,6 +37,15 @@ function run() {
   active.value = 0
 }
 watch(query, run)
+
+// header 的搜尋列一直掛著（AppHeader），在點擊當下聚焦、收起時清空
+defineExpose({
+  focus: () => input.value?.focus(),
+  clear: () => {
+    query.value = ''
+    open.value = false
+  },
+})
 
 const showList = computed(() => open.value && query.value.trim() !== '')
 
@@ -65,7 +73,7 @@ function onKey(e: KeyboardEvent) {
 </script>
 
 <template>
-  <div class="relative" :class="full ? 'w-full min-w-0' : 'w-56 shrink-0 lg:w-72'" @focusout="(e) => !($el as HTMLElement).contains(e.relatedTarget as Node) && (open = false)">
+  <div class="relative" :class="full ? 'w-full min-w-0' : 'w-72 shrink-0'" @focusout="(e) => !($el as HTMLElement).contains(e.relatedTarget as Node) && (open = false)">
     <label class="flex h-10 items-center gap-2 rounded-full border border-line bg-paper px-3.5 text-sub focus-within:border-region-strong focus-within:text-ink">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
         <circle cx="11" cy="11" r="6.5" /><path d="M16 16l4.5 4.5" />
@@ -97,7 +105,7 @@ function onKey(e: KeyboardEvent) {
       class="scroll-quiet z-30 flex origin-top animate-pop-in flex-col overflow-y-auto overscroll-contain bg-paper p-1.5"
       :class="
         full
-          ? 'fixed inset-x-0 top-header bottom-[calc(3.5rem+env(safe-area-inset-bottom))] border-t border-line'
+          ? ['fixed inset-x-0 top-header border-t border-line', typing ? 'bottom-0' : 'bottom-[calc(3.5rem+env(safe-area-inset-bottom))]']
           : 'absolute top-12 right-0 max-h-[60dvh] w-full rounded-card shadow-float'
       "
     >

@@ -8,6 +8,6 @@
       <span lang="ja" class="mb-[3px] text-[10px] tracking-[3px] text-sub">ひとめぐり</span>
       <span lang="ja" class="text-[22px] font-black tracking-[2px]">一巡り</span>
     </span>
-    <span class="font-latin text-[13px] font-semibold whitespace-nowrap uppercase tracking-[3px] text-sub">HITOMEGURI</span>
+    <span class="font-latin text-[13px] font-semibold whitespace-nowrap uppercase tracking-[3px] text-sub max-[380px]:hidden">HITOMEGURI</span>
   </RouterLink>
 </template>

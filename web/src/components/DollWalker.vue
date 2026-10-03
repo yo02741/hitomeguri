@@ -181,7 +181,7 @@ const bubbleRight = computed(() => x.value > maxX() - 150)
   transition-property: transform;
   transition-timing-function: linear;
 }
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   .walker {
     bottom: 8px;
   }

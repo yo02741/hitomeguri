@@ -139,7 +139,7 @@ function open(id: string) {
     <h1 class="text-h2 font-black tracking-title">紀錄</h1>
 
     <template v-if="userStore.user">
-      <div class="grid gap-4 md:grid-cols-[minmax(0,2fr)_minmax(0,1fr)_minmax(0,1fr)]">
+      <div class="grid gap-4 lg:grid-cols-[minmax(0,2fr)_minmax(0,1fr)_minmax(0,1fr)]">
       <RouterLink
         to="/log/cards"
         class="collect paper-grain group relative flex h-[132px] items-center gap-3 overflow-hidden rounded-card bg-region pr-5 text-on-region no-underline active:not-disabled:translate-y-px"
@@ -204,7 +204,7 @@ function open(id: string) {
       <!-- 成就入口（DESIGN.md §7.25） -->
       <RouterLink
         to="/log/achievements"
-        class="group relative flex h-[96px] items-center gap-4 rounded-card border border-line bg-paper px-5 text-ink no-underline hover:bg-surface md:col-span-3 active:not-disabled:translate-y-px"
+        class="group relative flex h-[96px] items-center gap-4 rounded-card border border-line bg-paper px-5 text-ink no-underline hover:bg-surface lg:col-span-3 active:not-disabled:translate-y-px"
       >
         <span class="flex shrink-0 flex-col">
           <span class="text-title font-black tracking-title">成就</span>
