@@ -190,7 +190,7 @@
   - 經縣值的級數：觸控裝置上 6 格連成無間隙的分段條（每格 44 高、平分剩下的寬度，最寬 44），相鄰的框線疊在一起（`-ml-px`），選中的那格在上層。
   - 首頁的 47 縣在手機改成站名板格（§7.5），每格就是 44 高；景點清單的類型分段小標（全寬 32 高）維持原樣。
 - 手機頁面上方預留 safe area：`pt-[max(env(safe-area-inset-top),12px)]`（只有 status bar 設成 `black-translucent` 時才需要；目前沒設，上方不留）。
-- 底部分頁列 `box-content h-14 pb-[env(safe-area-inset-bottom)]`：內容固定 56px，home indicator 的高度加在外面；貼著分頁列的浮動提示（AppUpdate）用 `bottom-[calc(5rem+env(safe-area-inset-bottom))]`，≥1024 沒有分頁列時 `lg:bottom-6`。
+- 底部分頁列 `box-content h-14 pb-[env(safe-area-inset-bottom)]`：內容固定 56px，home indicator 的高度加在外面；貼著分頁列的浮動提示（AppUpdate）用 `bottom-[calc(5rem+env(safe-area-inset-bottom))]`，≥1024 沒有分頁列時 `lg:bottom-6`。手機貼在分頁列上方的浮動工具列（紀錄頁的補日期、經縣值的級數條）用 `bottom-dock`（theme.css，分頁列上方 8px）：`fixed` 左右各留 12px（橫向時讓出瀏海）、最寬 560 置中，`rounded-card bg-paper p-2 shadow-float`，一行。
 - 橫向時左右的瀏海：header 用 `pl-[max(1rem,env(safe-area-inset-left))]`、`pr-[max(1rem,env(safe-area-inset-right))]`（`md:` 起 1.5rem）。`<main>` 左右讓出 `env(safe-area-inset-*)`，≥1024（沒有分頁列）底部也讓出。地圖頁（路由 `meta.bleed`，`<main data-bleed>`）的地圖鋪回瀏海底下，MapLibre 控制項與位置小框用 `.map-root` 的 `--map-inset-*` 縮回安全區內（`theme.css`）；手機海報條也鋪滿，文字內縮。
 - 整頁不捲動：`html`、`body` 是 `overflow: hidden` 與 `overscroll-behavior-y: none`（不會下拉重新整理、不回彈），捲的是 `<main>` 與各頁的內層捲動區；內層捲動區加 `overscroll-contain`。
 - 換頁的捲動位置（`services/scrollRestore.ts`）：換到另一頁時 `<main>` 回到頂端；返回、往前時回到那一頁離開時的位置；帶 `#hash` 的交給頁面自己的段落定位，只換 query 的不動。
@@ -562,7 +562,7 @@ header 右側、登入鈕左邊（`SearchBox.vue`，每一頁都在；在行程�
   - 詳細（`AchvDetail.vue`，外框 `RulesDialog`）：章 132px、條件、日期（未達成是進度）、抽獎券「5 張」（給券的才有）、有關的地方／旅行／縣最多 12 筆（依日期，連到地圖或行程頁；超過寫「還有 n 處」；打開時才算，平常的判斷不建這份清單）。打開就算看過；`RulesDialog` 是原生 `<dialog>`（收集冊、旅人的規則也是），Tab 只在框裡繞、後面的頁面 inert；關閉後焦點回到那一格。
   - 規則（`AchvRules.vue`）：條列文字在 `data/achvRules.ts` 的 `ACHV_RULES`（測試檢查文案；和目錄分開，開站不必載入），抽獎券那段接 `TicketTable`。
 - NEW：每台裝置記得看過哪些（localStorage `hitomeguri:achv-known:<uid>`），和現在達成的比對。某一類（core：只靠 marks、trips；data：還要 achievements.json）第一次可以比對時，把目前達成的靜靜記成基準，所以新裝置、第一次部署都不會冒出一大片 NEW。「可以比對」要等 marks、trips 和伺服器對過一次（`synced`，不是只讀到離線快取）。data 晚到時，基準只算這次登入 core 可以比對那時已經去過的地方：之後才去的（例：新帳號第一個去過就是東寺）達成的世界遺產、國寶照樣標 NEW。取消再勾回來不再 NEW。NEW key 是 `a:<id>`（初訪 `a:pref-<縣>`）；打開詳細拿掉那一個，離開成就頁拿掉全部。
-- 紀錄頁入口：三張卡下面一整列（`lg:col-span-3`，高 96px），左邊「成就」與 n / N，中間最近達成的章 56px 疊在一起（新的在上，桌機 6 個、手機 3 個；沒有時三個虛線圓），有 NEW 時左上 `NewTag`。
+- 紀錄頁入口：桌機在三張卡下面一整列（`lg:col-span-3`，高 96px），左邊「成就」與 n / N，中間最近達成的章 56px 疊在一起（新的在上，6 個；沒有時三個虛線圓），有 NEW 時左上 `NewTag`。手機是三格中的第三格（§7.27），右上只放最新的一個章（40px）。
 - 解鎖時刻：
   - 新卡入手（§7.19）：落定時拿這次新達成的成就（往前多看 2 秒，比對和亮相是同一次 snapshot 觸發、先後不一定），rank 最高的（地方 > 足跡 > 名城 > 文化指定 > 旅行 > 時節 > 擴充包）蓋在卡片右上（120px；比 390px 窄的手機往卡片裡收，縣的初訪章在左下也一樣，斜放的章不超出畫面），其他的只標 NEW；卡片多停 0.7 秒。讀屏加「成就　{名稱}」。沒有日期的快捷去過不再補今天的日期。
   - 卡包翻完（`AchvRow.vue`）：卡片一覽下方「這趟的成就」：達成日在這趟期間（開始日到結束日）的初訪章與成就章 56px＋名稱，依序出現。
@@ -579,13 +579,21 @@ header 右側、登入鈕左邊（`SearchBox.vue`，每一頁都在；在行程�
 
 ### 7.21 經縣值（`/log/keiken`）
 - 每個都道府縣選 0–5 級：住過 5、過夜 4、玩過 3、踏上 2、路過 1、未踏 0（日本的「経県値」玩法），總分最高 235。沒選的縣，有去過的景點就算「玩過」（地圖上虛線框、列上的按鈕虛線框）。
-- 海報區（全國色）：標題、總分（`RollingNumber`，`text-display`）／235、各級數的色票與縣數、「存成圖片」。下方日本地圖（`japanOutline`，最寬 560px）依級數塗 `--color-keiken-1..5`（越深越久，未踏是 `--region-line`）；點縣在點的位置打開級數選單（下方放不下、例如手機畫面下半會被分頁列蓋到時，翻到點的上方；橫向仍放不下時貼齊可見區頂端、選單自己捲動；打開時焦點在目前的級數，不捲動頁面）。再下方依地方列出 47 縣，每縣一排 6 個按鈕（未踏→住過；觸控裝置上連成無間隙的分段條，每格 44 高，§5.2）。
+- 海報區（全國色）：標題、總分（`RollingNumber`，`text-display`）／235、各級數的色票與縣數、「存成圖片」。下方日本地圖（`japanOutline`，最寬 560px）依級數塗 `--color-keiken-1..5`（越深越久，未踏是 `--region-line`）；桌機點縣在點的位置打開級數選單（手機見下；下方放不下時翻到點的上方；仍放不下時貼齊可見區頂端、選單自己捲動；打開時焦點在目前的級數，不捲動頁面）。再下方依地方列出 47 縣，每縣一排 6 個按鈕（未踏→住過；觸控裝置上連成無間隙的分段條，每格 44 高，§5.2）。
+- 手機（<1024）：點縣不開浮動選單，改成貼在分頁列上方的級數條（`bottom-dock`，§5.2）：縣名（`text-body-sm font-black`，48px）＋6 段無間隙的分段鈕（未踏→住過，每格 44 高、平分寬度，選中的那格塗級數色、`border-ink`）＋44px 關閉。選了級數就收起；Esc、點地圖以外的地方也收起。條蓋到剛點的縣時頁面往上捲一點。47 縣清單上方放地方的段落列（`SectionNav` bar，sticky，同成就頁），各地方段落 `scroll-mt-16`。
+- 觸控時點到海上（小的縣、離島）：20px 內最近的縣（`services/nearestHit.ts`，由近到遠一圈一圈用 `elementFromPoint` 找）。滑鼠照舊只認點到的縣。
+- 沖繩的框：放大 3 倍（原比例的沖繩本島在手機上只有約 6×17px）。3 倍放不下整個縣，分兩塊、縮短中間的海：沖繩本島一帶（含久米島）在框的右上，先島諸島在左下（`services/geo.ts` 的 `japanOutline`）。收集冊、位置小框、分享圖用同一份縣界，一起放大。
 - 存在 `users/{uid}/meta/keiken`（`firestore.rules` 已加，要貼到 Firebase Console 發布）；寫不進去時先存在這台裝置。入口在紀錄頁收集冊旁。
 
 ### 7.22 分享圖（旅行回顧、經縣值）
 - `ShareImage.vue`：深色遮罩上預覽 canvas，手機「分享」（Web Share API 帶 PNG）、「下載」。`services/shareImage.ts` 畫 1080×1350（IG 直式）。
 - 只畫自己的地圖（縣界）與文字，不放照片（Commons 照片要逐張標作者與授權）。頁尾左邊縣界出處、右邊 HITOMEGURI。
 - 旅行回顧：上方主縣（停留點最多的縣）的 `base` 色帶＋行程名、日期、天數與縣；中間停留點範圍的縣界（行程經過的縣用各自的 `accent`）、每天一條虛線路線（那天主縣的 `strong`）與編號，右上日本全圖；下方每天一行 DAY 標記、日期、停留點（最多 4 天）。入口在行程頁的按鈕列。
+
+### 7.27 紀錄頁（`/log`）
+- 桌機：第一列收集冊（2fr）、經縣值、旅人；第二列成就整列；下面去過的地圖、旅行、去過（不變）。
+- 手機與平板（<1024，決定事項 K2）：收集冊一張 96 高（扇形卡 60px 寬），下面經縣值、旅人、成就三格排一列（`grid-cols-3 gap-2`，每格 104 高、`p-3`）：左上標題（`text-body font-black`），左下數字（`text-title font-bold`＋`/ N` `text-caption text-sub`）；經縣值底下一條進度，旅人右上小窗（43×50）放半身像，成就右上最新的章。不放右箭頭。再下面一行「收藏 n ・ 清單 n ›」（`min-h-tap rounded-card border border-line`，連到 `/me`），接 sticky 的段落列「旅行・去過」（`SectionNav` bar，同成就頁），兩段 `scroll-mt-16`。
+- 補日期：桌機是清單上方的 sticky 列（沒有日期的 n、全選、已選 n、日期、套用、完成）。手機改成貼在分頁列上方一行「已選 n・日期・套用・完成」（`bottom-dock`），日期只寫 `2026/10/03`；「沒有日期的 n」「全選」移到「去過」標題列（取代匯出鈕）。
 
 ### 7.26 復原與確認框（決定事項 L3）
 - 可以復原的移除：取消收藏、取消去過、從清單移除（清單頁的 ×、景點卡片清單選單取消勾選）、從行程移除停留點。做完立刻（不等寫入完成，離線也一樣）在底部出現一行提示：`已取消收藏`、`已取消去過`、`已從「清單名」移除`、`已從行程移除`，右邊「復原」與 ×。樣式、位置與「有新版本」相同（`AppUpdate.vue`：`bg-ink text-paper rounded-card shadow-float`，貼著分頁列；「復原」是 `bg-paper text-ink` 的小鈕），一次一則，新的取代舊的；約 6 秒收起，游標停在上面或焦點在鈕上時不倒數（`services/toast.ts`）。復原只補回那一個欄位（去過連同日期，停留點回到原本那一天的原本位置；那天已經刪掉就放回待排）。頁面載入失敗的提示優先，有新版本排在最後。
