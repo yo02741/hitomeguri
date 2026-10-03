@@ -1506,7 +1506,14 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d8/Kuju_Flower_Park%283553982332%29.jpg/960px-Kuju_Flower_Park%283553982332%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "TANAKA Juuyoh (田中十洋)",
+        "license": "CC BY 2.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Kuju_Flower_Park(3553982332).jpg"
+      }
+    ],
     "external_ids": {
       "wikidata": "Q11265352",
       "osm": "way/485450794"
@@ -1693,7 +1700,14 @@
         "distance_m": 940
       }
     ],
-    "images": [],
+    "images": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/c/cd/Artplaza_oita-city_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+        "author": "MK Products",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Artplaza_oita-city_1.jpg"
+      }
+    ],
     "external_ids": {
       "wikidata": "Q11285663",
       "osm": "relation/12891652"
@@ -1738,7 +1752,14 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ef/AEON_MALL_SANKO.jpg/960px-AEON_MALL_SANKO.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "おっふ照橋さん",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:AEON_MALL_SANKO.jpg"
+      }
+    ],
     "external_ids": {
       "wikidata": "Q11286074"
     },
@@ -2707,7 +2728,14 @@
         "distance_m": 360
       }
     ],
-    "images": [],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dc/Mikazuki_Waterfall_20141116-1.jpg/960px-Mikazuki_Waterfall_20141116-1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "そらみみ",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Mikazuki_Waterfall_20141116-1.jpg"
+      }
+    ],
     "external_ids": {
       "wikidata": "Q11355510"
     },
@@ -2782,7 +2810,15 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-28",
+    "season_images": {
+      "night": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d2/%E4%B8%89%E9%9A%88%E5%B7%9D%E3%81%AE%E8%8A%B1%E7%81%AB.jpg/960px-%E4%B8%89%E9%9A%88%E5%B7%9D%E3%81%AE%E8%8A%B1%E7%81%AB.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Watofamily",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:%E4%B8%89%E9%9A%88%E5%B7%9D%E3%81%AE%E8%8A%B1%E7%81%AB.jpg"
+      }
+    }
   },
   {
     "id": "wd-Q11358639",
@@ -2931,7 +2967,14 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/84/%E4%B9%85%E4%BD%8F%E9%AB%98%E5%8E%9F%E3%82%B3%E3%83%86%E3%83%BC%E3%82%B8%E3%82%88%E3%82%8A_-_panoramio.jpg/960px-%E4%B9%85%E4%BD%8F%E9%AB%98%E5%8E%9F%E3%82%B3%E3%83%86%E3%83%BC%E3%82%B8%E3%82%88%E3%82%8A_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Naoki Iwashita",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:%E4%B9%85%E4%BD%8F%E9%AB%98%E5%8E%9F%E3%82%B3%E3%83%86%E3%83%BC%E3%82%B8%E3%82%88%E3%82%8A_-_panoramio.jpg"
+      }
+    ],
     "external_ids": {
       "wikidata": "Q11368941"
     },
@@ -3708,7 +3751,15 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-28",
+    "season_images": {
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bf/Hodo-Jima_Island_Aerial_photograph.2009.jpg/960px-Hodo-Jima_Island_Aerial_photograph.2009.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "国土地理院",
+        "license": "Attribution",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Hodo-Jima_Island_Aerial_photograph.2009.jpg"
+      }
+    }
   },
   {
     "id": "wd-Q11386340",
@@ -3736,7 +3787,14 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f0/Shujo_Onie_%28Bungotakada%29.jpg/960px-Shujo_Onie_%28Bungotakada%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Bpcon98",
+        "license": "CC0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Shujo_Onie_(Bungotakada).jpg"
+      }
+    ],
     "external_ids": {
       "wikidata": "Q11386340"
     },
@@ -3900,7 +3958,14 @@
         "distance_m": 1170
       }
     ],
-    "images": [],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9a/Usuki_Yasaka-jinja_ac_%284%29.jpg/960px-Usuki_Yasaka-jinja_ac_%284%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Asturio Cantabrio",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Usuki_Yasaka-jinja_ac_(4).jpg"
+      }
+    ],
     "external_ids": {
       "wikidata": "Q11390708"
     },
@@ -3943,7 +4008,14 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d9/Ya-shima_Island_in_Saiki_City%2C_Oita_Prefecture._Aerial_photograph.2008.jpg/960px-Ya-shima_Island_in_Saiki_City%2C_Oita_Prefecture._Aerial_photograph.2008.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "国土地理院",
+        "license": "Attribution",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Ya-shima_Island_in_Saiki_City,_Oita_Prefecture._Aerial_photograph.2008.jpg"
+      }
+    ],
     "external_ids": {
       "wikidata": "Q11390867"
     },
@@ -4173,7 +4245,14 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-29"
     },
-    "images": [],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/af/Hachimenzan.jpg/960px-Hachimenzan.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Bpcon98",
+        "license": "CC0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Hachimenzan.jpg"
+      }
+    ],
     "external_ids": {
       "wikidata": "Q11391857"
     },
@@ -4442,7 +4521,14 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b1/BeppuYukemuri-YH.jpg/960px-BeppuYukemuri-YH.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "As6673",
+        "license": "Public domain",
+        "source_url": "https://commons.wikimedia.org/wiki/File:BeppuYukemuri-YH.jpg"
+      }
+    ],
     "external_ids": {
       "wikidata": "Q11396735"
     },
@@ -4553,7 +4639,14 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [],
+    "images": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/a/a5/%E5%88%A5%E5%BA%9C%E6%B9%BESA_-_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+        "author": "JKT",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:%E5%88%A5%E5%BA%9C%E6%B9%BESA_-_01.jpg"
+      }
+    ],
     "external_ids": {
       "wikidata": "Q11405055"
     },
@@ -4970,7 +5063,14 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4a/Tsukumi_mukushima.jpg/960px-Tsukumi_mukushima.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "大分帰省中",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Tsukumi_mukushima.jpg"
+      }
+    ],
     "external_ids": {
       "wikidata": "Q11424450"
     },
@@ -5416,7 +5516,14 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6e/OitaStadium1.JPG/960px-OitaStadium1.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "大分帰省中",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:OitaStadium1.JPG"
+      }
+    ],
     "external_ids": {
       "wikidata": "Q11432617",
       "osm": "relation/15476088"
@@ -5466,7 +5573,14 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/18/Oita_Trappist_Monastery.jpg/960px-Oita_Trappist_Monastery.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Oita Trappist",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Oita_Trappist_Monastery.jpg"
+      }
+    ],
     "external_ids": {
       "wikidata": "Q11432624"
     },
@@ -5892,7 +6006,14 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/43/Oita-ken_Marine_Culture_Center.jpg/960px-Oita-ken_Marine_Culture_Center.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "ja:User:KARAKALA",
+        "license": "CC BY-SA 2.1 jp",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Oita-ken_Marine_Culture_Center.jpg"
+      }
+    ],
     "external_ids": {
       "wikidata": "Q11432790"
     },
@@ -6410,7 +6531,15 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-28",
+    "season_images": {
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/63/O-shima_Island_in_Saiki_City%2C_Oita_Prefecture._Aerial_photograph.2008.jpg/960px-O-shima_Island_in_Saiki_City%2C_Oita_Prefecture._Aerial_photograph.2008.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "国土地理院",
+        "license": "Attribution",
+        "source_url": "https://commons.wikimedia.org/wiki/File:O-shima_Island_in_Saiki_City,_Oita_Prefecture._Aerial_photograph.2008.jpg"
+      }
+    }
   },
   {
     "id": "wd-Q11435282",
@@ -6491,7 +6620,14 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/44/Osu_Comprehensive_Sports_Park_Main_gate_20190527.jpg/960px-Osu_Comprehensive_Sports_Park_Main_gate_20190527.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Rsa",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Osu_Comprehensive_Sports_Park_Main_gate_20190527.jpg"
+      }
+    ],
     "external_ids": {
       "wikidata": "Q11437406"
     },
@@ -6628,7 +6764,14 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/33/Ohzai_Bridge_over_the_Ono_River.jpg/960px-Ohzai_Bridge_over_the_Ono_River.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Project Kei",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Ohzai_Bridge_over_the_Ono_River.jpg"
+      }
+    ],
     "external_ids": {
       "wikidata": "Q11439596"
     },
@@ -6681,7 +6824,14 @@
         "distance_m": 80
       }
     ],
-    "images": [],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/14/%E5%A4%A9%E3%83%B6%E7%80%AC%E6%B8%A9%E6%B3%89.JPG/960px-%E5%A4%A9%E3%83%B6%E7%80%AC%E6%B8%A9%E6%B3%89.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Illmatic-2000",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:%E5%A4%A9%E3%83%B6%E7%80%AC%E6%B8%A9%E6%B3%89.JPG"
+      }
+    ],
     "external_ids": {
       "wikidata": "Q11442144"
     },
@@ -7002,7 +7152,14 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d7/Oita_Prefectural_Museum_of_History_in_Usa_city%2C_Oita_prefecture.JPG/960px-Oita_Prefectural_Museum_of_History_in_Usa_city%2C_Oita_prefecture.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Twilight2640",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Oita_Prefectural_Museum_of_History_in_Usa_city,_Oita_prefecture.JPG"
+      }
+    ],
     "external_ids": {
       "wikidata": "Q11449110"
     },
@@ -7250,7 +7407,14 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/47/%E6%97%A5%E6%9C%AC%E4%B8%80%E3%81%AE%E5%A4%A7%E6%B0%B4%E8%BB%8A_-_panoramio.jpg/960px-%E6%97%A5%E6%9C%AC%E4%B8%80%E3%81%AE%E5%A4%A7%E6%B0%B4%E8%BB%8A_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "sk01",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:%E6%97%A5%E6%9C%AC%E4%B8%80%E3%81%AE%E5%A4%A7%E6%B0%B4%E8%BB%8A_-_panoramio.jpg"
+      }
+    ],
     "external_ids": {
       "wikidata": "Q11459186",
       "osm": "node/11237273853"
@@ -7386,7 +7550,14 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9b/Yakata-jima_Island_Aerial_photograph.2008.jpg/960px-Yakata-jima_Island_Aerial_photograph.2008.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "国土地理院",
+        "license": "Attribution",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Yakata-jima_Island_Aerial_photograph.2008.jpg"
+      }
+    ],
     "external_ids": {
       "wikidata": "Q11465691"
     },
@@ -7819,7 +7990,14 @@
         "distance_m": 280
       }
     ],
-    "images": [],
+    "images": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/e/ec/Jion_no_taki.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+        "author": "NY066",
+        "license": "Public domain",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Jion_no_taki.jpg"
+      }
+    ],
     "external_ids": {
       "wikidata": "Q11494995",
       "osm": "node/6810458142"
@@ -8042,7 +8220,14 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [],
+    "images": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/a/ac/%E6%97%A5%E7%94%B0%E5%9F%8E%E8%B7%A1%EF%BC%88%E7%8F%BE%E6%85%88%E7%9C%BC%E5%B1%B1%E5%85%AC%E5%9C%92%EF%BC%89.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+        "author": "不明",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:%E6%97%A5%E7%94%B0%E5%9F%8E%E8%B7%A1%EF%BC%88%E7%8F%BE%E6%85%88%E7%9C%BC%E5%B1%B1%E5%85%AC%E5%9C%92%EF%BC%89.png"
+      }
+    ],
     "external_ids": {
       "wikidata": "Q11509906"
     },
@@ -8164,7 +8349,14 @@
         "distance_m": 970
       }
     ],
-    "images": [],
+    "images": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/0/09/Kizan_park_Distant_view.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+        "author": "Mukai",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Kizan_park_Distant_view.jpg"
+      }
+    ],
     "external_ids": {
       "wikidata": "Q11510720",
       "osm": "node/14025275006"
@@ -8763,7 +8955,14 @@
         "distance_m": 310
       }
     ],
-    "images": [],
+    "images": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/2/23/%E6%A1%9C%E6%BB%9D.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+        "author": "Kitadake3193",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:%E6%A1%9C%E6%BB%9D.jpg"
+      }
+    ],
     "external_ids": {
       "wikidata": "Q11538136"
     },
@@ -8809,7 +9008,14 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cf/Yoko-shima_Island_in_Saiki_City%2C_Oita_Prefecture._Aerial_photograph.2008.jpg/960px-Yoko-shima_Island_in_Saiki_City%2C_Oita_Prefecture._Aerial_photograph.2008.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "国土地理院",
+        "license": "Attribution",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Yoko-shima_Island_in_Saiki_City,_Oita_Prefecture._Aerial_photograph.2008.jpg"
+      }
+    ],
     "external_ids": {
       "wikidata": "Q11542683"
     },
@@ -9014,7 +9220,14 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4a/Tsukumi_mukushima.jpg/960px-Tsukumi_mukushima.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "大分帰省中",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Tsukumi_mukushima.jpg"
+      }
+    ],
     "external_ids": {
       "wikidata": "Q11552549"
     },
@@ -9337,7 +9550,14 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/94/Fuka-shima_Island_Aerial_photograph.2008.jpg/960px-Fuka-shima_Island_Aerial_photograph.2008.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "国土地理院",
+        "license": "Attribution",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Fuka-shima_Island_Aerial_photograph.2008.jpg"
+      }
+    ],
     "external_ids": {
       "wikidata": "Q11559986"
     },
@@ -9468,7 +9688,14 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ca/Yufuin-YH.jpg/960px-Yufuin-YH.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "As6673",
+        "license": "Public domain",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Yufuin-YH.jpg"
+      }
+    ],
     "external_ids": {
       "wikidata": "Q11563561"
     },
@@ -10046,7 +10273,14 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/78/Oike_Springs.jpg/960px-Oike_Springs.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "ブルーノ・プラス",
+        "license": "CC BY 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Oike_Springs.jpg"
+      }
+    ],
     "external_ids": {
       "wikidata": "Q11578162"
     },
@@ -10141,7 +10375,14 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c3/Hakusui_mineral_springs.jpg/960px-Hakusui_mineral_springs.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "ブルーノ・プラス",
+        "license": "CC BY 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Hakusui_mineral_springs.jpg"
+      }
+    ],
     "external_ids": {
       "wikidata": "Q11579917"
     },
@@ -10303,7 +10544,14 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/33/Oita-Sunset_at_Matama_Beach-xl.jpg/960px-Oita-Sunset_at_Matama_Beach-xl.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "RyotaFuno",
+        "license": "CC BY 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Oita-Sunset_at_Matama_Beach-xl.jpg"
+      }
+    ],
     "external_ids": {
       "wikidata": "Q11583313",
       "osm": "node/6773442547"
@@ -10691,7 +10939,21 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-28",
+    "season_images": {
+      "night": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b5/Takegawara_onsen_spa_%2C_%E7%AB%B9%E7%93%A6%E6%B8%A9%E6%B3%89_-_panoramio_-_z_tanuki_%281%29.jpg/960px-Takegawara_onsen_spa_%2C_%E7%AB%B9%E7%93%A6%E6%B8%A9%E6%B3%89_-_panoramio_-_z_tanuki_%281%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "z tanuki",
+        "license": "CC BY 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Takegawara_onsen_spa_,_%E7%AB%B9%E7%93%A6%E6%B8%A9%E6%B3%89_-_panoramio_-_z_tanuki_(1).jpg"
+      },
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/80/Takegawara_onsen_spa_%2C_%E7%AB%B9%E7%93%A6%E6%B8%A9%E6%B3%89_-_panoramio_-_z_tanuki.jpg/960px-Takegawara_onsen_spa_%2C_%E7%AB%B9%E7%93%A6%E6%B8%A9%E6%B3%89_-_panoramio_-_z_tanuki.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "z tanuki",
+        "license": "CC BY 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Takegawara_onsen_spa_,_%E7%AB%B9%E7%93%A6%E6%B8%A9%E6%B3%89_-_panoramio_-_z_tanuki.jpg"
+      }
+    }
   },
   {
     "id": "wd-Q11602749",
@@ -11041,7 +11303,14 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/06/%E7%8C%BF%E9%A3%9B%E7%94%8C%E7%A9%B4%E7%BE%A4_-_panoramio.jpg/960px-%E7%8C%BF%E9%A3%9B%E7%94%8C%E7%A9%B4%E7%BE%A4_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "sk01",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:%E7%8C%BF%E9%A3%9B%E7%94%8C%E7%A9%B4%E7%BE%A4_-_panoramio.jpg"
+      }
+    ],
     "external_ids": {
       "wikidata": "Q11610836"
     },
@@ -11372,7 +11641,14 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [],
+    "images": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/4/43/Wakamiya_Hachiman_Shrine_Bungotakada.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+        "author": "Bpcon98",
+        "license": "CC0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Wakamiya_Hachiman_Shrine_Bungotakada.jpg"
+      }
+    ],
     "external_ids": {
       "wikidata": "Q11616260"
     },
@@ -11567,7 +11843,14 @@
         "distance_m": 1070
       }
     ],
-    "images": [],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9d/Bungo_ohno_sugao_magaibutsu.jpg/960px-Bungo_ohno_sugao_magaibutsu.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "大分帰省中",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Bungo_ohno_sugao_magaibutsu.jpg"
+      }
+    ],
     "external_ids": {
       "wikidata": "Q11619267",
       "osm": "node/9249536817"
@@ -12211,7 +12494,15 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-28",
+    "season_images": {
+      "night": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/7/70/%E3%83%A9%E3%82%A4%E3%83%88%E3%82%A2%E3%83%83%E3%83%97.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+        "author": "一般社団法人佐伯市観光協会",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:%E3%83%A9%E3%82%A4%E3%83%88%E3%82%A2%E3%83%83%E3%83%97.jpg"
+      }
+    }
   },
   {
     "id": "wd-Q11633691",
@@ -13217,7 +13508,14 @@
     ],
     "status": "published",
     "updated_at": "2026-09-28",
-    "season_images": {}
+    "season_images": {
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8a/Kinrinko_Panoramic2.jpg/960px-Kinrinko_Panoramic2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "G43",
+        "license": "CC BY 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Kinrinko_Panoramic2.jpg"
+      }
+    }
   },
   {
     "id": "wd-Q11651677",
@@ -13292,7 +13590,14 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e8/Ganiyu.JPG/960px-Ganiyu.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "NY066",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Ganiyu.JPG"
+      }
+    ],
     "external_ids": {
       "wikidata": "Q11653343"
     },
@@ -13422,7 +13727,14 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e9/%E6%B5%B7%E6%98%9F%E9%A4%A8%E5%85%A5%E5%8F%A3.jpg/960px-%E6%B5%B7%E6%98%9F%E9%A4%A8%E5%85%A5%E5%8F%A3.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "ぼるるん",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:%E6%B5%B7%E6%98%9F%E9%A4%A8%E5%85%A5%E5%8F%A3.jpg"
+      }
+    ],
     "external_ids": {
       "wikidata": "Q11655742",
       "osm": "way/404844899"
@@ -13567,7 +13879,14 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [],
+    "images": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/4/42/%E9%A2%A8%E9%80%A3%E9%8D%BE%E4%B9%B3%E6%B4%9E_%E5%86%85%E9%83%A83.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+        "author": "統星",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:%E9%A2%A8%E9%80%A3%E9%8D%BE%E4%B9%B3%E6%B4%9E_%E5%86%85%E9%83%A83.jpg"
+      }
+    ],
     "external_ids": {
       "wikidata": "Q11665611"
     },
@@ -13835,7 +14154,14 @@
     ],
     "status": "published",
     "updated_at": "2026-09-29",
-    "season_images": {}
+    "season_images": {
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/56/%E9%AB%98%E5%B4%8E%E5%B1%B1%E8%87%AA%E7%84%B6%E5%8B%95%E7%89%A9%E5%9C%92_-_panoramio.jpg/960px-%E9%AB%98%E5%B4%8E%E5%B1%B1%E8%87%AA%E7%84%B6%E5%8B%95%E7%89%A9%E5%9C%92_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "funk bass",
+        "license": "CC BY 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:%E9%AB%98%E5%B4%8E%E5%B1%B1%E8%87%AA%E7%84%B6%E5%8B%95%E7%89%A9%E5%9C%92_-_panoramio.jpg"
+      }
+    }
   },
   {
     "id": "wd-Q11671972",
@@ -13916,7 +14242,14 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8f/Taketa_Power_station_weir.JPG/960px-Taketa_Power_station_weir.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "河川一等兵",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Taketa_Power_station_weir.JPG"
+      }
+    ],
     "external_ids": {
       "wikidata": "Q11673936"
     },
@@ -13960,7 +14293,14 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-29"
     },
-    "images": [],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/84/%E9%9B%A8%E3%81%AB%E6%BF%A1%E3%82%8C%E3%82%8B%E9%AF%9B%E7%94%9F%E9%87%91%E5%B1%B1_-_panoramio.jpg/960px-%E9%9B%A8%E3%81%AB%E6%BF%A1%E3%82%8C%E3%82%8B%E9%AF%9B%E7%94%9F%E9%87%91%E5%B1%B1_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "UltraH",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:%E9%9B%A8%E3%81%AB%E6%BF%A1%E3%82%8C%E3%82%8B%E9%AF%9B%E7%94%9F%E9%87%91%E5%B1%B1_-_panoramio.jpg"
+      }
+    ],
     "external_ids": {
       "wikidata": "Q11674272"
     },
@@ -14220,7 +14560,14 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e8/%E9%BB%84%E7%89%9B%E3%81%AE%E6%BB%9D%E3%81%9D%E3%81%AE2_-_panoramio.jpg/960px-%E9%BB%84%E7%89%9B%E3%81%AE%E6%BB%9D%E3%81%9D%E3%81%AE2_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "sk01",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:%E9%BB%84%E7%89%9B%E3%81%AE%E6%BB%9D%E3%81%9D%E3%81%AE2_-_panoramio.jpg"
+      }
+    ],
     "external_ids": {
       "wikidata": "Q11677794"
     },
@@ -14260,7 +14607,14 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/19/%E5%B1%B1%E9%BA%93%E3%81%8B%E3%82%89%E8%A6%8B%E3%81%9F%E5%A4%A7%E8%88%B9%E5%B1%B1%E3%81%A8%E9%BB%92%E5%B2%B3.jpg/960px-%E5%B1%B1%E9%BA%93%E3%81%8B%E3%82%89%E8%A6%8B%E3%81%9F%E5%A4%A7%E8%88%B9%E5%B1%B1%E3%81%A8%E9%BB%92%E5%B2%B3.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Koda6029",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:%E5%B1%B1%E9%BA%93%E3%81%8B%E3%82%89%E8%A6%8B%E3%81%9F%E5%A4%A7%E8%88%B9%E5%B1%B1%E3%81%A8%E9%BB%92%E5%B2%B3.jpg"
+      }
+    ],
     "external_ids": {
       "wikidata": "Q11678141"
     },
@@ -14303,7 +14657,14 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f8/Kuro-shima_Island_in_Tsukumi_City%2C_Oita_Prefecture._Aerial_photograph.2009.jpg/960px-Kuro-shima_Island_in_Tsukumi_City%2C_Oita_Prefecture._Aerial_photograph.2009.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "国土地理院",
+        "license": "Attribution",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Kuro-shima_Island_in_Tsukumi_City,_Oita_Prefecture._Aerial_photograph.2009.jpg"
+      }
+    ],
     "external_ids": {
       "wikidata": "Q11678144"
     },
@@ -14371,7 +14732,15 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-28",
+    "season_images": {
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0a/Kuro-shima_Island_in_Usuki_City%2C_Oita_Prefecture._Aerial_photograph.2007.jpg/960px-Kuro-shima_Island_in_Usuki_City%2C_Oita_Prefecture._Aerial_photograph.2007.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "国土地理院",
+        "license": "Attribution",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Kuro-shima_Island_in_Usuki_City,_Oita_Prefecture._Aerial_photograph.2007.jpg"
+      }
+    }
   },
   {
     "id": "wd-Q11679436",
@@ -14477,7 +14846,14 @@
         "distance_m": 1450
       }
     ],
-    "images": [],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7d/RZ_Bluebird_Gekijo.jpg/960px-RZ_Bluebird_Gekijo.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Razgrad",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:RZ_Bluebird_Gekijo.jpg"
+      }
+    ],
     "external_ids": {
       "wikidata": "Q118129810"
     },
@@ -15495,7 +15871,14 @@
         "distance_m": 520
       }
     ],
-    "images": [],
+    "images": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/a/a6/Ajiro_island.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+        "author": "my photo",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Ajiro_island.jpg"
+      }
+    ],
     "external_ids": {
       "wikidata": "Q17191315"
     },
@@ -15662,7 +16045,14 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [],
+    "images": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/5/53/%E5%A4%AB%E5%A9%A6%E6%BB%9D%28%E5%A4%A7%E5%88%86%E7%9C%8C%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+        "author": "Kitadake3193",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:%E5%A4%AB%E5%A9%A6%E6%BB%9D(%E5%A4%A7%E5%88%86%E7%9C%8C).jpg"
+      }
+    ],
     "external_ids": {
       "wikidata": "Q17218363"
     },
@@ -15776,7 +16166,14 @@
         "distance_m": 610
       }
     ],
-    "images": [],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c6/%E5%A4%A7%E5%8E%9F%E3%81%AE%E3%81%97%E3%81%A0%E3%82%8C%E6%A1%9C%EF%BC%88%E6%98%BC%E9%96%93%EF%BC%89.jpg/960px-%E5%A4%A7%E5%8E%9F%E3%81%AE%E3%81%97%E3%81%A0%E3%82%8C%E6%A1%9C%EF%BC%88%E6%98%BC%E9%96%93%EF%BC%89.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "荒川政勝",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:%E5%A4%A7%E5%8E%9F%E3%81%AE%E3%81%97%E3%81%A0%E3%82%8C%E6%A1%9C%EF%BC%88%E6%98%BC%E9%96%93%EF%BC%89.jpg"
+      }
+    ],
     "external_ids": {
       "wikidata": "Q17227948"
     },
@@ -15838,7 +16235,14 @@
         "distance_m": 1210
       }
     ],
-    "images": [],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/28/Hatoba-jinja%2C_Beppu.jpg/960px-Hatoba-jinja%2C_Beppu.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "運動会プロテインパワー",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Hatoba-jinja,_Beppu.jpg"
+      }
+    ],
     "external_ids": {
       "wikidata": "Q18338854"
     },
@@ -16836,7 +17240,14 @@
         "distance_m": 1040
       }
     ],
-    "images": [],
+    "images": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/d/d0/Uomi_Sakura_2004-03-16.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+        "author": "Project Kei",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Uomi_Sakura_2004-03-16.jpg"
+      }
+    ],
     "external_ids": {
       "wikidata": "Q28682426"
     },
@@ -17004,7 +17415,14 @@
         "distance_m": 640
       }
     ],
-    "images": [],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b3/Hikoshima_Island%2C_Saiki_Oita_Aerial_photograph.2018.jpg/960px-Hikoshima_Island%2C_Saiki_Oita_Aerial_photograph.2018.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "国土地理院",
+        "license": "Attribution",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Hikoshima_Island,_Saiki_Oita_Aerial_photograph.2018.jpg"
+      }
+    ],
     "external_ids": {
       "wikidata": "Q28684993"
     },
@@ -17168,7 +17586,14 @@
         "distance_m": 1030
       }
     ],
-    "images": [],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/85/AOSE%2C_Hita.jpg/960px-AOSE%2C_Hita.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "運動会プロテインパワー",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:AOSE,_Hita.jpg"
+      }
+    ],
     "external_ids": {
       "wikidata": "Q28688542"
     },
@@ -17219,7 +17644,14 @@
         "distance_m": 1040
       }
     ],
-    "images": [],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/85/AOSE%2C_Hita.jpg/960px-AOSE%2C_Hita.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "運動会プロテインパワー",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:AOSE,_Hita.jpg"
+      }
+    ],
     "external_ids": {
       "wikidata": "Q28688543"
     },
@@ -17741,7 +18173,15 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-28",
+    "season_images": {
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d2/2020-02-24_Kannawa_Onsen_%E9%89%84%E8%BC%AA%E6%B8%A9%E6%B3%89%E5%85%A8%E6%99%AF_DSCF8629.jpg/960px-2020-02-24_Kannawa_Onsen_%E9%89%84%E8%BC%AA%E6%B8%A9%E6%B3%89%E5%85%A8%E6%99%AF_DSCF8629.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "松岡明芳",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:2020-02-24_Kannawa_Onsen_%E9%89%84%E8%BC%AA%E6%B8%A9%E6%B3%89%E5%85%A8%E6%99%AF_DSCF8629.jpg"
+      }
+    }
   },
   {
     "id": "wd-Q30926224",
@@ -17914,7 +18354,14 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a6/Kumohachimanguu_shrine.jpg/960px-Kumohachimanguu_shrine.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Hotaru2025",
+        "license": "CC0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Kumohachimanguu_shrine.jpg"
+      }
+    ],
     "external_ids": {
       "wikidata": "Q30931964"
     },
@@ -18003,7 +18450,14 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d2/Kameoka-hachiman-shrine%2C_Nakatsu.jpg/960px-Kameoka-hachiman-shrine%2C_Nakatsu.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "運動会プロテインパワー",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Kameoka-hachiman-shrine,_Nakatsu.jpg"
+      }
+    ],
     "external_ids": {
       "wikidata": "Q30933165"
     },
@@ -18531,7 +18985,14 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f8/Hime-shima_Island_Oita_prefecture_Aerial_photograph.2015.jpg/960px-Hime-shima_Island_Oita_prefecture_Aerial_photograph.2015.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "国土地理院",
+        "license": "Attribution",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Hime-shima_Island_Oita_prefecture_Aerial_photograph.2015.jpg"
+      }
+    ],
     "external_ids": {
       "wikidata": "Q3785700"
     },
@@ -18546,7 +19007,15 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-28",
+    "season_images": {
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f8/Hime-shima_Island_Oita_prefecture_Aerial_photograph.2015.jpg/960px-Hime-shima_Island_Oita_prefecture_Aerial_photograph.2015.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "国土地理院",
+        "license": "Attribution",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Hime-shima_Island_Oita_prefecture_Aerial_photograph.2015.jpg"
+      }
+    }
   },
   {
     "id": "wd-Q38266917",
@@ -18701,7 +19170,14 @@
         "distance_m": 950
       }
     ],
-    "images": [],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c7/%E6%B3%95%E9%9F%B3%E5%AF%BA%E6%9C%AC%E5%A0%82.jpg/960px-%E6%B3%95%E9%9F%B3%E5%AF%BA%E6%9C%AC%E5%A0%82.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "法音寺",
+        "license": "CC0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:%E6%B3%95%E9%9F%B3%E5%AF%BA%E6%9C%AC%E5%A0%82.jpg"
+      }
+    ],
     "external_ids": {
       "wikidata": "Q44393629",
       "osm": "way/452059344"
@@ -19092,7 +19568,14 @@
         "distance_m": 1250
       }
     ],
-    "images": [],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/73/%E5%8F%97%E4%BB%98%E3%83%BB%E3%82%AB%E3%83%95%E3%82%A7%E3%83%9C%E3%83%83%E3%82%AF%E3%82%B9.jpg/960px-%E5%8F%97%E4%BB%98%E3%83%BB%E3%82%AB%E3%83%95%E3%82%A7%E3%83%9C%E3%83%83%E3%82%AF%E3%82%B9.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Tokyo-yokohama",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:%E5%8F%97%E4%BB%98%E3%83%BB%E3%82%AB%E3%83%95%E3%82%A7%E3%83%9C%E3%83%83%E3%82%AF%E3%82%B9.jpg"
+      }
+    ],
     "external_ids": {
       "wikidata": "Q55525428"
     },
@@ -19516,7 +19999,14 @@
         "distance_m": 380
       }
     ],
-    "images": [],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/43/OITA_OPA.jpg/960px-OITA_OPA.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "おいたんし",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:OITA_OPA.jpg"
+      }
+    ],
     "external_ids": {
       "wikidata": "Q65257587"
     },
@@ -19634,7 +20124,14 @@
     ],
     "status": "published",
     "updated_at": "2026-09-28",
-    "season_images": {}
+    "season_images": {
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/02/Kuju_Mountains_from_Mt.Yufudake_01-2.jpg/960px-Kuju_Mountains_from_Mt.Yufudake_01-2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Σ64",
+        "license": "CC BY 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Kuju_Mountains_from_Mt.Yufudake_01-2.jpg"
+      }
+    }
   },
   {
     "id": "wd-Q6924219",
@@ -20058,7 +20555,14 @@
     ],
     "status": "published",
     "updated_at": "2026-09-28",
-    "season_images": {}
+    "season_images": {
+      "night": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d1/Beppu_Tower_Night_View%2C_Japan_-_panoramio.jpg/960px-Beppu_Tower_Night_View%2C_Japan_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "AudaCity3371",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Beppu_Tower_Night_View,_Japan_-_panoramio.jpg"
+      }
+    }
   },
   {
     "id": "wd-Q84580248",
@@ -20517,6 +21021,12 @@
         "author": "そらみみ",
         "license": "CC BY-SA 4.0",
         "source_url": "https://commons.wikimedia.org/wiki/File:Momijibashi_Bridge_over_Yamautsurigawa_River_in_Shin-Yabakei_Valley.JPG"
+      },
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/25/Panorama_of_Mount_Kyoshuho_from_Rest_House_Domon.jpg/960px-Panorama_of_Mount_Kyoshuho_from_Rest_House_Domon.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "そらみみ",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Panorama_of_Mount_Kyoshuho_from_Rest_House_Domon.jpg"
       }
     }
   },

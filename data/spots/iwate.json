@@ -777,7 +777,14 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3c/%E3%82%A2%E3%83%B3%E3%83%A2%E6%B5%A6.jpg/960px-%E3%82%A2%E3%83%B3%E3%83%A2%E6%B5%A6.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Ty19080914",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:%E3%82%A2%E3%83%B3%E3%83%A2%E6%B5%A6.jpg"
+      }
+    ],
     "external_ids": {
       "wikidata": "Q110535499"
     },
@@ -1011,7 +1018,14 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/46/Iwatekodomonomori.jpg/960px-Iwatekodomonomori.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Yauchi",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Iwatekodomonomori.jpg"
+      }
+    ],
     "external_ids": {
       "wikidata": "Q11260215"
     },
@@ -1073,7 +1087,15 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-28",
+    "season_images": {
+      "winter": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ea/Esashi_Fujiwara_no_Sato_-_panoramio.jpg/960px-Esashi_Fujiwara_no_Sato_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Soul of Japan",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Esashi_Fujiwara_no_Sato_-_panoramio.jpg"
+      }
+    }
   },
   {
     "id": "wd-Q11271084",
@@ -1128,7 +1150,14 @@
     ],
     "status": "published",
     "updated_at": "2026-09-28",
-    "season_images": {}
+    "season_images": {
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/61/Jodogahama_2017-03-07_%2833326979896%29.jpg/960px-Jodogahama_2017-03-07_%2833326979896%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "yuichi hayakawa from tokyo, japan",
+        "license": "CC BY-SA 2.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Jodogahama_2017-03-07_(33326979896).jpg"
+      }
+    }
   },
   {
     "id": "wd-Q11272526",
@@ -1675,7 +1704,14 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [],
+    "images": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/b/b4/Morioka-Minami_Saty.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+        "author": "AXT",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Morioka-Minami_Saty.jpg"
+      }
+    ],
     "external_ids": {
       "wikidata": "Q11286165"
     },
@@ -1894,7 +1930,15 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-28",
+    "season_images": {
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/15/Kappa_buchi_%2C_%E3%82%AB%E3%83%83%E3%83%91%E6%B7%B5_-_panoramio_%2811%29.jpg/960px-Kappa_buchi_%2C_%E3%82%AB%E3%83%83%E3%83%91%E6%B7%B5_-_panoramio_%2811%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "z tanuki",
+        "license": "CC BY 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Kappa_buchi_,_%E3%82%AB%E3%83%83%E3%83%91%E6%B7%B5_-_panoramio_(11).jpg"
+      }
+    }
   },
   {
     "id": "wd-Q11299738",
@@ -2670,6 +2714,12 @@
         "author": "skyseeker",
         "license": "CC BY 2.0",
         "source_url": "https://commons.wikimedia.org/wiki/File:Golden_Hall,_Chusonji_temple,_Hiraizumi_-_Nov_13,_2011.jpg"
+      },
+      "winter": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/91/Hiraizumi_%E2%80%93_Temples%2C_Gardens_and_Archaeological_Sites_Representing_the_Buddhist_Pure_Land-122494.jpg/960px-Hiraizumi_%E2%80%93_Temples%2C_Gardens_and_Archaeological_Sites_Representing_the_Buddhist_Pure_Land-122494.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Vesna Vujicic-Lugassy",
+        "license": "CC BY-SA 3.0 igo",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Hiraizumi_%E2%80%93_Temples,_Gardens_and_Archaeological_Sites_Representing_the_Buddhist_Pure_Land-122494.jpg"
       }
     }
   },
@@ -2819,7 +2869,15 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-28",
+    "season_images": {
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4c/Tono_Denshouen_%2C_%E9%81%A0%E9%87%8E_%E4%BC%9D%E6%89%BF%E5%9C%92_-_panoramio_%287%29.jpg/960px-Tono_Denshouen_%2C_%E9%81%A0%E9%87%8E_%E4%BC%9D%E6%89%BF%E5%9C%92_-_panoramio_%287%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "z tanuki",
+        "license": "CC BY 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Tono_Denshouen_,_%E9%81%A0%E9%87%8E_%E4%BC%9D%E6%89%BF%E5%9C%92_-_panoramio_(7).jpg"
+      }
+    }
   },
   {
     "id": "wd-Q11381578",
@@ -2901,7 +2959,14 @@
         "distance_m": 1230
       }
     ],
-    "images": [],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c1/Jissoji_no_Icho_E.jpg/960px-Jissoji_no_Icho_E.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "さかおり",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Jissoji_no_Icho_E.jpg"
+      }
+    ],
     "external_ids": {
       "wikidata": "Q113877814"
     },
@@ -3389,7 +3454,15 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-28",
+    "season_images": {
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3b/%E5%8D%83%E8%91%89%E5%AE%B6%E4%BD%8F%E5%AE%85_%E6%AD%B4%E5%8F%B2%E7%9A%84%E5%BB%BA%E9%80%A0%E7%89%A9_%E5%8D%97%E9%83%A8%E6%9B%B2%E3%82%8A%E5%AE%B6_-_panoramio_%284%29.jpg/960px-%E5%8D%83%E8%91%89%E5%AE%B6%E4%BD%8F%E5%AE%85_%E6%AD%B4%E5%8F%B2%E7%9A%84%E5%BB%BA%E9%80%A0%E7%89%A9_%E5%8D%97%E9%83%A8%E6%9B%B2%E3%82%8A%E5%AE%B6_-_panoramio_%284%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Yoshio Kohara",
+        "license": "CC BY 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:%E5%8D%83%E8%91%89%E5%AE%B6%E4%BD%8F%E5%AE%85_%E6%AD%B4%E5%8F%B2%E7%9A%84%E5%BB%BA%E9%80%A0%E7%89%A9_%E5%8D%97%E9%83%A8%E6%9B%B2%E3%82%8A%E5%AE%B6_-_panoramio_(4).jpg"
+      }
+    }
   },
   {
     "id": "wd-Q114067722",
@@ -3751,7 +3824,14 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/be/Kunimi_spa_Isiduka_roten2008.jpg/960px-Kunimi_spa_Isiduka_roten2008.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Soica2001 (talk)",
+        "license": "Public domain",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Kunimi_spa_Isiduka_roten2008.jpg"
+      }
+    ],
     "external_ids": {
       "wikidata": "Q11421363"
     },
@@ -3868,7 +3948,14 @@
         "distance_m": 560
       }
     ],
-    "images": [],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0f/Fujishima_wisteria%2C_Sept._2022._E.jpg/960px-Fujishima_wisteria%2C_Sept._2022._E.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "さかおり",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Fujishima_wisteria,_Sept._2022._E.jpg"
+      }
+    ],
     "external_ids": {
       "wikidata": "Q114289633"
     },
@@ -4530,7 +4617,15 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-28",
+    "season_images": {
+      "winter": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fe/Top_of_Mount_Himekami.jpg/960px-Top_of_Mount_Himekami.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Yasu (talk)",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Top_of_Mount_Himekami.jpg"
+      }
+    }
   },
   {
     "id": "wd-Q11447783",
@@ -4664,7 +4759,14 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1f/Appi_kougen_spa.jpg/960px-Appi_kougen_spa.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Soica2001 (talk)",
+        "license": "Public domain",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Appi_kougen_spa.jpg"
+      }
+    ],
     "external_ids": {
       "wikidata": "Q11450899"
     },
@@ -5161,7 +5263,14 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/29/Iwate_Safari_Park_1.jpg/960px-Iwate_Safari_Park_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Ebiebi2",
+        "license": "CC0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Iwate_Safari_Park_1.jpg"
+      }
+    ],
     "external_ids": {
       "wikidata": "Q11474596",
       "osm": "node/4601402442"
@@ -5452,7 +5561,14 @@
         "distance_m": 770
       }
     ],
-    "images": [],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ab/Shogen-in_no_sakasa_gashiwa._A.jpg/960px-Shogen-in_no_sakasa_gashiwa._A.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "さかおり",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Shogen-in_no_sakasa_gashiwa._A.jpg"
+      }
+    ],
     "external_ids": {
       "wikidata": "Q114774790"
     },
@@ -5521,7 +5637,15 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-28",
+    "season_images": {
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b0/Jyouken-ji_temple_%2C_%E5%B8%B8%E5%A0%85%E5%AF%BA_-_panoramio_%283%29.jpg/960px-Jyouken-ji_temple_%2C_%E5%B8%B8%E5%A0%85%E5%AF%BA_-_panoramio_%283%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "z tanuki",
+        "license": "CC BY 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Jyouken-ji_temple_,_%E5%B8%B8%E5%A0%85%E5%AF%BA_-_panoramio_(3).jpg"
+      }
+    }
   },
   {
     "id": "wd-Q11481887",
@@ -5593,7 +5717,14 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [],
+    "images": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/6/62/Renge2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+        "author": "不明",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Renge2.jpg"
+      }
+    ],
     "external_ids": {
       "wikidata": "Q11484239"
     },
@@ -6724,7 +6855,14 @@
         "distance_m": 1090
       }
     ],
-    "images": [],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8d/Towa.onsen2.JPG/960px-Towa.onsen2.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "梅原永義",
+        "license": "Attribution",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Towa.onsen2.JPG"
+      }
+    ],
     "external_ids": {
       "wikidata": "Q11526350"
     },
@@ -7853,7 +7991,14 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3e/Takinoue_spa_ryuukyousou.jpg/960px-Takinoue_spa_ryuukyousou.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Soica2001 (talk)",
+        "license": "Public domain",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Takinoue_spa_ryuukyousou.jpg"
+      }
+    ],
     "external_ids": {
       "wikidata": "Q11565052"
     },
@@ -7907,7 +8052,14 @@
         "distance_m": 240
       }
     ],
-    "images": [],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0d/Rokando_Limestone_Cave%2C_Amanoiwato_Falls%2C_in_2010-03-06.jpg/960px-Rokando_Limestone_Cave%2C_Amanoiwato_Falls%2C_in_2010-03-06.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Mukasora (talk)",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Rokando_Limestone_Cave,_Amanoiwato_Falls,_in_2010-03-06.jpg"
+      }
+    ],
     "external_ids": {
       "wikidata": "Q11565294",
       "osm": "node/3231563491"
@@ -8007,7 +8159,14 @@
         "distance_m": 1290
       }
     ],
-    "images": [],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/30/Stone_monument_in_Hanawa_Tsutsumi_Hanashobu_Gunraku%2C_natural_monument_of_Japan._A.jpg/960px-Stone_monument_in_Hanawa_Tsutsumi_Hanashobu_Gunraku%2C_natural_monument_of_Japan._A.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "さかおり",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Stone_monument_in_Hanawa_Tsutsumi_Hanashobu_Gunraku,_natural_monument_of_Japan._A.jpg"
+      }
+    ],
     "external_ids": {
       "wikidata": "Q115672811"
     },
@@ -8182,7 +8341,14 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/00/Yakehashiri_2016-08-13.jpg/960px-Yakehashiri_2016-08-13.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Motamota",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Yakehashiri_2016-08-13.jpg"
+      }
+    ],
     "external_ids": {
       "wikidata": "Q11567680"
     },
@@ -8438,7 +8604,15 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-28",
+    "season_images": {
+      "night": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c4/Morioka-Hachimangu_03.jpg/960px-Morioka-Hachimangu_03.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Thirteen-fri",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Morioka-Hachimangu_03.jpg"
+      }
+    }
   },
   {
     "id": "wd-Q11581371",
@@ -9554,7 +9728,14 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/50/%E8%8A%B1%E5%B7%BB%E6%B8%A9%E6%B3%89_%E3%83%90%E3%83%A9%E5%9C%92%E3%81%A8%E3%83%9B%E3%83%86%E3%83%AB3%E9%A4%A8.jpg/960px-%E8%8A%B1%E5%B7%BB%E6%B8%A9%E6%B3%89_%E3%83%90%E3%83%A9%E5%9C%92%E3%81%A8%E3%83%9B%E3%83%86%E3%83%AB3%E9%A4%A8.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "なはん弁",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:%E8%8A%B1%E5%B7%BB%E6%B8%A9%E6%B3%89_%E3%83%90%E3%83%A9%E5%9C%92%E3%81%A8%E3%83%9B%E3%83%86%E3%83%AB3%E9%A4%A8.jpg"
+      }
+    ],
     "external_ids": {
       "wikidata": "Q11615376"
     },
@@ -9689,7 +9870,14 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [],
+    "images": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/d/d1/Toshichi_Onsen_in_Towada-Hachimantai_National_Park.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+        "author": "Teser",
+        "license": "CC BY 2.5",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Toshichi_Onsen_in_Towada-Hachimantai_National_Park.jpg"
+      }
+    ],
     "external_ids": {
       "wikidata": "Q11622635"
     },
@@ -9768,7 +9956,14 @@
     ],
     "status": "published",
     "updated_at": "2026-09-28",
-    "season_images": {}
+    "season_images": {
+      "winter": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Takadachi_Gikei-do_Hall.jpg/960px-Takadachi_Gikei-do_Hall.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Ymblanter",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Takadachi_Gikei-do_Hall.jpg"
+      }
+    }
   },
   {
     "id": "wd-Q11640648",
@@ -10948,7 +11143,15 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-28",
+    "season_images": {
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f4/Tono_Furusato_Village_%2C_%E9%81%A0%E9%87%8E_%E3%81%B5%E3%82%8B%E3%81%95%E3%81%A8%E6%9D%91_-_panoramio_%2811%29.jpg/960px-Tono_Furusato_Village_%2C_%E9%81%A0%E9%87%8E_%E3%81%B5%E3%82%8B%E3%81%95%E3%81%A8%E6%9D%91_-_panoramio_%2811%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "z tanuki",
+        "license": "CC BY 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Tono_Furusato_Village_,_%E9%81%A0%E9%87%8E_%E3%81%B5%E3%82%8B%E3%81%95%E3%81%A8%E6%9D%91_-_panoramio_(11).jpg"
+      }
+    }
   },
   {
     "id": "wd-Q11642423",
@@ -11397,7 +11600,14 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/82/Kanazawashimizu.jpg/960px-Kanazawashimizu.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "ブルーノ・プラス",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Kanazawashimizu.jpg"
+      }
+    ],
     "external_ids": {
       "wikidata": "Q11647501"
     },
@@ -11678,7 +11888,14 @@
         "distance_m": 760
       }
     ],
-    "images": [],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/91/Nabekura_park03s3872.jpg/960px-Nabekura_park03s3872.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "663highland",
+        "license": "CC BY 2.5",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Nabekura_park03s3872.jpg"
+      }
+    ],
     "external_ids": {
       "wikidata": "Q11650604",
       "osm": "way/625186147"
@@ -11734,7 +11951,14 @@
         "distance_m": 1220
       }
     ],
-    "images": [],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d9/Giant_gingko_tree_of_Chosen-ji_Kuji_Iwate.jpg/960px-Giant_gingko_tree_of_Chosen-ji_Kuji_Iwate.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Mizushimasea",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Giant_gingko_tree_of_Chosen-ji_Kuji_Iwate.jpg"
+      }
+    ],
     "external_ids": {
       "wikidata": "Q11653236"
     },
@@ -12022,7 +12246,14 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ea/Mount_Iwate_and_Mount_Kurakake_from_Shizukuishi_Ski_Area.jpg/960px-Mount_Iwate_and_Mount_Kurakake_from_Shizukuishi_Ski_Area.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Yasu (talk)",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Mount_Iwate_and_Mount_Kurakake_from_Shizukuishi_Ski_Area.jpg"
+      }
+    ],
     "external_ids": {
       "wikidata": "Q11659969"
     },
@@ -12374,7 +12605,14 @@
         "distance_m": 950
       }
     ],
-    "images": [],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/eb/Ogami_Rock%2CNinohe%2CIwate.jpg/960px-Ogami_Rock%2CNinohe%2CIwate.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Ty19080914",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Ogami_Rock,Ninohe,Iwate.jpg"
+      }
+    ],
     "external_ids": {
       "wikidata": "Q11667809"
     },
@@ -13710,7 +13948,14 @@
         "distance_m": 1210
       }
     ],
-    "images": [],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/be/Haishiwa_Main.jpg/960px-Haishiwa_Main.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Heavytank",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Haishiwa_Main.jpg"
+      }
+    ],
     "external_ids": {
       "wikidata": "Q135040049",
       "osm": "node/4741457524"
@@ -15750,7 +15995,14 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/49/Kumanohana.jpg/960px-Kumanohana.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "ToshiJapon",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Kumanohana.jpg"
+      }
+    ],
     "external_ids": {
       "wikidata": "Q20044034"
     },
@@ -16228,10 +16480,10 @@
         "source_url": "https://commons.wikimedia.org/wiki/File:Former_Morioka_Bank_Head_Office_in_autumn_2022.jpg"
       },
       "winter": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/de/Former_Iwate_Bank_Nakanohashi_Office_in_winter_%281%29.jpg/960px-Former_Iwate_Bank_Nakanohashi_Office_in_winter_%281%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "掬茶",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/67/Iwate_Bank_AkaRenga_IMG_8167_stitch_x6.jpg/960px-Iwate_Bank_AkaRenga_IMG_8167_stitch_x6.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "あおもりくま,(Aomorikuma)",
         "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Former_Iwate_Bank_Nakanohashi_Office_in_winter_(1).jpg"
+        "source_url": "https://commons.wikimedia.org/wiki/File:Iwate_Bank_AkaRenga_IMG_8167_stitch_x6.jpg"
       }
     }
   },
@@ -16323,7 +16575,14 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ce/Kusanoyu_Onsen.jpg/960px-Kusanoyu_Onsen.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "らんで",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Kusanoyu_Onsen.jpg"
+      }
+    ],
     "external_ids": {
       "wikidata": "Q28689854"
     },
@@ -16524,7 +16783,15 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-09-28",
+    "season_images": {
+      "winter": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f6/Sakurayama_Shrine_with_snow_2024.jpg/960px-Sakurayama_Shrine_with_snow_2024.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "印度孔雀",
+        "license": "CC BY 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Sakurayama_Shrine_with_snow_2024.jpg"
+      }
+    }
   },
   {
     "id": "wd-Q28691450",
@@ -16615,7 +16882,14 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-29"
     },
-    "images": [],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1f/Sakiyama_Shell_midden_sites_museum%2C_Miyako.jpg/960px-Sakiyama_Shell_midden_sites_museum%2C_Miyako.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Ty19080914",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Sakiyama_Shell_midden_sites_museum,_Miyako.jpg"
+      }
+    ],
     "external_ids": {
       "wikidata": "Q30634839"
     },
@@ -16823,10 +17097,10 @@
     "updated_at": "2026-10-02",
     "season_images": {
       "winter": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/Hiraizumi_Kanjizai%C5%8D-in_in_winter_seen_from_Motsuji.jpg/960px-Hiraizumi_Kanjizai%C5%8D-in_in_winter_seen_from_Motsuji.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f8/Kanjizai%C5%8D-in_front_view.jpg/960px-Kanjizai%C5%8D-in_front_view.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
         "author": "Ymblanter",
         "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Hiraizumi_Kanjizai%C5%8D-in_in_winter_seen_from_Motsuji.jpg"
+        "source_url": "https://commons.wikimedia.org/wiki/File:Kanjizai%C5%8D-in_front_view.jpg"
       }
     }
   },
@@ -16953,7 +17227,14 @@
     ],
     "status": "published",
     "updated_at": "2026-10-02",
-    "season_images": {}
+    "season_images": {
+      "winter": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a6/A_snowy_rocky_river_in_Iwate_01.jpg/960px-A_snowy_rocky_river_in_Iwate_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Dquai",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:A_snowy_rocky_river_in_Iwate_01.jpg"
+      }
+    }
   },
   {
     "id": "wd-Q3298581",
@@ -17118,10 +17399,10 @@
     "updated_at": "2026-10-02",
     "season_images": {
       "winter": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3a/%E5%88%9D%E5%86%AC%E3%81%AE%E6%97%A9%E6%B1%A0%E5%B3%B0%E5%B1%B1.jpg/960px-%E5%88%9D%E5%86%AC%E3%81%AE%E6%97%A9%E6%B1%A0%E5%B3%B0%E5%B1%B1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "まるちゃん",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/b/bf/Mt_Hayachine.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+        "author": "Iwatebud",
         "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:%E5%88%9D%E5%86%AC%E3%81%AE%E6%97%A9%E6%B1%A0%E5%B3%B0%E5%B1%B1.jpg"
+        "source_url": "https://commons.wikimedia.org/wiki/File:Mt_Hayachine.jpg"
       }
     }
   },
@@ -17397,7 +17678,14 @@
         "distance_m": 1170
       }
     ],
-    "images": [],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/02/171102_Nanshoso_Morioka_Iwate_pref_Japan01s3.jpg/960px-171102_Nanshoso_Morioka_Iwate_pref_Japan01s3.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "663highland",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:171102_Nanshoso_Morioka_Iwate_pref_Japan01s3.jpg"
+      }
+    ],
     "external_ids": {
       "wikidata": "Q48751616"
     },
@@ -18545,7 +18833,14 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/54/Hujisato_Keikaboku%2COsyu.jpg/960px-Hujisato_Keikaboku%2COsyu.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Ty19080914",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Hujisato_Keikaboku,Osyu.jpg"
+      }
+    ],
     "external_ids": {
       "wikidata": "Q60238008"
     },
@@ -19512,7 +19807,14 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cb/090513%E8%BB%BD%E7%B1%B3%E3%83%95%E3%82%A9%E3%83%AA%E3%82%B9%E3%83%88%E3%83%91%E3%83%BC%E3%82%AF.jpg/960px-090513%E8%BB%BD%E7%B1%B3%E3%83%95%E3%82%A9%E3%83%AA%E3%82%B9%E3%83%88%E3%83%91%E3%83%BC%E3%82%AF.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "re-kuma",
+        "license": "CC BY 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:090513%E8%BB%BD%E7%B1%B3%E3%83%95%E3%82%A9%E3%83%AA%E3%82%B9%E3%83%88%E3%83%91%E3%83%BC%E3%82%AF.jpg"
+      }
+    ],
     "external_ids": {
       "wikidata": "Q60988557"
     },
@@ -21468,6 +21770,12 @@
         "author": "掬茶",
         "license": "CC BY-SA 4.0",
         "source_url": "https://commons.wikimedia.org/wiki/File:Cherry_tree_and_Mount_Iwate_in_spring_2026.jpg"
+      },
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/28/Panoramic_around_the_crater_of_Mount_Iwate.jpg/960px-Panoramic_around_the_crater_of_Mount_Iwate.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Yasu (talk)",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Panoramic_around_the_crater_of_Mount_Iwate.jpg"
       }
     }
   },
@@ -21959,7 +22267,14 @@
         "distance_m": 550
       }
     ],
-    "images": [],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2d/Sangojima.jpg/960px-Sangojima.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "MChew",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Sangojima.jpg"
+      }
+    ],
     "external_ids": {
       "wikidata": "Q96404941"
     },
@@ -22048,10 +22363,10 @@
         "source_url": "https://commons.wikimedia.org/wiki/File:Hiraizumi_Motsuji_Cherryblossom_tree.jpg"
       },
       "winter": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/Hiraizumi_Kanjizai%C5%8D-in_in_winter_seen_from_Motsuji.jpg/960px-Hiraizumi_Kanjizai%C5%8D-in_in_winter_seen_from_Motsuji.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Ymblanter",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Hiraizumi_Kanjizai%C5%8D-in_in_winter_seen_from_Motsuji.jpg"
+        "url": "https://upload.wikimedia.org/wikipedia/commons/7/70/%E5%86%AC%E3%81%AE%E6%AF%9B%E8%B6%8A%E5%AF%BA_%28Motsu-ji_in_winter%29_24_Feb%2C_2009_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+        "author": "Hiroaki Kaneko",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:%E5%86%AC%E3%81%AE%E6%AF%9B%E8%B6%8A%E5%AF%BA_(Motsu-ji_in_winter)_24_Feb,_2009_-_panoramio.jpg"
       }
     }
   },
