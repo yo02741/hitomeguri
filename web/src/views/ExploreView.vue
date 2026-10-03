@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed, defineAsyncComponent, nextTick, onBeforeUnmount, onMounted, ref, shallowRef, watch } from 'vue'
-import { useRoute, useRouter } from 'vue-router'
+import { type LocationQuery, useRoute, useRouter } from 'vue-router'
 
 import HomeSidebar from '../components/HomeSidebar.vue'
 import MapView, { type MapView as MapViewState } from '../components/MapView.vue'
@@ -451,7 +451,10 @@ async function select(id: string) {
   }
   // 選了景點就收起地點標記
   const { at: _at, label: _label, ...rest } = route.query
-  await router.replace({ query: { ...rest, spot: target, ...(pack ? { pack } : {}) } })
+  const query = { ...rest, spot: target, ...(pack ? { pack } : {}) }
+  // 手機從「沒有選取」打開卡片時新增一筆歷史，返回手勢先關卡片；之後換景點仍用 replace
+  if (!selectedId.value && !desktop.value) await router.push({ query })
+  else await router.replace({ query })
   const s = item ?? allSpots.value.find((x) => x.id === id)
   // 縮放 15：群集全部散開（clusterMaxZoom 14），看得出選到的是哪一個點
   if (s) await flyToVisible(s.lng, s.lat, 15)
@@ -483,9 +486,23 @@ function onSearch(hit: SearchHit) {
   router.push({ path: `/map/${hit.pref}`, query: { spot: hit.id } })
 }
 
+function sameQuery(a: LocationQuery, b: LocationQuery): boolean {
+  const norm = (q: LocationQuery) => JSON.stringify(Object.entries(q).sort(([x], [y]) => x.localeCompare(y)))
+  return norm(a) === norm(b)
+}
+
 function closeSpot() {
   const q = { ...route.query }
   delete q.spot
+  // 上一筆歷史就是沒有卡片的同一頁（手機打開卡片時 push 的）：用返回關閉，之後的返回不會再把卡片開回來
+  const back = (window.history.state as { back?: unknown } | null)?.back
+  if (typeof back === 'string') {
+    const prev = router.resolve(back)
+    if (prev.path === route.path && sameQuery(prev.query, q)) {
+      router.back()
+      return
+    }
+  }
   router.replace({ query: q })
 }
 
@@ -547,9 +564,11 @@ function regionForCenter(view: MapViewState): string | null | undefined {
 // 使用者平移、縮放後：地區標籤、地區色、URL 跟著畫面更新（replace，不新增歷史）；拉遠時關閉景點卡片。
 function onMoveEnd(view: MapViewState) {
   if (!view.user) return
-  if (selectedId.value && view.zoom < CLOSE_SPOT_ZOOM) closeSpot()
   const target = regionForView(view)
-  if (target === undefined || target === (props.pref ?? null)) return
+  const switching = target !== undefined && target !== (props.pref ?? null)
+  // 換縣時下面的 replace 一併拿掉 spot；不換縣才另外關卡片（closeSpot 可能是返回，不能和 replace 同時發）
+  if (selectedId.value && view.zoom < CLOSE_SPOT_ZOOM && !switching) closeSpot()
+  if (!switching) return
   const query = { ...route.query }
   if (view.zoom < CLOSE_SPOT_ZOOM) delete query.spot
   panSwitch = true

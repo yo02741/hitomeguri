@@ -2,6 +2,7 @@
 import { nextTick, ref, useId, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 
+import { useBackClose } from '../composables/backClose'
 import { useIndicator } from '../composables/indicator'
 import { useOnline } from '../composables/online'
 
@@ -46,6 +47,8 @@ function closeSearch() {
   phoneSearch.value?.clear()
   void nextTick(() => searchBtn.value?.focus())
 }
+// 返回手勢先收起搜尋列（手機）
+useBackClose(searchOpen, closeSearch)
 watch(
   () => route.fullPath,
   () => {

@@ -2,6 +2,7 @@
 import { defineAsyncComponent, nextTick, onBeforeUnmount, ref, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 
+import { useBackClose } from '../composables/backClose'
 import { whenIdle } from '../services/idle'
 import { afterSplash } from '../services/splash'
 import { wide } from '../services/viewport'
@@ -95,6 +96,8 @@ function onMenuKey(e: KeyboardEvent) {
 
 // 點選單以外的地方只會收起選單：選單開著時底下墊一層 scrim（模板），不會連帶點到底下的東西
 watch(() => route.fullPath, () => hide())
+// 返回手勢先收起選單（手機）
+useBackClose(open, () => hide())
 onBeforeUnmount(() => clearTimeout(peekTimer))
 
 async function logOut() {
