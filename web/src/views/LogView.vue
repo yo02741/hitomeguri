@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, nextTick, ref, watch } from 'vue'
+import { computed, defineAsyncComponent, nextTick, onBeforeUnmount, ref, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import AchvSeal from '../components/AchvSeal.vue'
 import NewTag from '../components/NewTag.vue'
@@ -10,7 +10,6 @@ import { useAvatarStore } from '../stores/avatar'
 import DatePicker from '../components/DatePicker.vue'
 import DateRangePicker from '../components/DateRangePicker.vue'
 import ExportButtons from '../components/ExportButtons.vue'
-import MapView from '../components/MapView.vue'
 import MarkedSpotList from '../components/MarkedSpotList.vue'
 import SpotCard from '../components/SpotCard.vue'
 import TripCard from '../components/TripCard.vue'
@@ -19,6 +18,7 @@ import { useVisitedEntries } from '../composables/visited'
 import { useCollection } from '../composables/collection'
 import { regions } from '../data/regions'
 import { markRow } from '../services/export'
+import { whenIdle } from '../services/idle'
 import type { MapSpot } from '../services/bundles'
 import { TRIP_NAME_MAX } from '../services/trip'
 import { todayIso } from '../services/userdb'
@@ -28,6 +28,37 @@ import { KEIKEN_MAX, useKeikenStore } from '../stores/keiken'
 import { useMarksStore } from '../stores/marks'
 import { useTripsStore } from '../stores/trips'
 import { useUserStore } from '../stores/user'
+
+// 去過的小地圖在第一屏以外：捲到附近（前後 200px）或瀏覽器空下來才建立，地圖程式也到那時才載入，
+// 不擋住紀錄頁第一次畫出來（手機版計畫第二階段 3）
+const MapView = defineAsyncComponent(() => import('../components/MapView.vue'))
+const mapBox = ref<HTMLElement | null>(null)
+const mapOn = ref(false)
+let mapIo: IntersectionObserver | null = null
+watch(
+  mapBox,
+  (el) => {
+    mapIo?.disconnect()
+    mapIo = null
+    if (!el || mapOn.value) return
+    if (typeof IntersectionObserver === 'undefined') {
+      mapOn.value = true
+      return
+    }
+    mapIo = new IntersectionObserver(
+      (entries) => {
+        if (!entries.some((e) => e.isIntersecting)) return
+        mapOn.value = true
+        mapIo?.disconnect()
+      },
+      { rootMargin: '200px 0px' },
+    )
+    mapIo.observe(el)
+    whenIdle(() => (mapOn.value = true))
+  },
+  { flush: 'post' },
+)
+onBeforeUnmount(() => mapIo?.disconnect())
 
 // 旅行紀錄（UX-FLOW.md E1、E4、E5、E6）：上方「全部去過」地圖，接著已結束的旅行，最後是去過的景點（依日期新到舊，可批次補日期）。
 // 「去過」＝已結束的行程裡的停留點 ∪ 標了去過的景點（UX-FLOW.md §3）。
@@ -232,8 +263,8 @@ function open(id: string) {
       </RouterLink>
       </div>
 
-      <div class="relative h-[360px] overflow-hidden rounded-card border border-line max-md:h-[260px]">
-        <MapView :spots="spots" :bounds="bounds" :marked="visitedOnly" no-terrain @select="open" />
+      <div ref="mapBox" class="relative h-[360px] overflow-hidden rounded-card border border-line bg-placeholder max-md:h-[260px]">
+        <MapView v-if="mapOn" :spots="spots" :bounds="bounds" :marked="visitedOnly" no-terrain @select="open" />
       </div>
 
       <section class="flex flex-col gap-3" aria-labelledby="trips-title">
