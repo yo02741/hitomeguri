@@ -266,6 +266,7 @@
 - 桌機左側直列（`sticky top-8`，寬 168px）：每項 `border-l-2 pl-3.5 py-1.5 text-body-sm`；目前段落 `border-region-strong font-bold text-ink`，其餘 `border-line text-sub`；數量用 `font-latin text-caption`。目前段落有子段落時展開（`pl-6 text-caption`，目前子段落 `font-bold text-ink`）。
 - 手機頂部橫列（`sticky top-0`，`border-b border-line bg-paper`）：`h-8 rounded-full px-3 text-label`，目前段落 `bg-region-strong text-white font-bold`，換段時自動捲到中間。
 - 每項都是 `#錨點` 連結；段落 `scroll-mt-16 lg:scroll-mt-8`。
+- 目前段落（`composables/scrollSpy.ts`）：段落標題捲過容器頂端 96px 內就算進入；捲過（scrollTop > 0）而且到底時標最後一段。在頁頂一律標第一段（資料還沒到、頁面很短時也是）。內容高度變了（ResizeObserver）重新判斷。
 
 ### 7.3 Search
 header 右側、登入鈕左邊（`SearchBox.vue`，每一頁都在；在行程、紀錄頁選了結果會回到探索頁；手機見下）：`h-10 w-72 rounded-full border border-line bg-paper px-3.5`，聚焦時外框 `border-region-strong`，左側放大鏡圖示，placeholder「搜尋景點、地區」，input 帶 `aria-label`。結果是同寬的浮動卡（`rounded-card bg-paper shadow-float`，最高 60dvh），每列：縣色小方塊 14px＋假名／日文名（繁中名不同時接在後面、`text-sub`）＋右側縣名（縣的結果標「地區」）。上下鍵移動（清單跟著捲到選到的那一筆）、Enter 選取、Esc 清除。input 是 `role=combobox`，用 `aria-activedescendant` 指向選到的 option（id 由 `useId()` 產生，兩個實例不撞 id），結果筆數放在 `aria-live` 的隱藏文字；`enterkeyhint="search"`。
@@ -532,11 +533,12 @@ header 右側、登入鈕左邊（`SearchBox.vue`，每一頁都在；在行程�
 ### 7.20 離線
 - PWA（`vite.config.ts` 的 `pwa()`、vite-plugin-pwa）：app 本身預先快取；資料 bundle（網址帶 `?v=` 版本，cache-first）、`_index.json`（network-first）、地圖圖磚、字型、Commons 照片在用到時存下來。收藏、去過、行程由 Firestore 的本機快取（`persistentLocalCache`）處理，離線時的修改連線後送出。
 - 行程頁「離線用」（`OfflineButton.vue`、`services/offline.ts`）：抓停留點各縣的資料、照片、停留點附近的地圖圖磚（縮放 10–15，半徑約 1.5 km）與縣全圖（縮放 6–9）；按鈕底色是進度條，完成後改成「已存離線」（存在這台裝置的 localStorage，只是提示）。
+- 行程頁離線時不能修改（修改用交易讀最新的一份，要連得到；決定事項 G1）：名稱、日期、移到、往前往後、⋯、移除、拖曳、刪除這天、加一天、刪除行程都停用（`disabled:opacity-40`）；標題與日期下面一行「離線中・行程不能修改」，樣式同 header 的離線小標（`rounded-tag bg-ink px-1.5 text-caption font-bold text-paper`）。「沒有儲存成功」也放在這一行（`text-caption text-danger`）。連線後恢復。
 - 沒有網路時頂部 wordmark 右側 `bg-ink text-paper` 小標「離線」。有新版本時底部一行「有新版本」＋「重新整理」（`AppUpdate.vue`），按了才換，不在操作中途重新整理。
 
 ### 7.21 經縣值（`/log/keiken`）
 - 每個都道府縣選 0–5 級：住過 5、過夜 4、玩過 3、踏上 2、路過 1、未踏 0（日本的「経県値」玩法），總分最高 235。沒選的縣，有去過的景點就算「玩過」（地圖上虛線框、列上的按鈕虛線框）。
-- 海報區（全國色）：標題、總分（`RollingNumber`，`text-display`）／235、各級數的色票與縣數、「存成圖片」。下方日本地圖（`japanOutline`，最寬 560px）依級數塗 `--color-keiken-1..5`（越深越久，未踏是 `--region-line`）；點縣在點的位置打開級數選單。再下方依地方列出 47 縣，每縣一排 6 個按鈕（未踏→住過）。
+- 海報區（全國色）：標題、總分（`RollingNumber`，`text-display`）／235、各級數的色票與縣數、「存成圖片」。下方日本地圖（`japanOutline`，最寬 560px）依級數塗 `--color-keiken-1..5`（越深越久，未踏是 `--region-line`）；點縣在點的位置打開級數選單（下方放不下、例如手機畫面下半會被分頁列蓋到時，翻到點的上方；橫向仍放不下時貼齊可見區頂端、選單自己捲動；打開時焦點在目前的級數，不捲動頁面）。再下方依地方列出 47 縣，每縣一排 6 個按鈕（未踏→住過）。
 - 存在 `users/{uid}/meta/keiken`（`firestore.rules` 已加，要貼到 Firebase Console 發布）；寫不進去時先存在這台裝置。入口在紀錄頁收集冊旁。
 
 ### 7.22 分享圖（旅行回顧、經縣值）
