@@ -14,8 +14,19 @@ afterSplash(() =>
     update = registerSW({ immediate: true, onNeedRefresh: () => (needRefresh.value = true) })
   }),
 )
-function updateServiceWorker(reload: boolean) {
-  void update?.(reload)
+// 按「重新整理」：請等待中的新版接手，接手了就重新整理。
+// 不靠 vite-plugin-pwa 的自動重新整理：新版是上次開站時就下載好、這次才跳提示的情況，它不會重新整理（按了沒反應）。
+// 別的分頁已經換好版本時不會再換手，所以 3 秒內沒換也直接重新整理。
+let reloading = false
+function reloadOnce() {
+  if (reloading) return
+  reloading = true
+  window.location.reload()
+}
+function updateServiceWorker() {
+  navigator.serviceWorker?.addEventListener('controllerchange', reloadOnce, { once: true })
+  window.setTimeout(reloadOnce, 3000)
+  void update?.(false)
 }
 </script>
 
@@ -27,7 +38,7 @@ function updateServiceWorker(reload: boolean) {
     role="status"
   >
     有新版本
-    <button type="button" class="h-9 rounded-control bg-paper px-3 text-label font-bold text-ink active:not-disabled:translate-y-px" @click="updateServiceWorker(true)">重新整理</button>
+    <button type="button" class="h-9 rounded-control bg-paper px-3 text-label font-bold text-ink active:not-disabled:translate-y-px" @click="updateServiceWorker">重新整理</button>
     <button type="button" class="grid size-9 place-items-center rounded-control text-paper/80 hover:text-paper active:not-disabled:translate-y-px" aria-label="稍後" @click="needRefresh = false">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" /></svg>
     </button>
