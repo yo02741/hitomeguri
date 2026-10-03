@@ -23,8 +23,9 @@ export function scrollParent(el: HTMLElement | null): HTMLElement | null {
  * ids 依文件順序（含子段落）；段落標題捲過容器頂端 offset px 內就算進入。捲過、而且捲到底時標最後一段
  * （資料還沒到時頁面很短，一開始就「在底部」，這時仍標第一段）。內容高度變了會重新判斷。
  * go(id) 平滑捲到該段並把網址 hash 設成 #id；捲動途中目錄直接停在目標，不跟著閃過中間的段落。
+ * offset 可以是函式（頁頂的 sticky 列高度會依寬度不同時）。
  */
-export function useScrollSpy(root: Ref<HTMLElement | null>, ids: () => string[], offset = 96) {
+export function useScrollSpy(root: Ref<HTMLElement | null>, ids: () => string[], offset: number | (() => number) = 96) {
   const router = useRouter()
   const active = ref<string | null>(null)
   let container: HTMLElement | null = null
@@ -40,9 +41,10 @@ export function useScrollSpy(root: Ref<HTMLElement | null>, ids: () => string[],
     const list = ids()
     const top = container.getBoundingClientRect().top
     let current = list[0] ?? null
+    const within = typeof offset === 'function' ? offset() : offset
     for (const id of list) {
       const el = document.getElementById(id)
-      if (el && el.getBoundingClientRect().top - top <= offset) current = id
+      if (el && el.getBoundingClientRect().top - top <= within) current = id
     }
     const { scrollTop, clientHeight, scrollHeight } = container
     if (scrollTop > 0 && scrollTop + clientHeight >= scrollHeight - 2) current = list[list.length - 1] ?? current

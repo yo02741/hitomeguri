@@ -1,7 +1,8 @@
 <script setup lang="ts">
-import { computed, ref, watch } from 'vue'
+import { computed, ref } from 'vue'
 
 import type { Festival } from '../services/bundles'
+import { FESTIVAL_FIRST as FIRST, FESTIVAL_MONTHS as MONTHS, festivalAnchor, festivalGroups } from '../services/festivals'
 import { prefectureFullName } from '../data/regions'
 import CollapseChevron from './CollapseChevron.vue'
 import WebSearchLink from './WebSearchLink.vue'
@@ -9,33 +10,17 @@ import SummaryText from './SummaryText.vue'
 
 // 深度探索「祭典」：依舉行月份分組（跨月的放在第一個月），1 到 12 月，組內依日文維基瀏覽量。
 // 月份列可篩選；沒有月份的放最後「月份未載」。
+// 月份篩選與展開的組由深度探索頁保管（段落列第二列也能換月份；去地圖再回來時還原，DESIGN.md §7.5c）。
 const props = defineProps<{ festivals: Festival[] }>()
+const month = defineModel<string | null>('month', { default: null })
+const expanded = defineModel<Set<string>>('expanded', { default: () => new Set<string>() })
+// 「在地圖上看」：頁面先記下這張卡再換頁
+const emit = defineEmits<{ map: [f: Festival] }>()
 
-const MONTHS = Array.from({ length: 12 }, (_, i) => i + 1)
 const thisMonth = new Date().getMonth() + 1
-const FIRST = 6
 
-const groups = computed(() => {
-  const sorted = [...props.festivals].sort((a, b) => b.views - a.views)
-  const out = MONTHS.map((m) => ({
-    key: String(m),
-    label: `${m}月`,
-    items: sorted.filter((f) => f.months?.[0] === m),
-  }))
-  out.push({ key: 'none', label: '月份未載', items: sorted.filter((f) => !f.months?.length) })
-  return out.filter((g) => g.items.length)
-})
+const groups = computed(() => festivalGroups(props.festivals))
 const hasMonth = computed(() => new Set(groups.value.map((g) => g.key)))
-
-const month = ref<string | null>(null)
-const expanded = ref(new Set<string>())
-watch(
-  () => props.festivals,
-  () => {
-    month.value = null
-    expanded.value = new Set()
-  },
-)
 const shown = computed(() => (month.value ? groups.value.filter((g) => g.key === month.value) : groups.value))
 
 function monthsText(f: Festival): string {
@@ -59,6 +44,12 @@ function image(f: Festival) {
 // 在我們的地圖上標出位置（縣的地圖頁＋地點標記）
 function mapLink(f: Festival) {
   return { path: `/map/${f.prefecture}`, query: { at: `${f.location!.lat},${f.location!.lng}`, label: f.name.ja } }
+}
+// 一般點擊交給頁面；按著修飾鍵（開新分頁）照瀏覽器預設
+function onMap(e: MouseEvent, f: Festival) {
+  if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return
+  e.preventDefault()
+  emit('map', f)
 }
 </script>
 
@@ -97,11 +88,12 @@ function mapLink(f: Festival) {
       <h3 class="flex items-baseline gap-1.5 text-caption font-bold tracking-section text-sub">
         {{ g.label }}<span class="font-latin font-normal tracking-normal">{{ g.items.length }}</span>
       </h3>
-      <ul class="grid grid-cols-1 gap-3 lg:grid-cols-2">
+      <ul class="grid grid-cols-1 gap-3 md:grid-cols-2">
         <li
           v-for="f in expanded.has(g.key) || month ? g.items : g.items.slice(0, FIRST)"
+          :id="festivalAnchor(f.id)"
           :key="f.id"
-          class="flex gap-3 rounded-card border border-line bg-paper p-3"
+          class="flex scroll-mt-24 gap-3 rounded-card border border-line bg-paper p-3 lg:scroll-mt-8"
         >
           <div v-if="f.images?.length" class="size-24 shrink-0 overflow-hidden rounded-control bg-placeholder">
             <img
@@ -133,7 +125,9 @@ function mapLink(f: Festival) {
             <div class="mt-auto flex flex-wrap gap-x-3 text-caption text-sub pointer-coarse:-my-3.5 pointer-coarse:items-center">
               <span v-if="f.summary">{{ f.summary.license }}</span>
               <a :href="f.summary?.source_url ?? f.sources[0]!.url" target="_blank" rel="noopener" class="text-sub pointer-coarse:py-3.5">維基百科</a>
-              <RouterLink v-if="f.location" :to="mapLink(f)" class="text-sub pointer-coarse:py-3.5">在地圖上看</RouterLink>
+              <RouterLink v-if="f.location" v-slot="{ href }" :to="mapLink(f)" custom>
+                <a :href="href" class="text-sub pointer-coarse:py-3.5" @click="onMap($event, f)">在地圖上看</a>
+              </RouterLink>
             </div>
           </div>
         </li>

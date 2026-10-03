@@ -271,6 +271,7 @@
 ### 7.2a 段落目錄 SectionNav（旅前準備）
 - 桌機左側直列（`sticky top-8`，寬 168px）：每項 `border-l-2 pl-3.5 py-1.5 text-body-sm`；目前段落 `border-region-strong font-bold text-ink`，其餘 `border-line text-sub`；數量用 `font-latin text-caption`。目前段落有子段落時展開（`pl-6 text-caption`，目前子段落 `font-bold text-ink`）。
 - 手機頂部橫列（`sticky top-0`，`border-b border-line bg-paper`）：`h-8 rounded-full px-3 text-label`，目前段落 `bg-region-strong text-white font-bold`，換段時自動捲到中間。觸控裝置上每項的點擊區 44 高（連結 `pointer-coarse:h-tap`，膠囊是裡面的 span）。
+- 地區色版（`tone="region"`，深度探索頁海報捲走後）：列底 `bg-region text-on-region`，選中的膠囊改成 `bg-paper text-ink`，其餘 `text-on-region`、滑過 `bg-region-accent`。
 - 每項都是 `#錨點` 連結；段落 `scroll-mt-16 lg:scroll-mt-8`。
 - 目前段落（`composables/scrollSpy.ts`）：段落標題捲過容器頂端 96px 內就算進入；捲過（scrollTop > 0）而且到底時標最後一段。在頁頂一律標第一段（資料還沒到、頁面很短時也是）。內容高度變了（ResizeObserver）重新判斷。
 
@@ -337,11 +338,15 @@ header 右側、登入鈕左邊（`SearchBox.vue`，每一頁都在；在行程�
 - 入口：地區頁左欄最下方獨立一張卡（和景點清單分開，`rounded-card bg-paper shadow-float`）：左側 40px `bg-region` 圓裡放書本圖示，「深度探索」（`text-body-sm font-bold`）＋下一行「季節・祭典・地區特色・期間限定」（`text-caption text-sub`），右側 ›。手機沒有左欄，由海報條右端的「深度探索 ›」進入（§7.5）。
 - 海報區：`bg-region text-on-region`，右上 320px 正圓（紋樣見 §3.6）；假名（`text-body tracking-kana`）＋縣名（`text-display font-black`）＋羅馬拼音與地方名。手機在海報區左上放「‹ 地圖」返回，縣名下面一列台灣直飛航線（`font-latin text-caption font-semibold`，桌機在地圖頁的地區標籤）。
 - 桌機左欄（168px，sticky）：上方「‹ 地圖」外框按鈕（和地圖頁的入口在同一側），下方是段落目錄（SectionNav side：點了捲到該段，捲動時標出目前段落，地區特色展開各組）。手機改成頂部 sticky 的橫列目錄（SectionNav bar）。
+- 手機的段落列（<1024，決定事項 I2）：海報還看得到時是紙色列；海報捲走後（IntersectionObserver）換成地區色條（`bg-region text-on-region`，顏色 300ms 漸變），左邊「‹ 縣名」（`text-label font-bold`，觸控 44px）回到 `/map/:pref`，接一條 `bg-on-region opacity-25` 分隔線，右邊是段落膠囊（SectionNav `tone="region"`）。觸控裝置上列本身不加上下 padding（點擊區已是 44）。
+  - 第二列：目前段落是祭典時放月份索引（不限、1–12 月，和段落裡的月份列是同一個篩選；點了捲回祭典段首，再點一次取消），是地區特色時放組別（點了捲到該組，捲動時標出目前的組）。文字＋2px 底線，選中 `border-on-region font-bold`，沒有祭典的月份 `opacity-40` 不能點；選中的那一項捲到看得到的位置。
+  - 第二列絕對定位疊在內容上（`top-full`），出現、消失不推動版面；上緣一條 `bg-on-region opacity-25` 細線。祭典、地區特色的段落與組別、祭典卡在手機用 `scroll-mt-24`（落在兩列下面），段落目錄在手機以 112px 判斷進入哪一段（桌機 96px）。
+- 從地圖返回（`services/festivals.ts`）：月份篩選與展開的月份存在這一筆歷史的 `history.state.fest`，隨時更新。「在地圖上看」先把網址 hash 換成這張卡 `#fest-{id}` 再去地圖；返回時還原月份與展開，捲到那張卡。地圖頁祭典小卡的「‹ 祭典」在上一頁就是這個縣的深度探索時用返回，否則連到 `#festivals`。直接打開 `#fest-{id}` 時，卡片在別的月份篩選或收起的部分會先取消篩選或展開那一組。網址 hash 從外面變了（不是頁面自己捲動時改的）會重新跳一次。
 - 內文 `max-w-5xl`，段落標題 `text-h3 font-black`，組別小標 `text-caption font-bold tracking-section text-sub`＋件數。
 - 祭典的每月與地區特色的每組加 `cv-auto`（`content-visibility: auto`，`theme.css`）＋`contain-intrinsic-size: auto <估計高度>`：畫面外的先不畫。段落目錄跳過去前先把全部排一次版（捲動容器加 `data-lay-out`），停的位置才準。地區特色一縣一檔（`bundles/specialties/{縣}.json`），只載入這一縣。
-- 地區特色卡：`rounded-card border border-line`，有 Commons 照片才放 16:10 圖；假名／日文名＋繁中名、維基簡介最多 4 行、授權與來源連結。每組先顯示 9 項，其餘用「全部 N 項」展開。
+- 地區特色卡：`rounded-card border border-line`，有 Commons 照片才放 16:10 圖；假名／日文名＋繁中名、維基簡介最多 4 行、授權與來源連結。每組先顯示 9 項，其餘用「全部 N 項」展開。手機（<640）改成和祭典卡一樣的橫排（`p-3 gap-3`，有照片才放左側 96px 方圖 `rounded-control`），簡介少一行（有中譯時英文、中文各 2 行，否則 3 行），一張約 240px。
 - 季節月曆：左側現象名（`text-body-sm font-bold`＋`text-caption text-sub` 的「開花」「紅葉」），右側 12 欄時間軸（`border-l border-line-soft` 格線，本月 `bg-region-tint`）；日期點 `size-3 rounded-full bg-region-strong border-2 border-paper`，櫻花開花到滿開以 `h-2 rounded-full bg-region-strong` 連起來；日期 `font-latin text-caption font-bold`（例 `3.24 – 4.2`），靠近年底時放在點的左邊。多個觀測站用與地圖清單相同的文字索引列切換。下方出處一行：平年值・站名・氣象廳連結。
-- 祭典：月份文字索引列（沒有祭典的月份 disabled）；每月小標＋件數；卡片 `rounded-card border border-line p-3` 橫排，有照片才放左側 96px 方圖；假名／日文名＋繁中名（沒有時放英文名）＋跨月時的月份範圍（`font-latin`，例 `7–8月`）、簡介最多 3 行（依序取中文、英文、日文維基，非中文的加 `lang`）、授權／維基百科／「在地圖上看」連結。月份 1 到 12 依序排。
+- 祭典：月份文字索引列（沒有祭典的月份 disabled）；每月小標＋件數；卡片一欄，`md:` 起兩欄；`rounded-card border border-line p-3` 橫排，有照片才放左側 96px 方圖；假名／日文名＋繁中名（沒有時放英文名）＋跨月時的月份範圍（`font-latin`，例 `7–8月`）、簡介最多 3 行（依序取中文、英文、日文維基，非中文的加 `lang`）、授權／維基百科／「在地圖上看」連結。月份 1 到 12 依序排。
 - 地圖上的位置標記（祭典「在地圖上看」）：縣地圖頁網址帶 `?at=緯度,經度&label=名稱` 時飛到縮放 14，放一個 DOM 標記：名稱小標（`bg-paper rounded-tag shadow-marker`＋關閉鈕）＋ `region-strong` 圓點與呼吸燈，關閉或選取景點時移除。
 
 ### 7.6 名稱區塊 NameBlock（招牌元件）

@@ -621,6 +621,16 @@ function sameQuery(a: LocationQuery, b: LocationQuery): boolean {
   return norm(a) === norm(b)
 }
 
+// 「‹ 祭典」：從深度探索的「在地圖上看」來的就用返回，回到原本那張祭典卡（月份、展開狀態都在那一筆歷史）；
+// 直接打開這個網址時才連到祭典段落
+function backToFestival(e: MouseEvent) {
+  if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return
+  e.preventDefault()
+  const back = (window.history.state as { back?: unknown } | null)?.back
+  if (typeof back === 'string' && props.pref && router.resolve(back).path === `/region/${props.pref}`) router.back()
+  else void router.push(`/region/${props.pref}#festivals`)
+}
+
 function closeSpot() {
   const q = { ...route.query }
   delete q.spot
@@ -882,14 +892,17 @@ function onMoveEnd(view: MapViewState) {
         ref="pinCard"
         class="absolute inset-x-4 bottom-4 z-10 flex items-center gap-1 rounded-card bg-paper p-1 text-ink shadow-float lg:hidden"
       >
-        <RouterLink
-          :to="`/region/${pref}#festivals`"
-          class="flex min-h-tap shrink-0 items-center gap-0.5 rounded-control pr-2.5 pl-1.5 text-label font-bold text-ink no-underline hover:bg-surface active:not-disabled:translate-y-px"
-        >
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M15 5l-7 7 7 7" />
-          </svg>
-          祭典
+        <RouterLink v-slot="{ href }" :to="`/region/${pref}#festivals`" custom>
+          <a
+            :href="href"
+            class="flex min-h-tap shrink-0 items-center gap-0.5 rounded-control pr-2.5 pl-1.5 text-label font-bold text-ink no-underline hover:bg-surface active:not-disabled:translate-y-px"
+            @click="backToFestival"
+          >
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M15 5l-7 7 7 7" />
+            </svg>
+            祭典
+          </a>
         </RouterLink>
         <span class="h-6 w-px shrink-0 bg-line" aria-hidden="true"></span>
         <span lang="ja" class="min-w-0 flex-1 truncate px-2 text-body-sm font-bold">{{ pin.label }}</span>
