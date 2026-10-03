@@ -177,16 +177,19 @@
 ### 5.1 斷點
 | 名稱 | 寬度 | 版面 |
 |---|---|---|
-| 手機 | < 768 | 單欄、底部分頁列、景點卡片是 bottom sheet；header 只有 wordmark、搜尋鈕（§7.3）與帳號 |
-| 平板 | 768–1023 | header 同桌機（分頁、搜尋框；間距收成 `gap-4`、搜尋框 `w-56`）；地圖與景點卡片同手機（bottom sheet、海報條），沒有底部分頁列 |
+| 手機 | < 1024 | 平板（768–1023）也用手機版面：單欄、底部分頁列（`TabBar` `lg:hidden`）、景點卡片是 bottom sheet；header 只有 wordmark、搜尋鈕（§7.3）與帳號（分頁與搜尋框 `max-lg:hidden`）。寬度 < 380 時 wordmark 不放 HITOMEGURI 那一行 |
 | 桌機 | ≥ 1024 | 地圖佔滿，左上浮動面板 `w-float` 300（地區標籤、主題篩選、景點／地區特色）；右欄 `w-panel` 400 |
 
 ### 5.2 間距
 - 基準 4px（Tailwind 預設 spacing）。面板內距 `px-5`（20）～`px-6`（24）；清單列 `py-2.5`；區塊間距 `gap-4`～`gap-6`。
 - 最小點擊區 44×44（`size-tap`、`min-h-tap`）。
 - 手機頁面上方預留 safe area：`pt-[max(env(safe-area-inset-top),12px)]`（只有 status bar 設成 `black-translucent` 時才需要；目前沒設，上方不留）。
-- 底部分頁列 `box-content h-14 pb-[env(safe-area-inset-bottom)]`：內容固定 56px，home indicator 的高度加在外面；貼著分頁列的浮動提示（AppUpdate）用 `bottom-[calc(5rem+env(safe-area-inset-bottom))]`。
-- 橫向時左右的瀏海：header 用 `pl-[max(1rem,env(safe-area-inset-left))]`、`pr-[max(1rem,env(safe-area-inset-right))]`（`md:` 起 1.5rem）。
+- 底部分頁列 `box-content h-14 pb-[env(safe-area-inset-bottom)]`：內容固定 56px，home indicator 的高度加在外面；貼著分頁列的浮動提示（AppUpdate）用 `bottom-[calc(5rem+env(safe-area-inset-bottom))]`，≥1024 沒有分頁列時 `lg:bottom-6`。
+- 橫向時左右的瀏海：header 用 `pl-[max(1rem,env(safe-area-inset-left))]`、`pr-[max(1rem,env(safe-area-inset-right))]`（`md:` 起 1.5rem）。`<main>` 左右讓出 `env(safe-area-inset-*)`，≥1024（沒有分頁列）底部也讓出。地圖頁（路由 `meta.bleed`，`<main data-bleed>`）的地圖鋪回瀏海底下，MapLibre 控制項與位置小框用 `.map-root` 的 `--map-inset-*` 縮回安全區內（`theme.css`）；手機海報條也鋪滿，文字內縮。
+- 整頁不捲動：`html`、`body` 是 `overflow: hidden` 與 `overscroll-behavior-y: none`（不會下拉重新整理、不回彈），捲的是 `<main>` 與各頁的內層捲動區；內層捲動區加 `overscroll-contain`。
+- 換頁的捲動位置（`services/scrollRestore.ts`）：換到另一頁時 `<main>` 回到頂端；返回、往前時回到那一頁離開時的位置；帶 `#hash` 的交給頁面自己的段落定位，只換 query 的不動。
+- 螢幕鍵盤：觸控裝置上聚焦到輸入框時底部分頁列收起（`services/keyboard.ts`），輸入框捲進可見範圍；viewport 加 `interactive-widget=resizes-content`，以 dvh 定高的對話框跟著鍵盤縮。
+- 頁面程式載入失敗（離線時沒快取的頁、部署後還開著的舊分頁，`services/pageLoad.ts`）：在線上就重新載入目標網址一次；離線時在更新提示的位置、用同一個樣式顯示「離線中，無法開啟這一頁」。
 
 ### 5.3 固定尺寸
 | 元素 | 值 |
@@ -265,8 +268,8 @@
 - 每項都是 `#錨點` 連結；段落 `scroll-mt-16 lg:scroll-mt-8`。
 
 ### 7.3 Search
-header 右側、登入鈕左邊（`SearchBox.vue`，每一頁都在；在行程、紀錄頁選了結果會回到探索頁；手機見下）：`h-10 w-56 lg:w-72 rounded-full border border-line bg-paper px-3.5`，聚焦時外框 `border-region-strong`，左側放大鏡圖示，placeholder「搜尋景點、地區」，input 帶 `aria-label`。結果是同寬的浮動卡（`rounded-card bg-paper shadow-float`，最高 60dvh），每列：縣色小方塊 14px＋假名／日文名（繁中名不同時接在後面、`text-sub`）＋右側縣名（縣的結果標「地區」）。上下鍵移動（清單跟著捲到選到的那一筆）、Enter 選取、Esc 清除。input 是 `role=combobox`，用 `aria-activedescendant` 指向選到的 option（id 由 `useId()` 產生，兩個實例不撞 id），結果筆數放在 `aria-live` 的隱藏文字；`enterkeyhint="search"`。
-- 手機（< 768）：header 右側、帳號左邊放一顆放大鏡鈕（`size-tap`，`aria-label`「搜尋景點、地區」、`aria-expanded`）。點了展開佔滿 header 的搜尋列（`bg-header`）：`SearchBox full` 自動聚焦＋右邊「取消」（`text-body-sm text-sub`）；結果鋪滿 header 與底部分頁列之間（`fixed inset-x-0 top-header`，`border-t border-line`，不圓角、不加陰影）。選了結果、按取消、按 Esc、換頁都會收起，焦點回到放大鏡鈕。
+header 右側、登入鈕左邊（`SearchBox.vue`，每一頁都在；在行程、紀錄頁選了結果會回到探索頁；手機見下）：`h-10 w-72 rounded-full border border-line bg-paper px-3.5`，聚焦時外框 `border-region-strong`，左側放大鏡圖示，placeholder「搜尋景點、地區」，input 帶 `aria-label`。結果是同寬的浮動卡（`rounded-card bg-paper shadow-float`，最高 60dvh），每列：縣色小方塊 14px＋假名／日文名（繁中名不同時接在後面、`text-sub`）＋右側縣名（縣的結果標「地區」）。上下鍵移動（清單跟著捲到選到的那一筆）、Enter 選取、Esc 清除。input 是 `role=combobox`，用 `aria-activedescendant` 指向選到的 option（id 由 `useId()` 產生，兩個實例不撞 id），結果筆數放在 `aria-live` 的隱藏文字；`enterkeyhint="search"`。
+- 手機（< 1024）：header 右側、帳號左邊放一顆放大鏡鈕（`size-tap`，`aria-label`「搜尋景點、地區」、`aria-expanded`）。點了展開佔滿 header 的搜尋列（`bg-header`）：`SearchBox full` 聚焦＋右邊「取消」（`text-body-sm text-sub`）；結果鋪滿 header 與底部分頁列之間（`fixed inset-x-0 top-header`，`border-t border-line`，不圓角、不加陰影；打字時分頁列收起，結果鋪到底）。選了結果、按取消、按 Esc、換頁都會收起並清空，焦點回到放大鏡鈕。搜尋列一直掛著（`v-show`），在放大鏡的 click 裡直接 `focus()`：iOS 只有在使用者操作的事件當下聚焦才會叫出鍵盤。
 
 ### 7.4 擴充包列（原主題開關列）
 - 地圖上方浮動列，左緣對齊左側浮動面板外（`left: insetLeft`），靠左排、寬度不夠時換行；「只看收藏」膠囊鈕排在最前面。
@@ -478,6 +481,7 @@ header 右側、登入鈕左邊（`SearchBox.vue`，每一頁都在；在行程�
 - 不做付費；之後可以把旅人放進分享圖與年代主題（服裝跟著年代）。
 - 網站上的旅人：
   - 帳號頭像（桌機 hover 0.2 秒）：下方跳出旅人小卡片（全身、服裝數、抽獎券），點了到旅人頁。帳號選單最上方是旅人的半身小窗（連到旅人頁），選單裡有「散步的旅人」開關。
+  - 帳號選單（`UserMenu.vue`）：最高 `100dvh − header − 1rem`，放不下時自己捲（`overflow-y-auto overscroll-contain`，手機橫向也點得到「年代」與「登出」）。手機與平板（<1024）不放「我的行程」「旅行紀錄」（底部分頁列已經有）。開著時底下墊一層 scrim（`fixed inset-0`，手機 `bg-ink/10`、桌機透明），點選單外面只會關選單，不會連帶點到底下的東西。
   - 散步的旅人（`DollWalker.vue`）：登入後在畫面下緣（手機在分頁列上方）走來走去，64px 寬。每 3.5–8 秒隨機：走一段（一跳一跳，往左走時左右翻）、跳一下、轉一圈（紙翻面）、鞠躬、說一句話。說的話來自自己的資料：早安、下一趟出發倒數、目前地圖的縣（去過了／想去／去那裡可以拿到的代表單品）、剩幾張抽獎券、有沒穿的新衣服、收集冊有新的卡、有新的成就、只差一兩縣的地方（「東北還差秋田、山形」）、去過幾個縣。點它會說一句。桌機的探索頁（首頁、地區地圖）只在左邊清單的右側走。圖層在頁面內容與地圖浮動面板之上，在景點卡片（手機 sheet）、選單與 header 之下（`z-[15]`）；捲動頁底部留 `pb-24`，最後一列可以捲過旅人。說的話只在點了旅人之後交給讀屏器（`aria-live` 的隱藏文字），自己說話時不讀。旅人頁、列印時不出現；減少動態時站著不動。開關存在這台裝置。
 
 ### 7.25 成就（`/log/achievements`）
@@ -509,7 +513,7 @@ header 右側、登入鈕左邊（`SearchBox.vue`，每一頁都在；在行程�
   - 詳細（`AchvDetail.vue`，外框 `RulesDialog`）：章 132px、條件、日期（未達成是進度）、抽獎券「5 張」（給券的才有）、有關的地方／旅行／縣最多 12 筆（依日期，連到地圖或行程頁；超過寫「還有 n 處」；打開時才算，平常的判斷不建這份清單）。打開就算看過；`RulesDialog` 是原生 `<dialog>`（收集冊、旅人的規則也是），Tab 只在框裡繞、後面的頁面 inert；關閉後焦點回到那一格。
   - 規則（`AchvRules.vue`）：條列文字在 `data/achvRules.ts` 的 `ACHV_RULES`（測試檢查文案；和目錄分開，開站不必載入），抽獎券那段接 `TicketTable`。
 - NEW：每台裝置記得看過哪些（localStorage `hitomeguri:achv-known:<uid>`），和現在達成的比對。某一類（core：只靠 marks、trips；data：還要 achievements.json）第一次可以比對時，把目前達成的靜靜記成基準，所以新裝置、第一次部署都不會冒出一大片 NEW。「可以比對」要等 marks、trips 和伺服器對過一次（`synced`，不是只讀到離線快取）。data 晚到時，基準只算這次登入 core 可以比對那時已經去過的地方：之後才去的（例：新帳號第一個去過就是東寺）達成的世界遺產、國寶照樣標 NEW。取消再勾回來不再 NEW。NEW key 是 `a:<id>`（初訪 `a:pref-<縣>`）；打開詳細拿掉那一個，離開成就頁拿掉全部。
-- 紀錄頁入口：三張卡下面一整列（`md:col-span-3`，高 96px），左邊「成就」與 n / N，中間最近達成的章 56px 疊在一起（新的在上，桌機 6 個、手機 3 個；沒有時三個虛線圓），有 NEW 時左上 `NewTag`。
+- 紀錄頁入口：三張卡下面一整列（`lg:col-span-3`，高 96px），左邊「成就」與 n / N，中間最近達成的章 56px 疊在一起（新的在上，桌機 6 個、手機 3 個；沒有時三個虛線圓），有 NEW 時左上 `NewTag`。
 - 解鎖時刻：
   - 新卡入手（§7.19）：落定時拿這次新達成的成就（往前多看 2 秒，比對和亮相是同一次 snapshot 觸發、先後不一定），rank 最高的（地方 > 足跡 > 名城 > 文化指定 > 旅行 > 時節 > 擴充包）蓋在卡片右上（120px；比 390px 窄的手機往卡片裡收，縣的初訪章在左下也一樣，斜放的章不超出畫面），其他的只標 NEW；卡片多停 0.7 秒。讀屏加「成就　{名稱}」。沒有日期的快捷去過不再補今天的日期。
   - 卡包翻完（`AchvRow.vue`）：卡片一覽下方「這趟的成就」：達成日在這趟期間（開始日到結束日）的初訪章與成就章 56px＋名稱，依序出現。
