@@ -444,7 +444,7 @@ header 右側、登入鈕左邊（`SearchBox.vue`，每一頁都在；在行程�
 - 新增／編輯：`<dialog>` 寬 560px；沒有圖時是虛線外框的「選擇圖片」區，可以拖曳或貼上；欄位：品牌（有建議清單）、品項、說明、行程。
 
 ### 7.18 旅前小書（列印）
-- 螢幕上：頂部工具列（紙張 A5／A4、各段勾選、只放必備會話、「列印／存成 PDF」Primary），下面是照紙寬（148mm／210mm）預覽的白紙 `bg-white shadow-float`；換頁的位置用虛線標出。
+- 螢幕上：頂部工具列（紙張 A5／A4、各段勾選、只放必備會話、「列印／存成 PDF」Primary）；1024 以下只留一列「‹ 旅前準備」「內容 ▾」「列印／存成 PDF」，紙張、五個段落勾選與只放必備會話收進「內容 ▾」的浮動面板（`rounded-card shadow-float`，每項 `min-h-tap`，勾選時不關），下面是照紙寬（148mm／210mm）預覽的白紙 `bg-white shadow-float`；換頁的位置用虛線標出。
 - 列印：`@page` 依紙張設定大小與邊界；header、底部 tab、工具列 `print:hidden`；App 的固定高度捲動版面 `print:block print:h-auto print:overflow-visible` 攤開；縣色帶、DAY 標記 `print-color-adjust: exact`。
 - 每一大段 `break-before: page`；列 `break-inside: avoid`。字級在紙上用 13px（A5）／14px（A4）為基準的相對大小。
 
