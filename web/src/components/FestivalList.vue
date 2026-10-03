@@ -92,7 +92,8 @@ function mapLink(f: Festival) {
       </button>
     </nav>
 
-    <div v-for="g in shown" :key="g.key" class="flex flex-col gap-3">
+    <!-- 畫面外的月份先不畫（content-visibility），高度先用估計值，畫過一次就記住實際高度 -->
+    <div v-for="g in shown" :key="g.key" class="flex flex-col gap-3 cv-auto [contain-intrinsic-size:auto_480px]">
       <h3 class="flex items-baseline gap-1.5 text-caption font-bold tracking-section text-sub">
         {{ g.label }}<span class="font-latin font-normal tracking-normal">{{ g.items.length }}</span>
       </h3>

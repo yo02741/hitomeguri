@@ -19,7 +19,14 @@ export function usePrep(tripId: () => string) {
     void catalog.loadExtras()
     void catalog.loadPhrases()
   })
-  watch(prefs, (ps) => ps.forEach((p) => void catalog.loadDetail(p)), { immediate: true })
+  watch(
+    prefs,
+    (ps) => {
+      ps.forEach((p) => void catalog.loadDetail(p))
+      void catalog.loadSpecialties(ps)
+    },
+    { immediate: true },
+  )
 
   const details = computed(() => {
     const out = new Map<string, Spot>()

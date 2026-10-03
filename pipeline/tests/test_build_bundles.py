@@ -1,4 +1,14 @@
-from pipeline.build_bundles import build_achievements, designation, map_thumb, spot_type
+import json
+from pathlib import Path
+
+from pipeline.build_bundles import (
+    build_achievements,
+    build_specialties,
+    designation,
+    map_thumb,
+    spot_type,
+)
+from pipeline.paths import SPECIALTIES_DIR
 
 
 def test_map_thumb_rewrites_width_and_strips_prefix() -> None:
@@ -93,3 +103,19 @@ def test_build_achievements_castle_groups() -> None:
     }
     assert set(out) == {"tags", "castle"}
     assert all(v == [] for v in out["tags"].values())
+
+
+def test_build_specialties_one_file_per_prefecture(tmp_path: Path) -> None:
+    src = tmp_path / "src"
+    src.mkdir()
+    real = json.loads((SPECIALTIES_DIR / "aichi.json").read_text(encoding="utf-8"))[:2]
+    (src / "aichi.json").write_text(json.dumps(real, ensure_ascii=False), encoding="utf-8")
+    (src / "empty.json").write_text("[]", encoding="utf-8")
+    out = build_specialties(tmp_path / "dst", src)
+    assert list(out) == ["aichi"]
+    path, meta = out["aichi"]
+    assert path == tmp_path / "dst" / "aichi.json"
+    assert meta["count"] == 2 and len(meta["version"]) == 10
+    written = json.loads(path.read_text(encoding="utf-8"))
+    assert [s["id"] for s in written] == [s["id"] for s in real]
+    assert all(s["prefecture"] == "aichi" for s in written)

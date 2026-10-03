@@ -54,13 +54,28 @@ export function useScrollSpy(root: Ref<HTMLElement | null>, ids: () => string[],
   function unlock() {
     lock = null
     window.clearTimeout(unlockTimer)
+    container?.removeAttribute('data-lay-out')
   }
 
-  function go(id: string, smooth = true) {
+  const frame2 = () => new Promise<void>((r) => requestAnimationFrame(() => requestAnimationFrame(() => r())))
+  let goSeq = 0
+  async function go(id: string, smooth = true) {
     const el = document.getElementById(id)
     if (!el) return
+    const seq = ++goSeq
     lock = id
     active.value = id
+    // 畫面外先不畫的段落（.cv-auto）高度還是估計值：先全部排一次版、等畫面記下實際高度再捲，停的位置才準。
+    // 捲完拿掉；記住的高度留著（contain-intrinsic-size: auto）
+    const c = container
+    if (c?.querySelector('.cv-auto') && !c.hasAttribute('data-lay-out')) {
+      c.setAttribute('data-lay-out', '')
+      await frame2()
+      // 等的時候又點了別的段落：交給後來那一次
+      if (seq !== goSeq) return
+      lock = id
+      c.setAttribute('data-lay-out', '')
+    }
     el.scrollIntoView({ behavior: smooth ? 'smooth' : 'auto', block: 'start' })
     void router.replace({ hash: `#${id}` })
     window.clearTimeout(unlockTimer)

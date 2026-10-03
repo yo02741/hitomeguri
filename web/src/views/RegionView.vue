@@ -33,7 +33,10 @@ watch(
   () => props.pref,
   (p) => {
     explore.setActivePref(regionOf(p) ? p : null)
-    if (regionOf(p)) void catalog.loadFestivals(p)
+    if (regionOf(p)) {
+      void catalog.loadFestivals(p)
+      void catalog.loadSpecialties([p])
+    }
   },
   { immediate: true },
 )
@@ -198,7 +201,13 @@ function sourceLabel(url: string): string {
 
         <section v-if="groups.length" id="specialties" class="flex scroll-mt-16 flex-col lg:scroll-mt-8 gap-6" aria-labelledby="specialties-title">
           <h2 id="specialties-title" class="text-h3 font-black tracking-title">地區特色</h2>
-          <div v-for="g in groups" :id="`specialties-${g.key}`" :key="g.key" class="flex scroll-mt-16 flex-col gap-3 lg:scroll-mt-8">
+          <!-- 畫面外的組先不畫（content-visibility），高度先用估計值，畫過一次就記住實際高度 -->
+          <div
+            v-for="g in groups"
+            :id="`specialties-${g.key}`"
+            :key="g.key"
+            class="flex scroll-mt-16 flex-col gap-3 cv-auto [contain-intrinsic-size:auto_900px] lg:scroll-mt-8"
+          >
             <h3 class="flex items-baseline gap-1.5 text-caption font-bold tracking-section text-sub">
               {{ g.label }}<span class="font-latin font-normal tracking-normal">{{ g.items.length }}</span>
             </h3>

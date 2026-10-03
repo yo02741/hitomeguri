@@ -6,7 +6,7 @@ import { allStops, type Trip } from './trip'
 
 /**
  * 行程的離線準備（DESIGN.md §7.20）：把行程用得到的東西先抓一遍，讓 service worker 存起來。
- * - 停留點所在各縣的地圖、景點詳細、鐵路、祭典資料，會話與期間限定
+ * - 停留點所在各縣的地圖、景點詳細、鐵路、祭典、地區特色資料，會話與期間限定
  * - 停留點的照片
  * - 停留點附近的地圖圖磚（縮放 10–15，半徑約 1.5 km）＋各縣全圖（縮放 6–9）
  * 收藏、去過、行程本身由 Firestore 的本機快取處理（services/firebase.ts）。
@@ -93,7 +93,7 @@ async function runAll(urls: string[], onDone: () => void) {
 export async function prepareOffline(trip: Trip, catalog: Catalog, onProgress: (p: OfflineProgress) => void): Promise<void> {
   const stops = allStops(trip)
   const prefs = [...new Set(stops.map((s) => s.pref))]
-  const steps = prefs.length * 4 + 2
+  const steps = prefs.length * 4 + 3
   let done = 0
   const tick = (total: number) => onProgress({ done: ++done, total })
 
@@ -107,7 +107,12 @@ export async function prepareOffline(trip: Trip, catalog: Catalog, onProgress: (
       catalog.loadFestivals(p).finally(() => tick(steps)),
     ]),
   )
-  await Promise.all([catalog.loadPhrases().finally(() => tick(steps)), catalog.loadTimed().finally(() => tick(steps))])
+  await Promise.all([
+    catalog.loadPhrases().finally(() => tick(steps)),
+    catalog.loadTimed().finally(() => tick(steps)),
+    // 旅前準備的地區特色詞（一縣一檔）
+    catalog.loadSpecialties(prefs).finally(() => tick(steps)),
+  ])
 
   // 照片：停留點的地圖小圖與卡片用的縮圖
   const photos = new Set<string>()

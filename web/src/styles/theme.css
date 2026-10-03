@@ -545,6 +545,16 @@
     scrollbar-color: var(--region-line) transparent;
   }
 }
+/* 畫面外先不畫的長段落（深度探索的祭典月份、地區特色組）：高度先用 contain-intrinsic-size 的估計值，
+ * 畫過一次就記住實際高度。段落目錄跳過去之前，捲動容器加 data-lay-out 把全部排一次版，
+ * 停的位置才會準（composables/scrollSpy.ts） */
+@utility cv-auto {
+  content-visibility: auto;
+}
+[data-lay-out] .cv-auto {
+  content-visibility: visible;
+}
+
 /* ---------- 和風紋樣（DESIGN.md §3.6、web/src/data/patterns.ts）：白色＋透明的 SVG 圖塊當 alpha 遮罩，塗色用地區色 token ---------- */
 @utility wa-pattern {
   mask-image: var(--wa-tile);

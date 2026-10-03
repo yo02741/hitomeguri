@@ -73,6 +73,8 @@ export interface BundleIndex {
   rail?: Record<string, { version: string }>
   /** 深度探索「祭典」：縣 → 版本 */
   festivals?: Record<string, { count: number; version: string }>
+  /** 深度探索、旅前準備的「地區特色」：縣 → 版本（一縣一檔；沒有這欄的舊索引讀全國一個檔） */
+  specialties?: Record<string, { count: number; version: string }>
   /** 期間限定（全國一個檔） */
   timed?: { count: number; version: string }
   /** 地區特色、會話、季節、航線：檔名 → 版本 */
@@ -177,6 +179,11 @@ export interface FlightRoute {
   sources?: { url: string; fetched_at: string }[]
 }
 
+export function fetchPrefSpecialties(pref: string, version: string): Promise<Specialty[]> {
+  return getJson<Specialty[]>(`specialties/${pref}.json?v=${version}`)
+}
+
+/** 全國一個檔（約 1.8 MB）：只在索引沒有分縣版本時用 */
 export async function fetchSpecialties(v?: string): Promise<Specialty[]> {
   try {
     return await getJson<Specialty[]>(withV('specialties.json', v))

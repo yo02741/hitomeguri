@@ -205,7 +205,8 @@
 - `bundles/_index.json`：各都道府縣的版本號、筆數。
 - `bundles/map/{prefecture}.json`：地圖用精簡資料（id、座標、名稱、kind、themes、featured、縮圖）。
 - `bundles/detail/{prefecture}.json`：完整景點資料（點 marker 時載入該區的 detail 檔，可 cache）。
-- `bundles/specialties.json`、`bundles/timed/current.json`（只含尚未過期的）、`bundles/phrases.json`。
+- `bundles/specialties/{prefecture}.json`：地區特色一縣一檔（深度探索、旅前準備只載入用到的縣；版本在 `_index.json` 的 `specialties`）。全國一個檔的 `bundles/specialties.json` 暫時照寫，給還沒更新的舊版前端用。
+- `bundles/timed/current.json`（只含尚未過期的）、`bundles/phrases.json`。
 
 **FlightRoute**（`data/flights/taiwan_direct.json`）
 ```ts
