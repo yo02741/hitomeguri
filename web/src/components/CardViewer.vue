@@ -44,6 +44,7 @@ const fresh = useFreshStore()
 const cardDraw = useCardDraw()
 const missing = computed(() => (props.variants ? missingVariants(props.rarity, hasNight(props.card), props.variants.map((v) => v.key)).length : 0))
 const canDraw = computed(() => props.visited && Boolean(props.variants))
+const flipped = ref(false)
 let drawnKey: string | null = null
 function drawOneCard() {
   const v = cardDraw.drawFor({ spotId: props.card.id, rarity: props.rarity, night: hasNight(props.card), owned: props.variants?.map((x) => x.key) ?? [] })
@@ -51,13 +52,16 @@ function drawOneCard() {
   drawnKey = v.key
   showReveal({ face: props.card, rarity: props.rarity, label: props.label ?? '', number: props.number ?? '', variant: v })
 }
-// 抽完樣式清單更新時，切到剛抽到的那種
+// 抽完樣式清單更新時，切到剛抽到的那種，翻回正面（翻到背面再抽，也是看到新卡的正面）
 watch(
   () => props.variants,
   (list) => {
     if (!drawnKey || !list) return
     const i = list.findIndex((v) => v.key === drawnKey)
-    if (i >= 0) vi.value = i
+    if (i >= 0) {
+      vi.value = i
+      flipped.value = false
+    }
     drawnKey = null
   },
 )
@@ -77,7 +81,6 @@ watch(
   ([id, key]) => fresh.seen([cardKey(id, key)]),
   { immediate: true },
 )
-const flipped = ref(false)
 const gyro = ref(false)
 // 觸控裝置才顯示「傾斜手機」
 const touch = typeof matchMedia !== 'undefined' && matchMedia('(pointer: coarse)').matches
