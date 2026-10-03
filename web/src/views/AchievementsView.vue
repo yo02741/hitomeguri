@@ -263,7 +263,7 @@ onBeforeUnmount(() => fresh.seen([...fresh.keys].filter((k) => k.startsWith('a:'
                 >
                   <AchvSeal :def="s.def" :status="s.status" :at="s.at" class="w-full" />
                 </span>
-                <span class="line-clamp-2 text-body-sm leading-tight font-bold break-keep" :class="s.status === 'done' ? '' : 'text-ink-2'">{{ nameText(s.def.name) }}</span>
+                <span class="line-clamp-2 text-caption leading-tight font-bold break-keep" :class="s.status === 'done' ? '' : 'text-ink-2'">{{ nameText(s.def.name) }}</span>
                 <span v-if="s.status === 'done' && s.at" class="font-latin text-caption text-sub">{{ dotDate(s.at) }}</span>
                 <span v-else-if="s.status === 'locked' && s.note" class="text-caption leading-tight text-sub">{{ s.note }}</span>
                 <span v-else-if="s.status === 'locked' && hasProgress(s.def)" class="whitespace-nowrap font-latin text-caption text-sub">{{ Math.min(s.have, s.need) }} / {{ s.need }}</span>

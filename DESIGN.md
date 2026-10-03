@@ -169,7 +169,7 @@
 | `text-caption` | 12 | 400 | 假名行、credit、說明；要讀的資訊（出處、羅馬拼音、按鈕字）最小到這一級 |
 | `text-micro` | 11 | 700 | 膠囊標籤、徽章（NEW、縣名標、「全國」、DAY） |
 
-- 內文以下的小字只有三階：`text-body-sm`（14）、`text-caption`（12）、`text-micro`（11）。原本 13px 的 `text-label` 併進 `text-body-sm`（決定事項 R3）；放不下 14px 的窄格（手機景點卡片底部工作列：圖示在上、字在下，同分頁列）用 `text-caption`。不另外加 13px。
+- 內文以下的小字只有三階：`text-body-sm`（14）、`text-caption`（12）、`text-micro`（11）。原本 13px 的 `text-label` 併進 `text-body-sm`（決定事項 R3）；放不下 14px 的窄格（手機景點卡片底部工作列：圖示在上、字在下，同分頁列；成就格的名稱）用 `text-caption`。不另外加 13px。
 - 標題一律 `font-black`（900），不使用襯線字、不使用斜體。
 - 頁面標題（h1）、區塊標題（h2）與紀錄頁卡片標題的字距一律 `tracking-title`（0.06em，年代主題的大標也用這個 token）。站名標式的地名（`tracking-name`）、Wordmark 不在此列。
 - 字級一律用 token（rem），會跟著瀏覽器的預設字級放大；不寫 `text-[Npx]`。例外：Wordmark 上的裝飾假名、旅前小書的列印版面、收集卡卡面以 em 縮放的微縮字、§7.12 的印章、旅人衣櫃的「穿」封印。
@@ -580,7 +580,7 @@ header 右側、登入鈕左邊（`SearchBox.vue`，每一頁都在；在行程�
 - 頁面（`AchievementsView.vue`）：容器同收集冊（`max-w-5xl`）。
   - 標頭：`bg-region`＋紙紋；「‹ 紀錄」、「成就 n / N」（`RollingNumber`）、進度條（`bg-paper/55` 底、`bg-on-region` 填色）、事實列「初訪 x / 47　旅行 n 趟　yyyy 年起」（0 或不知道的不寫）、「規則」。右欄（md 以上）是最近達成的章 140px，沒有時是虛線圓；md 以下最近達成的章縮成 64px 放在標頭右上，沒有時不放（不加提示文字）。
   - 手機在標頭下方放段落目錄（`SectionNav` bar，§7.2a），段落標題 `scroll-mt-14` 不被蓋住。
-  - 段落：初訪、地方、旅行、時節、足跡、文化指定、名城、擴充包（各帶 `x / m`）。台紙 `rounded-card border-line bg-paper` 紙紋＋點點方格（點點畫在 `::before`，不蓋掉紙紋）。初訪依地方分行（小標 `text-caption tracking-section text-sub`），已去的是 `PrefStamp`，未去的是虛線圓＋日文縣名（`text-sub`）。成就格 3／4／6 欄，格子是按鈕（最小 44px）：章、名稱（`text-body-sm` 兩行，數字和單位之間是不斷行空格、`break-keep`，折成「九州・沖繩／8 縣」「続日本100名城／10 城」）、日期或進度（`x / n`，地方差 3 縣以內寫「還沒去：秋田、山形」）。同一組已達成的在前。格子的 `aria-label` 寫名稱、日期或進度（有「還沒去：…」時寫那句），有 NEW 時接「，新」。手機的初訪章只有約 52px，NEW 放在上緣正中（壓在外圈上，不蓋住羅馬拼音），桌機在左上。
+  - 段落：初訪、地方、旅行、時節、足跡、文化指定、名城、擴充包（各帶 `x / m`）。台紙 `rounded-card border-line bg-paper` 紙紋＋點點方格（點點畫在 `::before`，不蓋掉紙紋）。初訪依地方分行（小標 `text-caption tracking-section text-sub`），已去的是 `PrefStamp`，未去的是虛線圓＋日文縣名（`text-sub`）。成就格 3／4／6 欄，格子是按鈕（最小 44px）：章、名稱（`text-caption font-bold` 兩行，格子窄，同 §4.2 的窄格例外；數字和單位之間是不斷行空格、`break-keep`，折成「九州・沖繩／8 縣」「続日本100名城／10 城」）、日期或進度（`x / n`，地方差 3 縣以內寫「還沒去：秋田、山形」）。同一組已達成的在前。格子的 `aria-label` 寫名稱、日期或進度（有「還沒去：…」時寫那句），有 NEW 時接「，新」。手機的初訪章只有約 52px，NEW 放在上緣正中（壓在外圈上，不蓋住羅馬拼音），桌機在左上。
   - 關掉的擴充包，還沒達成的不列（已達成的照列）；整組都沒有就不列那段。
   - 詳細（`AchvDetail.vue`，外框 `RulesDialog`）：章 132px、條件、日期（未達成是進度）、抽獎券「5 張」（給券的才有）、有關的地方／旅行／縣最多 12 筆（依日期，連到地圖或行程頁；超過寫「還有 n 處」；打開時才算，平常的判斷不建這份清單）。打開就算看過；`RulesDialog` 是原生 `<dialog>`（收集冊、旅人的規則也是），Tab 只在框裡繞、後面的頁面 inert；關閉後焦點回到那一格。
   - 規則（`AchvRules.vue`）：條列文字在 `data/achvRules.ts` 的 `ACHV_RULES`（測試檢查文案；和目錄分開，開站不必載入），抽獎券那段接 `TicketTable`。
