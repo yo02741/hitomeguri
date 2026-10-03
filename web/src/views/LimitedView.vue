@@ -39,32 +39,32 @@ const gallery = ref<InstanceType<typeof FindGallery> | null>(null)
         <button
           v-if="userStore.canSignIn"
           type="button"
-          class="ml-auto h-10 rounded-control bg-region-strong px-4 text-body-sm font-bold text-white active:translate-y-px"
+          class="ml-auto h-10 rounded-control bg-region-strong px-4 text-body-sm font-bold text-white active:translate-y-px pointer-coarse:h-tap"
           @click="gallery?.add()"
         >
           新增
         </button>
       </div>
-      <nav v-if="finds.brands.length > 1" class="flex flex-wrap gap-x-3.5 gap-y-1" aria-label="品牌">
+      <nav v-if="finds.brands.length > 1" class="flex flex-wrap gap-x-3.5 gap-y-1 pointer-coarse:-mx-1.5 pointer-coarse:-my-2.5 pointer-coarse:gap-x-0.5 pointer-coarse:gap-y-0" aria-label="品牌">
         <button
           type="button"
-          class="border-b-2 pb-0.5 text-label"
+          class="text-label pointer-coarse:px-1.5 pointer-coarse:py-2.5"
           :class="brand === null ? 'border-region-strong font-bold text-ink' : 'border-transparent text-sub hover:text-ink active:text-ink'"
           :aria-pressed="brand === null"
           @click="brand = null"
         >
-          全部
+          <span class="block border-b-2 border-inherit pb-0.5">全部</span>
         </button>
         <button
           v-for="b in finds.brands"
           :key="b"
           type="button"
-          class="border-b-2 pb-0.5 text-label"
+          class="text-label pointer-coarse:px-1.5 pointer-coarse:py-2.5"
           :class="brand === b ? 'border-region-strong font-bold text-ink' : 'border-transparent text-sub hover:text-ink active:text-ink'"
           :aria-pressed="brand === b"
           @click="brand = brand === b ? null : b"
         >
-          {{ b }}
+          <span class="block border-b-2 border-inherit pb-0.5">{{ b }}</span>
         </button>
       </nav>
       <FindGallery ref="gallery" :finds="shown" />

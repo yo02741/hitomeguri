@@ -22,7 +22,7 @@ const compact = computed(() => props.size < 48)
   <section v-if="total" class="flex flex-col text-ink" :class="compact ? 'gap-1.5' : 'gap-2 rounded-card bg-paper p-3'" aria-label="這趟的成就">
     <div class="flex items-center">
       <h3 class="text-label font-bold" :class="compact ? 'text-sub' : ''">這趟的成就</h3>
-      <RouterLink v-if="compact" to="/log/achievements" class="-my-1.5 ml-auto flex h-9 items-center gap-0.5 rounded-control px-2 text-label font-bold text-ink no-underline hover:bg-surface active:not-disabled:translate-y-px">
+      <RouterLink v-if="compact" to="/log/achievements" class="-my-1.5 ml-auto flex h-9 items-center gap-0.5 rounded-control px-2 text-label font-bold text-ink no-underline hover:bg-surface active:not-disabled:translate-y-px pointer-coarse:-my-2.5 pointer-coarse:h-tap">
         成就
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7" /></svg>
       </RouterLink>

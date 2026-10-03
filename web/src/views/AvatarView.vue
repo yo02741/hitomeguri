@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, ref } from 'vue'
+import { computed, onBeforeUnmount, ref, watch } from 'vue'
 
 import AvatarRules from '../components/AvatarRules.vue'
 import BackLink from '../components/BackLink.vue'
@@ -13,6 +13,8 @@ import { type AvatarParts, useAvatarStore } from '../stores/avatar'
 import { outfitKey, useFreshStore } from '../stores/fresh'
 import { useUserStore } from '../stores/user'
 import { useWalletStore } from '../stores/wallet'
+import { scrollParent } from '../composables/scrollSpy'
+import { wide } from '../services/viewport'
 
 // 旅人（紙娃娃，DESIGN.md §7.24）：左邊是角色與「抽服裝」，右邊是衣櫃：外觀與五個位置的服裝，單品是貼紙；
 // 還沒有的只剩剪影，新拿到還沒點過的標 NEW。抽服裝用抽獎券（與景點卡共用），只抽還沒有的。
@@ -52,6 +54,60 @@ const HEAD_CROP = '48 14 144 150'
 // 規則（使用者自己打開）
 const showRules = ref(false)
 
+// ---------- 手機的展示窗（<1024，決定事項 M2） ----------
+// 展示窗 sticky：top 設成「小窗高 − 展示窗高」，往上捲時展示窗照常捲走，只剩下緣的小窗（約 150px）留在畫面上緣。
+// 娃娃與地面放進看得到的那一段（vis），跟著縮小，不用 transform（3D 的層縮放後會糊）；版面高度不變，捲動不會跳。
+const stage = ref<HTMLElement | null>(null)
+const stageH = ref(0)
+const minVis = ref(150)
+const vis = ref<number | null>(null)
+let scroller: HTMLElement | null = null
+let raf = 0
+const sizeObs = typeof ResizeObserver === 'undefined' ? null : new ResizeObserver(() => measure())
+function measure() {
+  const el = stage.value
+  if (!el || !scroller) return
+  stageH.value = el.offsetHeight
+  // 手機打橫時畫面矮：小窗最多佔捲動區的 40%
+  minVis.value = Math.min(150, Math.round(scroller.clientHeight * 0.4))
+  update()
+}
+function update() {
+  raf = 0
+  const el = stage.value
+  if (!el || !scroller || !stageH.value) return
+  const shown = el.getBoundingClientRect().bottom - scroller.getBoundingClientRect().top
+  const v = Math.round(Math.min(stageH.value, Math.max(minVis.value, shown)))
+  vis.value = v >= stageH.value ? null : v
+}
+function onScroll() {
+  if (!raf) raf = requestAnimationFrame(update)
+}
+function detach() {
+  scroller?.removeEventListener('scroll', onScroll)
+  sizeObs?.disconnect()
+  scroller = null
+  vis.value = null
+}
+watch(
+  [stage, wide],
+  ([el, w]) => {
+    detach()
+    if (!el || w) return
+    scroller = scrollParent(el)
+    scroller?.addEventListener('scroll', onScroll, { passive: true })
+    sizeObs?.observe(el)
+    if (scroller) sizeObs?.observe(scroller)
+    measure()
+  },
+  { flush: 'post' },
+)
+onBeforeUnmount(() => {
+  detach()
+  if (raf) cancelAnimationFrame(raf)
+})
+const stageStyle = computed(() => (wide.value || !stageH.value ? undefined : { top: `${minVis.value - stageH.value}px` }))
+
 // ---------- 扭蛋 ----------
 const result = ref<{ outfit: Outfit; duplicate: boolean } | null>(null)
 function draw() {
@@ -78,7 +134,7 @@ function wear() {
         <button
           v-if="userStore.user"
           type="button"
-          class="ml-auto flex h-9 items-center gap-1.5 self-center rounded-full border border-line bg-paper px-3.5 text-label font-bold text-ink hover:bg-surface active:not-disabled:translate-y-px"
+          class="ml-auto flex h-9 items-center gap-1.5 self-center rounded-full border border-line bg-paper px-3.5 text-label font-bold text-ink hover:bg-surface active:not-disabled:translate-y-px pointer-coarse:h-tap"
           aria-haspopup="dialog"
           @click="showRules = true"
         >
@@ -91,15 +147,22 @@ function wear() {
     <p v-if="!userStore.user" class="text-body-sm text-sub">收藏、行程與紀錄需要登入。</p>
     <div v-else class="grid items-start gap-8 lg:min-h-0 lg:flex-1 lg:grid-cols-[380px_minmax(0,1fr)] lg:grid-rows-[minmax(0,1fr)] lg:items-stretch">
       <!-- 角色：3D 展示窗 -->
-      <div class="flex w-full flex-col gap-4 max-lg:mx-auto max-lg:max-w-[440px] lg:min-h-0">
-        <div class="stage paper-grain relative overflow-hidden rounded-card bg-region-tint lg:min-h-0 lg:flex-1">
+      <!-- 手機：這一欄拆開（contents），展示窗才能在整個頁面 sticky -->
+      <div class="flex w-full flex-col gap-4 max-lg:contents lg:min-h-0">
+        <div
+          ref="stage"
+          class="stage paper-grain relative overflow-hidden rounded-card bg-region-tint max-lg:sticky max-lg:z-10 max-lg:mx-auto max-lg:w-full max-lg:max-w-[440px] lg:min-h-0 lg:flex-1"
+          :style="stageStyle"
+        >
           <span class="wa-pattern wa-seigaiha pointer-events-none absolute inset-0 bg-region opacity-25" aria-hidden="true"></span>
-          <span class="floor pointer-events-none absolute inset-x-0 bottom-0 h-[17%] bg-region" aria-hidden="true"></span>
-          <DollSpin :parts="avatar.parts" :equipped="avatar.equipped" class="absolute inset-0" />
+          <span class="floor pointer-events-none absolute inset-x-0 bottom-0 h-[17%] bg-region" :style="vis ? { height: `${Math.round(vis * 0.17)}px` } : undefined" aria-hidden="true"></span>
+          <div class="absolute inset-x-0 bottom-0 h-full" :style="vis ? { height: `${vis}px` } : undefined">
+            <DollSpin :parts="avatar.parts" :equipped="avatar.equipped" class="absolute inset-0" />
+          </div>
         </div>
         <button
           type="button"
-          class="draw flex h-14 shrink-0 items-center gap-3 rounded-card bg-ink px-4 text-paper disabled:cursor-not-allowed disabled:opacity-40 active:not-disabled:translate-y-px"
+          class="draw flex h-14 shrink-0 items-center gap-3 rounded-card bg-ink px-4 text-paper disabled:cursor-not-allowed disabled:opacity-40 active:not-disabled:translate-y-px max-lg:mx-auto max-lg:-mt-4 max-lg:w-full max-lg:max-w-[440px]"
           :disabled="!avatar.canDraw"
           @click="draw"
         >
@@ -115,14 +178,16 @@ function wear() {
 
       <!-- 衣櫃 -->
       <section class="flex min-w-0 flex-col lg:min-h-0" aria-label="衣櫃">
-        <div class="flex items-end gap-1 overflow-x-auto px-2" role="tablist" aria-label="衣櫃">
+        <!-- 手機（<1024）每個分頁平分寬度，不會左右捲 -->
+        <!-- 手機：分頁列貼在展示窗的小窗下面，捲到下面也換得了分頁 -->
+        <div class="flex items-end gap-1 overflow-x-auto px-2 max-lg:sticky max-lg:z-10 max-lg:bg-paper" :style="wide ? undefined : { top: `${minVis}px` }" role="tablist" aria-label="衣櫃">
           <button
             v-for="t in TABS"
             :key="t.key"
             type="button"
             role="tab"
             :aria-selected="tab === t.key"
-            class="tab h-10 shrink-0 rounded-t-control px-4 text-label font-bold active:text-ink"
+            class="tab h-10 shrink-0 rounded-t-control px-4 text-label font-bold whitespace-nowrap active:text-ink max-lg:min-w-0 max-lg:flex-1 max-lg:shrink max-lg:px-0 pointer-coarse:h-tap"
             :class="tab === t.key ? 'is-on bg-surface text-ink' : 'text-sub hover:text-ink'"
             @click="tab = t.key"
           >
@@ -205,7 +270,7 @@ function wear() {
 
           <!-- 服裝：貼紙 -->
           <div v-if="tab !== 'look'" class="mb-3 flex justify-end">
-            <button type="button" class="flex h-8 items-center gap-1.5 rounded-full px-3 text-caption font-bold active:not-disabled:translate-y-px" :class="onlyOwned ? 'bg-ink text-paper' : 'bg-paper text-ink'" :aria-pressed="onlyOwned" @click="onlyOwned = !onlyOwned">
+            <button type="button" class="flex h-8 items-center gap-1.5 rounded-full px-3 text-caption font-bold active:not-disabled:translate-y-px pointer-coarse:h-tap" :class="onlyOwned ? 'bg-ink text-paper' : 'bg-paper text-ink'" :aria-pressed="onlyOwned" @click="onlyOwned = !onlyOwned">
               只看有的
             </button>
           </div>

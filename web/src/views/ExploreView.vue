@@ -4,6 +4,7 @@ import { type LocationQuery, useRoute, useRouter } from 'vue-router'
 
 import HomeSidebar from '../components/HomeSidebar.vue'
 import MapView, { type MapView as MapViewState } from '../components/MapView.vue'
+import ChipRail from '../components/ChipRail.vue'
 import PackBar from '../components/PackBar.vue'
 import PackList from '../components/PackList.vue'
 import PackPanel from '../components/PackPanel.vue'
@@ -25,10 +26,13 @@ import {
   prefectureMainBounds,
   prefectureShape,
 } from '../services/geo'
+import { afterPaint } from '../services/idle'
+import { releaseVelocity, type Snap, snapAfterDrag, snapHeights, stepSnap } from '../services/sheetSnap'
 import type { SearchHit } from '../services/search'
 import { trackSplash } from '../services/splash'
 import { currentTimed } from '../services/timed'
 import { todayIso } from '../services/userdb'
+import { land } from '../services/viewport'
 import { useCatalogStore } from '../stores/catalog'
 import { useExploreStore } from '../stores/explore'
 import { useMarksStore } from '../stores/marks'
@@ -62,12 +66,20 @@ const available = computed(() => Object.keys(catalog.index?.prefectures ?? {}))
 const allSpots = computed<MapSpot[]>(() =>
   available.value.flatMap((p) => catalog.mapSpots[p] ?? catalog.featured[p] ?? []),
 )
+// 類型篩選：清單與按鈕先換（RegionLists 只切換顯示），地圖等那個畫面畫出來之後才跟上。
+// 地圖的點是分群（cluster）的來源，篩選要換掉資料才會重新分群（圖層的 filter、feature-state 只改得到畫不畫，
+// 群的數字還是全部），所以仍然 setData，只是不擋住按鈕的回應（手機版計畫第二階段 3）
+const mapCategory = ref(explore.category)
+watch(
+  () => explore.category,
+  () => afterPaint(() => (mapCategory.value = explore.category)),
+)
 // 顯示規則：全部大點（可依類型篩選；開啟擴充包時不篩選，變淡當底圖）
 const filteredSpots = computed(() =>
   allSpots.value.filter((s) => {
     if (s.k !== 'major') return false
     if (explore.onlyFavorites && !explore.pack) return Boolean(marks.marks[s.id]?.favorite)
-    return explore.pack || !explore.category || categoryGroup(s.c) === explore.category
+    return explore.pack || !mapCategory.value || categoryGroup(s.c) === mapCategory.value
   }),
 )
 // 選到的景點被篩掉時也要畫出來。選到的本來就在清單裡時沿用同一個陣列，
@@ -208,6 +220,9 @@ watch(
     if (id && !old && !desktop.value) {
       sheetEntering.value = true
       quietKey.value = panelKey.value
+      // 每次打開都從半開開始；開著時換景點維持目前的段
+      snap.value = 'half'
+      dragH.value = null
     }
   },
   { flush: 'pre' },
@@ -230,21 +245,140 @@ syncDesktop()
 mq?.addEventListener('change', syncDesktop)
 onBeforeUnmount(() => mq?.removeEventListener('change', syncDesktop))
 const FLOAT_INSET = 300 + 16 * 2
-const insetLeft = computed(() => (desktop.value ? FLOAT_INSET : 0))
+// 手機打橫（高 ≤500，決定事項 N2）：清單與景點卡片都是左側 300px 的浮動欄（和桌機的浮動面板同寬），地圖一樣扣掉左側
+const side = computed(() => !desktop.value && land.value)
+const insetLeft = computed(() => (desktop.value || side.value ? FLOAT_INSET : 0))
+
+// 手機景點卡片的三段高度（DESIGN.md §7.13、決定事項 C3）：收合（把手＋名稱帶，名稱帶放「去過」）／半開 55vh／全開。
+// 只有把手與名稱帶（SpotPanel 的 data-sheet-drag）可以拖；放開時吸到最近的一段，從收合再往下拉就關閉。
+// 擴充包的點內容短，照舊依內容高度、不能拖。
+const root = ref<HTMLElement | null>(null)
+const poster = ref<HTMLElement | null>(null)
+const snap = ref<Snap>('half')
+const headPx = ref(0)
+const dragH = ref<number | null>(null)
+const area = shallowRef({ h: 0, poster: 0, vh: 0 })
+function measureArea() {
+  const r = root.value
+  if (!r) return
+  const next = { h: r.clientHeight, poster: poster.value?.offsetHeight ?? 0, vh: window.innerHeight }
+  const a = area.value
+  if (next.h !== a.h || next.poster !== a.poster || next.vh !== a.vh) area.value = next
+}
+const areaObserver = typeof ResizeObserver !== 'undefined' ? new ResizeObserver(measureArea) : null
+watch([root, poster], (els, old) => {
+  old?.forEach((el) => el && areaObserver?.unobserve(el))
+  els.forEach((el) => el && areaObserver?.observe(el))
+  measureArea()
+})
+onBeforeUnmount(() => areaObserver?.disconnect())
+const heights = computed(() => snapHeights(area.value.h, area.value.poster, headPx.value, area.value.vh))
+/** 手機的景點卡片（可拖、三段高度）；桌機、手機打橫（側欄）與擴充包的點不是 */
+const spotSheet = computed(() => !desktop.value && !side.value && !shownPack.value)
+// chip 軌道：景點卡片全開，或半開就蓋到軌道（手機打橫）時先收起
+const railShown = computed(() => {
+  // 打橫：卡片在側欄裡，蓋住軌道的位置
+  if (side.value) return !selectedId.value
+  if (!selectedId.value || !spotSheet.value || snap.value === 'peek') return true
+  if (snap.value === 'full') return false
+  const a = area.value
+  return heights.value.half <= a.h - a.poster - 80
+})
+// 打橫的左側欄：從海報條下面 16px 到地圖下緣 16px（和桌機的浮動面板一樣是整欄）
+const sideStyle = computed(() => ({ top: `${area.value.poster + 16}px`, bottom: '16px' }))
+const sheetStyle = computed(() =>
+  spotSheet.value && area.value.h ? { height: `${dragH.value ?? heights.value[snap.value]}px` } : undefined,
+)
+
+let drag: { id: number; y0: number; h0: number; zone: Element; started: boolean; samples: { t: number; h: number }[] } | null = null
+function onSheetDown(e: PointerEvent) {
+  if (!spotSheet.value || !e.isPrimary || (e.pointerType === 'mouse' && e.button !== 0)) return
+  const zone = (e.target as Element | null)?.closest?.('[data-sheet-drag]')
+  if (!zone || !sheet.value) return
+  drag = { id: e.pointerId, y0: e.clientY, h0: sheet.value.offsetHeight, zone, started: false, samples: [] }
+}
+function onSheetMove(e: PointerEvent) {
+  if (!drag || e.pointerId !== drag.id) return
+  const dy = e.clientY - drag.y0
+  // 動了 6px 以上才算拖，名稱帶上的按鈕照樣點得到
+  if (!drag.started) {
+    if (Math.abs(dy) < 6) return
+    drag.started = true
+    drag.zone.setPointerCapture?.(e.pointerId)
+  }
+  const h = Math.min(heights.value.full, Math.max(40, drag.h0 - dy))
+  dragH.value = h
+  const now = performance.now()
+  drag.samples.push({ t: now, h })
+  while (drag.samples.length > 2 && now - drag.samples[0]!.t > 100) drag.samples.shift()
+}
+function onSheetUp(e: PointerEvent) {
+  if (!drag || e.pointerId !== drag.id) return
+  const d = drag
+  drag = null
+  if (!d.started || dragH.value === null) return
+  if (e.type === 'pointercancel') {
+    dragH.value = null
+    return
+  }
+  const v = releaseVelocity(d.samples, performance.now())
+  const target = snapAfterDrag(heights.value, dragH.value, v)
+  if (target === null) {
+    // 從目前的高度往下收（dragH 留到收完才清掉）
+    closeSpot()
+    return
+  }
+  dragH.value = null
+  snap.value = target
+}
+function onSnapStep(dir: -1 | 0 | 1) {
+  snap.value = stepSnap(snap.value, dir)
+}
+// 換段之後鏡頭跟著：卡片高度變完（0.28s）再量一次蓋住的範圍，選到的點被蓋住就移到剩下的地圖中間
+// 手機轉向（直 ↔ 打橫）時卡片從下方換到左側欄（或反過來）：蓋住的範圍變了，同樣再看一次
+let revealTimer = 0
+function revealSelected() {
+  clearTimeout(revealTimer)
+  revealTimer = window.setTimeout(async () => {
+    measureInsets()
+    await nextTick()
+    if (!selectedId.value || (spotSheet.value && snap.value === 'full')) return
+    const id = selectedId.value
+    const s = allSpots.value.find((x) => x.id === id)
+    const loc = s ? { lng: s.lng, lat: s.lat } : shownSpot.value?.id === id ? shownSpot.value.location : null
+    if (loc) mapRef.value?.reveal(loc.lng, loc.lat)
+  }, 300)
+}
+watch(snap, revealSelected)
+watch(side, revealSelected)
+onBeforeUnmount(() => clearTimeout(revealTimer))
+// Esc 關閉景點卡片（手機；焦點在卡片、地圖或沒有焦點時）。卡片裡的選單、對話框自己處理掉的 Esc 不算
+function onKey(e: KeyboardEvent) {
+  if (e.key !== 'Escape' || e.defaultPrevented || desktop.value || !selectedId.value) return
+  const t = e.target as Element | null
+  if (t?.closest?.('dialog')) return
+  if (t && t !== document.body && !root.value?.contains(t)) return
+  closeSpot()
+}
+onMounted(() => window.addEventListener('keydown', onKey))
+onBeforeUnmount(() => window.removeEventListener('keydown', onKey))
 
 // 手機：上方的清單卡（擴充包 chip）與下方的景點卡片、祭典小卡蓋住地圖，定位時扣掉這兩塊（MapView insets）
 const panel = ref<HTMLElement | null>(null)
 const sheet = ref<HTMLElement | null>(null)
 const pinCard = ref<HTMLElement | null>(null)
 const insets = shallowRef({ top: 0, bottom: 0 })
-// 景點卡片的高度：60dvh，但不超過海報條以下的地圖區減 2.5rem（手機打橫時地圖區只有兩百多 px）
+// 擴充包的點：依內容高度，最高 60dvh，但不超過海報條以下的地圖區減 2.5rem（手機打橫時地圖區只有兩百多 px）
 const sheetHeight = computed(() => {
   const poster = !!(props.pref && regionOf(props.pref))
+  if (side.value) return ''
   if (shownPack.value) return poster ? 'max-lg:max-h-[min(60dvh,calc(100%-6rem))]' : 'max-lg:max-h-[min(60dvh,calc(100%-2.5rem))]'
-  return poster ? 'max-lg:h-[min(60dvh,calc(100%-6rem))]' : 'max-lg:h-[min(60dvh,calc(100%-2.5rem))]'
+  // 景點：三段高度由 sheetStyle 給（量到地圖區之前先用半開的 class）
+  if (sheetStyle.value) return dragH.value === null ? 'sheet-snap' : ''
+  return poster ? 'max-lg:h-[min(55dvh,calc(100%-6rem))]' : 'max-lg:h-[min(55dvh,calc(100%-2.5rem))]'
 })
 function measureInsets() {
-  if (desktop.value) {
+  if (desktop.value || side.value) {
     if (insets.value.top || insets.value.bottom) insets.value = { top: 0, bottom: 0 }
     return
   }
@@ -262,7 +396,7 @@ watch([panel, sheet, pinCard], (els, old) => {
   els.forEach((el) => el && insetObserver?.observe(el))
   measureInsets()
 })
-watch(desktop, measureInsets)
+watch([desktop, side], measureInsets)
 onBeforeUnmount(() => insetObserver?.disconnect())
 /** 飛到某個點：先量好清單與卡片蓋住的範圍（剛打開的卡片要等畫出來），再讓點落在看得到的地圖中間 */
 async function flyToVisible(lng: number, lat: number, zoom: number) {
@@ -361,7 +495,6 @@ function closePin() {
 const timedHere = computed(() => (props.pref ? currentTimed(catalog.timed ?? [], todayIso(), props.pref) : []))
 // 手機的上方清單：打開景點卡片或祭典的地點標記時收起，地圖才看得到選到的點（桌機一直顯示）
 const listShown = computed(() => desktop.value || (!selectedId.value && !pin.value))
-const currentPack = computed(() => (explore.pack ? packByKey.get(explore.pack) : undefined))
 
 onMounted(() => {
   // 地區標籤只用到直飛航線；地區特色（約 1.8 MB）留給深度探索
@@ -497,6 +630,16 @@ function sameQuery(a: LocationQuery, b: LocationQuery): boolean {
   return norm(a) === norm(b)
 }
 
+// 「‹ 祭典」：從深度探索的「在地圖上看」來的就用返回，回到原本那張祭典卡（月份、展開狀態都在那一筆歷史）；
+// 直接打開這個網址時才連到祭典段落
+function backToFestival(e: MouseEvent) {
+  if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return
+  e.preventDefault()
+  const back = (window.history.state as { back?: unknown } | null)?.back
+  if (typeof back === 'string' && props.pref && router.resolve(back).path === `/region/${props.pref}`) router.back()
+  else void router.push(`/region/${props.pref}#festivals`)
+}
+
 function closeSpot() {
   const q = { ...route.query }
   delete q.spot
@@ -584,11 +727,12 @@ function onMoveEnd(view: MapViewState) {
 </script>
 
 <template>
-  <div class="relative flex min-h-0 flex-1 max-lg:flex-col">
+  <div ref="root" class="relative flex min-h-0 flex-1 max-lg:flex-col">
     <!-- 手機：頂部海報條。左「‹ 全國」、中間縣名（不能點）、右「深度探索 ›」，分隔線和桌機的地區標籤相同（DESIGN.md §7.5） -->
     <div
       v-if="pref && regionOf(pref)"
-      class="-mr-[env(safe-area-inset-right)] -ml-[env(safe-area-inset-left)] flex h-[56px] shrink-0 items-center gap-2 bg-region pr-[calc(0.5rem+env(safe-area-inset-right))] pl-[calc(0.25rem+env(safe-area-inset-left))] text-on-region lg:hidden"
+      ref="poster"
+      class="-mr-[env(safe-area-inset-right)] -ml-[env(safe-area-inset-left)] flex h-[56px] shrink-0 items-center gap-2 bg-region land:h-12 pr-[calc(0.5rem+env(safe-area-inset-right))] pl-[calc(0.25rem+env(safe-area-inset-left))] text-on-region lg:hidden"
     >
       <RouterLink
         to="/"
@@ -634,7 +778,8 @@ function onMoveEnd(view: MapViewState) {
         :color-key="explore.activePref"
         :inset-left="insetLeft"
         :insets="insets"
-        :controls-lift="pinCard ? insets.bottom : 0"
+        :locator-top="!desktop && !side && !listShown && railShown ? insets.top : 0"
+        :controls-lift="pinCard || (selectedId && spotSheet && snap === 'peek') ? insets.bottom : 0"
         :pack="packMap"
         :outline="outline"
         :pin="pin"
@@ -653,7 +798,7 @@ function onMoveEnd(view: MapViewState) {
         <button
           v-if="userStore.user && marks.favorites.length"
           type="button"
-          class="flex h-9 shrink-0 items-center gap-1.5 rounded-full px-3.5 text-label font-bold shadow-float active:not-disabled:translate-y-px"
+          class="flex h-9 shrink-0 items-center gap-1.5 rounded-full px-3.5 text-label font-bold shadow-float active:not-disabled:translate-y-px pointer-coarse:h-tap"
           :class="explore.onlyFavorites ? 'bg-ink text-paper' : 'bg-paper text-ink hover:bg-surface'"
           :aria-pressed="explore.onlyFavorites"
           @click="explore.onlyFavorites = !explore.onlyFavorites"
@@ -667,28 +812,27 @@ function onMoveEnd(view: MapViewState) {
       </div>
 
       <!-- 左上浮動面板：地區標籤／地區清單、主題篩選、景點與地區特色。
-           手機打橫時地圖只剩兩百多 px 高，清單右邊留出縮放鈕那一欄，縮放鈕不被清單蓋住 -->
+           手機打橫（高 ≤500）：和桌機一樣是左側 300px 的欄，清單填滿欄高，地圖扣掉左側（決定事項 N2） -->
       <div
         ref="panel"
-        class="pointer-events-none absolute top-4 bottom-4 left-4 z-10 flex w-float flex-col gap-2.5 *:pointer-events-auto max-lg:right-4 max-lg:bottom-auto max-lg:w-auto max-lg:[@media(orientation:landscape)_and_(max-height:500px)]:right-14"
+        class="pointer-events-none absolute top-4 bottom-4 left-4 z-10 flex w-float flex-col gap-2.5 *:pointer-events-auto max-lg:right-4 max-lg:bottom-auto max-lg:w-auto land:right-auto land:bottom-4 land:w-float"
       >
-        <!-- 手機：開著的擴充包（桌機在地圖上方的擴充包列）。點了關閉；完整的 chip 列在第二階段 -->
-        <button
-          v-if="currentPack"
-          type="button"
-          class="flex h-9 w-fit shrink-0 items-center gap-1.5 rounded-full bg-(--pack) pr-2.5 pl-3.5 text-label font-bold text-white shadow-float lg:hidden active:not-disabled:translate-y-px"
-          :style="{ '--pack': `var(--color-t-${currentPack.color})` }"
-          :aria-label="`關閉${currentPack.label}`"
-          @click="explore.pack = null"
+        <!-- 手機：chip 軌道（收藏、擴充包、設定；桌機在地圖上方的擴充包列）。軌道不吃點擊，空白處照樣拖得動地圖 -->
+        <ChipRail v-if="!desktop" v-show="railShown" :pref="pref && regionOf(pref) ? pref : null" class="pointer-events-none! shrink-0" />
+        <!-- 手機：這個縣有期間限定時，軌道下面一行連到深度探索的期間限定（清單收起時一起收） -->
+        <RouterLink
+          v-if="!desktop && pref && regionOf(pref) && timedHere.length && !explore.pack"
+          v-show="listShown"
+          :to="`/region/${pref}#timed`"
+          class="flex min-h-tap shrink-0 items-center gap-2 rounded-card bg-region-tint pr-2.5 pl-3.5 text-ink no-underline shadow-float active:not-disabled:translate-y-px"
         >
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path :d="currentPack.icon" />
+          <span class="shrink-0 text-label font-bold">期間限定</span>
+          <span class="shrink-0 font-latin text-label text-sub">{{ timedHere.length }}</span>
+          <span lang="ja" class="min-w-0 truncate text-body-sm">{{ timedHere[0]!.title.ja }}</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="ml-auto shrink-0 text-sub" aria-hidden="true">
+            <path d="M9 5l7 7-7 7" />
           </svg>
-          {{ currentPack.label }}
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true">
-            <path d="M6 6l12 12M18 6L6 18" />
-          </svg>
-        </button>
+        </RouterLink>
         <RegionTag v-if="pref && regionOf(pref)" :pref="pref" class="max-lg:hidden" />
         <template v-if="pref && regionOf(pref)">
           <section v-if="timedHere.length && !explore.pack" class="shrink-0 rounded-card bg-paper px-3.5 pt-2.5 pb-2 shadow-float max-lg:hidden" aria-labelledby="timed-here">
@@ -698,27 +842,28 @@ function onMoveEnd(view: MapViewState) {
             </h2>
             <TimedList :items="timedHere.slice(0, 3)" />
           </section>
-          <!-- 擴充包開著時清單換成擴充包清單；手機在上方 40dvh，打開景點卡片或地點標記時收起 -->
-          <template v-if="listShown">
+          <!-- 擴充包開著時清單換成擴充包清單；手機在上方 40dvh，打開景點卡片或地點標記時收起。
+               收起用 v-show：關掉卡片時不重建幾百列，捲動位置也留著 -->
           <PackList
             v-if="explore.pack"
+            v-show="listShown"
             :pref="pref"
             :selected-id="selectedId"
-            class="max-lg:max-h-[40dvh]"
+            class="max-lg:max-h-[40dvh] land:max-h-none"
             @select="select"
             @highlight="(id) => mapRef?.highlight(id)"
           />
           <RegionLists
             v-else
+            v-show="listShown"
             :pref="pref"
             :spots="prefSpots"
             :state="catalog.mapState(pref)"
             :selected-id="selectedId"
-            class="max-lg:max-h-[40dvh]"
+            class="max-lg:max-h-[40dvh] land:max-h-none"
             @select="select"
             @highlight="(id) => mapRef?.highlight(id)"
           />
-          </template>
           <!-- 深度探索入口：左欄最下方獨立一顆，和清單分開（使用者決定） -->
           <RouterLink
             :to="`/region/${pref}`"
@@ -738,15 +883,16 @@ function onMoveEnd(view: MapViewState) {
             </svg>
           </RouterLink>
         </template>
-        <template v-else-if="listShown">
+        <template v-else>
           <PackList
             v-if="explore.pack"
+            v-show="listShown"
             :selected-id="selectedId"
-            class="max-lg:max-h-[40dvh]"
+            class="max-lg:max-h-[40dvh] land:max-h-none"
             @select="select"
             @highlight="(id) => mapRef?.highlight(id)"
           />
-          <HomeSidebar v-else :available="available" class="max-lg:max-h-[40dvh]" />
+          <HomeSidebar v-else v-show="listShown" :available="available" class="max-lg:max-h-[50dvh] land:max-h-none" />
         </template>
       </div>
 
@@ -754,16 +900,19 @@ function onMoveEnd(view: MapViewState) {
       <div
         v-if="pin && !selectedId && pref && regionOf(pref)"
         ref="pinCard"
-        class="absolute inset-x-4 bottom-4 z-10 flex items-center gap-1 rounded-card bg-paper p-1 text-ink shadow-float lg:hidden"
+        class="absolute inset-x-4 bottom-4 z-10 flex items-center gap-1 rounded-card bg-paper p-1 text-ink shadow-float lg:hidden land:right-auto land:w-float"
       >
-        <RouterLink
-          :to="`/region/${pref}#festivals`"
-          class="flex min-h-tap shrink-0 items-center gap-0.5 rounded-control pr-2.5 pl-1.5 text-label font-bold text-ink no-underline hover:bg-surface active:not-disabled:translate-y-px"
-        >
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M15 5l-7 7 7 7" />
-          </svg>
-          祭典
+        <RouterLink v-slot="{ href }" :to="`/region/${pref}#festivals`" custom>
+          <a
+            :href="href"
+            class="flex min-h-tap shrink-0 items-center gap-0.5 rounded-control pr-2.5 pl-1.5 text-label font-bold text-ink no-underline hover:bg-surface active:not-disabled:translate-y-px"
+            @click="backToFestival"
+          >
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M15 5l-7 7 7 7" />
+            </svg>
+            祭典
+          </a>
         </RouterLink>
         <span class="h-6 w-px shrink-0 bg-line" aria-hidden="true"></span>
         <span lang="ja" class="min-w-0 flex-1 truncate px-2 text-body-sm font-bold">{{ pin.label }}</span>
@@ -781,15 +930,26 @@ function onMoveEnd(view: MapViewState) {
     </div>
 
     <!-- 手機的景點卡片從下方升上來、關閉時往下收；換景點時內容淡入（DESIGN.md §9）。桌機沒有 transition，直接出現與移除 -->
-    <Transition name="sheet" @after-enter="sheetEntering = false" @enter-cancelled="sheetEntering = false">
+    <!-- 手機打橫：卡片是左側欄，從左邊滑進來 -->
+    <Transition :name="side ? 'side' : 'sheet'" @after-enter="sheetEntering = false" @enter-cancelled="sheetEntering = false" @after-leave="dragH = null">
       <!-- 擴充包的點內容短：手機的卡片依內容高度，最高 60dvh（PackPanel 自己捲動）。
            手機打橫時 60dvh 比地圖區還高：再限制在海報條以下、上面留 2.5rem 地圖 -->
       <aside
         v-if="selectedId"
         ref="sheet"
         :data-reduce="desktop ? undefined : 'fade'"
-        class="shrink-0 border-line lg:w-panel lg:border-l max-lg:absolute max-lg:inset-x-0 max-lg:bottom-0 max-lg:z-20 max-lg:overflow-hidden max-lg:rounded-t-sheet max-lg:shadow-sheet"
-        :class="sheetHeight"
+        class="shrink-0 border-line"
+        :class="[
+          side
+            ? 'absolute left-4 z-20 w-float overflow-hidden rounded-card shadow-float'
+            : 'lg:w-panel lg:border-l max-lg:absolute max-lg:inset-x-0 max-lg:bottom-0 max-lg:z-20 max-lg:overflow-hidden max-lg:rounded-t-sheet max-lg:shadow-sheet',
+          sheetHeight,
+        ]"
+        :style="side ? sideStyle : sheetStyle"
+        @pointerdown="onSheetDown"
+        @pointermove="onSheetMove"
+        @pointerup="onSheetUp"
+        @pointercancel="onSheetUp"
       >
         <div
           :key="panelKey"
@@ -810,8 +970,12 @@ function onMoveEnd(view: MapViewState) {
             :loading="loadingSpot"
             :nearby="nearby"
             :castle="castleOfSpot"
+            :snap="spotSheet ? snap : side ? 'full' : undefined"
+            :no-handle="side"
             @close="closeSpot"
             @select-pack="select"
+            @snap-step="onSnapStep"
+            @head-height="headPx = $event"
           />
         </div>
       </aside>
@@ -820,8 +984,22 @@ function onMoveEnd(view: MapViewState) {
 </template>
 
 <style scoped>
-/* 手機的景點卡片（DESIGN.md §9）：升上來 0.32s、往下收 0.2s；開到一半又關會直接反轉 */
+/* 手機的景點卡片（DESIGN.md §9）：升上來 0.32s、往下收 0.2s；開到一半又關會直接反轉。
+   換段（收合、半開、全開）時高度 0.28s；拖曳中跟著手指，不加 transition */
 @media (max-width: 1023.98px) {
+  .side-enter-active {
+    transition: transform 0.32s var(--ease-out-soft);
+  }
+  .side-leave-active {
+    transition: transform 0.2s var(--ease-out-soft);
+  }
+  .side-enter-from,
+  .side-leave-to {
+    transform: translateX(calc(-100% - 1rem));
+  }
+  .sheet-snap {
+    transition: height 0.28s var(--ease-out-soft);
+  }
   .sheet-enter-active {
     transition: transform 0.32s var(--ease-out-soft);
   }
@@ -835,14 +1013,21 @@ function onMoveEnd(view: MapViewState) {
 }
 /* 減少動態：手機的卡片不升降，aside 的 data-reduce="fade" 淡入、關閉時淡出（桌機由內容的 panel-in 淡入） */
 @media (max-width: 1023.98px) and (prefers-reduced-motion: reduce) {
-  .sheet-enter-active {
+  .sheet-snap {
     transition: none;
   }
-  .sheet-leave-active {
+  .sheet-enter-active,
+  .side-enter-active {
+    transition: none;
+  }
+  .sheet-leave-active,
+  .side-leave-active {
     transition: opacity 0.2s ease;
   }
   .sheet-enter-from,
-  .sheet-leave-to {
+  .sheet-leave-to,
+  .side-enter-from,
+  .side-leave-to {
     transform: none;
     opacity: 0;
   }

@@ -96,7 +96,7 @@ export function distanceM(lat1: number, lng1: number, lat2: number, lng2: number
   return 2 * r * Math.asin(Math.sqrt(a))
 }
 
-/** 收集冊的日本地圖（DESIGN.md §7.19）：一縣一條 SVG path */
+/** 收集冊、經縣值、位置小框、分享圖的日本地圖（DESIGN.md §7.19、§7.21）：一縣一條 SVG path */
 export interface PrefPath {
   pref: string
   d: string
@@ -104,7 +104,7 @@ export interface PrefPath {
 export interface JapanOutline {
   viewBox: string
   paths: PrefPath[]
-  /** 沖繩移到左上的框（x, y, w, h） */
+  /** 沖繩放大移到左上的框（x, y, w, h） */
   inset: [number, number, number, number]
 }
 
@@ -112,7 +112,20 @@ export interface JapanOutline {
 const LNG0 = 128.3
 const LAT0 = 45.7
 const KX = Math.cos((36.5 * Math.PI) / 180) * 10
-const OKINAWA_SHIFT: [number, number] = [5.67, 18.3]
+
+// 沖繩的框：放大 3 倍（手機上原比例的沖繩本島只有約 6×17px，點不到；手機版計畫第二階段 19）。
+// 3 倍放不下整個縣，分成兩塊、縮短中間的海：沖繩本島一帶（含久米島）在框的右上，
+// 先島諸島（宮古、八重山、與那國）在左下，方向和實際一樣。框在日本海（北海道以西、佐渡以北）的空白處。
+export const OKINAWA_SCALE = 3
+const OKI_FRAME: [number, number] = [1, 1]
+const OKI_PAD = 3
+/** 先島諸島：經度小於這個 */
+const OKI_SAKI_LNG = 126
+/** 兩塊各自的西北角（經緯度）與它在框裡的位置（SVG 單位，從框的左上角加內距起算） */
+const OKI_MAIN = { lng: 126.6, lat: 27.15, x: 36, y: 0 }
+const OKI_SAKI = { lng: 122.85, lat: 24.95, x: 0, y: 36 }
+const OKI_SIZE: [number, number] = [36 + (128.4 - 126.6) * KX * OKINAWA_SCALE, 36 + (24.95 - 24.2) * 10 * OKINAWA_SCALE]
+const OKI_RECT: [number, number, number, number] = [OKI_FRAME[0], OKI_FRAME[1], OKI_SIZE[0] + OKI_PAD * 2, OKI_SIZE[1] + OKI_PAD * 2]
 // 離島：外框小於這個（度）的島不畫；東京的小笠原（北緯 32 度以南）不畫
 const MIN_ISLAND = 0.06
 const TOLERANCE = 0.45
@@ -127,18 +140,30 @@ export function inOkinawaInset(lng: number, lat: number): boolean {
   return lat < 27.05 && lng < 131.5
 }
 
-/** 經緯度 → 日本地圖 SVG 座標；沖繩一帶移到左上的框 */
+/** 沖繩框裡的座標（大東島這類框外的點貼到框的邊上） */
+function okinawaXY(lng: number, lat: number): [number, number] {
+  const g = lng < OKI_SAKI_LNG ? OKI_SAKI : OKI_MAIN
+  const [rx, ry, rw, rh] = OKI_RECT
+  const x = rx + OKI_PAD + g.x + (lng - g.lng) * KX * OKINAWA_SCALE
+  const y = ry + OKI_PAD + g.y + (g.lat - lat) * 10 * OKINAWA_SCALE
+  return [Math.min(Math.max(x, rx), rx + rw), Math.min(Math.max(y, ry), ry + rh)]
+}
+
+/** 經緯度 → 日本地圖 SVG 座標；沖繩一帶移到左上的框（放大 OKINAWA_SCALE 倍） */
 export function japanProject(lng: number, lat: number, inset = inOkinawaInset(lng, lat)): [number, number] {
-  return inset ? [px(lng + OKINAWA_SHIFT[0]), py(lat + OKINAWA_SHIFT[1])] : [px(lng), py(lat)]
+  return inset ? okinawaXY(lng, lat) : [px(lng), py(lat)]
 }
 
 /** 日本地圖 SVG 座標 → 經緯度（點在沖繩框裡時換回原本的位置） */
 export function japanUnproject(x: number, y: number): [number, number] {
-  const lng = x / KX + LNG0
-  const lat = LAT0 - y / 10
-  const [ix, iy, iw, ih] = outline?.inset ?? [0, 0, 0, 0]
-  if (x >= ix && x <= ix + iw && y >= iy && y <= iy + ih) return [lng - OKINAWA_SHIFT[0], lat - OKINAWA_SHIFT[1]]
-  return [lng, lat]
+  const [rx, ry, rw, rh] = OKI_RECT
+  if (x >= rx && x <= rx + rw && y >= ry && y <= ry + rh) {
+    const lx = x - rx - OKI_PAD
+    const ly = y - ry - OKI_PAD
+    const g = ly >= OKI_SAKI.y ? OKI_SAKI : OKI_MAIN
+    return [g.lng + (lx - g.x) / (KX * OKINAWA_SCALE), g.lat - (ly - g.y) / (10 * OKINAWA_SCALE)]
+  }
+  return [x / KX + LNG0, LAT0 - y / 10]
 }
 
 export async function japanOutline(): Promise<JapanOutline> {
@@ -146,7 +171,7 @@ export async function japanOutline(): Promise<JapanOutline> {
   const fs = await loadPrefectureShapes()
   const paths = fs.map((f) => {
     const pref = f.properties.pref
-    const [sx, sy] = pref === 'okinawa' ? OKINAWA_SHIFT : [0, 0]
+    const project = pref === 'okinawa' ? okinawaXY : (x: number, y: number): [number, number] => [px(x), py(y)]
     const polys = f.geometry.coordinates.filter((poly) => {
       const ring = poly[0] ?? []
       const xs = ring.map((p) => p[0])
@@ -159,7 +184,7 @@ export async function japanOutline(): Promise<JapanOutline> {
       for (const ring of poly) {
         const pts: [number, number][] = []
         for (const [x, y] of ring) {
-          const p: [number, number] = [px(x + sx), py(y + sy)]
+          const p = project(x, y)
           const l = pts[pts.length - 1]
           if (!l || Math.hypot(p[0] - l[0], p[1] - l[1]) >= TOLERANCE) pts.push(p)
         }
@@ -171,6 +196,6 @@ export async function japanOutline(): Promise<JapanOutline> {
   })
   const w = px(148.95)
   const h = py(26.95)
-  outline = { viewBox: `0 0 ${w.toFixed(1)} ${h.toFixed(1)}`, paths, inset: [px(128.4), py(45.62), px(137.4) - px(128.4), py(41.95) - py(45.62)] }
+  outline = { viewBox: `0 0 ${w.toFixed(1)} ${h.toFixed(1)}`, paths, inset: OKI_RECT }
   return outline
 }

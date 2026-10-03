@@ -1,7 +1,8 @@
 <script setup lang="ts">
-import { computed, nextTick, ref, watch } from 'vue'
+import { computed, nextTick, onBeforeUnmount, ref, watch } from 'vue'
 import { useRouter } from 'vue-router'
 
+import ActionMenu, { type MenuAction } from '../components/ActionMenu.vue'
 import BackLink from '../components/BackLink.vue'
 import DateRangePicker from '../components/DateRangePicker.vue'
 import ExportButtons from '../components/ExportButtons.vue'
@@ -18,15 +19,22 @@ import { useCatalogSpots } from '../composables/catalogSpots'
 import { useOnline } from '../composables/online'
 import { regionOf } from '../data/regions'
 import type { MapSpot } from '../services/bundles'
-import type { ExportFolder, ExportRow } from '../services/export'
+import { confirmDialog } from '../services/confirm'
+import { download, type ExportFolder, type ExportRow, toCsv, toKml } from '../services/export'
 import { drawTripRecap } from '../services/shareImage'
+import { showToast } from '../services/toast'
+import { coarse, wide } from '../services/viewport'
 import {
   addDays,
   allStops,
   dayCount,
   dayDate,
+  dayIndexOn,
   dayPref,
+  dayRouteUrls,
+  edgeTarget,
   findStop,
+  insertStop,
   MAX_DAYS,
   moveStop,
   removeStop,
@@ -38,6 +46,8 @@ import {
   type Trip,
   type TripContent,
   TRIP_NAME_MAX,
+  WAYPOINTS_DESKTOP,
+  WAYPOINTS_MOBILE,
   daysUntil,
   tripStatus,
 } from '../services/trip'
@@ -47,6 +57,8 @@ import { useUserStore } from '../stores/user'
 
 // 行程編輯（UX-FLOW.md C1–C5）：左側每天的停留點（拖曳排序、換天）與待排，右側地圖只顯示這趟的點；
 // 點某一天時地圖只顯示當天並依順序連線。每段相鄰停留點有 Google Maps 轉乘連結；整趟可匯出 KML / CSV。
+// 手機（<1024，決定事項 F3）：整頁一起捲，沒有內層捲動；sticky 天數條（DAY 1…／待排＋「地圖」）一次只顯示一天，
+// 地圖預設收起，打開是天數條下面 40dvh、只顯示選中的那天。旅途中進頁就選今天、打開地圖。
 const props = defineProps<{ id: string }>()
 const userStore = useUserStore()
 const trips = useTripsStore()
@@ -111,10 +123,14 @@ function setDates(start: string, end: string) {
 }
 const hasDates = computed(() => Boolean(trip.value?.start_date && trip.value?.end_date))
 
+// 手機上加了一天就換到那一天（天數條一次只顯示一天，否則看不到加在哪裡）
+let addPending = false
 function addDay() {
+  addPending = !wide.value
   mutate((t) => (t.days.length < MAX_DAYS ? resizeDays(t, t.days.length + 1) : null))
 }
 function removeDay(i: number) {
+  if (!wide.value && selectedDay.value === i) selectedDay.value = Math.max(0, i - 1)
   mutate((t) => {
     if (t.days.length <= 1 || !t.days[i]) return null
     const days = t.days.filter((_, j) => j !== i).map((d) => ({ stops: [...d.stops] }))
@@ -159,36 +175,161 @@ function onMove(from: StopPos, toDay: number) {
 function onShift(from: StopPos, delta: -1 | 1) {
   moveSpot(spotAt(from), (_, cur) => ({ day: cur.day, idx: cur.idx + (delta === 1 ? 2 : -1) }))
 }
+// 觸控的「⋯」選單：移到這天（或待排）的最前、最後
+function onEdge(from: StopPos, where: 'first' | 'last') {
+  moveSpot(spotAt(from), (t, cur) => edgeTarget(t, cur, where))
+}
+// 移除停留點後底部出現「復原」（決定事項 L）：放回原本那一天的原本位置
 function onRemove(at: StopPos) {
-  const spotId = spotAt(at)
-  if (!spotId) return
+  const t0 = trip.value
+  const stop = t0 ? stopAt(t0, at) : undefined
+  if (!stop || locked.value) return
   mutate((t) => {
-    const cur = findStop(t, spotId)
+    const cur = findStop(t, stop.spot_id)
     return cur ? removeStop(t, cur) : null
   })
+  showToast('已從行程移除', () => mutate((t) => insertStop(t, at, stop)))
 }
 
-const targets = computed(() => [
-  { value: -1, label: '待排' },
-  ...(trip.value?.days ?? []).map((_, i) => ({ value: i, label: `DAY ${i + 1}` })),
-])
+const targets = computed(() => {
+  const t = trip.value
+  return [
+    { value: -1, label: '待排' },
+    ...(t?.days ?? []).map((_, i) => {
+      const date = t && dayDate(t, i)
+      return { value: i, label: `DAY ${i + 1}`, hint: date ? monthDay(date) : undefined }
+    }),
+  ]
+})
 
-// 地圖：全部或某一天
+// 每天的 Google Maps 路線（UX-FLOW.md C5）：觸控裝置或窄螢幕可能在手機瀏覽器打開，用手機的 waypoint 上限（3），桌機 9
+const routes = computed(() => {
+  const max = wide.value && !coarse.value ? WAYPOINTS_DESKTOP : WAYPOINTS_MOBILE
+  return (trip.value?.days ?? []).map((d) => dayRouteUrls(d.stops, max))
+})
+
+/** 10/3 */
+function monthDay(d: string): string {
+  const [, m, day] = d.split('-').map(Number)
+  return `${m}/${day}`
+}
+
+// 旅途中的今天是第幾天（DAY 標記下的「今日」）
+const todayIdx = computed(() => {
+  const t = trip.value
+  return t && status.value === 'ongoing' ? dayIndexOn(t, trips.today) : null
+})
+
+// 地圖：全部或某一天。selectedDay 的 null 是全部（只有桌機有）、-1 是待排（只有手機的天數條有）；
+// 手機沒選過時是 DAY 1。
 const selectedDay = ref<number | null>(null)
+const activeDay = computed<number | null>(() => {
+  const d = selectedDay.value
+  if (wide.value) return d === -1 ? null : d
+  return d ?? 0
+})
 watch(
   () => trip.value?.days.length,
-  (n) => {
-    if (selectedDay.value !== null && (n ?? 0) <= selectedDay.value) selectedDay.value = null
+  (n, old) => {
+    const len = n ?? 0
+    if (addPending && old !== undefined && len > old) selectedDay.value = len - 1
+    addPending = false
+    if (selectedDay.value !== null && len <= selectedDay.value) selectedDay.value = wide.value ? null : Math.max(0, len - 1)
   },
 )
 const shownStops = computed<Stop[]>(() => {
   const t = trip.value
+  const d = activeDay.value
   if (!t) return []
-  return selectedDay.value === null ? allStops(t) : (t.days[selectedDay.value]?.stops ?? [])
+  if (d === null) return allStops(t)
+  return d === -1 ? t.unscheduled : (t.days[d]?.stops ?? [])
 })
 const mapSpots = computed<MapSpot[]>(() => shownStops.value.flatMap((s) => byId.value.get(s.spot_id) ?? []))
 const route = computed<[number, number][] | null>(() =>
-  selectedDay.value === null ? null : mapSpots.value.map((s) => [s.lng, s.lat] as [number, number]),
+  activeDay.value === null || activeDay.value === -1 ? null : mapSpots.value.map((s) => [s.lng, s.lat] as [number, number]),
+)
+
+// 手機的地圖切換；天數條（sticky）與它上面的定位點，用來在換天時把天數條留在畫面頂端
+const mapOpen = ref(false)
+const column = ref<HTMLElement | null>(null)
+const anchor = ref<HTMLElement | null>(null)
+const bar = ref<HTMLElement | null>(null)
+const strip = ref<HTMLElement | null>(null)
+const appMain = () => document.getElementById('app-main')
+/** 天數條在 <main> 裡原本的位置（沒有黏住時的 scrollTop） */
+function barTop(): number | null {
+  const main = appMain()
+  if (!main || !anchor.value) return null
+  return anchor.value.getBoundingClientRect().top - main.getBoundingClientRect().top + main.scrollTop
+}
+function selectDay(i: number) {
+  selectedDay.value = i
+  // 往下捲過、天數條黏在頂端時，換天後從那天的第一個點看起
+  const main = appMain()
+  const top = barTop()
+  if (main && top !== null && main.scrollTop > top) main.scrollTop = top
+}
+// 天數條橫向捲動：選中的那一格捲進來
+function revealChip(i: number) {
+  const s = strip.value
+  const chip = s?.querySelector<HTMLElement>(`[data-day="${i}"]`)
+  if (!s || !chip) return
+  if (chip.offsetLeft < s.scrollLeft || chip.offsetLeft + chip.offsetWidth > s.scrollLeft + s.clientWidth) {
+    s.scrollLeft = chip.offsetLeft - 20
+  }
+}
+watch(activeDay, async (d) => {
+  if (wide.value || d === null) return
+  await nextTick()
+  revealChip(d)
+})
+// 天數條右邊還有沒露出來的格子（多天的行程、待排在最後）時右緣淡出
+const stripMore = ref(false)
+function syncStripMore() {
+  const s = strip.value
+  stripMore.value = !!s && s.scrollLeft + s.clientWidth < s.scrollWidth - 2
+}
+const stripObserver = typeof ResizeObserver !== 'undefined' ? new ResizeObserver(syncStripMore) : null
+watch(strip, (el, old) => {
+  if (old) {
+    stripObserver?.unobserve(old)
+    old.removeEventListener('scroll', syncStripMore)
+  }
+  if (el) {
+    stripObserver?.observe(el)
+    el.addEventListener('scroll', syncStripMore, { passive: true })
+  }
+  syncStripMore()
+})
+watch(() => trip.value?.days.length, () => void nextTick(syncStripMore))
+onBeforeUnmount(() => stripObserver?.disconnect())
+
+// 旅途中進頁就選今天（決定事項 F3、第二階段 12，只有手機）：打開地圖，
+// 頁面捲到天數條黏在頂端（返回時回到原本的位置，就不捲）
+let initFor = ''
+watch(
+  () => [props.id, Boolean(trip.value)] as const,
+  async ([id, has]) => {
+    if (!has || initFor === id) return
+    // 從一趟行程直接換到另一趟時元件不會重建：左欄的捲動位置不要沿用
+    if (initFor && column.value) column.value.scrollTop = 0
+    if (initFor && strip.value) strip.value.scrollLeft = 0
+    initFor = id
+    selectedDay.value = null
+    mapOpen.value = false
+    const i = todayIdx.value
+    // 桌機照舊：地圖顯示全部、左欄從頭看起（今天那一天只標「今日」）
+    if (i === null || wide.value) return
+    selectedDay.value = i
+    mapOpen.value = true
+    await nextTick()
+    await new Promise((r) => requestAnimationFrame(r))
+    revealChip(i)
+    const main = appMain()
+    const top = barTop()
+    if (main && top !== null && main.scrollTop === 0) main.scrollTop = top
+  },
+  { immediate: true },
 )
 // 顯示的地點組合變了才重新定位（同一天換順序不動地圖）
 const bounds = ref<[number, number, number, number] | null>(null)
@@ -209,7 +350,20 @@ const focusId = ref<string | null>(null)
 async function focusStop(id: string) {
   focusId.value = id
   await nextTick()
-  document.getElementById(`stop-${id}`)?.scrollIntoView({ block: 'nearest', behavior: 'smooth' })
+  const el = document.getElementById(`stop-${id}`)
+  if (!el) return
+  if (wide.value) {
+    el.scrollIntoView({ block: 'nearest', behavior: 'smooth' })
+    return
+  }
+  // 手機整頁捲動：不要捲到天數條與地圖（sticky）底下
+  const main = appMain()
+  if (!main || !bar.value) return
+  const r = el.getBoundingClientRect()
+  const top = bar.value.getBoundingClientRect().bottom
+  const bottom = main.getBoundingClientRect().bottom
+  if (r.top < top) main.scrollBy({ top: r.top - top - 8, behavior: 'smooth' })
+  else if (r.bottom > bottom) main.scrollBy({ top: r.bottom - bottom + 8, behavior: 'smooth' })
 }
 
 // 匯出：每天一個 folder（PLAN.md §8），待排放最後
@@ -229,20 +383,45 @@ const folders = computed<ExportFolder[]>(() => {
   return out
 })
 
+// 手機的「更多」（決定事項 D2）：匯出、回顧圖、刪除收在這裡，按鈕列只留一列
+const moreItems = computed<MenuAction[]>(() => {
+  const hasRows = folders.value.some((f) => f.rows.length)
+  const out: MenuAction[] = [
+    { key: 'kml', label: '匯出 KML', disabled: !hasRows },
+    { key: 'csv', label: '匯出 CSV', disabled: !hasRows },
+    { key: 'recap', label: '回顧圖', disabled: !trip.value?.days.some((d) => d.stops.length) },
+  ]
+  if (isOwner.value) out.push({ key: 'delete', label: '刪除行程', danger: true, disabled: locked.value, group: 1 })
+  return out
+})
+function onMore(key: string) {
+  const title = trip.value?.name || 'ひとめぐり 行程'
+  if (key === 'kml') download(title, 'kml', toKml(title, folders.value))
+  else if (key === 'csv') download(title, 'csv', toCsv(folders.value.flatMap((f) => f.rows), ['日', '順序']))
+  else if (key === 'recap') recapOpen.value = true
+  else if (key === 'delete') void del()
+}
+
 async function del() {
   const t = trip.value
   const others = t ? t.members.length - 1 : 0
-  const msg = `刪除行程「${t?.name || '未命名行程'}」？${others ? `共編的 ${others} 位成員也會看不到。` : ''}`
-  if (!t || !window.confirm(msg)) return
+  if (!t) return
+  const ok = await confirmDialog({
+    title: `刪除行程「${t.name || '未命名行程'}」？`,
+    body: others ? `共編的 ${others} 位成員也會看不到。` : undefined,
+    ok: '刪除',
+    danger: true,
+  })
+  if (!ok) return
   await trips.remove(t.id)
   await router.push(status.value === 'done' ? '/log' : '/trips')
 }
 </script>
 
 <template>
-  <div v-if="trip" class="flex min-h-0 flex-1 max-lg:flex-col">
-    <!-- 左：行程內容 -->
-    <section class="flex min-h-0 flex-col gap-5 overflow-y-auto border-line px-5 pt-6 pb-24 lg:w-[460px] lg:shrink-0 lg:border-r max-lg:order-2">
+  <div v-if="trip" class="flex flex-1 max-lg:flex-col lg:min-h-0">
+    <!-- 左：行程內容（手機沒有內層捲動，整頁一起捲） -->
+    <section ref="column" class="flex flex-col gap-5 border-line px-5 pt-6 pb-24 lg:min-h-0 lg:w-[460px] lg:shrink-0 lg:overflow-y-auto lg:border-r">
       <BackLink :to="status === 'done' ? '/log' : '/trips'">{{ status === 'done' ? '紀錄' : '行程' }}</BackLink>
 
       <div class="flex flex-col gap-3">
@@ -272,11 +451,12 @@ async function del() {
         <p v-if="locked" class="w-fit rounded-tag bg-ink px-1.5 text-caption font-bold text-paper" role="status">離線中・行程不能修改</p>
         <p v-else-if="trips.error" class="text-caption text-danger" role="alert">{{ trips.error }}</p>
         <TripMembers :trip="trip" />
-        <div class="flex flex-wrap gap-2">
+        <!-- 手機窄螢幕（<640）內距與間距縮一點，旅前準備、旅前小書、離線用、更多排得進一列 -->
+        <div class="flex flex-wrap gap-2 max-sm:gap-1.5">
           <button
             v-if="status === 'done'"
             type="button"
-            class="relative flex h-9 items-center rounded-control bg-region-strong px-3.5 text-label font-bold text-white active:translate-y-px"
+            class="relative flex h-9 items-center rounded-control bg-region-strong px-3.5 text-label font-bold text-white active:translate-y-px pointer-coarse:h-tap max-sm:px-2.5"
             @click="packOpen = true"
           >
             開卡包
@@ -285,18 +465,18 @@ async function del() {
           <!-- 一個畫面只有一個 Primary（DESIGN §7.1）：結束後「開卡包」是 Primary，「旅前準備」退成 Secondary -->
           <RouterLink
             :to="`/trips/${trip.id}/prep`"
-            class="flex h-9 items-center rounded-control px-3.5 text-label no-underline active:translate-y-px"
+            class="flex h-9 items-center rounded-control px-3.5 text-label no-underline active:translate-y-px pointer-coarse:h-tap max-sm:px-2.5"
             :class="status === 'done' ? 'border border-line bg-paper text-ink hover:bg-surface' : 'bg-region-strong font-bold text-white'"
           >旅前準備</RouterLink>
           <RouterLink
             :to="`/trips/${trip.id}/book`"
-            class="flex h-9 items-center rounded-control border border-line bg-paper px-3 text-label text-ink no-underline hover:bg-surface active:not-disabled:translate-y-px"
+            class="flex h-9 items-center rounded-control border border-line bg-paper px-3 text-label text-ink no-underline hover:bg-surface active:not-disabled:translate-y-px pointer-coarse:h-tap max-sm:px-2.5"
           >旅前小書</RouterLink>
-          <ExportButtons :title="trip.name || 'ひとめぐり 行程'" :folders="folders" :leading="['日', '順序']" />
-          <OfflineButton :trip="trip" />
+          <ExportButtons class="max-lg:hidden" :title="trip.name || 'ひとめぐり 行程'" :folders="folders" :leading="['日', '順序']" />
+          <OfflineButton :trip="trip" class="max-sm:px-2.5" />
           <button
             type="button"
-            class="h-9 rounded-control border border-line bg-paper px-3 text-label text-ink hover:bg-surface disabled:cursor-not-allowed disabled:opacity-40 active:not-disabled:translate-y-px"
+            class="h-9 rounded-control max-lg:hidden border border-line bg-paper px-3 text-label text-ink hover:bg-surface disabled:cursor-not-allowed disabled:opacity-40 active:not-disabled:translate-y-px pointer-coarse:h-tap"
             :disabled="!trip.days.some((d) => d.stops.length)"
             @click="recapOpen = true"
           >回顧圖</button>
@@ -304,46 +484,112 @@ async function del() {
             v-if="isOwner"
             type="button"
             :disabled="locked"
-            class="h-9 rounded-control border border-line bg-paper px-3 text-label text-danger hover:not-disabled:bg-surface disabled:cursor-not-allowed disabled:opacity-40 active:not-disabled:translate-y-px"
+            class="h-9 rounded-control border border-line bg-paper px-3 text-label text-danger max-lg:hidden hover:not-disabled:bg-surface disabled:cursor-not-allowed disabled:opacity-40 active:not-disabled:translate-y-px pointer-coarse:h-tap"
             @click="del"
           >刪除</button>
+          <!-- 手機：匯出、回顧圖、刪除收進「更多」（決定事項 D2） -->
+          <span class="contents lg:hidden">
+            <ActionMenu
+              label="更多"
+              :items="moreItems"
+              trigger-class="flex h-9 items-center gap-1 rounded-control border border-line bg-paper pr-2 pl-3 text-label max-sm:pr-1.5 max-sm:pl-2.5 text-ink hover:bg-surface active:not-disabled:translate-y-px pointer-coarse:h-tap"
+              @select="onMore"
+            >
+              更多
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" class="text-sub" aria-hidden="true"><path d="M6 9l6 6 6-6" /></svg>
+            </ActionMenu>
+          </span>
         </div>
         <!-- 這趟達成的初訪章與成就（DESIGN.md §7.25） -->
         <AchvRow v-if="status === 'done'" :trip="trip" :size="40" />
       </div>
 
-      <div class="flex items-center gap-3 text-label">
+      <div v-if="wide" class="flex items-center gap-3 text-label pointer-coarse:-mx-1.5 pointer-coarse:-my-2.5">
         <button
           type="button"
-          class="border-b-2 pb-0.5"
+          class="pointer-coarse:px-1.5 pointer-coarse:py-2.5"
           :class="selectedDay === null ? 'border-region-strong font-bold text-ink' : 'border-transparent text-sub hover:text-ink active:text-ink'"
           :aria-pressed="selectedDay === null"
           @click="selectedDay = null"
         >
-          全部
+          <span class="block border-b-2 border-inherit pb-0.5">全部</span>
         </button>
       </div>
 
-      <!-- 每一天 -->
-      <section v-for="(d, i) in trip.days" :key="i" class="flex flex-col gap-1.5" :aria-label="`DAY ${i + 1}`">
-        <div class="flex items-center gap-2" :data-pref="dayPref(d)">
+      <!-- 手機：sticky 天數條＋地圖（決定事項 F3）。定位點記下天數條原本的位置；-mt-5 抵掉定位點多出來的間距 -->
+      <div v-if="!wide" ref="anchor" class="h-0" aria-hidden="true"></div>
+      <div v-if="!wide" ref="bar" class="sticky top-0 z-10 -mx-5 -mt-5 flex flex-col bg-paper">
+        <div class="flex items-center gap-2 border-b border-line-soft py-1.5 pr-5">
+          <div ref="strip" class="scroll-quiet flex min-w-0 flex-1 gap-1.5 overflow-x-auto overscroll-x-contain pr-1 pl-5" :class="stripMore ? 'fade-x-end' : ''" role="group" aria-label="天數">
+            <button
+              v-for="(d, i) in trip.days"
+              :key="i"
+              type="button"
+              :data-day="i"
+              :data-pref="dayPref(d)"
+              class="flex h-tap min-w-14 shrink-0 flex-col items-center justify-center gap-0.5 rounded-control px-2.5 leading-none active:translate-y-px"
+              :class="activeDay === i ? (dayPref(d) ? 'bg-region text-on-region' : 'bg-ink text-paper') : 'bg-surface text-ink'"
+              :aria-pressed="activeDay === i"
+              @click="selectDay(i)"
+            >
+              <span class="font-latin text-label font-bold">DAY {{ i + 1 }}</span>
+              <span v-if="i === todayIdx" class="text-micro font-bold">今日</span>
+              <span v-else-if="dayDate(trip, i)" class="font-latin text-micro">{{ monthDay(dayDate(trip, i)!) }}</span>
+            </button>
+            <button
+              type="button"
+              data-day="-1"
+              class="flex h-tap min-w-14 shrink-0 flex-col items-center justify-center gap-0.5 rounded-control px-2.5 leading-none active:translate-y-px"
+              :class="activeDay === -1 ? 'bg-ink text-paper' : 'bg-surface text-ink'"
+              :aria-pressed="activeDay === -1"
+              @click="selectDay(-1)"
+            >
+              <span class="text-label font-bold">待排</span>
+              <span class="font-latin text-micro">{{ trip.unscheduled.length }}</span>
+            </button>
+          </div>
           <button
             type="button"
-            class="flex items-center gap-2 rounded-control py-1 pr-2 pl-0.5 active:not-disabled:translate-y-px"
-            :class="selectedDay === i ? 'bg-region-tint' : 'hover:bg-surface'"
-            :aria-pressed="selectedDay === i"
-            @click="selectedDay = selectedDay === i ? null : i"
+            class="flex h-tap shrink-0 items-center gap-1.5 rounded-control border px-3 text-label font-bold active:translate-y-px"
+            :class="mapOpen ? 'border-ink bg-ink text-paper' : 'border-line bg-paper text-ink'"
+            :aria-expanded="mapOpen"
+            :aria-controls="mapOpen ? 'trip-map' : undefined"
+            @click="mapOpen = !mapOpen"
           >
-            <!-- DAY 標記（DESIGN.md §7.9）：當天主縣的顏色 -->
-            <span
-              class="flex size-11 shrink-0 flex-col items-center justify-center rounded-badge font-latin font-bold leading-none"
-              :class="dayPref(d) ? 'bg-region text-on-region' : 'bg-placeholder text-ink'"
-            >
-              <span class="text-micro leading-none">DAY</span><span class="text-[18px]">{{ i + 1 }}</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 4 3 6.5v13.5l6-2.5 6 2.5 6-2.5V4l-6 2.5L9 4zM9 4v13.5M15 6.5V20" /></svg>
+            地圖
+          </button>
+        </div>
+        <!-- 手機打橫：天數條＋地圖都 sticky，地圖矮一點，下面還看得到兩三站 -->
+        <div v-if="mapOpen" id="trip-map" class="relative h-[40dvh] border-b border-line-soft land:h-[32dvh]">
+          <MapView :spots="mapSpots" :bounds="bounds" :route="route" :selected-id="focusId" @select="focusStop" />
+        </div>
+      </div>
+
+      <!-- 每一天（手機一次只顯示天數條選中的那天） -->
+      <section v-for="(d, i) in trip.days" v-show="wide || activeDay === i" :key="i" :data-day="i" class="flex flex-col gap-1.5" :aria-label="`DAY ${i + 1}`">
+        <div class="flex items-center gap-2" :data-pref="dayPref(d)">
+          <!-- 桌機點 DAY 標記切換地圖只顯示這天；手機由天數條切換，這裡只是標頭 -->
+          <component
+            :is="wide ? 'button' : 'div'"
+            v-bind="wide ? { type: 'button', 'aria-pressed': selectedDay === i } : {}"
+            class="flex items-center gap-2 rounded-control py-1 pr-2 pl-0.5"
+            :class="wide ? ['active:not-disabled:translate-y-px', selectedDay === i ? 'bg-region-tint' : 'hover:bg-surface'] : ''"
+            @click="wide && (selectedDay = selectedDay === i ? null : i)"
+          >
+            <!-- DAY 標記（DESIGN.md §7.9）：當天主縣的顏色；旅途中的今天下面加「今日」 -->
+            <span class="flex shrink-0 flex-col items-center gap-1">
+              <span
+                class="flex size-11 shrink-0 flex-col items-center justify-center rounded-badge font-latin font-bold leading-none"
+                :class="dayPref(d) ? 'bg-region text-on-region' : 'bg-placeholder text-ink'"
+              >
+                <span class="text-micro leading-none">DAY</span><span class="text-[18px]">{{ i + 1 }}</span>
+              </span>
+              <span v-if="i === todayIdx" class="rounded-tag bg-region-strong px-1.5 text-caption font-bold text-white">今日</span>
             </span>
             <span v-if="dayDate(trip, i)" class="font-latin text-body-sm text-ink">{{ shortDate(dayDate(trip, i)!) }}</span>
             <span v-if="dayPref(d)" lang="ja" class="text-caption text-sub">{{ regionOf(dayPref(d))?.name.ja }}</span>
-          </button>
+          </component>
           <button
             v-if="!hasDates && trip.days.length > 1"
             type="button"
@@ -369,22 +615,40 @@ async function del() {
           @dragend="onDragEnd"
           @move="onMove"
           @shift="onShift"
+          @edge="onEdge"
           @remove="onRemove"
           @focus="focusStop"
         />
+        <!-- 這天的 Google Maps 路線：超過 waypoint 上限時拆段，按鈕寫這段從第幾站到第幾站 -->
+        <div v-if="routes[i]?.length" class="flex flex-wrap items-center gap-1.5 pl-9 pointer-coarse:pl-2.5" :data-pref="dayPref(d)">
+          <span v-if="routes[i]!.length > 1" class="mr-0.5 text-caption text-sub">Google Maps 路線</span>
+          <a
+            v-for="leg in routes[i]"
+            :key="leg.from"
+            :href="leg.url"
+            target="_blank"
+            rel="noopener"
+            :aria-label="routes[i]!.length > 1 ? `DAY ${i + 1} Google Maps 路線 第 ${leg.from + 1} 到 ${leg.to + 1} 站` : `DAY ${i + 1} Google Maps 路線`"
+            class="flex h-8 items-center gap-1.5 rounded-control border border-line bg-paper px-3 text-label text-ink no-underline hover:bg-surface active:translate-y-px pointer-coarse:h-tap"
+          >
+            <template v-if="routes[i]!.length > 1"><span class="font-latin">{{ leg.from + 1 }}–{{ leg.to + 1 }}</span></template>
+            <template v-else>Google Maps 路線</template>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="text-sub" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" /></svg>
+          </a>
+        </div>
       </section>
       <button
-        v-if="!hasDates"
+        v-if="!hasDates && activeDay !== -1"
         type="button"
         :disabled="locked"
-        class="h-10 w-fit rounded-control border border-line bg-paper px-3.5 text-body-sm text-ink hover:not-disabled:bg-surface disabled:cursor-not-allowed disabled:opacity-40 active:not-disabled:translate-y-px"
+        class="h-10 w-fit rounded-control border border-line bg-paper px-3.5 text-body-sm text-ink hover:not-disabled:bg-surface disabled:cursor-not-allowed disabled:opacity-40 active:not-disabled:translate-y-px pointer-coarse:h-tap"
         @click="addDay"
       >
         加一天
       </button>
 
-      <section class="flex flex-col gap-1.5 border-t border-line pt-4" aria-label="待排">
-        <h2 class="flex items-baseline gap-1.5 text-caption font-bold tracking-section text-sub">
+      <section v-show="wide || activeDay === -1" class="flex flex-col gap-1.5 lg:border-t lg:border-line lg:pt-4" aria-label="待排">
+        <h2 class="flex items-baseline gap-1.5 text-caption font-bold tracking-section text-sub max-lg:sr-only">
           待排<span class="font-latin font-normal tracking-normal">{{ trip.unscheduled.length }}</span>
         </h2>
         <TripStopList
@@ -401,6 +665,7 @@ async function del() {
           @dragend="onDragEnd"
           @move="onMove"
           @shift="onShift"
+          @edge="onEdge"
           @remove="onRemove"
           @focus="focusStop"
         />
@@ -409,7 +674,7 @@ async function del() {
     </section>
 
     <!-- 右：這趟的地圖 -->
-    <div class="relative min-h-0 flex-1 max-lg:order-1 max-lg:h-[36dvh] max-lg:flex-none">
+    <div v-if="wide" class="relative min-h-0 flex-1">
       <MapView :spots="mapSpots" :bounds="bounds" :route="route" :selected-id="focusId" @select="focusStop" />
     </div>
     <PackOpening v-if="packOpen" :trip="trip" @close="closePack" />

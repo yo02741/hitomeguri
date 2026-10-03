@@ -5,6 +5,10 @@
 @import "./regions.css";
 @import "./eras.css";
 
+/* 手機打橫（高 ≤500px、寬 <1024，決定事項 N2）：精簡 header、分頁放進 header、不顯示下方分頁列，地圖頁改成側欄。
+ * 寬 ≥1024 的視窗即使很矮也維持桌機版面 */
+@custom-variant land (@media (orientation: landscape) and (max-height: 500px) and (max-width: 1023.98px));
+
 @theme static {
   /* ---------- 字體 ---------- */
   --font-sans: "Noto Sans TC", "Noto Sans JP", system-ui, sans-serif;
@@ -160,7 +164,8 @@
   --spacing-sidebar: 20rem;       /* 320 左欄 */
   --spacing-panel: 25rem;         /* 400 右欄 */
   --spacing-float: 18.75rem;      /* 300 地圖左上浮動面板 */
-  --spacing-header: 3.75rem;      /* 60 header 高 */
+  --spacing-header: 3.75rem;      /* 60 header 高（手機打橫 44） */
+  --spacing-tabbar: 3.5rem;       /* 56 底部分頁列高（不含安全區；手機打橫與 ≥1024 沒有分頁列） */
   --spacing-hero: 15.625rem;      /* 250 海報區高 */
   --spacing-tap: 2.75rem;         /* 44 最小點擊區 */
 
@@ -219,6 +224,15 @@
   --animate-modal-in: modal-in 0.22s var(--ease-out-soft) both;
   @keyframes modal-in {
     from { opacity: 0; transform: translateY(8px) scale(0.98); }
+  }
+}
+
+/* 手機打橫（決定事項 N2）：header 縮成 44、沒有底部分頁列。用到這兩個高度的地方（搜尋結果、帳號選單、
+ * 浮動工具列、「有新版本」）跟著變 */
+@media (orientation: landscape) and (max-height: 500px) and (max-width: 1023.98px) {
+  :root {
+    --spacing-header: 2.75rem;
+    --spacing-tabbar: 0rem;
   }
 }
 
@@ -537,14 +551,33 @@
   --era-card-shadow: 0 0.3em 0.9em rgb(31 34 51 / 0.2);
 }
 
+/* 手機貼在底部分頁列（--spacing-tabbar＋安全區）上方 8px 的浮動工具列：補日期、經縣值的級數條（DESIGN.md §5.1） */
+@utility bottom-dock {
+  bottom: calc(var(--spacing-tabbar) + 0.5rem + env(safe-area-inset-bottom));
+}
+
 /* 捲軸：平常不顯示，滑過容器才出現。macOS 接滑鼠或系統設定「永遠顯示」時，
  * 原生捲軸會一直顯示，這裡把顏色設成透明、hover 時才上色。 */
+/* 橫向捲動列的右緣淡出：後面還有東西時加上（行程頁的天數條），捲到底就拿掉 */
+@utility fade-x-end {
+  mask-image: linear-gradient(to left, transparent, black 2.5rem);
+}
 @utility scroll-quiet {
   scrollbar-color: transparent transparent;
   &:hover {
     scrollbar-color: var(--region-line) transparent;
   }
 }
+/* 畫面外先不畫的長段落（深度探索的祭典月份、地區特色組）：高度先用 contain-intrinsic-size 的估計值，
+ * 畫過一次就記住實際高度。段落目錄跳過去之前，捲動容器加 data-lay-out 把全部排一次版，
+ * 停的位置才會準（composables/scrollSpy.ts） */
+@utility cv-auto {
+  content-visibility: auto;
+}
+[data-lay-out] .cv-auto {
+  content-visibility: visible;
+}
+
 /* ---------- 和風紋樣（DESIGN.md §3.6、web/src/data/patterns.ts）：白色＋透明的 SVG 圖塊當 alpha 遮罩，塗色用地區色 token ---------- */
 @utility wa-pattern {
   mask-image: var(--wa-tile);
@@ -703,7 +736,7 @@
     margin-right: calc(var(--map-inset-r) * -1);
   }
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1024px), screen and (orientation: landscape) and (max-height: 500px) {
   main[data-bleed] .map-root {
     --map-inset-b: env(safe-area-inset-bottom);
     margin-bottom: calc(var(--map-inset-b) * -1);
@@ -719,6 +752,6 @@
 }
 .map-root .maplibregl-ctrl-bottom-left,
 .map-root .maplibregl-ctrl-bottom-right {
-  /* --map-lift-b：手機的祭典小卡的高度（MapView 的 controlsLift），縮放鈕移到小卡上面 */
+  /* --map-lift-b：手機的祭典小卡、收合的景點卡片的高度（MapView 的 controlsLift），縮放鈕移到它們上面 */
   bottom: calc(var(--map-inset-b) + var(--map-lift-b, 0px));
 }

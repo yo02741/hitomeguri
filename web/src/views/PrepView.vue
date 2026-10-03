@@ -108,13 +108,13 @@ watch(
         <div class="flex flex-wrap items-center gap-3">
           <RouterLink
             :to="`/trips/${trip.id}/prep/practice`"
-            class="flex h-10 items-center rounded-control bg-paper px-4 text-body-sm font-bold text-ink no-underline active:translate-y-px"
+            class="flex h-10 items-center rounded-control bg-paper px-4 text-body-sm font-bold text-ink no-underline active:translate-y-px pointer-coarse:h-tap"
           >開始練習</RouterLink>
           <RouterLink
             :to="`/trips/${trip.id}/book`"
-            class="flex h-10 items-center rounded-control border-[1.5px] border-on-region px-4 text-body-sm font-bold text-on-region no-underline active:translate-y-px"
+            class="flex h-10 items-center rounded-control border-[1.5px] border-on-region px-4 text-body-sm font-bold text-on-region no-underline active:translate-y-px pointer-coarse:h-tap"
           >旅前小書</RouterLink>
-          <label class="flex cursor-pointer items-center gap-2 text-body-sm">
+          <label class="flex cursor-pointer items-center gap-2 text-body-sm pointer-coarse:min-h-tap">
             <input v-model="onlyMust" type="checkbox" class="size-4 accent-(--region-on)" />
             只看必備
           </label>
@@ -226,7 +226,7 @@ watch(
               <span class="h-px flex-1 bg-line" aria-hidden="true"></span>
               <button
                 type="button"
-                class="h-8 rounded-control border border-line bg-paper px-3 text-caption font-normal tracking-normal text-ink hover:bg-surface active:not-disabled:translate-y-px"
+                class="h-8 rounded-control border border-line bg-paper px-3 text-caption font-normal tracking-normal text-ink hover:bg-surface active:not-disabled:translate-y-px pointer-coarse:h-tap"
                 @click="gallery?.add()"
               >新增</button>
               <RouterLink v-if="finds.finds.length" to="/limited" class="text-caption font-normal tracking-normal text-sub active:text-ink">全部</RouterLink>

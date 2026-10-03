@@ -1,6 +1,7 @@
 import { defineStore } from 'pinia'
 import { computed, ref, shallowRef, watch } from 'vue'
 
+import { showToast } from '../services/toast'
 import { ensureSignedIn, firestore, waitFor } from '../services/userdb'
 import { useUserStore } from './user'
 
@@ -30,6 +31,19 @@ export interface SpotRef {
   id: string
   pref: string
   name: string
+}
+
+const refs = new Map<string, SpotRef>()
+/**
+ * 同一個景點每次拿到同一個物件：長清單每列的 VisitedToggle 用它當 prop，
+ * 清單重畫（篩選、選取）時 prop 沒變，幾百個去過鈕就不必跟著重畫。
+ */
+export function spotRef(id: string, pref: string, name: string): SpotRef {
+  const r = refs.get(id)
+  if (r && r.pref === pref && r.name === name) return r
+  const next = { id, pref, name }
+  refs.set(id, next)
+  return next
 }
 
 // firestore.rules 的上限
@@ -155,9 +169,16 @@ export const useMarksStore = defineStore('marks', () => {
     return { ...(m ?? {}), pref: s.pref, name: s.name }
   }
 
+  // 移除（取消收藏、取消去過、從清單移除）之後底部出現「復原」（services/toast.ts，決定事項 L）。
+  // 寫入前就出現：離線時寫入要等連線才完成。復原只補回那一個欄位，期間改過的其他欄位照留。
   function toggleFavorite(s: SpotRef) {
     return withUser((uid) => {
       const m = current(s)
+      if (m.favorite) {
+        showToast('已取消收藏', () =>
+          withUser((u) => writeMark(u, s.id, { ...current(s), favorite: true })),
+        )
+      }
       return writeMark(uid, s.id, { ...m, favorite: !m.favorite })
     })
   }
@@ -166,6 +187,12 @@ export const useMarksStore = defineStore('marks', () => {
     return withUser((uid) => {
       const m = current(s)
       if (m.visited && m.visited_on) lastVisitedOn.set(s.id, m.visited_on)
+      if (m.visited) {
+        const on = m.visited_on
+        showToast('已取消去過', () =>
+          withUser((u) => writeMark(u, s.id, { ...current(s), visited: true, visited_on: on })),
+        )
+      }
       const visitedOn = m.visited ? undefined : (m.visited_on ?? lastVisitedOn.get(s.id))
       return writeMark(uid, s.id, { ...m, visited: !m.visited, visited_on: visitedOn })
     })
@@ -198,6 +225,18 @@ export const useMarksStore = defineStore('marks', () => {
     return withUser((uid) => {
       const m = current(s)
       const now = m.lists ?? []
+      if (now.includes(listId)) {
+        const name = lists.value.find((l) => l.id === listId)?.name
+        showToast(name ? `已從「${name}」移除` : '已從清單移除', () =>
+          withUser((u) => {
+            const cur = current(s)
+            const ids = cur.lists ?? []
+            // 清單在這期間被刪掉了就不補
+            if (ids.includes(listId) || !lists.value.some((l) => l.id === listId)) return Promise.resolve()
+            return writeMark(u, s.id, { ...cur, lists: [...ids, listId].slice(-LISTS_PER_SPOT_MAX) })
+          }),
+        )
+      }
       const next = now.includes(listId) ? now.filter((x) => x !== listId) : [...now, listId].slice(-LISTS_PER_SPOT_MAX)
       return writeMark(uid, s.id, { ...m, lists: next })
     })

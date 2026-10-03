@@ -3,7 +3,7 @@ import { computed, onMounted, shallowRef } from 'vue'
 
 import { regionOf } from '../data/regions'
 import { JAPAN_ZOOM } from '../map/style'
-import { japanOutline, type JapanOutline, japanProject } from '../services/geo'
+import { inOkinawaInset, japanOutline, type JapanOutline, japanProject, OKINAWA_SCALE } from '../services/geo'
 
 // 地圖放大時的日本全圖（像手機相機放大時的全景小窗，DESIGN.md §7.5a）：
 // 目前看的範圍畫成框，範圍太小時改成一個點；目前的縣塗地區色；下方寫縣名與放大倍率。只顯示，不能點。
@@ -26,8 +26,10 @@ const view = computed(() => {
   const [x1, y1] = japanProject(w, n, false)
   const [x2, y2] = japanProject(e, s, false)
   const [cx, cy] = japanProject((w + e) / 2, (s + n) / 2)
-  const width = Math.abs(x2 - x1)
-  const height = Math.abs(y2 - y1)
+  // 沖繩的框放大了 OKINAWA_SCALE 倍，看的範圍也跟著放大
+  const k = inOkinawaInset((w + e) / 2, (s + n) / 2) ? OKINAWA_SCALE : 1
+  const width = Math.abs(x2 - x1) * k
+  const height = Math.abs(y2 - y1) * k
   return { cx, cy, x: cx - width / 2, y: cy - height / 2, width, height, tiny: width < 7 && height < 7 }
 })
 

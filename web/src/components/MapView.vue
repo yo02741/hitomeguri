@@ -26,6 +26,8 @@ const props = defineProps<{
   insets?: { top: number; bottom: number } | null
   /** 下方的控制項（縮放、出處）往上移的高度（px）：手機的祭典小卡不蓋住縮放鈕 */
   controlsLift?: number
+  /** 手機：右上角日本小框的上緣（px）；chip 軌道在地圖上方時排在軌道下面 */
+  locatorTop?: number
   /** 目前地區的縣界：虛線外框＋淡淡的地區色，看出縣的範圍 */
   outline?: GeoJSON.Feature | null
   /** 開啟中的擴充包：用主題色畫在最上層，景點變淡當底圖 */
@@ -874,7 +876,9 @@ function positionHover() {
   hover.value = { ...h, x: p.x, y: p.y }
 }
 
-function thumbFailed(h: Hover) {
+function thumbFailed(h: Hover | null) {
+  // 照片讀不到的時候游標可能已經離開（hover 已清掉）
+  if (!h) return
   if (h.thumb) failedThumbs.add(h.thumb)
   hover.value = { ...h, thumb: undefined }
 }
@@ -942,6 +946,8 @@ class TerrainControl implements maplibregl.IControl {
 
 // 角落的日本全圖（JapanLocator）：放大到看不出在哪裡時才出現；移動中每一格畫面更新一次
 const LOCATOR_ZOOM = 6.5
+// 手機：小框排在 chip 軌道下面時，和下方景點卡片之間放不下整個小框（約 130px 高）就先不顯示，不露出被卡片切掉的半個
+const locatorFits = computed(() => !props.locatorTop || size.value.h - (props.insets?.bottom ?? 0) - props.locatorTop - 10 >= 136)
 const locator = shallowRef<{ bounds: [number, number, number, number]; zoom: number } | null>(null)
 let locatorFrame = 0
 function updateLocator() {
@@ -1167,6 +1173,17 @@ defineExpose({
       duration: 1200,
     })
   },
+  /** 手機景點卡片換段之後：點被卡片或清單蓋住（或太靠邊）才平移到看得到的地圖中間，不改縮放 */
+  reveal(lng: number, lat: number) {
+    if (!map) return
+    map.resize()
+    const p = map.project([lng, lat])
+    const { w, h } = size.value
+    const c = cover.value
+    const m = 32
+    if (p.x >= c.left + m && p.x <= w - m && p.y >= c.top + m && p.y <= h - c.bottom - m) return
+    map.easeTo({ center: [lng, lat], offset: centerOffset(), duration: reducedMotion ? 0 : 400 })
+  },
 })
 </script>
 
@@ -1193,16 +1210,16 @@ defineExpose({
         <span aria-hidden="true">立<br />體</span>
       </button>
     </Teleport>
-    <!-- 手機打橫時地圖只剩兩百多 px 高，小框和縮放鈕疊在一起：不顯示小框 -->
+    <!-- 手機打橫時地圖只剩兩百多 px 高（左側欄旁邊、或和縮放鈕疊在一起）：不顯示小框 -->
     <Transition name="locator">
       <JapanLocator
-        v-if="locator && locator.zoom >= LOCATOR_ZOOM"
+        v-if="locator && locator.zoom >= LOCATOR_ZOOM && locatorFits"
         :bounds="locator.bounds"
         :zoom="locator.zoom"
         :pref="colorKey"
         class="absolute z-[2] print:hidden"
-        :class="insetLeft ? 'bottom-[calc(1rem+var(--map-inset-b))] w-[132px]' : 'top-2.5 right-[calc(0.625rem+var(--map-inset-r))] w-[96px] [@media(orientation:landscape)_and_(max-height:500px)]:hidden'"
-        :style="insetLeft ? { left: `${insetLeft}px` } : undefined"
+        :class="insetLeft ? 'bottom-[calc(1rem+var(--map-inset-b))] w-[132px] land:hidden' : 'top-2.5 right-[calc(0.625rem+var(--map-inset-r))] w-[96px] [@media(orientation:landscape)_and_(max-height:500px)]:hidden'"
+        :style="insetLeft ? { left: `${insetLeft}px` } : locatorTop ? { top: `calc(${locatorTop}px + 0.625rem)` } : undefined"
       />
     </Transition>
     <div

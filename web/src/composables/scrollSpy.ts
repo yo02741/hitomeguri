@@ -23,8 +23,9 @@ export function scrollParent(el: HTMLElement | null): HTMLElement | null {
  * ids 依文件順序（含子段落）；段落標題捲過容器頂端 offset px 內就算進入。捲過、而且捲到底時標最後一段
  * （資料還沒到時頁面很短，一開始就「在底部」，這時仍標第一段）。內容高度變了會重新判斷。
  * go(id) 平滑捲到該段並把網址 hash 設成 #id；捲動途中目錄直接停在目標，不跟著閃過中間的段落。
+ * offset 可以是函式（頁頂的 sticky 列高度會依寬度不同時）。
  */
-export function useScrollSpy(root: Ref<HTMLElement | null>, ids: () => string[], offset = 96) {
+export function useScrollSpy(root: Ref<HTMLElement | null>, ids: () => string[], offset: number | (() => number) = 96) {
   const router = useRouter()
   const active = ref<string | null>(null)
   let container: HTMLElement | null = null
@@ -40,9 +41,10 @@ export function useScrollSpy(root: Ref<HTMLElement | null>, ids: () => string[],
     const list = ids()
     const top = container.getBoundingClientRect().top
     let current = list[0] ?? null
+    const within = typeof offset === 'function' ? offset() : offset
     for (const id of list) {
       const el = document.getElementById(id)
-      if (el && el.getBoundingClientRect().top - top <= offset) current = id
+      if (el && el.getBoundingClientRect().top - top <= within) current = id
     }
     const { scrollTop, clientHeight, scrollHeight } = container
     if (scrollTop > 0 && scrollTop + clientHeight >= scrollHeight - 2) current = list[list.length - 1] ?? current
@@ -54,13 +56,28 @@ export function useScrollSpy(root: Ref<HTMLElement | null>, ids: () => string[],
   function unlock() {
     lock = null
     window.clearTimeout(unlockTimer)
+    container?.removeAttribute('data-lay-out')
   }
 
-  function go(id: string, smooth = true) {
+  const frame2 = () => new Promise<void>((r) => requestAnimationFrame(() => requestAnimationFrame(() => r())))
+  let goSeq = 0
+  async function go(id: string, smooth = true) {
     const el = document.getElementById(id)
     if (!el) return
+    const seq = ++goSeq
     lock = id
     active.value = id
+    // 畫面外先不畫的段落（.cv-auto）高度還是估計值：先全部排一次版、等畫面記下實際高度再捲，停的位置才準。
+    // 捲完拿掉；記住的高度留著（contain-intrinsic-size: auto）
+    const c = container
+    if (c?.querySelector('.cv-auto') && !c.hasAttribute('data-lay-out')) {
+      c.setAttribute('data-lay-out', '')
+      await frame2()
+      // 等的時候又點了別的段落：交給後來那一次
+      if (seq !== goSeq) return
+      lock = id
+      c.setAttribute('data-lay-out', '')
+    }
     el.scrollIntoView({ behavior: smooth ? 'smooth' : 'auto', block: 'start' })
     void router.replace({ hash: `#${id}` })
     window.clearTimeout(unlockTimer)

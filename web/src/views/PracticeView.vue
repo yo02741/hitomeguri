@@ -104,10 +104,11 @@ function onKey(e: KeyboardEvent) {
 
 <template>
   <div v-if="trip" :data-pref="prefs[0]" class="flex min-h-full flex-col bg-surface" tabindex="-1" @keydown="onKey">
-    <div class="mx-auto flex w-full max-w-xl flex-1 flex-col gap-5 px-6 py-6">
+    <!-- 手機打橫（高 ≤500，第二階段 31）：卡片在左、計數與按鈕在右，卡片高度依畫面高度，一屏放得下 -->
+    <div class="mx-auto flex w-full max-w-xl flex-1 flex-col gap-5 px-6 py-6 land:max-w-3xl land:gap-3 land:py-3">
       <div class="flex items-center gap-3">
         <BackLink :to="`/trips/${trip.id}/prep`">旅前準備</BackLink>
-        <label class="ml-auto flex cursor-pointer items-center gap-2 text-label text-ink">
+        <label class="ml-auto flex cursor-pointer items-center gap-2 text-label text-ink pointer-coarse:min-h-tap">
           <input v-model="listenMode" type="checkbox" class="size-4 accent-(--region-strong)" />
           聽音
         </label>
@@ -126,16 +127,16 @@ function onKey(e: KeyboardEvent) {
         <span class="text-caption text-sub">熟練 <span class="font-latin">{{ mastered }}</span> ／ <span class="font-latin">{{ deck.length }}</span></span>
       </div>
 
-      <div v-if="loading || !progressLoaded" class="skeleton h-[280px] rounded-card" aria-busy="true"><span class="sr-only">載入中</span></div>
+      <div v-if="loading || !progressLoaded" class="skeleton h-[280px] rounded-card land:h-[min(280px,calc(100dvh-var(--spacing-header)-8rem))]" aria-busy="true"><span class="sr-only">載入中</span></div>
 
-      <template v-else-if="card">
-        <div class="flex items-center justify-between text-caption text-sub">
+      <div v-else-if="card" class="flex flex-col gap-5 land:grid land:grid-cols-[minmax(0,1fr)_15rem] land:content-start land:gap-x-5 land:gap-y-3">
+        <div class="flex items-center justify-between text-caption text-sub land:col-start-2">
           <span class="font-latin">{{ index + 1 }} / {{ queue.length }}</span>
           <span>第 <span class="font-latin">{{ box(card) }}</span> 箱</span>
         </div>
         <button
           type="button"
-          class="flex min-h-[300px] flex-col items-center justify-center gap-3 rounded-card border border-line bg-paper px-6 py-8 text-center shadow-float"
+          class="flex min-h-[300px] flex-col items-center justify-center gap-3 rounded-card border border-line bg-paper px-6 py-8 text-center shadow-float land:col-start-1 land:row-span-4 land:row-start-1 land:min-h-[min(300px,calc(100dvh-var(--spacing-header)-8rem))] land:py-4"
           :aria-label="flipped ? '翻回正面' : '翻面'"
           @click="flipped = !flipped"
         >
@@ -153,10 +154,10 @@ function onKey(e: KeyboardEvent) {
             <span v-if="card.note" class="text-body-sm text-ink-2">{{ card.note }}</span>
           </template>
         </button>
-        <div class="flex items-center justify-center">
+        <div class="flex items-center justify-center land:col-start-2">
           <SpeakButton :text="card.speak" :label="card.ja" />
         </div>
-        <div v-if="flipped" class="grid grid-cols-2 gap-3">
+        <div v-if="flipped" class="grid grid-cols-2 gap-3 land:col-start-2">
           <button type="button" class="h-12 rounded-control border border-line bg-paper text-body-sm text-ink hover:bg-surface active:translate-y-px" @click="answer(false)">
             再練一次
           </button>
@@ -164,10 +165,10 @@ function onKey(e: KeyboardEvent) {
             記得
           </button>
         </div>
-        <button v-else type="button" class="h-12 rounded-control border border-line bg-paper text-body-sm text-ink hover:bg-surface active:not-disabled:translate-y-px" @click="flipped = true">
+        <button v-else type="button" class="h-12 rounded-control border border-line bg-paper text-body-sm text-ink hover:bg-surface active:not-disabled:translate-y-px land:col-start-2" @click="flipped = true">
           看答案
         </button>
-      </template>
+      </div>
 
       <div v-else-if="done" class="flex flex-col items-center gap-4 rounded-card border border-line bg-paper px-6 py-10 text-center">
         <span class="text-title font-bold">這一輪練完了</span>

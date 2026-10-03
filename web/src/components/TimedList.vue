@@ -36,7 +36,7 @@ const sources = computed(() => {
       </li>
     </ul>
     <p v-for="[label, url] in sources" :key="label" class="mt-1.5 text-caption text-sub">
-      <a :href="url" target="_blank" rel="noopener" lang="ja" class="text-sub">{{ label }}</a>
+      <a :href="url" target="_blank" rel="noopener" lang="ja" class="text-sub pointer-coarse:py-4">{{ label }}</a>
     </p>
   </div>
 </template>

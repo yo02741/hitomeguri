@@ -3,6 +3,7 @@ import { computed, nextTick, onBeforeUnmount, onMounted, ref, watch } from 'vue'
 import type { RouteLocationRaw } from 'vue-router'
 
 import { useModal } from '../composables/modal'
+import { useSwipe } from '../composables/swipe'
 import { useTilt } from '../composables/tilt'
 import type { CardFace, Rarity } from '../services/card'
 import { reveal, showReveal } from '../services/cardReveal'
@@ -16,6 +17,7 @@ import SpotCard from './SpotCard.vue'
 
 // 收集卡放大檢視（DESIGN.md §7.19）：畫面中央一張大卡，點卡片翻面；手機可以用傾斜角度讓卡片轉動。
 // 收集冊裡可以左右切換上一張、下一張（方向鍵、左右滑）。Esc、點背景或「關閉」離開（原生 <dialog>，composables/modal.ts）。
+// 手機（<640）「關閉」在右上角；觸控裝置點卡片翻面，沒有「背面」鈕（手機版計畫第二階段 27）。
 // 去過的景點可以「抽一張」（用一張抽獎券，只抽還沒有的）；新拿到還沒看過的樣式標 NEW。
 // 收集到兩種以上時可以把目前這種設為收集冊的封面（stores/cards.ts）。
 // 打開時焦點在卡片上：Space、Enter 翻面。
@@ -126,74 +128,23 @@ function onKey(e: KeyboardEvent) {
   }
 }
 
-// 左右滑換卡：卡片跟著手指走（第一張、最後一張往外拉有阻力），放開時拉過 48px 或甩得夠快就換卡，
-// 不然彈回原位；滑過的那一下不算點擊（不翻面）。直接寫 style，不經過 reactive。
-let drag: { x: number; lastX: number; lastT: number; prevX: number; prevT: number } | null = null
-let swiped = false
-function onPointerDown(e: PointerEvent) {
-  swiped = false
-  drag = null
-  if (e.pointerType === 'mouse' || !props.position) return
-  const t = performance.now()
-  drag = { x: e.clientX, lastX: e.clientX, lastT: t, prevX: e.clientX, prevT: t }
-  ;(e.currentTarget as HTMLElement).setPointerCapture(e.pointerId)
-}
-function dragDx(clientX: number): number {
-  const dx = clientX - (drag?.x ?? clientX)
-  const p = props.position
-  const edge = p && ((dx > 0 && p.index === 0) || (dx < 0 && p.index >= p.total - 1))
-  return edge ? dx * 0.3 : dx
-}
+// 左右滑換卡（composables/swipe.ts）：卡片跟著手指走，順便轉一點；滑過的那一下不算點擊（不翻面）
+const swipe = useSwipe({
+  el: () => cardEl.value,
+  enabled: () => !!props.position,
+  canStep: (delta) => {
+    const p = props.position
+    return !!p && p.index + delta >= 0 && p.index + delta < p.total
+  },
+  step: (delta) => step(delta),
+  transform: (dx) => `translateX(${dx}px) rotateY(${-dx * 0.05}deg)`,
+})
 function onPointerMove(e: PointerEvent) {
   tilt.onPointerMove(e)
-  if (!drag || !cardEl.value) return
-  drag.prevX = drag.lastX
-  drag.prevT = drag.lastT
-  drag.lastX = e.clientX
-  drag.lastT = performance.now()
-  const dx = dragDx(e.clientX)
-  const el = cardEl.value
-  // 進場動畫的 fill 會蓋住 inline transform：拖的時候先拿掉（動畫早就播完，看起來不變）
-  el.style.animation = 'none'
-  el.style.transition = 'none'
-  el.style.transform = `translateX(${dx}px) rotateY(${-dx * 0.05}deg)`
-}
-// 沒換卡：彈回原位
-function settle() {
-  const el = cardEl.value
-  if (!el || !el.style.transform) return
-  el.style.transition = 'transform 0.2s var(--ease-out-soft)'
-  el.style.transform = ''
-  el.addEventListener('transitionend', () => (el.style.transition = ''), { once: true })
-}
-function onPointerUp(e: PointerEvent) {
-  if (!drag) return
-  const dx = dragDx(e.clientX)
-  // 速度（px/ms）：放開前最後一段移動
-  const dt = performance.now() - drag.prevT
-  const v = dt > 0 && dt < 100 ? (e.clientX - drag.prevX) / dt : 0
-  drag = null
-  const delta: -1 | 1 = (Math.abs(dx) > 48 ? dx : v) < 0 ? 1 : -1
-  const p = props.position
-  const canStep = Boolean(p && p.index + delta >= 0 && p.index + delta < p.total)
-  if ((Math.abs(dx) > 48 || Math.abs(v) > 0.11) && canStep) {
-    // 新卡用 :key 重建，舊卡的 inline style 跟著消失
-    swiped = true
-    step(delta)
-  } else {
-    if (Math.abs(dx) > 8) swiped = true
-    settle()
-  }
-}
-function onPointerCancel() {
-  drag = null
-  settle()
+  swipe.onPointerMove(e)
 }
 function onCardClick() {
-  if (swiped) {
-    swiped = false
-    return
-  }
+  if (swipe.consumeSwipe()) return
   flipped.value = !flipped.value
 }
 
@@ -215,7 +166,7 @@ onBeforeUnmount(() => document.removeEventListener('keydown', onKey))
     >
       <div
         data-reduce="fade"
-        class="viewer flex size-full flex-col items-center justify-center gap-5 bg-ink/75 p-4"
+        class="viewer relative flex size-full flex-col items-center justify-center gap-5 bg-ink/75 p-4"
         @click.self="emit('close')"
       >
         <div class="flex items-center gap-3">
@@ -239,9 +190,9 @@ onBeforeUnmount(() => document.removeEventListener('keydown', onKey))
             :class="enterFrom ? `from-${enterFrom}` : ''"
             :aria-label="flipped ? '翻回正面' : '翻到背面'"
             @click="onCardClick"
-            @pointerdown="onPointerDown"
-            @pointerup="onPointerUp"
-            @pointercancel="onPointerCancel"
+            @pointerdown="swipe.onPointerDown"
+            @pointerup="swipe.onPointerUp"
+            @pointercancel="swipe.onPointerCancel"
             @pointermove="onPointerMove"
             @pointerleave="tilt.reset"
           >
@@ -278,7 +229,7 @@ onBeforeUnmount(() => document.removeEventListener('keydown', onKey))
               v-for="(v, i) in variants"
               :key="v.key"
               type="button"
-              class="relative h-8 rounded-full px-3 text-caption font-bold active:not-disabled:translate-y-px"
+              class="relative h-8 rounded-full px-3 text-caption font-bold active:not-disabled:translate-y-px pointer-coarse:h-tap"
               :class="i === vi ? 'bg-paper text-ink' : 'bg-paper/15 text-white hover:bg-paper/25'"
               :aria-pressed="i === vi"
               @click="vi = i"
@@ -292,7 +243,7 @@ onBeforeUnmount(() => document.removeEventListener('keydown', onKey))
           <button
             v-if="visited && variants && variants.length > 1"
             type="button"
-            class="cover-btn -mt-2 flex h-8 items-center justify-center gap-1.5 rounded-full px-3 text-caption font-bold"
+            class="cover-btn -mt-2 flex h-8 items-center justify-center gap-1.5 rounded-full px-3 text-caption font-bold pointer-coarse:h-tap"
             :class="isCover ? 'text-white/70' : 'text-white underline decoration-white/40 underline-offset-4 hover:decoration-white'"
             :disabled="isCover"
             @click="setCover"
@@ -304,7 +255,7 @@ onBeforeUnmount(() => document.removeEventListener('keydown', onKey))
             <button
               v-if="touch && !tilt.reduced"
               type="button"
-              class="h-10 rounded-full bg-paper px-4 text-label font-bold text-ink disabled:opacity-60 active:not-disabled:translate-y-px"
+              class="h-10 rounded-full bg-paper px-4 text-label font-bold text-ink disabled:opacity-60 active:not-disabled:translate-y-px pointer-coarse:h-tap"
               :disabled="gyro"
               @click="startGyro"
             >
@@ -313,28 +264,37 @@ onBeforeUnmount(() => document.removeEventListener('keydown', onKey))
             <button
               v-if="canDraw"
               type="button"
-              class="flex h-10 items-center justify-center gap-2 rounded-full bg-paper px-4 text-label font-bold text-ink disabled:opacity-50 active:not-disabled:translate-y-px"
+              class="flex h-10 items-center justify-center gap-2 rounded-full bg-paper px-4 text-label font-bold text-ink disabled:opacity-50 active:not-disabled:translate-y-px pointer-coarse:h-tap"
               :disabled="!missing || !wallet.canSpend(1)"
               @click="drawOneCard"
             >
               {{ missing ? '抽一張' : '已收齊' }}
               <span v-if="missing" class="font-latin text-caption font-semibold text-sub">券 {{ wallet.left }}</span>
             </button>
-            <button type="button" class="h-10 rounded-full bg-paper px-4 text-label font-bold text-ink active:not-disabled:translate-y-px" @click="flipped = !flipped">
+            <!-- 觸控裝置點卡片就會翻面，不另外放「背面」 -->
+            <button v-if="!touch" type="button" class="h-10 rounded-full bg-paper px-4 text-label font-bold text-ink active:not-disabled:translate-y-px pointer-coarse:h-tap" @click="flipped = !flipped">
               {{ flipped ? '正面' : '背面' }}
             </button>
             <RouterLink
               v-if="to"
               :to="to"
-              class="flex h-10 items-center justify-center rounded-full bg-paper px-4 text-label font-bold text-ink no-underline active:not-disabled:translate-y-px"
+              class="flex h-10 items-center justify-center rounded-full bg-paper px-4 text-label font-bold text-ink no-underline active:not-disabled:translate-y-px pointer-coarse:h-tap"
             >
               地圖
             </RouterLink>
-            <button type="button" class="h-10 rounded-full bg-paper px-4 text-label font-bold text-ink active:not-disabled:translate-y-px" @click="emit('close')">
+            <button type="button" class="h-10 rounded-full bg-paper px-4 text-label font-bold text-ink active:not-disabled:translate-y-px max-sm:hidden pointer-coarse:h-tap" @click="emit('close')">
               關閉
             </button>
           </div>
         </div>
+        <!-- 手機（<640）：「關閉」在右上角，按鈕列放得進一行 -->
+        <button
+          type="button"
+          class="absolute top-[max(0.75rem,env(safe-area-inset-top))] right-[max(0.75rem,env(safe-area-inset-right))] flex h-10 items-center rounded-full bg-paper px-4 text-label font-bold text-ink active:not-disabled:translate-y-px sm:hidden pointer-coarse:h-tap"
+          @click="emit('close')"
+        >
+          關閉
+        </button>
       </div>
     </dialog>
   </Teleport>

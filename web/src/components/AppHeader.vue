@@ -5,8 +5,10 @@ import { useRoute, useRouter } from 'vue-router'
 import { useBackClose } from '../composables/backClose'
 import { useIndicator } from '../composables/indicator'
 import { useOnline } from '../composables/online'
+import { TABS, useTabNav } from '../composables/tabNav'
 
 import type { SearchHit } from '../services/search'
+import { land } from '../services/viewport'
 import { useExploreStore } from '../stores/explore'
 import { useUserStore } from '../stores/user'
 import SearchBox from './SearchBox.vue'
@@ -64,9 +66,11 @@ const tabs = [
   { to: '/log', label: '紀錄', match: ['log', 'cards', 'keiken', 'avatar', 'achievements'] },
 ]
 
-function isActive(tab: (typeof tabs)[number]) {
+function isActive(tab: { match: readonly string[] }) {
   return tab.match.includes(String(route.name))
 }
+// 手機打橫（決定事項 N2）：沒有底部分頁列，分頁放進 header；和底部分頁一樣記住各分頁的位置（決定事項 E2）
+const tabNav = useTabNav()
 // 選中分頁的底線滑過去（DESIGN.md §9）
 const nav = ref<HTMLElement | null>(null)
 const { rect, animate } = useIndicator(nav, () => nav.value?.querySelector<HTMLElement>('[aria-current="page"]'), () => route.name)
@@ -78,18 +82,34 @@ const { rect, animate } = useIndicator(nav, () => nav.value?.querySelector<HTMLE
     <Wordmark />
     <span v-if="!online" class="-ml-1 shrink-0 rounded-tag bg-ink px-1.5 text-caption font-bold whitespace-nowrap text-paper lg:-ml-5" role="status">離線</span>
 
-    <nav ref="nav" class="relative flex h-full max-lg:hidden" aria-label="主要">
-      <RouterLink
-        v-for="tab in tabs"
-        :key="tab.to"
-        :to="tab.to"
-      :data-nav="tab.to === '/log' ? 'log' : undefined"
-        class="flex items-center border-b-3 border-transparent px-4 text-body whitespace-nowrap no-underline active:text-ink"
-        :class="isActive(tab) ? 'font-bold text-ink' : 'text-sub'"
-        :aria-current="isActive(tab) ? 'page' : undefined"
-      >
-        {{ tab.label }}
-      </RouterLink>
+    <nav ref="nav" class="relative flex h-full max-lg:hidden land:flex" aria-label="主要">
+      <template v-if="land">
+        <a
+          v-for="tab in TABS"
+          :key="tab.to"
+          :href="tabNav.href(tab)"
+          :data-nav="tab.to === '/log' ? 'log' : undefined"
+          class="flex items-center border-b-3 border-transparent px-4 text-body whitespace-nowrap no-underline active:translate-y-px active:text-ink"
+          :class="isActive(tab) ? 'font-bold text-ink' : 'text-sub'"
+          :aria-current="isActive(tab) ? 'page' : undefined"
+          @click="tabNav.onTap($event, tab)"
+        >
+          {{ tab.label }}
+        </a>
+      </template>
+      <template v-else>
+        <RouterLink
+          v-for="tab in tabs"
+          :key="tab.to"
+          :to="tab.to"
+          :data-nav="tab.to === '/log' ? 'log' : undefined"
+          class="flex items-center border-b-3 border-transparent px-4 text-body whitespace-nowrap no-underline active:text-ink"
+          :class="isActive(tab) ? 'font-bold text-ink' : 'text-sub'"
+          :aria-current="isActive(tab) ? 'page' : undefined"
+        >
+          {{ tab.label }}
+        </RouterLink>
+      </template>
       <span
         v-if="rect"
         class="nav-indicator pointer-events-none absolute bottom-0 left-0 h-[3px] bg-region-strong"

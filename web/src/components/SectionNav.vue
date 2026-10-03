@@ -6,7 +6,10 @@ import type { NavItem } from '../composables/scrollSpy'
 
 // 頁內段落目錄（DESIGN.md §7.2a）。side：桌機左側直列，目前段落的子段落展開；
 // bar：手機頂部橫列，目前段落捲到中間。每一項都是 #錨點連結。
-const props = defineProps<{ items: NavItem[]; active: string | null; variant: 'side' | 'bar' }>()
+// tone="region"：放在地區色條上（深度探索頁海報捲走後，決定事項 I2），選中的膠囊改成紙色。
+const props = withDefaults(defineProps<{ items: NavItem[]; active: string | null; variant: 'side' | 'bar'; tone?: 'paper' | 'region' }>(), {
+  tone: 'paper',
+})
 const emit = defineEmits<{ go: [id: string] }>()
 
 /** 目前所在的第一層段落（捲到子段落時是它的上層） */
@@ -68,23 +71,47 @@ watch(activeTop, async (id) => {
   <nav v-else ref="bar" aria-label="段落" class="scroll-quiet relative flex gap-1 overflow-x-auto">
     <span
       v-if="rect"
-      class="pointer-events-none absolute top-0 left-0 rounded-full bg-region-strong"
-      :class="animate ? 'transition-[translate,width] duration-300 ease-out-soft' : ''"
+      class="pointer-events-none absolute top-0 left-0 rounded-full"
+      :class="[tone === 'region' ? 'bg-paper' : 'bg-region-strong', animate ? 'transition-[translate,width,background-color] duration-300 ease-out-soft' : '']"
       :style="{ translate: `${rect.x}px ${rect.y}px`, width: `${rect.w}px`, height: `${rect.h}px` }"
       aria-hidden="true"
     ></span>
+    <!-- 觸控裝置的點擊區撐到 44px 高，膠囊（底色、選中標示）仍是 32px -->
     <a
       v-for="it in items"
       :key="it.id"
       :data-id="it.id"
-      :data-group="it.id"
       :href="`#${it.id}`"
-      class="relative flex h-8 shrink-0 items-center rounded-full px-3 text-label no-underline transition-colors duration-300 ease-out-soft"
-      :class="activeTop === it.id ? ['font-bold text-white', rect ? '' : 'bg-region-strong'] : 'text-sub hover:bg-surface hover:text-ink active:bg-surface active:text-ink'"
+      class="group relative flex shrink-0 items-center text-label no-underline transition-colors duration-300 ease-out-soft pointer-coarse:h-tap"
+      :class="
+        activeTop === it.id
+          ? tone === 'region'
+            ? 'font-bold text-ink'
+            : 'font-bold text-white'
+          : tone === 'region'
+            ? 'text-on-region'
+            : 'text-sub hover:text-ink active:text-ink'
+      "
       :aria-current="activeTop === it.id ? 'location' : undefined"
       @click.prevent="emit('go', it.id)"
     >
-      {{ it.label }}
+      <span
+        :data-group="it.id"
+        class="flex h-8 items-center rounded-full px-3 transition-colors duration-300 ease-out-soft"
+        :class="
+          activeTop === it.id
+            ? rect
+              ? ''
+              : tone === 'region'
+                ? 'bg-paper'
+                : 'bg-region-strong'
+            : tone === 'region'
+              ? 'group-hover:bg-region-accent group-active:bg-region-accent'
+              : 'group-hover:bg-surface group-active:bg-surface'
+        "
+      >
+        {{ it.label }}
+      </span>
     </a>
   </nav>
 </template>

@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia'
-import { ref, shallowRef, triggerRef } from 'vue'
+import { computed, ref, shallowRef, triggerRef } from 'vue'
 
 import {
   type AchvData,
@@ -13,6 +13,7 @@ import {
   fetchPhrases,
   fetchTimed,
   fetchSeasons,
+  fetchPrefSpecialties,
   fetchSpecialties,
   type FlightRoute,
   type Specialty,
@@ -141,21 +142,49 @@ export const useCatalogStore = defineStore('catalog', () => {
     return d[id] ?? null
   }
 
-  const specialties = shallowRef<Specialty[]>([])
+  /** 地區特色：一縣一檔，用到哪幾縣才載入哪幾縣（深度探索、旅前準備）。specialties 是已載入的全部 */
+  const specialtiesByPref = shallowRef<Record<string, Specialty[]>>({})
+  const specialties = computed(() => Object.values(specialtiesByPref.value).flat())
+  async function loadSpecialties(prefs: string[]): Promise<void> {
+    await loadIndex()
+    const per = index.value?.specialties
+    if (!per) {
+      // 舊的索引（部署交替時）：讀全國一個檔
+      await once('specialties:all', async () => {
+        const by: Record<string, Specialty[]> = {}
+        for (const s of await fetchSpecialties(index.value?.extras?.specialties)) (by[s.prefecture] ??= []).push(s)
+        specialtiesByPref.value = by
+      })
+      return
+    }
+    await Promise.all(
+      prefs.map((p) => {
+        const meta = per[p]
+        if (!meta || specialtiesByPref.value[p]) return undefined
+        return once(`specialties:${p}`, async () => {
+          try {
+            specialtiesByPref.value[p] = await fetchPrefSpecialties(p, meta.version)
+            triggerRef(specialtiesByPref)
+          } catch {
+            // 讀不到（離線、沒有快取）：不記下來，下次打開再試
+          }
+        })
+      }),
+    )
+  }
   const flights = shallowRef<FlightRoute[]>([])
 
   const seasons = shallowRef<SeasonData | null>(null)
   // 載過就不再抓（once 只合併同時進行的請求，結束後就忘了）
   let extrasLoaded = false
   let flightsLoaded = false
-  /** 地區特色、航線、季節：深度探索與旅前準備用（specialties 約 1.8 MB，首頁、地圖頁不載） */
+  /** 航線、季節：深度探索與旅前準備用（地區特色另外依縣載入，loadSpecialties） */
   async function loadExtras(): Promise<void> {
     if (extrasLoaded) return
     await loadIndex()
     const v = index.value?.extras ?? {}
     await once('extras', async () => {
-      const [s, f, se] = await Promise.all([fetchSpecialties(v.specialties), flightsLoaded ? flights.value : fetchFlights(v.flights), fetchSeasons(v.seasons)])
-      specialties.value = s
+      const [f, se] = await Promise.all([flightsLoaded ? flights.value : fetchFlights(v.flights), fetchSeasons(v.seasons)])
       flights.value = f
       seasons.value = se
       extrasLoaded = flightsLoaded = true
@@ -285,7 +314,7 @@ export const useCatalogStore = defineStore('catalog', () => {
 
   return {
     loadSearch,
-    index, mapSpots, featured, loadFeatured, details, specialties, flights, seasons, festivals, loadFestivals, rail, loadRail, loadExtras, loadFlights, loadIndex, available,
+    index, mapSpots, featured, loadFeatured, details, specialties, loadSpecialties, flights, seasons, festivals, loadFestivals, rail, loadRail, loadExtras, loadFlights, loadIndex, available,
     loadMap, mapState, loadAllMaps, loadDetail, getSpot, packs, loadPack, phrases, loadPhrases, timed, loadTimed,
     achv, achvState, loadAchievements,
   }

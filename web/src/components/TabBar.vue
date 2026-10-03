@@ -1,19 +1,37 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, watch } from 'vue'
 import { useRoute } from 'vue-router'
 
+import { TABS as tabs, lastOfTab as last, useTabNav } from '../composables/tabNav'
 import { useIndicator } from '../composables/indicator'
 import { typing } from '../services/keyboard'
+import { useUserStore } from '../stores/user'
 
 // 手機與平板（<1024）的底部分頁（UX-FLOW.md §1.1）：探索／行程／紀錄；「我的」在頂部右側頭像。
+// 手機打橫（高 ≤500）不顯示，分頁放進 header（決定事項 N2）；這裡照樣記錄各分頁的位置，header 共用。
 // 觸控裝置上打字時收起，不蓋住輸入框（services/keyboard.ts）。
+// 各分頁記住上次的位置；點目前的分頁先捲回頂端，再點一次回到分頁的根（services/tabNav.ts）。
 const route = useRoute()
+const userStore = useUserStore()
+const { current, href, onTap } = useTabNav()
 
-const tabs = [
-  { to: '/', label: '探索', match: ['home', 'explore', 'map', 'region'], icon: 'M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z M12 12.2a2.6 2.6 0 1 0 0-5.2 2.6 2.6 0 0 0 0 5.2z' },
-  { to: '/trips', label: '行程', match: ['trips', 'trip', 'prep', 'practice', 'book'], icon: 'M4 5h16v15H4z M4 10h16 M9 3v4 M15 3v4' },
-  { to: '/log', label: '紀錄', match: ['log', 'cards', 'keiken', 'avatar', 'achievements'], icon: 'M5 4h11l3 3v13H5z M9 11h7 M9 15h7' },
-]
+watch(
+  () => route.fullPath,
+  () => {
+    if (current.value) last[current.value.to] = route.fullPath
+  },
+  { immediate: true },
+)
+// 登出、換帳號：上一個人的行程不留著（從未登入到登入不清）
+watch(
+  () => userStore.user?.uid ?? null,
+  (uid, old) => {
+    if (!old || uid === old) return
+    for (const k of Object.keys(last)) delete last[k]
+    if (current.value) last[current.value.to] = route.fullPath
+  },
+)
+
 // 選中分頁上緣的線滑過去（DESIGN.md §9）
 const nav = ref<HTMLElement | null>(null)
 const { rect, animate } = useIndicator(nav, () => nav.value?.querySelector<HTMLElement>('[aria-current="page"]'), () => route.name)
@@ -23,7 +41,7 @@ const { rect, animate } = useIndicator(nav, () => nav.value?.querySelector<HTMLE
   <nav
     v-show="!typing"
     ref="nav"
-    class="app-tabbar relative box-content flex h-14 shrink-0 border-t border-line bg-header pb-[env(safe-area-inset-bottom)] lg:hidden print:hidden [view-transition-name:app-tabbar]"
+    class="app-tabbar relative box-content flex h-tabbar shrink-0 border-t border-line bg-header pb-[env(safe-area-inset-bottom)] lg:hidden land:hidden print:hidden [view-transition-name:app-tabbar]"
     aria-label="主要"
   >
     <span
@@ -35,19 +53,20 @@ const { rect, animate } = useIndicator(nav, () => nav.value?.querySelector<HTMLE
     >
       <span class="nav-indicator h-[3px] w-10 rounded-b-full bg-region-strong"></span>
     </span>
-    <RouterLink
+    <a
       v-for="tab in tabs"
       :key="tab.to"
-      :to="tab.to"
+      :href="href(tab)"
       :data-nav="tab.to === '/log' ? 'log' : undefined"
       class="flex flex-1 flex-col items-center justify-center gap-0.5 text-caption no-underline active:translate-y-px active:text-ink"
-      :class="tab.match.includes(String(route.name)) ? 'font-bold text-ink' : 'text-sub'"
-      :aria-current="tab.match.includes(String(route.name)) ? 'page' : undefined"
+      :class="current?.to === tab.to ? 'font-bold text-ink' : 'text-sub'"
+      :aria-current="current?.to === tab.to ? 'page' : undefined"
+      @click="onTap($event, tab)"
     >
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
         <path :d="tab.icon" />
       </svg>
       {{ tab.label }}
-    </RouterLink>
+    </a>
   </nav>
 </template>

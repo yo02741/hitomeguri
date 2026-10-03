@@ -4,8 +4,10 @@ import { ref } from 'vue'
 
 import { whenIdle } from '../services/idle'
 import { pageLoadError } from '../services/pageLoad'
+import { dismissToast, holdToast, releaseToast, toast, undoToast } from '../services/toast'
 import { afterSplash } from '../services/splash'
 
+// 底部一行的提示，同一個位置一次一則：頁面載入失敗 > 可以復原的移除（services/toast.ts）> 有新版本。
 // 有新版本時底部一行提示（service worker 已下載好新版，按了才換，不在操作中途重新整理）
 // 開場畫面拿掉、瀏覽器空下來之後才註冊：預先快取約 2.7 MB，不和首次載入的資料搶頻寬
 const needRefresh = ref(false)
@@ -36,24 +38,42 @@ function updateServiceWorker() {
   <div
     v-if="pageLoadError"
     data-reduce="fade"
-    class="fixed bottom-[calc(5rem+env(safe-area-inset-bottom))] left-1/2 z-[60] flex -translate-x-1/2 animate-pop-up items-center gap-3 rounded-card bg-ink py-2 pr-2 pl-4 text-body-sm whitespace-nowrap text-paper shadow-float lg:bottom-6 print:hidden"
+    class="fixed bottom-[calc(var(--spacing-tabbar)+1.5rem+env(safe-area-inset-bottom))] left-1/2 z-[60] flex -translate-x-1/2 animate-pop-up items-center gap-3 rounded-card bg-ink py-2 pr-2 pl-4 text-body-sm whitespace-nowrap text-paper shadow-float lg:bottom-6 print:hidden"
     role="status"
   >
     {{ pageLoadError === 'offline' ? '離線中，無法開啟這一頁' : '無法開啟這一頁' }}
-    <button v-if="pageLoadError === 'failed'" type="button" class="h-9 rounded-control bg-paper px-3 text-label font-bold text-ink active:not-disabled:translate-y-px" @click="reloadOnce">重新整理</button>
-    <button type="button" class="grid size-9 place-items-center rounded-control text-paper/80 hover:text-paper active:not-disabled:translate-y-px" aria-label="關閉" @click="pageLoadError = null">
+    <button v-if="pageLoadError === 'failed'" type="button" class="h-9 rounded-control bg-paper px-3 text-label font-bold text-ink active:not-disabled:translate-y-px pointer-coarse:h-tap" @click="reloadOnce">重新整理</button>
+    <button type="button" class="grid size-9 place-items-center rounded-control text-paper/80 hover:text-paper active:not-disabled:translate-y-px pointer-coarse:size-tap" aria-label="關閉" @click="pageLoadError = null">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" /></svg>
+    </button>
+  </div>
+  <!-- 復原：key 換成新的一則時重播出現的動畫。左右各留 16px 再置中（left-1/2 的寫法寬度只剩半個畫面，清單名會被截掉） -->
+  <div
+    v-else-if="toast"
+    :key="toast.id"
+    data-reduce="fade"
+    class="fixed inset-x-4 bottom-[calc(var(--spacing-tabbar)+1.5rem+env(safe-area-inset-bottom))] z-[60] mx-auto flex w-fit max-w-[min(520px,calc(100vw-2rem))] animate-pop-up items-center gap-3 rounded-card bg-ink py-2 pr-2 pl-4 text-body-sm text-paper shadow-float lg:bottom-6 print:hidden"
+    role="status"
+    @pointerenter="holdToast"
+    @pointerleave="releaseToast"
+    @focusin="holdToast"
+    @focusout="releaseToast"
+  >
+    <span class="min-w-0 truncate">{{ toast.text }}</span>
+    <button v-if="toast.undo" type="button" class="h-9 shrink-0 rounded-control bg-paper px-3 text-label font-bold text-ink active:not-disabled:translate-y-px pointer-coarse:h-tap" @click="undoToast">復原</button>
+    <button type="button" class="grid size-9 shrink-0 place-items-center rounded-control text-paper/80 hover:text-paper active:not-disabled:translate-y-px pointer-coarse:size-tap" aria-label="關閉" @click="dismissToast">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" /></svg>
     </button>
   </div>
   <div
     v-else-if="needRefresh"
     data-reduce="fade"
-    class="fixed bottom-[calc(5rem+env(safe-area-inset-bottom))] left-1/2 z-[60] flex -translate-x-1/2 animate-pop-up items-center gap-3 rounded-card bg-ink py-2 pr-2 pl-4 text-body-sm text-paper shadow-float lg:bottom-6 print:hidden"
+    class="fixed bottom-[calc(var(--spacing-tabbar)+1.5rem+env(safe-area-inset-bottom))] left-1/2 z-[60] flex -translate-x-1/2 animate-pop-up items-center gap-3 rounded-card bg-ink py-2 pr-2 pl-4 text-body-sm text-paper shadow-float lg:bottom-6 print:hidden"
     role="status"
   >
     有新版本
-    <button type="button" class="h-9 rounded-control bg-paper px-3 text-label font-bold text-ink active:not-disabled:translate-y-px" @click="updateServiceWorker">重新整理</button>
-    <button type="button" class="grid size-9 place-items-center rounded-control text-paper/80 hover:text-paper active:not-disabled:translate-y-px" aria-label="稍後" @click="needRefresh = false">
+    <button type="button" class="h-9 rounded-control bg-paper px-3 text-label font-bold text-ink active:not-disabled:translate-y-px pointer-coarse:h-tap" @click="updateServiceWorker">重新整理</button>
+    <button type="button" class="grid size-9 place-items-center rounded-control text-paper/80 hover:text-paper active:not-disabled:translate-y-px pointer-coarse:size-tap" aria-label="稍後" @click="needRefresh = false">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" /></svg>
     </button>
   </div>

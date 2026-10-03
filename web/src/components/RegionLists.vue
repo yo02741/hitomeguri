@@ -6,6 +6,7 @@ import { regionOf } from '../data/regions'
 import { mapThumbUrl, type MapSpot } from '../services/bundles'
 import { useCatalogStore } from '../stores/catalog'
 import { useExploreStore } from '../stores/explore'
+import { spotRef } from '../stores/marks'
 import CollapseChevron from './CollapseChevron.vue'
 import SkeletonRows from './SkeletonRows.vue'
 import VisitedToggle from './VisitedToggle.vue'
@@ -36,13 +37,24 @@ const sections = computed(() =>
 watch(sections, (list) => {
   if (explore.category && !list.some((g) => g.key === explore.category)) explore.category = null
 })
-const shown = computed(() =>
-  explore.category ? sections.value.filter((g) => g.key === explore.category) : sections.value,
-)
+// 篩選只切換各段的顯示（v-show），不重建清單：切回「不限」時幾百列不用重畫（手機版計畫第二階段 3）
+const shown = (key: string) => !explore.category || explore.category === key
 
 const isOpen = (key: string) => !explore.collapsed.includes(`cat:${key}`)
 
-const failed = ref(new Set<string>())
+// 手機的類型列是一行橫向捲動：換縣時回到最左邊
+const catNav = ref<HTMLElement | null>(null)
+watch(
+  () => props.pref,
+  () => {
+    if (catNav.value) catNav.value.scrollLeft = 0
+  },
+)
+
+// 照片讀不到就把那張藏起來（露出底色）；不用響應式狀態，離線時一次幾十張讀不到也不會整份清單重畫幾十次
+function hidePhoto(e: Event) {
+  ;(e.target as HTMLElement).hidden = true
+}
 </script>
 
 <template>
@@ -60,35 +72,37 @@ const failed = ref(new Set<string>())
     資料準備中。
   </section>
   <section v-else class="flex min-h-0 flex-col rounded-card bg-paper p-1.5 shadow-float">
-    <h2 class="flex h-9 shrink-0 items-center justify-center gap-1.5 rounded-control bg-region-tint text-label font-bold text-ink">
+    <!-- 手機不放「景點」標題列（海報條已經寫了縣名），清單多露出一列多（手機版計畫第二階段 6） -->
+    <h2 class="flex h-9 shrink-0 items-center justify-center gap-1.5 rounded-control bg-region-tint text-label font-bold text-ink max-lg:sr-only">
       景點
     </h2>
 
-    <!-- 類型：文字索引列，選中的加底線；再點一次取消 -->
+    <!-- 類型：文字索引列，選中的加底線；再點一次取消。手機排成一行、橫向捲動 -->
     <nav
       v-if="sections.length > 1"
-      class="flex shrink-0 flex-wrap gap-x-3.5 gap-y-1 border-b border-line-soft px-2.5 pt-2.5 pb-2"
+      ref="catNav"
+      class="flex shrink-0 flex-wrap gap-x-3.5 gap-y-1 border-b border-line-soft px-2.5 pt-2.5 pb-2 pointer-coarse:gap-x-0.5 pointer-coarse:gap-y-0 pointer-coarse:px-1 pointer-coarse:py-0 max-lg:scroll-quiet max-lg:flex-nowrap max-lg:overflow-x-auto max-lg:overscroll-x-contain"
       aria-label="類型"
     >
       <button
         type="button"
-        class="border-b-2 pb-0.5 text-label"
+        class="shrink-0 text-label whitespace-nowrap pointer-coarse:px-1.5 pointer-coarse:py-2.5"
         :class="explore.category === null ? 'border-region-strong font-bold text-ink' : 'border-transparent text-sub hover:text-ink active:text-ink'"
         :aria-pressed="explore.category === null"
         @click="explore.category = null"
       >
-        不限
+        <span class="block border-b-2 border-inherit pb-0.5">不限</span>
       </button>
       <button
         v-for="g in sections"
         :key="g.key"
         type="button"
-        class="border-b-2 pb-0.5 text-label"
+        class="shrink-0 text-label whitespace-nowrap pointer-coarse:px-1.5 pointer-coarse:py-2.5"
         :class="explore.category === g.key ? 'border-region-strong font-bold text-ink' : 'border-transparent text-sub hover:text-ink active:text-ink'"
         :aria-pressed="explore.category === g.key"
         @click="explore.category = explore.category === g.key ? null : g.key"
       >
-        {{ g.label }}
+        <span class="block border-b-2 border-inherit pb-0.5">{{ g.label }}</span>
       </button>
     </nav>
 
@@ -96,11 +110,11 @@ const failed = ref(new Set<string>())
       class="scroll-quiet flex min-h-0 flex-col overflow-y-auto overscroll-contain pr-1.5 pb-1 pl-1.5"
       @mouseleave="emit('highlight', null)"
     >
-      <template v-for="g in shown" :key="g.key">
+      <div v-for="g in sections" v-show="shown(g.key)" :key="g.key" class="contents">
         <h3 class="sticky top-0 z-[1] shrink-0 bg-paper">
           <button
             type="button"
-            class="flex w-full items-center gap-2 px-1.5 pt-2.5 pb-1 text-left text-caption font-bold tracking-section text-sub hover:text-ink active:text-ink"
+            class="flex w-full items-center gap-2 px-1.5 pt-2.5 pb-1 text-left text-caption font-bold tracking-section text-sub hover:text-ink active:text-ink pointer-coarse:min-h-tap"
             :aria-expanded="isOpen(g.key)"
             @click="explore.toggleCollapsed(`cat:${g.key}`)"
           >
@@ -124,14 +138,14 @@ const failed = ref(new Set<string>())
           >
             <span class="size-11 shrink-0 overflow-hidden rounded-control bg-placeholder">
               <img
-                v-if="s.i && !failed.has(s.i)"
+                v-if="s.i"
                 data-photo
                 :src="mapThumbUrl(s.i)"
                 alt=""
                 loading="lazy"
                 referrerpolicy="no-referrer"
                 class="size-full object-cover"
-                @error="failed = new Set(failed).add(s.i)"
+                @error="hidePhoto"
               />
             </span>
             <span class="flex min-w-0 flex-col">
@@ -140,10 +154,10 @@ const failed = ref(new Set<string>())
             </span>
             <span v-if="s.c && g.tags.length > 1" class="ml-auto shrink-0 text-caption text-sub">{{ s.c }}</span>
           </button>
-          <VisitedToggle :spot="{ id: s.id, pref, name: s.n }" />
+          <VisitedToggle :spot="spotRef(s.id, pref, s.n)" />
         </div>
-      </template>
-      <p v-if="!shown.length" class="px-1.5 py-3 text-body-sm text-sub">資料準備中。</p>
+      </div>
+      <p v-if="!sections.length" class="px-1.5 py-3 text-body-sm text-sub">資料準備中。</p>
     </div>
 
   </section>

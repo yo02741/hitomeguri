@@ -135,7 +135,7 @@ function print() {
             v-for="p in ['A5', 'A4'] as const"
             :key="p"
             type="button"
-            class="h-8 rounded-control px-2.5 font-latin active:not-disabled:translate-y-px"
+            class="h-8 rounded-control px-2.5 font-latin active:not-disabled:translate-y-px pointer-coarse:h-tap"
             :class="paper === p ? 'bg-region-tint font-bold text-ink' : 'text-sub hover:text-ink'"
             :aria-pressed="paper === p"
             @click="paper = p"
@@ -144,18 +144,18 @@ function print() {
           </button>
         </div>
         <div class="flex flex-wrap items-center gap-x-3 gap-y-1 text-label">
-          <label v-for="p in PARTS" :key="p.key" class="flex cursor-pointer items-center gap-1.5">
+          <label v-for="p in PARTS" :key="p.key" class="flex cursor-pointer items-center gap-1.5 pointer-coarse:min-h-tap">
             <input v-model="parts[p.key]" type="checkbox" class="size-4 accent-(--region-strong)" />
             {{ p.label }}
           </label>
-          <label class="flex cursor-pointer items-center gap-1.5 border-l border-line pl-3">
+          <label class="flex cursor-pointer items-center gap-1.5 border-l border-line pl-3 pointer-coarse:min-h-tap">
             <input v-model="onlyMust" type="checkbox" class="size-4 accent-(--region-strong)" />
             只放必備會話
           </label>
         </div>
         <button
           type="button"
-          class="ml-auto h-10 rounded-control bg-region-strong px-4 text-body-sm font-bold text-white active:translate-y-px"
+          class="ml-auto h-10 rounded-control bg-region-strong px-4 text-body-sm font-bold text-white active:translate-y-px pointer-coarse:h-tap"
           @click="print"
         >
           列印／存成 PDF
@@ -217,7 +217,7 @@ function print() {
               <span class="w-5 shrink-0 pt-3 text-right font-latin font-bold text-sub">{{ j + 1 }}</span>
               <span class="flex min-w-0 flex-1 flex-col">
                 <span v-if="stopInfo(s).kana" lang="ja" class="text-[0.85em] tracking-kana text-sub">{{ stopInfo(s).kana }}</span>
-                <a :href="stopInfo(s).maps" lang="ja" class="w-fit text-[1.15em] font-black text-ink no-underline">{{ stopInfo(s).ja }}</a>
+                <a :href="stopInfo(s).maps" lang="ja" class="w-fit text-[1.15em] font-black text-ink no-underline pointer-coarse:-my-3 pointer-coarse:py-3">{{ stopInfo(s).ja }}</a>
                 <span class="text-[0.85em] text-sub">
                   <template v-if="stopInfo(s).zh">{{ stopInfo(s).zh }}</template>
                   <template v-if="stopInfo(s).zh && stopInfo(s).romaji">・</template>

@@ -199,6 +199,9 @@ def build(src: Path = SPOTS_DIR, dst: Path = BUNDLES_DIR) -> list[Path]:
     rail = build_rail(dst / "rail")
     index["rail"] = {pref: meta for pref, (_, meta) in rail.items()}
     written += [path for path, _ in rail.values()]
+    specialties = build_specialties(dst / "specialties")
+    index["specialties"] = {pref: meta for pref, (_, meta) in specialties.items()}
+    written += [path for path, _ in specialties.values()]
     festivals = build_festivals(dst / "festivals")
     index["festivals"] = {pref: meta for pref, (_, meta) in festivals.items()}
     written += [path for path, _ in festivals.values()]
@@ -379,6 +382,28 @@ def build_festivals(dst: Path) -> dict[str, tuple[Path, dict[str, Any]]]:
     return out
 
 
+def build_specialties(
+    dst: Path, src: Path = SPECIALTIES_DIR
+) -> dict[str, tuple[Path, dict[str, Any]]]:
+    """深度探索「地區特色」：一縣一檔（開深度探索頁、旅前準備時只載入用得到的縣）；
+    回傳 {縣: (路徑, 索引資訊)}。全國一個檔的 specialties.json 仍照寫（舊版前端還在用）。"""
+    out = {}
+    zh = _translations()
+    tag = _translation_tag()
+    for path in sorted(src.glob("*.json")) if src.exists() else []:
+        items = [
+            with_translation(
+                Specialty.model_validate(s).model_dump(mode="json", exclude_none=True), zh
+            )
+            for s in json.loads(path.read_text(encoding="utf-8"))
+        ]
+        if not items:
+            continue
+        version = hashlib.sha1(path.read_bytes() + tag).hexdigest()[:10]
+        out[path.stem] = (_write(dst / path.name, items), {"count": len(items), "version": version})
+    return out
+
+
 def build_timed(src: Path = TIMED_DIR, today: str | None = None) -> list[dict[str, Any]]:
     """期間限定：還沒過期的（valid_to ≥ 今天），依結束日排序。前端也會再依當天日期過濾。"""
     today = today or datetime.date.today().isoformat()
@@ -405,7 +430,8 @@ def load_phrases(src: Path = PHRASES_DIR) -> list[dict[str, Any]]:
 
 
 def build_extras(dst: Path = BUNDLES_DIR) -> list[Path]:
-    """地區特色（全部縣一個檔）、旅前準備會話、季節平年值、直飛航線（只含已驗證，§5.2b）。"""
+    """地區特色（全部縣一個檔，舊版前端用；新版讀 build_specialties 的分縣檔）、旅前準備會話、
+    季節平年值、直飛航線（只含已驗證，§5.2b）。"""
     specs: list[dict[str, Any]] = []
     zh = _translations()
     for path in sorted(SPECIALTIES_DIR.glob("*.json")) if SPECIALTIES_DIR.exists() else []:

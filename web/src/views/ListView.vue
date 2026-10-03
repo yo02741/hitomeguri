@@ -5,6 +5,7 @@ import { useRouter } from 'vue-router'
 import ExportButtons from '../components/ExportButtons.vue'
 import MarkedSpotList from '../components/MarkedSpotList.vue'
 import { type MarkedSpot, useMarkedSpots } from '../composables/markedSpots'
+import { confirmDialog } from '../services/confirm'
 import { markRow } from '../services/export'
 import { LIST_NAME_MAX, useMarksStore } from '../stores/marks'
 import { useUserStore } from '../stores/user'
@@ -38,7 +39,14 @@ function remove(r: MarkedSpot) {
 }
 
 async function del() {
-  if (!list.value || !window.confirm(`刪除清單「${list.value.name}」？清單裡景點的收藏與去過不受影響。`)) return
+  if (!list.value) return
+  const ok = await confirmDialog({
+    title: `刪除清單「${list.value.name}」？`,
+    body: '清單裡景點的收藏與去過不受影響。',
+    ok: '刪除',
+    danger: true,
+  })
+  if (!ok) return
   await marks.deleteList(props.id)
   await router.push('/me')
 }
@@ -46,7 +54,7 @@ async function del() {
 
 <template>
   <section class="mx-auto flex w-full max-w-3xl flex-col gap-6 px-6 pt-9 pb-24">
-    <RouterLink to="/me" class="flex w-fit items-center gap-1 text-label text-sub no-underline hover:text-ink active:text-ink">
+    <RouterLink to="/me" class="flex w-fit items-center gap-1 text-label text-sub no-underline hover:text-ink active:text-ink pointer-coarse:-my-3 pointer-coarse:py-3">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
         <path d="M15 5l-7 7 7 7" />
       </svg>
@@ -71,15 +79,15 @@ async function del() {
           </button>
         </form>
         <h1 v-else class="flex min-w-0 items-baseline gap-2 text-h2 font-black tracking-title">
-          <span class="truncate">{{ list.name }}</span>
+          <span class="line-clamp-2 break-words">{{ list.name }}</span>
           <span class="font-latin text-body font-normal tracking-normal text-sub">{{ rows.length }}</span>
         </h1>
         <div v-if="!editing" class="ml-auto flex flex-wrap gap-2">
           <ExportButtons :title="list.name" :rows="rows.map(markRow)" />
-          <button type="button" class="h-9 rounded-control border border-line bg-paper px-3 text-label text-ink hover:bg-surface active:not-disabled:translate-y-px" @click="startEdit">
+          <button type="button" class="h-9 rounded-control border border-line bg-paper px-3 text-label text-ink hover:bg-surface active:not-disabled:translate-y-px pointer-coarse:h-tap" @click="startEdit">
             改名
           </button>
-          <button type="button" class="h-9 rounded-control border border-line bg-paper px-3 text-label text-danger hover:bg-surface active:not-disabled:translate-y-px" @click="del">
+          <button type="button" class="h-9 rounded-control border border-line bg-paper px-3 text-label text-danger hover:bg-surface active:not-disabled:translate-y-px pointer-coarse:h-tap" @click="del">
             刪除
           </button>
         </div>

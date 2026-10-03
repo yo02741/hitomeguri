@@ -164,7 +164,7 @@ onBeforeUnmount(() => fresh.seen([...fresh.keys].filter((k) => k.startsWith('a:'
             <span v-if="tripCount">旅行 <span class="font-latin text-body-sm">{{ tripCount }}</span> 趟</span>
             <span v-if="sinceYear"><span class="font-latin text-body-sm">{{ sinceYear }}</span> 年起</span>
           </p>
-          <button ref="rulesBtn" type="button" class="-ml-2 h-8 w-fit rounded-control px-2 text-label font-bold hover:bg-paper/20 active:not-disabled:translate-y-px" aria-haspopup="dialog" @click="showRules = true">規則</button>
+          <button ref="rulesBtn" type="button" class="-ml-2 h-8 w-fit rounded-control px-2 text-label font-bold hover:bg-paper/20 active:not-disabled:translate-y-px pointer-coarse:h-tap" aria-haspopup="dialog" @click="showRules = true">規則</button>
         </div>
         <div class="max-md:hidden" aria-hidden="true">
           <AchvSeal v-if="hero" :def="hero.def" status="done" :at="hero.at" class="w-[140px] justify-self-center" />
@@ -237,7 +237,7 @@ onBeforeUnmount(() => fresh.seen([...fresh.keys].filter((k) => k.startsWith('a:'
         <div class="dot-sheet paper-grain rounded-card border border-line bg-paper p-4 sm:p-5">
           <p v-if="sec.dataState === 'failed'" class="flex flex-wrap items-center gap-3 text-body-sm text-sub">
             沒有載入
-            <button type="button" class="h-9 rounded-control border border-line bg-paper px-3 text-label text-ink hover:bg-surface active:not-disabled:translate-y-px" @click="achv.loadData()">重新載入</button>
+            <button type="button" class="h-9 rounded-control border border-line bg-paper px-3 text-label text-ink hover:bg-surface active:not-disabled:translate-y-px pointer-coarse:h-tap" @click="achv.loadData()">重新載入</button>
           </p>
           <ul v-else class="grid grid-cols-3 gap-x-2 gap-y-4 sm:grid-cols-4 lg:grid-cols-6">
             <li v-for="s in sec.items" :key="s.def.id">
