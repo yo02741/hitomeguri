@@ -188,7 +188,7 @@
   - 底線索引列（類型、月份、觀測站、品牌、行程的「全部」）：按鈕加 `pointer-coarse:px-1.5 py-2.5`，2px 底線改畫在裡面的 `<span class="block border-b-2 border-inherit pb-0.5">`（顏色仍寫在按鈕上），看起來仍是一行字；列的間距與內距等量縮回（`pointer-coarse:gap-x-0.5 gap-y-0`、`-mx-1.5 -my-2.5`）。
   - 選中標示是膠囊的（`SectionNav` bar）：連結 `pointer-coarse:h-tap`，膠囊仍是裡面 32px 高的 span。
   - 經縣值的級數：觸控裝置上 6 格連成無間隙的分段條（每格 44 高、平分剩下的寬度，最寬 44），相鄰的框線疊在一起（`-ml-px`），選中的那格在上層。
-  - 首頁的 47 縣清單、景點清單的類型小標（全寬 32 高）等第二階段要重排的地方先不動（`docs/手機版計畫.md` §3）。
+  - 首頁的 47 縣在手機改成站名板格（§7.5），每格就是 44 高；景點清單的類型分段小標（全寬 32 高）維持原樣。
 - 手機頁面上方預留 safe area：`pt-[max(env(safe-area-inset-top),12px)]`（只有 status bar 設成 `black-translucent` 時才需要；目前沒設，上方不留）。
 - 底部分頁列 `box-content h-14 pb-[env(safe-area-inset-bottom)]`：內容固定 56px，home indicator 的高度加在外面；貼著分頁列的浮動提示（AppUpdate）用 `bottom-[calc(5rem+env(safe-area-inset-bottom))]`，≥1024 沒有分頁列時 `lg:bottom-6`。
 - 橫向時左右的瀏海：header 用 `pl-[max(1rem,env(safe-area-inset-left))]`、`pr-[max(1rem,env(safe-area-inset-right))]`（`md:` 起 1.5rem）。`<main>` 左右讓出 `env(safe-area-inset-*)`，≥1024（沒有分頁列）底部也讓出。地圖頁（路由 `meta.bleed`，`<main data-bleed>`）的地圖鋪回瀏海底下，MapLibre 控制項與位置小框用 `.map-root` 的 `--map-inset-*` 縮回安全區內（`theme.css`）；手機海報條也鋪滿，文字內縮。
@@ -307,9 +307,15 @@ header 右側、登入鈕左邊（`SearchBox.vue`，每一頁都在；在行程�
 - 內容：左側假名（`text-caption tracking-kana`）＋縣名（`text-h3 font-black tracking-name`）；右側羅馬拼音（`font-latin font-bold text-body-sm tracking-[0.3em] uppercase`）＋地方名；已驗證的直飛航線在下一行（`font-latin font-semibold text-caption`）。
 - 卡片本身不可點。左側是返回鍵：44px、左箭頭＋「全國」小字，hover 時 `bg-region-accent` 底，`aria-label="回到全國地圖"`，點了回首頁的日本地圖；與縣名之間用一條 25% 透明的直線分隔。
 - 手機（<1024）改成地圖上方的海報條（`bg-region text-on-region`，高 56，鋪滿橫向的瀏海、文字內縮）：左端 44px「‹ 全國」（左箭頭＋`text-micro`「全國」，`aria-label="回到全國地圖"`）；中間假名（`text-caption tracking-kana`）疊在縣名（`text-h3 font-black`）上、右邊羅馬拼音（`font-latin text-caption`，超過 7 個字母不加字距，360 寬也放得下），不能點；右端「深度探索 ›」（`min-h-tap text-label font-bold`）。兩條分隔線都是 `bg-on-region opacity-25`，和桌機的地區標籤相同。直飛航線放在深度探索頁的海報（§7.5c）。
-- 下方是景點清單卡（`rounded-card bg-paper shadow-float`）：清單標題「景點」（不標件數、不標示精選，PLAN.md §6），列出該縣全部大點，地圖也顯示全部大點。分頁下方是類型索引列（文字＋2px 底線，選中 `border-region-strong font-bold`；不限／寺社／城・史跡／博物館／自然／娛樂／其他，只列有景點的類型，再點一次取消），同時篩選清單與地圖；分組定義在 `web/src/data/categories.ts`。不篩選時清單依類型分段，段首為 sticky 小標（類型＋件數），段內依分數。每列左側 44px 圓角縮圖（lazy 載入）＋假名／名稱＋細類型；滑過一列在地圖上標出該景點，點選則選取並飛過去。捲動區用 `scroll-quiet`（theme.css）：捲軸平常透明、滑過才顯示，右側 `pr-3` 讓捲軸不貼字。
+- 下方是景點清單卡（`rounded-card bg-paper shadow-float`）：清單標題「景點」（不標件數、不標示精選，PLAN.md §6），列出該縣全部大點，地圖也顯示全部大點。分頁下方是類型索引列（文字＋2px 底線，選中 `border-region-strong font-bold`；不限／寺社／城・史跡／博物館／自然／娛樂／其他，只列有景點的類型，再點一次取消），同時篩選清單與地圖；分組定義在 `web/src/data/categories.ts`。手機（<1024）不放「景點」標題列（海報條已經寫了縣名；標題留給讀屏器），類型索引列排成一行、橫向捲動（`scroll-quiet`，換縣時回到最左邊），390 寬時清單約露出 4.5 列。不篩選時清單依類型分段，段首為 sticky 小標（類型＋件數），段內依分數。每列左側 44px 圓角縮圖（lazy 載入）＋假名／名稱＋細類型；滑過一列在地圖上標出該景點，點選則選取並飛過去。捲動區用 `scroll-quiet`（theme.css）：捲軸平常透明、滑過才顯示，右側 `pr-3` 讓捲軸不貼字。
 - 主題篩選（茶、酒等）暫停，見 PLAN.md §1。
 - 首頁左上列出 47 都道府縣（依地方分組）；還沒有景點資料的縣字色用 `text-sub`，點進去用縣界範圍定位。
+- 手機（<1024）的首頁清單卡是依地方分組的站名板格（`HomeSidebar.vue`，決定事項 H2）：
+  - 標語縮成一行（`text-title font-black`）。
+  - 每個地方一列：左邊 48px 一欄地方名（`text-caption font-bold tracking-section text-sub`，「九州・沖縄」在「・」後換行），右邊 3 欄（640 以上 6 欄）站名板；地方之間 `border-line-soft` 細線。
+  - 站名板：`bg-surface rounded-control`，縣名置中（`text-body-sm font-bold tracking-name`，不放假名與羅馬拼音），底下一條 4px 縣色帶（`bg-region`，`data-pref`）；觸控裝置 44 高（`h-10 pointer-coarse:h-tap`）；按下 `bg-region-tint`＋1px 下沉。沒有景點資料的縣字色 `text-sub`。
+  - 手機不收合地方（桌機的一縣一列照舊可以收合）。
+  - 清單卡最高 50dvh（縣地圖的景點清單是 40dvh），390×844 一屏約 20 縣；手機打橫（高 ≤500px）時 40dvh。
 
 ### 7.5a 地圖 hover
 - 游標 14px 內最近的景點放大（半徑 11，外框 3），並顯示名稱小標（`bg-paper rounded-tag shadow-marker`）；點擊以放大中的景點為準。

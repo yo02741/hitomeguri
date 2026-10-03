@@ -872,7 +872,7 @@ function onMoveEnd(view: MapViewState) {
             @select="select"
             @highlight="(id) => mapRef?.highlight(id)"
           />
-          <HomeSidebar v-else v-show="listShown" :available="available" class="max-lg:max-h-[40dvh]" />
+          <HomeSidebar v-else v-show="listShown" :available="available" class="max-lg:max-h-[50dvh] max-lg:[@media(orientation:landscape)_and_(max-height:500px)]:max-h-[40dvh]" />
         </template>
       </div>
 

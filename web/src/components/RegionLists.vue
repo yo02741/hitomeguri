@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, watch } from 'vue'
+import { computed, ref, watch } from 'vue'
 
 import { CATEGORY_GROUPS, categoryGroup } from '../data/categories'
 import { regionOf } from '../data/regions'
@@ -42,6 +42,15 @@ const shown = (key: string) => !explore.category || explore.category === key
 
 const isOpen = (key: string) => !explore.collapsed.includes(`cat:${key}`)
 
+// 手機的類型列是一行橫向捲動：換縣時回到最左邊
+const catNav = ref<HTMLElement | null>(null)
+watch(
+  () => props.pref,
+  () => {
+    if (catNav.value) catNav.value.scrollLeft = 0
+  },
+)
+
 // 照片讀不到就把那張藏起來（露出底色）；不用響應式狀態，離線時一次幾十張讀不到也不會整份清單重畫幾十次
 function hidePhoto(e: Event) {
   ;(e.target as HTMLElement).hidden = true
@@ -63,19 +72,21 @@ function hidePhoto(e: Event) {
     資料準備中。
   </section>
   <section v-else class="flex min-h-0 flex-col rounded-card bg-paper p-1.5 shadow-float">
-    <h2 class="flex h-9 shrink-0 items-center justify-center gap-1.5 rounded-control bg-region-tint text-label font-bold text-ink">
+    <!-- 手機不放「景點」標題列（海報條已經寫了縣名），清單多露出一列多（手機版計畫第二階段 6） -->
+    <h2 class="flex h-9 shrink-0 items-center justify-center gap-1.5 rounded-control bg-region-tint text-label font-bold text-ink max-lg:sr-only">
       景點
     </h2>
 
-    <!-- 類型：文字索引列，選中的加底線；再點一次取消 -->
+    <!-- 類型：文字索引列，選中的加底線；再點一次取消。手機排成一行、橫向捲動 -->
     <nav
       v-if="sections.length > 1"
-      class="flex shrink-0 flex-wrap gap-x-3.5 gap-y-1 border-b border-line-soft px-2.5 pt-2.5 pb-2 pointer-coarse:gap-x-0.5 pointer-coarse:gap-y-0 pointer-coarse:px-1 pointer-coarse:py-0"
+      ref="catNav"
+      class="flex shrink-0 flex-wrap gap-x-3.5 gap-y-1 border-b border-line-soft px-2.5 pt-2.5 pb-2 pointer-coarse:gap-x-0.5 pointer-coarse:gap-y-0 pointer-coarse:px-1 pointer-coarse:py-0 max-lg:scroll-quiet max-lg:flex-nowrap max-lg:overflow-x-auto max-lg:overscroll-x-contain"
       aria-label="類型"
     >
       <button
         type="button"
-        class="text-label pointer-coarse:px-1.5 pointer-coarse:py-2.5"
+        class="shrink-0 text-label whitespace-nowrap pointer-coarse:px-1.5 pointer-coarse:py-2.5"
         :class="explore.category === null ? 'border-region-strong font-bold text-ink' : 'border-transparent text-sub hover:text-ink active:text-ink'"
         :aria-pressed="explore.category === null"
         @click="explore.category = null"
@@ -86,7 +97,7 @@ function hidePhoto(e: Event) {
         v-for="g in sections"
         :key="g.key"
         type="button"
-        class="text-label pointer-coarse:px-1.5 pointer-coarse:py-2.5"
+        class="shrink-0 text-label whitespace-nowrap pointer-coarse:px-1.5 pointer-coarse:py-2.5"
         :class="explore.category === g.key ? 'border-region-strong font-bold text-ink' : 'border-transparent text-sub hover:text-ink active:text-ink'"
         :aria-pressed="explore.category === g.key"
         @click="explore.category = explore.category === g.key ? null : g.key"
