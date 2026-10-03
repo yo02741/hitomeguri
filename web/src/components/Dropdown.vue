@@ -18,6 +18,7 @@ const props = withDefaults(
     label: string
     size?: 'sm' | 'md'
     align?: 'start' | 'end'
+    disabled?: boolean
   }>(),
   { size: 'md', align: 'start' },
 )
@@ -76,7 +77,8 @@ watch(active, async () => {
     aria-haspopup="listbox"
     :aria-expanded="open"
     :aria-controls="id"
-    class="inline-flex shrink-0 items-center gap-1 rounded-control border border-line bg-paper text-left text-ink hover:bg-surface active:not-disabled:translate-y-px"
+    :disabled="disabled"
+    class="inline-flex shrink-0 items-center gap-1 rounded-control border border-line bg-paper text-left text-ink hover:not-disabled:bg-surface disabled:cursor-not-allowed disabled:opacity-40 active:not-disabled:translate-y-px"
     :class="size === 'sm' ? 'h-8 pr-1.5 pl-2 text-caption pointer-coarse:h-tap' : 'h-10 pr-2 pl-3 text-body-sm'"
     @click="open ? (open = false) : show()"
     @keydown="onTriggerKey"

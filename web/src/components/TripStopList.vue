@@ -19,6 +19,8 @@ const props = defineProps<{
   targets: { value: number; label: string }[]
   dropAt: StopPos | null
   focusId?: string | null
+  /** 離線時不能修改：拖曳、移到、往前往後、移除都停用 */
+  locked?: boolean
 }>()
 const emit = defineEmits<{
   dragstart: [pos: StopPos]
@@ -103,14 +105,14 @@ const isDrop = (idx: number) => props.dropAt?.day === props.day && props.dropAt.
       </li>
       <li
         :id="`stop-${s.spot_id}`"
-        draggable="true"
+        :draggable="!locked"
         class="group flex items-center gap-2 rounded-control border-t-2 py-1.5 pr-1 pl-1"
         :class="[isDrop(i) ? 'border-region-strong' : 'border-transparent', focusId === s.spot_id ? 'bg-region-tint' : 'hover:bg-surface active:bg-surface']"
         @dragstart="onStart(i, $event)"
         @dragover="onOverRow(i, $event)"
         @dragend="emit('dragend')"
       >
-        <span class="grid w-7 shrink-0 cursor-grab place-items-center text-sub" aria-hidden="true">
+        <span class="grid w-7 shrink-0 place-items-center text-sub" :class="locked ? 'opacity-40' : 'cursor-grab'" aria-hidden="true">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><circle cx="9" cy="6" r="1.6" /><circle cx="15" cy="6" r="1.6" /><circle cx="9" cy="12" r="1.6" /><circle cx="15" cy="12" r="1.6" /><circle cx="9" cy="18" r="1.6" /><circle cx="15" cy="18" r="1.6" /></svg>
         </span>
         <span v-if="day >= 0" class="grid size-6 shrink-0 place-items-center rounded-full bg-ink font-latin text-caption font-bold text-paper">{{ i + 1 }}</span>
@@ -127,22 +129,23 @@ const isDrop = (idx: number) => props.dropAt?.day === props.day && props.dropAt.
           :label="`${s.name} 移到`"
           size="sm"
           align="end"
+          :disabled="locked"
           class="w-[5.5rem]"
           @update:model-value="emit('move', { day, idx: i }, Number($event))"
         />
         <span class="flex shrink-0 flex-col pointer-coarse:hidden">
-          <button type="button" :aria-label="`${s.name} 往前`" :disabled="i === 0" class="grid h-4 w-6 place-items-center text-sub hover:text-ink disabled:opacity-30 active:not-disabled:translate-y-px" @click="emit('shift', { day, idx: i }, -1)">
+          <button type="button" :aria-label="`${s.name} 往前`" :disabled="locked || i === 0" class="grid h-4 w-6 place-items-center text-sub hover:text-ink disabled:opacity-30 active:not-disabled:translate-y-px" @click="emit('shift', { day, idx: i }, -1)">
             <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 15l6-6 6 6" /></svg>
           </button>
-          <button type="button" :aria-label="`${s.name} 往後`" :disabled="i === stops.length - 1" class="grid h-4 w-6 place-items-center text-sub hover:text-ink disabled:opacity-30 active:not-disabled:translate-y-px" @click="emit('shift', { day, idx: i }, 1)">
+          <button type="button" :aria-label="`${s.name} 往後`" :disabled="locked || i === stops.length - 1" class="grid h-4 w-6 place-items-center text-sub hover:text-ink disabled:opacity-30 active:not-disabled:translate-y-px" @click="emit('shift', { day, idx: i }, 1)">
             <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6" /></svg>
           </button>
         </span>
-        <button type="button" :aria-label="`從行程移除：${s.name}`" class="grid size-8 shrink-0 place-items-center rounded-control text-sub hover:bg-surface hover:text-ink pointer-coarse:hidden active:not-disabled:translate-y-px" @click="remove(i)">
+        <button type="button" :aria-label="`從行程移除：${s.name}`" :disabled="locked" class="grid size-8 shrink-0 place-items-center rounded-control text-sub hover:not-disabled:bg-surface hover:not-disabled:text-ink disabled:cursor-not-allowed disabled:opacity-40 pointer-coarse:hidden active:not-disabled:translate-y-px" @click="remove(i)">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" /></svg>
         </button>
         <span class="hidden pointer-coarse:contents">
-          <StopMenu :name="s.name" :first="i === 0" :last="i === stops.length - 1" @shift="emit('shift', { day, idx: i }, $event)" @remove="remove(i)" />
+          <StopMenu :name="s.name" :disabled="locked" :first="i === 0" :last="i === stops.length - 1" @shift="emit('shift', { day, idx: i }, $event)" @remove="remove(i)" />
         </span>
       </li>
     </template>

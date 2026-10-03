@@ -15,6 +15,7 @@ import SkeletonRows from '../components/SkeletonRows.vue'
 import TripMembers from '../components/TripMembers.vue'
 import TripStopList from '../components/TripStopList.vue'
 import { useCatalogSpots } from '../composables/catalogSpots'
+import { useOnline } from '../composables/online'
 import { regionOf } from '../data/regions'
 import type { MapSpot } from '../services/bundles'
 import type { ExportFolder, ExportRow } from '../services/export'
@@ -71,8 +72,13 @@ const isOwner = computed(() => Boolean(trip.value && trip.value.owner === userSt
 const status = computed(() => (trip.value ? tripStatus(trip.value, trips.today) : 'planning'))
 const { byId, loading } = useCatalogSpots(() => (trip.value ? allStops(trip.value).map((s) => ({ id: s.spot_id, pref: s.pref })) : []))
 
+// 離線時行程不能修改（寫入用交易，要連得到才能讀最新的一份）：編輯的按鈕停用，標題下標「離線中」
+const online = useOnline()
+const locked = computed(() => !online.value)
+
 // 每個修改都在最新的一份上套用（共編時對方可能剛改過，UX-FLOW.md C7）
 function mutate(fn: (t: Trip) => Partial<TripContent> | null) {
+  if (locked.value) return
   void trips.mutate(props.id, fn)
 }
 
@@ -84,6 +90,10 @@ watch(
   { immediate: true },
 )
 function saveName() {
+  if (locked.value) {
+    nameDraft.value = trip.value?.name ?? ''
+    return
+  }
   const name = nameDraft.value.trim()
   if (trip.value && name !== trip.value.name) mutate(() => ({ name }))
 }
@@ -242,6 +252,7 @@ async function del() {
           :maxlength="TRIP_NAME_MAX"
           placeholder="未命名行程"
           aria-label="行程名稱"
+          :readonly="locked"
           class="h-12 rounded-control border border-transparent bg-transparent px-1 text-h3 font-black tracking-title text-ink outline-none placeholder:text-sub hover:border-line focus:border-region-strong"
           @blur="saveName"
           @keydown.enter="($event.target as HTMLInputElement).blur()"
@@ -251,12 +262,15 @@ async function del() {
             label="日期"
             :start="trip.start_date ?? ''"
             :end="trip.end_date ?? ''"
+            :disabled="locked"
             @change="setDates"
           />
           <span class="text-caption text-sub">{{ trip.days.length }} 天</span>
           <span v-if="status === 'ongoing'" class="rounded-tag bg-region-strong px-1.5 text-caption font-bold text-white">旅途中</span>
           <span v-else-if="until !== null" class="flex items-center gap-1 text-caption text-sub">還有<SplitFlap :value="String(until)" class="text-title" />天</span>
         </div>
+        <p v-if="locked" class="w-fit rounded-tag bg-ink px-1.5 text-caption font-bold text-paper" role="status">離線中・行程不能修改</p>
+        <p v-else-if="trips.error" class="text-caption text-danger" role="alert">{{ trips.error }}</p>
         <TripMembers :trip="trip" />
         <div class="flex flex-wrap gap-2">
           <button
@@ -289,7 +303,8 @@ async function del() {
           <button
             v-if="isOwner"
             type="button"
-            class="h-9 rounded-control border border-line bg-paper px-3 text-label text-danger hover:bg-surface active:not-disabled:translate-y-px"
+            :disabled="locked"
+            class="h-9 rounded-control border border-line bg-paper px-3 text-label text-danger hover:not-disabled:bg-surface disabled:cursor-not-allowed disabled:opacity-40 active:not-disabled:translate-y-px"
             @click="del"
           >刪除</button>
         </div>
@@ -333,7 +348,8 @@ async function del() {
             v-if="!hasDates && trip.days.length > 1"
             type="button"
             :aria-label="`刪除 DAY ${i + 1}`"
-            class="ml-auto text-caption text-sub hover:text-ink active:text-ink"
+            :disabled="locked"
+            class="ml-auto text-caption text-sub hover:not-disabled:text-ink disabled:cursor-not-allowed disabled:opacity-40 active:not-disabled:text-ink"
             @click="removeDay(i)"
           >
             刪除這天
@@ -346,6 +362,7 @@ async function del() {
           :targets="targets"
           :drop-at="dragging ? dropAt : null"
           :focus-id="focusId"
+          :locked="locked"
           @dragstart="(p) => (dragging = p)"
           @dragover="(p) => (dropAt = p)"
           @drop="onDrop"
@@ -359,7 +376,8 @@ async function del() {
       <button
         v-if="!hasDates"
         type="button"
-        class="h-10 w-fit rounded-control border border-line bg-paper px-3.5 text-body-sm text-ink hover:bg-surface active:not-disabled:translate-y-px"
+        :disabled="locked"
+        class="h-10 w-fit rounded-control border border-line bg-paper px-3.5 text-body-sm text-ink hover:not-disabled:bg-surface disabled:cursor-not-allowed disabled:opacity-40 active:not-disabled:translate-y-px"
         @click="addDay"
       >
         加一天
@@ -376,6 +394,7 @@ async function del() {
           :targets="targets"
           :drop-at="dragging ? dropAt : null"
           :focus-id="focusId"
+          :locked="locked"
           @dragstart="(p) => (dragging = p)"
           @dragover="(p) => (dropAt = p)"
           @drop="onDrop"
@@ -387,7 +406,6 @@ async function del() {
         />
       </section>
       <SkeletonRows v-if="loading" :rows="3" thumb />
-      <p v-if="trips.error" class="text-caption text-danger" role="alert">{{ trips.error }}</p>
     </section>
 
     <!-- 右：這趟的地圖 -->
