@@ -63,7 +63,7 @@ async function logOut() {
               :to="`/me/lists/${l.id}`"
               class="flex min-h-tap items-center gap-3 rounded-card border border-line bg-paper px-4 py-3 text-ink no-underline hover:bg-surface active:not-disabled:translate-y-px"
             >
-              <span class="min-w-0 truncate text-body font-bold">{{ l.name }}</span>
+              <span class="line-clamp-2 min-w-0 text-body font-bold break-words">{{ l.name }}</span>
               <span class="ml-auto shrink-0 font-latin text-body-sm text-sub">{{ listCounts.get(l.id) ?? 0 }}</span>
             </RouterLink>
           </li>

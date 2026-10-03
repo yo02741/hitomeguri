@@ -79,7 +79,7 @@ async function del() {
           </button>
         </form>
         <h1 v-else class="flex min-w-0 items-baseline gap-2 text-h2 font-black tracking-title">
-          <span class="truncate">{{ list.name }}</span>
+          <span class="line-clamp-2 break-words">{{ list.name }}</span>
           <span class="font-latin text-body font-normal tracking-normal text-sub">{{ rows.length }}</span>
         </h1>
         <div v-if="!editing" class="ml-auto flex flex-wrap gap-2">
