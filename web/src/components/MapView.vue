@@ -1169,6 +1169,17 @@ defineExpose({
       duration: 1200,
     })
   },
+  /** 手機景點卡片換段之後：點被卡片或清單蓋住（或太靠邊）才平移到看得到的地圖中間，不改縮放 */
+  reveal(lng: number, lat: number) {
+    if (!map) return
+    map.resize()
+    const p = map.project([lng, lat])
+    const { w, h } = size.value
+    const c = cover.value
+    const m = 32
+    if (p.x >= c.left + m && p.x <= w - m && p.y >= c.top + m && p.y <= h - c.bottom - m) return
+    map.easeTo({ center: [lng, lat], offset: centerOffset(), duration: reducedMotion ? 0 : 400 })
+  },
 })
 </script>
 

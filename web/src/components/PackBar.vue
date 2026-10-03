@@ -1,26 +1,16 @@
 <script setup lang="ts">
-import { computed, onBeforeUnmount, onMounted, ref } from 'vue'
+import { onBeforeUnmount, onMounted, ref } from 'vue'
 
-import { PACKS } from '../data/packs'
-import { useCatalogStore } from '../stores/catalog'
+import { usePackChips } from '../composables/packChips'
 import { useExploreStore } from '../stores/explore'
+import PackSettings from './PackSettings.vue'
 import RollingNumber from './RollingNumber.vue'
 
 // 地圖左側、地區標籤下方的擴充包列（UX-FLOW.md A4）：一次開一個；件數跟著目前的縣，首頁為全國。
-// 最右邊的圖示打開設定，勾選要顯示哪些擴充包（存在這台瀏覽器）。
+// 最右邊的圖示打開設定，勾選要顯示哪些擴充包（存在這台瀏覽器）。手機用 ChipRail。
 const props = defineProps<{ pref?: string | null }>()
-const catalog = useCatalogStore()
 const explore = useExploreStore()
-
-// 還沒有 bundle 的擴充包不顯示
-const shown = computed(() =>
-  PACKS.filter((p) => explore.enabledPacks.includes(p.key) && catalog.index?.packs?.[p.key]),
-)
-function count(key: string): number | null {
-  const items = catalog.packs[key]
-  if (!items) return null
-  return props.pref ? items.filter((it) => it.p === props.pref).length : items.length
-}
+const { shown, count, empty } = usePackChips(() => props.pref)
 
 const menuOpen = ref(false)
 const root = ref<HTMLElement | null>(null)
@@ -52,11 +42,11 @@ const chip = 'flex h-9 shrink-0 items-center gap-1.5 rounded-full px-3.5 text-la
       :class="[
         chip,
         explore.pack === p.key ? 'bg-(--pack) text-white' : 'bg-paper text-ink hover:bg-surface',
-        count(p.key) === 0 && explore.pack !== p.key ? 'pointer-events-none opacity-50' : '',
+        empty(p.key) ? 'pointer-events-none opacity-50' : '',
       ]"
       :style="{ '--pack': `var(--color-t-${p.color})` }"
       :aria-pressed="explore.pack === p.key"
-      :disabled="count(p.key) === 0 && explore.pack !== p.key"
+      :disabled="empty(p.key)"
       @click="explore.togglePack(p.key)"
     >
       <svg
@@ -91,36 +81,7 @@ const chip = 'flex h-9 shrink-0 items-center gap-1.5 rounded-full px-3.5 text-la
           <circle cx="10" cy="17" r="2" />
         </svg>
       </button>
-      <div
-        v-if="menuOpen"
-        data-reduce="fade"
-        class="absolute top-11 left-0 z-20 flex w-72 origin-top-left animate-pop-in flex-col rounded-card bg-paper p-1.5 shadow-float"
-        role="menu"
-      >
-        <span class="px-2.5 pt-1.5 pb-1 text-caption font-bold tracking-section text-sub">擴充包</span>
-        <label
-          v-for="p in PACKS"
-          :key="p.key"
-          class="flex min-h-tap cursor-pointer items-center gap-2.5 rounded-control px-2.5 text-body-sm hover:bg-surface"
-          role="menuitemcheckbox"
-          :aria-checked="explore.enabledPacks.includes(p.key)"
-          :style="{ '--pack': `var(--color-t-${p.color})` }"
-        >
-          <input
-            type="checkbox"
-            class="size-4 accent-(--pack)"
-            :checked="explore.enabledPacks.includes(p.key)"
-            @change="explore.setPackEnabled(p.key, ($event.target as HTMLInputElement).checked)"
-          />
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 text-(--pack)" aria-hidden="true">
-            <path :d="p.icon" />
-          </svg>
-          <span class="flex min-w-0 flex-col py-1.5">
-            <span class="font-bold">{{ p.label }}</span>
-            <span class="truncate text-caption text-sub">{{ p.groups.map((g) => g.label).join('・') }}</span>
-          </span>
-        </label>
-      </div>
+      <PackSettings v-if="menuOpen" class="absolute top-11 left-0 z-20 origin-top-left" />
     </div>
   </div>
 </template>
