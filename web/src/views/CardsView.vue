@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, ref, watch } from 'vue'
+import { computed, nextTick, onBeforeUnmount, ref, watch } from 'vue'
 
 import BackLink from '../components/BackLink.vue'
 import CardRules from '../components/CardRules.vue'
@@ -77,10 +77,27 @@ const perPref = computed(() => {
   for (const e of cards.value) m.set(e.face.pref, (m.get(e.face.pref) ?? 0) + 1)
   return m
 })
-function jumpTo(pref: string) {
+// 畫面外的卡先不畫，用估計的高度佔位（.deal），和實際高度不同：直接捲過去會停在別的縣。
+// 捲之前先把目標以上的縣排一次版（排過的卡記得實際高度，之後再收起來也不會變），目標的位置才會準
+// 排完等一個畫面（瀏覽器在那時記下實際高度），捲完再收起來
+const laidOut = ref<string | null>(null)
+let layoutTimer = 0
+const frame = () => new Promise(requestAnimationFrame)
+async function jumpTo(pref: string) {
   filter.value = 'all'
+  clearTimeout(layoutTimer)
+  laidOut.value = pref
+  await nextTick()
+  await frame()
+  await frame()
   document.querySelector(`section[data-pref="${pref}"]`)?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+  layoutTimer = window.setTimeout(() => (laidOut.value = null), 1500)
 }
+onBeforeUnmount(() => clearTimeout(layoutTimer))
+const above = computed(() => {
+  const i = laidOut.value ? groups.value.findIndex((g) => g.region.prefecture === laidOut.value) : -1
+  return new Set(groups.value.slice(0, Math.max(0, i)).map((g) => g.region.prefecture))
+})
 const flat = computed(() => groups.value.flatMap((g) => g.items))
 
 // 放大檢視：依目前的篩選左右切換；打開時載入該縣的詳細資料換上簡介與照片出處
@@ -198,7 +215,7 @@ function onCardKey(e: KeyboardEvent, id: string) {
         </button>
       </div>
 
-      <section v-for="g in groups" :key="g.region.prefecture" :data-pref="g.region.prefecture" class="flex flex-col gap-4" :aria-label="g.region.name.ja">
+      <section v-for="g in groups" :key="g.region.prefecture" :data-pref="g.region.prefecture" class="flex flex-col gap-4" :class="{ 'lay-out': above.has(g.region.prefecture) }" :aria-label="g.region.name.ja">
         <h2 class="flex items-center gap-2.5">
           <span class="h-5 w-1.5 rounded-full bg-region-strong" aria-hidden="true"></span>
           <span lang="ja" class="text-h3 font-black tracking-[2px]">{{ g.region.name.ja }}</span>
@@ -265,7 +282,8 @@ function onCardKey(e: KeyboardEvent, id: string) {
   margin: -1rem;
 }
 .deal:hover,
-.deal:focus-within {
+.deal:focus-within,
+.lay-out .deal {
   content-visibility: visible;
 }
 /* 發牌：第一屏的卡依序從下方翻上來（只有前 12 張；動畫結束後不保留 transform，才不會一直佔著合成層） */
