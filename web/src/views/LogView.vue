@@ -336,7 +336,17 @@ function open(id: string) {
         <p v-if="marks.error" class="text-caption text-danger" role="alert">{{ marks.error }}</p>
       </section>
     </template>
-    <p v-else class="text-body-sm text-sub">收藏、行程與紀錄需要登入。</p>
+    <div v-else class="flex flex-col items-start gap-4">
+      <p class="text-body-sm text-sub">收藏、行程與紀錄需要登入。</p>
+      <button
+        type="button"
+        class="h-11 rounded-control bg-region-strong px-4 text-body-sm font-bold text-white active:not-disabled:translate-y-px disabled:cursor-not-allowed disabled:opacity-40"
+        :disabled="!userStore.ready || !userStore.canSignIn"
+        @click="userStore.signIn()"
+      >
+        登入
+      </button>
+    </div>
   </section>
 </template>
 
