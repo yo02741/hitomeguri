@@ -5,7 +5,7 @@
 - 主照片（只補沒有的）：日文 → 英文 → 中文維基條目的代表圖（pageimages，自由授權），
   分類看起來主體是人、警察、活動、店家、地圖等的不收（景點本身就是那類東西時不算，photo_stats.exempt）
 - 夜景 P3451、冬景 P5252：有就用它（蓋掉依檔名找到的）
-- 全景 P4291，沒有時空拍 P8592：放在 season_images.panorama，全景卡、特別全景卡用
+- 全景 P4291，沒有時空拍 P8592：放在 season_images.panorama（收集卡目前不用，全景卡用主照片）
 data/seed/photo_exclude.json 列的檔案一律不用。
 data/seed/photo_choices.json 是使用者在照片審核頁選的主照片（file 為 null 表示都不適合、不放照片），
 一律照它。

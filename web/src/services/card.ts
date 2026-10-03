@@ -124,10 +124,10 @@ export function cardFromMapSpot(s: MapSpot, pref: string): CardFace {
 }
 
 /**
- * Commons 縮圖換成指定寬度（Commons 的標準寬度：250、330、500、960）。
+ * Commons 縮圖換成指定寬度（Commons 的標準寬度：250、330、500、960、1280）。
  * 不是縮圖網址（原圖本來就小）時原樣回傳。
  */
-export function commonsThumb(url: string, width: 250 | 330 | 500 | 960): string {
+export function commonsThumb(url: string, width: 250 | 330 | 500 | 960 | 1280): string {
   const base = url.split('?', 1)[0]
   if (!base.startsWith(COMMONS_THUMB_PREFIX) || !/\/\d+px-[^/]+$/.test(base)) return url
   return base.replace(/\/\d+px-([^/]+)$/, `/${width}px-$1`)

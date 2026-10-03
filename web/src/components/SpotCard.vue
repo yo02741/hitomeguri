@@ -70,26 +70,27 @@ const PATTERN_CLASS: Record<string, string> = {
   hishi: 'wa-hishi',
 }
 
-// 照片：小卡用 500px 縮圖；縮圖取不到時改用原網址，再不行就退回紋樣
+// 照片：小卡用 500px 縮圖；縮圖取不到時改用小一號的縮圖、原網址，再不行就退回紋樣
 const tries = ref(0)
-// 全景卡（全景、特別全景）照片鋪滿整張卡，有第二張照片時用第二張
+// 全景卡（全景、特別全景、夜景）照片鋪滿整張卡，縮圖要大一號，否則直向放大會糊
 const fullArt = computed(() => ['full', 'special', 'night'].includes(props.variant.kind))
 // 不是基本卡的照片（DESIGN.md §7.19a）：抽到那個季節的照片，沒有就用基本卡的照片。
+// 全景、特別全景也用基本卡的照片（審過的主照片）：Wikidata 的全景照片多半很寬，裁成直向卡會糊、主體也常被裁掉。
 // 不拿第二張或其他季節的照片補：地圖資料沒有第二張，詳細資料載入後照片會換一張；別的季節的照片也常拍到別處
 const photo = computed(() => {
   const c = props.card
   if (props.variant.kind === 'base') return c.image
   const seasonal = props.variant.photo ? c.seasonImages?.[props.variant.photo] : undefined
-  // 全景、特別全景：Wikidata 的全景或空拍照片（season_images.panorama）
-  const wide = props.variant.kind === 'full' || props.variant.kind === 'special' ? c.seasonImages?.panorama : undefined
-  return seasonal ?? wide ?? c.image
+  return seasonal ?? c.image
 })
 watch(() => photo.value?.url, () => (tries.value = 0))
 const imageSrc = computed(() => {
   const url = photo.value?.url
   if (!url) return undefined
-  const thumb = commonsThumb(url, props.size === 'lg' ? 960 : 500)
-  const list = thumb === url ? [url] : [thumb, url]
+  const widths: (500 | 960 | 1280)[] =
+    props.size === 'lg' ? (fullArt.value ? [1280, 960] : [960]) : fullArt.value ? [960, 500] : [500]
+  // 原圖比要的寬度小時 Commons 會回錯誤，依序退回小一號、原網址
+  const list = [...new Set([...widths.map((w) => commonsThumb(url, w)), url])]
   return list[tries.value]
 })
 // 名稱越長字越小，一行放得下
