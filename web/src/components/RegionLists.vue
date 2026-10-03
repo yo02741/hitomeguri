@@ -93,7 +93,7 @@ const failed = ref(new Set<string>())
     </nav>
 
     <div
-      class="scroll-quiet flex min-h-0 flex-col overflow-y-auto pr-1.5 pb-1 pl-1.5"
+      class="scroll-quiet flex min-h-0 flex-col overflow-y-auto overscroll-contain pr-1.5 pb-1 pl-1.5"
       @mouseleave="emit('highlight', null)"
     >
       <template v-for="g in shown" :key="g.key">

@@ -113,7 +113,7 @@ const visitedCount = computed(() => rows.value.filter((it) => marks.markOf(it.s 
       </button>
     </nav>
 
-    <div class="scroll-quiet flex min-h-0 flex-col overflow-y-auto pr-3 pb-1 pl-1.5" @mouseleave="emit('highlight', null)">
+    <div class="scroll-quiet flex min-h-0 flex-col overflow-y-auto overscroll-contain pr-3 pb-1 pl-1.5" @mouseleave="emit('highlight', null)">
       <template v-for="s in sections" :key="s.key">
         <h3 class="sticky top-0 z-[1] shrink-0 bg-paper">
           <button

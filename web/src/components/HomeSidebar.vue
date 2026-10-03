@@ -15,7 +15,7 @@ const hasData = computed(() => new Set(props.available))
 </script>
 
 <template>
-  <section class="scroll-quiet flex min-h-0 flex-col gap-3 overflow-y-auto rounded-card bg-paper px-4 pt-5 pb-3 shadow-float">
+  <section class="scroll-quiet flex min-h-0 flex-col gap-3 overflow-y-auto overscroll-contain rounded-card bg-paper px-4 pt-5 pb-3 shadow-float">
     <h1 class="px-1 text-h3 leading-[1.45] font-black tracking-title">來一趟日本，<br />才知道它有多大。</h1>
     <nav class="flex flex-col" aria-label="地區">
       <template v-for="g in groups" :key="g.area">
