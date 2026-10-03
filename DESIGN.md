@@ -374,7 +374,7 @@ header 右側、登入鈕左邊（`SearchBox.vue`，每一頁都在；在行程�
 - 旅途中的今天：DAY 標記下面一個「今日」牌，樣式同「旅途中」（`rounded-tag bg-region-strong px-1.5 text-caption font-bold text-white`）。桌機照舊（地圖顯示全部、左欄從頭看起）；手機進頁就選今天，見下。
 
 ### 7.9b 行程頁（`TripView.vue`）
-- 按鈕列：桌機照舊（開卡包／旅前準備、旅前小書、匯出 KML、匯出 CSV、離線用、回顧圖、刪除）。手機（<1024，決定事項 D2）只留 旅前準備、旅前小書、離線用、「更多 ▾」（結束的行程前面再加開卡包）；更多是 `ActionMenu.vue` 的選單：匯出 KML、匯出 CSV、回顧圖，線下面 `text-danger` 的「刪除行程」（建立者才有）。寬度 <640 時按鈕 `px-2.5`、間距 `gap-1.5`，360 寬也排成一列。
+- 按鈕列：桌機照舊（開卡包／旅前準備、旅前小書、匯出 KML、匯出 CSV、離線用、回顧圖、刪除）。手機（<1024，決定事項 D2）只留 旅前準備、旅前小書、離線用、「更多 ▾」（結束的行程前面再加開卡包）；更多是 `ActionMenu.vue` 的選單：匯出 KML、匯出 CSV（能分享檔案時走系統分享，§7.23a）、回顧圖，線下面 `text-danger` 的「刪除行程」（建立者才有）。寬度 <640 時按鈕 `px-2.5`、間距 `gap-1.5`，360 寬也排成一列。
 - 手機版面（決定事項 F3）：整頁在 `<main>` 裡捲，沒有內層捲動。日期、成員、按鈕列下面是 sticky（`top-0 z-10 bg-paper`）的天數條：左邊橫向捲動的格子（`h-tap min-w-14 rounded-control`，上 `DAY n` `font-latin text-label font-bold`、下日期 `text-micro`，今天寫「今日」；選中的是那天主縣的 `bg-region text-on-region`，沒有點的天 `bg-ink text-paper`，其他 `bg-surface`；最後一格「待排」＋筆數），格子超出時右緣淡出（`fade-x-end`，捲到底拿掉），看得出後面還有天數與待排；右邊「地圖」鈕（地圖圖示＋字，打開時 `bg-ink text-paper`，`aria-expanded`）。一次只顯示選中的那天（沒選過是 DAY 1），沒有「全部」。地圖預設收起，打開時在天數條下面 `h-[40dvh]`（一起黏在上面；手機打橫 32dvh，下面還看得到兩三站），只顯示選中的那天並連線；待排不連線。往下捲過之後換天，頁面回到天數條剛黏住的位置；選中的格子捲進天數條。旅途中進頁就選今天、打開地圖，頁面捲到天數條黏在頂端（返回時回到原本的位置就不捲）。加一天之後換到新的那天。
 - 停留點列：桌機照舊（⠿ 把手、號碼、名稱、「移到」下拉、往前往後、×）。觸控（`pointer-coarse:`）沒有 ⠿ 把手（觸控不會觸發 dragstart）與「移到」下拉，名稱多出約 100px；右邊「⋯」（`size-tap`）打開選單：移到最前、往前、往後、移到最後｜移到 待排、移到 DAY n（右邊日期）｜從行程移除。換順序之後焦點留在「⋯」；移到別天、移除時焦點移到隔壁的停留點，讀屏器讀出結果。選單項目多時自己捲（最高 70dvh）。
 - Google Maps 連結（UX-FLOW C5，桌機手機都有）：每天第一站上面一行「從目前位置」（準星圖示，樣式同「轉乘路線」：`text-caption text-sub`，觸控 `min-h-tap`），不給 origin、`travelmode=transit`，Google Maps 以裝置位置為起點。停留點下面是這天的「Google Maps 路線」外框小鈕（`h-8`，觸控 `h-tap`，右邊 ↗）：依順序經過每一站，不指定交通方式（大眾運輸不支援 waypoints）。超過 waypoint 上限時拆段（觸控或 <1024 用手機瀏覽器的 3 個，桌機 9 個；網址超過 2,048 字元也拆），前面一個 `text-caption text-sub` 的「Google Maps 路線」，後面每段一顆「1–5 ↗」「5–8 ↗」，下一段從上一段的終點出發（`services/trip.ts` 的 `dayRouteUrls`）。
@@ -516,6 +516,11 @@ header 右側、登入鈕左邊（`SearchBox.vue`，每一頁都在；在行程�
 
 ### 7.23 下拉選單
 `Dropdown.vue` 取代原生 `<select>`（原生的樣子跟著作業系統，與介面不搭）。觸發鈕 `rounded-control border-line bg-paper`，右側小箭頭；面板 Teleport 到 body（`composables/floating.ts`，下方放不下翻到上方），`rounded-card shadow-float`，每項 `min-h-tap`，選中的前面打勾、粗體，鍵盤移到的 `bg-surface`。`role="listbox"`／`option`，↑↓ 移動、Enter／Space 選、Esc 關。`size="sm"`（h-8）用在清單列。品牌這類可以自由輸入的欄位不用下拉，輸入框下面列建議（膠囊，點了帶入），取代原生 datalist。
+
+### 7.23a 匯出（`ExportButtons.vue`，決定事項 P2）
+- 桌機：「匯出 KML」「匯出 CSV」兩顆 Secondary（h-9），按了直接下載。
+- 手機（<1024）：收成一顆「匯出 ▾」（`ActionMenu.vue`，樣子同行程頁的「更多 ▾」），項目 KML、CSV；清單頁再加一條線、改名，最後一條線下面是 `text-danger` 的「刪除清單」。行程頁的匯出在「更多 ▾」裡。
+- 觸控或窄螢幕時，瀏覽器說能分享這個檔案（`navigator.canShare({ files })`）就開系統分享（可以直接傳到其他 App，不必先存到「檔案」）；不能分享（Chrome 不分享 KML）或分享失敗就下載。使用者取消分享時什麼都不做。`services/export.ts` 的 `shareOrDownload`。
 
 ### 7.24 旅人（紙娃娃）
 `/log/avatar`，紀錄頁的第三張入口卡。第二版（2026-10）改成剪紙的紙人形：主角是一張「剪下來的紙」，其他介面安靜。

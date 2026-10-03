@@ -110,14 +110,41 @@ function safeName(name: string): string {
   return name.replace(/[\\/:*?"<>|]/g, '_').trim() || 'hitomeguri'
 }
 
-export function download(name: string, ext: 'kml' | 'csv', content: string) {
-  const type = ext === 'kml' ? 'application/vnd.google-earth.kml+xml' : 'text/csv;charset=utf-8'
-  const url = URL.createObjectURL(new Blob([content], { type }))
+const MIME = { kml: 'application/vnd.google-earth.kml+xml', csv: 'text/csv' } as const
+
+function saveFile(file: File) {
+  const url = URL.createObjectURL(file)
   const a = document.createElement('a')
   a.href = url
-  a.download = `${safeName(name)}.${ext}`
+  a.download = file.name
   document.body.append(a)
   a.click()
   a.remove()
   setTimeout(() => URL.revokeObjectURL(url), 1000)
+}
+
+/** 下載檔案（桌機） */
+export function download(name: string, ext: 'kml' | 'csv', content: string) {
+  saveFile(new File([content], `${safeName(name)}.${ext}`, { type: MIME[ext] }))
+}
+
+/**
+ * 手機的匯出（決定事項 P2）：瀏覽器說能分享這個檔案（navigator.canShare({ files })）就開系統分享，否則下載。
+ * 能分享的檔案類型由瀏覽器決定（Chrome 的清單有 CSV、沒有 KML），所以每次都用 canShare 判斷，不自己列。
+ * share() 要在點擊的同一個事件裡呼叫（transient activation），前面不能先 await。
+ * 使用者取消（AbortError）就結束；其他錯誤（NotAllowedError…）改成下載。
+ * https://developer.mozilla.org/en-US/docs/Web/API/Navigator/canShare
+ * https://developer.mozilla.org/en-US/docs/Web/API/Navigator/share
+ */
+export async function shareOrDownload(name: string, ext: 'kml' | 'csv', content: string): Promise<void> {
+  const file = new File([content], `${safeName(name)}.${ext}`, { type: MIME[ext] })
+  if (typeof navigator.share === 'function' && navigator.canShare?.({ files: [file] })) {
+    try {
+      await navigator.share({ files: [file], title: name })
+      return
+    } catch (e) {
+      if ((e as DOMException | null)?.name === 'AbortError') return
+    }
+  }
+  saveFile(file)
 }

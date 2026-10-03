@@ -20,7 +20,7 @@ import { useOnline } from '../composables/online'
 import { regionOf } from '../data/regions'
 import type { MapSpot } from '../services/bundles'
 import { confirmDialog } from '../services/confirm'
-import { download, type ExportFolder, type ExportRow, toCsv, toKml } from '../services/export'
+import { type ExportFolder, type ExportRow, shareOrDownload, toCsv, toKml } from '../services/export'
 import { drawTripRecap } from '../services/shareImage'
 import { showToast } from '../services/toast'
 import { coarse, wide } from '../services/viewport'
@@ -396,8 +396,9 @@ const moreItems = computed<MenuAction[]>(() => {
 })
 function onMore(key: string) {
   const title = trip.value?.name || 'ひとめぐり 行程'
-  if (key === 'kml') download(title, 'kml', toKml(title, folders.value))
-  else if (key === 'csv') download(title, 'csv', toCsv(folders.value.flatMap((f) => f.rows), ['日', '順序']))
+  // 手機的匯出能分享檔案時走系統分享（決定事項 P2）
+  if (key === 'kml') void shareOrDownload(title, 'kml', toKml(title, folders.value))
+  else if (key === 'csv') void shareOrDownload(title, 'csv', toCsv(folders.value.flatMap((f) => f.rows), ['日', '順序']))
   else if (key === 'recap') recapOpen.value = true
   else if (key === 'delete') void del()
 }
