@@ -3,6 +3,7 @@ import { computed, nextTick, onBeforeUnmount, onMounted, ref, watch } from 'vue'
 import type { RouteLocationRaw } from 'vue-router'
 
 import { useModal } from '../composables/modal'
+import { useSwipe } from '../composables/swipe'
 import { useTilt } from '../composables/tilt'
 import type { CardFace, Rarity } from '../services/card'
 import { reveal, showReveal } from '../services/cardReveal'
@@ -126,74 +127,23 @@ function onKey(e: KeyboardEvent) {
   }
 }
 
-// 左右滑換卡：卡片跟著手指走（第一張、最後一張往外拉有阻力），放開時拉過 48px 或甩得夠快就換卡，
-// 不然彈回原位；滑過的那一下不算點擊（不翻面）。直接寫 style，不經過 reactive。
-let drag: { x: number; lastX: number; lastT: number; prevX: number; prevT: number } | null = null
-let swiped = false
-function onPointerDown(e: PointerEvent) {
-  swiped = false
-  drag = null
-  if (e.pointerType === 'mouse' || !props.position) return
-  const t = performance.now()
-  drag = { x: e.clientX, lastX: e.clientX, lastT: t, prevX: e.clientX, prevT: t }
-  ;(e.currentTarget as HTMLElement).setPointerCapture(e.pointerId)
-}
-function dragDx(clientX: number): number {
-  const dx = clientX - (drag?.x ?? clientX)
-  const p = props.position
-  const edge = p && ((dx > 0 && p.index === 0) || (dx < 0 && p.index >= p.total - 1))
-  return edge ? dx * 0.3 : dx
-}
+// 左右滑換卡（composables/swipe.ts）：卡片跟著手指走，順便轉一點；滑過的那一下不算點擊（不翻面）
+const swipe = useSwipe({
+  el: () => cardEl.value,
+  enabled: () => !!props.position,
+  canStep: (delta) => {
+    const p = props.position
+    return !!p && p.index + delta >= 0 && p.index + delta < p.total
+  },
+  step: (delta) => step(delta),
+  transform: (dx) => `translateX(${dx}px) rotateY(${-dx * 0.05}deg)`,
+})
 function onPointerMove(e: PointerEvent) {
   tilt.onPointerMove(e)
-  if (!drag || !cardEl.value) return
-  drag.prevX = drag.lastX
-  drag.prevT = drag.lastT
-  drag.lastX = e.clientX
-  drag.lastT = performance.now()
-  const dx = dragDx(e.clientX)
-  const el = cardEl.value
-  // 進場動畫的 fill 會蓋住 inline transform：拖的時候先拿掉（動畫早就播完，看起來不變）
-  el.style.animation = 'none'
-  el.style.transition = 'none'
-  el.style.transform = `translateX(${dx}px) rotateY(${-dx * 0.05}deg)`
-}
-// 沒換卡：彈回原位
-function settle() {
-  const el = cardEl.value
-  if (!el || !el.style.transform) return
-  el.style.transition = 'transform 0.2s var(--ease-out-soft)'
-  el.style.transform = ''
-  el.addEventListener('transitionend', () => (el.style.transition = ''), { once: true })
-}
-function onPointerUp(e: PointerEvent) {
-  if (!drag) return
-  const dx = dragDx(e.clientX)
-  // 速度（px/ms）：放開前最後一段移動
-  const dt = performance.now() - drag.prevT
-  const v = dt > 0 && dt < 100 ? (e.clientX - drag.prevX) / dt : 0
-  drag = null
-  const delta: -1 | 1 = (Math.abs(dx) > 48 ? dx : v) < 0 ? 1 : -1
-  const p = props.position
-  const canStep = Boolean(p && p.index + delta >= 0 && p.index + delta < p.total)
-  if ((Math.abs(dx) > 48 || Math.abs(v) > 0.11) && canStep) {
-    // 新卡用 :key 重建，舊卡的 inline style 跟著消失
-    swiped = true
-    step(delta)
-  } else {
-    if (Math.abs(dx) > 8) swiped = true
-    settle()
-  }
-}
-function onPointerCancel() {
-  drag = null
-  settle()
+  swipe.onPointerMove(e)
 }
 function onCardClick() {
-  if (swiped) {
-    swiped = false
-    return
-  }
+  if (swipe.consumeSwipe()) return
   flipped.value = !flipped.value
 }
 
@@ -239,9 +189,9 @@ onBeforeUnmount(() => document.removeEventListener('keydown', onKey))
             :class="enterFrom ? `from-${enterFrom}` : ''"
             :aria-label="flipped ? '翻回正面' : '翻到背面'"
             @click="onCardClick"
-            @pointerdown="onPointerDown"
-            @pointerup="onPointerUp"
-            @pointercancel="onPointerCancel"
+            @pointerdown="swipe.onPointerDown"
+            @pointerup="swipe.onPointerUp"
+            @pointercancel="swipe.onPointerCancel"
             @pointermove="onPointerMove"
             @pointerleave="tilt.reset"
           >

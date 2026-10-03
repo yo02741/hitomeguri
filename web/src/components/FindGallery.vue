@@ -1,13 +1,15 @@
 <script setup lang="ts">
 import { computed, nextTick, ref, watch } from 'vue'
 
+import { useSwipe } from '../composables/swipe'
 import { confirmDialog } from '../services/confirm'
 import { type Find, useFindsStore } from '../stores/finds'
 import { useTripsStore } from '../stores/trips'
 import FindEditor from './FindEditor.vue'
 
 // 截圖 gallery（DESIGN.md §7.17）：瀑布流（CSS columns），每張依原圖比例，太長的截圖只露上半部。
-// 點開看原圖（長截圖可以捲動）、編輯、刪除；←／→ 換上一張、下一張。
+// 點開看原圖（長截圖可以捲動）、編輯、刪除；←／→ 或左右滑換上一張、下一張，點外面關閉。
+// 手機（<768）的框依圖片高度，短的截圖不留空白；最高到畫面高減 32px，再長就在框裡捲。
 const props = defineProps<{ finds: Find[]; tripId?: string; columns?: 'narrow' | 'wide' }>()
 const store = useFindsStore()
 const trips = useTripsStore()
@@ -26,6 +28,7 @@ function tripName(id?: string): string {
 }
 
 async function show(i: number) {
+  enterFrom.value = null
   viewing.value = i
   await nextTick()
   if (!viewer.value?.open) viewer.value?.showModal()
@@ -34,9 +37,28 @@ function hide() {
   viewer.value?.close()
   viewing.value = null
 }
-function step(n: number) {
+// 滑動換張時新的圖從那一側進來（按鈕、方向鍵照舊直接換）
+const enterFrom = ref<'left' | 'right' | null>(null)
+function step(n: -1 | 1, animate = false) {
   if (viewing.value === null || !props.finds.length) return
+  enterFrom.value = animate ? (n > 0 ? 'right' : 'left') : null
   viewing.value = (viewing.value + n + props.finds.length) % props.finds.length
+}
+// 左右滑（和卡片檢視同一套，composables/swipe.ts）：頭尾相接，只有一張時拉了會彈回
+const frame = ref<HTMLElement | null>(null)
+const swipe = useSwipe({
+  el: () => frame.value,
+  canStep: () => props.finds.length > 1,
+  step: (d) => step(d, true),
+})
+// 點對話框外面（::backdrop 的點擊落在 <dialog> 本身）關閉；在框裡按下、拖到外面放開不算
+let downOnBackdrop = false
+function onDialogPointerDown(e: PointerEvent) {
+  downOnBackdrop = e.target === viewer.value
+}
+function onDialogClick(e: MouseEvent) {
+  if (downOnBackdrop && e.target === viewer.value) hide()
+  downOnBackdrop = false
 }
 watch(
   current,
@@ -107,22 +129,35 @@ defineExpose({ add })
 
     <dialog
       ref="viewer"
-      class="m-auto h-[calc(100dvh-32px)] w-[min(1040px,calc(100vw-32px))] overflow-hidden rounded-card bg-paper p-0 text-ink shadow-float backdrop:bg-ink/60"
+      class="m-auto h-[calc(100dvh-32px)] w-[min(1040px,calc(100vw-32px))] overflow-hidden rounded-card bg-paper p-0 text-ink shadow-float backdrop:bg-ink/60 max-md:h-fit max-md:max-h-[calc(100dvh-32px)] max-md:open:flex max-md:open:flex-col"
       aria-label="截圖"
       @cancel="viewing = null"
       @close="viewing = null"
       @keydown="onKey"
+      @pointerdown="onDialogPointerDown"
+      @click="onDialogClick"
     >
-      <div v-if="current" class="flex h-full max-md:flex-col">
-        <div class="scroll-quiet relative min-h-0 flex-1 overflow-y-auto bg-surface">
+      <div v-if="current" class="flex h-full max-md:contents">
+        <div
+          :key="current.id"
+          ref="frame"
+          data-reduce="fade"
+          class="shot scroll-quiet relative min-h-0 flex-1 touch-pan-y touch-pinch-zoom overflow-x-hidden overflow-y-auto bg-surface max-md:flex-initial"
+          :class="enterFrom ? `from-${enterFrom}` : ''"
+          @pointerdown="swipe.onPointerDown"
+          @pointermove="swipe.onPointerMove"
+          @pointerup="swipe.onPointerUp"
+          @pointercancel="swipe.onPointerCancel"
+        >
           <img
             :src="full ?? current.thumb"
             :alt="current.item || current.brand || '截圖'"
+            draggable="false"
             class="mx-auto block h-auto w-auto max-w-full"
             :style="{ aspectRatio: `${current.w} / ${current.h}` }"
           />
         </div>
-        <div class="flex shrink-0 flex-col gap-3 border-line p-5 md:w-[300px] md:border-l max-md:max-h-[40%] max-md:overflow-y-auto max-md:border-t">
+        <div class="flex shrink-0 flex-col gap-3 border-line p-5 md:w-[300px] md:border-l max-md:max-h-[40dvh] max-md:overflow-y-auto max-md:border-t">
           <div class="flex items-center gap-1">
             <button type="button" class="grid size-9 place-items-center rounded-control text-sub hover:bg-surface hover:text-ink active:not-disabled:translate-y-px pointer-coarse:size-tap" aria-label="上一張" @click="step(-1)">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7" /></svg>
@@ -160,3 +195,24 @@ defineExpose({ add })
     <FindEditor v-model:open="editorOpen" :find="editing" :trip-id="tripId" />
   </div>
 </template>
+
+<style scoped>
+.shot.from-right {
+  animation: shot-from-right 0.28s var(--ease-out-soft) both;
+}
+.shot.from-left {
+  animation: shot-from-left 0.28s var(--ease-out-soft) both;
+}
+@keyframes shot-from-right {
+  from {
+    opacity: 0;
+    transform: translateX(48px);
+  }
+}
+@keyframes shot-from-left {
+  from {
+    opacity: 0;
+    transform: translateX(-48px);
+  }
+}
+</style>

@@ -423,6 +423,9 @@ header 右側、登入鈕左邊（`SearchBox.vue`，每一頁都在；在行程�
 - 瀑布流：`columns-2 sm:columns-3 lg:columns-4 gap-3`，每張 `break-inside-avoid mb-3`；圖片用原圖比例（`aspect-ratio: w / h`），最高 360px，太長的截圖 `object-cover object-top` 只露上半部。
 - 卡片：`rounded-card border border-line bg-paper`，圖片下方品牌（`text-caption text-sub`）、品項（`text-body-sm font-bold`）、說明（`text-caption text-ink-2`，最多兩行）。
 - 大圖：`<dialog>` 近全螢幕，左邊圖片可捲動（長截圖照原寬看得清楚字），右邊 300px 的文字欄：上一張／下一張、品牌、品項、說明、行程、編輯、刪除。手機改上下排。
+  - 手機（<768）的框依圖片高度（`h-fit`，最高 `100dvh-32px`，再長就在圖片框裡捲），文字欄最高 40dvh；短的截圖上下露出背景。
+  - 觸控左右滑換上一張、下一張（`composables/swipe.ts`，和卡片檢視同一套：圖片框跟著手指走，拉過 48px 或甩得夠快就換，頭尾相接；只有一張時往外拉有阻力、放開彈回）。滑動換張時新圖從那一側淡入滑進（0.28s，減少動態時改淡入）；按鈕、方向鍵照舊直接換。圖片框 `touch-action: pan-y pinch-zoom`，上下捲動與縮放照瀏覽器。換張時圖片框重建，從圖片頂端開始。
+  - 點框外的背景關閉（按下與放開都在背景上才算）。
 - 新增／編輯：`<dialog>` 寬 560px；沒有圖時是虛線外框的「選擇圖片」區，可以拖曳或貼上；欄位：品牌（有建議清單）、品項、說明、行程。
 
 ### 7.18 旅前小書（列印）
