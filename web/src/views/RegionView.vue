@@ -2,6 +2,7 @@
 import { computed, nextTick, onMounted, ref, watch } from 'vue'
 import { useRoute } from 'vue-router'
 
+import { AIRPORT_AREA } from '../data/airports'
 import { prefectureFullName, regionOf } from '../data/regions'
 import { SPECIALTY_GROUPS, specialtyGroup } from '../data/specialties'
 import type { Specialty } from '../services/bundles'
@@ -39,7 +40,12 @@ watch(
 onMounted(() => {
   catalog.loadExtras()
   void catalog.loadTimed()
+  void catalog.loadFlights()
 })
+// 台灣直飛航線（UX-FLOW.md A7）：手機的地圖頁沒有地區標籤，放在這一頁的海報（桌機在地圖頁的地區標籤）
+const routes = computed(() =>
+  catalog.flights.filter((f) => AIRPORT_AREA[f.dest] === region.value?.area).map((f) => `${f.origin} → ${f.dest}`),
+)
 const timed = computed(() => currentTimed(catalog.timed ?? [], todayIso(), props.pref))
 
 // 有照片、有簡介的排前面（資料比較完整），其餘依名稱
@@ -152,6 +158,9 @@ function sourceLabel(url: string): string {
             <span class="text-body-sm font-bold">{{ region.area_name }}</span>
           </div>
         </div>
+        <p v-if="routes.length" class="-mt-2 flex flex-wrap gap-x-4 font-latin text-caption font-semibold tracking-[1px] lg:hidden">
+          <span v-for="r in routes" :key="r" class="whitespace-nowrap">{{ r }}</span>
+        </p>
       </div>
     </header>
 

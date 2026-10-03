@@ -560,17 +560,45 @@ function onMoveEnd(view: MapViewState) {
 
 <template>
   <div class="relative flex min-h-0 flex-1 max-lg:flex-col">
-    <!-- 手機：頂部海報條（手機版面暫緩，見 PLAN.md §5 RWD） -->
-    <RouterLink
+    <!-- 手機：頂部海報條。左「‹ 全國」、中間縣名（不能點）、右「深度探索 ›」，分隔線和桌機的地區標籤相同（DESIGN.md §7.5） -->
+    <div
       v-if="pref && regionOf(pref)"
-      to="/"
-      aria-label="切換地區"
-      class="-mr-[env(safe-area-inset-right)] -ml-[env(safe-area-inset-left)] flex h-[56px] shrink-0 items-center gap-3 bg-region pr-[calc(1rem+env(safe-area-inset-right))] pl-[calc(1rem+env(safe-area-inset-left))] text-on-region no-underline lg:hidden active:not-disabled:translate-y-px"
+      class="-mr-[env(safe-area-inset-right)] -ml-[env(safe-area-inset-left)] flex h-[56px] shrink-0 items-center gap-2 bg-region pr-[calc(0.5rem+env(safe-area-inset-right))] pl-[calc(0.25rem+env(safe-area-inset-left))] text-on-region lg:hidden"
     >
-      <span lang="ja" class="text-h3 font-black tracking-name">{{ regionOf(pref)!.name.ja }}</span>
-      <span class="font-latin text-body-sm font-semibold tracking-romaji uppercase">{{ regionOf(pref)!.name.romaji }}</span>
-      <span class="ml-auto text-caption">{{ regionOf(pref)!.area_name }}</span>
-    </RouterLink>
+      <RouterLink
+        to="/"
+        aria-label="回到全國地圖"
+        class="flex size-11 shrink-0 flex-col items-center justify-center rounded-control text-on-region no-underline hover:bg-region-accent active:not-disabled:translate-y-px"
+      >
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M15 5l-7 7 7 7" />
+        </svg>
+        <span class="text-micro leading-none font-bold">全國</span>
+      </RouterLink>
+      <span class="h-8 w-px shrink-0 bg-on-region opacity-25" aria-hidden="true"></span>
+      <span class="flex min-w-0 items-end gap-2 pl-1">
+        <span class="flex shrink-0 flex-col whitespace-nowrap">
+          <span lang="ja" class="text-caption leading-tight tracking-kana">{{ regionOf(pref)!.name.kana }}</span>
+          <span lang="ja" class="text-h3 leading-tight font-black tracking-name">{{ regionOf(pref)!.name.ja }}</span>
+        </span>
+        <!-- 長的羅馬拼音（KAGOSHIMA、HOKKAIDO）不加字距，360 寬也放得下 -->
+        <span
+          class="min-w-0 truncate pb-0.5 font-latin text-caption font-semibold uppercase"
+          :class="regionOf(pref)!.name.romaji.length > 7 ? 'tracking-normal' : 'tracking-romaji'"
+          >{{ regionOf(pref)!.name.romaji }}</span
+        >
+      </span>
+      <span class="ml-auto h-8 w-px shrink-0 bg-on-region opacity-25" aria-hidden="true"></span>
+      <RouterLink
+        :to="`/region/${pref}`"
+        class="flex min-h-tap shrink-0 items-center gap-0.5 rounded-control pr-1.5 pl-2.5 text-label font-bold whitespace-nowrap text-on-region no-underline hover:bg-region-accent active:not-disabled:translate-y-px"
+      >
+        深度探索
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M9 5l7 7-7 7" />
+        </svg>
+      </RouterLink>
+    </div>
 
     <div class="relative min-h-0 flex-1">
       <MapView
