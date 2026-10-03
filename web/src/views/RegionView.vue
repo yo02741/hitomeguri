@@ -130,7 +130,7 @@ function sourceLabel(url: string): string {
   <div v-if="region" :data-pref="pref" class="flex min-h-0 flex-1 flex-col overflow-y-auto bg-paper text-ink">
     <!-- 海報區：地區色、正圓裝飾，只用正圓（DESIGN.md §7.5） -->
     <header class="paper-grain relative shrink-0 overflow-hidden bg-region text-on-region [view-transition-name:region-hero]">
-      <RegionMotif :pref="pref" class="absolute -top-24 -right-16 size-[320px] [view-transition-name:region-motif]" />
+      <RegionMotif :pref="pref" class="absolute -top-24 -right-16 size-[320px] max-sm:-top-32 max-sm:-right-28 max-sm:size-[240px] [view-transition-name:region-motif]" />
       <SeasonDrift :pref="pref" />
       <div class="relative mx-auto flex w-full max-w-5xl flex-col gap-4 px-6 pt-5 pb-8">
         <RouterLink
