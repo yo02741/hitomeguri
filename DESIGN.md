@@ -542,7 +542,7 @@ header 右側、登入鈕左邊（`SearchBox.vue`，每一頁都在；在行程�
 - PWA（`vite.config.ts` 的 `pwa()`、vite-plugin-pwa）：app 本身預先快取；資料 bundle（網址帶 `?v=` 版本，cache-first）、`_index.json`（network-first）、地圖圖磚、字型、Commons 照片在用到時存下來。收藏、去過、行程由 Firestore 的本機快取（`persistentLocalCache`）處理，離線時的修改連線後送出。
 - 行程頁「離線用」（`OfflineButton.vue`、`services/offline.ts`）：抓停留點各縣的資料、照片、停留點附近的地圖圖磚（縮放 10–15，半徑約 1.5 km）與縣全圖（縮放 6–9）；按鈕底色是進度條，完成後改成「已存離線」（存在這台裝置的 localStorage，只是提示）。
 - 行程頁離線時不能修改（修改用交易讀最新的一份，要連得到；決定事項 G1）：名稱、日期、移到、往前往後、⋯、移除、拖曳、刪除這天、加一天、刪除行程都停用（`disabled:opacity-40`）；標題與日期下面一行「離線中・行程不能修改」，樣式同 header 的離線小標（`rounded-tag bg-ink px-1.5 text-caption font-bold text-paper`）。「沒有儲存成功」也放在這一行（`text-caption text-danger`）。連線後恢復。
-- 沒有網路時頂部 wordmark 右側 `bg-ink text-paper` 小標「離線」。有新版本時底部一行「有新版本」＋「重新整理」（`AppUpdate.vue`），按了才換，不在操作中途重新整理。
+- 沒有網路時頂部 wordmark 右側 `bg-ink text-paper` 小標「離線」。有新版本時底部一行「有新版本」＋「重新整理」（`AppUpdate.vue`），按了才換，不在操作中途重新整理。同一個位置也用來放「復原」（§7.26）。
 
 ### 7.21 經縣值（`/log/keiken`）
 - 每個都道府縣選 0–5 級：住過 5、過夜 4、玩過 3、踏上 2、路過 1、未踏 0（日本的「経県値」玩法），總分最高 235。沒選的縣，有去過的景點就算「玩過」（地圖上虛線框、列上的按鈕虛線框）。
@@ -553,6 +553,11 @@ header 右側、登入鈕左邊（`SearchBox.vue`，每一頁都在；在行程�
 - `ShareImage.vue`：深色遮罩上預覽 canvas，手機「分享」（Web Share API 帶 PNG）、「下載」。`services/shareImage.ts` 畫 1080×1350（IG 直式）。
 - 只畫自己的地圖（縣界）與文字，不放照片（Commons 照片要逐張標作者與授權）。頁尾左邊縣界出處、右邊 HITOMEGURI。
 - 旅行回顧：上方主縣（停留點最多的縣）的 `base` 色帶＋行程名、日期、天數與縣；中間停留點範圍的縣界（行程經過的縣用各自的 `accent`）、每天一條虛線路線（那天主縣的 `strong`）與編號，右上日本全圖；下方每天一行 DAY 標記、日期、停留點（最多 4 天）。入口在行程頁的按鈕列。
+
+### 7.26 復原與確認框（決定事項 L3）
+- 可以復原的移除：取消收藏、取消去過、從清單移除（清單頁的 ×、景點卡片清單選單取消勾選）、從行程移除停留點。做完立刻（不等寫入完成，離線也一樣）在底部出現一行提示：`已取消收藏`、`已取消去過`、`已從「清單名」移除`、`已從行程移除`，右邊「復原」與 ×。樣式、位置與「有新版本」相同（`AppUpdate.vue`：`bg-ink text-paper rounded-card shadow-float`，貼著分頁列；「復原」是 `bg-paper text-ink` 的小鈕），一次一則，新的取代舊的；約 6 秒收起，游標停在上面或焦點在鈕上時不倒數（`services/toast.ts`）。復原只補回那一個欄位（去過連同日期，停留點回到原本那一天的原本位置；那天已經刪掉就放回待排）。頁面載入失敗的提示優先，有新版本排在最後。
+- 不能復原的動作（刪除行程、清單、截圖，移出共編成員、離開共編、重新產生邀請連結）先問一次：站內確認框 `ConfirmDialog.vue`（`services/confirm.ts` 的 `confirmDialog()`），不用 `window.confirm`（手機上會顯示網域，樣式也不一致）。原生 `<dialog>`（§10），寬 400，`rounded-card bg-paper p-6 shadow-float`；問句 `text-body font-bold`（例「刪除清單「京都」？」），後果一行 `text-body-sm text-sub`；下面「取消」（Secondary）與動作鈕（刪除、移出、離開用 `bg-danger text-white`，其他用 Primary），手機兩顆各佔一半。打開時焦點在「取消」；Esc、點框外都算取消。
+- 清單頁的列：「去過」與移除鈕之間隔 `mx-1.5` 並加一條 `h-6 w-px bg-line` 的分隔線（`MarkedSpotList.vue`）。
 
 ---
 
@@ -620,7 +625,7 @@ header 右側、登入鈕左邊（`SearchBox.vue`，每一頁都在；在行程�
 - 觸控裝置（`pointer: coarse`）的輸入框至少 16px（`theme.css` 把 caption／label／body-sm／body 字級的欄位蓋成 1rem），iOS 聚焦時才不會放大整頁；viewport 不加 `maximum-scale`。單一欄位的表單加 `enterkeyhint`（新增清單、行程名稱 `done`，建立行程 `go`，搜尋 `search`）。
 - 按鈕、`role=button`、分頁、`summary` 長按不選字、不跳系統選單（`theme.css` base 的 `user-select: none`、`-webkit-touch-callout: none`）；label 與內容文字照常可以選。
 - 浮動或內層的捲動區（景點卡片、擴充包卡片、下拉、搜尋結果、規則對話框、加入行程／清單的選單）加 `overscroll-contain`，捲到底不帶動後面的頁面或地圖。
-- 蓋住整個畫面的對話框（規則、成就的詳細、卡片檢視、回顧圖、十連抽、開卡包、扭蛋、新卡入手、截圖）用原生 `<dialog>` 的 `showModal()`（`composables/modal.ts`）：背後 inert、Tab 只在框裡繞、Esc 走 `cancel`、關閉前先 `close()` 讓焦點回到打開它的按鈕。對話框打開時 Teleport 到 body 的下拉、日期選擇會被 inert，要用的話掛在 `<dialog>` 裡面。
+- 蓋住整個畫面的對話框（規則、成就的詳細、卡片檢視、回顧圖、十連抽、開卡包、扭蛋、新卡入手、截圖、確認框）用原生 `<dialog>` 的 `showModal()`（`composables/modal.ts`）：背後 inert、Tab 只在框裡繞、Esc 走 `cancel`、關閉前先 `close()` 讓焦點回到打開它的按鈕。對話框打開時 Teleport 到 body 的下拉、日期選擇會被 inert，要用的話掛在 `<dialog>` 裡面。
 
 ---
 

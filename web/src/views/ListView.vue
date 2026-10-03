@@ -5,6 +5,7 @@ import { useRouter } from 'vue-router'
 import ExportButtons from '../components/ExportButtons.vue'
 import MarkedSpotList from '../components/MarkedSpotList.vue'
 import { type MarkedSpot, useMarkedSpots } from '../composables/markedSpots'
+import { confirmDialog } from '../services/confirm'
 import { markRow } from '../services/export'
 import { LIST_NAME_MAX, useMarksStore } from '../stores/marks'
 import { useUserStore } from '../stores/user'
@@ -38,7 +39,14 @@ function remove(r: MarkedSpot) {
 }
 
 async function del() {
-  if (!list.value || !window.confirm(`刪除清單「${list.value.name}」？清單裡景點的收藏與去過不受影響。`)) return
+  if (!list.value) return
+  const ok = await confirmDialog({
+    title: `刪除清單「${list.value.name}」？`,
+    body: '清單裡景點的收藏與去過不受影響。',
+    ok: '刪除',
+    danger: true,
+  })
+  if (!ok) return
   await marks.deleteList(props.id)
   await router.push('/me')
 }

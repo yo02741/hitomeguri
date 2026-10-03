@@ -4,7 +4,9 @@ import { useRoute } from 'vue-router'
 
 import AppHeader from './components/AppHeader.vue'
 import AppUpdate from './components/AppUpdate.vue'
+import ConfirmDialog from './components/ConfirmDialog.vue'
 import TabBar from './components/TabBar.vue'
+import { confirmRequest } from './services/confirm'
 import { theme } from './services/theme'
 import { wide } from './services/viewport'
 import { walkerOn } from './services/walker'
@@ -55,6 +57,7 @@ const DollWalker = defineAsyncComponent(() => import('./components/DollWalker.vu
     </main>
     <TabBar />
     <AppUpdate />
+    <ConfirmDialog v-if="confirmRequest" :key="confirmRequest.id" :req="confirmRequest" />
     <template v-if="userStore.user">
       <CardReveal />
       <DollDefs />

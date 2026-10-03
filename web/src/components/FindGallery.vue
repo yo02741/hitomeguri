@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed, nextTick, ref, watch } from 'vue'
 
+import { confirmDialog } from '../services/confirm'
 import { type Find, useFindsStore } from '../stores/finds'
 import { useTripsStore } from '../stores/trips'
 import FindEditor from './FindEditor.vue'
@@ -69,7 +70,7 @@ function edit(f: Find) {
   editorOpen.value = true
 }
 async function del(f: Find) {
-  if (!window.confirm(`刪除這張截圖${f.item ? `「${f.item}」` : ''}？`)) return
+  if (!(await confirmDialog({ title: `刪除這張截圖${f.item ? `「${f.item}」` : ''}？`, ok: '刪除', danger: true }))) return
   await store.remove(f.id)
 }
 

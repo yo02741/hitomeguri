@@ -123,6 +123,18 @@ export function removeStop(t: Pick<Trip, 'days' | 'unscheduled'>, at: StopPos): 
   return next
 }
 
+/**
+ * 把停留點放回 at（移除的復原）：那一天已經不在（天數改少了）就放回待排，位置超過長度就放最後；
+ * 這趟已經有這個景點時不動（共編的人又加回來了）。
+ */
+export function insertStop(t: Pick<Trip, 'days' | 'unscheduled'>, at: StopPos, stop: Stop): Pick<Trip, 'days' | 'unscheduled'> | null {
+  if (hasSpot(t, stop.spot_id)) return null
+  const next = { days: t.days.map((d) => ({ stops: [...d.stops] })), unscheduled: [...t.unscheduled] }
+  const dst = listAt(next, at.day) ?? next.unscheduled
+  dst.splice(Math.max(0, Math.min(at.idx, dst.length)), 0, stop)
+  return next
+}
+
 export function allStops(t: Pick<Trip, 'days' | 'unscheduled'>): Stop[] {
   return [...t.days.flatMap((d) => d.stops), ...t.unscheduled]
 }

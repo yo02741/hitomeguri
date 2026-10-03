@@ -8,7 +8,7 @@ import SkeletonRows from './SkeletonRows.vue'
 import VisitedToggle from './VisitedToggle.vue'
 
 // 收藏、清單、去過的景點列：點了回到地圖選取這個景點。
-// removeLabel 有值時右側放移除鈕；visitToggle 時右側放「去過」快捷鈕；
+// removeLabel 有值時右側放移除鈕；visitToggle 時右側放「去過」快捷鈕；兩個都有時中間隔一條線；
 // selected 有值時整列是勾選框（紀錄頁批次補日期），點了選取，不回地圖。
 defineProps<{
   rows: MarkedSpot[]
@@ -58,6 +58,8 @@ const emit = defineEmits<{ remove: [row: MarkedSpot]; toggle: [row: MarkedSpot] 
         </span>
       </component>
       <VisitedToggle v-if="visitToggle" :spot="{ id: r.id, pref: r.pref, name: r.name }" />
+      <!-- 去過與移除之間隔開並加一條分隔線，不會一不小心點到移除（移除後底部可以復原） -->
+      <span v-if="visitToggle && removeLabel" class="mx-1.5 h-6 w-px shrink-0 bg-line" aria-hidden="true" />
       <button
         v-if="removeLabel"
         type="button"

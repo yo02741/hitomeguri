@@ -18,8 +18,10 @@ import { useCatalogSpots } from '../composables/catalogSpots'
 import { useOnline } from '../composables/online'
 import { regionOf } from '../data/regions'
 import type { MapSpot } from '../services/bundles'
+import { confirmDialog } from '../services/confirm'
 import type { ExportFolder, ExportRow } from '../services/export'
 import { drawTripRecap } from '../services/shareImage'
+import { showToast } from '../services/toast'
 import {
   addDays,
   allStops,
@@ -27,6 +29,7 @@ import {
   dayDate,
   dayPref,
   findStop,
+  insertStop,
   MAX_DAYS,
   moveStop,
   removeStop,
@@ -159,13 +162,16 @@ function onMove(from: StopPos, toDay: number) {
 function onShift(from: StopPos, delta: -1 | 1) {
   moveSpot(spotAt(from), (_, cur) => ({ day: cur.day, idx: cur.idx + (delta === 1 ? 2 : -1) }))
 }
+// 移除停留點後底部出現「復原」（決定事項 L）：放回原本那一天的原本位置
 function onRemove(at: StopPos) {
-  const spotId = spotAt(at)
-  if (!spotId) return
+  const t0 = trip.value
+  const stop = t0 ? stopAt(t0, at) : undefined
+  if (!stop || locked.value) return
   mutate((t) => {
-    const cur = findStop(t, spotId)
+    const cur = findStop(t, stop.spot_id)
     return cur ? removeStop(t, cur) : null
   })
+  showToast('已從行程移除', () => mutate((t) => insertStop(t, at, stop)))
 }
 
 const targets = computed(() => [
@@ -232,8 +238,14 @@ const folders = computed<ExportFolder[]>(() => {
 async function del() {
   const t = trip.value
   const others = t ? t.members.length - 1 : 0
-  const msg = `刪除行程「${t?.name || '未命名行程'}」？${others ? `共編的 ${others} 位成員也會看不到。` : ''}`
-  if (!t || !window.confirm(msg)) return
+  if (!t) return
+  const ok = await confirmDialog({
+    title: `刪除行程「${t.name || '未命名行程'}」？`,
+    body: others ? `共編的 ${others} 位成員也會看不到。` : undefined,
+    ok: '刪除',
+    danger: true,
+  })
+  if (!ok) return
   await trips.remove(t.id)
   await router.push(status.value === 'done' ? '/log' : '/trips')
 }

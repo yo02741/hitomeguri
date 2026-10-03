@@ -3,6 +3,7 @@ import { computed, ref } from 'vue'
 import { useRouter } from 'vue-router'
 
 import { useDismiss } from '../composables/floating'
+import { confirmDialog } from '../services/confirm'
 import type { Trip } from '../services/trip'
 import { useTripsStore } from '../stores/trips'
 import { useUserStore } from '../stores/user'
@@ -56,18 +57,25 @@ async function copy() {
   }
 }
 async function renew() {
-  if (!window.confirm('重新產生連結？舊的連結會失效。')) return
+  if (!(await confirmDialog({ title: '重新產生連結？', body: '舊的連結會失效。', ok: '重新產生' }))) return
   busy.value = true
   await trips.invite(props.trip.id, true)
   busy.value = false
 }
 async function remove(m: string) {
   const name = props.trip.member_info[m]?.name || '這位成員'
-  if (!window.confirm(`把 ${name} 移出這個行程？`)) return
+  if (!(await confirmDialog({ title: `把 ${name} 移出這個行程？`, ok: '移出', danger: true }))) return
   await trips.removeMember(props.trip.id, m)
 }
 async function leave() {
-  if (!uid.value || !window.confirm(`離開「${props.trip.name || '未命名行程'}」？離開後就看不到這個行程。`)) return
+  if (!uid.value) return
+  const ok = await confirmDialog({
+    title: `離開「${props.trip.name || '未命名行程'}」？`,
+    body: '離開後就看不到這個行程。',
+    ok: '離開',
+    danger: true,
+  })
+  if (!ok || !uid.value) return
   await trips.removeMember(props.trip.id, uid.value)
   await router.push('/trips')
 }
