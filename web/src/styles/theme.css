@@ -719,5 +719,6 @@
 }
 .map-root .maplibregl-ctrl-bottom-left,
 .map-root .maplibregl-ctrl-bottom-right {
-  bottom: var(--map-inset-b);
+  /* --map-lift-b：手機的祭典小卡的高度（MapView 的 controlsLift），縮放鈕移到小卡上面 */
+  bottom: calc(var(--map-inset-b) + var(--map-lift-b, 0px));
 }
