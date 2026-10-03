@@ -115,6 +115,7 @@ function wear() {
 
       <!-- 衣櫃 -->
       <section class="flex min-w-0 flex-col lg:min-h-0" aria-label="衣櫃">
+        <!-- 手機（<1024）每個分頁平分寬度，不會左右捲 -->
         <div class="flex items-end gap-1 overflow-x-auto px-2" role="tablist" aria-label="衣櫃">
           <button
             v-for="t in TABS"
@@ -122,7 +123,7 @@ function wear() {
             type="button"
             role="tab"
             :aria-selected="tab === t.key"
-            class="tab h-10 shrink-0 rounded-t-control px-4 text-label font-bold active:text-ink pointer-coarse:h-tap"
+            class="tab h-10 shrink-0 rounded-t-control px-4 text-label font-bold whitespace-nowrap active:text-ink max-lg:min-w-0 max-lg:flex-1 max-lg:shrink max-lg:px-0 pointer-coarse:h-tap"
             :class="tab === t.key ? 'is-on bg-surface text-ink' : 'text-sub hover:text-ink'"
             @click="tab = t.key"
           >
