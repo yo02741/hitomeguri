@@ -5,6 +5,7 @@ import { useRouter } from 'vue-router'
 import DateRangePicker from '../components/DateRangePicker.vue'
 import TripCard from '../components/TripCard.vue'
 import { TRIP_NAME_MAX, tripStatus } from '../services/trip'
+import { wide } from '../services/viewport'
 import { useTripsStore } from '../stores/trips'
 import { useUserStore } from '../stores/user'
 
@@ -21,6 +22,8 @@ const start = ref('')
 const end = ref('')
 // 送出中不能再按（雙擊會建兩個同名行程）；離線時要等連線恢復才寫得進去，按鈕就停用到那時候
 const busy = ref(false)
+// 手機（<1024）：已有的行程排在前面，新增表單收成一顆「新增行程」，按了才展開（桌機照舊表單在上面）
+const formOpen = ref(false)
 async function create() {
   if (busy.value) return
   busy.value = true
@@ -40,8 +43,16 @@ async function create() {
     <h1 class="text-h2 font-black tracking-title">行程</h1>
 
     <template v-if="userStore.user">
-      <form class="flex flex-wrap items-end gap-3" @submit.prevent="create">
-        <label class="flex min-w-[200px] flex-1 flex-col gap-1 text-caption text-sub">
+      <button
+        v-if="!wide && !formOpen"
+        type="button"
+        class="h-11 w-fit rounded-control bg-region-strong px-4 text-body-sm font-bold text-white active:not-disabled:translate-y-px max-lg:order-2"
+        @click="formOpen = true"
+      >
+        新增行程
+      </button>
+      <form v-else class="flex flex-wrap items-end gap-3 max-lg:order-2" @submit.prevent="create">
+        <label class="flex min-w-[200px] flex-1 flex-col gap-1 text-caption text-sub max-lg:basis-full">
           名稱
           <input
             v-model="name"
@@ -66,12 +77,12 @@ async function create() {
         </button>
       </form>
 
-      <ul v-if="upcoming.length" class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      <ul v-if="upcoming.length" class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 max-lg:order-1">
         <li v-for="t in upcoming" :key="t.id"><TripCard :trip="t" /></li>
       </ul>
-      <p v-else-if="trips.loaded" class="text-body-sm text-sub">還沒有行程</p>
-      <RouterLink v-if="doneCount" to="/log" class="w-fit text-body-sm text-sub active:text-ink pointer-coarse:-my-3 pointer-coarse:py-3">已結束的旅行 {{ doneCount }}</RouterLink>
-      <p v-if="trips.error" class="text-caption text-danger" role="alert">{{ trips.error }}</p>
+      <p v-else-if="trips.loaded" class="text-body-sm text-sub max-lg:order-1">還沒有行程</p>
+      <RouterLink v-if="doneCount" to="/log" class="w-fit text-body-sm text-sub active:text-ink pointer-coarse:-my-3 pointer-coarse:py-3 max-lg:order-3">已結束的旅行 {{ doneCount }}</RouterLink>
+      <p v-if="trips.error" class="text-caption text-danger max-lg:order-3" role="alert">{{ trips.error }}</p>
     </template>
     <div v-else class="flex flex-col items-start gap-4">
       <p class="text-body-sm text-sub">收藏、行程與紀錄需要登入。</p>
