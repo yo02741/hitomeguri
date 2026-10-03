@@ -7,6 +7,8 @@
 - 夜景 P3451、冬景 P5252：有就用它（蓋掉依檔名找到的）
 - 全景 P4291，沒有時空拍 P8592：放在 season_images.panorama，全景卡、特別全景卡用
 data/seed/photo_exclude.json 列的檔案一律不用。
+data/seed/photo_choices.json 是使用者在照片審核頁選的主照片（file 為 null 表示都不適合、不放照片），
+一律照它。
 """
 
 from __future__ import annotations
@@ -14,7 +16,7 @@ from __future__ import annotations
 import json
 from typing import Any
 
-from pipeline.paths import SPOTS_DIR
+from pipeline.paths import SEED_DIR, SPOTS_DIR
 from pipeline.photo_stats import (
     SpotPhotos,
     exempt,
@@ -43,8 +45,16 @@ def pick(cands: list[str], ok: Any) -> str | None:
     return None
 
 
+def load_choices() -> dict[str, str | None]:
+    path = SEED_DIR / "photo_choices.json"
+    if not path.exists():
+        return {}
+    return {r["spot"]: r["file"] for r in json.loads(path.read_text(encoding="utf-8"))}
+
+
 def seed_photos(prefs: list[str]) -> str:
-    stats = {"main_added": 0, "night": 0, "winter": 0, "panorama": 0, "rejected": 0}
+    stats = {"main_added": 0, "night": 0, "winter": 0, "panorama": 0, "rejected": 0, "chosen": 0}
+    choices = load_choices()
     lines = ["## 照片補齊（主照片、夜景・冬景・全景）", ""]
     for pref in prefs:
         path = SPOTS_DIR / f"{pref}.json"
@@ -68,10 +78,20 @@ def seed_photos(prefs: list[str]) -> str:
         need = [f for sp in sps if not sp.main for f in sp.wiki.values()]
         cats = fetch_categories([norm(f) for f in need]) if need else {}
         chosen: dict[str, dict[str, str]] = {}  # qid → {key: file}
+        cleared = 0
         for sp in sps:
             s = by_qid[sp.id]
             pick_for: dict[str, str] = {}
-            if not sp.main:
+            if sp.id in choices:
+                if (c := choices[sp.id]) is None:
+                    if s.get("images"):
+                        s["images"] = []
+                        stats["chosen"] += 1
+                        cleared += 1
+                elif norm(c) != sp.main:
+                    pick_for["main"] = norm(c)
+                    stats["chosen"] += 1
+            elif not sp.main:
                 cands = [sp.wiki[k] for k in ("jawiki", "enwiki", "zhwiki") if k in sp.wiki]
 
                 def clean(
@@ -96,7 +116,7 @@ def seed_photos(prefs: list[str]) -> str:
                 chosen[sp.id] = pick_for
         files = [f for d in chosen.values() for f in d.values()]
         infos = commons.image_info(files, width=960) if files else {}
-        changed = 0
+        changed = cleared
         for qid, d in chosen.items():
             s = by_qid[qid]
             for key, f in d.items():
@@ -110,8 +130,9 @@ def seed_photos(prefs: list[str]) -> str:
                     "source_url": info.source_url,
                 }
                 if key == "main":
+                    if not s.get("images"):
+                        stats["main_added"] += 1
                     s["images"] = [img]
-                    stats["main_added"] += 1
                 else:
                     si = s.get("season_images") or {}
                     if si.get(key, {}).get("source_url") == img["source_url"]:
@@ -126,6 +147,7 @@ def seed_photos(prefs: list[str]) -> str:
         lines.append(f"- {pref}：{changed} 處")
     lines[2:2] = [
         f"- 補上主照片：{stats['main_added']} 個景點（候選都被分類擋掉的 {stats['rejected']} 個）",
+        f"- 照審核頁的選擇換掉或拿掉主照片：{stats['chosen']} 個景點",
         f"- 夜景改用 Wikidata 夜景欄位：{stats['night']}",
         f"- 冬景改用 Wikidata 冬景欄位：{stats['winter']}",
         f"- 全景（全景或空拍欄位）：{stats['panorama']}",

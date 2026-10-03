@@ -117,6 +117,15 @@ def cmd_seed_photos(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_photo_review(args: argparse.Namespace) -> int:
+    from pipeline.paths import DATA, SPOTS_DIR
+    from pipeline.photo_review import photo_review
+
+    prefs = args.prefectures or sorted(p.stem for p in SPOTS_DIR.glob("*.json"))
+    _emit(photo_review(prefs, DATA.parent / "reports" / "photo-review"), args.report)
+    return 0
+
+
 def cmd_seed_pokefuta(args: argparse.Namespace) -> int:
     from pipeline.packs import seed_pokefuta
 
@@ -275,6 +284,11 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("prefectures", nargs="*", help="省略時處理全部縣")
     p.add_argument("--report")
     p.set_defaults(func=cmd_seed_photos)
+
+    p = sub.add_parser("photo-review", help="精選景點主照片的審核對照圖（不改資料）")
+    p.add_argument("prefectures", nargs="*", help="省略時處理全部縣")
+    p.add_argument("--report")
+    p.set_defaults(func=cmd_photo_review)
 
     p = sub.add_parser("seed-wiki", help="由維基百科補簡介與缺漏念法（已有大點的縣）")
     p.add_argument("prefectures", nargs="+")

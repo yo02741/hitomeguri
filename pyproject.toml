@@ -13,6 +13,8 @@ dependencies = [
 
 [project.optional-dependencies]
 dev = [
+  # 照片審核圖（photo-review）拼圖用
+  "pillow>=11",
   "pytest>=8",
   "ruff>=0.12",
 ]
