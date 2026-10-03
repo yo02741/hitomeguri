@@ -78,7 +78,7 @@
 | sub | 62:38，自動加深到對 header ≥ 4.6:1 | `text-sub` | 標籤、說明、假名 | `#303F5A` | `#403058` |
 
 - 47 縣的全部數值在 `data/regions.json`（`color.paper`…`color.sub`），CSS 變數在 `regions.css`。
-- 檢查結果：47 縣 ink 對 paper 皆 ≥ 11.5:1，sub 對 header 皆 ≥ 4.6:1。
+- 對比由 `pipeline/tests/test_region_contrast.py` 保證（全國＋47 縣 × 令和與 5 個年代）：文字（ink、ink-2、sub 對 paper／surface／header／tint，on-base 對 base，年代的白對 strong）≥ 4.5:1；strong 對 paper、surface ≥ 3:1；去過色對 visited-tint 與 paper ≥ 4.5:1；主題色對 paper 與地圖陸地 ≥ 3:1（茶在江戶、昭和的陸地上目前最低 2.94，測試守這個下限）；白字對 danger ≥ 4.5:1。
 - 調整濃淡只改產生腳本的比例參數後重新產生，不手改色碼。
 
 ### 3.2 主題色（固定）
