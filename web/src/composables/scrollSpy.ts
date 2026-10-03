@@ -10,7 +10,7 @@ export interface NavItem {
 }
 
 /** 最近的可捲動祖先（App 的 <main> 或頁面自己的捲動容器） */
-function scrollParent(el: HTMLElement | null): HTMLElement | null {
+export function scrollParent(el: HTMLElement | null): HTMLElement | null {
   for (let n = el?.parentElement ?? null; n; n = n.parentElement) {
     const y = getComputedStyle(n).overflowY
     if (y === 'auto' || y === 'scroll') return n

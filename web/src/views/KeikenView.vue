@@ -5,6 +5,7 @@ import BackLink from '../components/BackLink.vue'
 import RollingNumber from '../components/RollingNumber.vue'
 import ShareImage from '../components/ShareImage.vue'
 import { useDismiss } from '../composables/floating'
+import { scrollParent } from '../composables/scrollSpy'
 import { groupByArea, regionOf, regions } from '../data/regions'
 import { japanOutline, type JapanOutline } from '../services/geo'
 import { drawKeiken } from '../services/shareImage'
@@ -35,17 +36,45 @@ function pick(e: MouseEvent, pref: string) {
   if (!userStore.user) return
   const box = mapBox.value?.getBoundingClientRect()
   if (!box) return
-  picking.value = { pref, x: Math.min(e.clientX - box.left, box.width - 150), y: e.clientY - box.top }
+  picking.value = { pref, x: Math.max(0, Math.min(e.clientX - box.left, box.width - 150)), y: e.clientY - box.top }
 }
-// Esc、點地圖以外的地方關閉；打開時焦點放在目前的級數
+// 選單放在點的位置下方；下面放不下（畫面下半、手機的分頁列）就翻到上方，
+// 仍放不下（橫向）就貼齊可見區的頂端、選單自己捲動。可見區是頁面捲動容器與視窗的交集。
 const menu = ref<HTMLElement | null>(null)
+const menuPos = ref<{ top: number; maxHeight?: number; above: boolean } | null>(null)
+function placeMenu() {
+  const m = menu.value
+  const box = mapBox.value
+  const at = picking.value
+  if (!m || !box || !at) return
+  const b = box.getBoundingClientRect()
+  const view = scrollParent(box)?.getBoundingClientRect()
+  const gap = 8
+  const visTop = Math.max(view?.top ?? 0, 0) + gap
+  const visBottom = Math.min(view?.bottom ?? window.innerHeight, window.innerHeight) - gap
+  const room = visBottom - visTop
+  const h = Math.min(m.scrollHeight, room)
+  const y = b.top + at.y
+  const above = y + gap + h > visBottom
+  const top = Math.min(Math.max(above ? y - gap - h : y + gap, visTop), visBottom - h)
+  menuPos.value = { top: top - b.top, maxHeight: m.scrollHeight > room ? room : undefined, above }
+}
+// Esc、點地圖以外的地方關閉；打開時焦點放在目前的級數（不讓 focus 捲動頁面）
 useDismiss(mapBox, picking, () => (picking.value = null))
 watch(
-  () => picking.value?.pref,
-  async (p) => {
-    if (!p) return
+  () => picking.value && `${picking.value.pref},${picking.value.x},${picking.value.y}`,
+  async (k) => {
+    menuPos.value = null
+    if (!k) return
     await nextTick()
-    menu.value?.querySelector<HTMLElement>('[aria-checked="true"]')?.focus()
+    placeMenu()
+    await nextTick()
+    const m = menu.value
+    const item = m?.querySelector<HTMLElement>('[aria-checked="true"]')
+    if (!m || !item) return
+    item.focus({ preventScroll: true })
+    // 選單自己捲動時，把目前的級數捲進選單裡（只捲選單）
+    if (item.offsetTop + item.offsetHeight > m.clientHeight) m.scrollTop = item.offsetTop + item.offsetHeight - m.clientHeight + 4
   },
 )
 async function choose(pref: string, level: KeikenLevel | null) {
@@ -108,8 +137,14 @@ async function render(canvas: HTMLCanvasElement) {
           v-if="picking"
           ref="menu"
           data-reduce="fade"
-          class="absolute z-10 flex w-[140px] origin-top animate-pop-in flex-col rounded-card bg-paper p-1 shadow-float"
-          :style="{ left: `${picking.x}px`, top: `${picking.y + 8}px` }"
+          class="absolute z-10 flex w-[140px] animate-pop-in flex-col overflow-y-auto *:shrink-0 overscroll-contain rounded-card bg-paper p-1 shadow-float"
+          :class="menuPos?.above ? 'origin-bottom' : 'origin-top'"
+          :style="{
+            left: `${picking.x}px`,
+            top: `${menuPos?.top ?? picking.y + 8}px`,
+            maxHeight: menuPos?.maxHeight ? `${menuPos.maxHeight}px` : undefined,
+            visibility: menuPos ? undefined : 'hidden',
+          }"
           role="menu"
           :aria-label="regionOf(picking.pref)?.name.ja"
         >
