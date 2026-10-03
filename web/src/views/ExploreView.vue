@@ -126,10 +126,13 @@ watch(
 watch(
   () => explore.pack,
   (key) => {
-    const q = { ...route.query }
-    if (key) q.pack = key
-    else delete q.pack
-    if ((route.query.pack ?? '') !== (q.pack ?? '')) router.replace({ query: q })
+    // URL 已經是這個擴充包（select() 和景點一起寫進去的）就不再 replace
+    if ((route.query.pack ?? '') !== (key ?? '')) {
+      const q = { ...route.query }
+      if (key) q.pack = key
+      else delete q.pack
+      router.replace({ query: q })
+    }
     if (key) catalog.loadPack(key)
   },
 )
@@ -397,8 +400,9 @@ watch(
 async function select(id: string) {
   const pack = packOfId(id)
   const item = pack ? catalog.packs[pack]?.find((x) => x.id === id) : undefined
-  // 從景點卡片的「附近」點進擴充包的點：一併開啟那個擴充包
-  if (pack && explore.pack !== pack) explore.pack = pack
+  // 從景點卡片的「附近」點進擴充包的點：一併開啟那個擴充包。
+  // 不先改 explore.pack：它的 watcher 會用還沒換的 query 再 replace 一次，把 spot 蓋掉；
+  // 這裡和 spot 一起寫進同一次導航，explore.pack 由 route.query.pack 的 watcher 跟上
   // 已經是景點的點（名城）：直接開景點卡片，名城番號等顯示在卡片上
   const target = item?.s ?? id
   // 首頁（全國）選了擴充包的點：和搜尋一樣進入那個縣（地圖、地區色、清單都換到該縣）
