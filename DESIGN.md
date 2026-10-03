@@ -426,7 +426,8 @@ header 右側、登入鈕左邊（`SearchBox.vue`，每一頁都在；在行程�
 ### 7.16 日期選擇器 DatePicker / DateRangePicker
 不用原生 `<input type="date">`（各瀏覽器長相不一，手機上還會跳系統滾輪）。
 - 觸發鈕長得像輸入框：`h-10 rounded-control border border-line bg-paper px-2.5`＋月曆圖示；日期 `font-latin`，格式 `2026/10/12（一）`，區間 `2026/10/31（六） → 11/03（二）`。打開時外框 `border-region-strong`。
-- 面板：`w-[304px] rounded-card bg-paper p-3 shadow-float`，Teleport 到 body、`fixed` 定位，下方放不下就翻到上方；沿用觸發鈕所在的 `data-pref`。
+- 面板：`w-[304px] rounded-card bg-paper p-3 shadow-float`，Teleport 到 body、`fixed` 定位，下方放不下就翻到上方；手機的下緣不超過底部分頁列（`composables/floating.ts`，Dropdown 也一樣）；沿用觸發鈕所在的 `data-pref`。
+- 還沒選日期時打開在今天的月；補登旅行（`/log`）打開在上個月（`initial`）。補登旅行的表單在 1024 以下名稱整行，日期與「新增」排在下一行。
 - 表頭：‹ 年月 ›，點年月往上一層（日 → 月 → 年，月、年都是 3 欄格子）。星期列：日 `text-danger`、六 `text-visited`（日本月曆的習慣），其餘 `text-sub`。
 - 日期格 `size-10 rounded-control font-latin text-body-sm`：選取 `bg-region-strong text-white font-bold`；區間中間 `bg-region-tint`（連成一條，兩端圓角）；今天在數字下方加 4px 圓點；範圍外 `text-line`；非本月 `text-sub/50`。
 - 底部：單日有「今天」「清除」；區間顯示「出發 → 回程」或「N 天」與「清除」。

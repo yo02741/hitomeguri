@@ -19,6 +19,7 @@ import { useVisitedEntries } from '../composables/visited'
 import { useCollection } from '../composables/collection'
 import { type NavItem, useScrollSpy } from '../composables/scrollSpy'
 import { regions } from '../data/regions'
+import { addMonths, monthOf } from '../services/calendar'
 import { markRow } from '../services/export'
 import { whenIdle } from '../services/idle'
 import type { MapSpot } from '../services/bundles'
@@ -111,6 +112,8 @@ const name = ref('')
 const start = ref('')
 const end = ref('')
 const today = todayIso()
+// 補登的多半是之前的旅行：月曆先打開上個月
+const lastMonth = `${addMonths(monthOf(today), -1)}-01`
 // 送出中不能再按（雙擊會補登兩趟）
 const adding = ref(false)
 async function addPast() {
@@ -320,7 +323,7 @@ function open(id: string) {
           <li v-for="t in doneTrips" :key="t.id"><TripCard :trip="t" /></li>
         </ul>
         <form class="flex flex-wrap items-end gap-3" @submit.prevent="addPast">
-          <label class="flex min-w-[180px] flex-1 flex-col gap-1 text-caption text-sub">
+          <label class="flex min-w-[180px] flex-1 flex-col gap-1 text-caption text-sub max-lg:basis-full">
             補登旅行
             <input
               v-model="name"
@@ -332,7 +335,7 @@ function open(id: string) {
           </label>
           <div class="flex flex-col gap-1 text-caption text-sub">
             <span>日期</span>
-            <DateRangePicker label="日期" :start="start" :end="end" :max="today" @change="(s, e) => ((start = s), (end = e))" />
+            <DateRangePicker label="日期" :start="start" :end="end" :max="today" :initial="lastMonth" @change="(s, e) => ((start = s), (end = e))" />
           </div>
           <button
             type="submit"

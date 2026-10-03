@@ -17,6 +17,8 @@ const props = withDefaults(
     min?: string
     max?: string
     placeholder?: string
+    /** 還沒選日期時月曆先打開的日期（CalendarPanel 的 initial） */
+    initial?: string
     size?: 'sm' | 'md' | 'lg'
     disabled?: boolean
   }>(),
@@ -111,7 +113,7 @@ const days = computed(() => dayCount(draftStart.value || undefined, (draftEnd.va
       @keydown.esc.stop.prevent="close"
       @focusout="onFocusOut"
     >
-      <CalendarPanel :start="draftStart" :end="draftEnd" range :min="min" :max="max" @pick="pick">
+      <CalendarPanel :start="draftStart" :end="draftEnd" range :min="min" :max="max" :initial="initial" @pick="pick">
         <template #footer>
           <div class="flex min-h-9 items-center gap-2 border-t border-line-soft pt-2 text-label">
             <span class="px-1 text-sub" aria-live="polite">
