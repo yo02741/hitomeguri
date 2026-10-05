@@ -493,8 +493,8 @@
   {
     "id": "osm-node-1423616662",
     "name": {
-      "ja": "資料室　はぜくら",
-      "zh_tw": "資料室　はぜくら"
+      "ja": "資料室 はぜくら",
+      "zh_tw": "資料室 はぜくら"
     },
     "location": {
       "lat": 34.468061,
@@ -529,7 +529,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "osm-node-1423617180",
@@ -2598,7 +2598,7 @@
       "史跡"
     ],
     "featured": true,
-    "score": 83.04,
+    "score": 83.09,
     "summary": {
       "text": "月山富田城為日本古代城郭之一，位於現今島根縣安來市廣瀨町。",
       "lang": "zh",
@@ -2645,8 +2645,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-10-02",
-    "season_images": {}
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q10449219",
@@ -2669,7 +2668,7 @@
       "島"
     ],
     "featured": false,
-    "score": 55.54,
+    "score": 55.84,
     "summary": {
       "text": "知夫裡島是日本島根縣隱岐群島的島嶼之一，也是島根縣內唯一的村隱岐郡知夫村的主島。知夫裡島和西之島、中之島共同構成了隱岐群島西部島前三島，也是隱岐群島四個有人島中人口最少的島嶼。2013年9月9日，知夫裡島和西之島、中之島、島後島共同列入世界地質公園。",
       "lang": "zh",
@@ -2695,7 +2694,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-29"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q104721878",
@@ -2807,7 +2806,7 @@
       "博物館"
     ],
     "featured": false,
-    "score": 44.76,
+    "score": 44.62,
     "summary": {
       "text": "津和野町郷土館（つわのちょうきょうどかん）は、島根県鹿足郡津和野町にある歴史博物館である。",
       "lang": "ja",
@@ -2851,7 +2850,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q104721886",
@@ -2874,7 +2873,7 @@
       "博物館"
     ],
     "featured": false,
-    "score": 60.52,
+    "score": 60.63,
     "summary": {
       "text": "絲原記念館（いとはらきねんかん）は、島根県奥出雲町にある歴史資料館。たたら製鉄で栄えた「鉄師御三家」絲原家の記念館。",
       "lang": "ja",
@@ -2909,7 +2908,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q104721896",
@@ -2930,7 +2929,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 54.19,
+    "score": 54.34,
     "summary": {
       "text": "島根県立八雲立つ風土記の丘（しまねけんりつやくもたつふどきのおか）は島根県松江市大庭町にある風土記の丘（歴史公園・野外博物館）施設。",
       "lang": "ja",
@@ -2960,7 +2959,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q106488309",
@@ -2981,7 +2980,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 49.81,
+    "score": 50.13,
     "summary": {
       "text": "竹崎のカツラ（たけざきのカツラ）は、島根県仁多郡奥出雲町竹崎にある国の天然記念物に指定されたカツラの巨木である。指定名称は当地の大字から名づけられている。",
       "lang": "ja",
@@ -2989,14 +2988,7 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8a/Takezaki_no_Katsura_Cercidphylluum_japonicum_D.jpg/960px-Takezaki_no_Katsura_Cercidphylluum_japonicum_D.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "さかおり",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Takezaki_no_Katsura_Cercidphylluum_japonicum_D.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q106488309"
     },
@@ -3011,7 +3003,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q106488376",
@@ -3032,7 +3024,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 49.43,
+    "score": 49.69,
     "summary": {
       "text": "松代鉱山の霰石産地（まつしろこうざんのあられいしさんち）とは、島根県大田市久利町松代にある、アラレ石が団塊の状態で産出する国の天然記念物に指定された地層である。",
       "lang": "ja",
@@ -3040,14 +3032,7 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/46/Spherical_aragonite_from_the_Matsushiro_mine._Specimen_from_Shimane_Prefectural_Sanbe_Nature_Museum.jpg/960px-Spherical_aragonite_from_the_Matsushiro_mine._Specimen_from_Shimane_Prefectural_Sanbe_Nature_Museum.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "さかおり",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Spherical_aragonite_from_the_Matsushiro_mine._Specimen_from_Shimane_Prefectural_Sanbe_Nature_Museum.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q106488376"
     },
@@ -3062,7 +3047,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q106714566",
@@ -3083,7 +3068,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 55.44,
+    "score": 55.15,
     "summary": {
       "text": "大根島第二熔岩隧道（だいこんじまだいにようがんずいどう）は、島根県松江市八束町（旧八束郡八束町）寺津にある国の天然記念物に指定された溶岩洞である。1933年（昭和8年）の道路改良工事の際に偶然発見されたもので、地元では竜渓洞（りゅうけいどう）と呼ばれており、発見から2年後の1935年（昭和10年）6月7日に国の天然記念物に指定された。",
       "lang": "ja",
@@ -3091,14 +3076,7 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8e/Daikonjima_Island_No._2_lava_tube_tunnel._Cave_entrance_appearance._A.jpg/960px-Daikonjima_Island_No._2_lava_tube_tunnel._Cave_entrance_appearance._A.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "さかおり",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Daikonjima_Island_No._2_lava_tube_tunnel._Cave_entrance_appearance._A.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q106714566",
       "osm": "node/6295507177"
@@ -3118,7 +3096,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q106714580",
@@ -3139,7 +3117,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 58.86,
+    "score": 58.79,
     "summary": {
       "text": "大根島の熔岩隧道（だいこんじまのようがんずいどう）は、島根県松江市八束町遅江にある国の特別天然記念物に指定された溶岩洞である。",
       "lang": "ja",
@@ -3169,7 +3147,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q106781912",
@@ -3190,7 +3168,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 52.06,
+    "score": 52.18,
     "summary": {
       "text": "岩屋寺の切開（いわやじのきりあけ）とは、島根県仁多郡奥出雲町中村にある国の天然記念物に指定された、きわめて小規模で特異な峡谷である。",
       "lang": "ja",
@@ -3198,14 +3176,7 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/46/Iwayaji_no_Kiriake_slot_canyon_A.jpg/960px-Iwayaji_no_Kiriake_slot_canyon_A.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "さかおり",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Iwayaji_no_Kiriake_slot_canyon_A.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q106781912"
     },
@@ -3220,7 +3191,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q107298068",
@@ -3241,7 +3212,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 49.52,
+    "score": 49.71,
     "summary": {
       "text": "海潮のカツラ（うしおのカツラ）は、島根県雲南市大東町中湯石にある国の天然記念物に指定されたカツラの巨木である。指定名称の海潮（うしお）は当地の旧村名である。",
       "lang": "ja",
@@ -3249,14 +3220,7 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6a/Ushio_no_Katsura_Cercidphylluum_japonicum_G.jpg/960px-Ushio_no_Katsura_Cercidphylluum_japonicum_G.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "さかおり",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Ushio_no_Katsura_Cercidphylluum_japonicum_G.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q107298068"
     },
@@ -3271,7 +3235,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q10896678",
@@ -3294,7 +3258,7 @@
       "重要文化財"
     ],
     "featured": false,
-    "score": 70.74,
+    "score": 70.7,
     "summary": {
       "text": "出雲日御碕燈塔為位於日本島根縣出雲市的一座燈塔。為日本最高的石造燈塔。周邊地區是大山隠岐國立公園的一部分。也是日本唯一一個帶碕字的燈塔。被列入世界燈塔100選及日本燈塔50選，是日本具有代表性的燈塔。",
       "lang": "zh",
@@ -3320,8 +3284,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q109227267",
@@ -3341,7 +3304,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 51.37,
+    "score": 51.34,
     "summary": {
       "text": "隠岐温泉（おきおんせん）は島根県隠岐郡隠岐の島町（旧五箇村）南方296-1にある温泉。隠岐の島町唯一の温泉である。",
       "lang": "ja",
@@ -3360,7 +3323,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q109366099",
@@ -3384,7 +3347,7 @@
       "史跡"
     ],
     "featured": false,
-    "score": 39.75,
+    "score": 39.84,
     "summary": {
       "text": "The Yamashiro Hōfun (山代方墳)  is a Kofun period burial mound, located in the Yamashiro-cho neighborhood of the city of Matsue, Shimane in the San'in region of Japan. The tumulus was designated a National Historic Site of Japan in 1941. It is one of the largest burial mounds in Shimane Prefecture, and one of the last major burial mounds to have been constructed in the Izumo region.",
       "lang": "en",
@@ -3419,7 +3382,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q112127948",
@@ -3439,7 +3402,7 @@
       "公園"
     ],
     "featured": false,
-    "score": 31.21,
+    "score": 30.88,
     "summary": {
       "text": "Shimane Prefectural Manyō Park (島根県立万葉公園, Shimane Kenritsu Manyō Kōen) is a park in Masuda, Shimane Prefecture, Japan. The park takes its name from the Man'yōshū, drawing on the historic connections between Kakinomoto no Hitomaro and Iwami Province, and includes within it a botanical garden with 153 of the species of plant that are named in the anthology.",
       "lang": "en",
@@ -3463,7 +3426,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11239221",
@@ -3486,7 +3449,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 56.61,
+    "score": 56.67,
     "summary": {
       "text": "松江護國神社（まつえごこくじんじゃ）は、島根県松江市の松江城址にある神社（護国神社）である。",
       "lang": "ja",
@@ -3526,7 +3489,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q112674539",
@@ -3547,7 +3510,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 57.65,
+    "score": 57.72,
     "summary": {
       "text": "津和野町津和野伝統的建造物群保存地区（つわのちょうつわの でんとうてきけんぞうぶつぐんほぞんちく）は、島根県鹿足郡津和野町後田の橋北地区にある伝統的建造物群保存地区の名称である。保存地区内の道や水路などの地割りは、江戸初期に整備されて以降、大きな変化はなく、幕末から昭和初期にかけて形成された建造物群や、洋風建築のカトリック教会などの町並みが形成されている。",
       "lang": "ja",
@@ -3586,7 +3549,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11280912",
@@ -3606,7 +3569,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 42.84,
+    "score": 42.93,
     "summary": {
       "text": "ゆめタウン出雲（ゆめタウンいずも）は、島根県出雲市にあるショッピングセンターである。",
       "lang": "ja",
@@ -3636,7 +3599,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11280931",
@@ -3656,7 +3619,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 40.44,
+    "score": 40.56,
     "summary": {
       "text": "ゆめタウン浜田（ゆめタウンはまだ）は、島根県浜田市にある株式会社イズミが運営する総合スーパーである。",
       "lang": "ja",
@@ -3679,7 +3642,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11284269",
@@ -3703,7 +3666,7 @@
       "史跡"
     ],
     "featured": false,
-    "score": 72.33,
+    "score": 72.27,
     "summary": {
       "text": "濱田城是一個位於日本石見國濱田（現島根縣濱田市殿町）的城堡，在江戶時代曾是濱田藩的藩廳所在地，於1620年開始築城。濱田城位於濱田市中心的一座被濱田川環繞的高68米的丘陵上。城郭建築在長州征伐時大部分被燒毀。現在濱田城作為城山公園對公眾開放。",
       "lang": "zh",
@@ -3738,8 +3701,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11286282",
@@ -3761,7 +3723,7 @@
       "購物"
     ],
     "featured": false,
-    "score": 46.01,
+    "score": 45.97,
     "summary": {
       "text": "イオン松江ショッピングセンター（イオンまつえショッピングセンター）は、島根県の松江市に立地するショッピングセンター。",
       "lang": "ja",
@@ -3778,14 +3740,7 @@
         "distance_m": 520
       }
     ],
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2c/%E3%82%A4%E3%82%AA%E3%83%B3%E6%9D%BE%E6%B1%9F_2024-10.jpg/960px-%E3%82%A4%E3%82%AA%E3%83%B3%E6%9D%BE%E6%B1%9F_2024-10.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Vetalapancavimsatika",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:%E3%82%A4%E3%82%AA%E3%83%B3%E6%9D%BE%E6%B1%9F_2024-10.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q11286282"
     },
@@ -3800,7 +3755,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11286301",
@@ -3820,7 +3775,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 38.49,
+    "score": 38.54,
     "summary": {
       "text": "イオン益田店（イオンますだてん）は、島根県益田市乙吉町にあるイオンリテール株式会社が運営・管理する総合スーパー(GMS)。",
       "lang": "ja",
@@ -3852,7 +3807,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11307310",
@@ -3872,7 +3827,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 40.28,
+    "score": 40.34,
     "summary": {
       "text": "シティパルク浜田（シティパルクはまだ）は、島根県浜田市にある商業施設。",
       "lang": "ja",
@@ -3904,7 +3859,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11350955",
@@ -3927,7 +3882,7 @@
       "島"
     ],
     "featured": false,
-    "score": 59.71,
+    "score": 59.75,
     "summary": {
       "text": "ローソク島（ローソクじま）は、日本の中国地方、隠岐諸島の島後島北西部・代地区沖の海面上に高さ20mほど突き出した、火成岩でできた小さな無人島。行政区分としては島根県隠岐郡隠岐の島町に属する。",
       "lang": "ja",
@@ -3957,7 +3912,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11352956",
@@ -3977,7 +3932,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 62.66,
+    "score": 61.68,
     "summary": {
       "text": "一畑パーク（いちばたパーク）は、島根県平田市（現在の出雲市）一畑町にかつて存在した遊園地。",
       "lang": "ja",
@@ -4007,7 +3962,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11354473",
@@ -4030,7 +3985,7 @@
       "城"
     ],
     "featured": false,
-    "score": 60.55,
+    "score": 60.61,
     "summary": {
       "text": "三刀屋城（みとやじょう）は、島根県雲南市三刀屋町にあった日本の城。1986年（昭和61年）、島根県の史跡に指定された。",
       "lang": "ja",
@@ -4060,7 +4015,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11356147",
@@ -4084,7 +4039,7 @@
       "史跡"
     ],
     "featured": false,
-    "score": 59.99,
+    "score": 60.1,
     "summary": {
       "text": "三沢城（みざわじょう）は、島根県仁多郡奥出雲町三沢にあった日本の城。尼子十旗と呼ばれる戦国大名・尼子氏の家臣団が守る城塞群（日本の城）の1つ。島根県指定史跡。",
       "lang": "ja",
@@ -4114,7 +4069,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11356662",
@@ -4135,7 +4090,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 61.05,
+    "score": 61.08,
     "summary": {
       "text": "三瓶小豆原埋没林（さんべあずきはらまいぼつりん）は三瓶火山の活動によって地下に埋積した縄文時代の森林。",
       "lang": "ja",
@@ -4165,7 +4120,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11356664",
@@ -4186,7 +4141,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 56.32,
+    "score": 56.24,
     "summary": {
       "text": "三瓶温泉（さんべおんせん）は、島根県大田市（旧国石見国）にある温泉。",
       "lang": "ja",
@@ -4212,7 +4167,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11362796",
@@ -4235,7 +4190,7 @@
       "島"
     ],
     "featured": false,
-    "score": 53.31,
+    "score": 53.32,
     "summary": {
       "text": "中之島是日本島根縣隱岐群島中島前的一個島嶼，又名海士島（日語：あまとう），是隱岐郡海士町的主島。中之島面積32.31平方公里，周長89.1公里，島上人口約有2,400人。中之島對外的主要交通方式是渡船，島上的主要交通方式則是公車。",
       "lang": "zh",
@@ -4265,7 +4220,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q113629224",
@@ -4287,7 +4242,7 @@
       "寺院"
     ],
     "featured": false,
-    "score": 33.54,
+    "score": 34.24,
     "summary": {
       "text": "信楽寺（しんぎょうじ）は島根県松江市竪町にある浄土宗の仏教寺院で、山号は獨留山、正式名称は、獨留山至心院信楽寺（どくるざん ししんいん しんぎょうじ）と称する。",
       "lang": "ja",
@@ -4338,7 +4293,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11365325",
@@ -4361,7 +4316,7 @@
       "博物館"
     ],
     "featured": false,
-    "score": 53.12,
+    "score": 53.34,
     "summary": {
       "text": "中村元記念館（なかむらはじめきねんかん）は、島根県松江市八束町の松江市役所八束支所2階にある中村元の記念館。",
       "lang": "ja",
@@ -4396,7 +4351,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11369899",
@@ -4419,7 +4374,7 @@
       "寺院"
     ],
     "featured": false,
-    "score": 62.77,
+    "score": 62.6,
     "summary": {
       "text": "乙女峠マリア聖堂（おとめとうげマリアせいどう）は、島根県鹿足郡津和野町にあるキリスト教の聖堂。津和野駅西側の山中に位置しており、名称は江戸末期から明治初頭の隠れキリシタンにまつわる歴史に由来する。",
       "lang": "ja",
@@ -4463,7 +4418,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11376381",
@@ -4486,7 +4441,7 @@
       "博物館"
     ],
     "featured": false,
-    "score": 64.75,
+    "score": 64.76,
     "summary": {
       "text": "仁摩サンドミュージアム（にまサンドミュージアム）は、島根県大田市仁摩町天河内にある砂の博物館。",
       "lang": "ja",
@@ -4530,7 +4485,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11378969",
@@ -4553,7 +4508,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 53.91,
+    "score": 53.98,
     "summary": {
       "text": "伊勢命神社（いせみことじんじゃ）は、島根県隠岐郡隠岐の島町に鎮座する神社である。『延喜式神名帳』隠岐国穏地郡に「伊勢命神社 名神大」と記載された式内社（名神大社）で、社格は旧郷社。鎮座地は島後の北端にあたる。",
       "lang": "ja",
@@ -4579,7 +4534,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11383230",
@@ -4590,7 +4545,7 @@
       "zh_tw": "佐毘売山神社",
       "en": "Sahimeyama Shrine"
     },
-    "kana_source": "wikipedia",
+    "kana_source": "wikidata",
     "location": {
       "lat": 34.680151,
       "lng": 131.893306
@@ -4602,7 +4557,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 51.43,
+    "score": 51.61,
     "summary": {
       "text": "佐毘売山神社（さひめやまじんじゃ）は、島根県益田市にある神社である。式内社で、旧社格は村社。石見銀山（大田市）にある佐毘売山神社は当社の分社である。",
       "lang": "ja",
@@ -4625,7 +4580,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11383231",
@@ -4636,7 +4591,7 @@
       "zh_tw": "佐毘賣山神社",
       "en": "Sahimeyama Shrine"
     },
-    "kana_source": "wikipedia",
+    "kana_source": "wikidata",
     "location": {
       "lat": 35.099161,
       "lng": 132.431644
@@ -4649,7 +4604,7 @@
       "世界遺產"
     ],
     "featured": true,
-    "score": 81.95,
+    "score": 81.86,
     "summary": {
       "text": "佐毘売山神社（さひめやまじんじゃ）は、島根県大田市大森町の石見銀山（大森銀山）の中に鎮座する神社。祭神は金山彦命。世界遺産「石見銀山遺跡とその文化的景観」の一部である。",
       "lang": "ja",
@@ -4684,8 +4639,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11385133",
@@ -4708,7 +4662,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 59.81,
+    "score": 59.9,
     "summary": {
       "text": "佐香神社（さかじんじゃ）は島根県出雲市小境町に鎮座する神社である。別名、松尾神社。酒造の神として酒造業者からの信仰を集めている。",
       "lang": "ja",
@@ -4725,14 +4679,7 @@
         "distance_m": 640
       }
     ],
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/61/%E4%BD%90%E9%A6%99%E7%A5%9E%E7%A4%BE%EF%BC%88%E5%87%BA%E9%9B%B2%E5%B8%82%E5%B0%8F%E5%A2%83%E7%94%BA%EF%BC%89.jpg/960px-%E4%BD%90%E9%A6%99%E7%A5%9E%E7%A4%BE%EF%BC%88%E5%87%BA%E9%9B%B2%E5%B8%82%E5%B0%8F%E5%A2%83%E7%94%BA%EF%BC%89.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Kamdoomi",
-        "license": "CC0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:%E4%BD%90%E9%A6%99%E7%A5%9E%E7%A4%BE%EF%BC%88%E5%87%BA%E9%9B%B2%E5%B8%82%E5%B0%8F%E5%A2%83%E7%94%BA%EF%BC%89.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q11385133",
       "osm": "way/666218598"
@@ -4748,7 +4695,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11391791",
@@ -4771,7 +4718,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 51.67,
+    "score": 51.64,
     "summary": {
       "text": "八重山神社（やえやまじんじゃ）は、島根県雲南市にある神社である。須佐之男命の伝説があり、牛馬の守護神として崇敬される。",
       "lang": "ja",
@@ -4797,7 +4744,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11392351",
@@ -4820,7 +4767,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 60.19,
+    "score": 60.29,
     "summary": {
       "text": "六所神社（ろくしょじんじゃ）は、島根県松江市大草町にある神社。意宇六社の一つである。出雲国総社であり、旧社格は県社。出雲国府の跡地に鎮座している。",
       "lang": "ja",
@@ -4855,7 +4802,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11395835",
@@ -4875,7 +4822,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 57.71,
+    "score": 57.53,
     "summary": {
       "text": "出雲いりすの丘（いずもいりすのおか）は、島根県出雲市の湯の川温泉地区にある観光施設。2000年4月に開園し、斐川町（当時）、JA斐川町（現・JAしまね）と株式会社ファーム（本社・愛媛県西条市）の3者の出資による第三セクター企業「株式会社湯の川ファーム」が運営していた。2008年3月末を以て株式会社ファームが撤退し、以降の出資比率は斐川町75.5%、JA斐川町24.5%となっている。",
       "lang": "ja",
@@ -4907,7 +4854,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11395855",
@@ -4930,7 +4877,7 @@
       "史跡"
     ],
     "featured": false,
-    "score": 42.61,
+    "score": 42.73,
     "summary": {
       "text": "The Izumo Kokufu (出雲国府) was the provincial capital of Izumo Province in the late Nara period though Heian period. It was located in the Okusa-cho, Yamashiro-cho, and Takeya-cho, neighborhoods of the city of Matsue, Shimane Prefecture in the San'in region of Japan. The ruins have been protected as a National Historic Site since 1971.",
       "lang": "en",
@@ -4938,14 +4885,7 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-29"
     },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ca/Izumo_Kokufu%2C_gaikan.jpg/960px-Izumo_Kokufu%2C_gaikan.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Saigen Jiro",
-        "license": "CC0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Izumo_Kokufu,_gaikan.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q11395855"
     },
@@ -4960,7 +4900,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11395896",
@@ -4980,7 +4920,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 55.09,
+    "score": 54.81,
     "summary": {
       "text": "出雲湯村温泉（いずも ゆむら おんせん）は、島根県雲南市にある温泉。",
       "lang": "ja",
@@ -4988,14 +4928,7 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e3/IzumoYumura-Spa.JPG/960px-IzumoYumura-Spa.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "BMP2",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:IzumoYumura-Spa.JPG"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q11395896"
     },
@@ -5006,7 +4939,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11398790",
@@ -5026,7 +4959,7 @@
       "美術館"
     ],
     "featured": false,
-    "score": 54.92,
+    "score": 54.77,
     "summary": {
       "text": "安来市加納美術館（やすぎしかのうびじゅつかん）は、島根県安来市にある公立美術館。加納美術館は通称名。",
       "lang": "ja",
@@ -5045,7 +4978,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11398844",
@@ -5069,7 +5002,7 @@
       "史跡"
     ],
     "featured": false,
-    "score": 69.17,
+    "score": 69.1,
     "summary": {
       "text": "The Kamoiwakura Site (加茂岩倉遺跡, Kamoiwakura iseki) is an archaeological site located in the Kamo neighborhood of the city of Unnan, Shimane Prefecture, in the San'in Region of Japan. It was designated a National Historic Site in 2019.",
       "lang": "en",
@@ -5104,7 +5037,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11399639",
@@ -5127,7 +5060,7 @@
       "名勝"
     ],
     "featured": false,
-    "score": 66.75,
+    "score": 66.32,
     "summary": {
       "text": "加賀之潛戶乃日本島根縣松江市北部（舊島根町）面向日本海的海岸觀光勝地。「加賀」是聚落的名稱，亦可用加賀潛戶表示。此地歸屬大山隱岐國立公園管轄，1927年被指定為國家名勝和天然紀念物時，皆登錄成「潛戶」之名。",
       "lang": "zh",
@@ -5150,7 +5083,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11399719",
@@ -5171,7 +5104,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 51.94,
+    "score": 51.78,
     "summary": {
       "text": "加賀神社（かかじんじゃ）は、島根県松江市島根町にある神社。潜戸大明神とも呼ばれる。",
       "lang": "ja",
@@ -5201,7 +5134,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11404583",
@@ -5224,7 +5157,7 @@
       "寺院"
     ],
     "featured": false,
-    "score": 58.62,
+    "score": 58.65,
     "summary": {
       "text": "Ikō-ji (医光寺) is a Buddhist temple located in the Somebachō neighborhood of the city of Masuda, Shimane Prefecture, Japan. The temple belongs to the Tōfuku-ji branch of the Rinzai school. The temple's full name is Ryūzō-san Ikō-ji (滝蔵山 医光寺).",
       "lang": "en",
@@ -5255,7 +5188,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11405157",
@@ -5278,7 +5211,7 @@
       "城"
     ],
     "featured": false,
-    "score": 56.09,
+    "score": 56.16,
     "summary": {
       "text": "十神山城（とかみやまじょう）は、島根県安来市新十神町にあった日本の城。",
       "lang": "ja",
@@ -5295,14 +5228,7 @@
         "distance_m": 650
       }
     ],
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4e/Tokamiyama_Castle.jpg/960px-Tokamiyama_Castle.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "by Monado",
-        "license": "CC BY-SA 2.5",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Tokamiyama_Castle.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q11405157"
     },
@@ -5317,7 +5243,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11405226",
@@ -5339,7 +5265,7 @@
       "名勝"
     ],
     "featured": false,
-    "score": 53.94,
+    "score": 53.95,
     "summary": {
       "text": "千丈渓（せんじょうけい、せんじょうだに）は島根県邑南町（旧石見町）及び江津市桜江町（旧桜江町）に位置する渓谷。国の名勝に指定されており（1932年）、また千丈渓県立自然公園に属する。",
       "lang": "ja",
@@ -5362,7 +5288,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11405403",
@@ -5382,7 +5308,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 51.9,
+    "score": 52.05,
     "summary": {
       "text": "千原温泉（ちはらおんせん）は、島根県美郷町千原（旧国石見国）にある温泉。",
       "lang": "ja",
@@ -5390,14 +5316,7 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [
-      {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/8/87/Chihara_onsen.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-        "author": "Somey (talk)",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Chihara_onsen.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q11405403"
     },
@@ -5408,7 +5327,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11418233",
@@ -5431,7 +5350,7 @@
       "博物館"
     ],
     "featured": false,
-    "score": 58.52,
+    "score": 58.3,
     "summary": {
       "text": "和鋼博物館（わこうはくぶつかん）は、島根県安来市にある、旧出雲-伯耆における工具鋼（高級特殊鋼の一種）の源流となった和鋼・玉鋼に関する博物館。1993年に開館した。日本刀の素材製造方法であり、日本独自の砂鉄による直接還元法であるたたら吹きや、近世の製鉄事情、日本刀の展示がある。",
       "lang": "ja",
@@ -5475,7 +5394,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11424680",
@@ -5498,7 +5417,7 @@
       "岬"
     ],
     "featured": false,
-    "score": 53.26,
+    "score": 53.18,
     "summary": {
       "text": "地蔵崎（じぞうざき）は、島根県松江市美保関町美保関に位置し、日本海に面する岬。島根半島の東端。",
       "lang": "ja",
@@ -5517,7 +5436,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11427467",
@@ -5539,7 +5458,7 @@
       "庭園"
     ],
     "featured": false,
-    "score": 53.87,
+    "score": 53.8,
     "summary": {
       "text": "堀庭園（ほりていえん）は、島根県鹿足郡津和野町にある日本庭園。国の名勝に指定されている。",
       "lang": "ja",
@@ -5562,7 +5481,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11428879",
@@ -5583,7 +5502,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 62.63,
+    "score": 62.52,
     "summary": {
       "text": "塩見縄手（しおみなわて）は、島根県松江市の通りである。松江市伝統美観指定地区。",
       "lang": "ja",
@@ -5622,7 +5541,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11429459",
@@ -5651,14 +5570,7 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a5/Dangyo_falls1.JPG/960px-Dangyo_falls1.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "アラツク",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Dangyo_falls1.JPG"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q11429459"
     },
@@ -5673,7 +5585,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11429659",
@@ -5696,7 +5608,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 59.11,
+    "score": 59.06,
     "summary": {
       "text": "売布神社（めふじんじゃ）は、島根県松江市に鎮座する神社。式内社で旧社格は県社。出雲國神仏霊場第六番。",
       "lang": "ja",
@@ -5743,7 +5655,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11431095",
@@ -5764,7 +5676,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 50.07,
+    "score": 50.44,
     "summary": {
       "text": "多賀神社（たがじんじゃ）は、島根県松江市朝酌町にある神社である。大橋川のほとりに鎮座している。神在祭が行われる出雲の神社の一つである。",
       "lang": "ja",
@@ -5783,7 +5695,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11434677",
@@ -5804,7 +5716,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 49.55,
+    "score": 49.5,
     "summary": {
       "text": "大山神社（おおやまじんじゃ）は、島根県隠岐郡西ノ島町に鎮座する神社である。式内社で島前西ノ島の最高峰である焼火山の北麓、大津集落の東に鎮座する旧村社。焼火山の中腹に鎮座する航海安全の守護神として広く信仰を集めた焼火神社とは密接な関係を持っていた。",
       "lang": "ja",
@@ -5834,7 +5746,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11436523",
@@ -5855,7 +5767,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 43.09,
+    "score": 42.94,
     "summary": {
       "text": "大橋（おおはし）は島根県道261号母衣町雑賀町線上にある大橋川に架かる橋で、日本百名橋に選ばれた。松江大橋とも呼ばれる。",
       "lang": "ja",
@@ -5901,7 +5813,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11445618",
@@ -5922,7 +5834,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 60.93,
+    "score": 60.84,
     "summary": {
       "text": "奥出雲おろちループ（おくいずもおろちループ）は、島根県仁多郡奥出雲町（国道314号）にあるループ線である。",
       "lang": "ja",
@@ -5946,14 +5858,7 @@
         "distance_m": 1110
       }
     ],
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3c/%E5%A5%A5%E5%87%BA%E9%9B%B2%E3%81%8A%E3%82%8D%E3%81%A1%E3%83%AB%E3%83%BC%E3%83%97.JPG/960px-%E5%A5%A5%E5%87%BA%E9%9B%B2%E3%81%8A%E3%82%8D%E3%81%A1%E3%83%AB%E3%83%BC%E3%83%97.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Charles's Wain",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:%E5%A5%A5%E5%87%BA%E9%9B%B2%E3%81%8A%E3%82%8D%E3%81%A1%E3%83%AB%E3%83%BC%E3%83%97.JPG"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q11445618"
     },
@@ -5968,7 +5873,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11447761",
@@ -5991,7 +5896,7 @@
       "島"
     ],
     "featured": false,
-    "score": 47.37,
+    "score": 47.29,
     "summary": {
       "text": "嫁ヶ島（よめがしま）は、島根県松江市嫁島町の西約200メートルに位置する宍道湖唯一の島。全長110メートル、幅約30メートル、周囲240メートル。約1200万年前に噴出した玄武岩の溶岩から成る。無人島。嫁ヶ島と袖師地蔵の美しい夕焼けは日本夕日百選に選定されている。この地蔵はこの近辺で戦後近くに住む子どもたちや漁民の水難事故が多発していたためその霊を慰めるために建立されたもの。",
       "lang": "ja",
@@ -6037,7 +5942,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11449116",
@@ -6060,7 +5965,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 56.62,
+    "score": 56.73,
     "summary": {
       "text": "宇受賀命神社（うづかみことじんじゃ）は、島根県隠岐郡海士町に鎮座する神社。式内社（名神大社）で旧社格は郷社。島前の中ノ島の北端にあたる宇受賀部落の外れ、丘上に鎮座する。",
       "lang": "ja",
@@ -6091,7 +5996,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11451237",
@@ -6112,7 +6017,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 53.43,
+    "score": 53.53,
     "summary": {
       "text": "安蔵寺山（あぞうじさん・あぞうじやま）は、島根県益田市、鹿足郡津和野町および同郡吉賀町の境に位置する標高1,263.2メートルの山である。",
       "lang": "ja",
@@ -6142,7 +6047,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11451825",
@@ -6165,7 +6070,7 @@
       "橋"
     ],
     "featured": false,
-    "score": 39.81,
+    "score": 39.77,
     "summary": {
       "text": "宍道湖大橋（しんじこおおはし）は、島根県松江市を流れる大橋川の最も宍道湖側に架かっている道路橋である。かつては島根県が管理していた有料道路だった。また、島根県道37号松江鹿島美保関線の一部である。",
       "lang": "ja",
@@ -6211,7 +6116,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11462489",
@@ -6235,7 +6140,7 @@
       "史跡"
     ],
     "featured": true,
-    "score": 75.41,
+    "score": 75.05,
     "summary": {
       "text": "小泉八雲旧居（こいずみやくもきゅうきょ）は、島根県松江市の塩見縄手にある歴史的建造物を使用した文学館。 国の史跡に指定されている。ヘルン旧居とも呼ばれる。",
       "lang": "ja",
@@ -6275,8 +6180,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11466267",
@@ -6296,7 +6200,7 @@
       "史跡"
     ],
     "featured": false,
-    "score": 40.38,
+    "score": 40.68,
     "summary": {
       "text": "Yamashiro Futagozuka (山代二子塚)  is a Kofun period burial mound, located in the Yamashiro-chō neighborhood of the city of Matsue, Shimane in the San'in region of Japan. The tumulus was designated a National Historic Site of Japan in 1924.",
       "lang": "en",
@@ -6322,7 +6226,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11467653",
@@ -6345,7 +6249,7 @@
       "城"
     ],
     "featured": false,
-    "score": 62.16,
+    "score": 62.18,
     "summary": {
       "text": "山吹城（やまぶきじょう）は、石見国（現：島根県大田市大森町）にあった日本の城（山城）。石見銀山防衛のため築城された。城跡は国の史跡「石見銀山遺跡」の範囲に含まれている。",
       "lang": "ja",
@@ -6375,7 +6279,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11470997",
@@ -6398,7 +6302,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 54.06,
+    "score": 54.08,
     "summary": {
       "text": "山辺神社（やまのべじんじゃ、山邊神社）は、島根県江津市江津町（ごうつちょう）に鎮座する神社である。旧社格は村社。他の別名として江津祇園宮、御魂神社がある。",
       "lang": "ja",
@@ -6438,7 +6342,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11476431",
@@ -6459,7 +6363,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 56.96,
+    "score": 56.76,
     "summary": {
       "text": "島根大学旧奥谷宿舎（しまねだいがくきゅうおくだにしゅくしゃ）は、島根県松江市奥谷町にある旧制松江高等学校外国人宿舎として建てられた大正時代の洋館。国の登録有形文化財に登録されている。",
       "lang": "ja",
@@ -6489,7 +6393,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11476470",
@@ -6510,7 +6414,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 65.0,
+    "score": 65.09,
     "summary": {
       "text": "Shimane Aquarium or Shimane AQUAS Aquarium (島根県立しまね海洋館, Shimane kenritsu Shimane kaiyokan) is a prefectural public aquarium located in Hamada City and Gotsu City, Shimane Prefecture, Japan. It is managed and operated by the Shimane Aquarium Foundation. It is a member of the Japanese Association of Zoos and Aquariums (JAZA), and the aquarium is accredited as a designated facilities by the Ministry of Education, Culture, Sports, Science and Technology.",
       "lang": "en",
@@ -6561,7 +6465,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11476474",
@@ -6585,7 +6489,7 @@
       "博物館"
     ],
     "featured": false,
-    "score": 56.05,
+    "score": 56.07,
     "summary": {
       "text": "島根県立三瓶自然館（しまねけんりつさんべしぜんかん）は、島根県大田市三瓶町多根にある自然系の博物館。サヒメルの愛称がある。",
       "lang": "ja",
@@ -6620,7 +6524,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11476508",
@@ -6640,7 +6544,7 @@
       "公園"
     ],
     "featured": false,
-    "score": 56.34,
+    "score": 56.41,
     "summary": {
       "text": "島根県立浜山公園は、島根県出雲市の浜山にある公園。最寄り駅は浜山公園北口駅。",
       "lang": "ja",
@@ -6673,7 +6577,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11476530",
@@ -6694,7 +6598,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 60.8,
+    "score": 60.55,
     "summary": {
       "text": "島根県芸術文化センター グラントワ（しまねけんげいじゅつぶんかセンター グラントワ）は、島根県益田市有明町にある芸術文化施設。島根県立石見美術館と、島根県立いわみ芸術劇場で構成され、2005年10月8日に開館した。正式名称は「島根県芸術文化センター」で、「グラントワ」は愛称である。",
       "lang": "ja",
@@ -6733,7 +6637,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11478690",
@@ -6756,7 +6660,7 @@
       "城"
     ],
     "featured": false,
-    "score": 55.78,
+    "score": 56.08,
     "summary": {
       "text": "温湯城（ぬくゆじょう）は、石見国邑智郡（島根県邑智郡川本町）にあった日本の城。石見小笠原氏の居城。",
       "lang": "ja",
@@ -6779,7 +6683,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11483250",
@@ -6802,7 +6706,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 57.99,
+    "score": 57.67,
     "summary": {
       "text": "平濱八幡宮（ひらはまはちまんぐう）は、島根県松江市にある神社である。旧社格は県社。出雲國神仏霊場第13番。",
       "lang": "ja",
@@ -6837,7 +6741,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11483307",
@@ -6860,7 +6764,7 @@
       "城"
     ],
     "featured": false,
-    "score": 52.96,
+    "score": 52.92,
     "summary": {
       "text": "平田城（ひらたじょう）は、島根県出雲市平田町にあった日本の城。",
       "lang": "ja",
@@ -6877,14 +6781,7 @@
         "distance_m": 1020
       }
     ],
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/13/Hirata_Castle.jpg/960px-Hirata_Castle.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "by Monado",
-        "license": "CC BY-SA 2.5",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Hirata_Castle.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q11483307",
       "osm": "node/9895373033"
@@ -6904,7 +6801,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11487448",
@@ -6927,7 +6824,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 54.89,
+    "score": 54.79,
     "summary": {
       "text": "弥栄神社（やさかじんじゃ）は、島根県鹿足郡津和野町後田にある神社である。",
       "lang": "ja",
@@ -6971,7 +6868,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11488772",
@@ -6992,7 +6889,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 54.73,
+    "score": 54.7,
     "summary": {
       "text": "御井神社（みいじんじゃ）は島根県出雲市斐川町直江にある神社である。大国主の神話に登場する八上比売（やがみひめ）とその子である木俣神（このまたのかみ）にまつわる伝承のある神社で、安産の神として信仰されている。",
       "lang": "ja",
@@ -7027,7 +6924,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11490726",
@@ -7048,7 +6945,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 53.44,
+    "score": 53.6,
     "summary": {
       "text": "忌部神社（いんべじんじゃ）は、島根県松江市東忌部町にある神社である。明治末までは大宮神社と称していた。",
       "lang": "ja",
@@ -7083,7 +6980,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11493840",
@@ -7105,7 +7002,7 @@
       "公園"
     ],
     "featured": false,
-    "score": 46.95,
+    "score": 46.82,
     "summary": {
       "text": "愛宕山公園（あたごやまこうえん、あたごさんこうえん）は、島根県出雲市平田町に位置する出雲市立の都市公園（総合公園）である。",
       "lang": "ja",
@@ -7137,7 +7034,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11498399",
@@ -7160,7 +7057,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 65.65,
+    "score": 65.69,
     "summary": {
       "text": "揖夜神社（いやじんじゃ、いふやじんじゃ）は島根県松江市東出雲町揖屋に鎮座する神社。意宇六社の一社である。旧社格は郷社、後に県社となる。記紀神話に登場する黄泉比良坂の比定地の近くにある。また隣接する安来市の比婆山には関連神蹟として古事記に記された伊邪那美神のご神陵がある。",
       "lang": "ja",
@@ -7200,7 +7097,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11500713",
@@ -7220,7 +7117,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 60.08,
+    "score": 60.03,
     "summary": {
       "text": "斐乃上温泉（ひのかみおんせん）は、島根県仁多郡奥出雲町（旧国出雲国）にある温泉。",
       "lang": "ja",
@@ -7243,7 +7140,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11500716",
@@ -7266,7 +7163,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 57.97,
+    "score": 58.15,
     "summary": {
       "text": "斐伊神社（ひいじんじゃ）は、島根県雲南市にある神社。宮崎大明神とも呼ばれる。『出雲国風土記』に樋社と称する神社が2社あり、共に神祗官在りと記述されているが、この2社が延喜式の時代までに1社に併合されたのが、現在の斐伊神社と考えられている。延喜式に登場する斐伊神社と同社坐斐伊波夜比古神社が現在の斐伊神社と比定されている。",
       "lang": "ja",
@@ -7285,7 +7182,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11500845",
@@ -7307,7 +7204,7 @@
       "名勝"
     ],
     "featured": false,
-    "score": 60.56,
+    "score": 60.54,
     "summary": {
       "text": "断魚渓（だんぎょけい）は、島根県邑南町（旧石見町）に位置する渓谷である。",
       "lang": "ja",
@@ -7337,7 +7234,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11502000",
@@ -7360,7 +7257,7 @@
       "城"
     ],
     "featured": false,
-    "score": 56.84,
+    "score": 56.94,
     "summary": {
       "text": "新山城（しんやまじょう）、または真山城は、島根県松江市法吉町にあった日本の城。",
       "lang": "ja",
@@ -7383,7 +7280,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11502660",
@@ -7400,7 +7297,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 33.21,
+    "score": 33.37,
     "summary": {
       "text": "江川橋（ごうかわばし）は、島根県江津市の江の川にかかる道路橋。本項では付近にある鉄道橋郷川橋梁（ごうかわきょうりょう）、道路橋新江川橋（しんごうかわばし、しんごうのかわばし）についても記す。",
       "lang": "ja",
@@ -7435,7 +7332,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11505328",
@@ -7456,7 +7353,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 68.01,
+    "score": 67.72,
     "summary": {
       "text": "日御碕是位於日本島根縣出雲市大社町日御碕島根半島西端的一座伸入日本海的海岬，是大山隱岐國立公園的一部分。海岬上有一燈塔，在1903年首次投入使用，高43.65米，是日本最高的石製燈塔。日御碕還有日御碕神社等景點。",
       "lang": "zh",
@@ -7482,7 +7379,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-29"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11511828",
@@ -7502,7 +7399,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 52.37,
+    "score": 52.39,
     "summary": {
       "text": "旭温泉（あさひおんせん）は、島根県浜田市（旧国石見国）にある温泉。",
       "lang": "ja",
@@ -7521,7 +7418,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q1151248",
@@ -7568,21 +7465,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-10-02",
-    "season_images": {
-      "night": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5c/Sunset_On_Lake_Shinji_%28100916655%29.jpeg/960px-Sunset_On_Lake_Shinji_%28100916655%29.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Firas Kraïem",
-        "license": "CC BY 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Sunset_On_Lake_Shinji_(100916655).jpeg"
-      },
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/ba/140427_Shimane_Art_Museum_Matsue_Shimane_pref_Japan02s5.jpg/960px-140427_Shimane_Art_Museum_Matsue_Shimane_pref_Japan02s5.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "663highland",
-        "license": "CC BY 2.5",
-        "source_url": "https://commons.wikimedia.org/wiki/File:140427_Shimane_Art_Museum_Matsue_Shimane_pref_Japan02s5.jpg"
-      }
-    }
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11516641",
@@ -7603,7 +7486,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 63.4,
+    "score": 63.45,
     "summary": {
       "text": "有福温泉（ありふくおんせん）は、島根県江津市（旧国石見国）有福温泉町にある温泉。本項では大字である有福温泉町についても記載する。",
       "lang": "ja",
@@ -7611,14 +7494,7 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/72/Arifukuonsen01.jpg/960px-Arifukuonsen01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Kuma83",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Arifukuonsen01.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q11516641"
     },
@@ -7629,7 +7505,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11517384",
@@ -7652,7 +7528,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 55.29,
+    "score": 55.11,
     "summary": {
       "text": "朝山神社（あさやまじんじゃ）は島根県出雲市朝山町にある神社である。",
       "lang": "ja",
@@ -7683,7 +7559,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11531630",
@@ -7704,7 +7580,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 63.49,
+    "score": 63.34,
     "summary": {
       "text": "松江宍道湖溫泉是位於日本島根縣松江市市區西北側的溫泉區，溫泉泉質屬於鈉鈣硫酸鹽鹽化物泉，源泉溫度約為77度。",
       "lang": "zh",
@@ -7721,14 +7597,7 @@
         "distance_m": 10
       }
     ],
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d5/Matsue-shinjiko-onsen01st3200.jpg/960px-Matsue-shinjiko-onsen01st3200.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "663highland",
-        "license": "CC BY 2.5",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Matsue-shinjiko-onsen01st3200.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q11531630"
     },
@@ -7743,7 +7612,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11531634",
@@ -7766,13 +7635,13 @@
       "庭園"
     ],
     "featured": false,
-    "score": 66.65,
+    "score": 66.6,
     "summary": {
-      "text": "松江イングリッシュガーデン（まつえイングリッシュガーデン）は、島根県松江市西浜佐陀町にあった庭園。",
+      "text": "松江イングリッシュガーデン（まつえイングリッシュガーデン）は、島根県松江市西浜佐陀町にある庭園。通常時非公開であり、実質休園状態である。",
       "lang": "ja",
       "source_url": "https://ja.wikipedia.org/wiki/%E6%9D%BE%E6%B1%9F%E3%82%A4%E3%83%B3%E3%82%B0%E3%83%AA%E3%83%83%E3%82%B7%E3%83%A5%E3%82%AC%E3%83%BC%E3%83%87%E3%83%B3",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-10-04"
     },
     "nearest_stations": [
       {
@@ -7810,7 +7679,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11537208",
@@ -7833,7 +7702,7 @@
       "寺院"
     ],
     "featured": false,
-    "score": 32.42,
+    "score": 32.18,
     "summary": {
       "text": "桐岳寺（とうかくじ）は、島根県松江市奥谷町にある曹洞宗の寺院で、初代松江藩主堀尾忠氏の次男・小次郎の菩提寺。境内には、五輪塔形式の小次郎の墓、五百羅漢などがある。墓地には、江戸時代佐陀川を開削した松江藩士・清原太兵衛や『史記』の研究で有名な漢学者・滝川亀太郎の墓がある。",
       "lang": "ja",
@@ -7868,7 +7737,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11544596",
@@ -7940,7 +7809,7 @@
       "博物館"
     ],
     "featured": false,
-    "score": 55.48,
+    "score": 55.31,
     "summary": {
       "text": "武家屋敷（ぶけやしき）は、島根県松江市北堀町塩見繩手にある博物館である。",
       "lang": "ja",
@@ -7988,7 +7857,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11548167",
@@ -8009,7 +7878,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 56.34,
+    "score": 56.38,
     "summary": {
       "text": "水の国（みずのくに）は、島根県江津市にある江津市立の「水」をテーマとした現代美術と科学のミュージアムと、水にふれあえる公園が一体となった施設。旧桜江町時代の1997年（平成9年）に森林総合公園「風の国」とともに整備された公園である。",
       "lang": "ja",
@@ -8039,7 +7908,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11549109",
@@ -8063,7 +7932,7 @@
       "重要文化財"
     ],
     "featured": false,
-    "score": 69.89,
+    "score": 69.76,
     "summary": {
       "text": "水若酢神社是日本島根縣隱岐郡隱岐之島町郡的神社，社格是名神大社、隱岐國一宮、國幣中社和別表神社，主祭神是水若酢命。",
       "lang": "zh",
@@ -8094,7 +7963,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11550103",
@@ -8118,7 +7987,7 @@
       "史跡"
     ],
     "featured": false,
-    "score": 42.1,
+    "score": 42.06,
     "summary": {
       "text": "永明寺（ようめいじ）は、島根県鹿足郡津和野町にある曹洞宗の寺。山号は覚皇山（かくおうざん）。1420年（応永27年）に津和野城主吉見頼弘によって創建され、月因を開山とした。江戸時代には曹洞宗の寺院として栄え、津和野藩の代々の菩提寺でもある。",
       "lang": "ja",
@@ -8162,7 +8031,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11550844",
@@ -8185,7 +8054,7 @@
       "島"
     ],
     "featured": false,
-    "score": 45.1,
+    "score": 45.03,
     "summary": {
       "text": "江島（えしま）は中海の大根島の北東側に位置する島。島根県松江市に属する。陸地面積は1.16km2。",
       "lang": "ja",
@@ -8215,15 +8084,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/83/Eshiima_island_aerial_shoot.jpg/960px-Eshiima_island_aerial_shoot.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "ブルーノ・プラス",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Eshiima_island_aerial_shoot.jpg"
-      }
-    }
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11550847",
@@ -8246,7 +8107,7 @@
       "橋"
     ],
     "featured": false,
-    "score": 66.71,
+    "score": 66.32,
     "summary": {
       "text": "江島大橋是連接日本鳥取縣境港市和島根縣松江市的一座預力混凝土橋梁，全長1.7公里、寬度11.3公尺。",
       "lang": "zh",
@@ -8272,7 +8133,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11555072",
@@ -8295,7 +8156,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 51.73,
+    "score": 51.74,
     "summary": {
       "text": "法吉神社（ほっきじんじゃ）は島根県松江市法吉町に鎮座する神社である。",
       "lang": "ja",
@@ -8321,7 +8182,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11557958",
@@ -8344,7 +8205,7 @@
       "美術館"
     ],
     "featured": false,
-    "score": 49.45,
+    "score": 49.62,
     "summary": {
       "text": "浜田市世界こども美術館（はまだしせかいこどもびじゅつかん）は、島根県浜田市にある美術館。",
       "lang": "ja",
@@ -8374,7 +8235,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11559054",
@@ -8394,7 +8255,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 51.17,
+    "score": 51.34,
     "summary": {
       "text": "海潮温泉（うしおおんせん）は、島根県雲南市（旧国出雲国）にある温泉。",
       "lang": "ja",
@@ -8413,7 +8274,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11559097",
@@ -8434,7 +8295,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 49.01,
+    "score": 49.12,
     "summary": {
       "text": "海神社（かいじんじゃ）は、島根県隠岐郡西ノ島町別府に鎮座する神社。別府港の東方、黒木御所跡の北方に鎮座する旧村社で『延喜式神名帳』に載せる「海神社 二座」に比定されている（式内社論社）。",
       "lang": "ja",
@@ -8464,7 +8325,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11560917",
@@ -8487,7 +8348,7 @@
       "寺院"
     ],
     "featured": false,
-    "score": 61.1,
+    "score": 61.02,
     "summary": {
       "text": "清水寺（きよみずでら）は、島根県安来市清水町にある天台宗の寺。山号は瑞光山（ずいこうざん）。中国観音霊場第28番札所、出雲観音霊場第27番札所、出雲國神仏霊場第11番札所。開山は尊隆上人、本尊は十一面観世音菩薩。周辺は清水月山県立自然公園（清水寺地区）となっている。",
       "lang": "ja",
@@ -8513,7 +8374,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11562956",
@@ -8536,7 +8397,7 @@
       "世界遺產"
     ],
     "featured": true,
-    "score": 97.33,
+    "score": 97.38,
     "summary": {
       "text": "溫泉津溫泉，是位於日本島根縣大田市溫泉津町的溫泉，作為石見銀山遺跡及文化景觀的一部分被登錄入世界文化遺產。溫泉津溫泉的泉質屬於含土類食鹽泉。溫泉街的範圍自溫泉津港至山麓，是重要傳統的建造物群保存地區。溫泉津溫泉的歷史起源自1300年之前，自戰國時代至江戶時代就因礦山而十分繁榮。",
       "lang": "zh",
@@ -8571,15 +8432,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "night": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bb/Yunotsuonsen01.jpg/960px-Yunotsuonsen01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Kuma83",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Yunotsuonsen01.jpg"
-      }
-    }
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11563417",
@@ -8600,7 +8453,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 57.81,
+    "score": 57.75,
     "summary": {
       "text": "湯の川温泉（ゆのかわおんせん）は、島根県出雲市（旧出雲国）にある温泉。",
       "lang": "ja",
@@ -8632,7 +8485,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11563569",
@@ -8652,7 +8505,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 52.36,
+    "score": 52.39,
     "summary": {
       "text": "湯抱温泉（ゆがかいおんせん）は、島根県邑智郡美郷町（旧国石見国）にある温泉。",
       "lang": "ja",
@@ -8675,7 +8528,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11563790",
@@ -8695,7 +8548,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 48.88,
+    "score": 49.01,
     "summary": {
       "text": "湯谷温泉（ゆだにおんせん）は、島根県邑智郡川本町（旧国石見国）にある温泉。",
       "lang": "ja",
@@ -8718,7 +8571,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11565723",
@@ -8738,7 +8591,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 49.56,
+    "score": 49.8,
     "summary": {
       "text": "潮温泉（うしおおんせん）は、島根県美郷町（旧大和村 旧国石見国）にある温泉。",
       "lang": "ja",
@@ -8746,14 +8599,7 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e8/Ushio_Spa_Yamatoso.jpg/960px-Ushio_Spa_Yamatoso.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Psjk2106",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Ushio_Spa_Yamatoso.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q11565723"
     },
@@ -8768,7 +8614,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11566232",
@@ -8791,7 +8637,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 55.66,
+    "score": 55.54,
     "summary": {
       "text": "Hamada Castle (浜田城, Hamada-jō) is a castle structure in Hamada, Shimane Prefecture, Japan.",
       "lang": "en",
@@ -8826,7 +8672,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11567668",
@@ -8849,7 +8695,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 59.64,
+    "score": 59.63,
     "summary": {
       "text": "焼火神社（たくひじんじゃ、たくびじんじゃ）は、島根県隠岐郡西ノ島町にある神社。島前の西ノ島における最高峰、焼火山の8合目辺りに鎮座する旧県社である。一般には焼火権現の名でも知られる。航海安全の守護神として遠く三陸海岸まで信仰を集めた。本殿・通殿・拝殿からなる社殿は国の重要文化財に指定。重要有形民俗文化財の和船トモドも所有する。",
       "lang": "ja",
@@ -8880,7 +8726,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11568887",
@@ -8903,7 +8749,7 @@
       "神社"
     ],
     "featured": true,
-    "score": 76.2,
+    "score": 76.08,
     "summary": {
       "text": "熊野大社（くまのたいしゃ）是位在日本島根縣松江市的神社。為式內社（名神大社）、出雲國一宮、舊社格為國幣大社（現神社本廳的別表神社）。作為火之發祥之神社，也被稱作「日本火出初之社」（ひのもとひでぞめのやしろ）。意宇六社之一。《出雲國風土記》記作熊野大社，《延喜式神名帳》記作熊野坐神社。",
       "lang": "zh",
@@ -8934,8 +8780,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11570699",
@@ -8958,7 +8803,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 71.05,
+    "score": 71.03,
     "summary": {
       "text": "物部神社是日本島根縣大田市川合町川合的神社，社格是式內小社、石見國一宮、國幣小社和別表神社，主祭神是宇摩志麻遲命。氏子數目方面，根據《日本社寺大觀》和神社本廳出版的《神社名鑑》記載是500戶，《神社名鑑》同時指出神社的崇敬者有5萬人，《式內社調查報告》則指氏子是川合町內400戶。",
       "lang": "zh",
@@ -8993,15 +8838,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6f/Mononobe_Jinja_-_2022_Jan_3_various_14_12_41_098000.jpeg/960px-Mononobe_Jinja_-_2022_Jan_3_various_14_12_41_098000.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Nesnad",
-        "license": "CC BY 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Mononobe_Jinja_-_2022_Jan_3_various_14_12_41_098000.jpeg"
-      }
-    }
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11572397",
@@ -9024,7 +8861,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 62.25,
+    "score": 62.23,
     "summary": {
       "text": "玉作湯神社（たまつくりゆじんじゃ、玉造湯神社）は、島根県松江市玉湯町玉造にある神社。式内社で、旧社格は県社。神紋は「二重亀甲に丸玉管玉勾玉」。",
       "lang": "ja",
@@ -9055,7 +8892,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11572773",
@@ -9133,7 +8970,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 55.92,
+    "score": 55.84,
     "summary": {
       "text": "田原神社（たわらじんじゃ）は島根県松江市奥谷町に鎮座する神社。元来は2社であったが江戸時代の延宝2年（1674年）に1社に合わさった。旧県社。",
       "lang": "ja",
@@ -9168,7 +9005,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11577460",
@@ -9191,7 +9028,7 @@
       "博物館"
     ],
     "featured": false,
-    "score": 66.3,
+    "score": 66.31,
     "summary": {
       "text": "田部美術館是位於日本島根縣松江市的一座企業博物館，開業於1979年11月3日，由公益財團法人田部美術館運營。這座美術館的設立者是前島根縣知事田部長右衛門，主要收藏田部家收藏的茶道關聯美術品。",
       "lang": "zh",
@@ -9235,7 +9072,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11577586",
@@ -9259,7 +9096,7 @@
       "庭園"
     ],
     "featured": false,
-    "score": 66.59,
+    "score": 66.55,
     "summary": {
       "text": "由志園是位於日本島根縣松江市大根島的日本庭園，其特色為栽種牡丹及高麗參，園內的牡丹種類約有250種，不分季節全年均可以欣賞到牡丹。",
       "lang": "zh",
@@ -9290,7 +9127,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11577626",
@@ -9313,7 +9150,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 66.18,
+    "score": 66.22,
     "summary": {
       "text": "由良比女神社是日本島根縣隱岐郡西之島町浦鄉的神社，社格是名神大社、隱岐國一宮和鄉社，主祭神是須勢利姬命。氏子數目方面，根據《府縣鄉社明治神社誌料》和《日本社寺大觀》記載是264戶，神社本廳出版的《神社名鑑》記載為400戶，《式內社調查報告》則指是450戶，氏子區域為浦鄉的本鄉地區。文化財方面，神社的本殿在1982年3月7日獲指定為西之島町指定文化財。",
       "lang": "zh",
@@ -9344,7 +9181,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11582899",
@@ -9367,7 +9204,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 61.19,
+    "score": 61.07,
     "summary": {
       "text": "真名井神社（まないじんじゃ、眞名井神社）は島根県松江市山代町にある神社。中世には「伊弉諾社」の名で神魂神社（伊弉冉社）とともに「両神魂」と称され、いずれも意宇六社の一社である。旧社格は村社。『出雲国風土記』意宇郡条の神名樋野に比定される茶臼山の南東に鎮座する。",
       "lang": "ja",
@@ -9393,7 +9230,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11584562",
@@ -9414,7 +9251,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 56.45,
+    "score": 56.58,
     "summary": {
       "text": "知夫赤壁（ちぶせきへき、ちぶりせきへき）は、島根県隠岐郡知夫村の西海岸にある高さ50～200メートルの巨大な岩石の壁である。「あかかべ」や「あかたき」とも呼ばれている。",
       "lang": "ja",
@@ -9444,7 +9281,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11587189",
@@ -9465,7 +9302,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 60.33,
+    "score": 60.43,
     "summary": {
       "text": "石見畳ヶ浦（いわみたたみがうら）は、島根県浜田市にある海岸景勝地。単純に畳ヶ浦ともいう。名の由来は千畳敷が畳を敷き詰めたように見えることに因む。",
       "lang": "ja",
@@ -9495,7 +9332,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11588802",
@@ -9518,7 +9355,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 55.54,
+    "score": 55.59,
     "summary": {
       "text": "神原神社（かんばらじんじゃ）は、島根県雲南市加茂町神原にある神社。式内社で、旧社格は村社。",
       "lang": "ja",
@@ -9558,7 +9395,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11590815",
@@ -9579,7 +9416,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 63.27,
+    "score": 63.17,
     "summary": {
       "text": "神西湖（じんざいこ）は、島根県出雲市の西部に位置する汽水湖。西南に三瓶山を拝み、アシやガマに囲まれシジミがよく穫れる。2005年度のシジミの収穫量は約1万7千トンであり、全国の湖沼中では6位。また単位面積当たりで見れば全国の湖沼中1位でもある。",
       "lang": "ja",
@@ -9596,14 +9433,7 @@
         "distance_m": 1330
       }
     ],
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/67/Jinzaiko-shimane-dec-2013.jpg/960px-Jinzaiko-shimane-dec-2013.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Nesnad",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Jinzaiko-shimane-dec-2013.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q11590815"
     },
@@ -9618,7 +9448,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q115960146",
@@ -9641,7 +9471,7 @@
       "寺院"
     ],
     "featured": false,
-    "score": 32.95,
+    "score": 33.04,
     "summary": {
       "text": "大念寺（だいねんじ）は、島根県出雲市今市町にある浄土宗の寺院。",
       "lang": "ja",
@@ -9692,7 +9522,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11596453",
@@ -9715,7 +9545,7 @@
       "海灘"
     ],
     "featured": false,
-    "score": 68.15,
+    "score": 68.12,
     "summary": {
       "text": "稲佐の浜（いなさのはま）は、島根県出雲市大社町にある砂浜。南北約10kmで西に向かって弓なりに開いた海岸である。",
       "lang": "ja",
@@ -9745,7 +9575,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11597754",
@@ -9768,7 +9598,7 @@
       "名勝"
     ],
     "featured": false,
-    "score": 61.34,
+    "score": 61.31,
     "summary": {
       "text": "立久恵峡（たちくえきょう）は島根県出雲市の南部、神戸川（かんどがわ）上流2キロメートルに亘る峡谷。国の名勝および天然記念物に「立久恵」の名称で指定されている。また、周辺は立久恵峡県立自然公園となっている。",
       "lang": "ja",
@@ -9794,7 +9624,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11599122",
@@ -9815,7 +9645,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 56.47,
+    "score": 56.45,
     "summary": {
       "text": "竹島資料室（たけしましりょうしつ）は、島根県松江市殿町の島根県庁第三分庁舎にある博物館である。",
       "lang": "ja",
@@ -9861,7 +9691,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11608102",
@@ -9884,7 +9714,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 48.4,
+    "score": 48.5,
     "summary": {
       "text": "縄久利神社（なわくりじんじゃ）は、島根県安来市広瀬町にある神社。",
       "lang": "ja",
@@ -9903,7 +9733,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11608770",
@@ -9926,7 +9756,7 @@
       "重要文化財"
     ],
     "featured": false,
-    "score": 65.99,
+    "score": 65.98,
     "summary": {
       "text": "美保関灯台（みほのせきとうだい）は、山陰最古の石造灯台。1898年（明治31年）、島根半島の東端 地蔵崎の馬着山に、フランス人の指導により建設された。国の重要文化財に指定されている。",
       "lang": "ja",
@@ -9952,7 +9782,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11608773",
@@ -9973,7 +9803,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 58.61,
+    "score": 54.7,
     "summary": {
       "text": "美保館（みほかん）は、松江市美保関町美保関にある老舗旅館。本館と旧本館は、2004年、営業中の旅館としては、島根県では初めて国の登録有形文化財に登録された。古民家をリノベーションした貸切宿やゲストハウス、ショットバー、キャンプ場などを展開している。",
       "lang": "ja",
@@ -9996,7 +9826,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11608806",
@@ -10024,14 +9854,7 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/de/%E7%BE%8E%E5%8F%88%E4%BF%9D%E9%A4%8A%E3%82%BB%E3%83%B3%E3%82%BF%E3%83%BC%EF%BC%88%E7%BE%8E%E5%8F%88%E6%B8%A9%E6%B3%89%EF%BC%89_-_panoramio.jpg/960px-%E7%BE%8E%E5%8F%88%E4%BF%9D%E9%A4%8A%E3%82%BB%E3%83%B3%E3%82%BF%E3%83%BC%EF%BC%88%E7%BE%8E%E5%8F%88%E6%B8%A9%E6%B3%89%EF%BC%89_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "hiyaya100",
-        "license": "CC BY 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:%E7%BE%8E%E5%8F%88%E4%BF%9D%E9%A4%8A%E3%82%BB%E3%83%B3%E3%82%BF%E3%83%BC%EF%BC%88%E7%BE%8E%E5%8F%88%E6%B8%A9%E6%B3%89%EF%BC%89_-_panoramio.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q11608806"
     },
@@ -10042,7 +9865,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11612065",
@@ -10065,7 +9888,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 56.85,
+    "score": 56.76,
     "summary": {
       "text": "能義神社（のきじんじゃ）は、島根県安来市能義町に鎮座する神社である。旧社格は県社。",
       "lang": "ja",
@@ -10096,7 +9919,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11613488",
@@ -10119,7 +9942,7 @@
       "博物館"
     ],
     "featured": false,
-    "score": 60.11,
+    "score": 59.93,
     "summary": {
       "text": "興雲閣（こううんかく）は島根県松江市の松江城内に1903年（明治36年）に明治天皇行幸時の御宿所として建設された擬洋風建築の迎賓館。",
       "lang": "ja",
@@ -10159,15 +9982,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "winter": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/74/Kounkaku_20170126.jpg/960px-Kounkaku_20170126.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Suicasmo",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Kounkaku_20170126.jpg"
-      }
-    }
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11618840",
@@ -10191,7 +10006,7 @@
       "史跡"
     ],
     "featured": false,
-    "score": 72.69,
+    "score": 72.64,
     "summary": {
       "text": "The Kōjindani Site (荒神谷遺跡, Kōjindani iseki) is an archaeological site consisting of the remains of a Yayoi period ritual site located in the Hikawa-cho neighborhood of the city of Izumo, Shimane Prefecture in the San'in region of Japan. The site was designated a National Historic Site of Japan in 1987.",
       "lang": "en",
@@ -10222,8 +10037,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11619350",
@@ -10246,7 +10060,7 @@
       "重要文化財"
     ],
     "featured": false,
-    "score": 65.05,
+    "score": 65.01,
     "summary": {
       "text": "菅田菴（かんでんあん）は、島根県松江市の旧松江藩家老有沢家の山荘にある松平不昧治郷ゆかりの茶室。国の史跡および名勝。また山荘内の菅田菴及び向月亭、御風呂屋は国の重要文化財の指定を受けている。",
       "lang": "ja",
@@ -10270,7 +10084,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11620490",
@@ -10293,7 +10107,7 @@
       "寺院"
     ],
     "featured": false,
-    "score": 59.26,
+    "score": 59.25,
     "summary": {
       "text": "Manpuku-ji (萬福寺) is a Buddhist temple located in the Higashimachi neighborhood of the city of Masuda, Shimane Prefecture, Japan. The temple belongs to the Ji sect and its full name is Seiryūzan Jōkō-in Manpuku-ji (清瀧山浄光院萬福寺).",
       "lang": "en",
@@ -10323,7 +10137,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11635911",
@@ -10346,7 +10160,7 @@
       "城"
     ],
     "featured": false,
-    "score": 59.06,
+    "score": 59.16,
     "summary": {
       "text": "赤穴城（あかなじょう）、または瀬戸山城（せとやまじょう）は、島根県飯石郡飯南町下赤名にあった日本の城。赤穴瀬戸山城・衣掛城（きぬかけじょう）・藤釣城（ふじつるじょう）ともいう。",
       "lang": "ja",
@@ -10376,7 +10190,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11640630",
@@ -10397,7 +10211,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 51.45,
+    "score": 51.48,
     "summary": {
       "text": "道の駅あらエッサ（みちのえき あらエッサ）は、島根県安来市中海町にある国道9号と国道180号の道の駅である。",
       "lang": "ja",
@@ -10427,7 +10241,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11640814",
@@ -10448,7 +10262,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 57.06,
+    "score": 56.98,
     "summary": {
       "text": "道の駅たたらば壱番地（みちのえき たたらばいちばんち）は、島根県雲南市吉田町吉田にある雲南市道の道の駅である。隣接して松江自動車道雲南吉田ICが設けられている。",
       "lang": "ja",
@@ -10478,7 +10292,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11640962",
@@ -10499,7 +10313,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 59.28,
+    "score": 59.04,
     "summary": {
       "text": "道の駅むいかいち温泉（みちのえき むいかいちおんせん）は、島根県鹿足郡吉賀町にある島根県道16号六日市錦線の道の駅である。",
       "lang": "ja",
@@ -10529,7 +10343,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11640983",
@@ -10550,7 +10364,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 50.97,
+    "score": 51.1,
     "summary": {
       "text": "道の駅ゆうひパーク三隅（みちのえき ゆうひパークみすみ）は、島根県浜田市三隅町折居にある国道9号の道の駅である。",
       "lang": "ja",
@@ -10589,7 +10403,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11641023",
@@ -10610,7 +10424,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 56.63,
+    "score": 56.76,
     "summary": {
       "text": "道の駅キララ多伎（みちのえき キララたき）は、島根県出雲市多伎町多岐にある、国道9号の道の駅である。",
       "lang": "ja",
@@ -10649,7 +10463,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11641232",
@@ -10670,7 +10484,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 50.25,
+    "score": 50.45,
     "summary": {
       "text": "道の駅大社ご縁広場（みちのえき たいしゃごえんひろば）は、島根県出雲市大社町修理免にある島根県道161号斐川出雲大社線の道の駅である。",
       "lang": "ja",
@@ -10709,7 +10523,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11641305",
@@ -10730,7 +10544,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 54.7,
+    "score": 54.78,
     "summary": {
       "text": "道の駅掛合の里（みちのえき かけやのさと）は、島根県雲南市掛合町掛合にある国道54号の道の駅である。",
       "lang": "ja",
@@ -10760,7 +10574,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11641368",
@@ -10781,7 +10595,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 52.94,
+    "score": 53.03,
     "summary": {
       "text": "道の駅津和野温泉なごみの里（みちのえき つわのおんせんなごみのさと）は、島根県鹿足郡津和野町鷲原イにある島根県道13号萩津和野線の道の駅である。",
       "lang": "ja",
@@ -10811,7 +10625,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11642725",
@@ -10822,7 +10636,7 @@
       "zh_tw": "那売佐神社",
       "en": "Namesa Shrine"
     },
-    "kana_source": "wikipedia",
+    "kana_source": "wikidata",
     "location": {
       "lat": 35.314364,
       "lng": 132.699845
@@ -10834,7 +10648,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 55.7,
+    "score": 55.77,
     "summary": {
       "text": "那売佐神社（なめさじんじゃ、那賣佐神社）は島根県出雲市東神西町にある神社である。式内社で旧社格は郷社。神西湖の南東にある高倉山のふもとに鎮座する。",
       "lang": "ja",
@@ -10873,7 +10687,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11653315",
@@ -10896,7 +10710,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 57.69,
+    "score": 57.65,
     "summary": {
       "text": "長浜神社（ながはまじんじゃ）は、島根県出雲市西園町にある神社である。出雲國神仏霊場第19番。",
       "lang": "ja",
@@ -10931,7 +10745,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11659037",
@@ -10951,7 +10765,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 46.2,
+    "score": 46.05,
     "summary": {
       "text": "隠岐の田楽と庭の舞（おきのでんがくとにわのまい）は、島根県隠岐郡西ノ島町美田・浦郷に伝わる民俗芸能の田楽。保護団体は、隠岐の田楽と庭の舞保存連合会（美田八幡宮田楽保存会、日吉神社庭の舞保存会）。",
       "lang": "ja",
@@ -10974,7 +10788,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11659045",
@@ -10998,7 +10812,7 @@
       "史跡"
     ],
     "featured": false,
-    "score": 47.81,
+    "score": 47.78,
     "summary": {
       "text": "隱岐國分寺（おきこくぶんじ）是位在日本島根縣隱岐郡隱岐之島町的東寺真言宗寺院。山號「禪尾山」（ぜんおさん）。本尊釋迦如來、開基（創立者）為聖武天皇。",
       "lang": "zh",
@@ -11029,7 +10843,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11659052",
@@ -11052,7 +10866,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 59.49,
+    "score": 59.56,
     "summary": {
       "text": "隠岐神社（おきじんじゃ）は、島根県隠岐郡海士町に鎮座する神社である。",
       "lang": "ja",
@@ -11087,7 +10901,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11662872",
@@ -11108,7 +10922,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 52.92,
+    "score": 53.02,
     "summary": {
       "text": "静之窟（しずのいわや）は、島根県大田市静間町魚津の海岸に存在する海食洞（奥行は約45m、高さは約13m）で「静窟（しずがいわや）」ともいう。大田市指定の天然記念物である。",
       "lang": "ja",
@@ -11140,7 +10954,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11664502",
@@ -11163,7 +10977,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 71.57,
+    "score": 71.45,
     "summary": {
       "text": "Susa Shrine (須佐神社, Susa Jinja) is a Shinto shrine in Izumo, Shimane, Japan. It is the 18th Shinto shrine in the Enza-no-kai Organization list of shrines and temples considered important to the historical region of Izumo, which includes other major shrines in Shimane and Tottori Prefectures including Izumo-taisha, Kumano-taisha, and Ōgamiyama Jinja.",
       "lang": "en",
@@ -11189,8 +11003,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11664579",
@@ -11213,7 +11026,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 66.98,
+    "score": 66.87,
     "summary": {
       "text": "須我神社（すがじんじゃ）は、島根県雲南市大東町須賀にある神社である。旧社格は県社。須佐之男命が八岐大蛇退治の後に建てた宮殿が神社になったものと伝え、「日本初之宮（にほんはつのみや）」と自称している。出雲國神仏霊場第十六番。延喜式に記載されていない。",
       "lang": "ja",
@@ -11248,7 +11061,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11666894",
@@ -11271,7 +11084,7 @@
       "史跡"
     ],
     "featured": false,
-    "score": 63.48,
+    "score": 63.54,
     "summary": {
       "text": "養老館（ようろうかん）は、津和野藩の藩校。安政年間に、菁々舎と改名された。",
       "lang": "ja",
@@ -11315,7 +11128,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11669597",
@@ -11338,7 +11151,7 @@
       "島"
     ],
     "featured": false,
-    "score": 49.7,
+    "score": 49.78,
     "summary": {
       "text": "Takashima (高島, Taka-shima) is a volcanic island in the Sea of Japan, 12 km from the coast of the Shimane prefecture in Japan. Takashima Island is administered as part of Masuda, Shimane Prefecture. Takashima takes its name, meaning \"High Island\" from its steep cliffs and mountains. The island was inhabited since at least 15th century, but was completely depopulated twice - in 1711 and 1975, when all inhabitants left the island following natural disasters. Currently (as in 2017) it is used as a fishing spot.",
       "lang": "en",
@@ -11368,15 +11181,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fe/Takashima_aerial_shot.jpg/960px-Takashima_aerial_shot.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "ブルーノ・プラス",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Takashima_aerial_shot.jpg"
-      }
-    }
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11671804",
@@ -11399,7 +11204,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 59.64,
+    "score": 59.46,
     "summary": {
       "text": "高津柿本神社（たかつかきのもとじんじゃ）は、島根県益田市高津町に鎮座する旧県社。歌聖柿本人麿を祀る神社で、正式名称は柿本神社。柿本人麿を祀る柿本神社は日本各地に存在するが、その本社を主張している。鎮座地は丸山の東に張り出した尾根筋の鴨山（高角山）山頂に位置し、境内を含めた一帯は祭神にちなんで、昭和50年代から島根県立万葉公園として整備されている。",
       "lang": "ja",
@@ -11429,7 +11234,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11671920",
@@ -11452,7 +11257,7 @@
       "城"
     ],
     "featured": false,
-    "score": 56.09,
+    "score": 56.0,
     "summary": {
       "text": "高瀬城（たかせじょう）は、島根県出雲市斐川町神庭にあった日本の城。",
       "lang": "ja",
@@ -11460,14 +11265,7 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f7/Takase_Castle.jpg/960px-Takase_Castle.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "by Monado",
-        "license": "CC BY-SA 2.5",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Takase_Castle.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q11671920"
     },
@@ -11482,7 +11280,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11673379",
@@ -11502,7 +11300,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 61.92,
+    "score": 61.91,
     "summary": {
       "text": "鬼之舌震乃指位於日本島根縣奧出雲町斐伊川支流大馬木川上游的峽谷，昭和2年（1927年）被指定為國家名勝和天然紀念物，正式登錄名稱為鬼舌振（（日語）おにのしたぶる）。該地地名出自《出雲國風土記》仁多郡條「和邇之欣慕」的音轉，請見下文之詳細解釋。",
       "lang": "zh",
@@ -11528,7 +11326,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11674322",
@@ -11552,7 +11350,7 @@
       "史跡"
     ],
     "featured": false,
-    "score": 69.85,
+    "score": 69.8,
     "summary": {
       "text": "Gakuen-ji (鰐淵寺) is a Buddhist temple located in the Besshō neighborhood of the city of Izumo, Shimane Prefecture, Japan.  The temple's full name is Uryōzan Gakuen-ji (浮浪山  鰐淵寺). It belongs to the Tendai sect of Japanese Buddhism, and its honzon is a statue of Senjū Kannon and Yakushi Nyōrai. Its ground so have been designated a National Historic Site since 2016",
       "lang": "en",
@@ -11587,7 +11385,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11675478",
@@ -11610,7 +11408,7 @@
       "城"
     ],
     "featured": false,
-    "score": 55.62,
+    "score": 55.61,
     "summary": {
       "text": "鳶ヶ巣城（とびがすじょう）は、島根県出雲市西林木町にあった日本の城。出雲市指定史跡。",
       "lang": "ja",
@@ -11627,14 +11425,7 @@
         "distance_m": 1350
       }
     ],
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/45/Tobigasu_Castle.jpg/960px-Tobigasu_Castle.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "by Monado",
-        "license": "CC BY-SA 2.5",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Tobigasu_Castle.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q11675478"
     },
@@ -11649,7 +11440,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11675537",
@@ -11672,7 +11463,7 @@
       "島"
     ],
     "featured": false,
-    "score": 46.01,
+    "score": 45.9,
     "summary": {
       "text": "鴨島（かもしま）は、現在の島根県益田市高津・中須沖の日本海にあったとされる島である。諸説ある柿本人麻呂の終焉地とされるうちの一つであり、1026年（万寿3年）の万寿地震によって海中に没し、地元で「大瀬」と呼ばれている暗礁が水没した鴨島の跡だとされるが、伝説に過ぎないとする説もある。",
       "lang": "ja",
@@ -11702,7 +11493,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11676221",
@@ -11726,7 +11517,7 @@
       "重要文化財"
     ],
     "featured": false,
-    "score": 59.89,
+    "score": 59.87,
     "summary": {
       "text": "鷲原八幡宮（わしばらはちまんぐう）は、島根県鹿足郡津和野町鷲原にある神社（八幡宮）。津和野町の南部、津和野城跡の南西麓に位置する。宗教法人としての名称は「八幡宮」である。",
       "lang": "ja",
@@ -11756,7 +11547,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11676417",
@@ -11777,7 +11568,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 51.86,
+    "score": 51.82,
     "summary": {
       "text": "鷺ノ湯温泉（さぎのゆおんせん）は、島根県安来市（旧国出雲国）にある温泉。周辺は清水月山県立自然公園（鷺の湯温泉地区）となっている。",
       "lang": "ja",
@@ -11796,7 +11587,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11679429",
@@ -11861,7 +11652,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 56.96,
+    "score": 57.02,
     "summary": {
       "text": "龍頭八重滝（りゅうずやえだき）は、島根県雲南市掛合町にある瀑布群で、日本の滝百選に選定されている。龍頭八重滝とは松笠地区にある龍頭ヶ滝と、その南東約5.5km入間地区にある八重滝の総称である。双方の滝周辺は竜頭八重滝県立自然公園に指定されている。",
       "lang": "ja",
@@ -11880,7 +11671,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q1186712",
@@ -11901,7 +11692,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 57.61,
+    "score": 57.78,
     "summary": {
       "text": "山陰自動車道是日本鳥取縣鳥取市經由島根縣至山口縣美禰市的高速公路（高速自動車國道）。略稱為山陰道（日語：山陰道／さんいんどう，羅馬化：Sanindō）。",
       "lang": "zh",
@@ -11927,7 +11718,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q120669454",
@@ -11991,7 +11782,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 62.7,
+    "score": 63.42,
     "summary": {
       "text": "櫻井家住宅（さくらいけじゅうたく、桜井家住宅）は、島根県仁多郡奥出雲町にある歴史的建造物。たたら製鉄で栄えた「鉄師御三家」櫻井家の旧宅。隣接する歴史資料館の可部屋集成舘（かべやしゅうせいかん）が管理している。",
       "lang": "ja",
@@ -11999,14 +11790,7 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8d/Kabeya_Shuseikan_Sakurai.jpg/960px-Kabeya_Shuseikan_Sakurai.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Vetalapancavimsatika",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Kabeya_Shuseikan_Sakurai.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q122616706"
     },
@@ -12021,7 +11805,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q122828022",
@@ -12041,7 +11825,7 @@
       "史跡"
     ],
     "featured": false,
-    "score": 37.73,
+    "score": 37.81,
     "summary": {
       "text": "The Ōbaniwatorizuka (大庭鶏塚古墳)  is a Kofun period burial mound, located on the border of the Ōba-chō neighborhood of the city of Matsue, Shimane in the San'in region of Japan. The tumulus was designated a National Historic Site of Japan in 1924.",
       "lang": "en",
@@ -12067,7 +11851,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q123472463",
@@ -12229,7 +12013,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 34.4,
+    "score": 34.58,
     "summary": {
       "text": "独島ヘリポート（トクトヘリポート、朝: 독도헬기장）は、韓国が実効支配している竹島に所在するヘリポートである。",
       "lang": "ja",
@@ -12252,7 +12036,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q127385579",
@@ -12275,7 +12059,7 @@
       "博物館"
     ],
     "featured": false,
-    "score": 52.16,
+    "score": 52.11,
     "summary": {
       "text": "島根大学総合博物館（しまねだいがくそうごうはくぶつかん）は島根県松江市にある島根大学の大学博物館である。島根大学松江キャンパス内にある本館の愛称は、島根県指定天然記念物に指定されているニホンアシカ剥製標本に由来する「アシカル」。学外の松江市奥谷町には、旧制松江高等学校外国人宿舎を改修した、国登録有形文化財の分館「島根大学旧奥谷宿舎」もある。",
       "lang": "ja",
@@ -12303,7 +12087,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q127783765",
@@ -12326,7 +12110,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 53.8,
+    "score": 53.97,
     "summary": {
       "text": "天佐志比古命神社（あまさしひこのみことじんじゃ）は、島根県隠岐郡知夫村にある神社。",
       "lang": "ja",
@@ -12356,7 +12140,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q131133623",
@@ -12379,7 +12163,7 @@
       "島"
     ],
     "featured": false,
-    "score": 36.41,
+    "score": 36.85,
     "summary": {
       "text": "島津島（しまづしま）は、島根県隠岐郡知夫村にある無人島。",
       "lang": "ja",
@@ -12409,7 +12193,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q132396423",
@@ -13427,7 +13211,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 51.44,
+    "score": 51.62,
     "summary": {
       "text": "比奈麻治比売命神社（ひなまじひめみことじんじゃ）は島根県隠岐郡西ノ島町に所在する神社。式内社（小社）で、旧社格は村社。通称は済（すん）大明神。",
       "lang": "ja",
@@ -13458,7 +13242,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q134366748",
@@ -13480,7 +13264,7 @@
       "公園"
     ],
     "featured": false,
-    "score": 45.18,
+    "score": 45.72,
     "summary": {
       "text": "岸公園（きしこうえん）は、島根県松江市袖師町にある公園。",
       "lang": "ja",
@@ -13524,7 +13308,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q134892535",
@@ -13547,7 +13331,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 49.19,
+    "score": 49.41,
     "summary": {
       "text": "苅田神社（かりたじんじゃ）は、島根県大田市にある神社。延喜式内社である。2018年に起きた島根県西部地震により、境内の鳥居が倒壊した。",
       "lang": "ja",
@@ -13575,7 +13359,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q134930739",
@@ -13598,7 +13382,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 47.77,
+    "score": 48.17,
     "summary": {
       "text": "静間神社（しずまじんじゃ）は、島根県大田市静間町に所在する万葉集に歌われた「志都乃石室」ゆかりの古社であり、延喜式に載せられた式内社である。",
       "lang": "ja",
@@ -13630,7 +13414,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q135040768",
@@ -13673,9 +13457,12 @@
     "id": "wd-Q135040770",
     "name": {
       "ja": "鷹日神社",
+      "kana": "たかひのじんじゃ",
+      "romaji": "Takahinojinja",
       "zh_tw": "鷹日神社",
       "en": "Takahino Shrine"
     },
+    "kana_source": "wikidata",
     "location": {
       "lat": 35.454263,
       "lng": 133.090151
@@ -13704,7 +13491,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q135040771",
@@ -13867,9 +13654,12 @@
     "id": "wd-Q135040784",
     "name": {
       "ja": "須多神社",
+      "kana": "すたのじんじゃ",
+      "romaji": "Sutanojinja",
       "zh_tw": "須多神社",
       "en": "Sutano Shrine"
     },
+    "kana_source": "wikidata",
     "location": {
       "lat": 35.420958,
       "lng": 133.130184
@@ -13898,7 +13688,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q135040903",
@@ -13941,9 +13731,12 @@
     "id": "wd-Q135040913",
     "name": {
       "ja": "由貴神社",
+      "kana": "ゆきのじんじゃ",
+      "romaji": "Yukinojinja",
       "zh_tw": "由貴神社",
       "en": "Yukino Shrine"
     },
+    "kana_source": "wikidata",
     "location": {
       "lat": 35.449069,
       "lng": 133.120476
@@ -13981,7 +13774,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q135040916",
@@ -14024,9 +13817,12 @@
     "id": "wd-Q135041092",
     "name": {
       "ja": "飯石神社",
+      "kana": "いひしじんじゃ",
+      "romaji": "Ihishijinja",
       "zh_tw": "飯石神社",
       "en": "Ihishi Shrine"
     },
+    "kana_source": "wikidata",
     "location": {
       "lat": 35.252831,
       "lng": 132.871364
@@ -14055,15 +13851,18 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q135041094",
     "name": {
       "ja": "伊賀多気神社",
+      "kana": "いかたけのじんじゃ",
+      "romaji": "Ikatakenojinja",
       "zh_tw": "伊賀多気神社",
       "en": "Ikatakeno Shrine"
     },
+    "kana_source": "wikidata",
     "location": {
       "lat": 35.182303,
       "lng": 133.095162
@@ -14101,15 +13900,18 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q135041099",
     "name": {
       "ja": "御代神社",
+      "kana": "みしろのじんじゃ",
+      "romaji": "Mishironojinja",
       "zh_tw": "御代神社",
       "en": "Mishirono Shrine"
     },
+    "kana_source": "wikidata",
     "location": {
       "lat": 35.330105,
       "lng": 132.881024
@@ -14138,7 +13940,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q135041118",
@@ -14321,7 +14123,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 47.89,
+    "score": 48.73,
     "summary": {
       "text": "賀茂那備神社（かもなびじんじゃ）は島根県隠岐郡隠岐の島町加茂に所在する神社。式内社（小社）で、旧社格は村社。",
       "lang": "ja",
@@ -14329,14 +14131,7 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c9/Kamonabi_Shrine_Torii.jpg/960px-Kamonabi_Shrine_Torii.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Fukuneko 2nd",
-        "license": "CC BY 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Kamonabi_Shrine_Torii.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q135041142"
     },
@@ -14347,7 +14142,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q135041143",
@@ -14370,7 +14165,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 50.1,
+    "score": 50.58,
     "summary": {
       "text": "和気能須神社（わけのすじんじゃ）は、島根県隠岐郡隠岐の島町下西に所在する神社。式内社（小社）で、旧社格は村社。通称は松尾神社。",
       "lang": "ja",
@@ -14378,14 +14173,7 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/07/Wakenosu_Shrine.jpg/960px-Wakenosu_Shrine.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Fukuneko 2nd",
-        "license": "CC BY 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Wakenosu_Shrine.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q135041143"
     },
@@ -14396,7 +14184,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q135041144",
@@ -14419,7 +14207,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 49.31,
+    "score": 49.82,
     "summary": {
       "text": "天健金草神社（あまたけかなかやじんじゃ）は、島根県隠岐郡隠岐の島町都万に所在する神社。式内社（小社）で、旧社格は県社。",
       "lang": "ja",
@@ -14427,14 +14215,7 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/28/Amatakekanakaya-Jinja_Torii.jpg/960px-Amatakekanakaya-Jinja_Torii.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Fukuneko 2nd",
-        "license": "CC BY 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Amatakekanakaya-Jinja_Torii.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q135041144"
     },
@@ -14449,7 +14230,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q135070089",
@@ -14497,7 +14278,7 @@
       "zh_tw": "諏訪神社",
       "en": "Suwa Shrine"
     },
-    "kana_source": "wikipedia",
+    "kana_source": "wikidata",
     "location": {
       "lat": 35.426694,
       "lng": 132.745222
@@ -14509,7 +14290,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 49.16,
+    "score": 48.98,
     "summary": {
       "text": "諏訪神社（すわじんじゃ）は島根県出雲市別所町に所在する神社。",
       "lang": "ja",
@@ -14517,14 +14298,7 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e4/Bessho_Suwa_Jinja_Torii.jpg/960px-Bessho_Suwa_Jinja_Torii.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Fukuneko 2nd",
-        "license": "CC BY 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Bessho_Suwa_Jinja_Torii.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q135070129"
     },
@@ -14539,7 +14313,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q135197702",
@@ -14638,7 +14412,7 @@
       "橋"
     ],
     "featured": false,
-    "score": 32.4,
+    "score": 32.1,
     "summary": {
       "text": "京橋（きょうはし）は、島根県松江市の京橋川に架かる道路橋。",
       "lang": "ja",
@@ -14684,7 +14458,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q141437631",
@@ -14704,7 +14478,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 22.66,
+    "score": 25.07,
     "summary": {
       "text": "ゆめタウン益田(ゆめタウンますだ)は、島根県益田市にあるイズミが運営するショッピングセンター。",
       "lang": "ja",
@@ -14727,7 +14501,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q151776",
@@ -14792,15 +14566,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-10-02",
-    "season_images": {
-      "winter": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f5/Matsue_Castle_Keep_Tower_20170126-1.jpg/960px-Matsue_Castle_Keep_Tower_20170126-1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Suicasmo",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Matsue_Castle_Keep_Tower_20170126-1.jpg"
-      }
-    }
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q16092819",
@@ -14821,7 +14587,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 36.24,
+    "score": 36.48,
     "summary": {
       "text": "独島のマサキ（とくとのマサキ、韓:독도 사철나무）は、大韓民国が実効支配し、日本が領有権を主張する竹島（韓国名:独島、독도）にあるマサキの木。韓国側の慶尚北道が2008年に保護樹木に指定し、その後2012年10月5日には大韓民国指定天然記念物に指定された。",
       "lang": "ja",
@@ -14851,7 +14617,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q1619446",
@@ -14875,7 +14641,7 @@
       "重要文化財"
     ],
     "featured": true,
-    "score": 74.0,
+    "score": 73.93,
     "summary": {
       "text": "日御碕神社（ひのみさきじんじゃ）是位在日本島根縣出雲市的神社。為式內社、舊社格為國幣小社（現神社本廳的別表神社）。",
       "lang": "zh",
@@ -14906,8 +14672,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q17222556",
@@ -14930,7 +14695,7 @@
       "博物館"
     ],
     "featured": false,
-    "score": 55.86,
+    "score": 55.98,
     "summary": {
       "text": "Sesshū Memorial Museum (益田市立雪舟の郷記念館, Masuda Shiritsu Sesshū no Sato Kinenkan) opened in Masuda, Shimane Prefecture, Japan, in 1990. Located next to the site of the Daiki-an (大喜庵), said to have been the site of Sesshū's death and burial, the museum stages exhibitions relating to the artist and to the history of Masuda.",
       "lang": "en",
@@ -14967,7 +14732,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q17225367",
@@ -14978,7 +14743,7 @@
       "zh_tw": "比婆山久米神社",
       "en": "Hibayamakume Shrine"
     },
-    "kana_source": "wikipedia",
+    "kana_source": "wikidata",
     "location": {
       "lat": 35.315333,
       "lng": 133.242917
@@ -14990,7 +14755,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 59.72,
+    "score": 59.56,
     "summary": {
       "text": "比婆山久米神社（ひばやまくめじんじゃ）は島根県安来市の比婆山 に鎮座する熊野神社の通称で、山頂の上の宮（奥宮）と山麓にある下の宮（里宮）から成る。山頂の上の宮社殿脇には国産み神話、神産み神話のイザナミの御神陵と伝わる古墳があり、古来より子授け・安産の神として信仰されている。",
       "lang": "ja",
@@ -15020,7 +14785,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q174139",
@@ -15079,8 +14844,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q1778875",
@@ -15103,7 +14867,7 @@
       "博物館"
     ],
     "featured": true,
-    "score": 76.94,
+    "score": 76.54,
     "summary": {
       "text": "小泉八雲紀念館（英語：Lafcadio Hearn Memorial Museum）是一座位於日本島根縣松江市的博物館。",
       "lang": "zh",
@@ -15122,10 +14886,10 @@
     ],
     "images": [
       {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a8/Lafcadio_Hearn_Memorial_Hall01st3200.jpg/960px-Lafcadio_Hearn_Memorial_Hall01st3200.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7a/Lafcadio_Hearn_Memorial_Hall02st3200.jpg/960px-Lafcadio_Hearn_Memorial_Hall02st3200.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
         "author": "663highland",
         "license": "CC BY 2.5",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Lafcadio_Hearn_Memorial_Hall01st3200.jpg"
+        "source_url": "https://commons.wikimedia.org/wiki/File:Lafcadio_Hearn_Memorial_Hall02st3200.jpg"
       }
     ],
     "external_ids": {
@@ -15143,8 +14907,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q18990378",
@@ -15167,7 +14930,7 @@
       "公園"
     ],
     "featured": false,
-    "score": 56.82,
+    "score": 56.81,
     "summary": {
       "text": "The Izumo Tamazukuri site (出雲玉作跡, Izumo tamazukuri iseki) is an archaeological site in the Tamayu-chō neighborhood of the city of Matsue, Shimane Prefecture, in the San'in region of western Japan. It contains the traces of a number of  workshops from the Kofun period where magatama and other beads were produced, It was designated a National Historic Site in 1922, with the area under protection expanded in 2004. The excavated items from this site were collectively designated a National Important Cultural Property in 1977.",
       "lang": "en",
@@ -15175,14 +14938,7 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-29"
     },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fb/140427_Izumo_Tamatsukuri_Historical_Park_Matsue_Shimane_pref_Japan02n.jpg/960px-140427_Izumo_Tamatsukuri_Historical_Park_Matsue_Shimane_pref_Japan02n.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "663highland",
-        "license": "CC BY 2.5",
-        "source_url": "https://commons.wikimedia.org/wiki/File:140427_Izumo_Tamatsukuri_Historical_Park_Matsue_Shimane_pref_Japan02n.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q18990378",
       "osm": "way/554288438"
@@ -15202,7 +14958,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q1976445",
@@ -15223,7 +14979,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 67.51,
+    "score": 67.56,
     "summary": {
       "text": "Mount Osorakan (恐羅漢山, Osorakan-zan) is a mountain on the border of Akitakata, Hiroshima Prefecture, and Masuda, Shimane Prefecture, Japan. Situated inside the Nishi-Chugoku Sanchi Quasi-National Park, the mountain is the tallest of both Hiroshima and Shimane prefectures.",
       "lang": "en",
@@ -15253,7 +15009,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q20317",
@@ -15276,7 +15032,7 @@
       "島"
     ],
     "featured": true,
-    "score": 79.6,
+    "score": 79.49,
     "summary": {
       "text": "獨島（韓語：독도／獨島，羅馬化：Dokdo），日本稱為竹島，美歐西方國家稱作利揚庫爾巖（或譯為里昂科礁，英語：Liancourt Rocks），是位於日本海（北韓和南韓稱為「東海」）的兩個島嶼和礁岩群，座標為北緯37度15分、東經131度52分，目前由大韓民國實際控制，行政區劃設為大韓民國慶尚北道鬱陵郡鬱陵邑獨島裡。",
       "lang": "zh",
@@ -15306,15 +15062,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6a/Dokdo_20080628-panorama.jpg/960px-Dokdo_20080628-panorama.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "머찐만두 at Naver",
-        "license": "CC BY-SA 2.0 kr",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Dokdo_20080628-panorama.jpg"
-      }
-    }
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q21583279",
@@ -15335,7 +15083,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 39.83,
+    "score": 39.69,
     "summary": {
       "text": "いずもまがたまの里 伝承館（いずもまがたまのさと でんしょうかん）は、島根県松江市玉湯町の勾玉やめのう等の製作・販売を行う施設。株式会社めのやが運営。2022年1月31日をもって閉店した。",
       "lang": "ja",
@@ -15374,7 +15122,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q21652666",
@@ -15397,7 +15145,7 @@
       "世界遺產"
     ],
     "featured": true,
-    "score": 78.85,
+    "score": 78.94,
     "summary": {
       "text": "沖泊（おきどまり）は、島根県大田市温泉津町の日本海に面した湾と集落で、世界遺産石見銀山の構成資産である。石見銀山で産出した銀を銀山街道で陸送した後、沖泊で船に積み込み搬出した（博多を経て世界へ輸出流通）。",
       "lang": "ja",
@@ -15436,7 +15184,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q21652814",
@@ -15458,7 +15206,7 @@
       "公園"
     ],
     "featured": false,
-    "score": 50.03,
+    "score": 50.5,
     "summary": {
       "text": "加茂中央公園（かもちゅうおうこうえん）は島根県雲南市加茂町にある公園。",
       "lang": "ja",
@@ -15495,7 +15243,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q21653224",
@@ -15512,7 +15260,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 53.17,
+    "score": 53.19,
     "summary": {
       "text": "さんべ温泉スキー場は、島根県大田市三瓶町東ノ原にあったスキー場。1961年-2009年の期間に営業した。スキー場が閉鎖した後は、1基のリフトが｢三瓶観光リフト｣として登山客などに利用されている。2018年には残存する建物を利用して石見ワイナリーがオープンしている。",
       "lang": "ja",
@@ -15531,7 +15279,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q21653806",
@@ -15554,7 +15302,7 @@
       "世界遺產"
     ],
     "featured": true,
-    "score": 80.88,
+    "score": 80.99,
     "summary": {
       "text": "鞆ヶ浦（ともがうら）は、島根県大田市仁摩町にある日本海に面した湾と集落。世界遺産石見銀山の構成資産のひとつ。石見銀山で産出した銀を銀山街道で陸送した後、鞆ヶ浦で船に積み込み搬出した（博多を経て世界へ輸出流通）。",
       "lang": "ja",
@@ -15593,8 +15341,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q21654947",
@@ -15662,7 +15409,7 @@
       "史跡"
     ],
     "featured": false,
-    "score": 57.63,
+    "score": 57.75,
     "summary": {
       "text": "丸山城（まるやまじょう）は、石見国邑智郡（現・島根県邑智郡川本町三原）にあった日本の城。島根県指定史跡。",
       "lang": "ja",
@@ -15692,7 +15439,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q22084535",
@@ -15710,7 +15457,7 @@
     "themes": [],
     "tags": [],
     "featured": true,
-    "score": 81.38,
+    "score": 81.39,
     "summary": {
       "text": "In Japanese mythology, Yomotsu Hirasaka (黄泉比良坂 or 黄泉平坂) is a slope or boundary between the world of the dead (Yomi) and the world of the living.",
       "lang": "en",
@@ -15745,7 +15492,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q22117876",
@@ -15768,7 +15515,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 53.13,
+    "score": 53.08,
     "summary": {
       "text": "出雲大社石見分祠（いずもおおやしろ / たいしゃ いわみぶんし）は、島根県浜田市田町にある神社。名の通り出雲大社の分社である。",
       "lang": "ja",
@@ -15812,7 +15559,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q22120053",
@@ -15832,7 +15579,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 29.46,
+    "score": 29.37,
     "summary": {
       "text": "パルメイト出雲（パルメイトいずも）は、 島根県出雲市今市町にある複合施設。",
       "lang": "ja",
@@ -15858,14 +15605,7 @@
         "distance_m": 220
       }
     ],
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9e/Palmate-Izumo_202001.jpg/960px-Palmate-Izumo_202001.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "切干大根",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Palmate-Izumo_202001.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q22120053"
     },
@@ -15880,7 +15620,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q22120305",
@@ -15903,7 +15643,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 52.14,
+    "score": 52.29,
     "summary": {
       "text": "火守神社（ほもりじんじゃ）は、島根県出雲市宇那手町にある神社。料理祖神である櫛八玉命を主祭神とする。",
       "lang": "ja",
@@ -15929,7 +15669,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q22120369",
@@ -15992,15 +15732,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "winter": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f3/Matsue_Castle_in_2013-12-28_No%2C12.JPG/960px-Matsue_Castle_in_2013-12-28_No%2C12.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Mti",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Matsue_Castle_in_2013-12-28_No,12.JPG"
-      }
-    }
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q24863642",
@@ -16023,7 +15755,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 49.35,
+    "score": 49.45,
     "summary": {
       "text": "天豊足柄姫命神社（あめのとよたらしからひめのみことじんじゃ）は、島根県浜田市にある神社である。式内社で、旧社格は県社。",
       "lang": "ja",
@@ -16058,7 +15790,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q24864064",
@@ -16082,7 +15814,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 53.46,
+    "score": 53.17,
     "summary": {
       "text": "櫛代賀姫神社（くししろかひめじんじゃ）は島根県益田市にある神社である。式内社で、旧社格は県社。獅子舞・角力・針供養の三つの特殊神事が知られている。",
       "lang": "ja",
@@ -16106,7 +15838,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q24868915",
@@ -16129,7 +15861,7 @@
       "博物館"
     ],
     "featured": false,
-    "score": 52.81,
+    "score": 52.94,
     "summary": {
       "text": "隠岐郷土館（おききょうどかん）は島根県隠岐郡隠岐の島町にある博物館である。昭和45年（1970年）6月に開館した。",
       "lang": "ja",
@@ -16164,7 +15896,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q24876393",
@@ -16187,7 +15919,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 48.6,
+    "score": 48.88,
     "summary": {
       "text": "水祖神社（みおやじんじゃ）は、島根県隠岐郡隠岐の島町港町天神原にある神社。式内社で、旧社格は郷社。",
       "lang": "ja",
@@ -16218,7 +15950,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q2655425",
@@ -16241,7 +15973,7 @@
       "博物館"
     ],
     "featured": false,
-    "score": 68.94,
+    "score": 68.85,
     "summary": {
       "text": "島根縣立美術館是位於日本島根縣松江市的一座美術館。",
       "lang": "zh",
@@ -16288,21 +16020,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "winter": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Shimane_Art_Museum_in_2013.JPG/960px-Shimane_Art_Museum_in_2013.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Mti",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Shimane_Art_Museum_in_2013.JPG"
-      },
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/34/140427_Shimane_Art_Museum_Matsue_Shimane_pref_Japan01s5.jpg/960px-140427_Shimane_Art_Museum_Matsue_Shimane_pref_Japan01s5.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "663highland",
-        "license": "CC BY 2.5",
-        "source_url": "https://commons.wikimedia.org/wiki/File:140427_Shimane_Art_Museum_Matsue_Shimane_pref_Japan01s5.jpg"
-      }
-    }
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q28682860",
@@ -16319,7 +16037,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 45.68,
+    "score": 46.11,
     "summary": {
       "text": "島根県立男女共同参画センター あすてらすは、島根県大田市大田町にある複合公共施設。",
       "lang": "ja",
@@ -16336,14 +16054,7 @@
         "distance_m": 120
       }
     ],
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4a/180505_Asuterasu_Oda_Shimane_pref_Japan01n.jpg/960px-180505_Asuterasu_Oda_Shimane_pref_Japan01n.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "663highland",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:180505_Asuterasu_Oda_Shimane_pref_Japan01n.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q28682860"
     },
@@ -16354,7 +16065,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q29841206",
@@ -16377,7 +16088,7 @@
       "寺院"
     ],
     "featured": false,
-    "score": 27.29,
+    "score": 27.33,
     "summary": {
       "text": "妙智寺（みょうちじ）は、島根県浜田市殿町にある日蓮宗の寺院。山号は法輪山。旧本山は大本山妙顕寺(四条門流)、奠師法縁(奠統会)。椿の品種無音の雪は境内の野生椿から選抜されたもの。",
       "lang": "ja",
@@ -16394,14 +16105,7 @@
         "distance_m": 660
       }
     ],
-    "images": [
-      {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/2/21/Myochi-ji%2C_Hamada_-_aerial.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-        "author": "国土地理院",
-        "license": "Attribution",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Myochi-ji,_Hamada_-_aerial.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q29841206",
       "osm": "way/653506483"
@@ -16421,7 +16125,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q29948516",
@@ -16444,7 +16148,7 @@
       "博物館"
     ],
     "featured": false,
-    "score": 52.07,
+    "score": 52.8,
     "summary": {
       "text": "松江歴史館（まつえれきしかん）は、島根県松江市にある歴史博物館。2011年開設。",
       "lang": "ja",
@@ -16484,7 +16188,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q30925534",
@@ -16507,7 +16211,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 52.48,
+    "score": 52.46,
     "summary": {
       "text": "伊甘神社（いかんじんじゃ）は島根県浜田市下府町にある神社である。石見国庁跡であると伝えられる。式内社であり旧社格は村社。府中神社（石見国総社）を合祀する。",
       "lang": "ja",
@@ -16547,7 +16251,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q30925653",
@@ -16570,7 +16274,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 50.88,
+    "score": 51.19,
     "summary": {
       "text": "大麻山神社（おおあさやまじんじゃ、たいまさんじんじゃ）は島根県浜田市三隅町の神社。式内社で旧社格は郷社。",
       "lang": "ja",
@@ -16578,14 +16282,7 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ce/%E5%A4%A7%E9%BA%BB%E5%B1%B1%E7%A5%9E%E7%A4%BE.jpg/960px-%E5%A4%A7%E9%BA%BB%E5%B1%B1%E7%A5%9E%E7%A4%BE.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "満月のライオン",
-        "license": "CC0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:%E5%A4%A7%E9%BA%BB%E5%B1%B1%E7%A5%9E%E7%A4%BE.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q30925653",
       "osm": "way/1305422511"
@@ -16601,7 +16298,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q30929765",
@@ -16625,7 +16322,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 61.05,
+    "score": 61.11,
     "summary": {
       "text": "万九千社（まくせのやしろ）、通称・万九千神社（まんくせんじんじゃ）は島根県出雲市斐川町にある神社。立虫神社（たちむしじんじゃ）の境内社として祀られている。神在月にお集まりになる八百万神が出雲で最後にお立ち寄りになる場所とされている。本殿はなく、神殿（拝殿に相当）の後ろに神籬（神木）と磐境を有する。",
       "lang": "ja",
@@ -16665,7 +16362,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q30930673",
@@ -16685,7 +16382,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 39.96,
+    "score": 39.9,
     "summary": {
       "text": "ゆめタウン江津（ゆめタウンごうつ）は、島根県江津市にある総合スーパー。イズミが運営する。",
       "lang": "ja",
@@ -16702,14 +16399,7 @@
         "distance_m": 530
       }
     ],
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ad/You_Me_Town_Gotsu_1.jpg/960px-You_Me_Town_Gotsu_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "運動会プロテインパワー",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:You_Me_Town_Gotsu_1.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q30930673"
     },
@@ -16724,7 +16414,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q30936458",
@@ -16745,7 +16435,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 59.56,
+    "score": 59.43,
     "summary": {
       "text": "青野山（あおのやま）は島根県鹿足郡津和野町に位置する標高907mの火山。国の天然記念物・名勝に指定されている。また、青野山周辺は青野山県立自然公園となっている。",
       "lang": "ja",
@@ -16753,14 +16443,7 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1c/Tsuwano_zenkei.JPG/960px-Tsuwano_zenkei.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Opqr",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Tsuwano_zenkei.JPG"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q30936458"
     },
@@ -16771,7 +16454,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q3192477",
@@ -16795,7 +16478,7 @@
       "國寶"
     ],
     "featured": true,
-    "score": 83.48,
+    "score": 83.52,
     "summary": {
       "text": "Kamosu Jinja (神魂神社) is a Shinto shrine in Matsue, Shimane Prefecture, Japan. The Taisha-zukuri Honden of 1583 is a National Treasure. The coeval branch Inari shrine is an Important Cultural Property.",
       "lang": "en",
@@ -16826,8 +16509,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q3274310",
@@ -16850,7 +16532,7 @@
       "島"
     ],
     "featured": false,
-    "score": 56.28,
+    "score": 56.27,
     "summary": {
       "text": "大根島，是位於日本島根縣的中海裡的島嶼，與其東北側的江島同樣為玄武岩火山島。",
       "lang": "zh",
@@ -16880,7 +16562,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q3304708",
@@ -16903,7 +16585,7 @@
       "博物館"
     ],
     "featured": false,
-    "score": 60.75,
+    "score": 60.72,
     "summary": {
       "text": "Meimei-an (明々庵) is a tea house originally constructed in 1779 by Lord Matsudaira Harusato, daimyō of the Matsue clan at that time. It is located in Matsue, Shimane, Japan.",
       "lang": "en",
@@ -16943,7 +16625,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q3313076",
@@ -16954,7 +16636,7 @@
       "zh_tw": "美保神社",
       "en": "Miho Shrine"
     },
-    "kana_source": "osm",
+    "kana_source": "wikidata",
     "location": {
       "lat": 35.562311,
       "lng": 133.306047
@@ -16966,7 +16648,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 72.82,
+    "score": 72.78,
     "summary": {
       "text": "美保神社是日本島根縣松江市美保關町美保關的神社，社格是式內小社、國幣中社和別表神社，祭神是三穗津姬命和事代主神，為日本3385座供奉事代主神的惠比壽社的總本宮，與出雲大社形成雙參拜。",
       "lang": "zh",
@@ -16997,8 +16679,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-29",
-    "season_images": {}
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q3329561",
@@ -17022,7 +16703,7 @@
       "博物館"
     ],
     "featured": true,
-    "score": 78.03,
+    "score": 78.02,
     "summary": {
       "text": "足立美術館是位於日本島根縣安來市的一座博物館，主要收藏近代日本畫，由公益財團法人足立美術館運營。美術館以收藏有130件橫山大觀的作品和日本庭園而著稱。足立美術館由當地實業家足立全康在1970年時開館。美術館的日本庭園被美國日本庭園專門雜誌連續13連評為日本第一的日本庭園，並被法國米其林指南給予三星評價。",
       "lang": "zh",
@@ -17053,21 +16734,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "winter": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/65/The_gardens_of_the_Adachi_Museum_of_Art_20170127.jpg/960px-The_gardens_of_the_Adachi_Museum_of_Art_20170127.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Suicasmo",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:The_gardens_of_the_Adachi_Museum_of_Art_20170127.jpg"
-      },
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/21/%E8%B6%B3%E7%AB%8B%E7%BE%8E%E8%A1%93%E9%A4%A8_%288348293199%29.jpg/960px-%E8%B6%B3%E7%AB%8B%E7%BE%8E%E8%A1%93%E9%A4%A8_%288348293199%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Ryohei Noda",
-        "license": "CC BY 2.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:%E8%B6%B3%E7%AB%8B%E7%BE%8E%E8%A1%93%E9%A4%A8_(8348293199).jpg"
-      }
-    }
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q3461072",
@@ -17091,7 +16758,7 @@
       "重要文化財"
     ],
     "featured": false,
-    "score": 72.18,
+    "score": 72.14,
     "summary": {
       "text": "Sada Jinja (佐太神社) is a Shinto shrine in Matsue, Shimane Prefecture, Japan. The Taisha-zukuri north, central and south halls of 1807 are Important Cultural Properties.",
       "lang": "en",
@@ -17126,8 +16793,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q3514711",
@@ -17148,7 +16814,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 75.96,
+    "score": 75.9,
     "summary": {
       "text": "玉造溫泉是位於日本島根縣松江市玉湯町玉造地區的溫泉區，為「枕草子・三大名泉」之一；其不論是規模或是歷史，都是島根縣內最具代表性的溫泉區。溫泉泉質屬於硫酸鹽鹽化物泉，源泉溫度超過42度。",
       "lang": "zh",
@@ -17174,8 +16840,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q3517478",
@@ -17198,7 +16863,7 @@
       "寺院"
     ],
     "featured": false,
-    "score": 67.91,
+    "score": 67.86,
     "summary": {
       "text": "Gesshō-ji (月照寺) is a Jōdō-shū Buddhist temple in the Tono Nakahara-cho neighborhood of the city of Matsue, Shimane Prefecture Japan. It is the  bodaiji of the Matsudaira clan, the daimyō of Matsue Domain during the Edo period. The daimyō cemetery containing the graves of nine generations of the rulers of Matsue was designated as a National Historic Site in 1996.",
       "lang": "en",
@@ -17233,7 +16898,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q3571285",
@@ -17256,7 +16921,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 72.05,
+    "score": 71.96,
     "summary": {
       "text": "Yaegaki Shrine (八重垣神社, Yaegaki Jinja), formerly known as Sakusa Shrine (佐久佐神社, Sakusa Jinja), is a Shinto shrine in Matsue, Shimane Prefecture, Japan.",
       "lang": "en",
@@ -17287,8 +16952,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q3623017",
@@ -17309,7 +16973,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 56.93,
+    "score": 56.91,
     "summary": {
       "text": "島後是日本隱岐群島的主島，位於日本海，距離本州約70公里（38海里）。全域屬於島根縣隱岐郡隱岐之島町，島根縣廳在此設有隱岐支廳。與島後相對的是位於其西側約12公里（6.5海里）處的島前（包括西之島、中之島、知夫裡島）。島後面積241.64平方公里，周長約211公里，島上人口有約14,422人。島上有平神社古墳以及隱岐機場。",
       "lang": "zh",
@@ -17335,15 +16999,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/51/20090923%E9%9A%A0%E5%B2%90%E8%AB%B8%E5%B3%B6.jpg/960px-20090923%E9%9A%A0%E5%B2%90%E8%AB%B8%E5%B3%B6.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "BehBeh",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:20090923%E9%9A%A0%E5%B2%90%E8%AB%B8%E5%B3%B6.jpg"
-      }
-    }
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q38278628",
@@ -17426,7 +17082,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 74.12,
+    "score": 73.99,
     "summary": {
       "text": "三瓶山（さんべさん）是位在島根縣中部的活火山。標高1,126公尺。日本二百名山之一。也稱作石見富士（いわみふじ）。",
       "lang": "zh",
@@ -17452,8 +17108,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q43593632",
@@ -17476,7 +17131,7 @@
       "寺院"
     ],
     "featured": false,
-    "score": 31.77,
+    "score": 32.07,
     "summary": {
       "text": "連紹寺（れんしょうじ）は、島根県出雲市今市町にある日蓮宗の寺院で山号は妙法山である。旧本山は京都妙覚寺、親師法縁。",
       "lang": "ja",
@@ -17527,7 +17182,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q43594362",
@@ -17549,7 +17204,7 @@
       "寺院"
     ],
     "featured": false,
-    "score": 28.53,
+    "score": 28.9,
     "summary": {
       "text": "長満寺（ちょうまんじ）は、島根県松江市寺町にある日蓮宗の寺院で山号は圓久山という。旧本山は大本山本圀寺(六条門流)、親師法縁。付近は寺町で常教寺、久成寺、妙興寺などがある。",
       "lang": "ja",
@@ -17600,7 +17255,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q47164008",
@@ -17623,7 +17278,7 @@
       "水族館"
     ],
     "featured": false,
-    "score": 57.29,
+    "score": 57.28,
     "summary": {
       "text": "宍道湖自然館ゴビウス（しんじこしぜんかんゴビウス）は、島根県出雲市にある淡水・汽水生物を展示する体験学習型水族館である。",
       "lang": "ja",
@@ -17674,7 +17329,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q4802099",
@@ -17698,7 +17353,7 @@
       "博物館"
     ],
     "featured": false,
-    "score": 64.29,
+    "score": 64.3,
     "summary": {
       "text": "The Shimane Museum of Ancient Izumo (島根県立古代出雲歴史博物館, Shimane kenritsu kodai Izumo rekishi hakubutsukan) opened in Izumo, Shimane Prefecture, Japan in 2007.",
       "lang": "en",
@@ -17738,15 +17393,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/11/Shimane_museum_of_Ancient_Izumo_%2C_%E5%B3%B6%E6%A0%B9%E7%9C%8C%E7%AB%8B%E5%8F%A4%E4%BB%A3%E5%87%BA%E9%9B%B2%E6%AD%B4%E5%8F%B2%E5%8D%9A%E7%89%A9%E9%A4%A8_-_panoramio.jpg/960px-Shimane_museum_of_Ancient_Izumo_%2C_%E5%B3%B6%E6%A0%B9%E7%9C%8C%E7%AB%8B%E5%8F%A4%E4%BB%A3%E5%87%BA%E9%9B%B2%E6%AD%B4%E5%8F%B2%E5%8D%9A%E7%89%A9%E9%A4%A8_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "z tanuki",
-        "license": "CC BY 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Shimane_museum_of_Ancient_Izumo_,_%E5%B3%B6%E6%A0%B9%E7%9C%8C%E7%AB%8B%E5%8F%A4%E4%BB%A3%E5%87%BA%E9%9B%B2%E6%AD%B4%E5%8F%B2%E5%8D%9A%E7%89%A9%E9%A4%A8_-_panoramio.jpg"
-      }
-    }
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q483146",
@@ -17769,7 +17416,7 @@
       "島"
     ],
     "featured": true,
-    "score": 88.93,
+    "score": 88.86,
     "summary": {
       "text": "隱岐群島，亦稱隱岐島，是位於日本島根半島北方約50公里的群島，總面積345.73平方公里，行政區劃分屬於島根縣隱岐郡下的3町1村。",
       "lang": "zh",
@@ -17799,15 +17446,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-29",
-    "season_images": {
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/51/20090923%E9%9A%A0%E5%B2%90%E8%AB%B8%E5%B3%B6.jpg/960px-20090923%E9%9A%A0%E5%B2%90%E8%AB%B8%E5%B3%B6.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "BehBeh",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:20090923%E9%9A%A0%E5%B2%90%E8%AB%B8%E5%B3%B6.jpg"
-      }
-    }
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q48752629",
@@ -17827,7 +17466,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 50.47,
+    "score": 50.43,
     "summary": {
       "text": "匹見峡温泉（ひきみきょう おんせん）は、島根県益田市匹見町にある温泉。",
       "lang": "ja",
@@ -17850,7 +17489,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q488457",
@@ -17871,7 +17510,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 68.83,
+    "score": 68.74,
     "summary": {
       "text": "獨島主權爭議是大韓民國、朝鮮民主主義人民共和國、日本國就獨島之主權歸屬爭議。由於目前在此島的專屬經濟區內尚未發現任何石油等海底資源，因此爭論的起因主要來自漁業權。獨島現在由韓國實際控制，並在靠近韓國海區內由大韓民國海洋警察廳進行監視，更建設直升機場、碼頭和燈塔等設施。每年韓國海警和海軍空軍會舉行1，2次防禦演習。",
       "lang": "zh",
@@ -17879,14 +17518,7 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [
-      {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/5/5e/Dokdo_Photo.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-        "author": "Rachouette, teacher in Seoul, SOUTH KOREA at en:Windows Live",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Dokdo_Photo.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q488457"
     },
@@ -17901,7 +17533,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q5004035",
@@ -17924,7 +17556,7 @@
       "島"
     ],
     "featured": false,
-    "score": 55.06,
+    "score": 55.03,
     "summary": {
       "text": "西之島為位於日本靠日本海側隱岐群島的島嶼，行政區劃屬於島根縣隱岐郡西之島町，島上現居住人口約3,400人。",
       "lang": "zh",
@@ -17950,15 +17582,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/ff/20080720OkiNishiNoShima.jpg/960px-20080720OkiNishiNoShima.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "BehBeh",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:20080720OkiNishiNoShima.jpg"
-      }
-    }
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q5508550",
@@ -17981,7 +17605,7 @@
       "島"
     ],
     "featured": false,
-    "score": 61.73,
+    "score": 61.64,
     "summary": {
       "text": "Fumi-shima (経島) is an islet 180 metres (590 ft) from the shore near Izumo, Shimane, Japan. It is a nesting place for around 5,000 Black-tailed Gulls each Spring, and has been recognised as an Important Bird Area (IBA) by BirdLife International. The islet used to have a shrine  dedicated to Hinomisaki Jinja. Only the shrine priests were allowed to visit the island so the gulls settled virtually undisturbed.",
       "lang": "en",
@@ -18011,15 +17635,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d6/Hinomisaki-jinja_and_Fumi_Island_Aerial_photograph1976.jpg/960px-Hinomisaki-jinja_and_Fumi_Island_Aerial_photograph1976.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "国土地理院",
-        "license": "Attribution",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Hinomisaki-jinja_and_Fumi_Island_Aerial_photograph1976.jpg"
-      }
-    }
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q55522257",
@@ -18043,7 +17659,7 @@
       "名勝"
     ],
     "featured": false,
-    "score": 53.02,
+    "score": 53.2,
     "summary": {
       "text": "小川家雪舟庭園（おがわけせっしゅうていえん）は、島根県江津市にある和木地方の旧家・小川家の書院庭園。1959年（昭和34年）9月1日に「小川庭園」の名称で島根県指定名勝に指定されている。",
       "lang": "ja",
@@ -18087,7 +17703,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q55522621",
@@ -18107,7 +17723,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 46.59,
+    "score": 46.48,
     "summary": {
       "text": "蟠龍峡（ばんりゅうきょう）は、島根県邑智郡美郷町の比之宮地域（比敷、村之郷、宮内）を代表する景勝地。角谷川の上流にあたる。吊り橋、ゆるやかな遊歩道が整備されているので、落下する滝、岩と木の織りなす景色を見ながら散策が楽しめる。10分程度で、下まで降りて滝を見上げられる。",
       "lang": "ja",
@@ -18130,7 +17746,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q55525039",
@@ -18151,7 +17767,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 56.85,
+    "score": 57.09,
     "summary": {
       "text": "波根西の珪化木（はねにしのけいかぼく）は、島根県大田市久手町の波根西海岸にある机島を中心とした岩礁に存在する樹木の化石。火山泥流が固結した際に珪化が起こり、新第三紀中新世大森層の角礫凝灰岩層が波打ち際に露出したものである。国の天然記念物に指定されている。",
       "lang": "ja",
@@ -18168,14 +17784,7 @@
         "distance_m": 780
       }
     ],
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bd/Petrified_wood_in_Hanenishi_B.jpg/960px-Petrified_wood_in_Hanenishi_B.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "さかおり",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Petrified_wood_in_Hanenishi_B.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q55525039"
     },
@@ -18190,7 +17799,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q55529302",
@@ -18211,7 +17820,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 47.89,
+    "score": 48.32,
     "summary": {
       "text": "島根半島・宍道湖中海ジオパーク（しまねはんとう・しんじこなかうみジオパーク、英: Shimane Peninsula and Shinjiko Nakaumi Estuary Geopark）は、島根県の北東に位置する島根半島と宍道湖・中海からなるジオパークである。2017年12月に日本ジオパークに認定された。",
       "lang": "ja",
@@ -18230,7 +17839,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q55530176",
@@ -18251,7 +17860,7 @@
       "世界遺產"
     ],
     "featured": true,
-    "score": 80.38,
+    "score": 80.27,
     "summary": {
       "text": "石見銀山資料館（いわみぎんざんしりょうかん：別名　いも代官ミュージアム）は島根県大田市にある博物館。",
       "lang": "ja",
@@ -18282,8 +17891,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q55530278",
@@ -18306,7 +17914,7 @@
       "博物館"
     ],
     "featured": false,
-    "score": 50.28,
+    "score": 50.39,
     "summary": {
       "text": "海士町後鳥羽院資料館（あまちょうごとばいんしりょうかん）は、島根県隠岐郡海士町にある郷土資料館。承久の乱の後、同地に配流された後鳥羽院に関する資料を中心として展示している。",
       "lang": "ja",
@@ -18341,7 +17949,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q55530487",
@@ -18362,7 +17970,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 54.17,
+    "score": 54.28,
     "summary": {
       "text": "石見銀山世界遺産センター（いわみぎんざんせかいいさんセンター）は島根県大田市の石見銀山柵内に立地する世界遺産「石見銀山遺跡とその文化的景観」の現地見学の拠点としてのガイダンス施設・資料館である。",
       "lang": "ja",
@@ -18397,7 +18005,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q57588528",
@@ -18417,7 +18025,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 42.61,
+    "score": 42.58,
     "summary": {
       "text": "イオンモール出雲（イオンモールいずも）は、島根県の出雲市に立地するショッピングセンター。",
       "lang": "ja",
@@ -18440,7 +18048,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q57923528",
@@ -18463,7 +18071,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 51.82,
+    "score": 51.65,
     "summary": {
       "text": "稲田神社（いなだじんじゃ）は、島根県仁多郡奥出雲町にある神社。旧社格は郷社。",
       "lang": "ja",
@@ -18498,7 +18106,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q5986097",
@@ -18521,7 +18129,7 @@
       "寺院"
     ],
     "featured": false,
-    "score": 68.44,
+    "score": 68.36,
     "summary": {
       "text": "醫王山 一畑寺為位於日本島根縣出雲市小境町之臨濟宗妙心寺派寺院，也是一畑藥師教團的總本山。通稱為一畑藥師。以「目之藥師様」聞名。",
       "lang": "zh",
@@ -18552,7 +18160,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q6102408",
@@ -18642,7 +18250,7 @@
       "寺院"
     ],
     "featured": false,
-    "score": 34.69,
+    "score": 34.75,
     "summary": {
       "text": "千手院（せんじゅいん）は、島根県松江市石橋町にある高野山真言宗の寺院。山号は尊照山。本尊は千手観音。",
       "lang": "ja",
@@ -18673,7 +18281,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q65291930",
@@ -18696,7 +18304,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 55.73,
+    "score": 55.76,
     "summary": {
       "text": "阿太加夜神社（あだかやじんじゃ）は島根県松江市東出雲町にある神社。",
       "lang": "ja",
@@ -18736,7 +18344,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q66310871",
@@ -18756,7 +18364,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 58.55,
+    "score": 58.62,
     "summary": {
       "text": "摩天崖（まてんがい）は、島根県隠岐郡西ノ島町浦郷に位置する海崖。隠岐ユネスコ世界ジオパークおよび大山隠岐国立公園にそれぞれ指定されている隠岐諸島の西ノ島にある。",
       "lang": "ja",
@@ -18764,14 +18372,7 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c4/The_top_og_Matengai.jpg/960px-The_top_og_Matengai.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Jiguruzu",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:The_top_og_Matengai.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q66310871",
       "osm": "node/9961089024"
@@ -18791,7 +18392,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q66310909",
@@ -18811,7 +18412,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 45.29,
+    "score": 45.36,
     "summary": {
       "text": "赤尾展望所（あかおてんぼうじょ）とは、島根県隠岐郡西ノ島町浦郷に所在する、国賀海岸（摩天崖など）を一望できる展望所。",
       "lang": "ja",
@@ -18819,14 +18420,7 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/58/%E8%B5%A4%E5%B0%BE%E5%B1%95%E6%9C%9B%E5%8F%B0%E4%B8%8A%E3%81%8B%E3%82%89%E3%81%AE%E6%99%AF%E8%89%B2.jpg/960px-%E8%B5%A4%E5%B0%BE%E5%B1%95%E6%9C%9B%E5%8F%B0%E4%B8%8A%E3%81%8B%E3%82%89%E3%81%AE%E6%99%AF%E8%89%B2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Jiguruzu",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:%E8%B5%A4%E5%B0%BE%E5%B1%95%E6%9C%9B%E5%8F%B0%E4%B8%8A%E3%81%8B%E3%82%89%E3%81%AE%E6%99%AF%E8%89%B2.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q66310909",
       "osm": "node/9961090219"
@@ -18846,7 +18440,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q6788091",
@@ -18869,7 +18463,7 @@
       "主題樂園"
     ],
     "featured": false,
-    "score": 68.18,
+    "score": 68.17,
     "summary": {
       "text": "松江花鳥園為位於日本島根縣松江市宍道湖北岸大垣町地區，以「花」及「鳥」為主題的主題公園。",
       "lang": "zh",
@@ -18928,7 +18522,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q696362",
@@ -18952,7 +18546,7 @@
       "國寶"
     ],
     "featured": true,
-    "score": 102.82,
+    "score": 102.75,
     "summary": {
       "text": "出雲大社是位於日本島根縣出雲市大社町的神社，佔地27,000平方公尺，社內祭拜「大國主大神」，為神道信仰的代表場所之一。",
       "lang": "zh",
@@ -18992,15 +18586,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ea/Izumo_grand_shrine_-_2022_oct_2_various_01_24_08_580000.jpeg/960px-Izumo_grand_shrine_-_2022_oct_2_various_01_24_08_580000.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Nesnad",
-        "license": "CC BY 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Izumo_grand_shrine_-_2022_oct_2_various_01_24_08_580000.jpeg"
-      }
-    }
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q8191829",
@@ -19021,7 +18607,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 70.3,
+    "score": 70.27,
     "summary": {
       "text": "Izumo Dome (出雲ドーム, Izumo Dōmu) is an indoor sporting arena located in Izumo, Shimane, Japan. The capacity of the arena is 2,500 people and was opened in 1992 (1992).",
       "lang": "en",
@@ -19060,8 +18646,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q82764063",
@@ -19082,7 +18667,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 59.81,
+    "score": 59.76,
     "summary": {
       "text": "瑞穂ハイランド（みずほハイランド）は、島根県邑智郡邑南町のスキー場である。",
       "lang": "ja",
@@ -19112,7 +18697,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q846305",
@@ -19136,7 +18721,7 @@
       "史跡"
     ],
     "featured": true,
-    "score": 77.34,
+    "score": 77.19,
     "summary": {
       "text": "津和野城是位在日本島根縣鹿足郡津和野町的一座山城。別名三本松城、石蕗城。鎌倉時代，元寇襲來之後，由吉見賴行在1295年築城。江戶時代是津和野藩龜井氏之居城，隨著廢藩置縣而在1871年廢城、1874年拆除，僅留下一部份石垣及護城河。1942年被指定為國之史跡，2006年列為日本100名城第66號。",
       "lang": "zh",
@@ -19171,8 +18756,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q89762096",
@@ -19192,7 +18776,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 36.16,
+    "score": 36.28,
     "summary": {
       "text": "イオンタウン大田（イオンタウンおおだ）は、島根県大田市長久町土江97にある、イオンタウン株式会社が展開するショッピングセンター。",
       "lang": "ja",
@@ -19224,7 +18808,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q97191763",
@@ -19247,7 +18831,7 @@
       "島"
     ],
     "featured": false,
-    "score": 38.73,
+    "score": 39.19,
     "summary": {
       "text": "男島（おじま）または西島（にししま）は島根県隠岐郡隠岐の島町に所在する島嶼。大韓民国との係争地となっている竹島（韓国名：独島）を構成する島のひとつ。",
       "lang": "ja",
@@ -19277,7 +18861,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q97194831",
@@ -19300,7 +18884,7 @@
       "島"
     ],
     "featured": false,
-    "score": 39.6,
+    "score": 40.0,
     "summary": {
       "text": "女島（めじま）または東島（ひがしじま）は島根県隠岐郡隠岐の島町に所在する島嶼。大韓民国との係争地となっている竹島（韓国名：独島）を構成する島のひとつ。",
       "lang": "ja",
@@ -19330,7 +18914,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q99373503",
@@ -19353,7 +18937,7 @@
       "城"
     ],
     "featured": false,
-    "score": 56.09,
+    "score": 56.05,
     "summary": {
       "text": "国府尾城（こうのじょう）は、隠岐国島後周吉郡国府尾城山（島根県隠岐郡隠岐の島町下西）にあった戦国時代の日本の城。別名甲尾城、甲ノ尾城。",
       "lang": "ja",
@@ -19379,6 +18963,6 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   }
 ]

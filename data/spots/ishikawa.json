@@ -1837,6 +1837,215 @@
     "updated_at": "2026-09-29"
   },
   {
+    "id": "osm-node-1420934701",
+    "name": {
+      "ja": "輪島漆器資料館",
+      "zh_tw": "輪島漆器資料館"
+    },
+    "location": {
+      "lat": 37.39409,
+      "lng": 136.90017
+    },
+    "prefecture": "ishikawa",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "博物館"
+    ],
+    "featured": false,
+    "score": 0.0,
+    "images": [],
+    "external_ids": {
+      "osm": "node/1420934701"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/node/1420934701",
+        "fetched_at": "2026-10-04"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-10-04"
+  },
+  {
+    "id": "osm-node-1420934751",
+    "name": {
+      "ja": "那谷寺普門閣宝物館",
+      "zh_tw": "那谷寺普門閣宝物館"
+    },
+    "location": {
+      "lat": 36.309747,
+      "lng": 136.420485
+    },
+    "prefecture": "ishikawa",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "博物館"
+    ],
+    "featured": false,
+    "score": 0.0,
+    "images": [],
+    "external_ids": {
+      "osm": "node/1420934751"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/node/1420934751",
+        "fetched_at": "2026-10-04"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-10-04"
+  },
+  {
+    "id": "osm-node-1420934968",
+    "name": {
+      "ja": "野々市市ふるさと歴史館",
+      "zh_tw": "野々市市ふるさと歴史館"
+    },
+    "location": {
+      "lat": 36.545894,
+      "lng": 136.599848
+    },
+    "prefecture": "ishikawa",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "博物館"
+    ],
+    "featured": false,
+    "score": 0.0,
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "野々市",
+          "kana": "ののいち",
+          "romaji": "Nonoichi",
+          "en": "Nonoichi"
+        },
+        "distance_m": 470
+      }
+    ],
+    "images": [],
+    "external_ids": {
+      "osm": "node/1420934968"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/node/1420934968",
+        "fetched_at": "2026-10-04"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-10-04"
+  },
+  {
+    "id": "osm-node-1420935330",
+    "name": {
+      "ja": "金沢卯辰山工芸工房",
+      "zh_tw": "金沢卯辰山工芸工房"
+    },
+    "location": {
+      "lat": 36.573436,
+      "lng": 136.675066
+    },
+    "prefecture": "ishikawa",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "博物館"
+    ],
+    "featured": false,
+    "score": 0.0,
+    "images": [],
+    "external_ids": {
+      "osm": "node/1420935330"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/node/1420935330",
+        "fetched_at": "2026-10-04"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-10-04"
+  },
+  {
+    "id": "osm-node-1428682886",
+    "name": {
+      "ja": "加賀友禅 伝統産業会館",
+      "zh_tw": "加賀友禅 伝統産業会館",
+      "en": "Kaga Yuzen Exhibition Hall"
+    },
+    "location": {
+      "lat": 36.563874,
+      "lng": 136.664415
+    },
+    "prefecture": "ishikawa",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "博物館"
+    ],
+    "featured": false,
+    "score": 0.0,
+    "images": [],
+    "external_ids": {
+      "osm": "node/1428682886"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/node/1428682886",
+        "fetched_at": "2026-10-04"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-10-04"
+  },
+  {
+    "id": "osm-node-1989738470",
+    "name": {
+      "ja": "宇宙科学博物館",
+      "zh_tw": "宇宙科学博物館"
+    },
+    "location": {
+      "lat": 36.89825,
+      "lng": 136.788283
+    },
+    "prefecture": "ishikawa",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "博物館"
+    ],
+    "featured": false,
+    "score": 0.0,
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "羽咋",
+          "kana": "はくい",
+          "romaji": "Hakui",
+          "en": "Hakui"
+        },
+        "distance_m": 460
+      }
+    ],
+    "images": [],
+    "external_ids": {
+      "osm": "node/1989738470"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/node/1989738470",
+        "fetched_at": "2026-10-04"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-10-04"
+  },
+  {
     "id": "wd-Q101001030",
     "name": {
       "ja": "国立工芸館",
@@ -1857,7 +2066,7 @@
       "博物館"
     ],
     "featured": false,
-    "score": 48.63,
+    "score": 48.67,
     "summary": {
       "text": "The National Crafts Museum (国立工芸館, Kokuritsu Kōgei Kan) is a museum of Japanese crafts in Kanazawa, Ishikawa Prefecture, Japan. It forms part of the Independent Administrative Institution National Museum of Art (ja). As part of the government policy of regional revitalization, the facility relocated in 2020 from Kitanomaru Park in Tokyo, where it first opened in 1977.",
       "lang": "en",
@@ -1888,7 +2097,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q104709114",
@@ -1956,7 +2165,7 @@
       "寺院"
     ],
     "featured": false,
-    "score": 30.73,
+    "score": 30.83,
     "summary": {
       "text": "鶴来別院（つるぎべついん）は、石川県白山市（旧・石川郡鶴来町）鶴来清沢町ヨ12にある真宗大谷派の寺院（別院）。本尊は阿弥陀如来。",
       "lang": "ja",
@@ -2002,7 +2211,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q106488324",
@@ -2023,7 +2232,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 53.42,
+    "score": 53.41,
     "summary": {
       "text": "篠原のキンメイチク（しのはらのキンメイチク）は、石川県加賀市篠原町（旧江沼郡篠原村）にある国の天然記念物に指定された竹藪である。",
       "lang": "ja",
@@ -2031,14 +2240,7 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ee/Shinohara_no_Kinmeichiku_Banboo_C.jpg/960px-Shinohara_no_Kinmeichiku_Banboo_C.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "さかおり",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Shinohara_no_Kinmeichiku_Banboo_C.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q106488324"
     },
@@ -2053,7 +2255,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q106836680",
@@ -2076,7 +2278,7 @@
       "寺院"
     ],
     "featured": false,
-    "score": 40.56,
+    "score": 40.53,
     "summary": {
       "text": "本願寺金沢別院（ほんがんじかなざわべついん）は金沢市笠市町にある浄土真宗本願寺派（西本願寺）の別院である。",
       "lang": "ja",
@@ -2130,7 +2332,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q107095847",
@@ -2188,7 +2390,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 46.83,
+    "score": 46.77,
     "summary": {
       "text": "イオンモール白山（イオンモールはくさん）は、石川県白山市にあるイオンモールが管理・運営するモール型ショッピングセンターである。",
       "lang": "ja",
@@ -2211,7 +2413,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q107656296",
@@ -2232,7 +2434,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 39.3,
+    "score": 39.33,
     "summary": {
       "text": "アピタ金沢店（アピタかなざわてん）は、石川県金沢市中村町にあるユニー株式会社が管理、運営するショッピングセンター。",
       "lang": "ja",
@@ -2275,7 +2477,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q107674593",
@@ -2298,7 +2500,7 @@
       "島"
     ],
     "featured": false,
-    "score": 43.09,
+    "score": 43.0,
     "summary": {
       "text": "ワイプラザ輪島（ワイプラザわじま）は、石川県輪島市宅田町にある、株式会社ヤスサキが運営するショッピングセンター（SC）。輪島の中心市街地に位置し、奥能登地方では最大級のSCである。",
       "lang": "ja",
@@ -2328,7 +2530,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q109366934",
@@ -2348,7 +2550,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 43.07,
+    "score": 43.25,
     "summary": {
       "text": "イオン金沢店（イオンかなざわてん）は、石川県金沢市福久にあるショッピングセンターである。",
       "lang": "ja",
@@ -2382,7 +2584,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q109603327",
@@ -2400,7 +2602,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 54.56,
+    "score": 54.73,
     "summary": {
       "text": "『株式会社 ホテルゆのくに』は、石川県加賀市の山代温泉に本社を置く、温泉旅館「ゆのくに天祥（てんしょう）」を運営する日本の企業。関連会社には、石川県小松市の粟津温泉にある伝統工芸のテーマパーク「ゆのくにの森」がある。",
       "lang": "ja",
@@ -2419,7 +2621,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q109665899",
@@ -2442,7 +2644,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 58.45,
+    "score": 58.44,
     "summary": {
       "text": "莵橋神社（うはしじんじゃ）は、石川県小松市にある神社で、加賀国総鎮守でもあり、小松市の産土神でもある。延喜式神名帳に「加賀国能美郡八座莵橋神社」として撰上された古社。本殿と神輿は小松市の文化財に指定されている。莵橋大神と共に諏訪大神を祀っていることから、地元の人々には「お諏訪さん（おすわさん）」と呼ばれて親しまれている。敷地内には当社の参集殿である諏訪会館があり、参拝者の休憩所や結婚式の披露宴会場として使われている。",
       "lang": "ja",
@@ -2477,7 +2679,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11129340",
@@ -2511,10 +2713,10 @@
     },
     "images": [
       {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cc/Keta-taisha_haiden.JPG/960px-Keta-taisha_haiden.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7c/Keta-taisha_keidai.JPG/960px-Keta-taisha_keidai.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
         "author": "Saigen Jiro",
         "license": "CC0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Keta-taisha_haiden.JPG"
+        "source_url": "https://commons.wikimedia.org/wiki/File:Keta-taisha_keidai.JPG"
       }
     ],
     "external_ids": {
@@ -2532,15 +2734,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "winter": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d7/Keta_Taisha_in_Hakui%2C_Ishikawa_-_Jan_2%2C_2015.jpg/960px-Keta_Taisha_in_Hakui%2C_Ishikawa_-_Jan_2%2C_2015.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Haya_BS",
-        "license": "CC BY-SA 2.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Keta_Taisha_in_Hakui,_Ishikawa_-_Jan_2,_2015.jpg"
-      }
-    }
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q111585833",
@@ -2614,7 +2808,7 @@
       "公園"
     ],
     "featured": false,
-    "score": 50.22,
+    "score": 50.02,
     "summary": {
       "text": "大乗寺丘陵公園（だいじょうじきゅうりょうこうえん）は、石川県金沢市にある公園である。",
       "lang": "ja",
@@ -2649,7 +2843,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q112073597",
@@ -2714,7 +2908,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 39.79,
+    "score": 40.77,
     "summary": {
       "text": "クラソ・プレイス香林坊（クラソ・プレイスこうりんぼう）は石川県金沢市香林坊にある複合商業施設（ファッションビル）である。",
       "lang": "ja",
@@ -2751,7 +2945,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11242492",
@@ -2771,7 +2965,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 50.39,
+    "score": 50.56,
     "summary": {
       "text": "御手洗池（みたらしいけ）は、石川県七尾市三引町にある池である。1985年（昭和60年）名水百選に選定された。",
       "lang": "ja",
@@ -2779,14 +2973,7 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/77/Miearainoike.jpg/960px-Miearainoike.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "紫煙",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Miearainoike.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q11242492"
     },
@@ -2801,7 +2988,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11253510",
@@ -2824,7 +3011,7 @@
       "城"
     ],
     "featured": false,
-    "score": 65.55,
+    "score": 65.71,
     "summary": {
       "text": "末森城（すえもりじょう）は、能登国羽咋郡末森村（現在の石川県羽咋郡宝達志水町竹生野）にあった日本の城。県指定史跡。",
       "lang": "ja",
@@ -2832,14 +3019,7 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [
-      {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/4/4e/Suemori_Castle.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-        "author": "ja:user:Akimoto",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Suemori_Castle.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q11253510"
     },
@@ -2854,7 +3034,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11258463",
@@ -2877,7 +3057,7 @@
       "橋"
     ],
     "featured": false,
-    "score": 59.11,
+    "score": 59.06,
     "summary": {
       "text": "あやとり橋（あやとりはし）は、石川県加賀市山中温泉の大聖寺川にかかる橋（人道橋）である。あやとり橋と記載されることが多いが、正式名称はあやとりはしである。",
       "lang": "ja",
@@ -2912,15 +3092,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "winter": {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/0/06/Yamanakabridge.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-        "author": "Wo0ter08",
-        "license": "Public domain",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Yamanakabridge.JPG"
-      }
-    }
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11259212",
@@ -2944,7 +3116,7 @@
       "動物園"
     ],
     "featured": false,
-    "score": 64.84,
+    "score": 64.8,
     "summary": {
       "text": "いしかわ動物園（いしかわどうぶつえん）は、石川県能美市徳山町にある動物園である。1999年（平成11年）10月に開園した。",
       "lang": "ja",
@@ -2979,7 +3151,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11259213",
@@ -2999,7 +3171,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 55.29,
+    "score": 55.22,
     "summary": {
       "text": "いしかわ子ども交流センター小松館（いしかわこどもこうりゅうセンターこまつかん）は、石川県小松市符津町にある大型児童館である。",
       "lang": "ja",
@@ -3038,7 +3210,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q112607943",
@@ -3123,7 +3295,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 54.72,
+    "score": 54.73,
     "summary": {
       "text": "ぐず焼き祭り（ぐずやきまつり）は、石川県加賀市動橋町の振橋神社で、毎年8月27日、28日、29日に行われる祭り。主催はぐず焼まつり実行委員会。",
       "lang": "ja",
@@ -3162,7 +3334,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11266223",
@@ -3185,7 +3357,7 @@
       "橋"
     ],
     "featured": false,
-    "score": 58.37,
+    "score": 58.43,
     "summary": {
       "text": "こおろぎ橋（こおろぎばし）は、石川県加賀市山中温泉の大聖寺川にかかる橋である。",
       "lang": "ja",
@@ -3216,7 +3388,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11274768",
@@ -3237,7 +3409,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 57.34,
+    "score": 57.12,
     "summary": {
       "text": "にし茶屋街（にしちゃやがい）は、石川県金沢市野町二丁目にある茶屋街である。金沢三大茶屋街（ひがし茶屋街、主計町茶屋街）の一つに数えられるとされる。",
       "lang": "ja",
@@ -3292,15 +3464,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "night": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/10/Kanazawa_Nishi_Chaya_Dusk_%2845916568732%29.jpg/960px-Kanazawa_Nishi_Chaya_Dusk_%2845916568732%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Benh LIEU SONG from Torcy, France",
-        "license": "CC BY-SA 2.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Kanazawa_Nishi_Chaya_Dusk_(45916568732).jpg"
-      }
-    }
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11275093",
@@ -3318,7 +3482,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 52.31,
+    "score": 52.65,
     "summary": {
       "text": "ねぶた温泉は石川県輪島市大野町にある温泉。",
       "lang": "ja",
@@ -3344,7 +3508,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11275197",
@@ -3367,7 +3531,7 @@
       "水族館"
     ],
     "featured": false,
-    "score": 67.16,
+    "score": 67.21,
     "summary": {
       "text": "Notojima Aquarium (のとじま臨海公園水族館, Notojima Rinkaikouen Suizokukan) is a public aquarium located on the north coast of Notojima in Nanao, Ishikawa Prefecture. It is a member of the Japanese Association of Zoos and Aquariums (JAZA), and the aquarium is accredited as a Registered Museum by the Ministry of Education, Culture, Sports, Science and Technology.",
       "lang": "en",
@@ -3402,15 +3566,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/34/%E3%81%AE%E3%81%A8%E3%81%98%E3%81%BE%E6%B0%B4%E6%97%8F%E9%A4%A8_%2833732261300%29.jpg/960px-%E3%81%AE%E3%81%A8%E3%81%98%E3%81%BE%E6%B0%B4%E6%97%8F%E9%A4%A8_%2833732261300%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "inazakira",
-        "license": "CC BY-SA 2.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:%E3%81%AE%E3%81%A8%E3%81%98%E3%81%BE%E6%B0%B4%E6%97%8F%E9%A4%A8_(33732261300).jpg"
-      }
-    }
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11283465",
@@ -3427,7 +3583,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 33.08,
+    "score": 33.24,
     "summary": {
       "text": "アスティ（英語: ASTY）は、石川県七尾市小島町に位置するショッピングセンターである。",
       "lang": "ja",
@@ -3444,14 +3600,7 @@
         "distance_m": 700
       }
     ],
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0a/ASTY_-_Dontaku.jpg/960px-ASTY_-_Dontaku.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "運動会プロテインパワー",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:ASTY_-_Dontaku.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q11283465"
     },
@@ -3462,7 +3611,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11284569",
@@ -3483,7 +3632,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 41.87,
+    "score": 42.05,
     "summary": {
       "text": "アピタタウン金沢ベイ（アピタタウンかなざわベイ）は、石川県金沢市無量寺にある分散型オープンタイプのショッピングモール。一部を除きユニーが運営している。",
       "lang": "ja",
@@ -3513,7 +3662,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11285955",
@@ -3534,7 +3683,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 43.18,
+    "score": 43.21,
     "summary": {
       "text": "イオンもりの里店（イオンもりのさとてん）は、石川県金沢市もりの里にあるイオンリテール株式会社が運営・管理するショッピングセンター。",
       "lang": "ja",
@@ -3564,7 +3713,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11286038",
@@ -3585,7 +3734,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 38.3,
+    "score": 38.51,
     "summary": {
       "text": "イオンタウン金沢示野（イオンタウンかなざわしめの）は、石川県金沢市戸板西1丁目にあるイオンタウン株式会社が開発・運営を行っている複合商業施設（ショッピングセンター）である。「マックスバリュ金沢しめの店」が核店舗である「マックスバリュ棟」を中心とした一つのショッピングタウンを形成している。",
       "lang": "ja",
@@ -3615,7 +3764,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11286070",
@@ -3636,7 +3785,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 44.68,
+    "score": 44.67,
     "summary": {
       "text": "イオンモールかほくは、石川県かほく市内日角（うちひすみ）にあるイオンモールが運営するモール型ショッピングセンター。",
       "lang": "ja",
@@ -3662,7 +3811,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11286257",
@@ -3682,7 +3831,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 38.55,
+    "score": 38.77,
     "summary": {
       "text": "イオン小松店（イオンこまつてん）は、石川県小松市に所在するイオンリテール株式会社が運営する総合スーパーである。ジャスコ時代のSC名称は「ジャスコブロードタウン新小松」であった。",
       "lang": "ja",
@@ -3714,7 +3863,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11286262",
@@ -3797,7 +3946,7 @@
       "購物"
     ],
     "featured": false,
-    "score": 39.6,
+    "score": 39.5,
     "summary": {
       "text": "イオン松任店（いおんまっとうてん）は、石川県白山市にあるイオンリテール株式会社が運営・管理する総合スーパー（GMS）。",
       "lang": "ja",
@@ -3816,7 +3965,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q112874501",
@@ -3839,7 +3988,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 48.85,
+    "score": 48.88,
     "summary": {
       "text": "春日神社（かすがじんじゃ）は、石川県珠洲市飯田町にある神社である。",
       "lang": "ja",
@@ -3874,7 +4023,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11289253",
@@ -3895,7 +4044,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 58.35,
+    "score": 58.33,
     "summary": {
       "text": "ウルトラマンスタジアムは、手取フィッシュランドにある『ウルトラシリーズ』を題材にした施設。",
       "lang": "ja",
@@ -3921,7 +4070,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11302097",
@@ -3942,7 +4091,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 67.44,
+    "score": 68.0,
     "summary": {
       "text": "コスモアイル羽咋（コスモアイルはくい）は、石川県羽咋市にある宇宙科学博物館（科学館）である。",
       "lang": "ja",
@@ -3983,7 +4132,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11303232",
@@ -4004,7 +4153,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 38.98,
+    "score": 38.95,
     "summary": {
       "text": "コンフォモール内灘（コンフォモールうちなだ、COMFOMALL UCHINADA）は、石川県河北郡内灘町千鳥台にあるショッピングモール。大京が開発を行い、2007年11月23日にオープンとなった（一部テナントを除く）。マックスバリュ内灘店をキーテナントとする。",
       "lang": "ja",
@@ -4045,7 +4194,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q113163171",
@@ -4066,7 +4215,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 36.13,
+    "score": 36.09,
     "summary": {
       "text": "輪島キリコ会館（わじまキリコかいかん）は、石川県輪島市マリンタウン6番1にある博物館（山車会館）。",
       "lang": "ja",
@@ -4101,7 +4250,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11317883",
@@ -4124,7 +4273,7 @@
       "史跡"
     ],
     "featured": false,
-    "score": 64.14,
+    "score": 64.06,
     "summary": {
       "text": "The Chikamori Site  (チカモリ遺跡, Chikamori iseki) is an archaeological site with the ruins of a late Jōmon period settlement in what is now the Shinbohon neighbourhood of the city of Kanazawa, Ishikawa in the Hokuriku region of Japan. It was designated a National Historic Site of Japan in 1987.",
       "lang": "en",
@@ -4159,7 +4308,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11323879",
@@ -4182,7 +4331,7 @@
       "購物"
     ],
     "featured": false,
-    "score": 36.27,
+    "score": 36.39,
     "summary": {
       "text": "ナッピィモール（英語: Nappy Mall）は、石川県七尾市藤野町に位置するショッピングセンターである。",
       "lang": "ja",
@@ -4199,14 +4348,7 @@
         "distance_m": 1380
       }
     ],
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/34/Nappy_Mall_-_Main_building.jpg/960px-Nappy_Mall_-_Main_building.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "運動会プロテインパワー",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Nappy_Mall_-_Main_building.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q11323879"
     },
@@ -4217,7 +4359,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11326584",
@@ -4237,7 +4379,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 59.37,
+    "score": 59.54,
     "summary": {
       "text": "ハニベ大仏（ハニベだいぶつ）は、石川県小松市のハニベ巌窟院（ハニベがんくついん）にある未完成の大仏である。",
       "lang": "ja",
@@ -4245,14 +4387,7 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/61/Hanibe_Gankutsu-in_Temple_in_Komatsu_with_its_gate.jpg/960px-Hanibe_Gankutsu-in_Temple_in_Komatsu_with_its_gate.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "ブルーノ・プラス",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Hanibe_Gankutsu-in_Temple_in_Komatsu_with_its_gate.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q11326584"
     },
@@ -4267,7 +4402,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11329074",
@@ -4288,7 +4423,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 42.47,
+    "score": 42.63,
     "summary": {
       "text": "パトリア（英語: PATRIA）は、石川県七尾市御祓町にある複合商業施設である。1995年（平成7年）4月29日、都市再開発法に基づき、七尾駅前市街地再開発事業として旧ユニー七尾店などの跡地に開店した（建物竣工は前日の4月28日）。石川県道132号七尾港線を挟んで隣接する商業施設「ミナ.クル」とともに七尾駅周辺地区の中核施設である。株式会社創生ななおが指定管理者として施設を運営している。",
       "lang": "ja",
@@ -4323,7 +4458,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11332025",
@@ -4343,7 +4478,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 31.83,
+    "score": 31.82,
     "summary": {
       "text": "ファミイ (FAMY) は、石川県輪島市にあった輪島市商業協同組合が管理、運営していたショッピングセンターである。",
       "lang": "ja",
@@ -4362,7 +4497,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11332601",
@@ -4383,7 +4518,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 42.21,
+    "score": 42.16,
     "summary": {
       "text": "フェアモール松任（フェアモールまっとう、（英: FAIRMALL MATTO））は、石川県白山市幸明町にあるショッピングセンターである。",
       "lang": "ja",
@@ -4413,7 +4548,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11336806",
@@ -4436,7 +4571,7 @@
       "購物"
     ],
     "featured": false,
-    "score": 34.56,
+    "score": 34.6,
     "summary": {
       "text": "ベイモール（英語: Bay Mall）は、石川県七尾市小島町に位置するショッピングセンターである。",
       "lang": "ja",
@@ -4471,7 +4606,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11342339",
@@ -4489,7 +4624,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 53.49,
+    "score": 53.55,
     "summary": {
       "text": "ミナ.クルは、石川県七尾市神明町に位置する複合商業施設である。",
       "lang": "ja",
@@ -4524,15 +4659,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "winter": {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/7/70/Minacle.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-        "author": "tom-spring",
-        "license": "Public domain",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Minacle.jpg"
-      }
-    }
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11345037",
@@ -4553,7 +4680,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 62.91,
+    "score": 62.97,
     "summary": {
       "text": "ヤセの断崖（ヤセのだんがい）は、石川県羽咋郡志賀町笹波にある断崖絶壁である。能登金剛と呼ばれる複雑に入り組んだ海岸線や奇岩・奇勝の数々が見渡せる。また、松本清張の小説を原作としたサスペンス映画『ゼロの焦点』の舞台として知られている。",
       "lang": "ja",
@@ -4583,7 +4710,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11353484",
@@ -4605,7 +4732,7 @@
       "市場"
     ],
     "featured": false,
-    "score": 30.0,
+    "score": 30.08,
     "summary": {
       "text": "七尾市公設地方卸売市場（ななおしこうせつちほうおろしうりしじょう）は、石川県七尾市大田町に位置する地方卸売市場である。",
       "lang": "ja",
@@ -4635,7 +4762,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11353498",
@@ -4656,7 +4783,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 62.62,
+    "score": 62.68,
     "summary": {
       "text": "七尾湾（ななおわん）は、石川県の能登半島に位置する湾であり、広義の意味での富山湾の支湾の一つを形成している。",
       "lang": "ja",
@@ -4664,14 +4791,7 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/00/Noto_peninsula_seen_from_the_air_%2848885980067%29.jpg/960px-Noto_peninsula_seen_from_the_air_%2848885980067%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Maarten Heerlien from Voorschoten, The Netherlands",
-        "license": "CC BY 2.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Noto_peninsula_seen_from_the_air_(48885980067).jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q11353498"
     },
@@ -4686,15 +4806,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/00/Noto_peninsula_seen_from_the_air_%2848885980067%29.jpg/960px-Noto_peninsula_seen_from_the_air_%2848885980067%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Maarten Heerlien from Voorschoten, The Netherlands",
-        "license": "CC BY 2.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Noto_peninsula_seen_from_the_air_(48885980067).jpg"
-      }
-    }
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11353501",
@@ -4715,7 +4827,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 52.63,
+    "score": 52.75,
     "summary": {
       "text": "七尾祇園祭（ななおぎおんまつり）は、毎年7月第2土曜日に石川県七尾市で開催される夏祭り。「東のおすずみ」とも言われる。青柏祭、石崎奉燈祭、七尾港まつりとともに七尾四大祭の一つに挙げられることがある。",
       "lang": "ja",
@@ -4747,7 +4859,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11355488",
@@ -4768,7 +4880,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 56.09,
+    "score": 55.97,
     "summary": {
       "text": "三方岩岳（さんぽういわだけ）は、石川県白山市と岐阜県大野郡白川村にまたがり、両白山地の北部に位置する標高1,736 mの山である。白山国立公園内にあり、日本三百名山およびぎふ百山に選定されている。",
       "lang": "ja",
@@ -4798,15 +4910,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "winter": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b4/Mount_Sanpoiwa_from_Mount_Fukube_2011-05-02.jpg/960px-Mount_Sanpoiwa_from_Mount_Fukube_2011-05-02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Alpsdake",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Mount_Sanpoiwa_from_Mount_Fukube_2011-05-02.jpg"
-      }
-    }
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11357406",
@@ -4817,7 +4921,7 @@
       "zh_tw": "三輪神社",
       "en": "Miwa Shrine"
     },
-    "kana_source": "wikipedia",
+    "kana_source": "wikidata",
     "location": {
       "lat": 36.659056,
       "lng": 136.733722
@@ -4829,7 +4933,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 49.33,
+    "score": 49.28,
     "summary": {
       "text": "三輪神社（みわじんじゃ）は、石川県河北郡津幡町字北中条にある神社。津幡駅裏手の山中に鎮座する。旧社格は村社。",
       "lang": "ja",
@@ -4879,7 +4983,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11363879",
@@ -4900,7 +5004,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 59.43,
+    "score": 59.57,
     "summary": {
       "text": "中宮温泉（ちゅうぐうおんせん）は、石川県白山市（旧国加賀国）にある温泉。白山白川郷ホワイトロードの無料区間内にあり、冬季閉鎖される12月から4月までは休業となる。",
       "lang": "ja",
@@ -4926,7 +5030,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11364345",
@@ -4947,7 +5051,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 47.32,
+    "score": 46.98,
     "summary": {
       "text": "中島お祭り資料館・お祭り伝承館（なかじまおまつりしりょうかん・おまつりでんしょうかん）は、石川県七尾市中島町にある博物館。資料館と伝承館の総称は「能登中島 枠旗祭りの郷 祭り会館」、通称「祭り会館」である。",
       "lang": "ja",
@@ -4970,7 +5074,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11365871",
@@ -4981,7 +5085,7 @@
       "zh_tw": "中村神社",
       "en": "Nakamura Shrine"
     },
-    "kana_source": "wikipedia",
+    "kana_source": "wikidata",
     "location": {
       "lat": 36.561278,
       "lng": 136.644456
@@ -4993,7 +5097,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 53.75,
+    "score": 53.8,
     "summary": {
       "text": "中村神社（なかむらじんじゃ）は、石川県金沢市中村町にある神社。",
       "lang": "ja",
@@ -5043,7 +5147,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11366903",
@@ -5066,7 +5170,7 @@
       "橋"
     ],
     "featured": false,
-    "score": 59.41,
+    "score": 59.44,
     "summary": {
       "text": "中能登農道橋（なかのとのうどうきょう）は、石川県七尾市の中島地区と能登島地区を結ぶ斜張橋。愛称はツインブリッジのと。",
       "lang": "ja",
@@ -5096,15 +5200,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e1/Nakanoto_noudou_bashi_-_01_-_2016-05-01.jpg/960px-Nakanoto_noudou_bashi_-_01_-_2016-05-01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "MathieuMD",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Nakanoto_noudou_bashi_-_01_-_2016-05-01.jpg"
-      }
-    }
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11368794",
@@ -5125,7 +5221,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 64.84,
+    "score": 64.79,
     "summary": {
       "text": "主計町是位於日本石川縣金澤市淺野川沿岸的地區名。該地面來自於這裡曾是加賀藩士富田主計的住宅，和東山東並為重要傳統建築群保護地區，保留了明治至昭和初期的建築。1970年該地一度改名為尾張町2丁目，｢主計町｣這一地名一度消滅。1999年主計町恢復了舊名，是舊町名復活運動的先驅。",
       "lang": "zh",
@@ -5162,15 +5258,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "night": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1a/Kazue_Machi_%28119970569%29.jpeg/960px-Kazue_Machi_%28119970569%29.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Okochuke",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Kazue_Machi_(119970569).jpeg"
-      }
-    }
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11369003",
@@ -5193,7 +5281,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 55.31,
+    "score": 55.29,
     "summary": {
       "text": "久保市乙剣宮（くぼいちおとつるぎぐう）は、石川県金沢市下新町6番21号にある神社。祭神は、素戔嗚尊。",
       "lang": "ja",
@@ -5235,7 +5323,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11371586",
@@ -5258,7 +5346,7 @@
       "城"
     ],
     "featured": false,
-    "score": 55.22,
+    "score": 55.16,
     "summary": {
       "text": "二曲城（ふとげじょう）は、石川県白山市出合町にあった日本の城（山城）。川の対岸にある鳥越城の附（つけたり）として国の史跡に指定されている。府峠城とも言う。",
       "lang": "ja",
@@ -5266,14 +5354,7 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [
-      {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/1/14/Futougejou001.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-        "author": "Satoshin at Japanese Wikipedia",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Futougejou001.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q11371586"
     },
@@ -5288,7 +5369,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11381009",
@@ -5311,7 +5392,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 60.69,
+    "score": 60.66,
     "summary": {
       "text": "伊須流岐比古神社（いするぎひこじんじゃ）は、石川県鹿島郡中能登町の石動山山頂（大御前）にある神社である。伊須留岐比古神社とも表記される。能登国二宮である。",
       "lang": "ja",
@@ -5337,7 +5418,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11391064",
@@ -5358,7 +5439,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 47.47,
+    "score": 47.55,
     "summary": {
       "text": "八幡神社（はちまんじんじゃ）は、石川県かほく市森ツ2番地にある神社。",
       "lang": "ja",
@@ -5393,7 +5474,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11394159",
@@ -5416,7 +5497,7 @@
       "橋"
     ],
     "featured": false,
-    "score": 53.72,
+    "score": 53.69,
     "summary": {
       "text": "内灘大橋（うちなだおおはし）は、石川県河北郡内灘町の河北潟放水路に架けられている斜張橋。愛称はサンセットブリッジ内灘（サンセットブリッジうちなだ）。",
       "lang": "ja",
@@ -5446,7 +5527,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11395685",
@@ -5469,7 +5550,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 49.78,
+    "score": 49.98,
     "summary": {
       "text": "出水神社（いずみじんじゃ）は、石川県加賀市橋立町ホ1にある神社である。",
       "lang": "ja",
@@ -5495,7 +5576,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11397505",
@@ -5518,7 +5599,7 @@
       "博物館"
     ],
     "featured": false,
-    "score": 56.78,
+    "score": 56.86,
     "summary": {
       "text": "前田土佐守家資料館（まえだとさのかみけしりょうかん）は、石川県金沢市片町にある金沢市立の博物館である。",
       "lang": "ja",
@@ -5564,7 +5645,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11399646",
@@ -5627,7 +5708,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 58.71,
+    "score": 58.7,
     "summary": {
       "text": "加賀市加賀橋立（かがしかがはしたて）は、石川県加賀市にある重要伝統的建造物群保存地区。加賀市橋立町の一部、南北約550メートル、東西約680メートル、約11ヘクタールの範囲である。加賀市では加賀東谷と加賀橋立の2地区が重要伝統的建造物群保存地区に選定されている。",
       "lang": "ja",
@@ -5635,14 +5716,7 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9f/Ishikawa_Kaga_Kagahashidate00.jpg/960px-Ishikawa_Kaga_Kagahashidate00.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Yusuke.ogawa",
-        "license": "CC BY 2.5",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Ishikawa_Kaga_Kagahashidate00.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q11399695"
     },
@@ -5653,7 +5727,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11399720",
@@ -5664,7 +5738,7 @@
       "zh_tw": "加賀神社",
       "en": "Kaga Shrine (Tsubata)"
     },
-    "kana_source": "wikipedia",
+    "kana_source": "wikidata",
     "location": {
       "lat": 36.658222,
       "lng": 136.718389
@@ -5676,7 +5750,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 47.63,
+    "score": 47.89,
     "summary": {
       "text": "加賀神社（かがじんじゃ）は、石川県河北郡津幡町字潟端ト10にある神社。",
       "lang": "ja",
@@ -5717,7 +5791,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11404619",
@@ -5738,7 +5812,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 66.59,
+    "score": 66.51,
     "summary": {
       "text": "Mount Iō (医王山, Iō-zen), also Iozen, is a 939-metre (3,081 ft) tall mountain in Japan, on the border of Kanazawa City, Ishikawa and Nanto City, Toyama.",
       "lang": "en",
@@ -5768,15 +5842,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "winter": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d9/840107_tomuro_from_kodatsuno_w_name.jpg/960px-840107_tomuro_from_kodatsuno_w_name.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "名古屋太郎",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:840107_tomuro_from_kodatsuno_w_name.jpg"
-      }
-    }
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11404623",
@@ -5796,7 +5862,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 49.64,
+    "score": 49.97,
     "summary": {
       "text": "医王山スポーツセンター（いおうぜんスポーツセンター）とは、石川県金沢市田島町にあるスポーツ施設、宿泊施設、アウトドア施設である。",
       "lang": "ja",
@@ -5804,14 +5870,7 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/49/%E5%8C%BB%E7%8E%8B%E5%B1%B1%E3%82%B9%E3%83%9D%E3%83%BC%E3%83%84%E3%82%BB%E3%83%B3%E3%82%BF%E3%83%BC.jpg/960px-%E5%8C%BB%E7%8E%8B%E5%B1%B1%E3%82%B9%E3%83%9D%E3%83%BC%E3%83%84%E3%82%BB%E3%83%B3%E3%82%BF%E3%83%BC.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Whatsfb",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:%E5%8C%BB%E7%8E%8B%E5%B1%B1%E3%82%B9%E3%83%9D%E3%83%BC%E3%83%84%E3%82%BB%E3%83%B3%E3%82%BF%E3%83%BC.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q11404623"
     },
@@ -5826,7 +5885,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11404624",
@@ -5849,7 +5908,7 @@
       "公園"
     ],
     "featured": false,
-    "score": 51.28,
+    "score": 50.93,
     "summary": {
       "text": "医王山県立自然公園（いおうぜんけんりつしぜんこうえん）は、富山県と石川県の2県にまたがる総面積2.940haの県立自然公園である。",
       "lang": "ja",
@@ -5875,7 +5934,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11417155",
@@ -5896,7 +5955,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 50.25,
+    "score": 50.32,
     "summary": {
       "text": "和倉昭和博物館とおもちゃ館（わくらしょうわはくぶつかんとおもちゃかん）は、石川県七尾市にある博物館である。",
       "lang": "ja",
@@ -5935,7 +5994,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11420187",
@@ -5958,7 +6017,7 @@
       "重要文化財"
     ],
     "featured": false,
-    "score": 61.44,
+    "score": 61.51,
     "summary": {
       "text": "四高記念文化交流館（しこうきねんぶんかこうりゅうかん）は、石川県金沢市にある文化施設である。",
       "lang": "ja",
@@ -6004,15 +6063,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "night": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8a/The_Forth_High_School_Memorial_Museum_of_Cultural_Exchange_12.jpg/960px-The_Forth_High_School_Memorial_Museum_of_Cultural_Exchange_12.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Saigawasakurabashi",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:The_Forth_High_School_Memorial_Museum_of_Cultural_Exchange_12.jpg"
-      }
-    }
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11433686",
@@ -6035,7 +6086,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 55.53,
+    "score": 55.51,
     "summary": {
       "text": "大地主神社（おおとこぬしじんじゃ）は、石川県七尾市に位置する神社である。",
       "lang": "ja",
@@ -6070,7 +6121,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11436507",
@@ -6093,7 +6144,7 @@
       "博物館"
     ],
     "featured": false,
-    "score": 56.55,
+    "score": 56.54,
     "summary": {
       "text": "大樋美術館（おおひびじゅつかん）は、石川県金沢市橋場町にある個人美術館である。大樋焼歴代作品を中心とした、茶道具類の展示をしている。隣接する大樋ギャラリーでは、大樋陶冶斎（十代 長左衛門）、十一代 大樋長左衛門（大樋年雄）、奈良祐希の作品等の販売も行っている。",
       "lang": "ja",
@@ -6128,7 +6179,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11438452",
@@ -6149,7 +6200,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 57.46,
+    "score": 57.32,
     "summary": {
       "text": "大笠山（おおがさやま）は、石川県白山市と富山県南砺市との県境にある標高1,822 mの両白山地の山。日本三百名山に選定されている。",
       "lang": "ja",
@@ -6175,15 +6226,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "winter": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5b/Mount_Ogasa_from_Mount_Sanpoiwa.jpg/960px-Mount_Ogasa_from_Mount_Sanpoiwa.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Alpsdake",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Mount_Ogasa_from_Mount_Sanpoiwa.jpg"
-      }
-    }
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11438707",
@@ -6206,7 +6249,7 @@
       "寺院"
     ],
     "featured": false,
-    "score": 39.13,
+    "score": 39.38,
     "summary": {
       "text": "大蓮寺（だいれんじ）は、石川県金沢市野町にある、浄土宗の寺院。",
       "lang": "ja",
@@ -6261,7 +6304,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11439622",
@@ -6284,7 +6327,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 52.8,
+    "score": 52.71,
     "summary": {
       "text": "The Onohiyoshi Shrine (大野日吉神社, Ōno hiyoshijinja) is a Shinto shrine located in Kanazawa, Ishikawa. The shrine is dedicated to deities Oyamakui no Kami and Ōmononushi. It is said to have been founded in 733.",
       "lang": "en",
@@ -6314,7 +6357,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11439679",
@@ -6337,7 +6380,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 57.31,
+    "score": 57.29,
     "summary": {
       "text": "大野湊神社（おおのみなとじんじゃ）とは、石川県金沢市に鎮座する猿田彦大神を祭神とする神社である。",
       "lang": "ja",
@@ -6368,7 +6411,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11442593",
@@ -6391,7 +6434,7 @@
       "寺院"
     ],
     "featured": false,
-    "score": 59.28,
+    "score": 59.37,
     "summary": {
       "text": "天徳院（てんとくいん）は、石川県金沢市小立野にある曹洞宗の寺院。山号は金龍山（きんりゅうざん）。院号は、加賀藩主前田利常の正室珠姫の法号である天徳院殿 乾運淳貞 大禅定尼にちなんでいる。",
       "lang": "ja",
@@ -6426,7 +6469,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11445062",
@@ -6447,7 +6490,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 56.03,
+    "score": 56.23,
     "summary": {
       "text": "奈良岳（ならだけ）は、石川県金沢市と白山市、富山県南砺市の3市にまたがる標高1,644mの両白山地北部の山。金沢市の最高峰であり、山頂に国土地理院の三等三角点（点名は「三方山」）が設置されている。別称、倉谷三方岳。",
       "lang": "ja",
@@ -6477,7 +6520,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11446902",
@@ -6500,7 +6543,7 @@
       "寺院"
     ],
     "featured": false,
-    "score": 62.07,
+    "score": 61.97,
     "summary": {
       "text": "妙成寺（みょうじょうじ）は、石川県羽咋市滝谷町にある日蓮宗の寺院。山号は金栄山（きんえいざん）。日蓮の孫弟子に当たる日像が開祖。日蓮宗の北陸本山で、能登随一の大伽藍をもつ。本堂、五重塔、祖師堂、経堂等の諸堂が､国の重要文化財に指定されている。塔頭が五ヶ寺ある（玉寿寺、善住寺、大鏡寺、円融寺、本覚寺）。",
       "lang": "ja",
@@ -6535,7 +6578,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11447193",
@@ -6556,7 +6599,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 47.32,
+    "score": 47.95,
     "summary": {
       "text": "妻恋舟の湯（つまこいぶねのゆ）は、能登半島の和倉温泉にある、足湯のみの温泉共同浴場である。",
       "lang": "ja",
@@ -6595,7 +6638,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11447335",
@@ -6616,7 +6659,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 53.25,
+    "score": 53.18,
     "summary": {
       "text": "姥ヶ滝（うばがたき）は、石川県白山市にある滝である。日本の滝百選に選出されている",
       "lang": "ja",
@@ -6642,7 +6685,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11450527",
@@ -6663,7 +6706,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 70.95,
+    "score": 70.91,
     "summary": {
       "text": "安宅關（安宅之關，日語：安宅の関／あたかのせき）位在石川縣小松市日本海側的安宅，是守護、富樫氏設置的關所。",
       "lang": "zh",
@@ -6693,8 +6736,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11450530",
@@ -6717,7 +6759,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 57.63,
+    "score": 57.57,
     "summary": {
       "text": "安宅住吉神社（あたかすみよしじんじゃ）は、石川県小松市安宅町、日本海沿岸に鎮座する神社。",
       "lang": "ja",
@@ -6748,7 +6790,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11452694",
@@ -6769,7 +6811,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 62.16,
+    "score": 62.2,
     "summary": {
       "text": "宝達山（ほうだつさん）は、石川県中部にある山。山域は羽咋郡宝達志水町、かほく市、河北郡津幡町、富山県氷見市、高岡市に跨り、山頂は宝達志水町にある。標高は637.1m。",
       "lang": "ja",
@@ -6799,7 +6841,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11453044",
@@ -6822,7 +6864,7 @@
       "博物館"
     ],
     "featured": false,
-    "score": 59.88,
+    "score": 60.03,
     "summary": {
       "text": "The Muro Saisei Kinenkan Museum (Japanese: 室生犀星記念館) is a museum in Kanazawa, Ishikawa Prefecture, Japan. The museum is about the Japanese poet Murō Saisei.",
       "lang": "en",
@@ -6877,7 +6919,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11457760",
@@ -6901,7 +6943,7 @@
       "史跡"
     ],
     "featured": false,
-    "score": 39.06,
+    "score": 39.19,
     "summary": {
       "text": "The Jike Site (寺家遺跡, Jike Iseki) is an archaeological site located in the Jike neighborhood of the city of Hakui, Ishikawa in the Hokuriku region of Japan. The site was designated a National Historic Site of Japan in 2012.",
       "lang": "en",
@@ -6936,7 +6978,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11461063",
@@ -7019,7 +7061,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 55.93,
+    "score": 56.18,
     "summary": {
       "text": "小松市立ポッポ汽車展示館（こまつしりつポッポきしゃてんじかん）は、石川県小松市尾小屋町にある鉄道保存展示施設である。",
       "lang": "ja",
@@ -7049,7 +7091,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11461143",
@@ -7072,7 +7114,7 @@
       "博物館"
     ],
     "featured": false,
-    "score": 52.37,
+    "score": 52.49,
     "summary": {
       "text": "小松市立博物館（こまつしりつはくぶつかん、KOMATSU CITY MUSEUM）は、石川県小松市丸の内公園町にある公立の博物館。2024年（令和6年）1月1日の能登半島地震で被災して休館となり、調査により建物の倒壊の危険性があることがわかり解体されることになった。",
       "lang": "ja",
@@ -7116,7 +7158,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11465138",
@@ -7137,7 +7179,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 62.14,
+    "score": 62.59,
     "summary": {
       "text": "尾小屋鉱山（おごやこうざん）とは、かつて石川県小松市尾小屋町に存在していた銅山である。",
       "lang": "ja",
@@ -7160,7 +7202,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11465245",
@@ -7181,7 +7223,7 @@
       "重要文化財"
     ],
     "featured": false,
-    "score": 62.44,
+    "score": 62.33,
     "summary": {
       "text": "尾﨑神社（おざきじんじゃ）は、石川県金沢市にある神社。天照大神、東照大権現、加賀藩三代藩主前田利常を祀る。朱塗りの社殿には徳川家康の紋が散りばめられ、金沢城の江戸、北陸の日光と呼ばれ崇められた。江戸時代後期から明治時代初期に流行した藩祖を祀った神社のひとつ。別名を金沢東照宮という。",
       "lang": "ja",
@@ -7231,7 +7273,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11466105",
@@ -7254,7 +7296,7 @@
       "公園"
     ],
     "featured": false,
-    "score": 49.03,
+    "score": 49.21,
     "summary": {
       "text": "山中・大日山県立自然公園（やまなか・だいにちさんけんりつしぜんこうえん）は、石川県の県立自然公園。加賀市と小松市にまたがる。",
       "lang": "ja",
@@ -7262,14 +7304,7 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c7/Wagatani_tsuribashi2.jpg/960px-Wagatani_tsuribashi2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "藤谷良秀",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Wagatani_tsuribashi2.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q11466105"
     },
@@ -7280,7 +7315,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11466176",
@@ -7300,7 +7335,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 50.58,
+    "score": 50.46,
     "summary": {
       "text": "山中水無山展望台（やまなかみずなしやまてんぼうだい）は、かつて石川県江沼郡山中町（現加賀市）にあったレジャー施設である。",
       "lang": "ja",
@@ -7323,7 +7358,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11466275",
@@ -7344,7 +7379,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 70.94,
+    "score": 70.86,
     "summary": {
       "text": "Yamashiro Onsen (山代温泉, Yamashiro onsen) is a hot spring resort in the city of  Kaga, Ishikawa Prefecture, Japan. It is one of the largest in the three prefectures which constitute the Hokuriku region of Japan.",
       "lang": "en",
@@ -7370,8 +7405,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11475692",
@@ -7392,7 +7426,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 50.97,
+    "score": 51.2,
     "summary": {
       "text": "岩間温泉（いわまおんせん）は、石川県白山市尾添にある温泉。",
       "lang": "ja",
@@ -7415,7 +7449,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-29"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11477118",
@@ -7438,7 +7472,7 @@
       "城"
     ],
     "featured": false,
-    "score": 48.58,
+    "score": 48.6,
     "summary": {
       "text": "崎山城（さきやまじょう）は、石川県鳳珠郡能登町にあった日本の城。",
       "lang": "ja",
@@ -7461,7 +7495,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11477822",
@@ -7483,7 +7517,7 @@
       "橋"
     ],
     "featured": false,
-    "score": 36.7,
+    "score": 36.88,
     "summary": {
       "text": "川北大橋（かわきたおおはし）は、石川県能美郡川北町三反田から同県能美市三ツ口町に至る道路橋である。かつては石川県道路公社が管理する有料道路（川北大橋有料道路）となっていた。加賀産業開発道路の一部となっている。",
       "lang": "ja",
@@ -7513,7 +7547,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11489025",
@@ -7536,7 +7570,7 @@
       "橋"
     ],
     "featured": false,
-    "score": 32.42,
+    "score": 32.4,
     "summary": {
       "text": "御影大橋（みかげおおはし）は、石川県金沢市にある犀川に架かる橋である。",
       "lang": "ja",
@@ -7586,7 +7620,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11489258",
@@ -7609,7 +7643,7 @@
       "史跡"
     ],
     "featured": false,
-    "score": 61.94,
+    "score": 61.84,
     "summary": {
       "text": "The Okyōzuka Site  (御経塚遺跡, Okyōzuka iseki) is an archaeological site with the ruins of a middle to final Jōmon period  (around 1700–500 BC) settlement in the Kyōzuka neighborhood of the city of Nonoichi, Ishikawa in the Hokuriku region of Japan. The site was designated a National Historic Site of Japan in 1977.",
       "lang": "en",
@@ -7650,7 +7684,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11490424",
@@ -7673,7 +7707,7 @@
       "博物館"
     ],
     "featured": false,
-    "score": 51.96,
+    "score": 52.29,
     "summary": {
       "text": "徳田秋聲記念館（とくだしゅうせいきねんかん）は、石川県金沢市東山にある、徳田秋声に関する文化施設である。",
       "lang": "ja",
@@ -7708,7 +7742,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11496930",
@@ -7731,7 +7765,7 @@
       "主題樂園"
     ],
     "featured": false,
-    "score": 64.09,
+    "score": 64.19,
     "summary": {
       "text": "手取フィッシュランド（てどりフィッシュランド）は、石川県能美市粟生町にある遊園地、ペットショップ。ペットショップ店舗は遊園地に併設の本店のほか、同県金沢市にも開設している。運営は手取観光。",
       "lang": "ja",
@@ -7766,7 +7800,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11496932",
@@ -7787,7 +7821,7 @@
     "themes": [],
     "tags": [],
     "featured": true,
-    "score": 73.73,
+    "score": 73.68,
     "summary": {
       "text": "手取川是位於日本石川縣的一級河川，發源於石川縣與岐阜縣交界處的白山國立公園的最高峰白山，向北流向日本海。該條河川被廣泛用於灌溉和水力發電用途。",
       "lang": "zh",
@@ -7829,8 +7863,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11496934",
@@ -7851,7 +7884,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 55.81,
+    "score": 55.72,
     "summary": {
       "text": "手取川流域の珪化木産地（てどりがわりゅういきのけいかぼくさんち）とは、石川県白山市白峰地区（旧白峰村）にある国指定の天然記念物である。県指定の天然記念物「桑島化石壁産出化石」はその一部。",
       "lang": "ja",
@@ -7859,14 +7892,7 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/08/Kuwashima_fossil_wall.jpg/960px-Kuwashima_fossil_wall.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "藤谷良秀",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Kuwashima_fossil_wall.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q11496934"
     },
@@ -7881,7 +7907,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11502023",
@@ -7902,7 +7928,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 50.63,
+    "score": 50.94,
     "summary": {
       "text": "新岩間温泉（しんいわまおんせん）は、石川県白山市尾添にある温泉で、『白山温泉郷』の一部である。",
       "lang": "ja",
@@ -7928,7 +7954,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-29"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11507277",
@@ -7948,7 +7974,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 64.94,
+    "score": 64.9,
     "summary": {
       "text": "日本元気劇場（にっぽんげんきげきじょう）は、石川県加賀市に存在する日本文化を主題としたテーマパーク。",
       "lang": "ja",
@@ -7971,7 +7997,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11508954",
@@ -7995,7 +8021,7 @@
       "博物館"
     ],
     "featured": true,
-    "score": 70.9,
+    "score": 71.16,
     "summary": {
       "text": "日本汽車博物館是一座位於日本石川縣小松市的一座博物館。於1978年11月2日揭幕。",
       "lang": "zh",
@@ -8005,10 +8031,10 @@
     },
     "images": [
       {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2a/Motorcar_Museum_of_Japan_20231103_01.jpg/960px-Motorcar_Museum_of_Japan_20231103_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "先従隗始",
-        "license": "CC0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Motorcar_Museum_of_Japan_20231103_01.jpg"
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/32/Motorcar_Museum_of_Japan_April_2023.jpg/960px-Motorcar_Museum_of_Japan_April_2023.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "MikaPr65",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Motorcar_Museum_of_Japan_April_2023.jpg"
       }
     ],
     "external_ids": {
@@ -8030,8 +8056,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11511111",
@@ -8052,7 +8077,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 52.19,
+    "score": 52.45,
     "summary": {
       "text": "旧福浦灯台（きゅうふくらとうだい）は、石川県羽咋郡志賀町にある灯台。石川県指定史跡。",
       "lang": "ja",
@@ -8082,7 +8107,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11512752",
@@ -8100,7 +8125,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 50.67,
+    "score": 50.99,
     "summary": {
       "text": "星の観察館「満天星」（ほしのかんさつかん「まんてんぼし」）は、日本の石川県鳳珠郡能登町上町にある天体施設。",
       "lang": "ja",
@@ -8131,7 +8156,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11515248",
@@ -8154,7 +8179,7 @@
       "名勝"
     ],
     "featured": false,
-    "score": 59.47,
+    "score": 59.74,
     "summary": {
       "text": "曽々木海岸（そそぎかいがん）は、石川県輪島市にある海岸。能登半島有数の景勝地で、国の名勝および天然記念物に指定されている。海岸の背後に岩倉山が迫り込んでいたことから、「能登の親不知」と呼ばれるほどの難所として知られた。2015年（平成27年）4月24日、「灯り舞う半島 能登 -熱狂のキリコ祭り-」の構成文化財として日本遺産に認定される。名所のひとつである窓岩は、2024年（令和6年）1月1日に発生した能登半島地震で崩落した。",
       "lang": "ja",
@@ -8184,7 +8209,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11517776",
@@ -8207,7 +8232,7 @@
       "橋"
     ],
     "featured": false,
-    "score": 27.68,
+    "score": 27.95,
     "summary": {
       "text": "朝霧大橋（あさぎりおおはし）とは、石川県金沢市にある浅野川に架かる橋である。",
       "lang": "ja",
@@ -8237,7 +8262,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11519786",
@@ -8258,7 +8283,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 54.85,
+    "score": 54.92,
     "summary": {
       "text": "末浄水場（すえじょうすいじょう）は、石川県金沢市末町にある浄水場。金沢市企業局が所有・管理を行っている。",
       "lang": "ja",
@@ -8266,14 +8291,7 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/95/Sue_Josuijo.jpg/960px-Sue_Josuijo.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Hirorinmasa",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Sue_Josuijo.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q11519786"
     },
@@ -8288,7 +8306,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11519973",
@@ -8311,7 +8329,7 @@
       "公園"
     ],
     "featured": false,
-    "score": 54.37,
+    "score": 54.42,
     "summary": {
       "text": "本多の森公園（ほんだのもりこうえん）は、石川県金沢市本多町、出羽町、石引に跨る公園（都市公園）である。",
       "lang": "ja",
@@ -8341,7 +8359,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11526475",
@@ -8364,7 +8382,7 @@
       "史跡"
     ],
     "featured": false,
-    "score": 32.68,
+    "score": 32.63,
     "summary": {
       "text": "東大寺領横江荘荘家跡（とうだいじりょう よこえのしょう しょうかあと）は、石川県白山市に所在する平安時代の史跡である。",
       "lang": "ja",
@@ -8399,7 +8417,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11529176",
@@ -8423,7 +8441,7 @@
       "博物館"
     ],
     "featured": false,
-    "score": 63.54,
+    "score": 63.42,
     "summary": {
       "text": "松井秀喜ベースボールミュージアム（まついひできベースボールミュージアム）は、宗教法人瑠璃教会傘下のオフィスルリが運営する石川県能美市にある元プロ野球選手・松井秀喜を記念した博物館。旧称は「松井秀喜 野球の館」（まついひでき やきゅうのやかた）で、2005年のリニューアルに合わせて改称されている。",
       "lang": "ja",
@@ -8458,7 +8476,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11529242",
@@ -8478,7 +8496,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 46.56,
+    "score": 46.71,
     "summary": {
       "text": "松任千代野温泉（まつとうちよのおんせん）は、石川県白山市にある温泉である。",
       "lang": "ja",
@@ -8495,14 +8513,7 @@
         "distance_m": 720
       }
     ],
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c8/Matto_Chiyono_Onsen.jpg/960px-Matto_Chiyono_Onsen.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "運動会プロテインパワー",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Matto_Chiyono_Onsen.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q11529242"
     },
@@ -8517,7 +8528,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11529245",
@@ -8540,7 +8551,7 @@
       "公園"
     ],
     "featured": false,
-    "score": 54.31,
+    "score": 54.25,
     "summary": {
       "text": "松任総合運動公園（まっとうそうごううんどうこうえん）は、石川県白山市にある運動公園である。",
       "lang": "ja",
@@ -8579,7 +8590,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11531508",
@@ -8602,7 +8613,7 @@
       "城"
     ],
     "featured": false,
-    "score": 55.31,
+    "score": 54.98,
     "summary": {
       "text": "松根城（まつねじょう）は、石川県金沢市と富山県小矢部市境にあった戦国時代の日本の城（山城）。「加越国境城跡群及び道」（かえつくにざかいしろあとぐんおよびみち）として切山城・小原越と共に国の史跡に指定されている。富山県側はとやま城郭カードNo.44の城郭である。",
       "lang": "ja",
@@ -8610,14 +8621,7 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [
-      {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/c/c2/Matsune_Castle.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-        "author": "景秀",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Matsune_Castle.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q11531508"
     },
@@ -8632,7 +8636,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11531732",
@@ -8656,7 +8660,7 @@
       "名勝"
     ],
     "featured": false,
-    "score": 61.36,
+    "score": 61.28,
     "summary": {
       "text": "松波城（まつなみじょう）は、能登国珠洲郡松波（現・石川県鳳珠郡能登町）にあった日本の城。",
       "lang": "ja",
@@ -8686,7 +8690,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11538119",
@@ -8709,7 +8713,7 @@
       "橋"
     ],
     "featured": false,
-    "score": 35.71,
+    "score": 35.57,
     "summary": {
       "text": "桜橋（さくらばし）は石川県金沢市を流れる犀川に架かる橋。金沢市道、通称「本多通り」の一部。",
       "lang": "ja",
@@ -8750,7 +8754,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11538371",
@@ -8773,7 +8777,7 @@
       "橋"
     ],
     "featured": false,
-    "score": 52.53,
+    "score": 52.36,
     "summary": {
       "text": "梅ノ橋（うめのはし）は、石川県金沢市の浅野川に架けられている歩行者および自転車専用の橋。",
       "lang": "ja",
@@ -8803,15 +8807,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "night": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/09/Umenohashi_night.JPG/960px-Umenohashi_night.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Kakidai",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Umenohashi_night.JPG"
-      }
-    }
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11548072",
@@ -8832,7 +8828,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 58.87,
+    "score": 58.79,
     "summary": {
       "text": "気多本宮（けたほんぐう）は、石川県七尾市に位置する神社である。正式には能登生国玉比古神社（のといくくにたまひこじんじゃ）と称する。",
       "lang": "ja",
@@ -8867,7 +8863,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11553380",
@@ -8887,7 +8883,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 48.64,
+    "score": 48.62,
     "summary": {
       "text": "河内千丈温泉（かわちせんじょうおんせん）は、石川県白山市（旧国加賀国）にある温泉。白山セイモアスキー場に面している。",
       "lang": "ja",
@@ -8895,14 +8891,7 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/23/Seiryu_-_Hakusan%2C_Ishikawa.jpg/960px-Seiryu_-_Hakusan%2C_Ishikawa.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "運動会プロテインパワー",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Seiryu_-_Hakusan,_Ishikawa.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q11553380"
     },
@@ -8913,7 +8902,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-29"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11554949",
@@ -8936,7 +8925,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 49.63,
+    "score": 49.88,
     "summary": {
       "text": "泉野櫻木神社（いずみのさくらぎじんじゃ）は、石川県金沢市泉野町3丁目15番地にある神社。",
       "lang": "ja",
@@ -8973,7 +8962,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11554950",
@@ -8996,7 +8985,7 @@
       "博物館"
     ],
     "featured": false,
-    "score": 55.33,
+    "score": 55.48,
     "summary": {
       "text": "泉鏡花記念館（いずみきょうかきねんかん）は、石川県金沢市下新町にある泉鏡花を取り扱う金沢市立の文学館である。",
       "lang": "ja",
@@ -9042,7 +9031,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11555598",
@@ -9065,7 +9054,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 54.64,
+    "score": 54.73,
     "summary": {
       "text": "波自加弥神社（はじかみじんじゃ、正式には「波自加彌神社」）は、石川県金沢市二日市町カ186番地にある神社。",
       "lang": "ja",
@@ -9096,7 +9085,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11557355",
@@ -9119,7 +9108,7 @@
       "橋"
     ],
     "featured": false,
-    "score": 55.49,
+    "score": 55.79,
     "summary": {
       "text": "浅野川大橋（あさのがわおおはし）は、石川県金沢市の浅野川にかかる道路橋である。同市橋場町と東山一丁目の間を結ぶ国道159号（国道359号重用）の鉄筋コンクリートアーチ橋。国登録有形文化財。",
       "lang": "ja",
@@ -9149,21 +9138,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "night": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4c/Asanogawa_River_%28119996785%29.jpeg/960px-Asanogawa_River_%28119996785%29.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Okochuke",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Asanogawa_River_(119996785).jpeg"
-      },
-      "winter": {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/7/7e/Asanogawa.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-        "author": "Akimoto",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Asanogawa.jpg"
-      }
-    }
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11559002",
@@ -9186,7 +9161,7 @@
       "博物館"
     ],
     "featured": false,
-    "score": 47.42,
+    "score": 47.51,
     "summary": {
       "text": "海洋漁業科学館（かいようぎょぎょうかがくかん、英称：Science Museum of Oceanography and Fisheries）は石川県鳳珠郡能登町字宇出津新港にある科学館。石川県水産総合センターが管理・運営を行っており、愛称「うみとさかなの科学館」。海や水産資源に関する知識を広め、石川県内の水産業を盛んにすることを目的とした博物館。",
       "lang": "ja",
@@ -9209,7 +9184,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11563548",
@@ -9230,7 +9205,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 49.75,
+    "score": 49.89,
     "summary": {
       "text": "湯川温泉（ゆがわおんせん）は、石川県七尾市に位置する温泉である。",
       "lang": "ja",
@@ -9260,7 +9235,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11563731",
@@ -9281,7 +9256,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 69.46,
+    "score": 69.39,
     "summary": {
       "text": "The Yuwaku Onsen (湯涌温泉) is a hot spring resort in Kanazawa, Ishikawa Prefecture, Japan.",
       "lang": "en",
@@ -9311,15 +9286,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-29",
-    "season_images": {
-      "winter": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b7/Yuwaku_onsen.jpg/960px-Yuwaku_onsen.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Motokoka",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Yuwaku_onsen.jpg"
-      }
-    }
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11566739",
@@ -9342,7 +9309,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 61.14,
+    "score": 60.88,
     "summary": {
       "text": "瀬織津姫神社（せおりつひめじんじゃ）は、石川県金沢市別所町にある神社。",
       "lang": "ja",
@@ -9368,7 +9335,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11569621",
@@ -9389,7 +9356,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 70.71,
+    "score": 70.57,
     "summary": {
       "text": "片山津温泉（かたやまづおんせん）は、石川県加賀市の柴山潟湖畔にある温泉。加賀温泉郷の一つ。「片山津温泉」は地域団体商標でもある（権利者は片山津温泉旅館協同組合）。",
       "lang": "ja",
@@ -9415,8 +9382,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-10-02",
-    "season_images": {}
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11569932",
@@ -9437,7 +9403,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 64.17,
+    "score": 64.26,
     "summary": {
       "text": "片町（かたまち）は、石川県金沢市の地名で、繁華街である。現行行政地名は片町一丁目および片町二丁目。郵便番号は920-0981。",
       "lang": "ja",
@@ -9478,15 +9444,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "night": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1e/Katamachi_Crossing.jpg/960px-Katamachi_Crossing.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Nryate",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Katamachi_Crossing.jpg"
-      }
-    }
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11569976",
@@ -9507,7 +9465,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 55.19,
+    "score": 55.37,
     "summary": {
       "text": "片野鴨池（かたのかもいけ）は、石川県加賀市にある広さ約1.5haの池である。",
       "lang": "ja",
@@ -9533,7 +9491,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11571108",
@@ -9556,7 +9514,7 @@
       "橋"
     ],
     "featured": false,
-    "score": 59.97,
+    "score": 60.07,
     "summary": {
       "text": "犀川大橋（さいがわおおはし）は、石川県金沢市の犀川中流に架かる道路橋である。同市の千日町と片町一丁目を結んでおり、国の登録有形文化財に登録されている。",
       "lang": "ja",
@@ -9597,7 +9555,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11571758",
@@ -9608,7 +9566,7 @@
       "zh_tw": "狭野神社",
       "en": "Sano Shrine (Nomi)"
     },
-    "kana_source": "wikipedia",
+    "kana_source": "wikidata",
     "location": {
       "lat": 36.428623,
       "lng": 136.512341
@@ -9621,7 +9579,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 50.28,
+    "score": 50.13,
     "summary": {
       "text": "狭野神社（さのじんじゃ）は、石川県能美市佐野町にある神社である。式内社で、旧社格は県社。",
       "lang": "ja",
@@ -9656,7 +9614,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11572193",
@@ -9679,7 +9637,7 @@
       "公園"
     ],
     "featured": false,
-    "score": 47.82,
+    "score": 48.0,
     "summary": {
       "text": "獅子吼・手取県立自然公園（ししく・てどりけんりつしぜんこうえん）は、石川県内の県立自然公園である。指定面積6.410ha。",
       "lang": "ja",
@@ -9698,7 +9656,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11572689",
@@ -9719,7 +9677,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 36.87,
+    "score": 36.95,
     "summary": {
       "text": "玉泉園（ぎょくせんえん）は、石川県金沢市に所在する池泉回遊式庭園である。園内には金沢最古の茶室・灑雪亭（さいせつてい）や裏千家寒雲亭の写しの茶室がある。",
       "lang": "ja",
@@ -9754,7 +9712,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q1157584",
@@ -9778,7 +9736,7 @@
       "重要文化財"
     ],
     "featured": false,
-    "score": 68.18,
+    "score": 68.36,
     "summary": {
       "text": "大乗寺（だいじょうじ、大乘寺）は、石川県金沢市長坂町にある曹洞宗の寺院。山号は東香山、椙樹林、古くは金獅峯。僧堂がある。江戸時代にここで清規（僧侶の修行規則）が再構築され、規矩大乗と称された。",
       "lang": "ja",
@@ -9813,7 +9771,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11579544",
@@ -9834,7 +9792,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 54.45,
+    "score": 54.55,
     "summary": {
       "text": "白山一里野温泉（はくさんいちりのおんせん）は、石川県白山市（旧国加賀国）にある温泉。中宮温泉とあわせて白山温泉郷とも呼べるが、距離的な面からして一般的とはいえない。周辺は石川県の白山一里野県立自然公園に指定されている。",
       "lang": "ja",
@@ -9857,7 +9815,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11579546",
@@ -9878,7 +9836,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 56.59,
+    "score": 56.65,
     "summary": {
       "text": "白山一里野温泉スキー場（はくさんいちりのおんせんスキーじょう）は、石川県白山市尾添（おぞう）にあるスキー場である。第三セクターの株式会社スノーエリアマネジメント白山（SAM白山）が指定管理者として運営している。",
       "lang": "ja",
@@ -9908,7 +9866,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11579547",
@@ -9931,7 +9889,7 @@
       "公園"
     ],
     "featured": false,
-    "score": 46.79,
+    "score": 46.56,
     "summary": {
       "text": "白山一里野県立自然公園（はくさんいちりのけんりつしぜんこうえん）は、石川県の県立自然公園。白山市の山間部に位置する。",
       "lang": "ja",
@@ -9939,14 +9897,7 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0c/Hakusan_Ichirino_Onsen_Ski.jpg/960px-Hakusan_Ichirino_Onsen_Ski.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Saigawasakurabashi",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Hakusan_Ichirino_Onsen_Ski.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q11579547"
     },
@@ -9957,7 +9908,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11579574",
@@ -9977,7 +9928,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 45.54,
+    "score": 45.85,
     "summary": {
       "text": "白山杉の子温泉（はくさんすぎのこおんせん）は、石川県白山市に位置する温泉である。",
       "lang": "ja",
@@ -9985,14 +9936,7 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/07/Hakusan-Suginoko_Onsen.jpg/960px-Hakusan-Suginoko_Onsen.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "運動会プロテインパワー",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Hakusan-Suginoko_Onsen.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q11579574"
     },
@@ -10007,7 +9951,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11579606",
@@ -10030,7 +9974,7 @@
       "美術館"
     ],
     "featured": false,
-    "score": 45.72,
+    "score": 45.92,
     "summary": {
       "text": "金城学園白山美術館（きんじょうがくえんはくさんびじゅつかん）は、石川県白山市河内町吉岡東にある美術館。金城大学短期大学部が運営。学生の卒業制作展のほか、様々な企画展覧会を行なっている。",
       "lang": "ja",
@@ -10047,14 +9991,7 @@
         "distance_m": 670
       }
     ],
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a2/Kinjo_Hakusan_Art_Museum.jpg/960px-Kinjo_Hakusan_Art_Museum.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "運動会プロテインパワー",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Kinjo_Hakusan_Art_Museum.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q11579606"
     },
@@ -10069,7 +10006,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11580283",
@@ -10092,7 +10029,7 @@
       "名勝"
     ],
     "featured": false,
-    "score": 69.76,
+    "score": 69.74,
     "summary": {
       "text": "白米千枚田是位於日本石川縣輪島市白米町的梯田，因其數量眾多而被成為千枚田，但也有一說系得名於面積狹小。面積最小的田地面積只有約0.2平方米。2001年白米千枚田被指定為名勝。2011年，國際糧食農業機構將白米千枚田認定為世界農業遺產。",
       "lang": "zh",
@@ -10123,21 +10060,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "night": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/51/Shiroyone_Senmaida_%288266941838%29.jpg/960px-Shiroyone_Senmaida_%288266941838%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "suri",
-        "license": "CC BY-SA 2.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Shiroyone_Senmaida_(8266941838).jpg"
-      },
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2b/Wajima-senmaida_stereo.jpg/960px-Wajima-senmaida_stereo.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "国土交通省",
-        "license": "Attribution",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Wajima-senmaida_stereo.jpg"
-      }
-    }
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11580599",
@@ -10148,7 +10071,7 @@
       "zh_tw": "白鳥神社",
       "en": "Shiratori Shrine"
     },
-    "kana_source": "wikipedia",
+    "kana_source": "wikidata",
     "location": {
       "lat": 36.668278,
       "lng": 136.736222
@@ -10160,7 +10083,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 48.44,
+    "score": 48.62,
     "summary": {
       "text": "白鳥神社（しらとりじんじゃ）は、石川県河北郡津幡町加賀爪にある神社。",
       "lang": "ja",
@@ -10215,7 +10138,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11580715",
@@ -10236,7 +10159,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 58.31,
+    "score": 58.61,
     "summary": {
       "text": "百四丈滝（ひゃくよじょうのたき）は、石川県白山市の尾添川にかかる滝。白山有数の巨瀑で、",
       "lang": "ja",
@@ -10266,7 +10189,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11583492",
@@ -10290,7 +10213,7 @@
       "史跡"
     ],
     "featured": false,
-    "score": 52.85,
+    "score": 52.84,
     "summary": {
       "text": "真脇遺跡（まわきいせき）是位於日本石川縣鳳珠郡能登町的一處繩文時代早期至晚期聚落遺址，被指定為國家歷史遺跡。",
       "lang": "zh",
@@ -10325,7 +10248,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11585200",
@@ -10348,7 +10271,7 @@
       "史跡"
     ],
     "featured": false,
-    "score": 68.95,
+    "score": 68.99,
     "summary": {
       "text": "Mount Sekidō (石動山, Sekidōzan) is a 564 metres (1,850 ft) mountain on the border of Nanao and Nakanoto in Ishikawa Prefecture and the town of Himi, in Toyama Prefecture. It is also called Mount Isurugi (伊須流岐山, Isurugizan). Mount Sekidō was considered a holy mountain and was the center of a mountain cult since the Heian period. It was designated a National Historic Site of Japan in 1978. It is located with the borders of the Noto Hantō Quasi-National Park.",
       "lang": "en",
@@ -10356,14 +10279,7 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-29"
     },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/83/Isurugihiko-jinja_shrine.jpg/960px-Isurugihiko-jinja_shrine.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "越山賀水",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Isurugihiko-jinja_shrine.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q11585200"
     },
@@ -10378,7 +10294,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11585931",
@@ -10401,7 +10317,7 @@
       "博物館"
     ],
     "featured": false,
-    "score": 52.92,
+    "score": 52.9,
     "summary": {
       "text": "石川県ふれあい昆虫館（いしかわけん ふれあいこんちゅうかん、Ishikawa Insect Museum）は、石川県白山市にある県立の博物館（昆虫館）である。",
       "lang": "ja",
@@ -10447,7 +10363,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11585933",
@@ -10470,7 +10386,7 @@
       "博物館"
     ],
     "featured": false,
-    "score": 60.1,
+    "score": 59.85,
     "summary": {
       "text": "Ishikawa Nanao Art Museum (石川県七尾美術館, Ishikawa Nanao bijutsukan) opened in 1995 in Nanao, Ishikawa Prefecture, Japan. The main art gallery on the Noto Peninsula, the collection includes works by Hasegawa Tōhaku.",
       "lang": "en",
@@ -10514,7 +10430,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11585938",
@@ -10537,7 +10453,7 @@
       "博物館"
     ],
     "featured": false,
-    "score": 57.11,
+    "score": 56.98,
     "summary": {
       "text": "石川県九谷焼美術館（いしかわけんくたにやきびじゅつかん）は、石川県加賀市に所在する九谷焼（希少な名品）を収集、調査、研究、展示する日本で唯一の九谷焼専門の美術館である。",
       "lang": "ja",
@@ -10583,7 +10499,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11585941",
@@ -10606,7 +10522,7 @@
       "公園"
     ],
     "featured": false,
-    "score": 51.71,
+    "score": 51.88,
     "summary": {
       "text": "健民海浜公園（けんみんかいひんこうえん）は、石川県金沢市西部にある都市公園。石川県が開設・運営している都市公園（広域公園）である。",
       "lang": "ja",
@@ -10637,7 +10553,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11585955",
@@ -10658,7 +10574,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 62.57,
+    "score": 62.6,
     "summary": {
       "text": "石川県庁舎（いしかわけんちょうしゃ）は、石川県金沢市鞍月にある、広域自治体である石川県の庁舎の総称。",
       "lang": "ja",
@@ -10688,7 +10604,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11585956",
@@ -10709,7 +10625,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 44.75,
+    "score": 44.72,
     "summary": {
       "text": "Shiinoki Cultural Complex is in Kanazawa, Japan. It is housed in the former Ishikawa Prefectural Government Building, which was completed in 1924 and designed by architect Kenkichi Yabashi (1869–1927). It is located at 920-0962 Ishikawa, Kanazawa, Hirosaka, 2 Chome−1−1 on the south side of Kanazawa Castle Park.",
       "lang": "en",
@@ -10740,7 +10656,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11585960",
@@ -10763,7 +10679,7 @@
       "公園"
     ],
     "featured": false,
-    "score": 57.96,
+    "score": 57.9,
     "summary": {
       "text": "木場潟公園（きばがたこうえん）は、石川県小松市南部にある都市公園。石川県が開設・運営している都市公園（広域公園）である。",
       "lang": "ja",
@@ -10798,7 +10714,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11585980",
@@ -10819,7 +10735,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 61.24,
+    "score": 61.18,
     "summary": {
       "text": "The Ishikawa Prefectural Museum of Traditional Arts and Crafts (Japanese: 石川県立伝統産業工芸館) is a museum about traditional arts and crafts located in Kenroku-en, Kanazawa, Ishikawa Prefecture, Japan.",
       "lang": "en",
@@ -10854,7 +10770,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11586004",
@@ -10877,7 +10793,7 @@
       "寺院"
     ],
     "featured": false,
-    "score": 53.58,
+    "score": 53.71,
     "summary": {
       "text": "石川県立能楽堂（いしかわけんりつのうがくどう）は、石川県金沢市石引にある能楽堂である。",
       "lang": "ja",
@@ -10907,7 +10823,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11586008",
@@ -10930,7 +10846,7 @@
       "博物館"
     ],
     "featured": false,
-    "score": 50.1,
+    "score": 50.65,
     "summary": {
       "text": "石川県立自然史資料館（いしかわけんりつ しぜんししりょうかん）とは、石川県金沢市にある自然博物館、及び文化施設である。",
       "lang": "ja",
@@ -10960,7 +10876,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11586011",
@@ -10981,7 +10897,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 62.12,
+    "score": 62.16,
     "summary": {
       "text": "Ishikawa Aviation Plaza (石川県立航空プラザ, ishikawakenritsu kouku puraza) is an aerospace museum in the city of Komatsu, Ishikawa Prefecture, Japan. It is located next to Komatsu Airport.",
       "lang": "en",
@@ -11007,7 +10923,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11586039",
@@ -11030,7 +10946,7 @@
       "博物館"
     ],
     "featured": false,
-    "score": 56.48,
+    "score": 56.38,
     "summary": {
       "text": "石川県能登島ガラス美術館（いしかわけんのとじまガラスびじゅつかん）は、石川県七尾市に所在する美術館である。",
       "lang": "ja",
@@ -11065,7 +10981,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11586041",
@@ -11089,7 +11005,7 @@
       "博物館"
     ],
     "featured": false,
-    "score": 61.95,
+    "score": 61.85,
     "summary": {
       "text": "石川縣西田幾多郎紀念哲學館，位於日本石川縣河北市，是與在當地出生的西田幾多郎相關的文化建築。紀念哲學館藏有一個登錄有形文化財，其建築由安藤忠雄設計。",
       "lang": "zh",
@@ -11133,7 +11049,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11586047",
@@ -11156,7 +11072,7 @@
       "博物館"
     ],
     "featured": false,
-    "score": 59.48,
+    "score": 59.56,
     "summary": {
       "text": "石川縣輪島漆藝美術館（英語：Wajima Museum of Urushi Art）是一個位於日本石川縣輪島市的美術館。",
       "lang": "zh",
@@ -11191,7 +11107,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11586272",
@@ -11214,7 +11130,7 @@
       "博物館"
     ],
     "featured": false,
-    "score": 52.25,
+    "score": 52.46,
     "summary": {
       "text": "石川県銭屋五兵衛記念館（いしかわけんぜにやごへえきねんかん）は、北前船で財をなし「海の百万石」と謳われた豪商銭屋五兵衛に関する展示を行っている博物館。所在地は石川県金沢市金石（かないわ）本町ロ55。",
       "lang": "ja",
@@ -11249,7 +11165,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11586369",
@@ -11272,7 +11188,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 57.67,
+    "score": 57.63,
     "summary": {
       "text": "石川護国神社（いしかわごこくじんじゃ）は、石川県金沢市にある神社（護国神社）である。市街地中心部の兼六園の隣にある。石川県内でも最大規模の面積を誇る神社である。",
       "lang": "ja",
@@ -11307,7 +11223,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11586386",
@@ -11331,7 +11247,7 @@
       "博物館"
     ],
     "featured": false,
-    "score": 57.28,
+    "score": 57.31,
     "summary": {
       "text": "石川近代文学館（いしかわきんだいぶんがくかん）は、石川県金沢市に所在する、同県ゆかりの文学者に関する博物館である。四高記念文化交流館に付属している。",
       "lang": "ja",
@@ -11377,7 +11293,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11586806",
@@ -11400,7 +11316,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 61.69,
+    "score": 61.68,
     "summary": {
       "text": "石浦神社（いしうらじんじゃ）は、石川県金沢市本多町に鎮座する神社。旧社格は県社。創建時の名称は「三輪神社」。『延喜式神名帳』加賀国加賀郡の小社「三輪神社」に比定される式内社論社で、金沢市最古の神社であるともされる。",
       "lang": "ja",
@@ -11435,7 +11351,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11587231",
@@ -11446,7 +11362,7 @@
       "zh_tw": "石部神社",
       "en": "Isobe Shrine"
     },
-    "kana_source": "wikipedia",
+    "kana_source": "wikidata",
     "location": {
       "lat": 36.406644,
       "lng": 136.502721
@@ -11458,7 +11374,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 59.05,
+    "score": 58.94,
     "summary": {
       "text": "石部神社（いそべじんじゃ）は、石川県小松市古府町にある神社。式内社、加賀国総社で、旧社格は郷社。",
       "lang": "ja",
@@ -11488,7 +11404,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11587711",
@@ -11511,7 +11427,7 @@
       "公園"
     ],
     "featured": false,
-    "score": 46.01,
+    "score": 46.17,
     "summary": {
       "text": "碁石ケ峰県立自然公園（ごいしがみねけんりつしぜんこうえん）は、石川県の県立自然公園。鹿島郡中能登町と羽咋市にまたがる。",
       "lang": "ja",
@@ -11519,14 +11435,7 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/26/Mount_Goishigamine.jpg/960px-Mount_Goishigamine.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Saigawasakurabashi",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Mount_Goishigamine.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q11587711"
     },
@@ -11537,7 +11446,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11591167",
@@ -11558,7 +11467,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 63.75,
+    "score": 63.95,
     "summary": {
       "text": "The Rokkosaki Lighthouse is a lighthouse located in Suzu, Ishikawa, Japan. Because of its location in the Noroshi neighborhood of Suzu, it is also called the Noroshi Lighthouse. The lighthouse's important cultural history has led it to be named as an A Rank on the \"Lighthouse Preservation\" list of lighthouses built during the Meiji Period. It has also been selected as one of \"Japan's 50 Lighthouse,\" a survey conducted in 1998 asking respondents around Japan for their favorite lighthouse.",
       "lang": "en",
@@ -11588,7 +11497,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11591168",
@@ -11611,7 +11520,7 @@
       "岬"
     ],
     "featured": false,
-    "score": 58.9,
+    "score": 58.93,
     "summary": {
       "text": "禄剛崎（ろっこうさき、ろっこうざき）は、能登半島の先端に位置し、日本海に面する岬。所属自治体は石川県珠洲市。",
       "lang": "ja",
@@ -11641,7 +11550,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11597234",
@@ -11662,7 +11571,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 33.43,
+    "score": 33.37,
     "summary": {
       "text": "穴水ショッピングセンターパルス（あなみずショッピングセンターパルス）は、石川県鳳至郡穴水町此木にあるショッピングセンターである。",
       "lang": "ja",
@@ -11692,7 +11601,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11597235",
@@ -11715,7 +11624,7 @@
       "城"
     ],
     "featured": false,
-    "score": 58.64,
+    "score": 58.68,
     "summary": {
       "text": "穴水城（あなみずじょう）は、能登国鳳至郡穴水村川島、現在の石川県鳳珠郡穴水町川島にあった日本の城。現在は町の史跡に指定され、穴水城址公園として整備されている。",
       "lang": "ja",
@@ -11754,7 +11663,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11597236",
@@ -11775,7 +11684,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 53.6,
+    "score": 53.66,
     "summary": {
       "text": "穴水大宮（あなみずおおみや）は、石川県穴水町に鎮座する神社。延喜式内社の辺津比咩神社。旧社格は郷社。",
       "lang": "ja",
@@ -11801,7 +11710,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11604612",
@@ -11822,7 +11731,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 70.14,
+    "score": 70.1,
     "summary": {
       "text": "粟津溫泉是位於日本石川縣小松市（古代的加賀國）的溫泉。",
       "lang": "zh",
@@ -11830,14 +11739,7 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c1/20090913%E5%8A%A0%E8%B3%80%E4%B8%89%E6%B9%96Tagged.jpg/960px-20090913%E5%8A%A0%E8%B3%80%E4%B8%89%E6%B9%96Tagged.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "BehBeh",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:20090913%E5%8A%A0%E8%B3%80%E4%B8%89%E6%B9%96Tagged.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q11604612"
     },
@@ -11848,8 +11750,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11608114",
@@ -11870,7 +11771,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 51.67,
+    "score": 51.77,
     "summary": {
       "text": "縄文真脇温泉（じょうもんまわきおんせん）は、石川県鳳珠郡能登町にある温泉。",
       "lang": "ja",
@@ -11896,7 +11797,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11609062",
@@ -11916,7 +11817,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 51.61,
+    "score": 51.45,
     "summary": {
       "text": "美川温泉（みかわおんせん）は、石川県白山市（旧国加賀国）にある温泉。",
       "lang": "ja",
@@ -11933,14 +11834,7 @@
         "distance_m": 750
       }
     ],
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5b/Mikawa_Onsen_Motoyu_Honda.jpg/960px-Mikawa_Onsen_Motoyu_Honda.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "運動会プロテインパワー",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Mikawa_Onsen_Motoyu_Honda.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q11609062"
     },
@@ -11955,7 +11849,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11610064",
@@ -11978,7 +11872,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 55.88,
+    "score": 55.64,
     "summary": {
       "text": "羽咋神社（はくいじんじゃ）は、石川県羽咋市川原町にある神社。式内社で、旧社格は県社。",
       "lang": "ja",
@@ -12024,7 +11918,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11610957",
@@ -12047,7 +11941,7 @@
       "岬"
     ],
     "featured": false,
-    "score": 58.36,
+    "score": 58.34,
     "summary": {
       "text": "珠洲岬（すずみさき）は、石川県珠洲市にある岬。能登半島の先端部にある金剛崎のことであるとも、その周辺の岬を含めた総称であるともいわれる。",
       "lang": "ja",
@@ -12077,7 +11971,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11612018",
@@ -12131,15 +12025,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "panorama": {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/d/da/141018_Noto_Kokubunji_Ruins_aerial.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-        "author": "国土交通省国土地理院",
-        "license": "Attribution",
-        "source_url": "https://commons.wikimedia.org/wiki/File:141018_Noto_Kokubunji_Ruins_aerial.jpg"
-      }
-    }
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11612025",
@@ -12162,7 +12048,7 @@
       "島"
     ],
     "featured": true,
-    "score": 72.34,
+    "score": 72.37,
     "summary": {
       "text": "能登島是石川縣七尾市七尾灣內的一個島。面積46.78km²。周長71.9km。在政區上過去屬能登島町，2004年10月1日合併為七尾市的一部份。也是能登半島國定公園的一部分。",
       "lang": "zh",
@@ -12192,15 +12078,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/00/Noto_peninsula_seen_from_the_air_%2848885980067%29.jpg/960px-Noto_peninsula_seen_from_the_air_%2848885980067%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Maarten Heerlien from Voorschoten, The Netherlands",
-        "license": "CC BY 2.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Noto_peninsula_seen_from_the_air_(48885980067).jpg"
-      }
-    }
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11612028",
@@ -12223,7 +12101,7 @@
       "橋"
     ],
     "featured": false,
-    "score": 63.57,
+    "score": 63.64,
     "summary": {
       "text": "能登島大橋（のとじまおおはし）は、石川県七尾市石崎町と同市能登島半浦町を結ぶプレストレスト・コンクリート橋である。石川県で最も長い道路橋で七尾湾に架けられており、石川県道47号七尾能登島公園線の一部となっている。",
       "lang": "ja",
@@ -12253,7 +12131,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11612037",
@@ -12276,7 +12154,7 @@
       "公園"
     ],
     "featured": false,
-    "score": 51.24,
+    "score": 51.25,
     "summary": {
       "text": "能登町柳田植物公園（のとちょうやなぎだしょくぶつこうえん）は、石川県鳳珠郡能登町上町（かんまち）及び合鹿（ごうろく）地内にある植物公園。能登町ふれあいの里の施設で「やなぎだ植物公園」と表記することもある。",
       "lang": "ja",
@@ -12306,7 +12184,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11612038",
@@ -12329,7 +12207,7 @@
       "寺院"
     ],
     "featured": false,
-    "score": 63.63,
+    "score": 63.93,
     "summary": {
       "text": "能登演劇堂（のとえんげきどう）は、石川県七尾市にある劇場である。",
       "lang": "ja",
@@ -12369,7 +12247,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11612050",
@@ -12392,7 +12270,7 @@
       "市場"
     ],
     "featured": false,
-    "score": 56.78,
+    "score": 57.01,
     "summary": {
       "text": "能登食祭市場（のとしょくさいいちば）は、石川県七尾市府中町にある市場である。",
       "lang": "ja",
@@ -12431,7 +12309,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11614807",
@@ -12454,7 +12332,7 @@
       "公園"
     ],
     "featured": false,
-    "score": 56.78,
+    "score": 56.84,
     "summary": {
       "text": "芦城公園（ろじょうこうえん）は、石川県小松市丸の内公園町に位置する公園である。敷地面積は41,345m2。",
       "lang": "ja",
@@ -12498,7 +12376,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11619342",
@@ -12521,7 +12399,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 61.07,
+    "score": 60.99,
     "summary": {
       "text": "菅生石部神社（すごういそべじんじゃ）は、石川県加賀市大聖寺敷地にある神社。式内社、加賀国二宮で、旧社格は国幣小社。現在は神社本庁の別表神社。通称を「敷地天神」・「菅生天神」とも。",
       "lang": "ja",
@@ -12558,7 +12436,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11621161",
@@ -12579,7 +12457,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 53.6,
+    "score": 53.36,
     "summary": {
       "text": "葭ヶ浦温泉（よしがうらおんせん、よしが浦温泉）は、石川県珠洲市三崎町寺家にある温泉。",
       "lang": "ja",
@@ -12609,7 +12487,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11625080",
@@ -12632,7 +12510,7 @@
       "博物館"
     ],
     "featured": false,
-    "score": 56.67,
+    "score": 56.8,
     "summary": {
       "text": "加賀本多博物館（かがほんだ はくぶつかん）は、石川県金沢市にある博物館。公益財団法人藩老本多蔵品館が事業主体となり、運営している。",
       "lang": "ja",
@@ -12667,7 +12545,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11629456",
@@ -12691,7 +12569,7 @@
       "博物館"
     ],
     "featured": false,
-    "score": 49.26,
+    "score": 49.41,
     "summary": {
       "text": "西茶屋資料館（にしちゃやしりょうかん）とは、石川県金沢市にし茶屋街界隈にある金沢市立の歴史博物館、資料館、及び文化施設である。",
       "lang": "ja",
@@ -12746,7 +12624,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11629615",
@@ -12769,7 +12647,7 @@
       "公園"
     ],
     "featured": false,
-    "score": 54.68,
+    "score": 54.66,
     "summary": {
       "text": "西部緑地公園（せいぶりょくちこうえん）は、石川県金沢市袋畠町、古府町、北塚町、稚日野町にまたがる運動公園。",
       "lang": "ja",
@@ -12799,7 +12677,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11630645",
@@ -12822,7 +12700,7 @@
       "岬"
     ],
     "featured": false,
-    "score": 50.63,
+    "score": 50.84,
     "summary": {
       "text": "観音崎（かんのんざき）は、石川県七尾市に位置する岬である。",
       "lang": "ja",
@@ -12852,7 +12730,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11634945",
@@ -12873,7 +12751,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 50.28,
+    "score": 50.2,
     "summary": {
       "text": "賀茂神社（かもじんじゃ）は、石川県かほく市横山にある神社。",
       "lang": "ja",
@@ -12914,7 +12792,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11635559",
@@ -12935,7 +12813,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 51.33,
+    "score": 51.13,
     "summary": {
       "text": "赤崎温泉（あかさきおんせん）は、石川県七尾市に位置する温泉である。",
       "lang": "ja",
@@ -12943,14 +12821,7 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e1/Akasaki_Onsen_Mejimakan.jpg/960px-Akasaki_Onsen_Mejimakan.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "運動会プロテインパワー",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Akasaki_Onsen_Mejimakan.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q11635559"
     },
@@ -12965,7 +12836,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11637709",
@@ -12988,7 +12859,7 @@
       "市場"
     ],
     "featured": false,
-    "score": 69.37,
+    "score": 69.32,
     "summary": {
       "text": "輪島朝市",
       "lang": "zh",
@@ -13018,7 +12889,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11637852",
@@ -13038,7 +12909,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 55.84,
+    "score": 55.82,
     "summary": {
       "text": "辰口温泉（たつのくちおんせん）は、石川県能美市辰口町にある温泉。",
       "lang": "ja",
@@ -13064,7 +12935,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11637884",
@@ -13087,7 +12958,7 @@
       "史跡"
     ],
     "featured": false,
-    "score": 49.85,
+    "score": 50.24,
     "summary": {
       "text": "The Tatsumi Canal (辰巳用水, Tatsumi yōsui) is an 11 kilometer long canal built in the Edo period in the city of Kanazawa, Ishikawa Japan. A 8.7 kilometer portion of this canal was designated a National Historic Site of Japan in 2010.",
       "lang": "en",
@@ -13117,7 +12988,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11640635",
@@ -13138,7 +13009,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 49.67,
+    "score": 49.83,
     "summary": {
       "text": "道の駅いおり（みちのえき いおり）は、石川県七尾市庵町にある国道160号の道の駅である。",
       "lang": "ja",
@@ -13168,7 +13039,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11640746",
@@ -13189,7 +13060,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 53.24,
+    "score": 53.64,
     "summary": {
       "text": "道の駅こまつ木場潟（みちのえき こまつきばがた）は、石川県小松市蓮代寺町にある国道8号の道の駅である。",
       "lang": "ja",
@@ -13219,7 +13090,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11640748",
@@ -13240,7 +13111,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 51.45,
+    "score": 51.9,
     "summary": {
       "text": "道の駅ころ柿の里しか（みちのえき ころがきのさとしか）は、石川県羽咋郡志賀町末吉新保向にある国道249号の道の駅である。",
       "lang": "ja",
@@ -13270,7 +13141,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11640783",
@@ -13291,7 +13162,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 51.02,
+    "score": 50.93,
     "summary": {
       "text": "道の駅しらやまさん（みちのえき しらやまさん）は、石川県能美市和佐谷町にある国道157号の道の駅である。",
       "lang": "ja",
@@ -13321,7 +13192,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11640794",
@@ -13342,7 +13213,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 58.3,
+    "score": 58.02,
     "summary": {
       "text": "道の駅すずなり（みちのえき すずなり）は、石川県珠洲市野々江町にある石川県道12号蛸島港線の道の駅である。",
       "lang": "ja",
@@ -13372,7 +13243,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11640795",
@@ -13393,7 +13264,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 52.27,
+    "score": 52.52,
     "summary": {
       "text": "道の駅すず塩田村（みちのえき すずえんでんむら）は、石川県珠洲市清水町にある国道249号の道の駅である。",
       "lang": "ja",
@@ -13423,7 +13294,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11640844",
@@ -13444,7 +13315,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 51.43,
+    "score": 52.18,
     "summary": {
       "text": "道の駅とぎ海街道（みちのえき とぎうみかいどう）は、石川県羽咋郡志賀町富来領家町にある国道249号の道の駅である。",
       "lang": "ja",
@@ -13474,7 +13345,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11640885",
@@ -13495,7 +13366,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 51.27,
+    "score": 51.32,
     "summary": {
       "text": "道の駅のとじま（みちのえき のとじま）は、石川県七尾市能登島向田町にある石川県道47号七尾能登島公園線の道の駅である。",
       "lang": "ja",
@@ -13525,7 +13396,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11641080",
@@ -13546,7 +13417,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 56.59,
+    "score": 56.65,
     "summary": {
       "text": "道の駅一向一揆の里（みちのえき いっこういっきのさと）は、石川県白山市出合町にある国道360号の道の駅である。",
       "lang": "ja",
@@ -13576,7 +13447,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11641153",
@@ -13597,7 +13468,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 55.13,
+    "score": 55.35,
     "summary": {
       "text": "道の駅倶利伽羅 源平の郷（みちのえき くりから げんぺいのさと）は、石川県河北郡津幡町字竹橋西（たけのはしにし）にある石川県道215号森本津幡線の道の駅である。",
       "lang": "ja",
@@ -13627,7 +13498,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11641176",
@@ -13648,7 +13519,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 52.6,
+    "score": 52.77,
     "summary": {
       "text": "道の駅千枚田ポケットパーク（みちのえき せんまいだポケットパーク）は、石川県輪島市白米町にある国道249号の道の駅である。",
       "lang": "ja",
@@ -13678,7 +13549,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11641278",
@@ -13699,7 +13570,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 57.92,
+    "score": 57.86,
     "summary": {
       "text": "道の駅山中温泉 ゆけむり健康村（みちのえき やまなかおんせん ゆけむりけんこうむら）は、石川県加賀市山中温泉こおろぎ町にある国道364号の道の駅である。",
       "lang": "ja",
@@ -13729,7 +13600,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11641392",
@@ -13750,7 +13621,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 53.34,
+    "score": 54.15,
     "summary": {
       "text": "道の駅瀬女（みちのえき せな）は、石川県白山市瀬戸にある国道360号の道の駅である。",
       "lang": "ja",
@@ -13780,7 +13651,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11641398",
@@ -13801,7 +13672,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 55.99,
+    "score": 55.89,
     "summary": {
       "text": "道の駅狼煙（みちのえき のろし）は、石川県珠洲市狼煙町（のろしまち）にある石川県道28号大谷狼煙飯田線の道の駅である。",
       "lang": "ja",
@@ -13831,15 +13702,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9c/Michinoeki_Noroshi.JPG/960px-Michinoeki_Noroshi.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "アラツク",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Michinoeki_Noroshi.JPG"
-      }
-    }
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11641517",
@@ -13862,7 +13725,7 @@
       "島"
     ],
     "featured": false,
-    "score": 59.94,
+    "score": 60.03,
     "summary": {
       "text": "道の駅輪島（みちのえき わじま）は、石川県輪島市河井町にある石川県道1号七尾輪島線の道の駅である。愛称はふらっと訪夢（ふらっとホーム）。",
       "lang": "ja",
@@ -13892,7 +13755,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11642859",
@@ -13917,7 +13780,7 @@
       "名勝"
     ],
     "featured": true,
-    "score": 73.18,
+    "score": 73.39,
     "summary": {
       "text": "Nata-dera (那谷寺) is a Buddhist temple located in the city of Komatsu, Ishikawa Prefecture, Japan. It belongs to the Kōyasan Shingon-shū sect of Japanese Buddhism and its honzon (primary image) is a hibutsu hidden statue of Senjū Kannon. The temple is connected by tradition to the 33-temple Saigoku Kannon Pilgrimage route, but is not a numbered temple on that pilgrimage.",
       "lang": "en",
@@ -13948,8 +13811,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11644849",
@@ -13960,7 +13822,7 @@
       "zh_tw": "重蔵神社",
       "en": "Jūzō Shrine"
     },
-    "kana_source": "wikipedia",
+    "kana_source": "wikidata",
     "location": {
       "lat": 37.394481,
       "lng": 136.906219
@@ -13973,7 +13835,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 58.13,
+    "score": 58.06,
     "summary": {
       "text": "重蔵神社（じゅうぞうじんじゃ）は、石川県輪島市河井町にある神社。",
       "lang": "ja",
@@ -14008,7 +13870,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11646557",
@@ -14029,7 +13891,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 66.32,
+    "score": 66.21,
     "summary": {
       "text": "金剱宮（きんけんぐう）は、石川県白山市鶴来日詰町にある神社。旧社格は県社。金剱神社、金剱明神、剱明神とも。",
       "lang": "ja",
@@ -14075,7 +13937,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11646644",
@@ -14095,7 +13957,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 47.54,
+    "score": 47.75,
     "summary": {
       "text": "金城温泉（きんじょうおんせん）は、石川県金沢市に位置する日帰温泉である。",
       "lang": "ja",
@@ -14103,14 +13965,7 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e4/%E9%87%91%E5%9F%8E%E6%B8%A9%E6%B3%89%E5%85%83%E6%B9%AF.jpg/960px-%E9%87%91%E5%9F%8E%E6%B8%A9%E6%B3%89%E5%85%83%E6%B9%AF.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Whatsfb",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:%E9%87%91%E5%9F%8E%E6%B8%A9%E6%B3%89%E5%85%83%E6%B9%AF.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q11646644"
     },
@@ -14125,7 +13980,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11647351",
@@ -14145,7 +14000,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 50.97,
+    "score": 50.93,
     "summary": {
       "text": "金沢おぐら座（かなざわおぐらざ）は、石川県金沢市に所在する大衆演劇の劇場である。",
       "lang": "ja",
@@ -14164,14 +14019,7 @@
         "distance_m": 70
       }
     ],
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/84/%E3%83%95%E3%82%A1%E3%83%BB%E3%83%9F%E3%83%BB%E3%83%AC.jpg/960px-%E3%83%95%E3%82%A1%E3%83%BB%E3%83%9F%E3%83%BB%E3%83%AC.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Whatsfb",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:%E3%83%95%E3%82%A1%E3%83%BB%E3%83%9F%E3%83%BB%E3%83%AC.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q11647351"
     },
@@ -14186,7 +14034,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11647356",
@@ -14207,7 +14055,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 54.64,
+    "score": 54.83,
     "summary": {
       "text": "金沢ふるさと偉人館（かなざわふるさといじんかん）は、石川県金沢市下本多町にある博物館。2017年時点の館長は輪島道友。",
       "lang": "ja",
@@ -14248,7 +14096,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11647369",
@@ -14269,7 +14117,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 38.03,
+    "score": 38.26,
     "summary": {
       "text": "金沢ビーンズ（かなざわビーンズ）は、明文堂書店が2007年6月30日に石川県金沢市にオープンした大型の書籍専門店。",
       "lang": "ja",
@@ -14299,7 +14147,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11647372",
@@ -14320,7 +14168,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 65.69,
+    "score": 65.73,
     "summary": {
       "text": "金沢フォーラス（かなざわフォーラス、英: KANAZAWA FORUS）は、石川県金沢市堀川新町にある株式会社OPAが運営する複合商業施設（ファッションビル）である。",
       "lang": "ja",
@@ -14369,7 +14217,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11647373",
@@ -14390,7 +14238,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 53.95,
+    "score": 53.97,
     "summary": {
       "text": "金沢ユースホステル（かなざわユースホステル）は、かつて存在した日本ユースホステル協会に加盟していた石川県金沢市のユースホステル。卯辰山公園内にあった。",
       "lang": "ja",
@@ -14420,7 +14268,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11647432",
@@ -14441,7 +14289,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 57.31,
+    "score": 57.46,
     "summary": {
       "text": "金沢市民芸術村（かなざわしみんげいじゅつむら）は、金沢市が設置した市民の芸術活動を支援する目的の総合文化施設で、城下町金沢の伝統文化を維持するために必要な建築系技能の保存・継承技能者養成を目的とする金沢職人大学校を併設する。",
       "lang": "ja",
@@ -14490,7 +14338,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11647436",
@@ -14513,7 +14361,7 @@
       "博物館"
     ],
     "featured": false,
-    "score": 52.51,
+    "score": 52.9,
     "summary": {
       "text": "金沢市立中村記念美術館（かなざわしりつなかむらきねんびじゅつかん）は、石川県金沢市にある美術館である。",
       "lang": "ja",
@@ -14548,7 +14396,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11647461",
@@ -14571,7 +14419,7 @@
       "博物館"
     ],
     "featured": false,
-    "score": 52.37,
+    "score": 52.75,
     "summary": {
       "text": "金沢市足軽資料館（かなざわしあしがるしりょうかん）は、石川県金沢市に所在する加賀藩の足軽の生活を伝える文化施設である。",
       "lang": "ja",
@@ -14625,7 +14473,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11647493",
@@ -14646,7 +14494,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 63.97,
+    "score": 63.58,
     "summary": {
       "text": "金沢歌劇座（かなざわかげきざ）は、石川県金沢市下本多町にある多目的ホール。2007年10月1日に、開業当初からの旧称金沢市観光会館（かなざわしかんこうかいかん）から改称した。",
       "lang": "ja",
@@ -14687,7 +14535,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11647502",
@@ -14710,7 +14558,7 @@
       "博物館"
     ],
     "featured": false,
-    "score": 40.5,
+    "score": 40.58,
     "summary": {
       "text": "The Kanazawa Yuwaku Yumeji-kan Museum (Japanese: 金沢湯涌夢二館) is a museum in Yuwaku Hot Spring, Kanazawa, Ishikawa Prefecture, Japan dedicated to the works of the artist Yumeji Takehisa.",
       "lang": "en",
@@ -14745,15 +14593,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "winter": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/09/Kanazawa_Yuwaku_Yumeji-kan_Museum_2.jpg/960px-Kanazawa_Yuwaku_Yumeji-kan_Museum_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Motokoka",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Kanazawa_Yuwaku_Yumeji-kan_Museum_2.jpg"
-      }
-    }
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11647504",
@@ -14776,7 +14616,7 @@
       "博物館"
     ],
     "featured": false,
-    "score": 57.23,
+    "score": 57.34,
     "summary": {
       "text": "金沢湯涌江戸村（かなざわゆわくえどむら、Kanazawa Yuwaku Edomura）は、石川県金沢市湯涌温泉にある金沢市立の歴史博物館である。江戸期の建造物を移築保存し、歴史文化の理解を深め文化の向上をはかることを目的として設置された。2010年9月開館。",
       "lang": "ja",
@@ -14811,15 +14651,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "winter": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e1/%E6%B9%AF%E6%B6%8C%E6%B8%A9%E6%B3%89%EF%BC%91%EF%BC%94.jpg/960px-%E6%B9%AF%E6%B6%8C%E6%B8%A9%E6%B3%89%EF%BC%91%EF%BC%94.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "金沢市",
-        "license": "CC BY 2.1 jp",
-        "source_url": "https://commons.wikimedia.org/wiki/File:%E6%B9%AF%E6%B6%8C%E6%B8%A9%E6%B3%89%EF%BC%91%EF%BC%94.jpg"
-      }
-    }
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11647513",
@@ -14830,7 +14662,7 @@
       "zh_tw": "金澤神社",
       "en": "Kanazawa Shrine"
     },
-    "kana_source": "wikipedia",
+    "kana_source": "wikidata",
     "location": {
       "lat": 36.560456,
       "lng": 136.662874
@@ -14842,7 +14674,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 57.93,
+    "score": 57.84,
     "summary": {
       "text": "金沢神社（かなざわじんじゃ）は、石川県金沢市に鎮座する神社。菅原道真を主祭神とする。江戸時代後期から明治時代初期に流行した藩祖を祀った神社のひとつ。金澤神社とも表記する。兼六園に隣接している。",
       "lang": "ja",
@@ -14877,7 +14709,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11647524",
@@ -14901,7 +14733,7 @@
       "博物館"
     ],
     "featured": false,
-    "score": 33.87,
+    "score": 34.15,
     "summary": {
       "text": "金沢能楽美術館（かなざわのうがくびじゅつかん）は、石川県金沢市広坂にある能楽に関する美術館。",
       "lang": "ja",
@@ -14947,7 +14779,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11648713",
@@ -14970,7 +14802,7 @@
       "博物館"
     ],
     "featured": false,
-    "score": 70.73,
+    "score": 70.63,
     "summary": {
       "text": "鈴木大拙館（すずきだいせつかん）位於日本石川縣金澤市本多町，是一個紀念鈴木大拙的博物館。",
       "lang": "zh",
@@ -15009,8 +14841,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11653513",
@@ -15031,7 +14862,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 64.47,
+    "score": 64.49,
     "summary": {
       "text": "長町武家屋敷跡（ながまちぶけやしきあと）是石川縣金澤市的觀光地。加賀藩時代的上・中階級藩士的侍屋敷群。完整保存的土牆和石疊路，保留藩政時代的面影。",
       "lang": "zh",
@@ -15081,15 +14912,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "winter": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/85/%E9%95%B7%E7%94%BA%E6%AD%A6%E5%AE%B6%E5%B1%8B%E6%95%B7%E8%B7%A1%EF%BC%94.jpg/960px-%E9%95%B7%E7%94%BA%E6%AD%A6%E5%AE%B6%E5%B1%8B%E6%95%B7%E8%B7%A1%EF%BC%94.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "金沢市",
-        "license": "CC BY 2.1 jp",
-        "source_url": "https://commons.wikimedia.org/wiki/File:%E9%95%B7%E7%94%BA%E6%AD%A6%E5%AE%B6%E5%B1%8B%E6%95%B7%E8%B7%A1%EF%BC%94.jpg"
-      }
-    }
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11664846",
@@ -15112,7 +14935,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 61.59,
+    "score": 61.44,
     "summary": {
       "text": "須須神社（すずじんじゃ）は、石川県珠洲市にある神社。高座宮（たかくらぐう）・金分宮（きんぶんぐう）が珠洲市三崎町寺家に、奥宮（おくみや）が珠洲市狼煙町に鎮座する。",
       "lang": "ja",
@@ -15142,7 +14965,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11667632",
@@ -15163,7 +14986,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 42.74,
+    "score": 43.04,
     "summary": {
       "text": "香林坊アトリオ（こうりんぼうアトリオ、KOHRINBO ATRIO）は、石川県金沢市香林坊にある複合商業施設である。",
       "lang": "ja",
@@ -15204,7 +15027,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11670270",
@@ -15225,7 +15048,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 57.95,
+    "score": 58.08,
     "summary": {
       "text": "高松サービスエリア（たかまつサービスエリア）は、石川県かほく市二ツ屋にあるのと里山海道（石川県道60号金沢田鶴浜線）のサービスエリアである。道の駅を兼ねており、道の駅高松（みちのえきたかまつ）の名称で登録している。",
       "lang": "ja",
@@ -15251,7 +15074,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11675141",
@@ -15274,7 +15097,7 @@
       "城"
     ],
     "featured": false,
-    "score": 67.43,
+    "score": 67.29,
     "summary": {
       "text": "Torigoe Castle (鳥越城, Torigoe-jō) was a Sengoku period yamashiro-style Japanese castle located in the Torigoe area of what is now part of the city of Hakusan, Ishikawa Prefecture in the Hokuriku region of Honshu, Japan. Its ruins have been protected as a National Historic Site since 1985. The National Historic Site consists of the ruins of two castles, Torigoe Castle and Futoge Castle. The two castles were built on two mountaintops with the Dainichi River between them in 1573 as the final bastions for the Kaga Ikkō-Ikki movement.",
       "lang": "en",
@@ -15304,7 +15127,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q1192164",
@@ -15325,7 +15148,7 @@
     "themes": [],
     "tags": [],
     "featured": true,
-    "score": 82.97,
+    "score": 82.96,
     "summary": {
       "text": "法師旅館是位於日本石川縣小松市粟津溫泉的一座旅館，創建於718年，也是慄津溫泉內最早開設的溫泉旅館，在2017年時的經營者是第46代經營者，不過目前旅館為「株式會社善吾樓」所擁有。",
       "lang": "zh",
@@ -15355,15 +15178,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "winter": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9b/Spa_bath_at_Hoshi_Ryokan.jpg/960px-Spa_bath_at_Hoshi_Ryokan.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Akiyoshi's Room",
-        "license": "Public domain",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Spa_bath_at_Hoshi_Ryokan.jpg"
-      }
-    }
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q119928925",
@@ -15386,7 +15201,7 @@
       "寺院"
     ],
     "featured": false,
-    "score": 26.99,
+    "score": 27.03,
     "summary": {
       "text": "龍護寺（りゅうごじ）は、石川県羽咋郡志賀町酒見門前にある曹洞宗の寺院。山号は金谷山。能登三十三観音霊場第25番札所。",
       "lang": "ja",
@@ -15421,7 +15236,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q119985790",
@@ -15444,7 +15259,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 54.44,
+    "score": 54.5,
     "summary": {
       "text": "江沼神社（えぬまじんじゃ）は、石川県加賀市大聖寺八間道55（大聖寺片原町）にある神社。旧社格は県社。境内の北側には旧大聖寺川が流れており、境内の南側には加賀市立錦城小学校がある。",
       "lang": "ja",
@@ -15490,7 +15305,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q120028820",
@@ -15511,7 +15326,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 32.91,
+    "score": 32.98,
     "summary": {
       "text": "毫摂寺（ごうしょうじ）は、石川県加賀市大聖寺法華坊町にある真宗大谷派の寺院。山号は出雲路山。本尊は阿弥陀如来。法華坊町の南西部にある。",
       "lang": "ja",
@@ -15557,7 +15372,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q120467885",
@@ -15577,7 +15392,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 51.4,
+    "score": 51.71,
     "summary": {
       "text": "綿ヶ滝（わたがたき）は、石川県白山市下吉谷町の手取川の断崖にかかる落差32メートルの滝。景観が美しく手取川流域を代表する景勝地の一つ。",
       "lang": "ja",
@@ -15603,7 +15418,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q122363043",
@@ -15627,7 +15442,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 54.41,
+    "score": 54.42,
     "summary": {
       "text": "小松天満宮（こまつてんまんぐう）は、石川県小松市天神町に所在する神社。前田家ゆかりの創建当初からの社殿等は重要文化財や石川県指定有形文化財に指定されている。",
       "lang": "ja",
@@ -15662,7 +15477,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q123367592",
@@ -15685,7 +15500,7 @@
       "博物館"
     ],
     "featured": false,
-    "score": 43.02,
+    "score": 44.38,
     "summary": {
       "text": "小松市立宮本三郎美術館（こまつしりつみやもとさぶろうびじゅつかん）は、石川県小松市小馬出町にある洋画家・宮本三郎の個人美術館である。",
       "lang": "ja",
@@ -15729,7 +15544,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q123517288",
@@ -15794,7 +15609,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 49.95,
+    "score": 49.93,
     "summary": {
       "text": "山中温泉文化会館（やまなかおんせんぶんかかいかん）は、石川県加賀市山中温泉西桂木町にあるコンベンション施設。",
       "lang": "ja",
@@ -15824,7 +15639,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q124325322",
@@ -15846,7 +15661,7 @@
       "橋"
     ],
     "featured": false,
-    "score": 31.67,
+    "score": 31.74,
     "summary": {
       "text": "手取川大橋（てどりがわおおはし）は、石川県能美郡川北町朝日の手取川に架かる国道8号（金沢西バイパス）の橋である。",
       "lang": "ja",
@@ -15854,14 +15669,7 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8a/Tedorigawa-ohashi_bridge%2C_Kawakita_Route_8.jpg/960px-Tedorigawa-ohashi_bridge%2C_Kawakita_Route_8.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "運動会プロテインパワー",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Tedorigawa-ohashi_bridge,_Kawakita_Route_8.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q124325322"
     },
@@ -15876,7 +15684,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q125927189",
@@ -15899,7 +15707,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 62.66,
+    "score": 62.75,
     "summary": {
       "text": "宇多須神社（うたすじんじゃ）是石川縣金澤市的神社。是金沢五社（金澤市江戸時代鎮座的5座神社的總稱）之一。建立於718年，1599年祭祀前田利家。",
       "lang": "zh",
@@ -15934,7 +15742,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-29"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q126020334",
@@ -15957,7 +15765,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 47.1,
+    "score": 47.41,
     "summary": {
       "text": "羽黒神社（はぐろじんじゃ）は、石川県珠洲市にある神社で、正院町小路八丁全域の産土神（うぶすなのかみ）、十の神社（小路、岡田、乙谷出、新保口、平床、細屋、内方、森腰、粟津、熊谷）の総社である。",
       "lang": "ja",
@@ -15983,7 +15791,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q126200035",
@@ -16007,7 +15815,7 @@
       "主題樂園"
     ],
     "featured": false,
-    "score": 62.17,
+    "score": 62.0,
     "summary": {
       "text": "トレインパーク白山（トレインパークはくさん、英：Train Park Hakusan）は、石川県白山市にある、新幹線を中心とした展示を行う博物館。JR西日本白山総合車両所に隣接し、そこでの作業を窓越しに見学できるのが特徴。",
       "lang": "ja",
@@ -16058,7 +15866,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q126599984",
@@ -16080,7 +15888,7 @@
       "公園"
     ],
     "featured": false,
-    "score": 55.04,
+    "score": 55.11,
     "summary": {
       "text": "金沢城北市民運動公園（かなざわじょうほくしみんうんどうこうえん）は、石川県金沢市磯部町に所在する都市公園（運動公園）。公園全体は金沢市が所管するが、施設ごとに別々の指定管理者により管理されている。",
       "lang": "ja",
@@ -16128,7 +15936,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q126889450",
@@ -16149,7 +15957,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 51.42,
+    "score": 51.44,
     "summary": {
       "text": "砂子坂道場（すなこざかどうじょう）は、現在の石川県金沢市砂子坂町にあたる加賀国河北郡砂子坂に所在した浄土真宗の寺院。城端別院善徳寺や、法林寺村の光德寺の前身となった。戦国時代には、加賀・越中（富山県）国境における一向一揆の軍事拠点として山城的機能を有しており、富山県砺波市が製作するとやま城郭カードNo.93に選定されている。",
       "lang": "ja",
@@ -16179,7 +15987,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q130727051",
@@ -16237,7 +16045,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 50.54,
+    "score": 50.87,
     "summary": {
       "text": "葭島神社（よししまじんじゃ）は、石川県小松市大川町に所在する神社。創建は1614年（寛永19年）9月3日で、前田利常が多田権内に命じて小松城中葭島に屋舗社堂護摩堂として建立させた五穀寺が開祖であった。1881年（明治14年）に、稲荷大明神の旧鎮座地名に因んで葭島神社と改称したのが当社である。近代社格制度では、1906年（明治39年）神饌幣帛料供進社に指定されている。",
       "lang": "ja",
@@ -16272,7 +16080,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q135194767",
@@ -16295,7 +16103,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 45.98,
+    "score": 46.01,
     "summary": {
       "text": "瀧浪神社（たきなみじんじゃ）は、石川県小松市大野町にある神社。",
       "lang": "ja",
@@ -16318,7 +16126,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q13534604",
@@ -16336,7 +16144,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 49.39,
+    "score": 49.56,
     "summary": {
       "text": "七尾フラワーパーク・のと蘭ノ国（ななおフラワーパーク・のとらんのくに）は、石川県七尾市に所在する植物園である。",
       "lang": "ja",
@@ -16364,7 +16172,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q138411106",
@@ -16385,7 +16193,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 42.27,
+    "score": 42.71,
     "summary": {
       "text": "天笠山（てんがいやま）は、能登半島北東部(奥能登)の石川県輪島市にある山。標高は235m。",
       "lang": "ja",
@@ -16408,7 +16216,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q139495101",
@@ -16429,7 +16237,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 45.53,
+    "score": 46.86,
     "summary": {
       "text": "津幡ふるさと歴史館（つばたふるさとれきしかん）は、石川県河北郡津幡町清水にある公立博物館。愛称はれきしる。津幡城跡に建っている。津幡町字吉倉には附属施設として津幡町歴史民俗資料収蔵庫がある。",
       "lang": "ja",
@@ -16479,7 +16287,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q139784060",
@@ -16500,7 +16308,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 44.58,
+    "score": 45.51,
     "summary": {
       "text": "のと里山里海ミュージアム（のとさとやまさとうみミュージアム）は、石川県七尾市にある、能登半島の自然、歴史、文化をテーマとした公立の博物館である。",
       "lang": "ja",
@@ -16523,7 +16331,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q140134916",
@@ -16543,7 +16351,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 57.58,
+    "score": 57.75,
     "summary": {
       "text": "深田久弥 山の文化館（ふかだきゅうや やまのぶんかかん）は、「日本百名山」の著者として知られる文学者深田久弥と山・森・自然をテーマとする石川県加賀市にある博物館・文学館・交流施設である。館施設である旧山長織物建造物3棟は国の登録有形文化財に登録され、かつ近代化産業遺産に認定されている。深田久弥の生誕地である加賀市大聖寺に2002年（平成14年）開館した。",
       "lang": "ja",
@@ -16584,7 +16392,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q140173288",
@@ -16605,7 +16413,7 @@
       "博物館"
     ],
     "featured": false,
-    "score": 48.39,
+    "score": 48.9,
     "summary": {
       "text": "無限庵御殿（むげんあんごてん）は、石川県加賀市山中温泉にある書院造の建築物。公益財団法人無限庵が管理している。石川県指定有形文化財。",
       "lang": "ja",
@@ -16636,7 +16444,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q140656129",
@@ -16659,7 +16467,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 28.48,
+    "score": 30.3,
     "summary": {
       "text": "Imohori Tōgoro Shrine (芋堀藤五郎神社, imohori Tōgoro-jinja), also known as Tōgoro Shrine (藤五郎神社, Tōgoro-jinja) is a Shinto shrine located in the hillside community of Yamashina-machi, Kanazawa, Ishikawa Prefecture, Japan. It is a one-bay shrine built in the nagare-zukuri style.",
       "lang": "en",
@@ -16690,7 +16498,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q16934379",
@@ -16708,7 +16516,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 47.51,
+    "score": 47.49,
     "summary": {
       "text": "The 489 series (489系, 489-kei) was a limited express electric multiple unit (EMU) train type introduced in March 1972 by Japanese National Railways (JNR) in Japan, and later operated by East Japan Railway Company (JR East) and West Japan Railway Company (JR-West) until 2012.",
       "lang": "en",
@@ -16748,7 +16556,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q17192006",
@@ -16770,7 +16578,7 @@
       "博物館"
     ],
     "featured": false,
-    "score": 54.23,
+    "score": 54.36,
     "summary": {
       "text": "アリス館志賀（アリスかんしか）は、石川県羽咋郡志賀町赤住にある北陸電力の原子力発電展示・PR施設。1994年（平成6年）4月29日に開館した。",
       "lang": "ja",
@@ -16805,7 +16613,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q17192314",
@@ -16886,7 +16694,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 40.25,
+    "score": 40.23,
     "summary": {
       "text": "アル・プラザ金沢（アル・プラザかなざわ）は、石川県金沢市諸江町にある複合商業施設（ショッピングセンター）である。",
       "lang": "ja",
@@ -16936,7 +16744,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q17192318",
@@ -16956,7 +16764,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 39.8,
+    "score": 39.7,
     "summary": {
       "text": "アル・プラザ小松（アル・プラザこまつ）は、石川県小松市園町にある複合商業施設（ショッピングセンター）である。",
       "lang": "ja",
@@ -16988,7 +16796,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q17192319",
@@ -17008,7 +16816,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 38.9,
+    "score": 39.13,
     "summary": {
       "text": "アル・プラザ津幡（アル・プラザつばた）は、石川県河北郡津幡町にあるショッピングセンター。",
       "lang": "ja",
@@ -17027,14 +16835,7 @@
         "distance_m": 610
       }
     ],
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/27/%E3%82%A2%E3%83%AB%E3%83%BB%E3%83%97%E3%83%A9%E3%82%B6%E6%B4%A5%E5%B9%A1.jpg/960px-%E3%82%A2%E3%83%AB%E3%83%BB%E3%83%97%E3%83%A9%E3%82%B6%E6%B4%A5%E5%B9%A1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Whatsfb",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:%E3%82%A2%E3%83%AB%E3%83%BB%E3%83%97%E3%83%A9%E3%82%B6%E6%B4%A5%E5%B9%A1.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q17192319"
     },
@@ -17049,7 +16850,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q17192984",
@@ -17072,7 +16873,7 @@
       "博物館"
     ],
     "featured": false,
-    "score": 54.0,
+    "score": 54.42,
     "summary": {
       "text": "石川県金沢港大野からくり記念館(いしかわけんかなざわこうおおのからくりきねんかん)とは、石川県金沢市大野町 にある記念館である。",
       "lang": "ja",
@@ -17107,7 +16908,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q17209339",
@@ -17118,7 +16919,7 @@
       "zh_tw": "高皇産霊神社",
       "en": "Takamimusuhi Shrine"
     },
-    "kana_source": "wikipedia",
+    "kana_source": "wikidata",
     "location": {
       "lat": 36.542694,
       "lng": 136.615278
@@ -17130,7 +16931,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 52.71,
+    "score": 52.86,
     "summary": {
       "text": "高皇産霊神社（たかみむすひじんじゃ）は、石川県野々市市押野1丁目にある旧村社の神社。旧押野村西部にあった元の高皇産霊神社は、「加賀國式内等旧社記」に登場する押野山王神社であったされる。",
       "lang": "ja",
@@ -17180,7 +16981,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q17226278",
@@ -17203,7 +17004,7 @@
       "博物館"
     ],
     "featured": false,
-    "score": 59.77,
+    "score": 59.85,
     "summary": {
       "text": "中谷宇吉郎雪の科学館（なかやうきちろう ゆきのかがくかん、英語: Nakaya Ukichiro Museum of Snow and Ice）は、石川県加賀市に位置する中谷宇吉郎の雪にまつわる博物館である。",
       "lang": "ja",
@@ -17238,7 +17039,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q18456958",
@@ -17259,7 +17060,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 42.04,
+    "score": 42.14,
     "summary": {
       "text": "ラスパ白山（ラスパはくさん、英: RASPA hakusan）は、石川県白山市倉光に所在し、ユニー株式会社が運営するミニモール型ショッピングセンターである。",
       "lang": "ja",
@@ -17298,7 +17099,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q20044418",
@@ -17321,7 +17122,7 @@
       "博物館"
     ],
     "featured": false,
-    "score": 54.48,
+    "score": 54.56,
     "summary": {
       "text": "サイエンスヒルズこまつは、石川県小松市こまつの杜にある博物館・科学館。",
       "lang": "ja",
@@ -17361,7 +17162,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q2639098",
@@ -17382,7 +17183,7 @@
     "themes": [],
     "tags": [],
     "featured": true,
-    "score": 87.2,
+    "score": 87.16,
     "summary": {
       "text": "白山（はくさん）是位於日本石川縣、福井縣、岐阜縣的成層火山。自30萬年到40萬年前開始有火山活動。最近的一次噴發是在1659年（萬治2年）。白山與富士山、立山並列為日本三名山（日本三靈山）之一。最高峰御前峰，標高2,702公尺。",
       "lang": "zh",
@@ -17408,27 +17209,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-10-02",
-    "season_images": {
-      "spring": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/67/Mount_Haku_from_Mount_Hideri.jpg/960px-Mount_Haku_from_Mount_Hideri.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Alpsdake",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Mount_Haku_from_Mount_Hideri.jpg"
-      },
-      "winter": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cb/Hakusan_from_aburazaka_2003_5_5.jpg/960px-Hakusan_from_aburazaka_2003_5_5.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "alpsdake",
-        "license": "Public domain",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Hakusan_from_aburazaka_2003_5_5.jpg"
-      },
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/97/HakuSan.jpg/960px-HakuSan.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "BehBeh",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:HakuSan.jpg"
-      }
-    }
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q29407949",
@@ -17449,7 +17230,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 56.07,
+    "score": 56.1,
     "summary": {
       "text": "卯辰山山麓寺院群（うだつやまさんろくじいんぐん）は、石川県金沢市東山にある寺院群。平成23年（2011年）重要伝統的建造物群保存地区として選定された。金沢城の南東にある小立野寺院群、南西にある寺町寺院群とならぶ金沢三寺院群の一つ。",
       "lang": "ja",
@@ -17484,7 +17265,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q29408050",
@@ -17507,7 +17288,7 @@
       "寺院"
     ],
     "featured": false,
-    "score": 33.4,
+    "score": 33.5,
     "summary": {
       "text": "本興寺（ほんこうじ）は、石川県金沢市薬師町ロにある日蓮宗の寺院。山号は一乗山。旧本山は京都立本寺、潮師法縁。北陸における日蓮宗の古刹の一つ。金沢市指定文化財の木造日蓮聖人坐像附胎内舎利塔を安置する。",
       "lang": "ja",
@@ -17542,7 +17323,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q30923323",
@@ -17563,7 +17344,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 62.59,
+    "score": 62.7,
     "summary": {
       "text": "イオンモール新小松（イオンモールしんこまつ）は、石川県小松市清六町にあるイオンモールの大型ショッピングセンターである。県内では2008年（平成20年）に開業したイオンモールかほくに次いで、2か所目のイオンモールとなる。",
       "lang": "ja",
@@ -17602,7 +17383,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q30926001",
@@ -17675,7 +17456,8 @@
       "ja": "蓮昌寺",
       "kana": "れんじょうじ",
       "romaji": "Renjoji",
-      "zh_tw": "蓮昌寺"
+      "zh_tw": "蓮昌寺",
+      "en": "Renshō-ji Temple"
     },
     "kana_source": "wikipedia",
     "location": {
@@ -17689,7 +17471,7 @@
       "寺院"
     ],
     "featured": false,
-    "score": 29.91,
+    "score": 29.86,
     "summary": {
       "text": "蓮昌寺（れんじょうじ）は石川県金沢市東山にある日蓮宗の寺院。山号は普香山。旧本山は大本山妙顕寺（四条門流）、勇師法縁。山門は市指定文化財。卯辰山山麓寺院群を構成する寺院の一つ。",
       "lang": "ja",
@@ -17724,7 +17506,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q30926021",
@@ -17798,7 +17580,7 @@
       "寺院"
     ],
     "featured": false,
-    "score": 27.85,
+    "score": 28.08,
     "summary": {
       "text": "妙泰寺（みょうたいじ）は石川県金沢市東山にある日蓮宗の寺院。寺宝として加賀藩火矢方御用文書(高麗小川流石火矢文書)などが伝わる。山号は大谷山。旧本山は大本山妙顕寺（四条門流）、勇師法縁。",
       "lang": "ja",
@@ -17806,14 +17588,7 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/24/Myotai-ji%2C_Kanazawa_-_Gate.jpg/960px-Myotai-ji%2C_Kanazawa_-_Gate.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "運動会プロテインパワー",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Myotai-ji,_Kanazawa_-_Gate.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q30926023",
       "osm": "way/323040808"
@@ -17833,7 +17608,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q30926025",
@@ -17855,7 +17630,7 @@
       "寺院"
     ],
     "featured": false,
-    "score": 31.31,
+    "score": 31.14,
     "summary": {
       "text": "立像寺（りゅうそうじ）は、石川県金沢市寺町4丁目にある日蓮宗の寺院。山号は妙布山。旧本山は京都立本寺、潮師法縁。金沢市指定文化財の本堂と鐘楼は金沢市の江戸時代寺社建築を代表する貴重な遺構。充洽園旧蹟。",
       "lang": "ja",
@@ -17901,7 +17676,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q30926058",
@@ -17924,7 +17699,7 @@
       "寺院"
     ],
     "featured": false,
-    "score": 30.3,
+    "score": 30.32,
     "summary": {
       "text": "全性寺（ぜんしょうじ）は、石川県金沢市東山にある日蓮宗の寺院。山号は妙具山。旧本山は大本山妙顕寺（四条門流）、勇師法縁。山門は金沢市指定文化財。",
       "lang": "ja",
@@ -17932,14 +17707,7 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/46/Utatsuyamasanrokujiingun011.jpg/960px-Utatsuyamasanrokujiingun011.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "金沢市",
-        "license": "CC BY 2.1 jp",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Utatsuyamasanrokujiingun011.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q30926058",
       "osm": "node/3465698700"
@@ -17959,7 +17727,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q30929215",
@@ -17967,7 +17735,8 @@
       "ja": "三宝寺",
       "kana": "さんぽうじ",
       "romaji": "Sanpoji",
-      "zh_tw": "三宝寺"
+      "zh_tw": "三宝寺",
+      "en": "Sanbō-ji Temple"
     },
     "kana_source": "wikipedia",
     "location": {
@@ -17981,7 +17750,7 @@
       "寺院"
     ],
     "featured": false,
-    "score": 27.4,
+    "score": 27.33,
     "summary": {
       "text": "三宝寺（さんぽうじ）は、石川県金沢市東山にある日蓮宗の寺院。山号は弘法山。旧本山は羽咋市の妙成寺、通師法縁。痔の神様として知られる木造秋山尊自雲霊神坐像を祀る。",
       "lang": "ja",
@@ -18016,7 +17785,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q30930335",
@@ -18078,7 +17847,7 @@
       "寺院"
     ],
     "featured": false,
-    "score": 30.21,
+    "score": 29.91,
     "summary": {
       "text": "真成寺（しんじょうじ）は、石川県金沢市東山の卯辰山山麓寺院群にある日蓮宗の寺院。山号は妙運山。旧本山は滝谷妙成寺、潮師法縁。",
       "lang": "ja",
@@ -18113,7 +17882,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q30930468",
@@ -18136,7 +17905,7 @@
       "寺院"
     ],
     "featured": false,
-    "score": 30.21,
+    "score": 30.18,
     "summary": {
       "text": "本土寺（ほんどじ）は、石川県鹿島郡中能登町西馬場ユにある日蓮宗の寺院。山号は常在山。旧本山は滝谷妙成寺、通師・雑司ヶ谷法縁。日蓮宗宗門史跡。重要文化財の観音経絵を所蔵する。",
       "lang": "ja",
@@ -18153,14 +17922,7 @@
         "distance_m": 1290
       }
     ],
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/87/Hondo-ji%2C_Nakanoto_-_Gate.jpg/960px-Hondo-ji%2C_Nakanoto_-_Gate.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "運動会プロテインパワー",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Hondo-ji,_Nakanoto_-_Gate.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q30930468",
       "osm": "node/12405899714"
@@ -18180,7 +17942,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q30930612",
@@ -18203,7 +17965,7 @@
       "寺院"
     ],
     "featured": false,
-    "score": 26.95,
+    "score": 26.99,
     "summary": {
       "text": "妙正寺（みょうしょうじ）は、石川県金沢市東山にある日蓮宗の寺院。山号は精進山。旧本山は滝谷妙成寺、勇師法縁。唐金立像釈尊像を祀る。",
       "lang": "ja",
@@ -18211,14 +17973,7 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2e/Myosho-ji%2C_Kanazawa_-_Gate.jpg/960px-Myosho-ji%2C_Kanazawa_-_Gate.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "運動会プロテインパワー",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Myosho-ji,_Kanazawa_-_Gate.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q30930612",
       "osm": "node/3465698702"
@@ -18238,7 +17993,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q31702828",
@@ -18259,7 +18014,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 51.71,
+    "score": 51.72,
     "summary": {
       "text": "宝立山（ほうりゅうざん）は、能登半島北東部の石川県輪島市・珠洲市にある山。西峰の標高は471mで、三角点のある東峰は468.5m。山頂付近のブナ林は奥能登では他に鉢伏山の一部にしか存在せず貴重で、いしかわの森林50選に指定されている。",
       "lang": "ja",
@@ -18278,7 +18033,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q3242206",
@@ -18301,7 +18056,7 @@
       "博物館"
     ],
     "featured": true,
-    "score": 81.89,
+    "score": 81.55,
     "summary": {
       "text": "金澤21世紀美術館，是一家位於日本石川縣金澤市市中心的現代美術館，簡稱「21美」，開館於2004年10月9日，建築師為SANAA事務所，主要的設計概念來自事務所中的女性建築師妹島和世。此美術館竣工前一個月，獲得威尼斯建築雙年展的金獅獎，在其建築設計上，備受世人注目。",
       "lang": "zh",
@@ -18347,21 +18102,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-10-02",
-    "season_images": {
-      "winter": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/83/%E9%87%91%E6%B2%A221%E4%B8%96%E7%B4%80%E7%BE%8E%E8%A1%93%E9%A4%A8%EF%BC%94.jpg/960px-%E9%87%91%E6%B2%A221%E4%B8%96%E7%B4%80%E7%BE%8E%E8%A1%93%E9%A4%A8%EF%BC%94.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "金沢市",
-        "license": "CC BY 2.1 jp",
-        "source_url": "https://commons.wikimedia.org/wiki/File:%E9%87%91%E6%B2%A221%E4%B8%96%E7%B4%80%E7%BE%8E%E8%A1%93%E9%A4%A8%EF%BC%94.jpg"
-      },
-      "night": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/69/21st_Century_Museum_of_Contemporary_Art%2C_Kanazawa_11.jpg/960px-21st_Century_Museum_of_Contemporary_Art%2C_Kanazawa_11.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Saigawasakurabashi",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:21st_Century_Museum_of_Contemporary_Art,_Kanazawa_11.jpg"
-      }
-    }
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q3297759",
@@ -18384,7 +18125,7 @@
       "博物館"
     ],
     "featured": false,
-    "score": 65.7,
+    "score": 65.75,
     "summary": {
       "text": "Ishikawa Prefectural Museum of Art (石川県立美術館, Ishikawa Kenritsu Bijutsukan), also known as IPMA, is the main art gallery of Ishikawa Prefecture, Japan. It is one of Japan's many museums which are supported by a prefecture.",
       "lang": "en",
@@ -18419,7 +18160,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q3342007",
@@ -18442,7 +18183,7 @@
       "寺院"
     ],
     "featured": true,
-    "score": 71.08,
+    "score": 70.95,
     "summary": {
       "text": "妙立寺（みょうりゅうじ）又名忍者寺，是日本石川縣金澤市日蓮宗的佛寺。山號為正久山。",
       "lang": "zh",
@@ -18497,8 +18238,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q34798169",
@@ -18521,7 +18261,7 @@
       "岬"
     ],
     "featured": false,
-    "score": 58.88,
+    "score": 58.99,
     "summary": {
       "text": "尼御前岬（あまごぜんみさき）は、石川県加賀市美岬町にある、日本海に面した岬である。越前加賀海岸国定公園内にあり、海食台と断崖からなる奇勝で知られる。",
       "lang": "ja",
@@ -18551,15 +18291,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cd/%E5%B0%BC%E5%BE%A1%E5%89%8D%E5%B2%AC%EF%BC%8F%E8%8A%9D%E7%94%9F%E5%BA%83%E5%A0%B4360%E5%BA%A6%E3%83%91%E3%83%8E%E3%83%A9%E3%83%9E_-_panoramio.jpg/960px-%E5%B0%BC%E5%BE%A1%E5%89%8D%E5%B2%AC%EF%BC%8F%E8%8A%9D%E7%94%9F%E5%BA%83%E5%A0%B4360%E5%BA%A6%E3%83%91%E3%83%8E%E3%83%A9%E3%83%9E_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "博柳",
-        "license": "CC BY 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:%E5%B0%BC%E5%BE%A1%E5%89%8D%E5%B2%AC%EF%BC%8F%E8%8A%9D%E7%94%9F%E5%BA%83%E5%A0%B4360%E5%BA%A6%E3%83%91%E3%83%8E%E3%83%A9%E3%83%9E_-_panoramio.jpg"
-      }
-    }
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q34958944",
@@ -18582,7 +18314,7 @@
       "岬"
     ],
     "featured": false,
-    "score": 50.58,
+    "score": 50.82,
     "summary": {
       "text": "加佐ノ岬（かさのみさき）は、石川県加賀市橋立町にある、日本海に面した岬である。加佐の岬、加佐岬とも表記される。",
       "lang": "ja",
@@ -18612,7 +18344,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q3511690",
@@ -18635,7 +18367,7 @@
       "寺院"
     ],
     "featured": false,
-    "score": 69.1,
+    "score": 69.3,
     "summary": {
       "text": "總持寺祖院（そうじじそいん）是位在日本石川縣輪島市門前町的寺院，曹洞宗別院。山號「諸嶽山」（しょがくざん）。本尊僧形觀世音菩薩、開山（初代住持）為瑩山紹瑾。別稱能登祖院、能山、嶽山。",
       "lang": "zh",
@@ -18665,7 +18397,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q3571451",
@@ -18686,7 +18418,7 @@
     "themes": [],
     "tags": [],
     "featured": true,
-    "score": 74.61,
+    "score": 74.56,
     "summary": {
       "text": "山中溫泉，是位於日本石川縣加賀市的一個溫泉，歷史據傳超過1300年 ，為加賀溫泉鄉的一部分。山中溫泉的溫泉街主要位於大聖寺川溪谷沿岸。",
       "lang": "zh",
@@ -18712,8 +18444,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q42312666",
@@ -18782,7 +18513,7 @@
       "博物館"
     ],
     "featured": false,
-    "score": 63.75,
+    "score": 63.61,
     "summary": {
       "text": "金澤市立安江金箔工藝館是一座位於日本石川縣金澤市的金箔博物館。",
       "lang": "zh",
@@ -18817,7 +18548,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-29"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q43064611",
@@ -18837,7 +18568,7 @@
       "博物館"
     ],
     "featured": false,
-    "score": 38.16,
+    "score": 38.34,
     "summary": {
       "text": "The Kanazawa Phonograph Museum (Japanese: 金沢蓄音器館) is a museum about phonograph located in Kanazawa, Ishikawa Prefecture, Japan.",
       "lang": "en",
@@ -18879,7 +18610,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q43593945",
@@ -18927,7 +18658,8 @@
       "ja": "蓮覚寺",
       "kana": "れんかくじ",
       "romaji": "Renkakuji",
-      "zh_tw": "蓮覚寺"
+      "zh_tw": "蓮覚寺",
+      "en": "Rengaku-ji Temple"
     },
     "kana_source": "wikipedia",
     "location": {
@@ -18941,7 +18673,7 @@
       "寺院"
     ],
     "featured": false,
-    "score": 29.68,
+    "score": 30.02,
     "summary": {
       "text": "蓮覚寺（れんかくじ）は、石川県金沢市東山二丁目にある日蓮宗の寺院。",
       "lang": "ja",
@@ -18976,7 +18708,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q4676340",
@@ -18999,7 +18731,7 @@
       "博物館"
     ],
     "featured": false,
-    "score": 64.03,
+    "score": 64.02,
     "summary": {
       "text": "Ishikawa Prefectural History Museum (石川県立歴史博物館, Ishikawa Kenritsu Rekishi Hakubutsukan) is a prefectural museum in Kanazawa, Japan, dedicated to the history and culture of Ishikawa Prefecture. The three ICP red brick buildings date to 1909-14 and functioned first as the local arsenal, then after the Pacific War as the Kanazawa College of Art, before being converted into a museum in 1986.",
       "lang": "en",
@@ -19029,7 +18761,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q48756388",
@@ -19086,7 +18818,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 59.25,
+    "score": 59.43,
     "summary": {
       "text": "九十九湾（つくもわん）は、石川県鳳珠郡能登町にある湾。日本海に面する能登半島の北東部内浦側に位置し、周辺はリアス式海岸となっている。",
       "lang": "ja",
@@ -19116,15 +18848,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ef/Tsukumo_Bay_Noto%2C_Ishikawa_Aerial_photograph.2010.jpg/960px-Tsukumo_Bay_Noto%2C_Ishikawa_Aerial_photograph.2010.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "国土地理院",
-        "license": "Attribution",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Tsukumo_Bay_Noto,_Ishikawa_Aerial_photograph.2010.jpg"
-      }
-    }
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q4948416",
@@ -19142,7 +18866,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 55.0,
+    "score": 54.92,
     "summary": {
       "text": "The Botanic Garden, Faculty of Science, Kanazawa University (金沢大学理学部附属植物園, Kanazawa Daigaku Rigakubu Fuzoku Shokubutsuen) is a botanical garden operated by Kanazawa University. It is located at the university's Kakuma Campus in Kakuma-machi, Kanazawa, Ishikawa, Japan.",
       "lang": "en",
@@ -19168,7 +18892,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q49503",
@@ -19191,7 +18915,7 @@
       "島"
     ],
     "featured": false,
-    "score": 67.11,
+    "score": 67.13,
     "summary": {
       "text": "The Nanatsujima islets are a group of uninhabited small islands with a collective land area of 24 ha. They lie in the Sea of Japan about 20 km off the northern tip of the Noto Peninsula in Ishikawa Prefecture, Japan. The archipelago comprises two islet groups; a northern group (Tatsujima, Ohshima and Karimatajima), and a southern group (Akashima, Aramikojima, Eboshijima and Mikuriyajima). They are composed of volcanic rocks, either andesite or tuff breccia.",
       "lang": "en",
@@ -19221,7 +18945,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q49507",
@@ -19244,7 +18968,7 @@
       "島"
     ],
     "featured": true,
-    "score": 75.77,
+    "score": 75.95,
     "summary": {
       "text": "舳倉島是位於日本海上，能登半島北約50千米處的島嶼。 屬於石川縣輪島市海士町。",
       "lang": "zh",
@@ -19274,15 +18998,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-29",
-    "season_images": {
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/de/Hegura_20091001.jpg/960px-Hegura_20091001.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "国土地理院",
-        "license": "Attribution",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Hegura_20091001.jpg"
-      }
-    }
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q511412",
@@ -19307,7 +19023,7 @@
       "史跡"
     ],
     "featured": true,
-    "score": 91.67,
+    "score": 91.66,
     "summary": {
       "text": "金澤城是日本石川縣金澤市的一座城堡。江戶時代是加賀藩藩主前田氏的居城。為一座平山城。",
       "lang": "zh",
@@ -19338,33 +19054,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-10-02",
-    "season_images": {
-      "autumn": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1c/Momiji_at_Kanazawa_castle.jpg/960px-Momiji_at_Kanazawa_castle.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "sergejf",
-        "license": "CC BY 2.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Momiji_at_Kanazawa_castle.jpg"
-      },
-      "winter": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5e/%E7%9F%B3%E5%B7%9D%E6%A9%8B%EF%BC%95.jpg/960px-%E7%9F%B3%E5%B7%9D%E6%A9%8B%EF%BC%95.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "金沢市",
-        "license": "CC BY 2.1 jp",
-        "source_url": "https://commons.wikimedia.org/wiki/File:%E7%9F%B3%E5%B7%9D%E6%A9%8B%EF%BC%95.jpg"
-      },
-      "night": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/36/Kanazawa_Castle_Park_%28152765125%29.jpeg/960px-Kanazawa_Castle_Park_%28152765125%29.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Okochuke",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Kanazawa_Castle_Park_(152765125).jpeg"
-      },
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cb/131109_Kanazawa_Castle_Kanazawa_Ishikawa_pref_Japan01s5p.jpg/960px-131109_Kanazawa_Castle_Kanazawa_Ishikawa_pref_Japan01s5p.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "663highland",
-        "license": "CC BY 2.5",
-        "source_url": "https://commons.wikimedia.org/wiki/File:131109_Kanazawa_Castle_Kanazawa_Ishikawa_pref_Japan01s5p.jpg"
-      }
-    }
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q55526790",
@@ -19387,7 +19077,7 @@
       "公園"
     ],
     "featured": false,
-    "score": 54.79,
+    "score": 55.09,
     "summary": {
       "text": "石川県森林公園（いしかわけんしんりんこうえん）は、石川県河北郡津幡町にある公園。",
       "lang": "ja",
@@ -19395,14 +19085,7 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/aa/IFP_kamoike.jpg/960px-IFP_kamoike.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "越山賀水",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:IFP_kamoike.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q55526790"
     },
@@ -19417,7 +19100,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q55534721",
@@ -19438,7 +19121,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 60.44,
+    "score": 59.96,
     "summary": {
       "text": "Shunran-no-Sato (Japanese: 春蘭の里) are a group of farmhouse inns in Ishikawa Prefecture of Japan, known as some of the first farmhouse inns in Japan. As of 2018, there were 49 inns in total. As a successful case of rural revitalization, they are frequently referred to media, papers and other villages to solve problems of regional depopulation.",
       "lang": "en",
@@ -19468,7 +19151,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q5600400",
@@ -19489,7 +19172,7 @@
     "themes": [],
     "tags": [],
     "featured": true,
-    "score": 71.93,
+    "score": 71.95,
     "summary": {
       "text": "The great sugi of Kayano (栢野大杉, Kayano Ōsugi) is a Cryptomeria (Sugi) tree at Yamanaka Onsen in Kaga, Ishikawa Prefecture, Japan. One of the four trees believed to be sacred in the precincts of the Sugawara Shrine, it has received the distinction of designation as a Special Natural Monument from the Agency for Cultural Affairs of Japan.",
       "lang": "en",
@@ -19519,8 +19202,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q56169178",
@@ -19541,7 +19223,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 42.77,
+    "score": 42.96,
     "summary": {
       "text": "片町きらら（かたまちきらら、英語: Katamachi Kirara）は、石川県金沢市片町にある複合商業施設である。",
       "lang": "ja",
@@ -19582,7 +19264,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q56524224",
@@ -19603,7 +19285,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 50.8,
+    "score": 50.85,
     "summary": {
       "text": "津幡町文化会館（つばたまちぶんかかいかん、Tsubata Town cultural hall CYGNUS）は、石川県河北郡津幡町にある複合文化施設である。愛称はシグナスで、津幡町の鳥・ハクチョウにちなんで名付けられた 。",
       "lang": "ja",
@@ -19653,7 +19335,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q5897562",
@@ -19674,7 +19356,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 66.75,
+    "score": 66.64,
     "summary": {
       "text": "東山東是位於日本石川縣金澤市的一個地區，也是重要傳統建築群保存地區，以東茶屋街這一名稱而著稱（日語：ひがし茶屋街）。東山東的面積約1.8公頃，南北長約130米，東西長約180米，保存地區內的140棟建築內約三分之二是傳統建築，是金澤市主要觀光地之一。",
       "lang": "zh",
@@ -19704,15 +19386,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "night": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/33/Higashiyamahigashi_2015_night.JPG/960px-Higashiyamahigashi_2015_night.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Kakidai",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Higashiyamahigashi_2015_night.JPG"
-      }
-    }
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q6080285",
@@ -19735,7 +19409,7 @@
       "寺院"
     ],
     "featured": false,
-    "score": 62.26,
+    "score": 62.22,
     "summary": {
       "text": "Ishikawa Ongakudō (石川県立音楽堂, Ishikawa kenritsu ongakudō) is a concert hall in Kanazawa, Ishikawa Prefecture, Japan. It opened in 2001 and has two principal performances spaces: the shoebox-style Concert Hall, which seats 1,560; and the Hōgaku Hall, with a capacity of 720, for traditional Japanese music, kabuki, and bunraku. The walls of the main auditorium are finished with urushi. Yoshinobu Ashihara was the architect with acoustic design by Nagata Acoustics, who trialled their concept with a 1:10 scale model.",
       "lang": "en",
@@ -19784,7 +19458,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q60853841",
@@ -19856,7 +19530,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 55.38,
+    "score": 55.59,
     "summary": {
       "text": "多田屋（ただや）は、石川県・和倉温泉にある温泉旅館。多田一族によって代々経営されており、現在は6代目。",
       "lang": "ja",
@@ -19879,7 +19553,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q65274349",
@@ -19903,7 +19577,7 @@
       "博物館"
     ],
     "featured": false,
-    "score": 53.52,
+    "score": 53.62,
     "summary": {
       "text": "白山恐竜パーク白峰（はくさんきょうりゅうパークしらみね、英: Hakusan Dinosaur Park Shiramine）は、石川県白山市桑島に位置する市立の博物館類似施設。白山市桑島にある国の天然記念物「桑島化石壁」から発見された動植物の化石を中心に恐竜に関する古生物学資料を展示・公開しており、化石発見広場では化石の発掘体験もできる。同パーク内には白峰化石調査センターが設置されており、調査研究や最新の情報発信も行っている。",
       "lang": "ja",
@@ -19931,7 +19605,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q6919709",
@@ -19952,7 +19626,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 63.14,
+    "score": 63.13,
     "summary": {
       "text": "Mt. Bessan (別山, Bessan) is located on the border of Takayama, Gifu Prefecture, and Hakusan, Ishikawa Prefecture, Japan, and rises to a height of 2,399 m (7,871 ft). There are two triangulation stations at the top of the mountain. Mount Haku can be seen from the north. Bessan Shrine (別山神社 Bessan Jinja) is a short distance from the peak. This area is part of Hakusan National Park. (Note: there is also a Mt. Bessan in located in Toyama Prefecture.)",
       "lang": "en",
@@ -19982,7 +19656,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q6924291",
@@ -20003,7 +19677,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 68.17,
+    "score": 68.1,
     "summary": {
       "text": "Mount Utatsu (卯辰山, Utatsu-yama) is a mountain in Kanazawa, Ishikawa Prefecture, Japan. It is also known by a number of other names, including Mount Mukai (向山, Mukai-yama), Mount Mukō (夢香山, Mukō-yama), Mount Garyū (臥竜山, Garyū-zan), and Mount Kasuga (春日山, Kasuga-yama). It is visible to the east of Kanazawa Castle and has Toyokuni Shrine located on its slopes.",
       "lang": "en",
@@ -20033,7 +19707,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q704702",
@@ -20056,7 +19730,7 @@
       "神社"
     ],
     "featured": true,
-    "score": 77.0,
+    "score": 76.92,
     "summary": {
       "text": "白山比咩神社是日本石川縣白山市的神社。為式內社、加賀國一宮、舊社格為國幣中社（現神社本廳的別表神社）。日本全國約2000座白山神社之總本宮。",
       "lang": "zh",
@@ -20066,10 +19740,10 @@
     },
     "images": [
       {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d0/%E7%99%BD%E5%B1%B1%E6%AF%94%E5%92%A9%E7%A5%9E%E7%A4%BE_%E5%A4%96%E6%8B%9D%E6%AE%BF.JPG/960px-%E7%99%BD%E5%B1%B1%E6%AF%94%E5%92%A9%E7%A5%9E%E7%A4%BE_%E5%A4%96%E6%8B%9D%E6%AE%BF.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Saigen Jiro",
-        "license": "Public domain",
-        "source_url": "https://commons.wikimedia.org/wiki/File:%E7%99%BD%E5%B1%B1%E6%AF%94%E5%92%A9%E7%A5%9E%E7%A4%BE_%E5%A4%96%E6%8B%9D%E6%AE%BF.JPG"
+        "url": "https://upload.wikimedia.org/wikipedia/commons/4/4e/Honden_shirayama_hime_shrine_ishikawa.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+        "author": "dennis bloodnok (bloodnok)",
+        "license": "CC BY 2.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Honden_shirayama_hime_shrine_ishikawa.jpg"
       }
     ],
     "external_ids": {
@@ -20087,8 +19761,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q7231539",
@@ -20109,7 +19782,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 46.13,
+    "score": 46.02,
     "summary": {
       "text": "The Porte Kanazawa (ポルテ金沢, Porute Kanazawa) is a skyscraper located in Kanazawa, Isikawa Prefecture, Japan.",
       "lang": "en",
@@ -20158,7 +19831,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q7446985",
@@ -20183,7 +19856,7 @@
       "名勝"
     ],
     "featured": true,
-    "score": 72.54,
+    "score": 72.51,
     "summary": {
       "text": "成巽閣位於日本石川縣金澤市，是文久3年（1863年）加賀藩13代藩主前田齊泰之母真龍院的隱居所，現在作為歷史博物館對一般公眾開放，和兼六園相鄰。在建設當時成巽閣名為巽御殿。成巽閣共有兩層，一層是書院造，二層是數奇屋造，是江戶時代末期大名屋敷的代表建築，被指定為重要文化財。其附屬庭園飛鶴庭也被指定為名勝。",
       "lang": "zh",
@@ -20214,8 +19887,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q7961227",
@@ -20236,7 +19908,7 @@
     "themes": [],
     "tags": [],
     "featured": true,
-    "score": 73.71,
+    "score": 73.67,
     "summary": {
       "text": "和倉溫泉（わくらおんせん）是日本石川縣七尾市的溫泉。",
       "lang": "zh",
@@ -20271,15 +19943,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "night": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a1/Wakura_Onsen_01.jpg/960px-Wakura_Onsen_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Steph & Adam from Calgary, Canada",
-        "license": "CC BY 2.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Wakura_Onsen_01.jpg"
-      }
-    }
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q8011662",
@@ -20333,8 +19997,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q8061361",
@@ -20356,7 +20019,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 59.3,
+    "score": 59.36,
     "summary": {
       "text": "Yunokuni no Mori (ゆのくにの森) is a crafts village in Komatsu, a city located in the southern portion of Ishikawa Prefecture in Japan. It is located near Awazu Onsen amid over one hundred acres of natural forest, and contains a cluster of traditional Japanese houses, each containing a working display of traditional handicrafts native to the Hokuriku region of Japan.",
       "lang": "en",
@@ -20395,7 +20058,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q82594996",
@@ -20418,7 +20081,7 @@
       "博物館"
     ],
     "featured": false,
-    "score": 51.0,
+    "score": 51.1,
     "summary": {
       "text": "白山市立松任中川一政記念美術館（はくさんしりつ まっとうなかがわかずまさきねんびじゅつかん）は、石川県白山市にある美術館である。",
       "lang": "ja",
@@ -20435,14 +20098,7 @@
         "distance_m": 150
       }
     ],
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/63/%E7%99%BD%E5%B1%B1%E5%B8%82%E7%AB%8B%E6%9D%BE%E4%BB%BB%E4%B8%AD%E5%B7%9D%E4%B8%80%E6%94%BF%E8%A8%98%E5%BF%B5%E7%BE%8E%E8%A1%93%E9%A4%A8.jpg/960px-%E7%99%BD%E5%B1%B1%E5%B8%82%E7%AB%8B%E6%9D%BE%E4%BB%BB%E4%B8%AD%E5%B7%9D%E4%B8%80%E6%94%BF%E8%A8%98%E5%BF%B5%E7%BE%8E%E8%A1%93%E9%A4%A8.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "運動会プロテインパワー",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:%E7%99%BD%E5%B1%B1%E5%B8%82%E7%AB%8B%E6%9D%BE%E4%BB%BB%E4%B8%AD%E5%B7%9D%E4%B8%80%E6%94%BF%E8%A8%98%E5%BF%B5%E7%BE%8E%E8%A1%93%E9%A4%A8.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q82594996",
       "osm": "way/374678902"
@@ -20462,15 +20118,18 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q84136369",
     "name": {
       "ja": "平岡野神社",
+      "kana": "ひらおかのじんじゃ",
+      "romaji": "Hiraokanojinja",
       "zh_tw": "平岡野神社",
       "en": "Hiraokano Shrine"
     },
+    "kana_source": "wikidata",
     "location": {
       "lat": 36.577185,
       "lng": 136.646321
@@ -20525,7 +20184,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q8535253",
@@ -20546,7 +20205,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 62.83,
+    "score": 62.84,
     "summary": {
       "text": "Mt. Sannomine (三ノ峰, San-no-mine) is located on the border of Takayama, Gifu Prefecture, and Hakusan, Ishikawa Prefecture, Japan, and rises to a height of 2,128 m (6,982 ft). It is located within the Hakusan National Park.",
       "lang": "en",
@@ -20576,15 +20235,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "winter": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/68/Sannomine_from_Mount_Eboshi.jpg/960px-Sannomine_from_Mount_Eboshi.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Alpsdake",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Sannomine_from_Mount_Eboshi.jpg"
-      }
-    }
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q85877428",
@@ -20605,7 +20256,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 45.58,
+    "score": 45.95,
     "summary": {
       "text": "千丈平（せんじょうだいら）とは、石川県白山市の両白山地中の大笠山の西側にあり、標高1,500 mあたりに位置する高原である。ブナ純林という特徴的な植生から、国の保護林となっており、その面積は857 ha。",
       "lang": "ja",
@@ -20628,7 +20279,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q85881015",
@@ -20649,7 +20300,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 55.61,
+    "score": 55.99,
     "summary": {
       "text": "朝日山城（あさひやまじょう）は、石川県金沢市北千石町にあった安土桃山時代の日本の城（山城）。別名一本木城（いっぽんぎじょう）。",
       "lang": "ja",
@@ -20672,7 +20323,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q85882695",
@@ -20695,7 +20346,7 @@
       "城"
     ],
     "featured": false,
-    "score": 57.31,
+    "score": 57.32,
     "summary": {
       "text": "石動山城（せきどうさんじょう、いするぎやまじょう）は、能登国鹿島郡石動山（現・石川県鹿島郡中能登町石動山）にあった日本の城（山城）。七尾城の南、能越国境の荒山城の東に位置した。なお、石動山は国の史跡に指定されている。",
       "lang": "ja",
@@ -20718,7 +20369,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q9070062",
@@ -20739,7 +20390,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 57.15,
+    "score": 57.21,
     "summary": {
       "text": "ゴジラ岩（ゴジラいわ）は、石川県珠洲市馬緤町（まつなぎまち）の赤神海岸にある岩（奇岩）。高さ約2.5メートル。",
       "lang": "ja",
@@ -20769,7 +20420,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q94714",
@@ -20792,7 +20443,7 @@
       "島"
     ],
     "featured": true,
-    "score": 74.41,
+    "score": 74.6,
     "summary": {
       "text": "見附島是位於石川縣珠洲市的一個無人島。因其樣子獨特，別名軍艦島。",
       "lang": "zh",
@@ -20802,10 +20453,10 @@
     },
     "images": [
       {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/95/Mitsukejima_%28Ishikawa%29_1.jpg/960px-Mitsukejima_%28Ishikawa%29_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "photo: Qurren (talk) Taken with Canon IXY 430F (Digital IXUS 245 HS)",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/c/c7/Mitsukejima.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+        "author": "Akimoto at Japanese Wikipedia",
         "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Mitsukejima_(Ishikawa)_1.jpg"
+        "source_url": "https://commons.wikimedia.org/wiki/File:Mitsukejima.jpg"
       }
     ],
     "external_ids": {
@@ -20822,15 +20473,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "panorama": {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/b/b2/Mitsukejima_2024.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-        "author": "国土地理院",
-        "license": "Attribution",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Mitsukejima_2024.jpg"
-      }
-    }
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q961396",
@@ -20853,7 +20496,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 61.38,
+    "score": 61.5,
     "summary": {
       "text": "Toyokuni Shrine (豊国神社, Toyokuni-jinja) is a Shinto shrine located on Mount Utatsu in Higashi-Mikage-machi, Kanazawa, Ishikawa Prefecture, Japan. Under the shrine ranking system, it was listed as a village shrine. Its annual festival day is May 2.",
       "lang": "en",
@@ -20883,7 +20526,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q97141219",
@@ -20904,7 +20547,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 56.4,
+    "score": 56.37,
     "summary": {
       "text": "白山市白峰（はくさんししらみね）は、石川県白山市にある重要伝統的建造物群保存地区。白山市（旧：石川郡白峰村）白峰の一部、約10.7haの範囲である。",
       "lang": "ja",
@@ -20934,7 +20577,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q97274614",
@@ -20955,7 +20598,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 51.91,
+    "score": 51.94,
     "summary": {
       "text": "和倉温泉お祭り会館（わくらおんせんおまつりかいかん、Wakura Onsen Omatsuri Hall）は、石川県七尾市和倉町（和倉温泉）にある、七尾市を代表する4つの祭りの山車等を展示し、紹介する施設（山車会館）である。",
       "lang": "ja",
@@ -20987,7 +20630,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q998239",
@@ -21012,7 +20655,7 @@
       "特別名勝"
     ],
     "featured": true,
-    "score": 97.14,
+    "score": 97.2,
     "summary": {
       "text": "兼六園，日本三名園之一，位於石川縣金澤市，名列日本國之特別名勝，面積約11.7公頃。起源於17世紀中期加賀藩在金澤城的外郭造營的藩庭，是江戶時代代表的池泉回遊式庭園。和岡山市的後樂園、水戶市的偕樂園並稱日本三名園。1922年，指定為國之名勝、1985年，指定為國之特別名勝。冬季時以雪吊的風景而聞名。",
       "lang": "zh",
@@ -21043,27 +20686,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-10-02",
-    "season_images": {
-      "spring": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c6/Kenroku-en_Gankobashi_under_blooming_sakura.jpg/960px-Kenroku-en_Gankobashi_under_blooming_sakura.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "SOHAFun",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Kenroku-en_Gankobashi_under_blooming_sakura.jpg"
-      },
-      "winter": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/90/Kenrokuen_in_winter_01.jpg/960px-Kenrokuen_in_winter_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "yosi.nakao from Japan.",
-        "license": "CC BY-SA 2.1 jp",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Kenrokuen_in_winter_01.jpg"
-      },
-      "night": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1d/Kenroku-en_20170131-3.jpg/960px-Kenroku-en_20170131-3.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Suicasmo",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Kenroku-en_20170131-3.jpg"
-      }
-    }
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q998709",
@@ -21074,7 +20697,7 @@
       "zh_tw": "尾山神社",
       "en": "Oyama Shrine"
     },
-    "kana_source": "osm",
+    "kana_source": "wikidata",
     "location": {
       "lat": 36.566389,
       "lng": 136.655278
@@ -21087,7 +20710,7 @@
       "重要文化財"
     ],
     "featured": true,
-    "score": 76.43,
+    "score": 76.5,
     "summary": {
       "text": "尾山神社是位於日本石川縣金澤市的神社，創建於明治6年（1873年），供奉加賀藩歷代藩主。被指定為重要文化財，是金澤市內著名景點之一。",
       "lang": "zh",
@@ -21137,14 +20760,6 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-10-02",
-    "season_images": {
-      "night": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b9/Oyama_Shrine_20200819_02.jpg/960px-Oyama_Shrine_20200819_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "先従隗始",
-        "license": "CC0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Oyama_Shrine_20200819_02.jpg"
-      }
-    }
+    "updated_at": "2026-10-04"
   }
 ]
