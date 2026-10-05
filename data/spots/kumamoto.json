@@ -1067,6 +1067,35 @@
     "updated_at": "2026-09-28"
   },
   {
+    "id": "osm-node-8748127280",
+    "name": {
+      "ja": "権現鍾乳洞",
+      "zh_tw": "権現鍾乳洞"
+    },
+    "location": {
+      "lat": 32.414855,
+      "lng": 130.407723
+    },
+    "prefecture": "kumamoto",
+    "kind": "major",
+    "themes": [],
+    "tags": [],
+    "featured": false,
+    "score": 0.0,
+    "images": [],
+    "external_ids": {
+      "osm": "node/8748127280"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/node/8748127280",
+        "fetched_at": "2026-10-04"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-10-04"
+  },
+  {
     "id": "osm-node-9287551979",
     "name": {
       "ja": "山の中の海軍の町 にしき ひみつ基地ミュージアム",
@@ -2256,7 +2285,7 @@
       "橋"
     ],
     "featured": false,
-    "score": 21.22,
+    "score": 20.98,
     "summary": {
       "text": "弘化橋（こうかばし）は、熊本県菊池郡大津町真木の菊池川水系矢護川に架かる道路橋である。名称より弘化年間に架橋されたと推測されている。",
       "lang": "ja",
@@ -2279,7 +2308,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q10856417",
@@ -2301,7 +2330,7 @@
       "島"
     ],
     "featured": false,
-    "score": 33.12,
+    "score": 33.01,
     "summary": {
       "text": "竹島（たけしま）は、熊本県天草市に属する無人島である。",
       "lang": "ja",
@@ -2324,7 +2353,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q108759276",
@@ -2347,7 +2376,7 @@
       "城"
     ],
     "featured": false,
-    "score": 53.36,
+    "score": 53.42,
     "summary": {
       "text": "志岐城（しきじょう）は、熊本県天草郡苓北町にあった日本の城。",
       "lang": "ja",
@@ -2355,14 +2384,7 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ed/%E5%BF%97%E5%B2%90%E5%9F%8E%E5%9D%80%E6%9C%AC%E4%B8%B8_%E5%BF%97%E5%B2%90%E9%BA%9F%E6%B3%89%E7%A4%BE%E6%9C%AC%E6%AE%BF.jpg/960px-%E5%BF%97%E5%B2%90%E5%9F%8E%E5%9D%80%E6%9C%AC%E4%B8%B8_%E5%BF%97%E5%B2%90%E9%BA%9F%E6%B3%89%E7%A4%BE%E6%9C%AC%E6%AE%BF.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Masafumi Takeda",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:%E5%BF%97%E5%B2%90%E5%9F%8E%E5%9D%80%E6%9C%AC%E4%B8%B8_%E5%BF%97%E5%B2%90%E9%BA%9F%E6%B3%89%E7%A4%BE%E6%9C%AC%E6%AE%BF.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q108759276",
       "osm": "node/7854048263"
@@ -2382,7 +2404,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q108803244",
@@ -2402,7 +2424,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 52.46,
+    "score": 52.35,
     "summary": {
       "text": "湯浦温泉（ゆのうらおんせん）は、熊本県葦北郡芦北町湯浦（旧国肥後国）にある温泉。",
       "lang": "ja",
@@ -2434,7 +2456,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q108940339",
@@ -2454,7 +2476,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 45.98,
+    "score": 46.2,
     "summary": {
       "text": "鈴ヶ谷温泉（すずがだにおんせん）は、熊本県阿蘇郡小国町（旧国肥後国）にある温泉。涌蓋山の東麓に位置。",
       "lang": "ja",
@@ -2473,7 +2495,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q1090968",
@@ -2499,7 +2521,7 @@
       "史跡"
     ],
     "featured": true,
-    "score": 80.57,
+    "score": 80.52,
     "summary": {
       "text": "水前寺成趣園是位在日本熊本縣熊本市中央區水前寺公園（町名）的大名庭園。面積約7萬3千平方公尺。通稱水前寺公園。該園是由阿蘇山伏流水湧出之池為中心的桃山式回遊庭園，以築山、浮石、草坪和松樹等觀賞用樹木來模仿東海道五十三次之景勝。",
       "lang": "zh",
@@ -2546,15 +2568,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/50/Suizen-ji_ko-en_%2C_%E6%B0%B4%E5%89%8D%E5%AF%BA%E5%85%AC%E5%9C%92_-_panoramio_%286%29.jpg/960px-Suizen-ji_ko-en_%2C_%E6%B0%B4%E5%89%8D%E5%AF%BA%E5%85%AC%E5%9C%92_-_panoramio_%286%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "z tanuki",
-        "license": "CC BY 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Suizen-ji_ko-en_,_%E6%B0%B4%E5%89%8D%E5%AF%BA%E5%85%AC%E5%9C%92_-_panoramio_(6).jpg"
-      }
-    }
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q109299741",
@@ -2578,7 +2592,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 57.02,
+    "score": 56.93,
     "summary": {
       "text": "小国両神社（おぐにりょうじんじゃ）は、熊本県阿蘇郡小国町宮原に鎮座する神社。富くじに関する開運招福の逸話が伝わり、境内社の祇園社に伝わる獅子舞や、神幸祭に奉納される下城楽、中原楽とよばれる神事芸能は、無形民俗文化財に指定されている。",
       "lang": "ja",
@@ -2613,7 +2627,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q109363790",
@@ -2633,7 +2647,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 42.76,
+    "score": 42.65,
     "summary": {
       "text": "サンリーカリーノ菊陽（サンリーカリーノきくよう）は、熊本県菊池郡菊陽町津久礼に所在する複合商業施設である。",
       "lang": "ja",
@@ -2657,14 +2671,7 @@
         "distance_m": 1330
       }
     ],
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/19/Aeon_kikuyou.JPG/960px-Aeon_kikuyou.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Kmbdt926",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Aeon_kikuyou.JPG"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q109363790"
     },
@@ -2679,7 +2686,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q109567644",
@@ -2700,7 +2707,7 @@
       "世界遺產"
     ],
     "featured": true,
-    "score": 72.69,
+    "score": 72.57,
     "summary": {
       "text": "Sakitsu Church is a Catholic church in Amakusa, Kumamoto, Japan.",
       "lang": "en",
@@ -2731,8 +2738,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q110226210",
@@ -2752,7 +2758,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 48.34,
+    "score": 48.6,
     "summary": {
       "text": "山川温泉（やまかわおんせん）は、熊本県阿蘇郡小国町北里にある温泉。",
       "lang": "ja",
@@ -2775,7 +2781,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q111551889",
@@ -2798,7 +2804,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 50.3,
+    "score": 50.39,
     "summary": {
       "text": "石神八幡宮（いしがみはちまんぐう）は、熊本県 熊本市にある品陀和気命（応神天皇）を祀る神社。1264年創建。",
       "lang": "ja",
@@ -2824,7 +2830,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11258557",
@@ -2846,7 +2852,7 @@
       "購物"
     ],
     "featured": false,
-    "score": 40.17,
+    "score": 40.34,
     "summary": {
       "text": "ゆめタウンシティモールは、熊本県荒尾市にあるショッピングセンター。",
       "lang": "ja",
@@ -2854,14 +2860,7 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/be/Arao_City_Mall_2021-1.JPG/960px-Arao_City_Mall_2021-1.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "hyolee2",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Arao_City_Mall_2021-1.JPG"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q11258557"
     },
@@ -2872,7 +2871,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11270506",
@@ -2893,7 +2892,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 51.75,
+    "score": 51.97,
     "summary": {
       "text": "そよ風パーク（そよかぜパーク）は、熊本県上益城郡山都町にある宿泊施設・体験施設・物産館などが集まる観光施設。1996年にオープン。2012年3月に道の駅として登録された。",
       "lang": "ja",
@@ -2923,7 +2922,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11280396",
@@ -2943,7 +2942,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 57.89,
+    "score": 58.06,
     "summary": {
       "text": "やつしろ全国花火競技大会（やつしろぜんこくはなびきょうぎたいかい）は、熊本県八代市の球磨川河川敷で開催される花火大会である。八代の秋を彩る花火競技大会である。",
       "lang": "ja",
@@ -2966,7 +2965,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11280899",
@@ -2986,7 +2985,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 38.51,
+    "score": 38.3,
     "summary": {
       "text": "ゆめタウンあらおは、熊本県荒尾市に位置し、株式会社イズミが運営しているショッピングセンター、ゆめタウンシティモールの前身。当初は、イズミグループの株式会社ゆめタウン熊本が運営していた。",
       "lang": "ja",
@@ -3012,7 +3011,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11280902",
@@ -3032,7 +3031,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 47.26,
+    "score": 47.57,
     "summary": {
       "text": "ゆめタウンはませんは、熊本県熊本市南区に位置するショッピングセンターである。",
       "lang": "ja",
@@ -3058,7 +3057,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11280903",
@@ -3078,7 +3077,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 44.63,
+    "score": 44.8,
     "summary": {
       "text": "ゆめタウンサンピアンは、熊本県熊本市東区にある、株式会社イズミが運営するショッピングセンターである。当初は株式会社ゆめタウン熊本（イズミグループ）の運営であった。国道57号熊本東バイパス沿いに立地している。",
       "lang": "ja",
@@ -3104,7 +3103,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11280910",
@@ -3124,7 +3123,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 42.58,
+    "score": 43.2,
     "summary": {
       "text": "ゆめタウン八代（ゆめタウンやつしろ）は、熊本県八代市に所在し、株式会社イズミが運営するショッピングセンターである。",
       "lang": "ja",
@@ -3132,14 +3131,7 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3d/Youme_Town_Yatsushiro_2021.JPG/960px-Youme_Town_Yatsushiro_2021.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "hyolee2",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Youme_Town_Yatsushiro_2021.JPG"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q11280910"
     },
@@ -3154,7 +3146,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11280911",
@@ -3175,7 +3167,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 49.74,
+    "score": 49.85,
     "summary": {
       "text": "ゆめタウン光の森（ゆめタウンひかりのもり）は、熊本県菊池郡菊陽町光の森7丁目に位置し、株式会社イズミが運営するショッピングセンター（以下SC）。",
       "lang": "ja",
@@ -3221,7 +3213,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11281629",
@@ -3241,7 +3233,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 53.15,
+    "score": 53.39,
     "summary": {
       "text": "わいた温泉郷 （わいたせんきょう）は、熊本県阿蘇郡小国町にある温泉の総称（温泉郷）である。涌蓋山の麓に広がっている。",
       "lang": "ja",
@@ -3264,7 +3256,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11281777",
@@ -3286,7 +3278,7 @@
       "水族館"
     ],
     "featured": false,
-    "score": 56.94,
+    "score": 57.0,
     "summary": {
       "text": "わくわく海中水族館シードーナツ（わくわくかいちゅうすいぞくかんしーどーなつ）は、熊本県上天草市にある天草パールセンターが運営する海中水族館。日本でも数少ない海に浮かべた船が水族館となっている。ドーナッツ型の水族館内をめぐると、世界の海を1周できるような展示となっている。",
       "lang": "ja",
@@ -3294,14 +3286,7 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/af/Sea_Donuts_Amakusa.jpg/960px-Sea_Donuts_Amakusa.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Totti",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Sea_Donuts_Amakusa.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q11281777",
       "osm": "node/8785700317"
@@ -3321,7 +3306,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11283301",
@@ -3341,7 +3326,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 64.44,
+    "score": 64.42,
     "summary": {
       "text": "アジアパークは、かつて熊本県荒尾市本井手1518番地に存在したテーマパークである。総合保養地域整備法（通称「リゾート法」）に基づいて開園したテーマパークの一つであり、同法の負の部分や、行政の甘い見通し、第三セクターによる安易な経営と、その破綻を象徴付けるテーマパークとされる。",
       "lang": "ja",
@@ -3360,7 +3345,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11286028",
@@ -3380,7 +3365,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 36.1,
+    "score": 36.19,
     "summary": {
       "text": "イオンタウン荒尾（イオンタウンあらお）は、熊本県荒尾市原万田字八反田にあるショッピングセンターである。",
       "lang": "ja",
@@ -3419,7 +3404,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11286031",
@@ -3439,7 +3424,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 37.03,
+    "score": 37.16,
     "summary": {
       "text": "イオンタウン西熊本 (イオンタウンにしくまもと) は、熊本県熊本市南区島町にあるショッピングセンターである。ショッピングセンターのタイプは近隣足元商圏型をとっている。",
       "lang": "ja",
@@ -3471,7 +3456,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11286118",
@@ -3494,7 +3479,7 @@
       "城"
     ],
     "featured": false,
-    "score": 53.43,
+    "score": 53.92,
     "summary": {
       "text": "イオンモール宇城（イオンモールうき、ÆON MALL UKI）は、熊本県宇城市小川町に所在するイオンモールが運営するショッピングセンターである。イオン宇城店を核店舗に約100の専門店が出店している。投資資金の調達の関係から店舗設置者は三井住友信託銀行となっている。",
       "lang": "ja",
@@ -3535,7 +3520,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11286159",
@@ -3556,7 +3541,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 66.61,
+    "score": 66.81,
     "summary": {
       "text": "永旺夢樂城熊本是日本熊本縣上益城郡嘉島町一座由永旺夢樂城營運的購物中心。該商場至今仍廣泛沿用昔日的暱稱「CLAIR」（クレア）。2026年7月28日，受2026年熊本地震引發的爆炸事故影響，商場宣佈臨時停業，恢復營業日期尚未確定。",
       "lang": "zh",
@@ -3586,7 +3571,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11286229",
@@ -3608,7 +3593,7 @@
       "購物"
     ],
     "featured": false,
-    "score": 43.25,
+    "score": 43.63,
     "summary": {
       "text": "イオン八代ショッピングセンター（イオンやつしろショッピングセンター）は、熊本県八代市に所在するイオン九州運営のショッピングセンター。イオン八代店を核店舗としている。",
       "lang": "ja",
@@ -3616,14 +3601,7 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/01/Aeon_Yatsushiro_Shopping_Center_2021.JPG/960px-Aeon_Yatsushiro_Shopping_Center_2021.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "hyolee2",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Aeon_Yatsushiro_Shopping_Center_2021.JPG"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q11286229"
     },
@@ -3638,7 +3616,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11289284",
@@ -3658,7 +3636,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 67.8,
+    "score": 67.54,
     "summary": {
       "text": "ウルトラマンランドは、かつて円谷プロダクションが運営していた『ウルトラシリーズ』を題材にしたテーマパーク。",
       "lang": "ja",
@@ -3677,7 +3655,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11295064",
@@ -3697,7 +3675,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 38.44,
+    "score": 38.41,
     "summary": {
       "text": "カリーノ下通（カリーノしもとおり、英称：Carino Shimotori）は、熊本県熊本市中央区安政町にある、株式会社カリーノが運営する商業施設。熊本市中心部の繁華街「下通」から外れた「三年坂通り」と「駕町通り」に位置する。",
       "lang": "ja",
@@ -3729,7 +3707,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11306073",
@@ -3749,7 +3727,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 40.95,
+    "score": 40.99,
     "summary": {
       "text": "サンリブシティくまなんは、熊本県熊本市中央区にあり、サンリブ・マルショクグループの大型ショッピングセンター。",
       "lang": "ja",
@@ -3784,7 +3762,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11306092",
@@ -3805,7 +3783,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 41.58,
+    "score": 41.75,
     "summary": {
       "text": "サンロード新市街（サンロードしんしがい）は熊本県熊本市繁華街のストリートの一つである。",
       "lang": "ja",
@@ -3822,14 +3800,7 @@
         "distance_m": 1250
       }
     ],
-    "images": [
-      {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/5/53/Shinshigai_shop_street_SUNROAD_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-        "author": "MK Products",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Shinshigai_shop_street_SUNROAD_1.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q11306092"
     },
@@ -3844,7 +3815,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11316692",
@@ -3864,7 +3835,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 45.6,
+    "score": 45.16,
     "summary": {
       "text": "ダイエー熊本下通店（ダイエーくまもとしもとおりてん）は、かつて株式会社ダイエーが熊本県熊本市中央区下通一丁目で運営していた大型商業施設（ショッピングセンター）である。",
       "lang": "ja",
@@ -3881,14 +3852,7 @@
         "distance_m": 820
       }
     ],
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d9/Daiei_shimodori.jpg/960px-Daiei_shimodori.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "おんさき",
-        "license": "CC BY 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Daiei_shimodori.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q11316692"
     },
@@ -3903,7 +3867,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11329993",
@@ -3922,7 +3886,7 @@
       "公園"
     ],
     "featured": false,
-    "score": 52.06,
+    "score": 51.88,
     "summary": {
       "text": "ヒゴタイ公園は、熊本県北東部の産山村にある公園。",
       "lang": "ja",
@@ -3930,14 +3894,7 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3a/Echinops_setifer_ja_02.jpg/960px-Echinops_setifer_ja_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Miya.m",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Echinops_setifer_ja_02.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q11329993"
     },
@@ -3948,7 +3905,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11334262",
@@ -3968,7 +3925,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 54.04,
+    "score": 54.14,
     "summary": {
       "text": "フードパル熊本（フードパルくまもと、Foodpal Kumamoto）は、熊本県熊本市北区にある食品工業団地。オープンファクトリーとして工場見学や制作体験のできる施設やレストラン・各種ショッピングコーナーなどがあり、週末にはフリーマーケットなども開催され『食のテーマパーク』として賑わいを見せている。",
       "lang": "ja",
@@ -4002,7 +3959,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11352664",
@@ -4023,7 +3980,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 55.62,
+    "score": 55.55,
     "summary": {
       "text": "一心行の大桜（いっしんぎょうのおおざくら）は、熊本県阿蘇郡南阿蘇村にある一本桜。",
       "lang": "ja",
@@ -4047,14 +4004,7 @@
         "distance_m": 1010
       }
     ],
-    "images": [
-      {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/1/15/%E4%B8%80%E5%BF%83%E8%A1%8C%E3%81%AE%E5%A4%A7%E6%A1%9C_%28%E7%86%8A%E6%9C%AC%E7%9C%8C%E5%8D%97%E9%98%BF%E8%98%87%E6%9D%91%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-        "author": "ヒーリングルーム ひふみ さん http://hifumi.sakura.ne.jp/",
-        "license": "Copyrighted free use",
-        "source_url": "https://commons.wikimedia.org/wiki/File:%E4%B8%80%E5%BF%83%E8%A1%8C%E3%81%AE%E5%A4%A7%E6%A1%9C_(%E7%86%8A%E6%9C%AC%E7%9C%8C%E5%8D%97%E9%98%BF%E8%98%87%E6%9D%91).jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q11352664"
     },
@@ -4069,7 +4019,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11355121",
@@ -4089,7 +4039,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 52.33,
+    "score": 52.27,
     "summary": {
       "text": "三宝寺（さんぽうじ）は、熊本県宇城市小川町南部田に所在する黄檗宗の寺院である。山号は梵福山。",
       "lang": "ja",
@@ -4119,7 +4069,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11358913",
@@ -4142,7 +4092,7 @@
       "島"
     ],
     "featured": false,
-    "score": 50.37,
+    "score": 50.34,
     "summary": {
       "text": "上島是日本九州熊本縣天草群島的一座島嶼，面積225平方公里，位於下島的東側，行政上分屬天草市與上天草市。",
       "lang": "zh",
@@ -4150,14 +4100,7 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/41/Amakusa_Islands.jpg/960px-Amakusa_Islands.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Image Science and Analysis Laboratory, NASA-Johnson Space Center. \"The Gateway to Astronaut Photography of Earth.\"",
-        "license": "Public domain",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Amakusa_Islands.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q11358913"
     },
@@ -4172,7 +4115,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11360188",
@@ -4193,7 +4136,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 60.93,
+    "score": 60.94,
     "summary": {
       "text": "上通（かみとおり）は、熊本県熊本市中央区の目抜き通りである通町筋の市電停留所付近から見て北へ伸びるアーケードと並木坂で構成される通りである。また、広義では一帯の繁華街を上通と呼称することもある。町名は「上通町」、商店街の名前では「上通」だが、一般には「上通り」とも書き、店舗名などでも用いられる。",
       "lang": "ja",
@@ -4210,14 +4153,7 @@
         "distance_m": 470
       }
     ],
-    "images": [
-      {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/8/8b/Kamitoori_shop_street_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-        "author": "MK Products",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Kamitoori_shop_street_1.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q11360188",
       "osm": "way/405408517"
@@ -4241,7 +4177,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11360189",
@@ -4261,7 +4197,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 34.17,
+    "score": 34.52,
     "summary": {
       "text": "上通A地区第一種市街地再開発事業（かみとおりえいちくだいいっしゅしがいちさいかいはつじぎょう）は、熊本県熊本市中央区上通町で実施された市街地再開発事業。",
       "lang": "ja",
@@ -4285,14 +4221,7 @@
         "distance_m": 1360
       }
     ],
-    "images": [
-      {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/7/7e/Bipuresu_kumanichi_kaikan_Building_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-        "author": "MK Products",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Bipuresu_kumanichi_kaikan_Building_1.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q11360189"
     },
@@ -4307,7 +4236,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11360739",
@@ -4328,7 +4257,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 44.8,
+    "score": 45.41,
     "summary": {
       "text": "下城滝（しもんじょのたき）は、熊本県阿蘇郡小国町にある滝。",
       "lang": "ja",
@@ -4336,14 +4265,7 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [
-      {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/4/4d/%E4%B8%8B%E5%9F%8E%E6%BB%9D.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-        "author": "Kitadake3193",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:%E4%B8%8B%E5%9F%8E%E6%BB%9D.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q11360739"
     },
@@ -4358,7 +4280,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11360847",
@@ -4381,7 +4303,7 @@
       "島"
     ],
     "featured": false,
-    "score": 53.45,
+    "score": 53.36,
     "summary": {
       "text": "下島是日本九州熊本縣天草群島中最大的島嶼，面積574平方公里，在日本島嶼面積排名第十。行政方面，下島大部分屬天草市管轄，西北部則劃屬苓北町。下島東邊是上島，東南方則是屬鹿兒島縣的長島。",
       "lang": "zh",
@@ -4404,7 +4326,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11361205",
@@ -4425,7 +4347,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 54.8,
+    "score": 54.94,
     "summary": {
       "text": "下田温泉（しもだおんせん）は、熊本県天草市（旧国肥後国）にある温泉である。",
       "lang": "ja",
@@ -4433,14 +4355,7 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/06/Street_of_Shimoda_Onsen%2C_Amakusa%2C_Kumamoto.jpg/960px-Street_of_Shimoda_Onsen%2C_Amakusa%2C_Kumamoto.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "STA3816",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Street_of_Shimoda_Onsen,_Amakusa,_Kumamoto.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q11361205"
     },
@@ -4455,7 +4370,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11361350",
@@ -4476,7 +4391,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 47.9,
+    "score": 47.83,
     "summary": {
       "text": "下通（しもとおり）は、熊本県熊本市中央区に位置するアーケード商店街を中心とした繁華街。熊本市の中心市街地にあたる。町名や商店街の名前では「下通」だが、一般には「下通り」とも書き、店舗名などでも用いられる。アーケードを指して「下通り商店街」などとも呼称される。",
       "lang": "ja",
@@ -4493,14 +4408,7 @@
         "distance_m": 1000
       }
     ],
-    "images": [
-      {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/3/39/Shimotori_shop_street_Shintengai_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-        "author": "MK Products",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Shimotori_shop_street_Shintengai_1.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q11361350",
       "osm": "way/562015312"
@@ -4516,7 +4424,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11364338",
@@ -4537,7 +4445,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 65.34,
+    "score": 65.26,
     "summary": {
       "text": "中岳（なかだけ）は、熊本県にある阿蘇山を構成する山の一つで、中央火口丘群のほぼ中央に位置し、最も活発な活動をしている火山である。標高1,506メートル。中岳には第1から第7までの火口があり阿蘇山特別地域気象観測所がある。火口周辺は火山ガスにより立ち入り規制が行われる。",
       "lang": "ja",
@@ -4567,15 +4475,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d5/Mount_Aso_acid_lake_seen_from_helicopter_by_ET.jpg/960px-Mount_Aso_acid_lake_seen_from_helicopter_by_ET.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Wikiwanito",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Mount_Aso_acid_lake_seen_from_helicopter_by_ET.jpg"
-      }
-    }
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11372606",
@@ -4596,7 +4496,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 55.82,
+    "score": 55.79,
     "summary": {
       "text": "五老ヶ滝（ごろうがたき）は、熊本県上益城郡山都町にある滝。矢部四十八滝の一つ。古くは轟川（とどろきがわ）と呼んでいた五老ヶ滝川の水が流れ落ちる。上流150mほどに通潤橋がある。",
       "lang": "ja",
@@ -4626,7 +4526,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11375938",
@@ -4646,7 +4546,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 55.08,
+    "score": 55.3,
     "summary": {
       "text": "人吉温泉（ひとよしおんせん）は、熊本県人吉市にある温泉。",
       "lang": "ja",
@@ -4683,7 +4583,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11378201",
@@ -4704,7 +4604,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 55.77,
+    "score": 55.69,
     "summary": {
       "text": "仙酔峡（せんすいきょう）は、熊本県阿蘇市にある峡谷。",
       "lang": "ja",
@@ -4734,7 +4634,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11378295",
@@ -4756,7 +4656,7 @@
       "橋"
     ],
     "featured": false,
-    "score": 34.88,
+    "score": 35.03,
     "summary": {
       "text": "代継橋（よつぎばし）は、熊本県熊本市中央区の白川に架かる、国道266号（重複国道445号）の橋。右岸部分にある代継橋交差点は国道266号の終点であり、国道3号と接続している。",
       "lang": "ja",
@@ -4802,7 +4702,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11381865",
@@ -4825,7 +4725,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 52.79,
+    "score": 53.01,
     "summary": {
       "text": "住吉神社（すみよしじんじゃ）は、熊本県宇土市住吉町住吉自然公園にある神社。旧社格は県社。",
       "lang": "ja",
@@ -4860,7 +4760,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11383191",
@@ -4884,7 +4784,7 @@
       "史跡"
     ],
     "featured": false,
-    "score": 65.35,
+    "score": 65.49,
     "summary": {
       "text": "Sashiki Castle (佐敷城, Sashiki-jō) was a Sengoku period yamajiro-style Japanese castle located in the town of Ashikita, Kumamoto Prefecture, Japan.  Its ruins have been protected as a National Historic Site since 2008. It is also referred to as Sashiki Hanaoka Castle (佐敷花岡城, Sashiki Hanaoka-jō).",
       "lang": "en",
@@ -4916,7 +4816,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11386417",
@@ -4936,7 +4836,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 57.26,
+    "score": 57.32,
     "summary": {
       "text": "俵山（たわらやま）は熊本県阿蘇郡西原村と南阿蘇村にまたがる標高1,095mの山。山頂は西原村にある。先史時代の阿蘇山大噴火によって形作られた東西18km、南北25kmにおよぶ阿蘇外輪山の一部であり、その西端に位置する一峰である。",
       "lang": "ja",
@@ -4959,7 +4859,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11390511",
@@ -4983,7 +4883,7 @@
       "史跡"
     ],
     "featured": true,
-    "score": 78.2,
+    "score": 78.19,
     "summary": {
       "text": "Yatsushiro Castle (八代城, Yatsushiro-jō) is the remains of a castle structure in Yatsushiro, Kumamoto Prefecture, Japan.",
       "lang": "en",
@@ -5018,8 +4918,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11390512",
@@ -5042,7 +4941,7 @@
       "神社"
     ],
     "featured": true,
-    "score": 74.0,
+    "score": 74.18,
     "summary": {
       "text": "八代宮是日本熊本縣八代市松江城町的神社，社格是官幣中社和別表神社，也是建武中興十五社之一，根據《日本社寺大觀》記載，沒有氏子，《神社名鑑》和《全國神社名鑒》均指是5,000戶，《熊本縣神社誌》則記載是7,021戶。文化財方面，神社位於日本國指定史跡「八代城遺址群 古麓城遺址 麥島城遺址 八代城遺址」（八代城跡群 古麓城跡 麥島城跡 八代城跡）指定範圍內。",
       "lang": "zh",
@@ -5073,8 +4972,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11390558",
@@ -5085,7 +4983,7 @@
       "zh_tw": "八代神社",
       "en": "Yatsushiro Shrine"
     },
-    "kana_source": "wikipedia",
+    "kana_source": "wikidata",
     "location": {
       "lat": 32.500605,
       "lng": 130.641024
@@ -5097,7 +4995,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 66.43,
+    "score": 66.57,
     "summary": {
       "text": "八代神社（やつしろじんじゃ）は、熊本県八代市妙見町にある神社である。妙見宮（みょうけんぐう）、妙見さん。旧社格は県社。上宮、中宮、下宮の三宮からなるが、現在は下宮が本宮である。福島県の相馬妙見、大阪府の能勢妙見と並んで、日本三大妙見の一つといわれる。",
       "lang": "ja",
@@ -5127,7 +5025,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11392423",
@@ -5150,7 +5048,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 54.5,
+    "score": 54.47,
     "summary": {
       "text": "六殿神社（ろくでんじんじゃ）は、熊本県熊本市南区に鎮座する神社である。長寿寺（木原不動）と同じく雁回山（木原山）にある。旧社格は郷社。",
       "lang": "ja",
@@ -5176,7 +5074,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11394168",
@@ -5199,7 +5097,7 @@
       "城"
     ],
     "featured": false,
-    "score": 55.69,
+    "score": 55.6,
     "summary": {
       "text": "内牧城（うちのまきじょう）は、熊本県阿蘇市にあった中世・近世の日本の城（平山城）。",
       "lang": "ja",
@@ -5222,7 +5120,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11395687",
@@ -5233,7 +5131,7 @@
       "zh_tw": "出水神社",
       "en": "Izumi Shrine"
     },
-    "kana_source": "osm",
+    "kana_source": "wikidata",
     "location": {
       "lat": 32.792056,
       "lng": 130.734306
@@ -5245,7 +5143,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 64.09,
+    "score": 63.97,
     "summary": {
       "text": "出水神社是位於日本熊本縣熊本市中央區、水前寺成趣園內的一座神社。該神社於明治時代由熊本藩的家臣興建以祭祀歷代藩主。舊社格為縣社。",
       "lang": "zh",
@@ -5292,15 +5190,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/06/Izumi_shrine_%2C_%E5%87%BA%E6%B0%B4%E7%A5%9E%E7%A4%BE_-_panoramio_%281%29.jpg/960px-Izumi_shrine_%2C_%E5%87%BA%E6%B0%B4%E7%A5%9E%E7%A4%BE_-_panoramio_%281%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "z tanuki",
-        "license": "CC BY 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Izumi_shrine_,_%E5%87%BA%E6%B0%B4%E7%A5%9E%E7%A4%BE_-_panoramio_(1).jpg"
-      }
-    }
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11396790",
@@ -5323,7 +5213,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 53.33,
+    "score": 53.22,
     "summary": {
       "text": "別所琴平神社（べっしょことひらじんじゃ）は、熊本県熊本市中央区に鎮座する神社である。通称は別所のこんぴらさん。旧社格は村社。",
       "lang": "ja",
@@ -5370,7 +5260,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11401505",
@@ -5393,7 +5283,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 62.76,
+    "score": 62.8,
     "summary": {
       "text": "北岡神社（北岡神社／きたおかじんじゃ，Kitaoka Jinja），位於日本熊本縣熊本市西區，在熊本市內是與藤崎八幡宮並列的最古老神社，有千年以上歷史。舊社格為縣社。",
       "lang": "zh",
@@ -5435,7 +5325,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-29"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11404246",
@@ -5458,7 +5348,7 @@
       "博物館"
     ],
     "featured": false,
-    "score": 54.72,
+    "score": 54.78,
     "summary": {
       "text": "北里柴三郎記念館（きたざとしばさぶろうきねんかん）は、熊本県阿蘇郡小国町の学びやの里内にある展示施設。北里柴三郎の旧居宅と生家、当時の資料や書籍などがある。一般財団法人学びやの里が管理運営している。",
       "lang": "ja",
@@ -5488,7 +5378,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11404739",
@@ -5508,7 +5398,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 49.67,
+    "score": 49.69,
     "summary": {
       "text": "十万山（じゅうまんやま）は、熊本県天草市にある標高239mの山である。",
       "lang": "ja",
@@ -5531,7 +5421,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11408639",
@@ -5552,7 +5442,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 49.48,
+    "score": 49.71,
     "summary": {
       "text": "南郷城（なんごうじょう）は、熊本県阿蘇郡南阿蘇村にあった日本の城（中世の山城）。",
       "lang": "ja",
@@ -5584,7 +5474,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11409129",
@@ -5607,7 +5497,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 53.22,
+    "score": 53.37,
     "summary": {
       "text": "印鑰神社（いんにゃくじんじゃ）は、熊本県八代市鏡町鏡村にある神社である。旧社格は村社。",
       "lang": "ja",
@@ -5649,7 +5539,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11411749",
@@ -5670,7 +5560,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 55.6,
+    "score": 55.57,
     "summary": {
       "text": "古閑の滝（こがのたき）は、熊本県阿蘇市にある滝。手軽に楽しむことのできる氷瀑として知られている。",
       "lang": "ja",
@@ -5678,14 +5568,7 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [
-      {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/f/f9/%E5%8F%A4%E9%96%91%E3%81%AE%E6%BB%9D.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-        "author": "Kitadake3193",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:%E5%8F%A4%E9%96%91%E3%81%AE%E6%BB%9D.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q11411749"
     },
@@ -5700,7 +5583,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11413499",
@@ -5720,7 +5603,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 46.11,
+    "score": 46.14,
     "summary": {
       "text": "吉無田水源（よしむたすいげん）は、熊本県上益城郡御船町に存在する水源である。吉無田水源の森とも呼ばれる。阿蘇山の外輪山の裾野に位置する。名水百選にも選ばれている水源である。",
       "lang": "ja",
@@ -5743,7 +5626,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11421390",
@@ -5766,7 +5649,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 61.38,
+    "score": 61.17,
     "summary": {
       "text": "国造神社（こくぞう じんじゃ、くにのみやつこ じんじゃ）は、熊本県阿蘇市一の宮町手野に鎮座する神社。旧官幣大社阿蘇神社の北方に鎮座するため、北宮と称される。延喜式内社で、旧社格は県社。",
       "lang": "ja",
@@ -5792,7 +5675,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11424486",
@@ -5813,7 +5696,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 61.88,
+    "score": 62.1,
     "summary": {
       "text": "地獄温泉（じごくおんせん）は、熊本県阿蘇郡南阿蘇村河陽にある温泉。温泉名の由来は温泉の裏山に火山ガス噴出による草木の生えていない場所（いわゆる地獄地帯）が存在することによる。",
       "lang": "ja",
@@ -5821,14 +5704,7 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/78/%E5%9C%B0%E7%8D%84%E6%B8%A9%E6%B3%89%E3%80%8C%E6%B8%85%E9%A2%A8%E8%8D%98%E3%80%8D2.JPG/960px-%E5%9C%B0%E7%8D%84%E6%B8%A9%E6%B3%89%E3%80%8C%E6%B8%85%E9%A2%A8%E8%8D%98%E3%80%8D2.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "No machine-readable author provided. おぉたむすねィく探検隊 assumed (based on copyright claims).",
-        "license": "CC BY-SA 2.5",
-        "source_url": "https://commons.wikimedia.org/wiki/File:%E5%9C%B0%E7%8D%84%E6%B8%A9%E6%B3%89%E3%80%8C%E6%B8%85%E9%A2%A8%E8%8D%98%E3%80%8D2.JPG"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q11424486"
     },
@@ -5839,7 +5715,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q114245417",
@@ -5929,7 +5805,7 @@
       "博物館"
     ],
     "featured": false,
-    "score": 52.13,
+    "score": 52.11,
     "summary": {
       "text": "坂本善三美術館（さかもとぜんぞうびじゅつかん）は、熊本県阿蘇郡小国町に所在する美術館。",
       "lang": "ja",
@@ -5964,7 +5840,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11425834",
@@ -5984,7 +5860,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 56.65,
+    "score": 56.68,
     "summary": {
       "text": "垂玉温泉（たるたまおんせん）は、熊本県阿蘇郡南阿蘇村河陽にある温泉。阿蘇山の中央火口丘の西斜面を流れる垂玉川の脇にある。",
       "lang": "ja",
@@ -5992,14 +5868,7 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/43/Kinryu_Falls_20120903_-_panoramio.jpg/960px-Kinryu_Falls_20120903_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "YOSHIFUMI OGISO",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Kinryu_Falls_20120903_-_panoramio.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q11425834"
     },
@@ -6010,7 +5879,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11426190",
@@ -6033,7 +5902,7 @@
       "城"
     ],
     "featured": false,
-    "score": 55.24,
+    "score": 55.2,
     "summary": {
       "text": "城村城（じょうむらじょう）は、熊本県山鹿市城字城にあった中世の日本の城（丘城）。山鹿市指定史跡。",
       "lang": "ja",
@@ -6056,7 +5925,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11427923",
@@ -6079,7 +5948,7 @@
       "城"
     ],
     "featured": false,
-    "score": 58.35,
+    "score": 58.19,
     "summary": {
       "text": "Katashida Castle (堅志田城, Katashida-jō) was a Sengoku period yamajiro-style Japanese castle located in the Katashida neighborhood of the town of Misato, Kumamoto Prefecture, Japan. Its ruins have been protected as a National Historic Site since 2006.",
       "lang": "en",
@@ -6102,7 +5971,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11428677",
@@ -6125,7 +5994,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 53.5,
+    "score": 53.56,
     "summary": {
       "text": "塩屋八幡宮（しおやはちまんぐう）は、熊本県八代市八幡町にある神社である。旧社格は村社。",
       "lang": "ja",
@@ -6156,7 +6025,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11434448",
@@ -6177,7 +6046,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 58.22,
+    "score": 58.11,
     "summary": {
       "text": "大宮神社是鎮座於熊本縣山鹿市的一間神社。主祭神為景行天皇，另祭祀阿蘇十二神。舊社格為縣社。",
       "lang": "zh",
@@ -6207,7 +6076,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11437248",
@@ -6224,7 +6093,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 42.09,
+    "score": 42.06,
     "summary": {
       "text": "大津ショッピングプラザアーク（おおづショッピングプラザアーク）は、熊本県菊池郡大津町室にある複合商業施設。",
       "lang": "ja",
@@ -6260,7 +6129,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11438136",
@@ -6283,7 +6152,7 @@
       "島"
     ],
     "featured": false,
-    "score": 45.93,
+    "score": 45.95,
     "summary": {
       "text": "Ōyano-jima (大矢野島), also spelt as Ōyanojima  It is administered as part of the city of Kami-Amakusa. It is connected to the Japanese mainland since 1966 by Five Bridges of Amakusa. The Japan National Route 266 passes through the island. The island primary industry is aquaculture of fish and shrimps. Large part of island belongs to Unzen-Amakusa National Park.",
       "lang": "en",
@@ -6313,7 +6182,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11438960",
@@ -6334,7 +6203,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 72.03,
+    "score": 71.98,
     "summary": {
       "text": "大觀峰是位於日本熊本縣阿蘇市的山，高度為海拔935.9公尺，是阿蘇北側外輪山的最高峰，可以遠眺阿蘇五嶽及九重山脈。",
       "lang": "zh",
@@ -6364,8 +6233,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11443445",
@@ -6386,7 +6254,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 63.31,
+    "score": 63.28,
     "summary": {
       "text": "Amakusa Christian Museum (天草市立天草キリシタン館, Amakusa shiritsu Amakusa kirishitankan) opened in Amakusa, Japan, in 1966 and in March 2014 received its four millionth visitor. The museum includes exhibits relating to the Shimabara Rebellion and Kakure kirishitan ('hidden Christians').",
       "lang": "en",
@@ -6421,7 +6289,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11443547",
@@ -6444,13 +6312,13 @@
       "橋"
     ],
     "featured": false,
-    "score": 42.78,
+    "score": 42.68,
     "summary": {
-      "text": "天草瀬戸大橋（あまくさせとおおはし）は、熊本県天草市にある本渡瀬戸に架かる道路橋である。本項では、並行している天草未来大橋(第2天草瀬戸大橋)および同じ本渡瀬戸にかかる本渡瀬戸歩道橋についても記述する。",
+      "text": "天草瀬戸大橋（あまくさせとおおはし）は、熊本県天草市にある本渡瀬戸に架かる道路橋である。本項では、並行している天草未来大橋（第2天草瀬戸大橋）および同じ本渡瀬戸にかかる本渡瀬戸歩道橋についても記述する。",
       "lang": "ja",
       "source_url": "https://ja.wikipedia.org/wiki/%E5%A4%A9%E8%8D%89%E7%80%AC%E6%88%B8%E5%A4%A7%E6%A9%8B",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-10-04"
     },
     "images": [
       {
@@ -6474,7 +6342,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11443746",
@@ -6497,7 +6365,7 @@
       "橋"
     ],
     "featured": false,
-    "score": 39.08,
+    "score": 39.1,
     "summary": {
       "text": "天門橋（てんもんきょう）は、熊本県宇城市の宇土半島と同県上天草市の大矢野島との間の三角ノ瀬戸に架かる国道266号の橋である。天草五橋の1号橋である。",
       "lang": "ja",
@@ -6537,7 +6405,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11447032",
@@ -6558,7 +6426,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 52.56,
+    "score": 52.7,
     "summary": {
       "text": "妙見浦（みょうけんうら / みょうけんがうら）は、熊本県の天草諸島天草下島西岸、天草灘沿岸に発達する海岸。天草市に属する。風光明媚な景勝地で、国の名勝及び天然記念物（1935年指定）。雲仙天草国立公園に属する。",
       "lang": "ja",
@@ -6588,7 +6456,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11450044",
@@ -6660,7 +6528,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 54.45,
+    "score": 54.51,
     "summary": {
       "text": "宮原三神宮（みやはらさんじんぐう、みやのはらさんじんぐう）は、熊本県八代郡氷川町にある神社である。旧社格は郷社。八代北部全域の守護神として尊崇されている。",
       "lang": "ja",
@@ -6697,7 +6565,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11453539",
@@ -6718,7 +6586,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 55.99,
+    "score": 55.87,
     "summary": {
       "text": "宮地神社（みやじじんじゃ）は、熊本県熊本市南区城南町に鎮座する神社である。通称 七所宮 （しちしょうぐう）として知られる。旧社格は郷社。",
       "lang": "ja",
@@ -6748,7 +6616,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11459584",
@@ -6768,7 +6636,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 58.95,
+    "score": 59.01,
     "summary": {
       "text": "小天温泉（おあまおんせん）は、熊本県玉名市天水町小天に位置する温泉である。",
       "lang": "ja",
@@ -6776,14 +6644,7 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/63/Kusamakura-Hotspring-Tensui_Tamana_Kumamoto.JPG/960px-Kusamakura-Hotspring-Tensui_Tamana_Kumamoto.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "NY066",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Kusamakura-Hotspring-Tensui_Tamana_Kumamoto.JPG"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q11459584"
     },
@@ -6794,7 +6655,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11460632",
@@ -6817,7 +6678,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 50.44,
+    "score": 50.71,
     "summary": {
       "text": "小川阿蘇神社（おがわあそじんじゃ）は、熊本県宇城市小川町小川にある神社である。旧社格は村社。",
       "lang": "ja",
@@ -6843,7 +6704,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11460945",
@@ -6866,7 +6727,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 49.16,
+    "score": 49.29,
     "summary": {
       "text": "小木阿蘇神社（おぎあそじんじゃ）は、熊本県熊本市南区城南町に鎮座する神社である。旧社格は郷社。",
       "lang": "ja",
@@ -6874,14 +6735,7 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/87/Ogi-Aso-jinja_202512-4.jpg/960px-Ogi-Aso-jinja_202512-4.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "運動会プロテインパワー",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Ogi-Aso-jinja_202512-4.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q11460945"
     },
@@ -6892,7 +6746,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11471244",
@@ -6960,7 +6814,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 56.56,
+    "score": 56.68,
     "summary": {
       "text": "岩尾城（いわおじょう）は、熊本県上益城郡山都町にあった中世の日本の城（山城）。山都町指定史跡。",
       "lang": "ja",
@@ -6968,14 +6822,7 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e7/Iwao_castle_honmaru.jpg/960px-Iwao_castle_honmaru.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Totti",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Iwao_castle_honmaru.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q11474364"
     },
@@ -6990,7 +6837,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11480478",
@@ -7011,7 +6858,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 62.16,
+    "score": 62.23,
     "summary": {
       "text": "市房山（いちふさやま）は、九州山地の南部にある日本の山。標高は1,720.8m。熊本県水上村・宮崎県椎葉村・西米良村にまたがる。",
       "lang": "ja",
@@ -7041,7 +6888,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11481888",
@@ -7064,7 +6911,7 @@
       "神社"
     ],
     "featured": true,
-    "score": 74.61,
+    "score": 74.35,
     "summary": {
       "text": "幣立神社，又名幣立神宮和日之宮，是位於日本熊本縣上益城郡山都町的一座神社，社格是鄉社。主祭神是神漏岐命和神漏美命。",
       "lang": "zh",
@@ -7090,7 +6937,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11486448",
@@ -7113,7 +6960,7 @@
       "寺院"
     ],
     "featured": false,
-    "score": 54.75,
+    "score": 54.68,
     "summary": {
       "text": "廣福寺（こうふくじ）は、熊本県玉名市石貫にある曹洞宗の寺院である。大本山・永平寺の直末寺。小岱山系観音岳の東麓に位置する。肥後西国観音霊場第24番札所。",
       "lang": "ja",
@@ -7143,7 +6990,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11487077",
@@ -7166,7 +7013,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 59.04,
+    "score": 59.03,
     "summary": {
       "text": "弓削神社（ゆげじんじゃ）は熊本県熊本市にある神社。白川右岸の龍田町弓削に鎮座するが、対岸の上弓削神社とともに弓削神社と総称される場合もある。「ホウオウさん」と通称され、弓削神宮とも称する。",
       "lang": "ja",
@@ -7208,7 +7055,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11489067",
@@ -7231,7 +7078,7 @@
       "島"
     ],
     "featured": false,
-    "score": 43.3,
+    "score": 43.25,
     "summary": {
       "text": "御所浦島（ごしょうらじま）は、熊本県天草市に属する天草諸島の島の一つである。",
       "lang": "ja",
@@ -7261,7 +7108,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11489072",
@@ -7281,7 +7128,7 @@
       "博物館"
     ],
     "featured": false,
-    "score": 53.99,
+    "score": 54.01,
     "summary": {
       "text": "天草市立御所浦白亜紀資料館（あまくさしりつごしょうらはくあきしりょうかん、英: Goshoura Cretaceous Museum）は、熊本県天草市の離島の御所浦島にあった恐竜や化石をテーマとする天草市立の自然系資料館。",
       "lang": "ja",
@@ -7307,7 +7154,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11496670",
@@ -7330,7 +7177,7 @@
       "島"
     ],
     "featured": false,
-    "score": 42.89,
+    "score": 42.93,
     "summary": {
       "text": "戸馳島（とばせじま）は、八代海の北部に浮かぶ島である。",
       "lang": "ja",
@@ -7356,7 +7203,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11499646",
@@ -7377,7 +7224,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 56.38,
+    "score": 56.26,
     "summary": {
       "text": "数鹿流ヶ滝（すがるがたき）は、熊本県阿蘇郡南阿蘇村にある滝。日本の滝百選に選定されている。",
       "lang": "ja",
@@ -7407,7 +7254,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11504266",
@@ -7430,7 +7277,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 57.12,
+    "score": 57.11,
     "summary": {
       "text": "新開大神宮（しんかいだいじんぐう）は、熊本県熊本市南区内田町にある神社である。旧社格は郷社。",
       "lang": "ja",
@@ -7456,7 +7303,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11505236",
@@ -7476,7 +7323,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 68.73,
+    "score": 68.78,
     "summary": {
       "text": "日奈久溫泉（ひなぐおんせん）是熊本縣八代市的溫泉，因詩人種田山頭火而知名。",
       "lang": "zh",
@@ -7484,14 +7331,7 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/57/Banpeiyu-Furo-Hinagu-Kumamoto.jpg/960px-Banpeiyu-Furo-Hinagu-Kumamoto.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "NY066",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Banpeiyu-Furo-Hinagu-Kumamoto.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q11505236"
     },
@@ -7502,7 +7342,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11511120",
@@ -7523,7 +7363,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 44.23,
+    "score": 44.31,
     "summary": {
       "text": "舊細川刑部邸（舊細川刑部邸／きゅうほそかわぎょうぶてい）是位於日本熊本縣熊本市熊本城三之丸遺跡的武士住宅，過去為細川氏家臣細川刑部家（又稱為長岡刑部家或子飼細川家）的住宅。",
       "lang": "zh",
@@ -7574,15 +7414,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/42/Hosokawa-Gyoubu_house_panorama.jpg/960px-Hosokawa-Gyoubu_house_panorama.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Motoki-jj",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Hosokawa-Gyoubu_house_panorama.jpg"
-      }
-    }
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11520431",
@@ -7603,7 +7435,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 54.96,
+    "score": 54.93,
     "summary": {
       "text": "本村神社（もとむらじんじゃ）は、熊本県熊本市中央区大江本町にある神社である。",
       "lang": "ja",
@@ -7649,7 +7481,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11520515",
@@ -7716,7 +7548,7 @@
       "博物館"
     ],
     "featured": false,
-    "score": 45.82,
+    "score": 45.92,
     "summary": {
       "text": "天草市立本渡歴史民俗資料館（あまくさしりつほんどれきしみんぞくしりょうかん）は、熊本県天草市今釜新町3706番地にある博物館。",
       "lang": "ja",
@@ -7740,7 +7572,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11520522",
@@ -7761,7 +7593,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 40.6,
+    "score": 40.53,
     "summary": {
       "text": "本渡瀬戸（ほんどせと）は、熊本県南西部にある天草諸島の上島と下島に挟まれた幅の狭い海峡。",
       "lang": "ja",
@@ -7791,15 +7623,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/58/Hondo_Strait%2C_Amakusa_Kumamoto_Aerial_photograph.2014.jpg/960px-Hondo_Strait%2C_Amakusa_Kumamoto_Aerial_photograph.2014.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "国土地理院",
-        "license": "Attribution",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Hondo_Strait,_Amakusa_Kumamoto_Aerial_photograph.2014.jpg"
-      }
-    }
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11523574",
@@ -7820,7 +7644,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 70.09,
+    "score": 70.12,
     "summary": {
       "text": "杖立溫泉，是位於日本熊本縣阿蘇郡小國町與大分縣日田市交界的溫泉區，為塩化物泉，有「九州的奧座敷」之稱。",
       "lang": "zh",
@@ -7850,8 +7674,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11528147",
@@ -7861,7 +7684,7 @@
       "romaji": "Tofukuji",
       "zh_tw": "東福寺"
     },
-    "kana_source": "wikipedia",
+    "kana_source": "wikidata",
     "location": {
       "lat": 32.983778,
       "lng": 130.820583
@@ -7873,7 +7696,7 @@
       "寺院"
     ],
     "featured": false,
-    "score": 30.48,
+    "score": 29.61,
     "summary": {
       "text": "東福寺（とうふくじ）は、熊本県菊池市亘にある天台宗の寺院である。菊池五山の１つ。",
       "lang": "ja",
@@ -7908,7 +7731,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11529174",
@@ -7931,7 +7754,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 57.65,
+    "score": 57.88,
     "summary": {
       "text": "松井神社（まついじんじゃ）は、熊本県八代市北の丸町に鎮座する神社である。旧社格は郷社。",
       "lang": "ja",
@@ -7962,7 +7785,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11531528",
@@ -7985,7 +7808,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 55.66,
+    "score": 55.6,
     "summary": {
       "text": "松橋神社（まつばせじんじゃ）は、熊本県宇城市松橋町松橋にある神社である。松橋熊野宮（まつばせくまのぐう）、松橋権現社（まつばせごんげんしゃ）とも称する。旧社格は村社。",
       "lang": "ja",
@@ -8027,7 +7850,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11531742",
@@ -8050,7 +7873,7 @@
       "名勝"
     ],
     "featured": false,
-    "score": 72.87,
+    "score": 73.01,
     "summary": {
       "text": "松浜軒（松濱軒、しょうひんけん）は熊本県八代市北の丸町にある、肥後熊本藩細川氏の筆頭家老で八代城代であった松井家の邸宅と庭園。別名：浜の茶屋。国の名勝に指定されている。名勝としての指定名称は旧熊本藩八代城主浜御茶屋（松浜軒）庭園。建物は八代市指定の有形文化財になっている。",
       "lang": "ja",
@@ -8080,8 +7903,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-29",
-    "season_images": {}
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11536189",
@@ -8102,7 +7924,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 54.11,
+    "score": 53.8,
     "summary": {
       "text": "栴檀轟の滝（せんだんとどろのたき）は、熊本県八代市泉町柿迫にある滝。周辺は「せんだん轟公園」が整備されており、滝自体も「せんだん轟の滝」と表記されることもある。日本の滝百選の一つ。",
       "lang": "ja",
@@ -8110,14 +7932,7 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a2/SendanTodoro_no_Taki.JPG/960px-SendanTodoro_no_Taki.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "アラツク",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:SendanTodoro_no_Taki.JPG"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q11536189"
     },
@@ -8132,7 +7947,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11536251",
@@ -8153,7 +7968,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 63.77,
+    "score": 63.62,
     "summary": {
       "text": "根子岳（ねこだけ）は、熊本県阿蘇郡高森町にある山である。阿蘇五岳（あそごがく）の一つ。最高点天狗峰の標高は1,433m。東峰には1,408.1mの三角点がある。",
       "lang": "ja",
@@ -8183,7 +7998,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11538519",
@@ -8206,7 +8021,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 49.88,
+    "score": 50.01,
     "summary": {
       "text": "梅林天満宮（ばいりんてんまんぐう）は、熊本県玉名市にある神社（天満宮）。旧社格は村社。",
       "lang": "ja",
@@ -8232,7 +8047,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11548314",
@@ -8255,7 +8070,7 @@
       "公園"
     ],
     "featured": false,
-    "score": 56.32,
+    "score": 56.5,
     "summary": {
       "text": "水前寺江津湖公園（すいぜんじえずここうえん） は、熊本県熊本市の江津湖を中心とする都市公園（広域公園）である。いくつかに分かれて指定されていたものを再構成し、1966年12月24日に開設された。",
       "lang": "ja",
@@ -8304,7 +8119,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11548461",
@@ -8328,7 +8143,7 @@
       "名勝"
     ],
     "featured": false,
-    "score": 65.26,
+    "score": 65.19,
     "summary": {
       "text": "Mizushima (水島) is a small uninhabited coastal limestone island at the mouth of the Kuma River at the northern end of the Yatsushiro Sea in Yatsushiro, Kumamoto Prefecture, Japan. An episode in the Nihon Shoki explains how the isle gained its name: on the eleventh day of the fourth month of the eighteenth year of the reign of Emperor Keikō (AD 88), the Emperor, near the end of his tour of inspection of Tsukushi, laid anchor at the island and partook of food.",
       "lang": "en",
@@ -8358,15 +8173,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6f/Mizushima_Island_Yatsushiro%2C_Kumamoto_Aerial_Photograph.jpg/960px-Mizushima_Island_Yatsushiro%2C_Kumamoto_Aerial_Photograph.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "国土交通省",
-        "license": "Attribution",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Mizushima_Island_Yatsushiro,_Kumamoto_Aerial_Photograph.jpg"
-      }
-    }
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11549936",
@@ -8389,7 +8196,7 @@
       "寺院"
     ],
     "featured": false,
-    "score": 56.35,
+    "score": 56.21,
     "summary": {
       "text": "永国寺（えいこくじ／ようこくじ）は、熊本県人吉市土手町にある曹洞宗の寺院。大本山總持寺の直末寺で、人吉・球磨地域の曹洞宗寺院16箇寺の本寺。肥後三十三観音第9番札所。寺に伝わる幽霊の掛け軸や幽霊が現れたという伝承のある池があり幽霊寺の異名で知られる。",
       "lang": "ja",
@@ -8437,7 +8244,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11549978",
@@ -8448,7 +8255,7 @@
       "zh_tw": "永尾神社",
       "en": "Einoo Shrine"
     },
-    "kana_source": "wikipedia",
+    "kana_source": "wikidata",
     "location": {
       "lat": 32.631722,
       "lng": 130.616083
@@ -8460,7 +8267,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 60.05,
+    "score": 59.62,
     "summary": {
       "text": "永尾神社（えいのおじんじゃ）は、熊本県宇城市不知火町永尾にある神社である。",
       "lang": "ja",
@@ -8495,7 +8302,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11550173",
@@ -8518,7 +8325,7 @@
       "島"
     ],
     "featured": false,
-    "score": 34.54,
+    "score": 34.72,
     "summary": {
       "text": "永浦島（ながうらじま）は熊本県上天草市にある島である。天草五橋によってつながっている。",
       "lang": "ja",
@@ -8526,14 +8333,7 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d3/Nagaurajima_Island%2C_Kamiamakusa_Kumamoto_Aerial_photograph.2016.jpg/960px-Nagaurajima_Island%2C_Kamiamakusa_Kumamoto_Aerial_photograph.2016.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "国土地理院",
-        "license": "Attribution",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Nagaurajima_Island,_Kamiamakusa_Kumamoto_Aerial_photograph.2016.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q11550173"
     },
@@ -8548,15 +8348,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d3/Nagaurajima_Island%2C_Kamiamakusa_Kumamoto_Aerial_photograph.2016.jpg/960px-Nagaurajima_Island%2C_Kamiamakusa_Kumamoto_Aerial_photograph.2016.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "国土地理院",
-        "license": "Attribution",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Nagaurajima_Island,_Kamiamakusa_Kumamoto_Aerial_photograph.2016.jpg"
-      }
-    }
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11551239",
@@ -8577,7 +8369,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 63.1,
+    "score": 63.09,
     "summary": {
       "text": "江津湖（えづこ）は、熊本県熊本市東区から中央区にある湖で、上江津湖（かみえづこ）と下江津湖（しもえづこ）にわかれている。上江津湖の一部（東側半分）が中央区扱いとなる。",
       "lang": "ja",
@@ -8621,7 +8413,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11553810",
@@ -8644,7 +8436,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 57.04,
+    "score": 56.79,
     "summary": {
       "text": "河尻神宮（かわしりじんぐう）は、熊本県熊本市南区に鎮座する神社である。旧社格は県社。",
       "lang": "ja",
@@ -8681,7 +8473,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11553978",
@@ -8704,7 +8496,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 46.9,
+    "score": 46.95,
     "summary": {
       "text": "河江神社（ごうのえじんじゃ）は、熊本県宇城市小川町南新田に鎮座する神社である。住吉宮とも称する。旧社格は村社。",
       "lang": "ja",
@@ -8741,7 +8533,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11558504",
@@ -8761,7 +8553,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 55.47,
+    "score": 55.55,
     "summary": {
       "text": "浮島（うきしま）は、熊本県上益城郡嘉島町井寺に位置する夫婦神の浮島神社（浮島さん）の池。池の水は湧水でできている。2010年（平成22年）3月25日に農林水産省のため池百選に選定された。",
       "lang": "ja",
@@ -8769,14 +8561,7 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0e/Ukishima_shrine_04.jpg/960px-Ukishima_shrine_04.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "水だらけのプール",
-        "license": "CC0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Ukishima_shrine_04.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q11558504"
     },
@@ -8791,7 +8576,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11558527",
@@ -8812,7 +8597,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 59.47,
+    "score": 59.15,
     "summary": {
       "text": "浮島神社（うきしまじんじゃ）は、熊本県上益城郡嘉島町にある夫婦神を祀った神社。",
       "lang": "ja",
@@ -8842,7 +8627,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11558969",
@@ -8865,7 +8650,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 53.6,
+    "score": 53.69,
     "summary": {
       "text": "海東阿蘇神社（かいとうあそじんじゃ）は、熊本県宇城市小川町西海東に鎮座する神社である。旧社格は村社。",
       "lang": "ja",
@@ -8891,7 +8676,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11563407",
@@ -8911,7 +8696,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 64.53,
+    "score": 64.09,
     "summary": {
       "text": "湯の児温泉（ゆのこおんせん）は、熊本県水俣市（旧国肥後国）にある温泉。湯の鶴温泉に対し、海の温泉と呼ばれている。",
       "lang": "ja",
@@ -8919,14 +8704,7 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e0/Yunoko_onsen04.JPG/960px-Yunoko_onsen04.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Hyolee2",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Yunoko_onsen04.JPG"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q11563407"
     },
@@ -8941,7 +8719,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11563431",
@@ -8961,7 +8739,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 54.88,
+    "score": 54.76,
     "summary": {
       "text": "湯の鶴温泉（ゆのつるおんせん）は、熊本県水俣市にある温泉（国民保養温泉地）。湯の児温泉に対し、山の温泉と呼ばれている。",
       "lang": "ja",
@@ -8969,14 +8747,7 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ce/Yunotsuru_Onsen.JPG/960px-Yunotsuru_Onsen.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "hyolee2",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Yunotsuru_Onsen.JPG"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q11563431"
     },
@@ -8987,7 +8758,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11563518",
@@ -9010,7 +8781,7 @@
       "島"
     ],
     "featured": false,
-    "score": 66.82,
+    "score": 67.06,
     "summary": {
       "text": "Yushima is an island situated between Ōyano-jima in the Amakusa Islands and the Shimabara Peninsula.. It is located in Oyano-machi, Kamiamakusa City, Kumamoto Prefecture. This article also covers Yushima Village (Yushima-mura), Amakusa District, which was formerly situated within this same area.",
       "lang": "en",
@@ -9036,15 +8807,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/09/Aerial_of_Yushima%2C_Kamiamakusa%2C_Kumamoto%2C_Japan.jpg/960px-Aerial_of_Yushima%2C_Kamiamakusa%2C_Kumamoto%2C_Japan.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Yasu (talk)",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Aerial_of_Yushima,_Kamiamakusa,_Kumamoto,_Japan.jpg"
-      }
-    }
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11566368",
@@ -9065,7 +8828,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 56.62,
+    "score": 56.69,
     "summary": {
       "text": "瀬の本高原（せのもとこうげん）は、熊本県阿蘇郡南小国町の東端、産山村・大分県竹田市久住町・玖珠郡九重町にまたがる一帯のなだらかな高原地帯。標高850 - 900 mで阿蘇北外輪山と九重連山の間に位置する。",
       "lang": "ja",
@@ -9095,7 +8858,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11567943",
@@ -9115,7 +8878,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 42.86,
+    "score": 42.76,
     "summary": {
       "text": "熊本交通センタープラザ（くまもとこうつうセンタープラザ）は、熊本県熊本市中央区桜町の熊本交通センター地下にあった熊本県内唯一の地下街。通称「センタープラザ」。",
       "lang": "ja",
@@ -9154,7 +8917,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11567967",
@@ -9177,7 +8940,7 @@
       "博物館"
     ],
     "featured": false,
-    "score": 48.88,
+    "score": 49.02,
     "summary": {
       "text": "熊本国際民藝館（くまもとこくさいみんげいかん）は、熊本市北区龍田にある民芸品の収蔵展示をする博物館。",
       "lang": "ja",
@@ -9221,7 +8984,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11567974",
@@ -9244,7 +9007,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 53.15,
+    "score": 53.21,
     "summary": {
       "text": "熊本城稲荷神社（くまもとじょういなりじんじゃ）は、熊本県熊本市にある神社。通称「白髭さん」。",
       "lang": "ja",
@@ -9288,7 +9051,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11567983",
@@ -9311,7 +9074,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 59.85,
+    "score": 59.87,
     "summary": {
       "text": "熊本大神宮（くまもとだいじんぐう）は、熊本県熊本市中央区にある神社。熊本城東側に位置し、南隣に熊本城稲荷神社がある。本殿向かって左側には熊本城本丸の石垣がそびえている。",
       "lang": "ja",
@@ -9355,7 +9118,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11568009",
@@ -9450,7 +9213,7 @@
       "博物館"
     ],
     "featured": false,
-    "score": 49.52,
+    "score": 49.3,
     "summary": {
       "text": "熊本市水の科学館（くまもとしみずのかがくかん）は、熊本県熊本市北区にある水に関する展示を主とした科学館である。",
       "lang": "ja",
@@ -9501,7 +9264,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11568021",
@@ -9524,7 +9287,7 @@
       "美術館"
     ],
     "featured": false,
-    "score": 58.87,
+    "score": 58.78,
     "summary": {
       "text": "熊本市現代美術館（くまもとしげんだいびじゅつかん）は、熊本県熊本市中央区にある市立の美術館。英語表記はContemporary Art Museum, Kumamoto（CAMK）。",
       "lang": "ja",
@@ -9568,7 +9331,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11568122",
@@ -9658,7 +9421,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 62.72,
+    "score": 62.57,
     "summary": {
       "text": "熊本縣護國神社（熊本県護國神社／くまもとけんごこくじんじゃ，Kumamotoken Gokoku Jinja）是位於日本熊本縣熊本市中央區的一座護國神社。",
       "lang": "zh",
@@ -9704,7 +9467,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-29"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q115685772",
@@ -9725,7 +9488,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 50.88,
+    "score": 50.98,
     "summary": {
       "text": "下の城のイチョウ（しものじょうのイチョウ）は、熊本県阿蘇郡小国町下城に生育する、国の天然記念物に指定されたイチョウの巨樹である。",
       "lang": "ja",
@@ -9755,7 +9518,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11572449",
@@ -9775,7 +9538,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 62.37,
+    "score": 62.41,
     "summary": {
       "text": "玉名温泉（たまなおんせん）は、熊本県玉名市（旧国肥後国）にある温泉。",
       "lang": "ja",
@@ -9783,14 +9546,7 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7e/Tamana_Onsen_Tamano-yu.jpg/960px-Tamana_Onsen_Tamano-yu.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "水だらけのプール",
-        "license": "CC0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Tamana_Onsen_Tamano-yu.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q11572449"
     },
@@ -9801,7 +9557,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11572451",
@@ -9821,7 +9577,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 49.19,
+    "score": 48.92,
     "summary": {
       "text": "玉名納涼花火大会（たまなのうりょうはなびたいかい）は、熊本県玉名市で開催される花火大会。会場は、菊池川河川敷の1か所で、川の向こう岸で打ち上げされる。川の中からも打ち上げる。会場付近は、高瀬本町商店街や周辺の道路は、歩行者天国になる。",
       "lang": "ja",
@@ -9844,7 +9600,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11573505",
@@ -9865,7 +9621,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 62.58,
+    "score": 62.63,
     "summary": {
       "text": "球泉洞（きゅうせんどう）は、熊本県球磨郡球磨村の球磨川沿いを走る国道219号・鎗倒しと呼ばれる岩壁の上に立地する権現山（標高694m）の地下にある鍾乳洞。",
       "lang": "ja",
@@ -9904,7 +9660,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11575106",
@@ -9924,7 +9680,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 53.6,
+    "score": 56.78,
     "summary": {
       "text": "田の原温泉（たのはるおんせん）は、熊本県阿蘇郡南小国町（旧国肥後国）にある温泉。",
       "lang": "ja",
@@ -9947,7 +9703,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11575429",
@@ -9970,7 +9726,7 @@
       "城"
     ],
     "featured": false,
-    "score": 61.49,
+    "score": 61.57,
     "summary": {
       "text": "Tanaka Castle (田中城, Tanaka-jō) was a Sengoku period Japanese castle located in the town of Nagomi, Kumamoto Prefecture, Japan Its ruins have been protected as a National Historic Site since 2002.",
       "lang": "en",
@@ -9978,14 +9734,7 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-29"
     },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ad/Tanaka_Castle_in_Kumamoto_01.jpg/960px-Tanaka_Castle_in_Kumamoto_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Taken by YAPON(ja:利用者:YAPON)",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Tanaka_Castle_in_Kumamoto_01.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q11575429"
     },
@@ -10000,7 +9749,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11577666",
@@ -10023,7 +9772,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 60.01,
+    "score": 59.97,
     "summary": {
       "text": "甲佐神社（こうさじんじゃ）は、熊本県上益城郡甲佐町に鎮座する神社である。肥後国二宮で、旧社格は郷社。",
       "lang": "ja",
@@ -10054,7 +9803,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11579688",
@@ -10075,7 +9824,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 68.28,
+    "score": 68.25,
     "summary": {
       "text": "The Shirakawa river (Japanese: 白川) is a first-class river that runs down from Mount Aso through Kumamoto. In the past the Shirakawa River has overflowed and led to severe flooding such as during the 1953 North Kyushu flood.",
       "lang": "en",
@@ -10105,7 +9854,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11579703",
@@ -10128,7 +9877,7 @@
       "公園"
     ],
     "featured": false,
-    "score": 53.76,
+    "score": 54.1,
     "summary": {
       "text": "白川公園（しらかわこうえん）は、熊本県熊本市中央区にある都市公園（近隣公園）である。1961年（昭和36年）2月21日に開設された。",
       "lang": "ja",
@@ -10179,7 +9928,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11581471",
@@ -10202,7 +9951,7 @@
       "庭園"
     ],
     "featured": false,
-    "score": 54.33,
+    "score": 54.42,
     "summary": {
       "text": "監物台樹木園（けんもつだいじゅもくえん）は熊本県熊本市中央区にある植物園。熊本城の北端の監物櫓付近一帯に位置する。",
       "lang": "ja",
@@ -10253,7 +10002,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11582636",
@@ -10272,7 +10021,7 @@
       "公園"
     ],
     "featured": false,
-    "score": 54.16,
+    "score": 54.22,
     "summary": {
       "text": "熊本県営八代運動公園（くまもとけんえいやつしろうんどうこうえん）は、熊本県八代市新港町にある都市公園。敷地および施設は熊本県が所有し、熊本県スポーツ振興事業団・ミズノグループが指定管理者として運営管理を行っている。",
       "lang": "ja",
@@ -10296,7 +10045,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11582684",
@@ -10314,7 +10063,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 49.02,
+    "score": 48.89,
     "summary": {
       "text": "株式会社県民百貨店（けんみんひゃっかてん）は、かつて熊本県熊本市に所在した日本の百貨店。公式ウェブサイトなどでは「くまもと県民百貨店」とも表記されていた。",
       "lang": "ja",
@@ -10349,7 +10098,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11587565",
@@ -10372,7 +10121,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 47.32,
+    "score": 47.22,
     "summary": {
       "text": "砥川神社（とがわじんじゃ）は、熊本県上益城郡益城町砥川の岩戸川の南地域の字「宮ノ本」に所在する神社である。砥川宮（とがわぐう）とも、同県阿蘇市鎮座の阿蘇神社の末社とされた為に砥川阿蘇神社とも呼ばれる。",
       "lang": "ja",
@@ -10380,14 +10129,7 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f2/Togawa-jinja%2C_Mashiki.jpg/960px-Togawa-jinja%2C_Mashiki.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "運動会プロテインパワー",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Togawa-jinja,_Mashiki.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q11587565"
     },
@@ -10398,7 +10140,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11588435",
@@ -10422,7 +10164,7 @@
       "重要文化財"
     ],
     "featured": false,
-    "score": 57.72,
+    "score": 57.58,
     "summary": {
       "text": "祇園橋（ぎおんばし）は、熊本県天草市の町山口川に架かる石橋。重要文化財。日本百名橋。",
       "lang": "ja",
@@ -10452,7 +10194,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11597092",
@@ -10461,7 +10203,7 @@
       "kana": "ほづみあそじんじゃ",
       "romaji": "Hozumiasojinja",
       "zh_tw": "穂積阿蘇神社",
-      "en": "Hozumori Aso Shrine"
+      "en": "Hozumi Aso Shrine"
     },
     "kana_source": "wikidata",
     "location": {
@@ -10475,7 +10217,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 49.67,
+    "score": 49.78,
     "summary": {
       "text": "穂積阿蘇神社（ほづもりあそじんじゃ、ほづみあそじんじゃ）は、熊本県下益城郡美里町に鎮座する神社である。旧社格は郷社。",
       "lang": "ja",
@@ -10501,7 +10243,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11604598",
@@ -10524,7 +10266,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 53.54,
+    "score": 53.56,
     "summary": {
       "text": "粟嶋神社（あわしまじんじゃ）は熊本県宇土市新開町にある神社。",
       "lang": "ja",
@@ -10559,7 +10301,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11608648",
@@ -10580,7 +10322,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 39.96,
+    "score": 40.12,
     "summary": {
       "text": "羊角湾（ようかくわん）は熊本県天草市（天草下島）の南西部に位置する湾である。雲仙天草国立公園の中にある。",
       "lang": "ja",
@@ -10606,7 +10348,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11611066",
@@ -10626,7 +10368,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 31.98,
+    "score": 31.67,
     "summary": {
       "text": "聖橋（ひじりばし）は熊本県山都町、緑川の一支流笹原川に架かる、江戸時代後期にできた石橋。",
       "lang": "ja",
@@ -10649,7 +10391,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11615318",
@@ -10670,7 +10412,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 65.96,
+    "score": 65.89,
     "summary": {
       "text": "花岡山（はなおかやま）是日本熊本縣熊本市西區的山峰。標高132公尺。",
       "lang": "zh",
@@ -10711,7 +10453,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11616281",
@@ -10734,7 +10476,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 49.71,
+    "score": 49.98,
     "summary": {
       "text": "若宮神社（わかみやじんじゃ）は、熊本県八代市東陽町南に鎮座する神社である。旧社格は郷社。",
       "lang": "ja",
@@ -10760,7 +10502,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11616283",
@@ -10781,7 +10523,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 51.48,
+    "score": 51.29,
     "summary": {
       "text": "若宮神社（わかみやじんじゃ）は、熊本県下益城郡美里町に鎮座する神社である。旧社格は郷社。",
       "lang": "ja",
@@ -10811,7 +10553,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11618481",
@@ -10832,7 +10574,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 71.24,
+    "score": 71.2,
     "summary": {
       "text": "荒尾競馬場（あらおけいばじょう/ 英：Arao Racecourse）は熊本県荒尾市にあった地方競馬の競馬場で、2011年12月23日に本場開催が廃止された。開催時には熊本県と荒尾市で構成される一部事務組合である荒尾競馬組合によって競馬が開催されていた。オッズパーク加盟競馬場。",
       "lang": "ja",
@@ -10871,8 +10613,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11619737",
@@ -10903,14 +10644,7 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2f/Kikuchijou02.jpg/960px-Kikuchijou02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Kuma83",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Kikuchijou02.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q11619737"
     },
@@ -10925,7 +10659,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11619819",
@@ -10945,7 +10679,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 58.15,
+    "score": 58.14,
     "summary": {
       "text": "菊池温泉（きくちおんせん）は、熊本県菊池市の中心部、隈府一帯にある温泉。泉質は弱アルカリ性で肌によいため「化粧の湯」と呼ばれる。湯量が豊富。",
       "lang": "ja",
@@ -10964,7 +10698,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11619820",
@@ -10985,7 +10719,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 62.85,
+    "score": 62.67,
     "summary": {
       "text": "Kikuchi Valley is the located in Aso and Kikuchi, Kumamoto cities in Kumamoto Prefecture, on the island of Kyushu, Japan. It is the source of the Kikuchi River. The valley is an area known for its resorts and autumn leaves.",
       "lang": "en",
@@ -11015,7 +10749,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11620370",
@@ -11038,7 +10772,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 47.93,
+    "score": 48.04,
     "summary": {
       "text": "萩原菅原神社（はぎわらすがわらじんじゃ）、萩原天満宮（はぎわらてんまんぐう）は、熊本県八代市萩原町にある神社である。旧社格は村社。",
       "lang": "ja",
@@ -11073,7 +10807,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11621755",
@@ -11096,7 +10830,7 @@
       "寺院"
     ],
     "featured": false,
-    "score": 66.12,
+    "score": 66.15,
     "summary": {
       "text": "Renge-in Tanjō-ji (蓮華院誕生寺) is a Buddhist temple of the Shingon Risshu, or Shingon-Vinaya Buddhism, in Tamana, Kumamoto Prefecture. It is the head temple of the Shingon Ritsu school in Kyūshū and a branch temple of Saidai-ji (西大寺) in Nara (奈良). It venerates Mahābodhisattva Kōen (皇円大菩薩, Kōen Daibosatsu) as its patron deity. The temple stands on the site of Jōkō-ji Renge-in which was founded either at the end of the Heian period or the beginning of the Kamakura period and burnt down during the wars of the Sengoku period.",
       "lang": "en",
@@ -11137,7 +10871,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11623966",
@@ -11158,7 +10892,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 70.52,
+    "score": 70.38,
     "summary": {
       "text": "藤崎台県営野球場（ふじさきだいけんえいやきゅうじょう）は、熊本県熊本市中央区の熊本城公園内にある野球場。単に「藤崎台球場」という通称でも呼ばれる。施設は熊本県が所有し、財団法人熊本県スポーツ振興事業団・ミズノ株式会社グループが指定管理者として運営管理を行っている。",
       "lang": "ja",
@@ -11204,8 +10938,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-29",
-    "season_images": {}
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11627963",
@@ -11228,7 +10961,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 54.21,
+    "score": 54.17,
     "summary": {
       "text": "西岡神宮（にしおかじんぐう）は、熊本県宇土市神馬町にある神社である。旧社格は郷社。",
       "lang": "ja",
@@ -11259,7 +10992,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11628030",
@@ -11282,7 +11015,7 @@
       "寺院"
     ],
     "featured": false,
-    "score": 57.52,
+    "score": 57.43,
     "summary": {
       "text": "西巌殿寺（さいがんでんじ）は、熊本県阿蘇市黒川にある天台宗の寺院。山号は阿蘇山。古くから阿蘇山修験道の拠点として機能し、九州の天台宗の中で最高位の寺格を持つ寺院のひとつである。",
       "lang": "ja",
@@ -11317,7 +11050,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11633311",
@@ -11337,7 +11070,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 51.81,
+    "score": 52.03,
     "summary": {
       "text": "豊前街道南関御茶屋跡（ぶぜんかいどうなんかんおちゃやあと）とは、熊本県玉名郡南関町にある国指定の史跡である。本項では御茶屋跡と称する。",
       "lang": "ja",
@@ -11345,14 +11078,7 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a8/Former_Nankan_Ochaya01.jpg/960px-Former_Nankan_Ochaya01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Muyo",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Former_Nankan_Ochaya01.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q11633311"
     },
@@ -11367,7 +11093,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11634187",
@@ -11378,7 +11104,7 @@
       "zh_tw": "豊福阿蘇神社",
       "en": "Toyofukuaso Shrine"
     },
-    "kana_source": "wikipedia",
+    "kana_source": "wikidata",
     "location": {
       "lat": 32.633389,
       "lng": 130.70025
@@ -11390,7 +11116,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 53.1,
+    "score": 53.05,
     "summary": {
       "text": "豊福阿蘇神社（とよふくあそじんじゃ）は、熊本県宇城市松橋町豊福にある神社である。旧社格は郷社。",
       "lang": "ja",
@@ -11420,7 +11146,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11634479",
@@ -11443,7 +11169,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 53.63,
+    "score": 53.8,
     "summary": {
       "text": "貝洲加藤神社（かいずかとうじんじゃ）は、熊本県八代市鏡町貝洲に鎮座する神社である。御祭神は加藤清正公。旧社格は村社。",
       "lang": "ja",
@@ -11473,7 +11199,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-29"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11635319",
@@ -11496,7 +11222,7 @@
       "城"
     ],
     "featured": false,
-    "score": 50.09,
+    "score": 50.28,
     "summary": {
       "text": "赤井城（あかいじょう）は、熊本県上益城郡益城町赤井字本丸にあった中世の日本の城（平山城）。",
       "lang": "ja",
@@ -11519,7 +11245,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11638545",
@@ -11542,7 +11268,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 49.26,
+    "score": 49.41,
     "summary": {
       "text": "近津鹿島神社（ちこうづ かしまじんじゃ）は、熊本県熊本市西区松尾町に鎮座する神社である。旧社格は村社。「火の神祭り」で知られる。",
       "lang": "ja",
@@ -11572,7 +11298,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11640715",
@@ -11644,7 +11370,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 49.43,
+    "score": 49.63,
     "summary": {
       "text": "道の駅みなまた（みちのえき みなまた）は、熊本県水俣市にある国道3号の道の駅である。",
       "lang": "ja",
@@ -11684,7 +11410,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11641103",
@@ -11705,7 +11431,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 54.34,
+    "score": 54.43,
     "summary": {
       "text": "道の駅七城メロンドーム（みちのえき しちじょうメロンドーム）は、熊本県菊池市にある国道325号の道の駅である。",
       "lang": "ja",
@@ -11735,7 +11461,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11641120",
@@ -11756,7 +11482,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 51.35,
+    "score": 51.03,
     "summary": {
       "text": "道の駅不知火（みちのえき しらぬい）は、熊本県宇城市にある国道266号の道の駅である。",
       "lang": "ja",
@@ -11786,7 +11512,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11641230",
@@ -11807,7 +11533,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 50.53,
+    "score": 50.66,
     "summary": {
       "text": "道の駅大津（みちのえき おおづ）は、熊本県菊池郡大津町にある国道57号の道の駅である。",
       "lang": "ja",
@@ -11837,7 +11563,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11641248",
@@ -11858,7 +11584,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 50.89,
+    "score": 51.25,
     "summary": {
       "text": "道の駅子守唄の里五木（みちのえき こもりうたのさといつき）は、熊本県球磨郡五木村にある道の駅である。五木村の中心集落、頭地（とうじ）の国道445号沿いに位置する。",
       "lang": "ja",
@@ -11888,7 +11614,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11641267",
@@ -11909,7 +11635,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 55.11,
+    "score": 55.29,
     "summary": {
       "text": "道の駅小国（みちのえき おぐに）は、熊本県阿蘇郡小国町にある国道387号および国道442号の道の駅である。",
       "lang": "ja",
@@ -11939,7 +11665,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11641322",
@@ -11960,7 +11686,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 51.5,
+    "score": 51.45,
     "summary": {
       "text": "道の駅有明（みちのえき ありあけ）は、熊本県天草市にある国道324号の道の駅である。愛称は「リップルランド」。",
       "lang": "ja",
@@ -11990,7 +11716,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11641367",
@@ -12011,7 +11737,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 50.59,
+    "score": 50.61,
     "summary": {
       "text": "道の駅波野（みちのえき なみの）は、熊本県阿蘇市にある国道57号の道の駅である。1993年（平成5年）4月22日に道の駅に登録された。",
       "lang": "ja",
@@ -12041,7 +11767,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11641375",
@@ -12062,7 +11788,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 53.54,
+    "score": 53.55,
     "summary": {
       "text": "道の駅清和文楽邑（みちのえき せいわぶんらくむら）は、熊本県上益城郡山都町にある国道218号の道の駅である。",
       "lang": "ja",
@@ -12092,7 +11818,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11641435",
@@ -12113,7 +11839,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 50.26,
+    "score": 50.53,
     "summary": {
       "text": "道の駅竜北（みちのえき りゅうほく）は、熊本県八代郡氷川町にある国道3号の道の駅である。",
       "lang": "ja",
@@ -12143,7 +11869,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11641521",
@@ -12166,7 +11892,7 @@
       "橋"
     ],
     "featured": false,
-    "score": 54.93,
+    "score": 55.07,
     "summary": {
       "text": "道の駅通潤橋（みちのえき つうじゅんきょう）は、熊本県上益城郡山都町にある国道218号の道の駅である。",
       "lang": "ja",
@@ -12196,7 +11922,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11641533",
@@ -12217,7 +11943,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 49.12,
+    "score": 49.21,
     "summary": {
       "text": "道の駅錦（みちのえき にしき）は、熊本県球磨郡錦町にある国道219号の道の駅である。",
       "lang": "ja",
@@ -12256,7 +11982,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11641546",
@@ -12344,7 +12070,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 52.08,
+    "score": 52.29,
     "summary": {
       "text": "道の駅鹿北（みちのえき かほく）は、熊本県山鹿市にある国道3号の道の駅である。",
       "lang": "ja",
@@ -12374,7 +12100,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11643225",
@@ -12397,7 +12123,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 57.27,
+    "score": 57.28,
     "summary": {
       "text": "郡浦神社（こうのうらじんじゃ、こおのうらじんじゃ）は、熊本県宇城市三角町郡浦にある神社である。肥後国三宮と伝える。旧社格は郷社。",
       "lang": "ja",
@@ -12423,7 +12149,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11644542",
@@ -12447,7 +12173,7 @@
       "寺院"
     ],
     "featured": false,
-    "score": 59.17,
+    "score": 59.11,
     "summary": {
       "text": "釈迦院（しゃかいん）は、熊本県八代市泉町柿迫にある天台宗の寺院。山号は金海山（きんかいざん）で、詳しくは金海山大恩教寺釈迦院（きんかいざんだいおんきょうじしゃかいん）と号する。",
       "lang": "ja",
@@ -12482,7 +12208,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11647034",
@@ -12503,7 +12229,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 71.7,
+    "score": 71.72,
     "summary": {
       "text": "金峰山是位於日本熊本縣熊本市西區的一座山峰，標高665.2公尺。該山坐落於舊飽託郡河內町地區，是一座以主峰「一ノ嶽」為中心的破火山口型火山。金峰山為熊本市重要地標之一，與熊本城一同構成市區的代表景觀。",
       "lang": "zh",
@@ -12533,15 +12259,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/24/Mount_Kinpo_caldera_in_Kumamoto%2C_Japan.jpg/960px-Mount_Kinpo_caldera_in_Kumamoto%2C_Japan.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Yasu (talk)",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Mount_Kinpo_caldera_in_Kumamoto,_Japan.jpg"
-      }
-    }
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11650601",
@@ -12564,7 +12282,7 @@
       "展望"
     ],
     "featured": false,
-    "score": 64.42,
+    "score": 64.46,
     "summary": {
       "text": "The Nabegataki Falls is a waterfall located in Oguni, Aso District, Japan, on the border between Kumamoto and Ōita Prefectures. The waterfall is 9m tall with a width of 20m.",
       "lang": "en",
@@ -12595,7 +12313,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11651340",
@@ -12618,7 +12336,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 50.3,
+    "score": 50.62,
     "summary": {
       "text": "鐙田杵築神社（あぶみだ きつきじんじゃ）は、熊本県熊本市北区植木町に鎮座する神社である。旧社格は村社。",
       "lang": "ja",
@@ -12659,7 +12377,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11654154",
@@ -12680,7 +12398,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 47.91,
+    "score": 48.17,
     "summary": {
       "text": "長野城（ながのじょう）は、熊本県阿蘇郡南阿蘇村長野にあった中世の日本の城（平山城）。",
       "lang": "ja",
@@ -12703,7 +12421,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11657616",
@@ -12726,7 +12444,7 @@
       "動物園"
     ],
     "featured": true,
-    "score": 74.97,
+    "score": 74.85,
     "summary": {
       "text": "阿蘇卡德利動物樂園是位於日本熊本縣阿蘇市一個以熊為主的動物園。園內動物有約100種共800隻，其中包括7種熊共200隻，也有可讓旅客直接接觸互動的幼熊。此外，可以讓旅客一同攜帶寵物入內也是動物樂園的一個特色。",
       "lang": "zh",
@@ -12774,8 +12492,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11657618",
@@ -12796,7 +12513,7 @@
     "themes": [],
     "tags": [],
     "featured": true,
-    "score": 78.18,
+    "score": 78.14,
     "summary": {
       "text": "Aso Caldera (also known as Asosan, the Aso Volcano or Mount Aso, although the later term usually is used related to its currently active vents) is a geographical feature of Kumamoto Prefecture, Japan. It stretches 25 kilometers north to south and 18 kilometers east to west. The central core \"Aso Gogaku\" is the five major mountains in the area. Aso valley (Asodani) runs along the northern base of Mount Aso and Nango valley (Nangodani) along the south. According to research of caldera sediment, lakes used to exist in these valleys.",
       "lang": "en",
@@ -12806,10 +12523,10 @@
     },
     "images": [
       {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/90/Aso_Caldera_3D_2012.jpg/960px-Aso_Caldera_3D_2012.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Batholith",
-        "license": "Public domain",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Aso_Caldera_3D_2012.jpg"
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a1/20140516%E9%98%BF%E8%98%87%E5%B1%B1%E5%BA%83%E5%9F%9F.jpg/960px-20140516%E9%98%BF%E8%98%87%E5%B1%B1%E5%BA%83%E5%9F%9F.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Sonata / Sonata at ja.wikipedia",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:20140516%E9%98%BF%E8%98%87%E5%B1%B1%E5%BA%83%E5%9F%9F.jpg"
       }
     ],
     "external_ids": {
@@ -12826,7 +12543,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11657619",
@@ -12849,7 +12566,7 @@
       "主題樂園"
     ],
     "featured": false,
-    "score": 60.53,
+    "score": 60.85,
     "summary": {
       "text": "阿蘇ファームランド（あそファームランド）は株式会社健康の森が運営する、熊本県阿蘇郡南阿蘇村にある公園。園内には、癒・泊・動・栽・食・買の6つのテーマに分けた健康テーマパークである。1995年4月14日に開業した。",
       "lang": "ja",
@@ -12857,14 +12574,7 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/14/View_from_Royal_Zone_in_Aso_Farm_Land_6.jpg/960px-View_from_Royal_Zone_in_Aso_Farm_Land_6.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "そらみみ",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:View_from_Royal_Zone_in_Aso_Farm_Land_6.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q11657619",
       "osm": "relation/6146102"
@@ -12884,7 +12594,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11657624",
@@ -12904,7 +12614,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 58.49,
+    "score": 58.64,
     "summary": {
       "text": "阿蘇内牧温泉（あそうちのまきおんせん）は、熊本県阿蘇市（旧国肥後国）にある温泉。阿蘇温泉郷の一つで同温泉郷最大。阿蘇山の麓に位置する。",
       "lang": "ja",
@@ -12912,14 +12622,7 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f2/Uchinomaki_AsoCity_2012.JPG/960px-Uchinomaki_AsoCity_2012.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Sanjo",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Uchinomaki_AsoCity_2012.JPG"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q11657624"
     },
@@ -12930,7 +12633,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11657625",
@@ -12952,7 +12655,7 @@
       "展望"
     ],
     "featured": false,
-    "score": 52.51,
+    "score": 52.15,
     "summary": {
       "text": "阿蘇北向谷原始林（あそきたむきだにげんしりん）は、熊本県菊池郡大津町にある原始林。北向山原生林（きたむきやまげんせいりん）と表記されることもある。日本の天然記念物に指定されている。",
       "lang": "ja",
@@ -12960,14 +12663,7 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/31/Aso_kitamukidani_forest2.jpg/960px-Aso_kitamukidani_forest2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "K.F.",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Aso_kitamukidani_forest2.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q11657625",
       "osm": "node/4129736499"
@@ -12987,7 +12683,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11657667",
@@ -13007,7 +12703,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 53.81,
+    "score": 53.52,
     "summary": {
       "text": "阿蘇赤水温泉（あそあかみずおんせん）は、熊本県阿蘇市（旧国肥後国）にある温泉。阿蘇温泉郷の一つ。阿蘇山の麓に位置する。",
       "lang": "ja",
@@ -13046,7 +12742,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11658903",
@@ -13069,7 +12765,7 @@
       "城"
     ],
     "featured": false,
-    "score": 54.4,
+    "score": 54.38,
     "summary": {
       "text": "隈庄城（くまのしょうじょう）は、熊本県城南町にあった中世の日本の城（丘城）。",
       "lang": "ja",
@@ -13092,7 +12788,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11658919",
@@ -13115,7 +12811,7 @@
       "史跡"
     ],
     "featured": false,
-    "score": 59.95,
+    "score": 60.04,
     "summary": {
       "text": "Kumabe clan yakata ruins (隈部氏館跡, Kumabe-shi yakata ato) is the site of a Sengoku period fortified manor located  in the present-day Furushiro-cho neighborhood of the city of Yamaga, Kumamoto Prefecture, Japan. Its ruins have been protected as a National Historic Site since 2013. It is also called Nagano Castle (永野城跡).",
       "lang": "en",
@@ -13123,14 +12819,7 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-29"
     },
-    "images": [
-      {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/4/4d/%E9%9A%88%E9%83%A8%E8%A6%AA%E6%B0%B8%E3%81%AE%E9%8A%85%E5%83%8F.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-        "author": "Daburoku",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:%E9%9A%88%E9%83%A8%E8%A6%AA%E6%B0%B8%E3%81%AE%E9%8A%85%E5%83%8F.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q11658919"
     },
@@ -13145,7 +12834,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11659178",
@@ -13167,7 +12856,7 @@
       "橋"
     ],
     "featured": false,
-    "score": 33.84,
+    "score": 33.73,
     "summary": {
       "text": "雄亀滝橋（おけだけばし、おけだきばし）は熊本県美里町石野に架かる江戸時代後期のアーチ型水路橋。県指定（昭和49年11月19日）の文化財。",
       "lang": "ja",
@@ -13175,14 +12864,7 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b7/%E9%9B%84%E4%BA%80%E6%BB%9D%E6%A9%8B_-_panoramio.jpg/960px-%E9%9B%84%E4%BA%80%E6%BB%9D%E6%A9%8B_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "sk01",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:%E9%9B%84%E4%BA%80%E6%BB%9D%E6%A9%8B_-_panoramio.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q11659178",
       "osm": "node/3371670657"
@@ -13198,7 +12880,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11660053",
@@ -13221,7 +12903,7 @@
       "寺院"
     ],
     "featured": false,
-    "score": 60.4,
+    "score": 60.37,
     "summary": {
       "text": "雲巌禅寺（うんがんぜんじ）は、熊本県熊本市西区松尾町平山にある曹洞宗の寺院。山号は宝華山または岩殿山。",
       "lang": "ja",
@@ -13256,7 +12938,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11660696",
@@ -13280,7 +12962,7 @@
       "重要文化財"
     ],
     "featured": false,
-    "score": 65.56,
+    "score": 65.57,
     "summary": {
       "text": "靈臺橋，別名船津橋，是日本熊本縣下益城郡美里町的一座石拱橋，建造於江戶時代。其橫跨一級水系綠川，其橋拱距離亦為明治時期以前諸橋梁中最長者。1967年6月15日列入重要文化財。",
       "lang": "zh",
@@ -13315,7 +12997,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-29"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11663924",
@@ -13338,7 +13020,7 @@
       "城"
     ],
     "featured": false,
-    "score": 69.19,
+    "score": 69.21,
     "summary": {
       "text": "Kikuchi Castle (鞠智城, Kikuchi-jo) was an ancient castle (also known as a Korean-style fortresses in Japan (朝鮮式山城, Chōsen-shiki yamajiro) in the city of Kikuchi, Kumamoto Prefecture Japan. Its ruins have been protected as a National Historic Site since 2004.",
       "lang": "en",
@@ -13373,7 +13055,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11671498",
@@ -13396,7 +13078,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 63.92,
+    "score": 63.79,
     "summary": {
       "text": "Takahashi Inari Shrine (高橋稲荷神社, Takahashi inari jinja) is a Shinto Inari shrine, dedicated to the worship of the kami Inari. It is located in Kumamoto, Kumamoto Prefecture. Its main festival is held annually on November 8. It was founded in 1496.",
       "lang": "en",
@@ -13426,7 +13108,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q116764214",
@@ -13449,7 +13131,7 @@
       "史跡"
     ],
     "featured": false,
-    "score": 66.06,
+    "score": 66.38,
     "summary": {
       "text": "夏目漱石內坪井舊居是日本小說家、俳人夏目漱石旅居熊本期間所居住的宅邸之一，位於熊本縣熊本市中央區內坪井町。",
       "lang": "zh",
@@ -13495,7 +13177,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11677247",
@@ -13516,7 +13198,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 54.36,
+    "score": 54.28,
     "summary": {
       "text": "鹿目の滝（かなめのたき）は、熊本県人吉市鹿目町にある滝。雄滝（落差36m）と雌滝（落差30m）、さらに雄滝上流の平滝からなる。1958年（昭和33年）3月10日、人吉市名勝に指定、2024年（令和６年）3月22日には熊本県の名勝に指定された。日本の滝百選の一つ。",
       "lang": "ja",
@@ -13524,14 +13206,7 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1f/Kaname_Otaki.JPG/960px-Kaname_Otaki.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "アラツク",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Kaname_Otaki.JPG"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q11677247",
       "osm": "node/13957108825"
@@ -13551,7 +13226,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11678251",
@@ -13572,7 +13247,7 @@
     "themes": [],
     "tags": [],
     "featured": true,
-    "score": 76.21,
+    "score": 75.85,
     "summary": {
       "text": "黑川溫泉是位於日本熊本縣阿蘇郡南小國町的溫泉區，屬於南小國溫泉鄉之一。由於位於阿蘇山北方約20公里處，有時也被列為阿蘇溫泉鄉的一部分。在2008年觀光經濟新聞社公佈的「日本溫泉100選」中，黑川溫泉為「氛圍」項目第一名。在2009年的「日本米其林旅遊指南」（Michelin Travel Guide Japan）中被列為二星等級的溫泉區。",
       "lang": "zh",
@@ -13598,8 +13273,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-29",
-    "season_images": {}
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q117221173",
@@ -13622,7 +13296,7 @@
       "史跡"
     ],
     "featured": false,
-    "score": 66.32,
+    "score": 66.47,
     "summary": {
       "text": "Birthplace of the Miyazaki Brothers (Japanese: 宮崎兄弟の生家, Hepburn: Miyazaki Kyōdai no Seika) is a cultural heritage site and museum in Arao City, Japan. It is a designated historical property of Kumamoto Prefecture. The site is dedicated to the Miyazaki Brothers: Hachirō, Tōten, Tamizō, and Yazō, and their connection to Sun Yat-sen, the leader of the 1911 Revolution. There is also a museum, the Miyazaki Brothers Museum built on the property.",
       "lang": "en",
@@ -13661,7 +13335,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q117842746",
@@ -13727,7 +13401,7 @@
       "公園"
     ],
     "featured": false,
-    "score": 48.3,
+    "score": 48.28,
     "summary": {
       "text": "蛇ヶ谷公園（じゃがたにこうえん）は、熊本県玉名市にある公園である。",
       "lang": "ja",
@@ -13757,7 +13431,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q118582152",
@@ -13779,7 +13453,7 @@
       "公園"
     ],
     "featured": false,
-    "score": 49.59,
+    "score": 49.72,
     "summary": {
       "text": "月廻り公園（つきまわりこうえん）は、熊本県阿蘇郡高森町にある公園である。",
       "lang": "ja",
@@ -13809,7 +13483,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q124817868",
@@ -13893,7 +13567,7 @@
       "博物館"
     ],
     "featured": false,
-    "score": 49.56,
+    "score": 49.88,
     "summary": {
       "text": "天草市立御所浦恐竜の島博物館（あまくさしりつごしょうらきょうりゅうのしまはくぶつかん、英: Amakusa Museum of Goshoura Dinosaur Island）は、熊本県天草市の離島の御所浦島にある、天草市立の自然史博物館。恐竜をはじめとしたさまざまな化石や地質など、天草の1億年の歴史をテーマとしている。",
       "lang": "ja",
@@ -13924,7 +13598,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q127605475",
@@ -13945,7 +13619,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 50.02,
+    "score": 50.1,
     "summary": {
       "text": "山鹿灯籠民芸館（やまがとうろうみんげいかん）は、熊本県山鹿市にある伝統的建築物。2002年（平成14年）に国の登録有形文化財に登録されている。",
       "lang": "ja",
@@ -13975,7 +13649,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q127699461",
@@ -13996,7 +13670,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 55.64,
+    "score": 56.05,
     "summary": {
       "text": "御輿来海岸（おこしきかいがん）は、熊本県宇土市にある海岸。",
       "lang": "ja",
@@ -14040,7 +13714,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q128378245",
@@ -14064,7 +13738,7 @@
       "史跡"
     ],
     "featured": false,
-    "score": 54.15,
+    "score": 53.72,
     "summary": {
       "text": "Jinnouchi Castle (陣ノ内城, Jinnouchi-jō)  was a flatlands-style Japanese castle located in the Nishikatahonjō neighborhood of the town of  Kōsa,  Kumamoto Prefecture, Japan.  The ruins were designated a National Historic Site in 2021.",
       "lang": "en",
@@ -14087,7 +13761,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q128378685",
@@ -14108,7 +13782,7 @@
       "史跡"
     ],
     "featured": false,
-    "score": 36.07,
+    "score": 35.92,
     "summary": {
       "text": "Tanasoko Castle (棚底城跡, Tanasoko-jō) was a Muromachi period Japanese castle located in the Kuratake neighborhood of the city of Amakusa, Kumamoto Prefecture, Japan.  Its ruins have been protected as a National Historic Site since 2009.",
       "lang": "en",
@@ -14132,7 +13806,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q131174438",
@@ -14214,7 +13888,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 53.57,
+    "score": 53.56,
     "summary": {
       "text": "立神峡（たてがみきょう）は、熊本県八代郡氷川町にある峡谷。",
       "lang": "ja",
@@ -14240,7 +13914,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q131444332",
@@ -14319,7 +13993,7 @@
       "史跡"
     ],
     "featured": false,
-    "score": 40.74,
+    "score": 40.59,
     "summary": {
       "text": "Chihen-ji ruins (池辺寺跡, Chihen-ji ato) is an archeological site  with the ruins of a Heian period Buddhist temple located in the Ikegami neighborhood of the city of Kumamoto, Japan. The temple no longer exists, and its ruins were designated a National Historic Site in 1997.",
       "lang": "en",
@@ -14343,7 +14017,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q134316333",
@@ -14363,7 +14037,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 43.44,
+    "score": 43.51,
     "summary": {
       "text": "熊本パルコ（くまもとパルコ）は、1986年から2020年まで、熊本県熊本市で営業していたファッションビル。",
       "lang": "ja",
@@ -14380,14 +14054,7 @@
         "distance_m": 720
       }
     ],
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/58/090502_Shimo-tori_Kumamoto_Japan03s3.jpg/960px-090502_Shimo-tori_Kumamoto_Japan03s3.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "663highland",
-        "license": "CC BY 2.5",
-        "source_url": "https://commons.wikimedia.org/wiki/File:090502_Shimo-tori_Kumamoto_Japan03s3.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q134316333"
     },
@@ -14402,7 +14069,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q135552185",
@@ -14425,7 +14092,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 53.68,
+    "score": 53.15,
     "summary": {
       "text": "小山諏訪神社（おやますわじんじゃ）は、熊本県熊本市東区にある神社。拝殿前には大楠の神木がある。御本社は長野県の諏訪大社。",
       "lang": "ja",
@@ -14451,7 +14118,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q1358183",
@@ -14472,7 +14139,7 @@
     "themes": [],
     "tags": [],
     "featured": true,
-    "score": 77.3,
+    "score": 77.22,
     "summary": {
       "text": "球磨川是一條日本熊本縣南部球磨川水系的幹流，一級河川，與富士川和最上川並稱為日本三大急流。其發源於球磨郡水上村石楠越（標高1391m）及水上越（標高1458m），經過人吉盆地向西流淌，經過人吉市後到球磨村轉向北，在八代市注入八代海。",
       "lang": "zh",
@@ -14498,8 +14165,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q137692444",
@@ -14521,7 +14187,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 45.22,
+    "score": 45.44,
     "summary": {
       "text": "保田木神社（ほたきじんじゃ）は、熊本県玉名市にある神社。",
       "lang": "ja",
@@ -14529,14 +14195,7 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/37/Hotaki-jinja%2C_Tamana.jpg/960px-Hotaki-jinja%2C_Tamana.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "運動会プロテインパワー",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Hotaki-jinja,_Tamana.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q137692444"
     },
@@ -14551,7 +14210,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q137707",
@@ -14632,7 +14291,7 @@
       "公園"
     ],
     "featured": false,
-    "score": 50.0,
+    "score": 51.05,
     "summary": {
       "text": "武蔵塚公園（むさしづかこうえん）は、熊本県熊本市北区にある公園である。二天一流の開祖である剣豪・宮本武蔵の墓所があることで知られる。",
       "lang": "ja",
@@ -14676,7 +14335,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q140302825",
@@ -14698,7 +14357,7 @@
       "公園"
     ],
     "featured": false,
-    "score": 43.01,
+    "score": 43.95,
     "summary": {
       "text": "益城町震災記念公園（ましきまちしんさいきねんこうえん）は、熊本県上益城郡益城町宮園にある公園。2023年6月18日完成。",
       "lang": "ja",
@@ -14721,7 +14380,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q140657409",
@@ -14744,7 +14403,7 @@
       "寺院"
     ],
     "featured": false,
-    "score": 33.42,
+    "score": 33.89,
     "summary": {
       "text": "光触寺（こうそくじ）は、熊本県熊本市北区植木町今藤にある真宗佛光寺派の寺院。山号は専修山、本尊は阿弥陀如来である。1890年（明治23年）に今藤で形成された九州改進党の門徒集団を基盤とし、1892年 – 1893年（明治25年 – 26年）にかけて真宗佛光寺派への転派と京都からの寺号移転が行われた。",
       "lang": "ja",
@@ -14768,7 +14427,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q1456873",
@@ -14786,7 +14445,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 60.26,
+    "score": 60.13,
     "summary": {
       "text": "A Peace Pagoda is a Buddhist stupa: a monument to inspire peace, designed to provide a focus for people of all races and creeds, and to help unite them in their search for world peace. Most, though not all, peace pagodas built since World War II have been built under the guidance of Nichidatsu Fujii (1885–1985), a Buddhist monk from Japan and founder of the Nipponzan-Myōhōji Buddhist Order. Fujii was greatly inspired by his meeting with Mahatma Gandhi in 1931 and decided to devote his life to promoting non-violence.",
       "lang": "en",
@@ -14805,14 +14464,7 @@
         "distance_m": 720
       }
     ],
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7c/Shanti_Stupa.jpg/960px-Shanti_Stupa.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Michael Goodine",
-        "license": "CC BY 2.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Shanti_Stupa.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q1456873",
       "osm": "way/489068359"
@@ -14828,7 +14480,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q166976",
@@ -14852,7 +14504,7 @@
       "史跡"
     ],
     "featured": true,
-    "score": 73.48,
+    "score": 73.45,
     "summary": {
       "text": "宇土城（うとじょう）位於日本熊本縣宇土市。別稱鶴の城（つるのしろ）。因同市神馬町亦有一座中世紀期建築物－宇土古城，故中世宇土城與近世宇土城結合併寫。",
       "lang": "zh",
@@ -14882,8 +14534,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q167136",
@@ -14906,7 +14557,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 68.48,
+    "score": 68.29,
     "summary": {
       "text": "Kengun Shrine (健軍神社) is the oldest traditional shrine in Kumamoto City, Kumamoto Prefecture, Japan. It is one of the 4 shrines of Aso Shrine group (Aso Shrine, Kohsa Shrine and Kohnoura Shrine).",
       "lang": "en",
@@ -14951,7 +14602,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q167146",
@@ -14975,7 +14626,7 @@
       "神社"
     ],
     "featured": true,
-    "score": 70.1,
+    "score": 70.03,
     "summary": {
       "text": "藤崎八旛宮又稱藤崎宮（日語：藤崎宮／ふじさきぐう，羅馬化：Fujisakigū），是日本熊本縣熊本市中央區井川淵町的神社，社格是肥後國三宮、國幣小社和別表神社，祭神是應神天皇、住吉大神和神功皇后，神宮寺是神護寺、彌勒寺、勝城寺和妙樂寺。",
       "lang": "zh",
@@ -15022,8 +14673,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q17191286",
@@ -15046,7 +14696,7 @@
       "美術館"
     ],
     "featured": false,
-    "score": 56.42,
+    "score": 58.4,
     "summary": {
       "text": "芦北町立星野富弘美術館（あしきたちょうりつ ほしのとみひろびじゅつかん）は、熊本県葦北郡芦北町にある公立の美術館。群馬県みどり市にあるみどり市立富弘美術館の姉妹館として、2006年5月開館。詩人・画家である星野富弘の作品を中心に展示している。",
       "lang": "ja",
@@ -15085,7 +14735,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q17191779",
@@ -15108,7 +14758,7 @@
       "島"
     ],
     "featured": false,
-    "score": 60.83,
+    "score": 60.85,
     "summary": {
       "text": "天草松島是熊本縣大矢野島和天草上島之間，大小約20餘島之總稱。",
       "lang": "zh",
@@ -15138,15 +14788,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/02/Five_Bridges_of_Amakusa%2Cfour_bridges_Southern_side_Aerial_photograph.1974.jpg/960px-Five_Bridges_of_Amakusa%2Cfour_bridges_Southern_side_Aerial_photograph.1974.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "国土交通省",
-        "license": "Attribution",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Five_Bridges_of_Amakusa,four_bridges_Southern_side_Aerial_photograph.1974.jpg"
-      }
-    }
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q17193024",
@@ -15167,7 +14809,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 50.85,
+    "score": 50.8,
     "summary": {
       "text": "石段の郷 佐俣の湯（いしだんのさと さまたのゆ）は、熊本県下益城郡美里町の国道218号の北側にある温泉施設で、すぐ近くに元湯 佐俣の湯がある。",
       "lang": "ja",
@@ -15197,7 +14839,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q17193690",
@@ -15220,7 +14862,7 @@
       "島"
     ],
     "featured": false,
-    "score": 44.09,
+    "score": 44.14,
     "summary": {
       "text": "維和島（いわじま）は、天草諸島の北部に浮かぶ島である。熊本県上天草市に属する。別名は千束蔵々島と呼ばれている。本項ではかつて同区域に所在した天草郡維和村（いわむら）についても述べる。",
       "lang": "ja",
@@ -15246,7 +14888,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q17213009",
@@ -15269,7 +14911,7 @@
       "博物館"
     ],
     "featured": false,
-    "score": 60.21,
+    "score": 60.28,
     "summary": {
       "text": "島田美術館（しまだびじゅつかん）は、熊本県熊本市西区島崎に所在する美術館。剣豪宮本武蔵の遺墨・遺品の収蔵、展示で知られる。",
       "lang": "ja",
@@ -15304,7 +14946,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q17214624",
@@ -15327,7 +14969,7 @@
       "博物館"
     ],
     "featured": false,
-    "score": 62.35,
+    "score": 62.19,
     "summary": {
       "text": "Mifune Dinosaur Museum (御船町恐竜博物館, Mifune-machi Kyōryū Hakubutsukan) opened in Mifune, Kumamoto Prefecture, Japan in 1998. The museum collects, preserves, researches, and displays the dinosaur fossils found in the area; the collection, which includes Japan's first fossil from a meat-eating dinosaur, Mifunesaurus, numbers some 15,000 items.",
       "lang": "en",
@@ -15362,7 +15004,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q17215088",
@@ -15380,7 +15022,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 49.12,
+    "score": 49.06,
     "summary": {
       "text": "熊本市くまもと工芸会館（くまもとしくまもとこうげいかいかん）は、熊本県熊本市にある公立の文化施設。平成3年に開館した。熊本県の伝統工芸品を中心に展示し、各種工芸教室を開催している。工芸の実演と体験に特化した施設でもあり、毎日 様々な工芸の実演・体験が行われている。。",
       "lang": "ja",
@@ -15417,7 +15059,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q17215114",
@@ -15440,7 +15082,7 @@
       "寺院"
     ],
     "featured": false,
-    "score": 39.15,
+    "score": 39.05,
     "summary": {
       "text": "蓮台寺（れんだいじ）は、熊本県熊本市西区蓮台寺にある浄土宗西山禅林寺派の寺院。肥後国三十三ヶ所観音霊場第16番札所。「檜垣寺」の異名で知られる。",
       "lang": "ja",
@@ -15487,7 +15129,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q17216016",
@@ -15577,7 +15219,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 48.81,
+    "score": 48.5,
     "summary": {
       "text": "内田八幡宮（うちだはちまんぐう）は、山鹿市菊鹿町下内田字宮ノ本に所在する八幡宮。「肥後国誌」では『正一位八幡宮』と記述されている。旧社格は村社。",
       "lang": "ja",
@@ -15585,14 +15227,7 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8f/Uchida-hachimangu%2C_Yamaga_202512-1.jpg/960px-Uchida-hachimangu%2C_Yamaga_202512-1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "運動会プロテインパワー",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Uchida-hachimangu,_Yamaga_202512-1.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q17217102"
     },
@@ -15603,7 +15238,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q17221956",
@@ -15626,7 +15261,7 @@
       "重要文化財"
     ],
     "featured": false,
-    "score": 68.05,
+    "score": 68.02,
     "summary": {
       "text": "八千代座為位於日本熊本縣山鹿市的歌舞伎劇場，建於明治時期的1910年，1988年被指定為國家重要文化財。隨後進行修復工程，於2001年修復完成。",
       "lang": "zh",
@@ -15656,7 +15291,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q17222013",
@@ -15679,7 +15314,7 @@
       "博物館"
     ],
     "featured": false,
-    "score": 54.54,
+    "score": 54.7,
     "summary": {
       "text": "八代市立博物館・未来の森ミュージアム（やつしろしりつはくぶつかん・みらいのもりミュージアム）は、熊本県八代市に所在する市立博物館。休館中だったが、2026年5月1日に再開館した。",
       "lang": "ja",
@@ -15714,7 +15349,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q17223264",
@@ -15735,7 +15370,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 49.8,
+    "score": 49.63,
     "summary": {
       "text": "ゴンドーシャロレー(Gondo charolais)は、熊本県阿蘇郡南小国町にあるオートキャンプ場である。",
       "lang": "ja",
@@ -15754,7 +15389,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q17224057",
@@ -15777,7 +15412,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 55.57,
+    "score": 55.54,
     "summary": {
       "text": "疋野神社（ひきのじんじゃ）は、熊本県玉名市に鎮座する神社である。延喜式内社で、旧社格は県社。",
       "lang": "ja",
@@ -15819,7 +15454,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q17224398",
@@ -15841,7 +15476,7 @@
       "橋"
     ],
     "featured": false,
-    "score": 42.98,
+    "score": 43.25,
     "summary": {
       "text": "大甲橋（たいこうはし）は熊本県熊本市中央区の市街地の中心部、白川に架かる熊本県道28号熊本高森線と熊本市電水前寺線の路面電車の併用橋。",
       "lang": "ja",
@@ -15880,7 +15515,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q17225399",
@@ -15903,7 +15538,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 60.08,
+    "score": 59.97,
     "summary": {
       "text": "桜山神社（さくらやまじんじゃ）は、熊本県熊本市中央区に鎮座する神社である。天照大御神・豊受大神を主祭神とし、林桜園、明治維新で活躍した肥後勤王党の志士、神風連の烈士らを合わせ祀る。境内には「神風連資料館」がある。",
       "lang": "ja",
@@ -15949,7 +15584,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q17225485",
@@ -15972,7 +15607,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 54.02,
+    "score": 54.08,
     "summary": {
       "text": "男成神社（おとこなりじんじゃ）は、熊本県上益城郡山都町に鎮座する神社である。旧社格は郷社。",
       "lang": "ja",
@@ -16002,7 +15637,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q17225723",
@@ -16023,7 +15658,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 57.95,
+    "score": 57.85,
     "summary": {
       "text": "百太郎溝（ひゃくたろうみぞ）または百太郎堰（ひゃくたろうせき）は、熊本県球磨郡多良木町、あさぎり町、錦町にある用水路。",
       "lang": "ja",
@@ -16071,7 +15706,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q17225954",
@@ -16091,7 +15726,7 @@
       "博物館"
     ],
     "featured": false,
-    "score": 54.6,
+    "score": 54.99,
     "summary": {
       "text": "湯前まんが美術館（那須良輔記念館）（ゆのまえまんがびじゅつかん　なすりょうすけきねんかん）は、熊本県球磨郡湯前町にある美術館。湯前町出身の政治風刺漫画家である那須良輔の偉業を記念し、1992年（平成4年）11月に開館。",
       "lang": "ja",
@@ -16131,7 +15766,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q17226069",
@@ -16148,7 +15783,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 34.37,
+    "score": 34.48,
     "summary": {
       "text": "ゆめマート玉名（ゆめマートたまな）は、熊本県玉名市にある株式会社イズミが運営する食品スーパー。",
       "lang": "ja",
@@ -16178,7 +15813,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q17228321",
@@ -16189,7 +15824,7 @@
       "zh_tw": "草部吉見神社",
       "en": "Kusakabeyoshimi Shrine"
     },
-    "kana_source": "wikipedia",
+    "kana_source": "wikidata",
     "location": {
       "lat": 32.782639,
       "lng": 131.217972
@@ -16201,7 +15836,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 59.01,
+    "score": 58.62,
     "summary": {
       "text": "草部吉見神社（くさかべよしみじんじゃ）は、熊本県阿蘇郡高森町に鎮座する神社である。旧社格は郷社。日本三大下り宮の一社。",
       "lang": "ja",
@@ -16236,7 +15871,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q17228347",
@@ -16257,7 +15892,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 53.63,
+    "score": 53.71,
     "summary": {
       "text": "熊本県伝統工芸館（くまもとけんでんとうこうげいかん）は、熊本県熊本市にある公立の文化施設。",
       "lang": "ja",
@@ -16303,7 +15938,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q17228812",
@@ -16323,7 +15958,7 @@
       "美術館"
     ],
     "featured": false,
-    "score": 54.75,
+    "score": 54.71,
     "summary": {
       "text": "宇城市不知火美術館（うきししらぬひびじゅつかん）は、熊本県宇城市に所在する美術館。",
       "lang": "ja",
@@ -16365,7 +16000,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q17229167",
@@ -16387,7 +16022,7 @@
       "展望"
     ],
     "featured": false,
-    "score": 41.84,
+    "score": 41.59,
     "summary": {
       "text": "長六橋是日本熊本縣熊本市中央區的一座公路橋梁，承載日本國道3號跨越白川。有先後四代橋梁，當前的橋梁長123.2米，寬22米，1983年開工，1990年10月竣工，1991年4月23日通車。",
       "lang": "zh",
@@ -16440,7 +16075,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q17230001",
@@ -16463,7 +16098,7 @@
       "城"
     ],
     "featured": false,
-    "score": 46.48,
+    "score": 46.9,
     "summary": {
       "text": "日渡城（ひわたしじょう）は、熊本県山鹿市菊鹿町下内田日渡にあった日本の城（丘城）。築城年代は不明。江戸時代の柳川藩士・内田氏の系図では、豊後の戦国大名・大友氏の下に亡命した相良氏庶流・内田氏の肥後国での居城とされているが、『肥後国誌』あるいは『日本歴史地名大系』では隈部館または猿返城である永野城と混同されている。",
       "lang": "ja",
@@ -16486,7 +16121,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q17230725",
@@ -16506,7 +16141,7 @@
       "博物館"
     ],
     "featured": false,
-    "score": 53.67,
+    "score": 53.77,
     "summary": {
       "text": "リデル・ライト両女史記念館（英語:Riddell-Wright Memorial Hall）は、熊本県初のハンセン病病院回春病院（1895年11月12日-1941年2月3日）を創立したハンナ・リデルとその後継者エダ・ハンナ・ライトおよび回春病院を記念して、その施設の研究室、兼、後にライトの住居になった建物（1919年建築、1935年増築）に作られた博物館形式の記念館。",
       "lang": "ja",
@@ -16548,7 +16183,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q17989626",
@@ -16571,7 +16206,7 @@
       "島"
     ],
     "featured": false,
-    "score": 43.84,
+    "score": 43.88,
     "summary": {
       "text": "大築島（おおつくしま）とは、熊本県八代市にある無人島である。以前は人が住んでいたが現在は無人化し、人の立ち入りが禁止されている。",
       "lang": "ja",
@@ -16579,14 +16214,7 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ea/Otsukushima_Island%2C_Yatsushiro_Kumamoto_Aerial_photograph.2009.jpg/960px-Otsukushima_Island%2C_Yatsushiro_Kumamoto_Aerial_photograph.2009.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "国土地理院",
-        "license": "Attribution",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Otsukushima_Island,_Yatsushiro_Kumamoto_Aerial_photograph.2009.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q17989626"
     },
@@ -16601,15 +16229,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ea/Otsukushima_Island%2C_Yatsushiro_Kumamoto_Aerial_photograph.2009.jpg/960px-Otsukushima_Island%2C_Yatsushiro_Kumamoto_Aerial_photograph.2009.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "国土地理院",
-        "license": "Attribution",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Otsukushima_Island,_Yatsushiro_Kumamoto_Aerial_photograph.2009.jpg"
-      }
-    }
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q18335592",
@@ -16629,7 +16249,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 39.05,
+    "score": 38.88,
     "summary": {
       "text": "ゆめタウン大江（ゆめタウンおおえ）は、2014年6月26日に開業した熊本県熊本市中央区に位置する株式会社イズミの運営する食品スーパー、ゆめマート大江の旧名称。直営の衣料品・食料品売場などのほかに複数の店舗の専門店が並んでおり、ショッピングセンターとしての一面も持つ。",
       "lang": "ja",
@@ -16675,7 +16295,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q18337077",
@@ -16695,7 +16315,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 33.7,
+    "score": 33.86,
     "summary": {
       "text": "ショッピングプラザ ウエッキー（Shopping Plaza WECKY）は、熊本県熊本市北区植木町舞尾にある総合ショッピングセンター。略称はウエッキー (WECKY)。正式名称は植木ショッピングプラザ。",
       "lang": "ja",
@@ -16703,14 +16323,7 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/52/%E3%82%B7%E3%83%A7%E3%83%83%E3%83%94%E3%83%B3%E3%82%B0%E3%83%97%E3%83%A9%E3%82%B6%E3%82%A6%E3%82%A8%E3%83%83%E3%82%AD%E3%83%BC.jpg/960px-%E3%82%B7%E3%83%A7%E3%83%83%E3%83%94%E3%83%B3%E3%82%B0%E3%83%97%E3%83%A9%E3%82%B6%E3%82%A6%E3%82%A8%E3%83%83%E3%82%AD%E3%83%BC.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "320nepi",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:%E3%82%B7%E3%83%A7%E3%83%83%E3%83%94%E3%83%B3%E3%82%B0%E3%83%97%E3%83%A9%E3%82%B6%E3%82%A6%E3%82%A8%E3%83%83%E3%82%AD%E3%83%BC.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q18337077"
     },
@@ -16721,7 +16334,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q18700539",
@@ -16743,7 +16356,7 @@
       "岬"
     ],
     "featured": false,
-    "score": 32.69,
+    "score": 32.72,
     "summary": {
       "text": "イオンタウン田崎 (イオンタウンたさき) は、熊本県熊本市西区田崎町にあるイオンタウン株式会社が運営するエンクローズドモールタイプののネイバーフッド型ショッピングセンターである。",
       "lang": "ja",
@@ -16777,7 +16390,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q20043007",
@@ -16815,14 +16428,7 @@
         "distance_m": 1470
       }
     ],
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1c/%E5%85%89%E3%81%AE%E4%B8%AD%E3%81%AE%E5%B9%B2%E6%BD%9F_-_panoramio.jpg/960px-%E5%85%89%E3%81%AE%E4%B8%AD%E3%81%AE%E5%B9%B2%E6%BD%9F_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Yuji Sakamoto",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:%E5%85%89%E3%81%AE%E4%B8%AD%E3%81%AE%E5%B9%B2%E6%BD%9F_-_panoramio.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q20043007"
     },
@@ -16837,7 +16443,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-29"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q20662421",
@@ -16860,7 +16466,7 @@
       "島"
     ],
     "featured": false,
-    "score": 36.6,
+    "score": 36.84,
     "summary": {
       "text": "横浦島（よこうらじま）は、熊本県天草市にある天草諸島の島の一つである。",
       "lang": "ja",
@@ -16868,14 +16474,7 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/aa/Yokourajima_Island%2C_Amakusa_Kumamoto_Aerial_photograph.2014.jpg/960px-Yokourajima_Island%2C_Amakusa_Kumamoto_Aerial_photograph.2014.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "国土地理院",
-        "license": "Attribution",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Yokourajima_Island,_Amakusa_Kumamoto_Aerial_photograph.2014.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q20662421"
     },
@@ -16890,7 +16489,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q20706699",
@@ -16913,7 +16512,7 @@
       "島"
     ],
     "featured": false,
-    "score": 37.3,
+    "score": 37.46,
     "summary": {
       "text": "下須島（げすしま）は熊本県天草市にある島である。",
       "lang": "ja",
@@ -16921,14 +16520,7 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/be/Ushibuka_gesuisland_satsuki_beach.jpg/960px-Ushibuka_gesuisland_satsuki_beach.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "ブルーノ・プラス",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Ushibuka_gesuisland_satsuki_beach.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q20706699"
     },
@@ -16943,15 +16535,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/38/Gesushima_Island%2C_Amakusa_Kumamoto_Aerial_photograph.2014.jpg/960px-Gesushima_Island%2C_Amakusa_Kumamoto_Aerial_photograph.2014.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "国土地理院",
-        "license": "Attribution",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Gesushima_Island,_Amakusa_Kumamoto_Aerial_photograph.2014.jpg"
-      }
-    }
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q20709285",
@@ -16974,7 +16558,7 @@
       "島"
     ],
     "featured": false,
-    "score": 40.52,
+    "score": 40.58,
     "summary": {
       "text": "樋島（ひのしま/Hinoshima）は、熊本県上天草市龍ヶ岳町に属する島である。本項ではかつて同区域に所在した天草郡樋島村（ひのしまむら）についても述べる。",
       "lang": "ja",
@@ -16993,7 +16577,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q21653164",
@@ -17016,7 +16600,7 @@
       "世界遺產"
     ],
     "featured": true,
-    "score": 85.43,
+    "score": 85.47,
     "summary": {
       "text": "﨑津集落（さきつしゅうらく）は、熊本県天草市河浦町﨑津一帯の総称で、羊角湾に面した潜伏キリシタンの里として知られる。",
       "lang": "ja",
@@ -17051,8 +16635,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q21993283",
@@ -17075,7 +16658,7 @@
       "公園"
     ],
     "featured": false,
-    "score": 64.86,
+    "score": 65.39,
     "summary": {
       "text": "高森湧水隧道公園為位於日本熊本縣高森町的一個以隧道為主題的公園。",
       "lang": "zh",
@@ -17121,7 +16704,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q21994631",
@@ -17142,7 +16725,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 66.66,
+    "score": 66.46,
     "summary": {
       "text": "櫻之馬場 城彩苑（さくらのばば じょうさいえん）是位於日本熊本縣熊本市中央區的一個觀光設施。櫻之馬場開業於2011年3月5日，正值九州新幹線全線開業之前。櫻之馬場所在地曾是市營游泳池。櫻之馬場緊臨熊本市三大觀光地之一的熊本城，可免費入場。",
       "lang": "zh",
@@ -17188,15 +16771,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/11/Sakuranobaba-johsaien_%2C_%E6%A1%9C%E3%81%AE%E9%A6%AC%E5%A0%B4%E5%9F%8E%E5%BD%A9%E8%8B%91_-_panoramio_%282%29.jpg/960px-Sakuranobaba-johsaien_%2C_%E6%A1%9C%E3%81%AE%E9%A6%AC%E5%A0%B4%E5%9F%8E%E5%BD%A9%E8%8B%91_-_panoramio_%282%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "z tanuki",
-        "license": "CC BY 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Sakuranobaba-johsaien_,_%E6%A1%9C%E3%81%AE%E9%A6%AC%E5%A0%B4%E5%9F%8E%E5%BD%A9%E8%8B%91_-_panoramio_(2).jpg"
-      }
-    }
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q23825118",
@@ -17214,7 +16789,7 @@
     "themes": [],
     "tags": [],
     "featured": true,
-    "score": 99.2,
+    "score": 99.23,
     "summary": {
       "text": "2016年熊本地震是2016年4月16日上午1時25分10秒（當地時間）發生在日本九州島的地震，震央位於九州中部的熊本縣上益城郡益城町附近，震源深度推測約12公里，規模為日本氣象廳地震規模7.3、地震矩規模7.0。其前震、主震及餘震於九州各地引發災情。日本氣象廳將該地震命名為「平成28年（2016年）熊本地震」。",
       "lang": "zh",
@@ -17240,8 +16815,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q23828159",
@@ -17264,7 +16838,7 @@
       "橋"
     ],
     "featured": false,
-    "score": 54.34,
+    "score": 54.25,
     "summary": {
       "text": "阿蘇大橋，是過去位於日本熊本縣阿蘇郡南阿蘇村立野地區與河陽字黑川之間的一座拱橋，橋梁跨越黑川，為國道57號轉入國道325號的入口處，屬於「南阿蘇通道」的一部分。",
       "lang": "zh",
@@ -17299,7 +16873,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q24865367",
@@ -17322,7 +16896,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 59.3,
+    "score": 59.21,
     "summary": {
       "text": "甲斐神社位於熊本縣上益城郡嘉島町上六嘉2242番地，昭和28年宗教法人成立之際曾以「中郡甲斐神社」為名，通稱足手荒神社。每年的例祭為2月15日，信徒遍佈九州地方，是九州地方足手荒神信仰的總本社。",
       "lang": "zh",
@@ -17348,7 +16922,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q24865585",
@@ -17368,7 +16942,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 50.1,
+    "score": 50.23,
     "summary": {
       "text": "潮井水源（しおいすいげん）は熊本県上益城郡益城町にある湧水地。",
       "lang": "ja",
@@ -17376,14 +16950,7 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c2/Shioi_Water_Source_Park_05.jpg/960px-Shioi_Water_Source_Park_05.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "水だらけのプール",
-        "license": "CC0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Shioi_Water_Source_Park_05.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q24865585"
     },
@@ -17398,7 +16965,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q24898648",
@@ -17421,7 +16988,7 @@
       "島"
     ],
     "featured": false,
-    "score": 36.03,
+    "score": 36.34,
     "summary": {
       "text": "牧島（まきしま）は、熊本県天草市牧本地区にある八代海に面した島である。",
       "lang": "ja",
@@ -17451,7 +17018,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q2857960",
@@ -17476,7 +17043,7 @@
       "國寶"
     ],
     "featured": true,
-    "score": 79.08,
+    "score": 79.05,
     "summary": {
       "text": "Aoi Aso Shrine (青井阿蘇神社, Aoi Aso Jinja) is a Shinto shrine in Hitoyoshi, Kumamoto Prefecture, Japan. It is colloquially known as Aoi-san (青井さん). It was originally established as a prefectural shrine, but is currently designated as a national shrine (別表神社, Beppyo Jinja). Five of the structures within the shrine are listed as National Treasures of Japan.",
       "lang": "en",
@@ -17525,15 +17092,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5d/Aoi_Gruppe.jpg/960px-Aoi_Gruppe.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Fraxinus2",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Aoi_Gruppe.jpg"
-      }
-    }
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q28686327",
@@ -17554,7 +17113,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 49.83,
+    "score": 50.37,
     "summary": {
       "text": "道の駅上天草さんぱーる（みちのえき かみあまくささんぱーる）は、熊本県上天草市にある国道266号の道の駅である。",
       "lang": "ja",
@@ -17584,7 +17143,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q28688020",
@@ -17606,7 +17165,7 @@
       "博物館"
     ],
     "featured": false,
-    "score": 51.93,
+    "score": 52.0,
     "summary": {
       "text": "横井小楠記念館（よこいしょうなんきねんかん）は、熊本県熊本市東区に所在する博物館である。",
       "lang": "ja",
@@ -17636,7 +17195,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-29"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q2970819",
@@ -17659,7 +17218,7 @@
       "城"
     ],
     "featured": false,
-    "score": 70.22,
+    "score": 70.16,
     "summary": {
       "text": "富岡城は，是位於肥後國天草郡（今熊本縣天草郡苓北町富岡）的一座城堡。",
       "lang": "zh",
@@ -17694,8 +17253,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q3077059",
@@ -17720,7 +17278,7 @@
       "重要文化財"
     ],
     "featured": true,
-    "score": 89.18,
+    "score": 89.01,
     "summary": {
       "text": "通潤橋是日本熊本縣山都町的拱橋，完成於1854年，長84米。它也是日本最大的高架渠。",
       "lang": "zh",
@@ -17755,8 +17313,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q30923542",
@@ -17779,7 +17336,7 @@
       "橋"
     ],
     "featured": false,
-    "score": 62.5,
+    "score": 62.57,
     "summary": {
       "text": "牛深ハイヤ大橋（うしぶかハイヤおおはし）は、熊本県天草市牛深湾に架かる長さ883mの橋。",
       "lang": "ja",
@@ -17809,7 +17366,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q3140143",
@@ -17832,7 +17389,7 @@
       "寺院"
     ],
     "featured": false,
-    "score": 68.77,
+    "score": 68.97,
     "summary": {
       "text": "Honmyō-ji (本妙寺) is a Buddhist temple of the Nichiren sect, Rokujōmon-ryū (六条門流), in Nishi-ku, Kumamoto, Japan. It is the most high-ranking temple of the sect in Kyushu. In Honmyō-ji is the grave of Katō Kiyomasa, (1562–1611), a Japanese daimyō, builder of Kumamoto Castle and a dedicated buddhist of Nichiren Buddhism.",
       "lang": "en",
@@ -17879,15 +17436,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "night": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d4/Honmy%C5%8D-ji_Temple_night_Kumamoto.jpg/960px-Honmy%C5%8D-ji_Temple_night_Kumamoto.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Fabimaru",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Honmy%C5%8D-ji_Temple_night_Kumamoto.jpg"
-      }
-    }
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q31428875",
@@ -17908,7 +17457,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 51.07,
+    "score": 51.08,
     "summary": {
       "text": "道の駅うしぶか海彩館（みちのえき うしぶかかいさいかん）は、熊本県天草市にある国道266号の道の駅である。牛深港に隣接している。",
       "lang": "ja",
@@ -17938,7 +17487,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q31429868",
@@ -17959,7 +17508,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 49.35,
+    "score": 49.24,
     "summary": {
       "text": "道の駅すいかの里 植木（みちのえき すいかのさと うえき）は、熊本県熊本市北区にある熊本県道329号原植木線の道の駅である。",
       "lang": "ja",
@@ -17989,7 +17538,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q31430424",
@@ -18010,7 +17559,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 51.53,
+    "score": 51.52,
     "summary": {
       "text": "道の駅水辺プラザかもと（みちのえき みずべぷらざかもと）は、熊本県山鹿市にある国道325号の道の駅である。",
       "lang": "ja",
@@ -18018,14 +17567,7 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/12/Michinoeki_Kamoto.jpg/960px-Michinoeki_Kamoto.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Totti",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Michinoeki_Kamoto.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q31430424"
     },
@@ -18040,7 +17582,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q31454860",
@@ -18064,7 +17606,7 @@
       "名勝"
     ],
     "featured": false,
-    "score": 69.02,
+    "score": 68.88,
     "summary": {
       "text": "草千里ヶ浜（くさせんりがはま）または草千里（くさせんり）は、熊本県阿蘇市、阿蘇郡南阿蘇村にある面積78万5,000㎡の草原地帯。阿蘇を代表する観光地にもなっている。",
       "lang": "ja",
@@ -18099,21 +17641,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "winter": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/99/Kusasenri_Winter.JPG/960px-Kusasenri_Winter.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Hide1228",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Kusasenri_Winter.JPG"
-      },
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/90/Mt-Aso_panoramaview1.jpg/960px-Mt-Aso_panoramaview1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Takasunrise0921",
-        "license": "CC BY 2.5",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Mt-Aso_panoramaview1.jpg"
-      }
-    }
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q34784099",
@@ -18136,7 +17664,7 @@
       "島"
     ],
     "featured": false,
-    "score": 35.11,
+    "score": 35.34,
     "summary": {
       "text": "野牛島（やぎゅうじま）は熊本県上天草市にある島である。",
       "lang": "ja",
@@ -18144,14 +17672,7 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/39/Yagyujima_Island%2C_Kamiamakusa_Kumamoto_Aerial_photograph.2016.jpg/960px-Yagyujima_Island%2C_Kamiamakusa_Kumamoto_Aerial_photograph.2016.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "国土地理院",
-        "license": "Attribution",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Yagyujima_Island,_Kamiamakusa_Kumamoto_Aerial_photograph.2016.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q34784099"
     },
@@ -18166,7 +17687,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q34844795",
@@ -18187,7 +17708,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 60.39,
+    "score": 60.28,
     "summary": {
       "text": "Ichifusa Dam (Japanese: 市房ダム) is a gravity dam located in Kumamoto Prefecture in Japan. The dam is used for flood control and power production. The catchment area of the dam is 157.8 km2. The dam impounds about 165  ha of land when full and can store 40200 thousand cubic meters of water. The construction of the dam was started on 1953 and completed in 1959.",
       "lang": "en",
@@ -18217,7 +17738,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q38267016",
@@ -18239,7 +17760,7 @@
       "橋"
     ],
     "featured": false,
-    "score": 37.55,
+    "score": 37.44,
     "summary": {
       "text": "阿蘇長陽大橋（あそちょうようおおはし）は、熊本県阿蘇郡南阿蘇村に所在し黒川に架かる、村道栃木-立野線を通す全長276.0メートルの橋である。形式は、PC4径間連続ラーメン箱桁橋である。",
       "lang": "ja",
@@ -18247,14 +17768,7 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [
-      {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/5/5d/Tateno-bridge_scenery_seen_from_train.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-        "author": "MK Products",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Tateno-bridge_scenery_seen_from_train.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q38267016"
     },
@@ -18269,7 +17783,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q43594501",
@@ -18292,7 +17806,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 53.71,
+    "score": 53.84,
     "summary": {
       "text": "本渡諏訪神社（ほんどすわじんじゃ）は、熊本県天草市にある神社。天草総鎮守とされる。弘安6年（1283年）8月1日の創祀。",
       "lang": "ja",
@@ -18318,7 +17832,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q452622",
@@ -18394,7 +17908,7 @@
       "博物館"
     ],
     "featured": false,
-    "score": 66.83,
+    "score": 66.8,
     "summary": {
       "text": "熊本縣立美術館是位於日本熊本縣熊本市中央區的一座縣立美術館。美術館的本館位於熊本城二之丸公園內，設計者是前川國男。美術館在2006年獲得日本建築家協會25年賞大賞。",
       "lang": "zh",
@@ -18445,7 +17959,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q4557656",
@@ -18468,7 +17982,7 @@
       "博物館"
     ],
     "featured": false,
-    "score": 63.63,
+    "score": 63.56,
     "summary": {
       "text": "熊本縣立裝飾古墳館是位於熊本縣山鹿市鹿央町的一間考古學博物館。建於國家指定史蹟巖原古墳群的一角，周邊環繞著縣指定史蹟巖原橫穴墓群。",
       "lang": "zh",
@@ -18503,7 +18017,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q464291",
@@ -18514,7 +18028,7 @@
       "zh_tw": "上弓削神社",
       "en": "Kamiyuge Shrine"
     },
-    "kana_source": "wikipedia",
+    "kana_source": "wikidata",
     "location": {
       "lat": 32.848861,
       "lng": 130.788306
@@ -18526,7 +18040,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 52.97,
+    "score": 52.69,
     "summary": {
       "text": "上弓削神社（かみゆげじんじゃ）は熊本県熊本市にある神社。白川左岸の弓削町に鎮座するが、対岸の弓削神社とともに弓削神社と総称される場合もある。弓削法皇社ともいう。",
       "lang": "ja",
@@ -18570,7 +18084,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q4807478",
@@ -18593,7 +18107,7 @@
       "博物館"
     ],
     "featured": false,
-    "score": 66.14,
+    "score": 66.04,
     "summary": {
       "text": "阿蘇火山博物館是位於日本熊本縣阿蘇市草千里的一座以阿蘇火山為主題的博物館，由公益財團法人阿蘇火山博物館久木文化財團負責經營管理。",
       "lang": "zh",
@@ -18632,15 +18146,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "winter": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/31/View_of_Kusasenrigahama_and_Aso_Volcanic_Museum.JPG/960px-View_of_Kusasenrigahama_and_Aso_Volcanic_Museum.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "そらみみ",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:View_of_Kusasenrigahama_and_Aso_Volcanic_Museum.JPG"
-      }
-    }
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q48755584",
@@ -18660,7 +18166,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 52.06,
+    "score": 52.03,
     "summary": {
       "text": "龍ヶ岳（りゅうがたけ）は熊本県上天草市龍ヶ岳町にある山。標高469.3メートル。",
       "lang": "ja",
@@ -18683,7 +18189,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q49510663",
@@ -18742,7 +18248,7 @@
       "島"
     ],
     "featured": false,
-    "score": 34.55,
+    "score": 34.74,
     "summary": {
       "text": "樋合島（ひあいじま）は熊本県上天草市にある島である。",
       "lang": "ja",
@@ -18750,14 +18256,7 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a3/Hiaijima_Island%2C_Kamiamakusa_Kumamoto_Aerial_photograph.2016.jpg/960px-Hiaijima_Island%2C_Kamiamakusa_Kumamoto_Aerial_photograph.2016.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "国土地理院",
-        "license": "Attribution",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Hiaijima_Island,_Kamiamakusa_Kumamoto_Aerial_photograph.2016.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q49640969"
     },
@@ -18772,7 +18271,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q49663455",
@@ -18795,7 +18294,7 @@
       "島"
     ],
     "featured": false,
-    "score": 35.01,
+    "score": 35.33,
     "summary": {
       "text": "野釜島（のがまじま）は熊本県上天草市にある島である。",
       "lang": "ja",
@@ -18803,14 +18302,7 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3f/Nogamajima_Island%2C_Kamiamakusa_Kumamoto_Aerial_photograph.2016.jpg/960px-Nogamajima_Island%2C_Kamiamakusa_Kumamoto_Aerial_photograph.2016.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "国土地理院",
-        "license": "Attribution",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Nogamajima_Island,_Kamiamakusa_Kumamoto_Aerial_photograph.2016.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q49663455"
     },
@@ -18825,7 +18317,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q55525367",
@@ -18847,7 +18339,7 @@
       "橋"
     ],
     "featured": false,
-    "score": 35.51,
+    "score": 35.56,
     "summary": {
       "text": "内大臣橋（ないだいじんばし）は、熊本県下益城郡美里町と山都町を結ぶ橋。",
       "lang": "ja",
@@ -18877,7 +18369,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q56602625",
@@ -18898,7 +18390,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 45.46,
+    "score": 45.34,
     "summary": {
       "text": "第一白川橋梁（だいいちしらかわきょうりょう）は、熊本県阿蘇郡南阿蘇村立野と菊池郡大津町外牧の間で白川に架かり、南阿蘇鉄道高森線立野駅 - 長陽駅間に位置する全長152.15メートルの単線鉄道橋である。川からレール面までの高さは約60メートルあり、後に高千穂橋梁が完成するまでは、当時の日本国有鉄道（国鉄）で最大の高さの鉄道橋であった。",
       "lang": "ja",
@@ -18928,7 +18420,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q582656",
@@ -18949,7 +18441,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 64.18,
+    "score": 64.21,
     "summary": {
       "text": "Kumamoto Prefectural Theater (熊本県立劇場, Kumamoto kenritsu gekijō) is a centre for the performing arts in Kumamoto, Kumamoto Prefecture, Japan.",
       "lang": "en",
@@ -18995,7 +18487,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q59208984",
@@ -19017,7 +18509,7 @@
       "寺院"
     ],
     "featured": false,
-    "score": 31.38,
+    "score": 31.58,
     "summary": {
       "text": "明導寺（みょうどうじ）は熊本県球磨郡湯前町にある浄土真宗本願寺派の寺院。",
       "lang": "ja",
@@ -19061,7 +18553,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q60986269",
@@ -19084,7 +18576,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 47.3,
+    "score": 47.73,
     "summary": {
       "text": "佐伊津神社（さいつじんじゃ）は、熊本県天草市佐伊津町2436番地に鎮座する神社。天草市の東海岸の国道324号線から少し住宅地入り込んだところにある。古くは、「十五社」と記した（石の扁額が現存する）。社格は村社で神社本庁包括の神社である。約60社（現在は約80社）と存在する天草独特の十五社宮の一社である。",
       "lang": "ja",
@@ -19092,14 +18584,7 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/77/Saizu-jinja%2C_Amakusa_202512-2.jpg/960px-Saizu-jinja%2C_Amakusa_202512-2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "運動会プロテインパワー",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Saizu-jinja,_Amakusa_202512-2.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q60986269"
     },
@@ -19110,7 +18595,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q613355",
@@ -19137,7 +18622,7 @@
       "特別史跡"
     ],
     "featured": true,
-    "score": 108.15,
+    "score": 108.08,
     "summary": {
       "text": "熊本城位於日本熊本縣熊本市中央區。別稱銀杏城（日語：銀杏城）。日本三大名城之一。",
       "lang": "zh",
@@ -19163,10 +18648,10 @@
     ],
     "images": [
       {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/65/Kumamoto_Castle_Keep_Tower_20230103.jpg/960px-Kumamoto_Castle_Keep_Tower_20230103.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Suicasmo",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Kumamoto_Castle_Keep_Tower_20230103.jpg"
+        "url": "https://upload.wikimedia.org/wikipedia/commons/9/9f/Kumamotojo.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+        "author": "Birdman at Japanese Wikipedia",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Kumamotojo.jpg"
       }
     ],
     "external_ids": {
@@ -19184,27 +18669,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-10-02",
-    "season_images": {
-      "spring": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7a/Cherryblossoms.jpg/960px-Cherryblossoms.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "STA 3816",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Cherryblossoms.jpg"
-      },
-      "night": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2b/Kumamoto_Castle_20170416-1.jpg/960px-Kumamoto_Castle_20170416-1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "くまもと急行鉄道",
-        "license": "Public domain",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Kumamoto_Castle_20170416-1.jpg"
-      },
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/20/Kumamoto_cstl_airscape.jpg/960px-Kumamoto_cstl_airscape.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "国土交通省",
-        "license": "Attribution",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Kumamoto_cstl_airscape.jpg"
-      }
-    }
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q6406392",
@@ -19225,7 +18690,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 67.59,
+    "score": 67.5,
     "summary": {
       "text": "菊池川流經熊本縣北部，為菊池川水系之主流和一級河川。其水源依據環境省標準、指定為名水百選之一。",
       "lang": "zh",
@@ -19251,7 +18716,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q6414214",
@@ -19274,7 +18739,7 @@
       "公園"
     ],
     "featured": false,
-    "score": 56.24,
+    "score": 56.12,
     "summary": {
       "text": "Kinpōzan Prefectural Natural Park (金峰山県立自然公園, Kinpōzan kenritsu shizen kōen) is a Prefectural Natural Park in northwest Kumamoto Prefecture, Japan. Established in 1955, the park spans the municipalities of Gyokutō, Kumamoto, and Tamana. The park derives its name from Mount Kinbō and encompasses Honmyōji, Ohagi gardens, and Mount Sanno.",
       "lang": "en",
@@ -19300,7 +18765,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q64347128",
@@ -19321,7 +18786,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 49.89,
+    "score": 49.86,
     "summary": {
       "text": "道の駅天草市イルカセンター（みちのえき あまくさしイルカセンター）は、熊本県天草市にある国道324号の道の駅である。",
       "lang": "ja",
@@ -19351,7 +18816,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q64779945",
@@ -19373,7 +18838,7 @@
       "公園"
     ],
     "featured": false,
-    "score": 45.72,
+    "score": 45.75,
     "summary": {
       "text": "鴨川河川公園（かもがわかせんこうえん、Kamogawa River Park）は、熊本県菊池市七城町にある鴨川に設置された河川公園。交通:九州縦貫自動車道植木インターより車で15分。",
       "lang": "ja",
@@ -19396,7 +18861,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q67469708",
@@ -19417,7 +18882,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 50.08,
+    "score": 50.04,
     "summary": {
       "text": "SAKURA MACHI Kumamoto（サクラマチ クマモト）は、熊本県熊本市中央区桜町にある、熊本桜町バスターミナルに付随した複合商業施設。九州産業交通ホールディングス傘下の九州産交ランドマークが運営する。サクラマチ クマモトとも表記する。",
       "lang": "ja",
@@ -19456,7 +18921,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q715639",
@@ -19481,7 +18946,7 @@
       "重要文化財"
     ],
     "featured": true,
-    "score": 80.68,
+    "score": 80.58,
     "summary": {
       "text": "阿蘇神社（阿蘓神社、あそじんじゃ）是位在日本熊本縣阿蘇市的神社。為式內社（名神大社）、肥後國一宮、舊社格為官幣大社（現神社本廳的別表神社）。日本全國450座阿蘇神社之總本社。",
       "lang": "zh",
@@ -19521,8 +18986,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q733710",
@@ -19543,7 +19007,7 @@
     "themes": [],
     "tags": [],
     "featured": true,
-    "score": 94.21,
+    "score": 94.2,
     "summary": {
       "text": "阿蘇山是位於日本九州中央的一個活火山，為一火山群之總稱，週邊地區被稱為「阿蘇地區」，此地的外輪山為世界少見可完整見到的破火山口（火山臼）地型，整個火山臼的東西約18公里寬，南北約25公里寬，有將近五萬的人口居住於此火山臼地形中。阿蘇山也是熊本縣別稱「火之國」的由來，現在整個火山區域已被列入阿蘇九重國立公園的範圍。",
       "lang": "zh",
@@ -19553,10 +19017,10 @@
     },
     "images": [
       {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a1/20140516%E9%98%BF%E8%98%87%E5%B1%B1%E5%BA%83%E5%9F%9F.jpg/960px-20140516%E9%98%BF%E8%98%87%E5%B1%B1%E5%BA%83%E5%9F%9F.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Sonata / Sonata at ja.wikipedia",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b2/Mt.Aso_and_caldera01.jpg/960px-Mt.Aso_and_caldera01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Miya.m",
         "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:20140516%E9%98%BF%E8%98%87%E5%B1%B1%E5%BA%83%E5%9F%9F.jpg"
+        "source_url": "https://commons.wikimedia.org/wiki/File:Mt.Aso_and_caldera01.jpg"
       }
     ],
     "external_ids": {
@@ -19573,21 +19037,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-10-02",
-    "season_images": {
-      "winter": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ee/%E9%98%BF%E8%98%87_-_panoramio_-_iwaseta.jpg/960px-%E9%98%BF%E8%98%87_-_panoramio_-_iwaseta.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "iwaseta",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:%E9%98%BF%E8%98%87_-_panoramio_-_iwaseta.jpg"
-      },
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a1/20140516%E9%98%BF%E8%98%87%E5%B1%B1%E5%BA%83%E5%9F%9F.jpg/960px-20140516%E9%98%BF%E8%98%87%E5%B1%B1%E5%BA%83%E5%9F%9F.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Sonata / Sonata at ja.wikipedia",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:20140516%E9%98%BF%E8%98%87%E5%B1%B1%E5%BA%83%E5%9F%9F.jpg"
-      }
-    }
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q7821526",
@@ -19608,7 +19058,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 70.84,
+    "score": 71.76,
     "summary": {
       "text": "The Tonkararin (トンカラリン, Tonkararin) or Tonkararin tunnel structure is a 464.6 m (1,524 ft) long, tunnel-like structure of unknown origin, situated in Nagomi, Kumamoto Prefecture, Japan. It lies on a plateau called Seibaru Daichi, around which are many kofun or tumuli, such as Eda-Funayama Kofun. It consists of very shallow natural slits of the ground covered with stones and man-made stone-structured underdrains. The name of Tonkararin came from the sound of a stone, when the stone is thrown into the tunnel.",
       "lang": "en",
@@ -19639,8 +19089,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q8011484",
@@ -19664,7 +19113,7 @@
       "史跡"
     ],
     "featured": true,
-    "score": 76.02,
+    "score": 75.54,
     "summary": {
       "text": "人吉城（ひとよしじょう）是位在熊本縣人吉市的一座平山城。別名織月城、三日月城。鎌倉時代以來是相良氏35代670年的居城，江戶時代是人吉藩之藩廳。國之史跡。日本100名城之一。",
       "lang": "zh",
@@ -19692,10 +19141,10 @@
     ],
     "images": [
       {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/57/Hitoyoshi_Castle%2C_enkei-3.jpg/960px-Hitoyoshi_Castle%2C_enkei-3.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Saigen Jiro",
-        "license": "CC0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Hitoyoshi_Castle,_enkei-3.jpg"
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/43/Hitoyoshi_3.jpg/960px-Hitoyoshi_3.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Fraxinus2",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Hitoyoshi_3.jpg"
       }
     ],
     "external_ids": {
@@ -19713,15 +19162,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f1/Hitoyoshi_Castle_air.jpg/960px-Hitoyoshi_Castle_air.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "国土地理院",
-        "license": "Attribution",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Hitoyoshi_Castle_air.jpg"
-      }
-    }
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q85620736",
@@ -19744,7 +19185,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 51.28,
+    "score": 51.17,
     "summary": {
       "text": "鈴木神社（すずきじんじゃ）は、熊本県天草市にある神社である。",
       "lang": "ja",
@@ -19763,7 +19204,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q85879823",
@@ -19786,7 +19227,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 47.86,
+    "score": 47.8,
     "summary": {
       "text": "山森阿蘇神社（やまもりあそじんじゃ）は、熊本県玉名郡和水町西吉地にある神社。阿蘇神社の系列にあたる。",
       "lang": "ja",
@@ -19816,7 +19257,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q85879918",
@@ -19839,7 +19280,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 49.71,
+    "score": 50.23,
     "summary": {
       "text": "岡留熊野座神社（おかどめくまのざじんじゃ）は、熊本県球磨郡あさぎり町にある神社である。",
       "lang": "ja",
@@ -19874,7 +19315,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q85883937",
@@ -19897,7 +19338,7 @@
       "公園"
     ],
     "featured": false,
-    "score": 53.5,
+    "score": 53.33,
     "summary": {
       "text": "辛島公園（からしまこうえん）は、熊本県熊本市中央区にある都市計画公園。",
       "lang": "ja",
@@ -19941,7 +19382,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q90733975",
@@ -19964,7 +19405,7 @@
       "島"
     ],
     "featured": false,
-    "score": 32.5,
+    "score": 33.05,
     "summary": {
       "text": "中島（なかじま）は熊本県上天草市にある島である。",
       "lang": "ja",
@@ -19972,14 +19413,7 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/09/Nakajima_Island%2C_Kamiamakusa_Kumamoto_Aerial_photograph.2016.jpg/960px-Nakajima_Island%2C_Kamiamakusa_Kumamoto_Aerial_photograph.2016.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "国土地理院",
-        "license": "Attribution",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Nakajima_Island,_Kamiamakusa_Kumamoto_Aerial_photograph.2016.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q90733975"
     },
@@ -19994,15 +19428,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/09/Nakajima_Island%2C_Kamiamakusa_Kumamoto_Aerial_photograph.2016.jpg/960px-Nakajima_Island%2C_Kamiamakusa_Kumamoto_Aerial_photograph.2016.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "国土地理院",
-        "license": "Attribution",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Nakajima_Island,_Kamiamakusa_Kumamoto_Aerial_photograph.2016.jpg"
-      }
-    }
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q90750709",
@@ -20025,7 +19451,7 @@
       "島"
     ],
     "featured": false,
-    "score": 35.94,
+    "score": 36.43,
     "summary": {
       "text": "横島（よこしま）は熊本県天草市にある島である。",
       "lang": "ja",
@@ -20033,14 +19459,7 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e4/Yokoshima_Island%2C_Amakusa_Kumamoto_Aerial_photograph.2014.jpg/960px-Yokoshima_Island%2C_Amakusa_Kumamoto_Aerial_photograph.2014.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "国土地理院",
-        "license": "Attribution",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Yokoshima_Island,_Amakusa_Kumamoto_Aerial_photograph.2014.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q90750709"
     },
@@ -20055,7 +19474,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q90765606",
@@ -20078,7 +19497,7 @@
       "橋"
     ],
     "featured": false,
-    "score": 41.9,
+    "score": 42.0,
     "summary": {
       "text": "天城橋是日本熊本縣的一座跨海公路拱橋，連接上天草市與宇城市，全長463米，主跨348米，2013年3月22日開工，2018年5月20日建成通車，並獲得當年的土木學會田中獎。",
       "lang": "zh",
@@ -20113,7 +19532,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-29"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q91615400",
@@ -20136,7 +19555,7 @@
       "島"
     ],
     "featured": false,
-    "score": 33.36,
+    "score": 33.44,
     "summary": {
       "text": "産島（うぶしま）は熊本県天草市にある島である。",
       "lang": "ja",
@@ -20144,14 +19563,7 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cc/Ubushima_Island%2C_Amakusa_Kumamoto_Aerial_photograph.2014.jpg/960px-Ubushima_Island%2C_Amakusa_Kumamoto_Aerial_photograph.2014.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "国土地理院",
-        "license": "Attribution",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Ubushima_Island,_Amakusa_Kumamoto_Aerial_photograph.2014.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q91615400"
     },
@@ -20166,7 +19578,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q91767291",
@@ -20189,7 +19601,7 @@
       "島"
     ],
     "featured": false,
-    "score": 41.44,
+    "score": 41.6,
     "summary": {
       "text": "通詞島（つうじしま）は熊本県天草市にある島である。",
       "lang": "ja",
@@ -20219,15 +19631,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/da/Tsuji-Shima_Island%2C_Amakusa_Kumamoto_Aerial_photograph.2013.jpg/960px-Tsuji-Shima_Island%2C_Amakusa_Kumamoto_Aerial_photograph.2013.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "国土地理院",
-        "license": "Attribution",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Tsuji-Shima_Island,_Amakusa_Kumamoto_Aerial_photograph.2013.jpg"
-      }
-    }
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q91772168",
@@ -20250,7 +19654,7 @@
       "島"
     ],
     "featured": false,
-    "score": 33.37,
+    "score": 33.35,
     "summary": {
       "text": "瀬島（せしま）は熊本県上天草市にある島である。",
       "lang": "ja",
@@ -20258,14 +19662,7 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/50/Seshima_Island%2C_Kamiamakusa_Kumamoto_Aerial_photograph.2016.jpg/960px-Seshima_Island%2C_Kamiamakusa_Kumamoto_Aerial_photograph.2016.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "国土地理院",
-        "license": "Attribution",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Seshima_Island,_Kamiamakusa_Kumamoto_Aerial_photograph.2016.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q91772168"
     },
@@ -20280,15 +19677,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/50/Seshima_Island%2C_Kamiamakusa_Kumamoto_Aerial_photograph.2016.jpg/960px-Seshima_Island%2C_Kamiamakusa_Kumamoto_Aerial_photograph.2016.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "国土地理院",
-        "license": "Attribution",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Seshima_Island,_Kamiamakusa_Kumamoto_Aerial_photograph.2016.jpg"
-      }
-    }
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q91773168",
@@ -20310,7 +19699,7 @@
       "島"
     ],
     "featured": false,
-    "score": 34.89,
+    "score": 34.83,
     "summary": {
       "text": "高杢島（たかもくじま）は熊本県上天草市にある島である。",
       "lang": "ja",
@@ -20318,14 +19707,7 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/59/Takamokujima_Island%2C_Kamiamakusa_Kumamoto_Aerial_photograph.2016.jpg/960px-Takamokujima_Island%2C_Kamiamakusa_Kumamoto_Aerial_photograph.2016.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "国土地理院",
-        "license": "Attribution",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Takamokujima_Island,_Kamiamakusa_Kumamoto_Aerial_photograph.2016.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q91773168"
     },
@@ -20340,7 +19722,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q91821621",
@@ -20363,7 +19745,7 @@
       "島"
     ],
     "featured": false,
-    "score": 34.1,
+    "score": 34.67,
     "summary": {
       "text": "前島（まえじま）は熊本県上天草市にある島である。",
       "lang": "ja",
@@ -20371,14 +19753,7 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c4/Maejima_Island%2C_Kamiamakusa_Kumamoto_Aerial_photograph.2016.jpg/960px-Maejima_Island%2C_Kamiamakusa_Kumamoto_Aerial_photograph.2016.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "国土地理院",
-        "license": "Attribution",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Maejima_Island,_Kamiamakusa_Kumamoto_Aerial_photograph.2016.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q91821621"
     },
@@ -20393,7 +19768,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q94317",
@@ -20404,7 +19779,7 @@
       "zh_tw": "菊池神社",
       "en": "Kikuchi Shrine"
     },
-    "kana_source": "wikipedia",
+    "kana_source": "wikidata",
     "location": {
       "lat": 32.987778,
       "lng": 130.816111
@@ -20416,7 +19791,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 66.06,
+    "score": 66.16,
     "summary": {
       "text": "菊池神社是日本熊本縣菊池市隈府的神社，社格是別格官幣社和別表神社，也是建武中興十五社之一，祭神是菊池武時、菊池武重和菊池武光。",
       "lang": "zh",
@@ -20451,7 +19826,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q96380226",
@@ -20472,7 +19847,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 57.32,
+    "score": 57.51,
     "summary": {
       "text": "エコパーク水俣（エコパークみなまた）は、熊本県水俣市にある公園。",
       "lang": "ja",
@@ -20512,7 +19887,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q97192411",
@@ -20534,7 +19909,7 @@
       "公園"
     ],
     "featured": false,
-    "score": 42.47,
+    "score": 42.4,
     "summary": {
       "text": "明神池名水公園（みょうじんいけめいすいこうえん）は、熊本県阿蘇郡南阿蘇村大字吉田にある都市公園。「南阿蘇村湧水群」の一つが園内に所在する。",
       "lang": "ja",
@@ -20580,7 +19955,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q97220287",
@@ -20603,7 +19978,7 @@
       "史跡"
     ],
     "featured": false,
-    "score": 42.72,
+    "score": 42.73,
     "summary": {
       "text": "The Ōmura Cave Tomb Cluster (大村横穴群, Ōmura yokoana-gun) is a cluster of yokoanabo tombs dug in artificial caves in a tuff cliff of located in the Shiromoto-machi neighborhood of the city of Hitoyoshi, Kumamoto Prefecture in Kyushu Japan. It was designated as a National Historic Site in 1921.",
       "lang": "en",
@@ -20651,7 +20026,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q97819051",
@@ -20671,7 +20046,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 49.69,
+    "score": 49.8,
     "summary": {
       "text": "南阿蘇ホリデーパーク(みなみあそホリデーパーク)は、熊本県阿蘇郡南阿蘇村にかつて存在したレジャー施設。食事、宿泊、体験を売りにしている。",
       "lang": "ja",
@@ -20710,7 +20085,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q98170289",
@@ -20731,7 +20106,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 57.3,
+    "score": 57.25,
     "summary": {
       "text": "球泉洞森林館（きゅうせんどうしんりんかん）は、熊本県球磨郡球磨村に所在する博物館である。トーマス・エジソンに関する展示を行っているが、豪雨災害のため2012年より休館している。",
       "lang": "ja",
@@ -20770,7 +20145,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q99887523",
@@ -20794,7 +20169,7 @@
       "神社"
     ],
     "featured": true,
-    "score": 73.73,
+    "score": 73.74,
     "summary": {
       "text": "上色見熊野座神社是位於日本熊本縣阿蘇郡高森町上色見的神社。",
       "lang": "zh",
@@ -20825,7 +20200,6 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-10-04"
   }
 ]

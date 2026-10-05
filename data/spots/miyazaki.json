@@ -414,6 +414,38 @@
     "updated_at": "2026-09-28"
   },
   {
+    "id": "osm-node-4188835139",
+    "name": {
+      "ja": "波切神社",
+      "zh_tw": "波切神社",
+      "en": "Namikiri shrine"
+    },
+    "location": {
+      "lat": 31.652185,
+      "lng": 131.46647
+    },
+    "prefecture": "miyazaki",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "神社"
+    ],
+    "featured": false,
+    "score": 0.0,
+    "images": [],
+    "external_ids": {
+      "osm": "node/4188835139"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/node/4188835139",
+        "fetched_at": "2026-10-04"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-10-04"
+  },
+  {
     "id": "osm-node-4743872422",
     "name": {
       "ja": "茶臼原自然芸術館",
@@ -1165,7 +1197,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 56.54,
+    "score": 56.48,
     "summary": {
       "text": "国見ヶ丘（くにみがおか）は宮崎県西臼杵郡高千穂町にある丘で、四方の眺めが良いのでこの名がある。ここはまた雲海の名所でもある。",
       "lang": "ja",
@@ -1191,7 +1223,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q104784238",
@@ -1304,7 +1336,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 50.1,
+    "score": 50.18,
     "summary": {
       "text": "黒尾神社（くろおじんじゃ）は、宮崎県都城市梅北町にある神社である。",
       "lang": "ja",
@@ -1346,7 +1378,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q108808259",
@@ -1369,7 +1401,7 @@
       "城"
     ],
     "featured": false,
-    "score": 59.09,
+    "score": 59.0,
     "summary": {
       "text": "月山日和城（がっさんひわじょう）は、宮崎県都城市高城町にあった日本の城（山城）。別名兼重本城・高城。",
       "lang": "ja",
@@ -1399,7 +1431,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q108913406",
@@ -1422,7 +1454,7 @@
       "城"
     ],
     "featured": false,
-    "score": 49.41,
+    "score": 49.45,
     "summary": {
       "text": "玄武城（くろたけじょう/げんぶじょう）は、宮崎県西臼杵郡高千穂町田原にあった安土桃山時代の日本の城（山城）。高千穂の豪族・三田井氏の築いた「高千穂48塁」の一つに数えられている。",
       "lang": "ja",
@@ -1441,7 +1473,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q108913812",
@@ -1464,7 +1496,7 @@
       "城"
     ],
     "featured": false,
-    "score": 49.38,
+    "score": 49.61,
     "summary": {
       "text": "亀頭山城（きとうさんじょう）、または亀頭城（きとうじょう）は、宮崎県西臼杵郡高千穂町大字河内字染田にあった安土桃山時代の日本の城。三田井氏勢力下の山城で「高千穂48塁」の1つ。",
       "lang": "ja",
@@ -1487,7 +1519,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q109352531",
@@ -1510,7 +1542,7 @@
       "城"
     ],
     "featured": false,
-    "score": 60.3,
+    "score": 60.38,
     "summary": {
       "text": "天ヶ城（あまがじょう）は、宮崎県宮崎市高岡町内山にあった日本の城（山城）。別名高岡城（たかおかじょう）・麓城（ふもとじょう）。旧名内山城（うちやまじょう）。伊東四十八城の一つ。宮崎市指定史跡。現在は天ヶ城公園として整備され、城郭風建築物の「宮崎市天ケ城歴史民俗資料館」が開設されている。",
       "lang": "ja",
@@ -1518,14 +1550,7 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3b/%E5%AE%AE%E5%B4%8E%E5%B8%82%E5%A4%A9%E3%82%B1%E5%9F%8E%E6%AD%B4%E5%8F%B2%E6%B0%91%E4%BF%97%E8%B3%87%E6%96%99%E9%A4%A8_2010-03-28.jpg/960px-%E5%AE%AE%E5%B4%8E%E5%B8%82%E5%A4%A9%E3%82%B1%E5%9F%8E%E6%AD%B4%E5%8F%B2%E6%B0%91%E4%BF%97%E8%B3%87%E6%96%99%E9%A4%A8_2010-03-28.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Naoki Tomeno",
-        "license": "CC BY 2.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:%E5%AE%AE%E5%B4%8E%E5%B8%82%E5%A4%A9%E3%82%B1%E5%9F%8E%E6%AD%B4%E5%8F%B2%E6%B0%91%E4%BF%97%E8%B3%87%E6%96%99%E9%A4%A8_2010-03-28.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q109352531",
       "osm": "way/592111785"
@@ -1545,7 +1570,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q109385871",
@@ -1568,7 +1593,7 @@
       "城"
     ],
     "featured": false,
-    "score": 53.06,
+    "score": 53.16,
     "summary": {
       "text": "曽井城（そいじょう）は、宮崎県宮崎市大字恒久（つねひさ）にあった日本の城（山城）。伊東四十八城の1つ。",
       "lang": "ja",
@@ -1597,7 +1622,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11227963",
@@ -1617,7 +1642,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 38.6,
+    "score": 38.68,
     "summary": {
       "text": "KITEN（きてん）は、宮崎県宮崎市の宮崎駅西口前にある複合商業ビルで、1階正面の高速バスターミナル（正式名称：宮崎駅西口バスターミナル）と一体的に整備された。正式名称は、宮崎グリーンスフィア壱番館。",
       "lang": "ja",
@@ -1656,7 +1681,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11286012",
@@ -1676,7 +1701,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 38.84,
+    "score": 38.97,
     "summary": {
       "text": "イオンタウン日向（イオンタウンひゅうが）は宮崎県日向市にあるイオンタウン（旧・ロック開発）運営のショッピングセンターである。イオン日向店（旧ジャスコ日向店、イオン九州運営）と41の専門店を核に14店舗が並ぶ。旧称ロックタウン日向。",
       "lang": "ja",
@@ -1706,7 +1731,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11286120",
@@ -1729,7 +1754,7 @@
       "岬"
     ],
     "featured": false,
-    "score": 47.32,
+    "score": 47.37,
     "summary": {
       "text": "イオンモール宮崎（イオンモールみやざき）は、宮崎県宮崎市にあるイオンモールのショッピングセンターである。イオンスタイル宮崎（イオン九州）を核に約250の専門店が並ぶ。規模は宮崎市、宮崎県最大の規模を誇る商業施設。",
       "lang": "ja",
@@ -1759,7 +1784,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11286185",
@@ -1780,7 +1805,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 45.08,
+    "score": 45.12,
     "summary": {
       "text": "イオンモール都城駅前（イオンモールみやこのじょうえきまえ）は宮崎県都城市にある、イオンモール株式会社が運営・管理するショッピングセンター。",
       "lang": "ja",
@@ -1819,7 +1844,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11286261",
@@ -1842,7 +1867,7 @@
       "購物"
     ],
     "featured": false,
-    "score": 43.75,
+    "score": 43.69,
     "summary": {
       "text": "イオン延岡ショッピングセンター（イオンのべおかショッピングセンター）は、宮崎県延岡市にあるイオン九州株式会社が運営・管理するショッピングセンターである。イオン延岡店を核に76の専門店（2011年9月末現在）が並ぶ。1996年4月24日に延岡ニューシティショッピングセンターとして開店し、2011年3月1日に現在の名称に改称された。",
       "lang": "ja",
@@ -1872,7 +1897,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11286323",
@@ -1894,7 +1919,7 @@
       "購物"
     ],
     "featured": false,
-    "score": 41.25,
+    "score": 41.26,
     "summary": {
       "text": "イオン都城ショッピングセンター（イオンみやこのじょうショッピングセンター）は、宮崎県都城市にあるイオン九州が運営・管理するショッピングセンター。イオン都城店を核テナントとしている。",
       "lang": "ja",
@@ -1924,7 +1949,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11295065",
@@ -1946,7 +1971,7 @@
       "岬"
     ],
     "featured": false,
-    "score": 42.39,
+    "score": 42.38,
     "summary": {
       "text": "カリーノ宮崎（カリーノみやざき、英称 : Carino Miyazaki）は、宮崎県宮崎市橘通東4丁目にある、株式会社カリーノが運営する商業施設。宮崎市中心部に位置する。",
       "lang": "ja",
@@ -1978,7 +2003,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11299478",
@@ -2001,7 +2026,7 @@
       "展望"
     ],
     "featured": false,
-    "score": 56.89,
+    "score": 57.03,
     "summary": {
       "text": "願いが叶うクルスの海（ねがいがかなうクルスのうみ）は、宮崎県日向市細島にある名勝である。",
       "lang": "ja",
@@ -2036,7 +2061,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11299771",
@@ -2053,7 +2078,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 46.27,
+    "score": 46.11,
     "summary": {
       "text": "ベアーズモール清武（ベアーズモールきよたけ）は、宮崎県宮崎市清武町にあるショッピングセンターを核とした複合商業施設である。えびの市に移転したコカ・コーラ工場跡地に造成され、2010年11月18日に開業した。",
       "lang": "ja",
@@ -2081,7 +2106,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11301976",
@@ -2099,7 +2124,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 37.63,
+    "score": 37.53,
     "summary": {
       "text": "北緯32度35分17.4秒 東経131度40分14.8秒",
       "lang": "ja",
@@ -2134,7 +2159,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11302243",
@@ -2154,7 +2179,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 57.73,
+    "score": 57.78,
     "summary": {
       "text": "コツコツトンネルは、宮崎県宮崎市（旧佐土原町）下那珂の国道10号線沿いにあるトンネルの通称。正式名称は久峰隧道（ひさみねずいどう）。",
       "lang": "ja",
@@ -2162,14 +2187,7 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/08/Hisamine_Tunnel_Sadowara.JPG/960px-Hisamine_Tunnel_Sadowara.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "ja:User:Sanjo",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Hisamine_Tunnel_Sadowara.JPG"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q11302243"
     },
@@ -2180,7 +2198,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11305067",
@@ -2200,7 +2218,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 61.5,
+    "score": 61.38,
     "summary": {
       "text": "サボテンハーブ園（サボテンハーブえん）は、かつて宮崎県日南市に存在した宮崎交通所有の植物園である。",
       "lang": "ja",
@@ -2208,14 +2226,7 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e8/Cactuses_and_herbs_Park_Nichinan_Miyazaki_2008.jpg/960px-Cactuses_and_herbs_Park_Nichinan_Miyazaki_2008.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "ja:User:Sanjo",
-        "license": "Public domain",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Cactuses_and_herbs_Park_Nichinan_Miyazaki_2008.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q11305067"
     },
@@ -2230,7 +2241,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11345898",
@@ -2250,7 +2261,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 47.03,
+    "score": 47.06,
     "summary": {
       "text": "宮崎県婦人会館（みやざきけんふじんかいかん）は、宮崎県宮崎市の会館。別称は『宮崎県社会教育会館』。旧称は『社会教育会館』。日本ユースホステル協会に加盟しており、施設の一部をユースホステルとしている。",
       "lang": "ja",
@@ -2282,7 +2293,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11356869",
@@ -2305,7 +2316,7 @@
       "寺院"
     ],
     "featured": false,
-    "score": 34.95,
+    "score": 35.0,
     "summary": {
       "text": "三福寺（さんふくじ）は、宮崎県延岡市にある浄土宗の寺院。山号は九品山。五ヶ瀬川の南方に所在する。所蔵の鍍銀蓮池文華鬘は宮崎県指定有形文化財。",
       "lang": "ja",
@@ -2345,7 +2356,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11367918",
@@ -2367,7 +2378,7 @@
       "公園"
     ],
     "featured": false,
-    "score": 49.83,
+    "score": 49.52,
     "summary": {
       "text": "串間市総合運動公園（くしましそうごううんどうこうえん）は、宮崎県串間市の都市公園（運動公園）である。",
       "lang": "ja",
@@ -2411,7 +2422,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q113691340",
@@ -2434,7 +2445,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 55.49,
+    "score": 56.19,
     "summary": {
       "text": "霧島東神社（きりしまひがしじんじゃ）は、宮崎県西諸県郡高原町にある神社。延喜式内社の論社であり、旧社格は県社。",
       "lang": "ja",
@@ -2469,7 +2480,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11369927",
@@ -2491,7 +2502,7 @@
       "島"
     ],
     "featured": false,
-    "score": 51.88,
+    "score": 52.03,
     "summary": {
       "text": "乙島（おとじま）は、宮崎県東臼杵郡門川町門川湾の沖合いにある無人島である。",
       "lang": "ja",
@@ -2521,7 +2532,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11372929",
@@ -2544,7 +2555,7 @@
       "城"
     ],
     "featured": false,
-    "score": 51.17,
+    "score": 51.43,
     "summary": {
       "text": "井上城（いのうえじょう）は、宮崎県延岡市にあった日本の城。",
       "lang": "ja",
@@ -2567,7 +2578,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11374684",
@@ -2587,7 +2598,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 59.21,
+    "score": 59.07,
     "summary": {
       "text": "京町温泉（きょうまちおんせん）は、宮崎県えびの市（旧国日向国）にある温泉。県を代表する温泉である。京町温泉郷とも呼ばれる。",
       "lang": "ja",
@@ -2604,14 +2615,7 @@
         "distance_m": 110
       }
     ],
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7f/Kyomachi-Onsen_Sta.%2CEbino-city%2CJapan.jpg/960px-Kyomachi-Onsen_Sta.%2CEbino-city%2CJapan.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Katorisi",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Kyomachi-Onsen_Sta.,Ebino-city,Japan.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q11374684"
     },
@@ -2626,7 +2630,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11381866",
@@ -2649,7 +2653,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 55.67,
+    "score": 55.88,
     "summary": {
       "text": "住吉神社（すみよしじんじゃ）は、宮崎県宮崎市塩路にある神社。旧社格は村社。",
       "lang": "ja",
@@ -2679,7 +2683,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11383098",
@@ -2703,7 +2707,7 @@
       "史跡"
     ],
     "featured": true,
-    "score": 72.82,
+    "score": 72.81,
     "summary": {
       "text": "Sadowara Castle (佐土原城, Sadowara-jō) is a Japanese castle located in the  Sadowara neighborhood of the city of   Miyazaki, Miyazaki Prefecture, on the island of Kyushu, Japan.  It is also called Tsurumatsu Castle (鶴松城, Tsurumatsu-jō), and later Shōkaku Castle (松鶴城, Shōkaku-jō). During the Sengoku period, it was the stronghold of the Itō clan and later was controlled by the Shimazu clan. Shimazu Toyohisa was command of the castle.",
       "lang": "en",
@@ -2733,8 +2737,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11394557",
@@ -2754,7 +2757,7 @@
       "博物館"
     ],
     "featured": false,
-    "score": 55.86,
+    "score": 55.8,
     "summary": {
       "text": "Naitō Memorial Museum (内藤記念館, Naitō Kikenkan) opened in Nobeoka, Miyazaki Prefecture, Japan, in 1963. The collection relates to the history, culture, and folklore of Nobeoka with a particular emphasis on the Naitō clan; as of March 2015, it comprised some 53,000 archaeological materials, 11,780 historical materials, 3,200 folk materials, and 760 artworks (primarily prints and yōga). Currently being redeveloped at a projected cost of ¥2.8 bn, the museum is scheduled to reopen in 2022.",
       "lang": "en",
@@ -2780,7 +2783,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11395502",
@@ -2803,7 +2806,7 @@
       "公園"
     ],
     "featured": false,
-    "score": 49.07,
+    "score": 49.29,
     "summary": {
       "text": "出の山公園（いでのやまこうえん）は、宮崎県小林市大字南西方字出の山にある公園。",
       "lang": "ja",
@@ -2833,7 +2836,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11410475",
@@ -2854,7 +2857,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 57.87,
+    "score": 58.06,
     "summary": {
       "text": "双石山（ぼろいしやま）は、鰐塚山地北東部を構成する鵜戸山地北部にそびえる山である。宮崎県宮崎市南部に位置し、周辺は市民の憩いの場となっている。市街地から望むことができ、宮崎市のシンボルの一つとされる。",
       "lang": "ja",
@@ -2880,7 +2883,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11423508",
@@ -2903,7 +2906,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 50.69,
+    "score": 51.28,
     "summary": {
       "text": "土持神社（つちもちじんじゃ）は宮崎県延岡市妙町にある中世の延岡地方を治めた土持氏の祖霊を祀った神社である。",
       "lang": "ja",
@@ -2911,14 +2914,7 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/36/Tsuchimochi-jinja_202504-2.jpg/960px-Tsuchimochi-jinja_202504-2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "運動会プロテインパワー",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Tsuchimochi-jinja_202504-2.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q11423508"
     },
@@ -2929,7 +2925,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11427459",
@@ -2950,7 +2946,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 55.47,
+    "score": 55.48,
     "summary": {
       "text": "堀川運河（ほりかわうんが）は、宮崎県日南市の広渡川と油津港とを結ぶ全長984m、幅約30mの運河。江戸時代初期に木材を運搬するために開削された。",
       "lang": "ja",
@@ -2989,7 +2985,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11434806",
@@ -3012,7 +3008,7 @@
       "島"
     ],
     "featured": false,
-    "score": 61.17,
+    "score": 61.62,
     "summary": {
       "text": "大島（おおしま）は、日向灘に浮かぶ島。別名日向大島。行政上では宮崎県日南市南郷町中村乙に属する。離島振興法に基づく「宮崎県離島振興計画」では築島（串間市）とともに「南那珂群島」として離島振興計画の対象地域となっている。",
       "lang": "ja",
@@ -3020,14 +3016,7 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0f/Hyuga_osima.jpg/960px-Hyuga_osima.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "ブルーノ・プラス",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Hyuga_osima.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q11434806"
     },
@@ -3042,7 +3031,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11435081",
@@ -3063,7 +3052,7 @@
     "themes": [],
     "tags": [],
     "featured": true,
-    "score": 67.02,
+    "score": 67.08,
     "summary": {
       "text": "Mount Ōkueyama (大崩山), also known as Mount Ōkue, is a volcanic mountain on the Japanese island of Kyushu. Part of an ancient volcanic formation known as the Okueyama Volcano-plutonic Complex, Mount Ōkueyama (and possibly several nearby volcanoes) experienced a massive eruption ~13.7 million years before present (13.7 Ma); it has been postulated that this eruption measured 8 on the Volcanic Explosivity Index, making the Ōkueyama eruption larger than any eruption in recorded history. The volcano is now considered to be extinct.",
       "lang": "en",
@@ -3093,7 +3082,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11446871",
@@ -3117,7 +3106,7 @@
       "名勝"
     ],
     "featured": false,
-    "score": 53.8,
+    "score": 53.75,
     "summary": {
       "text": "妙国寺庭園（みょうこくじていえん）は宮崎県日向市細島にある借景日本庭園である。1933年4月13日に、国の名勝に指定された。",
       "lang": "ja",
@@ -3147,7 +3136,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11452073",
@@ -3168,7 +3157,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 54.0,
+    "score": 54.23,
     "summary": {
       "text": "The Sōrinbaru kuyōtō (宗麟原供養塔) is a stone monument with erected in the Sengoku period to honor the dead of the Battle of Mimigawa, located in the town of Kawaminami, Miyazaki Prefecture, Japan. It was designated a National Historic Site in 1933.",
       "lang": "en",
@@ -3176,14 +3165,7 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-29"
     },
-    "images": [
-      {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/f/f4/Sourinbarukuyoutou.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-        "author": "Koyu",
-        "license": "Public domain",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Sourinbarukuyoutou.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q11452073"
     },
@@ -3198,7 +3180,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11454229",
@@ -3221,7 +3203,7 @@
       "城"
     ],
     "featured": false,
-    "score": 61.57,
+    "score": 61.54,
     "summary": {
       "text": "宮崎城（みやざきじょう）は、宮崎県宮崎市池内町にあったとされる日本の城（山城）。1335年（建武2年）もしくは1336年（延元元年）築城。 南朝方勢力だった図師六郎入道隋円・慈円父子が築いた。伊東四十八城の一つ。別名「池内城」。",
       "lang": "ja",
@@ -3244,7 +3226,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11454261",
@@ -3267,7 +3249,7 @@
       "動物園"
     ],
     "featured": false,
-    "score": 62.45,
+    "score": 62.78,
     "summary": {
       "text": "宮崎市フェニックス自然動物園（みやざきしフェニックスしぜんどうぶつえん）は、宮崎県宮崎市にあるフェニックス・シーガイア・リゾートに隣接する動物園。",
       "lang": "ja",
@@ -3275,14 +3257,7 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/38/Phoenix_zoological_garden.JPG/960px-Phoenix_zoological_garden.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Snap55",
-        "license": "CC BY 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Phoenix_zoological_garden.JPG"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q11454261",
       "osm": "way/740163856"
@@ -3302,7 +3277,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11454411",
@@ -3323,7 +3298,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 61.92,
+    "score": 61.86,
     "summary": {
       "text": "宮崎県庁舎（みやざきけんちょうしゃ）は、宮崎県宮崎市にある広域自治体である宮崎県の役所（宮崎県庁）の本庁舎およびその別庁舎群の総称。",
       "lang": "ja",
@@ -3362,7 +3337,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11454482",
@@ -3385,7 +3360,7 @@
       "公園"
     ],
     "featured": false,
-    "score": 59.29,
+    "score": 59.63,
     "summary": {
       "text": "宮崎県総合運動公園（みやざきけん・そうごううんどうこうえん）は、宮崎県宮崎市大字熊野にあるスポーツ施設群を有する県立総合運動公園。「スポーツランドみやざき」構想の中核施設である。施設は宮崎県が所有し、公園部分は宮崎県公園協会が、スポーツ施設など有料施設は宮崎県スポーツ施設協会がそれぞれ指定管理者として運営管理を行っている。",
       "lang": "ja",
@@ -3424,7 +3399,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11465511",
@@ -3445,7 +3420,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 64.91,
+    "score": 64.98,
     "summary": {
       "text": "尾鈴山是位於日本九州地區宮崎縣的一座山，海拔1405.2米。位列日本二百名山，亦作「御鈴山」。",
       "lang": "zh",
@@ -3475,7 +3450,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11476827",
@@ -3497,8 +3472,8 @@
     "tags": [
       "島"
     ],
-    "featured": true,
-    "score": 65.15,
+    "featured": false,
+    "score": 65.17,
     "summary": {
       "text": "島浦島（しまうらとう）は、日向灘北部に位置する島。離島振興法における離島振興対策実施地域名は島野浦島（しまのうらとう）となっている。行政区分は宮崎県延岡市島浦町（しまうらまち）。",
       "lang": "ja",
@@ -3506,14 +3481,7 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2b/Shimanoura_Island_from_Kitaura_01.JPG/960px-Shimanoura_Island_from_Kitaura_01.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "ja:User:Sanjo",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Shimanoura_Island_from_Kitaura_01.JPG"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q11476827"
     },
@@ -3528,7 +3496,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11486526",
@@ -3551,7 +3519,7 @@
       "城"
     ],
     "featured": true,
-    "score": 67.95,
+    "score": 67.88,
     "summary": {
       "text": "Nobeoka Castle (延岡城, Nobeoka-jō) is the remains of a castle structure in Nobeoka, Miyazaki Prefecture, Japan.",
       "lang": "en",
@@ -3590,7 +3558,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11486557",
@@ -3611,7 +3579,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 47.78,
+    "score": 48.16,
     "summary": {
       "text": "延岡植物園（のべおかしょくぶつえん）とは、宮崎県延岡市にある市営の植物園。",
       "lang": "ja",
@@ -3650,7 +3618,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11493832",
@@ -3671,7 +3639,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 59.76,
+    "score": 59.86,
     "summary": {
       "text": "愛宕山（あたごやま）は宮崎県延岡市の市街地の南部にある標高251.3mの山。旧名・笠沙山。延岡市の地名（大字）でもある。名称は麓に鎮座する「愛宕神社」に由来する。",
       "lang": "ja",
@@ -3710,15 +3678,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "night": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4c/Night_View_of_Nobeoka_2011_Jan.JPG/960px-Night_View_of_Nobeoka_2011_Jan.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "ja:User:Sanjo",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Night_View_of_Nobeoka_2011_Jan.JPG"
-      }
-    }
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11503929",
@@ -3741,7 +3701,7 @@
       "城"
     ],
     "featured": false,
-    "score": 55.13,
+    "score": 55.22,
     "summary": {
       "text": "新納石城（にいろいしのじょう）または石城（いしのじょう）は、宮崎県児湯郡木城町石河内にあった南北朝時代から戦国時代中頃の日本の城（山城）。伊東四十八城の1つであり石城合戦の舞台となった。亀城とも呼ぶ。",
       "lang": "ja",
@@ -3749,14 +3709,7 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/01/Ishikawauchi_Kijo_Miyazaki_Japan.jpg/960px-Ishikawauchi_Kijo_Miyazaki_Japan.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Sanjo",
-        "license": "Public domain",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Ishikawauchi_Kijo_Miyazaki_Japan.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q11503929"
     },
@@ -3771,7 +3724,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11520786",
@@ -3793,7 +3746,7 @@
       "寺院"
     ],
     "featured": false,
-    "score": 29.14,
+    "score": 29.19,
     "summary": {
       "text": "本蓮寺（ほんれんじ）は、宮崎県児湯郡新富町新田に所在する日蓮正宗の寺院。山号は図子山（ずしさん）。開山は妙本寺（千葉県鋸南町）11世日要。元は郷門寺院。",
       "lang": "ja",
@@ -3824,7 +3777,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11521813",
@@ -3845,7 +3798,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 48.58,
+    "score": 48.66,
     "summary": {
       "text": "杉安峡（すぎやすきょう）は、宮崎県西都市を流れる一ツ瀬川にある景勝地。西都原・杉安峡県立自然公園の指定区域に位置する（1958年（昭和33年）9月1日指定）。",
       "lang": "ja",
@@ -3868,7 +3821,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11529597",
@@ -3889,7 +3842,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 58.1,
+    "score": 58.17,
     "summary": {
       "text": "松尾城（まつおじょう）は、宮崎県延岡市松山町（日向国縣（あがた））にあった日本の城。別名縣城（あがたじょう）。",
       "lang": "ja",
@@ -3912,7 +3865,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11532746",
@@ -3935,7 +3888,7 @@
       "島"
     ],
     "featured": true,
-    "score": 65.75,
+    "score": 65.81,
     "summary": {
       "text": "Birōjima is a small (8 ha in area and 75 m in height) uninhabited island lying off the coast of Miyazaki Prefecture, Kyushu, Japan. It has been recognised as an Important Bird Area (IBA) by BirdLife International because it supports a population of Pleske's grasshopper warblers as well as a breeding colony of Japanese murrelets.",
       "lang": "en",
@@ -3965,7 +3918,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11540855",
@@ -3988,7 +3941,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 54.48,
+    "score": 54.33,
     "summary": {
       "text": "椎葉厳島神社（しいばいつくしまじんじゃ）は、宮崎県東臼杵郡椎葉村に鎮座する神社である。鎮座地は、源氏方の武将と平氏遺臣の娘との悲恋物語で有名な那須家住宅（鶴富屋敷）の近く、下福良集落の中央小丘上に位置する（旧上椎葉村）。旧社格は村社。",
       "lang": "ja",
@@ -4019,7 +3972,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11547233",
@@ -4039,7 +3992,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 51.79,
+    "score": 52.08,
     "summary": {
       "text": "母智丘（もちお）とは宮崎県都城市西部郊外にある丘陵地。母智丘・関之尾県立自然公園に属する。",
       "lang": "ja",
@@ -4069,7 +4022,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11560695",
@@ -4089,7 +4042,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 49.1,
+    "score": 49.45,
     "summary": {
       "text": "清武温泉（きよたけおんせん）は、宮崎県宮崎市清武町にある温泉。",
       "lang": "ja",
@@ -4112,7 +4065,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11563457",
@@ -4132,7 +4085,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 49.17,
+    "score": 49.35,
     "summary": {
       "text": "湯之元温泉（ゆのもとおんせん）は宮崎県西諸県郡高原町蒲牟田（旧国日向国）にある温泉。",
       "lang": "ja",
@@ -4151,7 +4104,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11567787",
@@ -4174,7 +4127,7 @@
       "橋"
     ],
     "featured": false,
-    "score": 60.47,
+    "score": 60.49,
     "summary": {
       "text": "照葉大吊橋（てるはおおつりばし、綾の照葉大吊橋）は、宮崎県東諸県郡綾町の本庄川（綾南川、大淀川の支流）に架かる吊橋。土木学会デザイン賞 2004 優秀賞 受賞。",
       "lang": "ja",
@@ -4204,7 +4157,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11580591",
@@ -4215,7 +4168,7 @@
       "zh_tw": "白鳥神社",
       "en": "Shiratori Shrine"
     },
-    "kana_source": "wikipedia",
+    "kana_source": "wikidata",
     "location": {
       "lat": 31.978972,
       "lng": 130.827333
@@ -4227,7 +4180,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 54.55,
+    "score": 54.24,
     "summary": {
       "text": "白鳥神社（しらとりじんじゃ）は、宮崎県えびの市南部の白鳥山北中腹にある神社である。霧島六社権現の1社に数えられたとする文献もある古社だが、通説では、霧島六社権現のページにある通りである。旧社格は県社。",
       "lang": "ja",
@@ -4257,7 +4210,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11584052",
@@ -4277,7 +4230,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 54.36,
+    "score": 54.25,
     "summary": {
       "text": "矢岳高原（やたけこうげん）は宮崎県えびの市北西部から熊本県人吉市にかけて広がる矢岳山（739 m）付近の高原。1966年（昭和41年）12月24日に宮崎県の自然公園（矢岳高原県立自然公園、面積：6.68 km2）に指定された。平均標高は約700 m。",
       "lang": "ja",
@@ -4296,7 +4249,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11584230",
@@ -4317,7 +4270,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 55.13,
+    "score": 55.18,
     "summary": {
       "text": "矢研の滝（やとぎのたき）は、宮崎県児湯郡都農町にある滝。日本の滝百選に選定されている。",
       "lang": "ja",
@@ -4347,7 +4300,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11588437",
@@ -4367,7 +4320,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 44.79,
+    "score": 44.7,
     "summary": {
       "text": "祇園滝（ぎおんだき）は、宮崎県児湯郡木城町にある滝。",
       "lang": "ja",
@@ -4390,7 +4343,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11590365",
@@ -4413,7 +4366,7 @@
       "公園"
     ],
     "featured": false,
-    "score": 49.67,
+    "score": 49.97,
     "summary": {
       "text": "神柱公園（かんばしらこうえん）は宮崎県都城市にある公園である。中心街に位置し、神柱宮を中心に整備された公園である。",
       "lang": "ja",
@@ -4457,7 +4410,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11603507",
@@ -4480,7 +4433,7 @@
       "島"
     ],
     "featured": false,
-    "score": 58.78,
+    "score": 58.83,
     "summary": {
       "text": "築島（つきしま）は、宮崎県串間市沖約200mに浮かぶ島。離島振興法に基づく「宮崎県離島振興計画」では大島（日南市）とともに「南那珂群島」として離島振興計画の対象地域となっている。",
       "lang": "ja",
@@ -4488,14 +4441,7 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/98/Tsukishima_Island_Miyazaki_Japan_200809.jpg/960px-Tsukishima_Island_Miyazaki_Japan_200809.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "ja:User:Sanjo",
-        "license": "Public domain",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Tsukishima_Island_Miyazaki_Japan_200809.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q11603507"
     },
@@ -4510,7 +4456,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11608659",
@@ -4531,7 +4477,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 63.64,
+    "score": 63.77,
     "summary": {
       "text": "美々津（みみつ）は、宮崎県中北部、日向市南部の地域。町名としては美々津町。地内には宮の下、高松、落鹿、駅通り、石並、新町、立縫、別府、余瀬、田の原がある。日向市美々津町の郵便番号は889-1111（日向郵便局管区）。",
       "lang": "ja",
@@ -4539,14 +4485,7 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/45/Mimitsu_Hyuga_2008.JPG/960px-Mimitsu_Hyuga_2008.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "ja:User:Sanjo",
-        "license": "Public domain",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Mimitsu_Hyuga_2008.JPG"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q11608659"
     },
@@ -4561,7 +4500,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11618843",
@@ -4584,7 +4523,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 61.7,
+    "score": 61.63,
     "summary": {
       "text": "荒立神社（あらたてじんじゃ）は、宮崎県西臼杵郡高千穂町大字三田井に鎮座する神社である。",
       "lang": "ja",
@@ -4624,7 +4563,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11626188",
@@ -4645,7 +4584,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 58.53,
+    "score": 58.78,
     "summary": {
       "text": "行縢山（むかばきやま、むかばきさん）は、九州南部に広がる九州山地の東部にそびえる山である。宮崎県延岡市に位置する。",
       "lang": "ja",
@@ -4675,7 +4614,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11627046",
@@ -4698,7 +4637,7 @@
       "寺院"
     ],
     "featured": false,
-    "score": 59.17,
+    "score": 59.07,
     "summary": {
       "text": "西の正倉院（にしのしょうそういん）は、宮崎県東臼杵郡美郷町にある奈良の正倉院のレプリカ建築物。門外不出とされていた正倉院の原図を元に樹齢400～500年の木曾天然檜を使って忠実に再建したもので、内部を見学することもできる。百済の里事業の一環として1996年（平成8年）に 完成した。",
       "lang": "ja",
@@ -4728,7 +4667,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11629971",
@@ -4751,7 +4690,7 @@
       "城"
     ],
     "featured": false,
-    "score": 49.74,
+    "score": 49.86,
     "summary": {
       "text": "西階城（にししなじょう）は、宮崎県延岡市にあった日本の城。別名宝坂城・中の城。",
       "lang": "ja",
@@ -4774,7 +4713,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11639672",
@@ -4795,7 +4734,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 56.81,
+    "score": 56.8,
     "summary": {
       "text": "速川神社（はやかわじんじゃ）は、宮崎県西都市にある神社である。",
       "lang": "ja",
@@ -4825,7 +4764,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11640873",
@@ -4846,7 +4785,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 50.3,
+    "score": 50.41,
     "summary": {
       "text": "道の駅なんごう（みちのえき なんごう）は、宮崎県日南市南郷町贄波にある国道448号の道の駅である。",
       "lang": "ja",
@@ -4876,7 +4815,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11641059",
@@ -4897,7 +4836,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 56.95,
+    "score": 56.96,
     "summary": {
       "text": "道の駅フェニックス（みちのえき フェニックス）は、宮崎県宮崎市にある宮崎県道377号内海加江田線の道の駅である。",
       "lang": "ja",
@@ -4927,7 +4866,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11641168",
@@ -4948,7 +4887,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 56.8,
+    "score": 56.81,
     "summary": {
       "text": "道の駅北川はゆま（みちのえき きたがわはゆま）は、宮崎県延岡市北川町長井の国道10号沿いに設置されている道の駅。東九州自動車道（延岡道路）の北川ICに隣接している。",
       "lang": "ja",
@@ -4984,7 +4923,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11641312",
@@ -5005,7 +4944,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 50.75,
+    "score": 50.82,
     "summary": {
       "text": "道の駅日向（みちのえき ひゅうが）は、宮崎県日向市大字幸脇にある国道10号の道の駅である。",
       "lang": "ja",
@@ -5035,7 +4974,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11641409",
@@ -5056,7 +4995,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 50.92,
+    "score": 51.4,
     "summary": {
       "text": "道の駅田野（みちのえき たの）は、宮崎県宮崎市田野町甲（倉谷）にある道の駅である。",
       "lang": "ja",
@@ -5086,7 +5025,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11641529",
@@ -5107,7 +5046,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 54.28,
+    "score": 54.34,
     "summary": {
       "text": "道の駅都城NiQLL（みちのえき みやこのじょうニクル）は、宮崎県都城市にある国道10号の道の駅である。",
       "lang": "ja",
@@ -5137,7 +5076,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11641530",
@@ -5158,7 +5097,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 48.81,
+    "score": 48.75,
     "summary": {
       "text": "道の駅酒谷（みちのえき さかたに）は、宮崎県日南市にある国道222号の道の駅である。2016年、国土交通省の「平成28年度 住民サービス部門 モデル『道の駅』」に認定された。",
       "lang": "ja",
@@ -5188,7 +5127,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11641572",
@@ -5209,7 +5148,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 49.97,
+    "score": 49.89,
     "summary": {
       "text": "道の駅高千穂（みちのえき たかちほ）は、宮崎県西臼杵郡高千穂町にある国道218号の道の駅である。",
       "lang": "ja",
@@ -5248,7 +5187,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11641573",
@@ -5269,7 +5208,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 51.57,
+    "score": 52.06,
     "summary": {
       "text": "道の駅高岡（みちのえき たかおか）は、宮崎県宮崎市高岡町花見にある国道10号の道の駅である。ビタミン館の愛称があるが、この周辺にビタミンの父こと、海軍軍医・高木兼寛の生家があることにちなむ。",
       "lang": "ja",
@@ -5299,7 +5238,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11642920",
@@ -5322,7 +5261,7 @@
       "重要文化財"
     ],
     "featured": false,
-    "score": 63.55,
+    "score": 63.52,
     "summary": {
       "text": "那須家住宅（なすけじゅうたく）は、宮崎県東臼杵郡椎葉村にある歴史的建造物。国の重要文化財。鶴富屋敷とも呼ばれる。",
       "lang": "ja",
@@ -5357,7 +5296,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11643471",
@@ -5380,7 +5319,7 @@
       "城"
     ],
     "featured": false,
-    "score": 62.39,
+    "score": 62.51,
     "summary": {
       "text": "都之城（みやこのじょう）は、宮崎県都城市都島町にあった日本の城（山城）。都城市指定史跡。都城とも表記する。別名鶴丸城。",
       "lang": "ja",
@@ -5397,14 +5336,7 @@
         "distance_m": 1030
       }
     ],
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f9/MIYAKONOJOU_022.JPG/960px-MIYAKONOJOU_022.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "紹益",
-        "license": "Public domain",
-        "source_url": "https://commons.wikimedia.org/wiki/File:MIYAKONOJOU_022.JPG"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q11643471"
     },
@@ -5419,7 +5351,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11643472",
@@ -5442,7 +5374,7 @@
       "岬"
     ],
     "featured": true,
-    "score": 69.02,
+    "score": 68.95,
     "summary": {
       "text": "Cape Toi (都井岬, Toi-misaki?) is a cape located in Kushima, Miyazaki, Japan, on the Nichinan coast bordering the Pacific Ocean. The cape is renowned for its beauty and for the wild horses that roam freely. A strip of land in the heart of Cape Toi includes Mount Ōgi and Komatsugaoka, which are classified as a national natural monument by the Agency for Cultural Affairs.",
       "lang": "en",
@@ -5472,7 +5404,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11643474",
@@ -5493,7 +5425,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 55.57,
+    "score": 55.7,
     "summary": {
       "text": "都井岬灯台（といみさきとうだい）は、宮崎県串間市に属する都井岬の標高240mの断崖上に立つ、白色の大型灯台で、「日本の灯台50選」にも選ばれている。周辺は、日南海岸国定公園の最南端に位置する風光明媚の地。",
       "lang": "ja",
@@ -5523,7 +5455,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11643539",
@@ -5546,7 +5478,7 @@
       "博物館"
     ],
     "featured": false,
-    "score": 53.17,
+    "score": 53.2,
     "summary": {
       "text": "Miyakonojō City Museum of Art (都城市立美術館, Miyakonojō Shiritsu Bijutsukan) opened in Miyakonojō, Miyazaki Prefecture, Japan in 1981. The collection includes works by Yamauchi Tamon, Masuda Gyokujō, and Yamada Shin'ichi, and temporary exhibitions are also mounted.",
       "lang": "en",
@@ -5590,7 +5522,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11643548",
@@ -5614,7 +5546,7 @@
       "博物館"
     ],
     "featured": false,
-    "score": 52.56,
+    "score": 52.4,
     "summary": {
       "text": "都城歴史資料館（みやこのじょうれきししりょうかん）は、宮崎県都城市都島町にある市立の歴史資料館。",
       "lang": "ja",
@@ -5658,7 +5590,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11643717",
@@ -5682,7 +5614,7 @@
       "史跡"
     ],
     "featured": true,
-    "score": 69.67,
+    "score": 69.72,
     "summary": {
       "text": "Tonokōri Castle (都於郡城, Tonokōri-jō) was a Sengoku period yamajiro-style Japanese castle located in the Tonokōri neighborhood of the city of Saito, Miyazaki Prefecture, Japan. It was also known as Ukibune Castle (浮船城). Its ruins have been protected as a National Historic Site since 2000.",
       "lang": "en",
@@ -5690,14 +5622,7 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-29"
     },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/af/%E9%83%BD%E6%96%BC%E9%83%A1%E5%9F%8E%E8%B7%A1_%E8%A5%BF%E9%83%BD%E5%B8%82_Feb_3%2C_2013.jpg/960px-%E9%83%BD%E6%96%BC%E9%83%A1%E5%9F%8E%E8%B7%A1_%E8%A5%BF%E9%83%BD%E5%B8%82_Feb_3%2C_2013.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "kobakou",
-        "license": "CC BY 2.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:%E9%83%BD%E6%96%BC%E9%83%A1%E5%9F%8E%E8%B7%A1_%E8%A5%BF%E9%83%BD%E5%B8%82_Feb_3,_2013.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q11643717"
     },
@@ -5712,7 +5637,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11655547",
@@ -5733,7 +5658,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 61.82,
+    "score": 61.76,
     "summary": {
       "text": "關之尾瀑布，，是位於宮崎縣都城市関之尾町的瀑布，名列日本瀑布百選，歸屬於母智丘・關之尾縣立自然公園。",
       "lang": "zh",
@@ -5763,7 +5688,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11658270",
@@ -5783,7 +5708,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 60.08,
+    "score": 60.11,
     "summary": {
       "text": "陰陽石（いんようせき）は、宮崎県小林市東方の岩瀬川（浜の瀬川）内にある、加久藤火砕流堆積物により造り出された自然造形の奇岩で、夫婦岩に見える。霧島ジオパークの霧島ジオサイトにもなっている。前宮崎県知事・東国原英夫の発案により、2009年（平成21年）に「宮崎県観光遺産」（自然遺産）　\"生命発祥の聖地\"",
       "lang": "ja",
@@ -5809,7 +5734,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11660876",
@@ -5820,7 +5745,7 @@
       "zh_tw": "霧島岑神社",
       "en": "Kirishimamine Shrine"
     },
-    "kana_source": "wikipedia",
+    "kana_source": "wikidata",
     "location": {
       "lat": 31.966168,
       "lng": 130.957965
@@ -5832,7 +5757,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 61.11,
+    "score": 61.12,
     "summary": {
       "text": "霧島岑神社（きりしまみねじんじゃ）は、宮崎県小林市細野にある神社。延喜式内社の論社であり、旧社格は県社。",
       "lang": "ja",
@@ -5862,7 +5787,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11661092",
@@ -5882,7 +5807,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 58.72,
+    "score": 58.8,
     "summary": {
       "text": "青井岳温泉（あおいだけおんせん）は、宮崎県都城市山之口町にある温泉。かつての施設の名称は「青井岳荘」だった。",
       "lang": "ja",
@@ -5899,14 +5824,7 @@
         "distance_m": 620
       }
     ],
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1d/Aoidake-so%2C_Miyakonojo.jpg/960px-Aoidake-so%2C_Miyakonojo.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "運動会プロテインパワー",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Aoidake-so,_Miyakonojo.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q11661092"
     },
@@ -5917,7 +5835,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11661391",
@@ -5938,7 +5856,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 56.68,
+    "score": 56.86,
     "summary": {
       "text": "青島温泉（あおしまおんせん）は、宮崎県宮崎市青島地区で湧出している温泉である。",
       "lang": "ja",
@@ -5962,14 +5880,7 @@
         "distance_m": 1170
       }
     ],
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/ba/Aoshima_District_2007_0824.jpg/960px-Aoshima_District_2007_0824.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "ja:User:Sanjo",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Aoshima_District_2007_0824.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q11661391"
     },
@@ -5984,7 +5895,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11666105",
@@ -6005,7 +5916,7 @@
     "themes": [],
     "tags": [],
     "featured": true,
-    "score": 70.0,
+    "score": 69.86,
     "summary": {
       "text": "Obi (飫肥) is a district located in Nichinan, in the southern part of Miyazaki Prefecture, in the Kyushu region of Japan.  During the Edo period, it was the Jōkamachi (castle town) of Obi Castle, which was the seat of the Obi Domain, which was ruled by the Ito clan. The district was originally planned and laid out in the early Edo period, and the historical townscape has been preserved to this day.",
       "lang": "en",
@@ -6024,10 +5935,10 @@
     ],
     "images": [
       {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cc/Obi%2C_Nichinan%2C_%C5%8Ctemon_Street_01.jpg/960px-Obi%2C_Nichinan%2C_%C5%8Ctemon_Street_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/42/Obi%2C_Nichinan%2C_Yokobaba_Street_03.jpg/960px-Obi%2C_Nichinan%2C_Yokobaba_Street_03.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
         "author": "Naokijp",
         "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Obi,_Nichinan,_%C5%8Ctemon_Street_01.jpg"
+        "source_url": "https://commons.wikimedia.org/wiki/File:Obi,_Nichinan,_Yokobaba_Street_03.jpg"
       }
     ],
     "external_ids": {
@@ -6044,15 +5955,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/38/Aerial_photograph_of_Obi_District_2020-2.jpg/960px-Aerial_photograph_of_Obi_District_2020-2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Geospatial Information Authority of Japan",
-        "license": "Attribution",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Aerial_photograph_of_Obi_District_2020-2.jpg"
-      }
-    }
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11666711",
@@ -6075,7 +5978,7 @@
       "城"
     ],
     "featured": false,
-    "score": 43.0,
+    "score": 43.18,
     "summary": {
       "text": "Iino Castle (飯野城, Iino-jō) also known as Kame-jiro was a castle structure in Ebino, Miyazaki, Japan. Iino Castle was built by the Kusakabe clan and was later controlled by the Shimazu clan.",
       "lang": "en",
@@ -6110,7 +6013,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11668875",
@@ -6130,7 +6033,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 54.94,
+    "score": 54.74,
     "summary": {
       "text": "高千穂ユースホステル（たかちほユースホステル）は、かつて日本ユースホステル協会に加盟していた宮崎県高千穂町のユースホステル。日本で最も高い鉄道橋であった高千穂橋梁のふもとに建っていた。廃業、建物を改装し、向かって左半分を「高千穂山荘 あまてらす」、右半分を「高千穂山荘 かぐら」として2025年から貸別荘になっている。",
       "lang": "ja",
@@ -6160,7 +6063,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11668882",
@@ -6183,7 +6086,7 @@
       "橋"
     ],
     "featured": false,
-    "score": 47.38,
+    "score": 47.37,
     "summary": {
       "text": "高千穂橋梁（たかちほきょうりょう）は、2008年12月に廃線となった高千穂鉄道高千穂線の深角駅 - 天岩戸駅間（宮崎県西臼杵郡高千穂町）にある全長353.76メートルの鉄道橋で、岩戸川の渓谷を跨いでいる。",
       "lang": "ja",
@@ -6218,7 +6121,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11669046",
@@ -6239,7 +6142,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 62.67,
+    "score": 64.03,
     "summary": {
       "text": "高城（たかじょう）は、宮崎県児湯郡木城町にあった日本の城（山城）。伊東四十八城の一つ。高城川の戦い（耳川の戦い）の主戦場となった城である。木城町指定文化財（史跡）。",
       "lang": "ja",
@@ -6262,7 +6165,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11673177",
@@ -6285,7 +6188,7 @@
       "城"
     ],
     "featured": false,
-    "score": 64.37,
+    "score": 64.22,
     "summary": {
       "text": "高鍋城（たかなべじょう）是位在宮崎縣兒湯郡高鍋町的一座平山城。別名舞鶴城、財部城。江戶時代是高鍋藩之藩廳。城跡整備為舞鶴公園。",
       "lang": "zh",
@@ -6308,7 +6211,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11673179",
@@ -6331,7 +6234,7 @@
       "博物館"
     ],
     "featured": false,
-    "score": 47.75,
+    "score": 48.17,
     "summary": {
       "text": "高鍋町歴史総合資料館（たかなべちょうれきしそうごうしりょうかん）とは、宮崎県児湯郡高鍋町にある町立歴史博物館である。",
       "lang": "ja",
@@ -6359,7 +6262,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11673182",
@@ -6382,7 +6285,7 @@
       "博物館"
     ],
     "featured": false,
-    "score": 52.89,
+    "score": 52.82,
     "summary": {
       "text": "Takanabe Museum of Art (高鍋町美術館, Takanabe-chō Bijutsukan) opened in Takanabe, Miyazaki Prefecture, Japan in 1999. Located inside the moat of Takanabe Castle, the museum's collection comprises some eight hundred artworks, including paintings by Kojima Torajirō, and temporary exhibitions are also mounted.",
       "lang": "en",
@@ -6417,7 +6320,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q117275655",
@@ -6437,7 +6340,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 45.1,
+    "score": 45.51,
     "summary": {
       "text": "あきしげゆは、宮崎県えびの市にある温泉である。",
       "lang": "ja",
@@ -6456,7 +6359,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q120727713",
@@ -6479,7 +6382,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 57.53,
+    "score": 57.6,
     "summary": {
       "text": "宮崎縣護國神社（みやざきけんごこくじんじゃ）は、宮崎県宮崎市にある神社（護国神社）である。祭神として本殿に戊辰の役以降の国家公共に尽くした人の神霊41,820柱、相殿に公務殉職者の御霊54柱を祀る（2016年3月現在）。",
       "lang": "ja",
@@ -6515,7 +6418,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q120968100",
@@ -6538,7 +6441,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 60.97,
+    "score": 60.8,
     "summary": {
       "text": "大御神社（おおみじんじゃ）は、宮崎県日向市日知屋にある神社。地元では「日向のお伊勢さま」として知られる。境内には、日本最大級のさざれ石群があり、社殿は国の登録有形文化財である。",
       "lang": "ja",
@@ -6564,7 +6467,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q123481900",
@@ -6584,7 +6487,7 @@
       "史跡"
     ],
     "featured": false,
-    "score": 37.15,
+    "score": 36.94,
     "summary": {
       "text": "The Hyūga Provincial Capital ruins (日向国府跡, Hyūga kokufu ato) is an archaeological site with the ruins of a Nara to Heian period government administrative complex located in what is now the Migimatsu neighborhood of the city of Saito, Miyazaki prefecture in the island of Kyushu, Japan. Identified as the ruins of the kokufu (provincial capital) of Hyūga Province, the site was protected by the national government as a National Historic Site since 2005.",
       "lang": "en",
@@ -6610,7 +6513,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q127451377",
@@ -6810,7 +6713,7 @@
       "公園"
     ],
     "featured": false,
-    "score": 54.32,
+    "score": 54.38,
     "summary": {
       "text": "都城市山之口運動公園（みやこのじょうし やまのくちうんどうこうえん）は、宮崎県都城市にある都市公園（運動公園）。",
       "lang": "ja",
@@ -6827,14 +6730,7 @@
         "distance_m": 920
       }
     ],
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c6/KUROKIRI_Stadium_seen_from_SE.jpg/960px-KUROKIRI_Stadium_seen_from_SE.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "ja:User:Sanjo This photo was taken with Samsung Galaxy S23 Ultra",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:KUROKIRI_Stadium_seen_from_SE.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q134973523"
     },
@@ -6849,7 +6745,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q135070353",
@@ -6860,7 +6756,7 @@
       "zh_tw": "東霧島神社",
       "en": "Tsumakirishima Shrine"
     },
-    "kana_source": "wikipedia",
+    "kana_source": "wikidata",
     "location": {
       "lat": 31.845399,
       "lng": 131.059896
@@ -6872,7 +6768,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 52.92,
+    "score": 53.6,
     "summary": {
       "text": "東霧島神社（つまきりしまじんじゃ）は、宮崎県都城市東霧島（つまぎりしま）にある神社。延喜式内社の論社であり、旧社格は県社。",
       "lang": "ja",
@@ -6889,14 +6785,7 @@
         "distance_m": 710
       }
     ],
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e3/%E6%9D%B1%E9%9C%A7%E5%B3%B6%E7%A5%9E%E7%A4%BE%E7%A5%9E%E7%9F%B31.jpg/960px-%E6%9D%B1%E9%9C%A7%E5%B3%B6%E7%A5%9E%E7%A4%BE%E7%A5%9E%E7%9F%B31.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Gjpamt1",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:%E6%9D%B1%E9%9C%A7%E5%B3%B6%E7%A5%9E%E7%A4%BE%E7%A5%9E%E7%9F%B31.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q135070353",
       "osm": "node/6877968486"
@@ -6916,7 +6805,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q135313992",
@@ -6975,7 +6864,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 48.04,
+    "score": 48.23,
     "summary": {
       "text": "大塚八幡神社（おおつかはちまん）は宮崎県宮崎市大塚町にある神社。旧村社。通称「大塚神社」",
       "lang": "ja",
@@ -7001,7 +6890,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q136525403",
@@ -7022,7 +6911,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 22.3,
+    "score": 22.71,
     "summary": {
       "text": "青島（あおしま）は、宮崎県宮崎市青島地域の南東部海岸付近に所在する架橋された島。",
       "lang": "ja",
@@ -7053,7 +6942,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q138847787",
@@ -7061,7 +6950,8 @@
       "ja": "兼喜神社",
       "kana": "けんきじんじゃ",
       "romaji": "Kenkijinja",
-      "zh_tw": "兼喜神社"
+      "zh_tw": "兼喜神社",
+      "en": "Kenki Shrine"
     },
     "kana_source": "wikidata",
     "location": {
@@ -7108,7 +6998,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q138853704",
@@ -7116,7 +7006,8 @@
       "ja": "旭丘神社",
       "kana": "ひのおじんじゃ",
       "romaji": "Hinojinja",
-      "zh_tw": "旭丘神社"
+      "zh_tw": "旭丘神社",
+      "en": "Hino Shrine"
     },
     "kana_source": "wikidata",
     "location": {
@@ -7163,7 +7054,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q138855991",
@@ -7171,7 +7062,8 @@
       "ja": "母智丘神社",
       "kana": "もちおじんじゃ",
       "romaji": "Mochiojinja",
-      "zh_tw": "母智丘神社"
+      "zh_tw": "母智丘神社",
+      "en": "Mochio Shrine"
     },
     "kana_source": "wikidata",
     "location": {
@@ -7202,7 +7094,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q140356456",
@@ -7277,7 +7169,7 @@
       "名勝"
     ],
     "featured": false,
-    "score": 57.47,
+    "score": 57.75,
     "summary": {
       "text": "比叡山（ひえいざん）は宮崎県延岡市北方町に位置する標高760mの山である。なお、山頂については、標高918mの三角点のある地点ではなく、西側の標高760m地点を以って、山頂とすることが多いという。",
       "lang": "ja",
@@ -7285,14 +7177,7 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/09/Miyazaki-Mt.Hiei%28in_Miyazaki%29-xl.jpg/960px-Miyazaki-Mt.Hiei%28in_Miyazaki%29-xl.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Shiro_KUROGI",
-        "license": "CC BY 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Miyazaki-Mt.Hiei(in_Miyazaki)-xl.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q17177026"
     },
@@ -7307,7 +7192,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q17211826",
@@ -7330,7 +7215,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 54.96,
+    "score": 54.79,
     "summary": {
       "text": "木花神社（きばなじんじゃ）は、宮崎県宮崎市にある神社。日子番能邇邇芸命（ひこほのににぎのみこと）と木花佐久夜毘売（このはなのさくやびめ）を祀る。木花佐久夜毘売が火中出産の際に産屋として使ったとされる「無戸室（うつむろ）の跡」が境内に残る。",
       "lang": "ja",
@@ -7354,14 +7239,7 @@
         "distance_m": 1300
       }
     ],
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b2/Kibana-jinja_202505-1.jpg/960px-Kibana-jinja_202505-1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "運動会プロテインパワー",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Kibana-jinja_202505-1.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q17211826",
       "osm": "node/7068427934"
@@ -7377,7 +7255,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q17212870",
@@ -7398,7 +7276,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 51.34,
+    "score": 51.44,
     "summary": {
       "text": "道の駅えびの（みちのえき えびの）は、宮崎県えびの市にある国道268号の道の駅である。",
       "lang": "ja",
@@ -7437,7 +7315,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q17215361",
@@ -7460,7 +7338,7 @@
       "公園"
     ],
     "featured": false,
-    "score": 61.98,
+    "score": 62.01,
     "summary": {
       "text": "宮崎市生目の杜運動公園（みやざきし いきめのもりうんどうこうえん、Miyazaki City Ikimenomori Sports Park）は、宮崎県宮崎市にある運動公園。市の中心部に位置する市民スポーツパークである。施設は宮崎市が所有し、MSG・ミズノグループ（代表団体：学校法人宮崎総合学院、構成団体：ミズノ）が指定管理者として運営管理を行っている。",
       "lang": "ja",
@@ -7495,7 +7373,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q17216107",
@@ -7516,7 +7394,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 50.62,
+    "score": 50.95,
     "summary": {
       "text": "道の駅つの（みちのえき つの）は、宮崎県児湯郡都農町にある国道10号の道の駅である。",
       "lang": "ja",
@@ -7555,7 +7433,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q18700734",
@@ -7576,7 +7454,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 57.71,
+    "score": 57.77,
     "summary": {
       "text": "馬ヶ背（うまがせ）は、宮崎県日向市細島にある日向岬の景勝地。日豊海岸国定公園の南端付近に位置する。",
       "lang": "ja",
@@ -7606,7 +7484,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q2027215",
@@ -7630,7 +7508,7 @@
       "名勝"
     ],
     "featured": true,
-    "score": 79.43,
+    "score": 79.44,
     "summary": {
       "text": "高千穂峽是位於日本宮崎縣西臼杵郡高千穗町三田井地區的一個峽谷，五瀨川在峽谷中流過，又稱為五瀨川峽谷，現被列為日本的名勝、天然紀念物。",
       "lang": "zh",
@@ -7640,10 +7518,10 @@
     },
     "images": [
       {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/28/Takachiho-kyo%28Gorge%29_-_River_-_%E5%B7%9D.jpg/960px-Takachiho-kyo%28Gorge%29_-_River_-_%E5%B7%9D.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "TANAKA Juuyoh (田中十洋)",
-        "license": "CC BY 2.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Takachiho-kyo(Gorge)_-_River_-_%E5%B7%9D.jpg"
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bb/%E7%A7%8B%E8%89%B2%E3%81%AE%E9%AB%98%E5%8D%83%E7%A9%82%E5%B3%A1_%28Autumn_Colored_Takachiho_Gorge%29_24_Nov%2C_2012_-_panoramio.jpg/960px-%E7%A7%8B%E8%89%B2%E3%81%AE%E9%AB%98%E5%8D%83%E7%A9%82%E5%B3%A1_%28Autumn_Colored_Takachiho_Gorge%29_24_Nov%2C_2012_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Hiroaki Kaneko",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:%E7%A7%8B%E8%89%B2%E3%81%AE%E9%AB%98%E5%8D%83%E7%A9%82%E5%B3%A1_(Autumn_Colored_Takachiho_Gorge)_24_Nov,_2012_-_panoramio.jpg"
       }
     ],
     "external_ids": {
@@ -7665,15 +7543,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-10-02",
-    "season_images": {
-      "autumn": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bb/%E7%A7%8B%E8%89%B2%E3%81%AE%E9%AB%98%E5%8D%83%E7%A9%82%E5%B3%A1_%28Autumn_Colored_Takachiho_Gorge%29_24_Nov%2C_2012_-_panoramio.jpg/960px-%E7%A7%8B%E8%89%B2%E3%81%AE%E9%AB%98%E5%8D%83%E7%A9%82%E5%B3%A1_%28Autumn_Colored_Takachiho_Gorge%29_24_Nov%2C_2012_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Hiroaki Kaneko",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:%E7%A7%8B%E8%89%B2%E3%81%AE%E9%AB%98%E5%8D%83%E7%A9%82%E5%B3%A1_(Autumn_Colored_Takachiho_Gorge)_24_Nov,_2012_-_panoramio.jpg"
-      }
-    }
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q21655242",
@@ -7697,7 +7567,7 @@
       "史跡"
     ],
     "featured": false,
-    "score": 62.71,
+    "score": 62.95,
     "summary": {
       "text": "Mukasa Castle (穆佐城, Mukasa-jō) was a Japanese castle located in the Takaoka neighborhood of what is now the city of Miyazaki, Miyazaki Prefecture, in southeastern Kyushu, Japan. Its ruins have been protected by the central government as a National Historic Site since 2002. It was also called Musain High Castle (穆佐院高城, Musain-Takajō). It is one of the 48 castles controlled by the Itō clan in Hyūga Province in the Sengoku period.",
       "lang": "en",
@@ -7720,7 +7590,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-29"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q22119889",
@@ -7742,7 +7612,7 @@
       "岬"
     ],
     "featured": false,
-    "score": 37.62,
+    "score": 37.86,
     "summary": {
       "text": "ニトリモール宮崎（ニトリモールみやざき、NITORIMALL MIYAZAKI）とは、宮崎県宮崎市源藤町に所在する大型ショッピングセンター（ショッピングモール）。ニトリが運営するショッピングセンターであり、「ニトリモール」の3号店である。",
       "lang": "ja",
@@ -7767,14 +7637,7 @@
         "distance_m": 1480
       }
     ],
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/74/Nitori_mall_Miyazaki_1.jpg/960px-Nitori_mall_Miyazaki_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "運動会プロテインパワー",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Nitori_mall_Miyazaki_1.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q22119889"
     },
@@ -7789,7 +7652,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q22678692",
@@ -7810,7 +7673,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 61.79,
+    "score": 61.78,
     "summary": {
       "text": "The Aya Biosphere Reserve (established in 2012) is a UNESCO Man and the Biosphere Programme in the south of Kyushu Island, Japan. It harbours one of the country’s largest remaining lucidophyllous forests. The forest shows high biodiversity and embraces many indigenous species. Forest therapy and traditional recycling based agriculture in Aya Town are an ecotourism draw to the Biosphere Reserve.",
       "lang": "en",
@@ -7818,14 +7681,7 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-29"
     },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6a/Honjo_River_Aya_01.JPG/960px-Honjo_River_Aya_01.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "ja:User:Sanjo",
-        "license": "Public domain",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Honjo_River_Aya_01.JPG"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q22678692"
     },
@@ -7840,7 +7696,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q2841102",
@@ -7863,7 +7719,7 @@
       "神社"
     ],
     "featured": true,
-    "score": 72.98,
+    "score": 72.88,
     "summary": {
       "text": "Amanoiwato-jinja (天岩戸神社) is a Shinto shrine located in Takachiho, Miyazaki Prefecture, Japan. It is dedicated to the sun goddess Amaterasu and sits above the gorge containing Ama-no-Iwato, the cave where, according to Japanese legend, the goddess hid after battle with her brother, plunging the world into darkness until lured out by the spirit of merriment Ame-no-Uzume.",
       "lang": "en",
@@ -7894,8 +7750,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q2857985",
@@ -7919,7 +7774,7 @@
       "神社"
     ],
     "featured": true,
-    "score": 68.31,
+    "score": 68.45,
     "summary": {
       "text": "Aoshima Shrine (青島神社, Aoshima jinja) is a Shinto shrine located on Aoshima island, Miyazaki Prefecture, Japan. It is dedicated to Hikohohodemi no Mikoto and Toyotama-hime.",
       "lang": "en",
@@ -7959,15 +7814,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6a/2021-01-07_Aoshima_Island_%28Miyazaki%29%E9%9D%92%E5%B3%B6_%28%E5%AE%AE%E5%B4%8E%E7%9C%8C%29DJI_0255_%282%29%E7%A9%BA%E6%92%AE.jpg/960px-2021-01-07_Aoshima_Island_%28Miyazaki%29%E9%9D%92%E5%B3%B6_%28%E5%AE%AE%E5%B4%8E%E7%9C%8C%29DJI_0255_%282%29%E7%A9%BA%E6%92%AE.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "松岡明芳",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:2021-01-07_Aoshima_Island_(Miyazaki)%E9%9D%92%E5%B3%B6_(%E5%AE%AE%E5%B4%8E%E7%9C%8C)DJI_0255_(2)%E7%A9%BA%E6%92%AE.jpg"
-      }
-    }
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q28685425",
@@ -7990,7 +7837,7 @@
       "公園"
     ],
     "featured": false,
-    "score": 49.83,
+    "score": 49.86,
     "summary": {
       "text": "宮崎県総合文化公園（みやざきけんそうごうぶんかこうえん）は、宮崎県宮崎市にある総合公園である。",
       "lang": "ja",
@@ -8035,7 +7882,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q2968200",
@@ -8058,7 +7905,7 @@
       "城"
     ],
     "featured": false,
-    "score": 65.04,
+    "score": 65.01,
     "summary": {
       "text": "Aya Castle (綾城, Aya-jō) is a castle located in Aya, Miyazaki Prefecture, Japan.",
       "lang": "en",
@@ -8089,7 +7936,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q3047222",
@@ -8112,7 +7959,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 63.78,
+    "score": 63.8,
     "summary": {
       "text": "Eda-jinja (江田神社) is a Shinto shrine located in Miyazaki, Miyazaki prefecture, Japan. It is dedicated to Izanagi.",
       "lang": "en",
@@ -8147,7 +7994,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q30937059",
@@ -8170,7 +8017,7 @@
       "城"
     ],
     "featured": false,
-    "score": 48.92,
+    "score": 49.43,
     "summary": {
       "text": "中山城（なかやまじょう）、または仲山城は、宮崎県西臼杵郡高千穂町（日向国臼杵郡中山）にあった日本の城。三田井氏宅跡（みたいしたくあと）とも呼ばれる。築城年は不明だが、高千穂氏の末裔、大神姓三田井氏の居城で、天正19年（1591年）に高橋元種によって攻め落とされた。",
       "lang": "ja",
@@ -8193,7 +8040,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q3148421",
@@ -8217,7 +8064,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 61.5,
+    "score": 61.33,
     "summary": {
       "text": "Ikime-jinja (生目神社) is a Shinto shrine located in Miyazaki, Miyazaki prefecture, Japan. It is dedicated to Emperor Ōjin and Taira no Kagekiyo.",
       "lang": "en",
@@ -8245,7 +8092,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q3192663",
@@ -8266,7 +8113,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 61.07,
+    "score": 61.01,
     "summary": {
       "text": "神柱宮（かんばしらぐう）は、宮崎県都城市にある神社である。旧社格は県社で、現在は神社本庁の別表神社。神柱神社（かんばしらじんじゃ）ともいう。通称お神柱。",
       "lang": "ja",
@@ -8310,7 +8157,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q3199142",
@@ -8333,7 +8180,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 56.89,
+    "score": 56.8,
     "summary": {
       "text": "Kota-jinja (巨田神社) is a Shinto shrine located in Miyazaki, Miyazaki Prefecture, Japan. It is dedicated to Futodama, Empress Jingū and Emperor Ōjin.",
       "lang": "en",
@@ -8368,7 +8215,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q3200650",
@@ -8391,7 +8238,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 63.39,
+    "score": 63.28,
     "summary": {
       "text": "Kushifuru-jinja (槵觸神社) is a Shinto shrine located in Takachiho, Miyazaki prefecture, Japan. It is dedicated to Ninigi-no-Mikoto.",
       "lang": "en",
@@ -8426,7 +8273,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q3215060",
@@ -8446,8 +8293,8 @@
     "kind": "major",
     "themes": [],
     "tags": [],
-    "featured": false,
-    "score": 65.25,
+    "featured": true,
+    "score": 65.26,
     "summary": {
       "text": "Lake Miike (御池, Miike) is a lake in Miyakonojō and Takaharu in Miyazaki Prefecture, Japan.",
       "lang": "en",
@@ -8477,7 +8324,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q3298536",
@@ -8500,7 +8347,7 @@
       "博物館"
     ],
     "featured": false,
-    "score": 65.06,
+    "score": 65.03,
     "summary": {
       "text": "宮崎縣立美術館是位於日本宮崎縣宮崎市的一座縣立美術館，設計者是岡田新一。",
       "lang": "zh",
@@ -8541,7 +8388,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q3313142",
@@ -8564,7 +8411,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 60.3,
+    "score": 60.24,
     "summary": {
       "text": "Mikado-jinja (神門神社) is a Shinto shrine located in Misato, Miyazaki prefecture, Japan. It is dedicated to Ōhoyamatsumi and other kami.",
       "lang": "en",
@@ -8599,7 +8446,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q3364135",
@@ -8622,7 +8469,7 @@
       "公園"
     ],
     "featured": true,
-    "score": 73.84,
+    "score": 73.81,
     "summary": {
       "text": "平和臺公園是位於日本宮崎縣宮崎市的一座公園，以八紘一宇塔著稱。這座公園是紀元2600年紀念事業的一部分，公園修建耗資67萬日元，在1940年11月25日竣工。二戰之後因八紘一宇被視為軍國主義象徵而禁用，八紘一宇塔亦更名為和平塔。現在平和臺公園是宮崎縣代表觀光景點之一。",
       "lang": "zh",
@@ -8652,8 +8499,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q3472357",
@@ -8676,7 +8522,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 61.89,
+    "score": 61.83,
     "summary": {
       "text": "狭野神社（さのじんじゃ）は、宮崎県西諸県郡高原町にある神社。旧社格は県社で、後に官幣大社宮崎神宮の別宮となった。現在は再び独立の神社となり、神社本庁の別表神社になっている。霧島六所権現の一社である。",
       "lang": "ja",
@@ -8706,7 +8552,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q3514126",
@@ -8729,7 +8575,7 @@
       "神社"
     ],
     "featured": true,
-    "score": 72.59,
+    "score": 72.54,
     "summary": {
       "text": "高千穗神社是位於日本宮崎縣西臼杵郡高千穗町的一座神社，現在被神社本廳列為別表神社。高千穗神社在古代被稱為十社大明神」或「十社宮」，明治4年（1871年）改名為「三田井神社」，1895年改為現名。神社的例祭在4月16日舉行。",
       "lang": "zh",
@@ -8769,8 +8615,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q3514128",
@@ -8791,13 +8636,13 @@
     "themes": [],
     "tags": [],
     "featured": true,
-    "score": 75.89,
+    "score": 75.75,
     "summary": {
-      "text": "高千穗峰是位於日本宮崎郡及鹿兒島郡交界的複式火山，為霧島連峰的第二高峰，標高1,573公尺。現今亦劃入霧島錦江灣國立公園範圍內。",
+      "text": "高千穗峰是位於日本宮崎縣及鹿兒島縣交界的複式火山，為霧島連峰的第二高峰，標高1,573公尺。現今亦劃入霧島錦江灣國立公園範圍內。",
       "lang": "zh",
       "source_url": "https://zh.wikipedia.org/wiki/%E9%AB%98%E5%8D%83%E7%A9%97%E5%B3%B0",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-10-04"
     },
     "images": [
       {
@@ -8821,15 +8666,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ee/Takachihonomine_Volcano_20090207.jpg/960px-Takachihonomine_Volcano_20090207.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "TANAKA Juuyoh (田中十洋)",
-        "license": "CC BY 2.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Takachihonomine_Volcano_20090207.jpg"
-      }
-    }
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q3541658",
@@ -8852,7 +8689,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 62.94,
+    "score": 62.97,
     "summary": {
       "text": "都萬神社（つまじんじゃ、都万神社）は、宮崎県西都市にある神社。式内社で、日向国総社論社、日向国二宮論社。旧社格は県社。「さいまんさま（妻万様）」として親しまれている（後述）。",
       "lang": "ja",
@@ -8887,7 +8724,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q3541675",
@@ -8898,7 +8735,7 @@
       "zh_tw": "都農神社",
       "en": "Tsuno Shrine"
     },
-    "kana_source": "wikipedia",
+    "kana_source": "wikidata",
     "location": {
       "lat": 32.263132,
       "lng": 131.558668
@@ -8910,7 +8747,7 @@
       "神社"
     ],
     "featured": true,
-    "score": 69.12,
+    "score": 69.03,
     "summary": {
       "text": "都農神社是日本宮崎縣兒湯郡都農町川北的神社，社格是式內小社、日向國一宮、國幣小社和別表神社，祭神是大己貴命。氏子方面，根據《日本社寺大觀》記載是約1600戶，《式內社研究報告》稱1952年時有2023戶，1978年時則與《神社名鑑》、《全國神社名鑒》同樣記載為2500戶，《神社名鑑》另外也指有崇敬者10,000人。文化財方面，「都農一之宮的樟樹」是都農町指定文化財。",
       "lang": "zh",
@@ -8940,7 +8777,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q382082",
@@ -8963,7 +8800,7 @@
       "島"
     ],
     "featured": true,
-    "score": 69.52,
+    "score": 69.41,
     "summary": {
       "text": "幸島是位於日本宮崎縣串間市附近日向灘的一個小島。該島距串間市約13公里。它離岸約300公尺，面積 30公頃，島上主要分佈著森林。",
       "lang": "zh",
@@ -8993,7 +8830,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q38276233",
@@ -9016,7 +8853,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 54.73,
+    "score": 54.79,
     "summary": {
       "text": "宮水神社（みやみずじんじゃ）は、宮崎県西臼杵郡日之影町に鎮座する神社。",
       "lang": "ja",
@@ -9042,7 +8879,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q4677133",
@@ -9066,7 +8903,7 @@
       "博物館"
     ],
     "featured": false,
-    "score": 62.91,
+    "score": 62.84,
     "summary": {
       "text": "宮崎縣綜合博物館是位於日本宮崎縣宮崎市的一座縣立博物館。",
       "lang": "zh",
@@ -9107,15 +8944,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e6/Miyzaki_Prefectual_Museum_%2C_%E5%AE%AE%E5%B4%8E%E7%9C%8C%E7%B7%8F%E5%90%88%E5%8D%9A%E7%89%A9%E9%A4%A8_-_panoramio.jpg/960px-Miyzaki_Prefectual_Museum_%2C_%E5%AE%AE%E5%B4%8E%E7%9C%8C%E7%B7%8F%E5%90%88%E5%8D%9A%E7%89%A9%E9%A4%A8_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "z tanuki",
-        "license": "CC BY 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Miyzaki_Prefectual_Museum_,_%E5%AE%AE%E5%B4%8E%E7%9C%8C%E7%B7%8F%E5%90%88%E5%8D%9A%E7%89%A9%E9%A4%A8_-_panoramio.jpg"
-      }
-    }
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q4778779",
@@ -9138,7 +8967,7 @@
       "島"
     ],
     "featured": true,
-    "score": 76.53,
+    "score": 76.91,
     "summary": {
       "text": "青島是位於日本宮崎縣宮崎市南東部海岸附近的一個周長約860米，面積約4.4公頃，高約6的米的島嶼，正逐漸變為陸連島。島的對岸名為青島海岸，是擁有包括青島海水浴場在內的一大觀光地。青島和青島海岸之間通過彌生橋連接。青島的「隆起波食臺」有「怪物搓衣板」之稱，地形獨特。島上確認了200種以上的植物，其中有27種是熱帶及亞熱帶植物。島上有青島神社。",
       "lang": "zh",
@@ -9177,15 +9006,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/02/2021-01-07_Aoshima_Island_%28Miyazaki%29Aerial_photography%E9%9D%92%E5%B3%B6_%28%E5%AE%AE%E5%B4%8E%E7%9C%8C%29DJI_0246_%282%29%E7%A9%BA%E6%92%AE.jpg/960px-2021-01-07_Aoshima_Island_%28Miyazaki%29Aerial_photography%E9%9D%92%E5%B3%B6_%28%E5%AE%AE%E5%B4%8E%E7%9C%8C%29DJI_0246_%282%29%E7%A9%BA%E6%92%AE.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "松岡明芳",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:2021-01-07_Aoshima_Island_(Miyazaki)Aerial_photography%E9%9D%92%E5%B3%B6_(%E5%AE%AE%E5%B4%8E%E7%9C%8C)DJI_0246_(2)%E7%A9%BA%E6%92%AE.jpg"
-      }
-    }
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q4778784",
@@ -9206,7 +9027,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 60.47,
+    "score": 60.49,
     "summary": {
       "text": "The Aoshima Subtropical Botanical Garden (青島亜熱帯植物園, Aoshima Anettai Shokubutsuen) is a botanical garden located in the Aoshima neighborhood of the city of Miyazaki, Miyazaki Prefecture, Japan, near the island of Aoshima.",
       "lang": "en",
@@ -9230,14 +9051,7 @@
         "distance_m": 1330
       }
     ],
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/72/%E9%9D%92%E5%B3%B6%E4%BA%9C%E7%86%B1%E5%B8%AF%E6%A4%8D%E7%89%A9%E5%9C%92_-_panoramio.jpg/960px-%E9%9D%92%E5%B3%B6%E4%BA%9C%E7%86%B1%E5%B8%AF%E6%A4%8D%E7%89%A9%E5%9C%92_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Mamusi Taka",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:%E9%9D%92%E5%B3%B6%E4%BA%9C%E7%86%B1%E5%B8%AF%E6%A4%8D%E7%89%A9%E5%9C%92_-_panoramio.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q4778784"
     },
@@ -9252,7 +9066,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q48746103",
@@ -9272,7 +9086,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 53.78,
+    "score": 53.77,
     "summary": {
       "text": "湯ノ宮の座論梅（ゆのみやのざろんばい）は宮崎県児湯郡新富町大字新田にある国の天然記念物である梅の木。1935年（昭和10年）12月24日指定。",
       "lang": "ja",
@@ -9295,7 +9109,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q55524592",
@@ -9316,7 +9130,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 48.68,
+    "score": 49.05,
     "summary": {
       "text": "細島灯台（ほそしまとうだい）は、宮崎県日向市細島にある灯台である。",
       "lang": "ja",
@@ -9346,7 +9160,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q55524611",
@@ -9366,7 +9180,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 37.48,
+    "score": 37.43,
     "summary": {
       "text": "エンクロスは、九州旅客鉄道（JR九州）日豊本線延岡駅に併設されている複合施設である。",
       "lang": "ja",
@@ -9383,14 +9197,7 @@
         "distance_m": 80
       }
     ],
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d3/Nobeoka_Station_%26_Encross.jpg/960px-Nobeoka_Station_%26_Encross.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Route275",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Nobeoka_Station_%26_Encross.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q55524611"
     },
@@ -9401,7 +9208,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q55524817",
@@ -9421,7 +9228,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 50.45,
+    "score": 50.56,
     "summary": {
       "text": "柘の滝鍾乳洞（つげのたきしょうにゅうどう）は宮崎県西臼杵郡高千穂町にある国の天然記念物の鍾乳洞。",
       "lang": "ja",
@@ -9451,7 +9258,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q55524818",
@@ -9471,7 +9278,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 49.71,
+    "score": 49.9,
     "summary": {
       "text": "七折鍾乳洞（ななおれしょうにゅうどう）は宮崎県日之影町にある鍾乳洞。国の天然記念物に指定されている。",
       "lang": "ja",
@@ -9479,14 +9286,7 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d0/%E4%B8%83%E6%8A%98%E9%8D%BE%E4%B9%B3%E6%B4%9E%E6%B4%9E%E5%8F%A3.jpg/960px-%E4%B8%83%E6%8A%98%E9%8D%BE%E4%B9%B3%E6%B4%9E%E6%B4%9E%E5%8F%A3.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Amekoumori",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:%E4%B8%83%E6%8A%98%E9%8D%BE%E4%B9%B3%E6%B4%9E%E6%B4%9E%E5%8F%A3.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q55524818"
     },
@@ -9501,7 +9301,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q55525064",
@@ -9523,7 +9323,7 @@
       "橋"
     ],
     "featured": false,
-    "score": 55.96,
+    "score": 55.79,
     "summary": {
       "text": "かりこぼうず大橋（かりこぼうずおおはし）は、宮崎県児湯郡西米良村大字村所字田無瀬に所在し一ツ瀬川に架かる、林道小山重（こざえ）線を通す全長140.0メートルの橋である。",
       "lang": "ja",
@@ -9553,7 +9353,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q55526873",
@@ -9576,7 +9376,7 @@
       "展望"
     ],
     "featured": false,
-    "score": 60.57,
+    "score": 60.53,
     "summary": {
       "text": "日向岬是位於日本九州宮崎縣日向市海岸的一個觀光地。日向岬地處日豐海岸國定公園南端，其柱狀節理在2018年2月13日被列入天然記念物 。",
       "lang": "zh",
@@ -9584,14 +9384,7 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/69/Miyazaki-Hyuga_Cape_and_Nippon_maru-xl.jpg/960px-Miyazaki-Hyuga_Cape_and_Nippon_maru-xl.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Shiro_KUROGI",
-        "license": "CC BY 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Miyazaki-Hyuga_Cape_and_Nippon_maru-xl.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q55526873",
       "osm": "node/951252221"
@@ -9611,7 +9404,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q55532223",
@@ -9631,7 +9424,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 57.8,
+    "score": 57.96,
     "summary": {
       "text": "高鍋大師（たかなべだいし）は、宮崎県児湯郡高鍋町大字持田にある石像群。",
       "lang": "ja",
@@ -9639,14 +9432,7 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c3/%E9%AB%98%E9%8D%8B%E5%A4%A7%E5%B8%AB_%E5%8D%81%E4%B8%80%E9%9D%A2%E8%A6%B3%E9%9F%B3_2019-05-15.jpg/960px-%E9%AB%98%E9%8D%8B%E5%A4%A7%E5%B8%AB_%E5%8D%81%E4%B8%80%E9%9D%A2%E8%A6%B3%E9%9F%B3_2019-05-15.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "原田純児",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:%E9%AB%98%E9%8D%8B%E5%A4%A7%E5%B8%AB_%E5%8D%81%E4%B8%80%E9%9D%A2%E8%A6%B3%E9%9F%B3_2019-05-15.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q55532223"
     },
@@ -9661,7 +9447,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q55539444",
@@ -9683,7 +9469,7 @@
       "橋"
     ],
     "featured": false,
-    "score": 29.37,
+    "score": 29.34,
     "summary": {
       "text": "龍天橋（りゅうてんきょう）は、宮崎県西臼杵郡日之影町にある道路橋。五ヶ瀬川をまたぎ、国道218号が通る左岸の七折宮水地区と宮崎県道205号向山日之影線が通る右岸岩井川大人地区を結ぶ。水面上の高さが100.2メートルあり、日本国内の林道橋としては一番高い。構造は上路式ローゼ橋、最大支間200メートル、橋長260メートル、幅員8メートル。架設事業費19億円。1990年完成。名称は公募により決定された。",
       "lang": "ja",
@@ -9691,14 +9477,7 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/97/Ryuten_bridge%2C_Hinokage.jpg/960px-Ryuten_bridge%2C_Hinokage.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "運動会プロテインパワー",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Ryuten_bridge,_Hinokage.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q55539444"
     },
@@ -9713,7 +9492,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q56690769",
@@ -9734,7 +9513,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 53.88,
+    "score": 53.93,
     "summary": {
       "text": "豫章館（予章館、よしょうかん）は、宮崎県日南市の飫肥城址の大手門の前にあり、日南市飫肥伝統的建造物群保存地区内の内の伝統的建造物である。日南市指定文化財に指定されている。",
       "lang": "ja",
@@ -9769,15 +9548,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b2/Obi_Yoshou-kan_%2C_%E9%A3%AB%E8%82%A5_%E8%B1%AB%E7%AB%A0%E9%A4%A8_-_panoramio_-_z_tanuki_%282%29.jpg/960px-Obi_Yoshou-kan_%2C_%E9%A3%AB%E8%82%A5_%E8%B1%AB%E7%AB%A0%E9%A4%A8_-_panoramio_-_z_tanuki_%282%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "z tanuki",
-        "license": "CC BY 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Obi_Yoshou-kan_,_%E9%A3%AB%E8%82%A5_%E8%B1%AB%E7%AB%A0%E9%A4%A8_-_panoramio_-_z_tanuki_(2).jpg"
-      }
-    }
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q59282638",
@@ -9788,7 +9559,7 @@
       "zh_tw": "串間神社",
       "en": "Kushima Shrine"
     },
-    "kana_source": "wikipedia",
+    "kana_source": "wikidata",
     "location": {
       "lat": 31.485944,
       "lng": 131.245
@@ -9800,7 +9571,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 51.5,
+    "score": 51.58,
     "summary": {
       "text": "串間神社（くしまじんじゃ）は、宮崎県串間市に鎮座する神社。彦火火出見尊を主祭神とし、ほか12柱を配祀する。",
       "lang": "ja",
@@ -9844,7 +9615,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q64910626",
@@ -9867,7 +9638,7 @@
       "城"
     ],
     "featured": false,
-    "score": 50.19,
+    "score": 50.3,
     "summary": {
       "text": "梅北城（うめきたじょう）は、宮崎県都城市梅北町にあった日本の城（山城）。城跡は都城市指定史跡に指定されている。",
       "lang": "ja",
@@ -9890,7 +9661,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q65234050",
@@ -9911,7 +9682,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 50.99,
+    "score": 50.88,
     "summary": {
       "text": "えびの高原温泉（えびのこうげんおんせん）は、 宮崎県えびの市末永にある温泉。九州で最も標高の高いところにあり、かつ最も野趣あふれる温泉の一つである。",
       "lang": "ja",
@@ -9934,7 +9705,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q65259418",
@@ -9957,7 +9728,7 @@
       "橋"
     ],
     "featured": false,
-    "score": 36.0,
+    "score": 36.09,
     "summary": {
       "text": "天翔大橋（てんしょうおおはし）は宮崎県西臼杵郡日之影町岩井川に所在し、五ヶ瀬川に架かる橋である。建設時の名称は高松大橋（たかまつおおはし）。日本最大の鉄筋コンクリート固定アーチ橋であり、アーチスパン260メートル (m)、水面から橋面までの高さ143 mはともに鉄筋コンクリート造橋の中で国内最大である。",
       "lang": "ja",
@@ -9987,7 +9758,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q65262695",
@@ -10009,7 +9780,7 @@
       "橋"
     ],
     "featured": false,
-    "score": 39.93,
+    "score": 39.82,
     "summary": {
       "text": "寺迫ちょうちょ大橋（てらさこちょうちょおおはし）は宮崎県日向市東郷町山陰字日平と山陰字山ノ口に架かる東九州自動車道の橋である。建設時の名称は田久保川橋（たくぼがわはし）。2013年土木学会田中賞、プレストレストコンクリート工学会賞。2018年国際コンクリート連合fib賞 土木構造物部門最優秀賞。",
       "lang": "ja",
@@ -10039,7 +9810,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q65269934",
@@ -10061,7 +9832,7 @@
       "橋"
     ],
     "featured": false,
-    "score": 35.48,
+    "score": 35.5,
     "summary": {
       "text": "日向大橋是日本宮崎縣的一座公路橋梁，承載日本10號國道跨越一ツ瀬川，連接兒湯郡新富町和宮崎市佐土原町，初代橋梁1954年建成，1988年新建了側道的人行橋，2016年建成新橋。",
       "lang": "zh",
@@ -10069,14 +9840,7 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/50/Hyuga-ohashi_bridge.jpg/960px-Hyuga-ohashi_bridge.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "運動会プロテインパワー",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Hyuga-ohashi_bridge.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q65269934"
     },
@@ -10091,7 +9855,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q65271340",
@@ -10113,7 +9877,7 @@
       "橋"
     ],
     "featured": false,
-    "score": 27.54,
+    "score": 27.72,
     "summary": {
       "text": "東方大丸太鼓橋（ひがしかたおおまるたいこばし）は、宮崎県小林市東方にある宮崎県内に現存する最古の石橋。宮崎県の有形文化財に指定されている。",
       "lang": "ja",
@@ -10121,14 +9885,7 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/17/Higashikata-Omaru-Taiko-Bashi_Bridge_202505-2.jpg/960px-Higashikata-Omaru-Taiko-Bashi_Bridge_202505-2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "運動会プロテインパワー",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Higashikata-Omaru-Taiko-Bashi_Bridge_202505-2.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q65271340"
     },
@@ -10143,7 +9900,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q68478310",
@@ -10166,7 +9923,7 @@
       "博物館"
     ],
     "featured": false,
-    "score": 56.16,
+    "score": 56.26,
     "summary": {
       "text": "宮崎県立西都原考古博物館（みやざきけんりつさいとばるこうこはくぶつかん）は、宮崎県西都市大字三宅字西都原西に所在する公立考古学系博物館。国の特別史跡・西都原古墳群そばにあり、同古墳群についての展示を主とし、宮崎県内の遺跡や考古学についての催しを行う。",
       "lang": "ja",
@@ -10201,7 +9958,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q6887603",
@@ -10224,7 +9981,7 @@
       "公園"
     ],
     "featured": false,
-    "score": 54.13,
+    "score": 54.11,
     "summary": {
       "text": "Mochio-Sekinoo Prefectural Natural Park (母智丘関之尾県立自然公園, Mochio-Sekinoo kenritsu shizen kōen) is a Prefectural Natural Park in southern Miyazaki Prefecture, Japan. Established in 1958, the park is within the municipality of Miyakonojō. The area is celebrated for its cherry blossoms, waterfalls, and potholes - which have been designated a Natural Monument.",
       "lang": "en",
@@ -10250,7 +10007,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q704430",
@@ -10274,7 +10031,7 @@
       "神社"
     ],
     "featured": true,
-    "score": 77.28,
+    "score": 77.25,
     "summary": {
       "text": "鵜戶神宮（うどじんぐう）是位在日本宮崎縣日南市的神社。舊社格為官幣大社（現神社本廳的別表神社）。",
       "lang": "zh",
@@ -10284,10 +10041,10 @@
     },
     "images": [
       {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/74/Udo-jingu_Main-shrine.jpg/960px-Udo-jingu_Main-shrine.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "MaedaAkihiko",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/Udo-jingu_Main_hall_001.jpg/960px-Udo-jingu_Main_hall_001.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Naokijp",
         "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Udo-jingu_Main-shrine.jpg"
+        "source_url": "https://commons.wikimedia.org/wiki/File:Udo-jingu_Main_hall_001.jpg"
       }
     ],
     "external_ids": {
@@ -10305,8 +10062,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q704686",
@@ -10329,7 +10085,7 @@
       "神社"
     ],
     "featured": true,
-    "score": 73.91,
+    "score": 73.94,
     "summary": {
       "text": "宮崎神宮（みやざきじんぐう）是位在日本宮崎縣宮崎市的神社，舊社格為官幣大社（現神社本廳的別表神社）。",
       "lang": "zh",
@@ -10370,15 +10126,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/20/Miyazaki_Jingu%28shrine%29_%2C_%E5%AE%AE%E5%B4%8E%E7%A5%9E%E5%AE%AE_-_panoramio_%2822%29.jpg/960px-Miyazaki_Jingu%28shrine%29_%2C_%E5%AE%AE%E5%B4%8E%E7%A5%9E%E5%AE%AE_-_panoramio_%2822%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "z tanuki",
-        "license": "CC BY 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Miyazaki_Jingu(shrine)_,_%E5%AE%AE%E5%B4%8E%E7%A5%9E%E5%AE%AE_-_panoramio_(22).jpg"
-      }
-    }
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q70552915",
@@ -10401,7 +10149,7 @@
       "橋"
     ],
     "featured": false,
-    "score": 57.33,
+    "score": 57.43,
     "summary": {
       "text": "青雲橋（せいうんばし）は、宮崎県西臼杵郡日之影町にある、五ヶ瀬川支流の日之影川に架かる国道218号の橋。",
       "lang": "ja",
@@ -10431,7 +10179,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q72091381",
@@ -10451,7 +10199,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 45.85,
+    "score": 46.14,
     "summary": {
       "text": "石波の海岸樹林（いしなみのかいがんじゅりん）とは、宮崎県串間市市木の石波海岸にある天然の樹林。",
       "lang": "ja",
@@ -10474,7 +10222,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q79044895",
@@ -10497,7 +10245,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 52.63,
+    "score": 52.78,
     "summary": {
       "text": "川南護国神社（かわみなみごこくじんじゃ）は宮崎県児湯郡川南町にある神社である。境内は陸軍空挺落下傘部隊発祥の地としても知られる。",
       "lang": "ja",
@@ -10527,7 +10275,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q844044",
@@ -10550,7 +10298,7 @@
       "遺跡"
     ],
     "featured": true,
-    "score": 75.83,
+    "score": 75.74,
     "summary": {
       "text": "飫肥城（おびじょう）是日本古日向國南部（今宮崎縣日南市）之城。江戶時代是伊東氏飫肥藩的藩庁。",
       "lang": "zh",
@@ -10569,10 +10317,10 @@
     ],
     "images": [
       {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/74/Obi_Castle_Otemon.jpg/960px-Obi_Castle_Otemon.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "ja:User:Sanjo",
-        "license": "Public domain",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Obi_Castle_Otemon.jpg"
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7b/Obi%2C_Nichinan%2C_%C5%8Ctemon_Gate_of_Obi_Castle_01.jpg/960px-Obi%2C_Nichinan%2C_%C5%8Ctemon_Gate_of_Obi_Castle_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Naokijp",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Obi,_Nichinan,_%C5%8Ctemon_Gate_of_Obi_Castle_01.jpg"
       }
     ],
     "external_ids": {
@@ -10594,15 +10342,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/25/Aerial_photograph_of_Obi_District_2020.jpg/960px-Aerial_photograph_of_Obi_District_2020.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Geospatial Information Authority of Japan",
-        "license": "Attribution",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Aerial_photograph_of_Obi_District_2020.jpg"
-      }
-    }
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q84417156",
@@ -10626,7 +10366,7 @@
       "博物館"
     ],
     "featured": false,
-    "score": 49.19,
+    "score": 49.29,
     "summary": {
       "text": "若山牧水記念文学館（わかやまぼくすいきねんぶんがくかん）は、宮崎県日向市東郷町にある文学館。",
       "lang": "ja",
@@ -10654,7 +10394,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q85590769",
@@ -10675,7 +10415,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 33.3,
+    "score": 33.15,
     "summary": {
       "text": "猪八重渓谷（いのはえけいこく）は宮崎県日南市北郷町大字郷之原猪八重にある渓谷である。2008年（平成20年）に、渓谷内の103.27ヘクタールが「森林セラピー基地」に指定された。",
       "lang": "ja",
@@ -10703,7 +10443,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q85879543",
@@ -10724,7 +10464,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 51.91,
+    "score": 52.11,
     "summary": {
       "text": "宮崎神宮徴古館（みやざきじんぐうちょうこかん）は、宮崎県宮崎市神宮2丁目の宮崎神宮境内にある旧宝物館。",
       "lang": "ja",
@@ -10764,7 +10504,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q85879670",
@@ -10787,7 +10527,7 @@
       "城"
     ],
     "featured": false,
-    "score": 53.07,
+    "score": 53.24,
     "summary": {
       "text": "小川城（おがわじょう）は、宮崎県児湯郡西米良村（明治以前は肥後国球磨郡）小川字囲にあった江戸時代の日本の城（居館）。肥後菊池氏の末裔を名乗る米良荘領主・米良氏の居城。",
       "lang": "ja",
@@ -10810,7 +10550,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q85884621",
@@ -10831,7 +10571,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 56.93,
+    "score": 56.99,
     "summary": {
       "text": "高千穂牧場（たかちほぼくじょう）は、霧島山山麓、宮崎県都城市にある牧場。乳製品のメーカー。",
       "lang": "ja",
@@ -10854,7 +10594,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q96091819",
@@ -10874,7 +10614,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 57.26,
+    "score": 57.29,
     "summary": {
       "text": "椎葉村十根川（しいばそんとねがわ）は、宮崎県東臼杵郡椎葉村にある重要伝統的建造物群保存地区。椎葉村下福良の一部、約39.9haの範囲である。十根川集落と大久保集落と周辺の山林を含む山村集落であり、周囲を山林に囲まれた谷間の南斜面に形成されている。",
       "lang": "ja",
@@ -10882,14 +10622,7 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c2/Shiibamura_miyazaki_japan.JPG/960px-Shiibamura_miyazaki_japan.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "isoyan",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Shiibamura_miyazaki_japan.JPG"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q96091819"
     },
@@ -10904,7 +10637,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q97212589",
@@ -10925,7 +10658,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 50.8,
+    "score": 51.07,
     "summary": {
       "text": "大淀川学習館（おおよどがわがくしゅうかん）は、宮崎県宮崎市下北方町にある大淀川流域の自然に関する展示を主とした科学館である。",
       "lang": "ja",
@@ -10948,7 +10681,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q97212652",
@@ -10971,7 +10704,7 @@
       "博物館"
     ],
     "featured": false,
-    "score": 56.36,
+    "score": 56.55,
     "summary": {
       "text": "宮崎科学技術館（みやざきかがくぎじゅつかん、英語: Miyazaki Science Center）は、宮崎県宮崎市宮崎駅東１丁目にある市立の科学館。天文学をメインとしており、愛称は「コスモランド」。宮崎中央公園（文化の森）敷地内にあり、世界最大級のプラネタリウムを併設し、屋外にH-Iロケット実物大模型が展示されている。",
       "lang": "ja",
@@ -11015,7 +10748,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q97311694",
@@ -11037,7 +10770,7 @@
       "寺院"
     ],
     "featured": false,
-    "score": 28.45,
+    "score": 28.36,
     "summary": {
       "text": "立正寺（りっしょうじ）は、宮崎県宮崎市末広にある日蓮宗の寺院。日蓮宗の総本山である身延山久遠寺の別院であるため、独自の山号は持たず、身延山宮崎別院立正寺と称する。",
       "lang": "ja",
@@ -11074,7 +10807,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q97496319",
@@ -11097,7 +10830,7 @@
       "城"
     ],
     "featured": false,
-    "score": 45.54,
+    "score": 45.33,
     "summary": {
       "text": "丸野城（まるのじょう）は、宮崎県宮崎市大字鏡洲（かがみず）小字丸野にあった日本の城（山城）。築城者・築城年代とも不明。双石山（ぼろいしやま）から派生した山にあり、古くから「じょうやま」と呼ばれていたという以外、城についての記録がない。",
       "lang": "ja",
@@ -11105,14 +10838,7 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d4/Maruno_castle_ruin%2C_Miyazaki.jpg/960px-Maruno_castle_ruin%2C_Miyazaki.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "運動会プロテインパワー",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Maruno_castle_ruin,_Miyazaki.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q97496319"
     },
@@ -11127,6 +10853,6 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   }
 ]

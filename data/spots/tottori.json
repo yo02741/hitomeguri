@@ -512,6 +512,35 @@
     "updated_at": "2026-09-28"
   },
   {
+    "id": "osm-node-5447292103",
+    "name": {
+      "ja": "鱒返しの滝",
+      "zh_tw": "鱒返しの滝"
+    },
+    "location": {
+      "lat": 35.4188,
+      "lng": 133.601345
+    },
+    "prefecture": "tottori",
+    "kind": "major",
+    "themes": [],
+    "tags": [],
+    "featured": false,
+    "score": 0.0,
+    "images": [],
+    "external_ids": {
+      "osm": "node/5447292103"
+    },
+    "sources": [
+      {
+        "url": "https://www.openstreetmap.org/node/5447292103",
+        "fetched_at": "2026-10-04"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-10-04"
+  },
+  {
     "id": "osm-node-5559642608",
     "name": {
       "ja": "日韓友好資料館",
@@ -1830,7 +1859,7 @@
       "史跡"
     ],
     "featured": true,
-    "score": 86.4,
+    "score": 86.37,
     "summary": {
       "text": "鳥取城是位於日本鳥取縣鳥取市的一座城堡。",
       "lang": "zh",
@@ -1865,15 +1894,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-10-02",
-    "season_images": {
-      "winter": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7d/Tottori_Castle_20170128-3.jpg/960px-Tottori_Castle_20170128-3.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Suicasmo",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Tottori_Castle_20170128-3.jpg"
-      }
-    }
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q1077275",
@@ -1894,7 +1915,7 @@
     "themes": [],
     "tags": [],
     "featured": true,
-    "score": 79.03,
+    "score": 79.02,
     "summary": {
       "text": "中海是位於日本島根縣島根半島及鳥取縣弓濱半島所環繞的湖泊，為日本第五大的湖泊，東北側經由境水道可接入屬於日本海的美保灣，西側則經由大橋川與宍道湖相通，也因此與宍道湖一同被視為一級水系斐伊川主流的一部分。",
       "lang": "zh",
@@ -1924,15 +1945,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f9/SakaiminatoCity.jpg/960px-SakaiminatoCity.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "BehBeh",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:SakaiminatoCity.jpg"
-      }
-    }
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q109370362",
@@ -1955,7 +1968,7 @@
       "公園"
     ],
     "featured": false,
-    "score": 56.87,
+    "score": 57.12,
     "summary": {
       "text": "湊山公園（みなとやまこうえん）は、鳥取県米子市西町にある都市計画公園。以前の名称から錦公園ともいう。公園の一部である米子城跡は国の史跡に指定されている。国土交通省の都市公園の分類においては都市基幹公園の総合公園に分類されている。",
       "lang": "ja",
@@ -1985,7 +1998,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11255766",
@@ -2008,7 +2021,7 @@
       "城"
     ],
     "featured": false,
-    "score": 60.22,
+    "score": 60.23,
     "summary": {
       "text": "防己尾城（つづらおじょう）は、因幡国高草郡（現在の鳥取県鳥取市金沢）にあった日本の城（平山城）。",
       "lang": "ja",
@@ -2016,14 +2029,7 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [
-      {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/3/3d/%E9%98%B2%E5%B7%B1%E5%B0%BE%E5%9F%8E.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-        "author": "Yuniko",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:%E9%98%B2%E5%B7%B1%E5%B0%BE%E5%9F%8E.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q11255766",
       "osm": "node/2523355838"
@@ -2043,7 +2049,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11264065",
@@ -2064,7 +2070,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 59.84,
+    "score": 59.95,
     "summary": {
       "text": "螃蟹兒童博物館是位於日本鳥取縣鳥取市賀露町的一個以螃蟹為主題的水族館，正式名稱為「鳥取縣立鳥取賀露螃蟹兒童博物館」（日文原名：鳥取県立とっとり賀露かにっこ館）。博物館以可以接觸活生生的螃蟹為主題。除了螃蟹外，博物館內也有展示鳥取海域可以見到的魚。",
       "lang": "zh",
@@ -2099,7 +2105,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11273221",
@@ -2120,7 +2126,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 64.91,
+    "score": 64.79,
     "summary": {
       "text": "鳥取花迴廊是位於日本鳥取縣西伯郡南部町鶴田地區（公園有部分土地屬於伯耆町)的花卉公園，公園於1999年開始營運，佔地50公頃，其特色為公園內有一個全長1公里的迴廊，及一個直徑50公尺，高21公尺的玻璃溫室。",
       "lang": "zh",
@@ -2164,7 +2170,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11278841",
@@ -2238,7 +2244,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 55.96,
+    "score": 56.11,
     "summary": {
       "text": "わらべ館（わらべかん、英 : Warabekan Toy Museum）は鳥取県鳥取市に所在する童謡・唱歌とおもちゃがテーマのミュージアム。童謡・唱歌をテーマとした鳥取県立童謡館と、おもちゃをテーマとした鳥取市立鳥取世界おもちゃ館からなる複合施設であり、わらべ館は公募によって選ばれた愛称である。運営母体は、鳥取県と鳥取市が半分ずつ出捐する公益財団法人鳥取童謡・おもちゃ館。",
       "lang": "ja",
@@ -2282,7 +2288,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11286140",
@@ -2303,7 +2309,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 47.56,
+    "score": 47.57,
     "summary": {
       "text": "イオンモール日吉津（イオンモールひえづ）は、鳥取県西伯郡日吉津村に立地するショッピングセンター。通称「イオン日吉津」。",
       "lang": "ja",
@@ -2333,7 +2339,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11286196",
@@ -2354,7 +2360,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 45.21,
+    "score": 45.1,
     "summary": {
       "text": "イオンモール鳥取北（イオンモールとっとりきた）は、鳥取県鳥取市に所在するイオンモール株式会社が管理・運営 を行うショッピングセンターである。",
       "lang": "ja",
@@ -2384,7 +2390,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11286310",
@@ -2404,7 +2410,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 45.87,
+    "score": 45.78,
     "summary": {
       "text": "イオン米子駅前店（イオンよなごえきまえてん）は、鳥取県米子市末広町に所在し、イオンリテールが運営する総合スーパー（GMS）及びショッピングセンターである。",
       "lang": "ja",
@@ -2450,7 +2456,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11313900",
@@ -2470,7 +2476,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 38.82,
+    "score": 38.97,
     "summary": {
       "text": "スーパーモール鳥取（スーパーモールとっとり）は、鳥取県鳥取市に所在するオープンモール形式の大型ショッピングセンター。",
       "lang": "ja",
@@ -2500,7 +2506,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11355561",
@@ -2521,7 +2527,7 @@
     "themes": [],
     "tags": [],
     "featured": true,
-    "score": 73.69,
+    "score": 73.64,
     "summary": {
       "text": "三朝溫泉是位於日本鳥取縣東伯郡三朝町的溫泉區；由於本地溫泉內含鐳自然衰變後產生的氡，為少見的放射能泉。過去岡山大學醫院曾在此設有三朝醫療中心進行溫泉療法。目前本地仍持續有三朝溫泉醫院在此營運，因此三朝溫泉成為同時具有觀光及療養功能的溫泉區。",
       "lang": "zh",
@@ -2547,8 +2553,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11361658",
@@ -2572,7 +2577,7 @@
       "重要文化財"
     ],
     "featured": false,
-    "score": 68.27,
+    "score": 68.37,
     "summary": {
       "text": "不動院岩屋堂（ふどういんいわやどう）は鳥取県八頭郡若桜町にある修験道寺院の建築である。国の重要文化財。",
       "lang": "ja",
@@ -2607,7 +2612,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11369426",
@@ -2631,7 +2636,7 @@
       "公園"
     ],
     "featured": false,
-    "score": 35.15,
+    "score": 35.26,
     "summary": {
       "text": "久松公園（きゅうしょうこうえん）は、鳥取県鳥取市東町にある都市公園（歴史公園）である。",
       "lang": "ja",
@@ -2662,7 +2667,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11369438",
@@ -2683,7 +2688,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 60.85,
+    "score": 60.7,
     "summary": {
       "text": "久松山（きゅうしょうざん）は、鳥取県鳥取市にある山である。標高263m。",
       "lang": "ja",
@@ -2713,7 +2718,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11381491",
@@ -2736,7 +2741,7 @@
       "遺跡"
     ],
     "featured": false,
-    "score": 36.46,
+    "score": 36.65,
     "summary": {
       "text": "Hōki Kokubun-ji (伯耆国分寺) was a Buddhist temple located in the Kokubunji neighborhood of the city of Kurayoshi, Tottori, Tottori Prefecture, Japan. It was one of the provincial temples established by decree of Emperor Shōmu during the Nara period (710 – 794). The temple longer exists, but its ruins were designated as a National Historic Site in 1974.",
       "lang": "en",
@@ -2744,14 +2749,7 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-29"
     },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5e/Hoki_Kokubunji-ato%2C_zenkei.jpg/960px-Hoki_Kokubunji-ato%2C_zenkei.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Saigen Jiro",
-        "license": "CC0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Hoki_Kokubunji-ato,_zenkei.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q11381491",
       "osm": "node/6325318387"
@@ -2771,7 +2769,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11381492",
@@ -2794,7 +2792,7 @@
       "遺跡"
     ],
     "featured": false,
-    "score": 39.22,
+    "score": 39.06,
     "summary": {
       "text": "The Hōki Provincial Capital Site (伯耆国庁跡, Hōki Kokucho ato) is an archaeological site consisting of the ruins of the Nara period to early Heian period Provincial Capital of Hōki Province, located in the Kokufu, Kokubunji, neighborhood of the city of Tottori, Tottori Prefecture in the San'in region of Japan. The site was designated a National Historic Site of Japan in 1985 with the area under production expanded in 2000.",
       "lang": "en",
@@ -2802,14 +2800,7 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-29"
     },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/26/Hoki_Kokufu-ato%2C_kokucho-ato.jpg/960px-Hoki_Kokufu-ato%2C_kokucho-ato.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Saigen Jiro",
-        "license": "CC0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Hoki_Kokufu-ato,_kokucho-ato.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q11381492",
       "osm": "way/453638980"
@@ -2829,7 +2820,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11386555",
@@ -2853,7 +2844,7 @@
       "公園"
     ],
     "featured": false,
-    "score": 59.1,
+    "score": 59.06,
     "summary": {
       "text": "倉吉パークスクエア（くらよしパークスクエア）は、鳥取県倉吉市駄経寺町にある複合文化施設である。設計はシーザー・ペリ+大建設計が手掛けた。",
       "lang": "ja",
@@ -2888,7 +2879,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11386562",
@@ -2911,7 +2902,7 @@
       "博物館"
     ],
     "featured": false,
-    "score": 52.19,
+    "score": 52.24,
     "summary": {
       "text": "倉吉博物館・倉吉歴史民俗資料館（くらよしはくぶつかん・くらよしれきしみんぞくしりょうかん）は鳥取県倉吉市にある公立美術館・博物館。",
       "lang": "ja",
@@ -2950,7 +2941,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11386588",
@@ -2974,7 +2965,7 @@
       "博物館"
     ],
     "featured": false,
-    "score": 56.85,
+    "score": 56.71,
     "summary": {
       "text": "倉吉線鉄道記念館 （くらよしせんてつどうきねんかん）は、鳥取県倉吉市にある鉄道保存展示施設。倉吉市が運営管理する。",
       "lang": "ja",
@@ -3009,7 +3000,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11388339",
@@ -3030,7 +3021,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 30.23,
+    "score": 30.37,
     "summary": {
       "text": "光専寺（こうせんじ）は、鳥取県八頭郡智頭町智頭147にある浄土真宗本願寺派の仏教寺院。山号は東嶽山、本尊は阿弥陀如来迎立像。",
       "lang": "ja",
@@ -3070,7 +3061,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11391485",
@@ -3093,7 +3084,7 @@
       "城"
     ],
     "featured": false,
-    "score": 59.58,
+    "score": 59.51,
     "summary": {
       "text": "八橋城（やばせじょう）は、鳥取県東伯郡琴浦町大字八橋にあった日本の城。琴浦町指定史跡。城跡はJR八橋駅のすぐ横にあり、線路によって二分される。大江城とも呼ばれる。",
       "lang": "ja",
@@ -3110,14 +3101,7 @@
         "distance_m": 40
       }
     ],
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f7/Hill-of-Yabase-Castle-Tottori-2013071401.jpg/960px-Hill-of-Yabase-Castle-Tottori-2013071401.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Hasec",
-        "license": "CC0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Hill-of-Yabase-Castle-Tottori-2013071401.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q11391485"
     },
@@ -3128,7 +3112,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11412849",
@@ -3148,7 +3132,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 60.0,
+    "score": 60.05,
     "summary": {
       "text": "吉岡温泉（よしおかおんせん）は、鳥取県鳥取市吉岡温泉町にある温泉。",
       "lang": "ja",
@@ -3156,14 +3140,7 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8a/Yoshioka_Onsen.jpg/960px-Yoshioka_Onsen.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "KASEI",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Yoshioka_Onsen.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q11412849"
     },
@@ -3174,7 +3151,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11420253",
@@ -3198,7 +3175,7 @@
       "博物館"
     ],
     "featured": false,
-    "score": 56.63,
+    "score": 56.64,
     "summary": {
       "text": "Inaba Manyō Historical Museum (因幡万葉歴史館, Inaba Manyō Rekishi-kan) opened in Tottori, Tottori Prefecture, Japan in 1994. Poet and presumed Man'yōshū compiler Ōtomo no Yakamochi was appointed Governor of Inaba Province, now the eastern half of the prefecture of Tottori, in 758 and composed the latest-dated and final poem in the anthology the following New Year's Day; the museum is located close to the site of the ancient Inaba Provincial Capital.",
       "lang": "en",
@@ -3233,7 +3210,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11420256",
@@ -3256,7 +3233,7 @@
       "史跡"
     ],
     "featured": false,
-    "score": 60.3,
+    "score": 60.34,
     "summary": {
       "text": "The Inaba Provincial Capital Site (因幡国庁跡, Inaba Kokufu ato) is an archaeological site consisting of the ruins of the Nara period to early Heian period Provincial Capital of Inaba Province, located in the Nakago, Kokufu neighborhood of the city of Tottori, Tottori Prefecture in the San'in region of Japan. The site was designated a National Historic Site of Japan in 1978.",
       "lang": "en",
@@ -3286,15 +3263,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2c/Inaba_Kokucho.jpg/960px-Inaba_Kokucho.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "アラツク",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Inaba_Kokucho.jpg"
-      }
-    }
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11424690",
@@ -3314,7 +3283,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 31.47,
+    "score": 31.43,
     "summary": {
       "text": "地蔵院（じぞういん）は、鳥取県倉吉市にある真言宗御室派の寺院。",
       "lang": "ja",
@@ -3349,7 +3318,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11425778",
@@ -3372,7 +3341,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 43.6,
+    "score": 43.85,
     "summary": {
       "text": "坪田神社（つぼたじんじゃ）は、鳥取県西伯郡大山町にある神社。元は、出雲江大明神と称したと言う。",
       "lang": "ja",
@@ -3400,7 +3369,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11429039",
@@ -3422,7 +3391,7 @@
       "橋"
     ],
     "featured": false,
-    "score": 63.64,
+    "score": 63.74,
     "summary": {
       "text": "境水道大橋是日本鳥取縣境港市和島根縣松江市之間的一座公路鋼桁架橋，承載國道431號跨過境水道，1969年11月開工，1972年7月22日通車並開始收費，2002年轉為免費。",
       "lang": "zh",
@@ -3452,7 +3421,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11431130",
@@ -3470,7 +3439,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 58.36,
+    "score": 58.53,
     "summary": {
       "text": "多鯰ヶ池（種ヶ池、多祢ヶ池　たねがいけ）は、鳥取県鳥取市にある池である。",
       "lang": "ja",
@@ -3496,7 +3465,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11434653",
@@ -3517,7 +3486,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 53.8,
+    "score": 53.66,
     "summary": {
       "text": "大山滝（だいせんたき）は、鳥取県東伯郡琴浦町野井倉にある滝。日本の滝百選に選定されている。",
       "lang": "ja",
@@ -3525,14 +3494,7 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6b/Daisendaki_02.jpg/960px-Daisendaki_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Reggaeman",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Daisendaki_02.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q11434653"
     },
@@ -3547,7 +3509,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11435020",
@@ -3570,7 +3532,7 @@
       "城"
     ],
     "featured": false,
-    "score": 52.6,
+    "score": 52.65,
     "summary": {
       "text": "大崎城（おおさきじょう）は、鳥取県鳥取市気高町奥沢見にあった日本の城。",
       "lang": "ja",
@@ -3593,7 +3555,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11438705",
@@ -3614,7 +3576,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 36.31,
+    "score": 36.32,
     "summary": {
       "text": "大蓮寺（だいれんじ）は鳥取県倉吉市の打吹玉川地区にある浄土宗の仏教寺院。豪商淀屋清兵衛歴代の墓や武将脇屋義助所縁の寺として知られる。",
       "lang": "ja",
@@ -3649,7 +3611,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11444537",
@@ -3673,7 +3635,7 @@
       "史跡"
     ],
     "featured": false,
-    "score": 66.31,
+    "score": 66.37,
     "summary": {
       "text": "太閤ヶ平（たいこうがなる）は、鳥取県鳥取市百谷字太閤ヶ平にあった戦国時代の付城（前線基地）。天正9年（1581年）に羽柴秀吉（のちの豊臣秀吉）による第二次鳥取城攻撃の際に造営された。秀吉の陣城跡は「史跡鳥取城跡附太閤ヶ平」として、1957年（昭和32年）に鳥取城と並び国の史跡に指定されている。",
       "lang": "ja",
@@ -3697,7 +3659,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q114456408",
@@ -3718,7 +3680,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 55.6,
+    "score": 55.59,
     "summary": {
       "text": "殿ダム（とのダム）は、鳥取県鳥取市、一級水系千代川水系袋川に建設されたダムである。",
       "lang": "ja",
@@ -3748,7 +3710,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11464496",
@@ -3769,7 +3731,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 52.89,
+    "score": 53.27,
     "summary": {
       "text": "小鹿渓（おじかけい）は鳥取県東伯郡三朝町にある渓谷で、国の名勝指定地。新緑と紅葉の名所とされる。",
       "lang": "ja",
@@ -3777,14 +3739,7 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c6/Osikakei.jpg/960px-Osikakei.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "㭍月例祭",
-        "license": "Public domain",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Osikakei.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q11464496"
     },
@@ -3799,7 +3754,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11465536",
@@ -3823,7 +3778,7 @@
       "史跡"
     ],
     "featured": false,
-    "score": 65.14,
+    "score": 65.18,
     "summary": {
       "text": "Odaka Castle (尾高城, Odaka-jō)) was a hirayama-style Japanese castle located in the Odaka neighbourhood of the city of  Yonago, Tottori Prefecture in western  Japan. It was also known as Izumiyama Castle (泉山城, Izumiyama-jō)). Its ruins have been protected as a National Historic Site since 2019.",
       "lang": "en",
@@ -3831,14 +3786,7 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-29"
     },
-    "images": [
-      {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/7/74/Odakajou001.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-        "author": "Satoshin",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Odakajou001.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q11465536"
     },
@@ -3853,7 +3801,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11468013",
@@ -3876,7 +3824,7 @@
       "城"
     ],
     "featured": false,
-    "score": 53.6,
+    "score": 53.72,
     "summary": {
       "text": "山崎城（やまさきじょう）は、鳥取県鳥取市国府町山崎にあった日本の城。",
       "lang": "ja",
@@ -3899,7 +3847,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11471125",
@@ -3920,7 +3868,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 68.45,
+    "score": 68.25,
     "summary": {
       "text": "The San'in Kaigan Geopark (山陰海岸ジオパーク) is a geopark in Japan. The area was declared a Japanese Geopark in 2008, and a UNESCO Global Geopark in 2010. The underlying themes of the geopark are \"geological features, the natural environment, people's lives, and the formation of the Sea of Japan\". This geologically diverse area contains records of the process from when Japan was part of the Asian continent to its present-day formation of the Sea of Japan. People's lives are also diverse in this area because of its geodiversity.",
       "lang": "en",
@@ -3946,7 +3894,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11471126",
@@ -3964,7 +3912,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 54.79,
+    "score": 54.73,
     "summary": {
       "text": "米子市立 山陰歴史館（よなごしりつ さんいんれきしかん）は鳥取県米子市にある博物館。",
       "lang": "ja",
@@ -4011,7 +3959,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11471128",
@@ -4035,7 +3983,7 @@
       "博物館"
     ],
     "featured": false,
-    "score": 47.73,
+    "score": 47.65,
     "summary": {
       "text": "山陰海岸ジオパーク海と大地の自然館（さんいんかいがんジオパークうみとだいちのしぜんかん）は、鳥取県岩美郡岩美町にある鳥取県立の博物館。",
       "lang": "ja",
@@ -4070,7 +4018,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11473744",
@@ -4093,7 +4041,7 @@
       "寺院"
     ],
     "featured": false,
-    "score": 41.55,
+    "score": 41.63,
     "summary": {
       "text": "岡益の石堂（おかますのいしんどう/おかますのいしどう）は、鳥取県鳥取市国府町岡益にある石塔。建築者・建築年代・建築目的とも不明のため、地元では「謎の石堂（いしんどう）」とも呼ばれる。",
       "lang": "ja",
@@ -4101,14 +4049,7 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3f/Okamasu-no-ishido-2.jpg/960px-Okamasu-no-ishido-2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Saigen Jiro",
-        "license": "CC0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Okamasu-no-ishido-2.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q11473744",
       "osm": "node/4005186623"
@@ -4128,7 +4069,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11474068",
@@ -4149,7 +4090,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 64.49,
+    "score": 64.57,
     "summary": {
       "text": "岩井温泉（いわいおんせん）は、鳥取県岩美郡岩美町（旧国因幡国）にある温泉。",
       "lang": "ja",
@@ -4157,14 +4098,7 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ca/Iwaionsen-tottori1200.jpg/960px-Iwaionsen-tottori1200.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "㭍月例祭",
-        "license": "Public domain",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Iwaionsen-tottori1200.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q11474068"
     },
@@ -4175,7 +4109,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-29"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11474153",
@@ -4196,7 +4130,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 55.68,
+    "score": 55.91,
     "summary": {
       "text": "岩倉城（いわくらじょう）は、鳥取県倉吉市岩倉にあった中世の日本の城（山城）。標高247メートルの岩倉山に所在し、岩倉山城（いわくらやまじょう）とも記される。",
       "lang": "ja",
@@ -4204,14 +4138,7 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [
-      {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/7/7e/Iwakurajou001.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-        "author": "不明",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Iwakurajou001.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q11474153"
     },
@@ -4226,7 +4153,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11480764",
@@ -4250,7 +4177,7 @@
       "史跡"
     ],
     "featured": false,
-    "score": 63.41,
+    "score": 63.46,
     "summary": {
       "text": "Tenjinyama Castle (天神山城, Tenjinyama-jō) also known as Fuse-Tenjinyama  Castle is the remains of a castle structure in Tottori (city), Tottori Prefecture, Japan. Its ruins have been protected as a Prefectural Historic Sites. The castle was the Shogosho (Shugo daimyo's residence or main bastion) of the Inaba Yamana clan.",
       "lang": "en",
@@ -4296,7 +4223,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11488462",
@@ -4393,7 +4320,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 49.14,
+    "score": 49.54,
     "summary": {
       "text": "意非神社（おいじんじゃ、いひじんじゃ）は、鳥取県八頭郡若桜町にある神社。祭神は天饒日尊、神紋は違い矢紋。式内社、旧社格は村社。",
       "lang": "ja",
@@ -4432,7 +4359,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11497217",
@@ -4455,7 +4382,7 @@
       "公園"
     ],
     "featured": false,
-    "score": 56.89,
+    "score": 56.93,
     "summary": {
       "text": "打吹公園（うつぶきこうえん）は鳥取県倉吉市仲ノ町の打吹山の麓にある都市公園（総合公園）である。日本さくら名所100選、日本の都市公園100選、森林浴の森100選等に選ばれる山陰を代表する都市公園の一つである。",
       "lang": "ja",
@@ -4463,14 +4390,7 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5c/Kurayoshi_Utsubuki_park02bs4592.jpg/960px-Kurayoshi_Utsubuki_park02bs4592.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "663highland",
-        "license": "CC BY 2.5",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Kurayoshi_Utsubuki_park02bs4592.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q11497217",
       "osm": "way/453888714"
@@ -4490,7 +4410,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11497222",
@@ -4511,7 +4431,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 65.0,
+    "score": 64.93,
     "summary": {
       "text": "打吹玉川是位於日本鳥取縣倉吉市的傳統建築物群保存地區，又通稱為白壁土藏群，現以商家町的類別，被日本以「倉吉市打吹玉川傳統的建造物群保存地區」之名列為國家重要傳統的建造物群保存地區。",
       "lang": "zh",
@@ -4519,14 +4439,7 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ec/Kurayoshi_Utsubuki-Tamagawa33bs3s4410.jpg/960px-Kurayoshi_Utsubuki-Tamagawa33bs3s4410.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "663highland",
-        "license": "CC BY 2.5",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Kurayoshi_Utsubuki-Tamagawa33bs3s4410.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q11497222"
     },
@@ -4541,7 +4454,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11498610",
@@ -4564,7 +4477,7 @@
       "寺院"
     ],
     "featured": false,
-    "score": 40.55,
+    "score": 40.53,
     "summary": {
       "text": "摩尼寺（まにじ、まにでら）は鳥取県鳥取市にある天台宗安楽律法流の寺。山号は喜見山（きけんざん）。",
       "lang": "ja",
@@ -4595,7 +4508,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11500407",
@@ -4620,7 +4533,7 @@
       "特別史跡"
     ],
     "featured": true,
-    "score": 70.06,
+    "score": 69.91,
     "summary": {
       "text": "Sainoo temple ruins (斎尾廃寺跡, Sai-no-o Haiji ato) is an archeological site  with the ruins of a Hakuhō period Buddhist temple located in the Tsukishita neighborhood of the town of Kotoura, Tottori prefecture, in the San'in region of Japan. It was designated as a National Historic Site in 1935 with the designation changed to that of a Special National Historic Site in 1952.",
       "lang": "en",
@@ -4655,15 +4568,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ed/Sainoo_Haiji_Ruins.JPG/960px-Sainoo_Haiji_Ruins.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Flow in edgewise",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Sainoo_Haiji_Ruins.JPG"
-      }
-    }
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11502001",
@@ -4684,7 +4589,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 49.36,
+    "score": 49.64,
     "summary": {
       "text": "新山城（にいやまじょう）は、鳥取県鳥取市徳尾にあった日本の城。国体道路交差点横の小山が城跡であるが、道路建設や開発などで破壊されており、保存状態は悪い。",
       "lang": "ja",
@@ -4707,7 +4612,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11510773",
@@ -4730,7 +4635,7 @@
       "寺院"
     ],
     "featured": false,
-    "score": 30.36,
+    "score": 30.87,
     "summary": {
       "text": "日香寺（にちこうじ）は、鳥取県鳥取市に所在する日蓮正宗の寺院。山号は妙囿山（みょうゆうさん）。",
       "lang": "ja",
@@ -4761,7 +4666,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11511017",
@@ -4784,7 +4689,7 @@
       "博物館"
     ],
     "featured": false,
-    "score": 33.17,
+    "score": 33.04,
     "summary": {
       "text": "旧塩屋出店（きゅうしおやでみせ）は鳥取県八頭郡智頭町の智頭宿にある歴史的建造物。",
       "lang": "ja",
@@ -4832,7 +4737,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11514680",
@@ -4855,7 +4760,7 @@
       "城"
     ],
     "featured": false,
-    "score": 53.54,
+    "score": 53.69,
     "summary": {
       "text": "景石城（かげいしじょう）は、鳥取県鳥取市用瀬町用瀬にあった日本の城。鳥取市指定史跡。",
       "lang": "ja",
@@ -4894,7 +4799,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11514791",
@@ -4973,7 +4878,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 59.08,
+    "score": 59.0,
     "summary": {
       "text": "智頭宿（ちづしゅく、ちずしゅく）は、因幡国智頭郡にかつてあった因幡街道の宿場で、現在の鳥取県八頭郡智頭町大字智頭にある旧宿場町である。",
       "lang": "ja",
@@ -5012,7 +4917,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11514808",
@@ -5035,7 +4940,7 @@
       "橋"
     ],
     "featured": false,
-    "score": 30.11,
+    "score": 30.19,
     "summary": {
       "text": "智頭橋（ちずばし）は、鳥取県鳥取市の袋川に架かる鳥取市道2010109号智頭街道の橋で、日本百名橋に選ばれた。",
       "lang": "ja",
@@ -5074,7 +4979,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q1151668",
@@ -5142,7 +5047,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 63.35,
+    "score": 63.44,
     "summary": {
       "text": "Tōgō Onsen (東郷温泉) is an onsen in the town of Yurihama in Tottori Prefecture, Japan. It was the second most popular onsen area in Tottori Prefecture during the beginning of the Shōwa era.",
       "lang": "en",
@@ -5159,14 +5064,7 @@
         "distance_m": 320
       }
     ],
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/05/Togo_Onsen06bs4592.jpg/960px-Togo_Onsen06bs4592.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "663highland",
-        "license": "CC BY 2.5",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Togo_Onsen06bs4592.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q11528535"
     },
@@ -5177,7 +5075,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11538256",
@@ -5198,7 +5096,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 50.23,
+    "score": 50.34,
     "summary": {
       "text": "大山ますみず高原スノーパーク（だいせんますみずこうげんスノーパーク）は、鳥取県の西伯郡伯耆町にあるスキー場である。",
       "lang": "ja",
@@ -5206,14 +5104,7 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/27/Daisen_-03.jpg/960px-Daisen_-03.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Aimaimyi",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Daisen_-03.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q11538256"
     },
@@ -5228,7 +5119,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11542204",
@@ -5252,7 +5143,7 @@
       "公園"
     ],
     "featured": false,
-    "score": 38.29,
+    "score": 38.43,
     "summary": {
       "text": "樗谿公園（おおちだにこうえん、おうちだにこうえん）は鳥取県鳥取市にある都市公園（風致公園）である。「ホタルの里」として有名。",
       "lang": "ja",
@@ -5287,7 +5178,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11548750",
@@ -5308,7 +5199,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 69.84,
+    "score": 69.82,
     "summary": {
       "text": "水木しげるロード（みずきしげるロード）は、日本の鳥取県境港市に整備された商店街。観光対応型商店街であり、漫画家・水木しげるが描く妖怪の世界観をテーマとした観光名所として広く知られている。正規の日本の妖怪像として文化的価値も認知されている。",
       "lang": "ja",
@@ -5359,7 +5250,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11553574",
@@ -5382,7 +5273,7 @@
       "城"
     ],
     "featured": false,
-    "score": 64.85,
+    "score": 64.84,
     "summary": {
       "text": "河原城（かわはらじょう）は、鳥取県鳥取市河原町谷一木にあった日本の城。この城の正式名称は「丸山城」であるが、鳥取市内には丸山城という名の城跡がこの城を含めて3つあり、旧邑美郡に限ってもこの城を含めて2つある。河原城は、後述する天守風建造物が建てられて以後の名称であるが、他2城との混同を避けるため、ここでは河原城と呼称する。",
       "lang": "ja",
@@ -5417,7 +5308,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11553868",
@@ -5441,7 +5332,7 @@
       "博物館"
     ],
     "featured": false,
-    "score": 32.91,
+    "score": 32.84,
     "summary": {
       "text": "河本家住宅（かわもとけじゅうたく）は鳥取県東伯郡琴浦町にある古民家。",
       "lang": "ja",
@@ -5476,7 +5367,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11554242",
@@ -5500,7 +5391,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 52.99,
+    "score": 52.87,
     "summary": {
       "text": "河野神社（こうのじんじゃ）は鳥取県八頭郡智頭町にある神社。因幡若一宮、通称「にゃくいちさん」と呼ばれる。祭神は須佐男命、忍穂耳命、大己貴命、彦火々出見命、大山祇命、火産霊命、宇賀魂命の7柱。",
       "lang": "ja",
@@ -5542,7 +5433,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11555561",
@@ -5565,7 +5456,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 55.83,
+    "score": 55.86,
     "summary": {
       "text": "波波伎神社（ははきじんじゃ）は、鳥取県倉吉市福庭にある神社。式内社で、旧社格は県社。",
       "lang": "ja",
@@ -5606,7 +5497,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11557723",
@@ -5627,7 +5518,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 62.17,
+    "score": 62.05,
     "summary": {
       "text": "浜村温泉（はまむらおんせん）は、鳥取県鳥取市にある温泉。",
       "lang": "ja",
@@ -5644,14 +5535,7 @@
         "distance_m": 10
       }
     ],
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/93/Hamamura_onsen05nt3200.jpg/960px-Hamamura_onsen05nt3200.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "663highland",
-        "license": "CC BY 2.5",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Hamamura_onsen05nt3200.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q11557723"
     },
@@ -5662,7 +5546,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11558824",
@@ -5685,7 +5569,7 @@
       "島"
     ],
     "featured": false,
-    "score": 36.46,
+    "score": 36.32,
     "summary": {
       "text": "海士島（あもうじま）は、鳥取県・鳥取砂丘の沖合いの日本海に浮かぶ無人島である。行政上は鳥取市福部町（旧岩美郡福部村）海士に属する。",
       "lang": "ja",
@@ -5715,7 +5599,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11562497",
@@ -5739,7 +5623,7 @@
       "博物館"
     ],
     "featured": false,
-    "score": 58.01,
+    "score": 58.32,
     "summary": {
       "text": "Watanabe Museum Of Art (渡辺美術館, Watanabe Bijutsukan) opened in Tottori, Tottori Prefecture, Japan in 1978. It houses the 30,000-piece collection of Tottori resident Dr. Hajime Watanabe (1911–2017). It holds the largest collection of Samurai armour and weapons in any museum in Japan.",
       "lang": "en",
@@ -5774,7 +5658,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11572280",
@@ -5797,7 +5681,7 @@
       "寺院"
     ],
     "featured": false,
-    "score": 55.47,
+    "score": 55.63,
     "summary": {
       "text": "玄忠寺（げんちゅうじ）は鳥取県鳥取市新品治町にある浄土宗の仏教寺院。正式名は、大唐大巖深心山九品院玄忠寺。鍵屋の辻の決闘で広く知られる剣豪荒木又右衛門の菩提寺で、境内にはその所縁の品や資料を展示する荒木又右衛門遺品館が設けられている。",
       "lang": "ja",
@@ -5841,7 +5725,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11574501",
@@ -5864,7 +5748,7 @@
       "城"
     ],
     "featured": false,
-    "score": 54.63,
+    "score": 54.57,
     "summary": {
       "text": "生山城（しょうやまじょう）は、鳥取県日野郡日南町生山にあった日本の城。日野川とその支流の石見川が合流する地点の東、標高470メートル、比高180メートル程の山上に存在していた。別名・亀井山城、日野本城。",
       "lang": "ja",
@@ -5896,7 +5780,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11580978",
@@ -5917,7 +5801,7 @@
     "themes": [],
     "tags": [],
     "featured": true,
-    "score": 73.1,
+    "score": 73.17,
     "summary": {
       "text": "皆生溫泉是位於日本鳥取縣米子市的一個溫泉。在弓濱皆生海岸東西長1,000米，南北長400米的範圍內聚集了大量旅館，其收容規模達約5,000人，是山陰最大規模的溫泉地之一。據鳥取縣政府按入湯稅進行的計算，近年皆生溫泉每年有約40至50萬人利用，是鳥取縣內最大的溫泉度假區。皆生溫泉又有「米子的奧座」、「山陰的熱海」之稱。",
       "lang": "zh",
@@ -5943,8 +5827,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11584906",
@@ -5967,7 +5850,7 @@
       "城"
     ],
     "featured": false,
-    "score": 50.87,
+    "score": 50.97,
     "summary": {
       "text": "石井垣城（いわいがきじょう）は、鳥取県西伯郡大山町石井垣にあった日本の城。この地方では珍しい複郭式の遺構が確認される。",
       "lang": "ja",
@@ -5995,7 +5878,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11587285",
@@ -6016,7 +5899,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 53.66,
+    "score": 53.89,
     "summary": {
       "text": "石霞渓（せっかけい）は、鳥取県日野郡日南町に位置する渓谷。奥日野県立自然公園の指定区域内にある。現在、一般的に現在石霞渓と呼称されている区域は南石霞渓を指す。",
       "lang": "ja",
@@ -6060,7 +5943,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11593811",
@@ -6084,7 +5967,7 @@
       "史跡"
     ],
     "featured": false,
-    "score": 39.75,
+    "score": 39.73,
     "summary": {
       "text": "The Fukuichi Site (福市遺跡, Fukuichi iseki) is an archaeological site with the traces of a late-Yayoi period(3rd century) to mid-Kofun period (5th century) settlement located in the \"Chojabaru Plateau\" area of the city of Yonago, Tottori Prefecture, in the San'in region of Japan. It was designated a National Historic Site in 1970.",
       "lang": "en",
@@ -6115,7 +5998,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11604077",
@@ -6138,7 +6021,7 @@
       "城"
     ],
     "featured": true,
-    "score": 75.1,
+    "score": 75.07,
     "summary": {
       "text": "米子城是一座位於日本鳥取縣米子市久米町的城堡，又稱久米城、湊山城。在江戶時代初期，米子城曾是米子藩（伯耆藩）的藩廳。遺址被指定為國家的史跡。米子城曾建有天守，但在19世紀後期被拆除。現在米子城所在地是湊山公園。",
       "lang": "zh",
@@ -6157,10 +6040,10 @@
     ],
     "images": [
       {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ce/Yonago_Castle%2C_honmaru-1.jpg/960px-Yonago_Castle%2C_honmaru-1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Saigen Jiro",
-        "license": "CC0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Yonago_Castle,_honmaru-1.jpg"
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dc/Yonago_Castle_07.JPG/960px-Yonago_Castle_07.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "by Reggaeman",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Yonago_Castle_07.JPG"
       }
     ],
     "external_ids": {
@@ -6178,8 +6061,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11604109",
@@ -6202,7 +6084,7 @@
       "公園"
     ],
     "featured": false,
-    "score": 52.72,
+    "score": 52.92,
     "summary": {
       "text": "米子水鳥公園（よなごみずどりこうえん）は、鳥取県米子市彦名町にある湿地公園である。",
       "lang": "ja",
@@ -6237,7 +6119,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11604590",
@@ -6258,7 +6140,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 59.64,
+    "score": 59.65,
     "summary": {
       "text": "粟島神社（あわしまじんじゃ）は、鳥取県米子市彦名町にある神社である。淡島神社の一つ。少彦名命を祭神とする。",
       "lang": "ja",
@@ -6288,7 +6170,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11610057",
@@ -6306,7 +6188,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 70.35,
+    "score": 70.4,
     "summary": {
       "text": "羽合溫泉是位於日本鳥取縣東伯郡湯梨濱町的溫泉度假地。近年羽合溫泉是鳥取縣內僅次於皆生溫泉、三朝溫泉和吉岡溫泉的遊客數第四之溫泉。羽合溫泉是三朝東鄉湖縣立自然公園的一部分，溫泉街位於湖岸。泉質屬於硫酸鹽泉。溫泉的源泉原本位於湖底。現在的溫泉街係由填湖取得。",
       "lang": "zh",
@@ -6314,14 +6196,7 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d0/Hawaii_onsen_yurihama.jpg/960px-Hawaii_onsen_yurihama.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Zai零細系統保護協会",
-        "license": "Public domain",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Hawaii_onsen_yurihama.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q11610057"
     },
@@ -6332,8 +6207,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11610369",
@@ -6357,7 +6231,7 @@
       "史跡"
     ],
     "featured": true,
-    "score": 70.27,
+    "score": 70.37,
     "summary": {
       "text": "羽衣石城（うえしじょう）は、伯耆河村郡埴見郷（現在の鳥取県東伯郡湯梨浜町）にあった中世の日本の城（山城）。鳥取県指定史跡に指定され、国の史跡に指定されている。",
       "lang": "ja",
@@ -6387,8 +6261,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11613445",
@@ -6411,7 +6284,7 @@
       "寺院"
     ],
     "featured": false,
-    "score": 40.64,
+    "score": 40.7,
     "summary": {
       "text": "興禅寺（こうぜんじ）は鳥取県鳥取市に所在する黄檗宗の寺院。山号は龍峯山。鳥取藩主池田家の菩提寺である。",
       "lang": "ja",
@@ -6446,7 +6319,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11613487",
@@ -6469,7 +6342,7 @@
       "寺院"
     ],
     "featured": false,
-    "score": 32.74,
+    "score": 32.87,
     "summary": {
       "text": "興雲寺（こううんじ）は、鳥取県八頭郡智頭町智頭364にある曹洞宗の仏教寺院。山号は龍吟山。因幡三十三観音20番札所。智頭宿の智頭往来沿いに位置する。",
       "lang": "ja",
@@ -6509,7 +6382,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11613971",
@@ -6530,7 +6403,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 67.13,
+    "score": 67.24,
     "summary": {
       "text": "Mount Senjō (船上山, Senjō-san) is a mountain in the town of Kotoura, Tottori Prefecture, Japan. It has an elevation of 687 metres and is part of the Daisen volcanic belt. It is within the borders of the Daisen-Oki National Park.",
       "lang": "en",
@@ -6538,14 +6411,7 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-29"
     },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b5/Senjosan_01.jpg/960px-Senjosan_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Reggaeman",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Senjosan_01.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q11613971"
     },
@@ -6560,7 +6426,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11614892",
@@ -6580,7 +6446,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 50.92,
+    "score": 50.93,
     "summary": {
       "text": "芦津渓谷（あしづけいこく）は、鳥取県八頭郡智頭町にある渓谷。芦津渓ともいう。",
       "lang": "ja",
@@ -6603,7 +6469,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11615675",
@@ -6623,7 +6489,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 56.16,
+    "score": 56.18,
     "summary": {
       "text": "花見潟墓地（はなみがたぼち）は、鳥取県東伯郡琴浦町に存在する大規模な自然発生型の墓地である。海岸に面して約2万の墓が東西約350メートルに渡って立ち並び、西日本では最大級の規模とされる。",
       "lang": "ja",
@@ -6640,14 +6506,7 @@
         "distance_m": 740
       }
     ],
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7c/Hanamigata-Cemetery-2013071401.jpg/960px-Hanamigata-Cemetery-2013071401.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Hasec",
-        "license": "CC0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Hanamigata-Cemetery-2013071401.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q11615675"
     },
@@ -6662,7 +6521,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11616556",
@@ -6686,7 +6545,7 @@
       "博物館"
     ],
     "featured": false,
-    "score": 48.35,
+    "score": 48.92,
     "summary": {
       "text": "若桜郷土文化の里（わかさきょうどぶんかのさと）は鳥取県八頭郡若桜町にあるテーマパーク。若桜町の歴史と郷土文化をテーマする。",
       "lang": "ja",
@@ -6730,7 +6589,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11616557",
@@ -6754,7 +6613,7 @@
       "史跡"
     ],
     "featured": true,
-    "score": 70.08,
+    "score": 70.09,
     "summary": {
       "text": "Wakasa Oniga Castle (若桜鬼ヶ城, Wakasa Oniga-jō) was a Sengoku period mountain-top Japanese castle located in what is now the town of Wakasa,  Tottori Prefecture, in the San'in region of Japan. The ruins of the castle were designated a National Historic Site in 2008.",
       "lang": "en",
@@ -6793,8 +6652,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11617049",
@@ -6817,7 +6675,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 49.85,
+    "score": 50.0,
     "summary": {
       "text": "茂宇気神社（もうけじんじゃ）は、鳥取県鳥取市鹿野町河内にある神社。祭神は天照大神である。旧社格は村社。",
       "lang": "ja",
@@ -6848,7 +6706,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11618875",
@@ -6868,7 +6726,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 41.61,
+    "score": 40.91,
     "summary": {
       "text": "荒金鉱山（あらかねこうざん）は、鳥取県岩美郡岩美町荒金に存在した銅鉱山。岩美鉱山とも呼ばれる。",
       "lang": "ja",
@@ -6903,7 +6761,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q116233928",
@@ -6924,7 +6782,7 @@
       "史跡"
     ],
     "featured": false,
-    "score": 34.61,
+    "score": 34.77,
     "summary": {
       "text": "Hajimomoi temple ruins (土師百井廃寺跡, Hajimomoi Haiji ato) is an archeological site with the ruins of a Hakuhō period Buddhist temple located in the Hajimomoi neighborhood of the town of  Yau, Tottori prefecture,  in the San'in region of Japan. The foundations of its Japanese pagoda were designated as a National Historic Site in 1931, and the designation expanded to cover then remaining temple ruins in 1980",
       "lang": "en",
@@ -6964,7 +6822,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11625514",
@@ -6985,7 +6843,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 48.13,
+    "score": 48.19,
     "summary": {
       "text": "蛇山城（じゃやまじょう）は、鳥取市福部町箭溪（やだに）にあった日本の城。",
       "lang": "ja",
@@ -7008,7 +6866,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11629006",
@@ -7032,7 +6890,7 @@
       "博物館"
     ],
     "featured": false,
-    "score": 52.48,
+    "score": 52.31,
     "summary": {
       "text": "西河克己映画記念館（にしかわかつみえいがきねんかん）は、鳥取県八頭郡智頭町にある智頭545にある西河克己の記念館。塩屋出店・西河克己映画記念館と表記されることもある。建物は登録有形文化財であり、登録名称は旧塩屋出店洋館（きゅうしおやでみせようかん）。",
       "lang": "ja",
@@ -7076,7 +6934,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11633281",
@@ -7099,7 +6957,7 @@
       "寺院"
     ],
     "featured": false,
-    "score": 37.19,
+    "score": 37.2,
     "summary": {
       "text": "豊乗寺（ぶじょうじ）は鳥取県八頭郡智頭町にある高野山真言宗の密教寺院。山号は宇谷山。本尊は阿弥陀如来。平安時代の嘉祥年間（845年～851年）、空海の法弟である真雅による開基と伝えられる。",
       "lang": "ja",
@@ -7134,7 +6992,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11634028",
@@ -7155,7 +7013,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 49.41,
+    "score": 48.96,
     "summary": {
       "text": "豊田家住宅（とよたけじゅうたく）は、鳥取県倉吉市西町2701にある歴史的建造物（民家）。久米郡倉吉驛（くめごおりくらよしえき）とも呼ばれる。登録有形文化財に登録されている。",
       "lang": "ja",
@@ -7185,7 +7043,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11635823",
@@ -7208,7 +7066,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 55.06,
+    "score": 55.02,
     "summary": {
       "text": "赤猪岩神社（あかいいわじんじゃ）は、鳥取県西伯郡南部町にある神社。旧社格は無格社。",
       "lang": "ja",
@@ -7234,7 +7092,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11641222",
@@ -7255,7 +7113,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 53.01,
+    "score": 53.22,
     "summary": {
       "text": "道の駅大山恵みの里（みちのえき だいせんめぐみのさと）は、鳥取県西伯郡大山町にある鳥取県道240号旧奈和西坪線の道の駅である。",
       "lang": "ja",
@@ -7301,7 +7159,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-29"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11641227",
@@ -7382,7 +7240,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 53.34,
+    "score": 53.5,
     "summary": {
       "text": "道の駅犬挟（みちのえき いぬばさり）は、鳥取県倉吉市にある国道313号の道の駅である。",
       "lang": "ja",
@@ -7412,7 +7270,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11641428",
@@ -7433,7 +7291,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 56.68,
+    "score": 56.87,
     "summary": {
       "text": "道の駅神話の里 白うさぎ（みちのえき しんわのさと しろうさぎ）は、鳥取県鳥取市白兎（はくと）にある国道9号の道の駅である。",
       "lang": "ja",
@@ -7463,7 +7321,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11641479",
@@ -7484,13 +7342,13 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 51.29,
+    "score": 51.35,
     "summary": {
-      "text": "道の駅若桜（みちのえき わかさ）は、鳥取県八頭郡若桜町若桜にある国道29号の道の駅である。",
+      "text": "道の駅若桜（みちのえき わかさ）は、鳥取県八頭郡若桜町若桜にある国道29号の道の駅である。2008年（平成20年）6月1日に開駅。",
       "lang": "ja",
       "source_url": "https://ja.wikipedia.org/wiki/%E9%81%93%E3%81%AE%E9%A7%85%E8%8B%A5%E6%A1%9C",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-10-04"
     },
     "nearest_stations": [
       {
@@ -7523,7 +7381,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11650789",
@@ -7554,14 +7412,7 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/55/Kagikake_Pass.JPG/960px-Kagikake_Pass.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "mti",
-        "license": "CC0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Kagikake_Pass.JPG"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q11650789",
       "osm": "node/4681426534"
@@ -7581,7 +7432,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11651242",
@@ -7602,7 +7453,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 54.56,
+    "score": 54.58,
     "summary": {
       "text": "鏡山城（かがみやまじょう）、または黒坂城（くろさかじょう）は、鳥取県日野郡日野町黒坂にあった江戸時代初期の日本の城。旧日野産業高校校舎とその裏山が城跡である。",
       "lang": "ja",
@@ -7634,7 +7485,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11653555",
@@ -7657,7 +7508,7 @@
       "寺院"
     ],
     "featured": false,
-    "score": 30.42,
+    "score": 30.68,
     "summary": {
       "text": "長綱寺（ちょうこうじ）は、鳥取県西伯郡大山町にある、曹洞宗の寺院。",
       "lang": "ja",
@@ -7697,7 +7548,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11653675",
@@ -7720,7 +7571,7 @@
       "寺院"
     ],
     "featured": false,
-    "score": 36.57,
+    "score": 36.52,
     "summary": {
       "text": "長谷寺（はせでら）は鳥取県倉吉市にある天台宗の寺。中国三十三観音霊場第三十番札所。",
       "lang": "ja",
@@ -7755,7 +7606,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11655087",
@@ -7780,7 +7631,7 @@
       "重要文化財"
     ],
     "featured": false,
-    "score": 59.44,
+    "score": 59.53,
     "summary": {
       "text": "門脇家住宅（かどわきけじゅうたく）は鳥取県西伯郡大山町にある歴史的建造物。国の重要文化財。",
       "lang": "ja",
@@ -7824,7 +7675,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11656453",
@@ -7845,7 +7696,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 62.14,
+    "score": 62.12,
     "summary": {
       "text": "関金温泉（せきがねおんせん）は、鳥取県倉吉市（旧国伯耆国）にある温泉。",
       "lang": "ja",
@@ -7853,14 +7704,7 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f9/Sekigane_onsen_Yumeikan.jpg/960px-Sekigane_onsen_Yumeikan.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "運動会プロテインパワー",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Sekigane_onsen_Yumeikan.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q11656453"
     },
@@ -7875,7 +7719,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11658184",
@@ -7896,7 +7740,7 @@
       "博物館"
     ],
     "featured": false,
-    "score": 58.88,
+    "score": 58.95,
     "summary": {
       "text": "拔河資料館 陣所之館是位於日本鳥取縣東伯郡三朝町三朝溫泉區以當地傳統拔河活動為主題的博物館。",
       "lang": "zh",
@@ -7927,7 +7771,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11659756",
@@ -7948,7 +7792,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 54.27,
+    "score": 54.54,
     "summary": {
       "text": "雨滝（あめだき）は、鳥取県鳥取市国府町にある滝。日本の滝百選に選定されている。",
       "lang": "ja",
@@ -7978,7 +7822,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11661221",
@@ -8002,7 +7846,7 @@
       "博物館"
     ],
     "featured": true,
-    "score": 71.15,
+    "score": 71.05,
     "summary": {
       "text": "青山剛昌故鄉館是位於日本鳥取縣北榮町以出身於當地的漫畫家青山剛昌為主題的動漫博物館，由北榮町公所設立並自行負責營運管理；館內展示青山岡昌的手稿、成長經歷、及作品相關介紹。由於青山剛昌的代表作為《名偵探柯南》，館內亦有大量該作品的相關展示品，因此也被稱為「柯南博物館」。",
       "lang": "zh",
@@ -8046,8 +7890,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11661880",
@@ -8070,7 +7913,7 @@
       "史跡"
     ],
     "featured": false,
-    "score": 58.36,
+    "score": 58.5,
     "summary": {
       "text": "The Aoki Site (青木遺跡, Aoki iseki) is an archaeological site with the traces of a late-Yayoi period (3rd century) to early-Nara period (6th century) settlement located in the Nagae neighborhood of the city of Yonago, Tottori Prefecture, in the San'in region of Japan. It was designated a National Historic Site in 1978.",
       "lang": "en",
@@ -8096,7 +7939,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11665996",
@@ -8118,7 +7961,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 31.28,
+    "score": 31.71,
     "summary": {
       "text": "飛龍閣（ひりゅうかく）は、鳥取県倉吉市、打吹公園内にある歴史的建造物。国の登録有形文化財に登録されている。",
       "lang": "ja",
@@ -8153,7 +7996,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11668455",
@@ -8173,7 +8016,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 55.03,
+    "score": 55.31,
     "summary": {
       "text": "駟馳山(しちやま)は、鳥取県の鳥取市（旧福部村）と岩美町にまたがる山である。標高314m。",
       "lang": "ja",
@@ -8203,7 +8046,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11669055",
@@ -8226,7 +8069,7 @@
       "城"
     ],
     "featured": false,
-    "score": 50.22,
+    "score": 51.32,
     "summary": {
       "text": "高城城（たかしろじょう）は、鳥取県倉吉市福積 沢谷にあった日本の城。",
       "lang": "ja",
@@ -8249,7 +8092,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11674404",
@@ -8266,7 +8109,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 44.17,
+    "score": 44.31,
     "summary": {
       "text": "鳥取ショッピングシティ（とっとりショッピングシティ）は、鳥取県鳥取市に所在するイオンリテール株式会社が運営を行うショッピングセンターである。",
       "lang": "ja",
@@ -8301,7 +8144,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11674516",
@@ -8322,7 +8165,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 57.37,
+    "score": 57.64,
     "summary": {
       "text": "鳥取温泉（とっとりおんせん）は、鳥取県鳥取市にある温泉。鳥取駅に近い市街地中心部にある温泉で、珍しい県庁所在地の市街地に湧く温泉である。",
       "lang": "ja",
@@ -8339,14 +8182,7 @@
         "distance_m": 330
       }
     ],
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a2/Kozeniya_Tottori11bs4350.jpg/960px-Kozeniya_Tottori11bs4350.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "663highland",
-        "license": "CC BY 2.5",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Kozeniya_Tottori11bs4350.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q11674516"
     },
@@ -8361,7 +8197,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11674565",
@@ -8382,7 +8218,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 56.81,
+    "score": 56.79,
     "summary": {
       "text": "鳥取県立倉吉未来中心（とっとりけんりつくらよしみらいちゅうしん）は、鳥取県倉吉市駄経寺町にある多目的ホールである。倉吉パークスクエアを構成する施設の一つ。2024年4月1日より倉吉市に工場を置く株式会社エースパックがネーミングライツを取得し愛称を「エースパック未来中心」とした。",
       "lang": "ja",
@@ -8412,7 +8248,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11674579",
@@ -8435,7 +8271,7 @@
       "博物館"
     ],
     "featured": false,
-    "score": 52.73,
+    "score": 53.12,
     "summary": {
       "text": "鳥取県立氷ノ山自然ふれあい館 響の森（とっとりけんりつ ひょうのせんしぜんふれあいかん ひびきのもり）は鳥取県八頭郡若桜町にある自然系博物館。日本最大のジオラマでブナの森を再現する施設として知られる。",
       "lang": "ja",
@@ -8470,7 +8306,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11674832",
@@ -8491,7 +8327,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 51.95,
+    "score": 52.21,
     "summary": {
       "text": "鳥取砂丘情報館（とっとりさきゅうじょうほうかん）は鳥取砂丘をはじめとする鳥取県内観光地の情報発信を行うための拠点施設。鳥取県鳥取市の鳥取砂丘の辺に位置する。",
       "lang": "ja",
@@ -8499,14 +8335,7 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3b/Sandpal_tottori01_1920.jpg/960px-Sandpal_tottori01_1920.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "663highland",
-        "license": "CC BY 2.5",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Sandpal_tottori01_1920.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q11674832",
       "osm": "way/1420969865"
@@ -8526,7 +8355,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11674839",
@@ -8549,7 +8378,7 @@
       "史跡"
     ],
     "featured": false,
-    "score": 44.42,
+    "score": 44.61,
     "summary": {
       "text": "The Tottori Domain Ikeda clan cemetery  (鳥取藩主池田家墓所, Tottori-han-shu Ikeda-ke bosho) is located in the Kokufu neighborhood of the city of Tottori, Tottori Prefecture,  Japan. The cemetery contains the graves of the successive daimyō of Tottori Domain. The cemetery was designated a National Historic Site in 1981.",
       "lang": "en",
@@ -8579,15 +8408,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "winter": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/08/Tottori_feudal_lord_Ikedas_cemetery_087.jpg/960px-Tottori_feudal_lord_Ikedas_cemetery_087.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Corpse Reviver",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Tottori_feudal_lord_Ikedas_cemetery_087.jpg"
-      }
-    }
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11674856",
@@ -8608,7 +8429,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 58.08,
+    "score": 58.12,
     "summary": {
       "text": "鳥取高等農業学校 （とっとりこうとうのうぎょうがっこう） とは、1920年 （大正9年） に設立された官立旧制専門学校。",
       "lang": "ja",
@@ -8647,7 +8468,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11675795",
@@ -8670,7 +8491,7 @@
       "城"
     ],
     "featured": false,
-    "score": 53.0,
+    "score": 53.35,
     "summary": {
       "text": "鵯尾城（ひよどりおじょう）は、鳥取県鳥取市玉津にあった日本の城。因幡武田氏の拠点の城のひとつ。",
       "lang": "ja",
@@ -8693,7 +8514,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11677293",
@@ -8716,7 +8537,7 @@
       "城"
     ],
     "featured": false,
-    "score": 66.7,
+    "score": 66.66,
     "summary": {
       "text": "Shikano Castle (鹿野城, Shikano jō) was a Muromachi period Japanese castle located in the Shikano neighborhood of the city of  Tottori, Tottori Prefecture,  in the San'in region of western Japan.",
       "lang": "en",
@@ -8746,7 +8567,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q11677308",
@@ -8767,7 +8588,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 56.15,
+    "score": 56.14,
     "summary": {
       "text": "鹿野温泉（しかのおんせん）は、鳥取県鳥取市鹿野町今市（旧鹿野町）にある温泉。",
       "lang": "ja",
@@ -8775,14 +8596,7 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/44/Sikano-Onsen-sansien-Tottori.jpg/960px-Sikano-Onsen-sansien-Tottori.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Zai零細系統保護協会",
-        "license": "Public domain",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Sikano-Onsen-sansien-Tottori.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q11677308"
     },
@@ -8797,7 +8611,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q120784441",
@@ -8820,7 +8634,7 @@
       "博物館"
     ],
     "featured": false,
-    "score": 65.35,
+    "score": 65.32,
     "summary": {
       "text": "水木茂紀念館，是位於日本鳥取縣境港市的一座博物館。其館舍於2003年3月8日開幕，以紀念漫畫家水木茂而設立。",
       "lang": "zh",
@@ -8866,7 +8680,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q122974479",
@@ -8888,7 +8702,7 @@
       "寺院"
     ],
     "featured": false,
-    "score": 27.88,
+    "score": 29.06,
     "summary": {
       "text": "養源寺（ようげんじ）は、鳥取市職人町にある浄土真宗本願寺派の寺院。山号は慶雲山（けいうんざん）。本尊は阿弥陀如来。",
       "lang": "ja",
@@ -8925,7 +8739,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q127385607",
@@ -8948,7 +8762,7 @@
       "美術館"
     ],
     "featured": false,
-    "score": 62.86,
+    "score": 62.92,
     "summary": {
       "text": "Tottori Prefectural Museum of Art (鳥取県立美術館, Tottori Kenritsu Bijutsukan) is scheduled to open in Kurayoshi, Tottori Prefecture, Japan, on 30 March 2025. Located adjacent to Ōmidō temple ruins, the new museum's artworks are to be transferred from the collection of Tottori Prefectural Museum.",
       "lang": "en",
@@ -8978,7 +8792,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q130808021",
@@ -9001,7 +8815,7 @@
       "博物館"
     ],
     "featured": false,
-    "score": 50.25,
+    "score": 50.39,
     "summary": {
       "text": "山陰伯耆国米子アジア博物館（さんいんほうきのくによなごアジアはくぶつかん）は、鳥取県米子市にある博物館。",
       "lang": "ja",
@@ -9033,7 +8847,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q131584091",
@@ -9054,7 +8868,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 47.86,
+    "score": 47.99,
     "summary": {
       "text": "賀茂神社（かもじんじゃ）は鳥取県西伯郡南部町倭にある神社。",
       "lang": "ja",
@@ -9084,7 +8898,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q131611928",
@@ -9158,7 +8972,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 55.41,
+    "score": 55.63,
     "summary": {
       "text": "白兎神社（はくとじんじゃ）は鳥取県八頭郡八頭町福本にある神社。",
       "lang": "ja",
@@ -9205,7 +9019,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q131693438",
@@ -9228,7 +9042,7 @@
       "主題樂園"
     ],
     "featured": false,
-    "score": 53.96,
+    "score": 54.3,
     "summary": {
       "text": "鳥取砂丘こどもの国（とっとりさきゅうこどものくに）は、鳥取県鳥取市の鳥取砂丘近くにある施設。",
       "lang": "ja",
@@ -9263,7 +9077,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q131765801",
@@ -9286,7 +9100,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 48.32,
+    "score": 48.28,
     "summary": {
       "text": "賀茂神社（かもじんじゃ）は鳥取県八頭郡八頭町にある神社。",
       "lang": "ja",
@@ -9330,7 +9144,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q132452201",
@@ -9461,7 +9275,7 @@
       "橋"
     ],
     "featured": false,
-    "score": 37.89,
+    "score": 38.09,
     "summary": {
       "text": "旧日野橋（きゅう ひのばし）は、鳥取県米子市の日野川に架かる人道橋である。",
       "lang": "ja",
@@ -9478,14 +9292,7 @@
         "distance_m": 1340
       }
     ],
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3e/%E6%97%A7%E6%97%A5%E9%87%8E%E6%A9%8B20140317.jpg/960px-%E6%97%A7%E6%97%A5%E9%87%8E%E6%A9%8B20140317.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "mstk east",
-        "license": "CC BY 2.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:%E6%97%A7%E6%97%A5%E9%87%8E%E6%A9%8B20140317.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q134452760"
     },
@@ -9500,7 +9307,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q136644084",
@@ -9670,7 +9477,7 @@
       "公園"
     ],
     "featured": false,
-    "score": 52.52,
+    "score": 52.86,
     "summary": {
       "text": "Misasa-Tōgōko Prefectural Natural Park (三朝東郷湖県立自然公園, Misasa-Tōgōko kenritsu shizen kōen) is a Prefectural Natural Park in Tottori Prefecture, Japan. Established in 1994, the park spans the municipalities of Kurayoshi, Misasa, and Yurihama.",
       "lang": "en",
@@ -9705,7 +9512,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q16900173",
@@ -9729,7 +9536,7 @@
       "博物館"
     ],
     "featured": false,
-    "score": 53.26,
+    "score": 53.36,
     "summary": {
       "text": "流しびなの館（ながしびなのやかた）は、鳥取県鳥取市用瀬町にあるひな人形の展示施設。",
       "lang": "ja",
@@ -9780,7 +9587,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q17191844",
@@ -9803,7 +9610,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 57.2,
+    "score": 57.24,
     "summary": {
       "text": "天穂日命神社（あめのほひのみことじんじゃ）は鳥取県鳥取市福井にある神社。式内小社で、旧社格は郷社。",
       "lang": "ja",
@@ -9833,7 +9640,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q17209257",
@@ -9856,7 +9663,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 54.68,
+    "score": 54.81,
     "summary": {
       "text": "妖怪神社（ようかいじんじゃ）とは、鳥取県境港市の水木しげるロードにある神社。運営会社は境港市大正町のアイズ。漫画『ゲゲゲの鬼太郎』の世界観で作られる。",
       "lang": "ja",
@@ -9903,7 +9710,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q17212972",
@@ -9924,7 +9731,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 53.88,
+    "score": 53.97,
     "summary": {
       "text": "道の駅ポート赤碕（みちのえき ポートあかさき）は、鳥取県東伯郡琴浦町別所にある国道9号の道の駅である。",
       "lang": "ja",
@@ -9963,7 +9770,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q17224204",
@@ -9986,7 +9793,7 @@
       "寺院"
     ],
     "featured": false,
-    "score": 55.27,
+    "score": 55.34,
     "summary": {
       "text": "大雲院（だいうんいん）は、鳥取県鳥取市立川町にある天台宗の寺院。山号は乾向山、寺号は東隆寺。本尊は阿弥陀如来。中国三十三観音霊場第三十三番札所である。",
       "lang": "ja",
@@ -10017,7 +9824,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q17227783",
@@ -10041,7 +9848,7 @@
       "博物館"
     ],
     "featured": false,
-    "score": 52.02,
+    "score": 52.07,
     "summary": {
       "text": "海とくらしの史料館（うみとくらしのしりょうかん）は鳥取県境港市花町にある博物館。「水の無い水族館」として魚介類の剥製が多数展示されている。",
       "lang": "ja",
@@ -10076,7 +9883,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q17988246",
@@ -10099,7 +9906,7 @@
       "史跡"
     ],
     "featured": false,
-    "score": 52.79,
+    "score": 52.89,
     "summary": {
       "text": "The Aoyakamijichi Site (青谷上寺地遺跡, Aoyakamijichi iseki) is an archaeological site with a Yayoi period settlement, located in the Aoya neighborhood of the city of Tottori in the San'in region of Japan. The site was designated a National Historic Site in 2008.",
       "lang": "en",
@@ -10138,7 +9945,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q18335432",
@@ -10156,7 +9963,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 41.33,
+    "score": 41.68,
     "summary": {
       "text": "鳥取県の島の一覧では、鳥取県に属する海上の島を列挙する。",
       "lang": "ja",
@@ -10164,14 +9971,7 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/15/Amatou.JPG/960px-Amatou.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "osakaosaka",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Amatou.JPG"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q18335432",
       "osm": "node/4491559163"
@@ -10187,7 +9987,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q18337604",
@@ -10208,7 +10008,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 52.42,
+    "score": 52.32,
     "summary": {
       "text": "長尾鼻（ながおはな）（別名、長尾岬、長尾埼）は、鳥取県鳥取市青谷町にある岬。",
       "lang": "ja",
@@ -10238,7 +10038,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q19826408",
@@ -10263,7 +10063,7 @@
       "國寶"
     ],
     "featured": true,
-    "score": 89.73,
+    "score": 89.98,
     "summary": {
       "text": "投入堂，是一座位於日本鳥取縣東伯郡三朝町的木結構古建築。該建築為三佛寺內院的佛堂，懸空建於三德山北側中腹的懸崖峭壁上，上方有天然的石壁遮擋風雨，屬於平安時代遺留至今為數不多的密教建築。",
       "lang": "zh",
@@ -10273,10 +10073,10 @@
     },
     "images": [
       {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d6/Sanbutsu-ji%2C_nageiredou-1-1.jpg/960px-Sanbutsu-ji%2C_nageiredou-1-1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Saigen Jiro",
-        "license": "CC0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Sanbutsu-ji,_nageiredou-1-1.jpg"
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/90/Japan_Tottori_MitokuSan_Nageiredo_DSC01248.jpg/960px-Japan_Tottori_MitokuSan_Nageiredo_DSC01248.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Copyright © 2003 David Monniaux",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Japan_Tottori_MitokuSan_Nageiredo_DSC01248.jpg"
       }
     ],
     "external_ids": {
@@ -10298,8 +10098,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q1993908",
@@ -10317,7 +10116,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 62.26,
+    "score": 62.09,
     "summary": {
       "text": "The Saji Observatory is located in Saji, Tottori, Japan. Distance from rotation axis and height above equatorial plane (in Earth radii): 0.81671 +0.57522. Longitude (degrees East): 134.1222",
       "lang": "en",
@@ -10348,7 +10147,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q20680055",
@@ -10369,7 +10168,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 56.15,
+    "score": 56.37,
     "summary": {
       "text": "水尻池（みずしりのいけ、みずしりいけ）は、鳥取県鳥取市にある池である。",
       "lang": "ja",
@@ -10386,14 +10185,7 @@
         "distance_m": 1160
       }
     ],
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8f/Mizusirinoike-air.jpg/960px-Mizusirinoike-air.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "㭍月例祭",
-        "license": "Public domain",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Mizusirinoike-air.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q20680055"
     },
@@ -10408,7 +10200,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q21652817",
@@ -10428,7 +10220,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 49.74,
+    "score": 49.92,
     "summary": {
       "text": "唐川湿原（からかわしつげん）は鳥取県岩美町にある低層湿原。標高370から400m前後の約1haあまりの範囲にいくつかの湿原が散在している。湿原一帯は「唐川のカキツバタ群落」として国の天然記念物に指定されている。",
       "lang": "ja",
@@ -10436,14 +10228,7 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [
-      {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/6/6b/Karakawawetland.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-        "author": "㭍月例祭",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Karakawawetland.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q21652817"
     },
@@ -10458,7 +10243,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q21652960",
@@ -10479,7 +10264,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 46.05,
+    "score": 45.92,
     "summary": {
       "text": "金峯山（金峰山、きんぶさん）は、鳥取県岩美町にある孤立峰で、山頂には三等三角点「滝ノ肩」（標高328.71m）が設置されている。",
       "lang": "ja",
@@ -10502,7 +10287,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q21654507",
@@ -10523,7 +10308,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 49.26,
+    "score": 49.31,
     "summary": {
       "text": "二上山（ふたがみやま、ふたかみやま）は、鳥取県岩美郡岩美町にある山。標高330m。中国百名山の一つ。",
       "lang": "ja",
@@ -10531,14 +10316,7 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ad/%E4%BA%8C%E4%B8%8A%E5%B1%B1%EF%BC%88%E9%B3%A5%E5%8F%96%E7%9C%8C%E5%B2%A9%E7%BE%8E%E7%94%BA%EF%BC%89.jpg/960px-%E4%BA%8C%E4%B8%8A%E5%B1%B1%EF%BC%88%E9%B3%A5%E5%8F%96%E7%9C%8C%E5%B2%A9%E7%BE%8E%E7%94%BA%EF%BC%89.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "ja:User:㭍月例祭",
-        "license": "Public domain",
-        "source_url": "https://commons.wikimedia.org/wiki/File:%E4%BA%8C%E4%B8%8A%E5%B1%B1%EF%BC%88%E9%B3%A5%E5%8F%96%E7%9C%8C%E5%B2%A9%E7%BE%8E%E7%94%BA%EF%BC%89.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q21654507"
     },
@@ -10553,7 +10331,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q21654793",
@@ -10574,7 +10352,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 55.77,
+    "score": 55.63,
     "summary": {
       "text": "Mount Misumi (三角山, Misumi-yama), also known as Mount Tokin (頭巾山, Tokin-yama) or Mount Tokkin (襟巾山, Tokkin-zan), is a mountain in Tottori (formerly Mochigase), Tottori Prefecture, Japan. It is one of the 100 Famous Mountains of Chūgoku and stands 516 metres (1,693 ft) tall.",
       "lang": "en",
@@ -10613,7 +10391,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q21751051",
@@ -10634,7 +10412,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 55.28,
+    "score": 55.34,
     "summary": {
       "text": "道の駅きなんせ岩美（みちのえき きなんせいわみ）は、鳥取県岩美郡岩美町新井（にい）にある国道9号の道の駅である。",
       "lang": "ja",
@@ -10675,7 +10453,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-29"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q21751053",
@@ -10696,7 +10474,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 50.93,
+    "score": 50.97,
     "summary": {
       "text": "道の駅奥大山（みちのえき おくだいせん）は、鳥取県日野郡江府町にある国道181号の道の駅である。",
       "lang": "ja",
@@ -10726,7 +10504,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q22118469",
@@ -10734,7 +10512,8 @@
       "ja": "感応寺",
       "kana": "かんのうじ",
       "romaji": "Kannoji",
-      "zh_tw": "感応寺"
+      "zh_tw": "感応寺",
+      "en": "Kano-ji Temple"
     },
     "kana_source": "wikipedia",
     "location": {
@@ -10748,7 +10527,7 @@
       "寺院"
     ],
     "featured": false,
-    "score": 31.97,
+    "score": 32.29,
     "summary": {
       "text": "感応寺（かんのうじ）は鳥取県米子市祇園町にある日蓮宗の寺院。山号は、常住山。旧本山は身延山久遠寺、奠師法縁。",
       "lang": "ja",
@@ -10799,7 +10578,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q245734",
@@ -10821,8 +10600,8 @@
     "tags": [
       "神社"
     ],
-    "featured": false,
-    "score": 68.73,
+    "featured": true,
+    "score": 68.82,
     "summary": {
       "text": "倭文神社是日本鳥取縣東伯郡湯梨濱町大字宮內的神社，社格是式內小社、伯耆國一宮、國幣小社和別表神社，別當寺可能是安樂寺，神宮寺則推測是乘蓮寺，主祭神是建葉槌命。",
       "lang": "zh",
@@ -10857,15 +10636,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e4/%E5%80%AD%E6%96%87%E7%A5%9E%E7%A4%BE%E3%81%AE%E4%BF%AF%E7%9E%B0%E5%9B%B3.jpg/960px-%E5%80%AD%E6%96%87%E7%A5%9E%E7%A4%BE%E3%81%AE%E4%BF%AF%E7%9E%B0%E5%9B%B3.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "国土地理院",
-        "license": "Attribution",
-        "source_url": "https://commons.wikimedia.org/wiki/File:%E5%80%AD%E6%96%87%E7%A5%9E%E7%A4%BE%E3%81%AE%E4%BF%AF%E7%9E%B0%E5%9B%B3.jpg"
-      }
-    }
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q245830",
@@ -10890,7 +10661,7 @@
       "重要文化財"
     ],
     "featured": false,
-    "score": 64.24,
+    "score": 64.17,
     "summary": {
       "text": "The Tottori Tōshō-gū (鳥取東照宮) is a Shinto shrine located in the city of Tottori, Tottori Prefecture, Japan. Until 2011, it was called the Ōchidani Jinja (樗谿神社). Four structures of the shrine, the Honden, Haiden and Heiden, and Karamon gate are designated National Important Cultural Properties. It is surrounded by a public park.",
       "lang": "en",
@@ -10921,7 +10692,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q245834",
@@ -10944,7 +10715,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 63.92,
+    "score": 63.87,
     "summary": {
       "text": "Nawa Jinja (名和神社) is a Shinto shrine in Daisen, Tottori Prefecture, Japan. It is celebrated for its cherry blossoms. It is one of the Fifteen Shrines of the Kenmu Restoration, dedicated to the memory of Nawa Nagatoshi.",
       "lang": "en",
@@ -10991,7 +10762,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q246447",
@@ -11014,7 +10785,7 @@
       "神社"
     ],
     "featured": true,
-    "score": 69.99,
+    "score": 69.95,
     "summary": {
       "text": "宇倍神社是日本鳥取縣鳥取市國府町宮下的神社，社格是名神大社、因幡國一宮、國幣中社和別表神社，別當寺可能是天護寺，主祭神是武內宿禰。氏子數目方面，根據《日本社寺大觀》記載是195戶，《鳥取縣神社誌》指是442戶，神社本廳出版的《神社名鑑》稱是400戶，《式內社調查報告》則是約550戶。",
       "lang": "zh",
@@ -11024,10 +10795,10 @@
     },
     "images": [
       {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/24/Ube-jinja%2C_haiden-1.jpg/960px-Ube-jinja%2C_haiden-1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Saigen Jiro",
-        "license": "CC0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Ube-jinja,_haiden-1.jpg"
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/53/Ube_Shrine_shaden.jpeg/960px-Ube_Shrine_shaden.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "nnh",
+        "license": "Public domain",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Ube_Shrine_shaden.jpeg"
       }
     ],
     "external_ids": {
@@ -11049,15 +10820,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/58/%E5%AE%87%E5%80%8D%E7%A5%9E%E7%A4%BE%E3%81%AE%E4%BF%AF%E7%9E%B0%E5%9B%B3.jpg/960px-%E5%AE%87%E5%80%8D%E7%A5%9E%E7%A4%BE%E3%81%AE%E4%BF%AF%E7%9E%B0%E5%9B%B3.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "国土地理院",
-        "license": "Attribution",
-        "source_url": "https://commons.wikimedia.org/wiki/File:%E5%AE%87%E5%80%8D%E7%A5%9E%E7%A4%BE%E3%81%AE%E4%BF%AF%E7%9E%B0%E5%9B%B3.jpg"
-      }
-    }
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q246463",
@@ -11068,7 +10831,7 @@
       "zh_tw": "金持神社",
       "en": "Kamochi Shrine"
     },
-    "kana_source": "wikipedia",
+    "kana_source": "wikidata",
     "location": {
       "lat": 35.215194,
       "lng": 133.459167
@@ -11080,7 +10843,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 65.12,
+    "score": 65.02,
     "summary": {
       "text": "Kamochi Jinja (金持神社) is an ancient Shinto shrine in Hino, Tottori Prefecture, Japan. Its name is regarded as auspicious.",
       "lang": "en",
@@ -11110,7 +10873,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q246469",
@@ -11133,7 +10896,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 60.41,
+    "score": 60.37,
     "summary": {
       "text": "Wakasa Jinja (若桜神社) is a Shinto shrine in Wakasa, Tottori Prefecture, Japan. The main festival is held in May.",
       "lang": "en",
@@ -11173,7 +10936,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q246667",
@@ -11197,7 +10960,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 68.57,
+    "score": 68.62,
     "summary": {
       "text": "Hakuto Shrine (白兎神社, Hakuto Jinja) is a Shinto shrine in Tottori, Tottori Prefecture, Japan. The shrine is dedicated to the Hare of Inaba, a legend originating in ancient Inaba province. In 1937, its trees were designated a Natural Monument.",
       "lang": "en",
@@ -11228,7 +10991,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q251160",
@@ -11239,7 +11002,7 @@
       "zh_tw": "大神山神社",
       "en": "Ōgamiyama Shrine"
     },
-    "kana_source": "wikipedia",
+    "kana_source": "wikidata",
     "location": {
       "lat": 35.418041,
       "lng": 133.405993
@@ -11252,7 +11015,7 @@
       "重要文化財"
     ],
     "featured": true,
-    "score": 69.77,
+    "score": 69.73,
     "summary": {
       "text": "Ōgamiyama Jinja (大神山神社, Ōgamiyama Jinja) is a Shinto shrine, in Daisen, Tottori, Japan. A number of its structures have been designated Important Cultural Properties.",
       "lang": "en",
@@ -11287,7 +11050,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q28685016",
@@ -11310,7 +11073,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 54.53,
+    "score": 54.77,
     "summary": {
       "text": "倭文神社（しとりじんじゃ）は、鳥取県鳥取市倭文にある神社。式内社で、旧社格は郷社。鳥取市南西部の倭文集落の西側にある山の中腹に鎮座する。",
       "lang": "ja",
@@ -11341,7 +11104,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q28691454",
@@ -11362,7 +11125,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 52.66,
+    "score": 53.31,
     "summary": {
       "text": "鳥取大学乾燥地研究センター（とっとりだいがくかんそうちけんきゅうせんたー、英称：Arid Land Research Center, Tottori University）は、鳥取県鳥取市にある鳥取大学所管の大学附置研究所であり、「乾燥地科学研究」の共同利用・共同研究拠点である。略称は「乾地研（かんちけん）」、「ALRC」。",
       "lang": "ja",
@@ -11392,7 +11155,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q2945110",
@@ -11413,7 +11176,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 55.1,
+    "score": 55.06,
     "summary": {
       "text": "Kamiyodo Hakuhō-no-Oka Exhibition Hall (上淀白鳳の丘展示館, Kamiyodo Hakuhō-no-oka tenjikan) opened in Yonago, Tottori Prefecture, Japan in 2011.  It replaced the Yonago Yodoe Folk History Museum (米子市淀江歴史民俗資料館), which closed in 2009. The three rooms of the exhibition hall display Yayoi decorated pottery, haniwa statues, fragments of early Buddhist wall painting from Kamiyodo Haiji, and a reconstruction of the temple kondō, with its paintings and sculptures.",
       "lang": "en",
@@ -11457,7 +11220,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q3012163",
@@ -11481,7 +11244,7 @@
       "重要文化財"
     ],
     "featured": true,
-    "score": 70.99,
+    "score": 71.05,
     "summary": {
       "text": "Daisen-ji (大山寺) is a Buddhist temple located in the town of Daisen, Tottori Prefecture, Japan. It belongs to the Tendai sect of Japanese Buddhism, and its honzon is a  statue of Jizo Bosatsu. The temple is built on the slopes of Daisen. The Amida-dō and other parts of the temple are designated National Important Cultural Properties. The temple precincts are protected as a National Historic Site",
       "lang": "en",
@@ -11512,8 +11275,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q3070802",
@@ -11534,7 +11296,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 67.43,
+    "score": 67.57,
     "summary": {
       "text": "Lake Tōgō (東郷池, Tōgō-ike) is a brackish lake located in the town of Yurihama, Tottori Prefecture in the San'in Region of Japan. It has a circumference of 12 kilometers and is separated from the Sea of Japan by a narrow coastal strip.",
       "lang": "en",
@@ -11578,7 +11340,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q3192451",
@@ -11602,7 +11364,7 @@
       "遺跡"
     ],
     "featured": false,
-    "score": 60.6,
+    "score": 60.72,
     "summary": {
       "text": "Kamiyodo temple ruins (上淀廃寺跡, Kamiyodo Haiji ato) is an archeological site  with the ruins of a Hakuhō period Buddhist temple located in the Yodoe neighborhood of the city of  Yonago, Tottori prefecture, in the San'in region of Japan. It was designated a National Historic Site in 1996, with the area under protection expanded in 2005. The current designated area is 25,560 square meters. The site is about a 20-minute walk from Yodoe Station on the JR West San'in Main Line.",
       "lang": "en",
@@ -11637,7 +11399,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q3192708",
@@ -11661,7 +11423,7 @@
       "名勝"
     ],
     "featured": false,
-    "score": 65.55,
+    "score": 65.35,
     "summary": {
       "text": "Kannon-in (観音院, Kannon-in), formally known as Fudarakusan Jigen-ji Kannon-in (補陀落山慈眼寺観音院), is a Buddhist temple in Uemachi district of the city of Tottori, Tottori Prefecture, Japan. Kannon-in was built early in the Edo period (1603 – 1868) and is noted for its Edo-style Japanese garden.",
       "lang": "en",
@@ -11705,7 +11467,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q3214989",
@@ -11726,7 +11488,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 71.0,
+    "score": 70.95,
     "summary": {
       "text": "湖山池（こやまいけ）は、鳥取県鳥取市北部にある汽水湖。「池」と付く湖沼の中では日本で最大の広さを持つ。また、姉妹湖として島根県の神西湖がある。",
       "lang": "ja",
@@ -11756,8 +11518,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q3471689",
@@ -11778,7 +11539,7 @@
       "國寶"
     ],
     "featured": true,
-    "score": 81.96,
+    "score": 82.04,
     "summary": {
       "text": "三佛寺是一座天台宗佛教寺廟，該寺位於日本鳥取縣東伯郡三朝町，建於慶雲3年（706年），在嘉祥2年（849年），由慈覺大師圓仁放置釋迦如來、阿彌陀如來及大日如來三座佛像進入寺廟裡面，所以「三佛寺」故名。山號由三德山而得名。",
       "lang": "zh",
@@ -11809,8 +11570,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q3505843",
@@ -11834,7 +11594,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 56.66,
+    "score": 56.45,
     "summary": {
       "text": "Suwa Jinja (諏訪神社) is a Shinto shrine in Chizu, Tottori Prefecture, Japan. Known from the time of the Mongol invasions, the shrine is celebrated for its Zelkova and momiji. The Honden dates to 1832. The Onbashira Festival, held in the Year of the Tiger and Year of the Rooster, sees pillars of Japanese cedar carried through the town.",
       "lang": "en",
@@ -11878,7 +11638,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q43593658",
@@ -11900,7 +11660,7 @@
       "寺院"
     ],
     "featured": false,
-    "score": 28.33,
+    "score": 28.76,
     "summary": {
       "text": "学成寺（がくじょうじ）は、鳥取県鳥取市新品治町にある日蓮宗の寺院。山号は光照山。旧本山は京都妙覚寺、奠師法縁(奠統会)。",
       "lang": "ja",
@@ -11944,7 +11704,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q43594163",
@@ -11967,7 +11727,7 @@
       "寺院"
     ],
     "featured": false,
-    "score": 28.95,
+    "score": 29.09,
     "summary": {
       "text": "妙本寺（みょうほんじ）は鳥取県米子市河岡にある日蓮宗の寺院。山号は具足山である。",
       "lang": "ja",
@@ -11995,7 +11755,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q43594203",
@@ -12018,7 +11778,7 @@
       "寺院"
     ],
     "featured": false,
-    "score": 25.23,
+    "score": 26.04,
     "summary": {
       "text": "朝日寺（ちょうにちじ）は、鳥取県鳥取市横枕にある日蓮宗の寺院で山号は医王山である。旧本山は芳心寺、達師法縁(繁珠会)。",
       "lang": "ja",
@@ -12053,7 +11813,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q4707166",
@@ -12077,7 +11837,7 @@
       "博物館"
     ],
     "featured": false,
-    "score": 56.1,
+    "score": 56.01,
     "summary": {
       "text": "The Tottori City Historical Museum (鳥取市歴史博物館, Tottori-shi Rekishi Hakubutsukan) opened in Tottori, Japan, in 2000 and is dedicated to the history of the city.",
       "lang": "en",
@@ -12112,7 +11872,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q4707652",
@@ -12136,7 +11896,7 @@
       "博物館"
     ],
     "featured": false,
-    "score": 64.93,
+    "score": 64.98,
     "summary": {
       "text": "鳥取縣立博物館是位於日本鳥取縣鳥取市的一座綜合博物館。",
       "lang": "zh",
@@ -12167,7 +11927,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q48755231",
@@ -12189,7 +11949,7 @@
       "寺院"
     ],
     "featured": false,
-    "score": 33.67,
+    "score": 33.76,
     "summary": {
       "text": "緑浄寺（ろくじょうじ）は、鳥取県鳥取市河原町にある真宗大谷派の寺院。山号は龍華山。本尊は阿弥陀如来。",
       "lang": "ja",
@@ -12233,7 +11993,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q48756159",
@@ -12256,7 +12016,7 @@
       "寺院"
     ],
     "featured": false,
-    "score": 33.14,
+    "score": 33.15,
     "summary": {
       "text": "浄福寺（じょうふくじ）は、鳥取県米子市淀江町にある真宗大谷派の寺院。山号は法蔵山。本尊は阿弥陀如来。",
       "lang": "ja",
@@ -12291,7 +12051,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q48763112",
@@ -12311,7 +12071,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 47.29,
+    "score": 47.51,
     "summary": {
       "text": "松ヶ枝町（まつがえちょう）は、鳥取県境港市の町名。郵便番号は684-0005（境港郵便局管区）。",
       "lang": "ja",
@@ -12335,14 +12095,7 @@
         "distance_m": 820
       }
     ],
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/33/Sakaiminato%2C_Tottori_Prefecture%2C_Japan_-_panoramio_%281%29.jpg/960px-Sakaiminato%2C_Tottori_Prefecture%2C_Japan_-_panoramio_%281%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "kajikawa",
-        "license": "CC BY 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Sakaiminato,_Tottori_Prefecture,_Japan_-_panoramio_(1).jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q48763112"
     },
@@ -12357,7 +12110,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q5375437",
@@ -12380,7 +12133,7 @@
       "主題樂園"
     ],
     "featured": true,
-    "score": 68.84,
+    "score": 68.8,
     "summary": {
       "text": "燕趙園，是日本鳥取縣湯梨濱町以中國皇家園林為主軸的主題樂園，它是日本最大的中式庭園。園區設施的一部份作為道之驛燕趙園營運。",
       "lang": "zh",
@@ -12424,7 +12177,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q55532159",
@@ -12447,7 +12200,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 53.38,
+    "score": 53.88,
     "summary": {
       "text": "聖神社（ひじりじんじゃ）は鳥取市行徳地区の西端部にある神社である。鳥取城と鹿野城を結ぶ鹿野往来（現在の県道41号・21号などに相当）という街道に面し、街道が鳥取市を流れる千代川に差し掛かる場所に位置する。",
       "lang": "ja",
@@ -12487,7 +12240,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q57744700",
@@ -12511,7 +12264,7 @@
       "博物館"
     ],
     "featured": false,
-    "score": 57.74,
+    "score": 57.52,
     "summary": {
       "text": "円形劇場くらよしフィギュアミュージアム（えんけいげきじょう くらよしフィギュアミュージアム）は鳥取県倉吉市にあるフィギュアやキャラクターグッズの博物館。",
       "lang": "ja",
@@ -12546,7 +12299,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q6080401",
@@ -12571,7 +12324,7 @@
       "重要文化財"
     ],
     "featured": false,
-    "score": 65.78,
+    "score": 65.76,
     "summary": {
       "text": "The Ishitani Residence (石谷家住宅, Ishitanike Jūtaku) is a family residence in Chizu, Tottori Prefecture, Japan. In the Edo period Chizu flourished as one of Japan's largest shukuba (宿場) or post stations, the Chizushuku (智頭宿) in Inaba Kaidō. The Ishitani family, an upper-class family, built a residence in the area. In the early 20th century the residence was greatly expanded by incorporating Western-style elements into the Japanese-style structure. The residence is spread across two floors and forty rooms.",
       "lang": "en",
@@ -12611,7 +12364,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q6202742",
@@ -12636,7 +12389,7 @@
       "重要文化財"
     ],
     "featured": true,
-    "score": 73.7,
+    "score": 73.49,
     "summary": {
       "text": "仁風閣是一座位於日本鳥取縣的宅第，該建築為明治時代的仿西式建築，重要文化財。1907年皇太子嘉仁親王在當地遊覽的行宮，也是鳥取藩主池田仲博侯爵別宮，現在做為遊覽古蹟。",
       "lang": "zh",
@@ -12671,15 +12424,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "winter": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/48/Jinpukaku_20170128-1.jpg/960px-Jinpukaku_20170128-1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Suicasmo",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Jinpukaku_20170128-1.jpg"
-      }
-    }
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q6355904",
@@ -12702,7 +12447,7 @@
       "博物館"
     ],
     "featured": false,
-    "score": 58.42,
+    "score": 58.62,
     "summary": {
       "text": "Yonago City Museum of Art (米子市美術館, Yonago-shi Bijutsukan) is a municipal art gallery in Yonago, Tottori Prefecture (Japan) that opened in 1983.",
       "lang": "en",
@@ -12753,7 +12498,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q69029500",
@@ -12836,7 +12581,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 73.1,
+    "score": 72.96,
     "summary": {
       "text": "冰之山（氷ノ山'，ひょうのせん）又稱須賀之山，是一座位於兵庫縣養父市與鳥取縣八頭郡若櫻町縣境處的山峰，海拔1510米，為日本二百名山之一。冰之山是兵庫縣的最高峰，是僅次於大山的中國地方第二高峰。山上設有供遊客遊玩的滑雪場。",
       "lang": "zh",
@@ -12862,15 +12607,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-10-02",
-    "season_images": {
-      "autumn": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/75/%E7%A7%8B%E8%89%B2%E3%81%AE%E6%B0%B7%E3%83%8E%E5%B1%B1_-_panoramio.jpg/960px-%E7%A7%8B%E8%89%B2%E3%81%AE%E6%B0%B7%E3%83%8E%E5%B1%B1_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "clear_and_sunny",
-        "license": "CC BY 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:%E7%A7%8B%E8%89%B2%E3%81%AE%E6%B0%B7%E3%83%8E%E5%B1%B1_-_panoramio.jpg"
-      }
-    }
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q6922199",
@@ -12891,7 +12628,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 59.62,
+    "score": 59.77,
     "summary": {
       "text": "Mount Mimuro (三室山, Mimuro-yama) is a mountain on the border of Shisō, Hyōgo Prefecture, and Wakasa, Tottori Prefecture, Japan. The height is 1,358.0 m (4,455 ft), and this mountains is the second highest mountain in Hyōgo Prefecture after Mount Hyōno.",
       "lang": "en",
@@ -12921,7 +12658,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q6922220",
@@ -12945,7 +12682,7 @@
       "史跡"
     ],
     "featured": true,
-    "score": 74.15,
+    "score": 74.25,
     "summary": {
       "text": "Mount Mitoku (三徳山, Mitoku-san) is a mountain located in Misasa, Tottori Prefecture. Mount Mitoku has an elevation of 900 m (2,953 ft). Mount Mitoku was known from ancient times as a place of both religious significance and scenic beauty. The mountain is home to Sanbutsu-ji, a historically significant temple designated an Important Treasure of Japan in 1952.",
       "lang": "en",
@@ -12975,7 +12712,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q6922351",
@@ -12996,7 +12733,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 66.37,
+    "score": 66.43,
     "summary": {
       "text": "Mount Nagi (那岐山, Nagi-san), is a mountain located on the border of Chizu, Tottori Prefecture, and Nagi, Okayama Prefecture, Japan. The other reading of this mountain's kanji is Nagisen.",
       "lang": "en",
@@ -13026,7 +12763,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q6933533",
@@ -13049,7 +12786,7 @@
       "史跡"
     ],
     "featured": false,
-    "score": 68.6,
+    "score": 69.64,
     "summary": {
       "text": "Mukibanda Yayoi Settlement Site (妻木晩田遺跡, Mukibanda-iseki) is an archaeological site with a large Yayoi period settlement remains, straddling the border between the municipalities of Yonago and Daisen, Tottori Prefecture in the San'in region of western Japan. The Mukibanda site was designated a National Historic Site in 1999.",
       "lang": "en",
@@ -13088,7 +12825,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q69388358",
@@ -13109,7 +12846,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 56.82,
+    "score": 56.76,
     "summary": {
       "text": "若松鉱山（わかまつこうざん）は、鳥取県日野郡日南町に所在し、1899年（明治32年）から1995年（平成7年）まで採掘が行われていた日本有数のクロム鉱山である。",
       "lang": "ja",
@@ -13117,14 +12854,7 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/51/Nichinan_wakamatsu.jpg/960px-Nichinan_wakamatsu.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Ynichikan",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Nichinan_wakamatsu.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q69388358"
     },
@@ -13139,7 +12869,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q7082719",
@@ -13162,7 +12892,7 @@
       "公園"
     ],
     "featured": false,
-    "score": 52.33,
+    "score": 52.6,
     "summary": {
       "text": "Okuhino Prefectural Natural Park (奥日野県立自然公園, Okuhino kenritsu shizen kōen) is a Prefectural Natural Park in southwest Tottori Prefecture, Japan. Established in 1994, the park spans the municipalities of Hino and Nichinan.",
       "lang": "en",
@@ -13181,7 +12911,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q715498",
@@ -13202,7 +12932,7 @@
     "themes": [],
     "tags": [],
     "featured": true,
-    "score": 83.73,
+    "score": 83.67,
     "summary": {
       "text": "大山是日本中國地方最高峰，成層複成火山，其範圍橫跨鳥取縣的大山町、伯耆町、江府町、琴浦町、米子市、倉吉市、北榮町、岡山縣真庭市等地，主峰劍峰標高1,729公尺是中國地方的最高峰。被登山家深田久彌評選日本百名山之一。山體東西長約40km、南北長約35km、總面積超過120km2。指定為大山隱岐國立公園。也稱作伯耆大山（ほうきだいせん）、伯耆富士（ほうきふじ）、出雲富士（いずもふじ）。",
       "lang": "zh",
@@ -13232,21 +12962,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-10-02",
-    "season_images": {
-      "autumn": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/10/Daisen_highest_peak.jpg/960px-Daisen_highest_peak.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Mass Ave 975 at English Wikipedia",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Daisen_highest_peak.jpg"
-      },
-      "panorama": {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/e/ef/Daisen_2007-09-19.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-        "author": "BehBeh",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Daisen_2007-09-19.jpg"
-      }
-    }
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q7415842",
@@ -13268,8 +12984,8 @@
     "tags": [
       "美術館"
     ],
-    "featured": true,
-    "score": 68.74,
+    "featured": false,
+    "score": 68.75,
     "summary": {
       "text": "砂之美術館是一間位於日本鳥取縣鳥取市以沙雕為主題的美術館。",
       "lang": "zh",
@@ -13299,7 +13015,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q780905",
@@ -13320,7 +13036,7 @@
     "themes": [],
     "tags": [],
     "featured": true,
-    "score": 85.56,
+    "score": 85.48,
     "summary": {
       "text": "鳥取沙丘是位於日本鳥取縣鳥取市日本海海岸的沙丘，東西長16公里，南北寬2.4公里，最大的沙丘落差約有90公尺。",
       "lang": "zh",
@@ -13351,21 +13067,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "winter": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/70/Tottori_Sand_Dunes_20170128-1.jpg/960px-Tottori_Sand_Dunes_20170128-1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Suicasmo",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Tottori_Sand_Dunes_20170128-1.jpg"
-      },
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/07/Tottori_Sand_Dune.jpg/960px-Tottori_Sand_Dune.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "百楽兎",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Tottori_Sand_Dune.jpg"
-      }
-    }
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q7828500",
@@ -13386,7 +13088,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 45.23,
+    "score": 45.2,
     "summary": {
       "text": "Tottori Athletic Stadium (鳥取県立布勢総合運動公園陸上競技場, Tottori kenritsu Fuse sōgōundōkōen rikujō kyōgiba) is a multi-purpose stadium in the city of Tottori, Tottori Prefecture, Japan.",
       "lang": "en",
@@ -13421,7 +13123,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q7828504",
@@ -13441,7 +13143,7 @@
       "美術館"
     ],
     "featured": false,
-    "score": 57.65,
+    "score": 57.43,
     "summary": {
       "text": "The Tottori Folk Crafts Museum (鳥取民芸美術館, Tottori Mingei Bijutsukan) opened in Tottori, Japan, in 1949. It was established as the Tottori Mingeikan by Yoshida Shōya (吉田璋也), local advocate of the mingei folk craft movement, who formed a craft guild in 1931 and opened the craft shop \"Takumi\" in the city the following year. In 1933, Yoshida opened a shop by the same name in Tokyo's Ginza district. Both shops are still in operation as of 2023.",
       "lang": "en",
@@ -13481,7 +13183,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q7828506",
@@ -13501,7 +13203,7 @@
       "博物館"
     ],
     "featured": false,
-    "score": 66.5,
+    "score": 66.27,
     "summary": {
       "text": "鳥取二十世紀梨紀念館，又稱梨兒童館（日文：なしっこ館），是位於日本鳥取縣倉吉市駄經寺町地區倉吉公園廣場內，以日本梨為主題的博物館。",
       "lang": "zh",
@@ -13532,7 +13234,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q7899552",
@@ -13553,7 +13255,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 69.88,
+    "score": 69.89,
     "summary": {
       "text": "浦富海岸是位於日本鳥取縣巖美郡巖美町的一處長約15公里的溺灣海岸，現為日本國指定名勝和天然記念物，並被列入日本百景、日本的白砂青松百選、日本砂灘百選。因其景觀和宮城縣松島頗為相似，因此又有「山陰的松島」之稱。海岸東部是沙灘海岸，在夏季是海水浴場。",
       "lang": "zh",
@@ -13561,14 +13263,7 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a7/%E6%B5%A6%E5%AF%8C%E6%B5%B7%E5%B2%B8%E3%80%81%E9%B4%A8%E3%82%AC%E7%A3%AF.jpg/960px-%E6%B5%A6%E5%AF%8C%E6%B5%B7%E5%B2%B8%E3%80%81%E9%B4%A8%E3%82%AC%E7%A3%AF.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Yuniko",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:%E6%B5%A6%E5%AF%8C%E6%B5%B7%E5%B2%B8%E3%80%81%E9%B4%A8%E3%82%AC%E7%A3%AF.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q7899552"
     },
@@ -13583,7 +13278,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q83528901",
@@ -13606,7 +13301,7 @@
       "博物館"
     ],
     "featured": false,
-    "score": 49.16,
+    "score": 49.24,
     "summary": {
       "text": "塩谷定好写真記念館（しおたにていこうしゃしんきねんかん）は、鳥取県東伯郡琴浦町にある写真家塩谷定好の個人美術館である。",
       "lang": "ja",
@@ -13645,7 +13340,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q85883321",
@@ -13666,7 +13361,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 49.3,
+    "score": 49.26,
     "summary": {
       "text": "船通山のイチイ（せんつうざんのいちい）は、鳥取県日南町大字上萩山にある巨大なイチイの古木である。国の天然記念物に指定され、比婆道後帝釈国定公園内にある。",
       "lang": "ja",
@@ -13674,14 +13369,7 @@
       "license": "CC BY-SA 4.0",
       "fetched_at": "2026-09-28"
     },
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c9/%E8%88%B9%E9%80%9A%E5%B1%B1%E3%81%AE%E3%82%A4%E3%83%81%E3%82%A401.jpg/960px-%E8%88%B9%E9%80%9A%E5%B1%B1%E3%81%AE%E3%82%A4%E3%83%81%E3%82%A401.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Pararerumaimai",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:%E8%88%B9%E9%80%9A%E5%B1%B1%E3%81%AE%E3%82%A4%E3%83%81%E3%82%A401.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q85883321"
     },
@@ -13696,7 +13384,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q9047014",
@@ -13719,7 +13407,7 @@
       "博物館"
     ],
     "featured": false,
-    "score": 66.29,
+    "score": 66.39,
     "summary": {
       "text": "The Shoji Ueda Museum of Photography, is a museum in Hōki, Tottori, Japan that is solely dedicated to exhibiting and archiving the work of the photographer Shoji Ueda.",
       "lang": "en",
@@ -13754,7 +13442,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q954100",
@@ -13776,7 +13464,7 @@
       "島"
     ],
     "featured": false,
-    "score": 40.16,
+    "score": 40.0,
     "summary": {
       "text": "青島（あおしま）は、鳥取県鳥取市の湖山池南部に浮かぶ無人島である。",
       "lang": "ja",
@@ -13806,7 +13494,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q97181608",
@@ -13829,7 +13517,7 @@
       "神社"
     ],
     "featured": false,
-    "score": 44.41,
+    "score": 44.36,
     "summary": {
       "text": "国坂神社（くにさかじんじゃ）は、鳥取県東伯郡北栄町にある神社である。創建は837年以前と考えられている。",
       "lang": "ja",
@@ -13848,7 +13536,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   },
   {
     "id": "wd-Q97199225",
@@ -13869,7 +13557,7 @@
     "themes": [],
     "tags": [],
     "featured": false,
-    "score": 53.36,
+    "score": 53.42,
     "summary": {
       "text": "大山町所子（だいせんちょうところご）は、鳥取県西伯郡大山町にある重要伝統的建造物群保存地区。大山町所子の一部、約25.8haの範囲である。",
       "lang": "ja",
@@ -13886,14 +13574,7 @@
         "distance_m": 860
       }
     ],
-    "images": [
-      {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9c/Kadowaki_Residence.jpg/960px-Kadowaki_Residence.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Flow in edgewise",
-        "license": "CC BY 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Kadowaki_Residence.jpg"
-      }
-    ],
+    "images": [],
     "external_ids": {
       "wikidata": "Q97199225"
     },
@@ -13908,6 +13589,6 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28"
+    "updated_at": "2026-10-04"
   }
 ]
