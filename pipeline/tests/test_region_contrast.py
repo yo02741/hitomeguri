@@ -138,7 +138,7 @@ def test_visited_contrast() -> None:
     _fail(bad, "去過色 < 4.5:1")
 
 
-# 例外的下限（主題色, 底）→ 比值。茶在江戶、昭和偏黃的陸地上原本只有 2.94，已在 theme.css 加深，不再有例外。
+# 例外的下限（主題色, 底）→ 比值。目前沒有例外。
 MARKER_FLOOR: dict[tuple[str, str], float] = {}
 
 
@@ -174,19 +174,6 @@ def test_fixed_colors_are_read() -> None:
     fixed = fixed_colors()
     assert set(fixed) == set(ERAS)
     for era, f in fixed.items():
-        for key in ("visited", "visited-tint", "white", "danger", "t-tea", "t-pokemon"):
+        for key in ("visited", "visited-tint", "white", "danger", "t-pokemon"):
             assert key in f, (era, key)
-    assert sum(1 for k in fixed["reiwa"] if k.startswith("t-")) >= 5
-
-
-@pytest.mark.parametrize("era", ["edo", "showa"])
-def test_tea_token_on_map(era: str) -> None:
-    """t-tea 在江戶、昭和的陸地上 ≥ 3:1（47 縣＋全國），而且是年代自己的值，不是改了令和。
-
-    t-tea 依使用者決定保留，但主題小店刪除後沒有介面用到（DESIGN §3.2）；
-    這裡只保證之後再用到時顏色不必重調。
-    """
-    fixed = fixed_colors()
-    assert fixed[era]["t-tea"] != fixed["reiwa"]["t-tea"]
-    worst = min(contrast(fixed[era]["t-tea"], c["map"]) for e, _, c in palettes() if e == era)
-    assert worst >= 3, f"{era} t-tea {fixed[era]['t-tea']} 對陸地最低 {worst:.2f}"
+    assert sum(1 for k in fixed["reiwa"] if k.startswith("t-")) >= 4
