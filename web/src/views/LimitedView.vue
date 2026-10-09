@@ -36,8 +36,9 @@ const gallery = ref<InstanceType<typeof FindGallery> | null>(null)
         <h2 id="finds-title" class="flex items-baseline gap-1.5 text-h3 font-black tracking-title">
           截圖<span v-if="finds.finds.length" class="font-num text-body font-normal tracking-normal text-sub">{{ finds.finds.length }}</span>
         </h2>
+        <!-- 截圖存在帳號裡：未登入時不放「新增」，下面那一行寫需要登入 -->
         <button
-          v-if="userStore.canSignIn"
+          v-if="userStore.user"
           type="button"
           class="ml-auto h-10 rounded-control bg-region-strong px-4 text-body-sm font-bold text-white active:translate-y-px pointer-coarse:h-tap"
           @click="gallery?.add()"

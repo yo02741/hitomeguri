@@ -61,7 +61,7 @@ watch(
 )
 
 const tabs = [
-  { to: '/', label: '探索', match: ['home', 'explore', 'map', 'region'] },
+  { to: '/', label: '探索', match: ['home', 'explore', 'map', 'region', 'limited'] },
   { to: '/trips', label: '行程', match: ['trips', 'trip', 'prep', 'practice', 'book'] },
   { to: '/log', label: '紀錄', match: ['log', 'cards', 'keiken', 'avatar', 'achievements'] },
 ]
