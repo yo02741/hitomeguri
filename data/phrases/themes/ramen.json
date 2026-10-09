@@ -11,7 +11,13 @@
     "romaji": "Ajitama",
     "zh_tw": "溏心蛋",
     "priority": 3,
-    "reviewed": false
+    "reviewed": false,
+    "source": {
+      "url": "https://japaneseclass.jp/notes/open/1249",
+      "quote": "味付玉子, 味付け玉子, 半熟味付け玉子, 味玉",
+      "checked": "2026-10-09",
+      "via": "search"
+    }
   },
   {
     "id": "ramen-chashu",
@@ -25,7 +31,13 @@
     "romaji": "Chāshū",
     "zh_tw": "叉燒",
     "priority": 3,
-    "reviewed": false
+    "reviewed": false,
+    "source": {
+      "url": "https://www.weblio.jp/content/叉焼",
+      "quote": "チャーシュー【叉焼】",
+      "checked": "2026-10-09",
+      "via": "search"
+    }
   },
   {
     "id": "ramen-kaedama",
@@ -40,7 +52,13 @@
     "zh_tw": "加麵",
     "note_zh": "博多豚骨拉麵常見：只加麵，湯不加",
     "priority": 2,
-    "reviewed": false
+    "reviewed": false,
+    "source": {
+      "url": "https://matcha-jp.com/jp/6559",
+      "quote": "「替え玉お願いします」",
+      "checked": "2026-10-09",
+      "via": "search"
+    }
   },
   {
     "id": "ramen-katasa",
@@ -59,7 +77,13 @@
       "zh_tw": "普通"
     },
     "priority": 1,
-    "reviewed": false
+    "reviewed": false,
+    "source": {
+      "url": "https://nativecamp.net/heync/question/82666",
+      "quote": "麺の硬さはどうしますか?",
+      "checked": "2026-10-09",
+      "via": "search"
+    }
   },
   {
     "id": "ramen-katasa-read",
@@ -73,7 +97,13 @@
     "romaji": "Katame / futsū / yawarakame",
     "zh_tw": "偏硬／普通／偏軟",
     "priority": 1,
-    "reviewed": false
+    "reviewed": false,
+    "source": {
+      "url": "https://news.allabout.co.jp/articles/o/47020/",
+      "quote": "「はりがね」「バリかた」「かため」…「ふつう」",
+      "checked": "2026-10-09",
+      "via": "search"
+    }
   },
   {
     "id": "ramen-koime",
@@ -87,7 +117,13 @@
     "romaji": "Koime / usume",
     "zh_tw": "味道重／淡",
     "priority": 3,
-    "reviewed": false
+    "reviewed": false,
+    "source": {
+      "url": "https://www.tkgje.jp/entries/29000/29057_usume.html",
+      "quote": "薄め（うすめ）… こいめ",
+      "checked": "2026-10-09",
+      "via": "search"
+    }
   },
   {
     "id": "ramen-koisa",
@@ -115,12 +151,18 @@
       "situation": "ramen_shop_order"
     },
     "direction": "read",
-    "ja": "並",
-    "kana": "なみ",
-    "romaji": "Nami",
+    "ja": "並盛り",
+    "kana": "なみもり",
+    "romaji": "Namimori",
     "zh_tw": "普通份量",
     "priority": 2,
-    "reviewed": false
+    "reviewed": false,
+    "source": {
+      "url": "https://www.tkgje.jp/entries/15000/15014_tokumori.html",
+      "quote": "並盛り、大盛り、特盛り",
+      "checked": "2026-10-09",
+      "via": "search"
+    }
   },
   {
     "id": "ramen-ninniku",
@@ -139,7 +181,13 @@
       "zh_tw": "要／不要"
     },
     "priority": 2,
-    "reviewed": false
+    "reviewed": false,
+    "source": {
+      "url": "https://www.j-cast.com/2023/04/13459808.html?p=2",
+      "quote": "「ニンニク入れますか?」",
+      "checked": "2026-10-09",
+      "via": "search"
+    }
   },
   {
     "id": "ramen-omori",
@@ -153,7 +201,13 @@
     "romaji": "Ōmori de",
     "zh_tw": "大碗",
     "priority": 2,
-    "reviewed": false
+    "reviewed": false,
+    "source": {
+      "url": "https://www.lang.nagoya-u.ac.jp/nichigen/menu5_folder/kyozai/2000/J-Foods/TABEYOO/SERVING/OOMORI.HTM",
+      "quote": "[大盛り] / [中盛り] / [小盛り]",
+      "checked": "2026-10-09",
+      "via": "search"
+    }
   },
   {
     "id": "ramen-shokken",
@@ -168,7 +222,13 @@
     "zh_tw": "餐券",
     "note_zh": "很多拉麵店要先在門口的販賣機買券再入座",
     "priority": 1,
-    "reviewed": false
+    "reviewed": false,
+    "source": {
+      "url": "https://www.tkgje.jp/entries/19500/19934_shokken.html",
+      "quote": "食券（しょっけん）… 食券を渡す",
+      "checked": "2026-10-09",
+      "via": "search"
+    }
   },
   {
     "id": "ramen-shokken-hear",
@@ -182,7 +242,13 @@
     "romaji": "Shokken o onegai shimasu",
     "zh_tw": "請給我餐券",
     "priority": 1,
-    "reviewed": false
+    "reviewed": false,
+    "source": {
+      "url": "https://www.japanesepod101.com/lesson/innovative-japanese-culture-for-absolute-beginners-7-how-to-order-food-at-a-ramen-restaurant?lp=13",
+      "quote": "いらっしゃいませ。食券、お願いします。",
+      "checked": "2026-10-09",
+      "via": "search"
+    }
   },
   {
     "id": "ramen-topping",
@@ -196,6 +262,12 @@
     "romaji": "Toppingu",
     "zh_tw": "加料",
     "priority": 2,
-    "reviewed": false
+    "reviewed": false,
+    "source": {
+      "url": "https://www.tkgje.jp/entries/17500/17674_toppingu.html",
+      "quote": "トッピング追加する",
+      "checked": "2026-10-09",
+      "via": "search"
+    }
   }
 ]

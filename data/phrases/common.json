@@ -10,7 +10,13 @@
     "romaji": "Daijōbu desu",
     "zh_tw": "不用了（婉拒）",
     "priority": 1,
-    "reviewed": false
+    "reviewed": false,
+    "source": {
+      "url": "https://www.tsunagujapan.com/12-phrases-at-convenience-stores-with-responses/",
+      "quote": "Daijobu desu",
+      "checked": "2026-10-09",
+      "via": "search"
+    }
   },
   {
     "id": "common-general-kinen",
@@ -23,7 +29,13 @@
     "romaji": "Kin'en",
     "zh_tw": "禁菸",
     "priority": 3,
-    "reviewed": false
+    "reviewed": false,
+    "source": {
+      "url": "https://dictionary.goo.ne.jp/word/%E7%A6%81%E7%85%99/",
+      "quote": "タバコを吸うのを禁止すること。「—車」",
+      "checked": "2026-10-09",
+      "via": "search"
+    }
   },
   {
     "id": "common-general-kore",
@@ -36,7 +48,13 @@
     "romaji": "Kore o kudasai",
     "zh_tw": "請給我這個",
     "priority": 1,
-    "reviewed": false
+    "reviewed": false,
+    "source": {
+      "url": "https://www.tsunagujapan.com/japanese-phrases-shopping-in-japan-beginner-level/",
+      "quote": "Kore o kudasai (これをください): I'll take this",
+      "checked": "2026-10-09",
+      "via": "search"
+    }
   },
   {
     "id": "common-general-shashin",
@@ -49,7 +67,13 @@
     "romaji": "Shashin o totte mo ii desu ka?",
     "zh_tw": "可以拍照嗎？",
     "priority": 2,
-    "reviewed": false
+    "reviewed": false,
+    "source": {
+      "url": "https://ejje.weblio.jp/content/%E5%86%99%E7%9C%9F%E6%92%AE%E3%81%A3%E3%81%A6%E3%82%82%E3%81%84%E3%81%84%E3%81%A7%E3%81%99%E3%81%8B",
+      "quote": "写真を撮ってもいいですか？ Is it OK if I take pictures?",
+      "checked": "2026-10-09",
+      "via": "search"
+    }
   },
   {
     "id": "common-general-shosho",
@@ -62,7 +86,13 @@
     "romaji": "Shōshō o-machi kudasai",
     "zh_tw": "請稍等",
     "priority": 1,
-    "reviewed": false
+    "reviewed": false,
+    "source": {
+      "url": "https://ejje.weblio.jp/content/%E5%B0%91%E3%80%85%E3%81%8A%E5%BE%85%E3%81%A1%E3%81%8F%E3%81%A0%E3%81%95%E3%81%84",
+      "quote": "少々お待ちください",
+      "checked": "2026-10-09",
+      "via": "search"
+    }
   },
   {
     "id": "common-general-sumimasen",
@@ -75,7 +105,13 @@
     "romaji": "Sumimasen",
     "zh_tw": "不好意思（叫人、道歉）",
     "priority": 1,
-    "reviewed": false
+    "reviewed": false,
+    "source": {
+      "url": "https://kotobank.jp/word/%E6%B8%88%E3%81%BF%E3%81%BE%E3%81%9B%E3%82%93-543626",
+      "quote": "相手に謝罪・感謝・依頼などをするときに用いる。",
+      "checked": "2026-10-09",
+      "via": "search"
+    }
   },
   {
     "id": "common-general-toire",
@@ -88,7 +124,13 @@
     "romaji": "Toire wa doko desu ka?",
     "zh_tw": "廁所在哪裡？",
     "priority": 1,
-    "reviewed": false
+    "reviewed": false,
+    "source": {
+      "url": "https://www.japanesepod101.com/lesson/survival-phrases-s2-6-wheres-the-bathroom",
+      "quote": "Toire wa doko desu ka?",
+      "checked": "2026-10-09",
+      "via": "search"
+    }
   },
   {
     "id": "common-konbini-atatame",
@@ -107,7 +149,13 @@
     },
     "note_zh": "便當、飯糰結帳時會問",
     "priority": 1,
-    "reviewed": false
+    "reviewed": false,
+    "source": {
+      "url": "https://www.tsunagujapan.com/12-phrases-at-convenience-stores-with-responses/",
+      "quote": "お弁当（こちら）温めますか？",
+      "checked": "2026-10-09",
+      "via": "search"
+    }
   },
   {
     "id": "common-konbini-fukuro",
@@ -115,9 +163,9 @@
       "situation": "konbini_checkout"
     },
     "direction": "hear",
-    "ja": "袋はご利用ですか？",
-    "kana": "ふくろはごりようですか？",
-    "romaji": "Fukuro wa go-riyō desu ka?",
+    "ja": "袋はご入用ですか？",
+    "kana": "ふくろはごいりようですか？",
+    "romaji": "Fukuro wa go-iriyō desu ka?",
     "zh_tw": "需要袋子嗎？",
     "answer_hint": {
       "ja": "大丈夫です／お願いします",
@@ -126,7 +174,13 @@
     },
     "note_zh": "袋子要另外付費",
     "priority": 1,
-    "reviewed": false
+    "reviewed": false,
+    "source": {
+      "url": "https://www.tsunagujapan.com/12-phrases-at-convenience-stores-with-responses/",
+      "quote": "袋はご入用ですか。",
+      "checked": "2026-10-09",
+      "via": "search"
+    }
   },
   {
     "id": "common-konbini-hashi",
@@ -134,17 +188,23 @@
       "situation": "konbini_checkout"
     },
     "direction": "hear",
-    "ja": "お箸はお付けしますか？",
-    "kana": "おはしはおつけしますか？",
-    "romaji": "O-hashi wa o-tsuke shimasu ka?",
-    "zh_tw": "需要筷子嗎？",
+    "ja": "お箸をお付けしますか？",
+    "kana": "おはしをおつけしますか？",
+    "romaji": "O-hashi o o-tsuke shimasu ka?",
+    "zh_tw": "需要附筷子嗎？",
     "answer_hint": {
       "ja": "お願いします／大丈夫です",
       "kana": "おねがいします／だいじょうぶです",
       "zh_tw": "麻煩你／不用了"
     },
     "priority": 2,
-    "reviewed": false
+    "reviewed": false,
+    "source": {
+      "url": "https://www.tsunagujapan.com/japanese-phrases-convenience-store-edition/",
+      "quote": "お箸をお付けしますか。 [Ohashi wo otsukeshimasuka?]",
+      "checked": "2026-10-09",
+      "via": "search"
+    }
   },
   {
     "id": "common-konbini-point",
@@ -162,7 +222,13 @@
       "zh_tw": "沒有"
     },
     "priority": 1,
-    "reviewed": false
+    "reviewed": false,
+    "source": {
+      "url": "https://www.tsunagujapan.com/12-phrases-at-convenience-stores-with-responses/",
+      "quote": "ポイントカードはお持ちですか？",
+      "checked": "2026-10-09",
+      "via": "search"
+    }
   },
   {
     "id": "common-pack-chiiki",
@@ -175,7 +241,13 @@
     "romaji": "Chiiki gentei",
     "zh_tw": "地區限定",
     "priority": 2,
-    "reviewed": false
+    "reviewed": false,
+    "source": {
+      "url": "https://ejje.weblio.jp/content/%E5%9C%B0%E5%9F%9F%E9%99%90%E5%AE%9A",
+      "quote": "地域限定",
+      "checked": "2026-10-09",
+      "via": "search"
+    }
   },
   {
     "id": "common-pack-kisetsu",
@@ -188,7 +260,13 @@
     "romaji": "Kisetsu gentei",
     "zh_tw": "季節限定",
     "priority": 2,
-    "reviewed": false
+    "reviewed": false,
+    "source": {
+      "url": "https://ejje.weblio.jp/content/%E5%AD%A3%E7%AF%80%E9%99%90%E5%AE%9A",
+      "quote": "季節限定",
+      "checked": "2026-10-09",
+      "via": "search"
+    }
   },
   {
     "id": "common-pack-shinhatsu",
@@ -201,7 +279,13 @@
     "romaji": "Shin-hatsubai",
     "zh_tw": "新上市",
     "priority": 2,
-    "reviewed": false
+    "reviewed": false,
+    "source": {
+      "url": "https://ejje.weblio.jp/content/%E6%96%B0%E7%99%BA%E5%A3%B2",
+      "quote": "新発売",
+      "checked": "2026-10-09",
+      "via": "search"
+    }
   },
   {
     "id": "common-pack-shomi",
@@ -214,7 +298,13 @@
     "romaji": "Shōmi kigen",
     "zh_tw": "最佳賞味期限",
     "priority": 2,
-    "reviewed": false
+    "reviewed": false,
+    "source": {
+      "url": "https://www.maff.go.jp/j/syouan/syoku_anzen/bimi/r0212/limit.html",
+      "quote": "賞味期限は「おいしく食べられる期限」",
+      "checked": "2026-10-09",
+      "via": "search"
+    }
   },
   {
     "id": "common-pack-suryo",
@@ -227,7 +317,13 @@
     "romaji": "Sūryō gentei",
     "zh_tw": "數量限定",
     "priority": 3,
-    "reviewed": false
+    "reviewed": false,
+    "source": {
+      "url": "https://ejje.weblio.jp/content/%E6%95%B0%E9%87%8F%E9%99%90%E5%AE%9A",
+      "quote": "数量限定",
+      "checked": "2026-10-09",
+      "via": "search"
+    }
   },
   {
     "id": "common-pay-card",
@@ -240,7 +336,13 @@
     "romaji": "Kādo wa tsukaemasu ka?",
     "zh_tw": "可以刷卡嗎？",
     "priority": 1,
-    "reviewed": false
+    "reviewed": false,
+    "source": {
+      "url": "https://ejje.weblio.jp/content/%E3%82%AB%E3%83%BC%E3%83%89%E3%81%AF%E4%BD%BF%E3%81%88%E3%81%BE%E3%81%99%E3%81%8B%E3%80%82",
+      "quote": "カードは使えますか。",
+      "checked": "2026-10-09",
+      "via": "search"
+    }
   },
   {
     "id": "common-pay-how",
@@ -271,7 +373,13 @@
     "romaji": "Zeikomi",
     "zh_tw": "含稅",
     "priority": 1,
-    "reviewed": false
+    "reviewed": false,
+    "source": {
+      "url": "https://kotobank.jp/word/%E7%A8%8E%E8%BE%BC-2054394",
+      "quote": "給料や代金などに、税金の分が含まれていること。",
+      "checked": "2026-10-09",
+      "via": "search"
+    }
   },
   {
     "id": "common-price-zeinuki",
@@ -284,7 +392,13 @@
     "romaji": "Zeinuki",
     "zh_tw": "未稅",
     "priority": 1,
-    "reviewed": false
+    "reviewed": false,
+    "source": {
+      "url": "https://ejje.weblio.jp/content/%E7%A8%8E%E6%8A%9C",
+      "quote": "税抜",
+      "checked": "2026-10-09",
+      "via": "search"
+    }
   },
   {
     "id": "common-rest-kaikei",
@@ -297,7 +411,13 @@
     "romaji": "O-kaikei onegai shimasu",
     "zh_tw": "麻煩結帳",
     "priority": 1,
-    "reviewed": false
+    "reviewed": false,
+    "source": {
+      "url": "https://livejapan.com/en/article-a0002997/",
+      "quote": "お会計お願いします（Okaikei onegai shimasu）",
+      "checked": "2026-10-09",
+      "via": "search"
+    }
   },
   {
     "id": "common-rest-nanmei",
@@ -315,7 +435,13 @@
       "zh_tw": "兩位"
     },
     "priority": 1,
-    "reviewed": false
+    "reviewed": false,
+    "source": {
+      "url": "https://livejapan.com/en/article-a0002997/",
+      "quote": "何名様ですか？",
+      "checked": "2026-10-09",
+      "via": "search"
+    }
   },
   {
     "id": "common-rest-reji",
@@ -328,7 +454,13 @@
     "romaji": "O-kaikei wa reji de onegai shimasu",
     "zh_tw": "請到收銀台結帳",
     "priority": 2,
-    "reviewed": false
+    "reviewed": false,
+    "source": {
+      "url": "https://www.city.gifu.lg.jp/_res/projects/default_project/_page_/001/005/446/yubisashi_english_1.pdf",
+      "quote": "お会計はレジでお願いします。 Please pay at the cash register.",
+      "checked": "2026-10-09",
+      "via": "search"
+    }
   },
   {
     "id": "common-rest-tennai",
@@ -346,7 +478,13 @@
       "zh_tw": "內用／外帶"
     },
     "priority": 1,
-    "reviewed": false
+    "reviewed": false,
+    "source": {
+      "url": "https://livejapan.com/en/article-a0002997/",
+      "quote": "店内でお召し上がりですか？",
+      "checked": "2026-10-09",
+      "via": "search"
+    }
   },
   {
     "id": "common-shop-eigyochu",
@@ -359,7 +497,13 @@
     "romaji": "Eigyō-chū",
     "zh_tw": "營業中",
     "priority": 2,
-    "reviewed": false
+    "reviewed": false,
+    "source": {
+      "url": "https://ejje.weblio.jp/content/%E5%96%B6%E6%A5%AD%E4%B8%AD",
+      "quote": "営業中",
+      "checked": "2026-10-09",
+      "via": "search"
+    }
   },
   {
     "id": "common-shop-genkin",
@@ -372,7 +516,13 @@
     "romaji": "Genkin nomi",
     "zh_tw": "只收現金",
     "priority": 1,
-    "reviewed": false
+    "reviewed": false,
+    "source": {
+      "url": "https://ejje.weblio.jp/content/%E7%8F%BE%E9%87%91%E3%81%AE%E3%81%BF",
+      "quote": "現金のみ",
+      "checked": "2026-10-09",
+      "via": "search"
+    }
   },
   {
     "id": "common-shop-junbichu",
@@ -385,7 +535,13 @@
     "romaji": "Junbi-chū",
     "zh_tw": "準備中（尚未營業）",
     "priority": 2,
-    "reviewed": false
+    "reviewed": false,
+    "source": {
+      "url": "https://ejje.weblio.jp/content/%E6%BA%96%E5%82%99%E4%B8%AD",
+      "quote": "準備中",
+      "checked": "2026-10-09",
+      "via": "search"
+    }
   },
   {
     "id": "common-shop-menzei",
@@ -393,13 +549,19 @@
       "situation": "shopping"
     },
     "direction": "say",
-    "ja": "免税できますか？",
-    "kana": "めんぜいできますか？",
-    "romaji": "Menzei dekimasu ka?",
-    "zh_tw": "可以免稅嗎？",
+    "ja": "免税手続きはできますか？",
+    "kana": "めんぜいてつづきはできますか？",
+    "romaji": "Menzei tetsuzuki wa dekimasu ka?",
+    "zh_tw": "可以辦免稅手續嗎？",
     "note_zh": "要出示護照",
     "priority": 2,
-    "reviewed": false
+    "reviewed": false,
+    "source": {
+      "url": "https://www.tsunagujapan.com/wow_00802-84291155-2e8d-42dd-9e06-c8cbf25ef45b/",
+      "quote": "免税手続きはできますか？",
+      "checked": "2026-10-09",
+      "via": "search"
+    }
   },
   {
     "id": "common-shop-teikyubi",
@@ -412,7 +574,13 @@
     "romaji": "Teikyūbi",
     "zh_tw": "公休日",
     "priority": 2,
-    "reviewed": false
+    "reviewed": false,
+    "source": {
+      "url": "https://kotobank.jp/word/%E5%AE%9A%E4%BC%91%E6%97%A5-574071",
+      "quote": "定休日",
+      "checked": "2026-10-09",
+      "via": "search"
+    }
   },
   {
     "id": "common-station-deguchi",
@@ -425,7 +593,13 @@
     "romaji": "Deguchi",
     "zh_tw": "出口",
     "priority": 1,
-    "reviewed": false
+    "reviewed": false,
+    "source": {
+      "url": "https://kotobank.jp/word/%E5%87%BA%E5%8F%A3-575541",
+      "quote": "出口",
+      "checked": "2026-10-09",
+      "via": "search"
+    }
   },
   {
     "id": "common-station-iriguchi",
@@ -438,7 +612,13 @@
     "romaji": "Iriguchi",
     "zh_tw": "入口",
     "priority": 1,
-    "reviewed": false
+    "reviewed": false,
+    "source": {
+      "url": "https://kotobank.jp/word/%E5%85%A5%E5%8F%A3-436395",
+      "quote": "入口",
+      "checked": "2026-10-09",
+      "via": "search"
+    }
   },
   {
     "id": "common-station-jiyu",
@@ -451,7 +631,13 @@
     "romaji": "Jiyūseki",
     "zh_tw": "自由座",
     "priority": 2,
-    "reviewed": false
+    "reviewed": false,
+    "source": {
+      "url": "https://kotobank.jp/word/%E8%87%AA%E7%94%B1%E5%B8%AD-681610",
+      "quote": "自由席",
+      "checked": "2026-10-09",
+      "via": "search"
+    }
   },
   {
     "id": "common-station-kaisatsu",
@@ -464,7 +650,13 @@
     "romaji": "Kaisatsu",
     "zh_tw": "剪票口",
     "priority": 1,
-    "reviewed": false
+    "reviewed": false,
+    "source": {
+      "url": "https://kotobank.jp/word/%E6%94%B9%E6%9C%AD-457392",
+      "quote": "駅の出入り口や列車内で乗客の切符などを調べること。また「改札口」の略",
+      "checked": "2026-10-09",
+      "via": "search"
+    }
   },
   {
     "id": "common-station-kaisoku",
@@ -477,7 +669,13 @@
     "romaji": "Kaisoku",
     "zh_tw": "快速（部分站不停）",
     "priority": 2,
-    "reviewed": false
+    "reviewed": false,
+    "source": {
+      "url": "https://kotobank.jp/word/%E5%BF%AB%E9%80%9F%E9%9B%BB%E8%BB%8A-457871",
+      "quote": "停車駅を少なくして、速く走る電車。",
+      "checked": "2026-10-09",
+      "via": "search"
+    }
   },
   {
     "id": "common-station-kakueki",
@@ -490,7 +688,13 @@
     "romaji": "Kakueki teisha",
     "zh_tw": "每站停車",
     "priority": 2,
-    "reviewed": false
+    "reviewed": false,
+    "source": {
+      "url": "https://kotobank.jp/word/%E5%90%84%E9%A7%85%E5%81%9C%E8%BB%8A-460098",
+      "quote": "電車・列車が一つ一つの駅に停車すること。各停。",
+      "checked": "2026-10-09",
+      "via": "search"
+    }
   },
   {
     "id": "common-station-noriba",
@@ -503,7 +707,13 @@
     "romaji": "Noriba",
     "zh_tw": "乘車處",
     "priority": 1,
-    "reviewed": false
+    "reviewed": false,
+    "source": {
+      "url": "https://dictionary.goo.ne.jp/word/%E4%B9%97%E5%A0%B4/",
+      "quote": "乗り物に乗るために設けられた場所。「バスの—」「タクシー—」",
+      "checked": "2026-10-09",
+      "via": "search"
+    }
   },
   {
     "id": "common-station-norikae",
@@ -516,7 +726,13 @@
     "romaji": "Norikae",
     "zh_tw": "轉乘",
     "priority": 1,
-    "reviewed": false
+    "reviewed": false,
+    "source": {
+      "url": "https://kotobank.jp/word/%E4%B9%97%E6%8F%9B%E3%81%88-597527",
+      "quote": "乗換え",
+      "checked": "2026-10-09",
+      "via": "search"
+    }
   },
   {
     "id": "common-station-seisan",
@@ -529,7 +745,13 @@
     "romaji": "Seisanki",
     "zh_tw": "補票機",
     "priority": 2,
-    "reviewed": false
+    "reviewed": false,
+    "source": {
+      "url": "https://www.tkgje.jp/entries/10000/10189_seisanki.html",
+      "quote": "精算機（せいさんき）",
+      "checked": "2026-10-09",
+      "via": "search"
+    }
   },
   {
     "id": "common-station-shitei",
@@ -542,7 +764,13 @@
     "romaji": "Shiteiseki",
     "zh_tw": "對號座",
     "priority": 2,
-    "reviewed": false
+    "reviewed": false,
+    "source": {
+      "url": "https://www.nihongomaster.com/japanese/dictionary/word/29557/shiteiseki-%E6%8C%87%E5%AE%9A%E5%B8%AD-%E3%81%97%E3%81%A6%E3%81%84%E3%81%9B%E3%81%8D",
+      "quote": "指定席(していせき)",
+      "checked": "2026-10-09",
+      "via": "search"
+    }
   },
   {
     "id": "common-station-tokkyu",
@@ -555,7 +783,13 @@
     "romaji": "Tokkyū",
     "zh_tw": "特急（多半要另買特急券）",
     "priority": 2,
-    "reviewed": false
+    "reviewed": false,
+    "source": {
+      "url": "https://www.tkgje.jp/entries/01000/01476_tokkyuu.html",
+      "quote": "特急（とっきゅう）＝特別急行",
+      "checked": "2026-10-09",
+      "via": "search"
+    }
   },
   {
     "id": "common-train-norikae-say",
@@ -563,11 +797,17 @@
       "situation": "train"
     },
     "direction": "say",
-    "ja": "乗り換えはどこですか？",
-    "kana": "のりかえはどこですか？",
-    "romaji": "Norikae wa doko desu ka?",
-    "zh_tw": "在哪裡轉乘？",
+    "ja": "どこで乗り換えますか？",
+    "kana": "どこでのりかえますか？",
+    "romaji": "Doko de norikaemasu ka?",
+    "zh_tw": "要在哪裡轉乘？",
     "priority": 2,
-    "reviewed": false
+    "reviewed": false,
+    "source": {
+      "url": "https://aiueo.cc/pages_v2/en/dialog/web/301.php",
+      "quote": "どこで乗り換えますか。",
+      "checked": "2026-10-09",
+      "via": "search"
+    }
   }
 ]

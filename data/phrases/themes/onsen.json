@@ -11,7 +11,13 @@
     "romaji": "Gensen kakenagashi",
     "zh_tw": "源泉放流",
     "priority": 3,
-    "reviewed": false
+    "reviewed": false,
+    "source": {
+      "url": "https://www.kokusen.go.jp/t_box/data/t_box-faq_qa2016_26.html",
+      "quote": "源泉かけ流し",
+      "checked": "2026-10-09",
+      "via": "search"
+    }
   },
   {
     "id": "onsen-irezumi",
@@ -20,12 +26,18 @@
       "situation": "onsen_entry"
     },
     "direction": "read",
-    "ja": "入れ墨・タトゥーお断り",
-    "kana": "いれずみ・たとぅーおことわり",
-    "romaji": "Irezumi / tatū o-kotowari",
+    "ja": "タトゥーお断り",
+    "kana": "たとぅーおことわり",
+    "romaji": "Tatū o-kotowari",
     "zh_tw": "謝絕刺青",
     "priority": 1,
-    "reviewed": false
+    "reviewed": false,
+    "source": {
+      "url": "https://honichi.com/news/2018/11/13/inboundxtattoo/",
+      "quote": "温泉の常識「タトゥーお断り」が変化の兆し",
+      "checked": "2026-10-09",
+      "via": "search"
+    }
   },
   {
     "id": "onsen-kashikiri",
@@ -39,7 +51,13 @@
     "romaji": "Kashikiri-buro",
     "zh_tw": "包租浴池",
     "priority": 3,
-    "reviewed": false
+    "reviewed": false,
+    "source": {
+      "url": "https://www.yukoyuko.net/special/g00018",
+      "quote": "「貸切風呂」「家族風呂」が無料で利用できる宿",
+      "checked": "2026-10-09",
+      "via": "search"
+    }
   },
   {
     "id": "onsen-onnayu",
@@ -53,7 +71,13 @@
     "romaji": "Onnayu",
     "zh_tw": "女湯",
     "priority": 1,
-    "reviewed": false
+    "reviewed": false,
+    "source": {
+      "url": "https://www.nihongomaster.com/japanese/dictionary/word/33038/onnayu-%E5%A5%B3%E6%B9%AF-%E3%81%8A%E3%82%93%E3%81%AA%E3%82%86",
+      "quote": "女湯(おんなゆ)",
+      "checked": "2026-10-09",
+      "via": "search"
+    }
   },
   {
     "id": "onsen-otokoyu",
@@ -67,7 +91,13 @@
     "romaji": "Otokoyu",
     "zh_tw": "男湯",
     "priority": 1,
-    "reviewed": false
+    "reviewed": false,
+    "source": {
+      "url": "https://m.romajidesu.com/dictionary/meaning-of-おとこゆ.html",
+      "quote": "男湯（おとこゆ）men's bath",
+      "checked": "2026-10-09",
+      "via": "search"
+    }
   },
   {
     "id": "onsen-taoru-hear",
@@ -95,12 +125,18 @@
       "situation": "onsen_entry"
     },
     "direction": "say",
-    "ja": "タオルを借りられますか？",
-    "kana": "たおるをかりられますか？",
-    "romaji": "Taoru o kariraremasu ka?",
-    "zh_tw": "可以借毛巾嗎？",
+    "ja": "タオルはレンタルできますか？",
+    "kana": "たおるはれんたるできますか？",
+    "romaji": "Taoru wa rentaru dekimasu ka?",
+    "zh_tw": "可以租毛巾嗎？",
     "priority": 2,
-    "reviewed": false
+    "reviewed": false,
+    "source": {
+      "url": "https://matcha-jp.com/jp/6560",
+      "quote": "バスタオル/タオルはレンタルできますか？",
+      "checked": "2026-10-09",
+      "via": "search"
+    }
   },
   {
     "id": "onsen-yu",
@@ -114,6 +150,12 @@
     "romaji": "Yu",
     "zh_tw": "湯（浴場，常寫在門簾上）",
     "priority": 2,
-    "reviewed": false
+    "reviewed": false,
+    "source": {
+      "url": "https://mojimori.app/words/yu?locale=en",
+      "quote": "湯 (ゆ) — hot water, bath",
+      "checked": "2026-10-09",
+      "via": "search"
+    }
   }
 ]

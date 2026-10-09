@@ -259,6 +259,15 @@ class AnswerHint(StrictModel):
     zh_tw: str
 
 
+class PhraseSource(StrictModel):
+    """查證出處：url 與頁面上的原文。via=search 表示只經搜尋結果摘要確認，沒有打開頁面。"""
+
+    url: str
+    quote: str
+    checked: str
+    via: Literal["search", "page"] = "search"
+
+
 class Phrase(StrictModel):
     """旅前準備詞彙（data/phrases/...）。"""
 
@@ -273,6 +282,7 @@ class Phrase(StrictModel):
     note_zh: str | None = None
     priority: Literal[1, 2, 3]
     reviewed: bool = False
+    source: PhraseSource | None = None
 
 
 class Airline(StrictModel):

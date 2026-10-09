@@ -11,7 +11,13 @@
     "romaji": "Dosoku genkin",
     "zh_tw": "禁止穿鞋進入",
     "priority": 2,
-    "reviewed": false
+    "reviewed": false,
+    "source": {
+      "url": "https://www.tkgje.jp/entries/19000/19244_dosokugenkin.html",
+      "quote": "土足厳禁（どそくげんきん）",
+      "checked": "2026-10-09",
+      "via": "search"
+    }
   },
   {
     "id": "shrine-goshuin",
@@ -25,7 +31,13 @@
     "romaji": "Goshuin o onegai shimasu",
     "zh_tw": "麻煩幫我寫御朱印",
     "priority": 2,
-    "reviewed": false
+    "reviewed": false,
+    "source": {
+      "url": "https://www.rexby.com/Tabimawari/t/42-goshuin-and-eki-stamps",
+      "quote": "御朱印をお願いします",
+      "checked": "2026-10-09",
+      "via": "search"
+    }
   },
   {
     "id": "shrine-haikan-jikan",
@@ -39,7 +51,13 @@
     "romaji": "Haikan jikan",
     "zh_tw": "參觀時間",
     "priority": 1,
-    "reviewed": false
+    "reviewed": false,
+    "source": {
+      "url": "https://www.mapple.net/article/57146/",
+      "quote": "拝観時間:[3月〜11月] 8:00〜16:30",
+      "checked": "2026-10-09",
+      "via": "search"
+    }
   },
   {
     "id": "shrine-haikanryo",
@@ -53,7 +71,13 @@
     "romaji": "Haikanryō",
     "zh_tw": "參觀費",
     "priority": 1,
-    "reviewed": false
+    "reviewed": false,
+    "source": {
+      "url": "https://www.tkgje.jp/entries/07000/07059_haikanryou.html",
+      "quote": "拝観料（はいかんりょう）を払う",
+      "checked": "2026-10-09",
+      "via": "search"
+    }
   },
   {
     "id": "shrine-juyosho",
@@ -67,7 +91,13 @@
     "romaji": "Juyosho",
     "zh_tw": "授與所（御守、御朱印）",
     "priority": 2,
-    "reviewed": false
+    "reviewed": false,
+    "source": {
+      "url": "https://www.mlit.go.jp/tagengo-db/H30-00532.html",
+      "quote": "授与所ではお守りやお札を受けることができます",
+      "checked": "2026-10-09",
+      "via": "search"
+    }
   },
   {
     "id": "shrine-kakioki",
@@ -101,7 +131,13 @@
     "romaji": "O-mamori",
     "zh_tw": "御守",
     "priority": 2,
-    "reviewed": false
+    "reviewed": false,
+    "source": {
+      "url": "https://www.mlit.go.jp/tagengo-db/H30-00532.html",
+      "quote": "授与所ではお守りやお札を受けることができます",
+      "checked": "2026-10-09",
+      "via": "search"
+    }
   },
   {
     "id": "shrine-omikuji",
@@ -115,7 +151,13 @@
     "romaji": "Omikuji",
     "zh_tw": "籤",
     "priority": 3,
-    "reviewed": false
+    "reviewed": false,
+    "source": {
+      "url": "https://precious.jp/articles/-/44014",
+      "quote": "神社や寺で、箱から引いて吉凶や運勢を占う紙片",
+      "checked": "2026-10-09",
+      "via": "search"
+    }
   },
   {
     "id": "shrine-satsuei",
@@ -129,7 +171,13 @@
     "romaji": "Satsuei kinshi",
     "zh_tw": "禁止攝影",
     "priority": 1,
-    "reviewed": false
+    "reviewed": false,
+    "source": {
+      "url": "https://www.tkgje.jp/entries/26500/26565_satsueikinshi.html",
+      "quote": "撮影禁止（さつえいきんし）",
+      "checked": "2026-10-09",
+      "via": "search"
+    }
   },
   {
     "id": "shrine-temizuya",
@@ -143,6 +191,12 @@
     "romaji": "Temizuya",
     "zh_tw": "手水舍（洗手處）",
     "priority": 3,
-    "reviewed": false
+    "reviewed": false,
+    "source": {
+      "url": "https://www.mlit.go.jp/tagengo-db/H30-00523.html",
+      "quote": "手水舎 / Temizuya, Ritual Purification",
+      "checked": "2026-10-09",
+      "via": "search"
+    }
   }
 ]
