@@ -51,6 +51,7 @@ export const router = createRouter({
     { path: '/limited', name: 'limited', component: () => import('../views/LimitedView.vue'), meta: { title: '期間限定' } },
     { path: '/log', name: 'log', component: () => import('../views/LogView.vue'), meta: { title: '紀錄' } },
     { path: '/log/cards', name: 'cards', component: () => import('../views/CardsView.vue'), meta: { title: '收集冊' } },
+    { path: '/log/cards/ukiyoe', name: 'ukiyoe', component: () => import('../views/UkiyoeView.vue'), meta: { title: '浮世繪裡的景點' } },
     { path: '/log/keiken', name: 'keiken', component: () => import('../views/KeikenView.vue'), meta: { title: '經縣值' } },
     { path: '/log/avatar', name: 'avatar', component: () => import('../views/AvatarView.vue'), meta: { title: '旅人' } },
     { path: '/log/achievements', name: 'achievements', component: () => import('../views/AchievementsView.vue'), meta: { title: '成就' } },

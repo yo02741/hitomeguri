@@ -197,8 +197,16 @@ function onCardKey(e: KeyboardEvent, id: string) {
           <h1 class="flex items-baseline gap-3 text-h1 font-black tracking-title max-lg:text-h2">
             收集冊<RollingNumber :value="cards.length" class="font-latin text-h3 font-semibold tracking-normal max-lg:text-title" />
           </h1>
-          <p class="flex items-baseline gap-2 text-body-sm font-bold">
+          <!-- 浮世繪裡的景點（§7.19c）：接在都道府縣同一行，安靜的文字連結 -->
+          <p class="flex flex-wrap items-baseline gap-x-2 text-body-sm font-bold">
             都道府縣<span class="whitespace-nowrap font-num text-body-sm">{{ prefDone.size }} / 47</span>
+            <RouterLink
+              to="/log/cards/ukiyoe"
+              class="ml-2 inline-flex items-center gap-0.5 self-center text-on-region underline decoration-on-region/40 underline-offset-4 hover:decoration-on-region active:translate-y-px pointer-coarse:-my-3 pointer-coarse:py-3 max-lg:ml-auto lg:ml-4"
+            >
+              {{ wide ? '浮世繪裡的景點' : '浮世繪' }}
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7" /></svg>
+            </RouterLink>
           </p>
           <!-- 手機：名城的張數與進度條排成一行 -->
           <div v-if="castleTotal" class="flex max-w-[420px] flex-col gap-1.5 max-lg:flex-row max-lg:items-center max-lg:gap-2">
