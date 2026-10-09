@@ -702,7 +702,7 @@ header 右側、登入鈕左邊（`SearchBox.vue`，每一頁都在；在行程�
 - 觸控裝置（`pointer: coarse`）的輸入框至少 16px（`theme.css` 把 caption／body-sm／body 字級的欄位蓋成 1rem），iOS 聚焦時才不會放大整頁；viewport 不加 `maximum-scale`。單一欄位的表單加 `enterkeyhint`（新增清單、行程名稱 `done`，建立行程 `go`，搜尋 `search`）。
 - 按鈕、`role=button`、分頁、`summary` 長按不選字、不跳系統選單（`theme.css` base 的 `user-select: none`、`-webkit-touch-callout: none`）；label 與內容文字照常可以選。
 - 浮動或內層的捲動區（景點卡片、擴充包卡片、下拉、搜尋結果、規則對話框、加入行程／清單的選單）加 `overscroll-contain`，捲到底不帶動後面的頁面或地圖。
-- 蓋住整個畫面的對話框（規則、成就的詳細、卡片檢視、回顧圖、十連抽、開卡包、扭蛋、新卡入手、截圖、確認框）用原生 `<dialog>` 的 `showModal()`（`composables/modal.ts`）：背後 inert、Tab 只在框裡繞、Esc 走 `cancel`、關閉前先 `close()` 讓焦點回到打開它的按鈕。對話框打開時 Teleport 到 body 的下拉、日期選擇會被 inert，要用的話掛在 `<dialog>` 裡面。
+- 蓋住整個畫面的對話框（規則、成就的詳細、卡片檢視、回顧圖、十連抽、開卡包、扭蛋、新卡入手、截圖、確認框）用原生 `<dialog>` 的 `showModal()`（`composables/modal.ts`）：背後 inert、Tab 只在框裡繞、Esc 走 `cancel`、關閉前先 `close()` 讓焦點回到打開它的按鈕。對話框打開時 Teleport 到 body 的下拉、日期選擇會被 inert、也被 top layer 蓋住，所以 `useFloating` 在觸發鈕位於打開的 `<dialog>` 裡時改 Teleport 到那個 `<dialog>`（Dropdown、DatePicker、DateRangePicker、ActionMenu 都寫 `<Teleport :to="host">`）。
 
 ---
 
