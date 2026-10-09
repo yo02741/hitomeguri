@@ -224,6 +224,13 @@ def cmd_seed_chara(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_seed_ukiyoe(args: argparse.Namespace) -> int:
+    from pipeline.ukiyoe import seed_ukiyoe
+
+    _emit(seed_ukiyoe(), args.report)
+    return 0
+
+
 def cmd_validate_data(args: argparse.Namespace) -> int:
     from pipeline.validate import report, validate
 
@@ -339,6 +346,11 @@ def main(argv: list[str] | None = None) -> int:
             "擴充包：老舖（香舖、和菓子、茶舖）與茶屋 → data/packs/",
         ),
         ("seed-chara", cmd_seed_chara, "擴充包：角色商店（OSM 全國）→ data/packs/"),
+        (
+            "seed-ukiyoe",
+            cmd_seed_ukiyoe,
+            "浮世繪裡的景點：Wikidata 作品與 Commons 圖、授權 → data/ukiyoe.json",
+        ),
     ]:
         p = sub.add_parser(name, help=desc)
         p.add_argument("prefectures", nargs="*", help="不使用（全國一次抓）")

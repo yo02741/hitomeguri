@@ -302,6 +302,32 @@ class FlightRoute(StrictModel):
     sources: list[Source] = Field(default_factory=list)
 
 
+class UkiyoeWork(StrictModel):
+    """描繪景點的浮世繪一幅（seed-ukiyoe）：題名、系列、年份、作者取自作品的 Wikidata 項目，
+    圖與作者、授權取自 Commons。只收公有領域、CC0、CC 授權的圖。"""
+
+    id: str  # 作品的 Wikidata QID
+    title: str  # 日文標籤，沒有時英文；查不到時空字串
+    series: str | None = None  # P179
+    year: int | None = None  # P571
+    creator: str  # P170 的日文標籤
+    file: str  # Commons 檔名（P18）
+    image: str  # Commons 縮圖網址
+    license: str
+    author: str
+    source_url: str  # Commons 檔案頁
+    wikidata_url: str
+    retrieved: str
+
+
+class UkiyoeSpot(StrictModel):
+    """浮世繪裡的景點（data/ukiyoe.json），依 spot、作品依 id 排序。"""
+
+    spot: str  # 景點 id（wd-Q…）
+    pref: Prefecture
+    works: list[UkiyoeWork]
+
+
 class RegionColor(StrictModel):
     source: str
     base: str

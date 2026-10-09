@@ -17,7 +17,7 @@ export interface MapSpot {
   si?: Partial<Record<'spring' | 'summer' | 'autumn' | 'winter' | 'night' | 'panorama', [path: string, author: string, license: string]>> // 收集卡的季節、夜景照片
 }
 
-const COMMONS_THUMB_PREFIX = 'https://thumb.wikimedia.org/wikipedia/commons/thumb/'
+export const COMMONS_THUMB_PREFIX = 'https://thumb.wikimedia.org/wikipedia/commons/thumb/'
 
 export function mapThumbUrl(i: string): string {
   return i.startsWith('https://') ? i : COMMONS_THUMB_PREFIX + i
@@ -76,8 +76,8 @@ export interface BundleIndex {
   specialties?: Record<string, { count: number; version: string }>
   /** 期間限定（全國一個檔） */
   timed?: { count: number; version: string }
-  /** 地區特色、會話、季節、航線：檔名 → 版本 */
-  extras?: Partial<Record<'specialties' | 'flights' | 'phrases' | 'seasons', string>>
+  /** 地區特色、會話、季節、航線、浮世繪裡的景點：檔名 → 版本 */
+  extras?: Partial<Record<'specialties' | 'flights' | 'phrases' | 'seasons' | 'ukiyoe', string>>
   /** 成就用的小索引（achievements.json） */
   achievements?: { version: string }
 }
@@ -132,6 +132,34 @@ async function getJson<T>(path: string): Promise<T> {
   const res = await fetch(base + path)
   if (!res.ok) throw new Error(`${res.status} ${path}`)
   return (await res.json()) as T
+}
+
+/**
+ * 浮世繪裡的景點（pipeline/build_bundles.py build_ukiyoe）：s 景點 id、p 縣、n 日文名、z 繁中名（同日文時省略）、
+ * sc 分數、w 作品（i 作品 QID、t 題名、se 系列、y 年份、c 作者、f 圖：Commons 縮圖路徑或完整網址、a 圖的作者、l 授權、u Commons 檔案頁）。
+ */
+export interface UkiyoeWork {
+  i: string
+  t: string
+  se?: string
+  y?: number
+  c: string
+  f: string
+  a: string
+  l: string
+  u: string
+}
+export interface UkiyoeSpot {
+  s: string
+  p: string
+  n: string
+  z?: string
+  sc: number
+  w: UkiyoeWork[]
+}
+
+export async function fetchUkiyoe(v?: string): Promise<UkiyoeSpot[]> {
+  return getJson<UkiyoeSpot[]>(withV('ukiyoe.json', v))
 }
 
 export function fetchIndex(): Promise<BundleIndex> {

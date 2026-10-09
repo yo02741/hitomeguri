@@ -6,6 +6,7 @@
 - packs/{key}.json：擴充包（全國一個檔，data/packs/ 組合而成）。
 - search.json：全國景點搜尋索引（第一次搜尋時才載入）。
 - achievements.json：成就用的小索引（文化指定 → 大點 id、名城 → 對應景點）。
+- ukiyoe.json：收集冊「浮世繪裡的景點」（data/ukiyoe.json 加上景點名稱）。
 """
 
 from __future__ import annotations
@@ -27,6 +28,7 @@ from pipeline.models import (
     Specialty,
     Spot,
     TimedItem,
+    UkiyoeSpot,
 )
 from pipeline.paths import (
     BUNDLES_DIR,
@@ -39,6 +41,7 @@ from pipeline.paths import (
     SPECIALTIES_DIR,
     SPOTS_DIR,
     TIMED_DIR,
+    UKIYOE_JSON,
 )
 
 
@@ -426,9 +429,60 @@ def load_phrases(src: Path = PHRASES_DIR) -> list[dict[str, Any]]:
     return sorted(out, key=lambda p: p["id"])
 
 
+def commons_thumb_path(url: str) -> str:
+    """Commons 縮圖網址 → 省略固定前綴與追蹤參數的路徑（前端換寬度）；不是縮圖的照原樣。"""
+    base = url.split("?", 1)[0]
+    if base.startswith(COMMONS_THUMB_PREFIX) and re.search(r"/\d+px-[^/]+$", base):
+        return base[len(COMMONS_THUMB_PREFIX) :]
+    return base
+
+
+def build_ukiyoe(src: Path = UKIYOE_JSON, spots_dir: Path = SPOTS_DIR) -> list[dict[str, Any]]:
+    """浮世繪裡的景點（web/src/services/ukiyoe.ts）：
+
+    s 景點 id、p 縣、n 日文名、z 繁中名（同日文時省略）、sc 分數（縣內排序）、
+    w 作品：i 作品 QID、t 題名、se 系列、y 年份、c 作者、f 圖（縮圖路徑或完整網址）、
+    a 圖的作者、l 授權、u Commons 檔案頁。
+    """
+    if not src.exists():
+        return []
+    names: dict[str, dict[str, Any]] = {}
+    for path in sorted(spots_dir.glob("*.json")):
+        for sp in json.loads(path.read_text(encoding="utf-8")):
+            if sp.get("status", "published") == "published":
+                names[sp["id"]] = sp
+    out: list[dict[str, Any]] = []
+    for raw in json.loads(src.read_text(encoding="utf-8")):
+        rec = UkiyoeSpot.model_validate(raw)
+        sp = names.get(rec.spot)
+        if not sp:
+            continue
+        works = []
+        for w in rec.works:
+            item: dict[str, Any] = {"i": w.id, "t": w.title}
+            if w.series:
+                item["se"] = w.series
+            if w.year is not None:
+                item["y"] = w.year
+            item |= {
+                "c": w.creator,
+                "f": commons_thumb_path(w.image),
+                "a": w.author,
+                "l": w.license,
+                "u": w.source_url,
+            }
+            works.append(item)
+        entry: dict[str, Any] = {"s": rec.spot, "p": rec.pref, "n": sp["name"]["ja"]}
+        if sp["name"].get("zh_tw") and sp["name"]["zh_tw"] != sp["name"]["ja"]:
+            entry["z"] = sp["name"]["zh_tw"]
+        entry |= {"sc": sp.get("score", 0), "w": works}
+        out.append(entry)
+    return out
+
+
 def build_extras(dst: Path = BUNDLES_DIR) -> list[Path]:
     """地區特色（全部縣一個檔，舊版前端用；新版讀 build_specialties 的分縣檔）、旅前準備會話、
-    季節平年值、直飛航線（只含已驗證，§5.2b）。"""
+    季節平年值、直飛航線（只含已驗證，§5.2b）、浮世繪裡的景點。"""
     specs: list[dict[str, Any]] = []
     zh = _translations()
     for path in sorted(SPECIALTIES_DIR.glob("*.json")) if SPECIALTIES_DIR.exists() else []:
@@ -449,4 +503,6 @@ def build_extras(dst: Path = BUNDLES_DIR) -> list[Path]:
     if SEASONS_JSON.exists():
         seasons = SeasonData.model_validate_json(SEASONS_JSON.read_text(encoding="utf-8"))
         out.append(_write(dst / "seasons.json", seasons.model_dump(mode="json")))
+    if UKIYOE_JSON.exists():
+        out.append(_write(dst / "ukiyoe.json", build_ukiyoe()))
     return out

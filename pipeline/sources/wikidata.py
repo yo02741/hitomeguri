@@ -36,6 +36,9 @@ class Entity:
     # 廢止、拆除、關閉的年份（P576 dissolved, abolished or demolished、P3999 closing date）；
     # 城、陣屋這類歷史上「廢止」的也有，是否當成已關閉由 major.closed_reason 判斷
     closed_year: int | None = None
+    # 作品用：系列（P179）、作者（P170）的 QID
+    series: list[str] = field(default_factory=list)
+    creators: list[str] = field(default_factory=list)
 
     @property
     def url(self) -> str:
@@ -128,6 +131,12 @@ def entities(qids: list[str]) -> dict[str, Entity]:
                 if isinstance(v, dict) and (y := _year(v)) is not None
             ]
             ent.closed_year = max(closed) if closed else None
+            ent.series = [
+                v["id"] for v in _claim_values(claims, "P179") if isinstance(v, dict) and "id" in v
+            ]
+            ent.creators = [
+                v["id"] for v in _claim_values(claims, "P170") if isinstance(v, dict) and "id" in v
+            ]
             out[qid] = ent
     return out
 

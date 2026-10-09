@@ -530,6 +530,19 @@ header 右側、登入鈕左邊（`SearchBox.vue`，每一頁都在；在行程�
 - 測試期（`UNLIMITED_DRAWS`）：券不夠也能抽（張數照算、照扣）。正式上線前改成 false，並清空 `users/*/cards`、`users/*/meta/wallet`。
 - 之後可以加：在景點附近（GPS）按去過多給券（現地打卡），讓真的去過的比只是標記的多一點。
 
+### 7.19c 浮世繪裡的景點（`/log/cards/ukiyoe`，`UkiyoeView.vue`）
+收集冊裡的一頁：描繪我們景點的真實浮世繪。不是新的卡種，不用抽；去過的地方亮起來。
+
+- 資料：`data/ukiyoe.json`（`seed-ukiyoe`）。作品取自 Wikidata（類型是浮世繪、或作者屬於浮世繪，有「描繪」對到我們的大點）：題名（日文，沒有用英文，都沒有就不寫）、系列（P179）、年份（P571）、作者（P170）；圖、圖的作者、授權取自 Commons，只收公有領域、CC0、CC。介面不自己寫介紹。
+- 入口：收集冊海報「都道府縣 n / 47」同一行右邊的文字連結（桌機「浮世繪裡的景點」、手機「浮世繪」，`text-on-region` 底線＋›），不佔卡片上方的版面。
+- 海報：‹ 收集冊、「浮世繪裡的景點」、「去過 n / N」（N 是有浮世繪的景點數）；桌機右邊一幅裱在紙上的畫（最近去過的地方的第一幅，沒有就是第一個縣分數最高的地方），手機不放。
+- 依縣北到南分段（標題同收集冊：縣色短條、日文縣名、羅馬拼音、右邊「去過的地方 / 地方數」），縣內依分數。每個地方：名稱（`text-title font-black`）、繁中名、去過的章（`border-2 border-visited text-visited` 膠囊「去過 yyyy.mm.dd」，轉 −4°）、右邊「n 幅」。
+- 畫：格子 2 欄（sm 3、lg 4），每幅裱在 `aspect-[5/4]` 的紙上（`paper-grain bg-paper border-line`，內距 10px），圖 `object-contain`，不裁切、保持原本的長寬比。下面 `text-caption`：題名（粗、最多兩行）、系列・年份、作者；`text-micro` 一行出處：授權・Commons（連到檔案頁）。一個地方先排 6 幅，多的「全部 n 幅」展開。
+- 沒去過的地方：圖灰階、透明度 0.5，紙換 `bg-surface`；名稱照常可讀，點得開；滑過、聚焦時回來一點。
+- 放大檢視（`PrintViewer.vue`，原生 `<dialog>`）：`bg-ink/90` 遮罩，畫裱在紙上置中（寬依可用高度 × 長寬比，長寬比先用格子縮圖量到的，大圖載入前先顯示縮圖）；下面題名、系列・年份・作者、地方名＋去過的日期、圖的作者・授權・Wikimedia Commons 連結；最下面「n / N」、「地圖」（到那個景點）、「關閉」（手機在右上角）。依頁面順序左右切換：← →、兩側 ‹ ›（sm 以上）、觸控左右滑（`composables/swipe.ts`）。Esc、點背景離開，焦點回到最後看的那幅。
+- 圖片寬度只用 Commons 的標準縮圖寬度：格子 500px、放大 960px（其他寬度會被拒絕）。
+- 頁尾：「圖：Wikimedia Commons。題名、系列、年份、作者：Wikidata。」
+
 ### 7.23 下拉選單
 `Dropdown.vue` 取代原生 `<select>`（原生的樣子跟著作業系統，與介面不搭）。觸發鈕 `rounded-control border-line bg-paper`，右側小箭頭；面板 Teleport 到 body（`composables/floating.ts`，下方放不下翻到上方），`rounded-card shadow-float`，每項 `min-h-tap`，選中的前面打勾、粗體，鍵盤移到的 `bg-surface`。`role="listbox"`／`option`，↑↓ 移動、Enter／Space 選、Esc 關。`size="sm"`（h-8）用在清單列。品牌這類可以自由輸入的欄位不用下拉，輸入框下面列建議（膠囊，點了帶入），取代原生 datalist。
 
