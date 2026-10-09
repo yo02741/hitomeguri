@@ -9,6 +9,7 @@ from __future__ import annotations
 
 import datetime as dt
 import json
+import re
 from typing import Any
 
 from pipeline import geo
@@ -90,10 +91,38 @@ def osm_name(tags: dict[str, str]) -> str:
     return name
 
 
+# OSM 日本的地址標籤：addr:full 多半已經是完整地址（含縣、市）；沒有時由各層組起來
+_ADDR_UPPER = ("addr:province", "addr:county", "addr:city")
+_ADDR_LOWER = ("addr:suburb", "addr:quarter", "addr:neighbourhood")
+_PREF_RE = re.compile(r"北海道|東京都|(?:京都|大阪)府|[^\s都道府県]{2,3}県")
+
+
+def collapse_repeated_address(addr: str) -> str:
+    """開頭的縣名在後面又出現一次（上層標籤＋完整地址接在一起）時，只留最後一段完整的地址。
+
+    「京都府京都市祇園町北側京都府京都市東山区祇園町北側264」→「京都府京都市東山区祇園町北側264」
+    """
+    m = _PREF_RE.match(addr)
+    # 括號、空白裡另外寫的地址（「〇〇公園内（宮城県…）」）是原文的補充，不動
+    if not m or any(c in addr for c in "（()　 "):
+        return addr
+    last = addr.rfind(m.group(0))
+    return addr[last:] if last > 0 else addr
+
+
 def osm_address(tags: dict[str, str]) -> str:
-    return "".join(
-        tags.get(k, "") for k in ("addr:province", "addr:city", "addr:quarter", "addr:full")
-    )
+    full = tags.get("addr:full", "").strip()
+    upper = [v for k in _ADDR_UPPER if (v := tags.get(k, "").strip())]
+    if full:
+        # 只補 addr:full 裡沒有的上層（縣、郡、市），不重複接
+        addr = "".join(v for v in upper if v not in full) + full
+    else:
+        lower = [v for k in _ADDR_LOWER if (v := tags.get(k, "").strip())]
+        block = tags.get("addr:block_number", "").strip()
+        house = tags.get("addr:housenumber", "").strip()
+        number = f"{block}-{house}" if block and house else block or house
+        addr = "".join(upper + lower) + number
+    return collapse_repeated_address(addr)
 
 
 def shop_record(el: osm.OsmElement, today: str) -> dict[str, Any] | None:
