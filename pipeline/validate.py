@@ -2,8 +2,8 @@
 
 檢查項目：
 - 格式：JSON 可讀、固定縮排（indent=2）、依 id 排序、id 不重複（PR diff 才讀得懂）。
-- 結構：以 pipeline/models.py 的 schema 驗證（景點、地區特色、祭典、期間限定、會話、鐵路、季節）；
-  擴充包檢查 id、縣、座標與來源。
+- 結構：以 pipeline/models.py 的 schema 驗證（景點、地區特色、祭典、期間限定、會話、鐵路、季節、
+  浮世繪）；擴充包檢查 id、縣、座標與來源。
 - 來源：每筆都要有來源網址與取得時間（CLAUDE.md）。
 - 文風：翻譯的簡介不能有 §6a 的禁用句型。
 - bundle：data/ 能建出前端的 bundle。
@@ -100,6 +100,58 @@ def check_pack(path: Path, data: Any, prefs: set[str], res: Result) -> None:
         res.errors.append(f"{_rel(path)}：另有 {n - MAX_ERRORS_PER_FILE} 筆有問題")
 
 
+def check_ukiyoe(data_dir: Path, res: Result) -> None:
+    """浮世繪裡的景點（data/ukiyoe.json）：schema、依景點與作品 id 排序、景點存在、授權與出處。"""
+    from pipeline.ukiyoe import license_ok
+
+    path = data_dir / "ukiyoe.json"
+    if not path.exists():
+        return
+    res.files += 1
+    text = path.read_text(encoding="utf-8")
+    try:
+        data = json.loads(text)
+    except json.JSONDecodeError as e:
+        res.errors.append(f"{_rel(path)}：JSON 讀不了（{e}）")
+        return
+    check_format(path, text, data, res)
+    if not isinstance(data, list):
+        res.errors.append(f"{_rel(path)}：應該是清單")
+        return
+    res.records += len(data)
+    check_models(path, data, models.UkiyoeSpot, res)
+    keys = [r.get("spot", "") for r in data]
+    if keys != sorted(keys) or len(set(keys)) != len(keys):
+        res.errors.append(f"{_rel(path)}：沒有依景點 id 排序或景點重複")
+    spots: dict[str, str] = {}
+    for sp in sorted((data_dir / "spots").glob("*.json")):
+        for s in json.loads(sp.read_text(encoding="utf-8")):
+            if s.get("status", "published") == "published":
+                spots[s["id"]] = s.get("prefecture", sp.stem)
+    problems: list[str] = []
+    works = 0
+    for r in data:
+        sid = r.get("spot")
+        if sid not in spots:
+            problems.append(f"{sid}：不是已發布的景點")
+        elif spots[sid] != r.get("pref"):
+            problems.append(f"{sid}：縣 {r.get('pref')} 和景點的 {spots[sid]} 不同")
+        ids = [w.get("id", "") for w in r.get("works", [])]
+        if ids != sorted(ids):
+            problems.append(f"{sid}：作品沒有依 id 排序")
+        for w in r.get("works", []):
+            works += 1
+            if not license_ok(w.get("license", "")):
+                problems.append(f"{sid} {w.get('id')}：授權 {w.get('license')!r} 不是公有領域或 CC")
+            if not (w.get("source_url") and w.get("retrieved") and w.get("image")):
+                problems.append(f"{sid} {w.get('id')}：缺圖、來源網址或取得時間")
+    for p in problems[:MAX_ERRORS_PER_FILE]:
+        res.errors.append(f"{_rel(path)}（{p}）")
+    if len(problems) > MAX_ERRORS_PER_FILE:
+        res.errors.append(f"{_rel(path)}：另有 {len(problems) - MAX_ERRORS_PER_FILE} 項有問題")
+    res.warnings.append(f"浮世繪：{len(data)} 個景點、{works} 幅")
+
+
 def check_banned(res: Result) -> None:
     from pipeline.translate import BANNED, TRANSLATIONS_JSON
 
@@ -154,6 +206,7 @@ def validate(data_dir: Path = DATA, bundles: bool = True) -> Result:
             models.RailData.model_validate_json(path.read_text(encoding="utf-8"))
         except ValidationError as e:
             res.errors.append(f"{_rel(path)}：{e.errors()[0]['msg']}")
+    check_ukiyoe(data_dir, res)
     check_banned(res)
     if bundles:
         check_bundles(res)

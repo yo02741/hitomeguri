@@ -20,6 +20,8 @@ FESTIVALS_DIR = DATA / "festivals"
 # 深度探索「季節」：氣象廳生物季節平年值
 SEASONS_JSON = DATA / "seasons.json"
 PHRASES_DIR = DATA / "phrases"
+# 浮世繪裡的景點（seed-ukiyoe）
+UKIYOE_JSON = DATA / "ukiyoe.json"
 FLIGHTS_JSON = DATA / "flights" / "taiwan_direct.json"
 STATE_DIR = DATA / "_state"
 
