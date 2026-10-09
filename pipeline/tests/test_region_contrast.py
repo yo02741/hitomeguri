@@ -138,9 +138,8 @@ def test_visited_contrast() -> None:
     _fail(bad, "去過色 < 4.5:1")
 
 
-# 已知差一點的：茶在江戶、昭和偏黃的地圖陸地上最低 2.94（昭和京都）。先守住現況的下限，不讓它更差；
-# 要拉到 3:1 得改茶色或年代的陸地色，屬於另一項調整（中性色分層），不在這裡決定。
-MARKER_FLOOR = {("t-tea", "map"): 2.9}
+# 例外的下限（主題色, 底）→ 比值。茶在江戶、昭和偏黃的陸地上原本只有 2.94，已在 theme.css 加深，不再有例外。
+MARKER_FLOOR: dict[tuple[str, str], float] = {}
 
 
 def test_theme_marker_contrast() -> None:
@@ -178,3 +177,12 @@ def test_fixed_colors_are_read() -> None:
         for key in ("visited", "visited-tint", "white", "danger", "t-onsen", "t-ramen"):
             assert key in f, (era, key)
     assert sum(1 for k in fixed["reiwa"] if k.startswith("t-")) >= 10
+
+
+@pytest.mark.parametrize("era", ["edo", "showa"])
+def test_tea_marker_on_map(era: str) -> None:
+    """茶的圓點在江戶、昭和的陸地上 ≥ 3:1（47 縣＋全國），而且是年代自己的值，不是改了令和。"""
+    fixed = fixed_colors()
+    assert fixed[era]["t-tea"] != fixed["reiwa"]["t-tea"]
+    worst = min(contrast(fixed[era]["t-tea"], c["map"]) for e, _, c in palettes() if e == era)
+    assert worst >= 3, f"{era} t-tea {fixed[era]['t-tea']} 對陸地最低 {worst:.2f}"
