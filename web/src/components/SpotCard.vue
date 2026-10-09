@@ -83,7 +83,25 @@ const photo = computed(() => {
   const seasonal = props.variant.photo ? c.seasonImages?.[props.variant.photo] : undefined
   return seasonal ?? c.image
 })
-watch(() => photo.value?.url, () => (tries.value = 0))
+watch(() => photo.value?.url, () => {
+  tries.value = 0
+  contain.value = false
+})
+// 全景卡的照片太寬（裁成 5:7 只剩不到 55% 寬）或太小（鋪滿要放大）時不裁：整張照片置中，
+// 後面墊同一張照片的模糊放大版，卡面看起來還是鋪滿（DESIGN.md §7.19a）。載入後依原圖尺寸決定，不換照片
+const contain = ref(false)
+function onLoad(e: Event) {
+  if (!fullArt.value) return
+  const img = e.target as HTMLImageElement
+  const w = img.naturalWidth
+  const h = img.naturalHeight
+  if (!w || !h) return
+  // offsetHeight 是排版高度，不受傾斜的 transform 影響
+  const cardHeight = (img.closest('.card') as HTMLElement | null)?.offsetHeight ?? 0
+  const tooWide = ((5 / 7) * h) / w < 0.55
+  const tooSmall = h < cardHeight * (window.devicePixelRatio || 1) * 0.8
+  contain.value = tooWide || tooSmall
+}
 const imageSrc = computed(() => {
   const url = photo.value?.url
   if (!url) return undefined
@@ -145,16 +163,29 @@ const sizeClass = { sm: 'text-[10px]', lg: 'text-[16px]', fluid: 'fluid' }
         </div>
 
         <div class="window relative aspect-[4/3] shrink-0 overflow-hidden rounded-[0.6em] bg-region-accent">
+          <!-- 全景卡放整張照片時的底：同一張照片（同一個網址，不另外下載）縮小模糊再放大鋪滿 -->
+          <img
+            v-if="imageSrc && fullArt && contain"
+            :src="imageSrc"
+            alt=""
+            aria-hidden="true"
+            class="backdrop pointer-events-none absolute object-cover"
+            referrerpolicy="no-referrer"
+            decoding="async"
+            draggable="false"
+          />
           <img
             v-if="imageSrc"
             data-photo
             :src="imageSrc"
             :alt="card.name.ja"
-            class="size-full object-cover"
+            class="relative size-full"
+            :class="fullArt && contain ? 'object-contain' : 'object-cover'"
             referrerpolicy="no-referrer"
             :loading="size === 'lg' ? 'eager' : 'lazy'"
             decoding="async"
             draggable="false"
+            @load="onLoad"
             @error="tries++"
           />
           <template v-else>
@@ -447,6 +478,16 @@ const sizeClass = { sm: 'text-[10px]', lg: 'text-[16px]', fluid: 'fluid' }
   inset: 0;
   aspect-ratio: auto;
   border-radius: inherit;
+}
+.full-art .backdrop {
+  /* 只有卡的 28% 大小時模糊，再放大 4 倍鋪滿（比整張卡大一點，模糊的邊不會露出來）：模糊的層小、畫得快 */
+  top: 50%;
+  left: 50%;
+  width: 28%;
+  height: 28%;
+  max-width: none;
+  transform: translate(-50%, -50%) scale(4);
+  filter: blur(0.3em) brightness(0.72) saturate(1.1);
 }
 .full-art .name-block {
   justify-content: flex-end;
