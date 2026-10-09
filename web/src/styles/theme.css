@@ -7,8 +7,6 @@
 
 /* 手機打橫（高 ≤500px、寬 <1024，決定事項 N2）：精簡 header、分頁放進 header、不顯示下方分頁列，地圖頁改成側欄。
  * 寬 ≥1024 的視窗即使很矮也維持桌機版面 */
-/* 中性色層次的預覽（?neutral=1，DESIGN.md §3.1a）：選取列的內框只在預覽時出現 */
-@custom-variant neutral-preview (&:where(:root[data-neutral] *));
 @custom-variant land (@media (orientation: landscape) and (max-height: 500px) and (max-width: 1023.98px));
 
 @theme static {

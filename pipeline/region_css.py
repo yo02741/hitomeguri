@@ -2,7 +2,8 @@
 
 輸出格式固定（一縣一行），讓 git diff 容易讀；規則見 DESIGN.md §3、UX-FLOW.md §2。
 另外輸出各年代主題（DESIGN.md §13，`:root[data-theme="showa"]` 等）的地區色，
-以及開場畫面、分享圖用的 theme-colors.json。
+以及開場畫面、分享圖、PWA 標題列用的 theme-colors.json。
+中性色層次（DESIGN.md §3.1a）在這裡套用：regions.json 是輸入，輸出的中性色再補明度下限。
 """
 
 from __future__ import annotations
@@ -10,7 +11,7 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
-from pipeline.paths import REGIONS_CSS, REGIONS_JSON, REGIONS_NEUTRAL_CSS, THEME_COLORS_JSON
+from pipeline.paths import REGIONS_CSS, REGIONS_JSON, THEME_COLORS_JSON
 
 # JSON 欄位 → CSS 變數，順序即輸出順序。
 TOKEN_ORDER: list[tuple[str, str]] = [
@@ -39,7 +40,8 @@ HEADER = (
 
 
 # ---------- 年代主題（DESIGN.md §13） ----------
-# 每個年代：中性色固定（紙、墨），紙類再滲一點地區色；強調色依年代換算（往古紙色混、或加彩度）。
+# 每個年代：中性色固定（紙、墨），紙類再滲一點地區色；強調色依年代換算（往古紙色混、或加彩度）；
+# 選取列的 tint 由 surface 滲代表色（era_color）。
 # 強調色的換算：("mix", 顏色, 比例) 在 OKLab 混入；("chroma", 倍數) 放大彩度。
 Op = tuple[str, str, float] | tuple[str, float]
 
@@ -79,7 +81,6 @@ ERA_THEMES: list[EraTheme] = [
         {
             "base": ("mix", "#8A7F6A", 0.35),
             "accent": ("mix", "#CFC3A8", 0.35),
-            "tint": ("mix", "#EFE6D3", 0.5),
             "strong": ("mix", "#1F3554", 0.3),
         },
     ),
@@ -95,7 +96,6 @@ ERA_THEMES: list[EraTheme] = [
         {
             "base": ("mix", "#9A8F7A", 0.3),
             "accent": ("mix", "#D3C9B2", 0.3),
-            "tint": ("mix", "#F1EBDD", 0.5),
             "strong": ("mix", "#1F2A44", 0.3),
         },
     ),
@@ -111,7 +111,6 @@ ERA_THEMES: list[EraTheme] = [
         {
             "base": ("mix", "#C9A9B0", 0.25),
             "accent": ("mix", "#E2CCD0", 0.25),
-            "tint": ("mix", "#F4EDE6", 0.5),
             "strong": ("mix", "#4A1F33", 0.25),
         },
     ),
@@ -127,7 +126,6 @@ ERA_THEMES: list[EraTheme] = [
         {
             "base": ("mix", "#B9A27A", 0.3),
             "accent": ("mix", "#D9C7A0", 0.3),
-            "tint": ("mix", "#F2E8D2", 0.5),
             "strong": ("mix", "#3C2F24", 0.25),
         },
     ),
@@ -143,7 +141,6 @@ ERA_THEMES: list[EraTheme] = [
         {
             "base": ("chroma", 1.35),
             "accent": ("chroma", 1.3),
-            "tint": ("chroma", 1.2),
             "strong": ("chroma", 1.25),
         },
     ),
@@ -194,30 +191,24 @@ def _chroma(c: str, factor: float) -> str:
     return _hex((L, a * factor, b * factor))
 
 
-def era_color(
-    theme: EraTheme, color: dict[str, str], *, layered: bool = False
-) -> dict[str, str]:
+def era_color(theme: EraTheme, color: dict[str, str]) -> dict[str, str]:
     out = dict(theme.neutral)
     for key in TINTED:
         out[key] = mix(theme.neutral[key], color["base"], theme.tint)
     for key, op in theme.accent.items():
-        if layered and key == "tint":
-            continue
         if op[0] == "mix":
             out[key] = mix(color[key], op[1], op[2])  # type: ignore[misc]
         else:
             out[key] = _chroma(color[key], op[1])  # type: ignore[arg-type]
     out["on_base"] = theme.neutral["ink"]
-    if layered:
-        # 預覽：選取列的 tint 由年代的 surface 滲一點代表色，再壓到比 surface 暗
-        # （原本 48/48 比 surface 亮）
-        seed = mix(theme.neutral["surface"], color["base"], 0.12)
-        out["tint"] = _under(seed, out["surface"], 0.015)
+    # 中性色層次（§3.1a）：選取列的 tint 由年代的 surface 滲一點代表色，再壓到比 surface 暗
+    seed = mix(theme.neutral["surface"], color["base"], 0.12)
+    out["tint"] = _under(seed, out["surface"], 0.015)
     return out
 
 
-# ---------- 中性色層次（預覽，?neutral=1；預設不套用） ----------
-# 令和的中性色是固定比例疊白，淺色縣（香川、德島）的 line、header、tint 跟紙幾乎同色。
+# ---------- 中性色層次（DESIGN.md §3.1a） ----------
+# regions.json 的中性色是固定比例疊白，淺色縣（香川、德島）的 line、header、tint 跟紙幾乎同色。
 # 只補明度下限：每個 token 至少比 paper 暗 ΔL（OKLab L），色相、彩度不變；ink、ink-2 不動。
 LAYER_FLOOR: dict[str, float] = {
     "surface": 0.016,
@@ -255,6 +246,11 @@ def layered(color: dict[str, str]) -> dict[str, str]:
     return out
 
 
+def reiwa_color(color: dict[str, str]) -> dict[str, str]:
+    """令和（預設主題）實際輸出的地區色：regions.json 再套中性色層次。"""
+    return layered(color)
+
+
 def showa_color(color: dict[str, str]) -> dict[str, str]:
     return era_color(next(t for t in ERA_THEMES if t.key == "showa"), color)
 
@@ -265,9 +261,9 @@ def _rule(selector: str, color: dict[str, str]) -> str:
 
 
 def render(regions: dict) -> str:
-    out = [HEADER, _rule(":root", regions["national"]["color"])]
+    out = [HEADER, _rule(":root", reiwa_color(regions["national"]["color"]))]
     for r in regions["regions"]:
-        out.append(_rule(f'[data-pref="{r["prefecture"]}"]', r["color"]))
+        out.append(_rule(f'[data-pref="{r["prefecture"]}"]', reiwa_color(r["color"])))
     for theme in ERA_THEMES:
         out.append(f"/* {theme.label}主題（DESIGN.md §13）：由上面的地區色換算 */\n")
         national = era_color(theme, regions["national"]["color"])
@@ -278,47 +274,22 @@ def render(regions: dict) -> str:
     return "".join(out)
 
 
-NEUTRAL_HEADER = (
-    "/* 自動產生：中性色層次的預覽（?neutral=1，main.ts 才載入），請勿手改。"
-    "重新產生：python -m pipeline.cli build-region-css */\n"
-    "/* 只列和 regions.css 不同的 token；開場畫面與分享圖不跟著換 */\n"
-)
-
-
-def _diff_rule(selector: str, base: dict[str, str], new: dict[str, str]) -> str:
-    decls = " ".join(f"{var}: {new[key]};" for key, var in TOKEN_ORDER if new[key] != base[key])
-    return f"{selector} {{ {decls} }}\n" if decls else ""
-
-
-def render_neutral(regions: dict) -> str:
-    """<html data-neutral> 時覆寫 regions.css。
-
-    選擇器多一層 :root[data-neutral]，權重一定比 regions.css 高。
-    """
-    rows = [(None, regions["national"]["color"])]
-    rows += [(r["prefecture"], r["color"]) for r in regions["regions"]]
-    out = [NEUTRAL_HEADER]
-    root = ":root[data-neutral]:not([data-theme])"
-    for pref, c in rows:
-        sel = root if pref is None else f'{root} [data-pref="{pref}"]'
-        out.append(_diff_rule(sel, c, layered(c)))
-    for theme in ERA_THEMES:
-        root = f':root[data-neutral][data-theme="{theme.key}"]'
-        for pref, c in rows:
-            sel = root if pref is None else f'{root} [data-pref="{pref}"]'
-            out.append(_diff_rule(sel, era_color(theme, c), era_color(theme, c, layered=True)))
-    return "".join(out)
-
-
-# 開場畫面（index.html）與分享圖（canvas）用：CSS 變數讀不到的地方，各年代的地區色
-COLORS_KEYS = ("base", "accent", "strong", "paper", "map", "line", "ink", "sub")
+# 開場畫面（index.html）、分享圖（canvas）、PWA 標題列（manifest、meta theme-color）用：
+# CSS 變數讀不到的地方，各主題的地區色。令和的鍵是 "modern"（同前端 services/theme.ts）
+COLORS_KEYS = ("base", "accent", "strong", "paper", "map", "header", "line", "ink", "sub")
+REIWA_KEY = "modern"
 
 
 def render_colors(regions: dict) -> str:
     def pick(c: dict[str, str]) -> dict[str, str]:
         return {k: c[k] for k in COLORS_KEYS}
 
-    out: dict[str, dict] = {}
+    out: dict[str, dict] = {
+        REIWA_KEY: {
+            "national": pick(reiwa_color(regions["national"]["color"])),
+            "regions": {r["prefecture"]: pick(reiwa_color(r["color"])) for r in regions["regions"]},
+        }
+    }
     for theme in ERA_THEMES:
         out[theme.key] = {
             "national": pick(era_color(theme, regions["national"]["color"])),
@@ -334,5 +305,4 @@ def build(src: Path = REGIONS_JSON, dst: Path = REGIONS_CSS) -> Path:
     dst.parent.mkdir(parents=True, exist_ok=True)
     dst.write_text(render(regions), encoding="utf-8")
     THEME_COLORS_JSON.write_text(render_colors(regions), encoding="utf-8")
-    REGIONS_NEUTRAL_CSS.write_text(render_neutral(regions), encoding="utf-8")
     return dst

@@ -46,17 +46,20 @@ def test_theme_colors_json_matches_generator():
         assert f':root[data-theme="{theme.key}"] {{' in css
 
 
-def test_neutral_preview_matches_generator():
-    """中性色層次的預覽（?neutral=1）：檔案跟產生器一致，只覆寫 data-neutral 底下，regions.css 不變。"""
-    from pipeline.paths import REGIONS_NEUTRAL_CSS
-    from pipeline.region_css import layered, render_neutral
+def test_neutral_layering_is_default():
+    """中性色層次（DESIGN.md §3.1a）是預設：regions.css 與 theme-colors.json 的令和都套 layered()。"""
+    from pipeline.paths import THEME_COLORS_JSON
+    from pipeline.region_css import REIWA_KEY, layered
 
     data = json.loads(REGIONS_JSON.read_text(encoding="utf-8"))
-    css = REGIONS_NEUTRAL_CSS.read_text(encoding="utf-8")
-    assert css == render_neutral(data)
-    rules = [line for line in css.splitlines() if line.startswith(":root")]
-    assert rules and all(line.startswith(":root[data-neutral]") for line in rules)
+    css = render(data)
     kagawa = next(r["color"] for r in data["regions"] if r["prefecture"] == "kagawa")
     after = layered(kagawa)
     assert after["ink"] == kagawa["ink"] and after["ink_2"] == kagawa["ink_2"]
     assert after["line"] != kagawa["line"]
+    rule = next(line for line in css.splitlines() if line.startswith('[data-pref="kagawa"] {'))
+    assert f"--region-line: {after['line']};" in rule
+    assert "data-neutral" not in css
+    colors = json.loads(THEME_COLORS_JSON.read_text(encoding="utf-8"))
+    assert colors[REIWA_KEY]["regions"]["kagawa"]["header"] == after["header"]
+    assert not (REGIONS_CSS.parent / "regions-neutral.css").exists()
