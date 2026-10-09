@@ -142,6 +142,15 @@ def cmd_photo_check(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_ukiyoe_stats(args: argparse.Namespace) -> int:
+    from pipeline.paths import DATA, SPOTS_DIR
+    from pipeline.ukiyoe_stats import ukiyoe_stats
+
+    prefs = args.prefectures or sorted(p.stem for p in SPOTS_DIR.glob("*.json"))
+    _emit(ukiyoe_stats(prefs, DATA.parent / "reports"), args.report)
+    return 0
+
+
 def cmd_seed_pokefuta(args: argparse.Namespace) -> int:
     from pipeline.packs import seed_pokefuta
 
@@ -312,6 +321,11 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("prefectures", nargs="*", help="省略時處理全部縣")
     p.add_argument("--report")
     p.set_defaults(func=cmd_photo_check)
+
+    p = sub.add_parser("ukiyoe-stats", help="有幾個景點找得到描繪它的浮世繪（不改資料）")
+    p.add_argument("prefectures", nargs="*", help="省略時處理全部縣")
+    p.add_argument("--report")
+    p.set_defaults(func=cmd_ukiyoe_stats)
 
     p = sub.add_parser("seed-wiki", help="由維基百科補簡介與缺漏念法（已有大點的縣）")
     p.add_argument("prefectures", nargs="+")
