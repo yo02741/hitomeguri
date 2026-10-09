@@ -61,7 +61,11 @@
 
 - Tailwind CSS v4，CSS-first 設定，不使用 `tailwind.config.js`。
 - Vite 專案使用 `@tailwindcss/vite` plugin；入口 CSS 為 `web/src/styles/theme.css`（已 `@import "tailwindcss"`）。
-- 字體以 Google Fonts 載入：Noto Sans TC（400/700/900）、Noto Sans JP（400/700/900）、Barlow Semi Condensed（500/600/700），`display=swap`。
+- 字體以 Google Fonts 載入：Noto Sans TC、Noto Sans JP（字重範圍 400..900）、Barlow Semi Condensed（500/600/700），`display=swap`，`index.html` 一個 `link[data-webfonts]`。
+  - Noto Sans TC／JP 是可變字型：網址寫兩個以上字重時，Google Fonts 給的是同一批可變字型檔（400、700、900 共用），所以 900 不多花下載量；寫成範圍 `400..900` 讓 CSS 只剩三分之一的 `@font-face`（705 → 241 個、gzip 195 → 66 KB），字型檔與外觀不變。只寫一個字重時才會換成靜態字型（檔案約一半），但每個字重要各下載一次。
+  - 年代主題的可變字型（Noto Serif TC、Chiron GoRound TC）在 `services/theme.ts` 一樣寫範圍；其他年代字型是靜態字型，照列字重。
+  - Barlow 的 500 要留：沒指定字重的 `font-latin`（400）會用到它。
+  - 日文一律標 `lang="ja"`（§4.1），包括地方名（関東、近畿、九州・沖縄）：否則同一批字會同時抓 TC 與 JP 的字型檔（首頁少抓 4 個 TC 檔，約 170 KB）。
 - `regions.css` 由 `data/regions.json` 產生（pipeline 指令 `build-region-css`），**不可手改**。
 - 共用樣式組合寫成 Vue 元件，不用 `@apply` 堆 class；只有在 MapLibre 等第三方 DOM 無法套 class 時才用 CSS。
 
@@ -154,7 +158,7 @@
 
 - `font-latin` 一律等寬數字（theme.css 的 base 設 `tabular-nums`）。「n / 總數」整段放在同一個 `whitespace-nowrap font-latin` 裡，斜線與總數不換字型、不斷成兩行。
 
-**日文一定要標 `lang="ja"`**：同一個漢字在 TC 與 JP 字形不同（例：「骨」「直」），景點名、片語、地名若用 TC 字形會像錯字。
+**日文一定要標 `lang="ja"`**：同一個漢字在 TC 與 JP 字形不同（例：「骨」「直」），景點名、片語、地名若用 TC 字形會像錯字。地方名（`area_name`：関東、中国、九州・沖縄）也是日文，一樣要標；沒標的日文會讓同一批字多抓一份 TC 字型檔（§2）。
 
 ### 4.2 字級
 | token | px | 字重 | 用途 |

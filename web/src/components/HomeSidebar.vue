@@ -33,7 +33,7 @@ const hasData = computed(() => new Set(props.available))
           @click="explore.toggleCollapsed(`area:${g.area}`)"
         >
           <CollapseChevron :open="isOpen(g.area)" />
-          {{ g.areaName }}
+          <span lang="ja">{{ g.areaName }}</span>
           <span v-if="!isOpen(g.area)" class="font-latin font-normal tracking-normal">{{ g.items.length }}</span>
         </button>
         <RouterLink
@@ -61,6 +61,7 @@ const hasData = computed(() => new Set(props.available))
       >
         <!-- 「九州・沖縄」在「・」後面換行 -->
         <span
+          lang="ja"
           class="flex h-10 w-12 shrink-0 flex-col justify-center pl-0.5 text-caption leading-tight font-bold tracking-section text-sub pointer-coarse:h-tap"
           aria-hidden="true"
         >

@@ -144,16 +144,21 @@ export function sealSplash() {
   check()
 }
 
-/** 網頁字型：preload 的樣式表套用後，等畫面上用到的字型載完 */
+/** 網頁字型：preload 的樣式表（index.html 的 link[data-webfonts]）都套用後，等畫面上用到的字型載完 */
 export function webfontsReady(): Promise<void> {
-  const link = document.getElementById('webfonts') as HTMLLinkElement | null
-  const sheetReady = new Promise<void>((resolve) => {
-    if (!link || link.rel === 'stylesheet') return resolve()
-    // 已經載完或失敗（事件在這段程式執行前就發生了）：資源時間紀錄裡會有這個網址
-    if (performance.getEntriesByName(link.href).length) return resolve()
-    link.addEventListener('load', () => resolve(), { once: true })
-    link.addEventListener('error', () => resolve(), { once: true })
-  })
+  const links = Array.from(document.querySelectorAll<HTMLLinkElement>('link[data-webfonts]'))
+  const sheetReady = Promise.all(
+    links.map(
+      (link) =>
+        new Promise<void>((resolve) => {
+          if (link.rel === 'stylesheet') return resolve()
+          // 已經載完或失敗（事件在這段程式執行前就發生了）：資源時間紀錄裡會有這個網址
+          if (performance.getEntriesByName(link.href).length) return resolve()
+          link.addEventListener('load', () => resolve(), { once: true })
+          link.addEventListener('error', () => resolve(), { once: true })
+        }),
+    ),
+  )
   const loaded = sheetReady
     .then(() => new Promise<void>((r) => requestAnimationFrame(() => r())))
     .then(() => document.fonts.ready)

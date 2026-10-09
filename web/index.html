@@ -28,19 +28,19 @@
     <!-- 地圖圖磚、景點照片的主機先連線 -->
     <link rel="preconnect" href="https://tiles.openfreemap.org" crossorigin />
     <link rel="preconnect" href="https://upload.wikimedia.org" />
-    <!-- 字型不擋首次繪製：先 preload，載完才套用（開場畫面先用系統字） -->
+    <!-- 字型不擋首次繪製：先 preload，載完才套用（開場畫面先用系統字）。
+         Noto Sans TC／JP 是可變字型：寫兩個以上字重時 Google Fonts 給的都是同一批可變字型檔，
+         寫成字重範圍 400..900，CSS 只剩三分之一的 @font-face，下載的字型檔不變（DESIGN.md §2）。
+         splash.ts 的 webfontsReady 等所有 link[data-webfonts] 套用完 -->
     <link
-      id="webfonts"
+      data-webfonts
       rel="preload"
       as="style"
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700;900&family=Noto+Sans+JP:wght@400;700;900&family=Barlow+Semi+Condensed:wght@500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400..900&family=Noto+Sans+JP:wght@400..900&family=Barlow+Semi+Condensed:wght@500;600;700&display=swap"
       onload="this.onload=null;this.rel='stylesheet'"
     />
     <noscript>
-      <link
-        rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700;900&family=Noto+Sans+JP:wght@400;700;900&family=Barlow+Semi+Condensed:wght@500;600;700&display=swap"
-      />
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400..900&family=Noto+Sans+JP:wght@400..900&family=Barlow+Semi+Condensed:wght@500;600;700&display=swap" />
     </noscript>
     <!-- 開場畫面（DESIGN.md §7.0）：寫在 HTML 裡，JS 與字型下載前就會顯示。
          顏色與 47 縣的圓點由 vite.config.ts 在建置時從 data/regions.json 帶入。 -->

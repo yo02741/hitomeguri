@@ -270,7 +270,7 @@ function sourceLabel(url: string): string {
           </div>
           <div class="flex flex-col pb-2">
             <span class="w-fit font-latin text-body font-bold tracking-[0.4em] uppercase [view-transition-name:region-romaji]">{{ region.name.romaji }}</span>
-            <span class="text-body-sm font-bold">{{ region.area_name }}</span>
+            <span lang="ja" class="text-body-sm font-bold">{{ region.area_name }}</span>
           </div>
         </div>
         <p v-if="routes.length" class="-mt-2 flex flex-wrap gap-x-4 font-latin text-caption font-semibold tracking-[1px] lg:hidden">
