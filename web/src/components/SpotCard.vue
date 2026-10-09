@@ -98,7 +98,7 @@ function onLoad(e: Event) {
   if (!w || !h) return
   // offsetHeight 是排版高度，不受傾斜的 transform 影響
   const cardHeight = (img.closest('.card') as HTMLElement | null)?.offsetHeight ?? 0
-  const tooWide = ((5 / 7) * h) / w < 0.55
+  const tooWide = ((5 / 7) * h) / w < 0.45
   const tooSmall = h < cardHeight * (window.devicePixelRatio || 1) * 0.8
   contain.value = tooWide || tooSmall
 }
