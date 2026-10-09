@@ -1,3 +1,5 @@
+import pytest
+
 from pipeline import photo_stats as ps
 
 
@@ -33,3 +35,14 @@ def test_pick_skips_excluded_and_non_photos(monkeypatch) -> None:
     monkeypatch.setattr(photos, "EXCLUDED", {"Bad.jpg"})
     assert photos.pick(["Map.svg", "Bad.jpg", "Good.jpg"], lambda f: True) == "Good.jpg"
     assert photos.pick(["Good.jpg"], lambda f: False) is None
+
+
+def test_photo_check_flags() -> None:
+    from pipeline.photo_check import flags, keep_ratio
+
+    assert keep_ratio(4000, 3000) == pytest.approx(0.536, abs=0.01)
+    assert flags(4000, 3000) == []
+    assert flags(640, 480) == ["糊"]
+    assert flags(6000, 2000) == ["裁"]
+    assert flags(2000, 3000) == []
+    assert flags(0, 0) == []
