@@ -12,7 +12,7 @@ on:
         required: true
         default: seed-pokefuta
         type: choice
-        options: [seed-pokefuta, seed-pokecen, seed-castles, seed-shinise, seed-chara, seed-specialties, seed-festivals, seed-seasons, seed-rail, seed-official, translate-summaries, prune-spots, seed-season-photos, photo-stats, seed-photos, photo-review, photo-review-rest, photo-check]
+        options: [seed-pokefuta, seed-pokecen, seed-castles, seed-shinise, seed-chara, seed-specialties, seed-festivals, seed-seasons, seed-rail, seed-official, translate-summaries, prune-spots, seed-season-photos, photo-stats, seed-photos, photo-review, photo-review-rest, photo-review-sharp, photo-check]
       prefectures:
         description: "都道府縣 slug，空白分隔；空白表示全部（seed-pokecen 不用）。translate-summaries：填數字表示只翻前 N 筆"
         required: false
@@ -59,6 +59,7 @@ jobs:
           cmd="${{ inputs.command }}"
           # photo-review-rest：非精選景點的照片審核圖
           if [ "$cmd" = photo-review-rest ]; then cmd=photo-review; args="$PREFS --rest"; fi
+          if [ "$cmd" = photo-review-sharp ]; then cmd=photo-review; args="$PREFS --sharp"; fi
           .venv/bin/python -m pipeline.cli $cmd $args --report /tmp/report.md
       - name: 推到審核分支
         run: |

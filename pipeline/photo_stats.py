@@ -54,6 +54,7 @@ class SpotPhotos:
     views: dict[str, list[str]] = field(default_factory=dict)
     wiki: dict[str, str] = field(default_factory=dict)
     cats: dict[str, list[str]] = field(default_factory=dict)  # 檔名 → 分類
+    commons_cat: str | None = None  # Wikidata P373
 
 
 def file_of(url: str) -> str | None:
@@ -163,6 +164,7 @@ def fetch_claims(spots: list[SpotPhotos]) -> None:
             claims = e.get("claims", {})
             sp.p18 = [norm(v) for v in wikidata._claim_values(claims, "P18")]
             sp.views = {p: [norm(v) for v in wikidata._claim_values(claims, p)] for p in VIEW_PROPS}
+            sp.commons_cat = next(iter(wikidata._claim_values(claims, "P373")), None)
             for site in WIKI_SITES:
                 if t := e.get("sitelinks", {}).get(site, {}).get("title"):
                     sp.wiki[site] = t  # 先放標題，下面換成代表圖

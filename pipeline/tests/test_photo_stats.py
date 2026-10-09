@@ -46,3 +46,14 @@ def test_photo_check_flags() -> None:
     assert flags(6000, 2000) == ["裁"]
     assert flags(2000, 3000) == []
     assert flags(0, 0) == []
+
+
+def test_sharp_candidates_keep_only_big() -> None:
+    from pipeline.photo_review import sharp_candidates
+    from pipeline.photo_stats import SpotPhotos
+
+    sp = SpotPhotos("Q1", "kyoto", "x", "x", "Small.jpg", p18=["Small.jpg", "Big.jpg", "Tiny.jpg"])
+    sizes = {"Big.jpg": (4000, 3000, ""), "Tiny.jpg": (800, 600, "")}
+    cats = {"Cat big.jpg": (3000, 2000), "Pano.jpg": (9000, 2000), "Map.png": (4000, 3000)}
+    got = [f for f, _ in sharp_candidates(sp, sizes, cats)]
+    assert got == ["Small.jpg", "Big.jpg", "Cat big.jpg"]
