@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import { computed, ref, watch } from 'vue'
+import { computed, nextTick, ref, watch } from 'vue'
 
 import { CATEGORY_GROUPS, categoryGroup } from '../data/categories'
 import { regionOf } from '../data/regions'
 import { mapThumbUrl, type MapSpot } from '../services/bundles'
 import { useCatalogStore } from '../stores/catalog'
 import { useExploreStore } from '../stores/explore'
-import { spotRef } from '../stores/marks'
+import { spotRef, useMarksStore } from '../stores/marks'
 import CollapseChevron from './CollapseChevron.vue'
 import SkeletonRows from './SkeletonRows.vue'
 import VisitedToggle from './VisitedToggle.vue'
@@ -22,6 +22,7 @@ const props = withDefaults(
 const emit = defineEmits<{ select: [id: string]; highlight: [id: string | null] }>()
 const explore = useExploreStore()
 const catalog = useCatalogStore()
+const marks = useMarksStore()
 const prefName = computed(() => regionOf(props.pref)?.name.zh_tw ?? '')
 function retry() {
   catalog.loadMap(props.pref).catch(() => {})
@@ -41,6 +42,33 @@ watch(sections, (list) => {
 const shown = (key: string) => !explore.category || explore.category === key
 
 const isOpen = (key: string) => !explore.collapsed.includes(`cat:${key}`)
+
+// 只看收藏（地圖上的「收藏」chip）：清單也只留這個縣的收藏，和類型一起篩。
+// 一樣只切換顯示（v-show），關掉時清單不重建；捲動位置記下來，關掉時回到原本的位置。
+const onlyFav = computed(() => explore.onlyFavorites)
+const isFav = (id: string) => Boolean(marks.marks[id]?.favorite)
+const rowShown = (id: string) => !onlyFav.value || isFav(id)
+const favCount = (rows: MapSpot[]) => rows.filter((s) => isFav(s.id)).length
+const sectionShown = (g: { key: string; rows: MapSpot[] }) => shown(g.key) && (!onlyFav.value || favCount(g.rows) > 0)
+const favHere = computed(() => (onlyFav.value ? majors.value.filter((s) => isFav(s.id)) : []))
+const favEmpty = computed(() => {
+  if (!onlyFav.value) return ''
+  if (!favHere.value.length) return `${prefName.value}還沒有收藏的地方。`
+  if (explore.category && !favHere.value.some((s) => categoryGroup(s.c) === explore.category)) return '這一類沒有收藏的地方。'
+  return ''
+})
+const scroller = ref<HTMLElement | null>(null)
+let savedTop = 0
+watch(onlyFav, async (on) => {
+  if (on) {
+    savedTop = scroller.value?.scrollTop ?? 0
+    await nextTick()
+    if (scroller.value) scroller.value.scrollTop = 0
+  } else {
+    await nextTick()
+    if (scroller.value) scroller.value.scrollTop = savedTop
+  }
+})
 
 // 手機的類型列是一行橫向捲動：換縣時回到最左邊
 const catNav = ref<HTMLElement | null>(null)
@@ -107,10 +135,12 @@ function hidePhoto(e: Event) {
     </nav>
 
     <div
+      ref="scroller"
       class="scroll-quiet flex min-h-0 flex-col overflow-y-auto overscroll-contain pr-1.5 pb-1 pl-1.5"
       @mouseleave="emit('highlight', null)"
     >
-      <div v-for="g in sections" v-show="shown(g.key)" :key="g.key" class="contents">
+      <p v-if="favEmpty" class="px-1.5 py-3 text-body-sm text-sub">{{ favEmpty }}</p>
+      <div v-for="g in sections" v-show="sectionShown(g)" :key="g.key" class="contents">
         <h3 class="sticky top-0 z-[1] shrink-0 bg-paper">
           <button
             type="button"
@@ -119,11 +149,12 @@ function hidePhoto(e: Event) {
             @click="explore.toggleCollapsed(`cat:${g.key}`)"
           >
             <CollapseChevron :open="isOpen(g.key)" />
-            {{ g.label }}<span class="font-num font-normal tracking-normal">{{ g.rows.length }}</span>
+            {{ g.label }}<span class="font-num font-normal tracking-normal">{{ onlyFav ? favCount(g.rows) : g.rows.length }}</span>
           </button>
         </h3>
         <div
           v-for="s in isOpen(g.key) ? g.rows : []"
+          v-show="rowShown(s.id)"
           :key="s.id"
           class="flex min-h-tap shrink-0 items-center rounded-control [contain-intrinsic-size:auto_3.5rem] [content-visibility:auto]"
           :class="s.id === selectedId ? 'bg-region-tint neutral-preview:shadow-[inset_0_0_0_1.5px_var(--region-strong)]' : 'hover:bg-surface active:bg-surface'"
