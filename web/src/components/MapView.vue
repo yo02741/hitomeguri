@@ -972,6 +972,15 @@ const locatorStyle = computed(() => {
   if (!edge) return undefined
   return 'top' in edge ? { top: `${edge.top + 10}px` } : { bottom: `${edge.bottom + 10}px` }
 })
+// 桌機：右下的出處（開了立體會多一段「標高：国土地理院」）不伸到左下的位置小框底下，放不下就換行。
+// 小框在 insetLeft 起 132px 寬，右邊再留 12px；出處容器本身離右緣 10px
+const LOCATOR_W = 132
+const rootStyle = computed(() => {
+  const s: Record<string, string> = {}
+  if (props.controlsLift) s['--map-lift-b'] = `${props.controlsLift}px`
+  if (props.insetLeft && size.value.w) s['--map-attrib-max'] = `${Math.max(160, size.value.w - props.insetLeft - LOCATOR_W - 12 - 10)}px`
+  return Object.keys(s).length ? s : undefined
+})
 const locator = shallowRef<{ bounds: [number, number, number, number]; zoom: number } | null>(null)
 let locatorFrame = 0
 function updateLocator() {
@@ -1215,7 +1224,7 @@ defineExpose({
   <!-- overflow-hidden：hover 標籤落在畫面外時（例如從清單滑過畫面外的景點）不撐出整頁捲軸 -->
   <div
     class="map-root absolute inset-0 overflow-hidden bg-map-land"
-    :style="controlsLift ? { '--map-lift-b': `${controlsLift}px` } : undefined"
+    :style="rootStyle"
     role="region"
     aria-label="地圖"
   >

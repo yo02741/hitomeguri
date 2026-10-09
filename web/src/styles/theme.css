@@ -758,3 +758,8 @@
   /* --map-lift-b：手機的祭典小卡、收合的景點卡片的高度（MapView 的 controlsLift），縮放鈕移到它們上面 */
   bottom: calc(var(--map-inset-b) + var(--map-lift-b, 0px));
 }
+/* 桌機的出處不伸到左下的位置小框底下（MapView 的 --map-attrib-max），放不下就換行 */
+.map-root .maplibregl-ctrl-bottom-right .maplibregl-ctrl-attrib {
+  box-sizing: border-box;
+  max-width: var(--map-attrib-max, none);
+}
