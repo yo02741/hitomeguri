@@ -32,7 +32,7 @@
 
 **待辦**：見根目錄 `TODO.md`。
 
-- 浮世繪裡的景點（2026-10-09，使用者決定）：收集冊裡的一頁 `/log/cards/ukiyoe`（DESIGN.md §7.19c），描繪我們景點的真實浮世繪，去過的地方亮起來；不是新卡種。資料 `data/ukiyoe.json` 由 `seed-ukiyoe`（`pipeline/ukiyoe.py`，seed-pack.yml）從 Wikidata 與 Commons 取得，只收公有領域、CC0、CC；`validate-data` 檢查 schema、排序、景點、授權與出處；bundle `ukiyoe.json`（`index.extras.ukiyoe`）。**目前的 `data/ukiyoe.json` 是樣本**（富士山、隅田川、日本橋、清水寺 27 幅，只有 ukiyoe-stats 的作品 QID、圖、作者，沒有題名與授權，`validate-data` 會報授權缺漏），要在 Actions 跑一次 seed-pack `seed-ukiyoe` 換成正式資料（ukiyoe-stats：63 個景點、168 幅）。
+- 浮世繪裡的景點（2026-10-09，使用者決定）：收集冊裡的一頁 `/log/cards/ukiyoe`（DESIGN.md §7.19c），描繪我們景點的真實浮世繪，去過的地方亮起來；不是新卡種。資料 `data/ukiyoe.json` 由 `seed-ukiyoe`（`pipeline/ukiyoe.py`，seed-pack.yml）從 Wikidata 與 Commons 取得，只收公有領域、CC0、CC；`validate-data` 檢查 schema、排序、景點、授權與出處；bundle `ukiyoe.json`（`index.extras.ukiyoe`）。資料由 seed-ukiyoe #69 產生：63 個景點、159 幅（公有領域 143、CC0 12、CC 4，授權不明的 3 幅不收）。
 
 - 開場畫面短版（2026-10-09，使用者決定）：完整版播完一次後記 `hitomeguri:splash-seen`，之後只淡出 0.5 秒（DESIGN.md §7.0）。
   手機 4 倍 CPU 降速、preview 建置量到的開場消失時間（3 次中位數）：第一次 8.9 秒、回訪 7.0 秒（工作完成到消失 1.1 → 0.5 秒，另外省掉補點與最少顯示時間）。
