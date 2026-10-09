@@ -112,7 +112,10 @@ watch(
       .flat()
       .filter((s) => marks.marks[s.id]?.favorite)
     const b = spotBounds(spots)
-    if (b && explore.onlyFavorites) bounds.value = b
+    if (b && explore.onlyFavorites) {
+      japanFit = false
+      bounds.value = b
+    }
   },
 )
 watch(
@@ -399,9 +402,16 @@ watch([panel, sheet, pinCard], (els, old) => {
   measureInsets()
 })
 watch([desktop, side], measureInsets)
+// 首頁的鏡頭是整個日本版圖、使用者還沒動過地圖時：清單卡的高度或左側欄改變（第一次量到、轉向、清單卡收起又出現）
+// 就重新定位，日本一直落在清單卡以外看得到的地方
+let japanFit = false
+watch([insets, insetLeft], () => {
+  if (japanFit && !props.pref && listShown.value) bounds.value = [...JAPAN_BOUNDS]
+})
 onBeforeUnmount(() => insetObserver?.disconnect())
 /** 飛到某個點：先量好清單與卡片蓋住的範圍（剛打開的卡片要等畫出來），再讓點落在看得到的地圖中間 */
 async function flyToVisible(lng: number, lat: number, zoom: number) {
+  japanFit = false
   await nextTick()
   measureInsets()
   await nextTick()
@@ -519,6 +529,7 @@ watch(
     }
     // 首頁（含點左上地區標籤回來）：拉回整個日本版圖
     if (!pref) {
+      japanFit = true
       bounds.value = [...JAPAN_BOUNDS]
       return
     }
@@ -715,6 +726,7 @@ function regionForCenter(view: MapViewState): string | null | undefined {
 // 使用者平移、縮放後：地區標籤、地區色、URL 跟著畫面更新（replace，不新增歷史）；拉遠時關閉景點卡片。
 function onMoveEnd(view: MapViewState) {
   if (!view.user) return
+  japanFit = false
   const target = regionForView(view)
   const switching = target !== undefined && target !== (props.pref ?? null)
   // 換縣時下面的 replace 一併拿掉 spot；不換縣才另外關卡片（closeSpot 可能是返回，不能和 replace 同時發）
@@ -780,6 +792,7 @@ function onMoveEnd(view: MapViewState) {
         :color-key="explore.activePref"
         :inset-left="insetLeft"
         :insets="insets"
+        :fit-pad="!pref && !desktop ? 16 : undefined"
         :locator-edge="desktop || side ? null : insets.bottom ? { bottom: insets.bottom } : { top: insets.top }"
         :controls-lift="pinCard || (selectedId && spotSheet && snap === 'peek') ? insets.bottom : 0"
         :pack="packMap"
@@ -894,7 +907,7 @@ function onMoveEnd(view: MapViewState) {
             @select="select"
             @highlight="(id) => mapRef?.highlight(id)"
           />
-          <HomeSidebar v-else v-show="listShown" :available="available" class="max-lg:max-h-[50dvh] land:max-h-none" />
+          <HomeSidebar v-else v-show="listShown" :available="available" class="max-lg:max-h-[42dvh] land:max-h-none" />
         </template>
       </div>
 

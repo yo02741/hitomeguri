@@ -23,6 +23,8 @@ const props = defineProps<{
   insetLeft?: number
   /** 上方被清單卡、下方被景點卡片蓋住的高度（px，手機）：定位與「目前看的範圍」也扣掉 */
   insets?: { top: number; bottom: number } | null
+  /** 定位時四周留白的上限（px）；不給時最多 48。手機首頁剩下的地圖小，日本版圖本身已經貼著外框，留白改小 */
+  fitPad?: number
   /** 下方的控制項（縮放、出處）往上移的高度（px）：手機的祭典小卡不蓋住縮放鈕 */
   controlsLift?: number
   /** 手機：日本小框靠左排在清單（或 chip 軌道）下緣下面（top），或景點卡片、祭典小卡上緣上面（bottom），72px 寬（決定事項 O1） */
@@ -1080,13 +1082,15 @@ onBeforeUnmount(() => {
 
 function fit(b: [number, number, number, number], animate = true) {
   if (!map) return
+  // 容器大小可能剛變（轉向、海報條收起）而 MapLibre 還沒跟上：先同步尺寸，蓋住範圍與定位才用新的大小算
+  map.resize()
   const bounds: LngLatBoundsLike = [
     [b[0], b[1]],
     [b[2], b[3]],
   ]
   const { left, top, bottom } = cover.value
   // 蓋住之後剩下的高度不夠時，四周的留白跟著縮小
-  const pad = Math.min(48, Math.max(8, (size.value.h - top - bottom) / 4))
+  const pad = Math.min(props.fitPad ?? 48, Math.max(8, (size.value.h - top - bottom) / 4))
   map.fitBounds(bounds, {
     padding: { top: pad + top, bottom: pad + bottom, right: pad, left: pad + left },
     maxZoom: 12,
