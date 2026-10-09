@@ -391,3 +391,10 @@ def test_district_keeps_walks_and_shopping_streets():
     assert major.non_spot_reason({"都市の地区"}, "長町武家屋敷跡") is None
     assert major.non_spot_reason({"商業地域"}, "上通") is None
     assert major.non_spot_reason({"町丁"}, "嵯峨野") is not None
+
+
+def test_seed_spots_are_major_only():
+    """主題小店（kind theme）已刪除：種子清單只留大點候選，沒有人讀的 theme 列不該再出現。"""
+    data = json.loads((major.SEED_DIR / "seed_from_guides.json").read_text(encoding="utf-8"))
+    assert data["spots"]
+    assert {s["kind"] for s in data["spots"]} == {"major"}

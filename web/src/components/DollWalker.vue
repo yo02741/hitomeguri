@@ -66,7 +66,8 @@ function lines(): string[] {
   if (next) out.push(next[1] === 0 ? `今天出發去「${next[0].name}」` : `「${next[0].name}」再 ${next[1]} 天出發`)
   if (wallet.left > 0) out.push(`抽獎券還有 ${wallet.left} 張`)
   const keys = [...fresh.keys]
-  if (keys.some((k) => k.startsWith('o:'))) out.push('有新衣服還沒穿')
+  // 只算現在還有的衣服：成就服裝在成就失去後收回，留下的 NEW 在衣櫃裡看不到也清不掉
+  if (keys.some((k) => k.startsWith('o:') && avatar.has(k.slice(2)))) out.push('有新衣服還沒穿')
   if (keys.some((k) => k.startsWith('c:'))) out.push('收集冊有新的卡')
   if (achv.hasNew) out.push('有新的成就')
   const near = achv.nearestArea

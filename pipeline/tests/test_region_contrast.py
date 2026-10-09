@@ -196,8 +196,12 @@ def test_fixed_colors_are_read() -> None:
 
 
 @pytest.mark.parametrize("era", ["edo", "showa"])
-def test_tea_marker_on_map(era: str) -> None:
-    """茶的圓點在江戶、昭和的陸地上 ≥ 3:1（47 縣＋全國），而且是年代自己的值，不是改了令和。"""
+def test_tea_token_on_map(era: str) -> None:
+    """t-tea 在江戶、昭和的陸地上 ≥ 3:1（47 縣＋全國），而且是年代自己的值，不是改了令和。
+
+    t-tea 依使用者決定保留，但主題小店刪除後沒有介面用到（DESIGN §3.2）；
+    這裡只保證之後再用到時顏色不必重調。
+    """
     fixed = fixed_colors()
     assert fixed[era]["t-tea"] != fixed["reiwa"]["t-tea"]
     worst = min(contrast(fixed[era]["t-tea"], c["map"]) for e, _, c in palettes() if e == era)

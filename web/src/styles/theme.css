@@ -398,7 +398,7 @@
   --color-visited-tint: #F3E1DC;
   --color-white: #F7F1E3;
   --color-map-water: #8FA9B8;
-  --color-t-tea: #3C8933; /* 茶的圓點：偏黃的陸地上要 ≥ 3:1，比令和深一點 */
+  --color-t-tea: #3C8933; /* 保留的 token，目前沒有介面用到（DESIGN §3.2）；值仍對偏黃的陸地 ≥ 3:1 */
   --color-era-1: #2B4B7A;
   --color-era-2: #B5352B;
   --color-era-sign: #C9A23A;
@@ -503,7 +503,7 @@
   --color-visited-tint: #ECE4F3;
   --color-white: #FBF6EA;
   --color-map-water: #9CC3C2;
-  --color-t-tea: #3C8933; /* 茶的圓點：偏黃的陸地上要 ≥ 3:1，比令和深一點 */
+  --color-t-tea: #3C8933; /* 保留的 token，目前沒有介面用到（DESIGN §3.2）；值仍對偏黃的陸地 ≥ 3:1 */
   --color-era-1: #C2402A;
   --color-era-2: #1F6B5C;
   --color-era-sign: #E2A62B;

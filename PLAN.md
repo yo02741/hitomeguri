@@ -262,7 +262,7 @@ users/{uid}/lists/{listId}
 - **最近車站**：OSM `railway=station`，取 `name`、`name:ja-Hira`、`name:ja-Latn`、`name:en`（缺的再由 LLM 補、標記待確認）。
 
 ### 5.0 種子清單（攻略）
-- `data/seed/seed_from_guides.json`：從我先前兩份攻略（名古屋、關西）抽出的 77 個景點/店家、13 個地區特色、7 條直飛航線。
+- `data/seed/seed_from_guides.json`：從我先前兩份攻略（名古屋、關西）抽出的景點（現存 56 個大點候選；原本的店家列 kind theme 隨主題小店 2026-10-09 刪除）、13 個地區特色、7 條直飛航線。
 - **只當候選名單**：攻略本身是 AI 生成，座標、營業狀態、創業年份、航線全部要經 pipeline 對齊 Wikidata / OSM / 官網並驗證，不可直接上線。
 - `guide_tier: "S" | "A"` 作為 featured 分數的加分訊號；不在 Wikidata/OSM 大點候選內的種子要主動補查。
 - **攻略的文字不可沿用**（含 emoji 與口語），簡介一律依 §6a 文風重新生成。

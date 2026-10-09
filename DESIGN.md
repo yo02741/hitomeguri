@@ -90,7 +90,7 @@
 | sub | 62:38，自動加深到對 header ≥ 4.6:1 | `text-sub` | 標籤、說明、假名 | `#303F5A` | `#403058` |
 
 - 47 縣的全部數值在 `data/regions.json`（`color.paper`…`color.sub`），CSS 變數在 `regions.css`。
-- 對比由 `pipeline/tests/test_region_contrast.py` 保證（全國＋47 縣 × 令和與 5 個年代）：文字（ink、ink-2、sub 對 paper／surface／header／tint，on-base 對 base，年代的白對 strong）≥ 4.5:1；strong 對 paper、surface ≥ 3:1；去過色對 visited-tint 與 paper ≥ 4.5:1；主題色對 paper 與地圖陸地 ≥ 3:1（茶在江戶、昭和偏黃的陸地上原本只有 2.94，這兩個年代改用深一點的 `#3C8933`，最低 3.17）；白字對 danger ≥ 4.5:1。
+- 對比由 `pipeline/tests/test_region_contrast.py` 保證（全國＋47 縣 × 令和與 5 個年代）：文字（ink、ink-2、sub 對 paper／surface／header／tint，on-base 對 base，年代的白對 strong）≥ 4.5:1；strong 對 paper、surface ≥ 3:1；去過色對 visited-tint 與 paper ≥ 4.5:1；主題色對 paper 與地圖陸地 ≥ 3:1（`t-tea` 目前沒有介面用到，見 §3.2；值仍照這條檢查：江戶、昭和偏黃的陸地上原本只有 2.94，這兩個年代改用 `#3C8933`，最低 3.17）；白字對 danger ≥ 4.5:1。
 - 調整濃淡只改產生腳本的比例參數後重新產生，不手改色碼。
 
 ### 3.1a 中性色層次（預覽，未採用）
@@ -105,7 +105,7 @@
 | 主題 | Tailwind 前綴 | 值 | 符號 |
 |---|---|---|---|
 | 大點 | `t-major` | 跟 `ink` | 名勝／神社／寺院／城（實心） |
-| 茶 | `t-tea` | `#3F8F35`（江戶、昭和 `#3C8933`） | 茶碗 |
+| 茶（保留，無介面使用） | `t-tea` | `#3F8F35`（江戶、昭和 `#3C8933`） | — |
 | 寶可夢 | `t-pokemon` | `#1F6FC0` | 商店袋 |
 | 城（擴充包） | `t-castle` | `#4F6475` | 天守 |
 | 老舖・茶屋（擴充包） | `t-shinise` | `#7A5230` | 暖簾 |
