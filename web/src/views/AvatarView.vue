@@ -7,6 +7,7 @@ import DollGacha from '../components/DollGacha.vue'
 import NewTag from '../components/NewTag.vue'
 import DollSpin from '../components/DollSpin.vue'
 import PaperDoll from '../components/PaperDoll.vue'
+import { achvById, nameText } from '../data/achievements'
 import { EYE_STYLES, HAIR_COLORS, HAIR_STYLES, OUTFITS, type Outfit, SKINS, type Slot, SLOTS } from '../data/outfits'
 import { regionOf, regions } from '../data/regions'
 import { type AvatarParts, useAvatarStore } from '../stores/avatar'
@@ -27,17 +28,24 @@ const fresh = useFreshStore()
 type Tab = 'look' | Slot
 const tab = ref<Tab>('body')
 const TABS: Array<{ key: Tab; label: string }> = [{ key: 'look', label: '外觀' }, ...SLOTS]
-// 有的在前；同一類裡不限縣的在前，各縣依都道府縣代碼順
+// 有的在前；同一類裡不限縣的、成就服裝在前，各縣依都道府縣代碼順
 const PREF_ORDER = new Map(regions.map((r, i) => [r.prefecture, i]))
+const order = (o: Outfit) => (o.pref ? (PREF_ORDER.get(o.pref) ?? 99) + 2 : o.achv ? 1 : 0)
 const onlyOwned = ref(false)
 const items = computed(() =>
   tab.value === 'look'
     ? []
     : OUTFITS.filter((o) => o.slot === tab.value && (!onlyOwned.value || avatar.has(o.id))).sort(
-        (a, b) => Number(avatar.has(b.id)) - Number(avatar.has(a.id)) || (a.pref ? (PREF_ORDER.get(a.pref) ?? 99) + 1 : 0) - (b.pref ? (PREF_ORDER.get(b.pref) ?? 99) + 1 : 0),
+        (a, b) => Number(avatar.has(b.id)) - Number(avatar.has(a.id)) || order(a) - order(b),
       ),
 )
 const prefName = (pref: string) => regionOf(pref)?.name.ja ?? pref
+const achvName = (id: string) => achvById.get(id)?.name ?? id
+function lockedLabel(o: Outfit): string {
+  if (drawable.value.has(o.id)) return `${o.name}（扭蛋抽得到）`
+  if (o.achv) return `${o.name}（達成「${achvName(o.achv)}」就有）`
+  return `${o.name}（去過${prefName(o.pref!)}就有）`
+}
 const ownedCount = computed(() => avatar.ownedIds.size)
 // 扭蛋抽得到但還沒抽到的；要去那個縣才會加進扭蛋的
 const drawable = computed(() => new Set(avatar.remaining.map((o) => o.id)))
@@ -45,7 +53,7 @@ const prefLocked = computed(() => OUTFITS.filter((o) => o.pref && !avatar.visite
 function toggle(o: Outfit) {
   if (!avatar.has(o.id)) return
   fresh.seen([outfitKey(o.id)])
-  avatar.equip(o.slot, avatar.equipped[o.slot] === o.id && o.slot !== 'body' ? null : o.id)
+  avatar.equip(o.slot, avatar.worn[o.slot] === o.id && o.slot !== 'body' ? null : o.id)
 }
 // 外觀選項的頭像：目前的樣子，只換那一項
 const look = (p: Partial<AvatarParts>): AvatarParts => ({ ...avatar.parts, ...p })
@@ -157,7 +165,7 @@ function wear() {
           <span class="wa-pattern wa-seigaiha pointer-events-none absolute inset-0 bg-region opacity-25" aria-hidden="true"></span>
           <span class="floor pointer-events-none absolute inset-x-0 bottom-0 h-[17%] bg-region" :style="vis ? { height: `${Math.round(vis * 0.17)}px` } : undefined" aria-hidden="true"></span>
           <div class="absolute inset-x-0 bottom-0 h-full" :style="vis ? { height: `${vis}px` } : undefined">
-            <DollSpin :parts="avatar.parts" :equipped="avatar.equipped" class="absolute inset-0" />
+            <DollSpin :parts="avatar.parts" :equipped="avatar.worn" class="absolute inset-0" />
           </div>
         </div>
         <button
@@ -279,8 +287,8 @@ function wear() {
               <button
                 type="button"
                 class="tile flex w-full flex-col items-center gap-1.5 rounded-control p-1.5"
-                :class="{ 'is-on': !avatar.equipped[tab] }"
-                :aria-pressed="!avatar.equipped[tab]"
+                :class="{ 'is-on': !avatar.worn[tab] }"
+                :aria-pressed="!avatar.worn[tab]"
                 @click="avatar.equip(tab, null)"
               >
                 <span class="grid aspect-square w-full place-items-center">
@@ -293,10 +301,10 @@ function wear() {
               <button
                 type="button"
                 class="tile relative flex w-full flex-col items-center gap-1.5 rounded-control p-1.5 disabled:cursor-default"
-                :class="{ 'is-on': avatar.equipped[o.slot] === o.id, 'is-locked': !avatar.has(o.id) }"
+                :class="{ 'is-on': avatar.worn[o.slot] === o.id, 'is-locked': !avatar.has(o.id) }"
                 :disabled="!avatar.has(o.id)"
-                :aria-pressed="avatar.equipped[o.slot] === o.id"
-                :aria-label="avatar.has(o.id) ? o.name : drawable.has(o.id) ? `${o.name}（扭蛋抽得到）` : `${o.name}（去過${prefName(o.pref!)}就有）`"
+                :aria-pressed="avatar.worn[o.slot] === o.id"
+                :aria-label="avatar.has(o.id) ? (o.achv ? `${o.name}，成就「${achvName(o.achv)}」` : o.name) : lockedLabel(o)"
                 @click="toggle(o)"
               >
                 <svg :viewBox="o.icon" class="aspect-square w-full overflow-visible p-[8%]" aria-hidden="true">
@@ -304,7 +312,8 @@ function wear() {
                 </svg>
                 <span class="text-caption font-bold text-balance" :class="avatar.has(o.id) ? 'text-ink' : 'text-sub'">{{ o.name }}</span>
                 <span v-if="o.pref" lang="ja" class="pref-tag rounded-tag px-1.5 text-micro font-bold" :data-pref="o.pref">{{ prefName(o.pref) }}</span>
-                <span v-if="avatar.equipped[o.slot] === o.id" class="seal absolute top-1 right-1 grid size-6 place-items-center rounded-full text-[11px] font-black" aria-hidden="true">穿</span>
+                <span v-else-if="o.achv" class="achv-tag rounded-tag px-1.5 text-center text-micro font-bold text-balance break-keep">{{ nameText(achvName(o.achv)) }}</span>
+                <span v-if="avatar.worn[o.slot] === o.id" class="seal absolute top-1 right-1 grid size-6 place-items-center rounded-full text-[11px] font-black" aria-hidden="true">穿</span>
                 <NewTag v-if="avatar.has(o.id) && fresh.has(outfitKey(o.id))" class="absolute top-1 left-1" />
                 <!-- 扭蛋抽得到、還沒抽到 -->
                 <svg v-if="drawable.has(o.id)" class="absolute top-1.5 right-1.5" width="16" height="16" viewBox="0 0 120 120" aria-hidden="true">
@@ -376,7 +385,12 @@ function wear() {
   background: var(--region-strong);
   color: var(--color-white);
 }
-.is-locked .pref-tag {
+.achv-tag {
+  background: var(--color-visited);
+  color: var(--color-white);
+}
+.is-locked .pref-tag,
+.is-locked .achv-tag {
   background: transparent;
   color: var(--color-sub);
   box-shadow: inset 0 0 0 1px var(--color-line);

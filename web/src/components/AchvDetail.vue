@@ -2,6 +2,7 @@
 import { computed, onMounted } from 'vue'
 
 import { hasProgress } from '../data/achievements'
+import { ACHV_OUTFIT } from '../data/outfitRewards'
 import { regionOf } from '../data/regions'
 import { type AchvState, type Contrib, dotDate, type PrefStampState } from '../services/achievements'
 import { useAchievementsStore } from '../stores/achievements'
@@ -10,7 +11,7 @@ import AchvSeal from './AchvSeal.vue'
 import PrefStamp from './PrefStamp.vue'
 import RulesDialog from './RulesDialog.vue'
 
-// 成就的詳細（DESIGN.md §7.25）：章、條件、日期或進度、抽獎券、有關的景點／旅行／縣（最多 12 筆）。
+// 成就的詳細（DESIGN.md §7.25）：章、條件、日期或進度、抽獎券、送的服裝、有關的景點／旅行／縣（最多 12 筆）。
 // 打開就算看過（拿掉 NEW）。外框是 RulesDialog（原生 <dialog>：Esc、點外面關閉）；關閉後焦點回到觸發的格子由頁面處理（Safari 點按鈕不會給焦點，瀏覽器歸還不一定回得去）。
 const props = defineProps<{ state?: AchvState | null; stamp?: PrefStampState | null }>()
 const emit = defineEmits<{ close: [] }>()
@@ -63,6 +64,12 @@ onMounted(() => {
         <template v-if="state && state.def.tickets > 0">
           <dt class="text-sub">抽獎券</dt>
           <dd><span class="font-num">{{ state.def.tickets }}</span> 張</dd>
+        </template>
+        <template v-if="state && ACHV_OUTFIT[state.def.id]">
+          <dt class="text-sub">服裝</dt>
+          <dd>
+            <RouterLink to="/log/avatar" class="font-bold text-ink underline-offset-2 hover:underline" @click="emit('close')">{{ ACHV_OUTFIT[state.def.id]!.name }}</RouterLink>
+          </dd>
         </template>
       </dl>
     </div>

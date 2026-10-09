@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { achvById } from '../data/achievements'
 import { OUTFITS } from '../data/outfits'
 import { useAvatarStore } from '../stores/avatar'
 import NewTag from './NewTag.vue'
@@ -8,8 +9,9 @@ import TicketTable from './TicketTable.vue'
 // 旅人的規則（DESIGN.md §7.24）：標題旁「規則」打開的說明書。寫事實、條列，附上自己現在的抽獎券明細。
 const emit = defineEmits<{ close: [] }>()
 const avatar = useAvatarStore()
-const generic = OUTFITS.filter((o) => !o.pref).length
+const generic = OUTFITS.filter((o) => !o.pref && !o.achv).length
 const prefCount = OUTFITS.filter((o) => o.pref).length
+const rewards = OUTFITS.filter((o) => o.achv)
 </script>
 
 <template>
@@ -21,6 +23,8 @@ const prefCount = OUTFITS.filter((o) => o.pref).length
         <li>第一次去一個縣，送那個縣的代表單品。</li>
         <li>去過的縣的另外兩件，和不限縣的，用扭蛋抽。</li>
         <li>扭蛋只會抽到還沒有的。去過的縣都抽齊了，去新的縣就會加進新的。</li>
+        <li>成就送的 <span class="font-num">{{ rewards.length }}</span> 件不進扭蛋：{{ rewards.map((o) => `${achvById.get(o.achv!)?.name ?? o.achv}・${o.name}`).join('、') }}。</li>
+        <li>取消去過、刪掉旅行，代表單品與成就送的服裝跟著拿掉；標回去就回來。</li>
       </ul>
     </section>
 
@@ -42,6 +46,8 @@ const prefCount = OUTFITS.filter((o) => o.pref).length
         <dd>扭蛋抽得到、還沒抽到</dd>
         <dt class="grid place-items-center"><span class="pref-tag rounded-tag px-1.5 text-micro font-bold">縣名</span></dt>
         <dd>那個縣的單品；剪影的是還沒去過、還沒拿到</dd>
+        <dt class="grid place-items-center"><span class="achv-tag rounded-tag px-1.5 text-micro font-bold">成就</span></dt>
+        <dd>成就送的；剪影的是還沒達成</dd>
         <dt class="grid place-items-center"><span class="seal grid size-6 place-items-center rounded-full text-[11px] font-black">穿</span></dt>
         <dd>正在穿</dd>
         <dt class="grid place-items-center"><NewTag /></dt>
@@ -72,6 +78,10 @@ const prefCount = OUTFITS.filter((o) => o.pref).length
 }
 .pref-tag {
   background: var(--region-strong);
+  color: var(--color-white);
+}
+.achv-tag {
+  background: var(--color-visited);
   color: var(--color-white);
 }
 .seal {

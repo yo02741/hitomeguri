@@ -257,7 +257,7 @@ function open(id: string) {
         class="group flex h-[132px] items-center gap-3 rounded-card border border-line bg-paper px-4 text-ink no-underline hover:bg-surface active:not-disabled:translate-y-px max-lg:relative max-lg:h-[104px] max-lg:items-stretch max-lg:p-3"
       >
         <span class="paper-grain relative h-[108px] w-[92px] shrink-0 overflow-hidden rounded-control bg-region-tint max-lg:absolute max-lg:top-2 max-lg:right-2 max-lg:h-[50px] max-lg:w-[43px]" aria-hidden="true">
-          <PaperDoll :parts="avatar.parts" :equipped="{ ...avatar.equipped, buddy: undefined }" crop="36 8 168 196" class="absolute inset-0 size-full" />
+          <PaperDoll :parts="avatar.parts" :equipped="{ ...avatar.worn, buddy: undefined }" crop="36 8 168 196" class="absolute inset-0 size-full" />
         </span>
         <span class="flex min-w-0 flex-col gap-0.5 max-lg:justify-between">
           <span class="text-title font-black tracking-title max-lg:text-body">旅人</span>

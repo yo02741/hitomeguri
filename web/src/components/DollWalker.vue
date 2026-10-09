@@ -168,7 +168,7 @@ const bubbleRight = computed(() => x.value > maxX() - 150)
     <p class="sr-only" aria-live="polite">{{ heard }}</p>
     <button type="button" class="pointer-events-auto block" :aria-label="say ? `旅人：${say}` : '旅人'" @click="onClick">
       <span :key="actKey" class="body block" :class="`act-${act}`" :style="{ '--face': facing }">
-        <PaperDoll :parts="avatar.parts" :equipped="avatar.equipped" class="block h-auto w-16" />
+        <PaperDoll :parts="avatar.parts" :equipped="avatar.worn" class="block h-auto w-16" />
       </span>
     </button>
   </div>
