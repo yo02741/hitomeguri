@@ -3,7 +3,7 @@ import { computed, nextTick, ref, watch } from 'vue'
 
 import { CATEGORY_GROUPS, categoryGroup } from '../data/categories'
 import { regionOf } from '../data/regions'
-import { mapThumbUrl, type MapSpot } from '../services/bundles'
+import { mapThumbFallback, mapThumbUrl, type MapSpot } from '../services/bundles'
 import { useCatalogStore } from '../stores/catalog'
 import { useExploreStore } from '../stores/explore'
 import { spotRef, useMarksStore } from '../stores/marks'
@@ -79,9 +79,17 @@ watch(
   },
 )
 
-// 照片讀不到就把那張藏起來（露出底色）；不用響應式狀態，離線時一次幾十張讀不到也不會整份清單重畫幾十次
-function hidePhoto(e: Event) {
-  ;(e.target as HTMLElement).hidden = true
+// 照片讀不到先換原圖試一次（原圖比縮圖寬度還小時縮圖會失敗），再不行就藏起來（露出底色）；
+// 不用響應式狀態，離線時一次幾十張讀不到也不會整份清單重畫幾十次
+function hidePhoto(e: Event, i: string) {
+  const img = e.target as HTMLImageElement
+  const next = mapThumbFallback(i, img.src)
+  if (next && !img.dataset.fallback) {
+    img.dataset.fallback = '1'
+    img.src = next
+    return
+  }
+  img.hidden = true
 }
 </script>
 
@@ -176,7 +184,7 @@ function hidePhoto(e: Event) {
                 loading="lazy"
                 referrerpolicy="no-referrer"
                 class="size-full object-cover"
-                @error="hidePhoto"
+                @error="hidePhoto($event, s.i)"
               />
             </span>
             <span class="flex min-w-0 flex-col">

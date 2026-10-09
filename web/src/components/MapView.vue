@@ -5,7 +5,7 @@ import 'maplibre-gl/dist/maplibre-gl.css'
 import { computed, nextTick, onBeforeUnmount, onMounted, ref, shallowRef, watch } from 'vue'
 
 import { JAPAN_CENTER, JAPAN_ZOOM, MAP_STYLE_URL } from '../map/style'
-import { mapThumbUrl, type MapSpot } from '../services/bundles'
+import { mapThumbFallback, mapThumbUrl, type MapSpot } from '../services/bundles'
 import { splashCovering, trackSplash } from '../services/splash'
 import { theme } from '../services/theme'
 import { wide } from '../services/viewport'
@@ -831,6 +831,13 @@ function photoEl(id: string, thumb: string, score: number): HTMLElement {
   img.decoding = 'async'
   img.className = 'size-full rounded-full object-cover'
   img.onerror = () => {
+    // 先換原圖試一次（原圖比 250px 還小時縮圖會失敗）
+    const next = mapThumbFallback(thumb, img.src)
+    if (next && !img.dataset.fallback) {
+      img.dataset.fallback = '1'
+      img.src = next
+      return
+    }
     failedThumbs.add(thumb)
     photoPins.get(id)?.remove()
     photoPins.delete(id)
@@ -868,6 +875,16 @@ function positionHover() {
   hover.value = { ...h, x: p.x, y: p.y }
 }
 
+function onHoverThumbError(e: Event, h: Hover | null) {
+  const img = e.target as HTMLImageElement
+  const next = h?.thumb ? mapThumbFallback(h.thumb, img.src) : null
+  if (next && !img.dataset.fallback) {
+    img.dataset.fallback = '1'
+    img.src = next
+    return
+  }
+  thumbFailed(h)
+}
 function thumbFailed(h: Hover | null) {
   // 照片讀不到的時候游標可能已經離開（hover 已清掉）
   if (!h) return
@@ -1263,7 +1280,7 @@ defineExpose({
           alt=""
           class="size-full object-cover"
           referrerpolicy="no-referrer"
-          @error="thumbFailed(hover)"
+          @error="onHoverThumbError($event, hover)"
         />
       </span>
       <span

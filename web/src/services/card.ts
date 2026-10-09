@@ -1,4 +1,5 @@
 import type { MapSpot, Spot } from './bundles'
+import { COMMONS_THUMB_PREFIX } from './commons'
 
 /**
  * 景點收集卡（DESIGN.md §7.19）。卡面內容只用景點既有的資料，不自己編。
@@ -105,8 +106,6 @@ export function cardFromSpot(s: Spot): CardFace {
   }
 }
 
-const COMMONS_THUMB_PREFIX = 'https://thumb.wikimedia.org/wikipedia/commons/thumb/'
-
 export function cardFromMapSpot(s: MapSpot, pref: string): CardFace {
   return {
     id: s.id,
@@ -123,12 +122,4 @@ export function cardFromMapSpot(s: MapSpot, pref: string): CardFace {
   }
 }
 
-/**
- * Commons 縮圖換成指定寬度（Commons 的標準寬度：250、330、500、960、1280）。
- * 不是縮圖網址（原圖本來就小）時原樣回傳。
- */
-export function commonsThumb(url: string, width: 250 | 330 | 500 | 960 | 1280): string {
-  const base = url.split('?', 1)[0]
-  if (!base.startsWith(COMMONS_THUMB_PREFIX) || !/\/\d+px-[^/]+$/.test(base)) return url
-  return base.replace(/\/\d+px-([^/]+)$/, `/${width}px-$1`)
-}
+export { commonsThumb } from './commons'

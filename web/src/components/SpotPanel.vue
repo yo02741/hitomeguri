@@ -1,8 +1,9 @@
 <script setup lang="ts">
-import { computed, onBeforeUnmount, ref, watch } from 'vue'
+import { computed, onBeforeUnmount, onMounted, ref, watch } from 'vue'
 
 import type { Spot } from '../services/bundles'
 import { cardFromSpot, cardNumberFor, designationOf, rarityLabel, rarityOf } from '../services/card'
+import { commonsCandidates, commonsWidthFor } from '../services/commons'
 import { showReveal } from '../services/cardReveal'
 import { allVariants, drawVariants, hasNight, ownedVariants } from '../services/cardVariants'
 import { todayIso } from '../services/userdb'
@@ -51,9 +52,36 @@ const emit = defineEmits<{
 }>()
 
 // 圖片載入失敗（Commons 暫時無法取得等）時退回底色，不顯示破圖
-const imageFailed = ref(false)
-watch(() => props.spot?.id, () => (imageFailed.value = false))
-const image = computed(() => (imageFailed.value ? undefined : props.spot?.images[0]))
+// 照片寬度依畫面上的寬 × devicePixelRatio 選 Commons 的標準寬度（平板 820 寬的 sheet 要 1920、手機 390@3x 要 1280）；
+// 讀不到就依序退回小一號、原圖，全部失敗才藏起來（services/commons.ts）
+const imageTry = ref(0)
+watch(() => props.spot?.id, () => (imageTry.value = 0))
+const photoFrame = ref<HTMLElement | null>(null)
+const frameWidth = ref(0)
+let frameObserver: ResizeObserver | null = null
+onMounted(() => {
+  if (typeof ResizeObserver === 'undefined') return
+  frameObserver = new ResizeObserver(([e]) => {
+    const w = Math.round(e?.contentRect.width ?? 0)
+    // 只往大換：sheet 換段、拖動時不重抓小一號的照片
+    if (w > frameWidth.value) frameWidth.value = w
+  })
+  watch(photoFrame, (el, old) => {
+    if (old) frameObserver?.unobserve(old)
+    if (el) frameObserver?.observe(el)
+  }, { immediate: true })
+})
+onBeforeUnmount(() => frameObserver?.disconnect())
+const imageSources = computed(() => {
+  const url = props.spot?.images[0]?.url
+  if (!url || !frameWidth.value) return []
+  return commonsCandidates(url, commonsWidthFor(frameWidth.value, window.devicePixelRatio))
+})
+const image = computed(() => {
+  const img = props.spot?.images[0]
+  const src = imageSources.value[imageTry.value]
+  return img && src ? { ...img, src } : undefined
+})
 const category = computed(() => props.spot?.tags.filter((t) => !t.startsWith('guide-')) ?? [])
 // 景點收集卡（DESIGN.md §7.19）：名稱帶右側的卡片鈕放大檢視
 const catalog = useCatalogStore()
@@ -265,16 +293,16 @@ function distance(m: number): string {
       :class="snap ? 'flex min-h-0 flex-1 flex-col overflow-y-auto overscroll-contain' : 'contents'"
       :inert="snap === 'peek' ? true : undefined"
     >
-      <div class="photo-frame relative h-[170px] shrink-0 overflow-hidden bg-placeholder" :class="snap ? '' : 'order-first'">
+      <div ref="photoFrame" class="photo-frame relative h-[170px] shrink-0 overflow-hidden bg-placeholder" :class="snap ? '' : 'order-first'">
         <img
           v-if="image"
           data-photo
           :key="image.url"
-          :src="image.url"
+          :src="image.src"
           :alt="spot.name.ja"
           class="size-full object-cover"
           referrerpolicy="no-referrer"
-          @error="imageFailed = true"
+          @error="imageTry++"
         />
         <a
           v-if="image"
