@@ -398,3 +398,22 @@ def test_seed_spots_are_major_only():
     data = json.loads((major.SEED_DIR / "seed_from_guides.json").read_text(encoding="utf-8"))
     assert data["spots"]
     assert {s["kind"] for s in data["spots"]} == {"major"}
+
+
+def test_category_halls_and_churches_are_not_temples():
+    def cat(name, **tags):
+        el = OsmElement("node/1", 0, 0, {"name": name, **tags})
+        return major.category(major.Draft(key="k", lat=0, lng=0, osm_els=[el]))
+
+    # 「堂」結尾的議會、公會堂、能樂堂與教堂：不是寺院（教堂和其他「教会」一樣不分類）
+    assert cat("国会議事堂") is None
+    assert cat("東京カテドラル聖マリア大聖堂") is None
+    assert cat("大阪市中央公会堂") is None
+    assert cat("国立能楽堂") is None
+    assert cat("大浦天主堂") is None
+    assert cat("ニコライ堂", amenity="place_of_worship", religion="christian") is None
+    # 寺的「堂」照舊
+    assert cat("三十三間堂") == "寺院"
+    assert cat("中尊寺金色堂") == "寺院"
+    assert cat("毘沙門堂") == "寺院"
+    assert cat("平等院") == "寺院"
