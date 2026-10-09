@@ -44,3 +44,19 @@ def test_theme_colors_json_matches_generator():
     css = render(data)
     for theme in ERA_THEMES:
         assert f':root[data-theme="{theme.key}"] {{' in css
+
+
+def test_neutral_preview_matches_generator():
+    """中性色層次的預覽（?neutral=1）：檔案跟產生器一致，只覆寫 data-neutral 底下，regions.css 不變。"""
+    from pipeline.paths import REGIONS_NEUTRAL_CSS
+    from pipeline.region_css import layered, render_neutral
+
+    data = json.loads(REGIONS_JSON.read_text(encoding="utf-8"))
+    css = REGIONS_NEUTRAL_CSS.read_text(encoding="utf-8")
+    assert css == render_neutral(data)
+    rules = [line for line in css.splitlines() if line.startswith(":root")]
+    assert rules and all(line.startswith(":root[data-neutral]") for line in rules)
+    kagawa = next(r["color"] for r in data["regions"] if r["prefecture"] == "kagawa")
+    after = layered(kagawa)
+    assert after["ink"] == kagawa["ink"] and after["ink_2"] == kagawa["ink_2"]
+    assert after["line"] != kagawa["line"]

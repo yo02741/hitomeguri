@@ -130,7 +130,7 @@ const visitedCount = computed(() => rows.value.filter((it) => marks.markOf(it.s 
           v-for="it in isOpen(s.key) ? s.rows : []"
           :key="it.id"
           class="flex shrink-0 items-center rounded-control"
-          :class="isSelected(it) ? 'bg-region-tint' : 'hover:bg-surface active:bg-surface'"
+          :class="isSelected(it) ? 'bg-region-tint neutral-preview:shadow-[inset_0_0_0_1.5px_var(--region-strong)]' : 'hover:bg-surface active:bg-surface'"
         >
           <button
             type="button"

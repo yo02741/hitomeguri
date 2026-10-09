@@ -155,7 +155,7 @@ const isDrop = (idx: number) => props.dropAt?.day === props.day && props.dropAt.
         :id="`stop-${s.spot_id}`"
         :draggable="!locked"
         class="group flex items-center gap-2 rounded-control border-t-2 py-1.5 pr-1 pl-1"
-        :class="[isDrop(i) ? 'border-region-strong' : 'border-transparent', focusId === s.spot_id ? 'bg-region-tint' : 'hover:bg-surface active:bg-surface']"
+        :class="[isDrop(i) ? 'border-region-strong' : 'border-transparent', focusId === s.spot_id ? 'bg-region-tint neutral-preview:shadow-[inset_0_0_0_1.5px_var(--region-strong)]' : 'hover:bg-surface active:bg-surface']"
         @dragstart="onStart(i, $event)"
         @dragover="onOverRow(i, $event)"
         @dragend="emit('dragend')"

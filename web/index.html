@@ -15,6 +15,10 @@
         var t = new URLSearchParams(location.search).get('theme') || localStorage.getItem('hitomeguri:theme')
         if (/^(edo|meiji|taisho|showa|heisei)$/.test(t || '')) document.documentElement.dataset.theme = t
       } catch (e) {}
+      // 中性色層次的預覽（DESIGN.md §3.1a）：只有網址帶 ?neutral=1 才套，預設不變（web/src/main.ts 載入 regions-neutral.css）
+      try {
+        if (new URLSearchParams(location.search).get('neutral') === '1') document.documentElement.dataset.neutral = 'layered'
+      } catch (e) {}
       // 開場畫面（DESIGN.md §7.0）：看過完整版的人只淡出；減少動態的人維持原樣（web/src/services/splash.ts）
       try {
         if (localStorage.getItem('hitomeguri:splash-seen') && !matchMedia('(prefers-reduced-motion: reduce)').matches)

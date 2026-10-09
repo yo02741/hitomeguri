@@ -93,6 +93,14 @@
 - 對比由 `pipeline/tests/test_region_contrast.py` 保證（全國＋47 縣 × 令和與 5 個年代）：文字（ink、ink-2、sub 對 paper／surface／header／tint，on-base 對 base，年代的白對 strong）≥ 4.5:1；strong 對 paper、surface ≥ 3:1；去過色對 visited-tint 與 paper ≥ 4.5:1；主題色對 paper 與地圖陸地 ≥ 3:1（茶在江戶、昭和偏黃的陸地上原本只有 2.94，這兩個年代改用深一點的 `#3C8933`，最低 3.17）；白字對 danger ≥ 4.5:1。
 - 調整濃淡只改產生腳本的比例參數後重新產生，不手改色碼。
 
+### 3.1a 中性色層次（預覽，未採用）
+淺色縣（香川、千葉、愛媛等）固定比例疊白後，line、header、tint 跟紙幾乎同色；各年代的 tint 比紙還亮，選取列比 hover 列淡。預覽只補下限，不改預設：
+- 開法：網址加 `?neutral=1`（`index.html` 設 `<html data-neutral>`，`main.ts` 才載入 `regions-neutral.css`）。換頁會保留，重新載入沒帶參數就回到預設。
+- 令和：surface、map、line-soft、header、placeholder、line 的 OKLab 明度至少比 paper 低 1.6／3／3／5.5／6.2／9（%），色相彩度不變；tint 比 surface 低 1.5；sub 自動加深到對 header ≥ 4.6:1。ink、ink-2 不動。
+- 年代：tint 改成年代 surface 滲 12% 代表色，再壓到比 surface 低 1.5。
+- 選取列（RegionLists、PackList、TripStopList）：`neutral-preview:` 變體加 1.5px `--region-strong` 內框，不加粗、不用色條。
+- `regions-neutral.css` 由 `build-region-css` 一起產生（`pipeline/region_css.py` 的 `layered`、`render_neutral`），不可手改；對比測試也檢查這組。
+
 ### 3.2 主題色（固定）
 | 主題 | Tailwind 前綴 | 值 | 符號 |
 |---|---|---|---|
