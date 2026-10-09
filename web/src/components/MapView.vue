@@ -5,7 +5,6 @@ import 'maplibre-gl/dist/maplibre-gl.css'
 import { computed, nextTick, onBeforeUnmount, onMounted, ref, shallowRef, watch } from 'vue'
 
 import { JAPAN_CENTER, JAPAN_ZOOM, MAP_STYLE_URL } from '../map/style'
-import { THEMES } from '../data/themes'
 import { mapThumbUrl, type MapSpot } from '../services/bundles'
 import { splashCovering, trackSplash } from '../services/splash'
 import { theme } from '../services/theme'
@@ -275,11 +274,8 @@ function toGeoJSON(spots: MapSpot[]): GeoJSON.FeatureCollection<GeoJSON.Point> {
       properties: {
         id: s.id,
         n: s.n,
-        // 大點（major）與主題景點樣式不同；照片、名稱標籤由分數高的優先
-        m: s.k === 'major' ? 1 : 0,
+        // 照片、名稱標籤由分數高的優先
         s: s.s ?? 0,
-        // 顯示用主題：大點為空字串（墨色），主題景點取第一個主題（主題層暫停，map bundle 目前只有大點）
-        th: s.k === 'major' ? '' : (s.t?.[0] ?? ''),
         i: s.i ?? '',
         fv: props.marked?.[s.id]?.favorite ? 1 : 0,
         vs: props.marked?.[s.id]?.visited ? 1 : 0,
@@ -323,13 +319,9 @@ function applyColors() {
   map.setPaintProperty('clusters', 'circle-color', ink)
   map.setPaintProperty('clusters', 'circle-stroke-color', paper)
   map.setPaintProperty('cluster-count', 'text-color', paper)
-  const themeColor: unknown[] = ['match', ['get', 'th']]
-  for (const t of THEMES) themeColor.push(t.key, token(`--color-t-${t.key}`))
-  themeColor.push(ink)
-  const stroke = ['case', ['==', ['get', 'm'], 1], paper, themeColor] as unknown as maplibregl.ExpressionSpecification
   for (const layer of ['spots', 'hover']) {
-    map.setPaintProperty(layer, 'circle-color', ['case', ['==', ['get', 'm'], 1], ink, paper])
-    map.setPaintProperty(layer, 'circle-stroke-color', stroke)
+    map.setPaintProperty(layer, 'circle-color', ink)
+    map.setPaintProperty(layer, 'circle-stroke-color', paper)
   }
   map.setPaintProperty('spot-fav', 'circle-stroke-color', strong)
   map.setPaintProperty('spot-visited', 'circle-color', token('--color-visited'))

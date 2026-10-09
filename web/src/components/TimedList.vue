@@ -30,7 +30,7 @@ const sources = computed(() => {
           <span v-if="detailed && t.summary_zh" class="mt-0.5 text-caption text-ink-2">{{ t.summary_zh }}</span>
         </a>
         <span class="flex shrink-0 flex-col items-end text-caption text-sub">
-          <span class="font-latin">{{ dateRange(t) }}</span>
+          <span class="font-num">{{ dateRange(t) }}</span>
           <span lang="ja">{{ [t.brand, scope(t)].filter(Boolean).join('・') }}</span>
         </span>
       </li>

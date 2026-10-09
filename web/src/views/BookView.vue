@@ -164,7 +164,7 @@ function print() {
             v-for="p in ['A5', 'A4'] as const"
             :key="p"
             type="button"
-            class="h-8 rounded-control px-2.5 font-latin active:not-disabled:translate-y-px pointer-coarse:h-tap"
+            class="h-8 rounded-control px-2.5 font-num active:not-disabled:translate-y-px pointer-coarse:h-tap"
             :class="paper === p ? 'bg-region-tint font-bold text-ink' : 'text-sub hover:text-ink'"
             :aria-pressed="paper === p"
             @click="paper = p"
@@ -211,7 +211,7 @@ function print() {
             v-for="p in ['A5', 'A4'] as const"
             :key="p"
             type="button"
-            class="h-tap rounded-control px-3 font-latin active:not-disabled:translate-y-px"
+            class="h-tap rounded-control px-3 font-num active:not-disabled:translate-y-px"
             :class="paper === p ? 'bg-region-tint font-bold text-ink' : 'text-sub'"
             :aria-pressed="paper === p"
             @click="paper = p"
@@ -247,7 +247,7 @@ function print() {
         <div class="mt-[18mm] flex flex-col gap-3">
           <span class="text-body-sm font-bold tracking-section text-sub">旅前小書</span>
           <h1 class="text-h1 leading-tight font-black tracking-title">{{ trip.name || '未命名行程' }}</h1>
-          <p v-if="dates" class="font-latin text-title">
+          <p v-if="dates" class="font-num text-title">
             {{ dates }}<span class="ml-2 font-sans text-body-sm text-sub">{{ days }} 天</span>
           </p>
         </div>
@@ -279,11 +279,11 @@ function print() {
                 <span class="text-[9px]">DAY</span><span class="text-[16px]">{{ i + 1 }}</span>
               </span>
             </span>
-            <span v-if="dayDate(trip, i)" class="font-latin text-title font-bold">{{ shortDate(dayDate(trip, i)!) }}</span>
+            <span v-if="dayDate(trip, i)" class="font-num text-title font-bold">{{ shortDate(dayDate(trip, i)!) }}</span>
           </div>
           <ol v-if="d.stops.length" class="flex flex-col">
             <li v-for="(s, j) in d.stops" :key="s.spot_id + j" class="flex gap-3 border-b border-line-soft py-2 break-inside-avoid last:border-b-0">
-              <span class="w-5 shrink-0 pt-3 text-right font-latin font-bold text-sub">{{ j + 1 }}</span>
+              <span class="w-5 shrink-0 pt-3 text-right font-num font-bold text-sub">{{ j + 1 }}</span>
               <span class="flex min-w-0 flex-1 flex-col">
                 <span v-if="stopInfo(s).kana" lang="ja" class="text-[0.85em] tracking-kana text-sub">{{ stopInfo(s).kana }}</span>
                 <a :href="stopInfo(s).maps" lang="ja" class="w-fit text-[1.15em] font-black text-ink no-underline pointer-coarse:-my-3 pointer-coarse:py-3">{{ stopInfo(s).ja }}</a>
@@ -296,7 +296,7 @@ function print() {
                   <span class="text-sub">最寄駅</span>
                   <span lang="ja" class="ml-1.5 font-bold">{{ stopInfo(s).station!.ja }}</span>
                   <span v-if="stopInfo(s).station!.kana" lang="ja" class="ml-1 text-sub">{{ stopInfo(s).station!.kana }}</span>
-                  <span class="ml-1 font-latin text-sub">{{ Math.round(stopInfo(s).station!.m / 10) * 10 }} m</span>
+                  <span class="ml-1 font-num text-sub">{{ Math.round(stopInfo(s).station!.m / 10) * 10 }} m</span>
                 </span>
               </span>
             </li>
@@ -361,7 +361,7 @@ function print() {
               <span lang="ja" class="font-bold">{{ t.title.ja }}</span>
               <span v-if="t.summary_zh" class="text-[0.85em] text-ink-2">{{ t.summary_zh }}</span>
             </span>
-            <span class="shrink-0 font-latin text-[0.85em] text-sub">{{ dateRange(t) }}</span>
+            <span class="shrink-0 font-num text-[0.85em] text-sub">{{ dateRange(t) }}</span>
           </li>
         </ul>
         <p v-if="timed.some((t) => t.source_label)" lang="ja" class="mb-4 text-[0.75em] text-sub">

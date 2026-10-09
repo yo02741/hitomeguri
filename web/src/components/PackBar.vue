@@ -64,7 +64,7 @@ const chip = 'flex h-9 shrink-0 items-center gap-1.5 rounded-full px-3.5 text-bo
         <path :d="p.icon" />
       </svg>
       {{ p.label }}
-      <RollingNumber v-if="count(p.key) !== null" :value="count(p.key) ?? 0" class="font-latin font-semibold" />
+      <RollingNumber v-if="count(p.key) !== null" :value="count(p.key) ?? 0" class="font-num font-semibold" />
     </button>
 
     <div class="relative">

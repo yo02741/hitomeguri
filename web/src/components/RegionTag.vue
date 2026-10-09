@@ -43,7 +43,7 @@ const routes = computed(() =>
         </svg>
         全國
       </RouterLink>
-      <span class="absolute top-2.5 right-3 rounded-tag border border-ink px-1.5 text-caption font-bold">{{ region.area_name }}</span>
+      <span lang="ja" class="absolute top-2.5 right-3 rounded-tag border border-ink px-1.5 text-caption font-bold">{{ region.area_name }}</span>
       <span lang="ja" class="text-body-sm font-bold tracking-[0.3em] [view-transition-name:region-name]">{{ region.name.ja }}</span>
       <span lang="ja" class="font-display text-h1 leading-tight tracking-[0.12em] whitespace-nowrap [view-transition-name:region-kana]">{{ region.name.kana }}</span>
       <span class="font-sans text-caption font-bold tracking-[0.4em] uppercase [view-transition-name:region-romaji]">{{ region.name.romaji }}</span>
@@ -101,7 +101,7 @@ const routes = computed(() =>
           :class="region.name.romaji.length > 7 ? 'tracking-[0.12em]' : 'tracking-[0.3em]'"
           >{{ region.name.romaji }}</span
         >
-        <span class="text-caption font-bold">{{ region.area_name }}</span>
+        <span lang="ja" class="text-caption font-bold">{{ region.area_name }}</span>
       </span>
     </span>
     <span v-if="routes.length" class="relative mt-1.5 pl-2 font-latin text-caption font-semibold tracking-[1px]">{{ routes.join('　') }}</span>

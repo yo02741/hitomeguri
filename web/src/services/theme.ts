@@ -12,7 +12,7 @@ export interface Era {
   label: string
   /** 西元年（約略） */
   years: string
-  /** Google Fonts（只有選了才載入）；令和用 index.html 原本的字型 */
+  /** Google Fonts（只有選了才載入）；令和用 index.html 原本的字型。可變字型（Noto Serif TC、Chiron GoRound TC）寫字重範圍 `a..b`，CSS 比逐一列字重小三分之二，字型檔相同 */
   fonts?: string
 }
 
@@ -23,13 +23,13 @@ export const ERAS: Era[] = [
     key: 'meiji',
     label: '明治',
     years: '1868–1912',
-    fonts: `${GF}Noto+Serif+TC:wght@400;700;900&family=Shippori+Mincho:wght@400;700&family=Shippori+Mincho+B1:wght@800&family=IM+Fell+English+SC`,
+    fonts: `${GF}Noto+Serif+TC:wght@400..900&family=Shippori+Mincho:wght@400;700&family=Shippori+Mincho+B1:wght@800&family=IM+Fell+English+SC`,
   },
   {
     key: 'taisho',
     label: '大正',
     years: '1912–1926',
-    fonts: `${GF}Noto+Serif+TC:wght@400;700&family=Zen+Old+Mincho:wght@400;700&family=Kaisei+Decol:wght@700&family=Chiron+Sung+HK:wght@900&family=Cormorant+SC:wght@600`,
+    fonts: `${GF}Noto+Serif+TC:wght@400..700&family=Zen+Old+Mincho:wght@400;700&family=Kaisei+Decol:wght@700&family=Chiron+Sung+HK:wght@900&family=Cormorant+SC:wght@600`,
   },
   {
     key: 'showa',
@@ -41,7 +41,7 @@ export const ERAS: Era[] = [
     key: 'heisei',
     label: '平成',
     years: '1989–2019',
-    fonts: `${GF}Chiron+GoRound+TC:wght@500;700;900&family=M+PLUS+Rounded+1c:wght@500;700;800&family=Mochiy+Pop+One&family=VT323`,
+    fonts: `${GF}Chiron+GoRound+TC:wght@500..900&family=M+PLUS+Rounded+1c:wght@500;700;800&family=Mochiy+Pop+One&family=VT323`,
   },
   { key: 'modern', label: '令和', years: '2019–' },
 ]

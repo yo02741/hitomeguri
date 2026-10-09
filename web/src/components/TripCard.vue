@@ -50,7 +50,7 @@ const band = computed(() => {
         </span>
       </span>
       <span class="flex flex-wrap gap-x-3 text-caption text-sub">
-        <span v-if="dates" class="font-latin">{{ dates }}</span>
+        <span v-if="dates" class="font-num">{{ dates }}</span>
         <span>{{ trip.days.length }} 天</span>
         <span>{{ count }} 個地點</span>
       </span>
@@ -60,7 +60,7 @@ const band = computed(() => {
         <span class="flex -space-x-1.5">
           <MemberAvatar v-for="m in trip.members.slice(0, 5)" :key="m" :member="trip.member_info[m]" :size="20" class="ring-2 ring-paper" />
         </span>
-        共編 <span class="font-latin">{{ trip.members.length }}</span> 人
+        共編 <span class="font-num">{{ trip.members.length }}</span> 人
       </span>
     </span>
   </RouterLink>

@@ -25,6 +25,8 @@ STATE_DIR = DATA / "_state"
 
 WEB = ROOT / "web"
 REGIONS_CSS = WEB / "src" / "styles" / "regions.css"
+# 中性色層次的預覽（?neutral=1）；預設不載入
+REGIONS_NEUTRAL_CSS = WEB / "src" / "styles" / "regions-neutral.css"
 THEME_COLORS_JSON = WEB / "src" / "styles" / "theme-colors.json"
 BUNDLES_DIR = WEB / "public" / "bundles"
 GEO_JSON = WEB / "public" / "geo" / "prefectures.json"

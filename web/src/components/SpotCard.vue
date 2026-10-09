@@ -207,7 +207,7 @@ const sizeClass = { sm: 'text-[10px]', lg: 'text-[16px]', fluid: 'fluid' }
           >
             <span class="flex flex-col items-center leading-tight">
               <span class="text-[0.95em] font-black">去過</span>
-              <span v-if="dateText" class="font-latin text-[0.62em] font-semibold">{{ dateText }}</span>
+              <span v-if="dateText" class="font-num text-[0.62em] font-semibold">{{ dateText }}</span>
             </span>
           </span>
         </div>

@@ -155,7 +155,7 @@ const isDrop = (idx: number) => props.dropAt?.day === props.day && props.dropAt.
         :id="`stop-${s.spot_id}`"
         :draggable="!locked"
         class="group flex items-center gap-2 rounded-control border-t-2 py-1.5 pr-1 pl-1"
-        :class="[isDrop(i) ? 'border-region-strong' : 'border-transparent', focusId === s.spot_id ? 'bg-region-tint' : 'hover:bg-surface active:bg-surface']"
+        :class="[isDrop(i) ? 'border-region-strong' : 'border-transparent', focusId === s.spot_id ? 'bg-region-tint neutral-preview:shadow-[inset_0_0_0_1.5px_var(--region-strong)]' : 'hover:bg-surface active:bg-surface']"
         @dragstart="onStart(i, $event)"
         @dragover="onOverRow(i, $event)"
         @dragend="emit('dragend')"
@@ -163,7 +163,7 @@ const isDrop = (idx: number) => props.dropAt?.day === props.day && props.dropAt.
         <span class="grid w-7 shrink-0 place-items-center text-sub pointer-coarse:hidden" :class="locked ? 'opacity-40' : 'cursor-grab'" aria-hidden="true">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><circle cx="9" cy="6" r="1.6" /><circle cx="15" cy="6" r="1.6" /><circle cx="9" cy="12" r="1.6" /><circle cx="15" cy="12" r="1.6" /><circle cx="9" cy="18" r="1.6" /><circle cx="15" cy="18" r="1.6" /></svg>
         </span>
-        <span v-if="day >= 0" class="grid size-6 shrink-0 place-items-center rounded-full bg-ink font-latin text-caption font-bold text-paper">{{ i + 1 }}</span>
+        <span v-if="day >= 0" class="grid size-6 shrink-0 place-items-center rounded-full bg-ink font-num text-caption font-bold text-paper">{{ i + 1 }}</span>
         <button type="button" :data-stop="s.spot_id" class="flex min-w-0 flex-1 flex-col text-left active:not-disabled:translate-y-px pointer-coarse:-my-1.5 pointer-coarse:self-stretch pointer-coarse:justify-center pointer-coarse:py-1.5" @click="emit('focus', s.spot_id)">
           <span v-if="spots.get(s.spot_id)?.h" lang="ja" class="truncate text-caption tracking-kana text-sub" :title="spots.get(s.spot_id)?.h">{{ spots.get(s.spot_id)?.h }}</span>
           <span class="line-clamp-2 text-body-sm break-words">

@@ -198,12 +198,12 @@ function onCardKey(e: KeyboardEvent, id: string) {
             收集冊<RollingNumber :value="cards.length" class="font-latin text-h3 font-semibold tracking-normal max-lg:text-title" />
           </h1>
           <p class="flex items-baseline gap-2 text-body-sm font-bold">
-            都道府縣<span class="whitespace-nowrap font-latin text-body-sm">{{ prefDone.size }} / 47</span>
+            都道府縣<span class="whitespace-nowrap font-num text-body-sm">{{ prefDone.size }} / 47</span>
           </p>
           <!-- 手機：名城的張數與進度條排成一行 -->
           <div v-if="castleTotal" class="flex max-w-[420px] flex-col gap-1.5 max-lg:flex-row max-lg:items-center max-lg:gap-2">
             <p class="flex flex-wrap items-baseline gap-x-2 text-body-sm font-bold max-lg:shrink-0">
-              {{ wide ? '日本100名城・続日本100名城' : '名城' }}<span class="whitespace-nowrap font-latin text-body-sm">{{ castleDone }} / {{ castleTotal }}</span>
+              {{ wide ? '日本100名城・続日本100名城' : '名城' }}<span class="whitespace-nowrap font-num text-body-sm">{{ castleDone }} / {{ castleTotal }}</span>
             </p>
             <div class="h-3.5 overflow-hidden rounded-[2px] bg-paper/55 max-lg:h-2 max-lg:min-w-0 max-lg:flex-1" aria-hidden="true">
               <div class="h-full rounded-[2px] bg-t-castle" :style="{ width: `${(castleDone / castleTotal) * 100}%` }"></div>
@@ -226,7 +226,7 @@ function onCardKey(e: KeyboardEvent, id: string) {
             抽獎券<span class="font-latin text-h3 font-bold text-ink">{{ wallet.left }}</span>
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" class="self-center transition-transform" :class="showTickets ? 'rotate-180' : ''" aria-hidden="true"><path d="M6 9l6 6 6-6" /></svg>
           </button>
-          <span class="text-body-sm text-sub max-lg:text-caption">樣式 <span class="whitespace-nowrap font-latin"><span class="font-bold text-ink">{{ variantTotal - missingTotal }}</span> / {{ variantTotal }}</span></span>
+          <span class="text-body-sm text-sub max-lg:text-caption">樣式 <span class="whitespace-nowrap font-num"><span class="font-bold text-ink">{{ variantTotal - missingTotal }}</span> / {{ variantTotal }}</span></span>
         </div>
         <button type="button" class="h-8 shrink-0 rounded-control px-2 text-body-sm font-bold text-sub hover:bg-surface hover:text-ink active:not-disabled:translate-y-px pointer-coarse:h-tap" @click="showRules = true">規則</button>
         <button
@@ -238,12 +238,12 @@ function onCardKey(e: KeyboardEvent, id: string) {
           {{ !missingTotal ? '已收齊' : tenCount < 10 ? `抽 ${tenCount} 張` : '十連抽' }}
         </button>
         <dl v-if="showTickets" class="grid w-full grid-cols-[auto_auto_1fr] gap-x-4 gap-y-1 border-t border-line pt-3 text-caption text-sub">
-          <dt>去過的景點</dt><dd class="font-latin text-ink">{{ wallet.breakdown.spots }} × {{ TICKET_RULES.spot }}</dd><dd></dd>
-          <dt>去過的縣</dt><dd class="font-latin text-ink">{{ wallet.breakdown.prefs }} × {{ TICKET_RULES.pref }}</dd><dd></dd>
-          <dt>去過的地方</dt><dd class="font-latin text-ink">{{ wallet.breakdown.areas }} × {{ TICKET_RULES.area }}</dd><dd></dd>
-          <dt>每 10 個景點</dt><dd class="font-latin text-ink">{{ wallet.breakdown.bonus }} × {{ TICKET_RULES.every10 }}</dd><dd></dd>
-          <dt>成就</dt><dd class="font-latin text-ink">{{ wallet.breakdown.achv }} × {{ TICKET_RULES.achv }}</dd><dd></dd>
-          <dt>用掉</dt><dd class="font-latin text-ink">{{ wallet.used }}</dd><dd></dd>
+          <dt>去過的景點</dt><dd class="font-num text-ink">{{ wallet.breakdown.spots }} × {{ TICKET_RULES.spot }}</dd><dd></dd>
+          <dt>去過的縣</dt><dd class="font-num text-ink">{{ wallet.breakdown.prefs }} × {{ TICKET_RULES.pref }}</dd><dd></dd>
+          <dt>去過的地方</dt><dd class="font-num text-ink">{{ wallet.breakdown.areas }} × {{ TICKET_RULES.area }}</dd><dd></dd>
+          <dt>每 10 個景點</dt><dd class="font-num text-ink">{{ wallet.breakdown.bonus }} × {{ TICKET_RULES.every10 }}</dd><dd></dd>
+          <dt>成就</dt><dd class="font-num text-ink">{{ wallet.breakdown.achv }} × {{ TICKET_RULES.achv }}</dd><dd></dd>
+          <dt>用掉</dt><dd class="font-num text-ink">{{ wallet.used }}</dd><dd></dd>
         </dl>
       </div>
 
@@ -265,7 +265,7 @@ function onCardKey(e: KeyboardEvent, id: string) {
         >
           <span v-if="f.key !== 'all'" class="swatch size-3 rounded-full" :class="`swatch-${f.key}`" aria-hidden="true"></span>
           {{ f.label }}
-          <RollingNumber :value="counts[f.key]" class="font-latin" />
+          <RollingNumber :value="counts[f.key]" class="font-num" />
         </button>
       </div>
 
@@ -288,7 +288,7 @@ function onCardKey(e: KeyboardEvent, id: string) {
             @click="jumpTo(g.region.prefecture, true)"
           >
             <span lang="ja" class="text-body-sm font-bold tracking-name">{{ g.region.name.ja }}</span>
-            <span class="font-latin text-micro">{{ shownCount.get(g.region.prefecture) }}</span>
+            <span class="font-num text-micro">{{ shownCount.get(g.region.prefecture) }}</span>
             <span v-if="activePref !== g.region.prefecture" class="absolute inset-x-0 bottom-0 h-1 bg-region" aria-hidden="true"></span>
           </button>
         </div>
@@ -308,7 +308,7 @@ function onCardKey(e: KeyboardEvent, id: string) {
           <span class="h-5 w-1.5 rounded-full bg-region-strong" aria-hidden="true"></span>
           <span lang="ja" class="text-h3 font-black tracking-[2px]">{{ g.region.name.ja }}</span>
           <span class="font-latin text-body-sm font-semibold tracking-[0.2em] text-sub uppercase">{{ g.region.name.romaji }}</span>
-          <span class="ml-auto font-latin text-body-sm text-sub">{{ shownCount.get(g.region.prefecture) }}</span>
+          <span class="ml-auto font-num text-body-sm text-sub">{{ shownCount.get(g.region.prefecture) }}</span>
         </h2>
         <ul class="grid grid-cols-2 gap-x-4 gap-y-5 sm:grid-cols-3 lg:grid-cols-4">
           <!-- 發牌只播一次：播完拿掉 deal-in，篩選後再顯示時不重播 -->
@@ -334,7 +334,7 @@ function onCardKey(e: KeyboardEvent, id: string) {
             <!-- .deal 四周多了 1rem 的內距，標記要往內移回卡的左上角 -->
             <NewTag v-if="fresh.spotHasNew(e.face.id)" class="absolute top-2.5 left-2.5 z-10" />
             <p v-if="e.variants.length > 1" class="mt-1.5 flex justify-center gap-1 text-caption text-sub">
-              <span class="whitespace-nowrap font-latin">{{ e.variants.length }} / {{ e.variantTotal }}</span> 種
+              <span class="whitespace-nowrap font-num">{{ e.variants.length }} / {{ e.variantTotal }}</span> 種
             </p>
           </li>
           <li v-for="n in filter === 'all' ? g.pending : 0" :key="`p${n}`" class="skeleton aspect-[5/7] rounded-[10px]" aria-hidden="true"></li>

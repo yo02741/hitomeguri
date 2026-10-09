@@ -146,8 +146,8 @@ async function render(canvas: HTMLCanvasElement) {
       <ul class="flex flex-wrap gap-x-4 gap-y-1.5 text-body-sm">
         <li v-for="l in KEIKEN_LEVELS" :key="l.level" class="flex items-center gap-1.5">
           <span class="size-3.5 rounded-[3px] border border-on-region/30" :class="`lv-${l.level}`" aria-hidden="true"></span>
-          {{ l.label }}<span class="font-latin text-sub">{{ l.level }}</span>
-          <span class="font-latin font-bold">{{ counts[l.level] }}</span>
+          {{ l.label }}<span class="font-num text-sub">{{ l.level }}</span>
+          <span class="font-num font-bold">{{ counts[l.level] }}</span>
         </li>
       </ul>
     </header>
@@ -247,7 +247,7 @@ async function render(canvas: HTMLCanvasElement) {
         <SectionNav :items="nav" :active="active" variant="bar" @go="go" />
       </div>
       <section v-for="g in groups" :id="`keiken-${g.area}`" :key="g.area" class="flex flex-col gap-2 max-lg:scroll-mt-16" :aria-label="g.areaName">
-        <h2 class="text-caption font-bold tracking-section text-sub">{{ g.areaName }}</h2>
+        <h2 lang="ja" class="text-caption font-bold tracking-section text-sub">{{ g.areaName }}</h2>
         <ul class="grid gap-x-6 gap-y-1 md:grid-cols-2">
           <li v-for="r in g.items" :key="r.prefecture" :data-pref="r.prefecture" class="flex min-h-tap items-center gap-3 border-b border-line-soft">
             <span class="h-5 w-1.5 shrink-0 rounded-full bg-region-strong" aria-hidden="true"></span>

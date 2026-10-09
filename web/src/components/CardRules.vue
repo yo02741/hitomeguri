@@ -62,7 +62,7 @@ const KINDS: Array<[string, string]> = [
     <section class="flex flex-col gap-2" aria-labelledby="c-book">
       <h3 id="c-book" class="text-body-sm font-bold text-sub">收集冊</h3>
       <dl class="grid grid-cols-[3rem_1fr] items-center gap-x-3 gap-y-2 text-body-sm">
-        <dt class="font-latin text-caption text-sub">3 / 10</dt>
+        <dt class="font-num text-caption text-sub">3 / 10</dt>
         <dd>這個景點收集到幾種</dd>
         <dt><NewTag /></dt>
         <dd>新拿到、還沒看過的樣式</dd>

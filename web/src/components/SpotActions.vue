@@ -188,7 +188,7 @@ const visitedShort = computed(() => {
           label="去過日期"
           :model-value="mark.visited_on ?? ''"
           :max="today"
-          class="flex shrink-0 items-center gap-1 border-l border-visited/30 px-2.5 font-latin text-body-sm font-normal max-lg:text-caption hover:bg-visited/10 max-lg:px-1.5"
+          class="flex shrink-0 items-center gap-1 border-l border-visited/30 px-2.5 font-num text-body-sm font-normal max-lg:text-caption hover:bg-visited/10 max-lg:px-1.5"
           @update:model-value="marks.setVisitedOn(spot, $event)"
         >
           <template #default>
@@ -211,7 +211,7 @@ const visitedShort = computed(() => {
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true">
           <path d="M9 6h11M9 12h11M9 18h11" /><circle cx="4.5" cy="6" r="1" /><circle cx="4.5" cy="12" r="1" /><circle cx="4.5" cy="18" r="1" />
         </svg>
-        <span class="flex items-center gap-1.5 whitespace-nowrap max-lg:gap-1">清單<span v-if="inLists" class="font-latin">{{ inLists }}</span></span>
+        <span class="flex items-center gap-1.5 whitespace-nowrap max-lg:gap-1">清單<span v-if="inLists" class="font-num">{{ inLists }}</span></span>
       </button>
       <button
         ref="tripsBtn"
@@ -226,7 +226,7 @@ const visitedShort = computed(() => {
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
           <path d="M4 5h16v15H4z M4 10h16 M9 3v4 M15 3v4" />
         </svg>
-        <span class="flex items-center gap-1.5 whitespace-nowrap max-lg:gap-1">加入行程<span v-if="inTrips" class="font-latin">{{ inTrips }}</span></span>
+        <span class="flex items-center gap-1.5 whitespace-nowrap max-lg:gap-1">加入行程<span v-if="inTrips" class="font-num">{{ inTrips }}</span></span>
       </button>
 
       <!-- 行程選單：每個行程選「待排」或某一天後加入；最下面新增行程 -->

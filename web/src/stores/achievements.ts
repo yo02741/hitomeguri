@@ -3,6 +3,7 @@ import { computed, shallowRef, watch } from 'vue'
 
 import { useVisitedEntries } from '../composables/visited'
 import { ACHV_AREAS, type AchvDef, type AchvDep, byRank } from '../data/achievements'
+import { ACHV_OUTFIT } from '../data/outfitRewards'
 import { areaPrefs, type Region, regionOf } from '../data/regions'
 import {
   type AchvInput,
@@ -25,7 +26,7 @@ import type { AchvData } from '../services/bundles'
 import type { Trip } from '../services/trip'
 import { useCatalogStore } from './catalog'
 import { useExploreStore } from './explore'
-import { achvKey, useFreshStore } from './fresh'
+import { achvKey, outfitKey, useFreshStore } from './fresh'
 import { useMarksStore } from './marks'
 import { useTripsStore } from './trips'
 import { useUserStore } from './user'
@@ -147,7 +148,8 @@ export const useAchievementsStore = defineStore('achievements', () => {
     const { known: next, fresh: newIds } = diffKnown(known.value, doneByDep, ready.value, base)
     if (next.ids.length !== known.value.ids.length || next.deps.length !== known.value.deps.length) writeKnown(uid, next)
     if (!newIds.length) return
-    fresh.add(newIds.map(achvKey))
+    // 新達成的成就送的服裝也標 NEW（衣櫃、散步的旅人「有沒穿的新衣服」）
+    fresh.add([...newIds.map(achvKey), ...newIds.flatMap((id) => (ACHV_OUTFIT[id] ? [outfitKey(ACHV_OUTFIT[id].id)] : []))])
     const now = Date.now()
     recent.value = [...recent.value.filter((r) => now - r.t < RECENT_MS), ...newIds.map((id) => ({ id, t: now }))]
   }

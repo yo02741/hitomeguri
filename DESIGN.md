@@ -61,7 +61,11 @@
 
 - Tailwind CSS v4，CSS-first 設定，不使用 `tailwind.config.js`。
 - Vite 專案使用 `@tailwindcss/vite` plugin；入口 CSS 為 `web/src/styles/theme.css`（已 `@import "tailwindcss"`）。
-- 字體以 Google Fonts 載入：Noto Sans TC（400/700/900）、Noto Sans JP（400/700/900）、Barlow Semi Condensed（500/600/700），`display=swap`。
+- 字體以 Google Fonts 載入：Noto Sans TC、Noto Sans JP（字重範圍 400..900）、Barlow Semi Condensed（500/600/700），`display=swap`，`index.html` 一個 `link[data-webfonts]`。
+  - Noto Sans TC／JP 是可變字型：網址寫兩個以上字重時，Google Fonts 給的是同一批可變字型檔（400、700、900 共用），所以 900 不多花下載量；寫成範圍 `400..900` 讓 CSS 只剩三分之一的 `@font-face`（705 → 241 個、gzip 195 → 66 KB），字型檔與外觀不變。只寫一個字重時才會換成靜態字型（檔案約一半），但每個字重要各下載一次。
+  - 年代主題的可變字型（Noto Serif TC、Chiron GoRound TC）在 `services/theme.ts` 一樣寫範圍；其他年代字型是靜態字型，照列字重。
+  - Barlow 的 500 要留：沒指定字重的 `font-latin`（400）會用到它。
+  - 日文一律標 `lang="ja"`（§4.1），包括地方名（関東、近畿、九州・沖縄）：否則同一批字會同時抓 TC 與 JP 的字型檔（首頁少抓 4 個 TC 檔，約 170 KB）。
 - `regions.css` 由 `data/regions.json` 產生（pipeline 指令 `build-region-css`），**不可手改**。
 - 共用樣式組合寫成 Vue 元件，不用 `@apply` 堆 class；只有在 MapLibre 等第三方 DOM 無法套 class 時才用 CSS。
 
@@ -86,26 +90,30 @@
 | sub | 62:38，自動加深到對 header ≥ 4.6:1 | `text-sub` | 標籤、說明、假名 | `#303F5A` | `#403058` |
 
 - 47 縣的全部數值在 `data/regions.json`（`color.paper`…`color.sub`），CSS 變數在 `regions.css`。
-- 對比由 `pipeline/tests/test_region_contrast.py` 保證（全國＋47 縣 × 令和與 5 個年代）：文字（ink、ink-2、sub 對 paper／surface／header／tint，on-base 對 base，年代的白對 strong）≥ 4.5:1；strong 對 paper、surface ≥ 3:1；去過色對 visited-tint 與 paper ≥ 4.5:1；主題色對 paper 與地圖陸地 ≥ 3:1（茶在江戶、昭和的陸地上目前最低 2.94，測試守這個下限）；白字對 danger ≥ 4.5:1。
+- 對比由 `pipeline/tests/test_region_contrast.py` 保證（全國＋47 縣 × 令和與 5 個年代）：文字（ink、ink-2、sub 對 paper／surface／header／tint，on-base 對 base，年代的白對 strong）≥ 4.5:1；strong 對 paper、surface ≥ 3:1；去過色對 visited-tint 與 paper ≥ 4.5:1；主題色對 paper 與地圖陸地 ≥ 3:1（`t-tea` 目前沒有介面用到，見 §3.2；值仍照這條檢查：江戶、昭和偏黃的陸地上原本只有 2.94，這兩個年代改用 `#3C8933`，最低 3.17）；白字對 danger ≥ 4.5:1。
 - 調整濃淡只改產生腳本的比例參數後重新產生，不手改色碼。
+
+### 3.1a 中性色層次（預覽，未採用）
+淺色縣（香川、千葉、愛媛等）固定比例疊白後，line、header、tint 跟紙幾乎同色；各年代的 tint 比紙還亮，選取列比 hover 列淡。預覽只補下限，不改預設：
+- 開法：網址加 `?neutral=1`（`index.html` 設 `<html data-neutral>`，`main.ts` 才載入 `regions-neutral.css`）。換頁會保留，重新載入沒帶參數就回到預設。
+- 令和：surface、map、line-soft、header、placeholder、line 的 OKLab 明度至少比 paper 低 1.6／3／3／5.5／6.2／9（%），色相彩度不變；tint 比 surface 低 1.5；sub 自動加深到對 header ≥ 4.6:1。ink、ink-2 不動。
+- 年代：tint 改成年代 surface 滲 12% 代表色，再壓到比 surface 低 1.5。
+- 選取列（RegionLists、PackList、TripStopList）：`neutral-preview:` 變體加 1.5px `--region-strong` 內框，不加粗、不用色條。
+- `regions-neutral.css` 由 `build-region-css` 一起產生（`pipeline/region_css.py` 的 `layered`、`render_neutral`），不可手改；對比測試也檢查這組。
 
 ### 3.2 主題色（固定）
 | 主題 | Tailwind 前綴 | 值 | 符號 |
 |---|---|---|---|
 | 大點 | `t-major` | 跟 `ink` | 名勝／神社／寺院／城（實心） |
-| 茶 | `t-tea` | `#3F8F35` | 茶碗 |
-| 酒 | `t-sake` | `#B0561C` | 德利 |
-| 香 | `t-incense` | `#A4508B` | 線香 |
-| 溫泉 | `t-onsen` | `#0B8291` | 湯氣 |
-| 拉麵 | `t-ramen` | `#9E6E00` | 碗與筷 |
+| 茶（保留，無介面使用） | `t-tea` | `#3F8F35`（江戶、昭和 `#3C8933`） | — |
 | 寶可夢 | `t-pokemon` | `#1F6FC0` | 商店袋 |
-| 御朱印・御守 | `t-goshuin` | `#C8102E` | 御朱印帳 |
 | 城（擴充包） | `t-castle` | `#4F6475` | 天守 |
 | 老舖・茶屋（擴充包） | `t-shinise` | `#7A5230` | 暖簾 |
 | 角色商店（擴充包） | `t-chara` | `#6D4FC2` | 貓耳臉 |
 | 自訂地點 | `t-custom` | 跟 `sub` | 依分類，虛線外框 |
 
 - 主題色只出現在：符號描邊、擴充包的勾選色與開啟中的膠囊鈕、區塊小標旁的小符號。**不用作大面積底色**。
+- 舊的主題小店（酒、香、溫泉、拉麵、御朱印）2026-10-09 刪除，這幾個 token 一併拿掉。`t-tea` 依使用者決定保留（江戶、昭和對陸地 ≥ 3:1 的調整也留著），目前沒有介面用到。
 
 ### 3.3 地區色（執行時決定）
 | Tailwind | CSS 變數 | 用途 |
@@ -150,11 +158,13 @@
 |---|---|---|
 | 介面、中文 | `font-sans`（預設） | Noto Sans TC |
 | 日文內容 | 加 `lang="ja"` 自動套用 | Noto Sans JP |
-| 羅馬拼音、數字、代碼、日期 | `font-latin` | Barlow Semi Condensed |
+| 羅馬拼音、代碼、看板數字 | `font-latin` | Barlow Semi Condensed |
+| 資料數字（距離、日期、時間、清單件數、價格、座標） | `font-num` | 同 `font-latin`；昭和、平成換成內文字型（§13） |
 
-- `font-latin` 一律等寬數字（theme.css 的 base 設 `tabular-nums`）。「n / 總數」整段放在同一個 `whitespace-nowrap font-latin` 裡，斜線與總數不換字型、不斷成兩行。
+- 看板數字與資料數字分開：`font-latin` 只用在羅馬拼音、HITOMEGURI、NEW、DAY 標記、卡號（No.）、印章，和像看板的大計數（收集冊、成就、經縣值、抽獎券的大數字、開卡包標題的張數）；其他數字（日期、距離、時間、件數、「n / 總數」的小字、日曆、輸入框）一律 `font-num`。令和兩個一樣；昭和、平成的 `--font-latin` 是點陣字（DotGothic16、VT323），小字難讀，`--font-num` 改用內文字型（粉圓、Chiron GoRound TC，數字本來就等寬）。
+- `font-latin`、`font-num` 一律等寬數字（theme.css 的 base 設 `tabular-nums`）。「n / 總數」整段放在同一個 `whitespace-nowrap font-num`（或看板的 `font-latin`）裡，斜線與總數不換字型、不斷成兩行。
 
-**日文一定要標 `lang="ja"`**：同一個漢字在 TC 與 JP 字形不同（例：「骨」「直」），景點名、片語、地名若用 TC 字形會像錯字。
+**日文一定要標 `lang="ja"`**：同一個漢字在 TC 與 JP 字形不同（例：「骨」「直」），景點名、片語、地名若用 TC 字形會像錯字。地方名（`area_name`：関東、中国、九州・沖縄）也是日文，一樣要標；沒標的日文會讓同一批字多抓一份 TC 字型檔（§2）。
 
 ### 4.2 字級
 | token | px | 字重 | 用途 |
@@ -221,7 +231,7 @@
 
 ### 6.1 繪製規格
 - 24×24 grid，線條 `stroke-width: 2`，圓頭圓角（`round`），無填色（御朱印帳內的印可實心）。
-- 放在 `web/src/assets/symbols/*.svg`，以 `currentColor` 著色，透過 `<ThemeSymbol name="tea" />` 使用。
+- 擴充包的符號是 24×24 的 SVG path 字串（`web/src/data/packs.ts` 的 `icon`），以 `currentColor` 著色。
 - 通用 UI 圖示（返回、定位、播放、帳號、放大縮小）使用同樣筆畫規格；可用 lucide 並統一 `stroke-width={1.8}`。
 - 寺院不使用「卍」。寶可夢不使用任何官方角色、精靈球或 logo。
 
@@ -237,17 +247,13 @@
 | 名稱區塊旁 | 36–42 | 同一般；在地區色底上維持白底 |
 
 ```html
-<!-- 一般 marker -->
-<span class="size-8 grid place-items-center rounded-badge border-2 border-t-tea bg-paper text-t-tea shadow-marker">
-  <ThemeSymbol name="tea" class="size-[18px]" />
+<!-- 一般 marker（擴充包色） -->
+<span class="size-8 grid place-items-center rounded-badge border-2 border-t-shinise bg-paper text-t-shinise shadow-marker">
+  <svg class="size-[18px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path :d="pack.icon" /></svg>
 </span>
 <!-- 大點 marker -->
-<span class="size-8 grid place-items-center rounded-badge bg-t-major text-paper shadow-marker">
-  <ThemeSymbol name="shrine" class="size-[18px]" />
-</span>
+<span class="size-8 grid place-items-center rounded-badge bg-t-major text-paper shadow-marker">…</span>
 ```
-
-- 同一地點屬於多個主題時（例：伏見稻荷＝大點＋御朱印），badge 並排、間距 4px，大點在前。
 - 地圖縮小時 marker 以 MapLibre clustering 合併；cluster 用墨色圓形＋白色數字（`font-latin font-bold`），不用主題色。
 
 ---
@@ -278,7 +284,7 @@
 - 手機底部 tab：圖示＋文字，選取時圖示與文字 `text-ink`，未選 `text-sub`；不使用底色塊。
 
 ### 7.2a 段落目錄 SectionNav（旅前準備）
-- 桌機左側直列（`sticky top-8`，寬 168px）：每項 `border-l-2 pl-3.5 py-1.5 text-body-sm`；目前段落 `border-region-strong font-bold text-ink`，其餘 `border-line text-sub`；數量用 `font-latin text-caption`。目前段落有子段落時展開（`pl-6 text-caption`，目前子段落 `font-bold text-ink`）。
+- 桌機左側直列（`sticky top-8`，寬 168px）：每項 `border-l-2 pl-3.5 py-1.5 text-body-sm`；目前段落 `border-region-strong font-bold text-ink`，其餘 `border-line text-sub`；數量用 `font-num text-caption`。目前段落有子段落時展開（`pl-6 text-caption`，目前子段落 `font-bold text-ink`）。
 - 手機頂部橫列（`sticky top-0`，`border-b border-line bg-paper`）：`h-8 rounded-full px-3 text-body-sm`，目前段落 `bg-region-strong text-white font-bold`，換段時自動捲到中間。觸控裝置上每項的點擊區 44 高（連結 `pointer-coarse:h-tap`，膠囊是裡面的 span）。
 - 地區色版（`tone="region"`，深度探索頁海報捲走後）：列底 `bg-region text-on-region`，選中的膠囊改成 `bg-paper text-ink`，其餘 `text-on-region`、滑過 `bg-region-accent`。
 - 每項都是 `#錨點` 連結；段落 `scroll-mt-16 lg:scroll-mt-8`。
@@ -292,7 +298,7 @@ header 右側、登入鈕左邊（`SearchBox.vue`，每一頁都在；在行程�
 - 桌機：地圖上方浮動列，左緣對齊左側浮動面板外（`left: insetLeft`），靠左排、寬度不夠時換行；「只看收藏」膠囊鈕排在最前面。
 - 深度探索入口：地圖頁左欄最下方獨立的一張卡（和清單分開，`rounded-card bg-paper shadow-float`）：左邊 40px 地區色圓底的書本圖示、「深度探索」＋小字「季節・祭典・地區特色・期間限定」、右邊 ›。
 - 深度探索頁：桌機左欄（168px，sticky）上方是「‹ 地圖」外框按鈕（和地圖頁的入口在同一側），下方是段落目錄（SectionNav side，地區特色展開各組）；手機是標頭的「‹ 地圖」＋頂部橫列目錄。
-- 每個擴充包一顆膠囊按鈕 `h-9 rounded-full px-3.5 text-body-sm font-bold shadow-float`：圖示（主題色）＋名稱＋件數（`font-latin`）。開啟中改為主題色底白字（`bg-(--pack)`，`--pack` 設為 `var(--color-t-*)`，不寫死色碼）；目前地區沒有資料時 `opacity-50` 不能按。
+- 每個擴充包一顆膠囊按鈕 `h-9 rounded-full px-3.5 text-body-sm font-bold shadow-float`：圖示（主題色）＋名稱＋件數（`font-num`）。開啟中改為主題色底白字（`bg-(--pack)`，`--pack` 設為 `var(--color-t-*)`，不寫死色碼）；目前地區沒有資料時 `opacity-50` 不能按。
 - 列尾 36px 圓形圖示鈕（滑桿圖示，`aria-label="選擇擴充包"`）往右下打開設定卡（`w-72 rounded-card bg-paper shadow-float`）：每個擴充包一列 checkbox＋圖示＋名稱，下方小字列出組別。
 - 手機（<1024）改成 chip 軌道（`ChipRail.vue`）：海報條下面、上方清單上面一行，橫向捲動（左右鋪到螢幕邊，`scroll-quiet`）。順序：收藏 n（登入且有收藏時；開著 `bg-ink text-paper`）→ 各擴充包（同上膠囊，開著 `bg-(--pack) text-white`，再點一下關閉）→「設定」（滑桿圖示＋「設定」，開著時 `bg-ink text-paper`）。看得到的膠囊 36px，觸控時點擊區撐到 44（外層按鈕 `pointer-coarse:h-tap`，膠囊在裡面）。軌道本身不吃點擊，膠囊之間照樣拖得動地圖；捲動區上下多留 12px 給陰影。設定卡放在捲動區外、軌道下方靠右（`PackSettings.vue`，和桌機同一張），Esc 或點外面關閉；開著時底下墊一層透明 scrim，點外面只收起設定卡，不會連帶點到底下的清單或地圖（同帳號選單）。景點卡片全開時、或半開會蓋到軌道時（手機打橫）軌道先收起；收合時照常顯示。擴充包開著時清單換成擴充包清單（上方 40dvh，開卡片時收起，和景點清單相同）。
 - 手機的期間限定：這個縣有資料、沒開擴充包時，軌道下面一行連結（`rounded-card bg-region-tint shadow-float min-h-tap`）：「期間限定」＋件數＋第一筆的名稱（`lang="ja"`，過長截斷）＋ ›，連到 `/region/:pref#timed`；和清單一起在開卡片時收起。
@@ -309,6 +315,7 @@ header 右側、登入鈕左邊（`SearchBox.vue`，每一頁都在；在行程�
 - 置中：Wordmark 三行（ひとめぐり／一巡り 38px 900／HITOMEGURI）外圍一個 184px 圓（`line` 細線），圓上等距 47 個圓點（半徑 4.2），JIS 順從正上方順時針：北海道在最上面，沖繩在最後。
 - 進度就是圓點：還沒到的圓點是 `line` 色；走到哪一縣，那一縣的圓點亮成該縣的 `base` 色並微微放大（一次亮一顆，進度一次跳很多時也是一顆一顆追上）。JS 接手前 CSS 先依序亮前 14 縣（約三成）；之後依實際工作推進：字型、路由、景點資料、地區 bundle、底圖第一次畫完（`web/src/services/splash.ts` 的 `trackSplash`）。
 - 全部完成、47 縣走滿一圈後：圓點往外擴散淡出，Wordmark 淡出，從圓心開一個越來越大的洞露出底下的畫面（mask 半徑以 `@property` 動畫，0.75s）。最少顯示 0.9s，最多等 10s。不放文字說明（無「載入中」字樣）。`prefers-reduced-motion` 時圓點直接亮、結束只淡出。
+- 回訪的短版（使用者決定 2026-10-09）：完整版播完一次後在這台裝置記下 `hitomeguri:splash-seen`（localStorage，存取失敗就照播完整版；中途關掉不算看過）。之後 `index.html` 開頭在繪製前設 `<html data-splash="short">`：圓點一開始就全亮（全部亮起時的樣子，年代主題照樣換色），文字不做進場，工作完成就整片淡出 0.5s，不補點、不停留、沒有最少顯示時間、不開洞。`prefers-reduced-motion` 的人不走短版，維持上一條的行為。
 - Google Fonts 改為 preload 後再套用，不擋首次繪製。
 
 ### 7.5 地區標籤 RegionTag（原海報區 RegionHero）
@@ -355,8 +362,8 @@ header 右側、登入鈕左邊（`SearchBox.vue`，每一頁都在；在行程�
 - 內文 `max-w-5xl`，段落標題 `text-h3 font-black`，組別小標 `text-caption font-bold tracking-section text-sub`＋件數。
 - 祭典的每月與地區特色的每組加 `cv-auto`（`content-visibility: auto`，`theme.css`）＋`contain-intrinsic-size: auto <估計高度>`：畫面外的先不畫。段落目錄跳過去前先把全部排一次版（捲動容器加 `data-lay-out`），停的位置才準。地區特色一縣一檔（`bundles/specialties/{縣}.json`），只載入這一縣。
 - 地區特色卡：`rounded-card border border-line`，有 Commons 照片才放 16:10 圖；假名／日文名＋繁中名、維基簡介最多 4 行、授權與來源連結。每組先顯示 9 項，其餘用「全部 N 項」展開。手機（<640）改成和祭典卡一樣的橫排（`p-3 gap-3`，有照片才放左側 96px 方圖 `rounded-control`），簡介少一行（有中譯時英文、中文各 2 行，否則 3 行），一張約 240px。
-- 季節月曆：左側現象名（`text-body-sm font-bold`＋`text-caption text-sub` 的「開花」「紅葉」），右側 12 欄時間軸（`border-l border-line-soft` 格線，本月 `bg-region-tint`）；日期點 `size-3 rounded-full bg-region-strong border-2 border-paper`，櫻花開花到滿開以 `h-2 rounded-full bg-region-strong` 連起來；兩點的間隔不到一個點寬（12px，例：360 寬）時不畫兩點，改畫一條從始點左緣到終點右緣的膠囊（`h-3`，同樣的 `border-2 border-paper`）；sm 以下月份只標奇數月，格線照舊 12 欄；日期 `font-latin text-caption font-bold`（例 `3.24 – 4.2`），靠近年底時放在點的左邊。多個觀測站用與地圖清單相同的文字索引列切換。下方出處一行：平年值・站名・氣象廳連結。
-- 祭典：月份文字索引列（沒有祭典的月份 disabled）；每月小標＋件數；卡片一欄，`md:` 起兩欄；`rounded-card border border-line p-3` 橫排，有照片才放左側 96px 方圖；假名／日文名＋繁中名（沒有時放英文名）＋跨月時的月份範圍（`font-latin`，例 `7–8月`）、簡介最多 3 行（依序取中文、英文、日文維基，非中文的加 `lang`）、授權／維基百科／「在地圖上看」連結。月份 1 到 12 依序排。
+- 季節月曆：左側現象名（`text-body-sm font-bold`＋`text-caption text-sub` 的「開花」「紅葉」），右側 12 欄時間軸（`border-l border-line-soft` 格線，本月 `bg-region-tint`）；日期點 `size-3 rounded-full bg-region-strong border-2 border-paper`，櫻花開花到滿開以 `h-2 rounded-full bg-region-strong` 連起來；兩點的間隔不到一個點寬（12px，例：360 寬）時不畫兩點，改畫一條從始點左緣到終點右緣的膠囊（`h-3`，同樣的 `border-2 border-paper`）；sm 以下月份只標奇數月，格線照舊 12 欄；日期 `font-num text-caption font-bold`（例 `3.24 – 4.2`），靠近年底時放在點的左邊。多個觀測站用與地圖清單相同的文字索引列切換。下方出處一行：平年值・站名・氣象廳連結。
+- 祭典：月份文字索引列（沒有祭典的月份 disabled）；每月小標＋件數；卡片一欄，`md:` 起兩欄；`rounded-card border border-line p-3` 橫排，有照片才放左側 96px 方圖；假名／日文名＋繁中名（沒有時放英文名）＋跨月時的月份範圍（`font-num`，例 `7–8月`）、簡介最多 3 行（依序取中文、英文、日文維基，非中文的加 `lang`）、授權／維基百科／「在地圖上看」連結。月份 1 到 12 依序排。
 - 地圖上的位置標記（祭典「在地圖上看」）：縣地圖頁網址帶 `?at=緯度,經度&label=名稱` 時飛到縮放 14，放一個 DOM 標記：名稱小標（`bg-paper rounded-tag shadow-marker`＋關閉鈕）＋ `region-strong` 圓點與呼吸燈，關閉或選取景點時移除。
 
 ### 7.6 名稱區塊 NameBlock（招牌元件）
@@ -373,7 +380,7 @@ header 右側、登入鈕左邊（`SearchBox.vue`，每一頁都在；在行程�
 `flex py-2.5 border-b border-line-soft text-body-sm`；左側標籤 `w-[72px] text-sub`，右側內容。固定順序：最寄駅 → 分類 → 其他（御朱印、停留時間、附近）。
 
 ### 7.8 期間限定列
-`flex items-center py-2 border-b border-line-soft text-body-sm`；左：名稱（若屬主題，前置 16px 主題符號）；右：`text-caption text-sub`「品牌・範圍」。日期範圍用 `font-latin`（例：`9.28 – 10.4`）。
+`flex items-center py-2 border-b border-line-soft text-body-sm`；左：名稱（若屬主題，前置 16px 主題符號）；右：`text-caption text-sub`「品牌・範圍」。日期範圍用 `font-num`（例：`9.28 – 10.4`）。
 
 ### 7.9 行程封面 TripCover 與 DAY 標記
 - 分段色帶：`flex h-2.5`，每段 `style="flex-grow: 天數"` 並設該段的 `data-pref` 與 `bg-region`。
@@ -433,11 +440,11 @@ header 右側、登入鈕左邊（`SearchBox.vue`，每一頁都在；在行程�
 
 ### 7.16 日期選擇器 DatePicker / DateRangePicker
 不用原生 `<input type="date">`（各瀏覽器長相不一，手機上還會跳系統滾輪）。
-- 觸發鈕長得像輸入框：`h-10 rounded-control border border-line bg-paper px-2.5`＋月曆圖示；日期 `font-latin`，格式 `2026/10/12（一）`，區間 `2026/10/31（六） → 11/03（二）`。打開時外框 `border-region-strong`。
+- 觸發鈕長得像輸入框：`h-10 rounded-control border border-line bg-paper px-2.5`＋月曆圖示；日期 `font-num`，格式 `2026/10/12（一）`，區間 `2026/10/31（六） → 11/03（二）`。打開時外框 `border-region-strong`。
 - 面板：`w-[304px] rounded-card bg-paper p-3 shadow-float`，Teleport 到 body、`fixed` 定位，下方放不下就翻到上方；手機的下緣不超過底部分頁列（`composables/floating.ts`，Dropdown 也一樣）；沿用觸發鈕所在的 `data-pref`。
 - 還沒選日期時打開在今天的月；補登旅行（`/log`）打開在上個月（`initial`）。補登旅行的表單在 1024 以下名稱整行，日期與「新增」排在下一行。
 - 表頭：‹ 年月 ›，點年月往上一層（日 → 月 → 年，月、年都是 3 欄格子）。星期列：日 `text-danger`、六 `text-visited`（日本月曆的習慣），其餘 `text-sub`。
-- 日期格 `size-10 rounded-control font-latin text-body-sm`：選取 `bg-region-strong text-white font-bold`；區間中間 `bg-region-tint`（連成一條，兩端圓角）；今天在數字下方加 4px 圓點；範圍外 `text-line`；非本月 `text-sub/50`。
+- 日期格 `size-10 rounded-control font-num text-body-sm`：選取 `bg-region-strong text-white font-bold`；區間中間 `bg-region-tint`（連成一條，兩端圓角）；今天在數字下方加 4px 圓點；範圍外 `text-line`；非本月 `text-sub/50`。
 - 底部：單日有「今天」「清除」；區間顯示「出發 → 回程」或「N 天」與「清除」。
 - 鍵盤：方向鍵移動、Home／End 到週首週末、PageUp／PageDown 換月（加 Shift 換年）、Enter 選取、Esc 關閉並回到觸發鈕。
 - 景點卡片的「去過」：標了之後按鈕右半邊是日期（`border-l border-visited/30`，今年只寫月日），點開同一個月曆。
@@ -482,7 +489,7 @@ header 右側、登入鈕左邊（`SearchBox.vue`，每一頁都在；在行程�
   - 海報縮成一條帶（`px-5 py-3.5`）：‹ 紀錄、「收集冊 n」（`text-h2`）、都道府縣 n / 47、「名城 n / N」與 8px 高的進度條排成一行；右邊 96px 寬的日本地圖只當裝飾（`pointer-events-none`、`aria-hidden`），縣在手機上只有 4–9px。
   - 券列一行：抽獎券張數與「樣式 已有 / 全部」（`text-caption`）疊成兩行，「規則」、「十連抽」接在同一行。
   - 篩選膠囊一行，往旁邊捲（左右貼齊畫面邊緣，`scroll-quiet`）。
-  - 縣條：篩選下面一行站名小牌，`sticky top-0`、`bg-paper`、下緣 `border-line-soft`。每張小牌 `h-tap min-w-14 rounded-control bg-surface`，縣名（`text-body-sm font-bold tracking-name`）上、張數（`font-latin text-micro`）下，底下一條 4px 縣色帶；目前的段落那張是 `bg-region text-on-region`，捲到中間。只列目前篩選有卡的縣；點了捲到那一縣（篩選不變），跳的途中縣條直接停在目標。各縣段落 `scroll-mt-16`，停在縣條下面。
+  - 縣條：篩選下面一行站名小牌，`sticky top-0`、`bg-paper`、下緣 `border-line-soft`。每張小牌 `h-tap min-w-14 rounded-control bg-surface`，縣名（`text-body-sm font-bold tracking-name`）上、張數（`font-num text-micro`）下，底下一條 4px 縣色帶；目前的段落那張是 `bg-region text-on-region`，捲到中間。只列目前篩選有卡的縣；點了捲到那一縣（篩選不變），跳的途中縣條直接停在目標。各縣段落 `scroll-mt-16`，停在縣條下面。
 - 開卡包（`PackOpening.vue`）：結束的行程在行程頁有「開卡包」（這台裝置還沒開過的加紅點）。這趟去過的地方包成一包（主縣的 `bg-region`＋紙紋＋紋樣圓、一巡り、行程名、張數，輕輕浮動、一道光掃過）；點了上緣撕開、包裝往下掉（0.9 秒，途中點任何地方、Space、Enter 直接發牌），卡片從下方升上來疊在中央（卡背是主縣色＋紋樣圓＋一巡り）。點一下翻面（一般在前、最稀有的最後；稀有卡翻開時背後放光、手機輕震），再點收到下方一排；「全部翻開」直接跳到一覽。翻完是全部卡片的一覽＋「收集冊」。
 - 新卡入手（`CardReveal.vue`、`services/cardReveal.ts`）：在景點卡片按下「去過」時，畫面暗下（`bg-ink/50`），收集卡從下方轉兩圈飛到中央（1.15s）；落定時背後放射狀的光（虹卡是箔片虹色、金卡金色、名城該縣 `accent`、一般白光，慢慢旋轉）、一圈光往外擴、蓋上去過的印章、一道光掃過卡面，手機輕震一下。停 1.9～2.6 秒（越稀有越久）後縮小、轉動飛進「紀錄」分頁（0.48s：前三成用 `ease-out-soft` 立刻抬起縮小，回應點擊，之後才加速飛進；背景 0.24s 淡出）（桌機頂部、手機底部，看得到的那個），分頁跳一下。點任何地方或 Esc 直接收進去；清單列的快捷鈕不播（一次標很多個時會很吵）。
 
@@ -536,15 +543,17 @@ header 右側、登入鈕左邊（`SearchBox.vue`，每一頁都在；在行程�
 - 畫風（`PaperDoll.vue`，240×320 的 SVG）：平塗、不描黑邊，只用同色的淡邊（`--color-doll-line` 20%）、一層陰影（16%）與少量亮面；整隻套 `DollDefs.vue` 的 `#doll-cut`（外面一圈白邊＋往下的紙影），夥伴是另一張紙。比例約 2.5 頭身，圓臉、齊瀏海，眼睛是小黑點、笑眼或瞇眼，腮紅。輕輕搖（減少動態時不動），夥伴偶爾跳一下。
 - 共用定義 `DollDefs.vue`（登入後才由 `App.vue` 非同步掛上；用到這些定義的畫面都只在登入時出現）：`#doll-cut`、`#doll-cut-sm`（小圖用）、`#doll-ghost`（還沒有的只剩 `--color-line` 剪影）、花紋 pattern（水玉、麻の葉、網紋、經木、甜筒格紋）。顏色都用 token。
 - 外觀：髮型 13（妹妹頭、短髮、平頭、刺刺頭、旁分、捲髮、長髮、波浪長髮、丸子頭、雙丸子、馬尾、雙馬尾、麻花辮）、眼睛 8（圓眼、豆豆眼、睫毛、鳳眼、笑眼、瞇眼、睡眼、眨眼）、膚色 6（`--color-doll-skin-1..6`，選項由淺到深排）、髮色 9（`--color-doll-hair-1..9`：黑、深棕、棕、金、白、灰、紅、粉紅、藍）。髮型與眼睛的選項是目前樣子的頭像（`PaperDoll` 的 `crop`），只換那一項。
-- 服裝 157 件（`data/outfits.ts` 不限縣的 16 件、`data/outfitsPref.ts` 各縣 3 件共 141 件）分五個位置：衣服、頭上、臉上、手上（右手握著）、夥伴（腳邊）。每件是一段 SVG，顏色只用 `--color-item-*` 與金色 token（共用小工具 `data/dollArt.ts`）；小圖用 `icon` 的 viewBox 裁出來。各縣的多半用模板：碗（拉麵、烏龍麵、蕎麥麵、丼）、串、盤、杯、水果、天守閣帽（石垣、壁、三層屋頂、金鯱）、頭帶、髮簪、斜戴在頭側的祭典面具、法被、浴衣・和服。
+- 服裝 163 件（`data/outfits.ts` 不限縣的 16 件、`data/outfitsAchv.ts` 成就服裝 6 件、`data/outfitsPref.ts` 各縣 3 件共 141 件）分五個位置：衣服、頭上、臉上、手上（右手握著）、夥伴（腳邊）。每件是一段 SVG，顏色只用 `--color-item-*` 與金色 token（共用小工具 `data/dollArt.ts`）；小圖用 `icon` 的 viewBox 裁出來。各縣的多半用模板：碗（拉麵、烏龍麵、蕎麥麵、丼）、串、盤、杯、水果、天守閣帽（石垣、壁、三層屋頂、金鯱）、頭帶、髮簪、斜戴在頭側的祭典面具、法被、浴衣・和服。
   - 各縣 3 件，取自那個縣實際的特產、工藝、祭典（`data/specialties`、`data/festivals` 與代表名物），例：北海道哈密瓜帽・函館鹽味拉麵・木雕熊、秋田生剝鬼面・秋田犬・烤米棒、山形花笠・櫻桃・天童將棋駒、京都抹茶・伏見稻荷狐面・舞妓花簪、德島阿波舞編笠・酢橘・阿波舞浴衣、沖繩風獅爺・沖繩麵・甘露衫。第一件是代表單品（`gift`）：第一次去那個縣就送（標 NEW）；另外兩件去過那個縣之後加進扭蛋。
   - 不限縣的 16 件用抽的：T 恤、浴衣、法被、作務衣、棒球帽、斗笠、貝雷帽、圓眼鏡、太陽眼鏡、相機、和傘、御朱印帳、團扇、招財貓、達摩。
+  - 成就服裝 6 件（決定事項：成就驗收 2）：大的成就各送 1 件，不進扭蛋（`Outfit.achv` 是成就 id）。都道府縣 47 → 道中合羽（衣服）、日本100名城 50 城 → 陣笠（頭上，黑漆、金色家紋）、四季 → 四季扇子（手上，櫻・青・紅葉・雪四片）、一趟 7 天 → 唐草風呂敷（手上）、足跡 300 處 → 金剛杖（手上，錦布與鈴）、旅行 10 趟 → 無事蛙（夥伴，戴小斗笠）。
+  - 由紀錄送的（代表單品、成就服裝）不存（`services/outfitOwn.ts`）：縣沒去過、成就拿掉（取消去過、刪掉旅行）就從「有的」拿掉，標回去就回來。穿著的紀錄不改，但身上不畫（衣服換回白 T 恤、其他位置空著），回來時照樣穿上；去過的紀錄還沒和伺服器對過、`achievements.json` 還沒到時照畫，不會一閃。成就服裝的 NEW 在成就新達成時一起標（基準與成就的 NEW 相同，取消再勾回來不再 NEW）。`data/outfitRewards.ts`（成就 id → 服裝 id、名稱）由 `outfitGifts.test.ts` 產生，成就頁與成就的 store 只用這份，不載入服裝的 SVG。
 - 頁面：左邊角色＋「抽服裝」，右邊衣櫃（桌機）；手機上下排。（第二版的「舞台換縣、站名標」拿掉了。）
   - 桌機整頁不捲動：頁面高度等於視窗，左欄的展示窗填滿高度，右邊衣櫃的台紙在窗內自己捲。手機照常整頁捲。
   - 手機（<1024，決定事項 M2）：整頁捲動，展示窗（正方形，最寬 440）`sticky`，`top` 是「小窗高 − 展示窗高」：往上捲時展示窗照常捲走，只剩下緣約 150px 的小窗留在上緣（打橫時最多佔捲動區的 40%），看得到穿上的樣子。娃娃與地面放進看得到的那一段跟著縮小（改容器高度，不用 transform，3D 的層才不會糊）；版面高度不變，捲動不會跳。衣櫃的索引標籤 `sticky` 在小窗下面（`bg-paper`），捲到下面也換得了分頁。
   - 角色：`region-tint` 底＋青海波（25%）＋紙紋，下方 17% 是地板。
   - 3D 展示窗（`DollSpin.vue`）：旅人是紙做的立牌，左右拖拉旋轉（滑鼠上下拖拉稍微俯仰），放開帶慣性慢慢停；轉過去看得到紙的背面（`#doll-back`：紙色、透一點反過來的印刷）與切邊的厚度（前後之間疊 4 層 `#doll-edge`），地上的影子轉到側面時變窄。停下來就完全不動（3D 的層角度一直變時瀏覽器用低解析度畫，放大看會糊，所以不做待機擺動）；雙擊轉回正面；鍵盤 ←→ 轉 30 度、Home 回正面。展示窗裡的紙不畫落影（`#doll-cut-ns`），影子畫在地上。減少動態時沒有慣性。
-  - 衣櫃：索引標籤「外觀、衣服、頭上、臉上、手上、夥伴」接在點點方格的貼紙台紙上（手機 <1024 每個標籤 `flex-1` 平分寬度，不會左右捲）；右上「只看有的」。有的排前面，不限縣的在前、各縣依都道府縣代碼順。單品是貼紙（`#doll-cut-sm`），穿著的右上蓋朱色小印「穿」，新拿到的左上 NEW；還沒有的是剪影，各縣的單品下面掛縣名小牌。剪影裡扭蛋抽得到（不限縣的、去過的縣的）的右上有一顆小扭蛋；沒有的要先去那個縣。標題旁「服裝 n / 157」。
+  - 衣櫃：索引標籤「外觀、衣服、頭上、臉上、手上、夥伴」接在點點方格的貼紙台紙上（手機 <1024 每個標籤 `flex-1` 平分寬度，不會左右捲）；右上「只看有的」。有的排前面，不限縣的在前、成就服裝其次、各縣依都道府縣代碼順。單品是貼紙（`#doll-cut-sm`），穿著的右上蓋朱色小印「穿」，新拿到的左上 NEW；還沒有的是剪影，各縣的單品下面掛縣名小牌（`region-strong`）；成就服裝掛成就名小牌（`--color-visited` 底，和成就的印泥同色；名稱裡數字與單位不拆開，例「足跡 300 處」）。剪影的小牌是 `--color-line` 框、`text-sub`。剪影裡扭蛋抽得到（不限縣的、去過的縣的）的右上有一顆小扭蛋；沒有的要先去那個縣。標題旁「服裝 n / 163」。讀屏：成就服裝有的是「名稱，成就「成就名」」，還沒有的是「名稱（達成「成就名」就有）」。
   - 標題旁「規則」（`AvatarRules.vue`）：使用者自己點才打開的說明書，不是 onboarding。條列服裝怎麼拿、抽獎券怎麼算（附自己目前的明細表）、衣櫃的記號（小扭蛋、縣名小牌、穿、NEW）、展示窗怎麼轉。Esc、點外面、「關閉」收起。
   - 「抽服裝」：深色長條，左邊扭蛋小圖、右邊剩下的抽獎券。扭蛋抽得到的都有了時寫「去過的縣都抽齊了」，右邊寫「沒去過的縣 n 件」（全部都有了才寫「都抽齊了」）。
 - 抽獎：用抽獎券（§7.19b，與景點卡共用），扭蛋的範圍是不限縣的＋去過的縣的另外兩件，只抽還沒有的（不會重複），權重 常見 6、少見 3、稀有 1。
@@ -593,7 +602,8 @@ header 右側、登入鈕左邊（`SearchBox.vue`，每一頁都在；在行程�
   - 行程頁（已結束）：按鈕列下方同一列 40px 不動，右邊「成就 ›」。
   - 其他路徑（清單快捷鈕、午夜行程結束、批次補日期、別台裝置）不播動畫，只靠 NEW、入口的 `NewTag`、散步的旅人說「有新的成就」或「東北還差秋田、山形」（只差 1–2 縣的地方）。
 - 抽獎券：地方、旅行、時節的成就每個 5 張（最多 95 張，§7.19b）；足跡、文化指定、名城、擴充包只記錄（錢包已依縣、依每 10 個景點給過）。
-- 不做：服裝獎勵（v1）、卡片樣式數與經縣值的成就（可以刷、自己選的級數）、連續年份、精選與分數、全國分母（x / 213）、続日本100名城全城（資料只有 97 座）。
+- 送服裝：6 個成就各送 1 件旅人的服裝（§7.24）。詳細對話框多一列「服裝　陣笠」（連到旅人頁）；規則多一段「服裝」。
+- 不做：卡片樣式數與經縣值的成就（可以刷、自己選的級數）、連續年份、精選與分數、全國分母（x / 213）、続日本100名城全城（資料只有 97 座）。
 
 ### 7.20 離線
 - PWA（`vite.config.ts` 的 `pwa()`、vite-plugin-pwa）：app 本身預先快取；資料 bundle（網址帶 `?v=` 版本，cache-first）、`_index.json`（network-first）、地圖圖磚、字型、Commons 照片在用到時存下來。收藏、去過、行程由 Firestore 的本機快取（`persistentLocalCache`）處理，離線時的修改連線後送出。
@@ -719,11 +729,11 @@ MVP 不做。token 已集中在 `theme.css` 與 `regions.css`，之後以 `@cust
 | 江戶 | 浮世繪、和紙、藍 | `#EFE6D3`／`#1E1A17` | 藍 `#2B4B7A`、紅 `#B5352B` | 朱 `#B5352B` | 霞鶩文楷 TC／Klee One／霞鶩文楷／Yuji Syuku・霞鶩文楷 | 褪色、高對比＋和紙纖維 | 方角、細墨框、沒有陰影；行程卡是通行手形（木札） |
 | 明治 | 文明開化、活版印刷 | `#F1EBDD`／`#1F2430` | 濃紺 `#1F2A44`、金 `#B08D3C` | 臙脂 `#7A1F2B` | Noto Serif TC／Shippori Mincho／IM Fell English SC／Shippori Mincho B1・Noto Serif TC | 蛋白相片的褐色＋四角暗影 | 雙線框（墨－紙－墨） |
 | 大正 | 大正浪漫、矢絣 | `#F4EDE6`／`#2B1E24` | 海老茶 `#6E2C2C`、紫 `#5B3A6E`（帶色是矢絣紋） | 紫 `#6B2D5C` | Noto Serif TC／Zen Old Mincho／Cormorant SC／Kaisei Decol・Chiron Sung HK | 手工上色的淡彩 | 圓角大、柔和的陰影 |
-| 昭和 | 國鐵、硬券、明信片 | `#F2E8D2`／`#2A2019` | 朱 `#C2402A`、青竹 `#1F6B5C`、山吹 `#E2A62B` | 紫 `#5B3F8C` | 粉圓／Zen Maru Gothic／DotGothic16／Dela Gothic One・Chiron GoRound TC | 褐色調＋印刷網點 | 墨框＋實心錯位陰影（2px） |
-| 平成 | 早期網路、亮面 | `#F7F7FB`／`#1F2233` | 青 `#00A0E9`、洋紅 `#E4007F`、黃 `#FFE600`（漸層帶） | 洋紅 `#C8006F`（帶色 `#E4007F` 疊淺底不到 4.5:1，去過深一階） | Chiron GoRound TC／M PLUS Rounded 1c／VT323／Mochiy Pop One・Chiron GoRound TC | 彩度加強＋亮面反光 | 大圓角、柔和陰影；行程卡是 IC 卡 |
+| 昭和 | 國鐵、硬券、明信片 | `#F2E8D2`／`#2A2019` | 朱 `#C2402A`、青竹 `#1F6B5C`、山吹 `#E2A62B` | 紫 `#5B3F8C` | 粉圓／Zen Maru Gothic／DotGothic16（資料數字用粉圓）／Dela Gothic One・Chiron GoRound TC | 褐色調＋印刷網點 | 墨框＋實心錯位陰影（2px） |
+| 平成 | 早期網路、亮面 | `#F7F7FB`／`#1F2233` | 青 `#00A0E9`、洋紅 `#E4007F`、黃 `#FFE600`（漸層帶） | 洋紅 `#C8006F`（帶色 `#E4007F` 疊淺底不到 4.5:1，去過深一階） | Chiron GoRound TC／M PLUS Rounded 1c／VT323（資料數字用 Chiron GoRound TC）／Mochiy Pop One・Chiron GoRound TC | 彩度加強＋亮面反光 | 大圓角、柔和陰影；行程卡是 IC 卡 |
 
 - 地區色：由 `pipeline/region_css.py` 的 `ERA_THEMES` 換算，跟令和一起輸出在 `regions.css`（`:root[data-theme="…"]`、`[data-theme="…"] [data-pref]`）。中性色固定（上表的紙、墨），紙類再滲 4–6% 的地區色；強調色依年代換算：江戶、明治、大正、昭和在 OKLab 往古紙色混，平成放大彩度。開場畫面與分享圖讀不到 CSS 變數，用同時產生的 `web/src/styles/theme-colors.json`。
-- token（theme.css 的 `:root[data-theme]`）：`--font-*`、`--font-display`（日文大標）、`--font-display-zh`（中文大標，日文字型缺繁體字，分開才不會一句混兩種字）、`--display-weight`／`--display-zh-weight`、`--radius-*`、`--shadow-*`、`--color-visited`、`--color-white`、`--color-map-water`、`--color-era-1/2/sign/card/ticket`、`--era-rule`（頂部下緣帶色，畫在 header 裡面不改高度）、`--era-photo-filter`／`--era-photo-overlay`（照片的濾鏡與質感）、`--era-card-shadow`。
+- token（theme.css 的 `:root[data-theme]`）：`--font-*`（`--font-num` 只有昭和、平成另外設，其他年代跟 `--font-latin`）、`--font-display`（日文大標）、`--font-display-zh`（中文大標，日文字型缺繁體字，分開才不會一句混兩種字）、`--display-weight`／`--display-zh-weight`、`--radius-*`、`--shadow-*`、`--color-visited`、`--color-white`、`--color-map-water`、`--color-era-1/2/sign/card/ticket`、`--era-rule`（頂部下緣帶色，畫在 header 裡面不改高度）、`--era-photo-filter`／`--era-photo-overlay`（照片的濾鏡與質感）、`--era-card-shadow`。
 - 元件（`web/src/styles/eras.css` 與 SpotCard 的 `:root[data-theme]` 規則）：
   - 大標（`text-display`／`text-h1`／`text-h2`／`text-h3`）用年代的展示字型；`lang="ja"` 用日文的，其他用中文的。
   - Tailwind 的 shadow utility 把值寫死，`.shadow-*` 直接改用 token；地圖上的照片圓點只留一圈細框。

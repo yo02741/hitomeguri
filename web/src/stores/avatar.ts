@@ -3,7 +3,9 @@ import { computed, ref, shallowRef, watch } from 'vue'
 
 import { useVisitedEntries } from '../composables/visited'
 import { DEFAULT_EQUIPPED, type EyeStyle, type HairColor, type HairStyle, OUTFITS, outfitById, type Outfit, type Skin, type Slot, STARTER_IDS } from '../data/outfits'
+import { derivedOwned, gachaPool, wornOf } from '../services/outfitOwn'
 import { ensureSignedIn, firestore } from '../services/userdb'
+import { useAchievementsStore } from './achievements'
 import { outfitKey, useFreshStore } from './fresh'
 import { useUserStore } from './user'
 import { useWalletStore } from './wallet'
@@ -11,7 +13,8 @@ import { useWalletStore } from './wallet'
 /**
  * 旅人（紙娃娃，DESIGN.md §7.24）：外觀、穿著、有的服裝。存在 users/{uid}/meta/avatar，
  * 只有本人讀寫；規則還沒發布或離線寫不進去時先存在這台裝置。
- * 每個縣的代表單品（gift）去過那個縣就有（不用存）；其他的用抽獎券抽（stores/wallet.ts，與景點卡共用）：
+ * 每個縣的代表單品（gift）去過那個縣就有、成就服裝（achv）達成那個成就就有（都不用存，services/outfitOwn.ts）；
+ * 其他的用抽獎券抽（stores/wallet.ts，與景點卡共用）：
  * 扭蛋的範圍是不限縣的＋去過的縣的其他單品，只抽還沒有的（不會重複），都有了就不能抽。
  */
 export interface AvatarParts {
@@ -35,6 +38,7 @@ export const useAvatarStore = defineStore('avatar', () => {
   const { entries } = useVisitedEntries()
   const wallet = useWalletStore()
   const fresh = useFreshStore()
+  const achievements = useAchievementsStore()
   const parts = shallowRef<AvatarParts>(DEFAULT_PARTS)
   const equipped = shallowRef<Partial<Record<Slot, string>>>(DEFAULT_EQUIPPED)
   const owned = shallowRef<string[]>(STARTER_IDS)
@@ -110,11 +114,14 @@ export const useAvatarStore = defineStore('avatar', () => {
 
   /** 去過的縣 */
   const visitedPrefs = computed(() => new Set(entries.value.map(([, m]) => m.pref)))
-  /** 有的服裝：抽到的＋去過的縣的代表單品 */
-  const ownedIds = computed(() => new Set([...owned.value, ...OUTFITS.filter((o) => o.gift && o.pref && visitedPrefs.value.has(o.pref)).map((o) => o.id)]))
+  const ownInput = () => ({ visitedPrefs: visitedPrefs.value, achv: (id: string) => achievements.byId.get(id)?.status })
+  /** 有的服裝：抽到的＋去過的縣的代表單品＋達成的成就送的 */
+  const ownedIds = computed(() => new Set([...owned.value, ...derivedOwned(OUTFITS, ownInput())]))
   const has = (id: string) => ownedIds.value.has(id)
+  /** 畫在身上的：由紀錄送的服裝拿掉了就不畫（穿著的紀錄不改，回來時照樣穿上） */
+  const worn = computed(() => wornOf(equipped.value, outfitById, { ...ownInput(), ready: achievements.ready.core, fallback: DEFAULT_EQUIPPED }))
   /** 扭蛋抽得到的：不限縣的，加上去過的縣的其他單品 */
-  const pool = computed(() => OUTFITS.filter((o) => !o.gift && (!o.pref || visitedPrefs.value.has(o.pref))))
+  const pool = computed(() => gachaPool(OUTFITS, visitedPrefs.value))
   /** 還沒有、抽得到的 */
   const remaining = computed(() => pool.value.filter((o) => !ownedIds.value.has(o.id)))
   const canDraw = computed(() => remaining.value.length > 0 && wallet.canSpend(1))
@@ -150,5 +157,5 @@ export const useAvatarStore = defineStore('avatar', () => {
     return { outfit: picked, duplicate: false }
   }
 
-  return { parts, equipped, owned, used, loaded, visitedPrefs, ownedIds, has, canDraw, pool, remaining, setParts, equip, draw }
+  return { parts, equipped, worn, owned, used, loaded, visitedPrefs, ownedIds, has, canDraw, pool, remaining, setParts, equip, draw }
 })

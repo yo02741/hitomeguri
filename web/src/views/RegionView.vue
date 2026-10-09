@@ -270,7 +270,7 @@ function sourceLabel(url: string): string {
           </div>
           <div class="flex flex-col pb-2">
             <span class="w-fit font-latin text-body font-bold tracking-[0.4em] uppercase [view-transition-name:region-romaji]">{{ region.name.romaji }}</span>
-            <span class="text-body-sm font-bold">{{ region.area_name }}</span>
+            <span lang="ja" class="text-body-sm font-bold">{{ region.area_name }}</span>
           </div>
         </div>
         <p v-if="routes.length" class="-mt-2 flex flex-wrap gap-x-4 font-latin text-caption font-semibold tracking-[1px] lg:hidden">
@@ -321,7 +321,7 @@ function sourceLabel(url: string): string {
             v-for="m in FESTIVAL_MONTHS"
             :key="m"
             type="button"
-            class="flex h-9 shrink-0 items-center px-1.5 font-latin text-body-sm disabled:opacity-40 pointer-coarse:h-tap"
+            class="flex h-9 shrink-0 items-center px-1.5 font-num text-body-sm disabled:opacity-40 pointer-coarse:h-tap"
             :class="festMonth === String(m) ? 'border-on-region font-bold' : 'border-transparent'"
             :disabled="!festMonthsWithData.has(String(m))"
             :aria-pressed="festMonth === String(m)"
@@ -384,7 +384,7 @@ function sourceLabel(url: string): string {
             class="flex scroll-mt-24 flex-col gap-3 cv-auto [contain-intrinsic-size:auto_900px] lg:scroll-mt-8"
           >
             <h3 class="flex items-baseline gap-1.5 text-caption font-bold tracking-section text-sub">
-              {{ g.label }}<span class="font-latin font-normal tracking-normal">{{ g.items.length }}</span>
+              {{ g.label }}<span class="font-num font-normal tracking-normal">{{ g.items.length }}</span>
             </h3>
             <ul class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
               <!-- 手機（<640）橫排：左邊 96px 方圖，和祭典卡相同；sm 起照片在上 -->
@@ -437,7 +437,7 @@ function sourceLabel(url: string): string {
               @click="expanded = new Set(expanded).add(g.key)"
             >
               <CollapseChevron :open="true" />
-              全部 <span class="font-latin">{{ g.items.length }}</span> 項
+              全部 <span class="font-num">{{ g.items.length }}</span> 項
             </button>
           </div>
         </section>

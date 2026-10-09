@@ -45,7 +45,7 @@ async function logOut() {
       <section class="flex flex-col gap-3" aria-labelledby="fav-title">
         <div class="flex flex-wrap items-center gap-x-4 gap-y-2">
           <h2 id="fav-title" class="flex items-baseline gap-1.5 text-h3 font-black tracking-title">
-            收藏<span class="font-latin text-body font-normal tracking-normal text-sub">{{ favorites.length }}</span>
+            收藏<span class="font-num text-body font-normal tracking-normal text-sub">{{ favorites.length }}</span>
           </h2>
           <ExportButtons class="ml-auto" title="ひとめぐり 收藏" :rows="favorites.map(markRow)" />
         </div>
@@ -55,7 +55,7 @@ async function logOut() {
 
       <section class="flex flex-col gap-3" aria-labelledby="lists-title">
         <h2 id="lists-title" class="flex items-baseline gap-1.5 text-h3 font-black tracking-title">
-          清單<span class="font-latin text-body font-normal tracking-normal text-sub">{{ marks.lists.length }}</span>
+          清單<span class="font-num text-body font-normal tracking-normal text-sub">{{ marks.lists.length }}</span>
         </h2>
         <ul v-if="marks.lists.length" class="grid grid-cols-1 gap-3 sm:grid-cols-2">
           <li v-for="l in marks.lists" :key="l.id">
@@ -64,7 +64,7 @@ async function logOut() {
               class="flex min-h-tap items-center gap-3 rounded-card border border-line bg-paper px-4 py-3 text-ink no-underline hover:bg-surface active:not-disabled:translate-y-px"
             >
               <span class="line-clamp-2 min-w-0 text-body font-bold break-words">{{ l.name }}</span>
-              <span class="ml-auto shrink-0 font-latin text-body-sm text-sub">{{ listCounts.get(l.id) ?? 0 }}</span>
+              <span class="ml-auto shrink-0 font-num text-body-sm text-sub">{{ listCounts.get(l.id) ?? 0 }}</span>
             </RouterLink>
           </li>
         </ul>

@@ -15,7 +15,7 @@ from pathlib import Path
 import pytest
 
 from pipeline.paths import REGIONS_JSON
-from pipeline.region_css import ERA_THEMES, era_color
+from pipeline.region_css import ERA_THEMES, era_color, layered
 
 THEME_CSS = Path(__file__).resolve().parents[2] / "web" / "src" / "styles" / "theme.css"
 ERAS = ["reiwa", *(t.key for t in ERA_THEMES)]
@@ -41,15 +41,31 @@ def _regions() -> dict:
     return json.loads(REGIONS_JSON.read_text(encoding="utf-8"))
 
 
-def palettes() -> Iterator[tuple[str, str, dict[str, str]]]:
-    """(年代, 縣, 地區色)：全國＋47 縣 × 令和與各年代，共 48 × 6 組。"""
+def palettes(layer: bool = False) -> Iterator[tuple[str, str, dict[str, str]]]:
+    """(年代, 縣, 地區色)：全國＋47 縣 × 令和與各年代，共 48 × 6 組。
+
+    layer=True 是中性色層次的預覽（regions-neutral.css，?neutral=1），標成「年代+layer」。
+    """
     data = _regions()
     rows = [("national", data["national"]["color"])]
     rows += [(r["prefecture"], r["color"]) for r in data["regions"]]
     for era in ERAS:
         theme = next((t for t in ERA_THEMES if t.key == era), None)
         for pref, color in rows:
-            yield era, pref, color if theme is None else era_color(theme, color)
+            if theme is None:
+                yield era, pref, layered(color) if layer else color
+            else:
+                yield era, pref, era_color(theme, color, layered=layer)
+
+
+def all_palettes() -> Iterator[tuple[str, str, dict[str, str]]]:
+    yield from palettes()
+    for era, pref, c in palettes(layer=True):
+        yield era + "+layer", pref, c
+
+
+def _base(era: str) -> str:
+    return era.removesuffix("+layer")
 
 
 def _css_block(css: str, selector_re: str) -> str:
@@ -96,7 +112,7 @@ UI_PAIRS = [("strong", "paper"), ("strong", "surface")]
 def test_region_text_contrast(fg: str, bg: str) -> None:
     bad = [
         f"{era} {pref}: {fg} {c[fg]} / {bg} {c[bg]} = {contrast(c[fg], c[bg]):.2f}"
-        for era, pref, c in palettes()
+        for era, pref, c in all_palettes()
         if contrast(c[fg], c[bg]) < 4.5
     ]
     _fail(bad, f"文字 {fg} 對 {bg} < 4.5:1")
@@ -106,7 +122,7 @@ def test_region_text_contrast(fg: str, bg: str) -> None:
 def test_region_ui_contrast(fg: str, bg: str) -> None:
     bad = [
         f"{era} {pref}: {fg} {c[fg]} / {bg} {c[bg]} = {contrast(c[fg], c[bg]):.2f}"
-        for era, pref, c in palettes()
+        for era, pref, c in all_palettes()
         if contrast(c[fg], c[bg]) < 3
     ]
     _fail(bad, f"非文字 {fg} 對 {bg} < 3:1")
@@ -116,9 +132,9 @@ def test_white_on_strong() -> None:
     """主按鈕：年代的 --color-white 字對 region-strong ≥ 4.5:1（§3.5 白字只放在 strong、ink、danger 上）。"""
     fixed = fixed_colors()
     bad = [
-        f"{era} {pref}: white {fixed[era]['white']} / strong {c['strong']} = {contrast(fixed[era]['white'], c['strong']):.2f}"
-        for era, pref, c in palettes()
-        if contrast(fixed[era]["white"], c["strong"]) < 4.5
+        f"{era} {pref}: white {fixed[_base(era)]['white']} / strong {c['strong']} = {contrast(fixed[_base(era)]['white'], c['strong']):.2f}"
+        for era, pref, c in all_palettes()
+        if contrast(fixed[_base(era)]["white"], c["strong"]) < 4.5
     ]
     _fail(bad, "白字對 strong < 4.5:1")
 
@@ -130,25 +146,24 @@ def test_visited_contrast() -> None:
     """去過的字與印章：對 visited-tint（Toggle 底）與 paper ≥ 4.5:1。"""
     fixed = fixed_colors()
     bad = []
-    for era, pref, c in palettes():
-        v, vt = fixed[era]["visited"], fixed[era]["visited-tint"]
+    for era, pref, c in all_palettes():
+        v, vt = fixed[_base(era)]["visited"], fixed[_base(era)]["visited-tint"]
         for name, bg in (("visited-tint", vt), ("paper", c["paper"])):
             if contrast(v, bg) < 4.5:
                 bad.append(f"{era} {pref}: visited {v} / {name} {bg} = {contrast(v, bg):.2f}")
     _fail(bad, "去過色 < 4.5:1")
 
 
-# 已知差一點的：茶在江戶、昭和偏黃的地圖陸地上最低 2.94（昭和京都）。先守住現況的下限，不讓它更差；
-# 要拉到 3:1 得改茶色或年代的陸地色，屬於另一項調整（中性色分層），不在這裡決定。
-MARKER_FLOOR = {("t-tea", "map"): 2.9}
+# 例外的下限（主題色, 底）→ 比值。茶在江戶、昭和偏黃的陸地上原本只有 2.94，已在 theme.css 加深，不再有例外。
+MARKER_FLOOR: dict[tuple[str, str], float] = {}
 
 
 def test_theme_marker_contrast() -> None:
     """主題色（景點圓點外框、符號）對 paper 與地圖陸地 ≥ 3:1（MARKER_FLOOR 的例外守現況下限）。"""
     fixed = fixed_colors()
     bad = []
-    for era, pref, c in palettes():
-        for key, value in fixed[era].items():
+    for era, pref, c in all_palettes():
+        for key, value in fixed[_base(era)].items():
             if not key.startswith("t-"):
                 continue
             for name in ("paper", "map"):
@@ -175,6 +190,19 @@ def test_fixed_colors_are_read() -> None:
     fixed = fixed_colors()
     assert set(fixed) == set(ERAS)
     for era, f in fixed.items():
-        for key in ("visited", "visited-tint", "white", "danger", "t-onsen", "t-ramen"):
+        for key in ("visited", "visited-tint", "white", "danger", "t-tea", "t-pokemon"):
             assert key in f, (era, key)
-    assert sum(1 for k in fixed["reiwa"] if k.startswith("t-")) >= 10
+    assert sum(1 for k in fixed["reiwa"] if k.startswith("t-")) >= 5
+
+
+@pytest.mark.parametrize("era", ["edo", "showa"])
+def test_tea_token_on_map(era: str) -> None:
+    """t-tea 在江戶、昭和的陸地上 ≥ 3:1（47 縣＋全國），而且是年代自己的值，不是改了令和。
+
+    t-tea 依使用者決定保留，但主題小店刪除後沒有介面用到（DESIGN §3.2）；
+    這裡只保證之後再用到時顏色不必重調。
+    """
+    fixed = fixed_colors()
+    assert fixed[era]["t-tea"] != fixed["reiwa"]["t-tea"]
+    worst = min(contrast(fixed[era]["t-tea"], c["map"]) for e, _, c in palettes() if e == era)
+    assert worst >= 3, f"{era} t-tea {fixed[era]['t-tea']} 對陸地最低 {worst:.2f}"

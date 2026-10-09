@@ -6,12 +6,11 @@ export interface MapSpot {
   z?: string // 繁中名（featured.json 省略）
   lat: number
   lng: number
-  k: 'major' | 'theme'
+  k: 'major'
   f: 0 | 1 // 精選
   s: number // 分數
   h?: string // 假名
   r?: string // 羅馬拼音
-  t?: string[] // 主題
   c?: string // 分類
   i?: string // 地圖用小圖：Commons 縮圖路徑（省略前綴）或完整網址
   d?: string // 最高的文化指定（世界遺產、國寶、特別史跡、特別名勝）：收集卡的稀有度
@@ -45,7 +44,7 @@ export interface Spot {
   location: { lat: number; lng: number }
   prefecture: string
   city?: string
-  kind: 'major' | 'theme'
+  kind: 'major'
   themes: string[]
   tags: string[]
   featured: boolean

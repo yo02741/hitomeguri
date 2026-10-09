@@ -48,7 +48,7 @@ useDismiss(root, computed(() => open.value && wide.value), () => (open.value = f
           class="ring-2 ring-paper"
         />
       </span>
-      共編<span v-if="members.length > 1" class="font-latin">{{ members.length }}</span>
+      共編<span v-if="members.length > 1" class="font-num">{{ members.length }}</span>
     </button>
 
     <div

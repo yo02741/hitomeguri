@@ -56,7 +56,7 @@ const name = computed(() => regionOf(props.pref)?.name.ja ?? '')
     <!-- 手機的 72px 小框：三個字的縣名配四位數倍率放不下一行時，倍率換到下一行 -->
     <p class="flex flex-wrap items-baseline justify-between gap-x-1 gap-y-0.5 px-0.5 leading-none" aria-hidden="true">
       <span lang="ja" class="min-w-0 text-caption font-bold text-ink">{{ name }}</span>
-      <span class="font-latin text-caption font-semibold text-sub">×{{ factor }}</span>
+      <span class="font-num text-caption font-semibold text-sub">×{{ factor }}</span>
     </p>
   </div>
 </template>

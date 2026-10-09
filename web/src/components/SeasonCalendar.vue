@@ -97,7 +97,7 @@ const thisMonth = new Date().getMonth() + 1
           <span
             v-for="m in MONTHS"
             :key="m"
-            class="pb-1.5 text-center font-latin text-caption"
+            class="pb-1.5 text-center font-num text-caption"
             :class="[m === thisMonth ? 'font-bold text-ink' : 'text-sub', m % 2 === 0 ? 'max-sm:invisible' : '']"
           >{{ m }}<span class="hidden sm:inline">月</span></span>
         </div>
@@ -149,7 +149,7 @@ const thisMonth = new Date().getMonth() + 1
           </template>
           <!-- 日期：靠近年底時放在點的左邊 -->
           <span
-            class="absolute top-1/2 -translate-y-1/2 font-latin text-caption font-bold whitespace-nowrap"
+            class="absolute top-1/2 -translate-y-1/2 font-num text-caption font-bold whitespace-nowrap"
             :class="nearEnd(r) ? '-translate-x-full pr-3' : 'pl-3'"
             :style="{ left: `${nearEnd(r) ? pos(r.from) : pos(r.to ?? r.from)}%` }"
           >{{ label(r.from) }}<template v-if="r.to"> – {{ label(r.to) }}</template></span>

@@ -7,6 +7,8 @@
 
 /* 手機打橫（高 ≤500px、寬 <1024，決定事項 N2）：精簡 header、分頁放進 header、不顯示下方分頁列，地圖頁改成側欄。
  * 寬 ≥1024 的視窗即使很矮也維持桌機版面 */
+/* 中性色層次的預覽（?neutral=1，DESIGN.md §3.1a）：選取列的內框只在預覽時出現 */
+@custom-variant neutral-preview (&:where(:root[data-neutral] *));
 @custom-variant land (@media (orientation: landscape) and (max-height: 500px) and (max-width: 1023.98px));
 
 @theme static {
@@ -14,6 +16,9 @@
   --font-sans: "Noto Sans TC", "Noto Sans JP", system-ui, sans-serif;
   --font-ja: "Noto Sans JP", "Noto Sans TC", system-ui, sans-serif;
   --font-latin: "Barlow Semi Condensed", "Noto Sans TC", system-ui, sans-serif;
+  /* 資料數字（距離、日期、清單件數、時間、價格）：令和、江戶、明治、大正同 --font-latin；
+   * 昭和、平成的 --font-latin 是點陣字，只留給看板數字（大計數、DAY、卡號），資料數字改用內文字型（DESIGN.md §4.1） */
+  --font-num: var(--font-latin);
   /* 大標（text-display／h1／h2／h3）：令和同 sans，各年代換成展示字型（§13）；日文、中文分開 */
   --font-display: "Noto Sans JP", "Noto Sans TC", system-ui, sans-serif;
   --font-display-zh: "Noto Sans TC", "Noto Sans JP", system-ui, sans-serif;
@@ -26,12 +31,7 @@
 
   /* ---------- 主題色（固定，不隨地區改變） ---------- */
   --color-t-tea: #3F8F35;
-  --color-t-sake: #B0561C;
-  --color-t-incense: #A4508B;
-  --color-t-onsen: #0B8291;
-  --color-t-ramen: #9E6E00;
   --color-t-pokemon: #1F6FC0;
-  --color-t-goshuin: #C8102E;
   --color-t-castle: #4F6475;
   --color-t-shinise: #7A5230;
   --color-t-chara: #6D4FC2;
@@ -291,7 +291,8 @@
     word-break: auto-phrase;
   }
   /* 數字（日期、距離、件數）等寬，跳動與上下對齊時不晃；字型沒有 tnum 就沒有作用 */
-  .font-latin {
+  .font-latin,
+  .font-num {
     font-variant-numeric: tabular-nums;
   }
   :focus-visible {
@@ -397,6 +398,7 @@
   --color-visited-tint: #F3E1DC;
   --color-white: #F7F1E3;
   --color-map-water: #8FA9B8;
+  --color-t-tea: #3C8933; /* 保留的 token，目前沒有介面用到（DESIGN §3.2）；值仍對偏黃的陸地 ≥ 3:1 */
   --color-era-1: #2B4B7A;
   --color-era-2: #B5352B;
   --color-era-sign: #C9A23A;
@@ -483,6 +485,7 @@
   --font-sans: "Huninn", "Zen Maru Gothic", "Noto Sans TC", system-ui, sans-serif;
   --font-ja: "Zen Maru Gothic", "Huninn", "Noto Sans JP", system-ui, sans-serif;
   --font-latin: "DotGothic16", "Huninn", monospace;
+  --font-num: var(--font-sans); /* Huninn 的數字本來就等寬 */
   --font-display: "Dela Gothic One", "Chiron GoRound TC", sans-serif;
   --font-display-zh: "Chiron GoRound TC", "Dela Gothic One", sans-serif;
   --display-weight: 400;
@@ -500,6 +503,7 @@
   --color-visited-tint: #ECE4F3;
   --color-white: #FBF6EA;
   --color-map-water: #9CC3C2;
+  --color-t-tea: #3C8933; /* 保留的 token，目前沒有介面用到（DESIGN §3.2）；值仍對偏黃的陸地 ≥ 3:1 */
   --color-era-1: #C2402A;
   --color-era-2: #1F6B5C;
   --color-era-sign: #E2A62B;
@@ -518,6 +522,7 @@
   --font-sans: "Chiron GoRound TC", "M PLUS Rounded 1c", "Noto Sans TC", system-ui, sans-serif;
   --font-ja: "M PLUS Rounded 1c", "Chiron GoRound TC", "Noto Sans JP", system-ui, sans-serif;
   --font-latin: "VT323", "M PLUS Rounded 1c", monospace;
+  --font-num: var(--font-sans); /* Chiron GoRound TC 的數字本來就等寬 */
   --font-display: "Mochiy Pop One", "Chiron GoRound TC", sans-serif;
   --font-display-zh: "Chiron GoRound TC", "Mochiy Pop One", sans-serif;
   --display-weight: 400;

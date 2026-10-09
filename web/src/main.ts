@@ -11,6 +11,9 @@ import { installScrollRestore } from './services/scrollRestore'
 import { installViewTransitions } from './services/viewTransition'
 import './styles/theme.css'
 
+// 中性色層次的預覽（?neutral=1，index.html 設 data-neutral）：只在這時候另外抓覆寫的 CSS，預設的打包不變
+const neutralPreview = document.documentElement.dataset.neutral ? import('./styles/regions-neutral.css') : null
+
 const app = createApp(App)
 app.use(createPinia())
 app.use(router)
@@ -19,12 +22,16 @@ installScrollRestore(router, () => document.getElementById('app-main'))
 installPageLoadErrors(router)
 trackSplash(webfontsReady(), 'fonts')
 trackSplash(router.isReady(), 'router')
-app.mount('#app')
+// 預覽時等覆寫的 CSS 到了才掛載，地圖陸地（MapView 讀 --region-map）一開始就是預覽的顏色
+// 封口要排在掛載之後，不然預覽時頁面還沒登記地圖、精選就先收掉開場畫面
+const mounted: Promise<unknown> = neutralPreview
+  ? trackSplash(neutralPreview, 'neutral').finally(() => app.mount('#app'))
+  : (app.mount('#app'), Promise.resolve())
 // iOS Safari 要文件上有 touchstart 監聽才套用 :active（按下的 1px 下壓、清單列底色）
 document.addEventListener('touchstart', () => {}, { passive: true })
 // 初始路由的頁面在 isReady 後的 microtask 內渲染、登記要等的資料與地圖；
 // 用 setTimeout 排在那之後再封口。頁面程式載入失敗（services/pageLoad.ts）時也要封口，不然停在開場畫面
-void router.isReady().then(
+void Promise.all([router.isReady(), mounted.catch(() => undefined)]).then(
   () => setTimeout(sealSplash, 0),
   () => sealSplash(),
 )

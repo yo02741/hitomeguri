@@ -90,7 +90,7 @@ async function join() {
         readonly
         :value="plainLink"
         aria-label="邀請連結"
-        class="h-tap w-full rounded-control border border-line bg-surface px-2.5 font-latin text-caption text-ink outline-none"
+        class="h-tap w-full rounded-control border border-line bg-surface px-2.5 font-num text-caption text-ink outline-none"
         @focus="($event.target as HTMLInputElement).select()"
       />
       <div class="flex flex-wrap gap-2">

@@ -77,7 +77,6 @@ watch(
 // 顯示規則：全部大點（可依類型篩選；開啟擴充包時不篩選，變淡當底圖）
 const filteredSpots = computed(() =>
   allSpots.value.filter((s) => {
-    if (s.k !== 'major') return false
     if (explore.onlyFavorites && !explore.pack) return Boolean(marks.marks[s.id]?.favorite)
     return explore.pack || !mapCategory.value || categoryGroup(s.c) === mapCategory.value
   }),
@@ -806,7 +805,7 @@ function onMoveEnd(view: MapViewState) {
           <svg width="16" height="16" viewBox="0 0 24 24" :fill="explore.onlyFavorites ? 'currentColor' : 'none'" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true">
             <path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.9l-5.2 2.7 1-5.8-4.3-4.1 5.9-.9z" />
           </svg>
-          收藏<RollingNumber :value="marks.favorites.length" class="font-latin" />
+          收藏<RollingNumber :value="marks.favorites.length" class="font-num" />
         </button>
         <PackBar :pref="pref && regionOf(pref) ? pref : null" />
       </div>
@@ -827,7 +826,7 @@ function onMoveEnd(view: MapViewState) {
           class="flex min-h-tap shrink-0 items-center gap-2 rounded-card bg-region-tint pr-2.5 pl-3.5 text-ink no-underline shadow-float active:not-disabled:translate-y-px"
         >
           <span class="shrink-0 text-body-sm font-bold">期間限定</span>
-          <span class="shrink-0 font-latin text-body-sm text-sub">{{ timedHere.length }}</span>
+          <span class="shrink-0 font-num text-body-sm text-sub">{{ timedHere.length }}</span>
           <span lang="ja" class="min-w-0 truncate text-body-sm">{{ timedHere[0]!.title.ja }}</span>
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="ml-auto shrink-0 text-sub" aria-hidden="true">
             <path d="M9 5l7 7-7 7" />
@@ -837,7 +836,7 @@ function onMoveEnd(view: MapViewState) {
         <template v-if="pref && regionOf(pref)">
           <section v-if="timedHere.length && !explore.pack" class="shrink-0 rounded-card bg-paper px-3.5 pt-2.5 pb-2 shadow-float max-lg:hidden" aria-labelledby="timed-here">
             <h2 id="timed-here" class="flex items-baseline gap-1.5 text-body-sm font-bold">
-              期間限定<span class="font-latin font-normal text-sub">{{ timedHere.length }}</span>
+              期間限定<span class="font-num font-normal text-sub">{{ timedHere.length }}</span>
               <RouterLink v-if="timedHere.length > 3" :to="`/region/${pref}#timed`" class="ml-auto text-caption font-normal text-sub active:text-ink">全部</RouterLink>
             </h2>
             <TimedList :items="timedHere.slice(0, 3)" />

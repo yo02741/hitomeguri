@@ -156,7 +156,7 @@ watch(
 
         <section id="places" class="flex scroll-mt-16 flex-col gap-2 lg:scroll-mt-8" aria-labelledby="places-title">
           <h2 id="places-title" class="flex items-baseline gap-1.5 text-h3 font-black tracking-title">
-            地名與車站<span class="font-latin text-body font-normal tracking-normal text-sub">{{ places.length }}</span>
+            地名與車站<span class="font-num text-body font-normal tracking-normal text-sub">{{ places.length }}</span>
           </h2>
           <ul class="flex flex-col">
             <li v-for="p in places" :key="p.key" class="flex items-center gap-3 border-b border-line-soft py-2.5 last:border-b-0">
@@ -200,7 +200,7 @@ watch(
 
         <section v-if="words.length && !onlyMust" id="words" class="flex scroll-mt-16 flex-col gap-2 lg:scroll-mt-8" aria-labelledby="words-title">
           <h2 id="words-title" class="flex items-baseline gap-1.5 text-h3 font-black tracking-title">
-            地區特色<span class="font-latin text-body font-normal tracking-normal text-sub">{{ words.length }}</span>
+            地區特色<span class="font-num text-body font-normal tracking-normal text-sub">{{ words.length }}</span>
           </h2>
           <ul class="grid grid-cols-1 gap-x-6 sm:grid-cols-2">
             <li v-for="w in words" :key="w.key" class="flex items-center gap-3 border-b border-line-soft py-2.5">
@@ -217,7 +217,7 @@ watch(
 
         <section v-if="!onlyMust" id="limited" class="flex scroll-mt-16 flex-col gap-5 lg:scroll-mt-8" aria-labelledby="limited-title">
           <h2 id="limited-title" class="flex items-baseline gap-1.5 text-h3 font-black tracking-title">
-            期間限定<span v-if="timed.length + tripFinds.length" class="font-latin text-body font-normal tracking-normal text-sub">{{ timed.length + tripFinds.length }}</span>
+            期間限定<span v-if="timed.length + tripFinds.length" class="font-num text-body font-normal tracking-normal text-sub">{{ timed.length + tripFinds.length }}</span>
           </h2>
           <TimedList v-if="timed.length" :items="timed" detailed />
           <div class="flex flex-col gap-3">

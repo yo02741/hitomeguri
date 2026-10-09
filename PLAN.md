@@ -133,8 +133,8 @@
   location: { lat: number, lng: number },
   prefecture: string,              // slug，例 "kyoto"
   city?: string,
-  kind: "major" | "theme",
-  themes: string[],                // ["tea","sake","beer","incense","onsen","ramen", ...]
+  kind: "major",                   // 舊的主題小店（"theme"）2026-10-09 刪除；小店改由擴充包（data/packs）提供
+  themes: string[],                // 大點上的主題，目前只有寺社的 "goshuin"（前端未使用）
   tags: string[],
   featured: boolean,
   score: number,
@@ -203,7 +203,7 @@
 
 ### 4.2 前端 bundle（`build_bundles.py` 產生，部署到 Hosting）
 - `bundles/_index.json`：各都道府縣的版本號、筆數。
-- `bundles/map/{prefecture}.json`：地圖用精簡資料（id、座標、名稱、kind、themes、featured、縮圖）。
+- `bundles/map/{prefecture}.json`：地圖用精簡資料（id、座標、名稱、kind、featured、類型、縮圖）。
 - `bundles/detail/{prefecture}.json`：完整景點資料（點 marker 時載入該區的 detail 檔，可 cache）。
 - `bundles/specialties/{prefecture}.json`：地區特色一縣一檔（深度探索、旅前準備只載入用到的縣；版本在 `_index.json` 的 `specialties`）。全國一個檔的 `bundles/specialties.json` 暫時照寫，給還沒更新的舊版前端用。
 - `bundles/timed/current.json`（只含尚未過期的）、`bundles/phrases.json`。
@@ -262,12 +262,13 @@ users/{uid}/lists/{listId}
 - **最近車站**：OSM `railway=station`，取 `name`、`name:ja-Hira`、`name:ja-Latn`、`name:en`（缺的再由 LLM 補、標記待確認）。
 
 ### 5.0 種子清單（攻略）
-- `data/seed/seed_from_guides.json`：從我先前兩份攻略（名古屋、關西）抽出的 77 個景點/店家、13 個地區特色、7 條直飛航線。
+- `data/seed/seed_from_guides.json`：從我先前兩份攻略（名古屋、關西）抽出的景點（現存 56 個大點候選；原本的店家列 kind theme 隨主題小店 2026-10-09 刪除）、13 個地區特色、7 條直飛航線。
 - **只當候選名單**：攻略本身是 AI 生成，座標、營業狀態、創業年份、航線全部要經 pipeline 對齊 Wikidata / OSM / 官網並驗證，不可直接上線。
 - `guide_tier: "S" | "A"` 作為 featured 分數的加分訊號；不在 Wikidata/OSM 大點候選內的種子要主動補查。
 - **攻略的文字不可沿用**（含 emoji 與口語），簡介一律依 §6a 文風重新生成。
 
 ### 5.2 主題小店
+- **已停用**（2026-10-09 使用者決定）：OSM 撈的茶、酒、拉麵、溫泉小店（`kind: "theme"`）已從 `data/spots` 刪除，`seed-themes` 指令一併移除；寶可夢、老舖・茶屋改由擴充包提供（§1）。以下為原始規劃，留作紀錄。
 - **OSM 先撈**：酒 `craft=brewery|winery|distillery`、`shop=alcohol`；茶 `shop=tea`、`amenity=cafe`+`cuisine=tea`；拉麵 `cuisine=ramen`；溫泉 `natural=hot_spring`、`amenity=public_bath`+`bath:type=onsen`。
 - **OSM 不足的主題**（老香鋪/香道、地方香水、特定老舖）：agent（Sonnet + web search）按地區搜尋候選，再與 OSM / 官網交叉比對座標。
 - **不可**長期儲存 Google Places 或食べログ的內容；最多存 `google_place_id` 產生 Google Maps 連結。
@@ -353,7 +354,7 @@ users/{uid}/lists/{listId}
 - **旅前準備（Prep Pack）**：見 Phase 7。
 - **RWD**：手機優先（旅途中用手機看）。
   - **不收古墳**（使用者決定）：名稱以古墳／古墳群／天皇陵／御陵結尾者在 seed-region 排除（`major.drop_non_spots`）。
-  - **主題層暫停**（使用者決定先專注景點）：茶、酒、溫泉、拉麵、寶可夢、御朱印的 UI 先隱藏，資料保留。之後重新定義：酒要的是當地特色酒而非店家；茶要的是特色茶與茶館。
+  - **主題層暫停**（使用者決定先專注景點）：茶、酒、溫泉、拉麵、寶可夢、御朱印的 UI 先隱藏。之後改成擴充包；舊的茶、酒、拉麵、溫泉小店資料 2026-10-09 刪除。之後重新定義：酒要的是當地特色酒而非店家；茶要的是特色茶與茶館。
   - **不標示精選**（使用者決定）：見 §5「精選分數」。清單只分「景點／地區特色」，景點依類型分段、段內依分數。
   - **手機版**（2026-10-03 使用者解除暫緩）：原本只調整桌機版、手機只求能開不壞版；現在手機版面一起做。新功能與改版要同時看 390 寬的手機與桌機。
 
@@ -415,7 +416,7 @@ users/{uid}/lists/{listId}
 - ✅ 驗收：六個以上府縣的精選與全部景點上圖；`seed_from_guides.json` 的 S 級景點都在精選內（例：伏見稻荷、清水寺、名古屋城、熱田神宮、東大寺、北野異人館）；照片有 credit，卡片有假名與最近車站。
 
 ### Phase 2 — 主題層（MVP 範圍）
-- 狀態：主題層改為「擴充包」（寶可夢、城、老舖・茶屋、角色商店，見 §1）；原本 OSM 撈的茶、酒、拉麵、溫泉小店資料保留在 7 縣的 `data/spots`，前端不顯示。
+- 狀態：主題層改為「擴充包」（寶可夢、城、老舖・茶屋、角色商店，見 §1）；原本 OSM 撈的茶、酒、拉麵、溫泉小店（7 縣 1190 筆）2026-10-09 刪除，`seed-themes` 指令移除。
 - OSM 撈茶、酒、拉麵、溫泉；agent 搜尋老香鋪/香道；寶可夢中心、ポケふた；寺社御朱印・御守欄位；LayerToggle。
 - ✅ 驗收：宇治、西尾看得到茶的主題點；京都市內看得到老香鋪；大阪、京都、名古屋的寶可夢中心上圖；伏見稻荷、熱田神宮卡片有御朱印資訊。
 

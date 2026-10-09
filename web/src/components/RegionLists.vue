@@ -27,7 +27,7 @@ function retry() {
   catalog.loadMap(props.pref).catch(() => {})
 }
 
-const majors = computed(() => props.spots.filter((s) => s.k === 'major').sort((a, b) => b.s - a.s))
+const majors = computed(() => [...props.spots].sort((a, b) => b.s - a.s))
 // 依類型分段（CATEGORY_GROUPS 的順序），段內依分數
 const sections = computed(() =>
   CATEGORY_GROUPS.map((g) => ({ ...g, rows: majors.value.filter((s) => categoryGroup(s.c) === g.key) })).filter(
@@ -119,14 +119,14 @@ function hidePhoto(e: Event) {
             @click="explore.toggleCollapsed(`cat:${g.key}`)"
           >
             <CollapseChevron :open="isOpen(g.key)" />
-            {{ g.label }}<span class="font-latin font-normal tracking-normal">{{ g.rows.length }}</span>
+            {{ g.label }}<span class="font-num font-normal tracking-normal">{{ g.rows.length }}</span>
           </button>
         </h3>
         <div
           v-for="s in isOpen(g.key) ? g.rows : []"
           :key="s.id"
           class="flex min-h-tap shrink-0 items-center rounded-control [contain-intrinsic-size:auto_3.5rem] [content-visibility:auto]"
-          :class="s.id === selectedId ? 'bg-region-tint' : 'hover:bg-surface active:bg-surface'"
+          :class="s.id === selectedId ? 'bg-region-tint neutral-preview:shadow-[inset_0_0_0_1.5px_var(--region-strong)]' : 'hover:bg-surface active:bg-surface'"
           @mouseenter="emit('highlight', s.id)"
         >
           <button

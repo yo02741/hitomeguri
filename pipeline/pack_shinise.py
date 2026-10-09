@@ -24,7 +24,7 @@ from pipeline.major import strip_disambiguation
 from pipeline.packs import _pref_of, log, osm_address, osm_name
 from pipeline.paths import PACKS_DIR, REGIONS_JSON
 from pipeline.sources import osm, wikidata, wikipedia
-from pipeline.themes import quality
+from pipeline.sources.osm import OsmElement
 
 # (組別, 維基分類)
 CATEGORIES = [
@@ -36,6 +36,14 @@ KIND_LABEL = {"incense": "香舖", "wagashi": "和菓子", "tea": "茶舖", "tea
 # 創業在這一年以前才算老舖（大正以前，約一百年）
 FOUNDED_MAX = 1926
 TEAHOUSE_PER_PREF = 12
+
+# 茶屋超過上限時，資料完整度（讀音、網站、營業時間等）高的優先
+QUALITY_KEYS = ("website", "opening_hours", "name:en", "name:ja-Hira", "name:ja-Latn", "wikidata",
+                "phone", "addr:full", "brand")  # fmt: skip
+
+
+def quality(el: OsmElement) -> float:
+    return sum(1 for k in QUALITY_KEYS if el.tags.get(k)) + (0.5 if el.tags.get("name:zh") else 0)
 
 # 香舖：名稱是香老舗、香舗、香木店，或知名的香舖（「お香」「線香」太寬，會撈到雜貨、化妝品、佛具店）
 # 「松栄堂」這類店名很常見（樂器行、書店也叫松栄堂），不放進來；維基有條目的香舖另外依本店所在地找

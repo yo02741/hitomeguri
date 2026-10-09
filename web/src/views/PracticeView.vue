@@ -124,15 +124,15 @@ function onKey(e: KeyboardEvent) {
             :style="{ flexGrow: n, opacity: 0.25 + i * 0.1875 }"
           ></span>
         </div>
-        <span class="text-caption text-sub">熟練 <span class="font-latin">{{ mastered }}</span> ／ <span class="font-latin">{{ deck.length }}</span></span>
+        <span class="text-caption text-sub">熟練 <span class="font-num">{{ mastered }}</span> ／ <span class="font-num">{{ deck.length }}</span></span>
       </div>
 
       <div v-if="loading || !progressLoaded" class="skeleton h-[280px] rounded-card land:h-[min(280px,calc(100dvh-var(--spacing-header)-8rem))]" aria-busy="true"><span class="sr-only">載入中</span></div>
 
       <div v-else-if="card" class="flex flex-col gap-5 land:grid land:grid-cols-[minmax(0,1fr)_15rem] land:content-start land:gap-x-5 land:gap-y-3">
         <div class="flex items-center justify-between text-caption text-sub land:col-start-2">
-          <span class="font-latin">{{ index + 1 }} / {{ queue.length }}</span>
-          <span>第 <span class="font-latin">{{ box(card) }}</span> 箱</span>
+          <span class="font-num">{{ index + 1 }} / {{ queue.length }}</span>
+          <span>第 <span class="font-num">{{ box(card) }}</span> 箱</span>
         </div>
         <button
           type="button"

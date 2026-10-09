@@ -135,21 +135,6 @@ out;"""
     return _run(q)
 
 
-# 主題小店（PLAN.md §5.2）。香（incense）OSM 資料不足，之後由 agent 搜尋補。
-THEME_FILTERS: dict[str, list[str]] = {
-    "tea": ['["shop"="tea"]["name"]', '["amenity"="cafe"]["cuisine"~"tea"]["name"]'],
-    "sake": [
-        '["craft"~"^(brewery|winery|distillery|sake_brewery)$"]["name"]',
-        '["industrial"~"^(brewery|distillery)$"]["name"]',
-    ],
-    "ramen": ['["cuisine"~"ramen"]["name"]'],
-    "onsen": [
-        '["natural"="hot_spring"]["name"]',
-        '["amenity"="public_bath"]["bath:type"~"onsen"]["name"]',
-        '["leisure"="resort"]["resort"="onsen"]["name"]',
-    ],
-}
-
 # 擴充包：寶可夢中心與寶可夢商店（全國一次查詢，pipeline.packs）
 POKEMON_SHOP_FILTER = (
     '["shop"]["name"~"ポケモンセンター|ポケモンストア|Pokémon Center|Pokémon Store"]'
@@ -206,30 +191,3 @@ out center tags;"""
         for el in els:
             seen.setdefault(el.osm_id, el)
     return list(seen.values()), failed
-
-
-def themed(iso: str, bbox: tuple[float, float, float, float]) -> dict[str, list[OsmElement]]:
-    """各主題的 OSM 物件。先用縣的 area 查詢；逾時就改用範圍框（呼叫端再用縣界過濾）。
-
-    回傳值的 key 以 "bbox:" 開頭的表示是範圍框結果。
-    """
-    out: dict[str, list[OsmElement]] = {}
-    s, w, n, e = bbox
-    for theme, filters in THEME_FILTERS.items():
-        body = "\n".join(f"  nwr{f}(area.a);" for f in filters)
-        q = f"""[out:json][timeout:300];
-{_area(iso)}
-(
-{body}
-);
-out center tags;"""
-        try:
-            out[theme] = _run(q)
-        except RuntimeError:
-            body = "\n".join(f"  nwr{f}({s},{w},{n},{e});" for f in filters)
-            out["bbox:" + theme] = _run(f"""[out:json][timeout:300];
-(
-{body}
-);
-out center tags;""")
-    return out

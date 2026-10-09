@@ -97,7 +97,7 @@ async function leave() {
           readonly
           :value="busy && !link ? '' : link"
           aria-label="邀請連結"
-          class="h-9 min-w-0 flex-1 rounded-control border border-line bg-surface px-2.5 font-latin text-caption text-ink outline-none pointer-coarse:h-tap"
+          class="h-9 min-w-0 flex-1 rounded-control border border-line bg-surface px-2.5 font-num text-caption text-ink outline-none pointer-coarse:h-tap"
           @focus="($event.target as HTMLInputElement).select()"
         />
         <button

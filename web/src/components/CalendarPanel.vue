@@ -172,7 +172,7 @@ defineExpose({ focus: focusActive })
       </button>
       <button
         type="button"
-        class="flex h-9 flex-1 items-center justify-center gap-1 rounded-control font-latin text-body font-bold hover:bg-surface disabled:cursor-default disabled:hover:bg-transparent active:not-disabled:translate-y-px pointer-coarse:h-tap"
+        class="flex h-9 flex-1 items-center justify-center gap-1 rounded-control font-num text-body font-bold hover:bg-surface disabled:cursor-default disabled:hover:bg-transparent active:not-disabled:translate-y-px pointer-coarse:h-tap"
         :disabled="view === 'years'"
         :aria-label="view === 'days' ? `${title}，選月份` : view === 'months' ? `${year}年，選年份` : undefined"
         aria-live="polite"
@@ -214,7 +214,7 @@ defineExpose({ focus: focusActive })
             :aria-pressed="isEdge(d)"
             :aria-current="d === today ? 'date' : undefined"
             :aria-disabled="disabled(d) || undefined"
-            class="relative mx-auto grid size-10 place-items-center rounded-control font-latin text-body-sm active:not-disabled:translate-y-px"
+            class="relative mx-auto grid size-10 place-items-center rounded-control font-num text-body-sm active:not-disabled:translate-y-px"
             :class="dayClass(d)"
             @click="pick(d)"
             @mouseenter="hover = d"
@@ -246,7 +246,7 @@ defineExpose({ focus: focusActive })
         :disabled="monthDisabled(`${year}-${String(m).padStart(2, '0')}`)"
         @click="pickMonth(m)"
       >
-        <span class="font-latin">{{ m }}</span>月
+        <span class="font-num">{{ m }}</span>月
       </button>
     </div>
 
@@ -255,7 +255,7 @@ defineExpose({ focus: focusActive })
         v-for="y in 12"
         :key="y"
         type="button"
-        class="h-12 rounded-control font-latin text-body-sm disabled:cursor-not-allowed disabled:text-line active:not-disabled:translate-y-px"
+        class="h-12 rounded-control font-num text-body-sm disabled:cursor-not-allowed disabled:text-line active:not-disabled:translate-y-px"
         :class="decade + y - 1 === year ? 'bg-region-strong font-bold text-white' : 'hover:bg-surface'"
         :disabled="yearDisabled(decade + y - 1)"
         @click="pickYear(decade + y - 1)"

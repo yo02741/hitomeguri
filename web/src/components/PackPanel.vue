@@ -76,7 +76,7 @@ const sourceLabel = computed(() => {
         </ul>
       </div>
       <div v-if="item.f" class="flex border-b border-line-soft py-2.5 text-body-sm">
-        <span class="w-[72px] shrink-0 text-sub">創業</span><span class="font-latin">{{ item.f }}</span>
+        <span class="w-[72px] shrink-0 text-sub">創業</span><span class="font-num">{{ item.f }}</span>
       </div>
       <div class="flex border-b border-line-soft py-2.5 text-body-sm">
         <span class="w-[72px] shrink-0 text-sub">地區</span><span lang="ja">{{ regionOf(item.p)?.name.ja }}</span>
@@ -85,7 +85,7 @@ const sourceLabel = computed(() => {
         <span class="w-[72px] shrink-0 text-sub">寶可夢</span>
         <span class="flex flex-wrap gap-x-3 gap-y-1">
           <span v-for="[no, name] in item.pk" :key="no" class="flex items-baseline gap-1">
-            <span lang="ja">{{ name }}</span><span class="font-latin text-caption text-sub">No.{{ no }}</span>
+            <span lang="ja">{{ name }}</span><span class="font-num text-caption text-sub">No.{{ no }}</span>
           </span>
         </span>
       </div>

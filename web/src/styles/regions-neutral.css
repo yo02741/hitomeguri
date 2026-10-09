@@ -1,0 +1,290 @@
+/* 自動產生：中性色層次的預覽（?neutral=1，main.ts 才載入），請勿手改。重新產生：python -m pipeline.cli build-region-css */
+/* 只列和 regions.css 不同的 token；開場畫面與分享圖不跟著換 */
+:root[data-neutral]:not([data-theme]) { --region-tint: #E5E8EC; }
+:root[data-neutral]:not([data-theme]) [data-pref="hokkaido"] { --region-tint: #EBEAEF; --region-map: #ECEAF2; --region-header: #E5E2ED; --region-placeholder: #E2DFEB; --region-line: #D9D5E5; --region-line-soft: #ECEAF2; }
+:root[data-neutral]:not([data-theme]) [data-pref="aomori"] { --region-tint: #F0E5E4; }
+:root[data-neutral]:not([data-theme]) [data-pref="iwate"] { --region-tint: #E5E9E9; }
+:root[data-neutral]:not([data-theme]) [data-pref="miyagi"] { --region-tint: #E4E6EA; }
+:root[data-neutral]:not([data-theme]) [data-pref="akita"] { --region-tint: #F0EDE5; --region-surface: #F6F2E9; --region-map: #F3EEE3; --region-header: #ECE6D5; --region-placeholder: #E9E4D1; --region-line: #E2DAC2; --region-line-soft: #F3EEE3; }
+:root[data-neutral]:not([data-theme]) [data-pref="yamagata"] { --region-tint: #EFE5E6; }
+:root[data-neutral]:not([data-theme]) [data-pref="fukushima"] { --region-tint: #F3ECEA; --region-surface: #F8F1EF; --region-map: #F6ECEB; --region-header: #F0E3E0; --region-placeholder: #EFE0DE; --region-line: #E9D6D2; --region-line-soft: #F6ECEB; }
+:root[data-neutral]:not([data-theme]) [data-pref="ibaraki"] { --region-tint: #E9EDF2; --region-surface: #EDF2F8; --region-map: #E8EDF5; --region-header: #DDE6F0; --region-placeholder: #DAE3EE; --region-line: #CEDAE9; --region-line-soft: #E8EDF5; }
+:root[data-neutral]:not([data-theme]) [data-pref="tochigi"] { --region-tint: #F3E8E8; --region-map: #F5E7E7; --region-header: #F2DDDD; --region-line: #EDD0CF; --region-line-soft: #F5E7E7; }
+:root[data-neutral]:not([data-theme]) [data-pref="gunma"] { --region-tint: #EBEDE5; --region-surface: #EFF2EA; --region-map: #EAEEE3; --region-header: #E2E7D8; --region-placeholder: #DFE5D4; --region-line: #D5DCC7; --region-line-soft: #EAEEE3; }
+:root[data-neutral]:not([data-theme]) [data-pref="saitama"] { --region-tint: #E7EBE7; }
+:root[data-neutral]:not([data-theme]) [data-pref="chiba"] { --region-tint: #F2EFE5; --region-surface: #F7F4E9; --region-map: #F3EFE1; --region-header: #EDE7D3; --region-placeholder: #EBE4D0; --region-line: #E3DCC0; --region-line-soft: #F3EFE1; --region-sub: #736431; }
+:root[data-neutral]:not([data-theme]) [data-pref="tokyo"] { --region-tint: #E5E8EE; }
+:root[data-neutral]:not([data-theme]) [data-pref="kanagawa"] { --region-tint: #E5EDEE; }
+:root[data-neutral]:not([data-theme]) [data-pref="niigata"] { --region-tint: #E6EAED; }
+:root[data-neutral]:not([data-theme]) [data-pref="toyama"] { --region-tint: #E8EEF0; --region-surface: #ECF3F5; --region-map: #E6EFF2; --region-header: #DBE8EC; --region-placeholder: #D8E6EA; --region-line: #CCDDE3; --region-line-soft: #E6EFF2; }
+:root[data-neutral]:not([data-theme]) [data-pref="ishikawa"] { --region-tint: #F0EEE6; --region-surface: #F6F3EA; --region-map: #F2EEE2; --region-header: #ECE6D6; --region-placeholder: #EAE4D1; --region-line: #E2DAC3; --region-line-soft: #F2EEE2; }
+:root[data-neutral]:not([data-theme]) [data-pref="fukui"] { --region-tint: #EAE8E5; }
+:root[data-neutral]:not([data-theme]) [data-pref="yamanashi"] { --region-tint: #EBE7EC; }
+:root[data-neutral]:not([data-theme]) [data-pref="nagano"] { --region-tint: #E8ECE7; --region-map: #E7EDE6; --region-line: #D1DBCE; --region-line-soft: #E7EDE6; }
+:root[data-neutral]:not([data-theme]) [data-pref="gifu"] { --region-tint: #E6EBEA; }
+:root[data-neutral]:not([data-theme]) [data-pref="shizuoka"] { --region-tint: #E9EDE5; --region-surface: #EEF2EA; --region-map: #E9EEE3; --region-header: #E0E7D8; --region-placeholder: #DDE5D4; --region-line: #D3DDC8; --region-line-soft: #E9EEE3; }
+:root[data-neutral]:not([data-theme]) [data-pref="aichi"] { --region-tint: #F1EDE3; --region-surface: #F6F2E7; --region-map: #F3EDE0; --region-header: #EDE5D1; --region-placeholder: #EBE2CC; --region-line: #E5D9BD; --region-line-soft: #F3EDE0; }
+:root[data-neutral]:not([data-theme]) [data-pref="mie"] { --region-tint: #EAECEF; --region-map: #E8ECF0; --region-header: #DFE4EA; --region-placeholder: #DCE2E8; --region-line: #D2D9E1; --region-line-soft: #E8ECF0; }
+:root[data-neutral]:not([data-theme]) [data-pref="shiga"] { --region-tint: #E6ECF0; --region-surface: #EAF1F5; --region-map: #E5EDF3; --region-header: #D9E5ED; --region-placeholder: #D6E3EC; --region-line: #CCDAE7; --region-line-soft: #E5EDF3; }
+:root[data-neutral]:not([data-theme]) [data-pref="kyoto"] { --region-tint: #E8E5EC; }
+:root[data-neutral]:not([data-theme]) [data-pref="osaka"] { --region-tint: #F3EAE4; --region-surface: #F8EFE8; --region-map: #F6E9E2; --region-header: #F2E0D5; --region-placeholder: #F1DDD1; --region-line: #ECD3C3; --region-line-soft: #F6E9E2; }
+:root[data-neutral]:not([data-theme]) [data-pref="hyogo"] { --region-tint: #E5EAF0; }
+:root[data-neutral]:not([data-theme]) [data-pref="nara"] { --region-tint: #E8ECE7; --region-map: #E6EDE5; --region-line-soft: #E6EDE5; }
+:root[data-neutral]:not([data-theme]) [data-pref="wakayama"] { --region-tint: #F3EEE5; --region-surface: #F8F3E9; --region-map: #F5EEE2; --region-header: #EFE5D4; --region-placeholder: #EEE2D1; --region-line: #E8D9C2; --region-line-soft: #F5EEE2; }
+:root[data-neutral]:not([data-theme]) [data-pref="tottori"] { --region-tint: #F1EEEA; --region-surface: #F6F3EF; --region-map: #F2EFEA; --region-header: #ECE6DF; --region-placeholder: #EAE4DD; --region-line: #E2DAD0; --region-line-soft: #F2EFEA; --region-sub: #6D604C; }
+:root[data-neutral]:not([data-theme]) [data-pref="shimane"] { --region-tint: #F0E8E6; }
+:root[data-neutral]:not([data-theme]) [data-pref="okayama"] { --region-tint: #F3EDEE; --region-surface: #F9F2F3; --region-map: #F5EDED; --region-header: #F0E4E5; --region-placeholder: #EEE1E2; --region-line: #E8D7D9; --region-line-soft: #F5EDED; --region-sub: #7B5B5F; }
+:root[data-neutral]:not([data-theme]) [data-pref="hiroshima"] { --region-tint: #F0E7E6; }
+:root[data-neutral]:not([data-theme]) [data-pref="yamaguchi"] { --region-tint: #EAEDEF; --region-surface: #EFF2F4; --region-map: #EAEDF0; --region-header: #E0E6EA; --region-placeholder: #DEE3E8; --region-line: #D3DADF; --region-line-soft: #EAEDF0; }
+:root[data-neutral]:not([data-theme]) [data-pref="tokushima"] { --region-tint: #E4E6EA; }
+:root[data-neutral]:not([data-theme]) [data-pref="kagawa"] { --region-tint: #F2F0E9; --region-surface: #F8F5EE; --region-map: #F3F0E7; --region-header: #EDE8DC; --region-placeholder: #EAE5D8; --region-line: #E4DCCB; --region-line-soft: #F3F0E7; }
+:root[data-neutral]:not([data-theme]) [data-pref="ehime"] { --region-tint: #F4ECE5; --region-surface: #FAF1E9; --region-map: #F7ECE1; --region-header: #F3E3D3; --region-placeholder: #F2E0CF; --region-line: #ECD6C1; --region-line-soft: #F7ECE1; --region-sub: #86572B; }
+:root[data-neutral]:not([data-theme]) [data-pref="kochi"] { --region-tint: #E3E9EC; }
+:root[data-neutral]:not([data-theme]) [data-pref="fukuoka"] { --region-tint: #F3E9EB; --region-map: #F5E8EA; --region-header: #F1DEE1; --region-placeholder: #F1DBDF; --region-line: #ECD1D5; --region-line-soft: #F5E8EA; }
+:root[data-neutral]:not([data-theme]) [data-pref="saga"] { --region-tint: #E6E9EE; }
+:root[data-neutral]:not([data-theme]) [data-pref="nagasaki"] { --region-tint: #E8ECEF; --region-line: #CEDAE1; }
+:root[data-neutral]:not([data-theme]) [data-pref="kumamoto"] { --region-tint: #E8ECE5; --region-map: #E8EDE4; --region-line: #D1DCCA; --region-line-soft: #E8EDE4; }
+:root[data-neutral]:not([data-theme]) [data-pref="oita"] { --region-tint: #E7EEEE; --region-surface: #EBF3F3; --region-map: #E5EFEF; --region-header: #DAE8E8; --region-placeholder: #D7E6E6; --region-line: #CADEDD; --region-line-soft: #E5EFEF; }
+:root[data-neutral]:not([data-theme]) [data-pref="miyazaki"] { --region-tint: #F4EDE5; --region-surface: #F9F2EA; --region-map: #F7EEE2; --region-header: #F2E5D4; --region-placeholder: #F0E2D0; --region-line: #EAD8C1; --region-line-soft: #F7EEE2; --region-sub: #7D5B31; }
+:root[data-neutral]:not([data-theme]) [data-pref="kagoshima"] { --region-tint: #ECE7E6; }
+:root[data-neutral]:not([data-theme]) [data-pref="okinawa"] { --region-tint: #F4EAED; --region-map: #F8E9ED; --region-header: #F4DFE4; --region-placeholder: #F3DCE2; --region-line: #EDD1D7; --region-line-soft: #F8E9ED; }
+:root[data-neutral][data-theme="edo"] { --region-tint: #DCD4C1; }
+:root[data-neutral][data-theme="edo"] [data-pref="hokkaido"] { --region-tint: #DED3C2; }
+:root[data-neutral][data-theme="edo"] [data-pref="aomori"] { --region-tint: #E2D1BB; }
+:root[data-neutral][data-theme="edo"] [data-pref="iwate"] { --region-tint: #DBD3BE; }
+:root[data-neutral][data-theme="edo"] [data-pref="miyagi"] { --region-tint: #DAD2C0; }
+:root[data-neutral][data-theme="edo"] [data-pref="akita"] { --region-tint: #E0D4B9; }
+:root[data-neutral][data-theme="edo"] [data-pref="yamagata"] { --region-tint: #E1D1BD; }
+:root[data-neutral][data-theme="edo"] [data-pref="fukushima"] { --region-tint: #E1D3BE; }
+:root[data-neutral][data-theme="edo"] [data-pref="ibaraki"] { --region-tint: #DBD5C4; }
+:root[data-neutral][data-theme="edo"] [data-pref="tochigi"] { --region-tint: #E2D2BC; }
+:root[data-neutral][data-theme="edo"] [data-pref="gunma"] { --region-tint: #DDD5BB; }
+:root[data-neutral][data-theme="edo"] [data-pref="saitama"] { --region-tint: #DCD5BD; }
+:root[data-neutral][data-theme="edo"] [data-pref="chiba"] { --region-tint: #E1D5BA; }
+:root[data-neutral][data-theme="edo"] [data-pref="tokyo"] { --region-tint: #DBD3C2; }
+:root[data-neutral][data-theme="edo"] [data-pref="kanagawa"] { --region-tint: #D9D5C1; }
+:root[data-neutral][data-theme="edo"] [data-pref="niigata"] { --region-tint: #DBD4C1; }
+:root[data-neutral][data-theme="edo"] [data-pref="toyama"] { --region-tint: #DBD5C1; }
+:root[data-neutral][data-theme="edo"] [data-pref="ishikawa"] { --region-tint: #E0D4BA; }
+:root[data-neutral][data-theme="edo"] [data-pref="fukui"] { --region-tint: #DFD3BD; }
+:root[data-neutral][data-theme="edo"] [data-pref="yamanashi"] { --region-tint: #DED2C1; }
+:root[data-neutral][data-theme="edo"] [data-pref="nagano"] { --region-tint: #DCD5BD; }
+:root[data-neutral][data-theme="edo"] [data-pref="gifu"] { --region-tint: #DBD5BF; }
+:root[data-neutral][data-theme="edo"] [data-pref="shizuoka"] { --region-tint: #DDD5BB; }
+:root[data-neutral][data-theme="edo"] [data-pref="aichi"] { --region-tint: #E1D4B9; }
+:root[data-neutral][data-theme="edo"] [data-pref="mie"] { --region-tint: #DCD4C1; }
+:root[data-neutral][data-theme="edo"] [data-pref="shiga"] { --region-tint: #DAD5C2; }
+:root[data-neutral][data-theme="edo"] [data-pref="kyoto"] { --region-tint: #DDD2C2; }
+:root[data-neutral][data-theme="edo"] [data-pref="osaka"] { --region-tint: #E2D2B9; }
+:root[data-neutral][data-theme="edo"] [data-pref="hyogo"] { --region-tint: #DAD4C3; }
+:root[data-neutral][data-theme="edo"] [data-pref="nara"] { --region-tint: #DCD5BD; }
+:root[data-neutral][data-theme="edo"] [data-pref="wakayama"] { --region-tint: #E1D4BA; }
+:root[data-neutral][data-theme="edo"] [data-pref="tottori"] { --region-tint: #E0D5BD; }
+:root[data-neutral][data-theme="edo"] [data-pref="shimane"] { --region-tint: #E1D2BC; }
+:root[data-neutral][data-theme="edo"] [data-pref="okayama"] { --region-tint: #E1D3BE; }
+:root[data-neutral][data-theme="edo"] [data-pref="hiroshima"] { --region-tint: #E2D2BC; }
+:root[data-neutral][data-theme="edo"] [data-pref="yamaguchi"] { --region-tint: #DCD4C0; }
+:root[data-neutral][data-theme="edo"] [data-pref="tokushima"] { --region-tint: #DAD3C1; }
+:root[data-neutral][data-theme="edo"] [data-pref="kagawa"] { --region-tint: #E0D5BB; }
+:root[data-neutral][data-theme="edo"] [data-pref="ehime"] { --region-tint: #E2D3B9; }
+:root[data-neutral][data-theme="edo"] [data-pref="kochi"] { --region-tint: #DAD4C2; }
+:root[data-neutral][data-theme="edo"] [data-pref="fukuoka"] { --region-tint: #E2D2BE; }
+:root[data-neutral][data-theme="edo"] [data-pref="saga"] { --region-tint: #DBD3C2; }
+:root[data-neutral][data-theme="edo"] [data-pref="nagasaki"] { --region-tint: #DBD4C1; }
+:root[data-neutral][data-theme="edo"] [data-pref="kumamoto"] { --region-tint: #DDD5BC; }
+:root[data-neutral][data-theme="edo"] [data-pref="oita"] { --region-tint: #DAD5C0; }
+:root[data-neutral][data-theme="edo"] [data-pref="miyazaki"] { --region-tint: #E2D4BA; }
+:root[data-neutral][data-theme="edo"] [data-pref="kagoshima"] { --region-tint: #DFD2BC; }
+:root[data-neutral][data-theme="edo"] [data-pref="okinawa"] { --region-tint: #E2D2BE; }
+:root[data-neutral][data-theme="meiji"] { --region-tint: #DDD7C9; }
+:root[data-neutral][data-theme="meiji"] [data-pref="hokkaido"] { --region-tint: #DED7CA; }
+:root[data-neutral][data-theme="meiji"] [data-pref="aomori"] { --region-tint: #E4D5C4; }
+:root[data-neutral][data-theme="meiji"] [data-pref="iwate"] { --region-tint: #DCD8C7; }
+:root[data-neutral][data-theme="meiji"] [data-pref="miyagi"] { --region-tint: #DBD6C8; }
+:root[data-neutral][data-theme="meiji"] [data-pref="akita"] { --region-tint: #E1D8C1; }
+:root[data-neutral][data-theme="meiji"] [data-pref="yamagata"] { --region-tint: #E3D5C6; }
+:root[data-neutral][data-theme="meiji"] [data-pref="fukushima"] { --region-tint: #E2D7C6; }
+:root[data-neutral][data-theme="meiji"] [data-pref="ibaraki"] { --region-tint: #DDD9CC; }
+:root[data-neutral][data-theme="meiji"] [data-pref="tochigi"] { --region-tint: #E4D6C5; }
+:root[data-neutral][data-theme="meiji"] [data-pref="gunma"] { --region-tint: #DED9C3; }
+:root[data-neutral][data-theme="meiji"] [data-pref="saitama"] { --region-tint: #DDD8C5; }
+:root[data-neutral][data-theme="meiji"] [data-pref="chiba"] { --region-tint: #E2D9C2; }
+:root[data-neutral][data-theme="meiji"] [data-pref="tokyo"] { --region-tint: #DCD7CB; }
+:root[data-neutral][data-theme="meiji"] [data-pref="kanagawa"] { --region-tint: #DBD9C9; }
+:root[data-neutral][data-theme="meiji"] [data-pref="niigata"] { --region-tint: #DCD7C9; }
+:root[data-neutral][data-theme="meiji"] [data-pref="toyama"] { --region-tint: #DCD9CA; }
+:root[data-neutral][data-theme="meiji"] [data-pref="ishikawa"] { --region-tint: #E1D8C2; }
+:root[data-neutral][data-theme="meiji"] [data-pref="fukui"] { --region-tint: #E0D7C4; }
+:root[data-neutral][data-theme="meiji"] [data-pref="yamanashi"] { --region-tint: #DFD5C9; }
+:root[data-neutral][data-theme="meiji"] [data-pref="nagano"] { --region-tint: #DDD9C5; }
+:root[data-neutral][data-theme="meiji"] [data-pref="gifu"] { --region-tint: #DCD8C7; }
+:root[data-neutral][data-theme="meiji"] [data-pref="shizuoka"] { --region-tint: #DDD9C3; }
+:root[data-neutral][data-theme="meiji"] [data-pref="aichi"] { --region-tint: #E1D8C1; }
+:root[data-neutral][data-theme="meiji"] [data-pref="mie"] { --region-tint: #DDD8C9; }
+:root[data-neutral][data-theme="meiji"] [data-pref="shiga"] { --region-tint: #DCD9CB; }
+:root[data-neutral][data-theme="meiji"] [data-pref="kyoto"] { --region-tint: #DED5C9; }
+:root[data-neutral][data-theme="meiji"] [data-pref="osaka"] { --region-tint: #E3D6C1; }
+:root[data-neutral][data-theme="meiji"] [data-pref="hyogo"] { --region-tint: #DCD8CB; }
+:root[data-neutral][data-theme="meiji"] [data-pref="nara"] { --region-tint: #DDD9C4; }
+:root[data-neutral][data-theme="meiji"] [data-pref="wakayama"] { --region-tint: #E2D8C2; }
+:root[data-neutral][data-theme="meiji"] [data-pref="tottori"] { --region-tint: #E1D8C5; }
+:root[data-neutral][data-theme="meiji"] [data-pref="shimane"] { --region-tint: #E2D6C4; }
+:root[data-neutral][data-theme="meiji"] [data-pref="okayama"] { --region-tint: #E2D7C7; }
+:root[data-neutral][data-theme="meiji"] [data-pref="hiroshima"] { --region-tint: #E3D5C4; }
+:root[data-neutral][data-theme="meiji"] [data-pref="yamaguchi"] { --region-tint: #DDD8C8; }
+:root[data-neutral][data-theme="meiji"] [data-pref="tokushima"] { --region-tint: #DBD6C8; }
+:root[data-neutral][data-theme="meiji"] [data-pref="kagawa"] { --region-tint: #E2D9C4; }
+:root[data-neutral][data-theme="meiji"] [data-pref="ehime"] { --region-tint: #E4D7C1; }
+:root[data-neutral][data-theme="meiji"] [data-pref="kochi"] { --region-tint: #DBD8C9; }
+:root[data-neutral][data-theme="meiji"] [data-pref="fukuoka"] { --region-tint: #E3D6C6; }
+:root[data-neutral][data-theme="meiji"] [data-pref="saga"] { --region-tint: #DCD7CA; }
+:root[data-neutral][data-theme="meiji"] [data-pref="nagasaki"] { --region-tint: #DCD7C9; }
+:root[data-neutral][data-theme="meiji"] [data-pref="kumamoto"] { --region-tint: #DDD9C4; }
+:root[data-neutral][data-theme="meiji"] [data-pref="oita"] { --region-tint: #DBD9C8; }
+:root[data-neutral][data-theme="meiji"] [data-pref="miyazaki"] { --region-tint: #E3D8C2; }
+:root[data-neutral][data-theme="meiji"] [data-pref="kagoshima"] { --region-tint: #E0D5C4; }
+:root[data-neutral][data-theme="meiji"] [data-pref="okinawa"] { --region-tint: #E4D6C7; }
+:root[data-neutral][data-theme="taisho"] { --region-tint: #E0D8D3; }
+:root[data-neutral][data-theme="taisho"] [data-pref="hokkaido"] { --region-tint: #E3D8D4; }
+:root[data-neutral][data-theme="taisho"] [data-pref="aomori"] { --region-tint: #E7D5CC; }
+:root[data-neutral][data-theme="taisho"] [data-pref="iwate"] { --region-tint: #DFD8D0; }
+:root[data-neutral][data-theme="taisho"] [data-pref="miyagi"] { --region-tint: #DFD7D2; }
+:root[data-neutral][data-theme="taisho"] [data-pref="akita"] { --region-tint: #E4D9CB; }
+:root[data-neutral][data-theme="taisho"] [data-pref="yamagata"] { --region-tint: #E6D5CE; }
+:root[data-neutral][data-theme="taisho"] [data-pref="fukushima"] { --region-tint: #E7D8D0; }
+:root[data-neutral][data-theme="taisho"] [data-pref="ibaraki"] { --region-tint: #E0DAD5; }
+:root[data-neutral][data-theme="taisho"] [data-pref="tochigi"] { --region-tint: #E7D6CE; }
+:root[data-neutral][data-theme="taisho"] [data-pref="gunma"] { --region-tint: #E2DACD; }
+:root[data-neutral][data-theme="taisho"] [data-pref="saitama"] { --region-tint: #E0D9CF; }
+:root[data-neutral][data-theme="taisho"] [data-pref="chiba"] { --region-tint: #E5DACB; }
+:root[data-neutral][data-theme="taisho"] [data-pref="tokyo"] { --region-tint: #DFD7D3; }
+:root[data-neutral][data-theme="taisho"] [data-pref="kanagawa"] { --region-tint: #DED9D2; }
+:root[data-neutral][data-theme="taisho"] [data-pref="niigata"] { --region-tint: #DFD8D2; }
+:root[data-neutral][data-theme="taisho"] [data-pref="toyama"] { --region-tint: #E0DAD4; }
+:root[data-neutral][data-theme="taisho"] [data-pref="ishikawa"] { --region-tint: #E4D9CB; }
+:root[data-neutral][data-theme="taisho"] [data-pref="fukui"] { --region-tint: #E2D7CD; }
+:root[data-neutral][data-theme="taisho"] [data-pref="yamanashi"] { --region-tint: #E3D7D3; }
+:root[data-neutral][data-theme="taisho"] [data-pref="nagano"] { --region-tint: #E0D9CD; }
+:root[data-neutral][data-theme="taisho"] [data-pref="gifu"] { --region-tint: #DFD9D1; }
+:root[data-neutral][data-theme="taisho"] [data-pref="shizuoka"] { --region-tint: #E1DACD; }
+:root[data-neutral][data-theme="taisho"] [data-pref="aichi"] { --region-tint: #E5D9CA; }
+:root[data-neutral][data-theme="taisho"] [data-pref="mie"] { --region-tint: #E0D8D3; }
+:root[data-neutral][data-theme="taisho"] [data-pref="shiga"] { --region-tint: #DFD9D4; }
+:root[data-neutral][data-theme="taisho"] [data-pref="kyoto"] { --region-tint: #E1D6D3; }
+:root[data-neutral][data-theme="taisho"] [data-pref="osaka"] { --region-tint: #E7D8CC; }
+:root[data-neutral][data-theme="taisho"] [data-pref="hyogo"] { --region-tint: #DFD9D5; }
+:root[data-neutral][data-theme="taisho"] [data-pref="nara"] { --region-tint: #DFD9CD; }
+:root[data-neutral][data-theme="taisho"] [data-pref="wakayama"] { --region-tint: #E6D9CB; }
+:root[data-neutral][data-theme="taisho"] [data-pref="tottori"] { --region-tint: #E4D9CF; }
+:root[data-neutral][data-theme="taisho"] [data-pref="shimane"] { --region-tint: #E6D7CE; }
+:root[data-neutral][data-theme="taisho"] [data-pref="okayama"] { --region-tint: #E6D8D1; }
+:root[data-neutral][data-theme="taisho"] [data-pref="hiroshima"] { --region-tint: #E7D6CE; }
+:root[data-neutral][data-theme="taisho"] [data-pref="yamaguchi"] { --region-tint: #E1D9D3; }
+:root[data-neutral][data-theme="taisho"] [data-pref="tokushima"] { --region-tint: #DFD7D2; }
+:root[data-neutral][data-theme="taisho"] [data-pref="kagawa"] { --region-tint: #E5DACE; }
+:root[data-neutral][data-theme="taisho"] [data-pref="ehime"] { --region-tint: #E7D8CB; }
+:root[data-neutral][data-theme="taisho"] [data-pref="kochi"] { --region-tint: #DDD8D2; }
+:root[data-neutral][data-theme="taisho"] [data-pref="fukuoka"] { --region-tint: #E7D6CF; }
+:root[data-neutral][data-theme="taisho"] [data-pref="saga"] { --region-tint: #DFD7D3; }
+:root[data-neutral][data-theme="taisho"] [data-pref="nagasaki"] { --region-tint: #DFD8D2; }
+:root[data-neutral][data-theme="taisho"] [data-pref="kumamoto"] { --region-tint: #E0D9CD; }
+:root[data-neutral][data-theme="taisho"] [data-pref="oita"] { --region-tint: #E0DAD2; }
+:root[data-neutral][data-theme="taisho"] [data-pref="miyazaki"] { --region-tint: #E6D9CB; }
+:root[data-neutral][data-theme="taisho"] [data-pref="kagoshima"] { --region-tint: #E4D7CE; }
+:root[data-neutral][data-theme="taisho"] [data-pref="okinawa"] { --region-tint: #E8D7D1; }
+:root[data-neutral][data-theme="showa"] { --region-tint: #DED5BF; }
+:root[data-neutral][data-theme="showa"] [data-pref="hokkaido"] { --region-tint: #E0D5C0; }
+:root[data-neutral][data-theme="showa"] [data-pref="aomori"] { --region-tint: #E4D2B8; }
+:root[data-neutral][data-theme="showa"] [data-pref="iwate"] { --region-tint: #DDD5BD; }
+:root[data-neutral][data-theme="showa"] [data-pref="miyagi"] { --region-tint: #DDD4BF; }
+:root[data-neutral][data-theme="showa"] [data-pref="akita"] { --region-tint: #E2D6B8; }
+:root[data-neutral][data-theme="showa"] [data-pref="yamagata"] { --region-tint: #E4D3BB; }
+:root[data-neutral][data-theme="showa"] [data-pref="fukushima"] { --region-tint: #E4D5BC; }
+:root[data-neutral][data-theme="showa"] [data-pref="ibaraki"] { --region-tint: #DED6C1; }
+:root[data-neutral][data-theme="showa"] [data-pref="tochigi"] { --region-tint: #E5D3BA; }
+:root[data-neutral][data-theme="showa"] [data-pref="gunma"] { --region-tint: #DFD6B9; }
+:root[data-neutral][data-theme="showa"] [data-pref="saitama"] { --region-tint: #DED6BB; }
+:root[data-neutral][data-theme="showa"] [data-pref="chiba"] { --region-tint: #E3D7B8; }
+:root[data-neutral][data-theme="showa"] [data-pref="tokyo"] { --region-tint: #DDD5C0; }
+:root[data-neutral][data-theme="showa"] [data-pref="kanagawa"] { --region-tint: #DDD7C0; }
+:root[data-neutral][data-theme="showa"] [data-pref="niigata"] { --region-tint: #DDD6BF; }
+:root[data-neutral][data-theme="showa"] [data-pref="toyama"] { --region-tint: #DDD7BF; }
+:root[data-neutral][data-theme="showa"] [data-pref="ishikawa"] { --region-tint: #E2D6B8; }
+:root[data-neutral][data-theme="showa"] [data-pref="fukui"] { --region-tint: #E1D4BA; }
+:root[data-neutral][data-theme="showa"] [data-pref="yamanashi"] { --region-tint: #E1D4BF; }
+:root[data-neutral][data-theme="showa"] [data-pref="nagano"] { --region-tint: #DED6BA; }
+:root[data-neutral][data-theme="showa"] [data-pref="gifu"] { --region-tint: #DDD5BD; }
+:root[data-neutral][data-theme="showa"] [data-pref="shizuoka"] { --region-tint: #DFD7B9; }
+:root[data-neutral][data-theme="showa"] [data-pref="aichi"] { --region-tint: #E3D6B7; }
+:root[data-neutral][data-theme="showa"] [data-pref="mie"] { --region-tint: #DED6BF; }
+:root[data-neutral][data-theme="showa"] [data-pref="shiga"] { --region-tint: #DDD6C1; }
+:root[data-neutral][data-theme="showa"] [data-pref="kyoto"] { --region-tint: #E0D4C0; }
+:root[data-neutral][data-theme="showa"] [data-pref="osaka"] { --region-tint: #E5D4B8; }
+:root[data-neutral][data-theme="showa"] [data-pref="hyogo"] { --region-tint: #DDD6C1; }
+:root[data-neutral][data-theme="showa"] [data-pref="nara"] { --region-tint: #DDD6BA; }
+:root[data-neutral][data-theme="showa"] [data-pref="wakayama"] { --region-tint: #E4D6B8; }
+:root[data-neutral][data-theme="showa"] [data-pref="tottori"] { --region-tint: #E3D6BB; }
+:root[data-neutral][data-theme="showa"] [data-pref="shimane"] { --region-tint: #E3D3BA; }
+:root[data-neutral][data-theme="showa"] [data-pref="okayama"] { --region-tint: #E4D6BE; }
+:root[data-neutral][data-theme="showa"] [data-pref="hiroshima"] { --region-tint: #E4D3B9; }
+:root[data-neutral][data-theme="showa"] [data-pref="yamaguchi"] { --region-tint: #DFD6BF; }
+:root[data-neutral][data-theme="showa"] [data-pref="tokushima"] { --region-tint: #DDD4BF; }
+:root[data-neutral][data-theme="showa"] [data-pref="kagawa"] { --region-tint: #E4D7BB; }
+:root[data-neutral][data-theme="showa"] [data-pref="ehime"] { --region-tint: #E5D5B7; }
+:root[data-neutral][data-theme="showa"] [data-pref="kochi"] { --region-tint: #DCD5BF; }
+:root[data-neutral][data-theme="showa"] [data-pref="fukuoka"] { --region-tint: #E4D3BB; }
+:root[data-neutral][data-theme="showa"] [data-pref="saga"] { --region-tint: #DDD5C0; }
+:root[data-neutral][data-theme="showa"] [data-pref="nagasaki"] { --region-tint: #DDD6BF; }
+:root[data-neutral][data-theme="showa"] [data-pref="kumamoto"] { --region-tint: #DED6B9; }
+:root[data-neutral][data-theme="showa"] [data-pref="oita"] { --region-tint: #DDD7BE; }
+:root[data-neutral][data-theme="showa"] [data-pref="miyazaki"] { --region-tint: #E5D6B8; }
+:root[data-neutral][data-theme="showa"] [data-pref="kagoshima"] { --region-tint: #E2D4BB; }
+:root[data-neutral][data-theme="showa"] [data-pref="okinawa"] { --region-tint: #E5D4BD; }
+:root[data-neutral][data-theme="heisei"] { --region-tint: #E4E6EF; }
+:root[data-neutral][data-theme="heisei"] [data-pref="hokkaido"] { --region-tint: #E7E6F0; }
+:root[data-neutral][data-theme="heisei"] [data-pref="aomori"] { --region-tint: #EBE4E9; }
+:root[data-neutral][data-theme="heisei"] [data-pref="iwate"] { --region-tint: #E3E7ED; }
+:root[data-neutral][data-theme="heisei"] [data-pref="miyagi"] { --region-tint: #E2E5EE; }
+:root[data-neutral][data-theme="heisei"] [data-pref="akita"] { --region-tint: #E9E8E8; }
+:root[data-neutral][data-theme="heisei"] [data-pref="yamagata"] { --region-tint: #EAE4EB; }
+:root[data-neutral][data-theme="heisei"] [data-pref="fukushima"] { --region-tint: #EBE7ED; }
+:root[data-neutral][data-theme="heisei"] [data-pref="ibaraki"] { --region-tint: #E4E8F1; }
+:root[data-neutral][data-theme="heisei"] [data-pref="tochigi"] { --region-tint: #EBE4EA; }
+:root[data-neutral][data-theme="heisei"] [data-pref="gunma"] { --region-tint: #E5E8E9; }
+:root[data-neutral][data-theme="heisei"] [data-pref="saitama"] { --region-tint: #E3E7EB; }
+:root[data-neutral][data-theme="heisei"] [data-pref="chiba"] { --region-tint: #E9E8E8; }
+:root[data-neutral][data-theme="heisei"] [data-pref="tokyo"] { --region-tint: #E3E6F0; }
+:root[data-neutral][data-theme="heisei"] [data-pref="kanagawa"] { --region-tint: #E2E8EF; }
+:root[data-neutral][data-theme="heisei"] [data-pref="niigata"] { --region-tint: #E3E6EE; }
+:root[data-neutral][data-theme="heisei"] [data-pref="toyama"] { --region-tint: #E3E8F0; }
+:root[data-neutral][data-theme="heisei"] [data-pref="ishikawa"] { --region-tint: #E9E8E9; }
+:root[data-neutral][data-theme="heisei"] [data-pref="fukui"] { --region-tint: #E6E5E9; }
+:root[data-neutral][data-theme="heisei"] [data-pref="yamanashi"] { --region-tint: #E7E5EF; }
+:root[data-neutral][data-theme="heisei"] [data-pref="nagano"] { --region-tint: #E4E8EA; }
+:root[data-neutral][data-theme="heisei"] [data-pref="gifu"] { --region-tint: #E3E7ED; }
+:root[data-neutral][data-theme="heisei"] [data-pref="shizuoka"] { --region-tint: #E4E8E9; }
+:root[data-neutral][data-theme="heisei"] [data-pref="aichi"] { --region-tint: #E9E8E7; }
+:root[data-neutral][data-theme="heisei"] [data-pref="mie"] { --region-tint: #E5E7F0; }
+:root[data-neutral][data-theme="heisei"] [data-pref="shiga"] { --region-tint: #E2E7F0; }
+:root[data-neutral][data-theme="heisei"] [data-pref="kyoto"] { --region-tint: #E5E4EF; }
+:root[data-neutral][data-theme="heisei"] [data-pref="osaka"] { --region-tint: #EBE6E8; }
+:root[data-neutral][data-theme="heisei"] [data-pref="hyogo"] { --region-tint: #E2E6F0; }
+:root[data-neutral][data-theme="heisei"] [data-pref="nara"] { --region-tint: #E3E8EA; }
+:root[data-neutral][data-theme="heisei"] [data-pref="wakayama"] { --region-tint: #EAE8E8; }
+:root[data-neutral][data-theme="heisei"] [data-pref="tottori"] { --region-tint: #E9E8EC; }
+:root[data-neutral][data-theme="heisei"] [data-pref="shimane"] { --region-tint: #E9E5EA; }
+:root[data-neutral][data-theme="heisei"] [data-pref="okayama"] { --region-tint: #EBE8EE; }
+:root[data-neutral][data-theme="heisei"] [data-pref="hiroshima"] { --region-tint: #EAE4EA; }
+:root[data-neutral][data-theme="heisei"] [data-pref="yamaguchi"] { --region-tint: #E5E7EF; }
+:root[data-neutral][data-theme="heisei"] [data-pref="tokushima"] { --region-tint: #E2E5EE; }
+:root[data-neutral][data-theme="heisei"] [data-pref="kagawa"] { --region-tint: #EAE9EB; }
+:root[data-neutral][data-theme="heisei"] [data-pref="ehime"] { --region-tint: #ECE7E8; }
+:root[data-neutral][data-theme="heisei"] [data-pref="kochi"] { --region-tint: #E1E6EE; }
+:root[data-neutral][data-theme="heisei"] [data-pref="fukuoka"] { --region-tint: #EAE5EC; }
+:root[data-neutral][data-theme="heisei"] [data-pref="saga"] { --region-tint: #E3E6F0; }
+:root[data-neutral][data-theme="heisei"] [data-pref="nagasaki"] { --region-tint: #E3E7EF; }
+:root[data-neutral][data-theme="heisei"] [data-pref="kumamoto"] { --region-tint: #E4E8EA; }
+:root[data-neutral][data-theme="heisei"] [data-pref="oita"] { --region-tint: #E3E8EE; }
+:root[data-neutral][data-theme="heisei"] [data-pref="miyazaki"] { --region-tint: #EBE8E9; }
+:root[data-neutral][data-theme="heisei"] [data-pref="kagoshima"] { --region-tint: #E8E5EA; }
+:root[data-neutral][data-theme="heisei"] [data-pref="okinawa"] { --region-tint: #ECE5ED; }

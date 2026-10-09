@@ -3,9 +3,10 @@
  * 畫風是剪紙的紙人形：平塗、不描黑邊，只用同色的淡邊與一層陰影、一層亮面；整隻外面一圈白邊（剪下來的紙）。
  * 顏色一律用 theme.css 的 `--color-doll-*`、`--color-item-*` token；花紋用 DollDefs.vue 的 <pattern>。
  * 服裝分五個位置：頭（帽子、髮箍）、臉（眼鏡）、身（衣服）、手（拿的東西，在右手）、夥伴（腳邊）。
- * 各縣的特色單品去過那個縣就有；其他的用旅行得到的抽獎機會抽。
+ * 各縣的特色單品去過那個縣就有；幾個大的成就各送 1 件（outfitsAchv.ts）；其他的用抽獎券抽。
  */
 import { C, dots, E, line, SH, shape } from './dollArt'
+import { ACHV_OUTFITS } from './outfitsAchv'
 import { PREF_OUTFITS } from './outfitsPref'
 
 export type Slot = 'head' | 'face' | 'body' | 'hand' | 'buddy'
@@ -31,6 +32,8 @@ export interface Outfit {
   icon: string
   /** 那個縣的代表單品：第一次去那個縣就送；同縣的其他單品加進扭蛋 */
   gift?: boolean
+  /** 成就服裝：這個成就（data/achievements.ts 的 id）達成就有，不進扭蛋 */
+  achv?: string
 }
 
 // ---------- 身體的部位 ----------
@@ -416,6 +419,7 @@ export const OUTFITS: Outfit[] = [
       `<path d="M46 280 Q58 286 70 280" ${line(2.2, C.gold)}/>`,
   },
 
+  ...ACHV_OUTFITS,
   ...PREF_OUTFITS,
 ]
 
@@ -423,6 +427,10 @@ export const outfitById = new Map(OUTFITS.map((o) => [o.id, o]))
 /** 這個縣的代表單品 */
 export function giftOf(pref: string): Outfit | undefined {
   return OUTFITS.find((o) => o.pref === pref && o.gift)
+}
+/** 這個成就送的服裝 */
+export function achvOutfitOf(achvId: string): Outfit | undefined {
+  return OUTFITS.find((o) => o.achv === achvId)
 }
 /** 預設穿的（沒有存檔時） */
 export const DEFAULT_EQUIPPED: Partial<Record<Slot, string>> = { body: 'tee' }

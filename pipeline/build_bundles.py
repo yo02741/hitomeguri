@@ -130,8 +130,6 @@ def map_entry(s: dict[str, Any]) -> dict[str, Any]:
         entry["h"] = name["kana"]
     if name.get("romaji"):
         entry["r"] = name["romaji"]
-    if s.get("themes"):
-        entry["t"] = s["themes"]
     if cat := spot_type(s.get("tags", [])):
         entry["c"] = cat
     if d := designation(s.get("tags", [])):
@@ -167,8 +165,7 @@ def build(src: Path = SPOTS_DIR, dst: Path = BUNDLES_DIR) -> list[Path]:
         ]
         published = [s for s in spots if s["status"] == "published"]
         version = hashlib.sha1(path.read_bytes() + tag).hexdigest()[:10]
-        # 地圖 bundle 只放大點（主題層暫停，PLAN.md §5）；主題小店仍在 detail
-        majors = [map_entry(s) for s in published if s["kind"] == "major"]
+        majors = [map_entry(s) for s in published]
         written.append(_write(dst / "map" / f"{pref}.json", majors))
         # 首頁用：只留地圖顯示需要的欄位（名稱、座標、類型、照片）
         featured[pref] = [
@@ -177,7 +174,7 @@ def build(src: Path = SPOTS_DIR, dst: Path = BUNDLES_DIR) -> list[Path]:
         written.append(_write(dst / "detail" / f"{pref}.json", published))
         search += [search_entry(pref, e) for e in majors]
         achv_spots += [
-            {"id": s["id"], "tags": s.get("tags", [])} for s in published if s["kind"] == "major"
+            {"id": s["id"], "tags": s.get("tags", [])} for s in published
         ]
         index["prefectures"][pref] = {
             "count": len(published),
