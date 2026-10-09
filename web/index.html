@@ -7,17 +7,13 @@
     <link rel="apple-touch-icon" sizes="180x180" href="%BASE_URL%apple-touch-icon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, interactive-widget=resizes-content" />
     <meta name="description" content="來一趟日本，才知道它有多大。" />
-    <!-- 手機狀態列、PWA 標題列：先用全國的 header 色，App.vue 依地區與年代更新 -->
+    <!-- 手機狀態列、PWA 標題列：先用全國的 header 色（theme-colors.json 的令和），App.vue 依地區與年代更新 -->
     <meta name="theme-color" content="%REGION_HEADER%" />
     <!-- 主題（DESIGN.md §13）：繪製前先設好，避免先閃一下現代主題（web/src/services/theme.ts） -->
     <script>
       try {
         var t = new URLSearchParams(location.search).get('theme') || localStorage.getItem('hitomeguri:theme')
         if (/^(edo|meiji|taisho|showa|heisei)$/.test(t || '')) document.documentElement.dataset.theme = t
-      } catch (e) {}
-      // 中性色層次的預覽（DESIGN.md §3.1a）：只有網址帶 ?neutral=1 才套，預設不變（web/src/main.ts 載入 regions-neutral.css）
-      try {
-        if (new URLSearchParams(location.search).get('neutral') === '1') document.documentElement.dataset.neutral = 'layered'
       } catch (e) {}
       // 開場畫面（DESIGN.md §7.0）：看過完整版的人只淡出；減少動態的人維持原樣（web/src/services/splash.ts）
       try {

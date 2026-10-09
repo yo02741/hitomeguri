@@ -18,7 +18,7 @@ let SANS = '"Noto Sans TC", "Noto Sans JP", system-ui, sans-serif'
 let JA = '"Noto Sans JP", "Noto Sans TC", system-ui, sans-serif'
 let LATIN = '"Barlow Semi Condensed", "Noto Sans TC", system-ui, sans-serif'
 
-// 地區色跟著年代主題：canvas 讀不到 CSS 變數的 [data-pref]，用 build-region-css 一起產生的 theme-colors.json
+// 地區色跟著主題：canvas 讀不到 CSS 變數的 [data-pref]，用 build-region-css 一起產生的 theme-colors.json（令和是 modern，已套中性色層次）
 type Colors = Record<string, string>
 const ERA_COLORS = themeColors as Record<string, { national: Colors; regions: Record<string, Colors> }>
 function nationalColor(): Colors {

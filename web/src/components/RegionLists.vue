@@ -165,7 +165,7 @@ function hidePhoto(e: Event, i: string) {
           v-show="rowShown(s.id)"
           :key="s.id"
           class="flex min-h-tap shrink-0 items-center rounded-control [contain-intrinsic-size:auto_3.5rem] [content-visibility:auto]"
-          :class="s.id === selectedId ? 'bg-region-tint neutral-preview:shadow-[inset_0_0_0_1.5px_var(--region-strong)]' : 'hover:bg-surface active:bg-surface'"
+          :class="s.id === selectedId ? 'bg-region-tint shadow-[inset_0_0_0_1.5px_var(--region-strong)]' : 'hover:bg-surface active:bg-surface'"
           @mouseenter="emit('highlight', s.id)"
         >
           <button

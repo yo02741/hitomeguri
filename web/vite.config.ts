@@ -7,15 +7,21 @@ import { VitePWA } from 'vite-plugin-pwa'
 
 import { homeIcons, manifestIcons } from './build/icons.ts'
 
+// build-region-css 產生的各主題地區色（令和的鍵是 modern）：中性色層次已套好，和 regions.css 一致（DESIGN.md §3.1a）
+type ThemeColors = Record<string, { national: Record<string, string>; regions: Record<string, Record<string, string>> }>
+const themeColors = JSON.parse(
+  readFileSync(new URL('./src/styles/theme-colors.json', import.meta.url), 'utf-8'),
+) as ThemeColors
+const nationalColor = themeColors.modern!.national
+
 // index.html 的開場畫面在 CSS bundle 載入前就要顯示，不能用 token：
-// 建置時把 %REGION_PAPER% 這類佔位字換成 data/regions.json 的全國色（不在原始碼寫死色碼），
+// 建置時把 %REGION_PAPER% 這類佔位字換成 theme-colors.json 令和的全國色（不在原始碼寫死色碼），
 // %SPLASH_DOTS% 換成 47 都道府縣的圓點（JIS 順、從正上方順時針排一圈，各縣的地區色）。
 function splashColors(): Plugin {
   const regions = JSON.parse(readFileSync(new URL('../data/regions.json', import.meta.url), 'utf-8')) as {
-    national: { color: Record<string, string> }
     regions: { prefecture: string; color: Record<string, string> }[]
   }
-  const color = regions.national.color
+  const color = nationalColor
   const n = regions.regions.length
   // 圓心 (92, 92)、半徑 86，與 index.html 的 svg 一致；svg 整個轉 -90°，角度 0 在正上方
   const dots = regions.regions
@@ -27,11 +33,8 @@ function splashColors(): Plugin {
     })
     .join('')
   // 年代主題（DESIGN.md §13）：index.html 開頭先設好 data-theme，開場畫面也換成那個年代的顏色
-  const themes = JSON.parse(readFileSync(new URL('./src/styles/theme-colors.json', import.meta.url), 'utf-8')) as Record<
-    string,
-    { national: Record<string, string>; regions: Record<string, Record<string, string>> }
-  >
-  const themeCss = Object.entries(themes)
+  const themeCss = Object.entries(themeColors)
+    .filter(([key]) => key !== 'modern')
     .map(([key, t]) => {
       const sel = `html[data-theme="${key}"] #splash`
       const c = t.national
@@ -53,7 +56,7 @@ function splashColors(): Plugin {
       handler(html) {
         return html.replace('%SPLASH_DOTS%', dots).replace('%SPLASH_THEMES%', themeCss).replace(/%REGION_([A-Z_]+)%/g, (_, key: string) => {
           const v = color[key.toLowerCase()]
-          if (!v) throw new Error(`index.html：regions.json 的全國色沒有 ${key.toLowerCase()}`)
+          if (!v) throw new Error(`index.html：theme-colors.json 令和的全國色沒有 ${key.toLowerCase()}`)
           return v
         })
       },
@@ -63,11 +66,6 @@ function splashColors(): Plugin {
 
 // 離線（PWA，DESIGN.md §7.20）：app 本身預先快取；資料、地圖圖磚、字型、照片在用到時存下來。
 // 資料 bundle 的網址帶版本（?v=），存了就不必再問；_index.json 先問網路、離線時用存的。
-const nationalColor = (
-  JSON.parse(readFileSync(new URL('../data/regions.json', import.meta.url), 'utf-8')) as {
-    national: { color: Record<string, string> }
-  }
-).national.color
 const DAY = 24 * 60 * 60
 function pwa() {
   return VitePWA({
