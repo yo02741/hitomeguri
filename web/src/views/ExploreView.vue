@@ -77,7 +77,6 @@ watch(
 // 顯示規則：全部大點（可依類型篩選；開啟擴充包時不篩選，變淡當底圖）
 const filteredSpots = computed(() =>
   allSpots.value.filter((s) => {
-    if (s.k !== 'major') return false
     if (explore.onlyFavorites && !explore.pack) return Boolean(marks.marks[s.id]?.favorite)
     return explore.pack || !mapCategory.value || categoryGroup(s.c) === mapCategory.value
   }),

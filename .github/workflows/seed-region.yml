@@ -11,11 +11,11 @@ on:
         required: true
         default: "kyoto"
       command:
-        description: "seed-region（大點，含維基簡介與念法）、seed-wiki（只更新維基簡介與念法）、seed-themes（主題小店）、seed-specialties（地區特色＋航線候選）"
+        description: "seed-region（大點，含維基簡介與念法）、seed-wiki（只更新維基簡介與念法）、seed-specialties（地區特色＋航線候選）"
         required: true
         default: seed-region
         type: choice
-        options: [seed-region, seed-wiki, seed-themes, seed-specialties]
+        options: [seed-region, seed-wiki, seed-specialties]
 
 permissions:
   contents: write

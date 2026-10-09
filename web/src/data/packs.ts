@@ -1,7 +1,6 @@
 // 擴充包（PLAN.md §1 主題層、UX-FLOW.md A4）：疊在大點上的全國性小點（pipeline/packs.py、pack_*.py）。
-// 顏色取自主題色 token（--color-t-<color>），圖示沿用主題圖示。只列已經有資料的擴充包。
-
-import { themeByKey } from './themes'
+// 顏色取自主題色 token（--color-t-<color>）。圖示是 24×24 線條路徑（DESIGN.md §6.1：stroke 2、圓頭、不填色）。
+// 只列已經有資料的擴充包。
 
 export interface PackGroup {
   key: string
@@ -24,7 +23,7 @@ export const PACKS: PackDef[] = [
     key: 'pokemon',
     label: '寶可夢',
     color: 'pokemon',
-    icon: themeByKey.get('pokemon')!.icon,
+    icon: 'M5 8h14l-1 12H6z M9 8V6a3 3 0 0 1 6 0v2',
     groups: [
       { key: 'lid', label: '人孔蓋' },
       { key: 'center', label: '寶可夢中心' },

@@ -41,9 +41,6 @@ SPOT_LIKE_TYPES = {
 
 
 def is_excluded(s: dict[str, Any], manual: set[str]) -> bool:
-    if s["kind"] != "major":
-        # 寶可夢店家改由擴充包提供（data/packs），主題層的舊資料移除
-        return "pokemon" in s.get("themes", [])
     if s["id"] in manual or name_excluded(s["name"]["ja"]):
         return True
     seeded = any(t.startswith("guide-") for t in s.get("tags", []))

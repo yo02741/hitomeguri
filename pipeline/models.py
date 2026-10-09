@@ -10,7 +10,6 @@ from typing import Literal
 from pydantic import BaseModel, ConfigDict, Field
 
 Prefecture = str  # slug，例 "kyoto"
-Theme = Literal["tea", "sake", "beer", "incense", "onsen", "ramen", "pokemon", "goshuin"]
 Airport = Literal["TPE", "TSA", "RMQ", "KHH", "TNN"]
 
 
@@ -102,7 +101,7 @@ class Spot(StrictModel):
     location: Location
     prefecture: Prefecture
     city: str | None = None
-    kind: Literal["major", "theme"]
+    kind: Literal["major"]  # 舊的主題小店（theme）已刪除；小店改由擴充包（data/packs）提供
     themes: list[str] = Field(default_factory=list)
     tags: list[str] = Field(default_factory=list)
     featured: bool = False

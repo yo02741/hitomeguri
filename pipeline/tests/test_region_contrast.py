@@ -174,9 +174,9 @@ def test_fixed_colors_are_read() -> None:
     fixed = fixed_colors()
     assert set(fixed) == set(ERAS)
     for era, f in fixed.items():
-        for key in ("visited", "visited-tint", "white", "danger", "t-onsen", "t-ramen"):
+        for key in ("visited", "visited-tint", "white", "danger", "t-tea", "t-pokemon"):
             assert key in f, (era, key)
-    assert sum(1 for k in fixed["reiwa"] if k.startswith("t-")) >= 10
+    assert sum(1 for k in fixed["reiwa"] if k.startswith("t-")) >= 5
 
 
 @pytest.mark.parametrize("era", ["edo", "showa"])

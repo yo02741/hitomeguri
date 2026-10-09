@@ -33,6 +33,21 @@ def test_validate_uses_models(tmp_path):
     assert any("spots/kyoto.json #0" in e for e in res.errors)
 
 
+def test_validate_rejects_old_theme_spots():
+    """舊的主題小店（kind: theme）已刪除，再出現就擋下來。"""
+    from pipeline.models import Spot
+
+    base = {"id": "osm-node-1", "name": {"ja": "x", "zh_tw": "x"}, "location": {"lat": 35.0, "lng": 135.7},
+            "prefecture": "kyoto", "updated_at": "2026-10-09"}  # fmt: skip
+    Spot.model_validate(base | {"kind": "major"})
+    try:
+        Spot.model_validate(base | {"kind": "theme"})
+    except ValueError as e:
+        assert "kind" in str(e)
+    else:
+        raise AssertionError("kind: theme 應該不合 schema")
+
+
 def test_compare_counts_and_fields():
     old = [
         {"id": "a", "name": {"ja": "甲", "kana": "こう"}, "updated_at": "1"},

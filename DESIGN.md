@@ -98,18 +98,14 @@
 |---|---|---|---|
 | 大點 | `t-major` | 跟 `ink` | 名勝／神社／寺院／城（實心） |
 | 茶 | `t-tea` | `#3F8F35`（江戶、昭和 `#3C8933`） | 茶碗 |
-| 酒 | `t-sake` | `#B0561C` | 德利 |
-| 香 | `t-incense` | `#A4508B` | 線香 |
-| 溫泉 | `t-onsen` | `#0B8291` | 湯氣 |
-| 拉麵 | `t-ramen` | `#9E6E00` | 碗與筷 |
 | 寶可夢 | `t-pokemon` | `#1F6FC0` | 商店袋 |
-| 御朱印・御守 | `t-goshuin` | `#C8102E` | 御朱印帳 |
 | 城（擴充包） | `t-castle` | `#4F6475` | 天守 |
 | 老舖・茶屋（擴充包） | `t-shinise` | `#7A5230` | 暖簾 |
 | 角色商店（擴充包） | `t-chara` | `#6D4FC2` | 貓耳臉 |
 | 自訂地點 | `t-custom` | 跟 `sub` | 依分類，虛線外框 |
 
 - 主題色只出現在：符號描邊、擴充包的勾選色與開啟中的膠囊鈕、區塊小標旁的小符號。**不用作大面積底色**。
+- 舊的主題小店（酒、香、溫泉、拉麵、御朱印）2026-10-09 刪除，這幾個 token 一併拿掉。`t-tea` 依使用者決定保留（江戶、昭和對陸地 ≥ 3:1 的調整也留著），目前沒有介面用到。
 
 ### 3.3 地區色（執行時決定）
 | Tailwind | CSS 變數 | 用途 |
@@ -227,7 +223,7 @@
 
 ### 6.1 繪製規格
 - 24×24 grid，線條 `stroke-width: 2`，圓頭圓角（`round`），無填色（御朱印帳內的印可實心）。
-- 放在 `web/src/assets/symbols/*.svg`，以 `currentColor` 著色，透過 `<ThemeSymbol name="tea" />` 使用。
+- 擴充包的符號是 24×24 的 SVG path 字串（`web/src/data/packs.ts` 的 `icon`），以 `currentColor` 著色。
 - 通用 UI 圖示（返回、定位、播放、帳號、放大縮小）使用同樣筆畫規格；可用 lucide 並統一 `stroke-width={1.8}`。
 - 寺院不使用「卍」。寶可夢不使用任何官方角色、精靈球或 logo。
 
@@ -243,17 +239,13 @@
 | 名稱區塊旁 | 36–42 | 同一般；在地區色底上維持白底 |
 
 ```html
-<!-- 一般 marker -->
-<span class="size-8 grid place-items-center rounded-badge border-2 border-t-tea bg-paper text-t-tea shadow-marker">
-  <ThemeSymbol name="tea" class="size-[18px]" />
+<!-- 一般 marker（擴充包色） -->
+<span class="size-8 grid place-items-center rounded-badge border-2 border-t-shinise bg-paper text-t-shinise shadow-marker">
+  <svg class="size-[18px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path :d="pack.icon" /></svg>
 </span>
 <!-- 大點 marker -->
-<span class="size-8 grid place-items-center rounded-badge bg-t-major text-paper shadow-marker">
-  <ThemeSymbol name="shrine" class="size-[18px]" />
-</span>
+<span class="size-8 grid place-items-center rounded-badge bg-t-major text-paper shadow-marker">…</span>
 ```
-
-- 同一地點屬於多個主題時（例：伏見稻荷＝大點＋御朱印），badge 並排、間距 4px，大點在前。
 - 地圖縮小時 marker 以 MapLibre clustering 合併；cluster 用墨色圓形＋白色數字（`font-latin font-bold`），不用主題色。
 
 ---
