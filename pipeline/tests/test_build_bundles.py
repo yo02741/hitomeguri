@@ -19,9 +19,12 @@ def test_map_thumb_rewrites_width_and_strips_prefix() -> None:
     assert map_thumb(url) == "4/4e/Nijo_Castle.jpg/250px-Nijo_Castle.jpg"
 
 
-def test_map_thumb_keeps_small_originals() -> None:
+def test_map_thumb_turns_originals_into_thumbs() -> None:
+    # 原圖網址常被限流：換成 250px 縮圖（前端讀不到時退回原圖）
     url = "https://upload.wikimedia.org/wikipedia/commons/c/c5/Suika.jpg?utm_source=x"
-    assert map_thumb(url) == "https://upload.wikimedia.org/wikipedia/commons/c/c5/Suika.jpg"
+    assert map_thumb(url) == "c/c5/Suika.jpg/250px-Suika.jpg"
+    tif = "https://upload.wikimedia.org/wikipedia/commons/c/c5/Scan.tif"
+    assert map_thumb(tif) == tif
 
 
 def test_map_thumb_ignores_non_thumbnail_urls() -> None:
@@ -119,3 +122,18 @@ def test_build_specialties_one_file_per_prefecture(tmp_path: Path) -> None:
     written = json.loads(path.read_text(encoding="utf-8"))
     assert [s["id"] for s in written] == [s["id"] for s in real]
     assert all(s["prefecture"] == "aichi" for s in written)
+
+
+def test_commons_thumb_url_for_unscaled_originals() -> None:
+    from pipeline.sources.commons import thumb_url
+
+    orig = "https://upload.wikimedia.org/wikipedia/commons/6/6c/Aeria%3B_photo.jpg?utm_content=thumbnail_unscaled"
+    # 原圖 800 寬、要 960：存 500px 縮圖（檔名沿用 API 的編碼）
+    assert thumb_url(orig, 800, 960) == (
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6c/Aeria%3B_photo.jpg/500px-Aeria%3B_photo.jpg"
+    )
+    # 原圖比 250 小、寬度不明、已經是縮圖：原樣
+    assert thumb_url(orig, 200, 960) == orig
+    assert thumb_url(orig, 0, 960) == orig
+    thumb = "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6c/A.jpg/960px-A.jpg"
+    assert thumb_url(thumb, 4000, 960) == thumb

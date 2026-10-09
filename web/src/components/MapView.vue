@@ -5,7 +5,7 @@ import 'maplibre-gl/dist/maplibre-gl.css'
 import { computed, nextTick, onBeforeUnmount, onMounted, ref, shallowRef, watch } from 'vue'
 
 import { JAPAN_CENTER, JAPAN_ZOOM, MAP_STYLE_URL } from '../map/style'
-import { mapThumbUrl, type MapSpot } from '../services/bundles'
+import { mapThumbFallback, mapThumbUrl, type MapSpot } from '../services/bundles'
 import { splashCovering, trackSplash } from '../services/splash'
 import { theme } from '../services/theme'
 import { wide } from '../services/viewport'
@@ -831,6 +831,13 @@ function photoEl(id: string, thumb: string, score: number): HTMLElement {
   img.decoding = 'async'
   img.className = 'size-full rounded-full object-cover'
   img.onerror = () => {
+    // 先換原圖試一次（原圖比 250px 還小時縮圖會失敗）
+    const next = mapThumbFallback(thumb, img.src)
+    if (next && !img.dataset.fallback) {
+      img.dataset.fallback = '1'
+      img.src = next
+      return
+    }
     failedThumbs.add(thumb)
     photoPins.get(id)?.remove()
     photoPins.delete(id)
@@ -868,6 +875,16 @@ function positionHover() {
   hover.value = { ...h, x: p.x, y: p.y }
 }
 
+function onHoverThumbError(e: Event, h: Hover | null) {
+  const img = e.target as HTMLImageElement
+  const next = h?.thumb ? mapThumbFallback(h.thumb, img.src) : null
+  if (next && !img.dataset.fallback) {
+    img.dataset.fallback = '1'
+    img.src = next
+    return
+  }
+  thumbFailed(h)
+}
 function thumbFailed(h: Hover | null) {
   // 照片讀不到的時候游標可能已經離開（hover 已清掉）
   if (!h) return
@@ -954,6 +971,15 @@ const locatorStyle = computed(() => {
   const edge = props.locatorEdge
   if (!edge) return undefined
   return 'top' in edge ? { top: `${edge.top + 10}px` } : { bottom: `${edge.bottom + 10}px` }
+})
+// 桌機：右下的出處（開了立體會多一段「標高：国土地理院」）不伸到左下的位置小框底下，放不下就換行。
+// 小框在 insetLeft 起 132px 寬，右邊再留 12px；出處容器本身離右緣 10px
+const LOCATOR_W = 132
+const rootStyle = computed(() => {
+  const s: Record<string, string> = {}
+  if (props.controlsLift) s['--map-lift-b'] = `${props.controlsLift}px`
+  if (props.insetLeft && size.value.w) s['--map-attrib-max'] = `${Math.max(160, size.value.w - props.insetLeft - LOCATOR_W - 12 - 10)}px`
+  return Object.keys(s).length ? s : undefined
 })
 const locator = shallowRef<{ bounds: [number, number, number, number]; zoom: number } | null>(null)
 let locatorFrame = 0
@@ -1198,7 +1224,7 @@ defineExpose({
   <!-- overflow-hidden：hover 標籤落在畫面外時（例如從清單滑過畫面外的景點）不撐出整頁捲軸 -->
   <div
     class="map-root absolute inset-0 overflow-hidden bg-map-land"
-    :style="controlsLift ? { '--map-lift-b': `${controlsLift}px` } : undefined"
+    :style="rootStyle"
     role="region"
     aria-label="地圖"
   >
@@ -1263,7 +1289,7 @@ defineExpose({
           alt=""
           class="size-full object-cover"
           referrerpolicy="no-referrer"
-          @error="thumbFailed(hover)"
+          @error="onHoverThumbError($event, hover)"
         />
       </span>
       <span

@@ -45,6 +45,13 @@ async function focusFirst() {
 watch(stage, (s) => {
   if (s === 'open') void focusFirst()
 })
+// 殼分開、淡出之後拿掉整顆扭蛋：兩半都透明時外層 g 的 filter（doll-cut-sm）在 Chromium 會畫出一小塊黑色方塊。
+// 減少動態時沒有分開的動畫，打開時就不畫殼。
+const shellGone = ref(reduced)
+watch(stage, (s) => {
+  if (s !== 'open') shellGone.value = false
+  else if (reduced) shellGone.value = true
+})
 // 再抽：結果換了就重播
 watch(() => props.result, play)
 
@@ -118,7 +125,14 @@ onBeforeUnmount(() => {
         </svg>
 
         <!-- 掉出來的扭蛋 -->
-        <svg v-if="stage !== 'turn'" viewBox="0 0 120 120" class="capsule absolute size-[150px]" :class="[stage, shell]" aria-hidden="true">
+        <svg
+          v-if="stage !== 'turn' && !shellGone"
+          viewBox="0 0 120 120"
+          class="capsule absolute size-[150px]"
+          :class="[stage, shell]"
+          aria-hidden="true"
+          @animationend="(e: AnimationEvent) => stage === 'open' && e.animationName.includes('cap-bottom') && (shellGone = true)"
+        >
           <g filter="url(#doll-cut-sm)">
             <g class="cap-top">
               <path d="M14 60 A46 46 0 0 1 106 60Z" class="c-clear" />

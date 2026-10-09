@@ -934,6 +934,15 @@ _CATEGORY_BY_OFFICIAL = [
     ("通り", "街區"),
 ]
 
+# 「堂」「院」結尾但不是寺：議會、公會堂、音樂廳、能樂堂、講堂，
+# 以及教堂（教会、天主堂、聖堂、カテドラル）。
+# 教堂在本站沒有對應的類型，和其他「教会」一樣不分類（前端歸「其他」）
+NOT_TEMPLE_RE = re.compile(
+    r"(議事堂|公会堂|音楽堂|能楽堂|講堂|会堂|天主堂|聖堂|礼拝堂|記念堂|演劇堂|オルゴール堂|食堂|殿堂|議院|美容院)$"
+    r"|教会|カテドラル|天主堂|大聖堂"
+)
+CHRISTIAN = {"christian"}
+
 KOFUN_RE = re.compile(r"(古墳|天皇陵|御陵)$")
 # 排除用：另外涵蓋古墳群；名稱先去掉消歧義括號（「亀塚古墳 (野洲市)」）
 KOFUN_DROP_RE = re.compile(r"(古墳群?|天皇陵|御陵)$")
@@ -954,8 +963,13 @@ def category(d: Draft) -> str | None:
     name = unicodedata.normalize("NFKC", d.name_ja or "")
     if name.endswith("病院"):
         return None
+    church = t.get("religion") in CHRISTIAN
     for rx, cat in _CATEGORY_BY_NAME:
         if rx.search(name):
+            # 「堂」「院」結尾的議事堂、公會堂、教堂不是寺院
+            # （国会議事堂、東京カテドラル聖マリア大聖堂）
+            if cat == "寺院" and (church or NOT_TEMPLE_RE.search(name)):
+                return None
             return cat
     # 官方觀光網站的類型（名稱與 OSM 都判斷不出來時）
     for label in d.official.categories if d.official else []:

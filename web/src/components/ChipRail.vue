@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, ref } from 'vue'
+import { computed, onBeforeUnmount, ref, watch } from 'vue'
 
 import { useDismiss } from '../composables/floating'
 import { usePackChips } from '../composables/packChips'
@@ -24,15 +24,39 @@ const root = ref<HTMLElement | null>(null)
 const settingsBtn = ref<HTMLButtonElement | null>(null)
 useDismiss(root, menuOpen, () => (menuOpen.value = false), () => settingsBtn.value)
 
+// 右邊還有沒露出來的 chip 時右緣淡出（和行程的天數條一樣，fade-x-end）
+const scroller = ref<HTMLElement | null>(null)
+const more = ref(false)
+function syncMore() {
+  const s = scroller.value
+  more.value = !!s && s.scrollLeft + s.clientWidth < s.scrollWidth - 2
+}
+const observer = typeof ResizeObserver !== 'undefined' ? new ResizeObserver(syncMore) : null
+watch(scroller, (el, old) => {
+  if (old) {
+    observer?.unobserve(old)
+    old.removeEventListener('scroll', syncMore)
+  }
+  if (el) {
+    observer?.observe(el)
+    el.addEventListener('scroll', syncMore, { passive: true })
+    syncMore()
+  }
+})
+// chip 數量或件數變了（換縣、開關擴充包）也重算
+watch(() => [shown.value.length, showFavorites.value, props.pref], () => requestAnimationFrame(syncMore))
+onBeforeUnmount(() => observer?.disconnect())
+
 // 點擊區撐到 44（觸控），看得到的膠囊維持 36（決定事項 B2）
 const hit = 'pointer-events-auto flex h-9 shrink-0 items-center active:not-disabled:translate-y-px pointer-coarse:h-tap'
 const pill = 'flex h-9 items-center gap-1.5 rounded-full px-3.5 text-body-sm font-bold whitespace-nowrap shadow-float'
 </script>
 
 <template>
-  <div ref="root" class="pointer-events-none relative">
+  <!-- 手機打橫：外層是左側 300px 的欄，軌道照樣撐到地圖右緣（畫面寬扣掉左右 16px），不在欄寬處切掉 -->
+  <div ref="root" class="pointer-events-none relative land:w-[calc(100vw-2rem-env(safe-area-inset-left)-env(safe-area-inset-right))]">
     <!-- 上下多留 12px 給膠囊的陰影（捲動區會裁掉超出的部分），再用負 margin 收回 -->
-    <div class="scroll-quiet -mx-4 -my-3 flex gap-2 overflow-x-auto overscroll-x-contain px-4 py-3">
+    <div ref="scroller" class="scroll-quiet -mx-4 -my-3 flex gap-2 overflow-x-auto overscroll-x-contain px-4 py-3" :class="more ? 'fade-x-end' : ''">
       <button
         v-if="showFavorites"
         type="button"

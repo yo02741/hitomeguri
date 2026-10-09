@@ -22,7 +22,7 @@ const emit = defineEmits<{ select: [key: string] }>()
 
 const trigger = ref<HTMLButtonElement | null>(null)
 const menu = ref<HTMLElement | null>(null)
-const { open, style, pref, side, origin } = useFloating(trigger, menu, { align: 'end' })
+const { open, style, pref, side, origin, host } = useFloating(trigger, menu, { align: 'end' })
 const id = useId()
 
 function enabled(): HTMLElement[] {
@@ -81,7 +81,7 @@ function run(a: MenuAction) {
   >
     <slot />
   </button>
-  <Teleport to="body">
+  <Teleport :to="host">
     <div
       v-if="open"
       :id="id"

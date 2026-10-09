@@ -83,8 +83,18 @@ def map_thumb(url: str) -> str | None:
     """地圖 hover 用小圖：Commons 縮圖寬度換成 250px、去掉追蹤參數，省略固定前綴縮小 bundle。"""
     base = url.split("?", 1)[0]
     if not base.startswith(COMMONS_THUMB_PREFIX) or not re.search(r"/\d+px-[^/]+$", base):
-        # 原圖本來就小於縮圖寬度時 Commons 給原圖網址：直接用
-        return base if base.startswith("https://upload.wikimedia.org/") else None
+        # 原圖網址（原圖小於當時要的縮圖寬度）：原圖常被限流，也換成 250px 縮圖；
+        # 原圖比 250px 還小時縮圖會失敗，前端退回原圖（bundles.ts 的 mapThumbFallback）
+        orig = re.match(
+            r"^https://upload\.wikimedia\.org/wikipedia/commons/([0-9a-f]/[0-9a-f]{2})/([^/]+)$",
+            base,
+        )
+        if not orig:
+            return None
+        folder, name = orig.groups()
+        if name.rsplit(".", 1)[-1].lower() not in {"jpg", "jpeg", "png", "gif", "webp"}:
+            return base
+        return f"{folder}/{name}/{MAP_THUMB_WIDTH}px-{name}"
     thumb = re.sub(r"/\d+px-([^/]+)$", rf"/{MAP_THUMB_WIDTH}px-\1", base)
     return thumb[len(COMMONS_THUMB_PREFIX) :]
 

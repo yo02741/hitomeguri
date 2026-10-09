@@ -4,7 +4,8 @@ import { computed, ref, watch } from 'vue'
 import { useTilt } from '../composables/tilt'
 import { NATIONAL_PATTERN, PATTERN_BY_AREA } from '../data/patterns'
 import { regionOf } from '../data/regions'
-import { type CardFace, commonsThumb, type Rarity } from '../services/card'
+import { type CardFace, type Rarity } from '../services/card'
+import { commonsCandidates } from '../services/commons'
 import { BASE_VARIANT, type Variant } from '../services/cardVariants'
 import RegionMotif from './RegionMotif.vue'
 
@@ -107,8 +108,8 @@ const imageSrc = computed(() => {
   if (!url) return undefined
   const widths: (500 | 960 | 1280)[] =
     props.size === 'lg' ? (fullArt.value ? [1280, 960] : [960]) : fullArt.value ? [960, 500] : [500]
-  // 原圖比要的寬度小時 Commons 會回錯誤，依序退回小一號、原網址
-  const list = [...new Set([...widths.map((w) => commonsThumb(url, w)), url])]
+  // 原圖比要的寬度小時 Commons 會回錯誤，依序退回小一號、原圖（services/commons.ts）
+  const list = [...new Set(widths.flatMap((w) => commonsCandidates(url, w)))]
   return list[tries.value]
 })
 // 名稱越長字越小，一行放得下

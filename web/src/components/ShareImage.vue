@@ -32,7 +32,9 @@ onMounted(async () => {
 })
 
 function blob(): Promise<Blob | null> {
-  return new Promise((resolve) => canvas.value?.toBlob((b) => resolve(b), 'image/png') ?? resolve(null))
+  const c = canvas.value
+  if (!c) return Promise.resolve(null)
+  return new Promise((resolve) => c.toBlob((b) => resolve(b), 'image/png'))
 }
 async function save() {
   const b = await blob()

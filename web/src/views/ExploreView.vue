@@ -77,8 +77,11 @@ watch(
 // 顯示規則：全部大點（可依類型篩選；開啟擴充包時不篩選，變淡當底圖）
 const filteredSpots = computed(() =>
   allSpots.value.filter((s) => {
-    if (explore.onlyFavorites && !explore.pack) return Boolean(marks.marks[s.id]?.favorite)
-    return explore.pack || !mapCategory.value || categoryGroup(s.c) === mapCategory.value
+    if (explore.pack) return true
+    // 只看收藏與類型可以一起用（縣的清單也一樣）；全國總覽沒有類型列，只看收藏
+    if (explore.onlyFavorites && !marks.marks[s.id]?.favorite) return false
+    if (explore.onlyFavorites && !props.pref) return true
+    return !mapCategory.value || categoryGroup(s.c) === mapCategory.value
   }),
 )
 // 選到的景點被篩掉時也要畫出來。選到的本來就在清單裡時沿用同一個陣列，

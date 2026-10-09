@@ -27,7 +27,7 @@ const emit = defineEmits<{ 'update:modelValue': [value: string] }>()
 
 const trigger = ref<HTMLButtonElement | null>(null)
 const panel = ref<HTMLElement | null>(null)
-const { open, style, pref, side, origin } = useFloating(trigger, panel, { align: props.align })
+const { open, style, pref, side, origin, host } = useFloating(trigger, panel, { align: props.align })
 
 const text = computed(() => (isIsoDate(props.modelValue) ? longDate(props.modelValue) : ''))
 const today = todayIso()
@@ -78,7 +78,7 @@ function onFocusOut(e: FocusEvent) {
       <span v-else class="whitespace-nowrap text-sub">{{ placeholder }}</span>
     </slot>
   </button>
-  <Teleport to="body">
+  <Teleport :to="host">
     <div
       v-if="open"
       ref="panel"

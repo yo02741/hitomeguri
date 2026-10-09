@@ -26,7 +26,7 @@ const emit = defineEmits<{ 'update:modelValue': [value: string] }>()
 
 const trigger = ref<HTMLButtonElement | null>(null)
 const panel = ref<HTMLElement | null>(null)
-const { open, style, pref, side, origin } = useFloating(trigger, panel, { align: props.align })
+const { open, style, pref, side, origin, host } = useFloating(trigger, panel, { align: props.align })
 const id = `dd-${Math.random().toString(36).slice(2, 8)}`
 const current = computed(() => props.options.find((o) => o.value === props.modelValue) ?? props.options[0])
 const active = ref(0)
@@ -88,7 +88,7 @@ watch(active, async () => {
       <path d="M6 9l6 6 6-6" />
     </svg>
   </button>
-  <Teleport to="body">
+  <Teleport :to="host">
     <div
       v-if="open"
       :id="id"

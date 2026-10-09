@@ -1,5 +1,7 @@
 // 前端 bundle（pipeline/build_bundles.py 產生，部署在站台的 bundles/ 底下）。
 
+import { COMMONS_THUMB_PREFIX, commonsOriginal, commonsThumb } from './commons'
+
 export interface MapSpot {
   id: string
   n: string // 日文名
@@ -17,10 +19,17 @@ export interface MapSpot {
   si?: Partial<Record<'spring' | 'summer' | 'autumn' | 'winter' | 'night' | 'panorama', [path: string, author: string, license: string]>> // 收集卡的季節、夜景照片
 }
 
-export const COMMONS_THUMB_PREFIX = 'https://thumb.wikimedia.org/wikipedia/commons/thumb/'
+export { COMMONS_THUMB_PREFIX }
 
+/** 地圖、清單用的小圖（250px）。原圖網址也換成縮圖（services/commons.ts）；讀不到時退回 commonsOriginal */
 export function mapThumbUrl(i: string): string {
-  return i.startsWith('https://') ? i : COMMONS_THUMB_PREFIX + i
+  return i.startsWith('https://') ? commonsThumb(i, 250) : COMMONS_THUMB_PREFIX + i
+}
+
+/** 小圖讀不到時改用原圖一次（原圖比 250px 還小時縮圖會失敗）；已經是原圖、或不是 Commons 的就沒有下一張 */
+export function mapThumbFallback(i: string, failedSrc: string): string | null {
+  const orig = commonsOriginal(mapThumbUrl(i))
+  return orig && orig !== failedSrc.split('?', 1)[0] ? orig : null
 }
 
 export interface SpotImage {

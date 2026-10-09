@@ -88,3 +88,53 @@ def test_shop_record_and_bundle(tmp_path, monkeypatch):
         "lat": 26.22005, "lng": 127.71657, "pk": [["058", "ガーディ"]], "u": "https://x",
     }  # fmt: skip
     assert items["pokecen-node-1"]["g"] == "center"
+
+
+def test_osm_address_does_not_repeat_upper_levels():
+    from pipeline.packs import collapse_repeated_address, osm_address
+
+    # 鍵善良房（OSM way/291412090）：上層標籤＋addr:full 原本整串接在一起
+    tags = {
+        "addr:province": "京都府",
+        "addr:city": "京都市",
+        "addr:quarter": "祇園町北側",
+        "addr:full": "京都府京都市東山区祇園町北側264",
+    }
+    assert osm_address(tags) == "京都府京都市東山区祇園町北側264"
+    # addr:full 沒有縣名時補上
+    assert (
+        osm_address({"addr:province": "福島県", "addr:full": "会津若松市東栄町8-47"})
+        == "福島県会津若松市東栄町8-47"
+    )
+    # 沒有 addr:full：各層加上番地
+    assert (
+        osm_address(
+            {
+                "addr:province": "東京都",
+                "addr:city": "中央区",
+                "addr:quarter": "日本橋",
+                "addr:block_number": "1",
+                "addr:housenumber": "4",
+            }
+        )
+        == "東京都中央区日本橋1-4"
+    )
+    assert osm_address({"addr:province": "大阪府", "addr:city": "大阪市"}) == "大阪府大阪市"
+    assert osm_address({}) == ""
+    # 已經接在一起的舊資料
+    assert (
+        collapse_repeated_address("鳥取県鳥取市湖山町西3丁目鳥取県鳥取市湖山町西3丁目113-1")
+        == "鳥取県鳥取市湖山町西3丁目113-1"
+    )
+    assert (
+        collapse_repeated_address("福島県福島県会津若松市東栄町8-47")
+        == "福島県会津若松市東栄町8-47"
+    )
+    assert (
+        collapse_repeated_address("京都府京都市東山区祇園町北側264")
+        == "京都府京都市東山区祇園町北側264"
+    )
+    assert (
+        collapse_repeated_address("宮城県加瀬沼公園内（宮城県宮城郡利府町）")
+        == "宮城県加瀬沼公園内（宮城県宮城郡利府町）"
+    )

@@ -1,7 +1,7 @@
 import { MAP_STYLE_URL } from '../map/style'
 import type { useCatalogStore } from '../stores/catalog'
-import { commonsThumb } from './card'
 import { mapThumbUrl } from './bundles'
+import { commonsThumb, commonsWidthFor } from './commons'
 import { allStops, type Trip } from './trip'
 
 /**
@@ -126,8 +126,10 @@ export async function prepareOffline(trip: Trip, catalog: Catalog, onProgress: (
     const d = catalog.details[s.pref]?.[s.spot_id]
     const img = d?.images[0]?.url
     if (img) {
+      // 收集卡（500、960）與景點面板（這台裝置的面板寬 × devicePixelRatio，SpotPanel 用同一個規則；桌機的面板 400 寬）
       photos.add(commonsThumb(img, 500))
       photos.add(commonsThumb(img, 960))
+      photos.add(commonsThumb(img, commonsWidthFor(window.innerWidth < 1024 ? window.innerWidth : 400, window.devicePixelRatio)))
     }
   }
 

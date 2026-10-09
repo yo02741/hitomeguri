@@ -4,6 +4,8 @@ import { computed, nextTick, onBeforeUnmount, ref, type Ref, watch } from 'vue'
  * 貼著觸發鈕的浮動面板（日期選擇器等）。面板 Teleport 到 body，避開外層的 overflow 與 bottom sheet：
  * 位置用 fixed 算，下方放不下就翻到上方；左右不超出畫面，手機也不超過底部分頁列。點面板與觸發鈕以外的地方就收起。
  * 面板離開原本的 DOM 後吃不到地區色，所以沿用觸發鈕所在的 data-pref。
+ * 觸發鈕在打開的原生 <dialog>（showModal，top layer）裡時改 Teleport 到那個 dialog：
+ * 放在 body 會被 top layer 蓋住、也點不到（背後的頁面是 inert）。元件寫 <Teleport :to="host">。
  * side 與 origin（DESIGN.md §9）：往下開的從上方長出（animate-pop-in）、翻到上方的從下方長出（animate-pop-up），
  * transform-origin 對準觸發鈕那一角。打開後第一次定位就決定方向，捲動時不換，進場動畫不重播。
  */
@@ -17,6 +19,7 @@ export function useFloating(
   const OFFSCREEN = { top: '-9999px', left: '-9999px' }
   const style = ref<Record<string, string>>(OFFSCREEN)
   const pref = ref<string | undefined>()
+  const host = ref<HTMLElement | string>('body')
   const side = ref<'top' | 'bottom'>('bottom')
   let sideFixed = false
   const origin = computed(() => `${opts.align === 'end' ? 'right' : 'left'} ${side.value === 'top' ? 'bottom' : 'top'}`)
@@ -76,6 +79,8 @@ export function useFloating(
       return
     }
     pref.value = trigger.value?.closest<HTMLElement>('[data-pref]')?.dataset.pref
+    // pre-flush 的 watcher：在面板畫出來之前換好 Teleport 的目標
+    host.value = trigger.value?.closest<HTMLDialogElement>('dialog[open]') ?? 'body'
     await nextTick()
     place()
     listen(true)
@@ -90,7 +95,7 @@ export function useFloating(
     observer?.disconnect()
   })
 
-  return { open, style, pref, place, side, origin }
+  return { open, style, pref, place, side, origin, host }
 }
 
 /**
