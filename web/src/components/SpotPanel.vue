@@ -371,7 +371,7 @@ function distance(m: number): string {
       </div>
 
       <!-- 手機：收藏・去過・清單・行程貼在 sheet 底部，不必先捲到最下面；Google Maps 移到上面的資訊列 -->
-      <div class="mt-auto flex flex-col gap-2 border-t border-line px-5 pt-3.5 pb-5 max-lg:sticky max-lg:bottom-0 max-lg:z-[2] max-lg:bg-paper max-lg:px-3 max-lg:pt-2 max-lg:pb-2">
+      <div data-toast-above class="mt-auto flex flex-col gap-2 border-t border-line px-5 pt-3.5 pb-5 max-lg:sticky max-lg:bottom-0 max-lg:z-[2] max-lg:bg-paper max-lg:px-3 max-lg:pt-2 max-lg:pb-2">
         <SpotActions v-if="spotRef" :spot="spotRef" @stamped="onStamped" />
         <a
           :href="mapsUrl"
