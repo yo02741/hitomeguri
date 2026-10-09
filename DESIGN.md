@@ -309,6 +309,7 @@ header 右側、登入鈕左邊（`SearchBox.vue`，每一頁都在；在行程�
 - 置中：Wordmark 三行（ひとめぐり／一巡り 38px 900／HITOMEGURI）外圍一個 184px 圓（`line` 細線），圓上等距 47 個圓點（半徑 4.2），JIS 順從正上方順時針：北海道在最上面，沖繩在最後。
 - 進度就是圓點：還沒到的圓點是 `line` 色；走到哪一縣，那一縣的圓點亮成該縣的 `base` 色並微微放大（一次亮一顆，進度一次跳很多時也是一顆一顆追上）。JS 接手前 CSS 先依序亮前 14 縣（約三成）；之後依實際工作推進：字型、路由、景點資料、地區 bundle、底圖第一次畫完（`web/src/services/splash.ts` 的 `trackSplash`）。
 - 全部完成、47 縣走滿一圈後：圓點往外擴散淡出，Wordmark 淡出，從圓心開一個越來越大的洞露出底下的畫面（mask 半徑以 `@property` 動畫，0.75s）。最少顯示 0.9s，最多等 10s。不放文字說明（無「載入中」字樣）。`prefers-reduced-motion` 時圓點直接亮、結束只淡出。
+- 回訪的短版（使用者決定 2026-10-09）：完整版播完一次後在這台裝置記下 `hitomeguri:splash-seen`（localStorage，存取失敗就照播完整版；中途關掉不算看過）。之後 `index.html` 開頭在繪製前設 `<html data-splash="short">`：圓點一開始就全亮（全部亮起時的樣子，年代主題照樣換色），文字不做進場，工作完成就整片淡出 0.5s，不補點、不停留、沒有最少顯示時間、不開洞。`prefers-reduced-motion` 的人不走短版，維持上一條的行為。
 - Google Fonts 改為 preload 後再套用，不擋首次繪製。
 
 ### 7.5 地區標籤 RegionTag（原海報區 RegionHero）

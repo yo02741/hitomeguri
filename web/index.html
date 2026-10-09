@@ -15,6 +15,11 @@
         var t = new URLSearchParams(location.search).get('theme') || localStorage.getItem('hitomeguri:theme')
         if (/^(edo|meiji|taisho|showa|heisei)$/.test(t || '')) document.documentElement.dataset.theme = t
       } catch (e) {}
+      // 開場畫面（DESIGN.md §7.0）：看過完整版的人只淡出；減少動態的人維持原樣（web/src/services/splash.ts）
+      try {
+        if (localStorage.getItem('hitomeguri:splash-seen') && !matchMedia('(prefers-reduced-motion: reduce)').matches)
+          document.documentElement.dataset.splash = 'short'
+      } catch (e) {}
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -150,6 +155,29 @@
       @keyframes splash-in {
         from { opacity: 0; transform: translateY(6px); }
         to { opacity: 1; transform: none; }
+      }
+      /* 回訪（短版）：不播進場，47 縣圓點一開始就全亮（全部亮起時的樣子），結束時整片淡出約 0.5 秒。
+       * 圓點的選擇器多寫 .mark .dots，才蓋得過年代主題「未亮圓點」的顏色（下方年代主題的 style） */
+      html[data-splash="short"] #splash {
+        -webkit-mask-image: none;
+        mask-image: none;
+        transition: opacity 0.5s ease;
+      }
+      html[data-splash="short"] #splash .mark .dots .dot {
+        fill: var(--c);
+        transform: scale(1.3);
+        animation: none;
+        transition: none;
+      }
+      html[data-splash="short"] #splash .words,
+      html[data-splash="short"] #splash .dots {
+        animation: none;
+        transition: none;
+      }
+      html[data-splash="short"] #splash.is-done .words,
+      html[data-splash="short"] #splash.is-done .dots {
+        opacity: 1;
+        transform: none;
       }
       @media (prefers-reduced-motion: reduce) {
         #splash { -webkit-mask-image: none; mask-image: none; transition: opacity 0.3s ease; }

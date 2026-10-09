@@ -2,6 +2,8 @@
 // 啟動時各模組用 trackSplash() 登記要等的工作，main.ts 掛載完呼叫 sealSplash()；
 // 進度以 47 都道府縣的圓點表示：走到哪一縣就亮成該縣的地區色，一次亮一顆，不跳著亮。
 // 全部完成後圓點走滿一圈，從圓心開洞露出畫面並移除。最少顯示 MIN_MS 避免一閃而過，最多等 MAX_MS。
+// 看過完整版的人（SEEN_KEY）是短版：index.html 開頭設 <html data-splash="short">，圓點一開始就全亮，
+// 工作完成就直接淡出（SHORT_EXIT_MS），不補點、不停留。減少動態的人不走短版，維持原樣。
 
 const MIN_MS = 900
 const MAX_MS = 10000
@@ -9,11 +11,14 @@ const FONT_MAX_MS = 4000
 const BOOT = 30 // JS 接手前 CSS 動畫走到的進度（%）
 const STEP_MS = 18 // 圓點一顆一顆亮的間隔
 const EXIT_MS = 1100 // index.html 裡結束動畫最長的那段
+const SHORT_EXIT_MS = 500 // 短版的淡出（index.html 的 html[data-splash="short"]）
+const SEEN_KEY = 'hitomeguri:splash-seen'
 
 const started = performance.now()
 const el = typeof document !== 'undefined' ? document.getElementById('splash') : null
 const dots = el ? Array.from(el.querySelectorAll<SVGElement>('.dot')) : []
 const reduced = typeof matchMedia !== 'undefined' && matchMedia('(prefers-reduced-motion: reduce)').matches
+const short = !reduced && typeof document !== 'undefined' && document.documentElement.dataset.splash === 'short'
 let total = 0
 let settled = 0
 let sealed = false
@@ -36,6 +41,7 @@ function render() {
   const p = progress()
   el.setAttribute('aria-valuenow', String(Math.round(p)))
   target = Math.max(target, Math.round((p / 100) * dots.length))
+  if (short) return
   if (reduced) {
     while (lit < target) dots[lit++].classList.add('on')
     afterStep()
@@ -70,6 +76,7 @@ function finish() {
   if (finishing || !el) return
   finishing = true
   render()
+  if (short) exit()
 }
 
 // 開場畫面拿掉之後才做的事（例如註冊 service worker，不和首次載入搶頻寬）
@@ -79,15 +86,26 @@ let gone = !el
 function exit() {
   if (finished || !el) return
   finished = true
-  const wait = Math.max(0, MIN_MS - (performance.now() - started)) + 220
+  const wait = short ? 0 : Math.max(0, MIN_MS - (performance.now() - started)) + 220
   setTimeout(() => {
     el.classList.add('is-done')
     setTimeout(() => {
       el.remove()
       gone = true
+      if (short) delete document.documentElement.dataset.splash
+      else markSeen()
       after.splice(0).forEach((fn) => fn())
-    }, EXIT_MS)
+    }, short ? SHORT_EXIT_MS : EXIT_MS)
   }, wait)
+}
+
+// 完整版播完才記下來：第一次中途關掉的人，下次還是看完整版
+function markSeen() {
+  try {
+    localStorage.setItem(SEEN_KEY, '1')
+  } catch {
+    // 私密瀏覽、封鎖網站資料：下次照樣播完整版
+  }
 }
 
 /** 開場畫面拿掉之後執行（沒有開場畫面或已經拿掉時馬上執行） */
