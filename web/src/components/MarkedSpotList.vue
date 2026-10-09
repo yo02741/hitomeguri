@@ -52,7 +52,7 @@ const emit = defineEmits<{ remove: [row: MarkedSpot]; toggle: [row: MarkedSpot] 
         <span class="ml-auto flex shrink-0 flex-col items-end text-caption text-sub">
           <span lang="ja">{{ regionOf(r.pref)?.name.ja }}</span>
           <template v-if="showDate">
-            <span v-if="r.mark.visited_on" class="font-latin">{{ r.mark.visited_on }}</span>
+            <span v-if="r.mark.visited_on" class="font-num">{{ r.mark.visited_on }}</span>
             <span v-else>沒有日期</span>
           </template>
           <span v-if="r.missing">已不在目錄</span>

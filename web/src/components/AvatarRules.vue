@@ -17,7 +17,7 @@ const prefCount = OUTFITS.filter((o) => o.pref).length
     <section class="flex flex-col gap-2" aria-labelledby="r-outfit">
       <h3 id="r-outfit" class="text-body-sm font-bold text-sub">服裝</h3>
       <ul class="flex flex-col gap-1.5 text-body-sm leading-relaxed">
-        <li>每個縣有 3 件，共 <span class="font-latin">{{ prefCount }}</span> 件；另外不限縣的 <span class="font-latin">{{ generic }}</span> 件。</li>
+        <li>每個縣有 3 件，共 <span class="font-num">{{ prefCount }}</span> 件；另外不限縣的 <span class="font-num">{{ generic }}</span> 件。</li>
         <li>第一次去一個縣，送那個縣的代表單品。</li>
         <li>去過的縣的另外兩件，和不限縣的，用扭蛋抽。</li>
         <li>扭蛋只會抽到還沒有的。去過的縣都抽齊了，去新的縣就會加進新的。</li>
@@ -57,7 +57,7 @@ const prefCount = OUTFITS.filter((o) => o.pref).length
       </ul>
     </section>
 
-    <p class="text-caption text-sub">服裝 <span class="font-latin font-bold text-ink">{{ avatar.ownedIds.size }}</span> / {{ OUTFITS.length }}</p>
+    <p class="text-caption text-sub">服裝 <span class="font-num font-bold text-ink">{{ avatar.ownedIds.size }}</span> / {{ OUTFITS.length }}</p>
   </RulesDialog>
 </template>
 

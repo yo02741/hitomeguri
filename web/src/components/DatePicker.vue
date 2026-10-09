@@ -74,7 +74,7 @@ function onFocusOut(e: FocusEvent) {
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 text-sub" aria-hidden="true">
         <path d="M4 5h16v15H4z M4 10h16 M9 3v4 M15 3v4" />
       </svg>
-      <span v-if="text" class="font-latin whitespace-nowrap text-ink">{{ text }}</span>
+      <span v-if="text" class="font-num whitespace-nowrap text-ink">{{ text }}</span>
       <span v-else class="whitespace-nowrap text-sub">{{ placeholder }}</span>
     </slot>
   </button>

@@ -34,7 +34,7 @@ const hasData = computed(() => new Set(props.available))
         >
           <CollapseChevron :open="isOpen(g.area)" />
           <span lang="ja">{{ g.areaName }}</span>
-          <span v-if="!isOpen(g.area)" class="font-latin font-normal tracking-normal">{{ g.items.length }}</span>
+          <span v-if="!isOpen(g.area)" class="font-num font-normal tracking-normal">{{ g.items.length }}</span>
         </button>
         <RouterLink
           v-for="r in isOpen(g.area) ? g.items : []"

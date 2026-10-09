@@ -130,7 +130,7 @@ function wear() {
       <BackLink to="/log">紀錄</BackLink>
       <div class="flex items-baseline gap-4">
         <h1 class="text-h2 font-black tracking-title">旅人</h1>
-        <p class="text-body-sm text-sub">服裝 <span class="whitespace-nowrap font-latin"><span class="text-body font-bold text-ink">{{ ownedCount }}</span> / {{ OUTFITS.length }}</span></p>
+        <p class="text-body-sm text-sub">服裝 <span class="whitespace-nowrap font-num"><span class="text-body font-bold text-ink">{{ ownedCount }}</span> / {{ OUTFITS.length }}</span></p>
         <button
           v-if="userStore.user"
           type="button"
@@ -171,8 +171,8 @@ function wear() {
             <path d="M14 60 A46 46 0 0 0 106 60Z" class="ball-bottom" />
           </svg>
           <span class="text-body font-bold">{{ avatar.remaining.length ? '抽服裝' : prefLocked ? '去過的縣都抽齊了' : '都抽齊了' }}</span>
-          <span v-if="avatar.remaining.length" class="ml-auto text-body-sm opacity-80">抽獎券 <span class="font-latin text-body font-bold">{{ wallet.left }}</span></span>
-          <span v-else-if="prefLocked" class="ml-auto text-body-sm opacity-80">沒去過的縣 <span class="font-latin text-body font-bold">{{ prefLocked }}</span> 件</span>
+          <span v-if="avatar.remaining.length" class="ml-auto text-body-sm opacity-80">抽獎券 <span class="font-num text-body font-bold">{{ wallet.left }}</span></span>
+          <span v-else-if="prefLocked" class="ml-auto text-body-sm opacity-80">沒去過的縣 <span class="font-num text-body font-bold">{{ prefLocked }}</span> 件</span>
         </button>
       </div>
 

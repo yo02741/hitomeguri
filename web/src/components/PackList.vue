@@ -81,8 +81,8 @@ const visitedCount = computed(() => rows.value.filter((it) => marks.markOf(it.s 
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-(--pack)" aria-hidden="true">
           <path :d="def.icon" />
         </svg>
-        {{ def.label }}<span class="font-latin font-semibold">{{ inPref.length }}</span>
-        <span v-if="userStore.user && visitedCount" class="font-normal text-sub">去過 <span class="font-latin">{{ visitedCount }}</span></span>
+        {{ def.label }}<span class="font-num font-semibold">{{ inPref.length }}</span>
+        <span v-if="userStore.user && visitedCount" class="font-normal text-sub">去過 <span class="font-num">{{ visitedCount }}</span></span>
       </span>
     </div>
 
@@ -123,7 +123,7 @@ const visitedCount = computed(() => rows.value.filter((it) => marks.markOf(it.s 
             @click="explore.toggleCollapsed(`pack:${s.key}`)"
           >
             <CollapseChevron :open="isOpen(s.key)" />
-            <span :lang="pref ? undefined : 'ja'">{{ s.label }}</span><span class="font-latin font-normal tracking-normal">{{ s.rows.length }}</span>
+            <span :lang="pref ? undefined : 'ja'">{{ s.label }}</span><span class="font-num font-normal tracking-normal">{{ s.rows.length }}</span>
           </button>
         </h3>
         <div

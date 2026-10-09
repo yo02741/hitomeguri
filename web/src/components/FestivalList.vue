@@ -70,7 +70,7 @@ function onMap(e: MouseEvent, f: Festival) {
         v-for="m in MONTHS"
         :key="m"
         type="button"
-        class="font-latin text-body-sm disabled:opacity-40 pointer-coarse:px-1.5 pointer-coarse:py-2.5"
+        class="font-num text-body-sm disabled:opacity-40 pointer-coarse:px-1.5 pointer-coarse:py-2.5"
         :class="[
           month === String(m) ? 'border-region-strong font-bold text-ink' : 'border-transparent text-sub hover:text-ink active:text-ink',
           m === thisMonth && month !== String(m) ? 'text-ink' : '',
@@ -86,7 +86,7 @@ function onMap(e: MouseEvent, f: Festival) {
     <!-- 畫面外的月份先不畫（content-visibility），高度先用估計值，畫過一次就記住實際高度 -->
     <div v-for="g in shown" :key="g.key" class="flex flex-col gap-3 cv-auto [contain-intrinsic-size:auto_480px]">
       <h3 class="flex items-baseline gap-1.5 text-caption font-bold tracking-section text-sub">
-        {{ g.label }}<span class="font-latin font-normal tracking-normal">{{ g.items.length }}</span>
+        {{ g.label }}<span class="font-num font-normal tracking-normal">{{ g.items.length }}</span>
       </h3>
       <ul class="grid grid-cols-1 gap-3 md:grid-cols-2">
         <li
@@ -116,7 +116,7 @@ function onMap(e: MouseEvent, f: Festival) {
                   <span v-if="f.name.zh_tw && f.name.zh_tw !== f.name.ja" class="text-body-sm text-sub">{{ f.name.zh_tw }}</span>
                   <!-- 沒有中文名時放英文名（取自 Wikidata） -->
                   <span v-else-if="f.name.en" lang="en" class="text-body-sm text-sub">{{ f.name.en }}</span>
-                  <span v-if="monthsText(f)" class="font-latin text-caption font-bold">{{ monthsText(f) }}</span>
+                  <span v-if="monthsText(f)" class="font-num text-caption font-bold">{{ monthsText(f) }}</span>
                 </span>
               </div>
               <WebSearchLink :name="f.name.ja" :context="prefectureFullName(f.prefecture)" class="-mt-1 -mr-1" />
@@ -139,7 +139,7 @@ function onMap(e: MouseEvent, f: Festival) {
         @click="expanded = new Set(expanded).add(g.key)"
       >
         <CollapseChevron :open="true" />
-        全部 <span class="font-latin">{{ g.items.length }}</span> 項
+        全部 <span class="font-num">{{ g.items.length }}</span> 項
       </button>
     </div>
   </div>

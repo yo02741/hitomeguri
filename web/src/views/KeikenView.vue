@@ -146,8 +146,8 @@ async function render(canvas: HTMLCanvasElement) {
       <ul class="flex flex-wrap gap-x-4 gap-y-1.5 text-body-sm">
         <li v-for="l in KEIKEN_LEVELS" :key="l.level" class="flex items-center gap-1.5">
           <span class="size-3.5 rounded-[3px] border border-on-region/30" :class="`lv-${l.level}`" aria-hidden="true"></span>
-          {{ l.label }}<span class="font-latin text-sub">{{ l.level }}</span>
-          <span class="font-latin font-bold">{{ counts[l.level] }}</span>
+          {{ l.label }}<span class="font-num text-sub">{{ l.level }}</span>
+          <span class="font-num font-bold">{{ counts[l.level] }}</span>
         </li>
       </ul>
     </header>

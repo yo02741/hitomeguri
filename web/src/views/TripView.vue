@@ -535,7 +535,7 @@ async function del() {
             >
               <span class="font-latin text-body-sm font-bold">DAY {{ i + 1 }}</span>
               <span v-if="i === todayIdx" class="text-micro font-bold">今日</span>
-              <span v-else-if="dayDate(trip, i)" class="font-latin text-micro">{{ monthDay(dayDate(trip, i)!) }}</span>
+              <span v-else-if="dayDate(trip, i)" class="font-num text-micro">{{ monthDay(dayDate(trip, i)!) }}</span>
             </button>
             <button
               type="button"
@@ -546,7 +546,7 @@ async function del() {
               @click="selectDay(-1)"
             >
               <span class="text-body-sm font-bold">待排</span>
-              <span class="font-latin text-micro">{{ trip.unscheduled.length }}</span>
+              <span class="font-num text-micro">{{ trip.unscheduled.length }}</span>
             </button>
           </div>
           <button
@@ -588,7 +588,7 @@ async function del() {
               </span>
               <span v-if="i === todayIdx" class="rounded-tag bg-region-strong px-1.5 text-caption font-bold text-white">今日</span>
             </span>
-            <span v-if="dayDate(trip, i)" class="font-latin text-body-sm text-ink">{{ shortDate(dayDate(trip, i)!) }}</span>
+            <span v-if="dayDate(trip, i)" class="font-num text-body-sm text-ink">{{ shortDate(dayDate(trip, i)!) }}</span>
             <span v-if="dayPref(d)" lang="ja" class="text-caption text-sub">{{ regionOf(dayPref(d))?.name.ja }}</span>
           </component>
           <button
@@ -632,7 +632,7 @@ async function del() {
             :aria-label="routes[i]!.length > 1 ? `DAY ${i + 1} Google Maps 路線 第 ${leg.from + 1} 到 ${leg.to + 1} 站` : `DAY ${i + 1} Google Maps 路線`"
             class="flex h-8 items-center gap-1.5 rounded-control border border-line bg-paper px-3 text-body-sm text-ink no-underline hover:bg-surface active:translate-y-px pointer-coarse:h-tap"
           >
-            <template v-if="routes[i]!.length > 1"><span class="font-latin">{{ leg.from + 1 }}–{{ leg.to + 1 }}</span></template>
+            <template v-if="routes[i]!.length > 1"><span class="font-num">{{ leg.from + 1 }}–{{ leg.to + 1 }}</span></template>
             <template v-else>Google Maps 路線</template>
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="text-sub" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" /></svg>
           </a>
@@ -650,7 +650,7 @@ async function del() {
 
       <section v-show="wide || activeDay === -1" class="flex flex-col gap-1.5 lg:border-t lg:border-line lg:pt-4" aria-label="待排">
         <h2 class="flex items-baseline gap-1.5 text-caption font-bold tracking-section text-sub max-lg:sr-only">
-          待排<span class="font-latin font-normal tracking-normal">{{ trip.unscheduled.length }}</span>
+          待排<span class="font-num font-normal tracking-normal">{{ trip.unscheduled.length }}</span>
         </h2>
         <TripStopList
           :stops="trip.unscheduled"

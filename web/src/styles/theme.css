@@ -14,6 +14,9 @@
   --font-sans: "Noto Sans TC", "Noto Sans JP", system-ui, sans-serif;
   --font-ja: "Noto Sans JP", "Noto Sans TC", system-ui, sans-serif;
   --font-latin: "Barlow Semi Condensed", "Noto Sans TC", system-ui, sans-serif;
+  /* 資料數字（距離、日期、清單件數、時間、價格）：令和、江戶、明治、大正同 --font-latin；
+   * 昭和、平成的 --font-latin 是點陣字，只留給看板數字（大計數、DAY、卡號），資料數字改用內文字型（DESIGN.md §4.1） */
+  --font-num: var(--font-latin);
   /* 大標（text-display／h1／h2／h3）：令和同 sans，各年代換成展示字型（§13）；日文、中文分開 */
   --font-display: "Noto Sans JP", "Noto Sans TC", system-ui, sans-serif;
   --font-display-zh: "Noto Sans TC", "Noto Sans JP", system-ui, sans-serif;
@@ -291,7 +294,8 @@
     word-break: auto-phrase;
   }
   /* 數字（日期、距離、件數）等寬，跳動與上下對齊時不晃；字型沒有 tnum 就沒有作用 */
-  .font-latin {
+  .font-latin,
+  .font-num {
     font-variant-numeric: tabular-nums;
   }
   :focus-visible {
@@ -483,6 +487,7 @@
   --font-sans: "Huninn", "Zen Maru Gothic", "Noto Sans TC", system-ui, sans-serif;
   --font-ja: "Zen Maru Gothic", "Huninn", "Noto Sans JP", system-ui, sans-serif;
   --font-latin: "DotGothic16", "Huninn", monospace;
+  --font-num: var(--font-sans); /* Huninn 的數字本來就等寬 */
   --font-display: "Dela Gothic One", "Chiron GoRound TC", sans-serif;
   --font-display-zh: "Chiron GoRound TC", "Dela Gothic One", sans-serif;
   --display-weight: 400;
@@ -518,6 +523,7 @@
   --font-sans: "Chiron GoRound TC", "M PLUS Rounded 1c", "Noto Sans TC", system-ui, sans-serif;
   --font-ja: "M PLUS Rounded 1c", "Chiron GoRound TC", "Noto Sans JP", system-ui, sans-serif;
   --font-latin: "VT323", "M PLUS Rounded 1c", monospace;
+  --font-num: var(--font-sans); /* Chiron GoRound TC 的數字本來就等寬 */
   --font-display: "Mochiy Pop One", "Chiron GoRound TC", sans-serif;
   --font-display-zh: "Chiron GoRound TC", "Mochiy Pop One", sans-serif;
   --display-weight: 400;

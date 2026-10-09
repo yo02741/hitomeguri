@@ -108,7 +108,7 @@ function run(a: MenuAction) {
           @click="run(a)"
         >
           <span class="flex-1">{{ a.label }}</span>
-          <span v-if="a.hint" class="font-latin text-caption text-sub">{{ a.hint }}</span>
+          <span v-if="a.hint" class="font-num text-caption text-sub">{{ a.hint }}</span>
         </button>
       </template>
     </div>

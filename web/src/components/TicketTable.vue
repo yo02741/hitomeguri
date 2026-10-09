@@ -8,7 +8,7 @@ const wallet = useWalletStore()
 <template>
   <table class="w-full text-body-sm">
     <thead class="sr-only"><tr><th>來源</th><th>每個</th><th>你的</th></tr></thead>
-    <tbody class="font-latin">
+    <tbody class="font-num">
       <tr class="border-b border-line-soft"><td class="py-1.5 font-sans">去過的景點</td><td class="text-sub">× {{ TICKET_RULES.spot }}</td><td class="text-right">{{ wallet.breakdown.spots * TICKET_RULES.spot }}</td></tr>
       <tr class="border-b border-line-soft"><td class="py-1.5 font-sans">去過的縣</td><td class="text-sub">× {{ TICKET_RULES.pref }}</td><td class="text-right">{{ wallet.breakdown.prefs * TICKET_RULES.pref }}</td></tr>
       <tr class="border-b border-line-soft"><td class="py-1.5 font-sans">去過的地方（北海道、東北…）</td><td class="text-sub">× {{ TICKET_RULES.area }}</td><td class="text-right">{{ wallet.breakdown.areas * TICKET_RULES.area }}</td></tr>

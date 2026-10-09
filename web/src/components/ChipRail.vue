@@ -44,7 +44,7 @@ const pill = 'flex h-9 items-center gap-1.5 rounded-full px-3.5 text-body-sm fon
           <svg width="16" height="16" viewBox="0 0 24 24" :fill="explore.onlyFavorites ? 'currentColor' : 'none'" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true">
             <path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.9l-5.2 2.7 1-5.8-4.3-4.1 5.9-.9z" />
           </svg>
-          收藏<RollingNumber :value="marks.favorites.length" class="font-latin" />
+          收藏<RollingNumber :value="marks.favorites.length" class="font-num" />
         </span>
       </button>
       <button
@@ -73,7 +73,7 @@ const pill = 'flex h-9 items-center gap-1.5 rounded-full px-3.5 text-body-sm fon
             <path :d="p.icon" />
           </svg>
           {{ p.label }}
-          <RollingNumber v-if="count(p.key) !== null" :value="count(p.key) ?? 0" class="font-latin font-semibold" />
+          <RollingNumber v-if="count(p.key) !== null" :value="count(p.key) ?? 0" class="font-num font-semibold" />
         </span>
       </button>
       <button

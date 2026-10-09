@@ -34,7 +34,7 @@ const gallery = ref<InstanceType<typeof FindGallery> | null>(null)
     <section class="flex flex-col gap-4" aria-labelledby="finds-title">
       <div class="flex flex-wrap items-center gap-x-4 gap-y-2">
         <h2 id="finds-title" class="flex items-baseline gap-1.5 text-h3 font-black tracking-title">
-          截圖<span v-if="finds.finds.length" class="font-latin text-body font-normal tracking-normal text-sub">{{ finds.finds.length }}</span>
+          截圖<span v-if="finds.finds.length" class="font-num text-body font-normal tracking-normal text-sub">{{ finds.finds.length }}</span>
         </h2>
         <button
           v-if="userStore.canSignIn"
@@ -74,7 +74,7 @@ const gallery = ref<InstanceType<typeof FindGallery> | null>(null)
 
     <section v-if="timed.length" class="flex flex-col gap-3" aria-labelledby="season-title">
       <h2 id="season-title" class="flex items-baseline gap-1.5 text-h3 font-black tracking-title">
-        季節<span class="font-latin text-body font-normal tracking-normal text-sub">{{ timed.length }}</span>
+        季節<span class="font-num text-body font-normal tracking-normal text-sub">{{ timed.length }}</span>
       </h2>
       <TimedList :items="timed" detailed />
     </section>

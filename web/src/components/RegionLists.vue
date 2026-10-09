@@ -119,7 +119,7 @@ function hidePhoto(e: Event) {
             @click="explore.toggleCollapsed(`cat:${g.key}`)"
           >
             <CollapseChevron :open="isOpen(g.key)" />
-            {{ g.label }}<span class="font-latin font-normal tracking-normal">{{ g.rows.length }}</span>
+            {{ g.label }}<span class="font-num font-normal tracking-normal">{{ g.rows.length }}</span>
           </button>
         </h3>
         <div

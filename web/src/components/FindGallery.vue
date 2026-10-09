@@ -162,7 +162,7 @@ defineExpose({ add })
             <button type="button" class="grid size-9 place-items-center rounded-control text-sub hover:bg-surface hover:text-ink active:not-disabled:translate-y-px pointer-coarse:size-tap" aria-label="上一張" @click="step(-1)">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7" /></svg>
             </button>
-            <span class="font-latin text-body-sm text-sub">{{ (viewing ?? 0) + 1 }} / {{ finds.length }}</span>
+            <span class="font-num text-body-sm text-sub">{{ (viewing ?? 0) + 1 }} / {{ finds.length }}</span>
             <button type="button" class="grid size-9 place-items-center rounded-control text-sub hover:bg-surface hover:text-ink active:not-disabled:translate-y-px pointer-coarse:size-tap" aria-label="下一張" @click="step(1)">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7" /></svg>
             </button>

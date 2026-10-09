@@ -305,7 +305,7 @@ function distance(m: number): string {
           <span class="flex flex-wrap items-baseline gap-x-2">
             <span lang="ja">{{ station.name.ja }}</span>
             <span v-if="station.name.kana" lang="ja" class="text-caption text-sub">{{ station.name.kana }}</span>
-            <span class="font-latin text-caption text-sub">{{ distance(station.distance_m) }}</span>
+            <span class="font-num text-caption text-sub">{{ distance(station.distance_m) }}</span>
           </span>
         </div>
         <div v-if="category.length" class="flex border-b border-line-soft py-2.5 text-body-sm">
@@ -349,7 +349,7 @@ function distance(m: number): string {
         :style="{ '--pack': `var(--color-t-${nb.color})` }"
       >
         <h3 class="flex items-baseline gap-1.5 pb-1 text-caption font-bold tracking-section text-sub">
-          附近的{{ nb.label }}<span class="font-latin font-normal tracking-normal">{{ nb.items.length }}</span>
+          附近的{{ nb.label }}<span class="font-num font-normal tracking-normal">{{ nb.items.length }}</span>
         </h3>
         <button
           v-for="it in nb.items"
@@ -361,7 +361,7 @@ function distance(m: number): string {
           <span class="size-2.5 shrink-0 rounded-full bg-(--pack)" aria-hidden="true"></span>
           <span lang="ja" class="min-w-0 truncate text-body-sm font-bold">{{ it.n }}</span>
           <span class="shrink-0 text-caption text-sub">{{ it.group }}</span>
-          <span class="ml-auto shrink-0 font-latin text-caption text-sub">{{ distance(it.d) }}</span>
+          <span class="ml-auto shrink-0 font-num text-caption text-sub">{{ distance(it.d) }}</span>
         </button>
       </section>
 

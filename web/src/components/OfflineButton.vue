@@ -47,7 +47,7 @@ async function run() {
       <path v-else d="M12 4v11M7 10.5l5 5 5-5M5 20h14" />
     </svg>
     <span class="relative">
-      <template v-if="progress">離線用 <span class="font-latin">{{ percent }}%</span></template>
+      <template v-if="progress">離線用 <span class="font-num">{{ percent }}%</span></template>
       <template v-else-if="failed">離線用（部分失敗）</template>
       <template v-else-if="readyAt">已存離線</template>
       <template v-else>離線用</template>

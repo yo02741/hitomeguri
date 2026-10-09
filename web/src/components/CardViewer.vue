@@ -222,7 +222,7 @@ onBeforeUnmount(() => document.removeEventListener('keydown', onKey))
         </div>
         <!-- 控制列：直向排在卡片下面；橫向（手機打橫）排成一欄放在卡片右邊，像切符的副券 -->
         <div class="controls">
-          <p v-if="position" class="font-latin text-body-sm text-white/80" aria-live="polite">{{ position.index + 1 }} / {{ position.total }}</p>
+          <p v-if="position" class="font-num text-body-sm text-white/80" aria-live="polite">{{ position.index + 1 }} / {{ position.total }}</p>
           <!-- 樣式：收集到的幾種之間切換 -->
           <div v-if="variants && variants.length" class="variants flex flex-wrap items-center justify-center gap-1.5" role="group" aria-label="樣式">
             <button
@@ -237,7 +237,7 @@ onBeforeUnmount(() => document.removeEventListener('keydown', onKey))
               {{ v.label }}
               <NewTag v-if="fresh.has(cardKey(card.id, v.key))" class="absolute -top-2 -right-1.5" />
             </button>
-            <span v-if="variantTotal" class="ml-1 font-latin text-caption text-white/70">{{ variants.length }} / {{ variantTotal }}</span>
+            <span v-if="variantTotal" class="ml-1 font-num text-caption text-white/70">{{ variants.length }} / {{ variantTotal }}</span>
           </div>
           <!-- 收集冊的封面：這個景點在收集冊顯示哪一種 -->
           <button
@@ -269,7 +269,7 @@ onBeforeUnmount(() => document.removeEventListener('keydown', onKey))
               @click="drawOneCard"
             >
               {{ missing ? '抽一張' : '已收齊' }}
-              <span v-if="missing" class="font-latin text-caption font-semibold text-sub">券 {{ wallet.left }}</span>
+              <span v-if="missing" class="font-num text-caption font-semibold text-sub">券 {{ wallet.left }}</span>
             </button>
             <!-- 觸控裝置點卡片就會翻面，不另外放「背面」 -->
             <button v-if="!touch" type="button" class="h-10 rounded-full bg-paper px-4 text-body-sm font-bold text-ink active:not-disabled:translate-y-px pointer-coarse:h-tap" @click="flipped = !flipped">

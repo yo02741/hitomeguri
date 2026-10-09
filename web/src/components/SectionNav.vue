@@ -44,7 +44,7 @@ watch(activeTop, async (id) => {
         :aria-current="activeTop === it.id ? 'location' : undefined"
         @click.prevent="emit('go', it.id)"
       >
-        {{ it.label }}<span v-if="it.count" class="font-latin text-caption font-normal text-sub">{{ it.count }}</span>
+        {{ it.label }}<span v-if="it.count" class="font-num text-caption font-normal text-sub">{{ it.count }}</span>
       </a>
       <div v-if="it.children?.length && activeTop === it.id" class="flex flex-col pb-1">
         <a

@@ -154,7 +154,7 @@ function close() {
     <form class="flex max-h-[calc(100dvh-32px)] flex-col" @submit.prevent="save">
       <div class="flex h-14 shrink-0 items-center gap-3 border-b border-line-soft px-5">
         <h2 class="text-title font-black">{{ editing ? '編輯截圖' : '新增截圖' }}</h2>
-        <span v-if="queue.length > 1" class="font-latin text-body-sm text-sub">{{ index + 1 }} / {{ queue.length }}</span>
+        <span v-if="queue.length > 1" class="font-num text-body-sm text-sub">{{ index + 1 }} / {{ queue.length }}</span>
         <button
           type="button"
           class="ml-auto grid size-9 place-items-center rounded-control text-sub hover:bg-surface hover:text-ink active:not-disabled:translate-y-px pointer-coarse:size-tap"

@@ -53,22 +53,22 @@ onMounted(() => {
         <template v-if="done">
           <template v-if="at">
             <dt class="text-sub">日期</dt>
-            <dd class="font-latin">{{ dotDate(at) }}</dd>
+            <dd class="font-num">{{ dotDate(at) }}</dd>
           </template>
         </template>
         <template v-else-if="progress">
           <dt class="text-sub">進度</dt>
-          <dd :class="state?.note ? '' : 'font-latin'">{{ progress }}</dd>
+          <dd :class="state?.note ? '' : 'font-num'">{{ progress }}</dd>
         </template>
         <template v-if="state && state.def.tickets > 0">
           <dt class="text-sub">抽獎券</dt>
-          <dd><span class="font-latin">{{ state.def.tickets }}</span> 張</dd>
+          <dd><span class="font-num">{{ state.def.tickets }}</span> 張</dd>
         </template>
       </dl>
     </div>
 
     <p v-if="done && !at && undated > 0" class="text-body-sm text-sub">
-      沒有日期 <span class="font-latin">{{ undated }}</span> 處
+      沒有日期 <span class="font-num">{{ undated }}</span> 處
       <RouterLink to="/log?fill=1" class="ml-2 font-bold text-ink underline-offset-2 hover:underline" @click="emit('close')">補日期</RouterLink>
     </p>
 
@@ -78,11 +78,11 @@ onMounted(() => {
         <li v-for="c in items.slice(0, MAX)" :key="c.key" class="border-b border-line-soft last:border-b-0">
           <RouterLink :to="c.to" class="flex min-h-11 items-center gap-3 py-1.5 text-body-sm text-ink no-underline hover:text-region-strong active:text-region-strong" @click="emit('close')">
             <span class="line-clamp-2 min-w-0 flex-1 break-words" :lang="c.lang">{{ c.label }}</span>
-            <span v-if="c.date" class="shrink-0 font-latin text-caption text-sub">{{ dotDate(c.date) }}</span>
+            <span v-if="c.date" class="shrink-0 font-num text-caption text-sub">{{ dotDate(c.date) }}</span>
           </RouterLink>
         </li>
       </ul>
-      <p v-if="items.length > MAX" class="text-caption text-sub">還有 <span class="font-latin">{{ items.length - MAX }}</span> {{ UNIT[kind] }}</p>
+      <p v-if="items.length > MAX" class="text-caption text-sub">還有 <span class="font-num">{{ items.length - MAX }}</span> {{ UNIT[kind] }}</p>
     </section>
   </RulesDialog>
 </template>

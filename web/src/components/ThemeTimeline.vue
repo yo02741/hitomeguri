@@ -19,7 +19,7 @@ onMounted(preloadThemeFonts)
     <div class="flex items-baseline gap-2">
       <span class="mr-auto text-body-sm text-sub">年代</span>
       <span class="text-body-sm font-bold">{{ era.label }}</span>
-      <span class="font-latin text-caption text-sub">{{ era.years }}</span>
+      <span class="font-num text-caption text-sub">{{ era.years }}</span>
     </div>
     <!-- 刻度與名稱對齊把手的中心：左右各留半個把手寬（11px） -->
     <div class="relative h-[52px]">

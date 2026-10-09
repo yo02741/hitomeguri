@@ -95,7 +95,7 @@ const days = computed(() => dayCount(draftStart.value || undefined, (draftEnd.va
     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 text-sub" aria-hidden="true">
       <path d="M4 5h16v15H4z M4 10h16 M9 3v4 M15 3v4" />
     </svg>
-    <span v-if="text" class="font-latin whitespace-nowrap text-ink">{{ text }}</span>
+    <span v-if="text" class="font-num whitespace-nowrap text-ink">{{ text }}</span>
     <span v-else class="whitespace-nowrap text-sub">{{ placeholder }}</span>
   </button>
   <Teleport to="body">
@@ -119,9 +119,9 @@ const days = computed(() => dayCount(draftStart.value || undefined, (draftEnd.va
             <span class="px-1 text-sub" aria-live="polite">
               <template v-if="!draftStart">出發</template>
               <template v-else-if="!draftEnd">
-                <span class="font-latin text-ink">{{ longDate(draftStart).slice(5) }}</span> → 回程
+                <span class="font-num text-ink">{{ longDate(draftStart).slice(5) }}</span> → 回程
               </template>
-              <template v-else><span class="font-latin text-ink">{{ days }}</span> 天</template>
+              <template v-else><span class="font-num text-ink">{{ days }}</span> 天</template>
             </span>
             <button
               v-if="start || draftStart"

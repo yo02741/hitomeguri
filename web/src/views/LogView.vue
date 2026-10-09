@@ -231,8 +231,8 @@ function open(id: string) {
         <div class="flex min-w-0 flex-col gap-0.5">
           <span class="text-title font-black tracking-title">收集冊</span>
           <span class="flex flex-wrap gap-x-3 text-body-sm">
-            <span class="whitespace-nowrap"><span class="font-latin text-body-sm font-semibold">{{ cards.length }}</span> 張</span>
-            <span class="whitespace-nowrap">都道府縣 <span class="font-latin"><span class="text-body-sm font-semibold">{{ prefDone.size }}</span> / 47</span></span>
+            <span class="whitespace-nowrap"><span class="font-num text-body-sm font-semibold">{{ cards.length }}</span> 張</span>
+            <span class="whitespace-nowrap">都道府縣 <span class="font-num"><span class="text-body-sm font-semibold">{{ prefDone.size }}</span> / 47</span></span>
           </span>
         </div>
         <svg class="ml-auto shrink-0 transition-transform group-hover:translate-x-1" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7" /></svg>
@@ -261,7 +261,7 @@ function open(id: string) {
         </span>
         <span class="flex min-w-0 flex-col gap-0.5 max-lg:justify-between">
           <span class="text-title font-black tracking-title max-lg:text-body">旅人</span>
-          <span class="text-body-sm"><span class="max-lg:sr-only">服裝 </span><span class="whitespace-nowrap font-latin"><span class="text-body-sm font-semibold max-lg:text-title max-lg:font-bold">{{ avatar.ownedIds.size }}</span> <span class="max-lg:text-caption max-lg:text-sub">/ {{ OUTFITS.length }}</span></span></span>
+          <span class="text-body-sm"><span class="max-lg:sr-only">服裝 </span><span class="whitespace-nowrap font-num max-lg:font-latin"><span class="text-body-sm font-semibold max-lg:text-title max-lg:font-bold">{{ avatar.ownedIds.size }}</span> <span class="max-lg:text-caption max-lg:text-sub">/ {{ OUTFITS.length }}</span></span></span>
         </span>
         <svg class="ml-auto shrink-0 max-lg:hidden transition-transform group-hover:translate-x-1" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7" /></svg>
       </RouterLink>
@@ -301,9 +301,9 @@ function open(id: string) {
         to="/me"
         class="-mt-3 flex min-h-tap items-center gap-2 rounded-card border border-line bg-paper px-4 text-body-sm text-ink no-underline hover:bg-surface active:not-disabled:translate-y-px lg:hidden"
       >
-        收藏<span class="font-latin font-semibold">{{ marks.favorites.length }}</span>
+        收藏<span class="font-num font-semibold">{{ marks.favorites.length }}</span>
         <span class="text-sub" aria-hidden="true">・</span>
-        清單<span class="font-latin font-semibold">{{ marks.lists.length }}</span>
+        清單<span class="font-num font-semibold">{{ marks.lists.length }}</span>
         <svg class="ml-auto shrink-0 text-sub" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7" /></svg>
       </RouterLink>
       <div class="sticky top-0 z-10 -mx-6 -my-3 border-b border-line bg-paper px-4 py-2 lg:hidden">
@@ -317,7 +317,7 @@ function open(id: string) {
 
       <section id="log-trips" class="flex flex-col gap-3 max-lg:scroll-mt-[4.25rem]" aria-labelledby="trips-title">
         <h2 id="trips-title" class="flex items-baseline gap-1.5 text-h3 font-black tracking-title">
-          旅行<span class="font-latin text-body font-normal tracking-normal text-sub">{{ doneTrips.length }}</span>
+          旅行<span class="font-num text-body font-normal tracking-normal text-sub">{{ doneTrips.length }}</span>
         </h2>
         <ul v-if="doneTrips.length" class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
           <li v-for="t in doneTrips" :key="t.id"><TripCard :trip="t" /></li>
@@ -351,7 +351,7 @@ function open(id: string) {
       <section id="log-visited" class="flex flex-col gap-3 max-lg:scroll-mt-[4.25rem]" aria-labelledby="visited-title">
         <div class="flex flex-wrap items-center gap-x-4 gap-y-2">
           <h2 id="visited-title" class="flex items-baseline gap-1.5 text-h3 font-black tracking-title">
-            去過<span class="font-latin text-body font-normal tracking-normal text-sub">{{ rows.length }}</span>
+            去過<span class="font-num text-body font-normal tracking-normal text-sub">{{ rows.length }}</span>
           </h2>
           <div class="ml-auto flex flex-wrap gap-2">
             <button
@@ -372,7 +372,7 @@ function open(id: string) {
                 :disabled="b.disabled"
                 @click="b.run"
               >
-                {{ b.label }}<span v-if="b.count != null" class="ml-1 font-latin">{{ b.count }}</span>
+                {{ b.label }}<span v-if="b.count != null" class="ml-1 font-num">{{ b.count }}</span>
               </button>
             </template>
             <ExportButtons v-else title="ひとめぐり 去過" :rows="sorted.map(markRow)" />
@@ -398,10 +398,10 @@ function open(id: string) {
               :disabled="b.disabled"
               @click="b.run"
             >
-              {{ b.label }}<span v-if="b.count != null" class="ml-1 font-latin">{{ b.count }}</span>
+              {{ b.label }}<span v-if="b.count != null" class="ml-1 font-num">{{ b.count }}</span>
             </button>
           </template>
-          <span class="shrink-0 px-1 text-body-sm whitespace-nowrap text-sub" aria-live="polite">已選 <span class="font-latin text-ink">{{ selected.size }}</span></span>
+          <span class="shrink-0 px-1 text-body-sm whitespace-nowrap text-sub" aria-live="polite">已選 <span class="font-num text-ink">{{ selected.size }}</span></span>
           <DatePicker
             v-model="batchDate"
             label="去過日期"
@@ -414,7 +414,7 @@ function open(id: string) {
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 text-sub" aria-hidden="true">
                 <path d="M4 5h16v15H4z M4 10h16 M9 3v4 M15 3v4" />
               </svg>
-              <span v-if="text" class="truncate font-latin text-ink">{{ batchDate.replaceAll('-', '/') }}</span>
+              <span v-if="text" class="truncate font-num text-ink">{{ batchDate.replaceAll('-', '/') }}</span>
               <span v-else class="truncate text-sub">日期</span>
             </template>
           </DatePicker>
