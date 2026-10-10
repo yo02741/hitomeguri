@@ -58,10 +58,10 @@ describe('isLandscapeCard', () => {
     expect(isLandscapeCard({ ...wide, image: { url: 'x', aspect: 1.19 } }, v('full@spring'))).toBe(false)
   })
 
-  it('基本卡、季節卡、金箔等不分直橫；沒有寬高時是直卡', () => {
+  it('基本卡、季節卡、墨繪等不分直橫；沒有寬高時是直卡', () => {
     expect(isLandscapeCard(wide, BASE_VARIANT)).toBe(false)
     expect(isLandscapeCard(wide, seasonVariant('winter'))).toBe(false)
-    expect(isLandscapeCard(wide, v('gold@winter'))).toBe(false)
+    expect(isLandscapeCard(wide, v('sumi@winter'))).toBe(false)
     expect(isLandscapeCard(face, v('full'))).toBe(false)
   })
 

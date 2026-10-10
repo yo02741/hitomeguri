@@ -1,21 +1,20 @@
-import type { Rarity } from '../services/card'
-import { drawOne, missingVariants, type Variant } from '../services/cardVariants'
+import { drawSeason, drawSeasonsAcross, missingSeasonCount, missingSeasons, type Variant } from '../services/cardVariants'
 import { useCardsStore } from '../stores/cards'
 import { cardKey, useFreshStore } from '../stores/fresh'
 import { useWalletStore } from '../stores/wallet'
 
 /**
- * 抽景點卡（DESIGN.md §7.19b）：只抽還沒有的樣式，抽到的存起來、標 NEW。
+ * 抽景點卡（DESIGN.md §7.19b）：抽獎券只抽還沒有的季節卡，抽到的存起來、標 NEW。
  * - drawFor：指定的景點抽一張（用一張抽獎券；free=true 是第一次去過的免費抽）
- * - drawAcross：收集冊的十連抽，從還沒收齊的景點裡抽（同一批不重複）
+ * - drawAcross：收集冊的十連抽，從還缺季節的景點裡抽（依缺幾季加權，同一批不重複）
+ * 抽完四季剛好收齊這個景點的全部樣式時，紀念卡（特別全景）也標 NEW。
  */
 export interface DrawTarget {
   spotId: string
-  rarity: Rarity
-  /** 有沒有真的夜景照片（沒有就沒有夜景卡） */
-  night: boolean
   /** 已經有的樣式 key */
   owned: string[]
+  /** 季節以外的樣式（紀念卡除外）都有了：四季收齊就有紀念卡 */
+  othersDone?: boolean
 }
 
 export function useCardDraw() {
@@ -23,47 +22,30 @@ export function useCardDraw() {
   const wallet = useWalletStore()
   const fresh = useFreshStore()
 
-  function record(spotId: string, list: Variant[]) {
-    void cards.add(spotId, list)
-    fresh.add(list.map((v) => cardKey(spotId, v.key)))
+  function record(t: DrawTarget, list: Variant[], owned: Set<string>) {
+    void cards.add(t.spotId, list)
+    const keys = list.map((v) => cardKey(t.spotId, v.key))
+    if (t.othersDone && !owned.has('special') && !missingSeasons(owned).length) keys.push(cardKey(t.spotId, 'special'))
+    fresh.add(keys)
   }
 
   function drawFor(t: DrawTarget, free = false): Variant | null {
-    if (!missingVariants(t.rarity, t.night, t.owned).length) return null
+    if (!missingSeasons(t.owned).length) return null
     if (!free && !wallet.spend(1)) return null
-    const v = drawOne(t.rarity, t.night, t.owned)
-    if (v) record(t.spotId, [v])
+    const v = drawSeason(t.owned)
+    if (v) record(t, [v], new Set([...t.owned, v.key]))
     return v
   }
 
-  /** 還沒收齊的景點裡抽 n 張；回傳 [景點 id, 樣式]。抽獎券不夠或都收齊了回傳空陣列 */
+  /** 還缺季節的景點裡抽 n 張；回傳 [景點, 樣式]。抽獎券不夠或四季都收齊了回傳空陣列 */
   function drawAcross(targets: DrawTarget[], n = 10): Array<[DrawTarget, Variant]> {
-    const owned = new Map(targets.map((t) => [t.spotId, new Set(t.owned)]))
-    const remaining = () => targets.map((t) => [t, missingVariants(t.rarity, t.night, owned.get(t.spotId)!).length] as const).filter(([, k]) => k > 0)
-    const count = Math.min(n, remaining().reduce((s, [, k]) => s + k, 0))
+    const byId = new Map(targets.map((t) => [t.spotId, t]))
+    const count = Math.min(n, missingSeasonCount(targets.map((t) => t.owned)))
     if (!count || !wallet.spend(count)) return []
-    const out: Array<[DrawTarget, Variant]> = []
-    for (let i = 0; i < count; i++) {
-      // 景點依還缺幾種加權
-      const rem = remaining()
-      let r = Math.random() * rem.reduce((s, [, k]) => s + k, 0)
-      let t = rem[rem.length - 1]![0]
-      for (const [x, k] of rem) {
-        r -= k
-        if (r < 0) {
-          t = x
-          break
-        }
-      }
-      const have = owned.get(t.spotId)!
-      const v = drawOne(t.rarity, t.night, have)
-      if (!v) continue
-      have.add(v.key)
-      out.push([t, v])
-    }
-    const bySpot = new Map<string, Variant[]>()
-    for (const [t, v] of out) bySpot.set(t.spotId, [...(bySpot.get(t.spotId) ?? []), v])
-    for (const [id, list] of bySpot) record(id, list)
+    const out = drawSeasonsAcross(new Map(targets.map((t) => [t.spotId, t.owned])), count).map(([id, v]): [DrawTarget, Variant] => [byId.get(id)!, v])
+    const bySpot = new Map<DrawTarget, Variant[]>()
+    for (const [t, v] of out) bySpot.set(t, [...(bySpot.get(t) ?? []), v])
+    for (const [t, list] of bySpot) record(t, list, new Set([...t.owned, ...list.map((v) => v.key)]))
     return out
   }
 

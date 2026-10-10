@@ -87,7 +87,7 @@ export interface CardFace {
   pref: string
   name: { ja: string; kana?: string; romaji?: string; zh?: string }
   image?: CardPhoto
-  /** 季節照片（DESIGN.md §7.19a）：季節卡、全景、金箔、特別全景依抽到的季節換照片。
+  /** 季節照片（DESIGN.md §7.19a）：季節卡依那一季、全景依行程那天的季節換照片，夜景用夜景照片，特別全景用主要照片。
    *  沒有季節照片時是 {}；undefined 表示還不知道（資料還沒載入），這時不先拿基本卡的照片頂替 */
   seasonImages?: Partial<Record<'spring' | 'summer' | 'autumn' | 'winter' | 'night' | 'panorama', CardPhoto>>
   /** 類型（寺院、城…） */

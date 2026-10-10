@@ -3,10 +3,11 @@ import { computed, watch } from 'vue'
 import { packByKey } from '../data/packs'
 import type { MapSpot } from '../services/bundles'
 import { type CardFace, type CastleInfo, cardFromMapSpot, cardNumberFor, rarityLabel, rarityOf, type Rarity } from '../services/card'
-import { allVariants, hasNight, ownedVariants, type Variant } from '../services/cardVariants'
+import { allVariants, hasNight, type Variant } from '../services/cardVariants'
 import { useCardsStore } from '../stores/cards'
 import { useCatalogStore } from '../stores/catalog'
 import type { Mark } from '../stores/marks'
+import { useSpotVariants } from './spotVariants'
 
 /** 收集冊的一張卡（DESIGN.md §7.19） */
 export interface CollectionCard {
@@ -32,6 +33,7 @@ export interface CollectionCard {
 export function useCollection(entries: () => Array<[string, Mark]>, datesOf?: (id: string) => Array<string | null> | undefined) {
   const catalog = useCatalogStore()
   const cardsStore = useCardsStore()
+  const spotVariants = useSpotVariants()
   const prefs = computed(() => [...new Set(entries().map(([, m]) => m.pref))])
   watch(prefs, (ps) => ps.forEach((p) => void catalog.loadMap(p).catch(() => {})), { immediate: true })
   void catalog.loadPack('castle')
@@ -57,7 +59,7 @@ export function useCollection(entries: () => Array<[string, Mark]>, datesOf?: (i
       const dates = datesOf?.(id) ?? [mark.visited_on ?? null]
       const face = cardFromMapSpot(s, mark.pref)
       const night = hasNight(face)
-      const variants = ownedVariants(dates, rarity, night, cardsStore.extraOf(id))
+      const variants = spotVariants.variantsOf(id, night, dates)
       const chosen = cardsStore.covers[id]
       const cover = (chosen && variants.find((v) => v.key === chosen)) || variants.find((v) => v.kind === 'base') || variants[0]!
       return [
@@ -67,7 +69,7 @@ export function useCollection(entries: () => Array<[string, Mark]>, datesOf?: (i
           variants,
           cover,
           coverChosen: Boolean(chosen && cover.key === chosen),
-          variantTotal: allVariants(rarity, night).length,
+          variantTotal: allVariants(night).length,
           label: rarityLabel(s.d, castle),
           number: cardNumberFor(id, catalog.mapSpots[mark.pref], castle, s.d),
           castle: Boolean(castle),

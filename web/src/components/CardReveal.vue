@@ -4,6 +4,7 @@ import { computed, defineAsyncComponent, nextTick, onBeforeUnmount, ref, watch }
 import type { AchvDef } from '../data/achievements'
 import { isLandscapeCard } from '../services/card'
 import { reveal } from '../services/cardReveal'
+import { memorialFoil } from '../services/cardVariants'
 import { ease } from '../services/motion'
 import { useAchievementsStore } from '../stores/achievements'
 import { useMarksStore } from '../stores/marks'
@@ -22,12 +23,10 @@ const loadSeal = () => import('./AchvSeal.vue')
 const reduced = typeof matchMedia !== 'undefined' && matchMedia('(prefers-reduced-motion: reduce)').matches
 const AchvSeal = defineAsyncComponent(loadSeal)
 const r = computed(() => reveal.value)
-// 光的顏色：抽到特別全景是虹、金箔是金，其他照稀有度
+// 光的顏色：世界遺產、國寶的紀念卡（特別全景）是虹，全景・夜景・墨繪・切手・其他紀念卡是地區色，其他照稀有度
 const burstKind = computed(() => {
   const v = r.value?.variant?.kind
-  if (v === 'special') return 'rainbow'
-  if (v === 'gold') return 'gold'
-  if (v === 'silver') return 'silver'
+  if (v === 'special' && memorialFoil(r.value?.face.designation)) return 'rainbow'
   if (v && v !== 'base' && v !== 'season') return 'castle'
   return r.value?.rarity ?? 'normal'
 })
@@ -50,7 +49,7 @@ let intro: Animation[] = []
 let timers: number[] = []
 let leaving = false
 
-const HOLD: Record<string, number> = { rainbow: 2600, gold: 2300, silver: 2300, castle: 2300, normal: 1900 }
+const HOLD: Record<string, number> = { rainbow: 2600, gold: 2300, castle: 2300, normal: 1900 }
 // 有縣的紀念章時多停一下；有成就章時再多停一下
 const STAMP_HOLD = 700
 const SEAL_HOLD = 700
@@ -278,9 +277,6 @@ onBeforeUnmount(() => {
 }
 .burst-castle {
   --ray: color-mix(in oklab, var(--region-accent) 80%, transparent);
-}
-.burst-silver {
-  --ray: color-mix(in oklab, var(--color-silver-1) 85%, transparent);
 }
 .burst-gold {
   --ray: color-mix(in oklab, var(--color-gold-2) 85%, transparent);

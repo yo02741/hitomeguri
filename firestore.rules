@@ -109,15 +109,19 @@ service cloud.firestore {
         }
       }
 
-      // 收集卡抽到的樣式（web/src/stores/cards.ts）：v 是樣式代號（full@autumn、season-spring…），
-      // c 是收集冊的封面（樣式的 key）。目前測試期可以無限抽，正式上線前清空。
+      // 收集卡（web/src/stores/cards.ts）：v 是抽到的季節（season-spring…），
+      // t 是這個景點勾了的任務（night、stamp、ink；只存勾選），c 是收集冊的封面（樣式的 key）。
+      // 目前測試期可以無限抽，正式上線前清空。
       match /cards/{spotId} {
         allow read, delete: if isOwner(uid);
         allow create, update: if isOwner(uid)
           && spotId.size() <= 120
-          && request.resource.data.keys().hasOnly(['v', 'c', 'updated_at'])
+          && request.resource.data.keys().hasOnly(['v', 't', 'c', 'updated_at'])
           && request.resource.data.v is list
           && request.resource.data.v.size() <= 40
+          && (!('t' in request.resource.data) || (request.resource.data.t is list
+            && request.resource.data.t.size() <= 3
+            && request.resource.data.t.hasOnly(['night', 'stamp', 'ink'])))
           && (!('c' in request.resource.data) || (request.resource.data.c is string && request.resource.data.c.size() <= 40));
       }
 

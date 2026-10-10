@@ -5,7 +5,7 @@ import { useTilt } from '../composables/tilt'
 import { NATIONAL_PATTERN, PATTERN_BY_AREA } from '../data/patterns'
 import { regionOf } from '../data/regions'
 import { type CardFace, cardPhoto, cardPhotoSources, isFullArt, isLandscapeCard, type PhotoFailures, photoTry, type Rarity } from '../services/card'
-import { BASE_VARIANT, type Variant } from '../services/cardVariants'
+import { BASE_VARIANT, memorialFoil, type Variant } from '../services/cardVariants'
 import RegionMotif from './RegionMotif.vue'
 
 // 景點收集卡（DESIGN.md §7.19）：卡面是景點的照片與名稱區塊，框是地區色＋紙紋；
@@ -25,7 +25,7 @@ const props = withDefaults(
     flipped?: boolean
     /** 放大檢視時由外層傳入（手機傾斜也在外層啟動） */
     tilt?: ReturnType<typeof useTilt>
-    /** 樣式（DESIGN.md §7.19a）：基本、季節、全景、金箔、特別全景 */
+    /** 樣式（DESIGN.md §7.19a）：基本、季節、全景、夜景、墨繪、切手、特別全景（紀念卡） */
     variant?: Variant
     /** 收集冊的格子：靜止時畫成平面（不建 3D、反光、亮片的層），滑鼠移上去或聚焦時才換成完整的卡 */
     lite?: boolean
@@ -35,7 +35,6 @@ const props = withDefaults(
   { label: '', size: 'sm', number: '', visitedOn: null, visited: false, flipped: false, tilt: undefined, variant: () => BASE_VARIANT, lite: false, sideways: false },
 )
 
-const SPARKLE: Record<string, string> = { gold: 'sparkle-gold', silver: 'sparkle-silver', night: 'sparkle-night' }
 const own = useTilt(props.size === 'lg' ? 16 : 12)
 const t = computed(() => props.tilt ?? own)
 // 橫卡（DESIGN.md §7.19a）：全景卡的照片是橫的時卡片 7:5。直橫看資料裡的寬高比，照片載入前就決定
@@ -114,14 +113,32 @@ const nameSize = computed(() => {
 // 箔片的樣式（DESIGN.md §7.19）：世界遺產＝虹＋亮片、國寶＝金＋亮片、
 // 特別史跡・特別名勝＝反向閃卡（照片窗外的卡框發亮，照片不加箔片）、名城＝地方紋樣
 const foil = computed(() => {
-  // 全景卡、金箔卡的光澤蓋滿整張卡，照片窗不另外加
+  // 基本卡、季節卡以外（全景・特別全景的光澤蓋滿整張卡，夜景・墨繪・切手）照片窗不另外加
   if (props.variant.kind !== 'base' && props.variant.kind !== 'season') return 'none'
   if (props.rarity === 'rainbow') return 'cosmos'
   if (props.rarity === 'castle') return 'pattern'
   if (props.rarity === 'gold') return props.card.designation === '國寶' ? 'gold' : 'reverse'
   return 'none'
 })
-const dateText = computed(() => (props.visitedOn ? props.visitedOn.replaceAll('-', '.') : ''))
+const dot = (d: string) => d.replaceAll('-', '.')
+const dateText = computed(() => (props.visitedOn ? dot(props.visitedOn) : ''))
+// 紀念卡（特別全景）：卡面印上自己的紀錄。世界遺產、國寶再加整張的虹色箔片與亮片
+const record = computed(() => (props.variant.kind === 'special' ? props.variant.record : undefined))
+const memorialShine = computed(() => props.variant.kind === 'special' && memorialFoil(props.card.designation))
+const laterText = computed(() => {
+  const later = record.value?.dates.slice(1) ?? []
+  return later.length > 2 ? `${later.length} 次` : later.map(dot).join('・')
+})
+const STAMP_LABEL: Record<string, string> = {
+  'season-spring': '春景',
+  'season-summer': '夏景',
+  'season-autumn': '秋景',
+  'season-winter': '冬景',
+  night: '夜景',
+  sumi: '墨繪',
+  stamp: '切手',
+  full: '全景',
+}
 const sizeClass = { sm: 'text-[10px]', lg: 'text-[16px]', fluid: 'fluid' }
 </script>
 
@@ -188,7 +205,7 @@ const sizeClass = { sm: 'text-[10px]', lg: 'text-[16px]', fluid: 'fluid' }
           <div v-if="foil === 'cosmos' || foil === 'gold'" class="sparkle pointer-events-none absolute inset-0" :class="`sparkle-${foil}`"></div>
           <!-- 去過的印章 -->
           <span
-            v-if="visited"
+            v-if="visited && !record"
             class="stamp absolute right-[0.5em] bottom-[0.5em] grid size-[4.4em] place-items-center rounded-full border-[0.18em] border-visited bg-paper text-center text-visited"
           >
             <span class="flex flex-col items-center leading-tight">
@@ -206,6 +223,43 @@ const sizeClass = { sm: 'text-[10px]', lg: 'text-[16px]', fluid: 'fluid' }
           <span v-if="card.name.romaji" class="truncate font-latin text-[0.8em] font-semibold tracking-romaji uppercase">{{ card.name.romaji }}</span>
         </div>
 
+        <!-- 紀念卡：去過的日期、行程、收齊的各樣式小章 -->
+        <div v-if="record" class="record relative flex shrink-0 flex-col gap-[0.4em] rounded-[0.5em] bg-paper/90 px-[0.7em] py-[0.55em] text-ink">
+          <p v-if="record.dates.length" class="flex items-baseline gap-[0.5em] text-[0.72em] leading-none whitespace-nowrap">
+            <span class="font-bold text-sub">初訪</span>
+            <span class="font-num font-semibold">{{ dot(record.dates[0]!) }}</span>
+            <template v-if="laterText">
+              <span class="ml-auto font-bold text-sub">再訪</span>
+              <span class="truncate font-num font-semibold">{{ laterText }}</span>
+            </template>
+          </p>
+          <p v-if="record.trip" class="flex items-baseline gap-[0.5em] text-[0.72em] leading-none">
+            <span class="shrink-0 font-bold text-sub">行程</span>
+            <span class="truncate font-bold">{{ record.trip }}</span>
+          </p>
+          <ul class="flex flex-wrap gap-[0.25em]" aria-label="收齊的樣式">
+            <li v-for="k in record.stamps" :key="k" class="mstamp grid size-[1.75em] place-items-center rounded-full border-[0.1em] border-visited text-visited" :aria-label="STAMP_LABEL[k]">
+              <svg viewBox="0 0 24 24" class="size-[1.05em]" aria-hidden="true">
+                <g v-if="k === 'season-spring'" fill="currentColor">
+                  <ellipse v-for="i in 5" :key="i" cx="12" cy="6.6" rx="3.1" ry="4.6" :transform="`rotate(${i * 72} 12 12)`" />
+                </g>
+                <g v-else-if="k === 'season-summer'" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                  <line v-for="i in 8" :key="i" x1="12" y1="7" x2="12" y2="2.5" :transform="`rotate(${i * 45} 12 12)`" />
+                  <circle cx="12" cy="12" r="2" fill="currentColor" stroke="none" />
+                </g>
+                <polygon v-else-if="k === 'season-autumn'" fill="currentColor" points="12,2 14,8 20,6.5 16.5,11.5 21,15 15,15 14,21 12,17 10,21 9,15 3,15 7.5,11.5 4,6.5 10,8" />
+                <g v-else-if="k === 'season-winter'" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                  <line x1="12" y1="3" x2="12" y2="21" /><line x1="4.2" y1="7.5" x2="19.8" y2="16.5" /><line x1="19.8" y1="7.5" x2="4.2" y2="16.5" />
+                </g>
+                <path v-else-if="k === 'night'" fill="currentColor" d="M15.5 3.2A9 9 0 1 0 20.8 16 7.2 7.2 0 0 1 15.5 3.2z" />
+                <path v-else-if="k === 'sumi'" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" d="M17.5 6.2A8 8 0 1 0 19.6 14" />
+                <path v-else-if="k === 'stamp'" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" d="M5 5h14M5 10h14M12 10v10" />
+                <path v-else fill="currentColor" d="M2 19l6.5-10 4 5.5 3-3.5L22 19z" />
+              </svg>
+            </li>
+          </ul>
+        </div>
+
         <div class="card-foot relative flex h-[1.9em] shrink-0 items-center gap-[0.5em] border-t border-on-region/25 px-[0.2em] text-[0.72em] leading-none">
           <span>{{ card.kind }}</span>
           <span v-if="variant.kind !== 'base'" class="variant-chip ml-auto rounded-full px-[0.6em] py-[0.2em] font-bold">{{ variant.label }}</span>
@@ -218,13 +272,13 @@ const sizeClass = { sm: 'text-[10px]', lg: 'text-[16px]', fluid: 'fluid' }
           <circle cx="30" cy="30" r="20" fill="none" stroke="currentColor" stroke-width="1.2" />
           <path d="M58 18q6-5 12 0t12 0 12 0M58 30q6-5 12 0t12 0 12 0M58 42q6-5 12 0t12 0 12 0" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" />
         </svg>
-        <!-- 全景、夜景、金箔、銀箔、特別全景：整張卡的蝕刻紋、虹、亮片 -->
-        <div v-if="['full', 'gold', 'silver', 'special'].includes(variant.kind)" class="etched pointer-events-none absolute inset-0"></div>
-        <div v-if="variant.kind === 'special'" class="foil whole pointer-events-none absolute inset-0"></div>
+        <!-- 全景、特別全景：整張卡的蝕刻紋；世界遺產、國寶的特別全景加虹與亮片；夜景是星點 -->
+        <div v-if="variant.kind === 'full' || variant.kind === 'special'" class="etched pointer-events-none absolute inset-0"></div>
+        <div v-if="memorialShine" class="foil whole pointer-events-none absolute inset-0"></div>
         <div
-          v-if="['special', 'gold', 'silver', 'night'].includes(variant.kind)"
+          v-if="memorialShine || variant.kind === 'night'"
           class="sparkle whole pointer-events-none absolute inset-0"
-          :class="SPARKLE[variant.kind] ?? 'sparkle-cosmos'"
+          :class="variant.kind === 'night' ? 'sparkle-night' : 'sparkle-cosmos'"
         ></div>
         <div class="glare pointer-events-none absolute inset-0"></div>
       </div>
@@ -399,9 +453,6 @@ const sizeClass = { sm: 'text-[10px]', lg: 'text-[16px]', fluid: 'fluid' }
 .sparkle-cosmos {
   --spark: var(--color-glare);
 }
-.sparkle-silver {
-  --spark: var(--color-silver-3);
-}
 /* 夜景：星點，不隨光源移動，傾斜時一閃一閃 */
 .sparkle-night {
   --spark: var(--color-night-star);
@@ -518,56 +569,11 @@ const sizeClass = { sm: 'text-[10px]', lg: 'text-[16px]', fluid: 'fluid' }
 .full-art .stamp {
   bottom: 34%;
 }
-.full-art .card-foot,
-.v-gold .card-foot {
+.full-art .card-foot {
   border-color: color-mix(in oklab, currentColor 35%, transparent);
 }
 
-/* 金箔卡：整張金框，照片窗有金邊 */
-.v-gold .face:not(.back) {
-  background: linear-gradient(
-    135deg,
-    var(--color-gold-2) 0%,
-    var(--color-gold-1) 35%,
-    var(--color-gold-3) 50%,
-    var(--color-gold-1) 65%,
-    var(--color-gold-2) 100%
-  );
-  color: var(--color-shade);
-}
-.v-gold .window {
-  box-shadow: 0 0 0 0.2em var(--color-gold-2);
-}
-.v-gold .variant-chip {
-  background: var(--color-shade);
-  color: var(--color-gold-3);
-}
 
-/* 銀箔卡：整張銀框 */
-.v-silver .face:not(.back) {
-  background: linear-gradient(
-    135deg,
-    var(--color-silver-2) 0%,
-    var(--color-silver-1) 35%,
-    var(--color-silver-3) 50%,
-    var(--color-silver-1) 65%,
-    var(--color-silver-2) 100%
-  );
-  color: var(--color-shade);
-}
-.v-silver .window {
-  box-shadow: 0 0 0 0.2em var(--color-silver-2);
-}
-.v-silver .card-foot {
-  border-color: color-mix(in oklab, currentColor 35%, transparent);
-}
-.v-silver .variant-chip {
-  background: var(--color-shade);
-  color: var(--color-silver-3);
-}
-.v-silver .etched {
-  mix-blend-mode: soft-light;
-}
 
 /* 夜景卡：夜晚的照片鋪滿，深藍卡面與暗面（只有真的夜景照片的景點才有這種卡） */
 .v-night .face:not(.back) {
@@ -667,7 +673,7 @@ const sizeClass = { sm: 'text-[10px]', lg: 'text-[16px]', fluid: 'fluid' }
   mix-blend-mode: multiply;
 }
 
-/* 蝕刻紋：細密的斜線，跟著光源亮起來（全景、金箔、銀箔、特別全景） */
+/* 蝕刻紋：細密的斜線，跟著光源亮起來（全景、特別全景） */
 .etched {
   border-radius: inherit;
   mix-blend-mode: overlay;
@@ -685,10 +691,7 @@ const sizeClass = { sm: 'text-[10px]', lg: 'text-[16px]', fluid: 'fluid' }
   mask-image: radial-gradient(farthest-corner circle at var(--mx) var(--my), #000 0%, transparent 65%);
   opacity: calc(0.15 + var(--o) * 0.75);
 }
-.v-gold .etched {
-  mix-blend-mode: soft-light;
-}
-/* 特別全景：虹色鋪滿整張卡 */
+/* 世界遺產、國寶的紀念卡（特別全景）：虹色鋪滿整張卡 */
 .foil.whole {
   background-image: repeating-linear-gradient(
     115deg,

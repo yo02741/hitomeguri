@@ -6,15 +6,15 @@ import TicketTable from './TicketTable.vue'
 // 收集冊的規則（DESIGN.md §7.19a、§7.19b）：收集冊「規則」打開的說明書。寫事實、條列，附上自己現在的抽獎券明細。
 const emit = defineEmits<{ close: [] }>()
 
+// 每一種怎麼拿到
 const KINDS: Array<[string, string]> = [
   ['基本', '去過就有'],
-  ['春景・夏景・秋景・冬景', '去的那天是哪一季就有那一季；也抽得到'],
-  ['全景', '照片鋪滿整張卡'],
-  ['夜景', '夜晚的照片；找得到夜景照片的景點才有'],
-  ['墨繪', '照片變水墨，和紙卡面'],
-  ['切手', '郵票：齒孔、消印'],
-  ['銀箔・金箔', '整張銀框、金框'],
-  ['特別全景', '世界遺產、國寶、特別史跡、特別名勝才有'],
+  ['春景・夏景・秋景・冬景', '去的那天是哪一季就有那一季；沒去過的季節用抽獎券抽'],
+  ['全景', '排進行程、行程結束就有。照片鋪滿整張卡'],
+  ['夜景', '勾「晚上去過」。找得到夜景照片的景點才有'],
+  ['墨繪', '寺院、神社勾「拿到御朱印」，其他景點勾「寫了旅日記」'],
+  ['切手', '勾「蓋了紀念章或寄了明信片」'],
+  ['特別全景', '這個景點的其他樣式都有了就有。印上去過的日期、行程與各樣式的章；世界遺產、國寶加虹色箔片。不能抽'],
 ]
 </script>
 
@@ -38,16 +38,16 @@ const KINDS: Array<[string, string]> = [
           <dd>{{ d }}</dd>
         </template>
       </dl>
-      <p class="text-caption text-sub">每個景點 10 種；有夜景照片的多夜景，世界遺產、國寶、特別史跡、特別名勝多特別全景。</p>
+      <p class="text-caption text-sub">每個景點 9 種，有夜景照片的 10 種。要勾的在放大檢視卡片下面的「這裡做過的事」；取消勾選、行程刪掉，那一種卡和特別全景也會拿掉。</p>
     </section>
 
     <section class="flex flex-col gap-2" aria-labelledby="c-draw">
       <h3 id="c-draw" class="text-body-sm font-bold text-sub">抽卡</h3>
       <ul class="flex flex-col gap-1.5 text-body-sm leading-relaxed">
-        <li>每個景點第一次去過，送一次免費抽（在景點按「去過」，或打開行程的卡包；只送一次）。</li>
-        <li>放大檢視的「抽一張」：用 1 張抽獎券，抽這個景點。</li>
-        <li>上方的「十連抽」：用 10 張，從還沒收齊的景點裡抽 10 種。不用一直去同一個地方。</li>
-        <li>只會抽到還沒有的樣式。稀有的比較晚出來，抽到最後一定都會有；收齊了按鈕寫「已收齊」。</li>
+        <li>每個景點第一次去過，送一次免費抽季節卡（在景點按「去過」，或打開行程的卡包；只送一次）。</li>
+        <li>抽獎券只抽季節卡：只會抽到這個景點還沒有的季節。</li>
+        <li>放大檢視的「抽一張」：用 1 張抽獎券，抽這個景點。四季都有了按鈕寫「四季收齊」。</li>
+        <li>上方的「十連抽」：用 10 張，從去過的景點裡抽 10 張。不用一直去同一個地方；全部的景點四季都有了寫「已收齊」。</li>
       </ul>
     </section>
 
@@ -62,7 +62,7 @@ const KINDS: Array<[string, string]> = [
     <section class="flex flex-col gap-2" aria-labelledby="c-book">
       <h3 id="c-book" class="text-body-sm font-bold text-sub">收集冊</h3>
       <dl class="grid grid-cols-[3rem_1fr] items-center gap-x-3 gap-y-2 text-body-sm">
-        <dt class="font-num text-caption text-sub">3 / 10</dt>
+        <dt class="font-num text-caption text-sub">3 / 9</dt>
         <dd>這個景點收集到幾種</dd>
         <dt><NewTag /></dt>
         <dd>新拿到、還沒看過的樣式</dd>
