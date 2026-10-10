@@ -158,12 +158,12 @@ export function cardPhoto(face: Pick<CardFace, 'image' | 'seasonImages'>, varian
 export const LANDSCAPE_ASPECT = 1.2
 
 /**
- * 橫卡（DESIGN.md §7.19a）：全景卡（全景、特別全景、夜景）的照片是橫的時，卡片本身做成 7:5 的橫卡。
- * 直的、接近正方形、還不知道寬高的照片維持 5:7 直卡；基本卡、季節卡（4:3 照片窗）不變。
+ * 橫卡（DESIGN.md §7.19a）：只有全景卡的照片是橫的時，卡片本身做成 7:5 的橫卡（使用者決定）。
+ * 直的、接近正方形、還不知道寬高的照片維持 5:7 直卡；夜景、特別全景（紀念卡）與有照片窗的樣式一律直卡。
  * 寬高在資料裡（不等照片載入），顯示之後不會再從直變橫。
  */
 export function isLandscapeCard(face: Pick<CardFace, 'image' | 'seasonImages'>, variant: Pick<Variant, 'kind' | 'photo'>): boolean {
-  if (!isFullArt(variant)) return false
+  if (variant.kind !== 'full') return false
   const a = cardPhoto(face, variant)?.aspect
   return a !== undefined && a >= LANDSCAPE_ASPECT
 }
