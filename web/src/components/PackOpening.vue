@@ -4,11 +4,10 @@ import { computed, onBeforeUnmount, onMounted, ref, watch } from 'vue'
 import { useCardDraw } from '../composables/cardDraw'
 import { useModal } from '../composables/modal'
 import { type CollectionCard, useCollection } from '../composables/collection'
-import { useVisitedEntries } from '../composables/visited'
+import { useSpotVariants } from '../composables/spotVariants'
 import { isLandscapeCard, type Rarity } from '../services/card'
-import { drawVariants, hasNight, ownedVariants, type Variant } from '../services/cardVariants'
+import { fullVariant, hasNight, memorialFoil, type Variant } from '../services/cardVariants'
 import { dayDate, type Trip } from '../services/trip'
-import { useCardsStore } from '../stores/cards'
 import { useWalletStore } from '../stores/wallet'
 import type { Mark } from '../stores/marks'
 import AchvRow from './AchvRow.vue'
@@ -35,27 +34,26 @@ const tripDates = computed(() => {
 })
 const { cards } = useCollection(() => entries.value, (id) => tripDates.value.get(id))
 const RANK: Record<Rarity, number> = { normal: 0, castle: 1, gold: 2, rainbow: 3 }
-// 卡包（DESIGN.md §7.19b）：這趟去過的景點，第一次去過的各送一次免費抽（每個景點只送一次，
-// 重開卡包、取消再勾去過都不會再送）；已經送過的顯示這趟的季節卡
-const cardsStore = useCardsStore()
+// 卡包（DESIGN.md §7.19b）：這趟去過的景點各一張全景卡（行程結束就有全景）。
+// 第一次去過的景點各送一次免費抽（只抽季節卡；每個景點只送一次，重開卡包、取消再勾去過都不會再送），抽到的另外一張放進卡包
 const wallet = useWalletStore()
 const cardDraw = useCardDraw()
-const { datesById } = useVisitedEntries()
-const redraws = ref(new Map<string, Variant>())
-type DeckCard = CollectionCard & { key: string }
-/** 這趟拿到的：這趟日期的季節卡（沒有日期是基本卡） */
-const tripCard = (c: DeckCard): Variant =>
-  (tripDates.value.get(c.face.id) ?? [null]).flatMap((d) => drawVariants(d)).sort((a, b) => b.rank - a.rank)[0]!
-/** 這張卡在卡包裡的樣子：這次抽到的，沒有就是這趟的季節卡 */
-const shown = (c: DeckCard): Variant => redraws.value.get(c.key) ?? tripCard(c)
-// 同一個景點只算一張；稀有度、分數低的先翻
+const spotVariants = useSpotVariants()
+const gifts = ref(new Map<string, Variant>())
+type DeckCard = CollectionCard & { key: string; variant: Variant }
+// 同一個景點的全景卡只算一張；加上免費抽到的季節卡；樣式、稀有度、分數低的先翻
 const deck = computed<DeckCard[]>(() => {
   const seen = new Set<string>()
-  return cards.value
+  const trip = cards.value
     .filter((c) => !seen.has(c.face.id) && seen.add(c.face.id))
-    .map((c) => ({ ...c, key: c.face.id }))
-    .sort((a, b) => shown(a).rank - shown(b).rank || RANK[a.rarity] - RANK[b.rarity] || a.score - b.score)
+    .map((c): DeckCard => ({ ...c, key: c.face.id, variant: fullVariant(tripDates.value.get(c.face.id)?.find(Boolean)) }))
+  const extra = trip.flatMap((c) => {
+    const g = gifts.value.get(c.face.id)
+    return g ? [{ ...c, key: `${c.face.id}:gift`, variant: g }] : []
+  })
+  return [...trip, ...extra].sort((a, b) => a.variant.rank - b.variant.rank || RANK[a.rarity] - RANK[b.rarity] || a.score - b.score)
 })
+const shown = (c: DeckCard): Variant => c.variant
 const title = computed(() => props.trip.name || '未命名行程')
 const mainPref = computed(() => {
   const n = new Map<string, number>()
@@ -70,12 +68,10 @@ const flipped = ref(false)
 const revealed = ref<DeckCard[]>([])
 const current = computed(() => deck.value[index.value] ?? null)
 
-// 翻開時背後的光：特別全景是虹、金箔是金、全景是白光，其他照稀有度
+// 翻開時背後的光：世界遺產、國寶的紀念卡是虹，全景等是淡淡的地區色，其他照稀有度
 function raysKind(c: DeckCard): string {
   const k = shown(c).kind
-  if (k === 'special') return 'rainbow'
-  if (k === 'gold') return 'gold'
-  if (k === 'silver') return 'silver'
+  if (k === 'special' && memorialFoil(c.face.designation)) return 'rainbow'
   if (k !== 'base' && k !== 'season' && c.rarity === 'normal') return 'castle'
   return c.rarity
 }
@@ -90,13 +86,11 @@ function open() {
   const next = new Map<string, Variant>()
   for (const c of deck.value) {
     if (!wallet.claimFree(c.face.id)) continue
-    const dates = [...(datesById.value.get(c.face.id) ?? []), ...(tripDates.value.get(c.face.id) ?? [])]
-    const night = hasNight(c.face)
-    const owned = ownedVariants(dates, c.rarity, night, cardsStore.extraOf(c.face.id)).map((v) => v.key)
-    const v = cardDraw.drawFor({ spotId: c.face.id, rarity: c.rarity, night, owned }, true)
-    if (v) next.set(c.key, v)
+    const owned = spotVariants.variantsOf(c.face.id, hasNight(c.face), [...(spotVariants.datesById.value.get(c.face.id) ?? []), ...(tripDates.value.get(c.face.id) ?? [])]).map((v) => v.key)
+    const v = cardDraw.drawFor({ spotId: c.face.id, owned }, true)
+    if (v) next.set(c.face.id, v)
   }
-  redraws.value = next
+  gifts.value = next
   stage.value = 'opening'
   openTimer = window.setTimeout(toDealing, 900)
 }
@@ -391,9 +385,6 @@ function markOpened(tripId: string) {
 }
 .rays-castle {
   --ray: color-mix(in oklab, var(--region-accent) 80%, transparent);
-}
-.rays-silver {
-  --ray: color-mix(in oklab, var(--color-silver-1) 85%, transparent);
 }
 .rays-gold {
   --ray: color-mix(in oklab, var(--color-gold-2) 85%, transparent);

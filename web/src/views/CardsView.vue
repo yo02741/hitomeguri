@@ -16,7 +16,7 @@ import { useScrollSpy } from '../composables/scrollSpy'
 import { useVisitedEntries } from '../composables/visited'
 import { type Region, regions } from '../data/regions'
 import { cardFromSpot } from '../services/card'
-import { hasNight } from '../services/cardVariants'
+import { missingSeasonCount } from '../services/cardVariants'
 import { useCatalogStore } from '../stores/catalog'
 import { useFreshStore } from '../stores/fresh'
 import { TICKET_RULES, useWalletStore } from '../stores/wallet'
@@ -34,24 +34,26 @@ const { entries, datesById } = useVisitedEntries()
 const { cards, pendingByPref, castleTotal, castleDone, prefDone } = useCollection(() => entries.value, (id) => datesById.value.get(id))
 
 // 篩選：依屬性（一張卡可以同時是名城和國寶）
-type FilterKey = 'all' | 'heritage' | 'castle' | 'treasure' | 'special'
+type FilterKey = 'all' | 'heritage' | 'castle' | 'treasure' | 'variant' | 'memorial'
 const FILTERS: { key: FilterKey; label: string }[] = [
   { key: 'all', label: '全部' },
   { key: 'heritage', label: '世界遺產' },
   { key: 'castle', label: '名城' },
   { key: 'treasure', label: '國寶・特別史跡・特別名勝' },
-  { key: 'special', label: '全景・金箔' },
+  { key: 'variant', label: '全景・夜景・墨繪・切手' },
+  { key: 'memorial', label: '特別全景' },
 ]
 const matches: Record<FilterKey, (e: CollectionCard) => boolean> = {
   all: () => true,
   heritage: (e) => e.face.designation === '世界遺產',
   castle: (e) => e.castle,
   treasure: (e) => Boolean(e.face.designation && e.face.designation !== '世界遺產'),
-  special: (e) => e.variants.some((v) => v.rank >= 2),
+  variant: (e) => e.variants.some((v) => v.rank >= 2),
+  memorial: (e) => e.variants.some((v) => v.kind === 'special'),
 }
 const filter = ref<FilterKey>('all')
-// 卡面：自己選的封面；沒選時是基本卡，只有篩「全景・金箔」時顯示最稀有的那種
-const shownVariant = (e: CollectionCard) => (filter.value === 'special' && !e.coverChosen ? e.variants[0]! : e.cover)
+// 卡面：自己選的封面；沒選時是基本卡，篩「全景・夜景・墨繪・切手」「特別全景」時顯示最稀有的那種
+const shownVariant = (e: CollectionCard) => ((filter.value === 'variant' || filter.value === 'memorial') && !e.coverChosen ? e.variants[0]! : e.cover)
 const counts = computed(() => Object.fromEntries(FILTERS.map((f) => [f.key, cards.value.filter(matches[f.key]).length])) as Record<FilterKey, number>)
 
 interface Group {
@@ -156,18 +158,22 @@ function step(delta: -1 | 1) {
   const e = flat.value[openIndex.value + delta]
   if (e) openId.value = e.face.id
 }
-// 十連抽（DESIGN.md §7.19b）：用 10 張抽獎券，從去過、還沒收齊的景點裡抽 10 種還沒有的樣式（剩不到 10 種就抽剩下的）
+// 十連抽（DESIGN.md §7.19b）：用 10 張抽獎券，從去過的景點裡抽 10 張還沒有的季節卡（剩不到 10 張就抽剩下的）
 const wallet = useWalletStore()
 const fresh = useFreshStore()
 const cardDraw = useCardDraw()
-const missingTotal = computed(() => cards.value.reduce((s, e) => s + e.variantTotal - e.variants.length, 0))
+const ownedTotal = computed(() => cards.value.reduce((s, e) => s + e.variants.length, 0))
 const variantTotal = computed(() => cards.value.reduce((s, e) => s + e.variantTotal, 0))
-const tenCount = computed(() => Math.min(10, missingTotal.value))
+const missingSeasons = computed(() => missingSeasonCount(cards.value.map((e) => e.variants.map((v) => v.key))))
+const tenCount = computed(() => Math.min(10, missingSeasons.value))
+// 季節以外的樣式（紀念卡除外）都有了：四季收齊就有紀念卡
+const othersDone = (e: CollectionCard) => e.variants.length === e.variantTotal - 1 - missingSeasonsOf(e)
+const missingSeasonsOf = (e: CollectionCard) => missingSeasonCount([e.variants.map((v) => v.key)])
 const tenPull = ref<Pull[] | null>(null)
 const tenKey = ref(0)
 function drawTen() {
   const byId = new Map(cards.value.map((e) => [e.face.id, e]))
-  const got = cardDraw.drawAcross(cards.value.map((e) => ({ spotId: e.face.id, rarity: e.rarity, night: hasNight(e.face), owned: e.variants.map((v) => v.key) })), 10)
+  const got = cardDraw.drawAcross(cards.value.map((e) => ({ spotId: e.face.id, owned: e.variants.map((v) => v.key), othersDone: othersDone(e) })), 10)
   if (!got.length) return
   tenKey.value++
   tenPull.value = got.map(([t, v]) => {
@@ -234,7 +240,7 @@ function onCardKey(e: KeyboardEvent, id: string) {
             抽獎券<span class="font-latin text-h3 font-bold text-ink">{{ wallet.left }}</span>
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" class="self-center transition-transform" :class="showTickets ? 'rotate-180' : ''" aria-hidden="true"><path d="M6 9l6 6 6-6" /></svg>
           </button>
-          <span class="text-body-sm text-sub max-lg:text-caption">樣式 <span class="whitespace-nowrap font-num"><span class="font-bold text-ink">{{ variantTotal - missingTotal }}</span> / {{ variantTotal }}</span></span>
+          <span class="text-body-sm text-sub max-lg:text-caption">樣式 <span class="whitespace-nowrap font-num"><span class="font-bold text-ink">{{ ownedTotal }}</span> / {{ variantTotal }}</span></span>
         </div>
         <button type="button" class="h-8 shrink-0 rounded-control px-2 text-body-sm font-bold text-sub hover:bg-surface hover:text-ink active:not-disabled:translate-y-px pointer-coarse:h-tap" @click="showRules = true">規則</button>
         <button
@@ -243,7 +249,7 @@ function onCardKey(e: KeyboardEvent, id: string) {
           :disabled="!tenCount || !wallet.canSpend(tenCount)"
           @click="drawTen"
         >
-          {{ !missingTotal ? '已收齊' : tenCount < 10 ? `抽 ${tenCount} 張` : '十連抽' }}
+          {{ !tenCount ? '已收齊' : tenCount < 10 ? `抽 ${tenCount} 張` : '十連抽' }}
         </button>
         <dl v-if="showTickets" class="grid w-full grid-cols-[auto_auto_1fr] gap-x-4 gap-y-1 border-t border-line pt-3 text-caption text-sub">
           <dt>去過的景點</dt><dd class="font-num text-ink">{{ wallet.breakdown.spots }} × {{ TICKET_RULES.spot }}</dd><dd></dd>
@@ -410,8 +416,11 @@ function onCardKey(e: KeyboardEvent, id: string) {
 .swatch-castle {
   background: var(--color-t-castle);
 }
-.swatch-special {
-  background: repeating-linear-gradient(62deg, var(--color-gold-2) 0 1.5px, var(--color-gold-3) 1.5px 3px);
+.swatch-variant {
+  background: repeating-linear-gradient(62deg, var(--color-ink) 0 1.5px, var(--color-surface) 1.5px 3px);
+}
+.swatch-memorial {
+  border: 2px solid var(--color-visited);
 }
 .swatch-treasure {
   background: linear-gradient(135deg, var(--color-gold-1), var(--color-gold-2), var(--color-gold-3));

@@ -10,8 +10,8 @@ import NewTag from './NewTag.vue'
 import RegionMotif from './RegionMotif.vue'
 import SpotCard from './SpotCard.vue'
 
-// 十連抽（DESIGN.md §7.19b）：收集冊從還沒收齊的景點抽十種（都是新的，標 NEW）。十張卡背面朝上一次排成 5×2，發完牌後由左上依序自動翻開；
-// 稀有的（銀箔、金箔、特別全景）翻開前停一下、翻開後背後放光。
+// 十連抽（DESIGN.md §7.19b）：收集冊從還缺季節的景點抽十張季節卡（都是新的，標 NEW）。十張卡背面朝上一次排成 5×2，發完牌後由左上依序自動翻開；
+// 季節以外的樣式（只有傳進來時）翻開後背後放淡淡的光。
 // 「全部翻開」一次翻完；點還沒翻的那張先翻那張；翻開的點一下放大看。
 // 版面用視窗寬高算卡寬，整個畫面放得下，不出捲軸。手機（<640）排成 3 欄，最後一列置中（手機版計畫第二階段 26）。
 export interface Pull {
@@ -33,15 +33,11 @@ const tilt = useTilt(16)
 // 打開時焦點移到對話框裡的第一個按鈕
 const firstBtn = ref<HTMLButtonElement | null>(null)
 
-// 翻開時背後的光：特別全景虹、金箔金、銀箔銀，全景・夜景・墨繪・切手淡淡的地區色
+// 翻開時背後的光：季節卡沒有；季節以外的樣式淡淡的地區色
 function glow(v: Variant): string {
-  if (v.kind === 'special') return 'rainbow'
-  if (v.kind === 'gold') return 'gold'
-  if (v.kind === 'silver') return 'silver'
-  if (v.rank >= 2) return 'soft'
-  return ''
+  return v.rank >= 2 ? 'soft' : ''
 }
-const rare = (v: Variant) => v.rank >= 3
+const rare = (v: Variant) => v.rank >= 4
 
 let timers: number[] = []
 const wait = (ms: number) => new Promise<void>((r) => timers.push(window.setTimeout(r, ms)))
@@ -237,37 +233,10 @@ const zoomed = computed(() => (zoom.value === null ? null : props.pulls[zoom.val
   inset: -8%;
   background: radial-gradient(closest-side, color-mix(in oklab, var(--region-accent) 70%, transparent), transparent);
 }
-.glow-silver,
-.glow-gold,
-.glow-rainbow {
-  mask: radial-gradient(closest-side, #000 30%, transparent);
-  background: repeating-conic-gradient(var(--ray) 0deg 4deg, transparent 4deg 14deg);
-  animation:
-    glow-in 0.5s var(--ease-out-soft) both,
-    glow-spin 18s linear infinite;
-}
-.glow-silver {
-  --ray: color-mix(in oklab, var(--color-silver-1) 85%, transparent);
-}
-.glow-gold {
-  --ray: color-mix(in oklab, var(--color-gold-2) 85%, transparent);
-}
-.glow-rainbow {
-  background: conic-gradient(var(--color-foil-1), var(--color-foil-2), var(--color-foil-3), var(--color-foil-4), var(--color-foil-5), var(--color-foil-1));
-  mask:
-    radial-gradient(closest-side, #000 30%, transparent),
-    repeating-conic-gradient(#000 0deg 4deg, transparent 4deg 14deg);
-  mask-composite: intersect;
-}
 @keyframes glow-in {
   from {
     opacity: 0;
     scale: 0.5;
-  }
-}
-@keyframes glow-spin {
-  to {
-    rotate: 1turn;
   }
 }
 .new {
