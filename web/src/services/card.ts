@@ -68,15 +68,28 @@ export function cardNumberFor(
   return castle && designation !== '世界遺產' ? `No.${castle.no}` : cardNumberOf(id, prefSpots)
 }
 
+/** 卡面的一張照片。aspect：原圖寬/高（資料有寬高時才有；全景卡依此在顯示前決定直卡或橫卡） */
+export interface CardPhoto {
+  url: string
+  author?: string
+  license?: string
+  aspect?: number
+}
+
+/** 照片原圖的寬高比（小數 2 位，同 pipeline/build_bundles.py 的 aspect） */
+export function aspectOf(img: { width?: number; height?: number }): number | undefined {
+  return img.width && img.height ? Math.round((img.width / img.height) * 100) / 100 : undefined
+}
+
 /** 卡面資料：完整景點（放大檢視）與地圖 bundle 的一筆（收集冊）都轉成這個形狀 */
 export interface CardFace {
   id: string
   pref: string
   name: { ja: string; kana?: string; romaji?: string; zh?: string }
-  image?: { url: string; author?: string; license?: string }
+  image?: CardPhoto
   /** 季節照片（DESIGN.md §7.19a）：季節卡、全景、金箔、特別全景依抽到的季節換照片。
    *  沒有季節照片時是 {}；undefined 表示還不知道（資料還沒載入），這時不先拿基本卡的照片頂替 */
-  seasonImages?: Partial<Record<'spring' | 'summer' | 'autumn' | 'winter' | 'night' | 'panorama', { url: string; author?: string; license?: string }>>
+  seasonImages?: Partial<Record<'spring' | 'summer' | 'autumn' | 'winter' | 'night' | 'panorama', CardPhoto>>
   /** 類型（寺院、城…） */
   kind?: string
   designation?: string
@@ -98,9 +111,9 @@ export function cardFromSpot(s: Spot): CardFace {
     id: s.id,
     pref: s.prefecture,
     name: { ja: s.name.ja, kana: s.name.kana, romaji: s.name.romaji, zh: s.name.zh_tw !== s.name.ja ? s.name.zh_tw : undefined },
-    image: img ? { url: img.url, author: img.author, license: img.license } : undefined,
+    image: img ? { url: img.url, author: img.author, license: img.license, aspect: aspectOf(img) } : undefined,
     seasonImages: s.season_images
-      ? Object.fromEntries(Object.entries(s.season_images).map(([k, v]) => [k, { url: v.url, author: v.author, license: v.license }]))
+      ? Object.fromEntries(Object.entries(s.season_images).map(([k, v]) => [k, { url: v.url, author: v.author, license: v.license, aspect: aspectOf(v) }]))
       : {},
     kind: kindOf(s.tags),
     designation: designationOf(s.tags),
@@ -113,18 +126,16 @@ export function cardFromMapSpot(s: MapSpot, pref: string): CardFace {
     id: s.id,
     pref,
     name: { ja: s.n, kana: s.h, romaji: s.r, zh: s.z && s.z !== s.n ? s.z : undefined },
-    image: s.i ? { url: s.i.startsWith('https://') ? s.i : COMMONS_THUMB_PREFIX + s.i } : undefined,
+    image: s.i ? { url: s.i.startsWith('https://') ? s.i : COMMONS_THUMB_PREFIX + s.i, aspect: s.ia } : undefined,
     seasonImages: s.si
       ? Object.fromEntries(
-          Object.entries(s.si).map(([k, [path, author, license]]) => [k, { url: path.startsWith('https://') ? path : COMMONS_THUMB_PREFIX + path, author, license }]),
+          Object.entries(s.si).map(([k, [path, author, license, aspect]]) => [k, { url: path.startsWith('https://') ? path : COMMONS_THUMB_PREFIX + path, author, license, aspect }]),
         )
       : {},
     kind: s.c,
     designation: s.d,
   }
 }
-
-export type CardPhoto = NonNullable<CardFace['image']>
 
 /** 全景卡（全景、特別全景、夜景）：照片鋪滿整張卡 */
 export function isFullArt(variant: Pick<Variant, 'kind'>): boolean {
@@ -141,6 +152,20 @@ export function cardPhoto(face: Pick<CardFace, 'image' | 'seasonImages'>, varian
   if (variant.kind === 'base' || !variant.photo) return face.image
   if (!face.seasonImages) return undefined
   return face.seasonImages[variant.photo] ?? face.image
+}
+
+/** 橫的照片：寬/高 ≥ 1.2 */
+export const LANDSCAPE_ASPECT = 1.2
+
+/**
+ * 橫卡（DESIGN.md §7.19a）：全景卡（全景、特別全景、夜景）的照片是橫的時，卡片本身做成 7:5 的橫卡。
+ * 直的、接近正方形、還不知道寬高的照片維持 5:7 直卡；基本卡、季節卡（4:3 照片窗）不變。
+ * 寬高在資料裡（不等照片載入），顯示之後不會再從直變橫。
+ */
+export function isLandscapeCard(face: Pick<CardFace, 'image' | 'seasonImages'>, variant: Pick<Variant, 'kind' | 'photo'>): boolean {
+  if (!isFullArt(variant)) return false
+  const a = cardPhoto(face, variant)?.aspect
+  return a !== undefined && a >= LANDSCAPE_ASPECT
 }
 
 /** 卡片照片要試的網址：大卡用大一號的縮圖；縮圖取不到時改用小一號、原圖（services/commons.ts） */

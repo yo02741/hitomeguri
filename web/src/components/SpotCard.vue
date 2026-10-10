@@ -1,16 +1,17 @@
 <script setup lang="ts">
-import { computed, ref, watch } from 'vue'
+import { computed, ref } from 'vue'
 
 import { useTilt } from '../composables/tilt'
 import { NATIONAL_PATTERN, PATTERN_BY_AREA } from '../data/patterns'
 import { regionOf } from '../data/regions'
-import { type CardFace, cardPhoto, cardPhotoSources, isFullArt, type PhotoFailures, photoTry, type Rarity } from '../services/card'
+import { type CardFace, cardPhoto, cardPhotoSources, isFullArt, isLandscapeCard, type PhotoFailures, photoTry, type Rarity } from '../services/card'
 import { BASE_VARIANT, type Variant } from '../services/cardVariants'
 import RegionMotif from './RegionMotif.vue'
 
 // 景點收集卡（DESIGN.md §7.19）：卡面是景點的照片與名稱區塊，框是地區色＋紙紋；
 // 稀有卡有箔片（世界遺產＝虹、名城＝地方紋樣、國寶・特別史跡・特別名勝＝金），滑鼠或手機傾斜時卡片轉動、反光移動。
 // 尺寸全部用 em：sm 固定 200px 寬、lg 320px 寬；fluid 跟著外層容器寬（外層要有 container-type: inline-size）。
+// 全景卡的照片是橫的時是 28em × 20em 的橫卡（DESIGN.md §7.19a）；sideways 時橫卡轉 90 度放進直的格子。
 const props = withDefaults(
   defineProps<{
     card: CardFace
@@ -28,13 +29,24 @@ const props = withDefaults(
     variant?: Variant
     /** 收集冊的格子：靜止時畫成平面（不建 3D、反光、亮片的層），滑鼠移上去或聚焦時才換成完整的卡 */
     lite?: boolean
+    /** 放在直的格子裡（收集冊、十連抽、開卡包的一覽）：橫卡轉 90 度橫躺在格子裡，格子大小不變 */
+    sideways?: boolean
   }>(),
-  { label: '', size: 'sm', number: '', visitedOn: null, visited: false, flipped: false, tilt: undefined, variant: () => BASE_VARIANT, lite: false },
+  { label: '', size: 'sm', number: '', visitedOn: null, visited: false, flipped: false, tilt: undefined, variant: () => BASE_VARIANT, lite: false, sideways: false },
 )
 
 const SPARKLE: Record<string, string> = { gold: 'sparkle-gold', silver: 'sparkle-silver', night: 'sparkle-night' }
 const own = useTilt(props.size === 'lg' ? 16 : 12)
 const t = computed(() => props.tilt ?? own)
+// 橫卡（DESIGN.md §7.19a）：全景卡的照片是橫的時卡片 7:5。直橫看資料裡的寬高比，照片載入前就決定
+const landscape = computed(() => isLandscapeCard(props.card, props.variant))
+const turned = computed(() => landscape.value && props.sideways)
+// 橫躺的卡：光源位置（--mx、--my）是格子上的位置，換成卡面上的（卡順時針轉 90 度：卡的 x 是格子的 y）
+const sceneStyle = computed(() => {
+  const s = t.value.style.value
+  if (!turned.value) return s
+  return { ...s, '--mx': s['--my'], '--my': `${(100 - parseFloat(s['--mx'])).toFixed(1)}%` }
+})
 
 // lite：一頁上百張卡都是 3D 時，瀏覽器要建上千個合成層，手機捲動會卡。靜止的卡畫成平面，
 // 滑鼠移上去、鍵盤聚焦時才「醒來」；離開後等傾斜回正再睡回去。
@@ -82,24 +94,9 @@ const loaded = ref('')
 function onError() {
   fail.value = { key: photoKey.value, n: photoTry(fail.value, photoKey.value) + 1 }
 }
-watch(photoKey, () => {
-  contain.value = false
-})
-// 全景卡的照片太寬（裁成 5:7 只剩不到 55% 寬）或太小（鋪滿要放大）時不裁：整張照片置中，
-// 後面墊同一張照片的模糊放大版，卡面看起來還是鋪滿（DESIGN.md §7.19a）。載入後依原圖尺寸決定，不換照片
-const contain = ref(false)
-function onLoad(e: Event) {
+// 全景卡的照片一律裁切鋪滿：橫的照片已經做成橫卡，直的照片放在直卡，裁掉的不多
+function onLoad() {
   loaded.value = photoKey.value
-  if (!fullArt.value) return
-  const img = e.target as HTMLImageElement
-  const w = img.naturalWidth
-  const h = img.naturalHeight
-  if (!w || !h) return
-  // offsetHeight 是排版高度，不受傾斜的 transform 影響
-  const cardHeight = (img.closest('.card') as HTMLElement | null)?.offsetHeight ?? 0
-  const tooWide = ((5 / 7) * h) / w < 0.45
-  const tooSmall = h < cardHeight * (window.devicePixelRatio || 1) * 0.8
-  contain.value = tooWide || tooSmall
 }
 const imageSrc = computed(() => {
   const url = photo.value?.url
@@ -131,8 +128,8 @@ const sizeClass = { sm: 'text-[10px]', lg: 'text-[16px]', fluid: 'fluid' }
 <template>
   <div
     class="card-scene select-none"
-    :class="[sizeClass[size], { 'is-lite': isLite }]"
-    :style="t.style.value"
+    :class="[sizeClass[size], { 'is-lite': isLite, landscape, sideways: turned }]"
+    :style="sceneStyle"
     @pointerenter="onEnter"
     @pointermove="tilt ? undefined : own.onPointerMove($event)"
     @pointerleave="onLeave"
@@ -140,7 +137,7 @@ const sizeClass = { sm: 'text-[10px]', lg: 'text-[16px]', fluid: 'fluid' }
     @focusout="lite && sleep()"
   >
     <div
-      class="card relative aspect-[5/7] w-[20em]"
+      class="card relative"
       :class="[{ 'is-flipped': flipped, 'full-art': fullArt }, `rarity-${rarity}`, `v-${variant.kind}`, variant.season ? `season-${variant.season}` : '']"
       :data-pref="card.pref"
     >
@@ -166,25 +163,14 @@ const sizeClass = { sm: 'text-[10px]', lg: 'text-[16px]', fluid: 'fluid' }
             <RegionMotif :pref="card.pref" class="absolute -right-[3em] -bottom-[3em] size-[14em]" />
             <span v-if="!imageSrc && !pending" lang="ja" class="absolute top-[0.2em] left-[0.35em] text-[4.2em] leading-none font-black text-on-region">{{ card.name.ja.slice(0, 1) }}</span>
           </template>
-          <!-- 全景卡放整張照片時的底：同一張照片（同一個網址，不另外下載）縮小模糊再放大鋪滿 -->
-          <img
-            v-if="imageSrc && fullArt && contain && shown"
-            :src="imageSrc"
-            alt=""
-            aria-hidden="true"
-            class="backdrop pointer-events-none absolute object-cover"
-            referrerpolicy="no-referrer"
-            decoding="async"
-            draggable="false"
-          />
           <img
             v-if="imageSrc"
             :key="photoKey"
             data-photo
             :src="imageSrc"
             :alt="card.name.ja"
-            class="photo relative size-full"
-            :class="[fullArt && contain ? 'object-contain' : 'object-cover', { 'is-loading': !shown }]"
+            class="photo relative size-full object-cover"
+            :class="{ 'is-loading': !shown }"
             referrerpolicy="no-referrer"
             :loading="size === 'lg' ? 'eager' : 'lazy'"
             decoding="async"
@@ -272,9 +258,38 @@ const sizeClass = { sm: 'text-[10px]', lg: 'text-[16px]', fluid: 'fluid' }
 .fluid {
   font-size: 5cqi;
 }
+/* 卡的大小：直卡 20em × 28em；橫卡 28em × 20em（同一套 em，字與框的大小和直卡一樣） */
+.card {
+  width: 20em;
+  aspect-ratio: 5 / 7;
+}
+.landscape .card {
+  width: 28em;
+  aspect-ratio: 7 / 5;
+}
+/* 跟著外層容器寬的橫卡：卡寬 28em＝容器寬 */
+.fluid.landscape:not(.sideways) {
+  font-size: calc(100cqi / 28);
+}
+/* 橫躺：外框維持直卡的 20em × 28em，卡片放在中央、順時針轉 90 度（像收集冊裡橫放的卡）。
+   傾斜仍照畫面的上下左右；陰影改從卡的座標算，落在畫面的下方 */
+.sideways {
+  position: relative;
+  width: 20em;
+  height: 28em;
+}
+.sideways .card {
+  position: absolute;
+  top: 4em;
+  left: -4em;
+  --turn: rotate(90deg);
+  box-shadow:
+    0.4em 0 1.2em color-mix(in oklab, var(--color-shade) 18%, transparent),
+    calc(var(--rx) * 0.08em + 1em) calc(var(--ry) * 0.08em) 2em color-mix(in oklab, var(--color-shade) calc(var(--o) * 14%), transparent);
+}
 .card {
   transform-style: preserve-3d;
-  transform: rotateX(var(--rx)) rotateY(calc(var(--ry) + var(--flip, 0deg)));
+  transform: rotateX(var(--rx)) rotateY(calc(var(--ry) + var(--flip, 0deg))) var(--turn, rotate(0deg));
   transition: --flip 0.5s;
   border-radius: 1em;
   box-shadow:
@@ -301,7 +316,7 @@ const sizeClass = { sm: 'text-[10px]', lg: 'text-[16px]', fluid: 'fluid' }
 }
 .is-lite .card {
   transform-style: flat;
-  transform: none;
+  transform: var(--turn, none);
 }
 .is-lite .face {
   backface-visibility: visible;
@@ -480,7 +495,7 @@ const sizeClass = { sm: 'text-[10px]', lg: 'text-[16px]', fluid: 'fluid' }
 }
 
 /* 全景卡：照片鋪滿，上下暗面，文字壓在照片上 */
-.full-art .face {
+.full-art .face:not(.back) {
   color: var(--color-glare);
 }
 .full-art .window {
@@ -488,16 +503,6 @@ const sizeClass = { sm: 'text-[10px]', lg: 'text-[16px]', fluid: 'fluid' }
   inset: 0;
   aspect-ratio: auto;
   border-radius: inherit;
-}
-.full-art .backdrop {
-  /* 只有卡的 28% 大小時模糊，再放大 4 倍鋪滿（比整張卡大一點，模糊的邊不會露出來）：模糊的層小、畫得快 */
-  top: 50%;
-  left: 50%;
-  width: 28%;
-  height: 28%;
-  max-width: none;
-  transform: translate(-50%, -50%) scale(4);
-  filter: blur(0.3em) brightness(0.72) saturate(1.1);
 }
 .full-art .name-block {
   justify-content: flex-end;
@@ -765,7 +770,7 @@ const sizeClass = { sm: 'text-[10px]', lg: 'text-[16px]', fluid: 'fluid' }
 
 @media (prefers-reduced-motion: reduce) {
   .card {
-    transform: rotateY(var(--flip, 0deg));
+    transform: rotateY(var(--flip, 0deg)) var(--turn, rotate(0deg));
     transition: none;
   }
   .stamp {

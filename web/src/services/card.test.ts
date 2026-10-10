@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest'
 
 import type { MapSpot } from './bundles'
-import { cardFromMapSpot, cardPhoto, cardPhotoSources, photoTry, type CardFace } from './card'
+import { aspectOf, cardFromMapSpot, cardPhoto, cardPhotoSources, isLandscapeCard, photoTry, type CardFace } from './card'
 import { BASE_VARIANT, decodeVariant, seasonVariant, type Variant } from './cardVariants'
 
 const T = 'https://thumb.wikimedia.org/wikipedia/commons/thumb/'
@@ -40,6 +40,39 @@ describe('cardPhoto', () => {
     const f = cardFromMapSpot(s, 'kyoto')
     expect(f.seasonImages).toEqual({})
     expect(cardPhoto(f, seasonVariant('winter'))?.url).toContain('Toji.jpg')
+  })
+})
+
+describe('isLandscapeCard', () => {
+  const wide: CardFace = {
+    ...face,
+    image: { url: face.image!.url, aspect: 1.5 },
+    seasonImages: { night: { url: face.seasonImages!.night!.url, aspect: 0.75 }, winter: { url: `${T}e/ef/Snow.jpg/960px-Snow.jpg`, aspect: 1.2 } },
+  }
+
+  it('全景卡的照片是橫的（≥ 1.2）才是橫卡', () => {
+    expect(isLandscapeCard(wide, v('full'))).toBe(true)
+    expect(isLandscapeCard(wide, v('special@winter'))).toBe(true)
+    // 夜景照片是直的
+    expect(isLandscapeCard(wide, v('night'))).toBe(false)
+    expect(isLandscapeCard({ ...wide, image: { url: 'x', aspect: 1.19 } }, v('full@spring'))).toBe(false)
+  })
+
+  it('基本卡、季節卡、金箔等不分直橫；沒有寬高時是直卡', () => {
+    expect(isLandscapeCard(wide, BASE_VARIANT)).toBe(false)
+    expect(isLandscapeCard(wide, seasonVariant('winter'))).toBe(false)
+    expect(isLandscapeCard(wide, v('gold@winter'))).toBe(false)
+    expect(isLandscapeCard(face, v('full'))).toBe(false)
+  })
+
+  it('地圖 bundle 的 ia 與 si 第 4 欄、詳細資料的寬高都轉成 aspect', () => {
+    const s = { id: 'wd-Q3', n: '清水寺', lat: 0, lng: 0, k: 'major', f: 0, s: 1, i: 'a/ab/K.jpg/250px-K.jpg', ia: 1.52, si: { night: ['c/cd/N.jpg/250px-N.jpg', 'A', 'CC BY 4.0', 1.34], spring: ['e/ef/S.jpg/250px-S.jpg', 'B', 'CC0'] } } as MapSpot
+    const f = cardFromMapSpot(s, 'kyoto')
+    expect(f.image?.aspect).toBe(1.52)
+    expect(f.seasonImages?.night?.aspect).toBe(1.34)
+    expect(f.seasonImages?.spring?.aspect).toBeUndefined()
+    expect(aspectOf({ width: 4000, height: 2250 })).toBe(1.78)
+    expect(aspectOf({})).toBeUndefined()
   })
 })
 

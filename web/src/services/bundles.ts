@@ -15,8 +15,9 @@ export interface MapSpot {
   r?: string // 羅馬拼音
   c?: string // 分類
   i?: string // 地圖用小圖：Commons 縮圖路徑（省略前綴）或完整網址
+  ia?: number // 主照片原圖的寬高比（寬/高）：收集卡的直卡、橫卡；還沒補寬高的資料沒有
   d?: string // 最高的文化指定（世界遺產、國寶、特別史跡、特別名勝）：收集卡的稀有度
-  si?: Partial<Record<'spring' | 'summer' | 'autumn' | 'winter' | 'night' | 'panorama', [path: string, author: string, license: string]>> // 收集卡的季節、夜景照片
+  si?: Partial<Record<'spring' | 'summer' | 'autumn' | 'winter' | 'night' | 'panorama', [path: string, author: string, license: string, aspect?: number]>> // 收集卡的季節、夜景照片（第 4 欄：寬高比）
 }
 
 export { COMMONS_THUMB_PREFIX }
@@ -37,6 +38,9 @@ export interface SpotImage {
   author: string
   license: string
   source_url: string
+  /** 原圖寬高（px）：收集卡在顯示前決定直卡或橫卡（pipeline seed-photo-sizes） */
+  width?: number
+  height?: number
 }
 
 export interface StationName {

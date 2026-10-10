@@ -337,7 +337,7 @@ function onCardKey(e: KeyboardEvent, id: string) {
               @click="openId = e.face.id"
               @keydown="onCardKey($event, e.face.id)"
             >
-              <SpotCard :card="e.face" :rarity="e.rarity" :label="e.label" :number="e.number" visited :visited-on="e.visitedOn" size="fluid" :variant="shownVariant(e)" lite />
+              <SpotCard :card="e.face" :rarity="e.rarity" :label="e.label" :number="e.number" visited :visited-on="e.visitedOn" size="fluid" :variant="shownVariant(e)" lite sideways />
             </div>
             <!-- .deal 四周多了 1rem 的內距，標記要往內移回卡的左上角 -->
             <NewTag v-if="fresh.spotHasNew(e.face.id)" class="absolute top-2.5 left-2.5 z-10" />

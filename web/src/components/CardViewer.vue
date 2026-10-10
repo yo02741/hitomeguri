@@ -351,6 +351,19 @@ onBeforeUnmount(() => document.removeEventListener('keydown', onKey))
 .viewer-card :deep(.card-scene) {
   font-size: calc(var(--cw) / 20);
 }
+/* 橫卡（DESIGN.md §7.19a）：卡寬 28em。高度和直卡一樣（直卡寬 × 7/5），寬度放不下時縮到畫面寬
+   （桌機扣掉左右兩個切換鈕；手機直拿時就是畫面寬） */
+.viewer {
+  --lw: min(calc(var(--cw) * 1.96), calc(100vw - 152px));
+}
+@media (max-width: 639px) {
+  .viewer {
+    --lw: min(calc(var(--cw) * 1.96), calc(100vw - 32px));
+  }
+}
+.viewer-card :deep(.card-scene.landscape) {
+  font-size: calc(var(--lw) / 28);
+}
 .controls {
   display: contents;
 }
@@ -358,6 +371,7 @@ onBeforeUnmount(() => document.removeEventListener('keydown', onKey))
 @media (orientation: landscape) and (max-height: 500px) {
   .viewer {
     --cw: min(320px, calc((100dvh - 2rem) * 5 / 7));
+    --lw: min(calc(var(--cw) * 1.96), calc(100vw - 13rem - 1.5rem - 2rem - env(safe-area-inset-left) - env(safe-area-inset-right)));
     flex-direction: row;
     gap: 1.5rem;
     padding-inline: max(1rem, env(safe-area-inset-left)) max(1rem, env(safe-area-inset-right));

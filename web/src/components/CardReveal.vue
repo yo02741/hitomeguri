@@ -2,6 +2,7 @@
 import { computed, defineAsyncComponent, nextTick, onBeforeUnmount, ref, watch } from 'vue'
 
 import type { AchvDef } from '../data/achievements'
+import { isLandscapeCard } from '../services/card'
 import { reveal } from '../services/cardReveal'
 import { ease } from '../services/motion'
 import { useAchievementsStore } from '../stores/achievements'
@@ -30,6 +31,8 @@ const burstKind = computed(() => {
   if (v && v !== 'base' && v !== 'season') return 'castle'
   return r.value?.rarity ?? 'normal'
 })
+// 橫卡（DESIGN.md §7.19a）：卡寬改依畫面寬、高度算，兩個章依卡的短邊縮放
+const landscape = computed(() => (r.value?.variant ? isLandscapeCard(r.value.face, r.value.variant) : false))
 const visitedOn = computed(() => (r.value ? (marks.markOf(r.value.face.id)?.visited_on ?? null) : null))
 
 const dlg = ref<HTMLDialogElement | null>(null)
@@ -223,7 +226,7 @@ onBeforeUnmount(() => {
       <div class="rays"></div>
       <span v-if="landed" class="ring"></span>
     </div>
-    <div class="stage absolute inset-0 grid place-items-center">
+    <div class="stage absolute inset-0 grid place-items-center" :class="{ landscape }">
       <div ref="fly" class="relative">
         <div ref="spin" class="relative [transform-style:preserve-3d]">
           <SpotCard :card="r.face" :rarity="r.rarity" :label="r.label" :number="r.number" :visited="landed" :visited-on="visitedOn" size="lg" :variant="r.variant" />
@@ -327,15 +330,26 @@ onBeforeUnmount(() => {
    卡片用 em 排版，寬 20em；兩個章跟著卡寬等比例縮放 */
 .stage {
   --cw: min(320px, calc(100vw - 32px), calc((100dvh - 64px) * 5 / 7));
+  /* 卡寬（--bw）與短邊（--s）：直卡都是 --cw */
+  --bw: var(--cw);
+  --s: var(--cw);
 }
 .stage :deep(.card-scene) {
   font-size: calc(var(--cw) / 20);
 }
+/* 橫卡：高度和直卡一樣（直卡寬 × 7/5），寬度放不下時縮到畫面寬 */
+.stage.landscape {
+  --bw: min(calc(var(--cw) * 1.96), calc(100vw - 32px), calc((100dvh - 64px) * 7 / 5));
+  --s: calc(var(--bw) * 5 / 7);
+}
+.stage.landscape :deep(.card-scene) {
+  font-size: calc(var(--bw) / 28);
+}
 /* 縣的紀念章：從上方重重蓋下、微微回彈，墨色帶點透明（像蓋在卡上）。
    比卡片寬 + 70px 窄的畫面往卡片裡收，斜放的章不超出畫面 */
 .first-stamp {
-  width: calc(var(--cw) * 0.4625);
-  left: max(calc(var(--cw) * -0.1125), calc((var(--cw) - 100vw) / 2 + 20px));
+  width: calc(var(--s) * 0.4625);
+  left: max(calc(var(--s) * -0.1125), calc((var(--bw) - 100vw) / 2 + 20px));
   opacity: 0.92;
   filter: drop-shadow(0 1px 0 color-mix(in oklab, var(--region-paper) 70%, transparent));
   transform: rotate(-14deg);
@@ -357,8 +371,8 @@ onBeforeUnmount(() => {
 }
 /* 成就章：和縣的紀念章對稱，從上方蓋下、停在右傾；有縣的紀念章時晚一點蓋。窄手機一樣往卡片裡收 */
 .seal-slam {
-  width: calc(var(--cw) * 0.375);
-  right: max(calc(var(--cw) * -0.1125), calc((var(--cw) - 100vw) / 2 + 12px));
+  width: calc(var(--s) * 0.375);
+  right: max(calc(var(--s) * -0.1125), calc((var(--bw) - 100vw) / 2 + 12px));
   opacity: 0.94;
   filter: drop-shadow(0 1px 0 color-mix(in oklab, var(--region-paper) 70%, transparent));
   transform: rotate(8deg);

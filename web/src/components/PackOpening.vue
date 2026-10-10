@@ -5,7 +5,7 @@ import { useCardDraw } from '../composables/cardDraw'
 import { useModal } from '../composables/modal'
 import { type CollectionCard, useCollection } from '../composables/collection'
 import { useVisitedEntries } from '../composables/visited'
-import type { Rarity } from '../services/card'
+import { isLandscapeCard, type Rarity } from '../services/card'
 import { drawVariants, hasNight, ownedVariants, type Variant } from '../services/cardVariants'
 import { dayDate, type Trip } from '../services/trip'
 import { useCardsStore } from '../stores/cards'
@@ -200,7 +200,7 @@ function markOpened(tripId: string) {
       <div v-else-if="stage === 'dealing' && current" class="relative flex flex-col items-center gap-4">
         <div v-if="flipped && raysKind(current) !== 'normal'" class="rays" :class="`rays-${raysKind(current)}`" :data-pref="current.face.pref" aria-hidden="true"></div>
         <button :key="current.key" ref="dealBtn" type="button" data-next class="deal-card relative [perspective:1400px]" :aria-label="flipped ? `下一張（${current.face.name.ja}）` : '翻開'" @click="next">
-          <span class="flip relative block [transform-style:preserve-3d]" :class="{ 'is-flipped': flipped }">
+          <span class="flip relative block [transform-style:preserve-3d]" :class="{ 'is-flipped': flipped, landscape: isLandscapeCard(current.face, shown(current)) }">
             <span class="flip-back paper-grain absolute inset-0 grid place-items-center overflow-hidden rounded-[16px] bg-region text-on-region" :data-pref="mainPref ?? undefined">
               <RegionMotif :pref="mainPref ?? undefined" class="absolute size-[260px] opacity-80" />
               <span lang="ja" class="relative text-[34px] font-black">一巡り</span>
@@ -218,7 +218,7 @@ function markOpened(tripId: string) {
         <p class="text-center text-h3 font-black text-paper">{{ title }}　<span class="font-latin">{{ deck.length }}</span> 張</p>
         <ul class="grid grid-cols-3 gap-3 sm:grid-cols-4 md:grid-cols-5">
           <li v-for="(c, i) in revealed" :key="c.key" class="deal-in @container" :style="{ '--i': Math.min(i, 15) }">
-            <SpotCard :card="c.face" :rarity="c.rarity" :label="c.label" :number="c.number" visited :visited-on="c.visitedOn" size="fluid" :variant="shown(c)" />
+            <SpotCard :card="c.face" :rarity="c.rarity" :label="c.label" :number="c.number" visited :visited-on="c.visitedOn" size="fluid" :variant="shown(c)" sideways />
           </li>
         </ul>
         <!-- 這趟達成的初訪章與成就（DESIGN.md §7.25） -->
@@ -230,7 +230,7 @@ function markOpened(tripId: string) {
         <!-- 已翻開的 -->
         <ul v-if="stage === 'dealing' && revealed.length" class="flex max-w-full gap-2 overflow-x-auto px-2 pb-1" aria-label="已翻開">
           <li v-for="c in revealed" :key="c.key" class="mini w-12 shrink-0 @container">
-            <SpotCard :card="c.face" :rarity="c.rarity" :number="c.number" size="fluid" :variant="shown(c)" />
+            <SpotCard :card="c.face" :rarity="c.rarity" :number="c.number" size="fluid" :variant="shown(c)" sideways />
           </li>
         </ul>
 
@@ -255,6 +255,17 @@ function markOpened(tripId: string) {
 .flip-front :deep(.card-scene) {
   font-size: calc(var(--cw) / 20);
 }
+/* 橫卡（DESIGN.md §7.19a）：卡背也是橫的；高度和直卡一樣，寬度放不下時縮到畫面寬 */
+.pack-root {
+  --lw: min(calc(var(--cw) * 1.96), calc(100vw - 32px));
+}
+.flip.landscape {
+  width: var(--lw);
+  aspect-ratio: 7 / 5;
+}
+.flip.landscape .flip-front :deep(.card-scene) {
+  font-size: calc(var(--lw) / 28);
+}
 .side {
   display: contents;
 }
@@ -263,6 +274,7 @@ function markOpened(tripId: string) {
   .pack-root {
     --cw: min(320px, calc((100dvh - 4.5rem) * 5 / 7));
     --pw: min(240px, calc((100dvh - 3rem) * 5 / 8));
+    --lw: min(calc(var(--cw) * 1.96), calc(100vw - 13rem - 1.5rem - 2rem - env(safe-area-inset-left) - env(safe-area-inset-right)));
     flex-direction: row;
     gap: 1.5rem;
     padding-inline: max(1rem, env(safe-area-inset-left)) max(1rem, env(safe-area-inset-right));
