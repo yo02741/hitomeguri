@@ -32,6 +32,9 @@
 
 **待辦**：見根目錄 `TODO.md`。
 
+- 收集卡的橫卡（2026-10-10，使用者決定）：全景、特別全景、夜景的照片是橫的（寬/高 ≥ 1.2）時卡片做成 7:5 橫卡；拿掉「太寬、太小就整張放、墊模糊底」，一律裁切鋪滿。收集冊、十連抽、開卡包一覽的直格子裡橫卡轉 90 度橫躺；放大檢視、新卡入手、開卡包翻的那張、十連抽放大直立顯示（DESIGN.md §7.19、§7.19a）。直橫看資料裡的原圖寬高（`images`、`season_images` 的 `width`、`height`；map bundle 的 `ia` 與 `si` 第 4 欄），**要在 Actions 跑一次 seed-pack 的 `seed-photo-sizes`**（全國，產出分支 `pipeline/seed-photo-sizes-<run>`，合併 `data/spots` 後 build-bundles），之前資料沒有寬高的全部維持直卡。新採的照片（seed-region、seed-photos、seed-season-photos）會一起記寬高。
+- 換樣式時照片先閃上一張（2026-10-10 修）：卡面只有一個 `<img>` 換網址，新照片載入前瀏覽器一直顯示舊照片。改成 `<img>` 依照片重建、載入完成才顯示（之前是地區紋樣）；換照片時失敗重試的次數歸零；季節照片還不知道有沒有時不拿主照片頂替。全景卡背面的名稱原本是白字（看不到），改回墨色。
+
 - 浮世繪裡的景點（2026-10-09，使用者決定）：收集冊裡的一頁 `/log/cards/ukiyoe`（DESIGN.md §7.19c），描繪我們景點的真實浮世繪，去過的地方亮起來；不是新卡種。資料 `data/ukiyoe.json` 由 `seed-ukiyoe`（`pipeline/ukiyoe.py`，seed-pack.yml）從 Wikidata 與 Commons 取得，只收公有領域、CC0、CC；`validate-data` 檢查 schema、排序、景點、授權與出處；bundle `ukiyoe.json`（`index.extras.ukiyoe`）。資料由 seed-ukiyoe #69 產生：63 個景點、159 幅（公有領域 143、CC0 12、CC 4，授權不明的 3 幅不收）。
 
 - 開場畫面短版（2026-10-09，使用者決定）：完整版播完一次後記 `hitomeguri:splash-seen`，之後只淡出 0.5 秒（DESIGN.md §7.0）。
