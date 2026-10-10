@@ -134,6 +134,9 @@ def seed_photos(prefs: list[str]) -> str:
                     "license": info.license,
                     "source_url": info.source_url,
                 }
+                # 原圖寬高：收集卡在顯示前決定直卡或橫卡
+                if info.width and info.height:
+                    img |= {"width": info.width, "height": info.height}
                 if key == "main":
                     if not s.get("images"):
                         stats["main_added"] += 1

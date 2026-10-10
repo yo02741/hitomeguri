@@ -338,19 +338,24 @@ def quality_of(titles: list[str]) -> dict[str, int]:
     return out
 
 
-def to_image(f: dict[str, Any]) -> dict[str, str]:
+def to_image(f: dict[str, Any]) -> dict[str, Any]:
     meta = f.get("extmetadata", {})
     author = commons._plain(meta.get("Artist", {}).get("value", "")) or "不明"  # noqa: SLF001
     lic = commons._plain(meta.get("LicenseShortName", {}).get("value", "")) or "不明"  # noqa: SLF001
-    return {
+    img: dict[str, Any] = {
         "url": f.get("thumburl") or f["url"],
         "author": author[:120],
         "license": lic,
         "source_url": f.get("descriptionurl", ""),
     }
+    # 原圖寬高（查詢時 iiprop 有 size）：收集卡在顯示前決定直卡或橫卡
+    w, h = commons._dim(f.get("width")), commons._dim(f.get("height"))  # noqa: SLF001
+    if w and h:
+        img |= {"width": w, "height": h}
+    return img
 
 
-def free_license(img: dict[str, str]) -> bool:
+def free_license(img: dict[str, Any]) -> bool:
     lic = img["license"].lower()
     free = any(k in lic for k in ("cc by", "cc0", "public domain", "pd"))
     return free and "nc" not in re.split(r"[\s-]", lic)
@@ -358,7 +363,7 @@ def free_license(img: dict[str, str]) -> bool:
 
 def find_season_photos(
     cat: str, main_file: str | None, qid: str = "", ja: str = ""
-) -> dict[str, dict[str, str]]:
+) -> dict[str, dict[str, Any]]:
     toks = name_tokens(cat, ja)
     own = cat  # 景點自己的名稱（分類名）裡的季節字樣不算
     pool: dict[str, tuple[dict[str, Any], str]] = {}
@@ -405,7 +410,7 @@ def find_season_photos(
         if t not in used and (t in depicts or mentions(t, toks)) and usable(f)
     ]
     quality = quality_of(relevant[:100]) if relevant else {}
-    found: dict[str, dict[str, str]] = {}
+    found: dict[str, dict[str, Any]] = {}
     for s in SEASONS:
         ranked = sorted(
             (

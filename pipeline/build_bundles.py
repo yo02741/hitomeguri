@@ -126,6 +126,12 @@ def spot_type(tags: list[str]) -> str | None:
     return None
 
 
+def aspect(img: dict[str, Any]) -> float | None:
+    """照片原圖的寬高比（寬/高，小數 2 位）；沒有寬高時 None。收集卡在顯示前決定直卡或橫卡用"""
+    w, h = img.get("width"), img.get("height")
+    return round(w / h, 2) if w and h else None
+
+
 def map_entry(s: dict[str, Any]) -> dict[str, Any]:
     name = s["name"]
     entry: dict[str, Any] = {
@@ -149,9 +155,11 @@ def map_entry(s: dict[str, Any]) -> dict[str, Any]:
         entry["d"] = d
     if s.get("images") and (thumb := map_thumb(s["images"][0]["url"])):
         entry["i"] = thumb
-    # 收集卡的季節照片：[縮圖路徑, 作者, 授權]（卡片背面要列出處）
+        if a := aspect(s["images"][0]):
+            entry["ia"] = a
+    # 收集卡的季節照片：[縮圖路徑, 作者, 授權, 寬高比?]（卡片背面要列出處；寬高比決定直卡或橫卡）
     seasonal = {
-        season: [thumb, img["author"], img["license"]]
+        season: [thumb, img["author"], img["license"]] + ([a] if (a := aspect(img)) else [])
         for season, img in (s.get("season_images") or {}).items()
         if (thumb := map_thumb(img["url"]))
     }

@@ -142,7 +142,7 @@ const zoomed = computed(() => (zoom.value === null ? null : props.pulls[zoom.val
                 <span lang="ja" class="relative text-[17cqi] leading-none font-black">一巡り</span>
               </span>
               <span class="front absolute inset-0 block">
-                <SpotCard :card="p.face" :rarity="p.rarity" :label="p.label" :number="p.number" size="fluid" :variant="p.variant" />
+                <SpotCard :card="p.face" :rarity="p.rarity" :label="p.label" :number="p.number" size="fluid" :variant="p.variant" sideways />
               </span>
             </span>
           </button>
@@ -286,6 +286,10 @@ const zoomed = computed(() => (zoom.value === null ? null : props.pulls[zoom.val
   .zoom :deep(.card-scene) {
     font-size: calc(min(320px, (100dvh - 2rem) * 5 / 7) / 20);
   }
+}
+/* 橫卡（DESIGN.md §7.19a，卡寬 28em、高 20em）：高度和直卡一樣，寬度或高度放不下時縮到畫面裡 */
+.zoom :deep(.card-scene.landscape) {
+  font-size: min(22.4px, calc((100vw - 2rem) / 28), calc((100dvh - 2rem) / 20));
 }
 @media (prefers-reduced-motion: reduce) {
   .ten,

@@ -110,6 +110,15 @@ def cmd_seed_photos(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_seed_photo_sizes(args: argparse.Namespace) -> int:
+    from pipeline.paths import SPOTS_DIR
+    from pipeline.photo_sizes import seed_photo_sizes
+
+    prefs = args.prefectures or sorted(p.stem for p in SPOTS_DIR.glob("*.json"))
+    _emit(seed_photo_sizes(prefs, refresh=args.refresh), args.report)
+    return 0
+
+
 def cmd_photo_review(args: argparse.Namespace) -> int:
     from pipeline.paths import DATA, SPOTS_DIR
     from pipeline.photo_review import photo_review
@@ -302,6 +311,14 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("prefectures", nargs="*", help="省略時處理全部縣")
     p.add_argument("--report")
     p.set_defaults(func=cmd_seed_photos)
+
+    p = sub.add_parser(
+        "seed-photo-sizes", help="景點主照片與季節照片的原圖寬高（收集卡的直卡、橫卡）"
+    )
+    p.add_argument("prefectures", nargs="*", help="省略時處理全部縣")
+    p.add_argument("--refresh", action="store_true", help="已經有寬高的也重查")
+    p.add_argument("--report")
+    p.set_defaults(func=cmd_seed_photo_sizes)
 
     p = sub.add_parser("photo-review", help="精選景點主照片的審核對照圖（不改資料）")
     p.add_argument("--rest", action="store_true", help="改做非精選景點")
