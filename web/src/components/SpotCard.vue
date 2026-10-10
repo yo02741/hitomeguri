@@ -4,8 +4,7 @@ import { computed, ref, watch } from 'vue'
 import { useTilt } from '../composables/tilt'
 import { NATIONAL_PATTERN, PATTERN_BY_AREA } from '../data/patterns'
 import { regionOf } from '../data/regions'
-import { type CardFace, type Rarity } from '../services/card'
-import { commonsCandidates } from '../services/commons'
+import { type CardFace, cardPhoto, cardPhotoSources, isFullArt, type PhotoFailures, photoTry, type Rarity } from '../services/card'
 import { BASE_VARIANT, type Variant } from '../services/cardVariants'
 import RegionMotif from './RegionMotif.vue'
 
@@ -72,26 +71,25 @@ const PATTERN_CLASS: Record<string, string> = {
 }
 
 // 照片：小卡用 500px 縮圖；縮圖取不到時改用小一號的縮圖、原網址，再不行就退回紋樣
-const tries = ref(0)
 // 全景卡（全景、特別全景、夜景）照片鋪滿整張卡，縮圖要大一號，否則直向放大會糊
-const fullArt = computed(() => ['full', 'special', 'night'].includes(props.variant.kind))
-// 不是基本卡的照片（DESIGN.md §7.19a）：抽到那個季節的照片，沒有就用基本卡的照片。
-// 全景、特別全景也用基本卡的照片（審過的主照片）：Wikidata 的全景照片多半很寬，裁成直向卡會糊、主體也常被裁掉。
-// 不拿第二張或其他季節的照片補：地圖資料沒有第二張，詳細資料載入後照片會換一張；別的季節的照片也常拍到別處
-const photo = computed(() => {
-  const c = props.card
-  if (props.variant.kind === 'base') return c.image
-  const seasonal = props.variant.photo ? c.seasonImages?.[props.variant.photo] : undefined
-  return seasonal ?? c.image
-})
-watch(() => photo.value?.url, () => {
-  tries.value = 0
+const fullArt = computed(() => isFullArt(props.variant))
+const photo = computed(() => cardPhoto(props.card, props.variant))
+// 換照片（換樣式、換卡）時 <img> 依照片重建、載入完成才顯示：同一個 <img> 換網址時，
+// 瀏覽器在新照片載入前會一直顯示舊照片（B 卡先閃 A 的照片）。同一張照片換寬度時不重建
+const photoKey = computed(() => photo.value?.url ?? '')
+const fail = ref<PhotoFailures>({ key: '', n: 0 })
+const loaded = ref('')
+function onError() {
+  fail.value = { key: photoKey.value, n: photoTry(fail.value, photoKey.value) + 1 }
+}
+watch(photoKey, () => {
   contain.value = false
 })
 // 全景卡的照片太寬（裁成 5:7 只剩不到 55% 寬）或太小（鋪滿要放大）時不裁：整張照片置中，
 // 後面墊同一張照片的模糊放大版，卡面看起來還是鋪滿（DESIGN.md §7.19a）。載入後依原圖尺寸決定，不換照片
 const contain = ref(false)
 function onLoad(e: Event) {
+  loaded.value = photoKey.value
   if (!fullArt.value) return
   const img = e.target as HTMLImageElement
   const w = img.naturalWidth
@@ -106,12 +104,11 @@ function onLoad(e: Event) {
 const imageSrc = computed(() => {
   const url = photo.value?.url
   if (!url) return undefined
-  const widths: (500 | 960 | 1280)[] =
-    props.size === 'lg' ? (fullArt.value ? [1280, 960] : [960]) : fullArt.value ? [960, 500] : [500]
-  // 原圖比要的寬度小時 Commons 會回錯誤，依序退回小一號、原圖（services/commons.ts）
-  const list = [...new Set(widths.flatMap((w) => commonsCandidates(url, w)))]
-  return list[tries.value]
+  return cardPhotoSources(url, props.size, fullArt.value)[photoTry(fail.value, photoKey.value)]
 })
+// 季節照片還不知道有沒有（資料載入中）：照片窗先畫紋樣，不放名稱的第一個字
+const pending = computed(() => !photo.value && props.variant.kind !== 'base' && Boolean(props.variant.photo) && !props.card.seasonImages)
+const shown = computed(() => Boolean(imageSrc.value) && loaded.value === photoKey.value)
 // 名稱越長字越小，一行放得下
 const nameSize = computed(() => {
   const n = props.card.name.ja.length
@@ -164,9 +161,14 @@ const sizeClass = { sm: 'text-[10px]', lg: 'text-[16px]', fluid: 'fluid' }
         </div>
 
         <div class="window relative aspect-[4/3] shrink-0 overflow-hidden rounded-[0.6em] bg-region-accent">
+          <!-- 照片還沒載入、或沒有照片：紋樣（沒有照片時加上名稱的第一個字） -->
+          <template v-if="!shown">
+            <RegionMotif :pref="card.pref" class="absolute -right-[3em] -bottom-[3em] size-[14em]" />
+            <span v-if="!imageSrc && !pending" lang="ja" class="absolute top-[0.2em] left-[0.35em] text-[4.2em] leading-none font-black text-on-region">{{ card.name.ja.slice(0, 1) }}</span>
+          </template>
           <!-- 全景卡放整張照片時的底：同一張照片（同一個網址，不另外下載）縮小模糊再放大鋪滿 -->
           <img
-            v-if="imageSrc && fullArt && contain"
+            v-if="imageSrc && fullArt && contain && shown"
             :src="imageSrc"
             alt=""
             aria-hidden="true"
@@ -177,22 +179,19 @@ const sizeClass = { sm: 'text-[10px]', lg: 'text-[16px]', fluid: 'fluid' }
           />
           <img
             v-if="imageSrc"
+            :key="photoKey"
             data-photo
             :src="imageSrc"
             :alt="card.name.ja"
-            class="relative size-full"
-            :class="fullArt && contain ? 'object-contain' : 'object-cover'"
+            class="photo relative size-full"
+            :class="[fullArt && contain ? 'object-contain' : 'object-cover', { 'is-loading': !shown }]"
             referrerpolicy="no-referrer"
             :loading="size === 'lg' ? 'eager' : 'lazy'"
             decoding="async"
             draggable="false"
             @load="onLoad"
-            @error="tries++"
+            @error="onError"
           />
-          <template v-else>
-            <RegionMotif :pref="card.pref" class="absolute -right-[3em] -bottom-[3em] size-[14em]" />
-            <span lang="ja" class="absolute top-[0.2em] left-[0.35em] text-[4.2em] leading-none font-black text-on-region">{{ card.name.ja.slice(0, 1) }}</span>
-          </template>
           <!-- 箔片：稀有卡才有，只在照片窗裡（像實體閃卡的圖框）；名城用地方紋樣的形狀 -->
           <div
             v-if="foil !== 'none' && foil !== 'reverse'"
@@ -468,6 +467,16 @@ const sizeClass = { sm: 'text-[10px]', lg: 'text-[16px]', fluid: 'fluid' }
 }
 .v-season .variant-chip {
   background: var(--season);
+}
+
+/* 照片載入完成才顯示（換樣式時不先閃上一張照片） */
+.photo {
+  transition: opacity 0.18s var(--ease-out-soft);
+}
+.photo.is-loading {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
 }
 
 /* 全景卡：照片鋪滿，上下暗面，文字壓在照片上 */

@@ -1,5 +1,6 @@
 import type { MapSpot, Spot } from './bundles'
-import { COMMONS_THUMB_PREFIX } from './commons'
+import type { Variant } from './cardVariants'
+import { COMMONS_THUMB_PREFIX, commonsCandidates } from './commons'
 
 /**
  * 景點收集卡（DESIGN.md §7.19）。卡面內容只用景點既有的資料，不自己編。
@@ -73,7 +74,8 @@ export interface CardFace {
   pref: string
   name: { ja: string; kana?: string; romaji?: string; zh?: string }
   image?: { url: string; author?: string; license?: string }
-  /** 季節照片（DESIGN.md §7.19a）：季節卡、全景、金箔、特別全景依抽到的季節換照片 */
+  /** 季節照片（DESIGN.md §7.19a）：季節卡、全景、金箔、特別全景依抽到的季節換照片。
+   *  沒有季節照片時是 {}；undefined 表示還不知道（資料還沒載入），這時不先拿基本卡的照片頂替 */
   seasonImages?: Partial<Record<'spring' | 'summer' | 'autumn' | 'winter' | 'night' | 'panorama', { url: string; author?: string; license?: string }>>
   /** 類型（寺院、城…） */
   kind?: string
@@ -99,7 +101,7 @@ export function cardFromSpot(s: Spot): CardFace {
     image: img ? { url: img.url, author: img.author, license: img.license } : undefined,
     seasonImages: s.season_images
       ? Object.fromEntries(Object.entries(s.season_images).map(([k, v]) => [k, { url: v.url, author: v.author, license: v.license }]))
-      : undefined,
+      : {},
     kind: kindOf(s.tags),
     designation: designationOf(s.tags),
     summary: s.summary ? { text: s.summary.text_zh ?? s.summary.text, license: s.summary.license } : undefined,
@@ -116,10 +118,47 @@ export function cardFromMapSpot(s: MapSpot, pref: string): CardFace {
       ? Object.fromEntries(
           Object.entries(s.si).map(([k, [path, author, license]]) => [k, { url: path.startsWith('https://') ? path : COMMONS_THUMB_PREFIX + path, author, license }]),
         )
-      : undefined,
+      : {},
     kind: s.c,
     designation: s.d,
   }
+}
+
+export type CardPhoto = NonNullable<CardFace['image']>
+
+/** 全景卡（全景、特別全景、夜景）：照片鋪滿整張卡 */
+export function isFullArt(variant: Pick<Variant, 'kind'>): boolean {
+  return variant.kind === 'full' || variant.kind === 'special' || variant.kind === 'night'
+}
+
+/**
+ * 卡面的照片（DESIGN.md §7.19a）。基本卡用主照片；其他樣式用抽到那個季節（夜景卡是夜景）的照片，沒有就用主照片。
+ * 不拿第二張或其他季節的照片補（別的季節的照片也常拍到別處）。
+ * 季節照片還不知道有沒有（face.seasonImages 是 undefined）時回傳 undefined：先畫紋樣，
+ * 不先放主照片、資料到了再換成季節照片（換樣式時會先閃一下別張照片）。
+ */
+export function cardPhoto(face: Pick<CardFace, 'image' | 'seasonImages'>, variant: Pick<Variant, 'kind' | 'photo'>): CardPhoto | undefined {
+  if (variant.kind === 'base' || !variant.photo) return face.image
+  if (!face.seasonImages) return undefined
+  return face.seasonImages[variant.photo] ?? face.image
+}
+
+/** 卡片照片要試的網址：大卡用大一號的縮圖；縮圖取不到時改用小一號、原圖（services/commons.ts） */
+export function cardPhotoSources(url: string, size: 'sm' | 'lg' | 'fluid', fullArt: boolean): string[] {
+  const widths: (500 | 960 | 1280)[] = size === 'lg' ? (fullArt ? [1280, 960] : [960]) : fullArt ? [960, 500] : [500]
+  return [...new Set(widths.flatMap((w) => commonsCandidates(url, w)))]
+}
+
+/**
+ * 照片載入失敗後改試下一個網址：失敗的次數跟著照片記，換照片就從頭試
+ * （不靠換照片後再歸零：歸零之前算出來的網址會先用到上一張照片的失敗次數）。
+ */
+export interface PhotoFailures {
+  key: string
+  n: number
+}
+export function photoTry(fail: PhotoFailures, key: string): number {
+  return fail.key === key ? fail.n : 0
 }
 
 export { commonsThumb } from './commons'
