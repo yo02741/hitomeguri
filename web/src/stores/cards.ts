@@ -59,6 +59,7 @@ export const useCardsStore = defineStore('cards', () => {
       covers.value = uid ? readCovers(uid) : {}
       tasks.value = uid ? readTasks(uid) : {}
       if (!uid) return
+      let flushed = false
       const { fs, db } = await firestore()
       if (userStore.user?.uid !== uid) return
       unsubscribe = fs.onSnapshot(
@@ -76,7 +77,13 @@ export const useCardsStore = defineStore('cards', () => {
           codes.value = merge(remote, readLocal(uid))
           // 封面：這台裝置上改過的為準
           covers.value = { ...remoteCovers, ...readCovers(uid) }
-          tasks.value = { ...remoteTasks, ...readTasks(uid) }
+          const pending = readTasks(uid)
+          tasks.value = { ...remoteTasks, ...pending }
+          // 這台裝置記著、還沒寫進去的任務：第一次讀得到 Firestore 時補寫
+          if (!flushed) {
+            flushed = true
+            for (const id of Object.keys(pending)) void write(id)
+          }
         },
         () => {
           // 規則還沒發布（permission-denied）：只用這台裝置的
@@ -116,11 +123,7 @@ export const useCardsStore = defineStore('cards', () => {
     const next = cleanTasks(cur)
     tasks.value = { ...tasks.value, [spotId]: next }
     writeJson(`${LOCAL_TASKS}:${uid}`, { ...readTasks(uid), [spotId]: next })
-    if (await write(spotId)) {
-      const pending = readTasks(uid)
-      delete pending[spotId]
-      writeJson(`${LOCAL_TASKS}:${uid}`, pending)
-    }
+    await write(spotId)
   }
 
   /** 收集冊的封面：沒選就是基本卡 */
@@ -139,13 +142,22 @@ export const useCardsStore = defineStore('cards', () => {
   async function write(spotId: string): Promise<boolean> {
     const uid = userStore.user?.uid
     if (!uid) return false
-    // 只存抽到的季節：以前的銀箔、金箔、抽到的全景等代號在這裡拿掉
-    const data: Record<string, unknown> = { v: drawnSeasons(codesOf(spotId)).map((s) => `season-${s}`), t: tasksOf(spotId) }
+    // 只存抽到的季節：以前的銀箔、金箔、抽到的全景等代號在這裡拿掉。
+    // 沒勾任務就不寫 t（setDoc 整份取代，沒有 t 就是都沒勾）
+    const data: Record<string, unknown> = { v: drawnSeasons(codesOf(spotId)).map((s) => `season-${s}`) }
+    const t = tasksOf(spotId)
+    if (t.length) data.t = t
     const c = covers.value[spotId]
     if (c) data.c = c
     try {
       const { fs, db } = await firestore()
       await fs.setDoc(fs.doc(db, 'users', uid, 'cards', spotId), { ...data, updated_at: fs.serverTimestamp() })
+      // 寫進去了：這個景點的任務以 Firestore 為準，這台裝置記著的拿掉
+      const pending = readTasks(uid)
+      if (spotId in pending) {
+        delete pending[spotId]
+        writeJson(`${LOCAL_TASKS}:${uid}`, pending)
+      }
       return true
     } catch {
       // 寫不進去：留在這台裝置

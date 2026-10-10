@@ -346,7 +346,7 @@ function onCardKey(e: KeyboardEvent, id: string) {
               <SpotCard :card="e.face" :rarity="e.rarity" :label="e.label" :number="e.number" visited :visited-on="e.visitedOn" size="fluid" :variant="shownVariant(e)" lite sideways />
             </div>
             <!-- .deal 四周多了 1rem 的內距，標記要往內移回卡的左上角 -->
-            <NewTag v-if="fresh.spotHasNew(e.face.id)" class="absolute top-2.5 left-2.5 z-10" />
+            <NewTag v-if="fresh.spotHasNew(e.face.id, e.variants)" class="absolute top-2.5 left-2.5 z-10" />
             <p v-if="e.variants.length > 1" class="mt-1.5 flex justify-center gap-1 text-caption text-sub">
               <span class="whitespace-nowrap font-num">{{ e.variants.length }} / {{ e.variantTotal }}</span> 種
             </p>

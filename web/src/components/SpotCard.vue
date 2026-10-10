@@ -113,7 +113,7 @@ const nameSize = computed(() => {
 // 箔片的樣式（DESIGN.md §7.19）：世界遺產＝虹＋亮片、國寶＝金＋亮片、
 // 特別史跡・特別名勝＝反向閃卡（照片窗外的卡框發亮，照片不加箔片）、名城＝地方紋樣
 const foil = computed(() => {
-  // 全景卡、金箔卡的光澤蓋滿整張卡，照片窗不另外加
+  // 基本卡、季節卡以外（全景・特別全景的光澤蓋滿整張卡，夜景・墨繪・切手）照片窗不另外加
   if (props.variant.kind !== 'base' && props.variant.kind !== 'season') return 'none'
   if (props.rarity === 'rainbow') return 'cosmos'
   if (props.rarity === 'castle') return 'pattern'

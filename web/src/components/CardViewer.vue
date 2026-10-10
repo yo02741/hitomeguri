@@ -84,6 +84,14 @@ function expectNew(keys: string[]) {
   beforeTimer = window.setTimeout(() => (before = null), 4000)
 }
 onBeforeUnmount(() => clearTimeout(beforeTimer))
+// 新卡亮相結束：回到最上面看那張新卡（捲到下面勾任務時，亮相後也從卡片看起）
+const viewerEl = ref<HTMLElement | null>(null)
+watch(
+  () => Boolean(reveal.value),
+  (on) => {
+    if (!on && viewerEl.value) viewerEl.value.scrollTop = 0
+  },
+)
 watch(
   () => props.variants,
   (list) => {
@@ -203,6 +211,7 @@ onBeforeUnmount(() => document.removeEventListener('keydown', onKey))
       @close="closed"
     >
       <div
+        ref="viewerEl"
         data-reduce="fade"
         class="viewer relative flex size-full flex-col items-center justify-center gap-5 bg-ink/75 p-4"
         :class="{ 'has-tasks': showTasks }"
@@ -305,8 +314,8 @@ onBeforeUnmount(() => document.removeEventListener('keydown', onKey))
                   <span class="box grid size-[18px] shrink-0 place-items-center rounded-[4px] border-2 border-paper" :class="ticked.includes(t.key) ? 'bg-paper text-ink' : ''" aria-hidden="true">
                     <svg v-if="ticked.includes(t.key)" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5" /></svg>
                   </span>
-                  {{ t.label }}
-                  <span class="text-caption text-white/60">{{ t.card }}</span>
+                  <span class="label min-w-0">{{ t.label }}</span>
+                  <span class="tag shrink-0 whitespace-nowrap text-caption text-white/60">{{ t.card }}</span>
                 </button>
               </li>
               <li>
@@ -319,8 +328,8 @@ onBeforeUnmount(() => document.removeEventListener('keydown', onKey))
                   <span class="box grid size-[18px] shrink-0 place-items-center rounded-[4px] border-2 border-paper/50" :class="trip ? 'bg-paper/50 text-ink' : ''" aria-hidden="true">
                     <svg v-if="trip" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5" /></svg>
                   </span>
-                  <span class="max-w-[16rem] truncate">{{ trip ? `行程「${trip.name}」` : '行程裡去過' }}</span>
-                  <span class="text-caption text-white/60">全景</span>
+                  <span class="label min-w-0 max-w-[16rem] truncate">{{ trip ? `行程「${trip.name}」` : '行程裡去過' }}</span>
+                  <span class="tag shrink-0 whitespace-nowrap text-caption text-white/60">全景</span>
                 </span>
               </li>
             </ul>
@@ -361,10 +370,10 @@ onBeforeUnmount(() => document.removeEventListener('keydown', onKey))
             </button>
           </div>
         </div>
-        <!-- 手機（<640）：「關閉」在右上角，按鈕列放得進一行 -->
+        <!-- 手機（<640）：「關閉」固定在右上角（整頁上下捲時也看得到），按鈕列放得進一行 -->
         <button
           type="button"
-          class="absolute top-[max(0.75rem,env(safe-area-inset-top))] right-[max(0.75rem,env(safe-area-inset-right))] flex h-10 items-center rounded-full bg-paper px-4 text-body-sm font-bold text-ink active:not-disabled:translate-y-px sm:hidden pointer-coarse:h-tap"
+          class="fixed top-[max(0.75rem,env(safe-area-inset-top))] right-[max(0.75rem,env(safe-area-inset-right))] flex h-10 items-center rounded-full bg-paper px-4 text-body-sm font-bold text-ink active:not-disabled:translate-y-px sm:hidden pointer-coarse:h-tap"
           @click="emit('close')"
         >
           關閉
@@ -431,9 +440,10 @@ onBeforeUnmount(() => document.removeEventListener('keydown', onKey))
     padding-top: max(4rem, calc(env(safe-area-inset-top) + 3.5rem));
   }
 }
+/* 手機：卡寬不讓給「這裡做過的事」，清單放在卡片下面，往下捲就看得到（紀念卡上的紀錄字才不會太小） */
 @media (max-width: 639px) {
   .viewer.has-tasks {
-    --reserve: 500px;
+    --reserve: 360px;
   }
 }
 @media (max-width: 400px) {
@@ -501,7 +511,29 @@ onBeforeUnmount(() => document.removeEventListener('keydown', onKey))
   .tasks ul {
     flex-direction: column;
     flex-wrap: nowrap;
-    align-items: flex-start;
+    align-items: stretch;
+  }
+  /* 欄寬只有 13rem：字可以折行，樣式名另起一行 */
+  .tasks .task {
+    height: auto;
+    min-height: 2.5rem;
+    flex-wrap: wrap;
+    align-items: center;
+    column-gap: 0.5rem;
+    row-gap: 0;
+    padding-block: 0.25rem;
+    border-radius: 0.75rem;
+    text-align: start;
+  }
+  .tasks .label {
+    flex: 1 1 0;
+    white-space: normal;
+    overflow: visible;
+    max-width: none;
+  }
+  .tasks .tag {
+    flex-basis: 100%;
+    padding-left: calc(18px + 0.5rem);
   }
   .viewer.has-tasks {
     overflow-y: hidden;

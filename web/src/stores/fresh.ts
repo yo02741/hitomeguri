@@ -52,8 +52,8 @@ export const useFreshStore = defineStore('fresh', () => {
     persist()
   }
   const has = (k: string) => keys.value.has(k)
-  /** 這個景點有沒看過的樣式 */
-  const spotHasNew = (spotId: string) => [...keys.value].some((k) => k.startsWith(`c:${spotId}:`))
+  /** 這個景點有沒看過的樣式：只算現在還有的樣式（拿掉的樣式、以前的銀箔金箔留下的標記不算） */
+  const spotHasNew = (spotId: string, variants: readonly { key: string }[]) => variants.some((v) => keys.value.has(cardKey(spotId, v.key)))
 
   return { keys, add, seen, has, spotHasNew }
 })
