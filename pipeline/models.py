@@ -55,6 +55,9 @@ class Image(StrictModel):
     author: str
     license: str
     source_url: str
+    # 原圖寬高（Commons API）：收集卡在顯示前決定直卡或橫卡（seed-photo-sizes 補齊既有資料）
+    width: int | None = Field(default=None, gt=0)
+    height: int | None = Field(default=None, gt=0)
 
 
 class StationName(StrictModel):

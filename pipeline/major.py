@@ -1080,7 +1080,12 @@ def to_spot(
         info = images[d.ent.image]
         img_list.append(
             Image(
-                url=info.url, author=info.author, license=info.license, source_url=info.source_url
+                url=info.url,
+                author=info.author,
+                license=info.license,
+                source_url=info.source_url,
+                width=info.width,
+                height=info.height,
             )
         )
     tags = []

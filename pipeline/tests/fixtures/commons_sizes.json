@@ -1,0 +1,20 @@
+{
+  "batchcomplete": "",
+  "query": {
+    "normalized": [
+      {"from": "File:kinkaku night.jpg", "to": "File:Kinkaku night.jpg"}
+    ],
+    "redirects": [
+      {"from": "File:Old name.jpg", "to": "File:New name.jpg"}
+    ],
+    "pages": {
+      "1": {"pageid": 1, "ns": 6, "title": "File:Kiyomizu dera.jpg", "imagerepository": "local",
+            "imageinfo": [{"size": 812345, "width": 4000, "height": 2250}]},
+      "2": {"pageid": 2, "ns": 6, "title": "File:Kinkaku night.jpg", "imagerepository": "local",
+            "imageinfo": [{"size": 512345, "width": 2000, "height": 3000}]},
+      "3": {"pageid": 3, "ns": 6, "title": "File:New name.jpg", "imagerepository": "local",
+            "imageinfo": [{"size": 100, "width": 1200, "height": 1000}]},
+      "-1": {"ns": 6, "title": "File:Gone.jpg", "missing": "", "imagerepository": ""}
+    }
+  }
+}
