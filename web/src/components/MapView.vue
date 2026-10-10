@@ -9,7 +9,6 @@ import { mapThumbFallback, mapThumbUrl, type MapSpot } from '../services/bundles
 import { splashCovering, trackSplash } from '../services/splash'
 import { theme } from '../services/theme'
 import { wide } from '../services/viewport'
-import { DEM_SOURCE, GSI_ATTRIBUTION, GSI_DEM_URL, registerGsiDem, setTerrainPreferred, terrainPreferred } from '../map/terrain'
 import JapanLocator from './JapanLocator.vue'
 
 const props = defineProps<{
@@ -41,8 +40,6 @@ const props = defineProps<{
   marked?: Record<string, { favorite?: boolean; visited?: boolean }> | null
   /** 行程某一天的順序連線（依停留點順序的座標） */
   route?: [number, number][] | null
-  /** 不顯示「立體」切換（紀錄頁的小地圖） */
-  noTerrain?: boolean
 }>()
 
 export interface PackPoint {
@@ -345,11 +342,6 @@ function applyColors() {
   map.setPaintProperty('outline-line', 'line-color', strong)
   map.setPaintProperty('route-line', 'line-color', strong)
   map.setPaintProperty('route-head', 'circle-color', strong)
-  if (map.getLayer('hillshade')) {
-    map.setPaintProperty('hillshade', 'hillshade-shadow-color', ink)
-    map.setPaintProperty('hillshade', 'hillshade-highlight-color', paper)
-    map.setPaintProperty('hillshade', 'hillshade-accent-color', token('--region-sub'))
-  }
   map.setPaintProperty('route-head', 'circle-stroke-color', paper)
   const packColor = token(`--color-t-${props.pack?.color ?? 'major'}`)
   map.setPaintProperty('pack-clusters', 'circle-color', packColor)
@@ -894,67 +886,6 @@ function thumbFailed(h: Hover | null) {
   hover.value = { ...h, thumb: undefined }
 }
 
-// 立體地形（DESIGN.md §8，map/terrain.ts）：国土地理院の標高タイル＋陰影。鏡頭的傾斜照舊用右鍵拖曳（手機兩指上下拖），
-// 這裡不改；正上方看時靠陰影看出起伏。偏好存在這台裝置。
-// 手機不放「立體」：鈕太多、地形也吃效能
-const terrainOn = ref(!props.noTerrain && wide.value && terrainPreferred())
-function applyTerrain() {
-  if (!map || !ready) return
-  const on = terrainOn.value && !props.noTerrain
-  if (on) {
-    registerGsiDem()
-    if (!map.getSource(DEM_SOURCE)) {
-      map.addSource(DEM_SOURCE, {
-        type: 'raster-dem',
-        tiles: [GSI_DEM_URL.replace('https://', 'gsidem://')],
-        tileSize: 256,
-        maxzoom: 14,
-        encoding: 'terrarium',
-        attribution: GSI_ATTRIBUTION,
-      })
-      // 陰影畫在縣界之上、鐵路與景點之下
-      map.addLayer(
-        {
-          id: 'hillshade',
-          type: 'hillshade',
-          source: DEM_SOURCE,
-          paint: {
-            'hillshade-exaggeration': 0.7,
-            'hillshade-shadow-color': token('--region-ink'),
-            'hillshade-highlight-color': token('--region-paper'),
-            'hillshade-accent-color': token('--region-sub'),
-          },
-        },
-        'rail-casing',
-      )
-    }
-    map.setLayoutProperty('hillshade', 'visibility', 'visible')
-    map.setTerrain({ source: DEM_SOURCE, exaggeration: 1.5 })
-  } else {
-    if (map.getLayer('hillshade')) map.setLayoutProperty('hillshade', 'visibility', 'none')
-    map.setTerrain(null)
-  }
-}
-function toggleTerrain() {
-  terrainOn.value = !terrainOn.value
-  setTerrainPreferred(terrainOn.value)
-  applyTerrain()
-}
-// 「立體」鈕放進 MapLibre 右下角的控制列（縮放鈕上面）：位置跟著 attribution 展開與縮放鈕走，不會疊在一起
-const terrainHost = shallowRef<HTMLElement | null>(null)
-class TerrainControl implements maplibregl.IControl {
-  el = document.createElement('div')
-  onAdd() {
-    this.el.className = 'maplibregl-ctrl maplibregl-ctrl-group'
-    terrainHost.value = this.el
-    return this.el
-  }
-  onRemove() {
-    this.el.remove()
-    terrainHost.value = null
-  }
-}
-
 // 角落的日本全圖（JapanLocator）：放大到看不出在哪裡時才出現；移動中每一格畫面更新一次
 const LOCATOR_ZOOM = 6.5
 // 手機：上方清單（軌道）與下方卡片之間放不下整個小框（72px 寬時約 104px 高，倍率換行時約 122px）就先不顯示，不露出被切掉的半個
@@ -974,7 +905,7 @@ const locatorStyle = computed(() => {
   if (!edge) return undefined
   return 'top' in edge ? { top: `${edge.top + 10}px` } : { bottom: `${edge.bottom + 10}px` }
 })
-// 桌機：右下的出處（開了立體會多一段「標高：国土地理院」）不伸到左下的位置小框底下，放不下就換行。
+// 桌機：右下的出處不伸到左下的位置小框底下，放不下就換行。
 // 小框在 insetLeft 起 132px 寬，右邊再留 12px；出處容器本身離右緣 10px
 const LOCATOR_W = 132
 const rootStyle = computed(() => {
@@ -1019,7 +950,7 @@ onMounted(() => {
     style: MAP_STYLE_URL,
     center: JAPAN_CENTER,
     zoom: JAPAN_ZOOM,
-    // 底圖圖磚只到 14 級，再放大就只是放大；17 級已看得到建物。放太大時立體地形上的照片與圓點也會錯開
+    // 底圖圖磚只到 14 級，再放大就只是放大；17 級已看得到建物
     maxZoom: 17,
     attributionControl: {
       compact: true,
@@ -1029,8 +960,6 @@ onMounted(() => {
   // 手機：出處一開始只留 ⓘ，點了才展開（MapLibre 的 compact 一開始是展開的，會蓋住小地圖的下緣）
   if (!wide.value) collapseAttribution()
   map.addControl(new maplibregl.NavigationControl({ showCompass: false }), 'bottom-right')
-  // 下方角落後加的排在上面：立體、縮放、attribution
-  if (!props.noTerrain && wide.value) map.addControl(new TerrainControl(), 'bottom-right')
   // 開場畫面等到底圖第一次畫完（樣式或圖磚失敗也放行）
   const m = map
   trackSplash(
@@ -1049,7 +978,6 @@ onMounted(() => {
     syncPin()
     if (props.bounds) fit(props.bounds, false)
     drawRoute(props.route)
-    applyTerrain()
   })
   const syncSize = () => {
     const el = container.value
@@ -1233,20 +1161,6 @@ defineExpose({
     aria-label="地圖"
   >
     <div ref="container" class="isolate size-full"></div>
-    <!-- maplibre-gl.css 不在 layer 裡，會蓋過 utilities：底色與排版用 ! 才壓得過它的 button 樣式 -->
-    <Teleport v-if="terrainHost && !noTerrain" :to="terrainHost">
-      <button
-        type="button"
-        class="!grid place-items-center text-caption leading-none font-bold print:hidden"
-        :class="terrainOn ? '!bg-region-strong text-white' : '!bg-paper text-ink hover:!bg-surface active:!bg-surface'"
-        :aria-pressed="terrainOn"
-        aria-label="立體地形"
-        title="立體地形"
-        @click="toggleTerrain"
-      >
-        <span aria-hidden="true">立<br />體</span>
-      </button>
-    </Teleport>
     <!-- 手機打橫時地圖只剩兩百多 px 高（左側欄旁邊、或和縮放鈕疊在一起）：不顯示小框 -->
     <Transition name="locator">
       <JapanLocator
