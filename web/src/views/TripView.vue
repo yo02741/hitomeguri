@@ -447,6 +447,17 @@ async function del() {
             @change="setDates"
           />
           <span class="text-caption text-sub">{{ trip.days.length }} 天</span>
+          <!-- 沒有日期時天數自己加（有日期時天數跟著日期）；桌機在天數旁邊，位置固定。手機在天數條右邊 -->
+          <button
+            v-if="wide && !hasDates"
+            type="button"
+            :disabled="locked || trip.days.length >= MAX_DAYS"
+            class="flex h-10 items-center gap-1 rounded-control border border-line bg-paper pr-3 pl-2.5 text-body-sm text-ink hover:not-disabled:bg-surface disabled:cursor-not-allowed disabled:opacity-40 active:not-disabled:translate-y-px pointer-coarse:h-tap"
+            @click="addDay"
+          >
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14" /></svg>
+            加一天
+          </button>
           <span v-if="status === 'ongoing'" class="rounded-tag bg-region-strong px-1.5 text-caption font-bold text-white">旅途中</span>
           <span v-else-if="until !== null" class="flex items-center gap-1 text-caption text-sub">還有<SplitFlap :value="String(until)" class="text-title" />天</span>
         </div>
@@ -550,6 +561,18 @@ async function del() {
               <span class="font-num text-micro">{{ trip.unscheduled.length }}</span>
             </button>
           </div>
+          <!-- 加一天：固定在天數條右邊（格子會越來越多，放在格子後面會一直往右跑） -->
+          <button
+            v-if="!hasDates"
+            type="button"
+            aria-label="加一天"
+            title="加一天"
+            :disabled="locked || trip.days.length >= MAX_DAYS"
+            class="flex size-tap shrink-0 items-center justify-center rounded-control border border-line bg-paper text-ink disabled:cursor-not-allowed disabled:opacity-40 active:not-disabled:translate-y-px"
+            @click="addDay"
+          >
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14" /></svg>
+          </button>
           <button
             type="button"
             class="flex h-tap shrink-0 items-center gap-1.5 rounded-control border px-3 text-body-sm font-bold active:translate-y-px"
@@ -639,16 +662,6 @@ async function del() {
           </a>
         </div>
       </section>
-      <button
-        v-if="!hasDates && activeDay !== -1"
-        type="button"
-        :disabled="locked"
-        class="h-10 w-fit rounded-control border border-line bg-paper px-3.5 text-body-sm text-ink hover:not-disabled:bg-surface disabled:cursor-not-allowed disabled:opacity-40 active:not-disabled:translate-y-px pointer-coarse:h-tap"
-        @click="addDay"
-      >
-        加一天
-      </button>
-
       <section v-show="wide || activeDay === -1" class="flex flex-col gap-1.5 lg:border-t lg:border-line lg:pt-4" aria-label="待排">
         <h2 class="flex items-baseline gap-1.5 text-caption font-bold tracking-section text-sub max-lg:sr-only">
           待排<span class="font-num font-normal tracking-normal">{{ trip.unscheduled.length }}</span>
