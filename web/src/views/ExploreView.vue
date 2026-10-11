@@ -557,7 +557,7 @@ watch(
   { immediate: true },
 )
 
-// 選取景點：卡片用景點自己所在縣的顏色，不改 activePref（UX-FLOW.md §5.3）。
+// 選取景點：讀詳細資料（別縣的點由下面的檢查換到它的縣，UX-FLOW.md §5.3）。
 watch(
   selectedId,
   async (id) => {
@@ -587,6 +587,39 @@ watch(
   { immediate: true },
 )
 
+/** 地圖上的景點在哪個縣（已載入的縣 bundle 或全國總覽裡找） */
+function prefOfMapSpot(id: string): string | undefined {
+  return available.value.find((p) => (catalog.mapSpots[p] ?? catalog.featured[p])?.some((s) => s.id === id))
+}
+
+// 選到的點和網址的縣要一致：連結（/map/別縣?spot=、/?spot=）或任何沒換縣就打開別縣景點的路徑，
+// 詳細資料到了發現不是這個縣時換到它的縣（replace，不多一筆歷史）。每個選取只檢查一次：
+// 開著卡片拖曳地圖跨縣時照常換縣、不打斷卡片（UX-FLOW.md §5），不會被拉回來
+let prefCheckedFor: string | null = null
+watch(
+  () => {
+    const id = selectedId.value
+    if (!id) return null
+    if (selectedPack.value) return [id, selectedPack.value.item.p] as const
+    return selectedSpot.value?.id === id ? ([id, selectedSpot.value.prefecture] as const) : null
+  },
+  (hit) => {
+    if (!hit) {
+      if (!selectedId.value) prefCheckedFor = null
+      return
+    }
+    const [id, pref] = hit
+    if (prefCheckedFor === id) return
+    prefCheckedFor = id
+    if (pref === props.pref || !regionOf(pref)) return
+    const pk = selectedPack.value?.item
+    if (pk) flyAfterLoadPoint = { lng: pk.lng, lat: pk.lat }
+    else flyAfterLoad = id
+    void router.replace({ path: `/map/${pref}`, query: route.query })
+  },
+  { immediate: true },
+)
+
 async function select(id: string) {
   const pack = packOfId(id)
   const item = pack ? catalog.packs[pack]?.find((x) => x.id === id) : undefined
@@ -595,10 +628,13 @@ async function select(id: string) {
   // 這裡和 spot 一起寫進同一次導航，explore.pack 由 route.query.pack 的 watcher 跟上
   // 已經是景點的點（名城）：直接開景點卡片，名城番號等顯示在卡片上
   const target = item?.s ?? id
-  // 首頁（全國）選了擴充包的點：和搜尋一樣進入那個縣（地圖、地區色、清單都換到該縣）
-  if (item && !props.pref && regionOf(item.p)) {
-    flyAfterLoadPoint = { lng: item.lng, lat: item.lat }
-    await router.push({ path: `/map/${item.p}`, query: { spot: target, pack } })
+  // 別縣（含首頁全國）的點：和搜尋一樣進入那個縣（地圖、地區色、清單都換到該縣；點出來的換縣有墨水暈開）
+  const pref = item?.p ?? prefOfMapSpot(id)
+  if (pref && pref !== props.pref && regionOf(pref)) {
+    const { at: _a, label: _l, ...keep } = route.query
+    if (item) flyAfterLoadPoint = { lng: item.lng, lat: item.lat }
+    else flyAfterLoad = id
+    await router.push({ path: `/map/${pref}`, query: { ...keep, spot: target, ...(pack ? { pack } : {}) } })
     return
   }
   // 選了景點就收起地點標記

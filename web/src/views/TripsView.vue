@@ -40,7 +40,7 @@ const formOpen = ref(false)
         新增行程
       </button>
       <TripCreateForm v-else-if="!wide" focus />
-      <RouterLink v-if="doneCount" to="/log" class="w-fit text-body-sm text-sub active:text-ink pointer-coarse:-my-3 pointer-coarse:py-3">已結束的旅行 {{ doneCount }}</RouterLink>
+      <RouterLink v-if="doneCount" to="/log#log-trips" class="w-fit text-body-sm text-sub active:text-ink pointer-coarse:-my-3 pointer-coarse:py-3">已結束的旅行 {{ doneCount }}</RouterLink>
       <p v-if="trips.error" class="text-caption text-danger" role="alert">{{ trips.error }}</p>
     </template>
     <div v-else class="flex flex-col items-start gap-4">

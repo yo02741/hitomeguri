@@ -755,3 +755,9 @@
   box-sizing: border-box;
   max-width: var(--map-attrib-max, none);
 }
+/* 紀錄頁的小地圖（MapView cooperative）：滾輪、單指拖曳讓給頁面時的提示，用介面的字與墨色 */
+.maplibregl-cooperative-gesture-screen {
+  background: color-mix(in srgb, var(--color-ink) 45%, transparent);
+  color: var(--color-paper);
+  font: 700 var(--text-body-sm) / 1.4 var(--font-sans);
+}
