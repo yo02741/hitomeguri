@@ -7,6 +7,9 @@
 - search.json：全國景點搜尋索引（第一次搜尋時才載入）。
 - achievements.json：成就用的小索引（文化指定 → 大點 id、名城 → 對應景點）。
 - ukiyoe.json：收集冊「浮世繪裡的景點」（data/ukiyoe.json 加上景點名稱）。
+- municipalities/{pref}.json：市区町村界（再簡化的 GeoJSON，縣內規劃的小區塊）。
+- rail/{pref}.json：鐵路路線與車站（車站帶路網節點 id、停靠的路線、新幹線）。
+- rail-graph.json：全國車站路網（日帰り的鐵路距離，pipeline/rail_graph.py）。
 """
 
 from __future__ import annotations
@@ -18,7 +21,7 @@ import re
 from pathlib import Path
 from typing import Any
 
-from pipeline import config
+from pipeline import config, municipalities, rail_graph
 from pipeline.models import (
     Festival,
     FlightRoute,
@@ -34,6 +37,7 @@ from pipeline.paths import (
     BUNDLES_DIR,
     FESTIVALS_DIR,
     FLIGHTS_JSON,
+    MUNICIPALITIES_DIR,
     PACKS_DIR,
     PHRASES_DIR,
     RAIL_DIR,
@@ -132,7 +136,8 @@ def aspect(img: dict[str, Any]) -> float | None:
     return round(w / h, 2) if w and h else None
 
 
-def map_entry(s: dict[str, Any]) -> dict[str, Any]:
+def map_entry(s: dict[str, Any], station: str | None = None) -> dict[str, Any]:
+    """地圖用精簡資料；m 市区町村代碼、st 最近車站的路網節點 id（rail-graph.json）。"""
     name = s["name"]
     entry: dict[str, Any] = {
         "id": s["id"],
@@ -165,7 +170,21 @@ def map_entry(s: dict[str, Any]) -> dict[str, Any]:
     }
     if seasonal:
         entry["si"] = seasonal
+    if s.get("municipality"):
+        entry["m"] = s["municipality"]
+    if station:
+        entry["st"] = station
     return entry
+
+
+def spot_station(graph: rail_graph.Graph, s: dict[str, Any]) -> str | None:
+    """景點的最近車站（nearest_stations，近的先）對到路網節點：同名、距離加 1 km 以內。"""
+    loc = s["location"]
+    for ns in s.get("nearest_stations") or []:
+        node = graph.nearest_node(ns["name"]["ja"], loc["lat"], loc["lng"], ns["distance_m"] + 1000)
+        if node:
+            return node
+    return None
 
 
 def build(src: Path = SPOTS_DIR, dst: Path = BUNDLES_DIR) -> list[Path]:
@@ -177,6 +196,7 @@ def build(src: Path = SPOTS_DIR, dst: Path = BUNDLES_DIR) -> list[Path]:
     achv_spots: list[dict[str, Any]] = []
     zh = _translations()
     tag = _translation_tag()
+    graph = rail_graph.build_graph()
     for path in sorted(src.glob("*.json")):
         pref = path.stem
         raw = json.loads(path.read_text(encoding="utf-8"))
@@ -185,8 +205,21 @@ def build(src: Path = SPOTS_DIR, dst: Path = BUNDLES_DIR) -> list[Path]:
             for s in raw
         ]
         published = [s for s in spots if s["status"] == "published"]
-        version = hashlib.sha1(path.read_bytes() + tag).hexdigest()[:10]
-        majors = [map_entry(s) for s in published]
+        # 市区町村（還沒跑 assign-municipalities 的用區界算）、最近車站的路網節點：
+        # 由別的資料算出來，也要算進版本（區界、鐵路更新時瀏覽器才會重新下載）
+        areas = municipalities.areas(pref)
+        stations: dict[str, str | None] = {}
+        for s in published:
+            if not s.get("municipality") and areas:
+                code = areas.code_at(s["location"]["lat"], s["location"]["lng"])
+                if code:
+                    s["municipality"] = code
+            stations[s["id"]] = spot_station(graph, s)
+        derived = json.dumps(
+            [[s["id"], s.get("municipality"), stations[s["id"]]] for s in published]
+        ).encode()
+        version = hashlib.sha1(path.read_bytes() + tag + derived).hexdigest()[:10]
+        majors = [map_entry(s, stations[s["id"]]) for s in published]
         written.append(_write(dst / "map" / f"{pref}.json", majors))
         # 首頁用：只留地圖顯示需要的欄位（名稱、座標、類型、照片）
         featured[pref] = [
@@ -214,9 +247,19 @@ def build(src: Path = SPOTS_DIR, dst: Path = BUNDLES_DIR) -> list[Path]:
             json.dumps(achv, ensure_ascii=False, sort_keys=True).encode()
         ).hexdigest()[:10]
     }
-    rail = build_rail(dst / "rail")
+    rail = build_rail(dst / "rail", graph)
     index["rail"] = {pref: meta for pref, (_, meta) in rail.items()}
     written += [path for path, _ in rail.values()]
+    graph_path = rail_graph.write_bundle(graph, dst)
+    written.append(graph_path)
+    index["rail_graph"] = {
+        "nodes": len(graph.nodes),
+        "edges": len(graph.edges),
+        "version": hashlib.sha1(graph_path.read_bytes()).hexdigest()[:10],
+    }
+    munis = build_municipalities(dst / "municipalities")
+    index["municipalities"] = {pref: meta for pref, (_, meta) in munis.items()}
+    written += [path for path, _ in munis.values()]
     specialties = build_specialties(dst / "specialties")
     index["specialties"] = {pref: meta for pref, (_, meta) in specialties.items()}
     written += [path for path, _ in specialties.values()]
@@ -354,29 +397,55 @@ def build_packs(dst: Path) -> dict[str, tuple[Path, dict[str, Any]]]:
     return out
 
 
-def build_rail(dst: Path) -> dict[str, tuple[Path, dict[str, Any]]]:
+def build_rail(
+    dst: Path, graph: rail_graph.Graph | None = None, src: Path = RAIL_DIR
+) -> dict[str, tuple[Path, dict[str, Any]]]:
     """鐵路路線圖層：一縣一檔（打開鐵路圖層時才載入）。欄位縮寫：n 名稱、e 英文、c 顏色、
-    k 種類、o 營運者、g 線段座標；車站 n、e、lat、lng。"""
+    k 種類、o 營運者、g 線段座標（可能是空的：軌道全被別的線畫過）、s 新幹線；
+    車站 id 路網節點（rail-graph.json）、n、e、lat、lng、l 停靠的路線（lines 的 index）、
+    s 新幹線。"""
     out = {}
-    for path in sorted(RAIL_DIR.glob("*.json")) if RAIL_DIR.exists() else []:
+    for path in sorted(src.glob("*.json")) if src.exists() else []:
         data = RailData.model_validate_json(path.read_text(encoding="utf-8"))
+        line_index = {x.id: i for i, x in enumerate(data.lines)}
         body = {
             "lines": [
                 {k: v for k, v in {
                     "n": x.name, "e": x.name_en, "c": x.colour, "k": x.kind,
-                    "o": x.operator, "g": x.coords,
+                    "o": x.operator, "g": x.coords, "s": 1 if x.shinkansen else None,
                 }.items() if v is not None}
                 for x in data.lines
             ],
             "stations": [
                 {k: v for k, v in {
+                    "id": (graph.node_id(st.id) if graph else None) or st.id,
                     "n": st.name, "e": st.name_en, "lat": st.lat, "lng": st.lng,
+                    "l": [line_index[i] for i in st.lines if i in line_index] or None,
+                    "s": 1 if st.shinkansen else None,
                 }.items() if v is not None}
                 for st in data.stations
             ],
         }  # fmt: skip
-        version = hashlib.sha1(path.read_bytes()).hexdigest()[:10]
+        version = hashlib.sha1(json.dumps(body, ensure_ascii=False).encode()).hexdigest()[:10]
         out[path.stem] = (_write(dst / path.name, body), {"version": version})
+    return out
+
+
+def build_municipalities(
+    dst: Path, src: Path = MUNICIPALITIES_DIR
+) -> dict[str, tuple[Path, dict[str, Any]]]:
+    """市区町村界：一縣一檔（進入縣時才載入）；回傳 {縣: (路徑, 索引資訊)}。"""
+    out = {}
+    for path in sorted(src.glob("*.json")) if src.exists() else []:
+        data = municipalities.load(path.stem, src)
+        if data is None or not data.features:
+            continue
+        body = municipalities.web_bundle(data)
+        version = hashlib.sha1(path.read_bytes()).hexdigest()[:10]
+        out[path.stem] = (
+            _write(dst / path.name, body),
+            {"count": len(body["features"]), "version": version},
+        )
     return out
 
 

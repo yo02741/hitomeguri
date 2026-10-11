@@ -175,6 +175,32 @@ def cmd_seed_rail(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_seed_municipalities(args: argparse.Namespace) -> int:
+    from pipeline.geo import pref_slugs
+    from pipeline.municipalities import seed_municipalities
+
+    _emit(seed_municipalities(args.prefectures or pref_slugs()), args.report)
+    return 0
+
+
+def cmd_assign_municipalities(args: argparse.Namespace) -> int:
+    from pipeline.municipalities import assign_municipalities
+    from pipeline.paths import SPOTS_DIR
+
+    prefs = args.prefectures or sorted(p.stem for p in SPOTS_DIR.glob("*.json"))
+    _emit(assign_municipalities(prefs), args.report)
+    return 0
+
+
+def cmd_build_rail_graph(args: argparse.Namespace) -> int:
+    from pipeline.rail_graph import build_graph, report, write_bundle
+
+    graph = build_graph()
+    path = write_bundle(graph)
+    _emit(report(graph, path.stat().st_size), args.report)
+    return 0
+
+
 def cmd_seed_official(args: argparse.Namespace) -> int:
     from pipeline.major import OFFICIAL_SOURCES
     from pipeline.official import seed_official
@@ -378,6 +404,27 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("prefectures", nargs="*", help="省略時處理全部縣")
     p.add_argument("--report")
     p.set_defaults(func=cmd_seed_rail)
+
+    p = sub.add_parser(
+        "seed-municipalities",
+        help="市区町村界：国土数値情報 N03（簡化）＋ Wikidata 念法 → data/municipalities/",
+    )
+    p.add_argument("prefectures", nargs="*", help="省略時處理全部縣")
+    p.add_argument("--report")
+    p.set_defaults(func=cmd_seed_municipalities)
+
+    p = sub.add_parser(
+        "assign-municipalities", help="景點所在的市区町村（離線，用 data/municipalities）"
+    )
+    p.add_argument("prefectures", nargs="*", help="省略時處理全部縣")
+    p.add_argument("--report")
+    p.set_defaults(func=cmd_assign_municipalities)
+
+    p = sub.add_parser(
+        "build-rail-graph", help="全國車站路網（離線，data/rail → bundles/rail-graph.json）"
+    )
+    p.add_argument("--report")
+    p.set_defaults(func=cmd_build_rail_graph)
 
     p = sub.add_parser("seed-official", help="縣官方觀光網站景點清單 → data/seed/official/")
     p.add_argument("prefectures", nargs="*", help="省略時處理有官方網站來源的全部縣")
