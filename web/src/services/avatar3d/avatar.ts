@@ -7,6 +7,7 @@ import {
   DoubleSide,
   Float32BufferAttribute,
   Group,
+  LatheGeometry,
   type Material,
   Mesh,
   MeshBasicMaterial,
@@ -17,6 +18,7 @@ import {
   SphereGeometry,
   SRGBColorSpace,
   type Texture,
+  Vector2,
 } from 'three'
 
 import { EYES, HAIR, outfitById, type Slot } from '../../data/outfits'
@@ -175,6 +177,94 @@ function groundShadow(): Mesh {
   return mesh
 }
 
+/**
+ * 圓帽（左右對稱、比頭寬的斗笠、花笠…）：充氣只會鼓成一片，側面看像頭帶。
+ * 改用旋轉成形：每一列剪影的半寬當輪廓轉一圈，帽簷是真的一圈；貼圖從正面投影（花紋留在正面、背面是同一張）。
+ */
+const ROUND_HATS = new Set(['sugegasa', 'achv-jingasa', 'yamagata-hanagasa', 'shizuoka-fuji', 'kagoshima-sakurajima', 'tokushima-amigasa'])
+
+function latheHat(vb: ViewBox, alpha: Cover): BufferGeometry | null {
+  const [vx, vy, vw, vh] = vb
+  const pts: Vector2[] = []
+  let last = { r: 0, y: 0 }
+  let widest = 0
+  for (let y = vy; y <= vy + vh; y += 1) {
+    let l = -1
+    let r = -1
+    let filled = 0
+    let total = 0
+    for (let x = vx; x <= vx + vw; x += 0.5) {
+      if (alpha(x, y) < 0.5) continue
+      if (l < 0) l = x
+      r = x
+      filled++
+    }
+    if (l < 0) continue
+    total = (r - l) / 0.5 + 1
+    const rad = Math.max(0.5, (r - l) / 2)
+    // 過了最寬的那一列（帽簷）之後，只剩兩條細線（帽帶）就停：帽帶不轉成一圈
+    if (widest && rad < widest && filled / total < 0.4) break
+    widest = Math.max(widest, rad)
+    if (!pts.length) pts.push(new Vector2(0, worldY(y - 0.5)))
+    pts.push(new Vector2(rad * PX, worldY(y)))
+    last = { r: rad, y }
+  }
+  if (pts.length < 3) return null
+  // 帽簷底下往內收回到頭的寬度，帽子是封起來的
+  pts.push(new Vector2(Math.min(last.r, HEAD.rx * 0.9) * PX, worldY(last.y + 1.5)))
+  const geo = new LatheGeometry(pts.reverse(), 72)
+  // 貼圖從正面投影：3D 的 x 對回紙娃娃的 x
+  const pos = geo.attributes.position!
+  const uv = geo.attributes.uv!
+  for (let i = 0; i < pos.count; i++) {
+    const x = pos.getX(i) / PX + 120
+    const y = 280 - pos.getY(i) / PX
+    uv.setXY(i, (x - vx) / vw, 1 - (y - vy) / vh)
+  }
+  uv.needsUpdate = true
+  geo.computeVertexNormals()
+  return geo
+}
+
+/** 圓帽的貼圖：同一列裡透明的地方（例如編笠下面露出臉的缺口）用左右最近的顏色補滿；轉一圈後每個角度都投影得到顏色 */
+function rowFill(canvas: HTMLCanvasElement): HTMLCanvasElement {
+  const { width: W, height: H } = canvas
+  const src = canvas.getContext('2d', { willReadFrequently: true })!.getImageData(0, 0, W, H)
+  const d = src.data
+  for (let y = 0; y < H; y++) {
+    const row = y * W
+    let first = -1
+    let last = -1
+    for (let x = 0; x < W; x++)
+      if (d[(row + x) * 4 + 3]! > 160) {
+        if (first < 0) first = x
+        last = x
+      }
+    if (first < 0) continue
+    let prev = first
+    for (let x = first; x <= last; x++) {
+      const i = (row + x) * 4
+      if (d[i + 3]! > 160) {
+        prev = x
+        continue
+      }
+      let next = x + 1
+      while (next <= last && d[(row + next) * 4 + 3]! <= 160) next++
+      const from = x - prev <= next - x || next > last ? prev : next
+      const j = (row + from) * 4
+      d[i] = d[j]!
+      d[i + 1] = d[j + 1]!
+      d[i + 2] = d[j + 2]!
+      d[i + 3] = 255
+    }
+  }
+  const out = document.createElement('canvas')
+  out.width = W
+  out.height = H
+  out.getContext('2d')!.putImageData(src, 0, 0)
+  return out
+}
+
 /** 單品的範圍：小圖的 viewBox 往外留一點 */
 function itemBox(id: string): ViewBox {
   const o = outfitById.get(id)!
@@ -263,7 +353,11 @@ export async function buildAvatar(parts: AvatarParts, equipped: Partial<Record<S
   // 臉上的（在瀏海前面）、頭上的（再前面）
   if (faceItem)
     add(new Mesh(inflateLayer({ canvas: faceItem.canvas, vb: faceItem.vb, scale: SCALE, step: 1, bulge: 1.4, maxH: 5, base: onHead(7, 3, { grow: 1.0, thin: 0.5, cover: headItem?.alpha }) }).geometry, toon(faceItem.canvas)))
-  if (headItem) add(new Mesh(inflateLayer({ canvas: headItem.canvas, vb: headItem.vb, scale: SCALE, step: 1, bulge: 3.2, maxH: 15, base: onHead(9, 2, { grow: 1.04 }) }).geometry, toon(headItem.canvas)))
+  if (headItem) {
+    const lathe = ROUND_HATS.has(equipped.head!) ? latheHat(headItem.vb, headItem.alpha) : null
+    const geo = lathe ?? inflateLayer({ canvas: headItem.canvas, vb: headItem.vb, scale: SCALE, step: 1, bulge: 3.2, maxH: 15, base: onHead(9, 2, { grow: 1.04 }) }).geometry
+    add(new Mesh(geo, toon(lathe ? rowFill(headItem.canvas) : headItem.canvas)))
+  }
 
   // 手上的：放在身體表面前面一點（握在右手）；夥伴：腳邊、比身體再前面
   if (handItem) {
