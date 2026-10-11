@@ -2,8 +2,10 @@
 <html lang="zh-Hant">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <!-- 主畫面圖示：47 縣圓點的圓環，建置時由 build/icons.ts 從 data/regions.json 產生（DESIGN.md §1b） -->
+    <!-- 分頁圖示（「巡」＋47 縣色帶）與主畫面圖示（巡の輪）：建置時由 build/icons.ts 從 data/regions.json 產生（DESIGN.md §1b）。
+         PNG 寫 sizes="32x32"、SVG 寫在後面：支援 SVG 的瀏覽器用 SVG，其他的用 PNG -->
+    <link rel="icon" type="image/png" sizes="32x32" href="%BASE_URL%favicon-32.png" />
+    <link rel="icon" type="image/svg+xml" href="%BASE_URL%favicon.svg" />
     <link rel="apple-touch-icon" sizes="180x180" href="%BASE_URL%apple-touch-icon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, interactive-widget=resizes-content" />
     <meta name="description" content="來一趟日本，才知道它有多大。" />

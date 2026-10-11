@@ -1,166 +1,179 @@
 import { readFileSync } from 'node:fs'
-import { deflateSync } from 'node:zlib'
 
 import type { Plugin } from 'vite'
 
-// 主畫面圖示（決定事項 Q2，DESIGN.md §1b）：建置時從 data/regions.json 畫出 PNG，圖案和開場畫面相同——
-// 47 都道府縣的圓點（JIS 順、從正上方順時針，各縣的地區色）排成一圈，底是全國的紙色，圓環的線是全國的 line 色。
-// 原始碼不寫色碼；不另外裝影像套件，圓用距離算覆蓋率（邊緣抗鋸齒），自己編 PNG。
+import { MEGURI } from './glyph-meguri.ts'
+import { Canvas, hex, type Rgb, type Transform } from './raster.ts'
+
+// 圖示（DESIGN.md §1b）：建置時從 data/regions.json 畫出來，原始碼不寫色碼；開發伺服器回應同樣的網址。
 //
+// 主畫面圖示「巡の輪」：全國 paper 底（加紙紋）、line 細圓、47 都道府縣的圓點（JIS 順、從正上方順時針，各縣的 strong 色），
+// 中央是 ink 色的「巡」（Noto Sans JP Black 的外框，build/glyph-meguri.ts）。全部在中心 80% 的圓裡，
+// 同一張圖當 manifest 的 purpose any 與 maskable（https://web.dev/articles/maskable-icon 、https://www.w3.org/TR/appmanifest/#icon-masks）。
 // - apple-touch-icon.png 180：iOS 的「加入主畫面」，不透明（iOS 會把透明的地方填黑）
-// - icons/icon-192.png、icon-512.png：manifest purpose any
-// - icons/maskable-192.png、maskable-512.png：manifest purpose maskable；圓點都在中心半徑 40% 的安全區內
-//   https://web.dev/articles/maskable-icon 、https://www.w3.org/TR/appmanifest/#icon-masks
+// - icons/icon-192.png、icon-512.png：manifest（any、maskable 各列一次）
+//
+// 分頁圖示：紙色圓角方塊上 ink 色的「巡」，下緣一條 47 縣 strong 色的色帶。
+// - favicon.svg（index.html 的 <link rel="icon" type="image/svg+xml">）
+// - favicon-32.png（不支援 SVG 分頁圖示的瀏覽器用，透明底）
 
 interface RegionsJson {
   national: { color: Record<string, string> }
   regions: { prefecture: string; color: Record<string, string> }[]
 }
 
-type Rgb = [number, number, number]
-
-function hex(c: string | undefined, what: string): Rgb {
-  const m = /^#([0-9a-f]{2})([0-9a-f]{2})([0-9a-f]{2})$/i.exec(c ?? '')
-  if (!m) throw new Error(`icons：regions.json 的 ${what} 不是 #rrggbb（${c}）`)
-  return [parseInt(m[1]!, 16), parseInt(m[2]!, 16), parseInt(m[3]!, 16)]
-}
-
 export interface IconColors {
   paper: Rgb
   line: Rgb
-  dots: Rgb[]
+  ink: Rgb
+  /** 47 縣的 strong 色，JIS 順 */
+  prefs: Rgb[]
 }
 
 export function iconColors(regionsPath: URL): IconColors {
   const r = JSON.parse(readFileSync(regionsPath, 'utf-8')) as RegionsJson
+  const nat = (key: string) => hex(r.national.color[key], `regions.json 的 national.color.${key}`)
   return {
-    paper: hex(r.national.color.paper, 'national.color.paper'),
-    line: hex(r.national.color.line, 'national.color.line'),
-    dots: r.regions.map((x) => hex(x.color.base, `${x.prefecture}.color.base`)),
+    paper: nat('paper'),
+    line: nat('line'),
+    ink: nat('ink'),
+    prefs: r.regions.map((x) => hex(x.color.strong, `regions.json 的 ${x.prefecture}.color.strong`)),
   }
 }
 
-/** 圓環半徑（佔邊長的比例）：any 與 apple 留一點邊；maskable 的圓點外緣要在 40% 安全區內 */
-const RING = { any: 0.36, maskable: 0.31 } as const
-// 開場畫面：半徑 86 的圓環、圓點 4.2 亮起時放大 1.3 倍、線寬 1（index.html）
-const DOT = (4.2 * 1.3) / 86
-const TRACK = 1 / 86
+/** 主畫面圖示的比例（以邊長為 1；提案 A 是 512 的畫布，數字照抄再除以 512） */
+export const HOME = {
+  /** 圓環半徑、線寬 */
+  ring: 0.335,
+  ringWidth: 3 / 512,
+  /** 圓點半徑 */
+  dot: 9.5 / 512,
+  /** 「巡」的字級（1 em）；字形外框的中心對齊圖示中心，往右挪一點視覺修正 */
+  glyph: 228 / 512,
+  optical: 2 / 512,
+  /** 紙紋的濃度（黑色 alpha 的上限） */
+  grain: 0.07,
+  /** maskable 的安全區：中心半徑 40% 的圓 */
+  safe: 0.4,
+} as const
 
-/** 畫一張 size×size 的圖，回傳 RGB 像素 */
-export function drawIcon(size: number, kind: keyof typeof RING, colors: IconColors): Uint8Array {
-  const px = new Uint8Array(size * size * 3)
-  for (let i = 0; i < size * size; i++) px.set(colors.paper, i * 3)
+/** 分頁圖示（32 的畫布） */
+export const FAVICON = {
+  size: 32,
+  radius: 5,
+  glyph: { size: 20, cx: 16, cy: 13.2 },
+  band: { x: 2, y: 26, w: 28, h: 4 },
+} as const
+
+/** 「巡」的外框中心放在 (cx, cy)、字級 size */
+export function glyphAt(size: number, cx: number, cy: number): Transform {
+  const k = size / MEGURI.unitsPerEm
+  const b = MEGURI.bbox
+  return { k, tx: cx - ((b.x1 + b.x2) / 2) * k, ty: cy - ((b.y1 + b.y2) / 2) * k }
+}
+
+/** 第 i 縣在圓環上的角度：從正上方順時針 */
+const angle = (i: number, n: number) => (i / n) * 2 * Math.PI - Math.PI / 2
+
+/** 主畫面圖示 size × size（不透明）；grain = false 不加紙紋（測試用） */
+export function homeIcon(size: number, colors: IconColors, grain = true): Canvas {
+  const cv = new Canvas(size)
   const c = size / 2
-  const R = RING[kind] * size
-  const blend = (x: number, y: number, rgb: Rgb, a: number) => {
-    if (a <= 0 || x < 0 || y < 0 || x >= size || y >= size) return
-    const k = (y * size + x) * 3
-    for (let j = 0; j < 3; j++) px[k + j] = Math.round(px[k + j]! * (1 - a) + rgb[j]! * a)
-  }
-  // 圓環的線（像素中心到圓的距離，線寬至少 1px）
-  const half = Math.max(1, TRACK * R) / 2
-  for (let y = 0; y < size; y++)
-    for (let x = 0; x < size; x++) {
-      const d = Math.hypot(x + 0.5 - c, y + 0.5 - c)
-      blend(x, y, colors.line, Math.min(1, Math.max(0, half + 0.5 - Math.abs(d - R))))
-    }
-  // 47 個圓點
-  const r = DOT * R
-  const n = colors.dots.length
-  colors.dots.forEach((rgb, i) => {
-    const a = (i / n) * 2 * Math.PI - Math.PI / 2
-    const cx = c + R * Math.cos(a)
-    const cy = c + R * Math.sin(a)
-    for (let y = Math.floor(cy - r - 1); y <= Math.ceil(cy + r + 1); y++)
-      for (let x = Math.floor(cx - r - 1); x <= Math.ceil(cx + r + 1); x++) {
-        const d = Math.hypot(x + 0.5 - cx, y + 0.5 - cy)
-        blend(x, y, rgb, Math.min(1, Math.max(0, r + 0.5 - d)))
-      }
+  const R = HOME.ring * size
+  cv.fill(colors.paper)
+  if (grain) cv.grain(HOME.grain)
+  cv.ring(c, c, R, Math.max(1, HOME.ringWidth * size), colors.line)
+  const n = colors.prefs.length
+  colors.prefs.forEach((rgb, i) => {
+    const a = angle(i, n)
+    cv.circle(c + R * Math.cos(a), c + R * Math.sin(a), HOME.dot * size, rgb)
   })
-  return px
+  cv.path(MEGURI.d, glyphAt(HOME.glyph * size, c + HOME.optical * size, c), colors.ink)
+  return cv
 }
 
-const CRC = (() => {
-  const t = new Uint32Array(256)
-  for (let n = 0; n < 256; n++) {
-    let c = n
-    for (let k = 0; k < 8; k++) c = c & 1 ? 0xedb88320 ^ (c >>> 1) : c >>> 1
-    t[n] = c >>> 0
-  }
-  return t
-})()
-function crc32(buf: Uint8Array): number {
-  let c = 0xffffffff
-  for (const b of buf) c = CRC[(c ^ b) & 0xff]! ^ (c >>> 8)
-  return (c ^ 0xffffffff) >>> 0
-}
-function chunk(type: string, data: Uint8Array): Buffer {
-  const out = Buffer.alloc(12 + data.length)
-  out.writeUInt32BE(data.length, 0)
-  out.write(type, 4, 'ascii')
-  out.set(data, 8)
-  out.writeUInt32BE(crc32(out.subarray(4, 8 + data.length)), 8 + data.length)
-  return out
+/** 分頁圖示的點陣版（透明底） */
+export function faviconPng(colors: IconColors): Canvas {
+  const s = FAVICON.size
+  const cv = new Canvas(s)
+  cv.roundRect(0, 0, s, s, FAVICON.radius, colors.paper)
+  const g = FAVICON.glyph
+  cv.path(MEGURI.d, glyphAt(g.size, g.cx, g.cy), colors.ink)
+  const b = FAVICON.band
+  cv.band(b.x, b.y, b.w, b.h, colors.prefs)
+  return cv
 }
 
-/** RGB 8-bit、不透明的 PNG（https://www.w3.org/TR/png-3/） */
-export function encodePng(size: number, rgb: Uint8Array): Buffer {
-  const raw = Buffer.alloc((size * 3 + 1) * size)
-  for (let y = 0; y < size; y++) {
-    raw[y * (size * 3 + 1)] = 0 // filter: none
-    raw.set(rgb.subarray(y * size * 3, (y + 1) * size * 3), y * (size * 3 + 1) + 1)
-  }
-  const ihdr = Buffer.alloc(13)
-  ihdr.writeUInt32BE(size, 0)
-  ihdr.writeUInt32BE(size, 4)
-  ihdr.set([8, 2, 0, 0, 0], 8) // bit depth 8、color type 2（RGB）
-  return Buffer.concat([
-    Buffer.from([0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a]),
-    chunk('IHDR', ihdr),
-    chunk('IDAT', deflateSync(raw, { level: 9 })),
-    chunk('IEND', new Uint8Array()),
-  ])
+const css = (c: Rgb) => `#${c.map((v) => v.toString(16).padStart(2, '0')).join('')}`
+const num = (v: number) => String(Number(v.toFixed(3)))
+
+/** 分頁圖示的 SVG：和 faviconPng 同一個圖 */
+export function faviconSvg(colors: IconColors): string {
+  const s = FAVICON.size
+  const g = FAVICON.glyph
+  const t = glyphAt(g.size, g.cx, g.cy)
+  const b = FAVICON.band
+  const n = colors.prefs.length
+  // 相鄰的色段各多畫 0.05，瀏覽器才不會在接縫露出底色
+  const band = colors.prefs
+    .map(
+      (c, i) =>
+        `<rect x="${num(b.x + (b.w * i) / n)}" y="${b.y}" width="${num(b.w / n + 0.05)}" height="${b.h}" fill="${css(c)}"/>`,
+    )
+    .join('')
+  return (
+    `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${s} ${s}" width="${s}" height="${s}">` +
+    `<rect width="${s}" height="${s}" rx="${FAVICON.radius}" fill="${css(colors.paper)}"/>` +
+    `<path transform="translate(${num(t.tx)} ${num(t.ty)}) scale(${num(t.k)})" fill="${css(colors.ink)}" d="${MEGURI.d}"/>` +
+    band +
+    `</svg>\n`
+  )
 }
 
 export const ICONS = [
-  { file: 'apple-touch-icon.png', size: 180, kind: 'any' },
-  { file: 'icons/icon-192.png', size: 192, kind: 'any' },
-  { file: 'icons/icon-512.png', size: 512, kind: 'any' },
-  { file: 'icons/maskable-192.png', size: 192, kind: 'maskable' },
-  { file: 'icons/maskable-512.png', size: 512, kind: 'maskable' },
+  { file: 'apple-touch-icon.png', size: 180 },
+  { file: 'icons/icon-192.png', size: 192 },
+  { file: 'icons/icon-512.png', size: 512 },
 ] as const
 
-/** manifest 的 icons */
-export const manifestIcons = ICONS.filter((i) => i.file.startsWith('icons/')).map((i) => ({
-  src: i.file,
-  sizes: `${i.size}x${i.size}`,
-  type: 'image/png',
-  purpose: i.kind,
-}))
+/** manifest 的 icons：同一張圖列兩次，purpose any 與 maskable */
+export const manifestIcons = ICONS.filter((i) => i.file.startsWith('icons/')).flatMap((i) =>
+  (['any', 'maskable'] as const).map((purpose) => ({
+    src: i.file,
+    sizes: `${i.size}x${i.size}`,
+    type: 'image/png',
+    purpose,
+  })),
+)
+
+/** 所有圖示檔：網址（相對 base）→ 內容 */
+export function renderIcons(regionsPath: URL): Map<string, { type: string; body: Buffer }> {
+  const colors = iconColors(regionsPath)
+  const png = (body: Buffer) => ({ type: 'image/png', body })
+  return new Map([
+    ...ICONS.map((i) => [i.file, png(homeIcon(i.size, colors).toPng())] as const),
+    ['favicon.svg', { type: 'image/svg+xml', body: Buffer.from(faviconSvg(colors)) }] as const,
+    ['favicon-32.png', png(faviconPng(colors).toPng())] as const,
+  ])
+}
 
 /** 建置時輸出圖示；開發伺服器直接回應同樣的網址 */
 export function homeIcons(regionsPath: URL): Plugin {
-  let files: Map<string, Buffer> | undefined
-  const render = () =>
-    (files ??= new Map(
-      (() => {
-        const colors = iconColors(regionsPath)
-        return ICONS.map((i) => [i.file, encodePng(i.size, drawIcon(i.size, i.kind, colors))] as const)
-      })(),
-    ))
+  let files: ReturnType<typeof renderIcons> | undefined
+  const render = () => (files ??= renderIcons(regionsPath))
   return {
     name: 'home-icons',
     configureServer(server) {
       server.middlewares.use((req, res, next) => {
         const path = (req.url ?? '').split('?')[0]!.replace(server.config.base, '')
-        const png = render().get(path)
-        if (!png) return next()
-        res.setHeader('Content-Type', 'image/png')
-        res.end(png)
+        const file = render().get(path)
+        if (!file) return next()
+        res.setHeader('Content-Type', file.type)
+        res.end(file.body)
       })
     },
     generateBundle() {
-      for (const [fileName, source] of render()) this.emitFile({ type: 'asset', fileName, source })
+      for (const [fileName, f] of render()) this.emitFile({ type: 'asset', fileName, source: f.body })
     },
   }
 }

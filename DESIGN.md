@@ -37,15 +37,19 @@
 
 - 「一巡り」與「ひとめぐり」一律加 `lang="ja"`，使用 Noto Sans JP（「巡」「り」要是日文字形）。
 - 不做斜體、描邊、漸層、陰影；不把三行拆開重排順序。
-- Logo 圖形尚未設計，目前只使用 wordmark；不要自行加上 icon 或 emoji。
+- 圖形只有下方的兩個圖示（主畫面、瀏覽器分頁）；介面裡照舊只用 wordmark，不要自行加上 icon 或 emoji。
 
-### 主畫面圖示（決定事項 Q2）
-- 加到手機主畫面、裝成 PWA 時的圖示，用開場畫面（§7.0）的 47 點圓環：全國 `paper` 底、`line` 細圓、47 縣圓點（JIS 順從正上方順時針，各縣 `base` 色，全部亮起時的大小）。中間不放字，也不另外畫 logo 圖形。
-- 建置時由 `web/build/icons.ts` 從 `data/regions.json` 畫成 PNG，原始碼不寫色碼；開發伺服器回應同樣的網址。
+### 圖示（決定事項 Q2；2026-10-11 從提案 A–D 選定，`docs/screenshots/圖示提案.png`）
+- **主畫面圖示「巡の輪」**（加到手機主畫面、裝成 PWA 時；提案 A）：全國 `paper` 底加紙紋（黑色、alpha 最多 7% 的細顆粒，同 §3.6 紙紋的作用）、`line` 細圓、47 縣圓點（JIS 順從正上方順時針，各縣 `strong` 色），中央是 `ink` 色的「巡」（Noto Sans JP Black）。
+  - 比例（以邊長 512 計）：圓環半徑 171.5（33.5%）、線寬 3、圓點半徑 9.5；「巡」字級 228，字形外框的中心對齊圖示中心，往右 2 做視覺修正。
+  - 安全區：圖案全部在中心 80% 的圓內（圓點外緣 35.4%、「巡」外框的角 29.7%），同一張圖在 manifest 同時列為 `purpose: any` 與 `maskable`；iOS 的圓角、Android 的圓形遮罩都切不到圖案。
+- **分頁圖示**（favicon；提案 D 的 favicon）：`paper` 圓角方塊（32 的畫布、圓角 5）上 `ink` 色的「巡」（字級 20，外框中心在 (16, 13.2)），下緣一條 47 縣 `strong` 色的色帶（x 2–30、y 26–30，JIS 順由左到右）。分頁列亮色、暗色都看得清楚。
+- 「巡」用字型的外框（`web/build/glyph-meguri.ts`，Noto Sans JP Black，SIL Open Font License 1.1），不依賴網路字型；不加描邊、陰影、漸層。
+- 建置時由 `web/build/icons.ts` 從 `data/regions.json`（全國 `paper`、`line`、`ink`，各縣 `strong`）畫出來，原始碼不寫色碼；點陣化在 `web/build/raster.ts`（不另外裝影像套件）。開發伺服器回應同樣的網址。`web/build/icons.test.ts` 檢查安全區、47 縣的顏色與 PNG。
   - `apple-touch-icon.png` 180（`index.html` 的 `<link rel="apple-touch-icon">`，不透明）
-  - `icons/icon-192.png`、`icon-512.png`（manifest `purpose: any`，圓環半徑 36%）
-  - `icons/maskable-192.png`、`maskable-512.png`（manifest `purpose: maskable`，圓環半徑 31%，圓點外緣在中心 40% 的安全區內）
-- 瀏覽器分頁的 `favicon.svg` 不在這次範圍內。
+  - `icons/icon-192.png`、`icon-512.png`（manifest 的 `any`、`maskable` 各列一次）
+  - `favicon.svg`（`<link rel="icon" type="image/svg+xml">`）、`favicon-32.png`（不支援 SVG 分頁圖示的瀏覽器用，`sizes="32x32"`，圓角外透明）
+- 圖示不跟著地區色、年代主題變。
 
 ### 標語
 - 全文固定為：**來一趟日本，才知道它有多大。**（全形逗號與句號，不改字、不加驚嘆號）
