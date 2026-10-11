@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import maplibregl, { type GeoJSONSource, type LngLatBoundsLike } from 'maplibre-gl'
+import maplibregl, { type GeoJSONSource, type LngLatBoundsLike, type TransformConstrainFunction } from 'maplibre-gl'
 import type * as GeoJSON from 'geojson'
 import 'maplibre-gl/dist/maplibre-gl.css'
 import { computed, nextTick, onBeforeUnmount, onMounted, ref, shallowRef, watch } from 'vue'
@@ -7,6 +7,7 @@ import { useRouter } from 'vue-router'
 
 import { JAPAN_CENTER, JAPAN_ZOOM, MAP_ATTRIBUTION, MAP_STYLE_URL } from '../map/style'
 import { mapThumbFallback, mapThumbUrl, type MapSpot } from '../services/bundles'
+import { type FocusArea, inRing, outsideOf } from '../services/geo'
 import { splashCovering, trackSplash } from '../services/splash'
 import { theme } from '../services/theme'
 import JapanLocator from './JapanLocator.vue'
@@ -29,7 +30,12 @@ const props = defineProps<{
   /** 手機：日本小框靠左排在清單（或 chip 軌道）下緣下面（top），或景點卡片、祭典小卡上緣上面（bottom），72px 寬（決定事項 O1） */
   locatorEdge?: { top: number } | { bottom: number } | null
   /** 目前地區的縣界：虛線外框＋淡淡的地區色，看出縣的範圍 */
-  outline?: GeoJSON.Feature | null
+  outline?: GeoJSON.Feature<GeoJSON.MultiPolygon> | null
+  /**
+   * 專心模式（UX-FLOW.md §1.3）：鏡頭鎖在這個範圍，拉遠到 frame 剛好放進可見的地圖為止；
+   * 縣界（outline）以外變淡。null 為不鎖（首頁、行程、紀錄）
+   */
+  focus?: FocusArea | null
   /** 開啟中的擴充包：用主題色畫在最上層，景點變淡當底圖 */
   pack?: { color: string; points: PackPoint[] } | null
   /** 不是景點的地點（深度探索的祭典）：一個帶名稱的標記 */
@@ -76,6 +82,11 @@ const PACK_SOURCE = 'pack'
 // 選取中的景點另外放一個不群集的來源：不會被併進群集數字裡而看不見
 const SELECTED_SOURCE = 'selected-spot'
 const OUTLINE_SOURCE = 'outline'
+// 專心模式：縣界以外蓋一層紙色變淡，畫在底圖的地名下面（地名照樣讀得到）。
+// 之後的「日帰り」（鄰縣的目的地）另外一個圖層，疊在這層之上、不被變淡
+const FOCUS_MASK = 'focus-mask'
+// 變淡的程度（紙色的不透明度）：放大之後底圖的道路、地形多，縣內的地區色也淡，蓋得濃一點才分得出縣界兩邊
+const MASK_OPACITY: maplibregl.ExpressionSpecification = ['interpolate', ['linear'], ['zoom'], 8, 0.5, 12, 0.7]
 const RAIL_SOURCE = 'rail'
 const STATION_SOURCE = 'rail-stations'
 const ROUTE_SOURCE = 'route'
@@ -146,6 +157,10 @@ function drawRoute(coords: [number, number][] | null | undefined) {
 
 function outlineData(f: GeoJSON.Feature | null | undefined): GeoJSON.FeatureCollection {
   return { type: 'FeatureCollection', features: f ? [f] : [] }
+}
+
+function maskData(): GeoJSON.FeatureCollection {
+  return outlineData(props.focus && props.outline ? outsideOf(props.outline) : null)
 }
 // 開啟擴充包時景點的不透明度
 const DIM = 0.3
@@ -332,6 +347,7 @@ function applyColors() {
   map.setPaintProperty('selected', 'circle-color', ink)
   map.setPaintProperty('selected', 'circle-stroke-color', strong)
   map.setPaintProperty('outline-fill', 'fill-color', token('--region-base'))
+  map.setPaintProperty(FOCUS_MASK, 'fill-color', paper)
   const rail = token('--color-map-rail')
   map.setPaintProperty('rail-casing', 'line-color', paper)
   map.setPaintProperty('rail-line', 'line-color', ['coalesce', ['get', 'c'], rail])
@@ -369,6 +385,10 @@ function applyColors() {
 
 function addLayers() {
   if (!map) return
+  // 專心模式的縣外變淡：底圖第一個文字圖層之下（陸地、水面、道路變淡，地名不變）
+  const firstLabel = map.getStyle().layers?.find((l) => l.type === 'symbol')?.id
+  map.addSource(FOCUS_MASK, { type: 'geojson', data: maskData() })
+  map.addLayer({ id: FOCUS_MASK, type: 'fill', source: FOCUS_MASK, paint: { 'fill-opacity': MASK_OPACITY } }, firstLabel)
   // 縣界畫在景點下面
   map.addSource(OUTLINE_SOURCE, { type: 'geojson', data: outlineData(props.outline) })
   map.addLayer({
@@ -642,7 +662,7 @@ async function expandCluster(f: maplibregl.MapGeoJSONFeature) {
   const src = map.getSource(f.source) as GeoJSONSource
   const zoom = await src.getClusterExpansionZoom(f.properties?.cluster_id as number)
   const center = (f.geometry as GeoJSON.Point).coordinates as [number, number]
-  map.easeTo({ center, zoom, offset: centerOffset() }, { user: true })
+  moveFreely((m) => m.easeTo({ center, zoom, offset: centerOffset() }, { user: true }))
 }
 
 function setHover(h: Hover | null) {
@@ -945,6 +965,138 @@ function visibleView(user: boolean): MapView | null {
   }
 }
 
+// 專心模式（UX-FLOW.md §1.3）：鏡頭鎖在 focus.bounds 裡，拉遠到 focus.frame 剛好放進可見範圍為止。
+// MapLibre 的 maxBounds 要整個畫布都在範圍內，但手機的清單卡、景點卡片蓋住一大塊，縣要能放在剩下的那一塊，
+// 所以改用 transformConstrain，以「可見範圍」（扣掉 insetLeft、insets）為準：
+// 1. 可見範圍不離開 bounds（可見範圍比 bounds 大時反過來，bounds 整個留在可見範圍裡）；
+// 2. 可見範圍的中間那一塊（半寬半高的 LAND_INNER）要看得到這個縣的陸地（focus.rings，離島各自一圈；focus.points）：
+//    沖繩、東京這種範圍很大的縣，放大之後也拖不到只剩海；再拖就停住（能沿著一個方向滑就滑）。
+// 程式定位（進入地區、飛到景點、點群集）時不限制；蓋住的範圍改變（卡片換段、清單收起）或程式定位之後
+// 鏡頭已經在範圍外時不拉回來，只是不能再往外，下一次拖曳時才不會跳一下。
+const TILE = 512
+const FOCUS_PAD = 24
+// 規則 2：陸地至少要進到可見範圍中間這一塊（半寬、半高的這個比例），不會停在只剩畫面邊緣一條陸地
+const LAND_INNER = 0.5
+let freeMove = false
+let lastCam: { x: number; y: number; zoom: number } | null = null
+
+function rememberCamera() {
+  if (!map) return
+  const c = maplibregl.MercatorCoordinate.fromLngLat(map.getCenter())
+  lastCam = { x: c.x, y: c.y, zoom: map.getZoom() }
+}
+
+/** 程式移動鏡頭：這一段不受專心模式限制，移動結束（moveend）後恢復 */
+function moveFreely(move: (m: maplibregl.Map) => void) {
+  if (!map) return
+  // 先停掉進行中的移動：它的 moveend 若在設定之後才發出，會提早把限制開回來
+  map.stop()
+  freeMove = true
+  move(map)
+  // 沒有動起來（不用移動、或是瞬間跳過去已經結束）就不會再有 moveend
+  if (!map.isMoving()) freeMove = false
+}
+
+type MercBox = [x0: number, y0: number, x1: number, y1: number]
+/** [west, south, east, north] → 墨卡托座標的外框（y 往南增加） */
+function mercBox(b: [number, number, number, number]): MercBox {
+  const nw = maplibregl.MercatorCoordinate.fromLngLat([b[0], b[3]])
+  const se = maplibregl.MercatorCoordinate.fromLngLat([b[2], b[1]])
+  return [nw.x, nw.y, se.x, se.y]
+}
+const merc = ([lng, lat]: [number, number]): [number, number] => {
+  const c = maplibregl.MercatorCoordinate.fromLngLat([lng, lat])
+  return [c.x, c.y]
+}
+const focusMerc = computed(() => {
+  const f = props.focus
+  if (!f) return null
+  const rings = f.rings.map((r) => {
+    const ring = r.map(merc)
+    const xs = ring.map((p) => p[0])
+    const ys = ring.map((p) => p[1])
+    return { ring, box: [Math.min(...xs), Math.min(...ys), Math.max(...xs), Math.max(...ys)] as MercBox }
+  })
+  return { bounds: mercBox(f.bounds), frame: mercBox(f.frame), rings, points: f.points.map(merc) }
+})
+
+const constrainFocus: TransformConstrainFunction = (lngLat, zoom) => {
+  const m = map
+  const f = focusMerc.value
+  if (!m) return { center: lngLat, zoom }
+  const clampZoom = (z: number) => Math.min(m.getMaxZoom(), Math.max(m.getMinZoom(), z))
+  const { w, h } = size.value
+  const c = cover.value
+  const vw = w - c.left
+  const vh = h - c.top - c.bottom
+  if (!f || freeMove || vw <= 0 || vh <= 0) return { center: lngLat, zoom: clampZoom(zoom) }
+  // 拉遠的極限：frame 剛好放進可見範圍（四周留 FOCUS_PAD）；已經比它遠（蓋住的範圍變小、程式定位）就停在目前的縮放
+  const fw = Math.max(1e-9, (f.frame[2] - f.frame[0]) * TILE)
+  const fh = Math.max(1e-9, (f.frame[3] - f.frame[1]) * TILE)
+  const fit = Math.log2(Math.min(Math.max(1, vw - 2 * FOCUS_PAD) / fw, Math.max(1, vh - 2 * FOCUS_PAD) / fh))
+  const z = clampZoom(Math.max(Math.min(fit, lastCam?.zoom ?? Infinity), zoom))
+  // 可見範圍的中心相對畫布中心的位移、可見範圍的半寬高（px；地圖轉了方向時用轉過之後的外框）
+  const rad = (m.getBearing() * Math.PI) / 180
+  const cos = Math.cos(rad)
+  const sin = Math.sin(rad)
+  const ox = c.left / 2
+  const oy = (c.top - c.bottom) / 2
+  const off = [ox * cos - oy * sin, ox * sin + oy * cos] as const
+  const half = [Math.abs((vw / 2) * cos) + Math.abs((vh / 2) * sin), Math.abs((vw / 2) * sin) + Math.abs((vh / 2) * cos)] as const
+  const clamp = (x: number, a: number, b: number) => Math.min(b, Math.max(a, x))
+  /** 規則 1：可見範圍的中心能到的區間（墨卡托座標） */
+  const inBounds = (axis: 0 | 1, ws: number): [number, number] => {
+    const a = f.bounds[axis] + half[axis] / ws
+    const b = f.bounds[axis + 2]! - half[axis] / ws
+    return a <= b ? [a, b] : [b, a]
+  }
+  /** 規則 2：可見範圍中心在 (x, y) 時，中間那一塊看不看得到陸地（陸地的頂點在裡面，或那一塊的四角、中心落在陸地上） */
+  const seesLand = (x: number, y: number, ws: number) => {
+    const ix = (LAND_INNER * half[0]) / ws
+    const iy = (LAND_INNER * half[1]) / ws
+    const x0 = x - ix
+    const x1 = x + ix
+    const y0 = y - iy
+    const y1 = y + iy
+    const inside = ([px, py]: [number, number]) => px >= x0 && px <= x1 && py >= y0 && py <= y1
+    if (f.points.some(inside)) return true
+    const probes: [number, number][] = [[x, y], [x0, y0], [x1, y0], [x0, y1], [x1, y1]]
+    return f.rings.some(
+      ({ ring, box }) =>
+        box[0] <= x1 && box[2] >= x0 && box[1] <= y1 && box[3] >= y0 && (ring.some(inside) || probes.some(([px, py]) => inRing(px, py, ring))),
+    )
+  }
+  const ws = TILE * 2 ** z
+  const req = maplibregl.MercatorCoordinate.fromLngLat(lngLat)
+  const v = [req.x + off[0] / ws, req.y + off[1] / ws]
+  // 上一個鏡頭（上一格畫面）的可見範圍中心
+  const pws = TILE * 2 ** (lastCam?.zoom ?? 0)
+  const prev = lastCam ? { ws: pws, x: lastCam.x + off[0] / pws, y: lastCam.y + off[1] / pws } : null
+  const ranges = ([0, 1] as const).map((axis) => {
+    let [a, b] = inBounds(axis, ws)
+    if (prev) {
+      // 上一個鏡頭已經超出的部分照樣允許（只是不能更遠）
+      const p = axis ? prev.y : prev.x
+      const [pa, pb] = inBounds(axis, prev.ws)
+      a -= Math.max(0, pa - p)
+      b += Math.max(0, p - pb)
+    }
+    return [a, b] as const
+  })
+  ranges.forEach(([a, b], axis) => (v[axis] = clamp(v[axis]!, a, b)))
+  // 上一個鏡頭看得到陸地、這一步會看不到：能沿著一個方向滑就滑（縮放時改以畫面中間為準），不然停在上一個鏡頭。
+  // 上一個鏡頭就已經看不到（程式定位、蓋住的範圍改變）時不管，等陸地回到畫面裡
+  if (lastCam && prev && (f.rings.length || f.points.length) && !seesLand(v[0]!, v[1]!, ws) && seesLand(prev.x, prev.y, prev.ws)) {
+    const slide = ([[v[0]!, prev.y], [prev.x, v[1]!], [prev.x, prev.y]] as const)
+      .filter(([x, y]) => seesLand(x, y, ws))
+      .sort((a, b) => Math.hypot(a[0] - v[0]!, a[1] - v[1]!) - Math.hypot(b[0] - v[0]!, b[1] - v[1]!))[0]
+    if (!slide) return { center: new maplibregl.MercatorCoordinate(lastCam.x, lastCam.y).toLngLat(), zoom: lastCam.zoom }
+    v[0] = slide[0]
+    v[1] = slide[1]
+  }
+  return { center: new maplibregl.MercatorCoordinate(v[0]! - off[0] / ws, v[1]! - off[1] / ws).toLngLat(), zoom: z }
+}
+
 const router = useRouter()
 // 出處裡的「資料來源」：站內換頁，不重新載入整個網站
 function onAttribClick(e: MouseEvent) {
@@ -1002,6 +1154,7 @@ onMounted(() => {
     applyColors()
     applyDim()
     syncPin()
+    if (props.focus) map?.setTransformConstrain(constrainFocus)
     if (props.bounds) fit(props.bounds, false)
     drawRoute(props.route)
   })
@@ -1012,7 +1165,11 @@ onMounted(() => {
   syncSize()
   map.on('resize', syncSize)
   map.on('move', updateLocator)
+  rememberCamera()
+  map.on('move', rememberCamera)
   map.on('moveend', (e: { originalEvent?: Event; user?: boolean }) => {
+    freeMove = false
+    rememberCamera()
     const view = visibleView(Boolean(e.originalEvent || e.user))
     if (view) emit('moveend', view)
   })
@@ -1045,12 +1202,14 @@ function fit(b: [number, number, number, number], animate = true) {
   const { left, top, bottom } = cover.value
   // 蓋住之後剩下的高度不夠時，四周的留白跟著縮小
   const pad = Math.min(props.fitPad ?? 48, Math.max(8, (size.value.h - top - bottom) / 4))
-  map.fitBounds(bounds, {
-    padding: { top: pad + top, bottom: pad + bottom, right: pad, left: pad + left },
-    maxZoom: 12,
-    animate,
-    duration: animate ? 900 : 0,
-  })
+  moveFreely((m) =>
+    m.fitBounds(bounds, {
+      padding: { top: pad + top, bottom: pad + bottom, right: pad, left: pad + left },
+      maxZoom: 12,
+      animate,
+      duration: animate ? 900 : 0,
+    }),
+  )
 }
 
 watch(
@@ -1098,6 +1257,15 @@ watch(
   (f) => {
     if (!map || !ready) return
     ;(map.getSource(OUTLINE_SOURCE) as GeoJSONSource | undefined)?.setData(outlineData(f))
+  },
+)
+
+watch(
+  () => [props.focus, props.outline] as const,
+  ([focus]) => {
+    if (!map || !ready) return
+    ;(map.getSource(FOCUS_MASK) as GeoJSONSource | undefined)?.setData(maskData())
+    map.setTransformConstrain(focus ? constrainFocus : null)
   },
 )
 
@@ -1157,12 +1325,14 @@ defineExpose({
   flyTo(lng: number, lat: number, zoom = 13) {
     // 右欄剛打開時地圖寬度已變：先同步尺寸再算目標位置
     map?.resize()
-    map?.flyTo({
-      center: [lng, lat],
-      zoom: Math.max(map.getZoom(), zoom),
-      offset: centerOffset(),
-      duration: 1200,
-    })
+    moveFreely((m) =>
+      m.flyTo({
+        center: [lng, lat],
+        zoom: Math.max(m.getZoom(), zoom),
+        offset: centerOffset(),
+        duration: 1200,
+      }),
+    )
   },
   /** 手機景點卡片換段之後：點被卡片或清單蓋住（或太靠邊）才平移到看得到的地圖中間，不改縮放 */
   reveal(lng: number, lat: number) {
@@ -1173,7 +1343,7 @@ defineExpose({
     const c = cover.value
     const m = 32
     if (p.x >= c.left + m && p.x <= w - m && p.y >= c.top + m && p.y <= h - c.bottom - m) return
-    map.easeTo({ center: [lng, lat], offset: centerOffset(), duration: reducedMotion ? 0 : 400 })
+    moveFreely((m) => m.easeTo({ center: [lng, lat], offset: centerOffset(), duration: reducedMotion ? 0 : 400 }))
   },
 })
 </script>

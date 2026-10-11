@@ -20,6 +20,7 @@ import { regionOf } from '../data/regions'
 import type { MapSpot, PackItem, RailBundle, Spot } from '../services/bundles'
 import {
   distanceM,
+  focusArea,
   loadPrefectureShapes,
   prefectureAt,
   prefectureBounds,
@@ -62,9 +63,11 @@ let flyAfterLoad: string | null = null
 let flyAfterLoadPoint: { lng: number; lat: number } | null = null
 
 const available = computed(() => Object.keys(catalog.index?.prefectures ?? {}))
+// 專心模式（UX-FLOW.md §1.3）：進入一縣後地圖鎖在這個縣、只畫這個縣的點；按「‹ 全國」或返回才離開
+const focusPref = computed(() => (props.pref && regionOf(props.pref) ? props.pref : null))
 // 已載入完整地圖 bundle 的縣用全部大點，其餘縣先用全國總覽（各縣分數前段，bundles/featured.json）
 const allSpots = computed<MapSpot[]>(() =>
-  available.value.flatMap((p) => catalog.mapSpots[p] ?? catalog.featured[p] ?? []),
+  (focusPref.value ? [focusPref.value] : available.value).flatMap((p) => catalog.mapSpots[p] ?? catalog.featured[p] ?? []),
 )
 // 類型篩選：清單與按鈕先換（RegionLists 只切換顯示），地圖等那個畫面畫出來之後才跟上。
 // 地圖的點是分群（cluster）的來源，篩選要換掉資料才會重新分群（圖層的 filter、feature-state 只改得到畫不畫，
@@ -103,12 +106,13 @@ watch(
   },
   { immediate: true },
 )
-// 打開時移到看得到全部收藏的範圍
+// 打開時移到看得到全部收藏的範圍（專心模式只看這個縣的收藏）
 watch(
   () => explore.onlyFavorites,
   async (on) => {
     if (!on) return
-    const spots = (await Promise.all(favoritePrefs.value.map((p) => catalog.loadMap(p).catch(() => [] as MapSpot[]))))
+    const prefs = focusPref.value ? favoritePrefs.value.filter((p) => p === focusPref.value) : favoritePrefs.value
+    const spots = (await Promise.all(prefs.map((p) => catalog.loadMap(p).catch(() => [] as MapSpot[]))))
       .flat()
       .filter((s) => marks.marks[s.id]?.favorite)
     const b = spotBounds(spots)
@@ -164,8 +168,11 @@ const packMap = computed(() => {
   const def = explore.pack ? packByKey.get(explore.pack) : undefined
   if (!def) return null
   const items = catalog.packs[def.key] ?? []
-  // 選到的名城已經以景點（有照片）標出，對到的擴充包點不重複畫
-  const points = items.filter((it) => (!explore.packGroup || it.g === explore.packGroup) && !(it.s && it.s === selectedId.value))
+  const pref = focusPref.value
+  // 專心模式只畫這個縣的點；選到的名城已經以景點（有照片）標出，對到的擴充包點不重複畫
+  const points = items.filter(
+    (it) => (!pref || it.p === pref) && (!explore.packGroup || it.g === explore.packGroup) && !(it.s && it.s === selectedId.value),
+  )
   return { color: def.color, points }
 })
 
@@ -442,6 +449,12 @@ function spotBounds(all: MapSpot[]): [number, number, number, number] | null {
 // 縣界載入後才畫得出目前地區的外框
 const shapesReady = ref(false)
 const outline = computed(() => (shapesReady.value && props.pref ? prefectureShape(props.pref) : null))
+// 專心模式的範圍：整個縣（含離島）與這個縣的景點。之後的「日帰り」（鄰縣的目的地）由 focusArea 的 extra 加進來
+const focus = computed(() => {
+  const pref = focusPref.value
+  if (!shapesReady.value || !pref) return null
+  return focusArea(pref, catalog.mapSpots[pref] ?? catalog.featured[pref] ?? [])
+})
 
 function union(
   a: [number, number, number, number] | null,
@@ -593,8 +606,8 @@ function prefOfMapSpot(id: string): string | undefined {
 }
 
 // 選到的點和網址的縣要一致：連結（/map/別縣?spot=、/?spot=）或任何沒換縣就打開別縣景點的路徑，
-// 詳細資料到了發現不是這個縣時換到它的縣（replace，不多一筆歷史）。每個選取只檢查一次：
-// 開著卡片拖曳地圖跨縣時照常換縣、不打斷卡片（UX-FLOW.md §5），不會被拉回來
+// 詳細資料到了發現不是這個縣時換到它的縣（replace，不多一筆歷史）。每個選取只檢查一次。
+// 專心模式的地圖只畫這個縣的點，別縣的點只會從搜尋、連結、景點卡片的「附近」來
 let prefCheckedFor: string | null = null
 watch(
   () => {
@@ -708,33 +721,15 @@ function closeSpot() {
 const CLOSE_SPOT_ZOOM = 10
 // 首頁：縮放到這裡以上才依畫面中心指定地區
 const MIN_REGION_ZOOM = 7
-// 已選定地區：拉遠看位置時保留，縮放到這裡以下（接近整個日本）才回到全國
-const RESET_ZOOM = 5
 // 取樣格點（每邊）判斷畫面涵蓋哪些縣
 const SAMPLE = 7
 
-function intersects(a: [number, number, number, number], b: [number, number, number, number]): boolean {
-  return a[0] <= b[2] && b[0] <= a[2] && a[1] <= b[3] && b[1] <= a[3]
-}
-
 /**
- * 畫面對應的地區：中心所在的縣。畫面涵蓋太多縣、中心縣又只佔一小部分時不指定（回到全國）。
- * 已選定地區時有遲滯：只要這個縣還在畫面裡就保留（拉遠看它在日本哪裡），
- * 平移到鄰縣且鄰縣佔了畫面主要部分才切換。
+ * 首頁（全國）的畫面對應的地區：中心所在的縣。畫面涵蓋太多縣、中心縣又只佔一小部分時不指定。
  * 回傳 undefined 表示判斷不出來（例如全是海），維持原狀。
  */
 function regionForView(view: MapViewState): string | null | undefined {
-  const current = props.pref && regionOf(props.pref) ? props.pref : null
-  if (current) {
-    if (view.zoom < RESET_ZOOM) return null
-    const b = prefectureBounds(current)
-    // 縣已經移出畫面：和首頁一樣依畫面中心判斷
-    if (b && !intersects(b, view.bounds)) return view.zoom < MIN_REGION_ZOOM ? null : (regionForCenter(view) ?? null)
-    if (view.zoom < MIN_REGION_ZOOM) return current
-    const next = regionForCenter(view)
-    return next === undefined || next === null ? current : next
-  }
-  // 首頁：拉遠到看得到整個日本以上不指定地區（取樣點可能全落在海上，要先判斷）
+  // 拉遠到看得到整個日本以上不指定地區（取樣點可能全落在海上，要先判斷）
   if (view.zoom < MIN_REGION_ZOOM) return null
   return regionForCenter(view)
 }
@@ -759,10 +754,15 @@ function regionForCenter(view: MapViewState): string | null | undefined {
   return null
 }
 
-// 使用者平移、縮放後：地區標籤、地區色、URL 跟著畫面更新（replace，不新增歷史）；拉遠時關閉景點卡片。
+// 使用者平移、縮放後：拉遠時關閉景點卡片。首頁（全國）放大到某個縣時，地區標籤、地區色、URL 跟著換到那個縣
+// （replace，不新增歷史）；進入縣之後是專心模式，地圖鎖在這個縣（MapView 的 focus），拖曳、縮放不換縣。
 function onMoveEnd(view: MapViewState) {
   if (!view.user) return
   japanFit = false
+  if (focusPref.value) {
+    if (selectedId.value && view.zoom < CLOSE_SPOT_ZOOM) closeSpot()
+    return
+  }
   const target = regionForView(view)
   const switching = target !== undefined && target !== (props.pref ?? null)
   // 換縣時下面的 replace 一併拿掉 spot；不換縣才另外關卡片（closeSpot 可能是返回，不能和 replace 同時發）
@@ -833,6 +833,7 @@ function onMoveEnd(view: MapViewState) {
         :controls-lift="pinCard || (selectedId && spotSheet && snap === 'peek') ? insets.bottom : 0"
         :pack="packMap"
         :outline="outline"
+        :focus="focus"
         :pin="pin"
         :rail="railMap"
         :marked="marks.marks"
