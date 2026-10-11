@@ -34,6 +34,7 @@
 
 **待辦**：見根目錄 `TODO.md`。
 
+- 專心模式（2026-10-11，使用者決定，TODO.md「縣內規劃」1）：進入一縣後地圖鎖在這個縣附近、只畫這個縣的景點與擴充包的點，縣界以外蓋一層紙色變淡（底圖地名之下）；拖曳、縮放不再換縣，「‹ 全國」或返回才離開。首頁放大到某個縣照樣進入那個縣；搜尋、連結、「附近的…」到別縣的點照樣換縣。範圍由 `services/geo.ts` 的 `focusArea` 算（整個縣含離島＋縣界外 1.5 度內的景點＋四周的海；拉遠的極限不算小笠原這種 5 度以外的離島），`MapView` 的 `focus` 用 MapLibre `transformConstrain` 以扣掉側欄、清單卡、景點卡片之後的可見範圍為準鎖住鏡頭，可見範圍中間也要看得到這個縣的陸地（縣界多邊形與縣界外的景點），再拖就停住。程式定位不受限制；卡片換段之後鏡頭在範圍外時不拉回來。之後的「日帰り」圖層疊在 `focus-mask` 之上，範圍由 `focusArea` 的 `extra` 加（UX-FLOW.md §1.3、A2，DESIGN.md §7.5a）。
 - 縣內規劃的資料（2026-10-11，TODO.md「縣內規劃」2–4，只做 pipeline，前端之後做）：
   - 市区町村界：`seed-municipalities`（`pipeline/municipalities.py`、`pipeline/sources/n03.py`）取国土数値情報 N03（CC BY 4.0；出處「「国土数値情報（行政区域データ）」（国土交通省）（https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N03-2026.html）をもとにひとめぐり作成」，前端用到時加到 `/credits`），念法取 Wikidata P429→P1814。政令指定都市用區、東京是特別區。拓撲保持簡化（`pipeline/topo.py`）寫 `data/municipalities/{縣}.json`（一縣 400 KB 以內），bundle `municipalities/{縣}.json`（200 KB 以內）。
   - 景點的區：`Spot.municipality`（6 碼代碼），`assign-municipalities`（離線）寫進 `data/spots`；seed-region 重採時重新判斷；map bundle 多 `m`。
