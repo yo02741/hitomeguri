@@ -3,7 +3,7 @@
 from pipeline.models import RailStation
 from pipeline.rail import build_rail, in_box
 
-ALL = in_box((30.0, 130.0, 40.0, 140.0))
+ALL = in_box((30.0, 125.0, 46.0, 146.0))
 
 
 def _st(i: int, name: str, lat: float, lng: float) -> RailStation:
@@ -123,3 +123,75 @@ def test_terminal_missing_from_stops_found_at_track_end():
     nikko = edges["JR日光線"]
     assert any("日光" in p and "今市" in p for p in nikko)
     assert lines["東武日光"] == []
+
+
+def test_service_named_trains_count_as_shinkansen_stops():
+    # 山陽新幹線：軌道 relation 沒有停靠點，列車只有「のぞみ」這種列車名稱的 relation（不合併成路線），
+    # 它停的站（新神戸）照樣算新幹線的站；旁邊在來線的站（灘）不算
+    stations = [
+        _st(1, "新神戸", 34.7, 135.19),
+        _st(2, "灘", 34.7, 135.22),
+        _st(3, "西明石", 34.7, 135.0),
+    ]
+    w, a = _way(11, [(34.7, 135.25), (34.7, 134.95)])
+    hs = {"type": "way", "id": 11, "tags": {"highspeed": "yes"}}
+    track = {
+        "type": "relation", "id": 1, "tags": {"name": "山陽新幹線", "route": "railway"},
+        "members": [w],
+    }  # fmt: skip
+    nozomi = {
+        "type": "relation", "id": 2, "tags": {"name": "のぞみ", "route": "train"},
+        "members": [_stop(101, 34.7, 135.19), _stop(102, 34.7, 135.0), w],
+    }  # fmt: skip
+    edges, lines = _lines([track, nozomi, a, hs], stations)
+    assert lines["新神戸"] and lines["西明石"]
+    assert lines["灘"] == []
+    assert ("新神戸", "西明石") in edges["山陽新幹線"] or ("西明石", "新神戸") in edges[
+        "山陽新幹線"
+    ]
+
+
+def test_orphan_station_found_with_wider_radius():
+    # 鳥取：車站點畫在離軌道 220 m 的地方，第一輪（150 m）找不到，第二輪（300 m）找到
+    stations = [
+        _st(1, "鳥取", 35.002, 134.0),
+        _st(2, "湖山", 35.0, 133.9),
+        _st(3, "福部", 35.0, 134.1),
+    ]
+    w, a = _way(11, [(35.0, 134.15), (35.0, 133.85)])
+    rel = {
+        "type": "relation", "id": 1, "tags": {"name": "山陰本線", "route": "railway"},
+        "members": [w],
+    }  # fmt: skip
+    edges, lines = _lines([rel, a], stations)
+    assert lines["鳥取"]
+    sanin = edges["山陰本線"]
+    assert any("鳥取" in p and "湖山" in p for p in sanin)
+    assert any("鳥取" in p and "福部" in p for p in sanin)
+
+
+def test_station_members_of_railway_relation_bridge_gap():
+    # 北海道新幹線：軌道 relation 依序列了車站，車站點離軌道太遠（snap 不到）時照順序補邊
+    stations = [
+        _st(1, "新青森", 40.83, 140.69),
+        _st(2, "奥津軽いまべつ", 41.145, 140.516),
+        _st(3, "木古内", 41.679, 140.434),
+    ]
+    w, a = _way(11, [(40.83, 140.70), (41.145, 140.53)])
+    rel = {
+        "type": "relation", "id": 1, "tags": {"name": "北海道新幹線", "route": "railway"},
+        "members": [
+            {"type": "node", "ref": 1, "role": "station", "lat": 40.83, "lon": 140.69},
+            {"type": "node", "ref": 2, "role": "station", "lat": 41.145, "lon": 140.516},
+            {"type": "node", "ref": 3, "role": "station", "lat": 41.679, "lon": 140.434},
+            w,
+        ],
+    }  # fmt: skip
+    edges, _ = _lines([rel, a], stations)
+    hk = edges["北海道新幹線"]
+    pair = (
+        ("奥津軽いまべつ", "木古内")
+        if ("奥津軽いまべつ", "木古内") in hk
+        else ("木古内", "奥津軽いまべつ")
+    )
+    assert pair in hk and 55 < hk[pair] < 70

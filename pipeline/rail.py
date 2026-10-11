@@ -54,6 +54,8 @@ STOP_NEAR_M = 300
 PSEUDO_MERGE_M = 500
 # 沒有停靠點的軌道 relation：車站離軌道這麼近（且營運者相容）才算這條線的站
 PROXIMITY_M = 150
+# 第一輪之後還沒有任何路線的站（車站點畫在站前廣場、離軌道遠的大站：鳥取）再找一次的距離
+ORPHAN_M = 300
 # 停靠點投影到軌道的距離上限
 SNAP_M = 300
 # 軌道的斷點（OSM 的路段偶有沒接上的）在這個距離內就接起來
@@ -520,18 +522,25 @@ def build_rail(
         coords[key] = (lat, lng, name)
         return key
 
-    # 新幹線列車（route=train 等）停靠的站：新幹線的軌道 relation 用軌道旁的站時只收這些
+    # 新幹線列車停靠的站：新幹線的軌道 relation 用軌道旁的站時只收這些。
+    # 看全部的列車 relation（含「のぞみ」「はやぶさ」這種列車名稱的，不只合併成路線的）：
+    # 標了新幹線，或成員軌道過半是 highspeed 的都算
     shinkansen_stops: set[str] = set()
-    for g in groups.values():
-        for rel in g.rels:
-            tags = rel.get("tags", {})
-            if tags.get("route") != "railway" and is_shinkansen(tags):
-                for lat, lng, name, _ in _stops(rel, names):
-                    i = index.match(lat, lng, name)
-                    if i is not None:
-                        shinkansen_stops.add(stations[i].id)
+    for rel in elements:
+        if rel.get("type") != "relation":
+            continue
+        tags = rel.get("tags", {})
+        refs = [m["ref"] for m in rel.get("members", []) if m.get("type") == "way"]
+        hs_ways = bool(refs) and sum(1 for r in refs if r in highspeed) * 2 >= len(refs)
+        if not (is_shinkansen(tags) or hs_ways):
+            continue
+        for lat, lng, name, _ in _stops(rel, names):
+            i = index.match(lat, lng, name)
+            if i is not None:
+                shinkansen_stops.add(stations[i].id)
 
     served: dict[str, Snaps] = {}
+    near_rels: dict[str, list[dict[str, Any]]] = {}
     sequences: dict[str, list[list[str]]] = {}
     hs_group: dict[str, bool] = {}
     for key, g in sorted(groups.items(), key=lambda kv: min(kv[1].ids)):
@@ -557,15 +566,28 @@ def build_rail(
             railway = rel.get("tags", {}).get("route") == "railway"
             if not stops or railway:
                 _near_track(g, rel, index, operators, snaps, only)
+                near_rels.setdefault(key, []).append(rel)
             else:
                 has_train_stops = True
-                if _in_order(keys, coords, rel.get("tags", {})):
-                    seqs.append(keys)
+            # 停靠點（軌道 relation 列的車站也算）照順序排的，相鄰的接不起來時補邊（青函トンネル）
+            if _in_order(keys, coords, rel.get("tags", {})):
+                seqs.append(keys)
         if has_train_stops:
             _terminals(g, index, operators, snaps, only)
         served[key] = snaps
         sequences[key] = seqs
         hs_group[key] = hs
+
+    # 第一輪之後還沒有路線的縣內車站：用軌道旁找站的那些線，放寬到 ORPHAN_M 再找一次
+    # （車站點畫在站前廣場的大站；營運者照樣要相容，新幹線照樣只收新幹線列車停的站）
+    taken = {sid for snaps in served.values() for sid in snaps}
+    orphans = {st.id for st in stations if inside(st.lng, st.lat)} - taken
+    if orphans:
+        for key, rels in sorted(near_rels.items()):
+            g = groups[key]
+            only = orphans & shinkansen_stops if hs_group[key] else orphans
+            for rel in rels:
+                _near_track(g, rel, index, operators, served[key], only, ORPHAN_M)
 
     # ---- 路線：同一段軌道只畫一次（直通運轉、多個營運者各有一份 relation） ----
     # 有官方路線色的先、名稱短的先（「京都市営地下鉄烏丸線」先於「京都地下鉄烏丸線・近鉄京都線」）
@@ -634,24 +656,25 @@ def _near_track(
     operators: dict[str, set[str]],
     snaps: Snaps,
     only: set[str] | None = None,
+    radius: float = PROXIMITY_M,
 ) -> None:
-    """軌道 relation（route=railway）與沒有停靠點的路線：軌道 PROXIMITY_M 內、營運者相容的車站。
+    """軌道 relation（route=railway）與沒有停靠點的路線：軌道 radius 內、營運者相容的車站。
 
-    only 有給時（新幹線）只收這些站。"""
+    only 有給時（新幹線、第二輪的孤站）只收這些站。"""
     refs = sorted({m["ref"] for m in rel.get("members", []) if m.get("type") == "way"})
     for ref in refs:
         pts = g.ways.get(ref) or []
         for a, b in zip(pts, pts[1:], strict=False):
             half = _km(a, b) * 500
-            for _, i in index.near((a[1] + b[1]) / 2, (a[0] + b[0]) / 2, half + PROXIMITY_M):
+            for _, i in index.near((a[1] + b[1]) / 2, (a[0] + b[0]) / 2, half + radius):
                 st = index.stations[i]
                 if only is not None and st.id not in only:
                     continue
-                if any(p[2] == PROXIMITY_M for p in snaps.get(st.id, ())):
+                if any(p[2] == radius for p in snaps.get(st.id, ())):
                     continue
                 d, _ = _project((st.lng, st.lat), a, b)
-                if d <= PROXIMITY_M and operator_ok(g.operator, operators.get(st.id, ())):
-                    snaps[st.id].append((st.lat, st.lng, PROXIMITY_M))
+                if d <= radius and operator_ok(g.operator, operators.get(st.id, ())):
+                    snaps[st.id].append((st.lat, st.lng, radius))
 
 
 def _terminals(
