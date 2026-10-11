@@ -646,6 +646,7 @@ header 右側、登入鈕左邊（`SearchBox.vue`，每一頁都在；在行程�
 ### 7.27 紀錄頁（`/log`）
 - 桌機：第一列收集冊（2fr）、經縣值、旅人；第二列成就整列；下面去過的地圖、旅行、去過（不變）。
 - 手機與平板（<1024，決定事項 K2）：收集冊一張 96 高（扇形卡 60px 寬），下面經縣值、旅人、成就三格排一列（`grid-cols-3 gap-2`，每格 104 高、`p-3`）：左上標題（`text-body font-black`），左下數字（`text-title font-bold`＋`/ N` `text-caption text-sub`）；經縣值底下一條進度，旅人右上小窗（43×50）放半身像，成就右上最新的章。不放右箭頭。再下面一行「收藏 n ・ 清單 n ›」（`min-h-tap rounded-card border border-line`，連到 `/me`），接 sticky 的段落列「旅行・去過」（`SectionNav` bar，同成就頁），兩段 `scroll-mt-[4.25rem]`（比段落列多 7px，補日期時標題列 44px 的按鈕不會被蓋住；`/log?fill=1` 也捲整段，不是捲標題）。
+- 紀錄頁的「全部去過」地圖在第一屏的下半，用 MapLibre 的 cooperative gestures（`MapView` 的 `cooperative`）：滾輪、單指拖曳捲頁面，Ctrl／⌘＋滾輪縮放、兩指移動地圖；試著用滾輪或單指時地圖上蓋一層 `--color-ink` 45% 的提示（「Ctrl＋滾輪縮放地圖」「⌘＋滾輪縮放地圖」「兩指移動地圖」，`text-body-sm font-bold text-paper`）。不然滑鼠或手指剛好在地圖上就捲不到下面的旅行。行程頁「已結束的旅行 n」連到 `/log#log-trips`，進頁捲到旅行段落；結束的行程的返回連結「‹ 紀錄」也回到那裡。
 - 去過的地圖：桌機 360 高，768 以下 260；手機打橫是 `min(360px, 100dvh − header − 6rem)`，扣掉 sticky 的段落列後整張看得到。
 - 補日期：桌機是清單上方的 sticky 列（沒有日期的 n、全選、已選 n、日期、套用、完成）。手機改成貼在分頁列上方一行「已選 n・日期・套用・完成」（`bottom-dock`），日期只寫 `2026/10/03`；「沒有日期的 n」「全選」移到「去過」標題列（取代匯出鈕）。
 

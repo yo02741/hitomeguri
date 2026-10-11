@@ -419,7 +419,7 @@ async function del() {
   <div v-if="trip" class="flex flex-1 max-lg:flex-col lg:min-h-0">
     <!-- 左：行程內容（手機沒有內層捲動，整頁一起捲） -->
     <section ref="column" class="flex flex-col gap-5 border-line px-5 pt-6 pb-24 lg:min-h-0 lg:w-[460px] lg:shrink-0 lg:overflow-y-auto lg:border-r">
-      <BackLink :to="status === 'done' ? '/log' : '/trips'">{{ status === 'done' ? '紀錄' : '行程' }}</BackLink>
+      <BackLink :to="status === 'done' ? '/log#log-trips' : '/trips'">{{ status === 'done' ? '紀錄' : '行程' }}</BackLink>
 
       <div class="flex flex-col gap-3">
         <input

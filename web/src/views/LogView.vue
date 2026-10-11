@@ -190,6 +190,19 @@ const nav = computed<NavItem[]>(() => [
   { id: 'log-visited', label: '去過' },
 ])
 const { active, go } = useScrollSpy(root, () => nav.value.map((it) => it.id))
+// 網址帶 #段落（行程頁的「已結束的旅行 n」連到 #log-trips）：行程載入後捲過去。
+// 旅行段落在收集冊、成就、去過地圖下面，不捲就一個都看不到（桌機也只露出卡片頂端）
+let jumped = ''
+watch(
+  () => [route.hash, trips.loaded] as const,
+  ([hash, loaded]) => {
+    const id = hash.slice(1)
+    if (!loaded || !nav.value.some((it) => it.id === id) || jumped === hash) return
+    jumped = hash
+    requestAnimationFrame(() => void go(id, false))
+  },
+  { immediate: true, flush: 'post' },
+)
 
 function open(id: string) {
   const r = rows.value.find((x) => x.id === id)
@@ -310,9 +323,10 @@ function open(id: string) {
         <SectionNav :items="nav" :active="active" variant="bar" @go="go" />
       </div>
 
-      <!-- 手機打橫：扣掉 header 與段落列，整張小地圖放得進一屏（第二階段 31） -->
+      <!-- 手機打橫：扣掉 header 與段落列，整張小地圖放得進一屏（第二階段 31）。
+           地圖在第一屏的下半：滾輪、單指拖曳讓給頁面（cooperative），不然捲不到下面的旅行 -->
       <div ref="mapBox" class="relative h-[360px] overflow-hidden rounded-card border border-line bg-placeholder max-md:h-[260px] land:h-[min(360px,calc(100dvh-var(--spacing-header)-6rem))]">
-        <MapView v-if="mapOn" :spots="spots" :bounds="bounds" :marked="visitedOnly" @select="open" />
+        <MapView v-if="mapOn" :spots="spots" :bounds="bounds" :marked="visitedOnly" cooperative @select="open" />
       </div>
 
       <section id="log-trips" class="flex flex-col gap-3 max-lg:scroll-mt-[4.25rem]" aria-labelledby="trips-title">

@@ -40,6 +40,8 @@ const props = defineProps<{
   marked?: Record<string, { favorite?: boolean; visited?: boolean }> | null
   /** 行程某一天的順序連線（依停留點順序的座標） */
   route?: [number, number][] | null
+  /** 放在會捲動的頁面中間（紀錄頁）：滾輪、單指拖曳讓給頁面捲動，Ctrl／⌘＋滾輪縮放、兩指移動地圖 */
+  cooperative?: boolean
 }>()
 
 export interface PackPoint {
@@ -952,6 +954,12 @@ onMounted(() => {
     zoom: JAPAN_ZOOM,
     // 底圖圖磚只到 14 級，再放大就只是放大；17 級已看得到建物
     maxZoom: 17,
+    cooperativeGestures: Boolean(props.cooperative),
+    locale: {
+      'CooperativeGesturesHandler.WindowsHelpText': 'Ctrl＋滾輪縮放地圖',
+      'CooperativeGesturesHandler.MacHelpText': '⌘＋滾輪縮放地圖',
+      'CooperativeGesturesHandler.MobileHelpText': '兩指移動地圖',
+    },
     attributionControl: {
       compact: true,
       customAttribution: '景點資料 © OpenStreetMap contributors・Wikidata・Wikimedia Commons・維基百科（CC BY-SA 4.0）',
