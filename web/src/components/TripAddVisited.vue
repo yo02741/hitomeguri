@@ -16,7 +16,10 @@ const props = defineProps<{ trip: Trip }>()
 const emit = defineEmits<{ close: []; add: [items: Array<{ spot: SpotRef; day: number | null }>] }>()
 
 const { entries } = useVisitedEntries()
-const { rows, loading } = useMarkedSpots(() => entries.value.filter(([id]) => !hasSpot(props.trip, id)))
+const marked = useMarkedSpots(() => entries.value.filter(([id]) => !hasSpot(props.trip, id)))
+const loading = marked.loading
+// 已不在目錄的（資料更新時移除的景點）沒有座標，不列
+const rows = computed(() => marked.rows.value.filter((r) => !r.missing))
 
 const DAY_MS = 86_400_000
 /** 去過的日期是這趟的第幾天（索引）；沒有日期、不在期間內是 null */
@@ -96,7 +99,10 @@ function submit() {
     <p v-else-if="!shown.inTrip.length && !shown.others.length" class="py-6 text-center text-body-sm text-sub">
       {{ q.trim() ? '找不到' : '沒有可以加入的地方' }}
     </p>
-    <div class="sticky bottom-0 -mx-5 mt-3 flex items-center gap-3 border-t border-line-soft bg-paper px-5 pt-3">
+    <!-- 對話框本身有下邊距（含安全區）：底列往下蓋住那段邊距，貼齊對話框底部，清單不會從底下露出來 -->
+    <div
+      class="sticky -mx-5 mt-3 -mb-[calc(1.25rem+env(safe-area-inset-bottom))] flex items-center gap-3 border-t border-line-soft bg-paper px-5 pt-3 pb-[calc(0.75rem+env(safe-area-inset-bottom))] bottom-[calc(-1.25rem-env(safe-area-inset-bottom))]"
+    >
       <span class="text-body-sm text-sub" aria-live="polite">已選 <span class="font-num text-ink">{{ selected.size }}</span></span>
       <button
         type="button"
