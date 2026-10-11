@@ -61,8 +61,10 @@ PROXIMITY_M = 150
 ORPHAN_M = 300
 # 停靠點投影到軌道的距離上限
 SNAP_M = 300
+# 投影到最近的軌道之外，比最近的遠不到這個距離的軌道（上下行、站內的線）也投影
+PARALLEL_M = 40
 # 軌道的斷點（OSM 的路段偶有沒接上的）在這個距離內就接起來
-GAP_M = 50
+GAP_M = 100
 # 相鄰兩站沿軌道的距離上限（km）；超過就不連
 MAX_EDGE_KM = 100
 # 列車路線相鄰兩個停靠站沿軌道接不起來時（軌道缺段、站離軌道太遠）用直線距離補：
@@ -348,17 +350,21 @@ class Track:
         c = self.CELL
         ci, cj = math.floor(lat / c), math.floor(lng / c)
         r = int(radius_m / (c * 80_000)) + 1
-        best: tuple[float, int, float] | None = None
+        found: dict[int, tuple[float, float]] = {}
         for di in range(-r, r + 1):
             for dj in range(-r, r + 1):
                 for si in self.grid.get((ci + di, cj + dj), ()):
                     a, b = self.segs[si]
                     d, t = _project((lng, lat), self.pos[a], self.pos[b])
-                    if d <= radius_m and (best is None or (d, si) < best[:2]):
-                        best = (d, si, t)
-        if best is None:
+                    if d <= radius_m:
+                        found[si] = (d, t)
+        if not found:
             return False
-        self.snaps[best[1]].append((round(best[2], 9), key))
+        # 上下行分開畫的軌道：站只投影到其中一條時，沿另一條走會越過這站（高崎→越後湯沢）
+        nearest = min(d for d, _ in found.values())
+        for si, (d, t) in sorted(found.items()):
+            if d <= nearest + PARALLEL_M:
+                self.snaps[si].append((round(t, 9), key))
         return True
 
     def finish(self) -> None:
@@ -429,12 +435,15 @@ class _Group:
 
 
 def _stops(
-    rel: dict[str, Any], names: dict[tuple[str, int], str]
+    rel: dict[str, Any], names: dict[tuple[str, int], str], bare: bool = False
 ) -> list[tuple[float, float, str | None, int]]:
-    """relation 的停靠點：(緯度, 經度, 名稱, 成員 id)；平台是 way 時取幾何的平均。"""
+    """relation 的停靠點：(緯度, 經度, 名稱, 成員 id)；平台是 way 時取幾何的平均。
+
+    bare：沒有角色的 node 成員（軌道 relation 依序列車站的寫法：山陽新幹線、北陸新幹線）。"""
     out = []
     for m in rel.get("members", []):
-        if not STOP_ROLE.match(m.get("role") or ""):
+        role = m.get("role") or ""
+        if not (STOP_ROLE.match(role) or (bare and not role and m.get("type") == "node")):
             continue
         if m.get("type") == "node" and "lat" in m:
             lat, lng = m["lat"], m["lon"]
@@ -529,6 +538,9 @@ def build_rail(
     # 看全部的列車 relation（含「のぞみ」「はやぶさ」這種列車名稱的，不只合併成路線的）：
     # 標了新幹線，或成員軌道過半是 highspeed 的都算
     shinkansen_stops: set[str] = set()
+    # 這些列車的停靠點（停車位置在新幹線的軌道上）：軌道 relation 沒列車站、車站點又離高架軌道遠時
+    # 用來把站投影到新幹線的軌道（博多、筑後船小屋）
+    hs_stops: Snaps = defaultdict(list)
     for rel in elements:
         if rel.get("type") != "relation":
             continue
@@ -541,6 +553,7 @@ def build_rail(
             i = index.match(lat, lng, name)
             if i is not None:
                 shinkansen_stops.add(stations[i].id)
+                hs_stops[stations[i].id].append((lat, lng, SNAP_M))
 
     served: dict[str, Snaps] = {}
     near_rels: dict[str, list[dict[str, Any]]] = {}
@@ -555,18 +568,23 @@ def build_rail(
         only = shinkansen_stops if hs else None
         has_train_stops = False
         for rel in sorted(g.rels, key=lambda r: r["id"]):
+            railway = rel.get("tags", {}).get("route") == "railway"
             stops = _stops(rel, names)
+            # 軌道 relation 沒有標停靠角色時，沒有角色的成員車站也照順序算（對得到車站的才算：
+            # 號誌、分歧點等其他 node 不要）
+            bare = railway and not stops
+            if bare:
+                stops = [s for s in _stops(rel, names, bare=True) if s[2]]
             keys: list[str] = []
             for lat, lng, name, ref in stops:
                 i = index.match(lat, lng, name)
                 k = stations[i].id if i is not None else None
-                if k is None and name:
+                if k is None and name and not bare:
                     k = pseudo_key(lat, lng, name, ref)
                 if k is not None:
                     snaps[k].append((lat, lng, SNAP_M))
                     if not keys or keys[-1] != k:
                         keys.append(k)
-            railway = rel.get("tags", {}).get("route") == "railway"
             if not stops or railway:
                 _near_track(g, rel, index, operators, snaps, only)
                 near_rels.setdefault(key, []).append(rel)
@@ -610,7 +628,12 @@ def build_rail(
                 simple = geo._dp(seg, SIMPLIFY_TOL)
                 segs.append([[round(x, 5), round(y, 5)] for x, y in simple])
         factor = FALLBACK_FACTOR_SHINKANSEN if hs_group[key] else FALLBACK_FACTOR
-        edges = line_edges(g, served[key], coords, inside, sequences[key], factor)
+        extra = hs_stops if hs_group[key] else None
+        edges = line_edges(g, served[key], coords, inside, sequences[key], factor, extra)
+        # 新幹線列車的停靠點投影到這條線的軌道、接出邊的站，也是這條線的站
+        for sid in {e for a, b, _ in edges for e in (a, b)} - set(served[key]):
+            if extra and sid in extra:
+                served[key][sid] = extra[sid]
         # 軌道全被別的線畫掉的線（東京都內的東北新幹線）也要留：車站要查得到它
         if not segs and not edges and not any(sid in here for sid in served[key]):
             continue
@@ -727,28 +750,16 @@ def line_edges(
     inside: Inside,
     sequences: Iterable[list[str]] = (),
     factor: float = FALLBACK_FACTOR,
+    extra: Snaps | None = None,
 ) -> list[tuple[str, str, float]]:
     """一條線的相鄰站與沿軌道距離（km，小數 2 位）；只留至少一端在縣內的。
 
     sequences 是列車路線依行車順序的停靠站：相鄰兩站沿軌道接不起來時，
-    直線距離 × factor 補一條邊。"""
+    直線距離 × factor 補一條邊。extra 是其他可能停的站（新幹線列車的停靠點）：
+    離這條線的軌道 SNAP_M 內才投影。"""
     out: dict[tuple[str, str], float] = {}
-    if g.ways and len(snaps) >= 2:
-        track = Track(g.ways.values())
-        for key in sorted(snaps):
-            for lat, lng, radius in snaps[key]:
-                track.snap(key, lat, lng, radius)
-        track.finish()
-        snapped = sorted({k for keys in track.owner.values() for k in keys})
-        for key in snapped:
-            if not inside(coords[key][1], coords[key][0]):
-                continue
-            for other, d in track.neighbours(key).items():
-                if d <= 0:  # 投影到同一點：用兩站的直線距離
-                    d = geo.haversine_m(*coords[key][:2], *coords[other][:2]) / 1000
-                pair = (key, other) if key < other else (other, key)
-                out[pair] = min(out.get(pair, math.inf), max(round(d, 2), 0.01))
-    # 軌道接不起來的相鄰停靠站：同一條線的邊連成的塊不同才補
+    # 軌道接不起來的相鄰停靠站：同一條線的邊連成的塊不同才補。
+    # 縣外兩站之間的邊不輸出，但也要算進連通（縣外的站不是孤點：伯耆大山–西出雲）
     parent: dict[str, str] = {}
 
     def find(x: str) -> str:
@@ -758,8 +769,25 @@ def line_edges(
             x = parent[x]
         return x
 
-    for a, b in out:
-        parent[find(a)] = find(b)
+    if extra:
+        snaps = {k: [*snaps.get(k, ()), *extra.get(k, ())] for k in {*snaps, *extra}}
+    if g.ways and len(snaps) >= 2:
+        track = Track(g.ways.values())
+        for key in sorted(snaps):
+            for lat, lng, radius in snaps[key]:
+                track.snap(key, lat, lng, radius)
+        track.finish()
+        snapped = sorted({k for keys in track.owner.values() for k in keys})
+        for key in snapped:
+            here = inside(coords[key][1], coords[key][0])
+            for other, d in track.neighbours(key).items():
+                parent[find(key)] = find(other)
+                if not (here or inside(coords[other][1], coords[other][0])):
+                    continue
+                if d <= 0:  # 投影到同一點：用兩站的直線距離
+                    d = geo.haversine_m(*coords[key][:2], *coords[other][:2]) / 1000
+                pair = (key, other) if key < other else (other, key)
+                out[pair] = min(out.get(pair, math.inf), max(round(d, 2), 0.01))
     for seq in sequences:
         for a, b in zip(seq, seq[1:], strict=False):
             if a == b or find(a) == find(b):

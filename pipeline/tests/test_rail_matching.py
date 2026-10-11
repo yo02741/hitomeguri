@@ -195,3 +195,96 @@ def test_station_members_of_railway_relation_bridge_gap():
         else ("木古内", "奥津軽いまべつ")
     )
     assert pair in hk and 55 < hk[pair] < 70
+
+
+# ---- seed-rail #77 之後的修正（用 dump-rail-osm 的原始回應重現） ----
+
+
+def test_parallel_track_does_not_bypass_station():
+    # 上下行分開畫：B 的停靠點在上行軌道，沿下行軌道從 A 走到 C 不能越過 B（高崎→越後湯沢）
+    stations = [_st(1, "A", 35.0, 139.0), _st(2, "B", 35.0, 139.15), _st(3, "C", 35.0, 139.3)]
+    up, a1 = _way(11, [(35.0, 139.0), (35.0, 139.3)])
+    down, a2 = _way(12, [(35.0, 139.0), (35.0002, 139.01), (35.0002, 139.29), (35.0, 139.3)])
+    rel = {
+        "type": "relation", "id": 1,
+        "tags": {"name": "テスト線", "route": "train", "public_transport:version": "2"},
+        "members": [_stop(1, 35.0, 139.0), _stop(2, 35.0, 139.15), _stop(3, 35.0, 139.3), up, down],
+    }  # fmt: skip
+    edges, _ = _lines([rel, a1, a2], stations)
+    pairs = {frozenset(p) for p in edges["テスト線"]}
+    assert pairs == {frozenset(("A", "B")), frozenset(("B", "C"))}
+
+
+def test_track_gap_of_80m_is_joined():
+    # 米子站東側：站區的一段路段沒放進 relation，軌道斷了約 80 m
+    stations = [_st(1, "米子", 35.0, 139.0), _st(2, "東山公園", 35.0, 139.2)]
+    w1, a1 = _way(11, [(35.0, 138.99), (35.0, 139.1)])
+    w2, a2 = _way(12, [(35.0, 139.10088), (35.0, 139.21)])
+    rel = {
+        "type": "relation", "id": 1, "tags": {"name": "山陰本線", "route": "railway"},
+        "members": [w1, w2],
+    }  # fmt: skip
+    edges, _ = _lines([rel, a1, a2], stations)
+    assert {frozenset(p) for p in edges["山陰本線"]} == {frozenset(("米子", "東山公園"))}
+
+
+def test_outside_stations_count_for_connectivity():
+    # 伯耆大山（縣內）—米子（縣外）—西出雲（縣外）：軌道接得起來，
+    # 不能因為縣外兩站之間的邊不輸出，就用停靠順序補一條伯耆大山—西出雲
+    stations = [
+        _st(1, "伯耆大山", 35.0, 139.0), _st(2, "米子", 35.0, 138.9), _st(3, "西出雲", 35.0, 138.5),
+    ]  # fmt: skip
+    w, a = _way(11, [(35.0, 139.05), (35.0, 138.45)])
+    rel = {
+        "type": "relation", "id": 1, "tags": {"name": "山陰本線", "route": "railway"},
+        "members": [_stop(3, 35.0, 138.5), _stop(1, 35.0, 139.0), w],
+    }  # fmt: skip
+    inside = in_box((34.9, 138.95, 35.1, 139.1))
+    lines, _, _ = build_rail({"elements": [rel, a]}, stations, inside, {})
+    names = {s.id: s.name for s in stations}
+    pairs = {frozenset((names[x], names[y])) for x, y, _ in lines[0].edges}
+    assert pairs == {frozenset(("伯耆大山", "米子"))}
+
+
+def test_station_members_without_role_count_as_stops():
+    # 北陸新幹線：軌道 relation 用沒有角色的成員依序列車站；高崎的車站點離軌道 200 m
+    # （超過軌道旁找站的 150 m）。號誌、信號場這類對不到車站的 node 不當成停靠點
+    stations = [_st(1, "高崎", 36.3218, 139.0), _st(2, "安中榛名", 36.32, 138.85)]
+    w, a = _way(11, [(36.32, 139.05), (36.32, 138.8)])
+    rel = {
+        "type": "relation", "id": 1,
+        "tags": {"name": "北陸新幹線", "route": "railway", "public_transport:version": "2"},
+        "members": [
+            {"type": "node", "ref": 1, "role": "", "lat": 36.3218, "lon": 139.0},
+            {"type": "node", "ref": 9, "role": "", "lat": 36.32, "lon": 138.95},
+            {"type": "node", "ref": 2, "role": "", "lat": 36.32, "lon": 138.85},
+            w,
+        ],
+    }  # fmt: skip
+    named = [
+        {"type": "node", "id": i, "tags": {"name": n}}
+        for i, n in ((1, "高崎"), (2, "安中榛名"), (9, "某信号場"))
+    ]
+    edges, lines = _lines([rel, a, *named], stations)
+    assert {frozenset(p) for p in edges["北陸新幹線"]} == {frozenset(("高崎", "安中榛名"))}
+    assert lines["高崎"]
+
+
+def test_shinkansen_train_stops_snap_far_station_to_track():
+    # 九州新幹線：軌道 relation 沒列車站，博多的車站點離高架軌道 400 m；
+    # 列車（さくら）的停車位置在軌道上，用它把博多投影到軌道
+    stations = [_st(1, "博多", 33.5936, 130.42), _st(2, "新鳥栖", 33.4, 130.42)]
+    w, a = _way(11, [(33.59, 130.42), (33.39, 130.42)])
+    hs = {"type": "way", "id": 11, "tags": {"highspeed": "yes"}}
+    track = {
+        "type": "relation", "id": 1, "tags": {"name": "九州新幹線", "route": "railway"},
+        "members": [w],
+    }  # fmt: skip
+    sakura = {
+        "type": "relation", "id": 2, "tags": {"name": "さくら", "route": "train"},
+        "members": [_stop(101, 33.59, 130.42), _stop(102, 33.4, 130.42), w],
+    }  # fmt: skip
+    named = [{"type": "node", "id": 101, "tags": {"name": "博多"}}]
+    edges, lines = _lines([track, sakura, a, hs, *named], stations)
+    assert {frozenset(p) for p in edges["九州新幹線"]} == {frozenset(("博多", "新鳥栖"))}
+    assert lines["博多"]
