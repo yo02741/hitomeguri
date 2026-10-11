@@ -701,14 +701,19 @@ def seed_rail(prefs: list[str]) -> str:
         "| 縣 | 路線 | 新幹線 | 車站 | 有停靠路線 | 相鄰站 | 縣外站 | 有路線色 |",
         "|---|---|---|---|---|---|---|---|",
     ]
+    failed: list[str] = []
     for pref in prefs:
         inside = in_pref(pref)
         log(f"[{pref}] 鐵路路線…")
         operators: dict[str, set[str]] = {}
-        nearby = build_stations(osm.stations(geo.bbox(pref, pad=STATION_PAD)), operators)
-        rail, stations, extra = build_rail(
-            osm.rail_routes(geo.iso_code(pref)), nearby, inside, operators
-        )
+        try:
+            nearby = build_stations(osm.stations(geo.bbox(pref, pad=STATION_PAD)), operators)
+            routes = osm.rail_routes(geo.iso_code(pref))
+        except RuntimeError as e:  # Overpass 一直失敗：這縣先跳過，其他縣照寫，報告列出來再補跑
+            log(f"[{pref}]   失敗，跳過：{e}")
+            failed.append(pref)
+            continue
+        rail, stations, extra = build_rail(routes, nearby, inside, operators)
         data = RailData(
             source=Source(url="https://www.openstreetmap.org/", fetched_at=today),
             lines=rail,
@@ -728,4 +733,6 @@ def seed_rail(prefs: list[str]) -> str:
             f"[{pref}]   路線 {len(rail)}（新幹線 {hs}、有顏色 {coloured}）、車站 {len(stations)}"
             f"（有停靠路線 {served}）、相鄰站 {edges}"
         )
+    if failed:
+        lines += ["", f"Overpass 失敗、要補跑的縣：{' '.join(failed)}"]
     return "\n".join(lines) + "\n"

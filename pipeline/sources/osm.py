@@ -6,6 +6,7 @@ OSM 資料以 ODbL 授權，UI 需標示「© OpenStreetMap contributors」。
 
 from __future__ import annotations
 
+import time
 from dataclasses import dataclass, field
 
 from pipeline.http import post_json
@@ -14,6 +15,27 @@ ENDPOINTS = [
     "https://overpass-api.de/api/interpreter",
     "https://overpass.kumi.systems/api/interpreter",
 ]
+
+
+# 兩個鏡像都回 5xx 或逾時時，隔一段時間整輪再試（Overpass 尖峰時常常一陣子全滿）
+ROUND_WAITS = (0, 60, 180, 420)
+
+
+def _query(query: str) -> dict:
+    last_err: Exception | None = None
+    for wait in ROUND_WAITS:
+        if wait:
+            time.sleep(wait)
+        for url in ENDPOINTS:
+            try:
+                data = post_json(url, data={"data": query}, min_interval=2.0, retries=3)
+                remark = data.get("remark", "")
+                if "runtime error" in remark or "timed out" in remark:
+                    raise RuntimeError(remark)
+                return data
+            except Exception as e:  # noqa: BLE001 — 換下一個鏡像，整輪失敗就等一下再試
+                last_err = e
+    raise RuntimeError(f"Overpass 全部失敗：{last_err}")
 
 
 @dataclass
@@ -29,18 +51,7 @@ class OsmElement:
 
 
 def _run(query: str) -> list[OsmElement]:
-    last_err: Exception | None = None
-    for url in ENDPOINTS:
-        try:
-            data = post_json(url, data={"data": query}, min_interval=2.0, retries=3)
-            remark = data.get("remark", "")
-            if "runtime error" in remark or "timed out" in remark:
-                raise RuntimeError(remark)
-            break
-        except Exception as e:  # noqa: BLE001 — 換下一個鏡像
-            last_err = e
-    else:
-        raise RuntimeError(f"Overpass 全部失敗：{last_err}")
+    data = _query(query)
     out = []
     for el in data.get("elements", []):
         if "lat" in el:
@@ -55,17 +66,7 @@ def _run(query: str) -> list[OsmElement]:
 
 def raw(query: str) -> dict:
     """Overpass 原始回應（需要幾何的查詢用，例如鐵路路線）。"""
-    last_err: Exception | None = None
-    for url in ENDPOINTS:
-        try:
-            data = post_json(url, data={"data": query}, min_interval=2.0, retries=3)
-            remark = data.get("remark", "")
-            if "runtime error" in remark or "timed out" in remark:
-                raise RuntimeError(remark)
-            return data
-        except Exception as e:  # noqa: BLE001 — 換下一個鏡像
-            last_err = e
-    raise RuntimeError(f"Overpass 全部失敗：{last_err}")
+    return _query(query)
 
 
 # route=railway 是軌道本身（「函館本線」「山陰本線」）：地方的 JR 線多半沒有 route=train 的列車路線
