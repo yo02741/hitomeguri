@@ -21,16 +21,17 @@ import {
 
 import { EYES, HAIR, outfitById, type Slot } from '../../data/outfits'
 import type { AvatarParts } from '../../stores/avatar'
-import { layerGeometry, PX, type Surface, worldX, worldY } from './inflate'
+import { alphaSampler, bleedEdges, inflateLayer, PX, type Surface, worldX, worldY } from './inflate'
 import { patternDefs, rasterize, resolveVars, type ViewBox } from './raster'
 
 /**
  * 3D 旅人（DESIGN.md §7.24a）：紙娃娃的美術直接變成立體的軟膠公仔。
  * - 頭是真的球（橢球），臉（眼睛、嘴、腮紅）貼在球面上。
  * - 身體、衣服、手腳：2D 剪影充氣成圓鼓鼓的一塊，正面貼原本的畫，背面同一張。
- * - 頭髮、頭上的、臉上的：在頭的範圍裡貼著球面、往外鼓一點；超出頭的部分（髮尾、帽頂）充氣成一片。
- * - 手上的：在右手的位置充氣；夥伴：腳邊稍前面。
- * 顏色、花紋、單品全部沿用 2D 的資料（outfits.ts、theme.css 的 token），不另外建模，163 件都能穿。
+ * - 頭髮、頭上的、臉上的：在頭的範圍裡貼著球面、往外鼓一點；超出頭的部分（髮尾、帽頂）充氣成一塊。
+ * - 疊放照 2D 的順序：後髮 → 身體 → 頭 → 瀏海 → 臉上的 → 頭上的 → 手上的。後面的被前面的蓋住的地方變薄，
+ *   出了頭的部分也照順序往前排，不會互相穿出來；長髮貼著背，手上的、夥伴放在身體表面前面。
+ * 顏色、花紋、單品全部沿用 2D 的資料（outfits.ts、theme.css 的 token），不另外建模，全部單品都能穿。
  */
 
 const HEAD = { cx: 120, cy: 100, rx: 54, ry: 56, rz: 50 }
@@ -47,8 +48,9 @@ function headR(x: number, y: number): number {
   const v = (y - HEAD.cy) / HEAD.ry
   return Math.sqrt(u * u + v * v)
 }
+const clamp01 = (t: number) => Math.min(1, Math.max(0, t))
 const smooth = (a: number, b: number, t: number) => {
-  const k = Math.min(1, Math.max(0, (t - a) / (b - a)))
+  const k = clamp01((t - a) / (b - a))
   return k * k * (3 - 2 * k)
 }
 
@@ -69,31 +71,27 @@ function texture(canvas: HTMLCanvasElement): Texture {
   t.anisotropy = 4
   return t
 }
-function toon(map: Texture, extra: Partial<MeshToonMaterial> = {}): MeshToonMaterial {
-  return new MeshToonMaterial({ map, gradientMap: gradientMap(), alphaTest: 0.5, side: DoubleSide, ...extra })
+/** 充氣的一塊：形狀已經沿輪廓切好，貼圖當不透明用（邊緣先補色） */
+function toon(canvas: HTMLCanvasElement): MeshToonMaterial {
+  return new MeshToonMaterial({ map: texture(bleedEdges(canvas)), gradientMap: gradientMap(), side: DoubleSide })
 }
 
 const css = (name: string) => getComputedStyle(document.documentElement).getPropertyValue(name).trim()
 
-/** 平面上的一片：前後以 z 為中心 */
-const plane =
-  (z = 0) =>
-  (): Surface => ({ front: z, back: z })
-/** 貼著頭的一層：頭的範圍內只有正面（離球面 lift），越靠近頭的邊緣鼓得越多；出了頭就是平面、鼓滿的一塊 */
+type Cover = (x: number, y: number) => number
+const none: Cover = () => 0
+
+/** 貼著頭的一層：頭的範圍內只有正面（離球面 lift），越靠近頭的邊緣鼓得越多；出了頭就是以 z 為中心、鼓滿的一塊。
+ *  cover：被更前面的東西蓋住的程度（0–1），蓋住的地方薄一點 */
 const onHead =
-  (lift: number, grow = 1.02, thin = 0.3) =>
+  (lift: number, z: number, opts: { grow?: number; thin?: number; cover?: Cover } = {}) =>
   (x: number, y: number): Surface => {
-    const z = headZ(x, y, grow)
-    return z === null ? { front: 0, back: 0 } : { front: z + lift, back: null, lift: thin + (1 - thin) * smooth(0.7, 1, headR(x, y)) }
+    const { grow = 1.02, thin = 0.3, cover = none } = opts
+    const keep = 1 - 0.8 * cover(x, y)
+    const hz = headZ(x, y, grow)
+    if (hz === null) return { front: z, back: z, lift: keep }
+    return { front: hz + lift, back: null, lift: (thin + (1 - thin) * smooth(0.7, 1, headR(x, y))) * keep }
   }
-/** 頭髮後層：頭的範圍內只有背面（包住後腦），頭以外是蓬鬆的一塊；髮尾往下時退到身體後面 */
-const hairBack = (x: number, y: number): Surface => {
-  const z = headZ(x, y, 1.04)
-  if (z !== null) return { front: null, back: -(z + 1), lift: 0.5 }
-  const t = Math.min(1, Math.max(0, (y - 130) / 40))
-  const zz = -2 - 16 * t
-  return { front: zz, back: zz }
-}
 
 export interface Avatar3D {
   root: Group
@@ -193,8 +191,8 @@ export async function buildAvatar(parts: AvatarParts, equipped: Partial<Record<S
 
   const root = new Group()
   const disposables: Array<{ dispose: () => void }> = []
-  const add = (parent: Object3D, mesh: Mesh) => {
-    parent.add(mesh)
+  const add = (mesh: Mesh) => {
+    root.add(mesh)
     disposables.push(mesh.geometry)
     const m = mesh.material as Material & { map?: Texture | null }
     disposables.push(m)
@@ -202,42 +200,89 @@ export async function buildAvatar(parts: AvatarParts, equipped: Partial<Record<S
     return mesh
   }
 
-  // 身體＋衣服（手上的、夥伴另外做）
+  // 先把每一層畫好：後面的層要知道前面的蓋住哪裡
+  const item = async (slot: Slot) => {
+    const id = equipped[slot]
+    if (!id || !outfitById.has(id)) return null
+    const vb = itemBox(id)
+    const canvas = await rasterize(svgOf(slot), vb, SCALE, defs)
+    return { vb, canvas, alpha: alphaSampler(canvas, vb, SCALE) }
+  }
+  const [faceItem, headItem, handItem, buddyItem] = await Promise.all([item('face'), item('head'), item('hand'), item('buddy')])
+  const coverOf = (...layers: Array<{ alpha: Cover } | null>): Cover => {
+    const list = layers.filter((l): l is { alpha: Cover } => !!l)
+    return list.length ? (x, y) => Math.max(...list.map((l) => l.alpha(x, y))) : none
+  }
+  const coverHair = coverOf(faceItem, headItem)
+
+  // 身體＋衣服（手上的、夥伴另外做）：軀幹、腿一塊，兩隻手臂（含袖子、手）各自一塊，
+  // 分開鼓才是圓的手臂，側面不會被拉成一片。都以 z = 0 為中心
   const bodyVb: ViewBox = [48, 132, 144, 156]
-  const bodyCanvas = await rasterize(resolveVars(bodySvg(skin, svgOf('body')), local), bodyVb, SCALE, defs)
-  add(root, new Mesh(layerGeometry({ canvas: bodyCanvas, vb: bodyVb, scale: SCALE, step: 1.25, bulge: 4.4, maxH: 28, base: plane(0) }), toon(texture(bodyCanvas))))
+  const bodyArt = resolveVars(bodySvg(skin, svgOf('body')), local)
+  const clips =
+    `<clipPath id="clip-torso"><path d="M90.5 132 L149.5 132 L149.5 233 L192 233 L192 288 L48 288 L48 233 L90.5 233Z"/></clipPath>` +
+    `<clipPath id="clip-arms"><path d="M48 132 L90.5 132 L90.5 233 L48 233Z M149.5 132 L192 132 L192 233 L149.5 233Z"/></clipPath>`
+  const [torsoCanvas, armsCanvas] = await Promise.all([
+    rasterize(`<g clip-path="url(#clip-torso)">${bodyArt}</g>`, bodyVb, SCALE, defs + clips),
+    rasterize(`<g clip-path="url(#clip-arms)">${bodyArt}</g>`, bodyVb, SCALE, defs + clips),
+  ])
+  const flat = () => ({ front: 0, back: 0 })
+  const torso = inflateLayer({ canvas: torsoCanvas, vb: bodyVb, scale: SCALE, step: 1.25, bulge: 4.4, maxH: 28, base: flat })
+  const arms = inflateLayer({ canvas: armsCanvas, vb: bodyVb, scale: SCALE, step: 1, bulge: 3.4, maxH: 12, base: flat })
+  add(new Mesh(torso.geometry, toon(torsoCanvas)))
+  add(new Mesh(arms.geometry, toon(armsCanvas)))
+  const body = { heightAt: (x: number, y: number) => Math.max(torso.heightAt(x, y), arms.heightAt(x, y)) }
 
   // 頭
   const head = new Mesh(new SphereGeometry(1, 64, 48), new MeshToonMaterial({ color: new Color(skin), gradientMap: gradientMap() }))
   head.scale.set(HEAD.rx * PX, HEAD.ry * PX, HEAD.rz * PX)
   head.position.set(worldX(HEAD.cx), worldY(HEAD.cy), 0)
-  add(root, head)
+  add(head)
   const faceVb: ViewBox = [66, 44, 108, 112]
-  add(root, faceMesh(await rasterize(resolveVars(faceSvg(EYES[parts.eyes] ?? EYES.round), local), faceVb, 6, defs), faceVb))
+  add(faceMesh(await rasterize(resolveVars(faceSvg(EYES[parts.eyes] ?? EYES.round), local), faceVb, 6, defs), faceVb))
 
-  // 頭髮：後層、瀏海
+  // 頭髮後層：頭的範圍內只有背面（包住後腦）；頭以外是蓬鬆的一塊，往下時貼著背（身體的背面再往後一點）
   const hair = HAIR[parts.hair] ?? HAIR.bob
   const hairVb: ViewBox = [30, 14, 180, 250]
   const backCanvas = await rasterize(resolveVars(hair.back, local), hairVb, SCALE, defs)
-  add(root, new Mesh(layerGeometry({ canvas: backCanvas, vb: hairVb, scale: SCALE, step: 1, bulge: 3, maxH: 13, base: hairBack }), toon(texture(backCanvas))))
+  const hairBack = (x: number, y: number): Surface => {
+    const keep = 1 - 0.8 * coverHair(x, y)
+    const hz = headZ(x, y, 1.04)
+    if (hz !== null) return { front: null, back: -(hz + 1), lift: 0.5 * keep }
+    const t = smooth(120, 165, y)
+    const z = -2 * (1 - t) + -(body.heightAt(x, y) + 5) * t
+    return { front: z, back: z, lift: keep * (1 - 0.35 * t) }
+  }
+  add(new Mesh(inflateLayer({ canvas: backCanvas, vb: hairVb, scale: SCALE, step: 1, bulge: 3, maxH: 13, base: hairBack }).geometry, toon(backCanvas)))
+
+  // 瀏海：貼著頭往外鼓一點
   const frontVb: ViewBox = [40, 20, 160, 150]
   const frontCanvas = await rasterize(resolveVars(hair.front, local), frontVb, SCALE, defs)
-  add(root, new Mesh(layerGeometry({ canvas: frontCanvas, vb: frontVb, scale: SCALE, step: 1, bulge: 1.2, maxH: 4, base: onHead(1.5, 1.0, 0.6) }), toon(texture(frontCanvas))))
+  add(new Mesh(inflateLayer({ canvas: frontCanvas, vb: frontVb, scale: SCALE, step: 1, bulge: 1.2, maxH: 4, base: onHead(1.5, 0, { grow: 1.0, thin: 0.6, cover: coverHair }) }).geometry, toon(frontCanvas)))
 
-  // 單品
-  const item = async (slot: Slot, base: (x: number, y: number) => Surface, bulge: number, maxH: number) => {
-    const id = equipped[slot]
-    if (!id || !outfitById.has(id)) return null
-    const vb = itemBox(id)
-    const canvas = await rasterize(svgOf(slot), vb, SCALE, defs)
-    return add(root, new Mesh(layerGeometry({ canvas, vb, scale: SCALE, step: 1, bulge, maxH, base }), toon(texture(canvas))))
+  // 臉上的（在瀏海前面）、頭上的（再前面）
+  if (faceItem)
+    add(new Mesh(inflateLayer({ canvas: faceItem.canvas, vb: faceItem.vb, scale: SCALE, step: 1, bulge: 1.4, maxH: 5, base: onHead(7, 3, { grow: 1.0, thin: 0.5, cover: headItem?.alpha }) }).geometry, toon(faceItem.canvas)))
+  if (headItem) add(new Mesh(inflateLayer({ canvas: headItem.canvas, vb: headItem.vb, scale: SCALE, step: 1, bulge: 3.2, maxH: 15, base: onHead(9, 2, { grow: 1.04 }) }).geometry, toon(headItem.canvas)))
+
+  // 手上的：放在身體表面前面一點（握在右手）；夥伴：腳邊、比身體再前面
+  if (handItem) {
+    const z = (x: number, y: number): Surface => {
+      const b = body.heightAt(x, y) * 0.75
+      return { front: b, back: b }
+    }
+    add(new Mesh(inflateLayer({ canvas: handItem.canvas, vb: handItem.vb, scale: SCALE, step: 1, bulge: 2.4, maxH: 9, base: z }).geometry, toon(handItem.canvas)))
   }
-  await item('face', onHead(4, 1.0, 0.5), 1.2, 4)
-  await item('head', onHead(6, 1.04), 3, 14)
-  await item('hand', plane(0), 2.4, 9)
-  const buddy = await item('buddy', plane(10), 3, 14)
+  let buddy: Object3D | null = null
+  if (buddyItem) {
+    const z = (x: number, y: number): Surface => {
+      const b = body.heightAt(x, y) * 0.85 + 8
+      return { front: b, back: b }
+    }
+    buddy = add(new Mesh(inflateLayer({ canvas: buddyItem.canvas, vb: buddyItem.vb, scale: SCALE, step: 1, bulge: 3, maxH: 14, base: z }).geometry, toon(buddyItem.canvas)))
+  }
 
-  add(root, groundShadow())
+  add(groundShadow())
 
   return {
     root,

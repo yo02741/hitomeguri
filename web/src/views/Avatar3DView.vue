@@ -52,26 +52,33 @@ function setItem(slot: Slot, id: string) {
         </select>
       </label>
       <div class="flex flex-col gap-1 text-body-sm">
-        <span class="font-bold">膚色、髮色</span>
+        <span class="font-bold">膚色</span>
         <div class="flex flex-wrap gap-1.5">
           <button
             v-for="s in SKINS"
-            :key="`s${s}`"
+            :key="s"
             type="button"
             class="size-8 rounded-full border-2"
             :class="parts.skin === s ? 'border-ink' : 'border-line'"
             :style="{ background: `var(--color-doll-skin-${s})` }"
             :aria-label="`膚色 ${s}`"
+            :aria-pressed="parts.skin === s"
             @click="parts.skin = s"
           ></button>
+        </div>
+      </div>
+      <div class="flex flex-col gap-1 text-body-sm">
+        <span class="font-bold">髮色</span>
+        <div class="flex flex-wrap gap-1.5">
           <button
             v-for="c in HAIR_COLORS"
-            :key="`h${c}`"
+            :key="c"
             type="button"
             class="size-8 rounded-full border-2"
             :class="parts.hairColor === c ? 'border-ink' : 'border-line'"
             :style="{ background: `var(--color-doll-hair-${c})` }"
             :aria-label="`髮色 ${c}`"
+            :aria-pressed="parts.hairColor === c"
             @click="parts.hairColor = c"
           ></button>
         </div>

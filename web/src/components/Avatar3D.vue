@@ -7,7 +7,7 @@ import type { Slot } from '../data/outfits'
 import { type Avatar3D, buildAvatar } from '../services/avatar3d/avatar'
 import type { AvatarParts } from '../stores/avatar'
 
-// 3D 旅人的展示窗（DESIGN.md §7.24a）：拖曳轉圈（左右不限、上下一點點），放開帶一點慣性。
+// 3D 旅人的展示窗（DESIGN.md §7.24a）：拖曳轉（左右各 75 度、上下一點點），放開帶一點慣性。
 // 平常輕輕搖、夥伴偶爾跳一下；捲出畫面、分頁在背景時停；減少動態時不搖，只在拖曳時重畫。
 // 換外觀或服裝就重新生成（要畫幾張點陣、算距離場，約幾十毫秒），舊的釋放掉。
 const props = defineProps<{ parts: AvatarParts; equipped: Partial<Record<Slot, string>> }>()
@@ -99,8 +99,11 @@ onMounted(async () => {
   controls.enableZoom = false
   controls.enableDamping = !reduced
   controls.dampingFactor = 0.08
-  controls.minPolarAngle = Math.PI * 0.36
-  controls.maxPolarAngle = Math.PI * 0.56
+  // 視角：上下只到稍微俯視、仰視；左右各 75 度（正側面、背面是充氣的薄邊與反過來的畫，不給轉過去）
+  controls.minPolarAngle = Math.PI * 0.4
+  controls.maxPolarAngle = Math.PI * 0.54
+  controls.minAzimuthAngle = -Math.PI * 0.42
+  controls.maxAzimuthAngle = Math.PI * 0.42
   controls.rotateSpeed = 0.7
   // 手機上下滑還是捲頁面，左右拖才轉
   renderer.domElement.style.touchAction = 'pan-y'

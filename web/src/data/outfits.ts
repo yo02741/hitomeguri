@@ -42,7 +42,25 @@ export const SKINS = [4, 1, 2, 5, 3, 6] as const
 export type Skin = (typeof SKINS)[number]
 export const HAIR_COLORS = [1, 2, 3, 6, 4, 7, 5, 8, 9] as const
 export type HairColor = (typeof HAIR_COLORS)[number]
-export type HairStyle = 'short' | 'bob' | 'long' | 'bun' | 'ponytail' | 'buzz' | 'spiky' | 'sidepart' | 'curly' | 'wavy' | 'twintails' | 'twinbuns' | 'braid'
+export type HairStyle =
+  | 'short'
+  | 'bob'
+  | 'long'
+  | 'bun'
+  | 'ponytail'
+  | 'buzz'
+  | 'spiky'
+  | 'sidepart'
+  | 'curly'
+  | 'wavy'
+  | 'twintails'
+  | 'twinbuns'
+  | 'braid'
+  | 'center'
+  | 'slick'
+  | 'mash'
+  | 'wolf'
+  | 'chonmage'
 export type EyeStyle = 'round' | 'happy' | 'calm' | 'wink' | 'lashes' | 'dot' | 'sharp' | 'sleepy'
 export const HAIR_STYLES: Array<{ key: HairStyle; label: string }> = [
   { key: 'bob', label: '妹妹頭' },
@@ -50,6 +68,11 @@ export const HAIR_STYLES: Array<{ key: HairStyle; label: string }> = [
   { key: 'buzz', label: '平頭' },
   { key: 'spiky', label: '刺刺頭' },
   { key: 'sidepart', label: '旁分' },
+  { key: 'center', label: '中分' },
+  { key: 'slick', label: '油頭' },
+  { key: 'mash', label: '蘑菇頭' },
+  { key: 'wolf', label: '狼尾' },
+  { key: 'chonmage', label: '丁髷' },
   { key: 'curly', label: '捲髮' },
   { key: 'long', label: '長髮' },
   { key: 'wavy', label: '波浪長髮' },
@@ -160,6 +183,47 @@ export const HAIR: Record<HairStyle, { back: string; front: string }> = {
       `<path d="M159 208 L173 208" ${line(4, C.red)}/>` +
       shape('M162 210 C160 220 172 220 170 210Z', H) +
       HAIR_SHINE,
+  },
+  // ---- 男生的髮型（2026-10-11 使用者要求多一些） ----
+  // 中分：瀏海從中間往兩邊分，額頭露出一個倒 V
+  center: {
+    back: shape('M64 100 C62 62 88 39 120 39 C152 39 178 62 176 100 L176 130 L64 130Z', H),
+    front:
+      shape('M120 39 C154 39 180 62 177 104 L176 126 C176 131 169 131 169 126 L166 98 C156 90 140 76 124 56 L120 50 L116 56 C100 76 84 90 74 98 L71 126 C71 131 64 131 64 126 L63 104 C60 62 86 39 120 39Z', H) +
+      `<path d="M120 42 L120 52" ${line(1.6, C.ink, 0.22)}/>` +
+      `<path d="M92 56 C100 50 108 47 114 46" ${line(4, C.white, 0.28)}/>`,
+  },
+  // 油頭（全部往後梳）：額頭全露，頭頂蓬一點，梳痕兩三條
+  slick: {
+    back: shape('M64 96 C62 58 88 34 120 34 C152 34 178 58 176 96 L176 118 L64 118Z', H),
+    front:
+      shape('M120 34 C152 34 178 56 177 96 C176 104 170 106 168 98 C164 80 150 66 132 62 C118 59 100 62 88 68 C78 74 72 86 70 98 C68 106 63 104 63 96 C62 56 88 34 120 34Z', H) +
+      `<path d="M90 60 C106 50 130 48 150 56" ${line(1.5, C.ink, 0.22)}/><path d="M96 50 C110 42 130 41 146 47" ${line(1.5, C.ink, 0.22)}/>` +
+      `<path d="M84 52 C98 42 118 38 136 40" ${line(4, C.white, 0.28)}/>`,
+  },
+  // 蘑菇頭：圓圓一頂，齊瀏海到眉毛，兩側到耳朵上面
+  mash: {
+    back: shape('M60 104 C58 60 88 36 120 36 C152 36 182 60 180 104 C180 114 172 118 166 114 L74 114 C68 118 60 114 60 104Z', H),
+    front:
+      shape('M120 36 C154 36 182 60 179 102 C178 110 170 112 166 106 C150 96 90 96 74 106 C70 112 62 110 61 102 C58 60 86 36 120 36Z', H) +
+      `<path d="M96 96 L98 88 M112 94 L113 86 M128 94 L127 86 M144 96 L142 88" ${line(1.4, C.ink, 0.2)}/>` +
+      HAIR_SHINE,
+  },
+  // 狼尾：層次剪、髮尾刺刺的，後面長到脖子
+  wolf: {
+    back: shape('M62 100 C60 60 88 38 120 38 C152 38 180 60 178 100 L184 128 L176 124 L182 150 L170 140 L168 156 L158 142 L82 142 L72 156 L70 140 L58 150 L64 124 L56 128Z', H),
+    front:
+      shape('M120 38 C154 38 180 62 177 102 L170 94 L168 108 L160 92 L152 104 L144 88 L134 100 L126 84 L116 98 L106 84 L98 100 L90 88 L82 104 L76 92 L72 106 L64 98 C62 62 88 38 120 38Z', H) +
+      HAIR_SHINE,
+  },
+  // 丁髷：兩側梳順、頭頂剃（月代），頂上一束折起來綁好
+  chonmage: {
+    back: shape('M64 104 C63 76 76 56 96 50 L144 50 C164 56 177 76 176 104 L176 122 L64 122Z', H),
+    front:
+      shape('M64 104 C62 76 70 58 84 50 C82 66 80 84 78 104 L76 120 C76 125 68 125 68 120Z', H) +
+      shape('M176 104 C178 76 170 58 156 50 C158 66 160 84 162 104 L164 120 C164 125 172 125 172 120Z', H) +
+      shape('M113 44 C110 30 113 20 120 18 C127 20 130 30 127 44Z', H) +
+      `<path d="M112 38 L128 38" ${line(3, C.white)}/>`,
   },
   ponytail: {
     back:

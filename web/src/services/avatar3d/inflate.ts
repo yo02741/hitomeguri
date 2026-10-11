@@ -6,7 +6,8 @@ import type { ViewBox } from './raster'
  * 3D 旅人（DESIGN.md §7.24a）：把 2D 剪影「充氣」成有厚度的形狀。
  * 剪影取自點陣的 alpha；每一點離邊緣多遠（距離場）決定鼓多高：h = bulge × √d，邊緣是 0、越往中間越厚，
  * 剖面是圓的，像布偶或軟膠公仔。前後兩面的基準 z 由 base() 決定（平面、或貼著頭的球面）。
- * 網格比美術多出一格，邊緣交給貼圖的 alpha 裁（alphaTest），輪廓才會跟原本的線一樣乾淨。
+ * 網格沿著輪廓走（marching squares：格線兩端一裡一外時，在 alpha 0.5 的地方補一個點），
+ * 前後兩面在輪廓上共用同一個點，轉到側面不會有裂縫或鋸齒。
  */
 
 /** 紙娃娃座標（240×320 的畫布，單位 px）換成 3D：頭的半徑 54px ≈ 1，腳底（y 280）在 0 */
@@ -18,7 +19,7 @@ export interface Surface {
   /** 這一點正面、背面的基準 z（紙娃娃 px）；null 表示這一面不畫 */
   front: number | null
   back: number | null
-  /** 這一點鼓起的比例（0–1，預設 1）：貼在頭上的部分薄一點，出了頭才鼓滿 */
+  /** 這一點鼓起的比例（0–1，預設 1）：貼在頭上、被別的東西蓋住的地方薄一點 */
   lift?: number
 }
 
@@ -34,8 +35,29 @@ export interface LayerSpec {
   /** 最厚到多少（紙娃娃 px） */
   maxH: number
   base: (x: number, y: number) => Surface
-  /** 只取這個範圍內的點（例：頭髮後層在頭的範圍內只畫背面） */
-  alphaMin?: number
+}
+
+export interface Layer {
+  geometry: BufferGeometry
+  /** 這一層在 (x, y) 鼓了多高（紙娃娃 px，不含基準）；不在剪影裡是 0 */
+  heightAt: (x: number, y: number) => number
+}
+
+/** canvas 的 alpha 取樣（紙娃娃座標，雙線性） */
+export function alphaSampler(canvas: HTMLCanvasElement, vb: ViewBox, scale: number): (x: number, y: number) => number {
+  const ctx = canvas.getContext('2d', { willReadFrequently: true })!
+  const { width: W, height: H } = canvas
+  const data = ctx.getImageData(0, 0, W, H).data
+  const at = (cx: number, cy: number) => (cx < 0 || cy < 0 || cx >= W || cy >= H ? 0 : data[(cy * W + cx) * 4 + 3]! / 255)
+  return (x, y) => {
+    const fx = (x - vb[0]) * scale - 0.5
+    const fy = (y - vb[1]) * scale - 0.5
+    const x0 = Math.floor(fx)
+    const y0 = Math.floor(fy)
+    const tx = fx - x0
+    const ty = fy - y0
+    return (at(x0, y0) * (1 - tx) + at(x0 + 1, y0) * tx) * (1 - ty) + (at(x0, y0 + 1) * (1 - tx) + at(x0 + 1, y0 + 1) * tx) * ty
+  }
 }
 
 /** 兩次掃描的倒角距離（3-4 chamfer），單位是格 */
@@ -59,82 +81,149 @@ function distanceField(mask: Uint8Array, w: number, h: number): Float32Array {
   return d
 }
 
-export function layerGeometry(spec: LayerSpec): BufferGeometry {
+const LEVEL = 0.5
+
+export function inflateLayer(spec: LayerSpec): Layer {
   const { canvas, vb, scale, step } = spec
   const [vx, vy, vw, vh] = vb
   const gw = Math.floor(vw / step) + 1
   const gh = Math.floor(vh / step) + 1
-  const ctx = canvas.getContext('2d', { willReadFrequently: true })!
-  const data = ctx.getImageData(0, 0, canvas.width, canvas.height).data
-  const alphaAt = (px: number, py: number) => {
-    const cx = Math.min(canvas.width - 1, Math.max(0, Math.round(px * scale)))
-    const cy = Math.min(canvas.height - 1, Math.max(0, Math.round(py * scale)))
-    return data[(cy * canvas.width + cx) * 4 + 3]! / 255
-  }
-  // 剪影：alpha 過半就算；再往外長一格，邊緣交給貼圖裁
-  const core = new Uint8Array(gw * gh)
-  for (let j = 0; j < gh; j++) for (let i = 0; i < gw; i++) core[j * gw + i] = alphaAt(i * step, j * step) > (spec.alphaMin ?? 0.4) ? 1 : 0
-  const mask = new Uint8Array(gw * gh)
+  const alpha = alphaSampler(canvas, vb, scale)
+  const a = new Float32Array(gw * gh)
+  const inside = new Uint8Array(gw * gh)
   for (let j = 0; j < gh; j++)
     for (let i = 0; i < gw; i++) {
-      let on = 0
-      for (let dj = -1; dj <= 1 && !on; dj++)
-        for (let di = -1; di <= 1 && !on; di++) {
-          const x = i + di
-          const y = j + dj
-          if (x >= 0 && y >= 0 && x < gw && y < gh && core[y * gw + x]) on = 1
-        }
-      mask[j * gw + i] = on
+      const k = j * gw + i
+      // 畫布最外一圈當作外面，形狀一定封閉
+      const v = i === 0 || j === 0 || i === gw - 1 || j === gh - 1 ? 0 : alpha(vx + i * step, vy + j * step)
+      a[k] = v
+      inside[k] = v >= LEVEL ? 1 : 0
     }
-  // 厚度從畫的邊緣（core）算：多長出來的那一圈與 core 的最外圈都是 0，前後兩面在畫的邊緣接起來，側面不會露縫
-  const dist = distanceField(core, gw, gh)
+  const dist = distanceField(inside, gw, gh)
+  const height = new Float32Array(gw * gh)
 
   const pos: number[] = []
   const uv: number[] = []
   const idx: number[] = []
   const front = new Int32Array(gw * gh).fill(-1)
   const back = new Int32Array(gw * gh).fill(-1)
+  const bases: Array<Surface | undefined> = new Array(gw * gh)
+
+  const push = (x: number, y: number, z: number) => {
+    pos.push(worldX(x), worldY(y), z * PX)
+    uv.push((x - vx) / vw, 1 - (y - vy) / vh)
+    return pos.length / 3 - 1
+  }
+
   for (let j = 0; j < gh; j++)
     for (let i = 0; i < gw; i++) {
       const k = j * gw + i
-      if (!mask[k]) continue
+      if (!inside[k]) continue
       const x = vx + i * step
       const y = vy + j * step
-      const d = core[k] ? Math.max(0, dist[k]! - 1) * step : 0
       const s = spec.base(x, y)
+      bases[k] = s
+      // 最外一圈離輪廓大約半格
+      const d = Math.max(0, dist[k]! - 0.5) * step
       const h = Math.min(spec.maxH, spec.bulge * Math.sqrt(d)) * (s.lift ?? 1)
-      const u = (i * step) / vw
-      const v = 1 - (j * step) / vh
-      if (s.front !== null) {
-        front[k] = pos.length / 3
-        pos.push(worldX(x), worldY(y), (s.front + h) * PX)
-        uv.push(u, v)
-      }
-      if (s.back !== null) {
-        // 邊緣（h = 0）且前後同一個基準：共用一個點，前後兩面接起來不留縫
-        if (h === 0 && s.front !== null && s.front === s.back) back[k] = front[k]!
-        else {
-          back[k] = pos.length / 3
-          pos.push(worldX(x), worldY(y), (s.back - h) * PX)
-          uv.push(u, v)
-        }
-      }
+      height[k] = h
+      if (s.front !== null) front[k] = push(x, y, s.front + h)
+      if (s.back !== null) back[k] = push(x, y, s.back - h)
     }
+
+  // 輪廓上的點：h = 0；前後基準相同時前後共用一個點，兩面在這裡接起來
+  const edgeFront = new Map<number, number>()
+  const edgeBack = new Map<number, number>()
+  const edgeVertex = (k1: number, k2: number, horizontal: boolean): [number, number] => {
+    const key = horizontal ? k1 * 2 : k1 * 2 + 1
+    const f = edgeFront.get(key)
+    if (f !== undefined) return [f, edgeBack.get(key)!]
+    const kin = inside[k1] ? k1 : k2
+    const kout = kin === k1 ? k2 : k1
+    const t = Math.min(1, Math.max(0, (a[kin]! - LEVEL) / Math.max(1e-6, a[kin]! - a[kout]!)))
+    const xi = vx + (kin % gw) * step
+    const yi = vy + Math.floor(kin / gw) * step
+    const xo = vx + (kout % gw) * step
+    const yo = vy + Math.floor(kout / gw) * step
+    const x = xi + (xo - xi) * t
+    const y = yi + (yo - yi) * t
+    const s = bases[kin]!
+    let fi = -1
+    let bi = -1
+    if (s.front !== null) fi = push(x, y, s.front)
+    if (s.back !== null) bi = s.front !== null && s.front === s.back ? fi : push(x, y, s.back)
+    edgeFront.set(key, fi)
+    edgeBack.set(key, bi)
+    return [fi, bi]
+  }
+
   for (let j = 0; j < gh - 1; j++)
     for (let i = 0; i < gw - 1; i++) {
-      const a = j * gw + i
-      const b = a + 1
-      const c = a + gw
-      const d = c + 1
-      const f = [front[a]!, front[b]!, front[c]!, front[d]!]
-      if (f.every((n) => n >= 0)) idx.push(f[0]!, f[2]!, f[1]!, f[1]!, f[2]!, f[3]!)
-      const g = [back[a]!, back[b]!, back[c]!, back[d]!]
-      if (g.every((n) => n >= 0)) idx.push(g[0]!, g[1]!, g[2]!, g[1]!, g[3]!, g[2]!)
+      // 格子四角：左上、右上、右下、左下
+      const c = [j * gw + i, j * gw + i + 1, (j + 1) * gw + i + 1, (j + 1) * gw + i]
+      if (!c.some((k) => inside[k])) continue
+      const pf: number[] = []
+      const pb: number[] = []
+      for (let e = 0; e < 4; e++) {
+        const p = c[e]!
+        const q = c[(e + 1) % 4]!
+        if (inside[p]) {
+          pf.push(front[p]!)
+          pb.push(back[p]!)
+        }
+        if (inside[p] !== inside[q]) {
+          // 上、下兩邊是水平線，左、右是垂直線；鍵用比較小的那一端
+          const [fi, bi] = edgeVertex(Math.min(p, q), Math.max(p, q), e === 0 || e === 2)
+          pf.push(fi)
+          pb.push(bi)
+        }
+      }
+      if (pf.length < 3) continue
+      // 紙娃娃的 y 往下、3D 的 Y 往上：這個走法在 3D 是順時針，正面反過來接
+      if (pf.every((v) => v >= 0)) for (let t = 1; t < pf.length - 1; t++) idx.push(pf[0]!, pf[t + 1]!, pf[t]!)
+      if (pb.every((v) => v >= 0)) for (let t = 1; t < pb.length - 1; t++) idx.push(pb[0]!, pb[t]!, pb[t + 1]!)
     }
-  const geo = new BufferGeometry()
-  geo.setAttribute('position', new Float32BufferAttribute(pos, 3))
-  geo.setAttribute('uv', new Float32BufferAttribute(uv, 2))
-  geo.setIndex(idx)
-  geo.computeVertexNormals()
-  return geo
+
+  const geometry = new BufferGeometry()
+  geometry.setAttribute('position', new Float32BufferAttribute(pos, 3))
+  geometry.setAttribute('uv', new Float32BufferAttribute(uv, 2))
+  geometry.setIndex(idx)
+  geometry.computeVertexNormals()
+  return {
+    geometry,
+    heightAt: (x, y) => {
+      const i = Math.round((x - vx) / step)
+      const j = Math.round((y - vy) / step)
+      if (i < 0 || j < 0 || i >= gw || j >= gh) return 0
+      return height[j * gw + i]!
+    },
+  }
+}
+
+/** 貼圖邊緣往外補色：網格沿輪廓切，邊上取樣會混到透明的黑。把原圖往八個方向各錯開 1–3 像素、
+ *  疊在「下面」（destination-over），透明的地方就補上旁邊的顏色；剪影外緣半透明的淡邊也只剩一點點深色。
+ *  最後墊一層底色變成不透明（形狀已經由網格決定，要用原本的 canvas 算）。全部交給 canvas 畫，不跑逐像素的迴圈 */
+export function bleedEdges(canvas: HTMLCanvasElement, radius = 3): HTMLCanvasElement {
+  const { width: W, height: H } = canvas
+  const out = document.createElement('canvas')
+  out.width = W
+  out.height = H
+  const g = out.getContext('2d')!
+  g.drawImage(canvas, 0, 0)
+  g.globalCompositeOperation = 'destination-over'
+  for (let r = 1; r <= radius; r++)
+    for (const [dx, dy] of [
+      [r, 0],
+      [-r, 0],
+      [0, r],
+      [0, -r],
+      [r, r],
+      [r, -r],
+      [-r, r],
+      [-r, -r],
+    ] as const)
+      g.drawImage(canvas, dx, dy)
+  g.fillStyle = '#808080'
+  g.fillRect(0, 0, W, H)
+  return out
 }

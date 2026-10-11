@@ -56,7 +56,8 @@ export async function rasterize(inner: string, vb: ViewBox, scale: number, defs 
     const canvas = document.createElement('canvas')
     canvas.width = W
     canvas.height = H
-    canvas.getContext('2d')!.drawImage(img, 0, 0, W, H)
+    // 之後要讀 alpha 算形狀：放在 CPU 上，getImageData 才快
+    canvas.getContext('2d', { willReadFrequently: true })!.drawImage(img, 0, 0, W, H)
     return canvas
   } finally {
     URL.revokeObjectURL(url)
