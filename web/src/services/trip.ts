@@ -1,6 +1,8 @@
 import { prefectureFullName } from '../data/regions'
 
 // 行程（UX-FLOW.md §3 Trip）的純函式：日期與狀態、天數調整、移動停留點、轉乘連結。
+// 同一個景點可以排在不同天（機場：來跟回），同一天（與待排）裡最多一次：
+// 停留點以「哪一天＋景點 id」認得（共編時對方可能已經移動過）。
 
 /** 行程的一個停留點。另存縣與日文名：列表只需載入相關縣的 bundle，景點從目錄移除時仍認得出來。 */
 export interface Stop {
@@ -116,20 +118,41 @@ export function setStay(t: Pick<Trip, 'days'>, day: number, stay: Stay | null): 
   return { days }
 }
 
+/** 停留點接到待排後面；待排已經有的景點不重複（拿掉的幾天都排了機場） */
+export function toUnscheduled(unscheduled: readonly Stop[], stops: readonly Stop[]): Stop[] {
+  const out = [...unscheduled]
+  for (const s of stops) if (!out.some((x) => x.spot_id === s.spot_id)) out.push(s)
+  return out
+}
+
 /** 調整天數：減少時，被拿掉的那幾天的停留點移到「待排」 */
 export function resizeDays(t: Pick<Trip, 'days' | 'unscheduled'>, n: number): Pick<Trip, 'days' | 'unscheduled'> {
   const count = Math.max(1, Math.min(n, MAX_DAYS))
   const days = copyDays(t.days.slice(0, count))
   while (days.length < count) days.push({ stops: [] })
   const dropped = t.days.slice(count).flatMap((d) => d.stops)
-  return { days, unscheduled: [...t.unscheduled, ...dropped] }
+  return { days, unscheduled: toUnscheduled(t.unscheduled, dropped) }
 }
 
 function listAt(t: Pick<Trip, 'days' | 'unscheduled'>, day: number): Stop[] | undefined {
   return day === -1 ? t.unscheduled : t.days[day]?.stops
 }
 
-/** 移動一個停留點（同一天換順序、換到別天、移入或移出待排）；to.idx 是移除前的插入位置 */
+/** 這一天（-1 是待排）已經有這個景點 */
+export function hasSpotOn(t: Pick<Trip, 'days' | 'unscheduled'>, day: number, spotId: string): boolean {
+  return listAt(t, day)?.some((s) => s.spot_id === spotId) ?? false
+}
+
+/** 這個景點排在哪幾天（依天數；待排是 -1，排最後） */
+export function placesOf(t: Pick<Trip, 'days' | 'unscheduled'>, spotId: string): number[] {
+  const out = t.days.flatMap((d, i) => (d.stops.some((s) => s.spot_id === spotId) ? [i] : []))
+  return t.unscheduled.some((s) => s.spot_id === spotId) ? [...out, -1] : out
+}
+
+/**
+ * 移動一個停留點（同一天換順序、換到別天、移入或移出待排）；to.idx 是移除前的插入位置。
+ * 目的地那天已經有同一個景點時不動（同一天最多一次）。
+ */
 export function moveStop(
   t: Pick<Trip, 'days' | 'unscheduled'>,
   from: StopPos,
@@ -139,6 +162,7 @@ export function moveStop(
   const src = listAt(next, from.day)
   const dst = listAt(next, to.day)
   if (!src || !dst || from.idx < 0 || from.idx >= src.length) return t
+  if (src !== dst && dst.some((s) => s.spot_id === src[from.idx]!.spot_id)) return t
   const [stop] = src.splice(from.idx, 1)
   let idx = Math.max(0, Math.min(to.idx, dst.length + (src === dst ? 1 : 0)))
   if (src === dst && to.idx > from.idx) idx -= 1
@@ -168,22 +192,44 @@ export function removeStop(t: Pick<Trip, 'days' | 'unscheduled'>, at: StopPos): 
 
 /**
  * 把停留點放回 at（移除的復原）：那一天已經不在（天數改少了）就放回待排，位置超過長度就放最後；
- * 這趟已經有這個景點時不動（共編的人又加回來了）。
+ * 那天（或待排）已經有這個景點時不動（共編的人又加回來了）。
  */
 export function insertStop(t: Pick<Trip, 'days' | 'unscheduled'>, at: StopPos, stop: Stop): Pick<Trip, 'days' | 'unscheduled'> | null {
-  if (hasSpot(t, stop.spot_id)) return null
+  const day = t.days[at.day] ? at.day : -1
+  if (hasSpotOn(t, day, stop.spot_id)) return null
   const next = { days: copyDays(t.days), unscheduled: [...t.unscheduled] }
-  const dst = listAt(next, at.day) ?? next.unscheduled
+  const dst = listAt(next, day)!
   dst.splice(Math.max(0, Math.min(at.idx, dst.length)), 0, stop)
   return next
+}
+
+/**
+ * 加入一個停留點：day 為 null 放待排。那天已經有就不加；排進某一天時，待排裡的同一個景點拿掉
+ * （排好了）。景點已經排在某一天時不再放進待排。沒有變化時 null。
+ */
+export function addStopTo(t: Pick<Trip, 'days' | 'unscheduled'>, stop: Stop, day: number | null): Pick<Trip, 'days' | 'unscheduled'> | null {
+  const d = day !== null && t.days[day] ? day : -1
+  if (hasSpotOn(t, d, stop.spot_id) || (d === -1 && hasSpot(t, stop.spot_id))) return null
+  const days = copyDays(t.days)
+  const unscheduled = t.unscheduled.filter((s) => s.spot_id !== stop.spot_id)
+  if (d === -1) unscheduled.push(stop)
+  else days[d]!.stops.push(stop)
+  return { days, unscheduled }
 }
 
 export function allStops(t: Pick<Trip, 'days' | 'unscheduled'>): Stop[] {
   return [...t.days.flatMap((d) => d.stops), ...t.unscheduled]
 }
 
-/** 停留點現在的位置（共編時以景點 id 找，對方可能已經移動過） */
-export function findStop(t: Pick<Trip, 'days' | 'unscheduled'>, spotId: string): StopPos | null {
+/**
+ * 停留點現在的位置（共編時以景點 id 找，對方可能已經移動過）。同一個景點排了好幾天時，
+ * 先找 day 那一天（畫面上操作的那一個）。
+ */
+export function findStop(t: Pick<Trip, 'days' | 'unscheduled'>, spotId: string, day?: number): StopPos | null {
+  if (day !== undefined) {
+    const idx = listAt(t, day)?.findIndex((s) => s.spot_id === spotId) ?? -1
+    if (idx >= 0) return { day, idx }
+  }
   for (let day = 0; day < t.days.length; day++) {
     const idx = t.days[day]!.stops.findIndex((s) => s.spot_id === spotId)
     if (idx >= 0) return { day, idx }
@@ -198,6 +244,11 @@ export function stopAt(t: Pick<Trip, 'days' | 'unscheduled'>, at: StopPos): Stop
 
 export function hasSpot(t: Pick<Trip, 'days' | 'unscheduled'>, spotId: string): boolean {
   return allStops(t).some((s) => s.spot_id === spotId)
+}
+
+/** 這趟有幾個地方（同一個景點排了兩天算一個） */
+export function spotCount(t: Pick<Trip, 'days' | 'unscheduled'>): number {
+  return new Set(allStops(t).map((s) => s.spot_id)).size
 }
 
 /** 這一天主要在哪個縣（停留點最多的縣，同數取先出現的）：DAY 標記與標頭用它的縣色 */

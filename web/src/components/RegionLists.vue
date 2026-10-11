@@ -131,32 +131,21 @@ function hidePhoto(e: Event, i: string) {
     資料準備中。
   </section>
   <section v-else class="flex min-h-0 flex-col rounded-card bg-paper p-1.5 shadow-float">
-    <!-- 手機不放「景點」標題列（海報條已經寫了縣名），清單多露出一列多（手機版計畫第二階段 6） -->
-    <h2 class="flex h-9 shrink-0 items-center justify-center gap-1.5 rounded-control bg-region-tint text-body-sm font-bold text-ink max-lg:sr-only">
-      景點
-    </h2>
-
-    <!-- 地區（桌機）：標題下面一整列 -->
-    <AreaPicker
-      v-if="areas.length && wide"
-      variant="row"
-      class="shrink-0 px-1 pt-1.5"
-      :groups="areas"
-      :model-value="area"
-      :total="spots.length"
-      @update:model-value="emit('area', $event)"
-    />
+    <!-- 標題列：左「景點 n」、右地區（桌機）。手機不放（海報條已經寫了縣名），清單多露出一列多（手機版計畫第二階段 6） -->
+    <div class="flex h-10 shrink-0 items-center gap-2 rounded-control bg-region-tint pr-1 pl-3 max-lg:sr-only">
+      <h2 class="flex min-w-0 items-baseline gap-1.5 text-body-sm font-bold text-ink">
+        景點<span class="font-num font-normal text-sub">{{ spots.length }}</span>
+      </h2>
+      <!-- AreaPicker 有 Teleport（多個根節點），class 帶不過去：外面包一層靠右 -->
+      <div v-if="areas.length && wide" class="ml-auto flex min-w-0">
+        <AreaPicker variant="inline" :groups="areas" :model-value="area" :total="spots.length" @update:model-value="emit('area', $event)" />
+      </div>
+    </div>
     <!-- 類型：文字索引列，選中的加底線；再點一次取消。手機排成一行、橫向捲動，最前面是地區 -->
     <div v-if="sections.length > 1 || (areas.length && !wide)" class="flex shrink-0 items-center border-b border-line-soft">
-      <AreaPicker
-        v-if="areas.length && !wide"
-        variant="inline"
-        class="shrink-0 border-r border-line-soft py-1.5 pr-1.5 pl-0.5"
-        :groups="areas"
-        :model-value="area"
-        :total="spots.length"
-        @update:model-value="emit('area', $event)"
-      />
+      <div v-if="areas.length && !wide" class="flex shrink-0 border-r border-line-soft py-1.5 pr-1.5 pl-0.5">
+        <AreaPicker variant="inline" :groups="areas" :model-value="area" :total="spots.length" @update:model-value="emit('area', $event)" />
+      </div>
       <nav
         v-if="sections.length > 1"
         ref="catNav"

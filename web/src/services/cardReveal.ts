@@ -1,4 +1,4 @@
-import { shallowRef } from 'vue'
+import { shallowRef, watch } from 'vue'
 
 import type { CardFace, Rarity } from './card'
 import type { Variant } from './cardVariants'
@@ -23,7 +23,32 @@ export interface Reveal {
 
 export const reveal = shallowRef<Reveal | null>(null)
 let seq = 0
+// 接著播的（做完最後一件事：先那件事的卡，再紀念卡）：前一張收掉之後才播下一張
+const queue: Array<Omit<Reveal, 'key' | 'at'>> = []
 
-export function showReveal(r: Omit<Reveal, 'key' | 'at'>) {
+export function showReveal(r: Omit<Reveal, 'key' | 'at'>, ...next: Array<Omit<Reveal, 'key' | 'at'>>) {
+  queue.length = 0
+  queue.push(...next)
   reveal.value = { ...r, key: ++seq, at: Date.now() }
 }
+
+/** 排在後面播：現在沒有在播就馬上播 */
+export function queueReveal(r: Omit<Reveal, 'key' | 'at'>) {
+  if (reveal.value) queue.push(r)
+  else reveal.value = { ...r, key: ++seq, at: Date.now() }
+}
+
+/** 收掉全部（登出）：排著的也不播 */
+export function clearReveals() {
+  queue.length = 0
+  reveal.value = null
+}
+
+watch(reveal, (r) => {
+  if (r || !queue.length) return
+  const n = queue.shift()!
+  // 前一張飛進分頁之後停一下再播
+  setTimeout(() => {
+    if (!reveal.value) reveal.value = { ...n, key: ++seq, at: Date.now() }
+  }, 160)
+})

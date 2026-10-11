@@ -7,6 +7,7 @@ import type { SearchHit } from '../services/search'
 // 關掉的擴充包（存關掉的，之後新增的擴充包預設開啟）；舊版存的是開啟清單（當時只有寶可夢）
 const PACKS_OFF_KEY = 'hitomeguri:packs-off'
 const LEGACY_PACKS_KEY = 'hitomeguri:packs'
+const FOCUS_OFF_KEY = 'hitomeguri:focus-off'
 
 function readList(key: string): string[] | null {
   const raw = localStorage.getItem(key)
@@ -57,6 +58,22 @@ export const useExploreStore = defineStore('explore', () => {
   }
   // 地圖只顯示收藏的景點（地圖上方的開關；不存）
   const onlyFavorites = ref(false)
+  // 專心模式（UX-FLOW.md §1.3）：進入一縣後地圖鎖在這個縣、只畫這個縣的點。關掉時可以拖到別縣，
+  // 縣跟著地圖換（看新幹線、隨意逛）。地圖上方的「只看○○」開關，存在這台瀏覽器
+  const focusLock = ref(true)
+  try {
+    focusLock.value = localStorage.getItem(FOCUS_OFF_KEY) !== '1'
+  } catch {
+    /* 私密模式等情況：用預設 */
+  }
+  watch(focusLock, (on) => {
+    try {
+      if (on) localStorage.removeItem(FOCUS_OFF_KEY)
+      else localStorage.setItem(FOCUS_OFF_KEY, '1')
+    } catch {
+      /* 略過 */
+    }
+  })
   // header 搜尋選到的結果，由探索頁接手（進入該縣、選取景點）
   const searchPick = shallowRef<SearchHit | null>(null)
 
@@ -81,7 +98,7 @@ export const useExploreStore = defineStore('explore', () => {
   }
 
   return {
-    activePref, category, pack, packGroup, enabledPacks, searchPick, collapsed, onlyFavorites,
+    activePref, category, pack, packGroup, enabledPacks, searchPick, collapsed, onlyFavorites, focusLock,
     setActivePref, togglePack, setPackEnabled, toggleCollapsed,
   }
 })

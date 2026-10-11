@@ -2,7 +2,7 @@
 import { computed } from 'vue'
 
 import { regionOf } from '../data/regions'
-import { allStops, dayPref, daysUntil, shortDate, type Trip, tripPrefs, tripStatus } from '../services/trip'
+import { dayPref, daysUntil, shortDate, spotCount, type Trip, tripPrefs, tripStatus } from '../services/trip'
 import { todayIso } from '../services/userdb'
 import MemberAvatar from './MemberAvatar.vue'
 import SplitFlap from './SplitFlap.vue'
@@ -19,7 +19,7 @@ const dates = computed(() => {
 })
 // 出發倒數：發車標的翻牌
 const until = computed(() => (status.value === 'planning' ? daysUntil(props.trip, todayIso()) : null))
-const count = computed(() => allStops(props.trip).length)
+const count = computed(() => spotCount(props.trip))
 const band = computed(() => {
   const w = new Map<string, number>()
   for (const d of props.trip.days) {

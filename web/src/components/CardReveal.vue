@@ -3,7 +3,7 @@ import { computed, defineAsyncComponent, nextTick, onBeforeUnmount, ref, watch }
 
 import type { AchvDef } from '../data/achievements'
 import { isLandscapeCard } from '../services/card'
-import { reveal } from '../services/cardReveal'
+import { clearReveals, reveal } from '../services/cardReveal'
 import { memorialFoil } from '../services/cardVariants'
 import { ease } from '../services/motion'
 import { useAchievementsStore } from '../stores/achievements'
@@ -205,7 +205,7 @@ watch(
 onBeforeUnmount(() => {
   clear()
   if (dlg.value?.open) dlg.value.close()
-  reveal.value = null
+  clearReveals()
 })
 </script>
 

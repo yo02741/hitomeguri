@@ -5,6 +5,7 @@ import { type LocationQuery, useRoute, useRouter } from 'vue-router'
 import HomeSidebar from '../components/HomeSidebar.vue'
 import MapView, { type MapView as MapViewState } from '../components/MapView.vue'
 import ChipRail from '../components/ChipRail.vue'
+import FocusChip from '../components/FocusChip.vue'
 import PackBar from '../components/PackBar.vue'
 import PackList from '../components/PackList.vue'
 import PackPanel from '../components/PackPanel.vue'
@@ -88,8 +89,11 @@ function crossPref(q: LocationQuery): LocationQuery {
 }
 
 const available = computed(() => Object.keys(catalog.index?.prefectures ?? {}))
-// 專心模式（UX-FLOW.md §1.3）：進入一縣後地圖鎖在這個縣、只畫這個縣的點；按「‹ 全國」或返回才離開
-const focusPref = computed(() => (props.pref && regionOf(props.pref) ? props.pref : null))
+// 目前的縣（區界、地區選單用）
+const prefHere = computed(() => (props.pref && regionOf(props.pref) ? props.pref : null))
+// 專心模式（UX-FLOW.md §1.3）：進入一縣後地圖鎖在這個縣、只畫這個縣的點；按「‹ 全國」或返回才離開。
+// 「只看○○」關掉時和全國一樣：畫全部的縣，拖到別縣時縣跟著換
+const focusPref = computed(() => (explore.focusLock ? prefHere.value : null))
 // 已載入完整地圖 bundle 的縣用全部大點，其餘縣先用全國總覽（各縣分數前段，bundles/featured.json）
 const allSpots = computed<MapSpot[]>(() =>
   (focusPref.value ? [focusPref.value] : available.value).flatMap((p) => catalog.mapSpots[p] ?? catalog.featured[p] ?? []),
@@ -465,6 +469,8 @@ watch([desktop, side], measureInsets)
 // 首頁的鏡頭是整個日本版圖、使用者還沒動過地圖時：清單卡的高度或左側欄改變（第一次量到、轉向、清單卡收起又出現）
 // 就重新定位，日本一直落在清單卡以外看得到的地方
 let japanFit = false
+// 全國地圖上使用者最後看的範圍（沒有換縣的那一次移動）
+let lastNational: [number, number, number, number] | null = null
 watch([insets, insetLeft], () => {
   if (japanFit && !props.pref && listShown.value) bounds.value = [...JAPAN_BOUNDS]
 })
@@ -502,19 +508,19 @@ function spotBounds(all: MapSpot[]): [number, number, number, number] | null {
 // 縣內的區（市区町村界，UX-FLOW.md A2b）：進入縣時載入。清單的「地區」、地圖的區界與區名，?area=代碼
 const muniBundle = shallowRef<MunicipalityBundle | null>(null)
 watch(
-  focusPref,
+  prefHere,
   async (pref) => {
     muniBundle.value = null
     if (!pref) return
     const b = await catalog.loadMunicipalities(pref)
-    if (focusPref.value === pref) muniBundle.value = b
+    if (prefHere.value === pref) muniBundle.value = b
   },
   { immediate: true },
 )
 const areas = computed(() => areaList(muniBundle.value))
 // 網址的區：區界載入前先照代碼篩清單（景點的 m），載入後不在這個縣的區界裡就當作沒有
 const areaCode = computed(() => {
-  const code = parseArea(route.query.area, focusPref.value)
+  const code = parseArea(route.query.area, prefHere.value)
   return code && muniBundle.value && !areas.value.some((a) => a.code === code) ? null : code
 })
 const selectedArea = computed(() => areas.value.find((a) => a.code === areaCode.value) ?? null)
@@ -542,7 +548,7 @@ function prefFrame(pref: string, spots: MapSpot[]): [number, number, number, num
   return union(main, prefectureMainBounds(pref)) ?? prefectureBounds(pref)
 }
 watch([areaCode, selectedArea], ([code, a]) => {
-  const pref = focusPref.value
+  const pref = prefHere.value
   if (!pref || framedArea === undefined || code === framedArea) return
   if (code && !a) return
   framedArea = code
@@ -684,10 +690,11 @@ watch(
       framedArea = null
       return
     }
-    // 首頁（含點左上地區標籤回來）：拉回整個日本版圖
+    // 首頁：回到上次在全國地圖看的範圍（看新幹線看到一半點進縣，按「‹ 全國」回來不必重找）；
+    // 還沒在全國地圖上動過就拉回整個日本版圖
     if (!pref) {
-      japanFit = true
-      bounds.value = [...JAPAN_BOUNDS]
+      japanFit = !lastNational
+      bounds.value = lastNational ? [...lastNational] : [...JAPAN_BOUNDS]
       return
     }
     // 讀不到時清單顯示「讀不到」與重試（RegionLists）；這裡當作沒有景點，不留未處理的 rejection
@@ -936,6 +943,13 @@ function regionForView(view: MapViewState): string | null | undefined {
   return regionForCenter(view)
 }
 
+/** 縣頁關掉「只看○○」時：跟著畫面中心的縣換；中心在海上維持原狀，拉遠到看得到整個日本才回全國 */
+function regionWhileRoaming(view: MapViewState): string | null | undefined {
+  if (view.zoom < MIN_REGION_ZOOM) return null
+  const main = prefectureAt(view.center.lng, view.center.lat)
+  return main && regionOf(main) ? main : undefined
+}
+
 function regionForCenter(view: MapViewState): string | null | undefined {
   const [w, s, e, n] = view.bounds
   const counts = new Map<string, number>()
@@ -965,12 +979,14 @@ function onMoveEnd(view: MapViewState) {
     if (cardOpen.value && view.zoom < CLOSE_SPOT_ZOOM) closeSpot()
     return
   }
-  const target = regionForView(view)
+  const target = props.pref ? regionWhileRoaming(view) : regionForView(view)
   const switching = target !== undefined && target !== (props.pref ?? null)
+  if (!props.pref && !switching) lastNational = view.bounds
   // 換縣時下面的 replace 一併拿掉 spot；不換縣才另外關卡片（closeSpot 可能是返回，不能和 replace 同時發）
   if (selectedId.value && view.zoom < CLOSE_SPOT_ZOOM && !switching) closeSpot()
   if (!switching) return
-  const query = { ...route.query }
+  // 區、車站、祭典位置屬於原本的縣，換縣時不帶過去
+  const query = { ...crossPref(route.query) }
   if (view.zoom < CLOSE_SPOT_ZOOM) delete query.spot
   panSwitch = true
   router.replace({ path: target ? `/map/${target}` : '/', query })
@@ -1040,7 +1056,7 @@ function onMoveEnd(view: MapViewState) {
         :rail="railMap"
         :station-id="stationId"
         :shinkansen="shinkansenMap"
-        :areas="focusPref ? areas : null"
+        :areas="prefHere ? areas : null"
         :area="areaCode"
         :fit-max-zoom="fitMaxZoom"
         :marked="markedOnMap"
@@ -1056,6 +1072,15 @@ function onMoveEnd(view: MapViewState) {
         class="pointer-events-none absolute top-4 right-4 z-10 flex flex-wrap items-start gap-2 *:pointer-events-auto max-lg:hidden"
         :style="{ left: `${insetLeft}px` }"
       >
+        <button
+          v-if="pref && regionOf(pref)"
+          type="button"
+          class="flex shrink-0 rounded-full active:not-disabled:translate-y-px"
+          :aria-pressed="explore.focusLock"
+          @click="explore.focusLock = !explore.focusLock"
+        >
+          <FocusChip :pref="pref" pill="flex h-9 items-center gap-1.5 rounded-full px-3.5 text-body-sm font-bold shadow-float pointer-coarse:h-tap" />
+        </button>
         <button
           v-if="userStore.user && marks.favorites.length"
           type="button"

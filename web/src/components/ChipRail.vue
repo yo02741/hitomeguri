@@ -6,11 +6,12 @@ import { usePackChips } from '../composables/packChips'
 import { useExploreStore } from '../stores/explore'
 import { useMarksStore } from '../stores/marks'
 import { useUserStore } from '../stores/user'
+import FocusChip from './FocusChip.vue'
 import PackSettings from './PackSettings.vue'
 import RollingNumber from './RollingNumber.vue'
 
 // 手機（<1024）探索頁的 chip 軌道（決定事項 C、DESIGN.md §7.5）：海報條下面一行，橫向捲動。
-// 收藏 n（登入且有收藏時）、各擴充包（--pack 色、件數跟著目前的縣）、設定。開著的 chip 實心，再點一下關閉。
+// 只看○○（縣頁，專心模式的開關）、收藏 n（登入且有收藏時）、各擴充包（--pack 色、件數跟著目前的縣）、設定。開著的 chip 實心，再點一下關閉。
 // 軌道本身不吃點擊（地圖照樣拖得動），只有 chip 可以點；設定選單放在捲動區外面，才不會被裁掉。
 const props = defineProps<{ pref?: string | null }>()
 const explore = useExploreStore()
@@ -57,6 +58,9 @@ const pill = 'flex h-9 items-center gap-1.5 rounded-full px-3.5 text-body-sm fon
   <div ref="root" class="pointer-events-none relative land:w-[calc(100vw-2rem-env(safe-area-inset-left)-env(safe-area-inset-right))]">
     <!-- 上下多留 12px 給膠囊的陰影（捲動區會裁掉超出的部分），再用負 margin 收回 -->
     <div ref="scroller" class="scroll-quiet -mx-4 -my-3 flex gap-2 overflow-x-auto overscroll-x-contain px-4 py-3" :class="more ? 'fade-x-end' : ''">
+      <button v-if="pref" type="button" :class="hit" :aria-pressed="explore.focusLock" @click="explore.focusLock = !explore.focusLock">
+        <FocusChip :pref="pref" :pill="pill" />
+      </button>
       <button
         v-if="showFavorites"
         type="button"

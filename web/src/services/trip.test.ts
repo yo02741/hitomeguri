@@ -1,17 +1,21 @@
 import { describe, expect, it } from 'vitest'
 
 import {
+  addStopTo,
   dayIndexOn,
   dayRouteUrls,
   edgeTarget,
+  findStop,
   fromHereUrl,
   insertStop,
   MAPS_URL_MAX,
   moveStop,
   parseStay,
+  placesOf,
   removeStop,
   resizeDays,
   setStay,
+  spotCount,
   type Stop,
 } from './trip'
 
@@ -36,8 +40,50 @@ describe('insertStop（移除的復原）', () => {
     expect(back?.unscheduled.map((x) => x.spot_id)).toEqual(['e', 'd'])
   })
 
-  it('已經在這趟裡就不動', () => {
-    expect(insertStop(t, { day: 1, idx: 0 }, s('a'))).toBeNull()
+  it('那一天已經有就不動（共編的人又加回來了）', () => {
+    expect(insertStop(t, { day: 0, idx: 0 }, s('a'))).toBeNull()
+  })
+
+  it('別天有同一個景點照樣放回去（機場：來跟回）', () => {
+    expect(insertStop(t, { day: 1, idx: 1 }, s('a'))?.days[1]!.stops.map((x) => x.spot_id)).toEqual(['d', 'a'])
+  })
+})
+
+describe('同一個景點排進不同天', () => {
+  const t = { days: [{ stops: [s('air'), s('b')] }, { stops: [s('c')] }, { stops: [] }], unscheduled: [s('d')] }
+
+  it('加到別天可以，同一天不重複', () => {
+    const next = addStopTo(t, s('air'), 2)
+    expect(next && placesOf(next, 'air')).toEqual([0, 2])
+    expect(addStopTo(t, s('air'), 0)).toBeNull()
+  })
+
+  it('排進某一天時，待排裡的同一個拿掉；已經排了的不再放進待排', () => {
+    const next = addStopTo(t, s('d'), 1)
+    expect(next?.days[1]!.stops.map((x) => x.spot_id)).toEqual(['c', 'd'])
+    expect(next?.unscheduled).toEqual([])
+    expect(addStopTo(t, s('air'), null)).toBeNull()
+    expect(addStopTo(t, s('e'), null)?.unscheduled.map((x) => x.spot_id)).toEqual(['d', 'e'])
+  })
+
+  it('移到已經有同一個景點的那天不動', () => {
+    const two = addStopTo(t, s('air'), 2)!
+    expect(moveStop(two, { day: 2, idx: 0 }, { day: 0, idx: 0 })).toBe(two)
+    expect(moveStop(two, { day: 2, idx: 0 }, { day: 1, idx: 1 }).days[1]!.stops.map((x) => x.spot_id)).toEqual(['c', 'air'])
+  })
+
+  it('findStop 先找畫面上那一天的', () => {
+    const two = addStopTo(t, s('air'), 2)!
+    expect(findStop(two, 'air', 2)).toEqual({ day: 2, idx: 0 })
+    expect(findStop(two, 'air')).toEqual({ day: 0, idx: 0 })
+    // 那天已經沒有（共編的人移走了）就找第一個
+    expect(findStop(two, 'air', 1)).toEqual({ day: 0, idx: 0 })
+  })
+
+  it('天數改少時待排不重複；計數算一個', () => {
+    const two = addStopTo(t, s('air'), 2)!
+    expect(resizeDays(two, 1).unscheduled.map((x) => x.spot_id)).toEqual(['d', 'c', 'air'])
+    expect(spotCount(two)).toBe(4)
   })
 })
 

@@ -23,7 +23,15 @@ const { cancel, closed } = useModal(() => emit('close'))
 
 const entries = computed<Array<[string, Mark]>>(() => {
   const t = props.trip
-  return t.days.flatMap((d, i) => d.stops.map((s): [string, Mark] => [s.spot_id, { pref: s.pref, name: s.name, visited: true, visited_on: dayDate(t, i) }]))
+  const seen = new Set<string>()
+  // 排了好幾天的景點（機場的來跟回）一張：第一次去的那天
+  return t.days.flatMap((d, i) =>
+    d.stops.flatMap((s): Array<[string, Mark]> => {
+      if (seen.has(s.spot_id)) return []
+      seen.add(s.spot_id)
+      return [[s.spot_id, { pref: s.pref, name: s.name, visited: true, visited_on: dayDate(t, i) }]]
+    }),
+  )
 })
 // 這一趟的日期各抽一次樣式
 const tripDates = computed(() => {

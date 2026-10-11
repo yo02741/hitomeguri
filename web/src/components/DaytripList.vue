@@ -4,7 +4,7 @@ import { computed, nextTick, ref, watch } from 'vue'
 import { regionOf } from '../data/regions'
 import type { MapSpot } from '../services/bundles'
 import { type Band, BANDS, type Destination, foldName, kmLabel } from '../services/daytrip'
-import { findStop, type Trip } from '../services/trip'
+import { hasSpotOn, placesOf, type Trip } from '../services/trip'
 import { type SpotRef, spotRef } from '../stores/marks'
 import { useCatalogStore } from '../stores/catalog'
 import CollapseChevron from './CollapseChevron.vue'
@@ -89,11 +89,10 @@ function toggle(d: Destination) {
   emit('update:selected', props.selected === d.key ? null : d.key)
 }
 
-/** 這個景點在這趟的哪裡：DAY n、待排；還沒加是 null */
+/** 這個景點在這趟的哪裡：DAY n、待排（排了好幾天就都列）；還沒加是 null */
 function placeOf(id: string): string | null {
-  const at = findStop(props.trip, id)
-  if (!at) return null
-  return at.day === -1 ? '待排' : `DAY ${at.day + 1}`
+  const at = placesOf(props.trip, id)
+  return at.length ? at.map((d) => (d === -1 ? '待排' : `DAY ${d + 1}`)).join('、') : null
 }
 
 function add(d: Destination, r: Row, day: number | null) {
@@ -188,8 +187,10 @@ watch(
                 </span>
               </span>
               <span v-if="placeOf(r.id)" class="shrink-0 rounded-tag bg-surface px-1.5 text-caption text-sub">已在 {{ placeOf(r.id) }}</span>
-              <template v-else>
+              <!-- 排在別天的（機場：來跟回）還可以加到這天；待排只放還沒排的 -->
+              <template v-if="!hasSpotOn(trip, day, r.id)">
                 <button
+                  v-if="!placeOf(r.id)"
                   type="button"
                   class="h-8 shrink-0 rounded-control px-2 text-body-sm text-sub hover:bg-surface hover:text-ink disabled:cursor-not-allowed disabled:opacity-40 active:not-disabled:translate-y-px pointer-coarse:h-tap"
                   :disabled="locked"

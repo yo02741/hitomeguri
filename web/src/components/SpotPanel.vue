@@ -19,6 +19,7 @@ import { wide } from '../services/viewport'
 import { canSpeak, speakJa } from '../services/tts'
 import { useCatalogStore } from '../stores/catalog'
 import { useMarksStore } from '../stores/marks'
+import { useTripsStore } from '../stores/trips'
 import { useUserStore } from '../stores/user'
 import type { Snap } from '../services/sheetSnap'
 import CardViewer from './CardViewer.vue'
@@ -95,18 +96,21 @@ const marks = useMarksStore()
 const { datesById, entries } = useVisitedEntries()
 const cardOpen = ref(false)
 watch(() => props.spot?.id, () => (cardOpen.value = false))
+const trips = useTripsStore()
 const card = computed(() => {
   const s = props.spot
   if (!s) return null
   const m = marks.markOf(s.id)
+  // 去過＝自己勾的或已結束的行程排了這裡（UX-FLOW.md §3）：從行程加進來的也有「這裡做過的事」
+  const viaTrip = m?.visited ? undefined : trips.doneVisits.get(s.id)
   const d = designationOf(s.tags)
   return {
     face: cardFromSpot(s),
     rarity: rarityOf(d, Boolean(props.castle)),
     label: rarityLabel(d, props.castle),
     number: cardNumberFor(s.id, catalog.mapSpots[s.prefecture], props.castle, d),
-    visited: Boolean(m?.visited),
-    visitedOn: m?.visited_on ?? null,
+    visited: Boolean(m?.visited || viaTrip),
+    visitedOn: m?.visited_on ?? viaTrip?.date ?? null,
   }
 })
 // 收集到的樣式（去過的才有；沒去過只有基本卡）
@@ -147,13 +151,15 @@ const spotRef = computed(() => (props.spot ? { id: props.spot.id, pref: props.sp
 
 // 手機收合時名稱帶右側的「去過」：和工作列的去過是同一個狀態，按下去也播新卡入手
 const userStore = useUserStore()
-const visited = computed(() => Boolean(props.spot && marks.markOf(props.spot.id)?.visited))
+const visited = computed(() => Boolean(card.value?.visited))
+// 已結束的行程排了這裡：算去過，這裡不能取消（到行程裡移除）
+const viaTrip = computed(() => Boolean(props.spot && !marks.markOf(props.spot.id)?.visited && card.value?.visited))
 const peekStamp = useStampPress(() => visited.value, () => props.spot?.id ?? '')
 watch(peekStamp.pressing, (p) => {
   if (p) onStamped()
 })
 function togglePeekVisited() {
-  if (!spotRef.value) return
+  if (!spotRef.value || viaTrip.value) return
   peekStamp.arm()
   void marks.toggleVisited(spotRef.value)
 }
@@ -246,6 +252,8 @@ function distance(m: number): string {
           class="ml-auto flex h-tap shrink-0 items-center gap-1.5 rounded-full border-[1.5px] px-3.5 text-body-sm font-bold active:not-disabled:translate-y-px disabled:cursor-not-allowed disabled:opacity-40"
           :class="visited ? 'border-visited bg-visited-tint text-visited' : 'border-on-region bg-transparent text-on-region'"
           :aria-pressed="visited"
+          :aria-disabled="viaTrip || undefined"
+          :title="viaTrip && spot ? `去過・${trips.doneVisits.get(spot.id)?.trip ?? ''}` : undefined"
           :disabled="!userStore.canSignIn"
           @click="togglePeekVisited"
         >

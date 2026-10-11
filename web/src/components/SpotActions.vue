@@ -4,7 +4,7 @@ import Dropdown from './Dropdown.vue'
 
 import { useDismiss } from '../composables/floating'
 import { useStampPress } from '../composables/stampPress'
-import { dayDate, findStop, hasSpot, insertStop, moveStop, removeStop, shortDate, TRIP_NAME_MAX, tripStatus } from '../services/trip'
+import { dayDate, findStop, hasSpot, hasSpotOn, insertStop, moveStop, placesOf, removeStop, shortDate, TRIP_NAME_MAX, tripStatus } from '../services/trip'
 import { showToast } from '../services/toast'
 import { todayIso } from '../services/userdb'
 import { LIST_NAME_MAX, type SpotRef, useMarksStore } from '../stores/marks'
@@ -102,31 +102,40 @@ function dayLabel(t: (typeof trips.sorted)[number], i: number): string {
   const d = dayDate(t, i)
   return `DAY ${i + 1}${d ? `　${shortDate(d)}` : ''}`
 }
-async function addTo(tripId: string) {
-  const v = target.value[tripId] ?? ''
+type TripT = (typeof trips.sorted)[number]
+const dayOption = (t: TripT, i: number) => ({ value: String(i), label: dayLabel(t, i) })
+async function addTo(tripId: string, fallback = '') {
+  const v = target.value[tripId] ?? fallback
   await trips.addStop(tripId, props.spot, v === '' ? null : Number(v))
 }
-// 已經加入的：選單照樣可以換天（加錯天馬上改）、移除（底部可以復原）
-function placeOf(t: (typeof trips.sorted)[number]): string {
-  const at = findStop(t, props.spot.id)
-  return !at || at.day === -1 ? '' : String(at.day)
+// 已經加入的：每個排的地方照樣可以換天（加錯天馬上改）、移除（底部可以復原）。
+// 同一個景點可以再排進別天（機場：來跟回），同一天最多一次
+function moveOptions(t: TripT, day: number) {
+  const ok = (d: number) => d === day || !hasSpotOn(t, d, props.spot.id)
+  return [...(ok(-1) ? [{ value: '', label: '待排' }] : []), ...t.days.flatMap((_, i) => (ok(i) ? [dayOption(t, i)] : []))]
 }
-function moveTo(tripId: string, v: string) {
+/** 還可以再排的天（不含待排）；預設選最後一天（回程）。只在待排時是換天，不是再排一次：不列 */
+function againOptions(t: TripT) {
+  if (!placesOf(t, props.spot.id).some((d) => d >= 0)) return []
+  return t.days.flatMap((_, i) => (hasSpotOn(t, i, props.spot.id) ? [] : [dayOption(t, i)]))
+}
+const placeKey = (day: number) => (day === -1 ? '' : String(day))
+function moveTo(tripId: string, fromDay: number, v: string) {
   const day = v === '' ? -1 : Number(v)
   void trips.mutate(tripId, (t) => {
-    const from = findStop(t, props.spot.id)
-    if (!from || from.day === day) return null
+    const from = findStop(t, props.spot.id, fromDay)
+    if (!from || from.day === day || hasSpotOn(t, day, props.spot.id)) return null
     const len = day === -1 ? t.unscheduled.length : t.days[day]?.stops.length
     return len === undefined ? null : moveStop(t, from, { day, idx: len })
   })
 }
-function removeFrom(tripId: string) {
+function removeFrom(tripId: string, day: number) {
   const t0 = trips.get(tripId)
-  const at = t0 && findStop(t0, props.spot.id)
+  const at = t0 && findStop(t0, props.spot.id, day)
   const stop = at && (at.day === -1 ? t0.unscheduled[at.idx] : t0.days[at.day]?.stops[at.idx])
   if (!at || !stop) return
   void trips.mutate(tripId, (t) => {
-    const cur = findStop(t, props.spot.id)
+    const cur = findStop(t, props.spot.id, day)
     return cur ? removeStop(t, cur) : null
   })
   showToast('已從行程移除', () => trips.mutate(tripId, (t) => insertStop(t, at, stop)))
@@ -284,16 +293,16 @@ const visitedShort = computed(() => {
               </span>
               <template v-if="hasSpot(t, spot.id)">
                 <Dropdown
-                  :model-value="placeOf(t)"
-                  :options="[{ value: '', label: '待排' }, ...t.days.map((_, i) => ({ value: String(i), label: dayLabel(t, i) }))]"
+                  :model-value="placeKey(placesOf(t, spot.id)[0]!)"
+                  :options="moveOptions(t, placesOf(t, spot.id)[0]!)"
                   :label="`在「${t.name || '未命名行程'}」的哪一天`"
                   size="sm"
-                  @update:model-value="moveTo(t.id, $event)"
+                  @update:model-value="moveTo(t.id, placesOf(t, spot.id)[0]!, $event)"
                 />
                 <button
                   type="button"
                   class="h-9 shrink-0 rounded-control px-2.5 text-caption text-sub hover:bg-surface hover:text-ink active:not-disabled:translate-y-px pointer-coarse:h-tap"
-                  @click="removeFrom(t.id)"
+                  @click="removeFrom(t.id, placesOf(t, spot.id)[0]!)"
                 >
                   移除
                 </button>
@@ -315,6 +324,40 @@ const visitedShort = computed(() => {
                 </button>
               </template>
             </div>
+            <template v-if="hasSpot(t, spot.id)">
+              <div v-for="day in placesOf(t, spot.id).slice(1)" :key="day" class="flex min-h-tap items-center justify-end gap-2 rounded-control px-2.5">
+                <Dropdown
+                  :model-value="placeKey(day)"
+                  :options="moveOptions(t, day)"
+                  :label="`在「${t.name || '未命名行程'}」的哪一天`"
+                  size="sm"
+                  @update:model-value="moveTo(t.id, day, $event)"
+                />
+                <button
+                  type="button"
+                  class="h-9 shrink-0 rounded-control px-2.5 text-caption text-sub hover:bg-surface hover:text-ink active:not-disabled:translate-y-px pointer-coarse:h-tap"
+                  @click="removeFrom(t.id, day)"
+                >
+                  移除
+                </button>
+              </div>
+              <div v-if="againOptions(t).length" class="flex min-h-tap items-center justify-end gap-2 rounded-control px-2.5">
+                <Dropdown
+                  :model-value="target[t.id] ?? againOptions(t).at(-1)!.value"
+                  :options="againOptions(t)"
+                  :label="`再排進「${t.name || '未命名行程'}」的哪一天`"
+                  size="sm"
+                  @update:model-value="target = { ...target, [t.id]: $event }"
+                />
+                <button
+                  type="button"
+                  class="h-9 shrink-0 rounded-control border border-line bg-paper px-2.5 text-caption text-ink hover:bg-surface active:not-disabled:translate-y-px pointer-coarse:h-tap"
+                  @click="addTo(t.id, againOptions(t).at(-1)!.value)"
+                >
+                  再加入
+                </button>
+              </div>
+            </template>
           </template>
         </div>
         <form class="mt-1 flex gap-1.5 border-t border-line-soft px-1 pt-2" @submit.prevent="addTrip">

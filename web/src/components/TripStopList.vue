@@ -18,11 +18,18 @@ const props = defineProps<{
   spots: Map<string, MapSpot>
   /** 「移到」選單的選項：值為天的索引（-1 待排）；hint 是觸控選單裡右邊的日期 */
   targets: { value: number; label: string; hint?: string }[]
+  /** 這個景點已經排在哪幾天（同一天最多一次：那幾天不列在「移到」） */
+  taken?: (spotId: string) => number[]
   dropAt: StopPos | null
   focusId?: string | null
   /** 離線時不能修改：拖曳、移到、往前往後、移除都停用 */
   locked?: boolean
 }>()
+/** 「移到」的選項：這一天之外、已經排了同一個景點的天不列 */
+function rowTargets(spotId: string) {
+  const taken = props.taken?.(spotId) ?? []
+  return props.targets.filter((t) => t.value === props.day || !taken.includes(t.value))
+}
 const emit = defineEmits<{
   dragstart: [pos: StopPos]
   dragover: [pos: StopPos]
@@ -174,7 +181,7 @@ const isDrop = (idx: number) => props.dropAt?.day === props.day && props.dropAt.
         <span class="contents pointer-coarse:hidden">
           <Dropdown
             :model-value="String(day)"
-            :options="targets.map((t) => ({ value: String(t.value), label: t.label }))"
+            :options="rowTargets(s.spot_id).map((t) => ({ value: String(t.value), label: t.label }))"
             :label="`${s.name} 移到`"
             size="sm"
             align="end"
@@ -200,7 +207,7 @@ const isDrop = (idx: number) => props.dropAt?.day === props.day && props.dropAt.
             :first="i === 0"
             :last="i === stops.length - 1"
             :day="day"
-            :targets="targets"
+            :targets="rowTargets(s.spot_id)"
             @shift="(d) => reorder(i, () => emit('shift', { day, idx: i }, d))"
             @edge="(w) => reorder(i, () => emit('edge', { day, idx: i }, w))"
             @move="moveTo(i, $event)"

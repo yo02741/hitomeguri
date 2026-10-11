@@ -2,7 +2,7 @@
 import { computed, onBeforeUnmount, watch } from 'vue'
 
 import type { CardFace, Rarity } from '../services/card'
-import { showReveal } from '../services/cardReveal'
+import { queueReveal, showReveal } from '../services/cardReveal'
 import { hasNight, isShrine, type TaskKey, type Variant } from '../services/cardVariants'
 import { useSpotVariants } from '../composables/spotVariants'
 import { useCardsStore } from '../stores/cards'
@@ -30,13 +30,16 @@ const tasks = computed(() => [
   { key: 'ink' as const, label: isShrine(props.card.kind) ? '拿到御朱印' : '寫了旅日記', card: '墨繪' },
 ])
 
-// 勾了之後樣式清單更新：新拿到的標 NEW，亮相最稀有的那張（任務剛好收齊時是紀念卡）
+// 勾了之後樣式清單更新：新拿到的標 NEW、亮相。剛好收齊時拿到兩張：先亮相這件事的卡（夜景、切手、墨繪），
+// 收進紀錄之後再亮相紀念卡（特別全景）。紀念卡常常晚一次更新才出現：勾完的幾秒內都接著看
 let before: Set<string> | null = null
+let shown = false
 let beforeTimer = 0
 function toggle(k: TaskKey) {
   const on = !ticked.value.includes(k)
   if (on) {
     before = new Set(props.variants.map((v) => v.key))
+    shown = false
     clearTimeout(beforeTimer)
     beforeTimer = window.setTimeout(() => (before = null), 4000)
   }
@@ -52,9 +55,16 @@ watch(
     if (!before) return
     const got = list.filter((v) => !before!.has(v.key))
     if (!got.length) return
-    before = null
+    got.forEach((v) => before!.add(v.key))
     fresh.add(got.map((v) => cardKey(props.card.id, v.key)))
-    showReveal({ face: props.card, rarity: props.rarity, label: props.label, number: props.number, variant: got[0] })
+    const special = got.filter((v) => v.kind === 'special')
+    const rest = got.filter((v) => v.kind !== 'special').sort((a, b) => b.rank - a.rank)
+    const order = [...rest.slice(0, 1), ...special].map((variant) => ({
+      face: props.card, rarity: props.rarity, label: props.label, number: props.number, variant,
+    }))
+    if (!shown) showReveal(order[0]!, ...order.slice(1))
+    else order.forEach(queueReveal)
+    shown = true
   },
 )
 onBeforeUnmount(() => clearTimeout(beforeTimer))

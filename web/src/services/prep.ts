@@ -101,7 +101,11 @@ export function selectPhrases(all: Phrase[], themes: Set<string>): Phrase[] {
 export function tripPlaces(trip: Trip, details: Map<string, Spot>, spots: Map<string, MapSpot>): PrepPlace[] {
   const out: PrepPlace[] = []
   const stations = new Set<string>()
+  const seen = new Set<string>()
   const add = (stopId: string, name: string, pref: string, day?: number) => {
+    // 同一個景點排了好幾天（機場的來跟回）只列一次
+    if (seen.has(stopId)) return
+    seen.add(stopId)
     const d = details.get(stopId)
     const m = spots.get(stopId)
     out.push({

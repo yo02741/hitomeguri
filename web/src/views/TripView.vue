@@ -43,9 +43,11 @@ import {
   edgeTarget,
   findStop,
   hasSpot,
+  hasSpotOn,
   insertStop,
   MAX_DAYS,
   moveStop,
+  placesOf,
   removeStop,
   resizeDays,
   setStay,
@@ -54,6 +56,7 @@ import {
   type Stop,
   stopAt,
   type StopPos,
+  toUnscheduled,
   type Trip,
   type TripContent,
   TRIP_NAME_MAX,
@@ -143,20 +146,27 @@ function removeDay(i: number) {
   mutate((t) => {
     if (t.days.length <= 1 || !t.days[i]) return null
     const days = copyDays(t.days.filter((_, j) => j !== i))
-    return { days, unscheduled: [...t.unscheduled, ...t.days[i]!.stops] }
+    return { days, unscheduled: toUnscheduled(t.unscheduled, t.days[i]!.stops) }
   })
 }
 
-/** 畫面上的位置 → 景點 id；寫入時再到最新的一份裡找它現在的位置 */
-function spotAt(at: StopPos): string | undefined {
-  return trip.value ? stopAt(trip.value, at)?.spot_id : undefined
-}
-function moveSpot(spotId: string | undefined, to: (t: Trip, from: StopPos) => StopPos | null) {
+/**
+ * 移動畫面上 at 的停留點：寫入時再到最新的一份裡找它現在的位置（景點 id，先找同一天：
+ * 同一個景點可以排在不同天）。目的地那天已經有同一個景點就不動。
+ */
+function moveSpot(at: StopPos, to: (t: Trip, from: StopPos) => StopPos | null) {
+  const spotId = trip.value ? stopAt(trip.value, at)?.spot_id : undefined
   if (!spotId) return
+  const dest0 = trip.value && to(trip.value, at)
+  if (dest0 && dest0.day !== at.day && hasSpotOn(trip.value!, dest0.day, spotId)) {
+    showToast(dest0.day === -1 ? '待排裡已經有了' : `DAY ${dest0.day + 1} 已經有了`)
+    return
+  }
   mutate((t) => {
-    const from = findStop(t, spotId)
+    const from = findStop(t, spotId, at.day)
     const dest = from && to(t, from)
-    return from && dest ? moveStop(t, from, dest) : null
+    if (!from || !dest || (dest.day !== from.day && hasSpotOn(t, dest.day, spotId))) return null
+    return moveStop(t, from, dest)
   })
 }
 
@@ -185,7 +195,7 @@ const dragging = ref<StopPos | null>(null)
 const dropAt = ref<StopPos | null>(null)
 function onDrop() {
   const at = dropAt.value
-  if (dragging.value && at) moveSpot(spotAt(dragging.value), () => at)
+  if (dragging.value && at) moveSpot(dragging.value, () => at)
   dragging.value = null
   dropAt.value = null
 }
@@ -195,18 +205,18 @@ function onDragEnd() {
 }
 function onMove(from: StopPos, toDay: number) {
   if (toDay === from.day) return
-  moveSpot(spotAt(from), (t, cur) => {
+  moveSpot(from, (t, cur) => {
     if (cur.day === toDay) return null
     const len = toDay === -1 ? t.unscheduled.length : t.days[toDay]?.stops.length
     return len === undefined ? null : { day: toDay, idx: len }
   })
 }
 function onShift(from: StopPos, delta: -1 | 1) {
-  moveSpot(spotAt(from), (_, cur) => ({ day: cur.day, idx: cur.idx + (delta === 1 ? 2 : -1) }))
+  moveSpot(from, (_, cur) => ({ day: cur.day, idx: cur.idx + (delta === 1 ? 2 : -1) }))
 }
 // 觸控的「⋯」選單：移到這天（或待排）的最前、最後
 function onEdge(from: StopPos, where: 'first' | 'last') {
-  moveSpot(spotAt(from), (t, cur) => edgeTarget(t, cur, where))
+  moveSpot(from, (t, cur) => edgeTarget(t, cur, where))
 }
 // 移除停留點後底部出現「復原」（決定事項 L）：放回原本那一天的原本位置
 function onRemove(at: StopPos) {
@@ -214,7 +224,7 @@ function onRemove(at: StopPos) {
   const stop = t0 ? stopAt(t0, at) : undefined
   if (!stop || locked.value) return
   mutate((t) => {
-    const cur = findStop(t, stop.spot_id)
+    const cur = findStop(t, stop.spot_id, at.day)
     return cur ? removeStop(t, cur) : null
   })
   showToast('已從行程移除', () => mutate((t) => insertStop(t, at, stop)))
@@ -423,7 +433,7 @@ function addFromDaytrip(spot: SpotRef, day: number | null) {
   if (!wide.value) return
   showToast(day === null ? '已加到待排' : `已加到 DAY ${day + 1}`, () =>
     mutate((t) => {
-      const cur = findStop(t, spot.id)
+      const cur = findStop(t, spot.id, day ?? -1)
       return cur ? removeStop(t, cur) : null
     }),
   )
@@ -812,6 +822,7 @@ async function del() {
           :day="i"
           :spots="byId"
           :targets="targets"
+          :taken="(id: string) => placesOf(trip!, id)"
           :drop-at="dragging ? dropAt : null"
           :focus-id="focusId"
           :locked="locked"
@@ -863,6 +874,7 @@ async function del() {
           :day="-1"
           :spots="byId"
           :targets="targets"
+          :taken="(id: string) => placesOf(trip!, id)"
           :drop-at="dragging ? dropAt : null"
           :focus-id="focusId"
           :locked="locked"

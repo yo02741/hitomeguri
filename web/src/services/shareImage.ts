@@ -294,7 +294,7 @@ export async function drawTripRecap(canvas: HTMLCanvasElement, trip: Trip, catal
   ctx.fillText(dates, 64, 262)
   ctx.font = `700 32px ${SANS}`
   const prefNames = prefs.map((p) => regionOf(p)?.name.ja ?? p).join('・')
-  ctx.fillText(fit(ctx, `${trip.days.length} 天　${stops.length} 個地方　${prefNames}`, W - 128), 64, 326)
+  ctx.fillText(fit(ctx, `${trip.days.length} 天　${new Set(stops.map((s) => s.spot_id)).size} 個地方　${prefNames}`, W - 128), 64, 326)
 
   // 地圖：停留點範圍內的縣界＋每天的路線與順序
   const card = { x: 60, y: 410, w: W - 120, h: 560 }

@@ -2,10 +2,9 @@ import { defineStore } from 'pinia'
 import { computed, ref, shallowRef, watch } from 'vue'
 
 import {
-  copyDays,
+  addStopTo,
   dayCount,
   dayDate,
-  hasSpot,
   MAX_DAYS,
   type Member,
   parseStay,
@@ -253,16 +252,9 @@ export const useTripsStore = defineStore('trips', () => {
     return { type: 'catalog', spot_id: s.id, pref: s.pref, name: s.name }
   }
 
-  /** 加入行程：day 為 null 放「待排」；已經在這趟裡就不重複加 */
+  /** 加入行程：day 為 null 放「待排」；那天已經有就不重複加（別天可以：機場的來跟回） */
   function addStop(tripId: string, s: SpotRef, day: number | null) {
-    return mutate(tripId, (t) => {
-      if (hasSpot(t, s.id)) return null
-      const days = copyDays(t.days)
-      const unscheduled = [...t.unscheduled]
-      if (day === null || !days[day]) unscheduled.push(toStop(s))
-      else days[day]!.stops.push(toStop(s))
-      return { days, unscheduled }
-    })
+    return mutate(tripId, (t) => addStopTo(t, toStop(s), day))
   }
 
   /** 自己的練習進度 */
