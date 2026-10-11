@@ -3,8 +3,8 @@
   "prefecture": "kagoshima",
   "dataset": "N03-20260101",
   "source": {"url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N03-2026.html", "fetched_at": "2026-10-11"},
-  "license": "CC BY 4.0（国土数値情報ダウンロードサイトコンテンツ利用規約、政府標準利用規約準拠）",
-  "attribution": "「国土数値情報（行政区域データ）」（国土交通省）を加工して作成",
+  "license": "CC BY 4.0（N03 資料頁）／公共データ利用規約（第1.0版）（国土数値情報ダウンロードサイト利用規約）",
+  "attribution": "「国土数値情報（行政区域データ）」（国土交通省）（https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N03-2026.html）をもとにひとめぐり作成",
   "tolerance": 0.00045,
   "features": [
     {"type":"Feature","id":"460001","properties":{"name":"所属未定地","kana":"かごしまけん","kana_source_url":"https://www.wikidata.org/wiki/Q15701","source_url":"https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N03-2026.html","retrieved":"2026-10-11"},"geometry":{"type":"MultiPolygon","coordinates":[[[[129.73241,31.44768],[129.73401,31.44823],[129.7336,31.44697],[129.73241,31.44768]]],[[[129.73172,31.44864],[129.73392,31.44932],[129.73395,31.44854],[129.73172,31.44864]]]]}},

@@ -3,8 +3,8 @@
   "prefecture": "chiba",
   "dataset": "N03-20260101",
   "source": {"url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N03-2026.html", "fetched_at": "2026-10-11"},
-  "license": "CC BY 4.0（国土数値情報ダウンロードサイトコンテンツ利用規約、政府標準利用規約準拠）",
-  "attribution": "「国土数値情報（行政区域データ）」（国土交通省）を加工して作成",
+  "license": "CC BY 4.0（N03 資料頁）／公共データ利用規約（第1.0版）（国土数値情報ダウンロードサイト利用規約）",
+  "attribution": "「国土数値情報（行政区域データ）」（国土交通省）（https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N03-2026.html）をもとにひとめぐり作成",
   "tolerance": 0.0003,
   "features": [
     {"type":"Feature","id":"120006","properties":{"name":"所属未定地","kana":"ちばけん","kana_source_url":"https://www.wikidata.org/wiki/Q80011","source_url":"https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N03-2026.html","retrieved":"2026-10-11"},"geometry":{"type":"MultiPolygon","coordinates":[[[[139.95853,35.67311],[139.96369,35.67226],[139.97199,35.6709],[139.97144,35.6707],[139.97076,35.66799],[139.97626,35.66705],[139.97067,35.66789],[139.97127,35.67026],[139.96896,35.67095],[139.9588,35.67183],[139.95803,35.66998],[139.95853,35.67311]]]]}},

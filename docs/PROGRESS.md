@@ -35,7 +35,7 @@
 **待辦**：見根目錄 `TODO.md`。
 
 - 縣內規劃的資料（2026-10-11，TODO.md「縣內規劃」2–4，只做 pipeline，前端之後做）：
-  - 市区町村界：`seed-municipalities`（`pipeline/municipalities.py`、`pipeline/sources/n03.py`）取国土数値情報 N03（CC BY 4.0；出處「「国土数値情報（行政区域データ）」（国土交通省）を加工して作成」，前端用到時加到 `/credits`），念法取 Wikidata P429→P1814。政令指定都市用區、東京是特別區。拓撲保持簡化（`pipeline/topo.py`）寫 `data/municipalities/{縣}.json`（一縣 400 KB 以內），bundle `municipalities/{縣}.json`（200 KB 以內）。
+  - 市区町村界：`seed-municipalities`（`pipeline/municipalities.py`、`pipeline/sources/n03.py`）取国土数値情報 N03（CC BY 4.0；出處「「国土数値情報（行政区域データ）」（国土交通省）（https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N03-2026.html）をもとにひとめぐり作成」，前端用到時加到 `/credits`），念法取 Wikidata P429→P1814。政令指定都市用區、東京是特別區。拓撲保持簡化（`pipeline/topo.py`）寫 `data/municipalities/{縣}.json`（一縣 400 KB 以內），bundle `municipalities/{縣}.json`（200 KB 以內）。
   - 景點的區：`Spot.municipality`（6 碼代碼），`assign-municipalities`（離線）寫進 `data/spots`；seed-region 重採時重新判斷；map bundle 多 `m`。
   - 鐵路：`seed-rail` 多取 highspeed 與停靠點名稱；路線多 `shinkansen`、`edges`（相鄰站與沿軌道距離），車站多 `lines`、`shinkansen`，`extra_stations` 放縣外的鄰站。軌道全被別的線畫過的線也留著（東京都內的東北新幹線）。
   - 路網：`build-rail-graph`（`pipeline/rail_graph.py`，離線；build-bundles 也產生）`bundles/rail-graph.json`，`shortest`、`within` 與測試；景點的最近車站對到路網節點（map bundle 的 `st`）。沒有時刻表，只有 km 與能否搭新幹線（新幹線 ≥ 20 km）。
