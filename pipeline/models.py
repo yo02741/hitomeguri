@@ -215,6 +215,32 @@ class RailData(StrictModel):
     extra_stations: list[RailStation] = Field(default_factory=list)
 
 
+class ShinkansenLine(StrictModel):
+    """全國地圖的新幹線路線（bundles/shinkansen.json）：n 名稱、g 線段 [[經度, 緯度], …]。"""
+
+    n: str
+    g: list[list[list[float]]] = Field(min_length=1)
+
+
+class ShinkansenStation(StrictModel):
+    """全國地圖的新幹線站：id 路網節點（和縣的鐵路 bundle 相同）、n、e 英文、p 縣。"""
+
+    id: str
+    n: str
+    e: str | None = None
+    lat: float = Field(ge=20, le=46)
+    lng: float = Field(ge=122, le=154)
+    p: Prefecture
+
+
+class ShinkansenBundle(StrictModel):
+    """bundles/shinkansen.json（build_bundles.build_shinkansen）；來源 OpenStreetMap。"""
+
+    attribution: str
+    lines: list[ShinkansenLine]
+    stations: list[ShinkansenStation]
+
+
 MunicipalityCode = str  # 全国地方公共団体コード 6 碼（JIS X 0402 的 5 碼＋檢查碼）
 
 

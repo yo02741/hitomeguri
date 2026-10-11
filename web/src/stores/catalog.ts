@@ -20,12 +20,16 @@ import {
   fetchIndex,
   fetchMap,
   fetchPack,
+  fetchMunicipalities,
   fetchRail,
   fetchSearch,
+  fetchShinkansen,
   type MapSpot,
+  type MunicipalityBundle,
   type PackItem,
   type RailBundle,
   type SeasonData,
+  type ShinkansenBundle,
   type TimedItem,
   type Spot,
 } from '../services/bundles'
@@ -218,6 +222,42 @@ export const useCatalogStore = defineStore('catalog', () => {
     })
   }
 
+  /** 市区町村界：一縣一檔，進入縣時載入（地圖的區界、清單的地區） */
+  const municipalities = shallowRef<Record<string, MunicipalityBundle | null>>({})
+  async function loadMunicipalities(pref: string): Promise<MunicipalityBundle | null> {
+    await loadIndex()
+    const meta = index.value?.municipalities?.[pref]
+    if (!meta) return null
+    if (municipalities.value[pref]) return municipalities.value[pref] ?? null
+    return once(`municipalities:${pref}`, async () => {
+      try {
+        municipalities.value[pref] = await fetchMunicipalities(pref, meta.version)
+        triggerRef(municipalities)
+      } catch {
+        // 讀不到（離線、沒有快取）：不記下來，下次進入這個縣再試
+        return null
+      }
+      return municipalities.value[pref] ?? null
+    })
+  }
+
+  /** 全國地圖的新幹線：一個小檔，首頁（全國）打開時載入 */
+  const shinkansen = shallowRef<ShinkansenBundle | null>(null)
+  async function loadShinkansen(): Promise<ShinkansenBundle | null> {
+    if (shinkansen.value) return shinkansen.value
+    await loadIndex()
+    const meta = index.value?.shinkansen
+    if (!meta) return null
+    return once('shinkansen', async () => {
+      try {
+        shinkansen.value = await fetchShinkansen(meta.version)
+      } catch {
+        return null
+      }
+      return shinkansen.value
+    })
+  }
+
   /** 深度探索「祭典」：一縣一檔，開深度探索頁時載入 */
   const festivals = shallowRef<Record<string, Festival[]>>({})
   async function loadFestivals(pref: string): Promise<Festival[]> {
@@ -315,6 +355,7 @@ export const useCatalogStore = defineStore('catalog', () => {
   return {
     loadSearch,
     index, mapSpots, featured, loadFeatured, details, specialties, loadSpecialties, flights, seasons, festivals, loadFestivals, rail, loadRail, loadExtras, loadFlights, loadIndex, available,
+    municipalities, loadMunicipalities, shinkansen, loadShinkansen,
     loadMap, mapState, loadAllMaps, loadDetail, getSpot, packs, loadPack, phrases, loadPhrases, timed, loadTimed,
     achv, achvState, loadAchievements,
   }

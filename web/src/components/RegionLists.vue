@@ -3,10 +3,13 @@ import { computed, nextTick, ref, watch } from 'vue'
 
 import { CATEGORY_GROUPS, categoryGroup } from '../data/categories'
 import { regionOf } from '../data/regions'
+import type { AreaGroup } from '../services/areas'
 import { mapThumbFallback, mapThumbUrl, type MapSpot } from '../services/bundles'
+import { wide } from '../services/viewport'
 import { useCatalogStore } from '../stores/catalog'
 import { useExploreStore } from '../stores/explore'
 import { spotRef, useMarksStore } from '../stores/marks'
+import AreaPicker from './AreaPicker.vue'
 import CollapseChevron from './CollapseChevron.vue'
 import SkeletonRows from './SkeletonRows.vue'
 import VisitedToggle from './VisitedToggle.vue'
@@ -15,11 +18,22 @@ import VisitedToggle from './VisitedToggle.vue'
 // 類型列可篩選（清單與地圖一起）；不篩選時清單依類型分段排列。
 // 清單與地圖連動：滑過一列在地圖上標出，點選則選取並飛過去。每列右側是「去過」快捷鈕。
 // 讀取中放佔位；讀不到（旅途中網路不穩）寫出來並可以重試；讀好了真的沒有景點才寫「資料準備中」。
+// 地區（市区町村，UX-FLOW.md A2b）：選了只留那一區的景點（類型、收藏照樣可以一起篩）；
+// 選單在標題下面一整列（桌機）或類型列的最前面（手機）。
 const props = withDefaults(
-  defineProps<{ pref: string; spots: MapSpot[]; selectedId?: string | null; state?: 'loading' | 'failed' | 'ready' }>(),
-  { selectedId: null, state: 'ready' },
+  defineProps<{
+    pref: string
+    spots: MapSpot[]
+    selectedId?: string | null
+    state?: 'loading' | 'failed' | 'ready'
+    /** 地區選單（有景點的區）；沒有區界資料時是空的，不顯示選單 */
+    areas?: AreaGroup[]
+    /** 選中的區（代碼） */
+    area?: string | null
+  }>(),
+  { selectedId: null, state: 'ready', areas: () => [], area: null },
 )
-const emit = defineEmits<{ select: [id: string]; highlight: [id: string | null] }>()
+const emit = defineEmits<{ select: [id: string]; highlight: [id: string | null]; area: [code: string | null] }>()
 const explore = useExploreStore()
 const catalog = useCatalogStore()
 const marks = useMarksStore()
@@ -28,7 +42,8 @@ function retry() {
   catalog.loadMap(props.pref).catch(() => {})
 }
 
-const majors = computed(() => [...props.spots].sort((a, b) => b.s - a.s))
+const inArea = computed(() => (props.area ? props.spots.filter((s) => s.m === props.area) : props.spots))
+const majors = computed(() => [...inArea.value].sort((a, b) => b.s - a.s))
 // 依類型分段（CATEGORY_GROUPS 的順序），段內依分數
 const sections = computed(() =>
   CATEGORY_GROUPS.map((g) => ({ ...g, rows: majors.value.filter((s) => categoryGroup(s.c) === g.key) })).filter(
@@ -58,6 +73,14 @@ const favEmpty = computed(() => {
   return ''
 })
 const scroller = ref<HTMLElement | null>(null)
+// 換區：清單回到最上面
+watch(
+  () => props.area,
+  async () => {
+    await nextTick()
+    if (scroller.value) scroller.value.scrollTop = 0
+  },
+)
 let savedTop = 0
 watch(onlyFav, async (on) => {
   if (on) {
@@ -94,17 +117,17 @@ function hidePhoto(e: Event, i: string) {
 </script>
 
 <template>
-  <section v-if="!majors.length && state === 'loading'" class="rounded-card bg-paper p-1.5 shadow-float">
+  <section v-if="!spots.length && state === 'loading'" class="rounded-card bg-paper p-1.5 shadow-float">
     <SkeletonRows :rows="6" thumb />
   </section>
   <section
-    v-else-if="!majors.length && state === 'failed'"
+    v-else-if="!spots.length && state === 'failed'"
     class="flex flex-wrap items-center gap-x-3 rounded-card bg-paper px-4 py-1.5 text-body-sm text-sub shadow-float"
   >
     讀不到{{ prefName }}的景點。
     <button type="button" class="h-tap px-3 text-body-sm font-bold text-region-strong active:not-disabled:translate-y-px" @click="retry">重試</button>
   </section>
-  <section v-else-if="!majors.length" class="rounded-card bg-paper px-4 py-3 text-body-sm text-sub shadow-float">
+  <section v-else-if="!spots.length" class="rounded-card bg-paper px-4 py-3 text-body-sm text-sub shadow-float">
     資料準備中。
   </section>
   <section v-else class="flex min-h-0 flex-col rounded-card bg-paper p-1.5 shadow-float">
@@ -113,34 +136,55 @@ function hidePhoto(e: Event, i: string) {
       景點
     </h2>
 
-    <!-- 類型：文字索引列，選中的加底線；再點一次取消。手機排成一行、橫向捲動 -->
-    <nav
-      v-if="sections.length > 1"
-      ref="catNav"
-      class="flex shrink-0 flex-wrap gap-x-3.5 gap-y-1 border-b border-line-soft px-2.5 pt-2.5 pb-2 pointer-coarse:gap-x-0.5 pointer-coarse:gap-y-0 pointer-coarse:px-1 pointer-coarse:py-0 max-lg:scroll-quiet max-lg:flex-nowrap max-lg:overflow-x-auto max-lg:overscroll-x-contain"
-      aria-label="類型"
-    >
-      <button
-        type="button"
-        class="shrink-0 text-body-sm whitespace-nowrap pointer-coarse:px-1.5 pointer-coarse:py-2.5"
-        :class="explore.category === null ? 'border-region-strong font-bold text-ink' : 'border-transparent text-sub hover:text-ink active:text-ink'"
-        :aria-pressed="explore.category === null"
-        @click="explore.category = null"
+    <!-- 地區（桌機）：標題下面一整列 -->
+    <AreaPicker
+      v-if="areas.length && wide"
+      variant="row"
+      class="shrink-0 px-1 pt-1.5"
+      :groups="areas"
+      :model-value="area"
+      :total="spots.length"
+      @update:model-value="emit('area', $event)"
+    />
+    <!-- 類型：文字索引列，選中的加底線；再點一次取消。手機排成一行、橫向捲動，最前面是地區 -->
+    <div v-if="sections.length > 1 || (areas.length && !wide)" class="flex shrink-0 items-center border-b border-line-soft">
+      <AreaPicker
+        v-if="areas.length && !wide"
+        variant="inline"
+        class="shrink-0 border-r border-line-soft py-1.5 pr-1.5 pl-0.5"
+        :groups="areas"
+        :model-value="area"
+        :total="spots.length"
+        @update:model-value="emit('area', $event)"
+      />
+      <nav
+        v-if="sections.length > 1"
+        ref="catNav"
+        class="flex min-w-0 flex-1 flex-wrap gap-x-3.5 gap-y-1 px-2.5 pt-2.5 pb-2 pointer-coarse:gap-x-0.5 pointer-coarse:gap-y-0 pointer-coarse:px-1 pointer-coarse:py-0 max-lg:scroll-quiet max-lg:flex-nowrap max-lg:overflow-x-auto max-lg:overscroll-x-contain"
+        aria-label="類型"
       >
-        <span class="block border-b-2 border-inherit pb-0.5">不限</span>
-      </button>
-      <button
-        v-for="g in sections"
-        :key="g.key"
-        type="button"
-        class="shrink-0 text-body-sm whitespace-nowrap pointer-coarse:px-1.5 pointer-coarse:py-2.5"
-        :class="explore.category === g.key ? 'border-region-strong font-bold text-ink' : 'border-transparent text-sub hover:text-ink active:text-ink'"
-        :aria-pressed="explore.category === g.key"
-        @click="explore.category = explore.category === g.key ? null : g.key"
-      >
-        <span class="block border-b-2 border-inherit pb-0.5">{{ g.label }}</span>
-      </button>
-    </nav>
+        <button
+          type="button"
+          class="shrink-0 text-body-sm whitespace-nowrap pointer-coarse:px-1.5 pointer-coarse:py-2.5"
+          :class="explore.category === null ? 'border-region-strong font-bold text-ink' : 'border-transparent text-sub hover:text-ink active:text-ink'"
+          :aria-pressed="explore.category === null"
+          @click="explore.category = null"
+        >
+          <span class="block border-b-2 border-inherit pb-0.5">不限</span>
+        </button>
+        <button
+          v-for="g in sections"
+          :key="g.key"
+          type="button"
+          class="shrink-0 text-body-sm whitespace-nowrap pointer-coarse:px-1.5 pointer-coarse:py-2.5"
+          :class="explore.category === g.key ? 'border-region-strong font-bold text-ink' : 'border-transparent text-sub hover:text-ink active:text-ink'"
+          :aria-pressed="explore.category === g.key"
+          @click="explore.category = explore.category === g.key ? null : g.key"
+        >
+          <span class="block border-b-2 border-inherit pb-0.5">{{ g.label }}</span>
+        </button>
+      </nav>
+    </div>
 
     <div
       ref="scroller"
@@ -196,7 +240,7 @@ function hidePhoto(e: Event, i: string) {
           <VisitedToggle :spot="spotRef(s.id, pref, s.n)" />
         </div>
       </div>
-      <p v-if="!sections.length" class="px-1.5 py-3 text-body-sm text-sub">資料準備中。</p>
+      <p v-if="!sections.length" class="px-1.5 py-3 text-body-sm text-sub">{{ area ? '這一區還沒有收錄的景點。' : '資料準備中。' }}</p>
     </div>
 
   </section>

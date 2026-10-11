@@ -18,6 +18,8 @@ export interface MapSpot {
   ia?: number // 主照片原圖的寬高比（寬/高）：收集卡的直卡、橫卡；還沒補寬高的資料沒有
   d?: string // 最高的文化指定（世界遺產、國寶、特別史跡、特別名勝）：收集卡的稀有度
   si?: Partial<Record<'spring' | 'summer' | 'autumn' | 'winter' | 'night' | 'panorama', [path: string, author: string, license: string, aspect?: number]>> // 收集卡的季節、夜景照片（第 4 欄：寬高比）
+  m?: string // 所在的市区町村（全国地方公共団体コード 6 碼；bundles/municipalities 的 m）
+  st?: string // 最近車站的路網節點 id（鐵路 bundle 車站的 id）
 }
 
 export { COMMONS_THUMB_PREFIX }
@@ -93,6 +95,10 @@ export interface BundleIndex {
   extras?: Partial<Record<'specialties' | 'flights' | 'phrases' | 'seasons' | 'ukiyoe', string>>
   /** 成就用的小索引（achievements.json） */
   achievements?: { version: string }
+  /** 市区町村界：縣 → 版本 */
+  municipalities?: Record<string, { count: number; version: string }>
+  /** 全國地圖的新幹線（shinkansen.json） */
+  shinkansen?: { lines: number; stations: number; version: string }
 }
 
 /**
@@ -232,14 +238,67 @@ export async function fetchSpecialties(v?: string): Promise<Specialty[]> {
   }
 }
 
-/** 鐵路路線圖層（pipeline/build_bundles.py build_rail）：n 名稱、e 英文、c 路線色、k 種類、o 營運者、g 線段 */
+/**
+ * 鐵路路線圖層（pipeline/build_bundles.py build_rail）：
+ * 路線 n 名稱、e 英文、c 路線色、k 種類、o 營運者（; 分隔）、g 線段（共用軌道只畫在一條線上，可能是空的）、s 新幹線；
+ * 車站 id 路網節點（縣界附近合併過的站共用一個；景點 map bundle 的 st）、n、e、lat、lng、l 停靠的路線（lines 的 index）、s 新幹線。
+ */
+export interface RailLine {
+  n: string
+  e?: string
+  c?: string
+  k: string
+  o?: string
+  g: number[][][]
+  s?: 1
+}
+export interface RailStation {
+  id: string
+  n: string
+  e?: string
+  lat: number
+  lng: number
+  l?: number[]
+  s?: 1
+}
 export interface RailBundle {
-  lines: Array<{ n: string; e?: string; c?: string; k: string; o?: string; g: number[][][] }>
-  stations: Array<{ n: string; e?: string; lat: number; lng: number }>
+  lines: RailLine[]
+  stations: RailStation[]
 }
 
 export function fetchRail(pref: string, version: string): Promise<RailBundle> {
   return getJson<RailBundle>(`rail/${pref}.json?v=${version}`)
+}
+
+/**
+ * 市区町村界（pipeline/municipalities.py web_bundle）：feature id 是代碼的數字；
+ * m 代碼、n 名稱（政令指定都市是區名）、h 念法、c 政令指定都市名、l 區名的位置 [經度, 緯度]。所属未定地不在裡面。
+ */
+export interface MunicipalityProps {
+  m: string
+  n: string
+  h?: string
+  c?: string
+  l?: [number, number]
+}
+export interface MunicipalityBundle {
+  type: 'FeatureCollection'
+  attribution: string
+  features: Array<{ type: 'Feature'; id: number; properties: MunicipalityProps; geometry: { type: 'MultiPolygon'; coordinates: number[][][][] } }>
+}
+
+export function fetchMunicipalities(pref: string, version: string): Promise<MunicipalityBundle> {
+  return getJson<MunicipalityBundle>(`municipalities/${pref}.json?v=${version}`)
+}
+
+/** 全國地圖的新幹線（build_bundles.build_shinkansen）：路線 n、g；車站 id 路網節點、n、e、lat、lng、p 縣 */
+export interface ShinkansenBundle {
+  lines: Array<{ n: string; g: number[][][] }>
+  stations: Array<{ id: string; n: string; e?: string; lat: number; lng: number; p: string }>
+}
+
+export function fetchShinkansen(version: string): Promise<ShinkansenBundle> {
+  return getJson<ShinkansenBundle>(`shinkansen.json?v=${version}`)
 }
 
 /** 深度探索「祭典」（pipeline/models.py Festival） */

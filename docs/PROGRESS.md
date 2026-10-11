@@ -9,7 +9,8 @@
 | 範圍 | 狀態 | 文件 |
 |---|---|---|
 | 探索（47 縣大點、搜尋、鐵路、類型篩選） | 完成 | PLAN.md §9 Phase 1、6 |
-| 縣內規劃的資料（市区町村界、車站停靠路線與新幹線、鐵路路網） | pipeline 完成，等 Actions 採集；前端未做 | PLAN.md §4.5、§5.3d、§5.3e |
+| 縣內規劃的資料（市区町村界、車站停靠路線與新幹線、鐵路路網） | pipeline 完成，資料已採集（seed-rail #75、N03） | PLAN.md §4.5、§5.3d、§5.3e |
+| 縣內規劃 2、3：小區塊（地區選單、區界、`?area=`）、車站卡片、全國地圖的新幹線 | 等驗收 | UX-FLOW.md A1c、A2b、B5，DESIGN.md §7.5d、§7.13a |
 | 擴充包（寶可夢、城、老舖・茶屋、角色商店） | 上線，等驗收 | docs/擴充包驗收.md |
 | 深度探索（季節、祭典、地區特色、期間限定；左側段落目錄） | 完成 | UX-FLOW.md A8 |
 | 期間限定 v1（氣象廳） | 等驗收 | docs/Phase4驗收.md |
@@ -34,6 +35,12 @@
 
 **待辦**：見根目錄 `TODO.md`。
 
+- 縣內規劃 2、3（2026-10-11，使用者決定）：
+  - 小區塊（UX-FLOW.md A2b，DESIGN.md §7.5d）：縣地圖畫市区町村界（`--region-sub` 細線）與區名（縮放 8.5～13.5，底圖在縣內的市町村名用 `within` 篩掉不重複），景點清單多「地區」（`AreaPicker.vue`：有景點的區依代碼、件數，政令指定都市的區排在市名底下；桌機在標題下一整列，手機在類型索引列最前面），地圖上點區塊也能選；選了清單只留那一區、地圖移到那一區、外框加粗。網址 `?area=代碼`，選區新增一筆歷史（返回回到上一個區），換縣時不帶過去。`services/areas.ts`（vitest）。地圖出處在縣地圖多国土数値情報，`/credits` 加用途、授權（CC BY 4.0／公共データ利用規約）、出典標示與加工註記。bundle 改了兩點：所属未定地不放、多 `l`（區名位置，`topo.label_point` polylabel）；版本改取輸出內容的雜湊。
+  - 車站（UX-FLOW.md B5，DESIGN.md §7.13a）：縣地圖的車站可以點（一般的站縮放 12、新幹線站 9 起，新幹線站畫雙圈），景點、群集一直優先。車站卡片（`StationPanel.vue`，`?station=路網節點 id`）：站名、停靠的路線（路線色、新幹線）、附近的景點（最近車站是這一站的依分數，沒有時 1.5 km 內最近的 5 個），點了打開景點卡片。景點卡片的「最寄駅」是鐵路圖層裡那一站時可以點。`services/stations.ts`（vitest）。
+  - 全國地圖的新幹線（UX-FLOW.md A1c）：`build_shinkansen` 產生 `bundles/shinkansen.json`（12 條線、175 站，46 KB／gzip 15 KB；OSM 的碎段先接成長折線再簡化，`models.ShinkansenBundle`、pytest），首頁畫淡淡的線與站，點了站進入那個縣的車站卡片。
+  - 新幹線站的判斷照 seed-rail #75 的資料，有誤判與漏掉的站（TODO.md 已知限制「鐵路」）；`pipeline/rail.py`、`rail_graph.py` 另外在修，修好重建 bundle 就跟著對。
+  - 截圖檢查：1440×900、390×844、844×390（東京的台東区、渋谷区、中央区，點區塊、`?area=` 直接開與返回，神奈川的横浜市各區，東京駅、上野、浅草、新横浜、ガーラ湯沢的車站卡片，全國地圖的新幹線）。
 - 專心模式（2026-10-11，使用者決定，TODO.md「縣內規劃」1）：進入一縣後地圖鎖在這個縣附近、只畫這個縣的景點與擴充包的點，縣界以外蓋一層紙色變淡（底圖地名之下）；拖曳、縮放不再換縣，「‹ 全國」或返回才離開。首頁放大到某個縣照樣進入那個縣；搜尋、連結、「附近的…」到別縣的點照樣換縣。範圍由 `services/geo.ts` 的 `focusArea` 算（整個縣含離島＋縣界外 1.5 度內的景點＋四周的海；拉遠的極限不算小笠原這種 5 度以外的離島），`MapView` 的 `focus` 用 MapLibre `transformConstrain` 以扣掉側欄、清單卡、景點卡片之後的可見範圍為準鎖住鏡頭，可見範圍中間也要看得到這個縣的陸地（縣界多邊形與縣界外的景點），再拖就停住。程式定位不受限制；卡片換段之後鏡頭在範圍外時不拉回來。之後的「日帰り」圖層疊在 `focus-mask` 之上，範圍由 `focusArea` 的 `extra` 加（UX-FLOW.md §1.3、A2，DESIGN.md §7.5a）。
 - 縣內規劃的資料（2026-10-11，TODO.md「縣內規劃」2–4，只做 pipeline，前端之後做）：
   - 市区町村界：`seed-municipalities`（`pipeline/municipalities.py`、`pipeline/sources/n03.py`）取国土数値情報 N03（CC BY 4.0；出處「「国土数値情報（行政区域データ）」（国土交通省）（https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N03-2026.html）をもとにひとめぐり作成」，前端用到時加到 `/credits`），念法取 Wikidata P429→P1814。政令指定都市用區、東京是特別區。拓撲保持簡化（`pipeline/topo.py`）寫 `data/municipalities/{縣}.json`（一縣 400 KB 以內），bundle `municipalities/{縣}.json`（200 KB 以內）。

@@ -14,3 +14,8 @@ export const JAPAN_ZOOM = 4.6
 
 // 回到首頁時整個日本版圖（含沖繩）入鏡的範圍 [west, south, east, north]
 export const JAPAN_BOUNDS: [number, number, number, number] = [123.0, 24.0, 146.0, 45.6]
+
+// 市区町村界（縣地圖的區界、清單的地區）：国土数値情報 N03（CC BY 4.0／公共データ利用規約 第1.0版）要標示出處。
+// 只在畫了區界的地圖（縣地圖）加進出處；完整的出典標示在「資料來源」頁（CreditsView.vue）。網址跟著資料的年度（N03-2026）
+export const N03_URL = 'https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N03-2026.html'
+export const N03_ATTRIBUTION = `<a href="${N03_URL}" target="_blank" rel="noopener" lang="ja">「国土数値情報（行政区域データ）」（国土交通省）</a>`
