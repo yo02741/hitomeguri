@@ -37,6 +37,7 @@ import { land } from '../services/viewport'
 import { useCatalogStore } from '../stores/catalog'
 import { useExploreStore } from '../stores/explore'
 import { useMarksStore } from '../stores/marks'
+import { useTripsStore } from '../stores/trips'
 import { useUserStore } from '../stores/user'
 
 const props = defineProps<{ pref?: string }>()
@@ -48,7 +49,16 @@ const router = useRouter()
 const catalog = useCatalogStore()
 const explore = useExploreStore()
 const marks = useMarksStore()
+const trips = useTripsStore()
 const userStore = useUserStore()
+// 地圖的收藏外圈、去過圓點：已結束的行程裡的景點也算去過（UX-FLOW.md §3）
+const markedOnMap = computed(() => {
+  const visits = trips.doneVisits
+  if (!visits.size) return marks.marks
+  const out: Record<string, { favorite?: boolean; visited?: boolean }> = { ...marks.marks }
+  for (const id of visits.keys()) out[id] = { ...out[id], visited: true }
+  return out
+})
 
 const mapRef = ref<InstanceType<typeof MapView> | null>(null)
 const selectedId = computed(() => (typeof route.query.spot === 'string' ? route.query.spot : null))
@@ -836,7 +846,7 @@ function onMoveEnd(view: MapViewState) {
         :focus="focus"
         :pin="pin"
         :rail="railMap"
-        :marked="marks.marks"
+        :marked="markedOnMap"
         @select="select"
         @close-pin="closePin"
         @moveend="onMoveEnd"

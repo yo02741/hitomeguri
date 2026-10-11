@@ -3,16 +3,22 @@ import { computed } from 'vue'
 
 import { useStampPress } from '../composables/stampPress'
 import { type SpotRef, useMarksStore } from '../stores/marks'
+import { useTripsStore } from '../stores/trips'
 import { useUserStore } from '../stores/user'
 
 // 清單列右側的「去過」快捷鈕（像按愛心）：只切換去過，日期之後在紀錄頁補（UX-FLOW.md E6）。
+// 在已結束的行程裡的景點也是去過（UX-FLOW.md §3）；那種在這裡取消不了（從行程移除才會），按了不動。
 const props = defineProps<{ spot: SpotRef }>()
 const marks = useMarksStore()
+const trips = useTripsStore()
 const userStore = useUserStore()
-const on = computed(() => Boolean(marks.markOf(props.spot.id)?.visited))
+const marked = computed(() => Boolean(marks.markOf(props.spot.id)?.visited))
+const viaTrip = computed(() => (marked.value ? undefined : trips.doneVisits.get(props.spot.id)))
+const on = computed(() => marked.value || Boolean(viaTrip.value))
 // 按下去過時蓋章（DESIGN.md §9）
 const { pressing, key: stampKey, arm } = useStampPress(() => on.value, () => props.spot.id)
 function toggle() {
+  if (viaTrip.value) return
   arm()
   void marks.toggleVisited(props.spot)
 }
@@ -26,7 +32,7 @@ function toggle() {
     :class="on ? 'text-visited' : 'text-sub hover:bg-surface hover:text-ink'"
     :aria-pressed="on"
     :aria-label="`去過：${spot.name}`"
-    :title="on ? '去過' : undefined"
+    :title="viaTrip ? `去過・${viaTrip.trip || '未命名行程'}` : on ? '去過' : undefined"
     @click.stop="toggle"
   >
     <span v-if="on" :key="stampKey" class="grid size-5 place-items-center rounded-full" :class="pressing ? 'stamp-ring' : ''">

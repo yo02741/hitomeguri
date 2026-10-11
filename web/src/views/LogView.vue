@@ -8,7 +8,6 @@ import { OUTFITS } from '../data/outfits'
 import { useAvatarStore } from '../stores/avatar'
 
 import DatePicker from '../components/DatePicker.vue'
-import DateRangePicker from '../components/DateRangePicker.vue'
 import ExportButtons from '../components/ExportButtons.vue'
 import MarkedSpotList from '../components/MarkedSpotList.vue'
 import SectionNav from '../components/SectionNav.vue'
@@ -19,11 +18,9 @@ import { useVisitedEntries } from '../composables/visited'
 import { useCollection } from '../composables/collection'
 import { type NavItem, useScrollSpy } from '../composables/scrollSpy'
 import { regions } from '../data/regions'
-import { addMonths, monthOf } from '../services/calendar'
 import { markRow } from '../services/export'
 import { whenIdle } from '../services/idle'
 import type { MapSpot } from '../services/bundles'
-import { TRIP_NAME_MAX } from '../services/trip'
 import { todayIso } from '../services/userdb'
 import { wide } from '../services/viewport'
 import { useAchievementsStore } from '../stores/achievements'
@@ -107,26 +104,7 @@ const bounds = computed<[number, number, number, number] | null>(() => {
   return [Math.min(...lngs), Math.min(...lats), Math.max(...lngs), Math.max(...lats)]
 })
 
-// 補登以前的旅行（UX-FLOW.md E1）：日期在今天以前就直接是紀錄
-const name = ref('')
-const start = ref('')
-const end = ref('')
 const today = todayIso()
-// 補登的多半是之前的旅行：月曆先打開上個月
-const lastMonth = `${addMonths(monthOf(today), -1)}-01`
-// 送出中不能再按（雙擊會補登兩趟）
-const adding = ref(false)
-async function addPast() {
-  if (!start.value || adding.value) return
-  adding.value = true
-  try {
-    const e = end.value && end.value >= start.value ? end.value : start.value
-    const id = await trips.create({ name: name.value.trim(), start_date: start.value, end_date: e })
-    if (id) await router.push(`/trips/${id}`)
-  } finally {
-    adding.value = false
-  }
-}
 
 // 批次補日期（UX-FLOW.md E6）：從清單快捷標的去過沒有日期，這裡一次補
 const picking = ref(false)
@@ -134,9 +112,10 @@ const selected = ref(new Set<string>())
 const batchDate = ref('')
 const applying = ref(false)
 const undated = computed(() => rows.value.filter((r) => !r.mark.visited_on))
+// 一開始不選（使用者回饋 2026-10-11）；「沒有日期的 n」一次選起沒填日期的
 function startPicking() {
   picking.value = true
-  selected.value = new Set(undated.value.map((r) => r.id))
+  selected.value = new Set()
 }
 // 從成就的「補日期」來（/log?fill=1）：打開批次補日期、捲到「去過」
 watch(
@@ -336,30 +315,6 @@ function open(id: string) {
         <ul v-if="doneTrips.length" class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
           <li v-for="t in doneTrips" :key="t.id"><TripCard :trip="t" /></li>
         </ul>
-        <form class="flex flex-wrap items-end gap-3" @submit.prevent="addPast">
-          <label class="flex min-w-[180px] flex-1 flex-col gap-1 text-caption text-sub max-lg:basis-full">
-            補登旅行
-            <input
-              v-model="name"
-              type="text"
-              :maxlength="TRIP_NAME_MAX"
-              placeholder="名稱"
-              class="h-10 rounded-control border border-line bg-paper px-3 text-body-sm text-ink outline-none placeholder:text-sub focus:border-region-strong pointer-coarse:h-tap"
-            />
-          </label>
-          <div class="flex flex-col gap-1 text-caption text-sub">
-            <span>日期</span>
-            <DateRangePicker label="日期" :start="start" :end="end" :max="today" :initial="lastMonth" @change="(s, e) => ((start = s), (end = e))" />
-          </div>
-          <button
-            type="submit"
-            :disabled="!start || adding"
-            :aria-busy="adding"
-            class="h-10 rounded-control border border-line bg-paper px-3.5 text-body-sm text-ink hover:bg-surface disabled:cursor-not-allowed disabled:opacity-40 active:not-disabled:translate-y-px pointer-coarse:h-tap"
-          >
-            新增
-          </button>
-        </form>
       </section>
 
       <section id="log-visited" class="flex flex-col gap-3 max-lg:scroll-mt-[4.25rem]" aria-labelledby="visited-title">

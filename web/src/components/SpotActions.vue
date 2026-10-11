@@ -4,7 +4,8 @@ import Dropdown from './Dropdown.vue'
 
 import { useDismiss } from '../composables/floating'
 import { useStampPress } from '../composables/stampPress'
-import { dayDate, hasSpot, shortDate, TRIP_NAME_MAX, tripStatus } from '../services/trip'
+import { dayDate, findStop, hasSpot, insertStop, moveStop, removeStop, shortDate, TRIP_NAME_MAX, tripStatus } from '../services/trip'
+import { showToast } from '../services/toast'
 import { todayIso } from '../services/userdb'
 import { LIST_NAME_MAX, type SpotRef, useMarksStore } from '../stores/marks'
 import { useTripsStore } from '../stores/trips'
@@ -22,12 +23,19 @@ const userStore = useUserStore()
 const mark = computed(() => marks.markOf(props.spot.id))
 const disabled = computed(() => !userStore.canSignIn)
 
+// 去過（UX-FLOW.md §3）：自己標的，或在已結束的行程裡（日期取那一天，自己填的優先）。
+// 只由行程來的去過在這裡取消不了（從行程移除才會），「去過」按了不動；日期照樣可以改（改了就變成自己標的）。
+const viaTrip = computed(() => (mark.value?.visited ? undefined : trips.doneVisits.get(props.spot.id)))
+const visited = computed(() => Boolean(mark.value?.visited) || Boolean(viaTrip.value))
+const visitedOn = computed(() => mark.value?.visited_on ?? viaTrip.value?.date)
+
 // 按下去過時蓋章、按下收藏時星星彈一下（DESIGN.md §9）
-const { pressing, key: stampKey, arm } = useStampPress(() => Boolean(mark.value?.visited), () => props.spot.id)
+const { pressing, key: stampKey, arm } = useStampPress(() => visited.value, () => props.spot.id)
 watch(pressing, (p) => {
   if (p) emit('stamped')
 })
 function toggleVisited() {
+  if (viaTrip.value) return
   arm()
   void marks.toggleVisited(props.spot)
 }
@@ -98,6 +106,31 @@ async function addTo(tripId: string) {
   const v = target.value[tripId] ?? ''
   await trips.addStop(tripId, props.spot, v === '' ? null : Number(v))
 }
+// 已經加入的：選單照樣可以換天（加錯天馬上改）、移除（底部可以復原）
+function placeOf(t: (typeof trips.sorted)[number]): string {
+  const at = findStop(t, props.spot.id)
+  return !at || at.day === -1 ? '' : String(at.day)
+}
+function moveTo(tripId: string, v: string) {
+  const day = v === '' ? -1 : Number(v)
+  void trips.mutate(tripId, (t) => {
+    const from = findStop(t, props.spot.id)
+    if (!from || from.day === day) return null
+    const len = day === -1 ? t.unscheduled.length : t.days[day]?.stops.length
+    return len === undefined ? null : moveStop(t, from, { day, idx: len })
+  })
+}
+function removeFrom(tripId: string) {
+  const t0 = trips.get(tripId)
+  const at = t0 && findStop(t0, props.spot.id)
+  const stop = at && (at.day === -1 ? t0.unscheduled[at.idx] : t0.days[at.day]?.stops[at.idx])
+  if (!at || !stop) return
+  void trips.mutate(tripId, (t) => {
+    const cur = findStop(t, props.spot.id)
+    return cur ? removeStop(t, cur) : null
+  })
+  showToast('已從行程移除', () => trips.mutate(tripId, (t) => insertStop(t, at, stop)))
+}
 async function addTrip() {
   const name = newTrip.value.trim()
   if (!name) return
@@ -116,7 +149,7 @@ const inLists = computed(() => mark.value?.lists?.length ?? 0)
 const today = todayIso()
 // 今年的只寫月日
 const visitedShort = computed(() => {
-  const d = mark.value?.visited_on
+  const d = visitedOn.value
   if (!d) return ''
   const [y, m, day] = d.split('-').map(Number)
   return y === Number(today.slice(0, 4)) ? `${m}/${day}` : `${y}/${m}/${day}`
@@ -159,7 +192,7 @@ const visitedShort = computed(() => {
       <div
         class="flex h-11 overflow-hidden rounded-control text-body-sm max-lg:h-tap max-lg:min-w-0 max-lg:flex-[1.5] max-lg:basis-0 max-lg:text-caption"
         :class="
-          mark?.visited
+          visited
             ? 'border-[1.5px] border-visited bg-visited-tint font-bold text-visited'
             : 'border border-line bg-paper text-ink'
         "
@@ -167,12 +200,14 @@ const visitedShort = computed(() => {
         <button
           type="button"
           class="flex min-w-0 flex-1 items-center justify-center gap-1.5 whitespace-nowrap active:translate-y-px disabled:cursor-not-allowed disabled:opacity-40 max-lg:flex-col max-lg:gap-0.5"
-          :class="mark?.visited ? '' : 'hover:bg-surface'"
-          :aria-pressed="Boolean(mark?.visited)"
+          :class="[visited ? '' : 'hover:bg-surface', viaTrip ? 'cursor-default active:translate-y-0' : '']"
+          :aria-pressed="visited"
+          :aria-disabled="viaTrip ? true : undefined"
+          :title="viaTrip ? `去過・${viaTrip.trip || '未命名行程'}` : undefined"
           :disabled="disabled"
           @click="toggleVisited"
         >
-          <span v-if="mark?.visited" :key="stampKey" class="grid size-4 place-items-center rounded-full" :class="pressing ? 'stamp-ring' : ''">
+          <span v-if="visited" :key="stampKey" class="grid size-4 place-items-center rounded-full" :class="pressing ? 'stamp-ring' : ''">
             <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" :class="pressing ? 'animate-stamp-press' : ''">
               <circle cx="12" cy="12" r="9.5" fill="currentColor" />
               <path d="M8.3 12.3l2.5 2.5 4.9-5.1" fill="none" class="stroke-white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
@@ -184,17 +219,17 @@ const visitedShort = computed(() => {
           去過
         </button>
         <DatePicker
-          v-if="mark?.visited"
+          v-if="visited"
           bare
           align="end"
           label="去過日期"
-          :model-value="mark.visited_on ?? ''"
+          :model-value="visitedOn ?? ''"
           :max="today"
           class="flex shrink-0 items-center gap-1 border-l border-visited/30 px-2.5 font-num text-body-sm font-normal max-lg:text-caption hover:bg-visited/10 max-lg:px-1.5"
           @update:model-value="marks.setVisitedOn(spot, $event)"
         >
           <template #default>
-            <span v-if="mark.visited_on">{{ visitedShort }}</span>
+            <span v-if="visitedOn">{{ visitedShort }}</span>
             <span v-else class="font-sans">日期</span>
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" class="max-lg:hidden" aria-hidden="true"><path d="M6 9l6 6 6-6" /></svg>
           </template>
@@ -243,9 +278,25 @@ const visitedShort = computed(() => {
           <template v-for="({ t }, i) in tripList" :key="t.id">
             <p v-if="i === firstDone" class="px-2.5 pt-2 pb-1 text-caption text-sub" :class="i > 0 ? 'mt-1 border-t border-line-soft' : ''">已結束</p>
             <div class="flex min-h-tap items-center gap-2 rounded-control px-2.5">
-              <span class="min-w-0 flex-1 truncate text-body-sm">{{ t.name || '未命名行程' }}</span>
+              <span class="flex min-w-0 flex-1 items-center gap-1.5 text-body-sm">
+                <svg v-if="hasSpot(t, spot.id)" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" class="shrink-0" aria-label="已加入"><path d="M5 12.5l4.5 4.5L19 7.5" /></svg>
+                <span class="truncate">{{ t.name || '未命名行程' }}</span>
+              </span>
               <template v-if="hasSpot(t, spot.id)">
-                <span class="shrink-0 text-caption text-sub">已加入</span>
+                <Dropdown
+                  :model-value="placeOf(t)"
+                  :options="[{ value: '', label: '待排' }, ...t.days.map((_, i) => ({ value: String(i), label: dayLabel(t, i) }))]"
+                  :label="`在「${t.name || '未命名行程'}」的哪一天`"
+                  size="sm"
+                  @update:model-value="moveTo(t.id, $event)"
+                />
+                <button
+                  type="button"
+                  class="h-9 shrink-0 rounded-control px-2.5 text-caption text-sub hover:bg-surface hover:text-ink active:not-disabled:translate-y-px pointer-coarse:h-tap"
+                  @click="removeFrom(t.id)"
+                >
+                  移除
+                </button>
               </template>
               <template v-else>
                 <Dropdown

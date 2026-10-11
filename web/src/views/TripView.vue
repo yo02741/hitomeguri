@@ -15,6 +15,7 @@ import SplitFlap from '../components/SplitFlap.vue'
 import SkeletonRows from '../components/SkeletonRows.vue'
 import TripMembers from '../components/TripMembers.vue'
 import TripStopList from '../components/TripStopList.vue'
+import TripAddVisited from '../components/TripAddVisited.vue'
 import { useCatalogSpots } from '../composables/catalogSpots'
 import { useDraftField } from '../composables/draftField'
 import { useOnline } from '../composables/online'
@@ -35,6 +36,7 @@ import {
   dayRouteUrls,
   edgeTarget,
   findStop,
+  hasSpot,
   insertStop,
   MAX_DAYS,
   moveStop,
@@ -53,6 +55,7 @@ import {
   tripStatus,
 } from '../services/trip'
 import { useCatalogStore } from '../stores/catalog'
+import type { SpotRef } from '../stores/marks'
 import { useTripsStore } from '../stores/trips'
 import { useUserStore } from '../stores/user'
 
@@ -145,6 +148,26 @@ function moveSpot(spotId: string | undefined, to: (t: Trip, from: StopPos) => St
     const dest = from && to(t, from)
     return from && dest ? moveStop(t, from, dest) : null
   })
+}
+
+// 從去過的地方一次加入（TripAddVisited.vue）：有日期在這趟期間的放到那一天，其他的放待排
+const addVisitedOpen = ref(false)
+function addVisited(items: Array<{ spot: SpotRef; day: number | null }>) {
+  addVisitedOpen.value = false
+  mutate((t) => {
+    const days = t.days.map((d) => ({ stops: [...d.stops] }))
+    const unscheduled = [...t.unscheduled]
+    let n = 0
+    for (const { spot, day } of items) {
+      if (hasSpot({ days, unscheduled }, spot.id)) continue
+      const stop = trips.toStop(spot)
+      if (day !== null && days[day]) days[day]!.stops.push(stop)
+      else unscheduled.push(stop)
+      n++
+    }
+    return n ? { days, unscheduled } : null
+  })
+  showToast(`加入 ${items.length} 個地方`)
 }
 
 // 拖曳
@@ -514,7 +537,7 @@ async function del() {
           </span>
         </div>
         <!-- 這趟達成的初訪章與成就（DESIGN.md §7.25） -->
-        <AchvRow v-if="status === 'done'" :trip="trip" :size="40" />
+        <AchvRow v-if="status === 'done'" :trip="trip" :size="64" header />
       </div>
 
       <div v-if="wide" class="flex items-center gap-3 text-body-sm pointer-coarse:-mx-1.5 pointer-coarse:-my-2.5">
@@ -663,9 +686,20 @@ async function del() {
         </div>
       </section>
       <section v-show="wide || activeDay === -1" class="flex flex-col gap-1.5 lg:border-t lg:border-line lg:pt-4" aria-label="待排">
-        <h2 class="flex items-baseline gap-1.5 text-caption font-bold tracking-section text-sub max-lg:sr-only">
-          待排<span class="font-num font-normal tracking-normal">{{ trip.unscheduled.length }}</span>
-        </h2>
+        <div class="flex items-center gap-2">
+          <h2 class="flex items-baseline gap-1.5 text-caption font-bold tracking-section text-sub max-lg:sr-only">
+            待排<span class="font-num font-normal tracking-normal">{{ trip.unscheduled.length }}</span>
+          </h2>
+          <button
+            type="button"
+            class="flex h-9 items-center gap-1.5 rounded-control border border-line bg-paper px-3 text-body-sm text-ink hover:bg-surface disabled:cursor-not-allowed disabled:opacity-40 active:not-disabled:translate-y-px lg:ml-auto pointer-coarse:h-tap"
+            :disabled="locked"
+            @click="addVisitedOpen = true"
+          >
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14" /></svg>
+            從去過的地方加入
+          </button>
+        </div>
         <TripStopList
           :stops="trip.unscheduled"
           :day="-1"
@@ -693,6 +727,7 @@ async function del() {
       <MapView :spots="mapSpots" :bounds="bounds" :route="route" :selected-id="focusId" @select="focusStop" />
     </div>
     <PackOpening v-if="packOpen" :trip="trip" @close="closePack" />
+    <TripAddVisited v-if="addVisitedOpen" :trip="trip" @close="addVisitedOpen = false" @add="addVisited" />
     <ShareImage v-if="recapOpen" title="旅行回顧" :file-name="`ひとめぐり ${trip.name || '行程'}`" :render="renderRecap" @close="recapOpen = false" />
   </div>
   <section v-else class="mx-auto w-full max-w-5xl px-6 py-9">

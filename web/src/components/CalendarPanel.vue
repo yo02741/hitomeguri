@@ -15,7 +15,7 @@ const props = defineProps<{
   range?: boolean
   min?: string
   max?: string
-  /** 還沒選日期時先打開的那一天所在的月（例：補登旅行開在上個月）；預設今天 */
+  /** 還沒選日期時先打開的那一天所在的月；預設今天 */
   initial?: string
 }>()
 const emit = defineEmits<{ pick: [date: string] }>()

@@ -412,7 +412,8 @@ onBeforeUnmount(() => document.removeEventListener('keydown', onKey))
     max-height: 100%;
     overflow-y: auto;
     overscroll-behavior: contain;
-    padding: 0.5rem 0 0.5rem 2rem;
+    /* 右邊留 0.75rem：一行最後一個膠囊的 NEW 標記往右凸出，右欄會捲動（overflow 也裁 x），沒留會被切到 */
+    padding: 0.5rem 0.75rem 0.5rem 2rem;
     border-left: 2px dashed color-mix(in oklab, var(--color-paper) 35%, transparent);
   }
   /* 樣式膠囊靠左、往下折（上方留給 NEW 標記）；張數另起一行 */
@@ -467,6 +468,7 @@ onBeforeUnmount(() => document.removeEventListener('keydown', onKey))
     flex-shrink: 0;
     overflow-x: auto;
     padding-top: 0.5rem;
+    padding-right: 0.5rem;
   }
   .variants > * {
     flex-shrink: 0;

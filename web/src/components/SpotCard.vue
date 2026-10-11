@@ -321,6 +321,10 @@ const sizeClass = { sm: 'text-[10px]', lg: 'text-[16px]', fluid: 'fluid' }
   width: 28em;
   aspect-ratio: 7 / 5;
 }
+/* 橫的紀念卡：紀錄框不拉滿卡寬（八個小章一行放得下），右邊的照片露出來 */
+.landscape .record {
+  max-width: 18em;
+}
 /* 跟著外層容器寬的橫卡：卡寬 28em＝容器寬 */
 .fluid.landscape:not(.sideways) {
   font-size: calc(100cqi / 28);

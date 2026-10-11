@@ -50,12 +50,13 @@ describe('isLandscapeCard', () => {
     seasonImages: { night: { url: face.seasonImages!.night!.url, aspect: 0.75 }, winter: { url: `${T}e/ef/Snow.jpg/960px-Snow.jpg`, aspect: 1.2 } },
   }
 
-  it('只有全景卡的照片是橫的（≥ 1.2）才是橫卡', () => {
+  it('照片鋪滿的樣式（全景、特別全景、夜景）照片是橫的（≥ 1.2）才是橫卡', () => {
     expect(isLandscapeCard(wide, v('full'))).toBe(true)
-    // 特別全景（紀念卡）一律直卡
-    expect(isLandscapeCard(wide, v('special@winter'))).toBe(false)
+    // 特別全景（紀念卡）也一樣看照片（冬的照片 1.2）
+    expect(isLandscapeCard(wide, v('special@winter'))).toBe(true)
     // 夜景照片是直的
     expect(isLandscapeCard(wide, v('night'))).toBe(false)
+    expect(isLandscapeCard({ ...wide, seasonImages: { night: { url: 'n', aspect: 1.6 } } }, v('night'))).toBe(true)
     expect(isLandscapeCard({ ...wide, image: { url: 'x', aspect: 1.19 } }, v('full@spring'))).toBe(false)
   })
 

@@ -30,7 +30,6 @@ function prefColor(pref: string): Colors | undefined {
   const t = ERA_COLORS[theme.value]?.regions[pref]
   return base && t ? { ...base, ...t } : base
 }
-const GSI_CREDIT = '縣界：地球地図日本（国土地理院）'
 
 type Catalog = ReturnType<typeof useCatalogStore>
 
@@ -157,13 +156,11 @@ export async function drawKeiken(canvas: HTMLCanvasElement, opts: { levelOf: (pr
     ctx.fillStyle = c.sub
     ctx.fillText(String(counts.get(l.level) ?? 0), x + 46 + lw + 10, 1228)
   })
-  footer(ctx, c.sub, c.ink)
+  footer(ctx, c.ink)
 }
 
-function footer(ctx: CanvasRenderingContext2D, sub: string, ink: string) {
-  ctx.font = `400 22px ${SANS}`
-  ctx.fillStyle = sub
-  ctx.fillText(GSI_CREDIT, 64, H - 40)
+// 縣界的出處（地球地図日本）列在 /credits，圖上不放（使用者決定 2026-10-11）
+function footer(ctx: CanvasRenderingContext2D, ink: string) {
   ctx.textAlign = 'right'
   ctx.font = `700 26px ${LATIN}`
   ctx.fillStyle = ink
@@ -172,6 +169,41 @@ function footer(ctx: CanvasRenderingContext2D, sub: string, ink: string) {
 }
 
 // ---------- 旅行回顧 ----------
+
+/**
+ * 縣名放哪裡：卡片裡（扣掉邊緣與右上的日本全圖）每 24px 一個格點，落在這個縣裡的格點太少（不到 6 個）就不標；
+ * 其餘取離停留點遠（最多算到 90px）、離這個縣在畫面裡的重心近的一點。
+ */
+function prefLabelSpot(
+  ctx: CanvasRenderingContext2D,
+  path: Path2D,
+  card: { x: number; y: number; w: number; h: number },
+  mini: { x: number; y: number; w: number; h: number },
+  dots: ReadonlyArray<readonly [number, number]>,
+): [number, number] | null {
+  const step = 24
+  const inside: Array<[number, number]> = []
+  for (let y = card.y + 36; y <= card.y + card.h - 24; y += step) {
+    for (let x = card.x + 60; x <= card.x + card.w - 60; x += step) {
+      if (x > mini.x - 50 && x < mini.x + mini.w + 50 && y > mini.y - 30 && y < mini.y + mini.h + 30) continue
+      if (ctx.isPointInPath(path, x, y, 'evenodd')) inside.push([x, y])
+    }
+  }
+  if (inside.length < 6) return null
+  const cx = inside.reduce((a, p) => a + p[0], 0) / inside.length
+  const cy = inside.reduce((a, p) => a + p[1], 0) / inside.length
+  let best: [number, number] | null = null
+  let bestScore = -Infinity
+  for (const [x, y] of inside) {
+    const near = dots.reduce((m, [dx, dy]) => Math.min(m, Math.hypot(dx - x, dy - y)), Infinity)
+    const score = Math.min(near, 90) - 0.35 * Math.hypot(x - cx, y - cy)
+    if (score > bestScore) {
+      bestScore = score
+      best = [x, y]
+    }
+  }
+  return best
+}
 
 const WEEK = ['日', '一', '二', '三', '四', '五', '六']
 
@@ -246,22 +278,38 @@ export async function drawTripRecap(canvas: HTMLCanvasElement, trip: Trip, catal
     roundRect(ctx, card.x, card.y, card.w, card.h, 24)
     ctx.clip()
     const shapes = await loadPrefectureShapes()
+    const paths = new Map<string, Path2D>()
     for (const f of shapes) {
       const pref = f.properties.pref
       const col = colorOf(pref)
-      ctx.beginPath()
+      const path = new Path2D()
       for (const poly of f.geometry.coordinates) {
         for (const ring of poly) {
-          ring.forEach(([lng, lat], i) => (i ? ctx.lineTo(X(lng), Y(lat)) : ctx.moveTo(X(lng), Y(lat))))
-          ctx.closePath()
+          ring.forEach(([lng, lat], i) => (i ? path.lineTo(X(lng), Y(lat)) : path.moveTo(X(lng), Y(lat))))
+          path.closePath()
         }
       }
+      paths.set(pref, path)
       ctx.fillStyle = prefs.includes(pref) ? col.accent : c.surface
-      ctx.fill('evenodd')
+      ctx.fill(path, 'evenodd')
       ctx.strokeStyle = c.paper
       ctx.lineWidth = 3
-      ctx.stroke()
+      ctx.stroke(path)
     }
+    const dots = pts.map((p) => [X(p.lng), Y(p.lat)] as const)
+    // 日本全圖放在停留點最少的角落（右上優先），不蓋住停留點與 DAY 標籤
+    const mw = 154
+    const mh = 170
+    const corners = [
+      { x: card.x + card.w - mw - 16, y: card.y + 16 },
+      { x: card.x + 16, y: card.y + 16 },
+      { x: card.x + card.w - mw - 16, y: card.y + card.h - mh - 16 },
+      { x: card.x + 16, y: card.y + card.h - mh - 16 },
+    ]
+    const covered = (r: { x: number; y: number }) =>
+      dots.filter(([dx, dy]) => dx > r.x - 60 && dx < r.x + mw + 30 && dy > r.y - 50 && dy < r.y + mh + 30).length
+    const corner = corners.reduce((best, r) => (covered(r) < covered(best) ? r : best), corners[0]!)
+    const mini = { ...corner, w: mw, h: mh }
     // 路線：每天一條，用那天主縣的 strong 色
     ctx.lineJoin = 'round'
     ctx.lineCap = 'round'
@@ -295,9 +343,60 @@ export async function drawTripRecap(canvas: HTMLCanvasElement, trip: Trip, catal
         ctx.textAlign = 'left'
       })
     }
+    // 縣名：看得出是哪裡（使用者回饋 2026-10-11）。畫面裡看得到的縣都標，這趟去的縣大字、其他的小字；
+    // 位置取那個縣在畫面裡的格點中離停留點遠、離中心近的一點（日本全圖讓開）
+    for (const [pref, path] of paths) {
+      const spot = prefLabelSpot(ctx, path, card, mini, dots)
+      if (!spot) continue
+      const ours = prefs.includes(pref)
+      const name = regionOf(pref)?.name.ja ?? pref
+      ctx.font = ours ? `900 34px ${JA}` : `700 24px ${JA}`
+      ctx.textAlign = 'center'
+      ctx.lineJoin = 'round'
+      ctx.lineWidth = 8
+      ctx.strokeStyle = c.paper
+      ctx.strokeText(name, spot[0], spot[1])
+      ctx.fillStyle = ours ? colorOf(pref).strong : c.sub
+      ctx.fillText(name, spot[0], spot[1])
+      ctx.textAlign = 'left'
+    }
+    // 每天第一站旁標 DAY n（和下面的清單對得起來）：依序試點的右上、左上、右下、左下，
+    // 不壓到日本全圖、已經放的標籤與停留點；都壓到時用右上
+    type Box = { x: number; y: number; w: number; h: number }
+    const hit = (a: Box, b: Box) => a.x < b.x + b.w && a.x + a.w > b.x && a.y < b.y + b.h && a.y + a.h > b.y
+    const placed: Box[] = [mini]
+    const dotBoxes: Box[] = dots.map(([dx, dy]) => ({ x: dx - 18, y: dy - 18, w: 36, h: 36 }))
+    for (const d of days) {
+      const p = d.stops.map((st) => catalog.mapSpots[st.pref]?.find((x) => x.id === st.spot_id)).find(Boolean)
+      if (!p) continue
+      const col = colorOf(d.stops[0]!.pref)
+      const label = `DAY ${trip.days.indexOf(d) + 1}`
+      ctx.font = `700 22px ${LATIN}`
+      const tw = ctx.measureText(label).width + 20
+      const px = X(p.lng)
+      const py = Y(p.lat)
+      const clampBox = (x: number, y: number): Box => ({
+        x: Math.max(card.x + 8, Math.min(x, card.x + card.w - tw - 8)),
+        y: Math.max(card.y + 8, Math.min(y, card.y + card.h - 40)),
+        w: tw,
+        h: 32,
+      })
+      const tries = [clampBox(px + 20, py - 48), clampBox(px - 20 - tw, py - 48), clampBox(px + 20, py + 16), clampBox(px - 20 - tw, py + 16)]
+      const box = tries.find((t) => !placed.some((b) => hit(t, b)) && !dotBoxes.some((b) => hit(t, b))) ?? tries.find((t) => !placed.some((b) => hit(t, b))) ?? tries[0]!
+      placed.push(box)
+      const tx = box.x
+      const ty = box.y
+      roundRect(ctx, tx, ty, tw, 32, 6)
+      ctx.fillStyle = col.base
+      ctx.fill()
+      ctx.lineWidth = 3
+      ctx.strokeStyle = c.paper
+      ctx.stroke()
+      ctx.fillStyle = col.on_base
+      ctx.fillText(label, tx + 10, ty + 24)
+    }
     ctx.restore()
-    // 右上的日本全圖：看得出在日本的哪裡
-    const mini = { x: card.x + card.w - 170, y: card.y + 16, w: 154, h: 170 }
+    // 日本全圖：看得出在日本的哪裡
     roundRect(ctx, mini.x, mini.y, mini.w, mini.h, 14)
     ctx.fillStyle = c.paper
     ctx.fill()
@@ -305,8 +404,9 @@ export async function drawTripRecap(canvas: HTMLCanvasElement, trip: Trip, catal
   }
 
   // 每天的停留點
+  // 最多四列；超過時列三天，第四列寫「還有 n 天」（不壓到最下面的 HITOMEGURI）
   let y = 1080
-  const shown = days.slice(0, 4)
+  const shown = days.length > 4 ? days.slice(0, 3) : days
   for (const d of shown) {
     const idx = trip.days.indexOf(d)
     const col = colorOf(d.stops[0]!.pref)
@@ -339,5 +439,5 @@ export async function drawTripRecap(canvas: HTMLCanvasElement, trip: Trip, catal
     ctx.font = `400 26px ${SANS}`
     ctx.fillText(`還有 ${days.length - shown.length} 天`, 64, y)
   }
-  footer(ctx, c.sub, c.ink)
+  footer(ctx, c.ink)
 }

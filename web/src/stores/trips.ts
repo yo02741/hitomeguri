@@ -3,6 +3,7 @@ import { computed, ref, shallowRef, watch } from 'vue'
 
 import {
   dayCount,
+  dayDate,
   hasSpot,
   MAX_DAYS,
   type Member,
@@ -145,6 +146,21 @@ export const useTripsStore = defineStore('trips', () => {
       const db = b.start_date ?? '9999'
       return sa === 'done' ? db.localeCompare(da) : da.localeCompare(db) || a.created - b.created
     })
+  })
+
+  /**
+   * 已結束的行程裡的景點 → 最近一趟的那一天與行程（UX-FLOW.md §3：去過＝自己標的 ∪ 已結束的行程）。
+   * 景點卡片的「去過」、清單列的快捷鈕、地圖的去過圓點都用它，一趟一個 computed，不必每列各算一次。
+   */
+  const doneVisits = computed(() => {
+    const out = new Map<string, { date?: string; trip: string; tripId: string }>()
+    for (const t of sorted.value) {
+      if (tripStatus(t, today.value) !== 'done') continue
+      t.days.forEach((d, i) => {
+        for (const s of d.stops) if (!out.has(s.spot_id)) out.set(s.spot_id, { date: dayDate(t, i), trip: t.name, tripId: t.id })
+      })
+    }
+    return out
   })
 
   function get(id: string): Trip | undefined {
@@ -331,6 +347,6 @@ export const useTripsStore = defineStore('trips', () => {
   }
 
   return {
-    trips, sorted, loaded, synced, error, today, get, create, mutate, addStop, remove, removeMember, invite, readInvite, join, toStop,
+    trips, sorted, doneVisits, loaded, synced, error, today, get, create, mutate, addStop, remove, removeMember, invite, readInvite, join, toStop,
   }
 })
