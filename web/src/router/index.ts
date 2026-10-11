@@ -54,6 +54,8 @@ export const router = createRouter({
     { path: '/log/cards/ukiyoe', name: 'ukiyoe', component: () => import('../views/UkiyoeView.vue'), meta: { title: '浮世繪裡的景點' } },
     { path: '/log/keiken', name: 'keiken', component: () => import('../views/KeikenView.vue'), meta: { title: '經縣值' } },
     { path: '/log/avatar', name: 'avatar', component: () => import('../views/AvatarView.vue'), meta: { title: '旅人' } },
+    // 3D 旅人試作（DESIGN.md §7.24a）：還沒接到旅人頁
+    { path: '/log/avatar/3d', name: 'avatar-3d', component: () => import('../views/Avatar3DView.vue'), meta: { title: '旅人 3D' } },
     { path: '/log/achievements', name: 'achievements', component: () => import('../views/AchievementsView.vue'), meta: { title: '成就' } },
     { path: '/me', name: 'me', component: () => import('../views/MeView.vue'), meta: { title: '收藏與清單' } },
     {
