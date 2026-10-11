@@ -112,6 +112,13 @@ const GROUPS: Array<{ id: string; title: string; items: Source[] }> = [
         note: '出典：気象庁',
       },
       {
+        // 換季時 seed-airports 改用新的 PDF，這裡的網址跟著換成那一季的報道発表
+        name: '国土交通省「国際定期便の概要」',
+        href: 'https://www.mlit.go.jp/report/press/kouku03_hh_000297.html',
+        use: '列入景點的機場（2026年夏期有國際定期航班的機場）',
+        note: '出典：国土交通省',
+      },
+      {
         name: '各地的官方觀光網站',
         href: 'https://www.gotokyo.org/',
         use: '東京、京都、大阪、北海道、福岡、沖繩的景點挑選（名稱、座標與頁面網址）',

@@ -2,7 +2,8 @@ name: seed-pack
 
 # 手動觸發：採集全國一次抓完的資料（擴充包：寶可夢、城、老舖、角色商店；深度探索：地區特色、祭典、季節；鐵路路線；
 # 收集卡的季節照片 seed-season-photos；照片原圖寬高 seed-photo-sizes；收集冊「浮世繪裡的景點」seed-ukiyoe；
-# 市区町村界 seed-municipalities（国土数値情報 N03）與景點所在的區 assign-municipalities（離線）），
+# 市区町村界 seed-municipalities（国土数値情報 N03）與景點所在的區 assign-municipalities（離線）；
+# 有國際定期航班的機場 seed-airports（国土交通省「国際定期便の概要」PDF → data/seed/airports.json 與機場景點）），
 # 結果推到 pipeline/<command>-<run> 分支，檢查後再合併。全國一個 job 依序抓（同一網站，每秒最多一次請求）。
 
 on:
@@ -13,9 +14,13 @@ on:
         required: true
         default: seed-pokefuta
         type: choice
-        options: [seed-pokefuta, seed-pokecen, seed-castles, seed-shinise, seed-chara, seed-specialties, seed-festivals, seed-seasons, seed-rail, seed-official, translate-summaries, prune-spots, seed-season-photos, photo-stats, seed-photos, seed-photo-sizes, photo-review, photo-review-rest, photo-review-sharp, photo-check, ukiyoe-stats, seed-ukiyoe, seed-municipalities, assign-municipalities]
+        options: [seed-pokefuta, seed-pokecen, seed-castles, seed-shinise, seed-chara, seed-specialties, seed-festivals, seed-seasons, seed-rail, seed-official, translate-summaries, prune-spots, seed-season-photos, photo-stats, seed-photos, seed-photo-sizes, photo-review, photo-review-rest, photo-review-sharp, photo-check, ukiyoe-stats, seed-ukiyoe, seed-municipalities, assign-municipalities, seed-airports]
       prefectures:
         description: "都道府縣 slug，空白分隔；空白表示全部（seed-pokecen 不用）。translate-summaries：填數字表示只翻前 N 筆"
+        required: false
+        default: ""
+      url:
+        description: "seed-airports 才用：国土交通省「国際定期便の概要」PDF 的網址；空白用預設的這一季"
         required: false
         default: ""
 
@@ -42,11 +47,12 @@ jobs:
       - name: ${{ inputs.command }}
         env:
           PREFS: ${{ inputs.prefectures }}
+          AIRPORTS_PDF_URL: ${{ inputs.url }}
           # 只有 translate-summaries 用得到（Claude API 翻譯英文簡介）
           ANTHROPIC_API_KEY: ${{ inputs.command == 'translate-summaries' && secrets.ANTHROPIC_API_KEY || '' }}
         run: |
           case "${{ inputs.command }}" in
-            seed-pokecen|seed-seasons|seed-castles|seed-shinise|seed-chara|seed-ukiyoe) args="" ;;
+            seed-pokecen|seed-seasons|seed-castles|seed-shinise|seed-chara|seed-ukiyoe|seed-airports) args="" ;;
             translate-summaries)
               if [ -z "$ANTHROPIC_API_KEY" ]; then
                 echo "::error::請在 Settings → Secrets and variables → Actions 新增 ANTHROPIC_API_KEY"
@@ -69,7 +75,7 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           cat /tmp/report.md >> "$GITHUB_STEP_SUMMARY" || true
           git checkout -b "$branch"
-          for d in data/packs data/specialties data/festivals data/rail data/municipalities data/seed/official data/translations data/flights data/spots data/seasons.json data/ukiyoe.json reports; do if [ -e "$d" ]; then git add "$d"; fi; done
+          for d in data/packs data/specialties data/festivals data/rail data/municipalities data/seed/official data/seed/airports.json data/translations data/flights data/spots data/seasons.json data/ukiyoe.json reports; do if [ -e "$d" ]; then git add "$d"; fi; done
           if git diff --cached --quiet; then
             echo "沒有變更" >> "$GITHUB_STEP_SUMMARY"
             exit 0

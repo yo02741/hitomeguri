@@ -26,7 +26,7 @@ from pipeline.models import (
     Spot,
     StationName,
 )
-from pipeline.paths import REGIONS_JSON, SEED_DIR, SPOTS_DIR
+from pipeline.paths import AIRPORTS_JSON, REGIONS_JSON, SEED_DIR, SPOTS_DIR
 from pipeline.sources import (
     commons,
     crossroadfukuoka,
@@ -88,6 +88,10 @@ class Draft:
     seed_name: str | None = None  # 種子指定的日文名（Wikidata 沒有日文標籤時用）
     seed_override: bool = False  # 種子的名稱優先（同縣同名時用正式名稱，例：川越氷川神社）
     seed_kana: str | None = None
+    # 有國際定期航班的機場（data/seed/airports.json）：不當成非景點排除，類型「機場」
+    airport: bool = False
+    # 其他來源（網址, 取得日期）：機場的「国際定期便の概要」
+    extra_sources: list[tuple[str, str]] = field(default_factory=list)
 
     @property
     def qid(self) -> str | None:
@@ -514,6 +518,33 @@ def apply_seeds(pref: str, drafts: dict[str, Draft]) -> list[str]:
     return unmatched
 
 
+def load_airport_seed(pref: str | None = None) -> tuple[dict[str, str], list[dict[str, Any]]]:
+    """有國際定期航班的機場清單（seed-airports 產生）：(來源, 機場)；指定縣時只回傳那一縣的。"""
+    if not AIRPORTS_JSON.exists():
+        return {}, []
+    data = json.loads(AIRPORTS_JSON.read_text(encoding="utf-8"))
+    items = [a for a in data["airports"] if pref is None or a["prefecture"] == pref]
+    return data["source"], items
+
+
+def apply_airports(pref: str, drafts: dict[str, Draft]) -> list[str]:
+    """清單上的機場加進候選（找不到 Wikidata 項目或沒有座標的回傳名稱）。
+
+    機場本來就當成非景點排除（P31「空港」）；只有清單上的 QID 例外（drop_non_spots）。
+    """
+    source, items = load_airport_seed(pref)
+    missing = []
+    for a in items:
+        d = _pinned_seed(a["wikidata"], a["name_ja"], drafts)
+        if d is None:
+            missing.append(a["name_ja"])
+            continue
+        d.airport = True
+        if source and (source["url"], source["fetched_at"]) not in d.extra_sources:
+            d.extra_sources.append((source["url"], source["fetched_at"]))
+    return missing
+
+
 def _pinned_seed(
     qid: str, name_ja: str, drafts: dict[str, Draft], *, override: bool = False
 ) -> Draft | None:
@@ -586,8 +617,8 @@ def drop_subparts(drafts: dict[str, Draft]) -> int:
         if len(pname) < 4 or parent.key not in drafts:
             continue
         for child in items:
-            # 種子、官方網站、維基觀光地清單列出的是獨立景點，不併入
-            if child is parent or child.key not in drafts or child.tier:
+            # 種子、官方網站、維基觀光地清單列出的是獨立景點，不併入；機場也是
+            if child is parent or child.key not in drafts or child.tier or child.airport:
                 continue
             if child.official or child.listed:
                 continue
@@ -618,6 +649,7 @@ EXCLUDE_P31_SUBSTR = (
     # 人物、物品、園區內遊樂設施、住宿（全國擴展時發現混入精選）
     "人間", "ヒト", "妖怪", "機関車", "航空機", "軍艦", "戦艦", "艦船", "舞楽", "郷土芸能",
     "アトラクション", "コースター", "ダークライド", "ホテル", "印章", "土偶", "出土品", "飛行隊",
+    # 機場：有國際定期航班的（data/seed/airports.json，seed-airports）例外，見 drop_non_spots
     "空港", "飛行場", "港湾", "フェリーターミナル",
     "airport", "aerodrome",
     "human", "yōkai", "locomotive", "aircraft", "battleship", "amusement ride", "roller coaster",
@@ -785,6 +817,8 @@ def drop_non_spots(drafts: dict[str, Draft]) -> list[str]:
     hq = sorted({h for d in drafts.values() if d.ent for h in d.ent.heritage})
     labels_h = wikidata.labels_ja(hq) if hq else {}
     manual = excluded_ids()
+    # 有國際定期航班的機場：清單（data/seed/airports.json）上的 QID 才不排除，其他機場照樣排除
+    airports = {a["wikidata"] for a in load_airport_seed()[1]}
     dropped = []
     for key, d in list(drafts.items()):
         # 只有 OSM、沒有 Wikidata 項目的點大多是遊樂設施、動物舍、店家等（分數也都是 0）；
@@ -798,6 +832,8 @@ def drop_non_spots(drafts: dict[str, Draft]) -> list[str]:
         if f"wd-{d.ent.qid}" in manual:
             dropped.append(d.name_ja or key)
             del drafts[key]
+            continue
+        if d.airport and d.ent.qid in airports:
             continue
         kinds = {labels.get(q, "") for q in d.ent.instance_of} - {""}
         heritage = {labels_h.get(h, "") for h in d.ent.heritage}
@@ -949,6 +985,8 @@ KOFUN_DROP_RE = re.compile(r"(古墳群?|天皇陵|御陵)$")
 
 
 def category(d: Draft) -> str | None:
+    if d.airport:
+        return "機場"
     if KOFUN_RE.search(unicodedata.normalize("NFKC", d.name_ja or "")):
         return "古墳"
     t = d.osm_tags
@@ -1075,6 +1113,8 @@ def to_spot(
         sources.append(Source(url=el.url, fetched_at=today))
     if d.official:
         sources.append(Source(url=d.official.url, fetched_at=today))
+    for url, fetched_at in d.extra_sources:
+        sources.append(Source(url=url, fetched_at=fetched_at))
     img_list = []
     if d.ent and d.ent.image and d.ent.image in images:
         info = images[d.ent.image]
@@ -1196,6 +1236,8 @@ def seed_region(pref: str) -> str:
     today = dt.date.today().isoformat()
     drafts, _ = collect(pref)
     unmatched = apply_seeds(pref, drafts)
+    # 有國際定期航班的機場（seed-airports 的清單）：重採時一樣收錄
+    unmatched += apply_airports(pref, drafts)
     merged = drop_subparts(drafts)
     excluded = drop_non_spots(drafts)
     if excluded:
@@ -1206,7 +1248,7 @@ def seed_region(pref: str) -> str:
     score(drafts)
     ranked = sorted(drafts.values(), key=lambda d: (-d.score, d.key))
     keep = ranked[: config.MAX_SPOTS_PER_PREF]
-    keep += [d for d in ranked[config.MAX_SPOTS_PER_PREF :] if d.tier]
+    keep += [d for d in ranked[config.MAX_SPOTS_PER_PREF :] if d.tier or d.airport]
     featured_keys = pick_featured(keep)
 
     files = [d.ent.image for d in keep if d.ent and d.ent.image]

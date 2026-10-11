@@ -190,6 +190,7 @@ function sourceLabel(url: string): string {
     if (host.includes('openstreetmap')) return 'OpenStreetMap'
     if (host === 'ja.wikipedia.org') return '維基百科（日文）'
     if (host === 'zh.wikipedia.org') return '維基百科（中文）'
+    if (host === 'mlit.go.jp') return '国土交通省'
     return host
   } catch {
     return url

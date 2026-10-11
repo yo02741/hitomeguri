@@ -15,6 +15,7 @@
 - **設計**：`docs/設計質感研究.md` 最後「需要你決定的」（動態規範的例外、收集卡、開場動畫）。
 - **Firestore 規則**：收集卡無限抽與封面 `users/{uid}/cards`（這次加了封面欄位 `c`）、旅人 `users/{uid}/meta/avatar`、抽獎券 `users/{uid}/meta/wallet`（`firestore.rules`，這次加了 wallet），請貼到 Firebase Console 發布；沒發布前抽到的只存在這台裝置。
 - **正式上線前**：`web/src/services/cardVariants.ts` 的 `UNLIMITED_DRAWS` 改成 false，清空 Firestore 的 `users/*/cards`、`users/*/meta/wallet`。
+- **機場**（2026-10-11）：在 Actions 跑 seed-pack 的 `seed-airports`（產出分支 `pipeline/seed-airports-<run>`）。看 Actions 摘要的報告：對到的機場與 PDF 原文（數字是 0 或「－」的表示這季沒有航班，要從 `data/seed/airports.json` 拿掉）、縣的判斷、PDF 裡像機場名稱但沒對到的字串；沒問題就合併 `data/seed/airports.json` 與 `data/spots`。換季（冬期スケジュール發表時）在輸入 `url` 填新的 PDF 網址，`/credits` 的報道発表網址一起換。
 - **直飛航線與英文簡介翻譯**：要用時在 Actions secrets 新增 `ANTHROPIC_API_KEY`（`verify-flights`、`translate-summaries`）。
 
 ## 使用者決定（2026-10-09）
@@ -65,6 +66,7 @@
   - 新幹線站的判斷還不準（seed-rail #75 的資料，`pipeline/rail.py` 另外在修）：新幹線軌道旁的站被當成新幹線站（東京的赤羽、王子、神田、秋葉原、御徒町，埼玉的戸田公園，兵庫的魚住等），名古屋、品川、新神戸、浜松、豊橋反而沒有；東京駅的停靠路線少了東海道新幹線。全國地圖的新幹線站、車站卡片照資料顯示，資料修好重建 bundle 就跟著對。
   - 山形新幹線、秋田新幹線大半跑在在來線的軌道上（OSM 畫在別的線），全國地圖上只看得到一小段。
 - **景點**：只收有 Wikidata 項目的點（攻略種子例外），鄉下地區的景點較少；約一成大點沒有 Commons 照片；有 8 個攻略景點對不上（大須商店街、灘五郷、伊根の舟屋等，見 `docs/PROGRESS.md`）。
+- **機場**：只收国土交通省「国際定期便の概要」列出的、有國際定期客運航班的機場（每季更新；冬夏航班不同時，小機場會在清單上進出）；PDF 的文字由 pypdf 取出，表格格式改了要看報告確認。其他機場照樣不當成景點。
 - **Firestore 用量**：沒有自動檢查（要唯讀服務帳戶）；截圖收藏每張約 1 MB，1 GiB 免費儲存大約一千張。
 
 ## 想法（之後做）

@@ -9,6 +9,7 @@
 | 範圍 | 狀態 | 文件 |
 |---|---|---|
 | 探索（47 縣大點、搜尋、鐵路、類型篩選） | 完成 | PLAN.md §9 Phase 1、6 |
+| 國際機場當成景點（類型「機場」；国土交通省「国際定期便の概要」） | pipeline、前端完成，還沒在 Actions 跑 `seed-airports` | PLAN.md §5.1 |
 | 縣內規劃的資料（市区町村界、車站停靠路線與新幹線、鐵路路網） | pipeline 完成，資料已採集（seed-rail #75、N03） | PLAN.md §4.5、§5.3d、§5.3e |
 | 縣內規劃 2、3：小區塊（地區選單、區界、`?area=`）、車站卡片、全國地圖的新幹線 | 等驗收 | UX-FLOW.md A1c、A2b、B5，DESIGN.md §7.5d、§7.13a |
 | 擴充包（寶可夢、城、老舖・茶屋、角色商店） | 上線，等驗收 | docs/擴充包驗收.md |
@@ -35,6 +36,7 @@
 
 **待辦**：見根目錄 `TODO.md`。
 
+- 國際機場當成景點（2026-10-11，使用者決定：那覇空港這類機場原本被排除）：有國際定期客運航班的機場收成景點，類型「機場」（清單的類型索引多一組「機場」，`web/src/data/categories.ts`），不列入精選。哪些機場算數看国土交通省每季的「国際定期便の概要」PDF（2026年夏期），Wikidata、OSM 的國際機場標記不可靠所以不用（PLAN.md §5.1）。`seed-airports`（`pipeline/airports.py`，seed-pack.yml，輸入 `url` 可換新一季的 PDF）：pypdf 取文字 → 和 Wikidata 的日本機場（IATA 代碼、沒有廢止、有座標與日文名，只有軍用類型的排除）比對日文名、別名、去掉「空港」的地名、通稱與 IATA 代碼（東京、大阪、名古屋、札幌不單獨比對）→ `data/seed/airports.json`（`models.AirportSeed`，`validate-data` 檢查）＋機場景點直接併進 `data/spots/{縣}.json`（名稱、念法、簡介、照片、最近車站與其他景點同一套，來源多一筆 PDF 網址；清單上已經沒有的機場移除）。例外只給清單上的 QID：`major.drop_non_spots`、`curate.wikidata_non_spots`（prune-spots --wikidata）；`seed-region` 重採時用 `major.apply_airports` 把清單上的機場加回來。縣由座標與縣界判斷，在海上、埋立地（長崎、北九州、神戸）時用 Wikidata 所在地，再沒有取最近的縣界（`geo.nearest_prefecture`）。景點卡片的來源顯示「国土交通省」，`/credits` 加一列。測試 `pipeline/tests/test_airports.py`（仿 PDF 文字與 Wikidata 結果的 fixture）。**還沒在 Actions 跑**，`data/` 裡還沒有機場（見 TODO.md）。
 - 縣內規劃 2、3（2026-10-11，使用者決定）：
   - 小區塊（UX-FLOW.md A2b，DESIGN.md §7.5d）：縣地圖畫市区町村界（`--region-sub` 細線）與區名（縮放 8.5～13.5，底圖在縣內的市町村名用 `within` 篩掉不重複），景點清單多「地區」（`AreaPicker.vue`：有景點的區依代碼、件數，政令指定都市的區排在市名底下；桌機在標題下一整列，手機在類型索引列最前面），地圖上點區塊也能選；選了清單只留那一區、地圖移到那一區、外框加粗。網址 `?area=代碼`，選區新增一筆歷史（返回回到上一個區），換縣時不帶過去。`services/areas.ts`（vitest）。地圖出處在縣地圖多国土数値情報，`/credits` 加用途、授權（CC BY 4.0／公共データ利用規約）、出典標示與加工註記。bundle 改了兩點：所属未定地不放、多 `l`（區名位置，`topo.label_point` polylabel）；版本改取輸出內容的雜湊。
   - 車站（UX-FLOW.md B5，DESIGN.md §7.13a）：縣地圖的車站可以點（一般的站縮放 12、新幹線站 9 起，新幹線站畫雙圈），景點、群集一直優先。車站卡片（`StationPanel.vue`，`?station=路網節點 id`）：站名、停靠的路線（路線色、新幹線）、附近的景點（最近車站是這一站的依分數，沒有時 1.5 km 內最近的 5 個），點了打開景點卡片。景點卡片的「最寄駅」是鐵路圖層裡那一站時可以點。`services/stations.ts`（vitest）。

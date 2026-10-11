@@ -15,6 +15,8 @@ export const CATEGORY_GROUPS: CategoryGroup[] = [
   { key: 'coast', label: '島・海岸', tags: ['島', '海灘', '岬'] },
   { key: 'shop', label: '購物・市場', tags: ['購物', '市場', '街區'] },
   { key: 'fun', label: '娛樂', tags: ['主題樂園', '動物園', '水族館'] },
+  // 有國際定期航班的機場（pipeline/airports.py）
+  { key: 'airport', label: '機場', tags: ['機場'] },
   { key: 'other', label: '其他', tags: [] },
 ]
 

@@ -259,6 +259,15 @@ def cmd_seed_chara(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_seed_airports(args: argparse.Namespace) -> int:
+    from pipeline.airports import seed_airports
+
+    # PDF 網址：--url、環境變數 AIRPORTS_PDF_URL（seed-pack.yml 的輸入），都沒有時用預設的這一季
+    url = args.url or os.environ.get("AIRPORTS_PDF_URL") or None
+    _emit(seed_airports(url), args.report)
+    return 0
+
+
 def cmd_seed_ukiyoe(args: argparse.Namespace) -> int:
     from pipeline.ukiyoe import seed_ukiyoe
 
@@ -399,6 +408,16 @@ def main(argv: list[str] | None = None) -> int:
         p.add_argument("prefectures", nargs="*", help="不使用（全國一次抓）")
         p.add_argument("--report")
         p.set_defaults(func=func)
+
+    p = sub.add_parser(
+        "seed-airports",
+        help="有國際定期航班的機場（国土交通省「国際定期便の概要」）→ data/seed/airports.json、"
+        "data/spots/",
+    )
+    p.add_argument("prefectures", nargs="*", help="不使用（全國一次抓）")
+    p.add_argument("--url", help="「国際定期便の概要」PDF 的網址（省略時用預設的這一季）")
+    p.add_argument("--report")
+    p.set_defaults(func=cmd_seed_airports)
 
     p = sub.add_parser("seed-rail", help="鐵路路線圖層：OSM 路線與車站 → data/rail/")
     p.add_argument("prefectures", nargs="*", help="省略時處理全部縣")

@@ -77,8 +77,8 @@ STATION_MAX_COUNT = 2
 DEDUPE_DISTANCE_M = 80
 SUBPART_DISTANCE_M = 500
 
-# 精選的分類上限（其餘分類用預設值）
-FEATURED_CATEGORY_CAP = {"寺院": 8, "神社": 6, "古墳": 2, "城": 4, "": 6}
+# 精選的分類上限（其餘分類用預設值）；機場不列入精選（首頁總覽）
+FEATURED_CATEGORY_CAP = {"寺院": 8, "神社": 6, "古墳": 2, "城": 4, "機場": 0, "": 6}
 FEATURED_CATEGORY_CAP_DEFAULT = 4
 
 # OSM 物件與 Wikidata 任一語言標籤相同時的合併距離（城郭、公園範圍大）

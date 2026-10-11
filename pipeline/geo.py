@@ -184,6 +184,30 @@ def prefecture_at(lat: float, lng: float) -> str | None:
     return None
 
 
+def _segment_km(lat: float, lng: float, a: tuple[float, float], b: tuple[float, float]) -> float:
+    """點到線段的距離（km，等距圓柱投影；幾十公里內夠準）。a、b 是 (經度, 緯度)。"""
+    k = math.cos(math.radians(lat))
+    px, py = lng * k, lat
+    (ax, ay), (bx, by) = (a[0] * k, a[1]), (b[0] * k, b[1])
+    return _perp_dist((px, py), (ax, ay), (bx, by)) * 111.2
+
+
+def nearest_prefecture(lat: float, lng: float, candidates: list[str] | None = None) -> str:
+    """離這個點最近的縣（縣界在內就是 0）。海上、埋立地等不在簡化縣界內的點用。"""
+    polys = _polygons()
+    best, best_d = "", math.inf
+    for pref in candidates or list(polys):
+        for poly in polys[pref]:
+            ring = poly[0]
+            if _contains([poly], lat, lng):
+                return pref
+            for a, b in zip(ring, ring[1:], strict=False):
+                d = _segment_km(lat, lng, a, b)
+                if d < best_d:
+                    best, best_d = pref, d
+    return best
+
+
 def bbox(pref: str, pad: float = 0.02) -> tuple[float, float, float, float]:
     """(south, west, north, east)"""
     xs = [x for poly in _polygons()[pref] for x, _ in poly[0]]
