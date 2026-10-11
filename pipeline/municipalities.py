@@ -288,9 +288,7 @@ def seed_municipalities(prefs: list[str], root: Path = MUNICIPALITIES_DIR) -> st
         log(f"[{pref}] N03…")
         raw, year = n03.download(no)
         shapes, names, skipped = parse_n03(raw, no)
-        data = build_data(
-            pref, shapes, names, kana, f"N03-{year}0101", n03.page_url(year), today
-        )
+        data = build_data(pref, shapes, names, kana, f"N03-{year}0101", n03.page_url(year), today)
         path = write(data, root)
         areas.cache_clear()
         with_kana = sum(1 for f in data.features if f.properties.kana)
@@ -408,14 +406,23 @@ def assign_municipalities(
 # ---------- web bundle ----------
 
 
-def web_bundle(data: MunicipalityData) -> dict[str, Any]:
-    """前端用：再簡化一次（約 80 m、小數 4 位）。
+UNASSIGNED = "所属未定地"
 
-    properties：m 代碼、n 名稱、h 念法、c 政令指定都市名。feature id 是數字
-    （MapLibre 的 feature-state 要數字）。"""
+
+def unassigned(code: str, name: str) -> bool:
+    """所属未定地（埋立地など、どの市区町村にも属さない）：代碼是縣本身（第 3–5 碼 000）。"""
+    return name == UNASSIGNED or code[2:5] == "000"
+
+
+def web_bundle(data: MunicipalityData) -> dict[str, Any]:
+    """前端用：再簡化一次（約 80 m、小數 4 位）；所属未定地不放（地圖不畫、不能選）。
+
+    properties：m 代碼、n 名稱、h 念法、c 政令指定都市名、l 區名的位置 [經度, 緯度]
+    （面積最大的那一塊裡離邊界最遠的點）。feature id 是數字（MapLibre 的 feature-state 要數字）。"""
     shapes = {
         f.id: [[[(p[0], p[1]) for p in ring] for ring in poly] for poly in f.geometry.coordinates]
         for f in data.features
+        if not unassigned(f.id, f.properties.name)
     }
     simplified, _ = topo.simplify_to_budget(
         topo.build(shapes), WEB_TOL, WEB_BUDGET, WEB_DIGITS, WEB_MIN_AREA
@@ -426,7 +433,13 @@ def web_bundle(data: MunicipalityData) -> dict[str, Any]:
         if not mp:
             continue
         p = f.properties
-        props = {k: v for k, v in {"m": f.id, "n": p.name, "h": p.kana, "c": p.city}.items() if v}
+        lng, lat = topo.label_point(mp)
+        label = [round(lng, WEB_DIGITS), round(lat, WEB_DIGITS)]
+        props = {
+            k: v
+            for k, v in {"m": f.id, "n": p.name, "h": p.kana, "c": p.city, "l": label}.items()
+            if v
+        }
         coords = [[[list(pt) for pt in ring] for ring in poly] for poly in mp]
         features.append({
             "type": "Feature", "id": int(f.id), "properties": props,

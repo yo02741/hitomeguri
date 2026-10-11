@@ -211,8 +211,9 @@
 - `bundles/detail/{prefecture}.json`：完整景點資料（點 marker 時載入該區的 detail 檔，可 cache）。
 - `bundles/specialties/{prefecture}.json`：地區特色一縣一檔（深度探索、旅前準備只載入用到的縣；版本在 `_index.json` 的 `specialties`）。全國一個檔的 `bundles/specialties.json` 暫時照寫，給還沒更新的舊版前端用。
 - `bundles/timed/current.json`（只含尚未過期的）、`bundles/phrases.json`。
-- `bundles/municipalities/{prefecture}.json`：市区町村界（再簡化到約 80 m、一縣 200 KB 以內的 GeoJSON；feature id 是代碼的數字，properties：`m` 代碼、`n` 名稱、`h` 念法、`c` 政令指定都市名）；版本在 `_index.json` 的 `municipalities`。map bundle 的景點多 `m`（代碼）與 `st`（最近車站的路網節點 id）。
+- `bundles/municipalities/{prefecture}.json`：市区町村界（再簡化到約 80 m、一縣 200 KB 以內的 GeoJSON；feature id 是代碼的數字，properties：`m` 代碼、`n` 名稱、`h` 念法、`c` 政令指定都市名、`l` 區名的位置 [經度, 緯度]（面積最大的那一塊裡離邊界最遠的點，polylabel）；所属未定地不放）；版本在 `_index.json` 的 `municipalities`（取輸出內容的雜湊）。map bundle 的景點多 `m`（代碼）與 `st`（最近車站的路網節點 id）。
 - `bundles/rail/{prefecture}.json`：路線多 `s`（新幹線）；車站多 `id`（路網節點）、`l`（停靠路線在 `lines` 的 index）、`s`。
+- `bundles/shinkansen.json`：全國地圖的新幹線（`build_shinkansen`；`models.ShinkansenBundle`）：各縣 `shinkansen` 的路線依 OSM relation id 合併，碎段接成長折線再簡化（約 150 m、小數 4 位），`lines`（`n`、`g`）；新幹線站依路網節點去重，`stations`（`id`、`n`、`e`、`lat`、`lng`、`p` 縣）。名稱有「実験線」的（山梨リニア実験線）不放。約 46 KB（gzip 15 KB）；版本在 `_index.json` 的 `shinkansen`。
 - `bundles/rail-graph.json`：全國車站路網（§4.5），版本在 `_index.json` 的 `rail_graph`。
 
 **FlightRoute**（`data/flights/taiwan_direct.json`）

@@ -5,7 +5,8 @@ import 'maplibre-gl/dist/maplibre-gl.css'
 import { computed, nextTick, onBeforeUnmount, onMounted, ref, shallowRef, watch } from 'vue'
 import { useRouter } from 'vue-router'
 
-import { JAPAN_CENTER, JAPAN_ZOOM, MAP_ATTRIBUTION, MAP_STYLE_URL } from '../map/style'
+import { JAPAN_CENTER, JAPAN_ZOOM, MAP_ATTRIBUTION, MAP_STYLE_URL, N03_ATTRIBUTION } from '../map/style'
+import { type Area, areaAt } from '../services/areas'
 import { mapThumbFallback, mapThumbUrl, type MapSpot } from '../services/bundles'
 import { type FocusArea, inRing, outsideOf } from '../services/geo'
 import { splashCovering, trackSplash } from '../services/splash'
@@ -40,8 +41,18 @@ const props = defineProps<{
   pack?: { color: string; points: PackPoint[] } | null
   /** 不是景點的地點（深度探索的祭典）：一個帶名稱的標記 */
   pin?: { lng: number; lat: number; label: string } | null
-  /** 鐵路圖層：路線（官方路線色）與車站；null 為關閉 */
+  /** 鐵路圖層：路線（官方路線色）與車站（properties：id 路網節點、n、s 新幹線）；null 為關閉 */
   rail?: { lines: GeoJSON.FeatureCollection; stations: GeoJSON.FeatureCollection } | null
+  /** 選中的車站（路網節點 id）：外圈 */
+  stationId?: string | null
+  /** 全國地圖的新幹線：路線與車站（properties：id、n、p 縣）；縣地圖由 rail 畫，這裡給 null */
+  shinkansen?: { lines: GeoJSON.FeatureCollection; stations: GeoJSON.FeatureCollection } | null
+  /** 縣內的區（市区町村界，UX-FLOW.md A2b）：細線＋區名，點了選取（emit area）；null 為不畫 */
+  areas?: Area[] | null
+  /** 選中的區（代碼）：外框加粗、底色 */
+  area?: string | null
+  /** 定位（bounds）時最多放大到這個縮放；不給時 12。小的區（中央区）要近一點 */
+  fitMaxZoom?: number
   /** 使用者的收藏、去過（景點 id → 狀態）：收藏畫外圈，去過在右上疊印章色小圓點 */
   marked?: Record<string, { favorite?: boolean; visited?: boolean }> | null
   /** 行程某一天的順序連線（依停留點順序的座標） */
@@ -71,6 +82,10 @@ const emit = defineEmits<{
   select: [id: string]
   moveend: [view: MapView]
   'close-pin': []
+  /** 點了車站（全國地圖的新幹線站帶縣） */
+  station: [id: string, pref: string | null]
+  /** 點了區塊（不是點到景點、群集、車站的時候） */
+  area: [code: string]
 }>()
 
 const container = ref<HTMLDivElement | null>(null)
@@ -89,6 +104,18 @@ const FOCUS_MASK = 'focus-mask'
 const MASK_OPACITY: maplibregl.ExpressionSpecification = ['interpolate', ['linear'], ['zoom'], 8, 0.5, 12, 0.7]
 const RAIL_SOURCE = 'rail'
 const STATION_SOURCE = 'rail-stations'
+// 縣內的區：區界（細線、選中的外框與底色）、區名（另一個點的來源，一區一個名稱）
+const AREA_SOURCE = 'areas'
+const AREA_LABEL_SOURCE = 'area-labels'
+// 全國地圖的新幹線
+const SK_SOURCE = 'shinkansen'
+const SK_STATION_SOURCE = 'shinkansen-stations'
+// 車站的命中半徑（px）：景點優先，沒有點到景點、群集時才看車站
+const STATION_HIT = 14
+// 區名：放大到這裡才出現，再放大（景點散開、底圖細節多）時淡掉
+const AREA_LABEL_MIN = 8.5
+const AREA_LABEL_MAX = 13.5
+const AREA_LABEL_FADE: maplibregl.ExpressionSpecification = ['interpolate', ['linear'], ['zoom'], 12.5, 1, AREA_LABEL_MAX, 0]
 const ROUTE_SOURCE = 'route'
 const ROUTE_HEAD_SOURCE = 'route-head'
 const EMPTY: GeoJSON.FeatureCollection = { type: 'FeatureCollection', features: [] }
@@ -162,6 +189,34 @@ function outlineData(f: GeoJSON.Feature | null | undefined): GeoJSON.FeatureColl
 function maskData(): GeoJSON.FeatureCollection {
   return outlineData(props.focus && props.outline ? outsideOf(props.outline) : null)
 }
+
+/** 區界：feature id 是代碼的數字；properties m 代碼 */
+function areaShapes(): GeoJSON.FeatureCollection {
+  return {
+    type: 'FeatureCollection',
+    features: (props.areas ?? []).map((a) => ({
+      type: 'Feature',
+      id: Number(a.code),
+      properties: { m: a.code },
+      geometry: { type: 'MultiPolygon', coordinates: a.polygons },
+    })),
+  }
+}
+/** 區名：一區一個點（面積最大的那一塊裡離邊界最遠的地方） */
+function areaLabels(): GeoJSON.FeatureCollection {
+  return {
+    type: 'FeatureCollection',
+    features: (props.areas ?? []).map((a) => ({
+      type: 'Feature',
+      properties: { m: a.code, n: a.name },
+      geometry: { type: 'Point', coordinates: a.label },
+    })),
+  }
+}
+const byArea = (code: string | null | undefined): maplibregl.FilterSpecification => ['==', ['get', 'm'], code ?? '']
+const byStation = (id: string | null | undefined): maplibregl.FilterSpecification => ['==', ['get', 'id'], id ?? '']
+const isShinkansen: maplibregl.FilterSpecification = ['==', ['get', 's'], 1]
+const notShinkansen: maplibregl.FilterSpecification = ['!=', ['get', 's'], 1]
 // 開啟擴充包時景點的不透明度
 const DIM = 0.3
 // hover 命中半徑（px）：游標靠近就放大，不必精準對到小圓點
@@ -183,6 +238,19 @@ interface Hover {
 }
 const hover = shallowRef<Hover | null>(null)
 const failedThumbs = new Set<string>()
+// 游標下的車站（沒有指到景點時）：名稱小標
+interface StationHit {
+  id: string
+  name: string
+  pref: string | null
+  lng: number
+  lat: number
+  x: number
+  y: number
+}
+const stationHover = shallowRef<StationHit | null>(null)
+// 游標下的區（桌機）：淡淡的底色
+let areaHover: string | null = null
 
 // 景點在可見範圍外（或被左上浮動面板蓋住）時，改在可見範圍邊緣畫一個指向它的箭頭
 // 箭頭與名稱一起置中在這個內縮線上，留足空間不被裁掉
@@ -349,14 +417,34 @@ function applyColors() {
   map.setPaintProperty('outline-fill', 'fill-color', token('--region-base'))
   map.setPaintProperty(FOCUS_MASK, 'fill-color', paper)
   const rail = token('--color-map-rail')
+  const sub = token('--region-sub')
+  map.setPaintProperty('area-hover', 'fill-color', strong)
+  map.setPaintProperty('area-selected', 'fill-color', strong)
+  map.setPaintProperty('area-line', 'line-color', sub)
+  map.setPaintProperty('area-selected-line', 'line-color', strong)
+  map.setPaintProperty('area-labels', 'text-halo-color', paper)
+  areaLabelColor()
+  map.setPaintProperty('sk-casing', 'line-color', paper)
+  map.setPaintProperty('sk-line', 'line-color', sub)
+  map.setPaintProperty('sk-stations', 'circle-color', paper)
+  map.setPaintProperty('sk-stations', 'circle-stroke-color', ink)
+  map.setPaintProperty('sk-station-labels', 'text-color', ink)
+  map.setPaintProperty('sk-station-labels', 'text-halo-color', paper)
   map.setPaintProperty('rail-casing', 'line-color', paper)
-  map.setPaintProperty('rail-line', 'line-color', ['coalesce', ['get', 'c'], rail])
+  // 新幹線（OSM 沒有路線色）用比一般鐵路深的 sub，其餘用官方路線色，沒有就用地圖的鐵路色
+  map.setPaintProperty('rail-line', 'line-color', ['case', ['==', ['get', 's'], 1], ['coalesce', ['get', 'c'], sub], ['coalesce', ['get', 'c'], rail]])
   map.setPaintProperty('rail-labels', 'text-color', ink)
   map.setPaintProperty('rail-labels', 'text-halo-color', paper)
   map.setPaintProperty('rail-stations', 'circle-color', paper)
   map.setPaintProperty('rail-stations', 'circle-stroke-color', ink)
   map.setPaintProperty('rail-station-labels', 'text-color', ink)
   map.setPaintProperty('rail-station-labels', 'text-halo-color', paper)
+  map.setPaintProperty('rail-stations-sk', 'circle-color', paper)
+  map.setPaintProperty('rail-stations-sk', 'circle-stroke-color', ink)
+  map.setPaintProperty('rail-stations-sk-dot', 'circle-color', ink)
+  map.setPaintProperty('rail-station-labels-sk', 'text-color', ink)
+  map.setPaintProperty('rail-station-labels-sk', 'text-halo-color', paper)
+  map.setPaintProperty('station-selected', 'circle-stroke-color', strong)
   map.setPaintProperty('outline-line', 'line-color', strong)
   map.setPaintProperty('route-line', 'line-color', strong)
   map.setPaintProperty('route-head', 'circle-color', strong)
@@ -383,6 +471,33 @@ function applyColors() {
   }
 }
 
+// 底圖的市町村名（OpenFreeMap Positron 的 label_city 等）：畫了區名的縣裡面不畫，同一個名字才不會出現兩次
+// （「Setagaya 世田谷区」和「世田谷区」）。縣外照舊；政令指定都市的區在底圖是 suburb（label_other 裡）
+const BASE_PLACE_LAYERS = ['label_city', 'label_city_capital', 'label_town', 'label_village', 'label_other']
+const baseFilters = new Map<string, maplibregl.FilterSpecification | undefined>()
+function syncBaseLabels() {
+  if (!map || !ready) return
+  const shape = props.areas?.length && props.outline ? props.outline : null
+  for (const id of BASE_PLACE_LAYERS) {
+    if (!map.getLayer(id)) continue
+    if (!baseFilters.has(id)) baseFilters.set(id, map.getFilter(id) ?? undefined)
+    const base = baseFilters.get(id)
+    if (!shape) {
+      map.setFilter(id, base ?? null)
+      continue
+    }
+    const inside: maplibregl.ExpressionSpecification = ['within', shape as unknown as GeoJSON.Feature<GeoJSON.MultiPolygon>]
+    const hide: maplibregl.ExpressionSpecification = id === 'label_other' ? ['all', ['==', ['get', 'class'], 'suburb'], inside] : inside
+    map.setFilter(id, base ? ['all', base as maplibregl.ExpressionSpecification, ['!', hide]] : ['!', hide])
+  }
+}
+
+/** 區名：選中的區用墨色，其餘用 sub */
+function areaLabelColor() {
+  if (!map || !ready) return
+  map.setPaintProperty('area-labels', 'text-color', ['case', ['==', ['get', 'm'], props.area ?? ''], token('--region-ink'), token('--region-sub')])
+}
+
 function addLayers() {
   if (!map) return
   // 專心模式的縣外變淡：底圖第一個文字圖層之下（陸地、水面、道路變淡，地名不變）
@@ -397,6 +512,23 @@ function addLayers() {
     source: OUTLINE_SOURCE,
     paint: { 'fill-opacity': 0.14 },
   })
+  // 縣內的區（UX-FLOW.md A2b）：游標下、選中的區淡淡的底色，區界細線；縣界（虛線）蓋在區界上面
+  map.addSource(AREA_SOURCE, { type: 'geojson', data: areaShapes() })
+  map.addSource(AREA_LABEL_SOURCE, { type: 'geojson', data: areaLabels() })
+  // 底色是 strong 的一點點（地區色的 tint 和地圖的陸地幾乎同色，看不出來）
+  map.addLayer({ id: 'area-hover', type: 'fill', source: AREA_SOURCE, filter: byArea(null), paint: { 'fill-opacity': 0.05 } })
+  map.addLayer({ id: 'area-selected', type: 'fill', source: AREA_SOURCE, filter: byArea(props.area), paint: { 'fill-opacity': 0.08 } })
+  // 區界：sub 的細線，比縣界（strong 虛線）淡；地圖的 line 色和陸地太接近，縣的全圖上看不出來
+  map.addLayer({
+    id: 'area-line',
+    type: 'line',
+    source: AREA_SOURCE,
+    layout: { 'line-join': 'round' },
+    paint: {
+      'line-width': ['interpolate', ['linear'], ['zoom'], 7, 0.6, 10, 0.9, 14, 1.5],
+      'line-opacity': ['interpolate', ['linear'], ['zoom'], 7, 0.35, 10, 0.45, 14, 0.55],
+    },
+  })
   map.addLayer({
     id: 'outline-line',
     type: 'line',
@@ -408,6 +540,31 @@ function addLayers() {
       // 縣界是簡化過的線（約 400 m 精度），拉很近時和海岸線對不齊：淡出
       'line-opacity': ['interpolate', ['linear'], ['zoom'], 11, 0.9, 13, 0.35],
     },
+  })
+  map.addLayer({
+    id: 'area-selected-line',
+    type: 'line',
+    source: AREA_SOURCE,
+    filter: byArea(props.area),
+    layout: { 'line-join': 'round' },
+    paint: { 'line-width': ['interpolate', ['linear'], ['zoom'], 8, 2, 12, 3] },
+  })
+  // 全國地圖的新幹線：細細的一條（縣地圖由 rail 畫）
+  map.addSource(SK_SOURCE, { type: 'geojson', data: props.shinkansen?.lines ?? EMPTY })
+  map.addSource(SK_STATION_SOURCE, { type: 'geojson', data: props.shinkansen?.stations ?? EMPTY })
+  map.addLayer({
+    id: 'sk-casing',
+    type: 'line',
+    source: SK_SOURCE,
+    layout: { 'line-join': 'round', 'line-cap': 'round' },
+    paint: { 'line-width': ['interpolate', ['linear'], ['zoom'], 4, 2.2, 8, 4] },
+  })
+  map.addLayer({
+    id: 'sk-line',
+    type: 'line',
+    source: SK_SOURCE,
+    layout: { 'line-join': 'round', 'line-cap': 'round' },
+    paint: { 'line-width': ['interpolate', ['linear'], ['zoom'], 4, 1, 8, 2] },
   })
   // 鐵路：縣界之上、景點之下。路線用資料裡的官方路線色，沒有就用地圖的鐵路色
   map.addSource(RAIL_SOURCE, { type: 'geojson', data: props.rail?.lines ?? EMPTY })
@@ -424,7 +581,19 @@ function addLayers() {
     type: 'line',
     source: RAIL_SOURCE,
     layout: { 'line-join': 'round', 'line-cap': 'round' },
-    paint: { 'line-width': ['interpolate', ['linear'], ['zoom'], 8, 1.2, 12, 3, 16, 6] },
+    paint: {
+      'line-width': [
+        'interpolate',
+        ['linear'],
+        ['zoom'],
+        8,
+        ['case', ['==', ['get', 's'], 1], 1.8, 1.2],
+        12,
+        ['case', ['==', ['get', 's'], 1], 4, 3],
+        16,
+        ['case', ['==', ['get', 's'], 1], 7, 6],
+      ],
+    },
   })
   map.addLayer({
     id: 'rail-labels',
@@ -441,14 +610,64 @@ function addLayers() {
     },
     paint: { 'text-halo-width': 1.5 },
   })
+  // 區名：鐵路線上面、車站下面（車站名稱優先，擠不下時區名先讓）
+  map.addLayer({
+    id: 'area-labels',
+    type: 'symbol',
+    source: AREA_LABEL_SOURCE,
+    minzoom: AREA_LABEL_MIN,
+    // 淡掉之後也不佔位置（透明的標籤照樣會擋掉底圖的地名）
+    maxzoom: AREA_LABEL_MAX,
+    layout: {
+      'text-field': ['get', 'n'],
+      'text-font': FONT_REGULAR,
+      'text-size': ['interpolate', ['linear'], ['zoom'], 9, 11, 12, 13],
+      'text-letter-spacing': 0.15,
+      'text-padding': 6,
+      'text-optional': true,
+    },
+    paint: { 'text-halo-width': 1.5, 'text-opacity': AREA_LABEL_FADE },
+  })
+  // 車站：一般的站縮放 12 起（白底墨框的小圓），新幹線站 9 起（雙圈），名稱各晚一級出現
   map.addLayer({
     id: 'rail-stations',
     type: 'circle',
     source: STATION_SOURCE,
     minzoom: 12,
+    filter: notShinkansen,
     paint: {
       'circle-radius': ['interpolate', ['linear'], ['zoom'], 12, 2.5, 16, 5],
       'circle-stroke-width': 1.5,
+    },
+  })
+  map.addLayer({
+    id: 'rail-stations-sk',
+    type: 'circle',
+    source: STATION_SOURCE,
+    minzoom: 9,
+    filter: isShinkansen,
+    paint: {
+      'circle-radius': ['interpolate', ['linear'], ['zoom'], 9, 4.5, 12, 6, 16, 8.5],
+      'circle-stroke-width': 2,
+    },
+  })
+  map.addLayer({
+    id: 'rail-stations-sk-dot',
+    type: 'circle',
+    source: STATION_SOURCE,
+    minzoom: 9,
+    filter: isShinkansen,
+    paint: { 'circle-radius': ['interpolate', ['linear'], ['zoom'], 9, 1.6, 12, 2.2, 16, 3.2] },
+  })
+  map.addLayer({
+    id: 'station-selected',
+    type: 'circle',
+    source: STATION_SOURCE,
+    filter: byStation(props.stationId),
+    paint: {
+      'circle-radius': ['interpolate', ['linear'], ['zoom'], 9, 8, 12, 9.5, 16, 12],
+      'circle-opacity': 0,
+      'circle-stroke-width': 3,
     },
   })
   map.addLayer({
@@ -456,11 +675,54 @@ function addLayers() {
     type: 'symbol',
     source: STATION_SOURCE,
     minzoom: 13,
+    filter: notShinkansen,
     layout: {
       'text-field': ['get', 'n'],
       'text-font': FONT_REGULAR,
       'text-size': 11,
       'text-offset': [0, 0.8],
+      'text-anchor': 'top',
+      'text-optional': true,
+    },
+    paint: { 'text-halo-width': 1.5 },
+  })
+  map.addLayer({
+    id: 'rail-station-labels-sk',
+    type: 'symbol',
+    source: STATION_SOURCE,
+    minzoom: 10,
+    filter: isShinkansen,
+    layout: {
+      'text-field': ['get', 'n'],
+      'text-font': FONT_BOLD,
+      'text-size': 12,
+      'text-offset': [0, 0.95],
+      'text-anchor': 'top',
+      'text-optional': true,
+    },
+    paint: { 'text-halo-width': 1.5 },
+  })
+  // 全國地圖的新幹線站：縮放 5.5 起小圓點，名稱 6.5 起
+  map.addLayer({
+    id: 'sk-stations',
+    type: 'circle',
+    source: SK_STATION_SOURCE,
+    minzoom: 5.5,
+    paint: {
+      'circle-radius': ['interpolate', ['linear'], ['zoom'], 5.5, 2, 8, 3.5],
+      'circle-stroke-width': 1.25,
+    },
+  })
+  map.addLayer({
+    id: 'sk-station-labels',
+    type: 'symbol',
+    source: SK_STATION_SOURCE,
+    minzoom: 6.5,
+    layout: {
+      'text-field': ['get', 'n'],
+      'text-font': FONT_REGULAR,
+      'text-size': 11,
+      'text-offset': [0, 0.7],
       'text-anchor': 'top',
       'text-optional': true,
     },
@@ -638,6 +900,7 @@ function addLayers() {
 
   // 點選：以 hover 中的景點為準（命中範圍比圓點大）
   // 觸控沒有 hover：直接找點擊位置附近的景點
+  // 依序：景點 → 群集 → 車站 → 區塊（景點一直是最優先的點擊目標）
   map.on('click', (e) => {
     const hit = hover.value ?? nearestSpot(e.point)
     if (hit) {
@@ -645,10 +908,24 @@ function addLayers() {
       return
     }
     const f = map?.queryRenderedFeatures(e.point, { layers: ['pack-clusters', 'clusters'] })[0]
-    if (f) void expandCluster(f)
+    if (f) {
+      void expandCluster(f)
+      return
+    }
+    const st = nearestStation(e.point)
+    if (st) {
+      emit('station', st.id, st.pref)
+      return
+    }
+    const a = props.areas?.length ? areaAt(props.areas, e.lngLat.lng, e.lngLat.lat) : null
+    if (a && a.code !== props.area) emit('area', a.code)
   })
   map.on('mousemove', (e) => updateHover(e.point))
-  map.on('mouseout', () => setHover(null))
+  map.on('mouseout', () => {
+    setHover(null)
+    setStationHover(null)
+    setAreaHover(null)
+  })
   map.on('move', positionHover)
   map.on('idle', syncPhotos)
   for (const layer of ['clusters', 'pack-clusters']) {
@@ -683,7 +960,53 @@ function updateHover(pt: { x: number; y: number }) {
   const cur = hover.value
   const keep = cur?.thumb ? PHOTO_SIZE / 2 : HOVER_HIT
   if (cur && Math.hypot(cur.x - pt.x, cur.y - pt.y) <= keep) return
-  setHover(nearestSpot(pt))
+  const spot = nearestSpot(pt)
+  setHover(spot)
+  // 沒有指到景點：看車站，再看區塊（區塊只上底色，游標不變）
+  const st = spot ? null : nearestStation(pt)
+  setStationHover(st)
+  if (st) map.getCanvas().style.cursor = 'pointer'
+  const lngLat = map.unproject([pt.x, pt.y])
+  setAreaHover(spot || st || !props.areas?.length ? null : (areaAt(props.areas, lngLat.lng, lngLat.lat)?.code ?? null))
+}
+
+function setStationHover(st: StationHit | null) {
+  if (stationHover.value?.id === st?.id) return
+  stationHover.value = st
+  if (!st && map && !hover.value) map.getCanvas().style.cursor = ''
+}
+
+function setAreaHover(code: string | null) {
+  if (!map || !ready || code === areaHover) return
+  areaHover = code
+  // 選中的區已經有底色
+  map.setFilter('area-hover', byArea(code === props.area ? null : code))
+}
+
+/** 點擊、游標位置附近最近的車站（只算畫出來的：一般的站縮放 12、新幹線站 9、全國的新幹線站 5.5 起） */
+function nearestStation(pt: { x: number; y: number }): StationHit | null {
+  if (!map) return null
+  const layers = ['rail-stations', 'rail-stations-sk', 'sk-stations'].filter((l) => map?.getLayer(l))
+  const feats = map.queryRenderedFeatures(
+    [
+      [pt.x - STATION_HIT, pt.y - STATION_HIT],
+      [pt.x + STATION_HIT, pt.y + STATION_HIT],
+    ],
+    { layers },
+  )
+  let best: StationHit | null = null
+  let bestD = Infinity
+  for (const f of feats) {
+    const fp = f.properties as { id?: string; n?: string; p?: string }
+    if (!fp.id) continue
+    const [lng, lat] = (f.geometry as GeoJSON.Point).coordinates as [number, number]
+    const p = map.project([lng, lat])
+    const d = Math.hypot(p.x - pt.x, p.y - pt.y)
+    if (d > STATION_HIT || d >= bestD) continue
+    bestD = d
+    best = { id: fp.id, name: fp.n ?? '', pref: fp.p ?? null, lng, lat, x: p.x, y: p.y }
+  }
+  return best
 }
 
 /** 游標／點擊位置附近最近的景點；照片模式下整張圓形照片都算命中 */
@@ -885,6 +1208,11 @@ function decoratePhoto(el: HTMLElement, id: string) {
 }
 
 function positionHover() {
+  const st = stationHover.value
+  if (map && st) {
+    const p = map.project([st.lng, st.lat])
+    stationHover.value = { ...st, x: p.x, y: p.y }
+  }
   const h = hover.value
   if (!map || !h) return
   const p = map.project([h.lng, h.lat])
@@ -1106,6 +1434,21 @@ function onAttribClick(e: MouseEvent) {
   void router.push({ name: 'credits' })
 }
 
+// 出處（DESIGN.md §8）：© OpenStreetMap | © OpenMapTiles | 資料來源；畫了區界（縣地圖）時在「資料來源」前面加国土数値情報。
+// 自己建 AttributionControl 才改得了內容（customAttribution 寫成一個字串，MapLibre 會把多筆出處依長短重排）
+let attrib: maplibregl.AttributionControl | null = null
+function attributionText(withAreas: boolean): string {
+  const credits = `<a href="${router.resolve({ name: 'credits' }).href}" data-credits>資料來源</a>`
+  return [...MAP_ATTRIBUTION, ...(withAreas ? [N03_ATTRIBUTION] : []), credits].join(' | ')
+}
+function syncAttribution() {
+  if (!attrib) return
+  const text = attributionText(Boolean(props.areas?.length))
+  if (attrib.options.customAttribution === text) return
+  attrib.options.customAttribution = text
+  attrib._updateAttributions()
+}
+
 onMounted(() => {
   if (!container.value) return
   map = new maplibregl.Map({
@@ -1120,14 +1463,11 @@ onMounted(() => {
       'CooperativeGesturesHandler.MacHelpText': '⌘＋滾輪縮放地圖',
       'CooperativeGesturesHandler.MobileHelpText': '兩指移動地圖',
     },
-    // 出處（DESIGN.md §8）：© OpenStreetMap © OpenMapTiles 與「資料來源」（/credits）。
-    // 一開始只留 ⓘ，點了才展開（MapLibre 的 compact 一開始是展開的，會蓋住小地圖的下緣）
-    attributionControl: {
-      compact: true,
-      // 一個字串：MapLibre 會把多筆出處依長短重排，寫成一筆才能固定「© OpenStreetMap | © OpenMapTiles | 資料來源」的順序
-      customAttribution: [...MAP_ATTRIBUTION, `<a href="${router.resolve({ name: 'credits' }).href}" data-credits>資料來源</a>`].join(' | '),
-    },
+    // 出處另外加（attrib）：一開始只留 ⓘ，點了才展開（MapLibre 的 compact 一開始是展開的，會蓋住小地圖的下緣）
+    attributionControl: false,
   })
+  attrib = new maplibregl.AttributionControl({ compact: true, customAttribution: attributionText(Boolean(props.areas?.length)) })
+  map.addControl(attrib, 'bottom-right')
   // 底圖 style 各 source 自帶的出處（OpenFreeMap © OpenMapTiles Data from OpenStreetMap）拿掉，只留上面那一行
   map.setStyle(MAP_STYLE_URL, {
     transformStyle: (_prev, next) => ({
@@ -1153,6 +1493,7 @@ onMounted(() => {
     ready = true
     applyColors()
     applyDim()
+    syncBaseLabels()
     syncPin()
     if (props.focus) map?.setTransformConstrain(constrainFocus)
     if (props.bounds) fit(props.bounds, false)
@@ -1186,6 +1527,7 @@ onBeforeUnmount(() => {
   photoPins.clear()
   pulse = null
   pinMarker = null
+  attrib = null
   map?.remove()
   map = null
   ready = false
@@ -1205,7 +1547,7 @@ function fit(b: [number, number, number, number], animate = true) {
   moveFreely((m) =>
     m.fitBounds(bounds, {
       padding: { top: pad + top, bottom: pad + bottom, right: pad, left: pad + left },
-      maxZoom: 12,
+      maxZoom: props.fitMaxZoom ?? 12,
       animate,
       duration: animate ? 900 : 0,
     }),
@@ -1257,6 +1599,7 @@ watch(
   (f) => {
     if (!map || !ready) return
     ;(map.getSource(OUTLINE_SOURCE) as GeoJSONSource | undefined)?.setData(outlineData(f))
+    syncBaseLabels()
   },
 )
 
@@ -1286,6 +1629,47 @@ watch(
     if (!map || !ready) return
     ;(map.getSource(RAIL_SOURCE) as GeoJSONSource | undefined)?.setData(rail?.lines ?? EMPTY)
     ;(map.getSource(STATION_SOURCE) as GeoJSONSource | undefined)?.setData(rail?.stations ?? EMPTY)
+  },
+)
+
+watch(
+  () => props.shinkansen,
+  (sk) => {
+    if (!map || !ready) return
+    ;(map.getSource(SK_SOURCE) as GeoJSONSource | undefined)?.setData(sk?.lines ?? EMPTY)
+    ;(map.getSource(SK_STATION_SOURCE) as GeoJSONSource | undefined)?.setData(sk?.stations ?? EMPTY)
+  },
+)
+
+watch(
+  () => props.stationId,
+  (id) => {
+    if (map && ready) map.setFilter('station-selected', byStation(id))
+  },
+)
+
+watch(
+  () => props.areas,
+  () => {
+    syncAttribution()
+    if (!map || !ready) return
+    ;(map.getSource(AREA_SOURCE) as GeoJSONSource | undefined)?.setData(areaShapes())
+    ;(map.getSource(AREA_LABEL_SOURCE) as GeoJSONSource | undefined)?.setData(areaLabels())
+    setAreaHover(null)
+    syncBaseLabels()
+  },
+)
+
+watch(
+  () => props.area,
+  (code) => {
+    if (!map || !ready) return
+    map.setFilter('area-selected', byArea(code))
+    map.setFilter('area-selected-line', byArea(code))
+    const hovered = areaHover
+    areaHover = null
+    setAreaHover(hovered)
+    areaLabelColor()
   },
 )
 
@@ -1369,6 +1753,14 @@ defineExpose({
         :style="locatorStyle"
       />
     </Transition>
+    <!-- 游標下的車站：名稱小標（縮放 13 以下地圖上沒有站名） -->
+    <span
+      v-if="stationHover && !hover"
+      lang="ja"
+      class="pointer-events-none absolute z-[1] -translate-x-1/2 translate-y-3 rounded-tag bg-paper px-1.5 text-body-sm font-bold whitespace-nowrap text-ink shadow-marker"
+      :style="{ left: `${stationHover.x}px`, top: `${stationHover.y}px` }"
+      aria-hidden="true"
+    >{{ stationHover.name }}</span>
     <div
       v-if="hover && edge"
       class="pointer-events-none absolute z-[1] flex -translate-x-1/2 -translate-y-1/2 items-center gap-1.5"

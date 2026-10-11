@@ -8,6 +8,7 @@ from pathlib import Path
 import pytest
 
 from pipeline import municipalities as mu
+from pipeline import topo
 from pipeline.models import MunicipalityData
 
 FIXTURES = Path(__file__).parent / "fixtures"
@@ -132,11 +133,16 @@ def test_build_data_keeps_topology_sources_and_drops_tiny_islets():
     assert {tuple(p) for p in uji[0][1]} == {
         tuple(p) for p in feats["263222"].geometry.coordinates[0][0]
     }
+
     # 共用邊界兩邊一致；鋸齒（1 m）簡化掉
     def on_border(mp):
-        return {tuple(p) for poly in mp for ring in poly for p in ring if abs(p[0] - 135.78) < 0.0001}
+        return {
+            tuple(p) for poly in mp for ring in poly for p in ring if abs(p[0] - 135.78) < 0.0001
+        }
 
-    assert on_border(hig.geometry.coordinates) == on_border(uji) == {(135.78, 34.98), (135.78, 35.0)}
+    assert (
+        on_border(hig.geometry.coordinates) == on_border(uji) == {(135.78, 34.98), (135.78, 35.0)}
+    )
     assert data.license.startswith("CC BY 4.0") and "国土数値情報" in data.attribution
 
 
@@ -197,7 +203,10 @@ def test_web_bundle_is_coarser_with_numeric_ids():
     assert web["type"] == "FeatureCollection" and "国土数値情報" in web["attribution"]
     first = web["features"][0]
     assert first["id"] == 261050
-    assert first["properties"] == {"m": "261050", "n": "東山区", "h": "ひがしやまく", "c": "京都市"}
+    props = dict(first["properties"])
+    label = props.pop("l")
+    assert props == {"m": "261050", "n": "東山区", "h": "ひがしやまく", "c": "京都市"}
+    assert topo.contains(first["geometry"]["coordinates"], *label)
     uji = next(f for f in web["features"] if f["properties"]["m"] == "262048")
     assert len(uji["geometry"]["coordinates"]) == 1  # web 版拿掉小島
 
@@ -206,7 +215,9 @@ def test_seed_municipalities_offline(tmp_path, monkeypatch):
     from pipeline.sources import n03
 
     monkeypatch.setattr(n03, "download", lambda no: (_n03(), 2025))
-    monkeypatch.setattr(mu, "fetch_kana", lambda: {"262048": ("うじし", "https://www.wikidata.org/wiki/Q2")})
+    monkeypatch.setattr(
+        mu, "fetch_kana", lambda: {"262048": ("うじし", "https://www.wikidata.org/wiki/Q2")}
+    )
     report = mu.seed_municipalities(["kyoto"], tmp_path)
     assert "| kyoto | N03-20250101 | 3 | 1 | 2 |" in report
     data = mu.load("kyoto", tmp_path)

@@ -43,6 +43,8 @@ const props = defineProps<{
   snap?: Snap
   /** 手機打橫的左側欄（決定事項 N2）：版面同 sheet（名稱帶固定、以下捲動），但沒有把手、不能拖 */
   noHandle?: boolean
+  /** 最寄駅在鐵路圖層裡的車站（路網節點 id）：有的話「最寄駅」打開車站卡片 */
+  stationId?: string | null
 }>()
 const emit = defineEmits<{
   close: []
@@ -51,6 +53,8 @@ const emit = defineEmits<{
   snapStep: [dir: -1 | 0 | 1]
   /** 把手＋名稱帶的高度（收合段的高度） */
   headHeight: [px: number]
+  /** 打開最寄駅的車站卡片 */
+  station: [id: string]
 }>()
 
 // 圖片載入失敗（Commons 暫時無法取得等）時退回底色，不顯示破圖
@@ -332,7 +336,24 @@ function distance(m: number): string {
         <div v-if="showZh" class="flex border-b border-line-soft py-2.5 text-body-sm">
           <span class="w-[72px] shrink-0 text-sub">中文</span><span>{{ spot.name.zh_tw }}</span>
         </div>
-        <div v-if="station" class="flex border-b border-line-soft py-2.5 text-body-sm">
+        <!-- 鐵路圖層裡有這一站：整列打開車站卡片（停靠的路線、附近的景點） -->
+        <button
+          v-if="station && stationId"
+          type="button"
+          class="flex min-h-tap items-center border-b border-line-soft py-2.5 text-left text-body-sm text-ink hover:text-sub active:text-sub"
+          @click="emit('station', stationId)"
+        >
+          <span lang="ja" class="w-[72px] shrink-0 text-sub">最寄駅</span>
+          <span class="flex min-w-0 flex-1 flex-wrap items-baseline gap-x-2">
+            <span lang="ja" class="font-bold">{{ station.name.ja }}</span>
+            <span v-if="station.name.kana" lang="ja" class="text-caption text-sub">{{ station.name.kana }}</span>
+            <span class="font-num text-caption text-sub">{{ distance(station.distance_m) }}</span>
+          </span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0" aria-hidden="true">
+            <path d="M9 5l7 7-7 7" />
+          </svg>
+        </button>
+        <div v-else-if="station" class="flex border-b border-line-soft py-2.5 text-body-sm">
           <span lang="ja" class="w-[72px] shrink-0 text-sub">最寄駅</span>
           <span class="flex flex-wrap items-baseline gap-x-2">
             <span lang="ja">{{ station.name.ja }}</span>

@@ -14,6 +14,7 @@
 
 from __future__ import annotations
 
+import heapq
 import json
 import math
 from collections.abc import Iterable, Sequence
@@ -403,3 +404,84 @@ def distance_m(mp: Sequence[Sequence[Sequence[Sequence[float]]]], lat: float, ln
                 if d < best:
                     best = d
     return best
+
+
+# ---------- 名稱的位置 ----------
+
+
+def _seg_dist2(px: float, py: float, ax: float, ay: float, bx: float, by: float) -> float:
+    dx, dy = bx - ax, by - ay
+    if dx or dy:
+        t = ((px - ax) * dx + (py - ay) * dy) / (dx * dx + dy * dy)
+        if t > 1:
+            ax, ay = bx, by
+        elif t > 0:
+            ax, ay = ax + dx * t, ay + dy * t
+    return (px - ax) ** 2 + (py - ay) ** 2
+
+
+def _signed_dist(x: float, y: float, poly: Sequence[Sequence[Pt]]) -> float:
+    """點到多邊形邊界的距離，在多邊形裡為正、外面為負（座標已經換成 x 依緯度縮放的平面）。"""
+    inside = False
+    best = math.inf
+    for ring in poly:
+        n = len(ring)
+        j = n - 1
+        for i in range(n):
+            ax, ay = ring[i]
+            bx, by = ring[j]
+            if (ay > y) != (by > y) and x < (bx - ax) * (y - ay) / (by - ay) + ax:
+                inside = not inside
+            best = min(best, _seg_dist2(x, y, ax, ay, bx, by))
+            j = i
+    return (1 if inside else -1) * math.sqrt(best)
+
+
+def label_point(mp: Sequence[Sequence[Sequence[Sequence[float]]]], precision: float = 0.02) -> Pt:
+    """區名放的位置：面積最大的那一塊多邊形裡離邊界最遠的點（polylabel，pole of inaccessibility）。
+
+    經度依緯度縮放後再算，東西南北的距離一樣；精度是那一塊外框短邊的 precision 倍
+    （大的區不必算得太細）。
+    回傳 (經度, 緯度)。
+    """
+    polys = [p for p in mp if p and len(p[0]) >= 3]
+    if not polys:
+        raise ValueError("沒有多邊形")
+    poly = max(polys, key=lambda p: ring_area([(float(q[0]), float(q[1])) for q in p[0]]))
+    lat0 = sum(float(q[1]) for q in poly[0]) / len(poly[0])
+    k = math.cos(math.radians(lat0))
+    rings = [[(float(q[0]) * k, float(q[1])) for q in ring] for ring in poly]
+    xs = [p[0] for p in rings[0]]
+    ys = [p[1] for p in rings[0]]
+    x0, y0, x1, y1 = min(xs), min(ys), max(xs), max(ys)
+    w, h = x1 - x0, y1 - y0
+    size = min(w, h)
+    if size <= 0:
+        return (x0 / k, y0)
+    eps = size * precision
+    half = size / 2
+
+    def cell(x: float, y: float, hh: float) -> tuple[float, float, float, float, float]:
+        d = _signed_dist(x, y, rings)
+        return (-(d + hh * math.sqrt(2)), d, x, y, hh)
+
+    heap: list[tuple[float, float, float, float, float]] = []
+    gx = x0
+    while gx < x1:
+        gy = y0
+        while gy < y1:
+            heapq.heappush(heap, cell(gx + half, gy + half, half))
+            gy += size
+        gx += size
+    # 起點：外框中心
+    best = cell(x0 + w / 2, y0 + h / 2, 0)
+    while heap:
+        c = heapq.heappop(heap)
+        if c[1] > best[1]:
+            best = c
+        if -c[0] - best[1] <= eps:
+            continue
+        hh = c[4] / 2
+        for dx, dy in ((-hh, -hh), (hh, -hh), (-hh, hh), (hh, hh)):
+            heapq.heappush(heap, cell(c[2] + dx, c[3] + dy, hh))
+    return (best[2] / k, best[3])

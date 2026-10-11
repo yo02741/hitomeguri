@@ -9,6 +9,7 @@
 - ukiyoe.json：收集冊「浮世繪裡的景點」（data/ukiyoe.json 加上景點名稱）。
 - municipalities/{pref}.json：市区町村界（再簡化的 GeoJSON，縣內規劃的小區塊）。
 - rail/{pref}.json：鐵路路線與車站（車站帶路網節點 id、停靠的路線、新幹線）。
+- shinkansen.json：全國地圖的新幹線（各縣的新幹線路線合併、簡化，新幹線站依路網節點去重）。
 - rail-graph.json：全國車站路網（日帰り的鐵路距離，pipeline/rail_graph.py）。
 """
 
@@ -21,13 +22,14 @@ import re
 from pathlib import Path
 from typing import Any
 
-from pipeline import config, municipalities, rail_graph
+from pipeline import config, municipalities, rail_graph, topo
 from pipeline.models import (
     Festival,
     FlightRoute,
     Phrase,
     RailData,
     SeasonData,
+    ShinkansenBundle,
     Specialty,
     Spot,
     TimedItem,
@@ -227,9 +229,7 @@ def build(src: Path = SPOTS_DIR, dst: Path = BUNDLES_DIR) -> list[Path]:
         ]
         written.append(_write(dst / "detail" / f"{pref}.json", published))
         search += [search_entry(pref, e) for e in majors]
-        achv_spots += [
-            {"id": s["id"], "tags": s.get("tags", [])} for s in published
-        ]
+        achv_spots += [{"id": s["id"], "tags": s.get("tags", [])} for s in published]
         index["prefectures"][pref] = {
             "count": len(published),
             "featured": sum(1 for s in published if s["featured"]),
@@ -250,6 +250,10 @@ def build(src: Path = SPOTS_DIR, dst: Path = BUNDLES_DIR) -> list[Path]:
     rail = build_rail(dst / "rail", graph)
     index["rail"] = {pref: meta for pref, (_, meta) in rail.items()}
     written += [path for path, _ in rail.values()]
+    shinkansen = build_shinkansen(dst, graph)
+    if shinkansen:
+        written.append(shinkansen[0])
+        index["shinkansen"] = shinkansen[1]
     graph_path = rail_graph.write_bundle(graph, dst)
     written.append(graph_path)
     index["rail_graph"] = {
@@ -292,9 +296,7 @@ def build_achievements(
     """
     tags = {d: sorted(s["id"] for s in spots if d in s["tags"]) for d in CARD_DESIGNATIONS}
     ordered = sorted(castles, key=lambda c: c["id"])
-    castle = {
-        g: [[c["id"], c.get("s")] for c in ordered if c["g"] == g] for g in ("100", "zoku")
-    }
+    castle = {g: [[c["id"], c.get("s")] for c in ordered if c["g"] == g] for g in ("100", "zoku")}
     return {"tags": tags, "castle": castle}
 
 
@@ -431,6 +433,105 @@ def build_rail(
     return out
 
 
+# 全國地圖的新幹線：約 150 m 的容許誤差、小數 4 位（約 10 m），整個檔幾十 KB
+SHINKANSEN_TOL = 0.0015
+SHINKANSEN_DIGITS = 4
+# OSM 標了高速鐵路、但不是營業中的新幹線（山梨リニア実験線）：全國圖不畫
+NOT_IN_SERVICE = ("実験線",)
+
+
+def chain_segments(segs: list[list[tuple[float, float]]]) -> list[list[tuple[float, float]]]:
+    """端點相同的線段接成長的折線。OSM 的軌道切得很碎（大多一段兩個點），
+    一段一段簡化幾乎減不了點；接起來再簡化。岔路的地方接其中一邊，其餘另成一條。"""
+    ends: dict[tuple[float, float], list[int]] = {}
+    for i, seg in enumerate(segs):
+        ends.setdefault(seg[0], []).append(i)
+        ends.setdefault(seg[-1], []).append(i)
+    used = [False] * len(segs)
+    out: list[list[tuple[float, float]]] = []
+    for i, first in enumerate(segs):
+        if used[i]:
+            continue
+        used[i] = True
+        line = list(first)
+        for forward in (True, False):
+            while True:
+                tip = line[-1] if forward else line[0]
+                j = next((k for k in ends.get(tip, ()) if not used[k]), None)
+                if j is None:
+                    break
+                used[j] = True
+                seg = segs[j]
+                if forward:
+                    line += (seg if seg[0] == tip else seg[::-1])[1:]
+                else:
+                    line = (seg if seg[-1] == tip else seg[::-1])[:-1] + line
+        out.append(line)
+    return out
+
+
+def build_shinkansen(
+    dst: Path, graph: rail_graph.Graph | None = None, src: Path = RAIL_DIR
+) -> tuple[Path, dict[str, Any]] | None:
+    """全國地圖的新幹線（不必進縣就看得到）：一個小檔，沒有新幹線資料時不輸出。
+
+    lines：同一條路線（OSM relation id）各縣的線段合併後簡化；n 名稱、g 線段。
+    共用軌道只畫在其中一條線（RailLine.coords），所以只有高架橋名的 relation 也要留著，線才不會斷。
+    stations：新幹線站，依路網節點去重（縣界附近兩縣都收到的站只留一個）；
+    id 路網節點、n、e、lat、lng、p 縣（點了進那個縣的車站卡片；
+    同一個節點在縣的鐵路 bundle 裡的 id 相同）。
+    """
+    files = sorted(src.glob("*.json")) if src.exists() else []
+    raw: dict[str, list[list[tuple[float, float]]]] = {}
+    names: dict[str, str] = {}
+    stations: dict[str, dict[str, Any]] = {}
+    for path in files:
+        pref = path.stem
+        data = RailData.model_validate_json(path.read_text(encoding="utf-8"))
+        for line in data.lines:
+            if not line.shinkansen or any(w in line.name for w in NOT_IN_SERVICE):
+                continue
+            names.setdefault(line.id, line.name)
+            raw.setdefault(line.id, []).extend(
+                [(p[0], p[1]) for p in seg] for seg in line.coords if len(seg) >= 2
+            )
+        for st in data.stations:
+            if not st.shinkansen:
+                continue
+            sid = (graph.node_id(st.id) if graph else None) or st.id
+            if sid in stations:
+                continue
+            node = graph.nodes[graph.index[sid]] if graph and sid in graph.index else None
+            stations[sid] = {k: v for k, v in {
+                "id": sid, "n": st.name, "e": st.name_en,
+                "lat": round(st.lat, 5), "lng": round(st.lng, 5),
+                "p": (node.pref if node and node.pref else pref),
+            }.items() if v is not None}  # fmt: skip
+    lines = []
+    for lid in sorted(raw):
+        segs = []
+        for chain in chain_segments(raw[lid]):
+            pts = topo.simplify_arc(chain, SHINKANSEN_TOL, False, SHINKANSEN_DIGITS)
+            if len(pts) >= 2:
+                segs.append([[x, y] for x, y in pts])
+        if segs:
+            lines.append({"n": names[lid], "g": segs})
+    if not lines and not stations:
+        return None
+    body = ShinkansenBundle.model_validate({
+        "attribution": "© OpenStreetMap contributors",
+        "lines": lines,
+        "stations": [stations[k] for k in sorted(stations)],
+    }).model_dump(mode="json", exclude_none=True)  # fmt: skip
+    text = json.dumps(body, ensure_ascii=False, separators=(",", ":"))
+    meta = {
+        "lines": len(body["lines"]),
+        "stations": len(body["stations"]),
+        "version": hashlib.sha1(text.encode()).hexdigest()[:10],
+    }
+    return _write(dst / "shinkansen.json", body), meta
+
+
 def build_municipalities(
     dst: Path, src: Path = MUNICIPALITIES_DIR
 ) -> dict[str, tuple[Path, dict[str, Any]]]:
@@ -441,7 +542,9 @@ def build_municipalities(
         if data is None or not data.features:
             continue
         body = municipalities.web_bundle(data)
-        version = hashlib.sha1(path.read_bytes()).hexdigest()[:10]
+        # 版本取輸出的內容：web bundle 的做法（簡化、名稱的位置）改了也會換網址
+        text = json.dumps(body, ensure_ascii=False, separators=(",", ":"))
+        version = hashlib.sha1(text.encode()).hexdigest()[:10]
         out[path.stem] = (
             _write(dst / path.name, body),
             {"count": len(body["features"]), "version": version},

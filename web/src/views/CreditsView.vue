@@ -2,6 +2,8 @@
 // 資料來源（UX-FLOW.md §1.1、DESIGN.md §8）：網站用到的資料、出處與授權，以及注意事項。
 // 地圖上只留 © OpenStreetMap © OpenMapTiles 與連到這一頁的「資料來源」。
 // 只列實際用到的來源（pipeline/sources、data/ 各檔的 sources），新增來源時一起補上。
+import { N03_URL } from '../map/style'
+
 interface Link {
   label: string
   href: string
@@ -11,12 +13,16 @@ interface Source {
   href: string
   /** 用在哪裡 */
   use: string
-  license?: Link | string
+  /** 授權；有好幾種時依序列出，用「／」隔開 */
+  license?: Link | string | Array<Link | string>
   /** 授權以外的附註 */
   note?: string
+  /** 來源指定的出典標示（日文，照原文） */
+  credit?: string
 }
 
 const CC0: Link = { label: 'CC0 1.0', href: 'https://creativecommons.org/publicdomain/zero/1.0/deed.zh-hant' }
+const CC_BY = 'https://creativecommons.org/licenses/by/4.0/deed.zh-hant'
 const PDL: Link = { label: '公共データ利用規約（第1.0版）', href: 'https://www.jma.go.jp/jma/kishou/info/coment.html' }
 
 const GROUPS: Array<{ id: string; title: string; items: Source[] }> = [
@@ -44,6 +50,14 @@ const GROUPS: Array<{ id: string; title: string; items: Source[] }> = [
         href: 'https://www.gsi.go.jp/',
         use: '縣界：判斷地圖上的縣、經縣值與分享圖的地圖',
         note: '出典：地球地図日本（国土地理院）。GeoJSON 取自 dataofjapan/land',
+      },
+      {
+        name: '国土数値情報（行政区域データ）',
+        href: N03_URL,
+        use: '市區町村界：縣地圖的區界與區名、景點清單的地區',
+        license: [{ label: 'CC BY 4.0（N03 資料頁）', href: CC_BY }, '公共データ利用規約（第1.0版）'],
+        credit: `「国土数値情報（行政区域データ）」（国土交通省）（${N03_URL}）をもとにひとめぐり作成`,
+        note: '區界經過簡化（加工）',
       },
     ],
   },
@@ -119,6 +133,8 @@ const GROUPS: Array<{ id: string; title: string; items: Source[] }> = [
 ]
 
 const FONTS = 'Noto Sans TC、Noto Sans JP、Barlow Semi Condensed，以及年代主題的字型'
+
+const licenses = (l: Link | string | Array<Link | string>): Array<Link | string> => (Array.isArray(l) ? l : [l])
 </script>
 
 <template>
@@ -135,9 +151,13 @@ const FONTS = 'Noto Sans TC、Noto Sans JP、Barlow Semi Condensed，以及年�
           <dd class="flex flex-col gap-1 text-body-sm">
             <span>{{ s.use }}</span>
             <span v-if="s.license" class="text-caption text-sub">
-              授權：<a v-if="typeof s.license === 'object'" :href="s.license.href" target="_blank" rel="noopener" class="text-sub">{{ s.license.label }}</a
-              ><template v-else>{{ s.license }}</template>
+              授權：<template v-for="(l, i) in licenses(s.license)" :key="i"
+                ><template v-if="i">／</template
+                ><a v-if="typeof l === 'object'" :href="l.href" target="_blank" rel="noopener" class="text-sub">{{ l.label }}</a
+                ><template v-else>{{ l }}</template></template
+              >
             </span>
+            <span v-if="s.credit" lang="ja" class="text-caption text-sub wrap-anywhere">{{ s.credit }}</span>
             <span v-if="s.note" class="text-caption text-sub">{{ s.note }}</span>
           </dd>
         </div>

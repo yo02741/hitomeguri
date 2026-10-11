@@ -17,7 +17,8 @@ import { categoryGroup } from '../data/categories'
 import { PACKS, packByKey, packOfId } from '../data/packs'
 import { JAPAN_BOUNDS } from '../map/style'
 import { regionOf } from '../data/regions'
-import type { MapSpot, PackItem, RailBundle, Spot } from '../services/bundles'
+import { type Area, areaGroups, areaList, paddedBox, parseArea } from '../services/areas'
+import type { MapSpot, MunicipalityBundle, PackItem, RailBundle, ShinkansenBundle, Spot } from '../services/bundles'
 import {
   distanceM,
   focusArea,
@@ -31,6 +32,7 @@ import { afterPaint } from '../services/idle'
 import { releaseVelocity, type Snap, snapAfterDrag, snapHeights, stepSnap } from '../services/sheetSnap'
 import type { SearchHit } from '../services/search'
 import { trackSplash } from '../services/splash'
+import { nearbySpots, sameStation, stationInfo } from '../services/stations'
 import { currentTimed } from '../services/timed'
 import { todayIso } from '../services/userdb'
 import { land } from '../services/viewport'
@@ -44,6 +46,8 @@ const props = defineProps<{ pref?: string }>()
 // 景點面板（含收藏・去過・行程按鈕、日期選擇、收集卡）選了景點才用到，不放進入口程式；
 // 開場之後閒下來先抓（main.ts），第一次點景點不必等
 const SpotPanel = defineAsyncComponent(() => import('../components/SpotPanel.vue'))
+// 車站卡片（UX-FLOW.md B5）：點了車站才用到
+const StationPanel = defineAsyncComponent(() => import('../components/StationPanel.vue'))
 const route = useRoute()
 const router = useRouter()
 const catalog = useCatalogStore()
@@ -62,6 +66,12 @@ const markedOnMap = computed(() => {
 
 const mapRef = ref<InstanceType<typeof MapView> | null>(null)
 const selectedId = computed(() => (typeof route.query.spot === 'string' ? route.query.spot : null))
+// 車站卡片（?station=路網節點 id，縣地圖才有）：和景點卡片同一個位置，一次開一張
+const stationId = computed(() => (props.pref && regionOf(props.pref) && typeof route.query.station === 'string' ? route.query.station : null))
+/** 景點、擴充包的點或車站的卡片開著 */
+const cardOpen = computed(() => Boolean(selectedId.value || stationId.value))
+// 這個縣的鐵路（路線、車站）：地圖的鐵路圖層與車站卡片（下面 props.pref 的 watcher 載入）
+const railBundle = shallowRef<RailBundle | null>(null)
 const selectedSpot = shallowRef<Spot | null>(null)
 const loadingSpot = ref(false)
 const bounds = shallowRef<[number, number, number, number] | null>(null)
@@ -71,6 +81,11 @@ let panSwitch = false
 let flyAfterLoad: string | null = null
 // 從首頁（全國）選了擴充包的點：進入該縣後飛到這個位置
 let flyAfterLoadPoint: { lng: number; lat: number } | null = null
+// 換縣時不帶過去的 query：區、車站是那個縣的，祭典的標記也是
+function crossPref(q: LocationQuery): LocationQuery {
+  const { area: _a, station: _s, at: _at, label: _l, ...rest } = q
+  return rest
+}
 
 const available = computed(() => Object.keys(catalog.index?.prefectures ?? {}))
 // 專心模式（UX-FLOW.md §1.3）：進入一縣後地圖鎖在這個縣、只畫這個縣的點；按「‹ 全國」或返回才離開
@@ -194,13 +209,26 @@ const selectedPack = computed<{ pack: string; item: PackItem } | null>(() => {
   return pack && item ? { pack, item } : null
 })
 
-// 卡片關閉時往下收（手機）：收的那 0.2 秒裡照樣顯示剛才的內容，不閃成載入中
-const held = shallowRef<{ pack: { pack: string; item: PackItem } | null; spot: Spot | null }>({ pack: null, spot: null })
-watch([selectedPack, selectedSpot], ([pack, spot]) => {
-  if (selectedId.value) held.value = { pack, spot }
+// 車站卡片：停靠的路線、附近的景點（最近車站是這一站的；沒有時列 1.5 km 內最近的幾個）
+const prefSpotsAll = computed(() => (props.pref ? (catalog.mapSpots[props.pref] ?? []) : []))
+const selectedStation = computed(() => {
+  const info = stationInfo(railBundle.value, stationId.value)
+  return info ? { info, nearby: nearbySpots(prefSpotsAll.value, info) } : null
 })
-const shownPack = computed(() => (selectedId.value ? selectedPack.value : held.value.pack))
-const shownSpot = computed(() => (selectedId.value ? selectedSpot.value : held.value.spot))
+type ShownStation = NonNullable<typeof selectedStation.value>
+
+// 卡片關閉時往下收（手機）：收的那 0.2 秒裡照樣顯示剛才的內容，不閃成載入中
+const held = shallowRef<{ pack: { pack: string; item: PackItem } | null; spot: Spot | null; station: ShownStation | null }>({
+  pack: null,
+  spot: null,
+  station: null,
+})
+watch([selectedPack, selectedSpot, selectedStation], ([pack, spot, station]) => {
+  if (cardOpen.value) held.value = { pack, spot, station }
+})
+const shownPack = computed(() => (cardOpen.value ? selectedPack.value : held.value.pack))
+const shownSpot = computed(() => (cardOpen.value ? selectedSpot.value : held.value.spot))
+const shownStation = computed(() => (cardOpen.value ? selectedStation.value : held.value.station))
 
 // 景點附近（2 km 內）的擴充包點，每個擴充包最多 6 個
 const NEARBY_M = 2000
@@ -229,15 +257,25 @@ const castleOfSpot = computed(() => {
   const label = packByKey.get('castle')?.groups.find((g) => g.key === it.g)?.label ?? ''
   return { no: it.no, label, stamp: it.st ?? [] }
 })
-const prefSpots = computed(() => (props.pref ? (catalog.mapSpots[props.pref] ?? []) : []))
+const prefSpots = prefSpotsAll
+// 景點卡片的「最寄駅」連到車站卡片：景點的 st（最近車站的路網節點）和詳細資料的最近車站同名時
+const spotStation = computed(() => {
+  const s = shownSpot.value
+  const near = s?.nearest_stations?.[0]
+  const st = s ? prefSpotsAll.value.find((x) => x.id === s.id)?.st : undefined
+  const info = st && s?.prefecture === props.pref ? stationInfo(railBundle.value, st) : null
+  return info && near && sameStation(near.name.ja, info.name) ? info.id : null
+})
 // 右側卡片換內容時重播淡入：擴充包的點看 id，景點等詳細資料到了才換（載入中不算一次）
-const panelKey = computed(() => (shownPack.value ? shownPack.value.item.id : (shownSpot.value?.id ?? 'loading')))
+const panelKey = computed(() =>
+  shownPack.value ? shownPack.value.item.id : shownStation.value ? `station:${shownStation.value.info.id}` : (shownSpot.value?.id ?? 'loading'),
+)
 // 手機第一次打開：卡片升上來（sheet transition）時內容不再另外淡入，升上來途中換掉的內容（載入中 → 景點）也不播；
 // quietKey 記住這段期間的內容，之後換景點才播 panel-in
 const sheetEntering = ref(false)
 const quietKey = ref<string | null>(null)
 watch(
-  selectedId,
+  cardOpen,
   (id, old) => {
     if (id && !old && !desktop.value) {
       sheetEntering.value = true
@@ -295,13 +333,13 @@ watch([root, poster], (els, old) => {
 })
 onBeforeUnmount(() => areaObserver?.disconnect())
 const heights = computed(() => snapHeights(area.value.h, area.value.poster, headPx.value, area.value.vh))
-/** 手機的景點卡片（可拖、三段高度）；桌機、手機打橫（側欄）與擴充包的點不是 */
-const spotSheet = computed(() => !desktop.value && !side.value && !shownPack.value)
+/** 手機的景點卡片（可拖、三段高度）；桌機、手機打橫（側欄）與擴充包的點、車站不是 */
+const spotSheet = computed(() => !desktop.value && !side.value && !shownPack.value && !shownStation.value)
 // chip 軌道：景點卡片全開，或半開就蓋到軌道（手機打橫）時先收起
 const railShown = computed(() => {
   // 打橫：卡片在側欄裡，蓋住軌道的位置
-  if (side.value) return !selectedId.value
-  if (!selectedId.value || !spotSheet.value || snap.value === 'peek') return true
+  if (side.value) return !cardOpen.value
+  if (!cardOpen.value || !spotSheet.value || snap.value === 'peek') return true
   if (snap.value === 'full') return false
   const a = area.value
   return heights.value.half <= a.h - a.poster - 80
@@ -364,7 +402,12 @@ function revealSelected() {
   revealTimer = window.setTimeout(async () => {
     measureInsets()
     await nextTick()
-    if (!selectedId.value || (spotSheet.value && snap.value === 'full')) return
+    if (!cardOpen.value || (spotSheet.value && snap.value === 'full')) return
+    const st = selectedStation.value?.info
+    if (stationId.value && st) {
+      mapRef.value?.reveal(st.lng, st.lat)
+      return
+    }
     const id = selectedId.value
     const s = allSpots.value.find((x) => x.id === id)
     const loc = s ? { lng: s.lng, lat: s.lat } : shownSpot.value?.id === id ? shownSpot.value.location : null
@@ -376,7 +419,7 @@ watch(side, revealSelected)
 onBeforeUnmount(() => clearTimeout(revealTimer))
 // Esc 關閉景點卡片（手機；焦點在卡片、地圖或沒有焦點時）。卡片裡的選單、對話框自己處理掉的 Esc 不算
 function onKey(e: KeyboardEvent) {
-  if (e.key !== 'Escape' || e.defaultPrevented || desktop.value || !selectedId.value) return
+  if (e.key !== 'Escape' || e.defaultPrevented || desktop.value || !cardOpen.value) return
   const t = e.target as Element | null
   if (t?.closest?.('dialog')) return
   if (t && t !== document.body && !root.value?.contains(t)) return
@@ -394,7 +437,7 @@ const insets = shallowRef({ top: 0, bottom: 0 })
 const sheetHeight = computed(() => {
   const poster = !!(props.pref && regionOf(props.pref))
   if (side.value) return ''
-  if (shownPack.value) return poster ? 'max-lg:max-h-[min(60dvh,calc(100%-6rem))]' : 'max-lg:max-h-[min(60dvh,calc(100%-2.5rem))]'
+  if (shownPack.value || shownStation.value) return poster ? 'max-lg:max-h-[min(60dvh,calc(100%-6rem))]' : 'max-lg:max-h-[min(60dvh,calc(100%-2.5rem))]'
   // 景點：三段高度由 sheetStyle 給（量到地圖區之前先用半開的 class）
   if (sheetStyle.value) return dragH.value === null ? 'sheet-snap' : ''
   return poster ? 'max-lg:h-[min(55dvh,calc(100%-6rem))]' : 'max-lg:h-[min(55dvh,calc(100%-2.5rem))]'
@@ -456,6 +499,60 @@ function spotBounds(all: MapSpot[]): [number, number, number, number] | null {
   return [w, s, e, n]
 }
 
+// 縣內的區（市区町村界，UX-FLOW.md A2b）：進入縣時載入。清單的「地區」、地圖的區界與區名，?area=代碼
+const muniBundle = shallowRef<MunicipalityBundle | null>(null)
+watch(
+  focusPref,
+  async (pref) => {
+    muniBundle.value = null
+    if (!pref) return
+    const b = await catalog.loadMunicipalities(pref)
+    if (focusPref.value === pref) muniBundle.value = b
+  },
+  { immediate: true },
+)
+const areas = computed(() => areaList(muniBundle.value))
+// 網址的區：區界載入前先照代碼篩清單（景點的 m），載入後不在這個縣的區界裡就當作沒有
+const areaCode = computed(() => {
+  const code = parseArea(route.query.area, focusPref.value)
+  return code && muniBundle.value && !areas.value.some((a) => a.code === code) ? null : code
+})
+const selectedArea = computed(() => areas.value.find((a) => a.code === areaCode.value) ?? null)
+const areaOptions = computed(() => areaGroups(areas.value, prefSpots.value, areaCode.value))
+/** 選區（清單的「地區」、地圖上點區塊）：新增一筆歷史，返回回到上一個區或整個縣 */
+function pickArea(code: string | null) {
+  if ((code ?? null) === areaCode.value) return
+  const q = { ...route.query }
+  if (code) q.area = code
+  else delete q.area
+  void router.push({ query: q })
+}
+// 定位：選了區就移到那一區（小的區放大到 14），取消就回到整個縣。進入縣的定位由下面 props.pref 的 watcher 負責，
+// 它定位好之前（framedArea 是 undefined）這裡不動；網址直接帶 ?area= 時由它定位到那一區
+const fitMaxZoom = ref<number | undefined>(undefined)
+let framedArea: string | null | undefined
+function frameArea(a: Area) {
+  japanFit = false
+  fitMaxZoom.value = 14
+  bounds.value = paddedBox(a.bbox)
+}
+/** 看得到整個縣的形狀（主要陸地的縣界）＋主要景點；還沒有資料的縣用縣界範圍定位 */
+function prefFrame(pref: string, spots: MapSpot[]): [number, number, number, number] | null {
+  const main = spotBounds(spots.filter((s) => s.f === 1)) ?? spotBounds(spots)
+  return union(main, prefectureMainBounds(pref)) ?? prefectureBounds(pref)
+}
+watch([areaCode, selectedArea], ([code, a]) => {
+  const pref = focusPref.value
+  if (!pref || framedArea === undefined || code === framedArea) return
+  if (code && !a) return
+  framedArea = code
+  if (a) frameArea(a)
+  else {
+    fitMaxZoom.value = undefined
+    bounds.value = prefFrame(pref, catalog.mapSpots[pref] ?? [])
+  }
+})
+
 // 縣界載入後才畫得出目前地區的外框
 const shapesReady = ref(false)
 const outline = computed(() => (shapesReady.value && props.pref ? prefectureShape(props.pref) : null))
@@ -474,8 +571,7 @@ function union(
   return [Math.min(a[0], b[0]), Math.min(a[1], b[1]), Math.max(a[2], b[2]), Math.max(a[3], b[3])]
 }
 
-// 鐵路圖層：地區頁一律顯示該縣的路線與車站（使用者決定，不需開關），轉成地圖用的 GeoJSON
-const railBundle = shallowRef<RailBundle | null>(null)
+// 鐵路圖層：地區頁一律顯示該縣的路線與車站（使用者決定，不需開關），轉成地圖用的 GeoJSON（railBundle 在上面宣告）
 watch(
   () => props.pref,
   async (pref) => {
@@ -496,15 +592,50 @@ const railMap = computed(() => {
       type: 'FeatureCollection' as const,
       features: r.lines.map((l) => ({
         type: 'Feature' as const,
-        properties: { n: l.n, ...(l.c ? { c: l.c } : {}), k: l.k },
+        properties: { n: l.n, ...(l.c ? { c: l.c } : {}), k: l.k, s: l.s ?? 0 },
+        geometry: { type: 'MultiLineString' as const, coordinates: l.g },
+      })),
+    },
+    // 合併過的車站（同一個 id）只畫一個點
+    stations: {
+      type: 'FeatureCollection' as const,
+      features: r.stations
+        .filter((st, i, all) => all.findIndex((x) => x.id === st.id) === i)
+        .map((st) => ({
+          type: 'Feature' as const,
+          properties: { id: st.id, n: st.n, s: r.stations.some((x) => x.id === st.id && x.s === 1) ? 1 : 0 },
+          geometry: { type: 'Point' as const, coordinates: [st.lng, st.lat] },
+        })),
+    },
+  }
+})
+
+// 全國地圖的新幹線（UX-FLOW.md A1c）：首頁（全國）不必進縣就看得到路線與新幹線站；點了站進入那個縣、打開車站卡片
+const shinkansen = shallowRef<ShinkansenBundle | null>(null)
+watch(
+  () => props.pref,
+  async (pref) => {
+    if (!pref && !shinkansen.value) shinkansen.value = await catalog.loadShinkansen()
+  },
+  { immediate: true },
+)
+const shinkansenMap = computed(() => {
+  const sk = shinkansen.value
+  if (!sk || props.pref) return null
+  return {
+    lines: {
+      type: 'FeatureCollection' as const,
+      features: sk.lines.map((l) => ({
+        type: 'Feature' as const,
+        properties: { n: l.n },
         geometry: { type: 'MultiLineString' as const, coordinates: l.g },
       })),
     },
     stations: {
       type: 'FeatureCollection' as const,
-      features: r.stations.map((st) => ({
+      features: sk.stations.map((st) => ({
         type: 'Feature' as const,
-        properties: { n: st.n },
+        properties: { id: st.id, n: st.n, p: st.p },
         geometry: { type: 'Point' as const, coordinates: [st.lng, st.lat] },
       })),
     },
@@ -529,7 +660,7 @@ function closePin() {
 // 期間限定（UX-FLOW.md A6）：目前地區的，左側面板列前三筆
 const timedHere = computed(() => (props.pref ? currentTimed(catalog.timed ?? [], todayIso(), props.pref) : []))
 // 手機的上方清單：打開景點卡片或祭典的地點標記時收起，地圖才看得到選到的點（桌機一直顯示）
-const listShown = computed(() => desktop.value || (!selectedId.value && !pin.value))
+const listShown = computed(() => desktop.value || (!cardOpen.value && !pin.value))
 
 onMounted(() => {
   // 地區標籤只用到直飛航線；地區特色（約 1.8 MB）留給深度探索
@@ -546,8 +677,11 @@ watch(
   () => props.pref,
   async (pref) => {
     explore.setActivePref(pref && regionOf(pref) ? pref : null)
+    framedArea = undefined
+    fitMaxZoom.value = undefined
     if (panSwitch) {
       panSwitch = false
+      framedArea = null
       return
     }
     // 首頁（含點左上地區標籤回來）：拉回整個日本版圖
@@ -561,21 +695,44 @@ watch(
     const target = flyAfterLoad ? spots.find((s) => s.id === flyAfterLoad) : flyAfterLoadPoint ?? undefined
     flyAfterLoad = null
     flyAfterLoadPoint = null
+    // 飛到景點、祭典、車站時不定位到區（網址的區只篩清單）
     if (target) {
+      framedArea = areaCode.value
       await flyToVisible(target.lng, target.lat, 15)
       return
     }
     if (pin.value) {
+      framedArea = areaCode.value
       await flyToVisible(pin.value.lng, pin.value.lat, 14)
       return
     }
-    // 看得到整個縣的形狀（主要陸地的縣界）＋主要景點；還沒有資料的縣用縣界範圍定位
+    if (stationId.value) {
+      const st = stationInfo(await catalog.loadRail(pref), stationId.value)
+      if (st && props.pref === pref) {
+        framedArea = areaCode.value
+        await flyToVisible(st.lng, st.lat, 14)
+        return
+      }
+    }
     await loadPrefectureShapes().catch(() => {})
+    // 網址帶 ?area=：定位到那一區
+    if (parseArea(route.query.area, pref)) {
+      const a = areaList(await catalog.loadMunicipalities(pref)).find((x) => x.code === route.query.area)
+      if (props.pref !== pref) return
+      if (a) {
+        await nextTick()
+        measureInsets()
+        framedArea = a.code
+        frameArea(a)
+        return
+      }
+    }
+    if (props.pref !== pref) return
     // 清單換成這個縣的景點後再量一次高度，定位才扣得準
     await nextTick()
     measureInsets()
-    const main = spotBounds(spots.filter((s) => s.f === 1)) ?? spotBounds(spots)
-    bounds.value = union(main, prefectureMainBounds(pref)) ?? prefectureBounds(pref)
+    framedArea = null
+    bounds.value = prefFrame(pref, spots)
   },
   { immediate: true },
 )
@@ -638,7 +795,7 @@ watch(
     const pk = selectedPack.value?.item
     if (pk) flyAfterLoadPoint = { lng: pk.lng, lat: pk.lat }
     else flyAfterLoad = id
-    void router.replace({ path: `/map/${pref}`, query: route.query })
+    void router.replace({ path: `/map/${pref}`, query: crossPref(route.query) })
   },
   { immediate: true },
 )
@@ -654,22 +811,55 @@ async function select(id: string) {
   // 別縣（含首頁全國）的點：和搜尋一樣進入那個縣（地圖、地區色、清單都換到該縣；點出來的換縣有墨水暈開）
   const pref = item?.p ?? prefOfMapSpot(id)
   if (pref && pref !== props.pref && regionOf(pref)) {
-    const { at: _a, label: _l, ...keep } = route.query
     if (item) flyAfterLoadPoint = { lng: item.lng, lat: item.lat }
     else flyAfterLoad = id
-    await router.push({ path: `/map/${pref}`, query: { ...keep, spot: target, ...(pack ? { pack } : {}) } })
+    await router.push({ path: `/map/${pref}`, query: { ...crossPref(route.query), spot: target, ...(pack ? { pack } : {}) } })
     return
   }
-  // 選了景點就收起地點標記
-  const { at: _at, label: _label, ...rest } = route.query
+  // 選了景點就收起地點標記、車站卡片
+  const { at: _at, label: _label, station: _station, ...rest } = route.query
   const query = { ...rest, spot: target, ...(pack ? { pack } : {}) }
   // 手機從「沒有選取」打開卡片時新增一筆歷史，返回手勢先關卡片；之後換景點仍用 replace
-  if (!selectedId.value && !desktop.value) await router.push({ query })
+  if (!cardOpen.value && !desktop.value) await router.push({ query })
   else await router.replace({ query })
   const s = item ?? allSpots.value.find((x) => x.id === id)
   // 縮放 15：群集全部散開（clusterMaxZoom 14），看得出選到的是哪一個點
   if (s) await flyToVisible(s.lng, s.lat, 15)
 }
+
+/**
+ * 點了車站（UX-FLOW.md B5）：縣地圖上的站打開車站卡片（和景點卡片同一個位置，開著景點卡片時換掉）；
+ * 全國地圖的新幹線站進入那個縣再打開（縣的 watcher 飛過去）
+ */
+async function selectStation(id: string, pref: string | null) {
+  const target = pref && regionOf(pref) ? pref : props.pref
+  if (!target || !regionOf(target)) return
+  if (target !== props.pref) {
+    await router.push({ path: `/map/${target}`, query: { station: id } })
+    return
+  }
+  const { spot: _spot, at: _at, label: _label, ...rest } = route.query
+  const query = { ...rest, station: id }
+  if (!cardOpen.value && !desktop.value) await router.push({ query })
+  else await router.replace({ query })
+  // 和選景點一樣飛過去（從景點卡片的「最寄駅」來的時候地圖可能還拉得很遠）；已經比 14 近就不改縮放
+  const st = stationInfo(railBundle.value, id)
+  if (st) await flyToVisible(st.lng, st.lat, 14)
+}
+// 手機的車站卡片依內容高度：高度量到（或變了）之後，車站被卡片蓋住就平移到剩下的地圖中間
+watch(
+  () => (stationId.value && !desktop.value ? insets.value.bottom : null),
+  (h) => {
+    if (h) revealSelected()
+  },
+)
+// 網址的車站在這個縣的鐵路 bundle 裡找不到（舊連結）：關閉
+watch(
+  () => [stationId.value, railBundle.value] as const,
+  ([id, rail]) => {
+    if (id && rail && !stationInfo(rail, id)) closeSpot()
+  },
+)
 
 /** header 搜尋的結果：縣 → 進入地區頁；景點 → 選取並飛過去（別縣先進入該縣） */
 watch(
@@ -712,9 +902,11 @@ function backToFestival(e: MouseEvent) {
   else void router.push(`/region/${props.pref}#festivals`)
 }
 
+/** 關閉卡片（景點、擴充包的點、車站） */
 function closeSpot() {
   const q = { ...route.query }
   delete q.spot
+  delete q.station
   // 上一筆歷史就是沒有卡片的同一頁（手機打開卡片時 push 的）：用返回關閉，之後的返回不會再把卡片開回來
   const back = (window.history.state as { back?: unknown } | null)?.back
   if (typeof back === 'string') {
@@ -770,7 +962,7 @@ function onMoveEnd(view: MapViewState) {
   if (!view.user) return
   japanFit = false
   if (focusPref.value) {
-    if (selectedId.value && view.zoom < CLOSE_SPOT_ZOOM) closeSpot()
+    if (cardOpen.value && view.zoom < CLOSE_SPOT_ZOOM) closeSpot()
     return
   }
   const target = regionForView(view)
@@ -838,7 +1030,7 @@ function onMoveEnd(view: MapViewState) {
         :color-key="explore.activePref"
         :inset-left="insetLeft"
         :insets="insets"
-        :fit-pad="!pref && !desktop ? 16 : undefined"
+        :fit-pad="!desktop && (!pref || fitMaxZoom) ? 16 : undefined"
         :locator-edge="desktop || side ? null : insets.bottom ? { bottom: insets.bottom } : { top: insets.top }"
         :controls-lift="pinCard || (selectedId && spotSheet && snap === 'peek') ? insets.bottom : 0"
         :pack="packMap"
@@ -846,8 +1038,15 @@ function onMoveEnd(view: MapViewState) {
         :focus="focus"
         :pin="pin"
         :rail="railMap"
+        :station-id="stationId"
+        :shinkansen="shinkansenMap"
+        :areas="focusPref ? areas : null"
+        :area="areaCode"
+        :fit-max-zoom="fitMaxZoom"
         :marked="markedOnMap"
         @select="select"
+        @station="selectStation"
+        @area="pickArea"
         @close-pin="closePin"
         @moveend="onMoveEnd"
       />
@@ -922,9 +1121,12 @@ function onMoveEnd(view: MapViewState) {
             :spots="prefSpots"
             :state="catalog.mapState(pref)"
             :selected-id="selectedId"
+            :areas="areaOptions"
+            :area="areaCode"
             class="max-lg:max-h-[40dvh] land:max-h-none"
             @select="select"
             @highlight="(id) => mapRef?.highlight(id)"
+            @area="pickArea"
           />
           <!-- 深度探索入口：左欄最下方獨立一顆，和清單分開（使用者決定） -->
           <RouterLink
@@ -960,7 +1162,7 @@ function onMoveEnd(view: MapViewState) {
 
       <!-- 手機：深度探索「地圖」打開的祭典地點，下方一張小卡（清單收起）：回到祭典、關閉 -->
       <div
-        v-if="pin && !selectedId && pref && regionOf(pref)"
+        v-if="pin && !cardOpen && pref && regionOf(pref)"
         ref="pinCard"
         class="absolute inset-x-4 bottom-4 z-10 flex items-center gap-1 rounded-card bg-paper p-1 text-ink shadow-float lg:hidden land:right-auto land:w-float"
       >
@@ -997,7 +1199,7 @@ function onMoveEnd(view: MapViewState) {
       <!-- 擴充包的點內容短：手機的卡片依內容高度，最高 60dvh（PackPanel 自己捲動）。
            手機打橫時 60dvh 比地圖區還高：再限制在海報條以下、上面留 2.5rem 地圖 -->
       <aside
-        v-if="selectedId"
+        v-if="cardOpen"
         ref="sheet"
         :data-reduce="desktop ? undefined : 'fade'"
         class="shrink-0 border-line"
@@ -1026,16 +1228,26 @@ function onMoveEnd(view: MapViewState) {
             @close="closeSpot"
             @open-spot="select"
           />
+          <StationPanel
+            v-else-if="shownStation && pref"
+            :station="shownStation.info"
+            :nearby="shownStation.nearby"
+            :pref="pref"
+            @close="closeSpot"
+            @select="select"
+          />
           <SpotPanel
             v-else
             :spot="shownSpot"
             :loading="loadingSpot"
             :nearby="nearby"
+            :station-id="spotStation"
             :castle="castleOfSpot"
             :snap="spotSheet ? snap : side ? 'full' : undefined"
             :no-handle="side"
             @close="closeSpot"
             @select-pack="select"
+            @station="(id: string) => selectStation(id, null)"
             @snap-step="onSnapStep"
             @head-height="headPx = $event"
           />

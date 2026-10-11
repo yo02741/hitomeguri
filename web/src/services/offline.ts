@@ -93,7 +93,7 @@ async function runAll(urls: string[], onDone: () => void) {
 export async function prepareOffline(trip: Trip, catalog: Catalog, onProgress: (p: OfflineProgress) => void): Promise<void> {
   const stops = allStops(trip)
   const prefs = [...new Set(stops.map((s) => s.pref))]
-  const steps = prefs.length * 4 + 3
+  const steps = prefs.length * 5 + 3
   let done = 0
   const tick = (total: number) => onProgress({ done: ++done, total })
 
@@ -104,6 +104,8 @@ export async function prepareOffline(trip: Trip, catalog: Catalog, onProgress: (
       catalog.loadMap(p).finally(() => tick(steps)),
       catalog.loadDetail(p).finally(() => tick(steps)),
       catalog.loadRail(p).finally(() => tick(steps)),
+      // 地圖的區界與清單的地區
+      catalog.loadMunicipalities(p).finally(() => tick(steps)),
       catalog.loadFestivals(p).finally(() => tick(steps)),
     ]),
   )
