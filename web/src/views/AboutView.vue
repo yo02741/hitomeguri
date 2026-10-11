@@ -3,6 +3,7 @@ import { computed, type Directive, nextTick, onBeforeUnmount, onMounted, ref, sh
 
 import AchvSeal from '../components/AchvSeal.vue'
 import JapanMap from '../components/JapanMap.vue'
+import OverlayScrollbar from '../components/OverlayScrollbar.vue'
 import PrefStamp from '../components/PrefStamp.vue'
 import RegionMotif from '../components/RegionMotif.vue'
 import SpeakButton from '../components/SpeakButton.vue'
@@ -172,6 +173,7 @@ function onVisibility() {
 }
 let heroVisible = true
 const heroEl = ref<HTMLElement | null>(null)
+
 let heroObserver: IntersectionObserver | null = null
 // 照片載好才淡入；還沒載好時上一張留著，不會閃一下底色
 const loaded = ref(new Set<number>())
@@ -492,6 +494,7 @@ onBeforeUnmount(() => {
   window.clearTimeout(timer)
   window.clearTimeout(startFallback)
   scroller?.removeEventListener('scroll', onScroll)
+
   cancelAnimationFrame(scrollRaf)
   revealIO?.disconnect()
   document.removeEventListener('visibilitychange', onVisibility)
@@ -503,6 +506,7 @@ const kyotoRegion = regionOf('kyoto')
 
 <template>
   <div class="about flex flex-col">
+    <OverlayScrollbar target="app-main" />
     <!-- 海報：全版輪播的日本風景（北海道到沖繩），左下標語與開始探索，右下這張的地方與照片出處，最下面是八站的進度 -->
     <header ref="heroEl" class="hero relative isolate flex min-h-[34rem] flex-col overflow-hidden bg-ink text-white" @touchstart.passive="onTouchStart" @touchend="onTouchEnd">
       <div class="hero-slides absolute inset-0 -z-10" aria-roledescription="輪播" aria-label="日本各地的風景">
@@ -537,12 +541,12 @@ const kyotoRegion = regionOf('kyoto')
         <div class="hero-mark"><Wordmark /></div>
 
         <div class="mt-auto grid items-end gap-x-10 gap-y-6 pt-16 md:grid-cols-[minmax(0,1fr)_auto]">
-          <div class="flex flex-col gap-5">
+          <div class="flex flex-col gap-4">
             <h1 v-reveal class="tagline font-brand">{{ TAGLINE }}</h1>
-            <p v-reveal="1" class="max-w-[30em] text-title leading-relaxed text-white/90 max-sm:text-body">日本 47 都道府縣的景點地圖。在一縣一色的地圖上找地方、排行程、記住念法；去過的地方，收成一張一張的卡。</p>
+            <p v-reveal="1" class="max-w-[28em] text-body leading-[1.9] tracking-[0.03em] text-white/85 md:text-[1rem]">日本 47 都道府縣的景點地圖。在一縣一色的地圖上找地方、排行程、記住念法；去過的地方，收成一張一張的卡。</p>
             <div v-reveal="2" class="flex flex-wrap items-center gap-x-6 gap-y-3">
-              <RouterLink to="/" class="flex h-12 items-center rounded-control bg-paper px-6 text-body font-bold text-ink no-underline active:translate-y-px">開始探索</RouterLink>
-              <a href="#flow" class="text-body font-bold text-white underline decoration-white/50 decoration-2 underline-offset-[6px] hover:decoration-white" @click.prevent="scrollToFlow">怎麼用</a>
+              <RouterLink to="/" class="flex h-11 items-center rounded-control bg-paper px-5 text-body-sm font-bold tracking-[0.04em] text-ink no-underline active:translate-y-px">開始探索</RouterLink>
+              <a href="#flow" class="text-body-sm font-bold tracking-[0.04em] text-white underline decoration-white/50 decoration-2 underline-offset-[6px] hover:decoration-white" @click.prevent="scrollToFlow">怎麼用</a>
             </div>
           </div>
           <!-- 這一張：地方與照片出處（CC 授權要寫作者與授權） -->
@@ -951,10 +955,10 @@ const kyotoRegion = regionOf('kyoto')
 
 .tagline {
   margin: 0;
-  font-size: clamp(2.75rem, 7.2vw, 5.75rem);
-  font-weight: 600;
-  line-height: 1.15;
-  letter-spacing: 0.04em;
+  font-size: clamp(2rem, 3.6vw, 3.5rem);
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: 0.08em;
 }
 :root[data-theme] .tagline {
   font-family: var(--font-display-zh);
@@ -1128,5 +1132,15 @@ const kyotoRegion = regionOf('kyoto')
 .qa-a {
   background: var(--color-region-strong);
   color: var(--color-paper);
+}
+</style>
+
+<style>
+/* 形象網站不顯示原生捲軸（App.vue 的 #app-main，路由 meta.bare）：照片滿版到右緣，捲軸改用 OverlayScrollbar 浮在畫面上 */
+#app-main[data-bare] {
+  scrollbar-width: none;
+}
+#app-main[data-bare]::-webkit-scrollbar {
+  display: none;
 }
 </style>
