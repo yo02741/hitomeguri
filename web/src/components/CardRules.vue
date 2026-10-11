@@ -38,7 +38,7 @@ const KINDS: Array<[string, string]> = [
           <dd>{{ d }}</dd>
         </template>
       </dl>
-      <p class="text-caption text-sub">每個景點 9 種，有夜景照片的 10 種。要勾的在放大檢視卡片下面的「這裡做過的事」；取消勾選、行程刪掉，那一種卡和特別全景也會拿掉。</p>
+      <p class="text-caption text-sub">每個景點 9 種，有夜景照片的 10 種。要勾的在地圖上景點卡片的「這裡做過的事」（去過的景點才有）；取消勾選、行程刪掉，那一種卡和特別全景也會拿掉。</p>
     </section>
 
     <section class="flex flex-col gap-2" aria-labelledby="c-draw">
