@@ -16,6 +16,7 @@ import SkeletonRows from '../components/SkeletonRows.vue'
 import TripMembers from '../components/TripMembers.vue'
 import TripStopList from '../components/TripStopList.vue'
 import { useCatalogSpots } from '../composables/catalogSpots'
+import { useDraftField } from '../composables/draftField'
 import { useOnline } from '../composables/online'
 import { regionOf } from '../data/regions'
 import type { MapSpot } from '../services/bundles'
@@ -94,21 +95,16 @@ function mutate(fn: (t: Trip) => Partial<TripContent> | null) {
   void trips.mutate(props.id, fn)
 }
 
-// 名稱
-const nameDraft = ref('')
-watch(
-  () => trip.value?.name,
-  (n) => (nameDraft.value = n ?? ''),
-  { immediate: true },
+// 名稱：打字中以自己的草稿為準，snapshot（共編的人、自己存檔的回音）不改欄位，免得打斷輸入法組字
+const nameField = useDraftField(
+  () => trip.value?.name ?? '',
+  (v) => {
+    if (locked.value || !trip.value) return false
+    mutate((t) => (t.name === v ? null : { name: v }))
+  },
+  { normalize: (v) => v.trim().slice(0, TRIP_NAME_MAX) },
 )
-function saveName() {
-  if (locked.value) {
-    nameDraft.value = trip.value?.name ?? ''
-    return
-  }
-  const name = nameDraft.value.trim()
-  if (trip.value && name !== trip.value.name) mutate(() => ({ name }))
-}
+const nameDraft = nameField.value
 
 // 日期：起訖都有時天數跟著日期；只填出發日時回程預設同一天
 function setDates(start: string, end: string) {
@@ -427,15 +423,20 @@ async function del() {
 
       <div class="flex flex-col gap-3">
         <input
-          v-model="nameDraft"
+          :value="nameDraft"
           type="text"
           :maxlength="TRIP_NAME_MAX"
           placeholder="未命名行程"
           aria-label="行程名稱"
           :readonly="locked"
           class="h-12 rounded-control border border-transparent bg-transparent px-1 text-h3 font-black tracking-title text-ink outline-none placeholder:text-sub hover:border-line focus:border-region-strong"
-          @blur="saveName"
-          @keydown.enter="($event.target as HTMLInputElement).blur()"
+          enterkeyhint="done"
+          @focus="nameField.onFocus"
+          @input="nameField.onInput"
+          @compositionstart="nameField.onCompositionStart"
+          @compositionend="nameField.onCompositionEnd"
+          @blur="nameField.onBlur"
+          @keydown="nameField.onKeydown"
         />
         <div class="flex flex-wrap items-center gap-2.5">
           <DateRangePicker
