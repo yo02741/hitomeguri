@@ -1,0 +1,49 @@
+{
+  "_comment": "rail_routes() 的回應（測試用，座標是假的）。縣＝經度 139.65–139.85、緯度 34.9–35.1 的框。",
+  "elements": [
+    {"type": "relation", "id": 100, "tags": {"type": "route", "route": "train", "name": "東海道新幹線", "operator": "東海旅客鉄道", "colour": "#0072bc"},
+     "members": [
+       {"type": "node", "ref": 1001, "role": "stop", "lat": 35.0, "lon": 139.8},
+       {"type": "node", "ref": 1002, "role": "stop", "lat": 35.0, "lon": 139.75},
+       {"type": "node", "ref": 1005, "role": "stop", "lat": 35.0, "lon": 139.72},
+       {"type": "node", "ref": 1004, "role": "stop", "lat": 35.0, "lon": 139.6},
+       {"type": "way", "ref": 1, "role": "", "geometry": [{"lat": 35.0, "lon": 139.8}, {"lat": 35.0, "lon": 139.75}, {"lat": 35.0, "lon": 139.7}]},
+       {"type": "way", "ref": 2, "role": "", "geometry": [{"lat": 35.0, "lon": 139.69999}, {"lat": 35.0, "lon": 139.6}]}
+     ]},
+    {"type": "relation", "id": 200, "tags": {"type": "route", "route": "train", "name": "テスト本線（上り）", "operator": "東日本旅客鉄道", "colour": "#f68b1e"},
+     "members": [
+       {"type": "node", "ref": 2001, "role": "stop", "lat": 35.001, "lon": 139.8},
+       {"type": "node", "ref": 2002, "role": "stop", "lat": 35.001, "lon": 139.78},
+       {"type": "node", "ref": 2003, "role": "stop_exit_only", "lat": 35.001, "lon": 139.75},
+       {"type": "way", "ref": 2010, "role": "platform", "geometry": [{"lat": 35.0012, "lon": 139.7799}, {"lat": 35.0012, "lon": 139.7803}]},
+       {"type": "way", "ref": 3, "role": "", "geometry": [{"lat": 35.001, "lon": 139.8}, {"lat": 35.01, "lon": 139.79}, {"lat": 35.001, "lon": 139.78}, {"lat": 35.001, "lon": 139.75}]}
+     ]},
+    {"type": "relation", "id": 300, "tags": {"type": "route", "route": "train", "name": "東北新幹線", "operator": "東日本旅客鉄道"},
+     "members": [
+       {"type": "node", "ref": 1001, "role": "stop", "lat": 35.0, "lon": 139.8},
+       {"type": "node", "ref": 1002, "role": "stop", "lat": 35.0, "lon": 139.75},
+       {"type": "way", "ref": 1, "role": "", "geometry": [{"lat": 35.0, "lon": 139.8}, {"lat": 35.0, "lon": 139.75}, {"lat": 35.0, "lon": 139.7}]}
+     ]},
+    {"type": "relation", "id": 400, "tags": {"type": "route", "route": "railway", "name": "テスト線", "operator": "東日本旅客鉄道"},
+     "members": [
+       {"type": "way", "ref": 4, "role": "", "geometry": [{"lat": 35.0, "lon": 139.75}, {"lat": 35.08, "lon": 139.75}]}
+     ]},
+    {"type": "relation", "id": 500, "tags": {"type": "route", "route": "railway", "name": "テスト支線", "operator": "東日本旅客鉄道"},
+     "members": [
+       {"type": "way", "ref": 5, "role": "", "geometry": [{"lat": 35.05, "lon": 139.8}, {"lat": 35.06, "lon": 139.8}]}
+     ]},
+    {"type": "way", "id": 1},
+    {"type": "way", "id": 2},
+    {"type": "way", "id": 3},
+    {"type": "way", "id": 4},
+    {"type": "way", "id": 1, "tags": {"railway": "rail", "highspeed": "yes"}},
+    {"type": "way", "id": 2, "tags": {"railway": "rail", "highspeed": "yes"}},
+    {"type": "node", "id": 1001, "lat": 35.0, "lon": 139.8, "tags": {"name": "東京", "public_transport": "stop_position"}},
+    {"type": "node", "id": 1002, "lat": 35.0, "lon": 139.75, "tags": {"name": "品川", "public_transport": "stop_position"}},
+    {"type": "node", "id": 1004, "lat": 35.0, "lon": 139.6, "tags": {"name": "新横浜", "public_transport": "stop_position"}},
+    {"type": "node", "id": 1005, "lat": 35.0, "lon": 139.72, "tags": {"name": "新駅", "public_transport": "stop_position"}},
+    {"type": "node", "id": 2001, "lat": 35.001, "lon": 139.8, "tags": {"name": "東京駅"}},
+    {"type": "node", "id": 2002, "lat": 35.001, "lon": 139.78, "tags": {"name": "有楽町"}},
+    {"type": "node", "id": 2003, "lat": 35.001, "lon": 139.75, "tags": {"name": "品川駅 3番線"}}
+  ]
+}
