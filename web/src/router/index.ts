@@ -63,6 +63,7 @@ export const router = createRouter({
       props: true,
       meta: { title: '清單' },
     },
+    { path: '/credits', name: 'credits', component: () => import('../views/CreditsView.vue'), meta: { title: '資料來源' } },
     { path: '/:pathMatch(.*)*', redirect: '/' },
   ],
 })

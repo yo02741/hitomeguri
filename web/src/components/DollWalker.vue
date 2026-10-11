@@ -44,7 +44,19 @@ let vw = typeof window !== 'undefined' ? window.innerWidth : 0
 // 桌機的探索頁（首頁、地區地圖）：左邊是浮動的清單（300px），旅人只在清單右邊走
 const PANEL_ROUTES = ['home', 'explore', 'map']
 const minX = () => (PANEL_ROUTES.includes(String(route.name)) && vw >= 1024 ? 340 : 16)
-const maxX = () => Math.max(minX(), vw - SIZE - 16)
+// 地圖右下角的出處與縮放鈕（MapView）：旅人只走到它們左邊，不蓋在上面（出處展開時約 260px 寬）。
+// 桌機打開景點卡片時地圖右緣在卡片左邊，旅人也就不走到卡片上
+const MAP_CORNER_W = 280
+function mapRight(): number | null {
+  const el = document.querySelector('.maplibregl-ctrl-bottom-right')
+  if (!el) return null
+  const r = el.getBoundingClientRect()
+  return r.width && r.bottom > window.innerHeight - 96 ? r.right : null
+}
+const maxX = () => {
+  const right = mapRight()
+  return Math.max(minX(), Math.min(vw - 16, right === null ? vw : right - MAP_CORNER_W) - SIZE)
+}
 
 function lines(): string[] {
   const out: string[] = []
@@ -138,17 +150,26 @@ onMounted(() => {
 onBeforeUnmount(() => {
   clearTimeout(timer)
   clearTimeout(sayTimer)
+  clearTimeout(clampTimer)
   window.removeEventListener('resize', onResize)
 })
-// 換頁時回到可以走的範圍；到了某個縣的地圖偶爾說一句
-watch(() => route.name, clamp)
+// 換頁時回到可以走的範圍（等新的頁面與地圖掛上再量）；到了某個縣的地圖偶爾說一句
+let clampTimer = 0
+watch(
+  () => route.name,
+  () => {
+    clearTimeout(clampTimer)
+    clampTimer = window.setTimeout(clamp, 400)
+  },
+)
 watch(
   () => route.params.pref,
   (p) => {
     if (p && visible.value && Math.random() < 0.6) window.setTimeout(() => speak(), 900)
   },
 )
-const bubbleRight = computed(() => x.value > maxX() - 150)
+// 往右放不下吹出框（最寬 200px）時靠右
+const bubbleRight = computed(() => x.value + 200 > vw - 16)
 </script>
 
 <template>

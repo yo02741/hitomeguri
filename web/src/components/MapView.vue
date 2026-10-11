@@ -3,12 +3,12 @@ import maplibregl, { type GeoJSONSource, type LngLatBoundsLike } from 'maplibre-
 import type * as GeoJSON from 'geojson'
 import 'maplibre-gl/dist/maplibre-gl.css'
 import { computed, nextTick, onBeforeUnmount, onMounted, ref, shallowRef, watch } from 'vue'
+import { useRouter } from 'vue-router'
 
-import { JAPAN_CENTER, JAPAN_ZOOM, MAP_STYLE_URL } from '../map/style'
+import { JAPAN_CENTER, JAPAN_ZOOM, MAP_ATTRIBUTION, MAP_STYLE_URL } from '../map/style'
 import { mapThumbFallback, mapThumbUrl, type MapSpot } from '../services/bundles'
 import { splashCovering, trackSplash } from '../services/splash'
 import { theme } from '../services/theme'
-import { wide } from '../services/viewport'
 import JapanLocator from './JapanLocator.vue'
 
 const props = defineProps<{
@@ -943,22 +943,40 @@ function visibleView(user: boolean): MapView | null {
   }
 }
 
+const router = useRouter()
+// 出處裡的「資料來源」：站內換頁，不重新載入整個網站
+function onAttribClick(e: MouseEvent) {
+  const a = (e.target as Element | null)?.closest?.('a[data-credits]')
+  if (!a || e.metaKey || e.ctrlKey || e.shiftKey || e.button !== 0) return
+  e.preventDefault()
+  void router.push({ name: 'credits' })
+}
+
 onMounted(() => {
   if (!container.value) return
   map = new maplibregl.Map({
     container: container.value,
-    style: MAP_STYLE_URL,
     center: JAPAN_CENTER,
     zoom: JAPAN_ZOOM,
     // 底圖圖磚只到 14 級，再放大就只是放大；17 級已看得到建物
     maxZoom: 17,
+    // 出處（DESIGN.md §8）：© OpenStreetMap © OpenMapTiles 與「資料來源」（/credits）。
+    // 一開始只留 ⓘ，點了才展開（MapLibre 的 compact 一開始是展開的，會蓋住小地圖的下緣）
     attributionControl: {
       compact: true,
-      customAttribution: '景點資料 © OpenStreetMap contributors・Wikidata・Wikimedia Commons・維基百科（CC BY-SA 4.0）',
+      // 一個字串：MapLibre 會把多筆出處依長短重排，寫成一筆才能固定「© OpenStreetMap | © OpenMapTiles | 資料來源」的順序
+      customAttribution: [...MAP_ATTRIBUTION, `<a href="${router.resolve({ name: 'credits' }).href}" data-credits>資料來源</a>`].join(' | '),
     },
   })
-  // 手機：出處一開始只留 ⓘ，點了才展開（MapLibre 的 compact 一開始是展開的，會蓋住小地圖的下緣）
-  if (!wide.value) collapseAttribution()
+  // 底圖 style 各 source 自帶的出處（OpenFreeMap © OpenMapTiles Data from OpenStreetMap）拿掉，只留上面那一行
+  map.setStyle(MAP_STYLE_URL, {
+    transformStyle: (_prev, next) => ({
+      ...next,
+      sources: Object.fromEntries(Object.entries(next.sources).map(([k, src]) => [k, { ...src, attribution: undefined }])) as typeof next.sources,
+    }),
+  })
+  collapseAttribution()
+  container.value.addEventListener('click', onAttribClick)
   map.addControl(new maplibregl.NavigationControl({ showCompass: false }), 'bottom-right')
   // 開場畫面等到底圖第一次畫完（樣式或圖磚失敗也放行）
   const m = map
@@ -970,7 +988,7 @@ onMounted(() => {
     'map',
   )
   map.on('load', () => {
-    if (!wide.value) collapseAttribution()
+    collapseAttribution()
     addLayers()
     ready = true
     applyColors()
