@@ -6,7 +6,7 @@ import { useModal } from '../composables/modal'
 import { useSwipe } from '../composables/swipe'
 import { useTilt } from '../composables/tilt'
 import type { CardFace, Rarity } from '../services/card'
-import { reveal, showReveal } from '../services/cardReveal'
+import { queueReveal, reveal, showReveal } from '../services/cardReveal'
 import { allVariants, BASE_VARIANT, hasNight, missingSeasons, type Variant } from '../services/cardVariants'
 import { useCardDraw } from '../composables/cardDraw'
 import { useCardsStore } from '../stores/cards'
@@ -57,12 +57,15 @@ function drawOneCard() {
   if (cardDraw.drawFor({ spotId: props.card.id, owned: before, othersDone: othersDone.value })) expectNew(before)
 }
 
-// 抽到新的樣式：樣式清單更新時標 NEW、亮相最稀有的那張（四季剛好收齊時是紀念卡），
-// 切到那一種、翻回正面（翻到背面再抽，也是看到新卡的正面）
+// 抽到新的樣式：樣式清單更新時標 NEW、亮相，切到那一種、翻回正面（翻到背面再抽，也是看到新卡的正面）。
+// 四季剛好收齊時拿到兩張：先亮相抽到的季節卡，收進紀錄之後再亮相紀念卡（特別全景）；
+// 紀念卡常常晚一次更新才出現，抽完的幾秒內都接著看（SpotTasks 同一套）
 let before: Set<string> | null = null
 let beforeTimer = 0
+let shown = false
 function expectNew(keys: string[]) {
   before = new Set(keys)
+  shown = false
   clearTimeout(beforeTimer)
   beforeTimer = window.setTimeout(() => (before = null), 4000)
 }
@@ -73,12 +76,17 @@ watch(
     if (!list) return
     const got = before ? list.filter((v) => !before!.has(v.key)) : []
     if (got.length) {
-      before = null
+      got.forEach((v) => before!.add(v.key))
       fresh.add(got.map((v) => cardKey(props.card.id, v.key)))
-      const top = got[0]!
-      vi.value = list.indexOf(top)
+      const rest = got.filter((v) => v.kind !== 'special').sort((a, b) => b.rank - a.rank)
+      const order = [...rest.slice(0, 1), ...got.filter((v) => v.kind === 'special')]
+      // 卡片停在這次抽到的那一種（紀念卡另外亮相）
+      if (!shown) vi.value = list.indexOf(order[0]!)
       flipped.value = false
-      showReveal({ face: props.card, rarity: props.rarity, label: props.label ?? '', number: props.number ?? '', variant: top })
+      const at = (variant: Variant) => ({ face: props.card, rarity: props.rarity, label: props.label ?? '', number: props.number ?? '', variant })
+      if (!shown) showReveal(at(order[0]!), ...order.slice(1).map(at))
+      else order.forEach((v) => queueReveal(at(v)))
+      shown = true
       return
     }
     // 景點卡片上取消勾選拿掉了一種：停在原本看的那一種，沒有了就回到封面
