@@ -297,7 +297,7 @@ header 右側、登入鈕左邊（`SearchBox.vue`，每一頁都在；在行程�
 - 手機（< 1024）：header 右側、帳號左邊放一顆放大鏡鈕（`size-tap`，`aria-label`「搜尋景點、地區」、`aria-expanded`）。點了展開佔滿 header 的搜尋列（`bg-header`）：`SearchBox full` 聚焦＋右邊「取消」（`text-body-sm text-sub`）；結果鋪滿 header 與底部分頁列之間（`fixed inset-x-0 top-header`，`border-t border-line`，不圓角、不加陰影；打字時分頁列收起，結果鋪到底）。選了結果、按取消、按 Esc、換頁都會收起並清空，焦點回到放大鏡鈕。打開時新增一筆同網址的歷史（`composables/backClose.ts`），返回手勢先收起搜尋列；選了結果時新頁面取代那一筆。搜尋列一直掛著（`v-show`），在放大鏡的 click 裡直接 `focus()`：iOS 只有在使用者操作的事件當下聚焦才會叫出鍵盤。
 
 ### 7.4 擴充包列（原主題開關列）
-- 桌機：地圖上方浮動列，左緣對齊左側浮動面板外（`left: insetLeft`），靠左排、寬度不夠時換行；縣頁最前面是「只看○○」（`FocusChip.vue`，鎖頭圖示＋「只看東京」；開著 `bg-ink text-paper` 實心鎖，關著 `bg-paper` 打開的鎖；UX-FLOW.md §1.3），再來「只看收藏」膠囊鈕。
+- 桌機：地圖上方浮動列，左緣對齊左側浮動面板外（`left: insetLeft`），靠左排、寬度不夠時換行；縣頁最前面是「只看○○」（`FocusChip.vue`，鎖頭圖示＋「只看東京」；開著 `bg-ink text-paper` 實心鎖，關著 `bg-paper` 打開的鎖；只管鏡頭鎖不鎖，地圖上一律只有這個縣的點；UX-FLOW.md §1.3），再來「只看收藏」膠囊鈕。
 - 深度探索入口：地圖頁左欄最下方獨立的一張卡（和清單分開，`rounded-card bg-paper shadow-float`）：左邊 40px 地區色圓底的書本圖示、「深度探索」＋小字「季節・祭典・地區特色・期間限定」、右邊 ›。
 - 深度探索頁：桌機左欄（168px，sticky）上方是「‹ 地圖」外框按鈕（和地圖頁的入口在同一側），下方是段落目錄（SectionNav side，地區特色展開各組）；手機是標頭的「‹ 地圖」＋頂部橫列目錄。
 - 每個擴充包一顆膠囊按鈕 `h-9 rounded-full px-3.5 text-body-sm font-bold shadow-float`：圖示（主題色）＋名稱＋件數（`font-num`）。開啟中改為主題色底白字（`bg-(--pack)`，`--pack` 設為 `var(--color-t-*)`，不寫死色碼）；目前地區沒有資料時 `opacity-50` 不能按。

@@ -91,12 +91,12 @@ function crossPref(q: LocationQuery): LocationQuery {
 const available = computed(() => Object.keys(catalog.index?.prefectures ?? {}))
 // 目前的縣（區界、地區選單用）
 const prefHere = computed(() => (props.pref && regionOf(props.pref) ? props.pref : null))
-// 專心模式（UX-FLOW.md §1.3）：進入一縣後地圖鎖在這個縣、只畫這個縣的點；按「‹ 全國」或返回才離開。
-// 「只看○○」關掉時和全國一樣：畫全部的縣，拖到別縣時縣跟著換
+// 專心模式（UX-FLOW.md §1.3）：進入一縣後地圖鎖在這個縣；按「‹ 全國」或返回才離開。
+// 「只看○○」關掉時鏡頭不鎖，拖到別縣時縣跟著換。不管開關，縣頁只畫這個縣的點（使用者決定 2026-10-11）
 const focusPref = computed(() => (explore.focusLock ? prefHere.value : null))
 // 已載入完整地圖 bundle 的縣用全部大點，其餘縣先用全國總覽（各縣分數前段，bundles/featured.json）
 const allSpots = computed<MapSpot[]>(() =>
-  (focusPref.value ? [focusPref.value] : available.value).flatMap((p) => catalog.mapSpots[p] ?? catalog.featured[p] ?? []),
+  (prefHere.value ? [prefHere.value] : available.value).flatMap((p) => catalog.mapSpots[p] ?? catalog.featured[p] ?? []),
 )
 // 類型篩選：清單與按鈕先換（RegionLists 只切換顯示），地圖等那個畫面畫出來之後才跟上。
 // 地圖的點是分群（cluster）的來源，篩選要換掉資料才會重新分群（圖層的 filter、feature-state 只改得到畫不畫，
@@ -140,7 +140,7 @@ watch(
   () => explore.onlyFavorites,
   async (on) => {
     if (!on) return
-    const prefs = focusPref.value ? favoritePrefs.value.filter((p) => p === focusPref.value) : favoritePrefs.value
+    const prefs = prefHere.value ? favoritePrefs.value.filter((p) => p === prefHere.value) : favoritePrefs.value
     const spots = (await Promise.all(prefs.map((p) => catalog.loadMap(p).catch(() => [] as MapSpot[]))))
       .flat()
       .filter((s) => marks.marks[s.id]?.favorite)
@@ -197,8 +197,8 @@ const packMap = computed(() => {
   const def = explore.pack ? packByKey.get(explore.pack) : undefined
   if (!def) return null
   const items = catalog.packs[def.key] ?? []
-  const pref = focusPref.value
-  // 專心模式只畫這個縣的點；選到的名城已經以景點（有照片）標出，對到的擴充包點不重複畫
+  const pref = prefHere.value
+  // 縣頁只畫這個縣的點（不管「只看○○」）；選到的名城已經以景點（有照片）標出，對到的擴充包點不重複畫
   const points = items.filter(
     (it) => (!pref || it.p === pref) && (!explore.packGroup || it.g === explore.packGroup) && !(it.s && it.s === selectedId.value),
   )
