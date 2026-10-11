@@ -33,6 +33,7 @@
 
 **待辦**：見根目錄 `TODO.md`。
 
+- 圖示（2026-10-11，使用者決定）：從提案 A–D（`docs/screenshots/圖示提案.png`）選定。主畫面與 PWA 圖示用 A「巡の輪」（全國紙色＋紙紋、line 細圓、47 縣 strong 色圓點、中央墨色「巡」，全部在中心 80% 的圓內，同一張當 manifest 的 any 與 maskable），瀏覽器分頁用 D 的 favicon（紙色圓角方塊上的「巡」＋下緣 47 縣色帶），取代 Vite 預設的閃電 `favicon.svg`。都由 `web/build/icons.ts` 在建置時從 `data/regions.json` 畫出，原始碼不寫色碼：「巡」的外框存在 `web/build/glyph-meguri.ts`（Noto Sans JP Black，SIL OFL 1.1），點陣化在 `web/build/raster.ts`（不加套件）。輸出 `apple-touch-icon.png` 180、`icons/icon-192.png`、`icon-512.png`、`favicon.svg`、`favicon-32.png`（`maskable-*.png` 拿掉）；`web/build/icons.test.ts` 檢查安全區、47 縣顏色與 PNG（DESIGN.md §1b）。iPhone 已經加到主畫面的要重新加一次才會換圖示；Android 由 Chrome 之後檢查 manifest 時更新。
 - 資料來源頁（2026-10-11，使用者決定）：地圖下緣那條兩行的出處太佔位置，散步的旅人也會走過去。地圖上只留「© OpenStreetMap | © OpenMapTiles | 資料來源」，所有尺寸一開始收成 ⓘ；底圖 style 自帶的 OpenFreeMap 出處拿掉，改列在 `/credits`（DESIGN.md §8）。`/credits` 列出實際用到的來源、用途與授權（OSM、OpenMapTiles、OpenFreeMap、地球地図日本、Wikidata、維基百科、Commons、瀏覽量、農林水産省、気象庁、官方觀光網站、ポケモンローカルActs、観光庁多言語解説文DB、字型）與注意事項；入口是地圖出處與帳號選單。散步的旅人只走到地圖右下控制鈕左邊 280px 以外。
 - 這裡做過的事移到景點卡片（2026-10-11，使用者決定）：收集冊只看收集到的卡。放大檢視拿掉任務清單，回到原本的卡寬與「關閉」位置；景點卡片（去過的景點）多一小段勾選，勾了照樣播新卡入手（DESIGN.md §7.19a）。
 

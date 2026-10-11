@@ -81,7 +81,7 @@ function pwa() {
       scope: '.',
       theme_color: nationalColor.header,
       background_color: nationalColor.paper,
-      // 主畫面圖示由 build/icons.ts 從 regions.json 產生（決定事項 Q2）
+      // 主畫面圖示「巡の輪」由 build/icons.ts 從 regions.json 產生（DESIGN.md §1b）；同一張圖列為 any 與 maskable
       icons: manifestIcons,
     },
     workbox: {
