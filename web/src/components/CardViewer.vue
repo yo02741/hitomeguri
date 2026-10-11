@@ -15,7 +15,7 @@ import { useWalletStore } from '../stores/wallet'
 import NewTag from './NewTag.vue'
 import SpotCard from './SpotCard.vue'
 
-// 收集卡放大檢視（DESIGN.md §7.19）：畫面中央一張大卡，點卡片翻面；手機可以用傾斜角度讓卡片轉動。
+// 收集卡放大檢視（DESIGN.md §7.19）：一張大卡（桌機在左、依畫面高度放大，控制列在右），點卡片翻面；手機可以用傾斜角度讓卡片轉動。
 // 收集冊裡可以左右切換上一張、下一張（方向鍵、左右滑）。Esc、點背景或「關閉」離開（原生 <dialog>，composables/modal.ts）。
 // 手機（<640）「關閉」在右上角；觸控裝置點卡片翻面，沒有「背面」鈕（手機版計畫第二階段 27）。
 // 去過的景點可以「抽一張」（用一張抽獎券，只抽還沒有的季節）。「這裡做過的事」在景點卡片上勾（SpotTasks.vue）。
@@ -241,7 +241,7 @@ onBeforeUnmount(() => document.removeEventListener('keydown', onKey))
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7" /></svg>
           </button>
         </div>
-        <!-- 控制列：直向排在卡片下面；橫向（手機打橫）排成一欄放在卡片右邊，像切符的副券 -->
+        <!-- 控制列：直向排在卡片下面；桌機與手機打橫排成一欄放在卡片右邊，像切符的副券 -->
         <div class="controls">
           <p v-if="position" class="font-num text-body-sm text-white/80" aria-live="polite">{{ position.index + 1 }} / {{ position.total }}</p>
           <!-- 樣式：收集到的幾種之間切換 -->
@@ -387,6 +387,47 @@ onBeforeUnmount(() => document.removeEventListener('keydown', onKey))
 }
 .controls {
   display: contents;
+}
+/* 桌機（寬 ≥1024、高 >500）：卡片在左、依畫面高度放大（最寬 560px）；控制列一欄在右，
+   左邊虛線隔開（和手機打橫同一種副券）。橫卡扣掉兩側 ‹ ›、右欄與間距。
+   右欄蓋在頁面上，遮罩加深並模糊背後（和扭蛋、十連抽一樣 ink 85%＋blur），頁面的按鈕不會混進來 */
+@media (min-width: 1024px) and (min-height: 501px) {
+  .viewer {
+    --cw: min(560px, calc((100dvh - 4rem) * 5 / 7));
+    --lw: min(calc(var(--cw) * 1.96), calc(100vw - 17rem - 2.5rem - 7.5rem - 2rem));
+    flex-direction: row;
+    gap: 2.5rem;
+    padding-inline: 1rem;
+    background-color: color-mix(in oklab, var(--color-ink) 85%, transparent);
+    backdrop-filter: blur(4px);
+  }
+  .controls {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.75rem;
+    width: 17rem;
+    flex-shrink: 0;
+    max-height: 100%;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    padding: 0.5rem 0 0.5rem 2rem;
+    border-left: 2px dashed color-mix(in oklab, var(--color-paper) 35%, transparent);
+  }
+  /* 樣式膠囊靠左換行（上方留給 NEW 標記） */
+  .variants {
+    justify-content: flex-start;
+    padding-top: 0.5rem;
+  }
+  .controls .cover-btn {
+    margin-top: 0;
+    justify-content: flex-start;
+    padding-inline: 0;
+  }
+  .actions {
+    flex-direction: column;
+    flex-wrap: nowrap;
+  }
 }
 /* 手機打橫：卡片在左、高度撐滿；控制列一欄在右，用虛線隔開；放不下時控制列自己捲 */
 @media (orientation: landscape) and (max-height: 500px) {
