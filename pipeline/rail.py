@@ -24,7 +24,9 @@
 
 from __future__ import annotations
 
+import dataclasses
 import datetime as dt
+import gzip
 import heapq
 import json
 import math
@@ -33,6 +35,7 @@ import unicodedata
 from collections import Counter, defaultdict
 from collections.abc import Callable, Iterable
 from dataclasses import dataclass, field
+from pathlib import Path
 from typing import Any
 
 from pipeline import geo
@@ -877,3 +880,45 @@ def seed_rail(prefs: list[str]) -> str:
     if failed:
         lines += ["", f"Overpass 失敗、要補跑的縣：{' '.join(failed)}"]
     return "\n".join(lines) + "\n"
+
+
+# ---------- 除錯：Overpass 原始回應 ----------
+
+
+def dump_rail_osm(prefs: list[str], out_dir: Path) -> str:
+    """seed-rail 用到的 Overpass 回應（範圍框內的車站、縣內的路線）→ out_dir/{縣}.json.gz。
+
+    沙箱連不到 Overpass：在 Actions 上跑，推到審核分支（不合併），本機用 load_rail_osm 重現。"""
+    out_dir.mkdir(parents=True, exist_ok=True)
+    rows = [
+        "## 鐵路的 Overpass 原始回應",
+        "",
+        "| 縣 | 車站 | 路線 relation | 檔案 |",
+        "|---|---|---|---|",
+    ]
+    for pref in prefs:
+        log(f"[{pref}] Overpass…")
+        try:
+            nearby = osm.stations(geo.bbox(pref, pad=STATION_PAD))
+            routes = osm.rail_routes(geo.iso_code(pref))
+        except RuntimeError as e:
+            log(f"[{pref}]   失敗，跳過：{e}")
+            rows.append(f"| {pref} | 失敗 | | |")
+            continue
+        path = out_dir / f"{pref}.json.gz"
+        body = {"stations": [dataclasses.asdict(el) for el in nearby], "routes": routes}
+        path.write_bytes(gzip.compress(json.dumps(body, ensure_ascii=False).encode(), mtime=0))
+        rels = sum(1 for el in routes.get("elements", []) if el.get("type") == "relation")
+        kb = path.stat().st_size // 1024
+        rows.append(f"| {pref} | {len(nearby)} | {rels} | {path.name}（{kb} KB） |")
+    return "\n".join(rows) + "\n"
+
+
+def load_rail_osm(
+    path: Path, pref: str
+) -> tuple[list[RailLine], list[RailStation], list[RailStation]]:
+    """dump_rail_osm 的檔案 → build_rail 的結果（和 seed_rail 同一套）。"""
+    body = json.loads(gzip.decompress(path.read_bytes()))
+    operators: dict[str, set[str]] = {}
+    nearby = build_stations([osm.OsmElement(**el) for el in body["stations"]], operators)
+    return build_rail(body["routes"], nearby, in_pref(pref), operators)

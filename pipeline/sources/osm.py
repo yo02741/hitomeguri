@@ -7,6 +7,7 @@ OSM 資料以 ODbL 授權，UI 需標示「© OpenStreetMap contributors」。
 from __future__ import annotations
 
 import time
+from collections.abc import Callable
 from dataclasses import dataclass, field
 
 from pipeline.http import post_json
@@ -21,7 +22,9 @@ ENDPOINTS = [
 ROUND_WAITS = (0, 60, 180, 420)
 
 
-def _query(query: str) -> dict:
+def _query(query: str, check: Callable[[dict], str | None] | None = None) -> dict:
+    """check 回傳錯誤訊息時（回應不完整，例如 area 查不到時 0 筆、沒有 remark）當成失敗，
+    換下一個鏡像。"""
     last_err: Exception | None = None
     for wait in ROUND_WAITS:
         if wait:
@@ -32,6 +35,8 @@ def _query(query: str) -> dict:
                 remark = data.get("remark", "")
                 if "runtime error" in remark or "timed out" in remark:
                     raise RuntimeError(remark)
+                if check and (err := check(data)):
+                    raise RuntimeError(err)
                 return data
             except Exception as e:  # noqa: BLE001 — 換下一個鏡像，整輪失敗就等一下再試
                 last_err = e
@@ -64,9 +69,15 @@ def _run(query: str) -> list[OsmElement]:
     return out
 
 
-def raw(query: str) -> dict:
+def raw(query: str, check: Callable[[dict], str | None] | None = None) -> dict:
     """Overpass 原始回應（需要幾何的查詢用，例如鐵路路線）。"""
-    return _query(query)
+    return _query(query, check)
+
+
+def _has_relations(data: dict) -> str | None:
+    if any(el.get("type") == "relation" for el in data.get("elements", [])):
+        return None
+    return "沒有任何路線 relation（縣的 area 可能沒查到）"
 
 
 # route=railway 是軌道本身（「函館本線」「山陰本線」）：地方的 JR 線多半沒有 route=train 的列車路線
@@ -96,7 +107,8 @@ way.act["highspeed"="yes"];
 out tags;
 node(r.rels)["name"];
 out;"""
-    return raw(q)
+    # 每縣都有鐵路：0 筆是查詢沒成功（seed-rail #77 的福岡：沒有 remark，回應是空的）
+    return raw(q, _has_relations)
 
 
 def _area(iso: str) -> str:

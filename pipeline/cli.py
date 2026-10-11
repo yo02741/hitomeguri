@@ -175,6 +175,16 @@ def cmd_seed_rail(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_dump_rail_osm(args: argparse.Namespace) -> int:
+    from pipeline.geo import pref_slugs
+    from pipeline.paths import DATA
+    from pipeline.rail import dump_rail_osm
+
+    prefs = args.prefectures or pref_slugs()
+    _emit(dump_rail_osm(prefs, DATA.parent / "reports" / "rail-osm"), args.report)
+    return 0
+
+
 def cmd_seed_municipalities(args: argparse.Namespace) -> int:
     from pipeline.geo import pref_slugs
     from pipeline.municipalities import seed_municipalities
@@ -427,6 +437,14 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("prefectures", nargs="*", help="省略時處理全部縣")
     p.add_argument("--report")
     p.set_defaults(func=cmd_seed_rail)
+
+    p = sub.add_parser(
+        "dump-rail-osm",
+        help="除錯：seed-rail 的 Overpass 原始回應 → reports/rail-osm/（推到審核分支，不合併）",
+    )
+    p.add_argument("prefectures", nargs="*", help="省略時處理全部縣")
+    p.add_argument("--report")
+    p.set_defaults(func=cmd_dump_rail_osm)
 
     p = sub.add_parser(
         "seed-municipalities",
