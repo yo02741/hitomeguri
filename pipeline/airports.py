@@ -151,11 +151,39 @@ def resolve_prefecture(c: Candidate) -> tuple[str | None, str]:
 
 
 def fetch_pdf_text(url: str) -> tuple[str, int]:
-    """下載 PDF，取出全部頁面的文字；回傳 (文字, 頁數)。"""
+    """下載 PDF 或 Excel（.xlsx），取出文字；回傳 (文字, 頁數或工作表數)。
+
+    「各空港における国際線就航状況調べ」的 PDF 表格取不出文字（只有表頭），
+    同一份資料的 Excel 可以。"""
     data = get_bytes(url, min_interval=1.0)
     if data is None:
-        raise RuntimeError(f"PDF 不存在（404）：{url}")
+        raise RuntimeError(f"檔案不存在（404）：{url}")
+    if data[:2] == b"PK":  # .xlsx 是 zip
+        return xlsx_text(data)
     return pdf_text(data)
+
+
+def xlsx_text(data: bytes) -> tuple[str, int]:
+    """Excel（.xlsx）的文字：共用字串表與各工作表的行內字串，一個儲存格一行；回傳 (文字, 工作表數)。
+
+    只用標準函式庫（zipfile、ElementTree；ElementTree 不展開外部實體）。"""
+    import xml.etree.ElementTree as ET
+    import zipfile
+
+    ns = "{http://schemas.openxmlformats.org/spreadsheetml/2006/main}"
+    z = zipfile.ZipFile(io.BytesIO(data))
+    names = z.namelist()
+    out: list[str] = []
+    if "xl/sharedStrings.xml" in names:
+        root = ET.fromstring(z.read("xl/sharedStrings.xml"))
+        for si in root.iter(f"{ns}si"):
+            out.append("".join(t.text or "" for t in si.iter(f"{ns}t")))
+    sheets = sorted(n for n in names if n.startswith("xl/worksheets/sheet") and n.endswith(".xml"))
+    for n in sheets:
+        root = ET.fromstring(z.read(n))
+        for cell in root.iter(f"{ns}is"):
+            out.append("".join(t.text or "" for t in cell.iter(f"{ns}t")))
+    return "\n".join(out), len(sheets)
 
 
 def pdf_text(data: bytes) -> tuple[str, int]:
@@ -542,9 +570,9 @@ def seed_airports(url: str | None = None, *, write_spots: bool = True) -> str:
     """回傳 markdown 報告；寫 data/seed/airports.json 與 data/spots 的機場景點。"""
     url = url or DEFAULT_PDF_URL
     today = dt.date.today().isoformat()
-    log(f"[airports] 下載「国際定期便の概要」：{url}")
+    log(f"[airports] 下載國際線就航資料：{url}")
     text, pages = fetch_pdf_text(url)
-    log(f"[airports]   {pages} 頁、{len(text)} 字")
+    log(f"[airports]   {pages} 頁（工作表）、{len(text)} 字")
     log("[airports] Wikidata 的日本機場…")
     all_cands = parse_candidates(fetch_candidates())
     excluded = {q: r for q, c in all_cands.items() if (r := exclusion_reason(c))}
@@ -560,7 +588,7 @@ def seed_airports(url: str | None = None, *, write_spots: bool = True) -> str:
     if len(matches) < MIN_MATCHED:
         raise RuntimeError(
             f"PDF 只對到 {len(matches)} 個機場（少於 {MIN_MATCHED}）："
-            "文字可能取不出來或格式變了，沒有寫檔。PDF 開頭：" + re.sub(r"\s+", " ", text[:300])
+            "文字可能取不出來或格式變了，沒有寫檔。開頭：" + re.sub(r"\s+", " ", text[:300])
         )
     airports, check = airport_records(matches, all_cands)
 

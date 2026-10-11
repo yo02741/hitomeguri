@@ -417,3 +417,26 @@ def test_validate_airports_errors(tmp_path):
     assert any("沒有依 id 排序" in e for e in res.errors)
     assert any("nowhere" in e for e in res.errors)
     assert any("還不是景點" in w for w in res.warnings)
+
+
+def test_xlsx_text_reads_shared_and_inline_strings():
+    import io
+    import zipfile
+
+    from pipeline.airports import xlsx_text
+
+    ns = 'xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main"'
+    buf = io.BytesIO()
+    with zipfile.ZipFile(buf, "w") as z:
+        z.writestr(
+            "xl/sharedStrings.xml",
+            f'<sst {ns}><si><t>那覇</t></si><si><r><t>新</t></r><r><t>千歳</t></r></si></sst>',
+        )
+        z.writestr(
+            "xl/worksheets/sheet1.xml",
+            f'<worksheet {ns}><sheetData><row><c t="inlineStr"><is><t>福岡</t></is></c></row>'
+            "</sheetData></worksheet>",
+        )
+    text, sheets = xlsx_text(buf.getvalue())
+    assert text.split("\n") == ["那覇", "新千歳", "福岡"]
+    assert sheets == 1
