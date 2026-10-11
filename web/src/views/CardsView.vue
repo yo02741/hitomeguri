@@ -16,6 +16,7 @@ import { useScrollSpy } from '../composables/scrollSpy'
 import { useVisitedEntries } from '../composables/visited'
 import { type Region, regions } from '../data/regions'
 import { cardFromSpot } from '../services/card'
+import { queueReveal } from '../services/cardReveal'
 import { missingSeasonCount } from '../services/cardVariants'
 import { useCatalogStore } from '../stores/catalog'
 import { useFreshStore } from '../stores/fresh'
@@ -171,10 +172,19 @@ const othersDone = (e: CollectionCard) => e.variants.length === e.variantTotal -
 const missingSeasonsOf = (e: CollectionCard) => missingSeasonCount([e.variants.map((v) => v.key)])
 const tenPull = ref<Pull[] | null>(null)
 const tenKey = ref(0)
+// 這次（含「再抽十張」）剛好四季收齊、拿到紀念卡的景點：十連抽收起來之後才一張一張亮相特別全景
+// （先看抽到的季節卡，再看紀念卡；「這裡做過的事」、抽一張同一套）
+let tenSpecials: string[] = []
 function drawTen() {
   const byId = new Map(cards.value.map((e) => [e.face.id, e]))
   const got = cardDraw.drawAcross(cards.value.map((e) => ({ spotId: e.face.id, owned: e.variants.map((v) => v.key), othersDone: othersDone(e) })), 10)
   if (!got.length) return
+  const drawn = new Map<string, number>()
+  for (const [t] of got) drawn.set(t.spotId, (drawn.get(t.spotId) ?? 0) + 1)
+  for (const [id, n] of drawn) {
+    const e = byId.get(id)!
+    if (othersDone(e) && !e.variants.some((v) => v.kind === 'special') && n >= missingSeasonsOf(e) && !tenSpecials.includes(id)) tenSpecials.push(id)
+  }
   tenKey.value++
   tenPull.value = got.map(([t, v]) => {
     const e = byId.get(t.spotId)!
@@ -183,6 +193,17 @@ function drawTen() {
 }
 const showTickets = ref(false)
 const showRules = ref(false)
+
+function closeTen() {
+  tenPull.value = null
+  const ids = tenSpecials
+  tenSpecials = []
+  for (const id of ids) {
+    const e = cards.value.find((c) => c.face.id === id)
+    const special = e?.variants.find((v) => v.kind === 'special')
+    if (e && special) queueReveal({ face: e.face, rarity: e.rarity, label: e.label, number: e.number, variant: special })
+  }
+}
 
 function onCardKey(e: KeyboardEvent, id: string) {
   if (e.key === 'Enter' || e.key === ' ') {
@@ -380,7 +401,7 @@ function onCardKey(e: KeyboardEvent, id: string) {
       @step="step"
       @close="openId = null"
     />
-    <TenPull v-if="tenPull" :key="tenKey" :pulls="tenPull" title="十連抽" :can-again="tenCount > 0 && wallet.canSpend(tenCount)" @again="drawTen" @close="tenPull = null" />
+    <TenPull v-if="tenPull" :key="tenKey" :pulls="tenPull" title="十連抽" :can-again="tenCount > 0 && wallet.canSpend(tenCount)" @again="drawTen" @close="closeTen" />
   </section>
 </template>
 
