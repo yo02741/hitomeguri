@@ -390,7 +390,8 @@ onBeforeUnmount(() => document.removeEventListener('keydown', onKey))
 }
 /* 桌機（寬 ≥1024、高 >500）：卡片在左、依畫面高度放大（最寬 560px）；控制列一欄在右，
    左邊虛線隔開（和手機打橫同一種副券）。橫卡扣掉兩側 ‹ ›、右欄與間距。
-   右欄蓋在頁面上，遮罩加深並模糊背後（和扭蛋、十連抽一樣 ink 85%＋blur），頁面的按鈕不會混進來 */
+   右欄蓋在頁面上，遮罩加深並模糊背後（和十連抽一樣 ink 90%＋blur），頁面的按鈕不會看起來像右欄的膠囊。
+   樣式多的時候膠囊往下一行折，不橫向捲 */
 @media (min-width: 1024px) and (min-height: 501px) {
   .viewer {
     --cw: min(560px, calc((100dvh - 4rem) * 5 / 7));
@@ -398,8 +399,8 @@ onBeforeUnmount(() => document.removeEventListener('keydown', onKey))
     flex-direction: row;
     gap: 2.5rem;
     padding-inline: 1rem;
-    background-color: color-mix(in oklab, var(--color-ink) 85%, transparent);
-    backdrop-filter: blur(4px);
+    background-color: color-mix(in oklab, var(--color-ink) 90%, transparent);
+    backdrop-filter: blur(12px);
   }
   .controls {
     display: flex;
@@ -414,10 +415,16 @@ onBeforeUnmount(() => document.removeEventListener('keydown', onKey))
     padding: 0.5rem 0 0.5rem 2rem;
     border-left: 2px dashed color-mix(in oklab, var(--color-paper) 35%, transparent);
   }
-  /* 樣式膠囊靠左換行（上方留給 NEW 標記） */
+  /* 樣式膠囊靠左、往下折（上方留給 NEW 標記）；張數另起一行 */
   .variants {
+    flex-wrap: wrap;
     justify-content: flex-start;
+    row-gap: 0.5rem;
     padding-top: 0.5rem;
+  }
+  .variants > span {
+    flex-basis: 100%;
+    margin-left: 0.25rem;
   }
   .controls .cover-btn {
     margin-top: 0;
