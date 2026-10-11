@@ -90,6 +90,28 @@ def get_text(url: str, *, min_interval: float = 1.0, retries: int = 3) -> str | 
     raise RuntimeError(f"unreachable: {url}")
 
 
+def get_bytes(url: str, *, min_interval: float = 1.0, retries: int = 3) -> bytes | None:
+    """取檔案（zip 等）；預設每秒最多一次。404 回傳 None。"""
+    host = httpx.URL(url).host
+    for attempt in range(retries + 1):
+        _throttle(host, min_interval)
+        try:
+            resp = client().get(url, headers={"Accept": "*/*"})
+        except httpx.TransportError:
+            if attempt == retries:
+                raise
+            time.sleep(2**attempt * 2)
+            continue
+        if resp.status_code == 404:
+            return None
+        if resp.status_code in (429, 500, 502, 503, 504) and attempt < retries:
+            time.sleep(2**attempt * 5)
+            continue
+        resp.raise_for_status()
+        return resp.content
+    raise RuntimeError(f"unreachable: {url}")
+
+
 def get_json(url: str, **kw: Any) -> Any:
     return request_json("GET", url, **kw)
 

@@ -104,6 +104,9 @@ class Spot(StrictModel):
     location: Location
     prefecture: Prefecture
     city: str | None = None
+    # 所在的市区町村（全国地方公共団体コード 6 碼；政令指定都市是區）：由 data/municipalities 的
+    # 區界判斷（assign-municipalities），沒有區界資料時沒有
+    municipality: str | None = Field(default=None, pattern=r"^\d{6}$")
     kind: Literal["major"]  # 舊的主題小店（theme）已刪除；小店改由擴充包（data/packs）提供
     themes: list[str] = Field(default_factory=list)
     tags: list[str] = Field(default_factory=list)
@@ -169,7 +172,13 @@ class Festival(StrictModel):
 
 
 class RailLine(StrictModel):
-    """一條鐵路路線（上下行合併）；coords 為多段 [[經度, 緯度], …]。"""
+    """一條鐵路路線（上下行合併）；coords 為多段 [[經度, 緯度], …]。
+
+    coords 只畫這條線獨有的路段（共用軌道只畫一次），所以可能是空的：例如東京都內的東北新幹線
+    全段和上越新幹線共用，仍留著這條線，車站才查得到「東北新幹線」。
+    edges：沿線相鄰兩站（車站 id 依字串排序）與沿軌道的距離（km）；至少一端是這個縣的車站，
+    另一端可以在 RailData.extra_stations（縣外、或沒有車站點的停靠點）。
+    """
 
     id: str
     name: str
@@ -178,7 +187,10 @@ class RailLine(StrictModel):
     operator: str | None = None
     kind: str
     colour: str | None = None
+    # 新幹線：路線名稱、network 有「新幹線」，或 OSM 標 highspeed=yes、service=high_speed
+    shinkansen: bool = False
     coords: list[list[list[float]]]
+    edges: list[tuple[str, str, float]] = Field(default_factory=list)
 
 
 class RailStation(StrictModel):
@@ -187,6 +199,9 @@ class RailStation(StrictModel):
     name_en: str | None = None
     lat: float
     lng: float
+    # 停靠的路線 id（route relation 的停靠點；沒有停靠點的軌道 relation 用距離判斷）
+    lines: list[str] = Field(default_factory=list)
+    shinkansen: bool = False
 
 
 class RailData(StrictModel):
@@ -195,6 +210,47 @@ class RailData(StrictModel):
     source: Source
     lines: list[RailLine]
     stations: list[RailStation]
+    # edges 另一端用到、但不在 stations 裡的站（縣外，或 OSM 沒有車站點的停靠點）；
+    # build-rail-graph 依 id、同名 500 m 內對到其他縣的車站
+    extra_stations: list[RailStation] = Field(default_factory=list)
+
+
+MunicipalityCode = str  # 全国地方公共団体コード 6 碼（JIS X 0402 的 5 碼＋檢查碼）
+
+
+class MunicipalityProps(StrictModel):
+    name: str  # 日文名；政令指定都市是區名（東山区），市名在 city
+    kana: str | None = None  # 念法：Wikidata P1814（N03 沒有念法）
+    romaji: str | None = None  # 來源沒有羅馬拼音，不自己轉
+    city: str | None = None  # 政令指定都市的區：所屬的市（京都市）
+    kana_source_url: str | None = None
+    source_url: str
+    retrieved: str
+
+
+class MultiPolygonGeometry(StrictModel):
+    type: Literal["MultiPolygon"]
+    coordinates: list[list[list[list[float]]]]
+
+
+class MunicipalityFeature(StrictModel):
+    type: Literal["Feature"]
+    id: MunicipalityCode = Field(pattern=r"^\d{6}$")
+    properties: MunicipalityProps
+    geometry: MultiPolygonGeometry
+
+
+class MunicipalityData(StrictModel):
+    """市区町村界（data/municipalities/{prefecture}.json）：国土数値情報 N03，簡化後的 GeoJSON。"""
+
+    type: Literal["FeatureCollection"]
+    prefecture: Prefecture
+    dataset: str  # 例 "N03-20250101"
+    source: Source
+    license: str
+    attribution: str
+    tolerance: float  # 簡化容許誤差（度）
+    features: list[MunicipalityFeature]
 
 
 class SeasonStation(StrictModel):

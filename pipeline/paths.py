@@ -15,6 +15,8 @@ PACKS_DIR = DATA / "packs"
 TIMED_DIR = DATA / "timed"
 # 鐵路路線圖層（OSM）
 RAIL_DIR = DATA / "rail"
+# 市区町村界（国土数値情報 N03，簡化後）
+MUNICIPALITIES_DIR = DATA / "municipalities"
 # 深度探索「祭典」：日文維基分類
 FESTIVALS_DIR = DATA / "festivals"
 # 深度探索「季節」：氣象廳生物季節平年值
