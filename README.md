@@ -2,7 +2,7 @@
 
 **網站**：[Firebase Hosting](https://hitomeguri-7d87a.web.app/) ・ [GitHub Pages](https://yo02741.github.io/hitomeguri/)
 
-來一趟日本，才知道它有多大。
+把日本走一圈。
 
 日本景點地圖與旅前準備：先排必去的景點，再用擴充包找值得專程去的小點，出發前整理好行程、念法與會用到的日文。
 

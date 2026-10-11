@@ -22,7 +22,7 @@ const hasData = computed(() => new Set(props.available))
     class="scroll-quiet flex min-h-0 flex-col gap-3 overflow-y-auto overscroll-contain rounded-card bg-paper px-4 pt-5 pb-3 shadow-float max-lg:gap-2 max-lg:px-3 max-lg:pt-3"
   >
     <h1 class="px-1 text-h3 leading-[1.45] font-black tracking-title max-lg:text-title max-lg:leading-snug">
-      來一趟日本，<br class="max-lg:hidden" />才知道它有多大。
+      把日本走一圈。
     </h1>
     <nav v-if="wide" class="flex flex-col" aria-label="地區">
       <template v-for="g in groups" :key="g.area">

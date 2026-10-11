@@ -74,7 +74,7 @@ function pwa() {
     manifest: {
       name: 'ひとめぐり',
       short_name: 'ひとめぐり',
-      description: '來一趟日本，才知道它有多大。',
+      description: '把日本走一圈。',
       lang: 'zh-Hant-TW',
       display: 'standalone',
       start_url: '.',

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, nextTick, onBeforeUnmount, onMounted, ref, shallowRef } from 'vue'
+import { computed, type Directive, nextTick, onBeforeUnmount, onMounted, ref, shallowRef, watch } from 'vue'
 
 import AchvSeal from '../components/AchvSeal.vue'
 import JapanMap from '../components/JapanMap.vue'
@@ -11,7 +11,7 @@ import Wordmark from '../components/Wordmark.vue'
 import { ACHIEVEMENTS } from '../data/achievements'
 import { regionOf, regions } from '../data/regions'
 import { cardFromMapSpot, cardNumberOf, type CardFace, isLandscapeCard } from '../services/card'
-import { allVariants, BASE_VARIANT, seasonOfMonth, seasonVariant, type SeasonKey, type Variant } from '../services/cardVariants'
+import { allVariants, BASE_VARIANT, seasonVariant, type Variant } from '../services/cardVariants'
 import { mapThumbUrl, type MapSpot } from '../services/bundles'
 import { commonsThumb } from '../services/commons'
 import { ERAS, preloadThemeFonts, setTheme, theme, type Theme } from '../services/theme'
@@ -23,65 +23,237 @@ import themeColors from '../styles/theme-colors.json'
 // 數字與例子都是現在的資料（景點、車站、鐵路距離取自 data/，2026-10-11）。文案照 PLAN.md §6a：短、具體、不用驚嘆號。
 const catalog = useCatalogStore()
 
-// ---- 海報：浮世繪＋直排標語＋落款印（DESIGN.md §14） ----
-// 歌川広重《名所江戸百景》本身分春、夏、秋、冬四部，照今天的季節換一張；都是 data/ukiyoe.json 收的作品，畫的地方在地圖上
-interface Print {
-  title: string
-  year: number
-  /** Commons 原圖網址，顯示時換成縮圖 */
+// ---- 海報：全版輪播的日本風景，由北海道到沖繩走一圈（DESIGN.md §14） ----
+// 照片是各景點資料裡的 Commons 照片（data/spots），作者與授權照原樣寫在右下角
+interface Slide {
+  id: string
+  pref: string
+  name: string
+  /** Commons 縮圖網址，顯示時換成需要的寬度 */
   image: string
+  author: string
+  license: string
   source: string
-  spot: string
-  place: string
+  /** 手機直的畫面裁切時保留的位置（object-position） */
+  focus: string
 }
-const PRINTS: Record<SeasonKey, Print> = {
-  spring: {
-    title: '上野清水堂不忍ノ池',
-    year: 1856,
-    image: 'https://upload.wikimedia.org/wikipedia/commons/1/1e/100_views_edo_011.jpg',
-    source: 'https://commons.wikimedia.org/wiki/File:100_views_edo_011.jpg',
-    spot: 'wd-Q5365093',
-    place: '不忍池',
+const SLIDES: Slide[] = [
+  {
+    id: 'wd-Q713619',
+    pref: 'hokkaido',
+    name: '羊蹄山',
+    image: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c7/Yotei-zan-from-hirafu.jpg/960px-Yotei-zan-from-hirafu.jpg',
+    author: 'Oga',
+    license: 'CC BY-SA 3.0',
+    source: 'https://commons.wikimedia.org/wiki/File:Yotei-zan-from-hirafu.jpg',
+    focus: '50% 40%',
   },
-  summer: {
-    title: '大はしあたけの夕立',
-    year: 1857,
-    image: 'https://upload.wikimedia.org/wikipedia/commons/7/72/Hiroshige%2C_Sudden_shower_over_Shin-%C5%8Chashi_bridge_and_Atake%2C_1857.jpg',
-    source: 'https://commons.wikimedia.org/wiki/File:Hiroshige,_Sudden_shower_over_Shin-%C5%8Chashi_bridge_and_Atake,_1857.jpg',
-    spot: 'wd-Q222149',
-    place: '隅田川',
+  {
+    id: 'wd-Q1144855',
+    pref: 'miyagi',
+    name: '松島',
+    image: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/9/94/Miyagi-Landscape_of_cherry_blossoms_and_Matsushima_Bay-xl.jpg/960px-Miyagi-Landscape_of_cherry_blossoms_and_Matsushima_Bay-xl.jpg',
+    author: 'Makoto_Lab',
+    license: 'CC BY 4.0',
+    source: 'https://commons.wikimedia.org/wiki/File:Miyagi-Landscape_of_cherry_blossoms_and_Matsushima_Bay-xl.jpg',
+    focus: '50% 50%',
   },
-  autumn: {
-    title: '両国花火',
-    year: 1858,
-    image: 'https://upload.wikimedia.org/wikipedia/commons/e/e3/Fireworks_at_Ryogoku_%28Ryogoku_Hanabi%29%2C_No._98_from_One_Hundred_Famous_Views_of_Edo.jpg',
-    source: 'https://commons.wikimedia.org/wiki/File:Fireworks_at_Ryogoku_(Ryogoku_Hanabi),_No._98_from_One_Hundred_Famous_Views_of_Edo.jpg',
-    spot: 'wd-Q3080489',
-    place: '兩國橋',
+  {
+    id: 'wd-Q615183',
+    pref: 'tokyo',
+    name: '淺草寺',
+    image: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/8/84/Sensoji_at_night.JPG/960px-Sensoji_at_night.JPG',
+    author: 'Kakidai',
+    license: 'CC BY-SA 3.0',
+    source: 'https://commons.wikimedia.org/wiki/File:Sensoji_at_night.JPG',
+    focus: '58% 50%',
   },
-  winter: {
-    title: '浅草金龍山',
-    year: 1856,
-    image: 'https://upload.wikimedia.org/wikipedia/commons/d/df/100_views_edo_099.jpg',
-    source: 'https://commons.wikimedia.org/wiki/File:100_views_edo_099.jpg',
-    spot: 'wd-Q615183',
-    place: '淺草寺',
+  {
+    id: 'wd-Q1002193',
+    pref: 'gifu',
+    name: '白川鄉',
+    image: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/5/50/A_world_heritage_SIRAKAWAGOU_JPN_2010.jpg/960px-A_world_heritage_SIRAKAWAGOU_JPN_2010.jpg',
+    author: 'Masaki ikeda 池田正樹',
+    license: 'CC BY-SA 3.0',
+    source: 'https://commons.wikimedia.org/wiki/File:A_world_heritage_SIRAKAWAGOU_JPN_2010.jpg',
+    focus: '45% 50%',
   },
-}
-const print = PRINTS[seasonOfMonth(new Date().getMonth() + 1)]
-const printSrcset = ([500, 960, 1280] as const).map((w) => `${commonsThumb(print.image, w)} ${w}w`).join(', ')
+  {
+    id: 'wd-Q714828',
+    pref: 'kyoto',
+    name: '伏見稻荷大社',
+    image: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/1/16/KyotoFushimiInariLarge.jpg/960px-KyotoFushimiInariLarge.jpg',
+    author: 'Paul Vlaar',
+    license: 'CC BY-SA 3.0',
+    source: 'https://commons.wikimedia.org/wiki/File:KyotoFushimiInariLarge.jpg',
+    focus: '42% 50%',
+  },
+  {
+    id: 'wd-Q191763',
+    pref: 'hiroshima',
+    name: '嚴島神社',
+    image: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0e/Itsukushima_Gate.jpg/960px-Itsukushima_Gate.jpg',
+    author: 'JordyMeow',
+    license: 'CC BY-SA 3.0',
+    source: 'https://commons.wikimedia.org/wiki/File:Itsukushima_Gate.jpg',
+    focus: '38% 50%',
+  },
+  {
+    id: 'wd-Q2027215',
+    pref: 'miyazaki',
+    name: '高千穂峽',
+    image: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/2/28/Takachiho-kyo%28Gorge%29_-_River_-_%E5%B7%9D.jpg/960px-Takachiho-kyo%28Gorge%29_-_River_-_%E5%B7%9D.jpg',
+    author: 'TANAKA Juuyoh (田中十洋)',
+    license: 'CC BY 2.0',
+    source: 'https://commons.wikimedia.org/wiki/File:Takachiho-kyo(Gorge)_-_River_-_%E5%B7%9D.jpg',
+    focus: '60% 50%',
+  },
+  {
+    id: 'wd-Q2654598',
+    pref: 'okinawa',
+    name: '川平灣',
+    image: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8e/Kabira_Bay_Ishigaki_Island40bs3s4592.jpg/960px-Kabira_Bay_Ishigaki_Island40bs3s4592.jpg',
+    author: '663highland',
+    license: 'CC BY 2.5',
+    source: 'https://commons.wikimedia.org/wiki/File:Kabira_Bay_Ishigaki_Island40bs3s4592.jpg',
+    focus: '45% 50%',
+  },
+]
+const srcsetOf = (url: string) => ([960, 1280, 1920] as const).map((w) => `${commonsThumb(url, w)} ${w}w`).join(', ')
+const prefName = (pref: string) => regionOf(pref)?.name.zh_tw ?? ''
 
-// 標語（DESIGN.md §1）直排，逗號處分兩行
-const TAGLINE = ['來一趟日本，', '才知道它有多大。']
+// 標語（DESIGN.md §1）
+const TAGLINE = '把日本走一圈。'
 
-// 進場只有這一段：畫像掛軸一樣由上往下展開 → 標語一行一行寫出來 → 蓋上落款印。等畫載好才開始，最多等 1.5 秒
-const ready = ref(false)
-let readyTimer = 0
-function start() {
-  ready.value = true
-  window.clearTimeout(readyTimer)
+// 輪播：每張 7 秒，交叉淡入。可以暫停（WCAG 2.2.2）；減少動態的人一開始就是暫停的。
+// 分頁在背景、海報捲出畫面時也先停，回來再接著跑。照片只載入看過的與下一張
+const DURATION = 7000
+const cur = ref(0)
+const prev = ref(-1)
+const cycle = ref(0)
+const userPaused = ref(false)
+const away = ref(false)
+const paused = computed(() => userPaused.value || away.value)
+const mounted = ref(new Set([0, 1]))
+let timer = 0
+let startedAt = 0
+let remaining = DURATION
+
+function go(i: number) {
+  const n = SLIDES.length
+  const next = (i + n) % n
+  if (next === cur.value) return
+  prev.value = cur.value
+  cur.value = next
+  cycle.value++
+  mounted.value = new Set([...mounted.value, next, (next + 1) % n])
+  remaining = DURATION
+  schedule()
 }
-const printFailed = ref(false)
+function schedule() {
+  window.clearTimeout(timer)
+  timer = 0
+  if (paused.value || !started) return
+  startedAt = performance.now()
+  timer = window.setTimeout(() => go(cur.value + 1), remaining)
+}
+function hold() {
+  if (!timer) return
+  window.clearTimeout(timer)
+  timer = 0
+  remaining = Math.max(0, remaining - (performance.now() - startedAt))
+}
+watch(paused, (p) => (p ? hold() : schedule()))
+function togglePause() {
+  userPaused.value = !userPaused.value
+}
+function onVisibility() {
+  away.value = document.hidden || !heroVisible
+}
+let heroVisible = true
+const heroEl = ref<HTMLElement | null>(null)
+let heroObserver: IntersectionObserver | null = null
+// 照片載好才淡入；還沒載好時上一張留著，不會閃一下底色
+const loaded = ref(new Set<number>())
+// 第一張載好才開始計時（開場畫面、慢的網路不會把第一張的時間吃掉）
+let started = false
+let startFallback = 0
+function startTimer() {
+  if (started) return
+  started = true
+  window.clearTimeout(startFallback)
+  schedule()
+}
+function onSlideLoad(i: number) {
+  loaded.value = new Set([...loaded.value, i])
+  startTimer()
+}
+// 手機左右滑換張
+let touchX = 0
+let touchY = 0
+function onTouchStart(e: TouchEvent) {
+  touchX = e.touches[0]!.clientX
+  touchY = e.touches[0]!.clientY
+}
+function onTouchEnd(e: TouchEvent) {
+  const dx = e.changedTouches[0]!.clientX - touchX
+  const dy = e.changedTouches[0]!.clientY - touchY
+  if (Math.abs(dx) > 48 && Math.abs(dx) > Math.abs(dy) * 1.5) go(cur.value + (dx < 0 ? 1 : -1))
+}
+
+// ---- 捲動：海報往下捲時文字淡出、照片慢一點跟著走（視差）；下面各段進到畫面時淡入 ----
+// 捲動的是 App.vue 的 <main>。只動 opacity 與 transform；減少動態時都不做
+const reduceMotion = typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches
+let scroller: HTMLElement | null = null
+let scrollRaf = 0
+function onScroll() {
+  if (scrollRaf) return
+  scrollRaf = requestAnimationFrame(() => {
+    scrollRaf = 0
+    const hero = heroEl.value
+    if (!hero || !scroller) return
+    const p = Math.min(1, Math.max(0, scroller.scrollTop / (hero.offsetHeight || 1)))
+    hero.style.setProperty('--p', p.toFixed(3))
+  })
+}
+function scrollToFlow() {
+  document.getElementById('flow')?.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' })
+}
+
+let revealIO: IntersectionObserver | null = null
+function revealObserver(): IntersectionObserver {
+  revealIO ??= new IntersectionObserver(
+    (entries) => {
+      for (const e of entries) {
+        if (!e.isIntersecting) continue
+        e.target.classList.add('is-in')
+        revealIO!.unobserve(e.target)
+      }
+    },
+    { root: document.getElementById('app-main'), rootMargin: '0px 0px -8% 0px', threshold: 0.12 },
+  )
+  return revealIO
+}
+/** v-reveal="n"：進到畫面時淡入，n 是同一組裡的順序（每個晚 80ms）。淡入完拿掉 class，之後的 hover、按下不受影響；.keep 留著（給子元素用的） */
+const vReveal: Directive<HTMLElement, number | undefined> = {
+  mounted(el, { value, modifiers }) {
+    if (reduceMotion || !('IntersectionObserver' in window)) return
+    el.classList.add('reveal')
+    if (value) el.style.setProperty('--d', String(value))
+    if (!modifiers.keep) {
+      el.addEventListener('transitionend', function done(ev) {
+        if (ev.target !== el || !el.classList.contains('is-in')) return
+        el.classList.remove('reveal', 'is-in')
+        el.style.removeProperty('--d')
+        el.removeEventListener('transitionend', done)
+      })
+    }
+    revealObserver().observe(el)
+  },
+  unmounted(el) {
+    revealIO?.unobserve(el)
+  },
+}
 
 // 明朝體只有這一頁用，打開時才載入
 const BRAND_FONT = 'https://fonts.googleapis.com/css2?display=swap&family=Noto+Serif+TC:wght@500..900'
@@ -285,9 +457,22 @@ const FAQ = [
 
 onMounted(() => {
   loadBrandFont()
-  // 減少動態：不等畫，直接是最後的樣子
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) start()
-  else readyTimer = window.setTimeout(start, 1500)
+  if (reduceMotion) userPaused.value = true
+  // 照片一直載不到時，5 秒後照常開始
+  startFallback = window.setTimeout(startTimer, 5000)
+  scroller = document.getElementById('app-main')
+  if (!reduceMotion) scroller?.addEventListener('scroll', onScroll, { passive: true })
+  document.addEventListener('visibilitychange', onVisibility)
+  if (heroEl.value && 'IntersectionObserver' in window) {
+    heroObserver = new IntersectionObserver(
+      (entries) => {
+        heroVisible = entries.some((e) => e.isIntersecting)
+        onVisibility()
+      },
+      { root: document.getElementById('app-main') },
+    )
+    heroObserver.observe(heroEl.value)
+  }
   void catalog.loadMap('kyoto').then((list) => (kyoto.value = list)).catch(() => {})
   void catalog.loadPhrases().catch(() => {})
   if (eraSection.value && 'IntersectionObserver' in window) {
@@ -304,7 +489,13 @@ onMounted(() => {
   } else preloadThemeFonts()
 })
 onBeforeUnmount(() => {
-  window.clearTimeout(readyTimer)
+  window.clearTimeout(timer)
+  window.clearTimeout(startFallback)
+  scroller?.removeEventListener('scroll', onScroll)
+  cancelAnimationFrame(scrollRaf)
+  revealIO?.disconnect()
+  document.removeEventListener('visibilitychange', onVisibility)
+  heroObserver?.disconnect()
   eraObserver?.disconnect()
 })
 const kyotoRegion = regionOf('kyoto')
@@ -312,52 +503,88 @@ const kyotoRegion = regionOf('kyoto')
 
 <template>
   <div class="about flex flex-col">
-    <!-- 海報：當季的浮世繪、直排的標語與落款印 -->
-    <header class="hero paper-grain bg-paper" :class="{ 'is-ready': ready }">
-      <div class="mx-auto w-full max-w-6xl px-6 pt-6 pb-28 max-md:pb-12 max-sm:px-4 max-sm:pt-4 max-sm:pb-10">
-        <Wordmark />
-        <div class="hero-grid mt-10 max-sm:mt-6">
-          <figure class="hero-print relative flex flex-col gap-3">
-            <div class="relative aspect-[960/1470]">
-              <img
-                v-if="!printFailed"
-                :src="commonsThumb(print.image, 960)"
-                :srcset="printSrcset"
-                sizes="(min-width: 768px) min(25rem, 36vw), 58vw"
-                :alt="`歌川広重〈${print.title}〉`"
-                fetchpriority="high"
-                referrerpolicy="no-referrer"
-                class="print-img absolute inset-0 size-full object-cover shadow-float"
-                @load="start"
-                @error="(printFailed = true), start()"
-              />
-              <div v-else class="absolute inset-0 bg-placeholder"></div>
-            </div>
-            <figcaption class="hero-cap flex flex-col gap-0.5 text-caption text-sub">
-              <span lang="ja" class="text-body-sm font-bold text-ink">{{ print.title }}</span>
-              <span><span lang="ja">歌川広重</span>《<span lang="ja">名所江戸百景</span>》，{{ print.year }} 年</span>
-              <span class="mt-1 flex flex-wrap gap-x-4">
-                <RouterLink :to="{ path: '/map/tokyo', query: { spot: print.spot } }" class="font-bold text-region-strong">在地圖上看{{ print.place }}</RouterLink>
-                <a :href="print.source" target="_blank" rel="noopener" class="text-sub">圖片出處</a>
-              </span>
-            </figcaption>
-          </figure>
+    <!-- 海報：全版輪播的日本風景（北海道到沖繩），左下標語與開始探索，右下這張的地方與照片出處，最下面是八站的進度 -->
+    <header ref="heroEl" class="hero relative isolate flex min-h-[34rem] flex-col overflow-hidden bg-ink text-white" @touchstart.passive="onTouchStart" @touchend="onTouchEnd">
+      <div class="hero-slides absolute inset-0 -z-10" aria-roledescription="輪播" aria-label="日本各地的風景">
+        <figure
+          v-for="(s, i) in SLIDES"
+          :key="s.id"
+          class="slide absolute inset-0 m-0"
+          :class="{ 'is-current': i === cur, 'is-prev': i === prev }"
+          role="group"
+          aria-roledescription="張"
+          :aria-label="`${i + 1} / ${SLIDES.length}：${s.name}（${prefName(s.pref)}）`"
+          :aria-hidden="i !== cur"
+        >
+          <img
+            v-if="mounted.has(i)"
+            :src="commonsThumb(s.image, 1280)"
+            :srcset="srcsetOf(s.image)"
+            sizes="100vw"
+            :alt="`${s.name}（${prefName(s.pref)}）`"
+            :fetchpriority="i === 0 ? 'high' : 'low'"
+            referrerpolicy="no-referrer"
+            class="slide-img size-full object-cover"
+            :class="{ 'is-loaded': loaded.has(i) }"
+            :style="{ objectPosition: s.focus }"
+            @load="onSlideLoad(i)"
+          />
+        </figure>
+      </div>
+      <div class="hero-scrim pointer-events-none absolute inset-0 -z-10" aria-hidden="true"></div>
 
-          <div class="hero-words">
-            <h1 class="tagline font-brand">
-              <span v-for="(line, i) in TAGLINE" :key="line" class="tagline-line" :style="{ '--i': i }">{{ line }}</span>
-            </h1>
-            <span class="seal-wrap" aria-hidden="true"><span class="seal font-brand">巡</span></span>
-          </div>
+      <div class="hero-content mx-auto flex w-full max-w-6xl flex-1 flex-col px-6 pt-6 max-sm:px-4 max-sm:pt-4">
+        <div class="hero-mark"><Wordmark /></div>
 
-          <div class="hero-lede flex flex-col gap-4">
-            <p class="font-brand text-h3 font-semibold tracking-title">日本 47 都道府縣的景點地圖</p>
-            <p class="max-w-[24em] text-body text-ink-2">在一縣一色的地圖上找地方、排行程、記住念法；去過的地方，收成一張一張的卡。</p>
-            <div class="mt-2 flex flex-wrap items-center gap-x-6 gap-y-3">
-              <RouterLink to="/" class="flex h-12 items-center rounded-control bg-ink px-6 text-body font-bold text-paper no-underline active:translate-y-px">開始探索</RouterLink>
-              <a href="#flow" class="text-body font-bold text-ink underline decoration-line decoration-2 underline-offset-[6px] hover:decoration-ink">怎麼用</a>
+        <div class="mt-auto grid items-end gap-x-10 gap-y-6 pt-16 md:grid-cols-[minmax(0,1fr)_auto]">
+          <div class="flex flex-col gap-5">
+            <h1 v-reveal class="tagline font-brand">{{ TAGLINE }}</h1>
+            <p v-reveal="1" class="max-w-[30em] text-title leading-relaxed text-white/90 max-sm:text-body">日本 47 都道府縣的景點地圖。在一縣一色的地圖上找地方、排行程、記住念法；去過的地方，收成一張一張的卡。</p>
+            <div v-reveal="2" class="flex flex-wrap items-center gap-x-6 gap-y-3">
+              <RouterLink to="/" class="flex h-12 items-center rounded-control bg-paper px-6 text-body font-bold text-ink no-underline active:translate-y-px">開始探索</RouterLink>
+              <a href="#flow" class="text-body font-bold text-white underline decoration-white/50 decoration-2 underline-offset-[6px] hover:decoration-white" @click.prevent="scrollToFlow">怎麼用</a>
             </div>
           </div>
+          <!-- 這一張：地方與照片出處（CC 授權要寫作者與授權） -->
+          <p class="flex flex-col gap-0.5 text-body-sm md:items-end md:text-right" aria-live="polite">
+            <RouterLink :to="{ path: `/map/${SLIDES[cur]!.pref}`, query: { spot: SLIDES[cur]!.id } }" class="font-bold text-white no-underline hover:underline">
+              {{ SLIDES[cur]!.name }}<span class="ml-2 font-normal text-white/80">{{ prefName(SLIDES[cur]!.pref) }}</span>
+            </RouterLink>
+            <a :href="SLIDES[cur]!.source" target="_blank" rel="noopener" class="text-caption text-white/75 no-underline hover:underline">照片 {{ SLIDES[cur]!.author }}／{{ SLIDES[cur]!.license }}</a>
+          </p>
+        </div>
+
+        <!-- 進度：北海道到沖繩，按了跳到那一張 -->
+        <div class="mt-6 flex items-center gap-3 pb-6 max-sm:pb-4">
+          <button
+            type="button"
+            class="grid size-9 shrink-0 place-items-center rounded-full border border-white/50 text-white hover:border-white"
+            :aria-label="userPaused ? '播放輪播' : '暫停輪播'"
+            @click="togglePause"
+          >
+            <svg v-if="userPaused" viewBox="0 0 16 16" class="size-3.5" aria-hidden="true"><path d="M4 2.5v11l9-5.5z" fill="currentColor" /></svg>
+            <svg v-else viewBox="0 0 16 16" class="size-3.5" aria-hidden="true"><path d="M4 2.5h3v11H4zM9 2.5h3v11H9z" fill="currentColor" /></svg>
+          </button>
+          <ol class="grid flex-1 grid-cols-8 gap-1.5">
+            <li v-for="(s, i) in SLIDES" :key="s.id" class="flex">
+              <button
+                type="button"
+                class="seg flex min-h-9 w-full flex-col justify-center gap-1.5 text-left"
+                :aria-label="`${s.name}（${prefName(s.pref)}）`"
+                :aria-current="i === cur ? 'true' : undefined"
+                @click="go(i)"
+              >
+                <span class="seg-track relative block h-[3px] w-full overflow-hidden rounded-full" :class="i === cur ? 'bg-white/55' : 'bg-white/30'">
+                  <span
+                    :key="i === cur ? `on-${cycle}` : 'off'"
+                    class="seg-fill absolute inset-y-0 left-0 block bg-white"
+                    :class="{ 'is-done': i < cur, 'is-current': i === cur, 'is-paused': paused }"
+                  ></span>
+                </span>
+                <span class="truncate text-caption text-white/75 max-sm:sr-only" :class="{ 'font-bold text-white': i === cur }">{{ prefName(s.pref) }}</span>
+              </button>
+            </li>
+          </ol>
         </div>
       </div>
     </header>
@@ -366,7 +593,7 @@ const kyotoRegion = regionOf('kyoto')
     <section aria-label="收錄" class="border-y border-line bg-surface">
       <div class="mx-auto w-full max-w-6xl px-6 py-12 max-sm:px-4 max-sm:py-9">
         <!-- 數字和量詞不拆到兩行 -->
-        <p class="counts font-brand text-h3 leading-[1.8] font-medium xl:text-[1.625rem]">
+        <p v-reveal class="counts font-brand text-h3 leading-[1.8] font-medium xl:text-[1.625rem]">
           收錄日本 <span class="whitespace-nowrap"><b>{{ STATS.prefs }}</b> 都道府縣</span>的 <span class="whitespace-nowrap"><b>{{ STATS.spots }}</b> 個景點</span>、<span
             class="whitespace-nowrap"
             ><b>{{ STATS.stations }}</b> 個車站</span
@@ -374,8 +601,8 @@ const kyotoRegion = regionOf('kyoto')
           <span class="whitespace-nowrap"><b>{{ STATS.airports }}</b> 座</span>有國際線的機場。
         </p>
         <div class="mt-7 flex flex-col gap-1.5">
-          <ol class="flex h-3 gap-px" aria-hidden="true">
-            <li v-for="r in regions" :key="r.prefecture" :data-pref="r.prefecture" :title="r.name.zh_tw" class="flex-1 bg-region"></li>
+          <ol v-reveal.keep class="band flex h-3 gap-px" aria-hidden="true">
+            <li v-for="(r, i) in regions" :key="r.prefecture" :data-pref="r.prefecture" :title="r.name.zh_tw" class="flex-1 bg-region" :style="{ '--i': i }"></li>
           </ol>
           <p class="flex justify-between text-caption text-sub" aria-hidden="true"><span>{{ north }}</span><span>{{ south }}</span></p>
         </div>
@@ -384,10 +611,10 @@ const kyotoRegion = regionOf('kyoto')
 
     <!-- 原則 -->
     <section class="mx-auto w-full max-w-6xl px-6 py-16 max-sm:px-4 max-sm:py-10" aria-labelledby="points">
-      <h2 id="points" class="font-brand text-h2 font-semibold tracking-title">ひとめぐり 是什麼</h2>
-      <p class="mt-2 max-w-[40em] text-body text-sub">「一巡り」是繞一圈的意思。從一個縣開始，一縣一縣把日本走過一遍。</p>
+      <h2 id="points" v-reveal class="font-brand text-h2 font-semibold tracking-title">ひとめぐり 是什麼</h2>
+      <p v-reveal="1" class="mt-2 max-w-[40em] text-body text-sub">「一巡り」是繞一圈的意思。從一個縣開始，一縣一縣把日本走過一遍。</p>
       <ul class="mt-8 grid gap-4 md:grid-cols-2">
-        <li v-for="(p, i) in POINTS" :key="p.title" class="flex gap-4 rounded-card border border-line bg-paper p-5">
+        <li v-for="(p, i) in POINTS" :key="p.title" v-reveal="i + 1" class="flex gap-4 rounded-card border border-line bg-paper p-5">
           <span class="font-latin text-h2 leading-none font-bold text-region-strong">{{ String(i + 1).padStart(2, '0') }}</span>
           <span class="flex flex-col gap-1.5">
             <span class="text-title font-bold">{{ p.title }}</span>
@@ -400,8 +627,8 @@ const kyotoRegion = regionOf('kyoto')
     <!-- 能做什麼：頁籤 -->
     <section id="features" class="scroll-mt-4 bg-surface py-16 max-sm:py-10" aria-labelledby="features-title">
       <div class="mx-auto w-full max-w-6xl px-6 max-sm:px-4">
-        <h2 id="features-title" class="font-brand text-h2 font-semibold tracking-title">能做什麼</h2>
-        <div role="tablist" aria-label="能做什麼" class="scroll-quiet mt-6 flex gap-1 overflow-x-auto border-b border-line">
+        <h2 id="features-title" v-reveal class="font-brand text-h2 font-semibold tracking-title">能做什麼</h2>
+        <div v-reveal="1" role="tablist" aria-label="能做什麼" class="scroll-quiet mt-6 flex gap-1 overflow-x-auto border-b border-line">
           <button
             v-for="(t, i) in TABS"
             :key="t.key"
@@ -428,7 +655,7 @@ const kyotoRegion = regionOf('kyoto')
           :key="t.key"
           role="tabpanel"
           :aria-labelledby="`tab-${t.key}`"
-          class="grid gap-10 pt-8 lg:grid-cols-[minmax(0,22rem)_minmax(0,1fr)]"
+          class="tab-panel grid gap-10 pt-8 lg:grid-cols-[minmax(0,22rem)_minmax(0,1fr)]"
         >
           <div class="flex flex-col gap-4">
             <h3 class="text-h3 font-black tracking-title">{{ FEATURES[t.key].title }}</h3>
@@ -570,7 +797,7 @@ const kyotoRegion = regionOf('kyoto')
 
     <!-- 一趟旅行的流程 -->
     <section id="flow" class="mx-auto w-full max-w-6xl scroll-mt-4 px-6 py-16 max-sm:px-4 max-sm:py-10" aria-labelledby="flow-title">
-      <h2 id="flow-title" class="font-brand text-h2 font-semibold tracking-title">一趟旅行怎麼用</h2>
+      <h2 id="flow-title" v-reveal class="font-brand text-h2 font-semibold tracking-title">一趟旅行怎麼用</h2>
       <ol class="relative mt-8 grid gap-4 md:grid-cols-3 lg:grid-cols-6">
         <li v-for="(s, i) in [
           { t: '找地方', d: '選一個縣，看地圖與清單，收藏想去的。', tab: 'explore' },
@@ -579,7 +806,7 @@ const kyotoRegion = regionOf('kyoto')
           { t: '出發', d: '打開就是今天的行程與路線，沒有網路也看得到。', tab: 'trip' },
           { t: '去過', d: '到了按「去過」，拿到這一季的卡。', tab: 'cards' },
           { t: '回顧', d: '開卡包、蓋紀念章、做一張回顧圖。', tab: 'log' },
-        ] as const" :key="s.t" class="flex">
+        ] as const" :key="s.t" v-reveal="i + 1" class="flex">
           <button type="button" class="flex w-full flex-col gap-2 rounded-card border border-line bg-paper p-4 text-left hover:bg-surface active:translate-y-px" @click="showTab(s.tab)">
             <span class="flex items-center gap-2">
               <span class="grid size-8 place-items-center rounded-full bg-region font-latin text-body font-bold text-on-region">{{ i + 1 }}</span>
@@ -595,11 +822,11 @@ const kyotoRegion = regionOf('kyoto')
     <section ref="eraSection" class="border-y border-line bg-surface" aria-labelledby="era-title">
       <div class="mx-auto grid w-full max-w-6xl gap-x-12 gap-y-8 px-6 py-16 md:grid-cols-[minmax(0,17rem)_minmax(0,1fr)] max-sm:px-4 max-sm:py-10">
         <div class="flex flex-col gap-3">
-          <h2 id="era-title" class="font-brand text-h2 font-semibold tracking-title">六個年代</h2>
-          <p class="text-body text-ink-2">配色、字體、卡片與看板跟著年代換。點一個年代，這一頁就換過去。</p>
+          <h2 id="era-title" v-reveal class="font-brand text-h2 font-semibold tracking-title">六個年代</h2>
+          <p v-reveal="1" class="text-body text-ink-2">配色、字體、卡片與看板跟著年代換。點一個年代，這一頁就換過去。</p>
         </div>
         <ol class="grid grid-cols-6 gap-3 max-sm:gap-1.5" aria-label="年代">
-          <li v-for="s in eraStrips" :key="s.era.key" class="flex">
+          <li v-for="(s, i) in eraStrips" :key="s.era.key" v-reveal="i + 1" class="flex">
             <button
               type="button"
               class="era-strip"
@@ -622,10 +849,10 @@ const kyotoRegion = regionOf('kyoto')
     <!-- 資料從哪裡來：版權頁（奧付）的樣子 -->
     <section class="mx-auto grid w-full max-w-6xl gap-x-12 gap-y-8 px-6 py-16 md:grid-cols-[minmax(0,17rem)_minmax(0,1fr)] max-sm:px-4 max-sm:py-10" aria-labelledby="sources-title">
       <div class="flex flex-col gap-3">
-        <h2 id="sources-title" class="font-brand text-h2 font-semibold tracking-title">資料從哪裡來</h2>
-        <p class="text-body text-ink-2">每一筆資料都留著來源網址與取得日期。找不到來源的就留空，不另外編寫。</p>
+        <h2 id="sources-title" v-reveal class="font-brand text-h2 font-semibold tracking-title">資料從哪裡來</h2>
+        <p v-reveal="1" class="text-body text-ink-2">每一筆資料都留著來源網址與取得日期。找不到來源的就留空，不另外編寫。</p>
       </div>
-      <div class="colophon border-y-[3px] border-double border-ink px-1 py-6">
+      <div v-reveal="2" class="colophon border-y-[3px] border-double border-ink px-1 py-6">
         <dl class="grid grid-cols-[minmax(0,13rem)_minmax(0,1fr)] items-baseline gap-x-8 gap-y-3 max-sm:grid-cols-1 max-sm:gap-y-0">
           <template v-for="src in SOURCES" :key="src.name">
             <dt class="text-body-sm text-sub max-sm:pt-3">{{ src.use }}</dt>
@@ -643,9 +870,9 @@ const kyotoRegion = regionOf('kyoto')
     <!-- 常見問題：問、答 -->
     <section class="bg-surface" aria-labelledby="faq-title">
       <div class="mx-auto grid w-full max-w-6xl gap-x-12 gap-y-6 px-6 py-16 md:grid-cols-[minmax(0,17rem)_minmax(0,1fr)] max-sm:px-4 max-sm:py-10">
-        <h2 id="faq-title" class="font-brand text-h2 font-semibold tracking-title">常見問題</h2>
+        <h2 id="faq-title" v-reveal class="font-brand text-h2 font-semibold tracking-title">常見問題</h2>
         <dl class="flex flex-col">
-          <div v-for="f in FAQ" :key="f.q" class="flex flex-col gap-2.5 border-b border-line py-5 first:pt-1 last:border-b-0">
+          <div v-for="(f, i) in FAQ" :key="f.q" v-reveal="i + 1" class="flex flex-col gap-2.5 border-b border-line py-5 first:pt-1 last:border-b-0">
             <dt class="flex items-start gap-3">
               <span class="qa qa-q font-brand" aria-hidden="true">問</span><span class="text-title font-bold">{{ f.q }}</span>
             </dt>
@@ -660,7 +887,7 @@ const kyotoRegion = regionOf('kyoto')
     <!-- 頁尾 -->
     <footer class="paper-grain relative overflow-hidden bg-region text-on-region">
       <div class="relative mx-auto flex w-full max-w-6xl flex-col items-start gap-6 px-6 py-14 max-sm:px-4 max-sm:py-10">
-        <p class="font-brand text-h1 font-semibold tracking-title max-sm:text-h2">{{ TAGLINE.join('') }}</p>
+        <p v-reveal class="font-brand text-h1 font-semibold tracking-title max-sm:text-h2">{{ TAGLINE }}</p>
         <RouterLink to="/" class="flex h-12 items-center rounded-control bg-ink px-6 text-body font-bold text-paper no-underline active:translate-y-px">開始探索</RouterLink>
         <div class="mt-4 flex w-full flex-wrap items-center gap-x-6 gap-y-2 border-t border-on-region/30 pt-5 text-body-sm">
           <Wordmark class="text-on-region" />
@@ -674,131 +901,137 @@ const kyotoRegion = regionOf('kyoto')
 
 
 <style scoped>
-/* ---- 海報：畫 | 直排標語＋落款印 | 說明。手機：畫與標語並排，說明在下面 ---- */
-.hero-grid {
-  display: grid;
-  grid-template-columns: min(25rem, 36vw) auto minmax(0, 1fr);
-  grid-template-areas: 'print words lede';
-  column-gap: clamp(1.5rem, 4.5vw, 4rem);
-  align-items: start;
+/* ---- 海報：全版照片。高度是一個畫面（下面露一點收錄），太矮、太高時有上下限 ---- */
+.hero {
+  height: min(100svh, 62rem);
 }
-.hero-print {
-  grid-area: print;
+.hero-scrim {
+  /* 上緣給 wordmark、下半給標語與控制列的底，照片中間保持原樣 */
+  background:
+    linear-gradient(to bottom, color-mix(in oklab, var(--color-ink) 55%, transparent), transparent 22%),
+    linear-gradient(to top, color-mix(in oklab, var(--color-ink) 82%, transparent), color-mix(in oklab, var(--color-ink) 35%, transparent) 45%, transparent 72%);
 }
-.hero-words {
-  grid-area: words;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  /* 標語的字級；落款印用 em 對齊最後一行的中間 */
-  font-size: clamp(3rem, 5vw, 4.25rem);
-}
-.hero-lede {
-  grid-area: lede;
-  /* 和畫的下緣對齊：桌機的圖說掛在畫的下面、不佔格子的高度 */
-  align-self: end;
-}
-@media (min-width: 768px) {
-  .hero-cap {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    padding-top: 0.75rem;
-  }
-}
-@media (max-width: 767.98px) {
-  .hero-grid {
-    grid-template-columns: minmax(0, 1fr) auto;
-    grid-template-areas:
-      'print words'
-      'lede lede';
-    row-gap: 2rem;
-    column-gap: 1rem;
-  }
-  .hero-words {
-    font-size: min(2.5rem, 9.6vw);
-  }
+.hero-mark :deep(*) {
+  color: inherit;
 }
 
-/* 直排：一行一欄，由右往左讀 */
-.tagline {
-  writing-mode: vertical-rl;
-  margin: 0;
-  font-size: 1em;
-  font-weight: 600;
-  line-height: 1.5;
-  letter-spacing: 0.14em;
-  color: var(--color-ink);
+/* 交叉淡入：新的一張從 0 淡到 1，蓋在上一張上面（上一張維持不透明，不會先暗一下）；照片慢慢拉遠 */
+.slide {
+  opacity: 0;
 }
-.tagline-line {
-  display: block;
+.slide.is-prev {
+  opacity: 1;
+}
+.slide.is-current {
+  z-index: 1;
+  opacity: 1;
+  transition: opacity 1.4s var(--ease-out-soft);
+}
+@starting-style {
+  .slide.is-current {
+    opacity: 0;
+  }
+}
+.slide.is-current .slide-img,
+.slide.is-prev .slide-img {
+  animation: drift 9s linear both;
+}
+@keyframes drift {
+  from {
+    transform: scale(1.08);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+/* 各年代的照片質感（eras.css 的 --era-photo-filter） */
+:root[data-theme] .slide-img {
+  filter: var(--era-photo-filter, none);
+}
+
+.tagline {
+  margin: 0;
+  font-size: clamp(2.75rem, 7.2vw, 5.75rem);
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: 0.04em;
 }
 :root[data-theme] .tagline {
   font-family: var(--font-display-zh);
   font-weight: var(--display-zh-weight);
 }
 
-/* 落款印：蓋在最後一行（最左一欄）的下面 */
-.seal-wrap {
-  display: block;
-  margin-top: 0.3em;
-  margin-inline-start: calc((1.5em - 3.25rem) / 2);
-  transform: rotate(-3deg);
+/* 進度條：看過的滿格，這一張 7 秒填滿（暫停時停住） */
+.seg-fill {
+  width: 0;
 }
-/* 印泥沒吃滿的地方：雜訊當遮罩，透出一點紙色 */
-.seal {
-  display: grid;
-  place-items: center;
-  width: 3.25rem;
-  height: 3.25rem;
-  border: 3px solid currentColor;
-  border-radius: 5px;
-  font-size: 2.15rem;
-  font-weight: 800;
-  line-height: 1;
-  color: var(--color-visited);
-  mix-blend-mode: multiply;
-  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='96' height='96'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='2' seed='7'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -9 6.3'/%3E%3C/filter%3E%3Crect width='96' height='96' filter='url(%23n)'/%3E%3C/svg%3E");
-  mask-size: 96px 96px;
+.seg-fill.is-done {
+  width: 100%;
 }
-@media (max-width: 767.98px) {
-  .seal-wrap {
-    margin-inline-start: calc((1.5em - 2.5rem) / 2);
+.seg-fill.is-current {
+  animation: seg-fill 7s linear forwards;
+}
+.seg-fill.is-paused {
+  animation-play-state: paused;
+}
+@keyframes seg-fill {
+  from {
+    width: 0;
   }
-  .seal {
-    width: 2.5rem;
-    height: 2.5rem;
-    border-width: 2.5px;
-    font-size: 1.65rem;
+  to {
+    width: 100%;
   }
 }
 
-/* 進場：畫由上往下展開（掛軸）→ 標語一行一行由上往下寫出來 → 蓋印。減少動態時 theme.css 會把時間壓成 0 */
-.print-img {
-  clip-path: inset(0 0 100% 0);
+/* 海報往下捲：文字淡出、往上一點；照片慢一點跟著走（--p 是捲過海報的比例，onScroll 設定） */
+.hero-content {
+  opacity: calc(1 - var(--p, 0) * 1.6);
+  transform: translateY(calc(var(--p, 0) * -3rem));
 }
-.is-ready .print-img {
-  animation: unroll 1.1s var(--ease-out-soft) forwards;
+.hero-slides {
+  transform: translateY(calc(var(--p, 0) * 30%));
+  will-change: transform;
 }
-.tagline-line {
-  clip-path: inset(0 0 100% 0);
-}
-.is-ready .tagline-line {
-  animation: unroll 0.8s var(--ease-out-soft) forwards;
-  animation-delay: calc(0.45s + var(--i) * 0.3s);
-}
-@keyframes unroll {
-  to {
-    clip-path: inset(0 0 0 0);
-  }
-}
-.seal {
+/* 照片載好才淡入（還沒載好時看到的是上一張） */
+.slide-img {
   opacity: 0;
+  transition: opacity 0.6s var(--ease-out-soft);
 }
-.is-ready .seal {
-  animation: var(--animate-stamp-press);
-  animation-delay: 1.45s;
+.slide-img.is-loaded {
+  opacity: 1;
+}
+
+/* 進到畫面時淡入、往上 18px；同一組依序晚 80ms */
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition:
+    opacity 0.8s var(--ease-out-soft),
+    transform 0.8s var(--ease-out-soft);
+  transition-delay: calc(var(--d, 0) * 80ms);
+}
+.reveal.is-in {
+  opacity: 1;
+  transform: none;
+}
+/* 47 縣色帶：北海道到沖繩一格一格長出來 */
+.band.reveal {
+  opacity: 1;
+  transform: none;
+}
+.band.reveal > li {
+  transform: scaleY(0);
+  transform-origin: bottom;
+  transition: transform 0.5s var(--ease-out-soft);
+  transition-delay: calc(var(--i) * 18ms);
+}
+.band.reveal.is-in > li {
+  transform: none;
+}
+
+/* 換頁籤：內容淡入 */
+.tab-panel {
+  animation: var(--animate-panel-in);
 }
 
 /* 收錄的數字用拉丁字型 */
