@@ -93,7 +93,9 @@ async function runAll(urls: string[], onDone: () => void) {
 export async function prepareOffline(trip: Trip, catalog: Catalog, onProgress: (p: OfflineProgress) => void): Promise<void> {
   const stops = allStops(trip)
   const prefs = [...new Set(stops.map((s) => s.pref))]
-  const steps = prefs.length * 5 + 3
+  // 有住的車站：單日來回的路網與目的地也先抓
+  const daytrip = trip.days.some((d) => d.stay)
+  const steps = prefs.length * 5 + 3 + (daytrip ? 1 : 0)
   let done = 0
   const tick = (total: number) => onProgress({ done: ++done, total })
 
@@ -114,6 +116,7 @@ export async function prepareOffline(trip: Trip, catalog: Catalog, onProgress: (
     catalog.loadTimed().finally(() => tick(steps)),
     // 旅前準備的地區特色詞（一縣一檔）
     catalog.loadSpecialties(prefs).finally(() => tick(steps)),
+    ...(daytrip ? [Promise.all([catalog.loadRailGraph(), catalog.loadDaytrip()]).finally(() => tick(steps))] : []),
   ])
 
   // 照片：停留點的地圖小圖與卡片用的縮圖

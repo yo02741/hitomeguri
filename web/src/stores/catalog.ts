@@ -24,6 +24,8 @@ import {
   fetchRail,
   fetchSearch,
   fetchShinkansen,
+  fetchRailGraph,
+  fetchDaytrip,
   type MapSpot,
   type MunicipalityBundle,
   type PackItem,
@@ -33,6 +35,7 @@ import {
   type TimedItem,
   type Spot,
 } from '../services/bundles'
+import type { DaytripBundle, RailGraphBundle } from '../services/daytrip'
 
 // 景點目錄：只讀，來自靜態 bundle。資料量大，用 shallowRef 避免深層響應。
 export const useCatalogStore = defineStore('catalog', () => {
@@ -258,6 +261,38 @@ export const useCatalogStore = defineStore('catalog', () => {
     })
   }
 
+  /** 日帰り：全國車站路網與目的地（行程頁的住的車站、單日來回時才載入）。讀不到時 null，下次再試 */
+  const railGraph = shallowRef<RailGraphBundle | null>(null)
+  async function loadRailGraph(): Promise<RailGraphBundle | null> {
+    if (railGraph.value) return railGraph.value
+    await loadIndex()
+    const meta = index.value?.rail_graph
+    if (!meta) return null
+    return once('rail-graph', async () => {
+      try {
+        railGraph.value = await fetchRailGraph(meta.version)
+      } catch {
+        return null
+      }
+      return railGraph.value
+    })
+  }
+  const daytrip = shallowRef<DaytripBundle | null>(null)
+  async function loadDaytrip(): Promise<DaytripBundle | null> {
+    if (daytrip.value) return daytrip.value
+    await loadIndex()
+    const meta = index.value?.daytrip
+    if (!meta) return null
+    return once('daytrip', async () => {
+      try {
+        daytrip.value = await fetchDaytrip(meta.version)
+      } catch {
+        return null
+      }
+      return daytrip.value
+    })
+  }
+
   /** 深度探索「祭典」：一縣一檔，開深度探索頁時載入 */
   const festivals = shallowRef<Record<string, Festival[]>>({})
   async function loadFestivals(pref: string): Promise<Festival[]> {
@@ -355,7 +390,7 @@ export const useCatalogStore = defineStore('catalog', () => {
   return {
     loadSearch,
     index, mapSpots, featured, loadFeatured, details, specialties, loadSpecialties, flights, seasons, festivals, loadFestivals, rail, loadRail, loadExtras, loadFlights, loadIndex, available,
-    municipalities, loadMunicipalities, shinkansen, loadShinkansen,
+    municipalities, loadMunicipalities, shinkansen, loadShinkansen, railGraph, loadRailGraph, daytrip, loadDaytrip,
     loadMap, mapState, loadAllMaps, loadDetail, getSpot, packs, loadPack, phrases, loadPhrases, timed, loadTimed,
     achv, achvState, loadAchievements,
   }

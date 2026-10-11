@@ -99,6 +99,10 @@ export interface BundleIndex {
   municipalities?: Record<string, { count: number; version: string }>
   /** 全國地圖的新幹線（shinkansen.json） */
   shinkansen?: { lines: number; stations: number; version: string }
+  /** 全國車站路網（rail-graph.json，日帰り的鐵路距離） */
+  rail_graph?: { nodes: number; edges: number; version: string }
+  /** 日帰り的目的地（daytrip.json） */
+  daytrip?: { areas: number; version: string }
 }
 
 /**
@@ -299,6 +303,14 @@ export interface ShinkansenBundle {
 
 export function fetchShinkansen(version: string): Promise<ShinkansenBundle> {
   return getJson<ShinkansenBundle>(`shinkansen.json?v=${version}`)
+}
+
+/** 日帰り（services/daytrip.ts）：全國車站路網、目的地。行程頁打開「單日來回」或住的車站時才載入 */
+export function fetchRailGraph(version: string): Promise<import('./daytrip').RailGraphBundle> {
+  return getJson<import('./daytrip').RailGraphBundle>(`rail-graph.json?v=${version}`)
+}
+export function fetchDaytrip(version: string): Promise<import('./daytrip').DaytripBundle> {
+  return getJson<import('./daytrip').DaytripBundle>(`daytrip.json?v=${version}`)
 }
 
 /** 深度探索「祭典」（pipeline/models.py Festival） */

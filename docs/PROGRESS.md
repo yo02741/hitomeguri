@@ -11,6 +11,7 @@
 | 探索（47 縣大點、搜尋、鐵路、類型篩選） | 完成 | PLAN.md §9 Phase 1、6 |
 | 縣內規劃的資料（市区町村界、車站停靠路線與新幹線、鐵路路網） | pipeline 完成，資料已採集（seed-rail #75、N03） | PLAN.md §4.5、§5.3d、§5.3e |
 | 縣內規劃 2、3：小區塊（地區選單、區界、`?area=`）、車站卡片、全國地圖的新幹線 | 等驗收 | UX-FLOW.md A1c、A2b、B5，DESIGN.md §7.5d、§7.13a |
+| 縣內規劃 4：日帰り（行程每天的住的車站、單日來回） | 等驗收；規則不用改 | UX-FLOW.md C8，DESIGN.md §7.9c、§8 |
 | 擴充包（寶可夢、城、老舖・茶屋、角色商店） | 上線，等驗收 | docs/擴充包驗收.md |
 | 深度探索（季節、祭典、地區特色、期間限定；左側段落目錄） | 完成 | UX-FLOW.md A8 |
 | 期間限定 v1（氣象廳） | 等驗收 | docs/Phase4驗收.md |
@@ -35,6 +36,11 @@
 
 **待辦**：見根目錄 `TODO.md`。
 
+- 縣內規劃 4：日帰り（2026-10-11，使用者決定；UX-FLOW.md C8，DESIGN.md §7.9c）：
+  - pipeline：`pipeline/daytrip.py` 產生 `bundles/daytrip.json`（一個市区町村一筆：代碼、名稱、政令指定都市名、縣、區名的位置、分數最高的 3 個景點與最近車站、其餘景點的車站；1106 筆，289 KB／gzip 約 95 KB；`models.DaytripBundle`、`_index.json` 的 `daytrip`）。build-bundles 用剛寫好的 map bundle（`m`、`st`）與市区町村 bundle（`l`）。`pipeline/tests/test_daytrip.py`。
+  - 前端：`services/daytrip.ts` 移植 `rail_graph` 的 Dijkstra（新幹線權重 0.97、同分依節點 index、小數 1 位同 Python round；對照資料 `services/fixtures/rail-graph-small.expected.json` 由 pytest 產生，vitest 比對；實際的路網從東京駅出發 3805 站的 km 與新幹線 km 和 Python 完全相同，約 45 ms），目的地依城市合起來（政令指定都市的區、東京 23 區）、住的城市不列（車站在那一縣的區界裡找）、距離取各區所有車站裡最近的一站，分三段（60 km 內、60–150 km、新幹線 150–450 km 且路上新幹線 ≥ 20 km）。站名搜尋（繁體字、全形、「駅」「站」）、最近車站。`composables/daytrip.ts`、`StayPicker.vue`、`DaytripList.vue`、`MapView` 的 `daytrip` 圖層，`TripView` 每天的「住在 ▾」「單日來回」（桌機地圖左上的面板＋地圖記號與新幹線路線，手機下方對話框）。
+  - 住的車站存在 `days[i].stay = { st, n }`（firestore.rules 不用改）；`services/trip.ts` 的 `copyDays`、`setStay`、`parseStay`，移動、移除、復原、改天數、刪一天、加景點都帶著它（vitest）。路網重建後車站 id 換了時用站名找回來。離線用：有住的車站時也先抓路網與目的地。
+  - 截圖檢查（1440×900、390×844）：住東京 → 60 km 內有川越市（約 38 km）、鎌倉市（約 44 km），60–150 km 有小田原、箱根、宇都宮、日光市（約 141 km，新幹線），新幹線有名古屋市（約 326 km）、黒部市、富山市、立山町（約 389 km）、軽井沢町（約 402 km，繞新潟）、金沢市（約 427 km）；展開川越市加到 DAY 1、重新整理後住的車站還在。距離跟著鐵路資料（TODO.md 已知限制「鐵路」）。
 - 縣內規劃 2、3（2026-10-11，使用者決定）：
   - 小區塊（UX-FLOW.md A2b，DESIGN.md §7.5d）：縣地圖畫市区町村界（`--region-sub` 細線）與區名（縮放 8.5～13.5，底圖在縣內的市町村名用 `within` 篩掉不重複），景點清單多「地區」（`AreaPicker.vue`：有景點的區依代碼、件數，政令指定都市的區排在市名底下；桌機在標題下一整列，手機在類型索引列最前面），地圖上點區塊也能選；選了清單只留那一區、地圖移到那一區、外框加粗。網址 `?area=代碼`，選區新增一筆歷史（返回回到上一個區），換縣時不帶過去。`services/areas.ts`（vitest）。地圖出處在縣地圖多国土数値情報，`/credits` 加用途、授權（CC BY 4.0／公共データ利用規約）、出典標示與加工註記。bundle 改了兩點：所属未定地不放、多 `l`（區名位置，`topo.label_point` polylabel）；版本改取輸出內容的雜湊。
   - 車站（UX-FLOW.md B5，DESIGN.md §7.13a）：縣地圖的車站可以點（一般的站縮放 12、新幹線站 9 起，新幹線站畫雙圈），景點、群集一直優先。車站卡片（`StationPanel.vue`，`?station=路網節點 id`）：站名、停靠的路線（路線色、新幹線）、附近的景點（最近車站是這一站的依分數，沒有時 1.5 km 內最近的 5 個），點了打開景點卡片。景點卡片的「最寄駅」是鐵路圖層裡那一站時可以點。`services/stations.ts`（vitest）。

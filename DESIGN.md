@@ -347,7 +347,7 @@ header 右側、登入鈕左邊（`SearchBox.vue`，每一頁都在；在行程�
 - 全國地圖的新幹線（UX-FLOW.md A1c，`bundles/shinkansen.json`）：首頁才畫，縣地圖由縣的鐵路圖層畫。路線 `--region-sub` 細線（寬 1→2，下面墊 paper 外框 2.2→4），淡淡的、不搶景點群集；新幹線站縮放 5.5 起 paper 底、`ink` 1.25px 框的小圓點（半徑 2→3.5），站名 6.5 起（`text-caption` 大小、ink 字、paper 光暈）。點了站（景點、群集優先）進入那個縣、打開車站卡片。
 - 手機首頁的鏡頭：整個日本版圖放進清單卡（與 chip 軌道）下緣以下、分頁列以上那一塊；打橫時放進左側欄右邊。版圖本身已貼著日本的外緣，`fitBounds` 四周留白最多 16px（其他定位最多 48px）。清單卡第一次量到高度、轉向、從縣地圖回來而清單換成站名板時，只要鏡頭還是整個日本、使用者沒拖曳縮放過，就重新定位一次。定位前先讓地圖同步容器大小（轉向或海報條收起後 MapLibre 還沒跟上時）。
 - 地區頁畫出縣界：`--region-strong` 虛線（寬 1.5→2.5 隨縮放、dash 2.5/1.5），縣內疊 `--region-base` 14% 不透明度，畫在景點下面。縣界是簡化線（約 400 m 精度），縮放 11→13 淡出到 0.35，避免拉近時和海岸線對不齊。進入地區時定位到「縣的主要陸地＋主要景點」，看得到整個縣的形狀，離島（八重山、伊豆諸島）不算進去。
-- 專心模式（UX-FLOW.md §1.3，使用者決定 2026-10-11）：地區頁只畫這個縣的景點與擴充包的點（別縣的群集、照片都不畫）。縣界以外蓋一層 `--region-paper` 的面（縣界挖空；不透明度隨縮放 0.5（縮放 8）→ 0.7（縮放 12），放大後底圖細節多，蓋濃一點才分得出縣界兩邊），放在底圖第一個文字圖層之下：別縣的陸地、海、道路變淡，地名照樣讀得到；縣內照舊是 `--region-base` 14% 與虛線縣界。鏡頭鎖在這個縣附近（含離島與四周的海），拉遠到整個縣剛好放進可見範圍為止；範圍以扣掉左側欄、清單卡、景點卡片之後的可見範圍為準（`MapView` 的 `focus`，MapLibre `transformConstrain`）。首頁、行程、紀錄的地圖不鎖。之後的「日帰り」圖層疊在變淡的那一層之上（`focus-mask` 之上），不被變淡。
+- 專心模式（UX-FLOW.md §1.3，使用者決定 2026-10-11）：地區頁只畫這個縣的景點與擴充包的點（別縣的群集、照片都不畫）。縣界以外蓋一層 `--region-paper` 的面（縣界挖空；不透明度隨縮放 0.5（縮放 8）→ 0.7（縮放 12），放大後底圖細節多，蓋濃一點才分得出縣界兩邊），放在底圖第一個文字圖層之下：別縣的陸地、海、道路變淡，地名照樣讀得到；縣內照舊是 `--region-base` 14% 與虛線縣界。鏡頭鎖在這個縣附近（含離島與四周的海），拉遠到整個縣剛好放進可見範圍為止；範圍以扣掉左側欄、清單卡、景點卡片之後的可見範圍為準（`MapView` 的 `focus`，MapLibre `transformConstrain`）。首頁、行程、紀錄的地圖不鎖。日帰り先做在行程頁（§7.9c），專心模式沒有加；之後要在這裡畫時，圖層疊在變淡的那一層之上（`focus-mask` 之上），不被變淡。
 - 手機的鏡頭扣掉被蓋住的地方（`MapView` 的 `insets`）：上方 chip 軌道與清單卡的下緣、下方 sheet（或祭典小卡）目前的高度（sheet 換段、拖曳時跟著變），由 `ExploreView` 用 ResizeObserver 量，飛過去之前先量一次。定位、飛過去、點群集、「目前看的範圍」（換縣、位置小框）都以剩下那一塊為準；上下加起來太高時（橫向）等比例縮小，至少留 96px 地圖，`fitBounds` 的留白跟著縮小。打開景點卡片或祭典的位置標記時，上方清單收起。手機打橫時沒有上下的 insets，改成和桌機一樣扣掉左側欄（`insetLeft`）；直、橫轉向時重新量一次，選到的點被蓋住就移到剩下的地圖中間。
 - 祭典的「在地圖上看」（手機）：清單收起，地圖下緣一張小卡（`rounded-card bg-paper shadow-float`，`inset-x-4 bottom-4`）：左「‹ 祭典」回到 `/region/:pref#festivals`、分隔線、祭典名（`text-body-sm font-bold`，太長截斷）、右側 44px 關閉。縮放鈕與出處移到小卡上面（`--map-lift-b`）。
 - 選取中的景點：另外放在不群集的來源，不會被併進群集數字；外面一圈固定的 `region-strong` 外框（不做擴散的呼吸燈；`--animate-pulse-ring` 只用在祭典「在地圖上看」的位置標記）。從清單或搜尋選取時飛到縮放 15（群集全部散開）。
@@ -413,6 +413,20 @@ header 右側、登入鈕左邊（`SearchBox.vue`，每一頁都在；在行程�
 - 加一天（沒有日期時；有日期時天數跟著日期，沒有這顆）：桌機在日期鈕與「n 天」右邊（外框鈕 `h-10`，＋ 圖示＋「加一天」），位置固定，不放在最後一天下面（天數一多就一直往下跑）；手機在天數條右邊，見上。每天標頭右邊的「刪除這天」照舊。到 MAX_DAYS 時停用。
 - 停留點列：桌機照舊（⠿ 把手、號碼、名稱、「移到」下拉、往前往後、×）。觸控（`pointer-coarse:`）沒有 ⠿ 把手（觸控不會觸發 dragstart）與「移到」下拉，名稱多出約 100px；右邊「⋯」（`size-tap`）打開選單：移到最前、往前、往後、移到最後｜移到 待排、移到 DAY n（右邊日期）｜從行程移除。換順序之後焦點留在「⋯」；移到別天、移除時焦點移到隔壁的停留點，讀屏器讀出結果。選單項目多時自己捲（最高 70dvh）。
 - Google Maps 連結（UX-FLOW C5，桌機手機都有）：每天第一站上面一行「從目前位置」（準星圖示，樣式同「轉乘路線」：`text-caption text-sub`，觸控 `min-h-tap`），不給 origin、`travelmode=transit`，Google Maps 以裝置位置為起點。停留點下面是這天的「Google Maps 路線」外框小鈕（`h-8`，觸控 `h-tap`，右邊 ↗）：依順序經過每一站，不指定交通方式（大眾運輸不支援 waypoints）。超過 waypoint 上限時拆段（觸控或 <1024 用手機瀏覽器的 3 個，桌機 9 個；網址超過 2,048 字元也拆），前面一個 `text-caption text-sub` 的「Google Maps 路線」，後面每段一顆「1–5 ↗」「5–8 ↗」，下一段從上一段的終點出發（`services/trip.ts` 的 `dayRouteUrls`）。
+
+### 7.9c 住的車站與單日來回（UX-FLOW.md C8）
+- 每天的標頭下面一列（桌機、手機都有；`pl-0.5`，和 DAY 標記對齊）：
+  - 「住在 ▾」外框小鈕（`h-8 rounded-control border-line bg-paper`，觸控 `h-tap`）：小字「住在」（`text-caption text-sub`）＋站名（`lang="ja"` 粗體）＋ ▾；沒設定時站名的位置是 `text-sub` 的「選車站」。離線時停用。
+  - 有住的地方時右邊「單日來回」外框小鈕（同上）；開著時 `border-ink bg-ink text-paper`、`aria-expanded`。
+- 住的車站（`StayPicker.vue`）：`BottomDialog`，標題「DAY n 住的車站」。上面搜尋框（placeholder「車站名稱」，桌機打開就聚焦，觸控不自動叫出鍵盤；Enter 選第一個）。每列 `min-h-tap`：縣色小方塊 14px、站名（`lang="ja"` 粗體，過長截斷）、新幹線站多「新幹線」牌（`rounded-tag bg-ink text-paper text-caption font-bold`，同車站卡片）、右邊縣名（`text-caption text-sub`）；目前的那一站右邊 `text-region-strong` 的勾。沒打字時列建議，右邊小字是來由（「前一天」「浅草寺附近」「後一天」「DAY 3」）。有住的地方時底部 sticky 一列「住在 ○○」＋外框鈕「清除」。讀取中用骨架，讀不到「讀不到車站資料」＋「重試」。
+- 單日來回的清單（`DaytripList.vue`）：
+  - 分段：一整列三格的底線分頁（§7.2，`min-h-tap`、`border-b-3`，選中 `border-region-strong font-bold text-ink`，其他 `text-sub`）：「鐵路 60 km 內」「60–150 km」「新幹線」，後面 `font-num text-caption text-sub` 的件數。桌機前面多地圖上的記號當圖例（10px：60 km 內 `bg-region-strong` 實心、60–150 km `bg-region` 加 1.5px `border-region-strong`、新幹線 `bg-paper` 加 `border-ink` 雙圈）。
+  - 下面搜尋框（placeholder「地名、景點」）：有字時三段一起找，分頁都不標選中。
+  - 每列（整列是按鈕，`aria-expanded`）：左邊收合圖示（§7.5b `CollapseChevron`），地名（`lang="ja"` `text-body-sm font-bold`）＋縣名（`text-caption text-sub`），下一行分數最高的三個景點用「・」接起來（`text-caption text-sub`，一行截斷）；右邊「鐵路約 n km」（數字 `font-num`；10 km 以下到 0.5 km），能搭新幹線的下面「新幹線」牌（`text-micro`；新幹線那一段不標）。展開的列 `bg-region-tint`。
+  - 展開：往右縮一格，景點每列 `min-h-tap`、上緣 `border-line-soft`：日文名（粗體）＋繁中名（不同時，`text-caption text-sub`），下一行類型・區・「鐵路約 n km」（`text-caption text-sub`）；右邊文字鈕「待排」（`text-sub`）與外框鈕「＋ DAY n」（`h-8`，觸控 `h-tap`，DAY n 用 `font-latin font-bold`）。已經在這趟裡的換成 `rounded-tag bg-surface text-caption text-sub` 的「已在 DAY n」。先列 8 個，其餘「全部 n 個」。
+  - 讀取中骨架；讀不到「讀不到鐵路資料」＋「重試」；這一段沒有「沒有收錄的地方」，找不到「找不到」。
+- 桌機：地圖左上的浮動面板（`absolute top-4 bottom-4 left-4 w-panel rounded-card bg-paper shadow-float`，和探索頁的浮動面板同一種），上面固定：小字「DAY n・住在 ○○」、標題「單日來回」（`text-title font-bold`）、右邊關閉（`size-tap`）；下面自己捲。地圖的 `insetLeft` 扣掉面板（432px）。加了景點之後底部的提示「已加到 DAY n」＋復原（§7.26）。
+- 手機：`BottomDialog`（標題「單日來回」），第一行小字「DAY n・住在 ○○」，下面同一份清單；沒有地圖。對話框蓋住底部的提示，所以手機加了不出提示，只看列上的「已在 DAY n」。
 
 ### 7.10 播放鈕（發音）
 `size-tap rounded-full border border-line bg-paper grid place-items-center`；播放中改 `bg-region-tint`。`aria-label="播放 {漢字}"`。
@@ -698,6 +712,7 @@ header 右側、登入鈕左邊（`SearchBox.vue`，每一頁都在；在行程�
 - 出處（attribution）：只放授權要求在地圖上標示的「© OpenStreetMap | © OpenMapTiles」，後面接「資料來源」連到 `/credits`（站內換頁）；寫成一個字串（MapLibre 會把多筆出處依長短重排）。畫了市区町村界的地圖（縣地圖）在「資料來源」前面多「「国土数値情報（行政区域データ）」（国土交通省）」連到 N03 資料頁（`map/style.ts` 的 `N03_ATTRIBUTION`；`MapView` 自己建 `AttributionControl` 才改得了內容）。底圖 style 各 source 自帶的出處（OpenFreeMap © OpenMapTiles Data from OpenStreetMap）在 `setStyle` 的 `transformStyle` 拿掉（`web/src/map/style.ts` 的 `MAP_ATTRIBUTION`）。所有尺寸建立地圖時就收起（拿掉 `maplibregl-compact-show`），只留 ⓘ，點了才展開。
 - 資料來源頁（`/credits`，`CreditsView.vue`，非同步載入）：`max-w-3xl` 單欄，分「地圖」「景點與內容」「其他」三段，每列左邊來源名稱（連到來源網站，`text-body-sm font-bold`），右邊用在哪裡，下面 `text-caption text-sub` 的授權（連到授權條文）與出典標示；最後「注意事項」三條（資訊可能變動、期間限定的期間是推算的、著作權與商標）。只列實際用到的來源，新增來源時一起補。授權有好幾種時依序列出、用「／」隔開；來源指定的出典標示照原文另起一行（`lang="ja"`，例：国土数値情報「…をもとにひとめぐり作成」，下一行註明加工）。入口：地圖出處的「資料來源」、帳號選單（登出上面）。
 - 行程路線（行程頁）：當天主縣的 `--region-strong`，4px，端點圓頭；轉乘段用虛線。路線改變（開頁、換天、排序）時從起點畫到終點（0.8～2.4s，前後慢中間快），筆尖是 `--region-strong` 圓點加 `paper` 外框。
+- 單日來回（行程頁桌機，§7.9c）：住的車站是新幹線站那種雙圈（`--region-paper` 底、`--region-ink` 2.5px 外框＋中間墨色小點，半徑 7.5）＋粗體站名（13px，永遠顯示）；目的地是小圓點（縮放 5→9：半徑 3.5→6），60 km 內 `--region-strong` 實心（`--region-paper` 外框）、60–150 km `--region-base`（`--region-strong` 外框）、新幹線 `--region-paper` 底＋`--region-ink` 外框與中間小點；近的畫在上面。選中的那個外圈 `--region-strong` 2.5px＋粗體地名（只寫選中的，其他的地名底圖已經有）。新幹線的路線用全國地圖那一份（§7.5a 的「全國地圖的新幹線」，站不畫）。圖層在行程的停留點之下；點了目的地（景點、群集優先）換到它的分段並展開。
 - 市區棋盤道路等細節交給底圖，不自行繪製。
 
 ---
