@@ -10,10 +10,14 @@
   或這條線過半的軌道（way）標 highspeed=yes
 - 車站停靠的路線：route relation 的停靠點（stop、platform 角色）對到車站（同名 1 km 內，或 300 m 內
   名稱互相包含；沒有名稱的停靠點取 300 m 內最近的站）。對不到車站點的有名稱停靠點另外成站
-  （id「stop-…」，只放 extra_stations）。沒有停靠點的軌道 relation（route=railway）取軌道 150 m 內、
-  營運者相容的車站。
+  （id「stop-…」，只放 extra_stations）。軌道 relation（route=railway，常常沒有停靠點或只列了
+  幾站，例：山陰本線）與沒有停靠點的列車路線取軌道 150 m 內、營運者相容的車站；新幹線的軌道
+  只收新幹線列車停靠的站（旁邊在來線的站不算）。列車路線漏了終點站（JR日光線的日光）時，
+  軌道盡頭 300 m 內、營運者相容的站算終點站。
 - 相鄰站與距離（edges）：一條線的全部軌道（未簡化、不切縣界）接成路網，車站投影到最近的軌道上，
   從每個站沿軌道走到碰到別的站為止，走過的距離就是兩站間的距離（支線、雙線、快車都不影響）。
+  列車路線上相鄰的兩個停靠站沿軌道接不起來時（軌道缺段：北陸新幹線的高崎、東武日光線；
+  站離軌道太遠），用直線距離乘 1.2（新幹線 1.1）補一條邊。
   公開資料沒有時刻表，所以只有距離，沒有時間。
 寫 data/rail/{縣}.json。
 """
@@ -26,7 +30,7 @@ import json
 import math
 import re
 import unicodedata
-from collections import defaultdict
+from collections import Counter, defaultdict
 from collections.abc import Callable, Iterable
 from dataclasses import dataclass, field
 from typing import Any
@@ -56,6 +60,13 @@ SNAP_M = 300
 GAP_M = 50
 # 相鄰兩站沿軌道的距離上限（km）；超過就不連
 MAX_EDGE_KM = 100
+# 列車路線相鄰兩個停靠站沿軌道接不起來時（軌道缺段、站離軌道太遠）用直線距離補：
+# 直線距離上限（km）與換算成鐵路距離的倍數（新幹線比較直）
+FALLBACK_MAX_KM = 80
+FALLBACK_FACTOR = 1.2
+FALLBACK_FACTOR_SHINKANSEN = 1.1
+# 停靠點的順序不是 PTv2 時，依序走過的直線距離不超過頭尾直線距離的這個倍數才當成行車順序
+ORDER_RATIO = 1.6
 # 停靠點的角色（PTv2 的 stop、platform 與 _entry_only／_exit_only；舊式的 forward_stop 等）
 STOP_ROLE = re.compile(
     r"^(forward_|backward_)?(stop|platform|station)(_entry_only|_exit_only)?(_\d+)?$"
@@ -509,20 +520,52 @@ def build_rail(
         coords[key] = (lat, lng, name)
         return key
 
+    # 新幹線列車（route=train 等）停靠的站：新幹線的軌道 relation 用軌道旁的站時只收這些
+    shinkansen_stops: set[str] = set()
+    for g in groups.values():
+        for rel in g.rels:
+            tags = rel.get("tags", {})
+            if tags.get("route") != "railway" and is_shinkansen(tags):
+                for lat, lng, name, _ in _stops(rel, names):
+                    i = index.match(lat, lng, name)
+                    if i is not None:
+                        shinkansen_stops.add(stations[i].id)
+
     served: dict[str, Snaps] = {}
+    sequences: dict[str, list[list[str]]] = {}
+    hs_group: dict[str, bool] = {}
     for key, g in sorted(groups.items(), key=lambda kv: min(kv[1].ids)):
         snaps: Snaps = defaultdict(list)
+        seqs: list[list[str]] = []
+        hs = any(is_shinkansen(r.get("tags", {})) for r in g.rels) or (
+            bool(g.ways) and sum(1 for ref in g.ways if ref in highspeed) * 2 >= len(g.ways)
+        )
+        only = shinkansen_stops if hs else None
+        has_train_stops = False
         for rel in sorted(g.rels, key=lambda r: r["id"]):
             stops = _stops(rel, names)
+            keys: list[str] = []
             for lat, lng, name, ref in stops:
                 i = index.match(lat, lng, name)
-                if i is not None:
-                    snaps[stations[i].id].append((lat, lng, SNAP_M))
-                elif name:
-                    snaps[pseudo_key(lat, lng, name, ref)].append((lat, lng, SNAP_M))
-            if not stops:
-                _near_track(g, rel, index, operators, snaps)
+                k = stations[i].id if i is not None else None
+                if k is None and name:
+                    k = pseudo_key(lat, lng, name, ref)
+                if k is not None:
+                    snaps[k].append((lat, lng, SNAP_M))
+                    if not keys or keys[-1] != k:
+                        keys.append(k)
+            railway = rel.get("tags", {}).get("route") == "railway"
+            if not stops or railway:
+                _near_track(g, rel, index, operators, snaps, only)
+            else:
+                has_train_stops = True
+                if _in_order(keys, coords, rel.get("tags", {})):
+                    seqs.append(keys)
+        if has_train_stops:
+            _terminals(g, index, operators, snaps, only)
         served[key] = snaps
+        sequences[key] = seqs
+        hs_group[key] = hs
 
     # ---- 路線：同一段軌道只畫一次（直通運轉、多個營運者各有一份 relation） ----
     # 有官方路線色的先、名稱短的先（「京都市営地下鉄烏丸線」先於「京都地下鉄烏丸線・近鉄京都線」）
@@ -541,11 +584,11 @@ def build_rail(
             for seg in clip(pts, inside):
                 simple = geo._dp(seg, SIMPLIFY_TOL)
                 segs.append([[round(x, 5), round(y, 5)] for x, y in simple])
-        edges = line_edges(g, served[key], coords, inside)
+        factor = FALLBACK_FACTOR_SHINKANSEN if hs_group[key] else FALLBACK_FACTOR
+        edges = line_edges(g, served[key], coords, inside, sequences[key], factor)
         # 軌道全被別的線畫掉的線（東京都內的東北新幹線）也要留：車站要查得到它
         if not segs and not edges and not any(sid in here for sid in served[key]):
             continue
-        hs = sum(1 for ref in g.ways if ref in highspeed)
         line = RailLine(
             id=f"osm-relation-{min(g.ids)}",
             name=g.name,
@@ -554,8 +597,7 @@ def build_rail(
             operator=g.operator,
             kind="train" if g.tags.get("route") == "railway" else g.tags.get("route", "train"),
             colour=g.colour,
-            shinkansen=any(is_shinkansen(r.get("tags", {})) for r in g.rels)
-            or (bool(g.ways) and hs * 2 >= len(g.ways)),
+            shinkansen=hs_group[key],
             coords=segs,
             edges=edges,
         )
@@ -591,8 +633,11 @@ def _near_track(
     index: StationIndex,
     operators: dict[str, set[str]],
     snaps: Snaps,
+    only: set[str] | None = None,
 ) -> None:
-    """沒有停靠點的軌道 relation（route=railway）：軌道 PROXIMITY_M 內、營運者相容的車站。"""
+    """軌道 relation（route=railway）與沒有停靠點的路線：軌道 PROXIMITY_M 內、營運者相容的車站。
+
+    only 有給時（新幹線）只收這些站。"""
     refs = sorted({m["ref"] for m in rel.get("members", []) if m.get("type") == "way"})
     for ref in refs:
         pts = g.ways.get(ref) or []
@@ -600,6 +645,8 @@ def _near_track(
             half = _km(a, b) * 500
             for _, i in index.near((a[1] + b[1]) / 2, (a[0] + b[0]) / 2, half + PROXIMITY_M):
                 st = index.stations[i]
+                if only is not None and st.id not in only:
+                    continue
                 if any(p[2] == PROXIMITY_M for p in snaps.get(st.id, ())):
                     continue
                 d, _ = _project((st.lng, st.lat), a, b)
@@ -607,27 +654,98 @@ def _near_track(
                     snaps[st.id].append((st.lat, st.lng, PROXIMITY_M))
 
 
+def _terminals(
+    g: _Group,
+    index: StationIndex,
+    operators: dict[str, set[str]],
+    snaps: Snaps,
+    only: set[str] | None = None,
+) -> None:
+    """列車路線的停靠點漏了終點站（JR日光線沒有列日光）：軌道盡頭（只有一段軌道接到的端點）
+    STOP_NEAR_M 內最近、營運者相容的站；盡頭旁已經有停靠的站就不加。"""
+    ends: Counter[Pt] = Counter()
+    inner: set[Pt] = set()
+    for pts in g.ways.values():
+        ends[pts[0]] += 1
+        ends[pts[-1]] += 1
+        inner.update(pts[1:-1])
+    for p in sorted(p for p, n in ends.items() if n == 1 and p not in inner):
+        for _, i in index.near(p[1], p[0], STOP_NEAR_M):
+            st = index.stations[i]
+            if st.id in snaps:
+                break
+            if only is not None and st.id not in only:
+                continue
+            if operator_ok(g.operator, operators.get(st.id, ())):
+                snaps[st.id].append((st.lat, st.lng, STOP_NEAR_M))
+                break
+
+
+def _in_order(
+    keys: list[str], coords: dict[str, tuple[float, float, str]], tags: dict[str, str]
+) -> bool:
+    """停靠點的排列是行車順序嗎：PTv2 是；其他的看依序走過的直線距離像不像一條線。"""
+    if len(keys) < 2:
+        return False
+    if tags.get("public_transport:version") == "2":
+        return True
+    pts = [coords[k][:2] for k in keys]
+    walked = sum(geo.haversine_m(*a, *b) for a, b in zip(pts, pts[1:], strict=False))
+    return walked <= ORDER_RATIO * geo.haversine_m(*pts[0], *pts[-1]) + 2000
+
+
 def line_edges(
-    g: _Group, snaps: Snaps, coords: dict[str, tuple[float, float, str]], inside: Inside
+    g: _Group,
+    snaps: Snaps,
+    coords: dict[str, tuple[float, float, str]],
+    inside: Inside,
+    sequences: Iterable[list[str]] = (),
+    factor: float = FALLBACK_FACTOR,
 ) -> list[tuple[str, str, float]]:
-    """一條線的相鄰站與沿軌道距離（km，小數 2 位）；只留至少一端在縣內的。"""
-    if not g.ways or len(snaps) < 2:
-        return []
-    track = Track(g.ways.values())
-    for key in sorted(snaps):
-        for lat, lng, radius in snaps[key]:
-            track.snap(key, lat, lng, radius)
-    track.finish()
-    snapped = sorted({k for keys in track.owner.values() for k in keys})
+    """一條線的相鄰站與沿軌道距離（km，小數 2 位）；只留至少一端在縣內的。
+
+    sequences 是列車路線依行車順序的停靠站：相鄰兩站沿軌道接不起來時，
+    直線距離 × factor 補一條邊。"""
     out: dict[tuple[str, str], float] = {}
-    for key in snapped:
-        if not inside(coords[key][1], coords[key][0]):
-            continue
-        for other, d in track.neighbours(key).items():
-            if d <= 0:  # 投影到同一點：用兩站的直線距離
-                d = geo.haversine_m(*coords[key][:2], *coords[other][:2]) / 1000
-            pair = (key, other) if key < other else (other, key)
-            out[pair] = min(out.get(pair, math.inf), max(round(d, 2), 0.01))
+    if g.ways and len(snaps) >= 2:
+        track = Track(g.ways.values())
+        for key in sorted(snaps):
+            for lat, lng, radius in snaps[key]:
+                track.snap(key, lat, lng, radius)
+        track.finish()
+        snapped = sorted({k for keys in track.owner.values() for k in keys})
+        for key in snapped:
+            if not inside(coords[key][1], coords[key][0]):
+                continue
+            for other, d in track.neighbours(key).items():
+                if d <= 0:  # 投影到同一點：用兩站的直線距離
+                    d = geo.haversine_m(*coords[key][:2], *coords[other][:2]) / 1000
+                pair = (key, other) if key < other else (other, key)
+                out[pair] = min(out.get(pair, math.inf), max(round(d, 2), 0.01))
+    # 軌道接不起來的相鄰停靠站：同一條線的邊連成的塊不同才補
+    parent: dict[str, str] = {}
+
+    def find(x: str) -> str:
+        parent.setdefault(x, x)
+        while parent[x] != x:
+            parent[x] = parent[parent[x]]
+            x = parent[x]
+        return x
+
+    for a, b in out:
+        parent[find(a)] = find(b)
+    for seq in sequences:
+        for a, b in zip(seq, seq[1:], strict=False):
+            if a == b or find(a) == find(b):
+                continue
+            if not (inside(coords[a][1], coords[a][0]) or inside(coords[b][1], coords[b][0])):
+                continue
+            d = geo.haversine_m(*coords[a][:2], *coords[b][:2]) / 1000
+            if d > FALLBACK_MAX_KM:
+                continue
+            pair = (a, b) if a < b else (b, a)
+            out[pair] = max(round(d * factor, 2), 0.01)
+            parent[find(a)] = find(b)
     return [(a, b, km) for (a, b), km in sorted(out.items())]
 
 
