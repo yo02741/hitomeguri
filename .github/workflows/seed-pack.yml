@@ -3,7 +3,7 @@ name: seed-pack
 # 手動觸發：採集全國一次抓完的資料（擴充包：寶可夢、城、老舖、角色商店；深度探索：地區特色、祭典、季節；鐵路路線；
 # 收集卡的季節照片 seed-season-photos；照片原圖寬高 seed-photo-sizes；收集冊「浮世繪裡的景點」seed-ukiyoe；
 # 市区町村界 seed-municipalities（国土数値情報 N03）與景點所在的區 assign-municipalities（離線）；
-# 有國際定期航班的機場 seed-airports（国土交通省「国際定期便の概要」PDF → data/seed/airports.json 與機場景點）），
+# 有國際定期航班的機場 seed-airports（国土交通省「各空港における国際線就航状況調べ」 Excel → data/seed/airports.json 與機場景點）），
 # 結果推到 pipeline/<command>-<run> 分支，檢查後再合併。全國一個 job 依序抓（同一網站，每秒最多一次請求）。
 
 on:
@@ -20,7 +20,7 @@ on:
         required: false
         default: ""
       url:
-        description: "seed-airports 才用：国土交通省「国際定期便の概要」PDF 的網址；空白用預設的這一季"
+        description: "seed-airports 才用：国土交通省「各空港における国際線就航状況調べ」Excel（或 PDF）的網址；空白用預設的這一季"
         required: false
         default: ""
 

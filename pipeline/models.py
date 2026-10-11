@@ -417,7 +417,7 @@ class FlightRoute(StrictModel):
 
 class SeedAirport(StrictModel):
     """有國際定期航班的機場一筆（seed-airports）：名稱、IATA 代碼取自 Wikidata，
-    縣由座標判斷；matched 是「国際定期便の概要」裡對到的字串（審核用）。"""
+    縣由座標判斷；matched 是「各空港における国際線就航状況調べ」裡對到的字串（審核用）。"""
 
     id: str = Field(pattern=r"^wd-Q\d+$")  # 景點 id
     wikidata: str = Field(pattern=r"^Q\d+$")
@@ -428,7 +428,8 @@ class SeedAirport(StrictModel):
 
 
 class AirportSeed(StrictModel):
-    """data/seed/airports.json：国土交通省「国際定期便の概要」列出的日本機場，依 id 排序。"""
+    """data/seed/airports.json：国土交通省「各空港における国際線就航状況調べ」列出的日本機場，
+    依 id 排序。"""
 
     source: Source
     airports: list[SeedAirport]

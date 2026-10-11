@@ -90,7 +90,7 @@ class Draft:
     seed_kana: str | None = None
     # 有國際定期航班的機場（data/seed/airports.json）：不當成非景點排除，類型「機場」
     airport: bool = False
-    # 其他來源（網址, 取得日期）：機場的「国際定期便の概要」
+    # 其他來源（網址, 取得日期）：機場的「各空港における国際線就航状況調べ」
     extra_sources: list[tuple[str, str]] = field(default_factory=list)
 
     @property
@@ -535,7 +535,8 @@ def apply_airports(pref: str, drafts: dict[str, Draft]) -> list[str]:
     source, items = load_airport_seed(pref)
     missing = []
     for a in items:
-        d = _pinned_seed(a["wikidata"], a["name_ja"], drafts)
+        # 名稱以清單為準（軍民共用的機場用民航的名稱，airports.civil_name）
+        d = _pinned_seed(a["wikidata"], a["name_ja"], drafts, override=True)
         if d is None:
             missing.append(a["name_ja"])
             continue
@@ -1029,6 +1030,11 @@ def build_names(d: Draft) -> tuple[LocalizedName, str | None]:
     en = labels.get("en") or t.get("name:en")
     kana, kana_source = None, None
     wd_kana = next((k for k in (d.ent.kana_all if d.ent else []) if is_kana(k)), None)
+    # 機場改用民航的名稱時（茨城空港），Wikidata 的讀音與中文是自衛隊飛行場的
+    # （ひゃくりひこうじょう、百里基地），不用：念法留空、中文用日文名
+    renamed = bool(d.airport and d.seed_override and labels.get("ja") and ja != labels.get("ja"))
+    if renamed:
+        wd_kana = None
     if d.seed_override and d.seed_kana:  # 種子指定的正式名稱：Wikidata 的讀音是另一個名字的
         kana, kana_source = normalize_kana(d.seed_kana), "seed"
     elif is_kana(ja):  # 名稱本身就是假名
@@ -1047,7 +1053,7 @@ def build_names(d: Draft) -> tuple[LocalizedName, str | None]:
 
     osm_zh = t.get("name:zh-Hant") or t.get("name:zh_TW")
     osm_zh = osm_zh or (_TO_TW.convert(t["name:zh"]) if t.get("name:zh") else None)
-    zh_tw = zh_label(labels, "") or osm_zh or ja
+    zh_tw = ja if renamed else (zh_label(labels, "") or osm_zh or ja)
     zh_tw = strip_disambiguation(zh_tw) or ja
     return LocalizedName(ja=ja, kana=kana, romaji=romaji, zh_tw=zh_tw, en=en), kana_source
 

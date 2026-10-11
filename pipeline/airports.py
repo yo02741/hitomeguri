@@ -1,11 +1,13 @@
 """有國際定期航班的機場（seed-airports 指令）：機場當成景點。
 
-哪些機場算數：国土交通省每季發表的「国際定期便の概要」（PDF）裡列出的日本機場。
+哪些機場算數：国土交通省每季發表的「各空港における国際線就航状況調べ」（定期便，Excel；
+同一份表的 PDF 取不出文字）裡列出的日本機場。
 Wikidata、OSM 的「國際機場」標記不可靠（那覇空港在 Wikidata 只標「空港」，OSM 只標了成田、羽田），
-所以 PDF 只用來判斷「有沒有國際定期航班」；機場的名稱、座標、念法、簡介、照片和其他景點一樣
+所以這份表只用來判斷「有沒有國際定期航班」；機場的名稱、座標、念法、簡介、照片和其他景點一樣
 取自 Wikidata、維基百科、Commons、OSM（major.to_spot、wiki.apply_wiki）。
 
-流程：下載 PDF → pypdf 取出文字 → 和 Wikidata 的日本機場（有 IATA 代碼、沒有廢止、有座標與日文名）
+流程：下載 Excel（PDF 也可以）→ 取出文字
+→ 和 Wikidata 的日本機場（有 IATA 代碼、沒有廢止、有座標與日文名）
 比對名稱 → data/seed/airports.json（每個機場附對到的字串，審核用）
 → 機場景點寫進 data/spots/{縣}.json。
 seed-region 重採時也讀這份清單（major.apply_airports）；清單以外的機場照樣當成非景點排除。
@@ -28,10 +30,10 @@ from pipeline.models import AirportSeed, Spot
 from pipeline.paths import AIRPORTS_JSON, SPOTS_DIR
 from pipeline.sources import commons, osm, wikidata
 
-# 2026年夏期スケジュール（報道発表 PRESS_PAGE 的附件）。新的一季發表後用 --url 或
-# 環境變數 AIRPORTS_PDF_URL 指定新的 PDF
-DEFAULT_PDF_URL = "https://www.mlit.go.jp/report/press/content/001998668.pdf"
-PRESS_PAGE = "https://www.mlit.go.jp/report/press/kouku03_hh_000297.html"
+# 2026年夏期スケジュール（SOURCE_PAGE「国際線就航状況」的 Excel）。新的一季發表後用 --url 或
+# 環境變數 AIRPORTS_PDF_URL 指定新的檔案
+DEFAULT_PDF_URL = "https://www.mlit.go.jp/koku/content/002000600.xlsx"
+SOURCE_PAGE = "https://www.mlit.go.jp/koku/koku_tk1_000013.html"
 
 # 對到的機場太少：PDF 文字取不出來（掃描檔、字型沒有對應表）或格式大改，不寫檔
 MIN_MATCHED = 8
@@ -435,6 +437,18 @@ def military_fallback(
 # ---------- 清單 ----------
 
 
+def civil_name(c: Candidate, matched: str) -> str:
+    """軍民共用的機場：Wikidata 的標籤是自衛隊的「○○飛行場」時，改用別名裡的「○○空港」
+    （百里飛行場 → 茨城空港、美保飛行場 → 米子鬼太郎空港）。
+    含對到的字串的優先，再取最長的（正式愛稱）。"""
+    if c.name_ja.endswith("空港"):
+        return c.name_ja
+    civil = [a for a in c.aliases if a.endswith("空港")]
+    if not civil:
+        return c.name_ja
+    return sorted(civil, key=lambda a: (matched not in a, -len(a), a))[0]
+
+
 def airport_records(
     matched: dict[str, list[Match]], cands: dict[str, Candidate]
 ) -> tuple[list[dict[str, Any]], list[str]]:
@@ -458,7 +472,7 @@ def airport_records(
             "id": f"wd-{qid}",
             "wikidata": qid,
             "iata": c.iata,
-            "name_ja": c.name_ja,
+            "name_ja": civil_name(c, best.matched),
             "prefecture": pref,
             "matched": best.matched,
         })  # fmt: skip
@@ -493,6 +507,9 @@ def build_airport_spots(
         d.extra_sources.append((source["url"], source["fetched_at"]))
         if not ent.labels.get("ja"):
             d.seed_name = a["name_ja"]
+        elif ent.labels["ja"] != a["name_ja"]:  # 軍民共用：用民航的名稱（civil_name）
+            d.seed_name = a["name_ja"]
+            d.seed_override = True
         drafts[ent.qid] = d
     major.score(drafts)
     files = [d.ent.image for d in drafts.values() if d.ent and d.ent.image]
@@ -605,7 +622,7 @@ def seed_airports(url: str | None = None, *, write_spots: bool = True) -> str:
         spot_result = write_airport_spots(by_pref, new_ids, today)
 
     lines = [
-        "## 國際機場（国土交通省「国際定期便の概要」）",
+        "## 國際機場（国土交通省「各空港における国際線就航状況調べ」）",
         "",
         f"來源：{url}（{pages} 頁、{len(text)} 字）",
         f"Wikidata 的日本機場（有 IATA 代碼）：{len(all_cands)} 個，"

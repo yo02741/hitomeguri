@@ -1,4 +1,4 @@
-"""seed-airports（不連網）：国土交通省「国際定期便の概要」的文字（仿 PDF 取出的文字）
+"""seed-airports（不連網）：国土交通省「各空港における国際線就航状況調べ」的文字（仿表格取出的文字）
 × Wikidata 的日本機場（SPARQL 結果；QID 是測試用的佔位值，座標是各機場的大約位置）。"""
 
 import datetime as dt
@@ -440,3 +440,16 @@ def test_xlsx_text_reads_shared_and_inline_strings():
     text, sheets = xlsx_text(buf.getvalue())
     assert text.split("\n") == ["那覇", "新千歳", "福岡"]
     assert sheets == 1
+
+
+def test_civil_name_for_joint_use_airfields():
+    from pipeline.airports import Candidate, civil_name
+
+    hyakuri = Candidate("Q1", "IBR", "百里飛行場", 36.18, 140.41, aliases={"茨城空港", "百里基地"})
+    assert civil_name(hyakuri, "茨城") == "茨城空港"
+    miho = Candidate("Q2", "YGJ", "美保飛行場", 35.49, 133.24, aliases={"米子空港", "米子鬼太郎空港"})
+    assert civil_name(miho, "米子") == "米子鬼太郎空港"
+    naha = Candidate("Q3", "OKA", "那覇空港", 26.2, 127.65, aliases={"那覇国際空港"})
+    assert civil_name(naha, "那覇") == "那覇空港"
+    base = Candidate("Q4", "XXX", "某飛行場", 35.0, 135.0)
+    assert civil_name(base, "某") == "某飛行場"

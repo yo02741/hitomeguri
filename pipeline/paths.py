@@ -8,7 +8,7 @@ REGIONS_JSON = DATA / "regions.json"
 SEED_DIR = DATA / "seed"
 # 縣官方觀光網站的景點清單（seed-official）
 OFFICIAL_DIR = SEED_DIR / "official"
-# 有國際定期航班的機場（seed-airports；国土交通省「国際定期便の概要」）
+# 有國際定期航班的機場（seed-airports；国土交通省「各空港における国際線就航状況調べ」）
 AIRPORTS_JSON = SEED_DIR / "airports.json"
 SPOTS_DIR = DATA / "spots"
 SPECIALTIES_DIR = DATA / "specialties"

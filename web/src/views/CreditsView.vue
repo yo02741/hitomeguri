@@ -112,9 +112,8 @@ const GROUPS: Array<{ id: string; title: string; items: Source[] }> = [
         note: '出典：気象庁',
       },
       {
-        // 換季時 seed-airports 改用新的 PDF，這裡的網址跟著換成那一季的報道発表
-        name: '国土交通省「国際定期便の概要」',
-        href: 'https://www.mlit.go.jp/report/press/kouku03_hh_000297.html',
+        name: '国土交通省「各空港における国際線就航状況調べ」',
+        href: 'https://www.mlit.go.jp/koku/koku_tk1_000013.html',
         use: '列入景點的機場（2026年夏期有國際定期航班的機場）',
         note: '出典：国土交通省',
       },

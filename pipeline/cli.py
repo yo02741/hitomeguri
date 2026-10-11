@@ -262,7 +262,8 @@ def cmd_seed_chara(args: argparse.Namespace) -> int:
 def cmd_seed_airports(args: argparse.Namespace) -> int:
     from pipeline.airports import seed_airports
 
-    # PDF 網址：--url、環境變數 AIRPORTS_PDF_URL（seed-pack.yml 的輸入），都沒有時用預設的這一季
+    # 資料網址（Excel 或 PDF）：--url、環境變數 AIRPORTS_PDF_URL（seed-pack.yml 的輸入），
+    # 都沒有時用預設的這一季
     url = args.url or os.environ.get("AIRPORTS_PDF_URL") or None
     _emit(seed_airports(url), args.report)
     return 0
@@ -411,11 +412,14 @@ def main(argv: list[str] | None = None) -> int:
 
     p = sub.add_parser(
         "seed-airports",
-        help="有國際定期航班的機場（国土交通省「国際定期便の概要」）→ data/seed/airports.json、"
+        help="有國際定期航班的機場（国土交通省「国際線就航状況」）→ data/seed/airports.json、"
         "data/spots/",
     )
     p.add_argument("prefectures", nargs="*", help="不使用（全國一次抓）")
-    p.add_argument("--url", help="「国際定期便の概要」PDF 的網址（省略時用預設的這一季）")
+    p.add_argument(
+        "--url",
+        help="「各空港における国際線就航状況調べ」Excel（或 PDF）的網址（省略時用預設的這一季）",
+    )
     p.add_argument("--report")
     p.set_defaults(func=cmd_seed_airports)
 
