@@ -20,6 +20,8 @@
   /* 大標（text-display／h1／h2／h3）：令和同 sans，各年代換成展示字型（§13）；日文、中文分開 */
   --font-display: "Noto Sans JP", "Noto Sans TC", system-ui, sans-serif;
   --font-display-zh: "Noto Sans TC", "Noto Sans JP", system-ui, sans-serif;
+  /* 形象網站（/about）的標語與區塊標題：明朝體，頁面打開時才載入（AboutView）；各年代的 text-h* 照 eras.css 換成年代字型 */
+  --font-brand: "Noto Serif TC", "Noto Serif JP", serif;
 
   /* 中性色（paper、surface、line、ink…）改由地區色產生，定義在下方 @theme inline */
 

@@ -14,36 +14,48 @@ export interface Era {
   years: string
   /** Google Fonts（只有選了才載入）；令和用 index.html 原本的字型。可變字型（Noto Serif TC、Chiron GoRound TC）寫字重範圍 `a..b`，CSS 比逐一列字重小三分之二，字型檔相同 */
   fonts?: string
+  /** 寫年代名稱用的展示字型（theme.css 的 --font-display；江戶的 Yuji Syuku 沒有「戶」，用 --font-display-zh）：形象網站的年代色見本用，不必先切過去 */
+  face: string
 }
 
 const GF = 'https://fonts.googleapis.com/css2?display=swap&family='
 export const ERAS: Era[] = [
-  { key: 'edo', label: '江戶', years: '1603–1868', fonts: `${GF}LXGW+WenKai+TC:wght@400;700&family=Klee+One:wght@400;600&family=Yuji+Syuku` },
+  {
+    key: 'edo',
+    label: '江戶',
+    years: '1603–1868',
+    fonts: `${GF}LXGW+WenKai+TC:wght@400;700&family=Klee+One:wght@400;600&family=Yuji+Syuku`,
+    face: '"LXGW WenKai TC", "Yuji Syuku", serif',
+  },
   {
     key: 'meiji',
     label: '明治',
     years: '1868–1912',
     fonts: `${GF}Noto+Serif+TC:wght@400..900&family=Shippori+Mincho:wght@400;700&family=Shippori+Mincho+B1:wght@800&family=IM+Fell+English+SC`,
+    face: '"Shippori Mincho B1", "Noto Serif TC", serif',
   },
   {
     key: 'taisho',
     label: '大正',
     years: '1912–1926',
     fonts: `${GF}Noto+Serif+TC:wght@400..700&family=Zen+Old+Mincho:wght@400;700&family=Kaisei+Decol:wght@700&family=Chiron+Sung+HK:wght@900&family=Cormorant+SC:wght@600`,
+    face: '"Kaisei Decol", "Chiron Sung HK", serif',
   },
   {
     key: 'showa',
     label: '昭和',
     years: '1926–1989',
     fonts: `${GF}Dela+Gothic+One&family=DotGothic16&family=Huninn&family=Zen+Maru+Gothic:wght@500;700;900&family=Chiron+GoRound+TC:wght@900`,
+    face: '"Dela Gothic One", "Chiron GoRound TC", sans-serif',
   },
   {
     key: 'heisei',
     label: '平成',
     years: '1989–2019',
     fonts: `${GF}Chiron+GoRound+TC:wght@500..900&family=M+PLUS+Rounded+1c:wght@500;700;800&family=Mochiy+Pop+One&family=VT323`,
+    face: '"Mochiy Pop One", "Chiron GoRound TC", sans-serif',
   },
-  { key: 'modern', label: '令和', years: '2019–' },
+  { key: 'modern', label: '令和', years: '2019–', face: '"Noto Sans JP", "Noto Sans TC", sans-serif' },
 ]
 const KEYS = new Set<string>(ERAS.map((e) => e.key))
 export const eraOf = (t: Theme): Era => ERAS.find((e) => e.key === t) ?? ERAS[ERAS.length - 1]!

@@ -1,36 +1,102 @@
 <script setup lang="ts">
-import { computed, nextTick, onMounted, ref, shallowRef } from 'vue'
+import { computed, nextTick, onBeforeUnmount, onMounted, ref, shallowRef } from 'vue'
 
 import AchvSeal from '../components/AchvSeal.vue'
-import DollDefs from '../components/DollDefs.vue'
 import JapanMap from '../components/JapanMap.vue'
-import PaperDoll from '../components/PaperDoll.vue'
 import PrefStamp from '../components/PrefStamp.vue'
 import RegionMotif from '../components/RegionMotif.vue'
 import SpeakButton from '../components/SpeakButton.vue'
 import SpotCard from '../components/SpotCard.vue'
-import ThemeTimeline from '../components/ThemeTimeline.vue'
 import Wordmark from '../components/Wordmark.vue'
 import { ACHIEVEMENTS } from '../data/achievements'
 import { regionOf, regions } from '../data/regions'
 import { cardFromMapSpot, cardNumberOf, type CardFace, isLandscapeCard } from '../services/card'
-import { allVariants, BASE_VARIANT, seasonVariant, type Variant } from '../services/cardVariants'
+import { allVariants, BASE_VARIANT, seasonOfMonth, seasonVariant, type SeasonKey, type Variant } from '../services/cardVariants'
 import { mapThumbUrl, type MapSpot } from '../services/bundles'
+import { commonsThumb } from '../services/commons'
+import { ERAS, preloadThemeFonts, setTheme, theme, type Theme } from '../services/theme'
 import { useCatalogStore } from '../stores/catalog'
+import themeColors from '../styles/theme-colors.json'
 
-// 形象網站（使用者決定 2026-10-11）：這個網站能做什麼、一趟旅行怎麼用、資料從哪裡來。
-// 不顯示 app 的標頭與分頁列（路由 meta.bare）。畫面用網站本身的元件（日本地圖、收集卡、旅人、紀念章），不放截圖；
+// 形象網站（使用者決定 2026-10-11；第二版同日）：這個網站能做什麼、一趟旅行怎麼用、資料從哪裡來。
+// 不顯示 app 的標頭與分頁列（路由 meta.bare）。畫面用網站本身的元件（日本地圖、收集卡、紀念章），不放截圖；
 // 數字與例子都是現在的資料（景點、車站、鐵路距離取自 data/，2026-10-11）。文案照 PLAN.md §6a：短、具體、不用驚嘆號。
 const catalog = useCatalogStore()
-const all = new Set(regions.map((r) => r.prefecture))
 
-const STATS = [
-  { n: '47', unit: '都道府縣' },
-  { n: '17,904', unit: '個景點' },
-  { n: '8,661', unit: '個車站' },
-  { n: '1,014', unit: '個祭典' },
-  { n: '32', unit: '座國際機場' },
-]
+// ---- 海報：浮世繪＋直排標語＋落款印（DESIGN.md §14） ----
+// 歌川広重《名所江戸百景》本身分春、夏、秋、冬四部，照今天的季節換一張；都是 data/ukiyoe.json 收的作品，畫的地方在地圖上
+interface Print {
+  title: string
+  year: number
+  /** Commons 原圖網址，顯示時換成縮圖 */
+  image: string
+  source: string
+  spot: string
+  place: string
+}
+const PRINTS: Record<SeasonKey, Print> = {
+  spring: {
+    title: '上野清水堂不忍ノ池',
+    year: 1856,
+    image: 'https://upload.wikimedia.org/wikipedia/commons/1/1e/100_views_edo_011.jpg',
+    source: 'https://commons.wikimedia.org/wiki/File:100_views_edo_011.jpg',
+    spot: 'wd-Q5365093',
+    place: '不忍池',
+  },
+  summer: {
+    title: '大はしあたけの夕立',
+    year: 1857,
+    image: 'https://upload.wikimedia.org/wikipedia/commons/7/72/Hiroshige%2C_Sudden_shower_over_Shin-%C5%8Chashi_bridge_and_Atake%2C_1857.jpg',
+    source: 'https://commons.wikimedia.org/wiki/File:Hiroshige,_Sudden_shower_over_Shin-%C5%8Chashi_bridge_and_Atake,_1857.jpg',
+    spot: 'wd-Q222149',
+    place: '隅田川',
+  },
+  autumn: {
+    title: '両国花火',
+    year: 1858,
+    image: 'https://upload.wikimedia.org/wikipedia/commons/e/e3/Fireworks_at_Ryogoku_%28Ryogoku_Hanabi%29%2C_No._98_from_One_Hundred_Famous_Views_of_Edo.jpg',
+    source: 'https://commons.wikimedia.org/wiki/File:Fireworks_at_Ryogoku_(Ryogoku_Hanabi),_No._98_from_One_Hundred_Famous_Views_of_Edo.jpg',
+    spot: 'wd-Q3080489',
+    place: '兩國橋',
+  },
+  winter: {
+    title: '浅草金龍山',
+    year: 1856,
+    image: 'https://upload.wikimedia.org/wikipedia/commons/d/df/100_views_edo_099.jpg',
+    source: 'https://commons.wikimedia.org/wiki/File:100_views_edo_099.jpg',
+    spot: 'wd-Q615183',
+    place: '淺草寺',
+  },
+}
+const print = PRINTS[seasonOfMonth(new Date().getMonth() + 1)]
+const printSrcset = ([500, 960, 1280] as const).map((w) => `${commonsThumb(print.image, w)} ${w}w`).join(', ')
+
+// 標語（DESIGN.md §1）直排，逗號處分兩行
+const TAGLINE = ['來一趟日本，', '才知道它有多大。']
+
+// 進場只有這一段：畫像掛軸一樣由上往下展開 → 標語一行一行寫出來 → 蓋上落款印。等畫載好才開始，最多等 1.5 秒
+const ready = ref(false)
+let readyTimer = 0
+function start() {
+  ready.value = true
+  window.clearTimeout(readyTimer)
+}
+const printFailed = ref(false)
+
+// 明朝體只有這一頁用，打開時才載入
+const BRAND_FONT = 'https://fonts.googleapis.com/css2?display=swap&family=Noto+Serif+TC:wght@500..900'
+function loadBrandFont() {
+  if (document.getElementById('webfonts-brand')) return
+  const link = document.createElement('link')
+  link.id = 'webfonts-brand'
+  link.rel = 'stylesheet'
+  link.href = BRAND_FONT
+  document.head.append(link)
+}
+
+const STATS = { prefs: 47, spots: '17,904', stations: '8,661', festivals: '1,014', airports: 32 }
+const north = regions[0]!.name.zh_tw
+const south = regions[regions.length - 1]!.name.zh_tw
 
 const POINTS = [
   { title: '一縣一色', text: '47 縣各有地區色與和風紋樣。進到哪一縣，整個畫面就換成那一縣的顏色，看得出自己在哪裡，也記得住去過哪裡。' },
@@ -99,7 +165,6 @@ const FEATURES: Record<TabKey, { title: string; lines: string[] }> = {
     lines: [
       '去過的地方蓋上日期，地圖上一縣一縣塗滿。',
       '紀念章帳：47 縣的初訪章，加上 40 個成就。',
-      '旅人：紙娃娃，163 件服裝，第一次到一個縣就送那一縣的代表單品。',
       '行程結束開卡包，看這趟的成就，做一張回顧圖分享。',
     ],
   },
@@ -159,10 +224,9 @@ const phrases = computed(() =>
   }),
 )
 
-// ---- 紀錄：塗了幾縣的地圖、紀念章、旅人 ----
+// ---- 紀錄：塗了幾縣的地圖、紀念章 ----
 const visitedDemo = new Set(['hokkaido', 'tokyo', 'kanagawa', 'kyoto', 'osaka', 'nara', 'hyogo', 'hiroshima', 'fukuoka', 'okinawa'])
 const seals = ACHIEVEMENTS.filter((a, i, list) => list.findIndex((b) => b.group === a.group) === i).slice(0, 4)
-const DOLL = { parts: { skin: 1, hair: 'bob', hairColor: 1, eyes: 'round' } as const, equipped: { hand: 'kyoto-matcha', face: 'kyoto-kitsune', head: 'kyoto-kanzashi' } }
 
 // ---- 收集卡：清水寺的四種樣子 ----
 const kiyomizu = computed<CardFace | null>(() => {
@@ -186,71 +250,141 @@ const variants = computed<Variant[]>(() => {
   ]
 })
 
+// ---- 六個年代：每個年代一條色見本，紙色、墨色與 47 縣的地區色取自 build-region-css 產生的 theme-colors.json ----
+type Swatch = Record<'paper' | 'ink' | 'line' | 'sub', string>
+const ERA_COLORS = themeColors as unknown as Record<Theme, { national: Swatch; regions: Record<string, { base: string }> }>
+const eraStrips = ERAS.map((e) => {
+  const c = ERA_COLORS[e.key]
+  return {
+    era: e,
+    style: { '--e-paper': c.national.paper, '--e-ink': c.national.ink, '--e-line': c.national.line, '--e-sub': c.national.sub },
+    band: regions.map((r) => c.regions[r.prefecture]?.base ?? c.national.line),
+  }
+})
+// 色見本用各年代的字型：捲到附近才去抓
+const eraSection = ref<HTMLElement | null>(null)
+let eraObserver: IntersectionObserver | null = null
+
 const SOURCES = [
-  { name: '維基百科', use: '景點簡介與念法' },
-  { name: 'Wikidata', use: '景點、座標、類型' },
-  { name: 'Wikimedia Commons', use: '照片（作者與授權寫在卡片上）' },
-  { name: 'OpenStreetMap', use: '鐵路、車站、擴充包的店' },
-  { name: '気象庁', use: '花期、紅葉的平年值與本季觀測' },
-  { name: '国土交通省', use: '市區町村界、國際線就航的機場' },
-  { name: '農林水産省', use: '郷土料理' },
-  { name: '各地的官方觀光網站', use: '東京、京都、大阪、北海道、福岡、沖繩的景點挑選' },
+  { use: '景點簡介、念法', name: '維基百科' },
+  { use: '景點、座標、類型', name: 'Wikidata' },
+  { use: '照片', name: 'Wikimedia Commons', note: '作者與授權寫在卡片上' },
+  { use: '鐵路、車站、擴充包的店', name: 'OpenStreetMap' },
+  { use: '花期、紅葉', name: '気象庁', note: '平年值與本季觀測' },
+  { use: '市區町村界、國際線機場', name: '国土交通省' },
+  { use: '郷土料理', name: '農林水産省' },
+  { use: '景點挑選', name: '各地的官方觀光網站', note: '東京、京都、大阪、北海道、福岡、沖繩' },
 ]
 
 const FAQ = [
-  { q: '要付費嗎', a: '不用。' },
-  { q: '一定要登入嗎', a: '看地圖、景點不用。收藏、行程、收集卡用 Google 帳號登入，換手機也還在。' },
-  { q: '手機可以用嗎', a: '可以。加到主畫面就像一個 App；行程下載離線用之後，沒有網路也打得開。' },
-  { q: '資料多久更新', a: '期間限定每天；寶可夢、城、祭典每週；其他每月或每季，更新前先檢查過。' },
+  { q: '要付費嗎？', a: '不用。' },
+  { q: '一定要登入嗎？', a: '看地圖、景點不用。收藏、行程、收集卡用 Google 帳號登入，換手機也還在。' },
+  { q: '手機可以用嗎？', a: '可以。加到主畫面就像一個 App；行程下載離線用之後，沒有網路也打得開。' },
+  { q: '資料多久更新？', a: '期間限定每天；寶可夢、城、祭典每週；其他每月或每季，更新前先檢查過。' },
 ]
 
 onMounted(() => {
+  loadBrandFont()
+  // 減少動態：不等畫，直接是最後的樣子
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) start()
+  else readyTimer = window.setTimeout(start, 1500)
   void catalog.loadMap('kyoto').then((list) => (kyoto.value = list)).catch(() => {})
   void catalog.loadPhrases().catch(() => {})
+  if (eraSection.value && 'IntersectionObserver' in window) {
+    eraObserver = new IntersectionObserver(
+      (entries) => {
+        if (!entries.some((e) => e.isIntersecting)) return
+        preloadThemeFonts()
+        eraObserver?.disconnect()
+      },
+      // 捲動的是 App.vue 的 <main>，rootMargin 要對它算才會提早
+      { root: document.getElementById('app-main'), rootMargin: '600px 0px' },
+    )
+    eraObserver.observe(eraSection.value)
+  } else preloadThemeFonts()
+})
+onBeforeUnmount(() => {
+  window.clearTimeout(readyTimer)
+  eraObserver?.disconnect()
 })
 const kyotoRegion = regionOf('kyoto')
 </script>
 
 <template>
   <div class="about flex flex-col">
-    <DollDefs />
+    <!-- 海報：當季的浮世繪、直排的標語與落款印 -->
+    <header class="hero paper-grain bg-paper" :class="{ 'is-ready': ready }">
+      <div class="mx-auto w-full max-w-6xl px-6 pt-6 pb-28 max-md:pb-12 max-sm:px-4 max-sm:pt-4 max-sm:pb-10">
+        <Wordmark />
+        <div class="hero-grid mt-10 max-sm:mt-6">
+          <figure class="hero-print relative flex flex-col gap-3">
+            <div class="relative aspect-[960/1470]">
+              <img
+                v-if="!printFailed"
+                :src="commonsThumb(print.image, 960)"
+                :srcset="printSrcset"
+                sizes="(min-width: 768px) min(25rem, 36vw), 58vw"
+                :alt="`歌川広重〈${print.title}〉`"
+                fetchpriority="high"
+                referrerpolicy="no-referrer"
+                class="print-img absolute inset-0 size-full object-cover shadow-float"
+                @load="start"
+                @error="(printFailed = true), start()"
+              />
+              <div v-else class="absolute inset-0 bg-placeholder"></div>
+            </div>
+            <figcaption class="hero-cap flex flex-col gap-0.5 text-caption text-sub">
+              <span lang="ja" class="text-body-sm font-bold text-ink">{{ print.title }}</span>
+              <span><span lang="ja">歌川広重</span>《<span lang="ja">名所江戸百景</span>》，{{ print.year }} 年</span>
+              <span class="mt-1 flex flex-wrap gap-x-4">
+                <RouterLink :to="{ path: '/map/tokyo', query: { spot: print.spot } }" class="font-bold text-region-strong">在地圖上看{{ print.place }}</RouterLink>
+                <a :href="print.source" target="_blank" rel="noopener" class="text-sub">圖片出處</a>
+              </span>
+            </figcaption>
+          </figure>
 
-    <!-- 海報：標語＋一縣一縣蓋上顏色的日本地圖 -->
-    <header class="paper-grain relative overflow-hidden bg-region text-on-region">
-      <RegionMotif class="pointer-events-none absolute -top-24 -right-24 size-[28rem] opacity-60 max-md:size-80" />
-      <div class="relative mx-auto grid w-full max-w-6xl items-center gap-10 px-6 pt-8 pb-14 md:grid-cols-[minmax(0,1fr)_minmax(0,26rem)] max-sm:px-4 max-sm:pt-5 max-sm:pb-10">
-        <div class="flex flex-col gap-6">
-          <Wordmark class="text-on-region" />
-          <p class="text-body-sm font-bold tracking-section">日本 47 都道府縣的景點地圖</p>
-          <h1 class="font-display text-display leading-tight font-black tracking-title max-sm:text-h1">來一趟日本，<br />才知道它有多大。</h1>
-          <p class="max-w-[30em] text-title">一縣一色的地圖上找地方、排行程、記住念法，去過的地方收成一張一張的卡。</p>
-          <div class="flex flex-wrap gap-3">
-            <RouterLink to="/" class="flex h-12 items-center rounded-control bg-ink px-6 text-body font-bold text-paper no-underline active:translate-y-px">開始探索</RouterLink>
-            <a href="#flow" class="flex h-12 items-center rounded-control border-[1.5px] border-on-region px-6 text-body font-bold text-on-region no-underline active:translate-y-px">怎麼用</a>
+          <div class="hero-words">
+            <h1 class="tagline font-brand">
+              <span v-for="(line, i) in TAGLINE" :key="line" class="tagline-line" :style="{ '--i': i }">{{ line }}</span>
+            </h1>
+            <span class="seal-wrap" aria-hidden="true"><span class="seal font-brand">巡</span></span>
+          </div>
+
+          <div class="hero-lede flex flex-col gap-4">
+            <p class="font-brand text-h3 font-semibold tracking-title">日本 47 都道府縣的景點地圖</p>
+            <p class="max-w-[24em] text-body text-ink-2">在一縣一色的地圖上找地方、排行程、記住念法；去過的地方，收成一張一張的卡。</p>
+            <div class="mt-2 flex flex-wrap items-center gap-x-6 gap-y-3">
+              <RouterLink to="/" class="flex h-12 items-center rounded-control bg-ink px-6 text-body font-bold text-paper no-underline active:translate-y-px">開始探索</RouterLink>
+              <a href="#flow" class="text-body font-bold text-ink underline decoration-line decoration-2 underline-offset-[6px] hover:decoration-ink">怎麼用</a>
+            </div>
           </div>
         </div>
-        <figure class="flex flex-col items-center gap-2">
-          <RouterLink to="/" class="block w-full max-w-[26rem] max-sm:max-w-[18rem]" aria-label="開始探索">
-            <JapanMap :done="all" />
-          </RouterLink>
-          <figcaption class="text-caption">47 縣的地區色</figcaption>
-        </figure>
       </div>
     </header>
 
-    <!-- 數字：像車站的看板 -->
-    <section aria-label="收錄" class="border-b border-line bg-surface">
-      <ul class="mx-auto grid w-full max-w-6xl grid-cols-5 px-6 max-md:grid-cols-3 max-sm:grid-cols-2 max-sm:px-4">
-        <li v-for="s in STATS" :key="s.unit" class="flex flex-col items-center gap-0.5 py-6 max-sm:py-4">
-          <span class="font-latin text-h1 leading-none font-bold">{{ s.n }}</span>
-          <span class="text-body-sm text-sub">{{ s.unit }}</span>
-        </li>
-      </ul>
+    <!-- 收錄：一句話寫完，下面是 47 縣的地區色，北到南 -->
+    <section aria-label="收錄" class="border-y border-line bg-surface">
+      <div class="mx-auto w-full max-w-6xl px-6 py-12 max-sm:px-4 max-sm:py-9">
+        <!-- 數字和量詞不拆到兩行 -->
+        <p class="counts font-brand text-h3 leading-[1.8] font-medium xl:text-[1.625rem]">
+          收錄日本 <span class="whitespace-nowrap"><b>{{ STATS.prefs }}</b> 都道府縣</span>的 <span class="whitespace-nowrap"><b>{{ STATS.spots }}</b> 個景點</span>、<span
+            class="whitespace-nowrap"
+            ><b>{{ STATS.stations }}</b> 個車站</span
+          >、<span class="whitespace-nowrap"><b>{{ STATS.festivals }}</b> 個祭典</span>，<br class="max-lg:hidden" />以及
+          <span class="whitespace-nowrap"><b>{{ STATS.airports }}</b> 座</span>有國際線的機場。
+        </p>
+        <div class="mt-7 flex flex-col gap-1.5">
+          <ol class="flex h-3 gap-px" aria-hidden="true">
+            <li v-for="r in regions" :key="r.prefecture" :data-pref="r.prefecture" :title="r.name.zh_tw" class="flex-1 bg-region"></li>
+          </ol>
+          <p class="flex justify-between text-caption text-sub" aria-hidden="true"><span>{{ north }}</span><span>{{ south }}</span></p>
+        </div>
+      </div>
     </section>
 
     <!-- 原則 -->
     <section class="mx-auto w-full max-w-6xl px-6 py-16 max-sm:px-4 max-sm:py-10" aria-labelledby="points">
-      <h2 id="points" class="text-h2 font-black tracking-title">ひとめぐり 是什麼</h2>
+      <h2 id="points" class="font-brand text-h2 font-semibold tracking-title">ひとめぐり 是什麼</h2>
       <p class="mt-2 max-w-[40em] text-body text-sub">「一巡り」是繞一圈的意思。從一個縣開始，一縣一縣把日本走過一遍。</p>
       <ul class="mt-8 grid gap-4 md:grid-cols-2">
         <li v-for="(p, i) in POINTS" :key="p.title" class="flex gap-4 rounded-card border border-line bg-paper p-5">
@@ -266,7 +400,7 @@ const kyotoRegion = regionOf('kyoto')
     <!-- 能做什麼：頁籤 -->
     <section id="features" class="scroll-mt-4 bg-surface py-16 max-sm:py-10" aria-labelledby="features-title">
       <div class="mx-auto w-full max-w-6xl px-6 max-sm:px-4">
-        <h2 id="features-title" class="text-h2 font-black tracking-title">能做什麼</h2>
+        <h2 id="features-title" class="font-brand text-h2 font-semibold tracking-title">能做什麼</h2>
         <div role="tablist" aria-label="能做什麼" class="scroll-quiet mt-6 flex gap-1 overflow-x-auto border-b border-line">
           <button
             v-for="(t, i) in TABS"
@@ -394,19 +528,18 @@ const kyotoRegion = regionOf('kyoto')
             </div>
           </div>
 
-          <!-- 紀錄：塗了十縣的地圖、初訪章、成就、旅人 -->
+          <!-- 紀錄：塗了十縣的地圖、初訪章、成就 -->
           <div v-else-if="t.key === 'log'" class="grid items-center gap-6 md:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]">
             <div class="rounded-card bg-region p-5 text-on-region">
               <JapanMap :done="visitedDemo" />
               <p class="mt-2 text-center text-caption">去過的縣塗上那一縣的顏色</p>
             </div>
-            <div class="flex flex-col items-center gap-5">
+            <div class="flex flex-col items-center gap-3">
               <div class="flex flex-wrap items-center justify-center gap-4">
                 <PrefStamp pref="kyoto" date="2025-11-18" class="size-24" />
                 <AchvSeal v-for="a in seals" :key="a.id" :def="a" status="done" at="2025-11-20" :size="80" />
               </div>
-              <PaperDoll :parts="DOLL.parts" :equipped="DOLL.equipped" animate class="h-auto w-40" />
-              <p class="text-caption text-sub">旅人戴著京都的狐面、簪，拿著抹茶</p>
+              <p class="text-caption text-sub">京都的初訪章與四個成就</p>
             </div>
           </div>
 
@@ -437,7 +570,7 @@ const kyotoRegion = regionOf('kyoto')
 
     <!-- 一趟旅行的流程 -->
     <section id="flow" class="mx-auto w-full max-w-6xl scroll-mt-4 px-6 py-16 max-sm:px-4 max-sm:py-10" aria-labelledby="flow-title">
-      <h2 id="flow-title" class="text-h2 font-black tracking-title">一趟旅行怎麼用</h2>
+      <h2 id="flow-title" class="font-brand text-h2 font-semibold tracking-title">一趟旅行怎麼用</h2>
       <ol class="relative mt-8 grid gap-4 md:grid-cols-3 lg:grid-cols-6">
         <li v-for="(s, i) in [
           { t: '找地方', d: '選一個縣，看地圖與清單，收藏想去的。', tab: 'explore' },
@@ -458,40 +591,67 @@ const kyotoRegion = regionOf('kyoto')
       </ol>
     </section>
 
-    <!-- 年代主題：拖曳就換整個網站的樣子 -->
-    <section class="border-y border-line bg-surface" aria-labelledby="era-title">
-      <div class="mx-auto grid w-full max-w-6xl items-center gap-8 px-6 py-14 md:grid-cols-[minmax(0,1fr)_minmax(0,24rem)] max-sm:px-4 max-sm:py-10">
-        <div class="flex flex-col gap-2">
-          <h2 id="era-title" class="text-h2 font-black tracking-title">六個年代</h2>
-          <p class="max-w-[34em] text-body text-ink-2">江戶、明治、大正、昭和、平成、令和。配色、字體、卡片與看板跟著年代換；拉一下右邊的時間軸，這一頁就換過去。</p>
+    <!-- 六個年代：每個年代一條色見本（紙、墨、47 縣的地區色、年代的字），按了整頁換過去 -->
+    <section ref="eraSection" class="border-y border-line bg-surface" aria-labelledby="era-title">
+      <div class="mx-auto grid w-full max-w-6xl gap-x-12 gap-y-8 px-6 py-16 md:grid-cols-[minmax(0,17rem)_minmax(0,1fr)] max-sm:px-4 max-sm:py-10">
+        <div class="flex flex-col gap-3">
+          <h2 id="era-title" class="font-brand text-h2 font-semibold tracking-title">六個年代</h2>
+          <p class="text-body text-ink-2">配色、字體、卡片與看板跟著年代換。點一個年代，這一頁就換過去。</p>
         </div>
-        <div class="rounded-card bg-paper py-2 shadow-float">
-          <ThemeTimeline />
-        </div>
+        <ol class="grid grid-cols-6 gap-3 max-sm:gap-1.5" aria-label="年代">
+          <li v-for="s in eraStrips" :key="s.era.key" class="flex">
+            <button
+              type="button"
+              class="era-strip"
+              :style="s.style"
+              :aria-pressed="theme === s.era.key"
+              :aria-label="`${s.era.label}（${s.era.years}）`"
+              @click="setTheme(s.era.key)"
+            >
+              <span class="era-band" aria-hidden="true">
+                <span v-for="(c, i) in s.band" :key="i" :style="{ background: c }"></span>
+              </span>
+              <span class="era-name" :style="{ fontFamily: s.era.face }">{{ s.era.label }}</span>
+              <span class="era-year font-latin">{{ s.era.years.split('–')[0] }}</span>
+            </button>
+          </li>
+        </ol>
       </div>
     </section>
 
-    <!-- 資料來源 -->
-    <section class="mx-auto w-full max-w-6xl px-6 py-16 max-sm:px-4 max-sm:py-10" aria-labelledby="sources-title">
-      <h2 id="sources-title" class="text-h2 font-black tracking-title">資料從哪裡來</h2>
-      <p class="mt-2 max-w-[40em] text-body text-sub">每一筆資料都留著來源網址與取得日期；照片的作者與授權寫在卡片上。</p>
-      <dl class="mt-8 grid gap-x-8 sm:grid-cols-2">
-        <div v-for="s in SOURCES" :key="s.name" class="flex items-baseline gap-4 border-b border-line-soft py-3">
-          <dt class="w-40 shrink-0 text-body font-bold max-sm:w-32">{{ s.name }}</dt>
-          <dd class="text-body-sm text-sub">{{ s.use }}</dd>
-        </div>
-      </dl>
-      <RouterLink to="/credits" class="mt-5 inline-block text-body-sm font-bold text-region-strong">完整的資料來源與授權</RouterLink>
+    <!-- 資料從哪裡來：版權頁（奧付）的樣子 -->
+    <section class="mx-auto grid w-full max-w-6xl gap-x-12 gap-y-8 px-6 py-16 md:grid-cols-[minmax(0,17rem)_minmax(0,1fr)] max-sm:px-4 max-sm:py-10" aria-labelledby="sources-title">
+      <div class="flex flex-col gap-3">
+        <h2 id="sources-title" class="font-brand text-h2 font-semibold tracking-title">資料從哪裡來</h2>
+        <p class="text-body text-ink-2">每一筆資料都留著來源網址與取得日期。找不到來源的就留空，不另外編寫。</p>
+      </div>
+      <div class="colophon border-y-[3px] border-double border-ink px-1 py-6">
+        <dl class="grid grid-cols-[minmax(0,13rem)_minmax(0,1fr)] items-baseline gap-x-8 gap-y-3 max-sm:grid-cols-1 max-sm:gap-y-0">
+          <template v-for="src in SOURCES" :key="src.name">
+            <dt class="text-body-sm text-sub max-sm:pt-3">{{ src.use }}</dt>
+            <dd class="text-body">
+              <span class="font-bold">{{ src.name }}</span><span v-if="src.note" class="ml-2 text-body-sm text-sub">{{ src.note }}</span>
+            </dd>
+          </template>
+        </dl>
+        <p class="mt-6 border-t border-line pt-4 text-body-sm">
+          <RouterLink to="/credits" class="font-bold text-region-strong">完整的資料來源與授權</RouterLink>
+        </p>
+      </div>
     </section>
 
-    <!-- 常見問題 -->
-    <section class="bg-surface py-16 max-sm:py-10" aria-labelledby="faq-title">
-      <div class="mx-auto w-full max-w-6xl px-6 max-sm:px-4">
-        <h2 id="faq-title" class="text-h2 font-black tracking-title">常見問題</h2>
-        <dl class="mt-6 flex max-w-3xl flex-col">
-          <div v-for="f in FAQ" :key="f.q" class="flex flex-col gap-1 border-b border-line py-4">
-            <dt class="text-title font-bold">{{ f.q }}</dt>
-            <dd class="text-body text-ink-2">{{ f.a }}</dd>
+    <!-- 常見問題：問、答 -->
+    <section class="bg-surface" aria-labelledby="faq-title">
+      <div class="mx-auto grid w-full max-w-6xl gap-x-12 gap-y-6 px-6 py-16 md:grid-cols-[minmax(0,17rem)_minmax(0,1fr)] max-sm:px-4 max-sm:py-10">
+        <h2 id="faq-title" class="font-brand text-h2 font-semibold tracking-title">常見問題</h2>
+        <dl class="flex flex-col">
+          <div v-for="f in FAQ" :key="f.q" class="flex flex-col gap-2.5 border-b border-line py-5 first:pt-1 last:border-b-0">
+            <dt class="flex items-start gap-3">
+              <span class="qa qa-q font-brand" aria-hidden="true">問</span><span class="text-title font-bold">{{ f.q }}</span>
+            </dt>
+            <dd class="flex items-start gap-3">
+              <span class="qa qa-a font-brand" aria-hidden="true">答</span><span class="pt-0.5 text-body text-ink-2">{{ f.a }}</span>
+            </dd>
           </div>
         </dl>
       </div>
@@ -499,8 +659,8 @@ const kyotoRegion = regionOf('kyoto')
 
     <!-- 頁尾 -->
     <footer class="paper-grain relative overflow-hidden bg-region text-on-region">
-      <div class="relative mx-auto flex w-full max-w-6xl flex-col items-start gap-5 px-6 py-14 max-sm:px-4 max-sm:py-10">
-        <p class="font-display text-h1 font-black tracking-title max-sm:text-h2">來一趟日本，才知道它有多大。</p>
+      <div class="relative mx-auto flex w-full max-w-6xl flex-col items-start gap-6 px-6 py-14 max-sm:px-4 max-sm:py-10">
+        <p class="font-brand text-h1 font-semibold tracking-title max-sm:text-h2">{{ TAGLINE.join('') }}</p>
         <RouterLink to="/" class="flex h-12 items-center rounded-control bg-ink px-6 text-body font-bold text-paper no-underline active:translate-y-px">開始探索</RouterLink>
         <div class="mt-4 flex w-full flex-wrap items-center gap-x-6 gap-y-2 border-t border-on-region/30 pt-5 text-body-sm">
           <Wordmark class="text-on-region" />
@@ -512,3 +672,228 @@ const kyotoRegion = regionOf('kyoto')
   </div>
 </template>
 
+
+<style scoped>
+/* ---- 海報：畫 | 直排標語＋落款印 | 說明。手機：畫與標語並排，說明在下面 ---- */
+.hero-grid {
+  display: grid;
+  grid-template-columns: min(25rem, 36vw) auto minmax(0, 1fr);
+  grid-template-areas: 'print words lede';
+  column-gap: clamp(1.5rem, 4.5vw, 4rem);
+  align-items: start;
+}
+.hero-print {
+  grid-area: print;
+}
+.hero-words {
+  grid-area: words;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  /* 標語的字級；落款印用 em 對齊最後一行的中間 */
+  font-size: clamp(3rem, 5vw, 4.25rem);
+}
+.hero-lede {
+  grid-area: lede;
+  /* 和畫的下緣對齊：桌機的圖說掛在畫的下面、不佔格子的高度 */
+  align-self: end;
+}
+@media (min-width: 768px) {
+  .hero-cap {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    padding-top: 0.75rem;
+  }
+}
+@media (max-width: 767.98px) {
+  .hero-grid {
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-areas:
+      'print words'
+      'lede lede';
+    row-gap: 2rem;
+    column-gap: 1rem;
+  }
+  .hero-words {
+    font-size: min(2.5rem, 9.6vw);
+  }
+}
+
+/* 直排：一行一欄，由右往左讀 */
+.tagline {
+  writing-mode: vertical-rl;
+  margin: 0;
+  font-size: 1em;
+  font-weight: 600;
+  line-height: 1.5;
+  letter-spacing: 0.14em;
+  color: var(--color-ink);
+}
+.tagline-line {
+  display: block;
+}
+:root[data-theme] .tagline {
+  font-family: var(--font-display-zh);
+  font-weight: var(--display-zh-weight);
+}
+
+/* 落款印：蓋在最後一行（最左一欄）的下面 */
+.seal-wrap {
+  display: block;
+  margin-top: 0.3em;
+  margin-inline-start: calc((1.5em - 3.25rem) / 2);
+  transform: rotate(-3deg);
+}
+/* 印泥沒吃滿的地方：雜訊當遮罩，透出一點紙色 */
+.seal {
+  display: grid;
+  place-items: center;
+  width: 3.25rem;
+  height: 3.25rem;
+  border: 3px solid currentColor;
+  border-radius: 5px;
+  font-size: 2.15rem;
+  font-weight: 800;
+  line-height: 1;
+  color: var(--color-visited);
+  mix-blend-mode: multiply;
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='96' height='96'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='2' seed='7'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -9 6.3'/%3E%3C/filter%3E%3Crect width='96' height='96' filter='url(%23n)'/%3E%3C/svg%3E");
+  mask-size: 96px 96px;
+}
+@media (max-width: 767.98px) {
+  .seal-wrap {
+    margin-inline-start: calc((1.5em - 2.5rem) / 2);
+  }
+  .seal {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-width: 2.5px;
+    font-size: 1.65rem;
+  }
+}
+
+/* 進場：畫由上往下展開（掛軸）→ 標語一行一行由上往下寫出來 → 蓋印。減少動態時 theme.css 會把時間壓成 0 */
+.print-img {
+  clip-path: inset(0 0 100% 0);
+}
+.is-ready .print-img {
+  animation: unroll 1.1s var(--ease-out-soft) forwards;
+}
+.tagline-line {
+  clip-path: inset(0 0 100% 0);
+}
+.is-ready .tagline-line {
+  animation: unroll 0.8s var(--ease-out-soft) forwards;
+  animation-delay: calc(0.45s + var(--i) * 0.3s);
+}
+@keyframes unroll {
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+.seal {
+  opacity: 0;
+}
+.is-ready .seal {
+  animation: var(--animate-stamp-press);
+  animation-delay: 1.45s;
+}
+
+/* 收錄的數字用拉丁字型 */
+.counts b {
+  font-family: var(--font-latin);
+  font-size: 1.15em;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+/* ---- 年代色見本：左邊 47 縣的色帶（北到南），右上直排年代名，下面是起始年 ---- */
+.era-strip {
+  position: relative;
+  display: flex;
+  flex: 1;
+  min-height: 15rem;
+  padding: 0.75rem 0.75rem 0.75rem 1.25rem;
+  border: 1px solid var(--e-line);
+  border-radius: 3px;
+  background: var(--e-paper);
+  color: var(--e-ink);
+  text-align: left;
+  cursor: pointer;
+}
+.era-strip:hover {
+  border-color: var(--e-ink);
+}
+.era-strip[aria-pressed='true'] {
+  outline: 2px solid var(--color-ink);
+  outline-offset: 3px;
+}
+.era-band {
+  position: absolute;
+  inset: 0.75rem auto 0.75rem 0.5rem;
+  display: flex;
+  flex-direction: column;
+  width: 5px;
+}
+.era-band > span {
+  flex: 1;
+}
+.era-name {
+  margin-left: auto;
+  writing-mode: vertical-rl;
+  font-size: 1.75rem;
+  line-height: 1.2;
+  letter-spacing: 0.1em;
+}
+.era-year {
+  position: absolute;
+  bottom: 0.6rem;
+  left: 1.25rem;
+  font-size: 0.8125rem;
+  color: var(--e-sub);
+}
+@media (max-width: 639.98px) {
+  .era-strip {
+    min-height: 10.5rem;
+    padding: 0.5rem 0.25rem 0.5rem 0.75rem;
+  }
+  .era-band {
+    inset: 0.5rem auto 0.5rem 0.3rem;
+    width: 3px;
+  }
+  .era-name {
+    margin: 0 auto;
+    font-size: 1.25rem;
+  }
+  .era-year {
+    left: 0;
+    right: 0;
+    padding-left: 0.5rem;
+    text-align: center;
+    font-size: 0.6875rem;
+  }
+}
+
+/* ---- 常見問題的「問」「答」 ---- */
+.qa {
+  display: grid;
+  flex-shrink: 0;
+  place-items: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 3px;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  line-height: 1;
+}
+.qa-q {
+  border: 1.5px solid var(--color-ink);
+  color: var(--color-ink);
+}
+.qa-a {
+  background: var(--color-region-strong);
+  color: var(--color-paper);
+}
+</style>
