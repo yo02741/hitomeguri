@@ -2,11 +2,13 @@ import { defineStore } from 'pinia'
 import { computed, ref, shallowRef, watch } from 'vue'
 
 import {
+  copyDays,
   dayCount,
   dayDate,
   hasSpot,
   MAX_DAYS,
   type Member,
+  parseStay,
   resizeDays,
   type Stop,
   type Trip,
@@ -38,7 +40,13 @@ function parse(id: string, x: Record<string, any>): Trip {
     name: String(x.name ?? ''),
     start_date: x.start_date,
     end_date: x.end_date,
-    days: Array.isArray(x.days) ? x.days.map((day: { stops?: Stop[] }) => ({ stops: day.stops ?? [] })) : [],
+    // 每一天：停留點與住的車站（日帰り）；不認得的欄位不帶
+    days: Array.isArray(x.days)
+      ? x.days.map((day: { stops?: Stop[]; stay?: unknown }) => {
+          const stay = parseStay(day?.stay)
+          return stay ? { stops: day.stops ?? [], stay } : { stops: day?.stops ?? [] }
+        })
+      : [],
     unscheduled: Array.isArray(x.unscheduled) ? x.unscheduled : [],
     owner: String(x.owner ?? ''),
     members: Array.isArray(x.members) ? x.members : [],
@@ -188,7 +196,8 @@ export const useTripsStore = defineStore('trips', () => {
       status: tripStatus(t, todayIso()),
       start_date: t.start_date || fs.deleteField(),
       end_date: t.end_date || fs.deleteField(),
-      days: t.days.slice(0, MAX_DAYS).map((d) => ({ stops: d.stops })),
+      // 住的車站存在每一天裡（Firestore 不收 undefined：沒有就不寫這個欄位）
+      days: t.days.slice(0, MAX_DAYS).map((d) => (d.stay ? { stops: d.stops, stay: { st: d.stay.st, n: d.stay.n } } : { stops: d.stops })),
       unscheduled: t.unscheduled,
       updated_at: fs.serverTimestamp(),
     }
@@ -248,7 +257,7 @@ export const useTripsStore = defineStore('trips', () => {
   function addStop(tripId: string, s: SpotRef, day: number | null) {
     return mutate(tripId, (t) => {
       if (hasSpot(t, s.id)) return null
-      const days = t.days.map((d) => ({ stops: [...d.stops] }))
+      const days = copyDays(t.days)
       const unscheduled = [...t.unscheduled]
       if (day === null || !days[day]) unscheduled.push(toStop(s))
       else days[day]!.stops.push(toStop(s))

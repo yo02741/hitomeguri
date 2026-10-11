@@ -10,8 +10,16 @@ export interface Stop {
   name: string
 }
 
+/** 這天住的地方（日帰り，UX-FLOW.md C8）：路網的車站（rail-graph.json 的節點 id）與站名 */
+export interface Stay {
+  st: string
+  n: string
+}
+
 export interface TripDay {
   stops: Stop[]
+  /** 住的車站；存在 days[i] 裡（firestore.rules 只限制 trip 最上層的欄位） */
+  stay?: Stay
 }
 
 export type TripStatus = 'planning' | 'ongoing' | 'done'
@@ -87,10 +95,31 @@ export function dayDate(t: Pick<Trip, 'start_date'>, i: number): string | undefi
   return t.start_date ? addDays(t.start_date, i) : undefined
 }
 
+/** 住的車站：Firestore 讀回來的值檢查過才用（共編的舊版本、手改的資料） */
+export function parseStay(x: unknown): Stay | undefined {
+  const v = x as Partial<Stay> | null | undefined
+  return v && typeof v.st === 'string' && v.st && typeof v.n === 'string' ? { st: v.st.slice(0, 64), n: v.n.slice(0, 80) } : undefined
+}
+
+/** 複製每一天（停留點換新陣列，住的地方照帶）：修改停留點的函式都從這裡開始，才不會弄丟這天的其他欄位 */
+export function copyDays(days: readonly TripDay[]): TripDay[] {
+  return days.map((d) => (d.stay ? { stops: [...d.stops], stay: d.stay } : { stops: [...d.stops] }))
+}
+
+/** 設定（或清除）某一天住的車站；沒有變化時 null */
+export function setStay(t: Pick<Trip, 'days'>, day: number, stay: Stay | null): Pick<Trip, 'days'> | null {
+  const cur = t.days[day]
+  if (!cur || (cur.stay?.st ?? null) === (stay?.st ?? null)) return null
+  const days = copyDays(t.days)
+  if (stay) days[day]!.stay = { st: stay.st, n: stay.n }
+  else delete days[day]!.stay
+  return { days }
+}
+
 /** 調整天數：減少時，被拿掉的那幾天的停留點移到「待排」 */
 export function resizeDays(t: Pick<Trip, 'days' | 'unscheduled'>, n: number): Pick<Trip, 'days' | 'unscheduled'> {
   const count = Math.max(1, Math.min(n, MAX_DAYS))
-  const days = t.days.slice(0, count).map((d) => ({ stops: [...d.stops] }))
+  const days = copyDays(t.days.slice(0, count))
   while (days.length < count) days.push({ stops: [] })
   const dropped = t.days.slice(count).flatMap((d) => d.stops)
   return { days, unscheduled: [...t.unscheduled, ...dropped] }
@@ -106,7 +135,7 @@ export function moveStop(
   from: StopPos,
   to: StopPos,
 ): Pick<Trip, 'days' | 'unscheduled'> {
-  const next = { days: t.days.map((d) => ({ stops: [...d.stops] })), unscheduled: [...t.unscheduled] }
+  const next = { days: copyDays(t.days), unscheduled: [...t.unscheduled] }
   const src = listAt(next, from.day)
   const dst = listAt(next, to.day)
   if (!src || !dst || from.idx < 0 || from.idx >= src.length) return t
@@ -132,7 +161,7 @@ export function dayIndexOn(t: Pick<Trip, 'start_date' | 'days'>, today: string):
 }
 
 export function removeStop(t: Pick<Trip, 'days' | 'unscheduled'>, at: StopPos): Pick<Trip, 'days' | 'unscheduled'> {
-  const next = { days: t.days.map((d) => ({ stops: [...d.stops] })), unscheduled: [...t.unscheduled] }
+  const next = { days: copyDays(t.days), unscheduled: [...t.unscheduled] }
   listAt(next, at.day)?.splice(at.idx, 1)
   return next
 }
@@ -143,7 +172,7 @@ export function removeStop(t: Pick<Trip, 'days' | 'unscheduled'>, at: StopPos): 
  */
 export function insertStop(t: Pick<Trip, 'days' | 'unscheduled'>, at: StopPos, stop: Stop): Pick<Trip, 'days' | 'unscheduled'> | null {
   if (hasSpot(t, stop.spot_id)) return null
-  const next = { days: t.days.map((d) => ({ stops: [...d.stops] })), unscheduled: [...t.unscheduled] }
+  const next = { days: copyDays(t.days), unscheduled: [...t.unscheduled] }
   const dst = listAt(next, at.day) ?? next.unscheduled
   dst.splice(Math.max(0, Math.min(at.idx, dst.length)), 0, stop)
   return next

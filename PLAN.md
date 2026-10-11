@@ -105,6 +105,7 @@
 │   ├── specialties.py、festivals.py、seasons.py、rail.py、timed.py
 │   ├── municipalities.py、topo.py  # 市区町村界（拓撲保持簡化）、景點所在的區
 │   ├── rail_graph.py             # 全國車站路網（日帰り的鐵路距離）
+│   ├── daytrip.py                # 日帰り的目的地（市区町村、分數最高的景點與車站）
 │   ├── packs.py、pack_castles.py、pack_shinise.py、pack_chara.py  # 擴充包
 │   ├── validate.py、diff_report.py  # 資料檢查、PR 變更報告
 │   ├── build_bundles.py          # data/ → web/public/bundles/ 精簡 JSON
@@ -215,6 +216,7 @@
 - `bundles/rail/{prefecture}.json`：路線多 `s`（新幹線）；車站多 `id`（路網節點）、`l`（停靠路線在 `lines` 的 index）、`s`。
 - `bundles/shinkansen.json`：全國地圖的新幹線（`build_shinkansen`；`models.ShinkansenBundle`）：各縣 `shinkansen` 的路線依 OSM relation id 合併，碎段接成長折線再簡化（約 150 m、小數 4 位），`lines`（`n`、`g`）；新幹線站依路網節點去重，`stations`（`id`、`n`、`e`、`lat`、`lng`、`p` 縣）。名稱有「実験線」的（山梨リニア実験線）不放。約 46 KB（gzip 15 KB）；版本在 `_index.json` 的 `shinkansen`。
 - `bundles/rail-graph.json`：全國車站路網（§4.5），版本在 `_index.json` 的 `rail_graph`。
+- `bundles/daytrip.json`：日帰り的目的地（`pipeline/daytrip.py`；`models.DaytripBundle`）。一個市区町村一筆（有已發布、對得到路網車站的景點的區；所属未定地不算）：`m` 代碼、`n` 名稱（政令指定都市是區名）、`c` 政令指定都市名、`p` 縣、`lat`/`lng` 區名的位置（市区町村 bundle 的 `l`）、`s` 分數最高的景點（最多 3 個）`[id, 日文名, 最近車站的路網節點 id 或 null, 分數]`、`x` 其餘景點的最近車站（不重複、不含 `s` 的）。前端（`web/src/services/daytrip.ts`）從住的車站跑和 `rail_graph` 相同的 Dijkstra，一個地方的距離取它所有車站裡最近的一站，政令指定都市的區與東京 23 區合成一個城市。1106 筆，289 KB（gzip 約 95 KB）；版本在 `_index.json` 的 `daytrip`。行程頁打開住的車站、單日來回時才和 `rail-graph.json`（735 KB，gzip 約 235 KB）一起載入。
 
 **FlightRoute**（`data/flights/taiwan_direct.json`）
 ```ts
@@ -280,6 +282,8 @@ extra_stations?: [{ id, name, lat, lng }]                              // edges 
 ```
 - 同名 500 m 內的站合併成一個節點。最短距離用 Dijkstra（`pipeline/rail_graph.py` 的 `shortest`、`within`），新幹線權重乘 0.97（距離差不多時走新幹線），路徑上新幹線 ≥ 20 km 才算「可以搭新幹線」。
 - **沒有時刻表**（公開資料沒有）：日帰り只寫「鐵路約 n km」與能否搭新幹線，不寫分鐘。
+- 前端的移植：`web/src/services/daytrip.ts`（同樣的權重、同分時依節點 index、小數 1 位同 Python 的 round）。對照資料 `web/src/services/fixtures/rail-graph-small.expected.json` 由 `pipeline/tests/test_daytrip.py` 用 `within` 產生，pytest 與 vitest 都比對它；rail_graph 的演算法改了要重新產生（`python -m pipeline.tests.test_daytrip`）。
+- 行程的每一天可以存住的車站（`days[i].stay = { st: 路網節點 id, n: 站名 }`，UX-FLOW.md §3、C8）：存在 day 裡，firestore.rules 不用改。
 
 ---
 

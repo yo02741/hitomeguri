@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, nextTick, onBeforeUnmount, ref, watch } from 'vue'
+import { computed, nextTick, onBeforeUnmount, ref, shallowRef, watch } from 'vue'
 import { useRouter } from 'vue-router'
 
 import ActionMenu, { type MenuAction } from '../components/ActionMenu.vue'
@@ -16,12 +16,17 @@ import SkeletonRows from '../components/SkeletonRows.vue'
 import TripMembers from '../components/TripMembers.vue'
 import TripStopList from '../components/TripStopList.vue'
 import TripAddVisited from '../components/TripAddVisited.vue'
+import BottomDialog from '../components/BottomDialog.vue'
+import DaytripList from '../components/DaytripList.vue'
+import StayPicker from '../components/StayPicker.vue'
 import { useCatalogSpots } from '../composables/catalogSpots'
+import { useDaytrip } from '../composables/daytrip'
 import { useDraftField } from '../composables/draftField'
 import { useOnline } from '../composables/online'
 import { regionOf } from '../data/regions'
-import type { MapSpot } from '../services/bundles'
+import type { MapSpot, ShinkansenBundle } from '../services/bundles'
 import { confirmDialog } from '../services/confirm'
+import { type Band, buildGraph, nearestStation, stationById, type StationOption } from '../services/daytrip'
 import { type ExportFolder, type ExportRow, shareOrDownload, toCsv, toKml } from '../services/export'
 import { drawTripRecap } from '../services/shareImage'
 import { showToast } from '../services/toast'
@@ -29,6 +34,7 @@ import { coarse, wide } from '../services/viewport'
 import {
   addDays,
   allStops,
+  copyDays,
   dayCount,
   dayDate,
   dayIndexOn,
@@ -42,7 +48,9 @@ import {
   moveStop,
   removeStop,
   resizeDays,
+  setStay,
   shortDate,
+  type Stay,
   type Stop,
   stopAt,
   type StopPos,
@@ -130,9 +138,11 @@ function addDay() {
 }
 function removeDay(i: number) {
   if (!wide.value && selectedDay.value === i) selectedDay.value = Math.max(0, i - 1)
+  // 天數的索引會跟著移動：單日來回先關起來
+  closeDaytrip()
   mutate((t) => {
     if (t.days.length <= 1 || !t.days[i]) return null
-    const days = t.days.filter((_, j) => j !== i).map((d) => ({ stops: [...d.stops] }))
+    const days = copyDays(t.days.filter((_, j) => j !== i))
     return { days, unscheduled: [...t.unscheduled, ...t.days[i]!.stops] }
   })
 }
@@ -155,7 +165,7 @@ const addVisitedOpen = ref(false)
 function addVisited(items: Array<{ spot: SpotRef; day: number | null }>) {
   addVisitedOpen.value = false
   mutate((t) => {
-    const days = t.days.map((d) => ({ stops: [...d.stops] }))
+    const days = copyDays(t.days)
     const unscheduled = [...t.unscheduled]
     let n = 0
     for (const { spot, day } of items) {
@@ -350,19 +360,142 @@ watch(
   },
   { immediate: true },
 )
-// 顯示的地點組合變了才重新定位（同一天換順序不動地圖）
-const bounds = ref<[number, number, number, number] | null>(null)
+// 住的車站與單日來回（UX-FLOW.md C8，TODO.md「縣內規劃」4）：每一天可以設定住的車站（存在 days[i].stay）；
+// 有住的地方就能看沿鐵路單日來回的地方。桌機是地圖左上的浮動面板＋地圖上的記號，手機是下方的對話框（只有清單）。
+const stayDay = ref<number | null>(null)
+function pickStay(stay: Stay | null) {
+  const i = stayDay.value
+  stayDay.value = null
+  if (i !== null) mutate((t) => setStay(t, i, stay))
+}
+/** 住的車站的建議：前一天、後一天住的，這天第一站最近的車站 */
+const staySuggestions = computed<Array<{ hint: string; station: StationOption }>>(() => {
+  const t = trip.value
+  const i = stayDay.value
+  const g = catalog.railGraph ? buildGraph(catalog.railGraph) : null
+  if (!t || i === null || !g) return []
+  const out: Array<{ hint: string; station: StationOption }> = []
+  const prev = stationById(g, t.days[i - 1]?.stay?.st)
+  if (prev) out.push({ hint: '前一天', station: prev })
+  const first = t.days[i]?.stops[0]
+  const spot = first && byId.value.get(first.spot_id)
+  const near = spot ? (stationById(g, spot.st) ?? nearestStation(g, spot.lat, spot.lng)) : null
+  if (first && near) out.push({ hint: `${first.name}附近`, station: near })
+  const next = stationById(g, t.days[i + 1]?.stay?.st)
+  if (next) out.push({ hint: '後一天', station: next })
+  // 其他天住的地方
+  t.days.forEach((d, j) => {
+    const st = Math.abs(j - i) > 1 ? stationById(g, d.stay?.st) : null
+    if (st) out.push({ hint: `DAY ${j + 1}`, station: st })
+  })
+  return out
+})
+
+const dtDay = ref<number | null>(null)
+const dtStay = computed(() => (dtDay.value !== null ? (trip.value?.days[dtDay.value]?.stay ?? null) : null))
+const daytrip = useDaytrip(() => dtStay.value)
+const dtBand = ref<Band>(0)
+const dtSelected = ref<string | null>(null)
+/** 桌機的浮動面板開著（地圖畫目的地、由面板定位） */
+const dtPanel = computed(() => wide.value && dtDay.value !== null && Boolean(dtStay.value))
+// 面板蓋住地圖左側：w-panel 400＋左右各 16
+const DT_INSET = 432
+function openDaytrip(i: number) {
+  dtDay.value = i
+  dtSelected.value = null
+  dtBand.value = 0
+  void daytrip.load()
+  // 桌機的地圖只顯示這一天
+  if (wide.value) selectedDay.value = i
+}
+function closeDaytrip() {
+  dtDay.value = null
+  dtSelected.value = null
+}
+// 住的地方被清掉（自己或共編的人）、那一天被刪掉：關起來
+watch(dtStay, (s) => {
+  if (!s) closeDaytrip()
+})
+function addFromDaytrip(spot: SpotRef, day: number | null) {
+  if (locked.value) return
+  void trips.addStop(props.id, spot, day)
+  // 手機的清單在對話框裡，底部的提示被蓋住：只看列上的「已在 DAY n」
+  if (!wide.value) return
+  showToast(day === null ? '已加到待排' : `已加到 DAY ${day + 1}`, () =>
+    mutate((t) => {
+      const cur = findStop(t, spot.id)
+      return cur ? removeStop(t, cur) : null
+    }),
+  )
+}
+const dtMap = computed(() => {
+  const b = daytrip.base.value
+  if (!dtPanel.value || !b) return null
+  return {
+    base: { lng: b.lng, lat: b.lat, n: b.name },
+    points: daytrip.list.value.map((d) => ({ id: d.key, n: d.name, lat: d.lat, lng: d.lng, b: d.band })),
+  }
+})
+// 新幹線的路線（全國地圖的那一份）：看得出遠的地方沿著哪一條線；站不畫（行程頁沒有車站卡片）
+const shinkansen = shallowRef<ShinkansenBundle | null>(null)
+watch(dtPanel, async (open) => {
+  if (open && !shinkansen.value) shinkansen.value = await catalog.loadShinkansen()
+})
+const dtShinkansen = computed(() => {
+  const sk = shinkansen.value
+  if (!dtPanel.value || !sk) return null
+  return {
+    lines: {
+      type: 'FeatureCollection' as const,
+      features: sk.lines.map((l) => ({
+        type: 'Feature' as const,
+        properties: { n: l.n },
+        geometry: { type: 'MultiLineString' as const, coordinates: l.g },
+      })),
+    },
+    stations: { type: 'FeatureCollection' as const, features: [] },
+  }
+})
+// 換分段：展開的地方不在這一段就收起（地圖改看這一段）
+watch(dtBand, (band) => {
+  const sel = daytrip.list.value.find((d) => d.key === dtSelected.value)
+  if (sel && sel.band !== band) dtSelected.value = null
+})
+// 地圖上點了目的地：換到它的分段、展開
+function onPlace(key: string) {
+  const d = daytrip.list.value.find((x) => x.key === key)
+  if (!d) return
+  dtBand.value = d.band
+  dtSelected.value = key
+}
+// 桌機的定位：住的車站＋這一段的目的地；選了一個地方時是住的車站＋那個地方
 watch(
-  () => mapSpots.value.map((s) => s.id).sort().join(','),
+  [dtPanel, dtBand, dtSelected, () => daytrip.list.value.length, () => daytrip.base.value?.id],
   () => {
-    const s = mapSpots.value
-    if (!s.length) return
-    const lngs = s.map((x) => x.lng)
-    const lats = s.map((x) => x.lat)
+    const b = daytrip.base.value
+    if (!dtPanel.value || !b) return
+    const sel = daytrip.list.value.find((d) => d.key === dtSelected.value)
+    const pts = sel ? [sel] : daytrip.list.value.filter((d) => d.band === dtBand.value)
+    const lngs = [b.lng, ...pts.map((p) => p.lng)]
+    const lats = [b.lat, ...pts.map((p) => p.lat)]
     bounds.value = [Math.min(...lngs), Math.min(...lats), Math.max(...lngs), Math.max(...lats)]
   },
-  { immediate: true },
 )
+// 面板關起來：回到這天（或全部）的停留點
+watch(dtPanel, (open, was) => {
+  if (was && !open) fitStops()
+})
+
+// 顯示的地點組合變了才重新定位（同一天換順序不動地圖）；桌機開著單日來回時由它定位
+const bounds = ref<[number, number, number, number] | null>(null)
+function fitStops() {
+  const s = mapSpots.value
+  if (!s.length || dtPanel.value) return
+  const lngs = s.map((x) => x.lng)
+  const lats = s.map((x) => x.lat)
+  bounds.value = [Math.min(...lngs), Math.min(...lats), Math.max(...lngs), Math.max(...lats)]
+}
+watch(() => mapSpots.value.map((s) => s.id).sort().join(','), fitStops, { immediate: true })
 
 // 地圖上點選：清單捲到那個停留點並標示
 const focusId = ref<string | null>(null)
@@ -649,6 +782,31 @@ async function del() {
             刪除這天
           </button>
         </div>
+        <!-- 住的車站與單日來回（DESIGN.md §7.9c） -->
+        <div class="flex flex-wrap items-center gap-1.5 pl-0.5">
+          <button
+            type="button"
+            class="flex h-8 max-w-full items-center gap-1.5 rounded-control border border-line bg-paper pr-2 pl-2.5 text-body-sm text-ink hover:not-disabled:bg-surface disabled:cursor-not-allowed disabled:opacity-40 active:not-disabled:translate-y-px pointer-coarse:h-tap"
+            :disabled="locked"
+            :aria-label="d.stay ? `DAY ${i + 1} 住在 ${d.stay.n}，更改` : `DAY ${i + 1} 住在哪一站`"
+            @click="stayDay = i"
+          >
+            <span class="shrink-0 text-caption text-sub">住在</span>
+            <span v-if="d.stay" lang="ja" class="truncate font-bold">{{ d.stay.n }}</span>
+            <span v-else class="text-sub">選車站</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 text-sub" aria-hidden="true"><path d="M6 9l6 6 6-6" /></svg>
+          </button>
+          <button
+            v-if="d.stay"
+            type="button"
+            class="flex h-8 items-center gap-1 rounded-control border px-2.5 text-body-sm active:not-disabled:translate-y-px pointer-coarse:h-tap"
+            :class="dtDay === i ? 'border-ink bg-ink text-paper' : 'border-line bg-paper text-ink hover:bg-surface'"
+            :aria-expanded="dtDay === i"
+            @click="dtDay === i ? closeDaytrip() : openDaytrip(i)"
+          >
+            單日來回
+          </button>
+        </div>
         <TripStopList
           :stops="d.stops"
           :day="i"
@@ -722,10 +880,75 @@ async function del() {
       <SkeletonRows v-if="loading" :rows="3" thumb />
     </section>
 
-    <!-- 右：這趟的地圖 -->
+    <!-- 右：這趟的地圖；開著單日來回時左上是它的面板，地圖畫住的車站與目的地 -->
     <div v-if="wide" class="relative min-h-0 flex-1">
-      <MapView :spots="mapSpots" :bounds="bounds" :route="route" :selected-id="focusId" @select="focusStop" />
+      <MapView
+        :spots="mapSpots"
+        :bounds="bounds"
+        :route="route"
+        :selected-id="focusId"
+        :inset-left="dtPanel ? DT_INSET : 0"
+        :daytrip="dtMap"
+        :daytrip-id="dtSelected"
+        :shinkansen="dtShinkansen"
+        @select="focusStop"
+        @place="onPlace"
+      />
+      <section
+        v-if="dtPanel && dtDay !== null"
+        class="absolute top-4 bottom-4 left-4 z-10 flex w-panel flex-col overflow-hidden rounded-card bg-paper text-ink shadow-float"
+        aria-labelledby="daytrip-title"
+      >
+        <header class="flex items-start gap-2 pt-3.5 pr-2 pb-1 pl-4">
+          <div class="min-w-0 flex-1">
+            <p class="truncate text-caption text-sub"><span class="font-latin font-bold">DAY {{ dtDay + 1 }}</span>・住在 <span lang="ja" class="font-bold text-ink">{{ dtStay?.n }}</span></p>
+            <h2 id="daytrip-title" class="text-title font-bold tracking-title">單日來回</h2>
+          </div>
+          <button type="button" class="grid size-tap shrink-0 place-items-center rounded-control text-sub hover:bg-surface hover:text-ink active:not-disabled:translate-y-px" aria-label="關閉單日來回" @click="closeDaytrip">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" /></svg>
+          </button>
+        </header>
+        <div class="scroll-quiet min-h-0 flex-1 overflow-y-auto overscroll-contain px-4 pb-4">
+          <DaytripList
+            v-model:band="dtBand"
+            v-model:selected="dtSelected"
+            :trip="trip"
+            :day="dtDay"
+            :list="daytrip.list.value"
+            :state="daytrip.listState.value"
+            :km-to="daytrip.kmTo"
+            :locked="locked"
+            legend
+            @retry="daytrip.state.value = 'idle'; daytrip.load()"
+            @add="addFromDaytrip"
+          />
+        </div>
+      </section>
     </div>
+    <!-- 手機：單日來回是下方的對話框（只有清單） -->
+    <BottomDialog v-if="!wide && dtDay !== null && dtStay" title="單日來回" @close="closeDaytrip">
+      <p class="-mt-1 mb-2 text-caption text-sub"><span class="font-latin font-bold">DAY {{ dtDay + 1 }}</span>・住在 <span lang="ja" class="font-bold text-ink">{{ dtStay.n }}</span></p>
+      <DaytripList
+        v-model:band="dtBand"
+        v-model:selected="dtSelected"
+        :trip="trip"
+        :day="dtDay"
+        :list="daytrip.list.value"
+        :state="daytrip.listState.value"
+        :km-to="daytrip.kmTo"
+        :locked="locked"
+        @retry="daytrip.state.value = 'idle'; daytrip.load()"
+        @add="addFromDaytrip"
+      />
+    </BottomDialog>
+    <StayPicker
+      v-if="stayDay !== null"
+      :title="`DAY ${stayDay + 1} 住的車站`"
+      :current="trip.days[stayDay]?.stay ?? null"
+      :suggestions="staySuggestions"
+      @close="stayDay = null"
+      @pick="pickStay"
+    />
     <PackOpening v-if="packOpen" :trip="trip" @close="closePack" />
     <TripAddVisited v-if="addVisitedOpen" :trip="trip" @close="addVisitedOpen = false" @add="addVisited" />
     <ShareImage v-if="recapOpen" title="旅行回顧" :file-name="`ひとめぐり ${trip.name || '行程'}`" :render="renderRecap" @close="recapOpen = false" />

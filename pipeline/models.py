@@ -241,6 +241,34 @@ class ShinkansenBundle(StrictModel):
     stations: list[ShinkansenStation]
 
 
+# 日帰り的目的地裡的一個景點：[id, 日文名, 最近車站的路網節點 id（對不到是 None）, 分數]
+DaytripSpot = tuple[str, str, str | None, float]
+
+
+class DaytripArea(StrictModel):
+    """日帰り的一個目的地（bundles/daytrip.json，pipeline/daytrip.py）：一個市区町村。
+
+    m 代碼、n 名稱（政令指定都市是區名）、c 政令指定都市名、p 縣、lat/lng 區名的位置；
+    s 分數最高的景點（最多 3 個）；x 其餘景點的最近車站（不重複、不含 s 的）。
+    """
+
+    m: str = Field(pattern=r"^\d{6}$")
+    n: str
+    c: str | None = None
+    p: Prefecture
+    lat: float = Field(ge=20, le=46)
+    lng: float = Field(ge=122, le=154)
+    s: list[DaytripSpot] = Field(min_length=1, max_length=3)
+    x: list[str] | None = None
+
+
+class DaytripBundle(StrictModel):
+    """bundles/daytrip.json：有對得到路網車站的景點的市区町村，依代碼排序。"""
+
+    attribution: str
+    areas: list[DaytripArea]
+
+
 MunicipalityCode = str  # 全国地方公共団体コード 6 碼（JIS X 0402 的 5 碼＋檢查碼）
 
 

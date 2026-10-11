@@ -57,6 +57,13 @@ const props = defineProps<{
   marked?: Record<string, { favorite?: boolean; visited?: boolean }> | null
   /** 行程某一天的順序連線（依停留點順序的座標） */
   route?: [number, number][] | null
+  /**
+   * 日帰り（行程頁的「單日來回」，UX-FLOW.md C8）：住的車站（雙圈＋站名）與目的地（依分段：
+   * 60 km 內實心、60–150 km 淺色、新幹線白底雙圈）；點了 emit place。null 為不畫
+   */
+  daytrip?: { base: { lng: number; lat: number; n: string } | null; points: DaytripPoint[] } | null
+  /** 選中的目的地（DaytripPoint 的 id）：外圈 */
+  daytripId?: string | null
   /** 放在會捲動的頁面中間（紀錄頁）：滾輪、單指拖曳讓給頁面捲動，Ctrl／⌘＋滾輪縮放、兩指移動地圖 */
   cooperative?: boolean
 }>()
@@ -66,6 +73,15 @@ export interface PackPoint {
   n: string
   lat: number
   lng: number
+}
+
+/** 日帰り的目的地：b 分段（0 近郊、1 中距離、2 新幹線） */
+export interface DaytripPoint {
+  id: string
+  n: string
+  lat: number
+  lng: number
+  b: 0 | 1 | 2
 }
 
 export interface MapView {
@@ -86,6 +102,8 @@ const emit = defineEmits<{
   station: [id: string, pref: string | null]
   /** 點了區塊（不是點到景點、群集、車站的時候） */
   area: [code: string]
+  /** 點了日帰り的目的地 */
+  place: [id: string]
 }>()
 
 const container = ref<HTMLDivElement | null>(null)
@@ -118,6 +136,10 @@ const AREA_LABEL_MAX = 13.5
 const AREA_LABEL_FADE: maplibregl.ExpressionSpecification = ['interpolate', ['linear'], ['zoom'], 12.5, 1, AREA_LABEL_MAX, 0]
 const ROUTE_SOURCE = 'route'
 const ROUTE_HEAD_SOURCE = 'route-head'
+// 日帰り：目的地與住的車站（行程頁的單日來回）
+const DT_SOURCE = 'daytrip'
+const DT_BASE_SOURCE = 'daytrip-base'
+const DT_HIT = 12
 const EMPTY: GeoJSON.FeatureCollection = { type: 'FeatureCollection', features: [] }
 
 function routeData(coords: [number, number][] | null | undefined): GeoJSON.FeatureCollection {
@@ -379,6 +401,25 @@ function packGeoJSON(points: PackPoint[]): GeoJSON.FeatureCollection<GeoJSON.Poi
   }
 }
 
+function daytripData(): GeoJSON.FeatureCollection<GeoJSON.Point> {
+  return {
+    type: 'FeatureCollection',
+    features: (props.daytrip?.points ?? []).map((p) => ({
+      type: 'Feature',
+      geometry: { type: 'Point', coordinates: [p.lng, p.lat] },
+      properties: { id: p.id, n: p.n, b: p.b },
+    })),
+  }
+}
+
+function daytripBase(): GeoJSON.FeatureCollection<GeoJSON.Point> {
+  const b = props.daytrip?.base
+  return {
+    type: 'FeatureCollection',
+    features: b ? [{ type: 'Feature', geometry: { type: 'Point', coordinates: [b.lng, b.lat] }, properties: { n: b.n } }] : [],
+  }
+}
+
 /** 開啟擴充包時景點變淡、名稱標籤與照片收起 */
 function applyDim() {
   if (!map || !ready) return
@@ -446,6 +487,19 @@ function applyColors() {
   map.setPaintProperty('rail-station-labels-sk', 'text-halo-color', paper)
   map.setPaintProperty('station-selected', 'circle-stroke-color', strong)
   map.setPaintProperty('outline-line', 'line-color', strong)
+  // 日帰り：60 km 內強調色實心、60–150 km 淺色（強調色外框）、新幹線白底墨色雙圈（同新幹線站）
+  const base = token('--region-base')
+  map.setPaintProperty('dt-points', 'circle-color', ['match', ['get', 'b'], 0, strong, 1, base, paper])
+  map.setPaintProperty('dt-points', 'circle-stroke-color', ['match', ['get', 'b'], 0, paper, 1, strong, ink])
+  map.setPaintProperty('dt-dots', 'circle-color', ink)
+  map.setPaintProperty('dt-labels', 'text-color', ink)
+  map.setPaintProperty('dt-labels', 'text-halo-color', paper)
+  map.setPaintProperty('dt-selected', 'circle-stroke-color', strong)
+  map.setPaintProperty('dt-base', 'circle-color', paper)
+  map.setPaintProperty('dt-base', 'circle-stroke-color', ink)
+  map.setPaintProperty('dt-base-dot', 'circle-color', ink)
+  map.setPaintProperty('dt-base-label', 'text-color', ink)
+  map.setPaintProperty('dt-base-label', 'text-halo-color', paper)
   map.setPaintProperty('route-line', 'line-color', strong)
   map.setPaintProperty('route-head', 'circle-color', strong)
   map.setPaintProperty('route-head', 'circle-stroke-color', paper)
@@ -743,6 +797,76 @@ function addLayers() {
     source: ROUTE_HEAD_SOURCE,
     paint: { 'circle-radius': 6, 'circle-stroke-width': 2.5 },
   })
+  // 日帰り：行程的停留點之下
+  map.addSource(DT_SOURCE, { type: 'geojson', data: daytripData() })
+  map.addSource(DT_BASE_SOURCE, { type: 'geojson', data: daytripBase() })
+  map.addLayer({
+    id: 'dt-points',
+    type: 'circle',
+    source: DT_SOURCE,
+    // 近的畫在上面
+    layout: { 'circle-sort-key': ['-', 2, ['get', 'b']] },
+    paint: {
+      'circle-radius': ['interpolate', ['linear'], ['zoom'], 5, 3.5, 9, 6],
+      'circle-stroke-width': ['interpolate', ['linear'], ['zoom'], 5, 1.25, 9, 2],
+    },
+  })
+  map.addLayer({
+    id: 'dt-dots',
+    type: 'circle',
+    source: DT_SOURCE,
+    filter: ['==', ['get', 'b'], 2],
+    paint: { 'circle-radius': ['interpolate', ['linear'], ['zoom'], 5, 1.2, 9, 2.2] },
+  })
+  map.addLayer({
+    id: 'dt-selected',
+    type: 'circle',
+    source: DT_SOURCE,
+    filter: ['==', ['get', 'id'], props.daytripId ?? ''],
+    paint: { 'circle-radius': ['interpolate', ['linear'], ['zoom'], 5, 8, 9, 11], 'circle-opacity': 0, 'circle-stroke-width': 2.5 },
+  })
+  map.addLayer({
+    id: 'dt-labels',
+    type: 'symbol',
+    source: DT_SOURCE,
+    // 只寫選中的那一個：其他的地名底圖已經有，全寫會擠成一片
+    filter: ['==', ['get', 'id'], props.daytripId ?? ''],
+    layout: {
+      'text-field': ['get', 'n'],
+      'text-font': FONT_BOLD,
+      'text-size': 12,
+      'text-offset': [0, 1],
+      'text-anchor': 'top',
+      'text-allow-overlap': true,
+    },
+    paint: { 'text-halo-width': 2 },
+  })
+  map.addLayer({
+    id: 'dt-base',
+    type: 'circle',
+    source: DT_BASE_SOURCE,
+    paint: { 'circle-radius': 7.5, 'circle-stroke-width': 2.5 },
+  })
+  map.addLayer({
+    id: 'dt-base-dot',
+    type: 'circle',
+    source: DT_BASE_SOURCE,
+    paint: { 'circle-radius': 3 },
+  })
+  map.addLayer({
+    id: 'dt-base-label',
+    type: 'symbol',
+    source: DT_BASE_SOURCE,
+    layout: {
+      'text-field': ['get', 'n'],
+      'text-font': FONT_BOLD,
+      'text-size': 13,
+      'text-offset': [0, 1.1],
+      'text-anchor': 'top',
+      'text-allow-overlap': true,
+    },
+    paint: { 'text-halo-width': 2 },
+  })
   map.addSource(SOURCE, {
     type: 'geojson',
     data: toGeoJSON(unselected()),
@@ -912,6 +1036,11 @@ function addLayers() {
       void expandCluster(f)
       return
     }
+    const dt = nearestDaytrip(e.point)
+    if (dt) {
+      emit('place', dt)
+      return
+    }
     const st = nearestStation(e.point)
     if (st) {
       emit('station', st.id, st.pref)
@@ -928,10 +1057,33 @@ function addLayers() {
   })
   map.on('move', positionHover)
   map.on('idle', syncPhotos)
-  for (const layer of ['clusters', 'pack-clusters']) {
+  for (const layer of ['clusters', 'pack-clusters', 'dt-points']) {
     map.on('mouseenter', layer, () => map && !hover.value && (map.getCanvas().style.cursor = 'pointer'))
     map.on('mouseleave', layer, () => map && !hover.value && (map.getCanvas().style.cursor = ''))
   }
+}
+
+/** 點擊位置附近最近的日帰り目的地 */
+function nearestDaytrip(pt: { x: number; y: number }): string | null {
+  if (!map || !props.daytrip?.points.length) return null
+  const feats = map.queryRenderedFeatures(
+    [
+      [pt.x - DT_HIT, pt.y - DT_HIT],
+      [pt.x + DT_HIT, pt.y + DT_HIT],
+    ],
+    { layers: ['dt-points'] },
+  )
+  let best: string | null = null
+  let bestD = Infinity
+  for (const f of feats) {
+    const p = map.project((f.geometry as GeoJSON.Point).coordinates as [number, number])
+    const d = Math.hypot(p.x - pt.x, p.y - pt.y)
+    if (d <= DT_HIT && d < bestD) {
+      bestD = d
+      best = String(f.properties?.id ?? '')
+    }
+  }
+  return best || null
 }
 
 async function expandCluster(f: maplibregl.MapGeoJSONFeature) {
@@ -1645,6 +1797,24 @@ watch(
   () => props.stationId,
   (id) => {
     if (map && ready) map.setFilter('station-selected', byStation(id))
+  },
+)
+
+watch(
+  () => props.daytrip,
+  () => {
+    if (!map || !ready) return
+    ;(map.getSource(DT_SOURCE) as GeoJSONSource | undefined)?.setData(daytripData())
+    ;(map.getSource(DT_BASE_SOURCE) as GeoJSONSource | undefined)?.setData(daytripBase())
+  },
+)
+
+watch(
+  () => props.daytripId,
+  (id) => {
+    if (!map || !ready) return
+    map.setFilter('dt-selected', ['==', ['get', 'id'], id ?? ''])
+    map.setFilter('dt-labels', ['==', ['get', 'id'], id ?? ''])
   },
 )
 

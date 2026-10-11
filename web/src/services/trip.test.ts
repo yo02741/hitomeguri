@@ -1,6 +1,19 @@
 import { describe, expect, it } from 'vitest'
 
-import { dayIndexOn, dayRouteUrls, edgeTarget, fromHereUrl, insertStop, MAPS_URL_MAX, moveStop, removeStop, type Stop } from './trip'
+import {
+  dayIndexOn,
+  dayRouteUrls,
+  edgeTarget,
+  fromHereUrl,
+  insertStop,
+  MAPS_URL_MAX,
+  moveStop,
+  parseStay,
+  removeStop,
+  resizeDays,
+  setStay,
+  type Stop,
+} from './trip'
 
 const s = (id: string): Stop => ({ type: 'catalog', spot_id: id, pref: 'kyoto', name: id })
 
@@ -108,5 +121,38 @@ describe('fromHereUrl（從目前位置）', () => {
     expect(q.has('origin')).toBe(false)
     expect(q.get('destination')).toBe('a 京都府')
     expect(q.get('travelmode')).toBe('transit')
+  })
+})
+
+describe('住的車站（日帰り）', () => {
+  const tokyo = { st: 'node-1', n: '東京' }
+  const t = { days: [{ stops: [s('a'), s('b')], stay: tokyo }, { stops: [s('c')] }], unscheduled: [s('d')] }
+
+  it('移動、移除、復原、調整天數都不會弄丟住的地方', () => {
+    expect(moveStop(t, { day: 0, idx: 0 }, { day: 1, idx: 1 }).days[0]!.stay).toEqual(tokyo)
+    expect(removeStop(t, { day: 0, idx: 1 }).days[0]!.stay).toEqual(tokyo)
+    expect(insertStop(t, { day: 0, idx: 0 }, s('e'))!.days[0]!.stay).toEqual(tokyo)
+    const more = resizeDays(t, 3)
+    expect(more.days[0]!.stay).toEqual(tokyo)
+    expect('stay' in more.days[2]!).toBe(false)
+  })
+
+  it('設定、換站、清除；一樣的站不用改', () => {
+    const kyoto = { st: 'node-2', n: '京都' }
+    expect(setStay(t, 1, kyoto)!.days[1]!.stay).toEqual(kyoto)
+    expect(setStay(t, 0, { st: 'node-1', n: '東京' })).toBeNull()
+    const cleared = setStay(t, 0, null)!
+    expect('stay' in cleared.days[0]!).toBe(false)
+    expect(cleared.days[0]!.stops.map((x) => x.spot_id)).toEqual(['a', 'b'])
+    expect(setStay(t, 5, kyoto)).toBeNull()
+    // 原本的不動
+    expect(t.days[0]!.stay).toEqual(tokyo)
+  })
+
+  it('讀回來的值要檢查', () => {
+    expect(parseStay({ st: 'node-1', n: '東京' })).toEqual(tokyo)
+    expect(parseStay({ st: '', n: 'x' })).toBeUndefined()
+    expect(parseStay({ st: 3, n: 'x' })).toBeUndefined()
+    expect(parseStay(null)).toBeUndefined()
   })
 })

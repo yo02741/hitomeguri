@@ -11,6 +11,7 @@
 - rail/{pref}.json：鐵路路線與車站（車站帶路網節點 id、停靠的路線、新幹線）。
 - shinkansen.json：全國地圖的新幹線（各縣的新幹線路線合併、簡化，新幹線站依路網節點去重）。
 - rail-graph.json：全國車站路網（日帰り的鐵路距離，pipeline/rail_graph.py）。
+- daytrip.json：日帰り的目的地（一個市区町村一筆，分數最高的景點與車站，pipeline/daytrip.py）。
 """
 
 from __future__ import annotations
@@ -22,7 +23,7 @@ import re
 from pathlib import Path
 from typing import Any
 
-from pipeline import config, municipalities, rail_graph, topo
+from pipeline import config, daytrip, municipalities, rail_graph, topo
 from pipeline.models import (
     Festival,
     FlightRoute,
@@ -193,6 +194,7 @@ def build(src: Path = SPOTS_DIR, dst: Path = BUNDLES_DIR) -> list[Path]:
     written = []
     index: dict[str, Any] = {"prefectures": {}}
     featured: dict[str, list[dict[str, Any]]] = {}
+    map_spots: dict[str, list[dict[str, Any]]] = {}
     search: list[list[Any]] = []
     # 成就用：只留 id 與 tags，不把全部景點留在記憶體
     achv_spots: list[dict[str, Any]] = []
@@ -222,6 +224,7 @@ def build(src: Path = SPOTS_DIR, dst: Path = BUNDLES_DIR) -> list[Path]:
         ).encode()
         version = hashlib.sha1(path.read_bytes() + tag + derived).hexdigest()[:10]
         majors = [map_entry(s, stations[s["id"]]) for s in published]
+        map_spots[pref] = majors
         written.append(_write(dst / "map" / f"{pref}.json", majors))
         # 首頁用：只留地圖顯示需要的欄位（名稱、座標、類型、照片）
         featured[pref] = [
@@ -264,6 +267,12 @@ def build(src: Path = SPOTS_DIR, dst: Path = BUNDLES_DIR) -> list[Path]:
     munis = build_municipalities(dst / "municipalities")
     index["municipalities"] = {pref: meta for pref, (_, meta) in munis.items()}
     written += [path for path, _ in munis.values()]
+    # 日帰り的目的地：景點的區與最近車站、區名的位置（剛寫好的市区町村 web bundle）
+    bodies = {p: json.loads(path.read_text(encoding="utf-8")) for p, (path, _) in munis.items()}
+    trip = daytrip.write(dst, map_spots, bodies)
+    if trip:
+        written.append(trip[0])
+        index["daytrip"] = trip[1]
     specialties = build_specialties(dst / "specialties")
     index["specialties"] = {pref: meta for pref, (_, meta) in specialties.items()}
     written += [path for path, _ in specialties.values()]
