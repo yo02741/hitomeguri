@@ -3304,6 +3304,68 @@
     "updated_at": "2026-09-28"
   },
   {
+    "id": "wd-Q1141913",
+    "name": {
+      "ja": "米子鬼太郎空港",
+      "zh_tw": "米子鬼太郎空港",
+      "en": "Miho-Yonago Airport"
+    },
+    "location": {
+      "lat": 35.493333,
+      "lng": 133.239167
+    },
+    "prefecture": "tottori",
+    "municipality": "312045",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "機場"
+    ],
+    "featured": false,
+    "score": 64.08,
+    "summary": {
+      "text": "美保機場位於日本鳥取縣境港市（飛行場的一部分是米子市）。一般都稱為米子機場（米子空港）。是航空自衛隊美保基地、海上保安廳美保航空基地國土交通省與大阪航空局美保機場事務所。",
+      "lang": "zh",
+      "source_url": "https://zh.wikipedia.org/wiki/%E7%BE%8E%E4%BF%9D%E6%9C%BA%E5%9C%BA",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-10-11"
+    },
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "米子空港",
+          "en": "Yonago Airport"
+        },
+        "distance_m": 1240
+      }
+    ],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7a/Yonago_Airport_Aerial_Photograph.jpg/960px-Yonago_Airport_Aerial_Photograph.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "国土交通省",
+        "license": "Attribution",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Yonago_Airport_Aerial_Photograph.jpg",
+        "width": 5456,
+        "height": 3246
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q1141913"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q1141913",
+        "fetched_at": "2026-10-11"
+      },
+      {
+        "url": "https://www.mlit.go.jp/koku/content/002000600.xlsx",
+        "fetched_at": "2026-10-11"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-10-11"
+  },
+  {
     "id": "wd-Q11420253",
     "name": {
       "ja": "因幡万葉歴史館",

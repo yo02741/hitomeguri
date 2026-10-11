@@ -15784,6 +15784,66 @@
     "updated_at": "2026-09-29"
   },
   {
+    "id": "wd-Q1209993",
+    "name": {
+      "ja": "静岡空港",
+      "kana": "しずおかくうこう",
+      "romaji": "Shizuokakuko",
+      "zh_tw": "靜岡機場",
+      "en": "Shizuoka Airport"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 34.796111,
+      "lng": 138.189444
+    },
+    "prefecture": "shizuoka",
+    "municipality": "222267",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "機場"
+    ],
+    "featured": false,
+    "score": 67.5,
+    "summary": {
+      "text": "靜岡機場，位處靜岡縣島田市與牧之原市之間，於2009年6月4日啟用，由靜岡縣與縣內企業共同出資成立的富士山靜岡機場股份有限公司負責機場的營運管理。",
+      "lang": "zh",
+      "source_url": "https://zh.wikipedia.org/wiki/%E9%9D%9C%E5%B2%A1%E6%A9%9F%E5%A0%B4",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-10-11"
+    },
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f7/Fujisan-Shizuoka_airport%2CMakinohara-city%2CJapan.jpg/960px-Fujisan-Shizuoka_airport%2CMakinohara-city%2CJapan.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "katorisi",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Fujisan-Shizuoka_airport,Makinohara-city,Japan.jpg",
+        "width": 3872,
+        "height": 2592
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q1209993"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q1209993",
+        "fetched_at": "2026-10-11"
+      },
+      {
+        "url": "https://www.mlit.go.jp/koku/content/002000600.xlsx",
+        "fetched_at": "2026-10-11"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E9%9D%99%E5%B2%A1%E7%A9%BA%E6%B8%AF",
+        "fetched_at": "2026-10-11"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-10-11"
+  },
+  {
     "id": "wd-Q131274488",
     "name": {
       "ja": "八幡神社",

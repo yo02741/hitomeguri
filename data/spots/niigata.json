@@ -15544,6 +15544,66 @@
     "season_images": {}
   },
   {
+    "id": "wd-Q1197536",
+    "name": {
+      "ja": "新潟空港",
+      "kana": "にいがたくうこう",
+      "romaji": "Niigatakuko",
+      "zh_tw": "新潟機場",
+      "en": "Niigata Airport"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 37.955833,
+      "lng": 139.111667
+    },
+    "prefecture": "niigata",
+    "municipality": "151025",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "機場"
+    ],
+    "featured": false,
+    "score": 65.45,
+    "summary": {
+      "text": "新潟機場是位於日本新潟市的一座民用機場，位處新潟市區東北方，北鄰日本海，東靠阿賀野川入海口。根據日本《空港法》分類為「國管理機場」。航線以國內航線為主，是TOKI AIR的樞紐機場，亦有數條東亞區域國際航線。",
+      "lang": "zh",
+      "source_url": "https://zh.wikipedia.org/wiki/%E6%96%B0%E6%BD%9F%E6%A9%9F%E5%A0%B4",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-10-11"
+    },
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7e/Niigata_Airport_Aerial_Photograph.jpg/960px-Niigata_Airport_Aerial_Photograph.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "国土交通省",
+        "license": "Attribution",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Niigata_Airport_Aerial_Photograph.jpg",
+        "width": 5329,
+        "height": 3866
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q1197536"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q1197536",
+        "fetched_at": "2026-10-11"
+      },
+      {
+        "url": "https://www.mlit.go.jp/koku/content/002000600.xlsx",
+        "fetched_at": "2026-10-11"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E6%96%B0%E6%BD%9F%E7%A9%BA%E6%B8%AF",
+        "fetched_at": "2026-10-11"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-10-11"
+  },
+  {
     "id": "wd-Q120105768",
     "name": {
       "ja": "某神社",

@@ -23671,6 +23671,66 @@
     "updated_at": "2026-09-28"
   },
   {
+    "id": "wd-Q82240",
+    "name": {
+      "ja": "広島空港",
+      "kana": "ひろしまくうこう",
+      "romaji": "Hiroshimakuko",
+      "zh_tw": "廣島機場",
+      "en": "Hiroshima Airport"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 34.436111,
+      "lng": 132.919444
+    },
+    "prefecture": "hiroshima",
+    "municipality": "342041",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "機場"
+    ],
+    "featured": false,
+    "score": 68.45,
+    "summary": {
+      "text": "廣島機場是一座位於日本廣島縣三原市的民用機場，也是中國地方最大的機場。",
+      "lang": "zh",
+      "source_url": "https://zh.wikipedia.org/wiki/%E5%B9%BF%E5%B2%9B%E6%9C%BA%E5%9C%BA",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-10-11"
+    },
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4f/Hiroshima_airport_japan.jpg/960px-Hiroshima_airport_japan.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "nattou",
+        "license": "Public domain",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Hiroshima_airport_japan.jpg",
+        "width": 1024,
+        "height": 681
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q82240"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q82240",
+        "fetched_at": "2026-10-11"
+      },
+      {
+        "url": "https://www.mlit.go.jp/koku/content/002000600.xlsx",
+        "fetched_at": "2026-10-11"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E5%BA%83%E5%B3%B6%E7%A9%BA%E6%B8%AF",
+        "fetched_at": "2026-10-11"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-10-11"
+  },
+  {
     "id": "wd-Q82275912",
     "name": {
       "ja": "大久野島毒ガス資料館",

@@ -13957,6 +13957,66 @@
     "updated_at": "2026-09-28"
   },
   {
+    "id": "wd-Q1191625",
+    "name": {
+      "ja": "富山空港",
+      "kana": "とやまくうこう",
+      "romaji": "Toyamakuko",
+      "zh_tw": "富山機場",
+      "en": "Toyama Airport"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 36.648333,
+      "lng": 137.1875
+    },
+    "prefecture": "toyama",
+    "municipality": "162019",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "機場"
+    ],
+    "featured": false,
+    "score": 64.68,
+    "summary": {
+      "text": "富山機場是一個位於日本富山縣富山市的民用機場，暱稱富山高山壽司機場（富山高山すし空港）。根據日本的《空港法》，富山機場被歸類為地方管理機場（舊第三類機場）。",
+      "lang": "zh",
+      "source_url": "https://zh.wikipedia.org/wiki/%E5%AF%8C%E5%B1%B1%E6%A9%9F%E5%A0%B4",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-10-11"
+    },
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ad/Toyama_Airport.jpg/960px-Toyama_Airport.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "RESPITE",
+        "license": "Public domain",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Toyama_Airport.jpg",
+        "width": 2640,
+        "height": 1812
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q1191625"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q1191625",
+        "fetched_at": "2026-10-11"
+      },
+      {
+        "url": "https://www.mlit.go.jp/koku/content/002000600.xlsx",
+        "fetched_at": "2026-10-11"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E5%AF%8C%E5%B1%B1%E7%A9%BA%E6%B8%AF",
+        "fetched_at": "2026-10-11"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-10-11"
+  },
+  {
     "id": "wd-Q119928904",
     "name": {
       "ja": "光禅寺",

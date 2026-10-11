@@ -18269,6 +18269,86 @@
     "season_images": {}
   },
   {
+    "id": "wd-Q204853",
+    "name": {
+      "ja": "東京国際空港",
+      "kana": "とうきょうこくさいくうこう",
+      "romaji": "Tokyokokusaikuko",
+      "zh_tw": "羽田機場",
+      "en": "Tokyo International Airport"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 35.553333,
+      "lng": 139.781111
+    },
+    "prefecture": "tokyo",
+    "municipality": "131113",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "機場"
+    ],
+    "featured": false,
+    "score": 85.98,
+    "summary": {
+      "text": "東京國際機場是位於日本東京都大田區的機場，因座落於羽田地區而通稱為羽田機場（日語：羽田空港／はねだくうこう，羅馬化：Haneda Kūkō），啟用於1931年8月25日，與成田機場並列為東京兩大聯外機場，亦為日本國內航線樞紐。根據日本《空港法》，該機場被分類為據點機場。",
+      "lang": "zh",
+      "source_url": "https://zh.wikipedia.org/wiki/%E6%9D%B1%E4%BA%AC%E5%9C%8B%E9%9A%9B%E6%A9%9F%E5%A0%B4",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-10-11"
+    },
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "羽田空港第1ターミナル",
+          "kana": "はねだくうこうだいいちたーみなる",
+          "romaji": "Haneda kūkō daiichi tāminaru",
+          "en": "Haneda Airport Terminal 1"
+        },
+        "distance_m": 560
+      },
+      {
+        "name": {
+          "ja": "羽田空港第1・第2ターミナル",
+          "kana": "はねだくうこうだいいちだいにたーみなる",
+          "romaji": "Hanedakukodaiichidainitaminaru",
+          "en": "Haneda Airport Terminal 1・2"
+        },
+        "distance_m": 590
+      }
+    ],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2f/Tokyo-International-Airport_Satellite.jpg/960px-Tokyo-International-Airport_Satellite.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "MaedaAkihiko",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Tokyo-International-Airport_Satellite.jpg",
+        "width": 5202,
+        "height": 3467
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q204853"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q204853",
+        "fetched_at": "2026-10-11"
+      },
+      {
+        "url": "https://www.mlit.go.jp/koku/content/002000600.xlsx",
+        "fetched_at": "2026-10-11"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E6%9D%B1%E4%BA%AC%E5%9B%BD%E9%9A%9B%E7%A9%BA%E6%B8%AF",
+        "fetched_at": "2026-10-11"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-10-11"
+  },
+  {
     "id": "wd-Q20748918",
     "name": {
       "ja": "大森海苔のふるさと館",

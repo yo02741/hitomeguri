@@ -15,7 +15,7 @@
 - **設計**：`docs/設計質感研究.md` 最後「需要你決定的」（動態規範的例外、收集卡、開場動畫）。
 - **Firestore 規則**：收集卡無限抽與封面 `users/{uid}/cards`（這次加了封面欄位 `c`）、旅人 `users/{uid}/meta/avatar`、抽獎券 `users/{uid}/meta/wallet`（`firestore.rules`，這次加了 wallet），請貼到 Firebase Console 發布；沒發布前抽到的只存在這台裝置。
 - **正式上線前**：`web/src/services/cardVariants.ts` 的 `UNLIMITED_DRAWS` 改成 false，清空 Firestore 的 `users/*/cards`、`users/*/meta/wallet`。
-- **機場**（2026-10-11）：在 Actions 跑 seed-pack 的 `seed-airports`（產出分支 `pipeline/seed-airports-<run>`）。看 Actions 摘要的報告：對到的機場與表的原文（數字是 0 或「－」的表示這季沒有航班，要從 `data/seed/airports.json` 拿掉）、縣的判斷、表裡像機場名稱但沒對到的字串；沒問題就合併 `data/seed/airports.json` 與 `data/spots`。換季（冬期スケジュール發表時）在輸入 `url` 填新一季「各空港における国際線就航状況調べ」的 Excel 網址（https://www.mlit.go.jp/koku/koku_tk1_000013.html ），並改 `pipeline/airports.py` 的預設網址。
+- **機場**（換季時）：冬期スケジュール發表後，在 seed-pack 的 `seed-airports` 輸入 `url` 填新一季「各空港における国際線就航状況調べ」的 Excel 網址（https://www.mlit.go.jp/koku/koku_tk1_000013.html ），並改 `pipeline/airports.py` 的預設網址。看 Actions 摘要的報告：對到的機場與表的原文（數字是 0 或「－」的表示這季沒有航班，要從 `data/seed/airports.json` 拿掉）、縣的判斷、表裡像機場名稱但沒對到的字串；沒問題就合併 `data/seed/airports.json` 與 `data/spots`。
 - **直飛航線與英文簡介翻譯**：要用時在 Actions secrets 新增 `ANTHROPIC_API_KEY`（`verify-flights`、`translate-summaries`）。
 
 ## 使用者決定（2026-10-09）

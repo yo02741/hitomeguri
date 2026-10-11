@@ -16988,6 +16988,66 @@
     "updated_at": "2026-09-28"
   },
   {
+    "id": "wd-Q1334603",
+    "name": {
+      "ja": "高松空港",
+      "kana": "たかまつくうこう",
+      "romaji": "Takamatsukuko",
+      "zh_tw": "高松機場",
+      "en": "Takamatsu Airport"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 34.214167,
+      "lng": 134.015556
+    },
+    "prefecture": "kagawa",
+    "municipality": "372013",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "機場"
+    ],
+    "featured": false,
+    "score": 66.08,
+    "summary": {
+      "text": "高松機場是一座位於日本香川縣高松市的民用機場。根據日本空港整備法被分成第二種機場。",
+      "lang": "zh",
+      "source_url": "https://zh.wikipedia.org/wiki/%E9%AB%98%E6%9D%BE%E6%A9%9F%E5%A0%B4",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-10-11"
+    },
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/76/TakamatsuKukou01.jpg/500px-TakamatsuKukou01.jpg",
+        "author": "Toto-tarou",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:TakamatsuKukou01.jpg",
+        "width": 640,
+        "height": 480
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q1334603"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q1334603",
+        "fetched_at": "2026-10-11"
+      },
+      {
+        "url": "https://www.mlit.go.jp/koku/content/002000600.xlsx",
+        "fetched_at": "2026-10-11"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E9%AB%98%E6%9D%BE%E7%A9%BA%E6%B8%AF",
+        "fetched_at": "2026-10-11"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-10-11"
+  },
+  {
     "id": "wd-Q134892521",
     "name": {
       "ja": "布勢神社",

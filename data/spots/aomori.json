@@ -20662,6 +20662,66 @@
     "updated_at": "2026-09-28"
   },
   {
+    "id": "wd-Q628429",
+    "name": {
+      "ja": "青森空港",
+      "kana": "あおもりくうこう",
+      "romaji": "Aomorikuko",
+      "zh_tw": "青森機場",
+      "en": "Aomori Airport"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 40.733333,
+      "lng": 140.688611
+    },
+    "prefecture": "aomori",
+    "municipality": "022012",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "機場"
+    ],
+    "featured": false,
+    "score": 65.14,
+    "summary": {
+      "text": "青森機場是位於日本青森縣青森市。根據《機場整備法》分類為第三種機場。",
+      "lang": "zh",
+      "source_url": "https://zh.wikipedia.org/wiki/%E9%9D%92%E6%A3%AE%E6%A9%9F%E5%A0%B4",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-10-11"
+    },
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c8/Aomori_Airport_Aerial_photograph.2017.jpg/960px-Aomori_Airport_Aerial_photograph.2017.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "国土地理院",
+        "license": "Attribution",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Aomori_Airport_Aerial_photograph.2017.jpg",
+        "width": 7237,
+        "height": 7078
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q628429"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q628429",
+        "fetched_at": "2026-10-11"
+      },
+      {
+        "url": "https://www.mlit.go.jp/koku/content/002000600.xlsx",
+        "fetched_at": "2026-10-11"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E9%9D%92%E6%A3%AE%E7%A9%BA%E6%B8%AF",
+        "fetched_at": "2026-10-11"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-10-11"
+  },
+  {
     "id": "wd-Q6378947",
     "name": {
       "ja": "八食センター",

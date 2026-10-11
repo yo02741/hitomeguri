@@ -9362,6 +9362,66 @@
     "updated_at": "2026-09-28"
   },
   {
+    "id": "wd-Q1366663",
+    "name": {
+      "ja": "佐賀空港",
+      "kana": "さがくうこう",
+      "romaji": "Sagakuko",
+      "zh_tw": "佐賀機場",
+      "en": "Saga Airport"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 33.149722,
+      "lng": 130.302222
+    },
+    "prefecture": "saga",
+    "municipality": "412015",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "機場"
+    ],
+    "featured": false,
+    "score": 62.91,
+    "summary": {
+      "text": "佐賀機場是位於佐賀縣佐賀市的一個機場，根據日本《空港法》被分成第三種機場。設有愛稱「有明佐賀機場」。",
+      "lang": "zh",
+      "source_url": "https://zh.wikipedia.org/wiki/%E4%BD%90%E8%B3%80%E6%A9%9F%E5%A0%B4",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-10-11"
+    },
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2d/Saga_Airport_runway%2C_taxiway_and_tarmac.JPG/960px-Saga_Airport_runway%2C_taxiway_and_tarmac.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Mixtures",
+        "license": "CC BY 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Saga_Airport_runway,_taxiway_and_tarmac.JPG",
+        "width": 4000,
+        "height": 3000
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q1366663"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q1366663",
+        "fetched_at": "2026-10-11"
+      },
+      {
+        "url": "https://www.mlit.go.jp/koku/content/002000600.xlsx",
+        "fetched_at": "2026-10-11"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E4%BD%90%E8%B3%80%E7%A9%BA%E6%B8%AF",
+        "fetched_at": "2026-10-11"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-10-11"
+  },
+  {
     "id": "wd-Q137145263",
     "name": {
       "ja": "万部島",

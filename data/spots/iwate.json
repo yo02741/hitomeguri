@@ -14483,6 +14483,66 @@
     "updated_at": "2026-09-28"
   },
   {
+    "id": "wd-Q1320088",
+    "name": {
+      "ja": "花巻空港",
+      "kana": "はなまきくうこう",
+      "romaji": "Hanamakikuko",
+      "zh_tw": "花卷機場",
+      "en": "Hanamaki Airport"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 39.428611,
+      "lng": 141.135278
+    },
+    "prefecture": "iwate",
+    "municipality": "032051",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "機場"
+    ],
+    "featured": false,
+    "score": 63.19,
+    "summary": {
+      "text": "花捲機場位於巖手縣花捲市，根據日本空港整備法被分成第三種機場。",
+      "lang": "zh",
+      "source_url": "https://zh.wikipedia.org/wiki/%E8%8A%B1%E5%8D%B7%E6%A9%9F%E5%A0%B4",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-10-11"
+    },
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/14/Hanamaki_airport_terminal.jpg/960px-Hanamaki_airport_terminal.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "ブルーノ・プラス",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Hanamaki_airport_terminal.jpg",
+        "width": 3840,
+        "height": 2160
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q1320088"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q1320088",
+        "fetched_at": "2026-10-11"
+      },
+      {
+        "url": "https://www.mlit.go.jp/koku/content/002000600.xlsx",
+        "fetched_at": "2026-10-11"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E8%8A%B1%E5%B7%BB%E7%A9%BA%E6%B8%AF",
+        "fetched_at": "2026-10-11"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-10-11"
+  },
+  {
     "id": "wd-Q132745289",
     "name": {
       "ja": "湯舟沢環状列石",

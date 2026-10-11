@@ -20032,6 +20032,66 @@
     "updated_at": "2026-09-28"
   },
   {
+    "id": "wd-Q255345",
+    "name": {
+      "ja": "松山空港",
+      "kana": "まつやまくうこう",
+      "romaji": "Matsuyamakuko",
+      "zh_tw": "松山機場",
+      "en": "Matsuyama Airport"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 33.827222,
+      "lng": 132.699722
+    },
+    "prefecture": "ehime",
+    "municipality": "382019",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "機場"
+    ],
+    "featured": false,
+    "score": 66.82,
+    "summary": {
+      "text": "松山機場，位於日本四國愛媛縣松山市的民用機場。根據日本空港整備法被分成第二種機場。",
+      "lang": "zh",
+      "source_url": "https://zh.wikipedia.org/wiki/%E6%9D%BE%E5%B1%B1%E6%A9%9F%E5%A0%B4_%28%E6%97%A5%E6%9C%AC%29",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-10-11"
+    },
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5d/Matsuyama_Airport_Terminal_Bldg_20090807-001.jpg/960px-Matsuyama_Airport_Terminal_Bldg_20090807-001.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "J o",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Matsuyama_Airport_Terminal_Bldg_20090807-001.jpg",
+        "width": 1426,
+        "height": 948
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q255345"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q255345",
+        "fetched_at": "2026-10-11"
+      },
+      {
+        "url": "https://www.mlit.go.jp/koku/content/002000600.xlsx",
+        "fetched_at": "2026-10-11"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E6%9D%BE%E5%B1%B1%E7%A9%BA%E6%B8%AF",
+        "fetched_at": "2026-10-11"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-10-11"
+  },
+  {
     "id": "wd-Q2740666",
     "name": {
       "ja": "来島海峡大橋",

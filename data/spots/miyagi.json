@@ -199,6 +199,76 @@
     "updated_at": "2026-09-28"
   },
   {
+    "id": "wd-Q1054857",
+    "name": {
+      "ja": "仙台空港",
+      "kana": "せんだいくうこう",
+      "romaji": "Sendaikuko",
+      "zh_tw": "仙台機場",
+      "en": "Sendai Airport"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 38.139722,
+      "lng": 140.916944
+    },
+    "prefecture": "miyagi",
+    "municipality": "042072",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "機場"
+    ],
+    "featured": false,
+    "score": 70.11,
+    "summary": {
+      "text": "仙台機場是位於日本宮城縣名取市與巖沼市之間的機場，為東北地方唯一的國管理機場。目前機場委託民營，並以「仙台國際機場」（仙台國際空港／せんだいこくさいくうこう，Sendai kokusai kūkō）作為對外使用名稱。",
+      "lang": "zh",
+      "source_url": "https://zh.wikipedia.org/wiki/%E4%BB%99%E5%8F%B0%E6%A9%9F%E5%A0%B4",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-10-11"
+    },
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "仙台空港",
+          "romaji": "Sendai Airport",
+          "en": "Sendai Airport"
+        },
+        "distance_m": 1090
+      }
+    ],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/35/211028_Sendai_Airport_Sendai_Miyagi_prefecture_Japan01bs.jpg/960px-211028_Sendai_Airport_Sendai_Miyagi_prefecture_Japan01bs.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "663highland",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:211028_Sendai_Airport_Sendai_Miyagi_prefecture_Japan01bs.jpg",
+        "width": 6000,
+        "height": 4000
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q1054857"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q1054857",
+        "fetched_at": "2026-10-11"
+      },
+      {
+        "url": "https://www.mlit.go.jp/koku/content/002000600.xlsx",
+        "fetched_at": "2026-10-11"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E4%BB%99%E5%8F%B0%E7%A9%BA%E6%B8%AF",
+        "fetched_at": "2026-10-11"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-10-11"
+  },
+  {
     "id": "wd-Q105859324",
     "name": {
       "ja": "ホエールタウンおしか",

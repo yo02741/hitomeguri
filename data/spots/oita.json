@@ -16046,6 +16046,66 @@
     "updated_at": "2026-09-28"
   },
   {
+    "id": "wd-Q1334587",
+    "name": {
+      "ja": "大分空港",
+      "kana": "おおいたくうこう",
+      "romaji": "Oitakuko",
+      "zh_tw": "大分機場",
+      "en": "Oita Airport"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 33.479444,
+      "lng": 131.737222
+    },
+    "prefecture": "oita",
+    "municipality": "442143",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "機場"
+    ],
+    "featured": false,
+    "score": 64.88,
+    "summary": {
+      "text": "大分國際機場是一座位於日本大分縣國東市的民用機場，也是隔鄰的大分市之主機場。根據日本的機場管理相關法規《空港法》，大分機場被歸類為「第二種機場」（主要作為國內航線使用的機場）。",
+      "lang": "zh",
+      "source_url": "https://zh.wikipedia.org/wiki/%E5%A4%A7%E5%88%86%E6%A9%9F%E5%A0%B4",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-10-11"
+    },
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/63/Oita_Airport_Terminal_Building.jpg/960px-Oita_Airport_Terminal_Building.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Oita trip",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Oita_Airport_Terminal_Building.jpg",
+        "width": 3264,
+        "height": 2448
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q1334587"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q1334587",
+        "fetched_at": "2026-10-11"
+      },
+      {
+        "url": "https://www.mlit.go.jp/koku/content/002000600.xlsx",
+        "fetched_at": "2026-10-11"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E5%88%86%E7%A9%BA%E6%B8%AF",
+        "fetched_at": "2026-10-11"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-10-11"
+  },
+  {
     "id": "wd-Q134892427",
     "name": {
       "ja": "弥栄神社",

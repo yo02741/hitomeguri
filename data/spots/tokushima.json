@@ -4976,6 +4976,59 @@
     "updated_at": "2026-09-28"
   },
   {
+    "id": "wd-Q1142453",
+    "name": {
+      "ja": "徳島阿波おどり空港",
+      "zh_tw": "徳島阿波おどり空港",
+      "en": "Tokushima Airport"
+    },
+    "location": {
+      "lat": 34.132778,
+      "lng": 134.606389
+    },
+    "prefecture": "tokushima",
+    "municipality": "364011",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "機場"
+    ],
+    "featured": false,
+    "score": 60.84,
+    "summary": {
+      "text": "德島機場位於德島縣板野郡松茂町。本飛行場同時是日本海上自衛隊的德島航空基地。",
+      "lang": "zh",
+      "source_url": "https://zh.wikipedia.org/wiki/%E5%BE%B7%E5%B3%B6%E6%A9%9F%E5%A0%B4",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-10-11"
+    },
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bf/Tokushima-Awaodori_Airport.jpg/500px-Tokushima-Awaodori_Airport.jpg",
+        "author": "Squash-0601",
+        "license": "Public domain",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Tokushima-Awaodori_Airport.jpg",
+        "width": 798,
+        "height": 480
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q1142453"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q1142453",
+        "fetched_at": "2026-10-11"
+      },
+      {
+        "url": "https://www.mlit.go.jp/koku/content/002000600.xlsx",
+        "fetched_at": "2026-10-11"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-10-11"
+  },
+  {
     "id": "wd-Q11424671",
     "name": {
       "ja": "地蔵寺 (小松島市)",

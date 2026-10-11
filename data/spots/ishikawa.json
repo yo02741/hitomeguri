@@ -6148,6 +6148,59 @@
     "updated_at": "2026-09-28"
   },
   {
+    "id": "wd-Q1141511",
+    "name": {
+      "ja": "小松空港",
+      "zh_tw": "小松空港",
+      "en": "Komatsu Airport"
+    },
+    "location": {
+      "lat": 36.393889,
+      "lng": 136.4075
+    },
+    "prefecture": "ishikawa",
+    "municipality": "172031",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "機場"
+    ],
+    "featured": false,
+    "score": 67.71,
+    "summary": {
+      "text": "小松機場是位於日本石川縣小松市的軍民共用機場。",
+      "lang": "zh",
+      "source_url": "https://zh.wikipedia.org/wiki/%E5%B0%8F%E6%9D%BE%E6%A9%9F%E5%A0%B4",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-10-11"
+    },
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ec/Komatsu_airport_terminal_building.jpg/500px-Komatsu_airport_terminal_building.jpg",
+        "author": "Shift at Japanese Wikipedia",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Komatsu_airport_terminal_building.jpg",
+        "width": 640,
+        "height": 480
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q1141511"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q1141511",
+        "fetched_at": "2026-10-11"
+      },
+      {
+        "url": "https://www.mlit.go.jp/koku/content/002000600.xlsx",
+        "fetched_at": "2026-10-11"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-10-11"
+  },
+  {
     "id": "wd-Q11417155",
     "name": {
       "ja": "和倉昭和博物館とおもちゃ館",

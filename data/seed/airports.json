@@ -1,0 +1,264 @@
+{
+  "source": {
+    "url": "https://www.mlit.go.jp/koku/content/002000600.xlsx",
+    "fetched_at": "2026-10-11"
+  },
+  "airports": [
+    {
+      "id": "wd-Q1054857",
+      "wikidata": "Q1054857",
+      "iata": "SDJ",
+      "name_ja": "仙台空港",
+      "prefecture": "miyagi",
+      "matched": "仙台"
+    },
+    {
+      "id": "wd-Q1137465",
+      "wikidata": "Q1137465",
+      "iata": "FUK",
+      "name_ja": "福岡空港",
+      "prefecture": "fukuoka",
+      "matched": "福岡"
+    },
+    {
+      "id": "wd-Q1141511",
+      "wikidata": "Q1141511",
+      "iata": "KMQ",
+      "name_ja": "小松空港",
+      "prefecture": "ishikawa",
+      "matched": "小松"
+    },
+    {
+      "id": "wd-Q1141913",
+      "wikidata": "Q1141913",
+      "iata": "YGJ",
+      "name_ja": "米子鬼太郎空港",
+      "prefecture": "tottori",
+      "matched": "米子"
+    },
+    {
+      "id": "wd-Q1142453",
+      "wikidata": "Q1142453",
+      "iata": "TKS",
+      "name_ja": "徳島阿波おどり空港",
+      "prefecture": "tokushima",
+      "matched": "徳島"
+    },
+    {
+      "id": "wd-Q11434817",
+      "wikidata": "Q11434817",
+      "iata": "ISG",
+      "name_ja": "石垣空港",
+      "prefecture": "okinawa",
+      "matched": "石垣"
+    },
+    {
+      "id": "wd-Q1155685",
+      "wikidata": "Q1155685",
+      "iata": "HKD",
+      "name_ja": "函館空港",
+      "prefecture": "hokkaido",
+      "matched": "函館"
+    },
+    {
+      "id": "wd-Q1156310",
+      "wikidata": "Q1156310",
+      "iata": "KOJ",
+      "name_ja": "鹿児島空港",
+      "prefecture": "kagoshima",
+      "matched": "鹿児島"
+    },
+    {
+      "id": "wd-Q1156420",
+      "wikidata": "Q1156420",
+      "iata": "IBR",
+      "name_ja": "茨城空港",
+      "prefecture": "ibaraki",
+      "matched": "茨城"
+    },
+    {
+      "id": "wd-Q1191625",
+      "wikidata": "Q1191625",
+      "iata": "TOY",
+      "name_ja": "富山空港",
+      "prefecture": "toyama",
+      "matched": "富山"
+    },
+    {
+      "id": "wd-Q1197455",
+      "wikidata": "Q1197455",
+      "iata": "OKA",
+      "name_ja": "那覇空港",
+      "prefecture": "okinawa",
+      "matched": "那覇"
+    },
+    {
+      "id": "wd-Q1197536",
+      "wikidata": "Q1197536",
+      "iata": "KIJ",
+      "name_ja": "新潟空港",
+      "prefecture": "niigata",
+      "matched": "新潟"
+    },
+    {
+      "id": "wd-Q1199773",
+      "wikidata": "Q1199773",
+      "iata": "KMJ",
+      "name_ja": "熊本空港",
+      "prefecture": "kumamoto",
+      "matched": "熊本"
+    },
+    {
+      "id": "wd-Q1209993",
+      "wikidata": "Q1209993",
+      "iata": "FSZ",
+      "name_ja": "静岡空港",
+      "prefecture": "shizuoka",
+      "matched": "静岡"
+    },
+    {
+      "id": "wd-Q1320088",
+      "wikidata": "Q1320088",
+      "iata": "HNA",
+      "name_ja": "花巻空港",
+      "prefecture": "iwate",
+      "matched": "花巻"
+    },
+    {
+      "id": "wd-Q1322391",
+      "wikidata": "Q1322391",
+      "iata": "OKJ",
+      "name_ja": "岡山空港",
+      "prefecture": "okayama",
+      "matched": "岡山"
+    },
+    {
+      "id": "wd-Q1332254",
+      "wikidata": "Q1332254",
+      "iata": "OBO",
+      "name_ja": "帯広空港",
+      "prefecture": "hokkaido",
+      "matched": "帯広"
+    },
+    {
+      "id": "wd-Q1334587",
+      "wikidata": "Q1334587",
+      "iata": "OIT",
+      "name_ja": "大分空港",
+      "prefecture": "oita",
+      "matched": "大分"
+    },
+    {
+      "id": "wd-Q1334603",
+      "wikidata": "Q1334603",
+      "iata": "TAK",
+      "name_ja": "高松空港",
+      "prefecture": "kagawa",
+      "matched": "高松"
+    },
+    {
+      "id": "wd-Q133796",
+      "wikidata": "Q133796",
+      "iata": "NGS",
+      "name_ja": "長崎空港",
+      "prefecture": "nagasaki",
+      "matched": "長崎"
+    },
+    {
+      "id": "wd-Q1366663",
+      "wikidata": "Q1366663",
+      "iata": "HSG",
+      "name_ja": "佐賀空港",
+      "prefecture": "saga",
+      "matched": "佐賀"
+    },
+    {
+      "id": "wd-Q1378640",
+      "wikidata": "Q1378640",
+      "iata": "KMI",
+      "name_ja": "宮崎空港",
+      "prefecture": "miyazaki",
+      "matched": "宮崎"
+    },
+    {
+      "id": "wd-Q193682",
+      "wikidata": "Q193682",
+      "iata": "KIX",
+      "name_ja": "関西国際空港",
+      "prefecture": "osaka",
+      "matched": "関西"
+    },
+    {
+      "id": "wd-Q204853",
+      "wikidata": "Q204853",
+      "iata": "HND",
+      "name_ja": "東京国際空港",
+      "prefecture": "tokyo",
+      "matched": "羽田"
+    },
+    {
+      "id": "wd-Q255345",
+      "wikidata": "Q255345",
+      "iata": "MYJ",
+      "name_ja": "松山空港",
+      "prefecture": "ehime",
+      "matched": "松山"
+    },
+    {
+      "id": "wd-Q36454",
+      "wikidata": "Q36454",
+      "iata": "NRT",
+      "name_ja": "成田国際空港",
+      "prefecture": "chiba",
+      "matched": "成田"
+    },
+    {
+      "id": "wd-Q594223",
+      "wikidata": "Q594223",
+      "iata": "KKJ",
+      "name_ja": "北九州空港",
+      "prefecture": "fukuoka",
+      "matched": "北九州"
+    },
+    {
+      "id": "wd-Q628429",
+      "wikidata": "Q628429",
+      "iata": "AOJ",
+      "name_ja": "青森空港",
+      "prefecture": "aomori",
+      "matched": "青森"
+    },
+    {
+      "id": "wd-Q654922",
+      "wikidata": "Q654922",
+      "iata": "SHI",
+      "name_ja": "下地島空港",
+      "prefecture": "okinawa",
+      "matched": "下地島"
+    },
+    {
+      "id": "wd-Q679345",
+      "wikidata": "Q679345",
+      "iata": "NGO",
+      "name_ja": "中部国際空港",
+      "prefecture": "aichi",
+      "matched": "中部"
+    },
+    {
+      "id": "wd-Q82240",
+      "wikidata": "Q82240",
+      "iata": "HIJ",
+      "name_ja": "広島空港",
+      "prefecture": "hiroshima",
+      "matched": "広島"
+    },
+    {
+      "id": "wd-Q908296",
+      "wikidata": "Q908296",
+      "iata": "CTS",
+      "name_ja": "新千歳空港",
+      "prefecture": "hokkaido",
+      "matched": "新千歳"
+    }
+  ]
+}

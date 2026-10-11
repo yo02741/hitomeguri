@@ -5695,6 +5695,77 @@
     "season_images": {}
   },
   {
+    "id": "wd-Q1137465",
+    "name": {
+      "ja": "福岡空港",
+      "kana": "ふくおかくうこう",
+      "romaji": "Fukuokakuko",
+      "zh_tw": "福岡機場",
+      "en": "Fukuoka Airport"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 33.584444,
+      "lng": 130.451667
+    },
+    "prefecture": "fukuoka",
+    "municipality": "401323",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "機場"
+    ],
+    "featured": false,
+    "score": 75.11,
+    "summary": {
+      "text": "福岡機場是一個位於日本福岡縣福岡市博多區的國際與國內機場。",
+      "lang": "zh",
+      "source_url": "https://zh.wikipedia.org/wiki/%E7%A6%8F%E5%B2%A1%E6%A9%9F%E5%A0%B4",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-10-11"
+    },
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "福岡空港",
+          "kana": "ふくおかくうこう",
+          "romaji": "Fukuokakuko",
+          "en": "Fukuokakūkō (Airport)"
+        },
+        "distance_m": 1470
+      }
+    ],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/12/Fukuoka_Airport_Domestic_Terminal.jpg/960px-Fukuoka_Airport_Domestic_Terminal.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Nkmr844",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Fukuoka_Airport_Domestic_Terminal.jpg",
+        "width": 4032,
+        "height": 3024
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q1137465"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q1137465",
+        "fetched_at": "2026-10-11"
+      },
+      {
+        "url": "https://www.mlit.go.jp/koku/content/002000600.xlsx",
+        "fetched_at": "2026-10-11"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E7%A6%8F%E5%B2%A1%E7%A9%BA%E6%B8%AF",
+        "fetched_at": "2026-10-11"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-10-11"
+  },
+  {
     "id": "wd-Q11377089",
     "name": {
       "ja": "今村教会",
@@ -22237,6 +22308,66 @@
     "status": "published",
     "updated_at": "2026-09-28",
     "season_images": {}
+  },
+  {
+    "id": "wd-Q594223",
+    "name": {
+      "ja": "北九州空港",
+      "kana": "きたきゅうしゅうくうこう",
+      "romaji": "Kitakyushukuko",
+      "zh_tw": "北九州機場",
+      "en": "Kitakyushu Airport"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 33.845556,
+      "lng": 131.035
+    },
+    "prefecture": "fukuoka",
+    "municipality": "401072",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "機場"
+    ],
+    "featured": false,
+    "score": 67.34,
+    "summary": {
+      "text": "北九州機場，根據國土交通省正式名稱為「新北九州機場」，是日本一個福岡縣橫跨北九州市小倉南區以及京都郡苅田町，位於周防灘的人工島機場，於2006年3月16日啟用。管理者是國土交通省。",
+      "lang": "zh",
+      "source_url": "https://zh.wikipedia.org/wiki/%E5%8C%97%E4%B9%9D%E5%B7%9E%E6%A9%9F%E5%A0%B4",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-10-11"
+    },
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/36/Kitakyushu_Airport_Access_Bridge_1010074.jpg/960px-Kitakyushu_Airport_Access_Bridge_1010074.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Hiroshi Nakai",
+        "license": "CC BY 2.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Kitakyushu_Airport_Access_Bridge_1010074.jpg",
+        "width": 3932,
+        "height": 2950
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q594223"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q594223",
+        "fetched_at": "2026-10-11"
+      },
+      {
+        "url": "https://www.mlit.go.jp/koku/content/002000600.xlsx",
+        "fetched_at": "2026-10-11"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E5%8C%97%E4%B9%9D%E5%B7%9E%E7%A9%BA%E6%B8%AF",
+        "fetched_at": "2026-10-11"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-10-11"
   },
   {
     "id": "wd-Q60985130",

@@ -10656,6 +10656,66 @@
     "updated_at": "2026-09-28"
   },
   {
+    "id": "wd-Q1155685",
+    "name": {
+      "ja": "函館空港",
+      "kana": "はこだてくうこう",
+      "romaji": "Hakodatekuko",
+      "zh_tw": "函館機場",
+      "en": "Hakodate Airport"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 41.77,
+      "lng": 140.821944
+    },
+    "prefecture": "hokkaido",
+    "municipality": "012025",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "機場"
+    ],
+    "featured": false,
+    "score": 67.55,
+    "summary": {
+      "text": "函館機場是位於日本北海道函館市的民用機場，根據日本《機場法》分類為重點機場。",
+      "lang": "zh",
+      "source_url": "https://zh.wikipedia.org/wiki/%E5%87%BD%E9%A4%A8%E6%A9%9F%E5%A0%B4",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-10-11"
+    },
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/75/Hakodate_Airport_Hokkaido_Japan06s3.jpg/960px-Hakodate_Airport_Hokkaido_Japan06s3.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "663highland",
+        "license": "CC BY 2.5",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Hakodate_Airport_Hokkaido_Japan06s3.jpg",
+        "width": 4912,
+        "height": 3264
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q1155685"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q1155685",
+        "fetched_at": "2026-10-11"
+      },
+      {
+        "url": "https://www.mlit.go.jp/koku/content/002000600.xlsx",
+        "fetched_at": "2026-10-11"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E5%87%BD%E9%A4%A8%E7%A9%BA%E6%B8%AF",
+        "fetched_at": "2026-10-11"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-10-11"
+  },
+  {
     "id": "wd-Q11559418",
     "name": {
       "ja": "海驢島",
@@ -14857,6 +14917,66 @@
         "height": 582
       }
     }
+  },
+  {
+    "id": "wd-Q1332254",
+    "name": {
+      "ja": "帯広空港",
+      "kana": "おびひろくうこう",
+      "romaji": "Obihirokuko",
+      "zh_tw": "帶廣機場",
+      "en": "Obihiro Airport"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 42.733333,
+      "lng": 143.217222
+    },
+    "prefecture": "hokkaido",
+    "municipality": "012076",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "機場"
+    ],
+    "featured": false,
+    "score": 61.13,
+    "summary": {
+      "text": "帶廣機場，又稱十勝帶廣機場，是一個位於日本北海道帶廣市的民用機場，根據日本空港整備法被分成第二種機場。",
+      "lang": "zh",
+      "source_url": "https://zh.wikipedia.org/wiki/%E5%B8%B6%E5%BB%A3%E6%A9%9F%E5%A0%B4",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-10-11"
+    },
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/76/131012_Obihiro_Airport_Hokkaido_Japan01s5.jpg/960px-131012_Obihiro_Airport_Hokkaido_Japan01s5.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "663highland",
+        "license": "CC BY 2.5",
+        "source_url": "https://commons.wikimedia.org/wiki/File:131012_Obihiro_Airport_Hokkaido_Japan01s5.jpg",
+        "width": 4912,
+        "height": 3264
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q1332254"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q1332254",
+        "fetched_at": "2026-10-11"
+      },
+      {
+        "url": "https://www.mlit.go.jp/koku/content/002000600.xlsx",
+        "fetched_at": "2026-10-11"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E5%B8%AF%E5%BA%83%E7%A9%BA%E6%B8%AF",
+        "fetched_at": "2026-10-11"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-10-11"
   },
   {
     "id": "wd-Q138556551",
@@ -24274,6 +24394,66 @@
         "height": 2155
       }
     }
+  },
+  {
+    "id": "wd-Q908296",
+    "name": {
+      "ja": "新千歳空港",
+      "kana": "しんちとせくうこう",
+      "romaji": "Shinchitosekuko",
+      "zh_tw": "新千歲機場",
+      "en": "New Chitose Airport"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 42.7752,
+      "lng": 141.692283
+    },
+    "prefecture": "hokkaido",
+    "municipality": "012246",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "機場"
+    ],
+    "featured": false,
+    "score": 76.61,
+    "summary": {
+      "text": "新千歲機場位於日本北海道千歲市與苫小牧市交界，是札幌市的主機場，於1988年啟用，替代了其於航空自衛隊千歲基地附近建設的舊千歲機場。千歲基地位於新機場主場站的西北方，裝備F-15鷹式戰鬥機及日本國政府專用機，和目前的民用機場獨立運作，但由多條滑行道聯繫。",
+      "lang": "zh",
+      "source_url": "https://zh.wikipedia.org/wiki/%E6%96%B0%E5%8D%83%E6%AD%B2%E6%A9%9F%E5%A0%B4",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-10-11"
+    },
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/87/Hokkaido_New_Chitose_Airport13n4272.jpg/960px-Hokkaido_New_Chitose_Airport13n4272.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "663highland",
+        "license": "CC BY 2.5",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Hokkaido_New_Chitose_Airport13n4272.jpg",
+        "width": 4272,
+        "height": 2848
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q908296"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q908296",
+        "fetched_at": "2026-10-11"
+      },
+      {
+        "url": "https://www.mlit.go.jp/koku/content/002000600.xlsx",
+        "fetched_at": "2026-10-11"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E6%96%B0%E5%8D%83%E6%AD%B3%E7%A9%BA%E6%B8%AF",
+        "fetched_at": "2026-10-11"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-10-11"
   },
   {
     "id": "wd-Q954059",

@@ -15901,6 +15901,66 @@
     "updated_at": "2026-09-28"
   },
   {
+    "id": "wd-Q1322391",
+    "name": {
+      "ja": "岡山空港",
+      "kana": "おかやまくうこう",
+      "romaji": "Okayamakuko",
+      "zh_tw": "岡山機場",
+      "en": "Okayama Airport"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 34.756944,
+      "lng": 133.855278
+    },
+    "prefecture": "okayama",
+    "municipality": "331015",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "機場"
+    ],
+    "featured": false,
+    "score": 64.59,
+    "summary": {
+      "text": "岡山機場位於日本岡山縣岡山市，根據日本《機場整備法》被分為第三種機場。",
+      "lang": "zh",
+      "source_url": "https://zh.wikipedia.org/wiki/%E5%B2%A1%E5%B1%B1%E6%A9%9F%E5%A0%B4",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-10-11"
+    },
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f0/Okayama_airport_terminal.jpg/960px-Okayama_airport_terminal.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "ブルーノ・プラス",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Okayama_airport_terminal.jpg",
+        "width": 3648,
+        "height": 2736
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q1322391"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q1322391",
+        "fetched_at": "2026-10-11"
+      },
+      {
+        "url": "https://www.mlit.go.jp/koku/content/002000600.xlsx",
+        "fetched_at": "2026-10-11"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E5%B2%A1%E5%B1%B1%E7%A9%BA%E6%B8%AF",
+        "fetched_at": "2026-10-11"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-10-11"
+  },
+  {
     "id": "wd-Q135041208",
     "name": {
       "ja": "伊勢神社",

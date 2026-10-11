@@ -19954,6 +19954,86 @@
     "updated_at": "2026-09-28"
   },
   {
+    "id": "wd-Q36454",
+    "name": {
+      "ja": "成田国際空港",
+      "kana": "なりたこくさいくうこう",
+      "romaji": "Naritakokusaikuko",
+      "zh_tw": "成田國際機場",
+      "en": "Narita International Airport"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 35.7649,
+      "lng": 140.38845
+    },
+    "prefecture": "chiba",
+    "municipality": "122114",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "機場"
+    ],
+    "featured": false,
+    "score": 85.03,
+    "summary": {
+      "text": "成田國際機場，通稱成田機場（日語：成田空港／なりたくうこう，羅馬化：Narita Kūkō），原名新東京國際機場（日語：新東京國際空港／しんとうきょうこくさいくうこう，羅馬化：Shin-Tōkyō Kokusai Kūkō），是位於日本千葉縣成田市的國際機場，與羽田機場並列為東京兩大聯外機場。",
+      "lang": "zh",
+      "source_url": "https://zh.wikipedia.org/wiki/%E6%88%90%E7%94%B0%E5%9B%BD%E9%99%85%E6%9C%BA%E5%9C%BA",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-10-11"
+    },
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "成田空港",
+          "kana": "なりたくうこう",
+          "romaji": "Narita Kūkō",
+          "en": "Narita Airport Terminal 1"
+        },
+        "distance_m": 230
+      },
+      {
+        "name": {
+          "ja": "東成田",
+          "kana": "ひがしなりた",
+          "romaji": "Higashi-Narita",
+          "en": "Higashi-Narita"
+        },
+        "distance_m": 590
+      }
+    ],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/98/Narita_International_Air_Port_%28cropped%29.jpg/960px-Narita_International_Air_Port_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "PSnyan",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Narita_International_Air_Port_(cropped).jpg",
+        "width": 2654,
+        "height": 1720
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q36454"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q36454",
+        "fetched_at": "2026-10-11"
+      },
+      {
+        "url": "https://www.mlit.go.jp/koku/content/002000600.xlsx",
+        "fetched_at": "2026-10-11"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E6%88%90%E7%94%B0%E5%9B%BD%E9%9A%9B%E7%A9%BA%E6%B8%AF",
+        "fetched_at": "2026-10-11"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-10-11"
+  },
+  {
     "id": "wd-Q372380",
     "name": {
       "ja": "香取神宮",

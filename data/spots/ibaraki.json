@@ -10189,6 +10189,59 @@
     "updated_at": "2026-09-28"
   },
   {
+    "id": "wd-Q1156420",
+    "name": {
+      "ja": "茨城空港",
+      "zh_tw": "茨城空港",
+      "en": "Ibaraki Airport"
+    },
+    "location": {
+      "lat": 36.181667,
+      "lng": 140.414722
+    },
+    "prefecture": "ibaraki",
+    "municipality": "082368",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "機場"
+    ],
+    "featured": false,
+    "score": 66.72,
+    "summary": {
+      "text": "百里飛行場是位於日本茨城縣小美玉市的機場，最初為1966年啟用的航空自衛隊基地——百里基地（日語：百里基地／ひゃくりきち，羅馬化：Hyakuri kichi），2010年3月11日起以茨城機場（日語：茨城空港／いばらきくうこう，羅馬化：Ibaraki kūkō）之名開放予民間共同使用。",
+      "lang": "zh",
+      "source_url": "https://zh.wikipedia.org/wiki/%E8%8C%A8%E5%9F%8E%E6%9C%BA%E5%9C%BA",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-10-11"
+    },
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9d/RJAH_ibaraki-airport_airside.JPG/960px-RJAH_ibaraki-airport_airside.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "KURO-E531 at Japanese Wikipedia",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:RJAH_ibaraki-airport_airside.JPG",
+        "width": 4752,
+        "height": 3168
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q1156420"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q1156420",
+        "fetched_at": "2026-10-11"
+      },
+      {
+        "url": "https://www.mlit.go.jp/koku/content/002000600.xlsx",
+        "fetched_at": "2026-10-11"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-10-11"
+  },
+  {
     "id": "wd-Q11565709",
     "name": {
       "ja": "潮来水原温泉",

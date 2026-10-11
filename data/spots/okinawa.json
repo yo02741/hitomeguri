@@ -7247,6 +7247,66 @@
     "updated_at": "2026-09-28"
   },
   {
+    "id": "wd-Q11434817",
+    "name": {
+      "ja": "石垣空港",
+      "kana": "いしがきくうこう",
+      "romaji": "Ishigakikuko",
+      "zh_tw": "石垣機場",
+      "en": "Ishigaki Airport"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 24.396389,
+      "lng": 124.245
+    },
+    "prefecture": "okinawa",
+    "municipality": "472077",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "機場"
+    ],
+    "featured": false,
+    "score": 64.78,
+    "summary": {
+      "text": "石垣機場是一座位於日本沖繩縣八重山群島石垣島上的一座機場，是八重山地區重要對外機場，主要營運往返日本本土及琉球群島的國內線航班，亦有往返臺北以及香港等地定期國際航班。石垣機場在2008年11月至2024年1月間曾是日本最南端機場，在2024年1月22日波照間機場復航後最南端機場頭銜回歸波照間機場。",
+      "lang": "zh",
+      "source_url": "https://zh.wikipedia.org/wiki/%E7%9F%B3%E5%9E%A3%E6%A9%9F%E5%A0%B4",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-10-11"
+    },
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/42/Ishigaki_new_ishigaki_airport.jpg/960px-Ishigaki_new_ishigaki_airport.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Paipateroma",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Ishigaki_new_ishigaki_airport.jpg",
+        "width": 1600,
+        "height": 1200
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q11434817"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q11434817",
+        "fetched_at": "2026-10-11"
+      },
+      {
+        "url": "https://www.mlit.go.jp/koku/content/002000600.xlsx",
+        "fetched_at": "2026-10-11"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E7%9F%B3%E5%9E%A3%E7%A9%BA%E6%B8%AF",
+        "fetched_at": "2026-10-11"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-10-11"
+  },
+  {
     "id": "wd-Q11436122",
     "name": {
       "ja": "大東宮",
@@ -11035,6 +11095,86 @@
         "height": 1000
       }
     }
+  },
+  {
+    "id": "wd-Q1197455",
+    "name": {
+      "ja": "那覇空港",
+      "kana": "なはくうこう",
+      "romaji": "Nahakuko",
+      "zh_tw": "那霸機場",
+      "en": "Naha Airport"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 26.195833,
+      "lng": 127.645833
+    },
+    "prefecture": "okinawa",
+    "municipality": "472018",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "機場"
+    ],
+    "featured": false,
+    "score": 74.04,
+    "summary": {
+      "text": "那霸機場是一座位於日本沖繩縣那霸市的第二種機場，第二次世界大戰後被美軍接管，該設施成為美國太平洋空軍（PACAF）營運控制下的基地，稱為那霸空軍基地（Naha Air Base）。隨著東京和沖繩之間恢復民用航空服務，該設施於1954年成為軍民合用的機場。",
+      "lang": "zh",
+      "source_url": "https://zh.wikipedia.org/wiki/%E9%82%A3%E9%9C%B8%E6%A9%9F%E5%A0%B4",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-10-11"
+    },
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "那覇空港",
+          "kana": "なはくうこう",
+          "romaji": "Naha-kūkō",
+          "en": "Naha Airport"
+        },
+        "distance_m": 1340
+      },
+      {
+        "name": {
+          "ja": "赤嶺",
+          "kana": "あかみね",
+          "romaji": "Akamine",
+          "en": "Akamine"
+        },
+        "distance_m": 1490
+      }
+    ],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a4/Naha_Airport12s3s4350.jpg/960px-Naha_Airport12s3s4350.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "663highland",
+        "license": "CC BY 2.5",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Naha_Airport12s3s4350.jpg",
+        "width": 4350,
+        "height": 2900
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q1197455"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q1197455",
+        "fetched_at": "2026-10-11"
+      },
+      {
+        "url": "https://www.mlit.go.jp/koku/content/002000600.xlsx",
+        "fetched_at": "2026-10-11"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E9%82%A3%E8%A6%87%E7%A9%BA%E6%B8%AF",
+        "fetched_at": "2026-10-11"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-10-11"
   },
   {
     "id": "wd-Q1204188",
@@ -19126,6 +19266,66 @@
     ],
     "status": "published",
     "updated_at": "2026-09-29"
+  },
+  {
+    "id": "wd-Q654922",
+    "name": {
+      "ja": "下地島空港",
+      "kana": "しもじしまくうこう",
+      "romaji": "Shimojishimakuko",
+      "zh_tw": "下地島機場",
+      "en": "Shimojishima Airport"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 24.826667,
+      "lng": 125.144722
+    },
+    "prefecture": "okinawa",
+    "municipality": "472140",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "機場"
+    ],
+    "featured": false,
+    "score": 65.69,
+    "summary": {
+      "text": "下地島機場是日本沖繩縣宮古島市下地島的一座機場，也是該國唯一的民用航空機師訓練機場。屬於第三種機場、跑道長達3000公尺，為準備香港快運航空在2019年7月19日開辦下地島機場航線，新的國際線航廈於2019年3月落成，為第一條國際線做好準備。",
+      "lang": "zh",
+      "source_url": "https://zh.wikipedia.org/wiki/%E4%B8%8B%E5%9C%B0%E5%B3%B6%E6%A9%9F%E5%A0%B4",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-10-11"
+    },
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1b/Shimojishima.airport.jpg/960px-Shimojishima.airport.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "ブルーノ",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Shimojishima.airport.jpg",
+        "width": 3840,
+        "height": 2160
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q654922"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q654922",
+        "fetched_at": "2026-10-11"
+      },
+      {
+        "url": "https://www.mlit.go.jp/koku/content/002000600.xlsx",
+        "fetched_at": "2026-10-11"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E4%B8%8B%E5%9C%B0%E5%B3%B6%E7%A9%BA%E6%B8%AF",
+        "fetched_at": "2026-10-11"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-10-11"
   },
   {
     "id": "wd-Q65506085",

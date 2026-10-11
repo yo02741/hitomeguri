@@ -15977,6 +15977,66 @@
     "season_images": {}
   },
   {
+    "id": "wd-Q133796",
+    "name": {
+      "ja": "長崎空港",
+      "kana": "ながさきくうこう",
+      "romaji": "Nagasakikuko",
+      "zh_tw": "長崎機場",
+      "en": "Nagasaki Airport"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 32.916944,
+      "lng": 129.913611
+    },
+    "prefecture": "nagasaki",
+    "municipality": "422053",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "機場"
+    ],
+    "featured": false,
+    "score": 67.0,
+    "summary": {
+      "text": "長崎機場是位於日本長崎縣大村市的民用機場，是全球第一座海上機場。根據日本空港整備法被分成第二種機場。",
+      "lang": "zh",
+      "source_url": "https://zh.wikipedia.org/wiki/%E9%95%B7%E5%B4%8E%E6%A9%9F%E5%A0%B4",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-10-11"
+    },
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/38/Nagasaki_Airport_Omura_Nagasaki_pref_Japan06n.jpg/960px-Nagasaki_Airport_Omura_Nagasaki_pref_Japan06n.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "663highland",
+        "license": "CC BY 2.5",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Nagasaki_Airport_Omura_Nagasaki_pref_Japan06n.jpg",
+        "width": 4680,
+        "height": 3120
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q133796"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q133796",
+        "fetched_at": "2026-10-11"
+      },
+      {
+        "url": "https://www.mlit.go.jp/koku/content/002000600.xlsx",
+        "fetched_at": "2026-10-11"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E9%95%B7%E5%B4%8E%E7%A9%BA%E6%B8%AF",
+        "fetched_at": "2026-10-11"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-10-11"
+  },
+  {
     "id": "wd-Q134930328",
     "name": {
       "ja": "乙和多都美神社",

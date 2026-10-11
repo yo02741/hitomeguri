@@ -7381,6 +7381,75 @@
     "updated_at": "2026-09-28"
   },
   {
+    "id": "wd-Q1378640",
+    "name": {
+      "ja": "宮崎空港",
+      "kana": "みやざきくうこう",
+      "romaji": "Miyazakikuko",
+      "zh_tw": "宮崎機場",
+      "en": "Miyazaki Airport"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 31.877222,
+      "lng": 131.448611
+    },
+    "prefecture": "miyazaki",
+    "municipality": "452017",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "機場"
+    ],
+    "featured": false,
+    "score": 65.36,
+    "summary": {
+      "text": "宮崎機場位於日本宮崎縣宮崎市，屬於第二種機場。設有愛稱「宮崎簕杜鵑機場」（宮崎ブーゲンビリア空港）。",
+      "lang": "zh",
+      "source_url": "https://zh.wikipedia.org/wiki/%E5%AE%AE%E5%B4%8E%E6%A9%9F%E5%A0%B4",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-10-11"
+    },
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "宮崎空港",
+          "en": "Miyazaki Airport"
+        },
+        "distance_m": 960
+      }
+    ],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b4/Miyazaki_Airport_Feb_2008.jpg/960px-Miyazaki_Airport_Feb_2008.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "ja:User:Sanjo",
+        "license": "Public domain",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Miyazaki_Airport_Feb_2008.jpg",
+        "width": 1440,
+        "height": 810
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q1378640"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q1378640",
+        "fetched_at": "2026-10-11"
+      },
+      {
+        "url": "https://www.mlit.go.jp/koku/content/002000600.xlsx",
+        "fetched_at": "2026-10-11"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E5%AE%AE%E5%B4%8E%E7%A9%BA%E6%B8%AF",
+        "fetched_at": "2026-10-11"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-10-11"
+  },
+  {
     "id": "wd-Q138847787",
     "name": {
       "ja": "兼喜神社",

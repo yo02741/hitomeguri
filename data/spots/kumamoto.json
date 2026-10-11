@@ -14464,6 +14464,66 @@
     "updated_at": "2026-09-28"
   },
   {
+    "id": "wd-Q1199773",
+    "name": {
+      "ja": "熊本空港",
+      "kana": "くまもとくうこう",
+      "romaji": "Kumamotokuko",
+      "zh_tw": "熊本機場",
+      "en": "Kumamoto Airport"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 32.837222,
+      "lng": 130.855278
+    },
+    "prefecture": "kumamoto",
+    "municipality": "434043",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "機場"
+    ],
+    "featured": false,
+    "score": 67.94,
+    "summary": {
+      "text": "熊本機場是一個位於日本熊本縣益城町的民用機場。根據日本空港整備法被分成第二種機場，設有「阿蘇熊本機場」的愛稱（阿蘇くまもと空港）。",
+      "lang": "zh",
+      "source_url": "https://zh.wikipedia.org/wiki/%E7%86%8A%E6%9C%AC%E6%A9%9F%E5%A0%B4",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-10-11"
+    },
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/34/En-Kumamoto_Airport_2007.jpg/960px-En-Kumamoto_Airport_2007.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Kumamoto at English Wikipedia",
+        "license": "Public domain",
+        "source_url": "https://commons.wikimedia.org/wiki/File:En-Kumamoto_Airport_2007.jpg",
+        "width": 2272,
+        "height": 1704
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q1199773"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q1199773",
+        "fetched_at": "2026-10-11"
+      },
+      {
+        "url": "https://www.mlit.go.jp/koku/content/002000600.xlsx",
+        "fetched_at": "2026-10-11"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E7%86%8A%E6%9C%AC%E7%A9%BA%E6%B8%AF",
+        "fetched_at": "2026-10-11"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-10-11"
+  },
+  {
     "id": "wd-Q124817868",
     "name": {
       "ja": "熊本県立美術館分館",

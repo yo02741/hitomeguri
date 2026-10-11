@@ -25445,6 +25445,75 @@
     "season_images": {}
   },
   {
+    "id": "wd-Q679345",
+    "name": {
+      "ja": "中部国際空港",
+      "kana": "ちゅうぶこくさいくうこう",
+      "romaji": "Chubukokusaikuko",
+      "zh_tw": "中部國際機場",
+      "en": "Chubu Centrair International Airport"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 34.858333,
+      "lng": 136.805278
+    },
+    "prefecture": "aichi",
+    "municipality": "232165",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "機場"
+    ],
+    "featured": false,
+    "score": 77.63,
+    "summary": {
+      "text": "Chubu Centrair International Airport (中部国際空港, Chūbu Kokusai Kūkō) (IATA: NGO, ICAO: RJGG) is an international airport on an artificial island in Ise Bay, 35 km (22 mi) south of Nagoya in central Japan (Chūbu). The airport covers about 470 hectares (1,161 acres) of land and has one 3,500 m (11,500 ft) runway.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Chubu_Centrair_International_Airport",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-10-11"
+    },
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "中部国際空港",
+          "en": "Central Japan International Airport"
+        },
+        "distance_m": 1010
+      }
+    ],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cc/Chubu_Centrair_International_Airport_-_North_Wing_-_01.JPG/960px-Chubu_Centrair_International_Airport_-_North_Wing_-_01.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "JKT-c",
+        "license": "CC BY 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Chubu_Centrair_International_Airport_-_North_Wing_-_01.JPG",
+        "width": 2896,
+        "height": 1936
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q679345"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q679345",
+        "fetched_at": "2026-10-11"
+      },
+      {
+        "url": "https://www.mlit.go.jp/koku/content/002000600.xlsx",
+        "fetched_at": "2026-10-11"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E4%B8%AD%E9%83%A8%E5%9B%BD%E9%9A%9B%E7%A9%BA%E6%B8%AF",
+        "fetched_at": "2026-10-11"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-10-11"
+  },
+  {
     "id": "wd-Q6810044",
     "name": {
       "ja": "名城公園",

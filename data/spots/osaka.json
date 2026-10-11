@@ -21899,6 +21899,76 @@
     "season_images": {}
   },
   {
+    "id": "wd-Q193682",
+    "name": {
+      "ja": "関西国際空港",
+      "kana": "かんさいこくさいくうこう",
+      "romaji": "Kansaikokusaikuko",
+      "zh_tw": "關西國際機場",
+      "en": "Kansai International Airport"
+    },
+    "kana_source": "wikipedia",
+    "location": {
+      "lat": 34.430556,
+      "lng": 135.230278
+    },
+    "prefecture": "osaka",
+    "municipality": "273627",
+    "kind": "major",
+    "themes": [],
+    "tags": [
+      "機場"
+    ],
+    "featured": false,
+    "score": 83.38,
+    "summary": {
+      "text": "Kansai International Airport (Japanese: 関西国際空港, romanized: Kansai Kokusai Kūkō; IATA: KIX, ICAO: RJBB), commonly known as Kankū (Japanese: 関空) is the primary international airport in the Greater Osaka Area of Japan and the closest international airport to the cities of Osaka, Kyoto, and Kobe.",
+      "lang": "en",
+      "source_url": "https://en.wikipedia.org/wiki/Kansai_International_Airport",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-10-11"
+    },
+    "nearest_stations": [
+      {
+        "name": {
+          "ja": "関西空港",
+          "romaji": "Kansaikūkō",
+          "en": "Kansai Airport"
+        },
+        "distance_m": 1340
+      }
+    ],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/56/%E9%96%A2%E8%A5%BF%E5%9B%BD%E9%9A%9B%E7%A9%BA%E6%B8%AF%E5%85%A8%E4%BD%93%E5%86%99%E7%9C%9F20220811.jpg/960px-%E9%96%A2%E8%A5%BF%E5%9B%BD%E9%9A%9B%E7%A9%BA%E6%B8%AF%E5%85%A8%E4%BD%93%E5%86%99%E7%9C%9F20220811.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Ankou1192",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:%E9%96%A2%E8%A5%BF%E5%9B%BD%E9%9A%9B%E7%A9%BA%E6%B8%AF%E5%85%A8%E4%BD%93%E5%86%99%E7%9C%9F20220811.jpg",
+        "width": 6000,
+        "height": 4000
+      }
+    ],
+    "external_ids": {
+      "wikidata": "Q193682"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q193682",
+        "fetched_at": "2026-10-11"
+      },
+      {
+        "url": "https://www.mlit.go.jp/koku/content/002000600.xlsx",
+        "fetched_at": "2026-10-11"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E9%96%A2%E8%A5%BF%E5%9B%BD%E9%9A%9B%E7%A9%BA%E6%B8%AF",
+        "fetched_at": "2026-10-11"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-10-11"
+  },
+  {
     "id": "wd-Q2070374",
     "name": {
       "ja": "インテックス大阪",

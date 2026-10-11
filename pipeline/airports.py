@@ -630,7 +630,7 @@ def seed_airports(url: str | None = None, *, write_spots: bool = True) -> str:
         "",
         f"對到 {len(airports)} 個機場：",
         "",
-        "| 機場 | IATA | 縣 | 對到的字串 | PDF 原文 |",
+        "| 機場 | IATA | 縣 | 對到的字串 | 表的原文 |",
         "|---|---|---|---|---|",
     ]
     by_id = {f"wd-{q}": ms for q, ms in matches.items()}
@@ -665,10 +665,10 @@ def seed_airports(url: str | None = None, *, write_spots: bool = True) -> str:
         ]
     if excluded_hits:
         hits = [f"{all_cands[q].name_ja}（{excluded[q]}）" for q in excluded_hits]
-        lines += ["PDF 裡有出現、但當成軍用或非機場排除的：" + "、".join(hits), ""]
+        lines += ["表裡有出現、但當成軍用或非機場排除的：" + "、".join(hits), ""]
     if res.unmatched_airport_like:
         lines += [
-            "PDF 裡像機場名稱、沒有對到的字串：" + "、".join(res.unmatched_airport_like[:60]),
+            "表裡像機場名稱、沒有對到的字串：" + "、".join(res.unmatched_airport_like[:60]),
             "",
         ]
     if res.unmatched_rows:
