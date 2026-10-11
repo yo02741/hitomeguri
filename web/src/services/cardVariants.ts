@@ -117,7 +117,7 @@ export function hasNight(face: { seasonImages?: Partial<Record<PhotoKey, unknown
   return Boolean(face.seasonImages?.night)
 }
 
-/** 紀念卡（特別全景）加虹色箔片與亮片的景點：世界遺產、國寶 */
+/** 紀念卡（特別全景）再加亮片的景點：世界遺產、國寶（虹色箔片每張特別全景都有） */
 export function memorialFoil(designation: string | undefined): boolean {
   return designation === '世界遺產' || designation === '國寶'
 }

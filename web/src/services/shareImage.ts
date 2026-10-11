@@ -5,6 +5,7 @@ import type { KeikenLevel } from '../stores/keiken'
 import { KEIKEN_LEVELS, KEIKEN_MAX } from '../stores/keiken'
 import { japanOutline, loadPrefectureShapes } from './geo'
 import { theme } from './theme'
+import { wrapStops } from './stopWrap'
 import { dayDate, type Trip } from './trip'
 
 /**
@@ -41,9 +42,9 @@ async function fonts() {
   await Promise.race([Promise.all(specs.map((s) => document.fonts.load(s, '一巡りひとめぐり經縣值DAY0123'))), new Promise((r) => setTimeout(r, 3000))])
 }
 
-function setup(canvas: HTMLCanvasElement): CanvasRenderingContext2D {
+function setup(canvas: HTMLCanvasElement, h = H): CanvasRenderingContext2D {
   canvas.width = W
-  canvas.height = H
+  canvas.height = h
   const ctx = canvas.getContext('2d')
   if (!ctx) throw new Error('canvas')
   ctx.textBaseline = 'alphabetic'
@@ -160,11 +161,11 @@ export async function drawKeiken(canvas: HTMLCanvasElement, opts: { levelOf: (pr
 }
 
 // 縣界的出處（地球地図日本）列在 /credits，圖上不放（使用者決定 2026-10-11）
-function footer(ctx: CanvasRenderingContext2D, ink: string) {
+function footer(ctx: CanvasRenderingContext2D, ink: string, h = H) {
   ctx.textAlign = 'right'
   ctx.font = `700 26px ${LATIN}`
   ctx.fillStyle = ink
-  ctx.fillText('HITOMEGURI', W - 64, H - 40)
+  ctx.fillText('HITOMEGURI', W - 64, h - 40)
   ctx.textAlign = 'left'
 }
 
@@ -211,9 +212,56 @@ function fmtDate(d: string): string {
   return d.replaceAll('-', '.')
 }
 
+// 每天的停留點一列：DAY 標記、日期、地點（太長時在「→」處換行，一個地點也放不下時照字切）
+const LIST_TOP = 1036
+const LINE = 42
+const ROW_GAP = 16
+const DATE_X = 196
+
+interface DayRow {
+  idx: number
+  y: number
+  md: string
+  mdW: number
+  wd: string
+  x: number
+  lines: string[]
+}
+
+function measurer(): CanvasRenderingContext2D {
+  const ctx = document.createElement('canvas').getContext('2d')
+  if (!ctx) throw new Error('canvas')
+  return ctx
+}
+
+function layoutDays(trip: Trip): DayRow[] {
+  const m = measurer()
+  const rows: DayRow[] = []
+  let y = LIST_TOP
+  trip.days.forEach((d, idx) => {
+    const date = dayDate(trip, idx)
+    let md = ''
+    let wd = ''
+    let mdW = 0
+    let x = DATE_X
+    if (date) {
+      md = `${Number(date.slice(5, 7))}/${Number(date.slice(8, 10))}`
+      wd = `（${WEEK[new Date(`${date}T00:00:00`).getDay()]}）`
+      m.font = `600 28px ${LATIN}`
+      mdW = m.measureText(md).width
+      m.font = `400 24px ${SANS}`
+      x = DATE_X + mdW + 6 + m.measureText(wd).width + 10
+    }
+    m.font = `700 30px ${JA}`
+    const lines = d.stops.length ? wrapStops(d.stops.map((s) => s.name), W - 64 - x, (t) => m.measureText(t).width) : []
+    rows.push({ idx, y, md, mdW, wd, x, lines })
+    y += Math.max(1, lines.length) * LINE + ROW_GAP
+  })
+  return rows
+}
+
 export async function drawTripRecap(canvas: HTMLCanvasElement, trip: Trip, catalog: Catalog) {
   await fonts()
-  const ctx = setup(canvas)
   const days = trip.days.filter((d) => d.stops.length)
   const stops = trip.days.flatMap((d) => d.stops)
   const prefs = [...new Set(stops.map((s) => s.pref))]
@@ -225,8 +273,14 @@ export async function drawTripRecap(canvas: HTMLCanvasElement, trip: Trip, catal
   const c = prefColor(main) ?? nationalColor()
   const colorOf = (pref: string) => prefColor(pref) ?? nationalColor()
 
+  // 每天一列，地點多時換行（使用者回饋 2026-10-11：每一天都要列出來）；列不下時圖往下加高（最少 1350）
+  const rows = layoutDays(trip)
+  const last = rows[rows.length - 1]
+  const listBottom = last ? last.y + (Math.max(1, last.lines.length) - 1) * LINE : LIST_TOP
+  const height = Math.max(H, listBottom + 110)
+  const ctx = setup(canvas, height)
   ctx.fillStyle = c.paper
-  ctx.fillRect(0, 0, W, H)
+  ctx.fillRect(0, 0, W, height)
 
   // 上方色帶：行程名稱、日期、統計
   ctx.fillStyle = c.base
@@ -243,7 +297,7 @@ export async function drawTripRecap(canvas: HTMLCanvasElement, trip: Trip, catal
   ctx.fillText(fit(ctx, `${trip.days.length} 天　${stops.length} 個地方　${prefNames}`, W - 128), 64, 326)
 
   // 地圖：停留點範圍內的縣界＋每天的路線與順序
-  const card = { x: 60, y: 410, w: W - 120, h: 600 }
+  const card = { x: 60, y: 410, w: W - 120, h: 560 }
   roundRect(ctx, card.x, card.y, card.w, card.h, 24)
   ctx.fillStyle = cssToken('--color-map-water') || c.map
   ctx.fill()
@@ -310,6 +364,8 @@ export async function drawTripRecap(canvas: HTMLCanvasElement, trip: Trip, catal
       dots.filter(([dx, dy]) => dx > r.x - 60 && dx < r.x + mw + 30 && dy > r.y - 50 && dy < r.y + mh + 30).length
     const corner = corners.reduce((best, r) => (covered(r) < covered(best) ? r : best), corners[0]!)
     const mini = { ...corner, w: mw, h: mh }
+    // 縣名佔的位置（DAY 標籤讓開）
+    const labelBoxes: Array<{ x: number; y: number; w: number; h: number }> = []
     // 路線：每天一條，用那天主縣的 strong 色
     ctx.lineJoin = 'round'
     ctx.lineCap = 'round'
@@ -358,13 +414,15 @@ export async function drawTripRecap(canvas: HTMLCanvasElement, trip: Trip, catal
       ctx.strokeText(name, spot[0], spot[1])
       ctx.fillStyle = ours ? colorOf(pref).strong : c.sub
       ctx.fillText(name, spot[0], spot[1])
+      const lw = ctx.measureText(name).width
+      labelBoxes.push({ x: spot[0] - lw / 2 - 4, y: spot[1] - (ours ? 32 : 24), w: lw + 8, h: ours ? 40 : 30 })
       ctx.textAlign = 'left'
     }
     // 每天第一站旁標 DAY n（和下面的清單對得起來）：依序試點的右上、左上、右下、左下，
     // 不壓到日本全圖、已經放的標籤與停留點；都壓到時用右上
     type Box = { x: number; y: number; w: number; h: number }
     const hit = (a: Box, b: Box) => a.x < b.x + b.w && a.x + a.w > b.x && a.y < b.y + b.h && a.y + a.h > b.y
-    const placed: Box[] = [mini]
+    const placed: Box[] = [mini, ...labelBoxes]
     const dotBoxes: Box[] = dots.map(([dx, dy]) => ({ x: dx - 18, y: dy - 18, w: 36, h: 36 }))
     for (const d of days) {
       const p = d.stops.map((st) => catalog.mapSpots[st.pref]?.find((x) => x.id === st.spot_id)).find(Boolean)
@@ -404,40 +462,26 @@ export async function drawTripRecap(canvas: HTMLCanvasElement, trip: Trip, catal
   }
 
   // 每天的停留點
-  // 最多四列；超過時列三天，第四列寫「還有 n 天」（不壓到最下面的 HITOMEGURI）
-  let y = 1080
-  const shown = days.length > 4 ? days.slice(0, 3) : days
-  for (const d of shown) {
-    const idx = trip.days.indexOf(d)
-    const col = colorOf(d.stops[0]!.pref)
-    roundRect(ctx, 64, y - 34, 112, 46, 8)
+  // 每一天都列（沒排地點的天也留 DAY 標記與日期）；地點多時換行，第二行起對齊第一個地點
+  for (const r of rows) {
+    const d = trip.days[r.idx]!
+    const col = d.stops[0] ? colorOf(d.stops[0].pref) : c
+    roundRect(ctx, 64, r.y - 34, 112, 46, 8)
     ctx.fillStyle = col.base
     ctx.fill()
     ctx.fillStyle = col.on_base
     ctx.font = `700 28px ${LATIN}`
-    ctx.fillText(`DAY ${idx + 1}`, 78, y - 1)
-    const date = dayDate(trip, idx)
-    let x = 196
-    if (date) {
+    ctx.fillText(`DAY ${r.idx + 1}`, 78, r.y - 1)
+    if (r.md) {
       ctx.fillStyle = c.sub
       ctx.font = `600 28px ${LATIN}`
-      const md = `${Number(date.slice(5, 7))}/${Number(date.slice(8, 10))}`
-      ctx.fillText(md, x, y)
-      x += ctx.measureText(md).width + 6
+      ctx.fillText(r.md, DATE_X, r.y)
       ctx.font = `400 24px ${SANS}`
-      const wd = `（${WEEK[new Date(`${date}T00:00:00`).getDay()]}）`
-      ctx.fillText(wd, x, y)
-      x += ctx.measureText(wd).width + 10
+      ctx.fillText(r.wd, DATE_X + r.mdW + 6, r.y)
     }
     ctx.fillStyle = c.ink
     ctx.font = `700 30px ${JA}`
-    ctx.fillText(fit(ctx, d.stops.map((s) => s.name).join(' → '), W - 64 - x), x, y)
-    y += 62
+    r.lines.forEach((line, i) => ctx.fillText(line, r.x, r.y + i * LINE))
   }
-  if (days.length > shown.length) {
-    ctx.fillStyle = c.sub
-    ctx.font = `400 26px ${SANS}`
-    ctx.fillText(`還有 ${days.length - shown.length} 天`, 64, y)
-  }
-  footer(ctx, c.ink)
+  footer(ctx, c.ink, height)
 }

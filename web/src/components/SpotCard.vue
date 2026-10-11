@@ -122,7 +122,7 @@ const foil = computed(() => {
 })
 const dot = (d: string) => d.replaceAll('-', '.')
 const dateText = computed(() => (props.visitedOn ? dot(props.visitedOn) : ''))
-// 紀念卡（特別全景）：卡面印上自己的紀錄。世界遺產、國寶再加整張的虹色箔片與亮片
+// 紀念卡（特別全景）：卡面印上自己的紀錄、整張虹色箔片；世界遺產、國寶再加亮片
 const record = computed(() => (props.variant.kind === 'special' ? props.variant.record : undefined))
 const memorialShine = computed(() => props.variant.kind === 'special' && memorialFoil(props.card.designation))
 const laterText = computed(() => {
@@ -272,9 +272,9 @@ const sizeClass = { sm: 'text-[10px]', lg: 'text-[16px]', fluid: 'fluid' }
           <circle cx="30" cy="30" r="20" fill="none" stroke="currentColor" stroke-width="1.2" />
           <path d="M58 18q6-5 12 0t12 0 12 0M58 30q6-5 12 0t12 0 12 0M58 42q6-5 12 0t12 0 12 0" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" />
         </svg>
-        <!-- 全景、特別全景：整張卡的蝕刻紋；世界遺產、國寶的特別全景加虹與亮片；夜景是星點 -->
+        <!-- 全景、特別全景：整張卡的蝕刻紋；特別全景整張虹色箔片，世界遺產、國寶再加亮片；夜景是星點 -->
         <div v-if="variant.kind === 'full' || variant.kind === 'special'" class="etched pointer-events-none absolute inset-0"></div>
-        <div v-if="memorialShine" class="foil whole pointer-events-none absolute inset-0"></div>
+        <div v-if="variant.kind === 'special'" class="foil whole pointer-events-none absolute inset-0"></div>
         <div
           v-if="memorialShine || variant.kind === 'night'"
           class="sparkle whole pointer-events-none absolute inset-0"
@@ -321,9 +321,16 @@ const sizeClass = { sm: 'text-[10px]', lg: 'text-[16px]', fluid: 'fluid' }
   width: 28em;
   aspect-ratio: 7 / 5;
 }
-/* 橫的紀念卡：紀錄框不拉滿卡寬（八個小章一行放得下），右邊的照片露出來 */
-.landscape .record {
-  max-width: 18em;
+/* 橫的紀念卡：紀錄框縮成八成、放在右下（名稱在左下、頁尾之上），照片中間露出來；
+   名稱右邊讓出紀錄框的寬度 */
+.landscape .v-special .record {
+  position: absolute;
+  right: 0.75em;
+  bottom: 2.7em;
+  font-size: 0.8em;
+}
+.landscape .v-special .name-block {
+  padding-right: 14.5em;
 }
 /* 跟著外層容器寬的橫卡：卡寬 28em＝容器寬 */
 .fluid.landscape:not(.sideways) {
