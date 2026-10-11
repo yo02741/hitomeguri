@@ -2,7 +2,6 @@ import {
   BufferGeometry,
   CanvasTexture,
   CircleGeometry,
-  Color,
   DataTexture,
   DoubleSide,
   Float32BufferAttribute,
@@ -265,11 +264,63 @@ function rowFill(canvas: HTMLCanvasElement): HTMLCanvasElement {
   return out
 }
 
-/** 單品的範圍：小圖的 viewBox 往外留一點 */
+/** 一個顏色字串換成 RGB（用 1×1 的 canvas 讓瀏覽器解析） */
+function rgbOf(color: string): [number, number, number] {
+  const c = document.createElement('canvas')
+  c.width = c.height = 1
+  const g = c.getContext('2d', { willReadFrequently: true })!
+  g.fillStyle = color
+  g.fillRect(0, 0, 1, 1)
+  const d = g.getImageData(0, 0, 1, 1).data
+  return [d[0]!, d[1]!, d[2]!]
+}
+
+/**
+ * 頭的球面貼圖：頭髮剪影蓋到的地方塗髮色，其他是膚色。瀏海那層只沿 z 浮在球面前面，頭的側邊幾乎貼著球面，
+ * 與後層頭髮之間會露出一點球面；塗成髮色，轉到側面就不會看到膚色的斑塊。
+ * 前半球只看瀏海那層（後層的剪影在臉的後面），後半球兩層都算。球面的 UV 是經緯度（SphereGeometry）
+ */
+function scalpTexture(front: Cover, back: Cover, skin: string, hair: string): Texture {
+  const W = 256
+  const H = 128
+  const c = document.createElement('canvas')
+  c.width = W
+  c.height = H
+  const g = c.getContext('2d')!
+  const img = g.createImageData(W, H)
+  const s = rgbOf(skin)
+  const h = rgbOf(hair)
+  for (let r = 0; r < H; r++) {
+    const theta = ((r + 0.5) / H) * Math.PI
+    for (let col = 0; col < W; col++) {
+      const phi = ((col + 0.5) / W) * Math.PI * 2
+      const px = -Math.cos(phi) * Math.sin(theta)
+      const py = Math.cos(theta)
+      const pz = Math.sin(phi) * Math.sin(theta)
+      const x = HEAD.cx + HEAD.rx * px
+      const y = HEAD.cy - HEAD.ry * py
+      const isHair = pz >= 0 ? front(x, y) >= 0.5 : front(x, y) >= 0.5 || back(x, y) >= 0.5
+      const rgb = isHair ? h : s
+      const i = (r * W + col) * 4
+      img.data[i] = rgb[0]
+      img.data[i + 1] = rgb[1]
+      img.data[i + 2] = rgb[2]
+      img.data[i + 3] = 255
+    }
+  }
+  g.putImageData(img, 0, 0)
+  return texture(c)
+}
+
+/** 單品的範圍：小圖的 viewBox 往外留一點。手上的再加上軀幹（斜背的帶子從肩膀拉下來，小圖裡只畫到一半） */
 function itemBox(id: string): ViewBox {
   const o = outfitById.get(id)!
   const [x, y, w, h] = o.icon.split(/\s+/).map(Number) as [number, number, number, number]
-  return [x - 8, y - 8, w + 16, h + 16]
+  const box: ViewBox = [x - 8, y - 8, w + 16, h + 16]
+  if (o.slot !== 'hand') return box
+  const x0 = Math.min(box[0], 84)
+  const y0 = Math.min(box[1], 128)
+  return [x0, y0, Math.max(box[0] + box[2], 156) - x0, Math.max(box[1] + box[3], 238) - y0]
 }
 
 export async function buildAvatar(parts: AvatarParts, equipped: Partial<Record<Slot, string>>): Promise<Avatar3D> {
@@ -306,12 +357,13 @@ export async function buildAvatar(parts: AvatarParts, equipped: Partial<Record<S
   const coverHair = coverOf(faceItem, headItem)
 
   // 身體＋衣服（手上的、夥伴另外做）：軀幹、腿一塊，兩隻手臂（含袖子、手）各自一塊，
-  // 分開鼓才是圓的手臂，側面不會被拉成一片。都以 z = 0 為中心
+  // 分開鼓才是圓的手臂，側面不會被拉成一片。都以 z = 0 為中心。
+  // 兩塊在切線上都是 0 厚，接縫會透出後面（長髮）的顏色：手臂那塊往軀幹多切 3px，互相蓋住接縫
   const bodyVb: ViewBox = [48, 132, 144, 156]
   const bodyArt = resolveVars(bodySvg(skin, svgOf('body')), local)
   const clips =
     `<clipPath id="clip-torso"><path d="M90.5 132 L149.5 132 L149.5 233 L192 233 L192 288 L48 288 L48 233 L90.5 233Z"/></clipPath>` +
-    `<clipPath id="clip-arms"><path d="M48 132 L90.5 132 L90.5 233 L48 233Z M149.5 132 L192 132 L192 233 L149.5 233Z"/></clipPath>`
+    `<clipPath id="clip-arms"><path d="M48 132 L93.5 132 L93.5 233 L48 233Z M146.5 132 L192 132 L192 233 L146.5 233Z"/></clipPath>`
   const [torsoCanvas, armsCanvas] = await Promise.all([
     rasterize(`<g clip-path="url(#clip-torso)">${bodyArt}</g>`, bodyVb, SCALE, defs + clips),
     rasterize(`<g clip-path="url(#clip-arms)">${bodyArt}</g>`, bodyVb, SCALE, defs + clips),
@@ -322,32 +374,74 @@ export async function buildAvatar(parts: AvatarParts, equipped: Partial<Record<S
   add(new Mesh(torso.geometry, toon(torsoCanvas)))
   add(new Mesh(arms.geometry, toon(armsCanvas)))
   const body = { heightAt: (x: number, y: number) => Math.max(torso.heightAt(x, y), arms.heightAt(x, y)) }
+  // 身體表面「附近 8px 內最高的」：貼著身體的東西（背後的長髮、手上的）用這個，越過手臂、身體的薄邊時
+  // 不會一下子掉到 0 而穿出來或折彎。先算成每 2px 一格的表（橫、直各取一次最大），查表很快
+  const near = (() => {
+    const [bx, by, bw, bh] = bodyVb
+    const G = 2
+    const R = 4
+    const w = Math.floor(bw / G) + 1
+    const h = Math.floor(bh / G) + 1
+    const raw = new Float32Array(w * h)
+    for (let j = 0; j < h; j++) for (let i = 0; i < w; i++) raw[j * w + i] = body.heightAt(bx + i * G, by + j * G)
+    const row = new Float32Array(w * h)
+    for (let j = 0; j < h; j++)
+      for (let i = 0; i < w; i++) {
+        let m = 0
+        for (let k = Math.max(0, i - R); k <= Math.min(w - 1, i + R); k++) m = Math.max(m, raw[j * w + k]!)
+        row[j * w + i] = m
+      }
+    const out = new Float32Array(w * h)
+    for (let j = 0; j < h; j++)
+      for (let i = 0; i < w; i++) {
+        let m = 0
+        for (let k = Math.max(0, j - R); k <= Math.min(h - 1, j + R); k++) m = Math.max(m, row[k * w + i]!)
+        out[j * w + i] = m
+      }
+    return (x: number, y: number) => {
+      const i = Math.round((x - bx) / G)
+      const j = Math.round((y - by) / G)
+      return i < 0 || j < 0 || i >= w || j >= h ? 0 : out[j * w + i]!
+    }
+  })()
+
+  // 頭髮的兩層先畫好：頭的球面要塗上頭髮蓋到的地方
+  const hair = HAIR[parts.hair] ?? HAIR.bob
+  const hairVb: ViewBox = [30, 14, 180, 250]
+  const frontVb: ViewBox = [40, 20, 160, 150]
+  const [backCanvas, frontCanvas] = await Promise.all([
+    rasterize(resolveVars(hair.back, local), hairVb, SCALE, defs),
+    rasterize(resolveVars(hair.front, local), frontVb, SCALE, defs),
+  ])
 
   // 頭
-  const head = new Mesh(new SphereGeometry(1, 64, 48), new MeshToonMaterial({ color: new Color(skin), gradientMap: gradientMap() }))
+  const scalp = scalpTexture(alphaSampler(frontCanvas, frontVb, SCALE), alphaSampler(backCanvas, hairVb, SCALE), skin, css(`--color-doll-hair-${parts.hairColor}`))
+  const head = new Mesh(new SphereGeometry(1, 64, 48), new MeshToonMaterial({ map: scalp, gradientMap: gradientMap() }))
   head.scale.set(HEAD.rx * PX, HEAD.ry * PX, HEAD.rz * PX)
   head.position.set(worldX(HEAD.cx), worldY(HEAD.cy), 0)
   add(head)
   const faceVb: ViewBox = [66, 44, 108, 112]
   add(faceMesh(await rasterize(resolveVars(faceSvg(EYES[parts.eyes] ?? EYES.round), local), faceVb, 6, defs), faceVb))
 
-  // 頭髮後層：頭的範圍內只有背面（包住後腦）；頭以外是蓬鬆的一塊，往下時貼著背（身體的背面再往後一點）
-  const hair = HAIR[parts.hair] ?? HAIR.bob
-  const hairVb: ViewBox = [30, 14, 180, 250]
-  const backCanvas = await rasterize(resolveVars(hair.back, local), hairVb, SCALE, defs)
+  // 頭髮後層：頭的範圍內包住後腦；頭以外是蓬鬆的一塊，往下時貼著背（身體的背面再往後一點）
   const hairBack = (x: number, y: number): Surface => {
     const keep = 1 - 0.8 * coverHair(x, y)
-    const hz = headZ(x, y, 1.04)
-    if (hz !== null) return { front: null, back: -(hz + 1), lift: 0.5 * keep }
     const t = smooth(120, 165, y)
-    const z = -2 * (1 - t) + -(body.heightAt(x, y) + 5) * t
-    return { front: z, back: z, lift: keep * (1 - 0.35 * t) }
+    const zOut = -2 * (1 - t) - (near(x, y) + 5) * t
+    const liftOut = keep * (1 - 0.35 * t)
+    const hz = headZ(x, y, 1.1)
+    if (hz !== null) {
+      // 頭的範圍內藏在後腦勺後面（頭的球面擋住）；出了頭的外緣（頭外 0–5px）高度、厚度漸漸接上外面那塊，
+      // 交界是連續的斜面，轉到側面不會缺一格一格或一道陡壁（鋸齒）
+      const w = smooth(1, 1.1, headR(x, y))
+      const z = zOut - hz * (1 - w)
+      return { front: z, back: z, lift: 0.25 * keep + (liftOut - 0.25 * keep) * w, bias: w - 1 }
+    }
+    return { front: zOut, back: zOut, lift: liftOut }
   }
   add(new Mesh(inflateLayer({ canvas: backCanvas, vb: hairVb, scale: SCALE, step: 1, bulge: 3, maxH: 13, base: hairBack }).geometry, toon(backCanvas)))
 
   // 瀏海：貼著頭往外鼓一點
-  const frontVb: ViewBox = [40, 20, 160, 150]
-  const frontCanvas = await rasterize(resolveVars(hair.front, local), frontVb, SCALE, defs)
   add(new Mesh(inflateLayer({ canvas: frontCanvas, vb: frontVb, scale: SCALE, step: 1, bulge: 1.2, maxH: 4, base: onHead(1.5, 0, { grow: 1.0, thin: 0.6, cover: coverHair }) }).geometry, toon(frontCanvas)))
 
   // 臉上的（在瀏海前面）、頭上的（再前面）
@@ -359,11 +453,12 @@ export async function buildAvatar(parts: AvatarParts, equipped: Partial<Record<S
     add(new Mesh(geo, toon(lathe ? rowFill(headItem.canvas) : headItem.canvas)))
   }
 
-  // 手上的：放在身體表面前面一點（握在右手）；夥伴：腳邊、比身體再前面
+  // 手上的：背面貼著身體表面（附近最高的）、厚度往前長（握在右手；斜背的帶子貼在衣服上，不會埋進身體）；
+  // 夥伴：腳邊、比身體再前面
   if (handItem) {
     const z = (x: number, y: number): Surface => {
-      const b = body.heightAt(x, y) * 0.75
-      return { front: b, back: b }
+      const b = near(x, y)
+      return { front: b, back: b, bias: 0.6 }
     }
     add(new Mesh(inflateLayer({ canvas: handItem.canvas, vb: handItem.vb, scale: SCALE, step: 1, bulge: 2.4, maxH: 9, base: z }).geometry, toon(handItem.canvas)))
   }

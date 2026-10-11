@@ -6,7 +6,7 @@ import type { ViewBox } from './raster'
  * 3D 旅人（DESIGN.md §7.24a）：把 2D 剪影「充氣」成有厚度的形狀。
  * 剪影取自點陣的 alpha；每一點離邊緣多遠（距離場）決定鼓多高：h = bulge × √d，邊緣是 0、越往中間越厚，
  * 剖面是圓的，像布偶或軟膠公仔。前後兩面的基準 z 由 base() 決定（平面、或貼著頭的球面）。
- * 網格沿著輪廓走（marching squares：格線兩端一裡一外時，在 alpha 0.5 的地方補一個點），
+ * 網格沿著輪廓走（marching squares：格線兩端一裡一外時，在 alpha 0.5 的地方補一個點，位置在點陣上二分搜尋），
  * 前後兩面在輪廓上共用同一個點，轉到側面不會有裂縫或鋸齒。
  */
 
@@ -21,6 +21,8 @@ export interface Surface {
   back: number | null
   /** 這一點鼓起的比例（0–1，預設 1）：貼在頭上、被別的東西蓋住的地方薄一點 */
   lift?: number
+  /** 厚度往前偏多少（-1–1，預設 0 前後一樣厚）：放在身體表面上的東西背面貼著、厚度往前長 */
+  bias?: number
 }
 
 export interface LayerSpec {
@@ -60,12 +62,14 @@ export function alphaSampler(canvas: HTMLCanvasElement, vb: ViewBox, scale: numb
   }
 }
 
-/** 兩次掃描的倒角距離（3-4 chamfer），單位是格 */
-function distanceField(mask: Uint8Array, w: number, h: number): Float32Array {
-  const INF = 1e9
+/**
+ * 兩次掃描的倒角距離，單位是格。起點是輪廓旁邊的點：到輪廓的精確距離（edge[i]，0–1 格，沒有就是 Infinity），
+ * 再往裡面傳；輪廓用精確位置起算，斜邊上的厚度才不會一格高一格低（側面看像階梯）
+ */
+function distanceField(mask: Uint8Array, edge: Float32Array, w: number, h: number): Float32Array {
   const d = new Float32Array(w * h)
-  for (let i = 0; i < w * h; i++) d[i] = mask[i] ? INF : 0
-  const at = (x: number, y: number) => (x < 0 || y < 0 || x >= w || y >= h ? 0 : d[y * w + x]!)
+  for (let i = 0; i < w * h; i++) d[i] = mask[i] ? edge[i]! : 0
+  const at = (x: number, y: number) => (x < 0 || y < 0 || x >= w || y >= h || !mask[y * w + x] ? Infinity : d[y * w + x]!)
   for (let y = 0; y < h; y++)
     for (let x = 0; x < w; x++) {
       const i = y * w + x
@@ -89,17 +93,49 @@ export function inflateLayer(spec: LayerSpec): Layer {
   const gw = Math.floor(vw / step) + 1
   const gh = Math.floor(vh / step) + 1
   const alpha = alphaSampler(canvas, vb, scale)
-  const a = new Float32Array(gw * gh)
   const inside = new Uint8Array(gw * gh)
   for (let j = 0; j < gh; j++)
     for (let i = 0; i < gw; i++) {
       const k = j * gw + i
       // 畫布最外一圈當作外面，形狀一定封閉
       const v = i === 0 || j === 0 || i === gw - 1 || j === gh - 1 ? 0 : alpha(vx + i * step, vy + j * step)
-      a[k] = v
       inside[k] = v >= LEVEL ? 1 : 0
     }
-  const dist = distanceField(inside, gw, gh)
+  // 格點一格 1px，點陣的反鋸齒邊只有 1/4px 寬：格點上的 alpha 幾乎只有 0 或 1，看不出邊在格子的哪裡。
+  // 沿著格邊在點陣上二分搜尋 alpha 0.5 的位置（從裡面那端算起的比例），輪廓與距離都用這個
+  const crossCache = new Map<number, number>()
+  const crossing = (kin: number, kout: number): number => {
+    // 同一條格邊只算一次（裡外哪端在前都一樣，t 一律從裡面那端算）
+    const key = Math.min(kin, kout) * 2 + (Math.abs(kin - kout) === 1 ? 0 : 1)
+    const hit = crossCache.get(key)
+    if (hit !== undefined) return hit
+    const xi = vx + (kin % gw) * step
+    const yi = vy + Math.floor(kin / gw) * step
+    const xo = vx + (kout % gw) * step
+    const yo = vy + Math.floor(kout / gw) * step
+    let lo = 0
+    let hi = 1
+    // 最外一圈當作外面，那裡不搜尋（取中間）
+    const border = (k: number) => k % gw === 0 || k % gw === gw - 1 || k < gw || k >= gw * (gh - 1)
+    if (border(kout)) lo = hi = 0.5
+    for (let n = 0; n < 6 && hi - lo > 1e-3; n++) {
+      const m = (lo + hi) / 2
+      if (alpha(xi + (xo - xi) * m, yi + (yo - yi) * m) >= LEVEL) lo = m
+      else hi = m
+    }
+    const t = (lo + hi) / 2
+    crossCache.set(key, t)
+    return t
+  }
+  const edge = new Float32Array(gw * gh).fill(Infinity)
+  for (let j = 0; j < gh; j++)
+    for (let i = 0; i < gw; i++) {
+      const k = j * gw + i
+      if (!inside[k]) continue
+      for (const q of [i > 0 ? k - 1 : -1, i < gw - 1 ? k + 1 : -1, j > 0 ? k - gw : -1, j < gh - 1 ? k + gw : -1])
+        if (q >= 0 && !inside[q]) edge[k] = Math.min(edge[k]!, crossing(k, q))
+    }
+  const dist = distanceField(inside, edge, gw, gh)
   const height = new Float32Array(gw * gh)
 
   const pos: number[] = []
@@ -123,12 +159,12 @@ export function inflateLayer(spec: LayerSpec): Layer {
       const y = vy + j * step
       const s = spec.base(x, y)
       bases[k] = s
-      // 最外一圈離輪廓大約半格
-      const d = Math.max(0, dist[k]! - 0.5) * step
+      const d = dist[k]! * step
       const h = Math.min(spec.maxH, spec.bulge * Math.sqrt(d)) * (s.lift ?? 1)
       height[k] = h
-      if (s.front !== null) front[k] = push(x, y, s.front + h)
-      if (s.back !== null) back[k] = push(x, y, s.back - h)
+      const bias = s.bias ?? 0
+      if (s.front !== null) front[k] = push(x, y, s.front + h * (1 + bias))
+      if (s.back !== null) back[k] = push(x, y, s.back - h * (1 - bias))
     }
 
   // 輪廓上的點：h = 0；前後基準相同時前後共用一個點，兩面在這裡接起來
@@ -140,7 +176,7 @@ export function inflateLayer(spec: LayerSpec): Layer {
     if (f !== undefined) return [f, edgeBack.get(key)!]
     const kin = inside[k1] ? k1 : k2
     const kout = kin === k1 ? k2 : k1
-    const t = Math.min(1, Math.max(0, (a[kin]! - LEVEL) / Math.max(1e-6, a[kin]! - a[kout]!)))
+    const t = crossing(kin, kout)
     const xi = vx + (kin % gw) * step
     const yi = vy + Math.floor(kin / gw) * step
     const xo = vx + (kout % gw) * step

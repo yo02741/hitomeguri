@@ -6,8 +6,8 @@ import PaperDoll from '../components/PaperDoll.vue'
 import { EYE_STYLES, HAIR_COLORS, HAIR_STYLES, OUTFITS, SKINS, type Slot, SLOTS } from '../data/outfits'
 import { type AvatarParts, useAvatarStore } from '../stores/avatar'
 
-// 3D 旅人的試作頁（DESIGN.md §7.24a，2026-10-11）：左邊現在的紙娃娃、右邊 3D，換外觀與服裝對照看。
-// 還沒接到旅人頁；這裡可以試穿全部的單品（試作用，不改收集的資料）。three.js 只有這頁才載入。
+// 3D 旅人的對照頁（DESIGN.md §7.24a，2026-10-11）：左邊現在的紙娃娃、右邊 3D，換外觀與服裝對照看。
+// 旅人頁的展示窗也是這個 3D；這裡可以試穿全部的單品（對照用，不改收集的資料）。
 const Avatar3D = defineAsyncComponent(() => import('../components/Avatar3D.vue'))
 
 const avatar = useAvatarStore()

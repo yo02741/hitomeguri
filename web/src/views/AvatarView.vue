@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, onBeforeUnmount, ref, watch } from 'vue'
+import { computed, defineAsyncComponent, onBeforeUnmount, ref, watch } from 'vue'
 
 import AvatarRules from '../components/AvatarRules.vue'
 import BackLink from '../components/BackLink.vue'
@@ -7,6 +7,7 @@ import DollGacha from '../components/DollGacha.vue'
 import NewTag from '../components/NewTag.vue'
 import DollSpin from '../components/DollSpin.vue'
 import PaperDoll from '../components/PaperDoll.vue'
+import { canWebGL } from '../services/webgl'
 import { achvById, nameText } from '../data/achievements'
 import { EYE_STYLES, HAIR_COLORS, HAIR_STYLES, OUTFITS, type Outfit, SKINS, type Slot, SLOTS } from '../data/outfits'
 import { regionOf, regions } from '../data/regions'
@@ -16,6 +17,11 @@ import { useUserStore } from '../stores/user'
 import { useWalletStore } from '../stores/wallet'
 import { scrollParent } from '../composables/scrollSpy'
 import { wide } from '../services/viewport'
+
+// 展示窗用 3D（DESIGN.md §7.24a，three.js 只有這頁才下載、不在離線預先下載裡）；
+// 不支援 WebGL、或離線載不到 3D 的那塊時，用原本的紙立牌（兩個元件的 props 一樣）
+const Avatar3D = defineAsyncComponent(() => import('../components/Avatar3D.vue').catch(() => DollSpin))
+const use3d = canWebGL()
 
 // 旅人（紙娃娃，DESIGN.md §7.24）：左邊是角色與「抽服裝」，右邊是衣櫃：外觀與五個位置的服裝，單品是貼紙；
 // 還沒有的只剩剪影，新拿到還沒點過的標 NEW。抽服裝用抽獎券（與景點卡共用），只抽還沒有的。
@@ -165,7 +171,8 @@ function wear() {
           <span class="wa-pattern wa-seigaiha pointer-events-none absolute inset-0 bg-region opacity-25" aria-hidden="true"></span>
           <span class="floor pointer-events-none absolute inset-x-0 bottom-0 h-[17%] bg-region" :style="vis ? { height: `${Math.round(vis * 0.17)}px` } : undefined" aria-hidden="true"></span>
           <div class="absolute inset-x-0 bottom-0 h-full" :style="vis ? { height: `${vis}px` } : undefined">
-            <DollSpin :parts="avatar.parts" :equipped="avatar.worn" class="absolute inset-0" />
+            <Avatar3D v-if="use3d" :parts="avatar.parts" :equipped="avatar.worn" class="absolute inset-0" />
+            <DollSpin v-else :parts="avatar.parts" :equipped="avatar.worn" class="absolute inset-0" />
           </div>
         </div>
         <button

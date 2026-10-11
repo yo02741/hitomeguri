@@ -58,7 +58,7 @@ const rewards = OUTFITS.filter((o) => o.achv)
     <section class="flex flex-col gap-2" aria-labelledby="r-stage">
       <h3 id="r-stage" class="text-body-sm font-bold text-sub">展示窗</h3>
       <ul class="flex flex-col gap-1.5 text-body-sm leading-relaxed">
-        <li>左右拖拉可以轉，看得到紙的背面；雙擊轉回正面。</li>
+        <li>左右拖拉可以轉，鍵盤 ←→ 也可以；雙擊轉回正面。</li>
         <li>穿上的會跟著在網站下方散步（帳號選單可以關）。</li>
       </ul>
     </section>
