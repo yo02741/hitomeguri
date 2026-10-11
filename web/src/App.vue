@@ -44,7 +44,8 @@ const DollWalker = defineAsyncComponent(() => import('./components/DollWalker.vu
     :data-pref="explore.activePref ?? undefined"
     class="flex h-dvh flex-col bg-paper text-ink transition-colors duration-200 print:block print:h-auto"
   >
-    <AppHeader />
+    <!-- 形象網站（/about，meta.bare）：頁面自己有海報與頁尾，不放 app 的標頭與分頁列 -->
+    <AppHeader v-if="!route.meta.bare" />
     <!-- 列印（旅前小書）時攤開固定高度的捲動版面，否則只印得出第一頁。
          id 給換頁的捲動位置用（services/scrollRestore.ts）。
          橫向的瀏海：內容左右讓出安全區；沒有分頁列（≥1024、手機打橫）時底部也讓出。
@@ -56,7 +57,7 @@ const DollWalker = defineAsyncComponent(() => import('./components/DollWalker.vu
     >
       <RouterView />
     </main>
-    <TabBar />
+    <TabBar v-if="!route.meta.bare" />
     <AppUpdate />
     <ConfirmDialog v-if="confirmRequest" :key="confirmRequest.id" :req="confirmRequest" />
     <template v-if="userStore.user">

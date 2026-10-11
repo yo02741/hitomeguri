@@ -64,6 +64,8 @@ export const router = createRouter({
       meta: { title: '清單' },
     },
     { path: '/credits', name: 'credits', component: () => import('../views/CreditsView.vue'), meta: { title: '資料來源' } },
+    // 形象網站：不顯示 app 的標頭與分頁列（App.vue 的 meta.bare）
+    { path: '/about', name: 'about', component: () => import('../views/AboutView.vue'), meta: { title: '關於', bare: true } },
     { path: '/:pathMatch(.*)*', redirect: '/' },
   ],
 })
