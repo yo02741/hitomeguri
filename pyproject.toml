@@ -9,6 +9,8 @@ dependencies = [
   "anthropic>=1.0",
   # 中文維基簡介轉繁體（字元轉換，不改用語）
   "opencc-python-reimplemented>=0.1.7",
+  # 国土交通省「国際定期便の概要」PDF 的文字（seed-airports）；crypto：只設了使用限制的加密 PDF
+  "pypdf[crypto]>=5",
 ]
 
 [project.optional-dependencies]

@@ -7,6 +7,7 @@
 - 鐵路：車站的路線、相鄰站的兩端都要存在，距離合理；新幹線站要有新幹線停靠。
 - 市区町村界：代碼（含檢查碼）與縣相符、依代碼排序、環要封閉、座標在日本；景點的 municipality
   要是那一縣的區。
+- 機場清單（data/seed/airports.json）：schema、依 id 排序、縣存在；清單上的機場要是那一縣的景點。
 - 來源：每筆都要有來源網址與取得時間（CLAUDE.md）。
 - 文風：翻譯的簡介不能有 §6a 的禁用句型。
 - bundle：data/ 能建出前端的 bundle。
@@ -153,6 +154,45 @@ def check_ukiyoe(data_dir: Path, res: Result) -> None:
     if len(problems) > MAX_ERRORS_PER_FILE:
         res.errors.append(f"{_rel(path)}：另有 {len(problems) - MAX_ERRORS_PER_FILE} 項有問題")
     res.warnings.append(f"浮世繪：{len(data)} 個景點、{works} 幅")
+
+
+def check_airports(data_dir: Path, prefs: set[str], res: Result) -> None:
+    """有國際定期航班的機場（seed-airports）：schema、依 id 排序、縣；清單上的機場是不是景點。"""
+    path = data_dir / "seed" / "airports.json"
+    if not path.exists():
+        return
+    res.files += 1
+    text = path.read_text(encoding="utf-8")
+    try:
+        data = json.loads(text)
+        seed = models.AirportSeed.model_validate(data)
+    except (json.JSONDecodeError, ValidationError) as e:
+        res.errors.append(f"{_rel(path)}：讀不了或不符合 schema（{str(e).splitlines()[0]}）")
+        return
+    check_format(path, text, data, res)
+    res.records += len(seed.airports)
+    problems: list[str] = []
+    ids = [a.id for a in seed.airports]
+    if ids != sorted(ids) or len(set(ids)) != len(ids):
+        problems.append("沒有依 id 排序或 id 重複")
+    for a in seed.airports:
+        if a.id != f"wd-{a.wikidata}":
+            problems.append(f"{a.id}：id 和 wikidata {a.wikidata} 不符")
+        if a.prefecture not in prefs:
+            problems.append(f"{a.id}：縣 {a.prefecture!r} 不存在")
+    for p in problems[:MAX_ERRORS_PER_FILE]:
+        res.errors.append(f"{_rel(path)}（{p}）")
+    missing = []
+    for a in seed.airports:
+        spots = data_dir / "spots" / f"{a.prefecture}.json"
+        found = spots.exists() and any(
+            s.get("id") == a.id for s in json.loads(spots.read_text(encoding="utf-8"))
+        )
+        if not found:
+            missing.append(f"{a.name_ja}（{a.prefecture}）")
+    if missing:
+        res.warnings.append(f"機場清單上、還不是景點的：{'、'.join(missing)}（跑 seed-airports）")
+    res.warnings.append(f"機場：{len(seed.airports)} 個（{seed.source.url}）")
 
 
 def check_rail(path: Path, data: models.RailData, res: Result) -> None:
@@ -322,6 +362,7 @@ def validate(data_dir: Path = DATA, bundles: bool = True) -> Result:
         res.warnings.append(f"鐵路：車站 {stations}（有停靠路線 {served}）、相鄰站 {edges}")
     check_spot_municipalities(data_dir, check_municipalities(data_dir, pref_list, res), res)
     check_ukiyoe(data_dir, res)
+    check_airports(data_dir, prefs, res)
     check_banned(res)
     if bundles:
         check_bundles(res)

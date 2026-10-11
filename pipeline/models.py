@@ -415,6 +415,25 @@ class FlightRoute(StrictModel):
     sources: list[Source] = Field(default_factory=list)
 
 
+class SeedAirport(StrictModel):
+    """有國際定期航班的機場一筆（seed-airports）：名稱、IATA 代碼取自 Wikidata，
+    縣由座標判斷；matched 是「国際定期便の概要」裡對到的字串（審核用）。"""
+
+    id: str = Field(pattern=r"^wd-Q\d+$")  # 景點 id
+    wikidata: str = Field(pattern=r"^Q\d+$")
+    iata: str = Field(pattern=r"^[A-Z]{3}$")
+    name_ja: str
+    prefecture: Prefecture
+    matched: str
+
+
+class AirportSeed(StrictModel):
+    """data/seed/airports.json：国土交通省「国際定期便の概要」列出的日本機場，依 id 排序。"""
+
+    source: Source
+    airports: list[SeedAirport]
+
+
 class UkiyoeWork(StrictModel):
     """描繪景點的浮世繪一幅（seed-ukiyoe）：題名、系列、年份、作者取自作品的 Wikidata 項目，
     圖與作者、授權取自 Commons。只收公有領域、CC0、CC 授權的圖。"""

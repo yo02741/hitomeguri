@@ -1,0 +1,1016 @@
+[
+ {
+  "item": {
+   "type": "uri",
+   "value": "http://www.wikidata.org/entity/Q9000001"
+  },
+  "iata": {
+   "type": "literal",
+   "value": "OKA"
+  },
+  "coord": {
+   "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+   "type": "literal",
+   "value": "Point(127.6459 26.1958)"
+  },
+  "ja": {
+   "type": "literal",
+   "value": "那覇空港",
+   "xml:lang": "ja"
+  },
+  "typeLabel": {
+   "type": "literal",
+   "value": "空港",
+   "xml:lang": "ja"
+  },
+  "iso": {
+   "type": "literal",
+   "value": "JP-47"
+  }
+ },
+ {
+  "item": {
+   "type": "uri",
+   "value": "http://www.wikidata.org/entity/Q9000001"
+  },
+  "iata": {
+   "type": "literal",
+   "value": "OKA"
+  },
+  "coord": {
+   "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+   "type": "literal",
+   "value": "Point(127.6459 26.1958)"
+  },
+  "ja": {
+   "type": "literal",
+   "value": "那覇空港",
+   "xml:lang": "ja"
+  },
+  "typeLabel": {
+   "type": "literal",
+   "value": "airport",
+   "xml:lang": "en"
+  },
+  "iso": {
+   "type": "literal",
+   "value": "JP-47"
+  }
+ },
+ {
+  "item": {
+   "type": "uri",
+   "value": "http://www.wikidata.org/entity/Q9000002"
+  },
+  "iata": {
+   "type": "literal",
+   "value": "HND"
+  },
+  "coord": {
+   "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+   "type": "literal",
+   "value": "Point(139.7811 35.5533)"
+  },
+  "ja": {
+   "type": "literal",
+   "value": "東京国際空港",
+   "xml:lang": "ja"
+  },
+  "alias": {
+   "type": "literal",
+   "value": "羽田空港",
+   "xml:lang": "ja"
+  },
+  "typeLabel": {
+   "type": "literal",
+   "value": "空港",
+   "xml:lang": "ja"
+  },
+  "iso": {
+   "type": "literal",
+   "value": "JP-13"
+  }
+ },
+ {
+  "item": {
+   "type": "uri",
+   "value": "http://www.wikidata.org/entity/Q9000002"
+  },
+  "iata": {
+   "type": "literal",
+   "value": "HND"
+  },
+  "coord": {
+   "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+   "type": "literal",
+   "value": "Point(139.7811 35.5533)"
+  },
+  "ja": {
+   "type": "literal",
+   "value": "東京国際空港",
+   "xml:lang": "ja"
+  },
+  "alias": {
+   "type": "literal",
+   "value": "羽田空港",
+   "xml:lang": "ja"
+  },
+  "typeLabel": {
+   "type": "literal",
+   "value": "国際空港",
+   "xml:lang": "ja"
+  },
+  "iso": {
+   "type": "literal",
+   "value": "JP-13"
+  }
+ },
+ {
+  "item": {
+   "type": "uri",
+   "value": "http://www.wikidata.org/entity/Q9000003"
+  },
+  "iata": {
+   "type": "literal",
+   "value": "NRT"
+  },
+  "coord": {
+   "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+   "type": "literal",
+   "value": "Point(140.3864 35.7647)"
+  },
+  "ja": {
+   "type": "literal",
+   "value": "成田国際空港",
+   "xml:lang": "ja"
+  },
+  "alias": {
+   "type": "literal",
+   "value": "新東京国際空港",
+   "xml:lang": "ja"
+  },
+  "typeLabel": {
+   "type": "literal",
+   "value": "国際空港",
+   "xml:lang": "ja"
+  },
+  "iso": {
+   "type": "literal",
+   "value": "JP-12"
+  }
+ },
+ {
+  "item": {
+   "type": "uri",
+   "value": "http://www.wikidata.org/entity/Q9000004"
+  },
+  "iata": {
+   "type": "literal",
+   "value": "KIX"
+  },
+  "coord": {
+   "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+   "type": "literal",
+   "value": "Point(135.2441 34.4347)"
+  },
+  "ja": {
+   "type": "literal",
+   "value": "関西国際空港",
+   "xml:lang": "ja"
+  },
+  "alias": {
+   "type": "literal",
+   "value": "関空",
+   "xml:lang": "ja"
+  },
+  "typeLabel": {
+   "type": "literal",
+   "value": "国際空港",
+   "xml:lang": "ja"
+  },
+  "iso": {
+   "type": "literal",
+   "value": "JP-27"
+  }
+ },
+ {
+  "item": {
+   "type": "uri",
+   "value": "http://www.wikidata.org/entity/Q9000005"
+  },
+  "iata": {
+   "type": "literal",
+   "value": "NGO"
+  },
+  "coord": {
+   "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+   "type": "literal",
+   "value": "Point(136.8054 34.8584)"
+  },
+  "ja": {
+   "type": "literal",
+   "value": "中部国際空港",
+   "xml:lang": "ja"
+  },
+  "alias": {
+   "type": "literal",
+   "value": "セントレア",
+   "xml:lang": "ja"
+  },
+  "typeLabel": {
+   "type": "literal",
+   "value": "国際空港",
+   "xml:lang": "ja"
+  },
+  "iso": {
+   "type": "literal",
+   "value": "JP-23"
+  }
+ },
+ {
+  "item": {
+   "type": "uri",
+   "value": "http://www.wikidata.org/entity/Q9000006"
+  },
+  "iata": {
+   "type": "literal",
+   "value": "CTS"
+  },
+  "coord": {
+   "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+   "type": "literal",
+   "value": "Point(141.6923 42.7752)"
+  },
+  "ja": {
+   "type": "literal",
+   "value": "新千歳空港",
+   "xml:lang": "ja"
+  },
+  "typeLabel": {
+   "type": "literal",
+   "value": "空港",
+   "xml:lang": "ja"
+  },
+  "iso": {
+   "type": "literal",
+   "value": "JP-01"
+  }
+ },
+ {
+  "item": {
+   "type": "uri",
+   "value": "http://www.wikidata.org/entity/Q9000007"
+  },
+  "iata": {
+   "type": "literal",
+   "value": "FUK"
+  },
+  "coord": {
+   "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+   "type": "literal",
+   "value": "Point(130.4511 33.5859)"
+  },
+  "ja": {
+   "type": "literal",
+   "value": "福岡空港",
+   "xml:lang": "ja"
+  },
+  "typeLabel": {
+   "type": "literal",
+   "value": "空港",
+   "xml:lang": "ja"
+  },
+  "iso": {
+   "type": "literal",
+   "value": "JP-40"
+  }
+ },
+ {
+  "item": {
+   "type": "uri",
+   "value": "http://www.wikidata.org/entity/Q9000008"
+  },
+  "iata": {
+   "type": "literal",
+   "value": "SDJ"
+  },
+  "coord": {
+   "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+   "type": "literal",
+   "value": "Point(140.917 38.1397)"
+  },
+  "ja": {
+   "type": "literal",
+   "value": "仙台空港",
+   "xml:lang": "ja"
+  },
+  "typeLabel": {
+   "type": "literal",
+   "value": "空港",
+   "xml:lang": "ja"
+  },
+  "iso": {
+   "type": "literal",
+   "value": "JP-04"
+  }
+ },
+ {
+  "item": {
+   "type": "uri",
+   "value": "http://www.wikidata.org/entity/Q9000009"
+  },
+  "iata": {
+   "type": "literal",
+   "value": "HIJ"
+  },
+  "coord": {
+   "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+   "type": "literal",
+   "value": "Point(132.9194 34.4361)"
+  },
+  "ja": {
+   "type": "literal",
+   "value": "広島空港",
+   "xml:lang": "ja"
+  },
+  "typeLabel": {
+   "type": "literal",
+   "value": "空港",
+   "xml:lang": "ja"
+  },
+  "iso": {
+   "type": "literal",
+   "value": "JP-34"
+  }
+ },
+ {
+  "item": {
+   "type": "uri",
+   "value": "http://www.wikidata.org/entity/Q9000010"
+  },
+  "iata": {
+   "type": "literal",
+   "value": "KMQ"
+  },
+  "coord": {
+   "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+   "type": "literal",
+   "value": "Point(136.4067 36.3946)"
+  },
+  "ja": {
+   "type": "literal",
+   "value": "小松空港",
+   "xml:lang": "ja"
+  },
+  "typeLabel": {
+   "type": "literal",
+   "value": "軍民共用空港",
+   "xml:lang": "ja"
+  },
+  "iso": {
+   "type": "literal",
+   "value": "JP-17"
+  }
+ },
+ {
+  "item": {
+   "type": "uri",
+   "value": "http://www.wikidata.org/entity/Q9000011"
+  },
+  "iata": {
+   "type": "literal",
+   "value": "FSZ"
+  },
+  "coord": {
+   "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+   "type": "literal",
+   "value": "Point(138.1894 34.796)"
+  },
+  "ja": {
+   "type": "literal",
+   "value": "静岡空港",
+   "xml:lang": "ja"
+  },
+  "alias": {
+   "type": "literal",
+   "value": "富士山静岡空港",
+   "xml:lang": "ja"
+  },
+  "typeLabel": {
+   "type": "literal",
+   "value": "空港",
+   "xml:lang": "ja"
+  },
+  "iso": {
+   "type": "literal",
+   "value": "JP-22"
+  }
+ },
+ {
+  "item": {
+   "type": "uri",
+   "value": "http://www.wikidata.org/entity/Q9000012"
+  },
+  "iata": {
+   "type": "literal",
+   "value": "ITM"
+  },
+  "coord": {
+   "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+   "type": "literal",
+   "value": "Point(135.4382 34.7855)"
+  },
+  "ja": {
+   "type": "literal",
+   "value": "大阪国際空港",
+   "xml:lang": "ja"
+  },
+  "alias": {
+   "type": "literal",
+   "value": "伊丹空港",
+   "xml:lang": "ja"
+  },
+  "typeLabel": {
+   "type": "literal",
+   "value": "空港",
+   "xml:lang": "ja"
+  },
+  "iso": {
+   "type": "literal",
+   "value": "JP-27"
+  }
+ },
+ {
+  "item": {
+   "type": "uri",
+   "value": "http://www.wikidata.org/entity/Q9000012"
+  },
+  "iata": {
+   "type": "literal",
+   "value": "ITM"
+  },
+  "coord": {
+   "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+   "type": "literal",
+   "value": "Point(135.4382 34.7855)"
+  },
+  "ja": {
+   "type": "literal",
+   "value": "大阪国際空港",
+   "xml:lang": "ja"
+  },
+  "alias": {
+   "type": "literal",
+   "value": "伊丹空港",
+   "xml:lang": "ja"
+  },
+  "typeLabel": {
+   "type": "literal",
+   "value": "空港",
+   "xml:lang": "ja"
+  },
+  "iso": {
+   "type": "literal",
+   "value": "JP-28"
+  }
+ },
+ {
+  "item": {
+   "type": "uri",
+   "value": "http://www.wikidata.org/entity/Q9000013"
+  },
+  "iata": {
+   "type": "literal",
+   "value": "NKM"
+  },
+  "coord": {
+   "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+   "type": "literal",
+   "value": "Point(136.9244 35.255)"
+  },
+  "ja": {
+   "type": "literal",
+   "value": "名古屋飛行場",
+   "xml:lang": "ja"
+  },
+  "alias": {
+   "type": "literal",
+   "value": "県営名古屋空港",
+   "xml:lang": "ja"
+  },
+  "typeLabel": {
+   "type": "literal",
+   "value": "空港",
+   "xml:lang": "ja"
+  },
+  "iso": {
+   "type": "literal",
+   "value": "JP-23"
+  }
+ },
+ {
+  "item": {
+   "type": "uri",
+   "value": "http://www.wikidata.org/entity/Q9000014"
+  },
+  "iata": {
+   "type": "literal",
+   "value": "OKD"
+  },
+  "coord": {
+   "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+   "type": "literal",
+   "value": "Point(141.3814 43.1176)"
+  },
+  "ja": {
+   "type": "literal",
+   "value": "札幌飛行場",
+   "xml:lang": "ja"
+  },
+  "alias": {
+   "type": "literal",
+   "value": "丘珠空港",
+   "xml:lang": "ja"
+  },
+  "typeLabel": {
+   "type": "literal",
+   "value": "空港",
+   "xml:lang": "ja"
+  },
+  "iso": {
+   "type": "literal",
+   "value": "JP-01"
+  }
+ },
+ {
+  "item": {
+   "type": "uri",
+   "value": "http://www.wikidata.org/entity/Q9000015"
+  },
+  "iata": {
+   "type": "literal",
+   "value": "MMY"
+  },
+  "coord": {
+   "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+   "type": "literal",
+   "value": "Point(125.295 24.7828)"
+  },
+  "ja": {
+   "type": "literal",
+   "value": "宮古空港",
+   "xml:lang": "ja"
+  },
+  "typeLabel": {
+   "type": "literal",
+   "value": "空港",
+   "xml:lang": "ja"
+  },
+  "iso": {
+   "type": "literal",
+   "value": "JP-47"
+  }
+ },
+ {
+  "item": {
+   "type": "uri",
+   "value": "http://www.wikidata.org/entity/Q9000016"
+  },
+  "iata": {
+   "type": "literal",
+   "value": "KKJ"
+  },
+  "coord": {
+   "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+   "type": "literal",
+   "value": "Point(131.0349 33.8459)"
+  },
+  "ja": {
+   "type": "literal",
+   "value": "北九州空港",
+   "xml:lang": "ja"
+  },
+  "typeLabel": {
+   "type": "literal",
+   "value": "空港",
+   "xml:lang": "ja"
+  },
+  "iso": {
+   "type": "literal",
+   "value": "JP-40"
+  }
+ },
+ {
+  "item": {
+   "type": "uri",
+   "value": "http://www.wikidata.org/entity/Q9000017"
+  },
+  "iata": {
+   "type": "literal",
+   "value": "ISG"
+  },
+  "coord": {
+   "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+   "type": "literal",
+   "value": "Point(124.245 24.3964)"
+  },
+  "ja": {
+   "type": "literal",
+   "value": "新石垣空港",
+   "xml:lang": "ja"
+  },
+  "alias": {
+   "type": "literal",
+   "value": "南ぬ島石垣空港",
+   "xml:lang": "ja"
+  },
+  "typeLabel": {
+   "type": "literal",
+   "value": "空港",
+   "xml:lang": "ja"
+  },
+  "iso": {
+   "type": "literal",
+   "value": "JP-47"
+  }
+ },
+ {
+  "item": {
+   "type": "uri",
+   "value": "http://www.wikidata.org/entity/Q9000018"
+  },
+  "iata": {
+   "type": "literal",
+   "value": "KOJ"
+  },
+  "coord": {
+   "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+   "type": "literal",
+   "value": "Point(130.7194 31.8034)"
+  },
+  "ja": {
+   "type": "literal",
+   "value": "鹿児島空港",
+   "xml:lang": "ja"
+  },
+  "typeLabel": {
+   "type": "literal",
+   "value": "空港",
+   "xml:lang": "ja"
+  },
+  "iso": {
+   "type": "literal",
+   "value": "JP-46"
+  }
+ },
+ {
+  "item": {
+   "type": "uri",
+   "value": "http://www.wikidata.org/entity/Q9000019"
+  },
+  "iata": {
+   "type": "literal",
+   "value": "NGS"
+  },
+  "coord": {
+   "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+   "type": "literal",
+   "value": "Point(129.9136 32.9169)"
+  },
+  "ja": {
+   "type": "literal",
+   "value": "長崎空港",
+   "xml:lang": "ja"
+  },
+  "typeLabel": {
+   "type": "literal",
+   "value": "空港",
+   "xml:lang": "ja"
+  },
+  "iso": {
+   "type": "literal",
+   "value": "JP-42"
+  }
+ },
+ {
+  "item": {
+   "type": "uri",
+   "value": "http://www.wikidata.org/entity/Q9000020"
+  },
+  "iata": {
+   "type": "literal",
+   "value": "HSG"
+  },
+  "coord": {
+   "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+   "type": "literal",
+   "value": "Point(130.3022 33.1497)"
+  },
+  "ja": {
+   "type": "literal",
+   "value": "佐賀空港",
+   "xml:lang": "ja"
+  },
+  "alias": {
+   "type": "literal",
+   "value": "九州佐賀国際空港",
+   "xml:lang": "ja"
+  },
+  "typeLabel": {
+   "type": "literal",
+   "value": "空港",
+   "xml:lang": "ja"
+  },
+  "iso": {
+   "type": "literal",
+   "value": "JP-41"
+  }
+ },
+ {
+  "item": {
+   "type": "uri",
+   "value": "http://www.wikidata.org/entity/Q9000021"
+  },
+  "iata": {
+   "type": "literal",
+   "value": "TAK"
+  },
+  "coord": {
+   "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+   "type": "literal",
+   "value": "Point(134.0156 34.2142)"
+  },
+  "ja": {
+   "type": "literal",
+   "value": "高松空港",
+   "xml:lang": "ja"
+  },
+  "typeLabel": {
+   "type": "literal",
+   "value": "空港",
+   "xml:lang": "ja"
+  },
+  "iso": {
+   "type": "literal",
+   "value": "JP-37"
+  }
+ },
+ {
+  "item": {
+   "type": "uri",
+   "value": "http://www.wikidata.org/entity/Q9000022"
+  },
+  "iata": {
+   "type": "literal",
+   "value": "MYJ"
+  },
+  "coord": {
+   "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+   "type": "literal",
+   "value": "Point(132.6997 33.8272)"
+  },
+  "ja": {
+   "type": "literal",
+   "value": "松山空港",
+   "xml:lang": "ja"
+  },
+  "typeLabel": {
+   "type": "literal",
+   "value": "空港",
+   "xml:lang": "ja"
+  },
+  "iso": {
+   "type": "literal",
+   "value": "JP-38"
+  }
+ },
+ {
+  "item": {
+   "type": "uri",
+   "value": "http://www.wikidata.org/entity/Q9000023"
+  },
+  "iata": {
+   "type": "literal",
+   "value": "KMJ"
+  },
+  "coord": {
+   "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+   "type": "literal",
+   "value": "Point(130.8551 32.8373)"
+  },
+  "ja": {
+   "type": "literal",
+   "value": "熊本空港",
+   "xml:lang": "ja"
+  },
+  "alias": {
+   "type": "literal",
+   "value": "阿蘇くまもと空港",
+   "xml:lang": "ja"
+  },
+  "typeLabel": {
+   "type": "literal",
+   "value": "空港",
+   "xml:lang": "ja"
+  },
+  "iso": {
+   "type": "literal",
+   "value": "JP-43"
+  }
+ },
+ {
+  "item": {
+   "type": "uri",
+   "value": "http://www.wikidata.org/entity/Q9000024"
+  },
+  "iata": {
+   "type": "literal",
+   "value": "KMQ"
+  },
+  "coord": {
+   "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+   "type": "literal",
+   "value": "Point(136.406 36.394)"
+  },
+  "ja": {
+   "type": "literal",
+   "value": "小松飛行場",
+   "xml:lang": "ja"
+  },
+  "typeLabel": {
+   "type": "literal",
+   "value": "航空自衛隊の基地",
+   "xml:lang": "ja"
+  },
+  "iso": {
+   "type": "literal",
+   "value": "JP-17"
+  }
+ },
+ {
+  "item": {
+   "type": "uri",
+   "value": "http://www.wikidata.org/entity/Q9000024"
+  },
+  "iata": {
+   "type": "literal",
+   "value": "KMQ"
+  },
+  "coord": {
+   "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+   "type": "literal",
+   "value": "Point(136.406 36.394)"
+  },
+  "ja": {
+   "type": "literal",
+   "value": "小松飛行場",
+   "xml:lang": "ja"
+  },
+  "typeLabel": {
+   "type": "literal",
+   "value": "air base",
+   "xml:lang": "en"
+  },
+  "iso": {
+   "type": "literal",
+   "value": "JP-17"
+  }
+ },
+ {
+  "item": {
+   "type": "uri",
+   "value": "http://www.wikidata.org/entity/Q9000025"
+  },
+  "iata": {
+   "type": "literal",
+   "value": "TYO"
+  },
+  "coord": {
+   "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+   "type": "literal",
+   "value": "Point(139.6917 35.6895)"
+  },
+  "ja": {
+   "type": "literal",
+   "value": "東京",
+   "xml:lang": "ja"
+  },
+  "typeLabel": {
+   "type": "literal",
+   "value": "日本の首都",
+   "xml:lang": "ja"
+  }
+ },
+ {
+  "item": {
+   "type": "uri",
+   "value": "http://www.wikidata.org/entity/Q9000025"
+  },
+  "iata": {
+   "type": "literal",
+   "value": "TYO"
+  },
+  "coord": {
+   "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+   "type": "literal",
+   "value": "Point(139.6917 35.6895)"
+  },
+  "ja": {
+   "type": "literal",
+   "value": "東京",
+   "xml:lang": "ja"
+  },
+  "typeLabel": {
+   "type": "literal",
+   "value": "都",
+   "xml:lang": "ja"
+  }
+ },
+ {
+  "item": {
+   "type": "uri",
+   "value": "http://www.wikidata.org/entity/Q9000026"
+  },
+  "iata": {
+   "type": "literal",
+   "value": "UKB"
+  },
+  "coord": {
+   "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+   "type": "literal",
+   "value": "Point(135.2239 34.6328)"
+  },
+  "ja": {
+   "type": "literal",
+   "value": "神戸空港",
+   "xml:lang": "ja"
+  },
+  "alias": {
+   "type": "literal",
+   "value": "マリンエア",
+   "xml:lang": "ja"
+  },
+  "typeLabel": {
+   "type": "literal",
+   "value": "空港",
+   "xml:lang": "ja"
+  },
+  "iso": {
+   "type": "literal",
+   "value": "JP-28"
+  }
+ },
+ {
+  "item": {
+   "type": "uri",
+   "value": "http://www.wikidata.org/entity/Q9000027"
+  },
+  "iata": {
+   "type": "literal",
+   "value": "HAC"
+  },
+  "coord": {
+   "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+   "type": "literal",
+   "value": "Point(139.7856 33.115)"
+  },
+  "ja": {
+   "type": "literal",
+   "value": "八丈島空港",
+   "xml:lang": "ja"
+  },
+  "iso": {
+   "type": "literal",
+   "value": "JP-13"
+  }
+ },
+ {
+  "item": {
+   "type": "uri",
+   "value": "http://www.wikidata.org/entity/Q9000028"
+  },
+  "iata": {
+   "type": "literal",
+   "value": "IBR"
+  },
+  "coord": {
+   "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+   "type": "literal",
+   "value": "Point(140.4147 36.1811)"
+  },
+  "ja": {
+   "type": "literal",
+   "value": "百里飛行場",
+   "xml:lang": "ja"
+  },
+  "typeLabel": {
+   "type": "literal",
+   "value": "航空自衛隊の基地",
+   "xml:lang": "ja"
+  },
+  "iso": {
+   "type": "literal",
+   "value": "JP-08"
+  }
+ }
+]

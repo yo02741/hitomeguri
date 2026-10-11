@@ -97,10 +97,11 @@
 │   ├── phrases/                  # 旅前準備的會話與詞彙
 │   ├── translations/             # 英文簡介的中文翻譯
 │   ├── flights/taiwan_direct.json # 台灣直飛航線（未查證的不顯示）
-│   └── seed/                     # 攻略候選、官方觀光網站清單、排除清單
+│   └── seed/                     # 攻略候選、官方觀光網站清單、排除清單、有國際定期航班的機場
 ├── pipeline/                     # Python 資料 pipeline
 │   ├── sources/                  # wikidata、wikipedia、osm、jma、maff、pokefuta、meijo、官方觀光網站…
 │   ├── major.py                  # 大點（seed-region）
+│   ├── airports.py               # 有國際定期航班的機場（seed-airports）
 │   ├── wiki.py                   # 維基簡介與念法
 │   ├── specialties.py、festivals.py、seasons.py、rail.py、timed.py
 │   ├── municipalities.py、topo.py  # 市区町村界（拓撲保持簡化）、景點所在的區
@@ -309,6 +310,10 @@ extra_stations?: [{ id, name, lat, lng }]                              // edges 
   - **不在介面標示「精選」**（使用者決定）：公開資料裡沒有「第一次去該去哪」的訊號（例：沖繩波上宮不在官方觀光網站瀏覽排行前 400，Wikivoyage 把它和玉陵、識名園並列），分數只能反映知名度，不等於推薦。分數用於清單段內排序、地圖照片與名稱標籤的優先順序；`featured` 只用來產生首頁的全國總覽（`bundles/featured.json`，各縣分數前 20）。
 - **圖片**：Wikidata `P18` → Wikimedia Commons（`Special:FilePath/{file}?width=400`），**存作者與授權並在 UI 顯示 credit**。
 - **最近車站**：OSM `railway=station`，取 `name`、`name:ja-Hira`、`name:ja-Latn`、`name:en`（缺的再由 LLM 補、標記待確認）。
+- **機場**（使用者決定 2026-10-11）：機場本來當成非景點排除（P31「空港」「飛行場」）；**有國際定期客運航班的機場**例外，收成景點（類型「機場」，不列入精選）。
+  - 哪些機場算數：国土交通省每季發表的「国際定期便の概要」PDF（2026年夏期：https://www.mlit.go.jp/report/press/content/001998668.pdf ，報道発表 https://www.mlit.go.jp/report/press/kouku03_hh_000297.html ）裡列出的日本機場。Wikidata、OSM 的「國際機場」標記不可靠（那覇空港在 Wikidata 只標「空港」，OSM 只標了成田、羽田），所以不用。
+  - `seed-airports`（`pipeline/airports.py`，seed-pack.yml；輸入 `url` 可換成新一季的 PDF）：pypdf 取出 PDF 文字，和 Wikidata 的日本機場（有 IATA 代碼 P238、國家 P17 日本、沒有廢止 P576／P3999、有座標與日文名；P31 只有軍用類型的排除）比對名稱：日文名、別名、去掉「空港」「国際空港」「飛行場」的地名、通稱（羽田、伊丹、セントレア、関空…）與 IATA 代碼；「東京」「大阪」「名古屋」「札幌」這類同一城市有好幾個機場的地名不單獨比對。縣由座標與縣界判斷（在海上、埋立地時用 Wikidata 所在地 P131→P300，再沒有取最近的縣界）。
+  - 結果寫 `data/seed/airports.json`（來源網址與取得日期；每個機場的 QID、IATA、日文名、縣、PDF 裡對到的字串），報告列出對到的機場與 PDF 原文、像機場名稱但沒對到的字串、表格裡沒對到的列名，給人審核。機場景點（名稱、念法、簡介、照片、最近車站與其他景點同一套）直接併進 `data/spots/{縣}.json`，清單上已經沒有的機場移除；`seed-region` 重採時也讀這份清單，清單以外的機場照樣排除。景點來源多一筆 PDF 網址。
 
 ### 5.0 種子清單（攻略）
 - `data/seed/seed_from_guides.json`：從我先前兩份攻略（名古屋、關西）抽出的景點（現存 56 個大點候選；原本的店家列 kind theme 隨主題小店 2026-10-09 刪除）、13 個地區特色、7 條直飛航線。

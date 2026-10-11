@@ -78,12 +78,17 @@ def refill_featured(spots: list[dict[str, Any]]) -> list[str]:
 
 def wikidata_non_spots(spots: list[dict[str, Any]]) -> dict[str, str]:
     """重新查 Wikidata 的 P31，回傳不是景點的 spot id → 理由（命中的標籤）。"""
+    from pipeline.major import load_airport_seed
     from pipeline.sources import wikidata
 
+    # 有國際定期航班的機場（data/seed/airports.json 上的 QID）不重新判斷，其他機場照樣排除
+    airports = {a["wikidata"] for a in load_airport_seed()[1]}
     by_qid = {
         s["external_ids"]["wikidata"]: s["id"]
         for s in spots
-        if s["kind"] == "major" and s.get("external_ids", {}).get("wikidata")
+        if s["kind"] == "major"
+        and s.get("external_ids", {}).get("wikidata")
+        and s["external_ids"]["wikidata"] not in airports
     }
     ents = wikidata.entities(sorted(by_qid)) if by_qid else {}
     p31 = sorted({q for e in ents.values() for q in e.instance_of})

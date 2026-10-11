@@ -9,6 +9,7 @@
 | 範圍 | 狀態 | 文件 |
 |---|---|---|
 | 探索（47 縣大點、搜尋、鐵路、類型篩選） | 完成 | PLAN.md §9 Phase 1、6 |
+| 國際機場當成景點（類型「機場」；国土交通省「国際定期便の概要」） | pipeline、前端完成，還沒在 Actions 跑 `seed-airports` | PLAN.md §5.1 |
 | 縣內規劃的資料（市区町村界、車站停靠路線與新幹線、鐵路路網） | pipeline 完成，資料已採集（seed-rail #75、N03） | PLAN.md §4.5、§5.3d、§5.3e |
 | 縣內規劃 2、3：小區塊（地區選單、區界、`?area=`）、車站卡片、全國地圖的新幹線 | 等驗收 | UX-FLOW.md A1c、A2b、B5，DESIGN.md §7.5d、§7.13a |
 | 縣內規劃 4：日帰り（行程每天的住的車站、單日來回） | 等驗收；規則不用改 | UX-FLOW.md C8，DESIGN.md §7.9c、§8 |
@@ -36,6 +37,7 @@
 
 **待辦**：見根目錄 `TODO.md`。
 
+- 國際機場當成景點（2026-10-11，使用者決定：那覇空港這類機場原本被排除）：有國際定期客運航班的機場收成景點，類型「機場」（清單的類型索引多一組「機場」，`web/src/data/categories.ts`），不列入精選。哪些機場算數看国土交通省每季的「国際定期便の概要」PDF（2026年夏期），Wikidata、OSM 的國際機場標記不可靠所以不用（PLAN.md §5.1）。`seed-airports`（`pipeline/airports.py`，seed-pack.yml，輸入 `url` 可換新一季的 PDF）：pypdf 取文字 → 和 Wikidata 的日本機場（IATA 代碼、沒有廢止、有座標與日文名，只有軍用類型的排除）比對日文名、別名、去掉「空港」的地名、通稱與 IATA 代碼（東京、大阪、名古屋、札幌不單獨比對）→ `data/seed/airports.json`（`models.AirportSeed`，`validate-data` 檢查）＋機場景點直接併進 `data/spots/{縣}.json`（名稱、念法、簡介、照片、最近車站與其他景點同一套，來源多一筆 PDF 網址；清單上已經沒有的機場移除）。例外只給清單上的 QID：`major.drop_non_spots`、`curate.wikidata_non_spots`（prune-spots --wikidata）；`seed-region` 重採時用 `major.apply_airports` 把清單上的機場加回來。縣由座標與縣界判斷，在海上、埋立地（長崎、北九州、神戸）時用 Wikidata 所在地，再沒有取最近的縣界（`geo.nearest_prefecture`）。景點卡片的來源顯示「国土交通省」，`/credits` 加一列。測試 `pipeline/tests/test_airports.py`（仿 PDF 文字與 Wikidata 結果的 fixture）。**還沒在 Actions 跑**，`data/` 裡還沒有機場（見 TODO.md）。
 - 縣內規劃 4：日帰り（2026-10-11，使用者決定；UX-FLOW.md C8，DESIGN.md §7.9c）：
   - pipeline：`pipeline/daytrip.py` 產生 `bundles/daytrip.json`（一個市区町村一筆：代碼、名稱、政令指定都市名、縣、區名的位置、分數最高的 3 個景點與最近車站、其餘景點的車站；1106 筆，289 KB／gzip 約 95 KB；`models.DaytripBundle`、`_index.json` 的 `daytrip`）。build-bundles 用剛寫好的 map bundle（`m`、`st`）與市区町村 bundle（`l`）。`pipeline/tests/test_daytrip.py`。
   - 前端：`services/daytrip.ts` 移植 `rail_graph` 的 Dijkstra（新幹線權重 0.97、同分依節點 index、小數 1 位同 Python round；對照資料 `services/fixtures/rail-graph-small.expected.json` 由 pytest 產生，vitest 比對；實際的路網從東京駅出發 3805 站的 km 與新幹線 km 和 Python 完全相同，約 45 ms），目的地依城市合起來（政令指定都市的區、東京 23 區）、住的城市不列（車站在那一縣的區界裡找）、距離取各區所有車站裡最近的一站，分三段（60 km 內、60–150 km、新幹線 150–450 km 且路上新幹線 ≥ 20 km）。站名搜尋（繁體字、全形、「駅」「站」）、最近車站。`composables/daytrip.ts`、`StayPicker.vue`、`DaytripList.vue`、`MapView` 的 `daytrip` 圖層，`TripView` 每天的「住在 ▾」「單日來回」（桌機地圖左上的面板＋地圖記號與新幹線路線，手機下方對話框）。
