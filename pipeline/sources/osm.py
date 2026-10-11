@@ -80,13 +80,21 @@ RAIL_ACTIVE_WAY = (
 
 
 def rail_routes(iso: str) -> dict:
-    """縣內的鐵路路線 relation（含成員路段的幾何），以及營運中的旅客線路段 id（way）。"""
+    """縣內的鐵路路線 relation（含成員的幾何：路段的點、停靠點的座標），以及：
+    - 營運中的旅客線路段 id（way，只有 id）
+    - 其中標 highspeed=yes 的路段（way，帶標籤；新幹線的判斷）
+    - 有名稱的成員 node（停靠點、站台的名稱，對到車站用）
+    """
     q = f"""[out:json][timeout:900];
 {_area(iso)}
 relation["type"="route"]["route"~"{RAIL_ROUTES}"](area.a)->.rels;
 .rels out geom;
-way(r.rels){RAIL_ACTIVE_WAY};
-out ids;"""
+way(r.rels){RAIL_ACTIVE_WAY}->.act;
+.act out ids;
+way.act["highspeed"="yes"];
+out tags;
+node(r.rels)["name"];
+out;"""
     return raw(q)
 
 

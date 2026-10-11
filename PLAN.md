@@ -80,7 +80,7 @@
 │   ├── refresh-data.yml          # 每週／每月／每季：重新採集並開 PR（Phase 6）
 │   ├── pipeline-pr-closed.yml    # 自動 PR 關閉後刪分支
 │   ├── seed-region.yml           # 手動：各縣大點（推到 pipeline/* 分支）
-│   ├── seed-pack.yml             # 手動：全國一次抓的項目（擴充包、地區特色、祭典、季節、鐵路…）
+│   ├── seed-pack.yml             # 手動：全國一次抓的項目（擴充包、地區特色、祭典、季節、鐵路、市区町村界…）
 │   ├── verify-flights.yml        # 手動：查證直飛航線（需 ANTHROPIC_API_KEY）
 │   ├── probe.yml                 # 手動：取回網頁看結構與使用條款（沙箱連不到外站時用）
 │   └── cleanup-branches.yml      # 手動：刪除 pipeline/* 分支
@@ -89,7 +89,8 @@
 │   ├── spots/{prefecture}.json   # 大點
 │   ├── specialties/{prefecture}.json
 │   ├── festivals/{prefecture}.json
-│   ├── rail/{prefecture}.json    # 鐵路路線與車站
+│   ├── rail/{prefecture}.json    # 鐵路路線與車站（停靠的路線、新幹線、相鄰站的沿軌道距離）
+│   ├── municipalities/{prefecture}.json # 市区町村界（国土数値情報 N03，簡化）
 │   ├── packs/*.json              # 擴充包（寶可夢、城、老舖・茶屋、角色商店）
 │   ├── timed/{yyyy-mm}.json      # 期間限定
 │   ├── seasons.json              # 氣象廳生物季節平年值
@@ -102,6 +103,8 @@
 │   ├── major.py                  # 大點（seed-region）
 │   ├── wiki.py                   # 維基簡介與念法
 │   ├── specialties.py、festivals.py、seasons.py、rail.py、timed.py
+│   ├── municipalities.py、topo.py  # 市区町村界（拓撲保持簡化）、景點所在的區
+│   ├── rail_graph.py             # 全國車站路網（日帰り的鐵路距離）
 │   ├── packs.py、pack_castles.py、pack_shinise.py、pack_chara.py  # 擴充包
 │   ├── validate.py、diff_report.py  # 資料檢查、PR 變更報告
 │   ├── build_bundles.py          # data/ → web/public/bundles/ 精簡 JSON
@@ -133,6 +136,7 @@
   location: { lat: number, lng: number },
   prefecture: string,              // slug，例 "kyoto"
   city?: string,
+  municipality?: string,           // 所在的市区町村：全国地方公共団体コード 6 碼（政令指定都市是區），assign-municipalities
   kind: "major",                   // 舊的主題小店（"theme"）2026-10-09 刪除；小店改由擴充包（data/packs）提供
   themes: string[],                // 大點上的主題，目前只有寺社的 "goshuin"（前端未使用）
   tags: string[],
@@ -207,6 +211,9 @@
 - `bundles/detail/{prefecture}.json`：完整景點資料（點 marker 時載入該區的 detail 檔，可 cache）。
 - `bundles/specialties/{prefecture}.json`：地區特色一縣一檔（深度探索、旅前準備只載入用到的縣；版本在 `_index.json` 的 `specialties`）。全國一個檔的 `bundles/specialties.json` 暫時照寫，給還沒更新的舊版前端用。
 - `bundles/timed/current.json`（只含尚未過期的）、`bundles/phrases.json`。
+- `bundles/municipalities/{prefecture}.json`：市区町村界（再簡化到約 80 m、一縣 200 KB 以內的 GeoJSON；feature id 是代碼的數字，properties：`m` 代碼、`n` 名稱、`h` 念法、`c` 政令指定都市名）；版本在 `_index.json` 的 `municipalities`。map bundle 的景點多 `m`（代碼）與 `st`（最近車站的路網節點 id）。
+- `bundles/rail/{prefecture}.json`：路線多 `s`（新幹線）；車站多 `id`（路網節點）、`l`（停靠路線在 `lines` 的 index）、`s`。
+- `bundles/rail-graph.json`：全國車站路網（§4.5），版本在 `_index.json` 的 `rail_graph`。
 
 **FlightRoute**（`data/flights/taiwan_direct.json`）
 ```ts
@@ -235,6 +242,43 @@ users/{uid}/lists/{listId}
 
 ### 4.4 地區資料
 `data/regions.json`：都道府縣的名稱（ja / kana / romaji / zh_tw）、所屬地方、地區色 tokens（強調色＋整頁中性色），以及沒有地區語境時用的 `national`（全國色）。規則見 **`UX-FLOW.md` §2**。縣界 GeoJSON（国土数値情報 N03，簡化後）放在 `web/public/geo/prefectures.json`，用於前端判斷目前焦點縣與自訂地點所屬縣。
+
+### 4.5 市区町村界、鐵路路網（縣內規劃，TODO.md 2–4）
+
+**MunicipalityData**（`data/municipalities/{prefecture}.json`，GeoJSON FeatureCollection，一個區一行）
+```ts
+{
+  type: "FeatureCollection", prefecture: "kyoto", dataset: "N03-20250101",
+  source: { url, fetched_at }, license: "CC BY 4.0（…）",
+  attribution: "「国土数値情報（行政区域データ）」（国土交通省）を加工して作成",
+  tolerance: number,               // 簡化容許誤差（度）
+  features: [{
+    type: "Feature",
+    id: "261050",                  // 全国地方公共団体コード 6 碼（N03_007 的 5 碼＋檢查碼）
+    properties: { name: "東山区", city?: "京都市", kana?: "ひがしやまく", kana_source_url?, source_url, retrieved },
+    geometry: { type: "MultiPolygon", coordinates }   // 拓撲保持簡化，相鄰區共用邊界
+  }]
+}
+```
+- 層級：政令指定都市用「區」（京都市東山区、名古屋市中区），東京 23 區是特別區本身；旅客想的是東山、台東，不是整個京都市。沒有羅馬拼音（來源沒有）。
+
+**RailData** 追加（`data/rail/{prefecture}.json`）
+```ts
+lines[]:    { …, shinkansen?: true, edges?: [[站 id, 站 id, km]] }   // 相鄰兩站與沿軌道距離，至少一端在縣內
+stations[]: { …, lines?: string[], shinkansen?: true }                // 停靠的路線 id
+extra_stations?: [{ id, name, lat, lng }]                              // edges 用到的縣外站、沒有車站點的停靠點（id「stop-…」）
+```
+- `coords` 可能是空的：共用軌道只畫一次，軌道全被別的線畫過的線（東京都內的東北新幹線）仍留著，車站才查得到。
+
+**rail-graph.json**（build-bundles／build-rail-graph 由 `data/rail` 離線產生）
+```ts
+{
+  nodes: [[id, 站名, 緯度, 經度, 縣, 新幹線 0|1]],   // 依 id；縣外的停靠點縣為 ""
+  edges: [[a, b, km, 種類]]                       // a < b 為 nodes index；種類 0 在來線、1 新幹線、2 步行轉乘（400 m 內不同名的站）
+}
+```
+- 同名 500 m 內的站合併成一個節點。最短距離用 Dijkstra（`pipeline/rail_graph.py` 的 `shortest`、`within`），新幹線權重乘 0.97（距離差不多時走新幹線），路徑上新幹線 ≥ 20 km 才算「可以搭新幹線」。
+- **沒有時刻表**（公開資料沒有）：日帰り只寫「鐵路約 n km」與能否搭新幹線，不寫分鐘。
 
 ---
 
@@ -303,6 +347,23 @@ users/{uid}/lists/{listId}
 - 來源：日文維基分類「{縣}の祭り」（含一層子分類），經 Wikidata P31 篩掉山鉾、神社、人物、團體；總論條目（一覧、三大）與開頭段落寫著已停辦的不收。依日文維基一年瀏覽量取前 60 個。
 - 月份：Wikidata P837／P2922 的標籤；沒有時取日文維基開頭的「毎年○月」「○月…行われる」「○月下旬」（舊曆不取）。都沒有就不寫。
 - 名稱、念法、照片、簡介（中文優先）同地區特色的做法；座標取 P625，沒有時用舉行地點（P276）的座標。`data/festivals/{縣}.json`，bundle 一縣一檔。`seed-festivals` 在 `seed-pack.yml` 跑。
+
+### 5.3d 市区町村界（縣內規劃的小區塊）
+- 來源：国土数値情報（行政区域データ）N03，国土交通省，一縣一個 zip（`https://nlftp.mlit.go.jp/ksj/gml/data/N03/N03-{年}/N03-{年}0101_{縣碼}_GML.zip`，內含 GeoJSON）；從最新年份往回試。
+- 授權（2026-10-11 查）：N03 資料頁的使用許諾條件為「オープンデータ（CC_BY_4.0）」，附註「本データを二次利用する場合には、国土地理院に申請等必要な場合があります」。下載網站的利用規約依政府標準利用規約（第 2.0 版），與 CC BY 4.0 相容；國土地理院（令和元年 12 月改訂的利用手續）：網站上插入地圖比照書籍插圖，原則上不必申請、標示出處即可。本專案只在網頁地圖畫簡化後的區界、不做測量用途。**出處標示**：「国土数値情報（行政区域データ）」（国土交通省）を加工して作成（前端用到時加到地圖出處與 `/credits`）。沙箱連不到 nlftp.mlit.go.jp，以上由搜尋結果與引用該頁的公開專案確認；第一次跑之前用 `probe.yml` 看資料頁與 robots.txt。
+- 沒有用 OSM 的行政界（admin_level 7/8）：ODbL、沒有全国地方公共団体コード、多邊形要自己由 way 拼。
+- 念法：N03 沒有，取 Wikidata 以 P429（団体コード）對到、沒有廢止日（P576）的項目的 P1814，一個代碼只對到一個項目才用。
+- 簡化：拓撲保持（`pipeline/topo.py`，同 TopoJSON 的弧：共用邊界只簡化一次，相鄰區之間沒有縫隙）。data 約 20 m 起、一縣 400 KB 以內（放不進就放大容許誤差）；web bundle 約 80 m 起、200 KB 以內。很小、不和別區相連的島拿掉（每區留最大的一塊）。
+- 景點的區：點在哪個區裡；簡化後的海岸、縣界附近落在區外的取 3 km 內最近的區（`assign-municipalities`，離線；seed-region 重採時也重新判斷；build-bundles 對還沒判斷的景點也會算）。
+- `seed-municipalities`（要連網）與 `assign-municipalities`（離線）在 `seed-pack.yml` 跑。
+
+### 5.3e 鐵路：停靠路線、新幹線、路網（縣內規劃的車站、日帰り）
+- `seed-rail` 的 Overpass 查詢另外取回：標 `highspeed=yes` 的軌道、有名稱的成員 node（停靠點、站台）。車站查詢的範圍框比縣界多 0.2 度，跨縣的下一站也在候選裡。
+- 新幹線：路線名稱、network 有「新幹線」，或 relation 標 `highspeed=yes`、`service=high_speed`，或過半的軌道標 `highspeed=yes`。車站有新幹線停靠就是新幹線站。
+- 停靠的路線：route relation 的停靠點（stop、platform）對到車站（同名 1 km 內；名稱互相包含或沒有名稱時 300 m 內）。沒有停靠點的軌道 relation（`route=railway`，地方的 JR 線多半如此）取軌道 150 m 內、營運者相容的車站（JR 正式名與簡稱視為相同）。
+- 相鄰站與距離：一條線的全部軌道（未簡化、不切縣界）接成路網（沒接上的路段 50 m 內接起來），站投影到軌道上，從每個站沿軌道走到碰到別的站為止。支線、雙線、快車都不影響。
+- `build-rail-graph`（離線）由 `data/rail` 組全國路網，`build-bundles` 也會產生 `rail-graph.json`。景點的最近車站（`nearest_stations` 依序）以同名、距離加 1 km 內對到路網節點（map bundle 的 `st`）。
+- 限制：OSM 的停靠點沒有名稱又離車站點 300 m 以上的不算；路線名稱照 OSM 寫法，同一條線可能有兩個名稱；距離是沿軌道的實際長度，不是營業キロ。
 
 ### 5.4 期間限定
 - 來源（實作時確認網址，遵守 robots.txt 與 ToS）：PR TIMES（RSS）、7-Eleven / FamilyMart / LAWSON / 日本麥當勞 新商品或新聞頁、各地觀光協會活動頁（花火、祭典、賞楓、賞櫻）；必要時 agent 搜尋。

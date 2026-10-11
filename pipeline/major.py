@@ -14,7 +14,7 @@ import unicodedata
 from dataclasses import dataclass, field
 from typing import Any
 
-from pipeline import config, geo
+from pipeline import config, geo, municipalities
 from pipeline.kana import is_kana, is_romaji, normalize_kana, romaji_with_spacing
 from pipeline.models import (
     ExternalIds,
@@ -1136,6 +1136,14 @@ def merge_existing(spots: list[Spot], path) -> list[dict[str, Any]]:  # noqa: AN
     for spot in spots:
         new = spot.model_dump(mode="json", exclude_none=True)
         prev = old.get(spot.id)
+        # 所在的市区町村：有區界資料就重新判斷（座標可能變了），沒有就沿用
+        areas = municipalities.areas(spot.prefecture)
+        if areas:
+            code = areas.code_at(spot.location.lat, spot.location.lng)
+            if code:
+                new["municipality"] = code
+        elif prev and prev.get("municipality"):
+            new["municipality"] = prev["municipality"]
         if prev:
             for k in PRESERVED:
                 if prev.get(k) and not new.get(k):
