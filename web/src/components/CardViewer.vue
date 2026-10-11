@@ -7,9 +7,8 @@ import { useSwipe } from '../composables/swipe'
 import { useTilt } from '../composables/tilt'
 import type { CardFace, Rarity } from '../services/card'
 import { reveal, showReveal } from '../services/cardReveal'
-import { allVariants, BASE_VARIANT, hasNight, isShrine, missingSeasons, type TaskKey, type Variant } from '../services/cardVariants'
+import { allVariants, BASE_VARIANT, hasNight, missingSeasons, type Variant } from '../services/cardVariants'
 import { useCardDraw } from '../composables/cardDraw'
-import { useSpotVariants } from '../composables/spotVariants'
 import { useCardsStore } from '../stores/cards'
 import { cardKey, useFreshStore } from '../stores/fresh'
 import { useWalletStore } from '../stores/wallet'
@@ -19,7 +18,7 @@ import SpotCard from './SpotCard.vue'
 // 收集卡放大檢視（DESIGN.md §7.19）：畫面中央一張大卡，點卡片翻面；手機可以用傾斜角度讓卡片轉動。
 // 收集冊裡可以左右切換上一張、下一張（方向鍵、左右滑）。Esc、點背景或「關閉」離開（原生 <dialog>，composables/modal.ts）。
 // 手機（<640）「關閉」在右上角；觸控裝置點卡片翻面，沒有「背面」鈕（手機版計畫第二階段 27）。
-// 去過的景點可以「抽一張」（用一張抽獎券，只抽還沒有的季節）；卡片下面「這裡做過的事」勾了就拿到那一種卡。
+// 去過的景點可以「抽一張」（用一張抽獎券，只抽還沒有的季節）。「這裡做過的事」在景點卡片上勾（SpotTasks.vue）。
 // 新拿到還沒看過的樣式標 NEW。
 // 收集到兩種以上時可以把目前這種設為收集冊的封面（stores/cards.ts）。
 // 打開時焦點在卡片上：Space、Enter 翻面。
@@ -58,23 +57,7 @@ function drawOneCard() {
   if (cardDraw.drawFor({ spotId: props.card.id, owned: before, othersDone: othersDone.value })) expectNew(before)
 }
 
-// 這裡做過的事（DESIGN.md §7.19a）：勾了就拿到那一種卡，取消就拿掉。全景看已結束的行程，不能勾
-const { tripBySpot } = useSpotVariants()
-const ticked = computed(() => cards.tasksOf(props.card.id))
-const trip = computed(() => tripBySpot.value.get(props.card.id) ?? null)
-const tasks = computed(() => [
-  ...(night.value ? [{ key: 'night' as const, label: '晚上去過', card: '夜景' }] : []),
-  { key: 'stamp' as const, label: '蓋了紀念章或寄了明信片', card: '切手' },
-  { key: 'ink' as const, label: isShrine(props.card.kind) ? '拿到御朱印' : '寫了旅日記', card: '墨繪' },
-])
-const showTasks = computed(() => props.visited && Boolean(props.variants))
-function toggleTask(k: TaskKey) {
-  const on = !ticked.value.includes(k)
-  if (on) expectNew(ownedKeys.value)
-  void cards.setTask(props.card.id, k, on)
-}
-
-// 新拿到的樣式（抽到、勾了任務）：樣式清單更新時標 NEW、亮相最稀有的那張（四季或任務剛好收齊時是紀念卡），
+// 抽到新的樣式：樣式清單更新時標 NEW、亮相最稀有的那張（四季剛好收齊時是紀念卡），
 // 切到那一種、翻回正面（翻到背面再抽，也是看到新卡的正面）
 let before: Set<string> | null = null
 let beforeTimer = 0
@@ -84,14 +67,6 @@ function expectNew(keys: string[]) {
   beforeTimer = window.setTimeout(() => (before = null), 4000)
 }
 onBeforeUnmount(() => clearTimeout(beforeTimer))
-// 新卡亮相結束：回到最上面看那張新卡（捲到下面勾任務時，亮相後也從卡片看起）
-const viewerEl = ref<HTMLElement | null>(null)
-watch(
-  () => Boolean(reveal.value),
-  (on) => {
-    if (!on && viewerEl.value) viewerEl.value.scrollTop = 0
-  },
-)
 watch(
   () => props.variants,
   (list) => {
@@ -106,7 +81,7 @@ watch(
       showReveal({ face: props.card, rarity: props.rarity, label: props.label ?? '', number: props.number ?? '', variant: top })
       return
     }
-    // 取消勾選拿掉了一種：停在原本看的那一種，沒有了就回到封面
+    // 景點卡片上取消勾選拿掉了一種：停在原本看的那一種，沒有了就回到封面
     const i = list.findIndex((v) => v.key === shownKey.value)
     vi.value = i >= 0 ? i : coverIndex()
   },
@@ -211,10 +186,8 @@ onBeforeUnmount(() => document.removeEventListener('keydown', onKey))
       @close="closed"
     >
       <div
-        ref="viewerEl"
         data-reduce="fade"
         class="viewer relative flex size-full flex-col items-center justify-center gap-5 bg-ink/75 p-4"
-        :class="{ 'has-tasks': showTasks }"
         @click.self="emit('close')"
       >
         <div class="flex items-center gap-3">
@@ -299,41 +272,6 @@ onBeforeUnmount(() => document.removeEventListener('keydown', onKey))
             <svg width="13" height="13" viewBox="0 0 24 24" :fill="isCover ? 'currentColor' : 'none'" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12v18l-6-4.5L6 21z" /></svg>
             {{ isCover ? '收集冊的封面' : '設為收集冊的封面' }}
           </button>
-          <!-- 這裡做過的事：勾了就拿到那一種卡；全景看已結束的行程，不能勾 -->
-          <section v-if="showTasks" class="tasks flex flex-col items-center gap-1" aria-labelledby="done-here">
-            <h3 id="done-here" class="text-caption font-bold text-white/70">這裡做過的事</h3>
-            <ul class="flex max-w-[34rem] flex-wrap justify-center gap-x-1 gap-y-0.5 max-sm:flex-col max-sm:items-start">
-              <li v-for="t in tasks" :key="t.key">
-                <button
-                  type="button"
-                  role="checkbox"
-                  :aria-checked="ticked.includes(t.key)"
-                  class="task flex h-8 items-center gap-2 rounded-full px-2.5 text-body-sm text-white hover:bg-paper/15 active:translate-y-px pointer-coarse:h-tap"
-                  @click="toggleTask(t.key)"
-                >
-                  <span class="box grid size-[18px] shrink-0 place-items-center rounded-[4px] border-2 border-paper" :class="ticked.includes(t.key) ? 'bg-paper text-ink' : ''" aria-hidden="true">
-                    <svg v-if="ticked.includes(t.key)" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5" /></svg>
-                  </span>
-                  <span class="label min-w-0">{{ t.label }}</span>
-                  <span class="tag shrink-0 whitespace-nowrap text-caption text-white/60">{{ t.card }}</span>
-                </button>
-              </li>
-              <li>
-                <span
-                  role="checkbox"
-                  :aria-checked="Boolean(trip)"
-                  aria-disabled="true"
-                  class="task flex h-8 items-center gap-2 rounded-full px-2.5 text-body-sm text-white/80 pointer-coarse:h-tap"
-                >
-                  <span class="box grid size-[18px] shrink-0 place-items-center rounded-[4px] border-2 border-paper/50" :class="trip ? 'bg-paper/50 text-ink' : ''" aria-hidden="true">
-                    <svg v-if="trip" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5" /></svg>
-                  </span>
-                  <span class="label min-w-0 max-w-[16rem] truncate">{{ trip ? `行程「${trip.name}」` : '行程裡去過' }}</span>
-                  <span class="tag shrink-0 whitespace-nowrap text-caption text-white/60">全景</span>
-                </span>
-              </li>
-            </ul>
-          </section>
           <div class="actions flex flex-wrap justify-center gap-2">
             <button
               v-if="touch && !tilt.reduced"
@@ -370,10 +308,10 @@ onBeforeUnmount(() => document.removeEventListener('keydown', onKey))
             </button>
           </div>
         </div>
-        <!-- 手機（<640）：「關閉」固定在右上角（整頁上下捲時也看得到），按鈕列放得進一行 -->
+        <!-- 手機（<640）：「關閉」在右上角，按鈕列放得進一行 -->
         <button
           type="button"
-          class="fixed top-[max(0.75rem,env(safe-area-inset-top))] right-[max(0.75rem,env(safe-area-inset-right))] flex h-10 items-center rounded-full bg-paper px-4 text-body-sm font-bold text-ink active:not-disabled:translate-y-px sm:hidden pointer-coarse:h-tap"
+          class="absolute top-[max(0.75rem,env(safe-area-inset-top))] right-[max(0.75rem,env(safe-area-inset-right))] flex h-10 items-center rounded-full bg-paper px-4 text-body-sm font-bold text-ink active:not-disabled:translate-y-px sm:hidden pointer-coarse:h-tap"
           @click="emit('close')"
         >
           關閉
@@ -424,31 +362,11 @@ onBeforeUnmount(() => document.removeEventListener('keydown', onKey))
 /* 卡寬（DESIGN.md §7.19）：最寬 320px；也依高度算，扣掉控制列（約 360px）後放得下整張卡。
    卡片用 em 排版，寬 20em：改 font-size 就是改卡寬 */
 .viewer {
-  --reserve: 360px;
-  --cw: min(320px, calc(100vw - 40px), calc((100dvh - var(--reserve)) * 5 / 7));
-}
-/* 卡片下面有「這裡做過的事」：多扣一兩行（手機排成三四行）；還是放不下（樣式膠囊排成兩行）時整頁上下捲，不蓋到「關閉」 */
-.viewer.has-tasks {
-  --reserve: 440px;
-  justify-content: safe center;
-  overflow-x: hidden;
-  overflow-y: auto;
-  overscroll-behavior: contain;
-}
-@media (max-width: 639px) {
-  .viewer.has-tasks {
-    padding-top: max(4rem, calc(env(safe-area-inset-top) + 3.5rem));
-  }
-}
-/* 手機：卡寬不讓給「這裡做過的事」，清單放在卡片下面，往下捲就看得到（紀念卡上的紀錄字才不會太小） */
-@media (max-width: 639px) {
-  .viewer.has-tasks {
-    --reserve: 360px;
-  }
+  --cw: min(320px, calc(100vw - 40px), calc((100dvh - 360px) * 5 / 7));
 }
 @media (max-width: 400px) {
   .viewer {
-    --cw: min(280px, calc((100dvh - var(--reserve)) * 5 / 7));
+    --cw: min(280px, calc((100dvh - 360px) * 5 / 7));
   }
 }
 .viewer-card :deep(.card-scene) {
@@ -507,37 +425,6 @@ onBeforeUnmount(() => document.removeEventListener('keydown', onKey))
   }
   .controls .cover-btn {
     margin-top: 0;
-  }
-  .tasks ul {
-    flex-direction: column;
-    flex-wrap: nowrap;
-    align-items: stretch;
-  }
-  /* 欄寬只有 13rem：字可以折行，樣式名另起一行 */
-  .tasks .task {
-    height: auto;
-    min-height: 2.5rem;
-    flex-wrap: wrap;
-    align-items: center;
-    column-gap: 0.5rem;
-    row-gap: 0;
-    padding-block: 0.25rem;
-    border-radius: 0.75rem;
-    text-align: start;
-  }
-  .tasks .label {
-    flex: 1 1 0;
-    white-space: normal;
-    overflow: visible;
-    max-width: none;
-  }
-  .tasks .tag {
-    flex-basis: 100%;
-    padding-left: calc(18px + 0.5rem);
-  }
-  .viewer.has-tasks {
-    overflow-y: hidden;
-    padding-top: 1rem;
   }
   .actions {
     flex-direction: column;

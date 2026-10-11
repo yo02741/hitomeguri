@@ -209,11 +209,22 @@ async function logOut() {
         </span>
       </button>
       <div class="mx-1 mt-1 border-t border-line-soft" role="none"></div>
+      <RouterLink
+        to="/credits"
+        role="menuitem"
+        tabindex="-1"
+        class="mt-1 flex min-h-tap items-center rounded-control px-2.5 text-body-sm text-ink no-underline hover:bg-surface focus-visible:bg-surface active:bg-surface"
+        :class="route.name === 'credits' ? 'font-bold' : ''"
+        :aria-current="route.name === 'credits' ? 'page' : undefined"
+        @click="hide()"
+      >
+        資料來源
+      </RouterLink>
       <button
         type="button"
         role="menuitem"
         tabindex="-1"
-        class="mt-1 flex min-h-tap items-center rounded-control px-2.5 text-left text-body-sm text-ink hover:bg-surface focus-visible:bg-surface active:bg-surface"
+        class="flex min-h-tap items-center rounded-control px-2.5 text-left text-body-sm text-ink hover:bg-surface focus-visible:bg-surface active:bg-surface"
         @click="logOut"
       >
         登出

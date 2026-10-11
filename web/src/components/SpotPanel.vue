@@ -15,6 +15,7 @@ import { PREF_GIFT_IDS } from '../data/outfitGifts'
 import { outfitKey, useFreshStore } from '../stores/fresh'
 import { useWalletStore } from '../stores/wallet'
 import { googleMapsUrl } from '../services/maps'
+import { wide } from '../services/viewport'
 import { canSpeak, speakJa } from '../services/tts'
 import { useCatalogStore } from '../stores/catalog'
 import { useMarksStore } from '../stores/marks'
@@ -22,6 +23,7 @@ import { useUserStore } from '../stores/user'
 import type { Snap } from '../services/sheetSnap'
 import CardViewer from './CardViewer.vue'
 import SpotActions from './SpotActions.vue'
+import SpotTasks from './SpotTasks.vue'
 import SummaryText from './SummaryText.vue'
 
 export interface NearbyPack {
@@ -114,6 +116,8 @@ const cardVariants = computed(() => {
   const dates = datesById.value.get(c.face.id)
   return dates ? spotVariants.variantsOf(c.face.id, hasNight(c.face), dates) : []
 })
+// 這裡做過的事（SpotTasks）：去過的景點才有。桌機放在去過下面，手機放在貼底的工作列上面（捲到下面看得到）
+const showTasks = computed(() => Boolean(card.value?.visited && cardVariants.value.length))
 // 按下去過：收集卡飛出來亮相，再收進紀錄分頁
 function onStamped() {
   const c = card.value
@@ -393,6 +397,16 @@ function distance(m: number): string {
         </button>
       </section>
 
+      <SpotTasks
+        v-if="showTasks && card && !wide"
+        class="mx-5 mt-4"
+        :card="card.face"
+        :rarity="card.rarity"
+        :label="card.label"
+        :number="card.number"
+        :variants="cardVariants"
+      />
+
       <div class="mx-5 mt-2 flex flex-wrap gap-x-3 text-caption text-sub pointer-coarse:-my-3.5 pointer-coarse:items-center">
         <span>來源</span>
         <a v-for="s in spot.sources" :key="s.url" :href="s.url" target="_blank" rel="noopener" class="text-sub pointer-coarse:py-3.5">{{ sourceLabel(s.url) }}</a>
@@ -401,6 +415,15 @@ function distance(m: number): string {
       <!-- 手機：收藏・去過・清單・行程貼在 sheet 底部，不必先捲到最下面；Google Maps 移到上面的資訊列 -->
       <div data-toast-above class="mt-auto flex flex-col gap-2 border-t border-line px-5 pt-3.5 pb-5 max-lg:sticky max-lg:bottom-0 max-lg:z-[2] max-lg:bg-paper max-lg:px-3 max-lg:pt-2 max-lg:pb-2">
         <SpotActions v-if="spotRef" :spot="spotRef" @stamped="onStamped" />
+        <SpotTasks
+          v-if="showTasks && card && wide"
+          class="mt-1.5"
+          :card="card.face"
+          :rarity="card.rarity"
+          :label="card.label"
+          :number="card.number"
+          :variants="cardVariants"
+        />
         <a
           :href="mapsUrl"
           target="_blank"
