@@ -29,8 +29,9 @@ const note = ref('')
 const trip = ref('')
 
 const editing = computed(() => Boolean(props.find))
+// 全部的行程（已結束的在後面，回填以前的旅行也能選）
 const tripOptions = computed(() =>
-  trips.sorted.filter((t) => tripStatus(t, todayIso()) !== 'done' || t.id === trip.value || t.id === props.tripId),
+  trips.sorted.map((t) => ({ value: t.id, label: `${t.name || '未命名行程'}${tripStatus(t, todayIso()) === 'done' ? '（已結束）' : ''}` })),
 )
 const brandOptions = computed(() => [...new Set([...finds.brands, '7-11', '全家', 'LAWSON', '麥當勞'])])
 const brandSuggestions = computed(() => brandOptions.value.filter((b) => b !== brand.value && (!brand.value || b.startsWith(brand.value))).slice(0, 8))
@@ -235,7 +236,7 @@ function close() {
           行程
           <Dropdown
             v-model="trip"
-            :options="[{ value: '', label: '不指定' }, ...tripOptions.map((t) => ({ value: t.id, label: t.name || '未命名行程' }))]"
+            :options="[{ value: '', label: '不指定' }, ...tripOptions]"
             label="行程"
             class="w-full"
           />

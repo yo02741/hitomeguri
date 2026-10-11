@@ -81,14 +81,16 @@ async function toggle(which: 'lists' | 'trips') {
   open.value = which
   await nextTick()
   if (which === 'lists' && !marks.lists.length) nameInput.value?.focus()
-  if (which === 'trips' && !openTrips.value.length) tripInput.value?.focus()
+  if (which === 'trips' && !tripList.value.length) tripInput.value?.focus()
 }
 
-// 加入行程（UX-FLOW.md C2）：還沒結束的行程；選「待排」或某一天
-const openTrips = computed(() => trips.sorted.filter((t) => tripStatus(t, todayIso()) !== 'done'))
-const inTrips = computed(() => openTrips.value.filter((t) => hasSpot(t, props.spot.id)).length)
+// 加入行程（UX-FLOW.md C2）：全部的行程，已結束的排在後面、上方標「已結束」（回填以前的旅行）；
+// 選「待排」或某一天
+const tripList = computed(() => trips.sorted.map((t) => ({ t, done: tripStatus(t, todayIso()) === 'done' })))
+const firstDone = computed(() => tripList.value.findIndex((x) => x.done))
+const inTrips = computed(() => trips.sorted.filter((t) => hasSpot(t, props.spot.id)).length)
 const target = ref<Record<string, string>>({})
-function dayLabel(t: (typeof openTrips.value)[number], i: number): string {
+function dayLabel(t: (typeof trips.sorted)[number], i: number): string {
   const d = dayDate(t, i)
   return `DAY ${i + 1}${d ? `　${shortDate(d)}` : ''}`
 }
@@ -238,28 +240,31 @@ const visitedShort = computed(() => {
         aria-label="加入行程"
       >
         <div class="scroll-quiet flex flex-col overflow-y-auto overscroll-contain">
-          <div v-for="t in openTrips" :key="t.id" class="flex min-h-tap items-center gap-2 rounded-control px-2.5">
-            <span class="min-w-0 flex-1 truncate text-body-sm">{{ t.name || '未命名行程' }}</span>
-            <template v-if="hasSpot(t, spot.id)">
-              <span class="shrink-0 text-caption text-sub">已加入</span>
-            </template>
-            <template v-else>
-              <Dropdown
-                :model-value="target[t.id] ?? ''"
-                :options="[{ value: '', label: '待排' }, ...t.days.map((_, i) => ({ value: String(i), label: dayLabel(t, i) }))]"
-                :label="`加入「${t.name || '未命名行程'}」的哪一天`"
-                size="sm"
-                @update:model-value="target = { ...target, [t.id]: $event }"
-              />
-              <button
-                type="button"
-                class="h-9 shrink-0 rounded-control border border-line bg-paper px-2.5 text-caption text-ink hover:bg-surface active:not-disabled:translate-y-px pointer-coarse:h-tap"
-                @click="addTo(t.id)"
-              >
-                加入
-              </button>
-            </template>
-          </div>
+          <template v-for="({ t }, i) in tripList" :key="t.id">
+            <p v-if="i === firstDone" class="px-2.5 pt-2 pb-1 text-caption text-sub" :class="i > 0 ? 'mt-1 border-t border-line-soft' : ''">已結束</p>
+            <div class="flex min-h-tap items-center gap-2 rounded-control px-2.5">
+              <span class="min-w-0 flex-1 truncate text-body-sm">{{ t.name || '未命名行程' }}</span>
+              <template v-if="hasSpot(t, spot.id)">
+                <span class="shrink-0 text-caption text-sub">已加入</span>
+              </template>
+              <template v-else>
+                <Dropdown
+                  :model-value="target[t.id] ?? ''"
+                  :options="[{ value: '', label: '待排' }, ...t.days.map((_, i) => ({ value: String(i), label: dayLabel(t, i) }))]"
+                  :label="`加入「${t.name || '未命名行程'}」的哪一天`"
+                  size="sm"
+                  @update:model-value="target = { ...target, [t.id]: $event }"
+                />
+                <button
+                  type="button"
+                  class="h-9 shrink-0 rounded-control border border-line bg-paper px-2.5 text-caption text-ink hover:bg-surface active:not-disabled:translate-y-px pointer-coarse:h-tap"
+                  @click="addTo(t.id)"
+                >
+                  加入
+                </button>
+              </template>
+            </div>
+          </template>
         </div>
         <form class="mt-1 flex gap-1.5 border-t border-line-soft px-1 pt-2" @submit.prevent="addTrip">
           <input
