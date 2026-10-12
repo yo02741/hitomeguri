@@ -180,11 +180,21 @@ function groundShadow(): Mesh {
  * 圓帽（左右對稱、比頭寬的斗笠、花笠…）：充氣只會鼓成一片，側面看像頭帶。
  * 改用旋轉成形：每一列剪影的半寬當輪廓轉一圈，帽簷是真的一圈；貼圖從正面投影（花紋留在正面、背面是同一張）。
  */
-const ROUND_HATS = new Set(['sugegasa', 'achv-jingasa', 'yamagata-hanagasa', 'shizuoka-fuji', 'kagoshima-sakurajima', 'tokushima-amigasa'])
+const ROUND_HATS = new Set(['sugegasa', 'achv-jingasa', 'yamagata-hanagasa', 'shizuoka-fuji', 'kagoshima-sakurajima', 'tokushima-amigasa', 'straw-hat', 'bucket-hat', 'school-hat', 'beanie'])
 
-function latheHat(vb: ViewBox, alpha: Cover): BufferGeometry | null {
+function latheHat(vb: ViewBox, alpha: Cover, hairHalf: (y: number) => number): { geometry: BufferGeometry; cover: Cover } | null {
   const [vx, vy, vw, vh] = vb
   const pts: Vector2[] = []
+  // 畫成正面看的帽冠可能比頭窄（草帽、漁夫帽：2D 是透視的樣子），轉一圈後頭和頭髮會從帽冠穿出來：
+  // 半徑至少是「頭在那一列的半寬＋6」（瀏海浮在頭上最多約 6px）與「頭髮那一列的半寬＋3」，貼圖照原本的寬度縮放上去
+  const headHalf = (y: number) => {
+    const v = (y - HEAD.cy) / HEAD.ry
+    return Math.abs(v) < 1 ? HEAD.rx * Math.sqrt(1 - v * v) : 0
+  }
+  const squeeze = new Map<number, number>()
+  /** 每一列（紙娃娃的 y，整數）轉成一圈後的半徑：頭髮在這個範圍內要變薄 */
+  const radiusAt = new Map<number, number>()
+  const rowKey = (wy: number) => Math.round(wy * 1e4)
   let last = { r: 0, y: 0 }
   let widest = 0
   for (let y = vy; y <= vy + vh; y += 1) {
@@ -204,25 +214,32 @@ function latheHat(vb: ViewBox, alpha: Cover): BufferGeometry | null {
     // 過了最寬的那一列（帽簷）之後，只剩兩條細線（帽帶）就停：帽帶不轉成一圈
     if (widest && rad < widest && filled / total < 0.4) break
     widest = Math.max(widest, rad)
+    const used = Math.max(rad, headHalf(y) + 6, hairHalf(y) + 3)
     if (!pts.length) pts.push(new Vector2(0, worldY(y - 0.5)))
-    pts.push(new Vector2(rad * PX, worldY(y)))
-    last = { r: rad, y }
+    pts.push(new Vector2(used * PX, worldY(y)))
+    squeeze.set(rowKey(worldY(y)), rad / used)
+    radiusAt.set(Math.round(y), used)
+    last = { r: used, y }
   }
   if (pts.length < 3) return null
   // 帽簷底下往內收回到頭的寬度，帽子是封起來的
   pts.push(new Vector2(Math.min(last.r, HEAD.rx * 0.9) * PX, worldY(last.y + 1.5)))
   const geo = new LatheGeometry(pts.reverse(), 72)
-  // 貼圖從正面投影：3D 的 x 對回紙娃娃的 x
+  // 貼圖從正面投影：3D 的 x 對回紙娃娃的 x（放寬過的列照比例縮回原本的寬度）
   const pos = geo.attributes.position!
   const uv = geo.attributes.uv!
   for (let i = 0; i < pos.count; i++) {
-    const x = pos.getX(i) / PX + 120
+    const x = (pos.getX(i) / PX) * (squeeze.get(rowKey(pos.getY(i))) ?? 1) + 120
     const y = 280 - pos.getY(i) / PX
     uv.setXY(i, (x - vx) / vw, 1 - (y - vy) / vh)
   }
   uv.needsUpdate = true
   geo.computeVertexNormals()
-  return geo
+  const cover: Cover = (x, y) => {
+    const r = radiusAt.get(Math.round(y))
+    return r === undefined ? 0 : clamp01((r + 2 - Math.abs(x - 120)) / 4)
+  }
+  return { geometry: geo, cover }
 }
 
 /** 圓帽的貼圖：同一列裡透明的地方（例如編笠下面露出臉的缺口）用左右最近的顏色補滿；轉一圈後每個角度都投影得到顏色 */
@@ -354,7 +371,6 @@ export async function buildAvatar(parts: AvatarParts, equipped: Partial<Record<S
     const list = layers.filter((l): l is { alpha: Cover } => !!l)
     return list.length ? (x, y) => Math.max(...list.map((l) => l.alpha(x, y))) : none
   }
-  const coverHair = coverOf(faceItem, headItem)
 
   // 身體＋衣服（手上的、夥伴另外做）：軀幹、腿一塊，兩隻手臂（含袖子、手）各自一塊，
   // 分開鼓才是圓的手臂，側面不會被拉成一片。都以 z = 0 為中心。
@@ -414,6 +430,28 @@ export async function buildAvatar(parts: AvatarParts, equipped: Partial<Record<S
     rasterize(resolveVars(hair.front, local), frontVb, SCALE, defs),
   ])
 
+  // 圓帽：轉一圈的帽冠要蓋住頭髮，先量每一列頭髮的半寬（頭頂以上不算：雙丸子等不把帽子撐成大圓筒；最多頭寬＋8）
+  let lathe: ReturnType<typeof latheHat> = null
+  if (headItem && ROUND_HATS.has(equipped.head!)) {
+    const ha = [alphaSampler(backCanvas, hairVb, SCALE), alphaSampler(frontCanvas, frontVb, SCALE)]
+    const rows = new Map<number, number>()
+    const hairHalf = (y: number) => {
+      const k = Math.round(y)
+      if (k < HEAD.cy - HEAD.ry) return 0
+      let r = rows.get(k)
+      if (r === undefined) {
+        r = 0
+        for (let x = 30; x <= 210; x += 1) if (ha.some((a) => a(x, k) >= 0.5)) r = Math.max(r, Math.abs(x - 120))
+        r = Math.min(r, HEAD.rx + 8)
+        rows.set(k, r)
+      }
+      return r
+    }
+    lathe = latheHat(headItem.vb, headItem.alpha, hairHalf)
+  }
+  // 圓帽轉一圈後比 2D 的帽子寬：頭髮變薄的範圍用轉出來的那一圈
+  const coverHair = coverOf(faceItem, lathe ? { alpha: lathe.cover } : headItem)
+
   // 頭
   const scalp = scalpTexture(alphaSampler(frontCanvas, frontVb, SCALE), alphaSampler(backCanvas, hairVb, SCALE), skin, css(`--color-doll-hair-${parts.hairColor}`))
   const head = new Mesh(new SphereGeometry(1, 64, 48), new MeshToonMaterial({ map: scalp, gradientMap: gradientMap() }))
@@ -448,8 +486,7 @@ export async function buildAvatar(parts: AvatarParts, equipped: Partial<Record<S
   if (faceItem)
     add(new Mesh(inflateLayer({ canvas: faceItem.canvas, vb: faceItem.vb, scale: SCALE, step: 1, bulge: 1.4, maxH: 5, base: onHead(7, 3, { grow: 1.0, thin: 0.5, cover: headItem?.alpha }) }).geometry, toon(faceItem.canvas)))
   if (headItem) {
-    const lathe = ROUND_HATS.has(equipped.head!) ? latheHat(headItem.vb, headItem.alpha) : null
-    const geo = lathe ?? inflateLayer({ canvas: headItem.canvas, vb: headItem.vb, scale: SCALE, step: 1, bulge: 3.2, maxH: 15, base: onHead(9, 2, { grow: 1.04 }) }).geometry
+    const geo = lathe?.geometry ?? inflateLayer({ canvas: headItem.canvas, vb: headItem.vb, scale: SCALE, step: 1, bulge: 3.2, maxH: 15, base: onHead(9, 2, { grow: 1.04 }) }).geometry
     add(new Mesh(geo, toon(lathe ? rowFill(headItem.canvas) : headItem.canvas)))
   }
 

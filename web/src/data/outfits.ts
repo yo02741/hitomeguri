@@ -3,10 +3,11 @@
  * 畫風是剪紙的紙人形：平塗、不描黑邊，只用同色的淡邊與一層陰影、一層亮面；整隻外面一圈白邊（剪下來的紙）。
  * 顏色一律用 theme.css 的 `--color-doll-*`、`--color-item-*` token；花紋用 DollDefs.vue 的 <pattern>。
  * 服裝分五個位置：頭（帽子、髮箍）、臉（眼鏡）、身（衣服）、手（拿的東西，在右手）、夥伴（腳邊）。
- * 各縣的特色單品去過那個縣就有；幾個大的成就各送 1 件（outfitsAchv.ts）；其他的用抽獎券抽。
+ * 各縣的特色單品去過那個縣就有；幾個大的成就各送 1 件（outfitsAchv.ts）；其他的用抽獎券抽（不限縣的第二批在 outfitsMore.ts）。
  */
-import { C, dots, E, line, SH, shape } from './dollArt'
+import { C, dots, E, line, NECK, PANTS, ROBE, SH, shape, SHORTS, SLEEVE_L, SLEEVE_R, TOP, TOP_LONG, TOP_SHADE } from './dollArt'
 import { ACHV_OUTFITS } from './outfitsAchv'
+import { MORE_OUTFITS } from './outfitsMore'
 import { PREF_OUTFITS } from './outfitsPref'
 
 export type Slot = 'head' | 'face' | 'body' | 'hand' | 'buddy'
@@ -260,20 +261,6 @@ export const EYES: Record<EyeStyle, string> = {
 }
 
 // ---------- 服裝 ----------
-// 上衣：肩到腰，短袖蓋到手肘
-const TOP = 'M98 151 L142 151 C153 153 161 158 165 167 L170 188 L151 192 L151 240 L89 240 L89 192 L70 188 L75 167 C79 158 87 153 98 151Z'
-const TOP_SHADE = 'M140 151 C153 153 161 158 165 167 L170 188 L151 192 L151 240 L138 240Z'
-// 作務衣：袖子到手腕
-const TOP_LONG = 'M98 151 L142 151 C153 153 161 158 165 167 L172 208 L151 210 L151 240 L89 240 L89 210 L68 208 L75 167 C79 158 87 153 98 151Z'
-// 長褲、短褲
-const PANTS = 'M89 234 L151 234 L152 244 L145 274 L124 274 L121.5 250 L118.5 250 L116 274 L95 274 L88 244Z'
-const SHORTS = 'M89 234 L151 234 L154 256 L124 258 L121 246 L119 246 L116 258 L86 256Z'
-// 和服形（浴衣）：到腳踝，袂垂到腰下
-const ROBE = 'M96 151 L144 151 L153 162 L158 274 L82 274 L87 162Z'
-const SLEEVE_L = 'M92 156 C80 158 70 166 68 180 L66 224 C66 231 71 234 78 234 L95 234 L95 170Z'
-const SLEEVE_R = 'M148 156 C160 158 170 166 172 180 L174 224 C174 231 169 234 162 234 L145 234 L145 170Z'
-const NECK = `<path d="M108 151 Q120 159 132 151" ${line(1.6, C.ink, 0.25)}/>`
-
 export const OUTFITS: Outfit[] = [
   // ----- 抽的 -----
   {
@@ -483,6 +470,7 @@ export const OUTFITS: Outfit[] = [
       `<path d="M46 280 Q58 286 70 280" ${line(2.2, C.gold)}/>`,
   },
 
+  ...MORE_OUTFITS,
   ...ACHV_OUTFITS,
   ...PREF_OUTFITS,
 ]

@@ -27,3 +27,17 @@ export const line = (w = 2.4, color = C.ink, op = 1) => `fill="none" stroke="${c
 export const shape = (d: string, fill: string, extra = '') => `<path d="${d}" fill="${fill}" ${E} ${extra}/>`
 export const dots = (fill: string, r: number, pts: Array<[number, number]>, extra = '') => `<g fill="${fill}" ${extra}>${pts.map(([x, y]) => `<circle cx="${x}" cy="${y}" r="${r}"/>`).join('')}</g>`
 
+// ---------- 衣服的版型（240×320 的畫布，肩 y151、腰 y240、腳踝 y274） ----------
+// 上衣：肩到腰，短袖蓋到手肘
+export const TOP = 'M98 151 L142 151 C153 153 161 158 165 167 L170 188 L151 192 L151 240 L89 240 L89 192 L70 188 L75 167 C79 158 87 153 98 151Z'
+export const TOP_SHADE = 'M140 151 C153 153 161 158 165 167 L170 188 L151 192 L151 240 L138 240Z'
+// 作務衣：袖子到手腕
+export const TOP_LONG = 'M98 151 L142 151 C153 153 161 158 165 167 L172 208 L151 210 L151 240 L89 240 L89 210 L68 208 L75 167 C79 158 87 153 98 151Z'
+// 長褲、短褲
+export const PANTS = 'M89 234 L151 234 L152 244 L145 274 L124 274 L121.5 250 L118.5 250 L116 274 L95 274 L88 244Z'
+export const SHORTS = 'M89 234 L151 234 L154 256 L124 258 L121 246 L119 246 L116 258 L86 256Z'
+// 和服形（浴衣）：到腳踝，袂垂到腰下
+export const ROBE = 'M96 151 L144 151 L153 162 L158 274 L82 274 L87 162Z'
+export const SLEEVE_L = 'M92 156 C80 158 70 166 68 180 L66 224 C66 231 71 234 78 234 L95 234 L95 170Z'
+export const SLEEVE_R = 'M148 156 C160 158 170 166 172 180 L174 224 C174 231 169 234 162 234 L145 234 L145 170Z'
+export const NECK = `<path d="M108 151 Q120 159 132 151" ${line(1.6, C.ink, 0.25)}/>`

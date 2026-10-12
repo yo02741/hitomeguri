@@ -129,6 +129,19 @@
         <path d="M0 0 L6 0 L0 6Z M6 6 L12 6 L6 12Z" class="p-yosegi-a" />
         <path d="M6 0 L12 0 L12 6Z M0 6 L6 12 L0 12Z" class="p-yosegi-b" />
       </pattern>
+      <!-- 橫條紋（條紋 T 恤） -->
+      <pattern id="doll-border" width="10" height="9" patternUnits="userSpaceOnUse">
+        <rect width="10" height="3.6" class="p-border" />
+      </pattern>
+      <!-- 格紋：兩層半透明的白帶交疊（格紋襯衫） -->
+      <pattern id="doll-check" width="12" height="12" patternUnits="userSpaceOnUse">
+        <rect width="6" height="12" class="p-check" />
+        <rect width="12" height="6" class="p-check" />
+      </pattern>
+      <!-- 針織的直紋（毛衣、毛帽） -->
+      <pattern id="doll-knit" width="6" height="8" patternUnits="userSpaceOnUse">
+        <path d="M3 0 L3 8" class="p-knit" />
+      </pattern>
       <!-- 甜筒的格紋 -->
       <pattern id="doll-waffle" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
         <path d="M0 0 L7 0 M0 0 L0 7" class="p-brown" />
@@ -201,6 +214,19 @@
 }
 .p-yosegi-b {
   fill: var(--color-item-brown);
+}
+.p-border {
+  fill: var(--color-item-navy);
+}
+.p-check {
+  fill: var(--color-item-white);
+  opacity: 0.28;
+}
+.p-knit {
+  fill: none;
+  stroke: var(--color-doll-line);
+  stroke-opacity: 0.14;
+  stroke-width: 1.6;
 }
 .p-gold,
 .p-cream,
