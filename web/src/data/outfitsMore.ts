@@ -1,5 +1,5 @@
 import type { Outfit } from './outfits'
-import { C, dots, E, line, LONG, LONG_SHADE, NECK, PANTS, ROBE, SH, shape, SHORTS, SLEEVE_L, SLEEVE_R, TOP, TOP_SHADE } from './dollArt'
+import { C, dots, E, line, LONG, LONG_SHADE, mirror, NECK, PANTS, ROBE, SH, shape, SHORTS, SLEEVE_L, SLEEVE_R, TOP, TOP_SHADE } from './dollArt'
 
 /**
  * 不限縣的服裝第二批（使用者回饋 2026-10-12：衣服太少，多一些不用去特定縣市的）。全部用抽獎券抽。
@@ -469,8 +469,9 @@ const HEAD: Outfit[] = [
     name: '蝴蝶結',
     slot: 'head',
     rarity: 1,
-    icon: '110 28 80 54',
-    svg:
+    icon: '50 28 80 54',
+    // 戴在頭的右側（畫面左邊）：左側留給側戴的面具
+    svg: mirror(
       shape('M146 56 L139 76 L146 73 L150 60Z', C.red) +
       shape('M154 56 L161 76 L154 73 L150 60Z', C.red) +
       shape('M150 52 C138 34 118 36 120 52 C118 68 138 70 150 52Z', C.red) +
@@ -478,6 +479,7 @@ const HEAD: Outfit[] = [
       shade('M150 52 C162 34 182 36 180 52 C182 68 162 70 150 52Z') +
       `<path d="M126 46 C132 42 138 44 142 48 M158 48 C162 44 168 42 174 46" ${line(1.6, C.white, 0.45)}/>` +
       `<circle cx="150" cy="52" r="6" fill="${C.red}" ${E}/>`,
+    ),
   },
   {
     id: 'earmuffs',

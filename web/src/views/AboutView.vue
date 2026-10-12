@@ -304,9 +304,17 @@ function showTab(k: TabKey) {
   void nextTick(() => document.getElementById('features')?.scrollIntoView({ behavior: 'smooth', block: 'start' }))
 }
 
-const FEATURES: Record<TabKey, { title: string; lines: string[] }> = {
+// 形象網站與 app 互通（使用者回饋 2026-10-12）：上緣的三個分頁、每個頁籤到實際的那一頁
+const APP_LINKS = [
+  { to: '/', label: '探索' },
+  { to: '/trips', label: '行程' },
+  { to: '/log', label: '紀錄' },
+] as const
+const FEATURES: Record<TabKey, { title: string; lines: string[]; to: string; go: string }> = {
   explore: {
     title: '先找地方',
+    to: '/',
+    go: '打開地圖',
     lines: [
       '選一個縣，地圖與清單只看這一縣；縣裡再分到市區町村，東京的台東區、京都的東山區。',
       '景點依類型分：寺社、城・史跡、博物館、自然、島・海岸、購物・市場、娛樂、機場。',
@@ -317,6 +325,8 @@ const FEATURES: Record<TabKey, { title: string; lines: string[] }> = {
   },
   trip: {
     title: '再排每一天',
+    to: '/trips',
+    go: '排一趟行程',
     lines: [
       '從景點卡片加入行程，放進某一天或先放待排；同一個機場可以排在第一天和最後一天。',
       '拖曳排順序，一天的路線直接用 Google Maps 打開。',
@@ -327,6 +337,8 @@ const FEATURES: Record<TabKey, { title: string; lines: string[] }> = {
   },
   prep: {
     title: '出發前準備念法',
+    to: '/trips',
+    go: '選一趟行程來準備',
     lines: [
       '這趟會去的地名、站名，附假名、羅馬拼音與日文發音。',
       '會話分「聽」「說」「讀」，翻卡練習；每一句附出處。',
@@ -336,6 +348,8 @@ const FEATURES: Record<TabKey, { title: string; lines: string[] }> = {
   },
   log: {
     title: '回來之後',
+    to: '/log',
+    go: '看紀錄',
     lines: [
       '去過的地方蓋上日期，地圖上一縣一縣塗滿。',
       '紀念章帳：47 縣的初訪章，加上 40 個成就。',
@@ -344,6 +358,8 @@ const FEATURES: Record<TabKey, { title: string; lines: string[] }> = {
   },
   cards: {
     title: '一個地方，一疊卡',
+    to: '/log/cards',
+    go: '打開收集冊',
     lines: [
       '基本：按下去過就有。',
       '春景・夏景・秋景・冬景：去的那一季；沒去過的季節用抽獎券抽。',
@@ -538,7 +554,13 @@ const kyotoRegion = regionOf('kyoto')
       <div class="hero-scrim pointer-events-none absolute inset-0 -z-10" aria-hidden="true"></div>
 
       <div class="hero-content mx-auto flex w-full max-w-6xl flex-1 flex-col px-6 pt-6 max-sm:px-4 max-sm:pt-4">
-        <div class="hero-mark"><Wordmark /></div>
+        <!-- 上緣：品牌，右邊直接進 app 的三個分頁 -->
+        <div class="flex items-center gap-4">
+          <div class="hero-mark"><Wordmark /></div>
+          <nav class="ml-auto flex items-center gap-1 max-sm:-mr-2" aria-label="ひとめぐり">
+            <RouterLink v-for="l in APP_LINKS" :key="l.to" :to="l.to" class="flex min-h-tap items-center px-2.5 text-body-sm font-bold tracking-[0.04em] whitespace-nowrap text-white no-underline hover:underline hover:decoration-2 hover:underline-offset-[6px] max-sm:px-2">{{ l.label }}</RouterLink>
+          </nav>
+        </div>
 
         <div class="mt-auto grid items-end gap-x-10 gap-y-6 pt-16 md:grid-cols-[minmax(0,1fr)_auto]">
           <div class="flex flex-col gap-4">
@@ -669,6 +691,7 @@ const kyotoRegion = regionOf('kyoto')
                 <span>{{ line }}</span>
               </li>
             </ul>
+            <RouterLink :to="FEATURES[t.key].to" class="mt-2 flex h-11 w-fit items-center rounded-control bg-ink px-5 text-body-sm font-bold text-paper no-underline active:translate-y-px">{{ FEATURES[t.key].go }}</RouterLink>
           </div>
 
           <!-- 探索：京都的地區標籤、擴充包、清單 -->

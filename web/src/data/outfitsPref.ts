@@ -5,7 +5,7 @@
  * 畫法跟 outfits.ts 一樣（剪紙、平塗、淡邊），多數用下面的模板：碗、串、盤、水果、城、面具、法被、浴衣。
  * 座標：右手握在 (156, 222)、頭頂約 y 38、眼睛 y 110、夥伴站在左腳邊（地面 y 294）。
  */
-import { C, dots, E, line, SH, shape, vtext } from './dollArt'
+import { C, dots, E, line, mirror, OVER, SH, shape, vtext } from './dollArt'
 import type { Outfit } from './outfits'
 
 type Def = Omit<Outfit, 'pref' | 'gift'>
@@ -106,7 +106,8 @@ function kanzashi(flower: string, center: string, extra = ''): string {
     [150, 64],
     [164, 72],
   ]
-  return (
+  // 戴在頭的右側（畫面左邊）：左側留給側戴的面具
+  return mirror(
     `<path d="M150 74 L176 92 M156 78 L172 104 M162 80 L166 112" ${line(1.4, C.gold)}/>` +
     dots(C.gold, 2.4, [
       [176, 92],
@@ -128,6 +129,7 @@ function kanzashi(flower: string, center: string, extra = ''): string {
 export function sideMask(face: string, base: string, extra = ''): string {
   return (
     `<path d="M66 88 C90 76 140 74 152 78" ${line(2, C.red)}/>` +
+    OVER +
     `<g transform="rotate(16 160 76)">` +
     shape('M160 46 C176 46 186 60 186 76 C186 94 174 106 160 106 C146 106 134 94 134 76 C134 60 144 46 160 46Z', base) +
     `<path d="M172 50 C182 58 186 68 186 78 C186 94 176 106 162 106 C176 96 180 70 172 50Z" ${SH}/>` +
@@ -725,7 +727,7 @@ const BY_PREF: Record<string, Def[]> = {
       name: '偕樂園梅花簪',
       slot: 'head',
       rarity: 2,
-      icon: '120 30 80 96',
+      icon: '40 30 80 96',
       svg: kanzashi(C.pink, C.red),
     },
     {
@@ -914,7 +916,7 @@ const BY_PREF: Record<string, Def[]> = {
       name: '油菜花簪',
       slot: 'head',
       rarity: 1,
-      icon: '120 30 80 96',
+      icon: '40 30 80 96',
       svg: kanzashi(C.yellow, C.orange, `<path d="M146 76 C150 70 156 68 160 70" ${line(2.4, C.green)}/>`),
     },
   ],
@@ -1432,7 +1434,7 @@ const BY_PREF: Record<string, Def[]> = {
       name: '舞妓花簪',
       slot: 'head',
       rarity: 3,
-      icon: '120 30 80 96',
+      icon: '40 30 80 96',
       svg: kanzashi(C.red, C.yellow, dots(C.pink, 3, [[148, 46], [176, 70]]) + dots(C.white, 2.4, [[166, 50]])),
     },
   ],

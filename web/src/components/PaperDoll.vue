@@ -1,11 +1,13 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 
+import { splitOver } from '../data/dollArt'
 import { EYES, HAIR, outfitById, type Slot } from '../data/outfits'
 import type { AvatarParts } from '../stores/avatar'
 
 // 紙娃娃（DESIGN.md §7.24）：240×320 的 SVG，剪紙的紙人形。整隻套 DollDefs 的 #doll-cut（白邊＋紙影），
 // 夥伴是另一張紙。由下往上疊：後髮、手腳、衣服、手、頭、臉、瀏海、臉上的、頭上的、手上的（右手握著）。
+// 側戴的面具（data/dollArt.ts 的 OVER）：綁繩在頭上的單品下面，面具本體在上面，戴帽子、頭帶時不會被蓋掉。
 const props = withDefaults(
   defineProps<{
     parts: AvatarParts
@@ -20,6 +22,7 @@ const props = withDefaults(
 )
 
 const svgOf = (slot: Slot) => (props.equipped[slot] ? (outfitById.get(props.equipped[slot]!)?.svg ?? '') : '')
+const face = computed(() => splitOver(svgOf('face')))
 const hair = computed(() => HAIR[props.parts.hair] ?? HAIR.bob)
 const eyes = computed(() => EYES[props.parts.eyes] ?? EYES.round)
 const cut = computed(() => (props.shadow ? 'url(#doll-cut)' : 'url(#doll-cut-ns)'))
@@ -59,10 +62,11 @@ const style = computed(() => ({
           <g v-html="eyes"></g>
           <path d="M116 129 Q120 132.5 124 129" class="mouth" />
         </g>
-        <!-- 瀏海、臉上的、頭上的 -->
+        <!-- 瀏海、臉上的、頭上的、側戴的面具 -->
         <g v-html="hair.front"></g>
-        <g v-html="svgOf('face')"></g>
+        <g v-html="face.under"></g>
         <g v-html="svgOf('head')"></g>
+        <g v-if="face.over" v-html="face.over"></g>
         <!-- 手上的，右手握著 -->
         <g v-html="svgOf('hand')"></g>
         <circle cx="156" cy="222" r="8" class="skin-1" />

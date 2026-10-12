@@ -20,6 +20,7 @@ import {
   Vector2,
 } from 'three'
 
+import { splitOver } from '../../data/dollArt'
 import { EYES, HAIR, outfitById, type Slot } from '../../data/outfits'
 import type { AvatarParts } from '../../stores/avatar'
 import { alphaSampler, bleedEdges, inflateLayer, PX, type Surface, worldX, worldY } from './inflate'
@@ -182,7 +183,11 @@ function groundShadow(): Mesh {
  */
 const ROUND_HATS = new Set(['sugegasa', 'achv-jingasa', 'yamagata-hanagasa', 'shizuoka-fuji', 'kagoshima-sakurajima', 'tokushima-amigasa', 'straw-hat', 'bucket-hat', 'school-hat', 'beanie'])
 
-function latheHat(vb: ViewBox, alpha: Cover, hairHalf: (y: number) => number): { geometry: BufferGeometry; cover: Cover } | null {
+function latheHat(
+  vb: ViewBox,
+  alpha: Cover,
+  hairHalf: (y: number) => number,
+): { geometry: BufferGeometry; cover: Cover; frontAt: (x: number, y: number) => number | null } | null {
   const [vx, vy, vw, vh] = vb
   const pts: Vector2[] = []
   // 畫成正面看的帽冠可能比頭窄（草帽、漁夫帽：2D 是透視的樣子），轉一圈後頭和頭髮會從帽冠穿出來：
@@ -239,7 +244,13 @@ function latheHat(vb: ViewBox, alpha: Cover, hairHalf: (y: number) => number): {
     const r = radiusAt.get(Math.round(y))
     return r === undefined ? 0 : clamp01((r + 2 - Math.abs(x - 120)) / 4)
   }
-  return { geometry: geo, cover }
+  /** 帽子正面在 (x, y) 的深度（轉一圈的半徑）；帽子以外是 null */
+  const frontAt = (x: number, y: number) => {
+    const r = radiusAt.get(Math.round(y))
+    const dx = Math.abs(x - 120)
+    return r === undefined || dx >= r ? null : Math.sqrt(r * r - dx * dx)
+  }
+  return { geometry: geo, cover, frontAt }
 }
 
 /** 圓帽的貼圖：同一列裡透明的地方（例如編笠下面露出臉的缺口）用左右最近的顏色補滿；轉一圈後每個角度都投影得到顏色 */
@@ -359,14 +370,22 @@ export async function buildAvatar(parts: AvatarParts, equipped: Partial<Record<S
   }
 
   // 先把每一層畫好：後面的層要知道前面的蓋住哪裡
-  const item = async (slot: Slot) => {
+  const item = async (slot: Slot, svg = svgOf(slot)) => {
     const id = equipped[slot]
-    if (!id || !outfitById.has(id)) return null
+    if (!id || !outfitById.has(id) || !svg) return null
     const vb = itemBox(id)
-    const canvas = await rasterize(svgOf(slot), vb, SCALE, defs)
+    const canvas = await rasterize(svg, vb, SCALE, defs)
     return { vb, canvas, alpha: alphaSampler(canvas, vb, SCALE) }
   }
-  const [faceItem, headItem, handItem, buddyItem] = await Promise.all([item('face'), item('head'), item('hand'), item('buddy')])
+  // 側戴的面具：綁繩照舊（臉上的那一層），面具本體另外一層，放在頭上的單品前面（同紙娃娃，data/dollArt.ts 的 OVER）
+  const faceSvg2 = splitOver(svgOf('face'))
+  const [faceItem, faceOver, headItem, handItem, buddyItem] = await Promise.all([
+    item('face', faceSvg2.under),
+    item('face', faceSvg2.over),
+    item('head'),
+    item('hand'),
+    item('buddy'),
+  ])
   const coverOf = (...layers: Array<{ alpha: Cover } | null>): Cover => {
     const list = layers.filter((l): l is { alpha: Cover } => !!l)
     return list.length ? (x, y) => Math.max(...list.map((l) => l.alpha(x, y))) : none
@@ -450,7 +469,7 @@ export async function buildAvatar(parts: AvatarParts, equipped: Partial<Record<S
     lathe = latheHat(headItem.vb, headItem.alpha, hairHalf)
   }
   // 圓帽轉一圈後比 2D 的帽子寬：頭髮變薄的範圍用轉出來的那一圈
-  const coverHair = coverOf(faceItem, lathe ? { alpha: lathe.cover } : headItem)
+  const coverHair = coverOf(faceItem, faceOver, lathe ? { alpha: lathe.cover } : headItem)
 
   // 頭
   const scalp = scalpTexture(alphaSampler(frontCanvas, frontVb, SCALE), alphaSampler(backCanvas, hairVb, SCALE), skin, css(`--color-doll-hair-${parts.hairColor}`))
@@ -485,9 +504,43 @@ export async function buildAvatar(parts: AvatarParts, equipped: Partial<Record<S
   // 臉上的（在瀏海前面）、頭上的（再前面）
   if (faceItem)
     add(new Mesh(inflateLayer({ canvas: faceItem.canvas, vb: faceItem.vb, scale: SCALE, step: 1, bulge: 1.4, maxH: 5, base: onHead(7, 3, { grow: 1.0, thin: 0.5, cover: headItem?.alpha }) }).geometry, toon(faceItem.canvas)))
+  // 頭上的單品正面的深度：側戴的面具要放在它前面
+  let headFront: ((x: number, y: number) => number | null) | null = null
   if (headItem) {
-    const geo = lathe?.geometry ?? inflateLayer({ canvas: headItem.canvas, vb: headItem.vb, scale: SCALE, step: 1, bulge: 3.2, maxH: 15, base: onHead(9, 2, { grow: 1.04 }) }).geometry
+    let geo: BufferGeometry
+    if (lathe) {
+      geo = lathe.geometry
+      headFront = lathe.frontAt
+    } else {
+      const base = onHead(9, 2, { grow: 1.04 })
+      const layer = inflateLayer({ canvas: headItem.canvas, vb: headItem.vb, scale: SCALE, step: 1, bulge: 3.2, maxH: 15, base })
+      geo = layer.geometry
+      headFront = (x, y) => {
+        const h = layer.heightAt(x, y)
+        const f = base(x, y).front
+        return h > 0 && f !== null ? f + h : null
+      }
+    }
     add(new Mesh(geo, toon(lathe ? rowFill(headItem.canvas) : headItem.canvas)))
+  }
+  if (faceOver) {
+    // 整個面具一起往前移（移到蓋住的帽子前面 1.5px），面具本身的形狀不變，不會在帽緣折一道
+    const base = onHead(7, 3, { grow: 1.0, thin: 0.5 })
+    let push = 0
+    const [vx, vy, vw, vh] = faceOver.vb
+    if (headFront)
+      for (let y = vy; y <= vy + vh; y += 2)
+        for (let x = vx; x <= vx + vw; x += 2) {
+          if (faceOver.alpha(x, y) < 0.5) continue
+          const hf = headFront(x, y)
+          const f = base(x, y).front
+          if (hf !== null && f !== null) push = Math.max(push, hf + 1.5 - f)
+        }
+    const pushed = (x: number, y: number): Surface => {
+      const s = base(x, y)
+      return { ...s, front: s.front === null ? null : s.front + push, back: s.back === null ? null : s.back + push }
+    }
+    add(new Mesh(inflateLayer({ canvas: faceOver.canvas, vb: faceOver.vb, scale: SCALE, step: 1, bulge: 1.4, maxH: 5, base: pushed }).geometry, toon(faceOver.canvas)))
   }
 
   // 手上的：背面貼著身體表面（附近最高的）、厚度往前長（握在右手；斜背的帶子貼在衣服上，不會埋進身體）；

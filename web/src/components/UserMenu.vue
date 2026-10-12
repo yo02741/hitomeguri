@@ -210,10 +210,19 @@ async function logOut() {
       </button>
       <div class="mx-1 mt-1 border-t border-line-soft" role="none"></div>
       <RouterLink
-        to="/credits"
+        to="/about"
         role="menuitem"
         tabindex="-1"
         class="mt-1 flex min-h-tap items-center rounded-control px-2.5 text-body-sm text-ink no-underline hover:bg-surface focus-visible:bg-surface active:bg-surface"
+        @click="hide()"
+      >
+        關於 ひとめぐり
+      </RouterLink>
+      <RouterLink
+        to="/credits"
+        role="menuitem"
+        tabindex="-1"
+        class="flex min-h-tap items-center rounded-control px-2.5 text-body-sm text-ink no-underline hover:bg-surface focus-visible:bg-surface active:bg-surface"
         :class="route.name === 'credits' ? 'font-bold' : ''"
         :aria-current="route.name === 'credits' ? 'page' : undefined"
         @click="hide()"

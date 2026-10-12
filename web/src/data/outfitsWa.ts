@@ -1,5 +1,5 @@
 import type { Outfit } from './outfits'
-import { C, dots, E, HAKAMA, HAORI_L, HAORI_R, line, LONG, LONG_SHADE, PANTS, ROBE, SH, shape, SLEEVE_L, SLEEVE_R, TOP, TOP_SHADE, vtext } from './dollArt'
+import { C, dots, E, HAKAMA, HAORI_L, HAORI_R, line, LONG, LONG_SHADE, mirror, PANTS, ROBE, SH, shape, SLEEVE_L, SLEEVE_R, TOP, TOP_SHADE, vtext } from './dollArt'
 import { happi, robe, sideMask, skewer } from './outfitsPref'
 
 /**
@@ -348,8 +348,9 @@ const HEAD: Outfit[] = [
     name: '櫻花髮夾',
     slot: 'head',
     rarity: 1,
-    icon: '128 32 64 64',
-    svg: blossom(152, 58, 7, C.pink) + blossom(168, 74, 5.5, C.pink) + `<path d="M144 70 L160 64" ${line(2, C.gold)}/>`,
+    // 戴在頭的右側（畫面左邊）：左側留給側戴的面具
+    icon: '48 32 64 64',
+    svg: mirror(blossom(152, 58, 7, C.pink) + blossom(168, 74, 5.5, C.pink) + `<path d="M144 70 L160 64" ${line(2, C.gold)}/>`),
   },
 ]
 

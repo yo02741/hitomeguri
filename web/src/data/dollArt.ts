@@ -25,6 +25,14 @@ export const E = 'stroke="var(--color-doll-line)" stroke-opacity=".2" stroke-wid
 export const SH = 'fill="var(--color-doll-line)" opacity=".16"'
 export const line = (w = 2.4, color = C.ink, op = 1) => `fill="none" stroke="${color}" stroke-width="${w}" stroke-linecap="round" stroke-linejoin="round" stroke-opacity="${op}"`
 export const shape = (d: string, fill: string, extra = '') => `<path d="${d}" fill="${fill}" ${E} ${extra}/>`
+/** 側戴的面具：這個記號後面的部分畫在頭上的單品上面（帽子、頭帶不會蓋掉面具），前面的綁繩照舊在帽子下面 */
+export const OVER = '<!--over-->'
+export function splitOver(svg: string): { under: string; over: string } {
+  const i = svg.indexOf(OVER)
+  return i < 0 ? { under: svg, over: '' } : { under: svg.slice(0, i), over: svg.slice(i + OVER.length) }
+}
+/** 左右翻過來（以畫布中線 x=120 為軸）：髮簪、蝴蝶結戴在頭的另一側，不和側戴的面具疊在一起 */
+export const mirror = (svg: string) => `<g transform="matrix(-1 0 0 1 240 0)">${svg}</g>`
 /** 直書的字：一個字一個 <text> 往下疊（Safari 的 SVG 不支援 writing-mode 直排，位置會跑掉）。cy 是整串字的中心 */
 export function vtext(s: string, x: number, cy: number, size: number, fill: string): string {
   const chars = [...s]

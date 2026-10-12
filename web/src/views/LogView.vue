@@ -422,6 +422,7 @@ function open(id: string) {
       >
         登入
       </button>
+      <RouterLink to="/about" class="w-fit text-body-sm font-bold text-region-strong">ひとめぐり 是什麼</RouterLink>
     </div>
   </section>
 </template>
