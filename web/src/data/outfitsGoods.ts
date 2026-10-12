@@ -15,12 +15,12 @@ const head = (o: Def): Outfit => ({ ...o, slot: 'head' })
 const hand = (o: Def): Outfit => ({ ...o, slot: 'hand' })
 
 /** 髮夾：從頭的右側（畫面左邊）斜斜插進去的金色夾子 */
-const PIN = `<path d="M58 84 L102 74" ${line(2.4, C.gold)}/>`
+export const PIN = `<path d="M58 84 L102 74" ${line(2.4, C.gold)}/>`
 /** 包住頭頂的頭巾、帽子的輪廓（額頭到 y≈84） */
-const HOOD = 'M66 84 C62 52 88 36 120 36 C152 36 178 52 174 84 C150 76 90 76 66 84Z'
-const HOOD_SHADE = 'M150 42 C164 50 176 64 174 84 C168 82 160 80 152 79 C156 66 156 54 150 42Z'
+export const HOOD = 'M66 84 C62 52 88 36 120 36 C152 36 178 52 174 84 C150 76 90 76 66 84Z'
+export const HOOD_SHADE = 'M150 42 C164 50 176 64 174 84 C168 82 160 80 152 79 C156 66 156 54 150 42Z'
 /** 半透明的疊色（米色、焦色） */
-const tint = (d: string, color: string, op: number) => `<path d="${d}" fill="${color}" opacity="${op}"/>`
+export const tint = (d: string, color: string, op: number) => `<path d="${d}" fill="${color}" opacity="${op}"/>`
 
 // ---------- 小零件 ----------
 const koboshi = (x: number, y: number, body: string) =>
@@ -51,7 +51,7 @@ const lantern = (x: number, y: number) =>
   shape(`M${x - 6} ${y + 7} L${x + 6} ${y + 7} L${x + 6} ${y + 9} L${x - 6} ${y + 9}Z`, C.gold) +
   `<path d="M${x} ${y + 9} L${x} ${y + 18}" ${line(1.6, C.gold)}/>`
 /** 心形的葉子（葵、山葵） */
-const heartLeaf = (x: number, y: number, r: number, rot: number, fill = C.green) =>
+export const heartLeaf = (x: number, y: number, r: number, rot: number, fill = C.green) =>
   `<g transform="rotate(${rot} ${x} ${y})">` +
   shape(`M${x} ${y + r} C${x - r * 1.4} ${y} ${x - r} ${y - r * 1.1} ${x} ${y - r * 0.4} C${x + r} ${y - r * 1.1} ${x + r * 1.4} ${y} ${x} ${y + r}Z`, fill) +
   `<path d="M${x} ${y - r * 0.3} L${x} ${y + r * 0.85}" ${line(1, C.matcha, 0.8)}/>` +
