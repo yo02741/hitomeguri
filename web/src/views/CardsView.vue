@@ -287,7 +287,7 @@ function onCardKey(e: KeyboardEvent, id: string) {
         v-if="entries.length"
         role="group"
         aria-label="篩選"
-        class="scroll-quiet relative flex gap-2 overscroll-x-contain max-lg:overflow-x-auto max-sm:-mx-4 max-sm:px-4 sm:max-lg:-mx-6 sm:max-lg:px-6 lg:flex-wrap"
+        class="scroll-quiet relative flex gap-2 overscroll-x-contain max-lg:overflow-x-auto max-lg:overflow-y-hidden max-sm:-mx-4 max-sm:px-4 sm:max-lg:-mx-6 sm:max-lg:px-6 lg:flex-wrap"
       >
         <button
           v-for="f in FILTERS"
@@ -310,7 +310,7 @@ function onCardKey(e: KeyboardEvent, id: string) {
         class="sticky top-0 z-10 border-b border-line-soft bg-paper py-1 max-sm:-mx-4 sm:-mx-6"
         aria-label="都道府縣"
       >
-        <div ref="strip" class="scroll-quiet flex gap-1.5 overflow-x-auto overscroll-x-contain max-sm:px-4 sm:px-6">
+        <div ref="strip" class="scroll-quiet relative flex gap-1.5 overflow-x-auto overflow-y-hidden overscroll-x-contain max-sm:px-4 sm:px-6">
           <button
             v-for="g in stripPrefs"
             :key="g.region.prefecture"

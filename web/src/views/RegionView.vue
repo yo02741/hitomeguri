@@ -306,7 +306,7 @@ function sourceLabel(url: string): string {
           v-if="subRow === 'months'"
           ref="subNav"
           aria-label="月份"
-          class="scroll-quiet relative flex gap-x-0.5 overflow-x-auto overscroll-x-contain px-2.5"
+          class="scroll-quiet relative flex gap-x-0.5 overflow-x-auto overflow-y-hidden overscroll-x-contain px-2.5"
         >
           <button
             type="button"
@@ -330,7 +330,7 @@ function sourceLabel(url: string): string {
             <span class="block border-b-2 border-inherit pb-0.5">{{ m }}月</span>
           </button>
         </nav>
-        <nav v-else ref="subNav" aria-label="地區特色的組別" class="scroll-quiet relative flex gap-x-0.5 overflow-x-auto overscroll-x-contain px-2.5">
+        <nav v-else ref="subNav" aria-label="地區特色的組別" class="scroll-quiet relative flex gap-x-0.5 overflow-x-auto overflow-y-hidden overscroll-x-contain px-2.5">
           <a
             v-for="g in groups"
             :key="g.key"

@@ -198,9 +198,22 @@ const zoomed = computed(() => (zoom.value === null ? null : props.pulls[zoom.val
 .is-open .flip {
   transform: rotateY(0deg);
 }
+/* 正面、背面在翻到側面（90 度）時才換：不只靠 backface-visibility。iPhone 的 Safari 遇到卡面裡還有自己的 3D
+   （SpotCard 的 preserve-3d）就不隱藏背面，翻開前看到的是左右相反的卡面。翻轉曲線（--ease-flip）在 13.5% 的時間
+   轉到 90 度：0.55s × 0.135 ≈ 75ms */
 .back,
 .front {
   backface-visibility: hidden;
+  transition: visibility 0s linear 75ms;
+}
+.front {
+  visibility: hidden;
+}
+.is-open .front {
+  visibility: visible;
+}
+.is-open .back {
+  visibility: hidden;
 }
 .back {
   transform: rotateY(180deg);

@@ -339,7 +339,7 @@ const FEATURES: Record<TabKey, { title: string; lines: string[] }> = {
     lines: [
       '去過的地方蓋上日期，地圖上一縣一縣塗滿。',
       '紀念章帳：47 縣的初訪章，加上 40 個成就。',
-      '行程結束開卡包，看這趟的成就，做一張回顧圖分享。',
+      '行程結束看這趟的成就，做一張回顧圖分享。',
     ],
   },
   cards: {
@@ -632,7 +632,7 @@ const kyotoRegion = regionOf('kyoto')
     <section id="features" class="scroll-mt-4 bg-surface py-16 max-sm:py-10" aria-labelledby="features-title">
       <div class="mx-auto w-full max-w-6xl px-6 max-sm:px-4">
         <h2 id="features-title" v-reveal class="font-brand text-h2 font-semibold tracking-title">能做什麼</h2>
-        <div v-reveal="1" role="tablist" aria-label="能做什麼" class="scroll-quiet mt-6 flex gap-1 overflow-x-auto border-b border-line">
+        <div v-reveal="1" role="tablist" aria-label="能做什麼" class="scroll-quiet mt-6 flex gap-1 overflow-x-auto overflow-y-hidden border-b border-line">
           <button
             v-for="(t, i) in TABS"
             :key="t.key"
@@ -809,7 +809,7 @@ const kyotoRegion = regionOf('kyoto')
           { t: '準備', d: '看念法、練會話，印一本旅前小書。', tab: 'prep' },
           { t: '出發', d: '打開就是今天的行程與路線，沒有網路也看得到。', tab: 'trip' },
           { t: '去過', d: '到了按「去過」，拿到這一季的卡。', tab: 'cards' },
-          { t: '回顧', d: '開卡包、蓋紀念章、做一張回顧圖。', tab: 'log' },
+          { t: '回顧', d: '蓋紀念章、收集卡，做一張回顧圖。', tab: 'log' },
         ] as const" :key="s.t" v-reveal="i + 1" class="flex">
           <button type="button" class="flex w-full flex-col gap-2 rounded-card border border-line bg-paper p-4 text-left hover:bg-surface active:translate-y-px" @click="showTab(s.tab)">
             <span class="flex items-center gap-2">

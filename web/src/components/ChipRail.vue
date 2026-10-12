@@ -57,7 +57,7 @@ const pill = 'flex h-9 items-center gap-1.5 rounded-full px-3.5 text-body-sm fon
   <!-- 手機打橫：外層是左側 300px 的欄，軌道照樣撐到地圖右緣（畫面寬扣掉左右 16px），不在欄寬處切掉 -->
   <div ref="root" class="pointer-events-none relative land:w-[calc(100vw-2rem-env(safe-area-inset-left)-env(safe-area-inset-right))]">
     <!-- 上下多留 12px 給膠囊的陰影（捲動區會裁掉超出的部分），再用負 margin 收回 -->
-    <div ref="scroller" class="scroll-quiet -mx-4 -my-3 flex gap-2 overflow-x-auto overscroll-x-contain px-4 py-3" :class="more ? 'fade-x-end' : ''">
+    <div ref="scroller" class="scroll-quiet relative -mx-4 -my-3 flex gap-2 overflow-x-auto overflow-y-hidden overscroll-x-contain px-4 py-3" :class="more ? 'fade-x-end' : ''">
       <button v-if="pref" type="button" :class="hit" :aria-pressed="explore.focusLock" @click="explore.focusLock = !explore.focusLock">
         <FocusChip :pref="pref" :pill="pill" />
       </button>

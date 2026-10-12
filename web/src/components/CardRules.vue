@@ -44,7 +44,7 @@ const KINDS: Array<[string, string]> = [
     <section class="flex flex-col gap-2" aria-labelledby="c-draw">
       <h3 id="c-draw" class="text-body-sm font-bold text-sub">抽卡</h3>
       <ul class="flex flex-col gap-1.5 text-body-sm leading-relaxed">
-        <li>每個景點第一次去過，送一次免費抽季節卡（在景點按「去過」，或打開行程的卡包；只送一次）。</li>
+        <li>每個景點第一次在景點按「去過」，送一次免費抽季節卡（只送一次）。</li>
         <li>抽獎券只抽季節卡：只會抽到這個景點還沒有的季節。</li>
         <li>放大檢視的「抽一張」：用 1 張抽獎券，抽這個景點。四季都有了按鈕寫「四季收齊」。</li>
         <li>上方的「十連抽」：用 10 張，從去過的景點裡抽 10 張。不用一直去同一個地方；全部的景點四季都有了寫「已收齊」。</li>

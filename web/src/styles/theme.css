@@ -564,7 +564,16 @@
   &:hover {
     scrollbar-color: var(--region-line) transparent;
   }
+  /* 觸控裝置不畫捲軸（iPhone 捲動時會冒出一條灰色的捲動指示） */
+  @media (pointer: coarse) {
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
 }
+/* 只橫向捲的列（天數條、晶片列、段落目錄、分頁列）一律加 overflow-y-hidden：只寫 overflow-x-auto 時縱向也變成可捲，
+   iPhone 在列上斜斜滑一下整排會上下移，格子上緣被切掉（使用者回饋 2026-10-12） */
 /* 畫面外先不畫的長段落（深度探索的祭典月份、地區特色組）：高度先用 contain-intrinsic-size 的估計值，
  * 畫過一次就記住實際高度。段落目錄跳過去之前，捲動容器加 data-lay-out 把全部排一次版，
  * 停的位置才會準（composables/scrollSpy.ts） */

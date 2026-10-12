@@ -9,7 +9,6 @@ import ExportButtons from '../components/ExportButtons.vue'
 import OfflineButton from '../components/OfflineButton.vue'
 import MapView from '../components/MapView.vue'
 import AchvRow from '../components/AchvRow.vue'
-import PackOpening, { packOpened } from '../components/PackOpening.vue'
 import ShareImage from '../components/ShareImage.vue'
 import SplitFlap from '../components/SplitFlap.vue'
 import SkeletonRows from '../components/SkeletonRows.vue'
@@ -80,14 +79,6 @@ const trips = useTripsStore()
 const router = useRouter()
 
 const trip = computed(() => trips.get(props.id))
-// 開卡包（DESIGN.md §7.19）：結束的行程；這台裝置還沒開過的加紅點
-const packOpen = ref(false)
-const opened = ref(packOpened(props.id))
-function closePack() {
-  packOpen.value = false
-  opened.value = packOpened(props.id)
-}
-
 // 旅行回顧圖（DESIGN.md §7.22）
 const catalog = useCatalogStore()
 const recapOpen = ref(false)
@@ -632,16 +623,7 @@ async function del() {
         <TripMembers :trip="trip" />
         <!-- 手機窄螢幕（<640）內距與間距縮一點，旅前準備、旅前小書、離線用、更多排得進一列 -->
         <div class="flex flex-wrap gap-2 max-sm:gap-1.5">
-          <button
-            v-if="status === 'done'"
-            type="button"
-            class="relative flex h-9 items-center rounded-control bg-region-strong px-3.5 text-body-sm font-bold text-white active:translate-y-px pointer-coarse:h-tap max-sm:px-2.5"
-            @click="packOpen = true"
-          >
-            開卡包
-            <span v-if="!opened" class="absolute -top-1 -right-1 size-2.5 rounded-full border-2 border-paper bg-danger" aria-label="還沒開"></span>
-          </button>
-          <!-- 一個畫面只有一個 Primary（DESIGN §7.1）：結束後「開卡包」是 Primary，「旅前準備」退成 Secondary -->
+          <!-- 一個畫面只有一個 Primary（DESIGN §7.1）：「旅前準備」是出發前與旅途中的 Primary，結束後退成 Secondary -->
           <RouterLink
             :to="`/trips/${trip.id}/prep`"
             class="flex h-9 items-center rounded-control px-3.5 text-body-sm no-underline active:translate-y-px pointer-coarse:h-tap max-sm:px-2.5"
@@ -699,7 +681,7 @@ async function del() {
       <div v-if="!wide" ref="anchor" class="h-0" aria-hidden="true"></div>
       <div v-if="!wide" ref="bar" class="sticky top-0 z-10 -mx-5 -mt-5 flex flex-col bg-paper">
         <div class="flex items-center gap-2 border-b border-line-soft py-1.5 pr-5">
-          <div ref="strip" class="scroll-quiet flex min-w-0 flex-1 gap-1.5 overflow-x-auto overscroll-x-contain pr-1 pl-5" :class="stripMore ? 'fade-x-end' : ''" role="group" aria-label="天數">
+          <div ref="strip" class="scroll-quiet relative flex min-w-0 flex-1 gap-1.5 overflow-x-auto overflow-y-hidden overscroll-x-contain pr-1 pl-5" :class="stripMore ? 'fade-x-end' : ''" role="group" aria-label="天數">
             <button
               v-for="(d, i) in trip.days"
               :key="i"
@@ -961,7 +943,6 @@ async function del() {
       @close="stayDay = null"
       @pick="pickStay"
     />
-    <PackOpening v-if="packOpen" :trip="trip" @close="closePack" />
     <TripAddVisited v-if="addVisitedOpen" :trip="trip" @close="addVisitedOpen = false" @add="addVisited" />
     <ShareImage v-if="recapOpen" title="旅行回顧" :file-name="`ひとめぐり ${trip.name || '行程'}`" :render="renderRecap" @close="recapOpen = false" />
   </div>

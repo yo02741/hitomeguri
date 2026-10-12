@@ -10,11 +10,10 @@ import PrefStamp from './PrefStamp.vue'
 
 // 這趟的成就（DESIGN.md §7.25）：達成日落在這趟旅行期間（開始日到結束日）的初訪章與成就章。
 // 由現在的紀錄推算，每次打開都一樣；沒有就不顯示。
-// 卡包翻完（56px，animate 時依序出現）、行程頁標頭（header：64px，不動，章下面寫名稱，標題列右邊接「成就」連結；
-// 原本 40px 太小，使用者回饋 2026-10-11）。
-const props = withDefaults(defineProps<{ trip: Trip; size?: number; animate?: boolean; header?: boolean }>(), {
+// 行程頁標頭（header：64px，章下面寫名稱，標題列右邊接「成就」連結；原本 40px 太小，使用者回饋 2026-10-11）。
+// 原本也放在開卡包翻完的一覽下面；開卡包 2026-10-12 拿掉（使用者決定）。
+const props = withDefaults(defineProps<{ trip: Trip; size?: number; header?: boolean }>(), {
   size: 56,
-  animate: false,
   header: false,
 })
 const achv = useAchievementsStore()
@@ -34,11 +33,10 @@ const compact = computed(() => props.header)
     </div>
     <ul class="flex flex-wrap gap-x-3 gap-y-2">
       <li
-        v-for="(s, i) in got.stamps"
+        v-for="s in got.stamps"
         :key="`p-${s.pref}`"
         class="flex flex-col items-center gap-1"
-        :class="animate ? 'row-in' : ''"
-        :style="{ '--i': i, width: `${size + 20}px` }"
+        :style="{ width: `${size + 20}px` }"
       >
         <div :data-pref="s.pref" :style="{ width: `${size}px` }">
           <PrefStamp :pref="s.pref" :date="s.at" />
@@ -46,11 +44,10 @@ const compact = computed(() => props.header)
         <span class="text-center text-caption leading-tight">{{ regionOf(s.pref)?.name.zh_tw }}</span>
       </li>
       <li
-        v-for="(s, i) in got.seals"
+        v-for="s in got.seals"
         :key="s.def.id"
         class="flex flex-col items-center gap-1"
-        :class="animate ? 'row-in' : ''"
-        :style="{ '--i': got.stamps.length + i, width: `${size + 20}px` }"
+        :style="{ width: `${size + 20}px` }"
       >
         <AchvSeal :def="s.def" status="done" :at="s.at" :size="size" />
         <span class="line-clamp-2 text-center text-caption leading-tight break-keep">{{ nameText(s.def.name) }}</span>
@@ -58,17 +55,3 @@ const compact = computed(() => props.header)
     </ul>
   </section>
 </template>
-
-<style scoped>
-/* 卡包翻完時依序出現（和卡片一覽的 deal-in 同一個節奏） */
-.row-in {
-  animation: row-in 0.45s var(--ease-out-soft) both;
-  animation-delay: calc(0.3s + var(--i) * 80ms);
-}
-@keyframes row-in {
-  from {
-    transform: translateY(12px) scale(0.8);
-    opacity: 0;
-  }
-}
-</style>

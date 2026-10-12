@@ -195,7 +195,7 @@ function wear() {
       <section class="flex min-w-0 flex-col lg:min-h-0" aria-label="衣櫃">
         <!-- 手機（<1024）每個分頁平分寬度，不會左右捲 -->
         <!-- 手機：分頁列貼在展示窗的小窗下面，捲到下面也換得了分頁 -->
-        <div class="flex items-end gap-1 overflow-x-auto px-2 max-lg:sticky max-lg:z-10 max-lg:bg-paper" :style="wide ? undefined : { top: `${minVis}px` }" role="tablist" aria-label="衣櫃">
+        <div class="relative flex items-end gap-1 overflow-x-auto overflow-y-hidden px-2 max-lg:sticky max-lg:z-10 max-lg:bg-paper" :style="wide ? undefined : { top: `${minVis}px` }" role="tablist" aria-label="衣櫃">
           <button
             v-for="t in TABS"
             :key="t.key"

@@ -68,7 +68,7 @@ watch(activeTop, async (id) => {
       aria-hidden="true"
     ></span>
   </nav>
-  <nav v-else ref="bar" aria-label="段落" class="scroll-quiet relative flex gap-1 overflow-x-auto">
+  <nav v-else ref="bar" aria-label="段落" class="scroll-quiet relative flex gap-1 overflow-x-auto overflow-y-hidden">
     <span
       v-if="rect"
       class="pointer-events-none absolute top-0 left-0 rounded-full"

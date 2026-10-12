@@ -29,7 +29,7 @@ const props = withDefaults(
     variant?: Variant
     /** 收集冊的格子：靜止時畫成平面（不建 3D、反光、亮片的層），滑鼠移上去或聚焦時才換成完整的卡 */
     lite?: boolean
-    /** 放在直的格子裡（收集冊、十連抽、開卡包的一覽）：橫卡轉 90 度橫躺在格子裡，格子大小不變 */
+    /** 放在直的格子裡（收集冊、十連抽）：橫卡轉 90 度橫躺在格子裡，格子大小不變 */
     sideways?: boolean
   }>(),
   { label: '', size: 'sm', number: '', visitedOn: null, visited: false, flipped: false, tilt: undefined, variant: () => BASE_VARIANT, lite: false, sideways: false },
