@@ -12,27 +12,27 @@ import { happi, robe, sideMask, skewer } from './outfitsPref'
  * 畫法同 outfits.ts（剪紙、平塗、淡邊），和服、法被、面具、串沿用 outfitsPref.ts 的模板。
  */
 
-const BODY_ICON = '58 140 124 140'
-const shade = (d: string) => `<path d="${d}" ${SH}/>`
-const pat = (d: string, id: string) => `<path d="${d}" fill="url(#${id})"/>`
+export const BODY_ICON = '58 140 124 140'
+export const shade = (d: string) => `<path d="${d}" ${SH}/>`
+export const pat = (d: string, id: string) => `<path d="${d}" fill="url(#${id})"/>`
 /** 米色：棕上疊一層半透明的奶油色 */
-const beige = (d: string) => shape(d, C.brown) + `<path d="${d}" fill="${C.cream}" opacity=".55"/>`
+export const beige = (d: string) => shape(d, C.brown) + `<path d="${d}" fill="${C.cream}" opacity=".55"/>`
 
 // ---------- 版型 ----------
 // 和服的上半身（下面穿袴）
-const ROBE_UP = 'M96 151 L144 151 L153 162 L154 204 L86 204 L87 162Z'
+export const ROBE_UP = 'M96 151 L144 151 L153 162 L154 204 L86 204 L87 162Z'
 // 撩起來到小腿的和服（跳人、壺裝束）
-const ROBE_SHORT = 'M96 151 L144 151 L153 162 L156 254 L84 254 L87 162Z'
-const ROBE_SHORT_SHADE = 'M144 151 L153 162 L156 254 L138 254Z'
-const HAKAMA_SHADE = 'M140 198 L154 198 L161 274 L140 274Z'
-const PLEATS = `<path d="M104 200 L100 274 M120 200 L120 274 M136 200 L140 274" ${line(1.2, C.ink, 0.3)}/>`
-const COLLAR = (color: string, w = 5) => `<path d="M106 150 L122 196 M134 150 L124 178" ${line(w, color)}/>`
+export const ROBE_SHORT = 'M96 151 L144 151 L153 162 L156 254 L84 254 L87 162Z'
+export const ROBE_SHORT_SHADE = 'M144 151 L153 162 L156 254 L138 254Z'
+export const HAKAMA_SHADE = 'M140 198 L154 198 L161 274 L140 274Z'
+export const PLEATS = `<path d="M104 200 L100 274 M120 200 L120 274 M136 200 L140 274" ${line(1.2, C.ink, 0.3)}/>`
+export const COLLAR = (color: string, w = 5) => `<path d="M106 150 L122 196 M134 150 L124 178" ${line(w, color)}/>`
 // 振袖的長袂
-const FURI_L = 'M92 156 C80 158 70 166 68 180 L64 254 C64 262 70 266 78 266 L95 266 L95 170Z'
-const FURI_R = 'M148 156 C160 158 170 166 172 180 L176 254 C176 262 170 266 162 266 L145 266 L145 170Z'
+export const FURI_L = 'M92 156 C80 158 70 166 68 180 L64 254 C64 262 70 266 78 266 L95 266 L95 170Z'
+export const FURI_R = 'M148 156 C160 158 170 166 172 180 L176 254 C176 262 170 266 162 266 L145 266 L145 170Z'
 
 /** 紋：白圈裡一個小家紋 */
-const mon = (x: number, y: number) => `<circle cx="${x}" cy="${y}" r="4.4" fill="${C.white}"/><circle cx="${x}" cy="${y}" r="2.8" fill="${C.ink}"/><circle cx="${x}" cy="${y}" r="1.3" fill="${C.white}"/>`
+export const mon = (x: number, y: number) => `<circle cx="${x}" cy="${y}" r="4.4" fill="${C.white}"/><circle cx="${x}" cy="${y}" r="2.8" fill="${C.ink}"/><circle cx="${x}" cy="${y}" r="1.3" fill="${C.white}"/>`
 /** 五瓣的花（櫻花髮夾） */
 const blossom = (x: number, y: number, r: number, fill: string) =>
   `<g ${E}>${[0, 72, 144, 216, 288].map((a) => `<ellipse cx="${x}" cy="${y - r}" rx="${r * 0.62}" ry="${r}" fill="${fill}" transform="rotate(${a} ${x} ${y})"/>`).join('')}</g><circle cx="${x}" cy="${y}" r="${r * 0.42}" fill="${C.yellow}"/>`

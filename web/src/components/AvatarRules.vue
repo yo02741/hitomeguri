@@ -19,7 +19,7 @@ const rewards = OUTFITS.filter((o) => o.achv)
     <section class="flex flex-col gap-2" aria-labelledby="r-outfit">
       <h3 id="r-outfit" class="text-body-sm font-bold text-sub">服裝</h3>
       <ul class="flex flex-col gap-1.5 text-body-sm leading-relaxed">
-        <li>每個縣 3 件，有幾個縣多一件傳統服裝，共 <span class="font-num">{{ prefCount }}</span> 件；另外不限縣的 <span class="font-num">{{ generic }}</span> 件。</li>
+        <li>每個縣 4 件（其中一件是那個縣的傳統服裝），共 <span class="font-num">{{ prefCount }}</span> 件；另外不限縣的 <span class="font-num">{{ generic }}</span> 件。</li>
         <li>第一次去一個縣，送那個縣的代表單品。</li>
         <li>去過的縣的其他單品，和不限縣的，用扭蛋抽。</li>
         <li>扭蛋只會抽到還沒有的。去過的縣都抽齊了，去新的縣就會加進新的。</li>

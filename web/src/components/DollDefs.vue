@@ -157,6 +157,46 @@
         <path d="M14 22 C17 19 20 19 23 22 C26 25 29 25 31 22" class="p-bingata-b" />
         <path d="M20 8 C23 5 27 6 27 10 C24 11 21 10 20 8Z" class="p-leaf-fill" />
       </pattern>
+      <!-- 亀甲絣（結城紬）：六角的格子，中間一點 -->
+      <pattern id="doll-kikko" width="18" height="10.4" patternUnits="userSpaceOnUse">
+        <path d="M0 5.2 L3 0 L9 0 L12 5.2 L9 10.4 L3 10.4Z M12 5.2 L18 5.2" class="p-kikko" />
+        <circle cx="6" cy="5.2" r="1.2" class="p-white" />
+      </pattern>
+      <!-- 矢絣（伊勢崎銘仙）：箭羽一欄一欄錯開 -->
+      <pattern id="doll-yagasuri" width="16" height="16" patternUnits="userSpaceOnUse">
+        <path d="M0 0 L4 3 L8 0 L8 8 L4 11 L0 8Z M8 -8 L12 -5 L16 -8 L16 0 L12 3 L8 0Z M8 8 L12 11 L16 8 L16 16 L12 19 L8 16Z" class="p-white" />
+      </pattern>
+      <!-- ほぐし織（秩父銘仙）：大朵的玫瑰與小花 -->
+      <pattern id="doll-hogushi" width="32" height="32" patternUnits="userSpaceOnUse">
+        <circle cx="9" cy="9" r="6.5" class="p-hog-a" />
+        <path d="M6 9 C6 6 12 6 12 9 C12 11 8 12 8 10" class="p-hog-c" />
+        <ellipse cx="17" cy="14" rx="4" ry="2" class="p-leaf-fill" transform="rotate(30 17 14)" />
+        <circle cx="25" cy="25" r="4" class="p-hog-b" />
+        <circle cx="25" cy="25" r="1.4" class="p-yuzen-c" />
+      </pattern>
+      <!-- 十字絣（近江上布） -->
+      <pattern id="doll-juji" width="12" height="12" patternUnits="userSpaceOnUse">
+        <path d="M3 1 L3 5 M1 3 L5 3 M9 7 L9 11 M7 9 L11 9" class="p-kasuri" />
+      </pattern>
+      <!-- 絵絣（弓浜絣）：飛鶴與龜，加上短短的絣 -->
+      <pattern id="doll-ekasuri" width="36" height="30" patternUnits="userSpaceOnUse">
+        <path d="M2 10 C6 5 9 6 11 10 C13 6 16 5 20 10" class="p-ekasuri" />
+        <path d="M23 21 L29 21 L32 25 L29 29 L23 29 L20 25Z" class="p-white" />
+        <path d="M24 6 L32 6 M4 24 L12 24" class="p-kasuri-w" />
+      </pattern>
+      <!-- しじら織（阿波正藍）：藍的直條，上面細細的縐 -->
+      <pattern id="doll-shijira" width="10" height="6" patternUnits="userSpaceOnUse">
+        <path d="M3 0 L3 6" class="p-shijira-a" />
+        <path d="M0 3 Q2.5 1.8 5 3 T10 3" class="p-shijira-b" />
+      </pattern>
+      <!-- 保多織：細細的格子 -->
+      <pattern id="doll-grid" width="6" height="6" patternUnits="userSpaceOnUse">
+        <path d="M0 0.5 L6 0.5 M0.5 0 L0.5 6" class="p-grid" />
+      </pattern>
+      <!-- 流水（山鹿燈籠浴衣） -->
+      <pattern id="doll-ryusui" width="40" height="24" patternUnits="userSpaceOnUse">
+        <path d="M0 6 C10 0 22 12 40 6 M0 18 C12 12 24 24 40 18" class="p-ryusui" />
+      </pattern>
       <!-- 甜筒的格紋 -->
       <pattern id="doll-waffle" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
         <path d="M0 0 L7 0 M0 0 L0 7" class="p-brown" />
@@ -261,6 +301,56 @@
   stroke: var(--color-doll-line);
   stroke-opacity: 0.14;
   stroke-width: 1.6;
+}
+.p-kikko {
+  fill: none;
+  stroke: var(--color-item-white);
+  stroke-width: 0.9;
+  opacity: 0.55;
+}
+.p-hog-a {
+  fill: var(--color-item-pink);
+  opacity: 0.9;
+}
+.p-hog-b {
+  fill: var(--color-item-blue);
+  opacity: 0.7;
+}
+.p-hog-c {
+  fill: none;
+  stroke: var(--color-item-red);
+  stroke-width: 1.2;
+  opacity: 0.7;
+}
+.p-ekasuri {
+  fill: none;
+  stroke: var(--color-item-white);
+  stroke-width: 2;
+  stroke-linecap: round;
+  opacity: 0.9;
+}
+.p-shijira-a {
+  stroke: var(--color-item-navy);
+  stroke-width: 2.2;
+  opacity: 0.6;
+}
+.p-shijira-b {
+  fill: none;
+  stroke: var(--color-item-white);
+  stroke-width: 0.6;
+  opacity: 0.4;
+}
+.p-grid {
+  fill: none;
+  stroke: var(--color-item-navy);
+  stroke-width: 0.8;
+  opacity: 0.22;
+}
+.p-ryusui {
+  fill: none;
+  stroke: var(--color-item-blue);
+  stroke-width: 1.8;
+  opacity: 0.85;
 }
 .p-gold,
 .p-cream,

@@ -3,13 +3,14 @@
  * 畫風是剪紙的紙人形：平塗、不描黑邊，只用同色的淡邊與一層陰影、一層亮面；整隻外面一圈白邊（剪下來的紙）。
  * 顏色一律用 theme.css 的 `--color-doll-*`、`--color-item-*` token；花紋用 DollDefs.vue 的 <pattern>。
  * 服裝分五個位置：頭（帽子、髮箍）、臉（眼鏡）、身（衣服）、手（拿的東西，在右手）、夥伴（腳邊）。
- * 各縣的特色單品去過那個縣就有；幾個大的成就各送 1 件（outfitsAchv.ts）；其他的用抽獎券抽（不限縣的第二批在 outfitsMore.ts；和風的第三批與各縣限定的傳統服裝在 outfitsWa.ts）。
+ * 各縣的特色單品去過那個縣就有；幾個大的成就各送 1 件（outfitsAchv.ts）；其他的用抽獎券抽（不限縣的第二批在 outfitsMore.ts；和風的第三批與各縣限定的傳統服裝在 outfitsWa.ts、outfitsTrad.ts）。
  */
 import { C, dots, E, line, NECK, PANTS, ROBE, SH, shape, SHORTS, SLEEVE_L, SLEEVE_R, TOP, TOP_LONG, TOP_SHADE } from './dollArt'
 import { ACHV_OUTFITS } from './outfitsAchv'
 import { MORE_OUTFITS } from './outfitsMore'
 import { LOCAL_OUTFITS, WA_OUTFITS } from './outfitsWa'
 import { PREF_OUTFITS } from './outfitsPref'
+import { TRAD_OUTFITS } from './outfitsTrad'
 
 export type Slot = 'head' | 'face' | 'body' | 'hand' | 'buddy'
 export const SLOTS: Array<{ key: Slot; label: string }> = [
@@ -476,6 +477,7 @@ export const OUTFITS: Outfit[] = [
   ...ACHV_OUTFITS,
   ...PREF_OUTFITS,
   ...LOCAL_OUTFITS,
+  ...TRAD_OUTFITS,
 ]
 
 export const outfitById = new Map(OUTFITS.map((o) => [o.id, o]))
