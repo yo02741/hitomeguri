@@ -106,9 +106,11 @@ watch(
   () => explore.category,
   () => afterPaint(() => (mapCategory.value = explore.category)),
 )
-// 顯示規則：全部大點（可依類型篩選；開啟擴充包時不篩選，變淡當底圖）
+// 顯示規則：全部大點（可依類型篩選；開啟擴充包時不篩選，變淡當底圖）。
+// 縣裡選了一個區（?area=）時只畫那一區的景點，其他區的先不畫，取消就回來（使用者回饋 2026-10-12；清單本來就只列那一區）
 const filteredSpots = computed(() =>
   allSpots.value.filter((s) => {
+    if (areaCode.value && s.m !== areaCode.value) return false
     if (explore.pack) return true
     // 只看收藏與類型可以一起用（縣的清單也一樣）；全國總覽沒有類型列，只看收藏
     if (explore.onlyFavorites && !marks.marks[s.id]?.favorite) return false

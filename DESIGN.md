@@ -31,7 +31,7 @@
 | 版本 | 用在 | 規格 |
 |---|---|---|
 | Hero（三行） | 首頁、關於頁、商店截圖 | 假名 `tracking-kana` → 漢字 `font-black`（字級依版面，漢字至少是假名的 4 倍）→ HITOMEGURI `font-latin font-bold uppercase`，字距 0.4–0.5em |
-| Header（橫排） | 每頁 header 左側 | 左：假名 10px 疊在「一巡り」22px 900 上方；右：HITOMEGURI 13px `font-latin font-semibold`，底部對齊；整塊是回首頁的連結 |
+| Header（橫排） | 每頁 header 左側 | 左：假名 10px 疊在「一巡り」22px 900 上方；右：HITOMEGURI 13px `font-latin font-semibold`，底部對齊；整塊連到形象網站 `/about`（2026-10-12 回報：在規劃的頁面找不到回形象網站的入口；地圖用「探索」分頁回去）。形象網站自己的標誌（海報、頁尾）連到 app 的 `/` |
 | 地區色上 | 海報區、分享圖 | 同 Hero 三行，文字用 `text-on-region`，可加 `bg-region-accent` 正圓裝飾 |
 | 最小尺寸 | 頁尾、小型標示 | 只用單行：「一巡り」16px 900，或「ひとめぐり」14px 700，或 HITOMEGURI 13px |
 
@@ -735,6 +735,7 @@ header 右側、登入鈕左邊（`SearchBox.vue`，每一頁都在；在行程�
   - 地名標籤：`--region-sub`，日文，`localIdeographFontFamily` 設為 `"Noto Sans JP", sans-serif`
 - 控制鈕：右下只有縮放與出處（由上而下），維持 MapLibre 原本的大小（使用者回饋放大到 44px 太大）。傾斜、旋轉照 MapLibre 預設（右鍵拖曳、手機兩指上下拖）。立體地形（国土地理院標高圖磚＋陰影）2026-10-10 移除（使用者決定）。
 - 出處（attribution）：只放授權要求在地圖上標示的「© OpenStreetMap | © OpenMapTiles」，後面接「資料來源」連到 `/credits`（站內換頁）；寫成一個字串（MapLibre 會把多筆出處依長短重排）。畫了市区町村界的地圖（縣地圖）在「資料來源」前面多「「国土数値情報（行政区域データ）」（国土交通省）」連到 N03 資料頁（`map/style.ts` 的 `N03_ATTRIBUTION`；`MapView` 自己建 `AttributionControl` 才改得了內容）。底圖 style 各 source 自帶的出處（OpenFreeMap © OpenMapTiles Data from OpenStreetMap）在 `setStyle` 的 `transformStyle` 拿掉（`web/src/map/style.ts` 的 `MAP_ATTRIBUTION`）。所有尺寸建立地圖時就收起（拿掉 `maplibregl-compact-show`），只留 ⓘ，點了才展開。
+- 登入（Google，`signInWithPopup`）：登入視窗用的 resolver（Google 的 gapi 與 iframe）第一次用時要先下載，下載完瀏覽器已不當作「按了按鈕」而擋掉視窗（2026-10-12 回報：第一次按登入出現「登入沒有完成」）。`stores/user.ts` 在登入狀態確定、沒登入的人閒下來時（`requestIdleCallback`）先載好，滑到、聚焦標頭的登入鈕時也載；`signInWithPopup` 用同一個 resolver，按下去時視窗馬上開。視窗還是被擋時提示「登入視窗被擋下來，請再按一次登入」。
 - 資料來源頁（`/credits`，`CreditsView.vue`，非同步載入）：`max-w-3xl` 單欄，分「地圖」「景點與內容」「其他」三段，每列左邊來源名稱（連到來源網站，`text-body-sm font-bold`），右邊用在哪裡，下面 `text-caption text-sub` 的授權（連到授權條文）與出典標示；最後「注意事項」三條（資訊可能變動、期間限定的期間是推算的、著作權與商標）。只列實際用到的來源，新增來源時一起補。授權有好幾種時依序列出、用「／」隔開；來源指定的出典標示照原文另起一行（`lang="ja"`，例：国土数値情報「…をもとにひとめぐり作成」，下一行註明加工）。入口：地圖出處的「資料來源」、帳號選單（登出上面；它上面是「關於 ひとめぐり」，§14）。
 - 行程路線（行程頁）：當天主縣的 `--region-strong`，4px，端點圓頭；轉乘段用虛線。路線改變（開頁、換天、排序）時從起點畫到終點（0.8～2.4s，前後慢中間快），筆尖是 `--region-strong` 圓點加 `paper` 外框。
 - 單日來回（行程頁桌機，§7.9c）：住的車站是新幹線站那種雙圈（`--region-paper` 底、`--region-ink` 2.5px 外框＋中間墨色小點，半徑 7.5）＋粗體站名（13px，永遠顯示）；目的地是小圓點（縮放 5→9：半徑 3.5→6），60 km 內 `--region-strong` 實心（`--region-paper` 外框）、60–150 km `--region-base`（`--region-strong` 外框）、新幹線 `--region-paper` 底＋`--region-ink` 外框與中間小點；近的畫在上面。選中的那個外圈 `--region-strong` 2.5px＋粗體地名（只寫選中的，其他的地名底圖已經有）。新幹線的路線用全國地圖那一份（§7.5a 的「全國地圖的新幹線」，站不畫）。圖層在行程的停留點之下；點了目的地（景點、群集優先）換到它的分段並展開。
@@ -858,5 +859,5 @@ MVP 不做。token 已集中在 `theme.css` 與 `regions.css`，之後以 `@cust
 - 手機（<640）各段單欄、左右 16px；不出水平捲軸。
 - 和 app 互通（使用者回饋 2026-10-12：形象網站與實際規劃的頁面兩邊要互通）：
   - 形象網站 → app：海報上緣右邊「探索」「行程」「紀錄」（app 的三個分頁，白字，不換行）；「能做什麼」每個頁籤的說明下面一顆 ink 底的按鈕到實際那一頁：探索「打開地圖」（`/`）、行程「排一趟行程」（`/trips`）、旅前準備「選一趟行程來準備」（`/trips`，旅前準備在每趟行程裡）、紀錄「看紀錄」（`/log`）、收集卡「打開收集冊」（`/log/cards`）。海報與頁尾原本的「開始探索」照舊。
-  - app → 形象網站：帳號選單「關於 ひとめぐり」（資料來源上面）；沒登入時行程、紀錄、收藏與清單頁的登入提示下面「ひとめぐり 是什麼」（`region-strong` 字連結，和形象網站的段落標題同名）。
+  - app → 形象網站：標頭左上的標誌（每一頁都有，§Wordmark）；帳號選單「關於 ひとめぐり」（資料來源上面）；沒登入時行程、紀錄、收藏與清單頁的登入提示下面「ひとめぐり 是什麼」（`region-strong` 字連結，和形象網站的段落標題同名）。
 

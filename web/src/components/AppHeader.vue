@@ -140,6 +140,8 @@ const { rect, animate } = useIndicator(nav, () => nav.value?.querySelector<HTMLE
         type="button"
         class="h-11 rounded-control border border-line bg-paper px-3.5 text-body-sm whitespace-nowrap text-ink active:translate-y-px disabled:cursor-not-allowed disabled:opacity-40"
         :disabled="!userStore.ready || !userStore.canSignIn"
+        @pointerenter="userStore.warmUp()"
+        @focus="userStore.warmUp()"
         @click="userStore.signIn()"
       >
         登入
