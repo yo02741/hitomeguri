@@ -1,5 +1,5 @@
 import type { Outfit } from './outfits'
-import { C, dots, E, line, NECK, PANTS, ROBE, SH, shape, SHORTS, SLEEVE_L, SLEEVE_R, TOP, TOP_SHADE } from './dollArt'
+import { C, dots, E, line, LONG, LONG_SHADE, NECK, PANTS, ROBE, SH, shape, SHORTS, SLEEVE_L, SLEEVE_R, TOP, TOP_SHADE } from './dollArt'
 
 /**
  * 不限縣的服裝第二批（使用者回饋 2026-10-12：衣服太少，多一些不用去特定縣市的）。全部用抽獎券抽。
@@ -13,9 +13,6 @@ const BODY_ICON = '58 140 124 140'
 const beige = (d: string) => shape(d, C.brown) + `<path d="${d}" fill="${C.cream}" opacity=".55"/>`
 
 // ---------- 版型 ----------
-// 長袖：袖口碰到手（作務衣的 LONG 停在手腕上方，露出一截手臂）
-const LONG = 'M98 151 L142 151 C153 153 161 158 165 167 L171 214 L151 216 L151 240 L89 240 L89 216 L69 214 L75 167 C79 158 87 153 98 151Z'
-const LONG_SHADE = 'M140 151 C153 153 161 158 165 167 L171 214 L151 216 L151 240 L138 240Z'
 // 帽子垂在肩上（帽 T、雨衣）：頭擋住中間，只露出脖子兩旁
 const HOOD = 'M88 160 C86 146 100 138 120 138 C140 138 154 146 152 160 C146 154 134 150 120 150 C106 150 94 154 88 160Z'
 // 立領（學生服、運動外套、羽絨衣）

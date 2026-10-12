@@ -42,7 +42,7 @@ const nori = (x: number) => `<path d="M${x} 207 L${x + 1} 189 L${x + 12} 191 L${
 // ---------- 手上：盤子、串、杯 ----------
 const plate = (fill = C.white) => shape('M128 228 C128 220 204 220 204 228 C204 237 128 237 128 228Z', fill)
 /** 竹籤：從手斜斜往上，pieces 在籤上的位置 t（0 手、1 頂） */
-function skewer(piece: (x: number, y: number, i: number) => string, ts: number[], color = C.cream): string {
+export function skewer(piece: (x: number, y: number, i: number) => string, ts: number[], color = C.cream): string {
   const at = (t: number): [number, number] => [154 + 24 * t, 236 - 86 * t]
   const [x1, y1] = at(1.05)
   return `<path d="M154 236 L${x1} ${y1}" ${line(2.6, color)}/>` + ts.map((t, i) => piece(...at(t), i)).join('')
@@ -125,7 +125,7 @@ function kanzashi(flower: string, center: string, extra = ''): string {
 
 // ---------- 臉上：戴在頭側邊的面具 ----------
 /** 祭典的面具斜戴在頭的右上，綁繩繞過額頭 */
-function sideMask(face: string, base: string, extra = ''): string {
+export function sideMask(face: string, base: string, extra = ''): string {
   return (
     `<path d="M66 88 C90 76 140 74 152 78" ${line(2, C.red)}/>` +
     `<g transform="rotate(16 160 76)">` +
@@ -147,7 +147,7 @@ const HAPPI = 'M98 151 L142 151 C154 153 163 160 167 170 L172 204 L152 206 L153 
 const HAPPI_SHADE = 'M140 151 C154 153 163 160 167 170 L172 204 L152 206 L153 246 L138 246Z'
 const TOP = 'M98 151 L142 151 C153 153 161 158 165 167 L170 188 L151 192 L151 240 L89 240 L89 192 L70 188 L75 167 C79 158 87 153 98 151Z'
 /** 法被：底色、衿（前襟兩條）的顏色、衿上的字、下面穿的 */
-function happi(o: { base: string; collar: string; text?: string; textColor?: string; bottom?: string; bottomColor?: string; pattern?: string; band?: string }): string {
+export function happi(o: { base: string; collar: string; text?: string; textColor?: string; bottom?: string; bottomColor?: string; pattern?: string; band?: string }): string {
   return (
     shape(o.bottom ?? SHORTS, o.bottomColor ?? C.white) +
     shape(HAPPI, o.base) +
@@ -161,7 +161,7 @@ function happi(o: { base: string; collar: string; text?: string; textColor?: str
   )
 }
 /** 浴衣、和服：袂、到腳踝的身頃、衿、腰帶；pattern 是 DollDefs 的花紋 */
-function robe(o: { base: string; pattern?: string; collar?: string; obi: string; obiLine?: string; extra?: string }): string {
+export function robe(o: { base: string; pattern?: string; collar?: string; obi: string; obiLine?: string; extra?: string }): string {
   const pat = (d: string) => (o.pattern ? `<path d="${d}" fill="url(#${o.pattern})"/>` : '')
   return (
     shape(SLEEVE_L, o.base) +

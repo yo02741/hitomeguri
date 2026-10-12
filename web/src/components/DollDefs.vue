@@ -142,6 +142,21 @@
       <pattern id="doll-knit" width="6" height="8" patternUnits="userSpaceOnUse">
         <path d="M3 0 L3 8" class="p-knit" />
       </pattern>
+      <!-- 絞染（有松・鳴海絞）：小小的白圈 -->
+      <pattern id="doll-shibori" width="9" height="9" patternUnits="userSpaceOnUse">
+        <circle cx="4.5" cy="4.5" r="2" class="p-shibori" />
+      </pattern>
+      <!-- 白絣（久留米絣、半纏）：藍底上的白色短紋 -->
+      <pattern id="doll-kasuri-w" width="16" height="12" patternUnits="userSpaceOnUse">
+        <path d="M2 3 L8 3 M10 9 L16 9" class="p-kasuri-w" />
+      </pattern>
+      <!-- 紅型（琉裝）：紅花、藍色的水紋、綠葉 -->
+      <pattern id="doll-bingata" width="28" height="28" patternUnits="userSpaceOnUse">
+        <g class="p-bingata-a"><circle cx="7" cy="4" r="2.6" /><circle cx="10.5" cy="7" r="2.6" /><circle cx="7" cy="10" r="2.6" /><circle cx="3.5" cy="7" r="2.6" /></g>
+        <circle cx="7" cy="7" r="1.4" class="p-yuzen-c" />
+        <path d="M14 22 C17 19 20 19 23 22 C26 25 29 25 31 22" class="p-bingata-b" />
+        <path d="M20 8 C23 5 27 6 27 10 C24 11 21 10 20 8Z" class="p-leaf-fill" />
+      </pattern>
       <!-- 甜筒的格紋 -->
       <pattern id="doll-waffle" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
         <path d="M0 0 L7 0 M0 0 L0 7" class="p-brown" />
@@ -214,6 +229,25 @@
 }
 .p-yosegi-b {
   fill: var(--color-item-brown);
+}
+.p-shibori {
+  fill: none;
+  stroke: var(--color-item-white);
+  stroke-width: 1.2;
+  opacity: 0.85;
+}
+.p-kasuri-w {
+  stroke: var(--color-item-white);
+  stroke-width: 2;
+  opacity: 0.85;
+}
+.p-bingata-a {
+  fill: var(--color-item-red);
+}
+.p-bingata-b {
+  fill: none;
+  stroke: var(--color-item-blue);
+  stroke-width: 1.8;
 }
 .p-border {
   fill: var(--color-item-navy);
