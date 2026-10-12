@@ -6,12 +6,40 @@
 /** 把 var(--x) 換成頁面上算好的值；local 是這隻娃娃自己的變數（--skin、--hair） */
 export function resolveVars(svg: string, local: Record<string, string> = {}, depth = 0): string {
   const root = getComputedStyle(document.documentElement)
-  return svg.replace(/var\((--[\w-]+)(?:,\s*([^()]*))?\)/g, (_m, name: string, fallback?: string) => {
-    if (depth < 4 && local[name]) return resolveVars(local[name], local, depth + 1)
+  // var(--名稱) 或 var(--名稱, 預設值)；預設值可以再包一層 var()（例：var(--hair, var(--color-doll-hair-1))）
+  let out = ''
+  let i = 0
+  while (i < svg.length) {
+    const at = svg.indexOf('var(--', i)
+    if (at < 0) break
+    out += svg.slice(i, at)
+    let j = at + 4
+    while (j < svg.length && /[\w-]/.test(svg[j]!)) j++
+    const name = svg.slice(at + 4, j)
+    let fallback: string | undefined
+    if (svg[j] === ',') {
+      let level = 0
+      let k = j + 1
+      for (; k < svg.length; k++) {
+        if (svg[k] === '(') level++
+        else if (svg[k] === ')') {
+          if (level === 0) break
+          level--
+        }
+      }
+      fallback = svg.slice(j + 1, k)
+      j = k
+    }
+    i = j + 1
+    if (depth < 4 && local[name]) {
+      out += resolveVars(local[name], local, depth + 1)
+      continue
+    }
     // 字型清單的雙引號會把屬性截斷，換成單引號
     const v = root.getPropertyValue(name).trim().replace(/"/g, "'")
-    return v || fallback?.trim() || 'currentColor'
-  })
+    out += v || (fallback ? resolveVars(fallback.trim(), local, depth + 1) : '') || 'currentColor'
+  }
+  return out + svg.slice(i)
 }
 
 const STYLE_PROPS = ['fill', 'stroke', 'stroke-width', 'opacity', 'fill-opacity', 'stroke-opacity', 'stroke-linecap', 'stroke-linejoin']

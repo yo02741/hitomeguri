@@ -34,7 +34,7 @@ export const FURI_R = 'M148 156 C160 158 170 166 172 180 L176 254 C176 262 170 2
 /** 紋：白圈裡一個小家紋 */
 export const mon = (x: number, y: number) => `<circle cx="${x}" cy="${y}" r="4.4" fill="${C.white}"/><circle cx="${x}" cy="${y}" r="2.8" fill="${C.ink}"/><circle cx="${x}" cy="${y}" r="1.3" fill="${C.white}"/>`
 /** 五瓣的花（櫻花髮夾） */
-const blossom = (x: number, y: number, r: number, fill: string) =>
+export const blossom = (x: number, y: number, r: number, fill: string) =>
   `<g ${E}>${[0, 72, 144, 216, 288].map((a) => `<ellipse cx="${x}" cy="${y - r}" rx="${r * 0.62}" ry="${r}" fill="${fill}" transform="rotate(${a} ${x} ${y})"/>`).join('')}</g><circle cx="${x}" cy="${y}" r="${r * 0.42}" fill="${C.yellow}"/>`
 
 /** ROBE 的左右邊在 y 時的 x（端縫い的拼布用） */

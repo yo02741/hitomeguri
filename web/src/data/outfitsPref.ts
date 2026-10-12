@@ -9,7 +9,7 @@ import { C, dots, E, line, mirror, OVER, SH, shape, vtext } from './dollArt'
 import type { Outfit } from './outfits'
 
 type Def = Omit<Outfit, 'pref' | 'gift'>
-const ICON = {
+export const ICON = {
   hand: '124 156 92 90',
   bowl: '128 168 82 76',
   head: '40 0 160 100',
@@ -20,7 +20,7 @@ const ICON = {
 
 // ---------- 手上：碗（拉麵、烏龍麵、蕎麥麵、丼） ----------
 const STICKS = `<path d="M180 196 L198 170 M186 198 L204 172" ${line(2.4, C.brown)}/>`
-function bowl(o: { bowl: string; soup: string; noodle?: string; top?: string; rim?: string; sticks?: boolean; soupOp?: number }): string {
+export function bowl(o: { bowl: string; soup: string; noodle?: string; top?: string; rim?: string; sticks?: boolean; soupOp?: number }): string {
   return (
     shape('M134 208 C134 230 150 238 166 238 C182 238 198 230 198 208Z', o.bowl) +
     `<path d="M182 210 L198 208 C198 230 184 238 168 238 C184 228 186 218 182 210Z" ${SH}/>` +
@@ -40,14 +40,14 @@ const negi = (pts: Array<[number, number]>) => dots(C.green, 1.7, pts)
 const nori = (x: number) => `<path d="M${x} 207 L${x + 1} 189 L${x + 12} 191 L${x + 11} 207Z" fill="${C.ink}" opacity=".88"/>`
 
 // ---------- 手上：盤子、串、杯 ----------
-const plate = (fill = C.white) => shape('M128 228 C128 220 204 220 204 228 C204 237 128 237 128 228Z', fill)
+export const plate = (fill = C.white) => shape('M128 228 C128 220 204 220 204 228 C204 237 128 237 128 228Z', fill)
 /** 竹籤：從手斜斜往上，pieces 在籤上的位置 t（0 手、1 頂） */
 export function skewer(piece: (x: number, y: number, i: number) => string, ts: number[], color = C.cream): string {
   const at = (t: number): [number, number] => [154 + 24 * t, 236 - 86 * t]
   const [x1, y1] = at(1.05)
   return `<path d="M154 236 L${x1} ${y1}" ${line(2.6, color)}/>` + ts.map((t, i) => piece(...at(t), i)).join('')
 }
-function cup(body: string, inside: string, extra = ''): string {
+export function cup(body: string, inside: string, extra = ''): string {
   return (
     shape('M140 200 L192 200 L188 236 C186 240 146 240 144 236Z', body) +
     `<path d="M178 200 L192 200 L188 236 C187 239 180 240 174 240 C180 232 182 214 178 200Z" ${SH}/>` +
@@ -56,7 +56,7 @@ function cup(body: string, inside: string, extra = ''): string {
   )
 }
 /** 圓圓的水果（桃、橘子、梨、柿…） */
-function fruit(fill: string, o: { leaf?: boolean; crease?: boolean; stem?: string; dots?: string } = {}): string {
+export function fruit(fill: string, o: { leaf?: boolean; crease?: boolean; stem?: string; dots?: string } = {}): string {
   return (
     shape('M166 194 C150 192 138 204 140 220 C142 234 154 240 166 240 C178 240 190 234 192 220 C194 204 182 192 166 194Z', fill) +
     `<path d="M178 196 C190 202 194 212 192 222 C190 234 180 240 170 240 C182 230 186 212 178 196Z" ${SH}/>` +
@@ -70,7 +70,7 @@ function fruit(fill: string, o: { leaf?: boolean; crease?: boolean; stem?: strin
 
 // ---------- 頭上 ----------
 /** 天守閣的帽子：石垣、白壁或黑壁、三層屋頂，頂端一對金色的鯱 */
-function castle(o: { wall: string; roof: string; trim?: string }): string {
+export function castle(o: { wall: string; roof: string; trim?: string }): string {
   const t = o.trim ?? C.white
   return (
     shape('M70 82 L76 66 L164 66 L170 82Z', C.grey) +
@@ -89,7 +89,7 @@ function castle(o: { wall: string; roof: string; trim?: string }): string {
   )
 }
 /** 頭帶：綁在瀏海上，右邊打結，mark 是額頭前的圖樣 */
-function hachimaki(color: string, mark = ''): string {
+export function hachimaki(color: string, mark = ''): string {
   return (
     shape('M64 84 C82 72 158 72 176 84 L176 94 C158 82 82 82 64 94Z', color) +
     shape('M172 84 L190 74 L192 82 L180 90Z', color) +
