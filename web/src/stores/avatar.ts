@@ -3,7 +3,7 @@ import { computed, ref, shallowRef, watch } from 'vue'
 
 import { useVisitedEntries } from '../composables/visited'
 import { DEFAULT_EQUIPPED, type EyeStyle, type HairColor, type HairStyle, OUTFITS, outfitById, type Outfit, type Skin, type Slot, STARTER_IDS } from '../data/outfits'
-import { derivedOwned, gachaPool, wornOf } from '../services/outfitOwn'
+import { derivedOwned, gachaPool, pickWeighted, wornOf } from '../services/outfitOwn'
 import { ensureSignedIn, firestore } from '../services/userdb'
 import { useAchievementsStore } from './achievements'
 import { outfitKey, useFreshStore } from './fresh'
@@ -16,6 +16,7 @@ import { useWalletStore } from './wallet'
  * 每個縣的代表單品（gift）去過那個縣就有、成就服裝（achv）達成那個成就就有（都不用存，services/outfitOwn.ts）；
  * 其他的用抽獎券抽（stores/wallet.ts，與景點卡共用）：
  * 扭蛋的範圍是不限縣的＋去過的縣的其他單品，只抽還沒有的（不會重複），都有了就不能抽。
+ * 十連抽一次用 10 張、抽 10 件不同的；抽獎券不到 10 張、或扭蛋裡剩不到 10 件時不能十連抽。
  */
 export interface AvatarParts {
   skin: Skin
@@ -31,7 +32,7 @@ interface Saved {
 }
 const DEFAULT_PARTS: AvatarParts = { skin: 1, hair: 'bob', hairColor: 1, eyes: 'round' }
 const LOCAL = 'hitomeguri:avatar'
-const WEIGHT: Record<Outfit['rarity'], number> = { 1: 6, 2: 3, 3: 1 }
+export const TEN = 10
 
 export const useAvatarStore = defineStore('avatar', () => {
   const userStore = useUserStore()
@@ -125,6 +126,7 @@ export const useAvatarStore = defineStore('avatar', () => {
   /** 還沒有、抽得到的 */
   const remaining = computed(() => pool.value.filter((o) => !ownedIds.value.has(o.id)))
   const canDraw = computed(() => remaining.value.length > 0 && wallet.canSpend(1))
+  const canDrawTen = computed(() => remaining.value.length >= TEN && wallet.canSpend(TEN))
 
   function setParts(p: Partial<AvatarParts>) {
     parts.value = { ...parts.value, ...p }
@@ -139,23 +141,22 @@ export const useAvatarStore = defineStore('avatar', () => {
   }
   /** 抽一件：只從還沒有的裡抽（不會重複）；都有了或抽獎券不夠回傳 null */
   function draw(): { outfit: Outfit; duplicate: boolean } | null {
+    const got = drawSome(1)
+    return got ? { outfit: got[0]!, duplicate: false } : null
+  }
+  /** 十連抽：10 件不同的；剩不到 10 件或抽獎券不到 10 張回傳 null */
+  function drawTen(): Outfit[] | null {
+    return canDrawTen.value ? drawSome(TEN) : null
+  }
+  function drawSome(n: number): Outfit[] | null {
     const from = remaining.value
-    if (!from.length || !wallet.spend(1)) return null
-    const total = from.reduce((s, o) => s + WEIGHT[o.rarity], 0)
-    let r = Math.random() * total
-    let picked = from[from.length - 1]!
-    for (const o of from) {
-      r -= WEIGHT[o.rarity]
-      if (r < 0) {
-        picked = o
-        break
-      }
-    }
-    owned.value = [...owned.value, picked.id]
-    fresh.add([outfitKey(picked.id)])
+    if (from.length < n || !wallet.spend(n)) return null
+    const got = pickWeighted(from, n)
+    owned.value = [...owned.value, ...got.map((o) => o.id)]
+    fresh.add(got.map((o) => outfitKey(o.id)))
     void save()
-    return { outfit: picked, duplicate: false }
+    return got
   }
 
-  return { parts, equipped, worn, owned, used, loaded, visitedPrefs, ownedIds, has, canDraw, pool, remaining, setParts, equip, draw }
+  return { parts, equipped, worn, owned, used, loaded, visitedPrefs, ownedIds, has, canDraw, canDrawTen, pool, remaining, setParts, equip, draw, drawTen }
 })

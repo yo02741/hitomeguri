@@ -23,6 +23,7 @@ const rewards = OUTFITS.filter((o) => o.achv)
         <li>第一次去一個縣，送那個縣的代表單品。</li>
         <li>去過的縣的其他單品，和不限縣的，用扭蛋抽。</li>
         <li>扭蛋只會抽到還沒有的。去過的縣都抽齊了，去新的縣就會加進新的。</li>
+        <li>十連抽一次抽 10 件不同的。抽獎券不到 10 張、或扭蛋裡剩不到 10 件時不能十連抽。</li>
         <li>成就送的 <span class="font-num">{{ rewards.length }}</span> 件不進扭蛋：{{ rewards.map((o) => `${achvById.get(o.achv!)?.name ?? o.achv}・${o.name}`).join('、') }}。</li>
         <li>取消去過、刪掉旅行，代表單品與成就送的服裝跟著拿掉；標回去就回來。</li>
       </ul>
@@ -31,7 +32,7 @@ const rewards = OUTFITS.filter((o) => o.achv)
     <section class="flex flex-col gap-2" aria-labelledby="r-ticket">
       <h3 id="r-ticket" class="text-body-sm font-bold text-sub">抽獎券（與收集卡共用）</h3>
       <ul class="flex flex-col gap-1.5 text-body-sm leading-relaxed">
-        <li>抽一次扭蛋、抽一張卡都用 1 張；十連抽用 10 張。</li>
+        <li>抽一次扭蛋、抽一張卡都用 1 張；十連抽（服裝、收集卡）用 10 張。</li>
         <li>張數由去過的地方算出來：取消去過、再勾回來不會變多。</li>
       </ul>
       <TicketTable />

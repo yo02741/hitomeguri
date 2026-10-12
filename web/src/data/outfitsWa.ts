@@ -1,5 +1,5 @@
 import type { Outfit } from './outfits'
-import { C, dots, E, HAKAMA, HAORI_L, HAORI_R, line, LONG, LONG_SHADE, PANTS, ROBE, SH, shape, SLEEVE_L, SLEEVE_R, TOP, TOP_SHADE } from './dollArt'
+import { C, dots, E, HAKAMA, HAORI_L, HAORI_R, line, LONG, LONG_SHADE, PANTS, ROBE, SH, shape, SLEEVE_L, SLEEVE_R, TOP, TOP_SHADE, vtext } from './dollArt'
 import { happi, robe, sideMask, skewer } from './outfitsPref'
 
 /**
@@ -497,7 +497,7 @@ const HAND: Outfit[] = [
       shape('M164 197 L171 190 L178 190 L185 197 L185 227 L164 227Z', C.red) +
       `<path d="M164 197 L171 190 L178 190 L185 197 L185 227 L164 227Z" fill="url(#doll-asanoha)" opacity=".7"/>` +
       shape('M169.5 202 L179.5 202 L179.5 221 L169.5 221Z', C.gold) +
-      `<text x="174.5" y="205" font-size="6" font-weight="900" fill="${C.red}" text-anchor="middle" font-family="var(--font-ja)" writing-mode="tb">御守</text>`,
+      vtext('御守', 174.5, 211.5, 6, C.red),
   },
   {
     id: 'ema',

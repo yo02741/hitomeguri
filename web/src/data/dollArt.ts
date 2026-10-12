@@ -25,6 +25,14 @@ export const E = 'stroke="var(--color-doll-line)" stroke-opacity=".2" stroke-wid
 export const SH = 'fill="var(--color-doll-line)" opacity=".16"'
 export const line = (w = 2.4, color = C.ink, op = 1) => `fill="none" stroke="${color}" stroke-width="${w}" stroke-linecap="round" stroke-linejoin="round" stroke-opacity="${op}"`
 export const shape = (d: string, fill: string, extra = '') => `<path d="${d}" fill="${fill}" ${E} ${extra}/>`
+/** 直書的字：一個字一個 <text> 往下疊（Safari 的 SVG 不支援 writing-mode 直排，位置會跑掉）。cy 是整串字的中心 */
+export function vtext(s: string, x: number, cy: number, size: number, fill: string): string {
+  const chars = [...s]
+  const top = cy - (chars.length * size) / 2
+  return chars
+    .map((ch, i) => `<text x="${x}" y="${+(top + (i + 0.86) * size).toFixed(2)}" font-size="${size}" font-weight="900" fill="${fill}" text-anchor="middle" font-family="var(--font-ja)">${ch}</text>`)
+    .join('')
+}
 export const dots = (fill: string, r: number, pts: Array<[number, number]>, extra = '') => `<g fill="${fill}" ${extra}>${pts.map(([x, y]) => `<circle cx="${x}" cy="${y}" r="${r}"/>`).join('')}</g>`
 
 // ---------- 衣服的版型（240×320 的畫布，肩 y151、腰 y240、腳踝 y274） ----------

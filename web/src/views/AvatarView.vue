@@ -4,6 +4,7 @@ import { computed, defineAsyncComponent, onBeforeUnmount, ref, watch } from 'vue
 import AvatarRules from '../components/AvatarRules.vue'
 import BackLink from '../components/BackLink.vue'
 import DollGacha from '../components/DollGacha.vue'
+import DollTen from '../components/DollTen.vue'
 import NewTag from '../components/NewTag.vue'
 import DollSpin from '../components/DollSpin.vue'
 import PaperDoll from '../components/PaperDoll.vue'
@@ -24,7 +25,7 @@ const Avatar3D = defineAsyncComponent(() => import('../components/Avatar3D.vue')
 const use3d = canWebGL()
 
 // 旅人（紙娃娃，DESIGN.md §7.24）：左邊是角色與「抽服裝」，右邊是衣櫃：外觀與五個位置的服裝，單品是貼紙；
-// 還沒有的只剩剪影，新拿到還沒點過的標 NEW。抽服裝用抽獎券（與景點卡共用），只抽還沒有的。
+// 還沒有的只剩剪影，新拿到還沒點過的標 NEW。抽服裝用抽獎券（與景點卡共用），只抽還沒有的；十連抽一次抽 10 件。
 const userStore = useUserStore()
 const avatar = useAvatarStore()
 const wallet = useWalletStore()
@@ -128,6 +129,14 @@ function draw() {
   const r = avatar.draw()
   if (r) result.value = r
 }
+const ten = ref<Outfit[] | null>(null)
+const tenKey = ref(0)
+function drawTen() {
+  const got = avatar.drawTen()
+  if (!got) return
+  tenKey.value++
+  ten.value = got
+}
 function wear() {
   if (result.value) {
     avatar.equip(result.value.outfit.slot, result.value.outfit.id)
@@ -175,20 +184,32 @@ function wear() {
             <DollSpin v-else :parts="avatar.parts" :equipped="avatar.worn" class="absolute inset-0" />
           </div>
         </div>
-        <button
-          type="button"
-          class="draw flex h-14 shrink-0 items-center gap-3 rounded-card bg-ink px-4 text-paper disabled:cursor-not-allowed disabled:opacity-40 active:not-disabled:translate-y-px max-lg:mx-auto max-lg:-mt-4 max-lg:w-full max-lg:max-w-[440px]"
-          :disabled="!avatar.canDraw"
-          @click="draw"
-        >
-          <svg width="30" height="30" viewBox="0 0 120 120" aria-hidden="true">
-            <path d="M14 60 A46 46 0 0 1 106 60Z" class="ball-top" />
-            <path d="M14 60 A46 46 0 0 0 106 60Z" class="ball-bottom" />
-          </svg>
-          <span class="text-body font-bold">{{ avatar.remaining.length ? '抽服裝' : prefLocked ? '去過的縣都抽齊了' : '都抽齊了' }}</span>
-          <span v-if="avatar.remaining.length" class="ml-auto text-body-sm opacity-80">抽獎券 <span class="font-num text-body font-bold">{{ wallet.left }}</span></span>
-          <span v-else-if="prefLocked" class="ml-auto text-body-sm opacity-80">沒去過的縣 <span class="font-num text-body font-bold">{{ prefLocked }}</span> 件</span>
-        </button>
+        <!-- 抽一件、十連抽（抽獎券不到 10 張、或扭蛋裡剩不到 10 件時不能十連抽） -->
+        <div class="flex shrink-0 gap-2 max-lg:mx-auto max-lg:-mt-4 max-lg:w-full max-lg:max-w-[440px]">
+          <button
+            type="button"
+            class="draw flex h-14 min-w-0 flex-1 items-center gap-3 rounded-card bg-ink px-4 text-paper disabled:cursor-not-allowed disabled:opacity-40 active:not-disabled:translate-y-px"
+            :disabled="!avatar.canDraw"
+            @click="draw"
+          >
+            <svg width="30" height="30" viewBox="0 0 120 120" class="shrink-0" aria-hidden="true">
+              <path d="M14 60 A46 46 0 0 1 106 60Z" class="ball-top" />
+              <path d="M14 60 A46 46 0 0 0 106 60Z" class="ball-bottom" />
+            </svg>
+            <span class="text-body font-bold whitespace-nowrap">{{ avatar.remaining.length ? '抽服裝' : prefLocked ? '去過的縣都抽齊了' : '都抽齊了' }}</span>
+            <span v-if="avatar.remaining.length" class="ml-auto text-body-sm whitespace-nowrap opacity-80">抽獎券 <span class="font-num text-body font-bold">{{ wallet.left }}</span></span>
+            <span v-else-if="prefLocked" class="ml-auto text-body-sm whitespace-nowrap opacity-80">沒去過的縣 <span class="font-num text-body font-bold">{{ prefLocked }}</span> 件</span>
+          </button>
+          <button
+            v-if="avatar.remaining.length"
+            type="button"
+            class="ten h-14 shrink-0 rounded-card border-2 border-ink bg-paper px-4 text-body font-bold text-ink disabled:cursor-not-allowed disabled:opacity-40 active:not-disabled:translate-y-px"
+            :disabled="!avatar.canDrawTen"
+            @click="drawTen"
+          >
+            十連抽
+          </button>
+        </div>
       </div>
 
       <!-- 衣櫃 -->
@@ -343,6 +364,7 @@ function wear() {
       @again="draw"
       @close="result = null"
     />
+    <DollTen v-if="ten" :key="tenKey" :got="ten" :worn="avatar.worn" :can-again="avatar.canDrawTen" @wear="toggle" @again="drawTen" @close="ten = null" />
   </section>
 </template>
 

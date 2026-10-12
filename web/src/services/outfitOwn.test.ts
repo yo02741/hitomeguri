@@ -8,7 +8,7 @@ import { ACHV_OUTFITS } from '../data/outfitsAchv'
 import { regions } from '../data/regions'
 import type { Mark } from '../stores/marks'
 import { type AchvStatus, derive, evaluate } from './achievements'
-import { derivedOwned, gachaPool, wornOf } from './outfitOwn'
+import { derivedOwned, gachaPool, pickWeighted, wornOf } from './outfitOwn'
 
 const ALL_PREFS = new Set(regions.map((r) => r.prefecture))
 const status = (m: Record<string, AchvStatus>) => (id: string) => m[id]
@@ -102,5 +102,31 @@ describe('穿在身上的', () => {
     const e = { [gift.slot]: gift.id }
     expect(wornOf(e, outfitById, { visitedPrefs: new Set(), achv: () => undefined, ready: true, fallback: {} })).toEqual({})
     expect(wornOf(e, outfitById, { visitedPrefs: new Set(['kyoto']), achv: () => undefined, ready: true, fallback: {} })).toEqual(e)
+  })
+})
+
+describe('扭蛋', () => {
+  const pool = gachaPool(OUTFITS, new Set())
+  // 固定的亂數（線性同餘），結果可重現
+  const seeded = (seed: number) => () => ((seed = (seed * 1103515245 + 12345) % 2 ** 31) / 2 ** 31)
+  it('十連抽：10 件都不一樣、都在扭蛋裡', () => {
+    for (let s = 1; s <= 20; s++) {
+      const got = pickWeighted(pool, 10, seeded(s))
+      expect(got).toHaveLength(10)
+      expect(new Set(got.map((o) => o.id)).size).toBe(10)
+      expect(got.every((o) => pool.includes(o))).toBe(true)
+    }
+  })
+  it('不夠就全部，不會重複', () => {
+    const few = pool.slice(0, 3)
+    const got = pickWeighted(few, 10, seeded(7))
+    expect(got.map((o) => o.id).sort()).toEqual(few.map((o) => o.id).sort())
+  })
+  it('常見的比稀有的容易抽到', () => {
+    const two = [pool.find((o) => o.rarity === 1)!, pool.find((o) => o.rarity === 3)!]
+    const rand = seeded(3)
+    let common = 0
+    for (let i = 0; i < 700; i++) if (pickWeighted(two, 1, rand)[0] === two[0]) common++
+    expect(common).toBeGreaterThan(500)
   })
 })

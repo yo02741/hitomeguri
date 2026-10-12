@@ -5,7 +5,7 @@
  * 畫法跟 outfits.ts 一樣（剪紙、平塗、淡邊），多數用下面的模板：碗、串、盤、水果、城、面具、法被、浴衣。
  * 座標：右手握在 (156, 222)、頭頂約 y 38、眼睛 y 110、夥伴站在左腳邊（地面 y 294）。
  */
-import { C, dots, E, line, SH, shape } from './dollArt'
+import { C, dots, E, line, SH, shape, vtext } from './dollArt'
 import type { Outfit } from './outfits'
 
 type Def = Omit<Outfit, 'pref' | 'gift'>
@@ -156,7 +156,7 @@ export function happi(o: { base: string; collar: string; text?: string; textColo
     `<path d="M106 150 L114 246 M134 150 L126 246" ${line(9, o.collar)}/>` +
     (o.band ? `<path d="M88 236 L153 236" ${line(4, o.band)}/>` : '') +
     (o.text
-      ? `<text x="110" y="196" font-size="8" font-weight="900" fill="${o.textColor ?? C.white}" text-anchor="middle" font-family="var(--font-ja)" writing-mode="tb">${o.text}</text>`
+      ? vtext(o.text, 110, 196, 8, o.textColor ?? C.white)
       : '')
   )
 }

@@ -22,6 +22,27 @@ export function gachaPool(outfits: readonly Outfit[], visitedPrefs: ReadonlySet<
   return outfits.filter((o) => !o.gift && !o.achv && (!o.pref || visitedPrefs.has(o.pref)))
 }
 
+const WEIGHT: Record<Outfit['rarity'], number> = { 1: 6, 2: 3, 3: 1 }
+
+/** 扭蛋：依稀有度加權（常見 6、少見 3、稀有 1），從 from 裡抽 n 件不同的（不夠 n 件就全部） */
+export function pickWeighted(from: readonly Outfit[], n: number, rand: () => number = Math.random): Outfit[] {
+  const left = [...from]
+  const got: Outfit[] = []
+  while (got.length < n && left.length) {
+    let r = rand() * left.reduce((s, o) => s + WEIGHT[o.rarity], 0)
+    let i = left.length - 1
+    for (let k = 0; k < left.length; k++) {
+      r -= WEIGHT[left[k]!.rarity]
+      if (r < 0) {
+        i = k
+        break
+      }
+    }
+    got.push(...left.splice(i, 1))
+  }
+  return got
+}
+
 /**
  * 實際穿在身上的：穿著的由紀錄送的服裝確定拿掉了（縣沒去過、成就沒達成）就不畫，位置空著（衣服換回預設）。
  * 穿著的紀錄不改：標回去、成就回來時照樣穿上。

@@ -148,7 +148,7 @@ onBeforeUnmount(() => {
         <!-- 打開：貼紙跳出來 -->
         <template v-if="stage === 'open'">
           <div class="rays" :class="`rays-${result.outfit.rarity}`" aria-hidden="true"></div>
-          <svg :viewBox="result.outfit.icon" class="prize relative size-[200px] overflow-visible" aria-hidden="true">
+          <svg :viewBox="result.outfit.icon" class="prize pointer-events-none relative size-[200px] overflow-visible" aria-hidden="true">
             <g filter="url(#doll-cut)" v-html="result.outfit.svg"></g>
           </svg>
         </template>
@@ -322,10 +322,12 @@ onBeforeUnmount(() => {
 .reveal {
   animation: fade-in 0.3s 0.35s both;
 }
+/* 光芒比扭蛋的框大一圈（往下蓋到按鈕列）：不接點擊，按鈕上緣才點得到 */
 .rays {
   position: absolute;
   inset: -45%;
   border-radius: 50%;
+  pointer-events: none;
   background: repeating-conic-gradient(var(--ray) 0deg 3deg, transparent 3deg 12deg);
   mask: radial-gradient(circle closest-side, #000 0 22%, transparent 88%);
   animation:
