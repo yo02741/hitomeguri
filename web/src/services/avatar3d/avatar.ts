@@ -77,6 +77,17 @@ function texture(canvas: HTMLCanvasElement): Texture {
 function toon(canvas: HTMLCanvasElement): MeshToonMaterial {
   return new MeshToonMaterial({ map: texture(bleedEdges(canvas)), gradientMap: gradientMap(), side: DoubleSide })
 }
+/** 有挖空的旋轉體：顏色照樣往外補（邊上不混到黑），透明度用原本的，alpha 0.5 以下不畫 */
+function toonCut(canvas: HTMLCanvasElement): MeshToonMaterial {
+  const bled = bleedEdges(canvas)
+  const { width: W, height: H } = canvas
+  const a = canvas.getContext('2d', { willReadFrequently: true })!.getImageData(0, 0, W, H).data
+  const g = bled.getContext('2d', { willReadFrequently: true })!
+  const b = g.getImageData(0, 0, W, H)
+  for (let i = 3; i < a.length; i += 4) b.data[i] = a[i]!
+  g.putImageData(b, 0, 0)
+  return new MeshToonMaterial({ map: texture(bled), gradientMap: gradientMap(), side: DoubleSide, alphaTest: 0.5 })
+}
 
 const css = (name: string) => getComputedStyle(document.documentElement).getPropertyValue(name).trim()
 
@@ -181,53 +192,76 @@ function groundShadow(): Mesh {
  * 圓帽（左右對稱、比頭寬的斗笠、花笠…）：充氣只會鼓成一片，側面看像頭帶。
  * 改用旋轉成形：每一列剪影的半寬當輪廓轉一圈，帽簷是真的一圈；貼圖從正面投影（花紋留在正面、背面是同一張）。
  */
-const ROUND_HATS = new Set(['sugegasa', 'achv-jingasa', 'yamagata-hanagasa', 'shizuoka-fuji', 'kagoshima-sakurajima', 'tokushima-amigasa', 'straw-hat', 'bucket-hat', 'school-hat', 'beanie'])
+const ROUND_HATS = new Set([
+  'sugegasa',
+  'achv-jingasa',
+  'yamagata-hanagasa',
+  'shizuoka-fuji',
+  'kagoshima-sakurajima',
+  'tokushima-amigasa',
+  'straw-hat',
+  'bucket-hat',
+  'school-hat',
+  'beanie',
+  // 2026-10-13：圓的笠、圓頂的帽子也轉一圈（側面、後面都蓋得到）
+  'toyama-owaragasa',
+  'wakayama-ichimegasa',
+  'kanagawa-yabusame',
+  'fukui-ajirogasa',
+  'nagasaki-kasaboko',
+  'hokkaido-melon',
+  'hyogo-tamanegi',
+  'oita-shiitake',
+  'nara-rahotsu',
+])
+/**
+ * 塔（左右對稱、高出頭頂的：鐵塔、燈塔、五重塔、火箭…）：整件轉一圈，立在頭頂的中軸上（2026-10-13 回報：塔貼在額頭前面、
+ * 不是立在頭上）。貼圖照原樣投影，不拉寬。頭的範圍裡：畫滿大半個頭寬的列（海浪、岩座、屋簷）轉成貼著頭的一圈；
+ * 其他的列（塔腳）照畫的寬度轉，收在頭裡面，塔從頭頂冒出來（hide）；五重塔下層的牆留在那一圈上、旁邊挖空（cut）
+ */
+const TOWER_HATS = new Map<string, 'hide' | 'cut'>([
+  ['tokyo-tower', 'hide'],
+  ['osaka-tsutenkaku', 'hide'],
+  ['saitama-tokinokane', 'hide'],
+  ['hyogo-porttower', 'hide'],
+  ['chiba-inubosaki', 'hide'],
+  ['kagoshima-rocket', 'hide'],
+  ['kumamoto-kintoro', 'hide'],
+  ['nara-gojunoto', 'cut'],
+])
 
-function latheHat(
-  vb: ViewBox,
-  alpha: Cover,
-  hairHalf: (y: number) => number,
-): { geometry: BufferGeometry; cover: Cover; frontAt: (x: number, y: number) => number | null } | null {
+/** 頭在那一列的半寬（紙娃娃 px） */
+const headHalf = (y: number) => {
+  const v = (y - HEAD.cy) / HEAD.ry
+  return Math.abs(v) < 1 ? HEAD.rx * Math.sqrt(1 - v * v) : 0
+}
+/** 旋轉體的一列：紙娃娃的 y、轉一圈的半徑、貼圖橫向的縮放（畫的那一列的半寬 ÷ 半徑；1 是照原樣投影） */
+interface Ring {
+  y: number
+  r: number
+  sq: number
+}
+interface Revolved {
+  geometry: BufferGeometry
+  cover: Cover
+  /** 正面在 (x, y) 的深度（轉一圈的半徑）；不在這個旋轉體的列是 null */
+  frontAt: (x: number, y: number) => number | null
+}
+/** 一列一列的半徑轉成一圈：頂上收到中軸、最下面往內收回頭的寬度，是封起來的。貼圖從正面投影 */
+function revolve(vb: ViewBox, rows: Ring[]): Revolved | null {
+  if (rows.length < 3) return null
   const [vx, vy, vw, vh] = vb
-  const pts: Vector2[] = []
-  // 畫成正面看的帽冠可能比頭窄（草帽、漁夫帽：2D 是透視的樣子），轉一圈後頭和頭髮會從帽冠穿出來：
-  // 半徑至少是「頭在那一列的半寬＋6」（瀏海浮在頭上最多約 6px）與「頭髮那一列的半寬＋3」，貼圖照原本的寬度縮放上去
-  const headHalf = (y: number) => {
-    const v = (y - HEAD.cy) / HEAD.ry
-    return Math.abs(v) < 1 ? HEAD.rx * Math.sqrt(1 - v * v) : 0
-  }
+  const rowKey = (wy: number) => Math.round(wy * 1e4)
   const squeeze = new Map<number, number>()
   /** 每一列（紙娃娃的 y，整數）轉成一圈後的半徑：頭髮在這個範圍內要變薄 */
   const radiusAt = new Map<number, number>()
-  const rowKey = (wy: number) => Math.round(wy * 1e4)
-  let last = { r: 0, y: 0 }
-  let widest = 0
-  for (let y = vy; y <= vy + vh; y += 1) {
-    let l = -1
-    let r = -1
-    let filled = 0
-    let total = 0
-    for (let x = vx; x <= vx + vw; x += 0.5) {
-      if (alpha(x, y) < 0.5) continue
-      if (l < 0) l = x
-      r = x
-      filled++
-    }
-    if (l < 0) continue
-    total = (r - l) / 0.5 + 1
-    const rad = Math.max(0.5, (r - l) / 2)
-    // 過了最寬的那一列（帽簷）之後，只剩兩條細線（帽帶）就停：帽帶不轉成一圈
-    if (widest && rad < widest && filled / total < 0.4) break
-    widest = Math.max(widest, rad)
-    const used = Math.max(rad, headHalf(y) + 6, hairHalf(y) + 3)
-    if (!pts.length) pts.push(new Vector2(0, worldY(y - 0.5)))
-    pts.push(new Vector2(used * PX, worldY(y)))
-    squeeze.set(rowKey(worldY(y)), rad / used)
-    radiusAt.set(Math.round(y), used)
-    last = { r: used, y }
+  const pts: Vector2[] = [new Vector2(0, worldY(rows[0]!.y - 0.5))]
+  for (const { y, r, sq } of rows) {
+    pts.push(new Vector2(r * PX, worldY(y)))
+    squeeze.set(rowKey(worldY(y)), sq)
+    radiusAt.set(Math.round(y), r)
   }
-  if (pts.length < 3) return null
-  // 帽簷底下往內收回到頭的寬度，帽子是封起來的
+  const last = rows[rows.length - 1]!
   pts.push(new Vector2(Math.min(last.r, HEAD.rx * 0.9) * PX, worldY(last.y + 1.5)))
   const geo = new LatheGeometry(pts.reverse(), 72)
   // 貼圖從正面投影：3D 的 x 對回紙娃娃的 x（放寬過的列照比例縮回原本的寬度）
@@ -244,7 +278,6 @@ function latheHat(
     const r = radiusAt.get(Math.round(y))
     return r === undefined ? 0 : clamp01((r + 2 - Math.abs(x - 120)) / 4)
   }
-  /** 帽子正面在 (x, y) 的深度（轉一圈的半徑）；帽子以外是 null */
   const frontAt = (x: number, y: number) => {
     const r = radiusAt.get(Math.round(y))
     const dx = Math.abs(x - 120)
@@ -253,12 +286,83 @@ function latheHat(
   return { geometry: geo, cover, frontAt }
 }
 
-/** 圓帽的貼圖：同一列裡透明的地方（例如編笠下面露出臉的缺口）用左右最近的顏色補滿；轉一圈後每個角度都投影得到顏色 */
-function rowFill(canvas: HTMLCanvasElement): HTMLCanvasElement {
+/** 圓帽、塔：每一列剪影的寬度轉一圈 */
+function latheHat(vb: ViewBox, alpha: Cover, hairHalf: (y: number) => number, mode: 'brim' | 'hide' | 'cut'): Revolved | null {
+  const [vx, vy, vw, vh] = vb
+  // 圓帽畫成正面看的帽冠可能比頭窄（草帽、漁夫帽：2D 是透視的樣子），轉一圈後頭和頭髮會從帽冠穿出來：
+  // 半徑至少是「頭在那一列的半寬＋6」（瀏海浮在頭上最多約 6px）與「頭髮那一列的半寬＋3」，貼圖照原本的寬度縮放上去。
+  // 塔的貼圖不拉寬（照原樣投影）
+  const rows: Ring[] = []
+  let widest = 0
+  for (let y = vy; y <= vy + vh; y += 1) {
+    let l = -1
+    let r = -1
+    let filled = 0
+    for (let x = vx; x <= vx + vw; x += 0.5) {
+      if (alpha(x, y) < 0.5) continue
+      if (l < 0) l = x
+      r = x
+      filled++
+    }
+    if (l < 0) continue
+    const total = (r - l) / 0.5 + 1
+    const rad = Math.max(0.5, (r - l) / 2)
+    // 過了最寬的那一列（帽簷）之後，只剩兩條細線（帽帶）就停：帽帶不轉成一圈
+    if (mode === 'brim' && widest && rad < widest && filled / total < 0.4) break
+    widest = Math.max(widest, rad)
+    const used = mode === 'hide' && !coversHead(alpha, y) ? rad : Math.max(rad, headHalf(y) + 6, hairHalf(y) + 3)
+    rows.push({ y, r: used, sq: mode === 'brim' ? rad / used : 1 })
+  }
+  return revolve(vb, rows)
+}
+
+/** 這一列畫的有沒有蓋住大半個頭寬（六成以上）；頭以外的列是 false */
+function coversHead(alpha: Cover, y: number): boolean {
+  const hh = headHalf(y)
+  let n = 0
+  let on = 0
+  for (let x = 120 - hh; x <= 120 + hh; x += 1) {
+    n++
+    if (alpha(x, y) >= 0.5) on++
+  }
+  return n > 0 && on / n >= 0.6
+}
+
+/**
+ * 其他頭上的（頭巾、帽子、頭帶、城的石垣…）：頭的範圍裡蓋住大半個頭寬的那幾列，另外轉一圈貼著頭的帽子，
+ * 後腦、側面也蓋得到（2026-10-13 回報：帽子只蓋到前額，後腦都沒有）。正面照舊是充氣的那一層（在這一圈前面）。
+ * 髮夾、髮箍這種只蓋到一小段的列不轉
+ */
+function capRings(vb: ViewBox, alpha: Cover, hairHalf: (y: number) => number): Revolved[] {
+  const runs: Ring[][] = []
+  let run: Ring[] = []
+  const flush = () => {
+    if (run.length >= 3) runs.push(run)
+    run = []
+  }
+  const top = Math.ceil(HEAD.cy - HEAD.ry + 1)
+  for (let y = Math.max(Math.ceil(vb[1]), top); y <= Math.min(vb[1] + vb[3], 104); y++) {
+    if (coversHead(alpha, y)) run.push({ y, r: Math.max(headHalf(y) + 6, hairHalf(y) + 3), sq: 1 })
+    else flush()
+  }
+  flush()
+  return runs.map((r) => revolve(vb, r)).filter((r): r is Revolved => !!r)
+}
+
+/**
+ * 旋轉體的貼圖，一列一列補色（轉一圈後每個角度都投影得到顏色）：
+ * - inner：同一列左右兩端之間透明的地方（例如編笠下面露出臉的缺口）用左右最近的顏色補滿（圓帽：畫的寬度會拉滿那一圈）
+ * - extend：整列補滿，兩端外面也用最近的顏色（照原樣投影、這一圈比畫的寬：帽子貼著頭的那一圈、塔的底座）
+ * - cut：不補，透明的地方挖空（塔腳跨在頭上，旁邊照樣看得到頭髮）
+ */
+type RowMode = 'inner' | 'extend' | 'cut'
+function fillRows(canvas: HTMLCanvasElement, vb: ViewBox, scale: number, mode: (y: number) => RowMode = () => 'inner'): HTMLCanvasElement {
   const { width: W, height: H } = canvas
   const src = canvas.getContext('2d', { willReadFrequently: true })!.getImageData(0, 0, W, H)
   const d = src.data
   for (let y = 0; y < H; y++) {
+    const m = mode(vb[1] + (y + 0.5) / scale)
+    if (m === 'cut') continue
     const row = y * W
     let first = -1
     let last = -1
@@ -268,16 +372,18 @@ function rowFill(canvas: HTMLCanvasElement): HTMLCanvasElement {
         last = x
       }
     if (first < 0) continue
+    const from0 = m === 'extend' ? 0 : first
+    const to = m === 'extend' ? W - 1 : last
     let prev = first
-    for (let x = first; x <= last; x++) {
+    for (let x = from0; x <= to; x++) {
       const i = (row + x) * 4
       if (d[i + 3]! > 160) {
         prev = x
         continue
       }
-      let next = x + 1
+      let next = Math.max(x + 1, first)
       while (next <= last && d[(row + next) * 4 + 3]! <= 160) next++
-      const from = x - prev <= next - x || next > last ? prev : next
+      const from = x < first ? first : next > last ? prev : x - prev <= next - x ? prev : next
       const j = (row + from) * 4
       d[i] = d[j]!
       d[i + 1] = d[j + 1]!
@@ -449,27 +555,31 @@ export async function buildAvatar(parts: AvatarParts, equipped: Partial<Record<S
     rasterize(resolveVars(hair.front, local), frontVb, SCALE, defs),
   ])
 
-  // 圓帽：轉一圈的帽冠要蓋住頭髮，先量每一列頭髮的半寬（頭頂以上不算：雙丸子等不把帽子撐成大圓筒；最多頭寬＋8）
-  let lathe: ReturnType<typeof latheHat> = null
-  if (headItem && ROUND_HATS.has(equipped.head!)) {
-    const ha = [alphaSampler(backCanvas, hairVb, SCALE), alphaSampler(frontCanvas, frontVb, SCALE)]
-    const rows = new Map<number, number>()
-    const hairHalf = (y: number) => {
-      const k = Math.round(y)
-      if (k < HEAD.cy - HEAD.ry) return 0
-      let r = rows.get(k)
-      if (r === undefined) {
-        r = 0
-        for (let x = 30; x <= 210; x += 1) if (ha.some((a) => a(x, k) >= 0.5)) r = Math.max(r, Math.abs(x - 120))
-        r = Math.min(r, HEAD.rx + 8)
-        rows.set(k, r)
-      }
-      return r
+  // 轉一圈的帽冠要蓋住頭髮，先量每一列頭髮的半寬（頭頂以上不算：雙丸子等不把帽子撐成大圓筒；最多頭寬＋8）
+  const ha = [alphaSampler(backCanvas, hairVb, SCALE), alphaSampler(frontCanvas, frontVb, SCALE)]
+  const hairRows = new Map<number, number>()
+  const hairHalf = (y: number) => {
+    const k = Math.round(y)
+    if (k < HEAD.cy - HEAD.ry) return 0
+    let r = hairRows.get(k)
+    if (r === undefined) {
+      r = 0
+      for (let x = 30; x <= 210; x += 1) if (ha.some((a) => a(x, k) >= 0.5)) r = Math.max(r, Math.abs(x - 120))
+      r = Math.min(r, HEAD.rx + 8)
+      hairRows.set(k, r)
     }
-    lathe = latheHat(headItem.vb, headItem.alpha, hairHalf)
+    return r
   }
-  // 圓帽轉一圈後比 2D 的帽子寬：頭髮變薄的範圍用轉出來的那一圈
-  const coverHair = coverOf(faceItem, faceOver, lathe ? { alpha: lathe.cover } : headItem)
+  // 圓帽、塔整件轉一圈；其他的正面照舊充氣，頭的範圍裡蓋住頭的那幾列另外轉一圈貼著頭（後腦、側面）
+  let lathe: Revolved | null = null
+  let rings: Revolved[] = []
+  if (headItem) {
+    const id = equipped.head!
+    if (ROUND_HATS.has(id) || TOWER_HATS.has(id)) lathe = latheHat(headItem.vb, headItem.alpha, hairHalf, TOWER_HATS.get(id) ?? 'brim')
+    else rings = capRings(headItem.vb, headItem.alpha, hairHalf)
+  }
+  // 轉一圈後比 2D 的帽子寬：頭髮變薄的範圍用轉出來的那一圈
+  const coverHair = coverOf(faceItem, faceOver, lathe ? { alpha: lathe.cover } : headItem, ...rings.map((r) => ({ alpha: r.cover })))
 
   // 頭
   const scalp = scalpTexture(alphaSampler(frontCanvas, frontVb, SCALE), alphaSampler(backCanvas, hairVb, SCALE), skin, css(`--color-doll-hair-${parts.hairColor}`))
@@ -515,32 +625,65 @@ export async function buildAvatar(parts: AvatarParts, equipped: Partial<Record<S
       const base = onHead(9, 2, { grow: 1.04 })
       const layer = inflateLayer({ canvas: headItem.canvas, vb: headItem.vb, scale: SCALE, step: 1, bulge: 3.2, maxH: 15, base })
       geo = layer.geometry
+      const ringFront = (x: number, y: number) => rings.reduce<number | null>((m, r) => {
+        const f = r.frontAt(x, y)
+        return f === null ? m : Math.max(m ?? f, f)
+      }, null)
       headFront = (x, y) => {
         const h = layer.heightAt(x, y)
         const f = base(x, y).front
-        return h > 0 && f !== null ? f + h : null
+        const own = h > 0 && f !== null ? f + h : null
+        const ring = ringFront(x, y)
+        return own === null ? ring : ring === null ? own : Math.max(own, ring)
       }
     }
-    add(new Mesh(geo, toon(lathe ? rowFill(headItem.canvas) : headItem.canvas)))
+    const { canvas, vb, alpha } = headItem
+    const tower = TOWER_HATS.get(equipped.head!)
+    // 塔：畫滿的列補成一整圈；其他的列補滿中間的空隙（收在頭裡的塔腳），五重塔的牆旁邊挖空
+    const towerRow = (y: number): RowMode => (coversHead(alpha, y) ? 'extend' : tower === 'cut' && y >= HEAD.cy - HEAD.ry ? 'cut' : 'inner')
+    const filled = fillRows(canvas, vb, SCALE, tower ? towerRow : undefined)
+    const mat = !lathe ? toon(canvas) : tower === 'cut' ? toonCut(filled) : toon(filled)
+    add(new Mesh(geo, mat))
+    if (rings.length) {
+      const filled = fillRows(canvas, vb, SCALE, () => 'extend')
+      for (const r of rings) add(new Mesh(r.geometry, toon(filled)))
+    }
   }
   if (faceOver) {
-    // 整個面具一起往前移（移到蓋住的帽子前面 1.5px），面具本身的形狀不變，不會在帽緣折一道
-    const base = onHead(7, 3, { grow: 1.0, thin: 0.5 })
-    let push = 0
+    // 側戴的面具是一片硬的：斜靠在頭側（最多斜 35 度）、自己微微拱起，不跟著頭的球面彎
+    // （2026-10-13 回報：面具戴在頭上會變形——跟著球面彎，到頭的邊緣折一道）。整片往前移到頭與蓋住的帽子前面 1.5px
     const [vx, vy, vw, vh] = faceOver.vb
-    if (headFront)
-      for (let y = vy; y <= vy + vh; y += 2)
-        for (let x = vx; x <= vx + vw; x += 2) {
-          if (faceOver.alpha(x, y) < 0.5) continue
-          const hf = headFront(x, y)
-          const f = base(x, y).front
-          if (hf !== null && f !== null) push = Math.max(push, hf + 1.5 - f)
-        }
-    const pushed = (x: number, y: number): Surface => {
-      const s = base(x, y)
-      return { ...s, front: s.front === null ? null : s.front + push, back: s.back === null ? null : s.back + push }
+    const pts: Array<[number, number]> = []
+    for (let y = vy; y <= vy + vh; y += 2) for (let x = vx; x <= vx + vw; x += 2) if (faceOver.alpha(x, y) >= 0.5) pts.push([x, y])
+    if (pts.length) {
+      const cx = pts.reduce((t, p) => t + p[0], 0) / pts.length
+      const cy = pts.reduce((t, p) => t + p[1], 0) / pts.length
+      // 面具中心那一點頭的球面的斜率：面具照這個方向斜，太斜（頭的邊緣）就收到 35 度
+      const u = (cx - HEAD.cx) / HEAD.rx
+      const v = (cy - HEAD.cy) / HEAD.ry
+      const w = Math.sqrt(Math.max(0.06, 1 - u * u - v * v))
+      let a = -(u * HEAD.rz) / (w * HEAD.rx)
+      let b = -(v * HEAD.rz) / (w * HEAD.ry)
+      const tilt = Math.hypot(a, b)
+      const MAX = Math.tan((35 * Math.PI) / 180)
+      if (tilt > MAX) {
+        a *= MAX / tilt
+        b *= MAX / tilt
+      }
+      const shape = (x: number, y: number) => a * (x - cx) + b * (y - cy) - ((x - cx) ** 2 + (y - cy) ** 2) / 160
+      let z0 = -Infinity
+      for (const [x, y] of pts) {
+        const hz = headZ(x, y, 1.02)
+        const hf = headFront?.(x, y) ?? null
+        const need = Math.max(hz === null ? 6 : hz + 3, hf === null ? -Infinity : hf + 1.5)
+        z0 = Math.max(z0, need - shape(x, y))
+      }
+      const rigid = (x: number, y: number): Surface => {
+        const z = z0 + shape(x, y)
+        return { front: z, back: z, bias: 0.7 }
+      }
+      add(new Mesh(inflateLayer({ canvas: faceOver.canvas, vb: faceOver.vb, scale: SCALE, step: 1, bulge: 1.4, maxH: 5, base: rigid }).geometry, toon(faceOver.canvas)))
     }
-    add(new Mesh(inflateLayer({ canvas: faceOver.canvas, vb: faceOver.vb, scale: SCALE, step: 1, bulge: 1.4, maxH: 5, base: pushed }).geometry, toon(faceOver.canvas)))
   }
 
   // 手上的：背面貼著身體表面（附近最高的）、厚度往前長（握在右手；斜背的帶子貼在衣服上，不會埋進身體）；

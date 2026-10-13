@@ -304,12 +304,7 @@ function showTab(k: TabKey) {
   void nextTick(() => document.getElementById('features')?.scrollIntoView({ behavior: 'smooth', block: 'start' }))
 }
 
-// 形象網站與 app 互通（使用者回饋 2026-10-12）：上緣的三個分頁、每個頁籤到實際的那一頁
-const APP_LINKS = [
-  { to: '/', label: '探索' },
-  { to: '/trips', label: '行程' },
-  { to: '/log', label: '紀錄' },
-] as const
+// 形象網站與 app 互通（使用者回饋 2026-10-12）：每個頁籤到實際的那一頁；上緣不放分頁，從「開始探索」進去（2026-10-13）
 const FEATURES: Record<TabKey, { title: string; lines: string[]; to: string; go: string }> = {
   explore: {
     title: '先找地方',
@@ -554,12 +549,9 @@ const kyotoRegion = regionOf('kyoto')
       <div class="hero-scrim pointer-events-none absolute inset-0 -z-10" aria-hidden="true"></div>
 
       <div class="hero-content mx-auto flex w-full max-w-6xl flex-1 flex-col px-6 pt-6 max-sm:px-4 max-sm:pt-4">
-        <!-- 上緣：品牌，右邊直接進 app 的三個分頁 -->
+        <!-- 上緣：品牌 -->
         <div class="flex items-center gap-4">
-          <div class="hero-mark"><Wordmark to="/" /></div>
-          <nav class="ml-auto flex items-center gap-1 max-sm:-mr-2" aria-label="ひとめぐり">
-            <RouterLink v-for="l in APP_LINKS" :key="l.to" :to="l.to" class="flex min-h-tap items-center px-2.5 text-body-sm font-bold tracking-[0.04em] whitespace-nowrap text-white no-underline hover:underline hover:decoration-2 hover:underline-offset-[6px] max-sm:px-2">{{ l.label }}</RouterLink>
-          </nav>
+          <div class="hero-mark"><Wordmark :to="null" /></div>
         </div>
 
         <div class="mt-auto grid items-end gap-x-10 gap-y-6 pt-16 md:grid-cols-[minmax(0,1fr)_auto]">
@@ -917,7 +909,7 @@ const kyotoRegion = regionOf('kyoto')
         <p v-reveal class="font-brand text-h1 font-semibold tracking-title max-sm:text-h2">{{ TAGLINE }}</p>
         <RouterLink to="/" class="flex h-12 items-center rounded-control bg-ink px-6 text-body font-bold text-paper no-underline active:translate-y-px">開始探索</RouterLink>
         <div class="mt-4 flex w-full flex-wrap items-center gap-x-6 gap-y-2 border-t border-on-region/30 pt-5 text-body-sm">
-          <Wordmark to="/" class="text-on-region" />
+          <Wordmark :to="null" class="text-on-region" />
           <RouterLink to="/credits" class="text-on-region">資料來源</RouterLink>
           <span class="ml-auto text-caption">地圖 © OpenStreetMap contributors</span>
         </div>

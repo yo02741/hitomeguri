@@ -436,9 +436,8 @@ const HEAD: Outfit[] = [
     name: '犬吠埼燈塔帽',
     pref: 'chiba',
     rarity: 2,
-    icon: '62 -12 116 98',
+    icon: '68 -12 104 98',
     svg:
-      `<path d="M108 12 L82 2 M132 12 L158 2" ${line(4, C.yellow, 0.6)}/>` +
       shape('M74 84 C78 70 162 70 166 84Z', C.grey) +
       `<path d="M84 78 C92 74 100 76 106 72 M134 72 C142 76 150 74 158 78" ${line(1, C.ink, 0.25)}/>` +
       shape('M104 74 L109 22 L131 22 L136 74Z', C.white) +
