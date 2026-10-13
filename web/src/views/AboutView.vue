@@ -924,6 +924,17 @@ const kyotoRegion = regionOf('kyoto')
 .hero {
   height: min(100svh, 62rem);
 }
+/* 照片、色帶鋪到左右邊緣（App.vue 的 #app-main 在這頁不讓安全區）；內文讓出安全區，至少原本的 px-6、手機 px-4 */
+.max-w-6xl {
+  padding-left: max(1.5rem, env(safe-area-inset-left));
+  padding-right: max(1.5rem, env(safe-area-inset-right));
+}
+@media (width < 40rem) {
+  .max-w-6xl {
+    padding-left: max(1rem, env(safe-area-inset-left));
+    padding-right: max(1rem, env(safe-area-inset-right));
+  }
+}
 .hero-scrim {
   /* 上緣給 wordmark、下半給標語與控制列的底，照片中間保持原樣 */
   background:
