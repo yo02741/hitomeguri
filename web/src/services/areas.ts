@@ -1,4 +1,4 @@
-// 縣內的小區塊（TODO.md「縣內規劃」2）：市区町村界（国土数値情報 N03，bundles/municipalities）。
+// 縣內的小區塊（docs/PROGRESS.md「縣內規劃」2）：市区町村界（国土数値情報 N03，bundles/municipalities）。
 // 政令指定都市用「區」（横浜市鶴見区），東京 23 區是特別區本身。
 // 清單的「地區」選單、地圖上點區塊選取、網址的 ?area=代碼 都用這裡的函式（UX-FLOW.md A2b）。
 

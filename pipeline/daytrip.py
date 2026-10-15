@@ -1,4 +1,4 @@
-"""日帰り的目的地（TODO.md「縣內規劃」4）：build-bundles 產生 bundles/daytrip.json。
+"""日帰り的目的地（docs/PROGRESS.md「縣內規劃」4）：build-bundles 產生 bundles/daytrip.json。
 
 行程裡設定住的車站之後，前端（web/src/services/daytrip.ts）從那一站沿鐵路算到各地的距離
 （和 pipeline/rail_graph.py 同一個 Dijkstra），列出可以單日來回的地方。這個檔只放目的地：

@@ -1,4 +1,4 @@
-// 車站卡片（TODO.md「縣內規劃」3）：縣的鐵路 bundle 裡的一個車站、停靠的路線、附近的景點。
+// 車站卡片（docs/PROGRESS.md「縣內規劃」3）：縣的鐵路 bundle 裡的一個車站、停靠的路線、附近的景點。
 // 車站 id 是路網節點（rail-graph.json）：縣界附近、同名相鄰的幾個車站點合併成一個，景點的 st 也是它。
 
 import type { MapSpot, RailBundle } from './bundles'

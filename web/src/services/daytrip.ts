@@ -1,4 +1,4 @@
-// 日帰り（TODO.md「縣內規劃」4，UX-FLOW.md C8）：行程裡某一天住的車站 → 沿鐵路可以單日來回的地方（可跨縣）。
+// 日帰り（docs/PROGRESS.md「縣內規劃」4，UX-FLOW.md C8）：行程裡某一天住的車站 → 沿鐵路可以單日來回的地方（可跨縣）。
 // 路網是 bundles/rail-graph.json（pipeline/rail_graph.py），目的地是 bundles/daytrip.json（pipeline/daytrip.py）。
 // 最短距離是 pipeline 的 Dijkstra 的移植（對照資料 fixtures/rail-graph-small.expected.json 由 pytest 產生）：
 // 新幹線的邊權重乘 0.97（距離差不多時走新幹線），回報實際 km；路徑上新幹線 ≥ 20 km 才算可以搭新幹線。

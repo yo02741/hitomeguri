@@ -45,10 +45,10 @@
 | `UX-FLOW.md` | 資訊架構、地區色規則、User Stories、UI flow、路由 |
 | `DESIGN.md` | UI 設計準則與 Tailwind 元件配方 |
 | `CLAUDE.md` | 給 Claude Code 的專案規則 |
-| `TODO.md` | 需要使用者做的事、已知限制、之後的想法 |
-| `docs/PROGRESS.md` | 目前狀態與開發紀錄 |
-| `docs/*驗收.md` | 各階段與各次修改的驗收說明 |
-| `docs/設計質感研究.md` | 動畫、紋樣、收集卡等設計研究 |
+| `docs/驗收.md` | 需要使用者做的事、各功能的驗收說明（一份） |
+| `docs/PROGRESS.md` | 目前狀態、開發紀錄、使用者決定、已知限制、之後要做 |
+| `docs/參考/` | 設計研究、使用流程盤點、手機版計畫、效能檢測、skill 回顧 |
+| `docs/screenshots/` | 驗收與研究用的截圖 |
 
 ## 結構
 

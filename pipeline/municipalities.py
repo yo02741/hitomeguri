@@ -1,4 +1,4 @@
-"""市区町村界（TODO.md「縣內規劃」2：小區塊）：seed-municipalities、assign-municipalities。
+"""市区町村界（docs/PROGRESS.md「縣內規劃」2：小區塊）：seed-municipalities、assign-municipalities。
 
 來源：国土数値情報（行政区域データ）N03，国土交通省（pipeline/sources/n03.py）。
 授權（2026-10-11 查）：N03 資料頁的使用許諾條件是「オープンデータ（CC_BY_4.0）」，並附註

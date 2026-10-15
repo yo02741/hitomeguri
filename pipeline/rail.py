@@ -1,4 +1,4 @@
-"""鐵路路線圖層（TODO.md「鐵路路線圖層」）：seed-rail 指令。
+"""鐵路路線圖層（PLAN.md §5.3d）：seed-rail 指令。
 
 來源：OpenStreetMap 的鐵路路線 relation（route=train|subway|light_rail|monorail|tram，
 以及軌道本身的 route=railway：地方的 JR 線多半只有這種）與車站

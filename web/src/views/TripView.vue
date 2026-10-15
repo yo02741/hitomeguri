@@ -361,7 +361,7 @@ watch(
   },
   { immediate: true },
 )
-// 住的車站與單日來回（UX-FLOW.md C8，TODO.md「縣內規劃」4）：每一天可以設定住的車站（存在 days[i].stay）；
+// 住的車站與單日來回（UX-FLOW.md C8，docs/PROGRESS.md「縣內規劃」4）：每一天可以設定住的車站（存在 days[i].stay）；
 // 有住的地方就能看沿鐵路單日來回的地方。桌機是地圖左上的浮動面板＋地圖上的記號，手機是下方的對話框（只有清單）。
 const stayDay = ref<number | null>(null)
 function pickStay(stay: Stay | null) {

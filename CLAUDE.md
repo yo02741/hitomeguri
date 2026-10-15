@@ -54,17 +54,17 @@ Claude Code 的雲端沙箱連不到 Wikidata、OSM、Wikimedia，也沒有 Clau
 - `data/`：主資料（source of truth）。`regions.json` 47 縣名稱、地方、地區色；`packs/` 擴充包；`seed/` 攻略候選、官方觀光網站清單、排除清單。
 - `pipeline/`：Python 資料 pipeline，`models.py` 對應 PLAN.md §4 的 schema，`cli.py` 為指令入口；`validate.py` 資料檢查、`diff_report.py` PR 變更報告。
 - `web/`：Vue 3 + Vite + TypeScript + Pinia + Vue Router + Tailwind v4 + MapLibre。token 在 `src/styles/theme.css`（含和風紋樣 `wa-*` 與紙紋 `paper-grain`）。
-- `docs/`：`PROGRESS.md`（目前狀態與開發紀錄）、各次驗收說明、設計研究。
+- `docs/`：`PROGRESS.md`（目前狀態、開發紀錄、使用者決定、已知限制、之後要做）、`驗收.md`（要使用者做的事與各功能的驗收說明，只有這一份）、`參考/`（設計研究、流程盤點、手機版計畫、效能檢測）、`screenshots/`。新的驗收說明加在 `驗收.md` 對應的段落，不另開檔案。
 - `firebase.json`、`firestore.rules`：只有 Hosting、Firestore、Auth。`users/{uid}/**` 僅本人可讀寫；`trips/{id}` 僅成員可讀寫（共編）。
 
 ## 目前進度（詳見 docs/PROGRESS.md 的「目前狀態」）
 - Phase 0–3、5、7 完成；47 縣都有景點（簡介與念法取自維基百科）。Phase 4 v1（期間限定只有氣象廳）完成。
 - 擴充包：寶可夢、城（100 名城・續 100 名城）、老舖・茶屋、角色商店。
-- 旅人（紙娃娃，`/log/avatar`，展示窗是 3D）：外觀、478 件服裝（不限縣 96 件用抽的；各縣 8 件（含一件傳統服裝），代表單品去過就送；6 個成就各送 1 件）、扭蛋與十連抽、散步的旅人（DESIGN.md §7.24、§7.24a、docs/旅人驗收.md）。
+- 旅人（紙娃娃，`/log/avatar`，展示窗是 3D）：外觀、478 件服裝（不限縣 96 件用抽的；各縣 8 件（含一件傳統服裝），代表單品去過就送；6 個成就各送 1 件）、扭蛋與十連抽、散步的旅人（DESIGN.md §7.24、§7.24a、docs/驗收.md「旅人（紙娃娃）與抽獎」）。
 - 抽獎券（景點卡與旅人共用，由去過的地方算出來、只抽沒有的、NEW 標記；DESIGN.md §7.19b）。
-- 成就（`/log/achievements`，紀念章帳）：初訪 47 格＋40 個成就，由去過的紀錄、已結束的旅行與 `bundles/achievements.json` 算出來，不另外存；地方、旅行、時節每個 5 張抽獎券（DESIGN.md §7.25、docs/成就驗收.md）。前端單元測試 `cd web && npm run test`（vitest）。
-- 年代主題：江戶、明治、大正、昭和、平成、令和（時間軸切換；DESIGN.md §13、docs/年代主題驗收.md）。各年代的地區色與 `theme-colors.json` 由 `build-region-css` 一起產生。收集卡測試期可無限抽（`UNLIMITED_DRAWS`，上線前關掉並清空 `users/*/cards`）。
-- 特效、離線（PWA）、經縣值、分享圖、位置小框已上線（docs/特效說明.md、docs/第三輪驗收.md）；經縣值的 Firestore 規則要使用者貼到 Console。
-- Phase 6（自動化排程＋PR 審核）：`refresh-data.yml`、`validate-data`、`diff-report` 已上線，等第一次自動 PR 與一週的排程驗收（docs/Phase6驗收.md）。
-- 等使用者驗收：Phase 4、5、6、7，回饋修改第一輪，行程共編（各 `docs/*驗收.md`）。會話 `data/phrases` 是編輯整理的內容（非來源擷取），`reviewed: false` 待使用者校對。
+- 成就（`/log/achievements`，紀念章帳）：初訪 47 格＋40 個成就，由去過的紀錄、已結束的旅行與 `bundles/achievements.json` 算出來，不另外存；地方、旅行、時節每個 5 張抽獎券（DESIGN.md §7.25、docs/驗收.md「成就」）。前端單元測試 `cd web && npm run test`（vitest）。
+- 年代主題：江戶、明治、大正、昭和、平成、令和（時間軸切換；DESIGN.md §13、docs/驗收.md「年代主題」）。各年代的地區色與 `theme-colors.json` 由 `build-region-css` 一起產生。收集卡測試期可無限抽（`UNLIMITED_DRAWS`，上線前關掉並清空 `users/*/cards`）。
+- 特效、離線（PWA）、經縣值、分享圖、位置小框已上線（docs/驗收.md「特效與收集卡」、docs/驗收.md「離線、經縣值、分享圖、位置小框、景點整理（第三輪）」）；經縣值的 Firestore 規則要使用者貼到 Console。
+- Phase 6（自動化排程＋PR 審核）：`refresh-data.yml`、`validate-data`、`diff-report` 已上線，等第一次自動 PR 與一週的排程驗收（docs/驗收.md「自動化排程＋PR 審核（Phase 6）」）。
+- 等使用者驗收：Phase 4、5、6、7，回饋修改第一輪，行程共編（`docs/驗收.md`）。會話 `data/phrases` 是編輯整理的內容（非來源擷取），`reviewed: false` 待使用者校對。
 - Firestore 規則在 `firestore.rules`，改了要請使用者貼到 Firebase Console 發布。
