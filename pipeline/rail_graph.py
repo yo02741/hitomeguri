@@ -1,4 +1,5 @@
-"""鐵路路網（docs/PROGRESS.md「縣內規劃」4：日帰り）：build-rail-graph，離線由 data/rail/*.json 建置。
+"""鐵路路網（docs/PROGRESS.md「縣內規劃」4：日帰り）：build-rail-graph，
+離線由 data/rail/*.json 建置。
 
 - 節點：各縣的車站。比對用站名相同（rail.norm_station）且相距 500 m 內的合併成一個（縣界附近
   兩縣都收到的站）。edges 另一端的站（extra_stations：縣外、沒有車站點的停靠點）先依 id，
