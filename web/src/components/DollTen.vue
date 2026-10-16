@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed, nextTick, onBeforeUnmount, onMounted, ref, watch } from 'vue'
 
+import { artOf } from '../composables/bgArt'
 import { useModal } from '../composables/modal'
 import type { Outfit, Slot } from '../data/outfits'
 import { regionOf } from '../data/regions'
@@ -117,7 +118,7 @@ const cols = computed(() => (narrow.value ? 4 : 5))
               <!-- 裁在自己的格子裡（相機的背帶這種伸出去的不畫到隔壁） -->
               <span v-if="open[i]" class="absolute inset-[2%] overflow-hidden">
                 <svg :viewBox="o.icon" class="prize size-full overflow-visible p-[7%]" aria-hidden="true">
-                  <g filter="url(#doll-cut-sm)" v-html="o.svg"></g>
+                  <g filter="url(#doll-cut-sm)" v-html="artOf(o)"></g>
                 </svg>
               </span>
               <svg

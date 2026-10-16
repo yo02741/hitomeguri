@@ -10,13 +10,15 @@ import DollSpin from '../components/DollSpin.vue'
 import PaperDoll from '../components/PaperDoll.vue'
 import { canWebGL } from '../services/webgl'
 import { achvById, nameText } from '../data/achievements'
-import { EYE_STYLES, HAIR_COLORS, HAIR_STYLES, OUTFITS, type Outfit, SKINS, type Slot, SLOTS } from '../data/outfits'
+import { BG_H, BG_W } from '../data/backgrounds/kit'
+import { EYE_STYLES, HAIR_COLORS, HAIR_STYLES, OUTFITS, type Outfit, outfitById, SKINS, type Slot, SLOTS } from '../data/outfits'
 import { regionOf, regions } from '../data/regions'
 import { type AvatarParts, useAvatarStore } from '../stores/avatar'
 import { outfitKey, useFreshStore } from '../stores/fresh'
 import { useUserStore } from '../stores/user'
 import { useWalletStore } from '../stores/wallet'
 import { scrollParent } from '../composables/scrollSpy'
+import { artOf } from '../composables/bgArt'
 import { wide } from '../services/viewport'
 
 // 展示窗用 3D（DESIGN.md §7.24a，three.js 只有這頁才下載、不在離線預先下載裡）；
@@ -24,7 +26,7 @@ import { wide } from '../services/viewport'
 const Avatar3D = defineAsyncComponent(() => import('../components/Avatar3D.vue').catch(() => DollSpin))
 const use3d = canWebGL()
 
-// 旅人（紙娃娃，DESIGN.md §7.24）：左邊是角色與「抽服裝」，右邊是衣櫃：外觀與五個位置的服裝，單品是貼紙；
+// 旅人（紙娃娃，DESIGN.md §7.24）：左邊是角色與「抽服裝」，右邊是衣櫃：外觀與六個位置的服裝（最後一個是地區背景），單品是貼紙；
 // 還沒有的只剩剪影，新拿到還沒點過的標 NEW。抽服裝用抽獎券（與景點卡共用），只抽還沒有的；十連抽一次抽 10 件。
 const userStore = useUserStore()
 const avatar = useAvatarStore()
@@ -62,6 +64,12 @@ function toggle(o: Outfit) {
   fresh.seen([outfitKey(o.id)])
   avatar.equip(o.slot, avatar.worn[o.slot] === o.id && o.slot !== 'body' ? null : o.id)
 }
+// 展示窗的背景（地區背景，data/backgrounds）
+const BG_BOX = `0 0 ${BG_W} ${BG_H}`
+const bgSvg = computed(() => {
+  const o = avatar.worn.bg ? outfitById.get(avatar.worn.bg) : undefined
+  return o ? artOf(o) : ''
+})
 // 外觀選項的頭像：目前的樣子，只換那一項
 const look = (p: Partial<AvatarParts>): AvatarParts => ({ ...avatar.parts, ...p })
 const HEAD_CROP = '48 14 144 150'
@@ -177,8 +185,22 @@ function wear() {
           class="stage paper-grain relative overflow-hidden rounded-card bg-region-tint max-lg:sticky max-lg:z-10 max-lg:mx-auto max-lg:w-full max-lg:max-w-[440px] lg:min-h-0 lg:flex-1"
           :style="stageStyle"
         >
-          <span class="wa-pattern wa-seigaiha pointer-events-none absolute inset-0 bg-region opacity-25" aria-hidden="true"></span>
-          <span class="floor pointer-events-none absolute inset-x-0 bottom-0 h-[17%] bg-region" :style="vis ? { height: `${Math.round(vis * 0.17)}px` } : undefined" aria-hidden="true"></span>
+          <!-- 地區背景（DESIGN.md §7.24b）：貼齊下緣鋪滿，地平線對著旅人的腳；沒換背景時是青海波與地板 -->
+          <template v-if="bgSvg">
+            <svg
+              :viewBox="BG_BOX"
+              preserveAspectRatio="xMidYMax slice"
+              class="pointer-events-none absolute inset-x-0 bottom-0 h-full w-full"
+              :style="vis ? { height: `${vis}px` } : undefined"
+              aria-hidden="true"
+              v-html="bgSvg"
+            ></svg>
+            <span class="paper-grain pointer-events-none absolute inset-0 opacity-70 mix-blend-multiply" aria-hidden="true"></span>
+          </template>
+          <template v-else>
+            <span class="wa-pattern wa-seigaiha pointer-events-none absolute inset-0 bg-region opacity-25" aria-hidden="true"></span>
+            <span class="floor pointer-events-none absolute inset-x-0 bottom-0 h-[17%] bg-region" :style="vis ? { height: `${Math.round(vis * 0.17)}px` } : undefined" aria-hidden="true"></span>
+          </template>
           <div class="absolute inset-x-0 bottom-0 h-full" :style="vis ? { height: `${vis}px` } : undefined">
             <Avatar3D v-if="use3d" :parts="avatar.parts" :equipped="avatar.worn" class="absolute inset-0" />
             <DollSpin v-else :parts="avatar.parts" :equipped="avatar.worn" class="absolute inset-0" />
@@ -322,7 +344,7 @@ function wear() {
                 <span class="grid aspect-square w-full place-items-center">
                   <span class="size-[46%] rounded-full border-2 border-dashed border-line"></span>
                 </span>
-                <span class="text-caption font-bold">不戴</span>
+                <span class="text-caption font-bold">{{ tab === 'bg' ? '原本的' : '不戴' }}</span>
               </button>
             </li>
             <li v-for="o in items" :key="o.id" class="item">
@@ -336,7 +358,7 @@ function wear() {
                 @click="toggle(o)"
               >
                 <svg :viewBox="o.icon" class="aspect-square w-full overflow-visible p-[8%]" aria-hidden="true">
-                  <g :filter="avatar.has(o.id) ? 'url(#doll-cut-sm)' : 'url(#doll-ghost)'" v-html="o.svg"></g>
+                  <g :filter="avatar.has(o.id) ? 'url(#doll-cut-sm)' : 'url(#doll-ghost)'" v-html="artOf(o)"></g>
                 </svg>
                 <span class="text-caption font-bold text-balance" :class="avatar.has(o.id) ? 'text-ink' : 'text-sub'">{{ o.name }}</span>
                 <span v-if="o.pref" lang="ja" class="pref-tag rounded-tag px-1.5 text-micro font-bold" :data-pref="o.pref">{{ prefName(o.pref) }}</span>

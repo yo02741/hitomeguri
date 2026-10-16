@@ -60,7 +60,7 @@ Claude Code 的雲端沙箱連不到 Wikidata、OSM、Wikimedia，也沒有 Clau
 ## 目前進度（詳見 docs/PROGRESS.md 的「目前狀態」）
 - Phase 0–3、5、7 完成；47 縣都有景點（簡介與念法取自維基百科）。Phase 4 v1（期間限定只有氣象廳）完成。
 - 擴充包：寶可夢、城（100 名城・續 100 名城）、老舖・茶屋、角色商店。
-- 旅人（紙娃娃，`/log/avatar`，展示窗是 3D）：外觀、478 件服裝（不限縣 96 件用抽的；各縣 8 件（含一件傳統服裝），代表單品去過就送；6 個成就各送 1 件）、扭蛋與十連抽、散步的旅人（DESIGN.md §7.24、§7.24a、docs/驗收.md「旅人（紙娃娃）與抽獎」）。
+- 旅人（紙娃娃，`/log/avatar`，展示窗是 3D）：外觀、643 件服裝（不限縣 120 件用抽的；各縣 8 件（含一件傳統服裝），代表單品去過就送；6 個成就各送 1 件；地區背景 47 縣各 3 張，`data/backgrounds/`）、扭蛋與十連抽、散步的旅人（DESIGN.md §7.24、§7.24a、§7.24b、docs/驗收.md「旅人（紙娃娃）與抽獎」）。
 - 抽獎券（景點卡與旅人共用，由去過的地方算出來、只抽沒有的、NEW 標記；DESIGN.md §7.19b）。
 - 成就（`/log/achievements`，紀念章帳）：初訪 47 格＋40 個成就，由去過的紀錄、已結束的旅行與 `bundles/achievements.json` 算出來，不另外存；地方、旅行、時節每個 5 張抽獎券（DESIGN.md §7.25、docs/驗收.md「成就」）。前端單元測試 `cd web && npm run test`（vitest）。
 - 年代主題：江戶、明治、大正、昭和、平成、令和（時間軸切換；DESIGN.md §13、docs/驗收.md「年代主題」）。各年代的地區色與 `theme-colors.json` 由 `build-region-css` 一起產生。收集卡測試期可無限抽（`UNLIMITED_DRAWS`，上線前關掉並清空 `users/*/cards`）。

@@ -106,6 +106,103 @@ const onHead =
     return { front: hz + lift, back: null, lift: (thin + (1 - thin) * smooth(0.7, 1, headR(x, y))) * keep }
   }
 
+type Pt = [number, number]
+/** 硬的一片（側戴的面具、單側的髮簪髮夾）：在 pts 上找平面 z = z0 + a(x−cx) + b(y−cy)，最小平方貼著 need
+ *  （頭的球面、頭髮的表面、帽子的正面再往前一點），斜率最多 maxTilt；再整片往前推到每一點都不低於 need。
+ *  一片硬的不跟著球面彎（不會折一道），也不會一半貼在頭上、一半留在頭的中心平面而被扯開。
+ *  curve > 0：中間微微拱起（面具）。need 回傳 null 的點不受限（頭與頭髮的外面） */
+function rigidPlane(pts: Pt[], need: (x: number, y: number) => number | null, maxTilt: number, curve = 0): ((x: number, y: number) => number) | null {
+  if (!pts.length) return null
+  const cx = pts.reduce((t, p) => t + p[0], 0) / pts.length
+  const cy = pts.reduce((t, p) => t + p[1], 0) / pts.length
+  const bowl = (x: number, y: number) => curve * ((x - cx) ** 2 + (y - cy) ** 2)
+  const sample: Array<[number, number, number]> = []
+  for (const [x, y] of pts) {
+    const z = need(x, y)
+    if (z !== null) sample.push([x - cx, y - cy, z + bowl(x, y)])
+  }
+  if (!sample.length) return null
+  const n = sample.length
+  const mx = sample.reduce((t, p) => t + p[0], 0) / n
+  const my = sample.reduce((t, p) => t + p[1], 0) / n
+  const mz = sample.reduce((t, p) => t + p[2], 0) / n
+  let sxx = 0
+  let sxy = 0
+  let syy = 0
+  let sxz = 0
+  let syz = 0
+  for (const [x, y, z] of sample) {
+    const dx = x - mx
+    const dy = y - my
+    const dz = z - mz
+    sxx += dx * dx
+    sxy += dx * dy
+    syy += dy * dy
+    sxz += dx * dz
+    syz += dy * dz
+  }
+  const det = sxx * syy - sxy * sxy
+  let a = 0
+  let b = 0
+  if (det > 1e-6 * Math.max(1, sxx * syy)) {
+    a = (sxz * syy - syz * sxy) / det
+    b = (syz * sxx - sxz * sxy) / det
+  } else {
+    if (sxx > 1e-9) a = sxz / sxx
+    if (syy > 1e-9) b = syz / syy
+  }
+  const tilt = Math.hypot(a, b)
+  if (tilt > maxTilt) {
+    a *= maxTilt / tilt
+    b *= maxTilt / tilt
+  }
+  // sample 的 z 已經加上拱起的量：平面 + 拱起 ≥ need ⇔ z0 ≥ z − a·dx − b·dy
+  let z0 = -Infinity
+  for (const [dx, dy, z] of sample) z0 = Math.max(z0, z - a * dx - b * dy)
+  return (x, y) => z0 + a * (x - cx) + b * (y - cy) - bowl(x, y)
+}
+const TILT_MAX = Math.tan((60 * Math.PI) / 180)
+
+/** 單品在格點（每 1px，與 inflateLayer 的網格一致）上的連通塊：2px 內相連的算同一塊 */
+function components(alpha: Cover, vb: ViewBox): { label: (x: number, y: number) => number; parts: Pt[][] } {
+  const [vx, vy, vw, vh] = vb
+  const gw = Math.floor(vw) + 1
+  const gh = Math.floor(vh) + 1
+  const lab = new Int32Array(gw * gh).fill(-1)
+  const parts: Pt[][] = []
+  for (let j = 0; j < gh; j++)
+    for (let i = 0; i < gw; i++) {
+      if (lab[j * gw + i]! >= 0 || alpha(vx + i, vy + j) < 0.5) continue
+      const k = parts.length
+      const part: Pt[] = []
+      const stack: Pt[] = [[i, j]]
+      lab[j * gw + i] = k
+      while (stack.length) {
+        const [pi, pj] = stack.pop()!
+        part.push([vx + pi, vy + pj])
+        for (let dj = -2; dj <= 2; dj++)
+          for (let di = -2; di <= 2; di++) {
+            const qi = pi + di
+            const qj = pj + dj
+            if (qi < 0 || qj < 0 || qi >= gw || qj >= gh) continue
+            const q = qj * gw + qi
+            if (lab[q]! >= 0 || alpha(vx + qi, vy + qj) < 0.5) continue
+            lab[q] = k
+            stack.push([qi, qj])
+          }
+      }
+      parts.push(part)
+    }
+  return {
+    parts,
+    label: (x, y) => {
+      const i = Math.round(x - vx)
+      const j = Math.round(y - vy)
+      return i < 0 || j < 0 || i >= gw || j >= gh ? -1 : lab[j * gw + i]!
+    },
+  }
+}
+
 export interface Avatar3D {
   root: Group
   /** 夥伴（會跳） */
@@ -606,10 +703,25 @@ export async function buildAvatar(parts: AvatarParts, equipped: Partial<Record<S
     }
     return { front: zOut, back: zOut, lift: liftOut }
   }
-  add(new Mesh(inflateLayer({ canvas: backCanvas, vb: hairVb, scale: SCALE, step: 1, bulge: 3, maxH: 13, base: hairBack }).geometry, toon(backCanvas)))
+  const backLayer = inflateLayer({ canvas: backCanvas, vb: hairVb, scale: SCALE, step: 1, bulge: 3, maxH: 13, base: hairBack })
+  add(new Mesh(backLayer.geometry, toon(backCanvas)))
 
   // 瀏海：貼著頭往外鼓一點
-  add(new Mesh(inflateLayer({ canvas: frontCanvas, vb: frontVb, scale: SCALE, step: 1, bulge: 1.2, maxH: 4, base: onHead(1.5, 0, { grow: 1.0, thin: 0.6, cover: coverHair }) }).geometry, toon(frontCanvas)))
+  const fringeBase = onHead(1.5, 0, { grow: 1.0, thin: 0.6, cover: coverHair })
+  const fringeLayer = inflateLayer({ canvas: frontCanvas, vb: frontVb, scale: SCALE, step: 1, bulge: 1.2, maxH: 4, base: fringeBase })
+  add(new Mesh(fringeLayer.geometry, toon(frontCanvas)))
+  // 頭髮（後層、瀏海）正面最前面的深度；沒有頭髮是 null。硬的單品、面具要放在它前面
+  const surfaceFront = (layer: { heightAt: (x: number, y: number) => number }, base: (x: number, y: number) => Surface, x: number, y: number) => {
+    const h = layer.heightAt(x, y)
+    if (h <= 0) return null
+    const s = base(x, y)
+    return s.front === null ? null : s.front + h * (1 + (s.bias ?? 0))
+  }
+  const hairFront = (x: number, y: number): number | null => {
+    const b = surfaceFront(backLayer, hairBack, x, y)
+    const f = surfaceFront(fringeLayer, fringeBase, x, y)
+    return b === null ? f : f === null ? b : Math.max(b, f)
+  }
 
   // 臉上的（在瀏海前面）、頭上的（再前面）
   if (faceItem)
@@ -622,7 +734,40 @@ export async function buildAvatar(parts: AvatarParts, equipped: Partial<Record<S
       geo = lathe.geometry
       headFront = lathe.frontAt
     } else {
-      const base = onHead(9, 2, { grow: 1.04 })
+      // 包住頭的（帽子、頭巾、頭帶、髮箍：橫跨頭的中線或很寬）貼著球面；單側的髮簪、髮夾、髮飾是一片硬的，
+      // 各自一個平面貼著頭髮（2026-10-16 回報：頭上的裝飾被拉開——頭的範圍裡貼著球面、外面留在中心平面，交界被扯開）
+      const sphere = onHead(9, 2, { grow: 1.04 })
+      const { label, parts } = components(headItem.alpha, headItem.vb)
+      const planes = parts.map((pts) => {
+        let x0 = Infinity
+        let x1 = -Infinity
+        let sx = 0
+        let inHead = 0
+        for (const [x, y] of pts) {
+          x0 = Math.min(x0, x)
+          x1 = Math.max(x1, x)
+          sx += x
+          if (headZ(x, y, 1.04) !== null) inHead++
+        }
+        const oneSided = x1 - x0 <= 70 && Math.abs(sx / pts.length - HEAD.cx) >= 18
+        if (!oneSided || inHead < pts.length * 0.05) return null
+        return rigidPlane(
+          pts,
+          (x, y) => {
+            const hz = headZ(x, y, 1.04)
+            const hf = hairFront(x, y)
+            const z = Math.max(hz === null ? -Infinity : hz + 4, hf === null ? -Infinity : hf + 2)
+            return z === -Infinity ? null : z
+          },
+          TILT_MAX,
+        )
+      })
+      const base = (x: number, y: number): Surface => {
+        const plane = planes[label(x, y)]
+        if (!plane) return sphere(x, y)
+        const z = plane(x, y)
+        return { front: z, back: z, lift: 0.8, bias: 0.6 }
+      }
       const layer = inflateLayer({ canvas: headItem.canvas, vb: headItem.vb, scale: SCALE, step: 1, bulge: 3.2, maxH: 15, base })
       geo = layer.geometry
       const ringFront = (x: number, y: number) => rings.reduce<number | null>((m, r) => {
@@ -630,9 +775,7 @@ export async function buildAvatar(parts: AvatarParts, equipped: Partial<Record<S
         return f === null ? m : Math.max(m ?? f, f)
       }, null)
       headFront = (x, y) => {
-        const h = layer.heightAt(x, y)
-        const f = base(x, y).front
-        const own = h > 0 && f !== null ? f + h : null
+        const own = surfaceFront(layer, base, x, y)
         const ring = ringFront(x, y)
         return own === null ? ring : ring === null ? own : Math.max(own, ring)
       }
@@ -650,36 +793,27 @@ export async function buildAvatar(parts: AvatarParts, equipped: Partial<Record<S
     }
   }
   if (faceOver) {
-    // 側戴的面具是一片硬的：斜靠在頭側（最多斜 35 度）、自己微微拱起，不跟著頭的球面彎
-    // （2026-10-13 回報：面具戴在頭上會變形——跟著球面彎，到頭的邊緣折一道）。整片往前移到頭與蓋住的帽子前面 1.5px
+    // 側戴的面具是一片硬的、自己微微拱起，不跟著頭的球面彎（2026-10-13 回報：面具戴在頭上會變形）。
+    // 平面貼著頭、頭髮、蓋住的帽子（最小平方），最多斜 60 度，整片往前推到都在它們前面
+    // （2026-10-16 回報：面具浮在頭的旁邊——原本只照面具中心的斜率、又限 35 度，頭的邊緣掉得比面具快）
     const [vx, vy, vw, vh] = faceOver.vb
-    const pts: Array<[number, number]> = []
+    const pts: Pt[] = []
     for (let y = vy; y <= vy + vh; y += 2) for (let x = vx; x <= vx + vw; x += 2) if (faceOver.alpha(x, y) >= 0.5) pts.push([x, y])
-    if (pts.length) {
-      const cx = pts.reduce((t, p) => t + p[0], 0) / pts.length
-      const cy = pts.reduce((t, p) => t + p[1], 0) / pts.length
-      // 面具中心那一點頭的球面的斜率：面具照這個方向斜，太斜（頭的邊緣）就收到 35 度
-      const u = (cx - HEAD.cx) / HEAD.rx
-      const v = (cy - HEAD.cy) / HEAD.ry
-      const w = Math.sqrt(Math.max(0.06, 1 - u * u - v * v))
-      let a = -(u * HEAD.rz) / (w * HEAD.rx)
-      let b = -(v * HEAD.rz) / (w * HEAD.ry)
-      const tilt = Math.hypot(a, b)
-      const MAX = Math.tan((35 * Math.PI) / 180)
-      if (tilt > MAX) {
-        a *= MAX / tilt
-        b *= MAX / tilt
-      }
-      const shape = (x: number, y: number) => a * (x - cx) + b * (y - cy) - ((x - cx) ** 2 + (y - cy) ** 2) / 160
-      let z0 = -Infinity
-      for (const [x, y] of pts) {
+    const plane = rigidPlane(
+      pts,
+      (x, y) => {
         const hz = headZ(x, y, 1.02)
-        const hf = headFront?.(x, y) ?? null
-        const need = Math.max(hz === null ? 6 : hz + 3, hf === null ? -Infinity : hf + 1.5)
-        z0 = Math.max(z0, need - shape(x, y))
-      }
+        const hf = hairFront(x, y)
+        const tf = headFront?.(x, y) ?? null
+        const z = Math.max(hz === null ? -Infinity : hz + 3, hf === null ? -Infinity : hf + 2, tf === null ? -Infinity : tf + 1.5)
+        return z === -Infinity ? null : z
+      },
+      TILT_MAX,
+      1 / 160,
+    )
+    if (plane) {
       const rigid = (x: number, y: number): Surface => {
-        const z = z0 + shape(x, y)
+        const z = plane(x, y)
         return { front: z, back: z, bias: 0.7 }
       }
       add(new Mesh(inflateLayer({ canvas: faceOver.canvas, vb: faceOver.vb, scale: SCALE, step: 1, bulge: 1.4, maxH: 5, base: rigid }).geometry, toon(faceOver.canvas)))

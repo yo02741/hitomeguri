@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed, nextTick, onBeforeUnmount, onMounted, ref, watch } from 'vue'
 
+import { artOf } from '../composables/bgArt'
 import { useModal } from '../composables/modal'
 import type { Outfit } from '../data/outfits'
 import { regionOf } from '../data/regions'
@@ -149,7 +150,7 @@ onBeforeUnmount(() => {
         <template v-if="stage === 'open'">
           <div class="rays" :class="`rays-${result.outfit.rarity}`" aria-hidden="true"></div>
           <svg :viewBox="result.outfit.icon" class="prize pointer-events-none relative size-[200px] overflow-visible" aria-hidden="true">
-            <g filter="url(#doll-cut)" v-html="result.outfit.svg"></g>
+            <g filter="url(#doll-cut)" v-html="artOf(result.outfit)"></g>
           </svg>
         </template>
       </div>
@@ -162,7 +163,7 @@ onBeforeUnmount(() => {
       </div>
       <div ref="actions" class="flex min-h-11 gap-2">
         <template v-if="stage === 'open'">
-          <button type="button" class="h-11 rounded-control bg-paper px-5 text-body-sm font-bold text-ink active:not-disabled:translate-y-px" @click="emit('wear')">穿上</button>
+          <button type="button" class="h-11 rounded-control bg-paper px-5 text-body-sm font-bold text-ink active:not-disabled:translate-y-px" @click="emit('wear')">{{ result.outfit.slot === 'bg' ? '換上' : '穿上' }}</button>
           <button type="button" class="h-11 rounded-control border border-paper/50 px-4 text-body-sm text-paper disabled:opacity-40 active:not-disabled:translate-y-px" :disabled="!canDraw" @click="emit('again')">再抽一次</button>
           <button type="button" class="h-11 rounded-control border border-paper/50 px-4 text-body-sm text-paper active:not-disabled:translate-y-px" @click="emit('close')">關閉</button>
         </template>

@@ -172,10 +172,10 @@ onMounted(async () => {
 const onVisibility = () => loop(visible && !document.hidden && !reduced)
 document.addEventListener('visibilitychange', onVisibility)
 
+// 背景不在 3D 裡（展示窗後面的一層，DESIGN.md §7.24b）：換背景不用重做
 watch(
-  () => [props.parts, props.equipped],
+  () => JSON.stringify([props.parts, Object.entries(props.equipped).filter(([slot]) => slot !== 'bg').sort()]),
   () => void rebuild(),
-  { deep: true },
 )
 
 /** 轉到 (theta, phi)：減少動態或動畫迴圈沒在跑時直接到 */

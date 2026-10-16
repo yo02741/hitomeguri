@@ -86,8 +86,9 @@ function pwa() {
     },
     workbox: {
       globPatterns: ['**/*.{js,css,html,svg,woff2}'],
-      // bundles/ 由下方依需要快取，不預先下載（全部約 40 MB）。3D 旅人（three.js，約 140 KB gzip）只有打開那頁才下載
-      globIgnores: ['bundles/**', 'geo/**', '**/Avatar3D-*.js'],
+      // bundles/ 由下方依需要快取，不預先下載（全部約 40 MB）。3D 旅人（three.js，約 140 KB gzip）只有打開那頁才下載；
+      // 地區背景的畫（約 130 KB gzip，DESIGN.md §7.24b）只有旅人頁要畫背景時才下載，離線時沒下載過就顯示原本的青海波
+      globIgnores: ['bundles/**', 'geo/**', '**/Avatar3D-*.js', '**/backgrounds-*.js'],
       navigateFallback: 'index.html',
       navigateFallbackDenylist: [/^\/__/],
       cleanupOutdatedCaches: true,

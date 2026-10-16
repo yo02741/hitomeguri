@@ -13,6 +13,8 @@ const Avatar3D = defineAsyncComponent(() => import('../components/Avatar3D.vue')
 const avatar = useAvatarStore()
 const parts = ref<AvatarParts>({ ...avatar.parts })
 const equipped = ref<Partial<Record<Slot, string>>>({ ...avatar.equipped })
+// 背景不在 3D 裡（展示窗後面的一層，DESIGN.md §7.24b）
+const SLOTS_3D = SLOTS.filter((s) => s.key !== 'bg')
 const bySlot = computed(() => Object.fromEntries(SLOTS.map((s) => [s.key, OUTFITS.filter((o) => o.slot === s.key)])) as Record<Slot, typeof OUTFITS>)
 
 function setItem(slot: Slot, id: string) {
@@ -83,7 +85,7 @@ function setItem(slot: Slot, id: string) {
           ></button>
         </div>
       </div>
-      <label v-for="s in SLOTS" :key="s.key" class="flex flex-col gap-1 text-body-sm">
+      <label v-for="s in SLOTS_3D" :key="s.key" class="flex flex-col gap-1 text-body-sm">
         <span class="font-bold">{{ s.label }}</span>
         <select :value="equipped[s.key] ?? ''" class="h-10 rounded-control border border-line bg-paper px-2" @change="setItem(s.key, ($event.target as HTMLSelectElement).value)">
           <option value="">不穿</option>

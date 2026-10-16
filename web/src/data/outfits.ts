@@ -2,7 +2,7 @@
  * 紙娃娃（DESIGN.md §7.24）：角色的部位與服裝。SVG 畫在 240×320 的畫布上（PaperDoll.vue），
  * 畫風是剪紙的紙人形：平塗、不描黑邊，只用同色的淡邊與一層陰影、一層亮面；整隻外面一圈白邊（剪下來的紙）。
  * 顏色一律用 theme.css 的 `--color-doll-*`、`--color-item-*` token；花紋用 DollDefs.vue 的 <pattern>。
- * 服裝分五個位置：頭（帽子、髮箍）、臉（眼鏡）、身（衣服）、手（拿的東西，在右手）、夥伴（腳邊）。
+ * 服裝分六個位置：頭（帽子、髮箍）、臉（眼鏡）、身（衣服）、手（拿的東西，在右手）、夥伴（腳邊）、背景（展示窗後面的風景，data/backgrounds）。
  * 各縣的特色單品去過那個縣就有；幾個大的成就各送 1 件（outfitsAchv.ts）；其他的用抽獎券抽（不限縣的第二批在 outfitsMore.ts；和風的第三批與各縣限定的傳統服裝在 outfitsWa.ts、outfitsTrad.ts；各縣頭上、手上的第二批、第三批在 outfitsGoods.ts、outfitsGoods2.ts）。
  */
 import { C, dots, E, line, NECK, PANTS, ROBE, SH, shape, SHORTS, SLEEVE_L, SLEEVE_R, TOP, TOP_LONG, TOP_SHADE } from './dollArt'
@@ -13,14 +13,18 @@ import { PREF_OUTFITS } from './outfitsPref'
 import { TRAD_OUTFITS } from './outfitsTrad'
 import { GOODS_OUTFITS } from './outfitsGoods'
 import { GOODS2_OUTFITS } from './outfitsGoods2'
+import { BG_META } from './backgrounds/meta'
+import { BUDDY2_OUTFITS } from './outfitsBuddy'
+import { HAIR_MORE, HAIR_MORE_STYLES, type HairMoreStyle } from './hairMore'
 
-export type Slot = 'head' | 'face' | 'body' | 'hand' | 'buddy'
+export type Slot = 'head' | 'face' | 'body' | 'hand' | 'buddy' | 'bg'
 export const SLOTS: Array<{ key: Slot; label: string }> = [
   { key: 'body', label: '衣服' },
   { key: 'head', label: '頭上' },
   { key: 'face', label: '臉上' },
   { key: 'hand', label: '手上' },
   { key: 'buddy', label: '夥伴' },
+  { key: 'bg', label: '背景' },
 ]
 
 export interface Outfit {
@@ -66,6 +70,7 @@ export type HairStyle =
   | 'mash'
   | 'wolf'
   | 'chonmage'
+  | HairMoreStyle
 export type EyeStyle = 'round' | 'happy' | 'calm' | 'wink' | 'lashes' | 'dot' | 'sharp' | 'sleepy'
 export const HAIR_STYLES: Array<{ key: HairStyle; label: string }> = [
   { key: 'bob', label: '妹妹頭' },
@@ -86,6 +91,7 @@ export const HAIR_STYLES: Array<{ key: HairStyle; label: string }> = [
   { key: 'ponytail', label: '馬尾' },
   { key: 'twintails', label: '雙馬尾' },
   { key: 'braid', label: '麻花辮' },
+  ...HAIR_MORE_STYLES,
 ]
 export const EYE_STYLES: Array<{ key: EyeStyle; label: string }> = [
   { key: 'round', label: '圓眼' },
@@ -239,6 +245,7 @@ export const HAIR: Record<HairStyle, { back: string; front: string }> = {
       shape('M66 104 L65 132 C65 137 72 137 72 132 L74 98Z', H) +
       HAIR_SHINE,
   },
+  ...HAIR_MORE,
 }
 
 export const EYES: Record<EyeStyle, string> = {
@@ -265,6 +272,8 @@ export const EYES: Record<EyeStyle, string> = {
 }
 
 // ---------- 服裝 ----------
+/** 地區背景（DESIGN.md §7.24b）：這裡只有目錄，svg 是空的；畫在 data/backgrounds，用到時才載入（composables/bgArt.ts 的 artOf） */
+const BG_ITEMS: Outfit[] = BG_META.map((m) => ({ ...m, slot: 'bg', icon: '0 0 300 400', svg: '' }))
 export const OUTFITS: Outfit[] = [
   // ----- 抽的 -----
   {
@@ -482,6 +491,8 @@ export const OUTFITS: Outfit[] = [
   ...TRAD_OUTFITS,
   ...GOODS_OUTFITS,
   ...GOODS2_OUTFITS,
+  ...BUDDY2_OUTFITS,
+  ...BG_ITEMS,
 ]
 
 export const outfitById = new Map(OUTFITS.map((o) => [o.id, o]))
