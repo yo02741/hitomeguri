@@ -111,10 +111,16 @@ async function boot() {
   const [{ PixelWalkEngine }, catalog, { readTokens }] = mods
   if (!canvas.value || engine) return
   ctx = canvas.value.getContext('2d')
-  engine = new PixelWalkEngine(
-    { tokens: readTokens(), areas: catalog.AREAS, events: catalog.EVENTS, transitions: catalog.TRANSITIONS, onArea: (a) => showBanner(a.name, a.romaji) },
-    width.value || 320,
-  )
+  try {
+    engine = new PixelWalkEngine(
+      { tokens: readTokens(), areas: catalog.AREAS, events: catalog.EVENTS, transitions: catalog.TRANSITIONS, onArea: (a) => showBanner(a.name, a.romaji) },
+      width.value || 320,
+    )
+  } catch (e) {
+    // 起不來（例：讀不到顏色）：這一段留著天空色，不影響頁面其他地方
+    if (import.meta.env.DEV) console.warn('pixelwalk：引擎起不來', e)
+    return
+  }
   ready.value = true
   // dev：預覽、檢查用（快轉：__pixelwalk.update(1 / 60) 跑很多次）
   if (import.meta.env.DEV) (window as unknown as { __pixelwalk?: PixelWalkEngine }).__pixelwalk = engine

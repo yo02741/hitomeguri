@@ -1,10 +1,11 @@
+import { transform } from 'lightningcss'
 import { describe, expect, it } from 'vitest'
 
 import css from '../../styles/theme.css?raw'
 
 import { allEvents, AREAS, EVENTS, TRANSITIONS } from './catalog'
 import { PixelWalkEngine } from './engine'
-import { PX, type Tokens } from './palette'
+import { makePalette, parseColor, PX, type Tokens } from './palette'
 import { Runner } from './script'
 import type { Env } from './types'
 import { simulate } from './preview'
@@ -16,6 +17,38 @@ const tokens = Object.fromEntries(PX.map((k) => [k, css.match(new RegExp(`--colo
 describe('調色盤', () => {
   it('theme.css 有全部的 --color-px-*', () => {
     for (const k of PX) expect(tokens[k], k).toMatch(/^#[0-9A-Fa-f]{6}$/)
+  })
+  it('讀得懂各種寫法的顏色（正式站的 CSS 會壓縮）', () => {
+    expect(parseColor('#fff')).toEqual([255, 255, 255])
+    expect(parseColor('#FFFFFF')).toEqual([255, 255, 255])
+    expect(parseColor('#1f1d2b80')).toEqual([31, 29, 43])
+    expect(parseColor('rgb(1 2 3)')).toEqual([1, 2, 3])
+    expect(parseColor('rgb(1, 2, 3)')).toEqual([1, 2, 3])
+    expect(parseColor('red', (v) => (v === 'red' ? '#f00' : v))).toEqual([255, 0, 0])
+    expect(() => parseColor('')).toThrow()
+    expect(() => parseColor('tan')).toThrow()
+  })
+  it('壓縮過的 theme.css 也做得出調色盤（2026-10-16 正式站：白色被寫成三碼，整段起不來）', () => {
+    // 跟 vite build 一樣用 lightningcss 壓縮
+    const min = transform({ filename: 'theme.css', code: new TextEncoder().encode(css), minify: true }).code
+    const out = new TextDecoder().decode(min)
+    const names: string[] = []
+    const t = Object.fromEntries(
+      PX.map((k) => {
+        const v = new RegExp(`--color-px-${k}:([^;}]+)`).exec(out)?.[1]?.trim() ?? ''
+        try {
+          parseColor(v)
+        } catch {
+          // 顏色名字（red、tan…）由瀏覽器的 canvas 換成六碼；這裡只確認是名字的樣子
+          expect(v, k).toMatch(/^[a-z]+$/)
+          names.push(k)
+          return [k, tokens[k]]
+        }
+        return [k, v]
+      }),
+    ) as Tokens
+    for (const time of ['day', 'dusk', 'night'] as const) expect(() => makePalette(t, time)).not.toThrow()
+    expect(names.length).toBeLessThan(PX.length)
   })
   it('像素散步的程式不寫死色碼', () => {
     const files = import.meta.glob('./**/*.ts', { query: '?raw', import: 'default', eager: true }) as Record<string, string>

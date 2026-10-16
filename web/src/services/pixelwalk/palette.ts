@@ -39,11 +39,22 @@ export interface Palette {
   u32: Record<Px, number>
 }
 
-function hex(s: string): Rgb {
-  const m = /^#?([0-9a-f]{6})$/i.exec(s.trim())
-  if (!m) throw new Error(`pixelwalk: 顏色要是 #RRGGBB（${s}）`)
-  const n = parseInt(m[1]!, 16)
-  return [(n >> 16) & 255, (n >> 8) & 255, n & 255]
+/**
+ * CSS 顏色 → [r, g, b]。正式站的 CSS 會被壓縮：六碼的白寫成三碼的 #fff、純紅寫成 red，
+ * 所以三碼、六碼（含透明度的四、八碼）與 rgb 函式都要讀得懂；顏色名字交給 resolve（瀏覽器用 canvas 換成六碼）。
+ */
+export function parseColor(v: string, resolve?: (v: string) => string): Rgb {
+  const s = v.trim()
+  const h = /^#([0-9a-f]{3,8})$/i.exec(s)?.[1]
+  if (h && (h.length === 3 || h.length === 4)) return [0, 1, 2].map((i) => parseInt(h[i]! + h[i]!, 16)) as Rgb
+  if (h && (h.length === 6 || h.length === 8)) return [0, 2, 4].map((i) => parseInt(h.slice(i, i + 2), 16)) as Rgb
+  const m = /^rgba?\(\s*([\d.]+)[\s,]+([\d.]+)[\s,]+([\d.]+)/i.exec(s)
+  if (m) return [m[1], m[2], m[3]].map((x) => Math.max(0, Math.min(255, Math.round(Number(x))))) as Rgb
+  if (resolve) {
+    const r = resolve(s)
+    if (r && r !== s) return parseColor(r)
+  }
+  throw new Error(`pixelwalk: 讀不懂的顏色（${v}）`)
 }
 const pack = ([r, g, b]: Rgb) => ((255 << 24) | (b << 16) | (g << 8) | r) >>> 0
 const mix = (a: Rgb, b: Rgb, t: number, dim: number): Rgb => [0, 1, 2].map((i) => Math.round((a[i]! * (1 - t) + b[i]! * t) * dim)) as Rgb
@@ -52,7 +63,7 @@ const mix = (a: Rgb, b: Rgb, t: number, dim: number): Rgb => [0, 1, 2].map((i) =
 const TIME = { day: [0, 1], dusk: [0.2, 0.9], night: [0.5, 0.62] } as const
 
 export function makePalette(tokens: Tokens, time: TimeOfDay): Palette {
-  const base = Object.fromEntries(PX.map((k) => [k, hex(tokens[k])])) as Record<Px, Rgb>
+  const base = Object.fromEntries(PX.map((k) => [k, parseColor(tokens[k])])) as Record<Px, Rgb>
   const [t, dim] = TIME[time]
   const target = time === 'night' ? base['tint-night'] : base['tint-dusk']
   const u32 = {} as Record<Px, number>
@@ -60,8 +71,23 @@ export function makePalette(tokens: Tokens, time: TimeOfDay): Palette {
   return { key: time, u32 }
 }
 
-/** 瀏覽器裡：從 :root 讀 token */
+/** 瀏覽器裡：從 :root 讀 token，一律換成六碼（壓縮過的三碼、顏色名字也行） */
 export function readTokens(): Tokens {
   const cs = getComputedStyle(document.documentElement)
-  return Object.fromEntries(PX.map((k) => [k, cs.getPropertyValue(`--color-px-${k}`).trim()])) as Tokens
+  let ctx: CanvasRenderingContext2D | null | undefined
+  const resolve = (v: string) => {
+    ctx ??= document.createElement('canvas').getContext('2d')
+    // 空的（theme.css 少了這個 token）不要變成黑色：交回去讓 parseColor 報錯
+    if (!v || !ctx) return v
+    ctx.fillStyle = 'black'
+    ctx.fillStyle = v
+    return String(ctx.fillStyle)
+  }
+  const hex2 = (n: number) => n.toString(16).padStart(2, '0')
+  return Object.fromEntries(
+    PX.map((k) => {
+      const v = cs.getPropertyValue(`--color-px-${k}`).trim()
+      return [k, '#' + parseColor(v, resolve).map(hex2).join('')]
+    }),
+  ) as Tokens
 }
