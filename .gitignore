@@ -36,3 +36,7 @@ emulator-data/
 
 # Claude Code 的工作樹（多代理實作用，暫存）
 .claude/worktrees/
+
+# 第三方 skill（docs/參考/遊戲用的 skill.md，要用時裝回來）
+.claude/skills/
+skills-lock.json

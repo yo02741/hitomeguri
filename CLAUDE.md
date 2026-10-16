@@ -54,7 +54,7 @@ Claude Code 的雲端沙箱連不到 Wikidata、OSM、Wikimedia，也沒有 Clau
 - `data/`：主資料（source of truth）。`regions.json` 47 縣名稱、地方、地區色；`packs/` 擴充包；`seed/` 攻略候選、官方觀光網站清單、排除清單。
 - `pipeline/`：Python 資料 pipeline，`models.py` 對應 PLAN.md §4 的 schema，`cli.py` 為指令入口；`validate.py` 資料檢查、`diff_report.py` PR 變更報告。
 - `web/`：Vue 3 + Vite + TypeScript + Pinia + Vue Router + Tailwind v4 + MapLibre。token 在 `src/styles/theme.css`（含和風紋樣 `wa-*` 與紙紋 `paper-grain`）。
-- `docs/`：`PROGRESS.md`（目前狀態、開發紀錄、使用者決定、已知限制、之後要做）、`驗收.md`（要使用者做的事與各功能的驗收說明，只有這一份）、`參考/`（設計研究、流程盤點、手機版計畫、效能檢測）、`screenshots/`。新的驗收說明加在 `驗收.md` 對應的段落，不另開檔案。
+- `docs/`：`PROGRESS.md`（目前狀態、開發紀錄、使用者決定、已知限制、之後要做）、`驗收.md`（要使用者做的事與各功能的驗收說明，只有這一份）、`參考/`（設計研究、流程盤點、手機版計畫、效能檢測；`遊戲用的 skill.md` 是番外篇遊戲用的第三方 skill 與安裝方式，不進 repo；音樂、音效只用 Web Audio，不用 Strudel（AGPL））、`screenshots/`。新的驗收說明加在 `驗收.md` 對應的段落，不另開檔案。
 - `firebase.json`、`firestore.rules`：只有 Hosting、Firestore、Auth。`users/{uid}/**` 僅本人可讀寫；`trips/{id}` 僅成員可讀寫（共編）。
 
 ## 目前進度（詳見 docs/PROGRESS.md 的「目前狀態」）
