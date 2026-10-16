@@ -4,6 +4,7 @@ import { computed, type Directive, nextTick, onBeforeUnmount, onMounted, ref, sh
 import AchvSeal from '../components/AchvSeal.vue'
 import JapanMap from '../components/JapanMap.vue'
 import OverlayScrollbar from '../components/OverlayScrollbar.vue'
+import PixelWalk from '../components/PixelWalk.vue'
 import PrefStamp from '../components/PrefStamp.vue'
 import RegionMotif from '../components/RegionMotif.vue'
 import SpeakButton from '../components/SpeakButton.vue'
@@ -836,6 +837,9 @@ const kyotoRegion = regionOf('kyoto')
         </li>
       </ol>
     </section>
+
+    <!-- 像素散步：GBA 風的旅人一區一區走過日本（§14a），沒有標題與說明 -->
+    <PixelWalk />
 
     <!-- 六個年代：每個年代一條色見本（紙、墨、47 縣的地區色、年代的字），按了整頁換過去 -->
     <section ref="eraSection" class="border-y border-line bg-surface" aria-labelledby="era-title">

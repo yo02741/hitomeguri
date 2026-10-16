@@ -78,6 +78,80 @@
   --color-item-white: #FFFFFF;
   --color-item-grey: #9AA3AD;
   --color-item-purple: #8C6BB5;
+
+  /* ---------- 形象網站的像素散步（§14a，services/pixelwalk）：GBA 風的調色盤，只用在那個 canvas ---------- */
+  /* 墨、紙、石、木、瓦 */
+  --color-px-ink: #1F1D2B;
+  --color-px-ink-2: #3A3550;
+  --color-px-white: #F8F8F0;
+  --color-px-paper: #F0E6CC;
+  --color-px-paper-2: #D6C8A6;
+  --color-px-stone-1: #CBC6BC;
+  --color-px-stone-2: #9C978E;
+  --color-px-stone-3: #6E6A63;
+  --color-px-stone-4: #474440;
+  --color-px-wood-1: #C88E54;
+  --color-px-wood-2: #8E5C34;
+  --color-px-wood-3: #5C3A22;
+  --color-px-roof-1: #6A788A;
+  --color-px-roof-2: #44505F;
+  --color-px-roof-3: #2A303C;
+  /* 朱、金 */
+  --color-px-shu-1: #E8483C;
+  --color-px-shu-2: #B02E2E;
+  --color-px-gold-1: #F4C440;
+  --color-px-gold-2: #C08A28;
+  /* 草木 */
+  --color-px-leaf-1: #B0DC68;
+  --color-px-leaf-2: #6CB24A;
+  --color-px-leaf-3: #3A7A3A;
+  --color-px-leaf-4: #214C32;
+  --color-px-dirt-1: #DAB27A;
+  --color-px-dirt-2: #B08052;
+  --color-px-sand-1: #F6E2AA;
+  --color-px-sand-2: #DABE82;
+  /* 水 */
+  --color-px-sea-1: #5CCCE2;
+  --color-px-sea-2: #2A92CA;
+  --color-px-sea-3: #1D5E9A;
+  --color-px-foam: #E8F8F6;
+  /* 季節 */
+  --color-px-sakura-1: #F8CAD8;
+  --color-px-sakura-2: #E892B2;
+  --color-px-momiji-1: #F28A3A;
+  --color-px-momiji-2: #D24A2A;
+  --color-px-lavender: #A98AD8;
+  --color-px-snow-1: #FAFAFF;
+  --color-px-snow-2: #C8D8F0;
+  /* 人：膚、髮、旅人的衣服與背包 */
+  --color-px-skin-1: #F8D2AA;
+  --color-px-skin-2: #DAA27A;
+  --color-px-hair: #3A2A2A;
+  --color-px-cloth-1: #4A7ACA;
+  --color-px-cloth-2: #2F5292;
+  --color-px-bag: #E8A23A;
+  /* 天空（不跟著時段變色，時段直接選）與雲 */
+  --color-px-sky-day-1: #78BEF6;
+  --color-px-sky-day-2: #A6D6F6;
+  --color-px-sky-day-3: #D2ECF8;
+  --color-px-sky-dusk-1: #6A5AA8;
+  --color-px-sky-dusk-2: #E67A7A;
+  --color-px-sky-dusk-3: #F6BA6A;
+  --color-px-sky-night-1: #141838;
+  --color-px-sky-night-2: #232A5C;
+  --color-px-sky-night-3: #3C3E7A;
+  --color-px-cloud-1: #FFFFFF;
+  --color-px-cloud-2: #D6E2F0;
+  /* 會發光的（夜裡不變暗）：燈、霓虹、星、月 */
+  --color-px-lamp-1: #FFEA92;
+  --color-px-lamp-2: #F8B848;
+  --color-px-neon-1: #FF62AA;
+  --color-px-neon-2: #62F0F0;
+  --color-px-star: #FFF8D2;
+  --color-px-moon: #F8F0C2;
+  /* 時段的色調：黃昏、夜晚往這兩個顏色混 */
+  --color-px-tint-dusk: #F09060;
+  --color-px-tint-night: #283070;
   --color-glare: #FFFFFF;
   --color-shade: #000000;
 

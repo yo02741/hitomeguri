@@ -88,7 +88,8 @@ function pwa() {
       globPatterns: ['**/*.{js,css,html,svg,woff2}'],
       // bundles/ 由下方依需要快取，不預先下載（全部約 40 MB）。3D 旅人（three.js，約 140 KB gzip）只有打開那頁才下載；
       // 地區背景的畫（約 130 KB gzip，DESIGN.md §7.24b）只有旅人頁要畫背景時才下載，離線時沒下載過就顯示原本的青海波
-      globIgnores: ['bundles/**', 'geo/**', '**/Avatar3D-*.js', '**/backgrounds-*.js'],
+      // 像素散步（約 100 KB gzip，§14a）也是形象頁捲到才下載，離線時沒下載過就只有那一段空著
+      globIgnores: ['bundles/**', 'geo/**', '**/Avatar3D-*.js', '**/backgrounds-*.js', '**/pixelwalk-*.js'],
       navigateFallback: 'index.html',
       navigateFallbackDenylist: [/^\/__/],
       cleanupOutdatedCaches: true,
@@ -153,7 +154,13 @@ export default defineConfig({
     rolldownOptions: {
       output: {
         // 地圖引擎（maplibre-gl，約 276 KB gzip）自成一檔：app 改版時它的檔名不變，瀏覽器不必重新下載
-        codeSplitting: { groups: [{ name: 'maplibre', test: /node_modules[\\/]maplibre-gl/ }] },
+        // 像素散步（DESIGN.md §14a）的引擎與各地區併成一檔，形象頁捲到附近才下載
+        codeSplitting: {
+          groups: [
+            { name: 'maplibre', test: /node_modules[\\/]maplibre-gl/ },
+            { name: 'pixelwalk', test: /src[\\/]services[\\/]pixelwalk[\\/]/ },
+          ],
+        },
       },
     },
   },
