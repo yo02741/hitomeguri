@@ -1,0 +1,749 @@
+{
+  "source": {
+    "url": "https://www.mlit.go.jp/koku/content/002000600.xlsx",
+    "fetched_at": "2026-10-17"
+  },
+  "season": "2026夏ダイヤ 国際定期便（３月29日～10月24日）",
+  "routes": [
+    {
+      "city": "台中",
+      "airport": "wd-Q1197455",
+      "iata": "OKA",
+      "name_ja": "那覇",
+      "prefecture": "okinawa",
+      "airlines": [
+        {
+          "code": "JX",
+          "name": "スターラックス航空",
+          "weekly": 14.0
+        },
+        {
+          "code": "IT",
+          "name": "タイガーエア台湾",
+          "weekly": 2.0
+        }
+      ],
+      "weekly": 16.0
+    },
+    {
+      "city": "台中",
+      "airport": "wd-Q36454",
+      "iata": "NRT",
+      "name_ja": "成田",
+      "prefecture": "chiba",
+      "airlines": [
+        {
+          "code": "JX",
+          "name": "スターラックス航空",
+          "weekly": 4.0
+        }
+      ],
+      "weekly": 4.0
+    },
+    {
+      "city": "台中",
+      "airport": "wd-Q679345",
+      "iata": "NGO",
+      "name_ja": "中部",
+      "prefecture": "aichi",
+      "airlines": [
+        {
+          "code": "IT",
+          "name": "タイガーエア台湾",
+          "weekly": 3.0
+        }
+      ],
+      "weekly": 3.0
+    },
+    {
+      "city": "台北",
+      "airport": "wd-Q1054857",
+      "iata": "SDJ",
+      "name_ja": "仙台",
+      "prefecture": "miyagi",
+      "airlines": [
+        {
+          "code": "BR",
+          "name": "エバー航空",
+          "weekly": 7.0
+        },
+        {
+          "code": "JX",
+          "name": "スターラックス航空",
+          "weekly": 7.0
+        },
+        {
+          "code": "IT",
+          "name": "タイガーエア台湾",
+          "weekly": 3.0
+        }
+      ],
+      "weekly": 17.0
+    },
+    {
+      "city": "台北",
+      "airport": "wd-Q1137465",
+      "iata": "FUK",
+      "name_ja": "福岡",
+      "prefecture": "fukuoka",
+      "airlines": [
+        {
+          "code": "CI",
+          "name": "チャイナ エアライン",
+          "weekly": 19.0
+        },
+        {
+          "code": "BR",
+          "name": "エバー航空",
+          "weekly": 14.0
+        },
+        {
+          "code": "IT",
+          "name": "タイガーエア台湾",
+          "weekly": 12.0
+        },
+        {
+          "code": "JX",
+          "name": "スターラックス航空",
+          "weekly": 7.0
+        }
+      ],
+      "weekly": 52.0
+    },
+    {
+      "city": "台北",
+      "airport": "wd-Q1141511",
+      "iata": "KMQ",
+      "name_ja": "小松",
+      "prefecture": "ishikawa",
+      "airlines": [
+        {
+          "code": "BR",
+          "name": "エバー航空",
+          "weekly": 7.0
+        },
+        {
+          "code": "IT",
+          "name": "タイガーエア台湾",
+          "weekly": 2.0
+        }
+      ],
+      "weekly": 9.0
+    },
+    {
+      "city": "台北",
+      "airport": "wd-Q11434817",
+      "iata": "ISG",
+      "name_ja": "石垣",
+      "prefecture": "okinawa",
+      "airlines": [
+        {
+          "code": "IT",
+          "name": "タイガーエア台湾",
+          "weekly": 2.0
+        }
+      ],
+      "weekly": 2.0
+    },
+    {
+      "city": "台北",
+      "airport": "wd-Q1155685",
+      "iata": "HKD",
+      "name_ja": "函館",
+      "prefecture": "hokkaido",
+      "airlines": [
+        {
+          "code": "IT",
+          "name": "タイガーエア台湾",
+          "weekly": 5.0
+        },
+        {
+          "code": "JX",
+          "name": "スターラックス航空",
+          "weekly": 3.0
+        }
+      ],
+      "weekly": 8.0
+    },
+    {
+      "city": "台北",
+      "airport": "wd-Q1156310",
+      "iata": "KOJ",
+      "name_ja": "鹿児島",
+      "prefecture": "kagoshima",
+      "airlines": [
+        {
+          "code": "CI",
+          "name": "チャイナ エアライン",
+          "weekly": 3.0
+        }
+      ],
+      "weekly": 3.0
+    },
+    {
+      "city": "台北",
+      "airport": "wd-Q1191625",
+      "iata": "TOY",
+      "name_ja": "富山",
+      "prefecture": "toyama",
+      "airlines": [
+        {
+          "code": "CI",
+          "name": "チャイナ エアライン",
+          "weekly": 2.0
+        }
+      ],
+      "weekly": 2.0
+    },
+    {
+      "city": "台北",
+      "airport": "wd-Q1197455",
+      "iata": "OKA",
+      "name_ja": "那覇",
+      "prefecture": "okinawa",
+      "airlines": [
+        {
+          "code": "MM",
+          "name": "ピーチアビエーション",
+          "weekly": 21.0
+        },
+        {
+          "code": "BR",
+          "name": "エバー航空",
+          "weekly": 14.0
+        },
+        {
+          "code": "CI",
+          "name": "チャイナ エアライン",
+          "weekly": 14.0
+        },
+        {
+          "code": "IT",
+          "name": "タイガーエア台湾",
+          "weekly": 14.0
+        },
+        {
+          "code": "JX",
+          "name": "スターラックス航空",
+          "weekly": 7.0
+        }
+      ],
+      "weekly": 70.0
+    },
+    {
+      "city": "台北",
+      "airport": "wd-Q1197536",
+      "iata": "KIJ",
+      "name_ja": "新潟",
+      "prefecture": "niigata",
+      "airlines": [
+        {
+          "code": "IT",
+          "name": "タイガーエア台湾",
+          "weekly": 2.0
+        }
+      ],
+      "weekly": 2.0
+    },
+    {
+      "city": "台北",
+      "airport": "wd-Q1199773",
+      "iata": "KMJ",
+      "name_ja": "熊本",
+      "prefecture": "kumamoto",
+      "airlines": [
+        {
+          "code": "JX",
+          "name": "スターラックス航空",
+          "weekly": 7.0
+        },
+        {
+          "code": "CI",
+          "name": "チャイナ エアライン",
+          "weekly": 5.0
+        }
+      ],
+      "weekly": 12.0
+    },
+    {
+      "city": "台北",
+      "airport": "wd-Q1320088",
+      "iata": "HNA",
+      "name_ja": "花巻",
+      "prefecture": "iwate",
+      "airlines": [
+        {
+          "code": "IT",
+          "name": "タイガーエア台湾",
+          "weekly": 2.0
+        }
+      ],
+      "weekly": 2.0
+    },
+    {
+      "city": "台北",
+      "airport": "wd-Q1322391",
+      "iata": "OKJ",
+      "name_ja": "岡山",
+      "prefecture": "okayama",
+      "airlines": [
+        {
+          "code": "IT",
+          "name": "タイガーエア台湾",
+          "weekly": 9.0
+        }
+      ],
+      "weekly": 9.0
+    },
+    {
+      "city": "台北",
+      "airport": "wd-Q1334603",
+      "iata": "TAK",
+      "name_ja": "高松",
+      "prefecture": "kagawa",
+      "airlines": [
+        {
+          "code": "CI",
+          "name": "チャイナ エアライン",
+          "weekly": 7.0
+        }
+      ],
+      "weekly": 7.0
+    },
+    {
+      "city": "台北",
+      "airport": "wd-Q1366663",
+      "iata": "HSG",
+      "name_ja": "佐賀",
+      "prefecture": "saga",
+      "airlines": [
+        {
+          "code": "IT",
+          "name": "タイガーエア台湾",
+          "weekly": 3.0
+        }
+      ],
+      "weekly": 3.0
+    },
+    {
+      "city": "台北",
+      "airport": "wd-Q1378640",
+      "iata": "KMI",
+      "name_ja": "宮崎",
+      "prefecture": "miyazaki",
+      "airlines": [
+        {
+          "code": "IT",
+          "name": "タイガーエア台湾",
+          "weekly": 2.0
+        }
+      ],
+      "weekly": 2.0
+    },
+    {
+      "city": "台北",
+      "airport": "wd-Q193682",
+      "iata": "KIX",
+      "name_ja": "関西",
+      "prefecture": "osaka",
+      "airlines": [
+        {
+          "code": "BR",
+          "name": "エバー航空",
+          "weekly": 21.0
+        },
+        {
+          "code": "CI",
+          "name": "チャイナ エアライン",
+          "weekly": 21.0
+        },
+        {
+          "code": "MM",
+          "name": "ピーチアビエーション",
+          "weekly": 21.0
+        },
+        {
+          "code": "IT",
+          "name": "タイガーエア台湾",
+          "weekly": 16.0
+        },
+        {
+          "code": "GK",
+          "name": "ジェットスター・ジャパン",
+          "weekly": 14.0
+        },
+        {
+          "code": "JX",
+          "name": "スターラックス航空",
+          "weekly": 14.0
+        }
+      ],
+      "weekly": 107.0
+    },
+    {
+      "city": "台北",
+      "airport": "wd-Q204853",
+      "iata": "HND",
+      "name_ja": "羽田",
+      "prefecture": "tokyo",
+      "airlines": [
+        {
+          "code": "BR",
+          "name": "エバー航空",
+          "weekly": 14.0
+        },
+        {
+          "code": "CI",
+          "name": "チャイナ エアライン",
+          "weekly": 14.0
+        },
+        {
+          "code": "JL",
+          "name": "日本航空",
+          "weekly": 14.0
+        },
+        {
+          "code": "NH",
+          "name": "全日空",
+          "weekly": 14.0
+        },
+        {
+          "code": "IT",
+          "name": "タイガーエア台湾",
+          "weekly": 7.0
+        },
+        {
+          "code": "MM",
+          "name": "ピーチアビエーション",
+          "weekly": 7.0
+        }
+      ],
+      "weekly": 70.0
+    },
+    {
+      "city": "台北",
+      "airport": "wd-Q255345",
+      "iata": "MYJ",
+      "name_ja": "松山",
+      "prefecture": "ehime",
+      "airlines": [
+        {
+          "code": "BR",
+          "name": "エバー航空",
+          "weekly": 5.0
+        }
+      ],
+      "weekly": 5.0
+    },
+    {
+      "city": "台北",
+      "airport": "wd-Q36454",
+      "iata": "NRT",
+      "name_ja": "成田",
+      "prefecture": "chiba",
+      "airlines": [
+        {
+          "code": "CI",
+          "name": "チャイナ エアライン",
+          "weekly": 28.0
+        },
+        {
+          "code": "BR",
+          "name": "エバー航空",
+          "weekly": 21.0
+        },
+        {
+          "code": "JX",
+          "name": "スターラックス航空",
+          "weekly": 21.0
+        },
+        {
+          "code": "MM",
+          "name": "ピーチアビエーション",
+          "weekly": 16.5
+        },
+        {
+          "code": "GK",
+          "name": "ジェットスター・ジャパン",
+          "weekly": 14.0
+        },
+        {
+          "code": "IT",
+          "name": "タイガーエア台湾",
+          "weekly": 14.0
+        },
+        {
+          "code": "JL",
+          "name": "日本航空",
+          "weekly": 14.0
+        }
+      ],
+      "weekly": 128.5
+    },
+    {
+      "city": "台北",
+      "airport": "wd-Q628429",
+      "iata": "AOJ",
+      "name_ja": "青森",
+      "prefecture": "aomori",
+      "airlines": [
+        {
+          "code": "BR",
+          "name": "エバー航空",
+          "weekly": 7.0
+        }
+      ],
+      "weekly": 7.0
+    },
+    {
+      "city": "台北",
+      "airport": "wd-Q679345",
+      "iata": "NGO",
+      "name_ja": "中部",
+      "prefecture": "aichi",
+      "airlines": [
+        {
+          "code": "CI",
+          "name": "チャイナ エアライン",
+          "weekly": 14.0
+        },
+        {
+          "code": "IT",
+          "name": "タイガーエア台湾",
+          "weekly": 7.0
+        },
+        {
+          "code": "JX",
+          "name": "スターラックス航空",
+          "weekly": 7.0
+        },
+        {
+          "code": "MM",
+          "name": "ピーチアビエーション",
+          "weekly": 7.0
+        },
+        {
+          "code": "JL",
+          "name": "日本航空",
+          "weekly": 5.0
+        }
+      ],
+      "weekly": 40.0
+    },
+    {
+      "city": "台北",
+      "airport": "wd-Q82240",
+      "iata": "HIJ",
+      "name_ja": "広島",
+      "prefecture": "hiroshima",
+      "airlines": [
+        {
+          "code": "CI",
+          "name": "チャイナ エアライン",
+          "weekly": 5.0
+        }
+      ],
+      "weekly": 5.0
+    },
+    {
+      "city": "台北",
+      "airport": "wd-Q908296",
+      "iata": "CTS",
+      "name_ja": "新千歳",
+      "prefecture": "hokkaido",
+      "airlines": [
+        {
+          "code": "BR",
+          "name": "エバー航空",
+          "weekly": 8.0
+        },
+        {
+          "code": "CI",
+          "name": "チャイナ エアライン",
+          "weekly": 7.0
+        },
+        {
+          "code": "IT",
+          "name": "タイガーエア台湾",
+          "weekly": 7.0
+        },
+        {
+          "code": "JX",
+          "name": "スターラックス航空",
+          "weekly": 7.0
+        }
+      ],
+      "weekly": 29.0
+    },
+    {
+      "city": "高雄",
+      "airport": "wd-Q1054857",
+      "iata": "SDJ",
+      "name_ja": "仙台",
+      "prefecture": "miyagi",
+      "airlines": [
+        {
+          "code": "IT",
+          "name": "タイガーエア台湾",
+          "weekly": 3.0
+        }
+      ],
+      "weekly": 3.0
+    },
+    {
+      "city": "高雄",
+      "airport": "wd-Q1137465",
+      "iata": "FUK",
+      "name_ja": "福岡",
+      "prefecture": "fukuoka",
+      "airlines": [
+        {
+          "code": "BR",
+          "name": "エバー航空",
+          "weekly": 7.0
+        },
+        {
+          "code": "CI",
+          "name": "チャイナ エアライン",
+          "weekly": 3.0
+        },
+        {
+          "code": "IT",
+          "name": "タイガーエア台湾",
+          "weekly": 3.0
+        }
+      ],
+      "weekly": 13.0
+    },
+    {
+      "city": "高雄",
+      "airport": "wd-Q1197455",
+      "iata": "OKA",
+      "name_ja": "那覇",
+      "prefecture": "okinawa",
+      "airlines": [
+        {
+          "code": "IT",
+          "name": "タイガーエア台湾",
+          "weekly": 9.0
+        },
+        {
+          "code": "CI",
+          "name": "チャイナ エアライン",
+          "weekly": 6.0
+        }
+      ],
+      "weekly": 15.0
+    },
+    {
+      "city": "高雄",
+      "airport": "wd-Q1199773",
+      "iata": "KMJ",
+      "name_ja": "熊本",
+      "prefecture": "kumamoto",
+      "airlines": [
+        {
+          "code": "CI",
+          "name": "チャイナ エアライン",
+          "weekly": 4.0
+        }
+      ],
+      "weekly": 4.0
+    },
+    {
+      "city": "高雄",
+      "airport": "wd-Q193682",
+      "iata": "KIX",
+      "name_ja": "関西",
+      "prefecture": "osaka",
+      "airlines": [
+        {
+          "code": "BR",
+          "name": "エバー航空",
+          "weekly": 11.0
+        },
+        {
+          "code": "CI",
+          "name": "チャイナ エアライン",
+          "weekly": 10.0
+        },
+        {
+          "code": "IT",
+          "name": "タイガーエア台湾",
+          "weekly": 7.0
+        },
+        {
+          "code": "MM",
+          "name": "ピーチアビエーション",
+          "weekly": 7.0
+        }
+      ],
+      "weekly": 35.0
+    },
+    {
+      "city": "高雄",
+      "airport": "wd-Q36454",
+      "iata": "NRT",
+      "name_ja": "成田",
+      "prefecture": "chiba",
+      "airlines": [
+        {
+          "code": "CI",
+          "name": "チャイナ エアライン",
+          "weekly": 14.0
+        },
+        {
+          "code": "BR",
+          "name": "エバー航空",
+          "weekly": 7.0
+        },
+        {
+          "code": "GK",
+          "name": "ジェットスター・ジャパン",
+          "weekly": 7.0
+        },
+        {
+          "code": "IT",
+          "name": "タイガーエア台湾",
+          "weekly": 7.0
+        },
+        {
+          "code": "UA",
+          "name": "ユナイテッド航空",
+          "weekly": 7.0
+        }
+      ],
+      "weekly": 42.0
+    },
+    {
+      "city": "高雄",
+      "airport": "wd-Q679345",
+      "iata": "NGO",
+      "name_ja": "中部",
+      "prefecture": "aichi",
+      "airlines": [
+        {
+          "code": "IT",
+          "name": "タイガーエア台湾",
+          "weekly": 3.0
+        }
+      ],
+      "weekly": 3.0
+    },
+    {
+      "city": "高雄",
+      "airport": "wd-Q908296",
+      "iata": "CTS",
+      "name_ja": "新千歳",
+      "prefecture": "hokkaido",
+      "airlines": [
+        {
+          "code": "IT",
+          "name": "タイガーエア台湾",
+          "weekly": 3.0
+        }
+      ],
+      "weekly": 3.0
+    }
+  ]
+}
