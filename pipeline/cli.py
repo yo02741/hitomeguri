@@ -279,6 +279,14 @@ def cmd_seed_airports(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_dump_airports(args: argparse.Namespace) -> int:
+    from pipeline.airports import TAIWAN_RE, dump_routes
+
+    url = args.url or os.environ.get("AIRPORTS_PDF_URL") or None
+    _emit(dump_routes(url, args.grep or TAIWAN_RE), args.report)
+    return 0
+
+
 def cmd_seed_ukiyoe(args: argparse.Namespace) -> int:
     from pipeline.ukiyoe import seed_ukiyoe
 
@@ -432,6 +440,16 @@ def main(argv: list[str] | None = None) -> int:
     )
     p.add_argument("--report")
     p.set_defaults(func=cmd_seed_airports)
+
+    p = sub.add_parser(
+        "dump-airports",
+        help="看「国際線就航状況」Excel 的結構與台灣出發的列（不改資料；寫航線解析前用）",
+    )
+    p.add_argument("prefectures", nargs="*", help="不使用")
+    p.add_argument("--url", help="Excel 的網址（省略時用預設的這一季）")
+    p.add_argument("--grep", help="只印符合這個正規表示式的列（預設：台灣的機場與城市）")
+    p.add_argument("--report")
+    p.set_defaults(func=cmd_dump_airports)
 
     p = sub.add_parser("seed-rail", help="鐵路路線圖層：OSM 路線與車站 → data/rail/")
     p.add_argument("prefectures", nargs="*", help="省略時處理全部縣")

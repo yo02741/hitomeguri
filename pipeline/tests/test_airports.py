@@ -453,3 +453,61 @@ def test_civil_name_for_joint_use_airfields():
     assert civil_name(naha, "那覇") == "那覇空港"
     base = Candidate("Q4", "XXX", "某飛行場", 35.0, 135.0)
     assert civil_name(base, "某") == "某飛行場"
+
+
+def _xlsx(sheets: dict[str, list[list[str]]]) -> bytes:
+    """測試用的小 Excel：共用字串表＋工作表名（workbook.xml 與 rels）"""
+    import io
+    import zipfile
+
+    strings: list[str] = []
+    ns = 'xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main"'
+    rel = 'xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"'
+    buf = io.BytesIO()
+    with zipfile.ZipFile(buf, "w") as z:
+        wb_sheets, rels = [], []
+        for i, (name, rows) in enumerate(sheets.items(), start=1):
+            xml_rows = []
+            for r, row in enumerate(rows, start=1):
+                cells = []
+                for c, text in enumerate(row):
+                    if text == "":
+                        continue
+                    ref = chr(65 + c) + str(r)
+                    if text.isdigit():
+                        cells.append(f'<c r="{ref}"><v>{text}</v></c>')
+                    else:
+                        strings.append(text)
+                        cells.append(f'<c r="{ref}" t="s"><v>{len(strings) - 1}</v></c>')
+                xml_rows.append(f'<row r="{r}">{"".join(cells)}</row>')
+            z.writestr(f"xl/worksheets/sheet{i}.xml", f"<worksheet {ns}><sheetData>{''.join(xml_rows)}</sheetData></worksheet>")
+            wb_sheets.append(f'<sheet name="{name}" sheetId="{i}" r:id="rId{i}"/>')
+            rels.append(f'<Relationship Id="rId{i}" Target="worksheets/sheet{i}.xml"/>')
+        z.writestr("xl/workbook.xml", f"<workbook {ns} {rel}><sheets>{''.join(wb_sheets)}</sheets></workbook>")
+        z.writestr("xl/_rels/workbook.xml.rels", f"<Relationships>{''.join(rels)}</Relationships>")
+        si = "".join(f"<si><t>{s}</t></si>" for s in strings)
+        z.writestr("xl/sharedStrings.xml", f"<sst {ns}>{si}</sst>")
+    return buf.getvalue()
+
+
+def test_xlsx_rows_keeps_columns_and_sheet_names() -> None:
+    from pipeline.airports import xlsx_rows
+
+    data = _xlsx({"国際線": [["空港", "就航先", "便数"], ["成田", "台北", "21"], ["", "高雄", "7"]], "注記": [["定期便のみ"]]})
+    sheets = xlsx_rows(data)
+    assert [t for t, _ in sheets] == ["国際線", "注記"]
+    rows = sheets[0][1]
+    assert rows[1] == ["成田", "台北", "21"]
+    assert rows[2] == ["", "高雄", "7"]  # 空的儲存格補成 ""，欄位對齊
+
+
+def test_dump_routes_lists_taiwan_rows(monkeypatch) -> None:
+    from pipeline import airports
+
+    data = _xlsx({"国際線": [["空港", "就航先"], ["成田", "台北"], ["関西", "ソウル"], ["", "高雄"]]})
+    monkeypatch.setattr(airports, "get_bytes", lambda url, min_interval=1.0: data)
+    text = airports.dump_routes("https://example.invalid/x.xlsx")
+    assert "工作表「国際線」：4 列" in text
+    assert "* 2\t成田\t台北" in text
+    assert "* 4\t\t高雄" in text
+    assert "ソウル" in text  # 前一列（第 3 列）也印出來

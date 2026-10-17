@@ -188,6 +188,101 @@ def xlsx_text(data: bytes) -> tuple[str, int]:
     return "\n".join(out), len(sheets)
 
 
+def xlsx_rows(data: bytes) -> list[tuple[str, list[list[str]]]]:
+    """Excel（.xlsx）每個工作表的列：[(工作表名, [[儲存格文字…], …]), …]，空的儲存格是 ""。
+
+    xlsx_text 只取出字串、不管它們在哪一列；看航線（同一列的機場、就航先、航空公司、便數）要用這個。
+    只用標準函式庫（zipfile、ElementTree）。"""
+    import xml.etree.ElementTree as ET
+    import zipfile
+
+    ns = "{http://schemas.openxmlformats.org/spreadsheetml/2006/main}"
+    rel = "{http://schemas.openxmlformats.org/officeDocument/2006/relationships}"
+    z = zipfile.ZipFile(io.BytesIO(data))
+    names = z.namelist()
+    shared: list[str] = []
+    if "xl/sharedStrings.xml" in names:
+        root = ET.fromstring(z.read("xl/sharedStrings.xml"))
+        for si in root.iter(f"{ns}si"):
+            shared.append("".join(t.text or "" for t in si.iter(f"{ns}t")))
+    # 工作表名：workbook.xml 的 sheet（r:id）→ workbook.xml.rels 的檔名
+    titles: dict[str, str] = {}
+    if "xl/workbook.xml" in names and "xl/_rels/workbook.xml.rels" in names:
+        rels = {
+            r.get("Id"): r.get("Target", "")
+            for r in ET.fromstring(z.read("xl/_rels/workbook.xml.rels"))
+        }
+        for sh in ET.fromstring(z.read("xl/workbook.xml")).iter(f"{ns}sheet"):
+            target = rels.get(sh.get(f"{rel}id") or "", "")
+            titles["xl/" + target.lstrip("/").removeprefix("xl/")] = sh.get("name", "")
+
+    def col(ref: str) -> int:
+        n = 0
+        for ch in ref:
+            if not ch.isalpha():
+                break
+            n = n * 26 + ord(ch.upper()) - 64
+        return n - 1
+
+    out: list[tuple[str, list[list[str]]]] = []
+    sheets = sorted(
+        (n for n in names if n.startswith("xl/worksheets/sheet") and n.endswith(".xml")),
+        key=lambda n: int(re.sub(r"\D", "", n) or 0),
+    )
+    for n in sheets:
+        rows: list[list[str]] = []
+        for row in ET.fromstring(z.read(n)).iter(f"{ns}row"):
+            cells: dict[int, str] = {}
+            for c in row.iter(f"{ns}c"):
+                t = c.get("t")
+                v = c.find(f"{ns}v")
+                if t == "s" and v is not None and v.text is not None:
+                    text = shared[int(v.text)] if int(v.text) < len(shared) else ""
+                elif t == "inlineStr":
+                    text = "".join(x.text or "" for x in c.iter(f"{ns}t"))
+                else:
+                    text = v.text if v is not None and v.text is not None else ""
+                cells[col(c.get("r", "A"))] = text.strip()
+            if any(cells.values()):
+                width = max(cells) + 1
+                rows.append([cells.get(i, "") for i in range(width)])
+        out.append((titles.get(n, n.rsplit("/", 1)[-1]), rows))
+    return out
+
+
+#: 台灣出發的航線在表裡可能的寫法（dump-airports 預設的篩選）
+TAIWAN_RE = r"台湾|臺灣|台北|臺北|台中|臺中|高雄|桃園|松山|Taipei|Taichung|Kaohsiung|Taoyuan"
+
+
+def dump_routes(url: str | None = None, pattern: str = TAIWAN_RE, head: int = 12) -> str:
+    """看「国際線就航状況」Excel 的結構（不改資料）：
+    每個工作表的前幾列，與符合 pattern 的列（含列號）。
+
+    寫航線的解析之前先用這個在 Actions 上看實際的欄位（沙箱連不到国土交通省）。"""
+    url = url or DEFAULT_PDF_URL
+    data = get_bytes(url, min_interval=1.0)
+    if data is None:
+        raise RuntimeError(f"檔案不存在（404）：{url}")
+    if data[:2] != b"PK":
+        raise RuntimeError("不是 Excel（.xlsx）：dump-airports 只看 Excel")
+    rx = re.compile(pattern)
+    lines = [f"# 国際線就航状況的結構（{url}）", ""]
+    for title, rows in xlsx_rows(data):
+        lines.append(f"## 工作表「{title}」：{len(rows)} 列")
+        lines.append("")
+        lines.append("前幾列：")
+        lines += [f"    {i + 1}\t" + "\t".join(r) for i, r in enumerate(rows[:head])]
+        hits = [(i, r) for i, r in enumerate(rows) if any(rx.search(c) for c in r)]
+        lines.append(f"符合「{pattern}」的列：{len(hits)}")
+        for i, r in hits[:300]:
+            # 前一列也印出來（機場名可能只寫在一組的第一列）
+            if i > 0:
+                lines.append(f"    {i}\t" + "\t".join(rows[i - 1]))
+            lines.append(f"  * {i + 1}\t" + "\t".join(r))
+        lines.append("")
+    return "\n".join(lines)
+
+
 def pdf_text(data: bytes) -> tuple[str, int]:
     from pypdf import PdfReader
 
