@@ -18,6 +18,9 @@ export const PX = [
   'cloud-1', 'cloud-2',
   'lamp-1', 'lamp-2', 'neon-1', 'neon-2', 'star', 'moon',
   'tint-dusk', 'tint-night',
+  // 番外篇的地方 kit（沖繩、近畿）
+  'kawara-1', 'kawara-2', 'kawara-3', 'coral-1', 'coral-2', 'coral-3', 'lagoon-1', 'lagoon-2',
+  'tatami-1', 'tatami-2', 'kanhi-1', 'kanhi-2', 'bougain', 'ajisai', 'shu-3',
 ] as const
 export type Px = (typeof PX)[number]
 /** 畫的時候可以不填色（透明） */
@@ -29,7 +32,7 @@ export type Season = 'spring' | 'summer' | 'autumn' | 'winter'
 /** 時段不改的顏色 */
 export const UNTINTED = (k: Px) => k.startsWith('sky-') || k.startsWith('lamp-') || k.startsWith('neon-') || k === 'star' || k === 'moon'
 
-type Rgb = [number, number, number]
+export type Rgb = [number, number, number]
 export type Tokens = Record<Px, string>
 
 export interface Palette {
@@ -61,6 +64,18 @@ const mix = (a: Rgb, b: Rgb, t: number, dim: number): Rgb => [0, 1, 2].map((i) =
 
 /** 時段的換色：往色調混多少、整體亮度 */
 const TIME = { day: [0, 1], dusk: [0.2, 0.9], night: [0.5, 0.62] } as const
+
+/**
+ * 任意一個 RGB（番外篇旅人 sprite 的顏色，來自旅人自己的 SVG）照時段換色：跟 makePalette 同一套混法。
+ * 白天原色；黃昏往 tint-dusk、夜晚往 tint-night 混，再變暗。
+ */
+export function tintRgb(rgb: Rgb, tokens: Tokens, time: TimeOfDay): Rgb {
+  if (time === 'day') return [rgb[0], rgb[1], rgb[2]]
+  const [t, dim] = TIME[time]
+  return mix(rgb, parseColor(time === 'night' ? tokens['tint-night'] : tokens['tint-dusk']), t, dim)
+}
+/** [r, g, b] → ImageData 的一個像素（0xAABBGGRR） */
+export const packRgb = pack
 
 export function makePalette(tokens: Tokens, time: TimeOfDay): Palette {
   const base = Object.fromEntries(PX.map((k) => [k, parseColor(tokens[k])])) as Record<Px, Rgb>

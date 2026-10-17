@@ -89,7 +89,8 @@ function pwa() {
       // bundles/ 由下方依需要快取，不預先下載（全部約 40 MB）。3D 旅人（three.js，約 140 KB gzip）只有打開那頁才下載；
       // 地區背景的畫（約 130 KB gzip，DESIGN.md §7.24b）只有旅人頁要畫背景時才下載，離線時沒下載過就顯示原本的青海波
       // 像素散步（約 100 KB gzip，§14a）也是形象頁捲到才下載，離線時沒下載過就只有那一段空著
-      globIgnores: ['bundles/**', 'geo/**', '**/Avatar3D-*.js', '**/backgrounds-*.js', '**/pixelwalk-*.js'],
+      // 番外篇（§14b）也是進 /play 才下載（引擎 game-*.js 與畫面 PlayView-*.js、.css）；像素散步與番外篇共用的 pxcore-*.js 也是
+      globIgnores: ['bundles/**', 'geo/**', '**/Avatar3D-*.js', '**/backgrounds-*.js', '**/pixelwalk-*.js', '**/pxcore-*.js', '**/game-*.js', '**/PlayView-*'],
       navigateFallback: 'index.html',
       navigateFallbackDenylist: [/^\/__/],
       cleanupOutdatedCaches: true,
@@ -158,7 +159,17 @@ export default defineConfig({
         codeSplitting: {
           groups: [
             { name: 'maplibre', test: /node_modules[\\/]maplibre-gl/ },
+            // 像素散步與番外篇共用的點陣畫布、調色盤、sprite：自成一小檔，/play 不必下載整個像素散步
+            { name: 'pxcore', test: /src[\\/]services[\\/]pixelwalk[\\/](gfx|palette|sprite|build|rng)\.ts/, priority: 2 },
             { name: 'pixelwalk', test: /src[\\/]services[\\/]pixelwalk[\\/]/ },
+            // 番外篇（像素遊戲）：引擎、tile、角色、地圖、聲音、介面的純邏輯（src/game/）併成一檔，進 /play 才下載。
+            // 只抓 src/game/ 本身（includeDependenciesRecursively: false）：預設會把相依（vue、data/outfits、stores、bundles）
+            // 一起抓進來，整個 app 的入口就變成要先載這一檔。畫面（PlayView 與 components/game/*.vue）跟著 /play 的路由自成 PlayView-*.js
+            { name: 'game', test: /src[\\/]game[\\/]/, includeDependenciesRecursively: false },
+            // 3D 旅人的 three.js 與建模：旅人頁的 3D 展示窗與番外篇的旅人側面（game/avatar/side3d.ts）都是動態載入，
+            // 兩邊共用時會被拆成獨立的 three.module-*.js 而被預先快取；併進 Avatar3D 這一檔（globIgnores 排除）。
+            // 不抓相依：raster.ts 與 data/outfits 也給 2D 的紙娃娃用。three/examples（OrbitControls）不併進來：只有旅人頁的展示窗用
+            { name: 'Avatar3D', test: /node_modules[\\/]three[\\/](?!examples)|src[\\/]services[\\/]avatar3d[\\/](avatar|inflate)\.ts/, includeDependenciesRecursively: false },
           ],
         },
       },

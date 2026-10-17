@@ -109,6 +109,25 @@ def zh_label(labels: dict[str, str], fallback: str) -> str:
     return fallback
 
 
+def zh_name(labels: dict[str, str], sitelinks: dict[str, str], fallback: str) -> str:
+    """中文名稱：Wikidata 的中文標籤（zh_label），但標籤是中文維基條目名再多幾個字時用條目名。
+
+    例：京都ラーメン 的標籤是「京都拉麵小路」（拉麵街的名字），條目是「京都拉面」→「京都拉麵」。
+    條目名就是實際來源的名稱（轉繁體、去掉消歧義括號）；其他情況照 zh_label。
+    """
+    from pipeline.major import strip_disambiguation
+
+    label = zh_label(labels, "")
+    title = sitelinks.get("zhwiki")
+    if title:
+        tw = strip_disambiguation(_TO_TW.convert(title))
+        if not label:
+            return tw or fallback
+        if tw and tw != label and label.startswith(tw):
+            return tw
+    return label or fallback
+
+
 def summary_extracts(ents: list[wikidata.Entity]) -> dict[str, dict[str, str]]:
     """各語言維基的開頭段落（標題 → 文字），給 pick_summary 用。"""
     out = {}

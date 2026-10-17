@@ -241,6 +241,8 @@ def test_seed_shinise_end_to_end(tmp_path, monkeypatch):
         OsmElement("node/4", 35.0, 135.78, {"name": "茶屋カフェ", "amenity": "cafe"}),
         OsmElement("node/6", 35.0, 135.781, {"name": "お茶屋Bar 一葉", "amenity": "cafe"}),
         OsmElement("node/7", 35.0, 135.782, {"name": "中華麺飯茶屋 佳", "amenity": "restaurant"}),
+        OsmElement("node/8", 35.0, 135.783, {"name": "はろうきてぃ茶寮", "amenity": "cafe"}),
+        OsmElement("node/9", 35.0, 135.784, {"name": "SNOOPY茶屋 由布院店", "amenity": "cafe"}),
         OsmElement("node/5", 35.0, 135.79, {"name": "香草ヘア", "shop": "hairdresser"}),
     ]
     monkeypatch.setattr(pack_shinise.osm, "by_prefecture", lambda filters: (els, ["okinawa"]))
@@ -255,6 +257,8 @@ def test_seed_shinise_end_to_end(tmp_path, monkeypatch):
     assert "shinise-node-4" not in out and "shinise-node-5" not in out
     # 名稱有茶屋但是酒吧、中華料理
     assert "shinise-node-6" not in out and "shinise-node-7" not in out
+    # 角色主題的店（角色商店，不是茶屋）
+    assert "shinise-node-8" not in out and "shinise-node-9" not in out
     assert "新しい店" in report and "okinawa" in report
     # 同一家店的兩個條目（同名、同一個位置）只留創業早的
     assert [r["id"] for r in out.values() if r["name"]["ja"] == "鶴屋吉信"] == ["shinise-q2"]

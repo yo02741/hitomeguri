@@ -12,6 +12,8 @@
 - shinkansen.json：全國地圖的新幹線（各縣的新幹線路線合併、簡化，新幹線站依路網節點去重）。
 - rail-graph.json：全國車站路網（日帰り的鐵路距離，pipeline/rail_graph.py）。
 - daytrip.json：日帰り的目的地（一個市区町村一筆，分數最高的景點與車站，pipeline/daytrip.py）。
+- game/{pref}.json：番外篇（/play）用的小 bundle（選得到的鎮的景點、縣內路網…，
+  pipeline/game_bundle.py）。
 """
 
 from __future__ import annotations
@@ -24,6 +26,7 @@ from pathlib import Path
 from typing import Any
 
 from pipeline import config, daytrip, municipalities, rail_graph, topo
+from pipeline.game_bundle import build_game
 from pipeline.models import (
     Festival,
     FlightRoute,
@@ -291,6 +294,10 @@ def build(src: Path = SPOTS_DIR, dst: Path = BUNDLES_DIR) -> list[Path]:
     written += extras
     # 地區特色、會話、季節、航線也帶版本（網址加 ?v=）：前端與 service worker 存了就不必每次再下載
     index["extras"] = {p.stem: hashlib.sha1(p.read_bytes()).hexdigest()[:10] for p in extras}
+    # 番外篇（/play）的小 bundle：讀上面寫好的檔，所以最後做
+    game = build_game(dst)
+    index["game"] = {pref: meta for pref, (_, meta) in game.items()}
+    written += [path for path, _ in game.values()]
     written.append(_write(dst / "_index.json", index))
     return written
 

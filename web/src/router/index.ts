@@ -68,6 +68,20 @@ export const router = createRouter({
     { path: '/credits', name: 'credits', component: () => import('../views/CreditsView.vue'), meta: { title: '資料來源' } },
     // 形象網站：不顯示 app 的標頭與分頁列（App.vue 的 meta.bare）
     { path: '/about', name: 'about', component: () => import('../views/AboutView.vue'), meta: { title: '關於', bare: true } },
+    // 番外篇（像素遊戲）：整頁是遊戲，同樣不放標頭與分頁列。
+    // beforeEnter：遊戲的資料先開始抓（不等遊戲的程式下載完）；旅人的 avatar store 在元件外建（在 PlayView 的 setup 裡
+    // 第一次建的話，store 的 watch 會一直抓著那一頁，離開後整個遊戲放不掉）
+    {
+      path: '/play',
+      name: 'play',
+      component: () => import('../views/PlayView.vue'),
+      meta: { title: '番外篇', bare: true, ownSafeArea: true },
+      beforeEnter: async () => {
+        void import('../services/playPrefetch').then((m) => m.prefetchPlay())
+        const { useAvatarStore } = await import('../stores/avatar')
+        useAvatarStore()
+      },
+    },
     { path: '/:pathMatch(.*)*', redirect: '/' },
   ],
 })

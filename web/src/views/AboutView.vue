@@ -840,6 +840,7 @@ const kyotoRegion = regionOf('kyoto')
 
     <!-- 像素散步：GBA 風的旅人一區一區走過日本（§14a），沒有標題與說明 -->
     <PixelWalk />
+    <p class="m-0 flex justify-end px-3 text-body-sm"><RouterLink to="/play" class="flex h-11 items-center font-bold text-region-strong">自己走</RouterLink></p>
 
     <!-- 六個年代：每個年代一條色見本（紙、墨、47 縣的地區色、年代的字），按了整頁換過去 -->
     <section ref="eraSection" class="border-y border-line bg-surface" aria-labelledby="era-title">

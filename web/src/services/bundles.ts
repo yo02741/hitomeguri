@@ -103,6 +103,8 @@ export interface BundleIndex {
   rail_graph?: { nodes: number; edges: number; version: string }
   /** 日帰り的目的地（daytrip.json） */
   daytrip?: { areas: number; version: string }
+  /** 番外篇（/play）的小 bundle：縣 → 版本（game/{縣}.json，pipeline/game_bundle.py） */
+  game?: Record<string, { version: string }>
 }
 
 /**
@@ -113,6 +115,11 @@ export interface BundleIndex {
 export interface AchvData {
   tags: Record<string, string[]>
   castle: Record<'100' | 'zoku', Array<[string, string | null]>>
+}
+
+/** 番外篇的一縣（形狀是 game/world/types.ts 的 PrefRaw；這裡不 import 遊戲的型別） */
+export function fetchGameBundle(pref: string, version: string): Promise<unknown> {
+  return getJson<unknown>(`game/${pref}.json?v=${version}`)
 }
 
 export function fetchAchievements(v: string): Promise<AchvData> {

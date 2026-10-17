@@ -1,11 +1,16 @@
 <script setup lang="ts">
-import { computed, onBeforeUnmount, onMounted, ref } from 'vue'
+import { computed, onBeforeUnmount, onMounted, ref, watch } from 'vue'
 
 import type { PixelWalkEngine } from '../services/pixelwalk/engine'
+import type { Tokens } from '../services/pixelwalk/palette'
+import type { HeroSkin } from '../services/pixelwalk/traveller'
+import { useUserStore } from '../stores/user'
 
 // 形象網站的像素散步（DESIGN.md §14a）：GBA 風的旅人一區一區走過日本各地，路上隨機遇到東西。
 // 這個元件只管 canvas、大小、暫停與地名牌；引擎與各地區（services/pixelwalk）捲到附近才下載。
 // 放大用整數倍（2–4 倍）＋ image-rendering: pixelated，點一下旅人會跳。
+// 登入、而且這台裝置上有番外篇（/play）生成的旅人快取時，散步的旅人換成他的旅人（services/pixelwalk/traveller.ts）；
+// 只讀 localStorage 的指標與 IndexedDB，不打 Firestore、不載 three.js。沒有快取就照舊。
 const H = 160
 const box = ref<HTMLElement | null>(null)
 const canvas = ref<HTMLCanvasElement | null>(null)
@@ -30,6 +35,9 @@ let bannerTimer = 0
 let io: IntersectionObserver | null = null
 let seen: IntersectionObserver | null = null
 let ro: ResizeObserver | null = null
+let tokens: Tokens | null = null
+let readSkin: ((uid: string, t: Tokens) => Promise<HeroSkin | null>) | null = null
+const userStore = useUserStore()
 
 const running = computed(() => ready.value && !paused.value)
 
@@ -102,18 +110,24 @@ async function boot() {
   if (engine || !canvas.value) return
   let mods
   try {
-    mods = await Promise.all([import('../services/pixelwalk/engine'), import('../services/pixelwalk/catalog'), import('../services/pixelwalk/palette')])
+    mods = await Promise.all([
+      import('../services/pixelwalk/engine'),
+      import('../services/pixelwalk/catalog'),
+      import('../services/pixelwalk/palette'),
+      import('../services/pixelwalk/traveller'),
+    ])
   } catch {
     // 離線、還沒下載過：這一段先空著，下次捲到再試
     near = false
     return
   }
-  const [{ PixelWalkEngine }, catalog, { readTokens }] = mods
+  const [{ PixelWalkEngine }, catalog, { readTokens }, traveller] = mods
   if (!canvas.value || engine) return
   ctx = canvas.value.getContext('2d')
   try {
+    tokens = readTokens()
     engine = new PixelWalkEngine(
-      { tokens: readTokens(), areas: catalog.AREAS, events: catalog.EVENTS, transitions: catalog.TRANSITIONS, onArea: (a) => showBanner(a.name, a.romaji) },
+      { tokens, areas: catalog.AREAS, events: catalog.EVENTS, transitions: catalog.TRANSITIONS, onArea: (a) => showBanner(a.name, a.romaji) },
       width.value || 320,
     )
   } catch (e) {
@@ -122,11 +136,28 @@ async function boot() {
     return
   }
   ready.value = true
+  readSkin = traveller.readTravellerSkin
+  void loadSkin(userStore.user?.uid ?? null)
   // dev：預覽、檢查用（快轉：__pixelwalk.update(1 / 60) 跑很多次）
   if (import.meta.env.DEV) (window as unknown as { __pixelwalk?: PixelWalkEngine }).__pixelwalk = engine
   measure()
   loop()
 }
+
+/** 換成這個人的旅人（沒登入、沒有快取：手畫的旅人） */
+let skinFor: string | null = null
+async function loadSkin(uid: string | null) {
+  skinFor = uid
+  if (!engine || !tokens || !readSkin) return
+  const skin = uid ? await readSkin(uid, tokens).catch(() => null) : null
+  if (!engine || skinFor !== uid) return
+  engine.hero.skin = skin
+  paint()
+}
+watch(
+  () => userStore.user?.uid ?? null,
+  (uid) => void loadSkin(uid),
+)
 
 function toggle() {
   paused.value = !paused.value

@@ -51,13 +51,14 @@ const DollWalker = defineAsyncComponent(() => import('./components/DollWalker.vu
          橫向的瀏海：內容左右讓出安全區；沒有分頁列（≥1024、手機打橫）時底部也讓出。
          data-bleed：地圖頁的地圖本身鋪到瀏海底下，控制項再縮回來（theme.css 的 .map-root）
          data-bare：形象網站的細捲軸與軌道底色（AboutView）；照片、色帶鋪到左右邊緣，內文自己讓出安全區
-         （2026-10-13 回報：iPad 的視窗左側有安全區，海報左邊露出一條底色） -->
+         （2026-10-13 回報：iPad 的視窗左側有安全區，海報左邊露出一條底色）
+         meta.ownSafeArea：頁面自己讓四邊的安全區（番外篇 /play），這裡連底部也不讓（不然下緣算兩次、露出一條底色） -->
     <main
       id="app-main"
       :data-bleed="route.meta.bleed ? '' : undefined"
       :data-bare="route.meta.bare ? '' : undefined"
-      class="flex min-h-0 flex-1 flex-col overflow-y-auto lg:pb-[env(safe-area-inset-bottom)] land:pb-[env(safe-area-inset-bottom)] print:block print:overflow-visible print:p-0"
-      :class="route.meta.bare ? '' : 'pr-[env(safe-area-inset-right)] pl-[env(safe-area-inset-left)]'"
+      class="flex min-h-0 flex-1 flex-col overflow-y-auto print:block print:overflow-visible print:p-0"
+      :class="[route.meta.bare ? '' : 'pr-[env(safe-area-inset-right)] pl-[env(safe-area-inset-left)]', route.meta.ownSafeArea ? '' : 'lg:pb-[env(safe-area-inset-bottom)] land:pb-[env(safe-area-inset-bottom)]']"
     >
       <RouterView />
     </main>

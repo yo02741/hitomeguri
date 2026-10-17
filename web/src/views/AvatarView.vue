@@ -232,6 +232,7 @@ function wear() {
             十連抽
           </button>
         </div>
+        <p class="m-0 flex shrink-0 justify-end max-lg:mx-auto max-lg:-mt-6 max-lg:w-full max-lg:max-w-[440px]"><RouterLink to="/play" class="text-body-sm font-bold text-sub no-underline hover:text-ink pointer-coarse:-my-3 pointer-coarse:py-3">帶旅人去走走</RouterLink></p>
       </div>
 
       <!-- 衣櫃 -->

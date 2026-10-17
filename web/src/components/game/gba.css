@@ -1,0 +1,176 @@
+/*
+ * 番外篇（/play）的介面共用樣式：只在 PlayView 載入（跟遊戲同一個 chunk）。
+ * 顏色只用 --color-px-*（theme.css）；尺寸用 --u（一個邏輯像素是幾 CSS px，跟著畫面的放大倍數）。
+ */
+.play-root {
+  /* DotGothic16 只在 /play 載入（game/ui/font.ts）；中文缺字落到 Noto Sans TC */
+  --font-game: 'DotGothic16', var(--font-sans);
+  --font-game-ja: 'DotGothic16', var(--font-ja);
+  --u: 2px;
+}
+
+/* GBA 風的框：白底、外面一圈墨色、裡面再一圈細線（雙線框） */
+.gba-box {
+  color: var(--color-px-ink);
+  background: var(--color-px-white);
+  border: max(2px, var(--u)) solid var(--color-px-ink);
+  border-radius: max(2px, var(--u));
+  box-shadow:
+    inset 0 0 0 max(1px, var(--u)) var(--color-px-white),
+    inset 0 0 0 max(2px, calc(var(--u) * 2)) var(--color-px-ink-2),
+    0 max(1px, var(--u)) 0 color-mix(in oklab, var(--color-px-ink) 40%, transparent);
+}
+
+/* ---------- 旅人手帳的頁 ---------- */
+.nb-page {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75em;
+}
+.nb-empty {
+  margin: 0;
+  color: var(--color-px-stone-3);
+}
+.nb-dl {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 0.35em 1.2em;
+  margin: 0;
+}
+.nb-dl dt {
+  color: var(--color-px-stone-3);
+}
+.nb-dl dd {
+  margin: 0;
+}
+.nb-sub {
+  font-size: 0.8em;
+  color: var(--color-px-stone-3);
+}
+.nb-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  min-height: 2.2em;
+  padding: 0 0.9em;
+  font: inherit;
+  color: var(--color-px-ink);
+  background: var(--color-px-paper);
+  border: 2px solid var(--color-px-ink);
+  border-radius: 4px;
+  box-shadow: 0 2px 0 var(--color-px-ink);
+}
+.nb-btn:active {
+  transform: translateY(2px);
+  box-shadow: none;
+}
+@media (pointer: coarse) {
+  .nb-btn {
+    min-height: 44px;
+  }
+}
+.play-root .gba-box :focus-visible {
+  outline: 2px solid var(--color-px-ink);
+  outline-offset: 2px;
+}
+.nb-src {
+  color: var(--color-px-sea-3);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+/* ---------- 遊戲裡的面板（SystemsLayer：店、房間、目的地、照片…） ---------- */
+.sys-box {
+  position: absolute;
+  inset: calc(var(--u) * 4);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding: max(2px, calc(var(--u) * 2));
+}
+.is-full > .sys-box,
+.is-full .sys-box {
+  position: relative;
+  inset: auto;
+  height: 100%;
+}
+.sys-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1em;
+  padding: 0.5em 0.9em 0.4em 1em;
+  border-bottom: 2px solid var(--color-px-stone-1);
+}
+.sys-title {
+  margin: 0;
+  font-size: 1.05em;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  overflow-wrap: anywhere;
+}
+.sys-body {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 0.7em 1em 0.9em;
+}
+.sys-foot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6em;
+  padding: 0.5em 1em 0.7em;
+  border-top: 2px solid var(--color-px-stone-1);
+}
+.sys-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15em;
+}
+.sys-row {
+  display: flex;
+  align-items: center;
+  gap: 0.6em;
+  width: 100%;
+  min-height: 2.2em;
+  padding: 0.2em 0.5em;
+  font: inherit;
+  color: inherit;
+  text-align: left;
+  background: none;
+  border: 0;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.sys-row[aria-current='true'] {
+  background: var(--color-px-paper);
+}
+@media (pointer: coarse) {
+  .sys-row {
+    min-height: 44px;
+  }
+}
+.sys-row-main {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  flex: 1;
+}
+.sys-row-end {
+  margin-left: auto;
+  padding-left: 0.8em;
+  white-space: nowrap;
+}
+.sys-status {
+  margin: 0;
+  min-height: 1.5em;
+}
+.play-root .sys-layer :focus-visible {
+  outline: 2px solid var(--color-px-ink);
+  outline-offset: 2px;
+}

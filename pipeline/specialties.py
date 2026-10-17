@@ -278,7 +278,7 @@ def seed_specialties(prefs: list[str]) -> str:
         pick_summary,
         reading_from_lead,
         summary_extracts,
-        zh_label,
+        zh_name,
     )
 
     today = dt.date.today().isoformat()
@@ -344,7 +344,7 @@ def seed_specialties(prefs: list[str]) -> str:
             if not kana and ja_title:
                 kana = reading_from_lead(extracts["jawiki"].get(ja_title, ""), ja)
                 kana_source = "wikipedia" if kana else None
-        zh = zh_label(labels, ja)
+        zh = zh_name(labels, ent.sitelinks if ent else {}, ja)
         summary = None
         sources: list[Source] = []
         if d.maff:

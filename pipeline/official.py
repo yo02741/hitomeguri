@@ -12,7 +12,7 @@ import json
 
 from pipeline.major import OFFICIAL_SOURCES, log
 from pipeline.paths import OFFICIAL_DIR
-from pipeline.sources.okinawastory import OfficialSpot
+from pipeline.sources.okinawastory import OfficialSpot, clean
 
 
 def _order(o: OfficialSpot) -> tuple[int, str]:
@@ -33,7 +33,9 @@ def load_official(pref: str) -> list[OfficialSpot] | None:
     if not path.exists():
         return None
     body = json.loads(path.read_text(encoding="utf-8"))
-    return [OfficialSpot(**row) for row in body["items"]]
+    items = [OfficialSpot(**row) for row in body["items"]]
+    # 舊的存檔：おきなわ物語的標題照新的規則整理（拿掉標語、不收行程與租借的頁）
+    return [c for o in items if (c := clean(o) if o.source == "okinawastory" else o)]
 
 
 def seed_official(prefs: list[str]) -> str:

@@ -1,0 +1,8199 @@
+{
+ "pref": "okinawa",
+ "spots": [
+  {
+   "id": "okinawastory-1011",
+   "n": "T ギャラリア 沖縄",
+   "z": "T ギャラリア 沖縄",
+   "lat": 26.22295,
+   "lng": 127.69721,
+   "k": "major",
+   "f": 0,
+   "s": 79.5,
+   "c": "購物",
+   "m": "472018",
+   "st": "node-6540583670",
+   "name": {
+    "ja": "T ギャラリア 沖縄",
+    "zh_tw": "T ギャラリア 沖縄"
+   },
+   "nearest": [
+    {
+     "name": {
+      "ja": "おもろまち",
+      "kana": "おもろまち",
+      "romaji": "Omoromachi",
+      "en": "Omoromachi"
+     },
+     "distance_m": 120
+    },
+    {
+     "name": {
+      "ja": "安里",
+      "kana": "あさと",
+      "romaji": "Asato",
+      "en": "Asato"
+     },
+     "distance_m": 700
+    }
+   ],
+   "src": "https://www.okinawastory.jp/spot/1011"
+  },
+  {
+   "id": "okinawastory-1080",
+   "n": "ニライビーチ",
+   "z": "ニライビーチ",
+   "lat": 26.41404,
+   "lng": 127.71461,
+   "k": "major",
+   "f": 0,
+   "s": 74.8,
+   "h": "にらいびーち",
+   "r": "Niraibichi",
+   "c": "海灘",
+   "m": "473243",
+   "name": {
+    "ja": "ニライビーチ",
+    "kana": "にらいびーち",
+    "romaji": "Niraibichi",
+    "zh_tw": "ニライビーチ"
+   },
+   "nearest": [],
+   "src": "https://www.okinawastory.jp/spot/1080"
+  },
+  {
+   "id": "okinawastory-1097",
+   "n": "ブセナビーチ",
+   "z": "ブセナビーチ",
+   "lat": 26.54043,
+   "lng": 127.9358,
+   "k": "major",
+   "f": 0,
+   "s": 71.6,
+   "h": "ぶせなびーち",
+   "r": "Busenabichi",
+   "c": "海灘",
+   "m": "472093",
+   "name": {
+    "ja": "ブセナビーチ",
+    "kana": "ぶせなびーち",
+    "romaji": "Busenabichi",
+    "zh_tw": "ブセナビーチ"
+   },
+   "nearest": [],
+   "src": "https://www.okinawastory.jp/spot/1097"
+  },
+  {
+   "id": "okinawastory-1100",
+   "n": "新原ビーチ",
+   "z": "新原ビーチ",
+   "lat": 26.13377,
+   "lng": 127.78944,
+   "k": "major",
+   "f": 0,
+   "s": 72.5,
+   "c": "海灘",
+   "m": "472158",
+   "name": {
+    "ja": "新原ビーチ",
+    "zh_tw": "新原ビーチ"
+   },
+   "nearest": [],
+   "src": "https://www.okinawastory.jp/spot/1100"
+  },
+  {
+   "id": "okinawastory-1103",
+   "n": "伊計ビーチ",
+   "z": "伊計ビーチ",
+   "lat": 26.38794,
+   "lng": 127.99089,
+   "k": "major",
+   "f": 0,
+   "s": 68.8,
+   "c": "海灘",
+   "m": "472131",
+   "name": {
+    "ja": "伊計ビーチ",
+    "zh_tw": "伊計ビーチ"
+   },
+   "nearest": [],
+   "src": "https://www.okinawastory.jp/spot/1103"
+  },
+  {
+   "id": "okinawastory-1104",
+   "n": "万座ビーチ",
+   "z": "万座ビーチ",
+   "lat": 26.50816,
+   "lng": 127.8581,
+   "k": "major",
+   "f": 0,
+   "s": 79,
+   "c": "海灘",
+   "m": "473111",
+   "name": {
+    "ja": "万座ビーチ",
+    "zh_tw": "万座ビーチ"
+   },
+   "nearest": [],
+   "src": "https://www.okinawastory.jp/spot/1104"
+  },
+  {
+   "id": "okinawastory-1106",
+   "n": "かりゆしビーチ",
+   "z": "かりゆしビーチ",
+   "lat": 26.53191,
+   "lng": 127.92937,
+   "k": "major",
+   "f": 0,
+   "s": 63.8,
+   "h": "かりゆしびーち",
+   "r": "Kariyushibichi",
+   "c": "海灘",
+   "m": "472093",
+   "name": {
+    "ja": "かりゆしビーチ",
+    "kana": "かりゆしびーち",
+    "romaji": "Kariyushibichi",
+    "zh_tw": "かりゆしビーチ"
+   },
+   "nearest": [],
+   "src": "https://www.okinawastory.jp/spot/1106"
+  },
+  {
+   "id": "okinawastory-1108",
+   "n": "瀬底ビーチ",
+   "z": "瀬底ビーチ",
+   "lat": 26.64992,
+   "lng": 127.85613,
+   "k": "major",
+   "f": 0,
+   "s": 79.8,
+   "c": "海灘",
+   "m": "473081",
+   "name": {
+    "ja": "瀬底ビーチ",
+    "zh_tw": "瀬底ビーチ"
+   },
+   "nearest": [],
+   "src": "https://www.okinawastory.jp/spot/1108"
+  },
+  {
+   "id": "okinawastory-1117",
+   "n": "ルネッサンスビーチ",
+   "z": "ルネッサンスビーチ",
+   "lat": 26.43525,
+   "lng": 127.78885,
+   "k": "major",
+   "f": 0,
+   "s": 57.8,
+   "h": "るねっさんすびーち",
+   "r": "Runessansubichi",
+   "c": "海灘",
+   "m": "473111",
+   "name": {
+    "ja": "ルネッサンスビーチ",
+    "kana": "るねっさんすびーち",
+    "romaji": "Runessansubichi",
+    "zh_tw": "ルネッサンスビーチ"
+   },
+   "nearest": [],
+   "src": "https://www.okinawastory.jp/spot/1117"
+  },
+  {
+   "id": "okinawastory-1121",
+   "n": "喜瀬ビーチ",
+   "z": "喜瀬ビーチ",
+   "lat": 26.53628,
+   "lng": 127.9452,
+   "k": "major",
+   "f": 0,
+   "s": 62.8,
+   "c": "海灘",
+   "m": "472093",
+   "name": {
+    "ja": "喜瀬ビーチ",
+    "zh_tw": "喜瀬ビーチ"
+   },
+   "nearest": [],
+   "src": "https://www.okinawastory.jp/spot/1121"
+  },
+  {
+   "id": "okinawastory-1127",
+   "n": "幸喜ビーチ",
+   "z": "幸喜ビーチ",
+   "lat": 26.54248,
+   "lng": 127.95137,
+   "k": "major",
+   "f": 0,
+   "s": 69.8,
+   "c": "海灘",
+   "m": "472093",
+   "name": {
+    "ja": "幸喜ビーチ",
+    "zh_tw": "幸喜ビーチ"
+   },
+   "nearest": [],
+   "src": "https://www.okinawastory.jp/spot/1127"
+  },
+  {
+   "id": "okinawastory-1134",
+   "n": "フサキビーチ",
+   "z": "フサキビーチ",
+   "lat": 24.37075,
+   "lng": 124.1142,
+   "k": "major",
+   "f": 0,
+   "s": 76.4,
+   "h": "ふさきびーち",
+   "r": "Fusakibichi",
+   "c": "海灘",
+   "m": "472077",
+   "name": {
+    "ja": "フサキビーチ",
+    "kana": "ふさきびーち",
+    "romaji": "Fusakibichi",
+    "zh_tw": "フサキビーチ"
+   },
+   "nearest": [],
+   "src": "https://www.okinawastory.jp/spot/1134"
+  },
+  {
+   "id": "okinawastory-1138",
+   "n": "シギラビーチ",
+   "z": "シギラビーチ",
+   "lat": 24.72095,
+   "lng": 125.34111,
+   "k": "major",
+   "f": 0,
+   "s": 75,
+   "h": "しぎらびーち",
+   "r": "Shigirabichi",
+   "c": "海灘",
+   "m": "472140",
+   "name": {
+    "ja": "シギラビーチ",
+    "kana": "しぎらびーち",
+    "romaji": "Shigirabichi",
+    "zh_tw": "シギラビーチ"
+   },
+   "nearest": [],
+   "src": "https://www.okinawastory.jp/spot/1138"
+  },
+  {
+   "id": "okinawastory-1321",
+   "n": "古宇利大橋",
+   "z": "古宇利大橋",
+   "lat": 26.68773,
+   "lng": 128.01784,
+   "k": "major",
+   "f": 0,
+   "s": 80,
+   "c": "橋",
+   "m": "473065",
+   "name": {
+    "ja": "古宇利大橋",
+    "zh_tw": "古宇利大橋"
+   },
+   "nearest": [],
+   "src": "https://www.okinawastory.jp/spot/1321"
+  },
+  {
+   "id": "okinawastory-1323",
+   "n": "ニライ橋・カナイ橋",
+   "z": "ニライ橋・カナイ橋",
+   "lat": 26.16724,
+   "lng": 127.81512,
+   "k": "major",
+   "f": 0,
+   "s": 78.2,
+   "c": "橋",
+   "m": "472158",
+   "name": {
+    "ja": "ニライ橋・カナイ橋",
+    "zh_tw": "ニライ橋・カナイ橋"
+   },
+   "nearest": [],
+   "src": "https://www.okinawastory.jp/spot/1323"
+  },
+  {
+   "id": "okinawastory-1331",
+   "n": "琉球ガラス村",
+   "z": "琉球ガラス村",
+   "lat": 26.09761,
+   "lng": 127.67717,
+   "k": "major",
+   "f": 0,
+   "s": 74.2,
+   "c": "購物",
+   "m": "472107",
+   "name": {
+    "ja": "琉球ガラス村",
+    "zh_tw": "琉球ガラス村"
+   },
+   "nearest": [],
+   "src": "https://www.okinawastory.jp/spot/1331"
+  },
+  {
+   "id": "okinawastory-1348",
+   "n": "備瀬のフクギ並木",
+   "z": "備瀬のフクギ並木",
+   "lat": 26.70138,
+   "lng": 127.88001,
+   "k": "major",
+   "f": 0,
+   "s": 78.8,
+   "m": "473081",
+   "name": {
+    "ja": "備瀬のフクギ並木",
+    "zh_tw": "備瀬のフクギ並木"
+   },
+   "nearest": [],
+   "src": "https://www.okinawastory.jp/spot/1348"
+  },
+  {
+   "id": "okinawastory-1357",
+   "n": "ブセナ海中公園",
+   "z": "ブセナ海中公園",
+   "lat": 26.5422,
+   "lng": 127.93222,
+   "k": "major",
+   "f": 0,
+   "s": 77,
+   "c": "公園",
+   "m": "472093",
+   "name": {
+    "ja": "ブセナ海中公園",
+    "zh_tw": "ブセナ海中公園"
+   },
+   "nearest": [],
+   "src": "https://www.okinawastory.jp/spot/1357"
+  },
+  {
+   "id": "okinawastory-1414",
+   "n": "知念岬公園",
+   "z": "知念岬公園",
+   "lat": 26.16673,
+   "lng": 127.82973,
+   "k": "major",
+   "f": 0,
+   "s": 78.3,
+   "c": "公園",
+   "m": "472158",
+   "name": {
+    "ja": "知念岬公園",
+    "zh_tw": "知念岬公園"
+   },
+   "nearest": [],
+   "src": "https://www.okinawastory.jp/spot/1414"
+  },
+  {
+   "id": "okinawastory-600004452",
+   "n": "糸満漁業協同組合　お魚センター",
+   "z": "糸満漁業協同組合　お魚センター",
+   "lat": 26.13809,
+   "lng": 127.66135,
+   "k": "major",
+   "f": 0,
+   "s": 69.3,
+   "c": "購物",
+   "m": "472107",
+   "name": {
+    "ja": "糸満漁業協同組合　お魚センター",
+    "zh_tw": "糸満漁業協同組合　お魚センター"
+   },
+   "nearest": [],
+   "src": "https://www.okinawastory.jp/spot/600004452"
+  },
+  {
+   "id": "okinawastory-600005913",
+   "n": "サンマリーナビーチ",
+   "z": "サンマリーナビーチ",
+   "lat": 26.46107,
+   "lng": 127.81185,
+   "k": "major",
+   "f": 0,
+   "s": 73.2,
+   "h": "さんまりーなびーち",
+   "r": "Sanmarinabichi",
+   "c": "海灘",
+   "m": "473111",
+   "name": {
+    "ja": "サンマリーナビーチ",
+    "kana": "さんまりーなびーち",
+    "romaji": "Sanmarinabichi",
+    "zh_tw": "サンマリーナビーチ"
+   },
+   "nearest": [],
+   "src": "https://www.okinawastory.jp/spot/600005913"
+  },
+  {
+   "id": "okinawastory-600006147",
+   "n": "水納ビーチ",
+   "z": "水納ビーチ",
+   "lat": 26.6502,
+   "lng": 127.81681,
+   "k": "major",
+   "f": 0,
+   "s": 60.8,
+   "c": "海灘",
+   "m": "473081",
+   "name": {
+    "ja": "水納ビーチ",
+    "zh_tw": "水納ビーチ"
+   },
+   "nearest": [],
+   "src": "https://www.okinawastory.jp/spot/600006147"
+  },
+  {
+   "id": "okinawastory-600006149",
+   "n": "ミッションビーチ",
+   "z": "ミッションビーチ",
+   "lat": 26.51879,
+   "lng": 127.90736,
+   "k": "major",
+   "f": 0,
+   "s": 57,
+   "h": "みっしょんびーち",
+   "r": "Misshonbichi",
+   "c": "海灘",
+   "m": "473111",
+   "name": {
+    "ja": "ミッションビーチ",
+    "kana": "みっしょんびーち",
+    "romaji": "Misshonbichi",
+    "zh_tw": "ミッションビーチ"
+   },
+   "nearest": [],
+   "src": "https://www.okinawastory.jp/spot/600006149"
+  },
+  {
+   "id": "okinawastory-600006167",
+   "n": "残波ビーチ",
+   "z": "残波ビーチ",
+   "lat": 26.4357,
+   "lng": 127.71609,
+   "k": "major",
+   "f": 0,
+   "s": 66.7,
+   "c": "海灘",
+   "m": "473243",
+   "name": {
+    "ja": "残波ビーチ",
+    "zh_tw": "残波ビーチ"
+   },
+   "nearest": [],
+   "src": "https://www.okinawastory.jp/spot/600006167"
+  },
+  {
+   "id": "okinawastory-600006179",
+   "n": "21世紀の森ビーチ",
+   "z": "21世紀の森ビーチ",
+   "lat": 26.59112,
+   "lng": 127.97082,
+   "k": "major",
+   "f": 0,
+   "s": 74.9,
+   "c": "海灘",
+   "m": "472093",
+   "name": {
+    "ja": "21世紀の森ビーチ",
+    "zh_tw": "21世紀の森ビーチ"
+   },
+   "nearest": [],
+   "src": "https://www.okinawastory.jp/spot/600006179"
+  },
+  {
+   "id": "okinawastory-600006532",
+   "n": "おんなの駅　なかゆくい市場",
+   "z": "おんなの駅　なかゆくい市場",
+   "lat": 26.43606,
+   "lng": 127.79472,
+   "k": "major",
+   "f": 0,
+   "s": 63.5,
+   "c": "市場",
+   "m": "473111",
+   "name": {
+    "ja": "おんなの駅　なかゆくい市場",
+    "zh_tw": "おんなの駅　なかゆくい市場"
+   },
+   "nearest": [],
+   "src": "https://www.okinawastory.jp/spot/600006532"
+  },
+  {
+   "id": "okinawastory-600007516",
+   "n": "石垣市指定海水浴場　底地ビーチ",
+   "z": "石垣市指定海水浴場　底地ビーチ",
+   "lat": 24.46584,
+   "lng": 124.12395,
+   "k": "major",
+   "f": 0,
+   "s": 76,
+   "c": "海灘",
+   "m": "472077",
+   "name": {
+    "ja": "石垣市指定海水浴場　底地ビーチ",
+    "zh_tw": "石垣市指定海水浴場　底地ビーチ"
+   },
+   "nearest": [],
+   "src": "https://www.okinawastory.jp/spot/600007516"
+  },
+  {
+   "id": "okinawastory-600007643",
+   "n": "豊崎美らSUNビーチ",
+   "z": "豊崎美らSUNビーチ",
+   "lat": 26.15684,
+   "lng": 127.64772,
+   "k": "major",
+   "f": 0,
+   "s": 71.8,
+   "c": "海灘",
+   "m": "472123",
+   "name": {
+    "ja": "豊崎美らSUNビーチ",
+    "zh_tw": "豊崎美らSUNビーチ"
+   },
+   "nearest": [],
+   "src": "https://www.okinawastory.jp/spot/600007643"
+  },
+  {
+   "id": "okinawastory-600008001",
+   "n": "ぬちまーす観光製塩ファクトリー",
+   "z": "ぬちまーす観光製塩ファクトリー",
+   "lat": 26.36024,
+   "lng": 127.99105,
+   "k": "major",
+   "f": 0,
+   "s": 67.5,
+   "c": "購物",
+   "m": "472131",
+   "name": {
+    "ja": "ぬちまーす観光製塩ファクトリー",
+    "zh_tw": "ぬちまーす観光製塩ファクトリー"
+   },
+   "nearest": [],
+   "src": "https://www.okinawastory.jp/spot/600008001"
+  },
+  {
+   "id": "okinawastory-600008290",
+   "n": "いこいの駅いずみ　ハブとマング－スショ－",
+   "z": "いこいの駅いずみ　ハブとマング－スショ－",
+   "lat": 26.64434,
+   "lng": 127.95752,
+   "k": "major",
+   "f": 0,
+   "s": 59.5,
+   "m": "473081",
+   "name": {
+    "ja": "いこいの駅いずみ　ハブとマング－スショ－",
+    "zh_tw": "いこいの駅いずみ　ハブとマング－スショ－"
+   },
+   "nearest": [],
+   "src": "https://www.okinawastory.jp/spot/600008290"
+  },
+  {
+   "id": "okinawastory-600008334",
+   "n": "ジュラ紀温泉　美ら海の湯",
+   "z": "ジュラ紀温泉　美ら海の湯",
+   "lat": 26.69875,
+   "lng": 127.87927,
+   "k": "major",
+   "f": 0,
+   "s": 52.7,
+   "m": "473081",
+   "name": {
+    "ja": "ジュラ紀温泉　美ら海の湯",
+    "zh_tw": "ジュラ紀温泉　美ら海の湯"
+   },
+   "nearest": [],
+   "src": "https://www.okinawastory.jp/spot/600008334"
+  },
+  {
+   "id": "okinawastory-600008535",
+   "n": "百年古家　大家",
+   "z": "百年古家　大家",
+   "lat": 26.621,
+   "lng": 127.96367,
+   "k": "major",
+   "f": 0,
+   "s": 68.2,
+   "m": "472093",
+   "name": {
+    "ja": "百年古家　大家",
+    "zh_tw": "百年古家　大家"
+   },
+   "nearest": [],
+   "src": "https://www.okinawastory.jp/spot/600008535"
+  },
+  {
+   "id": "okinawastory-600009256",
+   "n": "源河源吉琉球ガラス工房",
+   "z": "源河源吉琉球ガラス工房",
+   "lat": 26.40626,
+   "lng": 127.748,
+   "k": "major",
+   "f": 0,
+   "s": 61.2,
+   "c": "購物",
+   "m": "473243",
+   "name": {
+    "ja": "源河源吉琉球ガラス工房",
+    "zh_tw": "源河源吉琉球ガラス工房"
+   },
+   "nearest": [],
+   "src": "https://www.okinawastory.jp/spot/600009256"
+  },
+  {
+   "id": "okinawastory-600009616",
+   "n": "タイガービーチ",
+   "z": "タイガービーチ",
+   "lat": 26.4537,
+   "lng": 127.80558,
+   "k": "major",
+   "f": 0,
+   "s": 64.7,
+   "h": "たいがーびーち",
+   "r": "Taigabichi",
+   "c": "海灘",
+   "m": "473111",
+   "name": {
+    "ja": "タイガービーチ",
+    "kana": "たいがーびーち",
+    "romaji": "Taigabichi",
+    "zh_tw": "タイガービーチ"
+   },
+   "nearest": [],
+   "src": "https://www.okinawastory.jp/spot/600009616"
+  },
+  {
+   "id": "okinawastory-600010161",
+   "n": "CAVE OKINAWA",
+   "z": "CAVE OKINAWA",
+   "lat": 26.42019,
+   "lng": 127.8095,
+   "k": "major",
+   "f": 0,
+   "s": 70.2,
+   "m": "472131",
+   "name": {
+    "ja": "CAVE OKINAWA",
+    "zh_tw": "CAVE OKINAWA"
+   },
+   "nearest": [],
+   "src": "https://www.okinawastory.jp/spot/600010161"
+  },
+  {
+   "id": "okinawastory-600010708",
+   "n": "PANZA沖縄",
+   "z": "PANZA沖縄",
+   "lat": 26.46223,
+   "lng": 127.8131,
+   "k": "major",
+   "f": 0,
+   "s": 65.8,
+   "m": "473111",
+   "name": {
+    "ja": "PANZA沖縄",
+    "zh_tw": "PANZA沖縄"
+   },
+   "nearest": [],
+   "src": "https://www.okinawastory.jp/spot/600010708"
+  },
+  {
+   "id": "okinawastory-600011355",
+   "n": "オキナワ ハナサキマルシェ",
+   "z": "オキナワ ハナサキマルシェ",
+   "lat": 26.68226,
+   "lng": 127.88352,
+   "k": "major",
+   "f": 0,
+   "s": 65,
+   "h": "おきなわはなさきまるしぇ",
+   "r": "Okinawahanasakimarushe",
+   "c": "購物",
+   "m": "473081",
+   "name": {
+    "ja": "オキナワ ハナサキマルシェ",
+    "kana": "おきなわはなさきまるしぇ",
+    "romaji": "Okinawahanasakimarushe",
+    "zh_tw": "オキナワ ハナサキマルシェ"
+   },
+   "nearest": [],
+   "src": "https://www.okinawastory.jp/spot/600011355"
+  },
+  {
+   "id": "okinawastory-600011621",
+   "n": "海ぶどう農園　海ん道 ~uminchi～",
+   "z": "海ぶどう農園　海ん道 ~uminchi～",
+   "lat": 26.11432,
+   "lng": 127.66527,
+   "k": "major",
+   "f": 0,
+   "s": 65.2,
+   "m": "472107",
+   "name": {
+    "ja": "海ぶどう農園　海ん道 ~uminchi～",
+    "zh_tw": "海ぶどう農園　海ん道 ~uminchi～"
+   },
+   "nearest": [],
+   "src": "https://www.okinawastory.jp/spot/600011621"
+  },
+  {
+   "id": "okinawastory-600011642",
+   "n": "古宇利ビーチ",
+   "z": "古宇利ビーチ",
+   "lat": 26.69464,
+   "lng": 128.02141,
+   "k": "major",
+   "f": 0,
+   "s": 78.7,
+   "c": "海灘",
+   "m": "473065",
+   "name": {
+    "ja": "古宇利ビーチ",
+    "zh_tw": "古宇利ビーチ"
+   },
+   "nearest": [],
+   "src": "https://www.okinawastory.jp/spot/600011642"
+  },
+  {
+   "id": "okinawastory-600011821",
+   "n": "バンタカフェ by 星野リゾート",
+   "z": "バンタカフェ by 星野リゾート",
+   "lat": 26.41768,
+   "lng": 127.71403,
+   "k": "major",
+   "f": 0,
+   "s": 57.6,
+   "c": "岬",
+   "m": "473243",
+   "name": {
+    "ja": "バンタカフェ by 星野リゾート",
+    "zh_tw": "バンタカフェ by 星野リゾート"
+   },
+   "nearest": [],
+   "src": "https://www.okinawastory.jp/spot/600011821"
+  },
+  {
+   "id": "okinawastory-600013257",
+   "n": "イーアス沖縄豊崎",
+   "z": "イーアス沖縄豊崎",
+   "lat": 26.1582,
+   "lng": 127.65085,
+   "k": "major",
+   "f": 0,
+   "s": 68,
+   "c": "購物",
+   "m": "472123",
+   "name": {
+    "ja": "イーアス沖縄豊崎",
+    "zh_tw": "イーアス沖縄豊崎"
+   },
+   "nearest": [],
+   "src": "https://www.okinawastory.jp/spot/600013257"
+  },
+  {
+   "id": "okinawastory-600016257",
+   "n": "釣って見つけるぼうけんの国 沖縄",
+   "z": "釣って見つけるぼうけんの国 沖縄",
+   "lat": 26.43975,
+   "lng": 127.8294,
+   "k": "major",
+   "f": 0,
+   "s": 67.2,
+   "m": "472131",
+   "name": {
+    "ja": "釣って見つけるぼうけんの国 沖縄",
+    "zh_tw": "釣って見つけるぼうけんの国 沖縄"
+   },
+   "nearest": [],
+   "src": "https://www.okinawastory.jp/spot/600016257"
+  },
+  {
+   "id": "okinawastory-600021066",
+   "n": "古宇利島の駅ソラハシ",
+   "z": "古宇利島の駅ソラハシ",
+   "lat": 26.6963,
+   "lng": 128.02051,
+   "k": "major",
+   "f": 0,
+   "s": 53.8,
+   "c": "購物",
+   "m": "473065",
+   "name": {
+    "ja": "古宇利島の駅ソラハシ",
+    "zh_tw": "古宇利島の駅ソラハシ"
+   },
+   "nearest": [],
+   "src": "https://www.okinawastory.jp/spot/600021066"
+  },
+  {
+   "id": "okinawastory-600021739",
+   "n": "ヨナーズ",
+   "z": "ヨナーズ",
+   "lat": 26.1545,
+   "lng": 127.65259,
+   "k": "major",
+   "f": 0,
+   "s": 55.1,
+   "h": "よなーず",
+   "r": "Yonazu",
+   "c": "購物",
+   "m": "472123",
+   "name": {
+    "ja": "ヨナーズ",
+    "kana": "よなーず",
+    "romaji": "Yonazu",
+    "zh_tw": "ヨナーズ"
+   },
+   "nearest": [],
+   "src": "https://www.okinawastory.jp/spot/600021739"
+  },
+  {
+   "id": "osm-node-1068014185",
+   "n": "おきなわワールド",
+   "z": "おきなわワールド",
+   "lat": 26.13983,
+   "lng": 127.74901,
+   "k": "major",
+   "f": 0,
+   "s": 77.8,
+   "h": "おきなわわーるど",
+   "r": "Okinawawarudo",
+   "c": "博物館",
+   "m": "472158",
+   "name": {
+    "ja": "おきなわワールド",
+    "kana": "おきなわわーるど",
+    "romaji": "Okinawawarudo",
+    "zh_tw": "おきなわワールド",
+    "en": "Okinawa World"
+   },
+   "nearest": [],
+   "src": "https://www.openstreetmap.org/node/1068014185"
+  },
+  {
+   "id": "osm-node-11656238814",
+   "n": "リトルユニバースOKINAWA",
+   "z": "リトルユニバースOKINAWA",
+   "lat": 26.15643,
+   "lng": 127.65082,
+   "k": "major",
+   "f": 0,
+   "s": 58,
+   "m": "472123",
+   "name": {
+    "ja": "リトルユニバースOKINAWA",
+    "zh_tw": "リトルユニバースOKINAWA"
+   },
+   "nearest": [],
+   "src": "https://www.openstreetmap.org/node/11656238814"
+  },
+  {
+   "id": "osm-node-1993614008",
+   "n": "海中道路",
+   "z": "海中道路",
+   "lat": 26.33193,
+   "lng": 127.92231,
+   "k": "major",
+   "f": 0,
+   "s": 77.5,
+   "c": "展望",
+   "m": "472131",
+   "name": {
+    "ja": "海中道路",
+    "zh_tw": "海中道路"
+   },
+   "nearest": [],
+   "src": "https://www.openstreetmap.org/node/1993614008"
+  },
+  {
+   "id": "osm-node-1993614054",
+   "n": "果報バンタ",
+   "z": "果報崖/幸福岬",
+   "lat": 26.36084,
+   "lng": 127.99223,
+   "k": "major",
+   "f": 0,
+   "s": 79.1,
+   "h": "かふうばんた",
+   "r": "Kafubanta",
+   "c": "展望",
+   "m": "472131",
+   "name": {
+    "ja": "果報バンタ",
+    "kana": "かふうばんた",
+    "romaji": "Kafubanta",
+    "zh_tw": "果報崖/幸福岬",
+    "en": "KaFoo Cliff"
+   },
+   "nearest": [],
+   "src": "https://www.openstreetmap.org/node/1993614054"
+  },
+  {
+   "id": "osm-node-2004524869",
+   "n": "ビオスの丘",
+   "z": "Bios之丘",
+   "lat": 26.42167,
+   "lng": 127.79686,
+   "k": "major",
+   "f": 0,
+   "s": 78,
+   "c": "主題樂園",
+   "m": "472131",
+   "name": {
+    "ja": "ビオスの丘",
+    "zh_tw": "Bios之丘",
+    "en": "Bios no Oka"
+   },
+   "nearest": [],
+   "src": "https://www.openstreetmap.org/node/2004524869"
+  },
+  {
+   "id": "osm-node-4592400200",
+   "n": "古宇利オーシャンタワー",
+   "z": "古宇利海洋塔",
+   "lat": 26.70013,
+   "lng": 128.02416,
+   "k": "major",
+   "f": 0,
+   "s": 71.9,
+   "c": "展望",
+   "m": "473065",
+   "name": {
+    "ja": "古宇利オーシャンタワー",
+    "zh_tw": "古宇利海洋塔",
+    "en": "Kouri Ocean Tower"
+   },
+   "nearest": [],
+   "src": "https://www.openstreetmap.org/node/4592400200"
+  },
+  {
+   "id": "osm-node-4918629222",
+   "n": "エメラルドビーチ",
+   "z": "エメラルドビーチ",
+   "lat": 26.69955,
+   "lng": 127.87844,
+   "k": "major",
+   "f": 0,
+   "s": 75.3,
+   "h": "えめらるどびーち",
+   "r": "Emerarudobichi",
+   "c": "海灘",
+   "m": "473081",
+   "name": {
+    "ja": "エメラルドビーチ",
+    "kana": "えめらるどびーち",
+    "romaji": "Emerarudobichi",
+    "zh_tw": "エメラルドビーチ"
+   },
+   "nearest": [],
+   "src": "https://www.openstreetmap.org/node/4918629222"
+  },
+  {
+   "id": "osm-node-5885062948",
+   "n": "百名ビーチ",
+   "z": "百名ビーチ",
+   "lat": 26.13923,
+   "lng": 127.79619,
+   "k": "major",
+   "f": 0,
+   "s": 76.1,
+   "c": "展望",
+   "m": "472158",
+   "name": {
+    "ja": "百名ビーチ",
+    "zh_tw": "百名ビーチ",
+    "en": "Hyakuna Beach"
+   },
+   "nearest": [],
+   "src": "https://www.openstreetmap.org/node/5885062948"
+  },
+  {
+   "id": "osm-node-6055120123",
+   "n": "瀬長島展望エリア",
+   "z": "瀬長島展望エリア",
+   "lat": 26.17464,
+   "lng": 127.64266,
+   "k": "major",
+   "f": 0,
+   "s": 54.4,
+   "c": "展望",
+   "m": "472123",
+   "name": {
+    "ja": "瀬長島展望エリア",
+    "zh_tw": "瀬長島展望エリア",
+    "en": "Senaga island view area"
+   },
+   "nearest": [],
+   "src": "https://www.openstreetmap.org/node/6055120123"
+  },
+  {
+   "id": "osm-way-1213088169",
+   "n": "ナゴパイナップルパーク",
+   "z": "名護鳳梨園",
+   "lat": 26.6166,
+   "lng": 127.97055,
+   "k": "major",
+   "f": 0,
+   "s": 76.5,
+   "h": "なごぱいなっぷるぱーく",
+   "r": "Nagopainappurupaku",
+   "c": "主題樂園",
+   "m": "472093",
+   "name": {
+    "ja": "ナゴパイナップルパーク",
+    "kana": "なごぱいなっぷるぱーく",
+    "romaji": "Nagopainappurupaku",
+    "zh_tw": "名護鳳梨園",
+    "en": "Nago Pineapple Park"
+   },
+   "nearest": [],
+   "src": "https://www.openstreetmap.org/way/1213088169"
+  },
+  {
+   "id": "osm-way-1349164051",
+   "n": "Gala青い海",
+   "z": "Gala青い海",
+   "lat": 26.40887,
+   "lng": 127.71642,
+   "k": "major",
+   "f": 0,
+   "s": 64.1,
+   "c": "主題樂園",
+   "m": "473243",
+   "name": {
+    "ja": "Gala青い海",
+    "zh_tw": "Gala青い海"
+   },
+   "nearest": [],
+   "src": "https://www.openstreetmap.org/way/1349164051"
+  },
+  {
+   "id": "osm-way-189820917",
+   "n": "体験王国むら咲むら",
+   "z": "體驗王國",
+   "lat": 26.40688,
+   "lng": 127.71864,
+   "k": "major",
+   "f": 0,
+   "s": 73.1,
+   "c": "主題樂園",
+   "m": "473243",
+   "name": {
+    "ja": "体験王国むら咲むら",
+    "zh_tw": "體驗王國",
+    "en": "Murasakimura  Historical Village"
+   },
+   "nearest": [],
+   "src": "https://www.openstreetmap.org/way/189820917"
+  },
+  {
+   "id": "osm-way-189820919",
+   "n": "やちむんの里",
+   "z": "やちむんの里",
+   "lat": 26.40694,
+   "lng": 127.75374,
+   "k": "major",
+   "f": 0,
+   "s": 66.2,
+   "c": "購物",
+   "m": "473243",
+   "name": {
+    "ja": "やちむんの里",
+    "zh_tw": "やちむんの里",
+    "en": "Yomitan Pottery Center"
+   },
+   "nearest": [],
+   "src": "https://www.openstreetmap.org/way/189820919"
+  },
+  {
+   "id": "wd-Q1013209",
+   "n": "中城城",
+   "z": "中城城",
+   "lat": 26.28389,
+   "lng": 127.80139,
+   "k": "major",
+   "f": 1,
+   "s": 170.6,
+   "h": "なかぐすくじょう",
+   "r": "Nakagusukujo",
+   "c": "城",
+   "d": "世界遺產",
+   "m": "473286",
+   "name": {
+    "ja": "中城城",
+    "kana": "なかぐすくじょう",
+    "romaji": "Nakagusukujo",
+    "zh_tw": "中城城",
+    "en": "Nakagusuku Castle"
+   },
+   "summary": {
+    "text": "中城城（琉球語：中城／ナカグシク",
+    "lang": "zh",
+    "source_url": "https://zh.wikipedia.org/wiki/%E4%B8%AD%E5%9F%8E%E5%9F%8E",
+    "license": "CC BY-SA 4.0",
+    "fetched_at": "2026-09-28"
+   },
+   "nearest": [],
+   "src": "https://www.wikidata.org/wiki/Q1013209"
+  },
+  {
+   "id": "wd-Q105332680",
+   "n": "本部半島カルスト地域",
+   "z": "本部半島カルスト地域",
+   "lat": 26.67556,
+   "lng": 127.91389,
+   "k": "major",
+   "f": 0,
+   "s": 56.5,
+   "m": "473081",
+   "name": {
+    "ja": "本部半島カルスト地域",
+    "zh_tw": "本部半島カルスト地域",
+    "en": "Cone Karst Region"
+   },
+   "summary": {
+    "text": "本項の本部半島カルスト地域（もとぶはんとうカルストちいき）では、沖縄本島北部の本部半島北西部に位置するカルスト地形について説明する。",
+    "lang": "ja",
+    "source_url": "https://ja.wikipedia.org/wiki/%E6%9C%AC%E9%83%A8%E5%8D%8A%E5%B3%B6%E3%82%AB%E3%83%AB%E3%82%B9%E3%83%88%E5%9C%B0%E5%9F%9F",
+    "license": "CC BY-SA 4.0",
+    "fetched_at": "2026-09-28"
+   },
+   "nearest": [],
+   "src": "https://www.wikidata.org/wiki/Q105332680"
+  },
+  {
+   "id": "wd-Q10567386",
+   "n": "龍潭",
+   "z": "龍潭",
+   "lat": 26.22,
+   "lng": 127.7175,
+   "k": "major",
+   "f": 0,
+   "s": 96.8,
+   "h": "りゅうたん",
+   "r": "Ryu Tan",
+   "m": "472018",
+   "st": "node-6540583675",
+   "name": {
+    "ja": "龍潭",
+    "kana": "りゅうたん",
+    "romaji": "Ryu Tan",
+    "zh_tw": "龍潭",
+    "en": "Ryūtan"
+   },
+   "summary": {
+    "text": "龍潭是沖繩縣那霸市的一個巨大的水池（人工湖），又稱「魚小堀」（イユグムイ）。",
+    "lang": "zh",
+    "source_url": "https://zh.wikipedia.org/wiki/%E9%BE%8D%E6%BD%AD_%28%E9%82%A3%E9%9C%B8%E5%B8%82%29",
+    "license": "CC BY-SA 4.0",
+    "fetched_at": "2026-09-28"
+   },
+   "nearest": [
+    {
+     "name": {
+      "ja": "儀保",
+      "kana": "ぎぼ",
+      "romaji": "Gibo",
+      "en": "Gibo"
+     },
+     "distance_m": 530
+    },
+    {
+     "name": {
+      "ja": "首里",
+      "kana": "しゅり",
+      "romaji": "Shuri",
+      "en": "Shuri"
+     },
+     "distance_m": 810
+    }
+   ],
+   "src": "https://www.wikidata.org/wiki/Q10567386"
+  },
+  {
+   "id": "wd-Q108585016",
+   "n": "琉球温泉",
+   "z": "琉球温泉",
+   "lat": 26.17657,
+   "lng": 127.64105,
+   "k": "major",
+   "f": 0,
+   "s": 53.5,
+   "h": "りゅうきゅうおんせん",
+   "r": "Ryukyuonsen",
+   "m": "472123",
+   "name": {
+    "ja": "琉球温泉",
+    "kana": "りゅうきゅうおんせん",
+    "romaji": "Ryukyuonsen",
+    "zh_tw": "琉球温泉"
+   },
+   "summary": {
+    "text": "琉球温泉（りゅうきゅうおんせん）は、沖縄県豊見城市瀬長にある温泉。",
+    "lang": "ja",
+    "source_url": "https://ja.wikipedia.org/wiki/%E7%90%89%E7%90%83%E6%B8%A9%E6%B3%89",
+    "license": "CC BY-SA 4.0",
+    "fetched_at": "2026-09-28"
+   },
+   "nearest": [],
+   "src": "https://www.wikidata.org/wiki/Q108585016"
+  },
+  {
+   "id": "wd-Q10922512",
+   "n": "唐人墓",
+   "z": "唐人墓",
+   "lat": 24.36572,
+   "lng": 124.11325,
+   "k": "major",
+   "f": 0,
+   "s": 121.6,
+   "h": "とうじんばか",
+   "r": "To Jin Baka",
+   "m": "472077",
+   "name": {
+    "ja": "唐人墓",
+    "kana": "とうじんばか",
+    "romaji": "To Jin Baka",
+    "zh_tw": "唐人墓",
+    "en": "Tōjin-baka"
+   },
+   "summary": {
+    "text": "唐人墓是位於日本沖繩縣石垣市觀音崎的華人墓地。在這座墓地裡，埋葬有在羅伯特·包恩號事件中犧牲的華人勞工。",
+    "lang": "zh",
+    "source_url": "https://zh.wikipedia.org/wiki/%E5%94%90%E4%BA%BA%E5%A2%93",
+    "license": "CC BY-SA 4.0",
+    "fetched_at": "2026-09-28"
+   },
+   "nearest": [],
+   "src": "https://www.wikidata.org/wiki/Q10922512"
+  },
+  {
+   "id": "wd-Q10947551",
+   "n": "うえのドイツ文化村",
+   "z": "上野德國文化村",
+   "lat": 24.71934,
+   "lng": 125.32265,
+   "k": "major",
+   "f": 0,
+   "s": 113.7,
+   "h": "うえのどいつぶんかむら",
+   "r": "Uenodoitsubunkamura",
+   "c": "主題樂園",
+   "m": "472140",
+   "name": {
+    "ja": "うえのドイツ文化村",
+    "kana": "うえのどいつぶんかむら",
+    "romaji": "Uenodoitsubunkamura",
+    "zh_tw": "上野德國文化村",
+    "en": "Ueno German Culture Village"
+   },
+   "summary": {
+    "text": "Ueno German Culture Village (うえのドイツ文化村, Ueno Doitsu Bunka Mura; German: Deutsches Kulturdorf Ueno) is a theme park in Miyakojima, Okinawa. It is located in Ueno",
+    "lang": "en",
+    "source_url": "https://en.wikipedia.org/wiki/Ueno_German_Culture_Village",
+    "license": "CC BY-SA 4.0",
+    "fetched_at": "2026-09-29"
+   },
+   "nearest": [],
+   "src": "https://www.wikidata.org/wiki/Q10947551"
+  },
+  {
+   "id": "wd-Q11125269",
+   "n": "残波岬灯台",
+   "z": "殘波岬燈塔",
+   "lat": 26.44111,
+   "lng": 127.71361,
+   "k": "major",
+   "f": 0,
+   "s": 64.7,
+   "h": "ざんぱみさきとうだい",
+   "r": "Zanpamisakitodai",
+   "m": "473243",
+   "name": {
+    "ja": "残波岬灯台",
+    "kana": "ざんぱみさきとうだい",
+    "romaji": "Zanpamisakitodai",
+    "zh_tw": "殘波岬燈塔",
+    "en": "Cape Zanpa Lighthouse"
+   },
+   "summary": {
+    "text": "殘波岬燈塔位於沖繩縣沖繩島中之讀谷村殘波岬突端，為白土粉大型燈塔。周邊被指定為沖繩海岸國定公園，有30m高之斷崖絶壁延長約2km長，呈現出廣闊雄偉的景觀 。",
+    "lang": "zh",
+    "source_url": "https://zh.wikipedia.org/wiki/%E6%AE%98%E6%B3%A2%E5%B2%AC%E7%87%88%E5%A1%94",
+    "license": "CC BY-SA 4.0",
+    "fetched_at": "2026-09-28"
+   },
+   "nearest": [],
+   "src": "https://www.wikidata.org/wiki/Q11125269"
+  },
+  {
+   "id": "wd-Q11325259",
+   "n": "ネオパークオキナワ",
+   "z": "ネオパークオキナワ",
+   "lat": 26.61069,
+   "lng": 127.99147,
+   "k": "major",
+   "f": 0,
+   "s": 130.4,
+   "h": "ねおぱーくおきなわ",
+   "r": "Neopakuokinawa",
+   "c": "動物園",
+   "m": "472093",
+   "name": {
+    "ja": "ネオパークオキナワ",
+    "kana": "ねおぱーくおきなわ",
+    "romaji": "Neopakuokinawa",
+    "zh_tw": "ネオパークオキナワ",
+    "en": "Neo Park Okinawa"
+   },
+   "summary": {
+    "text": "ネオパークオキナワは、沖縄県名護市にある名護市立の動植物公園。1992年（平成4年）12月1日に開園。当園は、初代園長である近藤典生 東京農業大学名誉教授の「人と動植物の共存を体感してほしい」という基本理念に基づき、地域による生物相の違いや植生景観、種類の特殊性を楽しみながら理解できるよう設計されている。管理・運営は指",
+    "lang": "ja",
+    "source_url": "https://ja.wikipedia.org/wiki/%E3%83%8D%E3%82%AA%E3%83%91%E3%83%BC%E3%82%AF%E3%82%AA%E3%82%AD%E3%83%8A%E3%83%AF",
+    "license": "CC BY-SA 4.0",
+    "fetched_at": "2026-09-28"
+   },
+   "nearest": [],
+   "src": "https://www.wikidata.org/wiki/Q11325259"
+  },
+  {
+   "id": "wd-Q11333899",
+   "n": "フルスト原遺跡",
+   "z": "フルスト原遺跡",
+   "lat": 24.35048,
+   "lng": 124.1955,
+   "k": "major",
+   "f": 0,
+   "s": 67,
+   "h": "ふるすとばるいせき",
+   "r": "Furusutobaruiseki",
+   "c": "遺跡",
+   "m": "472077",
+   "name": {
+    "ja": "フルスト原遺跡",
+    "kana": "ふるすとばるいせき",
+    "romaji": "Furusutobaruiseki",
+    "zh_tw": "フルスト原遺跡",
+    "en": "Furusutobaru Castle"
+   },
+   "summary": {
+    "text": "Furusutobaru Castle (フルスト原城, Furusutobaru jō) are the ruins of stone ramparts that were thought to have been a Ryukyuan gusuku fortification, but are now though",
+    "lang": "en",
+    "source_url": "https://en.wikipedia.org/wiki/Furusutobaru_Castle",
+    "license": "CC BY-SA 4.0",
+    "fetched_at": "2026-09-29"
+   },
+   "nearest": [],
+   "src": "https://www.wikidata.org/wiki/Q11333899"
+  },
+  {
+   "id": "wd-Q11343285",
+   "n": "ムーンビーチ",
+   "z": "ムーンビーチ",
+   "lat": 26.45111,
+   "lng": 127.803,
+   "k": "major",
+   "f": 0,
+   "s": 130.9,
+   "h": "むーんびーち",
+   "r": "Munbichi",
+   "c": "海灘",
+   "m": "473111",
+   "name": {
+    "ja": "ムーンビーチ",
+    "kana": "むーんびーち",
+    "romaji": "Munbichi",
+    "zh_tw": "ムーンビーチ",
+    "en": "Moon Beach"
+   },
+   "summary": {
+    "text": "ムーンビーチとは、沖縄県国頭郡恩納村字前兼久1203に位置する海水浴場。隣接するホテルを指して称する場合もある。",
+    "lang": "ja",
+    "source_url": "https://ja.wikipedia.org/wiki/%E3%83%A0%E3%83%BC%E3%83%B3%E3%83%93%E3%83%BC%E3%83%81",
+    "license": "CC BY-SA 4.0",
+    "fetched_at": "2026-09-28"
+   },
+   "nearest": [],
+   "src": "https://www.wikidata.org/wiki/Q11343285"
+  },
+  {
+   "id": "wd-Q11353838",
+   "n": "万座毛",
+   "z": "萬座毛",
+   "lat": 26.505,
+   "lng": 127.85028,
+   "k": "major",
+   "f": 1,
+   "s": 154.5,
+   "h": "まんざもう",
+   "r": "Manzamō",
+   "c": "展望",
+   "m": "473111",
+   "name": {
+    "ja": "万座毛",
+    "kana": "まんざもう",
+    "romaji": "Manzamō",
+    "zh_tw": "萬座毛",
+    "en": "Cape Manzamo"
+   },
+   "summary": {
+    "text": "萬座毛是一處位於日本沖繩縣國頭郡恩納村的風景名勝。特徵是在海岸的峭壁上，有著像大象鼻子形狀的石頭。萬座毛面對著東海，屬於沖繩海岸國定公園。",
+    "lang": "zh",
+    "source_url": "https://zh.wikipedia.org/wiki/%E8%90%AC%E5%BA%A7%E6%AF%9B",
+    "license": "CC BY-SA 4.0",
+    "fetched_at": "2026-09-28"
+   },
+   "nearest": [],
+   "src": "https://www.wikidata.org/wiki/Q11353838"
+  },
+  {
+   "id": "wd-Q11361159",
+   "n": "下田原城",
+   "z": "下田原城",
+   "lat": 24.06906,
+   "lng": 123.77808,
+   "k": "major",
+   "f": 0,
+   "s": 63.5,
+   "h": "しもたばるじょう",
+   "r": "Shimotabarujo",
+   "c": "城",
+   "m": "473812",
+   "name": {
+    "ja": "下田原城",
+    "kana": "しもたばるじょう",
+    "romaji": "Shimotabarujo",
+    "zh_tw": "下田原城",
+    "en": "Shimotabaru Castle"
+   },
+   "summary": {
+    "text": "Shimotabaru Castle (下田原城, Shimotabaru-jō) is a  Ryukyuan gusuku fortification located on Hateruma Island in the Yaeyama Islands (Taketomi, Okinawa Prefecture). ",
+    "lang": "en",
+    "source_url": "https://en.wikipedia.org/wiki/Shimotabaru_Castle",
+    "license": "CC BY-SA 4.0",
+    "fetched_at": "2026-09-29"
+   },
+   "nearest": [],
+   "src": "https://www.wikidata.org/wiki/Q11361159"
+  },
+  {
+   "id": "wd-Q11361892",
+   "n": "与儀公園",
+   "z": "与儀公園",
+   "lat": 26.20853,
+   "lng": 127.69261,
+   "k": "major",
+   "f": 0,
+   "s": 90,
+   "h": "よぎこうえん",
+   "r": "Yogikoen",
+   "c": "公園",
+   "m": "472018",
+   "st": "node-6540547650",
+   "name": {
+    "ja": "与儀公園",
+    "kana": "よぎこうえん",
+    "romaji": "Yogikoen",
+    "zh_tw": "与儀公園",
+    "en": "Yogi Park"
+   },
+   "summary": {
+    "text": "与儀公園（よぎこうえん）は沖縄県那覇市にある都市公園（近隣公園）である。那覇を代表する桜（カンヒザクラ）の名所である。",
+    "lang": "ja",
+    "source_url": "https://ja.wikipedia.org/wiki/%E4%B8%8E%E5%84%80%E5%85%AC%E5%9C%92",
+    "license": "CC BY-SA 4.0",
+    "fetched_at": "2026-09-28"
+   },
+   "nearest": [
+    {
+     "name": {
+      "ja": "牧志",
+      "kana": "まきし",
+      "romaji": "Makishi",
+      "en": "Makishi"
+     },
+     "distance_m": 960
+    },
+    {
+     "name": {
+      "ja": "安里",
+      "kana": "あさと",
+      "romaji": "Asato",
+      "en": "Asato"
+     },
+     "distance_m": 970
+    }
+   ],
+   "src": "https://www.wikidata.org/wiki/Q11361892"
+  },
+  {
+   "id": "wd-Q11361952",
+   "n": "与那覇前浜",
+   "z": "與那霸前濱",
+   "lat": 24.73611,
+   "lng": 125.26111,
+   "k": "major",
+   "f": 1,
+   "s": 149.2,
+   "h": "よなはまえはま",
+   "r": "Yonaha Maehama",
+   "c": "海灘",
+   "m": "472140",
+   "name": {
+    "ja": "与那覇前浜",
+    "kana": "よなはまえはま",
+    "romaji": "Yonaha Maehama",
+    "zh_tw": "與那霸前濱",
+    "en": "Yonaha-Maehama"
+   },
+   "summary": {
+    "text": "與那霸前濱是日本沖繩縣宮古島市宮古島的沙灘和海水浴場，位於宮古島西南端，全長7公里。當地人多將與那霸前濱稱為前濱或前濱海灘。海灘的中央處有宮古島東急度假村，是沖繩縣著名的觀光景點。2013年至2015年，與那霸前濱連續三年被Trip Adivsor評為日本最佳海灘。",
+    "lang": "zh",
+    "source_url": "https://zh.wikipedia.org/wiki/%E8%88%87%E9%82%A3%E9%9C%B8%E5%89%8D%E6%BF%B1",
+    "license": "CC BY-SA 4.0",
+    "fetched_at": "2026-09-28"
+   },
+   "nearest": [],
+   "src": "https://www.wikidata.org/wiki/Q11361952"
+  },
+  {
+   "id": "wd-Q11376265",
+   "n": "人頭税石",
+   "z": "人頭稅石",
+   "lat": 24.81271,
+   "lng": 125.28169,
+   "k": "major",
+   "f": 0,
+   "s": 111.8,
+   "h": "にんとうぜいせき",
+   "r": "Nintozeiseki",
+   "m": "472140",
+   "name": {
+    "ja": "人頭税石",
+    "kana": "にんとうぜいせき",
+    "romaji": "Nintozeiseki",
+    "zh_tw": "人頭稅石",
+    "en": "Head Tax Stone"
+   },
+   "summary": {
+    "text": "人頭稅石，又稱賦測石，是位於今日沖繩縣宮古島市平良字荷川取的一個高143釐米的石柱。",
+    "lang": "zh",
+    "source_url": "https://zh.wikipedia.org/wiki/%E4%BA%BA%E9%A0%AD%E7%A8%85%E7%9F%B3",
+    "license": "CC BY-SA 4.0",
+    "fetched_at": "2026-09-28"
+   },
+   "nearest": [],
+   "src": "https://www.wikidata.org/wiki/Q11376265"
+  },
+  {
+   "id": "wd-Q11378487",
+   "n": "仲原遺跡",
+   "z": "仲原遺跡",
+   "lat": 26.39153,
+   "lng": 127.99458,
+   "k": "major",
+   "f": 0,
+   "s": 109.8,
+   "h": "なかばるいせき",
+   "r": "Nakabaruiseki",
+   "c": "史跡",
+   "m": "472131",
+   "name": {
+    "ja": "仲原遺跡",
+    "kana": "なかばるいせき",
+    "romaji": "Nakabaruiseki",
+    "zh_tw": "仲原遺跡",
+    "en": "Nakabaru Site"
+   },
+   "summary": {
+    "text": "The Nakabaru Site (仲原遺跡, Nakabaru iseki) is an archaeological site with traces of a mid-Okinawan Shellmidden Period (2000–2500 years ago) settlement located in ",
+    "lang": "en",
+    "source_url": "https://en.wikipedia.org/wiki/Nakabaru_Site",
+    "license": "CC BY-SA 4.0",
+    "fetched_at": "2026-09-29"
+   },
+   "nearest": [],
+   "src": "https://www.wikidata.org/wiki/Q11378487"
+  },
+  {
+   "id": "wd-Q11378628",
+   "n": "仲間川",
+   "z": "仲間川",
+   "lat": 24.2774,
+   "lng": 123.885,
+   "k": "major",
+   "f": 0,
+   "s": 60.7,
+   "h": "なかまがわ",
+   "r": "Nakamagawa",
+   "m": "473812",
+   "name": {
+    "ja": "仲間川",
+    "kana": "なかまがわ",
+    "romaji": "Nakamagawa",
+    "zh_tw": "仲間川",
+    "en": "Nakama River"
+   },
+   "summary": {
+    "text": "The Nakama River (仲間川, Nakama-gawa) is a river located on the southeast side of the island of Iriomote, one of the Yaeyama Islands of Japan.",
+    "lang": "en",
+    "source_url": "https://en.wikipedia.org/wiki/Nakama_River",
+    "license": "CC BY-SA 4.0",
+    "fetched_at": "2026-09-29"
+   },
+   "nearest": [],
+   "src": "https://www.wikidata.org/wiki/Q11378628"
+  },
+  {
+   "id": "wd-Q11383086",
+   "n": "佐和田の浜",
+   "z": "佐和田の浜",
+   "lat": 24.83778,
+   "lng": 125.1575,
+   "k": "major",
+   "f": 0,
+   "s": 110.8,
+   "h": "さわだのはま",
+   "r": "Sawadanohama",
+   "c": "海灘",
+   "m": "472140",
+   "name": {
+    "ja": "佐和田の浜",
+    "kana": "さわだのはま",
+    "romaji": "Sawadanohama",
+    "zh_tw": "佐和田の浜",
+    "en": "Sawada Beach"
+   },
+   "summary": {
+    "text": "佐和田の浜（さわだのはま）は、沖縄県宮古島市の伊良部島北西部から下地島北東部にかけての海岸。日本の渚百選に選定されている。",
+    "lang": "ja",
+    "source_url": "https://ja.wikipedia.org/wiki/%E4%BD%90%E5%92%8C%E7%94%B0%E3%81%AE%E6%B5%9C",
+    "license": "CC BY-SA 4.0",
+    "fetched_at": "2026-09-28"
+   },
+   "nearest": [],
+   "src": "https://www.wikidata.org/wiki/Q11383086"
+  },
+  {
+   "id": "wd-Q11383189",
+   "n": "佐敷城",
+   "z": "佐敷城",
+   "lat": 26.16244,
+   "lng": 127.78953,
+   "k": "major",
+   "f": 0,
+   "s": 68.4,
+   "h": "さしきぐすく",
+   "r": "Sashikigusuku",
+   "c": "城",
+   "m": "472158",
+   "name": {
+    "ja": "佐敷城",
+    "kana": "さしきぐすく",
+    "romaji": "Sashikigusuku",
+    "zh_tw": "佐敷城",
+    "en": "Sashiki Castle"
+   },
+   "summary": {
+    "text": "佐敷城是琉球國的一個城堡，位於今日日本沖繩縣南城市的佐敷。",
+    "lang": "zh",
+    "source_url": "https://zh.wikipedia.org/wiki/%E4%BD%90%E6%95%B7%E5%9F%8E_%28%E7%90%89%E7%90%83%29",
+    "license": "CC BY-SA 4.0",
+    "fetched_at": "2026-09-28"
+   },
+   "nearest": [],
+   "src": "https://www.wikidata.org/wiki/Q11383189"
+  },
+  {
+   "id": "wd-Q11393737",
+   "n": "具志川城",
+   "z": "具志川城",
+   "lat": 26.08028,
+   "lng": 127.66444,
+   "k": "major",
+   "f": 0,
+   "s": 120.7,
+   "h": "ぐしかわぐすく",
+   "r": "Gushikawagusuku",
+   "c": "城",
+   "m": "472107",
+   "name": {
+    "ja": "具志川城",
+    "kana": "ぐしかわぐすく",
+    "romaji": "Gushikawagusuku",
+    "zh_tw": "具志川城",
+    "en": "Gushikawa Castle"
+   },
+   "summary": {
+    "text": "Gushikawa Castle (具志川城, Gushikawa jō; Okinawan: Gushichan Gushiku) is a Ryukyuan gusuku fortification in the city of Itoman, Okinawa, Japan. The castle ruins we",
+    "lang": "en",
+    "source_url": "https://en.wikipedia.org/wiki/Gushikawa_Castle_%28Itoman%29",
+    "license": "CC BY-SA 4.0",
+    "fetched_at": "2026-09-29"
+   },
+   "nearest": [],
+   "src": "https://www.wikidata.org/wiki/Q11393737"
+  },
+  {
+   "id": "wd-Q11415614",
+   "n": "名護城",
+   "z": "名護城",
+   "lat": 26.58861,
+   "lng": 127.99333,
+   "k": "major",
+   "f": 0,
+   "s": 120.6,
+   "h": "なんぐすく",
+   "r": "Nangusuku",
+   "c": "城",
+   "m": "472093",
+   "name": {
+    "ja": "名護城",
+    "kana": "なんぐすく",
+    "romaji": "Nangusuku",
+    "zh_tw": "名護城",
+    "en": "Nago Castle"
+   },
+   "summary": {
+    "text": "Nago Castle (名護城, Nago jō; Okinawan: Nagu gushiku) is a Ryukyuan gusuku in Nago, Okinawa. It was built in the 14th century and served as the home of the Aji of ",
+    "lang": "en",
+    "source_url": "https://en.wikipedia.org/wiki/Nago_Castle",
+    "license": "CC BY-SA 4.0",
+    "fetched_at": "2026-09-29"
+   },
+   "nearest": [],
+   "src": "https://www.wikidata.org/wiki/Q11415614"
+  },
+  {
+   "id": "wd-Q11419196",
+   "n": "喜屋武岬",
+   "z": "喜屋武岬",
+   "lat": 26.07819,
+   "lng": 127.66894,
+   "k": "major",
+   "f": 0,
+   "s": 64.3,
+   "h": "きやんみさき",
+   "r": "Kiyanmisaki",
+   "c": "岬",
+   "m": "472107",
+   "name": {
+    "ja": "喜屋武岬",
+    "kana": "きやんみさき",
+    "romaji": "Kiyanmisaki",
+    "zh_tw": "喜屋武岬",
+    "en": "Cape Kiyan"
+   },
+   "summary": {
+    "text": "喜屋武岬（きやんみさき）は、沖縄本島南西端に位置する岬で、沖縄県糸満市喜屋武に属する。",
+    "lang": "ja",
+    "source_url": "https://ja.wikipedia.org/wiki/%E5%96%9C%E5%B1%8B%E6%AD%A6%E5%B2%AC",
+    "license": "CC BY-SA 4.0",
+    "fetched_at": "2026-09-28"
+   },
+   "nearest": [],
+   "src": "https://www.wikidata.org/wiki/Q11419196"
+  },
+  {
+   "id": "wd-Q11420639",
+   "n": "国営沖縄記念公園",
+   "z": "國營沖繩紀念公園",
+   "lat": 26.69097,
+   "lng": 127.87792,
+   "k": "major",
+   "f": 0,
+   "s": 95.6,
+   "h": "こくえいおきなわきねんこうえん",
+   "r": "Kokueiokinawakinenkoen",
+   "c": "公園",
+   "m": "473081",
+   "name": {
+    "ja": "国営沖縄記念公園",
+    "kana": "こくえいおきなわきねんこうえん",
+    "romaji": "Kokueiokinawakinenkoen",
+    "zh_tw": "國營沖繩紀念公園",
+    "en": "Okinawa Commemorative National Government Park"
+   },
+   "summary": {
+    "text": "國營沖繩紀念公園是一個位於日本沖繩縣沖繩本島的國營公園，大致分為位於本部町的海洋博覧會地區和位於那霸市的首裡城地區兩個地區，被選入日本都市公園100選。沖繩在舉辦沖繩國際海洋博覽會之後，博覽會用地改為現在的海洋博覽會紀念公園。1987年3月25日改為現名。",
+    "lang": "zh",
+    "source_url": "https://zh.wikipedia.org/wiki/%E5%9C%8B%E7%87%9F%E6%B2%96%E7%B9%A9%E7%B4%80%E5%BF%B5%E5%85%AC%E5%9C%92",
+    "license": "CC BY-SA 4.0",
+    "fetched_at": "2026-09-28"
+   },
+   "nearest": [],
+   "src": "https://www.wikidata.org/wiki/Q11420639"
+  },
+  {
+   "id": "wd-Q11425877",
+   "n": "垣花樋川",
+   "z": "垣花樋川",
+   "lat": 26.14836,
+   "lng": 127.79564,
+   "k": "major",
+   "f": 0,
+   "s": 112.7,
+   "h": "かきのはなひーじゃー",
+   "r": "Kakinohanahija",
+   "m": "472158",
+   "name": {
+    "ja": "垣花樋川",
+    "kana": "かきのはなひーじゃー",
+    "romaji": "Kakinohanahija",
+    "zh_tw": "垣花樋川",
+    "en": "Kakinohana Spring"
+   },
+   "summary": {
+    "text": "垣花樋川（かきのはなひーじゃー）は、沖縄県南城市玉城字垣花にある湧水で、環境省により1985年（昭和60年）名水百選のひとつに選定された。",
+    "lang": "ja",
+    "source_url": "https://ja.wikipedia.org/wiki/%E5%9E%A3%E8%8A%B1%E6%A8%8B%E5%B7%9D",
+    "license": "CC BY-SA 4.0",
+    "fetched_at": "2026-09-28"
+   },
+   "nearest": [],
+   "src": "https://www.wikidata.org/wiki/Q11425877"
+  },
+  {
+   "id": "wd-Q11428719",
+   "n": "塩川",
+   "z": "鹽川",
+   "lat": 26.61549,
+   "lng": 127.89521,
+   "k": "major",
+   "f": 0,
+   "s": 66.6,
+   "h": "しおかわ",
+   "r": "Shiokawa",
+   "m": "473081",
+   "name": {
+    "ja": "塩川",
+    "kana": "しおかわ",
+    "romaji": "Shiokawa",
+    "zh_tw": "鹽川",
+    "en": "Shio River"
+   },
+   "summary": {
+    "text": "鹽川是位於日本沖繩縣國頭郡本部町字崎本部鹽川原的一條小河流，全長約300公尺、寬4公尺，是日本國內唯一的高鹽度河流。鹽川於1972年（昭和47年）5月15日沖繩返還當日被指定為國家自然紀念物。",
+    "lang": "zh",
+    "source_url": "https://zh.wikipedia.org/wiki/%E9%B9%BD%E5%B7%9D_%28%E6%B2%96%E7%B9%A9%E7%B8%A3%29",
+    "license": "CC BY-SA 4.0",
+    "fetched_at": "2026-09-28"
+   },
+   "nearest": [],
+   "src": "https://www.wikidata.org/wiki/Q11428719"
+  },
+  {
+   "id": "wd-Q11434817",
+   "n": "石垣空港",
+   "z": "石垣機場",
+   "lat": 24.39639,
+   "lng": 124.245,
+   "k": "major",
+   "f": 0,
+   "s": 64.8,
+   "h": "いしがきくうこう",
+   "r": "Ishigakikuko",
+   "c": "機場",
+   "m": "472077",
+   "name": {
+    "ja": "石垣空港",
+    "kana": "いしがきくうこう",
+    "romaji": "Ishigakikuko",
+    "zh_tw": "石垣機場",
+    "en": "Ishigaki Airport"
+   },
+   "summary": {
+    "text": "石垣機場是一座位於日本沖繩縣八重山群島石垣島上的一座機場，是八重山地區重要對外機場，主要營運往返日本本土及琉球群島的國內線航班，亦有往返臺北以及香港等地定期國際航班。石垣機場在2008年11月至2024年1月間曾是日本最南端機場，在2024年1月22日波照間機場復航後最南端機場頭銜回歸波照間機場。",
+    "lang": "zh",
+    "source_url": "https://zh.wikipedia.org/wiki/%E7%9F%B3%E5%9E%A3%E6%A9%9F%E5%A0%B4",
+    "license": "CC BY-SA 4.0",
+    "fetched_at": "2026-10-11"
+   },
+   "nearest": [],
+   "src": "https://www.wikidata.org/wiki/Q11434817"
+  },
+  {
+   "id": "wd-Q11458206",
+   "n": "対馬丸記念館",
+   "z": "對馬丸紀念館",
+   "lat": 26.22011,
+   "lng": 127.67281,
+   "k": "major",
+   "f": 0,
+   "s": 121.4,
+   "h": "つしままるきねんかん",
+   "r": "Tsushimamarukinenkan",
+   "c": "博物館",
+   "m": "472018",
+   "st": "node-6540547646",
+   "name": {
+    "ja": "対馬丸記念館",
+    "kana": "つしままるきねんかん",
+    "romaji": "Tsushimamarukinenkan",
+    "zh_tw": "對馬丸紀念館",
+    "en": "Tsushima-maru Memorial Museum"
+   },
+   "summary": {
+    "text": "Tsushima Maru (Japanese: 対馬丸) was a Japanese passenger/cargo ship that was sunk by the submarine USS Bowfin during World War II, while carrying hundreds of scho",
+    "lang": "en",
+    "source_url": "https://en.wikipedia.org/wiki/Tsushima-maru_Memorial_Museum",
+    "license": "CC BY-SA 4.0",
+    "fetched_at": "2026-09-29"
+   },
+   "nearest": [
+    {
+     "name": {
+      "ja": "県庁前",
+      "kana": "けんちょうまえ",
+      "romaji": "Kenchō-mae",
+      "en": "Prefectural Office"
+     },
+     "distance_m": 910
+    },
+    {
+     "name": {
+      "ja": "旭橋",
+      "kana": "あさひばし",
+      "romaji": "Asahibashi",
+      "en": "Asahibashi"
+     },
+     "distance_m": 960
+    }
+   ],
+   "src": "https://www.wikidata.org/wiki/Q11458206"
+  },
+  {
+   "id": "wd-Q11470513",
+   "n": "山田温泉",
+   "z": "山田温泉",
+   "lat": 26.43561,
+   "lng": 127.78778,
+   "k": "major",
+   "f": 0,
+   "s": 55.6,
+   "h": "やまだおんせん",
+   "r": "Yamada Onsen",
+   "m": "473111",
+   "name": {
+    "ja": "山田温泉",
+    "kana": "やまだおんせん",
+    "romaji": "Yamada Onsen",
+    "zh_tw": "山田温泉",
+    "en": "Yamada Onsen"
+   },
+   "summary": {
+    "text": "山田温泉（やまだおんせん）は、沖縄県国頭郡恩納村にある温泉。",
+    "lang": "ja",
+    "source_url": "https://ja.wikipedia.org/wiki/%E5%B1%B1%E7%94%B0%E6%B8%A9%E6%B3%89_%28%E6%B2%96%E7%B8%84%E7%9C%8C%29",
+    "license": "CC BY-SA 4.0",
+    "fetched_at": "2026-09-28"
+   },
+   "nearest": [],
+   "src": "https://www.wikidata.org/wiki/Q11470513"
+  },
+  {
+   "id": "wd-Q11537060",
+   "n": "桃林寺",
+   "z": "桃林寺",
+   "lat": 24.34361,
+   "lng": 124.15556,
+   "k": "major",
+   "f": 0,
+   "s": 63.6,
+   "h": "とうりんじ",
+   "r": "Torinji",
+   "c": "寺院",
+   "m": "472077",
+   "name": {
+    "ja": "桃林寺",
+    "kana": "とうりんじ",
+    "romaji": "Torinji",
+    "zh_tw": "桃林寺",
+    "en": "Tōrin-ji Temple"
+   },
+   "summary": {
+    "text": "桃林寺（とうりんじ）は、沖縄県石垣市にある臨済宗妙心寺派の寺院。山号は南海山。本尊は観音菩薩。八重山列島で最古の仏教寺院である。本項では、隣接する権現堂（ごんげんどう）についても併せて説明する。",
+    "lang": "ja",
+    "source_url": "https://ja.wikipedia.org/wiki/%E6%A1%83%E6%9E%97%E5%AF%BA_%28%E7%9F%B3%E5%9E%A3%E5%B8%82%29",
+    "license": "CC BY-SA 4.0",
+    "fetched_at": "2026-09-28"
+   },
+   "nearest": [],
+   "src": "https://www.wikidata.org/wiki/Q11537060"
+  },
+  {
+   "id": "wd-Q11552597",
+   "n": "沖縄アウトレットモール・あしびなー",
+   "z": "沖縄アウトレットモール・あしびなー",
+   "lat": 26.15889,
+   "lng": 127.65694,
+   "k": "major",
+   "f": 0,
+   "s": 131.4,
+   "h": "おきなわあうとれっともーるあしびなー",
+   "r": "Okinawaautorettomoruashibina",
+   "c": "購物",
+   "m": "472123",
+   "name": {
+    "ja": "沖縄アウトレットモール・あしびなー",
+    "kana": "おきなわあうとれっともーるあしびなー",
+    "romaji": "Okinawaautorettomoruashibina",
+    "zh_tw": "沖縄アウトレットモール・あしびなー",
+    "en": "Okinawa Outlet Mall Ashibinaa"
+   },
+   "summary": {
+    "text": "沖縄アウトレットモール・あしびなー（おきなわアウトレットモール・あしびなー、英: OKINAWA OUTLET MALL ASHIBINAA）は、沖縄県豊見城市豊崎に所在するアウトレットモール。大和情報サービス（現・大和ハウスリアルティマネジメント）が運営する沖縄県初となるアウトレットモールとして2002年12月14日",
+    "lang": "ja",
+    "source_url": "https://ja.wikipedia.org/wiki/%E6%B2%96%E7%B8%84%E3%82%A2%E3%82%A6%E3%83%88%E3%83%AC%E3%83%83%E3%83%88%E3%83%A2%E3%83%BC%E3%83%AB%E3%83%BB%E3%81%82%E3%81%97%E3%81%B3%E3%81%AA%E3%83%BC",
+    "license": "CC BY-SA 4.0",
+    "fetched_at": "2026-09-28"
+   },
+   "nearest": [],
+   "src": "https://www.wikidata.org/wiki/Q11552597"
+  },
+  {
+   "id": "wd-Q11552678",
+   "n": "沖縄宇宙通信所",
+   "z": "沖縄宇宙通信所",
+   "lat": 26.50047,
+   "lng": 127.90353,
+   "k": "major",
+   "f": 0,
+   "s": 54.3,
+   "h": "おきなわうちゅうつうしんじょ",
+   "r": "Okinawauchutsushinjo",
+   "m": "473111",
+   "name": {
+    "ja": "沖縄宇宙通信所",
+    "kana": "おきなわうちゅうつうしんじょ",
+    "romaji": "Okinawauchutsushinjo",
+    "zh_tw": "沖縄宇宙通信所",
+    "en": "Okinawa Tracking and Communications Station"
+   },
+   "summary": {
+    "text": "沖縄宇宙通信所（おきなわうちゅうつうしんじょ、Okinawa Tracking and Communication Station, OTCS）は沖縄県恩納村に位置する、国立研究開発法人宇宙航空研究開発機構（JAXA）の施設。人工衛星の追跡・管制を主な業務としている。",
+    "lang": "ja",
+    "source_url": "https://ja.wikipedia.org/wiki/%E6%B2%96%E7%B8%84%E5%AE%87%E5%AE%99%E9%80%9A%E4%BF%A1%E6%89%80",
+    "license": "CC BY-SA 4.0",
+    "fetched_at": "2026-09-28"
+   },
+   "nearest": [],
+   "src": "https://www.wikidata.org/wiki/Q11552678"
+  },
+  {
+   "id": "wd-Q11555420",
+   "n": "波の上ビーチ",
+   "z": "波之上海灘",
+   "lat": 26.22108,
+   "lng": 127.67206,
+   "k": "major",
+   "f": 0,
+   "s": 142.4,
+   "h": "なみのうえびーち",
+   "r": "Naminoebichi",
+   "c": "海灘",
+   "m": "472018",
+   "st": "node-6540547646",
+   "name": {
+    "ja": "波の上ビーチ",
+    "kana": "なみのうえびーち",
+    "romaji": "Naminoebichi",
+    "zh_tw": "波之上海灘",
+    "en": "Naminoue Beach"
+   },
+   "summary": {
+    "text": "波の上ビーチ（なみのうえビーチ）は、沖縄県那覇市にある人工ビーチである。那覇市唯一の海水浴場であり、那覇空港から車で15分というところに位置し、都市型ビーチとして、沖縄へ来た観光客の「最後の観光地」ともなっている。供用開始された年の利用者数は約7500人だったが、2000年には約23万5000人と31倍に増加している。",
+    "lang": "ja",
+    "source_url": "https://ja.wikipedia.org/wiki/%E6%B3%A2%E3%81%AE%E4%B8%8A%E3%83%93%E3%83%BC%E3%83%81",
+    "license": "CC BY-SA 4.0",
+    "fetched_at": "2026-09-28"
+   },
+   "nearest": [
+    {
+     "name": {
+      "ja": "県庁前",
+      "kana": "けんちょうまえ",
+      "romaji": "Kenchō-mae",
+      "en": "Prefectural Office"
+     },
+     "distance_m": 1040
+    },
+    {
+     "name": {
+      "ja": "旭橋",
+      "kana": "あさひばし",
+      "romaji": "Asahibashi",
+      "en": "Asahibashi"
+     },
+     "distance_m": 1080
+    }
+   ],
+   "src": "https://www.wikidata.org/wiki/Q11555420"
+  },
+  {
+   "id": "wd-Q11555572",
+   "n": "波照間島星空観測タワー",
+   "z": "波照間島星空観測タワー",
+   "lat": 24.05,
+   "lng": 123.79722,
+   "k": "major",
+   "f": 0,
+   "s": 77.2,
+   "h": "はてるまじまほしぞらかんそくたわー",
+   "r": "Haterumajimahoshizorakansokutawa",
+   "c": "主題樂園",
+   "m": "473812",
+   "name": {
+    "ja": "波照間島星空観測タワー",
+    "kana": "はてるまじまほしぞらかんそくたわー",
+    "romaji": "Haterumajimahoshizorakansokutawa",
+    "zh_tw": "波照間島星空観測タワー",
+    "en": "Haterumajima Astronomical Observatory Tower"
+   },
+   "summary": {
+    "text": "波照間島星空観測タワー（はてるまじまほしぞらかんそくタワー）は、沖縄県八重山郡竹富町の波照間島にある天文台である。プラネタリウムを併設している。",
+    "lang": "ja",
+    "source_url": "https://ja.wikipedia.org/wiki/%E6%B3%A2%E7%85%A7%E9%96%93%E5%B3%B6%E6%98%9F%E7%A9%BA%E8%A6%B3%E6%B8%AC%E3%82%BF%E3%83%AF%E3%83%BC",
+    "license": "CC BY-SA 4.0",
+    "fetched_at": "2026-09-28"
+   },
+   "nearest": [],
+   "src": "https://www.wikidata.org/wiki/Q11555572"
+  },
+  {
+   "id": "wd-Q11559258",
+   "n": "海軍司令部壕",
+   "z": "海軍司令部壕",
+   "lat": 26.18611,
+   "lng": 127.67639,
+   "k": "major",
+   "f": 1,
+   "s": 145,
+   "h": "かいぐんしれいぶごう",
+   "r": "Kaigunshireibugo",
+   "m": "472123",
+   "st": "node-6540630176",
+   "name": {
+    "ja": "海軍司令部壕",
+    "kana": "かいぐんしれいぶごう",
+    "romaji": "Kaigunshireibugo",
+    "zh_tw": "海軍司令部壕",
+    "en": "Former Japanese Navy Underground Headquarters"
+   },
+   "summary": {
+    "text": "海軍司令部壕（かいぐんしれいぶごう）は、沖縄戦において大日本帝国海軍の司令部として使用された防空壕である。戦後は旧海軍司令部壕としてその一部が一般に公開され、周辺は県によって海軍壕公園として整備されている。沖縄県豊見城市と那覇市の市境に位置する。",
+    "lang": "ja",
+    "source_url": "https://ja.wikipedia.org/wiki/%E6%B5%B7%E8%BB%8D%E5%8F%B8%E4%BB%A4%E9%83%A8%E5%A3%95",
+    "license": "CC BY-SA 4.0",
+    "fetched_at": "2026-09-28"
+   },
+   "nearest": [
+    {
+     "name": {
+      "ja": "小禄",
+      "kana": "おろく",
+      "romaji": "Oroku",
+      "en": "Oroku"
+     },
+     "distance_m": 1490
+    }
+   ],
+   "src": "https://www.wikidata.org/wiki/Q11559258"
+  },
+  {
+   "id": "wd-Q11570421",
+   "n": "牧志公設市場",
+   "z": "牧志公設市場",
+   "lat": 26.21453,
+   "lng": 127.68828,
+   "k": "major",
+   "f": 0,
+   "s": 119.3,
+   "h": "まきしこうせついちば",
+   "r": "Makishikosetsuichiba",
+   "c": "市場",
+   "m": "472018",
+   "st": "node-6540547650",
+   "name": {
+    "ja": "牧志公設市場",
+    "kana": "まきしこうせついちば",
+    "romaji": "Makishikosetsuichiba",
+    "zh_tw": "牧志公設市場",
+    "en": "Makishi Public Market"
+   },
+   "summary": {
+    "text": "牧志公設市場是日本沖繩縣那霸市的一座公設市場。這座市場共有兩層，設有約200家店鋪。牧志公設市場開設於1951年，現在是那霸市主要的觀光地之一。由於建築老化，牧志公設市場在2019年關閉，進行翻新，預計在2023年重新開業。",
+    "lang": "zh",
+    "source_url": "https://zh.wikipedia.org/wiki/%E7%89%A7%E5%BF%97%E5%85%AC%E8%A8%AD%E5%B8%82%E5%A0%B4",
+    "license": "CC BY-SA 4.0",
+    "fetched_at": "2026-09-28"
+   },
+   "nearest": [
+    {
+     "name": {
+      "ja": "牧志",
+      "kana": "まきし",
+      "romaji": "Makishi",
+      "en": "Makishi"
+     },
+     "distance_m": 520
+    },
+    {
+     "name": {
+      "ja": "美栄橋",
+      "kana": "みえばし",
+      "romaji": "Miebashi",
+      "en": "Miebashi"
+     },
+     "distance_m": 650
+    }
+   ],
+   "src": "https://www.wikidata.org/wiki/Q11570421"
+  },
+  {
+   "id": "wd-Q11572469",
+   "n": "玉城城",
+   "z": "玉城城",
+   "lat": 26.144,
+   "lng": 127.78081,
+   "k": "major",
+   "f": 0,
+   "s": 116.5,
+   "h": "たまぐすくぐすく",
+   "r": "Tamagusukugusuku",
+   "c": "城",
+   "m": "472158",
+   "name": {
+    "ja": "玉城城",
+    "kana": "たまぐすくぐすく",
+    "romaji": "Tamagusukugusuku",
+    "zh_tw": "玉城城",
+    "en": "Tamagusuku Castle"
+   },
+   "summary": {
+    "text": "Tamagusuku Castle (玉城城, Tamagusuku jō; Okinawan: Tamagushiku) is a Ryūkyūan gusuku fortification located in the city of Nanjō, Okinawa Prefecture, Japan. It is ",
+    "lang": "en",
+    "source_url": "https://en.wikipedia.org/wiki/Tamagusuku_Castle",
+    "license": "CC BY-SA 4.0",
+    "fetched_at": "2026-09-29"
+   },
+   "nearest": [],
+   "src": "https://www.wikidata.org/wiki/Q11572469"
+  },
+  {
+   "id": "wd-Q11572695",
+   "n": "玉泉洞",
+   "z": "玉泉洞",
+   "lat": 26.13734,
+   "lng": 127.75181,
+   "k": "major",
+   "f": 0,
+   "s": 72.3,
+   "h": "ぎょくせんどう",
+   "r": "Gyokusendo",
+   "m": "472158",
+   "name": {
+    "ja": "玉泉洞",
+    "kana": "ぎょくせんどう",
+    "romaji": "Gyokusendo",
+    "zh_tw": "玉泉洞",
+    "en": "Gyokusendō"
+   },
+   "summary": {
+    "text": "玉泉洞（平假名：ぎょくせんどう），是日本沖繩縣企業南都株式會社所管理之沖繩世界文化王國裡面的一個鐘乳洞，為當地特色旅遊景點的其中一個，其地址座落於日本國沖繩縣南城市玉城字前1336。玉泉洞全長大約800米，全洞佈滿了鐘乳石，鐘乳石每年只會增長約1毫米。完成遊歷整個玉泉洞需要時間為約半小時。目前只開闢了全洞的五分之一，但",
+    "lang": "zh",
+    "source_url": "https://zh.wikipedia.org/wiki/%E7%8E%89%E6%B3%89%E6%B4%9E",
+    "license": "CC BY-SA 4.0",
+    "fetched_at": "2026-09-28"
+   },
+   "nearest": [],
+   "src": "https://www.wikidata.org/wiki/Q11572695"
+  },
+  {
+   "id": "wd-Q11585382",
+   "n": "石垣やいま村",
+   "z": "石垣八重山民俗村",
+   "lat": 24.40433,
+   "lng": 124.14436,
+   "k": "major",
+   "f": 0,
+   "s": 126.3,
+   "h": "いしがきやいまむら",
+   "r": "Ishigaki Yaima-mura",
+   "c": "博物館",
+   "m": "472077",
+   "name": {
+    "ja": "石垣やいま村",
+    "kana": "いしがきやいまむら",
+    "romaji": "Ishigaki Yaima-mura",
+    "zh_tw": "石垣八重山民俗村",
+    "en": "Ishigaki Yaima Village"
+   },
+   "summary": {
+    "text": "石垣やいま村（いしがきやいまむら）は、沖縄県石垣市にある日本最南端かつ最西端のテーマパークである。園内には4棟の古民家が移築され、伝統的な家並みが再現されている。",
+    "lang": "ja",
+    "source_url": "https://ja.wikipedia.org/wiki/%E7%9F%B3%E5%9E%A3%E3%82%84%E3%81%84%E3%81%BE%E6%9D%91",
+    "license": "CC BY-SA 4.0",
+    "fetched_at": "2026-09-28"
+   },
+   "nearest": [],
+   "src": "https://www.wikidata.org/wiki/Q11585382"
+  },
+  {
+   "id": "wd-Q11585400",
+   "n": "石垣島天文台",
+   "z": "石垣島天文臺",
+   "lat": 24.37286,
+   "lng": 124.13928,
+   "k": "major",
+   "f": 0,
+   "s": 63.4,
+   "h": "いしがきじまてんもんだい",
+   "r": "Ishigakijimatenmondai",
+   "m": "472077",
+   "name": {
+    "ja": "石垣島天文台",
+    "kana": "いしがきじまてんもんだい",
+    "romaji": "Ishigakijimatenmondai",
+    "zh_tw": "石垣島天文臺",
+    "en": "Ishigakijima Astronomical Observatory"
+   },
+   "summary": {
+    "text": "石垣島天文臺是位於日本沖繩縣石垣市的天文臺，由自然科學研究機構國立天文臺、石垣市、石垣市教育委員會、特定非營利活動法人八重山星之會、沖繩縣立石垣青少年之家、琉球大學共6間機構組成的協議會運營。",
+    "lang": "zh",
+    "source_url": "https://zh.wikipedia.org/wiki/%E7%9F%B3%E5%9E%A3%E5%B3%B6%E5%A4%A9%E6%96%87%E5%8F%B0",
+    "license": "CC BY-SA 4.0",
+    "fetched_at": "2026-09-28"
+   },
+   "nearest": [],
+   "src": "https://www.wikidata.org/wiki/Q11585400"
+  },
+  {
+   "id": "wd-Q11587400",
+   "n": "砂山ビーチ",
+   "z": "砂山海灘",
+   "lat": 24.83944,
+   "lng": 125.28056,
+   "k": "major",
+   "f": 0,
+   "s": 123.3,
+   "h": "すなやまびーち",
+   "r": "Sunayamabichi",
+   "c": "海灘",
+   "m": "472140",
+   "name": {
+    "ja": "砂山ビーチ",
+    "kana": "すなやまびーち",
+    "romaji": "Sunayamabichi",
+    "zh_tw": "砂山海灘",
+    "en": "Sunayama Beach"
+   },
+   "summary": {
+    "text": "砂山ビーチ（すなやまビーチ）は、沖縄県宮古島市の宮古島にある砂浜である。",
+    "lang": "ja",
+    "source_url": "https://ja.wikipedia.org/wiki/%E7%A0%82%E5%B1%B1%E3%83%93%E3%83%BC%E3%83%81",
+    "license": "CC BY-SA 4.0",
+    "fetched_at": "2026-09-28"
+   },
+   "nearest": [],
+   "src": "https://www.wikidata.org/wiki/Q11587400"
+  },
+  {
+   "id": "wd-Q11614278",
+   "n": "船浮",
+   "z": "船浮",
+   "lat": 24.33806,
+   "lng": 123.72861,
+   "k": "major",
+   "f": 0,
+   "s": 63.6,
+   "h": "ふなうき",
+   "r": "Funauki",
+   "m": "473812",
+   "name": {
+    "ja": "船浮",
+    "kana": "ふなうき",
+    "romaji": "Funauki",
+    "zh_tw": "船浮",
+    "en": "Funauki"
+   },
+   "summary": {
+    "text": "船浮（ふなうき）は、沖縄県八重山郡竹富町の西表島南西部にある地区の地名。舟浮と表記される場合もある。",
+    "lang": "ja",
+    "source_url": "https://ja.wikipedia.org/wiki/%E8%88%B9%E6%B5%AE",
+    "license": "CC BY-SA 4.0",
+    "fetched_at": "2026-09-28"
+   },
+   "nearest": [],
+   "src": "https://www.wikidata.org/wiki/Q11614278"
+  },
+  {
+   "id": "wd-Q11639512",
+   "n": "通り池",
+   "z": "通り池",
+   "lat": 24.82403,
+   "lng": 125.13642,
+   "k": "major",
+   "f": 0,
+   "s": 108,
+   "h": "とおりいけ",
+   "r": "To Riike",
+   "c": "名勝",
+   "m": "472140",
+   "name": {
+    "ja": "通り池",
+    "kana": "とおりいけ",
+    "romaji": "To Riike",
+    "zh_tw": "通り池",
+    "en": "Tōriike"
+   },
+   "summary": {
+    "text": "通り池（とおりいけ）は、沖縄県宮古島市の下地島の西岸にある池である。「下地島の通り池」として国の名勝及び天然記念物に指定されている。",
+    "lang": "ja",
+    "source_url": "https://ja.wikipedia.org/wiki/%E9%80%9A%E3%82%8A%E6%B1%A0",
+    "license": "CC BY-SA 4.0",
+    "fetched_at": "2026-09-28"
+   },
+   "nearest": [],
+   "src": "https://www.wikidata.org/wiki/Q11639512"
+  },
+  {
+   "id": "wd-Q11640641",
+   "n": "道の駅いとまん",
+   "z": "道の駅いとまん",
+   "lat": 26.13847,
+   "lng": 127.66125,
+   "k": "major",
+   "f": 0,
+   "s": 123.2,
+   "h": "みちのえきいとまん",
+   "r": "Michinoekiitoman",
+   "c": "購物",
+   "m": "472107",
+   "name": {
+    "ja": "道の駅いとまん",
+    "kana": "みちのえきいとまん",
+    "romaji": "Michinoekiitoman",
+    "zh_tw": "道の駅いとまん",
+    "en": "Roadside station Itoman"
+   },
+   "summary": {
+    "text": "道の駅いとまん（みちのえき いとまん）は、沖縄県糸満市西崎町にある国道331号の道の駅である。",
+    "lang": "ja",
+    "source_url": "https://ja.wikipedia.org/wiki/%E9%81%93%E3%81%AE%E9%A7%85%E3%81%84%E3%81%A8%E3%81%BE%E3%82%93",
+    "license": "CC BY-SA 4.0",
+    "fetched_at": "2026-09-28"
+   },
+   "nearest": [],
+   "src": "https://www.wikidata.org/wiki/Q11640641"
+  },
+  {
+   "id": "wd-Q11641202",
+   "n": "道の駅喜名番所",
+   "z": "道の駅喜名番所",
+   "lat": 26.39933,
+   "lng": 127.75822,
+   "k": "major",
+   "f": 0,
+   "s": 77.1,
+   "h": "みちのえききなばんじょ",
+   "r": "Michinoekikinabanjo",
+   "c": "公園",
+   "m": "473243",
+   "name": {
+    "ja": "道の駅喜名番所",
+    "kana": "みちのえききなばんじょ",
+    "romaji": "Michinoekikinabanjo",
+    "zh_tw": "道の駅喜名番所",
+    "en": "Roadside station Kinabanjo"
+   },
+   "summary": {
+    "text": "道の駅喜名番所（みちのえき きなばんじょ）は、沖縄県中頭郡読谷村にある国道58号の道の駅である。",
+    "lang": "ja",
+    "source_url": "https://ja.wikipedia.org/wiki/%E9%81%93%E3%81%AE%E9%A7%85%E5%96%9C%E5%90%8D%E7%95%AA%E6%89%80",
+    "license": "CC BY-SA 4.0",
+    "fetched_at": "2026-09-28"
+   },
+   "nearest": [],
+   "src": "https://www.wikidata.org/wiki/Q11641202"
+  },
+  {
+   "id": "wd-Q11641500",
+   "n": "道の駅許田",
+   "z": "道之驛許田",
+   "lat": 26.55206,
+   "lng": 127.96925,
+   "k": "major",
+   "f": 0,
+   "s": 132.6,
+   "h": "みちのえききょだ",
+   "r": "Michinoekikyoda",
+   "c": "購物",
+   "m": "472093",
+   "name": {
+    "ja": "道の駅許田",
+    "kana": "みちのえききょだ",
+    "romaji": "Michinoekikyoda",
+    "zh_tw": "道之驛許田",
+    "en": "Roadside station Kyoda"
+   },
+   "summary": {
+    "text": "道の駅許田（みちのえき きょだ）は、沖縄県名護市にある国道58号の道の駅である。",
+    "lang": "ja",
+    "source_url": "https://ja.wikipedia.org/wiki/%E9%81%93%E3%81%AE%E9%A7%85%E8%A8%B1%E7%94%B0",
+    "license": "CC BY-SA 4.0",
+    "fetched_at": "2026-09-28"
+   },
+   "nearest": [],
+   "src": "https://www.wikidata.org/wiki/Q11641500"
+  },
+  {
+   "id": "wd-Q11641501",
+   "n": "道の駅豊崎",
+   "z": "道の駅豊崎",
+   "lat": 26.15767,
+   "lng": 127.65525,
+   "k": "major",
+   "f": 0,
+   "s": 76.8,
+   "h": "みちのえきとよさき",
+   "r": "Michinoekitoyosaki",
+   "c": "岬",
+   "m": "472123",
+   "name": {
+    "ja": "道の駅豊崎",
+    "kana": "みちのえきとよさき",
+    "romaji": "Michinoekitoyosaki",
+    "zh_tw": "道の駅豊崎",
+    "en": "Roadside station Toyosaki"
+   },
+   "summary": {
+    "text": "道の駅豊崎（みちのえき とよさき）は、沖縄県豊見城市にある国道331号の道の駅である。",
+    "lang": "ja",
+    "source_url": "https://ja.wikipedia.org/wiki/%E9%81%93%E3%81%AE%E9%A7%85%E8%B1%8A%E5%B4%8E",
+    "license": "CC BY-SA 4.0",
+    "fetched_at": "2026-09-28"
+   },
+   "nearest": [],
+   "src": "https://www.wikidata.org/wiki/Q11641501"
+  },
+  {
+   "id": "wd-Q11661070",
+   "n": "青の洞窟",
+   "z": "青の洞窟",
+   "lat": 26.4425,
+   "lng": 127.77333,
+   "k": "major",
+   "f": 0,
+   "s": 59.3,
+   "h": "あおのどうくつ",
+   "r": "Aonodokutsu",
+   "c": "展望",
+   "m": "473111",
+   "name": {
+    "ja": "青の洞窟",
+    "kana": "あおのどうくつ",
+    "romaji": "Aonodokutsu",
+    "zh_tw": "青の洞窟",
+    "en": "Blue Cave"
+   },
+   "summary": {
+    "text": "青の洞窟（あおのどうくつ）は沖縄本島の真栄田岬（沖縄県国頭郡恩納村）にある洞窟の通称であり、地元ではダイビングスポットのひとつとなっている。",
+    "lang": "ja",
+    "source_url": "https://ja.wikipedia.org/wiki/%E9%9D%92%E3%81%AE%E6%B4%9E%E7%AA%9F_%28%E6%81%A9%E7%B4%8D%E6%9D%91%29",
+    "license": "CC BY-SA 4.0",
+    "fetched_at": "2026-09-28"
+   },
+   "nearest": [],
+   "src": "https://www.wikidata.org/wiki/Q11661070"
+  },
+  {
+   "id": "wd-Q1186324",
+   "n": "玉陵",
+   "z": "玉陵",
+   "lat": 26.21833,
+   "lng": 127.71472,
+   "k": "major",
+   "f": 1,
+   "s": 184.7,
+   "h": "たまうどぅん",
+   "r": "Tamaudon",
+   "c": "史跡",
+   "d": "世界遺產",
+   "m": "472018",
+   "st": "node-6540583675",
+   "name": {
+    "ja": "玉陵",
+    "kana": "たまうどぅん",
+    "romaji": "Tamaudon",
+    "zh_tw": "玉陵",
+    "en": "Tamaudun"
+   },
+   "summary": {
+    "text": "玉陵（琉球語：霊御殿／タマウドゥン",
+    "lang": "zh",
+    "source_url": "https://zh.wikipedia.org/wiki/%E7%8E%89%E9%99%B5",
+    "license": "CC BY-SA 4.0",
+    "fetched_at": "2026-09-28"
+   },
+   "nearest": [
+    {
+     "name": {
+      "ja": "儀保",
+      "kana": "ぎぼ",
+      "romaji": "Gibo",
+      "en": "Gibo"
+     },
+     "distance_m": 820
+    },
+    {
+     "name": {
+      "ja": "首里",
+      "kana": "しゅり",
+      "romaji": "Shuri",
+      "en": "Shuri"
+     },
+     "distance_m": 1080
+    }
+   ],
+   "src": "https://www.wikidata.org/wiki/Q1186324"
+  },
+  {
+   "id": "wd-Q1197455",
+   "n": "那覇空港",
+   "z": "那霸機場",
+   "lat": 26.19583,
+   "lng": 127.64583,
+   "k": "major",
+   "f": 0,
+   "s": 74,
+   "h": "なはくうこう",
+   "r": "Nahakuko",
+   "c": "機場",
+   "m": "472018",
+   "st": "node-6540630178"
+  },
+  {
+   "id": "wd-Q127420256",
+   "n": "世界遺産座喜味城跡ユンタンザミュージアム",
+   "z": "世界遺産座喜味城跡ユンタンザミュージアム",
+   "lat": 26.40693,
+   "lng": 127.74267,
+   "k": "major",
+   "f": 0,
+   "s": 64.4,
+   "m": "473243",
+   "name": {
+    "ja": "世界遺産座喜味城跡ユンタンザミュージアム",
+    "zh_tw": "世界遺産座喜味城跡ユンタンザミュージアム",
+    "en": "Yuntanza Museum"
+   },
+   "nearest": [],
+   "src": "https://www.wikidata.org/wiki/Q127420256"
+  },
+  {
+   "id": "wd-Q132156999",
+   "n": "平和祈念公園",
+   "z": "平和祈念公園",
+   "lat": 26.095,
+   "lng": 127.72356,
+   "k": "major",
+   "f": 0,
+   "s": 95.2,
+   "c": "公園",
+   "m": "472107",
+   "name": {
+    "ja": "平和祈念公園",
+    "zh_tw": "平和祈念公園",
+    "en": "Okinawa Peace Memorial Park"
+   },
+   "summary": {
+    "text": "沖縄戦跡国定公園（おきなわせんせきこくていこうえん）は、沖縄県の沖縄本島南端部、糸満市と島尻郡八重瀬町にまたがる、第二次世界大戦（沖縄戦）の戦跡と自然景観を有する国定公園である。",
+    "lang": "ja",
+    "source_url": "https://ja.wikipedia.org/wiki/%E6%B2%96%E7%B8%84%E5%B9%B3%E5%92%8C%E7%A5%88%E5%BF%B5%E5%85%AC%E5%9C%92",
+    "license": "CC BY-SA 4.0",
+    "fetched_at": "2026-09-28"
+   },
+   "nearest": [],
+   "src": "https://www.wikidata.org/wiki/Q132156999"
+  },
+  {
+   "id": "wd-Q133878783",
+   "n": "ジャングリア沖縄",
+   "z": "JUNGLIA沖繩",
+   "lat": 26.64224,
+   "lng": 127.97362,
+   "k": "major",
+   "f": 1,
+   "s": 148.9,
+   "h": "じゃんぐりあおきなわ",
+   "r": "Janguriaokinawa",
+   "c": "主題樂園",
+   "m": "473065",
+   "name": {
+    "ja": "ジャングリア沖縄",
+    "kana": "じゃんぐりあおきなわ",
+    "romaji": "Janguriaokinawa",
+    "zh_tw": "JUNGLIA沖繩",
+    "en": "JUNGLIA OKINAWA"
+   },
+   "summary": {
+    "text": "JUNGLIA沖繩是一座位於日本沖繩縣今歸仁村和名護市交界處的主題樂園。修建於高爾夫球場舊址上，面積相當於13個東京巨蛋。",
+    "lang": "zh",
+    "source_url": "https://zh.wikipedia.org/wiki/JUNGLIA%E6%B2%96%E7%B9%A9",
+    "license": "CC BY-SA 4.0",
+    "fetched_at": "2026-09-28"
+   },
+   "nearest": [],
+   "src": "https://www.wikidata.org/wiki/Q133878783"
+  },
+  {
+   "id": "wd-Q137962",
+   "n": "瀬底島",
+   "z": "瀨底島",
+   "lat": 26.64611,
+   "lng": 127.865,
+   "k": "major",
+   "f": 0,
+   "s": 113.5,
+   "h": "せそこじま",
+   "r": "Sesokojima",
+   "c": "島",
+   "m": "473081",
+   "name": {
+    "ja": "瀬底島",
+    "kana": "せそこじま",
+    "romaji": "Sesokojima",
+    "zh_tw": "瀨底島",
+    "en": "Sesoko Island"
+   },
+   "summary": {
+    "text": "瀨底島（日語：瀬底島／せそこじま，羅馬化：Sesoko-jima、琉球語：瀬底／シーク",
+    "lang": "zh",
+    "source_url": "https://zh.wikipedia.org/wiki/%E7%80%A8%E5%BA%95%E5%B3%B6",
+    "license": "CC BY-SA 4.0",
+    "fetched_at": "2026-09-28"
+   },
+   "nearest": [],
+   "src": "https://www.wikidata.org/wiki/Q137962"
+  },
+  {
+   "id": "wd-Q1445750",
+   "n": "沖縄美ら海水族館",
+   "z": "沖繩美麗海水族館",
+   "lat": 26.69439,
+   "lng": 127.87794,
+   "k": "major",
+   "f": 1,
+   "s": 150.5,
+   "h": "おきなわちゅらうみすいぞくかん",
+   "r": "Okinawa Churaumi Suizokan",
+   "c": "水族館",
+   "m": "473081",
+   "name": {
+    "ja": "沖縄美ら海水族館",
+    "kana": "おきなわちゅらうみすいぞくかん",
+    "romaji": "Okinawa Churaumi Suizokan",
+    "zh_tw": "沖繩美麗海水族館",
+    "en": "Okinawa Churaumi Aquarium"
+   },
+   "summary": {
+    "text": "沖繩美麗海水族館位於日本沖繩縣國頭郡本部町的國營沖繩紀念公園內海洋博覽會紀念公園，於沖繩國際海洋博覽會舉辦後次年於其會場原址成立。為世界上最大的水族館之一。",
+    "lang": "zh",
+    "source_url": "https://zh.wikipedia.org/wiki/%E6%B2%96%E7%B9%A9%E7%BE%8E%E9%BA%97%E6%B5%B7%E6%B0%B4%E6%97%8F%E9%A4%A8",
+    "license": "CC BY-SA 4.0",
+    "fetched_at": "2026-09-28"
+   },
+   "nearest": [],
+   "src": "https://www.wikidata.org/wiki/Q1445750"
+  },
+  {
+   "id": "wd-Q15622697",
+   "n": "島添大里城",
+   "z": "島添大里城",
+   "lat": 26.1407,
+   "lng": 127.769,
+   "k": "major",
+   "f": 0,
+   "s": 67.3,
+   "h": "しましーうふざとぐすく",
+   "r": "Shimashiufuzatogusuku",
+   "c": "城",
+   "m": "472158",
+   "name": {
+    "ja": "島添大里城",
+    "kana": "しましーうふざとぐすく",
+    "romaji": "Shimashiufuzatogusuku",
+    "zh_tw": "島添大里城",
+    "en": "Ōzato Castle"
+   },
+   "summary": {
+    "text": "島尻大里城，是位於今日沖繩縣南城市境內的一座御城，也是琉球最大的御城。",
+    "lang": "zh",
+    "source_url": "https://zh.wikipedia.org/wiki/%E5%B3%B6%E6%B7%BB%E5%A4%A7%E9%87%8C%E5%9F%8E",
+    "license": "CC BY-SA 4.0",
+    "fetched_at": "2026-09-28"
+   },
+   "nearest": [],
+   "src": "https://www.wikidata.org/wiki/Q15622697"
+  },
+  {
+   "id": "wd-Q1619050",
+   "n": "ひめゆり平和祈念資料館",
+   "z": "姬百合和平祈念資料館",
+   "lat": 26.09635,
+   "lng": 127.69033,
+   "k": "major",
+   "f": 0,
+   "s": 143.8,
+   "h": "ひめゆりへいわきねんしりょうかん",
+   "r": "Himeyuriheiwakinenshiryokan",
+   "c": "博物館",
+   "m": "472107",
+   "name": {
+    "ja": "ひめゆり平和祈念資料館",
+    "kana": "ひめゆりへいわきねんしりょうかん",
+    "romaji": "Himeyuriheiwakinenshiryokan",
+    "zh_tw": "姬百合和平祈念資料館",
+    "en": "Himeyuri Peace Museum"
+   },
+   "summary": {
+    "text": "Himeyuri Peace Museum (ひめゆり平和祈念資料館, Himeyuri Heiwa Kinen Shiryōkan) opened in Itoman, Okinawa Prefecture, Japan in 1989. Located within Okinawa Senseki Quasi-Na",
+    "lang": "en",
+    "source_url": "https://en.wikipedia.org/wiki/Himeyuri_Peace_Museum",
+    "license": "CC BY-SA 4.0",
+    "fetched_at": "2026-09-29"
+   },
+   "nearest": [],
+   "src": "https://www.wikidata.org/wiki/Q1619050"
+  },
+  {
+   "id": "wd-Q1619055",
+   "n": "ひめゆりの塔",
+   "z": "姬百合之塔",
+   "lat": 26.09635,
+   "lng": 127.69034,
+   "k": "major",
+   "f": 0,
+   "s": 79.6,
+   "h": "ひめゆりのとう",
+   "r": "Himeyurinoto",
+   "m": "472107",
+   "name": {
+    "ja": "ひめゆりの塔",
+    "kana": "ひめゆりのとう",
+    "romaji": "Himeyurinoto",
+    "zh_tw": "姬百合之塔",
+    "en": "Himeyuri Cenotaph"
+   },
+   "summary": {
+    "text": "姬百合之塔是於沖繩島戰役後期時在原沖繩陸軍醫院第三外科所在的戰壕的遺跡所建立的慰靈碑。現位於日本沖繩縣糸滿市。1946年4月7日除幕。",
+    "lang": "zh",
+    "source_url": "https://zh.wikipedia.org/wiki/%E5%A7%AC%E7%99%BE%E5%90%88%E4%B9%8B%E5%A1%94",
+    "license": "CC BY-SA 4.0",
+    "fetched_at": "2026-09-28"
+   },
+   "nearest": [],
+   "src": "https://www.wikidata.org/wiki/Q1619055"
+  },
+  {
+   "id": "wd-Q16892618",
+   "n": "伊波城",
+   "z": "伊波城",
+   "lat": 26.42156,
+   "lng": 127.81733,
+   "k": "major",
+   "f": 0,
+   "s": 61.8,
+   "h": "いはぐすく",
+   "r": "Ihagusuku",
+   "c": "城",
+   "m": "472131",
+   "name": {
+    "ja": "伊波城",
+    "kana": "いはぐすく",
+    "romaji": "Ihagusuku",
+    "zh_tw": "伊波城",
+    "en": "Iha Castle"
+   },
+   "summary": {
+    "text": "Iha Castle (伊波城, Iha jō; Okinawan: Ifa Gushiku) is a Ryukyuan gusuku in Uruma, Okinawa. It sits on a cliff that separates Iha from Ishikawa, with a grand view o",
+    "lang": "en",
+    "source_url": "https://en.wikipedia.org/wiki/Iha_Castle",
+    "license": "CC BY-SA 4.0",
+    "fetched_at": "2026-09-29"
+   },
+   "nearest": [],
+   "src": "https://www.wikidata.org/wiki/Q16892618"
+  },
+  {
+   "id": "wd-Q16903903",
+   "n": "山田城",
+   "z": "山田城",
+   "lat": 26.43361,
+   "lng": 127.785,
+   "k": "major",
+   "f": 0,
+   "s": 64.2,
+   "h": "やまだぐすく",
+   "r": "Yamadagusuku",
+   "c": "城",
+   "m": "473111",
+   "name": {
+    "ja": "山田城",
+    "kana": "やまだぐすく",
+    "romaji": "Yamadagusuku",
+    "zh_tw": "山田城",
+    "en": "Yamada Castle"
+   },
+   "summary": {
+    "text": "Yamada Castle (山田城, Yamada jō; Okinawan: Yamada Gushiku) was a Ryūkyūan gusuku fortification located in the village of  Onna, Okinawa Prefecture, Japan. It has ",
+    "lang": "en",
+    "source_url": "https://en.wikipedia.org/wiki/Yamada_Castle",
+    "license": "CC BY-SA 4.0",
+    "fetched_at": "2026-09-29"
+   },
+   "nearest": [],
+   "src": "https://www.wikidata.org/wiki/Q16903903"
+  },
+  {
+   "id": "wd-Q17052333",
+   "n": "南山城 (琉球国)",
+   "z": "南山城",
+   "lat": 26.12778,
+   "lng": 127.68892,
+   "k": "major",
+   "f": 0,
+   "s": 61.8,
+   "h": "なんざんじょう",
+   "r": "Nanzanjo",
+   "m": "472107",
+   "name": {
+    "ja": "南山城 (琉球国)",
+    "kana": "なんざんじょう",
+    "romaji": "Nanzanjo",
+    "zh_tw": "南山城",
+    "en": "Nanzan Castle"
+   },
+   "summary": {
+    "text": "Nanzan Castle (南山城, Nanzan jō; Okinawan: Nanzan Gushiku), officially Shimajiri-Ōzato Castle (島尻大里城, Shimajiri-Ōzato jō; Okinawan: Shimajiri-Ufuzatu Gushiku), is",
+    "lang": "en",
+    "source_url": "https://en.wikipedia.org/wiki/Nanzan_Castle",
+    "license": "CC BY-SA 4.0",
+    "fetched_at": "2026-09-29"
+   },
+   "nearest": [],
+   "src": "https://www.wikidata.org/wiki/Q17052333"
+  },
+  {
+   "id": "wd-Q17225173",
+   "n": "ユーグレナモール",
+   "z": "ユーグレナモール",
+   "lat": 24.33947,
+   "lng": 124.15797,
+   "k": "major",
+   "f": 0,
+   "s": 108.3,
+   "h": "ゆーぐれなもーる",
+   "r": "Yugurenamoru",
+   "c": "購物",
+   "m": "472077",
+   "name": {
+    "ja": "ユーグレナモール",
+    "kana": "ゆーぐれなもーる",
+    "romaji": "Yugurenamoru",
+    "zh_tw": "ユーグレナモール",
+    "en": "Euglena Mall"
+   },
+   "summary": {
+    "text": "ユーグレナモールは、沖縄県石垣市（石垣島）大川にある日本最南端のアーケード商店街である。2010年（平成22年）3月に命名権が譲渡されるまでの旧名はあやぱにモール。",
+    "lang": "ja",
+    "source_url": "https://ja.wikipedia.org/wiki/%E3%83%A6%E3%83%BC%E3%82%B0%E3%83%AC%E3%83%8A%E3%83%A2%E3%83%BC%E3%83%AB",
+    "license": "CC BY-SA 4.0",
+    "fetched_at": "2026-09-28"
+   },
+   "nearest": [],
+   "src": "https://www.wikidata.org/wiki/Q17225173"
+  },
+  {
+   "id": "wd-Q17226861",
+   "n": "ひんぷんガジュマル",
+   "z": "ひんぷんガジュマル",
+   "lat": 26.58733,
+   "lng": 127.98594,
+   "k": "major",
+   "f": 0,
+   "s": 127,
+   "h": "ひんぷんがじゅまる",
+   "r": "Hinpungajumaru",
+   "m": "472093",
+   "name": {
+    "ja": "ひんぷんガジュマル",
+    "kana": "ひんぷんがじゅまる",
+    "romaji": "Hinpungajumaru",
+    "zh_tw": "ひんぷんガジュマル",
+    "en": "Hinpun Banyan Tree"
+   },
+   "summary": {
+    "text": "ひんぷんガジュマルは、沖縄県名護市にあるガジュマルの巨木である。幸地川に架かるあなだ橋のたもとにあり、名護大通り（県道84号）に挟まれている。名称は、樹下に置かれている石碑三府龍脈碑の別名「ヒンプンシー（屏風石）」に由来する。「ひんぷん」とは、沖縄の伝統的家屋で正門と母屋の間に立つ、目隠しの塀のことである。",
+    "lang": "ja",
+    "source_url": "https://ja.wikipedia.org/wiki/%E3%81%B2%E3%82%93%E3%81%B7%E3%82%93%E3%82%AC%E3%82%B8%E3%83%A5%E3%83%9E%E3%83%AB",
+    "license": "CC BY-SA 4.0",
+    "fetched_at": "2026-09-28"
+   },
+   "nearest": [],
+   "src": "https://www.wikidata.org/wiki/Q17226861"
+  },
+  {
+   "id": "wd-Q18337506",
+   "n": "渡口の浜",
+   "z": "渡口の浜",
+   "lat": 24.81186,
+   "lng": 125.17839,
+   "k": "major",
+   "f": 0,
+   "s": 112.8,
+   "h": "とぐちのはま",
+   "r": "Toguchinohama",
+   "c": "海灘",
+   "m": "472140",
+   "name": {
+    "ja": "渡口の浜",
+    "kana": "とぐちのはま",
+    "romaji": "Toguchinohama",
+    "zh_tw": "渡口の浜",
+    "en": "Toguchi Beach"
+   },
+   "summary": {
+    "text": "渡口の浜（とぐちのはま）は、沖縄県宮古島市の伊良部島南西部にある砂浜海岸である。",
+    "lang": "ja",
+    "source_url": "https://ja.wikipedia.org/wiki/%E6%B8%A1%E5%8F%A3%E3%81%AE%E6%B5%9C",
+    "license": "CC BY-SA 4.0",
+    "fetched_at": "2026-09-28"
+   },
+   "nearest": [],
+   "src": "https://www.wikidata.org/wiki/Q18337506"
+  },
+  {
+   "id": "wd-Q187366",
+   "n": "伊良部島",
+   "z": "伊良部島",
+   "lat": 24.83167,
+   "lng": 125.19083,
+   "k": "major",
+   "f": 0,
+   "s": 76.3,
+   "h": "いらぶじま",
+   "r": "Irabujima",
+   "c": "島",
+   "m": "472140",
+   "name": {
+    "ja": "伊良部島",
+    "kana": "いらぶじま",
+    "romaji": "Irabujima",
+    "zh_tw": "伊良部島",
+    "en": "Irabu Island"
+   },
+   "summary": {
+    "text": "伊良部島（日語：伊良部島／いらぶじま，羅馬化：Irabu-jima、琉球語：伊良部／イラヴ",
+    "lang": "zh",
+    "source_url": "https://zh.wikipedia.org/wiki/%E4%BC%8A%E8%89%AF%E9%83%A8%E5%B3%B6",
+    "license": "CC BY-SA 4.0",
+    "fetched_at": "2026-09-28"
+   },
+   "nearest": [],
+   "src": "https://www.wikidata.org/wiki/Q187366"
+  },
+  {
+   "id": "wd-Q19568958",
+   "n": "名護博物館",
+   "z": "名護博物館",
+   "lat": 26.59797,
+   "lng": 127.9878,
+   "k": "major",
+   "f": 0,
+   "s": 94.3,
+   "h": "なごはくぶつかん",
+   "r": "Nagohakubutsukan",
+   "c": "博物館",
+   "m": "472093",
+   "name": {
+    "ja": "名護博物館",
+    "kana": "なごはくぶつかん",
+    "romaji": "Nagohakubutsukan",
+    "zh_tw": "名護博物館",
+    "en": "Nago Museum"
+   },
+   "summary": {
+    "text": "Nago Museum (名護博物館, Nago hakubutsukan) opened in 1984 in Nago, Okinawa Prefecture, Japan. The collection covers natural as well as cultural history and includes",
+    "lang": "en",
+    "source_url": "https://en.wikipedia.org/wiki/Nago_Museum",
+    "license": "CC BY-SA 4.0",
+    "fetched_at": "2026-09-29"
+   },
+   "nearest": [],
+   "src": "https://www.wikidata.org/wiki/Q19568958"
+  },
+  {
+   "id": "wd-Q2338956",
+   "n": "座喜味城",
+   "z": "座喜味城",
+   "lat": 26.40833,
+   "lng": 127.74194,
+   "k": "major",
+   "f": 0,
+   "s": 103.7,
+   "h": "ざきみぐすく",
+   "r": "Zakimi-gusuku",
+   "c": "城",
+   "d": "世界遺產",
+   "m": "473243",
+   "name": {
+    "ja": "座喜味城",
+    "kana": "ざきみぐすく",
+    "romaji": "Zakimi-gusuku",
+    "zh_tw": "座喜味城",
+    "en": "Zakimi Castle"
+   },
+   "summary": {
+    "text": "座喜味城（琉球語：座喜味城／ジャチミグシク",
+    "lang": "zh",
+    "source_url": "https://zh.wikipedia.org/wiki/%E5%BA%A7%E5%96%9C%E5%91%B3%E5%9F%8E",
+    "license": "CC BY-SA 4.0",
+    "fetched_at": "2026-09-28"
+   },
+   "nearest": [],
+   "src": "https://www.wikidata.org/wiki/Q2338956"
+  },
+  {
+   "id": "wd-Q2471589",
+   "n": "勝連城",
+   "z": "勝連城",
+   "lat": 26.32981,
+   "lng": 127.87888,
+   "k": "major",
+   "f": 1,
+   "s": 157.4,
+   "c": "城",
+   "d": "世界遺產",
+   "m": "472131",
+   "name": {
+    "ja": "勝連城",
+    "zh_tw": "勝連城",
+    "en": "Katsuren Castle"
+   },
+   "summary": {
+    "text": "勝連城（琉球語：勝連城／カッチングスク",
+    "lang": "zh",
+    "source_url": "https://zh.wikipedia.org/wiki/%E5%8B%9D%E9%80%A3%E5%9F%8E",
+    "license": "CC BY-SA 4.0",
+    "fetched_at": "2026-09-28"
+   },
+   "nearest": [],
+   "src": "https://www.wikidata.org/wiki/Q2471589"
+  },
+  {
+   "id": "wd-Q25100118",
+   "n": "三重城",
+   "z": "三重城",
+   "lat": 26.2138,
+   "lng": 127.6651,
+   "k": "major",
+   "f": 0,
+   "s": 116.8,
+   "h": "みえぐすく",
+   "r": "Miegusuku",
+   "c": "城",
+   "m": "472018",
+   "st": "node-6540547645",
+   "name": {
+    "ja": "三重城",
+    "kana": "みえぐすく",
+    "romaji": "Miegusuku",
+    "zh_tw": "三重城",
+    "en": "Mie Castle"
+   },
+   "summary": {
+    "text": "Mie Castle (三重城, Mie jō; Okinawan: Mii gushiku) is a Ryūkyūan gusuku in Naha, Okinawa, Japan. It is located on the northern mouth of the Kokuba River in Naha Po",
+    "lang": "en",
+    "source_url": "https://en.wikipedia.org/wiki/Mie_Castle",
+    "license": "CC BY-SA 4.0",
+    "fetched_at": "2026-09-29"
+   },
+   "nearest": [
+    {
+     "name": {
+      "ja": "旭橋",
+      "kana": "あさひばし",
+      "romaji": "Asahibashi",
+      "en": "Asahibashi"
+     },
+     "distance_m": 1060
+    },
+    {
+     "name": {
+      "ja": "県庁前",
+      "kana": "けんちょうまえ",
+      "romaji": "Kenchō-mae",
+      "en": "Prefectural Office"
+     },
+     "distance_m": 1420
+    }
+   ],
+   "src": "https://www.wikidata.org/wiki/Q25100118"
+  },
+  {
+   "id": "wd-Q25112734",
+   "n": "琉球村",
+   "z": "琉球村",
+   "lat": 26.42947,
+   "lng": 127.77526,
+   "k": "major",
+   "f": 0,
+   "s": 135.8,
+   "h": "りゅうきゅうむら",
+   "r": "Ryukyu Mura",
+   "c": "博物館",
+   "m": "473111",
+   "name": {
+    "ja": "琉球村",
+    "kana": "りゅうきゅうむら",
+    "romaji": "Ryukyu Mura",
+    "zh_tw": "琉球村",
+    "en": "Ryukyu Mura"
+   },
+   "summary": {
+    "text": "Ryukyu Mura (Japanese: 琉球村, Hepburn: Ryūkyū Mura; lit. 'Ryukyu Village') is a theme park and folk museum in Onna, Okinawa Prefecture, Japan. It is an open-air m",
+    "lang": "en",
+    "source_url": "https://en.wikipedia.org/wiki/Ryukyu_Mura",
+    "license": "CC BY-SA 4.0",
+    "fetched_at": "2026-09-29"
+   },
+   "nearest": [],
+   "src": "https://www.wikidata.org/wiki/Q25112734"
+  },
+  {
+   "id": "wd-Q2654598",
+   "n": "川平湾",
+   "z": "川平灣",
+   "lat": 24.45139,
+   "lng": 124.14444,
+   "k": "major",
+   "f": 1,
+   "s": 153.7,
+   "h": "かびらわん",
+   "r": "Kabirawan",
+   "c": "岬",
+   "m": "472077",
+   "name": {
+    "ja": "川平湾",
+    "kana": "かびらわん",
+    "romaji": "Kabirawan",
+    "zh_tw": "川平灣",
+    "en": "Kabira Bay"
+   },
+   "summary": {
+    "text": "川平灣是一個位在日本沖繩縣石垣島北方的海灣。其著名的景點是他淨白的沙灘跟清澈的海水，川平灣也是西表石垣國立公園的一部分，受到法律的管轄以及保護。川平灣旁的於茂登嶽被日本文化財產指定為重要的紀念物。該灣也產出稀有少量的黑珍珠。川平灣附近的村落在1950-1952年間也被美國文化學者觀察研究過。",
+    "lang": "zh",
+    "source_url": "https://zh.wikipedia.org/wiki/%E5%B7%9D%E5%B9%B3%E7%81%A3",
+    "license": "CC BY-SA 4.0",
+    "fetched_at": "2026-09-28"
+   },
+   "nearest": [],
+   "src": "https://www.wikidata.org/wiki/Q2654598"
+  },
+  {
+   "id": "wd-Q28690844",
+   "n": "いんぶビーチ",
+   "z": "いんぶビーチ",
+   "lat": 26.52628,
+   "lng": 127.92511,
+   "k": "major",
+   "f": 0,
+   "s": 57.7,
+   "h": "いんぶびーち",
+   "r": "Inbubichi",
+   "c": "展望",
+   "m": "473111",
+   "name": {
+    "ja": "いんぶビーチ",
+    "kana": "いんぶびーち",
+    "romaji": "Inbubichi",
+    "zh_tw": "いんぶビーチ",
+    "en": "Inbu Beach"
+   },
+   "summary": {
+    "text": "いんぶビーチ（伊武部ビーチ）とは、沖縄県恩納村（沖縄本島）字名嘉真2173に所在するビーチである。沖縄海岸国定公園に指定されている。再開発のため、2017年現在、閉鎖中。",
+    "lang": "ja",
+    "source_url": "https://ja.wikipedia.org/wiki/%E3%81%84%E3%82%93%E3%81%B6%E3%83%93%E3%83%BC%E3%83%81",
+    "license": "CC BY-SA 4.0",
+    "fetched_at": "2026-09-28"
+   },
+   "nearest": [],
+   "src": "https://www.wikidata.org/wiki/Q28690844"
+  },
+  {
+   "id": "wd-Q3070222",
+   "n": "漫湖",
+   "z": "漫湖",
+   "lat": 26.19717,
+   "lng": 127.68333,
+   "k": "major",
+   "f": 0,
+   "s": 82.3,
+   "h": "まんこ",
+   "r": "Manko",
+   "m": "472123",
+   "st": "node-7746899672",
+   "name": {
+    "ja": "漫湖",
+    "kana": "まんこ",
+    "romaji": "Manko",
+    "zh_tw": "漫湖",
+    "en": "Lake Man"
+   },
+   "summary": {
+    "text": "漫湖是橫跨沖繩縣那霸市與豐見城市的灘塗。登錄於濕地公約和日本最重要濕地500。附近有漫湖公園。",
+    "lang": "zh",
+    "source_url": "https://zh.wikipedia.org/wiki/%E6%BC%AB%E6%B9%96",
+    "license": "CC BY-SA 4.0",
+    "fetched_at": "2026-09-28"
+   },
+   "nearest": [
+    {
+     "name": {
+      "ja": "奥武山公園",
+      "kana": "おうのやまこうえん",
+      "romaji": "Ōnoyama-kōen",
+      "en": "Onoyama Park"
+     },
+     "distance_m": 890
+    },
+    {
+     "name": {
+      "ja": "壺川",
+      "kana": "つぼがわ",
+      "romaji": "Tsubogawa",
+      "en": "Tsubogawa"
+     },
+     "distance_m": 1080
+    }
+   ],
+   "src": "https://www.wikidata.org/wiki/Q3070222"
+  },
+  {
+   "id": "wd-Q3087076",
+   "n": "斎場御嶽",
+   "z": "齋場御嶽",
+   "lat": 26.17333,
+   "lng": 127.82667,
+   "k": "major",
+   "f": 1,
+   "s": 174.5,
+   "h": "せーふぁーうたき",
+   "r": "Sefa Utaki",
+   "c": "史跡",
+   "d": "世界遺產",
+   "m": "472158",
+   "name": {
+    "ja": "斎場御嶽",
+    "kana": "せーふぁーうたき",
+    "romaji": "Sefa Utaki",
+    "zh_tw": "齋場御嶽",
+    "en": "Sefa-utaki"
+   },
+   "summary": {
+    "text": "齋場御嶽（琉球語：斎場御嶽／シェーファウタキ",
+    "lang": "zh",
+    "source_url": "https://zh.wikipedia.org/wiki/%E9%BD%8B%E5%A0%B4%E5%BE%A1%E5%B6%BD",
+    "license": "CC BY-SA 4.0",
+    "fetched_at": "2026-09-28"
+   },
+   "nearest": [],
+   "src": "https://www.wikidata.org/wiki/Q3087076"
+  },
+  {
+   "id": "wd-Q30923821",
+   "n": "ニシ浜",
+   "z": "北濱",
+   "lat": 24.06442,
+   "lng": 123.76214,
+   "k": "major",
+   "f": 0,
+   "s": 114.6,
+   "h": "にしはま",
+   "r": "Nishihama",
+   "c": "海灘",
+   "m": "473812",
+   "name": {
+    "ja": "ニシ浜",
+    "kana": "にしはま",
+    "romaji": "Nishihama",
+    "zh_tw": "北濱",
+    "en": "Nishihama Beach"
+   },
+   "summary": {
+    "text": "ニシ浜（ニシはま、北浜）は、沖縄県八重山郡竹富町の波照間島北部にある海岸である。",
+    "lang": "ja",
+    "source_url": "https://ja.wikipedia.org/wiki/%E3%83%8B%E3%82%B7%E6%B5%9C",
+    "license": "CC BY-SA 4.0",
+    "fetched_at": "2026-09-28"
+   },
+   "nearest": [],
+   "src": "https://www.wikidata.org/wiki/Q30923821"
+  },
+  {
+   "id": "wd-Q30924980",
+   "n": "コンドイ浜",
+   "z": "コンドイ浜",
+   "lat": 24.32528,
+   "lng": 124.07753,
+   "k": "major",
+   "f": 0,
+   "s": 79.9,
+   "h": "こんどいはま",
+   "r": "Kondoihama",
+   "c": "海灘",
+   "m": "473812",
+   "name": {
+    "ja": "コンドイ浜",
+    "kana": "こんどいはま",
+    "romaji": "Kondoihama",
+    "zh_tw": "コンドイ浜",
+    "en": "Kondoi Beach"
+   },
+   "summary": {
+    "text": "コンドイ浜（コンドイはま）は、沖縄県八重山郡竹富町の竹富島西部にある海岸である。",
+    "lang": "ja",
+    "source_url": "https://ja.wikipedia.org/wiki/%E3%82%B3%E3%83%B3%E3%83%89%E3%82%A4%E6%B5%9C",
+    "license": "CC BY-SA 4.0",
+    "fetched_at": "2026-09-28"
+   },
+   "nearest": [],
+   "src": "https://www.wikidata.org/wiki/Q30924980"
+  },
+  {
+   "id": "wd-Q30926451",
+   "n": "安慶名城",
+   "z": "安慶名城",
+   "lat": 26.38083,
+   "lng": 127.85028,
+   "k": "major",
+   "f": 0,
+   "s": 109.9,
+   "h": "あげなぐすく",
+   "r": "Agenagusuku",
+   "c": "城",
+   "m": "472131",
+   "name": {
+    "ja": "安慶名城",
+    "kana": "あげなぐすく",
+    "romaji": "Agenagusuku",
+    "zh_tw": "安慶名城",
+    "en": "Agena Castle"
+   },
+   "summary": {
+    "text": "Agena Castle (安慶名城, Agena jō; Okinawan: Agina Gushiku or Aginaa Gushiku) Ryūkyūan gusuku fortification located in the north of Agena district of Uruma, Okinawa,",
+    "lang": "en",
+    "source_url": "https://en.wikipedia.org/wiki/Agena_Castle",
+    "license": "CC BY-SA 4.0",
+    "fetched_at": "2026-09-29"
+   },
+   "nearest": [],
+   "src": "https://www.wikidata.org/wiki/Q30926451"
+  },
+  {
+   "id": "wd-Q30926453",
+   "n": "糸数城",
+   "z": "糸数城",
+   "lat": 26.15139,
+   "lng": 127.7625,
+   "k": "major",
+   "f": 0,
+   "s": 99.3,
+   "h": "いとかずぐすく",
+   "r": "Itokazugusuku",
+   "c": "城",
+   "m": "472158",
+   "name": {
+    "ja": "糸数城",
+    "kana": "いとかずぐすく",
+    "romaji": "Itokazugusuku",
+    "zh_tw": "糸数城",
+    "en": "Itokazu Castle"
+   },
+   "summary": {
+    "text": "Itokazu Castle (糸数城, Itokazu jō; Okinawan: Ichukaji Gushiku) is a  Ryūkyūan gusuku fortification located in the Tamagusuku neighborhood of the city of Nanjō, Ok",
+    "lang": "en",
+    "source_url": "https://en.wikipedia.org/wiki/Itokazu_Castle",
+    "license": "CC BY-SA 4.0",
+    "fetched_at": "2026-09-29"
+   },
+   "nearest": [],
+   "src": "https://www.wikidata.org/wiki/Q30926453"
+  },
+  {
+   "id": "wd-Q30926461",
+   "n": "知念城",
+   "z": "知念城",
+   "lat": 26.16039,
+   "lng": 127.81192,
+   "k": "major",
+   "f": 0,
+   "s": 106.8,
+   "h": "ちねんじょう",
+   "r": "Chinenjo",
+   "c": "城",
+   "m": "472158",
+   "name": {
+    "ja": "知念城",
+    "kana": "ちねんじょう",
+    "romaji": "Chinenjo",
+    "zh_tw": "知念城",
+    "en": "Chinen Castle"
+   },
+   "summary": {
+    "text": "Chinen Castle (知念城, Chinen jō; Okinawan: Chinin Gushiku) is a  Ryūkyūan  gusuku fortification located in the city of Nanjō, Okinawa. The castle ruins were desig",
+    "lang": "en",
+    "source_url": "https://en.wikipedia.org/wiki/Chinen_Castle",
+    "license": "CC BY-SA 4.0",
+    "fetched_at": "2026-09-29"
+   },
+   "nearest": [],
+   "src": "https://www.wikidata.org/wiki/Q30926461"
+  },
+  {
+   "id": "wd-Q3133545",
+   "n": "識名園",
+   "z": "識名園",
+   "lat": 26.20417,
+   "lng": 127.71528,
+   "k": "major",
+   "f": 1,
+   "s": 171.3,
+   "h": "しきなえん",
+   "r": "Shikina En",
+   "c": "名勝",
+   "d": "世界遺產",
+   "m": "472018",
+   "name": {
+    "ja": "識名園",
+    "kana": "しきなえん",
+    "romaji": "Shikina En",
+    "zh_tw": "識名園",
+    "en": "Shikina-en"
+   },
+   "summary": {
+    "text": "識名園，琉球國時代又稱識名之御殿（琉球語：識名ぬ御殿／シチナヌウドゥン",
+    "lang": "zh",
+    "source_url": "https://zh.wikipedia.org/wiki/%E8%AD%98%E5%90%8D%E5%9C%92",
+    "license": "CC BY-SA 4.0",
+    "fetched_at": "2026-09-28"
+   },
+   "nearest": [],
+   "src": "https://www.wikidata.org/wiki/Q3133545"
+  },
+  {
+   "id": "wd-Q3511683",
+   "n": "崇元寺",
+   "z": "崇元寺",
+   "lat": 26.22039,
+   "lng": 127.6906,
+   "k": "major",
+   "f": 0,
+   "s": 88.1,
+   "h": "そうげんじ",
+   "r": "So Gen Ji",
+   "c": "寺院",
+   "m": "472018",
+   "st": "node-6540547650",
+   "name": {
+    "ja": "崇元寺",
+    "kana": "そうげんじ",
+    "romaji": "So Gen Ji",
+    "zh_tw": "崇元寺",
+    "en": "Sōgen-ji"
+   },
+   "summary": {
+    "text": "崇元寺（琉球語：崇元寺／スーギージ",
+    "lang": "zh",
+    "source_url": "https://zh.wikipedia.org/wiki/%E5%B4%87%E5%85%83%E5%AF%BA",
+    "license": "CC BY-SA 4.0",
+    "fetched_at": "2026-09-28"
+   },
+   "nearest": [
+    {
+     "name": {
+      "ja": "牧志",
+      "kana": "まきし",
+      "romaji": "Makishi",
+      "en": "Makishi"
+     },
+     "distance_m": 410
+    },
+    {
+     "name": {
+      "ja": "美栄橋",
+      "kana": "みえばし",
+      "romaji": "Miebashi",
+      "en": "Miebashi"
+     },
+     "distance_m": 630
+    }
+   ],
+   "src": "https://www.wikidata.org/wiki/Q3511683"
+  },
+  {
+   "id": "wd-Q38266947",
+   "n": "ガンガラーの谷",
+   "z": "ガンガラーの谷",
+   "lat": 26.14083,
+   "lng": 127.74667,
+   "k": "major",
+   "f": 0,
+   "s": 139.3,
+   "h": "がんがらーのたに",
+   "r": "Gangaranotani",
+   "m": "472158",
+   "name": {
+    "ja": "ガンガラーの谷",
+    "kana": "がんがらーのたに",
+    "romaji": "Gangaranotani",
+    "zh_tw": "ガンガラーの谷",
+    "en": "Valley of Gangala"
+   },
+   "summary": {
+    "text": "ガンガラーの谷（ガンガラーのたに）は、沖縄県南城市前川にある、鍾乳洞が崩れてできた谷地形。2008年8月に観光地として公開された。",
+    "lang": "ja",
+    "source_url": "https://ja.wikipedia.org/wiki/%E3%82%AC%E3%83%B3%E3%82%AC%E3%83%A9%E3%83%BC%E3%81%AE%E8%B0%B7",
+    "license": "CC BY-SA 4.0",
+    "fetched_at": "2026-09-28"
+   },
+   "nearest": [],
+   "src": "https://www.wikidata.org/wiki/Q38266947"
+  },
+  {
+   "id": "wd-Q391408",
+   "n": "尖閣神社",
+   "z": "尖閣神社",
+   "lat": 25.7425,
+   "lng": 123.47139,
+   "k": "major",
+   "f": 0,
+   "s": 68.4,
+   "h": "せんかくじんじゃ",
+   "r": "Senkakujinja",
+   "c": "神社",
+   "m": "472077",
+   "name": {
+    "ja": "尖閣神社",
+    "kana": "せんかくじんじゃ",
+    "romaji": "Senkakujinja",
+    "zh_tw": "尖閣神社",
+    "en": "Senkaku Shrine"
+   },
+   "summary": {
+    "text": "尖閣神社是一座位於釣魚臺列嶼（日本稱尖閣群島）上的神社，日本登記的戶籍地址為「日本國沖繩縣石垣市字登野城尖閣諸島魚釣島」。內部供奉的是從伊勢神宮所請來的天照大御神。",
+    "lang": "zh",
+    "source_url": "https://zh.wikipedia.org/wiki/%E5%B0%96%E9%96%A3%E7%A5%9E%E7%A4%BE",
+    "license": "CC BY-SA 4.0",
+    "fetched_at": "2026-09-28"
+   },
+   "nearest": [],
+   "src": "https://www.wikidata.org/wiki/Q391408"
+  },
+  {
+   "id": "wd-Q432124",
+   "n": "西表島",
+   "z": "西表島",
+   "lat": 24.34,
+   "lng": 123.81,
+   "k": "major",
+   "f": 0,
+   "s": 113.5,
+   "h": "いりおもてじま",
+   "r": "Iriomotejima",
+   "c": "島",
+   "d": "世界遺產",
+   "m": "473812",
+   "name": {
+    "ja": "西表島",
+    "kana": "いりおもてじま",
+    "romaji": "Iriomotejima",
+    "zh_tw": "西表島",
+    "en": "Iriomote Island"
+   },
+   "summary": {
+    "text": "西表島（日語：西表島／いりおもてじま，羅馬化：Iriomote-jima，琉球語：西表／イリムティ",
+    "lang": "zh",
+    "source_url": "https://zh.wikipedia.org/wiki/%E8%A5%BF%E8%A1%A8%E5%B3%B6",
+    "license": "CC BY-SA 4.0",
+    "fetched_at": "2026-09-28"
+   },
+   "nearest": [],
+   "src": "https://www.wikidata.org/wiki/Q432124"
+  },
+  {
+   "id": "wd-Q4518096",
+   "n": "ワルミ大橋",
+   "z": "ワルミ大橋",
+   "lat": 26.6675,
+   "lng": 127.995,
+   "k": "major",
+   "f": 0,
+   "s": 95.5,
+   "h": "わるみおおはし",
+   "r": "Warumiohashi",
+   "c": "橋",
+   "m": "472093",
+   "name": {
+    "ja": "ワルミ大橋",
+    "kana": "わるみおおはし",
+    "romaji": "Warumiohashi",
+    "zh_tw": "ワルミ大橋",
+    "en": "Warumi Bridge"
+   },
+   "summary": {
+    "text": "ワルミ大橋（ワルミおおはし）は、沖縄県の屋我地島（名護市我部）と本部半島（国頭郡今帰仁村天底）との間のワルミ海峡に架かる橋である。",
+    "lang": "ja",
+    "source_url": "https://ja.wikipedia.org/wiki/%E3%83%AF%E3%83%AB%E3%83%9F%E5%A4%A7%E6%A9%8B",
+    "license": "CC BY-SA 4.0",
+    "fetched_at": "2026-09-28"
+   },
+   "nearest": [],
+   "src": "https://www.wikidata.org/wiki/Q4518096"
+  },
+  {
+   "id": "wd-Q4518163",
+   "n": "古宇利島",
+   "z": "古宇利島",
+   "lat": 26.70611,
+   "lng": 128.01778,
+   "k": "major",
+   "f": 1,
+   "s": 151.1,
+   "h": "こうりじま",
+   "r": "Korijima",
+   "c": "島",
+   "m": "473065",
+   "name": {
+    "ja": "古宇利島",
+    "kana": "こうりじま",
+    "romaji": "Korijima",
+    "zh_tw": "古宇利島",
+    "en": "Kouri Island"
+   },
+   "summary": {
+    "text": "古宇利島（日語：古宇利島／こうりじま，羅馬化：Kōri-jima，琉球語：古宇利／フイ",
+    "lang": "zh",
+    "source_url": "https://zh.wikipedia.org/wiki/%E5%8F%A4%E5%AE%87%E5%88%A9%E5%B3%B6",
+    "license": "CC BY-SA 4.0",
+    "fetched_at": "2026-09-28"
+   },
+   "nearest": [],
+   "src": "https://www.wikidata.org/wiki/Q4518163"
+  },
+  {
+   "id": "wd-Q4518364",
+   "n": "津堅島",
+   "z": "津堅島",
+   "lat": 26.25056,
+   "lng": 127.94194,
+   "k": "major",
+   "f": 0,
+   "s": 105.6,
+   "h": "つけんじま",
+   "r": "Tsukenjima",
+   "c": "島",
+   "m": "472131",
+   "name": {
+    "ja": "津堅島",
+    "kana": "つけんじま",
+    "romaji": "Tsukenjima",
+    "zh_tw": "津堅島",
+    "en": "Tsuken Island"
+   },
+   "summary": {
+    "text": "津堅島（日語：津堅島／つけんじま，羅馬化：Tsuken-jima、琉球語：津堅／チキン",
+    "lang": "zh",
+    "source_url": "https://zh.wikipedia.org/wiki/%E6%B4%A5%E5%A0%85%E5%B3%B6",
+    "license": "CC BY-SA 4.0",
+    "fetched_at": "2026-09-28"
+   },
+   "nearest": [],
+   "src": "https://www.wikidata.org/wiki/Q4518364"
+  },
+  {
+   "id": "wd-Q4518632",
+   "n": "屋我地島",
+   "z": "屋我地島",
+   "lat": 26.66556,
+   "lng": 128.01056,
+   "k": "major",
+   "f": 0,
+   "s": 103.2,
+   "h": "やがじしま",
+   "r": "Yagajishima",
+   "c": "島",
+   "m": "472093",
+   "name": {
+    "ja": "屋我地島",
+    "kana": "やがじしま",
+    "romaji": "Yagajishima",
+    "zh_tw": "屋我地島",
+    "en": "Yagaji Island"
+   },
+   "summary": {
+    "text": "屋我地島（日語：屋我地島／やがじしま，羅馬化：Yagaji-shima，琉球語：屋我地／ヤガーヂー",
+    "lang": "zh",
+    "source_url": "https://zh.wikipedia.org/wiki/%E5%B1%8B%E6%88%91%E5%9C%B0%E5%B3%B6",
+    "license": "CC BY-SA 4.0",
+    "fetched_at": "2026-09-28"
+   },
+   "nearest": [],
+   "src": "https://www.wikidata.org/wiki/Q4518632"
+  },
+  {
+   "id": "wd-Q4518662",
+   "n": "伊計島",
+   "z": "伊計島",
+   "lat": 26.39389,
+   "lng": 127.9975,
+   "k": "major",
+   "f": 0,
+   "s": 97.1,
+   "h": "いけいじま",
+   "r": "Ikeijima",
+   "c": "島",
+   "m": "472131",
+   "name": {
+    "ja": "伊計島",
+    "kana": "いけいじま",
+    "romaji": "Ikeijima",
+    "zh_tw": "伊計島",
+    "en": "Ikei Island"
+   },
+   "summary": {
+    "text": "伊計島（日語：伊計島／いけいじま，羅馬化：Ike-jima、琉球語：伊計／イチ",
+    "lang": "zh",
+    "source_url": "https://zh.wikipedia.org/wiki/%E4%BC%8A%E8%A8%88%E5%B3%B6",
+    "license": "CC BY-SA 4.0",
+    "fetched_at": "2026-09-28"
+   },
+   "nearest": [],
+   "src": "https://www.wikidata.org/wiki/Q4518662"
+  },
+  {
+   "id": "wd-Q4518698",
+   "n": "宮城島",
+   "z": "宮城島",
+   "lat": 26.36833,
+   "lng": 127.98139,
+   "k": "major",
+   "f": 0,
+   "s": 70.3,
+   "h": "みやぎじま",
+   "r": "Miyagijima",
+   "c": "島",
+   "m": "472131",
+   "name": {
+    "ja": "宮城島",
+    "kana": "みやぎじま",
+    "romaji": "Miyagijima",
+    "zh_tw": "宮城島",
+    "en": "Miyagi Island"
+   },
+   "summary": {
+    "text": "宮城島（日語：宮城島／みやぎじま，羅馬化：Miyagi-jima，琉球語：高離／タカハナリ",
+    "lang": "zh",
+    "source_url": "https://zh.wikipedia.org/wiki/%E5%AE%AE%E5%9F%8E%E5%B3%B6_%28%E5%AE%87%E6%B5%81%E9%BA%BB%E5%B8%82%29",
+    "license": "CC BY-SA 4.0",
+    "fetched_at": "2026-09-28"
+   },
+   "nearest": [],
+   "src": "https://www.wikidata.org/wiki/Q4518698"
+  },
+  {
+   "id": "wd-Q4518728",
+   "n": "平安座島",
+   "z": "平安座島",
+   "lat": 26.34889,
+   "lng": 127.95806,
+   "k": "major",
+   "f": 0,
+   "s": 133.5,
+   "h": "へんざじま",
+   "r": "Henzajima",
+   "c": "島",
+   "m": "472131",
+   "name": {
+    "ja": "平安座島",
+    "kana": "へんざじま",
+    "romaji": "Henzajima",
+    "zh_tw": "平安座島",
+    "en": "Henza Island"
+   },
+   "summary": {
+    "text": "平安座島（日語：平安座島／へんざじま，羅馬化：Henza-jima、琉球語：平安座／ヒャンジャ",
+    "lang": "zh",
+    "source_url": "https://zh.wikipedia.org/wiki/%E5%B9%B3%E5%AE%89%E5%BA%A7%E5%B3%B6",
+    "license": "CC BY-SA 4.0",
+    "fetched_at": "2026-09-28"
+   },
+   "nearest": [],
+   "src": "https://www.wikidata.org/wiki/Q4518728"
+  },
+  {
+   "id": "wd-Q4518764",
+   "n": "浜比嘉島",
+   "z": "濱比嘉島",
+   "lat": 26.32083,
+   "lng": 127.95806,
+   "k": "major",
+   "f": 1,
+   "s": 144.9,
+   "h": "はまひがしま",
+   "r": "Hamahigashima",
+   "c": "島",
+   "m": "472131",
+   "name": {
+    "ja": "浜比嘉島",
+    "kana": "はまひがしま",
+    "romaji": "Hamahigashima",
+    "zh_tw": "濱比嘉島",
+    "en": "Hamahiga Island"
+   },
+   "summary": {
+    "text": "濱比嘉島（日語：浜比嘉島／はまひがじま，羅馬化：Hamahiga-jima、琉球語：浜比嘉／ハマフィジャ",
+    "lang": "zh",
+    "source_url": "https://zh.wikipedia.org/wiki/%E6%BF%B1%E6%AF%94%E5%98%89%E5%B3%B6",
+    "license": "CC BY-SA 4.0",
+    "fetched_at": "2026-09-28"
+   },
+   "nearest": [],
+   "src": "https://www.wikidata.org/wiki/Q4518764"
+  },
+  {
+   "id": "wd-Q4518835",
+   "n": "久高島",
+   "z": "久高島",
+   "lat": 26.15778,
+   "lng": 127.88667,
+   "k": "major",
+   "f": 0,
+   "s": 126.6,
+   "h": "くだかじま",
+   "r": "Kudakajima",
+   "c": "島",
+   "m": "472158",
+   "name": {
+    "ja": "久高島",
+    "kana": "くだかじま",
+    "romaji": "Kudakajima",
+    "zh_tw": "久高島",
+    "en": "Kudaka Island"
+   },
+   "summary": {
+    "text": "久高島（日語：久高島／くだかじま，羅馬化：Kudaka-jima；琉球語：久高／クダカ",
+    "lang": "zh",
+    "source_url": "https://zh.wikipedia.org/wiki/%E4%B9%85%E9%AB%98%E5%B3%B6",
+    "license": "CC BY-SA 4.0",
+    "fetched_at": "2026-09-28"
+   },
+   "nearest": [],
+   "src": "https://www.wikidata.org/wiki/Q4518835"
+  },
+  {
+   "id": "wd-Q4518882",
+   "n": "奥武島",
+   "z": "奧武島",
+   "lat": 26.12944,
+   "lng": 127.77278,
+   "k": "major",
+   "f": 0,
+   "s": 139.4,
+   "h": "おうじま",
+   "r": "Ojima",
+   "c": "島",
+   "m": "472158",
+   "name": {
+    "ja": "奥武島",
+    "kana": "おうじま",
+    "romaji": "Ojima",
+    "zh_tw": "奧武島",
+    "en": "Ou Island"
+   },
+   "summary": {
+    "text": "奧武島（日語：奧武島／おうじま，羅馬化：Ō-jima，琉球語：奧武／オー",
+    "lang": "zh",
+    "source_url": "https://zh.wikipedia.org/wiki/%E5%A5%A7%E6%AD%A6%E5%B3%B6_%28%E5%8D%97%E5%9F%8E%E5%B8%82%29",
+    "license": "CC BY-SA 4.0",
+    "fetched_at": "2026-09-28"
+   },
+   "nearest": [],
+   "src": "https://www.wikidata.org/wiki/Q4518882"
+  },
+  {
+   "id": "wd-Q4518914",
+   "n": "瀬長島",
+   "z": "瀨長島",
+   "lat": 26.175,
+   "lng": 127.6425,
+   "k": "major",
+   "f": 1,
+   "s": 149.7,
+   "h": "せながじま",
+   "r": "Senagajima",
+   "c": "島",
+   "m": "472123",
+   "name": {
+    "ja": "瀬長島",
+    "kana": "せながじま",
+    "romaji": "Senagajima",
+    "zh_tw": "瀨長島",
+    "en": "Senaga Island"
+   },
+   "summary": {
+    "text": "瀨長島（日語：瀬長島／せながじま，羅馬化：Senaga-jima、琉球語：瀬長／シナガ",
+    "lang": "zh",
+    "source_url": "https://zh.wikipedia.org/wiki/%E7%80%A8%E9%95%B7%E5%B3%B6",
+    "license": "CC BY-SA 4.0",
+    "fetched_at": "2026-09-28"
+   },
+   "nearest": [],
+   "src": "https://www.wikidata.org/wiki/Q4518914"
+  },
+  {
+   "id": "wd-Q4520855",
+   "n": "伊良部大橋",
+   "z": "伊良部大橋",
+   "lat": 24.79917,
+   "lng": 125.23333,
+   "k": "major",
+   "f": 0,
+   "s": 144.6,
+   "h": "いらぶおおはし",
+   "r": "Irabuohashi",
+   "c": "橋",
+   "m": "472140",
+   "name": {
+    "ja": "伊良部大橋",
+    "kana": "いらぶおおはし",
+    "romaji": "Irabuohashi",
+    "zh_tw": "伊良部大橋",
+    "en": "Irabu Bridge"
+   },
+   "summary": {
+    "text": "伊良部大橋，日本橋梁，位於沖繩縣宮古島市，連絡宮古島與伊良部島。2006年3月18日開工，於2015年1月31日完工開放，工程總費用為380億日元。全長3,540公尺，是日本不收通行費的公共道路中，最長的橋梁。也超過古宇利大橋成為沖繩縣境內最長的橋梁。",
+    "lang": "zh",
+    "source_url": "https://zh.wikipedia.org/wiki/%E4%BC%8A%E8%89%AF%E9%83%A8%E5%A4%A7%E6%A9%8B",
+    "license": "CC BY-SA 4.0",
+    "fetched_at": "2026-09-28"
+   },
+   "nearest": [],
+   "src": "https://www.wikidata.org/wiki/Q4520855"
+  },
+  {
+   "id": "wd-Q4520900",
+   "n": "池間大橋",
+   "z": "池間大橋",
+   "lat": 24.91889,
+   "lng": 125.26194,
+   "k": "major",
+   "f": 0,
+   "s": 105.2,
+   "h": "いけまおおはし",
+   "r": "Ikemaohashi",
+   "c": "橋",
+   "m": "472140",
+   "name": {
+    "ja": "池間大橋",
+    "kana": "いけまおおはし",
+    "romaji": "Ikemaohashi",
+    "zh_tw": "池間大橋",
+    "en": "Ikema Bridge"
+   },
+   "summary": {
+    "text": "池間大橋是一座位於沖繩縣宮古島市西北部的橋。池間大橋全長1,425米，連接了宮古島和池間島。",
+    "lang": "zh",
+    "source_url": "https://zh.wikipedia.org/wiki/%E6%B1%A0%E9%96%93%E5%A4%A7%E6%A9%8B",
+    "license": "CC BY-SA 4.0",
+    "fetched_at": "2026-09-28"
+   },
+   "nearest": [],
+   "src": "https://www.wikidata.org/wiki/Q4520900"
+  },
+  {
+   "id": "wd-Q4520918",
+   "n": "来間大橋",
+   "z": "來間大橋",
+   "lat": 24.72611,
+   "lng": 125.26444,
+   "k": "major",
+   "f": 0,
+   "s": 101.1,
+   "h": "くりまおおはし",
+   "r": "Kurimaohashi",
+   "c": "橋",
+   "m": "472140",
+   "name": {
+    "ja": "来間大橋",
+    "kana": "くりまおおはし",
+    "romaji": "Kurimaohashi",
+    "zh_tw": "來間大橋",
+    "en": "Kurima Bridge"
+   },
+   "summary": {
+    "text": "來間大橋是一座位於沖繩縣宮古島市西南部的橋，全長1,690米，連接了宮古島和來間島。",
+    "lang": "zh",
+    "source_url": "https://zh.wikipedia.org/wiki/%E4%BE%86%E9%96%93%E5%A4%A7%E6%A9%8B",
+    "license": "CC BY-SA 4.0",
+    "fetched_at": "2026-09-28"
+   },
+   "nearest": [],
+   "src": "https://www.wikidata.org/wiki/Q4520918"
+  },
+  {
+   "id": "wd-Q4521182",
+   "n": "於茂登岳",
+   "z": "於茂登嶽",
+   "lat": 24.42722,
+   "lng": 124.18333,
+   "k": "major",
+   "f": 0,
+   "s": 77.3,
+   "h": "おもとだけ",
+   "r": "Omotodake",
+   "c": "名勝",
+   "m": "472077",
+   "name": {
+    "ja": "於茂登岳",
+    "kana": "おもとだけ",
+    "romaji": "Omotodake",
+    "zh_tw": "於茂登嶽",
+    "en": "Mount Omoto"
+   },
+   "summary": {
+    "text": "於茂登嶽（日語：於茂登嶽／おもとだけ，羅馬化：Omotodake；琉球語：於茂登嶽／ウムトゥダギ",
+    "lang": "zh",
+    "source_url": "https://zh.wikipedia.org/wiki/%E6%96%BC%E8%8C%82%E7%99%BB%E5%B2%B3",
+    "license": "CC BY-SA 4.0",
+    "fetched_at": "2026-09-28"
+   },
+   "nearest": [],
+   "src": "https://www.wikidata.org/wiki/Q4521182"
+  },
+  {
+   "id": "wd-Q4521260",
+   "n": "八重岳",
+   "z": "八重岳",
+   "lat": 26.6355,
+   "lng": 127.92836,
+   "k": "major",
+   "f": 0,
+   "s": 68,
+   "h": "やえだけ",
+   "r": "Yaedake",
+   "m": "473081",
+   "name": {
+    "ja": "八重岳",
+    "kana": "やえだけ",
+    "romaji": "Yaedake",
+    "zh_tw": "八重岳",
+    "en": "Mount Yae"
+   },
+   "summary": {
+    "text": "Mount Yae (八重岳, Yae-dake; Kunigami: Yē-dakī, Okinawan: Yē-daki), also known as Mount Yaedake or Yae-take, is a mountain in Motobu, Okinawa on Okinawa Island. It",
+    "lang": "en",
+    "source_url": "https://en.wikipedia.org/wiki/Mount_Yae",
+    "license": "CC BY-SA 4.0",
+    "fetched_at": "2026-09-29"
+   },
+   "nearest": [],
+   "src": "https://www.wikidata.org/wiki/Q4521260"
+  },
+  {
+   "id": "wd-Q4521517",
+   "n": "浦内川",
+   "z": "浦內川",
+   "lat": 24.3583,
+   "lng": 123.851,
+   "k": "major",
+   "f": 0,
+   "s": 66.2,
+   "h": "うらうちがわ",
+   "r": "Urauchigawa",
+   "m": "473812",
+   "name": {
+    "ja": "浦内川",
+    "kana": "うらうちがわ",
+    "romaji": "Urauchigawa",
+    "zh_tw": "浦內川",
+    "en": "Urauchi River"
+   },
+   "summary": {
+    "text": "浦內川是流經沖繩縣八重山郡西表島中央地區的二級河川。是沖繩縣最長的河流。",
+    "lang": "zh",
+    "source_url": "https://zh.wikipedia.org/wiki/%E6%B5%A6%E5%85%A7%E5%B7%9D",
+    "license": "CC BY-SA 4.0",
+    "fetched_at": "2026-09-28"
+   },
+   "nearest": [],
+   "src": "https://www.wikidata.org/wiki/Q4521517"
+  },
+  {
+   "id": "wd-Q4555530",
+   "n": "沖縄県平和祈念資料館",
+   "z": "沖縄県平和祈念資料館",
+   "lat": 26.09645,
+   "lng": 127.72539,
+   "k": "major",
+   "f": 0,
+   "s": 141.3,
+   "c": "博物館",
+   "m": "472107",
+   "name": {
+    "ja": "沖縄県平和祈念資料館",
+    "zh_tw": "沖縄県平和祈念資料館",
+    "en": "Okinawa Prefectural Peace Memorial Museum"
+   },
+   "summary": {
+    "text": "Okinawa Prefectural Peace Memorial Museum (沖縄県立平和祈念資料館, Okinawa Kenritsu Heiwa Kinen Shiryōkan) is a museum in Itoman, Okinawa. It was established on June 11, 1",
+    "lang": "en",
+    "source_url": "https://en.wikipedia.org/wiki/Okinawa_Prefectural_Peace_Memorial_Museum",
+    "license": "CC BY-SA 4.0",
+    "fetched_at": "2026-09-29"
+   },
+   "nearest": [],
+   "src": "https://www.wikidata.org/wiki/Q4555530"
+  },
+  {
+   "id": "wd-Q4616917",
+   "n": "国際通り",
+   "z": "國際通",
+   "lat": 26.21597,
+   "lng": 127.68728,
+   "k": "major",
+   "f": 1,
+   "s": 153.9,
+   "h": "こくさいどおり",
+   "r": "Kokusai Do Ri",
+   "c": "街區",
+   "m": "472018",
+   "st": "node-6540547649",
+   "name": {
+    "ja": "国際通り",
+    "kana": "こくさいどおり",
+    "romaji": "Kokusai Do Ri",
+    "zh_tw": "國際通",
+    "en": "Kokusai-dōri"
+   },
+   "summary": {
+    "text": "國際通是日本沖繩縣那霸市縣廳前交差點至安裡三叉路之間的一段約1.6公里的大街，是那霸市最繁華的商業街。",
+    "lang": "zh",
+    "source_url": "https://zh.wikipedia.org/wiki/%E5%9C%8B%E9%9A%9B%E9%80%9A",
+    "license": "CC BY-SA 4.0",
+    "fetched_at": "2026-09-28"
+   },
+   "nearest": [
+    {
+     "name": {
+      "ja": "美栄橋",
+      "kana": "みえばし",
+      "romaji": "Miebashi",
+      "en": "Miebashi"
+     },
+     "distance_m": 460
+    },
+    {
+     "name": {
+      "ja": "牧志",
+      "kana": "まきし",
+      "romaji": "Makishi",
+      "en": "Makishi"
+     },
+     "distance_m": 550
+    }
+   ],
+   "src": "https://www.wikidata.org/wiki/Q4616917"
+  },
+  {
+   "id": "wd-Q4617100",
+   "n": "沖縄県立博物館・美術館",
+   "z": "沖繩縣立博物館、美術館",
+   "lat": 26.22659,
+   "lng": 127.6941,
+   "k": "major",
+   "f": 1,
+   "s": 144.7,
+   "h": "おきなわけんりつはくぶつかんびじゅつかん",
+   "r": "Okinawakenritsuhakubutsukanbijutsukan",
+   "c": "美術館",
+   "m": "472018",
+   "st": "node-6540583670",
+   "name": {
+    "ja": "沖縄県立博物館・美術館",
+    "kana": "おきなわけんりつはくぶつかんびじゅつかん",
+    "romaji": "Okinawakenritsuhakubutsukanbijutsukan",
+    "zh_tw": "沖繩縣立博物館、美術館",
+    "en": "Okinawa Prefectural Museum & Art Museum"
+   },
+   "summary": {
+    "text": "沖繩縣立博物館、美術館是位於日本沖繩縣那霸市那霸新都心的縣立文化設施。該館兼具博物館和美術館的機能。",
+    "lang": "zh",
+    "source_url": "https://zh.wikipedia.org/wiki/%E6%B2%96%E7%B9%A9%E7%B8%A3%E7%AB%8B%E5%8D%9A%E7%89%A9%E9%A4%A8%E3%80%81%E7%BE%8E%E8%A1%93%E9%A4%A8",
+    "license": "CC BY-SA 4.0",
+    "fetched_at": "2026-09-28"
+   },
+   "nearest": [
+    {
+     "name": {
+      "ja": "おもろまち",
+      "kana": "おもろまち",
+      "romaji": "Omoromachi",
+      "en": "Omoromachi"
+     },
+     "distance_m": 600
+    },
+    {
+     "name": {
+      "ja": "古島",
+      "kana": "ふるじま",
+      "romaji": "Furujima",
+      "en": "Furujima"
+     },
+     "distance_m": 1010
+    }
+   ],
+   "src": "https://www.wikidata.org/wiki/Q4617100"
+  },
+  {
+   "id": "wd-Q474560",
+   "n": "竹富島",
+   "z": "竹富島",
+   "lat": 24.32472,
+   "lng": 124.08778,
+   "k": "major",
+   "f": 0,
+   "s": 139,
+   "h": "たけとみじま",
+   "r": "Taketomijima",
+   "c": "島",
+   "m": "473812",
+   "name": {
+    "ja": "竹富島",
+    "kana": "たけとみじま",
+    "romaji": "Taketomijima",
+    "zh_tw": "竹富島",
+    "en": "Taketomi Island"
+   },
+   "summary": {
+    "text": "竹富島（日語：竹富島／たけとみじま，羅馬化：Taketomi-jima，琉球語：竹富／テードゥン",
+    "lang": "zh",
+    "source_url": "https://zh.wikipedia.org/wiki/%E7%AB%B9%E5%AF%8C%E5%B3%B6",
+    "license": "CC BY-SA 4.0",
+    "fetched_at": "2026-09-28"
+   },
+   "nearest": [],
+   "src": "https://www.wikidata.org/wiki/Q474560"
+  },
+  {
+   "id": "wd-Q48751932",
+   "n": "宮古島海宝館",
+   "z": "宮古島海宝館",
+   "lat": 24.73003,
+   "lng": 125.42942,
+   "k": "major",
+   "f": 0,
+   "s": 86.5,
+   "h": "みやこじまかいほうかん",
+   "r": "Miyakojima Kaiho Kan",
+   "c": "美術館",
+   "m": "472140",
+   "name": {
+    "ja": "宮古島海宝館",
+    "kana": "みやこじまかいほうかん",
+    "romaji": "Miyakojima Kaiho Kan",
+    "zh_tw": "宮古島海宝館",
+    "en": "Miyakojima Kaihōkan"
+   },
+   "summary": {
+    "text": "宮古島海宝館（みやこじまかいほうかん）は、沖縄県宮古島市城辺字保良にある貝類の専門博物館である。",
+    "lang": "ja",
+    "source_url": "https://ja.wikipedia.org/wiki/%E5%AE%AE%E5%8F%A4%E5%B3%B6%E6%B5%B7%E5%AE%9D%E9%A4%A8",
+    "license": "CC BY-SA 4.0",
+    "fetched_at": "2026-09-28"
+   },
+   "nearest": [],
+   "src": "https://www.wikidata.org/wiki/Q48751932"
+  },
+  {
+   "id": "wd-Q508866",
+   "n": "今帰仁城",
+   "z": "今歸仁城",
+   "lat": 26.69083,
+   "lng": 127.93028,
+   "k": "major",
+   "f": 1,
+   "s": 180.4,
+   "h": "なきじんぐすく",
+   "r": "Nakijin-gusuku",
+   "c": "城",
+   "d": "世界遺產",
+   "m": "473065",
+   "name": {
+    "ja": "今帰仁城",
+    "kana": "なきじんぐすく",
+    "romaji": "Nakijin-gusuku",
+    "zh_tw": "今歸仁城",
+    "en": "Nakijin Castle"
+   },
+   "summary": {
+    "text": "今歸仁城（琉球語：今帰仁城／ナチヂングシーク",
+    "lang": "zh",
+    "source_url": "https://zh.wikipedia.org/wiki/%E4%BB%8A%E6%AD%B8%E4%BB%81%E5%9F%8E",
+    "license": "CC BY-SA 4.0",
+    "fetched_at": "2026-09-28"
+   },
+   "nearest": [],
+   "src": "https://www.wikidata.org/wiki/Q508866"
+  },
+  {
+   "id": "wd-Q5507745",
+   "n": "福州園",
+   "z": "福州園",
+   "lat": 26.21797,
+   "lng": 127.67594,
+   "k": "major",
+   "f": 1,
+   "s": 145.1,
+   "h": "ふくしゅうえん",
+   "r": "Fukushu En",
+   "c": "庭園",
+   "m": "472018",
+   "st": "node-6540547646",
+   "name": {
+    "ja": "福州園",
+    "kana": "ふくしゅうえん",
+    "romaji": "Fukushu En",
+    "zh_tw": "福州園",
+    "en": "Fukushūen"
+   },
+   "summary": {
+    "text": "福州園是位於日本沖繩縣那霸市久米的中國式庭園。地址為那霸市久米2-39。",
+    "lang": "zh",
+    "source_url": "https://zh.wikipedia.org/wiki/%E7%A6%8F%E5%B7%9E%E5%9C%92",
+    "license": "CC BY-SA 4.0",
+    "fetched_at": "2026-09-28"
+   },
+   "nearest": [
+    {
+     "name": {
+      "ja": "県庁前",
+      "kana": "けんちょうまえ",
+      "romaji": "Kenchō-mae",
+      "en": "Prefectural Office"
+     },
+     "distance_m": 520
+    },
+    {
+     "name": {
+      "ja": "旭橋",
+      "kana": "あさひばし",
+      "romaji": "Asahibashi",
+      "en": "Asahibashi"
+     },
+     "distance_m": 680
+    }
+   ],
+   "src": "https://www.wikidata.org/wiki/Q5507745"
+  },
+  {
+   "id": "wd-Q56347666",
+   "n": "DMMかりゆし水族館",
+   "z": "DMM Kariyushi水族館",
+   "lat": 26.15631,
+   "lng": 127.65042,
+   "k": "major",
+   "f": 0,
+   "s": 142.9,
+   "h": "でぃーえむえむかりゆしすいぞくかん",
+   "r": "Diemuemukariyushisuizokukan",
+   "c": "水族館",
+   "m": "472123",
+   "name": {
+    "ja": "DMMかりゆし水族館",
+    "kana": "でぃーえむえむかりゆしすいぞくかん",
+    "romaji": "Diemuemukariyushisuizokukan",
+    "zh_tw": "DMM Kariyushi水族館",
+    "en": "DMM Kariyushi Aquarium"
+   },
+   "summary": {
+    "text": "DMM Kariyushi水族館是位於日本沖繩縣的水族館。於2020年5月25日開幕，是由株式會社DMM RESORTS經營的設施。設施的主題是「一個融合最新的影像及空間表現技術的娛樂型水族館」。",
+    "lang": "zh",
+    "source_url": "https://zh.wikipedia.org/wiki/DMM_Kariyushi%E6%B0%B4%E6%97%8F%E9%A4%A8",
+    "license": "CC BY-SA 4.0",
+    "fetched_at": "2026-09-28"
+   },
+   "nearest": [],
+   "src": "https://www.wikidata.org/wiki/Q56347666"
+  },
+  {
+   "id": "wd-Q5638850",
+   "n": "渡具知ビーチ",
+   "z": "渡具知ビーチ",
+   "lat": 26.36297,
+   "lng": 127.73905,
+   "k": "major",
+   "f": 0,
+   "s": 130.2,
+   "h": "とぐちびーち",
+   "r": "Toguchibichi",
+   "c": "海灘",
+   "m": "473243",
+   "name": {
+    "ja": "渡具知ビーチ",
+    "kana": "とぐちびーち",
+    "romaji": "Toguchibichi",
+    "zh_tw": "渡具知ビーチ",
+    "en": "Hagushi"
+   },
+   "summary": {
+    "text": "Hagushi bay is located in Yomitan, Okinawa. The bay is at the mouth of Hija River.  The north side of the mouth of the river has a public beach called Toguchi B",
+    "lang": "en",
+    "source_url": "https://en.wikipedia.org/wiki/Hagushi",
+    "license": "CC BY-SA 4.0",
+    "fetched_at": "2026-09-29"
+   },
+   "nearest": [],
+   "src": "https://www.wikidata.org/wiki/Q5638850"
+  },
+  {
+   "id": "wd-Q654922",
+   "n": "下地島空港",
+   "z": "下地島機場",
+   "lat": 24.82667,
+   "lng": 125.14472,
+   "k": "major",
+   "f": 0,
+   "s": 65.7,
+   "h": "しもじしまくうこう",
+   "r": "Shimojishimakuko",
+   "c": "機場",
+   "m": "472140"
+  },
+  {
+   "id": "wd-Q696496",
+   "n": "八重山列島",
+   "z": "八重山群島",
+   "lat": 24.33333,
+   "lng": 124,
+   "k": "major",
+   "f": 0,
+   "s": 71.6,
+   "h": "やえやまれっとう",
+   "r": "Yaeyamaretto",
+   "c": "島",
+   "m": "473812",
+   "name": {
+    "ja": "八重山列島",
+    "kana": "やえやまれっとう",
+    "romaji": "Yaeyamaretto",
+    "zh_tw": "八重山群島",
+    "en": "Yaeyama Islands"
+   },
+   "summary": {
+    "text": "八重山群島，也稱八重山諸島（日語：八重山列島／やえやまれっとう，羅馬化：Yaeyama Rettō，琉球語：八重山／ヤイマ",
+    "lang": "zh",
+    "source_url": "https://zh.wikipedia.org/wiki/%E5%85%AB%E9%87%8D%E5%B1%B1%E7%BE%A4%E5%B3%B6",
+    "license": "CC BY-SA 4.0",
+    "fetched_at": "2026-09-29"
+   },
+   "nearest": [],
+   "src": "https://www.wikidata.org/wiki/Q696496"
+  },
+  {
+   "id": "wd-Q697600",
+   "n": "波照間島",
+   "z": "波照間島",
+   "lat": 24.05917,
+   "lng": 123.7825,
+   "k": "major",
+   "f": 0,
+   "s": 85.3,
+   "h": "はてるまじま",
+   "r": "Haterumajima",
+   "c": "島",
+   "m": "473812",
+   "name": {
+    "ja": "波照間島",
+    "kana": "はてるまじま",
+    "romaji": "Haterumajima",
+    "zh_tw": "波照間島",
+    "en": "Hateruma Island"
+   },
+   "summary": {
+    "text": "波照間島（日語：波照間島／はてるまじま，羅馬化：Hateruma-jima，琉球語：波照間／パティローマ・パティロマ",
+    "lang": "zh",
+    "source_url": "https://zh.wikipedia.org/wiki/%E6%B3%A2%E7%85%A7%E9%96%93%E5%B3%B6",
+    "license": "CC BY-SA 4.0",
+    "fetched_at": "2026-09-28"
+   },
+   "nearest": [],
+   "src": "https://www.wikidata.org/wiki/Q697600"
+  },
+  {
+   "id": "wd-Q700331",
+   "n": "水納島",
+   "z": "水納島",
+   "lat": 26.64722,
+   "lng": 127.81583,
+   "k": "major",
+   "f": 0,
+   "s": 71.3,
+   "h": "みんなしま",
+   "r": "Minnashima",
+   "c": "島",
+   "m": "473081",
+   "name": {
+    "ja": "水納島",
+    "kana": "みんなしま",
+    "romaji": "Minnashima",
+    "zh_tw": "水納島",
+    "en": "Minnajima"
+   },
+   "summary": {
+    "text": "水納島（日語：水納島／みんなじま，羅馬化：Minna-jima、琉球語：水納／ミンナ",
+    "lang": "zh",
+    "source_url": "https://zh.wikipedia.org/wiki/%E6%B0%B4%E7%B4%8D%E5%B3%B6_%28%E6%B2%96%E7%B9%A9%E7%BE%A4%E5%B3%B6%29",
+    "license": "CC BY-SA 4.0",
+    "fetched_at": "2026-09-28"
+   },
+   "nearest": [],
+   "src": "https://www.wikidata.org/wiki/Q700331"
+  },
+  {
+   "id": "wd-Q700908",
+   "n": "由布島",
+   "z": "由布島",
+   "lat": 24.345,
+   "lng": 123.935,
+   "k": "major",
+   "f": 0,
+   "s": 72.7,
+   "h": "ゆぶじま",
+   "r": "Yubujima",
+   "c": "島",
+   "m": "473812",
+   "name": {
+    "ja": "由布島",
+    "kana": "ゆぶじま",
+    "romaji": "Yubujima",
+    "zh_tw": "由布島",
+    "en": "Yubu Island"
+   },
+   "summary": {
+    "text": "由布島（日語：由布島／ゆぶじま，羅馬化：Yubu-jima，琉球語：由布／ユブ",
+    "lang": "zh",
+    "source_url": "https://zh.wikipedia.org/wiki/%E7%94%B1%E5%B8%83%E5%B3%B6",
+    "license": "CC BY-SA 4.0",
+    "fetched_at": "2026-09-28"
+   },
+   "nearest": [],
+   "src": "https://www.wikidata.org/wiki/Q700908"
+  },
+  {
+   "id": "wd-Q700946",
+   "n": "宮古島",
+   "z": "宮古島",
+   "lat": 24.77944,
+   "lng": 125.31889,
+   "k": "major",
+   "f": 0,
+   "s": 91.3,
+   "h": "みやこじま",
+   "r": "Miyakojima",
+   "c": "島",
+   "m": "472140",
+   "name": {
+    "ja": "宮古島",
+    "kana": "みやこじま",
+    "romaji": "Miyakojima",
+    "zh_tw": "宮古島",
+    "en": "Miyako Island"
+   },
+   "summary": {
+    "text": "宮古島（日語：宮古島／みやこじま，羅馬化：Miyako-jima，琉球語：宮古／ミャーク",
+    "lang": "zh",
+    "source_url": "https://zh.wikipedia.org/wiki/%E5%AE%AE%E5%8F%A4%E5%B3%B6",
+    "license": "CC BY-SA 4.0",
+    "fetched_at": "2026-09-28"
+   },
+   "nearest": [],
+   "src": "https://www.wikidata.org/wiki/Q700946"
+  },
+  {
+   "id": "wd-Q701089",
+   "n": "黒島",
+   "z": "黑島",
+   "lat": 24.23333,
+   "lng": 124.01667,
+   "k": "major",
+   "f": 0,
+   "s": 76,
+   "h": "くろしま",
+   "r": "Kuroshima",
+   "c": "島",
+   "m": "473812",
+   "name": {
+    "ja": "黒島",
+    "kana": "くろしま",
+    "romaji": "Kuroshima",
+    "zh_tw": "黑島",
+    "en": "Kuroshima"
+   },
+   "summary": {
+    "text": "黑島（日語：黒島／くろしま，羅馬化：Kuro-shima，琉球語：黑島／クルシィマ",
+    "lang": "zh",
+    "source_url": "https://zh.wikipedia.org/wiki/%E9%BB%91%E5%B3%B6_%28%E5%85%AB%E9%87%8D%E5%B1%B1%E7%BE%A4%E5%B3%B6%29",
+    "license": "CC BY-SA 4.0",
+    "fetched_at": "2026-09-28"
+   },
+   "nearest": [],
+   "src": "https://www.wikidata.org/wiki/Q701089"
+  },
+  {
+   "id": "wd-Q702414",
+   "n": "新城島",
+   "z": "新城島",
+   "lat": 24.22372,
+   "lng": 123.93535,
+   "k": "major",
+   "f": 0,
+   "s": 75.7,
+   "h": "あらぐすくじま",
+   "r": "Aragusukujima",
+   "c": "島",
+   "m": "473812",
+   "name": {
+    "ja": "新城島",
+    "kana": "あらぐすくじま",
+    "romaji": "Aragusukujima",
+    "zh_tw": "新城島",
+    "en": "Aragusuku Islands"
+   },
+   "summary": {
+    "text": "新城島（日語：新城島／あらぐすくじま，羅馬化：Aragusuku-jima，琉球語：離・新城／パナリ・アラグスク",
+    "lang": "zh",
+    "source_url": "https://zh.wikipedia.org/wiki/%E6%96%B0%E5%9F%8E%E5%B3%B6",
+    "license": "CC BY-SA 4.0",
+    "fetched_at": "2026-09-28"
+   },
+   "nearest": [],
+   "src": "https://www.wikidata.org/wiki/Q702414"
+  },
+  {
+   "id": "wd-Q702436",
+   "n": "池間島",
+   "z": "池間島",
+   "lat": 24.93222,
+   "lng": 125.24194,
+   "k": "major",
+   "f": 0,
+   "s": 73.8,
+   "h": "いけまじま",
+   "r": "Ikemajima",
+   "c": "島",
+   "m": "472140",
+   "name": {
+    "ja": "池間島",
+    "kana": "いけまじま",
+    "romaji": "Ikemajima",
+    "zh_tw": "池間島",
+    "en": "Ikema Island"
+   },
+   "summary": {
+    "text": "池間島（日語：池間島／いけまじま，羅馬化：Ikema-jima，琉球語：池間／イキャマ",
+    "lang": "zh",
+    "source_url": "https://zh.wikipedia.org/wiki/%E6%B1%A0%E9%96%93%E5%B3%B6",
+    "license": "CC BY-SA 4.0",
+    "fetched_at": "2026-09-28"
+   },
+   "nearest": [],
+   "src": "https://www.wikidata.org/wiki/Q702436"
+  },
+  {
+   "id": "wd-Q702603",
+   "n": "小浜島",
+   "z": "小濱島",
+   "lat": 24.34084,
+   "lng": 123.97797,
+   "k": "major",
+   "f": 0,
+   "s": 76.3,
+   "h": "こはまじま",
+   "r": "Kohamajima",
+   "c": "島",
+   "m": "473812",
+   "name": {
+    "ja": "小浜島",
+    "kana": "こはまじま",
+    "romaji": "Kohamajima",
+    "zh_tw": "小濱島",
+    "en": "Kohama Island"
+   },
+   "summary": {
+    "text": "小濱島（日語：小浜島／こはまじま，羅馬化：Kohama-jima，琉球語：小濱／クモマ",
+    "lang": "zh",
+    "source_url": "https://zh.wikipedia.org/wiki/%E5%B0%8F%E6%BF%B1%E5%B3%B6",
+    "license": "CC BY-SA 4.0",
+    "fetched_at": "2026-09-28"
+   },
+   "nearest": [],
+   "src": "https://www.wikidata.org/wiki/Q702603"
+  },
+  {
+   "id": "wd-Q704636",
+   "n": "波上宮",
+   "z": "波上宮",
+   "lat": 26.22064,
+   "lng": 127.67135,
+   "k": "major",
+   "f": 0,
+   "s": 78,
+   "h": "なみのうえぐう",
+   "r": "Naminoue-gū",
+   "c": "神社",
+   "m": "472018",
+   "st": "node-6540547646",
+   "name": {
+    "ja": "波上宮",
+    "kana": "なみのうえぐう",
+    "romaji": "Naminoue-gū",
+    "zh_tw": "波上宮",
+    "en": "Naminoue Shrine"
+   },
+   "summary": {
+    "text": "波上宮是位在日本沖繩縣那霸市的神社。為琉球國新一之宮、舊社格為官幣小社（現神社本廳的別表神社）。琉球八社之一，八社之最上位，為「沖繩總鎮守」。",
+    "lang": "zh",
+    "source_url": "https://zh.wikipedia.org/wiki/%E6%B3%A2%E4%B8%8A%E5%AE%AE",
+    "license": "CC BY-SA 4.0",
+    "fetched_at": "2026-09-28"
+   },
+   "nearest": [
+    {
+     "name": {
+      "ja": "県庁前",
+      "kana": "けんちょうまえ",
+      "romaji": "Kenchō-mae",
+      "en": "Prefectural Office"
+     },
+     "distance_m": 1060
+    },
+    {
+     "name": {
+      "ja": "旭橋",
+      "kana": "あさひばし",
+      "romaji": "Asahibashi",
+      "en": "Asahibashi"
+     },
+     "distance_m": 1060
+    }
+   ],
+   "src": "https://www.wikidata.org/wiki/Q704636"
+  },
+  {
+   "id": "wd-Q705012",
+   "n": "下地島",
+   "z": "下地島",
+   "lat": 24.81611,
+   "lng": 125.15694,
+   "k": "major",
+   "f": 0,
+   "s": 77.9,
+   "h": "しもじじま",
+   "r": "Shimojijima",
+   "c": "島",
+   "m": "472140",
+   "name": {
+    "ja": "下地島",
+    "kana": "しもじじま",
+    "romaji": "Shimojijima",
+    "zh_tw": "下地島",
+    "en": "Shimoji Island"
+   },
+   "summary": {
+    "text": "下地島（日語：下地島／しもじじま，羅馬化：Shimoji-jima、琉球語：下地／スムズ",
+    "lang": "zh",
+    "source_url": "https://zh.wikipedia.org/wiki/%E4%B8%8B%E5%9C%B0%E5%B3%B6",
+    "license": "CC BY-SA 4.0",
+    "fetched_at": "2026-09-28"
+   },
+   "nearest": [],
+   "src": "https://www.wikidata.org/wiki/Q705012"
+  },
+  {
+   "id": "wd-Q705909",
+   "n": "宮良殿内",
+   "z": "宮良殿內",
+   "lat": 24.34111,
+   "lng": 124.15972,
+   "k": "major",
+   "f": 0,
+   "s": 72.4,
+   "h": "みやらどぅんち",
+   "r": "Miyaradonchi",
+   "c": "庭園",
+   "m": "472077",
+   "name": {
+    "ja": "宮良殿内",
+    "kana": "みやらどぅんち",
+    "romaji": "Miyaradonchi",
+    "zh_tw": "宮良殿內",
+    "en": "Miyaradunchi"
+   },
+   "summary": {
+    "text": "宮良殿內是日本沖繩縣石垣市境內的一處老宅，位於該市大川178番地，地處石垣港以北400米。該宅建於琉球國第二尚氏王朝時代，也是石垣市現存的唯一一座琉球士族的邸宅。",
+    "lang": "zh",
+    "source_url": "https://zh.wikipedia.org/wiki/%E5%AE%AE%E8%89%AF%E6%AE%BF%E5%85%A7",
+    "license": "CC BY-SA 4.0",
+    "fetched_at": "2026-09-28"
+   },
+   "nearest": [],
+   "src": "https://www.wikidata.org/wiki/Q705909"
+  },
+  {
+   "id": "wd-Q713275",
+   "n": "守礼門",
+   "z": "守禮門",
+   "lat": 26.21814,
+   "lng": 127.71689,
+   "k": "major",
+   "f": 0,
+   "s": 130.8,
+   "h": "しゅれいもん",
+   "r": "Shureimon Gate",
+   "m": "472018",
+   "st": "node-6540583675",
+   "name": {
+    "ja": "守礼門",
+    "kana": "しゅれいもん",
+    "romaji": "Shureimon Gate",
+    "zh_tw": "守禮門",
+    "en": "Shureimon"
+   },
+   "summary": {
+    "text": "守禮門是日本沖繩縣那霸市的一座牌坊，位於首裡城歡會門之外，在橫貫首裡城的綾門大道最東側，相當於首裡城的大手門。其型制為三間四柱重簷歇山頂牌坊，上砌紅瓦。",
+    "lang": "zh",
+    "source_url": "https://zh.wikipedia.org/wiki/%E5%AE%88%E7%A6%AE%E9%96%80",
+    "license": "CC BY-SA 4.0",
+    "fetched_at": "2026-09-28"
+   },
+   "nearest": [
+    {
+     "name": {
+      "ja": "儀保",
+      "kana": "ぎぼ",
+      "romaji": "Gibo",
+      "en": "Gibo"
+     },
+     "distance_m": 750
+    },
+    {
+     "name": {
+      "ja": "首里",
+      "kana": "しゅり",
+      "romaji": "Shuri",
+      "en": "Shuri"
+     },
+     "distance_m": 870
+    }
+   ],
+   "src": "https://www.wikidata.org/wiki/Q713275"
+  },
+  {
+   "id": "wd-Q714339",
+   "n": "石垣島",
+   "z": "石垣島",
+   "lat": 24.40333,
+   "lng": 124.19361,
+   "k": "major",
+   "f": 0,
+   "s": 94.7,
+   "h": "いしがきじま",
+   "r": "Ishigakijima",
+   "c": "島",
+   "m": "472077",
+   "name": {
+    "ja": "石垣島",
+    "kana": "いしがきじま",
+    "romaji": "Ishigakijima",
+    "zh_tw": "石垣島",
+    "en": "Ishigaki Island"
+   },
+   "summary": {
+    "text": "石垣島（日語：石垣島／いしがきじま，羅馬化：Ishigaki-jima，琉球語：石垣／イシガチ",
+    "lang": "zh",
+    "source_url": "https://zh.wikipedia.org/wiki/%E7%9F%B3%E5%9E%A3%E5%B3%B6",
+    "license": "CC BY-SA 4.0",
+    "fetched_at": "2026-09-28"
+   },
+   "nearest": [],
+   "src": "https://www.wikidata.org/wiki/Q714339"
+  },
+  {
+   "id": "wd-Q719187",
+   "n": "魚釣島",
+   "z": "釣魚臺",
+   "lat": 25.74544,
+   "lng": 123.47424,
+   "k": "major",
+   "f": 0,
+   "s": 72.1,
+   "h": "うおつりしま",
+   "r": "Uotsurishima",
+   "c": "島",
+   "m": "472077",
+   "name": {
+    "ja": "魚釣島",
+    "kana": "うおつりしま",
+    "romaji": "Uotsurishima",
+    "zh_tw": "釣魚臺",
+    "en": "Uotsuri Island"
+   },
+   "summary": {
+    "text": "釣魚臺（中國大陸作釣魚島，香港作釣魚臺），又被稱為釣魚嶼、釣魚山、釣嶼、釣臺或者是釣魚臺島，在日本則稱呼為魚釣島，琉球語稱為魚國島（ユクンジマ，Yukunjima），八重山語稱為魚叉島（イーグンジマ，Īgunjima），是位於中國大陸正東側東海大陸棚以東的臺灣-宍道褶曲帶南端、臺灣東北外海處沖繩海槽西側的一座荒島。",
+    "lang": "zh",
+    "source_url": "https://zh.wikipedia.org/wiki/%E9%87%A3%E9%AD%9A%E8%87%BA",
+    "license": "CC BY-SA 4.0",
+    "fetched_at": "2026-09-28"
+   },
+   "nearest": [],
+   "src": "https://www.wikidata.org/wiki/Q719187"
+  },
+  {
+   "id": "wd-Q85866572",
+   "n": "OKINAWAフルーツらんど",
+   "z": "OKINAWAフルーツらんど",
+   "lat": 26.61778,
+   "lng": 127.96911,
+   "k": "major",
+   "f": 0,
+   "s": 99.6,
+   "h": "おきなわふるーつらんど",
+   "r": "Okinawafurutsurando",
+   "m": "472093",
+   "name": {
+    "ja": "OKINAWAフルーツらんど",
+    "kana": "おきなわふるーつらんど",
+    "romaji": "Okinawafurutsurando",
+    "zh_tw": "OKINAWAフルーツらんど",
+    "en": "Okinawa Fruits Land"
+   },
+   "summary": {
+    "text": "OKINAWAフルーツらんど（オキナワフルーツらんど）は、沖縄県名護市字為又にあるテーマパークである。",
+    "lang": "ja",
+    "source_url": "https://ja.wikipedia.org/wiki/OKINAWA%E3%83%95%E3%83%AB%E3%83%BC%E3%83%84%E3%82%89%E3%82%93%E3%81%A9",
+    "license": "CC BY-SA 4.0",
+    "fetched_at": "2026-09-28"
+   },
+   "nearest": [],
+   "src": "https://www.wikidata.org/wiki/Q85866572"
+  },
+  {
+   "id": "wd-Q85882631",
+   "n": "真栄田岬",
+   "z": "真栄田岬",
+   "lat": 26.44544,
+   "lng": 127.77139,
+   "k": "major",
+   "f": 0,
+   "s": 124.5,
+   "h": "まえだみさき",
+   "r": "Maedamisaki",
+   "c": "展望",
+   "m": "473111",
+   "name": {
+    "ja": "真栄田岬",
+    "kana": "まえだみさき",
+    "romaji": "Maedamisaki",
+    "zh_tw": "真栄田岬",
+    "en": "Cape Maeda"
+   },
+   "summary": {
+    "text": "真栄田岬（まえだみさき）は、沖縄県恩納村真栄田区にある岬である。万座毛と同じく琉球石灰岩で形成される断崖が連なり、隆起サンゴ礁が三角に突き出し、崖下には入り江と岬、深い青色の海が広がっている。岬にある洞窟は、青の洞窟 (恩納村)としてよばれダイビングスポットとなっている。",
+    "lang": "ja",
+    "source_url": "https://ja.wikipedia.org/wiki/%E7%9C%9F%E6%A0%84%E7%94%B0%E5%B2%AC",
+    "license": "CC BY-SA 4.0",
+    "fetched_at": "2026-09-28"
+   },
+   "nearest": [],
+   "src": "https://www.wikidata.org/wiki/Q85882631"
+  },
+  {
+   "id": "wd-Q88138926",
+   "n": "石垣島鍾乳洞",
+   "z": "石垣島鍾乳洞",
+   "lat": 24.36167,
+   "lng": 124.15444,
+   "k": "major",
+   "f": 0,
+   "s": 115.1,
+   "h": "いしがきじましょうにゅうどう",
+   "r": "Ishigakijimashonyudo",
+   "m": "472077",
+   "name": {
+    "ja": "石垣島鍾乳洞",
+    "kana": "いしがきじましょうにゅうどう",
+    "romaji": "Ishigakijimashonyudo",
+    "zh_tw": "石垣島鍾乳洞",
+    "en": "Ishigaki Stalactite Cave"
+   },
+   "summary": {
+    "text": "石垣島鍾乳洞（いしがきじましょうにゅうどう）は、沖縄県石垣市石垣1666番地にある鍾乳洞である。株式会社南都が運営する。",
+    "lang": "ja",
+    "source_url": "https://ja.wikipedia.org/wiki/%E7%9F%B3%E5%9E%A3%E5%B3%B6%E9%8D%BE%E4%B9%B3%E6%B4%9E",
+    "license": "CC BY-SA 4.0",
+    "fetched_at": "2026-09-28"
+   },
+   "nearest": [],
+   "src": "https://www.wikidata.org/wiki/Q88138926"
+  },
+  {
+   "id": "wd-Q907052",
+   "n": "首里城",
+   "z": "首里城",
+   "lat": 26.21703,
+   "lng": 127.71948,
+   "k": "major",
+   "f": 1,
+   "s": 202.6,
+   "h": "しゅりじょう",
+   "r": "Shuri-jō",
+   "c": "城",
+   "d": "世界遺產",
+   "m": "472018",
+   "st": "node-6540583676",
+   "name": {
+    "ja": "首里城",
+    "kana": "しゅりじょう",
+    "romaji": "Shuri-jō",
+    "zh_tw": "首里城",
+    "en": "Shuri Castle"
+   },
+   "summary": {
+    "text": "首裡城（琉球語：首裡城／スイグシク",
+    "lang": "zh",
+    "source_url": "https://zh.wikipedia.org/wiki/%E9%A6%96%E9%87%8C%E5%9F%8E",
+    "license": "CC BY-SA 4.0",
+    "fetched_at": "2026-09-28"
+   },
+   "nearest": [
+    {
+     "name": {
+      "ja": "首里",
+      "kana": "しゅり",
+      "romaji": "Shuri",
+      "en": "Shuri"
+     },
+     "distance_m": 650
+    },
+    {
+     "name": {
+      "ja": "儀保",
+      "kana": "ぎぼ",
+      "romaji": "Gibo",
+      "en": "Gibo"
+     },
+     "distance_m": 840
+    }
+   ],
+   "src": "https://www.wikidata.org/wiki/Q907052"
+  },
+  {
+   "id": "wd-Q97188729",
+   "n": "残波岬",
+   "z": "殘波岬",
+   "lat": 26.43972,
+   "lng": 127.71417,
+   "k": "major",
+   "f": 0,
+   "s": 128.8,
+   "h": "ざんぱみさき",
+   "r": "Zanpamisaki",
+   "c": "岬",
+   "m": "473243",
+   "name": {
+    "ja": "残波岬",
+    "kana": "ざんぱみさき",
+    "romaji": "Zanpamisaki",
+    "zh_tw": "殘波岬",
+    "en": "Cape Zanpa"
+   },
+   "summary": {
+    "text": "残波岬（ざんぱみさき）は、沖縄県中頭郡読谷村に属し、東シナ海に面する岬である。",
+    "lang": "ja",
+    "source_url": "https://ja.wikipedia.org/wiki/%E6%AE%8B%E6%B3%A2%E5%B2%AC",
+    "license": "CC BY-SA 4.0",
+    "fetched_at": "2026-09-28"
+   },
+   "nearest": [],
+   "src": "https://www.wikidata.org/wiki/Q97188729"
+  },
+  {
+   "id": "wd-Q987038",
+   "n": "仲の神島",
+   "z": "仲之神島",
+   "lat": 24.195,
+   "lng": 123.56389,
+   "k": "major",
+   "f": 0,
+   "s": 67,
+   "h": "なかのかみしま",
+   "r": "Nakanokamishima",
+   "c": "島",
+   "m": "473812",
+   "name": {
+    "ja": "仲の神島",
+    "kana": "なかのかみしま",
+    "romaji": "Nakanokamishima",
+    "zh_tw": "仲之神島",
+    "en": "Nakanokamishima"
+   },
+   "summary": {
+    "text": "仲之神島是位於日本八重山列島的一座無人島，行政區劃上屬於竹富町，位於西表島西南方約15公里處。該島亦為西表石垣國立公園的一部分。",
+    "lang": "zh",
+    "source_url": "https://zh.wikipedia.org/wiki/%E4%BB%B2%E4%B9%8B%E7%A5%9E%E5%B3%B6",
+    "license": "CC BY-SA 4.0",
+    "fetched_at": "2026-09-28"
+   },
+   "nearest": [],
+   "src": "https://www.wikidata.org/wiki/Q987038"
+  }
+ ],
+ "municipalities": [
+  {
+   "m": "472018",
+   "n": "那覇市",
+   "h": "なはし",
+   "l": [
+    127.7021,
+    26.2145
+   ],
+   "bbox": [
+    127.6305,
+    26.1764,
+    127.7384,
+    26.2461
+   ],
+   "touches": [
+    "472085",
+    "472123",
+    "473294",
+    "473502"
+   ]
+  },
+  {
+   "m": "472051",
+   "n": "宜野湾市",
+   "h": "ぎのわんし",
+   "l": [
+    127.7561,
+    26.2724
+   ],
+   "bbox": [
+    127.7243,
+    26.2499,
+    127.7871,
+    26.2979
+   ],
+   "touches": [
+    "472085",
+    "473260",
+    "473278",
+    "473286",
+    "473294"
+   ]
+  },
+  {
+   "m": "472077",
+   "n": "石垣市",
+   "h": "いしがきし",
+   "l": [
+    124.1983,
+    24.4041
+   ],
+   "bbox": [
+    123.4578,
+    24.3274,
+    124.3404,
+    25.9289
+   ],
+   "touches": []
+  },
+  {
+   "m": "472085",
+   "n": "浦添市",
+   "h": "うらそえし",
+   "l": [
+    127.7122,
+    26.2511
+   ],
+   "bbox": [
+    127.6686,
+    26.2334,
+    127.753,
+    26.2746
+   ],
+   "touches": [
+    "472018",
+    "472051",
+    "473294"
+   ]
+  },
+  {
+   "m": "472093",
+   "n": "名護市",
+   "l": [
+    128.0541,
+    26.5961
+   ],
+   "bbox": [
+    127.8984,
+    26.5055,
+    128.1511,
+    26.6807
+   ],
+   "touches": [
+    "473022",
+    "473031",
+    "473065",
+    "473081",
+    "473111",
+    "473138"
+   ]
+  },
+  {
+   "m": "472107",
+   "n": "糸満市",
+   "h": "いとまんし",
+   "l": [
+    127.6891,
+    26.108
+   ],
+   "bbox": [
+    127.648,
+    26.0746,
+    127.7316,
+    26.1696
+   ],
+   "touches": [
+    "472123",
+    "473626"
+   ]
+  },
+  {
+   "m": "472115",
+   "n": "沖縄市",
+   "h": "おきなわし",
+   "l": [
+    127.8035,
+    26.3705
+   ],
+   "bbox": [
+    127.7722,
+    26.2992,
+    127.8556,
+    26.4217
+   ],
+   "touches": [
+    "472131",
+    "473111",
+    "473243",
+    "473251",
+    "473260",
+    "473278"
+   ]
+  },
+  {
+   "m": "472123",
+   "n": "豊見城市",
+   "h": "とみぐすくし",
+   "l": [
+    127.6911,
+    26.1793
+   ],
+   "bbox": [
+    127.6312,
+    26.1517,
+    127.7139,
+    26.1984
+   ],
+   "touches": [
+    "472018",
+    "472107",
+    "473502",
+    "473626"
+   ]
+  },
+  {
+   "m": "472131",
+   "n": "うるま市",
+   "h": "うるまし",
+   "l": [
+    127.8508,
+    26.3618
+   ],
+   "bbox": [
+    127.7883,
+    26.2416,
+    128.0041,
+    26.4501
+   ],
+   "touches": [
+    "472115",
+    "473111",
+    "473146"
+   ]
+  },
+  {
+   "m": "472140",
+   "n": "宮古島市",
+   "h": "みやこじまし",
+   "l": [
+    125.3304,
+    24.758
+   ],
+   "bbox": [
+    125.135,
+    24.7119,
+    125.4693,
+    24.9388
+   ],
+   "touches": []
+  },
+  {
+   "m": "472158",
+   "n": "南城市",
+   "h": "なんじょうし",
+   "l": [
+    127.766,
+    26.1544
+   ],
+   "bbox": [
+    127.7295,
+    26.1251,
+    127.9105,
+    26.1986
+   ],
+   "touches": [
+    "473481",
+    "473502",
+    "473626"
+   ]
+  },
+  {
+   "m": "473014",
+   "n": "国頭村",
+   "h": "くにがみそん",
+   "l": [
+    128.2666,
+    26.7615
+   ],
+   "bbox": [
+    128.1506,
+    26.6678,
+    128.3273,
+    26.8753
+   ],
+   "touches": [
+    "473022",
+    "473031"
+   ]
+  },
+  {
+   "m": "473022",
+   "n": "大宜味村",
+   "h": "おおぎみそん",
+   "l": [
+    128.1504,
+    26.6809
+   ],
+   "bbox": [
+    128.0804,
+    26.6152,
+    128.2001,
+    26.7178
+   ],
+   "touches": [
+    "472093",
+    "473014",
+    "473031"
+   ]
+  },
+  {
+   "m": "473031",
+   "n": "東村",
+   "h": "ひがしそん",
+   "l": [
+    128.2173,
+    26.6592
+   ],
+   "bbox": [
+    128.0957,
+    26.5895,
+    128.2653,
+    26.7084
+   ],
+   "touches": [
+    "472093",
+    "473014",
+    "473022"
+   ]
+  },
+  {
+   "m": "473065",
+   "n": "今帰仁村",
+   "h": "なきじんそん",
+   "l": [
+    127.9485,
+    26.6885
+   ],
+   "bbox": [
+    127.9174,
+    26.6358,
+    128.0272,
+    26.7143
+   ],
+   "touches": [
+    "472093",
+    "473081"
+   ]
+  },
+  {
+   "m": "473081",
+   "n": "本部町",
+   "h": "もとぶちょう",
+   "l": [
+    127.9177,
+    26.6547
+   ],
+   "bbox": [
+    127.8095,
+    26.6056,
+    127.9629,
+    26.7099
+   ],
+   "touches": [
+    "472093",
+    "473065"
+   ]
+  },
+  {
+   "m": "473111",
+   "n": "恩納村",
+   "h": "おんなそん",
+   "l": [
+    127.8707,
+    26.4924
+   ],
+   "bbox": [
+    127.7419,
+    26.4152,
+    127.941,
+    26.5314
+   ],
+   "touches": [
+    "472093",
+    "472115",
+    "472131",
+    "473138",
+    "473146",
+    "473243"
+   ]
+  },
+  {
+   "m": "473138",
+   "n": "宜野座村",
+   "h": "ぎのざそん",
+   "l": [
+    127.9701,
+    26.4937
+   ],
+   "bbox": [
+    127.9277,
+    26.4648,
+    128.0024,
+    26.5296
+   ],
+   "touches": [
+    "472093",
+    "473111",
+    "473146"
+   ]
+  },
+  {
+   "m": "473146",
+   "n": "金武町",
+   "h": "きんちょう",
+   "l": [
+    127.9205,
+    26.4656
+   ],
+   "bbox": [
+    127.8354,
+    26.4353,
+    127.951,
+    26.5021
+   ],
+   "touches": [
+    "472131",
+    "473111",
+    "473138"
+   ]
+  },
+  {
+   "m": "473154",
+   "n": "伊江村",
+   "h": "いえそん",
+   "l": [
+    127.8056,
+    26.7222
+   ],
+   "bbox": [
+    127.749,
+    26.7046,
+    127.8313,
+    26.7392
+   ],
+   "touches": []
+  },
+  {
+   "m": "473243",
+   "n": "読谷村",
+   "l": [
+    127.7493,
+    26.3931
+   ],
+   "bbox": [
+    127.7114,
+    26.3613,
+    127.786,
+    26.4417
+   ],
+   "touches": [
+    "472115",
+    "473111",
+    "473251"
+   ]
+  },
+  {
+   "m": "473251",
+   "n": "嘉手納町",
+   "h": "かでなちょう",
+   "l": [
+    127.7595,
+    26.3549
+   ],
+   "bbox": [
+    127.7383,
+    26.3401,
+    127.7886,
+    26.408
+   ],
+   "touches": [
+    "472115",
+    "473243",
+    "473260"
+   ]
+  },
+  {
+   "m": "473260",
+   "n": "北谷町",
+   "h": "ちゃたんちょう",
+   "l": [
+    127.7643,
+    26.3302
+   ],
+   "bbox": [
+    127.7425,
+    26.2932,
+    127.7855,
+    26.3462
+   ],
+   "touches": [
+    "472051",
+    "472115",
+    "473251",
+    "473278"
+   ]
+  },
+  {
+   "m": "473278",
+   "n": "北中城村",
+   "h": "きたなかぐすくそん",
+   "l": [
+    127.7955,
+    26.3019
+   ],
+   "bbox": [
+    127.7758,
+    26.2848,
+    127.8287,
+    26.326
+   ],
+   "touches": [
+    "472051",
+    "472115",
+    "473260",
+    "473286"
+   ]
+  },
+  {
+   "m": "473286",
+   "n": "中城村",
+   "h": "なかぐすくそん",
+   "l": [
+    127.7852,
+    26.2647
+   ],
+   "bbox": [
+    127.7649,
+    26.2319,
+    127.8169,
+    26.2901
+   ],
+   "touches": [
+    "472051",
+    "473278",
+    "473294"
+   ]
+  },
+  {
+   "m": "473294",
+   "n": "西原町",
+   "h": "にしはらちょう",
+   "l": [
+    127.7551,
+    26.2279
+   ],
+   "bbox": [
+    127.7332,
+    26.2075,
+    127.79,
+    26.2567
+   ],
+   "touches": [
+    "472018",
+    "472051",
+    "472085",
+    "473286",
+    "473481",
+    "473502"
+   ]
+  },
+  {
+   "m": "473481",
+   "n": "与那原町",
+   "h": "よなばるちょう",
+   "l": [
+    127.7543,
+    26.2062
+   ],
+   "bbox": [
+    127.7391,
+    26.1863,
+    127.7773,
+    26.2149
+   ],
+   "touches": [
+    "472158",
+    "473294",
+    "473502"
+   ]
+  },
+  {
+   "m": "473502",
+   "n": "南風原町",
+   "h": "はえばるちょう",
+   "l": [
+    127.7246,
+    26.1872
+   ],
+   "bbox": [
+    127.7077,
+    26.1686,
+    127.7485,
+    26.2182
+   ],
+   "touches": [
+    "472018",
+    "472123",
+    "472158",
+    "473294",
+    "473481",
+    "473626"
+   ]
+  },
+  {
+   "m": "473537",
+   "n": "渡嘉敷村",
+   "h": "とかしきそん",
+   "l": [
+    127.3573,
+    26.1939
+   ],
+   "bbox": [
+    127.3389,
+    26.1384,
+    127.5546,
+    26.267
+   ],
+   "touches": []
+  },
+  {
+   "m": "473545",
+   "n": "座間味村",
+   "h": "ざまみそん",
+   "l": [
+    127.3052,
+    26.2329
+   ],
+   "bbox": [
+    127.2319,
+    26.1607,
+    127.3333,
+    26.252
+   ],
+   "touches": []
+  },
+  {
+   "m": "473553",
+   "n": "粟国村",
+   "h": "あぐにそん",
+   "l": [
+    127.2332,
+    26.5906
+   ],
+   "bbox": [
+    127.2081,
+    26.5749,
+    127.2482,
+    26.6017
+   ],
+   "touches": []
+  },
+  {
+   "m": "473561",
+   "n": "渡名喜村",
+   "h": "となきそん",
+   "l": [
+    127.144,
+    26.3649
+   ],
+   "bbox": [
+    127.0995,
+    26.3486,
+    127.1614,
+    26.3879
+   ],
+   "touches": []
+  },
+  {
+   "m": "473570",
+   "n": "南大東村",
+   "h": "みなみだいとうそん",
+   "l": [
+    131.2443,
+    25.8491
+   ],
+   "bbox": [
+    131.2134,
+    25.8128,
+    131.2734,
+    25.8721
+   ],
+   "touches": []
+  },
+  {
+   "m": "473588",
+   "n": "北大東村",
+   "h": "きただいとうそん",
+   "l": [
+    131.3096,
+    25.942
+   ],
+   "bbox": [
+    131.1806,
+    24.4614,
+    131.3321,
+    25.961
+   ],
+   "touches": []
+  },
+  {
+   "m": "473596",
+   "n": "伊平屋村",
+   "h": "いへやそん",
+   "l": [
+    127.9807,
+    27.0529
+   ],
+   "bbox": [
+    127.9127,
+    26.9892,
+    128.0221,
+    27.0952
+   ],
+   "touches": []
+  },
+  {
+   "m": "473600",
+   "n": "伊是名村",
+   "h": "いぜなそん",
+   "l": [
+    127.9385,
+    26.9375
+   ],
+   "bbox": [
+    127.9118,
+    26.8914,
+    127.9595,
+    26.9788
+   ],
+   "touches": []
+  },
+  {
+   "m": "473618",
+   "n": "久米島町",
+   "h": "くめじまちょう",
+   "l": [
+    126.7682,
+    26.3654
+   ],
+   "bbox": [
+    126.7078,
+    26.2909,
+    128.2363,
+    27.8853
+   ],
+   "touches": []
+  },
+  {
+   "m": "473626",
+   "n": "八重瀬町",
+   "h": "やえせちょう",
+   "l": [
+    127.7316,
+    26.1297
+   ],
+   "bbox": [
+    127.6965,
+    26.0982,
+    127.7625,
+    26.1802
+   ],
+   "touches": [
+    "472107",
+    "472123",
+    "472158",
+    "473502"
+   ]
+  },
+  {
+   "m": "473758",
+   "n": "多良間村",
+   "h": "たらまそん",
+   "l": [
+    124.6972,
+    24.6572
+   ],
+   "bbox": [
+    124.6708,
+    24.6377,
+    124.7284,
+    24.7619
+   ],
+   "touches": []
+  },
+  {
+   "m": "473812",
+   "n": "竹富町",
+   "h": "たけとみちょう",
+   "l": [
+    123.8413,
+    24.3336
+   ],
+   "bbox": [
+    123.6616,
+    24.0459,
+    124.102,
+    24.4771
+   ],
+   "touches": []
+  },
+  {
+   "m": "473821",
+   "n": "与那国町",
+   "h": "よなぐにちょう",
+   "l": [
+    123.008,
+    24.4561
+   ],
+   "bbox": [
+    122.9338,
+    24.4367,
+    123.0438,
+    24.4743
+   ],
+   "touches": []
+  }
+ ],
+ "lines": [
+  {
+   "n": "沖縄都市モノレール線",
+   "e": "Okinawa Urban Monorail (Naha Airport => Tedako-Uranishi)",
+   "k": "monorail",
+   "o": "沖縄都市モノレール株式会社"
+  }
+ ],
+ "stations": [
+  {
+   "id": "node-10915647317",
+   "n": "市立病院前",
+   "e": "Naha City Hospital",
+   "lat": 26.227527,
+   "lng": 127.710053,
+   "l": [
+    0
+   ]
+  },
+  {
+   "id": "node-6540547644",
+   "n": "壺川",
+   "e": "Tsubogawa",
+   "lat": 26.205797,
+   "lng": 127.678392,
+   "l": [
+    0
+   ]
+  },
+  {
+   "id": "node-6540547645",
+   "n": "旭橋",
+   "e": "Asahibashi",
+   "lat": 26.21185,
+   "lng": 127.675463,
+   "l": [
+    0
+   ]
+  },
+  {
+   "id": "node-6540547646",
+   "n": "県庁前",
+   "e": "Prefectural Office",
+   "lat": 26.214384,
+   "lng": 127.679334,
+   "l": [
+    0
+   ]
+  },
+  {
+   "id": "node-6540547649",
+   "n": "美栄橋",
+   "e": "Miebashi",
+   "lat": 26.219218,
+   "lng": 127.684388,
+   "l": [
+    0
+   ]
+  },
+  {
+   "id": "node-6540547650",
+   "n": "牧志",
+   "e": "Makishi",
+   "lat": 26.217192,
+   "lng": 127.692591,
+   "l": [
+    0
+   ]
+  },
+  {
+   "id": "node-6540583667",
+   "n": "安里",
+   "e": "Asato",
+   "lat": 26.216804,
+   "lng": 127.69576,
+   "l": [
+    0
+   ]
+  },
+  {
+   "id": "node-6540583670",
+   "n": "おもろまち",
+   "e": "Omoromachi",
+   "lat": 26.222775,
+   "lng": 127.69841,
+   "l": [
+    0
+   ]
+  },
+  {
+   "id": "node-6540583673",
+   "n": "古島",
+   "e": "Furujima",
+   "lat": 26.230863,
+   "lng": 127.703054,
+   "l": [
+    0
+   ]
+  },
+  {
+   "id": "node-6540583675",
+   "n": "儀保",
+   "e": "Gibo",
+   "lat": 26.224595,
+   "lng": 127.719085,
+   "l": [
+    0
+   ]
+  },
+  {
+   "id": "node-6540583676",
+   "n": "首里",
+   "e": "Shuri",
+   "lat": 26.219173,
+   "lng": 127.725553,
+   "l": [
+    0
+   ]
+  },
+  {
+   "id": "node-6540630176",
+   "n": "小禄",
+   "e": "Oroku",
+   "lat": 26.196531,
+   "lng": 127.667033,
+   "l": [
+    0
+   ]
+  },
+  {
+   "id": "node-6540630177",
+   "n": "赤嶺",
+   "e": "Akamine",
+   "lat": 26.193239,
+   "lng": 127.660486,
+   "l": [
+    0
+   ]
+  },
+  {
+   "id": "node-6540630178",
+   "n": "那覇空港",
+   "e": "Naha Airport",
+   "lat": 26.206486,
+   "lng": 127.652213,
+   "l": [
+    0
+   ]
+  },
+  {
+   "id": "node-6842842194",
+   "n": "石嶺",
+   "e": "Ishimine",
+   "lat": 26.227007,
+   "lng": 127.729012,
+   "l": [
+    0
+   ]
+  },
+  {
+   "id": "node-6844601159",
+   "n": "経塚",
+   "e": "Kyozuka",
+   "lat": 26.236719,
+   "lng": 127.728523,
+   "l": [
+    0
+   ]
+  },
+  {
+   "id": "node-6844601160",
+   "n": "浦添前田",
+   "e": "Urasoe-Maeda",
+   "lat": 26.243845,
+   "lng": 127.732267,
+   "l": [
+    0
+   ]
+  },
+  {
+   "id": "node-6901207713",
+   "n": "てだこ浦西",
+   "e": "Tedako-Uranishi",
+   "lat": 26.241748,
+   "lng": 127.741917,
+   "l": [
+    0
+   ]
+  },
+  {
+   "id": "node-7746899672",
+   "n": "奥武山公園",
+   "e": "Onoyama Park",
+   "lat": 26.200751,
+   "lng": 127.67533,
+   "l": [
+    0
+   ]
+  }
+ ],
+ "festivals": [
+  {
+   "id": "okinawa-Q11272648",
+   "name": {
+    "ja": "てだこまつり",
+    "kana": "てだこまつり",
+    "romaji": "Tedakomatsuri",
+    "zh_tw": "てだこまつり",
+    "en": "Urasoe Tedako Festival"
+   },
+   "prefecture": "okinawa",
+   "months": [
+    11
+   ],
+   "months_source": "wikipedia",
+   "location": {
+    "lat": 26.245694444444446,
+    "lng": 127.72186111111111
+   },
+   "sources": [
+    {
+     "url": "https://ja.wikipedia.org/wiki/%E6%B5%A6%E6%B7%BB%E3%81%A6%E3%81%A0%E3%81%93%E3%81%BE%E3%81%A4%E3%82%8A",
+     "fetched_at": "2026-09-29"
+    },
+    {
+     "url": "https://www.wikidata.org/wiki/Q11272648",
+     "fetched_at": "2026-09-29"
+    }
+   ],
+   "views": 108,
+   "updated_at": "2026-09-29",
+   "summary": {
+    "text": "浦添てだこまつりは、沖縄県浦添市で開催される市民祭りである。1978年11月に第1回が開催された。浦添市を代表するイベントの一つであり、第40回時点で延べ17万人を超える来場者を集めたとされる。",
+    "lang": "ja",
+    "source_url": "https://ja.wikipedia.org/wiki/%E6%B5%A6%E6%B7%BB%E3%81%A6%E3%81%A0%E3%81%93%E3%81%BE%E3%81%A4%E3%82%8A",
+    "license": "CC BY-SA 4.0",
+    "fetched_at": "2026-09-29"
+   },
+   "m": "472085"
+  },
+  {
+   "id": "okinawa-Q11298553",
+   "name": {
+    "ja": "クイチャーフェスティバル",
+    "kana": "くいちゃーふぇすてぃばる",
+    "romaji": "Kuichafesutibaru",
+    "zh_tw": "クイチャーフェスティバル"
+   },
+   "prefecture": "okinawa",
+   "months": [
+    11
+   ],
+   "months_source": "wikipedia",
+   "sources": [
+    {
+     "url": "https://ja.wikipedia.org/wiki/%E3%82%AF%E3%82%A4%E3%83%81%E3%83%A3%E3%83%BC%E3%83%95%E3%82%A7%E3%82%B9%E3%83%86%E3%82%A3%E3%83%90%E3%83%AB",
+     "fetched_at": "2026-09-29"
+    },
+    {
+     "url": "https://www.wikidata.org/wiki/Q11298553",
+     "fetched_at": "2026-09-29"
+    }
+   ],
+   "views": 152,
+   "updated_at": "2026-09-29",
+   "summary": {
+    "text": "クイチャーフェスティバルは、2002年より沖縄県の宮古島市で毎年11月の第1日曜日に開催されるイベントで、宮古島市出身のアイランダーアーティスト（シンガーソングライター）の下地暁が島の伝統(精神)文化であるクイチャーを次世代に繋げようと立ち上げたイベントである。",
+    "lang": "ja",
+    "source_url": "https://ja.wikipedia.org/wiki/%E3%82%AF%E3%82%A4%E3%83%81%E3%83%A3%E3%83%BC%E3%83%95%E3%82%A7%E3%82%B9%E3%83%86%E3%82%A3%E3%83%90%E3%83%AB",
+    "license": "CC BY-SA 4.0",
+    "fetched_at": "2026-09-29"
+   }
+  },
+  {
+   "id": "okinawa-Q11415615",
+   "name": {
+    "ja": "名護夏祭り",
+    "zh_tw": "名護夏祭り"
+   },
+   "prefecture": "okinawa",
+   "months": [
+    7
+   ],
+   "months_source": "wikipedia",
+   "sources": [
+    {
+     "url": "https://ja.wikipedia.org/wiki/%E5%90%8D%E8%AD%B7%E5%A4%8F%E7%A5%AD%E3%82%8A",
+     "fetched_at": "2026-09-29"
+    },
+    {
+     "url": "https://www.wikidata.org/wiki/Q11415615",
+     "fetched_at": "2026-09-29"
+    }
+   ],
+   "views": 272,
+   "updated_at": "2026-09-29",
+   "summary": {
+    "text": "名護夏まつり（なごなつまつり）は、毎年7月（一部の年に例外あり）の最終土曜日・日曜日に沖縄県名護市内の名護漁港内で開催される祭り。",
+    "lang": "ja",
+    "source_url": "https://ja.wikipedia.org/wiki/%E5%90%8D%E8%AD%B7%E5%A4%8F%E7%A5%AD%E3%82%8A",
+    "license": "CC BY-SA 4.0",
+    "fetched_at": "2026-09-29"
+   }
+  },
+  {
+   "id": "okinawa-Q11552606",
+   "name": {
+    "ja": "沖縄サンバカーニバル",
+    "kana": "おきなわさんばかーにばる",
+    "romaji": "Okinawasanbakanibaru",
+    "zh_tw": "沖縄サンバカーニバル",
+    "en": "Okinawa International Carnival"
+   },
+   "prefecture": "okinawa",
+   "months": [
+    11
+   ],
+   "months_source": "wikipedia",
+   "location": {
+    "lat": 26.33427777777778,
+    "lng": 127.80572222222222
+   },
+   "kana_source": "wikipedia",
+   "sources": [
+    {
+     "url": "https://ja.wikipedia.org/wiki/%E6%B2%96%E7%B8%84%E3%82%B5%E3%83%B3%E3%83%90%E3%82%AB%E3%83%BC%E3%83%8B%E3%83%90%E3%83%AB",
+     "fetched_at": "2026-09-29"
+    },
+    {
+     "url": "https://www.wikidata.org/wiki/Q11552606",
+     "fetched_at": "2026-09-29"
+    }
+   ],
+   "views": 332,
+   "updated_at": "2026-09-29",
+   "summary": {
+    "text": "沖縄サンバカーニバル（おきなわサンバカーニバル）は、毎年11月に沖縄県沖縄市で開催されるサンバのイベントである。",
+    "lang": "ja",
+    "source_url": "https://ja.wikipedia.org/wiki/%E6%B2%96%E7%B8%84%E3%82%B5%E3%83%B3%E3%83%90%E3%82%AB%E3%83%BC%E3%83%8B%E3%83%90%E3%83%AB",
+    "license": "CC BY-SA 4.0",
+    "fetched_at": "2026-09-29"
+   },
+   "m": "472115"
+  },
+  {
+   "id": "okinawa-Q11552667",
+   "name": {
+    "ja": "沖縄国際カーニバル",
+    "kana": "おきなわこくさいかーにばる",
+    "romaji": "Okinawakokusaikanibaru",
+    "zh_tw": "沖繩國際狂歡節"
+   },
+   "prefecture": "okinawa",
+   "months": [
+    11
+   ],
+   "months_source": "wikipedia",
+   "kana_source": "wikipedia",
+   "sources": [
+    {
+     "url": "https://ja.wikipedia.org/wiki/%E6%B2%96%E7%B8%84%E5%9B%BD%E9%9A%9B%E3%82%AB%E3%83%BC%E3%83%8B%E3%83%90%E3%83%AB",
+     "fetched_at": "2026-09-29"
+    },
+    {
+     "url": "https://www.wikidata.org/wiki/Q11552667",
+     "fetched_at": "2026-09-29"
+    }
+   ],
+   "views": 297,
+   "updated_at": "2026-09-29",
+   "summary": {
+    "text": "沖縄国際カーニバル（おきなわこくさいかーにばる）は、毎年11月下旬に沖縄県沖縄市で開催される市民まつりである。",
+    "lang": "ja",
+    "source_url": "https://ja.wikipedia.org/wiki/%E6%B2%96%E7%B8%84%E5%9B%BD%E9%9A%9B%E3%82%AB%E3%83%BC%E3%83%8B%E3%83%90%E3%83%AB",
+    "license": "CC BY-SA 4.0",
+    "fetched_at": "2026-09-29"
+   }
+  },
+  {
+   "id": "okinawa-Q11604835",
+   "name": {
+    "ja": "糸満ハーレー",
+    "kana": "いとまんはーれー",
+    "romaji": "Itoman Ha Re",
+    "zh_tw": "絲滿賽龍舟",
+    "en": "Itoman Hārē"
+   },
+   "prefecture": "okinawa",
+   "months": [
+    5
+   ],
+   "months_source": "wikipedia",
+   "location": {
+    "lat": 26.1235,
+    "lng": 127.66577777777778
+   },
+   "kana_source": "wikipedia",
+   "sources": [
+    {
+     "url": "https://ja.wikipedia.org/wiki/%E7%B3%B8%E6%BA%80%E3%83%8F%E3%83%BC%E3%83%AC%E3%83%BC",
+     "fetched_at": "2026-09-29"
+    },
+    {
+     "url": "https://www.wikidata.org/wiki/Q11604835",
+     "fetched_at": "2026-09-29"
+    }
+   ],
+   "views": 2755,
+   "updated_at": "2026-09-29",
+   "summary": {
+    "text": "糸満ハーレー（いとまんハーレー）は、沖縄県糸満市糸満の糸満漁港中地区で毎年旧暦5月4日（5月下旬～6月頃）に行われる行事である。秋の十五夜（旧暦8月15日）に行われる糸満大綱引と並ぶ、糸満市の伝統行事のひとつである。",
+    "lang": "ja",
+    "source_url": "https://ja.wikipedia.org/wiki/%E7%B3%B8%E6%BA%80%E3%83%8F%E3%83%BC%E3%83%AC%E3%83%BC",
+    "license": "CC BY-SA 4.0",
+    "fetched_at": "2026-09-29"
+   },
+   "m": "472107"
+  },
+  {
+   "id": "okinawa-Q11634237",
+   "name": {
+    "ja": "豊見城ハーリー",
+    "kana": "とみぐすくはーりー",
+    "romaji": "Tomigusuku Ha Ri",
+    "zh_tw": "豐見城賽龍舟",
+    "en": "Tomigusuku Hārī"
+   },
+   "prefecture": "okinawa",
+   "months": [],
+   "location": {
+    "lat": 26.17716666666667,
+    "lng": 127.68125
+   },
+   "kana_source": "wikipedia",
+   "sources": [
+    {
+     "url": "https://ja.wikipedia.org/wiki/%E8%B1%8A%E8%A6%8B%E5%9F%8E%E3%83%8F%E3%83%BC%E3%83%AA%E3%83%BC",
+     "fetched_at": "2026-09-29"
+    },
+    {
+     "url": "https://www.wikidata.org/wiki/Q11634237",
+     "fetched_at": "2026-09-29"
+    }
+   ],
+   "views": 296,
+   "updated_at": "2026-09-29",
+   "summary": {
+    "text": "豊見城ハーリー（とみぐすくハーリー）とは、沖縄県内で行われる行事の一つである。沖縄の代表的な年中行事であるハーリーの発祥地は、沖縄県豊見城市の「豊見城グスクと城下の饒波川河口（漫湖）である」と王府の正史・球陽（1745年編集）に記述されている。",
+    "lang": "ja",
+    "source_url": "https://ja.wikipedia.org/wiki/%E8%B1%8A%E8%A6%8B%E5%9F%8E%E3%83%8F%E3%83%BC%E3%83%AA%E3%83%BC",
+    "license": "CC BY-SA 4.0",
+    "fetched_at": "2026-09-29"
+   },
+   "m": "472123"
+  },
+  {
+   "id": "okinawa-Q11642807",
+   "name": {
+    "ja": "那覇まつり",
+    "kana": "なはまつり",
+    "romaji": "Nahamatsuri",
+    "zh_tw": "那霸祭",
+    "en": "Naha Great Tug-of-War Festival"
+   },
+   "prefecture": "okinawa",
+   "months": [],
+   "kana_source": "wikidata",
+   "sources": [
+    {
+     "url": "https://ja.wikipedia.org/wiki/%E9%82%A3%E8%A6%87%E5%A4%A7%E7%B6%B1%E6%8C%BD%E3%81%BE%E3%81%A4%E3%82%8A",
+     "fetched_at": "2026-09-29"
+    },
+    {
+     "url": "https://www.wikidata.org/wiki/Q11642807",
+     "fetched_at": "2026-09-29"
+    }
+   ],
+   "views": 3821,
+   "updated_at": "2026-09-29",
+   "summary": {
+    "text": "The Naha Great Tug-of-War Festival (那覇大綱挽まつり, Naha Dai Tsunahiki Matsuri) is an annual event held in Naha, Okinawa Prefecture, Japan. Its roots may be traced ba",
+    "lang": "en",
+    "source_url": "https://en.wikipedia.org/wiki/Naha_Great_Tug-of-War_Festival",
+    "license": "CC BY-SA 4.0",
+    "fetched_at": "2026-09-29"
+   }
+  },
+  {
+   "id": "okinawa-Q11642810",
+   "name": {
+    "ja": "那覇ハーリー",
+    "kana": "なははーりー",
+    "romaji": "Naha Hari",
+    "zh_tw": "那霸賽龍舟",
+    "en": "Naha Hari"
+   },
+   "prefecture": "okinawa",
+   "months": [
+    5
+   ],
+   "months_source": "wikipedia",
+   "location": {
+    "lat": 26.212222222222223,
+    "lng": 127.67916666666666
+   },
+   "kana_source": "wikipedia",
+   "sources": [
+    {
+     "url": "https://ja.wikipedia.org/wiki/%E9%82%A3%E8%A6%87%E3%83%8F%E3%83%BC%E3%83%AA%E3%83%BC",
+     "fetched_at": "2026-09-29"
+    },
+    {
+     "url": "https://www.wikidata.org/wiki/Q11642810",
+     "fetched_at": "2026-09-29"
+    }
+   ],
+   "views": 1990,
+   "updated_at": "2026-09-29",
+   "summary": {
+    "text": "那覇ハーリー（なはハーリー）は、沖縄県那覇市で毎年ゴールデンウィークに3日間行われるハーリー。沖縄県内のハーリーでは最大、また県内の数ある行事の中でも最大規模である。海上での競漕と合わせ、3日間を通じて多彩な催し物があり、主催団体の1つである沖縄テレビでは生中継や特番が放送される。",
+    "lang": "ja",
+    "source_url": "https://ja.wikipedia.org/wiki/%E9%82%A3%E8%A6%87%E3%83%8F%E3%83%BC%E3%83%AA%E3%83%BC",
+    "license": "CC BY-SA 4.0",
+    "fetched_at": "2026-09-29"
+   },
+   "m": "472018"
+  },
+  {
+   "id": "okinawa-Q22127846",
+   "name": {
+    "ja": "沖縄全島エイサーまつり",
+    "kana": "おきなわぜんとうえいさーまつり",
+    "romaji": "Okinawa Zento Eisa Matsuri",
+    "zh_tw": "沖縄全島エイサーまつり",
+    "en": "Okinawa Zento Eisa Matsuri"
+   },
+   "prefecture": "okinawa",
+   "months": [],
+   "kana_source": "wikipedia",
+   "sources": [
+    {
+     "url": "https://ja.wikipedia.org/wiki/%E6%B2%96%E7%B8%84%E5%85%A8%E5%B3%B6%E3%82%A8%E3%82%A4%E3%82%B5%E3%83%BC%E3%81%BE%E3%81%A4%E3%82%8A",
+     "fetched_at": "2026-09-29"
+    },
+    {
+     "url": "https://www.wikidata.org/wiki/Q22127846",
+     "fetched_at": "2026-09-29"
+    }
+   ],
+   "views": 4955,
+   "updated_at": "2026-09-29",
+   "summary": {
+    "text": "沖縄全島エイサーまつり(おきなわぜんとうエイサーまつり)は、沖縄県沖縄市で毎年旧盆の翌週末に開催される沖縄県内最大のエイサーイベントである。3日間に渡り開催される。",
+    "lang": "ja",
+    "source_url": "https://ja.wikipedia.org/wiki/%E6%B2%96%E7%B8%84%E5%85%A8%E5%B3%B6%E3%82%A8%E3%82%A4%E3%82%B5%E3%83%BC%E3%81%BE%E3%81%A4%E3%82%8A",
+    "license": "CC BY-SA 4.0",
+    "fetched_at": "2026-09-29"
+   }
+  },
+  {
+   "id": "okinawa-Q28687310",
+   "name": {
+    "ja": "琉球海炎祭",
+    "kana": "りゅうきゅうかいえんさい",
+    "romaji": "Ryukyukaiensai",
+    "zh_tw": "琉球海炎祭"
+   },
+   "prefecture": "okinawa",
+   "months": [
+    4
+   ],
+   "months_source": "wikipedia",
+   "kana_source": "wikipedia",
+   "sources": [
+    {
+     "url": "https://ja.wikipedia.org/wiki/%E7%90%89%E7%90%83%E6%B5%B7%E7%82%8E%E7%A5%AD",
+     "fetched_at": "2026-09-29"
+    },
+    {
+     "url": "https://www.wikidata.org/wiki/Q28687310",
+     "fetched_at": "2026-09-29"
+    }
+   ],
+   "views": 629,
+   "updated_at": "2026-09-29",
+   "summary": {
+    "text": "琉球海炎祭（りゅうきゅうかいえんさい）は、毎年4月に沖縄県宜野湾市の宜野湾海浜公園で開催される、花火大会である。「日本で一番早い夏」をうたい、日本で一番早い沖縄の海開きシーズンに合わせて開催される。",
+    "lang": "ja",
+    "source_url": "https://ja.wikipedia.org/wiki/%E7%90%89%E7%90%83%E6%B5%B7%E7%82%8E%E7%A5%AD",
+    "license": "CC BY-SA 4.0",
+    "fetched_at": "2026-09-29"
+   }
+  },
+  {
+   "id": "okinawa-Q48764258",
+   "name": {
+    "ja": "海神祭",
+    "zh_tw": "海神祭"
+   },
+   "prefecture": "okinawa",
+   "months": [],
+   "sources": [
+    {
+     "url": "https://ja.wikipedia.org/wiki/%E6%B5%B7%E7%A5%9E%E7%A5%AD",
+     "fetched_at": "2026-09-29"
+    },
+    {
+     "url": "https://www.wikidata.org/wiki/Q48764258",
+     "fetched_at": "2026-09-29"
+    }
+   ],
+   "views": 1371,
+   "updated_at": "2026-09-29",
+   "summary": {
+    "text": "奄美群島や沖縄諸島の海神祭（かいじんさい、うみがみまつり、ウンギャミ、ウンジャミ、ウンガミ）は、ノロ（ヌル、祝女）を祭司として来訪神（ニライカナイ）を招き、豊作、豊漁、無病息災等を祈る年中行事である。",
+    "lang": "ja",
+    "source_url": "https://ja.wikipedia.org/wiki/%E6%B5%B7%E7%A5%9E%E7%A5%AD",
+    "license": "CC BY-SA 4.0",
+    "fetched_at": "2026-09-29"
+   }
+  },
+  {
+   "id": "okinawa-Q60995970",
+   "name": {
+    "ja": "豊年祭",
+    "kana": "ほうねんさい",
+    "romaji": "Honensai",
+    "zh_tw": "豊年祭"
+   },
+   "prefecture": "okinawa",
+   "months": [
+    7
+   ],
+   "months_source": "wikipedia",
+   "kana_source": "wikipedia",
+   "sources": [
+    {
+     "url": "https://ja.wikipedia.org/wiki/%E8%B1%8A%E5%B9%B4%E7%A5%AD_%28%E5%98%89%E9%99%BD%29",
+     "fetched_at": "2026-09-29"
+    },
+    {
+     "url": "https://www.wikidata.org/wiki/Q60995970",
+     "fetched_at": "2026-09-29"
+    }
+   ],
+   "views": 226,
+   "updated_at": "2026-09-29",
+   "summary": {
+    "text": "豊年祭（ほうねんさい）は、沖縄県名護市嘉陽の祭礼行事。旧暦の7月16日に行われる。様々な演目で構成され、全体を通して守り神が踊り神である獅子に豊年を祈願する。",
+    "lang": "ja",
+    "source_url": "https://ja.wikipedia.org/wiki/%E8%B1%8A%E5%B9%B4%E7%A5%AD_%28%E5%98%89%E9%99%BD%29",
+    "license": "CC BY-SA 4.0",
+    "fetched_at": "2026-09-29"
+   }
+  },
+  {
+   "id": "okinawa-Q7121452",
+   "name": {
+    "ja": "パーントゥ",
+    "kana": "ぱーんとぅ",
+    "romaji": "Panto",
+    "zh_tw": "パーントゥ",
+    "en": "Paantu"
+   },
+   "prefecture": "okinawa",
+   "months": [],
+   "sources": [
+    {
+     "url": "https://ja.wikipedia.org/wiki/%E3%83%91%E3%83%BC%E3%83%B3%E3%83%88%E3%82%A5",
+     "fetched_at": "2026-09-29"
+    },
+    {
+     "url": "https://www.wikidata.org/wiki/Q7121452",
+     "fetched_at": "2026-09-29"
+    }
+   ],
+   "views": 13477,
+   "updated_at": "2026-09-29",
+   "summary": {
+    "text": "The Paantu (Miyako: パーントゥ) festival is an annual festival on the island of Miyako-jima in Japan's Okinawa Prefecture.",
+    "lang": "en",
+    "source_url": "https://en.wikipedia.org/wiki/Paantu",
+    "license": "CC BY-SA 4.0",
+    "fetched_at": "2026-09-29"
+   }
+  }
+ ],
+ "specialties": [
+  {
+   "id": "okinawa-Q1136876",
+   "name": {
+    "ja": "沖縄そば",
+    "kana": "おきなわそば",
+    "romaji": "Okinawa Soba",
+    "zh_tw": "沖繩麵條",
+    "en": "Okinawa soba"
+   },
+   "prefecture": "okinawa",
+   "category": "kyodo",
+   "source_type": "kyodo_ryori",
+   "kana_source": "maff",
+   "sources": [
+    {
+     "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/47_20_okinawa.html",
+     "fetched_at": "2026-09-29"
+    },
+    {
+     "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/5566/index.html",
+     "fetched_at": "2026-09-29"
+    },
+    {
+     "url": "https://www.wikidata.org/wiki/Q1136876",
+     "fetched_at": "2026-09-29"
+    },
+    {
+     "url": "https://zh.wikipedia.org/wiki/%E6%B2%96%E7%B9%A9%E9%BA%B5%E6%A2%9D",
+     "fetched_at": "2026-09-29"
+    }
+   ],
+   "updated_at": "2026-09-29",
+   "summary": {
+    "text": "沖繩麵條（琉球語首裡中央方言：うちなーすば（沖繩蕎麥，日語：沖縄そば）），或稱琉球麵條，是一種在琉球常見的麵條，也是琉球料理中的菜色之一。",
+    "lang": "zh",
+    "source_url": "https://zh.wikipedia.org/wiki/%E6%B2%96%E7%B9%A9%E9%BA%B5%E6%A2%9D",
+    "license": "CC BY-SA 4.0",
+    "fetched_at": "2026-09-29"
+   }
+  },
+  {
+   "id": "okinawa-maff-47_10_okinawa",
+   "name": {
+    "ja": "ソーキ汁",
+    "kana": "そーきじる",
+    "romaji": "Sokijiru",
+    "zh_tw": "ソーキ汁",
+    "en": "Sokijiru"
+   },
+   "prefecture": "okinawa",
+   "category": "kyodo",
+   "source_type": "kyodo_ryori",
+   "kana_source": "maff",
+   "sources": [
+    {
+     "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/47_10_okinawa.html",
+     "fetched_at": "2026-09-29"
+    },
+    {
+     "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/3246/index.html",
+     "fetched_at": "2026-09-29"
+    }
+   ],
+   "updated_at": "2026-09-29",
+   "summary": {
+    "text": "Pork is cooked without wasting any part of it, and for this bone-in meat is frequently used. Clear soup with bone-in ribs that have been simmered to softness is",
+    "lang": "en",
+    "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/3246/index.html",
+    "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+    "fetched_at": "2026-09-29"
+   }
+  },
+  {
+   "id": "okinawa-maff-47_11_okinawa",
+   "name": {
+    "ja": "ゴーヤーチャンプルー",
+    "kana": "ごーやーちゃんぷるー",
+    "romaji": "Goyachanpuru",
+    "zh_tw": "ゴーヤーチャンプルー",
+    "en": "Goya Chanpuru"
+   },
+   "prefecture": "okinawa",
+   "category": "kyodo",
+   "source_type": "kyodo_ryori",
+   "sources": [
+    {
+     "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/47_11_okinawa.html",
+     "fetched_at": "2026-09-29"
+    },
+    {
+     "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/3951/index.html",
+     "fetched_at": "2026-09-29"
+    }
+   ],
+   "updated_at": "2026-09-29",
+   "summary": {
+    "text": "\"Chanpuru\" is a popular dish from Okinawa that consists of stir-fried veggies and Okinawan tofu. Among the different types of \"Chanpurus\", \"Goya Chanpuru\" is th",
+    "lang": "en",
+    "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/3951/index.html",
+    "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+    "fetched_at": "2026-09-29"
+   }
+  },
+  {
+   "id": "okinawa-maff-47_12_okinawa",
+   "name": {
+    "ja": "イカスミ汁",
+    "kana": "いかすみじる",
+    "romaji": "Ikasumijiru",
+    "zh_tw": "イカスミ汁",
+    "en": "Ikasumi-Jiru(Squid ink soup)"
+   },
+   "prefecture": "okinawa",
+   "category": "kyodo",
+   "source_type": "kyodo_ryori",
+   "kana_source": "maff",
+   "sources": [
+    {
+     "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/47_12_okinawa.html",
+     "fetched_at": "2026-09-29"
+    },
+    {
+     "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/3957/index.html",
+     "fetched_at": "2026-09-29"
+    }
+   ],
+   "updated_at": "2026-09-29",
+   "summary": {
+    "text": "“Ikasumi-jiru(Squid ink soup)” is a jet-black soup made with squid ink. Bigfin reef squid, also known as white squid, lean pork, and nigana (a type of flowering",
+    "lang": "en",
+    "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/3957/index.html",
+    "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+    "fetched_at": "2026-09-29"
+   }
+  },
+  {
+   "id": "okinawa-maff-47_13_okinawa",
+   "name": {
+    "ja": "人参シリシリー",
+    "kana": "にんじんしりしりー",
+    "romaji": "Ninjinshirishiri",
+    "zh_tw": "人参シリシリー",
+    "en": "Carrot “Shiri-shiri”"
+   },
+   "prefecture": "okinawa",
+   "category": "kyodo",
+   "source_type": "kyodo_ryori",
+   "kana_source": "maff",
+   "sources": [
+    {
+     "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/47_13_okinawa.html",
+     "fetched_at": "2026-09-29"
+    },
+    {
+     "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/3962/index.html",
+     "fetched_at": "2026-09-29"
+    }
+   ],
+   "updated_at": "2026-09-29",
+   "summary": {
+    "text": "Carrot “Shiri-shiri” is a dish made by stir-frying carrots grated in a “shiri-shiri” pan (a larger grater with a big hole in it), before adding eggs. It is know",
+    "lang": "en",
+    "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/3962/index.html",
+    "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+    "fetched_at": "2026-09-29"
+   }
+  },
+  {
+   "id": "okinawa-maff-47_14_okinawa",
+   "name": {
+    "ja": "ミヌダル",
+    "kana": "みぬだる",
+    "romaji": "Minudaru",
+    "zh_tw": "ミヌダル",
+    "en": "Minudaru"
+   },
+   "prefecture": "okinawa",
+   "category": "kyodo",
+   "source_type": "kyodo_ryori",
+   "sources": [
+    {
+     "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/47_14_okinawa.html",
+     "fetched_at": "2026-09-29"
+    },
+    {
+     "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/4685/index.html",
+     "fetched_at": "2026-09-29"
+    }
+   ],
+   "updated_at": "2026-09-29",
+   "summary": {
+    "text": "\"Minudaru\" is a thin slice of pork loin coated with black sesame sauce and steamed, also called \"kuljin\" (=black meat) because of its dark finish. The steaming ",
+    "lang": "en",
+    "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/4685/index.html",
+    "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+    "fetched_at": "2026-09-29"
+   }
+  },
+  {
+   "id": "okinawa-maff-47_15_okinawa",
+   "name": {
+    "ja": "ミミガーさしみ",
+    "kana": "みみがーさしみ",
+    "romaji": "Mimigasashimi",
+    "zh_tw": "ミミガーさしみ",
+    "en": "Mimigar Sashimi"
+   },
+   "prefecture": "okinawa",
+   "category": "kyodo",
+   "source_type": "kyodo_ryori",
+   "sources": [
+    {
+     "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/47_15_okinawa.html",
+     "fetched_at": "2026-09-29"
+    },
+    {
+     "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/4680/index.html",
+     "fetched_at": "2026-09-29"
+    }
+   ],
+   "updated_at": "2026-09-29",
+   "summary": {
+    "text": "\"Mimigar\" is pig's ears, and \"Sashimi\" is a dressed dish. In Okinawa Prefecture, where pork culture has long been rooted, the word \"everything is edible except ",
+    "lang": "en",
+    "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/4680/index.html",
+    "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+    "fetched_at": "2026-09-29"
+   }
+  },
+  {
+   "id": "okinawa-maff-47_16_okinawa",
+   "name": {
+    "ja": "ナーベーラーンブシー",
+    "kana": "なーべーらーんぶしー",
+    "romaji": "Naberanbushi",
+    "zh_tw": "ナーベーラーンブシー",
+    "en": "Naabeeraanbushi (Loofah cooked in miso)"
+   },
+   "prefecture": "okinawa",
+   "category": "kyodo",
+   "source_type": "kyodo_ryori",
+   "sources": [
+    {
+     "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/47_16_okinawa.html",
+     "fetched_at": "2026-09-29"
+    },
+    {
+     "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/4676/index.html",
+     "fetched_at": "2026-09-29"
+    }
+   ],
+   "updated_at": "2026-09-29",
+   "summary": {
+    "text": "\"Naabehraa\" is a Japanese word for \"Hechima(=Sponge cucumber)\", and \"nbusi\" is a dish of tofu, vegetables, and pork simmered in miso paste, somewhere between a ",
+    "lang": "en",
+    "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/4676/index.html",
+    "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+    "fetched_at": "2026-09-29"
+   }
+  },
+  {
+   "id": "okinawa-maff-47_17_okinawa",
+   "name": {
+    "ja": "チムシンジ",
+    "kana": "ちむしんじ",
+    "romaji": "Chimushinji",
+    "zh_tw": "チムシンジ",
+    "en": "Chimushinji"
+   },
+   "prefecture": "okinawa",
+   "category": "kyodo",
+   "source_type": "kyodo_ryori",
+   "sources": [
+    {
+     "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/47_17_okinawa.html",
+     "fetched_at": "2026-09-29"
+    },
+    {
+     "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/4211/index.html",
+     "fetched_at": "2026-09-29"
+    }
+   ],
+   "updated_at": "2026-09-29",
+   "summary": {
+    "text": "“Chimushinji” is a combination of the two words “chimu” (=pork liver) and “shinji” (=broth) and is a soup that is served to those with anemia or those feeling u",
+    "lang": "en",
+    "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/4211/index.html",
+    "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+    "fetched_at": "2026-09-29"
+   }
+  },
+  {
+   "id": "okinawa-maff-47_18_okinawa",
+   "name": {
+    "ja": "ジーマーミ豆腐",
+    "kana": "じーまーみどうふ",
+    "romaji": "Jimamidofu",
+    "zh_tw": "ジーマーミ豆腐",
+    "en": "Jimami Tofu"
+   },
+   "prefecture": "okinawa",
+   "category": "kyodo",
+   "source_type": "kyodo_ryori",
+   "kana_source": "maff",
+   "sources": [
+    {
+     "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/47_18_okinawa.html",
+     "fetched_at": "2026-09-29"
+    },
+    {
+     "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/4207/index.html",
+     "fetched_at": "2026-09-29"
+    }
+   ],
+   "updated_at": "2026-09-29",
+   "summary": {
+    "text": "“Jimami” refers to raw peanuts, and the juice from the peanuts and “nmukuji” (=potato kudzu) are mixed with water and cooked over a stove. This dish is similar ",
+    "lang": "en",
+    "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/4207/index.html",
+    "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+    "fetched_at": "2026-09-29"
+   }
+  },
+  {
+   "id": "okinawa-maff-47_19_okinawa",
+   "name": {
+    "ja": "足ティビチ",
+    "kana": "あしてぃびち",
+    "romaji": "Ashitibichi",
+    "zh_tw": "足ティビチ",
+    "en": "Ashi Tibichi"
+   },
+   "prefecture": "okinawa",
+   "category": "kyodo",
+   "source_type": "kyodo_ryori",
+   "kana_source": "maff",
+   "sources": [
+    {
+     "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/47_19_okinawa.html",
+     "fetched_at": "2026-09-29"
+    },
+    {
+     "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/5562/index.html",
+     "fetched_at": "2026-09-29"
+    }
+   ],
+   "updated_at": "2026-09-29",
+   "summary": {
+    "text": "‘Ashi Tibichi’ or ‘Tibichi’ is a dish of simmered pig’s feet (‘chimaguu’ in Okinawa dialect) with ‘kombu’ kelp (‘kuubu’ in Okinawa dialect) and daikon radish (‘",
+    "lang": "en",
+    "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/5562/index.html",
+    "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+    "fetched_at": "2026-09-29"
+   }
+  },
+  {
+   "id": "okinawa-maff-47_1_okinawa",
+   "name": {
+    "ja": "中身汁",
+    "kana": "なかみじる",
+    "romaji": "Nakamijiru",
+    "zh_tw": "中身汁",
+    "en": "Nakamijiru"
+   },
+   "prefecture": "okinawa",
+   "category": "kyodo",
+   "source_type": "kyodo_ryori",
+   "kana_source": "maff",
+   "sources": [
+    {
+     "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/47_1_okinawa.html",
+     "fetched_at": "2026-09-29"
+    },
+    {
+     "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/162/index.html",
+     "fetched_at": "2026-09-29"
+    }
+   ],
+   "updated_at": "2026-09-29",
+   "summary": {
+    "text": "In Okinawa Prefecture, where pork is often eaten, it is said that \"everything but the squeal is eaten up\" because every last bit is used in cooking. Among them,",
+    "lang": "en",
+    "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/162/index.html",
+    "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+    "fetched_at": "2026-09-29"
+   }
+  },
+  {
+   "id": "okinawa-maff-47_21_okinawa",
+   "name": {
+    "ja": "もずく丼",
+    "kana": "もずくどん",
+    "romaji": "Mozukudon",
+    "zh_tw": "もずく丼",
+    "en": "Mozuku-Don"
+   },
+   "prefecture": "okinawa",
+   "category": "kyodo",
+   "source_type": "kyodo_ryori",
+   "kana_source": "maff",
+   "sources": [
+    {
+     "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/47_21_okinawa.html",
+     "fetched_at": "2026-09-29"
+    },
+    {
+     "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/5573/index.html",
+     "fetched_at": "2026-09-29"
+    }
+   ],
+   "updated_at": "2026-09-29",
+   "summary": {
+    "text": "\"Mozuku-don\" is a dish fried \"mozuku\" seaweed with meat and vegetables, then put on top of cooked rice. It is loved by people regardless of age or gender becaus",
+    "lang": "en",
+    "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/5573/index.html",
+    "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+    "fetched_at": "2026-09-29"
+   }
+  },
+  {
+   "id": "okinawa-maff-47_22_okinawa",
+   "name": {
+    "ja": "クーリジシ",
+    "kana": "くーりじし",
+    "romaji": "Kurijishi",
+    "zh_tw": "クーリジシ",
+    "en": "Kuurijishi (Egg Soup with meat and vegetables)"
+   },
+   "prefecture": "okinawa",
+   "category": "kyodo",
+   "source_type": "kyodo_ryori",
+   "sources": [
+    {
+     "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/47_22_okinawa.html",
+     "fetched_at": "2026-09-29"
+    },
+    {
+     "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/6227/index.html",
+     "fetched_at": "2026-09-29"
+    }
+   ],
+   "updated_at": "2026-09-29",
+   "summary": {
+    "text": "‘Kuurijishi’ is an egg soup with pork belly, ‘Shibui’ (‘Tougan’ wax gourd), and ‘Gumbo’ (‘Gobou’ burdock). They use pork, bonito or shiitake mushroom for ‘dashi",
+    "lang": "en",
+    "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/6227/index.html",
+    "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+    "fetched_at": "2026-09-29"
+   }
+  },
+  {
+   "id": "okinawa-maff-47_23_okinawa",
+   "name": {
+    "ja": "ヒラヤーチー",
+    "kana": "ひらやーちー",
+    "romaji": "Hirayachi",
+    "zh_tw": "ヒラヤーチー",
+    "en": "Hirayachi (Vegetable Pancake)"
+   },
+   "prefecture": "okinawa",
+   "category": "kyodo",
+   "source_type": "kyodo_ryori",
+   "sources": [
+    {
+     "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/47_23_okinawa.html",
+     "fetched_at": "2026-09-29"
+    },
+    {
+     "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/6861/index.html",
+     "fetched_at": "2026-09-29"
+    }
+   ],
+   "updated_at": "2026-09-29",
+   "summary": {
+    "text": "\"Hirayachi\" is made by mixing wheat flour with egg and Dashi (=Japanese soup stock) (or water), sprinkling with green onions, Chinese chives, and other ingredie",
+    "lang": "en",
+    "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/6861/index.html",
+    "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+    "fetched_at": "2026-09-29"
+   }
+  },
+  {
+   "id": "okinawa-maff-47_24_okinawa",
+   "name": {
+    "ja": "ンムクジプットゥルー",
+    "kana": "んむくじぷっとぅるー",
+    "romaji": "Nmukujiputtoru",
+    "zh_tw": "ンムクジプットゥルー",
+    "en": "Nmu-kuji Puttu-ru (Sweet Potato starch cake)"
+   },
+   "prefecture": "okinawa",
+   "category": "kyodo",
+   "source_type": "kyodo_ryori",
+   "sources": [
+    {
+     "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/47_24_okinawa.html",
+     "fetched_at": "2026-09-29"
+    },
+    {
+     "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/6863/index.html",
+     "fetched_at": "2026-09-29"
+    }
+   ],
+   "updated_at": "2026-09-29",
+   "summary": {
+    "text": "\"Nmu-kuji Puttu-ru\" is made by dissolving \"Nmu-kuji\" (=sweet potato starch) in water and stir-frying to a paste. \"Puttu-ru\" refers to the starchy, sticky glue-l",
+    "lang": "en",
+    "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/6863/index.html",
+    "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+    "fetched_at": "2026-09-29"
+   }
+  },
+  {
+   "id": "okinawa-maff-47_25_okinawa",
+   "name": {
+    "ja": "ヤファラジューシー",
+    "kana": "やふぁらじゅーしー",
+    "romaji": "Yafarajushi",
+    "zh_tw": "ヤファラジューシー",
+    "en": "Yafuara Jushi (Vegetable Rice Porridge)"
+   },
+   "prefecture": "okinawa",
+   "category": "kyodo",
+   "source_type": "kyodo_ryori",
+   "sources": [
+    {
+     "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/47_25_okinawa.html",
+     "fetched_at": "2026-09-29"
+    },
+    {
+     "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/6865/index.html",
+     "fetched_at": "2026-09-29"
+    }
+   ],
+   "updated_at": "2026-09-29",
+   "summary": {
+    "text": "\"Jushi\" is an Okinawan word for mixed rice or cooked rice. There are two types of \"Jushi\" based on texture: \"Kufua Jushi\" (=mixed rice type) and \"Yafuara Jushi\"",
+    "lang": "en",
+    "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/6865/index.html",
+    "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+    "fetched_at": "2026-09-29"
+   }
+  },
+  {
+   "id": "okinawa-maff-47_26_okinawa",
+   "name": {
+    "ja": "牛汁",
+    "kana": "ぎゅうじる",
+    "romaji": "Gyujiru",
+    "zh_tw": "牛汁",
+    "en": "Gyujiru (Beef soup)"
+   },
+   "prefecture": "okinawa",
+   "category": "kyodo",
+   "source_type": "kyodo_ryori",
+   "kana_source": "maff",
+   "sources": [
+    {
+     "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/47_26_okinawa.html",
+     "fetched_at": "2026-09-29"
+    },
+    {
+     "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/6867/index.html",
+     "fetched_at": "2026-09-29"
+    }
+   ],
+   "updated_at": "2026-09-29",
+   "summary": {
+    "text": "\"Gyujiru\" is a nutritious dish made by simmering beef with carrots and other ingredients. It has been used as a nourishing food for a long time. Especially in w",
+    "lang": "en",
+    "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/6867/index.html",
+    "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+    "fetched_at": "2026-09-29"
+   }
+  },
+  {
+   "id": "okinawa-maff-47_27_okinawa",
+   "name": {
+    "ja": "イーヤチ",
+    "kana": "いーやち",
+    "romaji": "Iyachi",
+    "zh_tw": "イーヤチ",
+    "en": "Iyachi (Dough made from Glutinous rice steamed and served on Japanese banana leaf)"
+   },
+   "prefecture": "okinawa",
+   "category": "kyodo",
+   "source_type": "kyodo_ryori",
+   "sources": [
+    {
+     "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/47_27_okinawa.html",
+     "fetched_at": "2026-09-29"
+    },
+    {
+     "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/7501/index.html",
+     "fetched_at": "2026-09-29"
+    }
+   ],
+   "updated_at": "2026-09-29",
+   "summary": {
+    "text": "\"Iyachi\" is a traditional preserved food from Taketomi Island in the Yaeyama Islands, where glutinous rice is mixed with glutinous millet or red beans and cooke",
+    "lang": "en",
+    "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/7501/index.html",
+    "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+    "fetched_at": "2026-09-29"
+   }
+  },
+  {
+   "id": "okinawa-maff-47_28_okinawa",
+   "name": {
+    "ja": "イラギムン",
+    "kana": "いらぎむん",
+    "romaji": "Iragimun",
+    "zh_tw": "イラギムン",
+    "en": "Iragimun (Stewed Papaya and Pork)"
+   },
+   "prefecture": "okinawa",
+   "category": "kyodo",
+   "source_type": "kyodo_ryori",
+   "sources": [
+    {
+     "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/47_28_okinawa.html",
+     "fetched_at": "2026-09-29"
+    },
+    {
+     "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/7503/index.html",
+     "fetched_at": "2026-09-29"
+    }
+   ],
+   "updated_at": "2026-09-29",
+   "summary": {
+    "text": "\"Iragimun\" is made with papayas that are still green and not ripe, and this type is referred to as \"vegetable papaya.\" Meat, tofu, and kombu (=kelp) are simmere",
+    "lang": "en",
+    "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/7503/index.html",
+    "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+    "fetched_at": "2026-09-29"
+   }
+  },
+  {
+   "id": "okinawa-maff-47_29_okinawa",
+   "name": {
+    "ja": "ヒージャー汁",
+    "kana": "ひーじゃーじる",
+    "romaji": "Hijajiru",
+    "zh_tw": "ヒージャー汁",
+    "en": "Heejaa-jiru (Goat soup)"
+   },
+   "prefecture": "okinawa",
+   "category": "kyodo",
+   "source_type": "kyodo_ryori",
+   "kana_source": "maff",
+   "sources": [
+    {
+     "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/47_29_okinawa.html",
+     "fetched_at": "2026-09-29"
+    },
+    {
+     "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/7505/index.html",
+     "fetched_at": "2026-09-29"
+    }
+   ],
+   "updated_at": "2026-09-29",
+   "summary": {
+    "text": "Heejaa means goat in Okinawan, also known as feejaa. A goat’s meat, bones, and entrails are slowly stewed in a large pot, and the strong-smelling hooch bar (mug",
+    "lang": "en",
+    "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/7505/index.html",
+    "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+    "fetched_at": "2026-09-29"
+   }
+  },
+  {
+   "id": "okinawa-maff-47_2_okinawa",
+   "name": {
+    "ja": "クーブイリチー",
+    "kana": "くーぶいりちー",
+    "romaji": "Kubuirichi",
+    "zh_tw": "クーブイリチー",
+    "en": "Koobuirichii"
+   },
+   "prefecture": "okinawa",
+   "category": "kyodo",
+   "source_type": "kyodo_ryori",
+   "sources": [
+    {
+     "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/47_2_okinawa.html",
+     "fetched_at": "2026-09-29"
+    },
+    {
+     "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/168/index.html",
+     "fetched_at": "2026-09-29"
+    }
+   ],
+   "updated_at": "2026-09-29",
+   "summary": {
+    "text": "Ilichee, often heard of in Okinawa's local cuisine, is a dish made by stir-frying dry foods and root vegetables and then simmering them to add flavor. Among the",
+    "lang": "en",
+    "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/168/index.html",
+    "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+    "fetched_at": "2026-09-29"
+   }
+  },
+  {
+   "id": "okinawa-maff-47_30_okinawa",
+   "name": {
+    "ja": "血イリチー",
+    "kana": "ちいりちー",
+    "romaji": "Chiirichi",
+    "zh_tw": "血イリチー",
+    "en": "Chi irichee (Blood pork dish)"
+   },
+   "prefecture": "okinawa",
+   "category": "kyodo",
+   "source_type": "kyodo_ryori",
+   "kana_source": "maff",
+   "sources": [
+    {
+     "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/47_30_okinawa.html",
+     "fetched_at": "2026-09-29"
+    },
+    {
+     "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/7507/index.html",
+     "fetched_at": "2026-09-29"
+    }
+   ],
+   "updated_at": "2026-09-29",
+   "summary": {
+    "text": "Chi irichee, also called Chi iricher is sauteed and stewed dish with pig blood. It is a rare dish in which pork, carrots, kamaboko(=fish cake), kikurage mushroo",
+    "lang": "en",
+    "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/7507/index.html",
+    "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+    "fetched_at": "2026-09-29"
+   }
+  },
+  {
+   "id": "okinawa-maff-47_3_okinawa",
+   "name": {
+    "ja": "イナムドゥチ",
+    "kana": "いなむどぅち",
+    "romaji": "Inamudochi",
+    "zh_tw": "イナムドゥチ",
+    "en": "Inamudouchi"
+   },
+   "prefecture": "okinawa",
+   "category": "kyodo",
+   "source_type": "kyodo_ryori",
+   "sources": [
+    {
+     "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/47_3_okinawa.html",
+     "fetched_at": "2026-09-29"
+    },
+    {
+     "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/173/index.html",
+     "fetched_at": "2026-09-29"
+    }
+   ],
+   "updated_at": "2026-09-29",
+   "summary": {
+    "text": "In Okinawa Prefecture, \"ina\" means \"wild boar\" and \"muduchi\" means \"imitation\"; the local dish \"inamuduchi\" means \"imitation wild boar. The local dish \"inamduch",
+    "lang": "en",
+    "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/173/index.html",
+    "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+    "fetched_at": "2026-09-29"
+   }
+  },
+  {
+   "id": "okinawa-maff-47_4_okinawa",
+   "name": {
+    "ja": "クファジューシー",
+    "kana": "くふぁじゅーしー",
+    "romaji": "Kufajushi",
+    "zh_tw": "クファジューシー",
+    "en": "Kufajuushii"
+   },
+   "prefecture": "okinawa",
+   "category": "kyodo",
+   "source_type": "kyodo_ryori",
+   "sources": [
+    {
+     "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/47_4_okinawa.html",
+     "fetched_at": "2026-09-29"
+    },
+    {
+     "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/178/index.html",
+     "fetched_at": "2026-09-29"
+    }
+   ],
+   "updated_at": "2026-09-29",
+   "summary": {
+    "text": "There are two types of \"juicy\": kufa (hard) juicy, which is cooked with rice, and yafala (soft) juicy (also called boro boro juicy), which is cooked with rice i",
+    "lang": "en",
+    "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/178/index.html",
+    "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+    "fetched_at": "2026-09-29"
+   }
+  },
+  {
+   "id": "okinawa-maff-47_5_okinawa",
+   "name": {
+    "ja": "ソーミンタシャー",
+    "kana": "そーみんたしゃー",
+    "romaji": "Somintasha",
+    "zh_tw": "ソーミンタシャー",
+    "en": "Soomintashiya"
+   },
+   "prefecture": "okinawa",
+   "category": "kyodo",
+   "source_type": "kyodo_ryori",
+   "sources": [
+    {
+     "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/47_5_okinawa.html",
+     "fetched_at": "2026-09-29"
+    },
+    {
+     "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/184/index.html",
+     "fetched_at": "2026-09-29"
+    }
+   ],
+   "updated_at": "2026-09-29",
+   "summary": {
+    "text": "Somin Tasiya\" is an Okinawan home-style dish of stir-fried somen noodles. There are two types of stir-fried dishes in Okinawa, \"tashiya\" and \"chanpuru,\" but \"ch",
+    "lang": "en",
+    "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/184/index.html",
+    "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+    "fetched_at": "2026-09-29"
+   }
+  },
+  {
+   "id": "okinawa-maff-47_6_okinawa",
+   "name": {
+    "ja": "ラフテー",
+    "kana": "らふてー",
+    "romaji": "Rafute",
+    "zh_tw": "ラフテー",
+    "en": "Rafute (Okinawan-style stewed pork cubes)"
+   },
+   "prefecture": "okinawa",
+   "category": "kyodo",
+   "source_type": "kyodo_ryori",
+   "sources": [
+    {
+     "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/47_6_okinawa.html",
+     "fetched_at": "2026-09-29"
+    },
+    {
+     "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/2812/index.html",
+     "fetched_at": "2026-09-29"
+    }
+   ],
+   "updated_at": "2026-09-29",
+   "summary": {
+    "text": "It is said that the Ryukyuan cuisine of Okinawa Prefecture \"begins and ends with pork.\" It is known that Okinawans make use of the meat, of course, but also the",
+    "lang": "en",
+    "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/2812/index.html",
+    "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+    "fetched_at": "2026-09-29"
+   }
+  },
+  {
+   "id": "okinawa-maff-47_7_okinawa",
+   "name": {
+    "ja": "ターンムディンガク",
+    "kana": "たーんむでぃんがく",
+    "romaji": "Tanmudingaku",
+    "zh_tw": "ターンムディンガク",
+    "en": "Tammu Dingaku"
+   },
+   "prefecture": "okinawa",
+   "category": "kyodo",
+   "source_type": "kyodo_ryori",
+   "sources": [
+    {
+     "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/47_7_okinawa.html",
+     "fetched_at": "2026-09-29"
+    },
+    {
+     "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/2814/index.html",
+     "fetched_at": "2026-09-29"
+    }
+   ],
+   "updated_at": "2026-09-29",
+   "summary": {
+    "text": "“Tamu dingaku”, also called“ sata dammu”, is a dish in which taimo are mashed and sweetened. It is also prepared as a dessert which pairs well with a fatty pork",
+    "lang": "en",
+    "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/2814/index.html",
+    "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+    "fetched_at": "2026-09-29"
+   }
+  },
+  {
+   "id": "okinawa-maff-47_8_okinawa",
+   "name": {
+    "ja": "サーターアンダーギー",
+    "kana": "さーたーあんだーぎー",
+    "romaji": "Sataandagi",
+    "zh_tw": "サーターアンダーギー",
+    "en": "Sata andagi(Okinawan donut holes)"
+   },
+   "prefecture": "okinawa",
+   "category": "kyodo",
+   "source_type": "kyodo_ryori",
+   "sources": [
+    {
+     "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/47_8_okinawa.html",
+     "fetched_at": "2026-09-29"
+    },
+    {
+     "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/2824/index.html",
+     "fetched_at": "2026-09-29"
+    }
+   ],
+   "updated_at": "2026-09-29",
+   "summary": {
+    "text": "The Ryukyu Kingdom’s growth reflects the influence of China; in Ryukyuan sweets, too, Japanese and Chinese styles are intermixed. When the refined techniques of",
+    "lang": "en",
+    "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/2824/index.html",
+    "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+    "fetched_at": "2026-09-29"
+   }
+  },
+  {
+   "id": "okinawa-maff-47_9_okinawa",
+   "name": {
+    "ja": "カーサームーチー",
+    "kana": "かーさーむーちー",
+    "romaji": "Kasamuchi",
+    "zh_tw": "カーサームーチー",
+    "en": "Casa Muchi"
+   },
+   "prefecture": "okinawa",
+   "category": "kyodo",
+   "source_type": "kyodo_ryori",
+   "sources": [
+    {
+     "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/47_9_okinawa.html",
+     "fetched_at": "2026-09-29"
+    },
+    {
+     "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/2830/index.html",
+     "fetched_at": "2026-09-29"
+    }
+   ],
+   "updated_at": "2026-09-29",
+   "summary": {
+    "text": "“Casa muchi” (also called muchi, casa muchi, onimochi) is a steamed rice cake wrapped in a shell ginger leaf. It is offered to the gods to dispel evil spirits o",
+    "lang": "en",
+    "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/2830/index.html",
+    "license": "出典：農林水產省（公共データ利用規約 第1.0版）",
+    "fetched_at": "2026-09-29"
+   }
+  }
+ ],
+ "shinise": [
+  {
+   "id": "shinise-node-10255053944",
+   "g": "teahouse",
+   "p": "okinawa",
+   "n": "石畳茶屋　真珠",
+   "lat": 26.21715,
+   "lng": 127.71582,
+   "u": "https://www.openstreetmap.org/node/10255053944",
+   "m": "472018"
+  },
+  {
+   "id": "shinise-node-10770755194",
+   "g": "teahouse",
+   "p": "okinawa",
+   "n": "ぶくぶく茶屋かりい山房",
+   "lat": 26.22043,
+   "lng": 127.71639,
+   "u": "https://www.openstreetmap.org/node/10770755194",
+   "m": "472018"
+  },
+  {
+   "id": "shinise-node-12520078164",
+   "g": "teahouse",
+   "p": "okinawa",
+   "n": "読谷山窯 金城公房 森の茶屋",
+   "lat": 26.4074,
+   "lng": 127.75425,
+   "a": "沖縄県読谷村座喜味",
+   "u": "https://gallery-morinochaya.jimdofree.com/",
+   "m": "473243"
+  },
+  {
+   "id": "shinise-node-13030847875",
+   "g": "teahouse",
+   "p": "okinawa",
+   "n": "みやび茶屋・仲元",
+   "lat": 26.32589,
+   "lng": 127.79238,
+   "a": "沖縄県沖縄市諸見里",
+   "u": "https://miyabi2010.ti-da.net/",
+   "m": "472115"
+  },
+  {
+   "id": "shinise-node-13673560001",
+   "g": "teahouse",
+   "p": "okinawa",
+   "n": "パーラー海の茶屋",
+   "lat": 26.2268,
+   "lng": 127.2934,
+   "u": "https://www.openstreetmap.org/node/13673560001",
+   "m": "473545"
+  },
+  {
+   "id": "shinise-node-1994522289",
+   "g": "teahouse",
+   "p": "okinawa",
+   "n": "おもろ茶屋",
+   "lat": 26.42168,
+   "lng": 127.79761,
+   "u": "https://www.openstreetmap.org/node/1994522289",
+   "m": "472131"
+  },
+  {
+   "id": "shinise-node-4269890590",
+   "g": "teahouse",
+   "p": "okinawa",
+   "n": "浜辺の茶屋",
+   "lat": 26.13353,
+   "lng": 127.78461,
+   "u": "https://www.openstreetmap.org/node/4269890590",
+   "m": "472158"
+  },
+  {
+   "id": "shinise-node-4780279222",
+   "g": "teahouse",
+   "p": "okinawa",
+   "n": "山の茶屋・楽水",
+   "lat": 26.1352,
+   "lng": 127.78378,
+   "u": "https://www.openstreetmap.org/node/4780279222",
+   "m": "472158"
+  },
+  {
+   "id": "shinise-node-5885018510",
+   "g": "teahouse",
+   "p": "okinawa",
+   "n": "むらの茶屋",
+   "lat": 26.70076,
+   "lng": 128.01873,
+   "u": "https://www.openstreetmap.org/node/5885018510",
+   "m": "473065"
+  },
+  {
+   "id": "shinise-node-9624102525",
+   "g": "teahouse",
+   "p": "okinawa",
+   "n": "海中茶屋",
+   "lat": 26.33258,
+   "lng": 127.92916,
+   "a": "沖縄県うるま市与那城",
+   "u": "https://www.openstreetmap.org/node/9624102525",
+   "m": null
+  },
+  {
+   "id": "shinise-way-169337495",
+   "g": "teahouse",
+   "p": "okinawa",
+   "n": "茶屋首里とうふ",
+   "lat": 26.21805,
+   "lng": 127.72321,
+   "u": "https://www.openstreetmap.org/way/169337495",
+   "m": "472018"
+  }
+ ],
+ "castles": [
+  {
+   "id": "castle-098",
+   "g": "100",
+   "p": "okinawa",
+   "n": "今帰仁城",
+   "h": "なきじんぐすく",
+   "z": "今歸仁城",
+   "lat": 26.69083,
+   "lng": 127.93028,
+   "u": "https://ja.wikipedia.org/wiki/日本100名城",
+   "no": 98,
+   "st": [
+    "今帰仁村グスク交流センター"
+   ],
+   "s": "wd-Q508866"
+  },
+  {
+   "id": "castle-099",
+   "g": "100",
+   "p": "okinawa",
+   "n": "中城城",
+   "h": "なかぐすくじょう",
+   "lat": 26.28389,
+   "lng": 127.80139,
+   "u": "https://ja.wikipedia.org/wiki/日本100名城",
+   "no": 99,
+   "st": [
+    "管理事務所の窓口"
+   ],
+   "s": "wd-Q1013209"
+  },
+  {
+   "id": "castle-100",
+   "g": "100",
+   "p": "okinawa",
+   "n": "首里城",
+   "h": "しゅりじょう",
+   "lat": 26.21703,
+   "lng": 127.71948,
+   "u": "https://ja.wikipedia.org/wiki/日本100名城",
+   "no": 100,
+   "st": [
+    "首里杜館"
+   ],
+   "s": "wd-Q907052"
+  },
+  {
+   "id": "castle-199",
+   "g": "zoku",
+   "p": "okinawa",
+   "n": "座喜味城",
+   "h": "ざきみぐすく",
+   "lat": 26.40833,
+   "lng": 127.74194,
+   "u": "https://ja.wikipedia.org/wiki/続日本100名城",
+   "no": 199,
+   "st": [
+    "世界遺産座喜味城跡ユンタンザミュージアム"
+   ],
+   "s": "wd-Q2338956"
+  },
+  {
+   "id": "castle-200",
+   "g": "zoku",
+   "p": "okinawa",
+   "n": "勝連城",
+   "lat": 26.32981,
+   "lng": 127.87888,
+   "u": "https://ja.wikipedia.org/wiki/続日本100名城",
+   "no": 200,
+   "st": [
+    "勝連城跡休憩所"
+   ],
+   "s": "wd-Q2471589"
+  }
+ ],
+ "seasons": {
+  "source": {
+   "url": "https://www.data.jma.go.jp/sakura/data/index.html",
+   "fetched_at": "2026-09-28T17:03:37+00:00"
+  },
+  "stations": [
+   {
+    "name": "那覇",
+    "prefecture": "okinawa",
+    "normals": {
+     "sakura_kaika": "01-16",
+     "sakura_mankai": "02-04",
+     "ume": "01-13"
+    }
+   },
+   {
+    "name": "宮古島",
+    "prefecture": "okinawa",
+    "normals": {
+     "sakura_kaika": "01-17",
+     "sakura_mankai": "02-09"
+    }
+   },
+   {
+    "name": "石垣島",
+    "prefecture": "okinawa",
+    "normals": {
+     "sakura_kaika": "01-18",
+     "sakura_mankai": "02-10",
+     "ume": "01-11"
+    }
+   },
+   {
+    "name": "南大東島",
+    "prefecture": "okinawa",
+    "normals": {
+     "sakura_kaika": "01-20",
+     "sakura_mankai": "02-05"
+    }
+   }
+  ]
+ },
+ "railGraph": {
+  "attribution": "© OpenStreetMap contributors",
+  "nodes": [
+   [
+    "node-10915647317",
+    "市立病院前",
+    26.22753,
+    127.71005,
+    "okinawa",
+    0
+   ],
+   [
+    "node-6540547644",
+    "壺川",
+    26.2058,
+    127.67839,
+    "okinawa",
+    0
+   ],
+   [
+    "node-6540547645",
+    "旭橋",
+    26.21185,
+    127.67546,
+    "okinawa",
+    0
+   ],
+   [
+    "node-6540547646",
+    "県庁前",
+    26.21438,
+    127.67933,
+    "okinawa",
+    0
+   ],
+   [
+    "node-6540547649",
+    "美栄橋",
+    26.21922,
+    127.68439,
+    "okinawa",
+    0
+   ],
+   [
+    "node-6540547650",
+    "牧志",
+    26.21719,
+    127.69259,
+    "okinawa",
+    0
+   ],
+   [
+    "node-6540583667",
+    "安里",
+    26.2168,
+    127.69576,
+    "okinawa",
+    0
+   ],
+   [
+    "node-6540583670",
+    "おもろまち",
+    26.22277,
+    127.69841,
+    "okinawa",
+    0
+   ],
+   [
+    "node-6540583673",
+    "古島",
+    26.23086,
+    127.70305,
+    "okinawa",
+    0
+   ],
+   [
+    "node-6540583675",
+    "儀保",
+    26.2246,
+    127.71909,
+    "okinawa",
+    0
+   ],
+   [
+    "node-6540583676",
+    "首里",
+    26.21917,
+    127.72555,
+    "okinawa",
+    0
+   ],
+   [
+    "node-6540630176",
+    "小禄",
+    26.19653,
+    127.66703,
+    "okinawa",
+    0
+   ],
+   [
+    "node-6540630177",
+    "赤嶺",
+    26.19324,
+    127.66049,
+    "okinawa",
+    0
+   ],
+   [
+    "node-6540630178",
+    "那覇空港",
+    26.20649,
+    127.65221,
+    "okinawa",
+    0
+   ],
+   [
+    "node-6842842194",
+    "石嶺",
+    26.22701,
+    127.72901,
+    "okinawa",
+    0
+   ],
+   [
+    "node-6844601159",
+    "経塚",
+    26.23672,
+    127.72852,
+    "okinawa",
+    0
+   ],
+   [
+    "node-6844601160",
+    "浦添前田",
+    26.24385,
+    127.73227,
+    "okinawa",
+    0
+   ],
+   [
+    "node-6901207713",
+    "てだこ浦西",
+    26.24175,
+    127.74192,
+    "okinawa",
+    0
+   ],
+   [
+    "node-7746899672",
+    "奥武山公園",
+    26.20075,
+    127.67533,
+    "okinawa",
+    0
+   ]
+  ],
+  "edges": [
+   [
+    0,
+    8,
+    0.82,
+    0
+   ],
+   [
+    0,
+    9,
+    0.94,
+    0
+   ],
+   [
+    1,
+    2,
+    0.78,
+    0
+   ],
+   [
+    1,
+    18,
+    0.82,
+    0
+   ],
+   [
+    2,
+    3,
+    0.51,
+    0
+   ],
+   [
+    3,
+    4,
+    0.68,
+    0
+   ],
+   [
+    4,
+    5,
+    0.95,
+    0
+   ],
+   [
+    5,
+    6,
+    0.32,
+    2
+   ],
+   [
+    5,
+    6,
+    0.52,
+    0
+   ],
+   [
+    6,
+    7,
+    0.66,
+    0
+   ],
+   [
+    7,
+    8,
+    0.95,
+    0
+   ],
+   [
+    9,
+    10,
+    0.92,
+    0
+   ],
+   [
+    10,
+    14,
+    0.92,
+    0
+   ],
+   [
+    11,
+    12,
+    0.73,
+    0
+   ],
+   [
+    11,
+    18,
+    0.92,
+    0
+   ],
+   [
+    12,
+    13,
+    1.86,
+    0
+   ],
+   [
+    14,
+    15,
+    1.12,
+    0
+   ],
+   [
+    15,
+    16,
+    0.97,
+    0
+   ],
+   [
+    16,
+    17,
+    0.93,
+    0
+   ]
+  ]
+ }
+}

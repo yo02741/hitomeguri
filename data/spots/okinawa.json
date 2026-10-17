@@ -1983,8 +1983,8 @@
   {
     "id": "okinawastory-600010161",
     "name": {
-      "ja": "CAVE OKINAWA　気軽に楽しめる神秘の鍾乳洞!",
-      "zh_tw": "CAVE OKINAWA　気軽に楽しめる神秘の鍾乳洞!"
+      "ja": "CAVE OKINAWA",
+      "zh_tw": "CAVE OKINAWA"
     },
     "location": {
       "lat": 26.420185,
@@ -2517,34 +2517,6 @@
     "updated_at": "2026-09-29"
   },
   {
-    "id": "okinawastory-600015716",
-    "name": {
-      "ja": "レンタルトライクyawn",
-      "zh_tw": "レンタルトライクyawn"
-    },
-    "location": {
-      "lat": 26.450758,
-      "lng": 127.805351
-    },
-    "prefecture": "okinawa",
-    "municipality": "473111",
-    "kind": "major",
-    "themes": [],
-    "tags": [],
-    "featured": false,
-    "score": 62.15,
-    "images": [],
-    "external_ids": {},
-    "sources": [
-      {
-        "url": "https://www.okinawastory.jp/spot/600015716",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-29"
-  },
-  {
     "id": "okinawastory-600016257",
     "name": {
       "ja": "釣って見つけるぼうけんの国 沖縄",
@@ -2566,84 +2538,6 @@
     "sources": [
       {
         "url": "https://www.okinawastory.jp/spot/600016257",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28"
-  },
-  {
-    "id": "okinawastory-600016502",
-    "name": {
-      "ja": "2026チャータークルーザーで行く！慶良間諸島「渡嘉敷島」日帰りツアー",
-      "zh_tw": "2026チャータークルーザーで行く！慶良間諸島「渡嘉敷島」日帰りツアー"
-    },
-    "location": {
-      "lat": 26.22002,
-      "lng": 127.664055
-    },
-    "prefecture": "okinawa",
-    "municipality": "472018",
-    "kind": "major",
-    "themes": [],
-    "tags": [],
-    "featured": false,
-    "score": 61.1,
-    "nearest_stations": [
-      {
-        "name": {
-          "ja": "旭橋",
-          "kana": "あさひばし",
-          "romaji": "Asahibashi",
-          "en": "Asahibashi"
-        },
-        "distance_m": 1460
-      }
-    ],
-    "images": [],
-    "external_ids": {},
-    "sources": [
-      {
-        "url": "https://www.okinawastory.jp/spot/600016502",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-29"
-  },
-  {
-    "id": "okinawastory-600019345",
-    "name": {
-      "ja": "慶良間諸島半日ボートシュノーケリングツアー",
-      "zh_tw": "慶良間諸島半日ボートシュノーケリングツアー"
-    },
-    "location": {
-      "lat": 26.219894,
-      "lng": 127.664017
-    },
-    "prefecture": "okinawa",
-    "municipality": "472018",
-    "kind": "major",
-    "themes": [],
-    "tags": [],
-    "featured": false,
-    "score": 54.05,
-    "nearest_stations": [
-      {
-        "name": {
-          "ja": "旭橋",
-          "kana": "あさひばし",
-          "romaji": "Asahibashi",
-          "en": "Asahibashi"
-        },
-        "distance_m": 1450
-      }
-    ],
-    "images": [],
-    "external_ids": {},
-    "sources": [
-      {
-        "url": "https://www.okinawastory.jp/spot/600019345",
         "fetched_at": "2026-09-28"
       }
     ],

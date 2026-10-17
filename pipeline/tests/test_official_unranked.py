@@ -85,3 +85,20 @@ def test_kyototravel_list():
         "法観寺（八坂の塔）</a></h3>"
     )
     assert kyototravel.parse_list(page) == [(7, "535", "本経寺"), (7, "518", "法観寺（八坂の塔）")]
+
+
+def test_okinawastory_clean_name():
+    from pipeline.sources.okinawastory import clean_name
+
+    # 名稱後面的宣傳標語拿掉
+    assert clean_name("CAVE OKINAWA　気軽に楽しめる神秘の鍾乳洞!") == "CAVE OKINAWA"
+    # 全形空白分開的正式名稱（沒有標語）照舊
+    assert (
+        clean_name("公益財団法人対馬丸記念会　対馬丸記念館")
+        == "公益財団法人対馬丸記念会　対馬丸記念館"
+    )
+    assert clean_name("首里城公園") == "首里城公園"
+    # 行程、租借的頁不是景點
+    assert clean_name("レンタルトライクyawn") is None
+    assert clean_name("慶良間諸島半日ボートシュノーケリングツアー") is None
+    assert clean_name("【那覇発】半日ホエールウォッチングツアー") is None

@@ -49,6 +49,19 @@ def test_zh_label_prefers_traditional_then_converts_simplified():
     assert zh_label({"en": "Gion"}, "祇園祭") == "祇園祭"
 
 
+def test_zh_name_prefers_article_title_when_label_has_extra_words():
+    from pipeline.wiki import zh_name
+
+    # 標籤是拉麵街的名字，條目是料理
+    assert zh_name({"zh-tw": "京都拉麵小路"}, {"zhwiki": "京都拉面"}, "x") == "京都拉麵"
+    # 一般的情況照標籤
+    assert zh_name({"zh-tw": "祇園祭"}, {"zhwiki": "祇园祭"}, "x") == "祇園祭"
+    assert zh_name({"zh-tw": "八橋"}, {"zhwiki": "八桥 (和菓子)"}, "x") == "八橋"
+    # 沒有標籤：用條目名
+    assert zh_name({}, {"zhwiki": "千枚漬"}, "x") == "千枚漬"
+    assert zh_name({}, {}, "千枚漬け") == "千枚漬け"
+
+
 def test_pick_summary_order_zh_en_ja():
     from pipeline.sources.wikidata import Entity
     from pipeline.wiki import pick_summary

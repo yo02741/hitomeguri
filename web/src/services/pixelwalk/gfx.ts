@@ -243,6 +243,27 @@ export class Gfx {
     }
   }
 
+  /**
+   * 貼 RGB 調色盤的 sprite（你的旅人，traveller.ts）：idx 1 起算、0 透明，lut 是這個時段換好色的像素值。
+   * flip、level 同 sprite()
+   */
+  lut(s: { w: number; h: number; idx: Uint8Array }, lut: Uint32Array, x: number, y: number, opts: { flip?: boolean; level?: number } = {}) {
+    const X = Math.round(x + this.ox)
+    const Y = Math.round(y + this.oy)
+    const level = opts.level ?? 16
+    for (let j = 0; j < s.h; j++) {
+      const yy = Y + j
+      if (yy < 0 || yy >= this.h) continue
+      for (let i = 0; i < s.w; i++) {
+        const v = s.idx[j * s.w + (opts.flip ? s.w - 1 - i : i)]!
+        if (!v) continue
+        const xx = X + i
+        if (xx < 0 || xx >= this.w || (level < 16 && !dotOn(xx, yy, level))) continue
+        this.buf[yy * this.w + xx] = lut[v]!
+      }
+    }
+  }
+
   /** 把另一塊 Gfx（長條、天空）貼上來：從 src 的 (sx, sy) 取 w×h，貼到 (dx, dy)；透明的不貼 */
   blit(src: Gfx, sx: number, sy: number, w: number, h: number, dx: number, dy: number, opaque = false) {
     sx = Math.round(sx)

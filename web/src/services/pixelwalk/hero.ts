@@ -1,7 +1,9 @@
 import { drawSprite } from './build'
 import type { Gfx } from './gfx'
+import type { TimeOfDay } from './palette'
 import type { Sprite } from './sprite'
 import { sprite } from './sprite'
+import type { Facing, HeroSkin, SkinFrame } from './traveller'
 import type { Emote, Hero } from './types'
 import { FLOOR } from './types'
 
@@ -150,6 +152,12 @@ export const CAMERA = drawSprite(6, 5, (g) => {
   g.rect(2, 2, 2, 2, 'sea-2')
 })
 
+/** 夥伴的圖朝 facing，旅人朝左（flip）時要不要翻：正面的往左走時翻一次，看起來轉了身 */
+export function buddyFlip(facing: Facing, heroLeft: boolean): boolean {
+  if (facing === 'left') return !heroLeft
+  return heroLeft
+}
+
 /** 旅人的狀態（引擎用） */
 export class HeroState implements Hero {
   x = 0
@@ -160,6 +168,8 @@ export class HeroState implements Hero {
   hidden = false
   speed = 1
   flip = false
+  /** 你的旅人（登入、這台裝置上有番外篇生成的快取時，traveller.ts）；null 用上面手畫的旅人 */
+  skin: HeroSkin | null = null
   private vy = 0
   private jumpY = 0
   private anim = 0
@@ -211,6 +221,7 @@ export class HeroState implements Hero {
   /** level < 16：抖色的半透明（被前景擋住時透出來） */
   draw(g: Gfx, level = 16) {
     if (this.hidden) return
+    if (this.skin) return this.drawSkin(g, this.skin, level)
     const left = Math.round(this.x - W / 2)
     const top = Math.round(this.y + this.jumpY - H)
     let s: Sprite
@@ -224,6 +235,44 @@ export class HeroState implements Hero {
       const b = EMOTES[this.emoteKind]
       const bounce = this.emoteLeft > 0 && this.anim % 0.5 < 0.25 ? 0 : -1
       g.sprite(b, left + (this.flip ? 0 : 7), top - 10 + bounce, { level })
+    }
+  }
+
+  /**
+   * 你的旅人：同一套動作（走 4、站 2 眨眼、跳 1），畫布比手畫的大（24×34，帽子可以超出本體）。
+   * 夥伴跟在後面（朝右時在左邊），走路時每 4 格跳 1px；自己的傘一直撐著，沒有傘的人下雨時撐 UMBRELLA。
+   * 相機、頭上的符號對齊這一格的頭頂與本體的位置。
+   */
+  private drawSkin(g: Gfx, k: HeroSkin, level: number) {
+    const time: TimeOfDay = g.pal.key === 'dusk' || g.pal.key === 'night' ? g.pal.key : 'day'
+    const left = Math.round(this.x - k.w / 2)
+    const top = Math.round(this.y + this.jumpY - k.h)
+    let f: SkinFrame
+    if (this.jumpY < 0) f = k.jump
+    else if (this.walking) f = k.walk[Math.floor(this.anim * 7 * this.speed) % 4]!
+    else f = k.stand[this.idle % 3.2 > 3.05 ? 1 : 0]!
+    if (k.buddy) {
+      const b = k.buddy.frame
+      const dir = this.flip ? -1 : 1
+      const cx = this.x - dir * (k.box[2] / 2 + b.w / 2 + 1)
+      const hop = this.walking ? Math.floor(this.anim * 7.5) % 2 : 0
+      g.lut(b, b.lut[time], Math.round(cx - b.w / 2), Math.round(this.y - b.h - hop), { flip: buddyFlip(k.buddy.facing, this.flip), level })
+    }
+    const head = top + f.top
+    if (k.overhead) {
+      const o = k.overhead
+      g.lut(o.frame, o.frame.lut[time], this.flip ? left + k.w - o.x - o.frame.w : left + o.x, head + o.dy, { level })
+    } else if (this.hold === 'umbrella') g.sprite(UMBRELLA, left + Math.round((k.w - UMBRELLA.w) / 2), head - 11, { level })
+    g.lut(f, f.lut[time], left, top, { flip: this.flip, level })
+    if (this.hold === 'camera') {
+      const [cx, cy] = k.camera
+      g.sprite(CAMERA, this.flip ? left + k.w - cx - CAMERA.w : left + cx, top + cy, { level })
+    }
+    if (this.emoteKind) {
+      const b = EMOTES[this.emoteKind]
+      const bounce = this.emoteLeft > 0 && this.anim % 0.5 < 0.25 ? 0 : -1
+      const bx = this.flip ? left + k.box[0] : left + k.box[0] + k.box[2] - b.w
+      g.sprite(b, bx, head - 11 + bounce, { level })
     }
   }
 }

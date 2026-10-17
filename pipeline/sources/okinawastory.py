@@ -6,6 +6,7 @@ robots.txt 不存在（404）、條款未禁止取得；每秒最多一次請求
 
 from __future__ import annotations
 
+import dataclasses
 import html
 import re
 from dataclasses import dataclass, field
@@ -33,6 +34,28 @@ class OfficialSpot:
     lat: float | None = None
     lng: float | None = None
     categories: list[str] = field(default_factory=list)
+
+
+# 景點頁之外的商品頁：行程（ツアー）、租車與租借（レンタル）
+_LISTING = re.compile(r"ツアー|レンタル|^【")
+# 名稱後面接宣傳標語：「CAVE OKINAWA　気軽に楽しめる神秘の鍾乳洞!」（全形空白後、以驚嘆號結尾）
+_SLOGAN = re.compile(r"^(.{2,}?)\u3000+[^\u3000]*[!！]$")
+
+
+def clean_name(name: str) -> str | None:
+    """官方頁的標題 → 景點名：拿掉名稱後面的宣傳標語；行程、租借的頁回 None（不是景點）。"""
+    name = name.strip()
+    if _LISTING.search(name):
+        return None
+    m = _SLOGAN.match(name)
+    return m.group(1).strip() if m else name
+
+
+def clean(o: OfficialSpot) -> OfficialSpot | None:
+    name = clean_name(o.name)
+    if name is None:
+        return None
+    return o if name == o.name else dataclasses.replace(o, name=name)
 
 
 def ranked_ids(limit: int, max_pages: int = 80) -> list[tuple[str, str]]:
@@ -74,5 +97,7 @@ def spots(limit: int) -> list[OfficialSpot]:
         if not text:
             continue
         name, lat, lng, cats = parse_detail(text)
-        out.append(OfficialSpot("okinawastory", sid, name or list_name, url, rank, lat, lng, cats))
+        o = clean(OfficialSpot("okinawastory", sid, name or list_name, url, rank, lat, lng, cats))
+        if o:
+            out.append(o)
     return out

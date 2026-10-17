@@ -152,6 +152,22 @@
   /* 時段的色調：黃昏、夜晚往這兩個顏色混 */
   --color-px-tint-dusk: #F09060;
   --color-px-tint-night: #283070;
+  /* 番外篇（遊戲，§14b）的地方 kit：沖繩的赤瓦、珊瑚石、礁湖；近畿的疊、朱色的深色；寒緋櫻、九重葛、紫陽花 */
+  --color-px-kawara-1: #E8845A;
+  --color-px-kawara-2: #C25A3C;
+  --color-px-kawara-3: #86382A;
+  --color-px-coral-1: #EEE6D0;
+  --color-px-coral-2: #CABC98;
+  --color-px-coral-3: #948468;
+  --color-px-lagoon-1: #A6EEE2;
+  --color-px-lagoon-2: #48D0C4;
+  --color-px-tatami-1: #D8D294;
+  --color-px-tatami-2: #ACA464;
+  --color-px-kanhi-1: #E6508A;
+  --color-px-kanhi-2: #A42E5E;
+  --color-px-bougain: #C83A9A;
+  --color-px-ajisai: #7890E4;
+  --color-px-shu-3: #782626;
   --color-glare: #FFFFFF;
   --color-shade: #000000;
 
