@@ -28,7 +28,8 @@ defineExpose({ focusFirst: rows.focusFirst, press })
 
 <template>
   <div ref="root" class="nb-page">
-    <p v-if="!data.facts.length" class="nb-empty">還沒有聽來的事。</p>
+    <p v-if="data.pending" class="nb-sub heard-wait" role="status">讀取中</p>
+    <p v-if="!data.facts.length && !data.pending" class="nb-empty">還沒有聽來的事。</p>
     <ul v-else class="heard">
       <li v-for="f in data.facts" :key="f.id" class="heard-row">
         <p class="heard-text">{{ f.text }}</p>
@@ -54,5 +55,8 @@ defineExpose({ focusFirst: rows.focusFirst, press })
 .heard-text,
 .heard-meta {
   margin: 0;
+}
+.heard-wait {
+  margin: 0 0 0.7em;
 }
 </style>

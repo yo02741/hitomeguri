@@ -311,6 +311,19 @@ describe('標題畫面', () => {
     expect(titleOptions(true).map((o) => o.label)).toEqual(['繼續', '重新開始'])
     expect(titleOptions(false).map((o) => o.label)).toEqual(['開始'])
   })
+  it('存檔所在的縣（P3）還在讀、讀不到：「繼續」先不能選或換成「再試一次」，「重新開始」一直在', () => {
+    const loading = titleOptions(true, 'loading')
+    expect(loading.map((o) => [o.id, o.label, !!o.disabled])).toEqual([
+      ['continue', '繼續', true],
+      ['restart', '重新開始', false],
+    ])
+    expect(titleOptions(true, 'error').map((o) => [o.id, o.label, !!o.disabled])).toEqual([
+      ['retry', '再試一次', false],
+      ['restart', '重新開始', false],
+    ])
+    expect(titleOptions(true, 'ready').some((o) => o.disabled)).toBe(false)
+    expect(titleOptions(false, 'error').map((o) => o.id)).toEqual(['new'])
+  })
   it('文案沒有驚嘆號', () => {
     for (const s of [RESTART_ASK, ...RESTART_OPTIONS, ...titleOptions(true).map((o) => o.label)]) expect(s).not.toMatch(/[!！]/)
   })

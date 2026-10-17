@@ -73,7 +73,10 @@ export function pruneQuests(game: Game, env: QuestEnv, today: CalendarDate = gam
     const until = questUntil(q)
     const late = !!until && !q.ready && dayKey(until) < t
     let gone = false
-    if (env.townSpots && q.spot) {
+    // 那一縣還沒讀進來（P3 的延遲載入：存檔在別的縣、背景還在讀）：先不判斷
+    const from = env.data.town(q.from)
+    const loaded = !from || !!env.data.pref(from.pref)
+    if (env.townSpots && q.spot && loaded) {
       const town = env.data.town(q.from)
       const towns = q.type === 'lost' ? [q.from] : env.data.allTowns().filter((x) => x.pref === town?.pref).map((x) => x.id)
       gone = !towns.some((x) => env.townSpots!(x).includes(q.spot!))

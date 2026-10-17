@@ -6,18 +6,18 @@ import { PX, type Tokens } from '../../../services/pixelwalk/palette'
 import { allTiles, SEASONS, TileCache, TIMES } from '../../engine/tiles'
 import { BEHAVIORS } from '../../engine/types'
 
-import { KINKI_BLOOM, OKINAWA_BLOOM, objectInfo, objectNames } from '.'
+import { HOKKAIDO_BLOOM, KANTO_BLOOM, KINKI_BLOOM, OKINAWA_BLOOM, objectInfo, objectNames } from '.'
 
-// 世界的 tile kit（規格 §8.2、§8.8）：近畿、沖繩、共用的室內。每個 tile 每個季節、時段、動畫格、花樣、接邊都畫得出來；
+// 世界的 tile kit（規格 §8.2、§8.8、§12）：近畿、沖繩、共用的室內、關東、北海道。每個 tile 每個季節、時段、動畫格、花樣、接邊都畫得出來；
 // 地面沒有透明的洞、上兩層不是空的；id 在各自的範圍；開花的那一份都有；不寫色碼由 game/rules.test.ts 檢查
 
 const tokens = Object.fromEntries(PX.map((k) => [k, css.match(new RegExp(`--color-px-${k}:\\s*(#[0-9A-Fa-f]{6})`))?.[1] ?? ''])) as Tokens
-const RANGES: Record<string, [number, number]> = { kinki: [1024, 2047], okinawa: [2048, 3071], world: [3072, 4095] }
+const RANGES: Record<string, [number, number]> = { kinki: [1024, 2047], okinawa: [2048, 3071], world: [3072, 4095], kanto: [4096, 5119], hokkaido: [5120, 6143] }
 
 describe('world 的 tile kit', () => {
-  const tiles = allTiles().filter((t) => /^(kinki|okinawa|world)\//.test(t.name))
+  const tiles = allTiles().filter((t) => /^(kinki|okinawa|world|kanto|hokkaido)\//.test(t.name))
 
-  it('三套都有，id 在各自的範圍、不重複，行為碼都認得', () => {
+  it('五套都有，id 在各自的範圍、不重複，行為碼都認得', () => {
     for (const kit of Object.keys(RANGES)) expect(tiles.filter((t) => t.name.startsWith(`${kit}/`)).length, kit).toBeGreaterThan(20)
     for (const t of tiles) {
       const [a, b] = RANGES[t.name.split('/')[0]!]!
@@ -29,7 +29,7 @@ describe('world 的 tile kit', () => {
   })
 
   it('開花的對照都有兩份（一般、開花），格數一樣', () => {
-    for (const [base, { bloom }] of Object.entries({ ...KINKI_BLOOM, ...OKINAWA_BLOOM })) {
+    for (const [base, { bloom }] of Object.entries({ ...KINKI_BLOOM, ...OKINAWA_BLOOM, ...KANTO_BLOOM, ...HOKKAIDO_BLOOM })) {
       const a = objectInfo(base)
       const b = objectInfo(bloom)
       if (a || b) {

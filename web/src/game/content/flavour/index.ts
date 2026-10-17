@@ -3,24 +3,29 @@ import type { Weather } from '../../engine/render'
 import type { Season, TimeOfDay } from '../../engine/types'
 
 import { COMMON } from './common'
+import { HOKKAIDO } from './hokkaido'
+import { KANTO } from './kanto'
 import { KINKI } from './kinki'
 import { OKINAWA } from './okinawa'
-import type { FlavourBloom, FlavourLine, FlavourRegion, FlavourWho } from './types'
+import type { FlavourBloom, FlavourLine, FlavourRegion, FlavourSetting, FlavourWho } from './types'
 
 export { QUEST_LINES, QUEST_MISC, type QuestLines } from './quests'
-export type { FlavourBloom, FlavourLine, FlavourRegion, FlavourWhen, FlavourWho } from './types'
+export type { FlavourBloom, FlavourLine, FlavourRegion, FlavourSetting, FlavourWhen, FlavourWho } from './types'
 
 /** 全部的虛構台詞 */
-export const FLAVOUR: readonly FlavourLine[] = [...COMMON, ...KINKI, ...OKINAWA]
+export const FLAVOUR: readonly FlavourLine[] = [...COMMON, ...KINKI, ...OKINAWA, ...KANTO, ...HOKKAIDO]
 
 export interface FlavourCtx {
   who: FlavourWho
-  region: 'kinki' | 'okinawa'
+  /** 地方（world 的 kit）：近畿、沖繩、關東、北海道 */
+  region: Exclude<FlavourRegion, 'any'>
   season: Season
   time: TimeOfDay
   weather: Weather
   /** 現在開著的花（平年值）；沒給就當作都沒開 */
   bloom?: ReadonlySet<FlavourBloom>
+  /** 這一鎮是街上還是郊外（地圖的 urban）；沒給（房間、測試）就不看 */
+  setting?: FlavourSetting
 }
 
 /** 這個時候說得出口的台詞（有寫 when 的，季節、時段、天氣、花況都要對） */
@@ -33,6 +38,7 @@ export function flavourFor(c: FlavourCtx): FlavourLine[] {
     if (w?.time && !w.time.includes(c.time)) return false
     if (w?.weather && !w.weather.includes(c.weather)) return false
     if (w?.bloom && !w.bloom.some((f) => c.bloom?.has(f))) return false
+    if (w?.setting && c.setting && !w.setting.includes(c.setting)) return false
     return true
   })
 }
@@ -44,8 +50,10 @@ export function flavourFor(c: FlavourCtx): FlavourLine[] {
 export function pickFlavour(c: FlavourCtx, key: string, n = 0): FlavourLine | null {
   const all = flavourFor(c)
   if (!all.length) return null
-  const special = all.filter((l) => l.when)
-  const plain = all.filter((l) => !l.when)
+  // 只寫了街上／郊外的不算「有條件」（不比一般的優先）
+  const timely = (l: FlavourLine) => !!(l.when?.season || l.when?.time || l.when?.weather || l.when?.bloom)
+  const special = all.filter(timely)
+  const plain = all.filter((l) => !timely(l))
   // FNV 的低位只看字的低位：「passer:0」「walker:0」會落在同一句。再混一次（murmur3 的 fmix32）再取餘數
   const seed = mix(seedOf(key, c.season, c.time, c.weather))
   const order = [...rotate(special, seed), ...rotate(plain, mix(seed ^ 0x9e3779b9))]

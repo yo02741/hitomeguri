@@ -130,7 +130,75 @@ def test_game_pref_subset(tmp_path: Path) -> None:
 def test_build_game_writes_versioned_files(tmp_path: Path) -> None:
     b = _bundles(tmp_path)
     out = build_game(b)
-    assert set(out) == {"kyoto"}
+    # 京都＋世界索引（_world.json）
+    assert set(out) == {"kyoto", "_world"}
     path, meta = out["kyoto"]
     assert path == b / "game" / "kyoto.json" and len(meta["version"]) == 10
     assert json.loads(path.read_text(encoding="utf-8"))["pref"] == "kyoto"
+
+
+def test_p3_filters_specialties_and_teahouses() -> None:
+    """P3 的縣：別的縣的料理、泡麵不當地區特色；是餐廳的茶屋不當茶屋；評論網站的出處換成 OSM"""
+    from pipeline.game_bundle import _local_specialty, _pref_names, _shinise_source
+
+    names = _pref_names()
+    cold = {
+        "id": "hokkaido-Q1",
+        "summary": {
+            "text": "冷拉麵 （冷やしラーメン）為山形縣和福島縣的在地料理。日本麵食料理的一種。"
+        },
+    }
+    asahi = {
+        "id": "hokkaido-Q2",
+        "summary": {"text": "旭川拉麵指的是北海道旭川市周邊出產的日本拉麵。"},
+    }
+    instant = {
+        "id": "hokkaido-Q3",
+        "summary": {
+            "text": "東洋水産が、北海道のみで販売しているインスタントラーメン（袋麺）である。"
+        },
+    }
+    plain = {
+        "id": "hokkaido-Q4",
+        "summary": {"text": "Muroran curry ramen is a curry-flavored ramen."},
+    }
+    assert not _local_specialty(cold, "hokkaido", names)
+    assert _local_specialty(asahi, "hokkaido", names)
+    assert not _local_specialty(instant, "hokkaido", names)
+    assert _local_specialty(plain, "hokkaido", names)
+    tabelog = {
+        "id": "shinise-node-7166875898",
+        "u": "https://tabelog.com/hokkaido/A0101/A010105/1000351/",
+    }
+    assert _shinise_source(tabelog)["u"] == "https://www.openstreetmap.org/node/7166875898"
+    official = {"id": "shinise-node-1", "u": "https://example.jp/"}
+    assert _shinise_source(official) == official
+
+
+def test_p3_drops_excluded_spots(tmp_path: Path) -> None:
+    """P3 的縣：人工排除清單（data/seed/exclude.json）的條目（事件、總稱）不當地標；京都、沖繩照舊"""
+    from pipeline.major import excluded_ids
+
+    assert {"wd-Q11551509", "wd-Q308891"} <= excluded_ids()
+    b = _bundles(tmp_path)
+    for pref in ("kyoto", "tokyo"):
+        spots = [
+            {
+                "id": "wd-Q308891",
+                "n": "東京都区部",
+                "s": 99,
+                "m": "100",
+                "lat": 35.05,
+                "lng": 135.05,
+            },
+            {"id": "wd-Q1", "n": "甲寺", "s": 50, "m": "100", "lat": 35.05, "lng": 135.05},
+        ]
+        _w(b / "map" / f"{pref}.json", spots)
+        mun = json.loads((b / "municipalities" / "kyoto.json").read_text(encoding="utf-8"))
+        _w(b / "municipalities" / f"{pref}.json", mun)
+    g = json.loads((b / "rail-graph.json").read_text(encoding="utf-8"))
+    kyoto = game_pref(b, "kyoto", g)
+    tokyo = game_pref(b, "tokyo", g)
+    assert kyoto is not None and tokyo is not None
+    assert [s["id"] for s in kyoto["spots"]] == ["wd-Q1", "wd-Q308891"]
+    assert [s["id"] for s in tokyo["spots"]] == ["wd-Q1"]

@@ -17,7 +17,7 @@ import { bloomOf, DataIndex, dayKey, kitOfPref, spotName, townCodeOfMap } from '
 import { itemCard, type ItemCardData, removeItem } from './inventory'
 import { registerKinds, setSystemsFor } from './kinds'
 import { installNotebook } from './notebookPages'
-import { area, bodyRect, intersect, type Rect, type ShotScore } from './photo'
+import { area, bodyRect, intersect, type Rect, type ShotScore, SNOWY_KITS } from './photo'
 import { loadThumb, photoStore, type PhotoStore, setPhotoStore } from './photoStore'
 import { pruneQuests } from './quests'
 import { photoInFrame, slotIndex } from './room'
@@ -96,7 +96,7 @@ export class GameSystems {
         if (this.ui.panel?.kind === 'viewfinder') this.closePanel()
       },
       pageOf: (spot) => this.pageOf(spot),
-      scene: () => ({ festival: this.festivalNow(), bloom: this.bloomNow(), snowy: this.region() !== 'okinawa' }),
+      scene: () => ({ festival: this.festivalNow(), bloom: this.bloomNow(), snowy: SNOWY_KITS.has(this.region()) }),
       festivalIn: (frame) => this.festivalInFrame(frame),
       shot: (meta, score, spotId, png) => this.onShot(meta, score, spotId, png),
     })
@@ -273,7 +273,7 @@ export class GameSystems {
     const n = this.talks.get(`${who}:${key}`) ?? 0
     this.talks.set(`${who}:${key}`, n + 1)
     const line = pickFlavour(
-      { who, region: this.region(), season: g.clock.season, time: g.clock.time, weather: g.map?.outdoor ? g.weather : 'clear', bloom: this.flowersNow() },
+      { who, region: this.region(), season: g.clock.season, time: g.clock.time, weather: g.map?.outdoor ? g.weather : 'clear', bloom: this.flowersNow(), ...(g.map?.setting ? { setting: g.map.setting } : {}) },
       `${key}:${dayKey(g.clock.date)}`,
       n,
     )

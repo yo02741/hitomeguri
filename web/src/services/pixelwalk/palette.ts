@@ -21,6 +21,8 @@ export const PX = [
   // 番外篇的地方 kit（沖繩、近畿）
   'kawara-1', 'kawara-2', 'kawara-3', 'coral-1', 'coral-2', 'coral-3', 'lagoon-1', 'lagoon-2',
   'tatami-1', 'tatami-2', 'kanhi-1', 'kanhi-2', 'bougain', 'ajisai', 'shu-3',
+  // 番外篇 P3（關東、北海道）：柏油路、雪的陰影、薰衣草的暗面、紅燈（lamp-3 跟 lamp 一樣夜裡不變暗）
+  'asphalt-1', 'asphalt-2', 'snow-3', 'lavender-2', 'lamp-3',
 ] as const
 export type Px = (typeof PX)[number]
 /** 畫的時候可以不填色（透明） */

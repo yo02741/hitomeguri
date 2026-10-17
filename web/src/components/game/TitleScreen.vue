@@ -4,21 +4,22 @@ import { computed, nextTick, onMounted, ref, watch } from 'vue'
 import type { SfxName } from '../../game/audio/sfx'
 import type { Button } from '../../game/engine/input'
 import { rove } from '../../game/ui/rove'
-import { RESTART_ASK, RESTART_OPTIONS, type TitleChoice, titleOptions } from '../../game/ui/title'
+import { RESTART_ASK, RESTART_OPTIONS, type SaveLoad, type TitleChoice, type TitleOption, titleOptions } from '../../game/ui/title'
 
 // 標題畫面（規格 §5）：「ひとめぐり 番外篇」；有存檔時「繼續」「重新開始」（重新開始再問一次），沒有存檔時「開始」。
 // 後面的畫面是遊戲自己在走（PlayView），這裡只疊字與選單。按鍵：上下選、A／點一下決定、B 回上一步。
 // 資料還在讀（status，沒有選項）或讀不到（status＋「再試一次」）時，選單的框裡只有那一行。
-const props = defineProps<{ hasSave: boolean; scale: number; status?: string | null; retry?: boolean }>()
+// 存檔所在的縣（P3，saveState）還在讀、讀不到時：note 那一行＋選項（「繼續」先不能選或換成「再試一次」，「重新開始」照樣可以）。
+const props = defineProps<{ hasSave: boolean; scale: number; status?: string | null; retry?: boolean; saveState?: SaveLoad; note?: string | null }>()
 const emit = defineEmits<{ choose: [c: TitleChoice]; retry: []; sfx: [name: SfxName] }>()
 
 const confirming = ref(false)
 const idx = ref(0)
-const RETRY = { id: 'retry', label: '再試一次' } as const
-const options = computed<Array<{ id: TitleChoice | 'retry'; label: string }>>(() =>
-  props.status ? (props.retry ? [RETRY] : []) : titleOptions(props.hasSave),
-)
+const RETRY: TitleOption = { id: 'retry', label: '再試一次' }
+const options = computed<TitleOption[]>(() => (props.status ? (props.retry ? [RETRY] : []) : titleOptions(props.hasSave, props.saveState ?? 'ready')))
 const labels = computed(() => (confirming.value ? [...RESTART_OPTIONS] : options.value.map((o) => o.label)))
+const off = computed(() => (confirming.value ? [] : options.value.map((o) => !!o.disabled)))
+const line = computed(() => props.status ?? props.note ?? null)
 const els = ref<HTMLButtonElement[]>([])
 
 function focusCur() {
@@ -35,6 +36,10 @@ function choose(i: number) {
   }
   const o = options.value[i]
   if (!o) return
+  if (o.disabled) {
+    emit('sfx', 'error')
+    return
+  }
   if (o.id === 'retry') {
     emit('sfx', 'confirm')
     emit('retry')
@@ -48,7 +53,7 @@ function choose(i: number) {
     return
   }
   emit('sfx', 'confirm')
-  emit('choose', o.id)
+  emit('choose', o.id as TitleChoice)
 }
 function back() {
   if (!confirming.value) return
@@ -80,12 +85,12 @@ function press(b: Button): boolean {
   }
   return false
 }
-defineExpose({ press, state: () => ({ confirming: confirming.value, idx: idx.value, labels: labels.value }) })
+defineExpose({ press, state: () => ({ confirming: confirming.value, idx: idx.value, labels: labels.value, off: off.value, line: line.value }) })
 
 onMounted(focusCur)
-// 讀完資料（或讀不到）：選項換了，游標回到第一個
+// 讀完資料（或讀不到）：選項換了，游標回到第一個（存檔的縣讀好了、選項一樣時游標不動）
 watch(
-  () => [props.status, props.retry],
+  () => `${props.status ?? ''}|${options.value.map((o) => o.id).join(',')}`,
   () => {
     confirming.value = false
     idx.value = 0
@@ -101,7 +106,7 @@ watch(
       <span class="logo-sub">番外篇</span>
     </h1>
     <div class="gba-box title-menu">
-      <p v-if="status" class="title-status" role="status">{{ status }}</p>
+      <p v-if="line" class="title-status" role="status">{{ line }}</p>
       <p v-if="confirming" class="title-ask">{{ RESTART_ASK }}</p>
       <div v-if="labels.length" class="title-opts" role="group" :aria-label="confirming ? RESTART_ASK : 'ひとめぐり 番外篇'">
         <button
@@ -110,6 +115,8 @@ watch(
           :ref="(el) => (els[i] = el as HTMLButtonElement)"
           type="button"
           class="title-opt"
+          :class="{ 'is-off': off[i] }"
+          :aria-disabled="off[i] || undefined"
           @focus="idx = i"
           @click="choose(i)"
         >
@@ -221,6 +228,9 @@ watch(
   .title-opt {
     min-height: 44px;
   }
+}
+.title-opt.is-off {
+  color: var(--color-px-stone-3);
 }
 .title-opt:focus-visible {
   outline: 2px solid var(--color-px-ink);

@@ -18,12 +18,19 @@ from pathlib import Path
 from typing import Any
 
 from pipeline import topo
+from pipeline.game_world import RULES, select_towns, start_station_of, world_index
+from pipeline.major import excluded_ids
 
-#: 遊戲的縣（web/src/game/play/world.ts 的 PLAY_PREFS）
-GAME_PREFS = ("kyoto", "okinawa")
+#: 遊戲的縣（web/src/game/world/index 的 _world.json 照這個順序；京都是起點）
+GAME_PREFS = ("kyoto", "okinawa", "nara", "osaka", "hyogo", "tokyo", "hokkaido")
+#: P2 就上線的縣：bundle 的內容不能變（已經生成的鎮不能變）
+P2_PREFS = ("kyoto", "okinawa")
 #: 每個市区町村取分數前 TOP 個景點，市区町村取分數總和前 TOWNS 個（再加有名城蓋章地點的）
 TOWNS = 12
 TOP = 16
+#: P3 的縣：先用分數前 TOWNS_WIDE 個市区町村選鎮（北海道要分散，候選要多一點），
+#: bundle 只留選到的鎮的景點（下載量少一點；前端照同一份資料選鎮會得到一樣的結果）
+TOWNS_WIDE = 40
 #: 簡介只留前幾個字（遊戲只說第一句）
 SUMMARY_CUT = 160
 #: 京都駅（京都 → 関西国際空港的路徑從這裡算）
@@ -34,6 +41,16 @@ CHARACTER_SHOP = re.compile(
     r"|ポケモン|pokemon|ピカチュウ|ジブリ|ghibli|トトロ|totoro|ムーミン|moomin",
     re.I,
 )
+#: P3 的縣的茶屋（老舖 pack 的 g teahouse）：名字是「茶屋」「茶寮」但其實是餐廳的
+#: （丼、鰻、海鮮、料理、自助餐、連鎖店）遊戲不當茶屋（不然會賣「どんぶり茶屋のお茶」）。
+#: 京都、沖繩照舊（P2 的 bundle 不變）
+NOT_TEAHOUSE = re.compile(
+    r"どんぶり|丼|うなぎ|鰻|海鮮|料理|ビュッフェ|バイキング|洋麺|点心|なか卯|SOLVIVA", re.I
+)
+#: 評論網站（食べログ…）的網址不當出處：老舖的 u 是 OSM 的 website 標籤，是評論網站時改用 OSM 的節點
+REVIEW_SITE = re.compile(r"tabelog\.com|retty\.me|hotpepper\.jp|gnavi\.co\.jp", re.I)
+#: 一家公司的泡麵（ダブルラーメン、円山動物園白クマラーメン）不當地區特色賣（P3 的縣）
+INSTANT = re.compile(r"インスタント|袋麺|カップ麺|即席麺|泡麵|即食麵|速食麵")
 #: 新幹線的權重（services/daytrip.ts 的 SHINKANSEN_WEIGHT）
 SHINKANSEN = 1
 SHINKANSEN_WEIGHT = 0.97
@@ -146,6 +163,73 @@ def _path_nodes(graph: dict[str, Any], src: str, dst: str) -> list[str]:
     return out
 
 
+def _pair_paths(graph: dict[str, Any], ids: list[str]) -> list[str]:
+    """ids 兩兩之間在全國路網上的最短路徑經過的節點（daytrip.ts 一樣的權重）。
+
+    縣內的路網少了沒有縣的停靠點時（北海道：札幌 → 小樽的海邊幾站），縣內算出來會繞一大圈；
+    選好的鎮的車站之間的路徑放進來，縣內算的 km 就跟全國的一樣。
+    """
+    nodes = graph["nodes"]
+    idx = {n[0]: i for i, n in enumerate(nodes)}
+    want = sorted({idx[i] for i in ids if i in idx})
+    adj: list[list[tuple[int, float, int]]] = [[] for _ in nodes]
+    for a, b, km, k in graph["edges"]:
+        adj[a].append((b, km, k))
+        adj[b].append((a, km, k))
+    out: set[str] = set()
+    for n, s in enumerate(want):
+        rest = set(want[n + 1 :])
+        dist = {s: 0.0}
+        prev: dict[int, int] = {}
+        heap = [(0.0, s)]
+        left = set(rest)
+        while heap and left:
+            d, u = heapq.heappop(heap)
+            if d > dist.get(u, math.inf):
+                continue
+            left.discard(u)
+            for v, km, k in adj[u]:
+                w = d + km * (SHINKANSEN_WEIGHT if k == SHINKANSEN else 1)
+                if w < dist.get(v, math.inf):
+                    dist[v] = w
+                    prev[v] = u
+                    heapq.heappush(heap, (w, v))
+        for t in rest:
+            if t not in dist:
+                continue
+            u: int | None = t
+            while u is not None:
+                out.add(nodes[u][0])
+                u = prev.get(u)
+    return sorted(out)
+
+
+def _bridges(graph: dict[str, Any], pref: str, src: str, targets: set[str]) -> list[str]:
+    """targets 裡縣內的路網連不到 src、全國的路網連得到的：全國路網上 src → 那一站的路徑的節點"""
+    nodes = graph["nodes"]
+    idx = {n[0]: i for i, n in enumerate(nodes)}
+    if src not in idx:
+        return []
+    inside = {i for i, n in enumerate(nodes) if n[4] == pref}
+    adj: list[list[int]] = [[] for _ in nodes]
+    for a, b, _km, _k in graph["edges"]:
+        if a in inside and b in inside:
+            adj[a].append(b)
+            adj[b].append(a)
+    seen = {idx[src]}
+    todo = [idx[src]]
+    while todo:
+        for v in adj[todo.pop()]:
+            if v not in seen:
+                seen.add(v)
+                todo.append(v)
+    lost = sorted(t for t in targets if t in idx and idx[t] not in seen)
+    out: list[str] = []
+    for t in lost:
+        out += _path_nodes(graph, src, t)
+    return sorted(set(out))
+
+
 def _read(path: Path) -> Any:
     return json.loads(path.read_text(encoding="utf-8"))
 
@@ -154,8 +238,23 @@ def _read_or(path: Path, default: Any) -> Any:
     return _read(path) if path.exists() else default
 
 
-def game_pref(bundles: Path, pref: str, graph: dict[str, Any]) -> dict[str, Any] | None:
-    """一縣的遊戲資料（PrefRaw 的形狀：web/src/game/world/types.ts）；少了必要的檔回 None"""
+def game_pref(
+    bundles: Path,
+    pref: str,
+    graph: dict[str, Any],
+    towns_n: int = TOWNS,
+    only: list[str] | None = None,
+    bridge: str | None = None,
+    paths: list[str] | None = None,
+) -> dict[str, Any] | None:
+    """一縣的遊戲資料（PrefRaw 的形狀：web/src/game/world/types.ts）；少了必要的檔回 None。
+
+    towns_n：候選的市区町村取分數前幾個（再加有名城蓋章地點的）；
+    only：只留這些市区町村的景點（P3 的縣）；
+    bridge：起點的車站（P3 的縣）：景點的最近車站在縣內的路網連不到起點、全國的路網連得到時，
+    把全國路網上的那條路徑也放進來（北海道：千歳 → 函館經過一個沒有縣的停靠點「石倉」）；
+    paths：選好的鎮的車站（P3 的縣）：兩兩之間全國路網上的最短路徑也放進來（_pair_paths）。
+    """
     need = [bundles / "map" / f"{pref}.json", bundles / "municipalities" / f"{pref}.json"]
     if not all(p.exists() for p in need):
         return None
@@ -169,7 +268,7 @@ def game_pref(bundles: Path, pref: str, graph: dict[str, Any]) -> dict[str, Any]
     for s in mp:
         total[s.get("m")] = total.get(s.get("m"), 0) + s["s"]
     ranked = sorted(total.items(), key=lambda kv: -kv[1])
-    towns = [m for m, _ in ranked[:TOWNS]]
+    towns = [m for m, _ in ranked[:towns_n]]
     castles = sorted((c for c in castles_all if c.get("p") == pref), key=lambda c: c["id"])
     for c in castles:
         if not c.get("st"):
@@ -177,10 +276,17 @@ def game_pref(bundles: Path, pref: str, graph: dict[str, Any]) -> dict[str, Any]
         s = next((x for x in mp if x["id"] == c.get("s")), None)
         if s and s.get("m") and s["m"] not in towns:
             towns.append(s["m"])
+    if only is not None:
+        towns = [m for m in towns if m in only]
 
     spots: list[dict[str, Any]] = []
+    # P3 的縣：資料的人工排除清單（不是景點：事件、總稱…；data/seed/exclude.json）先擋，
+    # 網站的資料下一次重採時才拿掉（京都、沖繩照舊：bundle 不變）
+    gone = excluded_ids() if pref not in P2_PREFS else set()
     for m in towns:
-        in_town = sorted((s for s in mp if s.get("m") == m), key=lambda s: -s["s"])[:TOP]
+        in_town = sorted(
+            (s for s in mp if s.get("m") == m and s["id"] not in gone), key=lambda s: -s["s"]
+        )[:TOP]
         for s in in_town:
             rest = _drop(s, "i", "ia", "si")
             d = detail.get(s["id"])
@@ -248,6 +354,19 @@ def game_pref(bundles: Path, pref: str, graph: dict[str, Any]) -> dict[str, Any]
         ),
         key=lambda x: x["id"],
     )
+    if pref not in P2_PREFS:
+        # P3 的縣：資料的人工排除清單（data/seed/exclude.json，pipeline 下一次重採之前先擋）、
+        # 別的縣的料理、泡麵；是餐廳的茶屋；評論網站的出處（京都、沖繩照舊：bundle 不變）
+        excluded = excluded_ids()
+        names = _pref_names()
+        specialties = [
+            x for x in specialties if x["id"] not in excluded and _local_specialty(x, pref, names)
+        ]
+        shinise = [
+            _shinise_source(x)
+            for x in shinise
+            if not (x.get("g") == "teahouse" and NOT_TEAHOUSE.search(x.get("n", "")))
+        ]
 
     seasons_all = _read_or(
         bundles / "seasons.json", {"source": {"url": "", "fetched_at": ""}, "stations": []}
@@ -256,6 +375,10 @@ def game_pref(bundles: Path, pref: str, graph: dict[str, Any]) -> dict[str, Any]
         "source": seasons_all["source"],
         "stations": [s for s in seasons_all["stations"] if s.get("prefecture") == pref],
     }
+    if not seasons["stations"]:
+        # 這一縣沒有氣象台的平年值：用同一個地方（regions.json 的 area）的縣的
+        near = _area_prefs(pref)
+        seasons["stations"] = [s for s in seasons_all["stations"] if s.get("prefecture") in near]
 
     # 鐵路路網：這一縣的節點＋相鄰的邊（京都另外加到関西国際空港的路徑）
     osaka_path = bundles / "map" / "osaka.json"
@@ -265,6 +388,10 @@ def game_pref(bundles: Path, pref: str, graph: dict[str, Any]) -> dict[str, Any]
         kix = next((s for s in _read(osaka_path) if s.get("n") == "関西国際空港"), None)
         if kix and kix.get("st"):
             extra = _path_nodes(graph, KYOTO_STATION, kix["st"])
+    if bridge:
+        extra += _bridges(graph, pref, bridge, {s["st"] for s in spots if s.get("st")})
+    if paths:
+        extra += _pair_paths(graph, paths)
     keep = [i for i, n in enumerate(graph["nodes"]) if n[4] == pref or n[0] in extra]
     remap = {old: i for i, old in enumerate(keep)}
     rail_graph = {
@@ -295,20 +422,116 @@ def game_pref(bundles: Path, pref: str, graph: dict[str, Any]) -> dict[str, Any]
     return out
 
 
+def _pref_names() -> dict[str, list[str]]:
+    """縣 → 名字（日文、中文：北海道、山形県、山形縣）"""
+    path = Path(__file__).resolve().parent.parent / "data" / "regions.json"
+    if not path.exists():
+        return {}
+    return {
+        r["prefecture"]: [n for n in {r["name"]["ja"], r["name"].get("zh_tw", "")} if n]
+        for r in _read(path)["regions"]
+    }
+
+
+def _first_sentence(text: str) -> str:
+    return re.split(r"(?<=[。．.])\s*", text or "", maxsplit=1)[0]
+
+
+def _local_specialty(x: dict[str, Any], pref: str, names: dict[str, list[str]]) -> bool:
+    """P3 的縣的地區特色：簡介的第一句寫的是別的縣（沒提到這一縣）的不算
+
+    （冷やしラーメン：山形縣、福島縣的料理）；一家公司的泡麵不算。
+    """
+    s = x.get("summary") or {}
+    text = " ".join(t for t in (s.get("text"), s.get("text_zh")) if t)
+    if INSTANT.search(text):
+        return False
+    first = " ".join(_first_sentence(t) for t in (s.get("text"), s.get("text_zh")) if t)
+    own = [re.sub(r"[都道府県縣]$", "", n) or n for n in names.get(pref, [])]
+    if any(o and o in first for o in own):
+        return True
+    return not any(n in first for p, ns in names.items() if p != pref for n in ns)
+
+
+def _shinise_source(x: dict[str, Any]) -> dict[str, Any]:
+    """老舖、茶屋的出處：u 是評論網站的，改用 OSM 的節點
+
+    （資料本來就是 OSM 來的：id 是 shinise-node-…）
+    """
+    m = re.match(r"shinise-(node|way|relation)-(\d+)$", x["id"])
+    if m and REVIEW_SITE.search(x.get("u") or ""):
+        return {**x, "u": f"https://www.openstreetmap.org/{m.group(1)}/{m.group(2)}"}
+    return x
+
+
+def _area_prefs(pref: str) -> set[str]:
+    """同一個地方（regions.json 的 area：近畿、關東…）的其他縣"""
+    path = Path(__file__).resolve().parent.parent / "data" / "regions.json"
+    if not path.exists():
+        return set()
+    regions = _read(path)["regions"]
+    area = next((r["area"] for r in regions if r["prefecture"] == pref), None)
+    return {r["prefecture"] for r in regions if r["area"] == area and r["prefecture"] != pref}
+
+
+def game_body(bundles: Path, pref: str, graph: dict[str, Any]) -> dict[str, Any] | None:
+    """一縣的 game bundle：P2 的縣照舊；P3 的縣先用比較多的候選選鎮，再只留選到的鎮"""
+    if pref in P2_PREFS or pref not in RULES:
+        return game_pref(bundles, pref, graph)
+    rule = RULES[pref]
+    first = game_pref(bundles, pref, graph, towns_n=TOWNS_WIDE)
+    if first is None:
+        return None
+    # 起點的車站：規則寫的，沒寫就是起點那一區景點最常見的最近車站
+    src = rule.start_station or start_station_of(first, rule)
+    wide = game_pref(bundles, pref, graph, towns_n=TOWNS_WIDE, bridge=src) if src else first
+    assert wide is not None
+    chosen = select_towns(wide, rule)
+    picked = [t.id for t in chosen]
+    rail = [
+        t.main.station_id
+        for t in chosen
+        if t.main.kind in ("rail", "monorail") and t.main.station_id
+    ]
+    return game_pref(bundles, pref, graph, towns_n=TOWNS_WIDE, only=picked, bridge=src, paths=rail)
+
+
+def _write_json(path: Path, body: Any) -> str:
+    text = json.dumps(body, ensure_ascii=False, separators=(",", ":"))
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(text, encoding="utf-8")
+    return hashlib.sha1(text.encode()).hexdigest()[:10]
+
+
+#: 世界索引的檔名（game/_world.json；_index.json 的 game._world 帶版本）
+WORLD_KEY = "_world"
+
+
 def build_game(bundles: Path) -> dict[str, tuple[Path, dict[str, Any]]]:
-    """game/{縣}.json；回傳 {縣: (路徑, 索引資訊)}（_index.json 的 game）"""
+    """game/{縣}.json 與世界索引 game/_world.json。
+
+    回傳 {縣或 _world: (路徑, 索引資訊)}（_index.json 的 game）。
+    """
     graph_path = bundles / "rail-graph.json"
     if not graph_path.exists():
         return {}
     graph = _read(graph_path)
-    out = {}
+    out: dict[str, tuple[Path, dict[str, Any]]] = {}
+    bodies: dict[str, dict[str, Any]] = {}
     for pref in GAME_PREFS:
-        body = game_pref(bundles, pref, graph)
+        body = game_body(bundles, pref, graph)
         if body is None:
             continue
-        text = json.dumps(body, ensure_ascii=False, separators=(",", ":"))
+        bodies[pref] = body
         path = bundles / "game" / f"{pref}.json"
-        path.parent.mkdir(parents=True, exist_ok=True)
-        path.write_text(text, encoding="utf-8")
-        out[pref] = (path, {"version": hashlib.sha1(text.encode()).hexdigest()[:10]})
+        out[pref] = (path, {"version": _write_json(path, body)})
+    if bodies:
+        maps = {
+            p: _read(bundles / "map" / f"{p}.json")
+            for p in bodies
+            if (bundles / "map" / f"{p}.json").exists()
+        }
+        index, _ = world_index(bodies, maps, graph, GAME_PREFS)
+        path = bundles / "game" / f"{WORLD_KEY}.json"
+        out[WORLD_KEY] = (path, {"version": _write_json(path, index)})
     return out

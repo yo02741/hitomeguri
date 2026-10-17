@@ -13,6 +13,10 @@ import type { Kit, PrefData, PrefFestival, Town } from './types'
  * 依最近的氣象台平年值（seasons.json：京都、那覇、宮古島、石垣島…，氣象庁）：
  *   近畿：春＝梅開花（沒有梅就櫻開花前三週）起、夏 6/1、秋 9/23、冬＝紅葉日＋14 天（最早 12/1）；
  *   沖繩：春＝梅或寒緋櫻開花起、夏 5/1、秋 11/1（短）、冬 12/1（不下雪）。
+ *   關東（P3）：春＝梅開花與櫻開花前 21 天中較晚的（東京的梅平年 1 月就開，1 月還不算春）、其他同近畿。
+ *   北海道（P3）：春＝梅開花（沒有梅就櫻開花前 2 天：有梅的站梅比櫻早 1–3 天；比札幌冷的旭川、帯広不會比札幌早）、夏 6/1、秋 9/15、
+ *   冬＝max(11/1, 楓紅＋7 天)（11–4 月是冬：積雪）。櫻在 5 月（札幌、函館、旭川…的平年值）。
+ *   各縣用那一縣的氣象台（pipeline 的 game bundle：沒有站的縣放同一個地方的縣的站），鎮用最近的那一個。
  *   花況（畫面上的「開花」）：梅＝開花日起 30 天、櫻（沖繩是寒緋櫻）＝開花日到滿開後 7 天、
  *   紫陽花＝開花日起 30 天、楓（紅葉）＝紅葉日前 10 天到冬、銀杏（黃葉）＝黃葉日前 10 天到冬。
  *   平年值裡沒有的現象不畫（沖繩沒有楓、銀杏、紫陽花的資料）。季節的分界是遊戲規則，花況照資料。
@@ -84,8 +88,17 @@ function calendarOf(kit: Kit, c: Climate | null): Calendar {
     return { spring: first.length ? Math.min(...first) : doyOf(1, 15), summer: doyOf(5, 1), autumn: doyOf(11, 1), winter: doyOf(12, 1) }
   }
   const kaede = doyStr(n.kaede)
+  if (kit === 'hokkaido')
+    return {
+      spring: ume ?? (kaika !== null ? kaika - 2 : doyOf(4, 25)),
+      summer: doyOf(6, 1),
+      autumn: doyOf(9, 15),
+      winter: Math.max(doyOf(11, 1), kaede !== null ? kaede + 7 : 0),
+    }
+  const before = kaika !== null ? kaika - 21 : null
+  const both = [ume, before].filter((x): x is number => x !== null)
   return {
-    spring: ume ?? (kaika !== null ? kaika - 21 : doyOf(3, 1)),
+    spring: kit === 'kanto' ? (both.length ? Math.max(...both) : doyOf(3, 1)) : (ume ?? before ?? doyOf(3, 1)),
     summer: doyOf(6, 1),
     autumn: doyOf(9, 23),
     winter: Math.max(doyOf(12, 1), kaede !== null ? kaede + 14 : 0),
@@ -142,10 +155,13 @@ export function festivalsIn(pref: PrefData, town: Pick<Town, 'id' | 'bbox'>, mon
 /**
  * 天氣（遊戲規則，不宣稱實況）：日期＋鎮決定，同一天每次一樣。
  * 近畿：冬天偶爾下雪、梅雨（6 月）常下雨；沖繩：冬天偶爾下雨（天空灰一點），不下雪。
+ * 關東：冬天很少下雪（不積厚雪）、梅雨同近畿；北海道：冬天常下雪、沒有梅雨（夏天偶爾下雨）。
  */
 export function weatherAt(date: CalendarDate, town: string, kit: Kit, season: Season): Weather {
   const h = seedOf('weather', town, date.y, date.m, date.d) % 100
   if (kit === 'okinawa') return season === 'winter' && h < 25 ? 'rain' : date.m === 5 && h < 20 ? 'rain' : 'clear'
+  if (kit === 'hokkaido') return season === 'winter' ? (h < 40 ? 'snow' : 'clear') : h < 8 ? 'rain' : 'clear'
+  if (kit === 'kanto' && season === 'winter') return h < 6 ? 'snow' : 'clear'
   if (season === 'winter') return h < 15 ? 'snow' : 'clear'
   if (date.m === 6) return h < 30 ? 'rain' : 'clear'
   return h < 8 ? 'rain' : 'clear'

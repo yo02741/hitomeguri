@@ -17,7 +17,7 @@ import { type Button, KEYMAP } from '../game/engine/input'
 import { localStore, saveKey } from '../game/engine/save'
 import { type Dir, type MapName, passable, VIEW_H } from '../game/engine/types'
 import type { FlavourBloom } from '../game/content/flavour'
-import { arrivalJingle, loadPlayWorld, playMaps } from '../game/play/world'
+import { arrivalJingle, loadPlayWorld, playMaps, savePrefs, setKitStaleHandler, visitedPrefs } from '../game/play/world'
 import { registerDefaultLooks } from '../game/sprites'
 import { useGameSystems } from '../game/systems'
 import { GAME_UI, type GameUiContext } from '../game/ui/context'
@@ -28,8 +28,9 @@ import { notebookData, type NotebookData, type NotebookPageId } from '../game/ui
 import { loadUi, saveUi, toEngine, uiStorage, type UiSettings } from '../game/ui/settings'
 import { moodOf, sfxOf, songOf } from '../game/ui/sound'
 import { charsPerSecond } from '../game/ui/text'
-import { gateStore, type TitleChoice } from '../game/ui/title'
-import { BUNDLES, type GameWorld, type PrefData } from '../game/world'
+import { gateStore, type SaveLoad, type TitleChoice } from '../game/ui/title'
+import { BUNDLES, CANNOT_GO, type GameWorld, type PrefData, RELOAD_FIRST } from '../game/world'
+import { forgetReload, reloadOnce } from '../services/pageLoad'
 import { prefetchedGame } from '../services/playPrefetch'
 import { readTokens } from '../services/pixelwalk/palette'
 import { useCatalogStore } from '../stores/catalog'
@@ -40,6 +41,7 @@ import { useUserStore } from '../stores/user'
 // 版面：桌機畫面置中；手機直拿畫面在上、控制區在下；打橫十字鍵與 A/B 分到畫面兩側（game/ui/layout.ts）。
 // 頁面本身不捲動。標題畫面後面就是遊戲自己在走（存檔用 gateStore 擋住，按開始／繼續才寫）。
 // 世界（P2，規格 §8）：京都、沖繩的 bundles 讀進來（game/play/world.ts）→ 鎮、室內、你的房間；新遊戲從京都駅的大廳開始。
+// P3（規格 §12）：一開始只讀世界索引＋京都；存檔在別的縣時標題畫面先讀那一縣（讀取中），坐車到別的縣時車窗裡讀。
 // 系統（拍照、店、印、房間、委託）：useGameSystems＋SystemsLayer。資料還在讀、讀不到時標題畫面只寫一行。
 const reduced = typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches
 const coarse = typeof window !== 'undefined' ? window.matchMedia('(pointer: coarse)') : null
@@ -49,6 +51,8 @@ const SUSPEND_ON_MENU = false
 const MENU_DIM = 0.45
 const LOADING_TEXT = '讀取中'
 const OFFLINE_TEXT = '資料讀不到，連上網路後再開一次。'
+/** 存檔所在的縣最多等多久（跟坐車時等資料的 loadWaitSeconds 一樣 20 秒）；超過就當作讀不到，可以按「再試一次」 */
+const SAVE_WAIT_MS = 20_000
 
 const root = ref<HTMLElement | null>(null)
 const canvas = ref<HTMLCanvasElement | null>(null)
@@ -69,6 +73,11 @@ const hasSave = ref(false)
 /** 世界的資料：讀中、好了、讀不到 */
 const dataState = ref<'loading' | 'ready' | 'error'>('loading')
 const titleStatus = computed(() => (dataState.value === 'loading' ? LOADING_TEXT : dataState.value === 'error' ? OFFLINE_TEXT : null))
+/** 存檔所在的縣（P3）：只擋「繼續」（重新開始只要京都）；全域的資料是 dataState */
+const saveState = ref<SaveLoad>('ready')
+const saveNote = computed(() => (!hasSave.value ? null : saveState.value === 'loading' ? LOADING_TEXT : saveState.value === 'error' ? OFFLINE_TEXT : null))
+/** 部署之後的舊分頁：坐車（讀存檔）要的 kit 檔已經不在（play/world.ts 的 setKitStaleHandler） */
+let kitStale = false
 
 const place = ref<MapName | null>(null)
 const sign = ref<{ name: MapName; n: number } | null>(null)
@@ -349,6 +358,8 @@ function focusCanvas() {
 // ---------- 旅人手帳 ----------
 function openMenu() {
   if (!game) return
+  // 印帳、聽來的要那一縣的資料：還沒讀進來（背景讀失敗了）的再讀一次，讀好了手帳跟著換（onPrefs）
+  loadVisited()
   nbData.value = notebookData(game, savedAt.value)
   menuOpen.value = true
   nbDown = false
@@ -473,6 +484,8 @@ function unpause() {
 // ---------- 開始 ----------
 function start(c: TitleChoice) {
   if (!game || !gate || mode.value !== 'title') return
+  // 存檔所在的縣還沒讀好：「繼續」先不能選（TitleScreen 也擋）
+  if (c === 'continue' && game.hasSave() && saveState.value !== 'ready') return
   // 使用者的手勢裡：建 AudioContext（iOS 要這樣才出得了聲）
   const fresh = c !== 'continue' || !game.hasSave()
   // 新遊戲：京都駅的大廳淡入＋電車到站的聲音
@@ -511,6 +524,7 @@ watch(
     uid = u === 'guest' ? null : u
     game.setSaveKey(saveKey(uid))
     hasSave.value = game.hasSave()
+    prepareSave()
   },
 )
 
@@ -583,7 +597,7 @@ async function boot() {
 async function loadWorld(): Promise<boolean> {
   dataState.value = 'loading'
   // 遊戲用的小 bundle：路由進來時（router 的 beforeEnter）已經開始抓的那一份
-  const r = await loadPlayWorld(() => catalog.loadIndex(), { api: { ...BUNDLES, fetchGame: prefetchedGame } })
+  const r = await loadPlayWorld(() => catalog.loadIndex(), { api: { ...BUNDLES, fetchGame: prefetchedGame }, world: { cannotGo: () => (kitStale ? RELOAD_FIRST : CANNOT_GO) } })
   if (!r.ok) {
     if (import.meta.env.DEV) console.info('game：資料讀不到', r.errors.map((e) => e.message), r.warnings)
     dataState.value = 'error'
@@ -591,19 +605,89 @@ async function loadWorld(): Promise<boolean> {
   }
   if (import.meta.env.DEV && (r.errors.length || r.warnings.length)) console.info('game：資料少了一些', r.errors.map((e) => e.message), r.warnings)
   world = r.world
-  worldPrefs = r.prefs
+  worldPrefs = r.world.prefs()
+  // 之後讀進來的縣（坐車、存檔在別的縣）：系統換上新的資料（手帳、店、委託）
+  const w = r.world
+  offs.push(
+    w.onPrefs((list) => {
+      if (world !== w) return
+      worldPrefs = list
+      // 讀得到了（重載之後的新檔名）：之後再遇到舊檔名可以再重載一次
+      forgetReload(KIT_RELOAD_KEY)
+      systems.value?.setData(list, w.world)
+      markDirty()
+      // 手帳開著時（印帳、聽來的）換上剛讀進來的那一縣
+      refreshMenu()
+      // 標題畫面：存檔的縣晚到了（等太久已經寫了讀不到）也換回「繼續」
+      if (saveState.value === 'error') prepareSave()
+    }),
+  )
   dataState.value = 'ready'
   return true
 }
 
+/**
+ * 存檔在別的縣（P3）：繼續之前先讀那一縣（標題畫面多一行「讀取中」、「繼續」先不能選；讀不到寫「資料讀不到…」＋再試一次）。
+ * 「重新開始」只要起點的縣（京都），一直可以選。最多等 SAVE_WAIT_MS，超過就當作讀不到（晚到的結果照樣接上）。
+ * 去過的縣（行李、印帳、聽來的用得到）背景讀。登入狀態晚一點才確定、換了存檔的 key 時再做一次。
+ */
+let saveSeq = 0
+let saveTimer: ReturnType<typeof setTimeout> | undefined
+function prepareSave() {
+  const g = game
+  const w = world
+  if (!g || !w || !w.index || mode.value !== 'title') return
+  const { need, also } = savePrefs(g.savedData(), (code) => w.prefOfTown(code))
+  // 去過的縣等存檔所在的縣讀好了再讀（不跟「繼續」要的那一縣搶頻寬）
+  const rest = () => {
+    for (const p of also) void w.ensurePref(p)
+  }
+  const missing = need.filter((p) => !w.hasPref(p))
+  const seq = ++saveSeq
+  clearTimeout(saveTimer)
+  if (!missing.length) {
+    saveState.value = 'ready'
+    rest()
+    return
+  }
+  saveState.value = 'loading'
+  const current = () => seq === saveSeq && world === w && mode.value === 'title'
+  saveTimer = setTimeout(() => {
+    if (current() && saveState.value === 'loading') saveState.value = 'error'
+  }, SAVE_WAIT_MS)
+  void Promise.all(missing.map((p) => w.ensurePref(p))).then((ok) => {
+    rest()
+    if (!current()) return
+    clearTimeout(saveTimer)
+    saveState.value = ok.every(Boolean) ? 'ready' : 'error'
+  })
+}
+
 async function retryWorld() {
-  if (dataState.value === 'loading' || game) return
+  if (dataState.value === 'loading') return
+  if (game) return prepareSave()
   if ((await loadWorld()) && canvas.value && !game) makeGame()
 }
 /** 讀不到的時候，連上網路就自己再讀一次 */
 const onOnline = () => {
-  if (dataState.value === 'error') void retryWorld()
+  if (dataState.value === 'error' || saveState.value === 'error') void retryWorld()
+  if (mode.value === 'play') loadVisited()
 }
+/** 去過的縣（存檔、這一趟）還沒讀進來的再讀一次（同一縣同時只讀一次；讀好了 onPrefs 換上） */
+function loadVisited() {
+  const g = game
+  const w = world
+  if (!g || !w || !w.index) return
+  for (const p of visitedPrefs(g.state.ext, (code) => w.prefOfTown(code))) if (!w.hasPref(p)) void w.ensurePref(p)
+}
+/** 部署之後的舊分頁（坐車、讀存檔要的 kit 檔不在了）：存檔、同一個網址重載一次；重載過了就讓坐車說「重新整理之後再去。」 */
+function onKitStale() {
+  kitStale = true
+  if (mode.value === 'play') game?.save()
+  // 自己的記號（router 換頁成功時會清掉網站的那一個）：重載過還是讀不到，就不再重載（坐車說「重新整理之後再去。」）
+  reloadOnce(window.location.href, KIT_RELOAD_KEY)
+}
+const KIT_RELOAD_KEY = 'hitomeguri:play-kit-reload'
 
 function makeGame() {
   const w = world
@@ -639,6 +723,7 @@ function makeGame() {
   offs.push(installSystems(g), w.attach(g))
   wire(g)
   hasSave.value = g.hasSave()
+  prepareSave()
   // 標題後面的畫面：新遊戲的起點（京都駅的大廳），旅人自己走（不會寫到存檔）
   g.newGame()
   if (reduced) g.pause('title')
@@ -702,9 +787,13 @@ function installDev(g: Game) {
       g.player.place(x, y, dir)
       g.follower?.reset(x, y, dir)
     },
+    /** 讀進來的縣；讀一縣（P3 的延遲載入） */
+    prefs: () => world?.prefs().map((p) => p.pref) ?? [],
+    load: (pref: string) => world?.ensurePref(pref) ?? Promise.resolve(false),
     /** 世界：鎮、交通、起點 */
     world: () =>
       world && {
+        atlas: world.atlas.map((p) => ({ pref: p.pref, kit: p.kit, towns: p.towns.map((t) => ({ id: t.id, name: t.name.ja, station: t.station.name })) })),
         start: world.start,
         towns: world.towns.map((t) => ({ id: t.id, pref: t.pref, name: t.name.ja, mapId: t.mapId, kit: t.kit, island: t.island, stops: t.stops.map((x) => x.id), spots: t.spots })),
         links: world.links.map((l) => ({ id: l.id, from: l.from, to: l.to, mode: l.mode, name: l.name, minutes: l.minutes, legs: l.legs.map((x) => x.mode) })),
@@ -745,6 +834,7 @@ function installDev(g: Game) {
       festival: systems.value?.festivalNow() ?? false,
       weather: g.weather,
       data: dataState.value,
+      saveData: saveState.value,
       flags: { ...g.state.flags },
       date: { ...g.clock.date },
       time: g.clock.hhmm,
@@ -785,6 +875,7 @@ onMounted(() => {
   coarse?.addEventListener('change', onPointerKind)
   window.addEventListener('keydown', onGesture, true)
   window.addEventListener('online', onOnline)
+  setKitStaleHandler(onKitStale)
 })
 
 onBeforeUnmount(() => {
@@ -801,6 +892,8 @@ onBeforeUnmount(() => {
   window.removeEventListener('keydown', onTitleKey)
   window.removeEventListener('keydown', onGesture, true)
   window.removeEventListener('online', onOnline)
+  setKitStaleHandler(null)
+  clearTimeout(saveTimer)
   coarse?.removeEventListener('change', onPointerKind)
   audio.dispose()
   stopWarm?.()
@@ -862,6 +955,8 @@ onBeforeUnmount(() => {
           :scale="scale"
           :status="titleStatus"
           :retry="dataState === 'error'"
+          :save-state="saveState"
+          :note="saveNote"
           @choose="start"
           @retry="retryWorld"
           @sfx="(n) => audio.sfx(n)"

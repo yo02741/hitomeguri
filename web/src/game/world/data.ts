@@ -18,7 +18,7 @@ import {
 import type { RailGraphBundle } from '../../services/daytrip'
 
 import { municipalityAt } from './geo'
-import type { PrefData, PrefMunicipality, PrefRaw, PrefSpot } from './types'
+import { type PrefData, type PrefMunicipality, type PrefRaw, type PrefSpot, WORLD_INDEX_VERSION, type WorldIndex, type WorldIndexLink, type WorldIndexPref, type WorldIndexTown } from './types'
 
 /**
  * 一縣的資料（規格 §8.1、§11）：執行時從 bundles 讀，轉成跟 fixture 一樣的形狀（PrefRaw），再加查詢（PrefData）。
@@ -245,6 +245,70 @@ async function loadPref(api: BundleApi, index: BundleIndex, sharedOf: () => Shar
     ...(kix ? { kix: slimSpot(kix) } : {}),
   }
   return prefData(raw)
+}
+
+// ---------- 世界索引（P3） ----------
+/** 世界索引在 game bundle 裡的名字（game/_world.json；_index.json 的 game._world 帶版本） */
+export const WORLD_KEY = '_world'
+
+const isObj = (v: unknown): v is Record<string, unknown> => typeof v === 'object' && v !== null && !Array.isArray(v)
+const isNum = (v: unknown): v is number => typeof v === 'number' && Number.isFinite(v)
+const isStr = (v: unknown): v is string => typeof v === 'string' && v.length > 0
+const STOP_KINDS = new Set(['rail', 'monorail', 'bus', 'airport', 'pier'])
+const MODES = new Set(['rail', 'monorail', 'bus', 'plane', 'ferry'])
+const KITS = new Set(['kinki', 'okinawa', 'kanto', 'hokkaido'])
+
+function townOk(t: unknown): t is WorldIndexTown {
+  if (!isObj(t) || !isStr(t.id) || !isObj(t.name) || !isStr(t.name.ja)) return false
+  const st = t.station
+  const c = t.center
+  return isObj(st) && isStr(st.id) && typeof st.name === 'string' && STOP_KINDS.has(st.kind as string) && isObj(c) && isNum(c.lat) && isNum(c.lng) && Array.isArray(t.stops)
+}
+function linkOk(l: unknown): l is WorldIndexLink {
+  if (!isObj(l) || !isStr(l.id) || !isStr(l.from) || !isStr(l.to) || !isStr(l.fromStop) || !isStr(l.toStop) || !isStr(l.fromPref) || !isStr(l.toPref)) return false
+  if (!MODES.has(l.mode as string) || typeof l.name !== 'string' || !Array.isArray(l.legs) || !l.legs.length) return false
+  return l.legs.every((x) => isObj(x) && MODES.has(x.mode as string) && isNum(x.km) && (x.kmKind === 'rail' || x.kmKind === 'straight') && typeof x.to === 'string')
+}
+
+/** 世界索引的形狀檢查：版本不對、沒有縣的回 null；壞掉的鎮、交通丟掉 */
+export function parseWorldIndex(raw: unknown): WorldIndex | null {
+  if (!isObj(raw) || raw.v !== WORLD_INDEX_VERSION || !isStr(raw.start) || !Array.isArray(raw.prefs)) return null
+  const prefs: WorldIndexPref[] = []
+  for (const p of raw.prefs) {
+    if (!isObj(p) || !isStr(p.pref) || !Array.isArray(p.towns)) continue
+    const towns = p.towns.filter(townOk)
+    if (!towns.length) continue
+    prefs.push({ pref: p.pref, kit: KITS.has(p.kit as string) ? (p.kit as WorldIndexPref['kit']) : 'kinki', startStop: p.startStop === 'airport' ? 'airport' : 'main', towns })
+  }
+  if (!prefs.some((p) => p.pref === raw.start)) return null
+  const known = new Set(prefs.flatMap((p) => p.towns.map((t) => t.id)))
+  const links = (Array.isArray(raw.links) ? raw.links : []).filter(linkOk).filter((l) => known.has(l.from) && known.has(l.to))
+  return { v: WORLD_INDEX_VERSION, start: raw.start, ...(isObj(raw.attribution) ? { attribution: raw.attribution as WorldIndex['attribution'] } : {}), prefs, links }
+}
+
+/** 世界索引：索引裡沒有（舊的 bundles）回 null；讀的錯丟出去（呼叫的人決定要不要退回 P2 的世界） */
+export async function loadWorldIndex(api: BundleApi, index: BundleIndex): Promise<WorldIndex | null> {
+  const meta = index.game?.[WORLD_KEY]
+  if (!meta || !api.fetchGame) return null
+  return parseWorldIndex(await api.fetchGame(WORLD_KEY, meta.version))
+}
+
+/**
+ * 一縣一縣讀（延遲載入用）：同一縣只讀一次（讀到一半再叫拿同一個 promise，讀壞了的下次重讀）。
+ * 共用的大檔（全國路網…）只有某一縣要讀完整資料時才抓。warnings 記下少了的檔。
+ */
+export function prefLoader(api: BundleApi, index: BundleIndex, warnings: string[] = []): (pref: string) => Promise<PrefData> {
+  let sh: Shared | null = null
+  const sharedOf = () => (sh ??= shared(api, index))
+  const cache = new Map<string, Promise<PrefData>>()
+  return (pref) => {
+    const hit = cache.get(pref)
+    if (hit) return hit
+    const p = loadPref(api, index, sharedOf, pref, warnings)
+    cache.set(pref, p)
+    p.catch(() => cache.delete(pref))
+    return p
+  }
 }
 
 export interface WorldLoad {

@@ -165,10 +165,8 @@ describe('資料讀不到', () => {
     const empty = async (): Promise<BundleIndex> => ({ prefectures: {} })
     const r = await loadPlayWorld(empty, { api: fail(new TypeError('Failed to fetch')) })
     expect(r.ok).toBe(false)
-    expect(r.errors.map((e) => [e.pref, e.kind])).toEqual([
-      ['kyoto', 'offline'],
-      ['okinawa', 'offline'],
-    ])
+    // P3：一開始只要起點的縣（京都）
+    expect(r.errors.map((e) => [e.pref, e.kind])).toEqual([['kyoto', 'offline']])
   })
   it('catalog 的索引有東西就用它（不重抓）', async () => {
     const idx: BundleIndex = { prefectures: { kyoto: { count: 1, featured: 0, version: 'v1' } } }

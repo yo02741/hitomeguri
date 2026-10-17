@@ -121,6 +121,8 @@ export interface GameMap {
   /** 戶外：時段換色、天氣、走路時時間往前；室內一律白天的顏色 */
   outdoor: boolean
   bgm?: string
+  /** 鎮（與鎮裡的室內）是街上還是郊外（世界生成決定；路人的閒聊照這個挑）。沒有就是不分 */
+  setting?: 'urban' | 'rural'
   /** 找不到存檔位置時放這裡（例：車站門口） */
   start?: { x: number; y: number; dir?: Dir }
   /** 這張地圖自己的腳本（實體的 data.script 先找這裡，再找全域的 registerScript） */
@@ -158,6 +160,11 @@ export interface TileDef {
   variants?: number
   /** 自動接邊：哪些鄰居算「一樣」（例：水接水）；有寫才算 mask */
   connect?(other: TileDef | undefined): boolean
+  /**
+   * 上層的「頭頂上的東西」（高架的橋面）：站在它下面的角色，比這一格上緣高的部分不畫（人整個在橋下，頭不會冒到鐵軌上）。
+   * 樹冠、屋簷不用（比人矮的部分本來就會被蓋住，頭露出來是對的）。
+   */
+  overhead?: boolean
   /** 畫在 (c.x, c.y) 起的 16×16；只能依 c 的內容變化（快取的 key 是 id×季節×時段×格×花樣×接邊） */
   draw(g: Gfx, c: TileCtx): void
 }

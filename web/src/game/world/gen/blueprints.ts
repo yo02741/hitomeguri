@@ -14,6 +14,7 @@ import { type KitRoles, rolesOf } from './roles'
  *   t 樹（藍圖指定的種類，1×2）  m 楓  l 石燈籠  k、K 狛犬（左、右）  P 松（沖繩是ガジュマル）  Q 櫻（沖繩是寒緋櫻）
  *   R 欄杆（下面是木板）  D 木板  O 望遠鏡  a 拱廊（石畳＋屋頂）
  * 大寫字（物件的左上角）由各藍圖的 legend 指定；interior 是門進去的室內（Grid 的 doors）。
+ * 物件、樹可以依 kit 寫（{ kinki, okinawa, kanto, hokkaido }）；沒寫的 kit 用近畿的，樹再照 roles 的 treeSub 換成那一套的。
  */
 export type InteriorKind = 'station' | 'airport' | 'juyosho' | 'castle' | 'inn' | 'shokudo' | 'shinise' | 'teahouse'
 
@@ -50,7 +51,7 @@ const COMMON: Record<string, CellDef> = {
   ',': { g: '@grass' },
   '=': { g: '@path' },
   ':': { g: '@plaza' },
-  '~': { g: '@water' },
+  '~': { g: '@pond' },
   s: { g: '@path', l: '@sign', mark: 'sign' },
   p: { g: '@path', l: 'basic/photo', mark: 'photo' },
   f: { g: '@path', mark: 'front' },
@@ -66,8 +67,8 @@ const COMMON: Record<string, CellDef> = {
   k: { l: 'kinki/komainu-l' },
   K: { l: 'kinki/komainu-r' },
   P: { obj: { kinki: 'kinki/pine', okinawa: 'okinawa/gajumaru' } },
-  m: { obj: { kinki: 'kinki/kaede', okinawa: 'okinawa/gajumaru' } },
-  Q: { obj: { kinki: 'kinki/sakura', okinawa: 'okinawa/kanhi' } },
+  m: { obj: { kinki: 'kinki/kaede', okinawa: 'okinawa/gajumaru', hokkaido: 'hokkaido/kaede' } },
+  Q: { obj: { kinki: 'kinki/sakura', okinawa: 'okinawa/kanhi', kanto: 'kanto/sakura', hokkaido: 'hokkaido/sakura' } },
   R: { g: '@deck', l: 'kinki/railing' },
   D: { g: '@deck' },
   O: { g: '@deck', l: 'kinki/telescope' },
@@ -444,7 +445,7 @@ const ZOO: Blueprint = {
 
 const MARKET: Blueprint = {
   base: '@street',
-  legend: { F: { obj: 'kinki/shop-front', main: true } },
+  legend: { F: { obj: { kinki: 'kinki/shop-front', kanto: 'kanto/shop-front-a', hokkaido: 'hokkaido/shop-front' }, main: true } },
   rows: [
     'F#F#F#F#', //
     '########',
@@ -458,7 +459,7 @@ const MARKET: Blueprint = {
 
 const STREET: Blueprint = {
   base: '@street',
-  legend: { S: { obj: { kinki: 'kinki/machiya-shop', okinawa: 'okinawa/house-shop' }, main: true } },
+  legend: { S: { obj: { kinki: 'kinki/machiya-shop', okinawa: 'okinawa/house-shop', kanto: 'kanto/mixed-a', hokkaido: 'hokkaido/mixed' }, main: true } },
   rows: [
     'S###S###S###', //
     '############',
@@ -511,6 +512,7 @@ const GATE: Blueprint = {
 }
 
 const GENERIC: Partial<Record<Kit, Blueprint>> = {
+  kanto: { base: '@grass', trees: { kanto: ['kanto/tree', 'kanto/street-tree'] }, legend: { H: { obj: 'kanto/hall', main: true } }, rows: [',H#####,', ',######,', 't######t', '########', ',,::::n,', '   sp   ', '    f   '] },
   kinki: {
     base: '@grass',
     trees: { kinki: ['kinki/tree'] },
@@ -585,8 +587,264 @@ const TREE: Blueprint = {
   ],
 }
 
-/** 地標的藍圖：kind × 大小；castle 看有沒有蓋章地點 */
-export function landmarkBlueprint(kind: LandmarkKind, size: Size, kit: Kit, o: { stamp?: boolean; variant?: number } = {}): Blueprint {
+// ---------- P3：關東、北海道 ----------
+/** 塔（名字有「塔」的才用）：細長的塔或格子的鐵塔，前面是廣場 */
+const towerOf = (obj: Partial<Record<Kit, string>>): Blueprint => ({
+  base: '@plaza',
+  legend: { T: { obj, main: true } },
+  rows: [
+    ',T##,', //
+    ',###,',
+    ',###,',
+    ',###,',
+    ',###,',
+    'b###b',
+    ',###,',
+    '.....',
+    ' sp n',
+    '  f  ',
+  ],
+})
+const TOWER_TALL = towerOf({ kinki: 'kanto/tower-tall', kanto: 'kanto/tower-tall', hokkaido: 'hokkaido/tower-tall' })
+const TOWER_LATTICE = towerOf({ kinki: 'kanto/tower-lattice', kanto: 'kanto/tower-lattice', hokkaido: 'hokkaido/tower-lattice' })
+
+/** 高樓（名字是「…タワー」「…ビル」「…ヒルズ」這類） */
+const BUILDING: Blueprint = {
+  base: '@plaza',
+  trees: { kanto: ['kanto/street-tree'], hokkaido: ['hokkaido/tree'] },
+  legend: { H: { obj: { kinki: 'kanto/highrise', kanto: 'kanto/highrise', hokkaido: 'hokkaido/highrise' }, main: true } },
+  rows: [
+    '.H###.', //
+    '.####.',
+    '.####.',
+    't####t',
+    '######',
+    '.####.',
+    '::::::',
+    ' sp n ',
+    '  f   ',
+  ],
+}
+
+/** 十字路口（名字有「交差点」，關東）：大螢幕的大樓、住商混合、斑馬線、四角的紅綠燈 */
+const CROSSING: Blueprint = {
+  base: '@path',
+  legend: {
+    S: { obj: 'kanto/screen', main: true },
+    M: { obj: 'kanto/mixed-b', main: true },
+    q: { obj: 'kanto/signal' },
+    A: { g: 'kanto/street' },
+    Z: { g: 'kanto/zebra-h' },
+  },
+  rows: [
+    'S###.M###', //
+    '####.####',
+    '####.####',
+    '####.####',
+    'q=======q',
+    '#AAZZZAA#',
+    'AAAZZZAAA',
+    'AAAZZZAAA',
+    'q=======q',
+    '#=====n=#',
+    '   sp    ',
+    '    f    ',
+  ],
+}
+
+/** 教堂（名字有「教会」「聖堂」「修道院」） */
+const CHURCH: Blueprint = {
+  base: '@grass',
+  trees: { kanto: ['kanto/tree'], hokkaido: ['hokkaido/shirakaba', 'hokkaido/ezomatsu'] },
+  legend: { C: { obj: { kinki: 'kanto/church', kanto: 'kanto/church', hokkaido: 'hokkaido/church' }, main: true } },
+  rows: [
+    't.C###.t', //
+    '#.####.#',
+    '..####..',
+    'b.####.b',
+    '..####..',
+    '...==.n.',
+    '   sp   ',
+    '    f   ',
+  ],
+}
+
+/** 時計台（名字有「時計台」） */
+const CLOCKTOWER: Blueprint = {
+  base: '@path',
+  trees: { hokkaido: ['hokkaido/ichou', 'hokkaido/tree'], kanto: ['kanto/tree'] },
+  legend: { C: { obj: 'hokkaido/clocktower', main: true } },
+  rows: [
+    't.C####.t', //
+    '#.#####.#',
+    ',.#####.,',
+    ',.#####.,',
+    'b.#####.b',
+    ',.#####.,',
+    ':::===:n:',
+    '   sp    ',
+    '    f    ',
+  ],
+}
+
+/** 紅磚倉庫（名字有「倉庫」）：兩棟並排、前面是紅磚的鋪面與煤氣燈 */
+const WAREHOUSE: Blueprint = {
+  base: '@path',
+  legend: { W: { obj: 'hokkaido/warehouse', main: true }, L: { obj: 'hokkaido/lamp' } },
+  rows: [
+    'W####W####', //
+    '##########',
+    '##########',
+    '====L=====',
+    '====#===n=',
+    '   sp     ',
+    '    f     ',
+  ],
+}
+
+/** 運河（名字有「運河」）：石砌的護岸、兩邊的步道、煤氣燈（倉庫只在資料有「倉庫」的地標才畫） */
+const CANAL: Blueprint = {
+  base: '@path',
+  trees: { hokkaido: ['hokkaido/tree', 'hokkaido/shirakaba'], kanto: ['kanto/tree'] },
+  // 運河是流動的水（北海道的冬天也不畫成結冰的湖）
+  legend: { L: { obj: { kinki: 'hokkaido/lamp', kanto: 'kanto/lamp', hokkaido: 'hokkaido/lamp' } }, '~': { g: '@water' } },
+  rows: [
+    ',t,,t,,,t,,,', //
+    ',#,,#,,,#,,,',
+    '============',
+    '~~~~~~~~~~~~',
+    '~~~~~~~~~~~~',
+    '~~~~~~~~~~~~',
+    'L===L===L===',
+    '#===#===#=n=',
+    '   sp       ',
+    '    f       ',
+  ],
+}
+
+/** 湖、沼（名字是「…湖」「…沼」；北海道的「…池」）：自然的岸、伸進湖裡的木棧道 */
+const LAKE: Blueprint = {
+  base: '@grass',
+  trees: { hokkaido: ['hokkaido/shirakaba', 'hokkaido/ezomatsu', 'hokkaido/shirakaba'], kanto: ['kanto/tree', 'kanto/keyaki'] },
+  legend: { y: { g: '@lake' } },
+  rows: [
+    ',t,,t,,t,,', //
+    ',#,,#,,#,,',
+    ',,yyyyyy,,',
+    ',yyyyyyyy,',
+    ',yyyDyyyy,',
+    ',,yyDyyy,,',
+    ',,,,=,,n,,',
+    '    sp    ',
+    '     f    ',
+  ],
+}
+
+/** 山、岳（類型沒寫、名字是「…山」「…岳」）：山體、山腳的登山口 */
+const MOUNTAIN: Blueprint = {
+  base: '@grass',
+  trees: { hokkaido: ['hokkaido/ezomatsu', 'hokkaido/shirakaba'], kanto: ['kanto/tree', 'kinki/sugi'] },
+  legend: { M: { obj: { kinki: 'kanto/peak', kanto: 'kanto/peak', hokkaido: 'hokkaido/peak' }, main: true } },
+  rows: [
+    't.M#####.t', //
+    '#.######.#',
+    '..######..',
+    'r.######.r',
+    ',,,,==,,n,',
+    '    sp    ',
+    '     f    ',
+  ],
+}
+
+/** 瀑布（名字有「滝」）：崖、瀑布、下面的潭 */
+const FALLS: Blueprint = {
+  base: '@grass',
+  trees: { hokkaido: ['hokkaido/ezomatsu', 'hokkaido/tree'], kanto: ['kanto/tree', 'kinki/sugi'] },
+  legend: { F: { obj: { kinki: 'kanto/falls', kanto: 'kanto/falls', hokkaido: 'hokkaido/falls' }, main: true }, y: { g: '@lake' } },
+  rows: [
+    't,F##,t', //
+    '#,###,#',
+    'r,###,r',
+    ',,###,,',
+    ',yyyyy,',
+    ',,,=,n,',
+    '  sp   ',
+    '   f   ',
+  ],
+}
+
+/** 溫泉（名字有「温泉」）：露天的湯、周圍的樹 */
+const ONSEN: Blueprint = {
+  base: '@gravel',
+  trees: { hokkaido: ['hokkaido/ezomatsu', 'hokkaido/shirakaba'], kanto: ['kanto/tree'] },
+  legend: { E: { obj: { kinki: 'kanto/onsen', kanto: 'kanto/onsen', hokkaido: 'hokkaido/onsen' }, main: true } },
+  rows: [
+    't,E###,t', //
+    '#,####,#',
+    ',,####,,',
+    'b,,==,,b',
+    ',,,==,n,',
+    '   sp   ',
+    '    f   ',
+  ],
+}
+
+/** 燈塔（名字有「灯台」） */
+const LIGHTHOUSE: Blueprint = {
+  base: '@grass',
+  legend: { H: { obj: { kinki: 'kanto/lighthouse', kanto: 'kanto/lighthouse', hokkaido: 'hokkaido/lighthouse' }, main: true } },
+  rows: [
+    ',,H#,,', //
+    ',,##,,',
+    'r,##,r',
+    ',,##,,',
+    ',,==n,',
+    ' sp   ',
+    '  f   ',
+  ],
+}
+
+/** 花田（北海道，名字有ラベンダー、ファーム、ガーデン、花畑…）：一畦一種顏色，薰衣草只有夏天是紫的 */
+const FLOWERFIELD: Blueprint = {
+  base: '@grass',
+  trees: { hokkaido: ['hokkaido/shirakaba', 'hokkaido/poplar'] },
+  legend: { x: { g: 'hokkaido/lavender' }, '1': { g: 'hokkaido/flowers-a' }, '2': { g: 'hokkaido/flowers-b' }, '3': { g: 'hokkaido/flowers-c' }, '4': { g: 'hokkaido/flowers-d' } },
+  rows: [
+    't,xxxxxxxx,t', //
+    '#,11111111,#',
+    ',,xxxxxxxx,,',
+    ',,22222222,,',
+    ',,xxxxxxxx,,',
+    ',,44444444,,',
+    ',,33333333,,',
+    ',,,,,==,,n,,',
+    '    sp      ',
+    '     f      ',
+  ],
+}
+
+/** 一般的大建築（關東、北海道：類型不明確的地標）：現代的會館 */
+const HALL: Blueprint = {
+  base: '@grass',
+  trees: { kanto: ['kanto/tree', 'kanto/street-tree'], hokkaido: ['hokkaido/tree', 'hokkaido/shirakaba'] },
+  legend: { H: { obj: { kinki: 'kanto/hall', kanto: 'kanto/hall', hokkaido: 'hokkaido/hall' }, main: true } },
+  rows: [
+    ',H#####,', //
+    ',######,',
+    't######t',
+    '########',
+    ',,::::n,',
+    '   sp   ',
+    '    f   ',
+  ],
+}
+
+/**
+ * 地標的藍圖：kind × 大小；castle 看有沒有蓋章地點（小屋）。
+ * o.p3（P3 的縣：奈良、大阪、兵庫…）：近畿的塔不是京都塔的樣子（細長的塔）；分不出來的（generic）不畫一棟和風大殿，
+ * 是小小的石碑＋樹（跟北海道一樣）。京都、沖繩照舊。
+ */
+export function landmarkBlueprint(kind: LandmarkKind, size: Size, kit: Kit, o: { stamp?: boolean; variant?: number; p3?: boolean } = {}): Blueprint {
   switch (kind) {
     case 'shrine':
       return SHRINE[size]
@@ -602,7 +860,8 @@ export function landmarkBlueprint(kind: LandmarkKind, size: Size, kit: Kit, o: {
       return { ...bp, legend }
     }
     case 'museum':
-      return MUSEUM
+      // 關東：美術館、博物館很多，一半畫成現代的會館（同一鎮不要都長一樣）
+      return kit === 'kanto' && o.variant ? HALL : MUSEUM
     case 'castle':
       return (kit === 'okinawa' ? GUSUKU : CASTLE)[o.stamp ? 'stamp' : 'plain']
     case 'palace':
@@ -615,7 +874,7 @@ export function landmarkBlueprint(kind: LandmarkKind, size: Size, kit: Kit, o: {
     case 'view':
       return VIEW
     case 'tower':
-      return TOWER
+      return kit === 'kanto' || kit === 'hokkaido' || o.p3 ? TOWER_TALL : TOWER
     case 'zoo':
       return ZOO
     case 'market':
@@ -634,8 +893,35 @@ export function landmarkBlueprint(kind: LandmarkKind, size: Size, kit: Kit, o: {
       return GATE
     case 'tree':
       return kit === 'okinawa' ? TREE : MONUMENT
+    case 'lattice':
+      return TOWER_LATTICE
+    case 'building':
+      return BUILDING
+    case 'crossing':
+      return CROSSING
+    case 'church':
+      return CHURCH
+    case 'clocktower':
+      return CLOCKTOWER
+    case 'warehouse':
+      return kit === 'hokkaido' ? WAREHOUSE : HALL
+    case 'canal':
+      return CANAL
+    case 'lake':
+      return LAKE
+    case 'mountain':
+      return MOUNTAIN
+    case 'falls':
+      return FALLS
+    case 'onsen':
+      return ONSEN
+    case 'lighthouse':
+      return LIGHTHOUSE
+    case 'flowerfield':
+      return FLOWERFIELD
     default:
-      return GENERIC[kit] ?? GENERIC.kinki!
+      // 北海道：類型不明確的多是自然的地方（湿原、峡、ロープウェイ…），不畫一棟建築：石碑＋樹
+      return kit === 'hokkaido' || (o.p3 && kit === 'kinki') ? MONUMENT : (GENERIC[kit] ?? GENERIC.kinki!)
   }
 }
 
@@ -668,6 +954,34 @@ export const POI: Record<string, Partial<Record<Kit, Blueprint>>> = {
         '   f   ',
       ],
     },
+    kanto: {
+      base: '@plaza',
+      trees: { kanto: ['kanto/street-tree'] },
+      legend: { S: { obj: 'kanto/station', interior: 'station', main: true } },
+      rows: [
+        't,S#######,t', //
+        '#,########,#',
+        'b,########,b',
+        ',,########,,',
+        '::s:::::n:::',
+        '::::::::::::',
+        '     f      ',
+      ],
+    },
+    hokkaido: {
+      base: '@plaza',
+      trees: { hokkaido: ['hokkaido/shirakaba', 'hokkaido/ezomatsu'] },
+      legend: { S: { obj: 'hokkaido/station', interior: 'station', main: true } },
+      rows: [
+        't,S#######,t', //
+        '#,########,#',
+        'b,########,b',
+        ',,########,,',
+        '::s:::::n:::',
+        '::::::::::::',
+        '     f      ',
+      ],
+    },
   },
   monorail: {
     okinawa: {
@@ -697,14 +1011,20 @@ export const POI: Record<string, Partial<Record<Kit, Blueprint>>> = {
   },
   inn: {
     kinki: { base: '@path', legend: { I: { obj: 'kinki/inn', interior: 'inn', main: true } }, rows: ['I#####', '######', '######', '######', 'b.=..b', '  f   '] },
+    kanto: { base: '@path', legend: { I: { obj: 'kanto/inn', interior: 'inn', main: true } }, rows: ['I#####', '######', '######', '######', 'b.=..b', '  f   '] },
+    hokkaido: { base: '@path', legend: { I: { obj: 'hokkaido/inn', interior: 'inn', main: true } }, rows: ['I#####', '######', '######', '######', 'b.=..b', '  f   '] },
     okinawa: { base: '@path', legend: { I: { obj: 'okinawa/minshuku', interior: 'inn', main: true } }, rows: ['I#####', '######', '######', '######', 'b.=..b', '  f   '] },
   },
   shokudo: {
     kinki: { base: '@path', legend: { I: { obj: 'kinki/shokudo', interior: 'shokudo', main: true } }, rows: ['I####', '#####', '#####', '#####', '..=..', '  f  '] },
+    kanto: { base: '@path', legend: { I: { obj: 'kanto/shokudo', interior: 'shokudo', main: true } }, rows: ['I####', '#####', '#####', '#####', '..=..', '  f  '] },
+    hokkaido: { base: '@path', legend: { I: { obj: 'hokkaido/shokudo', interior: 'shokudo', main: true } }, rows: ['I####', '#####', '#####', '#####', '..=..', '  f  '] },
     okinawa: { base: '@path', legend: { I: { obj: 'okinawa/shokudo', interior: 'shokudo', main: true } }, rows: ['I####', '#####', '#####', '#####', '..=..', '  f  '] },
   },
   shinise: {
     kinki: { base: '@path', legend: { I: { obj: 'kinki/shinise', interior: 'shinise', main: true } }, rows: ['I####', '#####', '#####', '#####', '.s=..', '  f  '] },
+    kanto: { base: '@path', legend: { I: { obj: 'kanto/shinise', interior: 'shinise', main: true } }, rows: ['I####', '#####', '#####', '#####', '.s=..', '  f  '] },
+    hokkaido: { base: '@path', legend: { I: { obj: 'hokkaido/shinise', interior: 'shinise', main: true } }, rows: ['I####', '#####', '#####', '#####', '.s=..', '  f  '] },
     okinawa: { base: '@path', legend: { I: { obj: 'okinawa/house-shop', interior: 'shinise', main: true } }, rows: ['I###', '####', '####', '####', 's=..', ' f  '] },
   },
   teahouse: {
@@ -775,10 +1095,11 @@ export function compile(bp: Blueprint, kit: Kit): Compiled {
       }
       const d = legend[ch]
       if (!d) throw new Error(`world blueprint：「${ch}」沒有定義`)
-      cells.push({ ch, void: false, g: d.g ? resolve(d.g, roles) : base, l: d.l ? resolve(d.l, roles) : undefined, o: d.o ? resolve(d.o, roles) : undefined, mark: d.mark, tree: d.tree, bush: d.bush })
+      const sub = (n: string | undefined) => (n && roles.objSub?.[n]) ?? n
+      cells.push({ ch, void: false, g: d.g ? resolve(d.g, roles) : base, l: d.l ? sub(resolve(d.l, roles)) : undefined, o: d.o ? sub(resolve(d.o, roles)) : undefined, mark: d.mark, tree: d.tree, bush: d.bush })
       if (d.mark) marks[d.mark].push({ x, y })
       if (d.obj) {
-        const name = typeof d.obj === 'string' ? d.obj : (d.obj[kit] ?? d.obj.kinki!)
+        const name = sub(typeof d.obj === 'string' ? d.obj : (d.obj[kit] ?? d.obj.kinki!))!
         const info = objectInfo(name)
         if (!info) throw new Error(`world blueprint：沒有物件 ${name}`)
         if (x + info.w > w || y + info.h > h) throw new Error(`world blueprint：${name} 超出藍圖（${x}, ${y}）`)
@@ -794,5 +1115,6 @@ export function compile(bp: Blueprint, kit: Kit): Compiled {
     }
   const front = marks.front[0]
   if (!front) throw new Error('world blueprint：沒有接路的格子（f）')
-  return { w, h, cells, objects, front, marks, trees: bp.trees?.[kit] ?? bp.trees?.kinki ?? roles.trees.map(([n]) => n) }
+  const trees = bp.trees?.[kit] ?? bp.trees?.kinki?.map((n) => roles.treeSub?.[n] ?? n) ?? roles.trees.map(([n]) => n)
+  return { w, h, cells, objects, front, marks, trees }
 }

@@ -10,7 +10,7 @@ import { DEFAULT_SETTINGS, loadSettings, sanitize, saveSettings, type StorageLik
 import { SFX, SFX_NAMES, sfxLength, type SfxDef } from './sfx'
 import { JINGLE_IDS, JINGLES, parsed, SONG_IDS, SONGS } from './songs'
 import { chordTrack } from './songs/chords'
-import { loopSeconds, parseSong, parseTrack, stepDuration, type ParsedSong, type SongDef } from './tracker'
+import { ENV, loopSeconds, parseSong, parseTrack, stepDuration, type ParsedSong, type SongDef } from './tracker'
 import { dutyLevels, evalWave, karplusStrong, parseTable, pulseWave, stepWave, tableWave, WAVES } from './waves'
 
 const ALL_SONGS: [string, SongDef][] = [...Object.entries(SONGS), ...Object.entries(JINGLES)]
@@ -28,8 +28,11 @@ describe('音名與音階', () => {
     expect(hz('A5')).toBeCloseTo(880, 6)
     expect(() => hz('X1')).toThrow()
   })
-  it('三個音階各五個音，都節是 Mi Fa La Si Do、琉球是 Do Mi Fa Sol Si', () => {
-    for (const s of Object.values(SCALES)) expect(new Set(s.pcs).size).toBe(5)
+  it('音階：五聲音階各五個音、D 大調七個；都節是 Mi Fa La Si Do、琉球是 Do Mi Fa Sol Si', () => {
+    for (const s of Object.values(SCALES)) expect(new Set(s.pcs).size).toBe(s.pcs.length)
+    for (const id of ['miyako', 'ryukyu', 'yo', 'fpenta'] as const) expect(SCALES[id].pcs.length, id).toBe(5)
+    expect([...SCALES.major.pcs].sort((a, b) => a - b)).toEqual([1, 2, 4, 6, 7, 9, 11])
+    expect([...SCALES.fpenta.pcs].sort((a, b) => a - b)).toEqual([0, 2, 5, 7, 9])
     expect([...SCALES.miyako.pcs].sort((a, b) => a - b)).toEqual([0, 4, 5, 9, 11])
     expect([...SCALES.ryukyu.pcs].sort((a, b) => a - b)).toEqual([0, 4, 5, 7, 11])
     expect(inScale(noteToMidi('D4')!, 'ryukyu')).toBe(false)
@@ -129,7 +132,7 @@ describe('曲子', () => {
   }
 
   it('鎮曲有夜裡的版本（慢 15–25%、軌比較少）與祭典的太鼓；室內沒有', () => {
-    for (const id of ['kyoto', 'okinawa'] as const) {
+    for (const id of ['kyoto', 'okinawa', 'tokyo', 'hokkaido'] as const) {
       const def: SongDef = SONGS[id]
       expect(def.night!.tempo).toBeGreaterThanOrEqual(0.75)
       expect(def.night!.tempo).toBeLessThanOrEqual(0.85)
@@ -146,6 +149,25 @@ describe('曲子', () => {
     const interior: SongDef = SONGS.interior
     expect(variantPlan(interior, { night: true, festival: true })).toEqual(variantPlan(interior, { night: false, festival: false }))
     expect(interior.tracks.some((t) => t.inst.kind === 'noise' || t.inst.kind === 'taiko')).toBe(false)
+  })
+
+  it('東京的鎮：明快（120 bpm 以上、大調）、方波的主旋律＋低音；北海道的鎮：慢（90 bpm 以下）、三拍子、波形表的長音＋撥弦', () => {
+    const t: SongDef = SONGS.tokyo
+    expect(t.bpm).toBeGreaterThanOrEqual(120)
+    expect(t.scale).toBe('major')
+    expect(t.tracks[0]!.inst).toMatchObject({ kind: 'pulse' })
+    expect(t.tracks.some((x) => x.name === 'bass' && x.inst.kind === 'wave')).toBe(true)
+    const h: SongDef = SONGS.hokkaido
+    expect(h.bpm).toBeLessThanOrEqual(90)
+    expect(h.beats).toBe(3)
+    expect(h.tracks[0]!.inst).toMatchObject({ kind: 'wave', env: ENV.pad })
+    expect(h.tracks.map((x) => x.inst.kind)).toContain('pluck')
+    // 主旋律的長音：北海道的音平均比東京長
+    const avg = (d: SongDef) => {
+      const ev = parsed(d).tracks[0]!.events
+      return ev.reduce((s, e) => s + e.len, 0) / ev.length
+    }
+    expect(avg(h)).toBeGreaterThan(avg(t) * 1.5)
   })
 
   it('沖繩的鎮有撥弦（三線）與太鼓', () => {

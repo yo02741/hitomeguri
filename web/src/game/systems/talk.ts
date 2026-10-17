@@ -3,7 +3,7 @@ import { QUEST_LINES, QUEST_MISC, type FlavourWho } from '../content/flavour'
 import type { ScriptApi } from '../engine/script'
 import type { MapEntity, Script, ScriptFn } from '../engine/types'
 
-import { dayKey, nameOf, type PlaceName, spotName } from './data'
+import { dayKey, nameOf, type PlaceName, prefName, spotName } from './data'
 import type { GameSystems } from './install'
 import { accept, ACTIVE_MAX, activeOf, complete, deliveryFor, drop, fill, isDone, linesOf, noteSign, questFor, questParams, REWARD } from './quests'
 import { slotIndex } from './room'
@@ -289,7 +289,7 @@ export function* stampFlow(sys: GameSystems, api: ScriptApi, e: MapEntity): Scri
   }
   const i = yield* api.ask(`${label}的${STAMP_WORD[d.stampKind]}。要蓋嗎？`, ['蓋', '不蓋'], { cancel: 1 })
   if (i !== 0) return false
-  pressStamp(g, d, sys.townHere()?.id)
+  pressStamp(g, d, sys.townHere()?.id, view)
   g.save()
   sys.sfx('stamp')
   sys.jingle('stamp')
@@ -299,9 +299,16 @@ export function* stampFlow(sys: GameSystems, api: ScriptApi, e: MapEntity): Scri
 
 // ---------- 目的地 ----------
 export function travel(sys: GameSystems, e: MapEntity): ScriptFn | null {
-  const d = dataOf<TravelData>(e) as TravelData
-  if (!d.dests?.length) return null
+  const raw = dataOf<TravelData>(e) as TravelData
+  if (!raw.dests?.length) return null
   return function* (api) {
+    // 別的縣的目的地寫上縣名（京都駅 → 近鉄奈良「奈良県」、東京「東京都」）
+    const from = sys.data.town(raw.fromTown)?.pref
+    const dests = raw.dests.map((x) => {
+      const pref = sys.data.town(x.town)?.pref
+      return pref && from && pref !== from ? { ...x, area: prefName(pref).ja } : x
+    })
+    const d: TravelData = { ...raw, dests }
     const r = yield* sys.waitPanel({ kind: 'travel', data: d })
     if (!r || typeof r !== 'object') return
     if (sys.deps.travel) sys.deps.travel(sys.game, r)

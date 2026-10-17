@@ -7,18 +7,24 @@ import type { SaveStorage } from '../engine/save'
  */
 export type TitleChoice = 'continue' | 'new' | 'restart'
 
+/** 存檔所在的縣（P3）：讀好了、讀中、讀不到 */
+export type SaveLoad = 'ready' | 'loading' | 'error'
+
 export interface TitleOption {
-  id: TitleChoice
+  id: TitleChoice | 'retry'
   label: string
+  /** 先不能選（存檔所在的縣還在讀） */
+  disabled?: boolean
 }
 
-export function titleOptions(hasSave: boolean): TitleOption[] {
-  return hasSave
-    ? [
-        { id: 'continue', label: '繼續' },
-        { id: 'restart', label: '重新開始' },
-      ]
-    : [{ id: 'new', label: '開始' }]
+/**
+ * 存檔所在的縣（P3）還在讀、讀不到時：「繼續」先不能選（讀不到時換成「再試一次」）；
+ * 「重新開始」只要起點的縣（京都，世界讀好時就有），一直可以選。
+ */
+export function titleOptions(hasSave: boolean, save: SaveLoad = 'ready'): TitleOption[] {
+  if (!hasSave) return [{ id: 'new', label: '開始' }]
+  const first: TitleOption = save === 'error' ? { id: 'retry', label: '再試一次' } : { id: 'continue', label: '繼續', ...(save === 'loading' ? { disabled: true } : {}) }
+  return [first, { id: 'restart', label: '重新開始' }]
 }
 
 /** 重新開始的確認：預設停在「不要」 */

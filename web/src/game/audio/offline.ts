@@ -80,6 +80,41 @@ export function renderSfx(name: SfxName): Promise<Rendered> {
   })
 }
 
+/**
+ * A 加權的音量（dBFS，A 加權濾波器：44.1 kHz 的雙線性轉換係數，IEC 61672 的 A 曲線）：
+ * 手機、筆電的喇叭幾乎放不出低音，聽起來大不大聲看的是中音域，所以鎮曲之間的音量用這個比。
+ */
+const A_B = [0.255741125204258, -0.511482250408516, -0.255741125204258, 1.022964500817033, -0.255741125204258, -0.511482250408516, 0.255741125204258]
+const A_A = [1, -4.019576181115832, 6.189406442920693, -4.453198903544116, 1.420842949621876, 0.14182547383042, 0.004351177233495]
+export async function aWeightedDb(samples: Float32Array, sampleRate = SR): Promise<number> {
+  const ctx = new OfflineAudioContext(1, samples.length, sampleRate)
+  const buf = ctx.createBuffer(1, samples.length, sampleRate)
+  buf.copyToChannel(samples as Float32Array<ArrayBuffer>, 0)
+  const src = ctx.createBufferSource()
+  src.buffer = buf
+  src.connect(ctx.createIIRFilter(A_B, A_A)).connect(ctx.destination)
+  src.start()
+  const out = (await ctx.startRendering()).getChannelData(0)
+  // 前 0.5 秒（濾波器暖身、第一個音之前）不算
+  let sum = 0
+  const from = Math.min(out.length - 1, Math.round(0.5 * sampleRate))
+  for (let i = from; i < out.length; i++) sum += out[i]! * out[i]!
+  return 10 * Math.log10(sum / Math.max(1, out.length - from) + 1e-12)
+}
+
+/** 鎮曲（白天）一整個 loop（最多 60 秒）的 A 加權音量：鎮與鎮之間換曲子時不要忽大忽小（相差 3 dB 以內） */
+export const TOWN_SONGS = ['kyoto', 'okinawa', 'tokyo', 'hokkaido'] as const satisfies readonly SongId[]
+export async function townLevels(): Promise<Array<{ id: SongId; dBA: number }>> {
+  const out: Array<{ id: SongId; dBA: number }> = []
+  for (const id of TOWN_SONGS) {
+    const def = SONGS[id]
+    const seconds = Math.min(60, parsed(def).length * stepDuration(def.bpm, def.rows))
+    const r = await renderSong(id, { seconds })
+    out.push({ id, dBA: Math.round((await aWeightedDb(r.samples, r.sampleRate)) * 10) / 10 })
+  }
+  return out
+}
+
 /** 全部：每首（白天、夜裡、祭典）前 5 秒、每個 jingle、每個效果音 */
 export async function renderAll(seconds = 5): Promise<RenderStats[]> {
   const out: RenderStats[] = []

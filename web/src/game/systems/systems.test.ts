@@ -3,7 +3,7 @@ import { describe, expect, it } from 'vitest'
 import css from '../../styles/theme.css?raw'
 import { PX, type Tokens } from '../../services/pixelwalk/palette'
 import { factFromRef, FACT_IDS, renderFact } from '../content/facts'
-import { ICON_IDS, iconSprite, pixelRomaji, silhouetteOf, stampSprite } from '../content/icons'
+import { ICON_IDS, iconSprite, pixelRomaji, silhouetteOf, stampLines, stampSprite } from '../content/icons'
 import { PRICE } from '../content/items'
 import { Game, type GameOptions, NEW_GAME_MONEY } from '../engine/game'
 import { memoryStore, parseSave } from '../engine/save'
@@ -16,7 +16,7 @@ import { bloomOf, DataIndex, dayKey, kmText } from './data'
 import { DEV_START, DEV_TOWN, DEV_TOWN_2, devMaps, devWorld } from './dev/testWorld'
 import { installSystems } from './install'
 import { itemCard, itemKey, shiniseWhat } from './inventory'
-import { clampFrame, crop, frameSize, type Rect, scoreShot, type ShotInput, slotOf, zoomFrame } from './photo'
+import { clampFrame, crop, frameSize, type Rect, scoreShot, type ShotInput, slotOf, SNOWY_KITS, zoomFrame } from './photo'
 import { memoryPhotos } from './photoStore'
 import { questFor } from './quests'
 import { moveSlot, placeFromBag, slotIndex, takeBack } from './room'
@@ -122,6 +122,10 @@ describe('照片的構圖分數', () => {
     expect(scoreShot({ ...base, target: good, bloom: 'momiji' }).slot).toBe('momiji')
     expect(slotOf({ ...base, season: 'winter' })).toBe('snow')
     expect(slotOf({ ...base, season: 'winter', snowy: false })).toBe('normal')
+    // 會積雪的 kit：近畿、北海道；關東（東京）冬天只有下雪天才算雪景、沖繩沒有雪
+    expect([...SNOWY_KITS].sort()).toEqual(['hokkaido', 'kinki'])
+    expect(slotOf({ ...base, season: 'winter', snowy: SNOWY_KITS.has('kanto') })).toBe('normal')
+    expect(slotOf({ ...base, season: 'winter', weather: 'snow', snowy: SNOWY_KITS.has('kanto') })).toBe('snow')
     expect(slotOf({ ...base, weather: 'snow', time: 'night' })).toBe('night')
     expect(slotOf({ ...base, festival: true, time: 'night' })).toBe('festival')
     expect(scoreShot({ ...base, target: good, festival: true, time: 'night', bloom: 'sakura', selves: [good] }).score).toBeLessThanOrEqual(100)
@@ -251,6 +255,18 @@ describe('品項卡', () => {
       for (const k of s.keys) expect(PX).toContain(k)
     }
     expect(pixelRomaji('Nijōjō-mae')).toBe('NIJOJO-MAE')
+    // 站章的羅馬字：12 字以內一行；長的在空白、「-」斷兩行，不會切掉字（KINTETSU NAR）
+    expect(stampLines('KYOTO')).toEqual(['KYOTO'])
+    expect(stampLines('KINTETSU NARA')).toEqual(['KINTETSU NARA'])
+    expect(stampLines('MATSUO-TAISHA')).toEqual(['MATSUO-', 'TAISHA'])
+    expect(stampLines('OSAKA BUSINESS PARK')).toEqual(['OSAKA', 'BUSINESS PARK'])
+    expect(stampLines('TOROKKO ARASHIYAMA')).toEqual(['TOROKKO', 'ARASHIYAMA'])
+    expect(stampLines('KINOSAKI-ONSEN')).toEqual(['KINOSAKI-', 'ONSEN'])
+    expect(stampLines('BAMPAKUKINENKOEN')).toEqual(['BAMPAKUKINEN', 'KOEN'])
+    expect(stampLines('KASHIHARAJINGU-NISHIGUCHI')).toEqual(['KASHIHARAJIN', 'GU-NISHIGUCH'])
+    const two = stampSprite({ shape: 'station', silhouette: 'train', romaji: 'TOROKKO ARASHIYAMA' })
+    const row = (y: number) => Array.from({ length: two.w }, (_, x) => two.idx[y * two.w + x]).some((v) => v > 0)
+    expect(row(36)).toBe(true)
     expect(silhouetteOf('城', '', true)).toBe('gusuku')
     expect(silhouetteOf(undefined, '八坂神社')).toBe('torii')
     expect(silhouetteOf(undefined, '斎場御嶽', true)).toBe('utaki')

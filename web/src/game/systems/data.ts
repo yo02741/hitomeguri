@@ -1,4 +1,4 @@
-import { prefectureFullName, regionOf } from '../../data/regions'
+import { prefectureFullName, regionOf, regions } from '../../data/regions'
 import type { CalendarDate } from '../engine/clock'
 
 import type {
@@ -48,7 +48,11 @@ export function townCodeOfMap(mapId: string | null | undefined): string | null {
   return m ? m[1]! : null
 }
 
-export const kitOfPref = (pref: string): Kit => (pref === 'okinawa' ? 'okinawa' : 'kinki')
+/** 縣 → 地方（world/towns.ts 的 KIT_OF 一樣：奈良、大阪、兵庫跟京都同一套） */
+/** 縣的順序（北到南：regions.json） */
+const REGION_ORDER: readonly string[] = regions.map((r) => r.prefecture)
+
+export const kitOfPref = (pref: string): Kit => (pref === 'okinawa' ? 'okinawa' : pref === 'tokyo' ? 'kanto' : pref === 'hokkaido' ? 'hokkaido' : 'kinki')
 
 /** 縣的名字：京都府、沖縄県（regions.json） */
 export function prefName(pref: string): PlaceName {
@@ -109,6 +113,8 @@ export class DataIndex {
   private readonly stations = new Map<string, StationLike>()
   private readonly munis = new Map<string, MunicipalityLike & { pref: string }>()
   private readonly towns = new Map<string, TownLike>()
+  /** 世界索引的鎮（還沒讀的縣也在） */
+  private readonly atlasTowns = new Map<string, TownLike>()
   /** 每一筆資料是哪一縣的 */
   private readonly prefOfId = new Map<string, string>()
 
@@ -131,6 +137,27 @@ export class DataIndex {
       for (const m of p.municipalities ?? []) this.munis.set(m.m, { ...m, pref: p.pref })
     }
     for (const t of world?.towns ?? []) this.towns.set(t.id, t)
+    for (const p of world?.atlas ?? []) for (const t of p.towns) this.atlasTowns.set(t.id, t)
+  }
+
+  /**
+   * 遊戲的縣（手帳的地圖、印帳的頁）：世界索引的縣（北到南：regions.json 的順序），沒有索引時是讀進來的縣（京都、沖繩）。
+   */
+  gamePrefs(): string[] {
+    const atlas = this.world?.atlas?.map((p) => p.pref) ?? []
+    if (!atlas.length) return this.prefs.map((p) => p.pref)
+    const order = (pref: string) => {
+      const i = REGION_ORDER.indexOf(pref)
+      return i < 0 ? 99 : i
+    }
+    return [...atlas].sort((a, b) => order(a) - order(b))
+  }
+
+  /** 一縣的鎮：讀進來的（world）優先，沒讀的用世界索引的 */
+  townsOf(pref: string): TownLike[] {
+    const loaded = [...this.towns.values()].filter((t) => t.pref === pref)
+    if (loaded.length) return loaded
+    return this.world?.atlas?.find((p) => p.pref === pref)?.towns.slice() ?? []
   }
 
   spot = (id: string | undefined) => (id ? this.spots.get(id) : undefined)
@@ -156,7 +183,7 @@ export class DataIndex {
 
   town(code: string | null | undefined): TownLike | undefined {
     if (!code) return undefined
-    const t = this.towns.get(code)
+    const t = this.towns.get(code) ?? this.atlasTowns.get(code)
     if (t) return t
     // 沒有 world（測試、world 還沒好）：用市区町村當鎮
     const m = this.munis.get(code)
@@ -179,7 +206,10 @@ export class DataIndex {
     return m?.l ? { lng: m.l[0]!, lat: m.l[1]! } : null
   }
 
-  /** 這一鎮的季節用哪一個觀測站：離島用那個島的，其他用縣裡第一個（京都、那覇） */
+  /**
+   * 這一鎮的季節用哪一個觀測站：離島用那個島的；縣裡有好幾個站的（北海道）用最近的
+   * （world/season.ts 的 climateOf 一樣：站名對到市区町村的位置）；其他用縣裡第一個（京都、那覇）。
+   */
   seasonStation(t: TownLike | undefined): SeasonStationLike | null {
     const p = this.pref(t?.pref)
     const list = p?.seasons?.stations ?? []
@@ -193,7 +223,29 @@ export class DataIndex {
       ['大東', '南大東島'],
     ] as const
     for (const [k, st] of island) if (name.includes(k)) return list.find((s) => s.name === st) ?? list[0]!
-    return list[0]!
+    const c = t && list.length > 1 && t.pref !== 'okinawa' ? this.centerOf(t) : null
+    if (!c) return list[0]!
+    let best = list[0]!
+    let bd = Infinity
+    for (const st of list) {
+      const at = this.stationPlace(p!.pref, st.name)
+      const d = at ? distanceKm(at, c) : Infinity
+      if (d < bd) {
+        bd = d
+        best = st
+      }
+    }
+    return best
+  }
+
+  /** 氣象台在哪：站名對到市区町村（札幌 → 札幌市的區、函館 → 函館市；world/season.ts 的 stationPlace） */
+  private stationPlace(pref: string, name: string): { lat: number; lng: number } | null {
+    const stem = name.replace(/島$/, '')
+    const pts: { lat: number; lng: number }[] = []
+    for (const m of this.munis.values())
+      if (m.pref === pref && m.l && (m.n.startsWith(stem) || m.c?.startsWith(name))) pts.push({ lng: m.l[0]!, lat: m.l[1]! })
+    if (!pts.length) return null
+    return { lat: pts.reduce((t, p) => t + p.lat, 0) / pts.length, lng: pts.reduce((t, p) => t + p.lng, 0) / pts.length }
   }
 
   /** 季節資料的出處（氣象廳） */

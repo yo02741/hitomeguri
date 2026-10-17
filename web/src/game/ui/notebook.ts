@@ -153,6 +153,8 @@ export interface HeardEntry {
 }
 export interface HeardPageData {
   facts: HeardEntry[]
+  /** 有幾句的那一縣資料還沒讀進來（P3 的延遲載入）：頁面寫「讀取中」，讀好了換上 */
+  pending?: boolean
 }
 
 /** P2：進行中的委託 */

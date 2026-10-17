@@ -1,0 +1,2051 @@
+{
+ "v": 1,
+ "start": "kyoto",
+ "attribution": {
+  "rail": "© OpenStreetMap contributors",
+  "straight": "国土数値情報（行政区域データ）"
+ },
+ "prefs": [
+  {
+   "pref": "kyoto",
+   "kit": "kinki",
+   "startStop": "main",
+   "towns": [
+    {
+     "id": "261068",
+     "name": {
+      "ja": "下京区",
+      "kana": "しもぎょうく"
+     },
+     "station": {
+      "id": "node-267316272",
+      "name": "京都",
+      "kind": "rail"
+     },
+     "center": {
+      "lat": 34.98535,
+      "lng": 135.75877
+     },
+     "stops": [
+      {
+       "id": "main",
+       "kind": "rail",
+       "name": "京都",
+       "stationId": "node-267316272"
+      }
+     ],
+     "city": "京都市"
+    },
+    {
+     "id": "261041",
+     "name": {
+      "ja": "中京区",
+      "kana": "なかぎょうく"
+     },
+     "station": {
+      "id": "node-7783352310",
+      "name": "二条城前",
+      "kind": "rail"
+     },
+     "center": {
+      "lat": 35.01189,
+      "lng": 135.75028
+     },
+     "stops": [
+      {
+       "id": "main",
+       "kind": "rail",
+       "name": "二条城前",
+       "stationId": "node-7783352310"
+      }
+     ],
+     "city": "京都市"
+    },
+    {
+     "id": "262013",
+     "name": {
+      "ja": "福知山市",
+      "kana": "ふくちやまし"
+     },
+     "station": {
+      "id": "node-4307273710",
+      "name": "福知山",
+      "kind": "rail"
+     },
+     "center": {
+      "lat": 35.29604,
+      "lng": 135.11887
+     },
+     "stops": [
+      {
+       "id": "main",
+       "kind": "rail",
+       "name": "福知山",
+       "stationId": "node-4307273710"
+      }
+     ]
+    },
+    {
+     "id": "261050",
+     "name": {
+      "ja": "東山区",
+      "kana": "ひがしやまく"
+     },
+     "station": {
+      "id": "node-6883622225",
+      "name": "祇園四条",
+      "kind": "rail"
+     },
+     "center": {
+      "lat": 35.00323,
+      "lng": 135.77193
+     },
+     "stops": [
+      {
+       "id": "main",
+       "kind": "rail",
+       "name": "祇園四条",
+       "stationId": "node-6883622225"
+      }
+     ],
+     "city": "京都市"
+    },
+    {
+     "id": "261084",
+     "name": {
+      "ja": "右京区",
+      "kana": "うきょうく"
+     },
+     "station": {
+      "id": "node-13377627425",
+      "name": "トロッコ嵐山",
+      "kind": "rail"
+     },
+     "center": {
+      "lat": 35.01714,
+      "lng": 135.67024
+     },
+     "stops": [
+      {
+       "id": "main",
+       "kind": "rail",
+       "name": "トロッコ嵐山",
+       "stationId": "node-13377627425"
+      }
+     ],
+     "city": "京都市"
+    },
+    {
+     "id": "261033",
+     "name": {
+      "ja": "左京区",
+      "kana": "さきょうく"
+     },
+     "station": {
+      "id": "node-7886699754",
+      "name": "鞍馬",
+      "kind": "rail"
+     },
+     "center": {
+      "lat": 35.1129,
+      "lng": 135.77227
+     },
+     "stops": [
+      {
+       "id": "main",
+       "kind": "rail",
+       "name": "鞍馬",
+       "stationId": "node-7886699754"
+      }
+     ],
+     "city": "京都市"
+    },
+    {
+     "id": "261017",
+     "name": {
+      "ja": "北区",
+      "kana": "きたく"
+     },
+     "station": {
+      "id": "node-7780381707",
+      "name": "北大路",
+      "kind": "rail"
+     },
+     "center": {
+      "lat": 35.04457,
+      "lng": 135.75871
+     },
+     "stops": [
+      {
+       "id": "main",
+       "kind": "rail",
+       "name": "北大路",
+       "stationId": "node-7780381707"
+      }
+     ],
+     "city": "京都市"
+    },
+    {
+     "id": "261025",
+     "name": {
+      "ja": "上京区",
+      "kana": "かみぎょうく"
+     },
+     "station": {
+      "id": "node-7780381705",
+      "name": "今出川",
+      "kind": "rail"
+     },
+     "center": {
+      "lat": 35.02939,
+      "lng": 135.75937
+     },
+     "stops": [
+      {
+       "id": "main",
+       "kind": "rail",
+       "name": "今出川",
+       "stationId": "node-7780381705"
+      }
+     ],
+     "city": "京都市"
+    },
+    {
+     "id": "261114",
+     "name": {
+      "ja": "西京区",
+      "kana": "にしきょうく"
+     },
+     "station": {
+      "id": "node-3671722998",
+      "name": "松尾大社",
+      "kind": "rail"
+     },
+     "center": {
+      "lat": 35.00032,
+      "lng": 135.68824
+     },
+     "stops": [
+      {
+       "id": "main",
+       "kind": "rail",
+       "name": "松尾大社",
+       "stationId": "node-3671722998"
+      }
+     ],
+     "city": "京都市"
+    }
+   ]
+  },
+  {
+   "pref": "okinawa",
+   "kit": "okinawa",
+   "startStop": "airport",
+   "towns": [
+    {
+     "id": "472018",
+     "name": {
+      "ja": "那覇市",
+      "kana": "なはし"
+     },
+     "station": {
+      "id": "node-6540547646",
+      "name": "県庁前",
+      "kind": "monorail"
+     },
+     "center": {
+      "lat": 26.21438,
+      "lng": 127.67933
+     },
+     "stops": [
+      {
+       "id": "main",
+       "kind": "monorail",
+       "name": "県庁前",
+       "stationId": "node-6540547646"
+      },
+      {
+       "id": "airport",
+       "kind": "airport",
+       "name": "那覇空港",
+       "spotId": "wd-Q1197455"
+      },
+      {
+       "id": "st:node-6540630178",
+       "kind": "monorail",
+       "name": "那覇空港",
+       "stationId": "node-6540630178"
+      },
+      {
+       "id": "st:node-6540583676",
+       "kind": "monorail",
+       "name": "首里",
+       "stationId": "node-6540583676"
+      },
+      {
+       "id": "bus",
+       "kind": "bus",
+       "name": "那覇市"
+      }
+     ]
+    },
+    {
+     "id": "472131",
+     "name": {
+      "ja": "うるま市",
+      "kana": "うるまし"
+     },
+     "station": {
+      "id": "bus:472131",
+      "name": "うるま市",
+      "kind": "bus"
+     },
+     "center": {
+      "lat": 26.3618,
+      "lng": 127.8508
+     },
+     "stops": [
+      {
+       "id": "main",
+       "kind": "bus",
+       "name": "うるま市"
+      }
+     ]
+    },
+    {
+     "id": "473243",
+     "name": {
+      "ja": "読谷村"
+     },
+     "station": {
+      "id": "bus:473243",
+      "name": "読谷村",
+      "kind": "bus"
+     },
+     "center": {
+      "lat": 26.3931,
+      "lng": 127.7493
+     },
+     "stops": [
+      {
+       "id": "main",
+       "kind": "bus",
+       "name": "読谷村"
+      }
+     ]
+    },
+    {
+     "id": "473065",
+     "name": {
+      "ja": "今帰仁村",
+      "kana": "なきじんそん"
+     },
+     "station": {
+      "id": "bus:473065",
+      "name": "今帰仁村",
+      "kind": "bus"
+     },
+     "center": {
+      "lat": 26.6885,
+      "lng": 127.9485
+     },
+     "stops": [
+      {
+       "id": "main",
+       "kind": "bus",
+       "name": "今帰仁村"
+      }
+     ]
+    },
+    {
+     "id": "473286",
+     "name": {
+      "ja": "中城村",
+      "kana": "なかぐすくそん"
+     },
+     "station": {
+      "id": "bus:473286",
+      "name": "中城村",
+      "kind": "bus"
+     },
+     "center": {
+      "lat": 26.2647,
+      "lng": 127.7852
+     },
+     "stops": [
+      {
+       "id": "main",
+       "kind": "bus",
+       "name": "中城村"
+      }
+     ]
+    },
+    {
+     "id": "472140",
+     "name": {
+      "ja": "宮古島市",
+      "kana": "みやこじまし"
+     },
+     "station": {
+      "id": "wd-Q654922",
+      "name": "下地島空港",
+      "kind": "airport"
+     },
+     "center": {
+      "lat": 24.82667,
+      "lng": 125.14472
+     },
+     "stops": [
+      {
+       "id": "main",
+       "kind": "airport",
+       "name": "下地島空港",
+       "spotId": "wd-Q654922"
+      }
+     ],
+     "island": true
+    },
+    {
+     "id": "472158",
+     "name": {
+      "ja": "南城市",
+      "kana": "なんじょうし"
+     },
+     "station": {
+      "id": "bus:472158",
+      "name": "南城市",
+      "kind": "bus"
+     },
+     "center": {
+      "lat": 26.1544,
+      "lng": 127.766
+     },
+     "stops": [
+      {
+       "id": "main",
+       "kind": "bus",
+       "name": "南城市"
+      }
+     ]
+    },
+    {
+     "id": "472093",
+     "name": {
+      "ja": "名護市"
+     },
+     "station": {
+      "id": "bus:472093",
+      "name": "名護市",
+      "kind": "bus"
+     },
+     "center": {
+      "lat": 26.5961,
+      "lng": 128.0541
+     },
+     "stops": [
+      {
+       "id": "main",
+       "kind": "bus",
+       "name": "名護市"
+      }
+     ]
+    },
+    {
+     "id": "473111",
+     "name": {
+      "ja": "恩納村",
+      "kana": "おんなそん"
+     },
+     "station": {
+      "id": "bus:473111",
+      "name": "恩納村",
+      "kind": "bus"
+     },
+     "center": {
+      "lat": 26.4924,
+      "lng": 127.8707
+     },
+     "stops": [
+      {
+       "id": "main",
+       "kind": "bus",
+       "name": "恩納村"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "pref": "nara",
+   "kit": "kinki",
+   "startStop": "main",
+   "towns": [
+    {
+     "id": "292010",
+     "name": {
+      "ja": "奈良市",
+      "kana": "ならし"
+     },
+     "station": {
+      "id": "node-4452353501",
+      "name": "近鉄奈良",
+      "kind": "rail"
+     },
+     "center": {
+      "lat": 34.68414,
+      "lng": 135.82854
+     },
+     "stops": [
+      {
+       "id": "main",
+       "kind": "rail",
+       "name": "近鉄奈良",
+       "stationId": "node-4452353501"
+      }
+     ]
+    },
+    {
+     "id": "292036",
+     "name": {
+      "ja": "大和郡山市",
+      "kana": "やまとこおりやまし"
+     },
+     "station": {
+      "id": "node-10048234248",
+      "name": "近鉄郡山",
+      "kind": "rail"
+     },
+     "center": {
+      "lat": 34.64669,
+      "lng": 135.78087
+     },
+     "stops": [
+      {
+       "id": "main",
+       "kind": "rail",
+       "name": "近鉄郡山",
+       "stationId": "node-10048234248"
+      }
+     ]
+    },
+    {
+     "id": "292125",
+     "name": {
+      "ja": "宇陀市",
+      "kana": "うだし"
+     },
+     "station": {
+      "id": "node-7891898735",
+      "name": "室生口大野",
+      "kind": "rail"
+     },
+     "center": {
+      "lat": 34.56615,
+      "lng": 136.01535
+     },
+     "stops": [
+      {
+       "id": "main",
+       "kind": "rail",
+       "name": "室生口大野",
+       "stationId": "node-7891898735"
+      }
+     ]
+    },
+    {
+     "id": "294012",
+     "name": {
+      "ja": "高取町",
+      "kana": "たかとりちょう"
+     },
+     "station": {
+      "id": "node-413348200",
+      "name": "市尾",
+      "kind": "rail"
+     },
+     "center": {
+      "lat": 34.4417,
+      "lng": 135.77619
+     },
+     "stops": [
+      {
+       "id": "main",
+       "kind": "rail",
+       "name": "市尾",
+       "stationId": "node-413348200"
+      }
+     ]
+    },
+    {
+     "id": "294021",
+     "name": {
+      "ja": "明日香村",
+      "kana": "あすかむら"
+     },
+     "station": {
+      "id": "node-413348804",
+      "name": "飛鳥",
+      "kind": "rail"
+     },
+     "center": {
+      "lat": 34.46494,
+      "lng": 135.79816
+     },
+     "stops": [
+      {
+       "id": "main",
+       "kind": "rail",
+       "name": "飛鳥",
+       "stationId": "node-413348804"
+      }
+     ]
+    },
+    {
+     "id": "292052",
+     "name": {
+      "ja": "橿原市",
+      "kana": "かしはらし"
+     },
+     "station": {
+      "id": "node-4053979280",
+      "name": "橿原神宮西口",
+      "kind": "rail"
+     },
+     "center": {
+      "lat": 34.4861,
+      "lng": 135.78163
+     },
+     "stops": [
+      {
+       "id": "main",
+       "kind": "rail",
+       "name": "橿原神宮西口",
+       "stationId": "node-4053979280"
+      }
+     ]
+    },
+    {
+     "id": "292061",
+     "name": {
+      "ja": "桜井市",
+      "kana": "さくらいし"
+     },
+     "station": {
+      "id": "node-7836351952",
+      "name": "三輪",
+      "kind": "rail"
+     },
+     "center": {
+      "lat": 34.5269,
+      "lng": 135.84864
+     },
+     "stops": [
+      {
+       "id": "main",
+       "kind": "rail",
+       "name": "三輪",
+       "stationId": "node-7836351952"
+      }
+     ]
+    },
+    {
+     "id": "292044",
+     "name": {
+      "ja": "天理市",
+      "kana": "てんりし"
+     },
+     "station": {
+      "id": "node-7836351949",
+      "name": "柳本",
+      "kind": "rail"
+     },
+     "center": {
+      "lat": 34.55931,
+      "lng": 135.8386
+     },
+     "stops": [
+      {
+       "id": "main",
+       "kind": "rail",
+       "name": "柳本",
+       "stationId": "node-7836351949"
+      }
+     ]
+    },
+    {
+     "id": "294411",
+     "name": {
+      "ja": "吉野町",
+      "kana": "よしのちょう"
+     },
+     "station": {
+      "id": "node-8164014181",
+      "name": "吉野",
+      "kind": "rail"
+     },
+     "center": {
+      "lat": 34.37701,
+      "lng": 135.85356
+     },
+     "stops": [
+      {
+       "id": "main",
+       "kind": "rail",
+       "name": "吉野",
+       "stationId": "node-8164014181"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "pref": "osaka",
+   "kit": "kinki",
+   "startStop": "main",
+   "towns": [
+    {
+     "id": "271276",
+     "name": {
+      "ja": "北区",
+      "kana": "きたく"
+     },
+     "station": {
+      "id": "node-346685291",
+      "name": "大阪",
+      "kind": "rail"
+     },
+     "center": {
+      "lat": 34.70221,
+      "lng": 135.49557
+     },
+     "stops": [
+      {
+       "id": "main",
+       "kind": "rail",
+       "name": "大阪",
+       "stationId": "node-346685291"
+      }
+     ],
+     "city": "大阪市"
+    },
+    {
+     "id": "271284",
+     "name": {
+      "ja": "中央区",
+      "kana": "ちゅうおうく"
+     },
+     "station": {
+      "id": "node-7793776917",
+      "name": "大阪ビジネスパーク",
+      "kind": "rail"
+     },
+     "center": {
+      "lat": 34.69241,
+      "lng": 135.52948
+     },
+     "stops": [
+      {
+       "id": "main",
+       "kind": "rail",
+       "name": "大阪ビジネスパーク",
+       "stationId": "node-7793776917"
+      }
+     ],
+     "city": "大阪市"
+    },
+    {
+     "id": "272078",
+     "name": {
+      "ja": "高槻市",
+      "kana": "たかつきし"
+     },
+     "station": {
+      "id": "node-335668062",
+      "name": "高槻市",
+      "kind": "rail"
+     },
+     "center": {
+      "lat": 34.84986,
+      "lng": 135.62325
+     },
+     "stops": [
+      {
+       "id": "main",
+       "kind": "rail",
+       "name": "高槻市",
+       "stationId": "node-335668062"
+      }
+     ]
+    },
+    {
+     "id": "272027",
+     "name": {
+      "ja": "岸和田市",
+      "kana": "きしわだし"
+     },
+     "station": {
+      "id": "node-8157672502",
+      "name": "蛸地蔵",
+      "kind": "rail"
+     },
+     "center": {
+      "lat": 34.45623,
+      "lng": 135.36989
+     },
+     "stops": [
+      {
+       "id": "main",
+       "kind": "rail",
+       "name": "蛸地蔵",
+       "stationId": "node-8157672502"
+      }
+     ]
+    },
+    {
+     "id": "272183",
+     "name": {
+      "ja": "大東市",
+      "kana": "だいとうし"
+     },
+     "station": {
+      "id": "node-11377440616",
+      "name": "四条畷",
+      "kind": "rail"
+     },
+     "center": {
+      "lat": 34.73045,
+      "lng": 135.63934
+     },
+     "stops": [
+      {
+       "id": "main",
+       "kind": "rail",
+       "name": "四条畷",
+       "stationId": "node-11377440616"
+      }
+     ]
+    },
+    {
+     "id": "271098",
+     "name": {
+      "ja": "天王寺区",
+      "kana": "てんのうじく"
+     },
+     "station": {
+      "id": "node-3632179681",
+      "name": "天王寺",
+      "kind": "rail"
+     },
+     "center": {
+      "lat": 34.64734,
+      "lng": 135.51524
+     },
+     "stops": [
+      {
+       "id": "main",
+       "kind": "rail",
+       "name": "天王寺",
+       "stationId": "node-3632179681"
+      }
+     ],
+     "city": "大阪市"
+    },
+    {
+     "id": "271110",
+     "name": {
+      "ja": "浪速区",
+      "kana": "なにわく"
+     },
+     "station": {
+      "id": "node-7937883043",
+      "name": "恵美須町",
+      "kind": "rail"
+     },
+     "center": {
+      "lat": 34.6556,
+      "lng": 135.50566
+     },
+     "stops": [
+      {
+       "id": "main",
+       "kind": "rail",
+       "name": "恵美須町",
+       "stationId": "node-7937883043"
+      }
+     ],
+     "city": "大阪市"
+    },
+    {
+     "id": "272051",
+     "name": {
+      "ja": "吹田市",
+      "kana": "すいたし"
+     },
+     "station": {
+      "id": "node-4894577730",
+      "name": "万博記念公園",
+      "kind": "monorail"
+     },
+     "center": {
+      "lat": 34.80687,
+      "lng": 135.53015
+     },
+     "stops": [
+      {
+       "id": "main",
+       "kind": "monorail",
+       "name": "万博記念公園",
+       "stationId": "node-4894577730"
+      }
+     ]
+    },
+    {
+     "id": "272132",
+     "name": {
+      "ja": "泉佐野市",
+      "kana": "いずみさのし"
+     },
+     "station": {
+      "id": "node-3978841588",
+      "name": "りんくうタウン",
+      "kind": "rail"
+     },
+     "center": {
+      "lat": 34.41075,
+      "lng": 135.29966
+     },
+     "stops": [
+      {
+       "id": "main",
+       "kind": "rail",
+       "name": "りんくうタウン",
+       "stationId": "node-3978841588"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "pref": "hyogo",
+   "kit": "kinki",
+   "startStop": "main",
+   "towns": [
+    {
+     "id": "281107",
+     "name": {
+      "ja": "中央区",
+      "kana": "ちゅうおうく"
+     },
+     "station": {
+      "id": "node-3999683422",
+      "name": "三ノ宮",
+      "kind": "rail"
+     },
+     "center": {
+      "lat": 34.69486,
+      "lng": 135.19509
+     },
+     "stops": [
+      {
+       "id": "main",
+       "kind": "rail",
+       "name": "三ノ宮",
+       "stationId": "node-3999683422"
+      }
+     ],
+     "city": "神戸市"
+    },
+    {
+     "id": "282014",
+     "name": {
+      "ja": "姫路市",
+      "kana": "ひめじし"
+     },
+     "station": {
+      "id": "node-267063488",
+      "name": "京口",
+      "kind": "rail"
+     },
+     "center": {
+      "lat": 34.83403,
+      "lng": 134.70514
+     },
+     "stops": [
+      {
+       "id": "main",
+       "kind": "rail",
+       "name": "京口",
+       "stationId": "node-267063488"
+      }
+     ]
+    },
+    {
+     "id": "282090",
+     "name": {
+      "ja": "豊岡市",
+      "kana": "とよおかし"
+     },
+     "station": {
+      "id": "node-8018662107",
+      "name": "城崎温泉",
+      "kind": "rail"
+     },
+     "center": {
+      "lat": 35.6237,
+      "lng": 134.81366
+     },
+     "stops": [
+      {
+       "id": "main",
+       "kind": "rail",
+       "name": "城崎温泉",
+       "stationId": "node-8018662107"
+      }
+     ]
+    },
+    {
+     "id": "282031",
+     "name": {
+      "ja": "明石市",
+      "kana": "あかしし"
+     },
+     "station": {
+      "id": "node-8187038820",
+      "name": "人丸前",
+      "kind": "rail"
+     },
+     "center": {
+      "lat": 34.64757,
+      "lng": 135.0019
+     },
+     "stops": [
+      {
+       "id": "main",
+       "kind": "rail",
+       "name": "人丸前",
+       "stationId": "node-8187038820"
+      }
+     ]
+    },
+    {
+     "id": "282120",
+     "name": {
+      "ja": "赤穂市",
+      "kana": "あこうし"
+     },
+     "station": {
+      "id": "node-8118655884",
+      "name": "播州赤穂",
+      "kind": "rail"
+     },
+     "center": {
+      "lat": 34.75665,
+      "lng": 134.39317
+     },
+     "stops": [
+      {
+       "id": "main",
+       "kind": "rail",
+       "name": "播州赤穂",
+       "stationId": "node-8118655884"
+      }
+     ]
+    },
+    {
+     "id": "282049",
+     "name": {
+      "ja": "西宮市",
+      "kana": "にしのみやし"
+     },
+     "station": {
+      "id": "node-3632717539",
+      "name": "甲子園",
+      "kind": "rail"
+     },
+     "center": {
+      "lat": 34.72407,
+      "lng": 135.3629
+     },
+     "stops": [
+      {
+       "id": "main",
+       "kind": "rail",
+       "name": "甲子園",
+       "stationId": "node-3632717539"
+      }
+     ]
+    },
+    {
+     "id": "281018",
+     "name": {
+      "ja": "東灘区",
+      "kana": "ひがしなだく"
+     },
+     "station": {
+      "id": "node-4803550962",
+      "name": "岡本",
+      "kind": "rail"
+     },
+     "center": {
+      "lat": 34.72918,
+      "lng": 135.2759
+     },
+     "stops": [
+      {
+       "id": "main",
+       "kind": "rail",
+       "name": "岡本",
+       "stationId": "node-4803550962"
+      }
+     ],
+     "city": "神戸市"
+    },
+    {
+     "id": "281026",
+     "name": {
+      "ja": "灘区",
+      "kana": "なだく"
+     },
+     "station": {
+      "id": "node-3629375867",
+      "name": "王子公園",
+      "kind": "rail"
+     },
+     "center": {
+      "lat": 34.71018,
+      "lng": 135.21847
+     },
+     "stops": [
+      {
+       "id": "main",
+       "kind": "rail",
+       "name": "王子公園",
+       "stationId": "node-3629375867"
+      }
+     ],
+     "city": "神戸市"
+    },
+    {
+     "id": "281093",
+     "name": {
+      "ja": "北区",
+      "kana": "きたく"
+     },
+     "station": {
+      "id": "node-517820275",
+      "name": "有馬温泉",
+      "kind": "rail"
+     },
+     "center": {
+      "lat": 34.79926,
+      "lng": 135.24627
+     },
+     "stops": [
+      {
+       "id": "main",
+       "kind": "rail",
+       "name": "有馬温泉",
+       "stationId": "node-517820275"
+      }
+     ],
+     "city": "神戸市"
+    }
+   ]
+  },
+  {
+   "pref": "tokyo",
+   "kit": "kanto",
+   "startStop": "main",
+   "towns": [
+    {
+     "id": "131016",
+     "name": {
+      "ja": "千代田区",
+      "kana": "ちよだく"
+     },
+     "station": {
+      "id": "node-11329319854",
+      "name": "東京",
+      "kind": "rail"
+     },
+     "center": {
+      "lat": 35.68114,
+      "lng": 139.76746
+     },
+     "stops": [
+      {
+       "id": "main",
+       "kind": "rail",
+       "name": "東京",
+       "stationId": "node-11329319854"
+      }
+     ]
+    },
+    {
+     "id": "132012",
+     "name": {
+      "ja": "八王子市",
+      "kana": "はちおうじし"
+     },
+     "station": {
+      "id": "node-3622405815",
+      "name": "高尾",
+      "kind": "rail"
+     },
+     "center": {
+      "lat": 35.64166,
+      "lng": 139.28163
+     },
+     "stops": [
+      {
+       "id": "main",
+       "kind": "rail",
+       "name": "高尾",
+       "stationId": "node-3622405815"
+      }
+     ]
+    },
+    {
+     "id": "131067",
+     "name": {
+      "ja": "台東区",
+      "kana": "たいとうく"
+     },
+     "station": {
+      "id": "node-236578444",
+      "name": "上野",
+      "kind": "rail"
+     },
+     "center": {
+      "lat": 35.71341,
+      "lng": 139.77654
+     },
+     "stops": [
+      {
+       "id": "main",
+       "kind": "rail",
+       "name": "上野",
+       "stationId": "node-236578444"
+      }
+     ]
+    },
+    {
+     "id": "131032",
+     "name": {
+      "ja": "港区",
+      "kana": "みなとく"
+     },
+     "station": {
+      "id": "node-7786715975",
+      "name": "六本木",
+      "kind": "rail"
+     },
+     "center": {
+      "lat": 35.66284,
+      "lng": 139.73133
+     },
+     "stops": [
+      {
+       "id": "main",
+       "kind": "rail",
+       "name": "六本木",
+       "stationId": "node-7786715975"
+      }
+     ]
+    },
+    {
+     "id": "131130",
+     "name": {
+      "ja": "渋谷区",
+      "kana": "しぶやく"
+     },
+     "station": {
+      "id": "node-6806051378",
+      "name": "原宿",
+      "kind": "rail"
+     },
+     "center": {
+      "lat": 35.67021,
+      "lng": 139.70243
+     },
+     "stops": [
+      {
+       "id": "main",
+       "kind": "rail",
+       "name": "原宿",
+       "stationId": "node-6806051378"
+      }
+     ]
+    },
+    {
+     "id": "131059",
+     "name": {
+      "ja": "文京区",
+      "kana": "ぶんきょうく"
+     },
+     "station": {
+      "id": "node-6235968753",
+      "name": "早稲田",
+      "kind": "rail"
+     },
+     "center": {
+      "lat": 35.71181,
+      "lng": 139.71917
+     },
+     "stops": [
+      {
+       "id": "main",
+       "kind": "rail",
+       "name": "早稲田",
+       "stationId": "node-6235968753"
+      }
+     ]
+    },
+    {
+     "id": "131024",
+     "name": {
+      "ja": "中央区",
+      "kana": "ちゅうおうく"
+     },
+     "station": {
+      "id": "node-6271990033",
+      "name": "銀座",
+      "kind": "rail"
+     },
+     "center": {
+      "lat": 35.67284,
+      "lng": 139.7631
+     },
+     "stops": [
+      {
+       "id": "main",
+       "kind": "rail",
+       "name": "銀座",
+       "stationId": "node-6271990033"
+      }
+     ]
+    },
+    {
+     "id": "131041",
+     "name": {
+      "ja": "新宿区",
+      "kana": "しんじゅくく"
+     },
+     "station": {
+      "id": "node-6203591949",
+      "name": "都庁前",
+      "kind": "rail"
+     },
+     "center": {
+      "lat": 35.69061,
+      "lng": 139.69281
+     },
+     "stops": [
+      {
+       "id": "main",
+       "kind": "rail",
+       "name": "都庁前",
+       "stationId": "node-6203591949"
+      }
+     ]
+    },
+    {
+     "id": "131075",
+     "name": {
+      "ja": "墨田区",
+      "kana": "すみだく"
+     },
+     "station": {
+      "id": "node-2558121937",
+      "name": "両国",
+      "kind": "rail"
+     },
+     "center": {
+      "lat": 35.69582,
+      "lng": 139.79297
+     },
+     "stops": [
+      {
+       "id": "main",
+       "kind": "rail",
+       "name": "両国",
+       "stationId": "node-2558121937"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "pref": "hokkaido",
+   "kit": "hokkaido",
+   "startStop": "airport",
+   "towns": [
+    {
+     "id": "012246",
+     "name": {
+      "ja": "千歳市",
+      "kana": "ちとせし"
+     },
+     "station": {
+      "id": "node-8084742769",
+      "name": "千歳",
+      "kind": "rail"
+     },
+     "center": {
+      "lat": 42.82826,
+      "lng": 141.65186
+     },
+     "stops": [
+      {
+       "id": "main",
+       "kind": "rail",
+       "name": "千歳",
+       "stationId": "node-8084742769"
+      },
+      {
+       "id": "airport",
+       "kind": "airport",
+       "name": "新千歳空港",
+       "spotId": "wd-Q908296"
+      }
+     ]
+    },
+    {
+     "id": "011011",
+     "name": {
+      "ja": "中央区",
+      "kana": "ちゅうおうく"
+     },
+     "station": {
+      "id": "node-10255638452",
+      "name": "大通",
+      "kind": "rail"
+     },
+     "center": {
+      "lat": 43.06072,
+      "lng": 141.35531
+     },
+     "stops": [
+      {
+       "id": "main",
+       "kind": "rail",
+       "name": "大通",
+       "stationId": "node-10255638452"
+      }
+     ],
+     "city": "札幌市"
+    },
+    {
+     "id": "012025",
+     "name": {
+      "ja": "函館市",
+      "kana": "はこだてし"
+     },
+     "station": {
+      "id": "node-8206074563",
+      "name": "函館",
+      "kind": "rail"
+     },
+     "center": {
+      "lat": 41.77434,
+      "lng": 140.72625
+     },
+     "stops": [
+      {
+       "id": "main",
+       "kind": "rail",
+       "name": "函館",
+       "stationId": "node-8206074563"
+      }
+     ]
+    },
+    {
+     "id": "012068",
+     "name": {
+      "ja": "釧路市",
+      "kana": "くしろし"
+     },
+     "station": {
+      "id": "node-5820145042",
+      "name": "釧路",
+      "kind": "rail"
+     },
+     "center": {
+      "lat": 42.99068,
+      "lng": 144.38204
+     },
+     "stops": [
+      {
+       "id": "main",
+       "kind": "rail",
+       "name": "釧路",
+       "stationId": "node-5820145042"
+      }
+     ]
+    },
+    {
+     "id": "012033",
+     "name": {
+      "ja": "小樽市",
+      "kana": "おたるし"
+     },
+     "station": {
+      "id": "node-8082693151",
+      "name": "小樽",
+      "kind": "rail"
+     },
+     "center": {
+      "lat": 43.19758,
+      "lng": 140.99337
+     },
+     "stops": [
+      {
+       "id": "main",
+       "kind": "rail",
+       "name": "小樽",
+       "stationId": "node-8082693151"
+      }
+     ]
+    },
+    {
+     "id": "015458",
+     "name": {
+      "ja": "斜里町",
+      "kana": "しゃりちょう"
+     },
+     "station": {
+      "id": "bus:015458",
+      "name": "斜里町",
+      "kind": "bus"
+     },
+     "center": {
+      "lat": 43.8494,
+      "lng": 144.7562
+     },
+     "stops": [
+      {
+       "id": "main",
+       "kind": "bus",
+       "name": "斜里町"
+      }
+     ]
+    },
+    {
+     "id": "012041",
+     "name": {
+      "ja": "旭川市",
+      "kana": "あさひかわし"
+     },
+     "station": {
+      "id": "node-264437087",
+      "name": "桜岡",
+      "kind": "rail"
+     },
+     "center": {
+      "lat": 43.80218,
+      "lng": 142.48733
+     },
+     "stops": [
+      {
+       "id": "main",
+       "kind": "rail",
+       "name": "桜岡",
+       "stationId": "node-264437087"
+      }
+     ]
+    },
+    {
+     "id": "012114",
+     "name": {
+      "ja": "網走市",
+      "kana": "あばしりし"
+     },
+     "station": {
+      "id": "node-264449544",
+      "name": "桂台",
+      "kind": "rail"
+     },
+     "center": {
+      "lat": 44.01702,
+      "lng": 144.27334
+     },
+     "stops": [
+      {
+       "id": "main",
+       "kind": "rail",
+       "name": "桂台",
+       "stationId": "node-264449544"
+      }
+     ]
+    },
+    {
+     "id": "014591",
+     "name": {
+      "ja": "美瑛町",
+      "kana": "びえいちょう"
+     },
+     "station": {
+      "id": "bus:014591",
+      "name": "美瑛町",
+      "kind": "bus"
+     },
+     "center": {
+      "lat": 43.5454,
+      "lng": 142.6915
+     },
+     "stops": [
+      {
+       "id": "main",
+       "kind": "bus",
+       "name": "美瑛町"
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "links": [
+  {
+   "id": "261068.main>472018.airport",
+   "from": "261068",
+   "fromPref": "kyoto",
+   "fromStop": "main",
+   "to": "472018",
+   "toPref": "okinawa",
+   "toStop": "airport",
+   "mode": "rail",
+   "legs": [
+    {
+     "mode": "rail",
+     "km": 84.9,
+     "kmKind": "rail",
+     "to": "関西国際空港"
+    },
+    {
+     "mode": "plane",
+     "km": 1168.9,
+     "kmKind": "straight",
+     "to": "那覇空港"
+    }
+   ],
+   "name": "那覇空港"
+  },
+  {
+   "id": "472018.airport>261068.main",
+   "from": "472018",
+   "fromPref": "okinawa",
+   "fromStop": "airport",
+   "to": "261068",
+   "toPref": "kyoto",
+   "toStop": "main",
+   "mode": "plane",
+   "legs": [
+    {
+     "mode": "plane",
+     "km": 1168.9,
+     "kmKind": "straight",
+     "to": "関西国際空港"
+    },
+    {
+     "mode": "rail",
+     "km": 84.9,
+     "kmKind": "rail",
+     "to": "京都"
+    }
+   ],
+   "name": "京都"
+  },
+  {
+   "id": "261068.main>292010.main",
+   "from": "261068",
+   "fromPref": "kyoto",
+   "fromStop": "main",
+   "to": "292010",
+   "toPref": "nara",
+   "toStop": "main",
+   "mode": "rail",
+   "legs": [
+    {
+     "mode": "rail",
+     "km": 36.8,
+     "kmKind": "rail",
+     "to": "近鉄奈良"
+    }
+   ],
+   "name": "近鉄奈良"
+  },
+  {
+   "id": "292010.main>261068.main",
+   "from": "292010",
+   "fromPref": "nara",
+   "fromStop": "main",
+   "to": "261068",
+   "toPref": "kyoto",
+   "toStop": "main",
+   "mode": "rail",
+   "legs": [
+    {
+     "mode": "rail",
+     "km": 36.8,
+     "kmKind": "rail",
+     "to": "京都"
+    }
+   ],
+   "name": "京都"
+  },
+  {
+   "id": "261068.main>271276.main",
+   "from": "261068",
+   "fromPref": "kyoto",
+   "fromStop": "main",
+   "to": "271276",
+   "toPref": "osaka",
+   "toStop": "main",
+   "mode": "rail",
+   "legs": [
+    {
+     "mode": "rail",
+     "km": 42.2,
+     "kmKind": "rail",
+     "to": "大阪"
+    }
+   ],
+   "name": "大阪"
+  },
+  {
+   "id": "271276.main>261068.main",
+   "from": "271276",
+   "fromPref": "osaka",
+   "fromStop": "main",
+   "to": "261068",
+   "toPref": "kyoto",
+   "toStop": "main",
+   "mode": "rail",
+   "legs": [
+    {
+     "mode": "rail",
+     "km": 42.2,
+     "kmKind": "rail",
+     "to": "京都"
+    }
+   ],
+   "name": "京都"
+  },
+  {
+   "id": "261068.main>131016.main",
+   "from": "261068",
+   "fromPref": "kyoto",
+   "fromStop": "main",
+   "to": "131016",
+   "toPref": "tokyo",
+   "toStop": "main",
+   "mode": "rail",
+   "legs": [
+    {
+     "mode": "rail",
+     "km": 472.7,
+     "kmKind": "rail",
+     "to": "東京",
+     "shinkansen": true
+    }
+   ],
+   "name": "東京"
+  },
+  {
+   "id": "131016.main>261068.main",
+   "from": "131016",
+   "fromPref": "tokyo",
+   "fromStop": "main",
+   "to": "261068",
+   "toPref": "kyoto",
+   "toStop": "main",
+   "mode": "rail",
+   "legs": [
+    {
+     "mode": "rail",
+     "km": 472.7,
+     "kmKind": "rail",
+     "to": "京都",
+     "shinkansen": true
+    }
+   ],
+   "name": "京都"
+  },
+  {
+   "id": "271276.main>281107.main",
+   "from": "271276",
+   "fromPref": "osaka",
+   "fromStop": "main",
+   "to": "281107",
+   "toPref": "hyogo",
+   "toStop": "main",
+   "mode": "rail",
+   "legs": [
+    {
+     "mode": "rail",
+     "km": 29.2,
+     "kmKind": "rail",
+     "to": "三ノ宮"
+    }
+   ],
+   "name": "三ノ宮"
+  },
+  {
+   "id": "281107.main>271276.main",
+   "from": "281107",
+   "fromPref": "hyogo",
+   "fromStop": "main",
+   "to": "271276",
+   "toPref": "osaka",
+   "toStop": "main",
+   "mode": "rail",
+   "legs": [
+    {
+     "mode": "rail",
+     "km": 29.2,
+     "kmKind": "rail",
+     "to": "大阪"
+    }
+   ],
+   "name": "大阪"
+  },
+  {
+   "id": "271276.main>292010.main",
+   "from": "271276",
+   "fromPref": "osaka",
+   "fromStop": "main",
+   "to": "292010",
+   "toPref": "nara",
+   "toStop": "main",
+   "mode": "rail",
+   "legs": [
+    {
+     "mode": "rail",
+     "km": 31.6,
+     "kmKind": "rail",
+     "to": "近鉄奈良"
+    }
+   ],
+   "name": "近鉄奈良"
+  },
+  {
+   "id": "292010.main>271276.main",
+   "from": "292010",
+   "fromPref": "nara",
+   "fromStop": "main",
+   "to": "271276",
+   "toPref": "osaka",
+   "toStop": "main",
+   "mode": "rail",
+   "legs": [
+    {
+     "mode": "rail",
+     "km": 31.6,
+     "kmKind": "rail",
+     "to": "大阪"
+    }
+   ],
+   "name": "大阪"
+  },
+  {
+   "id": "271276.main>472018.airport",
+   "from": "271276",
+   "fromPref": "osaka",
+   "fromStop": "main",
+   "to": "472018",
+   "toPref": "okinawa",
+   "toStop": "airport",
+   "mode": "rail",
+   "legs": [
+    {
+     "mode": "rail",
+     "km": 42.7,
+     "kmKind": "rail",
+     "to": "関西国際空港"
+    },
+    {
+     "mode": "plane",
+     "km": 1168.9,
+     "kmKind": "straight",
+     "to": "那覇空港"
+    }
+   ],
+   "name": "那覇空港"
+  },
+  {
+   "id": "472018.airport>271276.main",
+   "from": "472018",
+   "fromPref": "okinawa",
+   "fromStop": "airport",
+   "to": "271276",
+   "toPref": "osaka",
+   "toStop": "main",
+   "mode": "plane",
+   "legs": [
+    {
+     "mode": "plane",
+     "km": 1168.9,
+     "kmKind": "straight",
+     "to": "関西国際空港"
+    },
+    {
+     "mode": "rail",
+     "km": 42.7,
+     "kmKind": "rail",
+     "to": "大阪"
+    }
+   ],
+   "name": "大阪"
+  },
+  {
+   "id": "271276.main>012246.airport",
+   "from": "271276",
+   "fromPref": "osaka",
+   "fromStop": "main",
+   "to": "012246",
+   "toPref": "hokkaido",
+   "toStop": "airport",
+   "mode": "rail",
+   "legs": [
+    {
+     "mode": "rail",
+     "km": 42.7,
+     "kmKind": "rail",
+     "to": "関西国際空港"
+    },
+    {
+     "mode": "plane",
+     "km": 1083.8,
+     "kmKind": "straight",
+     "to": "新千歳空港"
+    }
+   ],
+   "name": "新千歳空港"
+  },
+  {
+   "id": "012246.airport>271276.main",
+   "from": "012246",
+   "fromPref": "hokkaido",
+   "fromStop": "airport",
+   "to": "271276",
+   "toPref": "osaka",
+   "toStop": "main",
+   "mode": "plane",
+   "legs": [
+    {
+     "mode": "plane",
+     "km": 1083.8,
+     "kmKind": "straight",
+     "to": "関西国際空港"
+    },
+    {
+     "mode": "rail",
+     "km": 42.7,
+     "kmKind": "rail",
+     "to": "大阪"
+    }
+   ],
+   "name": "大阪"
+  },
+  {
+   "id": "131016.main>012246.airport",
+   "from": "131016",
+   "fromPref": "tokyo",
+   "fromStop": "main",
+   "to": "012246",
+   "toPref": "hokkaido",
+   "toStop": "airport",
+   "mode": "rail",
+   "legs": [
+    {
+     "mode": "rail",
+     "km": 19,
+     "kmKind": "rail",
+     "to": "東京国際空港"
+    },
+    {
+     "mode": "plane",
+     "km": 819.7,
+     "kmKind": "straight",
+     "to": "新千歳空港"
+    }
+   ],
+   "name": "新千歳空港"
+  },
+  {
+   "id": "012246.airport>131016.main",
+   "from": "012246",
+   "fromPref": "hokkaido",
+   "fromStop": "airport",
+   "to": "131016",
+   "toPref": "tokyo",
+   "toStop": "main",
+   "mode": "plane",
+   "legs": [
+    {
+     "mode": "plane",
+     "km": 819.7,
+     "kmKind": "straight",
+     "to": "東京国際空港"
+    },
+    {
+     "mode": "rail",
+     "km": 19,
+     "kmKind": "rail",
+     "to": "東京"
+    }
+   ],
+   "name": "東京"
+  },
+  {
+   "id": "131016.main>472018.airport",
+   "from": "131016",
+   "fromPref": "tokyo",
+   "fromStop": "main",
+   "to": "472018",
+   "toPref": "okinawa",
+   "toStop": "airport",
+   "mode": "rail",
+   "legs": [
+    {
+     "mode": "rail",
+     "km": 19,
+     "kmKind": "rail",
+     "to": "東京国際空港"
+    },
+    {
+     "mode": "plane",
+     "km": 1554.5,
+     "kmKind": "straight",
+     "to": "那覇空港"
+    }
+   ],
+   "name": "那覇空港"
+  },
+  {
+   "id": "472018.airport>131016.main",
+   "from": "472018",
+   "fromPref": "okinawa",
+   "fromStop": "airport",
+   "to": "131016",
+   "toPref": "tokyo",
+   "toStop": "main",
+   "mode": "plane",
+   "legs": [
+    {
+     "mode": "plane",
+     "km": 1554.5,
+     "kmKind": "straight",
+     "to": "東京国際空港"
+    },
+    {
+     "mode": "rail",
+     "km": 19,
+     "kmKind": "rail",
+     "to": "東京"
+    }
+   ],
+   "name": "東京"
+  }
+ ]
+}

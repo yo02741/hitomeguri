@@ -101,7 +101,7 @@ defineExpose({ press, focusFirst: () => (focusAt(cur.value), true) })
             @click="onRowClick(i, $event)"
           >
             <span class="sys-row-main">
-              <span lang="ja">{{ x.name }}</span>
+              <span lang="ja">{{ x.name }}<span v-if="x.area" class="nb-sub">　{{ x.area }}</span></span>
               <span class="nb-sub">{{ howText(x.mode ?? d.mode, x.km, x.kmKind) }}</span>
               <span v-if="viaText(x)" class="nb-sub" lang="ja">{{ viaText(x) }}</span>
             </span>

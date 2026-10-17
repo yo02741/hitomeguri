@@ -57,6 +57,12 @@ export function intersect(a: Rect, b: Rect): Rect {
   return { x, y, w: Math.max(0, w), h: Math.max(0, h) }
 }
 
+/**
+ * kit 冬天畫不畫積雪：近畿（屋頂積雪）、北海道（厚雪）會；關東不積雪（偶爾下雪是天氣畫的）、沖繩沒有雪。
+ * 不積雪的地方只有下雪天才算雪景。
+ */
+export const SNOWY_KITS: ReadonlySet<string> = new Set(['kinki', 'hokkaido'])
+
 /** 是不是下雪的景（下雪天，或會積雪的地方的冬天） */
 export const isSnowScene = (i: Pick<ShotInput, 'weather' | 'season' | 'snowy'>) => i.weather === 'snow' || (i.snowy && i.season === 'winter')
 

@@ -177,11 +177,25 @@ export class Renderer {
       const y = footY - f.ay - z
       const behind = a.kind === 'follower' && player && headY !== null && Math.abs(a.px - player.px) < 6 && a.py < player.py && player.py - a.py <= TILE + 2
       const keep = behind ? saveRows(g, Math.round(x), Math.round(y), f.sprite.w, Math.round(headY! + 1) - Math.round(y)) : null
+      // 站在高架的橋面下（上層是 overhead 的 tile）：比那一格上緣高的部分不畫，下面的部分橋面會蓋住
+      const deck = overheadTop(sc, a)
+      const clip = deck !== null ? saveRows(g, Math.round(x) - 8, Math.round(y) - 8, f.sprite.w + 16, deck - (Math.round(y) - 8)) : null
       this.sprite(g, f.sprite, x, y, sc.time, f.flip)
       if (f.extra) for (const e of f.extra) this.sprite(g, e.sprite, x + e.x, y + e.y, sc.time, e.flip)
       if (keep) restoreRows(g, keep)
+      if (clip) restoreRows(g, clip)
     }
   }
+}
+
+/** 角色腳下那一格的上層是 overhead 的 tile（高架的橋面）：回那一格上緣在畫面上的 y；不是回 null */
+function overheadTop(sc: Scene, a: Actor): number | null {
+  const map = sc.view.map
+  const tx = Math.floor((a.px + TILE / 2) / TILE)
+  const ty = Math.floor((a.py + TILE / 2) / TILE)
+  if (tx < 0 || ty < 0 || tx >= map.w || ty >= map.h) return null
+  const id = map.over[ty * map.w + tx]
+  return id && tileDef(id)?.overhead ? ty * TILE - sc.camY : null
 }
 
 /** sprite 最上面有顏色的那一列（快取） */

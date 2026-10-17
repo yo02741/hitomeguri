@@ -1,0 +1,2933 @@
+{
+ "pref": "hokkaido",
+ "spots": [
+  {
+   "id": "osm-node-5603043124",
+   "n": "支笏湖",
+   "z": "支笏湖",
+   "lat": 42.76516,
+   "lng": 141.32857,
+   "k": "major",
+   "f": 0,
+   "s": 79,
+   "m": "012246",
+   "name": {
+    "ja": "支笏湖",
+    "zh_tw": "支笏湖"
+   },
+   "src": "https://www.openstreetmap.org/node/5603043124"
+  },
+  {
+   "id": "visithokkaido-10045",
+   "n": "網走流氷観光砕氷船おーろら",
+   "z": "網走流氷観光砕氷船おーろら",
+   "lat": 44.02204,
+   "lng": 144.2739,
+   "k": "major",
+   "f": 0,
+   "s": 75,
+   "m": "012114",
+   "st": "node-264449544",
+   "name": {
+    "ja": "網走流氷観光砕氷船おーろら",
+    "zh_tw": "網走流氷観光砕氷船おーろら"
+   },
+   "src": "https://www.visit-hokkaido.jp/spot/detail_10045.html"
+  },
+  {
+   "id": "wd-Q1063319",
+   "n": "さっぽろテレビ塔",
+   "z": "札幌電視塔",
+   "lat": 43.06111,
+   "lng": 141.35639,
+   "k": "major",
+   "f": 0,
+   "s": 152.8,
+   "h": "さっぽろてれびとう",
+   "r": "Sapporoterebito",
+   "m": "011011",
+   "st": "node-10255638452",
+   "name": {
+    "ja": "さっぽろテレビ塔",
+    "kana": "さっぽろてれびとう",
+    "romaji": "Sapporoterebito",
+    "zh_tw": "札幌電視塔"
+   },
+   "summary": {
+    "text": "札幌電視塔（さっぽろテレビ塔），又名札幌鐵塔，是日本北海道札幌市內的地標之一，為電視及調頻廣播訊號中繼發送塔，於1957年啟用。位在札幌市中央區的大通公園中，是",
+    "lang": "zh",
+    "source_url": "https://zh.wikipedia.org/wiki/%E6%9C%AD%E5%B9%8C%E9%9B%BB%E8%A6%96%E5%A1%94",
+    "license": "CC BY-SA 4.0"
+   },
+   "src": "https://www.wikidata.org/wiki/Q1063319"
+  },
+  {
+   "id": "wd-Q108764479",
+   "n": "小樽三角市場",
+   "z": "小樽三角市場",
+   "lat": 43.19906,
+   "lng": 140.99392,
+   "k": "major",
+   "f": 0,
+   "s": 107.2,
+   "h": "おたるさんかくいちば",
+   "r": "Otarusankakuichiba",
+   "c": "市場",
+   "m": "012033",
+   "st": "node-8082693151",
+   "name": {
+    "ja": "小樽三角市場",
+    "kana": "おたるさんかくいちば",
+    "romaji": "Otarusankakuichiba",
+    "zh_tw": "小樽三角市場"
+   },
+   "summary": {
+    "text": "小樽三角市場（おたるさんかくいちば）は、北海道小樽市稲穂にある市場。正式な名称は「小樽駅前市場」である。JR小樽駅に近く観光に適した立地、新鮮な魚介類、海鮮丼や",
+    "lang": "ja",
+    "source_url": "https://ja.wikipedia.org/wiki/%E5%B0%8F%E6%A8%BD%E4%B8%89%E8%A7%92%E5%B8%82%E5%A0%B4",
+    "license": "CC BY-SA 4.0"
+   },
+   "src": "https://www.wikidata.org/wiki/Q108764479"
+  },
+  {
+   "id": "wd-Q10959355",
+   "n": "小樽運河",
+   "z": "小樽運河",
+   "lat": 43.19972,
+   "lng": 141.00167,
+   "k": "major",
+   "f": 0,
+   "s": 148.3,
+   "h": "おたるうんが",
+   "r": "Otarunga",
+   "m": "012033",
+   "st": "node-8082693151",
+   "name": {
+    "ja": "小樽運河",
+    "kana": "おたるうんが",
+    "romaji": "Otarunga",
+    "zh_tw": "小樽運河"
+   },
+   "summary": {
+    "text": "小樽運河是日本北海道小樽市的一處地標。1914年動工，1923年開通。運河沿岸排列著一排紅磚倉庫，是小樽市作作為日本北海道金融、經濟中心的象徵，甚至被人稱為「北",
+    "lang": "zh",
+    "source_url": "https://zh.wikipedia.org/wiki/%E5%B0%8F%E6%A8%BD%E9%81%8B%E6%B2%B3",
+    "license": "CC BY-SA 4.0"
+   },
+   "src": "https://www.wikidata.org/wiki/Q10959355"
+  },
+  {
+   "id": "wd-Q11261729",
+   "n": "おたる水族館",
+   "z": "小樽水族館",
+   "lat": 43.23681,
+   "lng": 141.01125,
+   "k": "major",
+   "f": 0,
+   "s": 127.6,
+   "m": "012033",
+   "name": {
+    "ja": "おたる水族館",
+    "zh_tw": "小樽水族館"
+   },
+   "summary": {
+    "text": "Otaru Aquarium (おたる水族館, Otaru-suizokukan) is a public aquarium operated by Otaru",
+    "lang": "en",
+    "source_url": "https://en.wikipedia.org/wiki/Otaru_Aquarium",
+    "license": "CC BY-SA 4.0"
+   },
+   "src": "https://www.wikidata.org/wiki/Q11261729"
+  },
+  {
+   "id": "wd-Q11291904",
+   "n": "オコタンペ湖",
+   "z": "大丹別湖",
+   "lat": 42.8,
+   "lng": 141.25,
+   "k": "major",
+   "f": 0,
+   "s": 120.5,
+   "h": "おこたんぺこ",
+   "r": "Okotanpeko",
+   "m": "012246",
+   "name": {
+    "ja": "オコタンペ湖",
+    "kana": "おこたんぺこ",
+    "romaji": "Okotanpeko",
+    "zh_tw": "大丹別湖"
+   },
+   "summary": {
+    "text": "オコタンペ湖（オコタンペこ）は、北海道千歳市西部にある小さな湖で、支笏湖の北西7kmほどに位置している。",
+    "lang": "ja",
+    "source_url": "https://ja.wikipedia.org/wiki/%E3%82%AA%E3%82%B3%E3%82%BF%E3%83%B3%E3%83%9A%E6%B9%96",
+    "license": "CC BY-SA 4.0"
+   },
+   "src": "https://www.wikidata.org/wiki/Q11291904"
+  },
+  {
+   "id": "wd-Q11291936",
+   "n": "オシンコシンの滝",
+   "z": "Oshinkoshin瀑布",
+   "lat": 44.03819,
+   "lng": 144.93536,
+   "k": "major",
+   "f": 0,
+   "s": 134,
+   "h": "おしんこしんのたき",
+   "r": "Oshinkoshinnotaki",
+   "m": "015458",
+   "name": {
+    "ja": "オシンコシンの滝",
+    "kana": "おしんこしんのたき",
+    "romaji": "Oshinkoshinnotaki",
+    "zh_tw": "Oshinkoshin瀑布"
+   },
+   "summary": {
+    "text": "雙美瀑布是位於日本北海道斜裡郡斜裡町國道334號旁的瀑布，其名稱來自阿伊努語o-sunku-us-i，意思為「河川下游有許多蝦夷松的地方」。由於瀑布在中途被分為",
+    "lang": "zh",
+    "source_url": "https://zh.wikipedia.org/wiki/%E9%9B%99%E7%BE%8E%E7%80%91%E5%B8%83",
+    "license": "CC BY-SA 4.0"
+   },
+   "src": "https://www.wikidata.org/wiki/Q11291936"
+  },
+  {
+   "id": "wd-Q11292382",
+   "n": "オホーツク流氷館",
+   "z": "鄂霍次克流冰館",
+   "lat": 44.00106,
+   "lng": 144.23978,
+   "k": "major",
+   "f": 0,
+   "s": 127.6,
+   "h": "おほーつくりゅうひょうかん",
+   "r": "Ohotsukuryuhyokan",
+   "c": "博物館",
+   "m": "012114",
+   "name": {
+    "ja": "オホーツク流氷館",
+    "kana": "おほーつくりゅうひょうかん",
+    "romaji": "Ohotsukuryuhyokan",
+    "zh_tw": "鄂霍次克流冰館"
+   },
+   "summary": {
+    "text": "鄂霍次克流冰館為位於日本北海道網走市天都山山頂以流冰和鄂霍次克海為主題的市立科學博物館，由株式會社網走觀光振興公社負責營運。",
+    "lang": "zh",
+    "source_url": "https://zh.wikipedia.org/wiki/%E9%84%82%E9%9C%8D%E6%AC%A1%E5%85%8B%E6%B5%81%E5%86%B0%E9%A4%A8",
+    "license": "CC BY-SA 4.0"
+   },
+   "src": "https://www.wikidata.org/wiki/Q11292382"
+  },
+  {
+   "id": "wd-Q11296586",
+   "n": "キウス周堤墓群",
+   "z": "九州周堤墓群",
+   "lat": 42.88528,
+   "lng": 141.71611,
+   "k": "major",
+   "f": 0,
+   "s": 92.1,
+   "h": "きうすしゅうていぼぐん",
+   "r": "Kiusushuteibogun",
+   "c": "史跡",
+   "d": "世界遺產",
+   "m": "012246",
+   "name": {
+    "ja": "キウス周堤墓群",
+    "kana": "きうすしゅうていぼぐん",
+    "romaji": "Kiusushuteibogun",
+    "zh_tw": "九州周堤墓群"
+   },
+   "summary": {
+    "text": "The Kiusu Earthwork Burial Circles (キウス周堤墓群, Kiusu shūtei bogun) is an archaeolo",
+    "lang": "en",
+    "source_url": "https://en.wikipedia.org/wiki/Kiusu_Earthwork_Burial_Circles",
+    "license": "CC BY-SA 4.0"
+   },
+   "src": "https://www.wikidata.org/wiki/Q11296586"
+  },
+  {
+   "id": "wd-Q11321811",
+   "n": "トラピスチヌ修道院",
+   "z": "トラピスチヌ修道院",
+   "lat": 41.78785,
+   "lng": 140.8225,
+   "k": "major",
+   "f": 0,
+   "s": 125.8,
+   "c": "寺院",
+   "m": "012025",
+   "name": {
+    "ja": "トラピスチヌ修道院",
+    "zh_tw": "トラピスチヌ修道院"
+   },
+   "summary": {
+    "text": "Our Lady of the Angels Trappistine Abbey (天使の聖母トラピスチヌ修道院, Tenshi No Seibo Torasu",
+    "lang": "en",
+    "source_url": "https://en.wikipedia.org/wiki/Our_Lady_of_the_Angels_Trappistine_Abbey",
+    "license": "CC BY-SA 4.0"
+   },
+   "src": "https://www.wikidata.org/wiki/Q11321811"
+  },
+  {
+   "id": "wd-Q11335334",
+   "n": "プユニ岬",
+   "z": "プユニ岬",
+   "lat": 44.09517,
+   "lng": 145.00936,
+   "k": "major",
+   "f": 0,
+   "s": 119.9,
+   "h": "ぷゆにみさき",
+   "r": "Puyunimisaki",
+   "c": "岬",
+   "d": "世界遺產",
+   "m": "015458",
+   "name": {
+    "ja": "プユニ岬",
+    "kana": "ぷゆにみさき",
+    "romaji": "Puyunimisaki",
+    "zh_tw": "プユニ岬"
+   },
+   "summary": {
+    "text": "プユニ岬（プユニみさき）は、知床半島北岸にある岬。 世界遺産「知床」の構成遺産である。",
+    "lang": "ja",
+    "source_url": "https://ja.wikipedia.org/wiki/%E3%83%97%E3%83%A6%E3%83%8B%E5%B2%AC",
+    "license": "CC BY-SA 4.0"
+   },
+   "src": "https://www.wikidata.org/wiki/Q11335334"
+  },
+  {
+   "id": "wd-Q11358960",
+   "n": "上川神社",
+   "z": "上川神社",
+   "lat": 43.75242,
+   "lng": 142.36473,
+   "k": "major",
+   "f": 0,
+   "s": 65.5,
+   "h": "かみかわじんじゃ",
+   "r": "Kamikawa Jinja",
+   "c": "神社",
+   "m": "012041",
+   "st": "node-264430497",
+   "name": {
+    "ja": "上川神社",
+    "kana": "かみかわじんじゃ",
+    "romaji": "Kamikawa Jinja",
+    "zh_tw": "上川神社"
+   },
+   "summary": {
+    "text": "Kamikawa Shrine (上川神社, Kamikawa jinja) is a Shinto shrine located in Asahikawa, ",
+    "lang": "en",
+    "source_url": "https://en.wikipedia.org/wiki/Kamikawa_Shrine",
+    "license": "CC BY-SA 4.0"
+   },
+   "src": "https://www.wikidata.org/wiki/Q11358960"
+  },
+  {
+   "id": "wd-Q11360263",
+   "n": "上野ファーム",
+   "z": "上野ファーム",
+   "lat": 43.80833,
+   "lng": 142.48575,
+   "k": "major",
+   "f": 0,
+   "s": 116.7,
+   "h": "うえのふぁーむ",
+   "r": "Ueno Fāmu",
+   "c": "庭園",
+   "m": "012041",
+   "st": "node-264437087",
+   "name": {
+    "ja": "上野ファーム",
+    "kana": "うえのふぁーむ",
+    "romaji": "Ueno Fāmu",
+    "zh_tw": "上野ファーム"
+   },
+   "summary": {
+    "text": "上野ファーム（うえのファーム）は、北海道旭川市にある観光庭園。ガーデニングの聖地とされ、日本全国から観光客・愛好家が訪れる。",
+    "lang": "ja",
+    "source_url": "https://ja.wikipedia.org/wiki/%E4%B8%8A%E9%87%8E%E3%83%95%E3%82%A1%E3%83%BC%E3%83%A0",
+    "license": "CC BY-SA 4.0"
+   },
+   "src": "https://www.wikidata.org/wiki/Q11360263"
+  },
+  {
+   "id": "wd-Q11371661",
+   "n": "二条市場",
+   "z": "二條市場",
+   "lat": 43.05831,
+   "lng": 141.35847,
+   "k": "major",
+   "f": 0,
+   "s": 132.2,
+   "h": "にじょういちば",
+   "r": "Nijoichiba",
+   "c": "市場",
+   "m": "011011",
+   "st": "node-10255638452",
+   "name": {
+    "ja": "二条市場",
+    "kana": "にじょういちば",
+    "romaji": "Nijoichiba",
+    "zh_tw": "二條市場"
+   },
+   "summary": {
+    "text": "二条市場（にじょういちば）は、北海道札幌市中央区にある市場。",
+    "lang": "ja",
+    "source_url": "https://ja.wikipedia.org/wiki/%E4%BA%8C%E6%9D%A1%E5%B8%82%E5%A0%B4",
+    "license": "CC BY-SA 4.0"
+   },
+   "src": "https://www.wikidata.org/wiki/Q11371661"
+  },
+  {
+   "id": "wd-Q11381867",
+   "n": "住吉神社",
+   "z": "住吉神社",
+   "lat": 43.18294,
+   "lng": 141.00322,
+   "k": "major",
+   "f": 0,
+   "s": 102.6,
+   "h": "すみよしじんじゃ",
+   "r": "Sumiyoshijinja",
+   "c": "神社",
+   "m": "012033",
+   "st": "node-8082693155",
+   "name": {
+    "ja": "住吉神社",
+    "kana": "すみよしじんじゃ",
+    "romaji": "Sumiyoshijinja",
+    "zh_tw": "住吉神社"
+   },
+   "summary": {
+    "text": "Sumiyoshi Shrine (住吉神社, Sumiyoshi Jinja) is a Shinto shrine located in Otaru, Ho",
+    "lang": "en",
+    "source_url": "https://en.wikipedia.org/wiki/Sumiyoshi_Shrine_%28Hokkaid%C5%8D%29",
+    "license": "CC BY-SA 4.0"
+   },
+   "src": "https://www.wikidata.org/wiki/Q11381867"
+  },
+  {
+   "id": "wd-Q11404903",
+   "n": "十勝岳望岳台",
+   "z": "十勝岳望岳台",
+   "lat": 43.44858,
+   "lng": 142.64919,
+   "k": "major",
+   "f": 0,
+   "s": 135.9,
+   "h": "とかちだけぼうがくだい",
+   "r": "Tokachi-dake Bōgakudai",
+   "c": "展望",
+   "m": "014591",
+   "name": {
+    "ja": "十勝岳望岳台",
+    "kana": "とかちだけぼうがくだい",
+    "romaji": "Tokachi-dake Bōgakudai",
+    "zh_tw": "十勝岳望岳台"
+   },
+   "summary": {
+    "text": "十勝嶽望嶽臺是日本北海道上川郡美瑛町和上富良野町邊界處的一個可以遠眺十勝嶽的觀景臺，位於白金溫泉沿著北海道道966號十勝嶽溫泉美瑛線往南約5公里處，海拔930公",
+    "lang": "zh",
+    "source_url": "https://zh.wikipedia.org/wiki/%E5%8D%81%E5%8B%9D%E5%B2%B3%E6%9C%9B%E5%B2%B3%E5%8F%B0",
+    "license": "CC BY-SA 4.0"
+   },
+   "src": "https://www.wikidata.org/wiki/Q11404903"
+  },
+  {
+   "id": "wd-Q11405627",
+   "n": "サケのふるさと 千歳水族館",
+   "z": "サケのふるさと 千歳水族館",
+   "lat": 42.83272,
+   "lng": 141.65917,
+   "k": "major",
+   "f": 0,
+   "s": 125.3,
+   "h": "さけのふるさとちとせすいぞくかん",
+   "r": "Sakenofurusatochitosesuizokukan",
+   "c": "水族館",
+   "m": "012246",
+   "st": "node-8084742769",
+   "name": {
+    "ja": "サケのふるさと 千歳水族館",
+    "kana": "さけのふるさとちとせすいぞくかん",
+    "romaji": "Sakenofurusatochitosesuizokukan",
+    "zh_tw": "サケのふるさと 千歳水族館"
+   },
+   "summary": {
+    "text": "Chitose Aquarium or The Salmon Hometown Chitose Aquarium (サケのふるさと 千歳水族館, Sake no",
+    "lang": "en",
+    "source_url": "https://en.wikipedia.org/wiki/Chitose_Aquarium",
+    "license": "CC BY-SA 4.0"
+   },
+   "src": "https://www.wikidata.org/wiki/Q11405627"
+  },
+  {
+   "id": "wd-Q1140619",
+   "n": "札幌市時計台",
+   "z": "札幌市鐘樓",
+   "lat": 43.0626,
+   "lng": 141.35368,
+   "k": "major",
+   "f": 1,
+   "s": 153.4,
+   "h": "さっぽろしとけいだい",
+   "r": "Sapporoshitokeidai",
+   "c": "博物館",
+   "m": "011011",
+   "st": "node-10255638452",
+   "name": {
+    "ja": "札幌市時計台",
+    "kana": "さっぽろしとけいだい",
+    "romaji": "Sapporoshitokeidai",
+    "zh_tw": "札幌市鐘樓"
+   },
+   "summary": {
+    "text": "札幌市鐘樓，或以原文作札幌市時計臺，是日本北海道札幌市的地標，亦是北海道少數保存至今的美式建築，為日本19世紀引入西方教育以及北海道開墾時期的象徵，現已列為重要",
+    "lang": "zh",
+    "source_url": "https://zh.wikipedia.org/wiki/%E6%9C%AD%E5%B9%8C%E5%B8%82%E9%90%98%E6%A8%93",
+    "license": "CC BY-SA 4.0"
+   },
+   "src": "https://www.wikidata.org/wiki/Q1140619"
+  },
+  {
+   "id": "wd-Q11409007",
+   "n": "博物館網走監獄",
+   "z": "博物館網走監獄",
+   "lat": 43.99569,
+   "lng": 144.22928,
+   "k": "major",
+   "f": 0,
+   "s": 134.8,
+   "h": "はくぶつかんあばしりかんごく",
+   "r": "Hakubutsukanabashirikangoku",
+   "c": "博物館",
+   "m": "012114",
+   "name": {
+    "ja": "博物館網走監獄",
+    "kana": "はくぶつかんあばしりかんごく",
+    "romaji": "Hakubutsukanabashirikangoku",
+    "zh_tw": "博物館網走監獄"
+   },
+   "summary": {
+    "text": "博物館網走監獄，是一所位於日本北海道網走市的博物館。",
+    "lang": "zh",
+    "source_url": "https://zh.wikipedia.org/wiki/%E5%8D%9A%E7%89%A9%E9%A4%A8%E7%B6%B2%E8%B5%B0%E7%9B%A3%E7%8D%84",
+    "license": "CC BY-SA 4.0"
+   },
+   "src": "https://www.wikidata.org/wiki/Q11409007"
+  },
+  {
+   "id": "wd-Q11419849",
+   "n": "四季彩の丘",
+   "z": "四季彩之丘",
+   "lat": 43.52914,
+   "lng": 142.46436,
+   "k": "major",
+   "f": 1,
+   "s": 138.6,
+   "h": "しきさいのおか",
+   "r": "Shikisai-no-oka",
+   "c": "庭園",
+   "m": "014591",
+   "name": {
+    "ja": "四季彩の丘",
+    "kana": "しきさいのおか",
+    "romaji": "Shikisai-no-oka",
+    "zh_tw": "四季彩之丘"
+   },
+   "summary": {
+    "text": "展望花田 四季彩之丘，通常被簡稱為四季彩之丘，是位於日本北海道上川郡美瑛町的一個觀光花園，由「With You公司」（有限會社ウィズユー）營運。",
+    "lang": "zh",
+    "source_url": "https://zh.wikipedia.org/wiki/%E5%9B%9B%E5%AD%A3%E5%BD%A9%E4%B9%8B%E4%B8%98",
+    "license": "CC BY-SA 4.0"
+   },
+   "src": "https://www.wikidata.org/wiki/Q11419849"
+  },
+  {
+   "id": "wd-Q11464828",
+   "n": "就実の丘",
+   "z": "就実の丘",
+   "lat": 43.63056,
+   "lng": 142.49667,
+   "k": "major",
+   "f": 0,
+   "s": 120.9,
+   "h": "しゅうじつのおか",
+   "r": "Shujitsunoka",
+   "m": "012041",
+   "name": {
+    "ja": "就実の丘",
+    "kana": "しゅうじつのおか",
+    "romaji": "Shujitsunoka",
+    "zh_tw": "就実の丘"
+   },
+   "summary": {
+    "text": "就実の丘（しゅうじつのおか）は、北海道旭川市の西神楽地区にある丘陵地帯である。",
+    "lang": "ja",
+    "source_url": "https://ja.wikipedia.org/wiki/%E5%B0%B1%E5%AE%9F%E3%81%AE%E4%B8%98",
+    "license": "CC BY-SA 4.0"
+   },
+   "src": "https://www.wikidata.org/wiki/Q11464828"
+  },
+  {
+   "id": "wd-Q11481889",
+   "n": "幣舞橋",
+   "z": "幣舞橋",
+   "lat": 42.98103,
+   "lng": 144.38556,
+   "k": "major",
+   "f": 1,
+   "s": 146.1,
+   "h": "ぬさまいばし",
+   "r": "Nusamaibashi",
+   "c": "橋",
+   "m": "012068",
+   "st": "node-5820145042",
+   "name": {
+    "ja": "幣舞橋",
+    "kana": "ぬさまいばし",
+    "romaji": "Nusamaibashi",
+    "zh_tw": "幣舞橋"
+   },
+   "summary": {
+    "text": "幣舞橋是位於日本北海道釧路市跨越釧路川的橋梁，位於市區釧路車站前的主要道路北大通上，也是釧路川最下游的橋梁。橋南側的「幣舞圓環」則是釧路國道（國道38號）的終點",
+    "lang": "zh",
+    "source_url": "https://zh.wikipedia.org/wiki/%E5%B9%A3%E8%88%9E%E6%A9%8B",
+    "license": "CC BY-SA 4.0"
+   },
+   "src": "https://www.wikidata.org/wiki/Q11481889"
+  },
+  {
+   "id": "wd-Q11482272",
+   "n": "平和通買物公園",
+   "z": "平和通購物公園",
+   "lat": 43.76514,
+   "lng": 142.35892,
+   "k": "major",
+   "f": 0,
+   "s": 105.7,
+   "h": "へいわどおりかいものこうえん",
+   "r": "Heiwa Do Ri Kaimono Ko En",
+   "c": "公園",
+   "m": "012041",
+   "st": "node-264430273",
+   "name": {
+    "ja": "平和通買物公園",
+    "kana": "へいわどおりかいものこうえん",
+    "romaji": "Heiwa Do Ri Kaimono Ko En",
+    "zh_tw": "平和通購物公園"
+   },
+   "summary": {
+    "text": "平和通買物公園（へいわどおりかいものこうえん）は、北海道旭川市のJR北海道・旭川駅前から8条通に至るまでの約1キロメートル（km）に渡る歩行者天国である。一般的",
+    "lang": "ja",
+    "source_url": "https://ja.wikipedia.org/wiki/%E5%B9%B3%E5%92%8C%E9%80%9A%E8%B2%B7%E7%89%A9%E5%85%AC%E5%9C%92",
+    "license": "CC BY-SA 4.0"
+   },
+   "src": "https://www.wikidata.org/wiki/Q11482272"
+  },
+  {
+   "id": "wd-Q11547743",
+   "n": "毛無山",
+   "z": "毛無山",
+   "lat": 43.14889,
+   "lng": 141.01444,
+   "k": "major",
+   "f": 0,
+   "s": 97.9,
+   "h": "けなしやま",
+   "r": "Kenashiyama",
+   "m": "012033",
+   "name": {
+    "ja": "毛無山",
+    "kana": "けなしやま",
+    "romaji": "Kenashiyama",
+    "zh_tw": "毛無山"
+   },
+   "summary": {
+    "text": "毛無山（けなしやま）は、北海道小樽市にある山。標高548.2m。",
+    "lang": "ja",
+    "source_url": "https://ja.wikipedia.org/wiki/%E6%AF%9B%E7%84%A1%E5%B1%B1_%28%E5%B0%8F%E6%A8%BD%E5%B8%82%29",
+    "license": "CC BY-SA 4.0"
+   },
+   "src": "https://www.wikidata.org/wiki/Q11547743"
+  },
+  {
+   "id": "wd-Q1155685",
+   "n": "函館空港",
+   "z": "函館機場",
+   "lat": 41.77,
+   "lng": 140.82194,
+   "k": "major",
+   "f": 0,
+   "s": 67.5,
+   "h": "はこだてくうこう",
+   "r": "Hakodatekuko",
+   "c": "機場",
+   "m": "012025"
+  },
+  {
+   "id": "wd-Q11580396",
+   "n": "白金温泉",
+   "z": "白金溫泉",
+   "lat": 43.47389,
+   "lng": 142.63817,
+   "k": "major",
+   "f": 0,
+   "s": 65.7,
+   "h": "しろがねおんせん",
+   "r": "Shirogane Onsen",
+   "m": "014591",
+   "name": {
+    "ja": "白金温泉",
+    "kana": "しろがねおんせん",
+    "romaji": "Shirogane Onsen",
+    "zh_tw": "白金溫泉"
+   },
+   "summary": {
+    "text": "白金溫泉是位於日本北海道上川郡美瑛町的溫泉區，位於十勝嶽山麓，以週邊的白樺林景色而聞名。溫泉區內約有7間溫泉旅館，並設有町營「國民保養中心」的公共溫泉。",
+    "lang": "zh",
+    "source_url": "https://zh.wikipedia.org/wiki/%E7%99%BD%E9%87%91%E6%BA%AB%E6%B3%89",
+    "license": "CC BY-SA 4.0"
+   },
+   "src": "https://www.wikidata.org/wiki/Q11580396"
+  },
+  {
+   "id": "wd-Q11584571",
+   "n": "知床五湖",
+   "z": "知床五湖",
+   "lat": 44.12556,
+   "lng": 145.08111,
+   "k": "major",
+   "f": 0,
+   "s": 146.1,
+   "h": "しれとこごこ",
+   "r": "Shiretoko Goko",
+   "m": "015458",
+   "name": {
+    "ja": "知床五湖",
+    "kana": "しれとこごこ",
+    "romaji": "Shiretoko Goko",
+    "zh_tw": "知床五湖"
+   },
+   "summary": {
+    "text": "知床五湖是位於日本北海道知床國立公園的五個湖泊的統稱，為知床八景之一，也是知床主要的旅遊景點。五個湖泊過去原本沒有名稱，在成為旅遊景點後直接以數字編號命名為：一",
+    "lang": "zh",
+    "source_url": "https://zh.wikipedia.org/wiki/%E7%9F%A5%E5%BA%8A%E4%BA%94%E6%B9%96",
+    "license": "CC BY-SA 4.0"
+   },
+   "src": "https://www.wikidata.org/wiki/Q11584571"
+  },
+  {
+   "id": "wd-Q11584575",
+   "n": "知床岬",
+   "z": "知床岬",
+   "lat": 44.34526,
+   "lng": 145.32971,
+   "k": "major",
+   "f": 0,
+   "s": 125.6,
+   "h": "しれとこみさき",
+   "r": "Shiretokomisaki",
+   "c": "岬",
+   "m": "015458",
+   "name": {
+    "ja": "知床岬",
+    "kana": "しれとこみさき",
+    "romaji": "Shiretokomisaki",
+    "zh_tw": "知床岬"
+   },
+   "summary": {
+    "text": "知床岬是位於日本北海道東北部知床半島前段突入鄂霍次克海的一個海岬，為知床國立公園的一部分。行政區劃上屬於斜裡郡斜裡町遠音別村巖尾別。名稱源於阿伊努語「sir-e",
+    "lang": "zh",
+    "source_url": "https://zh.wikipedia.org/wiki/%E7%9F%A5%E5%BA%8A%E5%B2%AC",
+    "license": "CC BY-SA 4.0"
+   },
+   "src": "https://www.wikidata.org/wiki/Q11584575"
+  },
+  {
+   "id": "wd-Q11584577",
+   "n": "知床峠",
+   "z": "知床峠",
+   "lat": 44.05472,
+   "lng": 145.105,
+   "k": "major",
+   "f": 0,
+   "s": 135.7,
+   "h": "しれとことうげ",
+   "r": "Shiretokotoge",
+   "m": "015458",
+   "name": {
+    "ja": "知床峠",
+    "kana": "しれとことうげ",
+    "romaji": "Shiretokotoge",
+    "zh_tw": "知床峠"
+   },
+   "summary": {
+    "text": "知床峠（ㄑㄧㄚˇ）是日本北海道國道334號上一段跨越知床山脈（羅臼嶽和知西別嶽之間）的道路，介於斜裡郡斜裡町和目梨郡羅臼町邊界處，最高點海拔738公尺。",
+    "lang": "zh",
+    "source_url": "https://zh.wikipedia.org/wiki/%E7%9F%A5%E5%BA%8A%E5%B3%A0",
+    "license": "CC BY-SA 4.0"
+   },
+   "src": "https://www.wikidata.org/wiki/Q11584577"
+  },
+  {
+   "id": "wd-Q11589515",
+   "n": "神居古潭",
+   "z": "神居古潭",
+   "lat": 43.73183,
+   "lng": 142.2025,
+   "k": "major",
+   "f": 0,
+   "s": 144.1,
+   "h": "かむいこたん",
+   "r": "Kamuikotan",
+   "m": "012041",
+   "name": {
+    "ja": "神居古潭",
+    "kana": "かむいこたん",
+    "romaji": "Kamuikotan",
+    "zh_tw": "神居古潭"
+   },
+   "summary": {
+    "text": "神居古潭（かむいこたん）は北海道旭川市にある地区の名称であり、また同地区を流れる石狩川の急流を望む景勝地の名称。地名はアイヌ語のカムイコタン（神の住む場所）の音",
+    "lang": "ja",
+    "source_url": "https://ja.wikipedia.org/wiki/%E7%A5%9E%E5%B1%85%E5%8F%A4%E6%BD%AD",
+    "license": "CC BY-SA 4.0"
+   },
+   "src": "https://www.wikidata.org/wiki/Q11589515"
+  },
+  {
+   "id": "wd-Q11597969",
+   "n": "立待岬",
+   "z": "立待岬",
+   "lat": 41.7446,
+   "lng": 140.72104,
+   "k": "major",
+   "f": 1,
+   "s": 137.2,
+   "h": "たちまちみさき",
+   "r": "Tachimachimisaki",
+   "c": "展望",
+   "m": "012025",
+   "name": {
+    "ja": "立待岬",
+    "kana": "たちまちみさき",
+    "romaji": "Tachimachimisaki",
+    "zh_tw": "立待岬"
+   },
+   "summary": {
+    "text": "立待岬是位於北海道函館市住吉町、面朝津輕海峽的一個海角。",
+    "lang": "zh",
+    "source_url": "https://zh.wikipedia.org/wiki/%E7%AB%8B%E5%BE%85%E5%B2%AC",
+    "license": "CC BY-SA 4.0"
+   },
+   "src": "https://www.wikidata.org/wiki/Q11597969"
+  },
+  {
+   "id": "wd-Q11647285",
+   "n": "金森赤レンガ倉庫",
+   "z": "金森紅磚倉庫",
+   "lat": 41.76614,
+   "lng": 140.71757,
+   "k": "major",
+   "f": 0,
+   "s": 134.3,
+   "h": "かねもりあかれんがそうこ",
+   "r": "Kanemoriakarengasoko",
+   "m": "012025",
+   "st": "node-8206074563",
+   "name": {
+    "ja": "金森赤レンガ倉庫",
+    "kana": "かねもりあかれんがそうこ",
+    "romaji": "Kanemoriakarengasoko",
+    "zh_tw": "金森紅磚倉庫"
+   },
+   "summary": {
+    "text": "金森紅磚倉庫（英語：Kanemori Red Brick Warehouses；日語：金森赤レンガ倉庫）是位於日本北海道函館市末廣町函館港灣地區的一組歷史倉庫建",
+    "lang": "zh",
+    "source_url": "https://zh.wikipedia.org/wiki/%E9%87%91%E6%A3%AE%E7%B4%85%E7%A3%9A%E5%80%89%E5%BA%AB",
+    "license": "CC BY-SA 4.0"
+   },
+   "src": "https://www.wikidata.org/wiki/Q11647285"
+  },
+  {
+   "id": "wd-Q11648257",
+   "n": "釧路フィッシャーマンズワーフMOO",
+   "z": "釧路漁人碼頭MOO",
+   "lat": 42.98175,
+   "lng": 144.3835,
+   "k": "major",
+   "f": 0,
+   "s": 123.4,
+   "h": "くしろふぃっしゃーまんずわーふむー",
+   "r": "Kushirofisshamanzuwafumu",
+   "c": "購物",
+   "m": "012068",
+   "st": "node-5820145042",
+   "name": {
+    "ja": "釧路フィッシャーマンズワーフMOO",
+    "kana": "くしろふぃっしゃーまんずわーふむー",
+    "romaji": "Kushirofisshamanzuwafumu",
+    "zh_tw": "釧路漁人碼頭MOO"
+   },
+   "summary": {
+    "text": "釧路漁人碼頭MOO是位於日本北海道釧路市釧路川河畔的商場，僅臨幣舞橋。名稱源自舊金山漁人碼頭，MOO則是Marine Our Oasis的縮寫。Moo也是日文平",
+    "lang": "zh",
+    "source_url": "https://zh.wikipedia.org/wiki/%E9%87%A7%E8%B7%AF%E6%BC%81%E4%BA%BA%E7%A2%BC%E9%A0%ADMOO",
+    "license": "CC BY-SA 4.0"
+   },
+   "src": "https://www.wikidata.org/wiki/Q11648257"
+  },
+  {
+   "id": "wd-Q11648269",
+   "n": "釧路和商市場",
+   "z": "釧路和商市場",
+   "lat": 42.98917,
+   "lng": 144.38,
+   "k": "major",
+   "f": 0,
+   "s": 130.8,
+   "h": "くしろわしょういちば",
+   "r": "Kushirowashoichiba",
+   "c": "市場",
+   "m": "012068",
+   "st": "node-5820145042",
+   "name": {
+    "ja": "釧路和商市場",
+    "kana": "くしろわしょういちば",
+    "romaji": "Kushirowashoichiba",
+    "zh_tw": "釧路和商市場"
+   },
+   "summary": {
+    "text": "釧路和商市場（くしろわしょういちば）は、北海道釧路市黒金町のJR北海道釧路駅西方にある、公設の市場。",
+    "lang": "ja",
+    "source_url": "https://ja.wikipedia.org/wiki/%E9%87%A7%E8%B7%AF%E5%92%8C%E5%95%86%E5%B8%82%E5%A0%B4",
+    "license": "CC BY-SA 4.0"
+   },
+   "src": "https://www.wikidata.org/wiki/Q11648269"
+  },
+  {
+   "id": "wd-Q11648285",
+   "n": "釧路市立博物館",
+   "z": "釧路市立博物館",
+   "lat": 42.97463,
+   "lng": 144.40358,
+   "k": "major",
+   "f": 0,
+   "s": 88,
+   "h": "くしろしりつはくぶつかん",
+   "r": "Kushiroshiritsuhakubutsukan",
+   "c": "博物館",
+   "m": "012068",
+   "name": {
+    "ja": "釧路市立博物館",
+    "kana": "くしろしりつはくぶつかん",
+    "romaji": "Kushiroshiritsuhakubutsukan",
+    "zh_tw": "釧路市立博物館"
+   },
+   "summary": {
+    "text": "Kushiro City Museum (Japanese: 釧路市立博物館, Hepburn: Kushiro Shiritsu Hakubutsukan) ",
+    "lang": "en",
+    "source_url": "https://en.wikipedia.org/wiki/Kushiro_City_Museum",
+    "license": "CC BY-SA 4.0"
+   },
+   "src": "https://www.wikidata.org/wiki/Q11648285"
+  },
+  {
+   "id": "wd-Q11661016",
+   "n": "青い池",
+   "z": "青池",
+   "lat": 43.49358,
+   "lng": 142.61403,
+   "k": "major",
+   "f": 0,
+   "s": 156.2,
+   "h": "あおいいけ",
+   "r": "Aoi-ike",
+   "m": "014591",
+   "name": {
+    "ja": "青い池",
+    "kana": "あおいいけ",
+    "romaji": "Aoi-ike",
+    "zh_tw": "青池"
+   },
+   "summary": {
+    "text": "青池是位於日本北海道上川郡美瑛町白金的一個人工水池。又稱「白金青池」、「美瑛白金青池」。",
+    "lang": "zh",
+    "source_url": "https://zh.wikipedia.org/wiki/%E9%9D%92%E6%B1%A0",
+    "license": "CC BY-SA 4.0"
+   },
+   "src": "https://www.wikidata.org/wiki/Q11661016"
+  },
+  {
+   "id": "wd-Q1196295",
+   "n": "支笏湖",
+   "z": "支笏湖",
+   "lat": 42.75,
+   "lng": 141.33333,
+   "k": "major",
+   "f": 0,
+   "s": 84.3,
+   "h": "しこつこ",
+   "r": "Shikotsuko",
+   "m": "012246",
+   "name": {
+    "ja": "支笏湖",
+    "kana": "しこつこ",
+    "romaji": "Shikotsuko",
+    "zh_tw": "支笏湖"
+   },
+   "summary": {
+    "text": "支笏湖是位於北海道千歲市的一個淡水湖，屬支笏洞爺國立公園範圍內。是日本最北的不凍湖。",
+    "lang": "zh",
+    "source_url": "https://zh.wikipedia.org/wiki/%E6%94%AF%E7%AC%8F%E6%B9%96",
+    "license": "CC BY-SA 4.0"
+   },
+   "src": "https://www.wikidata.org/wiki/Q1196295"
+  },
+  {
+   "id": "wd-Q1196357",
+   "n": "五稜郭",
+   "z": "五稜郭",
+   "lat": 41.79694,
+   "lng": 140.75694,
+   "k": "major",
+   "f": 1,
+   "s": 165.7,
+   "h": "ごりょうかく",
+   "r": "Goryōkaku",
+   "c": "史跡",
+   "d": "特別史跡",
+   "m": "012025",
+   "name": {
+    "ja": "五稜郭",
+    "kana": "ごりょうかく",
+    "romaji": "Goryōkaku",
+    "zh_tw": "五稜郭"
+   },
+   "summary": {
+    "text": "五稜郭是日本江戶時代末期由江戶幕府在蝦夷地的箱館（現北海道函館市）郊外建造的一座星形要塞，與同一時期建成，位於長野縣佐久市的龍岡城同樣被稱為「五稜郭」，但是多數",
+    "lang": "zh",
+    "source_url": "https://zh.wikipedia.org/wiki/%E4%BA%94%E7%A8%9C%E9%83%AD",
+    "license": "CC BY-SA 4.0"
+   },
+   "src": "https://www.wikidata.org/wiki/Q1196357"
+  },
+  {
+   "id": "wd-Q121708826",
+   "n": "天に続く道",
+   "z": "天に続く道",
+   "lat": 43.9068,
+   "lng": 144.79886,
+   "k": "major",
+   "f": 0,
+   "s": 126.2,
+   "h": "てんにつづくみち",
+   "r": "Tennitsuzukumichi",
+   "m": "015458",
+   "name": {
+    "ja": "天に続く道",
+    "kana": "てんにつづくみち",
+    "romaji": "Tennitsuzukumichi",
+    "zh_tw": "天に続く道"
+   },
+   "summary": {
+    "text": "天に続く道（てんにつづくみち）は、北海道斜里郡斜里町にある景勝地。",
+    "lang": "ja",
+    "source_url": "https://ja.wikipedia.org/wiki/%E5%A4%A9%E3%81%AB%E7%B6%9A%E3%81%8F%E9%81%93",
+    "license": "CC BY-SA 4.0"
+   },
+   "src": "https://www.wikidata.org/wiki/Q121708826"
+  },
+  {
+   "id": "wd-Q125817091",
+   "n": "阿寒湖アイヌコタン",
+   "z": "阿寒湖アイヌコタン",
+   "lat": 43.43368,
+   "lng": 144.08998,
+   "k": "major",
+   "f": 0,
+   "s": 126,
+   "m": "012068",
+   "name": {
+    "ja": "阿寒湖アイヌコタン",
+    "zh_tw": "阿寒湖アイヌコタン"
+   },
+   "summary": {
+    "text": "阿寒湖アイヌコタン（アイヌ語：Aynu kotan アイヌ／人間の集落）は、北海道釧路市阿寒湖温泉に存在する、アイヌ民族を中心とする住民によって構成される集落で",
+    "lang": "ja",
+    "source_url": "https://ja.wikipedia.org/wiki/%E9%98%BF%E5%AF%92%E6%B9%96%E3%82%A2%E3%82%A4%E3%83%8C%E3%82%B3%E3%82%BF%E3%83%B3",
+    "license": "CC BY-SA 4.0"
+   },
+   "src": "https://www.wikidata.org/wiki/Q125817091"
+  },
+  {
+   "id": "wd-Q17222936",
+   "n": "五稜郭タワー",
+   "z": "五稜郭塔",
+   "lat": 41.79469,
+   "lng": 140.754,
+   "k": "major",
+   "f": 0,
+   "s": 129,
+   "h": "ごりょうかくたわー",
+   "r": "Goryokakutawa",
+   "c": "展望",
+   "m": "012025",
+   "name": {
+    "ja": "五稜郭タワー",
+    "kana": "ごりょうかくたわー",
+    "romaji": "Goryokakutawa",
+    "zh_tw": "五稜郭塔"
+   },
+   "summary": {
+    "text": "五稜郭塔是毗鄰北海道函館市五稜郭的一個塔式建築和民間觀光設施，由五稜郭塔株式會社負責管理。",
+    "lang": "zh",
+    "source_url": "https://zh.wikipedia.org/wiki/%E4%BA%94%E7%A8%9C%E9%83%AD%E5%A1%94",
+    "license": "CC BY-SA 4.0"
+   },
+   "src": "https://www.wikidata.org/wiki/Q17222936"
+  },
+  {
+   "id": "wd-Q17228813",
+   "n": "白ひげの滝",
+   "z": "白鬚瀑布",
+   "lat": 43.47467,
+   "lng": 142.63919,
+   "k": "major",
+   "f": 0,
+   "s": 118.3,
+   "h": "しらひげのたき",
+   "r": "Shirohige-no-taki",
+   "m": "014591",
+   "name": {
+    "ja": "白ひげの滝",
+    "kana": "しらひげのたき",
+    "romaji": "Shirohige-no-taki",
+    "zh_tw": "白鬚瀑布"
+   },
+   "summary": {
+    "text": "白ひげの滝（しらひげのたき）は、北海道美瑛町の白金温泉郷にある滝。落差30メートル、標高600メートル。日本では珍しい潜流瀑に分類される。",
+    "lang": "ja",
+    "source_url": "https://ja.wikipedia.org/wiki/%E7%99%BD%E3%81%B2%E3%81%92%E3%81%AE%E6%BB%9D",
+    "license": "CC BY-SA 4.0"
+   },
+   "src": "https://www.wikidata.org/wiki/Q17228813"
+  },
+  {
+   "id": "wd-Q22677838",
+   "n": "釧路市丹頂鶴自然公園",
+   "z": "釧路市丹頂鶴自然公園",
+   "lat": 43.05792,
+   "lng": 144.19661,
+   "k": "major",
+   "f": 0,
+   "s": 95.6,
+   "c": "動物園",
+   "m": "012068",
+   "name": {
+    "ja": "釧路市丹頂鶴自然公園",
+    "zh_tw": "釧路市丹頂鶴自然公園"
+   },
+   "summary": {
+    "text": "釧路市丹頂鶴自然公園是位於日本北海道釧路市以丹頂鶴為主題的動物園，佔地面積96,000平方公尺，屬於釧路市動物園的附屬設施，現委託釧路市公園綠化協會經營管理。",
+    "lang": "zh",
+    "source_url": "https://zh.wikipedia.org/wiki/%E9%87%A7%E8%B7%AF%E5%B8%82%E4%B8%B9%E9%A0%82%E9%B6%B4%E8%87%AA%E7%84%B6%E5%85%AC%E5%9C%92",
+    "license": "CC BY-SA 4.0"
+   },
+   "src": "https://www.wikidata.org/wiki/Q22677838"
+  },
+  {
+   "id": "wd-Q30066271",
+   "n": "拓真館",
+   "z": "拓真館",
+   "lat": 43.53,
+   "lng": 142.48944,
+   "k": "major",
+   "f": 0,
+   "s": 83.5,
+   "h": "たくしんかん",
+   "r": "Takushinkan",
+   "c": "博物館",
+   "m": "014591",
+   "name": {
+    "ja": "拓真館",
+    "kana": "たくしんかん",
+    "romaji": "Takushinkan",
+    "zh_tw": "拓真館"
+   },
+   "summary": {
+    "text": "拓真館（たくしんかん）は、北海道上川郡美瑛町にある写真のギャラリー。",
+    "lang": "ja",
+    "source_url": "https://ja.wikipedia.org/wiki/%E6%8B%93%E7%9C%9F%E9%A4%A8",
+    "license": "CC BY-SA 4.0"
+   },
+   "src": "https://www.wikidata.org/wiki/Q30066271"
+  },
+  {
+   "id": "wd-Q3107971",
+   "n": "大通公園",
+   "z": "大通公園",
+   "lat": 43.05972,
+   "lng": 141.34639,
+   "k": "major",
+   "f": 1,
+   "s": 144.9,
+   "h": "おおどおりこうえん",
+   "r": "Ōdōri-kōen",
+   "c": "公園",
+   "m": "011011",
+   "st": "node-7809484251",
+   "name": {
+    "ja": "大通公園",
+    "kana": "おおどおりこうえん",
+    "romaji": "Ōdōri-kōen",
+    "zh_tw": "大通公園"
+   },
+   "summary": {
+    "text": "大通公園是位於日本北海道札幌市中央區、並將札幌市中心橫向間開的公園。由中央區大通西一丁目至大通西十二丁目計算，總長度為1.5公里。大通公園是基於札幌市整體城市規",
+    "lang": "zh",
+    "source_url": "https://zh.wikipedia.org/wiki/%E5%A4%A7%E9%80%9A%E5%85%AC%E5%9C%92",
+    "license": "CC BY-SA 4.0"
+   },
+   "src": "https://www.wikidata.org/wiki/Q3107971"
+  },
+  {
+   "id": "wd-Q3526214",
+   "n": "函館山",
+   "z": "函館山",
+   "lat": 41.75889,
+   "lng": 140.70444,
+   "k": "major",
+   "f": 0,
+   "s": 157.9,
+   "h": "はこだてやま",
+   "r": "Hakodateyama",
+   "m": "012025",
+   "name": {
+    "ja": "函館山",
+    "kana": "はこだてやま",
+    "romaji": "Hakodateyama",
+    "zh_tw": "函館山"
+   },
+   "summary": {
+    "text": "函館山是一處位於北海道函館市市區西部的山地。因函館山也是一座陸連島，因此有時也被稱為「函館島」「函館山島」。函館山標高334米，周長約9公里。因其外觀形似一頭仰",
+    "lang": "zh",
+    "source_url": "https://zh.wikipedia.org/wiki/%E5%87%BD%E9%A4%A8%E5%B1%B1",
+    "license": "CC BY-SA 4.0"
+   },
+   "src": "https://www.wikidata.org/wiki/Q3526214"
+  },
+  {
+   "id": "wd-Q429402",
+   "n": "阿寒湖",
+   "z": "阿寒湖",
+   "lat": 43.45167,
+   "lng": 144.09861,
+   "k": "major",
+   "f": 0,
+   "s": 156.7,
+   "h": "あかんこ",
+   "r": "Akanko",
+   "m": "012068",
+   "name": {
+    "ja": "阿寒湖",
+    "kana": "あかんこ",
+    "romaji": "Akanko",
+    "zh_tw": "阿寒湖"
+   },
+   "summary": {
+    "text": "阿寒湖是位於日本北海道釧路市阿寒町的淡水湖泊，全域被劃入阿寒摩周國立公園，以盛產毬藻和鱒魚聞名，湖水清澈，風景秀麗，在湖的南岸有阿寒湖溫泉，為道東著名的旅遊勝地",
+    "lang": "zh",
+    "source_url": "https://zh.wikipedia.org/wiki/%E9%98%BF%E5%AF%92%E6%B9%96",
+    "license": "CC BY-SA 4.0"
+   },
+   "src": "https://www.wikidata.org/wiki/Q429402"
+  },
+  {
+   "id": "wd-Q4803387",
+   "n": "中原悌二郎記念旭川市彫刻美術館",
+   "z": "中原悌二郎記念旭川市彫刻美術館",
+   "lat": 43.80521,
+   "lng": 142.3647,
+   "k": "major",
+   "f": 0,
+   "s": 66.5,
+   "h": "なかはらていじろうきねんあさひかわしちょうこくびじゅつかん",
+   "r": "Nakaharateijirokinenasahikawashichokokubijutsukan",
+   "c": "美術館",
+   "m": "012041",
+   "name": {
+    "ja": "中原悌二郎記念旭川市彫刻美術館",
+    "kana": "なかはらていじろうきねんあさひかわしちょうこくびじゅつかん",
+    "romaji": "Nakaharateijirokinenasahikawashichokokubijutsukan",
+    "zh_tw": "中原悌二郎記念旭川市彫刻美術館"
+   },
+   "summary": {
+    "text": "Asahikawa Museum of Sculpture in Honor of Teijiro Nakahara (中原悌二郎記念旭川市彫刻美術館, Nak",
+    "lang": "en",
+    "source_url": "https://en.wikipedia.org/wiki/Asahikawa_Museum_of_Sculpture",
+    "license": "CC BY-SA 4.0"
+   },
+   "src": "https://www.wikidata.org/wiki/Q4803387"
+  },
+  {
+   "id": "wd-Q48765500",
+   "n": "小樽オルゴール堂",
+   "z": "小樽音樂盒堂本館",
+   "lat": 43.1906,
+   "lng": 141.00777,
+   "k": "major",
+   "f": 0,
+   "s": 133.9,
+   "c": "寺院",
+   "m": "012033",
+   "st": "node-8082693155",
+   "name": {
+    "ja": "小樽オルゴール堂",
+    "zh_tw": "小樽音樂盒堂本館"
+   },
+   "summary": {
+    "text": "Otaru Music Box Museum (小樽オルゴール堂) is a music museum in the Otaru Orgel-do II bui",
+    "lang": "en",
+    "source_url": "https://en.wikipedia.org/wiki/Otaru_Music_Box_Museum",
+    "license": "CC BY-SA 4.0"
+   },
+   "src": "https://www.wikidata.org/wiki/Q48765500"
+  },
+  {
+   "id": "wd-Q5357043",
+   "n": "恵山",
+   "z": "惠山",
+   "lat": 41.80472,
+   "lng": 141.16611,
+   "k": "major",
+   "f": 0,
+   "s": 133.4,
+   "h": "えさん",
+   "r": "Esan",
+   "m": "012025",
+   "name": {
+    "ja": "恵山",
+    "kana": "えさん",
+    "romaji": "Esan",
+    "zh_tw": "惠山"
+   },
+   "summary": {
+    "text": "Mount E (恵山, E-san) is an active stratovolcano of the Kameda peninsula, which is",
+    "lang": "en",
+    "source_url": "https://en.wikipedia.org/wiki/Mount_E",
+    "license": "CC BY-SA 4.0"
+   },
+   "src": "https://www.wikidata.org/wiki/Q5357043"
+  },
+  {
+   "id": "wd-Q5371411",
+   "n": "能取湖",
+   "z": "能取湖",
+   "lat": 44.06667,
+   "lng": 144.15,
+   "k": "major",
+   "f": 0,
+   "s": 72.2,
+   "h": "のとろこ",
+   "r": "Notoroko",
+   "m": "012114",
+   "name": {
+    "ja": "能取湖",
+    "kana": "のとろこ",
+    "romaji": "Notoroko",
+    "zh_tw": "能取湖"
+   },
+   "summary": {
+    "text": "能取湖是位於日本北海道網走市的一個湖泊，也是網走國定公園的一部分。能取湖這一名稱來自於附近的能取岬。能取湖是日本面積第14大湖泊，也是一個海水湖。",
+    "lang": "zh",
+    "source_url": "https://zh.wikipedia.org/wiki/%E8%83%BD%E5%8F%96%E6%B9%96",
+    "license": "CC BY-SA 4.0"
+   },
+   "src": "https://www.wikidata.org/wiki/Q5371411"
+  },
+  {
+   "id": "wd-Q55250300",
+   "n": "道の駅びえい「白金ビルケ」",
+   "z": "道の駅びえい「白金ビルケ」",
+   "lat": 43.50306,
+   "lng": 142.59733,
+   "k": "major",
+   "f": 0,
+   "s": 82.8,
+   "m": "014591",
+   "name": {
+    "ja": "道の駅びえい「白金ビルケ」",
+    "zh_tw": "道の駅びえい「白金ビルケ」"
+   },
+   "summary": {
+    "text": "道の駅びえい「白金ビルケ」（みちのえき びえい「しろがねビルケ」）は、北海道上川郡美瑛町にある北海道道966号十勝岳温泉美瑛線の道の駅である。",
+    "lang": "ja",
+    "source_url": "https://ja.wikipedia.org/wiki/%E9%81%93%E3%81%AE%E9%A7%85%E3%81%B3%E3%81%88%E3%81%84%E3%80%8C%E7%99%BD%E9%87%91%E3%83%93%E3%83%AB%E3%82%B1%E3%80%8D",
+    "license": "CC BY-SA 4.0"
+   },
+   "src": "https://www.wikidata.org/wiki/Q55250300"
+  },
+  {
+   "id": "wd-Q572825",
+   "n": "網走湖",
+   "z": "網走湖",
+   "lat": 43.97167,
+   "lng": 144.175,
+   "k": "major",
+   "f": 0,
+   "s": 125.2,
+   "h": "あばしりこ",
+   "r": "Abashiriko",
+   "m": "012114",
+   "name": {
+    "ja": "網走湖",
+    "kana": "あばしりこ",
+    "romaji": "Abashiriko",
+    "zh_tw": "網走湖"
+   },
+   "summary": {
+    "text": "網走湖，是一個橫跨日本北海道網走市及網走郡大空町的湖泊。是網走國定公園的一部分。在約6,000年前，網走湖曾是鄂霍次克海的海灣。隨著海面後退和地盤上升，約在12",
+    "lang": "zh",
+    "source_url": "https://zh.wikipedia.org/wiki/%E7%B6%B2%E8%B5%B0%E6%B9%96",
+    "license": "CC BY-SA 4.0"
+   },
+   "src": "https://www.wikidata.org/wiki/Q572825"
+  },
+  {
+   "id": "wd-Q6359812",
+   "n": "カムイワッカ湯の滝",
+   "z": "神之水溫泉瀑布",
+   "lat": 44.15392,
+   "lng": 145.12911,
+   "k": "major",
+   "f": 0,
+   "s": 129.4,
+   "h": "かむいわっかゆのたき",
+   "r": "Kamuiwakkayunotaki",
+   "m": "015458",
+   "name": {
+    "ja": "カムイワッカ湯の滝",
+    "kana": "かむいわっかゆのたき",
+    "romaji": "Kamuiwakkayunotaki",
+    "zh_tw": "神之水溫泉瀑布"
+   },
+   "summary": {
+    "text": "神之水溫泉瀑布為位於日本北海道知床半島神之水川（カムイワッカ川）的瀑布，高低落差20公尺，為知床八景之一。由於瀑布水源即為溫泉水，因此也是天然的露天溫泉場地，在",
+    "lang": "zh",
+    "source_url": "https://zh.wikipedia.org/wiki/%E7%A5%9E%E4%B9%8B%E6%B0%B4%E6%BA%AB%E6%B3%89%E7%80%91%E5%B8%83",
+    "license": "CC BY-SA 4.0"
+   },
+   "src": "https://www.wikidata.org/wiki/Q6359812"
+  },
+  {
+   "id": "wd-Q6478187",
+   "n": "濤沸湖",
+   "z": "濤沸湖",
+   "lat": 43.93333,
+   "lng": 144.4,
+   "k": "major",
+   "f": 0,
+   "s": 67.9,
+   "h": "とうふつこ",
+   "r": "Tofutsuko",
+   "m": "012114",
+   "st": "node-264448475",
+   "name": {
+    "ja": "濤沸湖",
+    "kana": "とうふつこ",
+    "romaji": "Tofutsuko",
+    "zh_tw": "濤沸湖"
+   },
+   "summary": {
+    "text": "濤沸湖是位於日本北海道東部網走市和小清水町的一個湖泊。面積約900公頃。是網走國定公園的一部分。由於連接鄂霍茨克海，濤沸湖的湖水含有鹽分。2005年，濤沸湖被列",
+    "lang": "zh",
+    "source_url": "https://zh.wikipedia.org/wiki/%E6%BF%A4%E6%B2%B8%E6%B9%96",
+    "license": "CC BY-SA 4.0"
+   },
+   "src": "https://www.wikidata.org/wiki/Q6478187"
+  },
+  {
+   "id": "wd-Q6920840",
+   "n": "風不死岳",
+   "z": "風不死岳",
+   "lat": 42.71694,
+   "lng": 141.35889,
+   "k": "major",
+   "f": 0,
+   "s": 76.6,
+   "h": "ふっぷしだけ",
+   "r": "Fuppushidake",
+   "m": "012246",
+   "name": {
+    "ja": "風不死岳",
+    "kana": "ふっぷしだけ",
+    "romaji": "Fuppushidake",
+    "zh_tw": "風不死岳"
+   },
+   "summary": {
+    "text": "Mount Fuppushi (風不死岳, Fuppushi-dake) is a dormant volcano located in Shikotsu-To",
+    "lang": "en",
+    "source_url": "https://en.wikipedia.org/wiki/Mount_Fuppushi",
+    "license": "CC BY-SA 4.0"
+   },
+   "src": "https://www.wikidata.org/wiki/Q6920840"
+  },
+  {
+   "id": "wd-Q710826",
+   "n": "北海道神宮",
+   "z": "北海道神宮",
+   "lat": 43.05423,
+   "lng": 141.3077,
+   "k": "major",
+   "f": 1,
+   "s": 140.5,
+   "h": "ほっかいどうじんぐう",
+   "r": "Hokkaido Jingu",
+   "c": "神社",
+   "m": "011011",
+   "st": "node-7809484248",
+   "name": {
+    "ja": "北海道神宮",
+    "kana": "ほっかいどうじんぐう",
+    "romaji": "Hokkaido Jingu",
+    "zh_tw": "北海道神宮"
+   },
+   "summary": {
+    "text": "北海道神宮是位於北海道札幌市中央區的一座神社。北海道總鎮守。在北海道開拓初期，北海道地區多與樺太、千島等地相對望，而且為了針對俄羅斯的防守需要，因此神宮的正門是",
+    "lang": "zh",
+    "source_url": "https://zh.wikipedia.org/wiki/%E5%8C%97%E6%B5%B7%E9%81%93%E7%A5%9E%E5%AE%AE",
+    "license": "CC BY-SA 4.0"
+   },
+   "src": "https://www.wikidata.org/wiki/Q710826"
+  },
+  {
+   "id": "wd-Q7108460",
+   "n": "小樽天狗山ロープウェイ",
+   "z": "小樽天狗山ロープウェイ",
+   "lat": 43.17497,
+   "lng": 140.97372,
+   "k": "major",
+   "f": 0,
+   "s": 127.4,
+   "m": "012033",
+   "name": {
+    "ja": "小樽天狗山ロープウェイ",
+    "zh_tw": "小樽天狗山ロープウェイ"
+   },
+   "summary": {
+    "text": "小樽天狗山ロープウエイ（おたるてんぐやまロープウエイ、英: OTARU TENGUYAMA ROPEWAY）は、北海道小樽市にあるロープウェイ。",
+    "lang": "ja",
+    "source_url": "https://ja.wikipedia.org/wiki/%E5%B0%8F%E6%A8%BD%E5%A4%A9%E7%8B%97%E5%B1%B1%E3%83%AD%E3%83%BC%E3%83%97%E3%82%A6%E3%82%A8%E3%82%A4",
+    "license": "CC BY-SA 4.0"
+   },
+   "src": "https://www.wikidata.org/wiki/Q7108460"
+  },
+  {
+   "id": "wd-Q7421103",
+   "n": "札幌市円山動物園",
+   "z": "札幌市圓山動物園",
+   "lat": 43.05144,
+   "lng": 141.3074,
+   "k": "major",
+   "f": 0,
+   "s": 129.7,
+   "h": "さっぽろしまるやまどうぶつえん",
+   "r": "Sapporoshimaruyamadobutsuen",
+   "m": "011011",
+   "st": "node-7809484249",
+   "name": {
+    "ja": "札幌市円山動物園",
+    "kana": "さっぽろしまるやまどうぶつえん",
+    "romaji": "Sapporoshimaruyamadobutsuen",
+    "zh_tw": "札幌市圓山動物園"
+   },
+   "summary": {
+    "text": "札幌市圓山動物園是一座位於北海道札幌市中央區宮丘圓山公園內的動物園動物園由札幌市環境局管理運行。2014年5月底時，圓山動物園飼養展示有182種934個動物（不",
+    "lang": "zh",
+    "source_url": "https://zh.wikipedia.org/wiki/%E6%9C%AD%E5%B9%8C%E5%B8%82%E5%9C%93%E5%B1%B1%E5%8B%95%E7%89%A9%E5%9C%92",
+    "license": "CC BY-SA 4.0"
+   },
+   "src": "https://www.wikidata.org/wiki/Q7421103"
+  },
+  {
+   "id": "wd-Q8536365",
+   "n": "天都山",
+   "z": "天都山",
+   "lat": 44.00106,
+   "lng": 144.23989,
+   "k": "major",
+   "f": 0,
+   "s": 70.4,
+   "h": "てんとざん",
+   "r": "Tentozan",
+   "c": "名勝",
+   "m": "012114",
+   "name": {
+    "ja": "天都山",
+    "kana": "てんとざん",
+    "romaji": "Tentozan",
+    "zh_tw": "天都山"
+   },
+   "summary": {
+    "text": "天都山是位於日本北海道網走市市區西南側的山，海拔高度207公尺。於1938年獲指定為日本國名勝，現為網走國定公園的範圍內。",
+    "lang": "zh",
+    "source_url": "https://zh.wikipedia.org/wiki/%E5%A4%A9%E9%83%BD%E5%B1%B1",
+    "license": "CC BY-SA 4.0"
+   },
+   "src": "https://www.wikidata.org/wiki/Q8536365"
+  },
+  {
+   "id": "wd-Q861554",
+   "n": "北海道庁旧本庁舎",
+   "z": "北海道廳舊本廳舍",
+   "lat": 43.06394,
+   "lng": 141.348,
+   "k": "major",
+   "f": 0,
+   "s": 134.3,
+   "h": "ほっかいどうちょうきゅうほんちょうしゃ",
+   "r": "Hokkaidochokyuhonchosha",
+   "c": "史跡",
+   "m": "011011",
+   "st": "node-10255638451",
+   "name": {
+    "ja": "北海道庁旧本庁舎",
+    "kana": "ほっかいどうちょうきゅうほんちょうしゃ",
+    "romaji": "Hokkaidochokyuhonchosha",
+    "zh_tw": "北海道廳舊本廳舍"
+   },
+   "summary": {
+    "text": "北海道廳舊本廳舍是日本北海道札幌市一棟官署建築，位於札幌市中心，為紅磚建造的巴羅克風格歐式建築，是過去北海道作為中央政府內務省直轄廳治北海道廳時期最高行政機關的",
+    "lang": "zh",
+    "source_url": "https://zh.wikipedia.org/wiki/%E5%8C%97%E6%B5%B7%E9%81%93%E5%BB%B3%E8%88%8A%E6%9C%AC%E5%BB%B3%E8%88%8D",
+    "license": "CC BY-SA 4.0"
+   },
+   "src": "https://www.wikidata.org/wiki/Q861554"
+  },
+  {
+   "id": "wd-Q908296",
+   "n": "新千歳空港",
+   "z": "新千歲機場",
+   "lat": 42.7752,
+   "lng": 141.69228,
+   "k": "major",
+   "f": 0,
+   "s": 76.6,
+   "h": "しんちとせくうこう",
+   "r": "Shinchitosekuko",
+   "c": "機場",
+   "m": "012246",
+   "name": {
+    "ja": "新千歳空港",
+    "kana": "しんちとせくうこう",
+    "romaji": "Shinchitosekuko",
+    "zh_tw": "新千歲機場"
+   },
+   "summary": {
+    "text": "新千歲機場位於日本北海道千歲市與苫小牧市交界，是札幌市的主機場，於1988年啟用，替代了其於航空自衛隊千歲基地附近建設的舊千歲機場。千歲基地位於新機場主場站的西",
+    "lang": "zh",
+    "source_url": "https://zh.wikipedia.org/wiki/%E6%96%B0%E5%8D%83%E6%AD%B2%E6%A9%9F%E5%A0%B4",
+    "license": "CC BY-SA 4.0"
+   },
+   "src": "https://www.wikidata.org/wiki/Q908296"
+  },
+  {
+   "id": "wd-Q993926",
+   "n": "旭川市旭山動物園",
+   "z": "旭川市旭山動物園",
+   "lat": 43.76805,
+   "lng": 142.47978,
+   "k": "major",
+   "f": 0,
+   "s": 149.4,
+   "h": "あさひかわしあさひやまどうぶつえん",
+   "r": "Asahikawashiasahiyamadobutsuen",
+   "m": "012041",
+   "name": {
+    "ja": "旭川市旭山動物園",
+    "kana": "あさひかわしあさひやまどうぶつえん",
+    "romaji": "Asahikawashiasahiyamadobutsuen",
+    "zh_tw": "旭川市旭山動物園"
+   },
+   "summary": {
+    "text": "旭川市旭山動物園，通稱旭山動物園，是位於日本北海道旭川市的市營動物園，緊鄰旭山公園。",
+    "lang": "zh",
+    "source_url": "https://zh.wikipedia.org/wiki/%E6%97%AD%E5%B7%9D%E5%B8%82%E6%97%AD%E5%B1%B1%E5%8B%95%E7%89%A9%E5%9C%92",
+    "license": "CC BY-SA 4.0"
+   },
+   "src": "https://www.wikidata.org/wiki/Q993926"
+  }
+ ],
+ "municipalities": [
+  {
+   "m": "011011",
+   "n": "中央区",
+   "h": "ちゅうおうく",
+   "c": "札幌市",
+   "l": [141.3359,43.0508],
+   "bbox": [141.2024,42.9975,141.3896,43.0861],
+   "touches": ["011029","011037","011045","011053","011061","011070"]
+  },
+  {
+   "m": "012025",
+   "n": "函館市",
+   "h": "はこだてし",
+   "l": [140.8901,41.8433],
+   "bbox": [140.6924,41.71,141.1866,42.0093],
+   "touches": ["012360","013374","013439"]
+  },
+  {
+   "m": "012033",
+   "n": "小樽市",
+   "h": "おたるし",
+   "l": [140.9577,43.1822],
+   "bbox": [140.8448,43.0608,141.2918,43.2394],
+   "touches": ["011061","011096","012351","014087","014095"]
+  },
+  {
+   "m": "012041",
+   "n": "旭川市",
+   "h": "あさひかわし",
+   "l": [142.2958,43.7213],
+   "bbox": [142.1488,43.5443,142.7415,43.9562],
+   "touches": ["012165","012289","014524","014532","014541","014559","014575","014583","014591","014648","014729"]
+  },
+  {
+   "m": "012068",
+   "n": "釧路市",
+   "h": "くしろし",
+   "l": [144.1286,43.1877],
+   "bbox": [143.7031,42.8422,144.4857,43.5308],
+   "touches": ["015440","016471","016497","016616","016659","016675","016683"]
+  },
+  {
+   "m": "012114",
+   "n": "網走市",
+   "h": "あばしりし",
+   "l": [144.1464,44.0389],
+   "bbox": [144.0207,43.7766,144.4334,44.1157],
+   "touches": ["012084","015474","015644"]
+  },
+  {
+   "m": "012246",
+   "n": "千歳市",
+   "h": "ちとせし",
+   "l": [141.6871,42.8301],
+   "bbox": [141.1723,42.6816,141.87,42.9532],
+   "touches": ["011061","012131","012319","012335","014273","014281","015784","015857"]
+  },
+  {
+   "m": "014591",
+   "n": "美瑛町",
+   "h": "びえいちょう",
+   "l": [142.6915,43.5454],
+   "bbox": [142.3205,43.4178,142.9119,43.669],
+   "touches": ["012041","012165","014532","014575","014583","014605","014613","016357"]
+  },
+  {
+   "m": "015458",
+   "n": "斜里町",
+   "h": "しゃりちょう",
+   "l": [144.7562,43.8494],
+   "bbox": [144.5542,43.757,145.3376,44.3453],
+   "touches": ["015466","015474","016934","016942"]
+  }
+ ],
+ "lines": [
+  {
+   "n": "函館本線",
+   "e": "Hakodate Main Line",
+   "k": "train",
+   "o": "北海道旅客鉄道"
+  },
+  {
+   "n": "JR千歳線",
+   "e": "JR Chitose Line",
+   "k": "train",
+   "o": "北海道旅客鉄道"
+  },
+  {
+   "n": "根室本線",
+   "e": "Nemuro Main Line",
+   "k": "train",
+   "o": "北海道旅客鉄道"
+  },
+  {
+   "n": "富良野線",
+   "e": "Furano Line",
+   "k": "train"
+  },
+  {
+   "n": "石北本線",
+   "e": "Sekihoku Main Line",
+   "k": "train",
+   "o": "北海道旅客鉄道"
+  },
+  {
+   "n": "釧網本線",
+   "e": "Senmō Main Line",
+   "k": "train",
+   "o": "北海道旅客鉄道"
+  },
+  {
+   "n": "宗谷本線",
+   "e": "Sōya Main Line",
+   "k": "train",
+   "o": "北海道旅客鉄道"
+  },
+  {
+   "n": "道南いさりび鉄道線",
+   "e": "South Hokkaido Railway Line",
+   "k": "train",
+   "o": "道南いさりび鉄道"
+  },
+  {
+   "n": "東西線",
+   "e": "Tōzai Line (Miyanosawa --> Shin Sapporo)",
+   "k": "subway",
+   "o": "札幌市交通局"
+  },
+  {
+   "n": "南北線",
+   "e": "Namboku Line (Asabu --> Makaomanai)",
+   "k": "subway",
+   "o": "札幌市交通局"
+  },
+  {
+   "n": "東豊線",
+   "e": "Toho Line",
+   "k": "subway",
+   "o": "札幌市交通局"
+  },
+  {
+   "n": "JR根室本線",
+   "k": "train",
+   "o": "北海道旅客鉄道"
+  }
+ ],
+ "stations": [
+  {
+   "id": "node-10255638451",
+   "n": "さっぽろ",
+   "e": "Sapporo",
+   "lat": 43.066254,
+   "lng": 141.353908,
+   "l": [9,10]
+  },
+  {
+   "id": "node-10255638452",
+   "n": "大通",
+   "e": "Odori",
+   "lat": 43.060723,
+   "lng": 141.355315,
+   "l": [8,9,10]
+  },
+  {
+   "id": "node-264430273",
+   "n": "旭川",
+   "e": "Asahikawa",
+   "lat": 43.76275,
+   "lng": 142.357926,
+   "l": [0,3,6]
+  },
+  {
+   "id": "node-264437087",
+   "n": "桜岡",
+   "e": "Sakuraoka",
+   "lat": 43.802184,
+   "lng": 142.487327,
+   "l": [4]
+  },
+  {
+   "id": "node-264448475",
+   "n": "原生花園",
+   "e": "Genseikaen",
+   "lat": 43.94108,
+   "lng": 144.414164,
+   "l": [5]
+  },
+  {
+   "id": "node-264449544",
+   "n": "桂台",
+   "e": "Katsuradai",
+   "lat": 44.01702,
+   "lng": 144.273342,
+   "l": [5]
+  },
+  {
+   "id": "node-5820145042",
+   "n": "釧路",
+   "e": "Kushiro",
+   "lat": 42.990684,
+   "lng": 144.382038,
+   "l": [2,11]
+  },
+  {
+   "id": "node-8082693151",
+   "n": "小樽",
+   "e": "Otaru",
+   "lat": 43.197576,
+   "lng": 140.993375,
+   "l": [0]
+  },
+  {
+   "id": "node-8082693155",
+   "n": "南小樽",
+   "e": "Minami-Otaru",
+   "lat": 43.186858,
+   "lng": 141.007326,
+   "l": [0]
+  },
+  {
+   "id": "node-8084742769",
+   "n": "千歳",
+   "e": "Chitose",
+   "lat": 42.828257,
+   "lng": 141.651856,
+   "l": [1]
+  },
+  {
+   "id": "node-8206074563",
+   "n": "函館",
+   "e": "Hakodate",
+   "lat": 41.774344,
+   "lng": 140.726249,
+   "l": [0,7]
+  }
+ ],
+ "festivals": [
+  {
+   "id": "hokkaido-Q11511700",
+   "name": {
+    "ja": "旭川冬まつり",
+    "kana": "あさひかわふゆまつり",
+    "romaji": "Asahikawafuyumatsuri",
+    "zh_tw": "旭川冬まつり",
+    "en": "Asahikawa Winter Festival"
+   },
+   "prefecture": "hokkaido",
+   "months": [2],
+   "months_source": "wikidata",
+   "location": {
+    "lat": 43.778333333333336,
+    "lng": 142.36
+   },
+   "kana_source": "wikipedia",
+   "sources": [
+    {
+     "url": "https://ja.wikipedia.org/wiki/%E6%97%AD%E5%B7%9D%E5%86%AC%E3%81%BE%E3%81%A4%E3%82%8A",
+     "fetched_at": "2026-09-29"
+    },
+    {
+     "url": "https://www.wikidata.org/wiki/Q11511700",
+     "fetched_at": "2026-09-29"
+    }
+   ],
+   "views": 2014,
+   "updated_at": "2026-09-29",
+   "summary": {
+    "text": "旭川冬まつり（あさひかわふゆまつり）は、北海道旭川市で、毎年2月上旬に行われる雪まつりである。1960年（昭和35年）に第一回が開催された。北海道を代表する冬の",
+    "lang": "ja",
+    "source_url": "https://ja.wikipedia.org/wiki/%E6%97%AD%E5%B7%9D%E5%86%AC%E3%81%BE%E3%81%A4%E3%82%8A",
+    "license": "CC BY-SA 4.0"
+   },
+   "m": "012041"
+  },
+  {
+   "id": "hokkaido-Q929531",
+   "name": {
+    "ja": "さっぽろ雪まつり",
+    "kana": "さっぽろゆきまつり",
+    "romaji": "Sapporoyukimatsuri",
+    "zh_tw": "札幌冰雪節",
+    "en": "Sapporo Snow Festival"
+   },
+   "prefecture": "hokkaido",
+   "months": [2],
+   "months_source": "wikidata",
+   "location": {
+    "lat": 43.061047,
+    "lng": 141.35638
+   },
+   "kana_source": "wikipedia",
+   "sources": [
+    {
+     "url": "https://ja.wikipedia.org/wiki/%E3%81%95%E3%81%A3%E3%81%BD%E3%82%8D%E9%9B%AA%E3%81%BE%E3%81%A4%E3%82%8A",
+     "fetched_at": "2026-09-29"
+    },
+    {
+     "url": "https://www.wikidata.org/wiki/Q929531",
+     "fetched_at": "2026-09-29"
+    }
+   ],
+   "views": 25905,
+   "updated_at": "2026-09-29",
+   "summary": {
+    "text": "札幌雪祭是日本北海道札幌市在每年2月上旬舉辦的冰雪節活動。該活動的主會場在札幌市中央區大通公園，以展示雪雕為主（但薄野會場等地亦展示冰雕）。札幌雪祭由札幌市政府",
+    "lang": "zh",
+    "source_url": "https://zh.wikipedia.org/wiki/%E6%9C%AD%E5%B9%8C%E9%9B%AA%E7%A5%AD",
+    "license": "CC BY-SA 4.0"
+   },
+   "m": "011011"
+  }
+ ],
+ "specialties": [
+  {
+   "id": "hokkaido-Q11087090",
+   "name": {
+    "ja": "旭川ラーメン",
+    "kana": "あさひかわらーめん",
+    "romaji": "Asahikawa Ramen",
+    "zh_tw": "旭川拉麵",
+    "en": "Asahikawa ramen"
+   },
+   "prefecture": "hokkaido",
+   "category": "ramen",
+   "source_type": "wikipedia",
+   "kana_source": "wikipedia",
+   "sources": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q11087090",
+     "fetched_at": "2026-09-29"
+    },
+    {
+     "url": "https://zh.wikipedia.org/wiki/%E6%97%AD%E5%B7%9D%E6%8B%89%E9%BA%B5",
+     "fetched_at": "2026-09-29"
+    }
+   ],
+   "updated_at": "2026-09-29",
+   "summary": {
+    "text": "旭川拉麵（旭川ラーメン）指的是北海道旭川市周邊出產的日本拉麵。",
+    "lang": "zh",
+    "source_url": "https://zh.wikipedia.org/wiki/%E6%97%AD%E5%B7%9D%E6%8B%89%E9%BA%B5",
+    "license": "CC BY-SA 4.0"
+   }
+  },
+  {
+   "id": "hokkaido-Q11292372",
+   "name": {
+    "ja": "オホーツク干貝柱塩ラーメン",
+    "kana": "おほーつくほしかいばしらしおらーめん",
+    "romaji": "Ohotsukuhoshikaibashirashioramen",
+    "zh_tw": "鄂霍次克幹貝柱鹽拉麵",
+    "en": "Okhotsk Hoshikaibashira Shio Ramen"
+   },
+   "prefecture": "hokkaido",
+   "category": "ramen",
+   "source_type": "wikipedia",
+   "kana_source": "wikipedia",
+   "sources": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q11292372",
+     "fetched_at": "2026-09-29"
+    },
+    {
+     "url": "https://zh.wikipedia.org/wiki/%E9%84%82%E9%9C%8D%E6%AC%A1%E5%85%8B%E5%B9%B2%E8%B2%9D%E6%9F%B1%E9%B9%BD%E6%8B%89%E9%BA%B5",
+     "fetched_at": "2026-09-29"
+    }
+   ],
+   "updated_at": "2026-09-29",
+   "summary": {
+    "text": "鄂霍次克幹貝柱鹽拉麵是於日本北海道稚內市至網走市的鄂霍次克海沿岸地區一帶流傳的食物，為日本拉麵的一種。",
+    "lang": "zh",
+    "source_url": "https://zh.wikipedia.org/wiki/%E9%84%82%E9%9C%8D%E6%AC%A1%E5%85%8B%E5%B9%B2%E8%B2%9D%E6%9F%B1%E9%B9%BD%E6%8B%89%E9%BA%B5",
+    "license": "CC BY-SA 4.0"
+   }
+  },
+  {
+   "id": "hokkaido-Q11358938",
+   "name": {
+    "ja": "上川ラーメン",
+    "kana": "かみかわらーめん",
+    "romaji": "Kamikawa Ramen",
+    "zh_tw": "上川ラーメン",
+    "en": "Kamikawa ramen"
+   },
+   "prefecture": "hokkaido",
+   "category": "ramen",
+   "source_type": "wikipedia",
+   "kana_source": "wikipedia",
+   "sources": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q11358938",
+     "fetched_at": "2026-09-29"
+    },
+    {
+     "url": "https://ja.wikipedia.org/wiki/%E4%B8%8A%E5%B7%9D%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3",
+     "fetched_at": "2026-09-29"
+    }
+   ],
+   "updated_at": "2026-09-29",
+   "summary": {
+    "text": "上川ラーメン（かみかわラーメン）とは、北海道上川郡上川町で供され食されるラーメンであり、ご当地ラーメン（ご当地グルメ）の一つ。",
+    "lang": "ja",
+    "source_url": "https://ja.wikipedia.org/wiki/%E4%B8%8A%E5%B7%9D%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3",
+    "license": "CC BY-SA 4.0"
+   }
+  },
+  {
+   "id": "hokkaido-Q11366283",
+   "name": {
+    "ja": "中標津ミルキーラーメン",
+    "kana": "なかしべつみるきーらーめん",
+    "romaji": "Nakashibetsumirukiramen",
+    "zh_tw": "中標津ミルキーラーメン",
+    "en": "Nakashibetsu milky ramen"
+   },
+   "prefecture": "hokkaido",
+   "category": "ramen",
+   "source_type": "wikipedia",
+   "kana_source": "wikipedia",
+   "sources": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q11366283",
+     "fetched_at": "2026-09-29"
+    },
+    {
+     "url": "https://ja.wikipedia.org/wiki/%E4%B8%AD%E6%A8%99%E6%B4%A5%E3%83%9F%E3%83%AB%E3%82%AD%E3%83%BC%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3",
+     "fetched_at": "2026-09-29"
+    }
+   ],
+   "updated_at": "2026-09-29",
+   "summary": {
+    "text": "中標津ミルキーラーメン（なかしべつミルキーラーメン）は、北海道標津郡中標津町で生産された牛乳が使用されたご当地ラーメンである。",
+    "lang": "ja",
+    "source_url": "https://ja.wikipedia.org/wiki/%E4%B8%AD%E6%A8%99%E6%B4%A5%E3%83%9F%E3%83%AB%E3%82%AD%E3%83%BC%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3",
+    "license": "CC BY-SA 4.0"
+   }
+  },
+  {
+   "id": "hokkaido-Q11395942",
+   "name": {
+    "ja": "函館ラーメン",
+    "kana": "はこだてらーめん",
+    "romaji": "Hakodate Ramen",
+    "zh_tw": "函館拉麵",
+    "en": "Hakodate ramen"
+   },
+   "prefecture": "hokkaido",
+   "category": "ramen",
+   "source_type": "wikipedia",
+   "kana_source": "wikipedia",
+   "sources": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q11395942",
+     "fetched_at": "2026-09-29"
+    },
+    {
+     "url": "https://ja.wikipedia.org/wiki/%E5%87%BD%E9%A4%A8%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3",
+     "fetched_at": "2026-09-29"
+    }
+   ],
+   "updated_at": "2026-09-29",
+   "summary": {
+    "text": "函館ラーメン（はこだてラーメン）は、北海道函館市のご当地グルメ。当地周辺で単にラーメン、支那そばなどと呼ばれている塩ラーメンである。",
+    "lang": "ja",
+    "source_url": "https://ja.wikipedia.org/wiki/%E5%87%BD%E9%A4%A8%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3",
+    "license": "CC BY-SA 4.0"
+   }
+  },
+  {
+   "id": "hokkaido-Q11648259",
+   "name": {
+    "ja": "釧路ラーメン",
+    "kana": "くしろらーめん",
+    "romaji": "Kushiro Ramen",
+    "zh_tw": "釧路拉麵",
+    "en": "Kushiro ramen"
+   },
+   "prefecture": "hokkaido",
+   "category": "ramen",
+   "source_type": "wikipedia",
+   "kana_source": "wikipedia",
+   "sources": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q11648259",
+     "fetched_at": "2026-09-29"
+    },
+    {
+     "url": "https://zh.wikipedia.org/wiki/%E9%87%A7%E8%B7%AF%E6%8B%89%E9%BA%B5",
+     "fetched_at": "2026-09-29"
+    }
+   ],
+   "updated_at": "2026-09-29",
+   "summary": {
+    "text": "釧路拉麵（ 釧路ラーメン／くしろラーメン，Kushiro ramen）是由日本北海道釧路市該地發明。該拉麵是一種有柴魚高湯湯底的醬油味拉麵。湯底主要使用柴魚，再",
+    "lang": "zh",
+    "source_url": "https://zh.wikipedia.org/wiki/%E9%87%A7%E8%B7%AF%E6%8B%89%E9%BA%B5",
+    "license": "CC BY-SA 4.0"
+   }
+  },
+  {
+   "id": "hokkaido-Q122790153",
+   "name": {
+    "ja": "鯨汁",
+    "kana": "くじらじる",
+    "romaji": "Kujirajiru",
+    "zh_tw": "鯨汁",
+    "en": "kujirajiru"
+   },
+   "prefecture": "hokkaido",
+   "category": "kyodo",
+   "source_type": "kyodo_ryori",
+   "kana_source": "maff",
+   "sources": [
+    {
+     "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/kujirajiru_hokkaido.html",
+     "fetched_at": "2026-09-29"
+    },
+    {
+     "url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/2461/index.html",
+     "fetched_at": "2026-09-29"
+    },
+    {
+     "url": "https://www.wikidata.org/wiki/Q122790153",
+     "fetched_at": "2026-09-29"
+    }
+   ],
+   "updated_at": "2026-09-29",
+   "summary": {
+    "text": "\"Kujira-jiru\" is an essential New Year's Dish in Southern Hokkaido. As the New Y",
+    "lang": "en",
+    "source_url": "https://www.maff.go.jp/e/policies/market/k_ryouri/search_menu/2461/index.html",
+    "license": "出典：農林水產省（公共データ利用規約 第1.0版）"
+   }
+  },
+  {
+   "id": "hokkaido-Q17218908",
+   "name": {
+    "ja": "天ぷらラーメン",
+    "kana": "てんぷららーめん",
+    "romaji": "Tenpuraramen",
+    "zh_tw": "天ぷらラーメン",
+    "en": "tempura ramen"
+   },
+   "prefecture": "hokkaido",
+   "category": "ramen",
+   "source_type": "wikipedia",
+   "kana_source": "wikipedia",
+   "sources": [
+    {
+     "url": "https://www.wikidata.org/wiki/Q17218908",
+     "fetched_at": "2026-09-29"
+    },
+    {
+     "url": "https://ja.wikipedia.org/wiki/%E5%A4%A9%E3%81%B7%E3%82%89%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3",
+     "fetched_at": "2026-09-29"
+    }
+   ],
+   "updated_at": "2026-09-29",
+   "summary": {
+    "text": "天ぷらラーメン（てんぷらラーメン）とは、北海道西部の後志総合振興局に位置する積丹半島地域などで食べられているラーメンである。",
+    "lang": "ja",
+    "source_url": "https://ja.wikipedia.org/wiki/%E5%A4%A9%E3%81%B7%E3%82%89%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3",
+    "license": "CC BY-SA 4.0"
+   }
+  }
+ ],
+ "shinise": [
+  {
+   "id": "shinise-node-10607546561",
+   "g": "teahouse",
+   "p": "hokkaido",
+   "n": "茶房 旧茶屋亭",
+   "lat": 41.76545,
+   "lng": 140.71735,
+   "u": "https://www.openstreetmap.org/node/10607546561",
+   "m": "012025"
+  },
+  {
+   "id": "shinise-node-11810635973",
+   "g": "teahouse",
+   "p": "hokkaido",
+   "n": "甘味茶屋ぶんご",
+   "lat": 43.75557,
+   "lng": 142.38646,
+   "u": "https://www.openstreetmap.org/node/11810635973",
+   "m": "012041"
+  },
+  {
+   "id": "shinise-node-4607424600",
+   "g": "teahouse",
+   "p": "hokkaido",
+   "n": "茶房菊泉",
+   "lat": 41.76421,
+   "lng": 140.71101,
+   "a": "北海道函館市元町",
+   "u": "http://hakodatw-kanko.com/cafe-saboukikuizumi",
+   "m": "012025"
+  },
+  {
+   "id": "shinise-node-4607444390",
+   "g": "teahouse",
+   "p": "hokkaido",
+   "n": "茶房無垢里",
+   "lat": 41.76507,
+   "lng": 140.71085,
+   "a": "北海道函館市元町",
+   "u": "https://www.openstreetmap.org/node/4607444390",
+   "m": "012025"
+  },
+  {
+   "id": "shinise-node-7166875898",
+   "g": "teahouse",
+   "p": "hokkaido",
+   "n": "円山茶寮",
+   "lat": 43.06173,
+   "lng": 141.31569,
+   "a": "北海道札幌市",
+   "u": "https://www.openstreetmap.org/node/7166875898",
+   "m": "011011"
+  },
+  {
+   "id": "shinise-node-9270745251",
+   "g": "teahouse",
+   "p": "hokkaido",
+   "n": "茶房　あまぽーら",
+   "lat": 43.02234,
+   "lng": 144.32936,
+   "u": "https://www.openstreetmap.org/node/9270745251",
+   "m": "012068"
+  },
+  {
+   "id": "shinise-q11405794",
+   "g": "wagashi",
+   "p": "hokkaido",
+   "n": "千秋庵総本家",
+   "z": "千秋庵總本家",
+   "lat": 41.76111,
+   "lng": 140.71946,
+   "a": "北海道函館市宝来町",
+   "u": "https://sensyuansohonke.co.jp/",
+   "f": "1860年",
+   "w": "https://ja.wikipedia.org/wiki/千秋庵総本家",
+   "m": "012025"
+  },
+  {
+   "id": "shinise-q11501376",
+   "g": "wagashi",
+   "p": "hokkaido",
+   "n": "新倉屋",
+   "lat": 43.18639,
+   "lng": 141.01972,
+   "u": "https://ja.wikipedia.org/wiki/新倉屋",
+   "f": "1895年",
+   "w": "https://ja.wikipedia.org/wiki/新倉屋",
+   "m": "012033"
+  }
+ ],
+ "castles": [
+  {
+   "id": "castle-001",
+   "g": "100",
+   "p": "hokkaido",
+   "n": "根室半島チャシ跡群",
+   "h": "ねむろはんとうちゃしあとぐん",
+   "z": "根室半島砦跡群",
+   "lat": 43.38861,
+   "lng": 145.7825,
+   "u": "https://ja.wikipedia.org/wiki/日本100名城",
+   "no": 1,
+   "st": ["根室市歴史と自然の資料館","根室市観光インフォメーションセンター (JR根室駅前)","根室市北方領土資料館 (納沙布岬近く)"],
+   "s": "wd-Q11110966"
+  },
+  {
+   "id": "castle-002",
+   "g": "100",
+   "p": "hokkaido",
+   "n": "五稜郭",
+   "h": "ごりょうかく",
+   "lat": 41.79694,
+   "lng": 140.75694,
+   "u": "https://ja.wikipedia.org/wiki/日本100名城",
+   "no": 2,
+   "st": ["箱館奉行所付属建物「板庫 (休憩所)」入口付近 (屋外)"],
+   "s": "wd-Q1196357"
+  },
+  {
+   "id": "castle-003",
+   "g": "100",
+   "p": "hokkaido",
+   "n": "松前城",
+   "h": "まつまえじょう",
+   "lat": 41.42983,
+   "lng": 140.10839,
+   "u": "https://ja.wikipedia.org/wiki/日本100名城",
+   "no": 3,
+   "st": ["松前城資料館 (松前城天守) の受付"],
+   "s": "wd-Q1143974"
+  },
+  {
+   "id": "castle-101",
+   "g": "zoku",
+   "p": "hokkaido",
+   "n": "志苔館",
+   "h": "しのりたて",
+   "lat": 41.76572,
+   "lng": 140.82239,
+   "u": "https://ja.wikipedia.org/wiki/続日本100名城",
+   "no": 101,
+   "st": ["志苔館あずまや"],
+   "s": "wd-Q11491132"
+  },
+  {
+   "id": "castle-102",
+   "g": "zoku",
+   "p": "hokkaido",
+   "n": "上ノ国勝山館",
+   "h": "かつやまだて",
+   "lat": 41.80083,
+   "lng": 140.09944,
+   "u": "https://ja.wikipedia.org/wiki/続日本100名城",
+   "no": 102,
+   "st": ["勝山館跡ガイダンス施設（4月中旬～11月上旬）","上ノ国町総合福祉センター ジョイじょぐら","（ガイダンス施設休館日ならびに閉館期間）"],
+   "s": "wd-Q11400268"
+  }
+ ],
+ "seasons": {
+  "source": {
+   "url": "https://www.data.jma.go.jp/sakura/data/index.html",
+   "fetched_at": "2026-09-28T17:03:37+00:00"
+  },
+  "stations": [
+   {
+    "name": "札幌",
+    "prefecture": "hokkaido",
+    "normals": {
+     "ajisai": "07-16",
+     "ichou": "11-04",
+     "kaede": "10-28",
+     "sakura_kaika": "05-01",
+     "sakura_mankai": "05-06",
+     "ume": "04-29"
+    }
+   },
+   {
+    "name": "函館",
+    "prefecture": "hokkaido",
+    "normals": {
+     "ajisai": "07-17",
+     "fuji": "05-24",
+     "ichou": "11-02",
+     "kaede": "11-02",
+     "sakura_kaika": "04-28",
+     "sakura_mankai": "05-02",
+     "ume": "04-26"
+    }
+   },
+   {
+    "name": "旭川",
+    "prefecture": "hokkaido",
+    "normals": {
+     "ajisai": "07-21",
+     "kaede": "10-23",
+     "sakura_kaika": "05-04",
+     "sakura_mankai": "05-07"
+    }
+   },
+   {
+    "name": "釧路",
+    "prefecture": "hokkaido",
+    "normals": {
+     "kaede": "10-16",
+     "sakura_kaika": "05-16",
+     "sakura_mankai": "05-19"
+    }
+   },
+   {
+    "name": "帯広",
+    "prefecture": "hokkaido",
+    "normals": {
+     "ajisai": "08-01",
+     "ichou": "10-28",
+     "kaede": "10-20",
+     "sakura_kaika": "05-02",
+     "sakura_mankai": "05-05"
+    }
+   },
+   {
+    "name": "網走",
+    "prefecture": "hokkaido",
+    "normals": {
+     "ajisai": "08-06",
+     "sakura_kaika": "05-10",
+     "sakura_mankai": "05-13"
+    }
+   },
+   {
+    "name": "稚内",
+    "prefecture": "hokkaido",
+    "normals": {
+     "ajisai": "08-12",
+     "sakura_kaika": "05-13",
+     "sakura_mankai": "05-16"
+    }
+   },
+   {
+    "name": "室蘭",
+    "prefecture": "hokkaido",
+    "normals": {
+     "ajisai": "08-06",
+     "kaede": "11-07",
+     "sakura_kaika": "05-04",
+     "sakura_mankai": "05-09",
+     "ume": "05-03"
+    }
+   }
+  ]
+ },
+ "railGraph": {
+  "attribution": "© OpenStreetMap contributors",
+  "nodes": [
+   ["node-10255638451","さっぽろ",43.06625,141.35391,"hokkaido",0],
+   ["node-10255638452","大通",43.06072,141.35531,"hokkaido",0],
+   ["node-10560686937","新函館北斗",41.90492,140.64864,"hokkaido",1],
+   ["node-10697958872","山越",42.23111,140.32693,"hokkaido",0],
+   ["node-11063575378","桔梗",41.84685,140.7228,"hokkaido",0],
+   ["node-11063575389","七飯",41.88765,140.68801,"hokkaido",0],
+   ["node-11063575392","大中山",41.86458,140.71366,"hokkaido",0],
+   ["node-11710999202","糸井",42.62279,141.54696,"hokkaido",0],
+   ["node-11796044377","大沼",41.97225,140.66931,"hokkaido",0],
+   ["node-13469758867","平野川信号場",42.96461,142.89108,"hokkaido",0],
+   ["node-184202324","近文",43.78933,142.32556,"hokkaido",0],
+   ["node-264417887","納内",43.73252,142.13111,"hokkaido",0],
+   ["node-264417990","滝川",43.55526,141.90078,"hokkaido",0],
+   ["node-264418100","妹背牛",43.69062,141.96662,"hokkaido",0],
+   ["node-264418212","豊沼",43.46471,141.90119,"hokkaido",0],
+   ["node-264418510","塩谷",43.20248,140.92484,"hokkaido",0],
+   ["node-264418577","江部乙",43.62755,141.93584,"hokkaido",0],
+   ["node-264418704","砂川",43.49289,141.9093,"hokkaido",0],
+   ["node-264418717","余市",43.18691,140.79479,"hokkaido",0],
+   ["node-264419181","然別",43.12562,140.73704,"hokkaido",0],
+   ["node-264419249","奈井江",43.42317,141.889,"hokkaido",0],
+   ["node-264419930","茶志内",43.36887,141.87298,"hokkaido",0],
+   ["node-264420214","仁木",43.15328,140.76979,"hokkaido",0],
+   ["node-264420469","深川",43.72131,142.0416,"hokkaido",0],
+   ["node-264421972","赤井川",42.00362,140.64148,"hokkaido",0],
+   ["node-264423617","黒松内",42.66961,140.3057,"hokkaido",0],
+   ["node-264423643","落部",42.18772,140.42063,"hokkaido",0],
+   ["node-264423670","熱郛",42.67571,140.37498,"hokkaido",0],
+   ["node-264423707","銀山",43.04097,140.71501,"hokkaido",0],
+   ["node-264423811","石倉",42.17341,140.45829,"",0],
+   ["node-264423812","野田生",42.2169,140.37613,"hokkaido",0],
+   ["node-264423856","ニセコ",42.80893,140.68476,"hokkaido",0],
+   ["node-264423863","比羅夫",42.84885,140.72243,"hokkaido",0],
+   ["node-264423939","倶知安",42.9021,140.74518,"hokkaido",0],
+   ["node-264424024","志文",43.15888,141.74443,"hokkaido",0],
+   ["node-264424034","栗丘",43.08577,141.74414,"hokkaido",0],
+   ["node-264424151","栗沢",43.12076,141.73967,"hokkaido",0],
+   ["node-264424363","栗山",43.05836,141.7757,"hokkaido",0],
+   ["node-264424413","追分",42.87377,141.81056,"hokkaido",0],
+   ["node-264424433","蘭越",42.80454,140.52884,"hokkaido",0],
+   ["node-264424559","早来",42.76541,141.81416,"hokkaido",0],
+   ["node-264424561","白老",42.55476,141.36004,"hokkaido",0],
+   ["node-264424674","有珠",42.51296,140.79403,"hokkaido",0],
+   ["node-264424719","萩野",42.52123,141.30589,"hokkaido",0],
+   ["node-264425278","豊浦",42.58003,140.71548,"hokkaido",0],
+   ["node-264425454","崎守",42.37411,140.92685,"hokkaido",0],
+   ["node-264425567","三川",42.94502,141.80081,"hokkaido",0],
+   ["node-264425570","国縫",42.43838,140.32034,"hokkaido",0],
+   ["node-264425587","古山",42.97574,141.79406,"hokkaido",0],
+   ["node-264425598","由仁",43.01233,141.78593,"hokkaido",0],
+   ["node-264425651","黄金",42.38657,140.90794,"hokkaido",0],
+   ["node-264425672","北舟岡",42.45023,140.88057,"hokkaido",0],
+   ["node-264425816","社台",42.57881,141.41744,"hokkaido",0],
+   ["node-264426033","虎杖浜",42.46477,141.21503,"hokkaido",0],
+   ["node-264426062","目名",42.76136,140.46548,"hokkaido",0],
+   ["node-264426105","竹浦",42.49284,141.26017,"hokkaido",0],
+   ["node-264426398","錦岡",42.60272,141.48778,"hokkaido",0],
+   ["node-264426409","長和",42.48833,140.83342,"hokkaido",0],
+   ["node-264426671","稀府",42.42576,140.89886,"hokkaido",0],
+   ["node-264426752","安平",42.81448,141.82524,"hokkaido",0],
+   ["node-264426958","駒ヶ岳",42.03809,140.61074,"hokkaido",0],
+   ["node-264427173","礼文",42.58051,140.59533,"hokkaido",0],
+   ["node-264428309","昆布",42.79797,140.59602,"hokkaido",0],
+   ["node-264428416","小沢",42.97186,140.67772,"hokkaido",0],
+   ["node-264429202","仁山信号場",41.93,140.63526,"hokkaido",0],
+   ["node-264430273","旭川",43.76275,142.35793,"hokkaido",0],
+   ["node-264430646","北見",43.80493,143.89726,"hokkaido",0],
+   ["node-264430874","西女満別",43.88011,144.14813,"hokkaido",0],
+   ["node-264430951","相内",43.79591,143.75546,"hokkaido",0],
+   ["node-264431091","柏陽",43.82481,143.91686,"hokkaido",0],
+   ["node-264431093","緋牛内",43.88063,143.99955,"hokkaido",0],
+   ["node-264431094","安国",43.99328,143.53584,"hokkaido",0],
+   ["node-264431130","呼人",43.96374,144.21895,"hokkaido",0],
+   ["node-264431438","東相内",43.80554,143.80996,"hokkaido",0],
+   ["node-264431439","西北見",43.80328,143.84208,"hokkaido",0],
+   ["node-264431676","生田原",43.92343,143.53483,"hokkaido",0],
+   ["node-264431888","西留辺蘂",43.78539,143.60331,"hokkaido",0],
+   ["node-264431892","留辺蘂",43.78562,143.62136,"hokkaido",0],
+   ["node-264431930","愛し野",43.84116,143.93254,"hokkaido",0],
+   ["node-264432559","瀬戸瀬",44.00875,143.42113,"hokkaido",0],
+   ["node-264432568","遠軽",44.05967,143.52022,"hokkaido",0],
+   ["node-264432570","美幌",43.83634,144.10625,"hokkaido",0],
+   ["node-264432577","女満別",43.91618,144.1713,"hokkaido",0],
+   ["node-264434054","端野",43.85131,143.94237,"hokkaido",0],
+   ["node-264434916","中愛別",43.89624,142.65554,"hokkaido",0],
+   ["node-264434925","当麻",43.82579,142.51707,"hokkaido",0],
+   ["node-264435019","南永山",43.78051,142.4087,"hokkaido",0],
+   ["node-264435335","丸瀬布",44.00653,143.33619,"hokkaido",0],
+   ["node-264435619","東旭川",43.7766,142.44103,"hokkaido",0],
+   ["node-264435653","安足間",43.85171,142.69413,"hokkaido",0],
+   ["node-264435740","占冠",42.99268,142.39987,"hokkaido",0],
+   ["node-264435945","上川",43.84896,142.76648,"hokkaido",0],
+   ["node-264436044","川端",42.91483,141.89556,"hokkaido",0],
+   ["node-264436140","新夕張",42.9367,142.03648,"hokkaido",0],
+   ["node-264436580","伊香牛",43.87574,142.52522,"hokkaido",0],
+   ["node-264437081","白滝",43.88475,143.18142,"hokkaido",0],
+   ["node-264437087","桜岡",43.80218,142.48733,"hokkaido",0],
+   ["node-264438131","東釧路",42.99514,144.41153,"hokkaido",0],
+   ["node-264438155","大楽毛",43.0091,144.27341,"hokkaido",0],
+   ["node-264438671","幕別",42.90782,143.35917,"hokkaido",0],
+   ["node-264438824","利別",42.93482,143.42416,"hokkaido",0],
+   ["node-264438827","豊頃",42.81745,143.53859,"hokkaido",0],
+   ["node-264439235","音別",42.88907,143.93231,"hokkaido",0],
+   ["node-264439612","十弗",42.85576,143.50098,"hokkaido",0],
+   ["node-264439655","新大楽毛",43.00944,144.29452,"hokkaido",0],
+   ["node-264440770","庶路",42.98347,144.14999,"hokkaido",0],
+   ["node-264442143","新富士",43.00176,144.34993,"hokkaido",0],
+   ["node-264442194","厚内",42.80953,143.81489,"hokkaido",0],
+   ["node-264442266","西庶路",42.97627,144.13004,"hokkaido",0],
+   ["node-264443224","芽室",42.90991,143.04843,"hokkaido",0],
+   ["node-264443232","御影",42.9425,142.93584,"hokkaido",0],
+   ["node-264443386","西帯広",42.92384,143.12571,"hokkaido",0],
+   ["node-264443388","大成",42.9161,143.06979,"hokkaido",0],
+   ["node-264443790","札内",42.91318,143.2552,"hokkaido",0],
+   ["node-264443791","柏林台",42.92888,143.16449,"hokkaido",0],
+   ["node-264446520","緑",43.71834,144.5055,"hokkaido",0],
+   ["node-264446604","標茶",43.29839,144.60833,"hokkaido",0],
+   ["node-264446606","塘路",43.15181,144.49721,"hokkaido",0],
+   ["node-264446850","茅沼",43.20213,144.50378,"hokkaido",0],
+   ["node-264446990","細岡",43.10505,144.46956,"hokkaido",0],
+   ["node-264447152","遠矢",43.04789,144.45825,"hokkaido",0],
+   ["node-264447495","札弦",43.78657,144.53166,"hokkaido",0],
+   ["node-264447498","磯分内",43.37938,144.55423,"hokkaido",0],
+   ["node-264447549","北浜",43.95847,144.3527,"hokkaido",0],
+   ["node-264447553","清里町",43.83872,144.59394,"hokkaido",0],
+   ["node-264447740","止別",43.92151,144.5202,"hokkaido",0],
+   ["node-264447798","釧路湿原",43.10077,144.44777,"hokkaido",0],
+   ["node-264448115","浜小清水",43.93387,144.45338,"hokkaido",0],
+   ["node-264448472","摩周",43.48734,144.46384,"hokkaido",0],
+   ["node-264448475","原生花園",43.94108,144.41416,"hokkaido",0],
+   ["node-264448545","鱒浦",43.9827,144.2965,"hokkaido",0],
+   ["node-264448912","川湯温泉",43.61637,144.45799,"hokkaido",0],
+   ["node-264449033","美留和",43.55537,144.43762,"hokkaido",0],
+   ["node-264449354","中斜里",43.87447,144.65908,"hokkaido",0],
+   ["node-264449544","桂台",44.01702,144.27334,"hokkaido",0],
+   ["node-264449598","藻琴",43.96843,144.32023,"hokkaido",0],
+   ["node-264451482","旭川四条",43.76392,142.37583,"hokkaido",0],
+   ["node-2666542740","五稜郭",41.80343,140.73364,"hokkaido",0],
+   ["node-4086807433","厚別",43.04504,141.46292,"hokkaido",0],
+   ["node-4086807435","新札幌",43.0388,141.47251,"hokkaido",0],
+   ["node-4086807436","白石",43.05485,141.41382,"hokkaido",0],
+   ["node-4086807437","苗穂",43.06853,141.37376,"hokkaido",0],
+   ["node-4086852685","札幌",43.06864,141.35092,"hokkaido",0],
+   ["node-4837965683","網走",44.01994,144.25411,"hokkaido",0],
+   ["node-5358035701","苫小牧",42.63982,141.59677,"hokkaido",0],
+   ["node-5369619002","青葉",42.63062,141.5701,"hokkaido",0],
+   ["node-5541634993","沼ノ端",42.67196,141.69343,"hokkaido",0],
+   ["node-5541635584","植苗",42.71384,141.73519,"hokkaido",0],
+   ["node-5704618353","鷲別",42.35963,141.04287,"hokkaido",0],
+   ["node-5729331232","十勝清水",43.0132,142.87963,"hokkaido",0],
+   ["node-5820145042","釧路",42.99068,144.38204,"hokkaido",0],
+   ["node-5907903344","森林公園",43.05629,141.48139,"hokkaido",0],
+   ["node-6050507048","峰延",43.26469,141.8149,"hokkaido",0],
+   ["node-6060489257","知床斜里",43.91089,144.66145,"hokkaido",0],
+   ["node-6060517713","桑園",43.07073,141.33199,"hokkaido",0],
+   ["node-6063546673","新旭川",43.78007,142.38479,"hokkaido",0],
+   ["node-6063546676","遠浅",42.72942,141.76929,"hokkaido",0],
+   ["node-6374722000","岩見沢",43.20421,141.75951,"hokkaido",0],
+   ["node-6374723782","美唄",43.33105,141.86208,"hokkaido",0],
+   ["node-6374724817","光珠内",43.29266,141.84453,"hokkaido",0],
+   ["node-7096896683","黒岩",42.368,140.28801,"hokkaido",0],
+   ["node-7096963126","山崎",42.3143,140.27461,"hokkaido",0],
+   ["node-7096980726","蘭島",43.19673,140.85594,"hokkaido",0],
+   ["node-7096982006","北広島",42.97877,141.56318,"hokkaido",0],
+   ["node-7097013313","サッポロビール庭園",42.86749,141.6048,"hokkaido",0],
+   ["node-7104082970","小幌",42.58966,140.5372,"hokkaido",0],
+   ["node-7109472826","南千歳",42.80853,141.67495,"hokkaido",0],
+   ["node-7350916476","愛別",43.89868,142.58216,"hokkaido",0],
+   ["node-7354956522","登別",42.45201,141.1808,"hokkaido",0],
+   ["node-7399865505","新吉野",42.77853,143.60781,"hokkaido",0],
+   ["node-7429981153","静狩",42.58433,140.46035,"hokkaido",0],
+   ["node-7572152210","本輪西",42.3588,140.97747,"hokkaido",0],
+   ["node-7662417736","長都",42.85236,141.62272,"hokkaido",0],
+   ["node-7662417747","恵庭",42.8827,141.58681,"hokkaido",0],
+   ["node-7662417748","恵み野",42.90241,141.57433,"hokkaido",0],
+   ["node-7662417759","島松",42.92203,141.57317,"hokkaido",0],
+   ["node-7662417764","上野幌",43.01629,141.48702,"hokkaido",0],
+   ["node-7797582610","富浦",42.44189,141.1569,"hokkaido",0],
+   ["node-7809372533","新さっぽろ",43.03886,141.47398,"hokkaido",0],
+   ["node-8082693151","小樽",43.19758,140.99337,"hokkaido",0],
+   ["node-8082693155","南小樽",43.18686,141.00733,"hokkaido",0],
+   ["node-8082693156","小樽築港",43.18081,141.02776,"hokkaido",0],
+   ["node-8082693157","朝里",43.17691,141.06369,"",0],
+   ["node-8082693158","銭函",43.14348,141.15972,"hokkaido",0],
+   ["node-8082693161","ほしみ",43.13352,141.19214,"hokkaido",0],
+   ["node-8082693162","星置",43.13234,141.21097,"hokkaido",0],
+   ["node-8082693164","稲穂",43.12812,141.22297,"hokkaido",0],
+   ["node-8082693166","手稲",43.12026,141.24361,"hokkaido",0],
+   ["node-8082693170","稲積公園",43.11226,141.2568,"hokkaido",0],
+   ["node-8082693172","発寒",43.0998,141.27729,"hokkaido",0],
+   ["node-8082693174","発寒中央",43.08948,141.29424,"hokkaido",0],
+   ["node-8082693177","琴似",43.08154,141.30743,"hokkaido",0],
+   ["node-8082693200","大麻",43.07234,141.49702,"hokkaido",0],
+   ["node-8082693201","野幌",43.09235,141.52969,"hokkaido",0],
+   ["node-8082693202","高砂",43.10015,141.54079,"hokkaido",0],
+   ["node-8082693204","江別",43.11046,141.5573,"hokkaido",0],
+   ["node-8082693207","豊幌",43.13602,141.62395,"hokkaido",0],
+   ["node-8082693208","幌向",43.15145,141.65541,"hokkaido",0],
+   ["node-8082693210","上幌向",43.18124,141.71406,"hokkaido",0],
+   ["node-8084742769","千歳",42.82826,141.65186,"hokkaido",0],
+   ["node-8206074563","函館",41.77434,140.72625,"hokkaido",0],
+   ["node-8403376217","東室蘭",42.34907,141.02559,"hokkaido",0],
+   ["node-8403376221","大岸",42.58577,140.63835,"hokkaido",0],
+   ["node-8403376245","長万部",42.51277,140.37521,"hokkaido",0],
+   ["node-8404964879","大沼公園",41.98085,140.67008,"hokkaido",0],
+   ["node-8405048818","森",42.109,140.57339,"hokkaido",0],
+   ["node-8405048823","八雲",42.25333,140.27326,"hokkaido",0],
+   ["node-8405048834","洞爺",42.55089,140.7635,"hokkaido",0],
+   ["node-8405048836","伊達紋別",42.4693,140.85601,"hokkaido",0],
+   ["node-8405048890","幌別",42.41015,141.10791,"hokkaido",0],
+   ["node-8463602402","帯広",42.9181,143.20202,"hokkaido",0],
+   ["node-8463602403","新得",43.08199,142.83254,"hokkaido",0],
+   ["node-8463792103","トマム",43.05602,142.61132,"hokkaido",0],
+   ["node-8464051661","池田",42.92146,143.45321,"hokkaido",0],
+   ["node-8464161639","白糠",42.95618,144.07764,"hokkaido",0],
+   ["node-8464161656","浦幌",42.81082,143.65148,"hokkaido",0],
+   ["node-9104667921","北吉原",42.50903,141.28617,"hokkaido",0],
+   ["node-9278767770","平和",43.04689,141.43856,"hokkaido",0]
+  ],
+  "edges": [
+   [0,1,0.63,0],
+   [0,142,0.36,2],
+   [2,5,4,0],
+   [2,64,3.35,0],
+   [3,30,4.49,0],
+   [3,206,5.11,0],
+   [4,6,2.05,0],
+   [4,137,4.91,0],
+   [5,6,3.38,0],
+   [5,8,13.27,0],
+   [5,64,18.36,0],
+   [7,56,5.33,0],
+   [7,145,2.08,0],
+   [8,64,5.8,0],
+   [8,204,1,0],
+   [9,110,4.37,0],
+   [9,149,5.97,0],
+   [10,11,18.67,0],
+   [10,65,3.99,0],
+   [11,23,7.44,0],
+   [12,16,8.52,0],
+   [12,17,7.57,0],
+   [13,16,7.44,0],
+   [13,23,7.17,0],
+   [14,17,3.2,0],
+   [14,20,4.72,0],
+   [15,162,6.78,0],
+   [15,179,7.72,0],
+   [18,22,4.41,0],
+   [18,162,5.36,0],
+   [19,22,4.08,0],
+   [19,28,10.61,0],
+   [20,21,6.14,0],
+   [21,158,4.28,0],
+   [24,60,4.78,0],
+   [24,204,3.71,0],
+   [25,27,8.12,0],
+   [25,203,20.04,0],
+   [26,29,3.78,0],
+   [26,30,5.38,0],
+   [27,54,15.42,0],
+   [28,63,9.81,0],
+   [29,205,12.41,0],
+   [31,32,6.91,0],
+   [31,62,9.1,0],
+   [32,33,6.68,0],
+   [33,63,10.23,0],
+   [34,36,4.22,0],
+   [34,157,7.12,0],
+   [35,36,3.91,0],
+   [35,37,4.15,0],
+   [37,49,5.15,0],
+   [38,46,8.09,0],
+   [38,59,6.74,0],
+   [38,92,9.39,0],
+   [38,166,17.59,0],
+   [39,54,7.54,0],
+   [39,62,6.88,0],
+   [40,59,5.65,0],
+   [40,156,5.42,0],
+   [41,43,5.8,0],
+   [41,52,5.44,0],
+   [42,57,4.86,0],
+   [42,207,5.15,0],
+   [43,216,2.11,0],
+   [44,202,6.8,0],
+   [44,207,5.17,0],
+   [45,50,2.21,0],
+   [45,171,4.56,0],
+   [46,48,3.42,0],
+   [47,160,8.33,0],
+   [47,203,9.44,0],
+   [48,49,4.12,0],
+   [50,58,4.48,0],
+   [51,58,3.12,0],
+   [51,208,2.99,0],
+   [52,56,6.34,0],
+   [53,55,4.84,0],
+   [53,168,3.27,0],
+   [55,216,2.79,0],
+   [57,208,2.91,0],
+   [60,205,12.92,0],
+   [61,165,6.12,0],
+   [61,202,3.92,0],
+   [65,136,1.73,0],
+   [66,69,2.67,0],
+   [66,74,4.67,0],
+   [67,81,7.01,0],
+   [67,82,4.94,0],
+   [68,73,4.52,0],
+   [68,77,10.95,0],
+   [69,78,2.18,0],
+   [70,81,11.48,0],
+   [70,83,7.22,0],
+   [71,75,8.84,0],
+   [71,80,7.7,0],
+   [72,82,7.82,0],
+   [72,143,8.05,0],
+   [73,74,2.62,0],
+   [75,76,18.46,0],
+   [76,77,1.46,0],
+   [78,83,1.38,0],
+   [79,80,10.75,0],
+   [79,87,7.77,0],
+   [84,89,6.05,0],
+   [84,167,6.05,0],
+   [85,94,5.56,0],
+   [85,96,3.65,0],
+   [86,88,2.77,0],
+   [86,155,2.41,0],
+   [87,95,19.7,0],
+   [88,96,4.94,0],
+   [89,91,6.85,0],
+   [90,93,34.26,0],
+   [90,212,21.29,0],
+   [91,95,37.17,0],
+   [92,93,15.91,0],
+   [94,167,6.43,0],
+   [97,120,7.37,0],
+   [97,150,2.83,0],
+   [98,104,1.69,0],
+   [98,105,10.44,0],
+   [99,100,6.46,0],
+   [99,113,9.41,0],
+   [100,213,3.4,0],
+   [101,103,5.35,0],
+   [101,169,7.08,0],
+   [102,107,15.01,0],
+   [102,214,15.9,0],
+   [103,213,8.49,0],
+   [104,106,4.72,0],
+   [105,108,2.1,0],
+   [106,150,2.87,0],
+   [107,215,18.28,0],
+   [108,214,5.28,0],
+   [109,110,10.56,0],
+   [109,112,2.08,0],
+   [110,149,10.39,0],
+   [111,112,4.57,0],
+   [111,114,3.22,0],
+   [113,210,4.7,0],
+   [114,210,3.43,0],
+   [115,121,8.27,0],
+   [115,131,14.52,0],
+   [116,118,13.9,0],
+   [116,122,10.66,0],
+   [117,118,6.94,0],
+   [117,119,7.19,0],
+   [119,126,2.39,0],
+   [120,126,7.27,0],
+   [121,124,7.71,0],
+   [122,128,14.68,0],
+   [123,129,5.29,0],
+   [123,135,2.83,0],
+   [124,133,7.23,0],
+   [125,127,5.58,0],
+   [125,153,11.5,0],
+   [127,129,3.28,0],
+   [128,132,8.67,0],
+   [130,134,4.52,0],
+   [130,135,2.5,0],
+   [131,132,7.15,0],
+   [133,153,4.65,0],
+   [134,143,1.64,0],
+   [136,155,1.91,0],
+   [137,200,3.24,0],
+   [138,151,2.05,0],
+   [138,217,2.05,0],
+   [139,178,0.09,0],
+   [139,178,0.12,2],
+   [139,217,2.88,0],
+   [140,141,3.75,0],
+   [140,217,2.2,0],
+   [141,142,1.52,0],
+   [142,154,1.41,0],
+   [144,145,2.41,0],
+   [144,146,8.62,0],
+   [146,147,6.08,0],
+   [146,156,8.94,0],
+   [147,166,11.99,0],
+   [148,201,1.86,0],
+   [148,209,7.79,0],
+   [149,211,9.07,0],
+   [151,192,2.24,0],
+   [152,157,8.3,0],
+   [152,159,3.91,0],
+   [154,191,2.33,0],
+   [157,198,4.46,0],
+   [158,159,4.57,0],
+   [160,161,6.09,0],
+   [161,206,7.25,0],
+   [163,175,6.39,0],
+   [163,176,7.97,0],
+   [164,172,2.2,0],
+   [164,173,2.24,0],
+   [165,170,6.68,0],
+   [166,199,2.89,0],
+   [168,177,2.35,0],
+   [169,215,6.34,0],
+   [170,203,10.62,0],
+   [171,201,4.41,0],
+   [172,199,3.58,0],
+   [173,174,2.52,0],
+   [174,175,2.17,0],
+   [176,178,2.8,0],
+   [177,209,5.49,0],
+   [179,180,1.69,0],
+   [180,181,1.85,0],
+   [181,182,3.09,0],
+   [182,183,8.85,0],
+   [183,184,2.9,0],
+   [184,185,1.51,0],
+   [185,186,1.15,0],
+   [186,187,1.85,0],
+   [187,188,1.36,0],
+   [188,189,2.16,0],
+   [189,190,1.75,0],
+   [190,191,1.39,0],
+   [192,193,3.45,0],
+   [193,194,1.25,0],
+   [194,195,1.77,0],
+   [195,196,6.65,0],
+   [196,197,3.13,0],
+   [197,198,5.79,0],
+   [211,212,33.78,0]
+  ]
+ }
+}

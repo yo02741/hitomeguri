@@ -2,7 +2,7 @@ import { buildGraph, type Graph, type Reach, round1, search } from '../../servic
 
 import { bboxAreaKm2, kmBetween, type LatLng } from './geo'
 import { placeRomaji } from './romaji'
-import type { Kit, Leg, Link, PrefData, PrefSpot, Town, TownStop, TravelMode, World } from './types'
+import type { AtlasPref, Kit, Leg, Link, PrefData, PrefSpot, Town, TownStop, TravelMode, World, WorldIndex, WorldIndexLink, WorldIndexTown } from './types'
 
 /**
  * 選鎮與鎮之間的交通（規格 §8.2、§8.8）。
@@ -16,6 +16,12 @@ import type { Kit, Leg, Link, PrefData, PrefSpot, Town, TownStop, TravelMode, Wo
  * 交通：同縣的鐵路鎮兩兩用 rail-graph 的鐵路 km；沒有鐵路的鎮之間坐巴士（直線 km）；同一鎮的單軌站之間坐單軌；
  * 起點的機場與離島的機場之間坐飛機（直線 km）；京都 ↔ 那覇空港經関西国際空港（鐵路 km＋直線 km）。
  * 畫面只寫「鐵路約 n km」「直線約 n km」，不寫時刻、班次、路線名。
+ *
+ * P3（規格 §12）：奈良、大阪、兵庫、東京、北海道。名城的鎮最多 4 個（maxCastles；北海道 1 個）；代表站跟已經選到的鎮
+ * 一樣的不選；北海道從新千歳空港（千歳市）進來、一定有札幌（include）、鎮要分散（minKm、cluster：資料沒有振興局，
+ * 用距離）、有連得到起點的車站就坐電車、沒有就坐巴士（transit 'mixed'；巴士接到最近的鐵路鎮）。
+ * 選鎮在 pipeline（pipeline/game_world.py，同一個算法的移植）先做好放進世界索引；有世界索引時照它建鎮（pinned），
+ * 沒有（測試、舊的 bundles）照這裡的規則選。縣與縣之間的交通也在世界索引裡（indexLinks）。
  */
 export interface TownRule {
   count: number
@@ -29,17 +35,41 @@ export interface TownRule {
   islands?: number
   /** 同一個政令指定都市最多幾區（不寫＝不限；P3 想讓鎮分散一點時用） */
   maxPerCity?: number
-  /** 鎮之間坐什麼 */
-  transit: 'rail' | 'bus'
+  /** 鎮之間坐什麼（mixed：有連得到起點的車站坐電車，沒有坐巴士） */
+  transit: 'rail' | 'bus' | 'mixed'
+  /** 有名城蓋章地點的鎮最多幾個（不寫＝不限） */
+  maxCastles?: number
+  /** 起點之後一定放的鎮 */
+  include?: string[]
+  /** 鎮與鎮（代表點）至少隔幾 km（起點與 include 不算） */
+  minKm?: number
+  /** [半徑 km, 最多幾鎮]：新的鎮的半徑內（含自己）最多幾鎮（起點與 include 不算） */
+  cluster?: [number, number]
+  /**
+   * 名城的鎮：景點都沒有最近車站（1.5 km 內）時，市区町村代表點這麼多 km 內、連得到起點的車站當代表站
+   * （高取城在山上，最近的車站 3.7 km）。京都、沖繩不設（已經上線的鎮不變）
+   */
+  castleStationKm?: number
 }
 
+/** pipeline/game_world.py 的 RULES（兩邊要一樣） */
 export const TOWN_RULES: Record<string, TownRule> = {
   kyoto: { count: 9, start: '261068', startStation: 'node-267316272', startStop: 'main', transit: 'rail' },
   okinawa: { count: 9, start: '472018', startStop: 'airport', islands: 1, transit: 'bus' },
+  // 奈良市（近鉄奈良）
+  nara: { count: 9, start: '292010', startStation: 'node-4452353501', startStop: 'main', transit: 'rail', maxCastles: 4, castleStationKm: 2 },
+  // 大阪市北区（大阪駅）
+  osaka: { count: 9, start: '271276', startStation: 'node-346685291', startStop: 'main', transit: 'rail', maxCastles: 4, castleStationKm: 2 },
+  // 神戸市中央区（JR 三ノ宮）
+  hyogo: { count: 9, start: '281107', startStation: 'node-3999683422', startStop: 'main', transit: 'rail', maxCastles: 4, castleStationKm: 2 },
+  // 千代田区（東京駅）
+  tokyo: { count: 9, start: '131016', startStation: 'node-11329319854', startStop: 'main', transit: 'rail', maxCastles: 4, castleStationKm: 2 },
+  // 千歳市（新千歳空港）＋札幌市中央区；隔 30 km 以上、半徑 120 km 內最多 3 鎮、札幌一區、名城一鎮
+  hokkaido: { count: 9, start: '012246', startStop: 'airport', transit: 'mixed', include: ['011011'], minKm: 30, cluster: [120, 3], maxPerCity: 1, maxCastles: 1 },
 }
 
-/** 縣 → 地方 kit（P3 擴到 47 縣時在這裡加；沒寫的用近畿） */
-export const KIT_OF: Record<string, Kit> = { okinawa: 'okinawa' }
+/** 縣 → 地方 kit（沒寫的用近畿：奈良、大阪、兵庫跟京都同一套） */
+export const KIT_OF: Record<string, Kit> = { okinawa: 'okinawa', tokyo: 'kanto', hokkaido: 'hokkaido' }
 export const kitOf = (pref: string): Kit => KIT_OF[pref] ?? 'kinki'
 
 /** 一鎮最多放幾個地標（規格：前 8–12 個） */
@@ -214,25 +244,31 @@ function townOf(pref: PrefData, c: Candidate, kit: Kit, main: TownStop, island: 
     kit,
     score: Math.round(c.score * 10) / 10,
     island,
-    // 政令指定都市的區、或有鐵路且不大的市：街上（直角街道、町家成排）
-    urban: rail && (m.c ? area < 60 : area < 100),
+    // 政令指定都市的區、或有鐵路且不大的市：街上（直角街道、町家成排）。
+    // P3：町、村不算街上（明日香村）；區的上限 60 → 100 km²（神戸市中央区、東灘区的外框含人工島）。京都、沖繩的鎮都不受影響（快照測試鎖住）
+    urban: rail && !/[町村]$/.test(m.n) && area < 100,
     bbox: m.bbox,
     stops: [main, ...extra],
     spots: landmarksOf(m.n, c.spots, airport, stampCastleSpots(pref)),
   }
 }
 
-/** 一縣的鎮（照分數；起點在第一個） */
-export function selectTowns(pref: PrefData, rule: TownRule = TOWN_RULES[pref.pref] ?? defaultRule(pref)): Town[] {
+/** 一縣的鎮（照分數；起點在第一個）。pinned：世界索引選好的鎮（照它的順序與代表站建鎮，不再選） */
+export function selectTowns(pref: PrefData, rule: TownRule = TOWN_RULES[pref.pref] ?? defaultRule(pref), pinned?: readonly WorldIndexTown[] | null): Town[] {
   const kit = kitOf(pref.pref)
   const all = candidates(pref)
-  const start = all.find((c) => c.code === rule.start)
+  const startCode = pinned?.length ? pinned[0]!.id : rule.start
+  const start = all.find((c) => c.code === startCode)
   if (!start) return []
-  const land = landOf(pref, rule.start)
+  const land = landOf(pref, startCode)
   const out: Town[] = []
 
   // 起點
-  let startStation = rule.startStation && nodeOf(pref, rule.startStation) ? rule.startStation : commonStation(pref, start.spots, null)
+  let startStation: string | null
+  if (pinned?.length) {
+    const st = pinned[0]!.station
+    startStation = (st.kind === 'rail' || st.kind === 'monorail') && nodeOf(pref, st.id) ? st.id : null
+  } else startStation = rule.startStation && nodeOf(pref, rule.startStation) ? rule.startStation : commonStation(pref, start.spots, null)
   if (rule.transit === 'rail' && !startStation) return []
   const startMain = startStation ? stopOfStation(pref, startStation, 'main') : busStop(pref, start)
   const extra: TownStop[] = []
@@ -256,6 +292,21 @@ export function selectTowns(pref: PrefData, rule: TownRule = TOWN_RULES[pref.pre
   }
   out.push(townOf(pref, start, kit, startMain, false, extra))
 
+  if (pinned?.length) {
+    for (const p of pinned.slice(1)) {
+      const c = all.find((x) => x.code === p.id)
+      if (!c || out.some((t) => t.id === c.code)) continue
+      const st = p.station
+      if (p.island) {
+        const ap = c.spots.find((s) => s.id === st.id) ?? airportOf(c.spots)
+        if (ap) out.push(townOf(pref, c, kit, { id: 'main', kind: 'airport', name: ap.n, lat: ap.lat, lng: ap.lng, spotId: ap.id }, true, []))
+      } else if ((st.kind === 'rail' || st.kind === 'monorail') && nodeOf(pref, st.id)) out.push(townOf(pref, c, kit, stopOfStation(pref, st.id, 'main'), false, []))
+      else if (st.kind === 'bus') out.push(townOf(pref, c, kit, busStop(pref, c), false, []))
+    }
+    if (rule.transit === 'mixed') hubStops(pref, out)
+    return out
+  }
+
   const perCity = new Map<string, number>()
   const cityOf = (code: string) => pref.municipality(code)?.c
   const bump = (code: string) => {
@@ -263,24 +314,51 @@ export function selectTowns(pref: PrefData, rule: TownRule = TOWN_RULES[pref.pre
     if (city) perCity.set(city, (perCity.get(city) ?? 0) + 1)
   }
   bump(start.code)
+  /** 分散的時候不算的鎮（起點、include） */
+  const fixed = new Set([rule.start, ...(rule.include ?? [])])
+  const farEnough = (main: TownStop) => {
+    if (!rule.minKm && !rule.cluster) return true
+    const d = out.map((t) => kmBetween(main, t.stops[0]!))
+    if (rule.minKm && d.some((x) => x < rule.minKm!)) return false
+    if (rule.cluster && d.filter((x) => x <= rule.cluster![0]).length + 1 > rule.cluster[1]) return false
+    return true
+  }
   /** 本島（跟起點相連）的鎮：鐵路的縣要有連得到起點的車站 */
-  const addLand = (c: Candidate, capCity: boolean): boolean => {
+  const addLand = (c: Candidate, capCity: boolean, castle = false): boolean => {
     if (out.length >= rule.count || out.some((t) => t.id === c.code)) return false
     if (land && !land.has(c.code)) return false
     const city = cityOf(c.code)
     if (capCity && rule.maxPerCity && city && (perCity.get(city) ?? 0) >= rule.maxPerCity) return false
-    if (rule.transit === 'rail') {
-      const st = commonStation(pref, c.spots, startStation)
-      if (!st) return false
-      out.push(townOf(pref, c, kit, stopOfStation(pref, st, 'main'), false, []))
-    } else out.push(townOf(pref, c, kit, busStop(pref, c), false, []))
+    let main: TownStop
+    if (rule.transit === 'rail' || rule.transit === 'mixed') {
+      let st = commonStation(pref, c.spots, startStation)
+      if (!st && castle && rule.castleStationKm && startStation) st = nearestStation(pref, labelPoint(pref, c.code, c.spots), rule.castleStationKm, startStation)
+      if (st) main = stopOfStation(pref, st, 'main')
+      else if (rule.transit === 'mixed') main = busStop(pref, c)
+      else return false
+    } else main = busStop(pref, c)
+    // 代表站跟已經選到的鎮一樣的不選（大阪的天王寺区、阿倍野区）
+    if (main.stationId && out.some((t) => t.stops[0]!.stationId === main.stationId)) return false
+    if (!fixed.has(c.code) && !farEnough(main)) return false
+    out.push(townOf(pref, c, kit, main, false, []))
     bump(c.code)
     return true
   }
 
-  // 有名城蓋章地點的市区町村（分數高的先）
+  // 起點之後一定放的鎮
+  for (const code of rule.include ?? []) {
+    const c = all.find((x) => x.code === code)
+    if (c) addLand(c, false)
+  }
+
+  // 有名城蓋章地點的市区町村（分數高的先；最多 maxCastles 個）
   const castleTowns = new Set([...stampCastleSpots(pref)].map((id) => pref.spotById(id)?.m).filter((m): m is string => !!m))
-  for (const c of all) if (castleTowns.has(c.code)) addLand(c, false)
+  let castles = 0
+  for (const c of all) {
+    if (!castleTowns.has(c.code)) continue
+    if (rule.maxCastles !== undefined && castles >= rule.maxCastles) break
+    if (addLand(c, false, true)) castles++
+  }
 
   // 離島
   const islands = rule.islands ?? 0
@@ -299,7 +377,34 @@ export function selectTowns(pref: PrefData, rule: TownRule = TOWN_RULES[pref.pre
     if (out.length >= rule.count) break
     addLand(c, true)
   }
+  if (rule.transit === 'mixed') hubStops(pref, out)
   return out
+}
+
+/** 巴士的鎮接到哪一個鐵路的鎮（最近的；transit 'mixed'） */
+function hubOf(towns: readonly Town[], t: Town): Town | null {
+  let best: Town | null = null
+  let bd = Infinity
+  for (const x of towns) {
+    if (x === t || x.station.kind === 'bus' || x.station.kind === 'airport') continue
+    const d = kmBetween(t.stops[0]!, x.stops[0]!)
+    if (d < bd || (d === bd && best && x.id < best.id)) {
+      best = x
+      bd = d
+    }
+  }
+  return best
+}
+
+/** mixed：巴士的鎮接到的鐵路鎮，車站前加一個巴士站 */
+function hubStops(pref: PrefData, towns: Town[]) {
+  for (const t of towns) {
+    if (t.station.kind !== 'bus') continue
+    const hub = hubOf(towns, t)
+    if (!hub || hub.stops.some((s) => s.kind === 'bus')) continue
+    const main = hub.stops[0]!
+    hub.stops.push({ id: 'bus', kind: 'bus', name: pref.municipality(hub.id)?.n ?? hub.name.ja, lat: main.lat, lng: main.lng })
+  }
 }
 
 function defaultRule(pref: PrefData): TownRule {
@@ -332,11 +437,14 @@ function nearestStation(pref: PrefData, p: LatLng, maxKm: number, from: string):
 }
 
 // ---------- 交通 ----------
-/** 遊戲時間往前走幾分鐘（遊戲規則：依距離；取 5 分鐘的倍數） */
+/**
+ * 遊戲時間往前走幾分鐘（遊戲規則：依距離；取 5 分鐘的倍數）。
+ * 一般的電車約時速 50 km；新幹線的那一段（leg.shinkansen：京都 ↔ 東京）快得多（473 km 約 2 小時 20 分）。
+ */
 export function minutesOf(legs: Leg[]): number {
   let m = 0
   for (const l of legs) {
-    if (l.mode === 'rail') m += 10 + l.km * 1.2
+    if (l.mode === 'rail') m += l.shinkansen ? 10 + l.km * 0.28 : 10 + l.km * 1.2
     else if (l.mode === 'monorail') m += 5 + l.km * 2
     else if (l.mode === 'bus') m += 10 + l.km * 2
     else if (l.mode === 'plane') m += 90 + l.km / 8
@@ -366,15 +474,27 @@ function prefLinks(pref: PrefData, towns: Town[]): Link[] {
         if (km === null) continue
         out.push(link(a, 'main', b, 'main', 'rail', [{ mode: 'rail', km, kmKind: 'rail', to: b.station.name }]))
       }
-  // 巴士：本島的鎮兩兩（直線 km）
+  // 巴士：本島的鎮兩兩（直線 km）；mixed（北海道）只有巴士的鎮 ↔ 接到的鐵路鎮
   const bus = towns.filter((t) => !t.island && busStopOf(t))
-  for (const a of bus)
-    for (const b of bus) {
-      if (a === b) continue
-      const sa = busStopOf(a)!
-      const sb = busStopOf(b)!
-      out.push(link(a, sa.id, b, sb.id, 'bus', [{ mode: 'bus', km: Math.round(kmBetween(sa, sb) * 10) / 10, kmKind: 'straight', to: b.name.ja }]))
+  const busLink = (a: Town, b: Town) => {
+    const sa = busStopOf(a)!
+    const sb = busStopOf(b)!
+    out.push(link(a, sa.id, b, sb.id, 'bus', [{ mode: 'bus', km: Math.round(kmBetween(sa, sb) * 10) / 10, kmKind: 'straight', to: b.name.ja }]))
+  }
+  if (rule?.transit === 'mixed') {
+    for (const t of bus) {
+      if (t.station.kind !== 'bus') continue
+      const hub = hubOf(towns, t)
+      if (!hub || !busStopOf(hub)) continue
+      busLink(t, hub)
+      busLink(hub, t)
     }
+  } else
+    for (const a of bus)
+      for (const b of bus) {
+        if (a === b) continue
+        busLink(a, b)
+      }
   // 單軌：同一鎮的單軌站之間
   for (const t of towns) {
     const mono = t.stops.filter((s) => s.kind === 'monorail' && s.stationId)
@@ -429,18 +549,77 @@ function crossLinks(prefs: PrefData[], towns: Map<string, Town[]>): Link[] {
   return out
 }
 
-/** 世界：每一縣的鎮、全部的交通、起點的鎮（第一縣的起點） */
-export function buildWorld(prefs: PrefData[], rules: Record<string, TownRule> = TOWN_RULES): World {
+/** 沒有世界索引時的縣與縣之間（京都 ↔ 那覇空港）：讀進來的縣的鎮（每縣第一個是起點） */
+export function crossLinksOf(prefs: PrefData[], towns: readonly Town[]): Link[] {
+  const by = new Map<string, Town[]>()
+  for (const t of towns) by.set(t.pref, [...(by.get(t.pref) ?? []), t])
+  return crossLinks(prefs.filter((p) => by.has(p.pref)), by)
+}
+
+/** 一縣的鎮與縣內的交通（世界索引有這一縣時照它建鎮） */
+export function prefWorld(p: PrefData, rules: Record<string, TownRule> = TOWN_RULES, index?: WorldIndex | null): { towns: Town[]; links: Link[] } {
+  const pinned = index?.prefs.find((x) => x.pref === p.pref)?.towns
+  const towns = selectTowns(p, rules[p.pref] ?? defaultRule(p), pinned)
+  return { towns, links: towns.length ? prefLinks(p, towns) : [] }
+}
+
+/** 世界索引的縣與縣之間的交通 → Link（遊戲時間照 legs 算） */
+export function indexLinks(index: WorldIndex): Link[] {
+  return index.links.map((l: WorldIndexLink) => {
+    const { fromPref: _f, toPref: _t, ...rest } = l
+    return { ...rest, legs: l.legs.map((x) => ({ ...x })), minutes: minutesOf(l.legs) }
+  })
+}
+
+/** 世界索引的鎮 → 手帳、委託用的名字（還沒讀的縣也有） */
+export function atlasOf(index: WorldIndex): AtlasPref[] {
+  return index.prefs.map((p) => ({
+    pref: p.pref,
+    kit: p.kit,
+    towns: p.towns.map((t) => ({
+      id: t.id,
+      pref: p.pref,
+      name: { ja: t.name.ja, kana: t.name.kana, romaji: placeRomaji(t.name.ja, t.name.kana) || undefined, zh: t.name.ja },
+      station: { id: t.station.id, name: t.station.name },
+      center: { ...t.center },
+      kit: p.kit,
+    })),
+  }))
+}
+
+/**
+ * 世界：每一縣的鎮、全部的交通、起點的鎮（第一縣的起點）。
+ * index（世界索引）有給時：鎮照索引建、縣與縣之間的交通用索引的（還沒讀的縣也在：剪票口一開始就列得出來），
+ * links 的順序是「每一縣的縣內交通（索引的縣順序）＋縣與縣之間（索引的順序）」，之後再讀進來的縣插在它的位置
+ * （world.ts 的 addPref），一鎮的目的地順序不會因為讀的先後不同而變。沒給時跟 P2 一樣（京都 ↔ 沖繩用 crossLinks）。
+ */
+export function buildWorld(prefs: PrefData[], rules: Record<string, TownRule> = TOWN_RULES, index?: WorldIndex | null): World {
   const towns = new Map<string, Town[]>()
+  const intra = new Map<string, Link[]>()
   for (const p of prefs) {
-    const list = selectTowns(p, rules[p.pref] ?? defaultRule(p))
-    if (list.length) towns.set(p.pref, list)
+    const w = prefWorld(p, rules, index)
+    if (!w.towns.length) continue
+    towns.set(p.pref, w.towns)
+    intra.set(p.pref, w.links)
+  }
+  if (index) {
+    const order = orderOf(index, [...towns.keys()])
+    const all = order.flatMap((p) => towns.get(p) ?? [])
+    const links = [...order.flatMap((p) => intra.get(p) ?? []), ...indexLinks(index)]
+    const startTown = index.prefs.find((p) => p.pref === index.start)?.towns[0]?.id ?? all[0]?.id ?? ''
+    return { towns: all, links, startTown, atlas: atlasOf(index) }
   }
   const links: Link[] = []
-  for (const p of prefs) if (towns.has(p.pref)) links.push(...prefLinks(p, towns.get(p.pref)!))
+  for (const p of prefs) if (towns.has(p.pref)) links.push(...intra.get(p.pref)!)
   links.push(...crossLinks(prefs.filter((p) => towns.has(p.pref)), towns))
   const all = [...towns.values()].flat()
   return { towns: all, links, startTown: all[0]?.id ?? '' }
+}
+
+/** 縣的順序：世界索引的順序，索引沒有的縣接在後面 */
+export function orderOf(index: WorldIndex | null | undefined, prefs: readonly string[]): string[] {
+  const known = (index?.prefs ?? []).map((p) => p.pref)
+  return [...known.filter((p) => prefs.includes(p)), ...prefs.filter((p) => !known.includes(p))]
 }
 
 /** 從這一鎮的這個地方出發的交通 */

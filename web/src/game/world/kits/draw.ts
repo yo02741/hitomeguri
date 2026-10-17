@@ -2,6 +2,7 @@ import { dotOn, type Gfx } from '../../../services/pixelwalk/gfx'
 import type { Px } from '../../../services/pixelwalk/palette'
 
 import type { Season } from '../../engine/types'
+import type { Kit } from '../types'
 
 /**
  * 地方 kit 共用的畫法（GBA 的 tileset 風格）：光從左上來，亮面、中間色、暗面三階＋一圈深色的邊；
@@ -199,7 +200,21 @@ export function lantern(g: Gfx, x: number, y: number, night: boolean, body: Px =
 }
 
 /** 季節的草色 */
-export function grassTones(season: Season, kit: 'kinki' | 'okinawa'): { base: Px; dark: Px; light: Px; deep: Px } {
+export function grassTones(season: Season, kit: Kit): { base: Px; dark: Px; light: Px; deep: Px } {
+  if (kit === 'hokkaido') {
+    // 北海道：冬天整片厚雪（草地就是雪原）；春天嫩綠、夏天濃綠、秋天草轉黃
+    if (season === 'winter') return { base: 'snow-1', dark: 'snow-2', light: 'white', deep: 'snow-3' }
+    if (season === 'autumn') return { base: 'leaf-2', dark: 'leaf-3', light: 'gold-1', deep: 'leaf-4' }
+    if (season === 'summer') return { base: 'leaf-2', dark: 'leaf-3', light: 'leaf-1', deep: 'leaf-4' }
+    return { base: 'leaf-1', dark: 'leaf-2', light: 'white', deep: 'leaf-3' }
+  }
+  if (kit === 'kanto') {
+    // 關東：冬天不積雪，草皮枯成淺褐（冬枯れ）；其他跟近畿一樣
+    if (season === 'winter') return { base: 'sand-2', dark: 'dirt-2', light: 'sand-1', deep: 'wood-3' }
+    if (season === 'autumn') return { base: 'leaf-2', dark: 'leaf-3', light: 'gold-1', deep: 'dirt-2' }
+    if (season === 'summer') return { base: 'leaf-2', dark: 'leaf-3', light: 'leaf-1', deep: 'leaf-4' }
+    return { base: 'leaf-1', dark: 'leaf-2', light: 'white', deep: 'leaf-3' }
+  }
   if (kit === 'okinawa') {
     if (season === 'winter') return { base: 'leaf-3', dark: 'leaf-4', light: 'leaf-2', deep: 'leaf-4' }
     if (season === 'autumn') return { base: 'leaf-2', dark: 'leaf-3', light: 'sand-2', deep: 'leaf-4' }
@@ -213,15 +228,18 @@ export function grassTones(season: Season, kit: 'kinki' | 'okinawa'): { base: Px
 }
 
 /** 季節在草地上多疊的一層抖色（秋：黃、冬：土色） */
-export function grassTint(season: Season, kit: 'kinki' | 'okinawa'): { k: Px; level: number } | null {
+export function grassTint(season: Season, kit: Kit): { k: Px; level: number } | null {
   if (kit === 'okinawa') return season === 'autumn' ? { k: 'sand-2', level: 2 } : null
+  if (kit === 'hokkaido') return season === 'autumn' ? { k: 'gold-2', level: 4 } : season === 'winter' ? { k: 'snow-2', level: 3 } : null
+  if (kit === 'kanto') return season === 'autumn' ? { k: 'gold-2', level: 4 } : season === 'winter' ? { k: 'dirt-1', level: 6 } : null
   if (season === 'autumn') return { k: 'gold-2', level: 5 }
   if (season === 'winter') return { k: 'dirt-1', level: 8 }
   return null
 }
 
 /** 樹的四季顏色（一般的闊葉樹） */
-export function leafTones(season: Season, kit: 'kinki' | 'okinawa'): Tones {
+export function leafTones(season: Season, kit: Kit): Tones {
+  if (kit === 'hokkaido' && season === 'autumn') return { line: 'leaf-4', dark: 'momiji-2', mid: 'gold-2', light: 'gold-1' }
   if (kit === 'okinawa') {
     if (season === 'winter') return { line: 'leaf-4', dark: 'leaf-4', mid: 'leaf-3', light: 'leaf-2' }
     return { line: 'leaf-4', dark: 'leaf-3', mid: 'leaf-2', light: 'leaf-1' }
@@ -280,4 +298,34 @@ export function windowPane(g: Gfx, x: number, y: number, w: number, h: number, n
 export function snowCap(g: Gfx, x: number, y: number, w: number, seed = 0) {
   g.hline(x, x + w - 1, y, 'snow-1')
   for (let i = 0; i < w; i++) if (hash2(x + i, y, seed) % 3) g.px(x + i, y + 1, 'snow-2')
+}
+
+/**
+ * 厚雪（北海道的冬天）：屋頂、牆頭、樹上的一大塊雪。上緣亮、兩端圓、下緣一圈淡藍的陰影，
+ * 偶爾鼓起一點（不是一條直線）。depth 是雪的厚度（px）。
+ */
+export function thickSnow(g: Gfx, x: number, y: number, w: number, depth = 4, seed = 0) {
+  if (w < 3) return
+  for (let i = 0; i < w; i++) {
+    const end = i === 0 || i === w - 1 ? 1 : 0
+    const bump = hash2(x + i, y, seed) % 5 === 0 ? 1 : 0
+    const top = y + end
+    const bot = y + depth - 1 + bump - end
+    g.vline(x + i, top, bot, 'snow-1')
+    g.px(x + i, bot, 'snow-2')
+    g.px(x + i, bot + 1, 'snow-3')
+  }
+  g.hline(x + 1, x + w - 2, y, 'white')
+  // 雪面上一點點起伏的影子
+  for (let i = 2; i < w - 2; i += 5) if (hash2(x + i, y, seed + 1) % 2) g.px(x + i, y + 1 + (depth > 3 ? 1 : 0), 'snow-2')
+}
+
+/** 屋簷垂下的冰柱（北海道的冬天）：x0–x1 之間零星幾根 */
+export function icicles(g: Gfx, x0: number, x1: number, y: number, seed = 0) {
+  for (let x = x0; x <= x1; x++) {
+    const h = hash2(x, y, seed) % 7
+    if (h > 1) continue
+    g.vline(x, y, y + 1 + h, 'snow-2')
+    g.px(x, y, 'white')
+  }
 }

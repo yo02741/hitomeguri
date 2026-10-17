@@ -1,0 +1,32 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`京都、沖繩的鎮生成結果不變（P3 的快照） > 18 鎮：tile、實體、warp、室內、到站的地方、地標、開花、祭典 1`] = `
+{
+  "kyoto/261017 北区": "fdf537d0 d6c7ea3d d60e5f04",
+  "kyoto/261025 上京区": "97222c05 e19f2e33 e4534982",
+  "kyoto/261033 左京区": "e8d07526 c5b5e58c f3db57dc",
+  "kyoto/261041 中京区": "7202eaea fb8d3d76 7d356e0c",
+  "kyoto/261050 東山区": "47586786 92b47792 3c0e195c",
+  "kyoto/261068 下京区": "4396e318 7e7c4dc3 215dfe0d",
+  "kyoto/261084 右京区": "ad9e7772 b4999607 dd15e10e",
+  "kyoto/261114 西京区": "62ca989d 6846de0e 756d753e",
+  "kyoto/262013 福知山市": "deba0b70 9537dd7b 8f743054",
+  "okinawa/472018 那覇市": "10f972c9 23f2fd3d cce96933",
+  "okinawa/472093 名護市": "f5e2f321 b9365953 b9b56b44",
+  "okinawa/472131 うるま市": "0871d3a8 14de421a e1869f82",
+  "okinawa/472140 宮古島市": "227eaa2a 6c13d69b bf120ac1",
+  "okinawa/472158 南城市": "f6ee0cc4 ecac9757 5fcaaab5",
+  "okinawa/473065 今帰仁村": "98c1e511 ff1d9b3f 0d05ff18",
+  "okinawa/473111 恩納村": "b2b9100b b02d6211 4da2c7d5",
+  "okinawa/473243 読谷村": "78b6dd25 d61d26f5 dc8def9a",
+  "okinawa/473286 中城村": "3976e688 42c99246 dc6a2972",
+}
+`;
+
+exports[`京都、沖繩的鎮生成結果不變（P3 的快照） > 近畿、沖繩、室內 kit 的每個 tile（四季 × 三時段）像素不變 1`] = `
+{
+  "kinki/ 770": "1d33b14d",
+  "okinawa/ 333": "ff1e7440",
+  "world/ 35": "7ce10add",
+}
+`;

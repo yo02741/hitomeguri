@@ -29,7 +29,7 @@ import {
   tuft,
   windowPane,
 } from './draw'
-import { defineObject, idRange, type ObjectCtx } from './objects'
+import { defineObject, idRange, registerBloom, type ObjectCtx } from './objects'
 
 /**
  * 近畿 kit（id 1024–2047，名字 'kinki/…'）：京都的鎮。
@@ -1731,5 +1731,6 @@ export const KINKI_BLOOM: Record<string, { flower: 'ume' | 'sakura' | 'kaede' | 
   'kinki/ichou': { flower: 'ichou', bloom: 'kinki/ichou@bloom' },
   'kinki/ajisai': { flower: 'ajisai', bloom: 'kinki/ajisai@bloom' },
 }
+registerBloom(KINKI_BLOOM)
 
 export type { ObjectCtx, Season }

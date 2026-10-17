@@ -64,9 +64,14 @@ export function installDevHook(audio: GameAudio): () => void {
       audio.bgm(null)
     },
     async check(seconds = 5) {
-      const { renderAll } = await import('./offline')
+      const { renderAll, townLevels } = await import('./offline')
       const stats = await renderAll(seconds)
       console.table(stats)
+      // 鎮曲之間的音量（A 加權）：相差超過 3 dB 就提醒（換鎮、坐飛機到別的縣時忽大忽小）
+      const levels = await townLevels()
+      console.table(levels)
+      const db = levels.map((l) => l.dBA)
+      if (Math.max(...db) - Math.min(...db) > 3) console.warn('game audio：鎮曲的音量差太多（A 加權）', levels)
       return stats
     },
   }

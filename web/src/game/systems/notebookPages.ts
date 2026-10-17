@@ -4,6 +4,7 @@ import {
   type AlbumSpotPage,
   type BagEntry,
   type HeardEntry,
+  type HeardPageData,
   type MapPageData,
   type MapPref,
   type PhotoEntry,
@@ -12,7 +13,7 @@ import {
   type StampEntry,
 } from '../ui/notebook'
 
-import { parseDayKey, prefName, townCodeOfMap } from './data'
+import { type DataIndex, parseDayKey, prefName, townCodeOfMap } from './data'
 import type { GameSystems } from './install'
 import { questItemCard } from './inventory'
 import { questText, questUntil } from './quests'
@@ -33,7 +34,7 @@ export function installNotebook(sys: GameSystems): () => void {
     provideNotebook('stamps', (g, base) => (mine(g) ? { books: stampsPage(sys) } : base)),
     provideNotebook('album', (g, base) => (mine(g) ? albumPage(sys) : base)),
     provideNotebook('bag', (g, base) => (mine(g) ? bagPage(sys) : base)),
-    provideNotebook('heard', (g, base) => (mine(g) ? { facts: heardPage(sys) } : base)),
+    provideNotebook('heard', (g, base) => (mine(g) ? heardPage(sys) : base)),
     provideNotebook('quests', (g, base) => (mine(g) ? { quests: questsPage(sys) } : base)),
     provideNotebook('room', (g, base) => {
       if (!mine(g)) return base
@@ -45,8 +46,8 @@ export function installNotebook(sys: GameSystems): () => void {
   return () => offs.forEach((off) => off())
 }
 
-/** 縣的順序：資料給的順序（京都、沖繩） */
-const prefOrder = (sys: GameSystems) => sys.data.prefs.map((p) => p.pref)
+/** 縣的順序：世界索引的 7 縣（北到南）；沒有索引時是資料給的順序（京都、沖繩） */
+const prefOrder = (sys: GameSystems) => sys.data.gamePrefs()
 
 function mapPage(sys: GameSystems, base: MapPageData): MapPageData {
   const s = systemsOf(sys.game)
@@ -54,7 +55,8 @@ function mapPage(sys: GameSystems, base: MapPageData): MapPageData {
   const towns = sys.data.allTowns()
   const prefs: MapPref[] = []
   for (const pref of [...new Set([...prefOrder(sys), ...towns.map((t) => t.pref)])]) {
-    const list = towns.filter((t) => t.pref === pref)
+    // 還沒去過（還沒讀）的縣：世界索引的鎮
+    const list = sys.data.townsOf(pref)
     if (!list.length) continue
     // 北到南（緯度大的在前）
     const lat = (id: string) => sys.data.centerOf(sys.data.town(id)!)?.lat ?? 0
@@ -116,9 +118,14 @@ function bagPage(sys: GameSystems) {
   return { money: g.state.money, items, eaten }
 }
 
-function heardPage(sys: GameSystems): HeardEntry[] {
+function heardPage(sys: GameSystems): HeardPageData {
   const out: HeardEntry[] = []
   const s = systemsOf(sys.game)
+  // 那一縣的資料還沒讀進來（P3 的延遲載入：重新整理之後去過的縣在背景讀）：那幾句先不列，頁面寫「讀取中」
+  let pending = false
+  const later = (where: ReturnType<DataIndex['townOfMap']>) => {
+    if (where?.pref && !sys.data.pref(where.pref)) pending = true
+  }
   for (const [i, h] of s.heard.entries()) {
     const where = sys.data.townOfMap(h.m)
     const date = parseDayKey(h.d) ?? undefined
@@ -126,17 +133,21 @@ function heardPage(sys: GameSystems): HeardEntry[] {
     if (h.k === 'fact' && h.ref) {
       const f = factFromRef(h.id, h.ref, h.p ?? {}, sys.data, where, h.s)
       if (f) out.push({ id: `${f.key}:${i}`, text: f.text, source: f.source, where: whereLabel, date })
+      else later(where)
       continue
     }
     // 告示牌：景點或祭典的簡介第一句
     const [kind, id] = h.id.split(':') as [string, string]
     const sum = kind === 'spot' ? sys.data.spot(id)?.summary : kind === 'festival' ? sys.data.festival(id)?.summary : undefined
     const src = sourceOf(sum?.source_url)
-    if (!sum || !src) continue
+    if (!sum || !src) {
+      later(where)
+      continue
+    }
     const zh = sum.lang !== 'zh' && sum.text_zh
     out.push({ id: `${h.id}:${i}`, text: firstSentence(zh || sum.text, zh ? 'zh' : sum.lang), source: src, where: whereLabel, date })
   }
-  return out.reverse()
+  return { facts: out.reverse(), ...(pending ? { pending: true } : {}) }
 }
 
 function questsPage(sys: GameSystems): QuestEntry[] {

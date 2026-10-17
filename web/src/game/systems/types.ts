@@ -129,7 +129,7 @@ export interface PrefLike {
   railGraph?: { attribution?: string }
 }
 
-export type Kit = 'kinki' | 'okinawa'
+export type Kit = 'kinki' | 'okinawa' | 'kanto' | 'hokkaido'
 
 /** world 的鎮（規格 §11） */
 export interface TownLike {
@@ -148,6 +148,8 @@ export interface TownLike {
 export interface WorldLike {
   towns: readonly TownLike[]
   startTown?: string
+  /** 世界索引的縣與鎮（P3：還沒讀的縣也在；手帳的地圖、印帳的頁、目的地的縣名用） */
+  atlas?: readonly { pref: string; kit?: Kit; towns: readonly TownLike[] }[]
 }
 
 // ---------- 實體的 data（world 產生，systems 處理） ----------
@@ -241,6 +243,8 @@ export interface TravelDest {
   mode?: TravelMode
   /** world 的 Link.id */
   link?: string
+  /** 別的縣的目的地：那一縣的名字（奈良県…；systems 的 travel 打開面板前寫上） */
+  area?: string
 }
 
 export interface TravelData extends StaffData {

@@ -45,6 +45,15 @@ export interface StampMeta {
   sp?: string
   c?: string
   st?: string
+  /**
+   * 蓋的時候印面上的樣子（P3：那一縣的資料延遲載入，還沒讀進來、讀不到時印帳照這些畫）：
+   * f 印面的字（名城「日本100名城 No.2」、站章的羅馬字）、no 名城的 No.、w 蓋章地點（名城：資料的 st）、u 出處、a 剪影。
+   */
+  f?: string
+  no?: number
+  w?: string
+  u?: string
+  a?: string
 }
 
 export interface EatenMeta {
@@ -206,7 +215,9 @@ export function parseSystems(raw: unknown): SystemsSave {
       const k = v.k === 'station' || v.k === 'sanpai' || v.k === 'castle' ? v.k : null
       if (!k) continue
       const opt = (x: unknown) => (str(x) ? x : undefined)
-      out.stamps[id] = { d: v.d, town: opt(v.town), k, p: v.p, n: v.n, sp: opt(v.sp), c: opt(v.c), st: opt(v.st) }
+      const no = typeof v.no === 'number' && Number.isFinite(v.no) ? Math.round(v.no) : undefined
+      out.stamps[id] = { d: v.d, town: opt(v.town), k, p: v.p, n: v.n, sp: opt(v.sp), c: opt(v.c), st: opt(v.st), f: opt(v.f), no, w: opt(v.w), u: opt(v.u), a: opt(v.a) }
+      for (const key of ['town', 'sp', 'c', 'st', 'f', 'no', 'w', 'u', 'a'] as const) if (out.stamps[id]![key] === undefined) delete out.stamps[id]![key]
     }
   if (isObj(raw.eaten)) for (const [id, v] of Object.entries(raw.eaten)) if (isObj(v) && str(v.d)) out.eaten[id] = { d: v.d, n: Math.max(1, Math.round(num(v.n, 1))) }
   if (Array.isArray(raw.heard))

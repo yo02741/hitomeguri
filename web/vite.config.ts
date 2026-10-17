@@ -165,6 +165,8 @@ export default defineConfig({
             // 番外篇（像素遊戲）：引擎、tile、角色、地圖、聲音、介面的純邏輯（src/game/）併成一檔，進 /play 才下載。
             // 只抓 src/game/ 本身（includeDependenciesRecursively: false）：預設會把相依（vue、data/outfits、stores、bundles）
             // 一起抓進來，整個 app 的入口就變成要先載這一檔。畫面（PlayView 與 components/game/*.vue）跟著 /play 的路由自成 PlayView-*.js
+            // 關東、北海道的 tile kit（P3）：另一檔，第一次到東京、北海道才下載（play/world.ts 的 loadKitModule）；檔名也是 game-*，不預先快取
+            { name: 'game-kits', test: /src[\\/]game[\\/]world[\\/]kits[\\/](kanto|hokkaido|urban|nature|lazy)\.ts/, includeDependenciesRecursively: false, priority: 1 },
             { name: 'game', test: /src[\\/]game[\\/]/, includeDependenciesRecursively: false },
             // 3D 旅人的 three.js 與建模：旅人頁的 3D 展示窗與番外篇的旅人側面（game/avatar/side3d.ts）都是動態載入，
             // 兩邊共用時會被拆成獨立的 three.module-*.js 而被預先快取；併進 Avatar3D 這一檔（globIgnores 排除）。

@@ -5,7 +5,7 @@ import { registerTileset } from '../../engine/tiles'
 import type { TileCtx, TileDef } from '../../engine/types'
 
 import { bareBranches, blossoms, foliage, grassTint, grassTones, lantern, leafTones, noren, RED_ROOF, shadow, speckle, stone, tileRoof, type Tones, trunk, tuft, windowPane } from './draw'
-import { defineObject, idRange } from './objects'
+import { defineObject, idRange, registerBloom } from './objects'
 
 /**
  * 沖繩 kit（id 2048–3071，名字 'okinawa/…'）：
@@ -932,6 +932,7 @@ registerTileset('okinawa', OKINAWA_TILES)
 export const OKINAWA_BLOOM: Record<string, { flower: 'kanhi'; bloom: string }> = {
   'okinawa/kanhi': { flower: 'kanhi', bloom: 'okinawa/kanhi@bloom' },
 }
+registerBloom(OKINAWA_BLOOM)
 
 /** 水的深淺（生成器用）：0 淺、1 海、2 深 */
 export const okinawaDepth = depthOf

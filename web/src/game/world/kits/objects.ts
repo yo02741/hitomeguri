@@ -54,6 +54,19 @@ const CODE: Record<string, { layer: TileLayer; behavior?: BehaviorName }> = {
 }
 
 const infos = new Map<string, ObjectInfo>()
+/** 定義（畫法）：別的 kit 可以拿來包一層（北海道冬天的厚雪版） */
+const specs = new Map<string, ObjectSpec>()
+export const objectSpec = (name: string) => specs.get(name)
+
+/**
+ * 開花版的對照（一般版的名字 → 哪種花、開花版的名字）：各 kit import 時登記（registerBloom），生成器用 bloomPairs() 找。
+ * 關東、北海道的 kit 是另一檔、到那一縣才讀（P3），生成器不能直接 import 它們的表。
+ */
+const blooms: Record<string, { flower: string; bloom: string }> = {}
+export function registerBloom(table: Record<string, { flower: string; bloom: string }>) {
+  Object.assign(blooms, table)
+}
+export const bloomPairs = (): Readonly<Record<string, { flower: string; bloom: string }>> => blooms
 export const objectInfo = (name: string) => infos.get(name)
 export const objectNames = () => [...infos.keys()]
 
@@ -62,6 +75,7 @@ type Memo = WeakMap<Palette, Map<string, Uint32Array>>
 
 export function defineObject(o: ObjectSpec): TileDef[] {
   if (o.cells.length !== o.h || o.cells.some((r) => r.length !== o.w)) throw new Error(`world kit：${o.name} 的 cells 跟大小不合`)
+  specs.set(o.name, o)
   const memo: Memo = new WeakMap()
   const W = o.w * TILE
   const H = o.h * TILE

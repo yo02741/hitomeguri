@@ -382,6 +382,49 @@ export const STAMP_SIZE: Record<StampShape, { w: number; h: number }> = {
 
 const stampCache = new Map<string, Sprite>()
 
+/** 站章裡一行最多幾 px（56px 寬、內框 2px，左右各留 1px） */
+const STAMP_TEXT_W = 48
+/** 3×5 字（一字 4px）的寬；放不下時字與字之間的空白縮成 2px（KINTETSU NARA 一行放得下） */
+function textW(t: string, tight = false): number {
+  const words = t.split(' ').filter(Boolean)
+  const gap = tight ? 2 : 5
+  return words.reduce((n, x) => n + x.length * 4 - 1, 0) + Math.max(0, words.length - 1) * gap
+}
+const fits = (t: string) => textW(t, true) <= STAMP_TEXT_W
+
+/** 站章的羅馬字：放得下就一行；長的在空白或「-」斷成兩行（兩邊最平均的那一處），斷不了就照字數切 */
+export function stampLines(text: string): string[] {
+  const t = text.trim()
+  if (fits(t)) return [t]
+  let best: [string, string] | null = null
+  for (let i = 1; i < t.length; i++) {
+    if (t[i - 1] !== ' ' && t[i - 1] !== '-') continue
+    const a = t.slice(0, i).trim()
+    const b = t.slice(i).trim()
+    if (!fits(a) || !fits(b)) continue
+    if (!best || Math.abs(a.length - b.length) < Math.abs(best[0].length - best[1].length)) best = [a, b]
+  }
+  if (best) return best
+  const cut = (x: string) => {
+    let y = x
+    while (y && !fits(y)) y = y.slice(0, -1).trimEnd()
+    return y
+  }
+  const a = cut(t)
+  return [a, cut(t.slice(a.length).trim())]
+}
+
+/** 一行站名：正常的字距放得下就照放，放不下把字與字之間的空白縮成 2px；置中 */
+function stampText(g: Gfx, t: string, w: number, y: number, k: Px) {
+  const tight = textW(t) > STAMP_TEXT_W
+  let x = Math.max(4, (w - textW(t, tight)) >> 1)
+  if (!tight) return void g.text(t, x, y, k)
+  for (const word of t.split(' ').filter(Boolean)) {
+    g.text(word, x, y, k)
+    x += word.length * 4 - 1 + 2
+  }
+}
+
 /**
  * 印的圖案（不含外框）：站章＝圓角的長方形雙框、剪影、站名的羅馬字；參拜印＝直的朱印框、上面一個剪影（名字由 DOM 直書）；
  * 名城＝八角的框、剪影、「NO.53」。
@@ -401,11 +444,17 @@ export function stampSprite(a: StampArt): Sprite {
         g.frame(2, 2, w - 4, h - 4, k)
         for (const [x, y] of [[0, 0], [w - 1, 0], [0, h - 1], [w - 1, h - 1]] as const) g.cut(x, y, 1, 1)
         silhouette(g, a.silhouette, (w - 24) >> 1, 6, k)
-        const text = (a.romaji ?? '').slice(0, 12)
-        const tw = text.length * 4 - 1
-        g.hline(5, w - 6, 29, k)
-        g.text(text, Math.max(4, (w - tw) >> 1), 32, k)
-        g.hline(5, w - 6, 39, k)
+        const lines = stampLines(a.romaji ?? '')
+        if (lines.length < 2) {
+          g.hline(5, w - 6, 29, k)
+          stampText(g, lines[0] ?? '', w, 32, k)
+          g.hline(5, w - 6, 39, k)
+        } else {
+          // 長的站名（OSAKA BUSINESS PARK、TOROKKO ARASHIYAMA…）：兩行，上面一條線，下面靠內框
+          g.hline(5, w - 6, 27, k)
+          stampText(g, lines[0]!, w, 29, k)
+          stampText(g, lines[1]!, w, 35, k)
+        }
       } else if (a.shape === 'sanpai') {
         g.rect(0, 0, w, h, k)
         g.cut(2, 2, w - 4, h - 4)

@@ -54,7 +54,7 @@ Claude Code 的雲端沙箱連不到 Wikidata、OSM、Wikimedia，也沒有 Clau
 - `data/`：主資料（source of truth）。`regions.json` 47 縣名稱、地方、地區色；`packs/` 擴充包；`seed/` 攻略候選、官方觀光網站清單、排除清單。
 - `pipeline/`：Python 資料 pipeline，`models.py` 對應 PLAN.md §4 的 schema，`cli.py` 為指令入口；`validate.py` 資料檢查、`diff_report.py` PR 變更報告。
 - `web/`：Vue 3 + Vite + TypeScript + Pinia + Vue Router + Tailwind v4 + MapLibre。token 在 `src/styles/theme.css`（含和風紋樣 `wa-*` 與紙紋 `paper-grain`）。
-- `web/src/game/`：番外篇的像素遊戲（畫面是 `views/PlayView.vue` 與 `components/game/`）：引擎 `engine/`、你的旅人 `avatar/`、聲音 `audio/`、選鎮與鎮的生成 `world/`、拍照・店・印・房間・委託 `systems/`、事實樣板與虛構台詞 `content/`。資料是 `pipeline/game_bundle.py` 在 build-bundles 裡產生的 `bundles/game/{縣}.json`；測試只讀 commit 進去的 `game/fixtures/`（build-bundles 之後跑 `node web/src/game/fixtures/build-fixtures.mjs` 重做）。
+- `web/src/game/`：番外篇的像素遊戲（畫面是 `views/PlayView.vue` 與 `components/game/`）：引擎 `engine/`、你的旅人 `avatar/`、聲音 `audio/`、選鎮與鎮的生成 `world/`、拍照・店・印・房間・委託 `systems/`、事實樣板與虛構台詞 `content/`。資料是 `pipeline/game_bundle.py` 在 build-bundles 裡產生的 `bundles/game/{縣}.json` 與世界索引 `_world.json`（`pipeline/game_world.py`）；測試只讀 commit 進去的 `game/fixtures/`（build-bundles 之後跑 `node web/src/game/fixtures/build-fixtures.mjs` 重做）。
 - `docs/`：`PROGRESS.md`（目前狀態、開發紀錄、使用者決定、已知限制、之後要做）、`驗收.md`（要使用者做的事與各功能的驗收說明，只有這一份）、`參考/`（設計研究、流程盤點、手機版計畫、效能檢測；`遊戲用的 skill.md` 是番外篇遊戲用的第三方 skill 與安裝方式，不進 repo；音樂、音效只用 Web Audio，不用 Strudel（AGPL））、`screenshots/`。新的驗收說明加在 `驗收.md` 對應的段落，不另開檔案。
 - `firebase.json`、`firestore.rules`：只有 Hosting、Firestore、Auth。`users/{uid}/**` 僅本人可讀寫；`trips/{id}` 僅成員可讀寫（共編）。
 
@@ -66,7 +66,7 @@ Claude Code 的雲端沙箱連不到 Wikidata、OSM、Wikimedia，也沒有 Clau
 - 成就（`/log/achievements`，紀念章帳）：初訪 47 格＋40 個成就，由去過的紀錄、已結束的旅行與 `bundles/achievements.json` 算出來，不另外存；地方、旅行、時節每個 5 張抽獎券（DESIGN.md §7.25、docs/驗收.md「成就」）。前端單元測試 `cd web && npm run test`（vitest）。
 - 年代主題：江戶、明治、大正、昭和、平成、令和（時間軸切換；DESIGN.md §13、docs/驗收.md「年代主題」）。各年代的地區色與 `theme-colors.json` 由 `build-region-css` 一起產生。收集卡測試期可無限抽（`UNLIMITED_DRAWS`，上線前關掉並清空 `users/*/cards`）。
 - 形象網站（`/about`）的像素散步：GBA 風的旅人走過 10 區、65 個隨機腳本、8 種換區（`web/src/services/pixelwalk/`，顏色只用 `--color-px-*`；DESIGN.md §14a、docs/驗收.md「形象網站：像素散步」）。
-- 番外篇（`/play`，P0–P2 做完、等驗收）：GBA 風走格子，主角是旅人頁的旅人，京都 9 鎮＋沖繩 9 鎮，拍照、買東西、印帳、房間、委託，沒有戰鬥；存檔放裝置，不碰網站的紀錄（DESIGN.md §14b、docs/驗收.md「番外篇：像素遊戲」）。
+- 番外篇（`/play`，P0–P2 上線、P3 做完，等驗收）：GBA 風走格子，主角是旅人頁的旅人，7 縣各 9 鎮（京都、沖繩＋P3 的奈良、大阪、兵庫、東京、北海道），拍照、買東西、印帳、房間、委託，沒有戰鬥；存檔放裝置，不碰網站的紀錄。第一次進 `/play` 只抓世界索引 `bundles/game/_world.json`（`pipeline/game_world.py`）與京都，別的縣坐車到那裡才抓（DESIGN.md §14b、docs/驗收.md「番外篇：像素遊戲」）。下一輪 P4：試玩回饋（操作提示、地名、小地圖、円＋信用卡）與從台灣的機場出發（航線取自 `data/flights/taiwan_routes.json`，`pipeline/taiwan_routes.py`）。
 - 特效、離線（PWA）、經縣值、分享圖、位置小框已上線（docs/驗收.md「特效與收集卡」、docs/驗收.md「離線、經縣值、分享圖、位置小框、景點整理（第三輪）」）；經縣值的 Firestore 規則要使用者貼到 Console。
 - Phase 6（自動化排程＋PR 審核）：`refresh-data.yml`、`validate-data`、`diff-report` 已上線，等第一次自動 PR 與一週的排程驗收（docs/驗收.md「自動化排程＋PR 審核（Phase 6）」）。
 - 等使用者驗收：Phase 4、5、6、7，回饋修改第一輪，行程共編（`docs/驗收.md`）。會話 `data/phrases` 是編輯整理的內容（非來源擷取），`reviewed: false` 待使用者校對。

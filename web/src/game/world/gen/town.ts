@@ -5,17 +5,17 @@ import { MapView } from '../../engine/map'
 import { tileDef } from '../../engine/tiles'
 import { B, type Dir, type GameMap, type MapEntity, type MapName, passable, type TileLayer } from '../../engine/types'
 import { hash2 } from '../kits/draw'
-import { KINKI_BLOOM } from '../kits/kinki'
-import { OKINAWA_BLOOM } from '../kits/okinawa'
-import { objectInfo } from '../kits/objects'
+import '../kits/kinki'
+import '../kits/okinawa'
+import { bloomPairs, objectInfo } from '../kits/objects'
 import { inBbox, kmBetween, offsetKm } from '../geo'
 import { climateOf, dateLabel, type Flower, festivalsIn } from '../season'
-import type { FactRef, InnData, Link, NpcData, PhotoSpotData, PrefData, PrefSpot, ShopData, SignData, StampData, Town, TownStop, TravelData, TravelDest, World } from '../types'
+import type { FactRef, InnData, Kit, Link, NpcData, PhotoSpotData, PrefData, PrefSpot, ShopData, SignData, StampData, Town, TownStop, TravelData, TravelDest, World } from '../types'
 
 import { FOLK_IDS, folkOf } from '../../sprites/folk'
 
 import { compile, type Compiled, type InteriorKind, landmarkBlueprint, poiBlueprint } from './blueprints'
-import { classify, type LandmarkKind, type Size, sizeOf } from './classify'
+import { classify, isP3Pref, type LandmarkKind, type Size, sizeOf, stripDisambig } from './classify'
 import { Grid, tid, U } from './grid'
 import { airportHall, castleOffice, type Interior, type InteriorOut, innRoom, juyosho, shopRoom, stationHall } from './interiors'
 import { type KitRoles, rolesOf } from './roles'
@@ -24,11 +24,14 @@ import { stationRomaji } from '../romaji'
 /**
  * 一個鎮的生成器（規格 §8.2 的 1–8 步）。種子＝市区町村碼＋生成器版本：同一份資料每次一樣。
  *  1. 以車站為中心、北朝上，景點的距離 log 壓縮進 44–64 × 34–48 格。
- *  2. 地形：沖繩的海（往海灘、岬、島、橋的方向是海）；近畿只有資料有橋、「川」的時候畫河。
+ *  2. 地形：沖繩的海（往海灘、岬、島、橋的方向是海）；近畿、關東、北海道只有資料有橋、「川」的時候畫河。
+ *     關東的街上、有鐵路的車站：車站北邊一條高架鐵道橫過地圖（橋面在上層，人從下面走過去）。
  *  3. 擺車站、地標（依類型套藍圖；大小看分數與文化指定）、店（旅館、食堂、老舖、茶屋）。海灘、岬、島、海上的橋另外畫在海邊。
  *  4. 每個地標前面：告示牌＋拍攝點。
  *  5. 道路：從車站到每個地標、店的最小生成樹＋幾條環線（A*，街上 2 格寬直角、郊外 1 格會彎），過河的地方是橋。
- *  6. 填空：路邊成排的房子（町家／赤瓦）、田（田、甘蔗田）、樹林、灌木；地圖邊一圈樹（沖繩靠海的一邊是海）。
+ *  6. 填空：路邊成排的房子（町家／赤瓦／大樓／鐵皮屋頂）、田（田、甘蔗田、旱田、麥田、馬鈴薯田；有花田的北海道的鎮是
+ *     薰衣草與花田）、樹林、灌木；地圖邊一圈樹（沖繩靠海的一邊是海）。關東、北海道另外有斑馬線、紅綠燈、電線桿、
+ *     自動販賣機（街上）、矢羽根、牧場的柵欄、牧草、筒倉（北海道的郊外）。
  *  7. NPC：事實 NPC（祭典、老舖、城的蓋章地點、平年的櫻花、到別的鎮的距離）、路人、委託；祭典那個月另外有攤子、提燈、人。
  *  8. 可達性：從車站出口 flood fill，門、拍攝點、NPC、告示牌都要走得到，走不到就把擋路的填空拆掉鑿路。
  * 室內（車站大廳、授与所、城的蓋章處、店、旅館、機場）跟著鎮一起做。
@@ -421,9 +424,15 @@ export function generateTown(input: TownGenInput): TownGen {
   phaseAt = t0
   const { pref, town, world } = input
   const kit = town.kit
-  const roles = rolesOf(kit)
   const r = makeRng(seedOf(town.id, input.genVersion))
-  const urban = town.urban
+  // 關東、北海道：政令指定都市的區（札幌市中央区…）一定是街上；北海道有鐵路的「市」（函館、小樽…）也是街上，房子是鐵皮屋頂的民家為主
+  const p3 = kit === 'kanto' || kit === 'hokkaido'
+  const mun = p3 ? pref.municipality(town.id) : undefined
+  const ward = !!mun?.c
+  const cityTown = p3 && !town.urban && !ward && kit === 'hokkaido' && /市$/.test(mun?.n ?? '') && (town.stops[0]?.kind === 'rail')
+  const urban = town.urban || (p3 && ward) || cityTown
+  const kitRoles = rolesOf(kit)
+  const roles: KitRoles = cityTown && kitRoles.townHouses ? { ...kitRoles, urbanHouses: kitRoles.townHouses } : kitRoles
 
   // 地標：類型、大小（分數前兩名可以是大的，第 7 名以後一律小）
   const spots = town.spots.map((id) => pref.spotById(id)).filter((s): s is PrefSpot => !!s)
@@ -438,6 +447,22 @@ export function generateTown(input: TownGenInput): TownGen {
     if (c && stop && !stationCastles.some((x) => x.stop.id === stop.id)) stationCastles.push({ castle: c, spot: s, stop })
   }
   const castleAtCastle = (s: PrefSpot) => (stationCastles.some((x) => x.spot.id === s.id) ? undefined : castleOf(s))
+  // P3 的縣：已經上線的京都、沖繩照舊（GEN_VERSION 不改）
+  const p3pref = isP3Pref(town.pref)
+  /**
+   * 名城的章在城裡的時候放哪（P3）：資料的 st 第一個寫的是屋外（「本丸櫓門下」「…（券売所外）」「…付近 (屋外)」）→ 城門邊的蓋章台，
+   * 不另外蓋一間小屋；寫的是這一鎮另一個地標的名字（郡山城的「柳沢文庫」）→ 蓋章台放在那個地標前面；其他的照舊是城牆裡的小屋。
+   * 京都、沖繩一律是小屋（P2）。
+   */
+  const castlePlace = (s: PrefSpot): { mode: 'hut' | 'table' } | { mode: 'landmark'; spot: PrefSpot } | null => {
+    const c = castleAtCastle(s)
+    if (!c) return null
+    if (!p3pref) return { mode: 'hut' }
+    const where = c.st![0]!
+    const same = spots.find((x) => x.id !== s.id && (x.n === where || stripDisambig(x.n) === where))
+    if (same) return { mode: 'landmark', spot: same }
+    return { mode: OUTDOOR_STAMP.test(where) ? 'table' : 'hut' }
+  }
   const castleStamp = (c: PackItem, spotId: string): StampData => {
     const face = c.no ? `${c.g === 'zoku' ? '続日本100名城' : '日本100名城'} No.${c.no}` : undefined
     return { stampId: `castle:${c.id}`, stampKind: 'castle', pref: pref.pref, name: c.n, castleId: c.id, spotId, ...(face ? { face } : {}) }
@@ -447,13 +472,15 @@ export function generateTown(input: TownGenInput): TownGen {
   let temples = 0
   const base = seedOf(town.id, 'temple') % 4
   const plans = spots.map((s, rank) => {
-    const kind = classify(s, kit)
-    const special = kind === 'bridge' || kind === 'island' || kind === 'beach' || kind === 'cape'
+    let kind = classify(s, kit, town.pref)
+    // 名城（蓋章地點在城裡）一律畫城：類型是史跡、名字沒有「城」的（五稜郭）也是，章才有地方蓋（P3；京都、沖繩的名城本來就是城）
+    if (p3pref && castleAtCastle(s) && kind !== 'castle' && kind !== 'palace') kind = 'castle'
+    const special = kind === 'bridge' || kind === 'island' || kind === 'beach' || kind === 'cape' || kind === 'river'
     let size = sizeOf(s)
     if (rank >= 2 && size === 'L') size = 'M'
     if (rank >= 6) size = 'S'
     const variant = kind === 'temple' ? (base + temples++) % 4 : seedOf(s.id) % 2
-    const bp = (sz: Size) => compile(landmarkBlueprint(kind, sz, kit, { stamp: !!castleAtCastle(s), variant }), kit)
+    const bp = (sz: Size) => compile(landmarkBlueprint(kind, sz, kit, { stamp: castlePlace(s)?.mode === 'hut', variant, p3: p3pref }), kit)
     return { spot: s, kind, special, rank, size, bp: special ? null : bp(size), smaller: special || size === 'S' ? null : bp(SMALLER[size]) }
   })
   // 老舖：點在這一鎮的區界裡（m）；舊資料沒有 m 時：外框裡、離鎮中心最近的那一鎮
@@ -477,7 +504,8 @@ export function generateTown(input: TownGenInput): TownGen {
     ground: roles.grass,
     border: seaBorder ? { ground: tid('okinawa/deep') } : { ground: tid(roles.grass), lower: tid(roles.borderTree[0]), over: tid(roles.borderTree[1]) },
   })
-  g.map.bgm = kit === 'okinawa' ? 'okinawa' : 'kyoto'
+  g.map.bgm = BGM_OF[kit]
+  g.map.setting = urban ? 'urban' : 'rural'
   // 地圖邊兩格：樹（或海）
   for (let y = 0; y < H; y++) for (let x = 0; x < W; x++) if (x < 2 || y < 2 || x >= W - 2 || y >= H - 2) g.setUse(x, y, U.edge)
 
@@ -498,14 +526,17 @@ export function generateTown(input: TownGenInput): TownGen {
   phase('setup')
   // 2. 地形
   const sea = kit === 'okinawa' ? paintSea(g, plans.filter((p) => p.special).map((p) => project(p.spot)), { x: cx, y: cy }, r, town.island) : false
-  const river = kit === 'kinki' ? paintRiver(g, plans, project, { x: cx, y: cy }, r, roles) : null
+  const river = kit !== 'okinawa' ? paintRiver(g, plans, project, { x: cx, y: cy }, r, roles) : null
 
   phase('terrain')
   // 3. 車站（或巴士站、機場）、地標、店
   const placed: Placed[] = []
   const stops: Record<string, Arrival> = {}
   const main = town.stops[0]!
-  const stationBp = main.kind === 'airport' ? null : compile(poiBlueprint(main.kind === 'bus' ? 'bus' : 'station', kit), kit)
+  const stationPoi = poiBlueprint(main.kind === 'bus' ? 'bus' : 'station', kit)
+  // 札幌這類的政令指定都市的區（北海道）：高架的大車站，不是鄉下的木造站舍
+  const cityStation = kit === 'hokkaido' && ward && main.kind === 'rail'
+  const stationBp = main.kind === 'airport' ? null : compile(cityStation ? { ...stationPoi, legend: { ...stationPoi.legend, S: { ...stationPoi.legend!.S!, obj: 'hokkaido/station-city' } } } : stationPoi, kit)
   const gap = 1
   const occ = new Occupancy(g)
   const place = (c: Compiled, tx: number, ty: number, id: string, kind: string): Placed | null => {
@@ -518,11 +549,25 @@ export function generateTown(input: TownGenInput): TownGen {
   }
   let station: Placed | null = null
   if (stationBp) station = place(stationBp, cx, cy + 3, 'poi:station', main.kind === 'bus' ? 'bus' : 'station')
+  const roadTile = urban ? roles.street : roles.road
+  // 關東的街上、有鐵路的車站：車站北邊 3 格那一列先留給高架鐵道（鋪成路：高架下的路），地標、店都不會蓋在上面
+  // （高架不穿過大樓、不隔在拍攝點與地標之間）
+  let viaductRow = -1
+  if (kit === 'kanto' && urban && station?.kind === 'station' && main.kind === 'rail' && station.y - 3 >= 3) {
+    viaductRow = station.y - 3
+    for (let x = 2; x < W - 2; x++)
+      if (g.free(x, viaductRow)) {
+        g.ground(x, viaductRow, roadTile)
+        g.setUse(x, viaductRow, U.road)
+      }
+    occ.rebuild()
+  }
 
   // 海灘、岬、島、橋（沿海、河）
   for (const p of plans.filter((x) => x.special)) {
     const at = project(p.spot)
-    const pl = p.kind === 'bridge' && kit === 'kinki' ? riverBridge(g, river, at, roles, p.spot) : sea ? coastFeature(g, p.kind, at, roles, r, p.spot, kit) : null
+    const pl =
+      (p.kind === 'bridge' || p.kind === 'river') && kit !== 'okinawa' ? riverBridge(g, river, at, roles, p.spot, p.kind === 'bridge') : sea ? coastFeature(g, p.kind, at, roles, r, p.spot, kit) : null
     if (pl) placed.push(pl)
   }
   occ.rebuild()
@@ -556,15 +601,33 @@ export function generateTown(input: TownGenInput): TownGen {
   }
   for (const p of plans) if (p.kind !== 'airport' && p.rank >= 6) placeLandmark(p)
   if (!station) station = placed[0] ?? null
+  // 名城的蓋章台（P3：屋外的蓋章地點、蓋在別的地標的）：城（或那個地標）藍圖的 n 格，路人不站那裡
+  const tables: Array<{ at: Pt; stamp: StampData }> = []
+  for (const p of plans) {
+    const how = castlePlace(p.spot)
+    if (!how || how.mode === 'hut') continue
+    const c = castleAtCastle(p.spot)!
+    const castlePl = placed.find((x) => x.spot?.id === p.spot.id)
+    const host = how.mode === 'landmark' ? (placed.find((x) => x.spot?.id === how.spot.id) ?? castlePl) : castlePl
+    const at = host?.npc.shift() ?? null
+    if (!host || !at) continue
+    g.layer('lower', at.x, at.y, 'world/stamp-table')
+    g.setUse(at.x, at.y, U.keep)
+    tables.push({ at, stamp: castleStamp(c, p.spot.id) })
+  }
 
   phase('place')
   // 5. 路
-  const roadTile = urban ? roles.street : roles.road
-  layRoads(g, placed, station, r, roles, roadTile, urban)
+  layRoads(g, placed, station, r, roles, roadTile, urban, p3pref)
+
+  // 郊外的鎮：藍圖的步道（紅磚）換成土的步道
+  if (!urban && roles.ruralPath && roles.ruralPath !== roles.path) swapGround(g, roles.path, roles.ruralPath)
+  // 關東的街上：有鐵路的車站北邊，一條高架鐵道橫過地圖
+  if (viaductRow >= 0) viaduct(g, viaductRow)
 
   phase('roads')
   // 6. 填空
-  fillTown(g, r, roles, urban, kit, input.genVersion)
+  fillTown(g, r, roles, urban, kit, input.genVersion, { flowers: plans.some((p) => p.kind === 'flowerfield') })
   phase('fill')
 
   // 7. 實體：告示牌、拍攝點、NPC、交通
@@ -578,7 +641,7 @@ export function generateTown(input: TownGenInput): TownGen {
   }
   let npcN = 0
   const npcSeed = () => seedOf(town.id, 'npc', npcN++)
-  const look = (seed: number) => folkOf(seed)
+  const look = (seed: number) => (roles.folks ? roles.folks[(seed >>> 0) % roles.folks.length]! : folkOf(seed))
   const linksOf = (stop: string) => world.links.filter((l) => l.from === town.id && l.fromStop === stop)
   const travelData = (mode: TravelData['mode'], stop: string): TravelData => ({ mode, fromTown: town.id, dests: linksOf(stop).map((l) => destOf(l, mode)) })
   let inn: TownGen['inn']
@@ -593,7 +656,9 @@ export function generateTown(input: TownGenInput): TownGen {
     p.target = { x: x0, y: y0, w: Math.max(1, Math.min(W, t.x + t.w) - x0), h: Math.max(1, Math.min(H, t.y + t.h) - y0) }
     const spot = p.spot
     if (spot) {
-      const title = { ja: spot.name?.ja ?? spot.n, zh: spot.name?.zh_tw ?? spot.z, kana: spot.name?.kana ?? spot.h, romaji: spot.name?.romaji ?? spot.r }
+      const ja0 = spot.name?.ja ?? spot.n
+      // P3：名字的消歧義括號（「小泉城 (大和国)」）不寫在告示牌上
+      const title = { ja: p3pref ? stripDisambig(ja0) : ja0, zh: spot.name?.zh_tw ?? spot.z, kana: spot.name?.kana ?? spot.h, romaji: spot.name?.romaji ?? spot.r }
       const src = spot.summary?.source_url ?? spot.src ?? wikidataUrl(spot.id)
       if (p.sign && src) {
         const data: SignData = { spotId: spot.id, title, source_url: src, ...(spot.summary ? { summary: { text: spot.summary.text, lang: spot.summary.lang, source_url: spot.summary.source_url, license: spot.summary.license, ...(spot.summary.text_zh ? { text_zh: spot.summary.text_zh } : {}) } } : {}) }
@@ -657,14 +722,16 @@ export function generateTown(input: TownGenInput): TownGen {
       stops[stopId] = { map: id, x: room.arrive!.x, y: room.arrive!.y, dir: room.arrive!.dir }
     } else if (kind === 'juyosho' && spot) {
       id = intId('juyosho')
-      const stamp: StampData = { stampId: `sanpai:${spot.id}`, stampKind: 'sanpai', pref: pref.pref, name: spot.n, spotId: spot.id }
-      room = juyosho({ id, name: { ja: `${spot.n}　授与所`, romaji: (spot.r ?? '').toUpperCase(), zh: `${spot.z ?? spot.n} 授與所` }, exits, stamp, seed: npcSeed() })
+      // P3：名字的消歧義括號（「慈光院 (大和郡山市)」）不寫在授与所、參拜印上
+      const nm = p3pref ? stripDisambig(spot.n) : spot.n
+      const stamp: StampData = { stampId: `sanpai:${spot.id}`, stampKind: 'sanpai', pref: pref.pref, name: nm, spotId: spot.id }
+      room = juyosho({ id, name: { ja: `${nm}　授与所`, romaji: (spot.r ?? '').toUpperCase(), zh: `${spot.z ?? nm} 授與所` }, exits, stamp, seed: npcSeed() })
     } else if (kind === 'castle' && spot) {
       // 蓋章地點在城裡的才有這間（在車站的放在車站的大廳）
       const c = castleAtCastle(spot)
       if (!c) continue
       id = intId('castle')
-      const stName = c.st![0]!
+      const stName = p3pref ? hutName(c.st![0]!, c.n) : c.st![0]!
       room = castleOffice({ id, name: { ja: stName, romaji: '', zh: stName }, exits, stamp: castleStamp(c, spot.id) })
     } else if (kind === 'inn') {
       id = intId('inn')
@@ -679,6 +746,7 @@ export function generateTown(input: TownGenInput): TownGen {
       room = shopRoom({ id, name: { ja: shop.name, romaji: kind === 'shokudo' ? 'SHOKUDO' : '', zh: s?.z ?? shop.name }, exits, shop, seed: npcSeed() })
     }
     if (!room) continue
+    room.map.setting = g.map.setting
     interiors.set(id, room.map)
     p.doors.forEach((d, i) => {
       const m = room!.mats[Math.min(i, room!.mats.length - 1)]!
@@ -693,6 +761,9 @@ export function generateTown(input: TownGenInput): TownGen {
     ents.push({ id: `travel:${town.id}:bus`, kind: 'travel', x: sign.x, y: sign.y, data: travelData('bus', stopId) as unknown as Record<string, unknown> })
     stops[stopId] = { map: town.mapId, x: sign.x, y: sign.y + 1, dir: 'down' }
   }
+
+  // 名城的蓋章台
+  for (const t of tables) ents.push({ id: `stamp:${t.stamp.stampId}`, kind: 'stamp', x: t.at.x, y: t.at.y, data: t.stamp as unknown as Record<string, unknown> })
 
   // NPC
   const walkable = new MapView(g.map)
@@ -724,16 +795,32 @@ export function generateTown(input: TownGenInput): TownGen {
     if (!p) return
     usedNpc.add(key(p.x, p.y))
     const seed = npcSeed()
-    const d: NpcData = { ...data, look: lookAround(ents, p, seed), lookSeed: seed, tags: { region: town.pref, kit, town: town.id } }
+    const d: NpcData = { ...data, look: lookAround(ents, p, seed, roles.folks), lookSeed: seed, tags: { region: town.pref, kit, town: town.id } }
     ents.push({ id, kind: 'npc', x: p.x, y: p.y, facing: 'down', data: d as unknown as Record<string, unknown> })
   }
+  // 一下車看到的人（到別鎮的距離、委託）：P3 的鎮在車站前 2–5 格裡照鎮的種子挑（每鎮的第一個畫面不會都一樣；京都、沖繩照舊）
+  const arrivalRng = makeRng(seedOf(town.id, 'arrival'))
+  const npcAround = (p: Pt, from: number, to: number): Pt | null => {
+    const cands: Pt[] = []
+    for (let dy = -to; dy <= to; dy++)
+      for (let dx = -to; dx <= to; dx++) {
+        const d = Math.max(Math.abs(dx), Math.abs(dy))
+        if (d >= from && d <= to && okNpc(p.x + dx, p.y + dy, true)) cands.push({ x: p.x + dx, y: p.y + dy })
+      }
+    return cands.length ? cands[arrivalRng.int(0, cands.length - 1)]! : null
+  }
+  const nearStation = (anchor: Pt, fallback: () => Pt | null) => (p3pref && station && anchor === station.front ? (npcAround(anchor, 2, 5) ?? fallback()) : fallback())
   const facts = factsOf(pref, town, world, placed)
   // 沒有綁地點的事實（櫻、距離）：分散到各個地標前面（距離的那一位在車站）
   const anchors = placed.filter((p) => p.spot && p !== station).map((p) => p.front)
   let ai = 0
   facts.forEach((f, i) => {
     const anchor = f.at ?? (f.fact.template.endsWith('.km') ? station?.front : anchors[ai++ % Math.max(1, anchors.length)]) ?? station?.front ?? { x: cx, y: cy }
-    addNpc(npcNear(anchor, 8, true, 2) ?? npcNear(anchor, 8, true), { role: 'fact', fact: f.fact, move: 'look' }, `npc:${town.id}:fact:${i}`)
+    addNpc(
+      nearStation(anchor, () => npcNear(anchor, 8, true, 2) ?? npcNear(anchor, 8, true)),
+      { role: 'fact', fact: f.fact, move: 'look' },
+      `npc:${town.id}:fact:${i}`,
+    )
   })
   // 地標的 n 格：路人
   let passers = 0
@@ -749,7 +836,12 @@ export function generateTown(input: TownGenInput): TownGen {
     const p = roads[r.int(0, roads.length - 1)]!
     addNpc(okNpc(p.x, p.y) ? p : npcNear(p, 3), { role: 'passer', move: 'wander', range: 2 }, `npc:${town.id}:walker:${k}`)
   }
-  addNpc(npcNear(station?.front ?? { x: cx, y: cy }, 8, true, 2) ?? npcNear(station?.front ?? { x: cx, y: cy }, 8, true), { role: 'quest', move: 'look' }, `npc:${town.id}:quest`)
+  const qAt = station?.front ?? { x: cx, y: cy }
+  addNpc(
+    nearStation(qAt, () => npcNear(qAt, 8, true, 2) ?? npcNear(qAt, 8, true)),
+    { role: 'quest', move: 'look' },
+    `npc:${town.id}:quest`,
+  )
 
   g.map.entities.push(...ents)
   const ids = new Set(ents.map((e) => e.id))
@@ -772,7 +864,8 @@ export function generateTown(input: TownGenInput): TownGen {
 
   // 開花的格子
   const bloom: BloomCell[] = []
-  const pairs = { ...KINKI_BLOOM, ...OKINAWA_BLOOM } as Record<string, { flower: Flower; bloom: string }>
+  // 各 kit 登記的開花對照（關東、北海道的 kit 讀進來之後才有它們的）
+  const pairs = bloomPairs() as Record<string, { flower: Flower; bloom: string }>
   for (const layer of ['lower', 'over'] as const) {
     const arr = g.map[layer]
     for (let i = 0; i < arr.length; i++) {
@@ -793,17 +886,40 @@ export function generateTown(input: TownGenInput): TownGen {
   return { map: g.map, interiors, stops, bloom, festival, landmarks, questSpots, inn, ms: now() - t0 }
 }
 
+/** 名城的蓋章地點寫的是屋外（城門下、券売所外、…付近 (屋外)）：城門邊的蓋章台，不蓋小屋（P3） */
+const OUTDOOR_STAMP = /門下|屋外|券売所外|付近/
+
+/**
+ * 城的蓋章處（小屋）的名字（P3）：資料的 st，拿掉括號裡的開館時間（「(日曜日のみ開館)」）；
+ * 「天守閣…」的不畫天守，名字也不寫天守閣（「天守閣1階インフォメーションカウンター」→「大阪城　インフォメーションカウンター」）。
+ * 完整的原文照樣在蓋章時、事實 NPC 的台詞裡（附出處）。
+ */
+export function hutName(st: string, castle: string): string {
+  let n = st.replace(/\s*[（(][^）)]*(開館|休館|のみ|曜日)[^）)]*[）)]/g, '').trim()
+  const noKeep = n.replace(/天守閣?\s*[0-9０-９]*\s*階?/g, '').trim()
+  if (noKeep !== n) n = noKeep && !noKeep.includes(castle.replace(/城$/, '')) ? `${castle}　${noKeep}` : noKeep || castle
+  return n || castle
+}
+
 /** 跟車站同名的景點（那覇空港駅 ↔ 那覇空港）：站名的羅馬字用它的 */
 const sameSpot = (pref: PrefData, name: string) => pref.spots.find((s) => s.n === name || s.n === `${name}駅`)
 
-/** 路人的外觀：4 格內已經有人穿的就換下一種（同一個畫面裡不要一堆雙胞胎；種子一樣結果一樣） */
-function lookAround(ents: readonly MapEntity[], p: Pt, seed: number): string {
+/** 鎮曲：近畿（京都、奈良、大阪、兵庫）放京都那首，關東放東京、北海道放北海道（audio/songs） */
+const BGM_OF: Record<Kit, string> = { kinki: 'kyoto', okinawa: 'okinawa', kanto: 'tokyo', hokkaido: 'hokkaido' }
+
+/**
+ * 路人的外觀：4 格內已經有人穿的就換下一種（同一個畫面裡不要一堆雙胞胎；種子一樣結果一樣）。
+ * folks：這一套 kit 的路人（關東多是上班族、學生；北海道多是農家、觀光客）；沒給就是全部 12 種。
+ */
+function lookAround(ents: readonly MapEntity[], p: Pt, seed: number, folks?: readonly string[]): string {
   const near = new Set(ents.filter((e) => e.kind === 'npc' && Math.max(Math.abs(e.x - p.x), Math.abs(e.y - p.y)) <= 4).map((e) => (e.data as { look?: string } | undefined)?.look))
-  for (let k = 0; k < FOLK_IDS.length; k++) {
-    const id = folkOf(seed + k)
+  const pool: readonly string[] = folks ?? FOLK_IDS
+  const at = (k: number) => (folks ? pool[((seed + k) >>> 0) % pool.length]! : folkOf(seed + k))
+  for (let k = 0; k < pool.length; k++) {
+    const id = at(k)
     if (!near.has(id)) return id
   }
-  return folkOf(seed)
+  return at(0)
 }
 
 /** 到站的地方（同一張地圖的）：站的那一格、往前 3 格、左右各一格 → 不放 NPC、攤子 */
@@ -956,7 +1072,7 @@ function paintRiver(
   r: Rng,
   roles: KitRoles,
 ): { vertical: boolean; at: number; cells: Set<string> } | null {
-  const hit = plans.find((p) => p.kind === 'bridge' || /[川]$/.test(p.spot.n))
+  const hit = plans.find((p) => p.kind === 'bridge' || p.kind === 'river' || /[川]$/.test(p.spot.n))
   if (!hit) return null
   const p = project(hit.spot)
   const dx = p.x - center.x
@@ -984,8 +1100,11 @@ function paintRiver(
   return { vertical, at, cells }
 }
 
-/** 河上的橋（地標）：最靠近那個點的地方架橋，告示牌＋拍攝點在岸邊 */
-function riverBridge(g: Grid, river: ReturnType<typeof paintRiver>, at: Pt, roles: KitRoles, spot: PrefSpot): Placed | null {
+/**
+ * 河上的橋（地標）：最靠近那個點的地方架橋，告示牌＋拍攝點在岸邊。
+ * bridge = false（P3：名字是「…川」的地標本身）：不架橋，只在岸邊放告示牌與拍攝點，拍的是那一段河。
+ */
+function riverBridge(g: Grid, river: ReturnType<typeof paintRiver>, at: Pt, roles: KitRoles, spot: PrefSpot, bridge = true): Placed | null {
   if (!river) return null
   // 找一條橫（直）線：線上有水、東（南）岸有三格空地（拍攝點、告示牌、接路）
   const span = (t: number): { water: Pt[]; bank: Pt } | null => {
@@ -1008,10 +1127,11 @@ function riverBridge(g: Grid, river: ReturnType<typeof paintRiver>, at: Pt, role
   const water = hit.water
   const first = water[0]!
   const last = water[water.length - 1]!
-  for (const w of water) {
-    g.ground(w.x, w.y, river.vertical ? roles.bridgeH : roles.bridgeV)
-    g.setUse(w.x, w.y, U.keep)
-  }
+  if (bridge)
+    for (const w of water) {
+      g.ground(w.x, w.y, river.vertical ? roles.bridgeH : roles.bridgeV)
+      g.setUse(w.x, w.y, U.keep)
+    }
   // 岸邊（南、東那一側）：拍攝點與告示牌
   const bank = hit.bank
   const photo = { ...bank }
@@ -1030,7 +1150,7 @@ function riverBridge(g: Grid, river: ReturnType<typeof paintRiver>, at: Pt, role
   const y0 = Math.min(first.y, last.y)
   return {
     id: `lm:${spot.id}`,
-    kind: 'bridge',
+    kind: bridge ? 'bridge' : 'river',
     x: x0,
     y: y0,
     w: Math.abs(last.x - first.x) + 1,
@@ -1167,7 +1287,7 @@ function coastFeature(g: Grid, kind: LandmarkKind, at: Pt, roles: KitRoles, r: R
 }
 
 // ---------- 路 ----------
-function layRoads(g: Grid, placed: Placed[], station: Placed | null, r: Rng, roles: KitRoles, tile: string, urban: boolean) {
+function layRoads(g: Grid, placed: Placed[], station: Placed | null, r: Rng, roles: KitRoles, tile: string, urban: boolean, trimEdges = false) {
   const nodes = placed.map((p) => p.front)
   if (!nodes.length) return
   const root = station ? placed.indexOf(station) : 0
@@ -1262,7 +1382,28 @@ function layRoads(g: Grid, placed: Placed[], station: Placed | null, r: Rng, rol
   // 街上：棋盤狀的小路（不貼著已經有的路），接不上的接一小段，還是接不上就拿掉
   if (urban && station) {
     gridStreets(g, station.front, tile)
+    if (trimEdges) trimEdgeTails(g, roles)
     pruneRoads(g, nodes[root]!, roles, tile)
+  }
+}
+
+/**
+ * 棋盤的小路通到地圖邊、中間沒有路口的那一段（P3）：從邊往裡收到最後一個路口（上下或左右有路的那一格）。
+ * 1 格寬、兩旁都是房子、走到樹的盡頭的死巷，看起來像出城的路（京都、沖繩照舊）。
+ */
+function trimEdgeTails(g: Grid, roles: KitRoles) {
+  const road = (x: number, y: number) => g.useAt(x, y) === U.road
+  const clear = (x: number, y: number) => {
+    g.setUse(x, y, U.free)
+    g.ground(x, y, roles.grass)
+  }
+  for (let y = 2; y < g.h - 2; y++) {
+    for (let x = 2; x < g.w - 2 && road(x, y) && !road(x, y - 1) && !road(x, y + 1); x++) clear(x, y)
+    for (let x = g.w - 3; x >= 2 && road(x, y) && !road(x, y - 1) && !road(x, y + 1); x--) clear(x, y)
+  }
+  for (let x = 2; x < g.w - 2; x++) {
+    for (let y = 2; y < g.h - 2 && road(x, y) && !road(x - 1, y) && !road(x + 1, y); y++) clear(x, y)
+    for (let y = g.h - 3; y >= 2 && road(x, y) && !road(x - 1, y) && !road(x + 1, y); y--) clear(x, y)
   }
 }
 
@@ -1368,12 +1509,15 @@ function pruneRoads(g: Grid, from: Pt, roles: KitRoles, tile: string) {
 }
 
 // ---------- 填空 ----------
-function fillTown(g: Grid, r: Rng, roles: KitRoles, urban: boolean, kit: string, gen: number) {
+function fillTown(g: Grid, r: Rng, roles: KitRoles, urban: boolean, kit: Kit, gen: number, o: { flowers: boolean } = { flowers: false }) {
   const W = g.w
   const H = g.h
   const seed = seedOf('fill', W, H, gen, r.int(0, 1 << 30))
   const free = (x: number, y: number) => g.useAt(x, y) === U.free
   const okFree = (u: number) => u === U.free
+  const p3 = kit === 'kanto' || kit === 'hokkaido'
+  // 關東、北海道的街上：路口的斑馬線（先換地面，房子之前）
+  if (p3 && urban) crosswalks(g, roles, kit)
   // a. 路邊成排的房子：水平的路的北邊（門朝路）；放不下 4 列高的就放 3 列高的
   const houses = urban ? roles.urbanHouses : roles.ruralHouses
   for (let y = 3; y < H - 2; y++)
@@ -1444,23 +1588,27 @@ function fillTown(g: Grid, r: Rng, roles: KitRoles, urban: boolean, kit: string,
         extra++
       }
   }
-  // c. 田（郊外）：大塊的空地
+  // c. 田（郊外）：大塊的空地。北海道的田大一點、多一點，一塊一種作物（麥、馬鈴薯；有花田的鎮是薰衣草與花田）
+  const big = kit === 'hokkaido'
   if (!urban)
     for (let y = 3; y < H - 5; y++)
       for (let x = 3; x < W - 6; x++) {
-        if (!free(x, y) || noise(x, y, seed + 3, 9) < 0.55) continue
+        if (!free(x, y) || noise(x, y, seed + 3, 9) < (big ? 0.47 : 0.55)) continue
         let w = 0
-        while (w < 9 && free(x + w, y) && free(x + w, y - 1)) w++
+        while (w < (big ? 12 : 9) && free(x + w, y) && free(x + w, y - 1)) w++
         if (w < 4) continue
         let h = 0
-        while (h < 5 && g.rectOk(x, y + h, w, 1, okFree) && g.rectOk(x, y + h + 1, w, 1, (u) => u === U.free || u === U.road)) h++
+        while (h < (big ? 6 : 5) && g.rectOk(x, y + h, w, 1, okFree) && g.rectOk(x, y + h + 1, w, 1, (u) => u === U.free || u === U.road)) h++
         if (h < 3) continue
+        const crop = big ? cropOf(x, y, seed, o.flowers) : roles.field
         for (let yy = y; yy < y + h; yy++)
           for (let xx = x; xx < x + w; xx++) {
-            g.ground(xx, yy, roles.field)
+            g.ground(xx, yy, crop)
             g.setUse(xx, yy, U.fill)
           }
       }
+  // c2. 關東、北海道：電線桿、紅綠燈、自動販賣機、矢羽根、牧場…（近畿、沖繩沒有這一步）
+  if (p3) furnish(g, r, roles, kit, urban, seed)
   // d. 地圖邊一圈：樹（海、通到地圖外的橋不動）；1×2 的樹由上往下兩格兩格疊
   const edgeTrees = roles.edgeTrees
   const edgeFree = (x: number, y: number) => g.useAt(x, y) === U.edge && !g.owner[g.i(x, y)] && !isSeaTile(g.groundName(x, y)) && !/bridge/.test(g.groundName(x, y) ?? '')
@@ -1490,13 +1638,225 @@ function fillTown(g: Grid, r: Rng, roles: KitRoles, urban: boolean, kit: string,
         }
         continue
       }
-      // 樹林裡：近畿多竹與杉，沖繩多フクギ
-      const name = dense ? (kit === 'kinki' ? (n > 0.75 ? 'kinki/bamboo' : r.pick(['kinki/sugi', 'kinki/tree', 'kinki/kaede'])) : r.pick(['okinawa/fukugi', 'okinawa/tree', 'okinawa/fukugi'])) : pickW(r, trees)
+      // 樹林裡：近畿多竹與杉，沖繩多フクギ，關東是公園的闊葉樹，北海道是蝦夷松與白樺
+      const name = dense ? denseTree(kit, n, r) : pickW(r, trees)
       if (fits(g, name, x, y, (u) => u === U.free)) g.object(name, x, y, U.fill)
     }
+  // f. 關東的街上：路邊、大樓旁剩下的空地鋪成鋪石（草地只留在比較裡面的地方，像小公園）
+  if (kit === 'kanto' && urban)
+    for (let y = 2; y < H - 2; y++)
+      for (let x = 2; x < W - 2; x++) {
+        if (!free(x, y) || g.map.ground[g.i(x, y)] !== tid(roles.grass)) continue
+        const touch = DIRS.some(([dx, dy]) => {
+          const u = g.useAt(x + dx, y + dy)
+          return u === U.road || u === U.house
+        })
+        if (touch) g.ground(x, y, roles.path)
+      }
 }
 
 const isSeaTile = (name?: string) => !!name && /okinawa\/(shallow|sea|deep|reef)/.test(name)
+
+/** 地面換成別的 tile（整張地圖） */
+function swapGround(g: Grid, from: string, to: string) {
+  const a = tid(from)
+  const b = tid(to)
+  for (let i = 0; i < g.map.ground.length; i++) if (g.map.ground[i] === a) g.map.ground[i] = b
+}
+
+/** 樹林裡的樹（近畿、沖繩的抽法跟 P2 一樣：亂數用法不變） */
+function denseTree(kit: Kit, n: number, r: Rng): string {
+  if (kit === 'kinki') return n > 0.75 ? 'kinki/bamboo' : r.pick(['kinki/sugi', 'kinki/tree', 'kinki/kaede'])
+  if (kit === 'kanto') return r.pick(['kanto/tree', 'kanto/keyaki', 'kanto/tree'])
+  if (kit === 'hokkaido') return n > 0.74 ? 'hokkaido/ezomatsu' : r.pick(['hokkaido/shirakaba', 'hokkaido/ezomatsu', 'hokkaido/tree'])
+  return r.pick(['okinawa/fukugi', 'okinawa/tree', 'okinawa/fukugi'])
+}
+
+/** 北海道的田一塊一種作物：麥、馬鈴薯；有花田（ファーム、ラベンダー…）的鎮多是薰衣草與花田 */
+function cropOf(x: number, y: number, seed: number, flowers: boolean): string {
+  const list = flowers
+    ? ['hokkaido/lavender', 'hokkaido/lavender', 'hokkaido/flowers-a', 'hokkaido/flowers-b', 'hokkaido/flowers-d', 'hokkaido/potato']
+    : ['hokkaido/wheat', 'hokkaido/potato', 'hokkaido/wheat', 'hokkaido/potato', 'hokkaido/wheat']
+  return list[hash2(x, y, seed + 17) % list.length]!
+}
+
+// ---------- P3：關東、北海道的街景 ----------
+/**
+ * 路口的斑馬線：橫的路與直的路交叉的格子（兩個方向的路都連 3 格以上）是路口，
+ * 路口往四個方向的下一格（還在路上、不是路口）畫斑馬線。只換街上的路（roles.street）。
+ */
+function crosswalks(g: Grid, roles: KitRoles, kit: Kit) {
+  const W = g.w
+  const H = g.h
+  const isRoad = (x: number, y: number) => g.inside(x, y) && g.useAt(x, y) === U.road && g.groundName(x, y) === roles.street
+  const hRun = new Uint8Array(W * H)
+  const vRun = new Uint8Array(W * H)
+  for (let y = 0; y < H; y++) {
+    let x = 0
+    while (x < W) {
+      if (!isRoad(x, y)) {
+        x++
+        continue
+      }
+      let e = x
+      while (e < W && isRoad(e, y)) e++
+      for (let k = x; k < e; k++) hRun[y * W + k] = Math.min(255, e - x)
+      x = e
+    }
+  }
+  for (let x = 0; x < W; x++) {
+    let y = 0
+    while (y < H) {
+      if (!isRoad(x, y)) {
+        y++
+        continue
+      }
+      let e = y
+      while (e < H && isRoad(x, e)) e++
+      for (let k = y; k < e; k++) vRun[k * W + x] = Math.min(255, e - y)
+      y = e
+    }
+  }
+  const cross = (x: number, y: number) => g.inside(x, y) && hRun[y * W + x]! >= 3 && vRun[y * W + x]! >= 3
+  const marks: Array<[number, number, string]> = []
+  for (let y = 0; y < H; y++)
+    for (let x = 0; x < W; x++) {
+      if (!cross(x, y)) continue
+      for (const [dx, dy] of DIRS) {
+        const nx = x + dx
+        const ny = y + dy
+        if (!isRoad(nx, ny) || cross(nx, ny)) continue
+        marks.push([nx, ny, `${kit}/zebra-${dy ? 'v' : 'h'}`])
+      }
+    }
+  for (const [x, y, name] of marks) g.ground(x, y, name)
+}
+
+/**
+ * 街上的小東西與郊外的田園：
+ *  - 街上：斑馬線旁的紅綠燈（北海道是直的燈箱）、路邊的電線桿、大樓旁的自動販賣機、腳踏車、郵筒；
+ *  - 郊外：路邊的電線桿；北海道再加矢羽根（路邊紅白的箭頭）、牧場（柵欄圍起來、裡面有捲好的牧草）、牧舍旁的筒倉。
+ * 都放在空地（之後鑿路時可以拆）。
+ */
+function furnish(g: Grid, r: Rng, roles: KitRoles, kit: Kit, urban: boolean, seed: number) {
+  const W = g.w
+  const H = g.h
+  const free = (x: number, y: number) => g.useAt(x, y) === U.free
+  const nearRoad = (x: number, y: number) => DIRS.some(([dx, dy]) => g.useAt(x + dx, y + dy) === U.road)
+  const placed: Pt[] = []
+  const apart = (x: number, y: number, d: number) => !placed.some((p) => Math.max(Math.abs(p.x - x), Math.abs(p.y - y)) < d)
+  const put = (name: string, x: number, y: number) => {
+    // 1×2 的物件：(x, y) 是下面那一格（貼著路）
+    if (!free(x, y) || !free(x, y - 1)) return false
+    g.object(name, x, y - 1, U.fill)
+    placed.push({ x, y })
+    return true
+  }
+  const zebra = (x: number, y: number) => /\/zebra-/.test(g.groundName(x, y) ?? '')
+  // 紅綠燈：斑馬線旁邊的空地
+  if (urban) {
+    let n = 0
+    for (let y = 3; y < H - 2 && n < 8; y++)
+      for (let x = 2; x < W - 2 && n < 8; x++) {
+        if (!free(x, y) || !DIRS.some(([dx, dy]) => zebra(x + dx, y + dy)) || !apart(x, y, 5)) continue
+        if (put(`${kit}/signal`, x, y)) n++
+      }
+  }
+  // 電線桿：路邊，隔 7 格以上
+  {
+    let n = 0
+    const max = urban ? 10 : 12
+    for (let y = 3; y < H - 2 && n < max; y++)
+      for (let x = 2; x < W - 2 && n < max; x++) {
+        if (!free(x, y) || !nearRoad(x, y) || !apart(x, y, 7) || hash2(x, y, seed + 23) % 5) continue
+        if (put(`${kit}/pole`, x, y)) n++
+      }
+  }
+  if (urban) {
+    // 自動販賣機、腳踏車、郵筒：路邊、旁邊是大樓的空地（一格的東西）
+    const small: Array<[string, number]> = kit === 'kanto' ? [['kanto/vending-a', 4], ['kanto/vending-b', 3], ['kanto/bicycle', 3], ['kanto/postbox', 1]] : [['kanto/vending-a', 3], ['kanto/vending-b', 2], ['kanto/postbox', 1]]
+    let n = 0
+    for (let y = 3; y < H - 2 && n < 9; y++)
+      for (let x = 2; x < W - 2 && n < 9; x++) {
+        if (!free(x, y) || !nearRoad(x, y) || !(g.useAt(x - 1, y) === U.house || g.useAt(x + 1, y) === U.house) || !apart(x, y, 4)) continue
+        if (!r.chance(0.45)) continue
+        g.layer('lower', x, y, pickW(r, small))
+        g.setUse(x, y, U.fill)
+        placed.push({ x, y })
+        n++
+      }
+    return
+  }
+  if (kit !== 'hokkaido') return
+  // 矢羽根：郊外的路邊，隔 6 格以上
+  {
+    let n = 0
+    for (let y = 3; y < H - 2 && n < 12; y++)
+      for (let x = 2; x < W - 2 && n < 12; x++) {
+        if (!free(x, y) || !nearRoad(x, y) || !apart(x, y, 6) || hash2(x, y, seed + 29) % 3) continue
+        if (put('hokkaido/yabane', x, y)) n++
+      }
+  }
+  // 筒倉：牧舍的旁邊
+  for (const o of g.objects) {
+    if (o?.name !== 'hokkaido/barn') continue
+    for (const sx of [o.x + o.w, o.x - 2]) {
+      if (g.rectOk(sx, o.y, 2, 4, (u) => u === U.free)) {
+        g.object('hokkaido/silo', sx, o.y, U.fill)
+        break
+      }
+    }
+  }
+  // 牧場：柵欄圍起來的草地、裡面一兩捆牧草（最多 2 塊）
+  let pastures = 0
+  for (let y = 4; y < H - 8 && pastures < 2; y++)
+    for (let x = 3; x < W - 10 && pastures < 2; x++) {
+      if (noise(x, y, seed + 41, 7) < 0.6) continue
+      const w = 6 + (hash2(x, y, seed) % 4)
+      const h = 4 + (hash2(y, x, seed) % 2)
+      if (!g.rectOk(x - 1, y - 1, w + 2, h + 2, (u) => u === U.free)) continue
+      for (let yy = y; yy < y + h; yy++)
+        for (let xx = x; xx < x + w; xx++) {
+          const edge = yy === y || yy === y + h - 1 || xx === x || xx === x + w - 1
+          if (edge) g.layer('lower', xx, yy, roles.fence)
+          g.setUse(xx, yy, U.fill)
+        }
+      // 柵欄的入口（下緣中間空一格）
+      g.layer('lower', x + Math.floor(w / 2), y + h - 1, 0)
+      for (let k = 0; k < 2; k++) {
+        const bx = x + 2 + k * 2 + (hash2(x, k, seed) % 2)
+        const by = y + 1 + (hash2(k, y, seed) % Math.max(1, h - 2))
+        if (bx < x + w - 1 && by < y + h - 1) g.layer('lower', bx, by, 'hokkaido/haybale')
+      }
+      pastures++
+    }
+}
+
+/**
+ * 高架鐵道（關東的街上、有鐵路的車站）：車站北邊 2–7 列裡挑擋到最少東西的一列，整排是橋面（上層，人從下面走過去），
+ * 下一列每 5 格一根橋墩（空地上才放）、路與空地上是橋的影子。上層已經有東西（屋頂、樹冠）的格子不蓋（斷開）。
+ */
+function viaduct(g: Grid, y: number) {
+  const W = g.w
+  const blocked = (x: number, yy: number) => {
+    const u = g.useAt(x, yy)
+    return g.map.over[g.i(x, yy)] !== 0 || u === U.edge || u === U.shop || u === U.body || u === U.keep
+  }
+  for (let x = 2; x < W - 2; x++) {
+    if (blocked(x, y)) continue
+    g.layer('over', x, y, 'kanto/viaduct')
+    if (g.useAt(x, y) === U.free) g.setUse(x, y, U.fill)
+    const u = g.useAt(x, y + 1)
+    if (g.map.over[g.i(x, y + 1)] !== 0) continue
+    if (u === U.free && x % 5 === 2) {
+      g.layer('lower', x, y + 1, 'kanto/viaduct-pillar')
+      g.setUse(x, y + 1, U.fill)
+    } else if (u === U.free || u === U.road) {
+      g.layer('over', x, y + 1, 'kanto/viaduct-shade')
+      if (u === U.free) g.setUse(x, y + 1, U.fill)
+    }
+  }
+}
 
 // ---------- 事實 NPC ----------
 function factsOf(pref: PrefData, town: Town, world: World, placed: Placed[]): Array<{ fact: FactRef; at?: Pt }> {

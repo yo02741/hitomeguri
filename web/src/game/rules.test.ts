@@ -53,6 +53,13 @@ describe('番外篇的分檔與預先快取', () => {
     expect(t.test('/w/web/src/components/game/DialogBox.vue')).toBe(false)
     expect(t.test('/w/web/src/stores/avatar.ts')).toBe(false)
   })
+  it('關東、北海道的 kit 自成 game-kits（到那一縣才讀），優先於 game', () => {
+    const t = groupTest('game-kits')
+    for (const f of ['kanto', 'hokkaido', 'urban', 'nature', 'lazy']) expect(t.test(`/w/web/src/game/world/kits/${f}.ts`), f).toBe(true)
+    for (const f of ['kinki', 'okinawa', 'common', 'core', 'objects', 'draw', 'index']) expect(t.test(`/w/web/src/game/world/kits/${f}.ts`), f).toBe(false)
+    expect(cfg).toMatch(/name: 'game-kits',[^\n]*priority: 1/)
+    expect(cfg.indexOf("name: 'game-kits'")).toBeLessThan(cfg.indexOf("name: 'game',"))
+  })
   it('three.js 與 3D 建模併進 Avatar3D（旅人頁的展示窗與遊戲的旅人側面共用，不另外拆一檔被預先快取）', () => {
     const t = groupTest('Avatar3D')
     expect(t.test('/w/web/node_modules/three/build/three.module.js')).toBe(true)
