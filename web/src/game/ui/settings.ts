@@ -3,7 +3,7 @@ import type { GameSettings } from '../engine/save'
 import { TEXT_SPEEDS, type TextSpeed } from './text'
 
 /**
- * 遊戲介面的設定（文字速度、一直跑）：存這台裝置的 localStorage（讀寫都包 try/catch），跟聲音的設定一樣不放進存檔，
+ * 遊戲介面的設定（文字速度、一直跑、按鍵提示、小地圖）：存這台裝置的 localStorage（讀寫都包 try/catch），跟聲音的設定一樣不放進存檔，
  * 換存檔、重新開始都不會變。開始遊戲時套到 Game 的 settings（存檔裡也會有一份，讀回來時以這裡為準）。
  * 音量、靜音、打字聲在聲音那邊（game/audio/settings.ts，key hitomeguri:game:audio:v1）。
  */
@@ -11,10 +11,14 @@ export interface UiSettings {
   textSpeed: TextSpeed
   /** 一直跑（按住 B 反而是走） */
   alwaysRun: boolean
+  /** 按鍵提示（P4）：桌機畫面下面的提示列、手機上情境時亮一下的鈕。預設開 */
+  hints: boolean
+  /** 小地圖（P4）：畫面右上角的小框開著（false＝收成一個小鈕）。預設開；M 鍵、小鈕、設定都能切 */
+  minimap: boolean
 }
 
 export const UI_KEY = 'hitomeguri:game:ui:v1'
-export const UI_DEFAULTS: UiSettings = { textSpeed: 'normal', alwaysRun: false }
+export const UI_DEFAULTS: UiSettings = { textSpeed: 'normal', alwaysRun: false, hints: true, minimap: true }
 
 /** 只要 getItem／setItem（測試可以給假的） */
 export type UiStorage = Pick<Storage, 'getItem' | 'setItem'>
@@ -26,6 +30,8 @@ export function sanitizeUi(raw: unknown): UiSettings {
   return {
     textSpeed: typeof speed === 'string' && (TEXT_SPEEDS as readonly string[]).includes(speed) ? (speed as TextSpeed) : UI_DEFAULTS.textSpeed,
     alwaysRun: typeof r.alwaysRun === 'boolean' ? r.alwaysRun : UI_DEFAULTS.alwaysRun,
+    hints: typeof r.hints === 'boolean' ? r.hints : UI_DEFAULTS.hints,
+    minimap: typeof r.minimap === 'boolean' ? r.minimap : UI_DEFAULTS.minimap,
   }
 }
 

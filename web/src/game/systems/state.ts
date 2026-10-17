@@ -122,6 +122,12 @@ export interface SystemsSave {
   lastTown?: string
   /** 最後拿鑰匙的旅館、民宿的名字（手帳「房間」） */
   inn?: string
+  /**
+   * 從台灣出發（P4）：city＝最後在的台灣的城市（台北…）；plan＝出發看板「想去的地方」記下的鎮（市区町村碼；
+   * 先飛到機場大廳、再從大廳的剪票口或那一鎮的車站坐車時排在最前面，到了就清掉）；choosing＝新遊戲的「出發的城市」
+   * 還沒選（選的時候切到背景、關掉分頁也會存檔：繼續時再選一次）
+   */
+  trip?: { city?: string; plan?: string; choosing?: true }
 }
 
 export interface RoomLayout {
@@ -239,6 +245,13 @@ export function parseSystems(raw: unknown): SystemsSave {
   out.roomFrom = placeOf(raw.roomFrom)
   if (str(raw.lastTown)) out.lastTown = raw.lastTown
   if (str(raw.inn)) out.inn = raw.inn
+  if (isObj(raw.trip)) {
+    const trip: NonNullable<SystemsSave['trip']> = {}
+    if (str(raw.trip.city)) trip.city = raw.trip.city
+    if (str(raw.trip.plan)) trip.plan = raw.trip.plan
+    if (raw.trip.choosing === true) trip.choosing = true
+    if (trip.city || trip.plan) out.trip = trip
+  }
   return out
 }
 

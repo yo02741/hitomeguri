@@ -78,7 +78,7 @@ export interface GameOptions {
   genVersion?: number
   /** 季節（P2 換成氣象台的平年值）；預設照月份 */
   seasonOf?(d: CalendarDate): Season
-  /** 新遊戲的旅費（預設 NEW_GAME_MONEY 文） */
+  /** 新遊戲的現金（預設 NEW_GAME_MONEY 円） */
   money?: number
 }
 
@@ -123,10 +123,9 @@ export interface GameEvents {
 }
 
 /**
- * 新遊戲的旅費（文）：照正常路線（京都駅的賣店、老舖、茶屋坐下來）走到食堂，還吃得起一餐；
- * 之後要靠委託賺。
+ * 新遊戲的現金（円，P4 規格 §13 第 3 點；P3 以前是 5000「文」）。舊存檔的換算（×10、至少這麼多）在 systems/wallet.ts 的 ensureYen。
  */
-export const NEW_GAME_MONEY = 5000
+export const NEW_GAME_MONEY = 50_000
 
 /** 遊戲的紀錄（存檔的內容，除了位置與日曆） */
 export class GameState {
@@ -717,17 +716,54 @@ export class Game {
 
   /** A：查看面前（櫃台隔一格）的 NPC、告示牌 */
   private interact(): boolean {
-    const p = this.player
-    let { x, y } = p.front()
-    if (this.view!.beh(x, y) === B.counter) ({ x, y } = p.front(2))
+    const { x, y } = this.frontCell()
     return this.interactAt(x, y)
+  }
+
+  /** A 查看的那一格：面前一格，面前是櫃台就隔一格 */
+  private frontCell(): Cell {
+    const p = this.player
+    const f = p.front()
+    return this.view?.beh(f.x, f.y) === B.counter ? p.front(2) : f
+  }
+
+  private targetAt(x: number, y: number): { entity: MapEntity; actor: Actor | null } | null {
+    const npc = this.npcs.find((a) => !a.hidden && a.covers(x, y)) ?? null
+    const ent = npc?.entity ?? this.view?.entitiesAt(x, y).find((e) => entityKind(e.kind)?.interact) ?? null
+    return ent ? { entity: ent, actor: npc } : null
+  }
+
+  /**
+   * 現在按 A 會查看的東西（面前的人、告示牌，隔著櫃台的店員）；沒有 null。
+   * 只是查詢（不跑腳本、不轉身）：介面的按鍵提示用（P4，「Z 說話」「Z 查看」）。走路中、腳本中也照當下的格子算。
+   */
+  facing(): { entity: MapEntity; actor: Actor | null } | null {
+    if (!this.view) return null
+    const { x, y } = this.frontCell()
+    return this.targetAt(x, y)
+  }
+
+  /** 有疊在世界上的畫面（坐車的車窗、取景框） */
+  get overlaid(): boolean {
+    return this.overlay !== null
+  }
+
+  /** 對話框開著（say、ask 等玩家按） */
+  get talking(): boolean {
+    return this.dialog !== null
+  }
+
+  /** 淡出的程度（0 = 看得清楚、16 = 全黑）：介面疊在畫面上的東西（小地圖）跟著藏起來 */
+  get fadeLevel(): number {
+    return this.fade
   }
 
   private interactAt(x: number, y: number): boolean {
     const p = this.player
-    const npc = this.npcs.find((a) => !a.hidden && a.covers(x, y)) ?? null
-    const ent = npc?.entity ?? this.view!.entitiesAt(x, y).find((e) => entityKind(e.kind)?.interact) ?? null
-    if (!ent) return false
+    const hit = this.targetAt(x, y)
+    if (!hit) return false
+    const npc = hit.actor
+    const ent = hit.entity
     const fn = entityKind(ent.kind)?.interact?.(ent, this, npc)
     this.emit('interact', { entity: ent, actor: npc })
     if (!fn) return false

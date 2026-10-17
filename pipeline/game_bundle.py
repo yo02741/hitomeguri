@@ -18,8 +18,11 @@ from pathlib import Path
 from typing import Any
 
 from pipeline import topo
+from pipeline.game_taiwan import taiwan_index
 from pipeline.game_world import RULES, select_towns, start_station_of, world_index
 from pipeline.major import excluded_ids
+from pipeline.paths import AIRLINE_NAMES_JSON, TAIWAN_ROUTES_JSON
+from pipeline.rail_graph import from_bundle
 
 #: 遊戲的縣（web/src/game/world/index 的 _world.json 照這個順序；京都是起點）
 GAME_PREFS = ("kyoto", "okinawa", "nara", "osaka", "hyogo", "tokyo", "hokkaido")
@@ -507,6 +510,34 @@ def _write_json(path: Path, body: Any) -> str:
 WORLD_KEY = "_world"
 
 
+def taiwan_section(
+    bundles: Path, towns: dict[str, Any], graph: dict[str, Any]
+) -> dict[str, Any] | None:
+    """世界索引的 taiwan 段（pipeline/game_taiwan.py）：data/flights/taiwan_routes.json＋機場景點"""
+    if not TAIWAN_ROUTES_JSON.exists():
+        return None
+    routes = json.loads(TAIWAN_ROUTES_JSON.read_text(encoding="utf-8"))
+    airports: dict[str, dict[str, Any]] = {}
+    for pref in sorted({r.get("prefecture", "") for r in routes.get("routes", [])}):
+        path = bundles / "map" / f"{pref}.json"
+        if not pref or not path.exists():
+            continue
+        body = _read(path)
+        spots = body["spots"] if isinstance(body, dict) else body
+        for s in spots:
+            if s.get("c") == "機場":
+                airports[s["id"]] = s
+    names: dict[str, str] = {}
+    if AIRLINE_NAMES_JSON.exists():
+        body = json.loads(AIRLINE_NAMES_JSON.read_text(encoding="utf-8"))
+        names = {
+            a["code"]: a["name_zh"]
+            for a in body.get("airlines", [])
+            if a.get("code") and a.get("name_zh")
+        }
+    return taiwan_index(routes, towns, airports, from_bundle(graph), names)
+
+
 def build_game(bundles: Path) -> dict[str, tuple[Path, dict[str, Any]]]:
     """game/{縣}.json 與世界索引 game/_world.json。
 
@@ -531,7 +562,11 @@ def build_game(bundles: Path) -> dict[str, tuple[Path, dict[str, Any]]]:
             for p in bodies
             if (bundles / "map" / f"{p}.json").exists()
         }
-        index, _ = world_index(bodies, maps, graph, GAME_PREFS)
+        index, towns = world_index(bodies, maps, graph, GAME_PREFS)
+        # P4：台灣出發的直飛航線（機場在別的縣的也要那一縣的地圖 bundle 拿機場景點）
+        tw = taiwan_section(bundles, towns, graph)
+        if tw:
+            index["taiwan"] = tw
         path = bundles / "game" / f"{WORLD_KEY}.json"
         out[WORLD_KEY] = (path, {"version": _write_json(path, index)})
     return out

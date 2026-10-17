@@ -1,17 +1,19 @@
-import { PRICE } from '../content/items'
+import { SIT_PRICE } from '../content/items'
 import { QUEST_LINES, QUEST_MISC, type FlavourWho } from '../content/flavour'
 import type { ScriptApi } from '../engine/script'
 import type { MapEntity, Script, ScriptFn } from '../engine/types'
 
+import { abroadOf, boardView, extraDests, flightSource, isBoard, withPlan } from './abroad'
 import { dayKey, nameOf, type PlaceName, prefName, spotName } from './data'
 import type { GameSystems } from './install'
-import { accept, ACTIVE_MAX, activeOf, complete, deliveryFor, drop, fill, isDone, linesOf, noteSign, questFor, questParams, REWARD } from './quests'
+import { accept, ACTIVE_MAX, activeOf, complete, deliveryFor, drop, fill, isDone, linesOf, noteSign, questFor, questParams, rewardOf } from './quests'
 import { slotIndex } from './room'
 import { sit, stockOf } from './shop'
 import { hasStamp, pressStamp, stampView } from './stamps'
 import { systemsOf } from './state'
 import { summaryLine } from './summary'
 import { dataOf, type InnData, type NpcData, type ShopData, type SignData, type SlotData, type StampData, type TravelData } from './types'
+import { CASH_SHORT, yenText } from './wallet'
 
 /**
  * 地圖上的東西被查看（A）時跑的腳本（規格 §8.4–§8.7、§11）。
@@ -112,6 +114,8 @@ function factNpc(sys: GameSystems, e: MapEntity, d: Partial<NpcData>): ScriptFn 
 }
 
 function passer(sys: GameSystems, e: MapEntity): ScriptFn {
+  // 機場的大廳（P4）的路人說機場的閒聊
+  const kind: FlavourWho = dataOf<NpcData>(e).chat === 'airport' ? 'airport' : 'passer'
   return function* (api) {
     const who = sys.whoOf(e)
     const g = sys.game
@@ -126,7 +130,7 @@ function passer(sys: GameSystems, e: MapEntity): ScriptFn {
       yield* reward(sys, api, q.id, who)
       return
     }
-    yield* chat(api, sys, 'passer', e.id, who)
+    yield* chat(api, sys, kind, e.id, who)
   }
 }
 
@@ -138,7 +142,7 @@ function* reward(sys: GameSystems, api: ScriptApi, id: string, who: string): Scr
   // 委託的照片：沒放進相簿、沒別的地方用就收掉
   if (q.type === 'photo' && typeof q.ready === 'string') sys.releasePhoto(q.ready)
   yield* api.sfx('item')
-  yield* api.say(`拿到 ${q.reward.toLocaleString('ja-JP')} 文。`)
+  yield* api.say(`拿到 ${yenText(q.reward)}。`)
   sys.game.save()
   sys.refresh()
 }
@@ -194,7 +198,7 @@ export function requestPhoto(sys: GameSystems, giver: string, spotId: string, ni
   const town = sys.townHere()?.id
   if (!town || !sys.data.spot(spotId)) return false
   const d = dayKey(g.clock.date)
-  return accept(g, { id: `${d}:${town}:${giver}`, type: 'photo', from: town, giver, spot: spotId, when: night ? 'night' : undefined, reward: REWARD.photo, d })
+  return accept(g, { id: `${d}:${town}:${giver}`, type: 'photo', from: town, giver, spot: spotId, when: night ? 'night' : undefined, reward: rewardOf({ type: 'photo', when: night ? 'night' : undefined }), d })
 }
 
 function clerk(sys: GameSystems, e: MapEntity, d: Partial<NpcData>): ScriptFn {
@@ -232,22 +236,22 @@ export function shop(sys: GameSystems, e: MapEntity): ScriptFn | null {
 function* shopFlow(sys: GameSystems, api: ScriptApi, e: MapEntity): Script {
   const g = sys.game
   const sd = dataOf<ShopData>(e) as ShopData
-  const pref = sys.townHere()?.pref ?? sys.data.prefs[0]?.pref ?? 'kyoto'
+  const pref = sd.pref ?? sys.townHere()?.pref ?? sys.data.prefs[0]?.pref ?? 'kyoto'
   const stock = stockOf({ ...sd, id: e.id }, pref, g.clock.date, sys.data)
   // 老舖有創業年（附出處）：記進「聽來的」
   const sh = sys.data.shop(sd.shiniseId)
   if (sh?.f && sys.fact('shinise.founded', { kind: 'shinise', id: sh.id })) sys.hear({ k: 'fact', id: 'shinise.founded', ref: { kind: 'shinise', id: sh.id } })
   if (!stock.entries.length && !stock.sit) return
   const r = yield* sys.waitPanel({ kind: 'shop', id: e.id, stock, pref, mode: sd.shopKind === 'shokudo' ? 'eat' : 'buy' })
-  if (r === 'sit') yield* sitFlow(sys, api, e.id, stock.sit ?? PRICE.sit)
+  if (r === 'sit') yield* sitFlow(sys, api, e.id, stock.sit ?? SIT_PRICE)
 }
 
-/** 茶屋：坐下來喝一杯（時間往前、一句閒聊） */
+/** 茶屋：坐下來喝一杯（只收現金；時間往前、一句閒聊） */
 function* sitFlow(sys: GameSystems, api: ScriptApi, key: string, price: number): Script {
   const g = sys.game
   if (g.state.money < price) {
     yield* api.sfx('error')
-    yield* api.say('旅費不夠。')
+    yield* api.say(CASH_SHORT)
     return
   }
   yield* api.fade('out')
@@ -298,19 +302,36 @@ export function* stampFlow(sys: GameSystems, api: ScriptApi, e: MapEntity): Scri
 }
 
 // ---------- 目的地 ----------
+/** 機場的大廳沒有航線資料時（P4；資料還沒合併的舊 bundles） */
+export const NO_ROUTES = '這個機場目前沒有航線資料。'
+
 export function travel(sys: GameSystems, e: MapEntity): ScriptFn | null {
   const raw = dataOf<TravelData>(e) as TravelData
-  if (!raw.dests?.length) return null
+  if (!raw.dests?.length && !raw.abroad && !extraDests(sys, raw).length) return null
   return function* (api) {
     // 別的縣的目的地寫上縣名（京都駅 → 近鉄奈良「奈良県」、東京「東京都」）
     const from = sys.data.town(raw.fromTown)?.pref
-    const dests = raw.dests.map((x) => {
+    const own = (raw.dests ?? []).map((x) => {
       const pref = sys.data.town(x.town)?.pref
       return pref && from && pref !== from ? { ...x, area: prefName(pref).ja } : x
     })
-    const d: TravelData = { ...raw, dests }
+    // P4：機場的大廳、鎮的剪票口多出來的目的地（回台灣、機場的大廳、大廳的剪票口）；「想去的地方」排最前面
+    const dests = withPlan([...own, ...extraDests(sys, raw)], sys.save.trip?.plan)
+    const board = isBoard(raw) ? boardView(sys, raw.abroad!.place) : null
+    if (!dests.length && !board) {
+      yield* api.say(NO_ROUTES)
+      return
+    }
+    // 回台灣（航空公司、每週班次）：面板下面寫航線的出處（出發看板自己寫）
+    const ab = abroadOf(sys)
+    const src = !board && ab && dests.some((x) => x.flight) ? flightSource(ab) : null
+    const d: TravelData = { ...raw, dests, ...(board ? { board } : {}), ...(src ? { source: src } : {}) }
     const r = yield* sys.waitPanel({ kind: 'travel', data: d })
     if (!r || typeof r !== 'object') return
+    // 出發看板的路線規劃：先飛到機場的大廳，之後在大廳、那一鎮的車站把「想去的地方」排最前面。
+    // 從出發看板直接選了機場（沒有想去的地方）：舊的那一個不留
+    if (r.plan) sys.save.trip = { ...sys.save.trip, plan: r.plan }
+    else if (board && sys.save.trip?.plan) delete sys.save.trip.plan
     if (sys.deps.travel) sys.deps.travel(sys.game, r)
     else {
       yield* api.sfx('error')

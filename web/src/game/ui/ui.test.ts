@@ -213,15 +213,22 @@ describe('介面的設定：讀寫、壞資料', () => {
     expect(loadUi(fakeStorage({ [UI_KEY]: '{oops' }))).toEqual(UI_DEFAULTS)
     expect(loadUi(fakeStorage({ [UI_KEY]: '[1,2]' }))).toEqual(UI_DEFAULTS)
     expect(sanitizeUi({ textSpeed: 'warp', alwaysRun: 'yes' })).toEqual(UI_DEFAULTS)
-    expect(sanitizeUi({ textSpeed: 'slow', alwaysRun: true, extra: 1 })).toEqual({ textSpeed: 'slow', alwaysRun: true })
+    expect(sanitizeUi({ textSpeed: 'slow', alwaysRun: true, extra: 1 })).toEqual({ textSpeed: 'slow', alwaysRun: true, hints: true, minimap: true })
     expect(loadUi(null)).toEqual(UI_DEFAULTS)
+  })
+
+  it('按鍵提示、小地圖（P4）：預設開；舊的設定（沒有這兩個欄位）也是開', () => {
+    expect(UI_DEFAULTS).toMatchObject({ hints: true, minimap: true })
+    expect(loadUi(fakeStorage({ [UI_KEY]: JSON.stringify({ textSpeed: 'fast', alwaysRun: false }) }))).toEqual({ textSpeed: 'fast', alwaysRun: false, hints: true, minimap: true })
+    expect(sanitizeUi({ hints: false, minimap: false })).toMatchObject({ hints: false, minimap: false })
+    expect(sanitizeUi({ hints: 'no', minimap: 0 })).toMatchObject({ hints: true, minimap: true })
   })
 
   it('存了讀回來一樣；localStorage 丟錯也不壞', () => {
     const st = fakeStorage()
-    saveUi(st, { textSpeed: 'fast', alwaysRun: true })
-    expect(JSON.parse(st.data[UI_KEY]!)).toEqual({ textSpeed: 'fast', alwaysRun: true })
-    expect(loadUi(st)).toEqual({ textSpeed: 'fast', alwaysRun: true })
+    saveUi(st, { textSpeed: 'fast', alwaysRun: true, hints: false, minimap: true })
+    expect(JSON.parse(st.data[UI_KEY]!)).toEqual({ textSpeed: 'fast', alwaysRun: true, hints: false, minimap: true })
+    expect(loadUi(st)).toEqual({ textSpeed: 'fast', alwaysRun: true, hints: false, minimap: true })
     const broken = fakeStorage({}, true)
     expect(() => saveUi(broken, UI_DEFAULTS)).not.toThrow()
     expect(loadUi(broken)).toEqual(UI_DEFAULTS)
@@ -229,8 +236,8 @@ describe('介面的設定：讀寫、壞資料', () => {
 
   it('套到引擎：慢的存成一般，其他設定不動', () => {
     const base = { alwaysRun: false, textSpeed: 'normal' as const, timeRate: 2 }
-    expect(toEngine({ textSpeed: 'slow', alwaysRun: true }, base)).toEqual({ alwaysRun: true, textSpeed: 'normal', timeRate: 2 })
-    expect(toEngine({ textSpeed: 'instant', alwaysRun: false }, base).textSpeed).toBe('instant')
+    expect(toEngine({ ...UI_DEFAULTS, textSpeed: 'slow', alwaysRun: true }, base)).toEqual({ alwaysRun: true, textSpeed: 'normal', timeRate: 2 })
+    expect(toEngine({ ...UI_DEFAULTS, textSpeed: 'instant', alwaysRun: false }, base).textSpeed).toBe('instant')
   })
 })
 

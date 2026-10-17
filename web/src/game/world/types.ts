@@ -143,6 +143,65 @@ export interface World {
   startTown: string
   /** 世界索引的 7 縣的鎮（還沒讀的縣也在：手帳的地圖、委託、聽來的用名字）；沒有世界索引時沒有 */
   atlas?: AtlasPref[]
+  /** 台灣出發的直飛航線（P4，世界索引的 taiwan）；沒有就是還沒有航線資料（新遊戲照舊從京都駅開始） */
+  abroad?: AbroadIndex
+}
+
+// ---------- 台灣出發（P4，世界索引的 taiwan：pipeline/game_taiwan.py） ----------
+/** 一家航空公司這條航線的每週班次（国土交通省的表） */
+export interface AbroadAirline {
+  code?: string
+  /** 国土交通省的表上的名字（日文：チャイナ エアライン） */
+  name: string
+  /** 那家公司繁體中文網站上的名字（中華航空；data/flights/airline_names.json）；沒有就照表的名字 */
+  zh?: string
+  weekly: number
+}
+
+/** 台灣的一個城市（台北、台中、高雄；台北不分桃園、松山）→ 日本的一個機場 */
+export interface AbroadRoute {
+  city: string
+  /** 機場景點的 id */
+  airport: string
+  weekly: number
+  airlines: AbroadAirline[]
+}
+
+/** 機場到遊戲的一鎮：坐什麼、多遠（legs 空的＝就是那一鎮的機場） */
+export interface AbroadAccess {
+  town: string
+  legs: Leg[]
+  km: number
+}
+
+/**
+ * 降落的地方：那一鎮的機場大廳（{town, stop}：那覇空港、新千歳空港）、遊戲另外做的這個機場的大廳（own：関西国際空港、
+ * 東京国際空港、函館空港）、沒有大廳（null：成田国際空港、中部国際空港…，飛到之後直接坐電車）。
+ */
+export type AbroadHall = 'own' | { town: string; stop: string } | null
+
+export interface AbroadAirport {
+  id: string
+  iata: string
+  /** 景點的名字（関西国際空港） */
+  name: string
+  /** 表上的名字（関西） */
+  short: string
+  /** 所在的縣（slug） */
+  pref: string
+  hall: AbroadHall
+  /** 接得到的鎮（近的在前；接不到任何鎮的機場在看板上是灰的） */
+  access: AbroadAccess[]
+}
+
+export interface AbroadIndex {
+  /** 国土交通省的表（網址、取得日、表的標題） */
+  source: { url: string; fetched_at?: string; season?: string }
+  /** 台灣的城市（北到南） */
+  cities: string[]
+  airports: AbroadAirport[]
+  /** 城市的順序、每週班次多的在前 */
+  routes: AbroadRoute[]
 }
 
 // ---------- 世界索引（game/_world.json，pipeline/game_world.py） ----------
@@ -196,6 +255,8 @@ export interface WorldIndex {
   attribution?: { rail?: string; straight?: string }
   prefs: WorldIndexPref[]
   links: WorldIndexLink[]
+  /** 台灣出發的直飛航線（P4；舊的索引沒有） */
+  taiwan?: AbroadIndex
 }
 
 /** 手帳、委託用的鎮（systems 的 TownLike）：還沒讀的縣也有名字、代表站、中心 */
@@ -254,6 +315,8 @@ export interface NpcData {
   /** 引擎的 NPC 移動（stand、look、wander） */
   move?: 'stand' | 'look' | 'wander'
   range?: number
+  /** 閒聊用哪一種台詞（P4 的機場大廳：airport）；不寫是路人 */
+  chat?: 'airport'
 }
 
 export type ItemRef = { kind: 'specialty' | 'shinise' | 'game'; id: string }
@@ -263,6 +326,8 @@ export interface ShopData {
   name: string
   shiniseId?: string
   items: ItemRef[]
+  /** 賣哪一縣的東西（不寫就是這一鎮的縣；P4 的機場大廳不在鎮上，寫機場所在的縣） */
+  pref?: string
   /** 站在櫃台後面的人（有就 spawn 一個店員） */
   look?: string
   lookSeed?: number
@@ -298,6 +363,11 @@ export interface TravelData {
   dests: TravelDest[]
   look?: string
   lookSeed?: number
+  /**
+   * 機場的大廳（P4）：目的地照航線資料，打開時才算（systems 的 abroad.ts）。
+   * board＝台灣的出發大廳（報到櫃台、出發看板、登機門）；intl＝日本的機場的國際線櫃台（回台灣）；gate＝日本的機場的剪票口、巴士站
+   */
+  abroad?: { kind: 'board' | 'intl' | 'gate'; place: string }
 }
 
 export interface InnData {

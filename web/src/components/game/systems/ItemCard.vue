@@ -4,6 +4,7 @@ import { onMounted, ref, watch } from 'vue'
 import { loadThumb } from '../../../game/systems/photoStore'
 import type { ItemCardData } from '../../../game/systems/inventory'
 import { LANG_LABEL } from '../../../game/systems/summary'
+import { yenText } from '../../../game/systems/wallet'
 
 import PixelIcon from './PixelIcon.vue'
 
@@ -27,7 +28,7 @@ watch(() => props.card.photo, load)
         <p v-if="card.name.kana" class="nb-sub" lang="ja">{{ card.name.kana }}</p>
         <p v-if="card.name.zh && card.name.zh !== card.name.ja" class="card-zh">{{ card.name.zh }}</p>
         <p class="nb-sub">
-          {{ card.kind }}<template v-if="price && card.price">　{{ card.price.toLocaleString('ja-JP') }} 文</template>
+          {{ card.kind }}<template v-if="price && card.price">　{{ yenText(card.price) }}</template>
         </p>
       </div>
     </div>

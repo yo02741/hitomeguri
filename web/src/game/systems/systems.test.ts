@@ -4,8 +4,8 @@ import css from '../../styles/theme.css?raw'
 import { PX, type Tokens } from '../../services/pixelwalk/palette'
 import { factFromRef, FACT_IDS, renderFact } from '../content/facts'
 import { ICON_IDS, iconSprite, pixelRomaji, silhouetteOf, stampLines, stampSprite } from '../content/icons'
-import { PRICE } from '../content/items'
-import { Game, type GameOptions, NEW_GAME_MONEY } from '../engine/game'
+import { GAME_ITEMS, PRICE, SIT_PRICE } from '../content/items'
+import { Game, type GameOptions } from '../engine/game'
 import { memoryStore, parseSave } from '../engine/save'
 import kyotoJson from '../fixtures/kyoto.json'
 import okinawaJson from '../fixtures/okinawa.json'
@@ -15,14 +15,15 @@ import { notebookData } from '../ui/notebook'
 import { bloomOf, DataIndex, dayKey, kmText } from './data'
 import { DEV_START, DEV_TOWN, DEV_TOWN_2, devMaps, devWorld } from './dev/testWorld'
 import { installSystems } from './install'
-import { itemCard, itemKey, shiniseWhat } from './inventory'
+import { itemCard, itemKey, priceOf, shiniseWhat } from './inventory'
 import { clampFrame, crop, frameSize, type Rect, scoreShot, type ShotInput, slotOf, SNOWY_KITS, zoomFrame } from './photo'
 import { memoryPhotos } from './photoStore'
-import { questFor } from './quests'
+import { questFor, REWARD, rewardOf } from './quests'
 import { moveSlot, placeFromBag, slotIndex, takeBack } from './room'
 import { rotate, shokudoPool, stationPool, stockOf } from './shop'
 import { emptySystems, parseSystems, roomOf, systemsOf } from './state'
 import { stampBook, stampView } from './stamps'
+import { acceptsCard, CARD_FLAG, cardTotal, ensureYen, NEW_GAME_YEN, YEN_FLAG } from './wallet'
 import { firstSentence, summaryLine } from './summary'
 import type { PrefLike } from './types'
 
@@ -371,32 +372,96 @@ describe('地圖上的東西', () => {
     expect(said.at(-1)).not.toBe(first)
   })
 
-  it('車站賣店：買東西扣旅費、進行李、自動存檔；品項卡在行李頁', () => {
+  it('車站賣店：買東西扣現金、進行李、自動存檔；品項卡在行李頁', () => {
     const { game, sys, store } = makeGame()
     interact(game, 8, 3, 'up')
     const p = sys.ui.panel
     expect(p?.kind).toBe('shop')
     expect(game.paused).toBe(true)
     if (p?.kind !== 'shop') return
+    expect(p.stock.card).toBe(true)
     const card = p.stock.entries.find((e) => e.key === 'game:postcard')!
+    expect(card.price).toBe(150)
     const money = game.state.money
-    expect(sys.buy(card)).toBe('ok')
+    expect(sys.buy(card, null, 'cash', p.stock.card)).toBe('ok')
     expect(game.state.money).toBe(money - card.price)
     expect(game.state.items['game:postcard']).toBe(1)
     expect(parseSave(Object.values(store.data)[0])?.items['game:postcard']).toBe(1)
     sys.closePanel()
     expect(game.paused).toBe(false)
-    const bag = notebookData(game, null).bag
+    const bag = notebookData(game, null).bag as ReturnType<typeof notebookData>['bag'] & { wallet?: { cash: number; card: number } }
     expect(bag.items.find((i) => i.id === 'game:postcard')?.card?.kind).toBe('明信片')
-    // 錢不夠
+    expect(bag.wallet).toEqual({ cash: game.state.money, card: 0 })
+    // 現金不夠：現金買不了，刷卡照樣能買（沒有上限，記累計）
     game.state.money = 0
-    expect(sys.buy(card)).toBe('money')
+    expect(sys.buy(card, null, 'cash', true)).toBe('money')
+    expect(sys.buy(card, null, 'card', true)).toBe('ok')
+    expect(game.state.money).toBe(0)
+    expect(cardTotal(game)).toBe(150)
+    expect(game.state.items['game:postcard']).toBe(2)
+    expect((notebookData(game, null).bag as { wallet?: { card: number } }).wallet?.card).toBe(150)
+    // 刷卡累計跟著存檔走（flags）
+    expect(parseSave(Object.values(store.data)[0])?.flags[CARD_FLAG]).toBe(150)
   })
 
-  it('新遊戲的旅費 5000 文：照正常路線（賣店、老舖各買一樣、茶屋坐下來）走到食堂，最貴的情況也吃得起', () => {
+  it('付款：車站、機場的賣店可以刷卡；老舖、茶屋、食堂只收現金（不能刷卡、現金不夠就買不了）', () => {
+    expect(acceptsCard('station')).toBe(true)
+    for (const k of ['shinise', 'teahouse', 'shokudo'] as const) expect(acceptsCard(k)).toBe(false)
+    const { game, sys } = makeGame()
+    // 老舖
+    const sh = data.pref('kyoto')!.shinise!.find((x) => shiniseWhat(x) === 'wagashi')!
+    const stock = stockOf({ id: 'shop:test', shopKind: 'shinise', shiniseId: sh.id }, 'kyoto', { y: 2026, m: 4, d: 2 }, data)
+    expect(stock.card).toBe(false)
+    const e = stock.entries[0]!
+    const money = game.state.money
+    expect(sys.buy(e, null, 'card', stock.card)).toBe('card')
+    expect(game.state.money).toBe(money)
+    expect(cardTotal(game)).toBe(0)
+    game.state.money = e.price - 1
+    expect(sys.buy(e, null, 'cash', stock.card)).toBe('money')
+    game.state.money = e.price
+    expect(sys.buy(e, null, 'cash', stock.card)).toBe('ok')
+    expect(game.state.money).toBe(0)
+    // 茶屋：坐下來 600 円；食堂只收現金
+    expect(SIT_PRICE).toBe(600)
+    const tea = stockOf({ id: 'shop:tea', shopKind: 'teahouse' }, 'kyoto', { y: 2026, m: 4, d: 2 }, data)
+    expect(tea.card).toBe(false)
+    const meal = stockOf({ id: 'shop:meal', shopKind: 'shokudo' }, 'kyoto', { y: 2026, m: 4, d: 2 }, data)
+    expect(meal.card).toBe(false)
+    expect(sys.eat(meal.entries[0]!)).toBe('money')
+  })
+
+  it('價錢（円，遊戲的規則）：明信片 150、鑰匙圈 500–800、和菓子 800–2,000、郷土料理 900–2,500；同一樣東西每次一樣', () => {
+    const range = (key: string) => {
+      const r = PRICE[key]!
+      return [r.min, r.max]
+    }
+    expect(range('wagashi')).toEqual([800, 2000])
+    expect(range('kyodo')).toEqual([900, 2500])
+    const g = (id: string) => GAME_ITEMS.find((x) => x.id === id)!.price
+    expect([g('postcard').min, g('postcard').max]).toEqual([150, 150])
+    expect([g('keyholder').min, g('keyholder').max]).toEqual([500, 800])
+    for (const pref of [kyoto, okinawa]) {
+      for (const s of pref.specialties ?? []) {
+        const c = itemCard(itemKey({ kind: 'specialty', id: s.id }), data)!
+        const r = PRICE[s.category]
+        if (!r) continue
+        expect(c.price!, s.id).toBeGreaterThanOrEqual(r.min)
+        expect(c.price!, s.id).toBeLessThanOrEqual(r.max)
+        expect((c.price! - r.min) % r.step, s.id).toBe(0)
+      }
+    }
+    // 決定性：照 key
+    expect(priceOf(PRICE.sweets!, 'specialty:x')).toBe(priceOf(PRICE.sweets!, 'specialty:x'))
+    const spread = new Set((kyoto.specialties ?? []).filter((s) => s.category === 'kyodo').map((s) => itemCard(`specialty:${s.id}`, data)!.price))
+    expect(spread.size).toBeGreaterThan(1)
+  })
+
+  it('新遊戲現金 50,000 円：照正常路線（賣店、老舖各買一樣、茶屋坐下來）走到食堂，最貴的情況也吃得起', () => {
     const { game } = makeGame()
-    expect(NEW_GAME_MONEY).toBe(5000)
-    expect(game.state.money).toBe(NEW_GAME_MONEY)
+    expect(NEW_GAME_YEN).toBe(50000)
+    expect(game.state.money).toBe(NEW_GAME_YEN)
+    expect(game.state.flags[YEN_FLAG]).toBe(1)
     const price = (key: string) => itemCard(key, data)?.price ?? 0
     for (const pref of ['kyoto', 'okinawa']) {
       const kiosk = Math.max(...stationPool(pref, data).map(price))
@@ -407,8 +472,34 @@ describe('地圖上的東西', () => {
       // 食堂一天擺 6–8 樣：當天最便宜的那一樣不會比整個池子最貴的還貴
       const meal = Math.max(...shokudoPool(pref, data).map(price))
       expect(shinise.length, pref).toBeGreaterThan(0)
-      expect(kiosk + Math.max(...shinise) + PRICE.sit! + meal, pref).toBeLessThanOrEqual(NEW_GAME_MONEY)
+      expect(kiosk + Math.max(...shinise) + SIT_PRICE + meal, pref).toBeLessThanOrEqual(NEW_GAME_YEN)
     }
+    // 重新開始也是 50,000 円（旗標清掉、引擎的 5000 換成円）
+    game.state.money = 120
+    game.newGame()
+    run(game, 2)
+    expect(game.state.money).toBe(NEW_GAME_YEN)
+  })
+
+  it('舊存檔（文）：現金 ×10、至少 50,000 円；進行中的委託換成円的報酬；只換一次', () => {
+    const store = memoryStore()
+    const { game } = makeGame({ storage: store })
+    const save = { ...game.serialize(), money: 12_345, flags: {}, ext: { systems: { v: 1, quests: { active: [{ id: 'q1', type: 'photo', from: DEV_TOWN, giver: 'g', spot: 'x', when: 'night', reward: 800, d: '2026-04-02' }], done: [] } } } }
+    game.restore(parseSave(JSON.stringify(save))!)
+    run(game, 2)
+    expect(game.state.money).toBe(123_450)
+    expect(systemsOf(game).quests.active[0]?.reward).toBe(rewardOf({ type: 'photo', when: 'night' }))
+    expect(rewardOf({ type: 'photo', when: 'night' })).toBe(REWARD.photo + 1000)
+    // 再讀一次（記號在 flags）：不會再 ×10
+    game.warpNow(DEV_START.map, DEV_START.x, DEV_START.y)
+    expect(game.state.money).toBe(123_450)
+    const again = parseSave(JSON.stringify(game.serialize()))!
+    game.restore(again)
+    expect(game.state.money).toBe(123_450)
+    // 少的：3000 文 → 30,000 円 → 至少 50,000 円
+    game.restore(parseSave(JSON.stringify({ ...save, money: 3000 }))!)
+    expect(game.state.money).toBe(NEW_GAME_YEN)
+    expect(ensureYen(game)).toBe(null)
   })
 
   it('食堂吃郷土料理進「吃過的」；茶屋坐下來時間往前', () => {
@@ -515,6 +606,7 @@ describe('地圖上的東西', () => {
     run(game, 10)
     expect(systemsOf(game).quests.active.length).toBe(0)
     expect(game.state.money).toBe(money + q!.reward)
+    expect(q!.reward).toBe(rewardOf(q!))
     expect(systemsOf(game).quests.done).toContain(q!.id)
     void sys
   })

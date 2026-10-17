@@ -12,6 +12,9 @@ import { Npc } from '../engine/npc'
 import { folkOf } from '../sprites/folk'
 import type { ActorLook, MapEntity, Script } from '../engine/types'
 
+import { cityOfMap, isAbroadMap, isTwMap, twMap } from '../world/abroad'
+
+import { abroadOf, flightSource, hallPref, originView } from './abroad'
 import { Camera } from './camera'
 import { bloomOf, DataIndex, dayKey, kitOfPref, spotName, townCodeOfMap } from './data'
 import { itemCard, type ItemCardData, removeItem } from './inventory'
@@ -19,12 +22,13 @@ import { registerKinds, setSystemsFor } from './kinds'
 import { installNotebook } from './notebookPages'
 import { area, bodyRect, intersect, type Rect, type ShotScore, SNOWY_KITS } from './photo'
 import { loadThumb, photoStore, type PhotoStore, setPhotoStore } from './photoStore'
-import { pruneQuests } from './quests'
+import { pruneQuests, rewardsToYen } from './quests'
 import { photoInFrame, slotIndex } from './room'
 import { buy as buyItem, eat as eatItem, type StockEntry } from './shop'
 import { HEARD_MAX, type HeardMeta, PHOTO_MAX, type PhotoMeta, roomOf, systemsOf, type SystemsSave } from './state'
 import { dataOf, type Kit, type NpcData, type PhotoSpotData, type Place, type PrefLike, type SlotData, type TownLike, type TravelLink, type WorldLike } from './types'
 import { createUi, type Panel, type PanelPress, type PanelResult, type PhotoResult, type SystemsUi } from './ui'
+import { ensureYen, type PayMethod } from './wallet'
 
 /**
  * 番外篇的系統（規格 §8.4–§8.7、§11）：拍照與相簿、行李與旅費與店、印帳、房間、委託、台詞，以及地圖上的
@@ -79,6 +83,8 @@ export class GameSystems {
   private readonly talks = new Map<string, number>()
   private readonly looks = new Map<number, ActorLook>()
   private pendingShot: { meta: PhotoMeta; spotId?: string } | null = null
+  /** 面板關上之後要做的事（新遊戲選出發的城市：面板開著時世界停住，腳本不走，所以用這個） */
+  private afterClose: ((r: PanelResult) => void) | null = null
 
   constructor(game: Game, deps: SystemsDeps = {}) {
     this.game = game
@@ -113,6 +119,10 @@ export class GameSystems {
       g.on('camera', (e) => this.openCamera(e.spot)),
       g.on('mapEnter', (e) => this.onMapEnter(e.id)),
       g.on('step', (e) => this.onStep(e.x, e.y)),
+      // 旅費變了（店裡付錢以外：委託的報酬、DEV 的給錢）：開著的面板（店的「現金 n 円」）跟著換
+      g.on('change', (e) => {
+        if (e.what === 'money' && this.ui.panel) this.ui.tick++
+      }),
       // 換日：過了期限的委託取消
       g.on('clock', (e) => {
         const k = dayKey(e.date)
@@ -173,6 +183,9 @@ export class GameSystems {
       w.done = true
       w.value = r
     }
+    const after = this.afterClose
+    this.afterClose = null
+    after?.(r)
   }
 
   /** 換一個面板（不放開世界） */
@@ -214,12 +227,58 @@ export class GameSystems {
 
   // ---------- 在哪 ----------
   townHere(): TownLike | undefined {
+    // 機場的大廳（P4：台灣的出發大廳、日本的機場大廳）不在任何鎮上（委託的東西不在這裡交、不看那一鎮的花況與祭典）
+    if (isAbroadMap(this.game.map?.id)) return undefined
     return this.data.townOfMap(this.game.map?.id) ?? this.data.town(this.save.lastTown)
   }
 
   region(): Kit {
+    // 日本的機場大廳（P4）：機場所在的縣
+    const hp = hallPref(this, this.game.map?.id)
+    if (hp) return kitOfPref(hp)
     const t = this.townHere()
     return t ? this.data.kitOfTown(t) : kitOfPref(this.data.prefs[0]?.pref ?? 'kyoto')
+  }
+
+  // ---------- 從台灣出發（P4） ----------
+  /**
+   * 新遊戲從台灣出發：放到第一個城市（台北）的機場出發大廳，先選出發的城市（台北、台中、高雄），選了別的就換到那一間。
+   * 選的時候畫面還是黑的（新遊戲的淡入停在面板後面），關上之後才淡入。PlayView 在 newGame() 之後叫；
+   * 世界索引沒有航線資料時回 false（照舊從京都駅開始）。舊存檔（繼續）不叫這個：已經在日本的不會被送回台灣。
+   */
+  startInTaiwan(): boolean {
+    const ab = abroadOf(this)
+    const cities = ab?.cities ?? []
+    const placeOf = (city: string) => {
+      const m = this.deps.maps?.(twMap(city))
+      return m?.start ? { map: m.id, x: m.start.x, y: m.start.y, dir: m.start.dir ?? ('up' as const) } : null
+    }
+    const first = cities[0] ? placeOf(cities[0]) : null
+    if (!ab || !first) return false
+    this.game.warpNow(first.map, first.x, first.y, first.dir)
+    // newGame() 先放在京都駅的大廳（world.start），進地圖的事件記下了 lastTown：從台灣出發的新遊戲還沒去過日本的任何一鎮
+    delete this.save.lastTown
+    // choosing：還沒選（選的時候切到背景也會存檔；繼續時 resumeOrigin 再打開這個面板）
+    this.save.trip = { city: cities[0], choosing: true }
+    this.openPanel({ kind: 'travel', data: { mode: 'plane', fromTown: first.map, dests: [], origin: originView(ab), source: flightSource(ab) } })
+    // 選了（台北也一樣）：放到那個城市的大廳的起點（進地圖的事件再來一次：左上的地名牌、小地圖跟著選好的城市）
+    this.afterClose = (r) => {
+      const city = r && typeof r === 'object' ? cityOfMap(r.town) : null
+      const p = city ? placeOf(city) : null
+      if (p) this.game.warpNow(p.map, p.x, p.y, p.dir)
+      this.save.trip = { city: p ? city! : cities[0] }
+      this.game.save()
+    }
+    return true
+  }
+
+  /**
+   * 繼續的存檔是「出發的城市」還沒選的時候存的（選的時候切到背景、關掉分頁）：再打開一次讓他選。
+   * PlayView 在 continueGame() 之後叫；其他的存檔回 false。
+   */
+  resumeOrigin(): boolean {
+    if (!this.save.trip?.choosing || !isTwMap(this.game.map?.id)) return false
+    return this.startInTaiwan()
   }
 
   /** 這一鎮今天有沒有祭典（規格 §8.3） */
@@ -426,9 +485,12 @@ export class GameSystems {
   }
 
   // ---------- 店 ----------
-  /** 買一樣（扣旅費、進行李、收銀聲、短曲、存檔） */
-  buy(e: StockEntry, photo?: string | null): 'ok' | 'money' | 'gone' {
-    const r = buyItem(this.game, e, photo)
+  /**
+   * 買一樣（付現金或刷卡、進行李、收銀聲、短曲、存檔）。cardOk：這家能不能刷卡（店的 Stock.card；
+   * 只收現金的店選刷卡回 'card'）。
+   */
+  buy(e: StockEntry, photo?: string | null, method: PayMethod = 'cash', cardOk = true): 'ok' | 'money' | 'gone' | 'card' {
+    const r = buyItem(this.game, e, photo, method, cardOk)
     if (r === 'ok') {
       this.sfx('register')
       this.jingle('bought')
@@ -438,7 +500,7 @@ export class GameSystems {
     return r
   }
 
-  eat(e: StockEntry): 'ok' | 'money' | 'gone' {
+  eat(e: StockEntry): 'ok' | 'money' | 'gone' | 'card' {
     const r = eatItem(this.game, e)
     if (r === 'ok') {
       this.sfx('register')
@@ -576,15 +638,25 @@ export class GameSystems {
 
   // ---------- 事件 ----------
   private onMapEnter(id: string) {
+    // 旅費換成円（新遊戲：現金 50,000 円；舊存檔：文 ×10、至少 50,000 円）。要在第一次拿 systems 的存檔之前看：
+    // 新遊戲的判斷是「還沒有 systems 的存檔」
+    if (ensureYen(this.game) === 'migrated') rewardsToYen(this.game)
     const s = this.save
     const code = townCodeOfMap(id)
     this.ui.hint = null
+    // 從台灣出發（P4）：在台灣的哪個城市；到了「想去的地方」就不用再排在最前面
+    if (isTwMap(id)) s.trip = { ...s.trip, city: cityOfMap(id) ?? s.trip?.city }
+    if (code && s.trip?.plan === code && id.startsWith('town:')) {
+      delete s.trip.plan
+      if (!s.trip.city) delete s.trip
+    }
     if (code) {
       s.lastTown = code
       if (id.startsWith('town:') && !s.visited.includes(code)) {
         s.visited.push(code)
-        // 第一次到這一鎮（新遊戲的起點不算：從車站大廳直接坐車走也一樣）
-        if (code !== this.data.world?.startTown) this.jingle('arrive')
+        // 第一次到這一鎮。新遊戲在京都駅的大廳開始時（沒有航線資料、P3 以前的存檔），走出大廳的那一鎮不算；
+        // 從台灣出發的（trip.city 一直留著）沒有這個例外：飛到関西、坐電車到下京区也有到站的曲子
+        if (code !== this.data.world?.startTown || s.trip?.city) this.jingle('arrive')
       }
     }
     if (this.camera.open) this.camera.stop()

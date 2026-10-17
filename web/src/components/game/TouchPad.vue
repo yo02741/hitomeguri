@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, onBeforeUnmount, ref } from 'vue'
+import { computed, onBeforeUnmount, ref, watch } from 'vue'
 
 import type { Button } from '../../game/engine/input'
 import type { Dir } from '../../game/engine/types'
@@ -8,7 +8,16 @@ import type { Dir } from '../../game/engine/types'
 // 直拿時整組放在畫面下面（side = both）；打橫時十字鍵與 A/B 分到畫面兩側（兩個元件，side = left / right）。
 // 按鍵至少 44px、touch-action: none（不捲動、不雙擊放大、不跳選單）；按下有按下的樣子、可以的話震一下。
 // 多指同時按（十字鍵＋按住 B 跑）各自追蹤。讀屏的點兩下（click 沒有 pointer）當作按一下。
-const props = withDefaults(defineProps<{ side?: 'left' | 'right' | 'both' }>(), { side: 'both' })
+// P4 的情境提示（game/ui/hints.ts 的 touchCue；手機不放提示列，按鈕本身有字）：hot 的鈕亮著（剛亮起來時閃一下，
+// 減少動態時不閃），labels 換鈕上的字（取景框裡 A 寫「拍照」、B 寫「收起」、相機鈕寫「變焦」；站上拍攝點時相機鈕寫「拍照」）。
+const props = withDefaults(
+  defineProps<{
+    side?: 'left' | 'right' | 'both'
+    hot?: readonly Button[]
+    labels?: Partial<Record<'A' | 'B' | 'CAMERA' | 'START', string>>
+  }>(),
+  { side: 'both', hot: () => [], labels: () => ({}) },
+)
 const emit = defineEmits<{
   press: [b: Button]
   release: [b: Button]
@@ -20,6 +29,29 @@ const emit = defineEmits<{
 
 const showDpad = computed(() => props.side !== 'right')
 const showAB = computed(() => props.side !== 'left')
+
+// ---------- 情境提示：亮著、剛亮起來閃一下 ----------
+const hotSet = computed(() => new Set(props.hot))
+const pulse = ref(new Set<Button>())
+let pulseTimer: ReturnType<typeof setTimeout> | undefined
+watch(
+  () => [...props.hot].sort().join(','),
+  (_now, before) => {
+    const was = new Set((before ?? '').split(',').filter(Boolean))
+    const fresh = props.hot.filter((b) => !was.has(b))
+    if (!fresh.length) return
+    pulse.value = new Set(fresh)
+    clearTimeout(pulseTimer)
+    pulseTimer = setTimeout(() => (pulse.value = new Set()), 700)
+  },
+)
+const cls = (b: Button) => ({ 'is-down': held.value.has(b), 'is-hot': hotSet.value.has(b), 'is-pulse': pulse.value.has(b) })
+const ARIA: Record<'A' | 'B' | 'CAMERA' | 'START', string> = { A: 'A 確定', B: 'B 取消（按住跑）', CAMERA: '相機', START: '旅人手帳' }
+const aria = (b: 'A' | 'B' | 'CAMERA' | 'START') => {
+  const l = props.labels[b]
+  if (!l) return ARIA[b]
+  return b === 'A' || b === 'B' ? `${b} ${l}` : l
+}
 
 // ---------- 十字鍵 ----------
 const dpad = ref<HTMLElement | null>(null)
@@ -51,6 +83,7 @@ function setDir(d: Dir | null) {
   emit('dir', d)
 }
 function dpadDown(e: PointerEvent) {
+  touched()
   if (dpadPointer !== null || !dpad.value) return
   e.preventDefault()
   dpadPointer = e.pointerId
@@ -68,12 +101,25 @@ function dpadMove(e: PointerEvent) {
 }
 function dpadUp(e: PointerEvent) {
   if (e.pointerId !== dpadPointer) return
+  touched()
   dpadPointer = null
   setDir(null)
 }
+/**
+ * 這個 click 是手指（滑鼠）按下、放開之後瀏覽器補發的嗎：pointerdown 已經算過一次，click 不再算。
+ * Chromium 手指點的 click 的 detail 是 0（只看 detail 會按兩下：取景框的變焦切過去又切回來），
+ * 所以也看剛剛（1 秒內）有沒有 pointerdown／pointerup。讀屏、鍵盤的 click 前面沒有 pointer。
+ */
+let lastPointer = -Infinity
+const POINTER_CLICK_MS = 1000
+const touched = () => {
+  lastPointer = performance.now()
+}
+const fromPointer = (e: MouseEvent) => e.detail !== 0 || performance.now() - lastPointer < POINTER_CLICK_MS
+
 /** 讀屏、鍵盤按十字鍵上的一個方向（沒有 pointer 的 click）：按一下 */
 function dpadClick(e: MouseEvent, d: Dir) {
-  if (e.detail !== 0) return
+  if (fromPointer(e)) return
   emit('press', d)
   emit('release', d)
 }
@@ -83,6 +129,7 @@ const held = ref(new Set<Button>())
 const owner = new Map<number, Button>()
 
 function btnDown(e: PointerEvent, b: Button) {
+  touched()
   e.preventDefault()
   owner.set(e.pointerId, b)
   try {
@@ -99,6 +146,7 @@ function btnDown(e: PointerEvent, b: Button) {
 function btnUp(e: PointerEvent) {
   const b = owner.get(e.pointerId)
   if (!b) return
+  touched()
   owner.delete(e.pointerId)
   if ([...owner.values()].includes(b)) return
   const next = new Set(held.value)
@@ -107,7 +155,7 @@ function btnUp(e: PointerEvent) {
   emit('release', b)
 }
 function btnClick(e: MouseEvent, b: Button) {
-  if (e.detail !== 0) return
+  if (fromPointer(e)) return
   emit('press', b)
   emit('release', b)
 }
@@ -121,7 +169,10 @@ function releaseAll() {
   setDir(null)
 }
 defineExpose({ releaseAll })
-onBeforeUnmount(releaseAll)
+onBeforeUnmount(() => {
+  releaseAll()
+  clearTimeout(pulseTimer)
+})
 
 const ARMS: Array<{ d: Dir; label: string }> = [
   { d: 'up', label: '上' },
@@ -167,29 +218,31 @@ const ARMS: Array<{ d: Dir; label: string }> = [
           type="button"
           tabindex="-1"
           class="tpad-round tpad-b"
-          :class="{ 'is-down': held.has('B') }"
-          aria-label="B 取消（按住跑）"
+          :class="cls('B')"
+          :aria-label="aria('B')"
           @pointerdown="btnDown($event, 'B')"
           @pointerup="btnUp"
           @pointercancel="btnUp"
           @lostpointercapture="btnUp"
           @click="btnClick($event, 'B')"
         >
-          B
+          <span class="tpad-letter">B</span>
+          <span v-if="labels.B" class="tpad-cap" aria-hidden="true">{{ labels.B }}</span>
         </button>
         <button
           type="button"
           tabindex="-1"
           class="tpad-round tpad-a"
-          :class="{ 'is-down': held.has('A') }"
-          aria-label="A 確定"
+          :class="cls('A')"
+          :aria-label="aria('A')"
           @pointerdown="btnDown($event, 'A')"
           @pointerup="btnUp"
           @pointercancel="btnUp"
           @lostpointercapture="btnUp"
           @click="btnClick($event, 'A')"
         >
-          A
+          <span class="tpad-letter">A</span>
+          <span v-if="labels.A" class="tpad-cap" aria-hidden="true">{{ labels.A }}</span>
         </button>
       </div>
     </div>
@@ -200,30 +253,30 @@ const ARMS: Array<{ d: Dir; label: string }> = [
         type="button"
         tabindex="-1"
         class="tpad-pill"
-        :class="{ 'is-down': held.has('START') }"
-        aria-label="旅人手帳"
+        :class="cls('START')"
+        :aria-label="aria('START')"
         @pointerdown="btnDown($event, 'START')"
         @pointerup="btnUp"
         @pointercancel="btnUp"
         @lostpointercapture="btnUp"
         @click="btnClick($event, 'START')"
       >
-        手帳
+        {{ labels.START ?? '手帳' }}
       </button>
       <button
         v-if="side !== 'left'"
         type="button"
         tabindex="-1"
         class="tpad-pill"
-        :class="{ 'is-down': held.has('CAMERA') }"
-        aria-label="相機"
+        :class="cls('CAMERA')"
+        :aria-label="aria('CAMERA')"
         @pointerdown="btnDown($event, 'CAMERA')"
         @pointerup="btnUp"
         @pointercancel="btnUp"
         @lostpointercapture="btnUp"
         @click="btnClick($event, 'CAMERA')"
       >
-        相機
+        {{ labels.CAMERA ?? '相機' }}
       </button>
     </div>
   </div>
@@ -347,8 +400,11 @@ const ARMS: Array<{ d: Dir; label: string }> = [
   position: absolute;
   width: 60px;
   height: 60px;
-  display: grid;
-  place-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1px;
   font-family: var(--font-latin);
   font-size: 1.25rem;
   font-weight: 700;
@@ -357,6 +413,17 @@ const ARMS: Array<{ d: Dir; label: string }> = [
   border: 2px solid var(--color-px-ink);
   border-radius: 999px;
   box-shadow: 0 3px 0 var(--color-px-ink);
+}
+.tpad-letter {
+  line-height: 1;
+}
+/* 鈕上的小字（取景框的「拍照」「收起」、坐車的「跳過」） */
+.tpad-cap {
+  font-family: var(--font-game);
+  font-size: 0.6875rem;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0.02em;
 }
 .tpad-a {
   right: 0;
@@ -389,6 +456,41 @@ const ARMS: Array<{ d: Dir; label: string }> = [
 }
 .tpad-pill.is-down {
   color: var(--color-px-ink);
+}
+
+/* 情境提示：亮著（金色的框與字），剛亮起來閃兩下（steps，像 GBA） */
+.tpad-round.is-hot {
+  border-color: var(--color-px-gold-2);
+  box-shadow:
+    0 3px 0 var(--color-px-ink),
+    0 0 0 3px var(--color-px-gold-1);
+}
+.tpad-pill.is-hot {
+  color: var(--color-px-ink);
+  background: var(--color-px-gold-1);
+  border-color: var(--color-px-ink);
+}
+.tpad-round.is-hot.is-down,
+.tpad-pill.is-hot.is-down {
+  background: var(--color-px-gold-2);
+}
+.is-pulse {
+  animation: tpad-pulse 0.7s steps(1, end);
+}
+@keyframes tpad-pulse {
+  0%,
+  50% {
+    filter: brightness(1.25);
+  }
+  25%,
+  75% {
+    filter: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .is-pulse {
+    animation: none;
+  }
 }
 
 /* 打橫：一側一組，直的排 */

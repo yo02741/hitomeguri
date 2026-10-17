@@ -5,10 +5,11 @@ import type { Button } from '../../../game/engine/input'
 import { type BagEntry, type BagPageData, dateText } from '../../../game/ui/notebook'
 import ItemCard from '../systems/ItemCard.vue'
 import PixelIcon from '../systems/PixelIcon.vue'
+import WalletLine from '../systems/WalletLine.vue'
 
 import { useRows } from './rows'
 
-// 手帳「行李」（規格 §8.5）：旅費、帶著的東西、吃過的（郷土料理）。品名是資料裡的真名；
+// 手帳「行李」（規格 §8.5）：旅費（P4：現金與刷卡累計，円）、帶著的東西、吃過的（郷土料理）。品名是資料裡的真名；
 // 一列按 A（或點）打開品項卡（類別、簡介第一句、出處、授權），再按一次收起。
 defineProps<{ data: BagPageData }>()
 const root = ref<HTMLElement | null>(null)
@@ -38,10 +39,7 @@ defineExpose({ focusFirst: rows.focusFirst, press })
 
 <template>
   <div ref="root" class="nb-page">
-    <dl class="nb-dl">
-      <dt>旅費</dt>
-      <dd>{{ data.money.toLocaleString('ja-JP') }} 文</dd>
-    </dl>
+    <WalletLine :wallet="data.wallet ?? { cash: data.money, card: 0 }" />
     <p v-if="!data.items.length" class="nb-empty">行李是空的。</p>
     <ul v-else class="bag">
       <li v-for="it in data.items" :key="it.id" class="bag-item">

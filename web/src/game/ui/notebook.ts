@@ -1,8 +1,11 @@
 import type { StampArt } from '../content/icons'
 import type { CalendarDate } from '../engine/clock'
 import type { Game } from '../engine/game'
-import type { Season, SourceRef, TimeOfDay } from '../engine/types'
+import type { Minimap } from '../engine/minimap'
+import type { PlaceKind } from '../engine/places'
+import type { Dir, Season, SourceRef, TimeOfDay } from '../engine/types'
 import type { ItemCardData } from '../systems/inventory'
+import type { Wallet } from '../systems/wallet'
 
 /**
  * 旅人手帳（START 選單，規格 §4、§8）：一頁一個元件（components/game/notebook/*Page.vue），資料都從 Game 的狀態算出來。
@@ -61,6 +64,14 @@ export interface MapPref {
   title: PlaceLabel
   towns: MapTown[]
 }
+/** P4：這一鎮的大張地圖（小地圖的整張）；在室內時是那一鎮的戶外，自己在進來的那個門 */
+export interface TownChart {
+  name: PlaceLabel
+  mini: Minimap
+  here: { x: number; y: number; dir: Dir } | null
+  /** 地圖上有名字的地方（告示牌、車站、店、茶屋…，北到南） */
+  places: Array<{ id: string; kind: PlaceKind; name: PlaceLabel; x: number; y: number }>
+}
 export interface MapPageData {
   here: PlaceLabel | null
   now: Moment
@@ -68,6 +79,8 @@ export interface MapPageData {
   towns: MapTown[]
   /** P2：分縣的鎮（有就照這個分組，沒有就只列 towns） */
   prefs?: MapPref[]
+  /** P4：這一鎮的地圖（PlayView 打開手帳時放進來；沒有鎮的地方——你的房間——沒有） */
+  chart?: TownChart | null
 }
 
 export type StampKind = 'station' | 'sanpai' | 'castle'
@@ -138,7 +151,10 @@ export interface BagEntry {
   date?: CalendarDate
 }
 export interface BagPageData {
+  /** 現金（円） */
   money: number
+  /** P4：現金與刷卡累計（円）；沒有時 money 當現金 */
+  wallet?: Wallet
   items: BagEntry[]
   /** 吃過的（郷土料理，帶不走） */
   eaten: BagEntry[]
@@ -164,7 +180,7 @@ export interface QuestEntry {
   text: string
   /** 在哪一鎮接的 */
   from: PlaceLabel | null
-  /** 做完給的旅費（文） */
+  /** 做完給的旅費（円） */
   reward: number
   /** 拍到了、找到了：回去找委託的人 */
   ready: boolean

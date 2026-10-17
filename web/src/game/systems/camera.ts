@@ -224,9 +224,10 @@ export class Camera {
     const my = Math.round(y + h / 2)
     g.hline(mx - 3, mx + 3, my, 'white')
     g.vline(mx, my - 3, my + 3, 'white')
-    // 變焦（角的內側，跟白線隔 2 格）
+    // 變焦（右上角的內側，跟白線隔 2 格；左上角是取景框的地名牌，全畫面時會蓋住）
     const label = ZOOM_LABEL[this.zoom]
-    g.text(label, x + i + 6, y + i + 6, 'ink')
-    g.text(label, x + i + 5, y + i + 5, 'white')
+    const lx = x + w - i - 5 - (label.length * 4 - 1)
+    g.text(label, lx + 1, y + i + 6, 'ink')
+    g.text(label, lx, y + i + 5, 'white')
   }
 }

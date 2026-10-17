@@ -5,13 +5,15 @@ import type { Game, MapSource } from '../engine/game'
 import type { Runner, ScriptApi } from '../engine/script'
 import type { Dir, GameMap, MapEntity, Script, Season } from '../engine/types'
 
+import { abroadLink, airportOfMap, cityOfMap, isAbroadMap, isAirMap, isTwMap, twMap } from './abroad'
+import { airportHallAbroad, type AbroadHallMap, taiwanHall } from './gen/abroad'
 import { isP3Pref } from './gen/classify'
 import { generateTown, type Arrival, type TownGen } from './gen/town'
 import { room } from './gen/interiors'
 import { ARRIVE_SFX, DEPART_SFX, type RideScene, rideOverlay } from './ride'
 import { bloomAt, type Climate, climateOf, type Flower, festivalsIn, seasonAt, weatherAt } from './season'
 import { buildWorld, crossLinksOf, kitOf, linksFrom, orderOf, prefWorld, TOWN_RULES, type TownRule } from './towns'
-import type { AtlasPref, Kit, Link, NpcData, PrefData, Town, World, WorldIndex } from './types'
+import type { AbroadIndex, AtlasPref, Kit, Link, NpcData, PrefData, Town, World, WorldIndex } from './types'
 import './kits/core'
 
 /**
@@ -29,6 +31,10 @@ import './kits/core'
  * 從索引來（還沒讀的縣也在剪票口的目的地裡）；prefs 只要起點的縣（京都）。坐車到還沒讀的縣時，車窗畫面一開始就
  * 叫 opts.loadPref 讀那一縣，讀好了 addPref 加進來（已經生成的鎮不重做：一鎮的生成只看自己的縣與從它出發的交通，
  * 讀的先後不影響），讀不到就回到出發的地方說「現在去不了。」。存檔在別的縣時，PlayView 先 ensurePref 那一縣再繼續。
+ *
+ * P4（規格 §13 第 4 點）：世界索引有 taiwan（台灣出發的直飛航線）時，多了機場的大廳（abroad.ts）：台灣的出發大廳 tw:<城市>、
+ * 日本的機場大廳 air:<IATA>（不是哪一鎮的機場的：関西国際空港、東京国際空港、函館空港）。兩種都不在鎮上、不用讀縣的資料，
+ * 第一次要的時候才做（鎮的生成不變）。台灣 ↔ 日本、大廳 ↔ 鎮的交通由 travel 認得（abroadLink），車窗跟鎮之間一樣。
  */
 export const GEN_VERSION = 2
 
@@ -54,6 +60,8 @@ export interface WorldOptions {
 
 /** 坐車到還沒讀的縣，資料讀不到時說的話（規格 §12） */
 export const CANNOT_GO = '現在去不了。'
+/** 飛到日本的機場大廳時，最多等那一縣的資料幾秒（遊戲規則；等不到照樣降在大廳） */
+export const HALL_WAIT_SECONDS = 6
 /** 部署之後還開著的舊分頁：坐車要的檔已經換了名字（重載過一次還是這樣時說） */
 export const RELOAD_FIRST = '重新整理之後再去。'
 
@@ -87,8 +95,12 @@ export interface GameWorld {
   prefOfTown(town: string): string | null
   /** 加了縣之後（systems 換資料、手帳重算） */
   onPrefs(fn: (prefs: PrefData[]) => void): () => void
-  /** 新遊戲的起點（京都駅的大廳；只有沖繩時是那覇空港的抵達大廳） */
+  /** 新遊戲的起點（京都駅的大廳；只有沖繩時是那覇空港的抵達大廳）。P4 的新遊戲從台灣出發：abroadStart */
   start: { map: string; x: number; y: number; dir: Dir }
+  /** 台灣出發的直飛航線（P4；世界索引沒有 taiwan 時 null） */
+  abroad: AbroadIndex | null
+  /** 台灣的出發大廳（city：台北、台中、高雄；不給是第一個城市）站的地方；沒有航線資料 null */
+  abroadStart(city?: string): { map: string; x: number; y: number; dir: Dir } | null
   mapSource: MapSource
   /** 季節（GameOptions.seasonOf）：沒給鎮就用現在所在的鎮 */
   seasonOf(d: CalendarDate, town?: string): Season
@@ -162,6 +174,34 @@ export function createWorld(input: PrefData[], opts: WorldOptions = {}): GameWor
   let cross = world.links.filter((l) => !intraSet.has(l))
   const listeners = new Set<(prefs: PrefData[]) => void>()
   const prefsNow = () => orderOf(index, [...loaded.keys()]).map((p) => loaded.get(p)!)
+
+  // ---------- P4：機場的大廳（台灣的出發大廳、日本的機場大廳） ----------
+  const abroad = index?.taiwan ?? null
+  if (abroad) world.abroad = abroad
+  const halls = new Map<string, AbroadHallMap>()
+  function hallOf(id: string): AbroadHallMap | null {
+    const hit = halls.get(id)
+    if (hit) return hit
+    if (!abroad) return null
+    let h: AbroadHallMap | null = null
+    if (isTwMap(id)) {
+      const city = cityOfMap(id)
+      if (city && abroad.cities.includes(city)) h = taiwanHall({ id, city })
+    } else if (isAirMap(id)) {
+      const a = airportOfMap(abroad, id)
+      if (a && a.hall === 'own' && a.access.length) h = airportHallAbroad({ id, name: a.name, pref: a.pref, gate: a.access.some((x) => x.legs[0]?.mode === 'rail') ? 'rail' : 'bus' })
+    }
+    if (h) halls.set(id, h)
+    return h
+  }
+  /** 交通：鎮之間的、台灣 ↔ 日本與機場的大廳的（abroadLink） */
+  const linkOf = (id: string): Link | undefined => links.get(id) ?? (abroad ? (abroadLink(abroad, id) ?? undefined) : undefined)
+  /** 機場的大廳的地方 kit（車窗）：日本的照機場所在的縣，台灣的是海（沖繩的窗外） */
+  const abroadKit = (place: string): Kit | null => {
+    if (isTwMap(place)) return 'okinawa'
+    const a = abroad && isAirMap(place) ? airportOfMap(abroad, place) : null
+    return a ? (index?.prefs.find((p) => p.pref === a.pref)?.kit ?? kitOf(a.pref)) : null
+  }
 
   function addPref(p: PrefData): Town[] {
     const have = world.towns.filter((t) => t.pref === p.pref)
@@ -316,6 +356,7 @@ export function createWorld(input: PrefData[], opts: WorldOptions = {}): GameWor
 
   const mapSource: MapSource = (id) => {
     if (id === 'room') return room(innExit())
+    if (isAbroadMap(id)) return hallOf(id)?.map ?? null
     const code = codeOf(id)
     if (!code) return null
     const town = towns.get(code)
@@ -344,6 +385,10 @@ export function createWorld(input: PrefData[], opts: WorldOptions = {}): GameWor
   }
 
   const arrival = (link: Link): Arrival => {
+    if (link.toStop === 'hall' && isAbroadMap(link.to)) {
+      const h = hallOf(link.to)
+      if (h) return { map: h.map.id, x: h.arrive.x, y: h.arrive.y, dir: h.arrive.dir }
+    }
     const gen = generate(link.to)
     const a = gen?.stops[link.toStop] ?? gen?.stops.main
     return a ?? { map: towns.get(link.to)?.mapId ?? '', x: 1, y: 1, dir: 'down' }
@@ -353,9 +398,17 @@ export function createWorld(input: PrefData[], opts: WorldOptions = {}): GameWor
     const game = s.game
     const sec = o.seconds ?? 2.4
     const pressed = () => game.input.held('A') || game.input.held('B')
-    // 目的地的縣還沒讀：車窗畫面一開始就去讀（讀好了才到站；讀不到回到這裡）
-    let state: 'ready' | 'loading' | 'failed' = towns.has(link.to) ? 'ready' : 'loading'
-    if (state === 'loading') {
+    // 目的地的縣還沒讀：車窗畫面一開始就去讀（讀好了才到站；讀不到回到這裡）。
+    // 日本的機場大廳（P4，関西・羽田・函館）：大廳本身不用縣的資料，但賣店賣那一縣的東西、剪票口之後是那一縣的鎮，
+    // 所以也是一開始就讀、最後一段等它（最多 HALL_WAIT_SECONDS 秒）；讀不到照樣降在大廳（賣店之後讀到了再問就有）
+    const toHall = isAbroadMap(link.to)
+    const ap = toHall && abroad && isAirMap(link.to) ? airportOfMap(abroad, link.to) : null
+    const hallPref = ap && !loaded.has(ap.pref) && index?.prefs.some((p) => p.pref === ap.pref) ? ap.pref : null
+    let state: 'ready' | 'loading' | 'failed' = (toHall && !hallPref) || towns.has(link.to) ? 'ready' : 'loading'
+    if (hallPref) {
+      const done = () => (state = 'ready')
+      void ensurePref(hallPref).then(done, done)
+    } else if (state === 'loading') {
       const pref = prefOfTown(link.to)
       if (!pref) state = 'failed'
       else
@@ -364,16 +417,16 @@ export function createWorld(input: PrefData[], opts: WorldOptions = {}): GameWor
           () => (state = 'failed'),
         )
     }
-    const destKit: Kit = towns.get(link.to)?.kit ?? kitOfIndex(link.to) ?? 'kinki'
+    const destKit: Kit = towns.get(link.to)?.kit ?? kitOfIndex(link.to) ?? abroadKit(link.to) ?? 'kinki'
     yield* s.sfx(DEPART_SFX[link.legs[0]!.mode])
     yield* s.fade('out')
     // 目的地第一次去要生成（幾十毫秒）：等畫面黑了再做，按下剪票口的那一格不卡
     let dest = state === 'ready' ? arrival(link) : null
-    const waitFrames = (opts.loadWaitSeconds ?? 20) * 60
+    const waitFrames = (hallPref ? Math.min(HALL_WAIT_SECONDS, opts.loadWaitSeconds ?? 20) : (opts.loadWaitSeconds ?? 20)) * 60
     for (const [i, leg] of link.legs.entries()) {
       const last = i === link.legs.length - 1
       // 窗外：最後一段是目的地的地方（kit 與季節都是目的地的：4 月的東京是春、北海道還是冬）；前一段是出發地的
-      const kit = last ? destKit : (towns.get(link.from)?.kit ?? 'kinki')
+      const kit = last ? destKit : (towns.get(link.from)?.kit ?? abroadKit(link.from) ?? 'kinki')
       const season = last ? seasonOf(game.clock.date, link.to) : game.clock.season
       // 新幹線的那一段（leg.shinkansen：京都 ↔ 東京）：車窗畫新幹線
       const scene: RideScene = { mode: leg.mode, kit, time: game.clock.time, season, ...(leg.shinkansen ? { shinkansen: true } : {}) }
@@ -397,7 +450,7 @@ export function createWorld(input: PrefData[], opts: WorldOptions = {}): GameWor
         if (!done) done = frames >= sec * 60 || (released && pressed())
         if (!done) return false
         if (!last || state !== 'loading') return true
-        if (frames >= waitFrames) state = 'failed'
+        if (frames >= waitFrames) state = hallPref ? 'ready' : 'failed'
         return state !== 'loading'
       }
       yield* s.fade('out')
@@ -415,13 +468,15 @@ export function createWorld(input: PrefData[], opts: WorldOptions = {}): GameWor
     const town = towns.get(link.to)
     game.clock.advance(link.minutes)
     yield* s.warp(dest.map, dest.x, dest.y, dest.dir)
+    // 機場大廳的縣這一次沒讀到（離線、太慢）：在背景再讀一次
+    if (hallPref && !loaded.has(hallPref)) void ensurePref(hallPref)
     yield* s.sfx(ARRIVE_SFX[link.legs[link.legs.length - 1]!.mode])
     yield* s.fade('in')
     if (town) o.onArrive?.(town)
   }
 
   function travel(game: Game, l: Link | string, o: TravelOptions = {}): Runner | null {
-    const link = typeof l === 'string' ? links.get(l) : l
+    const link = typeof l === 'string' ? linkOf(l) : l
     if (!link) return null
     return game.run((s) => ride(s, link, o))
   }
@@ -492,6 +547,13 @@ export function createWorld(input: PrefData[], opts: WorldOptions = {}): GameWor
       return () => listeners.delete(fn)
     },
     start,
+    abroad,
+    abroadStart: (city) => {
+      const c = city ?? abroad?.cities[0]
+      const h = c ? hallOf(twMap(c)) : null
+      const st = h?.map.start
+      return h && st ? { map: h.map.id, x: st.x, y: st.y, dir: st.dir ?? 'up' } : null
+    },
     mapSource,
     seasonOf,
     bloomOf,
@@ -508,7 +570,7 @@ export function createWorld(input: PrefData[], opts: WorldOptions = {}): GameWor
       return code ? (towns.get(code) ?? null) : null
     },
     prefOf,
-    linkById: (id) => links.get(id),
+    linkById: (id) => linkOf(id),
     linksFrom: (town, stop) => linksFrom(world, town, stop),
     arrival,
     travel,

@@ -1,4 +1,5 @@
 import type { Dir, MapEntity } from '../engine/types'
+import type { AbroadIndex } from '../world/types'
 
 /**
  * 系統（拍照、買東西、印、房間、委託、台詞）讀的資料與實體的形狀（規格 §11）。
@@ -150,6 +151,8 @@ export interface WorldLike {
   startTown?: string
   /** 世界索引的縣與鎮（P3：還沒讀的縣也在；手帳的地圖、印帳的頁、目的地的縣名用） */
   atlas?: readonly { pref: string; kit?: Kit; towns: readonly TownLike[] }[]
+  /** 台灣出發的直飛航線（P4；world 的 World.abroad） */
+  abroad?: AbroadIndex
 }
 
 // ---------- 實體的 data（world 產生，systems 處理） ----------
@@ -188,6 +191,8 @@ export interface NpcData {
   /** 事實：樣板、資料參照、參數；source 是 world 算出來的出處（rail.km、straight.km 這種資料推出來的數字用） */
   fact?: { template: string; ref: FactRef; params?: Record<string, string | number>; source?: { label: string; url: string } }
   tags?: { region?: string; kit?: Kit; town?: string; season?: string; time?: string }
+  /** 閒聊用哪一種台詞（P4 的機場大廳：airport）；不寫是路人 */
+  chat?: 'airport'
   /** 祭典 NPC 指的祭典（沒有 fact 時用） */
   festivalId?: string
   /** 店員：顧的那一家店（店的實體 id；不寫就找這張地圖的第一家） */
@@ -212,6 +217,8 @@ export interface ShopData extends StaffData {
   shopKind: ShopKind
   name?: string
   shiniseId?: string
+  /** 賣哪一縣的東西（P4 的機場大廳；不寫就是這一鎮的縣） */
+  pref?: string
   /** world 給的品項：車站賣店、食堂當作今天輪換的池子，老舖照給的賣 */
   items?: readonly ItemRef[]
 }
@@ -245,12 +252,92 @@ export interface TravelDest {
   link?: string
   /** 別的縣的目的地：那一縣的名字（奈良県…；systems 的 travel 打開面板前寫上） */
   area?: string
+  /**
+   * 台灣 ↔ 日本的飛機（P4）：航空公司與每週班次（国土交通省的表）；有這個就不寫 km
+   * （台灣那一邊沒有座標資料，台北也不分桃園、松山）
+   */
+  flight?: { airlines: readonly AirlineView[]; weekly: number }
+  /** 選了之後記下「想去的地方」（出發看板的路線規劃：先飛到大廳，再從大廳的剪票口坐車） */
+  plan?: string
+  /** 這一個是「想去的地方」（路線規劃記下的鎮；排在最前面） */
+  planned?: boolean
 }
 
 export interface TravelData extends StaffData {
   mode: TravelMode
   fromTown: string
   dests: readonly TravelDest[]
+  /** 機場的大廳（P4，world 放的）：board 台灣的出發大廳、intl 日本的機場的國際線櫃台、gate 日本的機場的剪票口 */
+  abroad?: { kind: 'board' | 'intl' | 'gate'; place: string }
+  /** 出發看板（P4，systems 打開面板前算好：台灣的出發大廳） */
+  board?: BoardView
+  /** 新遊戲：選出發的城市（P4） */
+  origin?: OriginView
+  /** 有台灣 ↔ 日本的飛機（航空公司、每週班次）或出發的城市時：航線的出處（国土交通省的表） */
+  source?: FlightSource
+}
+
+/** 航線的出處（畫面上的「出處」） */
+export interface FlightSource {
+  url: string
+  label: string
+  season?: string
+}
+
+/** 一家航空公司：name 是国土交通省的表上的名字（日文），zh 是那家公司繁體中文網站上的名字（有的才有） */
+export interface AirlineView {
+  name: string
+  zh?: string
+  weekly: number
+}
+
+/** 出發看板的一列：日本的一個機場（台灣的這個城市有直飛的） */
+export interface BoardRowView {
+  airport: string
+  /** 関西国際空港 */
+  name: string
+  /** 所在的縣：大阪府 */
+  prefName: string
+  airlines: readonly AirlineView[]
+  weekly: number
+  /** 飛到哪裡（大廳）或飛到之後坐什麼到哪一鎮（看板只列遊戲裡去得了的） */
+  dest: TravelDest
+  /** 飛到之後的那一段（坐電車到東京）；直接降在大廳的沒有 */
+  then?: { mode: TravelMode; km: number; kmKind: 'rail' | 'straight'; to: string; area?: string }[]
+}
+
+/** 想去的地方的一條路線：飛到哪個機場＋電車或巴士（近的在前） */
+export interface PlanRouteView {
+  airport: string
+  name: string
+  prefName: string
+  weekly: number
+  airlines: readonly AirlineView[]
+  /** 飛到之後的那幾段（空的＝就降在那一鎮的機場） */
+  legs: readonly { mode: TravelMode; km: number; kmKind: 'rail' | 'straight'; to: string }[]
+  km: number
+  dest: TravelDest
+}
+
+export interface PlanTownView {
+  id: string
+  name: { ja: string; kana?: string; zh?: string }
+  routes: PlanRouteView[]
+}
+
+export interface BoardView {
+  city: string
+  rows: BoardRowView[]
+  /** 想去的地方：遊戲的縣（北到南）與鎮 */
+  prefs: { pref: string; name: string; towns: PlanTownView[] }[]
+  /** 上次記下的「想去的地方」 */
+  plan?: string
+  source: FlightSource
+}
+
+export interface OriginView {
+  /** to：遊戲裡從這個城市直飛得到的日本機場（表上的簡稱：成田、関西…；看板的順序） */
+  cities: { id: string; name: string; to: string[] }[]
 }
 
 /** 選好的目的地（交給 world 的 travel） */

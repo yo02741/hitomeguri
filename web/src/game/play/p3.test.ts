@@ -242,6 +242,16 @@ describe('延遲載入', () => {
     expect(savePrefs(null, prefOf)).toEqual({ need: [], also: [] })
   })
 
+  it('存檔在機場的大廳（P4）：日本的大廳要機場所在的縣（賣店）；台灣的大廳不要哪一縣', () => {
+    const prefOf = (c: string) => ({ '261068': 'kyoto' })[c] ?? null
+    const hall = (m: string) => ({ 'air:KIX': 'osaka', 'air:HKD': 'hokkaido' })[m] ?? null
+    const kix = { map: 'air:KIX', ext: { systems: { visited: ['261068'] } } }
+    expect(savePrefs(kix as never, prefOf, hall)).toEqual({ need: ['osaka'], also: ['kyoto'] })
+    expect(savePrefs({ map: 'tw:taipei', ext: {} } as never, prefOf, hall)).toEqual({ need: [], also: [] })
+    // 沒給 hallPref（P3 的呼叫）：跟以前一樣
+    expect(savePrefs(kix as never, prefOf)).toEqual({ need: [], also: ['kyoto'] })
+  })
+
   it('手帳：地圖頁列 7 縣（北到南、還沒去的縣也列鎮）、印帳 7 頁；剪票口的別縣目的地寫縣名', async () => {
     const { api } = fakeApi()
     const { world, game, sys } = await boot(api)
@@ -260,7 +270,8 @@ describe('延遲載入', () => {
     const panel = sys.ui.panel
     expect(panel?.kind).toBe('travel')
     const dests = panel?.kind === 'travel' ? panel.data.dests : []
-    expect(dests.filter((d) => d.area).map((d) => `${d.name} ${d.area}`)).toEqual(['那覇空港 沖縄県', '近鉄奈良 奈良県', '大阪 大阪府', '東京 東京都'])
+    // P4：最後多了関西国際空港的大廳（打開面板時加的，鎮的生成不變）
+    expect(dests.filter((d) => d.area).map((d) => `${d.name} ${d.area}`)).toEqual(['那覇空港 沖縄県', '近鉄奈良 奈良県', '大阪 大阪府', '東京 東京都', '関西国際空港 大阪府'])
     expect(dests.filter((d) => !d.area).every((d) => d.town.startsWith('26'))).toBe(true)
     sys.closePanel()
   })

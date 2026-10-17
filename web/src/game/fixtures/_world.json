@@ -2047,5 +2047,2218 @@
    ],
    "name": "東京"
   }
- ]
+ ],
+ "taiwan": {
+  "source": {
+   "url": "https://www.mlit.go.jp/koku/content/002000600.xlsx",
+   "fetched_at": "2026-10-17",
+   "season": "2026夏ダイヤ 国際定期便（３月29日～10月24日）"
+  },
+  "cities": ["台北","台中","高雄"],
+  "airports": [
+   {
+    "id": "wd-Q1054857",
+    "iata": "SDJ",
+    "name": "仙台空港",
+    "short": "仙台",
+    "pref": "miyagi",
+    "hall": null,
+    "access": []
+   },
+   {
+    "id": "wd-Q1137465",
+    "iata": "FUK",
+    "name": "福岡空港",
+    "short": "福岡",
+    "pref": "fukuoka",
+    "hall": null,
+    "access": []
+   },
+   {
+    "id": "wd-Q1141511",
+    "iata": "KMQ",
+    "name": "小松空港",
+    "short": "小松",
+    "pref": "ishikawa",
+    "hall": null,
+    "access": []
+   },
+   {
+    "id": "wd-Q11434817",
+    "iata": "ISG",
+    "name": "石垣空港",
+    "short": "石垣",
+    "pref": "okinawa",
+    "hall": "own",
+    "access": []
+   },
+   {
+    "id": "wd-Q1155685",
+    "iata": "HKD",
+    "name": "函館空港",
+    "short": "函館",
+    "pref": "hokkaido",
+    "hall": "own",
+    "access": [
+     {
+      "town": "012025",
+      "legs": [
+       {
+        "mode": "bus",
+        "km": 8,
+        "kmKind": "straight",
+        "to": "函館市"
+       }
+      ],
+      "km": 8
+     }
+    ]
+   },
+   {
+    "id": "wd-Q1156310",
+    "iata": "KOJ",
+    "name": "鹿児島空港",
+    "short": "鹿児島",
+    "pref": "kagoshima",
+    "hall": null,
+    "access": []
+   },
+   {
+    "id": "wd-Q1191625",
+    "iata": "TOY",
+    "name": "富山空港",
+    "short": "富山",
+    "pref": "toyama",
+    "hall": null,
+    "access": []
+   },
+   {
+    "id": "wd-Q1197455",
+    "iata": "OKA",
+    "name": "那覇空港",
+    "short": "那覇",
+    "pref": "okinawa",
+    "hall": {
+     "town": "472018",
+     "stop": "airport"
+    },
+    "access": [
+     {
+      "town": "472018",
+      "legs": [],
+      "km": 0
+     },
+     {
+      "town": "472158",
+      "legs": [
+       {
+        "mode": "bus",
+        "km": 10.9,
+        "kmKind": "straight",
+        "to": "南城市"
+       }
+      ],
+      "km": 10.9
+     },
+     {
+      "town": "473286",
+      "legs": [
+       {
+        "mode": "bus",
+        "km": 11.9,
+        "kmKind": "straight",
+        "to": "中城村"
+       }
+      ],
+      "km": 11.9
+     },
+     {
+      "town": "473243",
+      "legs": [
+       {
+        "mode": "bus",
+        "km": 21.1,
+        "kmKind": "straight",
+        "to": "読谷村"
+       }
+      ],
+      "km": 21.1
+     },
+     {
+      "town": "472131",
+      "legs": [
+       {
+        "mode": "bus",
+        "km": 23.7,
+        "kmKind": "straight",
+        "to": "うるま市"
+       }
+      ],
+      "km": 23.7
+     },
+     {
+      "town": "473111",
+      "legs": [
+       {
+        "mode": "bus",
+        "km": 36.3,
+        "kmKind": "straight",
+        "to": "恩納村"
+       }
+      ],
+      "km": 36.3
+     },
+     {
+      "town": "472093",
+      "legs": [
+       {
+        "mode": "bus",
+        "km": 56.5,
+        "kmKind": "straight",
+        "to": "名護市"
+       }
+      ],
+      "km": 56.5
+     },
+     {
+      "town": "473065",
+      "legs": [
+       {
+        "mode": "bus",
+        "km": 59.1,
+        "kmKind": "straight",
+        "to": "今帰仁村"
+       }
+      ],
+      "km": 59.1
+     },
+     {
+      "town": "472140",
+      "legs": [
+       {
+        "mode": "plane",
+        "km": 293.5,
+        "kmKind": "straight",
+        "to": "下地島空港"
+       }
+      ],
+      "km": 293.5
+     }
+    ]
+   },
+   {
+    "id": "wd-Q1197536",
+    "iata": "KIJ",
+    "name": "新潟空港",
+    "short": "新潟",
+    "pref": "niigata",
+    "hall": null,
+    "access": []
+   },
+   {
+    "id": "wd-Q1199773",
+    "iata": "KMJ",
+    "name": "熊本空港",
+    "short": "熊本",
+    "pref": "kumamoto",
+    "hall": null,
+    "access": []
+   },
+   {
+    "id": "wd-Q1320088",
+    "iata": "HNA",
+    "name": "花巻空港",
+    "short": "花巻",
+    "pref": "iwate",
+    "hall": null,
+    "access": []
+   },
+   {
+    "id": "wd-Q1322391",
+    "iata": "OKJ",
+    "name": "岡山空港",
+    "short": "岡山",
+    "pref": "okayama",
+    "hall": null,
+    "access": []
+   },
+   {
+    "id": "wd-Q1334603",
+    "iata": "TAK",
+    "name": "高松空港",
+    "short": "高松",
+    "pref": "kagawa",
+    "hall": null,
+    "access": []
+   },
+   {
+    "id": "wd-Q1366663",
+    "iata": "HSG",
+    "name": "佐賀空港",
+    "short": "佐賀",
+    "pref": "saga",
+    "hall": null,
+    "access": []
+   },
+   {
+    "id": "wd-Q1378640",
+    "iata": "KMI",
+    "name": "宮崎空港",
+    "short": "宮崎",
+    "pref": "miyazaki",
+    "hall": null,
+    "access": []
+   },
+   {
+    "id": "wd-Q193682",
+    "iata": "KIX",
+    "name": "関西国際空港",
+    "short": "関西",
+    "pref": "osaka",
+    "hall": "own",
+    "access": [
+     {
+      "town": "272132",
+      "legs": [
+       {
+        "mode": "rail",
+        "km": 6.8,
+        "kmKind": "rail",
+        "to": "りんくうタウン"
+       }
+      ],
+      "km": 6.8
+     },
+     {
+      "town": "272027",
+      "legs": [
+       {
+        "mode": "rail",
+        "km": 15.1,
+        "kmKind": "rail",
+        "to": "蛸地蔵"
+       }
+      ],
+      "km": 15.1
+     },
+     {
+      "town": "271098",
+      "legs": [
+       {
+        "mode": "rail",
+        "km": 37.5,
+        "kmKind": "rail",
+        "to": "天王寺"
+       }
+      ],
+      "km": 37.5
+     },
+     {
+      "town": "271110",
+      "legs": [
+       {
+        "mode": "rail",
+        "km": 37.9,
+        "kmKind": "rail",
+        "to": "恵美須町"
+       }
+      ],
+      "km": 37.9
+     },
+     {
+      "town": "271276",
+      "legs": [
+       {
+        "mode": "rail",
+        "km": 42.7,
+        "kmKind": "rail",
+        "to": "大阪"
+       }
+      ],
+      "km": 42.7
+     },
+     {
+      "town": "271284",
+      "legs": [
+       {
+        "mode": "rail",
+        "km": 43.3,
+        "kmKind": "rail",
+        "to": "大阪ビジネスパーク"
+       }
+      ],
+      "km": 43.3
+     },
+     {
+      "town": "282049",
+      "legs": [
+       {
+        "mode": "rail",
+        "km": 53.6,
+        "kmKind": "rail",
+        "to": "甲子園"
+       }
+      ],
+      "km": 53.6
+     },
+     {
+      "town": "272183",
+      "legs": [
+       {
+        "mode": "rail",
+        "km": 55.5,
+        "kmKind": "rail",
+        "to": "四条畷"
+       }
+      ],
+      "km": 55.5
+     },
+     {
+      "town": "272051",
+      "legs": [
+       {
+        "mode": "rail",
+        "km": 55.6,
+        "kmKind": "rail",
+        "to": "万博記念公園"
+       }
+      ],
+      "km": 55.6
+     },
+     {
+      "town": "272078",
+      "legs": [
+       {
+        "mode": "rail",
+        "km": 63.2,
+        "kmKind": "rail",
+        "to": "高槻市"
+       }
+      ],
+      "km": 63.2
+     },
+     {
+      "town": "281018",
+      "legs": [
+       {
+        "mode": "rail",
+        "km": 63.7,
+        "kmKind": "rail",
+        "to": "岡本"
+       }
+      ],
+      "km": 63.7
+     },
+     {
+      "town": "292010",
+      "legs": [
+       {
+        "mode": "rail",
+        "km": 68.4,
+        "kmKind": "rail",
+        "to": "近鉄奈良"
+       }
+      ],
+      "km": 68.4
+     },
+     {
+      "town": "281026",
+      "legs": [
+       {
+        "mode": "rail",
+        "km": 69.2,
+        "kmKind": "rail",
+        "to": "王子公園"
+       }
+      ],
+      "km": 69.2
+     },
+     {
+      "town": "292036",
+      "legs": [
+       {
+        "mode": "rail",
+        "km": 69.7,
+        "kmKind": "rail",
+        "to": "近鉄郡山"
+       }
+      ],
+      "km": 69.7
+     },
+     {
+      "town": "281107",
+      "legs": [
+       {
+        "mode": "rail",
+        "km": 70,
+        "kmKind": "rail",
+        "to": "三ノ宮"
+       }
+      ],
+      "km": 70
+     },
+     {
+      "town": "292052",
+      "legs": [
+       {
+        "mode": "rail",
+        "km": 73.4,
+        "kmKind": "rail",
+        "to": "橿原神宮西口"
+       }
+      ],
+      "km": 73.4
+     },
+     {
+      "town": "294021",
+      "legs": [
+       {
+        "mode": "rail",
+        "km": 76.6,
+        "kmKind": "rail",
+        "to": "飛鳥"
+       }
+      ],
+      "km": 76.6
+     },
+     {
+      "town": "292061",
+      "legs": [
+       {
+        "mode": "rail",
+        "km": 79.8,
+        "kmKind": "rail",
+        "to": "三輪"
+       }
+      ],
+      "km": 79.8
+     },
+     {
+      "town": "294012",
+      "legs": [
+       {
+        "mode": "rail",
+        "km": 80.4,
+        "kmKind": "rail",
+        "to": "市尾"
+       }
+      ],
+      "km": 80.4
+     },
+     {
+      "town": "261114",
+      "legs": [
+       {
+        "mode": "rail",
+        "km": 82.9,
+        "kmKind": "rail",
+        "to": "松尾大社"
+       }
+      ],
+      "km": 82.9
+     },
+     {
+      "town": "292044",
+      "legs": [
+       {
+        "mode": "rail",
+        "km": 82.9,
+        "kmKind": "rail",
+        "to": "柳本"
+       }
+      ],
+      "km": 82.9
+     },
+     {
+      "town": "261068",
+      "legs": [
+       {
+        "mode": "rail",
+        "km": 84.9,
+        "kmKind": "rail",
+        "to": "京都",
+        "shinkansen": true
+       }
+      ],
+      "km": 84.9
+     },
+     {
+      "town": "261041",
+      "legs": [
+       {
+        "mode": "rail",
+        "km": 86.3,
+        "kmKind": "rail",
+        "to": "二条城前"
+       }
+      ],
+      "km": 86.3
+     },
+     {
+      "town": "281093",
+      "legs": [
+       {
+        "mode": "rail",
+        "km": 86.9,
+        "kmKind": "rail",
+        "to": "有馬温泉"
+       }
+      ],
+      "km": 86.9
+     },
+     {
+      "town": "261050",
+      "legs": [
+       {
+        "mode": "rail",
+        "km": 87.7,
+        "kmKind": "rail",
+        "to": "祇園四条",
+        "shinkansen": true
+       }
+      ],
+      "km": 87.7
+     },
+     {
+      "town": "282031",
+      "legs": [
+       {
+        "mode": "rail",
+        "km": 89,
+        "kmKind": "rail",
+        "to": "人丸前"
+       }
+      ],
+      "km": 89
+     },
+     {
+      "town": "261084",
+      "legs": [
+       {
+        "mode": "rail",
+        "km": 89.6,
+        "kmKind": "rail",
+        "to": "トロッコ嵐山"
+       }
+      ],
+      "km": 89.6
+     },
+     {
+      "town": "261025",
+      "legs": [
+       {
+        "mode": "rail",
+        "km": 89.7,
+        "kmKind": "rail",
+        "to": "今出川",
+        "shinkansen": true
+       }
+      ],
+      "km": 89.7
+     },
+     {
+      "town": "261017",
+      "legs": [
+       {
+        "mode": "rail",
+        "km": 91.4,
+        "kmKind": "rail",
+        "to": "北大路",
+        "shinkansen": true
+       }
+      ],
+      "km": 91.4
+     },
+     {
+      "town": "294411",
+      "legs": [
+       {
+        "mode": "rail",
+        "km": 95.2,
+        "kmKind": "rail",
+        "to": "吉野"
+       }
+      ],
+      "km": 95.2
+     },
+     {
+      "town": "292125",
+      "legs": [
+       {
+        "mode": "rail",
+        "km": 95.4,
+        "kmKind": "rail",
+        "to": "室生口大野"
+       }
+      ],
+      "km": 95.4
+     },
+     {
+      "town": "261033",
+      "legs": [
+       {
+        "mode": "rail",
+        "km": 102.2,
+        "kmKind": "rail",
+        "to": "鞍馬",
+        "shinkansen": true
+       }
+      ],
+      "km": 102.2
+     },
+     {
+      "town": "282014",
+      "legs": [
+       {
+        "mode": "rail",
+        "km": 125.8,
+        "kmKind": "rail",
+        "to": "京口",
+        "shinkansen": true
+       }
+      ],
+      "km": 125.8
+     },
+     {
+      "town": "262013",
+      "legs": [
+       {
+        "mode": "rail",
+        "km": 150.8,
+        "kmKind": "rail",
+        "to": "福知山"
+       }
+      ],
+      "km": 150.8
+     },
+     {
+      "town": "282120",
+      "legs": [
+       {
+        "mode": "rail",
+        "km": 154.6,
+        "kmKind": "rail",
+        "to": "播州赤穂",
+        "shinkansen": true
+       }
+      ],
+      "km": 154.6
+     },
+     {
+      "town": "282090",
+      "legs": [
+       {
+        "mode": "rail",
+        "km": 249.4,
+        "kmKind": "rail",
+        "to": "城崎温泉"
+       }
+      ],
+      "km": 249.4
+     }
+    ]
+   },
+   {
+    "id": "wd-Q204853",
+    "iata": "HND",
+    "name": "東京国際空港",
+    "short": "羽田",
+    "pref": "tokyo",
+    "hall": "own",
+    "access": [
+     {
+      "town": "131024",
+      "legs": [
+       {
+        "mode": "rail",
+        "km": 18.4,
+        "kmKind": "rail",
+        "to": "銀座"
+       }
+      ],
+      "km": 18.4
+     },
+     {
+      "town": "131016",
+      "legs": [
+       {
+        "mode": "rail",
+        "km": 19,
+        "kmKind": "rail",
+        "to": "東京"
+       }
+      ],
+      "km": 19
+     },
+     {
+      "town": "131032",
+      "legs": [
+       {
+        "mode": "rail",
+        "km": 19.2,
+        "kmKind": "rail",
+        "to": "六本木"
+       }
+      ],
+      "km": 19.2
+     },
+     {
+      "town": "131130",
+      "legs": [
+       {
+        "mode": "rail",
+        "km": 21.2,
+        "kmKind": "rail",
+        "to": "原宿"
+       }
+      ],
+      "km": 21.2
+     },
+     {
+      "town": "131075",
+      "legs": [
+       {
+        "mode": "rail",
+        "km": 21.9,
+        "kmKind": "rail",
+        "to": "両国"
+       }
+      ],
+      "km": 21.9
+     },
+     {
+      "town": "131067",
+      "legs": [
+       {
+        "mode": "rail",
+        "km": 22.1,
+        "kmKind": "rail",
+        "to": "上野"
+       }
+      ],
+      "km": 22.1
+     },
+     {
+      "town": "131041",
+      "legs": [
+       {
+        "mode": "rail",
+        "km": 23.7,
+        "kmKind": "rail",
+        "to": "都庁前"
+       }
+      ],
+      "km": 23.7
+     },
+     {
+      "town": "131059",
+      "legs": [
+       {
+        "mode": "rail",
+        "km": 27.6,
+        "kmKind": "rail",
+        "to": "早稲田"
+       }
+      ],
+      "km": 27.6
+     },
+     {
+      "town": "132012",
+      "legs": [
+       {
+        "mode": "rail",
+        "km": 55.7,
+        "kmKind": "rail",
+        "to": "高尾"
+       }
+      ],
+      "km": 55.7
+     }
+    ]
+   },
+   {
+    "id": "wd-Q255345",
+    "iata": "MYJ",
+    "name": "松山空港",
+    "short": "松山",
+    "pref": "ehime",
+    "hall": null,
+    "access": []
+   },
+   {
+    "id": "wd-Q36454",
+    "iata": "NRT",
+    "name": "成田国際空港",
+    "short": "成田",
+    "pref": "chiba",
+    "hall": null,
+    "access": [
+     {
+      "town": "131075",
+      "legs": [
+       {
+        "mode": "rail",
+        "km": 61,
+        "kmKind": "rail",
+        "to": "両国"
+       }
+      ],
+      "km": 61
+     },
+     {
+      "town": "131067",
+      "legs": [
+       {
+        "mode": "rail",
+        "km": 61.2,
+        "kmKind": "rail",
+        "to": "上野"
+       }
+      ],
+      "km": 61.2
+     },
+     {
+      "town": "131016",
+      "legs": [
+       {
+        "mode": "rail",
+        "km": 63.5,
+        "kmKind": "rail",
+        "to": "東京"
+       }
+      ],
+      "km": 63.5
+     },
+     {
+      "town": "131024",
+      "legs": [
+       {
+        "mode": "rail",
+        "km": 64.3,
+        "kmKind": "rail",
+        "to": "銀座"
+       }
+      ],
+      "km": 64.3
+     },
+     {
+      "town": "131059",
+      "legs": [
+       {
+        "mode": "rail",
+        "km": 67.1,
+        "kmKind": "rail",
+        "to": "早稲田"
+       }
+      ],
+      "km": 67.1
+     },
+     {
+      "town": "131032",
+      "legs": [
+       {
+        "mode": "rail",
+        "km": 67.6,
+        "kmKind": "rail",
+        "to": "六本木"
+       }
+      ],
+      "km": 67.6
+     },
+     {
+      "town": "131041",
+      "legs": [
+       {
+        "mode": "rail",
+        "km": 69.3,
+        "kmKind": "rail",
+        "to": "都庁前"
+       }
+      ],
+      "km": 69.3
+     },
+     {
+      "town": "131130",
+      "legs": [
+       {
+        "mode": "rail",
+        "km": 69.7,
+        "kmKind": "rail",
+        "to": "原宿"
+       }
+      ],
+      "km": 69.7
+     },
+     {
+      "town": "132012",
+      "legs": [
+       {
+        "mode": "rail",
+        "km": 109.1,
+        "kmKind": "rail",
+        "to": "高尾"
+       }
+      ],
+      "km": 109.1
+     }
+    ]
+   },
+   {
+    "id": "wd-Q628429",
+    "iata": "AOJ",
+    "name": "青森空港",
+    "short": "青森",
+    "pref": "aomori",
+    "hall": null,
+    "access": []
+   },
+   {
+    "id": "wd-Q679345",
+    "iata": "NGO",
+    "name": "中部国際空港",
+    "short": "中部",
+    "pref": "aichi",
+    "hall": null,
+    "access": [
+     {
+      "town": "292125",
+      "legs": [
+       {
+        "mode": "rail",
+        "km": 165.7,
+        "kmKind": "rail",
+        "to": "室生口大野"
+       }
+      ],
+      "km": 165.7
+     },
+     {
+      "town": "261050",
+      "legs": [
+       {
+        "mode": "rail",
+        "km": 170.3,
+        "kmKind": "rail",
+        "to": "祇園四条",
+        "shinkansen": true
+       }
+      ],
+      "km": 170.3
+     },
+     {
+      "town": "261041",
+      "legs": [
+       {
+        "mode": "rail",
+        "km": 171.3,
+        "kmKind": "rail",
+        "to": "二条城前",
+        "shinkansen": true
+       }
+      ],
+      "km": 171.3
+     },
+     {
+      "town": "261068",
+      "legs": [
+       {
+        "mode": "rail",
+        "km": 171.9,
+        "kmKind": "rail",
+        "to": "京都",
+        "shinkansen": true
+       }
+      ],
+      "km": 171.9
+     },
+     {
+      "town": "261025",
+      "legs": [
+       {
+        "mode": "rail",
+        "km": 172.8,
+        "kmKind": "rail",
+        "to": "今出川",
+        "shinkansen": true
+       }
+      ],
+      "km": 172.8
+     },
+     {
+      "town": "261017",
+      "legs": [
+       {
+        "mode": "rail",
+        "km": 174.5,
+        "kmKind": "rail",
+        "to": "北大路",
+        "shinkansen": true
+       }
+      ],
+      "km": 174.5
+     },
+     {
+      "town": "261084",
+      "legs": [
+       {
+        "mode": "rail",
+        "km": 178,
+        "kmKind": "rail",
+        "to": "トロッコ嵐山",
+        "shinkansen": true
+       }
+      ],
+      "km": 178
+     },
+     {
+      "town": "261114",
+      "legs": [
+       {
+        "mode": "rail",
+        "km": 180,
+        "kmKind": "rail",
+        "to": "松尾大社",
+        "shinkansen": true
+       }
+      ],
+      "km": 180
+     },
+     {
+      "town": "261033",
+      "legs": [
+       {
+        "mode": "rail",
+        "km": 183.4,
+        "kmKind": "rail",
+        "to": "鞍馬",
+        "shinkansen": true
+       }
+      ],
+      "km": 183.4
+     },
+     {
+      "town": "292061",
+      "legs": [
+       {
+        "mode": "rail",
+        "km": 184.6,
+        "kmKind": "rail",
+        "to": "三輪"
+       }
+      ],
+      "km": 184.6
+     },
+     {
+      "town": "292044",
+      "legs": [
+       {
+        "mode": "rail",
+        "km": 188.3,
+        "kmKind": "rail",
+        "to": "柳本"
+       }
+      ],
+      "km": 188.3
+     },
+     {
+      "town": "292052",
+      "legs": [
+       {
+        "mode": "rail",
+        "km": 192,
+        "kmKind": "rail",
+        "to": "橿原神宮西口"
+       }
+      ],
+      "km": 192
+     },
+     {
+      "town": "294021",
+      "legs": [
+       {
+        "mode": "rail",
+        "km": 193,
+        "kmKind": "rail",
+        "to": "飛鳥"
+       }
+      ],
+      "km": 193
+     },
+     {
+      "town": "272078",
+      "legs": [
+       {
+        "mode": "rail",
+        "km": 193.1,
+        "kmKind": "rail",
+        "to": "高槻市",
+        "shinkansen": true
+       }
+      ],
+      "km": 193.1
+     },
+     {
+      "town": "294012",
+      "legs": [
+       {
+        "mode": "rail",
+        "km": 196.8,
+        "kmKind": "rail",
+        "to": "市尾"
+       }
+      ],
+      "km": 196.8
+     },
+     {
+      "town": "292036",
+      "legs": [
+       {
+        "mode": "rail",
+        "km": 201.5,
+        "kmKind": "rail",
+        "to": "近鉄郡山"
+       }
+      ],
+      "km": 201.5
+     },
+     {
+      "town": "292010",
+      "legs": [
+       {
+        "mode": "rail",
+        "km": 203.2,
+        "kmKind": "rail",
+        "to": "近鉄奈良",
+        "shinkansen": true
+       }
+      ],
+      "km": 203.2
+     },
+     {
+      "town": "272051",
+      "legs": [
+       {
+        "mode": "rail",
+        "km": 204,
+        "kmKind": "rail",
+        "to": "万博記念公園",
+        "shinkansen": true
+       }
+      ],
+      "km": 204
+     },
+     {
+      "town": "272183",
+      "legs": [
+       {
+        "mode": "rail",
+        "km": 204.1,
+        "kmKind": "rail",
+        "to": "四条畷",
+        "shinkansen": true
+       }
+      ],
+      "km": 204.1
+     },
+     {
+      "town": "271284",
+      "legs": [
+       {
+        "mode": "rail",
+        "km": 211.5,
+        "kmKind": "rail",
+        "to": "大阪ビジネスパーク",
+        "shinkansen": true
+       }
+      ],
+      "km": 211.5
+     },
+     {
+      "town": "271276",
+      "legs": [
+       {
+        "mode": "rail",
+        "km": 214.1,
+        "kmKind": "rail",
+        "to": "大阪",
+        "shinkansen": true
+       }
+      ],
+      "km": 214.1
+     },
+     {
+      "town": "294411",
+      "legs": [
+       {
+        "mode": "rail",
+        "km": 215.7,
+        "kmKind": "rail",
+        "to": "吉野"
+       }
+      ],
+      "km": 215.7
+     },
+     {
+      "town": "271098",
+      "legs": [
+       {
+        "mode": "rail",
+        "km": 216.1,
+        "kmKind": "rail",
+        "to": "天王寺",
+        "shinkansen": true
+       }
+      ],
+      "km": 216.1
+     },
+     {
+      "town": "271110",
+      "legs": [
+       {
+        "mode": "rail",
+        "km": 219.4,
+        "kmKind": "rail",
+        "to": "恵美須町",
+        "shinkansen": true
+       }
+      ],
+      "km": 219.4
+     },
+     {
+      "town": "282049",
+      "legs": [
+       {
+        "mode": "rail",
+        "km": 227.2,
+        "kmKind": "rail",
+        "to": "甲子園",
+        "shinkansen": true
+       }
+      ],
+      "km": 227.2
+     },
+     {
+      "town": "281018",
+      "legs": [
+       {
+        "mode": "rail",
+        "km": 233.5,
+        "kmKind": "rail",
+        "to": "岡本",
+        "shinkansen": true
+       }
+      ],
+      "km": 233.5
+     },
+     {
+      "town": "272027",
+      "legs": [
+       {
+        "mode": "rail",
+        "km": 238.5,
+        "kmKind": "rail",
+        "to": "蛸地蔵",
+        "shinkansen": true
+       }
+      ],
+      "km": 238.5
+     },
+     {
+      "town": "281026",
+      "legs": [
+       {
+        "mode": "rail",
+        "km": 239,
+        "kmKind": "rail",
+        "to": "王子公園",
+        "shinkansen": true
+       }
+      ],
+      "km": 239
+     },
+     {
+      "town": "281107",
+      "legs": [
+       {
+        "mode": "rail",
+        "km": 241.7,
+        "kmKind": "rail",
+        "to": "三ノ宮",
+        "shinkansen": true
+       }
+      ],
+      "km": 241.7
+     },
+     {
+      "town": "272132",
+      "legs": [
+       {
+        "mode": "rail",
+        "km": 246.8,
+        "kmKind": "rail",
+        "to": "りんくうタウン",
+        "shinkansen": true
+       }
+      ],
+      "km": 246.8
+     }
+    ]
+   },
+   {
+    "id": "wd-Q82240",
+    "iata": "HIJ",
+    "name": "広島空港",
+    "short": "広島",
+    "pref": "hiroshima",
+    "hall": null,
+    "access": []
+   },
+   {
+    "id": "wd-Q908296",
+    "iata": "CTS",
+    "name": "新千歳空港",
+    "short": "新千歳",
+    "pref": "hokkaido",
+    "hall": {
+     "town": "012246",
+     "stop": "airport"
+    },
+    "access": [
+     {
+      "town": "012246",
+      "legs": [],
+      "km": 0
+     },
+     {
+      "town": "011011",
+      "legs": [
+       {
+        "mode": "rail",
+        "km": 41.3,
+        "kmKind": "rail",
+        "to": "大通"
+       }
+      ],
+      "km": 41.3
+     },
+     {
+      "town": "012033",
+      "legs": [
+       {
+        "mode": "rail",
+        "km": 73.6,
+        "kmKind": "rail",
+        "to": "小樽"
+       }
+      ],
+      "km": 73.6
+     },
+     {
+      "town": "012041",
+      "legs": [
+       {
+        "mode": "rail",
+        "km": 170.3,
+        "kmKind": "rail",
+        "to": "桜岡"
+       }
+      ],
+      "km": 170.3
+     },
+     {
+      "town": "014591",
+      "legs": [
+       {
+        "mode": "rail",
+        "km": 170.3,
+        "kmKind": "rail",
+        "to": "桜岡"
+       },
+       {
+        "mode": "bus",
+        "km": 32.9,
+        "kmKind": "straight",
+        "to": "美瑛町"
+       }
+      ],
+      "km": 203.2
+     },
+     {
+      "town": "012025",
+      "legs": [
+       {
+        "mode": "rail",
+        "km": 272.9,
+        "kmKind": "rail",
+        "to": "函館"
+       }
+      ],
+      "km": 272.9
+     },
+     {
+      "town": "012068",
+      "legs": [
+       {
+        "mode": "rail",
+        "km": 305.9,
+        "kmKind": "rail",
+        "to": "釧路"
+       }
+      ],
+      "km": 305.9
+     },
+     {
+      "town": "012114",
+      "legs": [
+       {
+        "mode": "rail",
+        "km": 393.9,
+        "kmKind": "rail",
+        "to": "桂台"
+       }
+      ],
+      "km": 393.9
+     },
+     {
+      "town": "015458",
+      "legs": [
+       {
+        "mode": "rail",
+        "km": 393.9,
+        "kmKind": "rail",
+        "to": "桂台"
+       },
+       {
+        "mode": "bus",
+        "km": 42.9,
+        "kmKind": "straight",
+        "to": "斜里町"
+       }
+      ],
+      "km": 436.8
+     }
+    ]
+   }
+  ],
+  "routes": [
+   {
+    "city": "台北",
+    "airport": "wd-Q36454",
+    "weekly": 128.5,
+    "airlines": [
+     {
+      "code": "CI",
+      "name": "チャイナ エアライン",
+      "zh": "中華航空",
+      "weekly": 28
+     },
+     {
+      "code": "BR",
+      "name": "エバー航空",
+      "zh": "長榮航空",
+      "weekly": 21
+     },
+     {
+      "code": "JX",
+      "name": "スターラックス航空",
+      "zh": "星宇航空",
+      "weekly": 21
+     },
+     {
+      "code": "MM",
+      "name": "ピーチアビエーション",
+      "zh": "樂桃航空",
+      "weekly": 16.5
+     },
+     {
+      "code": "GK",
+      "name": "ジェットスター・ジャパン",
+      "zh": "捷星日本",
+      "weekly": 14
+     },
+     {
+      "code": "IT",
+      "name": "タイガーエア台湾",
+      "zh": "台灣虎航",
+      "weekly": 14
+     },
+     {
+      "code": "JL",
+      "name": "日本航空",
+      "zh": "日本航空",
+      "weekly": 14
+     }
+    ]
+   },
+   {
+    "city": "台北",
+    "airport": "wd-Q193682",
+    "weekly": 107,
+    "airlines": [
+     {
+      "code": "BR",
+      "name": "エバー航空",
+      "zh": "長榮航空",
+      "weekly": 21
+     },
+     {
+      "code": "CI",
+      "name": "チャイナ エアライン",
+      "zh": "中華航空",
+      "weekly": 21
+     },
+     {
+      "code": "MM",
+      "name": "ピーチアビエーション",
+      "zh": "樂桃航空",
+      "weekly": 21
+     },
+     {
+      "code": "IT",
+      "name": "タイガーエア台湾",
+      "zh": "台灣虎航",
+      "weekly": 16
+     },
+     {
+      "code": "GK",
+      "name": "ジェットスター・ジャパン",
+      "zh": "捷星日本",
+      "weekly": 14
+     },
+     {
+      "code": "JX",
+      "name": "スターラックス航空",
+      "zh": "星宇航空",
+      "weekly": 14
+     }
+    ]
+   },
+   {
+    "city": "台北",
+    "airport": "wd-Q1197455",
+    "weekly": 70,
+    "airlines": [
+     {
+      "code": "MM",
+      "name": "ピーチアビエーション",
+      "zh": "樂桃航空",
+      "weekly": 21
+     },
+     {
+      "code": "BR",
+      "name": "エバー航空",
+      "zh": "長榮航空",
+      "weekly": 14
+     },
+     {
+      "code": "CI",
+      "name": "チャイナ エアライン",
+      "zh": "中華航空",
+      "weekly": 14
+     },
+     {
+      "code": "IT",
+      "name": "タイガーエア台湾",
+      "zh": "台灣虎航",
+      "weekly": 14
+     },
+     {
+      "code": "JX",
+      "name": "スターラックス航空",
+      "zh": "星宇航空",
+      "weekly": 7
+     }
+    ]
+   },
+   {
+    "city": "台北",
+    "airport": "wd-Q204853",
+    "weekly": 70,
+    "airlines": [
+     {
+      "code": "BR",
+      "name": "エバー航空",
+      "zh": "長榮航空",
+      "weekly": 14
+     },
+     {
+      "code": "CI",
+      "name": "チャイナ エアライン",
+      "zh": "中華航空",
+      "weekly": 14
+     },
+     {
+      "code": "JL",
+      "name": "日本航空",
+      "zh": "日本航空",
+      "weekly": 14
+     },
+     {
+      "code": "NH",
+      "name": "全日空",
+      "zh": "全日空",
+      "weekly": 14
+     },
+     {
+      "code": "IT",
+      "name": "タイガーエア台湾",
+      "zh": "台灣虎航",
+      "weekly": 7
+     },
+     {
+      "code": "MM",
+      "name": "ピーチアビエーション",
+      "zh": "樂桃航空",
+      "weekly": 7
+     }
+    ]
+   },
+   {
+    "city": "台北",
+    "airport": "wd-Q1137465",
+    "weekly": 52,
+    "airlines": [
+     {
+      "code": "CI",
+      "name": "チャイナ エアライン",
+      "zh": "中華航空",
+      "weekly": 19
+     },
+     {
+      "code": "BR",
+      "name": "エバー航空",
+      "zh": "長榮航空",
+      "weekly": 14
+     },
+     {
+      "code": "IT",
+      "name": "タイガーエア台湾",
+      "zh": "台灣虎航",
+      "weekly": 12
+     },
+     {
+      "code": "JX",
+      "name": "スターラックス航空",
+      "zh": "星宇航空",
+      "weekly": 7
+     }
+    ]
+   },
+   {
+    "city": "台北",
+    "airport": "wd-Q679345",
+    "weekly": 40,
+    "airlines": [
+     {
+      "code": "CI",
+      "name": "チャイナ エアライン",
+      "zh": "中華航空",
+      "weekly": 14
+     },
+     {
+      "code": "IT",
+      "name": "タイガーエア台湾",
+      "zh": "台灣虎航",
+      "weekly": 7
+     },
+     {
+      "code": "JX",
+      "name": "スターラックス航空",
+      "zh": "星宇航空",
+      "weekly": 7
+     },
+     {
+      "code": "MM",
+      "name": "ピーチアビエーション",
+      "zh": "樂桃航空",
+      "weekly": 7
+     },
+     {
+      "code": "JL",
+      "name": "日本航空",
+      "zh": "日本航空",
+      "weekly": 5
+     }
+    ]
+   },
+   {
+    "city": "台北",
+    "airport": "wd-Q908296",
+    "weekly": 29,
+    "airlines": [
+     {
+      "code": "BR",
+      "name": "エバー航空",
+      "zh": "長榮航空",
+      "weekly": 8
+     },
+     {
+      "code": "CI",
+      "name": "チャイナ エアライン",
+      "zh": "中華航空",
+      "weekly": 7
+     },
+     {
+      "code": "IT",
+      "name": "タイガーエア台湾",
+      "zh": "台灣虎航",
+      "weekly": 7
+     },
+     {
+      "code": "JX",
+      "name": "スターラックス航空",
+      "zh": "星宇航空",
+      "weekly": 7
+     }
+    ]
+   },
+   {
+    "city": "台北",
+    "airport": "wd-Q1054857",
+    "weekly": 17,
+    "airlines": [
+     {
+      "code": "BR",
+      "name": "エバー航空",
+      "zh": "長榮航空",
+      "weekly": 7
+     },
+     {
+      "code": "JX",
+      "name": "スターラックス航空",
+      "zh": "星宇航空",
+      "weekly": 7
+     },
+     {
+      "code": "IT",
+      "name": "タイガーエア台湾",
+      "zh": "台灣虎航",
+      "weekly": 3
+     }
+    ]
+   },
+   {
+    "city": "台北",
+    "airport": "wd-Q1199773",
+    "weekly": 12,
+    "airlines": [
+     {
+      "code": "JX",
+      "name": "スターラックス航空",
+      "zh": "星宇航空",
+      "weekly": 7
+     },
+     {
+      "code": "CI",
+      "name": "チャイナ エアライン",
+      "zh": "中華航空",
+      "weekly": 5
+     }
+    ]
+   },
+   {
+    "city": "台北",
+    "airport": "wd-Q1141511",
+    "weekly": 9,
+    "airlines": [
+     {
+      "code": "BR",
+      "name": "エバー航空",
+      "zh": "長榮航空",
+      "weekly": 7
+     },
+     {
+      "code": "IT",
+      "name": "タイガーエア台湾",
+      "zh": "台灣虎航",
+      "weekly": 2
+     }
+    ]
+   },
+   {
+    "city": "台北",
+    "airport": "wd-Q1322391",
+    "weekly": 9,
+    "airlines": [
+     {
+      "code": "IT",
+      "name": "タイガーエア台湾",
+      "zh": "台灣虎航",
+      "weekly": 9
+     }
+    ]
+   },
+   {
+    "city": "台北",
+    "airport": "wd-Q1155685",
+    "weekly": 8,
+    "airlines": [
+     {
+      "code": "IT",
+      "name": "タイガーエア台湾",
+      "zh": "台灣虎航",
+      "weekly": 5
+     },
+     {
+      "code": "JX",
+      "name": "スターラックス航空",
+      "zh": "星宇航空",
+      "weekly": 3
+     }
+    ]
+   },
+   {
+    "city": "台北",
+    "airport": "wd-Q1334603",
+    "weekly": 7,
+    "airlines": [
+     {
+      "code": "CI",
+      "name": "チャイナ エアライン",
+      "zh": "中華航空",
+      "weekly": 7
+     }
+    ]
+   },
+   {
+    "city": "台北",
+    "airport": "wd-Q628429",
+    "weekly": 7,
+    "airlines": [
+     {
+      "code": "BR",
+      "name": "エバー航空",
+      "zh": "長榮航空",
+      "weekly": 7
+     }
+    ]
+   },
+   {
+    "city": "台北",
+    "airport": "wd-Q255345",
+    "weekly": 5,
+    "airlines": [
+     {
+      "code": "BR",
+      "name": "エバー航空",
+      "zh": "長榮航空",
+      "weekly": 5
+     }
+    ]
+   },
+   {
+    "city": "台北",
+    "airport": "wd-Q82240",
+    "weekly": 5,
+    "airlines": [
+     {
+      "code": "CI",
+      "name": "チャイナ エアライン",
+      "zh": "中華航空",
+      "weekly": 5
+     }
+    ]
+   },
+   {
+    "city": "台北",
+    "airport": "wd-Q1156310",
+    "weekly": 3,
+    "airlines": [
+     {
+      "code": "CI",
+      "name": "チャイナ エアライン",
+      "zh": "中華航空",
+      "weekly": 3
+     }
+    ]
+   },
+   {
+    "city": "台北",
+    "airport": "wd-Q1366663",
+    "weekly": 3,
+    "airlines": [
+     {
+      "code": "IT",
+      "name": "タイガーエア台湾",
+      "zh": "台灣虎航",
+      "weekly": 3
+     }
+    ]
+   },
+   {
+    "city": "台北",
+    "airport": "wd-Q11434817",
+    "weekly": 2,
+    "airlines": [
+     {
+      "code": "IT",
+      "name": "タイガーエア台湾",
+      "zh": "台灣虎航",
+      "weekly": 2
+     }
+    ]
+   },
+   {
+    "city": "台北",
+    "airport": "wd-Q1191625",
+    "weekly": 2,
+    "airlines": [
+     {
+      "code": "CI",
+      "name": "チャイナ エアライン",
+      "zh": "中華航空",
+      "weekly": 2
+     }
+    ]
+   },
+   {
+    "city": "台北",
+    "airport": "wd-Q1197536",
+    "weekly": 2,
+    "airlines": [
+     {
+      "code": "IT",
+      "name": "タイガーエア台湾",
+      "zh": "台灣虎航",
+      "weekly": 2
+     }
+    ]
+   },
+   {
+    "city": "台北",
+    "airport": "wd-Q1320088",
+    "weekly": 2,
+    "airlines": [
+     {
+      "code": "IT",
+      "name": "タイガーエア台湾",
+      "zh": "台灣虎航",
+      "weekly": 2
+     }
+    ]
+   },
+   {
+    "city": "台北",
+    "airport": "wd-Q1378640",
+    "weekly": 2,
+    "airlines": [
+     {
+      "code": "IT",
+      "name": "タイガーエア台湾",
+      "zh": "台灣虎航",
+      "weekly": 2
+     }
+    ]
+   },
+   {
+    "city": "台中",
+    "airport": "wd-Q1197455",
+    "weekly": 16,
+    "airlines": [
+     {
+      "code": "JX",
+      "name": "スターラックス航空",
+      "zh": "星宇航空",
+      "weekly": 14
+     },
+     {
+      "code": "IT",
+      "name": "タイガーエア台湾",
+      "zh": "台灣虎航",
+      "weekly": 2
+     }
+    ]
+   },
+   {
+    "city": "台中",
+    "airport": "wd-Q36454",
+    "weekly": 4,
+    "airlines": [
+     {
+      "code": "JX",
+      "name": "スターラックス航空",
+      "zh": "星宇航空",
+      "weekly": 4
+     }
+    ]
+   },
+   {
+    "city": "台中",
+    "airport": "wd-Q679345",
+    "weekly": 3,
+    "airlines": [
+     {
+      "code": "IT",
+      "name": "タイガーエア台湾",
+      "zh": "台灣虎航",
+      "weekly": 3
+     }
+    ]
+   },
+   {
+    "city": "高雄",
+    "airport": "wd-Q36454",
+    "weekly": 42,
+    "airlines": [
+     {
+      "code": "CI",
+      "name": "チャイナ エアライン",
+      "zh": "中華航空",
+      "weekly": 14
+     },
+     {
+      "code": "BR",
+      "name": "エバー航空",
+      "zh": "長榮航空",
+      "weekly": 7
+     },
+     {
+      "code": "GK",
+      "name": "ジェットスター・ジャパン",
+      "zh": "捷星日本",
+      "weekly": 7
+     },
+     {
+      "code": "IT",
+      "name": "タイガーエア台湾",
+      "zh": "台灣虎航",
+      "weekly": 7
+     },
+     {
+      "code": "UA",
+      "name": "ユナイテッド航空",
+      "zh": "聯合航空",
+      "weekly": 7
+     }
+    ]
+   },
+   {
+    "city": "高雄",
+    "airport": "wd-Q193682",
+    "weekly": 35,
+    "airlines": [
+     {
+      "code": "BR",
+      "name": "エバー航空",
+      "zh": "長榮航空",
+      "weekly": 11
+     },
+     {
+      "code": "CI",
+      "name": "チャイナ エアライン",
+      "zh": "中華航空",
+      "weekly": 10
+     },
+     {
+      "code": "IT",
+      "name": "タイガーエア台湾",
+      "zh": "台灣虎航",
+      "weekly": 7
+     },
+     {
+      "code": "MM",
+      "name": "ピーチアビエーション",
+      "zh": "樂桃航空",
+      "weekly": 7
+     }
+    ]
+   },
+   {
+    "city": "高雄",
+    "airport": "wd-Q1197455",
+    "weekly": 15,
+    "airlines": [
+     {
+      "code": "IT",
+      "name": "タイガーエア台湾",
+      "zh": "台灣虎航",
+      "weekly": 9
+     },
+     {
+      "code": "CI",
+      "name": "チャイナ エアライン",
+      "zh": "中華航空",
+      "weekly": 6
+     }
+    ]
+   },
+   {
+    "city": "高雄",
+    "airport": "wd-Q1137465",
+    "weekly": 13,
+    "airlines": [
+     {
+      "code": "BR",
+      "name": "エバー航空",
+      "zh": "長榮航空",
+      "weekly": 7
+     },
+     {
+      "code": "CI",
+      "name": "チャイナ エアライン",
+      "zh": "中華航空",
+      "weekly": 3
+     },
+     {
+      "code": "IT",
+      "name": "タイガーエア台湾",
+      "zh": "台灣虎航",
+      "weekly": 3
+     }
+    ]
+   },
+   {
+    "city": "高雄",
+    "airport": "wd-Q1199773",
+    "weekly": 4,
+    "airlines": [
+     {
+      "code": "CI",
+      "name": "チャイナ エアライン",
+      "zh": "中華航空",
+      "weekly": 4
+     }
+    ]
+   },
+   {
+    "city": "高雄",
+    "airport": "wd-Q1054857",
+    "weekly": 3,
+    "airlines": [
+     {
+      "code": "IT",
+      "name": "タイガーエア台湾",
+      "zh": "台灣虎航",
+      "weekly": 3
+     }
+    ]
+   },
+   {
+    "city": "高雄",
+    "airport": "wd-Q679345",
+    "weekly": 3,
+    "airlines": [
+     {
+      "code": "IT",
+      "name": "タイガーエア台湾",
+      "zh": "台灣虎航",
+      "weekly": 3
+     }
+    ]
+   },
+   {
+    "city": "高雄",
+    "airport": "wd-Q908296",
+    "weekly": 3,
+    "airlines": [
+     {
+      "code": "IT",
+      "name": "タイガーエア台湾",
+      "zh": "台灣虎航",
+      "weekly": 3
+     }
+    ]
+   }
+  ]
+ }
 }

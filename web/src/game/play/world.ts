@@ -177,12 +177,17 @@ function made(make: () => GameWorld, prefs: PrefData[], errors: WorldDataError[]
  * 存檔要哪幾縣（P3）：need＝繼續之前一定要讀好的（存檔所在的鎮；在你的房間時是房間出口那一間旅館的鎮），
  * also＝去過的縣（行李裡的特色、印帳、聽來的、委託要那一縣的資料才寫得出名字），背景讀。
  * prefOf：鎮（市区町村碼）→ 縣（world.prefOfTown：讀進來的、世界索引的）。
+ * hallPref（P4）：不在任何鎮上的機場大廳（air:KIX…）→ 機場所在的縣（賣店賣那一縣的東西）；台灣的大廳不要哪一縣。
  */
-export function savePrefs(save: SaveData | null | undefined, prefOf: (town: string) => string | null): { need: string[]; also: string[] } {
+export function savePrefs(
+  save: SaveData | null | undefined,
+  prefOf: (town: string) => string | null,
+  hallPref?: (mapId: string) => string | null,
+): { need: string[]; also: string[] } {
   if (!save) return { need: [], also: [] }
   const ofMap = (m: string | null | undefined) => {
     const code = townCodeOfMap(m)
-    return code ? prefOf(code) : null
+    return code ? prefOf(code) : m && hallPref ? hallPref(m) : null
   }
   const sys = (save.ext?.systems ?? null) as Partial<SystemsSave> | null
   const lastInn = (save.ext?.world as { lastInn?: string } | undefined)?.lastInn

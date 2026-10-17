@@ -124,7 +124,8 @@ export function scoreShot(i: ShotInput): ShotScore {
 // ---------- 取景框 ----------
 /** 兩段變焦：全畫面、中間放大一半（框是畫面的三分之二） */
 export type Zoom = 1 | 2
-export const ZOOM_LABEL: Record<Zoom, string> = { 1: 'X1', 2: 'X1.5' }
+/** 角上的變焦（點陣字的 ×，比 X 小：不會看成按鍵 X） */
+export const ZOOM_LABEL: Record<Zoom, string> = { 1: '×1', 2: '×1.5' }
 
 export function frameSize(W: number, H: number, zoom: Zoom): { w: number; h: number } {
   return zoom === 1 ? { w: W, h: H } : { w: Math.round((W * 2) / 3), h: Math.round((H * 2) / 3) }

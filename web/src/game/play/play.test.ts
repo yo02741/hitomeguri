@@ -77,7 +77,8 @@ describe('/play 的世界', () => {
     expect(game.continueGame()).toBe(true)
     expect(game.map?.id).toBe(world.start.map)
     expect([game.player.x, game.player.y]).toEqual([world.start.x, world.start.y])
-    expect(game.state.money).toBe(2400)
+    // P4：旅費換成円（2400 文 ×10＝24,000 円，至少 50,000 円）
+    expect(game.state.money).toBe(50000)
     expect(game.state.items['game:tenugui']).toBe(1)
     expect(game.state.flags['town.met']).toBe(true)
     expect(game.settings.alwaysRun).toBe(true)

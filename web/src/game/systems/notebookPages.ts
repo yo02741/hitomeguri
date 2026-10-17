@@ -12,6 +12,7 @@ import {
   type QuestEntry,
   type StampEntry,
 } from '../ui/notebook'
+import { isAbroadMap } from '../world/abroad'
 
 import { type DataIndex, parseDayKey, prefName, townCodeOfMap } from './data'
 import type { GameSystems } from './install'
@@ -22,6 +23,7 @@ import { PHOTO_SLOTS, SLOT_LABEL, systemsOf } from './state'
 import { stampBook } from './stamps'
 import { firstSentence, sourceOf } from './summary'
 import { thumbUrl } from './photoStore'
+import { walletOf } from './wallet'
 
 /**
  * 旅人手帳的頁（ui/notebook.ts 的 provideNotebook）：地圖（兩縣的鎮、去過的、現在在哪）、印帳、相簿、
@@ -51,7 +53,9 @@ const prefOrder = (sys: GameSystems) => sys.data.gamePrefs()
 
 function mapPage(sys: GameSystems, base: MapPageData): MapPageData {
   const s = systemsOf(sys.game)
-  const here = townCodeOfMap(sys.game.map?.id) ?? s.lastTown ?? null
+  // 機場的大廳（台灣的出發大廳、日本的機場大廳）不在任何鎮上：沒有「現在在這裡」的鎮（跟 townHere 一樣）
+  const mapId = sys.game.map?.id
+  const here = isAbroadMap(mapId) ? null : (townCodeOfMap(mapId) ?? s.lastTown ?? null)
   const towns = sys.data.allTowns()
   const prefs: MapPref[] = []
   for (const pref of [...new Set([...prefOrder(sys), ...towns.map((t) => t.pref)])]) {
@@ -115,7 +119,8 @@ function bagPage(sys: GameSystems) {
     eaten.push({ id, name: card.name, count: m.n, kind: card.kind, source: card.source, card, date: parseDayKey(m.d) ?? undefined })
   }
   eaten.sort((a, b) => (a.date && b.date ? Date.UTC(b.date.y, b.date.m - 1, b.date.d) - Date.UTC(a.date.y, a.date.m - 1, a.date.d) : 0))
-  return { money: g.state.money, items, eaten }
+  // P4：現金與刷卡累計（円）。money 照舊是現金（ui/notebook.ts 的 BagPageData）；wallet 給 WalletLine.vue
+  return { money: g.state.money, items, eaten, wallet: walletOf(g) }
 }
 
 function heardPage(sys: GameSystems): HeardPageData {

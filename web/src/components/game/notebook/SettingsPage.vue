@@ -9,7 +9,8 @@ import { TEXT_SPEED_LABEL, TEXT_SPEEDS, type TextSpeed } from '../../../game/ui/
 
 import { useRows } from './rows'
 
-// 手帳「設定」：音樂、效果音的音量（最左一格是「關」，各自靜音）、打字聲、文字速度（慢、一般、快、立即）、一直跑。
+// 手帳「設定」：音樂、效果音的音量（最左一格是「關」，各自靜音）、打字聲、文字速度（慢、一般、快、立即）、一直跑、
+// 按鍵提示（P4：桌機畫面下面的提示列、手機上情境時亮的鈕）、小地圖（P4：右上角的小框；M 鍵也能切）。
 // 十字鍵上下選一列、左右改；滑鼠點格子也可以。聲音的設定存在聲音那邊，文字速度與一直跑存在介面的設定（都在這台裝置）。
 // 最下面一行小字列出鍵盤的鍵位（只有鍵盤的裝置才列）。
 const ui = inject(GAME_UI)!
@@ -69,6 +70,11 @@ function setRun(on: boolean) {
   ui.setUi({ alwaysRun: on })
   ui.sfx('cursor')
 }
+function setFlag(k: 'hints' | 'minimap', on: boolean) {
+  if (ui.ui[k] === on) return
+  ui.setUi(k === 'hints' ? { hints: on } : { minimap: on })
+  ui.sfx('cursor')
+}
 const speedEls = ref<HTMLButtonElement[]>([])
 function setSpeed(s: TextSpeed, focus = false) {
   if (ui.ui.textSpeed !== s) {
@@ -94,6 +100,10 @@ function press(b: Button): boolean {
   }
   if (row === 'run' && (lr || b === 'A')) {
     setRun(b === 'A' ? !ui.ui.alwaysRun : b === 'right')
+    return true
+  }
+  if ((row === 'hints' || row === 'minimap') && (lr || b === 'A')) {
+    setFlag(row, b === 'A' ? !ui.ui[row] : b === 'right')
     return true
   }
   if (row === 'speed' && lr) {
@@ -166,7 +176,21 @@ const BUSES: Array<{ bus: AudioBus; label: string }> = [
       </button>
     </div>
 
-    <p v-if="!touch" class="nb-sub set-keys">方向鍵 走　Z 確定　X 取消／按住跑　C 相機　Esc 旅人手帳　P 暫停</p>
+    <div class="set-row" data-row="hints">
+      <span id="set-hints" class="set-label">按鍵提示</span>
+      <button type="button" role="switch" class="set-switch" :aria-checked="ui.ui.hints" aria-labelledby="set-hints" @click="setFlag('hints', !ui.ui.hints)">
+        {{ ui.ui.hints ? '開' : '關' }}
+      </button>
+    </div>
+
+    <div class="set-row" data-row="minimap">
+      <span id="set-minimap" class="set-label">小地圖</span>
+      <button type="button" role="switch" class="set-switch" :aria-checked="ui.ui.minimap" aria-labelledby="set-minimap" @click="setFlag('minimap', !ui.ui.minimap)">
+        {{ ui.ui.minimap ? '開' : '關' }}
+      </button>
+    </div>
+
+    <p v-if="!touch" class="nb-sub set-keys">方向鍵 走　Z 查看・確定　X 返回／按住跑　C 相機　Q、Esc 旅人手帳　M 小地圖　P 暫停</p>
   </div>
 </template>
 

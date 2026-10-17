@@ -17,6 +17,7 @@ import {
 } from '../../services/bundles'
 import type { RailGraphBundle } from '../../services/daytrip'
 
+import { parseAbroad } from './abroad'
 import { municipalityAt } from './geo'
 import { type PrefData, type PrefMunicipality, type PrefRaw, type PrefSpot, WORLD_INDEX_VERSION, type WorldIndex, type WorldIndexLink, type WorldIndexPref, type WorldIndexTown } from './types'
 
@@ -283,7 +284,9 @@ export function parseWorldIndex(raw: unknown): WorldIndex | null {
   if (!prefs.some((p) => p.pref === raw.start)) return null
   const known = new Set(prefs.flatMap((p) => p.towns.map((t) => t.id)))
   const links = (Array.isArray(raw.links) ? raw.links : []).filter(linkOk).filter((l) => known.has(l.from) && known.has(l.to))
-  return { v: WORLD_INDEX_VERSION, start: raw.start, ...(isObj(raw.attribution) ? { attribution: raw.attribution as WorldIndex['attribution'] } : {}), prefs, links }
+  // P4：台灣出發的直飛航線（沒有、壞掉就當作沒有：新遊戲照舊從京都駅開始）
+  const taiwan = parseAbroad(raw.taiwan)
+  return { v: WORLD_INDEX_VERSION, start: raw.start, ...(isObj(raw.attribution) ? { attribution: raw.attribution as WorldIndex['attribution'] } : {}), prefs, links, ...(taiwan ? { taiwan } : {}) }
 }
 
 /** 世界索引：索引裡沒有（舊的 bundles）回 null；讀的錯丟出去（呼叫的人決定要不要退回 P2 的世界） */

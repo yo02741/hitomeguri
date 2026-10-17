@@ -4,8 +4,11 @@ import '../components/game/gba.css'
 import { computed, nextTick, onBeforeUnmount, onMounted, provide, reactive, ref, shallowRef, watch } from 'vue'
 
 import DialogBox from '../components/game/DialogBox.vue'
+import HintBar from '../components/game/HintBar.vue'
+import MiniMap from '../components/game/MiniMap.vue'
 import Notebook from '../components/game/Notebook.vue'
 import PlaceSign from '../components/game/PlaceSign.vue'
+import PlaceToast from '../components/game/PlaceToast.vue'
 import SystemsLayer from '../components/game/SystemsLayer.vue'
 import TitleScreen from '../components/game/TitleScreen.vue'
 import TouchPad from '../components/game/TouchPad.vue'
@@ -14,8 +17,11 @@ import { useTravellerSprites } from '../game/avatar'
 import { type AskEvent, Game, type SayEvent } from '../game/engine'
 import type { MapSource } from '../game/engine/game'
 import { type Button, KEYMAP } from '../game/engine/input'
+import type { MapView } from '../game/engine/map'
+import { buildMinimap, type Minimap } from '../game/engine/minimap'
+import { type Place, placesOf, placeSub } from '../game/engine/places'
 import { localStore, saveKey } from '../game/engine/save'
-import { type Dir, type MapName, passable, VIEW_H } from '../game/engine/types'
+import { type Dir, type GameMap, type MapName, passable, VIEW_H } from '../game/engine/types'
 import type { FlavourBloom } from '../game/content/flavour'
 import { arrivalJingle, loadPlayWorld, playMaps, savePrefs, setKitStaleHandler, visitedPrefs } from '../game/play/world'
 import { registerDefaultLooks } from '../game/sprites'
@@ -23,13 +29,15 @@ import { useGameSystems } from '../game/systems'
 import { GAME_UI, type GameUiContext } from '../game/ui/context'
 import type { DialogLine } from '../game/ui/dialog'
 import { loadGameFont } from '../game/ui/font'
+import { FacingSettle, facingOf, type HintCtx, hintKeyOf, hintsFor, hintsSpoken, touchCue } from '../game/ui/hints'
 import { fitScreen, type Layout, layoutOf } from '../game/ui/layout'
-import { notebookData, type NotebookData, type NotebookPageId } from '../game/ui/notebook'
+import { NOTICE_SHOW_MS, PlaceNotice } from '../game/ui/nearby'
+import { notebookData, type NotebookData, type NotebookPageId, type TownChart } from '../game/ui/notebook'
 import { loadUi, saveUi, toEngine, uiStorage, type UiSettings } from '../game/ui/settings'
 import { moodOf, sfxOf, songOf } from '../game/ui/sound'
 import { charsPerSecond } from '../game/ui/text'
 import { gateStore, type SaveLoad, type TitleChoice } from '../game/ui/title'
-import { BUNDLES, CANNOT_GO, type GameWorld, type PrefData, RELOAD_FIRST } from '../game/world'
+import { airportOfMap, BUNDLES, CANNOT_GO, type GameWorld, type PrefData, RELOAD_FIRST } from '../game/world'
 import { forgetReload, reloadOnce } from '../services/pageLoad'
 import { prefetchedGame } from '../services/playPrefetch'
 import { readTokens } from '../services/pixelwalk/palette'
@@ -40,9 +48,13 @@ import { useUserStore } from '../stores/user'
 // 遊戲本身是 game/engine 的 Game（不碰 DOM）；這一頁把它的事件接到介面元件（components/game/），把按鍵交給它。
 // 版面：桌機畫面置中；手機直拿畫面在上、控制區在下；打橫十字鍵與 A/B 分到畫面兩側（game/ui/layout.ts）。
 // 頁面本身不捲動。標題畫面後面就是遊戲自己在走（存檔用 gateStore 擋住，按開始／繼續才寫）。
-// 世界（P2，規格 §8）：京都、沖繩的 bundles 讀進來（game/play/world.ts）→ 鎮、室內、你的房間；新遊戲從京都駅的大廳開始。
+// 世界（P2，規格 §8）：京都、沖繩的 bundles 讀進來（game/play/world.ts）→ 鎮、室內、你的房間；新遊戲從京都駅的大廳開始（P4 起從台灣的機場出發大廳）。
 // P3（規格 §12）：一開始只讀世界索引＋京都；存檔在別的縣時標題畫面先讀那一縣（讀取中），坐車到別的縣時車窗裡讀。
 // 系統（拍照、店、印、房間、委託）：useGameSystems＋SystemsLayer。資料還在讀、讀不到時標題畫面只寫一行。
+// P4（規格 §13 的 1、2）：桌機畫面下面的按鍵提示列（HintBar，情境照 game/ui/hints.ts；手機改成亮鈕、換鈕上的字）、
+// 走近地標時上方中間浮出的地名（PlaceToast，game/ui/nearby.ts）、右上角的小地圖（MiniMap，M 鍵、小鈕、設定）、
+// 手帳「地圖」頁的這一鎮全圖（notebook 的 map.chart）。
+// P4（規格 §13 的 3、4）：旅費是円（現金＋刷卡，systems/wallet.ts）；新遊戲從台灣的機場出發大廳開始（systems.startInTaiwan）。
 const reduced = typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches
 const coarse = typeof window !== 'undefined' ? window.matchMedia('(pointer: coarse)') : null
 /** 打開手帳時聲音也停（規格 §6）。false：手帳裡照樣有游標聲、存檔聲，鎮曲壓低（MENU_DIM）不停 */
@@ -59,6 +71,7 @@ const canvas = ref<HTMLCanvasElement | null>(null)
 const dialogRef = ref<InstanceType<typeof DialogBox> | null>(null)
 const notebookRef = ref<InstanceType<typeof Notebook> | null>(null)
 const titleRef = ref<InstanceType<typeof TitleScreen> | null>(null)
+const sysRef = ref<InstanceType<typeof SystemsLayer> | null>(null)
 
 const scale = ref(3)
 const width = ref(240)
@@ -274,6 +287,7 @@ function frame(now: number) {
     n++
   }
   if (n === 6) acc = 0
+  if (n > 0) hudTick(game, now)
   // 停住（手帳、P 暫停、減少動態的標題畫面）時世界不動：有變動才畫（取景框、面板的 'systems' 照畫，框會動）
   const still = game.paused && !pauseReasons.includes('systems')
   if (n > 0 && (!still || dirty)) paint()
@@ -315,6 +329,7 @@ function attract(dt: number) {
 function hideSign() {
   clearTimeout(signTimer)
   sign.value = null
+  pendingToast = null
 }
 /** aria-live：同一句再來一次也要讀（先清空、下一格再放進去，內容沒變讀屏就不會讀） */
 function announce(target: typeof liveLine, text: string) {
@@ -325,15 +340,239 @@ function showSign(name: MapName) {
   sign.value = { name, n: (sign.value?.n ?? 0) + 1 }
   announce(livePlace, name.zh && name.zh !== name.ja ? `${name.ja}，${name.zh}` : name.ja)
   clearTimeout(signTimer)
-  signTimer = window.setTimeout(() => (sign.value = null), 3000)
+  pendingToast = null
+  signTimer = window.setTimeout(() => {
+    sign.value = null
+    flushToast()
+  }, 3000)
 }
-// 一到就打開取景框、賣店：地名牌先收起來（不跟取景框左上角的名字疊在一起）
+// 一到就打開取景框、賣店：地名牌、地標的名字先收起來（不跟取景框左上角的名字疊在一起）
 watch(
   () => systems.value?.ui.panel?.kind ?? null,
   (k) => {
-    if (k) hideSign()
+    if (!k) return
+    hideSign()
+    hideToast()
   },
 )
+
+// ---------- P4：地標的名字、小地圖、按鍵提示 ----------
+/** 每張地圖的地名與小地圖（同一張地圖物件只算一次） */
+interface HudMap {
+  places: Place[]
+  mini: Minimap
+}
+const hudMaps = new WeakMap<GameMap, HudMap>()
+/** 室內地圖的名字（門 → 茶屋、食堂、旅館…）：直接看生成好的鎮（不經 mapSource：那裡會記下「最後住的旅館」） */
+function interiorName(id: string): MapName | null {
+  const w = world
+  const town = w?.townOf(id)
+  return (town ? w!.generate(town.id)?.interiors.get(id)?.name : null) ?? null
+}
+function hudMapOf(map: GameMap, view: MapView | null): HudMap {
+  let h = hudMaps.get(map)
+  if (!h) {
+    const places = placesOf(map, interiorName)
+    h = { places, mini: buildMinimap(map, places, view ?? undefined) }
+    hudMaps.set(map, h)
+  }
+  return h
+}
+
+const notice = new PlaceNotice()
+const mini = shallowRef<Minimap | null>(null)
+const miniPlayer = shallowRef<{ x: number; y: number; dir: Dir }>({ x: 0, y: 0, dir: 'down' })
+/** 淡出淡入、坐車的車窗、取景框：小地圖與地標的名字先不出來（DOM 不會跟著畫面變暗） */
+const hudBlocked = ref(false)
+const toast = shallowRef<{ place: Place; n: number } | null>(null)
+let toastTimer = 0
+let toastSeq = 0
+/** 左上的地名牌還在的時候走近的地方：牌子收起來、人還在那裡時再浮出 */
+let pendingToast: Place | null = null
+
+/** 小地圖最多看得到幾格：寬的畫面 48，窄的（直拿的手機）40；直拿畫面變高時多看幾列 */
+const miniView = computed(() => ({ w: width.value >= 220 ? 48 : 40, h: height.value >= 200 ? 40 : 32 }))
+const miniShown = computed(() => mode.value === 'play' && !!mini.value && !hudBlocked.value && !(line.value?.kind === 'ask' && line.value.options.length > 3))
+/** 小地圖佔的地方（邏輯像素，含框與地名那一行；收起來是一個小鈕） */
+const miniBox = computed(() => (ui.minimap ? { w: miniView.value.w + 4, h: miniView.value.h + 4 + 7 } : { w: 12, h: 12 }))
+/** 「拍照」放在小地圖下面 */
+const photoHintTop = computed(() => (miniShown.value ? 4 + miniBox.value.h + 3 : undefined))
+/**
+ * 地標的名字：上方中間；右上有小地圖時左右各讓出小地圖的寬。放不下（直拿的手機）就靠左上、讓出小地圖：
+ * 那時左上的地名牌已經收起來了（牌子還在時名字等著），不放到小地圖下面（那裡是走過去的地標）。
+ */
+const toastPos = computed((): { top: number; max: number; left?: number } => {
+  const W = width.value
+  const side = miniShown.value ? miniBox.value.w + 8 : 4
+  const room = W - 2 * side
+  if (room >= 96) return { top: 4, max: room * scale.value }
+  return { top: 4, left: 4, max: (W - miniBox.value.w - 12) * scale.value }
+})
+
+/** 進一張地圖：這張地圖的地名與小地圖；腳下附近的地方不浮出 */
+function hudEnter(g: Game) {
+  const map = g.map
+  if (!map) return
+  const h = map.outdoor ? hudMapOf(map, g.view) : null
+  mini.value = h?.mini ?? null
+  notice.enter(map.id, h?.places ?? [], g.player.x, g.player.y, performance.now())
+  hideToast()
+  syncMini(g)
+}
+function syncMini(g: Game) {
+  const p = g.player
+  const m = miniPlayer.value
+  if (m.x !== p.x || m.y !== p.y || m.dir !== p.dir) miniPlayer.value = { x: p.x, y: p.y, dir: p.dir }
+  const blocked = g.fadeLevel > 0 || g.overlaid
+  if (blocked !== hudBlocked.value) hudBlocked.value = blocked
+}
+/** 對話、面板、手帳、暫停、坐車時不浮出（讀屏也不跟對話搶） */
+function canToast(): boolean {
+  const g = game
+  return !!g && mode.value === 'play' && !menuOpen.value && !line.value && !systems.value?.ui.panel && !userPaused.value && !g.talking && !hudBlocked.value
+}
+function onHudStep(x: number, y: number) {
+  if (mode.value !== 'play') return
+  const p = notice.step(x, y, performance.now())
+  if (!p || !canToast()) return
+  if (sign.value) {
+    pendingToast = p
+    return
+  }
+  showToast(p)
+}
+function showToast(p: Place) {
+  pendingToast = null
+  toast.value = { place: p, n: ++toastSeq }
+  const sub = placeSub(p.name)
+  announce(livePlace, sub ? `${p.name.ja}，${sub}` : p.name.ja)
+  clearTimeout(toastTimer)
+  toastTimer = window.setTimeout(() => (toast.value = null), NOTICE_SHOW_MS)
+}
+function hideToast() {
+  clearTimeout(toastTimer)
+  toast.value = null
+  pendingToast = null
+}
+/** 左上的地名牌收起來了：等著的地標名字（人還在那裡）再浮出 */
+function flushToast() {
+  const p = pendingToast
+  pendingToast = null
+  if (p && notice.current === p.id && canToast()) showToast(p)
+}
+function toggleMinimap() {
+  uiCtx.setUi({ minimap: !ui.minimap })
+  audio.sfx('cursor')
+}
+/** 點小地圖（收起、打開）：焦點回到畫面（Space、Enter 還是 A） */
+function onMiniToggle() {
+  toggleMinimap()
+  focusCanvas()
+}
+/** M：小地圖（遊戲的按鍵表裡沒有：只是介面的開關）；室內沒有小地圖，不做事 */
+function onMapKey(e: KeyboardEvent) {
+  if (e.code !== 'KeyM' || e.ctrlKey || e.metaKey || e.altKey || e.repeat) return
+  if (mode.value !== 'play' || menuOpen.value || systems.value?.ui.panel || !mini.value) return
+  const el = e.target as HTMLElement | null
+  if (el?.closest?.('input, textarea, select, [contenteditable=""], [contenteditable="true"]')) return
+  e.preventDefault()
+  toggleMinimap()
+}
+
+/** 手帳「地圖」頁的這一鎮全圖：戶外就是這張；室內是那一鎮的戶外，自己在進來的門 */
+function chartNow(): TownChart | null {
+  const g = game
+  const map = g?.map
+  if (!g || !map) return null
+  let out: GameMap | null = map.outdoor ? map : null
+  let here: TownChart['here'] = map.outdoor ? { x: g.player.x, y: g.player.y, dir: g.player.dir } : null
+  if (!out && world) {
+    const town = world.townOf(map.id)
+    out = (town ? world.generate(town.id)?.map : null) ?? null
+    const door = out?.warps.find((x) => x.to === map.id)
+    if (door) here = { x: door.x, y: door.y, dir: 'up' }
+  }
+  if (!out) return null
+  const h = hudMapOf(out, out === map ? g.view : null)
+  const places = [...h.places]
+    .sort((a, b) => a.at.y - b.at.y || a.at.x - b.at.x)
+    .map((p) => ({ id: p.id, kind: p.kind, name: { ...p.name }, x: p.at.x, y: p.at.y }))
+  return { name: { ...out.name }, mini: h.mini, here, places }
+}
+function notebookNow(g: Game): NotebookData {
+  const d = notebookData(g, savedAt.value)
+  d.map = { ...d.map, chart: chartNow() }
+  return d
+}
+
+// 按鍵提示：每幾格看一次現在的情境（遊戲的狀態不是 reactive），變了才換
+const hintCtx = shallowRef<HintCtx>({ at: 'title' })
+let hintKey = hintKeyOf(hintCtx.value)
+let busySince = 0
+let hintTick = 0
+/** 走路時面前的那一個（人或東西）、自己與那個人都停著：同一個在面前停一下提示才亮 */
+let facingWho: unknown = null
+let facingStill = true
+const facingSettle = new FacingSettle()
+const hints = computed(() => hintsFor(hintCtx.value))
+const showHints = computed(() => ui.hints && layout.value === 'desktop' && (mode.value === 'title' || mode.value === 'play') && hints.value.length > 0)
+/** 讀屏：畫面的 aria-describedby（不是 live region，聚焦畫面時讀） */
+const keysText = computed(() => hintsSpoken(hints.value))
+/** 手機：亮的鈕（設定關掉就不亮）、鈕上的字（取景框裡的「拍照」「收起」「變焦」照樣換） */
+const cue = computed(() => {
+  const c = touchCue(hintCtx.value)
+  return ui.hints ? c : { hot: [], labels: c.labels }
+})
+
+function hintNow(): HintCtx {
+  const g = game
+  if (mode.value !== 'play' || !g) return { at: 'title' }
+  if (menuOpen.value) {
+    const st = notebookRef.value?.state()
+    return { at: 'menu', tabs: st?.inTabs ?? true, page: st?.page ?? nbPage.value }
+  }
+  if (userPaused.value) return { at: 'paused' }
+  const sys = systems.value
+  const panel = sys?.ui.panel
+  if (panel) {
+    if (panel.kind === 'viewfinder') return { at: 'panel', panel: panel.kind, zoom: sys!.camera.zoom }
+    // 店的付款、出發看板的哪一頁…：面板元件自己回報（P4）
+    const m = sysRef.value?.panelMode()
+    return m ? { at: 'panel', panel: panel.kind, mode: m } : { at: 'panel', panel: panel.kind }
+  }
+  if (line.value) {
+    const st = dialogRef.value?.state()
+    const last = !st || st.page >= st.pages - 1
+    if (st?.kind === 'ask' && last && !st.typing) return { at: 'ask' }
+    // 最後一頁（只有一頁的也是）：出字中按 Z 是把這頁出完、出完再按是繼續，都寫「繼續」（不先閃一下「下一頁」）
+    return { at: 'say', more: !!st && !last }
+  }
+  if (g.busy || g.paused) return g.busy && g.overlaid ? { at: 'ride' } : { at: 'busy' }
+  const f = g.facing()
+  facingWho = f ? (f.actor ?? f.entity) : null
+  facingStill = !g.player.moving && !f?.actor?.moving
+  return { at: 'walk', facing: facingOf(f?.entity.kind, !!f?.actor), photo: !!sys?.ui.hint, alwaysRun: ui.alwaysRun, map: !!g.map?.outdoor }
+}
+/** 腳本、淡出淡入（busy）時不馬上清掉：進出門（約 0.5 秒）、對話與對話之間一下下的空檔不閃 */
+const BUSY_HOLD_MS = 900
+function pollHints(now: number) {
+  facingWho = null
+  facingStill = true
+  const next = hintNow()
+  const c = facingSettle.apply(hintCtx.value, next, facingWho, facingStill, now)
+  if (c.at === 'busy' && hintCtx.value.at !== 'busy') {
+    if (!busySince) busySince = now
+    if (now - busySince < BUSY_HOLD_MS) return
+  } else busySince = 0
+  const k = hintKeyOf(c)
+  if (k === hintKey) return
+  hintKey = k
+  hintCtx.value = c
+}
+function hudTick(g: Game, now: number) {
+  syncMini(g)
+  if (++hintTick % 4 === 0) pollHints(now)
+}
 
 // ---------- 對話 ----------
 function openLine(l: Omit<DialogLine, 'id'>, p: NonNullable<typeof pending>) {
@@ -360,7 +599,7 @@ function openMenu() {
   if (!game) return
   // 印帳、聽來的要那一縣的資料：還沒讀進來（背景讀失敗了）的再讀一次，讀好了手帳跟著換（onPrefs）
   loadVisited()
-  nbData.value = notebookData(game, savedAt.value)
+  nbData.value = notebookNow(game)
   menuOpen.value = true
   nbDown = false
   markDirty()
@@ -396,7 +635,7 @@ function onNbMouseDown(e: MouseEvent) {
   if (!nbDown) e.preventDefault()
 }
 function refreshMenu() {
-  if (menuOpen.value && game) nbData.value = notebookData(game, savedAt.value)
+  if (menuOpen.value && game) nbData.value = notebookNow(game)
 }
 
 // ---------- 聲音 ----------
@@ -488,8 +727,6 @@ function start(c: TitleChoice) {
   if (c === 'continue' && game.hasSave() && saveState.value !== 'ready') return
   // 使用者的手勢裡：建 AudioContext（iOS 要這樣才出得了聲）
   const fresh = c !== 'continue' || !game.hasSave()
-  // 新遊戲：京都駅的大廳淡入＋電車到站的聲音
-  void audio.unlock().then(() => fresh && mode.value === 'play' && audio.sfx('trainArrive'))
   // 重新開始：舊遊戲的照片（相簿、相框、委託用的）從 IndexedDB 刪掉
   if (c === 'restart') void systems.value?.forgetPhotos(game.savedData())
   gate.open()
@@ -498,8 +735,17 @@ function start(c: TitleChoice) {
   window.removeEventListener('keydown', onTitleKey)
   mode.value = 'play'
   arrive.reset()
-  if (c === 'continue') game.continueGame()
-  else game.newGame()
+  notice.reset()
+  // 新遊戲（P4，規格 §13 第 4 點）：從台灣的機場出發大廳開始，先選出發的城市（畫面黑著，選了才淡入）。
+  // 世界索引沒有航線資料時照舊從京都駅的大廳開始（電車到站的聲音）。繼續（舊存檔）不送回台灣
+  let abroad = false
+  // continueGame：沒有存檔時自己做新遊戲（回傳 false）
+  const resumed = c === 'continue' && game.continueGame()
+  if (!resumed) {
+    if (c !== 'continue') game.newGame()
+    abroad = systems.value?.startInTaiwan() ?? false
+  } else abroad = systems.value?.resumeOrigin() ?? false
+  void audio.unlock().then(() => fresh && !abroad && mode.value === 'play' && audio.sfx('trainArrive'))
   applySettings()
   detachKeys = game.attachKeyboard(window)
   applyBgm()
@@ -542,6 +788,7 @@ function wire(g: Game) {
       place.value = e.name
       // 換地圖（淡出淡入的時候）：3D 的側面可以做了
       wakeQuiet(true)
+      hudEnter(g)
       if (mode.value === 'play') showSign(e.name)
       // 同一首曲子的鎮之間（例：京都的兩個鎮）祭典的太鼓也要跟著換
       applyBgm()
@@ -556,6 +803,7 @@ function wire(g: Game) {
       applyBgm()
     }),
     g.on('clock', () => applyBgm()),
+    g.on('step', (e) => onHudStep(e.x, e.y)),
     g.on('button', (e) => onButton(e.button)),
     g.on('menu', (e) => {
       if (e.open) openMenu()
@@ -637,7 +885,8 @@ function prepareSave() {
   const g = game
   const w = world
   if (!g || !w || !w.index || mode.value !== 'title') return
-  const { need, also } = savePrefs(g.savedData(), (code) => w.prefOfTown(code))
+  // 存檔在日本的機場大廳（関西国際空港…）：那一縣也要先讀（賣店）
+  const { need, also } = savePrefs(g.savedData(), (code) => w.prefOfTown(code), (m) => (w.abroad ? (airportOfMap(w.abroad, m)?.pref ?? null) : null))
   // 去過的縣等存檔所在的縣讀好了再讀（不跟「繼續」要的那一縣搶頻寬）
   const rest = () => {
     for (const p of also) void w.ensurePref(p)
@@ -848,6 +1097,12 @@ function installDev(g: Game) {
       notebook: menuOpen.value ? (notebookRef.value?.state() ?? null) : null,
       title: mode.value === 'title' ? (titleRef.value?.state() ?? null) : null,
       sign: sign.value?.name.ja ?? null,
+      toast: toast.value?.place.name.ja ?? null,
+      hints: hintsFor(hintCtx.value).map((h) => `${h.hold ? '按住 ' : ''}${h.key} ${h.label}${h.hot ? '*' : ''}`),
+      hintCtx: hintCtx.value,
+      cue: cue.value,
+      minimap: { shown: miniShown.value, open: ui.minimap, map: mini.value?.id ?? null, player: miniPlayer.value },
+      facing: g.facing()?.entity.kind ?? null,
       settings: { ...g.settings },
       ui: { ...ui },
       layout: layout.value,
@@ -874,6 +1129,7 @@ onMounted(() => {
   window.addEventListener('pagehide', onPageHide)
   coarse?.addEventListener('change', onPointerKind)
   window.addEventListener('keydown', onGesture, true)
+  window.addEventListener('keydown', onMapKey)
   window.addEventListener('online', onOnline)
   setKitStaleHandler(onKitStale)
 })
@@ -891,7 +1147,9 @@ onBeforeUnmount(() => {
   window.removeEventListener('pagehide', onPageHide)
   window.removeEventListener('keydown', onTitleKey)
   window.removeEventListener('keydown', onGesture, true)
+  window.removeEventListener('keydown', onMapKey)
   window.removeEventListener('online', onOnline)
+  clearTimeout(toastTimer)
   setKitStaleHandler(null)
   clearTimeout(saveTimer)
   coarse?.removeEventListener('change', onPointerKind)
@@ -919,7 +1177,7 @@ onBeforeUnmount(() => {
     </RouterLink>
 
     <div class="play-stage">
-      <TouchPad v-if="layout === 'landscape'" side="left" class="play-side" @press="padPress" @release="padRelease" @dir="padDir" @tick="padTick" />
+      <TouchPad v-if="layout === 'landscape'" side="left" class="play-side" :hot="cue.hot" :labels="cue.labels" @press="padPress" @release="padRelease" @dir="padDir" @tick="padTick" />
 
       <div class="play-screen" :style="{ width: `${width * scale}px`, height: `${height * scale}px` }">
         <!-- role="application"：讀屏（NVDA、JAWS）聚焦時切到焦點模式，方向鍵、空白鍵交給遊戲 -->
@@ -930,9 +1188,12 @@ onBeforeUnmount(() => {
           role="application"
           aria-roledescription="遊戲畫面"
           :aria-label="canvasLabel"
+          :aria-describedby="layout === 'desktop' && mode === 'play' ? 'play-keys' : undefined"
           @pointerdown="onTap"
         ></canvas>
+        <MiniMap v-if="miniShown && mini" :mini="mini" :player="miniPlayer" :name="place" :open="ui.minimap" :scale="scale" :view="miniView" @toggle="onMiniToggle" />
         <PlaceSign v-if="sign" :key="sign.n" :name="sign.name" :scale="scale" />
+        <PlaceToast v-if="toast && !hudBlocked" :key="toast.n" :name="toast.place.name" :scale="scale" :top="toastPos.top" :left="toastPos.left" :max-width="toastPos.max" />
         <DialogBox
           ref="dialogRef"
           :line="line"
@@ -947,7 +1208,7 @@ onBeforeUnmount(() => {
         <div v-if="userPaused" class="play-veil" @pointerdown.stop="unpause">
           <p class="gba-box play-paused">暫停</p>
         </div>
-        <SystemsLayer v-if="systems && mode === 'play'" :systems="systems" :scale="scale" :width="width" :layout="layout" :busy="!!line" />
+        <SystemsLayer v-if="systems && mode === 'play'" ref="sysRef" :systems="systems" :scale="scale" :width="width" :layout="layout" :busy="!!line" :hint-top="photoHintTop" />
         <TitleScreen
           v-if="mode === 'title'"
           ref="titleRef"
@@ -969,10 +1230,12 @@ onBeforeUnmount(() => {
           @page="(p) => (nbPage = p)"
           @close="closeMenu"
         />
+        <!-- 按鍵提示列（桌機）：畫面正下方，不蓋到畫面 -->
+        <HintBar v-if="showHints" class="play-hints" :hints="hints" />
       </div>
 
-      <TouchPad v-if="layout === 'landscape'" side="right" class="play-side" @press="padPress" @release="padRelease" @dir="padDir" @tick="padTick" />
-      <TouchPad v-if="layout === 'portrait'" side="both" class="play-under" @press="padPress" @release="padRelease" @dir="padDir" @tick="padTick" />
+      <TouchPad v-if="layout === 'landscape'" side="right" class="play-side" :hot="cue.hot" :labels="cue.labels" @press="padPress" @release="padRelease" @dir="padDir" @tick="padTick" />
+      <TouchPad v-if="layout === 'portrait'" side="both" class="play-under" :hot="cue.hot" :labels="cue.labels" @press="padPress" @release="padRelease" @dir="padDir" @tick="padTick" />
     </div>
 
     <!-- 手機：手帳蓋住整個畫面與控制區（字與按鈕才夠大） -->
@@ -983,6 +1246,7 @@ onBeforeUnmount(() => {
     <p v-if="failed" class="play-failed">遊戲載入不了，稍後再試。</p>
     <p class="sr-only" aria-live="polite">{{ livePlace }}</p>
     <p class="sr-only" aria-live="polite">{{ liveLine }}</p>
+    <p id="play-keys" class="sr-only">{{ keysText }}</p>
   </div>
 </template>
 
@@ -1068,6 +1332,13 @@ onBeforeUnmount(() => {
 .play-screen {
   position: relative;
   flex-shrink: 0;
+}
+/* 按鍵提示列：畫面正下方（桌機下面留了 24px） */
+.play-hints {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  right: 0;
 }
 .play-canvas {
   display: block;

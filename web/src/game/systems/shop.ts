@@ -1,12 +1,13 @@
 import { rng, seedOf } from '../../services/pixelwalk/rng'
-import { GAME_ITEMS, PRICE } from '../content/items'
+import { GAME_ITEMS, SIT_PRICE } from '../content/items'
 import type { CalendarDate } from '../engine/clock'
 import type { Game } from '../engine/game'
 
 import { type DataIndex, dayKey, kitOfPref } from './data'
-import { addItem, itemCard, type ItemCardData, itemKey, pay, shiniseWhat, TAKEAWAY } from './inventory'
+import { addItem, itemCard, type ItemCardData, itemKey, shiniseWhat, TAKEAWAY } from './inventory'
 import { systemsOf } from './state'
 import type { ItemRef, Kit, ShopData } from './types'
+import { acceptsCard, type PayMethod, payWith } from './wallet'
 
 /**
  * 店（規格 §8.5）：
@@ -15,6 +16,7 @@ import type { ItemRef, Kit, ShopData } from './types'
  * - 老舖：「這家店的和菓子」「這家店的茶」（資料沒有商品清單，不編商品名）。
  * - 茶屋：坐下來喝茶（時間往前、一句閒聊）＋這家店的茶。
  * - 食堂：這一縣的郷土料理（帶不走，吃了進「吃過的」），也每天換 6–8 樣。
+ * 付錢（P4，円）：車站、機場的賣店可以付現金或刷卡（刷卡沒有上限，記累計）；老舖、茶屋、食堂只收現金。
  * 買、吃完自動存檔（呼叫的人做）。
  */
 export interface StockEntry {
@@ -29,6 +31,8 @@ export interface Stock {
   entries: StockEntry[]
   /** 茶屋：坐下來喝茶的價錢 */
   sit?: number
+  /** 可以刷卡（車站、機場的賣店）；false＝只收現金 */
+  card: boolean
 }
 
 const shuffle = <T>(list: readonly T[], seed: number): T[] => {
@@ -97,28 +101,33 @@ export function stockOf(shop: ShopData & { id: string }, pref: string, date: Cal
     case 'teahouse': {
       const what = sh ? shiniseWhat(sh) : null
       keys = given ?? (sh && what ? [itemKey({ kind: 'shinise', id: `${sh.id}#${what}` })] : [])
-      if (shop.shopKind === 'teahouse' || sh?.g === 'teahouse') sit = PRICE.sit
+      if (shop.shopKind === 'teahouse' || sh?.g === 'teahouse') sit = SIT_PRICE
       break
     }
   }
   const name = shop.name ?? sh?.n ?? ''
-  return { kind: shop.shopKind, name, entries: keys.map(entry).filter((e): e is StockEntry => !!e), sit }
+  return { kind: shop.shopKind, name, entries: keys.map(entry).filter((e): e is StockEntry => !!e), sit, card: acceptsCard(shop.shopKind) }
 }
 
-export type BuyResult = 'ok' | 'money' | 'gone'
+/** money＝現金不夠；card＝這家只收現金（不能刷卡） */
+export type BuyResult = 'ok' | 'money' | 'gone' | 'card'
 
-/** 買一樣：扣旅費、進行李（明信片可以帶照片 id） */
-export function buy(game: Game, e: StockEntry, photo?: string | null): BuyResult {
+/**
+ * 買一樣：付錢（現金或刷卡）、進行李（明信片可以帶照片 id）。
+ * cardOk：這家能不能刷卡（Stock.card）；不能刷卡的店選刷卡回 'card'，什麼都不動。
+ */
+export function buy(game: Game, e: StockEntry, photo?: string | null, method: PayMethod = 'cash', cardOk = true): BuyResult {
   if (!e.card.keep) return 'gone'
-  if (!pay(game, e.price)) return 'money'
+  if (method === 'card' && !cardOk) return 'card'
+  if (!payWith(game, e.price, method)) return 'money'
   const key = photo && e.key === 'game:postcard' ? `game:postcard@${photo}` : e.key
   addItem(game, key)
   return 'ok'
 }
 
-/** 在食堂吃一樣：扣旅費、進「吃過的」、時間往前 */
+/** 在食堂吃一樣（只收現金）：扣現金、進「吃過的」、時間往前 */
 export function eat(game: Game, e: StockEntry, minutes = 40): BuyResult {
-  if (!pay(game, e.price)) return 'money'
+  if (!payWith(game, e.price, 'cash')) return 'money'
   const id = e.key.replace(/^specialty:/, '')
   const s = systemsOf(game)
   const cur = s.eaten[id]
@@ -128,9 +137,9 @@ export function eat(game: Game, e: StockEntry, minutes = 40): BuyResult {
   return 'ok'
 }
 
-/** 茶屋：坐下來喝一杯（時間往前） */
+/** 茶屋：坐下來喝一杯（只收現金；時間往前） */
 export function sit(game: Game, price: number, minutes = 30): BuyResult {
-  if (!pay(game, price)) return 'money'
+  if (!payWith(game, price, 'cash')) return 'money'
   game.clock.advance(minutes)
   return 'ok'
 }

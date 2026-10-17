@@ -6,7 +6,8 @@ import type { Season, TimeOfDay } from '../../engine/types'
  * 都是遊戲寫的，所以不准有真實的地名、店名、祭典名、站名、特色名、數字＋年／月／km、驚嘆號、emoji（flavour.test.ts 擋）。
  * 寫法照旅遊書與路人說話：短、安靜、具體；不要每句都講景色（天氣、腳累、零錢、貓、等車…）。
  */
-export type FlavourWho = 'passer' | 'station' | 'shinise' | 'shokudo' | 'teahouse' | 'inn' | 'festival'
+/** airport：機場的大廳的路人（P4：台灣的出發大廳、日本的機場大廳） */
+export type FlavourWho = 'passer' | 'station' | 'shinise' | 'shokudo' | 'teahouse' | 'inn' | 'festival' | 'airport'
 export type FlavourRegion = 'kinki' | 'okinawa' | 'kanto' | 'hokkaido' | 'any'
 
 /** 花況（world/season.ts 的 Flower：平年值算的「開著」）：講開花、紅葉的台詞只在那個時候說 */

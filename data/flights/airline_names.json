@@ -1,0 +1,59 @@
+{
+  "note": "国土交通省的表裡的航空公司（IATA 代碼）→ 那家公司繁體中文網站上的名字（頁面標題或內文）。番外篇的出發看板用（pipeline/game_taiwan.py）。",
+  "airlines": [
+    {
+      "code": "BR",
+      "name_zh": "長榮航空",
+      "source_url": "https://www.evaair.com/zh-tw/",
+      "fetched_at": "2026-10-17"
+    },
+    {
+      "code": "CI",
+      "name_zh": "中華航空",
+      "source_url": "https://www.china-airlines.com/tw/zh",
+      "fetched_at": "2026-10-17"
+    },
+    {
+      "code": "GK",
+      "name_zh": "捷星日本",
+      "source_url": "https://www.jetstar.com/hk/zh/about-us/jetstar-group/jetstar-japan",
+      "fetched_at": "2026-10-17"
+    },
+    {
+      "code": "IT",
+      "name_zh": "台灣虎航",
+      "source_url": "https://www.tigerairtw.com/zh-tw/welcome-on-board/boarding",
+      "fetched_at": "2026-10-17"
+    },
+    {
+      "code": "JL",
+      "name_zh": "日本航空",
+      "source_url": "https://www.jal.co.jp/flights/zh-tw/%E8%88%AA%E7%8F%AD-%E5%87%BA%E7%99%BC%E8%87%AA-%E5%8F%B0%E5%8C%97",
+      "fetched_at": "2026-10-17"
+    },
+    {
+      "code": "JX",
+      "name_zh": "星宇航空",
+      "source_url": "https://www.starlux-airlines.com/zh-TW",
+      "fetched_at": "2026-10-17"
+    },
+    {
+      "code": "MM",
+      "name_zh": "樂桃航空",
+      "source_url": "https://www.flypeach.com/tw/lm/st/w_schedule",
+      "fetched_at": "2026-10-17"
+    },
+    {
+      "code": "NH",
+      "name_zh": "全日空",
+      "source_url": "https://flights.ana.co.jp/zh-tw/flights-from-taipei-to-tokyo",
+      "fetched_at": "2026-10-17"
+    },
+    {
+      "code": "UA",
+      "name_zh": "聯合航空",
+      "source_url": "https://www.united.com/ual/zh-hk/hk/fly/travel/airport/united-club-and-lounges.html",
+      "fetched_at": "2026-10-17"
+    }
+  ]
+}

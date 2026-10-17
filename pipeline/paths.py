@@ -28,6 +28,8 @@ PHRASES_DIR = DATA / "phrases"
 UKIYOE_JSON = DATA / "ukiyoe.json"
 FLIGHTS_JSON = DATA / "flights" / "taiwan_direct.json"
 TAIWAN_ROUTES_JSON = DATA / "flights" / "taiwan_routes.json"
+#: 航空公司的繁體中文名（IATA 代碼 → 那家公司繁體中文網站上的名字；番外篇的出發看板）
+AIRLINE_NAMES_JSON = DATA / "flights" / "airline_names.json"
 STATE_DIR = DATA / "_state"
 
 WEB = ROOT / "web"

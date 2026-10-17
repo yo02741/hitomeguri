@@ -19,12 +19,15 @@ import ViewfinderPanel from './systems/ViewfinderPanel.vue'
 //   <SystemsLayer :systems="systems" :scale="scale" :width="width" :layout="layout" />
 // 面板打開時世界停住（systems 讓 Game 停在 'systems'），遊戲的按鍵（鍵盤、十字鍵、手把）經 systems.press 交給面板。
 // 手機（layout 不是 desktop）時，店、房間、印帳、目的地蓋住整個畫面與控制區（字與按鈕才夠大），取景框留在畫面上。
-const props = defineProps<{ systems: GameSystems; scale: number; width: number; layout?: 'desktop' | 'portrait' | 'landscape'; busy?: boolean }>()
+// P4：右上角有小地圖時，「拍照」放在小地圖下面（hintTop：離畫面上緣幾個邏輯像素）。
+const props = defineProps<{ systems: GameSystems; scale: number; width: number; layout?: 'desktop' | 'portrait' | 'landscape'; busy?: boolean; hintTop?: number }>()
 const ui = inject(GAME_UI, null)
 
 interface PanelApi {
   press(b: Button): boolean
   focusFirst?(): boolean
+  /** 面板裡現在在哪一層（按鍵提示用；店：buy／pay…，目的地：origin／board…） */
+  mode?(): string
 }
 
 const PANELS: Record<string, Component> = {
@@ -81,12 +84,16 @@ watch(
     if (k && k !== old) void nextTick(() => panelRef.value?.focusFirst?.())
     if (!k && old) focusCanvas()
   },
-  { flush: 'post' },
+  // immediate：這一層掛上來之前面板就開著了（新遊戲一開始就是出發城市的面板，P4）也要接上按鍵、焦點
+  { flush: 'post', immediate: true },
 )
 
 function focusCanvas() {
   void nextTick(() => root.value?.closest('.play-screen')?.querySelector<HTMLCanvasElement>('canvas')?.focus({ preventScroll: true }))
 }
+
+/** PlayView 的按鍵提示：打開的面板現在在哪一層 */
+defineExpose({ panelMode: (): string | null => panelRef.value?.mode?.() ?? null })
 
 function shoot() {
   const h = hint.value
@@ -115,7 +122,15 @@ function onKey(e: KeyboardEvent) {
 
 <template>
   <div ref="root" class="sys-root" :style="{ '--u': `${scale}px` }">
-    <button v-if="hint" type="button" class="gba-box sys-hint" :aria-label="hint.name ? `拍照：${hint.name}` : '拍照'" @pointerdown.stop @click.stop="shoot">
+    <button
+      v-if="hint"
+      type="button"
+      class="gba-box sys-hint"
+      :style="hintTop ? { top: `calc(var(--u) * ${hintTop})` } : undefined"
+      :aria-label="hint.name ? `拍照：${hint.name}` : '拍照'"
+      @pointerdown.stop
+      @click.stop="shoot"
+    >
       <svg viewBox="0 0 9 7" aria-hidden="true" shape-rendering="crispEdges">
         <path d="M3 0h3v1h3v6H0V1h3zM4 2h1v1h1v2H5v1H4V5H3V3h1z" fill="currentColor" fill-rule="evenodd" />
       </svg>

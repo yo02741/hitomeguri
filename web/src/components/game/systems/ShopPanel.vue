@@ -6,6 +6,7 @@ import type { GameSystems } from '../../../game/systems/install'
 import { loadThumb } from '../../../game/systems/photoStore'
 import type { StockEntry } from '../../../game/systems/shop'
 import type { Panel } from '../../../game/systems/ui'
+import { canPayCash, cardTotal, CASH_ONLY, CASH_SHORT, type PayMethod, yenText } from '../../../game/systems/wallet'
 import { rove } from '../../../game/ui/rove'
 
 import ItemCard from './ItemCard.vue'
@@ -14,6 +15,8 @@ import PixelIcon from './PixelIcon.vue'
 // 店（規格 §8.5）：車站的賣店、老舖、食堂、茶屋。左邊是今天架上的東西（名字、價錢），右邊是選到的那一樣的品項卡
 // （窄的時候在下面：選列時列的位置不動，同一個地方點第二下就是同一列）。
 // A 買（食堂是吃、茶屋可以坐下來喝茶）；明信片可以選用自己拍的照片。B 離開。買、吃完自動存檔（systems 做）。
+// 付錢（P4，円）：車站、機場的賣店按「買」之後選現金或刷卡（現金不夠時現金那一個是灰的，刷卡照樣能買）；
+// 老舖、茶屋、食堂只收現金（標題下面寫「只收現金」），現金不夠就說「現金不夠。」。
 const props = defineProps<{ systems: GameSystems; panel: Panel }>()
 const p = computed(() => (props.panel.kind === 'shop' ? props.panel : null))
 const eating = computed(() => p.value?.mode === 'eat')
@@ -31,6 +34,22 @@ const money = computed(() => {
   void props.systems.ui.tick
   return props.systems.game.state.money
 })
+/** 這家可以刷卡 */
+const cardOk = computed(() => !!p.value?.stock.card)
+/** 刷卡累計（円） */
+const cardSum = computed(() => {
+  void props.systems.ui.tick
+  return cardTotal(props.systems.game)
+})
+
+// 付款：選現金或刷卡（能刷卡的店）
+const paying = ref<{ e: StockEntry; photo?: string } | null>(null)
+const payCur = ref<PayMethod>('cash')
+const cashOk = computed(() => {
+  void props.systems.ui.tick
+  return !!paying.value && canPayCash(props.systems.game, paying.value.e.price)
+})
+const payEls = ref<Record<PayMethod, HTMLButtonElement | null>>({ cash: null, card: null })
 /** 老舖：店名與創業（品項卡上的） */
 const shop = computed(() => p.value?.stock.entries.find((e) => e.card.shop)?.card.shop ?? null)
 
@@ -41,6 +60,10 @@ const pickCur = ref(0)
 
 const rowEls = ref<HTMLButtonElement[]>([])
 const pickEls = ref<HTMLButtonElement[]>([])
+
+function focusPay() {
+  void nextTick(() => payEls.value[payCur.value]?.focus({ preventScroll: true }))
+}
 
 function focusRow(i: number) {
   void nextTick(() => {
@@ -91,16 +114,45 @@ function act(i = cur.value) {
   }
   if (eating.value) {
     const res = props.systems.eat(r.e)
-    status.value = res === 'ok' ? `吃了${r.e.card.name.ja}。` : '旅費不夠。'
+    status.value = res === 'ok' ? `吃了${r.e.card.name.ja}。` : CASH_SHORT
     return
   }
   if (r.e.key === 'game:postcard' && props.systems.game.state.album.length) return void openPick()
-  buy(r.e)
+  checkout(r.e)
 }
 
-function buy(e: StockEntry, photo?: string) {
-  const res = props.systems.buy(e, photo)
-  status.value = res === 'ok' ? `買了${e.card.name.ja}。` : res === 'money' ? '旅費不夠。' : ''
+/** 結帳：能刷卡的店先選付款方式；只收現金的店直接付現金 */
+function checkout(e: StockEntry, photo?: string) {
+  if (!cardOk.value) return buy(e, photo, 'cash')
+  props.systems.sfx('confirm')
+  paying.value = { e, photo }
+  payCur.value = canPayCash(props.systems.game, e.price) ? 'cash' : 'card'
+  status.value = ''
+  focusPay()
+}
+
+function buy(e: StockEntry, photo: string | undefined, method: PayMethod) {
+  const res = props.systems.buy(e, photo, method, cardOk.value)
+  const name = e.card.name.ja
+  status.value = res === 'ok' ? (method === 'card' ? `刷卡買了${name}。` : `買了${name}。`) : res === 'money' ? CASH_SHORT : ''
+}
+
+/** 付款：選好的方式（現金不夠時現金不能選） */
+function payBy(method: PayMethod) {
+  const x = paying.value
+  if (!x) return
+  if (method === 'cash' && !cashOk.value) {
+    props.systems.sfx('error')
+    status.value = CASH_SHORT
+    return
+  }
+  paying.value = null
+  buy(x.e, x.photo, method)
+  focusRow(cur.value)
+}
+function cancelPay() {
+  paying.value = null
+  focusRow(cur.value)
 }
 
 async function openPick() {
@@ -116,12 +168,32 @@ async function openPick() {
 function pick(i: number) {
   const r = sel.value
   if (r?.kind !== 'item') return
-  buy(r.e, i === 0 ? undefined : photos.value[i - 1]?.id)
   picking.value = false
-  focusRow(cur.value)
+  checkout(r.e, i === 0 ? undefined : photos.value[i - 1]?.id)
+  if (!paying.value) focusRow(cur.value)
 }
 
 function press(b: Button): boolean {
+  if (paying.value) {
+    if (b === 'up' || b === 'down' || b === 'left' || b === 'right') {
+      const next: PayMethod = payCur.value === 'cash' ? 'card' : 'cash'
+      if (next === 'cash' && !cashOk.value) return true
+      props.systems.sfx('cursor')
+      payCur.value = next
+      focusPay()
+      return true
+    }
+    if (b === 'A') {
+      payBy(payCur.value)
+      return true
+    }
+    if (b === 'B') {
+      props.systems.sfx('cancel')
+      cancelPay()
+      return true
+    }
+    return false
+  }
   const n = picking.value ? photos.value.length + 1 : rows.value.length
   if (b === 'up' || b === 'down' || b === 'left' || b === 'right') {
     if (b === 'left' || b === 'right') return true
@@ -148,24 +220,64 @@ function press(b: Button): boolean {
 }
 
 watch(cur, () => (status.value = ''))
-defineExpose({ press, focusFirst: () => (focusRow(cur.value), true) })
-
 const MODE_LABEL = { buy: '買', eat: '吃' } as const
+const footLabel = computed(() => (sel.value?.kind === 'sit' ? '坐下來' : p.value ? MODE_LABEL[p.value.mode] : ''))
+/** 按鍵提示（PlayView 的提示列）：付款、選照片、坐下來、吃、買 */
+const mode = () => (paying.value ? 'pay' : picking.value ? 'pick' : sel.value?.kind === 'sit' ? 'sit' : eating.value ? 'eat' : 'buy')
+defineExpose({ press, focusFirst: () => (focusRow(cur.value), true), mode })
 </script>
 
 <template>
   <div v-if="p" class="gba-box sys-box shop" role="dialog" aria-labelledby="shop-title">
     <header class="sys-head">
       <h2 id="shop-title" class="sys-title" lang="ja">{{ p.stock.name }}</h2>
-      <p class="shop-money">旅費 {{ money.toLocaleString('ja-JP') }} 文</p>
+      <p class="shop-money">現金 {{ yenText(money) }}</p>
     </header>
+    <p v-if="!p.stock.card" class="shop-cash"><span class="shop-tag">{{ CASH_ONLY }}</span></p>
     <p v-if="shop?.founded" class="nb-sub shop-founded">
       <span lang="ja">{{ shop.name }}</span>　創業 {{ shop.founded }}
       <a v-if="shop.source" :href="shop.source.url" target="_blank" rel="noopener noreferrer" class="nb-src" :aria-label="`創業的出處：${shop.source.label}（開新分頁）`">出處</a>
     </p>
     <div class="sys-body shop-body">
       <div class="shop-grid">
-      <ul v-if="!picking" class="sys-list shop-list" :aria-label="eating ? '今天的菜單' : '今天架上的東西'">
+      <div v-if="paying" class="shop-pay" role="group" aria-labelledby="shop-pay-title">
+        <p id="shop-pay-title" class="shop-pay-title">
+          <span lang="ja">{{ paying.e.card.name.ja }}</span>　{{ yenText(paying.e.price) }}
+        </p>
+        <ul class="sys-list">
+          <li>
+            <button
+              :ref="(el) => (payEls.cash = el as HTMLButtonElement)"
+              type="button"
+              class="sys-row shop-pay-opt"
+              :aria-current="payCur === 'cash' ? 'true' : undefined"
+              :aria-disabled="!cashOk"
+              :class="{ 'is-off': !cashOk }"
+              @click="payBy('cash')"
+            >
+              <span class="sys-row-main">
+                <span>現金</span>
+                <span class="nb-sub">{{ cashOk ? `付完剩 ${yenText(money - paying.e.price)}` : '現金不夠' }}</span>
+              </span>
+            </button>
+          </li>
+          <li>
+            <button
+              :ref="(el) => (payEls.card = el as HTMLButtonElement)"
+              type="button"
+              class="sys-row shop-pay-opt"
+              :aria-current="payCur === 'card' ? 'true' : undefined"
+              @click="payBy('card')"
+            >
+              <span class="sys-row-main">
+                <span>刷卡</span>
+                <span class="nb-sub">刷卡累計 {{ yenText(cardSum) }}</span>
+              </span>
+            </button>
+          </li>
+        </ul>
+      </div>
+      <ul v-else-if="!picking" class="sys-list shop-list" :aria-label="eating ? '今天的菜單' : '今天架上的東西'">
         <li v-for="(r, i) in rows" :key="r.kind === 'sit' ? 'sit' : r.e.key">
           <button
             :ref="(el) => (rowEls[i] = el as HTMLButtonElement)"
@@ -180,7 +292,7 @@ const MODE_LABEL = { buy: '買', eat: '吃' } as const
           >
             <template v-if="r.kind === 'sit'">
               <span class="sys-row-main">坐下來喝茶</span>
-              <span class="sys-row-end">{{ r.price.toLocaleString('ja-JP') }} 文</span>
+              <span class="sys-row-end">{{ yenText(r.price) }}</span>
             </template>
             <template v-else>
               <PixelIcon :icon="r.e.card.icon" :size="2" />
@@ -188,7 +300,7 @@ const MODE_LABEL = { buy: '買', eat: '吃' } as const
                 <span lang="ja">{{ r.e.card.name.ja }}</span>
                 <span v-if="r.e.card.name.zh && r.e.card.name.zh !== r.e.card.name.ja" class="nb-sub">{{ r.e.card.name.zh }}</span>
               </span>
-              <span class="sys-row-end">{{ r.e.price.toLocaleString('ja-JP') }} 文</span>
+              <span class="sys-row-end">{{ yenText(r.e.price) }}</span>
             </template>
           </button>
         </li>
@@ -224,8 +336,14 @@ const MODE_LABEL = { buy: '買', eat: '吃' } as const
       </div>
     </div>
     <footer class="sys-foot">
-      <button v-if="!picking && sel" type="button" class="nb-btn" @click="act()">{{ sel.kind === 'sit' ? '坐下來' : MODE_LABEL[p.mode] }}</button>
-      <button type="button" class="nb-btn" @click="picking ? (picking = false) : systems.closePanel()">{{ picking ? '回去' : '離開' }}</button>
+      <template v-if="paying">
+        <button type="button" class="nb-btn" @click="payBy(payCur)">付款</button>
+        <button type="button" class="nb-btn" @click="cancelPay()">回去</button>
+      </template>
+      <template v-else>
+        <button v-if="!picking && sel" type="button" class="nb-btn" @click="act()">{{ footLabel }}</button>
+        <button type="button" class="nb-btn" @click="picking ? (picking = false) : systems.closePanel()">{{ picking ? '回去' : '離開' }}</button>
+      </template>
       <p class="sys-status" role="status">{{ status }}</p>
     </footer>
   </div>
@@ -240,6 +358,26 @@ const MODE_LABEL = { buy: '買', eat: '吃' } as const
 .shop-founded {
   margin: 0;
   padding: 0.3em 1em 0;
+}
+/* 只收現金：店裡貼的小牌子（墨框、紙底） */
+.shop-cash {
+  margin: 0;
+  padding: 0.3em 1em 0;
+}
+.shop-tag {
+  display: inline-block;
+  padding: 0 0.5em;
+  border: 2px solid var(--color-px-ink);
+  background: var(--color-px-paper);
+  color: var(--color-px-ink);
+  font-size: 0.85em;
+  line-height: 1.6;
+}
+.shop-pay-title {
+  margin: 0 0 0.4em;
+}
+.shop-pay-opt.is-off {
+  color: var(--color-px-stone-2);
 }
 .shop-body {
   container-type: inline-size;

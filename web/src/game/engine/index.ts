@@ -10,8 +10,10 @@ export { type AskEvent, Game, type GameEvents, type GameOptions, GameState, type
 export { attachKeyboard, type Button, GamepadSource, InputState, KEYMAP } from './input'
 export { lookIds, lookOf, registerLook, type Sheet, sheetLook } from './looks'
 export { asciiMap, type AsciiMapDef, type CellSpec, cellHash, emptyMap, MapView, placeBig, setBehavior, setTile } from './map'
+export { buildMinimap, drawMinimap, MINI_INK, MINI_KINDS, type MiniKind, type Minimap, miniWindow } from './minimap'
 export { Npc, type NpcMove } from './npc'
 export { type Cell, findPath } from './path'
+export { nearestPlace, type Place, type PlaceName, placesOf, placeSub } from './places'
 export { blitTile, drawRgb, Renderer, type Weather } from './render'
 export {
   DEFAULT_SETTINGS,

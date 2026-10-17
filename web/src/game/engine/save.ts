@@ -30,7 +30,7 @@ export interface SaveData {
   y: number
   dir: Dir
   flags: Record<string, FlagValue>
-  /** 旅費（文） */
+  /** 現金（円；P3 以前的存檔是「文」，systems/wallet.ts 的 ensureYen 換算） */
   money: number
   /** 行李：品項 id → 數量 */
   items: Record<string, number>

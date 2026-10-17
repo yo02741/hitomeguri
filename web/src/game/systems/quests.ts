@@ -19,8 +19,17 @@ import { DONE_MAX, type Quest, type QuestType, systemsOf } from './state'
 export const ACTIVE_MAX = 3
 /** 接下之後幾天內要做完（遊戲規則；手帳寫期限） */
 export const QUEST_DAYS = 3
-export const REWARD: Record<QuestType, number> = { deliver: 800, photo: 600, lost: 400 }
-const NIGHT_BONUS = 200
+/** 做完給的旅費（円，遊戲的規則；P4 從「文」改成「円」，舊存檔進行中的委託用 rewardOf 換成這一份） */
+export const REWARD: Record<QuestType, number> = { deliver: 3000, photo: 2000, lost: 1000 }
+const NIGHT_BONUS = 1000
+
+/** 這一件委託的報酬（円）：種類＋夜景 */
+export const rewardOf = (q: Pick<Quest, 'type' | 'when'>) => REWARD[q.type] + (q.type === 'photo' && q.when === 'night' ? NIGHT_BONUS : 0)
+
+/** 舊存檔（文）：進行中的委託的報酬換成円的報酬表 */
+export function rewardsToYen(game: Game) {
+  for (const q of systemsOf(game).quests.active) q.reward = rewardOf(q)
+}
 
 /** 委託可以用的東西：帶得走的地區特色、老舖的和菓子與茶 */
 export function deliverables(pref: string, data: DataIndex): string[] {
@@ -115,7 +124,7 @@ export function questFor(giver: string, town: string, date: CalendarDate, env: Q
   if (type === 'deliver') return { id, type, from: town, giver, to: r.pick(others), item: r.pick(items), reward: REWARD.deliver, d }
   if (type === 'photo') {
     const night = r.chance(0.3)
-    return { id, type, from: town, giver, spot: r.pick(prefSpots), when: night ? 'night' : undefined, reward: REWARD.photo + (night ? NIGHT_BONUS : 0), d }
+    return { id, type, from: town, giver, spot: r.pick(prefSpots), when: night ? 'night' : undefined, reward: rewardOf({ type, when: night ? 'night' : undefined }), d }
   }
   return { id, type, from: town, giver, spot: r.pick(here), thing: r.pick(LOST_THINGS).id, reward: REWARD.lost, d }
 }
@@ -159,7 +168,7 @@ export function accept(game: Game, q: Quest): boolean {
   return true
 }
 
-/** 做完：拿掉、記下、給旅費 */
+/** 做完：拿掉、記下、給旅費（現金） */
 export function complete(game: Game, id: string): Quest | null {
   const book = systemsOf(game).quests
   const i = book.active.findIndex((x) => x.id === id)

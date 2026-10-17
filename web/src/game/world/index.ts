@@ -7,6 +7,7 @@
  * 關東、北海道的 kit 是另一檔（game-kits），由 loadKit（play/world.ts 的 loadKitModule）到那一縣才讀；測試 import './kits' 就全部都有。
  */
 export { BUNDLES, type BundleApi, loadWorldData, loadWorldIndex, municipalitiesOf, parseWorldIndex, prefData, prefLoader, WORLD_KEY, WorldDataError, type WorldDataErrorKind, type WorldLoad } from './data'
+export * from './abroad'
 export { classify, type LandmarkKind, sizeOf } from './gen/classify'
 export { ensureReachable, flood, generateTown, targetsOf, type TownGen } from './gen/town'
 export { ROOM_MAT } from './gen/interiors'

@@ -1,11 +1,12 @@
 import { seedOf } from '../../services/pixelwalk/rng'
-import { gameItem, type IconId, postcardOf, PRICE } from '../content/items'
+import { gameItem, type IconId, postcardOf, PRICE, PRICE_OTHER, type PriceRange } from '../content/items'
 import type { Game } from '../engine/game'
 import type { SourceRef } from '../engine/types'
 
 import { type DataIndex, nameOf, type PlaceName } from './data'
 import { systemsOf } from './state'
 import { licenseOf, sourceOf, type SummaryLine, summaryLine } from './summary'
+import { payWith } from './wallet'
 import type { ItemRef, PackLike, SpecialtyLike } from './types'
 
 /**
@@ -90,10 +91,12 @@ export interface ItemCardData {
   keep: boolean
 }
 
-/** 價錢：類別的基本價＋同一樣東西固定的一點差（遊戲的規則） */
-export function priceOf(base: number, key: string): number {
-  if (base <= 0) return 0
-  return base + (seedOf(key) % 4) * 50
+/** 價錢（円）：類別的範圍裡，同一樣東西固定的一個價（遊戲的規則：照品項的 key 算，每天一樣） */
+export function priceOf(range: PriceRange, key: string): number {
+  if (range.max <= 0) return 0
+  const step = Math.max(1, range.step)
+  const n = Math.max(0, Math.floor((range.max - range.min) / step))
+  return range.min + (seedOf(key) % (n + 1)) * step
 }
 
 /** 特色的小圖：照類別；名字有「茶」的（宇治茶、抹茶…類別是飲料的也一樣）是茶筒 */
@@ -118,7 +121,7 @@ export function itemCard(key: string, data: DataIndex): ItemCardData | null {
       summary: sum ?? undefined,
       source: sum?.source,
       license: sum ? licenseOf(sum.source.url, sum.license) : undefined,
-      price: priceOf(PRICE[s.category] ?? 800, key),
+      price: priceOf(PRICE[s.category] ?? PRICE_OTHER, key),
       keep: isTakeaway(s),
     }
   }
@@ -139,7 +142,7 @@ export function itemCard(key: string, data: DataIndex): ItemCardData | null {
       source: src ?? undefined,
       license: licenseOf(s.u),
       shop: { name: s.n, kana: s.h, founded: foundedSrc ? s.f : undefined, source: foundedSrc ?? undefined },
-      price: priceOf(PRICE[what] ?? 800, key),
+      price: priceOf(PRICE[what] ?? PRICE_OTHER, key),
       keep: true,
     }
   }
@@ -179,14 +182,9 @@ export function removeItem(game: Game, key: string, n = 1): boolean {
   return true
 }
 
-/** 付錢：不夠就不扣，回傳 false */
+/** 付現金（円）：不夠就不扣，回傳 false（刷卡用 wallet.ts 的 payWith） */
 export function pay(game: Game, price: number): boolean {
-  const s = game.state
-  const p = Math.max(0, Math.round(price))
-  if (s.money < p) return false
-  s.money -= p
-  game.changed('money')
-  return true
+  return payWith(game, price, 'cash')
 }
 
 export function earn(game: Game, amount: number) {

@@ -2,12 +2,13 @@
 import { inject, ref } from 'vue'
 
 import type { Button } from '../../../game/engine/input'
+import { yenText } from '../../../game/systems/wallet'
 import { GAME_UI } from '../../../game/ui/context'
 import { dateText, type SavePageData, savedText } from '../../../game/ui/notebook'
 
 import { useRows } from './rows'
 
-// 手帳「存檔」：現在的地方、遊戲日期、旅費、印與照片的數量、上次存檔的時間，按「存檔」存一次。
+// 手帳「存檔」：現在的地方、遊戲日期、現金（円）、印與照片的數量、上次存檔的時間，按「存檔」存一次。
 // 換地圖時本來就會自動存；存到 localStorage（50 KB 以內），存不了（私密瀏覽、容量滿）就說沒有存到。
 defineProps<{ data: SavePageData }>()
 const ui = inject(GAME_UI)
@@ -42,8 +43,8 @@ defineExpose({ focusFirst: rows.focusFirst, press })
       <dd><span v-if="data.here" lang="ja">{{ data.here.ja }}</span></dd>
       <dt>日期</dt>
       <dd>{{ dateText(data.now.date) }}　{{ data.now.hhmm }}</dd>
-      <dt>旅費</dt>
-      <dd>{{ data.money.toLocaleString('ja-JP') }} 文</dd>
+      <dt>現金</dt>
+      <dd>{{ yenText(data.money) }}</dd>
       <dt>印</dt>
       <dd>{{ data.stamps }}</dd>
       <dt>照片</dt>
