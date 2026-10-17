@@ -435,6 +435,37 @@ class AirportSeed(StrictModel):
     airports: list[SeedAirport]
 
 
+class RouteAirline(StrictModel):
+    """一家航空公司在這條航線的每週班次（国土交通省的表；.5 是隔週一班這類）。"""
+
+    code: str
+    name: str
+    weekly: float
+
+
+class TaiwanRoute(StrictModel):
+    """台灣出發的直飛航線一條（seed-taiwan-routes）：台灣這一邊是表上的都市（台北不分桃園、松山），
+    日本這一邊對到 data/seed/airports.json 的機場。"""
+
+    city: str  # 台北、台中、高雄
+    airport: str  # 機場景點的 id（data/seed/airports.json）
+    iata: str
+    name_ja: str  # 表上的機場名（例：新千歳、関西）
+    prefecture: str
+    airlines: list[RouteAirline]
+    weekly: float  # 各航空公司合計
+
+
+class TaiwanRoutes(StrictModel):
+    """data/flights/taiwan_routes.json：国土交通省「各空港における国際線就航状況調べ」裡
+    台灣出發的定期直飛航線，依 (city, airport) 排序。
+    season 是表的標題（例：2026夏ダイヤ 国際定期便（３月29日～10月24日））。"""
+
+    source: Source
+    season: str
+    routes: list[TaiwanRoute]
+
+
 class UkiyoeWork(StrictModel):
     """描繪景點的浮世繪一幅（seed-ukiyoe）：題名、系列、年份、作者取自作品的 Wikidata 項目，
     圖與作者、授權取自 Commons。只收公有領域、CC0、CC 授權的圖。"""

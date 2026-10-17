@@ -279,6 +279,14 @@ def cmd_seed_airports(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_seed_taiwan_routes(args: argparse.Namespace) -> int:
+    from pipeline.taiwan_routes import seed_taiwan_routes
+
+    url = args.url or os.environ.get("AIRPORTS_PDF_URL") or None
+    _emit(seed_taiwan_routes(url), args.report)
+    return 0
+
+
 def cmd_dump_airports(args: argparse.Namespace) -> int:
     from pipeline.airports import TAIWAN_RE, dump_routes
 
@@ -440,6 +448,15 @@ def main(argv: list[str] | None = None) -> int:
     )
     p.add_argument("--report")
     p.set_defaults(func=cmd_seed_airports)
+
+    p = sub.add_parser(
+        "seed-taiwan-routes",
+        help="台灣出發的直飛航線（国土交通省「国際線就航状況」）→ data/flights/taiwan_routes.json",
+    )
+    p.add_argument("prefectures", nargs="*", help="不使用")
+    p.add_argument("--url", help="Excel 的網址（省略時用預設的這一季）")
+    p.add_argument("--report")
+    p.set_defaults(func=cmd_seed_taiwan_routes)
 
     p = sub.add_parser(
         "dump-airports",
