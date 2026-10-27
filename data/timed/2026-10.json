@@ -1,5 +1,26 @@
 [
   {
+    "id": "jma-ichou-2026-金沢",
+    "kind": "seasonal",
+    "category": "autumn_leaves",
+    "brand": "気象庁",
+    "title": {
+      "ja": "金沢　いちょう黄葉",
+      "zh_tw": "金沢 銀杏轉黃"
+    },
+    "summary_zh": "金沢的氣象台 10月26日 觀測到銀杏轉黃，比平年早 15 天。",
+    "scope": "regional",
+    "prefectures": [
+      "ishikawa"
+    ],
+    "valid_from": "2026-10-26",
+    "valid_to": "2026-11-09",
+    "relevance": 0.0,
+    "source_url": "https://www.data.jma.go.jp/sakura/data/phn_012.html",
+    "source_label": "出典：気象庁ホームページ（生物季節観測）を加工して作成",
+    "updated_at": "2026-10-27T14:56:44+00:00"
+  },
+  {
     "id": "jma-kaede-2026-釧路",
     "kind": "seasonal",
     "category": "autumn_leaves",
