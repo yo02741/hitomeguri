@@ -21,6 +21,27 @@
     "updated_at": "2026-10-27T14:56:44+00:00"
   },
   {
+    "id": "jma-kaede-2026-旭川",
+    "kind": "seasonal",
+    "category": "autumn_leaves",
+    "brand": "気象庁",
+    "title": {
+      "ja": "旭川　かえで紅葉",
+      "zh_tw": "旭川 楓葉轉紅"
+    },
+    "summary_zh": "旭川的氣象台 10月29日 觀測到楓葉轉紅，比平年晚 6 天。",
+    "scope": "regional",
+    "prefectures": [
+      "hokkaido"
+    ],
+    "valid_from": "2026-10-29",
+    "valid_to": "2026-11-12",
+    "relevance": 0.0,
+    "source_url": "https://www.data.jma.go.jp/sakura/data/phn_014.html",
+    "source_label": "出典：気象庁ホームページ（生物季節観測）を加工して作成",
+    "updated_at": "2026-10-30T15:22:06+00:00"
+  },
+  {
     "id": "jma-kaede-2026-釧路",
     "kind": "seasonal",
     "category": "autumn_leaves",
