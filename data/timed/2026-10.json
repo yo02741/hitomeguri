@@ -21,6 +21,27 @@
     "updated_at": "2026-10-27T14:56:44+00:00"
   },
   {
+    "id": "jma-kaede-2026-帯広",
+    "kind": "seasonal",
+    "category": "autumn_leaves",
+    "brand": "気象庁",
+    "title": {
+      "ja": "帯広　かえで紅葉",
+      "zh_tw": "帯広 楓葉轉紅"
+    },
+    "summary_zh": "帯広的氣象台 10月30日 觀測到楓葉轉紅，比平年晚 10 天。",
+    "scope": "regional",
+    "prefectures": [
+      "hokkaido"
+    ],
+    "valid_from": "2026-10-30",
+    "valid_to": "2026-11-13",
+    "relevance": 0.0,
+    "source_url": "https://www.data.jma.go.jp/sakura/data/phn_014.html",
+    "source_label": "出典：気象庁ホームページ（生物季節観測）を加工して作成",
+    "updated_at": "2026-10-31T14:49:24+00:00"
+  },
+  {
     "id": "jma-kaede-2026-旭川",
     "kind": "seasonal",
     "category": "autumn_leaves",
