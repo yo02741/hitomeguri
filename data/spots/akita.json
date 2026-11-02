@@ -3633,6 +3633,16 @@
         "height": 3600
       }
     ],
+    "season_images": {
+      "winter": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9b/%E7%A7%8B%E7%94%B0%E7%8A%AC%E3%81%AE%E9%87%8C%EF%BC%882022%E5%B9%B42%E6%9C%8816%E6%97%A5%EF%BC%89.jpg/960px-%E7%A7%8B%E7%94%B0%E7%8A%AC%E3%81%AE%E9%87%8C%EF%BC%882022%E5%B9%B42%E6%9C%8816%E6%97%A5%EF%BC%89.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "アポロ2",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:%E7%A7%8B%E7%94%B0%E7%8A%AC%E3%81%AE%E9%87%8C%EF%BC%882022%E5%B9%B42%E6%9C%8816%E6%97%A5%EF%BC%89.jpg",
+        "width": 4032,
+        "height": 3024
+      }
+    },
     "external_ids": {
       "wikidata": "Q110990382"
     },
@@ -3643,17 +3653,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "winter": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9b/%E7%A7%8B%E7%94%B0%E7%8A%AC%E3%81%AE%E9%87%8C%EF%BC%882022%E5%B9%B42%E6%9C%8816%E6%97%A5%EF%BC%89.jpg/960px-%E7%A7%8B%E7%94%B0%E7%8A%AC%E3%81%AE%E9%87%8C%EF%BC%882022%E5%B9%B42%E6%9C%8816%E6%97%A5%EF%BC%89.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "アポロ2",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:%E7%A7%8B%E7%94%B0%E7%8A%AC%E3%81%AE%E9%87%8C%EF%BC%882022%E5%B9%B42%E6%9C%8816%E6%97%A5%EF%BC%89.jpg",
-        "width": 4032,
-        "height": 3024
-      }
-    }
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q11122386",
@@ -3765,22 +3765,6 @@
         "height": 2448
       }
     ],
-    "external_ids": {
-      "wikidata": "Q111721103",
-      "osm": "node/7451188061"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q111721103",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://www.openstreetmap.org/node/7451188061",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28",
     "season_images": {
       "winter": {
         "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7f/Bukeyashiki_Street_in_Kakunodate_20120108b.jpg/960px-Bukeyashiki_Street_in_Kakunodate_20120108b.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -3798,7 +3782,23 @@
         "width": 848,
         "height": 1471
       }
-    }
+    },
+    "external_ids": {
+      "wikidata": "Q111721103",
+      "osm": "node/7451188061"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q111721103",
+        "fetched_at": "2026-09-28"
+      },
+      {
+        "url": "https://www.openstreetmap.org/node/7451188061",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q11225421",
@@ -5034,6 +5034,16 @@
         "height": 3264
       }
     ],
+    "season_images": {
+      "night": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/df/Akita_Port_Tower_SELION_at_night_the_KANANO_purple_01.jpg/960px-Akita_Port_Tower_SELION_at_night_the_KANANO_purple_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "掬茶",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Akita_Port_Tower_SELION_at_night_the_KANANO_purple_01.jpg",
+        "width": 2700,
+        "height": 4800
+      }
+    },
     "external_ids": {
       "wikidata": "Q11314514",
       "osm": "way/818066621"
@@ -5053,17 +5063,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "night": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/df/Akita_Port_Tower_SELION_at_night_the_KANANO_purple_01.jpg/960px-Akita_Port_Tower_SELION_at_night_the_KANANO_purple_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "掬茶",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Akita_Port_Tower_SELION_at_night_the_KANANO_purple_01.jpg",
-        "width": 2700,
-        "height": 4800
-      }
-    }
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q11325862",
@@ -5100,6 +5100,16 @@
         "height": 2304
       }
     ],
+    "season_images": {
+      "winter": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a2/North_Asia_University%2C_Folk_museum_of_snow_country.JPG/960px-North_Asia_University%2C_Folk_museum_of_snow_country.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "掬茶",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:North_Asia_University,_Folk_museum_of_snow_country.JPG",
+        "width": 3072,
+        "height": 2304
+      }
+    },
     "external_ids": {
       "wikidata": "Q11325862"
     },
@@ -5110,17 +5120,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "winter": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a2/North_Asia_University%2C_Folk_museum_of_snow_country.JPG/960px-North_Asia_University%2C_Folk_museum_of_snow_country.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "掬茶",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:North_Asia_University,_Folk_museum_of_snow_country.JPG",
-        "width": 3072,
-        "height": 2304
-      }
-    }
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q11332704",
@@ -5496,11 +5496,11 @@
     "featured": false,
     "score": 52.74,
     "summary": {
-      "text": "一本松温泉（いっぽんまつおんせん）は、秋田県仙北市の乳頭温泉郷にある温泉、野湯である。たつこの湯とも呼ばれている。",
+      "text": "一本松温泉（いっぽんまつおんせん）は、秋田県仙北市の乳頭山への登山道にある野湯。たつこの湯とも呼ばれている。",
       "lang": "ja",
       "source_url": "https://ja.wikipedia.org/wiki/%E4%B8%80%E6%9C%AC%E6%9D%BE%E6%B8%A9%E6%B3%89",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-11-01"
     },
     "images": [
       {
@@ -5859,6 +5859,7 @@
         "height": 2000
       }
     ],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q11370596"
     },
@@ -5869,8 +5870,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q11376326",
@@ -6107,6 +6107,7 @@
         "height": 3444
       }
     ],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q11378977",
       "osm": "way/557611380"
@@ -6126,8 +6127,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q11385698",
@@ -6324,6 +6324,16 @@
         "height": 2800
       }
     ],
+    "season_images": {
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c2/Ny%C3%BBd%C3%B4zaki_K%C3%BBsatu1.jpg/960px-Ny%C3%BBd%C3%B4zaki_K%C3%BBsatu1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "らんで",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Ny%C3%BBd%C3%B4zaki_K%C3%BBsatu1.jpg",
+        "width": 4000,
+        "height": 2250
+      }
+    },
     "external_ids": {
       "wikidata": "Q11389046"
     },
@@ -6338,17 +6348,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c2/Ny%C3%BBd%C3%B4zaki_K%C3%BBsatu1.jpg/960px-Ny%C3%BBd%C3%B4zaki_K%C3%BBsatu1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "らんで",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Ny%C3%BBd%C3%B4zaki_K%C3%BBsatu1.jpg",
-        "width": 4000,
-        "height": 2250
-      }
-    }
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q11390996",
@@ -7625,6 +7625,16 @@
         "height": 2000
       }
     ],
+    "season_images": {
+      "winter": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/74/%C5%8Chirumemuchi_jinja_2018b.jpg/960px-%C5%8Chirumemuchi_jinja_2018b.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Wc018",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:%C5%8Chirumemuchi_jinja_2018b.jpg",
+        "width": 3106,
+        "height": 2329
+      }
+    },
     "external_ids": {
       "wikidata": "Q11435760"
     },
@@ -7635,17 +7645,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "winter": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/74/%C5%8Chirumemuchi_jinja_2018b.jpg/960px-%C5%8Chirumemuchi_jinja_2018b.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Wc018",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:%C5%8Chirumemuchi_jinja_2018b.jpg",
-        "width": 3106,
-        "height": 2329
-      }
-    }
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q11436065",
@@ -7970,6 +7970,24 @@
         "height": 3376
       }
     ],
+    "season_images": {
+      "winter": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2d/Oyu_Stone_Circle_in_snow_20250119a.jpg/960px-Oyu_Stone_Circle_in_snow_20250119a.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "掬茶",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Oyu_Stone_Circle_in_snow_20250119a.jpg",
+        "width": 6000,
+        "height": 3375
+      },
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/30/Special_historic_site_Oyu_Stone_Circles_%2C_%E7%89%B9%E5%88%A5%E5%8F%B2%E8%B7%A1_%E5%A4%A7%E6%B9%AF%E7%92%B0%E7%8A%B6%E5%88%97%E7%9F%B3_-_panoramio_%2813%29.jpg/960px-Special_historic_site_Oyu_Stone_Circles_%2C_%E7%89%B9%E5%88%A5%E5%8F%B2%E8%B7%A1_%E5%A4%A7%E6%B9%AF%E7%92%B0%E7%8A%B6%E5%88%97%E7%9F%B3_-_panoramio_%2813%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "z tanuki",
+        "license": "CC BY 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Special_historic_site_Oyu_Stone_Circles_,_%E7%89%B9%E5%88%A5%E5%8F%B2%E8%B7%A1_%E5%A4%A7%E6%B9%AF%E7%92%B0%E7%8A%B6%E5%88%97%E7%9F%B3_-_panoramio_(13).jpg",
+        "width": 9048,
+        "height": 1600
+      }
+    },
     "external_ids": {
       "wikidata": "Q11437550",
       "osm": "node/2494921890"
@@ -7989,25 +8007,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-10-02",
-    "season_images": {
-      "winter": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2d/Oyu_Stone_Circle_in_snow_20250119a.jpg/960px-Oyu_Stone_Circle_in_snow_20250119a.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "掬茶",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Oyu_Stone_Circle_in_snow_20250119a.jpg",
-        "width": 6000,
-        "height": 3375
-      },
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/30/Special_historic_site_Oyu_Stone_Circles_%2C_%E7%89%B9%E5%88%A5%E5%8F%B2%E8%B7%A1_%E5%A4%A7%E6%B9%AF%E7%92%B0%E7%8A%B6%E5%88%97%E7%9F%B3_-_panoramio_%2813%29.jpg/960px-Special_historic_site_Oyu_Stone_Circles_%2C_%E7%89%B9%E5%88%A5%E5%8F%B2%E8%B7%A1_%E5%A4%A7%E6%B9%AF%E7%92%B0%E7%8A%B6%E5%88%97%E7%9F%B3_-_panoramio_%2813%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "z tanuki",
-        "license": "CC BY 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Special_historic_site_Oyu_Stone_Circles_,_%E7%89%B9%E5%88%A5%E5%8F%B2%E8%B7%A1_%E5%A4%A7%E6%B9%AF%E7%92%B0%E7%8A%B6%E5%88%97%E7%9F%B3_-_panoramio_(13).jpg",
-        "width": 9048,
-        "height": 1600
-      }
-    }
+    "updated_at": "2026-10-02"
   },
   {
     "id": "wd-Q11437588",
@@ -8287,6 +8287,7 @@
         "height": 3376
       }
     ],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q11441926"
     },
@@ -8301,8 +8302,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q11441984",
@@ -9032,6 +9032,16 @@
         "height": 3374
       }
     ],
+    "season_images": {
+      "night": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d6/Kosaka_Mine_Office_at_night_20171216a.jpg/960px-Kosaka_Mine_Office_at_night_20171216a.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "掬茶",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Kosaka_Mine_Office_at_night_20171216a.jpg",
+        "width": 4440,
+        "height": 2960
+      }
+    },
     "external_ids": {
       "wikidata": "Q11459450",
       "osm": "way/449152083"
@@ -9051,17 +9061,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "night": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d6/Kosaka_Mine_Office_at_night_20171216a.jpg/960px-Kosaka_Mine_Office_at_night_20171216a.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "掬茶",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Kosaka_Mine_Office_at_night_20171216a.jpg",
-        "width": 4440,
-        "height": 2960
-      }
-    }
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q11459634",
@@ -9488,6 +9488,16 @@
         "height": 2448
       }
     ],
+    "season_images": {
+      "night": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f7/Akita_Museum_of_Art_at_night_20210102.jpg/960px-Akita_Museum_of_Art_at_night_20210102.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "掬茶",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Akita_Museum_of_Art_at_night_20210102.jpg",
+        "width": 4800,
+        "height": 2700
+      }
+    },
     "external_ids": {
       "wikidata": "Q11483668",
       "osm": "way/461361664"
@@ -9507,17 +9517,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "night": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f7/Akita_Museum_of_Art_at_night_20210102.jpg/960px-Akita_Museum_of_Art_at_night_20210102.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "掬茶",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Akita_Museum_of_Art_at_night_20210102.jpg",
-        "width": 4800,
-        "height": 2700
-      }
-    }
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q11483961",
@@ -9669,6 +9669,16 @@
         "height": 2700
       }
     ],
+    "season_images": {
+      "night": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7e/Korakukan_at_night_20180915.jpg/960px-Korakukan_at_night_20180915.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "掬茶",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Korakukan_at_night_20180915.jpg",
+        "width": 6000,
+        "height": 3374
+      }
+    },
     "external_ids": {
       "wikidata": "Q11486261"
     },
@@ -9683,17 +9693,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "night": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7e/Korakukan_at_night_20180915.jpg/960px-Korakukan_at_night_20180915.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "掬茶",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Korakukan_at_night_20180915.jpg",
-        "width": 6000,
-        "height": 3374
-      }
-    }
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q11487769",
@@ -10013,6 +10013,16 @@
         "height": 480
       }
     ],
+    "season_images": {
+      "night": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b9/Candlelight_and_Hotta-no-saku_Fort_Ruins_20190202.jpg/960px-Candlelight_and_Hotta-no-saku_Fort_Ruins_20190202.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "掬茶",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Candlelight_and_Hotta-no-saku_Fort_Ruins_20190202.jpg",
+        "width": 6000,
+        "height": 3376
+      }
+    },
     "external_ids": {
       "wikidata": "Q11497278",
       "osm": "way/245391984"
@@ -10032,17 +10042,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "night": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b9/Candlelight_and_Hotta-no-saku_Fort_Ruins_20190202.jpg/960px-Candlelight_and_Hotta-no-saku_Fort_Ruins_20190202.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "掬茶",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Candlelight_and_Hotta-no-saku_Fort_Ruins_20190202.jpg",
-        "width": 6000,
-        "height": 3376
-      }
-    }
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q11505030",
@@ -10570,6 +10570,16 @@
         "height": 2592
       }
     ],
+    "season_images": {
+      "winter": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a4/Hinokinai_River_at_Kakunodate%2C_in_winter_2.jpg/960px-Hinokinai_River_at_Kakunodate%2C_in_winter_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "掬茶",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Hinokinai_River_at_Kakunodate,_in_winter_2.jpg",
+        "width": 3264,
+        "height": 2448
+      }
+    },
     "external_ids": {
       "wikidata": "Q11538284"
     },
@@ -10584,17 +10594,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "winter": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a4/Hinokinai_River_at_Kakunodate%2C_in_winter_2.jpg/960px-Hinokinai_River_at_Kakunodate%2C_in_winter_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "掬茶",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Hinokinai_River_at_Kakunodate,_in_winter_2.jpg",
-        "width": 3264,
-        "height": 2448
-      }
-    }
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q11539369",
@@ -10881,6 +10881,24 @@
         "height": 600
       }
     ],
+    "season_images": {
+      "winter": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/69/Kamakura_%28Yokote%27s_Winter_Festival%29_at_Yokote_Castle.jpg/960px-Kamakura_%28Yokote%27s_Winter_Festival%29_at_Yokote_Castle.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Rarisan",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Kamakura_(Yokote%27s_Winter_Festival)_at_Yokote_Castle.jpg",
+        "width": 5503,
+        "height": 3095
+      },
+      "night": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0b/Night_view_of_Yokote_City_from_Yokote_Castle_202410-a.jpg/960px-Night_view_of_Yokote_City_from_Yokote_Castle_202410-a.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Rarisan",
+        "license": "CC0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Night_view_of_Yokote_City_from_Yokote_Castle_202410-a.jpg",
+        "width": 5335,
+        "height": 3559
+      }
+    },
     "external_ids": {
       "wikidata": "Q11542748",
       "osm": "way/796370106"
@@ -10900,25 +10918,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-10-02",
-    "season_images": {
-      "winter": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/69/Kamakura_%28Yokote%27s_Winter_Festival%29_at_Yokote_Castle.jpg/960px-Kamakura_%28Yokote%27s_Winter_Festival%29_at_Yokote_Castle.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Rarisan",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Kamakura_(Yokote%27s_Winter_Festival)_at_Yokote_Castle.jpg",
-        "width": 5503,
-        "height": 3095
-      },
-      "night": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0b/Night_view_of_Yokote_City_from_Yokote_Castle_202410-a.jpg/960px-Night_view_of_Yokote_City_from_Yokote_Castle_202410-a.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Rarisan",
-        "license": "CC0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Night_view_of_Yokote_City_from_Yokote_Castle_202410-a.jpg",
-        "width": 5335,
-        "height": 3559
-      }
-    }
+    "updated_at": "2026-10-02"
   },
   {
     "id": "wd-Q11545530",
@@ -11079,6 +11079,16 @@
         "height": 3376
       }
     ],
+    "season_images": {
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/21/Mizusima_%28Akita%29_K%C3%BBsatu1.jpg/960px-Mizusima_%28Akita%29_K%C3%BBsatu1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "らんで",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Mizusima_(Akita)_K%C3%BBsatu1.jpg",
+        "width": 4000,
+        "height": 2250
+      }
+    },
     "external_ids": {
       "wikidata": "Q11548462"
     },
@@ -11093,17 +11103,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/21/Mizusima_%28Akita%29_K%C3%BBsatu1.jpg/960px-Mizusima_%28Akita%29_K%C3%BBsatu1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "らんで",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Mizusima_(Akita)_K%C3%BBsatu1.jpg",
-        "width": 4000,
-        "height": 2250
-      }
-    }
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q11549049",
@@ -12436,6 +12436,24 @@
         "height": 3375
       }
     ],
+    "season_images": {
+      "autumn": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2c/%E5%8E%A0%E8%88%8E%E8%B7%A1_%EF%BC%8F_%E7%A7%8B%E7%94%B0%E5%9F%8E%E8%B7%A1_-_panoramio.jpg/960px-%E5%8E%A0%E8%88%8E%E8%B7%A1_%EF%BC%8F_%E7%A7%8B%E7%94%B0%E5%9F%8E%E8%B7%A1_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "shikabane taro",
+        "license": "CC BY 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:%E5%8E%A0%E8%88%8E%E8%B7%A1_%EF%BC%8F_%E7%A7%8B%E7%94%B0%E5%9F%8E%E8%B7%A1_-_panoramio.jpg",
+        "width": 1200,
+        "height": 808
+      },
+      "panorama": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/e/e9/Akita_Castle_Ruins.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+        "author": "NASA World Wind",
+        "license": "Public domain",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Akita_Castle_Ruins.png",
+        "width": 868,
+        "height": 519
+      }
+    },
     "external_ids": {
       "wikidata": "Q11595283",
       "osm": "node/2501411119"
@@ -12455,25 +12473,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-10-02",
-    "season_images": {
-      "autumn": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2c/%E5%8E%A0%E8%88%8E%E8%B7%A1_%EF%BC%8F_%E7%A7%8B%E7%94%B0%E5%9F%8E%E8%B7%A1_-_panoramio.jpg/960px-%E5%8E%A0%E8%88%8E%E8%B7%A1_%EF%BC%8F_%E7%A7%8B%E7%94%B0%E5%9F%8E%E8%B7%A1_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "shikabane taro",
-        "license": "CC BY 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:%E5%8E%A0%E8%88%8E%E8%B7%A1_%EF%BC%8F_%E7%A7%8B%E7%94%B0%E5%9F%8E%E8%B7%A1_-_panoramio.jpg",
-        "width": 1200,
-        "height": 808
-      },
-      "panorama": {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/e/e9/Akita_Castle_Ruins.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-        "author": "NASA World Wind",
-        "license": "Public domain",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Akita_Castle_Ruins.png",
-        "width": 868,
-        "height": 519
-      }
-    }
+    "updated_at": "2026-10-02"
   },
   {
     "id": "wd-Q11595294",
@@ -13132,11 +13132,11 @@
     "featured": false,
     "score": 66.32,
     "summary": {
-      "text": "The Akita Inu (秋田犬, Akita Inu, Akita Ken; Japanese pronunciation: [a.kʲi̥.ta(ꜜ) i.nɯ, -ta.keɴ]) is a Japanese dog breed of large size. Originating from the mountains of northern Japan, the Akita has a short double coat similar to that of many other northern spitz breeds.",
+      "text": "The Akita Inu (秋田犬, Akita inu, Akitaken; Japanese pronunciation: [ä̀.kʲi̥.tä́ ì.nɨ̀, -í.nɨ́, -ké̞ɴ́]) is a Japanese dog breed of large size. Originating from the mountains of northern Japan, the Akita has a short double coat similar to that of many other northern spitz breeds.",
       "lang": "en",
       "source_url": "https://en.wikipedia.org/wiki/Akita_Inu_Preservation_Society",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-29"
+      "fetched_at": "2026-11-01"
     },
     "nearest_stations": [
       {
@@ -13357,11 +13357,11 @@
     "featured": false,
     "score": 59.7,
     "summary": {
-      "text": "Akita Prefectural Library (秋田県立図書館, Akita Kenritsu Toshokan) opened in Akita, Akita Prefecture, Japan in 1899, and it is one of the oldest libraries in the country. The facilities reopened in a new building in 1993. The collection numbers some 805,000 items in 2012. 441,642 published material are available online through the library's digital archive. This was done through the AMLAD digital archiving service that connects it to other participating facilities in the prefecture.",
+      "text": "Akita Prefectural Library (秋田県立図書館, Akita Kenritsu Toshokan) opened in Akita, Akita Prefecture, Japan in 1899, and it is one of the oldest libraries in the country. The facilities reopened in a new building in 1993. The collection numbers some 805,000 items in 2012. 441,642 published materials are available online through the library's digital archive. This was done through the AMLAD digital archiving service that connects it to other participating facilities in the prefecture.",
       "lang": "en",
       "source_url": "https://en.wikipedia.org/wiki/Akita_Prefectural_Library",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-29"
+      "fetched_at": "2026-11-01"
     },
     "images": [
       {
@@ -13570,6 +13570,16 @@
         "height": 3375
       }
     ],
+    "season_images": {
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/40/Oga_Aquarium_Gao_Satellite.jpg/960px-Oga_Aquarium_Gao_Satellite.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "NASA World Wind",
+        "license": "Public domain",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Oga_Aquarium_Gao_Satellite.jpg",
+        "width": 1501,
+        "height": 879
+      }
+    },
     "external_ids": {
       "wikidata": "Q11595485",
       "osm": "way/293606115"
@@ -13589,17 +13599,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/40/Oga_Aquarium_Gao_Satellite.jpg/960px-Oga_Aquarium_Gao_Satellite.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "NASA World Wind",
-        "license": "Public domain",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Oga_Aquarium_Gao_Satellite.jpg",
-        "width": 1501,
-        "height": 879
-      }
-    }
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q11595517",
@@ -14413,11 +14413,11 @@
     "featured": false,
     "score": 66.35,
     "summary": {
-      "text": "40°11′26.7″N 139°59′30.4″E",
+      "text": "能代火力發電廠，位於日本秋田縣能代市大森山1-6號，為東北電力株式會社所屬的燃煤火力發電廠。",
       "lang": "zh",
       "source_url": "https://zh.wikipedia.org/wiki/%E8%83%BD%E4%BB%A3%E7%81%AB%E5%8A%9B%E7%99%BC%E9%9B%BB%E5%BB%A0",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-11-01"
     },
     "images": [
       {
@@ -15052,6 +15052,7 @@
         "height": 4160
       }
     ],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q11630000"
     },
@@ -15066,8 +15067,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q11630890",
@@ -15118,21 +15118,6 @@
         "height": 2448
       }
     ],
-    "external_ids": {
-      "wikidata": "Q11630890"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q11630890",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://ja.wikipedia.org/wiki/%E8%A7%92%E9%A4%A8",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-10-02",
     "season_images": {
       "winter": {
         "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6f/Bukeyashiki_Street_in_Kakunodate_20120108a.jpg/960px-Bukeyashiki_Street_in_Kakunodate_20120108a.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -15150,7 +15135,22 @@
         "width": 848,
         "height": 1471
       }
-    }
+    },
+    "external_ids": {
+      "wikidata": "Q11630890"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q11630890",
+        "fetched_at": "2026-09-28"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E8%A7%92%E9%A4%A8",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-10-02"
   },
   {
     "id": "wd-Q11634363",
@@ -15192,6 +15192,16 @@
         "height": 3376
       }
     ],
+    "season_images": {
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/db/Kisakata_air.jpg/960px-Kisakata_air.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Ministry of Land, Infrastructure, Transport and Tourism",
+        "license": "Attribution",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Kisakata_air.jpg",
+        "width": 2030,
+        "height": 2025
+      }
+    },
     "external_ids": {
       "wikidata": "Q11634363"
     },
@@ -15206,17 +15216,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/db/Kisakata_air.jpg/960px-Kisakata_air.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Ministry of Land, Infrastructure, Transport and Tourism",
-        "license": "Attribution",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Kisakata_air.jpg",
-        "width": 2030,
-        "height": 2025
-      }
-    }
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q11635869",
@@ -16997,11 +16997,11 @@
     "featured": false,
     "score": 62.35,
     "summary": {
-      "text": "鶴の湯温泉（つるのゆおんせん）は、秋田県仙北市の乳頭温泉郷内にある温泉である。旅館「鶴の湯温泉」と、その別館である「山の宿」がある。",
+      "text": "鶴の湯温泉（つるのゆおんせん）は、秋田県仙北市の乳頭温泉郷内にある温泉。乳頭温泉郷の乳頭七湯の一つで、同温泉郷で最古の温泉地である。旅館「鶴の湯温泉」と、その別館である「山の宿」がある。",
       "lang": "ja",
       "source_url": "https://ja.wikipedia.org/wiki/%E9%B6%B4%E3%81%AE%E6%B9%AF%E6%B8%A9%E6%B3%89_%28%E7%A7%8B%E7%94%B0%E7%9C%8C%29",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-11-01"
     },
     "images": [
       {
@@ -17714,6 +17714,7 @@
         "height": 3376
       }
     ],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q1364781"
     },
@@ -17728,8 +17729,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q138659909",
@@ -17942,6 +17942,7 @@
         "height": 1000
       }
     ],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q1513968"
     },
@@ -17956,8 +17957,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q17177184",
@@ -18278,6 +18278,16 @@
         "height": 2572
       }
     ],
+    "season_images": {
+      "night": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/52/Roadside_Station_Futatsui_at_night_20211009_%282%29.jpg/960px-Roadside_Station_Futatsui_at_night_20211009_%282%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "掬茶",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Roadside_Station_Futatsui_at_night_20211009_(2).jpg",
+        "width": 1920,
+        "height": 1080
+      }
+    },
     "external_ids": {
       "wikidata": "Q17212923"
     },
@@ -18292,17 +18302,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "night": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/52/Roadside_Station_Futatsui_at_night_20211009_%282%29.jpg/960px-Roadside_Station_Futatsui_at_night_20211009_%282%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "掬茶",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Roadside_Station_Futatsui_at_night_20211009_(2).jpg",
-        "width": 1920,
-        "height": 1080
-      }
-    }
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q17217188",
@@ -19013,21 +19013,6 @@
         "height": 4000
       }
     ],
-    "external_ids": {
-      "wikidata": "Q174309"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q174309",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://ja.wikipedia.org/wiki/%E7%94%B0%E6%B2%A2%E6%B9%96",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-10-02",
     "season_images": {
       "autumn": {
         "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0d/Lake_Tazawa_in_autumn_2022.jpg/960px-Lake_Tazawa_in_autumn_2022.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -19053,7 +19038,22 @@
         "width": 6048,
         "height": 4024
       }
-    }
+    },
+    "external_ids": {
+      "wikidata": "Q174309"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q174309",
+        "fetched_at": "2026-09-28"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E7%94%B0%E6%B2%A2%E6%B9%96",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-10-02"
   },
   {
     "id": "wd-Q17988306",
@@ -19284,6 +19284,16 @@
         "height": 2250
       }
     ],
+    "season_images": {
+      "winter": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9c/SubariDam5.JPG/960px-SubariDam5.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Ippukucho",
+        "license": "CC BY 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:SubariDam5.JPG",
+        "width": 4000,
+        "height": 3000
+      }
+    },
     "external_ids": {
       "wikidata": "Q19965851"
     },
@@ -19298,17 +19308,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "winter": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9c/SubariDam5.JPG/960px-SubariDam5.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Ippukucho",
-        "license": "CC BY 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:SubariDam5.JPG",
-        "width": 4000,
-        "height": 3000
-      }
-    }
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q20038509",
@@ -20162,6 +20162,16 @@
         "height": 3376
       }
     ],
+    "season_images": {
+      "panorama": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/9/9c/Misato_History_and_Folklore_Musium.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+        "author": "NASA World Wind",
+        "license": "Public domain",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Misato_History_and_Folklore_Musium.png",
+        "width": 560,
+        "height": 488
+      }
+    },
     "external_ids": {
       "wikidata": "Q24875355",
       "osm": "node/7235324132"
@@ -20181,17 +20191,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "panorama": {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/9/9c/Misato_History_and_Folklore_Musium.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-        "author": "NASA World Wind",
-        "license": "Public domain",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Misato_History_and_Folklore_Musium.png",
-        "width": 560,
-        "height": 488
-      }
-    }
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q28068848",
@@ -20286,6 +20286,16 @@
         "height": 3456
       }
     ],
+    "season_images": {
+      "winter": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/31/Furushiroyama%2C_Kakunodate%2C_Semboku.jpg/960px-Furushiroyama%2C_Kakunodate%2C_Semboku.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "掬茶",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Furushiroyama,_Kakunodate,_Semboku.jpg",
+        "width": 3264,
+        "height": 2448
+      }
+    },
     "external_ids": {
       "wikidata": "Q2969455",
       "osm": "node/2819591252"
@@ -20305,17 +20315,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "winter": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/31/Furushiroyama%2C_Kakunodate%2C_Semboku.jpg/960px-Furushiroyama%2C_Kakunodate%2C_Semboku.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "掬茶",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Furushiroyama,_Kakunodate,_Semboku.jpg",
-        "width": 3264,
-        "height": 2448
-      }
-    }
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q34750090",
@@ -20467,6 +20467,16 @@
         "height": 4000
       }
     ],
+    "season_images": {
+      "autumn": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a2/%E7%A7%8B%E7%94%B0%E9%A7%92%E3%83%B6%E5%B2%B320231208-P1034959.jpg/960px-%E7%A7%8B%E7%94%B0%E9%A7%92%E3%83%B6%E5%B2%B320231208-P1034959.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "くろふね",
+        "license": "CC BY 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:%E7%A7%8B%E7%94%B0%E9%A7%92%E3%83%B6%E5%B2%B320231208-P1034959.jpg",
+        "width": 1600,
+        "height": 1200
+      }
+    },
     "external_ids": {
       "wikidata": "Q419247"
     },
@@ -20477,17 +20487,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-10-02",
-    "season_images": {
-      "autumn": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a2/%E7%A7%8B%E7%94%B0%E9%A7%92%E3%83%B6%E5%B2%B320231208-P1034959.jpg/960px-%E7%A7%8B%E7%94%B0%E9%A7%92%E3%83%B6%E5%B2%B320231208-P1034959.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "くろふね",
-        "license": "CC BY 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:%E7%A7%8B%E7%94%B0%E9%A7%92%E3%83%B6%E5%B2%B320231208-P1034959.jpg",
-        "width": 1600,
-        "height": 1200
-      }
-    }
+    "updated_at": "2026-10-02"
   },
   {
     "id": "wd-Q419255",
@@ -20592,6 +20592,16 @@
         "height": 2592
       }
     ],
+    "season_images": {
+      "night": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/52/Akita_Kanto_Festival_2019.jpg/960px-Akita_Kanto_Festival_2019.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "掬茶",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Akita_Kanto_Festival_2019.jpg",
+        "width": 6000,
+        "height": 3376
+      }
+    },
     "external_ids": {
       "wikidata": "Q4701224"
     },
@@ -20602,17 +20612,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-10-02",
-    "season_images": {
-      "night": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/52/Akita_Kanto_Festival_2019.jpg/960px-Akita_Kanto_Festival_2019.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "掬茶",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Akita_Kanto_Festival_2019.jpg",
-        "width": 6000,
-        "height": 3376
-      }
-    }
+    "updated_at": "2026-10-02"
   },
   {
     "id": "wd-Q48746777",
@@ -21036,6 +21036,16 @@
         "height": 3648
       }
     ],
+    "season_images": {
+      "night": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9c/Garo_Falls%2C_Fujisato%2C_Akita_in_winter_20260209b.jpg/960px-Garo_Falls%2C_Fujisato%2C_Akita_in_winter_20260209b.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "掬茶",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Garo_Falls,_Fujisato,_Akita_in_winter_20260209b.jpg",
+        "width": 6000,
+        "height": 4000
+      }
+    },
     "external_ids": {
       "wikidata": "Q55532419",
       "osm": "node/7226729755"
@@ -21055,17 +21065,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "night": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9c/Garo_Falls%2C_Fujisato%2C_Akita_in_winter_20260209b.jpg/960px-Garo_Falls%2C_Fujisato%2C_Akita_in_winter_20260209b.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "掬茶",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Garo_Falls,_Fujisato,_Akita_in_winter_20260209b.jpg",
-        "width": 6000,
-        "height": 4000
-      }
-    }
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q56347212",
@@ -21395,26 +21395,6 @@
         "height": 2880
       }
     ],
-    "external_ids": {
-      "wikidata": "Q6133648",
-      "osm": "node/8553116272"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q6133648",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://www.openstreetmap.org/node/8553116272",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://ja.wikipedia.org/wiki/%E4%B9%85%E4%BF%9D%E7%94%B0%E5%9F%8E",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-10-02",
     "season_images": {
       "autumn": {
         "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/da/%E5%8D%83%E7%A7%8B%E5%85%AC%E5%9C%92%E3%81%AE%E7%B4%85%E8%91%8903.jpg/960px-%E5%8D%83%E7%A7%8B%E5%85%AC%E5%9C%92%E3%81%AE%E7%B4%85%E8%91%8903.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -21440,7 +21420,27 @@
         "width": 1536,
         "height": 2048
       }
-    }
+    },
+    "external_ids": {
+      "wikidata": "Q6133648",
+      "osm": "node/8553116272"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q6133648",
+        "fetched_at": "2026-09-28"
+      },
+      {
+        "url": "https://www.openstreetmap.org/node/8553116272",
+        "fetched_at": "2026-09-28"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E4%B9%85%E4%BF%9D%E7%94%B0%E5%9F%8E",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-10-02"
   },
   {
     "id": "wd-Q62016671",
@@ -21491,6 +21491,16 @@
         "height": 3375
       }
     ],
+    "season_images": {
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5c/Osima%28Akita%29_K%C3%BBsatu.jpg/960px-Osima%28Akita%29_K%C3%BBsatu.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "らんで",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Osima(Akita)_K%C3%BBsatu.jpg",
+        "width": 4000,
+        "height": 2250
+      }
+    },
     "external_ids": {
       "wikidata": "Q62016671"
     },
@@ -21505,17 +21515,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5c/Osima%28Akita%29_K%C3%BBsatu.jpg/960px-Osima%28Akita%29_K%C3%BBsatu.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "らんで",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Osima(Akita)_K%C3%BBsatu.jpg",
-        "width": 4000,
-        "height": 2250
-      }
-    }
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q63391379",
@@ -21726,11 +21726,11 @@
     "featured": true,
     "score": 82.83,
     "summary": {
-      "text": "鳥海山（ちょうかいさん or ちょうかいざん）是一座跨越秋田縣和山形縣兩縣縣境的活火山，其山頂位於山形縣遊佐町境內。標高2,236公尺。又有出羽富士（でわふじ）、秋田富士（あきたふじ）的別稱。是日本百名山、日本百景之一。2007年，被選入日本地質百選。鳥海山也是東北地方僅次於燧嶽（海拔高度2,356公尺）的第二高峰。",
+      "text": "鳥海山（ちょうかいさん or ちょうかいざん）是一座跨越秋田縣和山形縣兩縣縣境的活火山，其山頂位於山形縣遊佐町境內。標高2,236米。又有出羽富士（でわふじ）、秋田富士（あきたふじ）的別稱。是日本百名山、日本百景之一。2007年，被選入日本地質百選。鳥海山也是東北地方僅次於燧嶽（海拔高度2,356公尺）的第二高峰。",
       "lang": "zh",
       "source_url": "https://zh.wikipedia.org/wiki/%E9%B3%A5%E6%B5%B7%E5%B1%B1",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-11-01"
     },
     "images": [
       {
@@ -21742,6 +21742,16 @@
         "height": 2160
       }
     ],
+    "season_images": {
+      "winter": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8d/MtChokaiFromOkojoland.jpg/960px-MtChokaiFromOkojoland.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Douglas P. Perkins",
+        "license": "CC BY 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:MtChokaiFromOkojoland.jpg",
+        "width": 3648,
+        "height": 2736
+      }
+    },
     "external_ids": {
       "wikidata": "Q713826"
     },
@@ -21756,17 +21766,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-10-02",
-    "season_images": {
-      "winter": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8d/MtChokaiFromOkojoland.jpg/960px-MtChokaiFromOkojoland.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Douglas P. Perkins",
-        "license": "CC BY 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:MtChokaiFromOkojoland.jpg",
-        "width": 3648,
-        "height": 2736
-      }
-    }
+    "updated_at": "2026-10-02"
   },
   {
     "id": "wd-Q7677211",
@@ -21860,6 +21860,7 @@
         "height": 480
       }
     ],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q7680539"
     },
@@ -21870,8 +21871,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q8081452",
@@ -22343,6 +22343,16 @@
         "height": 1868
       }
     ],
+    "season_images": {
+      "winter": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bd/Kakunodate_Cherry_Bark_Handicrafts_Denshokan_Hall%2C_in_winter.jpg/960px-Kakunodate_Cherry_Bark_Handicrafts_Denshokan_Hall%2C_in_winter.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "掬茶",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Kakunodate_Cherry_Bark_Handicrafts_Denshokan_Hall,_in_winter.jpg",
+        "width": 3264,
+        "height": 2448
+      }
+    },
     "external_ids": {
       "wikidata": "Q98206589",
       "osm": "relation/14721803"
@@ -22362,16 +22372,6 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "winter": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bd/Kakunodate_Cherry_Bark_Handicrafts_Denshokan_Hall%2C_in_winter.jpg/960px-Kakunodate_Cherry_Bark_Handicrafts_Denshokan_Hall%2C_in_winter.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "掬茶",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Kakunodate_Cherry_Bark_Handicrafts_Denshokan_Hall,_in_winter.jpg",
-        "width": 3264,
-        "height": 2448
-      }
-    }
+    "updated_at": "2026-09-28"
   }
 ]

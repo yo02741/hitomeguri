@@ -2038,6 +2038,7 @@
         "height": 2448
       }
     ],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q10317122"
     },
@@ -2052,8 +2053,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q104783674",
@@ -2674,6 +2674,16 @@
         "height": 2100
       }
     ],
+    "season_images": {
+      "summer": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8f/%E5%88%9D%E5%A4%8F%E3%81%AE%E9%BB%84%E8%8A%B1%E8%8F%96%E8%92%B2_%28Hagi_in_early_summer%29_06_May%2C_2014_-_panoramio.jpg/960px-%E5%88%9D%E5%A4%8F%E3%81%AE%E9%BB%84%E8%8A%B1%E8%8F%96%E8%92%B2_%28Hagi_in_early_summer%29_06_May%2C_2014_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Hiroaki Kaneko",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:%E5%88%9D%E5%A4%8F%E3%81%AE%E9%BB%84%E8%8A%B1%E8%8F%96%E8%92%B2_(Hagi_in_early_summer)_06_May,_2014_-_panoramio.jpg",
+        "width": 2800,
+        "height": 2100
+      }
+    },
     "external_ids": {
       "wikidata": "Q1064830",
       "osm": "node/11630385962"
@@ -2689,17 +2699,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-10-02",
-    "season_images": {
-      "summer": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8f/%E5%88%9D%E5%A4%8F%E3%81%AE%E9%BB%84%E8%8A%B1%E8%8F%96%E8%92%B2_%28Hagi_in_early_summer%29_06_May%2C_2014_-_panoramio.jpg/960px-%E5%88%9D%E5%A4%8F%E3%81%AE%E9%BB%84%E8%8A%B1%E8%8F%96%E8%92%B2_%28Hagi_in_early_summer%29_06_May%2C_2014_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Hiroaki Kaneko",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:%E5%88%9D%E5%A4%8F%E3%81%AE%E9%BB%84%E8%8A%B1%E8%8F%96%E8%92%B2_(Hagi_in_early_summer)_06_May,_2014_-_panoramio.jpg",
-        "width": 2800,
-        "height": 2100
-      }
-    }
+    "updated_at": "2026-10-02"
   },
   {
     "id": "wd-Q106646264",
@@ -3047,6 +3047,7 @@
         "height": 960
       }
     ],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q1088510",
       "osm": "way/382967845"
@@ -3062,8 +3063,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q10921114",
@@ -3118,6 +3118,7 @@
         "height": 3976
       }
     ],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q10921114",
       "osm": "way/297169891"
@@ -3137,8 +3138,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q10931453",
@@ -4216,6 +4216,16 @@
         "height": 2160
       }
     ],
+    "season_images": {
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/33/Hikoshima_Island%2C_Yamaguchi_Aerial_photograph.2009.jpg/960px-Hikoshima_Island%2C_Yamaguchi_Aerial_photograph.2009.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "国土地理院",
+        "license": "Attribution",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Hikoshima_Island,_Yamaguchi_Aerial_photograph.2009.jpg",
+        "width": 11732,
+        "height": 11836
+      }
+    },
     "external_ids": {
       "wikidata": "Q11288918"
     },
@@ -4230,17 +4240,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/33/Hikoshima_Island%2C_Yamaguchi_Aerial_photograph.2009.jpg/960px-Hikoshima_Island%2C_Yamaguchi_Aerial_photograph.2009.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "国土地理院",
-        "license": "Attribution",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Hikoshima_Island,_Yamaguchi_Aerial_photograph.2009.jpg",
-        "width": 11732,
-        "height": 11836
-      }
-    }
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q11305907",
@@ -4854,6 +4854,16 @@
         "height": 960
       }
     ],
+    "season_images": {
+      "night": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b2/Shimonoseki_Aquarium_at_night_20161206.jpg/960px-Shimonoseki_Aquarium_at_night_20161206.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "そらみみ",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Shimonoseki_Aquarium_at_night_20161206.jpg",
+        "width": 4032,
+        "height": 3024
+      }
+    },
     "external_ids": {
       "wikidata": "Q11361443",
       "osm": "way/221599485"
@@ -4873,17 +4883,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "night": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b2/Shimonoseki_Aquarium_at_night_20161206.jpg/960px-Shimonoseki_Aquarium_at_night_20161206.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "そらみみ",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Shimonoseki_Aquarium_at_night_20161206.jpg",
-        "width": 4032,
-        "height": 3024
-      }
-    }
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q11361458",
@@ -5700,6 +5700,7 @@
         "height": 1568
       }
     ],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q11381858"
     },
@@ -5714,8 +5715,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q11386420",
@@ -6719,6 +6719,16 @@
         "height": 4000
       }
     ],
+    "season_images": {
+      "night": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a6/Karato_Fish_Market_at_dusk_20161206.jpg/960px-Karato_Fish_Market_at_dusk_20161206.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "そらみみ",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Karato_Fish_Market_at_dusk_20161206.jpg",
+        "width": 4032,
+        "height": 3024
+      }
+    },
     "external_ids": {
       "wikidata": "Q11418545"
     },
@@ -6733,17 +6743,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "night": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a6/Karato_Fish_Market_at_dusk_20161206.jpg/960px-Karato_Fish_Market_at_dusk_20161206.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "そらみみ",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Karato_Fish_Market_at_dusk_20161206.jpg",
-        "width": 4032,
-        "height": 3024
-      }
-    }
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q11420181",
@@ -7084,6 +7084,16 @@
         "height": 3017
       }
     ],
+    "season_images": {
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fd/Hagi_Oshima_Island_Aerial_photograph.jpg/960px-Hagi_Oshima_Island_Aerial_photograph.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "国土交通省",
+        "license": "Attribution",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Hagi_Oshima_Island_Aerial_photograph.jpg",
+        "width": 3312,
+        "height": 4579
+      }
+    },
     "external_ids": {
       "wikidata": "Q11434807"
     },
@@ -7098,17 +7108,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fd/Hagi_Oshima_Island_Aerial_photograph.jpg/960px-Hagi_Oshima_Island_Aerial_photograph.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "国土交通省",
-        "license": "Attribution",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Hagi_Oshima_Island_Aerial_photograph.jpg",
-        "width": 3312,
-        "height": 4579
-      }
-    }
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q11435285",
@@ -8680,6 +8680,7 @@
         "height": 2250
       }
     ],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q11484697"
     },
@@ -8694,8 +8695,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q11486692",
@@ -8979,6 +8979,16 @@
         "height": 2303
       }
     ],
+    "season_images": {
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a5/Nasake-Jima_Island_Yamaguchi_prefecture_Aerial_photograph.1981.jpg/960px-Nasake-Jima_Island_Yamaguchi_prefecture_Aerial_photograph.1981.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "国土交通省",
+        "license": "Attribution",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Nasake-Jima_Island_Yamaguchi_prefecture_Aerial_photograph.1981.jpg",
+        "width": 3194,
+        "height": 2303
+      }
+    },
     "external_ids": {
       "wikidata": "Q11492884"
     },
@@ -8993,17 +9003,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a5/Nasake-Jima_Island_Yamaguchi_prefecture_Aerial_photograph.1981.jpg/960px-Nasake-Jima_Island_Yamaguchi_prefecture_Aerial_photograph.1981.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "国土交通省",
-        "license": "Attribution",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Nasake-Jima_Island_Yamaguchi_prefecture_Aerial_photograph.1981.jpg",
-        "width": 3194,
-        "height": 2303
-      }
-    }
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q11492971",
@@ -9833,6 +9833,16 @@
         "height": 750
       }
     ],
+    "season_images": {
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f1/Hitsu-shima_Island_Hagi_City_Aerial_photograph.jpg/960px-Hitsu-shima_Island_Hagi_City_Aerial_photograph.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "国土交通省",
+        "license": "Attribution",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Hitsu-shima_Island_Hagi_City_Aerial_photograph.jpg",
+        "width": 3436,
+        "height": 2470
+      }
+    },
     "external_ids": {
       "wikidata": "Q11544654"
     },
@@ -9847,17 +9857,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f1/Hitsu-shima_Island_Hagi_City_Aerial_photograph.jpg/960px-Hitsu-shima_Island_Hagi_City_Aerial_photograph.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "国土交通省",
-        "license": "Attribution",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Hitsu-shima_Island_Hagi_City_Aerial_photograph.jpg",
-        "width": 3436,
-        "height": 2470
-      }
-    }
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q11544666",
@@ -10021,6 +10021,7 @@
         "height": 1800
       }
     ],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q11547697",
       "osm": "way/490152838"
@@ -10040,8 +10041,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q11550183",
@@ -10155,6 +10155,16 @@
         "height": 1936
       }
     ],
+    "season_images": {
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/63/Okikamuro_Island_Aerial_photograph.1981.jpg/960px-Okikamuro_Island_Aerial_photograph.1981.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "国土交通省",
+        "license": "Attribution",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Okikamuro_Island_Aerial_photograph.1981.jpg",
+        "width": 3253,
+        "height": 2349
+      }
+    },
     "external_ids": {
       "wikidata": "Q11552498"
     },
@@ -10169,17 +10179,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/63/Okikamuro_Island_Aerial_photograph.1981.jpg/960px-Okikamuro_Island_Aerial_photograph.1981.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "国土交通省",
-        "license": "Attribution",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Okikamuro_Island_Aerial_photograph.1981.jpg",
-        "width": 3253,
-        "height": 2349
-      }
-    }
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q11554391",
@@ -10533,6 +10533,7 @@
         "height": 480
       }
     ],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q11563762"
     },
@@ -10543,8 +10544,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q11563807",
@@ -10735,11 +10735,11 @@
     "featured": false,
     "score": 59.37,
     "summary": {
-      "text": "火の山公園（ひのやまこうえん）は、山口県下関市の火の山にある都市公園（広域公園）。山頂部の「山頂公園」と山麓部の「山麓公園」からなる。",
+      "text": "火の山公園（ひのやまこうえん）は、山口県下関市の火の山に設けられた都市公園（広域公園）である。山頂部の山頂公園と山麓部の山麓公園からなり、開設面積は122.5ヘクタールである。関門海峡や関門橋を望む展望地で、瀬戸内海国立公園の一部に含まれる。山頂には下関要塞の施設であった火ノ山砲台の遺構も残る。",
       "lang": "ja",
       "source_url": "https://ja.wikipedia.org/wiki/%E7%81%AB%E3%81%AE%E5%B1%B1%E5%85%AC%E5%9C%92",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-11-01"
     },
     "images": [
       {
@@ -10812,6 +10812,7 @@
         "height": 2048
       }
     ],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q1156906",
       "osm": "way/436641226"
@@ -10831,8 +10832,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q11569533",
@@ -11124,6 +11124,16 @@
         "height": 3800
       }
     ],
+    "season_images": {
+      "winter": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/0/03/Rurikoji_gojunoto2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+        "author": "User: (WT-shared) Suhobei at wts wikivoyage",
+        "license": "Public domain",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Rurikoji_gojunoto2.jpg",
+        "width": 717,
+        "height": 537
+      }
+    },
     "external_ids": {
       "wikidata": "Q11573988",
       "osm": "node/3018655867"
@@ -11143,17 +11153,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "winter": {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/0/03/Rurikoji_gojunoto2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-        "author": "User: (WT-shared) Suhobei at wts wikivoyage",
-        "license": "Public domain",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Rurikoji_gojunoto2.jpg",
-        "width": 717,
-        "height": 537
-      }
-    }
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q11579670",
@@ -11597,6 +11597,7 @@
         "height": 2332
       }
     ],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q11595801"
     },
@@ -11611,8 +11612,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q11598357",
@@ -11716,6 +11716,16 @@
         "height": 2736
       }
     ],
+    "season_images": {
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/63/Ccg-81-4_c24_2-hashima.JPG/960px-Ccg-81-4_c24_2-hashima.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "国土地理院（トリミング・角度調整(-50°)はMinor edit）",
+        "license": "Attribution",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Ccg-81-4_c24_2-hashima.JPG",
+        "width": 2600,
+        "height": 2600
+      }
+    },
     "external_ids": {
       "wikidata": "Q11598512"
     },
@@ -11730,17 +11740,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/63/Ccg-81-4_c24_2-hashima.JPG/960px-Ccg-81-4_c24_2-hashima.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "国土地理院（トリミング・角度調整(-50°)はMinor edit）",
-        "license": "Attribution",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Ccg-81-4_c24_2-hashima.JPG",
-        "width": 2600,
-        "height": 2600
-      }
-    }
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q11599864",
@@ -12637,6 +12637,7 @@
         "height": 2448
       }
     ],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q11630705"
     },
@@ -12651,8 +12652,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q11633774",
@@ -14160,6 +14160,7 @@
         "height": 2736
       }
     ],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q11662600"
     },
@@ -14174,8 +14175,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q11664494",
@@ -14681,22 +14681,6 @@
         "height": 2848
       }
     ],
-    "external_ids": {
-      "wikidata": "Q1196460",
-      "osm": "way/34582350"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q1196460",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://www.openstreetmap.org/way/34582350",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-10-02",
     "season_images": {
       "night": {
         "url": "https://upload.wikimedia.org/wikipedia/commons/5/5c/Illuminated_Kintai_Bridge.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
@@ -14714,7 +14698,23 @@
         "width": 5269,
         "height": 900
       }
-    }
+    },
+    "external_ids": {
+      "wikidata": "Q1196460",
+      "osm": "way/34582350"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q1196460",
+        "fetched_at": "2026-09-28"
+      },
+      {
+        "url": "https://www.openstreetmap.org/way/34582350",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-10-02"
   },
   {
     "id": "wd-Q1196470",
@@ -14772,6 +14772,16 @@
         "height": 2304
       }
     ],
+    "season_images": {
+      "night": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1a/Kanmon-dannoura.jpg/960px-Kanmon-dannoura.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Takasunrise0921",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Kanmon-dannoura.jpg",
+        "width": 1483,
+        "height": 680
+      }
+    },
     "external_ids": {
       "wikidata": "Q1196470"
     },
@@ -14786,17 +14796,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "night": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1a/Kanmon-dannoura.jpg/960px-Kanmon-dannoura.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Takasunrise0921",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Kanmon-dannoura.jpg",
-        "width": 1483,
-        "height": 680
-      }
-    }
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q123478231",
@@ -15743,6 +15743,16 @@
         "height": 2160
       }
     ],
+    "season_images": {
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1a/Hutaoi_ailand.jpg/960px-Hutaoi_ailand.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "上条ジョー",
+        "license": "Public domain",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Hutaoi_ailand.jpg",
+        "width": 3072,
+        "height": 2304
+      }
+    },
     "external_ids": {
       "wikidata": "Q1475428"
     },
@@ -15757,17 +15767,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1a/Hutaoi_ailand.jpg/960px-Hutaoi_ailand.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "上条ジョー",
-        "license": "Public domain",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Hutaoi_ailand.jpg",
-        "width": 3072,
-        "height": 2304
-      }
-    }
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q1578022",
@@ -15890,6 +15890,7 @@
         "height": 1936
       }
     ],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q15972446"
     },
@@ -15900,8 +15901,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q17193075",
@@ -16334,6 +16334,16 @@
         "height": 1800
       }
     ],
+    "season_images": {
+      "night": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/58/Entrance_and_ferris_wheel_of_Haikara%27t_Yokocho_at_night.jpg/960px-Entrance_and_ferris_wheel_of_Haikara%27t_Yokocho_at_night.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "そらみみ",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Entrance_and_ferris_wheel_of_Haikara%27t_Yokocho_at_night.jpg",
+        "width": 3969,
+        "height": 2977
+      }
+    },
     "external_ids": {
       "wikidata": "Q17216562",
       "osm": "way/1199403570"
@@ -16349,17 +16359,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "night": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/58/Entrance_and_ferris_wheel_of_Haikara%27t_Yokocho_at_night.jpg/960px-Entrance_and_ferris_wheel_of_Haikara%27t_Yokocho_at_night.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "そらみみ",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Entrance_and_ferris_wheel_of_Haikara%27t_Yokocho_at_night.jpg",
-        "width": 3969,
-        "height": 2977
-      }
-    }
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q17224297",
@@ -16536,21 +16536,6 @@
         "height": 960
       }
     ],
-    "external_ids": {
-      "wikidata": "Q1765187"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q1765187",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://ja.wikipedia.org/wiki/%E7%A7%8B%E5%90%89%E5%8F%B0",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-10-02",
     "season_images": {
       "spring": {
         "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/db/Akiyoshidai_-_early_spring_-_2006_3_23.JPG/960px-Akiyoshidai_-_early_spring_-_2006_3_23.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -16568,7 +16553,22 @@
         "width": 10800,
         "height": 2454
       }
-    }
+    },
+    "external_ids": {
+      "wikidata": "Q1765187"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q1765187",
+        "fetched_at": "2026-09-28"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E7%A7%8B%E5%90%89%E5%8F%B0",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-10-02"
   },
   {
     "id": "wd-Q17990566",
@@ -16983,6 +16983,7 @@
         "height": 1800
       }
     ],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q18991024",
       "osm": "node/6367467243"
@@ -17002,8 +17003,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q18991816",
@@ -17159,6 +17159,16 @@
         "height": 3011
       }
     ],
+    "season_images": {
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f3/Maejima_Island%2C_Yamaguchi_Aerial_photograph.2009.jpg/960px-Maejima_Island%2C_Yamaguchi_Aerial_photograph.2009.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "国土地理院",
+        "license": "Attribution",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Maejima_Island,_Yamaguchi_Aerial_photograph.2009.jpg",
+        "width": 2186,
+        "height": 1640
+      }
+    },
     "external_ids": {
       "wikidata": "Q19927579"
     },
@@ -17173,17 +17183,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f3/Maejima_Island%2C_Yamaguchi_Aerial_photograph.2009.jpg/960px-Maejima_Island%2C_Yamaguchi_Aerial_photograph.2009.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "国土地理院",
-        "license": "Attribution",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Maejima_Island,_Yamaguchi_Aerial_photograph.2009.jpg",
-        "width": 2186,
-        "height": 1640
-      }
-    }
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q19927913",
@@ -17348,6 +17348,7 @@
         "height": 2520
       }
     ],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q20043361",
       "osm": "node/6367461617"
@@ -17367,8 +17368,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q20441835",
@@ -17485,6 +17485,7 @@
         "height": 1800
       }
     ],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q20637540",
       "osm": "node/4333121000"
@@ -17500,8 +17501,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q21654662",
@@ -17594,6 +17594,7 @@
         "height": 480
       }
     ],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q22120637",
       "osm": "way/687937931"
@@ -17613,8 +17614,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q22120783",
@@ -17710,6 +17710,7 @@
         "height": 3024
       }
     ],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q2326743",
       "osm": "way/555592247"
@@ -17729,8 +17730,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q2407298",
@@ -17838,6 +17838,7 @@
         "height": 2848
       }
     ],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q24563718"
     },
@@ -17852,8 +17853,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q24871378",
@@ -18414,6 +18414,7 @@
         "height": 960
       }
     ],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q3304746"
     },
@@ -18428,8 +18429,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q36539272",
@@ -19083,21 +19083,6 @@
         "height": 2986
       }
     ],
-    "external_ids": {
-      "wikidata": "Q494894"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q494894",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://ja.wikipedia.org/wiki/%E9%96%A2%E9%96%80%E6%B5%B7%E5%B3%A1",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28",
     "season_images": {
       "night": {
         "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/92/Kanmon-yakei.jpg/960px-Kanmon-yakei.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -19115,7 +19100,22 @@
         "width": 16378,
         "height": 3800
       }
-    }
+    },
+    "external_ids": {
+      "wikidata": "Q494894"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q494894",
+        "fetched_at": "2026-09-28"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E9%96%A2%E9%96%80%E6%B5%B7%E5%B3%A1",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q49513",
@@ -19209,6 +19209,16 @@
         "height": 1422
       }
     ],
+    "season_images": {
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6c/Kuro-Shima_Island_Yamaguchi_Prefecture_Aerial_photograph.2009.jpg/960px-Kuro-Shima_Island_Yamaguchi_Prefecture_Aerial_photograph.2009.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "国土地理院",
+        "license": "Attribution",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Kuro-Shima_Island_Yamaguchi_Prefecture_Aerial_photograph.2009.jpg",
+        "width": 1974,
+        "height": 1422
+      }
+    },
     "external_ids": {
       "wikidata": "Q49649680"
     },
@@ -19219,17 +19229,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6c/Kuro-Shima_Island_Yamaguchi_Prefecture_Aerial_photograph.2009.jpg/960px-Kuro-Shima_Island_Yamaguchi_Prefecture_Aerial_photograph.2009.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "国土地理院",
-        "license": "Attribution",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Kuro-Shima_Island_Yamaguchi_Prefecture_Aerial_photograph.2009.jpg",
-        "width": 1974,
-        "height": 1422
-      }
-    }
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q49663384",
@@ -19271,6 +19271,16 @@
         "height": 3550
       }
     ],
+    "season_images": {
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3e/Noshima_Island%2C_Hofu_Yamaguchi_Aerial_photograph.2008.jpg/960px-Noshima_Island%2C_Hofu_Yamaguchi_Aerial_photograph.2008.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "国土地理院",
+        "license": "Attribution",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Noshima_Island,_Hofu_Yamaguchi_Aerial_photograph.2008.jpg",
+        "width": 4732,
+        "height": 3550
+      }
+    },
     "external_ids": {
       "wikidata": "Q49663384"
     },
@@ -19285,17 +19295,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3e/Noshima_Island%2C_Hofu_Yamaguchi_Aerial_photograph.2008.jpg/960px-Noshima_Island%2C_Hofu_Yamaguchi_Aerial_photograph.2008.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "国土地理院",
-        "license": "Attribution",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Noshima_Island,_Hofu_Yamaguchi_Aerial_photograph.2008.jpg",
-        "width": 4732,
-        "height": 3550
-      }
-    }
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q49665132",
@@ -19337,6 +19337,16 @@
         "height": 1224
       }
     ],
+    "season_images": {
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/51/Oshima_Island_Hagi_City_Aerial_photograph.jpg/960px-Oshima_Island_Hagi_City_Aerial_photograph.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "国土交通省",
+        "license": "Attribution",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Oshima_Island_Hagi_City_Aerial_photograph.jpg",
+        "width": 2646,
+        "height": 1911
+      }
+    },
     "external_ids": {
       "wikidata": "Q49665132"
     },
@@ -19351,17 +19361,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/51/Oshima_Island_Hagi_City_Aerial_photograph.jpg/960px-Oshima_Island_Hagi_City_Aerial_photograph.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "国土交通省",
-        "license": "Attribution",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Oshima_Island_Hagi_City_Aerial_photograph.jpg",
-        "width": 2646,
-        "height": 1911
-      }
-    }
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q4982385",
@@ -20589,6 +20589,16 @@
         "height": 2160
       }
     ],
+    "season_images": {
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/13/Chousyudejima.jpg/960px-Chousyudejima.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "ブルーノ・プラス",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Chousyudejima.jpg",
+        "width": 3648,
+        "height": 2736
+      }
+    },
     "external_ids": {
       "wikidata": "Q62859939"
     },
@@ -20599,17 +20609,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/13/Chousyudejima.jpg/960px-Chousyudejima.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "ブルーノ・プラス",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Chousyudejima.jpg",
-        "width": 3648,
-        "height": 2736
-      }
-    }
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q6368794",
@@ -20856,11 +20856,11 @@
     "featured": false,
     "score": 51.85,
     "summary": {
-      "text": "八坂神社（やさかじんじゃ）は山口県山口市にある神社。別名は祇園さま。",
+      "text": "八坂神社（やさかじんじゃ）は、山口県山口市にある神社。別名は祇園さま。",
       "lang": "ja",
       "source_url": "https://ja.wikipedia.org/wiki/%E5%85%AB%E5%9D%82%E7%A5%9E%E7%A4%BE_%28%E5%B1%B1%E5%8F%A3%E5%B8%82%29",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-11-01"
     },
     "nearest_stations": [
       {
@@ -21140,6 +21140,7 @@
         "height": 931
       }
     ],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q704898",
       "osm": "way/936543803"
@@ -21155,8 +21156,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q712617",
@@ -21199,6 +21199,7 @@
         "height": 1909
       }
     ],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q712617",
       "osm": "way/556811656"
@@ -21214,8 +21215,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q7850236",
@@ -21257,17 +21257,6 @@
         "height": 4000
       }
     ],
-    "external_ids": {
-      "wikidata": "Q7850236"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q7850236",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-10-02",
     "season_images": {
       "night": {
         "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3c/CRW_0090.jpg/960px-CRW_0090.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -21285,7 +21274,18 @@
         "width": 3069,
         "height": 1947
       }
-    }
+    },
+    "external_ids": {
+      "wikidata": "Q7850236"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q7850236",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-10-02"
   },
   {
     "id": "wd-Q7850237",
@@ -21612,6 +21612,16 @@
         "height": 2136
       }
     ],
+    "season_images": {
+      "panorama": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/4/45/Cku-74-24_c16_25-Ganryujima.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+        "author": "国土地理院",
+        "license": "Attribution",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Cku-74-24_c16_25-Ganryujima.JPG",
+        "width": 759,
+        "height": 950
+      }
+    },
     "external_ids": {
       "wikidata": "Q909675"
     },
@@ -21622,17 +21632,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "panorama": {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/4/45/Cku-74-24_c16_25-Ganryujima.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-        "author": "国土地理院",
-        "license": "Attribution",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Cku-74-24_c16_25-Ganryujima.JPG",
-        "width": 759,
-        "height": 950
-      }
-    }
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q92451762",

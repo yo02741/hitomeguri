@@ -1521,6 +1521,24 @@
         "height": 4000
       }
     ],
+    "season_images": {
+      "spring": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f3/Ryouzenji_20230328_1.jpg/960px-Ryouzenji_20230328_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Araiyasushige",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Ryouzenji_20230328_1.jpg",
+        "width": 1983,
+        "height": 1473
+      },
+      "summer": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cc/140712_Ryozenji_Naruto_Tokushima_pref_Japan06s5.jpg/960px-140712_Ryozenji_Naruto_Tokushima_pref_Japan06s5.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "663highland",
+        "license": "CC BY 2.5",
+        "source_url": "https://commons.wikimedia.org/wiki/File:140712_Ryozenji_Naruto_Tokushima_pref_Japan06s5.jpg",
+        "width": 6000,
+        "height": 4000
+      }
+    },
     "external_ids": {
       "wikidata": "Q1085463",
       "osm": "way/416330224"
@@ -1540,25 +1558,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-10-02",
-    "season_images": {
-      "spring": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f3/Ryouzenji_20230328_1.jpg/960px-Ryouzenji_20230328_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Araiyasushige",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Ryouzenji_20230328_1.jpg",
-        "width": 1983,
-        "height": 1473
-      },
-      "summer": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cc/140712_Ryozenji_Naruto_Tokushima_pref_Japan06s5.jpg/960px-140712_Ryozenji_Naruto_Tokushima_pref_Japan06s5.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "663highland",
-        "license": "CC BY 2.5",
-        "source_url": "https://commons.wikimedia.org/wiki/File:140712_Ryozenji_Naruto_Tokushima_pref_Japan06s5.jpg",
-        "width": 6000,
-        "height": 4000
-      }
-    }
+    "updated_at": "2026-10-02"
   },
   {
     "id": "wd-Q108692691",
@@ -2287,9 +2287,12 @@
     "id": "wd-Q11257446",
     "name": {
       "ja": "あすたむらんど徳島",
+      "kana": "あすたむらんどとくしま",
+      "romaji": "Asutamurandotokushima",
       "zh_tw": "德島明日多夢樂園",
       "en": "Asutamu Land Tokushima"
     },
+    "kana_source": "wikipedia",
     "location": {
       "lat": 34.152278,
       "lng": 134.441056
@@ -2305,11 +2308,11 @@
     "featured": false,
     "score": 62.54,
     "summary": {
-      "text": "北緯34度9分8.2秒 東経134度26分27.8秒",
+      "text": "あすたむらんど徳島（あすたむらんどとくしま）は、徳島県板野郡板野町にある、子ども向けの科学教育をテーマとした徳島県立の科学館及び公園である。正式名称は、徳島県立あすたむらんど。2001年7月1日にオープンした。管理・運営は指定管理者制度により、株式会社ネオビエントが行っている。",
       "lang": "ja",
       "source_url": "https://ja.wikipedia.org/wiki/%E3%81%82%E3%81%99%E3%81%9F%E3%82%80%E3%82%89%E3%82%93%E3%81%A9%E5%BE%B3%E5%B3%B6",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-11-01"
     },
     "images": [
       {
@@ -2333,6 +2336,10 @@
       {
         "url": "https://www.openstreetmap.org/way/313342182",
         "fetched_at": "2026-09-28"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E3%81%82%E3%81%99%E3%81%9F%E3%82%80%E3%82%89%E3%82%93%E3%81%A9%E5%BE%B3%E5%B3%B6",
+        "fetched_at": "2026-11-01"
       }
     ],
     "status": "published",
@@ -2445,6 +2452,16 @@
         "height": 3264
       }
     ],
+    "season_images": {
+      "autumn": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1c/%E7%B4%85%E8%91%89%E3%81%A8%E3%81%8B%E3%81%9A%E3%82%89%E6%A9%8B_%28Kazurabashi_%28Iya%29_in_autumn%29_22_Nov%2C_2011_-_panoramio.jpg/960px-%E7%B4%85%E8%91%89%E3%81%A8%E3%81%8B%E3%81%9A%E3%82%89%E6%A9%8B_%28Kazurabashi_%28Iya%29_in_autumn%29_22_Nov%2C_2011_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Hiroaki Kaneko",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:%E7%B4%85%E8%91%89%E3%81%A8%E3%81%8B%E3%81%9A%E3%82%89%E6%A9%8B_(Kazurabashi_(Iya)_in_autumn)_22_Nov,_2011_-_panoramio.jpg",
+        "width": 1200,
+        "height": 900
+      }
+    },
     "external_ids": {
       "wikidata": "Q11263836"
     },
@@ -2459,17 +2476,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-10-02",
-    "season_images": {
-      "autumn": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1c/%E7%B4%85%E8%91%89%E3%81%A8%E3%81%8B%E3%81%9A%E3%82%89%E6%A9%8B_%28Kazurabashi_%28Iya%29_in_autumn%29_22_Nov%2C_2011_-_panoramio.jpg/960px-%E7%B4%85%E8%91%89%E3%81%A8%E3%81%8B%E3%81%9A%E3%82%89%E6%A9%8B_%28Kazurabashi_%28Iya%29_in_autumn%29_22_Nov%2C_2011_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Hiroaki Kaneko",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:%E7%B4%85%E8%91%89%E3%81%A8%E3%81%8B%E3%81%9A%E3%82%89%E6%A9%8B_(Kazurabashi_(Iya)_in_autumn)_22_Nov,_2011_-_panoramio.jpg",
-        "width": 1200,
-        "height": 900
-      }
-    }
+    "updated_at": "2026-10-02"
   },
   {
     "id": "wd-Q11266820",
@@ -2511,6 +2518,7 @@
         "height": 1536
       }
     ],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q11266820"
     },
@@ -2525,8 +2533,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q11268768",
@@ -3576,11 +3583,11 @@
     "featured": false,
     "score": 57.25,
     "summary": {
-      "text": "中津峰山（なかつみねさん／なかつみねやま） とは、四国山地のうち、「剣山地」の最東部に位置する、標高 773 ｍの山である      。",
+      "text": "中津峰山（なかつみねさん／なかつみねやま） は、四国山地のうち、剣山地の最東部に位置する、標高 773 ｍの山である      。",
       "lang": "ja",
       "source_url": "https://ja.wikipedia.org/wiki/%E4%B8%AD%E6%B4%A5%E5%B3%B0%E5%B1%B1",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-11-01"
     },
     "images": [
       {
@@ -3943,6 +3950,16 @@
         "height": 1308
       }
     ],
+    "season_images": {
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3f/Ishima_maeshima_tanagojima.jpg/960px-Ishima_maeshima_tanagojima.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "ブルーノ・プラス",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Ishima_maeshima_tanagojima.jpg",
+        "width": 3648,
+        "height": 2736
+      }
+    },
     "external_ids": {
       "wikidata": "Q11379335"
     },
@@ -3953,17 +3970,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3f/Ishima_maeshima_tanagojima.jpg/960px-Ishima_maeshima_tanagojima.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "ブルーノ・プラス",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Ishima_maeshima_tanagojima.jpg",
-        "width": 3648,
-        "height": 2736
-      }
-    }
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q11390464",
@@ -4312,6 +4319,16 @@
         "height": 1176
       }
     ],
+    "season_images": {
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/20/%E5%87%BA%E7%BE%BD%E5%B3%B6_%E5%BE%B3%E5%B3%B6%E7%9C%8C%E7%89%9F%E5%B2%90%E7%94%BA_%28446227443%29.jpg/960px-%E5%87%BA%E7%BE%BD%E5%B3%B6_%E5%BE%B3%E5%B3%B6%E7%9C%8C%E7%89%9F%E5%B2%90%E7%94%BA_%28446227443%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Hideyuki KAMON",
+        "license": "CC BY-SA 2.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:%E5%87%BA%E7%BE%BD%E5%B3%B6_%E5%BE%B3%E5%B3%B6%E7%9C%8C%E7%89%9F%E5%B2%90%E7%94%BA_(446227443).jpg",
+        "width": 2000,
+        "height": 3008
+      }
+    },
     "external_ids": {
       "wikidata": "Q11395786"
     },
@@ -4326,17 +4343,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/20/%E5%87%BA%E7%BE%BD%E5%B3%B6_%E5%BE%B3%E5%B3%B6%E7%9C%8C%E7%89%9F%E5%B2%90%E7%94%BA_%28446227443%29.jpg/960px-%E5%87%BA%E7%BE%BD%E5%B3%B6_%E5%BE%B3%E5%B3%B6%E7%9C%8C%E7%89%9F%E5%B2%90%E7%94%BA_%28446227443%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Hideyuki KAMON",
-        "license": "CC BY-SA 2.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:%E5%87%BA%E7%BE%BD%E5%B3%B6_%E5%BE%B3%E5%B3%B6%E7%9C%8C%E7%89%9F%E5%B2%90%E7%94%BA_(446227443).jpg",
-        "width": 2000,
-        "height": 3008
-      }
-    }
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q11397111",
@@ -5245,6 +5252,16 @@
         "height": 768
       }
     ],
+    "season_images": {
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/df/Mugi-Oshima_Island_Aerial_photograph.1975.jpg/960px-Mugi-Oshima_Island_Aerial_photograph.1975.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "国土交通省",
+        "license": "Attribution",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Mugi-Oshima_Island_Aerial_photograph.1975.jpg",
+        "width": 2600,
+        "height": 1879
+      }
+    },
     "external_ids": {
       "wikidata": "Q11434809"
     },
@@ -5259,17 +5276,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/df/Mugi-Oshima_Island_Aerial_photograph.1975.jpg/960px-Mugi-Oshima_Island_Aerial_photograph.1975.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "国土交通省",
-        "license": "Attribution",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Mugi-Oshima_Island_Aerial_photograph.1975.jpg",
-        "width": 2600,
-        "height": 1879
-      }
-    }
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q11435141",
@@ -5612,6 +5619,16 @@
         "height": 480
       }
     ],
+    "season_images": {
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/44/Japan%2C_Tokushima_-_Naruto_%C5%8Cgeshima_2018.jpg/960px-Japan%2C_Tokushima_-_Naruto_%C5%8Cgeshima_2018.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "USGS Landsat",
+        "license": "Public domain",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Japan,_Tokushima_-_Naruto_%C5%8Cgeshima_2018.jpg",
+        "width": 1038,
+        "height": 1080
+      }
+    },
     "external_ids": {
       "wikidata": "Q11436765"
     },
@@ -5626,17 +5643,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/44/Japan%2C_Tokushima_-_Naruto_%C5%8Cgeshima_2018.jpg/960px-Japan%2C_Tokushima_-_Naruto_%C5%8Cgeshima_2018.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "USGS Landsat",
-        "license": "Public domain",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Japan,_Tokushima_-_Naruto_%C5%8Cgeshima_2018.jpg",
-        "width": 1038,
-        "height": 1080
-      }
-    }
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q11437422",
@@ -5901,11 +5908,11 @@
     "featured": false,
     "score": 57.33,
     "summary": {
-      "text": "この項の大麻山（おおあさやま）は、讃岐山脈（阿讃山地）の最も東に位置する、標高  538ｍの山である         。",
+      "text": "この項の大麻山（おおあさやま）は、讃岐山脈（阿讃山地）の最も東に位置する、標高  538 ｍの山である         。行政区画的には、全山が徳島県  鳴門市に属している     。",
       "lang": "ja",
       "source_url": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E9%BA%BB%E5%B1%B1_%28%E5%BE%B3%E5%B3%B6%E7%9C%8C%29",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-11-01"
     },
     "images": [
       {
@@ -5917,6 +5924,16 @@
         "height": 3456
       }
     ],
+    "season_images": {
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/32/Ooasayama01a.jpg/960px-Ooasayama01a.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Dokudami",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Ooasayama01a.jpg",
+        "width": 3093,
+        "height": 1025
+      }
+    },
     "external_ids": {
       "wikidata": "Q11442028"
     },
@@ -5927,17 +5944,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/32/Ooasayama01a.jpg/960px-Ooasayama01a.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Dokudami",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Ooasayama01a.jpg",
-        "width": 3093,
-        "height": 1025
-      }
-    }
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q11442033",
@@ -6085,11 +6092,11 @@
     "featured": false,
     "score": 52.62,
     "summary": {
-      "text": "太竜寺山（たいりゅうじさん／たいりゅうじやま） は、四国山地のうち、「剣山地」の最東部に位置する、標高 618 ｍの山である      。",
+      "text": "太竜寺山（たいりゅうじさん／たいりゅうじやま） は、四国山地のうち、剣山地の最東部に位置する、標高 618 ｍの山である      。",
       "lang": "ja",
       "source_url": "https://ja.wikipedia.org/wiki/%E5%A4%AA%E7%AB%9C%E5%AF%BA%E5%B1%B1",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-11-01"
     },
     "images": [
       {
@@ -6101,6 +6108,16 @@
         "height": 2848
       }
     ],
+    "season_images": {
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5e/Tairyuji_21.jpg/960px-Tairyuji_21.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Dokudami",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Tairyuji_21.jpg",
+        "width": 1600,
+        "height": 609
+      }
+    },
     "external_ids": {
       "wikidata": "Q11444488"
     },
@@ -6115,17 +6132,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5e/Tairyuji_21.jpg/960px-Tairyuji_21.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Dokudami",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Tairyuji_21.jpg",
-        "width": 1600,
-        "height": 609
-      }
-    }
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q11444739",
@@ -10501,6 +10508,16 @@
         "height": 2592
       }
     ],
+    "season_images": {
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5e/Ebigaike_panorama.jpg/960px-Ebigaike_panorama.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Reggaeman",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Ebigaike_panorama.jpg",
+        "width": 5400,
+        "height": 1630
+      }
+    },
     "external_ids": {
       "wikidata": "Q11559113"
     },
@@ -10515,17 +10532,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5e/Ebigaike_panorama.jpg/960px-Ebigaike_panorama.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Reggaeman",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Ebigaike_panorama.jpg",
-        "width": 5400,
-        "height": 1630
-      }
-    }
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q11559321",
@@ -12018,6 +12025,16 @@
         "height": 3166
       }
     ],
+    "season_images": {
+      "night": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f2/Yakuouji%E8%96%AC%E7%8E%8B%E5%AF%BA%EF%BC%90%EF%BC%92%E2%91%A0P1034690.jpg/960px-Yakuouji%E8%96%AC%E7%8E%8B%E5%AF%BA%EF%BC%90%EF%BC%92%E2%91%A0P1034690.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "夕暮れのブランコ",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Yakuouji%E8%96%AC%E7%8E%8B%E5%AF%BA%EF%BC%90%EF%BC%92%E2%91%A0P1034690.jpg",
+        "width": 1280,
+        "height": 960
+      }
+    },
     "external_ids": {
       "wikidata": "Q11622491",
       "osm": "node/369741886"
@@ -12037,17 +12054,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "night": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f2/Yakuouji%E8%96%AC%E7%8E%8B%E5%AF%BA%EF%BC%90%EF%BC%92%E2%91%A0P1034690.jpg/960px-Yakuouji%E8%96%AC%E7%8E%8B%E5%AF%BA%EF%BC%90%EF%BC%92%E2%91%A0P1034690.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "夕暮れのブランコ",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Yakuouji%E8%96%AC%E7%8E%8B%E5%AF%BA%EF%BC%90%EF%BC%92%E2%91%A0P1034690.jpg",
-        "width": 1280,
-        "height": 960
-      }
-    }
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q11622548",
@@ -14433,11 +14440,11 @@
     "featured": false,
     "score": 61.92,
     "summary": {
-      "text": "高越山（こうつさん／こうつざん）  は、「剣山地」の北端部、吉野川の中下流部に面する、標高  1133ｍの山である      。",
+      "text": "高越山（こうつさん／こうつざん）  は、剣山地の北端部、吉野川の中下流部に面する、標高  1133 ｍの山である      。",
       "lang": "ja",
       "source_url": "https://ja.wikipedia.org/wiki/%E9%AB%98%E8%B6%8A%E5%B1%B1",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-11-01"
     },
     "images": [
       {
@@ -15272,6 +15279,16 @@
         "height": 2592
       }
     ],
+    "season_images": {
+      "night": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5a/%E9%B3%B4%E9%96%80%E5%A4%A7%E6%A9%8B_-_naruto_bridge_-_panoramio.jpg/960px-%E9%B3%B4%E9%96%80%E5%A4%A7%E6%A9%8B_-_naruto_bridge_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "yano@mama.akari.ne.j…",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:%E9%B3%B4%E9%96%80%E5%A4%A7%E6%A9%8B_-_naruto_bridge_-_panoramio.jpg",
+        "width": 4912,
+        "height": 3264
+      }
+    },
     "external_ids": {
       "wikidata": "Q1292175"
     },
@@ -15286,17 +15303,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "night": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5a/%E9%B3%B4%E9%96%80%E5%A4%A7%E6%A9%8B_-_naruto_bridge_-_panoramio.jpg/960px-%E9%B3%B4%E9%96%80%E5%A4%A7%E6%A9%8B_-_naruto_bridge_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "yano@mama.akari.ne.j…",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:%E9%B3%B4%E9%96%80%E5%A4%A7%E6%A9%8B_-_naruto_bridge_-_panoramio.jpg",
-        "width": 4912,
-        "height": 3264
-      }
-    }
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q130335552",
@@ -15447,6 +15454,16 @@
         "height": 2304
       }
     ],
+    "season_images": {
+      "winter": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7c/Awa_no_Naruto-%E9%9B%AA%E6%9C%88%E8%8A%B1_%E9%98%BF%E6%B3%A2%E9%B3%B4%E9%96%80%E4%B9%8B%E9%A2%A8%E6%99%AF-The_Whirlpools_of_Awa_MET_DP146864.jpg/960px-Awa_no_Naruto-%E9%9B%AA%E6%9C%88%E8%8A%B1_%E9%98%BF%E6%B3%A2%E9%B3%B4%E9%96%80%E4%B9%8B%E9%A2%A8%E6%99%AF-The_Whirlpools_of_Awa_MET_DP146864.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Utagawa Hiroshige",
+        "license": "CC0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Awa_no_Naruto-%E9%9B%AA%E6%9C%88%E8%8A%B1_%E9%98%BF%E6%B3%A2%E9%B3%B4%E9%96%80%E4%B9%8B%E9%A2%A8%E6%99%AF-The_Whirlpools_of_Awa_MET_DP146864.jpg",
+        "width": 3913,
+        "height": 1945
+      }
+    },
     "external_ids": {
       "wikidata": "Q1350120",
       "osm": "node/6287820989"
@@ -15462,17 +15479,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-10-02",
-    "season_images": {
-      "winter": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7c/Awa_no_Naruto-%E9%9B%AA%E6%9C%88%E8%8A%B1_%E9%98%BF%E6%B3%A2%E9%B3%B4%E9%96%80%E4%B9%8B%E9%A2%A8%E6%99%AF-The_Whirlpools_of_Awa_MET_DP146864.jpg/960px-Awa_no_Naruto-%E9%9B%AA%E6%9C%88%E8%8A%B1_%E9%98%BF%E6%B3%A2%E9%B3%B4%E9%96%80%E4%B9%8B%E9%A2%A8%E6%99%AF-The_Whirlpools_of_Awa_MET_DP146864.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Utagawa Hiroshige",
-        "license": "CC0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Awa_no_Naruto-%E9%9B%AA%E6%9C%88%E8%8A%B1_%E9%98%BF%E6%B3%A2%E9%B3%B4%E9%96%80%E4%B9%8B%E9%A2%A8%E6%99%AF-The_Whirlpools_of_Awa_MET_DP146864.jpg",
-        "width": 3913,
-        "height": 1945
-      }
-    }
+    "updated_at": "2026-10-02"
   },
   {
     "id": "wd-Q17191362",
@@ -15726,6 +15733,16 @@
         "height": 1104
       }
     ],
+    "season_images": {
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/49/Kokatsu.island.jpg/960px-Kokatsu.island.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "ブルーノ",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Kokatsu.island.jpg",
+        "width": 3648,
+        "height": 2736
+      }
+    },
     "external_ids": {
       "wikidata": "Q17219919"
     },
@@ -15740,17 +15757,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/49/Kokatsu.island.jpg/960px-Kokatsu.island.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "ブルーノ",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Kokatsu.island.jpg",
-        "width": 3648,
-        "height": 2736
-      }
-    }
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q17224370",
@@ -16243,6 +16250,16 @@
         "height": 4200
       }
     ],
+    "season_images": {
+      "night": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/85/Night_view_from_tachibana_bay_-_%E6%A9%98%E6%B9%BE%E3%81%AE%E5%A4%9C%E6%99%AF_-_panoramio.jpg/960px-Night_view_from_tachibana_bay_-_%E6%A9%98%E6%B9%BE%E3%81%AE%E5%A4%9C%E6%99%AF_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "yano@mama.akari.ne.j…",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Night_view_from_tachibana_bay_-_%E6%A9%98%E6%B9%BE%E3%81%AE%E5%A4%9C%E6%99%AF_-_panoramio.jpg",
+        "width": 4912,
+        "height": 3264
+      }
+    },
     "external_ids": {
       "wikidata": "Q28354311"
     },
@@ -16257,17 +16274,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "night": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/85/Night_view_from_tachibana_bay_-_%E6%A9%98%E6%B9%BE%E3%81%AE%E5%A4%9C%E6%99%AF_-_panoramio.jpg/960px-Night_view_from_tachibana_bay_-_%E6%A9%98%E6%B9%BE%E3%81%AE%E5%A4%9C%E6%99%AF_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "yano@mama.akari.ne.j…",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Night_view_from_tachibana_bay_-_%E6%A9%98%E6%B9%BE%E3%81%AE%E5%A4%9C%E6%99%AF_-_panoramio.jpg",
-        "width": 4912,
-        "height": 3264
-      }
-    }
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q2852417",
@@ -16486,6 +16493,16 @@
         "height": 1217
       }
     ],
+    "season_images": {
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/39/Maikoshima_Island%2C_Anan_Tokushima_Aerial_photograph.2014.jpg/960px-Maikoshima_Island%2C_Anan_Tokushima_Aerial_photograph.2014.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "国土地理院",
+        "license": "Attribution",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Maikoshima_Island,_Anan_Tokushima_Aerial_photograph.2014.jpg",
+        "width": 2907,
+        "height": 2180
+      }
+    },
     "external_ids": {
       "wikidata": "Q28687509"
     },
@@ -16500,17 +16517,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/39/Maikoshima_Island%2C_Anan_Tokushima_Aerial_photograph.2014.jpg/960px-Maikoshima_Island%2C_Anan_Tokushima_Aerial_photograph.2014.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "国土地理院",
-        "license": "Attribution",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Maikoshima_Island,_Anan_Tokushima_Aerial_photograph.2014.jpg",
-        "width": 2907,
-        "height": 2180
-      }
-    }
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q28687512",
@@ -16774,6 +16781,16 @@
         "height": 869
       }
     ],
+    "season_images": {
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6d/Bentenjima_Island%2C_Anan_Tokushima_Aerial_photograph.2014.jpg/960px-Bentenjima_Island%2C_Anan_Tokushima_Aerial_photograph.2014.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "国土地理院",
+        "license": "Attribution",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Bentenjima_Island,_Anan_Tokushima_Aerial_photograph.2014.jpg",
+        "width": 1110,
+        "height": 833
+      }
+    },
     "external_ids": {
       "wikidata": "Q28687551"
     },
@@ -16788,17 +16805,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6d/Bentenjima_Island%2C_Anan_Tokushima_Aerial_photograph.2014.jpg/960px-Bentenjima_Island%2C_Anan_Tokushima_Aerial_photograph.2014.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "国土地理院",
-        "license": "Attribution",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Bentenjima_Island,_Anan_Tokushima_Aerial_photograph.2014.jpg",
-        "width": 1110,
-        "height": 833
-      }
-    }
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q28688654",
@@ -17950,6 +17957,16 @@
         "height": 2000
       }
     ],
+    "season_images": {
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d3/The_Otsuka_Museum_of_Art20s3203-B-T.jpg/960px-The_Otsuka_Museum_of_Art20s3203-B-T.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Original uploader was EMS-62 (Edited by 663h)",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:The_Otsuka_Museum_of_Art20s3203-B-T.jpg",
+        "width": 3000,
+        "height": 2000
+      }
+    },
     "external_ids": {
       "wikidata": "Q3329659",
       "osm": "relation/4205190"
@@ -17969,17 +17986,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d3/The_Otsuka_Museum_of_Art20s3203-B-T.jpg/960px-The_Otsuka_Museum_of_Art20s3203-B-T.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Original uploader was EMS-62 (Edited by 663h)",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:The_Otsuka_Museum_of_Art20s3203-B-T.jpg",
-        "width": 3000,
-        "height": 2000
-      }
-    }
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q3408660",
@@ -18019,6 +18026,7 @@
         "height": 3017
       }
     ],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q3408660"
     },
@@ -18033,8 +18041,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q3514063",
@@ -18268,6 +18275,7 @@
         "height": 1728
       }
     ],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q3695995"
     },
@@ -18282,8 +18290,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q3740674",
@@ -18829,6 +18836,16 @@
         "height": 2400
       }
     ],
+    "season_images": {
+      "night": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c4/Awa-dance_memorial_hall02n3200.jpg/960px-Awa-dance_memorial_hall02n3200.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "663highland",
+        "license": "CC BY 2.5",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Awa-dance_memorial_hall02n3200.jpg",
+        "width": 3200,
+        "height": 2142
+      }
+    },
     "external_ids": {
       "wikidata": "Q4829638",
       "osm": "node/1423661426"
@@ -18848,17 +18865,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "night": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c4/Awa-dance_memorial_hall02n3200.jpg/960px-Awa-dance_memorial_hall02n3200.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "663highland",
-        "license": "CC BY 2.5",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Awa-dance_memorial_hall02n3200.jpg",
-        "width": 3200,
-        "height": 2142
-      }
-    }
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q48758279",
@@ -20297,6 +20304,16 @@
         "height": 1536
       }
     ],
+    "season_images": {
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c9/Naruto_Park_panorama2.jpg/960px-Naruto_Park_panorama2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Mr. Udon",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Naruto_Park_panorama2.jpg",
+        "width": 23200,
+        "height": 3200
+      }
+    },
     "external_ids": {
       "wikidata": "Q545446"
     },
@@ -20311,17 +20328,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c9/Naruto_Park_panorama2.jpg/960px-Naruto_Park_panorama2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Mr. Udon",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Naruto_Park_panorama2.jpg",
-        "width": 23200,
-        "height": 3200
-      }
-    }
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q55537778",
@@ -23232,6 +23239,7 @@
         "height": 3900
       }
     ],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q723417"
     },
@@ -23242,8 +23250,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q735186",
@@ -23494,6 +23501,16 @@
         "height": 2592
       }
     ],
+    "season_images": {
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b2/Tokushima_Castle_air.jpg/960px-Tokushima_Castle_air.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "不明",
+        "license": "Attribution",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Tokushima_Castle_air.jpg",
+        "width": 2420,
+        "height": 2000
+      }
+    },
     "external_ids": {
       "wikidata": "Q8011246",
       "osm": "node/12285186670"
@@ -23513,17 +23530,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b2/Tokushima_Castle_air.jpg/960px-Tokushima_Castle_air.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "不明",
-        "license": "Attribution",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Tokushima_Castle_air.jpg",
-        "width": 2420,
-        "height": 2000
-      }
-    }
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q8081421",
@@ -23615,6 +23622,16 @@
         "height": 2413
       }
     ],
+    "season_images": {
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/22/Mount_Bizan_from_Shimmachi_River_20200607.jpg/960px-Mount_Bizan_from_Shimmachi_River_20200607.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "新幹線",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Mount_Bizan_from_Shimmachi_River_20200607.jpg",
+        "width": 3620,
+        "height": 2413
+      }
+    },
     "external_ids": {
       "wikidata": "Q8189109"
     },
@@ -23629,17 +23646,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/22/Mount_Bizan_from_Shimmachi_River_20200607.jpg/960px-Mount_Bizan_from_Shimmachi_River_20200607.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "新幹線",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Mount_Bizan_from_Shimmachi_River_20200607.jpg",
-        "width": 3620,
-        "height": 2413
-      }
-    }
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q979774",
@@ -23663,11 +23670,11 @@
     "featured": true,
     "score": 79.41,
     "summary": {
-      "text": "33°47′36.9″N 133°11′53.1″E34°04′46.4″N 134°35′54.7″E",
+      "text": "吉野川是位於日本四國的河川，一級水系吉野川水系的主流，發源自高知縣瓶森，經德島縣於德島市注入紀伊水道，全長194公里，流域面積3,750平方公里，約為整個四國面積的兩成。以「四國三郎」的綽號與利根川（綽號：坂東太郎）、筑後川（綽號：筑紫次郎）共同被列為被列入日本三大狂暴河川（日文原名：日本三大暴れ川）。",
       "lang": "zh",
       "source_url": "https://zh.wikipedia.org/wiki/%E5%90%89%E9%87%8E%E5%B7%9D",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-11-01"
     },
     "images": [
       {
@@ -23679,6 +23686,16 @@
         "height": 515
       }
     ],
+    "season_images": {
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/87/YoshinoGawa.jpg/960px-YoshinoGawa.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "BehBeh",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:YoshinoGawa.jpg",
+        "width": 1280,
+        "height": 960
+      }
+    },
     "external_ids": {
       "wikidata": "Q979774"
     },
@@ -23689,16 +23706,6 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/87/YoshinoGawa.jpg/960px-YoshinoGawa.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "BehBeh",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:YoshinoGawa.jpg",
-        "width": 1280,
-        "height": 960
-      }
-    }
+    "updated_at": "2026-09-28"
   }
 ]

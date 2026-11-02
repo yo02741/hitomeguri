@@ -1775,11 +1775,11 @@
     "featured": false,
     "score": 42.0,
     "summary": {
-      "text": "Habu Site (土生遺跡, Habu iseki) is an archeological site with a Yayoi period settlement trace located in the Mikazuki neighborhood of the city of Ogi, Saga Prefecture Japan. It was designated as a National Historic Site in 1973.",
+      "text": "Habu Site (土生遺跡, Habu iseki) is an archaeological site with a Yayoi period settlement trace located in the Mikazuki neighborhood of the city of Ogi, Saga Prefecture Japan. It was designated as a National Historic Site in 1973.",
       "lang": "en",
       "source_url": "https://en.wikipedia.org/wiki/Habu_Site",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-29"
+      "fetched_at": "2026-11-01"
     },
     "nearest_stations": [
       {
@@ -1878,6 +1878,7 @@
         "height": 2016
       }
     ],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q1049645",
       "osm": "node/12871663876"
@@ -1893,8 +1894,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q105109472",
@@ -2001,17 +2001,6 @@
         "height": 1632
       }
     ],
-    "external_ids": {
-      "wikidata": "Q1056242"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q1056242",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-10-02",
     "season_images": {
       "night": {
         "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c0/Chikugo_River_Lift_Bridge_and_a_boat_at_night_2016.jpg/960px-Chikugo_River_Lift_Bridge_and_a_boat_at_night_2016.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -2029,7 +2018,18 @@
         "width": 1000,
         "height": 1000
       }
-    }
+    },
+    "external_ids": {
+      "wikidata": "Q1056242"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q1056242",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-10-02"
   },
   {
     "id": "wd-Q105814630",
@@ -2250,6 +2250,7 @@
         "height": 2304
       }
     ],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q1071095",
       "osm": "node/12902924455"
@@ -2265,8 +2266,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q107322654",
@@ -2374,6 +2374,7 @@
         "height": 431
       }
     ],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q1073585",
       "osm": "way/500427895"
@@ -2389,8 +2390,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q108604813",
@@ -3068,11 +3068,11 @@
     "featured": false,
     "score": 39.86,
     "summary": {
-      "text": "エスプラッツ（S-Platz）は、佐賀県佐賀市白山二丁目にある再開発ビル。佐賀市が運営する商業施設と公団住宅が一体となったビルである。本来はビル全体の名称だが、狭義では特に商業部分をさす。",
+      "text": "エスプラッツ（S-Platz）は、佐賀県佐賀市にある再開発ビル。佐賀市が運営する商業施設と公団住宅が一体となったビルである。本来はビル全体の名称だが、狭義では特に商業部分をさす。",
       "lang": "ja",
       "source_url": "https://ja.wikipedia.org/wiki/%E3%82%A8%E3%82%B9%E3%83%97%E3%83%A9%E3%83%83%E3%83%84",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-11-01"
     },
     "images": [
       {
@@ -3538,6 +3538,7 @@
         "height": 2448
       }
     ],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q11357710",
       "osm": "node/4583836415"
@@ -3557,8 +3558,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q11363052",
@@ -3855,6 +3855,16 @@
         "height": 2993
       }
     ],
+    "season_images": {
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4c/Saga_Jinja_Street_Entrance.jpg/960px-Saga_Jinja_Street_Entrance.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "ja:User:Sanjo",
+        "license": "Public domain",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Saga_Jinja_Street_Entrance.jpg",
+        "width": 2113,
+        "height": 954
+      }
+    },
     "external_ids": {
       "wikidata": "Q11383096",
       "osm": "node/5599101701"
@@ -3874,17 +3884,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4c/Saga_Jinja_Street_Entrance.jpg/960px-Saga_Jinja_Street_Entrance.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "ja:User:Sanjo",
-        "license": "Public domain",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Saga_Jinja_Street_Entrance.jpg",
-        "width": 2113,
-        "height": 954
-      }
-    }
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q11384628",
@@ -3926,21 +3926,6 @@
         "height": 3632
       }
     ],
-    "external_ids": {
-      "wikidata": "Q11384628"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q11384628",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://ja.wikipedia.org/wiki/%E4%BD%90%E8%B3%80%E5%9F%8E%E5%85%AC%E5%9C%92",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28",
     "season_images": {
       "night": {
         "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/99/City_lights_around_northern_moat_of_Saga_Castle_2018-08-27.jpg/960px-City_lights_around_northern_moat_of_Saga_Castle_2018-08-27.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -3966,7 +3951,22 @@
         "width": 5456,
         "height": 2728
       }
-    }
+    },
+    "external_ids": {
+      "wikidata": "Q11384628"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q11384628",
+        "fetched_at": "2026-09-28"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E4%BD%90%E8%B3%80%E5%9F%8E%E5%85%AC%E5%9C%92",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q11384745",
@@ -4126,6 +4126,16 @@
         "height": 1936
       }
     ],
+    "season_images": {
+      "winter": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b4/Snowy_Saga_prefecture_Gokoku_Shrine_front.jpeg/960px-Snowy_Saga_prefecture_Gokoku_Shrine_front.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Pekachu",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Snowy_Saga_prefecture_Gokoku_Shrine_front.jpeg",
+        "width": 4608,
+        "height": 3456
+      }
+    },
     "external_ids": {
       "wikidata": "Q11384878",
       "osm": "way/191876231"
@@ -4145,17 +4155,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "winter": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b4/Snowy_Saga_prefecture_Gokoku_Shrine_front.jpeg/960px-Snowy_Saga_prefecture_Gokoku_Shrine_front.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Pekachu",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Snowy_Saga_prefecture_Gokoku_Shrine_front.jpeg",
-        "width": 4608,
-        "height": 3456
-      }
-    }
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q11385177",
@@ -4271,6 +4271,16 @@
         "height": 1080
       }
     ],
+    "season_images": {
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a5/Kakara-shima_Island_Aerial_photograph_2013.jpg/960px-Kakara-shima_Island_Aerial_photograph_2013.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "国土地理院",
+        "license": "Attribution",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Kakara-shima_Island_Aerial_photograph_2013.jpg",
+        "width": 1893,
+        "height": 2500
+      }
+    },
     "external_ids": {
       "wikidata": "Q11398556"
     },
@@ -4285,17 +4295,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a5/Kakara-shima_Island_Aerial_photograph_2013.jpg/960px-Kakara-shima_Island_Aerial_photograph_2013.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "国土地理院",
-        "license": "Attribution",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Kakara-shima_Island_Aerial_photograph_2013.jpg",
-        "width": 1893,
-        "height": 2500
-      }
-    }
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q11399769",
@@ -4923,6 +4923,7 @@
         "height": 1536
       }
     ],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q11426463",
       "osm": "node/839501989"
@@ -4942,8 +4943,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q11430491",
@@ -5368,6 +5368,16 @@
         "height": 1049
       }
     ],
+    "season_images": {
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5f/Ogawa-shima_Island_Aerial_photograph_2013.jpg/960px-Ogawa-shima_Island_Aerial_photograph_2013.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "国土地理院",
+        "license": "Attribution",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Ogawa-shima_Island_Aerial_photograph_2013.jpg",
+        "width": 2400,
+        "height": 1800
+      }
+    },
     "external_ids": {
       "wikidata": "Q11460438"
     },
@@ -5382,17 +5392,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5f/Ogawa-shima_Island_Aerial_photograph_2013.jpg/960px-Ogawa-shima_Island_Aerial_photograph_2013.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "国土地理院",
-        "license": "Attribution",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Ogawa-shima_Island_Aerial_photograph_2013.jpg",
-        "width": 2400,
-        "height": 1800
-      }
-    }
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q11475860",
@@ -5995,6 +5995,7 @@
         "height": 1024
       }
     ],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q11546632"
     },
@@ -6005,8 +6006,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-10-02",
-    "season_images": {}
+    "updated_at": "2026-10-02"
   },
   {
     "id": "wd-Q11560719",
@@ -6559,6 +6559,16 @@
         "height": 3456
       }
     ],
+    "season_images": {
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/19/Kashiwa-jima_Island_Aerial_photograph_2013.jpg/960px-Kashiwa-jima_Island_Aerial_photograph_2013.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "国土地理院",
+        "license": "Attribution",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Kashiwa-jima_Island_Aerial_photograph_2013.jpg",
+        "width": 2220,
+        "height": 2220
+      }
+    },
     "external_ids": {
       "wikidata": "Q11591024"
     },
@@ -6573,17 +6583,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/19/Kashiwa-jima_Island_Aerial_photograph_2013.jpg/960px-Kashiwa-jima_Island_Aerial_photograph_2013.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "国土地理院",
-        "license": "Attribution",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Kashiwa-jima_Island_Aerial_photograph_2013.jpg",
-        "width": 2220,
-        "height": 2220
-      }
-    }
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q11596454",
@@ -6914,6 +6914,7 @@
         "height": 3456
       }
     ],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q11619976",
       "osm": "way/1161314287"
@@ -6929,8 +6930,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-29",
-    "season_images": {}
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11620748",
@@ -7901,6 +7901,16 @@
         "height": 1080
       }
     ],
+    "season_images": {
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/01/Madara-shima_Island_Aerial_photograph_2013.jpg/960px-Madara-shima_Island_Aerial_photograph_2013.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "国土地理院",
+        "license": "Attribution",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Madara-shima_Island_Aerial_photograph_2013.jpg",
+        "width": 2400,
+        "height": 1600
+      }
+    },
     "external_ids": {
       "wikidata": "Q11668024"
     },
@@ -7915,17 +7925,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/01/Madara-shima_Island_Aerial_photograph_2013.jpg/960px-Madara-shima_Island_Aerial_photograph_2013.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "国土地理院",
-        "license": "Attribution",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Madara-shima_Island_Aerial_photograph_2013.jpg",
-        "width": 2400,
-        "height": 1600
-      }
-    }
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q11668746",
@@ -8029,6 +8029,16 @@
         "height": 1200
       }
     ],
+    "season_images": {
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/28/Saga_Taka-shima_Island_Aerial_photograph_2013.jpg/960px-Saga_Taka-shima_Island_Aerial_photograph_2013.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "国土地理院",
+        "license": "Attribution",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Saga_Taka-shima_Island_Aerial_photograph_2013.jpg",
+        "width": 1728,
+        "height": 1296
+      }
+    },
     "external_ids": {
       "wikidata": "Q11669590"
     },
@@ -8043,17 +8053,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/28/Saga_Taka-shima_Island_Aerial_photograph_2013.jpg/960px-Saga_Taka-shima_Island_Aerial_photograph_2013.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "国土地理院",
-        "license": "Attribution",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Saga_Taka-shima_Island_Aerial_photograph_2013.jpg",
-        "width": 1728,
-        "height": 1296
-      }
-    }
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q11674980",
@@ -8271,6 +8271,16 @@
         "height": 1276
       }
     ],
+    "season_images": {
+      "night": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d1/%E9%BB%92%E9%AB%AA%E5%B1%B1_%E3%83%A9%E3%82%A4%E3%83%88%E3%82%A2%E3%83%83%E3%83%97_-_panoramio.jpg/960px-%E9%BB%92%E9%AB%AA%E5%B1%B1_%E3%83%A9%E3%82%A4%E3%83%88%E3%82%A2%E3%83%83%E3%83%97_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "mahlervv",
+        "license": "CC BY 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:%E9%BB%92%E9%AB%AA%E5%B1%B1_%E3%83%A9%E3%82%A4%E3%83%88%E3%82%A2%E3%83%83%E3%83%97_-_panoramio.jpg",
+        "width": 2312,
+        "height": 1544
+      }
+    },
     "external_ids": {
       "wikidata": "Q11678918"
     },
@@ -8281,17 +8291,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "night": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d1/%E9%BB%92%E9%AB%AA%E5%B1%B1_%E3%83%A9%E3%82%A4%E3%83%88%E3%82%A2%E3%83%83%E3%83%97_-_panoramio.jpg/960px-%E9%BB%92%E9%AB%AA%E5%B1%B1_%E3%83%A9%E3%82%A4%E3%83%88%E3%82%A2%E3%83%83%E3%83%97_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "mahlervv",
-        "license": "CC BY 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:%E9%BB%92%E9%AB%AA%E5%B1%B1_%E3%83%A9%E3%82%A4%E3%83%88%E3%82%A2%E3%83%83%E3%83%97_-_panoramio.jpg",
-        "width": 2312,
-        "height": 1544
-      }
-    }
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q117305592",
@@ -9553,11 +9553,11 @@
     "featured": true,
     "score": 77.2,
     "summary": {
-      "text": "[1]_ 33°30′56″N 129°50′14″E",
+      "text": "玄海核能發電廠是日本一座核電廠，坐落於佐賀縣東松浦郡玄海町，由九州電力管理。",
       "lang": "zh",
       "source_url": "https://zh.wikipedia.org/wiki/%E7%8E%84%E6%B5%B7%E6%A0%B8%E8%83%BD%E7%99%BC%E9%9B%BB%E5%BB%A0",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-11-01"
     },
     "images": [
       {
@@ -9569,6 +9569,16 @@
         "height": 1200
       }
     ],
+    "season_images": {
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/42/Genkai_04780013_%288388174199%29.jpg/960px-Genkai_04780013_%288388174199%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "IAEA Imagebank",
+        "license": "CC BY-SA 2.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Genkai_04780013_(8388174199).jpg",
+        "width": 3569,
+        "height": 2490
+      }
+    },
     "external_ids": {
       "wikidata": "Q1513575"
     },
@@ -9583,17 +9593,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/42/Genkai_04780013_%288388174199%29.jpg/960px-Genkai_04780013_%288388174199%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "IAEA Imagebank",
-        "license": "CC BY-SA 2.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Genkai_04780013_(8388174199).jpg",
-        "width": 3569,
-        "height": 2490
-      }
-    }
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q17191237",
@@ -10161,6 +10161,7 @@
         "height": 1632
       }
     ],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q2278548"
     },
@@ -10171,8 +10172,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q24859553",
@@ -10514,6 +10514,7 @@
         "height": 4000
       }
     ],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q251682"
     },
@@ -10524,8 +10525,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q28682242",
@@ -10566,6 +10566,16 @@
         "height": 1593
       }
     ],
+    "season_images": {
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/81/Okinoshima_Rock_Reef%2C_Tara_Saga_Aerial_photograph.2008.jpg/960px-Okinoshima_Rock_Reef%2C_Tara_Saga_Aerial_photograph.2008.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "国土地理院",
+        "license": "Attribution",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Okinoshima_Rock_Reef,_Tara_Saga_Aerial_photograph.2008.jpg",
+        "width": 1602,
+        "height": 1202
+      }
+    },
     "external_ids": {
       "wikidata": "Q28682242"
     },
@@ -10580,17 +10590,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/81/Okinoshima_Rock_Reef%2C_Tara_Saga_Aerial_photograph.2008.jpg/960px-Okinoshima_Rock_Reef%2C_Tara_Saga_Aerial_photograph.2008.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "国土地理院",
-        "license": "Attribution",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Okinoshima_Rock_Reef,_Tara_Saga_Aerial_photograph.2008.jpg",
-        "width": 1602,
-        "height": 1202
-      }
-    }
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q28683054",
@@ -10936,6 +10936,16 @@
         "height": 3024
       }
     ],
+    "season_images": {
+      "night": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cc/%E5%BE%A1%E8%88%B9%E5%B1%B1%E6%A5%BD%E5%9C%92%E3%81%AE%E5%A4%9C%28Mifuneyama_Rakuen_Garden_at_night%29_26_Nov%2C_2015_-_panoramio.jpg/960px-%E5%BE%A1%E8%88%B9%E5%B1%B1%E6%A5%BD%E5%9C%92%E3%81%AE%E5%A4%9C%28Mifuneyama_Rakuen_Garden_at_night%29_26_Nov%2C_2015_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Hiroaki Kaneko",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:%E5%BE%A1%E8%88%B9%E5%B1%B1%E6%A5%BD%E5%9C%92%E3%81%AE%E5%A4%9C(Mifuneyama_Rakuen_Garden_at_night)_26_Nov,_2015_-_panoramio.jpg",
+        "width": 2048,
+        "height": 1536
+      }
+    },
     "external_ids": {
       "wikidata": "Q30096249",
       "osm": "way/991958955"
@@ -10951,17 +10961,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "night": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cc/%E5%BE%A1%E8%88%B9%E5%B1%B1%E6%A5%BD%E5%9C%92%E3%81%AE%E5%A4%9C%28Mifuneyama_Rakuen_Garden_at_night%29_26_Nov%2C_2015_-_panoramio.jpg/960px-%E5%BE%A1%E8%88%B9%E5%B1%B1%E6%A5%BD%E5%9C%92%E3%81%AE%E5%A4%9C%28Mifuneyama_Rakuen_Garden_at_night%29_26_Nov%2C_2015_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Hiroaki Kaneko",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:%E5%BE%A1%E8%88%B9%E5%B1%B1%E6%A5%BD%E5%9C%92%E3%81%AE%E5%A4%9C(Mifuneyama_Rakuen_Garden_at_night)_26_Nov,_2015_-_panoramio.jpg",
-        "width": 2048,
-        "height": 1536
-      }
-    }
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q30925105",
@@ -11451,11 +11451,11 @@
     "featured": false,
     "score": 56.15,
     "summary": {
-      "text": "Nabatake Site (菜畑遺跡, Nabatake iseki) is an archeological site with a late Jōmon period to late Yayoi period settlement located in the city of Karatsu, Saga Prefecture, Japan. Along with the Itazuke Site in Hakata-ku, Fukuoka, it is the oldest known rice-growing village site in Japan. It was designated as a National Historic Site in 1983.",
+      "text": "Nabatake Site (菜畑遺跡, Nabatake iseki) is an archaeological site with a late Jōmon period to late Yayoi period settlement located in the city of Karatsu, Saga Prefecture, Japan. Along with the Itazuke Site in Hakata-ku, Fukuoka, it is the oldest known rice-growing village site in Japan. It was designated as a National Historic Site in 1983.",
       "lang": "en",
       "source_url": "https://en.wikipedia.org/wiki/Matsurokan",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-29"
+      "fetched_at": "2026-11-01"
     },
     "nearest_stations": [
       {
@@ -11557,6 +11557,16 @@
         "height": 1000
       }
     ],
+    "season_images": {
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2d/Niji_no_matsubara.jpg/960px-Niji_no_matsubara.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Hamasaki gion higashi (talk)",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Niji_no_matsubara.jpg",
+        "width": 3000,
+        "height": 1000
+      }
+    },
     "external_ids": {
       "wikidata": "Q5370854"
     },
@@ -11567,17 +11577,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2d/Niji_no_matsubara.jpg/960px-Niji_no_matsubara.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Hamasaki gion higashi (talk)",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Niji_no_matsubara.jpg",
-        "width": 3000,
-        "height": 1000
-      }
-    }
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q53998075",
@@ -12429,6 +12429,7 @@
         "height": 3264
       }
     ],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q711685",
       "osm": "node/12871663877"
@@ -12444,8 +12445,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q7398902",
@@ -12498,6 +12498,7 @@
         "height": 683
       }
     ],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q7398902"
     },
@@ -12508,8 +12509,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q85878805",

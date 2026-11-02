@@ -1149,22 +1149,6 @@
         "height": 2048
       }
     ],
-    "external_ids": {
-      "wikidata": "Q1012815",
-      "osm": "way/126495756"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q1012815",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://www.openstreetmap.org/way/126495756",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28",
     "season_images": {
       "night": {
         "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/89/Kochi_Castle_Keep_Tower_20170122-3.jpg/960px-Kochi_Castle_Keep_Tower_20170122-3.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -1182,7 +1166,23 @@
         "width": 6815,
         "height": 1600
       }
-    }
+    },
+    "external_ids": {
+      "wikidata": "Q1012815",
+      "osm": "way/126495756"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q1012815",
+        "fetched_at": "2026-09-28"
+      },
+      {
+        "url": "https://www.openstreetmap.org/way/126495756",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q104218407",
@@ -1608,6 +1608,7 @@
         "height": 2848
       }
     ],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q11048926"
     },
@@ -1622,8 +1623,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q11180557",
@@ -1665,6 +1665,7 @@
         "height": 2800
       }
     ],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q11180557",
       "osm": "node/1553199212"
@@ -1684,8 +1685,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q11276774",
@@ -3075,6 +3075,16 @@
         "height": 2409
       }
     ],
+    "season_images": {
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/45/Houkaisan_Dainichiji_%E7%AC%AC%E4%BA%8C%E5%8D%81%E5%85%AB%E7%95%AA%E6%9C%AD%E6%89%80_%E5%A4%A7%E6%97%A5%E5%AF%BA_%28%E9%A6%99%E5%8D%97%E5%B8%82%29_DSCF7601.JPG/960px-Houkaisan_Dainichiji_%E7%AC%AC%E4%BA%8C%E5%8D%81%E5%85%AB%E7%95%AA%E6%9C%AD%E6%89%80_%E5%A4%A7%E6%97%A5%E5%AF%BA_%28%E9%A6%99%E5%8D%97%E5%B8%82%29_DSCF7601.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "松岡明芳",
+        "license": "CC BY 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Houkaisan_Dainichiji_%E7%AC%AC%E4%BA%8C%E5%8D%81%E5%85%AB%E7%95%AA%E6%9C%AD%E6%89%80_%E5%A4%A7%E6%97%A5%E5%AF%BA_(%E9%A6%99%E5%8D%97%E5%B8%82)_DSCF7601.JPG",
+        "width": 5760,
+        "height": 720
+      }
+    },
     "external_ids": {
       "wikidata": "Q11435623",
       "osm": "node/4434022193"
@@ -3094,17 +3104,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/45/Houkaisan_Dainichiji_%E7%AC%AC%E4%BA%8C%E5%8D%81%E5%85%AB%E7%95%AA%E6%9C%AD%E6%89%80_%E5%A4%A7%E6%97%A5%E5%AF%BA_%28%E9%A6%99%E5%8D%97%E5%B8%82%29_DSCF7601.JPG/960px-Houkaisan_Dainichiji_%E7%AC%AC%E4%BA%8C%E5%8D%81%E5%85%AB%E7%95%AA%E6%9C%AD%E6%89%80_%E5%A4%A7%E6%97%A5%E5%AF%BA_%28%E9%A6%99%E5%8D%97%E5%B8%82%29_DSCF7601.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "松岡明芳",
-        "license": "CC BY 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Houkaisan_Dainichiji_%E7%AC%AC%E4%BA%8C%E5%8D%81%E5%85%AB%E7%95%AA%E6%9C%AD%E6%89%80_%E5%A4%A7%E6%97%A5%E5%AF%BA_(%E9%A6%99%E5%8D%97%E5%B8%82)_DSCF7601.JPG",
-        "width": 5760,
-        "height": 720
-      }
-    }
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q11436522",
@@ -3386,6 +3386,16 @@
         "height": 1199
       }
     ],
+    "season_images": {
+      "panorama": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/4/44/Cape_Muroto.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+        "author": "Original uploader was Bakkai at ja.wikipedia",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Cape_Muroto.jpg",
+        "width": 768,
+        "height": 614
+      }
+    },
     "external_ids": {
       "wikidata": "Q11453014"
     },
@@ -3400,17 +3410,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "panorama": {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/4/44/Cape_Muroto.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-        "author": "Original uploader was Bakkai at ja.wikipedia",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Cape_Muroto.jpg",
-        "width": 768,
-        "height": 614
-      }
-    }
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q11453015",
@@ -3434,11 +3434,11 @@
     "featured": false,
     "score": 62.21,
     "summary": {
-      "text": "室戸岬灯台（むろとざきとうだい）は、高知県室戸市室戸岬町の室戸岬付近の高台に立つ白亜の鉄造灯台。周辺は、室戸阿南海岸国定公園に指定され、太平洋を望む風光明媚の地。実効光度160万カンデラ、光達距離26.5海里（約49km）は日本一。また、日本に5箇所しかない直径2.6メートルの第一等フレネル式レンズを備えた第1等灯台でもある。更には、日本の灯台50選の一つ、その歴史的価値から海上保安庁によってAランクの保存灯台にも指定されている。",
+      "text": "室戸岬灯台（むろとざきとうだい）は、高知県室戸市室戸岬町の室戸岬付近の高台に立つ白亜の鉄造灯台。周辺は、室戸阿南海岸国定公園に指定され、太平洋を望む風光明媚の地。",
       "lang": "ja",
       "source_url": "https://ja.wikipedia.org/wiki/%E5%AE%A4%E6%88%B8%E5%B2%AC%E7%81%AF%E5%8F%B0",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-11-01"
     },
     "images": [
       {
@@ -3564,6 +3564,16 @@
         "height": 2448
       }
     ],
+    "season_images": {
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bd/151229_Sukumo_Kochi_pref_Japan01s.jpg/960px-151229_Sukumo_Kochi_pref_Japan01s.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "663highland",
+        "license": "CC BY 2.5",
+        "source_url": "https://commons.wikimedia.org/wiki/File:151229_Sukumo_Kochi_pref_Japan01s.jpg",
+        "width": 5550,
+        "height": 3700
+      }
+    },
     "external_ids": {
       "wikidata": "Q11455638"
     },
@@ -3578,17 +3588,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bd/151229_Sukumo_Kochi_pref_Japan01s.jpg/960px-151229_Sukumo_Kochi_pref_Japan01s.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "663highland",
-        "license": "CC BY 2.5",
-        "source_url": "https://commons.wikimedia.org/wiki/File:151229_Sukumo_Kochi_pref_Japan01s.jpg",
-        "width": 5550,
-        "height": 3700
-      }
-    }
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q11466454",
@@ -4026,6 +4026,7 @@
         "height": 1944
       }
     ],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q11498729"
     },
@@ -4040,8 +4041,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q11511141",
@@ -4499,6 +4499,16 @@
         "height": 4000
       }
     ],
+    "season_images": {
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bc/Kashiwajima_Island_air.jpg/960px-Kashiwajima_Island_air.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "不明",
+        "license": "Attribution",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Kashiwajima_Island_air.jpg",
+        "width": 2912,
+        "height": 2304
+      }
+    },
     "external_ids": {
       "wikidata": "Q11533729"
     },
@@ -4513,17 +4523,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bc/Kashiwajima_Island_air.jpg/960px-Kashiwajima_Island_air.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "不明",
-        "license": "Attribution",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Kashiwajima_Island_air.jpg",
-        "width": 2912,
-        "height": 2304
-      }
-    }
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q11536831",
@@ -4565,6 +4565,7 @@
         "height": 1790
       }
     ],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q11536831"
     },
@@ -4579,8 +4580,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q11536832",
@@ -4845,6 +4845,16 @@
         "height": 1944
       }
     ],
+    "season_images": {
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/07/Okinoshima_Island%2C_Kochi_Aerial_photograph.2020.jpg/960px-Okinoshima_Island%2C_Kochi_Aerial_photograph.2020.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "国土地理院",
+        "license": "Attribution",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Okinoshima_Island,_Kochi_Aerial_photograph.2020.jpg",
+        "width": 10000,
+        "height": 16117
+      }
+    },
     "external_ids": {
       "wikidata": "Q11552466"
     },
@@ -4859,17 +4869,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/07/Okinoshima_Island%2C_Kochi_Aerial_photograph.2020.jpg/960px-Okinoshima_Island%2C_Kochi_Aerial_photograph.2020.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "国土地理院",
-        "license": "Attribution",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Okinoshima_Island,_Kochi_Aerial_photograph.2020.jpg",
-        "width": 10000,
-        "height": 16117
-      }
-    }
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q11556229",
@@ -6092,6 +6092,7 @@
         "height": 2848
       }
     ],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q11633773"
     },
@@ -6106,8 +6107,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q11636890",
@@ -6149,6 +6149,16 @@
         "height": 2561
       }
     ],
+    "season_images": {
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5d/Cape_Ashizuri_-_%E8%B6%B3%E6%91%BA%E5%B2%AC_-_panoramio_%288%29.jpg/960px-Cape_Ashizuri_-_%E8%B6%B3%E6%91%BA%E5%B2%AC_-_panoramio_%288%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "z tanuki",
+        "license": "CC BY 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Cape_Ashizuri_-_%E8%B6%B3%E6%91%BA%E5%B2%AC_-_panoramio_(8).jpg",
+        "width": 10265,
+        "height": 1600
+      }
+    },
     "external_ids": {
       "wikidata": "Q11636890"
     },
@@ -6159,17 +6169,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5d/Cape_Ashizuri_-_%E8%B6%B3%E6%91%BA%E5%B2%AC_-_panoramio_%288%29.jpg/960px-Cape_Ashizuri_-_%E8%B6%B3%E6%91%BA%E5%B2%AC_-_panoramio_%288%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "z tanuki",
-        "license": "CC BY 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Cape_Ashizuri_-_%E8%B6%B3%E6%91%BA%E5%B2%AC_-_panoramio_(8).jpg",
-        "width": 10265,
-        "height": 1600
-      }
-    }
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q11636893",
@@ -6518,11 +6518,11 @@
     "featured": false,
     "score": 50.97,
     "summary": {
-      "text": "道の駅やす（みちのえき やす）は、高知県香南市夜須町にある国道55号の道の駅である。",
+      "text": "道の駅やす（みちのえき やす）は、高知県香南市にある国道55号の道の駅である。",
       "lang": "ja",
       "source_url": "https://ja.wikipedia.org/wiki/%E9%81%93%E3%81%AE%E9%A7%85%E3%82%84%E3%81%99",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-11-01"
     },
     "nearest_stations": [
       {
@@ -7301,6 +7301,16 @@
         "height": 2592
       }
     ],
+    "season_images": {
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/33/Kongou_fukuji_temple_-_%E9%87%91%E5%89%9B%E7%A6%8F%E5%AF%BA_-_panoramio_%283%29.jpg/960px-Kongou_fukuji_temple_-_%E9%87%91%E5%89%9B%E7%A6%8F%E5%AF%BA_-_panoramio_%283%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "z tanuki",
+        "license": "CC BY 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Kongou_fukuji_temple_-_%E9%87%91%E5%89%9B%E7%A6%8F%E5%AF%BA_-_panoramio_(3).jpg",
+        "width": 4918,
+        "height": 1600
+      }
+    },
     "external_ids": {
       "wikidata": "Q11646540",
       "osm": "way/1024256178"
@@ -7320,17 +7330,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/33/Kongou_fukuji_temple_-_%E9%87%91%E5%89%9B%E7%A6%8F%E5%AF%BA_-_panoramio_%283%29.jpg/960px-Kongou_fukuji_temple_-_%E9%87%91%E5%89%9B%E7%A6%8F%E5%AF%BA_-_panoramio_%283%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "z tanuki",
-        "license": "CC BY 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Kongou_fukuji_temple_-_%E9%87%91%E5%89%9B%E7%A6%8F%E5%AF%BA_-_panoramio_(3).jpg",
-        "width": 4918,
-        "height": 1600
-      }
-    }
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q11646556",
@@ -8265,11 +8265,11 @@
     "featured": false,
     "score": 57.61,
     "summary": {
-      "text": "高知県護国神社（こうちけんごこくじんじゃ）は、高知県高知市にある神社（護国神社）である。国難に殉じた高知県関係の戦没者4万1千余柱を祀る。",
+      "text": "高知県護国神社（こうちけんごこくじんじゃ）は、高知県高知市にある神社（護国神社）である。国難に殉じた高知県関係の戦没者4万1千余柱を祀る。高知県護国神社奉賛会がある。",
       "lang": "ja",
       "source_url": "https://ja.wikipedia.org/wiki/%E9%AB%98%E7%9F%A5%E7%B8%A3%E8%AD%B7%E5%9C%8B%E7%A5%9E%E7%A4%BE",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-11-01"
     },
     "images": [
       {
@@ -8477,11 +8477,11 @@
     "featured": false,
     "score": 54.74,
     "summary": {
-      "text": "龍馬歴史館（りょうまれきしかん）は、高知県香南市野市町の創造広場「アクトランド」内にある坂本龍馬の蝋人形120体を中心とした蝋人形館である。",
+      "text": "龍馬歴史館（りょうまれきしかん）は、高知県香南市の広場「アクトランド」内にある坂本龍馬の蝋人形120体を中心とした蝋人形館である。",
       "lang": "ja",
       "source_url": "https://ja.wikipedia.org/wiki/%E9%BE%8D%E9%A6%AC%E6%AD%B4%E5%8F%B2%E9%A4%A8",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-11-01"
     },
     "nearest_stations": [
       {
@@ -9495,6 +9495,13 @@
     ],
     "featured": false,
     "score": 1.5,
+    "summary": {
+      "text": "高知大神宮（こうちだいじんぐう）は、高知県高知市帯屋町にある神社。",
+      "lang": "ja",
+      "source_url": "https://ja.wikipedia.org/wiki/%E9%AB%98%E7%9F%A5%E5%A4%A7%E7%A5%9E%E5%AE%AE",
+      "license": "CC BY-SA 4.0",
+      "fetched_at": "2026-11-01"
+    },
     "nearest_stations": [
       {
         "name": {
@@ -10747,6 +10754,16 @@
         "height": 1728
       }
     ],
+    "season_images": {
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f1/Oshima_Island%2C_Sukumo_Kochi_Aerial_photograph.2019.jpg/960px-Oshima_Island%2C_Sukumo_Kochi_Aerial_photograph.2019.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "国土地理院",
+        "license": "Attribution",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Oshima_Island,_Sukumo_Kochi_Aerial_photograph.2019.jpg",
+        "width": 3955,
+        "height": 2966
+      }
+    },
     "external_ids": {
       "wikidata": "Q20652984"
     },
@@ -10761,17 +10778,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f1/Oshima_Island%2C_Sukumo_Kochi_Aerial_photograph.2019.jpg/960px-Oshima_Island%2C_Sukumo_Kochi_Aerial_photograph.2019.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "国土地理院",
-        "license": "Attribution",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Oshima_Island,_Sukumo_Kochi_Aerial_photograph.2019.jpg",
-        "width": 3955,
-        "height": 2966
-      }
-    }
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q20653030",
@@ -10813,6 +10820,16 @@
         "height": 1728
       }
     ],
+    "season_images": {
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fd/Sukumowan20220628_2.jpg/960px-Sukumowan20220628_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Dokudami",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Sukumowan20220628_2.jpg",
+        "width": 3844,
+        "height": 960
+      }
+    },
     "external_ids": {
       "wikidata": "Q20653030"
     },
@@ -10827,17 +10844,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fd/Sukumowan20220628_2.jpg/960px-Sukumowan20220628_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Dokudami",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Sukumowan20220628_2.jpg",
-        "width": 3844,
-        "height": 960
-      }
-    }
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q21652962",
@@ -10858,11 +10865,11 @@
     "featured": false,
     "score": 54.93,
     "summary": {
-      "text": "この工石山（くいしやま）は、四国山地の南部に位置し、高知県 高知市（旧；土佐山村）と土佐郡　土佐町（とさちょう）とにまたがる、標高 1177 ｍの山である     。",
+      "text": "この工石山（くいしやま）は、四国山地の南部に位置し、高知県 高知市（旧；土佐山村）と土佐郡　土佐町とにまたがる、標高 1177 ｍの山である     。",
       "lang": "ja",
       "source_url": "https://ja.wikipedia.org/wiki/%E5%B7%A5%E7%9F%B3%E5%B1%B1",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-11-01"
     },
     "images": [
       {
@@ -10908,11 +10915,11 @@
     "featured": false,
     "score": 61.6,
     "summary": {
-      "text": "この項の白髪山（しらがやま）は、四国山地の中央部に位置し、高知県 長岡郡（ながおかぐん）  本山町（もとやまちょう） に属する、標高  1,469 mの山である      。",
+      "text": "この項の白髪山（しらがやま）は、四国山地の中央部に位置し、高知県 長岡郡  本山町 に属する、標高  1,469 mの山である      。",
       "lang": "ja",
       "source_url": "https://ja.wikipedia.org/wiki/%E7%99%BD%E9%AB%AA%E5%B1%B1_%28%E9%AB%98%E7%9F%A5%E7%9C%8C%E6%9C%AC%E5%B1%B1%E7%94%BA%29",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-11-01"
     },
     "images": [
       {
@@ -11429,6 +11436,7 @@
         "height": 2800
       }
     ],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q2496737",
       "osm": "node/1423745458"
@@ -11448,8 +11456,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q2845893",
@@ -11547,11 +11554,11 @@
     "featured": false,
     "score": 61.97,
     "summary": {
-      "text": "北川村モネの庭マルモッタン（きたがわむらモネのにわマルモッタン）は、高知県安芸郡北川村野友に在る広さ2haの庭園。フランスの画家クロード・モネが描いた連作「睡蓮」をモチーフにして、睡蓮が浮かぶ池などがある。モネが「睡蓮」を描いたジヴェルニーの庭園以外では、同庭園を管理するクロード・モネ財団「アカデミー・デ・ボザール」から「モネ」を冠することを公式に認められている世界で唯一の庭園である。",
+      "text": "北川村モネの庭マルモッタン（きたがわむらモネのにわマルモッタン）は、高知県安芸郡北川村野友の庭園。",
       "lang": "ja",
       "source_url": "https://ja.wikipedia.org/wiki/%E5%8C%97%E5%B7%9D%E6%9D%91%E3%83%A2%E3%83%8D%E3%81%AE%E5%BA%AD%E3%83%9E%E3%83%AB%E3%83%A2%E3%83%83%E3%82%BF%E3%83%B3",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-11-01"
     },
     "images": [
       {
@@ -12648,6 +12655,16 @@
         "height": 2160
       }
     ],
+    "season_images": {
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ec/%E4%BB%81%E6%B7%80%E5%B7%9D%E6%B2%B3%E5%8F%A3%E5%A4%A7%E6%A9%8B_%E9%AB%98%E7%9F%A5%E9%BE%8D%E9%A6%AC%E3%83%9E%E3%83%A9%E3%82%BD%E3%83%B3%E5%A4%A7%E4%BC%9A.jpg/960px-%E4%BB%81%E6%B7%80%E5%B7%9D%E6%B2%B3%E5%8F%A3%E5%A4%A7%E6%A9%8B_%E9%AB%98%E7%9F%A5%E9%BE%8D%E9%A6%AC%E3%83%9E%E3%83%A9%E3%82%BD%E3%83%B3%E5%A4%A7%E4%BC%9A.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "谷本 一郎",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:%E4%BB%81%E6%B7%80%E5%B7%9D%E6%B2%B3%E5%8F%A3%E5%A4%A7%E6%A9%8B_%E9%AB%98%E7%9F%A5%E9%BE%8D%E9%A6%AC%E3%83%9E%E3%83%A9%E3%82%BD%E3%83%B3%E5%A4%A7%E4%BC%9A.jpg",
+        "width": 2979,
+        "height": 1004
+      }
+    },
     "external_ids": {
       "wikidata": "Q60989595"
     },
@@ -12662,17 +12679,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-29",
-    "season_images": {
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ec/%E4%BB%81%E6%B7%80%E5%B7%9D%E6%B2%B3%E5%8F%A3%E5%A4%A7%E6%A9%8B_%E9%AB%98%E7%9F%A5%E9%BE%8D%E9%A6%AC%E3%83%9E%E3%83%A9%E3%82%BD%E3%83%B3%E5%A4%A7%E4%BC%9A.jpg/960px-%E4%BB%81%E6%B7%80%E5%B7%9D%E6%B2%B3%E5%8F%A3%E5%A4%A7%E6%A9%8B_%E9%AB%98%E7%9F%A5%E9%BE%8D%E9%A6%AC%E3%83%9E%E3%83%A9%E3%82%BD%E3%83%B3%E5%A4%A7%E4%BC%9A.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "谷本 一郎",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:%E4%BB%81%E6%B7%80%E5%B7%9D%E6%B2%B3%E5%8F%A3%E5%A4%A7%E6%A9%8B_%E9%AB%98%E7%9F%A5%E9%BE%8D%E9%A6%AC%E3%83%9E%E3%83%A9%E3%82%BD%E3%83%B3%E5%A4%A7%E4%BC%9A.jpg",
-        "width": 2979,
-        "height": 1004
-      }
-    }
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q61190594",
@@ -13019,6 +13026,7 @@
         "height": 2592
       }
     ],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q704890",
       "osm": "way/661361935"
@@ -13034,8 +13042,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q72183596",
@@ -13145,6 +13152,7 @@
         "height": 1082
       }
     ],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q7409305"
     },
@@ -13159,8 +13167,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q79096397",
@@ -13330,11 +13337,11 @@
     "featured": false,
     "score": 36.63,
     "summary": {
-      "text": "Hie temple ruins (比江廃寺跡, Hie haiji ato) is an archeological site  with the ruins of a Hakuhō period Buddhist temple located in the Hie neighborhood of what is now the city of Nankoku, Kōchi, Japan. The foundations of its pagoda were designated as a National Historic Site in 1934, with the area under protection extended in 1982.",
+      "text": "Hie temple ruins (比江廃寺跡, Hie haiji ato) is an archaeological site with the ruins of a Hakuhō period Buddhist temple located in the Hie neighborhood of what is now the city of Nankoku, Kōchi, Japan. The foundations of its pagoda were designated as a National Historic Site in 1934, with the area under protection extended in 1982.",
       "lang": "en",
       "source_url": "https://en.wikipedia.org/wiki/Hie_temple_ruins",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-29"
+      "fetched_at": "2026-11-01"
     },
     "images": [
       {

@@ -2826,6 +2826,7 @@
         "height": 1497
       }
     ],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q11383098"
     },
@@ -2840,8 +2841,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q11394557",
@@ -3590,11 +3590,11 @@
     "featured": false,
     "score": 64.91,
     "summary": {
-      "text": "尾鈴山是位於日本九州地區宮崎縣的一座山，海拔1405.2米。位列日本二百名山，亦作「御鈴山」。",
+      "text": "尾鈴山是位於日本九州地區宮崎縣的一座山，海拔1405.2公尺。位列日本二百名山，亦作「御鈴山」。",
       "lang": "zh",
       "source_url": "https://zh.wikipedia.org/wiki/%E5%B0%BE%E9%88%B4%E5%B1%B1",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-11-01"
     },
     "images": [
       {
@@ -3853,6 +3853,16 @@
         "height": 1872
       }
     ],
+    "season_images": {
+      "night": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4c/Night_View_of_Nobeoka_2011_Jan.JPG/960px-Night_View_of_Nobeoka_2011_Jan.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "ja:User:Sanjo",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Night_View_of_Nobeoka_2011_Jan.JPG",
+        "width": 1664,
+        "height": 1248
+      }
+    },
     "external_ids": {
       "wikidata": "Q11493832"
     },
@@ -3867,17 +3877,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "night": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4c/Night_View_of_Nobeoka_2011_Jan.JPG/960px-Night_View_of_Nobeoka_2011_Jan.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "ja:User:Sanjo",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Night_View_of_Nobeoka_2011_Jan.JPG",
-        "width": 1664,
-        "height": 1248
-      }
-    }
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q11503929",
@@ -6307,6 +6307,16 @@
         "height": 2363
       }
     ],
+    "season_images": {
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/38/Aerial_photograph_of_Obi_District_2020-2.jpg/960px-Aerial_photograph_of_Obi_District_2020-2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Geospatial Information Authority of Japan",
+        "license": "Attribution",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Aerial_photograph_of_Obi_District_2020-2.jpg",
+        "width": 2553,
+        "height": 2553
+      }
+    },
     "external_ids": {
       "wikidata": "Q11666105"
     },
@@ -6321,17 +6331,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/38/Aerial_photograph_of_Obi_District_2020-2.jpg/960px-Aerial_photograph_of_Obi_District_2020-2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Geospatial Information Authority of Japan",
-        "license": "Attribution",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Aerial_photograph_of_Obi_District_2020-2.jpg",
-        "width": 2553,
-        "height": 2553
-      }
-    }
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q11666711",
@@ -8071,6 +8071,16 @@
         "height": 3479
       }
     ],
+    "season_images": {
+      "autumn": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bb/%E7%A7%8B%E8%89%B2%E3%81%AE%E9%AB%98%E5%8D%83%E7%A9%82%E5%B3%A1_%28Autumn_Colored_Takachiho_Gorge%29_24_Nov%2C_2012_-_panoramio.jpg/960px-%E7%A7%8B%E8%89%B2%E3%81%AE%E9%AB%98%E5%8D%83%E7%A9%82%E5%B3%A1_%28Autumn_Colored_Takachiho_Gorge%29_24_Nov%2C_2012_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Hiroaki Kaneko",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:%E7%A7%8B%E8%89%B2%E3%81%AE%E9%AB%98%E5%8D%83%E7%A9%82%E5%B3%A1_(Autumn_Colored_Takachiho_Gorge)_24_Nov,_2012_-_panoramio.jpg",
+        "width": 2048,
+        "height": 1536
+      }
+    },
     "external_ids": {
       "wikidata": "Q2027215",
       "osm": "node/4563512590"
@@ -8090,17 +8100,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-10-02",
-    "season_images": {
-      "autumn": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bb/%E7%A7%8B%E8%89%B2%E3%81%AE%E9%AB%98%E5%8D%83%E7%A9%82%E5%B3%A1_%28Autumn_Colored_Takachiho_Gorge%29_24_Nov%2C_2012_-_panoramio.jpg/960px-%E7%A7%8B%E8%89%B2%E3%81%AE%E9%AB%98%E5%8D%83%E7%A9%82%E5%B3%A1_%28Autumn_Colored_Takachiho_Gorge%29_24_Nov%2C_2012_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Hiroaki Kaneko",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:%E7%A7%8B%E8%89%B2%E3%81%AE%E9%AB%98%E5%8D%83%E7%A9%82%E5%B3%A1_(Autumn_Colored_Takachiho_Gorge)_24_Nov,_2012_-_panoramio.jpg",
-        "width": 2048,
-        "height": 1536
-      }
-    }
+    "updated_at": "2026-10-02"
   },
   {
     "id": "wd-Q21655242",
@@ -8316,6 +8316,7 @@
         "height": 5078
       }
     ],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q2841102",
       "osm": "node/5087204138"
@@ -8331,8 +8332,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q2857985",
@@ -8384,6 +8384,16 @@
         "height": 2448
       }
     ],
+    "season_images": {
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6a/2021-01-07_Aoshima_Island_%28Miyazaki%29%E9%9D%92%E5%B3%B6_%28%E5%AE%AE%E5%B4%8E%E7%9C%8C%29DJI_0255_%282%29%E7%A9%BA%E6%92%AE.jpg/960px-2021-01-07_Aoshima_Island_%28Miyazaki%29%E9%9D%92%E5%B3%B6_%28%E5%AE%AE%E5%B4%8E%E7%9C%8C%29DJI_0255_%282%29%E7%A9%BA%E6%92%AE.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "松岡明芳",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:2021-01-07_Aoshima_Island_(Miyazaki)%E9%9D%92%E5%B3%B6_(%E5%AE%AE%E5%B4%8E%E7%9C%8C)DJI_0255_(2)%E7%A9%BA%E6%92%AE.jpg",
+        "width": 4000,
+        "height": 2250
+      }
+    },
     "external_ids": {
       "wikidata": "Q2857985",
       "osm": "way/486892124"
@@ -8399,17 +8409,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6a/2021-01-07_Aoshima_Island_%28Miyazaki%29%E9%9D%92%E5%B3%B6_%28%E5%AE%AE%E5%B4%8E%E7%9C%8C%29DJI_0255_%282%29%E7%A9%BA%E6%92%AE.jpg/960px-2021-01-07_Aoshima_Island_%28Miyazaki%29%E9%9D%92%E5%B3%B6_%28%E5%AE%AE%E5%B4%8E%E7%9C%8C%29DJI_0255_%282%29%E7%A9%BA%E6%92%AE.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "松岡明芳",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:2021-01-07_Aoshima_Island_(Miyazaki)%E9%9D%92%E5%B3%B6_(%E5%AE%AE%E5%B4%8E%E7%9C%8C)DJI_0255_(2)%E7%A9%BA%E6%92%AE.jpg",
-        "width": 4000,
-        "height": 2250
-      }
-    }
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q28685425",
@@ -9112,6 +9112,7 @@
         "height": 2997
       }
     ],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q3364135"
     },
@@ -9126,8 +9127,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q3472357",
@@ -9234,6 +9234,7 @@
         "height": 600
       }
     ],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q3514126",
       "osm": "way/757459506"
@@ -9249,8 +9250,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q3514128",
@@ -9274,11 +9274,11 @@
     "featured": true,
     "score": 75.89,
     "summary": {
-      "text": "高千穗峰是位於日本宮崎郡及鹿兒島郡交界的複式火山，為霧島連峰的第二高峰，標高1,573公尺。現今亦劃入霧島錦江灣國立公園範圍內。",
+      "text": "高千穗峰是位於日本宮崎縣及鹿兒島縣交界的複式火山，為霧島連峰的第二高峰，標高1,573公尺。現今亦劃入霧島錦江灣國立公園範圍內。",
       "lang": "zh",
       "source_url": "https://zh.wikipedia.org/wiki/%E9%AB%98%E5%8D%83%E7%A9%97%E5%B3%B0",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-11-01"
     },
     "images": [
       {
@@ -9290,6 +9290,16 @@
         "height": 1200
       }
     ],
+    "season_images": {
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ee/Takachihonomine_Volcano_20090207.jpg/960px-Takachihonomine_Volcano_20090207.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "TANAKA Juuyoh (田中十洋)",
+        "license": "CC BY 2.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Takachihonomine_Volcano_20090207.jpg",
+        "width": 5616,
+        "height": 3744
+      }
+    },
     "external_ids": {
       "wikidata": "Q3514128"
     },
@@ -9304,17 +9314,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ee/Takachihonomine_Volcano_20090207.jpg/960px-Takachihonomine_Volcano_20090207.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "TANAKA Juuyoh (田中十洋)",
-        "license": "CC BY 2.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Takachihonomine_Volcano_20090207.jpg",
-        "width": 5616,
-        "height": 3744
-      }
-    }
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q3541658",
@@ -9592,6 +9592,16 @@
         "height": 2800
       }
     ],
+    "season_images": {
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e6/Miyzaki_Prefectual_Museum_%2C_%E5%AE%AE%E5%B4%8E%E7%9C%8C%E7%B7%8F%E5%90%88%E5%8D%9A%E7%89%A9%E9%A4%A8_-_panoramio.jpg/960px-Miyzaki_Prefectual_Museum_%2C_%E5%AE%AE%E5%B4%8E%E7%9C%8C%E7%B7%8F%E5%90%88%E5%8D%9A%E7%89%A9%E9%A4%A8_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "z tanuki",
+        "license": "CC BY 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Miyzaki_Prefectual_Museum_,_%E5%AE%AE%E5%B4%8E%E7%9C%8C%E7%B7%8F%E5%90%88%E5%8D%9A%E7%89%A9%E9%A4%A8_-_panoramio.jpg",
+        "width": 3337,
+        "height": 1200
+      }
+    },
     "external_ids": {
       "wikidata": "Q4677133",
       "osm": "way/505020269"
@@ -9607,17 +9617,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e6/Miyzaki_Prefectual_Museum_%2C_%E5%AE%AE%E5%B4%8E%E7%9C%8C%E7%B7%8F%E5%90%88%E5%8D%9A%E7%89%A9%E9%A4%A8_-_panoramio.jpg/960px-Miyzaki_Prefectual_Museum_%2C_%E5%AE%AE%E5%B4%8E%E7%9C%8C%E7%B7%8F%E5%90%88%E5%8D%9A%E7%89%A9%E9%A4%A8_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "z tanuki",
-        "license": "CC BY 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Miyzaki_Prefectual_Museum_,_%E5%AE%AE%E5%B4%8E%E7%9C%8C%E7%B7%8F%E5%90%88%E5%8D%9A%E7%89%A9%E9%A4%A8_-_panoramio.jpg",
-        "width": 3337,
-        "height": 1200
-      }
-    }
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q4778779",
@@ -9668,6 +9668,16 @@
         "height": 1900
       }
     ],
+    "season_images": {
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/02/2021-01-07_Aoshima_Island_%28Miyazaki%29Aerial_photography%E9%9D%92%E5%B3%B6_%28%E5%AE%AE%E5%B4%8E%E7%9C%8C%29DJI_0246_%282%29%E7%A9%BA%E6%92%AE.jpg/960px-2021-01-07_Aoshima_Island_%28Miyazaki%29Aerial_photography%E9%9D%92%E5%B3%B6_%28%E5%AE%AE%E5%B4%8E%E7%9C%8C%29DJI_0246_%282%29%E7%A9%BA%E6%92%AE.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "松岡明芳",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:2021-01-07_Aoshima_Island_(Miyazaki)Aerial_photography%E9%9D%92%E5%B3%B6_(%E5%AE%AE%E5%B4%8E%E7%9C%8C)DJI_0246_(2)%E7%A9%BA%E6%92%AE.jpg",
+        "width": 3739,
+        "height": 2078
+      }
+    },
     "external_ids": {
       "wikidata": "Q4778779"
     },
@@ -9682,17 +9692,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/02/2021-01-07_Aoshima_Island_%28Miyazaki%29Aerial_photography%E9%9D%92%E5%B3%B6_%28%E5%AE%AE%E5%B4%8E%E7%9C%8C%29DJI_0246_%282%29%E7%A9%BA%E6%92%AE.jpg/960px-2021-01-07_Aoshima_Island_%28Miyazaki%29Aerial_photography%E9%9D%92%E5%B3%B6_%28%E5%AE%AE%E5%B4%8E%E7%9C%8C%29DJI_0246_%282%29%E7%A9%BA%E6%92%AE.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "松岡明芳",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:2021-01-07_Aoshima_Island_(Miyazaki)Aerial_photography%E9%9D%92%E5%B3%B6_(%E5%AE%AE%E5%B4%8E%E7%9C%8C)DJI_0246_(2)%E7%A9%BA%E6%92%AE.jpg",
-        "width": 3739,
-        "height": 2078
-      }
-    }
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q4778784",
@@ -10297,6 +10297,16 @@
         "height": 2448
       }
     ],
+    "season_images": {
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b2/Obi_Yoshou-kan_%2C_%E9%A3%AB%E8%82%A5_%E8%B1%AB%E7%AB%A0%E9%A4%A8_-_panoramio_-_z_tanuki_%282%29.jpg/960px-Obi_Yoshou-kan_%2C_%E9%A3%AB%E8%82%A5_%E8%B1%AB%E7%AB%A0%E9%A4%A8_-_panoramio_-_z_tanuki_%282%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "z tanuki",
+        "license": "CC BY 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Obi_Yoshou-kan_,_%E9%A3%AB%E8%82%A5_%E8%B1%AB%E7%AB%A0%E9%A4%A8_-_panoramio_-_z_tanuki_(2).jpg",
+        "width": 2400,
+        "height": 700
+      }
+    },
     "external_ids": {
       "wikidata": "Q56690769"
     },
@@ -10307,17 +10317,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b2/Obi_Yoshou-kan_%2C_%E9%A3%AB%E8%82%A5_%E8%B1%AB%E7%AB%A0%E9%A4%A8_-_panoramio_-_z_tanuki_%282%29.jpg/960px-Obi_Yoshou-kan_%2C_%E9%A3%AB%E8%82%A5_%E8%B1%AB%E7%AB%A0%E9%A4%A8_-_panoramio_-_z_tanuki_%282%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "z tanuki",
-        "license": "CC BY 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Obi_Yoshou-kan_,_%E9%A3%AB%E8%82%A5_%E8%B1%AB%E7%AB%A0%E9%A4%A8_-_panoramio_-_z_tanuki_(2).jpg",
-        "width": 2400,
-        "height": 700
-      }
-    }
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q59282638",
@@ -10856,6 +10856,7 @@
         "height": 3648
       }
     ],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q704430",
       "osm": "way/1312406391"
@@ -10871,8 +10872,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q704686",
@@ -10924,6 +10924,16 @@
         "height": 2800
       }
     ],
+    "season_images": {
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/20/Miyazaki_Jingu%28shrine%29_%2C_%E5%AE%AE%E5%B4%8E%E7%A5%9E%E5%AE%AE_-_panoramio_%2822%29.jpg/960px-Miyazaki_Jingu%28shrine%29_%2C_%E5%AE%AE%E5%B4%8E%E7%A5%9E%E5%AE%AE_-_panoramio_%2822%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "z tanuki",
+        "license": "CC BY 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Miyazaki_Jingu(shrine)_,_%E5%AE%AE%E5%B4%8E%E7%A5%9E%E5%AE%AE_-_panoramio_(22).jpg",
+        "width": 4586,
+        "height": 1200
+      }
+    },
     "external_ids": {
       "wikidata": "Q704686",
       "osm": "node/9611934970"
@@ -10939,17 +10949,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/20/Miyazaki_Jingu%28shrine%29_%2C_%E5%AE%AE%E5%B4%8E%E7%A5%9E%E5%AE%AE_-_panoramio_%2822%29.jpg/960px-Miyazaki_Jingu%28shrine%29_%2C_%E5%AE%AE%E5%B4%8E%E7%A5%9E%E5%AE%AE_-_panoramio_%2822%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "z tanuki",
-        "license": "CC BY 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Miyazaki_Jingu(shrine)_,_%E5%AE%AE%E5%B4%8E%E7%A5%9E%E5%AE%AE_-_panoramio_(22).jpg",
-        "width": 4586,
-        "height": 1200
-      }
-    }
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q70552915",
@@ -11156,6 +11156,16 @@
         "height": 1080
       }
     ],
+    "season_images": {
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/25/Aerial_photograph_of_Obi_District_2020.jpg/960px-Aerial_photograph_of_Obi_District_2020.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Geospatial Information Authority of Japan",
+        "license": "Attribution",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Aerial_photograph_of_Obi_District_2020.jpg",
+        "width": 2017,
+        "height": 1867
+      }
+    },
     "external_ids": {
       "wikidata": "Q844044",
       "osm": "node/1143976898"
@@ -11175,17 +11185,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/25/Aerial_photograph_of_Obi_District_2020.jpg/960px-Aerial_photograph_of_Obi_District_2020.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Geospatial Information Authority of Japan",
-        "license": "Attribution",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Aerial_photograph_of_Obi_District_2020.jpg",
-        "width": 2017,
-        "height": 1867
-      }
-    }
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q84417156",

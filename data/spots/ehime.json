@@ -58,6 +58,7 @@
         "height": 1536
       }
     ],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q1036874",
       "osm": "way/244039533"
@@ -73,8 +74,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q1037748",
@@ -124,6 +124,7 @@
         "height": 2376
       }
     ],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q1037748"
     },
@@ -134,8 +135,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q104715200",
@@ -476,6 +476,16 @@
         "height": 3000
       }
     ],
+    "season_images": {
+      "night": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/56/Imabari_Castle_at_night.JPG/960px-Imabari_Castle_at_night.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Vickerman625",
+        "license": "Public domain",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Imabari_Castle_at_night.JPG",
+        "width": 3072,
+        "height": 2304
+      }
+    },
     "external_ids": {
       "wikidata": "Q1071856",
       "osm": "node/1423730110"
@@ -491,17 +501,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-10-02",
-    "season_images": {
-      "night": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/56/Imabari_Castle_at_night.JPG/960px-Imabari_Castle_at_night.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Vickerman625",
-        "license": "Public domain",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Imabari_Castle_at_night.JPG",
-        "width": 3072,
-        "height": 2304
-      }
-    }
+    "updated_at": "2026-10-02"
   },
   {
     "id": "wd-Q107922251",
@@ -3588,6 +3588,16 @@
         "height": 1536
       }
     ],
+    "season_images": {
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d9/Kushima_Island%2C_Uwajima_Ehime_Aerial_photograph.2019.jpg/960px-Kushima_Island%2C_Uwajima_Ehime_Aerial_photograph.2019.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "国土地理院",
+        "license": "Attribution",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Kushima_Island,_Uwajima_Ehime_Aerial_photograph.2019.jpg",
+        "width": 6248,
+        "height": 4686
+      }
+    },
     "external_ids": {
       "wikidata": "Q11370104"
     },
@@ -3602,17 +3612,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d9/Kushima_Island%2C_Uwajima_Ehime_Aerial_photograph.2019.jpg/960px-Kushima_Island%2C_Uwajima_Ehime_Aerial_photograph.2019.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "国土地理院",
-        "license": "Attribution",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Kushima_Island,_Uwajima_Ehime_Aerial_photograph.2019.jpg",
-        "width": 6248,
-        "height": 4686
-      }
-    }
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q11370712",
@@ -5390,6 +5390,16 @@
         "height": 1536
       }
     ],
+    "season_images": {
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1e/Bessidouzankinenkan.jpg/960px-Bessidouzankinenkan.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Dokudami",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Bessidouzankinenkan.jpg",
+        "width": 1600,
+        "height": 759
+      }
+    },
     "external_ids": {
       "wikidata": "Q11396677",
       "osm": "node/1423731025"
@@ -5409,17 +5419,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1e/Bessidouzankinenkan.jpg/960px-Bessidouzankinenkan.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Dokudami",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Bessidouzankinenkan.jpg",
-        "width": 1600,
-        "height": 759
-      }
-    }
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q11396681",
@@ -6107,11 +6107,11 @@
     "featured": false,
     "score": 51.84,
     "summary": {
-      "text": "嘉母神社（かもじんじゃ）は愛媛県西条市禎瑞に鎮座する神社。この手洗水は加茂川の自噴水で、全国名水百選として平成8年に「一番おいしい水」として日本一になっている。",
+      "text": "嘉母神社（かもじんじゃ）は、愛媛県西条市禎瑞に鎮座する神社。この手洗水は加茂川の自噴水で、全国名水百選として平成8年に「一番おいしい水」として日本一になっている。",
       "lang": "ja",
       "source_url": "https://ja.wikipedia.org/wiki/%E5%98%89%E6%AF%8D%E7%A5%9E%E7%A4%BE",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-11-01"
     },
     "images": [
       {
@@ -6317,6 +6317,7 @@
         "height": 600
       }
     ],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q11419667",
       "osm": "node/5603123027"
@@ -6336,8 +6337,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q11419669",
@@ -7034,11 +7034,11 @@
     "featured": false,
     "score": 57.72,
     "summary": {
-      "text": "大野ヶ原（おおのがはら）は、愛媛県の中部、「四国カルスト」の西端にある地域名である。",
+      "text": "大野ヶ原（おおのがはら）は、愛媛県の中部、四国カルストの西端にある地域名である。",
       "lang": "ja",
       "source_url": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E9%87%8E%E3%83%B6%E5%8E%9F",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-11-01"
     },
     "images": [
       {
@@ -7746,6 +7746,16 @@
         "height": 2661
       }
     ],
+    "season_images": {
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1c/Aijima_2019.jpg/960px-Aijima_2019.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "皓月旗",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Aijima_2019.jpg",
+        "width": 3199,
+        "height": 2136
+      }
+    },
     "external_ids": {
       "wikidata": "Q11450585"
     },
@@ -7760,17 +7770,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1c/Aijima_2019.jpg/960px-Aijima_2019.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "皓月旗",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Aijima_2019.jpg",
-        "width": 3199,
-        "height": 2136
-      }
-    }
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q11452530",
@@ -8219,6 +8219,16 @@
         "height": 1019
       }
     ],
+    "season_images": {
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/05/Hirosetei01.jpg/960px-Hirosetei01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Dokudami",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Hirosetei01.jpg",
+        "width": 1600,
+        "height": 611
+      }
+    },
     "external_ids": {
       "wikidata": "Q11485614",
       "osm": "way/549868623"
@@ -8238,17 +8248,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/05/Hirosetei01.jpg/960px-Hirosetei01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Dokudami",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Hirosetei01.jpg",
-        "width": 1600,
-        "height": 611
-      }
-    }
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q11486488",
@@ -9799,6 +9799,16 @@
         "height": 2704
       }
     ],
+    "season_images": {
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ad/Hiburi-jima_Island_Aerial_photograph.2007.jpg/960px-Hiburi-jima_Island_Aerial_photograph.2007.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "国土地理院",
+        "license": "Attribution",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Hiburi-jima_Island_Aerial_photograph.2007.jpg",
+        "width": 3605,
+        "height": 2704
+      }
+    },
     "external_ids": {
       "wikidata": "Q11505343"
     },
@@ -9813,17 +9823,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ad/Hiburi-jima_Island_Aerial_photograph.2007.jpg/960px-Hiburi-jima_Island_Aerial_photograph.2007.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "国土地理院",
-        "license": "Attribution",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Hiburi-jima_Island_Aerial_photograph.2007.jpg",
-        "width": 3605,
-        "height": 2704
-      }
-    }
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q11512501",
@@ -11963,6 +11963,16 @@
         "height": 3456
       }
     ],
+    "season_images": {
+      "winter": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f0/Kamegamori06.jpg/960px-Kamegamori06.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Dokudami",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Kamegamori06.jpg",
+        "width": 1400,
+        "height": 723
+      }
+    },
     "external_ids": {
       "wikidata": "Q11574202"
     },
@@ -11977,17 +11987,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "winter": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f0/Kamegamori06.jpg/960px-Kamegamori06.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Dokudami",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Kamegamori06.jpg",
-        "width": 1400,
-        "height": 723
-      }
-    }
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q11574442",
@@ -12262,11 +12262,11 @@
     "featured": false,
     "score": 62.13,
     "summary": {
-      "text": "皿ヶ嶺（さらがみね）は、四国山地のうち、「石鎚山脈」の西部、愛媛県中予地方の東温市と久万高原町とにまたがる場所に位置する、標高　1271ｍの山である。",
+      "text": "皿ヶ嶺（さらがみね）は、四国山地のうち、石鎚山脈の西部、愛媛県 中予地方の東温市と久万高原町とにまたがる場所に位置する、標高1271ｍの山である。",
       "lang": "ja",
       "source_url": "https://ja.wikipedia.org/wiki/%E7%9A%BF%E3%83%B6%E5%B6%BA",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-11-01"
     },
     "images": [
       {
@@ -12431,11 +12431,11 @@
     "featured": false,
     "score": 54.61,
     "summary": {
-      "text": "石岡神社（いわおかじんじゃ）は愛媛県西条市氷見に鎮座する、西条だんじり祭り発祥の神社である。神紋は三つ巴。地元の産土神としても祀られ、江戸末期までは石岡八幡宮とも呼ばれた。｢石岡｣が正式な表記とされているが「岩岡」と表されることもある（社銘の石碑が代表的な例）。",
+      "text": "石岡神社（いわおかじんじゃ）は、愛媛県西条市氷見に鎮座する、西条だんじり祭り発祥の神社である。神紋は三つ巴。地元の産土神としても祀られ、江戸末期までは石岡八幡宮とも呼ばれた。｢石岡｣が正式な表記とされているが「岩岡」と表されることもある（社銘の石碑が代表的な例）。",
       "lang": "ja",
       "source_url": "https://ja.wikipedia.org/wiki/%E7%9F%B3%E5%B2%A1%E7%A5%9E%E7%A4%BE",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-11-01"
     },
     "nearest_stations": [
       {
@@ -12768,12 +12768,9 @@
     "id": "wd-Q11602468",
     "name": {
       "ja": "笹ヶ峰",
-      "kana": "ささがみね",
-      "romaji": "Sasagamine",
       "zh_tw": "笹峰",
       "en": "Mount Sasa"
     },
-    "kana_source": "wikipedia",
     "location": {
       "lat": 33.828111,
       "lng": 133.274591
@@ -12786,11 +12783,11 @@
     "featured": false,
     "score": 61.18,
     "summary": {
-      "text": "笹ヶ峰（ささがみね）は、四国山地西部の石鎚山脈に属する山である。日本二百名山および四国百名山の一つに数えられる。山名はなだらかな山頂部が一面のイブキザサに覆われていることに由来する。",
+      "text": "この項の笹ヶ峰（ささがみね）は、四国山地のうち、その北部から北西部に位置する石鎚山脈 に属する、標高1860メートルの山である。",
       "lang": "ja",
       "source_url": "https://ja.wikipedia.org/wiki/%E7%AC%B9%E3%83%B6%E5%B3%B0",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-11-01"
     },
     "images": [
       {
@@ -13296,6 +13293,16 @@
         "height": 2848
       }
     ],
+    "season_images": {
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bb/Gogoshima_2019.jpg/960px-Gogoshima_2019.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "皓月旗",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Gogoshima_2019.jpg",
+        "width": 5594,
+        "height": 3735
+      }
+    },
     "external_ids": {
       "wikidata": "Q11613384"
     },
@@ -13310,17 +13317,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bb/Gogoshima_2019.jpg/960px-Gogoshima_2019.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "皓月旗",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Gogoshima_2019.jpg",
-        "width": 5594,
-        "height": 3735
-      }
-    }
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q11620495",
@@ -14901,6 +14898,16 @@
         "height": 2376
       }
     ],
+    "season_images": {
+      "night": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/Dogo_onsen_honkan_long_exposure.jpg/960px-Dogo_onsen_honkan_long_exposure.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Japanexperterna.se",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Dogo_onsen_honkan_long_exposure.jpg",
+        "width": 5184,
+        "height": 3456
+      }
+    },
     "external_ids": {
       "wikidata": "Q11641713"
     },
@@ -14915,17 +14922,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-10-02",
-    "season_images": {
-      "night": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/Dogo_onsen_honkan_long_exposure.jpg/960px-Dogo_onsen_honkan_long_exposure.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Japanexperterna.se",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Dogo_onsen_honkan_long_exposure.jpg",
-        "width": 5184,
-        "height": 3456
-      }
-    }
+    "updated_at": "2026-10-02"
   },
   {
     "id": "wd-Q11642696",
@@ -15302,11 +15299,11 @@
     "featured": false,
     "score": 57.16,
     "summary": {
-      "text": "鉄道歴史パーク in SAIJO（てつどうれきしパーク イン さいじょう）は、愛媛県西条市の四国旅客鉄道（JR四国）予讃線伊予西条駅前にある四国鉄道文化館、十河（そごう）信二記念館、観光交流センターからなる施設である。",
+      "text": "鉄道歴史パーク in SAIJO（てつどうれきしパーク イン さいじょう）は、愛媛県西条市の四国旅客鉄道（JR四国）予讃線伊予西条駅前にある施設である。四国鉄道文化館、十河（そごう）信二記念館、観光交流センターから構成される。",
       "lang": "ja",
       "source_url": "https://ja.wikipedia.org/wiki/%E9%89%84%E9%81%93%E6%AD%B4%E5%8F%B2%E3%83%91%E3%83%BC%E3%82%AF_in_SAIJO",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-11-01"
     },
     "nearest_stations": [
       {
@@ -15596,6 +15593,16 @@
         "height": 1935
       }
     ],
+    "season_images": {
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/46/Iyo-Aoshima_Island_Aerial_photograph.jpg/960px-Iyo-Aoshima_Island_Aerial_photograph.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "国土交通省",
+        "license": "Attribution",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Iyo-Aoshima_Island_Aerial_photograph.jpg",
+        "width": 2531,
+        "height": 1836
+      }
+    },
     "external_ids": {
       "wikidata": "Q11661371"
     },
@@ -15610,17 +15617,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/46/Iyo-Aoshima_Island_Aerial_photograph.jpg/960px-Iyo-Aoshima_Island_Aerial_photograph.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "国土交通省",
-        "license": "Attribution",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Iyo-Aoshima_Island_Aerial_photograph.jpg",
-        "width": 2531,
-        "height": 1836
-      }
-    }
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q11663793",
@@ -15971,6 +15968,16 @@
         "height": 3840
       }
     ],
+    "season_images": {
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d0/Aerial_photo_of_Umashima_Island.jpg/960px-Aerial_photo_of_Umashima_Island.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "国土地理院",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Aerial_photo_of_Umashima_Island.jpg",
+        "width": 3182,
+        "height": 2697
+      }
+    },
     "external_ids": {
       "wikidata": "Q11667955"
     },
@@ -15985,17 +15992,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d0/Aerial_photo_of_Umashima_Island.jpg/960px-Aerial_photo_of_Umashima_Island.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "国土地理院",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Aerial_photo_of_Umashima_Island.jpg",
-        "width": 3182,
-        "height": 2697
-      }
-    }
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q11668718",
@@ -16257,6 +16254,16 @@
         "height": 1886
       }
     ],
+    "season_images": {
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f5/Uo-shima_Island%2C_Ehime_Aerial_photograph.2009.jpg/960px-Uo-shima_Island%2C_Ehime_Aerial_photograph.2009.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "国土地理院",
+        "license": "Attribution",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Uo-shima_Island,_Ehime_Aerial_photograph.2009.jpg",
+        "width": 2514,
+        "height": 1886
+      }
+    },
     "external_ids": {
       "wikidata": "Q11673959"
     },
@@ -16271,17 +16278,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f5/Uo-shima_Island%2C_Ehime_Aerial_photograph.2009.jpg/960px-Uo-shima_Island%2C_Ehime_Aerial_photograph.2009.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "国土地理院",
-        "license": "Attribution",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Uo-shima_Island,_Ehime_Aerial_photograph.2009.jpg",
-        "width": 2514,
-        "height": 1886
-      }
-    }
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q11673961",
@@ -16549,6 +16546,16 @@
         "height": 1536
       }
     ],
+    "season_images": {
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/12/Kashima_Island%2C_Ainan_Ehime_Aerial_photograph.2019.jpg/960px-Kashima_Island%2C_Ainan_Ehime_Aerial_photograph.2019.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "国土地理院",
+        "license": "Attribution",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Kashima_Island,_Ainan_Ehime_Aerial_photograph.2019.jpg",
+        "width": 4537,
+        "height": 3403
+      }
+    },
     "external_ids": {
       "wikidata": "Q11677072"
     },
@@ -16563,17 +16570,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/12/Kashima_Island%2C_Ainan_Ehime_Aerial_photograph.2019.jpg/960px-Kashima_Island%2C_Ainan_Ehime_Aerial_photograph.2019.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "国土地理院",
-        "license": "Attribution",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Kashima_Island,_Ainan_Ehime_Aerial_photograph.2019.jpg",
-        "width": 4537,
-        "height": 3403
-      }
-    }
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q11678192",
@@ -18356,6 +18353,16 @@
         "height": 2232
       }
     ],
+    "season_images": {
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f0/Hakata-Oshima_Bridge.JPG/960px-Hakata-Oshima_Bridge.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Vickerman625",
+        "license": "Public domain",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Hakata-Oshima_Bridge.JPG",
+        "width": 3968,
+        "height": 2232
+      }
+    },
     "external_ids": {
       "wikidata": "Q1799188"
     },
@@ -18370,17 +18377,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f0/Hakata-Oshima_Bridge.JPG/960px-Hakata-Oshima_Bridge.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Vickerman625",
-        "license": "Public domain",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Hakata-Oshima_Bridge.JPG",
-        "width": 3968,
-        "height": 2232
-      }
-    }
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q17994310",
@@ -18840,11 +18837,11 @@
     "featured": false,
     "score": 53.75,
     "summary": {
-      "text": "岩黒山（いわぐろやま／いわぐろさん）　は、四国山地西部の石鎚山脈に属する、標高　1,746mの山である。",
+      "text": "岩黒山（いわぐろやま／いわぐろさん）　は、四国山地の一部である石鎚山脈に属する、標高1,746mの山である。",
       "lang": "ja",
       "source_url": "https://ja.wikipedia.org/wiki/%E5%B2%A9%E9%BB%92%E5%B1%B1",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-11-01"
     },
     "images": [
       {
@@ -18989,11 +18986,11 @@
     "featured": false,
     "score": 59.71,
     "summary": {
-      "text": "五段高原（ごだんこうげん）は、四国山地の南西部、「四国カルスト」と呼ばれるカルスト高原のうち、中部から東部にかけての、標高1,300 - 1,450メートルほどの高原状の地域を指す地名である。「四国百名山」35番に選定されている。",
+      "text": "五段高原（ごだんこうげん）は、四国山地の南西部、四国カルストと呼ばれるカルスト高原のうち、中部から東部にかけての、標高1,300 - 1,450メートルほどの高原状の地域を指す地名である。四国百名山35番に選定されている。",
       "lang": "ja",
       "source_url": "https://ja.wikipedia.org/wiki/%E4%BA%94%E6%AE%B5%E9%AB%98%E5%8E%9F",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-11-01"
     },
     "images": [
       {
@@ -19043,11 +19040,11 @@
     "featured": false,
     "score": 53.31,
     "summary": {
-      "text": "楢原山（ならばらさん）は、愛媛県の中部、瀬戸内海に突き出した高縄山地（高縄半島）の東部に位置する、標高；1041ｍの山である。行政的には、愛媛県今治市に属する。",
+      "text": "楢原山（ならばらさん）は、愛媛県の中部、瀬戸内海に突き出した高縄山地（高縄半島）の東部に位置する、標高 1041ｍの山である。行政区画的には、愛媛県今治市に属する。",
       "lang": "ja",
       "source_url": "https://ja.wikipedia.org/wiki/%E6%A5%A2%E5%8E%9F%E5%B1%B1",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-11-01"
     },
     "images": [
       {
@@ -20131,6 +20128,16 @@
         "height": 600
       }
     ],
+    "season_images": {
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2c/Imabari-edit2.jpg/960px-Imabari-edit2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Herry Lawford from London, UK",
+        "license": "CC BY 2.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Imabari-edit2.jpg",
+        "width": 3320,
+        "height": 1016
+      }
+    },
     "external_ids": {
       "wikidata": "Q2740666"
     },
@@ -20145,17 +20152,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2c/Imabari-edit2.jpg/960px-Imabari-edit2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Herry Lawford from London, UK",
-        "license": "CC BY 2.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Imabari-edit2.jpg",
-        "width": 3320,
-        "height": 1016
-      }
-    }
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q2744214",
@@ -20195,6 +20192,16 @@
         "height": 882
       }
     ],
+    "season_images": {
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/82/Isidutisan202101303.jpg/960px-Isidutisan202101303.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Dokudami",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Isidutisan202101303.jpg",
+        "width": 1873,
+        "height": 503
+      }
+    },
     "external_ids": {
       "wikidata": "Q2744214"
     },
@@ -20205,17 +20212,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/82/Isidutisan202101303.jpg/960px-Isidutisan202101303.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Dokudami",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Isidutisan202101303.jpg",
-        "width": 1873,
-        "height": 503
-      }
-    }
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q28663265",
@@ -20266,22 +20263,6 @@
         "height": 1138
       }
     ],
-    "external_ids": {
-      "wikidata": "Q28663265",
-      "osm": "way/654843283"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q28663265",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://www.openstreetmap.org/way/654843283",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-09-28",
     "season_images": {
       "night": {
         "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b3/Akagane_20200525_01.jpg/960px-Akagane_20200525_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -20299,7 +20280,23 @@
         "width": 1600,
         "height": 665
       }
-    }
+    },
+    "external_ids": {
+      "wikidata": "Q28663265",
+      "osm": "way/654843283"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q28663265",
+        "fetched_at": "2026-09-28"
+      },
+      {
+        "url": "https://www.openstreetmap.org/way/654843283",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q28682338",
@@ -20455,6 +20452,16 @@
         "height": 1061
       }
     ],
+    "season_images": {
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cf/Kouen23.jpg/960px-Kouen23.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Dokudami",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Kouen23.jpg",
+        "width": 1600,
+        "height": 635
+      }
+    },
     "external_ids": {
       "wikidata": "Q28683353"
     },
@@ -20469,17 +20476,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cf/Kouen23.jpg/960px-Kouen23.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Dokudami",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Kouen23.jpg",
-        "width": 1600,
-        "height": 635
-      }
-    }
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q28687740",
@@ -20884,6 +20881,16 @@
         "height": 2448
       }
     ],
+    "season_images": {
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/92/Isaniwa_jinja_shrine_%2C_%E4%BC%8A%E4%BD%90%E7%88%BE%E6%B3%A2%E7%A5%9E%E7%A4%BE_-_panoramio_%282%29.jpg/960px-Isaniwa_jinja_shrine_%2C_%E4%BC%8A%E4%BD%90%E7%88%BE%E6%B3%A2%E7%A5%9E%E7%A4%BE_-_panoramio_%282%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "z tanuki",
+        "license": "CC BY 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Isaniwa_jinja_shrine_,_%E4%BC%8A%E4%BD%90%E7%88%BE%E6%B3%A2%E7%A5%9E%E7%A4%BE_-_panoramio_(2).jpg",
+        "width": 4716,
+        "height": 1600
+      }
+    },
     "external_ids": {
       "wikidata": "Q3155126",
       "osm": "relation/6604925"
@@ -20899,17 +20906,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/92/Isaniwa_jinja_shrine_%2C_%E4%BC%8A%E4%BD%90%E7%88%BE%E6%B3%A2%E7%A5%9E%E7%A4%BE_-_panoramio_%282%29.jpg/960px-Isaniwa_jinja_shrine_%2C_%E4%BC%8A%E4%BD%90%E7%88%BE%E6%B3%A2%E7%A5%9E%E7%A4%BE_-_panoramio_%282%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "z tanuki",
-        "license": "CC BY 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Isaniwa_jinja_shrine_,_%E4%BC%8A%E4%BD%90%E7%88%BE%E6%B3%A2%E7%A5%9E%E7%A4%BE_-_panoramio_(2).jpg",
-        "width": 4716,
-        "height": 1600
-      }
-    }
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q3155277",
@@ -20962,6 +20959,7 @@
         "height": 2848
       }
     ],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q3155277",
       "osm": "way/1291330157"
@@ -20981,8 +20979,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q31708583",
@@ -21246,6 +21243,7 @@
         "height": 2848
       }
     ],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q3513973",
       "osm": "way/701311982"
@@ -21261,8 +21259,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q3514066",
@@ -21323,6 +21320,7 @@
         "height": 2678
       }
     ],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q3514066",
       "osm": "node/2387968017"
@@ -21342,8 +21340,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q3576267",
@@ -21693,6 +21690,7 @@
         "height": 1024
       }
     ],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q4948544"
     },
@@ -21707,8 +21705,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q49641075",
@@ -22487,6 +22484,7 @@
         "height": 2848
       }
     ],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q649463",
       "osm": "node/2460130038"
@@ -22506,8 +22504,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q65056943",
@@ -22772,6 +22769,7 @@
         "height": 1200
       }
     ],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q703904",
       "osm": "way/699380682"
@@ -22787,8 +22785,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q7081764",
@@ -22830,6 +22827,16 @@
         "height": 520
       }
     ],
+    "season_images": {
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0d/Okamura_Island%2C_Ehime%2C_Japan_26-May-2018.jpg/960px-Okamura_Island%2C_Ehime%2C_Japan_26-May-2018.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "皓月旗",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Okamura_Island,_Ehime,_Japan_26-May-2018.jpg",
+        "width": 2960,
+        "height": 2468
+      }
+    },
     "external_ids": {
       "wikidata": "Q7081764"
     },
@@ -22844,17 +22851,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0d/Okamura_Island%2C_Ehime%2C_Japan_26-May-2018.jpg/960px-Okamura_Island%2C_Ehime%2C_Japan_26-May-2018.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "皓月旗",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Okamura_Island,_Ehime,_Japan_26-May-2018.jpg",
-        "width": 2960,
-        "height": 2468
-      }
-    }
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q7402728",
@@ -22915,6 +22912,7 @@
         "height": 6936
       }
     ],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q7402728",
       "osm": "way/216404934"
@@ -22934,8 +22932,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q80668281",
@@ -23308,6 +23305,16 @@
         "height": 1944
       }
     ],
+    "season_images": {
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8a/Kurushima_Kaikyo_Bridge-3edit.jpg/960px-Kurushima_Kaikyo_Bridge-3edit.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "トカゲ",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Kurushima_Kaikyo_Bridge-3edit.jpg",
+        "width": 1582,
+        "height": 502
+      }
+    },
     "external_ids": {
       "wikidata": "Q8843313"
     },
@@ -23318,17 +23325,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8a/Kurushima_Kaikyo_Bridge-3edit.jpg/960px-Kurushima_Kaikyo_Bridge-3edit.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "トカゲ",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Kurushima_Kaikyo_Bridge-3edit.jpg",
-        "width": 1582,
-        "height": 502
-      }
-    }
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q9009569",
@@ -23483,6 +23480,7 @@
         "height": 2848
       }
     ],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q9009869"
     },
@@ -23497,8 +23495,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q9064473",
@@ -23717,6 +23714,7 @@
         "height": 1920
       }
     ],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q909515",
       "osm": "way/1339048111"
@@ -23736,8 +23734,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q96323658",
@@ -24085,6 +24082,24 @@
         "height": 3672
       }
     ],
+    "season_images": {
+      "spring": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d1/Marunouchi%2C_Matsuyama%2C_Ehime_Prefecture_790-0008%2C_Japan_-_panoramio_%2871%29.jpg/960px-Marunouchi%2C_Matsuyama%2C_Ehime_Prefecture_790-0008%2C_Japan_-_panoramio_%2871%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Masoud Akbari",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Marunouchi,_Matsuyama,_Ehime_Prefecture_790-0008,_Japan_-_panoramio_(71).jpg",
+        "width": 4896,
+        "height": 3672
+      },
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ef/Matsuyama_Castle_Panorama_2.jpg/960px-Matsuyama_Castle_Panorama_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Urashimataro",
+        "license": "Public domain",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Matsuyama_Castle_Panorama_2.jpg",
+        "width": 5933,
+        "height": 2368
+      }
+    },
     "external_ids": {
       "wikidata": "Q981357",
       "osm": "node/611661255"
@@ -24108,25 +24123,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-10-02",
-    "season_images": {
-      "spring": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d1/Marunouchi%2C_Matsuyama%2C_Ehime_Prefecture_790-0008%2C_Japan_-_panoramio_%2871%29.jpg/960px-Marunouchi%2C_Matsuyama%2C_Ehime_Prefecture_790-0008%2C_Japan_-_panoramio_%2871%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Masoud Akbari",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Marunouchi,_Matsuyama,_Ehime_Prefecture_790-0008,_Japan_-_panoramio_(71).jpg",
-        "width": 4896,
-        "height": 3672
-      },
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ef/Matsuyama_Castle_Panorama_2.jpg/960px-Matsuyama_Castle_Panorama_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Urashimataro",
-        "license": "Public domain",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Matsuyama_Castle_Panorama_2.jpg",
-        "width": 5933,
-        "height": 2368
-      }
-    }
+    "updated_at": "2026-10-02"
   },
   {
     "id": "wd-Q98546053",
@@ -24223,6 +24220,7 @@
         "height": 3456
       }
     ],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q994193"
     },
@@ -24237,8 +24235,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q997301",

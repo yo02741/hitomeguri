@@ -125,6 +125,16 @@
         "height": 600
       }
     ],
+    "season_images": {
+      "spring": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5e/Shiroishi_castle_and_cherry_blossoms.jpg/960px-Shiroishi_castle_and_cherry_blossoms.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Kirin7739",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Shiroishi_castle_and_cherry_blossoms.jpg",
+        "width": 2560,
+        "height": 1706
+      }
+    },
     "external_ids": {
       "wikidata": "Q1037902"
     },
@@ -139,17 +149,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-10-02",
-    "season_images": {
-      "spring": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5e/Shiroishi_castle_and_cherry_blossoms.jpg/960px-Shiroishi_castle_and_cherry_blossoms.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Kirin7739",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Shiroishi_castle_and_cherry_blossoms.jpg",
-        "width": 2560,
-        "height": 1706
-      }
-    }
+    "updated_at": "2026-10-02"
   },
   {
     "id": "wd-Q10459589",
@@ -433,6 +433,7 @@
         "height": 3000
       }
     ],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q1061394"
     },
@@ -447,8 +448,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q1062129",
@@ -507,6 +507,7 @@
         "height": 4000
       }
     ],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q1062129"
     },
@@ -517,8 +518,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q106359537",
@@ -619,6 +619,7 @@
         "height": 416
       }
     ],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q1067623"
     },
@@ -633,8 +634,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q108603935",
@@ -1080,6 +1080,16 @@
         "height": 1944
       }
     ],
+    "season_images": {
+      "winter": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/06/Gate%2C_Mutsu_Kokubunji_temple%2C_Sendai_-_Feb_2%2C_2012_%281%29.jpg/960px-Gate%2C_Mutsu_Kokubunji_temple%2C_Sendai_-_Feb_2%2C_2012_%281%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Yuichiro Haga",
+        "license": "CC BY 2.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Gate,_Mutsu_Kokubunji_temple,_Sendai_-_Feb_2,_2012_(1).jpg",
+        "width": 4032,
+        "height": 3024
+      }
+    },
     "external_ids": {
       "wikidata": "Q1101060",
       "osm": "way/227909101"
@@ -1095,17 +1105,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "winter": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/06/Gate%2C_Mutsu_Kokubunji_temple%2C_Sendai_-_Feb_2%2C_2012_%281%29.jpg/960px-Gate%2C_Mutsu_Kokubunji_temple%2C_Sendai_-_Feb_2%2C_2012_%281%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Yuichiro Haga",
-        "license": "CC BY 2.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Gate,_Mutsu_Kokubunji_temple,_Sendai_-_Feb_2,_2012_(1).jpg",
-        "width": 4032,
-        "height": 3024
-      }
-    }
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q110128368",
@@ -1413,6 +1413,7 @@
         "height": 719
       }
     ],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q11286099"
     },
@@ -1427,8 +1428,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q11288204",
@@ -1854,11 +1854,11 @@
     "featured": false,
     "score": 64.46,
     "summary": {
-      "text": "七ツ森（ななつもり）は、宮城県黒川郡大和町にある、7つの山の総称である。最高峰は笹倉山（大森）で、標高は507メートル。七ツ森湖（南川ダム）の北東に6つの山があり、七ツ森湖の南方4キロメートルほどの位置に笹倉山が離れてある。その特徴的な連なりは周辺地域のみならず仙台市などの遠方からもよく視認される。",
+      "text": "七ツ森（ななつもり）は、宮城県黒川郡大和町にある7つの山の総称。仙台市の北西方に位置する松倉山や遂倉山などと南方の笹倉山の小丘で構成される溶岩円頂丘からなる火山体である。最高峰は笹倉山（大森）で標高は507メートルである。",
       "lang": "ja",
       "source_url": "https://ja.wikipedia.org/wiki/%E4%B8%83%E3%83%84%E6%A3%AE",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-11-01"
     },
     "images": [
       {
@@ -2836,6 +2836,16 @@
         "height": 1152
       }
     ],
+    "season_images": {
+      "winter": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a3/%E6%9C%A8%E3%82%92%E5%9B%B2%E3%81%84_%284421332880%29.jpg/960px-%E6%9C%A8%E3%82%92%E5%9B%B2%E3%81%84_%284421332880%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "allegro Takahi",
+        "license": "CC BY 2.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:%E6%9C%A8%E3%82%92%E5%9B%B2%E3%81%84_(4421332880).jpg",
+        "width": 3024,
+        "height": 3024
+      }
+    },
     "external_ids": {
       "wikidata": "Q11377835",
       "osm": "way/353554364"
@@ -2855,17 +2865,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "winter": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a3/%E6%9C%A8%E3%82%92%E5%9B%B2%E3%81%84_%284421332880%29.jpg/960px-%E6%9C%A8%E3%82%92%E5%9B%B2%E3%81%84_%284421332880%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "allegro Takahi",
-        "license": "CC BY 2.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:%E6%9C%A8%E3%82%92%E5%9B%B2%E3%81%84_(4421332880).jpg",
-        "width": 3024,
-        "height": 3024
-      }
-    }
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q11377851",
@@ -4127,6 +4127,7 @@
         "height": 4000
       }
     ],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q11391333",
       "osm": "way/345490247"
@@ -4142,8 +4143,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q11391336",
@@ -4259,6 +4259,16 @@
         "height": 6217
       }
     ],
+    "season_images": {
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/32/Izu-shima_Island%2C_Onagawa_Miyagi_Aerial_photograph.2018.jpg/960px-Izu-shima_Island%2C_Onagawa_Miyagi_Aerial_photograph.2018.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "国土地理院",
+        "license": "Attribution",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Izu-shima_Island,_Onagawa_Miyagi_Aerial_photograph.2018.jpg",
+        "width": 5408,
+        "height": 6217
+      }
+    },
     "external_ids": {
       "wikidata": "Q11395612"
     },
@@ -4273,17 +4283,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/32/Izu-shima_Island%2C_Onagawa_Miyagi_Aerial_photograph.2018.jpg/960px-Izu-shima_Island%2C_Onagawa_Miyagi_Aerial_photograph.2018.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "国土地理院",
-        "license": "Attribution",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Izu-shima_Island,_Onagawa_Miyagi_Aerial_photograph.2018.jpg",
-        "width": 5408,
-        "height": 6217
-      }
-    }
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q11396254",
@@ -6273,21 +6273,6 @@
         "height": 1840
       }
     ],
-    "external_ids": {
-      "wikidata": "Q1144855"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q1144855",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://ja.wikipedia.org/wiki/%E6%9D%BE%E5%B3%B6",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-10-02",
     "season_images": {
       "spring": {
         "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/94/Miyagi-Landscape_of_cherry_blossoms_and_Matsushima_Bay-xl.jpg/960px-Miyagi-Landscape_of_cherry_blossoms_and_Matsushima_Bay-xl.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -6305,7 +6290,22 @@
         "width": 9225,
         "height": 2303
       }
-    }
+    },
+    "external_ids": {
+      "wikidata": "Q1144855"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q1144855",
+        "fetched_at": "2026-09-28"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E6%9D%BE%E5%B3%B6",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-10-02"
   },
   {
     "id": "wd-Q11451153",
@@ -6920,6 +6920,7 @@
         "height": 1590
       }
     ],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q11454001",
       "osm": "node/4315863401"
@@ -6935,8 +6936,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-10-02",
-    "season_images": {}
+    "updated_at": "2026-10-02"
   },
   {
     "id": "wd-Q11454012",
@@ -7863,21 +7863,6 @@
         "height": 2448
       }
     ],
-    "external_ids": {
-      "wikidata": "Q11489343"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q11489343",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://ja.wikipedia.org/wiki/%E5%BE%A1%E9%87%9C_%28%E8%94%B5%E7%8E%8B%E9%80%A3%E5%B3%B0%29",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-10-02",
     "season_images": {
       "autumn": {
         "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4f/Fall_at_Okama_Crater_Lake%2C_Mt._Zao%2C_Tohoku_region%2C_Japan.jpg/960px-Fall_at_Okama_Crater_Lake%2C_Mt._Zao%2C_Tohoku_region%2C_Japan.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -7895,7 +7880,22 @@
         "width": 2246,
         "height": 1121
       }
-    }
+    },
+    "external_ids": {
+      "wikidata": "Q11489343"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q11489343",
+        "fetched_at": "2026-09-28"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E5%BE%A1%E9%87%9C_%28%E8%94%B5%E7%8E%8B%E9%80%A3%E5%B3%B0%29",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-10-02"
   },
   {
     "id": "wd-Q11489345",
@@ -8332,6 +8332,7 @@
         "height": 1920
       }
     ],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q11502165"
     },
@@ -8346,8 +8347,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q11505196",
@@ -9185,6 +9185,16 @@
         "height": 1926
       }
     ],
+    "season_images": {
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fc/Aerial_photo_of_Tsutsujigaoka-k%C5%8Den_Park_in_1975.jpg/960px-Aerial_photo_of_Tsutsujigaoka-k%C5%8Den_Park_in_1975.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "retouched by neuropower",
+        "license": "Attribution",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Aerial_photo_of_Tsutsujigaoka-k%C5%8Den_Park_in_1975.jpg",
+        "width": 1636,
+        "height": 1300
+      }
+    },
     "external_ids": {
       "wikidata": "Q11541912",
       "osm": "relation/16202524"
@@ -9200,17 +9210,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fc/Aerial_photo_of_Tsutsujigaoka-k%C5%8Den_Park_in_1975.jpg/960px-Aerial_photo_of_Tsutsujigaoka-k%C5%8Den_Park_in_1975.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "retouched by neuropower",
-        "license": "Attribution",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Aerial_photo_of_Tsutsujigaoka-k%C5%8Den_Park_in_1975.jpg",
-        "width": 1636,
-        "height": 1300
-      }
-    }
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q11544820",
@@ -9550,11 +9550,11 @@
     "featured": false,
     "score": 66.84,
     "summary": {
-      "text": "泉ヶ岳（いずみがたけ）は、宮城県仙台市泉区の北西部に位置する標高1175メートルの山である（三角点は1172.18メートル、北緯38度24分41.7562秒 東経140度42分34.9199秒）。船形連峰に連なる。",
+      "text": "泉ヶ岳（いずみがたけ）は、宮城県仙台市泉区の北西部に位置する標高1175メートルの山。北泉ヶ岳とともに泉ヶ岳火山を構成しており、船形連峰の一部としてその東縁をなす火山である（三角点は1172.18メートル、北緯38度24分41.7562秒 東経140度42分34.9199秒）。",
       "lang": "ja",
       "source_url": "https://ja.wikipedia.org/wiki/%E6%B3%89%E3%83%B6%E5%B2%B3",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-11-01"
     },
     "images": [
       {
@@ -10620,6 +10620,7 @@
         "height": 2448
       }
     ],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q115768",
       "osm": "way/227338420"
@@ -10635,8 +10636,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q11579166",
@@ -10953,6 +10953,16 @@
         "height": 3796
       }
     ],
+    "season_images": {
+      "winter": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/59/%E7%91%9E%E9%B3%B3%E6%AE%BF_%28Zuiho-den_in_midwinter%29_14_Jan%2C_2013_-_panoramio.jpg/960px-%E7%91%9E%E9%B3%B3%E6%AE%BF_%28Zuiho-den_in_midwinter%29_14_Jan%2C_2013_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Hiroaki Kaneko",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:%E7%91%9E%E9%B3%B3%E6%AE%BF_(Zuiho-den_in_midwinter)_14_Jan,_2013_-_panoramio.jpg",
+        "width": 2048,
+        "height": 1536
+      }
+    },
     "external_ids": {
       "wikidata": "Q115856"
     },
@@ -10967,17 +10977,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "winter": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/59/%E7%91%9E%E9%B3%B3%E6%AE%BF_%28Zuiho-den_in_midwinter%29_14_Jan%2C_2013_-_panoramio.jpg/960px-%E7%91%9E%E9%B3%B3%E6%AE%BF_%28Zuiho-den_in_midwinter%29_14_Jan%2C_2013_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Hiroaki Kaneko",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:%E7%91%9E%E9%B3%B3%E6%AE%BF_(Zuiho-den_in_midwinter)_14_Jan,_2013_-_panoramio.jpg",
-        "width": 2048,
-        "height": 1536
-      }
-    }
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q11586467",
@@ -11017,6 +11017,16 @@
         "height": 2920
       }
     ],
+    "season_images": {
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/be/Okawa_Elementary_School_after_Tsunami_2012.jpg/960px-Okawa_Elementary_School_after_Tsunami_2012.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Ishiyamakazuhiro",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Okawa_Elementary_School_after_Tsunami_2012.jpg",
+        "width": 6048,
+        "height": 1263
+      }
+    },
     "external_ids": {
       "wikidata": "Q11586467"
     },
@@ -11031,17 +11041,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/be/Okawa_Elementary_School_after_Tsunami_2012.jpg/960px-Okawa_Elementary_School_after_Tsunami_2012.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Ishiyamakazuhiro",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Okawa_Elementary_School_after_Tsunami_2012.jpg",
-        "width": 6048,
-        "height": 1263
-      }
-    }
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q11586473",
@@ -11296,6 +11296,16 @@
         "height": 4000
       }
     ],
+    "season_images": {
+      "autumn": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/15/Fall_in_Akiu%2C_Sendai%2C_Japan.jpg/960px-Fall_in_Akiu%2C_Sendai%2C_Japan.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Random Pacer",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Fall_in_Akiu,_Sendai,_Japan.jpg",
+        "width": 4499,
+        "height": 2552
+      }
+    },
     "external_ids": {
       "wikidata": "Q11594813"
     },
@@ -11306,17 +11316,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-10-02",
-    "season_images": {
-      "autumn": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/15/Fall_in_Akiu%2C_Sendai%2C_Japan.jpg/960px-Fall_in_Akiu%2C_Sendai%2C_Japan.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Random Pacer",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Fall_in_Akiu,_Sendai,_Japan.jpg",
-        "width": 4499,
-        "height": 2552
-      }
-    }
+    "updated_at": "2026-10-02"
   },
   {
     "id": "wd-Q11603241",
@@ -11463,6 +11463,16 @@
         "height": 1712
       }
     ],
+    "season_images": {
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/77/20091011%E9%87%91%E8%8F%AF%E5%B1%B1.jpg/960px-20091011%E9%87%91%E8%8F%AF%E5%B1%B1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "BehBeh at Japanese Wikipedia",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:20091011%E9%87%91%E8%8F%AF%E5%B1%B1.jpg",
+        "width": 1260,
+        "height": 720
+      }
+    },
     "external_ids": {
       "wikidata": "Q11607173"
     },
@@ -11477,17 +11487,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/77/20091011%E9%87%91%E8%8F%AF%E5%B1%B1.jpg/960px-20091011%E9%87%91%E8%8F%AF%E5%B1%B1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "BehBeh at Japanese Wikipedia",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:20091011%E9%87%91%E8%8F%AF%E5%B1%B1.jpg",
-        "width": 1260,
-        "height": 720
-      }
-    }
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q11614042",
@@ -14713,6 +14713,7 @@
         "height": 1200
       }
     ],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q11675321"
     },
@@ -14727,8 +14728,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q11676455",
@@ -15784,6 +15784,7 @@
         "height": 2448
       }
     ],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q1320435"
     },
@@ -15798,8 +15799,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q132044348",
@@ -15916,6 +15916,16 @@
         "height": 3456
       }
     ],
+    "season_images": {
+      "panorama": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/f/f0/Aerial_photo_of_Shiogama-Jinja_shrine_in_1975.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+        "author": "retouched by neuropower",
+        "license": "Attribution",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Aerial_photo_of_Shiogama-Jinja_shrine_in_1975.jpg",
+        "width": 422,
+        "height": 281
+      }
+    },
     "external_ids": {
       "wikidata": "Q133753"
     },
@@ -15926,17 +15936,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-29",
-    "season_images": {
-      "panorama": {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/f/f0/Aerial_photo_of_Shiogama-Jinja_shrine_in_1975.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-        "author": "retouched by neuropower",
-        "license": "Attribution",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Aerial_photo_of_Shiogama-Jinja_shrine_in_1975.jpg",
-        "width": 422,
-        "height": 281
-      }
-    }
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q134704964",
@@ -16248,6 +16248,7 @@
         "height": 1500
       }
     ],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q14338929"
     },
@@ -16262,8 +16263,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q1621882",
@@ -16305,6 +16305,7 @@
         "height": 2000
       }
     ],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q1621882"
     },
@@ -16319,8 +16320,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q16250077",
@@ -16697,6 +16697,7 @@
         "height": 1080
       }
     ],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q17222417",
       "osm": "relation/7524795"
@@ -16712,8 +16713,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-29",
-    "season_images": {}
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q17223553",
@@ -18089,9 +18089,12 @@
     "id": "wd-Q21652335",
     "name": {
       "ja": "アクアテラス錦ケ丘",
+      "kana": "あくあてらすにしきがおか",
+      "romaji": "Akuaterasunishikigaoka",
       "zh_tw": "アクアテラス錦ケ丘",
       "en": "Aquaterrace Nishikigaoka"
     },
+    "kana_source": "wikipedia",
     "location": {
       "lat": 38.257111,
       "lng": 140.765056
@@ -18106,11 +18109,11 @@
     "featured": false,
     "score": 54.25,
     "summary": {
-      "text": "アクアテラス錦ヶ丘（アクアテラスにしきがおか）は、宮城県仙台市青葉区錦ケ丘にある民間水族館。",
+      "text": "アクアテラス錦ケ丘（アクアテラスにしきがおか）は、宮城県仙台市青葉区錦ケ丘にある民間水族館。",
       "lang": "ja",
-      "source_url": "https://ja.wikipedia.org/wiki/%E3%82%A2%E3%82%AF%E3%82%A2%E3%83%86%E3%83%A9%E3%82%B9%E9%8C%A6%E3%83%B6%E4%B8%98",
+      "source_url": "https://ja.wikipedia.org/wiki/%E3%82%A2%E3%82%AF%E3%82%A2%E3%83%86%E3%83%A9%E3%82%B9%E9%8C%A6%E3%82%B1%E4%B8%98",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-11-01"
     },
     "images": [
       {
@@ -18134,6 +18137,10 @@
       {
         "url": "https://www.openstreetmap.org/node/13872488782",
         "fetched_at": "2026-09-28"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E3%82%A2%E3%82%AF%E3%82%A2%E3%83%86%E3%83%A9%E3%82%B9%E9%8C%A6%E3%82%B1%E4%B8%98",
+        "fetched_at": "2026-11-01"
       }
     ],
     "status": "published",
@@ -19391,11 +19398,11 @@
     "featured": false,
     "score": 59.95,
     "summary": {
-      "text": "薬萊山（やくらいさん）は、宮城県加美郡加美町のほぼ中央、宮城県立自然公園船形連峰に含まれる標高553mの山である。",
+      "text": "薬萊山（やくらいさん）は、宮城県加美郡加美町のほぼ中央に位置する標高553mの山。「加美富士」とも呼ばれる独立峰である。山域は宮城県立自然公園船形連峰に指定されている。東北百名山の1つである。",
       "lang": "ja",
       "source_url": "https://ja.wikipedia.org/wiki/%E8%96%AC%E8%90%8A%E5%B1%B1",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-11-01"
     },
     "images": [
       {
@@ -19557,6 +19564,7 @@
         "height": 1500
       }
     ],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q2655947"
     },
@@ -19571,8 +19579,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q2655960",
@@ -19630,6 +19637,7 @@
         "height": 3864
       }
     ],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q2655960"
     },
@@ -19640,8 +19648,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q2857954",
@@ -20277,22 +20284,6 @@
         "height": 4000
       }
     ],
-    "external_ids": {
-      "wikidata": "Q3140498",
-      "osm": "node/870453209"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q3140498",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://www.openstreetmap.org/node/870453209",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-10-02",
     "season_images": {
       "spring": {
         "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/67/%E7%91%9E%E5%B7%8C%E5%AF%BA%E5%A2%83%E5%86%85%E3%81%AE%E6%A1%9C_-_panoramio.jpg/960px-%E7%91%9E%E5%B7%8C%E5%AF%BA%E5%A2%83%E5%86%85%E3%81%AE%E6%A1%9C_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -20310,7 +20301,23 @@
         "width": 6000,
         "height": 4000
       }
-    }
+    },
+    "external_ids": {
+      "wikidata": "Q3140498",
+      "osm": "node/870453209"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q3140498",
+        "fetched_at": "2026-09-28"
+      },
+      {
+        "url": "https://www.openstreetmap.org/node/870453209",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-10-02"
   },
   {
     "id": "wd-Q3201326",
@@ -20507,6 +20514,7 @@
         "height": 2560
       }
     ],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q3330092",
       "osm": "way/226829544"
@@ -20522,8 +20530,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q3594049",
@@ -20694,6 +20701,7 @@
         "height": 2000
       }
     ],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q4391562",
       "osm": "node/1217256687"
@@ -20713,8 +20721,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q4416112",
@@ -20813,6 +20820,16 @@
         "height": 1000
       }
     ],
+    "season_images": {
+      "autumn": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e4/Akiu%27s_autumn_%2851962914707%29.jpg/960px-Akiu%27s_autumn_%2851962914707%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Raita Futo from Tokyo, Japan",
+        "license": "CC BY 2.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Akiu%27s_autumn_(51962914707).jpg",
+        "width": 5829,
+        "height": 3886
+      }
+    },
     "external_ids": {
       "wikidata": "Q4701257"
     },
@@ -20823,17 +20840,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-10-02",
-    "season_images": {
-      "autumn": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e4/Akiu%27s_autumn_%2851962914707%29.jpg/960px-Akiu%27s_autumn_%2851962914707%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Raita Futo from Tokyo, Japan",
-        "license": "CC BY 2.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Akiu%27s_autumn_(51962914707).jpg",
-        "width": 5829,
-        "height": 3886
-      }
-    }
+    "updated_at": "2026-10-02"
   },
   {
     "id": "wd-Q486400",
@@ -21155,6 +21162,16 @@
         "height": 1960
       }
     ],
+    "season_images": {
+      "night": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/65/Kleenex_Stadium_Miyagi%27s_Illumination.JPG/960px-Kleenex_Stadium_Miyagi%27s_Illumination.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "広瀬川",
+        "license": "CC0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Kleenex_Stadium_Miyagi%27s_Illumination.JPG",
+        "width": 2048,
+        "height": 1152
+      }
+    },
     "external_ids": {
       "wikidata": "Q489699"
     },
@@ -21169,17 +21186,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-10-02",
-    "season_images": {
-      "night": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/65/Kleenex_Stadium_Miyagi%27s_Illumination.JPG/960px-Kleenex_Stadium_Miyagi%27s_Illumination.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "広瀬川",
-        "license": "CC0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Kleenex_Stadium_Miyagi%27s_Illumination.JPG",
-        "width": 2048,
-        "height": 1152
-      }
-    }
+    "updated_at": "2026-10-02"
   },
   {
     "id": "wd-Q4948440",
@@ -21351,6 +21358,7 @@
         "height": 680
       }
     ],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q521319",
       "osm": "way/240601719"
@@ -21366,8 +21374,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q54152962",
@@ -21812,6 +21819,7 @@
         "height": 4000
       }
     ],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q598621",
       "osm": "way/60100947"
@@ -21827,8 +21835,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q60985167",
@@ -23016,6 +23023,16 @@
         "height": 2443
       }
     ],
+    "season_images": {
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/77/20091011%E9%87%91%E8%8F%AF%E5%B1%B1.jpg/960px-20091011%E9%87%91%E8%8F%AF%E5%B1%B1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "BehBeh at Japanese Wikipedia",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:20091011%E9%87%91%E8%8F%AF%E5%B1%B1.jpg",
+        "width": 1260,
+        "height": 720
+      }
+    },
     "external_ids": {
       "wikidata": "Q6413909"
     },
@@ -23030,17 +23047,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/77/20091011%E9%87%91%E8%8F%AF%E5%B1%B1.jpg/960px-20091011%E9%87%91%E8%8F%AF%E5%B1%B1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "BehBeh at Japanese Wikipedia",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:20091011%E9%87%91%E8%8F%AF%E5%B1%B1.jpg",
-        "width": 1260,
-        "height": 720
-      }
-    }
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q65093836",
@@ -23756,6 +23763,7 @@
       "fetched_at": "2026-09-29"
     },
     "images": [],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q7450173"
     },
@@ -23770,8 +23778,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q7496102",
@@ -24592,6 +24599,16 @@
         "height": 3994
       }
     ],
+    "season_images": {
+      "spring": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cf/%E6%A1%9C%E3%81%A8%E5%A4%9A%E8%B3%80%E5%9F%8E_%28Taga_Castle_with_Cherry_blossoms%29_20_Apr%2C_2014_-_panoramio.jpg/960px-%E6%A1%9C%E3%81%A8%E5%A4%9A%E8%B3%80%E5%9F%8E_%28Taga_Castle_with_Cherry_blossoms%29_20_Apr%2C_2014_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Hiroaki Kaneko",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:%E6%A1%9C%E3%81%A8%E5%A4%9A%E8%B3%80%E5%9F%8E_(Taga_Castle_with_Cherry_blossoms)_20_Apr,_2014_-_panoramio.jpg",
+        "width": 2800,
+        "height": 2100
+      }
+    },
     "external_ids": {
       "wikidata": "Q870867",
       "osm": "relation/14421968"
@@ -24611,17 +24628,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-10-02",
-    "season_images": {
-      "spring": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cf/%E6%A1%9C%E3%81%A8%E5%A4%9A%E8%B3%80%E5%9F%8E_%28Taga_Castle_with_Cherry_blossoms%29_20_Apr%2C_2014_-_panoramio.jpg/960px-%E6%A1%9C%E3%81%A8%E5%A4%9A%E8%B3%80%E5%9F%8E_%28Taga_Castle_with_Cherry_blossoms%29_20_Apr%2C_2014_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Hiroaki Kaneko",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:%E6%A1%9C%E3%81%A8%E5%A4%9A%E8%B3%80%E5%9F%8E_(Taga_Castle_with_Cherry_blossoms)_20_Apr,_2014_-_panoramio.jpg",
-        "width": 2800,
-        "height": 2100
-      }
-    }
+    "updated_at": "2026-10-02"
   },
   {
     "id": "wd-Q874428",
@@ -24682,6 +24689,7 @@
         "height": 1920
       }
     ],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q874428",
       "osm": "way/1023512304"
@@ -24697,8 +24705,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q87746275",
@@ -24894,6 +24901,16 @@
         "height": 2560
       }
     ],
+    "season_images": {
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/20/Aerial_photo_of_Sportsland_Sugo_2013.jpg/960px-Aerial_photo_of_Sportsland_Sugo_2013.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "retouched by Datemasa",
+        "license": "Attribution",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Aerial_photo_of_Sportsland_Sugo_2013.jpg",
+        "width": 1280,
+        "height": 853
+      }
+    },
     "external_ids": {
       "wikidata": "Q917398"
     },
@@ -24908,17 +24925,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/20/Aerial_photo_of_Sportsland_Sugo_2013.jpg/960px-Aerial_photo_of_Sportsland_Sugo_2013.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "retouched by Datemasa",
-        "license": "Attribution",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Aerial_photo_of_Sportsland_Sugo_2013.jpg",
-        "width": 1280,
-        "height": 853
-      }
-    }
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q97276443",
@@ -25035,6 +25042,7 @@
         "height": 1280
       }
     ],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q988508"
     },
@@ -25045,7 +25053,6 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-29",
-    "season_images": {}
+    "updated_at": "2026-09-29"
   }
 ]
