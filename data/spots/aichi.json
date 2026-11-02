@@ -57,6 +57,7 @@
         "height": 1896
       }
     ],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q1013445",
       "osm": "way/231295714"
@@ -80,8 +81,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q104089755",
@@ -328,17 +328,6 @@
         "height": 2736
       }
     ],
-    "external_ids": {
-      "wikidata": "Q1080130"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q1080130",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-10-02",
     "season_images": {
       "spring": {
         "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2e/Shirotori_Park.jpg/960px-Shirotori_Park.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -356,7 +345,18 @@
         "width": 2048,
         "height": 1152
       }
-    }
+    },
+    "external_ids": {
+      "wikidata": "Q1080130"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q1080130",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-10-02"
   },
   {
     "id": "wd-Q10854970",
@@ -938,6 +938,7 @@
         "height": 4032
       }
     ],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q109414978"
     },
@@ -952,8 +953,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q109595451",
@@ -1471,6 +1471,7 @@
         "height": 2736
       }
     ],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q11233728"
     },
@@ -1485,8 +1486,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q11233975",
@@ -2259,6 +2259,16 @@
         "height": 960
       }
     ],
+    "season_images": {
+      "night": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f5/Nagoya_Port_05_c.jpg/960px-Nagoya_Port_05_c.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Jesse Chandler",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Nagoya_Port_05_c.jpg",
+        "width": 1600,
+        "height": 1200
+      }
+    },
     "external_ids": {
       "wikidata": "Q11277051",
       "osm": "node/1423951030"
@@ -2274,17 +2284,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "night": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f5/Nagoya_Port_05_c.jpg/960px-Nagoya_Port_05_c.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Jesse Chandler",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Nagoya_Port_05_c.jpg",
-        "width": 1600,
-        "height": 1200
-      }
-    }
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q11282560",
@@ -2782,6 +2782,16 @@
         "height": 2480
       }
     ],
+    "season_images": {
+      "night": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/06/WAAD_3825_%2813593955593%29.jpg/960px-WAAD_3825_%2813593955593%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "kamome",
+        "license": "CC BY 2.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:WAAD_3825_(13593955593).jpg",
+        "width": 5184,
+        "height": 3456
+      }
+    },
     "external_ids": {
       "wikidata": "Q11318660"
     },
@@ -2796,17 +2806,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "night": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/06/WAAD_3825_%2813593955593%29.jpg/960px-WAAD_3825_%2813593955593%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "kamome",
-        "license": "CC BY 2.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:WAAD_3825_(13593955593).jpg",
-        "width": 5184,
-        "height": 3456
-      }
-    }
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q11323905",
@@ -4212,6 +4212,7 @@
         "height": 3003
       }
     ],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q11382608"
     },
@@ -4222,8 +4223,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q11391688",
@@ -4495,6 +4495,16 @@
         "height": 3000
       }
     ],
+    "season_images": {
+      "night": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8f/Endoji_20170422.jpg/960px-Endoji_20170422.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "円周率３パーセント",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Endoji_20170422.jpg",
+        "width": 4898,
+        "height": 3265
+      }
+    },
     "external_ids": {
       "wikidata": "Q11394899"
     },
@@ -4509,17 +4519,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-10-02",
-    "season_images": {
-      "night": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8f/Endoji_20170422.jpg/960px-Endoji_20170422.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "円周率３パーセント",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Endoji_20170422.jpg",
-        "width": 4898,
-        "height": 3265
-      }
-    }
+    "updated_at": "2026-10-02"
   },
   {
     "id": "wd-Q11396288",
@@ -5056,6 +5056,7 @@
         "height": 2736
       }
     ],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q11414997"
     },
@@ -5070,8 +5071,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q11415005",
@@ -5127,6 +5127,7 @@
         "height": 2512
       }
     ],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q11415005"
     },
@@ -5137,8 +5138,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q11415011",
@@ -5268,6 +5268,7 @@
         "height": 2176
       }
     ],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q11415016",
       "osm": "way/942000435"
@@ -5283,8 +5284,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q11415123",
@@ -5412,6 +5412,16 @@
         "height": 2736
       }
     ],
+    "season_images": {
+      "night": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6b/Sea_train_land_illumination.jpg/960px-Sea_train_land_illumination.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "St-land",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Sea_train_land_illumination.jpg",
+        "width": 2736,
+        "height": 1824
+      }
+    },
     "external_ids": {
       "wikidata": "Q11415200",
       "osm": "way/230198261"
@@ -5431,28 +5441,15 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "night": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6b/Sea_train_land_illumination.jpg/960px-Sea_train_land_illumination.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "St-land",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Sea_train_land_illumination.jpg",
-        "width": 2736,
-        "height": 1824
-      }
-    }
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q11415201",
     "name": {
       "ja": "名古屋港ワイルドフラワーガーデン ブルーボネット",
-      "kana": "なごやこうわいるどふらわーがーでんぶるーぼねっと",
-      "romaji": "Nagoyakowairudofurawagadenburubonetto",
       "zh_tw": "名古屋港ワイルドフラワーガーデン ブルーボネット",
       "en": "Nagoya Port Wildflower Garden Bluebonnet"
     },
-    "kana_source": "wikipedia",
     "location": {
       "lat": 35.070828,
       "lng": 136.881064
@@ -5991,6 +5988,7 @@
         "height": 1200
       }
     ],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q11419308"
     },
@@ -6005,8 +6003,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q11420637",
@@ -6195,6 +6192,7 @@
         "height": 1936
       }
     ],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q11433352"
     },
@@ -6205,8 +6203,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q11436517",
@@ -6271,6 +6268,7 @@
         "height": 4024
       }
     ],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q11436517",
       "osm": "node/2491168173"
@@ -6290,8 +6288,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-29",
-    "season_images": {}
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11438480",
@@ -6470,6 +6467,7 @@
         "height": 3995
       }
     ],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q11441955"
     },
@@ -6484,8 +6482,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q11441972",
@@ -6724,11 +6721,11 @@
     "featured": false,
     "score": 58.69,
     "summary": {
-      "text": "妙行寺（みょうぎょうじ）は、愛知県名古屋市中村区中村町にある日蓮宗の寺院。山号は正悦山。本尊は法華三法。日蓮宗の信者で武将の加藤清正の出生地と伝えられている。旧本山は大本山本圀寺（六条門流）。達師法縁。",
+      "text": "妙行寺（みょうぎょうじ）は、愛知県名古屋市中村区中村町にある日蓮宗の寺院。山号は正悦山。本尊は法華三法。旧本山は大本山本圀寺（六条門流）。達師法縁。戦国武将の加藤清正の出生地と伝えられ、毎年7月24日に清正公御正當大祭が催されている。",
       "lang": "ja",
       "source_url": "https://ja.wikipedia.org/wiki/%E5%A6%99%E8%A1%8C%E5%AF%BA_%28%E5%90%8D%E5%8F%A4%E5%B1%8B%E5%B8%82%E4%B8%AD%E6%9D%91%E5%8C%BA%E4%B8%AD%E6%9D%91%E7%94%BA%29",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-29"
+      "fetched_at": "2026-11-01"
     },
     "nearest_stations": [
       {
@@ -7484,6 +7481,7 @@
         "height": 3968
       }
     ],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q11465296"
     },
@@ -7494,8 +7492,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q11465302",
@@ -8286,6 +8283,16 @@
         "height": 394
       }
     ],
+    "season_images": {
+      "night": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9d/Fountain_of_Hope_at_night.jpg/960px-Fountain_of_Hope_at_night.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "KKPCW",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Fountain_of_Hope_at_night.jpg",
+        "width": 3264,
+        "height": 2448
+      }
+    },
     "external_ids": {
       "wikidata": "Q11480929"
     },
@@ -8300,17 +8307,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "night": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9d/Fountain_of_Hope_at_night.jpg/960px-Fountain_of_Hope_at_night.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "KKPCW",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Fountain_of_Hope_at_night.jpg",
-        "width": 3264,
-        "height": 2448
-      }
-    }
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q11481435",
@@ -8842,6 +8839,7 @@
         "height": 1200
       }
     ],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q11493428",
       "osm": "node/12193590951"
@@ -8861,8 +8859,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q11493993",
@@ -9808,6 +9805,7 @@
         "height": 2286
       }
     ],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q11506991",
       "osm": "way/243183188"
@@ -9827,8 +9825,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q11510248",
@@ -10453,6 +10450,16 @@
         "height": 4000
       }
     ],
+    "season_images": {
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/16/%E6%99%AE%E9%96%80%E5%AF%BA_-_%E5%A2%83%E5%86%85_-_%E3%83%91%E3%83%8E%E3%83%A9%E3%83%9E%E5%86%99%E7%9C%9F.jpg/960px-%E6%99%AE%E9%96%80%E5%AF%BA_-_%E5%A2%83%E5%86%85_-_%E3%83%91%E3%83%8E%E3%83%A9%E3%83%9E%E5%86%99%E7%9C%9F.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Lundariokn45",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:%E6%99%AE%E9%96%80%E5%AF%BA_-_%E5%A2%83%E5%86%85_-_%E3%83%91%E3%83%8E%E3%83%A9%E3%83%9E%E5%86%99%E7%9C%9F.jpg",
+        "width": 5760,
+        "height": 736
+      }
+    },
     "external_ids": {
       "wikidata": "Q11514633",
       "osm": "node/4245400182"
@@ -10472,17 +10479,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-29",
-    "season_images": {
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/16/%E6%99%AE%E9%96%80%E5%AF%BA_-_%E5%A2%83%E5%86%85_-_%E3%83%91%E3%83%8E%E3%83%A9%E3%83%9E%E5%86%99%E7%9C%9F.jpg/960px-%E6%99%AE%E9%96%80%E5%AF%BA_-_%E5%A2%83%E5%86%85_-_%E3%83%91%E3%83%8E%E3%83%A9%E3%83%9E%E5%86%99%E7%9C%9F.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Lundariokn45",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:%E6%99%AE%E9%96%80%E5%AF%BA_-_%E5%A2%83%E5%86%85_-_%E3%83%91%E3%83%8E%E3%83%A9%E3%83%9E%E5%86%99%E7%9C%9F.jpg",
-        "width": 5760,
-        "height": 736
-      }
-    }
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11515245",
@@ -11547,6 +11544,16 @@
         "height": 1500
       }
     ],
+    "season_images": {
+      "night": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/10/Midland_Square_-_panoramio.jpg/960px-Midland_Square_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Nagono",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Midland_Square_-_panoramio.jpg",
+        "width": 1704,
+        "height": 2272
+      }
+    },
     "external_ids": {
       "wikidata": "Q1155401"
     },
@@ -11557,17 +11564,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-10-02",
-    "season_images": {
-      "night": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/10/Midland_Square_-_panoramio.jpg/960px-Midland_Square_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Nagono",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Midland_Square_-_panoramio.jpg",
-        "width": 1704,
-        "height": 2272
-      }
-    }
+    "updated_at": "2026-10-02"
   },
   {
     "id": "wd-Q1155484",
@@ -11630,22 +11627,6 @@
         "height": 1000
       }
     ],
-    "external_ids": {
-      "wikidata": "Q1155484",
-      "osm": "way/234510746"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q1155484",
-        "fetched_at": "2026-09-27"
-      },
-      {
-        "url": "https://www.openstreetmap.org/way/234510746",
-        "fetched_at": "2026-09-27"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-10-02",
     "season_images": {
       "spring": {
         "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fd/Inuyama_Castle_Keep_Tower_20170409.jpg/960px-Inuyama_Castle_Keep_Tower_20170409.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -11671,7 +11652,23 @@
         "width": 3276,
         "height": 700
       }
-    }
+    },
+    "external_ids": {
+      "wikidata": "Q1155484",
+      "osm": "way/234510746"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q1155484",
+        "fetched_at": "2026-09-27"
+      },
+      {
+        "url": "https://www.openstreetmap.org/way/234510746",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-10-02"
   },
   {
     "id": "wd-Q11555773",
@@ -12428,11 +12425,11 @@
     "featured": false,
     "score": 66.71,
     "summary": {
-      "text": "猿投神社（さなげじんじゃ）は、愛知県豊田市にある神社。式内社、三河国三宮で、旧社格は県社。猿投山の麓に鎮座する。",
+      "text": "猿投神社（さなげじんじゃ）は、愛知県豊田市にある神社。式内社、三河国三宮で、旧社格は県社。猿投山の麓に鎮座する。毎年10月に棒の手を奉納する猿投祭りが行われる。",
       "lang": "ja",
       "source_url": "https://ja.wikipedia.org/wiki/%E7%8C%BF%E6%8A%95%E7%A5%9E%E7%A4%BE",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-11-01"
     },
     "images": [
       {
@@ -12651,6 +12648,16 @@
         "height": 2736
       }
     ],
+    "season_images": {
+      "night": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5b/Lightup_at_Shiratori_garden_in_Nagoya_-_panoramio.jpg/960px-Lightup_at_Shiratori_garden_in_Nagoya_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Masaya I",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Lightup_at_Shiratori_garden_in_Nagoya_-_panoramio.jpg",
+        "width": 1240,
+        "height": 827
+      }
+    },
     "external_ids": {
       "wikidata": "Q11580565",
       "osm": "way/57359998"
@@ -12670,17 +12677,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "night": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5b/Lightup_at_Shiratori_garden_in_Nagoya_-_panoramio.jpg/960px-Lightup_at_Shiratori_garden_in_Nagoya_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Masaya I",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Lightup_at_Shiratori_garden_in_Nagoya_-_panoramio.jpg",
-        "width": 1240,
-        "height": 827
-      }
-    }
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q11583052",
@@ -13260,6 +13257,7 @@
         "height": 4375
       }
     ],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q11603714"
     },
@@ -13274,8 +13272,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q11603933",
@@ -14376,6 +14373,7 @@
         "height": 2736
       }
     ],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q11633364",
       "osm": "node/1994985329"
@@ -14391,8 +14389,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-29",
-    "season_images": {}
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11633783",
@@ -14554,11 +14551,11 @@
     "featured": false,
     "score": 59.53,
     "summary": {
-      "text": "豊橋市地下資源館（とよはししちかしげんかん）は、愛知県豊橋市大岩町にある、地下資源や鉱石、エネルギーの博物館。",
+      "text": "豊橋市地下資源館（とよはししちかしげんかん）は、愛知県豊橋市大岩町にある、地下資源や鉱石、エネルギーの博物館。国際連合の定める「国際児童年」を記念し、豊橋市の事業の一環として開設した。",
       "lang": "ja",
       "source_url": "https://ja.wikipedia.org/wiki/%E8%B1%8A%E6%A9%8B%E5%B8%82%E5%9C%B0%E4%B8%8B%E8%B3%87%E6%BA%90%E9%A4%A8",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-11-01"
     },
     "nearest_stations": [
       {
@@ -14648,6 +14645,16 @@
         "height": 1023
       }
     ],
+    "season_images": {
+      "night": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/33/%E3%81%AE%E3%82%93%E3%81%BB%E3%81%84%E3%83%91%E3%83%BC%E3%82%AF_-_%E3%83%8A%E3%82%A4%E3%83%88%E3%82%AC%E3%83%BC%E3%83%87%E3%83%B32.JPG/960px-%E3%81%AE%E3%82%93%E3%81%BB%E3%81%84%E3%83%91%E3%83%BC%E3%82%AF_-_%E3%83%8A%E3%82%A4%E3%83%88%E3%82%AC%E3%83%BC%E3%83%87%E3%83%B32.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Ele-phunk",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:%E3%81%AE%E3%82%93%E3%81%BB%E3%81%84%E3%83%91%E3%83%BC%E3%82%AF_-_%E3%83%8A%E3%82%A4%E3%83%88%E3%82%AC%E3%83%BC%E3%83%87%E3%83%B32.JPG",
+        "width": 1200,
+        "height": 1600
+      }
+    },
     "external_ids": {
       "wikidata": "Q11633858",
       "osm": "way/38757407"
@@ -14663,17 +14670,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "night": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/33/%E3%81%AE%E3%82%93%E3%81%BB%E3%81%84%E3%83%91%E3%83%BC%E3%82%AF_-_%E3%83%8A%E3%82%A4%E3%83%88%E3%82%AC%E3%83%BC%E3%83%87%E3%83%B32.JPG/960px-%E3%81%AE%E3%82%93%E3%81%BB%E3%81%84%E3%83%91%E3%83%BC%E3%82%AF_-_%E3%83%8A%E3%82%A4%E3%83%88%E3%82%AC%E3%83%BC%E3%83%87%E3%83%B32.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Ele-phunk",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:%E3%81%AE%E3%82%93%E3%81%BB%E3%81%84%E3%83%91%E3%83%BC%E3%82%AF_-_%E3%83%8A%E3%82%A4%E3%83%88%E3%82%AC%E3%83%BC%E3%83%87%E3%83%B32.JPG",
-        "width": 1200,
-        "height": 1600
-      }
-    }
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q11634644",
@@ -15088,6 +15085,7 @@
         "height": 4000
       }
     ],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q11647847",
       "osm": "node/1689360964"
@@ -15107,8 +15105,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-29",
-    "season_images": {}
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11648156",
@@ -15306,6 +15303,16 @@
         "height": 3840
       }
     ],
+    "season_images": {
+      "night": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c7/Nishiki_3-chome_crossing%EF%BC%882%EF%BC%89.jpg/960px-Nishiki_3-chome_crossing%EF%BC%882%EF%BC%89.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Akahito Yamabe",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Nishiki_3-chome_crossing%EF%BC%882%EF%BC%89.jpg",
+        "width": 5120,
+        "height": 3840
+      }
+    },
     "external_ids": {
       "wikidata": "Q11650417"
     },
@@ -15320,17 +15327,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "night": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c7/Nishiki_3-chome_crossing%EF%BC%882%EF%BC%89.jpg/960px-Nishiki_3-chome_crossing%EF%BC%882%EF%BC%89.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Akahito Yamabe",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Nishiki_3-chome_crossing%EF%BC%882%EF%BC%89.jpg",
-        "width": 5120,
-        "height": 3840
-      }
-    }
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q11653108",
@@ -15923,26 +15920,6 @@
         "height": 4016
       }
     ],
-    "external_ids": {
-      "wikidata": "Q11667254",
-      "osm": "node/2400876906"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q11667254",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://www.openstreetmap.org/node/2400876906",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://ja.wikipedia.org/wiki/%E9%A6%99%E5%B5%90%E6%B8%93",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-10-02",
     "season_images": {
       "spring": {
         "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ac/Korankei_in_the_spring_season%2C_Asuke-cho_Toyota-city%2C_2013.jpg/960px-Korankei_in_the_spring_season%2C_Asuke-cho_Toyota-city%2C_2013.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -15968,7 +15945,27 @@
         "width": 2048,
         "height": 1536
       }
-    }
+    },
+    "external_ids": {
+      "wikidata": "Q11667254",
+      "osm": "node/2400876906"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q11667254",
+        "fetched_at": "2026-09-28"
+      },
+      {
+        "url": "https://www.openstreetmap.org/node/2400876906",
+        "fetched_at": "2026-09-28"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E9%A6%99%E5%B5%90%E6%B8%93",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-10-02"
   },
   {
     "id": "wd-Q11667696",
@@ -16231,6 +16228,7 @@
         "height": 4000
       }
     ],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q11675274"
     },
@@ -16241,8 +16239,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q11675275",
@@ -16287,6 +16284,7 @@
         "height": 2400
       }
     ],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q11675275",
       "osm": "way/95038868"
@@ -16306,8 +16304,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-29",
-    "season_images": {}
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11675284",
@@ -16572,6 +16569,24 @@
         "height": 1600
       }
     ],
+    "season_images": {
+      "night": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ce/Tatsuki-Jinja-2.jpg/960px-Tatsuki-Jinja-2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Evelyn-rose",
+        "license": "CC0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Tatsuki-Jinja-2.jpg",
+        "width": 1600,
+        "height": 1206
+      },
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1c/Tatsuki_shrine_-_%E9%BE%8D%E5%9F%8E%E7%A5%9E%E7%A4%BE_-_panoramio_%283%29.jpg/960px-Tatsuki_shrine_-_%E9%BE%8D%E5%9F%8E%E7%A5%9E%E7%A4%BE_-_panoramio_%283%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "z tanuki",
+        "license": "CC BY 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Tatsuki_shrine_-_%E9%BE%8D%E5%9F%8E%E7%A5%9E%E7%A4%BE_-_panoramio_(3).jpg",
+        "width": 3670,
+        "height": 1601
+      }
+    },
     "external_ids": {
       "wikidata": "Q11679222",
       "osm": "way/466008914"
@@ -16591,25 +16606,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-29",
-    "season_images": {
-      "night": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ce/Tatsuki-Jinja-2.jpg/960px-Tatsuki-Jinja-2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Evelyn-rose",
-        "license": "CC0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Tatsuki-Jinja-2.jpg",
-        "width": 1600,
-        "height": 1206
-      },
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1c/Tatsuki_shrine_-_%E9%BE%8D%E5%9F%8E%E7%A5%9E%E7%A4%BE_-_panoramio_%283%29.jpg/960px-Tatsuki_shrine_-_%E9%BE%8D%E5%9F%8E%E7%A5%9E%E7%A4%BE_-_panoramio_%283%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "z tanuki",
-        "license": "CC BY 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Tatsuki_shrine_-_%E9%BE%8D%E5%9F%8E%E7%A5%9E%E7%A4%BE_-_panoramio_(3).jpg",
-        "width": 3670,
-        "height": 1601
-      }
-    }
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q11679274",
@@ -16911,6 +16908,7 @@
         "height": 1536
       }
     ],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q135732",
       "osm": "node/2438580425"
@@ -16930,8 +16928,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-29",
-    "season_images": {}
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q1357421",
@@ -16991,6 +16988,7 @@
         "height": 1280
       }
     ],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q1357421",
       "osm": "way/973878870"
@@ -17010,8 +17008,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q138605592",
@@ -17882,6 +17879,7 @@
         "height": 5184
       }
     ],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q17228699"
     },
@@ -17892,8 +17890,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q17228816",
@@ -18673,6 +18670,7 @@
         "height": 2736
       }
     ],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q1963630"
     },
@@ -18683,8 +18681,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q1964948",
@@ -18744,6 +18741,7 @@
         "height": 1000
       }
     ],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q1964948"
     },
@@ -18758,8 +18756,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q211532",
@@ -19151,6 +19148,7 @@
         "height": 3096
       }
     ],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q2182381",
       "osm": "node/1423986950"
@@ -19170,8 +19168,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q22120105",
@@ -19687,6 +19684,16 @@
         "height": 3987
       }
     ],
+    "season_images": {
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6e/The_Iyeyasu_and_Mikawa_bushi_%28samurai%29_Museum_-_%E4%B8%89%E6%B2%B3%E6%AD%A6%E5%A3%AB%E3%81%AE%E3%82%84%E3%81%8B%E3%81%9F%E5%AE%B6%E5%BA%B7%E9%A4%A8_-_panoramio_%281%29.jpg/960px-The_Iyeyasu_and_Mikawa_bushi_%28samurai%29_Museum_-_%E4%B8%89%E6%B2%B3%E6%AD%A6%E5%A3%AB%E3%81%AE%E3%82%84%E3%81%8B%E3%81%9F%E5%AE%B6%E5%BA%B7%E9%A4%A8_-_panoramio_%281%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "z tanuki",
+        "license": "CC BY 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:The_Iyeyasu_and_Mikawa_bushi_(samurai)_Museum_-_%E4%B8%89%E6%B2%B3%E6%AD%A6%E5%A3%AB%E3%81%AE%E3%82%84%E3%81%8B%E3%81%9F%E5%AE%B6%E5%BA%B7%E9%A4%A8_-_panoramio_(1).jpg",
+        "width": 4883,
+        "height": 1600
+      }
+    },
     "external_ids": {
       "wikidata": "Q27850747",
       "osm": "relation/3105117"
@@ -19706,17 +19713,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6e/The_Iyeyasu_and_Mikawa_bushi_%28samurai%29_Museum_-_%E4%B8%89%E6%B2%B3%E6%AD%A6%E5%A3%AB%E3%81%AE%E3%82%84%E3%81%8B%E3%81%9F%E5%AE%B6%E5%BA%B7%E9%A4%A8_-_panoramio_%281%29.jpg/960px-The_Iyeyasu_and_Mikawa_bushi_%28samurai%29_Museum_-_%E4%B8%89%E6%B2%B3%E6%AD%A6%E5%A3%AB%E3%81%AE%E3%82%84%E3%81%8B%E3%81%9F%E5%AE%B6%E5%BA%B7%E9%A4%A8_-_panoramio_%281%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "z tanuki",
-        "license": "CC BY 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:The_Iyeyasu_and_Mikawa_bushi_(samurai)_Museum_-_%E4%B8%89%E6%B2%B3%E6%AD%A6%E5%A3%AB%E3%81%AE%E3%82%84%E3%81%8B%E3%81%9F%E5%AE%B6%E5%BA%B7%E9%A4%A8_-_panoramio_(1).jpg",
-        "width": 4883,
-        "height": 1600
-      }
-    }
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q283373",
@@ -19773,21 +19770,6 @@
         "height": 6032
       }
     ],
-    "external_ids": {
-      "wikidata": "Q283373"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q283373",
-        "fetched_at": "2026-09-27"
-      },
-      {
-        "url": "https://ja.wikipedia.org/wiki/%E5%90%8D%E5%8F%A4%E5%B1%8B%E3%83%86%E3%83%AC%E3%83%93%E5%A1%94",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-10-02",
     "season_images": {
       "night": {
         "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ab/NagoyaMiraiTower_at_Night01.jpg/960px-NagoyaMiraiTower_at_Night01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -19805,7 +19787,22 @@
         "width": 13912,
         "height": 3632
       }
-    }
+    },
+    "external_ids": {
+      "wikidata": "Q283373"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q283373",
+        "fetched_at": "2026-09-27"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E5%90%8D%E5%8F%A4%E5%B1%8B%E3%83%86%E3%83%AC%E3%83%93%E5%A1%94",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-10-02"
   },
   {
     "id": "wd-Q2859467",
@@ -20309,6 +20306,16 @@
         "height": 3622
       }
     ],
+    "season_images": {
+      "night": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/86/JP-Aichi-JR-Nagoya-Lucent_-Tower-Building.jpg/960px-JP-Aichi-JR-Nagoya-Lucent_-Tower-Building.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Kanchi1979",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:JP-Aichi-JR-Nagoya-Lucent_-Tower-Building.jpg",
+        "width": 2084,
+        "height": 3126
+      }
+    },
     "external_ids": {
       "wikidata": "Q2913609"
     },
@@ -20323,17 +20330,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-10-02",
-    "season_images": {
-      "night": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/86/JP-Aichi-JR-Nagoya-Lucent_-Tower-Building.jpg/960px-JP-Aichi-JR-Nagoya-Lucent_-Tower-Building.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Kanchi1979",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:JP-Aichi-JR-Nagoya-Lucent_-Tower-Building.jpg",
-        "width": 2084,
-        "height": 3126
-      }
-    }
+    "updated_at": "2026-10-02"
   },
   {
     "id": "wd-Q29168099",
@@ -20384,6 +20381,7 @@
         "height": 1000
       }
     ],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q29168099",
       "osm": "way/495130551"
@@ -20399,8 +20397,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q29203625",
@@ -20449,6 +20446,16 @@
         "height": 1408
       }
     ],
+    "season_images": {
+      "night": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e9/Maker%E2%80%99s_Pier_Overview1_201706.jpg/960px-Maker%E2%80%99s_Pier_Overview1_201706.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Wpcpey",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Maker%E2%80%99s_Pier_Overview1_201706.jpg",
+        "width": 2112,
+        "height": 1408
+      }
+    },
     "external_ids": {
       "wikidata": "Q29203625",
       "osm": "way/247352972"
@@ -20468,17 +20475,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "night": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e9/Maker%E2%80%99s_Pier_Overview1_201706.jpg/960px-Maker%E2%80%99s_Pier_Overview1_201706.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Wpcpey",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Maker%E2%80%99s_Pier_Overview1_201706.jpg",
-        "width": 2112,
-        "height": 1408
-      }
-    }
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q2968295",
@@ -20518,6 +20515,7 @@
         "height": 982
       }
     ],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q2968295",
       "osm": "node/1313804250"
@@ -20537,8 +20535,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q2969408",
@@ -20665,21 +20662,6 @@
         "height": 2946
       }
     ],
-    "external_ids": {
-      "wikidata": "Q2969495"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q2969495",
-        "fetched_at": "2026-09-27"
-      },
-      {
-        "url": "https://ja.wikipedia.org/wiki/%E5%B0%8F%E7%89%A7%E5%B1%B1",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-10-02",
     "season_images": {
       "spring": {
         "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cc/Komakiyama_Sakura_Matsuri_2009_-_2.jpg/960px-Komakiyama_Sakura_Matsuri_2009_-_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -20705,7 +20687,22 @@
         "width": 3072,
         "height": 2304
       }
-    }
+    },
+    "external_ids": {
+      "wikidata": "Q2969495"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q2969495",
+        "fetched_at": "2026-09-27"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E5%B0%8F%E7%89%A7%E5%B1%B1",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-10-02"
   },
   {
     "id": "wd-Q2969497",
@@ -20828,6 +20825,7 @@
         "height": 3615
       }
     ],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q2970141"
     },
@@ -20842,8 +20840,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q29788306",
@@ -21096,6 +21093,7 @@
         "height": 399
       }
     ],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q3033374"
     },
@@ -21110,8 +21108,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q3077236",
@@ -21171,6 +21168,7 @@
         "height": 1000
       }
     ],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q3077236",
       "osm": "node/1423985718"
@@ -21190,8 +21188,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q3080596",
@@ -21255,6 +21252,7 @@
         "height": 3682
       }
     ],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q3080596",
       "osm": "way/1235568110"
@@ -21270,8 +21268,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-29",
-    "season_images": {}
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q30924231",
@@ -21382,6 +21379,16 @@
         "height": 3984
       }
     ],
+    "season_images": {
+      "night": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4e/Quiet_evening_at_Aichi_Sky_Expo_%2817021%29.jpg/960px-Quiet_evening_at_Aichi_Sky_Expo_%2817021%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Syced",
+        "license": "CC0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Quiet_evening_at_Aichi_Sky_Expo_(17021).jpg",
+        "width": 4080,
+        "height": 3072
+      }
+    },
     "external_ids": {
       "wikidata": "Q30925084"
     },
@@ -21396,17 +21403,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-10-02",
-    "season_images": {
-      "night": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4e/Quiet_evening_at_Aichi_Sky_Expo_%2817021%29.jpg/960px-Quiet_evening_at_Aichi_Sky_Expo_%2817021%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Syced",
-        "license": "CC0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Quiet_evening_at_Aichi_Sky_Expo_(17021).jpg",
-        "width": 4080,
-        "height": 3072
-      }
-    }
+    "updated_at": "2026-10-02"
   },
   {
     "id": "wd-Q30935176",
@@ -21920,6 +21917,7 @@
         "height": 2448
       }
     ],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q3295344",
       "osm": "way/50894728"
@@ -21935,8 +21933,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-10-02",
-    "season_images": {}
+    "updated_at": "2026-10-02"
   },
   {
     "id": "wd-Q3335115",
@@ -22147,6 +22144,7 @@
         "height": 4003
       }
     ],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q3342235",
       "osm": "node/12153778082"
@@ -22166,8 +22164,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-29",
-    "season_images": {}
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q3350068",
@@ -22414,6 +22411,16 @@
         "height": 768
       }
     ],
+    "season_images": {
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f4/%E7%A0%A5%E9%B9%BF%E7%A5%9E%E7%A4%BE_-_%E5%A2%83%E5%86%85_-_%E3%83%91%E3%83%8E%E3%83%A9%E3%83%9E%E5%86%99%E7%9C%9F.jpg/960px-%E7%A0%A5%E9%B9%BF%E7%A5%9E%E7%A4%BE_-_%E5%A2%83%E5%86%85_-_%E3%83%91%E3%83%8E%E3%83%A9%E3%83%9E%E5%86%99%E7%9C%9F.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Korikondan",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:%E7%A0%A5%E9%B9%BF%E7%A5%9E%E7%A4%BE_-_%E5%A2%83%E5%86%85_-_%E3%83%91%E3%83%8E%E3%83%A9%E3%83%9E%E5%86%99%E7%9C%9F.jpg",
+        "width": 8064,
+        "height": 864
+      }
+    },
     "external_ids": {
       "wikidata": "Q3530344",
       "osm": "way/244372457"
@@ -22433,17 +22440,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-29",
-    "season_images": {
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f4/%E7%A0%A5%E9%B9%BF%E7%A5%9E%E7%A4%BE_-_%E5%A2%83%E5%86%85_-_%E3%83%91%E3%83%8E%E3%83%A9%E3%83%9E%E5%86%99%E7%9C%9F.jpg/960px-%E7%A0%A5%E9%B9%BF%E7%A5%9E%E7%A4%BE_-_%E5%A2%83%E5%86%85_-_%E3%83%91%E3%83%8E%E3%83%A9%E3%83%9E%E5%86%99%E7%9C%9F.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Korikondan",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:%E7%A0%A5%E9%B9%BF%E7%A5%9E%E7%A4%BE_-_%E5%A2%83%E5%86%85_-_%E3%83%91%E3%83%8E%E3%83%A9%E3%83%9E%E5%86%99%E7%9C%9F.jpg",
-        "width": 8064,
-        "height": 864
-      }
-    }
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q3547068",
@@ -22657,22 +22654,6 @@
         "height": 3637
       }
     ],
-    "external_ids": {
-      "wikidata": "Q3594052",
-      "osm": "way/923032216"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q3594052",
-        "fetched_at": "2026-09-27"
-      },
-      {
-        "url": "https://www.openstreetmap.org/way/923032216",
-        "fetched_at": "2026-09-27"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-10-02",
     "season_images": {
       "spring": {
         "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7c/Cherry_blossoms_in_full_bloom_at_Osu_Kannon.jpg/960px-Cherry_blossoms_in_full_bloom_at_Osu_Kannon.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -22698,7 +22679,23 @@
         "width": 2553,
         "height": 700
       }
-    }
+    },
+    "external_ids": {
+      "wikidata": "Q3594052",
+      "osm": "way/923032216"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q3594052",
+        "fetched_at": "2026-09-27"
+      },
+      {
+        "url": "https://www.openstreetmap.org/way/923032216",
+        "fetched_at": "2026-09-27"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-10-02"
   },
   {
     "id": "wd-Q371114",
@@ -22740,6 +22737,16 @@
         "height": 1536
       }
     ],
+    "season_images": {
+      "winter": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Koiji_Beach_%28Tahara%29.JPG/960px-Koiji_Beach_%28Tahara%29.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Alpsdake",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Koiji_Beach_(Tahara).JPG",
+        "width": 5184,
+        "height": 3456
+      }
+    },
     "external_ids": {
       "wikidata": "Q371114",
       "osm": "node/10878185205"
@@ -22759,17 +22766,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-10-02",
-    "season_images": {
-      "winter": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Koiji_Beach_%28Tahara%29.JPG/960px-Koiji_Beach_%28Tahara%29.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Alpsdake",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Koiji_Beach_(Tahara).JPG",
-        "width": 5184,
-        "height": 3456
-      }
-    }
+    "updated_at": "2026-10-02"
   },
   {
     "id": "wd-Q393031",
@@ -22811,6 +22808,7 @@
         "height": 2268
       }
     ],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q393031"
     },
@@ -22821,8 +22819,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q4160865",
@@ -22948,6 +22945,7 @@
         "height": 2189
       }
     ],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q4352786"
     },
@@ -22962,8 +22960,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q4461630",
@@ -23097,6 +23094,7 @@
         "height": 960
       }
     ],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q462576"
     },
@@ -23111,8 +23109,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-10-02",
-    "season_images": {}
+    "updated_at": "2026-10-02"
   },
   {
     "id": "wd-Q469573",
@@ -23241,6 +23238,16 @@
         "height": 1000
       }
     ],
+    "season_images": {
+      "night": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/77/Aichi_Arts_Center_-_panoramio_-_Nagono.jpg/960px-Aichi_Arts_Center_-_panoramio_-_Nagono.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Nagono",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Aichi_Arts_Center_-_panoramio_-_Nagono.jpg",
+        "width": 2272,
+        "height": 1704
+      }
+    },
     "external_ids": {
       "wikidata": "Q4696562"
     },
@@ -23255,17 +23262,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "night": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/77/Aichi_Arts_Center_-_panoramio_-_Nagono.jpg/960px-Aichi_Arts_Center_-_panoramio_-_Nagono.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Nagono",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Aichi_Arts_Center_-_panoramio_-_Nagono.jpg",
-        "width": 2272,
-        "height": 1704
-      }
-    }
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q4696582",
@@ -23481,6 +23478,16 @@
         "height": 3964
       }
     ],
+    "season_images": {
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/12/Atsuta_jingu_shrine_%2C_%E7%86%B1%E7%94%B0%E7%A5%9E%E5%AE%AE_-_panoramio_%288%29.jpg/960px-Atsuta_jingu_shrine_%2C_%E7%86%B1%E7%94%B0%E7%A5%9E%E5%AE%AE_-_panoramio_%288%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "z tanuki",
+        "license": "CC BY 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Atsuta_jingu_shrine_,_%E7%86%B1%E7%94%B0%E7%A5%9E%E5%AE%AE_-_panoramio_(8).jpg",
+        "width": 5166,
+        "height": 900
+      }
+    },
     "external_ids": {
       "wikidata": "Q482065",
       "osm": "relation/8453890"
@@ -23496,17 +23503,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/12/Atsuta_jingu_shrine_%2C_%E7%86%B1%E7%94%B0%E7%A5%9E%E5%AE%AE_-_panoramio_%288%29.jpg/960px-Atsuta_jingu_shrine_%2C_%E7%86%B1%E7%94%B0%E7%A5%9E%E5%AE%AE_-_panoramio_%288%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "z tanuki",
-        "license": "CC BY 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Atsuta_jingu_shrine_,_%E7%86%B1%E7%94%B0%E7%A5%9E%E5%AE%AE_-_panoramio_(8).jpg",
-        "width": 5166,
-        "height": 900
-      }
-    }
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q4856192",
@@ -23642,6 +23639,7 @@
         "height": 1000
       }
     ],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q4924573"
     },
@@ -23656,8 +23654,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q5053109",
@@ -23772,6 +23769,16 @@
         "height": 1086
       }
     ],
+    "season_images": {
+      "winter": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/1/10/Chausuyama03.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+        "author": "JH2KCY",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Chausuyama03.jpg",
+        "width": 640,
+        "height": 480
+      }
+    },
     "external_ids": {
       "wikidata": "Q5088374"
     },
@@ -23786,17 +23793,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "winter": {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/1/10/Chausuyama03.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-        "author": "JH2KCY",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Chausuyama03.jpg",
-        "width": 640,
-        "height": 480
-      }
-    }
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q5115293",
@@ -23897,6 +23894,7 @@
         "height": 900
       }
     ],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q5116071"
     },
@@ -23907,8 +23905,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-29",
-    "season_images": {}
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q532489",
@@ -24035,6 +24032,24 @@
         "height": 3456
       }
     ],
+    "season_images": {
+      "spring": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/65/%E5%90%8D%E5%8F%A4%E5%B1%8B%E5%B8%82%E6%9D%B1%E5%8C%BA%E6%9D%B1%E6%A1%9C1_%E3%82%AA%E3%82%A2%E3%82%B7%E3%82%B921_20241102_0949-2.jpg/960px-%E5%90%8D%E5%8F%A4%E5%B1%8B%E5%B8%82%E6%9D%B1%E5%8C%BA%E6%9D%B1%E6%A1%9C1_%E3%82%AA%E3%82%A2%E3%82%B7%E3%82%B921_20241102_0949-2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "円周率３パーセント",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:%E5%90%8D%E5%8F%A4%E5%B1%8B%E5%B8%82%E6%9D%B1%E5%8C%BA%E6%9D%B1%E6%A1%9C1_%E3%82%AA%E3%82%A2%E3%82%B7%E3%82%B921_20241102_0949-2.jpg",
+        "width": 5472,
+        "height": 3648
+      },
+      "night": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/0/0a/Oasis_21_at_night.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+        "author": "pastaitaken",
+        "license": "CC BY 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Oasis_21_at_night.jpg",
+        "width": 640,
+        "height": 440
+      }
+    },
     "external_ids": {
       "wikidata": "Q5359224",
       "osm": "way/230302740"
@@ -24058,25 +24073,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-10-02",
-    "season_images": {
-      "spring": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/65/%E5%90%8D%E5%8F%A4%E5%B1%8B%E5%B8%82%E6%9D%B1%E5%8C%BA%E6%9D%B1%E6%A1%9C1_%E3%82%AA%E3%82%A2%E3%82%B7%E3%82%B921_20241102_0949-2.jpg/960px-%E5%90%8D%E5%8F%A4%E5%B1%8B%E5%B8%82%E6%9D%B1%E5%8C%BA%E6%9D%B1%E6%A1%9C1_%E3%82%AA%E3%82%A2%E3%82%B7%E3%82%B921_20241102_0949-2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "円周率３パーセント",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:%E5%90%8D%E5%8F%A4%E5%B1%8B%E5%B8%82%E6%9D%B1%E5%8C%BA%E6%9D%B1%E6%A1%9C1_%E3%82%AA%E3%82%A2%E3%82%B7%E3%82%B921_20241102_0949-2.jpg",
-        "width": 5472,
-        "height": 3648
-      },
-      "night": {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/0/0a/Oasis_21_at_night.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-        "author": "pastaitaken",
-        "license": "CC BY 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Oasis_21_at_night.jpg",
-        "width": 640,
-        "height": 440
-      }
-    }
+    "updated_at": "2026-10-02"
   },
   {
     "id": "wd-Q5362576",
@@ -24125,6 +24122,7 @@
         "height": 4016
       }
     ],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q5362576",
       "osm": "way/247172485"
@@ -24140,8 +24138,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q546197",
@@ -24722,6 +24719,16 @@
         "height": 2896
       }
     ],
+    "season_images": {
+      "night": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d3/Illuminated_Higashiyama_Sky_Tower_-_2.jpg/960px-Illuminated_Higashiyama_Sky_Tower_-_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "KKPCW",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Illuminated_Higashiyama_Sky_Tower_-_2.jpg",
+        "width": 1500,
+        "height": 2000
+      }
+    },
     "external_ids": {
       "wikidata": "Q5754149"
     },
@@ -24732,17 +24739,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "night": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d3/Illuminated_Higashiyama_Sky_Tower_-_2.jpg/960px-Illuminated_Higashiyama_Sky_Tower_-_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "KKPCW",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Illuminated_Higashiyama_Sky_Tower_-_2.jpg",
-        "width": 1500,
-        "height": 2000
-      }
-    }
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q60297838",
@@ -24881,6 +24878,16 @@
         "height": 3831
       }
     ],
+    "season_images": {
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c0/Tagata_Jinja_Shrine%2C%E7%94%B0%E7%B8%A3%E7%A5%9E%E7%A4%BE_-_panoramio_-_z_tanuki_%281%29.jpg/960px-Tagata_Jinja_Shrine%2C%E7%94%B0%E7%B8%A3%E7%A5%9E%E7%A4%BE_-_panoramio_-_z_tanuki_%281%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "z tanuki",
+        "license": "CC BY 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Tagata_Jinja_Shrine,%E7%94%B0%E7%B8%A3%E7%A5%9E%E7%A4%BE_-_panoramio_-_z_tanuki_(1).jpg",
+        "width": 2915,
+        "height": 700
+      }
+    },
     "external_ids": {
       "wikidata": "Q60581",
       "osm": "way/492686201"
@@ -24896,17 +24903,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-29",
-    "season_images": {
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c0/Tagata_Jinja_Shrine%2C%E7%94%B0%E7%B8%A3%E7%A5%9E%E7%A4%BE_-_panoramio_-_z_tanuki_%281%29.jpg/960px-Tagata_Jinja_Shrine%2C%E7%94%B0%E7%B8%A3%E7%A5%9E%E7%A4%BE_-_panoramio_-_z_tanuki_%281%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "z tanuki",
-        "license": "CC BY 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Tagata_Jinja_Shrine,%E7%94%B0%E7%B8%A3%E7%A5%9E%E7%A4%BE_-_panoramio_-_z_tanuki_(1).jpg",
-        "width": 2915,
-        "height": 700
-      }
-    }
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q608994",
@@ -24966,6 +24963,16 @@
         "height": 5086
       }
     ],
+    "season_images": {
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/31/Bansyouji%2C%E4%B8%87%E6%9D%BE%E5%AF%BA_-_panoramio.jpg/960px-Bansyouji%2C%E4%B8%87%E6%9D%BE%E5%AF%BA_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "z tanuki",
+        "license": "CC BY 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Bansyouji,%E4%B8%87%E6%9D%BE%E5%AF%BA_-_panoramio.jpg",
+        "width": 2266,
+        "height": 700
+      }
+    },
     "external_ids": {
       "wikidata": "Q608994",
       "osm": "node/1977699896"
@@ -24985,17 +24992,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-10-02",
-    "season_images": {
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/31/Bansyouji%2C%E4%B8%87%E6%9D%BE%E5%AF%BA_-_panoramio.jpg/960px-Bansyouji%2C%E4%B8%87%E6%9D%BE%E5%AF%BA_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "z tanuki",
-        "license": "CC BY 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Bansyouji,%E4%B8%87%E6%9D%BE%E5%AF%BA_-_panoramio.jpg",
-        "width": 2266,
-        "height": 700
-      }
-    }
+    "updated_at": "2026-10-02"
   },
   {
     "id": "wd-Q613227",
@@ -25044,6 +25041,7 @@
         "height": 1536
       }
     ],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q613227"
     },
@@ -25058,8 +25056,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q6149037",
@@ -25267,30 +25264,6 @@
         "height": 2160
       }
     ],
-    "external_ids": {
-      "wikidata": "Q648629",
-      "osm": "node/12818799098"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q648629",
-        "fetched_at": "2026-09-27"
-      },
-      {
-        "url": "https://www.openstreetmap.org/node/12818799098",
-        "fetched_at": "2026-09-27"
-      },
-      {
-        "url": "https://www.openstreetmap.org/relation/19100633",
-        "fetched_at": "2026-09-27"
-      },
-      {
-        "url": "https://ja.wikipedia.org/wiki/%E5%90%8D%E5%8F%A4%E5%B1%8B%E5%9F%8E",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-10-02",
     "season_images": {
       "spring": {
         "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d1/%28with_Sakura%29_Nagoya_Castle_Keep_Tower.JPG/960px-%28with_Sakura%29_Nagoya_Castle_Keep_Tower.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -25316,7 +25289,31 @@
         "width": 2900,
         "height": 3200
       }
-    }
+    },
+    "external_ids": {
+      "wikidata": "Q648629",
+      "osm": "node/12818799098"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q648629",
+        "fetched_at": "2026-09-27"
+      },
+      {
+        "url": "https://www.openstreetmap.org/node/12818799098",
+        "fetched_at": "2026-09-27"
+      },
+      {
+        "url": "https://www.openstreetmap.org/relation/19100633",
+        "fetched_at": "2026-09-27"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E5%90%8D%E5%8F%A4%E5%B1%8B%E5%9F%8E",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-10-02"
   },
   {
     "id": "wd-Q65228337",
@@ -25426,6 +25423,7 @@
         "height": 3096
       }
     ],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q6652601",
       "osm": "node/4789905522"
@@ -25441,8 +25439,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q679345",
@@ -25569,6 +25566,16 @@
         "height": 2155
       }
     ],
+    "season_images": {
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0a/Nagoya_Castle_Aerial_photograph_2020.jpg/960px-Nagoya_Castle_Aerial_photograph_2020.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "国土地理院",
+        "license": "Attribution",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Nagoya_Castle_Aerial_photograph_2020.jpg",
+        "width": 2900,
+        "height": 3200
+      }
+    },
     "external_ids": {
       "wikidata": "Q6810044",
       "osm": "way/48998391"
@@ -25588,17 +25595,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0a/Nagoya_Castle_Aerial_photograph_2020.jpg/960px-Nagoya_Castle_Aerial_photograph_2020.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "国土地理院",
-        "license": "Attribution",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Nagoya_Castle_Aerial_photograph_2020.jpg",
-        "width": 2900,
-        "height": 3200
-      }
-    }
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q6958944",
@@ -25708,6 +25705,7 @@
         "height": 1080
       }
     ],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q6958986"
     },
@@ -25722,8 +25720,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q7048478",
@@ -25916,6 +25913,7 @@
         "height": 1000
       }
     ],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q705136"
     },
@@ -25926,8 +25924,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q705916",
@@ -25989,6 +25986,7 @@
         "height": 3974
       }
     ],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q705916",
       "osm": "way/759090383"
@@ -26008,8 +26006,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-29",
-    "season_images": {}
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q7231211",
@@ -26068,6 +26065,7 @@
         "height": 2624
       }
     ],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q7231211",
       "osm": "way/1197287138"
@@ -26087,8 +26085,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q7290607",
@@ -26216,6 +26213,7 @@
         "height": 2736
       }
     ],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q7496572"
     },
@@ -26230,8 +26228,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q75009351",
@@ -26558,6 +26555,16 @@
         "height": 1000
       }
     ],
+    "season_images": {
+      "night": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/be/%E5%BE%B3%E5%B7%9D%E5%9C%92_%E3%83%A9%E3%82%A4%E3%83%88%E3%82%A2%E3%83%83%E3%83%97_-_panoramio.jpg/960px-%E5%BE%B3%E5%B7%9D%E5%9C%92_%E3%83%A9%E3%82%A4%E3%83%88%E3%82%A2%E3%83%83%E3%83%97_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "full moon69",
+        "license": "CC BY 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:%E5%BE%B3%E5%B7%9D%E5%9C%92_%E3%83%A9%E3%82%A4%E3%83%88%E3%82%A2%E3%83%83%E3%83%97_-_panoramio.jpg",
+        "width": 1600,
+        "height": 1200
+      }
+    },
     "external_ids": {
       "wikidata": "Q7813713",
       "osm": "way/48179151"
@@ -26581,17 +26588,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "night": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/be/%E5%BE%B3%E5%B7%9D%E5%9C%92_%E3%83%A9%E3%82%A4%E3%83%88%E3%82%A2%E3%83%83%E3%83%97_-_panoramio.jpg/960px-%E5%BE%B3%E5%B7%9D%E5%9C%92_%E3%83%A9%E3%82%A4%E3%83%88%E3%82%A2%E3%83%83%E3%83%97_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "full moon69",
-        "license": "CC BY 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:%E5%BE%B3%E5%B7%9D%E5%9C%92_%E3%83%A9%E3%82%A4%E3%83%88%E3%82%A2%E3%83%83%E3%83%97_-_panoramio.jpg",
-        "width": 1600,
-        "height": 1200
-      }
-    }
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q7830656",
@@ -26786,6 +26783,16 @@
         "height": 2400
       }
     ],
+    "season_images": {
+      "spring": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/90/Tsuruma_20220325-07.jpg/960px-Tsuruma_20220325-07.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "円周率３パーセント",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Tsuruma_20220325-07.jpg",
+        "width": 5472,
+        "height": 3648
+      }
+    },
     "external_ids": {
       "wikidata": "Q7850284",
       "osm": "way/47023570"
@@ -26801,17 +26808,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-10-02",
-    "season_images": {
-      "spring": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/90/Tsuruma_20220325-07.jpg/960px-Tsuruma_20220325-07.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "円周率３パーセント",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Tsuruma_20220325-07.jpg",
-        "width": 5472,
-        "height": 3648
-      }
-    }
+    "updated_at": "2026-10-02"
   },
   {
     "id": "wd-Q846681",
@@ -26943,6 +26940,7 @@
         "height": 1944
       }
     ],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q849190",
       "osm": "node/1868076922"
@@ -26958,8 +26956,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q849200",
@@ -27147,6 +27144,16 @@
         "height": 6032
       }
     ],
+    "season_images": {
+      "night": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5e/The_night_view_of_Hisaya_Odori_Park.jpg/960px-The_night_view_of_Hisaya_Odori_Park.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "名古屋太郎",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:The_night_view_of_Hisaya_Odori_Park.jpg",
+        "width": 1820,
+        "height": 1024
+      }
+    },
     "external_ids": {
       "wikidata": "Q872549",
       "osm": "relation/18418512"
@@ -27162,17 +27169,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-10-02",
-    "season_images": {
-      "night": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5e/The_night_view_of_Hisaya_Odori_Park.jpg/960px-The_night_view_of_Hisaya_Odori_Park.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "名古屋太郎",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:The_night_view_of_Hisaya_Odori_Park.jpg",
-        "width": 1820,
-        "height": 1024
-      }
-    }
+    "updated_at": "2026-10-02"
   },
   {
     "id": "wd-Q927013",
@@ -27226,6 +27223,16 @@
         "height": 2112
       }
     ],
+    "season_images": {
+      "winter": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2c/Podiceps_cristatus_%28winter_plumage%29_on_lake_Iruka_-_2.jpg/960px-Podiceps_cristatus_%28winter_plumage%29_on_lake_Iruka_-_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Kyu3a",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Podiceps_cristatus_(winter_plumage)_on_lake_Iruka_-_2.jpg",
+        "width": 4896,
+        "height": 3672
+      }
+    },
     "external_ids": {
       "wikidata": "Q927013"
     },
@@ -27240,17 +27247,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-10-02",
-    "season_images": {
-      "winter": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2c/Podiceps_cristatus_%28winter_plumage%29_on_lake_Iruka_-_2.jpg/960px-Podiceps_cristatus_%28winter_plumage%29_on_lake_Iruka_-_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Kyu3a",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Podiceps_cristatus_(winter_plumage)_on_lake_Iruka_-_2.jpg",
-        "width": 4896,
-        "height": 3672
-      }
-    }
+    "updated_at": "2026-10-02"
   },
   {
     "id": "wd-Q929524",
@@ -27306,6 +27303,16 @@
         "height": 3024
       }
     ],
+    "season_images": {
+      "night": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Night_view_of_the_Nagoya_Loop_Line.jpg/960px-Night_view_of_the_Nagoya_Loop_Line.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Akahito Yamabe",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Night_view_of_the_Nagoya_Loop_Line.jpg",
+        "width": 3648,
+        "height": 2736
+      }
+    },
     "external_ids": {
       "wikidata": "Q929524"
     },
@@ -27316,17 +27323,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-10-02",
-    "season_images": {
-      "night": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Night_view_of_the_Nagoya_Loop_Line.jpg/960px-Night_view_of_the_Nagoya_Loop_Line.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Akahito Yamabe",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Night_view_of_the_Nagoya_Loop_Line.jpg",
-        "width": 3648,
-        "height": 2736
-      }
-    }
+    "updated_at": "2026-10-02"
   },
   {
     "id": "wd-Q961882",
@@ -27385,6 +27382,7 @@
         "height": 1350
       }
     ],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q961882"
     },
@@ -27399,8 +27397,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q97125735",
@@ -27461,6 +27458,7 @@
         "height": 2072
       }
     ],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q97125735",
       "osm": "node/12193590953"
@@ -27476,8 +27474,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q985290",
@@ -27533,6 +27530,16 @@
         "height": 4024
       }
     ],
+    "season_images": {
+      "panorama": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/d/d3/Museum_Meijimura%2C_CCB20062X-C7-28.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+        "author": "Geographical Survey Institute of Japan",
+        "license": "Attribution",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Museum_Meijimura,_CCB20062X-C7-28.jpg",
+        "width": 801,
+        "height": 1289
+      }
+    },
     "external_ids": {
       "wikidata": "Q985290",
       "osm": "relation/12421413"
@@ -27548,16 +27555,6 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "panorama": {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/d/d3/Museum_Meijimura%2C_CCB20062X-C7-28.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-        "author": "Geographical Survey Institute of Japan",
-        "license": "Attribution",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Museum_Meijimura,_CCB20062X-C7-28.jpg",
-        "width": 801,
-        "height": 1289
-      }
-    }
+    "updated_at": "2026-09-28"
   }
 ]

@@ -91,6 +91,16 @@
         "height": 4000
       }
     ],
+    "season_images": {
+      "night": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/56/Uesugi_Shrine_%2832004907884%29.jpg/960px-Uesugi_Shrine_%2832004907884%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "contri from Yonezawa, Yamagata, Japan",
+        "license": "CC BY-SA 2.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Uesugi_Shrine_(32004907884).jpg",
+        "width": 3264,
+        "height": 2448
+      }
+    },
     "external_ids": {
       "wikidata": "Q10867478",
       "osm": "node/416167900"
@@ -106,17 +116,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "night": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/56/Uesugi_Shrine_%2832004907884%29.jpg/960px-Uesugi_Shrine_%2832004907884%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "contri from Yonezawa, Yamagata, Japan",
-        "license": "CC BY-SA 2.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Uesugi_Shrine_(32004907884).jpg",
-        "width": 3264,
-        "height": 2448
-      }
-    }
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q109594908",
@@ -441,6 +441,7 @@
         "height": 1568
       }
     ],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q11173679",
       "osm": "way/370068010"
@@ -456,8 +457,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q112080442",
@@ -497,6 +497,16 @@
         "height": 3264
       }
     ],
+    "season_images": {
+      "winter": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b5/Hagurosan_no_Jiji_Sugi_January_2022_B.jpg/960px-Hagurosan_no_Jiji_Sugi_January_2022_B.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "さかおり",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Hagurosan_no_Jiji_Sugi_January_2022_B.jpg",
+        "width": 4000,
+        "height": 6000
+      }
+    },
     "external_ids": {
       "wikidata": "Q112080442"
     },
@@ -511,17 +521,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "winter": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b5/Hagurosan_no_Jiji_Sugi_January_2022_B.jpg/960px-Hagurosan_no_Jiji_Sugi_January_2022_B.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "さかおり",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Hagurosan_no_Jiji_Sugi_January_2022_B.jpg",
-        "width": 4000,
-        "height": 6000
-      }
-    }
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q11257742",
@@ -545,11 +545,11 @@
     "featured": false,
     "score": 67.94,
     "summary": {
-      "text": "あつみ温泉（あつみおんせん）は、山形県南端部を流れ日本海へと注ぐ、温海川沿いに湧出していた温泉である。ただし、近年は掘削した井戸からポンプアップして温泉水を得ている。なお、旧来の温海温泉と書く事例も見られる。温泉水が温海川を通して海へと流れ込み、その海を温めていたために「温海」と命名された。",
+      "text": "あつみ温泉（あつみおんせん）は、山形県庄内地方南端部を流れ日本海へと注ぐ、温海川沿いに広がる温泉。国民保養温泉地に指定されている。旧来の温海温泉と書く事例も見られる。温泉水が温海川を通して海へと流れ込み、その海を温めていたために「温海」と命名された。",
       "lang": "ja",
       "source_url": "https://ja.wikipedia.org/wiki/%E3%81%82%E3%81%A4%E3%81%BF%E6%B8%A9%E6%B3%89",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-11-01"
     },
     "images": [
       {
@@ -617,6 +617,7 @@
         "height": 4000
       }
     ],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q11262656"
     },
@@ -631,8 +632,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q11276128",
@@ -1279,6 +1279,7 @@
         "height": 4000
       }
     ],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q11359155"
     },
@@ -1293,8 +1294,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-29",
-    "season_images": {}
+    "updated_at": "2026-09-29"
   },
   {
     "id": "wd-Q113643746",
@@ -1334,6 +1334,16 @@
         "height": 4896
       }
     ],
+    "season_images": {
+      "winter": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/06/Cedar_trees_on_Mt._Haguro_covered_in_snow._January_2022._A.jpg/960px-Cedar_trees_on_Mt._Haguro_covered_in_snow._January_2022._A.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "さかおり",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Cedar_trees_on_Mt._Haguro_covered_in_snow._January_2022._A.jpg",
+        "width": 6000,
+        "height": 4000
+      }
+    },
     "external_ids": {
       "wikidata": "Q113643746"
     },
@@ -1348,17 +1358,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "winter": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/06/Cedar_trees_on_Mt._Haguro_covered_in_snow._January_2022._A.jpg/960px-Cedar_trees_on_Mt._Haguro_covered_in_snow._January_2022._A.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "さかおり",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Cedar_trees_on_Mt._Haguro_covered_in_snow._January_2022._A.jpg",
-        "width": 6000,
-        "height": 4000
-      }
-    }
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q11368303",
@@ -1799,6 +1799,16 @@
         "height": 900
       }
     ],
+    "season_images": {
+      "winter": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9f/Tsuruoka_Ideha-jinja_Br%C3%BCcke.jpg/960px-Tsuruoka_Ideha-jinja_Br%C3%BCcke.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Zairon",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Tsuruoka_Ideha-jinja_Br%C3%BCcke.jpg",
+        "width": 4516,
+        "height": 3435
+      }
+    },
     "external_ids": {
       "wikidata": "Q11395802"
     },
@@ -1813,17 +1823,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-10-02",
-    "season_images": {
-      "winter": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9f/Tsuruoka_Ideha-jinja_Br%C3%BCcke.jpg/960px-Tsuruoka_Ideha-jinja_Br%C3%BCcke.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "Zairon",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Tsuruoka_Ideha-jinja_Br%C3%BCcke.jpg",
-        "width": 4516,
-        "height": 3435
-      }
-    }
+    "updated_at": "2026-10-02"
   },
   {
     "id": "wd-Q11398718",
@@ -4859,17 +4859,6 @@
         "height": 4000
       }
     ],
-    "external_ids": {
-      "wikidata": "Q11500081"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q11500081",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-10-02",
     "season_images": {
       "autumn": {
         "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2f/%E6%96%87%E7%BF%94%E9%A4%A8%E3%81%AE%E5%BA%AD%E5%9C%92%E3%81%AE%E7%A7%8B_%28Bunsho-kan_in_autumn%29_04_Nov%2C_2013_-_panoramio.jpg/960px-%E6%96%87%E7%BF%94%E9%A4%A8%E3%81%AE%E5%BA%AD%E5%9C%92%E3%81%AE%E7%A7%8B_%28Bunsho-kan_in_autumn%29_04_Nov%2C_2013_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -4895,7 +4884,18 @@
         "width": 1134,
         "height": 883
       }
-    }
+    },
+    "external_ids": {
+      "wikidata": "Q11500081"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q11500081",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-10-02"
   },
   {
     "id": "wd-Q11500667",
@@ -5343,6 +5343,7 @@
         "height": 1568
       }
     ],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q11516052"
     },
@@ -5353,8 +5354,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q11517485",
@@ -5651,11 +5651,11 @@
     "featured": false,
     "score": 53.66,
     "summary": {
-      "text": "東沢バラ公園（ひがしざわバラこうえん）は、山形県村山市にある都市公園(植物園)。",
+      "text": "東沢バラ公園（ひがしざわバラこうえん）は、山形県村山市にある都市公園（植物園）。",
       "lang": "ja",
       "source_url": "https://ja.wikipedia.org/wiki/%E6%9D%B1%E6%B2%A2%E3%83%90%E3%83%A9%E5%85%AC%E5%9C%92",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-11-01"
     },
     "images": [
       {
@@ -6568,6 +6568,7 @@
         "height": 1944
       }
     ],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q1155726"
     },
@@ -6582,8 +6583,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q11558806",
@@ -6711,6 +6711,16 @@
         "height": 4000
       }
     ],
+    "season_images": {
+      "winter": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7c/Former_Saiseikan_Main_Building_20080214.jpg/960px-Former_Saiseikan_Main_Building_20080214.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "ja:利用者:Twilight2640",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Former_Saiseikan_Main_Building_20080214.jpg",
+        "width": 2136,
+        "height": 2848
+      }
+    },
     "external_ids": {
       "wikidata": "Q11561525",
       "osm": "relation/14422186"
@@ -6730,17 +6740,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "winter": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7c/Former_Saiseikan_Main_Building_20080214.jpg/960px-Former_Saiseikan_Main_Building_20080214.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "ja:利用者:Twilight2640",
-        "license": "CC BY-SA 3.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Former_Saiseikan_Main_Building_20080214.jpg",
-        "width": 2136,
-        "height": 2848
-      }
-    }
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q11563422",
@@ -8402,6 +8402,16 @@
         "height": 3872
       }
     ],
+    "season_images": {
+      "winter": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e7/Snow_scene_of_Haguro-san_Five-story_Pagoda_January_2022_E.jpg/960px-Snow_scene_of_Haguro-san_Five-story_Pagoda_January_2022_E.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "さかおり",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Snow_scene_of_Haguro-san_Five-story_Pagoda_January_2022_E.jpg",
+        "width": 4000,
+        "height": 6000
+      }
+    },
     "external_ids": {
       "wikidata": "Q11610424"
     },
@@ -8416,17 +8426,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-10-02",
-    "season_images": {
-      "winter": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e7/Snow_scene_of_Haguro-san_Five-story_Pagoda_January_2022_E.jpg/960px-Snow_scene_of_Haguro-san_Five-story_Pagoda_January_2022_E.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "さかおり",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Snow_scene_of_Haguro-san_Five-story_Pagoda_January_2022_E.jpg",
-        "width": 4000,
-        "height": 6000
-      }
-    }
+    "updated_at": "2026-10-02"
   },
   {
     "id": "wd-Q11611454",
@@ -8913,6 +8913,16 @@
         "height": 2592
       }
     ],
+    "season_images": {
+      "winter": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f3/Shonai_Shrine.jpg/960px-Shonai_Shrine.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "さかおり",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Shonai_Shrine.jpg",
+        "width": 6000,
+        "height": 4000
+      }
+    },
     "external_ids": {
       "wikidata": "Q11618891",
       "osm": "way/338760306"
@@ -8928,17 +8938,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "winter": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f3/Shonai_Shrine.jpg/960px-Shonai_Shrine.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "さかおり",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Shonai_Shrine.jpg",
-        "width": 6000,
-        "height": 4000
-      }
-    }
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q11620730",
@@ -10478,6 +10478,16 @@
         "height": 3700
       }
     ],
+    "season_images": {
+      "winter": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3a/220430_Yamagata_Castle_Yamagata_Yamagata_pref_Japan13s3.jpg/960px-220430_Yamagata_Castle_Yamagata_Yamagata_pref_Japan13s3.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "663highland",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:220430_Yamagata_Castle_Yamagata_Yamagata_pref_Japan13s3.jpg",
+        "width": 6000,
+        "height": 4000
+      }
+    },
     "external_ids": {
       "wikidata": "Q11660827",
       "osm": "way/728946713"
@@ -10497,17 +10507,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "winter": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3a/220430_Yamagata_Castle_Yamagata_Yamagata_pref_Japan13s3.jpg/960px-220430_Yamagata_Castle_Yamagata_Yamagata_pref_Japan13s3.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "663highland",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:220430_Yamagata_Castle_Yamagata_Yamagata_pref_Japan13s3.jpg",
-        "width": 6000,
-        "height": 4000
-      }
-    }
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q11662842",
@@ -10990,6 +10990,16 @@
         "height": 4000
       }
     ],
+    "season_images": {
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6b/Tsurugaoka_Castle_air.jpg/960px-Tsurugaoka_Castle_air.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "不明",
+        "license": "Attribution",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Tsurugaoka_Castle_air.jpg",
+        "width": 2040,
+        "height": 1521
+      }
+    },
     "external_ids": {
       "wikidata": "Q11675874"
     },
@@ -11004,17 +11014,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6b/Tsurugaoka_Castle_air.jpg/960px-Tsurugaoka_Castle_air.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "不明",
-        "license": "Attribution",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Tsurugaoka_Castle_air.jpg",
-        "width": 2040,
-        "height": 1521
-      }
-    }
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q11675944",
@@ -11162,6 +11162,16 @@
         "height": 2304
       }
     ],
+    "season_images": {
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0e/Kamo_Aquarium_Satellite2.jpg/960px-Kamo_Aquarium_Satellite2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "NASA World Wind",
+        "license": "Public domain",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Kamo_Aquarium_Satellite2.jpg",
+        "width": 1499,
+        "height": 882
+      }
+    },
     "external_ids": {
       "wikidata": "Q11675955",
       "osm": "way/441363881"
@@ -11177,17 +11187,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0e/Kamo_Aquarium_Satellite2.jpg/960px-Kamo_Aquarium_Satellite2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "NASA World Wind",
-        "license": "Public domain",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Kamo_Aquarium_Satellite2.jpg",
-        "width": 1499,
-        "height": 882
-      }
-    }
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q11675958",
@@ -11230,6 +11230,16 @@
         "height": 1920
       }
     ],
+    "season_images": {
+      "winter": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cd/Fujisawa_Shuhei_Museum_January_2022.jpg/960px-Fujisawa_Shuhei_Museum_January_2022.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "さかおり",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Fujisawa_Shuhei_Museum_January_2022.jpg",
+        "width": 6000,
+        "height": 4000
+      }
+    },
     "external_ids": {
       "wikidata": "Q11675958",
       "osm": "way/338760294"
@@ -11249,17 +11259,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "winter": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cd/Fujisawa_Shuhei_Museum_January_2022.jpg/960px-Fujisawa_Shuhei_Museum_January_2022.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "さかおり",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Fujisawa_Shuhei_Museum_January_2022.jpg",
-        "width": 6000,
-        "height": 4000
-      }
-    }
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q11678011",
@@ -11828,26 +11828,6 @@
         "height": 1936
       }
     ],
-    "external_ids": {
-      "wikidata": "Q15604669",
-      "osm": "way/237928625"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q15604669",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://www.openstreetmap.org/way/237928625",
-        "fetched_at": "2026-09-28"
-      },
-      {
-        "url": "https://ja.wikipedia.org/wiki/%E5%B1%B1%E5%BD%A2%E5%9F%8E",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-10-02",
     "season_images": {
       "spring": {
         "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ed/%E9%9C%9E%E5%9F%8E%E5%85%AC%E5%9C%92%EF%BC%88%E5%B1%B1%E5%BD%A2%E5%9F%8E%E8%B6%BE%EF%BC%89%E3%81%AE%E6%A1%9C_%E6%98%BC.jpg/960px-%E9%9C%9E%E5%9F%8E%E5%85%AC%E5%9C%92%EF%BC%88%E5%B1%B1%E5%BD%A2%E5%9F%8E%E8%B6%BE%EF%BC%89%E3%81%AE%E6%A1%9C_%E6%98%BC.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -11881,7 +11861,27 @@
         "width": 2391,
         "height": 2657
       }
-    }
+    },
+    "external_ids": {
+      "wikidata": "Q15604669",
+      "osm": "way/237928625"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q15604669",
+        "fetched_at": "2026-09-28"
+      },
+      {
+        "url": "https://www.openstreetmap.org/way/237928625",
+        "fetched_at": "2026-09-28"
+      },
+      {
+        "url": "https://ja.wikipedia.org/wiki/%E5%B1%B1%E5%BD%A2%E5%9F%8E",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-10-02"
   },
   {
     "id": "wd-Q17191220",
@@ -12738,11 +12738,11 @@
     "featured": false,
     "score": 65.31,
     "summary": {
-      "text": "赤湯温泉（あかゆおんせん）は、山形県の南東端部に存在する温泉の1つである。",
+      "text": "赤湯温泉（あかゆおんせん）は、山形県置賜地方の南陽市に存在する温泉。",
       "lang": "ja",
       "source_url": "https://ja.wikipedia.org/wiki/%E8%B5%A4%E6%B9%AF%E6%B8%A9%E6%B3%89_%28%E5%B1%B1%E5%BD%A2%E7%9C%8C%29",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-28"
+      "fetched_at": "2026-11-01"
     },
     "images": [
       {
@@ -12823,17 +12823,6 @@
         "height": 4000
       }
     ],
-    "external_ids": {
-      "wikidata": "Q1760419"
-    },
-    "sources": [
-      {
-        "url": "https://www.wikidata.org/wiki/Q1760419",
-        "fetched_at": "2026-09-28"
-      }
-    ],
-    "status": "published",
-    "updated_at": "2026-10-02",
     "season_images": {
       "autumn": {
         "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/29/211029_Risshaku-ji_Yamagata_Yamagata_pref_Japan65s3.jpg/960px-211029_Risshaku-ji_Yamagata_Yamagata_pref_Japan65s3.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -12851,7 +12840,18 @@
         "width": 960,
         "height": 1280
       }
-    }
+    },
+    "external_ids": {
+      "wikidata": "Q1760419"
+    },
+    "sources": [
+      {
+        "url": "https://www.wikidata.org/wiki/Q1760419",
+        "fetched_at": "2026-09-28"
+      }
+    ],
+    "status": "published",
+    "updated_at": "2026-10-02"
   },
   {
     "id": "wd-Q18336739",
@@ -13048,6 +13048,16 @@
         "height": 1536
       }
     ],
+    "season_images": {
+      "panorama": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/37/Iimoriyama_Park_and_Koeki_University.jpg/960px-Iimoriyama_Park_and_Koeki_University.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "国土地理院",
+        "license": "CC BY 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Iimoriyama_Park_and_Koeki_University.jpg",
+        "width": 1871,
+        "height": 996
+      }
+    },
     "external_ids": {
       "wikidata": "Q21652397",
       "osm": "way/90543372"
@@ -13067,17 +13077,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "panorama": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/37/Iimoriyama_Park_and_Koeki_University.jpg/960px-Iimoriyama_Park_and_Koeki_University.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "国土地理院",
-        "license": "CC BY 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Iimoriyama_Park_and_Koeki_University.jpg",
-        "width": 1871,
-        "height": 996
-      }
-    }
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q21653039",
@@ -16069,6 +16069,7 @@
         "height": 3672
       }
     ],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q3090765"
     },
@@ -16083,8 +16084,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q30923955",
@@ -17261,6 +17261,7 @@
         "height": 731
       }
     ],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q3174863"
     },
@@ -17271,8 +17272,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-10-02",
-    "season_images": {}
+    "updated_at": "2026-10-02"
   },
   {
     "id": "wd-Q3322191",
@@ -17312,6 +17312,7 @@
         "height": 1200
       }
     ],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q3322191"
     },
@@ -17326,8 +17327,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q3539675",
@@ -18128,6 +18128,16 @@
         "height": 1200
       }
     ],
+    "season_images": {
+      "winter": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/95/Exterior_of_Somaro_A.jpg/960px-Exterior_of_Somaro_A.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "さかおり",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Exterior_of_Somaro_A.jpg",
+        "width": 6000,
+        "height": 4000
+      }
+    },
     "external_ids": {
       "wikidata": "Q48755105",
       "osm": "node/5026244866"
@@ -18143,17 +18153,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "winter": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/95/Exterior_of_Somaro_A.jpg/960px-Exterior_of_Somaro_A.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "さかおり",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Exterior_of_Somaro_A.jpg",
-        "width": 6000,
-        "height": 4000
-      }
-    }
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q48756792",
@@ -18442,6 +18442,7 @@
         "height": 2492
       }
     ],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q49493"
     },
@@ -18452,8 +18453,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q55522595",
@@ -18647,6 +18647,16 @@
         "height": 3927
       }
     ],
+    "season_images": {
+      "night": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/58/Evening_twilight_Ginzan_Onsen_town_seen_from_the_guest_room_of_Kosekiya_Bekkan.jpg/960px-Evening_twilight_Ginzan_Onsen_town_seen_from_the_guest_room_of_Kosekiya_Bekkan.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "さかおり",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Evening_twilight_Ginzan_Onsen_town_seen_from_the_guest_room_of_Kosekiya_Bekkan.jpg",
+        "width": 6000,
+        "height": 4000
+      }
+    },
     "external_ids": {
       "wikidata": "Q5563313"
     },
@@ -18661,17 +18671,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-10-02",
-    "season_images": {
-      "night": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/58/Evening_twilight_Ginzan_Onsen_town_seen_from_the_guest_room_of_Kosekiya_Bekkan.jpg/960px-Evening_twilight_Ginzan_Onsen_town_seen_from_the_guest_room_of_Kosekiya_Bekkan.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "さかおり",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Evening_twilight_Ginzan_Onsen_town_seen_from_the_guest_room_of_Kosekiya_Bekkan.jpg",
-        "width": 6000,
-        "height": 4000
-      }
-    }
+    "updated_at": "2026-10-02"
   },
   {
     "id": "wd-Q56007827",
@@ -19313,6 +19313,16 @@
         "height": 4000
       }
     ],
+    "season_images": {
+      "winter": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/28/Ideha_Bunka_Museum.jpg/960px-Ideha_Bunka_Museum.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "さかおり",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Ideha_Bunka_Museum.jpg",
+        "width": 6000,
+        "height": 4000
+      }
+    },
     "external_ids": {
       "wikidata": "Q65233819",
       "osm": "way/297007477"
@@ -19328,17 +19338,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "winter": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/28/Ideha_Bunka_Museum.jpg/960px-Ideha_Bunka_Museum.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "さかおり",
-        "license": "CC BY-SA 4.0",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Ideha_Bunka_Museum.jpg",
-        "width": 6000,
-        "height": 4000
-      }
-    }
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q65234845",
@@ -21816,6 +21816,7 @@
         "height": 4000
       }
     ],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q7159554"
     },
@@ -21826,8 +21827,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q8047625",
@@ -22106,6 +22106,7 @@
         "height": 3716
       }
     ],
+    "season_images": {},
     "external_ids": {
       "wikidata": "Q847251",
       "osm": "way/553585206"
@@ -22125,8 +22126,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {}
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q85868885",
@@ -22817,11 +22817,11 @@
     "featured": false,
     "score": 37.13,
     "summary": {
-      "text": "The Sakai clan Gardens (酒井氏庭園, Sakai-shi teien) is a traditional Japanese garden located in the city of Tsuruoka, Yamagata Prefecture, Japan, which is a nationally designated Place of Scenic Beauty",
+      "text": "The Chido Museum (致道博物館, Chidō hakubutsukan) is a private museum in Tsuruoka, Yamagata Prefecture, Japan.",
       "lang": "en",
       "source_url": "https://en.wikipedia.org/wiki/Sakai_clan_gardens",
       "license": "CC BY-SA 4.0",
-      "fetched_at": "2026-09-29"
+      "fetched_at": "2026-11-01"
     },
     "images": [
       {
@@ -22833,6 +22833,16 @@
         "height": 3000
       }
     ],
+    "season_images": {
+      "winter": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d6/Sakai_Garden%2C_Chid%C5%8D_Museum_02.jpg/960px-Sakai_Garden%2C_Chid%C5%8D_Museum_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "ひきこもりたい from Japan.",
+        "license": "CC BY-SA 2.1 jp",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Sakai_Garden,_Chid%C5%8D_Museum_02.jpg",
+        "width": 1024,
+        "height": 768
+      }
+    },
     "external_ids": {
       "wikidata": "Q98113983"
     },
@@ -22843,17 +22853,7 @@
       }
     ],
     "status": "published",
-    "updated_at": "2026-09-28",
-    "season_images": {
-      "winter": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d6/Sakai_Garden%2C_Chid%C5%8D_Museum_02.jpg/960px-Sakai_Garden%2C_Chid%C5%8D_Museum_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-        "author": "ひきこもりたい from Japan.",
-        "license": "CC BY-SA 2.1 jp",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Sakai_Garden,_Chid%C5%8D_Museum_02.jpg",
-        "width": 1024,
-        "height": 768
-      }
-    }
+    "updated_at": "2026-09-28"
   },
   {
     "id": "wd-Q98113992",
