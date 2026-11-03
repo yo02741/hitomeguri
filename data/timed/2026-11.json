@@ -1,0 +1,23 @@
+[
+  {
+    "id": "jma-ichou-2026-盛岡",
+    "kind": "seasonal",
+    "category": "autumn_leaves",
+    "brand": "気象庁",
+    "title": {
+      "ja": "盛岡　いちょう黄葉",
+      "zh_tw": "盛岡 銀杏轉黃"
+    },
+    "summary_zh": "盛岡的氣象台 11月2日 觀測到銀杏轉黃，比平年晚 3 天。",
+    "scope": "regional",
+    "prefectures": [
+      "iwate"
+    ],
+    "valid_from": "2026-11-02",
+    "valid_to": "2026-11-16",
+    "relevance": 0.0,
+    "source_url": "https://www.data.jma.go.jp/sakura/data/phn_012.html",
+    "source_label": "出典：気象庁ホームページ（生物季節観測）を加工して作成",
+    "updated_at": "2026-11-03T16:37:56+00:00"
+  }
+]
