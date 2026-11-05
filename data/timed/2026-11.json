@@ -19,5 +19,47 @@
     "source_url": "https://www.data.jma.go.jp/sakura/data/phn_012.html",
     "source_label": "出典：気象庁ホームページ（生物季節観測）を加工して作成",
     "updated_at": "2026-11-03T16:37:56+00:00"
+  },
+  {
+    "id": "jma-ichou-2026-秋田",
+    "kind": "seasonal",
+    "category": "autumn_leaves",
+    "brand": "気象庁",
+    "title": {
+      "ja": "秋田　いちょう黄葉",
+      "zh_tw": "秋田 銀杏轉黃"
+    },
+    "summary_zh": "秋田的氣象台 11月4日 觀測到銀杏轉黃，比平年早 1 天。",
+    "scope": "regional",
+    "prefectures": [
+      "akita"
+    ],
+    "valid_from": "2026-11-04",
+    "valid_to": "2026-11-18",
+    "relevance": 0.0,
+    "source_url": "https://www.data.jma.go.jp/sakura/data/phn_012.html",
+    "source_label": "出典：気象庁ホームページ（生物季節観測）を加工して作成",
+    "updated_at": "2026-11-05T16:52:48+00:00"
+  },
+  {
+    "id": "jma-ichou-2026-青森",
+    "kind": "seasonal",
+    "category": "autumn_leaves",
+    "brand": "気象庁",
+    "title": {
+      "ja": "青森　いちょう黄葉",
+      "zh_tw": "青森 銀杏轉黃"
+    },
+    "summary_zh": "青森的氣象台 11月4日 觀測到銀杏轉黃，比平年晚 2 天。",
+    "scope": "regional",
+    "prefectures": [
+      "aomori"
+    ],
+    "valid_from": "2026-11-04",
+    "valid_to": "2026-11-18",
+    "relevance": 0.0,
+    "source_url": "https://www.data.jma.go.jp/sakura/data/phn_012.html",
+    "source_label": "出典：気象庁ホームページ（生物季節観測）を加工して作成",
+    "updated_at": "2026-11-05T16:52:48+00:00"
   }
 ]
