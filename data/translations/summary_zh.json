@@ -1,5 +1,5 @@
 {
- "_readme": "英文簡介的繁體中文翻譯（translate-summaries，Claude API）。鍵為原文 SHA-1 前 16 碼。",
+ "_readme": "英文、日文簡介的繁體中文翻譯（translate-summaries，Claude API）。鍵為原文 SHA-1 前 16 碼，原文在 en 或 ja 欄。",
  "items": {
   "0056d7dfe76de5a6": {
    "en": "The Hirado Dutch Trading Post (平戸和蘭商館, Hirado Oranda shōkan ato) was a trading base of the Dutch East India Company on the island of Hirado, Nagasaki Prefecture Japan.  It was established in 1609 and lasted for 33 years. The site was designated a National Historic Site of Japan in 1922.",
@@ -403,6 +403,12 @@
    "model": "claude-opus-5-5",
    "translated_at": "2026-11-06"
   },
+  "043548cf6cae8d96": {
+   "ja": "海老ヶ池（えびがいけ）は、徳島県海部郡海陽町の室戸阿南海岸国定公園内にある県内最大の湖。面積は18ha。四国地方で唯一の天然湖（国土交通省のコード登録湖沼）である。",
+   "zh": "海老ヶ池位於德島縣海部郡海陽町的室戶阿南海岸國定公園內，是縣內最大的湖泊，面積18公頃。為四國地區唯一的天然湖（國土交通省代碼登錄湖沼）。",
+   "model": "claude-opus-5-5",
+   "translated_at": "2026-11-06"
+  },
   "0442753dd789ba1b": {
    "en": "Bank of Iwate Red Brick Building (岩手銀行赤レンガ館, Iwate Ginkō Aka-Renga kan) is a former bank building located in the city of Morioka, Iwate Prefecture, Japan. The building is an example of Meiji period western style architecture in Japan, and is listed as an Important Cultural Property. The building is now used as a museum.",
    "zh": "岩手銀行赤レンガ館是位於日本岩手縣盛岡市的舊銀行建築。此建築為日本明治時代西式建築的代表例，並被列為重要文化財。目前作為博物館使用。",
@@ -478,6 +484,12 @@
   "04d41619c9586f06": {
    "en": "Mount Kubote (求菩提山, Kubotesan) is a mountain on the border of the city of Buzen and the town of Chikujō, in Fukuoka Prefecture, Japan. It is 782 metres (2,566 ft) in height. It is within the borders of the Yaba-Hita-Hikosan Quasi-National Park. Noted for its connections to the Shugendō mountain cult it was designated a  National Historic Site of Japan in 2001.",
    "zh": "求菩提山是位於日本福岡縣豐前市與築上町交界處的山，高782公尺（2,566英尺），位於耶馬日田英彥山國定公園範圍內。此山以與修驗道山岳信仰的淵源聞名，於2001年被指定為日本國家史跡。",
+   "model": "claude-opus-5-5",
+   "translated_at": "2026-11-06"
+  },
+  "04dc031030b362a3": {
+   "ja": "福山市鞆の浦歴史民俗資料館（ふくやましとものうられきしみんぞくしりょうかん）は、広島県福山市鞆町後地にある博物館。「潮待ちの館」の愛称をもつ。",
+   "zh": "福山市鞆の浦歴史民俗資料館是位於廣島縣福山市鞆町後地的博物館，暱稱「潮待之館」。",
    "model": "claude-opus-5-5",
    "translated_at": "2026-11-06"
   },
@@ -1036,6 +1048,12 @@
   "0aea465b393897ec": {
    "en": "Futamigaura (二見ヶ浦, Futamigaura), also known as Sakurai Futamigaura (桜井二見ヶ浦, Sakurai Futamigaura) and Chikuzen Futamigaura (筑前二見ヶ浦, Chikuzen Futamigaura)  is a coastline spanning Itoshima and Fukuoka in Fukuoka Prefecture, Japan, and is part of Genkai Quasi-National Park.",
    "zh": "二見浦又稱櫻井二見浦、筑前二見浦，是橫跨日本福岡縣糸島市與福岡市的海岸，屬於玄海國定公園的一部分。",
+   "model": "claude-opus-5-5",
+   "translated_at": "2026-11-06"
+  },
+  "0aeef0a90b37f315": {
+   "ja": "平塚競輪場（ひらつかけいりんじょう）は、神奈川県平塚市にある競輪場。通称はABEMA湘南バンク (ABEMA SHONANBANK)。",
+   "zh": "平塚競輪場是位於神奈川縣平塚市的自行車競速場，通稱ABEMA湘南バンク（ABEMA SHONANBANK）。",
    "model": "claude-opus-5-5",
    "translated_at": "2026-11-06"
   },
@@ -6241,6 +6259,12 @@
    "model": "claude-opus-5-5",
    "translated_at": "2026-11-06"
   },
+  "46db93a5dd1108f0": {
+   "ja": "グランモール（英称：GRAND MALL）は、福岡県遠賀郡水巻町にあるショッピングモール。",
+   "zh": "グランモール（英文名稱：GRAND MALL）是位於福岡縣遠賀郡水卷町的購物中心。",
+   "model": "claude-opus-5-5",
+   "translated_at": "2026-11-06"
+  },
   "46f869634fa64eca": {
    "en": "Yōrō Falls (養老の滝, Yōrō no Taki) is a waterfall in Yōrō Park located in the town of Yōrō, Yōrō District, Gifu, Japan.",
    "zh": "養老の滝是位於日本岐阜縣養老郡養老町養老公園內的瀑布。",
@@ -7213,6 +7237,12 @@
    "model": "claude-opus-5-5",
    "translated_at": "2026-11-06"
   },
+  "5106b6c06c706c37": {
+   "ja": "伊我理神社（いがりじんじゃ）は、伊勢神宮豊受大神宮（外宮）の末社。外宮の宮域林に鎮座する。",
+   "zh": "伊我理神社是伊勢神宮豐受大神宮（外宮）的末社，坐落於外宮的宮域林中。",
+   "model": "claude-opus-5-5",
+   "translated_at": "2026-11-06"
+  },
   "510b227b83ba2102": {
    "en": "In Ishikawa Prefecture, when people mention \"Tara\" (Cod), it generally refers to Madara (Pacific cod) rather than Skesodara (Alaska pollock). As the temperature drops and spawning season arrives, Cod caught during this period is considered particularly delicious. Locals often say there's \"no wasted part\" of the fish, and various parts, from the head to the internal organs, are used in cooking. It can be served as sashimi with kombu(=kelp), and white cod roe is pickled in vinegar.",
    "zh": "在石川縣，說到「鱈」，一般指的是真鱈（太平洋鱈），而非介黨鱈（阿拉斯加鱈）。隨著氣溫下降、產卵季到來，這段期間捕獲的鱈魚被認為格外美味。當地人常說這種魚「沒有一處浪費」，從頭部到內臟，各個部位都會用於烹調。可以做成昆布締生魚片，白色的鱈魚精巢則以醋醃漬。",
@@ -7642,6 +7672,12 @@
   "5683e7c56439114b": {
    "en": "Mishima, located about 45 kilometers north of Hagi Port in Yamaguchi Prefecture, is a small island with a population of fewer than 1,000 people. This isolated island, floating away from the mainland, serves as a crucial resting point for migratory birds, and it is renowned as a sacred site for bird watching.",
    "zh": "見島位於山口縣萩港以北約45公里處，是人口不到1,000人的小島。這座遠離本土的離島是候鳥重要的中繼休息地，被譽為賞鳥的聖地。",
+   "model": "claude-opus-5-5",
+   "translated_at": "2026-11-06"
+  },
+  "569210890fc82413": {
+   "ja": "星溪園（せいけいえん）は、埼玉県熊谷市にある回遊式庭園。江戸時代末期から明治時代にかけて整備され、昭和29年（1954年）に熊谷市の名勝に指定された。",
+   "zh": "星溪園是位於埼玉縣熊谷市的迴遊式庭園，於江戶時代末期至明治時代間修建，昭和29年（1954年）被指定為熊谷市的名勝。",
    "model": "claude-opus-5-5",
    "translated_at": "2026-11-06"
   },
@@ -8791,6 +8827,12 @@
    "model": "claude-opus-5-5",
    "translated_at": "2026-11-06"
   },
+  "6394da8ea5a2894f": {
+   "ja": "御嶽山御嶽神明社（おんたけさんおんたけしんめいしゃ）は、岩手県一関市花泉町老松にある神社。",
+   "zh": "御嶽山御嶽神明社是位於岩手縣一關市花泉町老松的神社。",
+   "model": "claude-opus-5-5",
+   "translated_at": "2026-11-06"
+  },
   "6395646ed011533b": {
    "en": "The Ōmine Okugakemichi (大峯奥駈道, lit. “deep inner path of the grand peaks”) is a pilgrimage route on the Kii Peninsula in the Kansai region of Japan. It begins in Yanagi-no-shuku, a former ferry station on the Yoshino River in Nara prefecture, leads through the 1200-1900 meter Ōmine mountain region of Yoshino and Kumano in Wakayama Prefecture and ends after about 170 kilometers at the Kumano Hongū Taisha.",
    "zh": "大峯奥駈道（字面意思為「大峰群山的深奧之道」）是日本關西地區紀伊半島上的一條朝聖路線。起點為奈良縣吉野川畔昔日的渡船場柳之宿，途經海拔1200至1900公尺、從吉野延伸至和歌山縣熊野的大峰山區，全長約170公里，終點為熊野本宮大社。",
@@ -9106,6 +9148,12 @@
   "6721640bb2dc2cfd": {
    "en": "From the Meiji period to the early Showa period, sericulture flourished in a lifestyle of self-sufficiency.",
    "zh": "從明治時期到昭和初期，在自給自足的生活中，養蠶業相當興盛。",
+   "model": "claude-opus-5-5",
+   "translated_at": "2026-11-06"
+  },
+  "6729b7bf4ac5bec7": {
+   "ja": "沖縄市戦後文化資料展示館ヒストリート（おきなわしせんごぶんかしりょうてんじしつヒストリート）は沖縄県沖縄市にある資料館。沖縄市が運営している。",
+   "zh": "沖繩市戰後文化資料展示館ヒストリート是位於沖繩縣沖繩市的資料館，由沖繩市營運。",
    "model": "claude-opus-5-5",
    "translated_at": "2026-11-06"
   },
@@ -10237,6 +10285,12 @@
    "model": "claude-opus-5-5",
    "translated_at": "2026-11-06"
   },
+  "75fd33dd2f9ebb98": {
+   "ja": "鹿島神社（かしまじんじゃ）は、茨城県那珂市の神社。",
+   "zh": "鹿島神社是位於茨城縣那珂市的神社。",
+   "model": "claude-opus-5-5",
+   "translated_at": "2026-11-06"
+  },
   "7601b3977ab51386": {
    "en": "\"Donko\" (=dark sleepers) are brown hakelings or codlings caught along the Sanriku Coast. They are particularly delicious in the winter when the flesh of the fish become firm, and their liver becomes fatty. The white flesh is simple and refined and goes well as an ingredient for miso soups and hotpot dishes. When using fresh \"donko\" (=dark sleeper), the liver is also used.",
    "zh": "「どんこ」是在三陸海岸捕獲的褐色鱈類魚。冬季魚肉緊實、肝臟豐腴時特別美味。白肉清淡高雅，適合作為味噌湯與火鍋的食材。使用新鮮的「どんこ」時，肝臟也會一起使用。",
@@ -10360,6 +10414,12 @@
   "77a77aa6589f0150": {
    "en": "Tochio Castle (栃尾城, Iino-jō) was a castle structure in Nagaoka, Niigata, Japan.  The site is located on a 227-meter mountain. Young Uesugi Kenshin spent five years in the castle.",
    "zh": "栃尾城是位於日本新潟縣長岡的城郭，所在地為一座227公尺高的山。上杉謙信年少時曾在此城度過五年。",
+   "model": "claude-opus-5-5",
+   "translated_at": "2026-11-06"
+  },
+  "77b167aedee1f97f": {
+   "ja": "不動七重の滝（ふどうななえのたき）は、奈良県吉野郡下北山村にあり、吉野熊野国立公園の特別地域で、日本の滝百選の1つである。",
+   "zh": "不動七重の滝位於奈良縣吉野郡下北山村，屬於吉野熊野國立公園的特別地域，為日本瀑布百選之一。",
    "model": "claude-opus-5-5",
    "translated_at": "2026-11-06"
   },
@@ -12271,6 +12331,12 @@
    "model": "claude-opus-5-5",
    "translated_at": "2026-11-06"
   },
+  "8b5f31ebb3586a57": {
+   "ja": "諏訪湖祭湖上花火大会（すわこまつり こじょうはなびたいかい）は、長野県諏訪市の諏訪湖で毎年8月15日に行われる花火大会である。略称は「諏訪湖花火大会」「諏訪湖の花火」。",
+   "zh": "諏訪湖祭湖上花火大会是每年8月15日在長野縣諏訪市諏訪湖舉行的煙火大會，簡稱「諏訪湖花火大會」、「諏訪湖的煙火」。",
+   "model": "claude-opus-5-5",
+   "translated_at": "2026-11-06"
+  },
   "8b5ff74f0b0f1d8f": {
    "en": "Nuta is a traditional seasoning from Kochi Prefecture, made by mixing miso and vinegar with garlic. It is commonly used to accompany raw fish or konjac(=yam cake).The culture of consuming garlic leaves is said to have originated from the Korean Peninsula. In the late 16th century, after returning from the Korean Campaign, Chosokabe Motochika, a warlord in Tosa Province, introduced this tradition to the region.In Kochi Prefecture, garlic leaves are widely used in various dishes, including sukiyaki, zosui (rice soup), stir-fries, and more.",
    "zh": "ぬた是高知縣的傳統調味醬，將味噌、醋與大蒜混合製成。常用來搭配生魚片或蒟蒻。據說食用蒜葉的文化源自朝鮮半島。16世紀後期，土佐國的戰國大名長宗我部元親從朝鮮出兵歸來後，將這項習慣引進當地。在高知縣，蒜葉廣泛用於壽喜燒、雜炊（米湯）、熱炒等各種料理。",
@@ -12925,6 +12991,12 @@
    "model": "claude-opus-5-5",
    "translated_at": "2026-11-06"
   },
+  "932477e8d6640da1": {
+   "ja": "嶋遺跡公園（しまいせきこうえん）は、山形県山形市嶋北2丁目3にある公園。園内には1966年（昭和41年）に国の史跡に指定された嶋遺跡がある。",
+   "zh": "嶋遺跡公園是位於山形縣山形市嶋北2丁目3的公園。園內有1966年（昭和41年）被指定為國家史跡的嶋遺跡。",
+   "model": "claude-opus-5-5",
+   "translated_at": "2026-11-06"
+  },
   "93415d8824dc1216": {
    "en": "Asahigawa Dam (Japanese: 旭川ダム) is a dam on Asahi River straddling the border between Kibichūō and northern Takebe, Okayama in Okayama Prefecture, Japan. The dam was completed in 1954.",
    "zh": "旭川ダム是位於日本岡山縣旭川上的水壩，橫跨吉備中央町與岡山市建部北部的交界，於1954年完工。",
@@ -13318,6 +13390,12 @@
   "9815d827512922ae": {
    "en": "The Tachiarai Peace Memorial Museum (筑前町立 大刀洗平和記念館, Chikuzen chōritsu tachiarai heiwakinenkan) is a historical museum located in the town of Chikuzen, Fukuoka, Japan.",
    "zh": "筑前町立大刀洗平和紀念館是位於日本福岡縣筑前町的歷史博物館。",
+   "model": "claude-opus-5-5",
+   "translated_at": "2026-11-06"
+  },
+  "9827aafc4a58fe67": {
+   "ja": "一つ森公園（ひとつもりこうえん）は、秋田県秋田市にある都市公園（総合公園）である。",
+   "zh": "一つ森公園是位於秋田縣秋田市的都市公園（綜合公園）。",
    "model": "claude-opus-5-5",
    "translated_at": "2026-11-06"
   },
@@ -16909,6 +16987,12 @@
    "model": "claude-opus-5-5",
    "translated_at": "2026-11-06"
   },
+  "c43bfb7044ff362d": {
+   "ja": "呉橋（くれはし）は、大分県宇佐市南宇佐の宇佐神宮西参道にある屋根付きの木造橋。日本百名橋の一つ。",
+   "zh": "呉橋是位於大分縣宇佐市南宇佐宇佐神宮西參道上的有頂木造橋，為日本百名橋之一。",
+   "model": "claude-opus-5-5",
+   "translated_at": "2026-11-06"
+  },
   "c442bf7a0cdb20bc": {
    "en": "Moriyama-juku (守山宿)  was the sixty-seventh of the sixty-nine stations of the Nakasendō highway connecting Edo with Kyoto in Edo period Japan. It was located in the present-day city of Moriyama, Shiga Prefecture, Japan.",
    "zh": "守山宿是日本江戶時代連接江戶與京都的中山道六十九次中的第六十七個宿場，位於今日日本滋賀縣守山市。",
@@ -17401,6 +17485,12 @@
    "model": "claude-opus-5-5",
    "translated_at": "2026-11-06"
   },
+  "c97be7b58eae4c94": {
+   "ja": "清武温泉（きよたけおんせん）は、宮崎県宮崎市清武町にある温泉。",
+   "zh": "清武温泉是位於宮崎縣宮崎市清武町的溫泉。",
+   "model": "claude-opus-5-5",
+   "translated_at": "2026-11-06"
+  },
   "c9a3513ea8ca7d72": {
    "en": "Mitake Castle (三岳城跡, Mitake-jō) was a Sengoku period yamashiro-style Japanese castle located in what is now part of the city of Hamamatsu, Shizuoka in the Tōkai region of Japan.  It was a fortress of the local Ii clan, which later rose to prominence under the Edo period  Tokugawa shogunate. The ruins have been protected  as a National Historic Site since 1944.",
    "zh": "三岳城（三岳城跡）是戰國時代的山城式日本城郭，位於今日本東海地方靜岡縣濱松市境內。此城為當地井伊氏的據點，井伊氏後來在江戶時代的德川幕府之下崛起。遺跡自1944年起被列為國家史跡受到保護。",
@@ -17656,6 +17746,12 @@
   "cc6df8e13c9cfbe3": {
    "en": "Mount Yamizo (Japanese: 八溝山（やみぞさん）, Hepburn: yamizosan) is a mountain and it stretches Ibaraki Prefecture with Fukushima in Japan. Mount Yamizo is the highest mountain in Ibaraki Prefecture.",
    "zh": "八溝山（やみぞさん）是橫跨日本茨城縣與福島縣的山，為茨城縣最高峰。",
+   "model": "claude-opus-5-5",
+   "translated_at": "2026-11-06"
+  },
+  "cca91eb9c17e69c6": {
+   "ja": "志の田うどん（しのだうどん）は、愛知県名古屋市周辺で食べられているうどん。",
+   "zh": "志の田うどん是愛知縣名古屋市一帶食用的烏龍麵。",
    "model": "claude-opus-5-5",
    "translated_at": "2026-11-06"
   },
@@ -18358,6 +18454,12 @@
   "d3b59edb56f74e44": {
    "en": "Eifuku-ji (叡福寺) is a Buddhist temple in Minamikawachi, Osaka, Japan. It is affiliated with Shingon Buddhism. According to legend, it was founded in 724 by Emperor Shōmu.",
    "zh": "叡福寺是位於日本大阪府南河內的佛寺，屬真言宗。相傳由聖武天皇於724年創建。",
+   "model": "claude-opus-5-5",
+   "translated_at": "2026-11-06"
+  },
+  "d3ec5dbbfe213e20": {
+   "ja": "富山県 立山カルデラ砂防博物館（とやまけんたてやまカルデラさぼうはくぶつかん、英: Tateyama Caldera Sabo Museum）は、富山県中新川郡立山町芦峅寺にある立山カルデラおよび立山砂防をテーマとした公立博物館である。",
+   "zh": "富山縣立山カルデラ砂防博物館（英文：Tateyama Caldera Sabo Museum）是位於富山縣中新川郡立山町蘆峅寺、以立山破火山口及立山砂防為主題的公立博物館。",
    "model": "claude-opus-5-5",
    "translated_at": "2026-11-06"
   },
@@ -20995,6 +21097,12 @@
    "model": "claude-opus-5-5",
    "translated_at": "2026-11-06"
   },
+  "f0e0c46077fc192a": {
+   "ja": "根の上高原（ねのうえこうげん）は、岐阜県中津川市と恵那市に跨る高原である。根ノ上高原とも記される。飛騨・美濃紅葉三十三選の一つである。「東海の軽井沢」とも言われる。",
+   "zh": "根の上高原是橫跨岐阜縣中津川市與惠那市的高原，也寫作根ノ上高原。為飛驒・美濃紅葉三十三選之一，也被稱為「東海的輕井澤」。",
+   "model": "claude-opus-5-5",
+   "translated_at": "2026-11-06"
+  },
   "f0ee8585a3f9046c": {
    "en": "\"Omiisan\" refers to porridge seasoned with miso. In the old days, miso was called \"mii,\" which became \"omiisan\" by adding the honorific \"o\" and \"san\". In Tokushima, where rice was considered difficult to grow in the soil, buckwheat and barley were used as staple foods instead, and the quantity of rice was often bulked up by adding various other ingredients. \"Omiisan\" was also a favorite meal with plenty of daikon radish and satoimo(=Japanese taro) added to make it a filling meal.",
    "zh": "「おみいさん」是指以味噌調味的粥。古時味噌稱為「みい」，加上敬稱「お」與「さん」便成為「おみいさん」。德島的土壤被認為不易種植稻米，因此改以蕎麥和大麥為主食，也常加入各種食材來增加米的份量。「おみいさん」加入大量白蘿蔔和里芋，是能吃得飽足、受人喜愛的一餐。",
@@ -21409,6 +21517,12 @@
    "model": "claude-opus-5-5",
    "translated_at": "2026-11-06"
   },
+  "f624135e1dab8716": {
+   "ja": "日本平動物園（にほんだいらどうぶつえん、英: Shizuoka Municipal Nihondaira Zoo）は、静岡県静岡市駿河区池田にある静岡市が運営する動物園。",
+   "zh": "日本平動物園（英文：Shizuoka Municipal Nihondaira Zoo）是位於靜岡縣靜岡市駿河區池田、由靜岡市營運的動物園。",
+   "model": "claude-opus-5-5",
+   "translated_at": "2026-11-06"
+  },
   "f6400032cce66f38": {
    "en": "Ishikawa Prefectural History Museum (石川県立歴史博物館, Ishikawa Kenritsu Rekishi Hakubutsukan) is a prefectural museum in Kanazawa, Japan, dedicated to the history and culture of Ishikawa Prefecture. The three ICP red brick buildings date to 1909-14 and functioned first as the local arsenal, then after the Pacific War as the Kanazawa College of Art, before being converted into a museum in 1986.",
    "zh": "石川県立歴史博物館是位於日本金澤市的縣立博物館，以石川縣的歷史與文化為主題。館舍為三棟建於1909至1914年的國家重要文化財紅磚建築，最初作為當地的兵器庫，太平洋戰爭後成為金澤美術工藝大學校舍，1986年改建為博物館。",
@@ -21634,6 +21748,12 @@
   "f8b00900ac68f538": {
    "en": "The mountainous Kiso region has a unique culinary tradition that includes a dish called \"Sunki-zuke,\" using the leaves of red turnips.",
    "zh": "多山的木曾地區有獨特的飲食傳統，其中包括一道使用紅蕪菁葉製作、稱為「すんき漬け」的料理。",
+   "model": "claude-opus-5-5",
+   "translated_at": "2026-11-06"
+  },
+  "f8b18b7157ef35d6": {
+   "ja": "銚子漁港（ちょうしぎょこう）は、千葉県銚子市の太平洋に面する特定第3種漁港。",
+   "zh": "銚子漁港是位於千葉縣銚子市、面向太平洋的特定第3種漁港。",
    "model": "claude-opus-5-5",
    "translated_at": "2026-11-06"
   },
