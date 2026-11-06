@@ -395,7 +395,7 @@ function distance(m: number): string {
       </div>
 
       <figure v-if="spot.summary" class="mx-5 mt-3.5 flex flex-col gap-1">
-        <SummaryText :summary="spot.summary" />
+        <SummaryText :summary="spot.summary" original />
         <figcaption class="text-caption text-sub">
           <a :href="spot.summary.source_url" target="_blank" rel="noopener" class="text-sub pointer-coarse:py-4"
             >維基百科（{{ { zh: '中文', en: '英文', ja: '日文' }[spot.summary.lang] }}）</a

@@ -18,6 +18,7 @@ import SectionNav from '../components/SectionNav.vue'
 import SeasonCalendar from '../components/SeasonCalendar.vue'
 import WebSearchLink from '../components/WebSearchLink.vue'
 import SummaryText from '../components/SummaryText.vue'
+import SummaryDialog from '../components/SummaryDialog.vue'
 import TimedList from '../components/TimedList.vue'
 import ChainSearch from '../components/ChainSearch.vue'
 import { type NavItem, useScrollSpy } from '../composables/scrollSpy'
@@ -228,6 +229,9 @@ function pickMonth(m: string | null) {
   goSection('festivals')
 }
 
+/** 打開看全文的地區特色 */
+const detail = ref<Specialty | null>(null)
+
 const failed = ref(new Set<string>())
 function image(s: Specialty) {
   const img = s.images?.[0]
@@ -413,20 +417,21 @@ function sourceLabel(url: string): string {
                       <span class="flex flex-wrap items-baseline gap-x-2">
                         <span lang="ja" class="text-body font-bold">{{ s.name.ja }}</span>
                         <span v-if="s.name.zh_tw && s.name.zh_tw !== s.name.ja" class="text-body-sm text-sub">{{ s.name.zh_tw }}</span>
-                        <!-- 沒有中文名時放英文名（Wikidata、農林水產省英文版） -->
-                        <span v-else-if="s.name.en" lang="en" class="text-body-sm text-sub">{{ s.name.en }}</span>
                       </span>
                     </div>
                     <WebSearchLink :name="s.name.ja" :context="prefectureFullName(pref)" class="-mt-1 -mr-2" />
                   </div>
-                  <SummaryText v-if="s.summary" :summary="s.summary" :clamp="narrow ? (s.summary.text_zh ? 2 : 3) : s.summary.text_zh ? 3 : 4" />
-                  <p v-else-if="s.summary_zh" class="text-body-sm leading-[1.75] max-sm:line-clamp-3 sm:line-clamp-4">{{ s.summary_zh }}</p>
-                  <div class="mt-auto flex flex-wrap gap-x-3 pt-1 text-caption text-sub pointer-coarse:-my-3.5 pointer-coarse:items-center">
-                    <span v-if="s.summary">{{ s.summary.license }}</span>
-                    <a v-for="src in s.sources" :key="src.url" :href="src.url" target="_blank" rel="noopener" class="text-sub pointer-coarse:py-3.5">{{
-                      sourceLabel(src.url)
-                    }}</a>
-                  </div>
+                  <!-- 簡介只放幾行；點了看全文、原文與出處（SummaryDialog） -->
+                  <button
+                    v-if="s.summary || s.summary_zh"
+                    type="button"
+                    aria-haspopup="dialog"
+                    class="-mx-1.5 rounded-control px-1.5 py-0.5 text-left text-ink hover:bg-surface active:bg-surface"
+                    @click="detail = s"
+                  >
+                    <SummaryText v-if="s.summary" :summary="s.summary" :clamp="narrow ? 3 : 4" />
+                    <p v-else class="text-body-sm leading-[1.75] max-sm:line-clamp-3 sm:line-clamp-4">{{ s.summary_zh }}</p>
+                  </button>
                 </div>
               </li>
             </ul>
@@ -455,5 +460,14 @@ function sourceLabel(url: string): string {
         </section>
       </main>
     </div>
+    <SummaryDialog
+      v-if="detail"
+      :name="detail.name"
+      :summary="detail.summary"
+      :summary-zh="detail.summary_zh"
+      :image="image(detail)"
+      :sources="detail.sources.map((src) => ({ label: sourceLabel(src.url), url: src.url }))"
+      @close="detail = null"
+    />
   </div>
 </template>

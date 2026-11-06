@@ -7,6 +7,7 @@ import { prefectureFullName } from '../data/regions'
 import CollapseChevron from './CollapseChevron.vue'
 import WebSearchLink from './WebSearchLink.vue'
 import SummaryText from './SummaryText.vue'
+import SummaryDialog from './SummaryDialog.vue'
 
 // 深度探索「祭典」：依舉行月份分組（跨月的放在第一個月），1 到 12 月，組內依日文維基瀏覽量。
 // 月份列可篩選；沒有月份的放最後「月份未載」。
@@ -29,6 +30,13 @@ function monthsText(f: Festival): string {
   // 連續的月份寫成範圍（7–8月），否則列出（1・7月）
   const consecutive = ms.every((m, i) => i === 0 || m === ms[i - 1]! + 1)
   return consecutive ? `${ms[0]}–${ms[ms.length - 1]}月` : `${ms.join('・')}月`
+}
+
+/** 打開看全文的祭典 */
+const detail = ref<Festival | null>(null)
+function wikiLabel(f: Festival): string {
+  const lang = f.summary?.lang
+  return lang ? `維基百科（${{ zh: '中文', en: '英文', ja: '日文' }[lang]}）` : '維基百科'
 }
 
 const failed = ref(new Set<string>())
@@ -114,17 +122,22 @@ function onMap(e: MouseEvent, f: Festival) {
                 <span class="flex flex-wrap items-baseline gap-x-2">
                   <span lang="ja" class="text-body font-bold">{{ f.name.ja }}</span>
                   <span v-if="f.name.zh_tw && f.name.zh_tw !== f.name.ja" class="text-body-sm text-sub">{{ f.name.zh_tw }}</span>
-                  <!-- 沒有中文名時放英文名（取自 Wikidata） -->
-                  <span v-else-if="f.name.en" lang="en" class="text-body-sm text-sub">{{ f.name.en }}</span>
                   <span v-if="monthsText(f)" class="font-num text-caption font-bold">{{ monthsText(f) }}</span>
                 </span>
               </div>
               <WebSearchLink :name="f.name.ja" :context="prefectureFullName(f.prefecture)" class="-mt-1 -mr-1" />
             </div>
-            <SummaryText v-if="f.summary" :summary="f.summary" :clamp="f.summary.text_zh ? 2 : 3" />
+            <!-- 簡介只放幾行；點了看全文、原文與出處（SummaryDialog） -->
+            <button
+              v-if="f.summary"
+              type="button"
+              aria-haspopup="dialog"
+              class="-mx-1.5 rounded-control px-1.5 py-0.5 text-left text-ink hover:bg-surface active:bg-surface"
+              @click="detail = f"
+            >
+              <SummaryText :summary="f.summary" :clamp="3" />
+            </button>
             <div class="mt-auto flex flex-wrap gap-x-3 text-caption text-sub pointer-coarse:-my-3.5 pointer-coarse:items-center">
-              <span v-if="f.summary">{{ f.summary.license }}</span>
-              <a :href="f.summary?.source_url ?? f.sources[0]!.url" target="_blank" rel="noopener" class="text-sub pointer-coarse:py-3.5">維基百科</a>
               <RouterLink v-if="f.location" v-slot="{ href }" :to="mapLink(f)" custom>
                 <a :href="href" class="text-sub pointer-coarse:py-3.5" @click="onMap($event, f)">在地圖上看</a>
               </RouterLink>
@@ -142,5 +155,13 @@ function onMap(e: MouseEvent, f: Festival) {
         全部 <span class="font-num">{{ g.items.length }}</span> 項
       </button>
     </div>
+    <SummaryDialog
+      v-if="detail"
+      :name="detail.name"
+      :summary="detail.summary"
+      :image="image(detail)"
+      :sources="[{ label: wikiLabel(detail), url: detail.summary?.source_url ?? detail.sources[0]!.url }]"
+      @close="detail = null"
+    />
   </div>
 </template>

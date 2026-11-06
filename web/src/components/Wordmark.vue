@@ -1,8 +1,8 @@
 <script setup lang="ts">
 // 三行版式：假名／漢字／羅馬拼音（DESIGN.md §1b）。Header 用橫排。
-// app 標頭的標誌連到形象網站（/about，2026-10-12 回報：在規劃的頁面找不到回形象網站的入口）；地圖用「探索」分頁回去。
+// app 標頭的標誌回首頁（全國地圖，2026-11-06 使用者）；形象網站從帳號選單「關於 ひとめぐり」與行程、紀錄頁未登入時的「ひとめぐり 是什麼」進去。
 // 形象網站自己的標誌（海報、頁尾）不是連結（to=null）：進 app 只從「開始探索」（2026-10-13 使用者）。
-withDefaults(defineProps<{ to?: string | null }>(), { to: '/about' })
+withDefaults(defineProps<{ to?: string | null }>(), { to: '/' })
 </script>
 
 <template>

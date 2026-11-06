@@ -31,7 +31,7 @@
 | 版本 | 用在 | 規格 |
 |---|---|---|
 | Hero（三行） | 首頁、關於頁、商店截圖 | 假名 `tracking-kana` → 漢字 `font-black`（字級依版面，漢字至少是假名的 4 倍）→ HITOMEGURI `font-latin font-bold uppercase`，字距 0.4–0.5em |
-| Header（橫排） | 每頁 header 左側 | 左：假名 10px 疊在「一巡り」22px 900 上方；右：HITOMEGURI 13px `font-latin font-semibold`，底部對齊；整塊連到形象網站 `/about`（2026-10-12 回報：在規劃的頁面找不到回形象網站的入口；地圖用「探索」分頁回去）。形象網站自己的標誌（海報、頁尾）不是連結，進 app 只從「開始探索」（2026-10-13 使用者） |
+| Header（橫排） | 每頁 header 左側 | 左：假名 10px 疊在「一巡り」22px 900 上方；右：HITOMEGURI 13px `font-latin font-semibold`，底部對齊；整塊連回首頁 `/`（全國地圖，2026-11-06 使用者；原本連 `/about`）。形象網站從帳號選單「關於 ひとめぐり」與行程、紀錄頁未登入時的「ひとめぐり 是什麼」進去。形象網站自己的標誌（海報、頁尾）不是連結，進 app 只從「開始探索」（2026-10-13 使用者） |
 | 地區色上 | 海報區、分享圖 | 同 Hero 三行，文字用 `text-on-region`，可加 `bg-region-accent` 正圓裝飾 |
 | 最小尺寸 | 頁尾、小型標示 | 只用單行：「一巡り」16px 900，或「ひとめぐり」14px 700，或 HITOMEGURI 13px |
 
