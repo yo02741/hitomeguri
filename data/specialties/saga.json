@@ -287,7 +287,16 @@
     },
     "source_type": "kyodo_ryori",
     "kana_source": "maff",
-    "images": [],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/78/JapaneseRiceWithChestnut_KuriOkowa.jpg/960px-JapaneseRiceWithChestnut_KuriOkowa.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "サフィル",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:JapaneseRiceWithChestnut_KuriOkowa.jpg",
+        "width": 5472,
+        "height": 3648
+      }
+    ],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/45_17_saga.html",
@@ -298,7 +307,7 @@
         "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-29"
+    "updated_at": "2026-11-06"
   },
   {
     "id": "saga-maff-45_18_saga",
@@ -581,7 +590,16 @@
     },
     "source_type": "kyodo_ryori",
     "kana_source": "maff",
-    "images": [],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6b/Hiyashi_Somen_%40_Kidoairaku_%286911195737%29.jpg/500px-Hiyashi_Somen_%40_Kidoairaku_%286911195737%29.jpg",
+        "author": "Wagner Tamanaha from Sao Paulo, Brazil",
+        "license": "CC BY-SA 2.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Hiyashi_Somen_@_Kidoairaku_(6911195737).jpg",
+        "width": 800,
+        "height": 600
+      }
+    ],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/45_25_saga.html",
@@ -592,7 +610,7 @@
         "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-29"
+    "updated_at": "2026-11-06"
   },
   {
     "id": "saga-maff-45_2_saga",
@@ -741,7 +759,16 @@
     },
     "source_type": "kyodo_ryori",
     "kana_source": "maff",
-    "images": [],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ab/%E9%A0%88%E5%8F%A4%E3%81%9A%E3%81%971.jpg/960px-%E9%A0%88%E5%8F%A4%E3%81%9A%E3%81%971.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "農林水産省",
+        "license": "CC BY 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:%E9%A0%88%E5%8F%A4%E3%81%9A%E3%81%971.jpg",
+        "width": 1706,
+        "height": 960
+      }
+    ],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/45_6_saga.html",
@@ -752,7 +779,7 @@
         "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-29"
+    "updated_at": "2026-11-06"
   },
   {
     "id": "saga-maff-45_7_saga",
@@ -840,7 +867,16 @@
     },
     "source_type": "kyodo_ryori",
     "kana_source": "maff",
-    "images": [],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e4/%E3%81%8C%E3%82%81%E7%85%AE%EF%BC%88%E7%AD%91%E5%89%8D%E7%85%AE%EF%BC%89P1010424.jpg/960px-%E3%81%8C%E3%82%81%E7%85%AE%EF%BC%88%E7%AD%91%E5%89%8D%E7%85%AE%EF%BC%89P1010424.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "南無観自在",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:%E3%81%8C%E3%82%81%E7%85%AE%EF%BC%88%E7%AD%91%E5%89%8D%E7%85%AE%EF%BC%89P1010424.jpg",
+        "width": 1280,
+        "height": 960
+      }
+    ],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/45_9_saga.html",
@@ -851,6 +887,6 @@
         "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-29"
+    "updated_at": "2026-11-06"
   }
 ]

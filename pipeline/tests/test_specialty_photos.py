@@ -75,3 +75,15 @@ def test_judge_skips_unknown_bytes(monkeypatch):
     client = FakeClient(0)
     sp.judge(client, {"name": {"ja": "x"}, "category": "kyodo"}, "沖縄県", [_file("a.jpg")])
     assert client.images == 0
+
+
+def test_as_thumb_uses_standard_width():
+    img = {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/9/9d/Okoshimono.jpg?utm=x",
+        "width": 600,
+    }
+    got = sp.as_thumb(img)["url"]
+    assert (
+        got
+        == "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9d/Okoshimono.jpg/500px-Okoshimono.jpg"
+    )

@@ -905,7 +905,16 @@
     },
     "source_type": "kyodo_ryori",
     "kana_source": "maff",
-    "images": [],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0c/AesculusRice_cake_in_Misasatown_Tottoripref.JPG/500px-AesculusRice_cake_in_Misasatown_Tottoripref.JPG",
+        "author": "Mti",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:AesculusRice_cake_in_Misasatown_Tottoripref.JPG",
+        "width": 672,
+        "height": 652
+      }
+    ],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/tochi_mochi_tottori.html",
@@ -916,7 +925,7 @@
         "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-29"
+    "updated_at": "2026-11-06"
   },
   {
     "id": "tottori-maff-wakasa_no_oyaki_tottori",

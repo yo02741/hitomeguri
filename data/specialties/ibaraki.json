@@ -297,7 +297,16 @@
     },
     "source_type": "kyodo_ryori",
     "kana_source": "maff",
-    "images": [],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b3/Hoshi-imo_001.jpg/960px-Hoshi-imo_001.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Ocdp",
+        "license": "CC0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Hoshi-imo_001.jpg",
+        "width": 3544,
+        "height": 2658
+      }
+    ],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/hoshiimo_ibaraki.html",
@@ -308,7 +317,7 @@
         "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-29"
+    "updated_at": "2026-11-06"
   },
   {
     "id": "ibaraki-maff-imogaranoitameniimogaranogomokuni_ibaraki",
@@ -491,7 +500,16 @@
       "fetched_at": "2026-09-29"
     },
     "source_type": "kyodo_ryori",
-    "images": [],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7c/Mitsume-no-Botamochi%2CKatori-city%2CJapan.JPG/960px-Mitsume-no-Botamochi%2CKatori-city%2CJapan.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "katorisi",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Mitsume-no-Botamochi,Katori-city,Japan.JPG",
+        "width": 3872,
+        "height": 2592
+      }
+    ],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/mitsumenobotamochi_ibaraki.html",
@@ -502,7 +520,7 @@
         "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-29"
+    "updated_at": "2026-11-06"
   },
   {
     "id": "ibaraki-maff-niai_ibaraki",
@@ -750,7 +768,16 @@
       "fetched_at": "2026-09-29"
     },
     "source_type": "kyodo_ryori",
-    "images": [],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d1/%E3%81%97%E3%82%82%E3%81%A4%E3%81%8B%E3%82%8C.jpg/500px-%E3%81%97%E3%82%82%E3%81%A4%E3%81%8B%E3%82%8C.jpg",
+        "author": "あきらぱいせん",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:%E3%81%97%E3%82%82%E3%81%A4%E3%81%8B%E3%82%8C.jpg",
+        "width": 750,
+        "height": 814
+      }
+    ],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/shimotukare_ibaraki.html",
@@ -761,7 +788,7 @@
         "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-29"
+    "updated_at": "2026-11-06"
   },
   {
     "id": "ibaraki-maff-sudarebunogomazuae_ibaraki",

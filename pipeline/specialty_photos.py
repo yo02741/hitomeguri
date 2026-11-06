@@ -25,6 +25,7 @@ from pipeline.http import get_bytes, get_json
 from pipeline.major import log
 from pipeline.paths import DATA, SPECIALTIES_DIR
 from pipeline.season_photos import free_license, to_image
+from pipeline.sources.commons import thumb_url
 
 API = "https://commons.wikimedia.org/w/api.php"
 MODEL = "claude-opus-5-5"
@@ -167,6 +168,11 @@ def judge(
     return choice, got["reason"], response.usage
 
 
+def as_thumb(img: dict[str, Any]) -> dict[str, Any]:
+    """原圖比縮圖寬度小時 API 給原圖網址（upload.wikimedia.org 常被限流），改成標準寬度的縮圖網址"""
+    return {**img, "url": thumb_url(img["url"], img.get("width") or 0, 960)}
+
+
 def seed_specialty_photos(prefs: list[str], limit: int | None = None) -> str:
     import anthropic
 
@@ -205,7 +211,7 @@ def seed_specialty_photos(prefs: list[str], limit: int | None = None) -> str:
             rejected.append(f"- {label}：{len(cands)} 張都不選（{reason}）")
         else:
             f = cands[choice]
-            it["images"] = [to_image(f)]
+            it["images"] = [as_thumb(to_image(f))]
             it["updated_at"] = today
             picked.append(f"- {label}：{f['title']}（{reason}）")
         if n % 20 == 0:
