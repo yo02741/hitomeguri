@@ -14,6 +14,7 @@ import datetime as dt
 import hashlib
 import json
 import re
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from typing import Any
 
 from pipeline.major import log
@@ -22,6 +23,7 @@ from pipeline.paths import DATA, FESTIVALS_DIR, SPECIALTIES_DIR, SPOTS_DIR
 TRANSLATIONS_JSON = DATA / "translations" / "summary_zh.json"
 MODEL = "claude-opus-5-5"
 BATCH = 20
+WORKERS = 4  # 同時送出的批數（整批約 190 批，一批一批跑會超過 workflow 的時限）
 
 SYSTEM = """你是日本旅遊資料的譯者，把英文簡介翻成台灣慣用的繁體中文。
 
@@ -31,6 +33,7 @@ SYSTEM = """你是日本旅遊資料的譯者，把英文簡介翻成台灣慣�
 - 每筆附有日文名稱（name_ja）。原文用羅馬拼音寫這個名稱時（例：Zunda mochi），
   譯文直接用日文名稱（ずんだ餅）。
   其他日本的地名、料理名、祭典名，有漢字寫法的用漢字（Kesennuma → 氣仙沼），只有假名的保留假名。
+  不確定漢字寫法的羅馬拼音照讀音寫成假名（Himokawa → ひもかわ），不要換成別的名稱或舊稱。
 - 度量、年份、人名照原文。原文不通順或有錯字時，照意思翻，不要猜原文沒寫的事。
 - 回傳每一筆的 id 與譯文 zh，id 照原樣。"""
 
@@ -125,20 +128,24 @@ def translate_summaries(limit: int | None = None) -> str:
     client = anthropic.Anthropic()
     tokens_in = tokens_out = 0
     done = 0
-    for i in range(0, len(todo), BATCH):
-        batch = todo[i : i + BATCH]
-        got, usage = _translate_batch(client, batch)
-        tokens_in += usage.input_tokens
-        tokens_out += usage.output_tokens
-        for k, v in batch:
-            if k in got:
-                cache[k] = {"en": v["en"], "zh": got[k], "model": MODEL, "translated_at": today}
-                done += 1
-        write_cache(cache)  # 每批都存，中途失敗不會白跑
-        log(
-            f"  {min(i + BATCH, len(todo))}/{len(todo)}"
-            f"（輸入 {tokens_in}、輸出 {tokens_out} tokens）"
-        )
+    batches = [todo[i : i + BATCH] for i in range(0, len(todo), BATCH)]
+    with ThreadPoolExecutor(max_workers=WORKERS) as pool:
+        futures = {pool.submit(_translate_batch, client, b): b for b in batches}
+        for n, fut in enumerate(as_completed(futures), 1):
+            batch = futures[fut]
+            try:
+                got, usage = fut.result()
+            except Exception as e:  # noqa: BLE001  一批失敗不影響其他批，下次再跑會補翻
+                log(f"  這批失敗（{type(e).__name__}: {e}），略過")
+                continue
+            tokens_in += usage.input_tokens
+            tokens_out += usage.output_tokens
+            for k, v in batch:
+                if k in got:
+                    cache[k] = {"en": v["en"], "zh": got[k], "model": MODEL, "translated_at": today}
+                    done += 1
+            write_cache(cache)  # 每批都存，中途失敗不會白跑
+            log(f"  {n}/{len(batches)} 批（輸入 {tokens_in}、輸出 {tokens_out} tokens）")
 
     flagged = [
         f"- {cache[k]['zh'][:80]}" for k, _ in todo if k in cache and BANNED.search(cache[k]["zh"])
