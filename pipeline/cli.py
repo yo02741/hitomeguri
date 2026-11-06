@@ -219,6 +219,13 @@ def cmd_seed_official(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_seed_specialty_photos(args: argparse.Namespace) -> int:
+    from pipeline.specialty_photos import seed_specialty_photos
+
+    _emit(seed_specialty_photos(args.prefectures, args.limit), args.report)
+    return 0
+
+
 def cmd_translate_summaries(args: argparse.Namespace) -> int:
     from pipeline.translate import translate_summaries
 
@@ -513,6 +520,15 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("--limit", type=int, help="只翻前 N 筆（先小量驗證）")
     p.add_argument("--report")
     p.set_defaults(func=cmd_translate_summaries)
+
+    p = sub.add_parser(
+        "seed-specialty-photos",
+        help="地區特色的照片：Commons 搜尋＋Claude 看圖確認 → data/specialties/",
+    )
+    p.add_argument("prefectures", nargs="*", help="省略時處理全部縣")
+    p.add_argument("--limit", type=int, help="只處理 N 項（先小量驗證）")
+    p.add_argument("--report")
+    p.set_defaults(func=cmd_seed_specialty_photos)
 
     p = sub.add_parser("seed-festivals", help="祭典：日文維基「{縣}の祭り」→ data/festivals/")
     p.add_argument("prefectures", nargs="*", help="省略時處理全部縣")
