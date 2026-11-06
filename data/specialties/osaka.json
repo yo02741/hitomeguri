@@ -345,7 +345,16 @@
       "fetched_at": "2026-09-29"
     },
     "source_type": "kyodo_ryori",
-    "images": [],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a0/Kitsune_udon_by_jetalone_in_Ome%2C_Tokyo.jpg/960px-Kitsune_udon_by_jetalone_in_Ome%2C_Tokyo.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "jetalone from Udon, soba, donburi restaurant Shichibe in Ome, Tokyo",
+        "license": "CC BY 2.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Kitsune_udon_by_jetalone_in_Ome,_Tokyo.jpg",
+        "width": 1280,
+        "height": 960
+      }
+    ],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/39_17_osaka.html",
@@ -356,7 +365,7 @@
         "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-29"
+    "updated_at": "2026-11-06"
   },
   {
     "id": "osaka-maff-39_18_osaka",

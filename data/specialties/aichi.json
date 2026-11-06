@@ -424,7 +424,16 @@
       "fetched_at": "2026-09-29"
     },
     "source_type": "wikipedia",
-    "images": [],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e0/Italian_spaghetti%2C_at_Kissa_Yuki%2C_in_Nagoya%2C_Aichi_%282013.10.30%29_2.jpg/960px-Italian_spaghetti%2C_at_Kissa_Yuki%2C_in_Nagoya%2C_Aichi_%282013.10.30%29_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Lombroso",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Italian_spaghetti,_at_Kissa_Yuki,_in_Nagoya,_Aichi_(2013.10.30)_2.jpg",
+        "width": 3264,
+        "height": 2448
+      }
+    ],
     "sources": [
       {
         "url": "https://www.wikidata.org/wiki/Q11286686",
@@ -435,7 +444,7 @@
         "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-29"
+    "updated_at": "2026-11-06"
   },
   {
     "id": "aichi-Q11287632",
