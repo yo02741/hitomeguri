@@ -1,5 +1,26 @@
 [
   {
+    "id": "jma-ichou-2026-帯広",
+    "kind": "seasonal",
+    "category": "autumn_leaves",
+    "brand": "気象庁",
+    "title": {
+      "ja": "帯広　いちょう黄葉",
+      "zh_tw": "帯広 銀杏轉黃"
+    },
+    "summary_zh": "帯広的氣象台 11月5日 觀測到銀杏轉黃，比平年晚 8 天。",
+    "scope": "regional",
+    "prefectures": [
+      "hokkaido"
+    ],
+    "valid_from": "2026-11-05",
+    "valid_to": "2026-11-19",
+    "relevance": 0.0,
+    "source_url": "https://www.data.jma.go.jp/sakura/data/phn_012.html",
+    "source_label": "出典：気象庁ホームページ（生物季節観測）を加工して作成",
+    "updated_at": "2026-11-06T16:20:29+00:00"
+  },
+  {
     "id": "jma-ichou-2026-盛岡",
     "kind": "seasonal",
     "category": "autumn_leaves",
