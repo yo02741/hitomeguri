@@ -481,7 +481,16 @@
     },
     "source_type": "kyodo_ryori",
     "kana_source": "maff",
-    "images": [],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f6/Inaka-zushi.jpg/960px-Inaka-zushi.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Yaseminkurr",
+        "license": "CC BY 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Inaka-zushi.jpg",
+        "width": 2696,
+        "height": 2022
+      }
+    ],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/inakazushi_kochi.html",
@@ -492,7 +501,7 @@
         "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-29"
+    "updated_at": "2026-11-06"
   },
   {
     "id": "kochi-maff-itadorinoaburaitame_kochi",
@@ -578,7 +587,16 @@
       "fetched_at": "2026-09-29"
     },
     "source_type": "kyodo_ryori",
-    "images": [],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c6/KatsuoTataki.jpg/960px-KatsuoTataki.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "ayustety from Tokyo, JAPAN",
+        "license": "CC BY-SA 2.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:KatsuoTataki.jpg",
+        "width": 2272,
+        "height": 1704
+      }
+    ],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/katuonotataki_kochi.html",
@@ -589,7 +607,7 @@
         "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-29"
+    "updated_at": "2026-11-06"
   },
   {
     "id": "kochi-maff-kibinagonohokaburi_kochi",

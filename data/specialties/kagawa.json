@@ -132,7 +132,16 @@
     },
     "source_type": "kyodo_ryori",
     "kana_source": "maff",
-    "images": [],
+    "images": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/f/f6/%E9%A6%99%E5%B7%9D%E7%9C%8C%E3%81%AE%E6%AD%A3%E6%9C%88%E6%96%99%E7%90%86%E3%81%A7%E3%81%82%E3%82%8B%E9%A4%A1%E9%A4%85%E9%9B%91%E7%85%AE%E3%81%AE%E4%B8%AD%E3%81%AE%E9%A4%A1%E9%A4%85%EF%BC%88An-mochi_in_zoni_%28rice_cake_with_red_bean_paste%29%2C_a_New_Year%27s_dish_in_Kagawa_Prefecture%EF%BC%89.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+        "author": "Xanthippespert",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:%E9%A6%99%E5%B7%9D%E7%9C%8C%E3%81%AE%E6%AD%A3%E6%9C%88%E6%96%99%E7%90%86%E3%81%A7%E3%81%82%E3%82%8B%E9%A4%A1%E9%A4%85%E9%9B%91%E7%85%AE%E3%81%AE%E4%B8%AD%E3%81%AE%E9%A4%A1%E9%A4%85%EF%BC%88An-mochi_in_zoni_(rice_cake_with_red_bean_paste),_a_New_Year%27s_dish_in_Kagawa_Prefecture%EF%BC%89.jpg",
+        "width": 720,
+        "height": 960
+      }
+    ],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/anmochi_zouni_kagawa.html",
@@ -143,7 +152,7 @@
         "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-29"
+    "updated_at": "2026-11-06"
   },
   {
     "id": "kagawa-maff-bara_zushi_kagawa",
@@ -489,7 +498,16 @@
       "fetched_at": "2026-09-29"
     },
     "source_type": "kyodo_ryori",
-    "images": [],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8e/Manba-no-Kenchan_%28Regional_cuisine_in_Kagawa_prefecture%29.jpg/960px-Manba-no-Kenchan_%28Regional_cuisine_in_Kagawa_prefecture%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "聖石大戦ぶぅぶぅ",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Manba-no-Kenchan_(Regional_cuisine_in_Kagawa_prefecture).jpg",
+        "width": 1600,
+        "height": 1200
+      }
+    ],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/manbano_kenchan_kagawa.html",
@@ -500,7 +518,7 @@
         "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-29"
+    "updated_at": "2026-11-06"
   },
   {
     "id": "kagawa-maff-mossou_meshi_kagawa",
@@ -748,7 +766,16 @@
     },
     "source_type": "kyodo_ryori",
     "kana_source": "maff",
-    "images": [],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a0/Taisoumen3935.JPG/960px-Taisoumen3935.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "ja:User:Nnn",
+        "license": "CC BY-SA 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Taisoumen3935.JPG",
+        "width": 2848,
+        "height": 2136
+      }
+    ],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/tai_soumen_kagawa.html",
@@ -759,7 +786,7 @@
         "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-29"
+    "updated_at": "2026-11-06"
   },
   {
     "id": "kagawa-maff-takuan_no_kinpira_kagawa",

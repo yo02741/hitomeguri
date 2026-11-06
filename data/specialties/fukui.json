@@ -572,7 +572,16 @@
       "fetched_at": "2026-09-29"
     },
     "source_type": "kyodo_ryori",
-    "images": [],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0b/Hisami_Heshiko_Set_Meal_ac_%282%29.jpg/960px-Hisami_Heshiko_Set_Meal_ac_%282%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Asturio Cantabrio",
+        "license": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Hisami_Heshiko_Set_Meal_ac_(2).jpg",
+        "width": 1256,
+        "height": 838
+      }
+    ],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/heshiko_fukui.html",
@@ -583,7 +592,7 @@
         "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-29"
+    "updated_at": "2026-11-06"
   },
   {
     "id": "fukui-maff-honkosan_fukui",
@@ -669,7 +678,16 @@
     },
     "source_type": "kyodo_ryori",
     "kana_source": "maff",
-    "images": [],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/00/Kashiwa-mochi_001.jpg/960px-Kashiwa-mochi_001.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Ocdp",
+        "license": "CC0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Kashiwa-mochi_001.jpg",
+        "width": 3797,
+        "height": 2848
+      }
+    ],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/kashiwa_mochi_fukui.html",
@@ -680,7 +698,7 @@
         "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-29"
+    "updated_at": "2026-11-06"
   },
   {
     "id": "fukui-maff-kobumaki_fukui",
@@ -829,7 +847,16 @@
       "fetched_at": "2026-09-29"
     },
     "source_type": "kyodo_ryori",
-    "images": [],
+    "images": [
+      {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e6/%E8%B6%8A%E5%89%8D%E3%81%8A%E3%82%8D%E3%81%97%E3%81%9D%E3%81%B0%EF%BC%88%E3%81%82%E3%81%BF%E3%81%A0%E3%81%9D%E3%81%B0%E7%A6%8F%E3%81%AE%E4%BA%95%EF%BC%8920230802-P1029516.jpg/960px-%E8%B6%8A%E5%89%8D%E3%81%8A%E3%82%8D%E3%81%97%E3%81%9D%E3%81%B0%EF%BC%88%E3%81%82%E3%81%BF%E3%81%A0%E3%81%9D%E3%81%B0%E7%A6%8F%E3%81%AE%E4%BA%95%EF%BC%8920230802-P1029516.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "くろふね",
+        "license": "CC BY 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:%E8%B6%8A%E5%89%8D%E3%81%8A%E3%82%8D%E3%81%97%E3%81%9D%E3%81%B0%EF%BC%88%E3%81%82%E3%81%BF%E3%81%A0%E3%81%9D%E3%81%B0%E7%A6%8F%E3%81%AE%E4%BA%95%EF%BC%8920230802-P1029516.jpg",
+        "width": 1600,
+        "height": 1200
+      }
+    ],
     "sources": [
       {
         "url": "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/oroshi_soba_fukui.html",
@@ -840,7 +867,7 @@
         "fetched_at": "2026-09-29"
       }
     ],
-    "updated_at": "2026-09-29"
+    "updated_at": "2026-11-06"
   },
   {
     "id": "fukui-maff-sabanuta_fukui",
