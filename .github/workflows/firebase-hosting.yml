@@ -72,6 +72,9 @@ jobs:
           firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
           projectId: ${{ steps.check.outputs.project }}
           channelId: live
+          # 15.34.1 起部署前會查 serviceusage.services.get，服務帳戶沒有這個權限就 403（2026-10-23 起失敗）。
+          # 固定在最後成功的版本；在 GCP IAM 給服務帳戶「Service Usage Consumer」角色後可改回 latest。
+          firebaseToolsVersion: "15.34.0"
       - name: 摘要
         if: steps.check.outputs.ready == 'true'
         run: echo "部署到 https://${{ steps.check.outputs.project }}.web.app/" >> "$GITHUB_STEP_SUMMARY"
