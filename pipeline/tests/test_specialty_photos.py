@@ -61,3 +61,17 @@ def test_judge_sends_images_and_bounds_choice(monkeypatch):
     assert (choice, client.images, usage.input_tokens) == (1, 2, 100)
     assert sp.judge(FakeClient(5), item, "沖縄県", cands)[0] == -1
     assert sp.judge(FakeClient(-1), item, "沖縄県", cands)[0] == -1
+
+
+def test_media_type_from_bytes():
+    assert sp.media_type(b"\xff\xd8\xff\xe0rest") == "image/jpeg"
+    assert sp.media_type(b"\x89PNG\r\n") == "image/png"
+    assert sp.media_type(b"RIFF\x00\x00\x00\x00WEBPVP8") == "image/webp"
+    assert sp.media_type(b"<html>") is None
+
+
+def test_judge_skips_unknown_bytes(monkeypatch):
+    monkeypatch.setattr(sp, "get_bytes", lambda url, min_interval=0.5: b"<html>")
+    client = FakeClient(0)
+    sp.judge(client, {"name": {"ja": "x"}, "category": "kyodo"}, "沖縄県", [_file("a.jpg")])
+    assert client.images == 0

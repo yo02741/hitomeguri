@@ -108,8 +108,17 @@ def candidates(item: dict[str, Any]) -> list[dict[str, Any]]:
     return out
 
 
-def _media_type(url: str) -> str:
-    return "image/png" if url.lower().endswith(".png") else "image/jpeg"
+def media_type(data: bytes) -> str | None:
+    """看檔案開頭判斷格式（Commons 的縮圖副檔名不一定對：.jpg 的縮圖可能是 PNG）"""
+    if data.startswith(b"\xff\xd8"):
+        return "image/jpeg"
+    if data.startswith(b"\x89PNG"):
+        return "image/png"
+    if data.startswith((b"GIF87a", b"GIF89a")):
+        return "image/gif"
+    if data[:4] == b"RIFF" and data[8:12] == b"WEBP":
+        return "image/webp"
+    return None
 
 
 def judge(
@@ -127,7 +136,8 @@ def judge(
     for i, f in enumerate(cands):
         url = f.get("thumburl") or f["url"]
         data = get_bytes(url, min_interval=0.5)
-        if not data:
+        kind = media_type(data) if data else None
+        if not data or not kind:
             continue
         content.append({"type": "text", "text": f"候選 {i}：{f['title']}"})
         content.append(
@@ -135,7 +145,7 @@ def judge(
                 "type": "image",
                 "source": {
                     "type": "base64",
-                    "media_type": _media_type(url),
+                    "media_type": kind,
                     "data": base64.b64encode(data).decode(),
                 },
             }
@@ -177,15 +187,20 @@ def seed_specialty_photos(prefs: list[str], limit: int | None = None) -> str:
     picked: list[str] = []
     rejected: list[str] = []
     no_cand = 0
+    failed: list[str] = []
     for n, (pref, it) in enumerate(todo, 1):
         cands = candidates(it)
         if not cands:
             no_cand += 1
             continue
-        choice, reason, usage = judge(client, it, names.get(pref, pref), cands)
+        label = f"{names.get(pref, pref)} {it['name']['ja']}"
+        try:
+            choice, reason, usage = judge(client, it, names.get(pref, pref), cands)
+        except anthropic.APIStatusError as e:  # 一項出錯（例：圖片格式不收）略過，不中斷整批
+            failed.append(f"- {label}：{e.status_code} {str(e)[:120]}")
+            continue
         tokens_in += usage.input_tokens
         tokens_out += usage.output_tokens
-        label = f"{names.get(pref, pref)} {it['name']['ja']}"
         if choice < 0:
             rejected.append(f"- {label}：{len(cands)} 張都不選（{reason}）")
         else:
@@ -202,7 +217,7 @@ def seed_specialty_photos(prefs: list[str], limit: int | None = None) -> str:
         "## 地區特色的照片（Commons＋看圖確認）",
         "",
         f"- 沒有照片的 {len(todo)} 項：選到 {len(picked)}、候選都不合適 {len(rejected)}、"
-        f"Commons 找不到候選 {no_cand}",
+        f"Commons 找不到候選 {no_cand}、API 出錯略過 {len(failed)}",
         f"- token：輸入 {tokens_in}、輸出 {tokens_out}（{MODEL}，effort low）",
         "",
         "選到的：",
@@ -210,6 +225,8 @@ def seed_specialty_photos(prefs: list[str], limit: int | None = None) -> str:
     ]
     if rejected:
         lines += ["", "都不選的：", *rejected[:100]]
+    if failed:
+        lines += ["", "API 出錯略過的（再跑一次會重試）：", *failed[:50]]
     return "\n".join(lines) + "\n"
 
 
