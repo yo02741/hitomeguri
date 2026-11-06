@@ -429,7 +429,7 @@ function sourceLabel(url: string): string {
                     class="-mx-1.5 rounded-control px-1.5 py-0.5 text-left text-ink hover:bg-surface active:bg-surface"
                     @click="detail = s"
                   >
-                    <SummaryText v-if="s.summary" :summary="s.summary" :clamp="narrow ? 3 : 4" />
+                    <SummaryText v-if="s.summary" :summary="s.summary" :clamp="narrow ? 3 : 4" more />
                     <p v-else class="text-body-sm leading-[1.75] max-sm:line-clamp-3 sm:line-clamp-4">{{ s.summary_zh }}</p>
                   </button>
                 </div>

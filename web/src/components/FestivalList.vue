@@ -135,7 +135,7 @@ function onMap(e: MouseEvent, f: Festival) {
               class="-mx-1.5 rounded-control px-1.5 py-0.5 text-left text-ink hover:bg-surface active:bg-surface"
               @click="detail = f"
             >
-              <SummaryText :summary="f.summary" :clamp="3" />
+              <SummaryText :summary="f.summary" :clamp="3" more />
             </button>
             <div class="mt-auto flex flex-wrap gap-x-3 text-caption text-sub pointer-coarse:-my-3.5 pointer-coarse:items-center">
               <RouterLink v-if="f.location" v-slot="{ href }" :to="mapLink(f)" custom>

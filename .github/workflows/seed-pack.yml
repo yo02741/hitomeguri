@@ -14,9 +14,9 @@ on:
         required: true
         default: seed-pokefuta
         type: choice
-        options: [seed-pokefuta, seed-pokecen, seed-castles, seed-shinise, seed-chara, seed-specialties, seed-festivals, seed-seasons, seed-rail, seed-official, translate-summaries, prune-spots, seed-season-photos, photo-stats, seed-photos, seed-photo-sizes, photo-review, photo-review-rest, photo-review-sharp, photo-check, ukiyoe-stats, seed-ukiyoe, seed-municipalities, assign-municipalities, seed-airports, seed-taiwan-routes, dump-airports, dump-rail-osm]
+        options: [seed-pokefuta, seed-pokecen, seed-castles, seed-shinise, seed-chara, seed-specialties, seed-festivals, seed-seasons, seed-rail, seed-official, translate-summaries, seed-specialty-photos, prune-spots, seed-season-photos, photo-stats, seed-photos, seed-photo-sizes, photo-review, photo-review-rest, photo-review-sharp, photo-check, ukiyoe-stats, seed-ukiyoe, seed-municipalities, assign-municipalities, seed-airports, seed-taiwan-routes, dump-airports, dump-rail-osm]
       prefectures:
-        description: "都道府縣 slug，空白分隔；空白表示全部（seed-pokecen 不用）。translate-summaries：填數字表示只翻前 N 筆"
+        description: "都道府縣 slug，空白分隔；空白表示全部（seed-pokecen 不用）。translate-summaries、seed-specialty-photos：填數字表示只做 N 筆"
         required: false
         default: ""
       url:
@@ -48,17 +48,18 @@ jobs:
         env:
           PREFS: ${{ inputs.prefectures }}
           AIRPORTS_PDF_URL: ${{ inputs.url }}
-          # 只有 translate-summaries 用得到（Claude API 翻譯英文簡介）
-          ANTHROPIC_API_KEY: ${{ inputs.command == 'translate-summaries' && secrets.ANTHROPIC_API_KEY || '' }}
+          # 只有 translate-summaries（翻譯簡介）與 seed-specialty-photos（看圖確認）用得到 Claude API
+          ANTHROPIC_API_KEY: ${{ (inputs.command == 'translate-summaries' || inputs.command == 'seed-specialty-photos') && secrets.ANTHROPIC_API_KEY || '' }}
         run: |
           case "${{ inputs.command }}" in
             seed-pokecen|seed-seasons|seed-castles|seed-shinise|seed-chara|seed-ukiyoe|seed-airports|seed-taiwan-routes|dump-airports) args="" ;;
-            translate-summaries)
+            translate-summaries|seed-specialty-photos)
               if [ -z "$ANTHROPIC_API_KEY" ]; then
                 echo "::error::請在 Settings → Secrets and variables → Actions 新增 ANTHROPIC_API_KEY"
                 exit 1
               fi
-              args="${PREFS:+--limit $PREFS}" ;;
+              # 填數字：只做 N 筆；填縣 slug：只做那幾縣（translate-summaries 只收數字）
+              if [[ "$PREFS" =~ ^[0-9]+$ ]]; then args="--limit $PREFS"; else args="$PREFS"; fi ;;
             prune-spots) args="$PREFS --wikidata" ;;  # 重新查 Wikidata 類型，排除非景點
             seed-season-photos) args="$PREFS --refresh" ;;  # 選圖規則改了就全部重選
             *) args="$PREFS" ;;
