@@ -19,6 +19,7 @@ import SeasonCalendar from '../components/SeasonCalendar.vue'
 import WebSearchLink from '../components/WebSearchLink.vue'
 import SummaryText from '../components/SummaryText.vue'
 import SummaryDialog from '../components/SummaryDialog.vue'
+import PatternFill from '../components/PatternFill.vue'
 import TimedList from '../components/TimedList.vue'
 import ChainSearch from '../components/ChainSearch.vue'
 import { type NavItem, useScrollSpy } from '../composables/scrollSpy'
@@ -397,8 +398,8 @@ function sourceLabel(url: string): string {
                 :key="s.id"
                 class="flex overflow-hidden rounded-card border border-line bg-paper max-sm:gap-3 max-sm:p-3 sm:flex-col"
               >
-                <!-- 沒有照片就不留空白圖框 -->
-                <div v-if="s.images?.length" class="shrink-0 bg-placeholder max-sm:size-24 max-sm:overflow-hidden max-sm:rounded-control sm:aspect-[16/10]">
+                <!-- 照片框固定比例（手機 96px 方圖，sm 起 16:10）；沒有照片放地區紋樣，卡片高度一致 -->
+                <div class="relative shrink-0 overflow-hidden bg-placeholder max-sm:size-24 max-sm:rounded-control sm:aspect-[16/10]">
                   <img
                     v-if="image(s)"
                     data-photo
@@ -406,9 +407,10 @@ function sourceLabel(url: string): string {
                     :alt="s.name.ja"
                     loading="lazy"
                     referrerpolicy="no-referrer"
-                    class="size-full object-cover"
+                    class="absolute inset-0 size-full object-cover"
                     @error="failed = new Set(failed).add(image(s)!.url)"
                   />
+                  <PatternFill v-else :pref="pref" />
                 </div>
                 <div class="flex min-w-0 flex-1 flex-col gap-2 max-sm:gap-1.5 sm:px-4 sm:pt-3 sm:pb-4">
                   <div class="flex items-start gap-2">

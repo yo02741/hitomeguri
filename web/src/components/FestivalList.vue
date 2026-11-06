@@ -8,6 +8,7 @@ import CollapseChevron from './CollapseChevron.vue'
 import WebSearchLink from './WebSearchLink.vue'
 import SummaryText from './SummaryText.vue'
 import SummaryDialog from './SummaryDialog.vue'
+import PatternFill from './PatternFill.vue'
 
 // 深度探索「祭典」：依舉行月份分組（跨月的放在第一個月），1 到 12 月，組內依日文維基瀏覽量。
 // 月份列可篩選；沒有月份的放最後「月份未載」。
@@ -103,7 +104,8 @@ function onMap(e: MouseEvent, f: Festival) {
           :key="f.id"
           class="flex scroll-mt-24 gap-3 rounded-card border border-line bg-paper p-3 lg:scroll-mt-8"
         >
-          <div v-if="f.images?.length" class="size-24 shrink-0 overflow-hidden rounded-control bg-placeholder">
+          <!-- 照片框固定 96px；沒有照片放地區紋樣 -->
+          <div class="relative size-24 shrink-0 overflow-hidden rounded-control bg-placeholder">
             <img
               v-if="image(f)"
               data-photo
@@ -111,9 +113,10 @@ function onMap(e: MouseEvent, f: Festival) {
               :alt="f.name.ja"
               loading="lazy"
               referrerpolicy="no-referrer"
-              class="size-full object-cover"
+              class="absolute inset-0 size-full object-cover"
               @error="markFailed(f)"
             />
+            <PatternFill v-else :pref="f.prefecture" />
           </div>
           <div class="flex min-w-0 flex-1 flex-col gap-1.5">
             <div class="flex items-start gap-2">
