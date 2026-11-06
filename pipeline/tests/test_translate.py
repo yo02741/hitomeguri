@@ -4,12 +4,18 @@ from types import SimpleNamespace
 from pipeline import build_bundles, translate
 
 
-def test_with_translation_only_for_english():
+def test_with_translation_for_english_and_japanese():
     en = {"summary": {"text": "Zunda mochi is eaten at New Year.", "lang": "en"}}
     ja = {"summary": {"text": "ずんだ餅は正月に食べる。", "lang": "ja"}}
-    zh = {translate.key_of(en["summary"]["text"]): "ずんだ餅在正月食用。"}
+    cn = {"summary": {"text": "毛豆麻糬。", "lang": "zh"}}
+    zh = {
+        translate.key_of(en["summary"]["text"]): "ずんだ餅在正月食用。",
+        translate.key_of(ja["summary"]["text"]): "ずんだ餅在正月吃。",
+        translate.key_of(cn["summary"]["text"]): "不該用到",
+    }
     assert build_bundles.with_translation(en, zh)["summary"]["text_zh"] == "ずんだ餅在正月食用。"
-    assert "text_zh" not in build_bundles.with_translation(ja, zh)["summary"]
+    assert build_bundles.with_translation(ja, zh)["summary"]["text_zh"] == "ずんだ餅在正月吃。"
+    assert "text_zh" not in build_bundles.with_translation(cn, zh)["summary"]
     other = {"summary": {"text": "Something else.", "lang": "en"}}
     assert "text_zh" not in build_bundles.with_translation(other, zh)["summary"]
 
@@ -31,7 +37,10 @@ class FakeClient:
 
 
 def test_translate_batch_keeps_only_requested_ids():
-    batch = [("k1", {"en": "A.", "name_ja": "甲"}), ("k2", {"en": "B.", "name_ja": "乙"})]
+    batch = [
+        ("k1", {"lang": "en", "text": "A.", "name_ja": "甲"}),
+        ("k2", {"lang": "ja", "text": "乙です。", "name_ja": "乙"}),
+    ]
     got, usage = translate._translate_batch(FakeClient("譯文"), batch)
     assert got == {"k1": "譯文", "k2": "譯文"} and usage.output_tokens == 5
 

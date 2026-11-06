@@ -507,7 +507,9 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("--report")
     p.set_defaults(func=cmd_seed_official)
 
-    p = sub.add_parser("translate-summaries", help="英文簡介翻成繁體中文 → data/translations/")
+    p = sub.add_parser(
+        "translate-summaries", help="英文、日文簡介翻成繁體中文 → data/translations/"
+    )
     p.add_argument("--limit", type=int, help="只翻前 N 筆（先小量驗證）")
     p.add_argument("--report")
     p.set_defaults(func=cmd_translate_summaries)

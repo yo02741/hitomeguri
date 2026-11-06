@@ -56,7 +56,7 @@ from pipeline.paths import (
 
 
 def _translations() -> dict[str, str]:
-    """英文簡介的中文譯文（translate-summaries）：原文雜湊 → 譯文。"""
+    """英文、日文簡介的中文譯文（translate-summaries）：原文雜湊 → 譯文。"""
     from pipeline.translate import TRANSLATIONS_JSON, load_cache
 
     return {k: v["zh"] for k, v in load_cache().items()} if TRANSLATIONS_JSON.exists() else {}
@@ -70,11 +70,11 @@ def _translation_tag() -> bytes:
 
 
 def with_translation(item: dict[str, Any], zh: dict[str, str]) -> dict[str, Any]:
-    """英文簡介附上中文譯文（summary.text_zh），介面英文一行、中文一行。"""
+    """英文、日文簡介附上中文譯文（summary.text_zh）；介面有譯文時放中文，原文收在「原文」。"""
     from pipeline.translate import key_of
 
     s = item.get("summary")
-    if s and s.get("lang") == "en" and (t := zh.get(key_of(s["text"]))):
+    if s and s.get("lang") in ("en", "ja") and (t := zh.get(key_of(s["text"]))):
         s["text_zh"] = t
     return item
 
