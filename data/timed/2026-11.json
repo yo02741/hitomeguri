@@ -1,5 +1,26 @@
 [
   {
+    "id": "jma-ichou-2026-函館",
+    "kind": "seasonal",
+    "category": "autumn_leaves",
+    "brand": "気象庁",
+    "title": {
+      "ja": "函館　いちょう黄葉",
+      "zh_tw": "函館 銀杏轉黃"
+    },
+    "summary_zh": "函館的氣象台 11月6日 觀測到銀杏轉黃，比平年晚 4 天。",
+    "scope": "regional",
+    "prefectures": [
+      "hokkaido"
+    ],
+    "valid_from": "2026-11-06",
+    "valid_to": "2026-11-20",
+    "relevance": 0.0,
+    "source_url": "https://www.data.jma.go.jp/sakura/data/phn_012.html",
+    "source_label": "出典：気象庁ホームページ（生物季節観測）を加工して作成",
+    "updated_at": "2026-11-07T15:12:53+00:00"
+  },
+  {
     "id": "jma-ichou-2026-帯広",
     "kind": "seasonal",
     "category": "autumn_leaves",
@@ -82,5 +103,47 @@
     "source_url": "https://www.data.jma.go.jp/sakura/data/phn_012.html",
     "source_label": "出典：気象庁ホームページ（生物季節観測）を加工して作成",
     "updated_at": "2026-11-05T16:52:48+00:00"
+  },
+  {
+    "id": "jma-kaede-2026-函館",
+    "kind": "seasonal",
+    "category": "autumn_leaves",
+    "brand": "気象庁",
+    "title": {
+      "ja": "函館　かえで紅葉",
+      "zh_tw": "函館 楓葉轉紅"
+    },
+    "summary_zh": "函館的氣象台 11月6日 觀測到楓葉轉紅，比平年晚 4 天。",
+    "scope": "regional",
+    "prefectures": [
+      "hokkaido"
+    ],
+    "valid_from": "2026-11-06",
+    "valid_to": "2026-11-20",
+    "relevance": 0.0,
+    "source_url": "https://www.data.jma.go.jp/sakura/data/phn_014.html",
+    "source_label": "出典：気象庁ホームページ（生物季節観測）を加工して作成",
+    "updated_at": "2026-11-07T15:12:53+00:00"
+  },
+  {
+    "id": "jma-kaede-2026-青森",
+    "kind": "seasonal",
+    "category": "autumn_leaves",
+    "brand": "気象庁",
+    "title": {
+      "ja": "青森　かえで紅葉",
+      "zh_tw": "青森 楓葉轉紅"
+    },
+    "summary_zh": "青森的氣象台 11月6日 觀測到楓葉轉紅，比平年早 7 天。",
+    "scope": "regional",
+    "prefectures": [
+      "aomori"
+    ],
+    "valid_from": "2026-11-06",
+    "valid_to": "2026-11-20",
+    "relevance": 0.0,
+    "source_url": "https://www.data.jma.go.jp/sakura/data/phn_014.html",
+    "source_label": "出典：気象庁ホームページ（生物季節観測）を加工して作成",
+    "updated_at": "2026-11-07T15:12:53+00:00"
   }
 ]
