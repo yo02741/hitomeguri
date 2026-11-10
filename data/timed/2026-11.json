@@ -126,6 +126,27 @@
     "updated_at": "2026-11-07T15:12:53+00:00"
   },
   {
+    "id": "jma-kaede-2026-札幌",
+    "kind": "seasonal",
+    "category": "autumn_leaves",
+    "brand": "気象庁",
+    "title": {
+      "ja": "札幌　かえで紅葉",
+      "zh_tw": "札幌 楓葉轉紅"
+    },
+    "summary_zh": "札幌的氣象台 11月9日 觀測到楓葉轉紅，比平年晚 12 天。",
+    "scope": "regional",
+    "prefectures": [
+      "hokkaido"
+    ],
+    "valid_from": "2026-11-09",
+    "valid_to": "2026-11-23",
+    "relevance": 0.0,
+    "source_url": "https://www.data.jma.go.jp/sakura/data/phn_014.html",
+    "source_label": "出典：気象庁ホームページ（生物季節観測）を加工して作成",
+    "updated_at": "2026-11-10T16:37:25+00:00"
+  },
+  {
     "id": "jma-kaede-2026-青森",
     "kind": "seasonal",
     "category": "autumn_leaves",
