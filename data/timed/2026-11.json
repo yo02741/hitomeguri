@@ -63,6 +63,27 @@
     "updated_at": "2026-11-03T16:37:56+00:00"
   },
   {
+    "id": "jma-ichou-2026-福島",
+    "kind": "seasonal",
+    "category": "autumn_leaves",
+    "brand": "気象庁",
+    "title": {
+      "ja": "福島　いちょう黄葉",
+      "zh_tw": "福島 銀杏轉黃"
+    },
+    "summary_zh": "福島的氣象台 11月10日 觀測到銀杏轉黃，比平年晚 10 天。",
+    "scope": "regional",
+    "prefectures": [
+      "fukushima"
+    ],
+    "valid_from": "2026-11-10",
+    "valid_to": "2026-11-24",
+    "relevance": 0.0,
+    "source_url": "https://www.data.jma.go.jp/sakura/data/phn_012.html",
+    "source_label": "出典：気象庁ホームページ（生物季節観測）を加工して作成",
+    "updated_at": "2026-11-11T16:38:42+00:00"
+  },
+  {
     "id": "jma-ichou-2026-秋田",
     "kind": "seasonal",
     "category": "autumn_leaves",
