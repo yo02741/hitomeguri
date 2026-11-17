@@ -168,6 +168,10 @@ describe('fromHereUrl（從目前位置）', () => {
     expect(q.get('destination')).toBe('a 京都府')
     expect(q.get('travelmode')).toBe('transit')
   })
+  it('寶可夢人孔蓋用座標（名稱只是市町村）', () => {
+    const lid: Stop = { type: 'pack', spot_id: 'pokefuta-1', pref: 'kyoto', name: '京都市', lat: 35.01, lng: 135.76 }
+    expect(new URL(fromHereUrl(lid)).searchParams.get('destination')).toBe('35.01,135.76')
+  })
 })
 
 describe('住的車站（日帰り）', () => {

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, nextTick, onBeforeUnmount, ref, shallowRef, watch } from 'vue'
+import { computed, defineAsyncComponent, nextTick, onBeforeUnmount, ref, shallowRef, watch } from 'vue'
 import { useRouter } from 'vue-router'
 
 import ActionMenu, { type MenuAction } from '../components/ActionMenu.vue'
@@ -18,6 +18,8 @@ import TripAddVisited from '../components/TripAddVisited.vue'
 import BottomDialog from '../components/BottomDialog.vue'
 import DaytripList from '../components/DaytripList.vue'
 import StayPicker from '../components/StayPicker.vue'
+// 停留點的介紹（景點卡片、擴充包卡片）：點了才載入
+const TripSpotInfo = defineAsyncComponent(() => import('../components/TripSpotInfo.vue'))
 import { useCatalogSpots } from '../composables/catalogSpots'
 import { useDaytrip } from '../composables/daytrip'
 import { useDraftField } from '../composables/draftField'
@@ -402,6 +404,7 @@ const dtPanel = computed(() => wide.value && dtDay.value !== null && Boolean(dtS
 // 面板蓋住地圖左側：w-panel 400＋左右各 16
 const DT_INSET = 432
 function openDaytrip(i: number) {
+  infoId.value = null
   dtDay.value = i
   dtSelected.value = null
   dtBand.value = 0
@@ -498,10 +501,20 @@ function fitStops() {
 }
 watch(() => mapSpots.value.map((s) => s.id).sort().join(','), fitStops, { immediate: true })
 
-// 地圖上點選：清單捲到那個停留點並標示
+// 地圖上或清單點選：清單捲到那個停留點並標示，打開它的介紹（桌機在地圖左上，手機從下方出現）
 const focusId = ref<string | null>(null)
+const infoId = ref<string | null>(null)
+const infoStop = computed(() => (trip.value && infoId.value ? allStops(trip.value).find((s) => s.spot_id === infoId.value) : undefined))
+// 介紹中的停留點被移除（自己或共編的人）：關起來
+watch(infoStop, (s) => {
+  if (!s) infoId.value = null
+})
+const infoPanel = computed(() => wide.value && Boolean(infoStop.value) && !dtPanel.value)
 async function focusStop(id: string) {
   focusId.value = id
+  // 桌機的介紹和單日來回的面板都在地圖左上：一次一個
+  if (wide.value) closeDaytrip()
+  infoId.value = id
   await nextTick()
   const el = document.getElementById(`stop-${id}`)
   if (!el) return
@@ -881,12 +894,20 @@ async function del() {
         :bounds="bounds"
         :route="route"
         :selected-id="focusId"
-        :inset-left="dtPanel ? DT_INSET : 0"
+        :inset-left="dtPanel || infoPanel ? DT_INSET : 0"
         :daytrip="dtMap"
         :daytrip-id="dtSelected"
         :shinkansen="dtShinkansen"
         @select="focusStop"
         @place="onPlace"
+      />
+      <TripSpotInfo
+        v-if="infoPanel && infoStop"
+        :id="infoStop.spot_id"
+        :key="infoStop.spot_id"
+        :pref="infoStop.pref"
+        class="absolute top-4 left-4 z-10 max-h-[calc(100%-2rem)] w-panel"
+        @close="infoId = null"
       />
       <section
         v-if="dtPanel && dtDay !== null"
@@ -943,6 +964,7 @@ async function del() {
       @close="stayDay = null"
       @pick="pickStay"
     />
+    <TripSpotInfo v-if="!wide && infoStop" :id="infoStop.spot_id" :key="infoStop.spot_id" :pref="infoStop.pref" sheet @close="infoId = null" />
     <TripAddVisited v-if="addVisitedOpen" :trip="trip" @close="addVisitedOpen = false" @add="addVisited" />
     <ShareImage v-if="recapOpen" title="旅行回顧" :file-name="`ひとめぐり ${trip.name || '行程'}`" :render="renderRecap" @close="recapOpen = false" />
   </div>

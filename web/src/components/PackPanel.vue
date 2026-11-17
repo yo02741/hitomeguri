@@ -4,10 +4,10 @@ import { computed } from 'vue'
 import { packByKey } from '../data/packs'
 import { prefectureFullName, regionOf } from '../data/regions'
 import type { PackItem } from '../services/bundles'
-import VisitedToggle from './VisitedToggle.vue'
+import SpotActions from './SpotActions.vue'
 
 // 擴充包的點（人孔蓋、寶可夢中心、城、老舖…）的卡片。不放圖片（著作權），只連到官方頁面或維基。
-// 城已經是景點的，可以打開景點卡片；「去過」記在景點上（沒有對到景點的記在這個點）。
+// 城已經是景點的，可以打開景點卡片；收藏、去過、清單、行程記在景點上（沒有對到景點的記在這個點）。
 const props = defineProps<{ item: PackItem; pack: string }>()
 const emit = defineEmits<{ close: []; openSpot: [id: string] }>()
 const visitRef = computed(() => ({ id: props.item.s ?? props.item.id, pref: props.item.p, name: props.item.n }))
@@ -113,20 +113,22 @@ const sourceLabel = computed(() => {
     </div>
 
     <!-- 字寬的年代字型放不下一行時，Google Maps 換到下一行撐滿 -->
-    <div class="mt-auto flex flex-wrap items-center gap-2 border-t border-line px-5 pt-3.5 pb-5">
-      <VisitedToggle :spot="visitRef" class="border border-line" />
-      <a
-        :href="item.u"
-        target="_blank"
-        rel="noopener"
-        class="flex h-11 items-center justify-center rounded-control border border-line px-4 text-body-sm font-bold whitespace-nowrap text-ink no-underline hover:bg-surface active:not-disabled:translate-y-px"
-      >{{ sourceLabel }}</a>
-      <a
-        :href="mapsUrl"
-        target="_blank"
-        rel="noopener"
-        class="flex h-11 grow basis-44 items-center justify-center rounded-control bg-region-strong px-4 text-body-sm font-bold whitespace-nowrap text-white no-underline active:translate-y-px"
-      >在 Google Maps 開啟</a>
+    <div data-toast-above class="mt-auto flex flex-col gap-2 border-t border-line px-5 pt-3.5 pb-5">
+      <SpotActions :spot="visitRef" />
+      <div class="flex flex-wrap items-center gap-2">
+        <a
+          :href="item.u"
+          target="_blank"
+          rel="noopener"
+          class="flex h-11 items-center justify-center rounded-control border border-line px-4 text-body-sm font-bold whitespace-nowrap text-ink no-underline hover:bg-surface active:not-disabled:translate-y-px"
+        >{{ sourceLabel }}</a>
+        <a
+          :href="mapsUrl"
+          target="_blank"
+          rel="noopener"
+          class="flex h-11 grow basis-44 items-center justify-center rounded-control bg-region-strong px-4 text-body-sm font-bold whitespace-nowrap text-white no-underline active:translate-y-px"
+        >在 Google Maps 開啟</a>
+      </div>
     </div>
   </section>
 </template>

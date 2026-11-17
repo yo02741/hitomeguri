@@ -1,6 +1,7 @@
 import { defineStore } from 'pinia'
 import { computed, ref, shallowRef, watch } from 'vue'
 
+import { packOfId } from '../data/packs'
 import {
   addStopTo,
   dayCount,
@@ -16,6 +17,7 @@ import {
   tripStatus,
 } from '../services/trip'
 import { ensureSignedIn, firestore, todayIso, waitFor } from '../services/userdb'
+import { useCatalogStore } from './catalog'
 import type { SpotRef } from './marks'
 import { useUserStore } from './user'
 
@@ -63,6 +65,7 @@ function newCode(): string {
 
 export const useTripsStore = defineStore('trips', () => {
   const userStore = useUserStore()
+  const catalog = useCatalogStore()
   const trips = shallowRef<Trip[]>([])
   const loaded = ref(false)
   /** 已經和伺服器對過一次（不是只讀到離線快取）：成就等這個才建 NEW 的基準 */
@@ -249,7 +252,11 @@ export const useTripsStore = defineStore('trips', () => {
   }
 
   function toStop(s: SpotRef): Stop {
-    return { type: 'catalog', spot_id: s.id, pref: s.pref, name: s.name }
+    const pack = packOfId(s.id)
+    if (!pack) return { type: 'catalog', spot_id: s.id, pref: s.pref, name: s.name }
+    // 人孔蓋：名稱是市町村，另存座標（轉乘路線用）
+    const it = s.id.startsWith('pokefuta-') ? catalog.packs[pack]?.find((x) => x.id === s.id) : undefined
+    return { type: 'pack', spot_id: s.id, pref: s.pref, name: s.name, ...(it ? { lat: it.lat, lng: it.lng } : {}) }
   }
 
   /** 加入行程：day 為 null 放「待排」；那天已經有就不重複加（別天可以：機場的來跟回） */

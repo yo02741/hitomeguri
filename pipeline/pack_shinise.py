@@ -36,14 +36,42 @@ KIND_LABEL = {"incense": "香舖", "wagashi": "和菓子", "tea": "茶舖", "tea
 # 創業在這一年以前才算老舖（大正以前，約一百年）
 FOUNDED_MAX = 1926
 TEAHOUSE_PER_PREF = 12
+# 茶屋：OSM 上這幾年內有人編輯或確認過才收（很久沒人動的店常常已經歇業，地圖上還留著）
+TEAHOUSE_FRESH_YEARS = 4
+# 名稱或註記寫著歇業
+LIFECYCLE = ("disused", "was", "abandoned", "demolished", "removed")
+CLOSED_WORDS = re.compile(r"閉店|閉業|廃業|休業|閉館|営業終了|closed", re.I)
 
 # 茶屋超過上限時，資料完整度（讀音、網站、營業時間等）高的優先
 QUALITY_KEYS = ("website", "opening_hours", "name:en", "name:ja-Hira", "name:ja-Latn", "wikidata",
                 "phone", "addr:full", "brand")  # fmt: skip
 
 
+def still_open(el: OsmElement, today: dt.date) -> bool:
+    """茶屋還在營業的跡象：沒有歇業標記，且最近 TEAHOUSE_FRESH_YEARS 年內有人編輯或確認過。
+
+    OSM 的歇業標記：opening_hours=closed／off、end_date、disused:*／was:*／abandoned:*
+    等生命週期前綴，名稱、note、description 寫著閉店、休業。
+    確認日取 check_date、survey:date 與最後編輯時間中最新的。
+    """
+    t = el.tags
+    if t.get("opening_hours", "").strip().lower() in ("closed", "off"):
+        return False
+    if any(k == "end_date" or k.split(":", 1)[0] in LIFECYCLE for k in t):
+        return False
+    if any(CLOSED_WORDS.search(t.get(k, "")) for k in ("name", "note", "description", "fixme")):
+        return False
+    dates = [t.get("check_date", ""), t.get("survey:date", ""), (el.timestamp or "")[:10]]
+    latest = max((d for d in dates if re.match(r"\d{4}-\d{2}", d)), default="")
+    if not latest:
+        return False
+    cutoff = today.replace(year=today.year - TEAHOUSE_FRESH_YEARS, day=1).isoformat()[:7]
+    return latest[:7] >= cutoff
+
+
 def quality(el: OsmElement) -> float:
     return sum(1 for k in QUALITY_KEYS if el.tags.get(k)) + (0.5 if el.tags.get("name:zh") else 0)
+
 
 # 香舖：名稱是香老舗、香舗、香木店，或知名的香舖（「お香」「線香」太寬，會撈到雜貨、化妝品、佛具店）
 # 「松栄堂」這類店名很常見（樂器行、書店也叫松栄堂），不放進來；維基有條目的香舖另外依本店所在地找
@@ -383,7 +411,7 @@ def seed_shinise() -> str:
             # 老舖常標成工藝品店（京都的鳩居堂 craft=handicraft）
             f'["craft"]["name"~"{rx}"]',
         ]
-    elements, failed_prefs = osm.by_prefecture(filters)
+    elements, failed_prefs = osm.by_prefecture(filters, meta=True)
 
     no_place: list[str] = []
     for s in need:
@@ -441,6 +469,8 @@ def seed_shinise() -> str:
         and re.search(TEAHOUSE_NAME, el.tags.get("name", ""))
         and not TEAHOUSE_EXCLUDE.search(osm_name(el.tags) + " " + el.tags.get("cuisine", ""))
     ]
+    stale = [el for el in teahouses if not still_open(el, dt.date.today())]
+    teahouses = [el for el in teahouses if el not in stale]
     by_pref: dict[str, list[osm.OsmElement]] = {}
     for el in teahouses:
         pref = _pref_of(el.lat, el.lng)
@@ -466,7 +496,8 @@ def seed_shinise() -> str:
         "",
         f"共 {len(out)} 家：" + "、".join(f"{KIND_LABEL[k]} {n}" for k, n in counts.items()),
         f"香舖其中 {added_incense} 家來自 OSM（維基沒有條目）。",
-        f"茶屋・甘味處：OSM 符合的 {len(teahouses)} 家，每縣最多 {TEAHOUSE_PER_PREF} 家。",
+        f"茶屋・甘味處：OSM 符合的 {len(teahouses)} 家，每縣最多 {TEAHOUSE_PER_PREF} 家；"
+        f"有歇業標記或 {TEAHOUSE_FRESH_YEARS} 年內沒人編輯、確認而不收 {len(stale)} 家。",
         "",
         "香舖：" + "、".join(_incense_label(r) for r in out if r["kind"] == "incense"),
         "",
