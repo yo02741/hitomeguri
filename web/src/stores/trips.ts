@@ -16,6 +16,7 @@ import {
   TRIP_NAME_MAX,
   tripStatus,
 } from '../services/trip'
+import { type LogEntry, logFields, type LogItem, parseLog } from '../services/tripLog'
 import { ensureSignedIn, firestore, todayIso, waitFor } from '../services/userdb'
 import { useCatalogStore } from './catalog'
 import type { SpotRef } from './marks'
@@ -235,20 +236,52 @@ export const useTripsStore = defineStore('trips', () => {
   /**
    * 修改行程內容：在交易裡讀最新的一份、套用 fn、寫回。共編時對方剛改過也不會被整份蓋掉；
    * fn 回傳 null 表示不用改（例：要移動的景點已被對方移除）。
+   * log：真的改了、而且有兩個以上成員時，寫一筆修改紀錄（services/tripLog.ts）。在交易之後才算，
+   * 可以用 fn 裡算出來的值（例：移到哪一天）；紀錄寫不進去（規則還沒發布）不影響修改本身。
    */
-  function mutate(id: string, fn: (t: Trip) => Partial<TripContent> | null) {
-    return withUser(async () => {
+  function mutate(id: string, fn: (t: Trip) => Partial<TripContent> | null, log?: () => LogEntry | null) {
+    return withUser(async (uid) => {
       const { fs, db } = await firestore()
       const ref = fs.doc(db, 'trips', id)
-      await fs.runTransaction(db, async (tx) => {
+      let shared = false
+      const applied = await fs.runTransaction(db, async (tx) => {
         const snap = await tx.get(ref)
-        if (!snap.exists()) return
+        if (!snap.exists()) return false
         const t = parse(id, snap.data())
         const patch = fn(t)
-        if (!patch) return
+        if (!patch) return false
+        shared = t.members.length > 1
         tx.update(ref, content({ ...t, ...patch }, fs))
+        return true
       })
+      const entry = applied && shared ? log?.() : null
+      if (entry) {
+        fs.addDoc(fs.collection(db, 'trips', id, 'log'), { ...logFields(entry), by: uid, at: fs.serverTimestamp() }).catch((e) =>
+          console.warn('trip log', e),
+        )
+      }
     })
+  }
+
+  /** 修改紀錄：since（毫秒）之後的，新的在前，最多 limit 筆；回傳取消訂閱 */
+  async function watchLog(id: string, since: number, onItems: (items: LogItem[], added: string[]) => void, limit = 40) {
+    const { fs, db } = await firestore()
+    const q = fs.query(
+      fs.collection(db, 'trips', id, 'log'),
+      fs.where('at', '>', fs.Timestamp.fromMillis(since)),
+      fs.orderBy('at', 'desc'),
+      fs.limit(limit),
+    )
+    return fs.onSnapshot(
+      q,
+      (snap) => {
+        const items = snap.docs.flatMap((d) => parseLog(d.id, d.data({ serverTimestamps: 'estimate' })) ?? [])
+        // 這次新增的（不含自己剛寫、還沒確認的）；是不是打開頁面之後才發生的由呼叫端看時間判斷
+        const added = snap.docChanges().filter((c) => c.type === 'added' && !c.doc.metadata.hasPendingWrites).map((c) => c.doc.id)
+        onItems(items, added)
+      },
+      (e) => console.warn('trip log', e),
+    )
   }
 
   function toStop(s: SpotRef): Stop {
@@ -261,7 +294,7 @@ export const useTripsStore = defineStore('trips', () => {
 
   /** 加入行程：day 為 null 放「待排」；那天已經有就不重複加（別天可以：機場的來跟回） */
   function addStop(tripId: string, s: SpotRef, day: number | null) {
-    return mutate(tripId, (t) => addStopTo(t, toStop(s), day))
+    return mutate(tripId, (t) => addStopTo(t, toStop(s), day), () => ({ kind: 'add', name: s.name, day: day ?? -1 }))
   }
 
   /** 自己的練習進度 */
@@ -281,6 +314,17 @@ export const useTripsStore = defineStore('trips', () => {
     return withUser(async (uid) => {
       const { fs, db } = await firestore()
       const t = get(id)
+      // 修改紀錄（子集合不會跟著文件刪掉）：先刪，讀不到（規則還沒發布）就略過
+      try {
+        const log = await fs.getDocs(fs.collection(db, 'trips', id, 'log'))
+        for (let i = 0; i < log.docs.length; i += 400) {
+          const b = fs.writeBatch(db)
+          log.docs.slice(i, i + 400).forEach((d) => b.delete(d.ref))
+          await b.commit()
+        }
+      } catch (e) {
+        console.warn('trip log', e)
+      }
       const batch = fs.writeBatch(db)
       if (t?.invite) batch.delete(fs.doc(db, 'invites', t.invite))
       batch.delete(fs.doc(db, 'trips', id))
@@ -355,6 +399,6 @@ export const useTripsStore = defineStore('trips', () => {
   }
 
   return {
-    trips, sorted, doneVisits, loaded, synced, error, today, get, create, mutate, addStop, remove, removeMember, invite, readInvite, join, toStop,
+    trips, sorted, doneVisits, loaded, synced, error, today, get, create, mutate, watchLog, addStop, remove, removeMember, invite, readInvite, join, toStop,
   }
 })

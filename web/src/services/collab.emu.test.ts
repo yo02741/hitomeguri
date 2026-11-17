@@ -1,7 +1,10 @@
 import { deleteApp, type FirebaseApp, initializeApp } from 'firebase/app'
 import { connectAuthEmulator, createUserWithEmailAndPassword, getAuth } from 'firebase/auth'
 import {
+  addDoc,
   arrayUnion,
+  collection,
+  getDocs,
   connectFirestoreEmulator,
   doc,
   type Firestore,
@@ -16,6 +19,7 @@ import {
 } from 'firebase/firestore'
 import { afterAll, beforeAll, describe, expect, it } from 'vitest'
 
+import { logFields, logText, parseLog } from './tripLog'
 import { addStopTo, allStops, findStop, hasSpotOn, moveStop, placesOf, removeStop, type Stop, type StopPos, type Trip } from './trip'
 
 // 行程共編（UX-FLOW.md C7）：兩個人同時加地點、拖曳換天時，stores/trips.ts 的 mutate（交易裡讀最新的一份再寫回）
@@ -181,6 +185,21 @@ describe.skipIf(!HOST)('行程共編：兩個人同時編輯（emulator）', () 
     const c = await client('c')
     await expect(getDoc(doc(c.db, 'trips', tripId))).rejects.toThrow()
     await expect(mutate(c, tripId, (t) => addStopTo(t, stop('x'), 0))).rejects.toThrow()
+    await terminate(c.db)
+    await deleteApp(c.app)
+  }, 30000)
+
+  it('修改紀錄：成員寫自己的、旅伴讀得到；冒名、外人都不行', async () => {
+    const log = (c: Client) => collection(c.db, 'trips', tripId, 'log')
+    await addDoc(log(a), { ...logFields({ kind: 'move', name: '熱田神宮', day: 1 }), by: a.uid, at: serverTimestamp() })
+    const got = (await getDocs(log(b))).docs.flatMap((d) => parseLog(d.id, d.data()) ?? [])
+    expect(got.map((x) => [x.by === a.uid, logText(x)])).toContainEqual([true, '把 熱田神宮 移到 DAY 2'])
+    // 冒用別人的 uid、不認得的種類
+    await expect(addDoc(log(b), { kind: 'add', by: a.uid, at: serverTimestamp() })).rejects.toThrow()
+    await expect(addDoc(log(b), { kind: 'hack', by: b.uid, at: serverTimestamp() })).rejects.toThrow()
+    const c = await client('c2')
+    await expect(getDocs(log(c))).rejects.toThrow()
+    await expect(addDoc(log(c), { kind: 'add', by: c.uid, at: serverTimestamp() })).rejects.toThrow()
     await terminate(c.db)
     await deleteApp(c.app)
   }, 30000)

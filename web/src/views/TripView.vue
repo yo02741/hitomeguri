@@ -13,6 +13,7 @@ import ShareImage from '../components/ShareImage.vue'
 import SplitFlap from '../components/SplitFlap.vue'
 import SkeletonRows from '../components/SkeletonRows.vue'
 import TripMembers from '../components/TripMembers.vue'
+import TripLog from '../components/TripLog.vue'
 import TripStopList from '../components/TripStopList.vue'
 import TripAddVisited from '../components/TripAddVisited.vue'
 import BottomDialog from '../components/BottomDialog.vue'
@@ -31,6 +32,7 @@ import { type Band, buildGraph, nearestStation, stationById, type StationOption 
 import { type ExportFolder, type ExportRow, shareOrDownload, toCsv, toKml } from '../services/export'
 import { drawTripRecap } from '../services/shareImage'
 import { showToast } from '../services/toast'
+import type { LogEntry } from '../services/tripLog'
 import { coarse, wide } from '../services/viewport'
 import {
   addDays,
@@ -97,9 +99,10 @@ const online = useOnline()
 const locked = computed(() => !online.value)
 
 // 每個修改都在最新的一份上套用（共編時對方可能剛改過，UX-FLOW.md C7）
-function mutate(fn: (t: Trip) => Partial<TripContent> | null) {
+// log：旅伴看得到的修改紀錄（services/tripLog.ts），交易之後才算
+function mutate(fn: (t: Trip) => Partial<TripContent> | null, log?: () => LogEntry | null) {
   if (locked.value) return
-  void trips.mutate(props.id, fn)
+  void trips.mutate(props.id, fn, log)
 }
 
 // 名稱：打字中以自己的草稿為準，snapshot（共編的人、自己存檔的回音）不改欄位，免得打斷輸入法組字
@@ -107,7 +110,7 @@ const nameField = useDraftField(
   () => trip.value?.name ?? '',
   (v) => {
     if (locked.value || !trip.value) return false
-    mutate((t) => (t.name === v ? null : { name: v }))
+    mutate((t) => (t.name === v ? null : { name: v }), () => ({ kind: 'rename', name: v }))
   },
   { normalize: (v) => v.trim().slice(0, TRIP_NAME_MAX) },
 )
@@ -122,7 +125,7 @@ function setDates(start: string, end: string) {
     if (!s) e = undefined
     const n = dayCount(s, e)
     return { start_date: s, end_date: e, ...(n ? resizeDays(t, n) : {}) }
-  })
+  }, () => ({ kind: 'dates' }))
 }
 const hasDates = computed(() => Boolean(trip.value?.start_date && trip.value?.end_date))
 
@@ -130,17 +133,29 @@ const hasDates = computed(() => Boolean(trip.value?.start_date && trip.value?.en
 let addPending = false
 function addDay() {
   addPending = !wide.value
-  mutate((t) => (t.days.length < MAX_DAYS ? resizeDays(t, t.days.length + 1) : null))
+  let n = 0
+  mutate(
+    (t) => {
+      n = t.days.length + 1
+      return t.days.length < MAX_DAYS ? resizeDays(t, n) : null
+    },
+    () => ({ kind: 'days', n }),
+  )
 }
 function removeDay(i: number) {
   if (!wide.value && selectedDay.value === i) selectedDay.value = Math.max(0, i - 1)
   // 天數的索引會跟著移動：單日來回先關起來
   closeDaytrip()
-  mutate((t) => {
-    if (t.days.length <= 1 || !t.days[i]) return null
-    const days = copyDays(t.days.filter((_, j) => j !== i))
-    return { days, unscheduled: toUnscheduled(t.unscheduled, t.days[i]!.stops) }
-  })
+  let n = 0
+  mutate(
+    (t) => {
+      if (t.days.length <= 1 || !t.days[i]) return null
+      const days = copyDays(t.days.filter((_, j) => j !== i))
+      n = days.length
+      return { days, unscheduled: toUnscheduled(t.unscheduled, t.days[i]!.stops) }
+    },
+    () => ({ kind: 'days', n }),
+  )
 }
 
 /**
@@ -148,25 +163,36 @@ function removeDay(i: number) {
  * 同一個景點可以排在不同天）。目的地那天已經有同一個景點就不動。
  */
 function moveSpot(at: StopPos, to: (t: Trip, from: StopPos) => StopPos | null) {
-  const spotId = trip.value ? stopAt(trip.value, at)?.spot_id : undefined
+  const stop0 = trip.value ? stopAt(trip.value, at) : undefined
+  const spotId = stop0?.spot_id
   if (!spotId) return
   const dest0 = trip.value && to(trip.value, at)
   if (dest0 && dest0.day !== at.day && hasSpotOn(trip.value!, dest0.day, spotId)) {
     showToast(dest0.day === -1 ? '待排裡已經有了' : `DAY ${dest0.day + 1} 已經有了`)
     return
   }
-  mutate((t) => {
-    const from = findStop(t, spotId, at.day)
-    const dest = from && to(t, from)
-    if (!from || !dest || (dest.day !== from.day && hasSpotOn(t, dest.day, spotId))) return null
-    return moveStop(t, from, dest)
-  })
+  let moved: { from: number; to: number } | null = null
+  mutate(
+    (t) => {
+      const from = findStop(t, spotId, at.day)
+      const dest = from && to(t, from)
+      if (!from || !dest || (dest.day !== from.day && hasSpotOn(t, dest.day, spotId))) return null
+      moved = { from: from.day, to: dest.day }
+      return moveStop(t, from, dest)
+    },
+    () => {
+      const m = moved as { from: number; to: number } | null
+      if (!m) return null
+      return m.from === m.to ? { kind: 'order', day: m.to } : { kind: 'move', name: stop0!.name, day: m.to }
+    },
+  )
 }
 
 // 從去過的地方一次加入（TripAddVisited.vue）：有日期在這趟期間的放到那一天，其他的放待排
 const addVisitedOpen = ref(false)
 function addVisited(items: Array<{ spot: SpotRef; day: number | null }>) {
   addVisitedOpen.value = false
+  let added = 0
   mutate((t) => {
     const days = copyDays(t.days)
     const unscheduled = [...t.unscheduled]
@@ -178,8 +204,9 @@ function addVisited(items: Array<{ spot: SpotRef; day: number | null }>) {
       else unscheduled.push(stop)
       n++
     }
+    added = n
     return n ? { days, unscheduled } : null
-  })
+  }, () => ({ kind: 'addMany', n: added }))
   showToast(`加入 ${items.length} 個地方`)
 }
 
@@ -216,11 +243,14 @@ function onRemove(at: StopPos) {
   const t0 = trip.value
   const stop = t0 ? stopAt(t0, at) : undefined
   if (!stop || locked.value) return
-  mutate((t) => {
-    const cur = findStop(t, stop.spot_id, at.day)
-    return cur ? removeStop(t, cur) : null
-  })
-  showToast('已從行程移除', () => mutate((t) => insertStop(t, at, stop)))
+  mutate(
+    (t) => {
+      const cur = findStop(t, stop.spot_id, at.day)
+      return cur ? removeStop(t, cur) : null
+    },
+    () => ({ kind: 'remove', name: stop.name }),
+  )
+  showToast('已從行程移除', () => mutate((t) => insertStop(t, at, stop), () => ({ kind: 'add', name: stop.name, day: at.day })))
 }
 
 const targets = computed(() => {
@@ -369,7 +399,7 @@ const stayDay = ref<number | null>(null)
 function pickStay(stay: Stay | null) {
   const i = stayDay.value
   stayDay.value = null
-  if (i !== null) mutate((t) => setStay(t, i, stay))
+  if (i !== null) mutate((t) => setStay(t, i, stay), () => ({ kind: 'stay', day: i, ...(stay ? { name: stay.n } : {}) }))
 }
 /** 住的車站的建議：前一天、後一天住的，這天第一站最近的車站 */
 const staySuggestions = computed<Array<{ hint: string; station: StationOption }>>(() => {
@@ -426,10 +456,13 @@ function addFromDaytrip(spot: SpotRef, day: number | null) {
   // 手機的清單在對話框裡，底部的提示被蓋住：只看列上的「已在 DAY n」
   if (!wide.value) return
   showToast(day === null ? '已加到待排' : `已加到 DAY ${day + 1}`, () =>
-    mutate((t) => {
-      const cur = findStop(t, spot.id, day ?? -1)
-      return cur ? removeStop(t, cur) : null
-    }),
+    mutate(
+      (t) => {
+        const cur = findStop(t, spot.id, day ?? -1)
+        return cur ? removeStop(t, cur) : null
+      },
+      () => ({ kind: 'remove', name: spot.name }),
+    ),
   )
 }
 const dtMap = computed(() => {
@@ -634,6 +667,7 @@ async function del() {
         <p v-if="locked" class="w-fit rounded-tag bg-ink px-1.5 text-caption font-bold text-paper" role="status">離線中・行程不能修改</p>
         <p v-else-if="trips.error" class="text-caption text-danger" role="alert">{{ trips.error }}</p>
         <TripMembers :trip="trip" />
+        <TripLog v-if="trip.members.length > 1" :key="trip.id" :trip="trip" />
         <!-- 手機窄螢幕（<640）內距與間距縮一點，旅前準備、旅前小書、離線用、更多排得進一列 -->
         <div class="flex flex-wrap gap-2 max-sm:gap-1.5">
           <!-- 一個畫面只有一個 Primary（DESIGN §7.1）：「旅前準備」是出發前與旅途中的 Primary，結束後退成 Secondary -->
