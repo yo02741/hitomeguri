@@ -20,7 +20,7 @@ const t = (v?: number) => (v === undefined ? '–' : v.toFixed(1))
     <table class="w-full border-collapse text-body-sm">
       <thead>
         <tr class="text-left text-caption text-sub">
-          <th scope="col" class="pb-1.5 font-normal">月</th>
+          <th scope="col" class="pb-1.5 pl-1 font-normal">月</th>
           <th scope="col" class="pb-1.5 text-right font-normal">平均</th>
           <th scope="col" class="pb-1.5 text-right font-normal">最高／最低</th>
           <th scope="col" class="pb-1.5 text-right font-normal">降水量</th>
