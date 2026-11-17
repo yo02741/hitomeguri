@@ -241,6 +241,13 @@ def cmd_seed_festivals(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_seed_climate(args: argparse.Namespace) -> int:
+    from pipeline.climate import seed_climate
+
+    _emit(seed_climate(args.prefectures or None), args.report)
+    return 0
+
+
 def cmd_seed_seasons(args: argparse.Namespace) -> int:
     from pipeline.seasons import seed_seasons
 
@@ -534,6 +541,13 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("prefectures", nargs="*", help="省略時處理全部縣")
     p.add_argument("--report")
     p.set_defaults(func=cmd_seed_festivals)
+
+    p = sub.add_parser(
+        "seed-climate", help="天氣：氣象廳各縣氣象台最近 10 年的月值平均 → data/climate.json"
+    )
+    p.add_argument("prefectures", nargs="*", help="只重做這幾縣；空白表示全部")
+    p.add_argument("--report")
+    p.set_defaults(func=cmd_seed_climate)
 
     p = sub.add_parser("seed-seasons", help="季節：氣象廳生物季節平年值 → data/seasons.json")
     p.add_argument("prefectures", nargs="*", help="不使用（全國一次抓）")

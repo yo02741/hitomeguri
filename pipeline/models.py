@@ -322,6 +322,41 @@ class SeasonData(StrictModel):
     stations: list[SeasonStation]
 
 
+class ClimateMonth(StrictModel):
+    """一個月的平均（最近 10 年的月值；有效年數不足的欄位為 None）。
+    降水日數是日降水量 ≧1.0mm 的天數。"""
+
+    month: int = Field(ge=1, le=12)
+    temp: float | None = None
+    high: float | None = None
+    low: float | None = None
+    precip: float | None = None
+    rain_days: float | None = None
+    # 各欄位中最少的有效年數
+    years: int
+
+
+class ClimateStation(StrictModel):
+    name: str
+    prec_no: int
+    block_no: str
+
+
+class ClimatePref(StrictModel):
+    prefecture: Prefecture
+    station: ClimateStation
+    months: list[ClimateMonth]
+    source: Source
+
+
+class ClimateData(StrictModel):
+    """深度探索「天氣」（data/climate.json，pipeline/climate.py）。years 是 [起, 訖]。"""
+
+    years: list[int]
+    source: Source
+    prefectures: list[ClimatePref]
+
+
 class TimedTitle(StrictModel):
     ja: str
     zh_tw: str

@@ -12,6 +12,7 @@ import {
   fetchFlights,
   fetchPhrases,
   fetchTimed,
+  fetchClimate,
   fetchSeasons,
   fetchPrefSpecialties,
   fetchSpecialties,
@@ -30,6 +31,7 @@ import {
   type MunicipalityBundle,
   type PackItem,
   type RailBundle,
+  type ClimateData,
   type SeasonData,
   type ShinkansenBundle,
   type TimedItem,
@@ -182,6 +184,7 @@ export const useCatalogStore = defineStore('catalog', () => {
   const flights = shallowRef<FlightRoute[]>([])
 
   const seasons = shallowRef<SeasonData | null>(null)
+  const climate = shallowRef<ClimateData | null>(null)
   // 載過就不再抓（once 只合併同時進行的請求，結束後就忘了）
   let extrasLoaded = false
   let flightsLoaded = false
@@ -191,9 +194,14 @@ export const useCatalogStore = defineStore('catalog', () => {
     await loadIndex()
     const v = index.value?.extras ?? {}
     await once('extras', async () => {
-      const [f, se] = await Promise.all([flightsLoaded ? flights.value : fetchFlights(v.flights), fetchSeasons(v.seasons)])
+      const [f, se, cl] = await Promise.all([
+        flightsLoaded ? flights.value : fetchFlights(v.flights),
+        fetchSeasons(v.seasons),
+        v.climate ? fetchClimate(v.climate) : null,
+      ])
       flights.value = f
       seasons.value = se
+      climate.value = cl
       extrasLoaded = flightsLoaded = true
     })
   }
@@ -389,7 +397,7 @@ export const useCatalogStore = defineStore('catalog', () => {
 
   return {
     loadSearch,
-    index, mapSpots, featured, loadFeatured, details, specialties, loadSpecialties, flights, seasons, festivals, loadFestivals, rail, loadRail, loadExtras, loadFlights, loadIndex, available,
+    index, mapSpots, featured, loadFeatured, details, specialties, loadSpecialties, flights, seasons, climate, festivals, loadFestivals, rail, loadRail, loadExtras, loadFlights, loadIndex, available,
     municipalities, loadMunicipalities, shinkansen, loadShinkansen, railGraph, loadRailGraph, daytrip, loadDaytrip,
     loadMap, mapState, loadAllMaps, loadDetail, getSpot, packs, loadPack, phrases, loadPhrases, timed, loadTimed,
     achv, achvState, loadAchievements,
