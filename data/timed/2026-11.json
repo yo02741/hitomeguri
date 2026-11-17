@@ -21,6 +21,27 @@
     "updated_at": "2026-11-07T15:12:53+00:00"
   },
   {
+    "id": "jma-ichou-2026-名古屋",
+    "kind": "seasonal",
+    "category": "autumn_leaves",
+    "brand": "気象庁",
+    "title": {
+      "ja": "名古屋　いちょう黄葉",
+      "zh_tw": "名古屋 銀杏轉黃"
+    },
+    "summary_zh": "名古屋的氣象台 11月16日 觀測到銀杏轉黃，比平年早 2 天。",
+    "scope": "regional",
+    "prefectures": [
+      "aichi"
+    ],
+    "valid_from": "2026-11-16",
+    "valid_to": "2026-11-30",
+    "relevance": 0.0,
+    "source_url": "https://www.data.jma.go.jp/sakura/data/phn_012.html",
+    "source_label": "出典：気象庁ホームページ（生物季節観測）を加工して作成",
+    "updated_at": "2026-11-17T17:55:18+00:00"
+  },
+  {
     "id": "jma-ichou-2026-帯広",
     "kind": "seasonal",
     "category": "autumn_leaves",
@@ -208,6 +229,27 @@
     "source_url": "https://www.data.jma.go.jp/sakura/data/phn_014.html",
     "source_label": "出典：気象庁ホームページ（生物季節観測）を加工して作成",
     "updated_at": "2026-11-10T16:37:25+00:00"
+  },
+  {
+    "id": "jma-kaede-2026-盛岡",
+    "kind": "seasonal",
+    "category": "autumn_leaves",
+    "brand": "気象庁",
+    "title": {
+      "ja": "盛岡　かえで紅葉",
+      "zh_tw": "盛岡 楓葉轉紅"
+    },
+    "summary_zh": "盛岡的氣象台 11月16日 觀測到楓葉轉紅，比平年晚 3 天。",
+    "scope": "regional",
+    "prefectures": [
+      "iwate"
+    ],
+    "valid_from": "2026-11-16",
+    "valid_to": "2026-11-30",
+    "relevance": 0.0,
+    "source_url": "https://www.data.jma.go.jp/sakura/data/phn_014.html",
+    "source_label": "出典：気象庁ホームページ（生物季節観測）を加工して作成",
+    "updated_at": "2026-11-17T17:55:18+00:00"
   },
   {
     "id": "jma-kaede-2026-青森",
