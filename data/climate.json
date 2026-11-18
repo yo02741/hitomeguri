@@ -1,0 +1,5746 @@
+{
+  "years": [
+    2016,
+    2025
+  ],
+  "source": {
+    "url": "https://www.data.jma.go.jp/stats/etrn/index.php",
+    "fetched_at": "2026-11-17T09:42:11+00:00"
+  },
+  "prefectures": [
+    {
+      "prefecture": "aichi",
+      "station": {
+        "name": "名古屋",
+        "prec_no": 51,
+        "block_no": "47636"
+      },
+      "months": [
+        {
+          "month": 1,
+          "temp": 5.3,
+          "high": 9.9,
+          "low": 1.5,
+          "precip": 34.0,
+          "rain_days": 4.6,
+          "years": 10
+        },
+        {
+          "month": 2,
+          "temp": 6.2,
+          "high": 11.2,
+          "low": 2.2,
+          "precip": 52.0,
+          "rain_days": 5.5,
+          "years": 10
+        },
+        {
+          "month": 3,
+          "temp": 10.6,
+          "high": 16.1,
+          "low": 6.0,
+          "precip": 131.0,
+          "rain_days": 8.7,
+          "years": 10
+        },
+        {
+          "month": 4,
+          "temp": 15.6,
+          "high": 21.1,
+          "low": 10.9,
+          "precip": 155.0,
+          "rain_days": 9.6,
+          "years": 10
+        },
+        {
+          "month": 5,
+          "temp": 20.0,
+          "high": 25.3,
+          "low": 15.6,
+          "precip": 173.0,
+          "rain_days": 10.5,
+          "years": 10
+        },
+        {
+          "month": 6,
+          "temp": 23.7,
+          "high": 28.4,
+          "low": 19.9,
+          "precip": 207.0,
+          "rain_days": 11.9,
+          "years": 10
+        },
+        {
+          "month": 7,
+          "temp": 27.8,
+          "high": 32.4,
+          "low": 24.4,
+          "precip": 245.0,
+          "rain_days": 11.9,
+          "years": 10
+        },
+        {
+          "month": 8,
+          "temp": 29.2,
+          "high": 34.4,
+          "low": 25.7,
+          "precip": 170.0,
+          "rain_days": 9.9,
+          "years": 10
+        },
+        {
+          "month": 9,
+          "temp": 25.8,
+          "high": 30.4,
+          "low": 22.5,
+          "precip": 187.0,
+          "rain_days": 12.8,
+          "years": 10
+        },
+        {
+          "month": 10,
+          "temp": 19.3,
+          "high": 23.9,
+          "low": 15.8,
+          "precip": 185.0,
+          "rain_days": 9.9,
+          "years": 10
+        },
+        {
+          "month": 11,
+          "temp": 13.4,
+          "high": 18.3,
+          "low": 9.3,
+          "precip": 61.0,
+          "rain_days": 5.5,
+          "years": 10
+        },
+        {
+          "month": 12,
+          "temp": 7.6,
+          "high": 12.1,
+          "low": 3.8,
+          "precip": 51.0,
+          "rain_days": 5.9,
+          "years": 10
+        }
+      ],
+      "source": {
+        "url": "https://www.data.jma.go.jp/stats/etrn/view/monthly_s1.php?prec_no=51&block_no=47636&year=2016&month=&day=&view=p1",
+        "fetched_at": "2026-11-17T09:42:11+00:00"
+      }
+    },
+    {
+      "prefecture": "akita",
+      "station": {
+        "name": "秋田",
+        "prec_no": 32,
+        "block_no": "47582"
+      },
+      "months": [
+        {
+          "month": 1,
+          "temp": 0.9,
+          "high": 3.9,
+          "low": -1.6,
+          "precip": 127.0,
+          "rain_days": 20.7,
+          "years": 10
+        },
+        {
+          "month": 2,
+          "temp": 1.3,
+          "high": 4.5,
+          "low": -1.7,
+          "precip": 123.0,
+          "rain_days": 18.0,
+          "years": 10
+        },
+        {
+          "month": 3,
+          "temp": 5.4,
+          "high": 9.6,
+          "low": 1.5,
+          "precip": 111.0,
+          "rain_days": 13.5,
+          "years": 10
+        },
+        {
+          "month": 4,
+          "temp": 10.4,
+          "high": 15.0,
+          "low": 6.0,
+          "precip": 116.0,
+          "rain_days": 12.1,
+          "years": 10
+        },
+        {
+          "month": 5,
+          "temp": 15.9,
+          "high": 20.6,
+          "low": 11.6,
+          "precip": 144.0,
+          "rain_days": 11.2,
+          "years": 10
+        },
+        {
+          "month": 6,
+          "temp": 20.2,
+          "high": 24.5,
+          "low": 16.6,
+          "precip": 128.0,
+          "rain_days": 11.0,
+          "years": 10
+        },
+        {
+          "month": 7,
+          "temp": 24.9,
+          "high": 28.7,
+          "low": 21.7,
+          "precip": 204.0,
+          "rain_days": 10.8,
+          "years": 10
+        },
+        {
+          "month": 8,
+          "temp": 26.4,
+          "high": 30.7,
+          "low": 22.7,
+          "precip": 206.0,
+          "rain_days": 9.6,
+          "years": 10
+        },
+        {
+          "month": 9,
+          "temp": 22.1,
+          "high": 26.7,
+          "low": 18.1,
+          "precip": 185.0,
+          "rain_days": 11.5,
+          "years": 10
+        },
+        {
+          "month": 10,
+          "temp": 14.9,
+          "high": 19.5,
+          "low": 10.8,
+          "precip": 186.0,
+          "rain_days": 13.8,
+          "years": 10
+        },
+        {
+          "month": 11,
+          "temp": 8.8,
+          "high": 13.0,
+          "low": 5.0,
+          "precip": 201.0,
+          "rain_days": 17.6,
+          "years": 10
+        },
+        {
+          "month": 12,
+          "temp": 2.9,
+          "high": 6.1,
+          "low": 0.2,
+          "precip": 193.0,
+          "rain_days": 23.8,
+          "years": 10
+        }
+      ],
+      "source": {
+        "url": "https://www.data.jma.go.jp/stats/etrn/view/monthly_s1.php?prec_no=32&block_no=47582&year=2016&month=&day=&view=p1",
+        "fetched_at": "2026-11-17T09:42:11+00:00"
+      }
+    },
+    {
+      "prefecture": "aomori",
+      "station": {
+        "name": "青森",
+        "prec_no": 31,
+        "block_no": "47575"
+      },
+      "months": [
+        {
+          "month": 1,
+          "temp": -0.4,
+          "high": 2.4,
+          "low": -3.0,
+          "precip": 127.0,
+          "rain_days": 21.6,
+          "years": 10
+        },
+        {
+          "month": 2,
+          "temp": -0.1,
+          "high": 3.1,
+          "low": -3.1,
+          "precip": 94.0,
+          "rain_days": 17.6,
+          "years": 10
+        },
+        {
+          "month": 3,
+          "temp": 4.2,
+          "high": 8.6,
+          "low": 0.2,
+          "precip": 75.0,
+          "rain_days": 12.7,
+          "years": 10
+        },
+        {
+          "month": 4,
+          "temp": 9.5,
+          "high": 14.8,
+          "low": 4.9,
+          "precip": 75.0,
+          "rain_days": 11.1,
+          "years": 10
+        },
+        {
+          "month": 5,
+          "temp": 14.9,
+          "high": 20.2,
+          "low": 10.2,
+          "precip": 75.0,
+          "rain_days": 8.9,
+          "years": 10
+        },
+        {
+          "month": 6,
+          "temp": 18.8,
+          "high": 23.5,
+          "low": 15.0,
+          "precip": 85.0,
+          "rain_days": 8.5,
+          "years": 10
+        },
+        {
+          "month": 7,
+          "temp": 23.4,
+          "high": 27.8,
+          "low": 20.1,
+          "precip": 127.0,
+          "rain_days": 8.8,
+          "years": 10
+        },
+        {
+          "month": 8,
+          "temp": 24.6,
+          "high": 29.0,
+          "low": 21.2,
+          "precip": 202.0,
+          "rain_days": 8.9,
+          "years": 10
+        },
+        {
+          "month": 9,
+          "temp": 21.0,
+          "high": 25.9,
+          "low": 16.8,
+          "precip": 95.0,
+          "rain_days": 9.1,
+          "years": 10
+        },
+        {
+          "month": 10,
+          "temp": 14.0,
+          "high": 18.8,
+          "low": 9.6,
+          "precip": 136.0,
+          "rain_days": 12.8,
+          "years": 10
+        },
+        {
+          "month": 11,
+          "temp": 7.6,
+          "high": 11.9,
+          "low": 3.6,
+          "precip": 145.0,
+          "rain_days": 17.0,
+          "years": 10
+        },
+        {
+          "month": 12,
+          "temp": 1.4,
+          "high": 4.5,
+          "low": -1.3,
+          "precip": 190.0,
+          "rain_days": 23.0,
+          "years": 10
+        }
+      ],
+      "source": {
+        "url": "https://www.data.jma.go.jp/stats/etrn/view/monthly_s1.php?prec_no=31&block_no=47575&year=2016&month=&day=&view=p1",
+        "fetched_at": "2026-11-17T09:42:11+00:00"
+      }
+    },
+    {
+      "prefecture": "chiba",
+      "station": {
+        "name": "千葉",
+        "prec_no": 45,
+        "block_no": "47682"
+      },
+      "months": [
+        {
+          "month": 1,
+          "temp": 6.6,
+          "high": 10.6,
+          "low": 2.9,
+          "precip": 49.0,
+          "rain_days": 4.4,
+          "years": 10
+        },
+        {
+          "month": 2,
+          "temp": 7.6,
+          "high": 11.6,
+          "low": 3.7,
+          "precip": 44.0,
+          "rain_days": 4.9,
+          "years": 10
+        },
+        {
+          "month": 3,
+          "temp": 11.2,
+          "high": 15.4,
+          "low": 7.2,
+          "precip": 126.0,
+          "rain_days": 10.4,
+          "years": 10
+        },
+        {
+          "month": 4,
+          "temp": 15.5,
+          "high": 19.7,
+          "low": 11.7,
+          "precip": 121.0,
+          "rain_days": 9.0,
+          "years": 10
+        },
+        {
+          "month": 5,
+          "temp": 19.7,
+          "high": 23.8,
+          "low": 16.3,
+          "precip": 154.0,
+          "rain_days": 10.1,
+          "years": 10
+        },
+        {
+          "month": 6,
+          "temp": 23.0,
+          "high": 26.8,
+          "low": 20.1,
+          "precip": 161.0,
+          "rain_days": 10.8,
+          "years": 10
+        },
+        {
+          "month": 7,
+          "temp": 26.9,
+          "high": 30.6,
+          "low": 24.2,
+          "precip": 170.0,
+          "rain_days": 9.4,
+          "years": 10
+        },
+        {
+          "month": 8,
+          "temp": 28.3,
+          "high": 32.2,
+          "low": 25.6,
+          "precip": 130.0,
+          "rain_days": 8.5,
+          "years": 10
+        },
+        {
+          "month": 9,
+          "temp": 25.0,
+          "high": 28.6,
+          "low": 22.3,
+          "precip": 212.0,
+          "rain_days": 10.9,
+          "years": 10
+        },
+        {
+          "month": 10,
+          "temp": 19.1,
+          "high": 22.7,
+          "low": 16.1,
+          "precip": 198.0,
+          "rain_days": 10.7,
+          "years": 10
+        },
+        {
+          "month": 11,
+          "temp": 14.2,
+          "high": 18.0,
+          "low": 10.6,
+          "precip": 76.0,
+          "rain_days": 6.6,
+          "years": 10
+        },
+        {
+          "month": 12,
+          "temp": 9.0,
+          "high": 13.1,
+          "low": 5.2,
+          "precip": 52.0,
+          "rain_days": 5.0,
+          "years": 10
+        }
+      ],
+      "source": {
+        "url": "https://www.data.jma.go.jp/stats/etrn/view/monthly_s1.php?prec_no=45&block_no=47682&year=2016&month=&day=&view=p1",
+        "fetched_at": "2026-11-17T09:42:11+00:00"
+      }
+    },
+    {
+      "prefecture": "ehime",
+      "station": {
+        "name": "松山",
+        "prec_no": 73,
+        "block_no": "47887"
+      },
+      "months": [
+        {
+          "month": 1,
+          "temp": 6.6,
+          "high": 10.7,
+          "low": 3.1,
+          "precip": 49.0,
+          "rain_days": 6.3,
+          "years": 10
+        },
+        {
+          "month": 2,
+          "temp": 7.2,
+          "high": 11.6,
+          "low": 3.3,
+          "precip": 61.0,
+          "rain_days": 6.6,
+          "years": 10
+        },
+        {
+          "month": 3,
+          "temp": 11.2,
+          "high": 16.0,
+          "low": 7.0,
+          "precip": 110.0,
+          "rain_days": 9.4,
+          "years": 10
+        },
+        {
+          "month": 4,
+          "temp": 15.7,
+          "high": 20.4,
+          "low": 11.2,
+          "precip": 136.0,
+          "rain_days": 8.6,
+          "years": 10
+        },
+        {
+          "month": 5,
+          "temp": 19.8,
+          "high": 24.6,
+          "low": 15.5,
+          "precip": 158.0,
+          "rain_days": 8.1,
+          "years": 10
+        },
+        {
+          "month": 6,
+          "temp": 23.4,
+          "high": 27.7,
+          "low": 19.9,
+          "precip": 223.0,
+          "rain_days": 11.6,
+          "years": 10
+        },
+        {
+          "month": 7,
+          "temp": 27.7,
+          "high": 31.9,
+          "low": 24.4,
+          "precip": 259.0,
+          "rain_days": 10.8,
+          "years": 10
+        },
+        {
+          "month": 8,
+          "temp": 29.0,
+          "high": 33.5,
+          "low": 25.5,
+          "precip": 119.0,
+          "rain_days": 6.9,
+          "years": 10
+        },
+        {
+          "month": 9,
+          "temp": 25.9,
+          "high": 30.2,
+          "low": 22.5,
+          "precip": 167.0,
+          "rain_days": 8.6,
+          "years": 10
+        },
+        {
+          "month": 10,
+          "temp": 20.0,
+          "high": 24.5,
+          "low": 16.3,
+          "precip": 101.0,
+          "rain_days": 7.6,
+          "years": 10
+        },
+        {
+          "month": 11,
+          "temp": 14.2,
+          "high": 18.9,
+          "low": 10.1,
+          "precip": 69.0,
+          "rain_days": 6.3,
+          "years": 10
+        },
+        {
+          "month": 12,
+          "temp": 8.7,
+          "high": 12.9,
+          "low": 5.0,
+          "precip": 46.0,
+          "rain_days": 6.4,
+          "years": 10
+        }
+      ],
+      "source": {
+        "url": "https://www.data.jma.go.jp/stats/etrn/view/monthly_s1.php?prec_no=73&block_no=47887&year=2016&month=&day=&view=p1",
+        "fetched_at": "2026-11-17T09:42:11+00:00"
+      }
+    },
+    {
+      "prefecture": "fukui",
+      "station": {
+        "name": "福井",
+        "prec_no": 57,
+        "block_no": "47616"
+      },
+      "months": [
+        {
+          "month": 1,
+          "temp": 3.7,
+          "high": 7.4,
+          "low": 0.9,
+          "precip": 269.0,
+          "rain_days": 23.8,
+          "years": 10
+        },
+        {
+          "month": 2,
+          "temp": 4.2,
+          "high": 8.4,
+          "low": 0.7,
+          "precip": 179.0,
+          "rain_days": 17.3,
+          "years": 10
+        },
+        {
+          "month": 3,
+          "temp": 8.5,
+          "high": 14.0,
+          "low": 3.7,
+          "precip": 145.0,
+          "rain_days": 13.3,
+          "years": 10
+        },
+        {
+          "month": 4,
+          "temp": 13.7,
+          "high": 19.3,
+          "low": 8.5,
+          "precip": 153.0,
+          "rain_days": 10.8,
+          "years": 10
+        },
+        {
+          "month": 5,
+          "temp": 18.8,
+          "high": 24.3,
+          "low": 13.8,
+          "precip": 150.0,
+          "rain_days": 10.3,
+          "years": 10
+        },
+        {
+          "month": 6,
+          "temp": 22.8,
+          "high": 27.7,
+          "low": 18.7,
+          "precip": 174.0,
+          "rain_days": 10.2,
+          "years": 10
+        },
+        {
+          "month": 7,
+          "temp": 27.2,
+          "high": 31.9,
+          "low": 23.7,
+          "precip": 249.0,
+          "rain_days": 12.4,
+          "years": 10
+        },
+        {
+          "month": 8,
+          "temp": 28.4,
+          "high": 33.1,
+          "low": 24.7,
+          "precip": 188.0,
+          "rain_days": 9.7,
+          "years": 10
+        },
+        {
+          "month": 9,
+          "temp": 24.5,
+          "high": 29.3,
+          "low": 21.0,
+          "precip": 210.0,
+          "rain_days": 12.8,
+          "years": 10
+        },
+        {
+          "month": 10,
+          "temp": 17.8,
+          "high": 22.8,
+          "low": 13.8,
+          "precip": 184.0,
+          "rain_days": 12.7,
+          "years": 10
+        },
+        {
+          "month": 11,
+          "temp": 11.9,
+          "high": 17.1,
+          "low": 7.6,
+          "precip": 187.0,
+          "rain_days": 14.4,
+          "years": 10
+        },
+        {
+          "month": 12,
+          "temp": 6.3,
+          "high": 10.2,
+          "low": 3.1,
+          "precip": 333.0,
+          "rain_days": 23.7,
+          "years": 10
+        }
+      ],
+      "source": {
+        "url": "https://www.data.jma.go.jp/stats/etrn/view/monthly_s1.php?prec_no=57&block_no=47616&year=2016&month=&day=&view=p1",
+        "fetched_at": "2026-11-17T09:42:11+00:00"
+      }
+    },
+    {
+      "prefecture": "fukuoka",
+      "station": {
+        "name": "福岡",
+        "prec_no": 82,
+        "block_no": "47807"
+      },
+      "months": [
+        {
+          "month": 1,
+          "temp": 7.4,
+          "high": 10.9,
+          "low": 4.3,
+          "precip": 76.0,
+          "rain_days": 9.9,
+          "years": 10
+        },
+        {
+          "month": 2,
+          "temp": 8.3,
+          "high": 12.2,
+          "low": 4.8,
+          "precip": 68.0,
+          "rain_days": 8.9,
+          "years": 10
+        },
+        {
+          "month": 3,
+          "temp": 12.1,
+          "high": 16.5,
+          "low": 8.5,
+          "precip": 111.0,
+          "rain_days": 9.8,
+          "years": 10
+        },
+        {
+          "month": 4,
+          "temp": 16.3,
+          "high": 20.9,
+          "low": 12.6,
+          "precip": 123.0,
+          "rain_days": 8.5,
+          "years": 10
+        },
+        {
+          "month": 5,
+          "temp": 20.5,
+          "high": 25.0,
+          "low": 16.7,
+          "precip": 136.0,
+          "rain_days": 8.8,
+          "years": 10
+        },
+        {
+          "month": 6,
+          "temp": 24.1,
+          "high": 28.1,
+          "low": 21.0,
+          "precip": 234.0,
+          "rain_days": 11.5,
+          "years": 10
+        },
+        {
+          "month": 7,
+          "temp": 28.5,
+          "high": 32.4,
+          "low": 25.6,
+          "precip": 280.0,
+          "rain_days": 10.8,
+          "years": 10
+        },
+        {
+          "month": 8,
+          "temp": 29.4,
+          "high": 33.7,
+          "low": 26.5,
+          "precip": 266.0,
+          "rain_days": 8.5,
+          "years": 10
+        },
+        {
+          "month": 9,
+          "temp": 26.0,
+          "high": 29.8,
+          "low": 23.1,
+          "precip": 216.0,
+          "rain_days": 10.9,
+          "years": 10
+        },
+        {
+          "month": 10,
+          "temp": 20.5,
+          "high": 24.5,
+          "low": 17.2,
+          "precip": 114.0,
+          "rain_days": 8.1,
+          "years": 10
+        },
+        {
+          "month": 11,
+          "temp": 14.8,
+          "high": 19.1,
+          "low": 11.2,
+          "precip": 87.0,
+          "rain_days": 7.1,
+          "years": 10
+        },
+        {
+          "month": 12,
+          "temp": 9.3,
+          "high": 12.9,
+          "low": 6.1,
+          "precip": 57.0,
+          "rain_days": 8.2,
+          "years": 10
+        }
+      ],
+      "source": {
+        "url": "https://www.data.jma.go.jp/stats/etrn/view/monthly_s1.php?prec_no=82&block_no=47807&year=2016&month=&day=&view=p1",
+        "fetched_at": "2026-11-17T09:42:11+00:00"
+      }
+    },
+    {
+      "prefecture": "fukushima",
+      "station": {
+        "name": "福島",
+        "prec_no": 36,
+        "block_no": "47595"
+      },
+      "months": [
+        {
+          "month": 1,
+          "temp": 2.3,
+          "high": 6.4,
+          "low": -1.2,
+          "precip": 50.0,
+          "rain_days": 7.4,
+          "years": 10
+        },
+        {
+          "month": 2,
+          "temp": 3.2,
+          "high": 8.0,
+          "low": -0.8,
+          "precip": 30.0,
+          "rain_days": 6.3,
+          "years": 10
+        },
+        {
+          "month": 3,
+          "temp": 7.5,
+          "high": 13.2,
+          "low": 2.5,
+          "precip": 73.0,
+          "rain_days": 6.6,
+          "years": 10
+        },
+        {
+          "month": 4,
+          "temp": 12.9,
+          "high": 18.9,
+          "low": 7.5,
+          "precip": 83.0,
+          "rain_days": 7.0,
+          "years": 10
+        },
+        {
+          "month": 5,
+          "temp": 18.1,
+          "high": 24.1,
+          "low": 12.7,
+          "precip": 88.0,
+          "rain_days": 8.1,
+          "years": 10
+        },
+        {
+          "month": 6,
+          "temp": 21.8,
+          "high": 27.1,
+          "low": 17.4,
+          "precip": 108.0,
+          "rain_days": 9.8,
+          "years": 10
+        },
+        {
+          "month": 7,
+          "temp": 25.8,
+          "high": 30.7,
+          "low": 22.2,
+          "precip": 145.0,
+          "rain_days": 12.2,
+          "years": 10
+        },
+        {
+          "month": 8,
+          "temp": 26.8,
+          "high": 31.9,
+          "low": 23.2,
+          "precip": 163.0,
+          "rain_days": 12.1,
+          "years": 10
+        },
+        {
+          "month": 9,
+          "temp": 22.7,
+          "high": 27.3,
+          "low": 19.2,
+          "precip": 159.0,
+          "rain_days": 12.2,
+          "years": 10
+        },
+        {
+          "month": 10,
+          "temp": 16.0,
+          "high": 20.7,
+          "low": 12.1,
+          "precip": 138.0,
+          "rain_days": 8.9,
+          "years": 10
+        },
+        {
+          "month": 11,
+          "temp": 10.1,
+          "high": 15.3,
+          "low": 5.6,
+          "precip": 35.0,
+          "rain_days": 4.8,
+          "years": 10
+        },
+        {
+          "month": 12,
+          "temp": 4.5,
+          "high": 9.1,
+          "low": 0.8,
+          "precip": 44.0,
+          "rain_days": 7.6,
+          "years": 10
+        }
+      ],
+      "source": {
+        "url": "https://www.data.jma.go.jp/stats/etrn/view/monthly_s1.php?prec_no=36&block_no=47595&year=2016&month=&day=&view=p1",
+        "fetched_at": "2026-11-17T09:42:11+00:00"
+      }
+    },
+    {
+      "prefecture": "gifu",
+      "station": {
+        "name": "岐阜",
+        "prec_no": 52,
+        "block_no": "47632"
+      },
+      "months": [
+        {
+          "month": 1,
+          "temp": 5.1,
+          "high": 9.7,
+          "low": 1.1,
+          "precip": 49.0,
+          "rain_days": 6.4,
+          "years": 10
+        },
+        {
+          "month": 2,
+          "temp": 6.0,
+          "high": 10.7,
+          "low": 1.9,
+          "precip": 67.0,
+          "rain_days": 6.6,
+          "years": 10
+        },
+        {
+          "month": 3,
+          "temp": 10.4,
+          "high": 15.8,
+          "low": 5.5,
+          "precip": 140.0,
+          "rain_days": 8.7,
+          "years": 10
+        },
+        {
+          "month": 4,
+          "temp": 15.4,
+          "high": 20.8,
+          "low": 10.5,
+          "precip": 199.0,
+          "rain_days": 9.2,
+          "years": 10
+        },
+        {
+          "month": 5,
+          "temp": 20.0,
+          "high": 25.4,
+          "low": 15.3,
+          "precip": 212.0,
+          "rain_days": 10.7,
+          "years": 10
+        },
+        {
+          "month": 6,
+          "temp": 23.8,
+          "high": 28.6,
+          "low": 19.8,
+          "precip": 264.0,
+          "rain_days": 11.4,
+          "years": 10
+        },
+        {
+          "month": 7,
+          "temp": 27.9,
+          "high": 32.6,
+          "low": 24.4,
+          "precip": 321.0,
+          "rain_days": 13.1,
+          "years": 10
+        },
+        {
+          "month": 8,
+          "temp": 29.3,
+          "high": 34.4,
+          "low": 25.6,
+          "precip": 216.0,
+          "rain_days": 11.1,
+          "years": 10
+        },
+        {
+          "month": 9,
+          "temp": 25.8,
+          "high": 30.4,
+          "low": 22.3,
+          "precip": 226.0,
+          "rain_days": 12.8,
+          "years": 10
+        },
+        {
+          "month": 10,
+          "temp": 19.3,
+          "high": 24.0,
+          "low": 15.3,
+          "precip": 178.0,
+          "rain_days": 10.0,
+          "years": 10
+        },
+        {
+          "month": 11,
+          "temp": 13.3,
+          "high": 18.4,
+          "low": 8.8,
+          "precip": 65.0,
+          "rain_days": 5.8,
+          "years": 10
+        },
+        {
+          "month": 12,
+          "temp": 7.3,
+          "high": 11.8,
+          "low": 3.4,
+          "precip": 67.0,
+          "rain_days": 7.6,
+          "years": 10
+        }
+      ],
+      "source": {
+        "url": "https://www.data.jma.go.jp/stats/etrn/view/monthly_s1.php?prec_no=52&block_no=47632&year=2016&month=&day=&view=p1",
+        "fetched_at": "2026-11-17T09:42:11+00:00"
+      }
+    },
+    {
+      "prefecture": "gunma",
+      "station": {
+        "name": "前橋",
+        "prec_no": 42,
+        "block_no": "47624"
+      },
+      "months": [
+        {
+          "month": 1,
+          "temp": 4.4,
+          "high": 9.8,
+          "low": 0.1,
+          "precip": 24.0,
+          "rain_days": 2.2,
+          "years": 10
+        },
+        {
+          "month": 2,
+          "temp": 5.3,
+          "high": 10.9,
+          "low": 0.7,
+          "precip": 17.0,
+          "rain_days": 2.7,
+          "years": 10
+        },
+        {
+          "month": 3,
+          "temp": 9.5,
+          "high": 15.0,
+          "low": 4.6,
+          "precip": 72.0,
+          "rain_days": 6.9,
+          "years": 10
+        },
+        {
+          "month": 4,
+          "temp": 14.5,
+          "high": 20.2,
+          "low": 9.4,
+          "precip": 74.0,
+          "rain_days": 7.2,
+          "years": 10
+        },
+        {
+          "month": 5,
+          "temp": 19.4,
+          "high": 25.0,
+          "low": 14.4,
+          "precip": 100.0,
+          "rain_days": 9.5,
+          "years": 10
+        },
+        {
+          "month": 6,
+          "temp": 23.0,
+          "high": 28.0,
+          "low": 18.8,
+          "precip": 164.0,
+          "rain_days": 12.2,
+          "years": 10
+        },
+        {
+          "month": 7,
+          "temp": 26.9,
+          "high": 31.7,
+          "low": 23.2,
+          "precip": 203.0,
+          "rain_days": 14.5,
+          "years": 10
+        },
+        {
+          "month": 8,
+          "temp": 28.1,
+          "high": 33.2,
+          "low": 24.3,
+          "precip": 173.0,
+          "rain_days": 12.3,
+          "years": 10
+        },
+        {
+          "month": 9,
+          "temp": 24.2,
+          "high": 28.7,
+          "low": 20.7,
+          "precip": 170.0,
+          "rain_days": 12.4,
+          "years": 10
+        },
+        {
+          "month": 10,
+          "temp": 17.7,
+          "high": 22.4,
+          "low": 13.9,
+          "precip": 143.0,
+          "rain_days": 9.6,
+          "years": 10
+        },
+        {
+          "month": 11,
+          "temp": 12.0,
+          "high": 17.4,
+          "low": 7.6,
+          "precip": 32.0,
+          "rain_days": 3.7,
+          "years": 10
+        },
+        {
+          "month": 12,
+          "temp": 6.7,
+          "high": 12.3,
+          "low": 2.2,
+          "precip": 14.0,
+          "rain_days": 2.6,
+          "years": 10
+        }
+      ],
+      "source": {
+        "url": "https://www.data.jma.go.jp/stats/etrn/view/monthly_s1.php?prec_no=42&block_no=47624&year=2016&month=&day=&view=p1",
+        "fetched_at": "2026-11-17T09:42:11+00:00"
+      }
+    },
+    {
+      "prefecture": "hiroshima",
+      "station": {
+        "name": "広島",
+        "prec_no": 67,
+        "block_no": "47765"
+      },
+      "months": [
+        {
+          "month": 1,
+          "temp": 5.8,
+          "high": 10.4,
+          "low": 2.4,
+          "precip": 45.0,
+          "rain_days": 5.1,
+          "years": 10
+        },
+        {
+          "month": 2,
+          "temp": 6.5,
+          "high": 11.3,
+          "low": 2.7,
+          "precip": 65.0,
+          "rain_days": 5.7,
+          "years": 10
+        },
+        {
+          "month": 3,
+          "temp": 10.8,
+          "high": 15.8,
+          "low": 6.5,
+          "precip": 124.0,
+          "rain_days": 8.6,
+          "years": 10
+        },
+        {
+          "month": 4,
+          "temp": 15.7,
+          "high": 20.6,
+          "low": 11.1,
+          "precip": 168.0,
+          "rain_days": 7.8,
+          "years": 10
+        },
+        {
+          "month": 5,
+          "temp": 20.0,
+          "high": 24.6,
+          "low": 15.7,
+          "precip": 160.0,
+          "rain_days": 8.4,
+          "years": 10
+        },
+        {
+          "month": 6,
+          "temp": 23.6,
+          "high": 27.6,
+          "low": 20.2,
+          "precip": 253.0,
+          "rain_days": 11.2,
+          "years": 10
+        },
+        {
+          "month": 7,
+          "temp": 27.9,
+          "high": 31.6,
+          "low": 25.0,
+          "precip": 326.0,
+          "rain_days": 10.9,
+          "years": 10
+        },
+        {
+          "month": 8,
+          "temp": 29.4,
+          "high": 33.6,
+          "low": 26.1,
+          "precip": 177.0,
+          "rain_days": 7.3,
+          "years": 10
+        },
+        {
+          "month": 9,
+          "temp": 25.8,
+          "high": 29.9,
+          "low": 22.6,
+          "precip": 198.0,
+          "rain_days": 8.9,
+          "years": 10
+        },
+        {
+          "month": 10,
+          "temp": 19.6,
+          "high": 24.2,
+          "low": 16.0,
+          "precip": 109.0,
+          "rain_days": 7.6,
+          "years": 10
+        },
+        {
+          "month": 11,
+          "temp": 13.6,
+          "high": 18.5,
+          "low": 9.5,
+          "precip": 64.0,
+          "rain_days": 4.1,
+          "years": 10
+        },
+        {
+          "month": 12,
+          "temp": 7.7,
+          "high": 12.1,
+          "low": 4.2,
+          "precip": 46.0,
+          "rain_days": 5.4,
+          "years": 10
+        }
+      ],
+      "source": {
+        "url": "https://www.data.jma.go.jp/stats/etrn/view/monthly_s1.php?prec_no=67&block_no=47765&year=2016&month=&day=&view=p1",
+        "fetched_at": "2026-11-17T09:42:11+00:00"
+      }
+    },
+    {
+      "prefecture": "hokkaido",
+      "station": {
+        "name": "札幌",
+        "prec_no": 14,
+        "block_no": "47412"
+      },
+      "months": [
+        {
+          "month": 1,
+          "temp": -3.0,
+          "high": -0.2,
+          "low": -6.0,
+          "precip": 94.0,
+          "rain_days": 17.2,
+          "years": 10
+        },
+        {
+          "month": 2,
+          "temp": -2.3,
+          "high": 0.9,
+          "low": -5.7,
+          "precip": 93.0,
+          "rain_days": 16.1,
+          "years": 10
+        },
+        {
+          "month": 3,
+          "temp": 2.6,
+          "high": 6.2,
+          "low": -0.9,
+          "precip": 73.0,
+          "rain_days": 12.7,
+          "years": 10
+        },
+        {
+          "month": 4,
+          "temp": 8.4,
+          "high": 13.1,
+          "low": 4.4,
+          "precip": 58.0,
+          "rain_days": 9.6,
+          "years": 10
+        },
+        {
+          "month": 5,
+          "temp": 14.3,
+          "high": 19.6,
+          "low": 10.0,
+          "precip": 49.0,
+          "rain_days": 7.3,
+          "years": 10
+        },
+        {
+          "month": 6,
+          "temp": 17.9,
+          "high": 22.6,
+          "low": 14.2,
+          "precip": 87.0,
+          "rain_days": 8.9,
+          "years": 10
+        },
+        {
+          "month": 7,
+          "temp": 22.8,
+          "high": 27.3,
+          "low": 19.5,
+          "precip": 78.0,
+          "rain_days": 6.7,
+          "years": 10
+        },
+        {
+          "month": 8,
+          "temp": 23.4,
+          "high": 27.6,
+          "low": 20.2,
+          "precip": 149.0,
+          "rain_days": 10.8,
+          "years": 10
+        },
+        {
+          "month": 9,
+          "temp": 19.6,
+          "high": 24.0,
+          "low": 15.7,
+          "precip": 105.0,
+          "rain_days": 9.2,
+          "years": 10
+        },
+        {
+          "month": 10,
+          "temp": 12.5,
+          "high": 16.9,
+          "low": 8.5,
+          "precip": 108.0,
+          "rain_days": 12.0,
+          "years": 10
+        },
+        {
+          "month": 11,
+          "temp": 5.5,
+          "high": 9.0,
+          "low": 2.1,
+          "precip": 117.0,
+          "rain_days": 15.5,
+          "years": 10
+        },
+        {
+          "month": 12,
+          "temp": -1.1,
+          "high": 1.8,
+          "low": -4.1,
+          "precip": 90.0,
+          "rain_days": 15.3,
+          "years": 10
+        }
+      ],
+      "source": {
+        "url": "https://www.data.jma.go.jp/stats/etrn/view/monthly_s1.php?prec_no=14&block_no=47412&year=2016&month=&day=&view=p1",
+        "fetched_at": "2026-11-17T09:42:11+00:00"
+      }
+    },
+    {
+      "prefecture": "hyogo",
+      "station": {
+        "name": "神戸",
+        "prec_no": 63,
+        "block_no": "47770"
+      },
+      "months": [
+        {
+          "month": 1,
+          "temp": 6.6,
+          "high": 10.0,
+          "low": 3.6,
+          "precip": 37.0,
+          "rain_days": 4.4,
+          "years": 10
+        },
+        {
+          "month": 2,
+          "temp": 7.1,
+          "high": 10.7,
+          "low": 3.8,
+          "precip": 46.0,
+          "rain_days": 5.2,
+          "years": 10
+        },
+        {
+          "month": 3,
+          "temp": 11.1,
+          "high": 15.0,
+          "low": 7.4,
+          "precip": 95.0,
+          "rain_days": 8.5,
+          "years": 10
+        },
+        {
+          "month": 4,
+          "temp": 15.8,
+          "high": 19.7,
+          "low": 12.2,
+          "precip": 119.0,
+          "rain_days": 8.7,
+          "years": 10
+        },
+        {
+          "month": 5,
+          "temp": 20.1,
+          "high": 24.0,
+          "low": 16.7,
+          "precip": 164.0,
+          "rain_days": 9.6,
+          "years": 10
+        },
+        {
+          "month": 6,
+          "temp": 23.6,
+          "high": 27.0,
+          "low": 20.8,
+          "precip": 199.0,
+          "rain_days": 9.9,
+          "years": 10
+        },
+        {
+          "month": 7,
+          "temp": 27.9,
+          "high": 31.2,
+          "low": 25.5,
+          "precip": 232.0,
+          "rain_days": 10.1,
+          "years": 10
+        },
+        {
+          "month": 8,
+          "temp": 29.3,
+          "high": 33.0,
+          "low": 26.9,
+          "precip": 139.0,
+          "rain_days": 6.8,
+          "years": 10
+        },
+        {
+          "month": 9,
+          "temp": 26.4,
+          "high": 29.7,
+          "low": 23.8,
+          "precip": 163.0,
+          "rain_days": 9.6,
+          "years": 10
+        },
+        {
+          "month": 10,
+          "temp": 20.4,
+          "high": 23.7,
+          "low": 17.4,
+          "precip": 118.0,
+          "rain_days": 9.0,
+          "years": 10
+        },
+        {
+          "month": 11,
+          "temp": 14.6,
+          "high": 18.1,
+          "low": 11.2,
+          "precip": 62.0,
+          "rain_days": 4.9,
+          "years": 10
+        },
+        {
+          "month": 12,
+          "temp": 9.0,
+          "high": 12.5,
+          "low": 5.8,
+          "precip": 36.0,
+          "rain_days": 4.8,
+          "years": 10
+        }
+      ],
+      "source": {
+        "url": "https://www.data.jma.go.jp/stats/etrn/view/monthly_s1.php?prec_no=63&block_no=47770&year=2016&month=&day=&view=p1",
+        "fetched_at": "2026-11-17T09:42:11+00:00"
+      }
+    },
+    {
+      "prefecture": "ibaraki",
+      "station": {
+        "name": "水戸",
+        "prec_no": 40,
+        "block_no": "47629"
+      },
+      "months": [
+        {
+          "month": 1,
+          "temp": 3.9,
+          "high": 9.9,
+          "low": -1.4,
+          "precip": 41.0,
+          "rain_days": 3.5,
+          "years": 10
+        },
+        {
+          "month": 2,
+          "temp": 5.0,
+          "high": 11.1,
+          "low": -0.6,
+          "precip": 38.0,
+          "rain_days": 4.3,
+          "years": 10
+        },
+        {
+          "month": 3,
+          "temp": 9.0,
+          "high": 14.9,
+          "low": 3.4,
+          "precip": 114.0,
+          "rain_days": 8.4,
+          "years": 10
+        },
+        {
+          "month": 4,
+          "temp": 13.6,
+          "high": 19.1,
+          "low": 8.2,
+          "precip": 121.0,
+          "rain_days": 9.8,
+          "years": 10
+        },
+        {
+          "month": 5,
+          "temp": 18.2,
+          "high": 23.4,
+          "low": 13.4,
+          "precip": 145.0,
+          "rain_days": 11.7,
+          "years": 10
+        },
+        {
+          "month": 6,
+          "temp": 21.7,
+          "high": 26.1,
+          "low": 18.1,
+          "precip": 153.0,
+          "rain_days": 10.2,
+          "years": 10
+        },
+        {
+          "month": 7,
+          "temp": 25.7,
+          "high": 30.1,
+          "low": 22.4,
+          "precip": 143.0,
+          "rain_days": 11.3,
+          "years": 10
+        },
+        {
+          "month": 8,
+          "temp": 27.0,
+          "high": 31.5,
+          "low": 23.6,
+          "precip": 165.0,
+          "rain_days": 8.7,
+          "years": 10
+        },
+        {
+          "month": 9,
+          "temp": 23.5,
+          "high": 27.7,
+          "low": 20.1,
+          "precip": 171.0,
+          "rain_days": 11.2,
+          "years": 10
+        },
+        {
+          "month": 10,
+          "temp": 17.2,
+          "high": 21.8,
+          "low": 13.2,
+          "precip": 176.0,
+          "rain_days": 9.5,
+          "years": 10
+        },
+        {
+          "month": 11,
+          "temp": 11.6,
+          "high": 17.3,
+          "low": 6.5,
+          "precip": 69.0,
+          "rain_days": 6.9,
+          "years": 10
+        },
+        {
+          "month": 12,
+          "temp": 6.0,
+          "high": 12.0,
+          "low": 0.7,
+          "precip": 45.0,
+          "rain_days": 4.9,
+          "years": 10
+        }
+      ],
+      "source": {
+        "url": "https://www.data.jma.go.jp/stats/etrn/view/monthly_s1.php?prec_no=40&block_no=47629&year=2016&month=&day=&view=p1",
+        "fetched_at": "2026-11-17T09:42:11+00:00"
+      }
+    },
+    {
+      "prefecture": "ishikawa",
+      "station": {
+        "name": "金沢",
+        "prec_no": 56,
+        "block_no": "47605"
+      },
+      "months": [
+        {
+          "month": 1,
+          "temp": 4.5,
+          "high": 7.8,
+          "low": 1.6,
+          "precip": 256.0,
+          "rain_days": 23.7,
+          "years": 10
+        },
+        {
+          "month": 2,
+          "temp": 4.8,
+          "high": 8.6,
+          "low": 1.5,
+          "precip": 173.0,
+          "rain_days": 17.1,
+          "years": 10
+        },
+        {
+          "month": 3,
+          "temp": 8.7,
+          "high": 13.4,
+          "low": 4.5,
+          "precip": 132.0,
+          "rain_days": 13.5,
+          "years": 10
+        },
+        {
+          "month": 4,
+          "temp": 13.4,
+          "high": 18.2,
+          "low": 8.9,
+          "precip": 164.0,
+          "rain_days": 11.1,
+          "years": 10
+        },
+        {
+          "month": 5,
+          "temp": 18.5,
+          "high": 23.3,
+          "low": 14.2,
+          "precip": 135.0,
+          "rain_days": 10.1,
+          "years": 10
+        },
+        {
+          "month": 6,
+          "temp": 22.6,
+          "high": 26.7,
+          "low": 19.0,
+          "precip": 180.0,
+          "rain_days": 10.0,
+          "years": 10
+        },
+        {
+          "month": 7,
+          "temp": 27.1,
+          "high": 31.1,
+          "low": 24.2,
+          "precip": 238.0,
+          "rain_days": 12.4,
+          "years": 10
+        },
+        {
+          "month": 8,
+          "temp": 28.4,
+          "high": 32.5,
+          "low": 25.2,
+          "precip": 259.0,
+          "rain_days": 9.9,
+          "years": 10
+        },
+        {
+          "month": 9,
+          "temp": 24.6,
+          "high": 28.7,
+          "low": 21.4,
+          "precip": 236.0,
+          "rain_days": 13.7,
+          "years": 10
+        },
+        {
+          "month": 10,
+          "temp": 18.1,
+          "high": 22.2,
+          "low": 14.5,
+          "precip": 192.0,
+          "rain_days": 11.9,
+          "years": 10
+        },
+        {
+          "month": 11,
+          "temp": 12.4,
+          "high": 16.8,
+          "low": 8.4,
+          "precip": 245.0,
+          "rain_days": 15.7,
+          "years": 10
+        },
+        {
+          "month": 12,
+          "temp": 7.1,
+          "high": 10.7,
+          "low": 3.9,
+          "precip": 310.0,
+          "rain_days": 23.5,
+          "years": 10
+        }
+      ],
+      "source": {
+        "url": "https://www.data.jma.go.jp/stats/etrn/view/monthly_s1.php?prec_no=56&block_no=47605&year=2016&month=&day=&view=p1",
+        "fetched_at": "2026-11-17T09:42:11+00:00"
+      }
+    },
+    {
+      "prefecture": "iwate",
+      "station": {
+        "name": "盛岡",
+        "prec_no": 33,
+        "block_no": "47584"
+      },
+      "months": [
+        {
+          "month": 1,
+          "temp": -1.0,
+          "high": 2.6,
+          "low": -4.6,
+          "precip": 42.0,
+          "rain_days": 9.1,
+          "years": 10
+        },
+        {
+          "month": 2,
+          "temp": -0.3,
+          "high": 3.8,
+          "low": -4.3,
+          "precip": 51.0,
+          "rain_days": 9.2,
+          "years": 10
+        },
+        {
+          "month": 3,
+          "temp": 4.2,
+          "high": 9.4,
+          "low": -0.6,
+          "precip": 87.0,
+          "rain_days": 9.5,
+          "years": 10
+        },
+        {
+          "month": 4,
+          "temp": 9.8,
+          "high": 15.6,
+          "low": 4.2,
+          "precip": 99.0,
+          "rain_days": 10.3,
+          "years": 10
+        },
+        {
+          "month": 5,
+          "temp": 15.6,
+          "high": 21.5,
+          "low": 9.9,
+          "precip": 109.0,
+          "rain_days": 10.4,
+          "years": 10
+        },
+        {
+          "month": 6,
+          "temp": 19.8,
+          "high": 25.1,
+          "low": 15.1,
+          "precip": 114.0,
+          "rain_days": 10.7,
+          "years": 10
+        },
+        {
+          "month": 7,
+          "temp": 24.1,
+          "high": 28.9,
+          "low": 20.2,
+          "precip": 209.0,
+          "rain_days": 12.0,
+          "years": 10
+        },
+        {
+          "month": 8,
+          "temp": 24.8,
+          "high": 29.8,
+          "low": 21.1,
+          "precip": 234.0,
+          "rain_days": 12.9,
+          "years": 10
+        },
+        {
+          "month": 9,
+          "temp": 20.5,
+          "high": 25.8,
+          "low": 16.3,
+          "precip": 143.0,
+          "rain_days": 9.3,
+          "years": 10
+        },
+        {
+          "month": 10,
+          "temp": 13.2,
+          "high": 18.4,
+          "low": 8.4,
+          "precip": 112.0,
+          "rain_days": 9.8,
+          "years": 10
+        },
+        {
+          "month": 11,
+          "temp": 6.8,
+          "high": 11.8,
+          "low": 2.2,
+          "precip": 71.0,
+          "rain_days": 10.5,
+          "years": 10
+        },
+        {
+          "month": 12,
+          "temp": 1.0,
+          "high": 4.7,
+          "low": -2.4,
+          "precip": 69.0,
+          "rain_days": 11.6,
+          "years": 10
+        }
+      ],
+      "source": {
+        "url": "https://www.data.jma.go.jp/stats/etrn/view/monthly_s1.php?prec_no=33&block_no=47584&year=2016&month=&day=&view=p1",
+        "fetched_at": "2026-11-17T09:42:11+00:00"
+      }
+    },
+    {
+      "prefecture": "kagawa",
+      "station": {
+        "name": "高松",
+        "prec_no": 72,
+        "block_no": "47891"
+      },
+      "months": [
+        {
+          "month": 1,
+          "temp": 6.3,
+          "high": 10.2,
+          "low": 2.5,
+          "precip": 32.0,
+          "rain_days": 4.7,
+          "years": 10
+        },
+        {
+          "month": 2,
+          "temp": 6.6,
+          "high": 10.9,
+          "low": 2.5,
+          "precip": 46.0,
+          "rain_days": 5.3,
+          "years": 10
+        },
+        {
+          "month": 3,
+          "temp": 10.7,
+          "high": 15.5,
+          "low": 6.2,
+          "precip": 83.0,
+          "rain_days": 8.7,
+          "years": 10
+        },
+        {
+          "month": 4,
+          "temp": 15.6,
+          "high": 20.7,
+          "low": 10.8,
+          "precip": 83.0,
+          "rain_days": 7.8,
+          "years": 10
+        },
+        {
+          "month": 5,
+          "temp": 20.1,
+          "high": 25.0,
+          "low": 15.6,
+          "precip": 98.0,
+          "rain_days": 8.2,
+          "years": 10
+        },
+        {
+          "month": 6,
+          "temp": 23.7,
+          "high": 28.1,
+          "low": 20.2,
+          "precip": 149.0,
+          "rain_days": 10.1,
+          "years": 10
+        },
+        {
+          "month": 7,
+          "temp": 28.3,
+          "high": 32.6,
+          "low": 25.0,
+          "precip": 144.0,
+          "rain_days": 8.0,
+          "years": 10
+        },
+        {
+          "month": 8,
+          "temp": 29.6,
+          "high": 34.2,
+          "low": 26.1,
+          "precip": 119.0,
+          "rain_days": 6.4,
+          "years": 10
+        },
+        {
+          "month": 9,
+          "temp": 26.0,
+          "high": 30.0,
+          "low": 22.7,
+          "precip": 186.0,
+          "rain_days": 9.7,
+          "years": 10
+        },
+        {
+          "month": 10,
+          "temp": 19.8,
+          "high": 23.8,
+          "low": 16.2,
+          "precip": 107.0,
+          "rain_days": 8.6,
+          "years": 10
+        },
+        {
+          "month": 11,
+          "temp": 13.7,
+          "high": 18.1,
+          "low": 9.5,
+          "precip": 49.0,
+          "rain_days": 5.8,
+          "years": 10
+        },
+        {
+          "month": 12,
+          "temp": 8.4,
+          "high": 12.4,
+          "low": 4.5,
+          "precip": 29.0,
+          "rain_days": 4.8,
+          "years": 10
+        }
+      ],
+      "source": {
+        "url": "https://www.data.jma.go.jp/stats/etrn/view/monthly_s1.php?prec_no=72&block_no=47891&year=2016&month=&day=&view=p1",
+        "fetched_at": "2026-11-17T09:42:11+00:00"
+      }
+    },
+    {
+      "prefecture": "kagoshima",
+      "station": {
+        "name": "鹿児島",
+        "prec_no": 88,
+        "block_no": "47827"
+      },
+      "months": [
+        {
+          "month": 1,
+          "temp": 9.2,
+          "high": 13.9,
+          "low": 5.3,
+          "precip": 67.0,
+          "rain_days": 7.6,
+          "years": 10
+        },
+        {
+          "month": 2,
+          "temp": 10.3,
+          "high": 15.0,
+          "low": 6.3,
+          "precip": 120.0,
+          "rain_days": 9.3,
+          "years": 10
+        },
+        {
+          "month": 3,
+          "temp": 14.0,
+          "high": 18.8,
+          "low": 9.8,
+          "precip": 174.0,
+          "rain_days": 10.7,
+          "years": 10
+        },
+        {
+          "month": 4,
+          "temp": 17.9,
+          "high": 22.6,
+          "low": 13.9,
+          "precip": 204.0,
+          "rain_days": 10.2,
+          "years": 10
+        },
+        {
+          "month": 5,
+          "temp": 21.3,
+          "high": 25.8,
+          "low": 17.7,
+          "precip": 300.0,
+          "rain_days": 11.4,
+          "years": 10
+        },
+        {
+          "month": 6,
+          "temp": 24.6,
+          "high": 28.2,
+          "low": 21.8,
+          "precip": 553.0,
+          "rain_days": 14.9,
+          "years": 10
+        },
+        {
+          "month": 7,
+          "temp": 28.5,
+          "high": 32.4,
+          "low": 25.8,
+          "precip": 447.0,
+          "rain_days": 13.6,
+          "years": 10
+        },
+        {
+          "month": 8,
+          "temp": 29.5,
+          "high": 33.5,
+          "low": 26.6,
+          "precip": 266.0,
+          "rain_days": 10.7,
+          "years": 10
+        },
+        {
+          "month": 9,
+          "temp": 27.3,
+          "high": 31.2,
+          "low": 24.4,
+          "precip": 238.0,
+          "rain_days": 11.3,
+          "years": 10
+        },
+        {
+          "month": 10,
+          "temp": 22.5,
+          "high": 26.7,
+          "low": 19.2,
+          "precip": 99.0,
+          "rain_days": 8.0,
+          "years": 10
+        },
+        {
+          "month": 11,
+          "temp": 16.7,
+          "high": 21.2,
+          "low": 12.8,
+          "precip": 103.0,
+          "rain_days": 8.1,
+          "years": 10
+        },
+        {
+          "month": 12,
+          "temp": 10.9,
+          "high": 15.4,
+          "low": 6.8,
+          "precip": 79.0,
+          "rain_days": 6.5,
+          "years": 10
+        }
+      ],
+      "source": {
+        "url": "https://www.data.jma.go.jp/stats/etrn/view/monthly_s1.php?prec_no=88&block_no=47827&year=2016&month=&day=&view=p1",
+        "fetched_at": "2026-11-17T09:42:11+00:00"
+      }
+    },
+    {
+      "prefecture": "kanagawa",
+      "station": {
+        "name": "横浜",
+        "prec_no": 46,
+        "block_no": "47670"
+      },
+      "months": [
+        {
+          "month": 1,
+          "temp": 6.7,
+          "high": 10.7,
+          "low": 3.2,
+          "precip": 47.0,
+          "rain_days": 3.7,
+          "years": 10
+        },
+        {
+          "month": 2,
+          "temp": 7.6,
+          "high": 11.8,
+          "low": 3.9,
+          "precip": 51.0,
+          "rain_days": 4.6,
+          "years": 10
+        },
+        {
+          "month": 3,
+          "temp": 11.2,
+          "high": 15.6,
+          "low": 7.4,
+          "precip": 162.0,
+          "rain_days": 10.1,
+          "years": 10
+        },
+        {
+          "month": 4,
+          "temp": 15.5,
+          "high": 20.0,
+          "low": 11.9,
+          "precip": 150.0,
+          "rain_days": 9.2,
+          "years": 10
+        },
+        {
+          "month": 5,
+          "temp": 19.6,
+          "high": 23.9,
+          "low": 16.2,
+          "precip": 158.0,
+          "rain_days": 9.9,
+          "years": 10
+        },
+        {
+          "month": 6,
+          "temp": 22.8,
+          "high": 26.9,
+          "low": 20.0,
+          "precip": 201.0,
+          "rain_days": 11.8,
+          "years": 10
+        },
+        {
+          "month": 7,
+          "temp": 26.8,
+          "high": 30.7,
+          "low": 24.1,
+          "precip": 179.0,
+          "rain_days": 9.6,
+          "years": 10
+        },
+        {
+          "month": 8,
+          "temp": 28.3,
+          "high": 32.4,
+          "low": 25.5,
+          "precip": 140.0,
+          "rain_days": 8.8,
+          "years": 10
+        },
+        {
+          "month": 9,
+          "temp": 24.9,
+          "high": 28.5,
+          "low": 22.2,
+          "precip": 252.0,
+          "rain_days": 12.3,
+          "years": 10
+        },
+        {
+          "month": 10,
+          "temp": 19.0,
+          "high": 22.5,
+          "low": 16.1,
+          "precip": 218.0,
+          "rain_days": 10.8,
+          "years": 10
+        },
+        {
+          "month": 11,
+          "temp": 14.1,
+          "high": 17.9,
+          "low": 10.8,
+          "precip": 85.0,
+          "rain_days": 7.1,
+          "years": 10
+        },
+        {
+          "month": 12,
+          "temp": 9.1,
+          "high": 13.1,
+          "low": 5.5,
+          "precip": 61.0,
+          "rain_days": 4.9,
+          "years": 10
+        }
+      ],
+      "source": {
+        "url": "https://www.data.jma.go.jp/stats/etrn/view/monthly_s1.php?prec_no=46&block_no=47670&year=2016&month=&day=&view=p1",
+        "fetched_at": "2026-11-17T09:42:11+00:00"
+      }
+    },
+    {
+      "prefecture": "kochi",
+      "station": {
+        "name": "高知",
+        "prec_no": 74,
+        "block_no": "47893"
+      },
+      "months": [
+        {
+          "month": 1,
+          "temp": 7.1,
+          "high": 12.8,
+          "low": 2.5,
+          "precip": 56.0,
+          "rain_days": 4.7,
+          "years": 10
+        },
+        {
+          "month": 2,
+          "temp": 8.1,
+          "high": 13.4,
+          "low": 3.5,
+          "precip": 92.0,
+          "rain_days": 6.7,
+          "years": 10
+        },
+        {
+          "month": 3,
+          "temp": 12.3,
+          "high": 17.5,
+          "low": 7.5,
+          "precip": 179.0,
+          "rain_days": 9.2,
+          "years": 10
+        },
+        {
+          "month": 4,
+          "temp": 16.5,
+          "high": 21.4,
+          "low": 11.9,
+          "precip": 247.0,
+          "rain_days": 8.8,
+          "years": 10
+        },
+        {
+          "month": 5,
+          "temp": 20.1,
+          "high": 24.8,
+          "low": 15.7,
+          "precip": 311.0,
+          "rain_days": 9.6,
+          "years": 10
+        },
+        {
+          "month": 6,
+          "temp": 23.5,
+          "high": 27.6,
+          "low": 20.0,
+          "precip": 371.0,
+          "rain_days": 14.0,
+          "years": 10
+        },
+        {
+          "month": 7,
+          "temp": 27.4,
+          "high": 31.2,
+          "low": 24.4,
+          "precip": 396.0,
+          "rain_days": 13.2,
+          "years": 10
+        },
+        {
+          "month": 8,
+          "temp": 28.6,
+          "high": 33.0,
+          "low": 25.2,
+          "precip": 315.0,
+          "rain_days": 11.2,
+          "years": 10
+        },
+        {
+          "month": 9,
+          "temp": 26.0,
+          "high": 30.4,
+          "low": 22.7,
+          "precip": 329.0,
+          "rain_days": 13.5,
+          "years": 10
+        },
+        {
+          "month": 10,
+          "temp": 20.7,
+          "high": 25.6,
+          "low": 16.7,
+          "precip": 189.0,
+          "rain_days": 9.3,
+          "years": 10
+        },
+        {
+          "month": 11,
+          "temp": 14.6,
+          "high": 20.1,
+          "low": 9.9,
+          "precip": 96.0,
+          "rain_days": 6.2,
+          "years": 10
+        },
+        {
+          "month": 12,
+          "temp": 9.0,
+          "high": 14.5,
+          "low": 4.3,
+          "precip": 55.0,
+          "rain_days": 4.9,
+          "years": 10
+        }
+      ],
+      "source": {
+        "url": "https://www.data.jma.go.jp/stats/etrn/view/monthly_s1.php?prec_no=74&block_no=47893&year=2016&month=&day=&view=p1",
+        "fetched_at": "2026-11-17T09:42:11+00:00"
+      }
+    },
+    {
+      "prefecture": "kumamoto",
+      "station": {
+        "name": "熊本",
+        "prec_no": 86,
+        "block_no": "47819"
+      },
+      "months": [
+        {
+          "month": 1,
+          "temp": 6.4,
+          "high": 11.3,
+          "low": 2.0,
+          "precip": 51.0,
+          "rain_days": 5.7,
+          "years": 10
+        },
+        {
+          "month": 2,
+          "temp": 7.7,
+          "high": 12.8,
+          "low": 3.0,
+          "precip": 81.0,
+          "rain_days": 6.9,
+          "years": 10
+        },
+        {
+          "month": 3,
+          "temp": 12.1,
+          "high": 17.5,
+          "low": 7.1,
+          "precip": 130.0,
+          "rain_days": 9.5,
+          "years": 10
+        },
+        {
+          "month": 4,
+          "temp": 16.7,
+          "high": 22.1,
+          "low": 11.6,
+          "precip": 158.0,
+          "rain_days": 9.1,
+          "years": 10
+        },
+        {
+          "month": 5,
+          "temp": 20.8,
+          "high": 26.2,
+          "low": 16.0,
+          "precip": 224.0,
+          "rain_days": 9.6,
+          "years": 10
+        },
+        {
+          "month": 6,
+          "temp": 24.3,
+          "high": 28.7,
+          "low": 20.6,
+          "precip": 362.0,
+          "rain_days": 13.4,
+          "years": 10
+        },
+        {
+          "month": 7,
+          "temp": 28.1,
+          "high": 32.5,
+          "low": 24.8,
+          "precip": 382.0,
+          "rain_days": 11.3,
+          "years": 10
+        },
+        {
+          "month": 8,
+          "temp": 29.1,
+          "high": 34.0,
+          "low": 25.5,
+          "precip": 312.0,
+          "rain_days": 10.0,
+          "years": 10
+        },
+        {
+          "month": 9,
+          "temp": 26.3,
+          "high": 30.9,
+          "low": 22.6,
+          "precip": 185.0,
+          "rain_days": 10.0,
+          "years": 10
+        },
+        {
+          "month": 10,
+          "temp": 20.6,
+          "high": 25.8,
+          "low": 16.2,
+          "precip": 83.0,
+          "rain_days": 7.0,
+          "years": 10
+        },
+        {
+          "month": 11,
+          "temp": 14.0,
+          "high": 19.5,
+          "low": 9.2,
+          "precip": 72.0,
+          "rain_days": 6.8,
+          "years": 10
+        },
+        {
+          "month": 12,
+          "temp": 8.0,
+          "high": 13.1,
+          "low": 3.4,
+          "precip": 43.0,
+          "rain_days": 6.1,
+          "years": 10
+        }
+      ],
+      "source": {
+        "url": "https://www.data.jma.go.jp/stats/etrn/view/monthly_s1.php?prec_no=86&block_no=47819&year=2016&month=&day=&view=p1",
+        "fetched_at": "2026-11-17T09:42:11+00:00"
+      }
+    },
+    {
+      "prefecture": "kyoto",
+      "station": {
+        "name": "京都",
+        "prec_no": 61,
+        "block_no": "47759"
+      },
+      "months": [
+        {
+          "month": 1,
+          "temp": 5.3,
+          "high": 9.5,
+          "low": 1.9,
+          "precip": 47.0,
+          "rain_days": 5.9,
+          "years": 10
+        },
+        {
+          "month": 2,
+          "temp": 6.0,
+          "high": 10.6,
+          "low": 2.3,
+          "precip": 50.0,
+          "rain_days": 5.8,
+          "years": 10
+        },
+        {
+          "month": 3,
+          "temp": 10.2,
+          "high": 15.7,
+          "low": 5.5,
+          "precip": 105.0,
+          "rain_days": 9.2,
+          "years": 10
+        },
+        {
+          "month": 4,
+          "temp": 15.4,
+          "high": 21.1,
+          "low": 10.4,
+          "precip": 145.0,
+          "rain_days": 9.2,
+          "years": 10
+        },
+        {
+          "month": 5,
+          "temp": 20.1,
+          "high": 25.8,
+          "low": 15.2,
+          "precip": 159.0,
+          "rain_days": 10.2,
+          "years": 10
+        },
+        {
+          "month": 6,
+          "temp": 23.9,
+          "high": 28.9,
+          "low": 19.8,
+          "precip": 214.0,
+          "rain_days": 11.8,
+          "years": 10
+        },
+        {
+          "month": 7,
+          "temp": 28.3,
+          "high": 33.2,
+          "low": 24.7,
+          "precip": 245.0,
+          "rain_days": 12.1,
+          "years": 10
+        },
+        {
+          "month": 8,
+          "temp": 29.4,
+          "high": 34.7,
+          "low": 25.7,
+          "precip": 220.0,
+          "rain_days": 9.4,
+          "years": 10
+        },
+        {
+          "month": 9,
+          "temp": 25.9,
+          "high": 30.4,
+          "low": 22.4,
+          "precip": 178.0,
+          "rain_days": 10.6,
+          "years": 10
+        },
+        {
+          "month": 10,
+          "temp": 19.2,
+          "high": 23.9,
+          "low": 15.5,
+          "precip": 139.0,
+          "rain_days": 9.5,
+          "years": 10
+        },
+        {
+          "month": 11,
+          "temp": 13.1,
+          "high": 18.0,
+          "low": 9.0,
+          "precip": 58.0,
+          "rain_days": 5.4,
+          "years": 10
+        },
+        {
+          "month": 12,
+          "temp": 7.5,
+          "high": 11.9,
+          "low": 3.8,
+          "precip": 45.0,
+          "rain_days": 6.1,
+          "years": 10
+        }
+      ],
+      "source": {
+        "url": "https://www.data.jma.go.jp/stats/etrn/view/monthly_s1.php?prec_no=61&block_no=47759&year=2016&month=&day=&view=p1",
+        "fetched_at": "2026-11-17T09:42:11+00:00"
+      }
+    },
+    {
+      "prefecture": "mie",
+      "station": {
+        "name": "津",
+        "prec_no": 53,
+        "block_no": "47651"
+      },
+      "months": [
+        {
+          "month": 1,
+          "temp": 6.1,
+          "high": 10.0,
+          "low": 2.9,
+          "precip": 41.0,
+          "rain_days": 4.7,
+          "years": 10
+        },
+        {
+          "month": 2,
+          "temp": 6.5,
+          "high": 10.7,
+          "low": 3.0,
+          "precip": 40.0,
+          "rain_days": 4.9,
+          "years": 10
+        },
+        {
+          "month": 3,
+          "temp": 10.3,
+          "high": 14.6,
+          "low": 6.3,
+          "precip": 116.0,
+          "rain_days": 8.4,
+          "years": 10
+        },
+        {
+          "month": 4,
+          "temp": 15.1,
+          "high": 19.4,
+          "low": 11.2,
+          "precip": 143.0,
+          "rain_days": 9.5,
+          "years": 10
+        },
+        {
+          "month": 5,
+          "temp": 19.5,
+          "high": 23.7,
+          "low": 15.8,
+          "precip": 166.0,
+          "rain_days": 10.7,
+          "years": 10
+        },
+        {
+          "month": 6,
+          "temp": 23.3,
+          "high": 26.8,
+          "low": 20.1,
+          "precip": 233.0,
+          "rain_days": 12.2,
+          "years": 10
+        },
+        {
+          "month": 7,
+          "temp": 27.6,
+          "high": 31.1,
+          "low": 24.8,
+          "precip": 190.0,
+          "rain_days": 11.1,
+          "years": 10
+        },
+        {
+          "month": 8,
+          "temp": 28.9,
+          "high": 32.7,
+          "low": 25.9,
+          "precip": 227.0,
+          "rain_days": 10.5,
+          "years": 10
+        },
+        {
+          "month": 9,
+          "temp": 25.5,
+          "high": 28.9,
+          "low": 22.8,
+          "precip": 234.0,
+          "rain_days": 14.0,
+          "years": 10
+        },
+        {
+          "month": 10,
+          "temp": 19.4,
+          "high": 23.0,
+          "low": 16.2,
+          "precip": 210.0,
+          "rain_days": 11.0,
+          "years": 10
+        },
+        {
+          "month": 11,
+          "temp": 13.8,
+          "high": 17.8,
+          "low": 10.1,
+          "precip": 53.0,
+          "rain_days": 5.3,
+          "years": 10
+        },
+        {
+          "month": 12,
+          "temp": 8.4,
+          "high": 12.4,
+          "low": 4.8,
+          "precip": 43.0,
+          "rain_days": 5.1,
+          "years": 10
+        }
+      ],
+      "source": {
+        "url": "https://www.data.jma.go.jp/stats/etrn/view/monthly_s1.php?prec_no=53&block_no=47651&year=2016&month=&day=&view=p1",
+        "fetched_at": "2026-11-17T09:42:11+00:00"
+      }
+    },
+    {
+      "prefecture": "miyagi",
+      "station": {
+        "name": "仙台",
+        "prec_no": 34,
+        "block_no": "47590"
+      },
+      "months": [
+        {
+          "month": 1,
+          "temp": 2.5,
+          "high": 6.3,
+          "low": -0.9,
+          "precip": 41.0,
+          "rain_days": 5.1,
+          "years": 10
+        },
+        {
+          "month": 2,
+          "temp": 3.2,
+          "high": 7.6,
+          "low": -0.5,
+          "precip": 27.0,
+          "rain_days": 4.7,
+          "years": 10
+        },
+        {
+          "month": 3,
+          "temp": 7.2,
+          "high": 12.1,
+          "low": 2.8,
+          "precip": 75.0,
+          "rain_days": 6.3,
+          "years": 10
+        },
+        {
+          "month": 4,
+          "temp": 12.0,
+          "high": 17.0,
+          "low": 7.5,
+          "precip": 99.0,
+          "rain_days": 7.4,
+          "years": 10
+        },
+        {
+          "month": 5,
+          "temp": 16.9,
+          "high": 21.8,
+          "low": 12.6,
+          "precip": 116.0,
+          "rain_days": 9.0,
+          "years": 10
+        },
+        {
+          "month": 6,
+          "temp": 20.6,
+          "high": 24.9,
+          "low": 17.2,
+          "precip": 112.0,
+          "rain_days": 9.2,
+          "years": 10
+        },
+        {
+          "month": 7,
+          "temp": 24.6,
+          "high": 28.6,
+          "low": 21.8,
+          "precip": 165.0,
+          "rain_days": 12.8,
+          "years": 10
+        },
+        {
+          "month": 8,
+          "temp": 26.0,
+          "high": 30.1,
+          "low": 23.1,
+          "precip": 146.0,
+          "rain_days": 12.2,
+          "years": 10
+        },
+        {
+          "month": 9,
+          "temp": 22.4,
+          "high": 26.4,
+          "low": 19.3,
+          "precip": 171.0,
+          "rain_days": 11.9,
+          "years": 10
+        },
+        {
+          "month": 10,
+          "temp": 16.2,
+          "high": 20.3,
+          "low": 12.4,
+          "precip": 163.0,
+          "rain_days": 8.6,
+          "years": 10
+        },
+        {
+          "month": 11,
+          "temp": 10.5,
+          "high": 15.1,
+          "low": 6.3,
+          "precip": 33.0,
+          "rain_days": 3.8,
+          "years": 10
+        },
+        {
+          "month": 12,
+          "temp": 4.7,
+          "high": 8.8,
+          "low": 1.1,
+          "precip": 29.0,
+          "rain_days": 5.3,
+          "years": 10
+        }
+      ],
+      "source": {
+        "url": "https://www.data.jma.go.jp/stats/etrn/view/monthly_s1.php?prec_no=34&block_no=47590&year=2016&month=&day=&view=p1",
+        "fetched_at": "2026-11-17T09:42:11+00:00"
+      }
+    },
+    {
+      "prefecture": "miyazaki",
+      "station": {
+        "name": "宮崎",
+        "prec_no": 87,
+        "block_no": "47830"
+      },
+      "months": [
+        {
+          "month": 1,
+          "temp": 8.3,
+          "high": 13.8,
+          "low": 3.5,
+          "precip": 58.0,
+          "rain_days": 5.4,
+          "years": 10
+        },
+        {
+          "month": 2,
+          "temp": 9.5,
+          "high": 14.5,
+          "low": 4.9,
+          "precip": 114.0,
+          "rain_days": 8.3,
+          "years": 10
+        },
+        {
+          "month": 3,
+          "temp": 13.2,
+          "high": 18.1,
+          "low": 8.4,
+          "precip": 167.0,
+          "rain_days": 9.7,
+          "years": 10
+        },
+        {
+          "month": 4,
+          "temp": 17.1,
+          "high": 21.6,
+          "low": 12.6,
+          "precip": 185.0,
+          "rain_days": 10.9,
+          "years": 10
+        },
+        {
+          "month": 5,
+          "temp": 20.5,
+          "high": 24.8,
+          "low": 16.6,
+          "precip": 316.0,
+          "rain_days": 12.1,
+          "years": 10
+        },
+        {
+          "month": 6,
+          "temp": 23.8,
+          "high": 27.5,
+          "low": 20.6,
+          "precip": 443.0,
+          "rain_days": 14.8,
+          "years": 10
+        },
+        {
+          "month": 7,
+          "temp": 27.6,
+          "high": 31.4,
+          "low": 24.6,
+          "precip": 436.0,
+          "rain_days": 13.7,
+          "years": 10
+        },
+        {
+          "month": 8,
+          "temp": 28.4,
+          "high": 32.4,
+          "low": 25.2,
+          "precip": 311.0,
+          "rain_days": 10.8,
+          "years": 10
+        },
+        {
+          "month": 9,
+          "temp": 25.9,
+          "high": 29.7,
+          "low": 22.8,
+          "precip": 468.0,
+          "rain_days": 14.4,
+          "years": 10
+        },
+        {
+          "month": 10,
+          "temp": 20.9,
+          "high": 25.4,
+          "low": 17.1,
+          "precip": 207.0,
+          "rain_days": 9.9,
+          "years": 10
+        },
+        {
+          "month": 11,
+          "temp": 15.3,
+          "high": 20.5,
+          "low": 10.8,
+          "precip": 77.0,
+          "rain_days": 6.3,
+          "years": 10
+        },
+        {
+          "month": 12,
+          "temp": 9.8,
+          "high": 15.2,
+          "low": 4.9,
+          "precip": 46.0,
+          "rain_days": 4.2,
+          "years": 10
+        }
+      ],
+      "source": {
+        "url": "https://www.data.jma.go.jp/stats/etrn/view/monthly_s1.php?prec_no=87&block_no=47830&year=2016&month=&day=&view=p1",
+        "fetched_at": "2026-11-17T09:42:11+00:00"
+      }
+    },
+    {
+      "prefecture": "nagano",
+      "station": {
+        "name": "長野",
+        "prec_no": 48,
+        "block_no": "47610"
+      },
+      "months": [
+        {
+          "month": 1,
+          "temp": 0.1,
+          "high": 4.6,
+          "low": -3.6,
+          "precip": 42.0,
+          "rain_days": 7.8,
+          "years": 10
+        },
+        {
+          "month": 2,
+          "temp": 1.0,
+          "high": 6.2,
+          "low": -3.2,
+          "precip": 40.0,
+          "rain_days": 7.9,
+          "years": 10
+        },
+        {
+          "month": 3,
+          "temp": 5.8,
+          "high": 12.3,
+          "low": 0.6,
+          "precip": 61.0,
+          "rain_days": 8.7,
+          "years": 10
+        },
+        {
+          "month": 4,
+          "temp": 11.6,
+          "high": 18.7,
+          "low": 5.7,
+          "precip": 72.0,
+          "rain_days": 8.7,
+          "years": 10
+        },
+        {
+          "month": 5,
+          "temp": 17.1,
+          "high": 23.9,
+          "low": 11.3,
+          "precip": 81.0,
+          "rain_days": 8.1,
+          "years": 10
+        },
+        {
+          "month": 6,
+          "temp": 20.9,
+          "high": 26.9,
+          "low": 16.4,
+          "precip": 106.0,
+          "rain_days": 9.5,
+          "years": 10
+        },
+        {
+          "month": 7,
+          "temp": 25.3,
+          "high": 30.9,
+          "low": 21.5,
+          "precip": 152.0,
+          "rain_days": 12.1,
+          "years": 10
+        },
+        {
+          "month": 8,
+          "temp": 26.4,
+          "high": 32.3,
+          "low": 22.5,
+          "precip": 116.0,
+          "rain_days": 9.5,
+          "years": 10
+        },
+        {
+          "month": 9,
+          "temp": 22.3,
+          "high": 27.5,
+          "low": 18.7,
+          "precip": 131.0,
+          "rain_days": 10.7,
+          "years": 10
+        },
+        {
+          "month": 10,
+          "temp": 15.1,
+          "high": 20.3,
+          "low": 10.9,
+          "precip": 108.0,
+          "rain_days": 8.7,
+          "years": 10
+        },
+        {
+          "month": 11,
+          "temp": 8.5,
+          "high": 14.2,
+          "low": 3.8,
+          "precip": 39.0,
+          "rain_days": 6.2,
+          "years": 10
+        },
+        {
+          "month": 12,
+          "temp": 2.5,
+          "high": 7.5,
+          "low": -1.4,
+          "precip": 47.0,
+          "rain_days": 8.4,
+          "years": 10
+        }
+      ],
+      "source": {
+        "url": "https://www.data.jma.go.jp/stats/etrn/view/monthly_s1.php?prec_no=48&block_no=47610&year=2016&month=&day=&view=p1",
+        "fetched_at": "2026-11-17T09:42:11+00:00"
+      }
+    },
+    {
+      "prefecture": "nagasaki",
+      "station": {
+        "name": "長崎",
+        "prec_no": 84,
+        "block_no": "47817"
+      },
+      "months": [
+        {
+          "month": 1,
+          "temp": 7.6,
+          "high": 11.3,
+          "low": 4.2,
+          "precip": 73.0,
+          "rain_days": 8.9,
+          "years": 10
+        },
+        {
+          "month": 2,
+          "temp": 8.4,
+          "high": 12.4,
+          "low": 4.8,
+          "precip": 82.0,
+          "rain_days": 8.4,
+          "years": 10
+        },
+        {
+          "month": 3,
+          "temp": 12.3,
+          "high": 16.6,
+          "low": 8.6,
+          "precip": 143.0,
+          "rain_days": 9.7,
+          "years": 10
+        },
+        {
+          "month": 4,
+          "temp": 16.4,
+          "high": 20.8,
+          "low": 12.6,
+          "precip": 157.0,
+          "rain_days": 8.2,
+          "years": 10
+        },
+        {
+          "month": 5,
+          "temp": 20.0,
+          "high": 24.3,
+          "low": 16.4,
+          "precip": 199.0,
+          "rain_days": 9.9,
+          "years": 10
+        },
+        {
+          "month": 6,
+          "temp": 23.5,
+          "high": 27.1,
+          "low": 20.7,
+          "precip": 329.0,
+          "rain_days": 12.7,
+          "years": 10
+        },
+        {
+          "month": 7,
+          "temp": 27.7,
+          "high": 31.1,
+          "low": 25.1,
+          "precip": 313.0,
+          "rain_days": 11.0,
+          "years": 10
+        },
+        {
+          "month": 8,
+          "temp": 28.8,
+          "high": 32.6,
+          "low": 26.0,
+          "precip": 293.0,
+          "rain_days": 10.2,
+          "years": 10
+        },
+        {
+          "month": 9,
+          "temp": 25.9,
+          "high": 29.8,
+          "low": 23.0,
+          "precip": 223.0,
+          "rain_days": 11.1,
+          "years": 10
+        },
+        {
+          "month": 10,
+          "temp": 20.8,
+          "high": 24.9,
+          "low": 17.5,
+          "precip": 100.0,
+          "rain_days": 6.8,
+          "years": 10
+        },
+        {
+          "month": 11,
+          "temp": 15.0,
+          "high": 19.3,
+          "low": 11.4,
+          "precip": 79.0,
+          "rain_days": 7.0,
+          "years": 10
+        },
+        {
+          "month": 12,
+          "temp": 9.5,
+          "high": 13.2,
+          "low": 6.0,
+          "precip": 67.0,
+          "rain_days": 7.2,
+          "years": 10
+        }
+      ],
+      "source": {
+        "url": "https://www.data.jma.go.jp/stats/etrn/view/monthly_s1.php?prec_no=84&block_no=47817&year=2016&month=&day=&view=p1",
+        "fetched_at": "2026-11-17T09:42:11+00:00"
+      }
+    },
+    {
+      "prefecture": "nara",
+      "station": {
+        "name": "奈良",
+        "prec_no": 64,
+        "block_no": "47780"
+      },
+      "months": [
+        {
+          "month": 1,
+          "temp": 4.8,
+          "high": 9.5,
+          "low": 0.9,
+          "precip": 45.0,
+          "rain_days": 5.9,
+          "years": 10
+        },
+        {
+          "month": 2,
+          "temp": 5.4,
+          "high": 10.5,
+          "low": 1.2,
+          "precip": 50.0,
+          "rain_days": 6.1,
+          "years": 10
+        },
+        {
+          "month": 3,
+          "temp": 9.7,
+          "high": 15.7,
+          "low": 4.5,
+          "precip": 101.0,
+          "rain_days": 9.0,
+          "years": 10
+        },
+        {
+          "month": 4,
+          "temp": 14.9,
+          "high": 21.0,
+          "low": 9.4,
+          "precip": 119.0,
+          "rain_days": 9.3,
+          "years": 10
+        },
+        {
+          "month": 5,
+          "temp": 19.4,
+          "high": 25.4,
+          "low": 14.2,
+          "precip": 148.0,
+          "rain_days": 10.5,
+          "years": 10
+        },
+        {
+          "month": 6,
+          "temp": 23.1,
+          "high": 28.4,
+          "low": 18.8,
+          "precip": 199.0,
+          "rain_days": 11.1,
+          "years": 10
+        },
+        {
+          "month": 7,
+          "temp": 27.6,
+          "high": 32.7,
+          "low": 23.8,
+          "precip": 204.0,
+          "rain_days": 11.4,
+          "years": 10
+        },
+        {
+          "month": 8,
+          "temp": 28.6,
+          "high": 34.2,
+          "low": 24.6,
+          "precip": 153.0,
+          "rain_days": 8.6,
+          "years": 10
+        },
+        {
+          "month": 9,
+          "temp": 25.0,
+          "high": 29.9,
+          "low": 21.3,
+          "precip": 165.0,
+          "rain_days": 11.0,
+          "years": 10
+        },
+        {
+          "month": 10,
+          "temp": 18.4,
+          "high": 23.5,
+          "low": 14.3,
+          "precip": 158.0,
+          "rain_days": 10.5,
+          "years": 10
+        },
+        {
+          "month": 11,
+          "temp": 12.3,
+          "high": 17.8,
+          "low": 7.8,
+          "precip": 62.0,
+          "rain_days": 6.1,
+          "years": 10
+        },
+        {
+          "month": 12,
+          "temp": 7.0,
+          "high": 12.0,
+          "low": 3.0,
+          "precip": 49.0,
+          "rain_days": 5.3,
+          "years": 10
+        }
+      ],
+      "source": {
+        "url": "https://www.data.jma.go.jp/stats/etrn/view/monthly_s1.php?prec_no=64&block_no=47780&year=2016&month=&day=&view=p1",
+        "fetched_at": "2026-11-17T09:42:11+00:00"
+      }
+    },
+    {
+      "prefecture": "niigata",
+      "station": {
+        "name": "新潟",
+        "prec_no": 54,
+        "block_no": "47604"
+      },
+      "months": [
+        {
+          "month": 1,
+          "temp": 3.1,
+          "high": 6.2,
+          "low": 0.4,
+          "precip": 192.0,
+          "rain_days": 22.0,
+          "years": 10
+        },
+        {
+          "month": 2,
+          "temp": 3.5,
+          "high": 7.0,
+          "low": 0.4,
+          "precip": 104.0,
+          "rain_days": 15.8,
+          "years": 10
+        },
+        {
+          "month": 3,
+          "temp": 7.4,
+          "high": 11.9,
+          "low": 3.3,
+          "precip": 92.0,
+          "rain_days": 12.8,
+          "years": 10
+        },
+        {
+          "month": 4,
+          "temp": 12.0,
+          "high": 16.9,
+          "low": 7.7,
+          "precip": 101.0,
+          "rain_days": 11.4,
+          "years": 10
+        },
+        {
+          "month": 5,
+          "temp": 17.4,
+          "high": 22.2,
+          "low": 13.1,
+          "precip": 103.0,
+          "rain_days": 10.6,
+          "years": 10
+        },
+        {
+          "month": 6,
+          "temp": 21.5,
+          "high": 25.6,
+          "low": 18.0,
+          "precip": 105.0,
+          "rain_days": 8.4,
+          "years": 10
+        },
+        {
+          "month": 7,
+          "temp": 26.1,
+          "high": 29.9,
+          "low": 23.0,
+          "precip": 240.0,
+          "rain_days": 11.2,
+          "years": 10
+        },
+        {
+          "month": 8,
+          "temp": 27.5,
+          "high": 31.6,
+          "low": 24.1,
+          "precip": 182.0,
+          "rain_days": 9.7,
+          "years": 10
+        },
+        {
+          "month": 9,
+          "temp": 23.6,
+          "high": 27.7,
+          "low": 20.2,
+          "precip": 186.0,
+          "rain_days": 11.4,
+          "years": 10
+        },
+        {
+          "month": 10,
+          "temp": 17.0,
+          "high": 21.1,
+          "low": 13.1,
+          "precip": 145.0,
+          "rain_days": 13.9,
+          "years": 10
+        },
+        {
+          "month": 11,
+          "temp": 11.1,
+          "high": 15.3,
+          "low": 7.2,
+          "precip": 181.0,
+          "rain_days": 16.1,
+          "years": 10
+        },
+        {
+          "month": 12,
+          "temp": 5.5,
+          "high": 9.0,
+          "low": 2.5,
+          "precip": 252.0,
+          "rain_days": 22.3,
+          "years": 10
+        }
+      ],
+      "source": {
+        "url": "https://www.data.jma.go.jp/stats/etrn/view/monthly_s1.php?prec_no=54&block_no=47604&year=2016&month=&day=&view=p1",
+        "fetched_at": "2026-11-17T09:42:11+00:00"
+      }
+    },
+    {
+      "prefecture": "oita",
+      "station": {
+        "name": "大分",
+        "prec_no": 83,
+        "block_no": "47815"
+      },
+      "months": [
+        {
+          "month": 1,
+          "temp": 7.1,
+          "high": 11.3,
+          "low": 3.0,
+          "precip": 45.0,
+          "rain_days": 4.3,
+          "years": 10
+        },
+        {
+          "month": 2,
+          "temp": 7.6,
+          "high": 12.0,
+          "low": 3.5,
+          "precip": 66.0,
+          "rain_days": 6.8,
+          "years": 10
+        },
+        {
+          "month": 3,
+          "temp": 11.4,
+          "high": 16.0,
+          "low": 7.1,
+          "precip": 114.0,
+          "rain_days": 8.6,
+          "years": 10
+        },
+        {
+          "month": 4,
+          "temp": 15.7,
+          "high": 20.5,
+          "low": 11.3,
+          "precip": 106.0,
+          "rain_days": 8.0,
+          "years": 10
+        },
+        {
+          "month": 5,
+          "temp": 19.8,
+          "high": 24.4,
+          "low": 15.5,
+          "precip": 162.0,
+          "rain_days": 9.1,
+          "years": 10
+        },
+        {
+          "month": 6,
+          "temp": 23.2,
+          "high": 27.3,
+          "low": 20.0,
+          "precip": 280.0,
+          "rain_days": 12.5,
+          "years": 10
+        },
+        {
+          "month": 7,
+          "temp": 27.4,
+          "high": 31.6,
+          "low": 24.3,
+          "precip": 248.0,
+          "rain_days": 11.4,
+          "years": 10
+        },
+        {
+          "month": 8,
+          "temp": 28.7,
+          "high": 33.1,
+          "low": 25.3,
+          "precip": 200.0,
+          "rain_days": 8.6,
+          "years": 10
+        },
+        {
+          "month": 9,
+          "temp": 25.4,
+          "high": 29.2,
+          "low": 22.4,
+          "precip": 256.0,
+          "rain_days": 10.9,
+          "years": 10
+        },
+        {
+          "month": 10,
+          "temp": 20.2,
+          "high": 24.0,
+          "low": 16.7,
+          "precip": 140.0,
+          "rain_days": 7.6,
+          "years": 10
+        },
+        {
+          "month": 11,
+          "temp": 14.4,
+          "high": 18.9,
+          "low": 10.1,
+          "precip": 39.0,
+          "rain_days": 4.4,
+          "years": 10
+        },
+        {
+          "month": 12,
+          "temp": 8.9,
+          "high": 13.3,
+          "low": 4.8,
+          "precip": 31.0,
+          "rain_days": 4.1,
+          "years": 10
+        }
+      ],
+      "source": {
+        "url": "https://www.data.jma.go.jp/stats/etrn/view/monthly_s1.php?prec_no=83&block_no=47815&year=2016&month=&day=&view=p1",
+        "fetched_at": "2026-11-17T09:42:11+00:00"
+      }
+    },
+    {
+      "prefecture": "okayama",
+      "station": {
+        "name": "岡山",
+        "prec_no": 66,
+        "block_no": "47768"
+      },
+      "months": [
+        {
+          "month": 1,
+          "temp": 5.0,
+          "high": 10.3,
+          "low": 0.4,
+          "precip": 30.0,
+          "rain_days": 3.7,
+          "years": 10
+        },
+        {
+          "month": 2,
+          "temp": 5.6,
+          "high": 11.1,
+          "low": 0.8,
+          "precip": 40.0,
+          "rain_days": 4.9,
+          "years": 10
+        },
+        {
+          "month": 3,
+          "temp": 10.0,
+          "high": 15.9,
+          "low": 4.7,
+          "precip": 91.0,
+          "rain_days": 8.0,
+          "years": 10
+        },
+        {
+          "month": 4,
+          "temp": 15.0,
+          "high": 21.0,
+          "low": 9.4,
+          "precip": 105.0,
+          "rain_days": 8.0,
+          "years": 10
+        },
+        {
+          "month": 5,
+          "temp": 19.5,
+          "high": 25.2,
+          "low": 14.3,
+          "precip": 111.0,
+          "rain_days": 8.2,
+          "years": 10
+        },
+        {
+          "month": 6,
+          "temp": 23.4,
+          "high": 28.3,
+          "low": 19.1,
+          "precip": 185.0,
+          "rain_days": 10.1,
+          "years": 10
+        },
+        {
+          "month": 7,
+          "temp": 27.8,
+          "high": 32.5,
+          "low": 24.2,
+          "precip": 174.0,
+          "rain_days": 9.8,
+          "years": 10
+        },
+        {
+          "month": 8,
+          "temp": 29.1,
+          "high": 34.2,
+          "low": 25.1,
+          "precip": 113.0,
+          "rain_days": 6.7,
+          "years": 10
+        },
+        {
+          "month": 9,
+          "temp": 25.3,
+          "high": 29.9,
+          "low": 21.6,
+          "precip": 137.0,
+          "rain_days": 8.0,
+          "years": 10
+        },
+        {
+          "month": 10,
+          "temp": 18.8,
+          "high": 23.9,
+          "low": 14.5,
+          "precip": 100.0,
+          "rain_days": 7.6,
+          "years": 10
+        },
+        {
+          "month": 11,
+          "temp": 12.4,
+          "high": 18.1,
+          "low": 7.5,
+          "precip": 43.0,
+          "rain_days": 4.4,
+          "years": 10
+        },
+        {
+          "month": 12,
+          "temp": 6.9,
+          "high": 12.2,
+          "low": 2.3,
+          "precip": 30.0,
+          "rain_days": 4.4,
+          "years": 10
+        }
+      ],
+      "source": {
+        "url": "https://www.data.jma.go.jp/stats/etrn/view/monthly_s1.php?prec_no=66&block_no=47768&year=2016&month=&day=&view=p1",
+        "fetched_at": "2026-11-17T09:42:11+00:00"
+      }
+    },
+    {
+      "prefecture": "okinawa",
+      "station": {
+        "name": "那覇",
+        "prec_no": 91,
+        "block_no": "47936"
+      },
+      "months": [
+        {
+          "month": 1,
+          "temp": 17.7,
+          "high": 20.2,
+          "low": 15.3,
+          "precip": 101.0,
+          "rain_days": 10.0,
+          "years": 10
+        },
+        {
+          "month": 2,
+          "temp": 18.0,
+          "high": 20.8,
+          "low": 15.7,
+          "precip": 108.0,
+          "rain_days": 9.5,
+          "years": 10
+        },
+        {
+          "month": 3,
+          "temp": 19.7,
+          "high": 22.5,
+          "low": 17.3,
+          "precip": 136.0,
+          "rain_days": 11.7,
+          "years": 10
+        },
+        {
+          "month": 4,
+          "temp": 22.0,
+          "high": 24.8,
+          "low": 19.7,
+          "precip": 174.0,
+          "rain_days": 9.8,
+          "years": 10
+        },
+        {
+          "month": 5,
+          "temp": 24.7,
+          "high": 27.4,
+          "low": 22.6,
+          "precip": 290.0,
+          "rain_days": 12.3,
+          "years": 10
+        },
+        {
+          "month": 6,
+          "temp": 27.4,
+          "high": 30.0,
+          "low": 25.4,
+          "precip": 464.0,
+          "rain_days": 13.7,
+          "years": 10
+        },
+        {
+          "month": 7,
+          "temp": 29.4,
+          "high": 32.2,
+          "low": 27.2,
+          "precip": 241.0,
+          "rain_days": 12.6,
+          "years": 10
+        },
+        {
+          "month": 8,
+          "temp": 29.4,
+          "high": 32.2,
+          "low": 27.3,
+          "precip": 247.0,
+          "rain_days": 14.3,
+          "years": 10
+        },
+        {
+          "month": 9,
+          "temp": 28.6,
+          "high": 31.4,
+          "low": 26.4,
+          "precip": 278.0,
+          "rain_days": 14.1,
+          "years": 10
+        },
+        {
+          "month": 10,
+          "temp": 26.4,
+          "high": 29.0,
+          "low": 24.4,
+          "precip": 197.0,
+          "rain_days": 9.8,
+          "years": 10
+        },
+        {
+          "month": 11,
+          "temp": 23.1,
+          "high": 25.6,
+          "low": 21.0,
+          "precip": 137.0,
+          "rain_days": 8.7,
+          "years": 10
+        },
+        {
+          "month": 12,
+          "temp": 19.4,
+          "high": 21.8,
+          "low": 17.2,
+          "precip": 114.0,
+          "rain_days": 10.1,
+          "years": 10
+        }
+      ],
+      "source": {
+        "url": "https://www.data.jma.go.jp/stats/etrn/view/monthly_s1.php?prec_no=91&block_no=47936&year=2016&month=&day=&view=p1",
+        "fetched_at": "2026-11-17T09:42:11+00:00"
+      }
+    },
+    {
+      "prefecture": "osaka",
+      "station": {
+        "name": "大阪",
+        "prec_no": 62,
+        "block_no": "47772"
+      },
+      "months": [
+        {
+          "month": 1,
+          "temp": 6.5,
+          "high": 10.1,
+          "low": 3.3,
+          "precip": 41.0,
+          "rain_days": 4.7,
+          "years": 10
+        },
+        {
+          "month": 2,
+          "temp": 7.0,
+          "high": 11.0,
+          "low": 3.6,
+          "precip": 46.0,
+          "rain_days": 5.2,
+          "years": 10
+        },
+        {
+          "month": 3,
+          "temp": 11.1,
+          "high": 15.7,
+          "low": 7.0,
+          "precip": 101.0,
+          "rain_days": 8.7,
+          "years": 10
+        },
+        {
+          "month": 4,
+          "temp": 15.9,
+          "high": 20.8,
+          "low": 11.7,
+          "precip": 132.0,
+          "rain_days": 8.7,
+          "years": 10
+        },
+        {
+          "month": 5,
+          "temp": 20.4,
+          "high": 25.2,
+          "low": 16.2,
+          "precip": 169.0,
+          "rain_days": 9.9,
+          "years": 10
+        },
+        {
+          "month": 6,
+          "temp": 23.9,
+          "high": 28.4,
+          "low": 20.4,
+          "precip": 210.0,
+          "rain_days": 10.7,
+          "years": 10
+        },
+        {
+          "month": 7,
+          "temp": 28.4,
+          "high": 32.8,
+          "low": 25.4,
+          "precip": 187.0,
+          "rain_days": 8.9,
+          "years": 10
+        },
+        {
+          "month": 8,
+          "temp": 29.7,
+          "high": 34.5,
+          "low": 26.5,
+          "precip": 142.0,
+          "rain_days": 8.0,
+          "years": 10
+        },
+        {
+          "month": 9,
+          "temp": 26.2,
+          "high": 30.4,
+          "low": 23.1,
+          "precip": 153.0,
+          "rain_days": 10.3,
+          "years": 10
+        },
+        {
+          "month": 10,
+          "temp": 20.0,
+          "high": 24.2,
+          "low": 16.6,
+          "precip": 137.0,
+          "rain_days": 9.9,
+          "years": 10
+        },
+        {
+          "month": 11,
+          "temp": 14.2,
+          "high": 18.5,
+          "low": 10.5,
+          "precip": 63.0,
+          "rain_days": 5.6,
+          "years": 10
+        },
+        {
+          "month": 12,
+          "temp": 8.8,
+          "high": 12.6,
+          "low": 5.4,
+          "precip": 46.0,
+          "rain_days": 4.9,
+          "years": 10
+        }
+      ],
+      "source": {
+        "url": "https://www.data.jma.go.jp/stats/etrn/view/monthly_s1.php?prec_no=62&block_no=47772&year=2016&month=&day=&view=p1",
+        "fetched_at": "2026-11-17T09:42:11+00:00"
+      }
+    },
+    {
+      "prefecture": "saga",
+      "station": {
+        "name": "佐賀",
+        "prec_no": 85,
+        "block_no": "47813"
+      },
+      "months": [
+        {
+          "month": 1,
+          "temp": 6.4,
+          "high": 10.9,
+          "low": 2.5,
+          "precip": 55.0,
+          "rain_days": 7.2,
+          "years": 10
+        },
+        {
+          "month": 2,
+          "temp": 7.6,
+          "high": 12.3,
+          "low": 3.4,
+          "precip": 81.0,
+          "rain_days": 7.7,
+          "years": 10
+        },
+        {
+          "month": 3,
+          "temp": 11.8,
+          "high": 16.9,
+          "low": 7.3,
+          "precip": 129.0,
+          "rain_days": 9.6,
+          "years": 10
+        },
+        {
+          "month": 4,
+          "temp": 16.4,
+          "high": 21.8,
+          "low": 11.6,
+          "precip": 168.0,
+          "rain_days": 8.3,
+          "years": 10
+        },
+        {
+          "month": 5,
+          "temp": 20.7,
+          "high": 26.1,
+          "low": 15.9,
+          "precip": 215.0,
+          "rain_days": 8.7,
+          "years": 10
+        },
+        {
+          "month": 6,
+          "temp": 24.4,
+          "high": 28.8,
+          "low": 20.7,
+          "precip": 309.0,
+          "rain_days": 11.4,
+          "years": 10
+        },
+        {
+          "month": 7,
+          "temp": 28.3,
+          "high": 32.6,
+          "low": 25.1,
+          "precip": 398.0,
+          "rain_days": 12.5,
+          "years": 10
+        },
+        {
+          "month": 8,
+          "temp": 29.2,
+          "high": 33.9,
+          "low": 25.6,
+          "precip": 339.0,
+          "rain_days": 9.5,
+          "years": 10
+        },
+        {
+          "month": 9,
+          "temp": 26.0,
+          "high": 30.4,
+          "low": 22.6,
+          "precip": 194.0,
+          "rain_days": 10.7,
+          "years": 10
+        },
+        {
+          "month": 10,
+          "temp": 20.3,
+          "high": 25.1,
+          "low": 16.4,
+          "precip": 98.0,
+          "rain_days": 6.7,
+          "years": 10
+        },
+        {
+          "month": 11,
+          "temp": 14.1,
+          "high": 19.2,
+          "low": 9.7,
+          "precip": 66.0,
+          "rain_days": 5.7,
+          "years": 10
+        },
+        {
+          "month": 12,
+          "temp": 8.2,
+          "high": 12.7,
+          "low": 4.2,
+          "precip": 48.0,
+          "rain_days": 6.1,
+          "years": 10
+        }
+      ],
+      "source": {
+        "url": "https://www.data.jma.go.jp/stats/etrn/view/monthly_s1.php?prec_no=85&block_no=47813&year=2016&month=&day=&view=p1",
+        "fetched_at": "2026-11-17T09:42:11+00:00"
+      }
+    },
+    {
+      "prefecture": "saitama",
+      "station": {
+        "name": "熊谷",
+        "prec_no": 43,
+        "block_no": "47626"
+      },
+      "months": [
+        {
+          "month": 1,
+          "temp": 4.8,
+          "high": 10.6,
+          "low": -0.2,
+          "precip": 26.0,
+          "rain_days": 2.6,
+          "years": 10
+        },
+        {
+          "month": 2,
+          "temp": 5.9,
+          "high": 11.8,
+          "low": 0.9,
+          "precip": 25.0,
+          "rain_days": 3.0,
+          "years": 10
+        },
+        {
+          "month": 3,
+          "temp": 10.1,
+          "high": 15.8,
+          "low": 4.9,
+          "precip": 93.0,
+          "rain_days": 7.5,
+          "years": 10
+        },
+        {
+          "month": 4,
+          "temp": 14.9,
+          "high": 20.9,
+          "low": 9.6,
+          "precip": 85.0,
+          "rain_days": 7.7,
+          "years": 10
+        },
+        {
+          "month": 5,
+          "temp": 19.6,
+          "high": 25.4,
+          "low": 14.5,
+          "precip": 108.0,
+          "rain_days": 10.2,
+          "years": 10
+        },
+        {
+          "month": 6,
+          "temp": 23.3,
+          "high": 28.4,
+          "low": 19.2,
+          "precip": 163.0,
+          "rain_days": 11.1,
+          "years": 10
+        },
+        {
+          "month": 7,
+          "temp": 27.2,
+          "high": 32.2,
+          "low": 23.4,
+          "precip": 149.0,
+          "rain_days": 11.7,
+          "years": 10
+        },
+        {
+          "month": 8,
+          "temp": 28.4,
+          "high": 33.7,
+          "low": 24.6,
+          "precip": 165.0,
+          "rain_days": 10.7,
+          "years": 10
+        },
+        {
+          "month": 9,
+          "temp": 24.5,
+          "high": 29.1,
+          "low": 21.0,
+          "precip": 168.0,
+          "rain_days": 12.0,
+          "years": 10
+        },
+        {
+          "month": 10,
+          "temp": 18.1,
+          "high": 22.6,
+          "low": 14.3,
+          "precip": 165.0,
+          "rain_days": 9.2,
+          "years": 10
+        },
+        {
+          "month": 11,
+          "temp": 12.3,
+          "high": 17.7,
+          "low": 7.6,
+          "precip": 43.0,
+          "rain_days": 3.8,
+          "years": 10
+        },
+        {
+          "month": 12,
+          "temp": 6.8,
+          "high": 12.7,
+          "low": 1.8,
+          "precip": 20.0,
+          "rain_days": 3.0,
+          "years": 10
+        }
+      ],
+      "source": {
+        "url": "https://www.data.jma.go.jp/stats/etrn/view/monthly_s1.php?prec_no=43&block_no=47626&year=2016&month=&day=&view=p1",
+        "fetched_at": "2026-11-17T09:42:11+00:00"
+      }
+    },
+    {
+      "prefecture": "shiga",
+      "station": {
+        "name": "彦根",
+        "prec_no": 60,
+        "block_no": "47761"
+      },
+      "months": [
+        {
+          "month": 1,
+          "temp": 4.5,
+          "high": 7.8,
+          "low": 1.4,
+          "precip": 92.0,
+          "rain_days": 12.9,
+          "years": 10
+        },
+        {
+          "month": 2,
+          "temp": 4.9,
+          "high": 8.5,
+          "low": 1.6,
+          "precip": 84.0,
+          "rain_days": 11.2,
+          "years": 10
+        },
+        {
+          "month": 3,
+          "temp": 8.6,
+          "high": 13.1,
+          "low": 4.5,
+          "precip": 110.0,
+          "rain_days": 10.8,
+          "years": 10
+        },
+        {
+          "month": 4,
+          "temp": 13.4,
+          "high": 18.5,
+          "low": 9.1,
+          "precip": 140.0,
+          "rain_days": 10.6,
+          "years": 10
+        },
+        {
+          "month": 5,
+          "temp": 18.2,
+          "high": 23.4,
+          "low": 14.0,
+          "precip": 150.0,
+          "rain_days": 9.8,
+          "years": 10
+        },
+        {
+          "month": 6,
+          "temp": 22.5,
+          "high": 26.9,
+          "low": 18.9,
+          "precip": 203.0,
+          "rain_days": 11.3,
+          "years": 10
+        },
+        {
+          "month": 7,
+          "temp": 27.2,
+          "high": 31.5,
+          "low": 24.0,
+          "precip": 249.0,
+          "rain_days": 10.9,
+          "years": 10
+        },
+        {
+          "month": 8,
+          "temp": 28.5,
+          "high": 33.1,
+          "low": 25.1,
+          "precip": 150.0,
+          "rain_days": 9.6,
+          "years": 10
+        },
+        {
+          "month": 9,
+          "temp": 25.0,
+          "high": 29.1,
+          "low": 21.7,
+          "precip": 141.0,
+          "rain_days": 11.4,
+          "years": 10
+        },
+        {
+          "month": 10,
+          "temp": 18.4,
+          "high": 22.5,
+          "low": 14.8,
+          "precip": 166.0,
+          "rain_days": 9.9,
+          "years": 10
+        },
+        {
+          "month": 11,
+          "temp": 12.4,
+          "high": 16.5,
+          "low": 8.4,
+          "precip": 70.0,
+          "rain_days": 8.1,
+          "years": 10
+        },
+        {
+          "month": 12,
+          "temp": 6.8,
+          "high": 10.4,
+          "low": 3.5,
+          "precip": 111.0,
+          "rain_days": 12.3,
+          "years": 10
+        }
+      ],
+      "source": {
+        "url": "https://www.data.jma.go.jp/stats/etrn/view/monthly_s1.php?prec_no=60&block_no=47761&year=2016&month=&day=&view=p1",
+        "fetched_at": "2026-11-17T09:42:11+00:00"
+      }
+    },
+    {
+      "prefecture": "shimane",
+      "station": {
+        "name": "松江",
+        "prec_no": 68,
+        "block_no": "47741"
+      },
+      "months": [
+        {
+          "month": 1,
+          "temp": 5.1,
+          "high": 8.9,
+          "low": 1.9,
+          "precip": 137.0,
+          "rain_days": 16.7,
+          "years": 10
+        },
+        {
+          "month": 2,
+          "temp": 5.4,
+          "high": 9.8,
+          "low": 1.6,
+          "precip": 114.0,
+          "rain_days": 14.0,
+          "years": 10
+        },
+        {
+          "month": 3,
+          "temp": 9.3,
+          "high": 14.5,
+          "low": 4.8,
+          "precip": 128.0,
+          "rain_days": 11.9,
+          "years": 10
+        },
+        {
+          "month": 4,
+          "temp": 13.9,
+          "high": 19.1,
+          "low": 9.0,
+          "precip": 123.0,
+          "rain_days": 9.3,
+          "years": 10
+        },
+        {
+          "month": 5,
+          "temp": 18.6,
+          "high": 23.9,
+          "low": 13.9,
+          "precip": 119.0,
+          "rain_days": 8.5,
+          "years": 10
+        },
+        {
+          "month": 6,
+          "temp": 22.5,
+          "high": 27.1,
+          "low": 18.8,
+          "precip": 179.0,
+          "rain_days": 11.1,
+          "years": 10
+        },
+        {
+          "month": 7,
+          "temp": 27.0,
+          "high": 31.1,
+          "low": 23.9,
+          "precip": 241.0,
+          "rain_days": 10.4,
+          "years": 10
+        },
+        {
+          "month": 8,
+          "temp": 28.1,
+          "high": 32.7,
+          "low": 24.8,
+          "precip": 186.0,
+          "rain_days": 8.9,
+          "years": 10
+        },
+        {
+          "month": 9,
+          "temp": 24.1,
+          "high": 28.1,
+          "low": 21.1,
+          "precip": 230.0,
+          "rain_days": 12.4,
+          "years": 10
+        },
+        {
+          "month": 10,
+          "temp": 18.1,
+          "high": 22.4,
+          "low": 14.5,
+          "precip": 142.0,
+          "rain_days": 11.6,
+          "years": 10
+        },
+        {
+          "month": 11,
+          "temp": 12.5,
+          "high": 17.2,
+          "low": 8.4,
+          "precip": 103.0,
+          "rain_days": 11.4,
+          "years": 10
+        },
+        {
+          "month": 12,
+          "temp": 7.3,
+          "high": 11.2,
+          "low": 3.9,
+          "precip": 146.0,
+          "rain_days": 17.8,
+          "years": 10
+        }
+      ],
+      "source": {
+        "url": "https://www.data.jma.go.jp/stats/etrn/view/monthly_s1.php?prec_no=68&block_no=47741&year=2016&month=&day=&view=p1",
+        "fetched_at": "2026-11-17T09:42:11+00:00"
+      }
+    },
+    {
+      "prefecture": "shizuoka",
+      "station": {
+        "name": "静岡",
+        "prec_no": 50,
+        "block_no": "47656"
+      },
+      "months": [
+        {
+          "month": 1,
+          "temp": 7.4,
+          "high": 12.4,
+          "low": 2.7,
+          "precip": 60.0,
+          "rain_days": 4.4,
+          "years": 10
+        },
+        {
+          "month": 2,
+          "temp": 8.5,
+          "high": 13.4,
+          "low": 3.8,
+          "precip": 95.0,
+          "rain_days": 5.3,
+          "years": 10
+        },
+        {
+          "month": 3,
+          "temp": 12.1,
+          "high": 16.8,
+          "low": 7.4,
+          "precip": 236.0,
+          "rain_days": 9.2,
+          "years": 10
+        },
+        {
+          "month": 4,
+          "temp": 16.0,
+          "high": 20.6,
+          "low": 11.7,
+          "precip": 260.0,
+          "rain_days": 9.7,
+          "years": 10
+        },
+        {
+          "month": 5,
+          "temp": 19.9,
+          "high": 24.2,
+          "low": 15.8,
+          "precip": 278.0,
+          "rain_days": 10.1,
+          "years": 10
+        },
+        {
+          "month": 6,
+          "temp": 23.2,
+          "high": 27.2,
+          "low": 19.8,
+          "precip": 310.0,
+          "rain_days": 12.3,
+          "years": 10
+        },
+        {
+          "month": 7,
+          "temp": 27.1,
+          "high": 30.9,
+          "low": 24.1,
+          "precip": 326.0,
+          "rain_days": 11.2,
+          "years": 10
+        },
+        {
+          "month": 8,
+          "temp": 28.5,
+          "high": 32.5,
+          "low": 25.3,
+          "precip": 270.0,
+          "rain_days": 10.4,
+          "years": 10
+        },
+        {
+          "month": 9,
+          "temp": 25.7,
+          "high": 29.7,
+          "low": 22.4,
+          "precip": 294.0,
+          "rain_days": 12.0,
+          "years": 10
+        },
+        {
+          "month": 10,
+          "temp": 20.1,
+          "high": 24.2,
+          "low": 16.5,
+          "precip": 249.0,
+          "rain_days": 10.5,
+          "years": 10
+        },
+        {
+          "month": 11,
+          "temp": 15.1,
+          "high": 19.7,
+          "low": 10.8,
+          "precip": 104.0,
+          "rain_days": 6.0,
+          "years": 10
+        },
+        {
+          "month": 12,
+          "temp": 9.8,
+          "high": 14.8,
+          "low": 5.2,
+          "precip": 71.0,
+          "rain_days": 5.0,
+          "years": 10
+        }
+      ],
+      "source": {
+        "url": "https://www.data.jma.go.jp/stats/etrn/view/monthly_s1.php?prec_no=50&block_no=47656&year=2016&month=&day=&view=p1",
+        "fetched_at": "2026-11-17T09:42:11+00:00"
+      }
+    },
+    {
+      "prefecture": "tochigi",
+      "station": {
+        "name": "宇都宮",
+        "prec_no": 41,
+        "block_no": "47615"
+      },
+      "months": [
+        {
+          "month": 1,
+          "temp": 3.3,
+          "high": 9.3,
+          "low": -1.8,
+          "precip": 25.0,
+          "rain_days": 2.9,
+          "years": 10
+        },
+        {
+          "month": 2,
+          "temp": 4.6,
+          "high": 10.8,
+          "low": -0.8,
+          "precip": 24.0,
+          "rain_days": 3.7,
+          "years": 10
+        },
+        {
+          "month": 3,
+          "temp": 9.0,
+          "high": 15.0,
+          "low": 3.5,
+          "precip": 107.0,
+          "rain_days": 8.2,
+          "years": 10
+        },
+        {
+          "month": 4,
+          "temp": 13.9,
+          "high": 19.9,
+          "low": 8.6,
+          "precip": 116.0,
+          "rain_days": 9.6,
+          "years": 10
+        },
+        {
+          "month": 5,
+          "temp": 18.7,
+          "high": 24.2,
+          "low": 13.7,
+          "precip": 142.0,
+          "rain_days": 11.0,
+          "years": 10
+        },
+        {
+          "month": 6,
+          "temp": 22.1,
+          "high": 27.0,
+          "low": 18.2,
+          "precip": 193.0,
+          "rain_days": 11.7,
+          "years": 10
+        },
+        {
+          "month": 7,
+          "temp": 26.0,
+          "high": 30.8,
+          "low": 22.6,
+          "precip": 177.0,
+          "rain_days": 14.6,
+          "years": 9
+        },
+        {
+          "month": 8,
+          "temp": 27.1,
+          "high": 32.2,
+          "low": 23.6,
+          "precip": 235.0,
+          "rain_days": 13.0,
+          "years": 10
+        },
+        {
+          "month": 9,
+          "temp": 23.6,
+          "high": 28.2,
+          "low": 20.2,
+          "precip": 199.0,
+          "rain_days": 12.2,
+          "years": 10
+        },
+        {
+          "month": 10,
+          "temp": 17.1,
+          "high": 21.7,
+          "low": 13.2,
+          "precip": 167.0,
+          "rain_days": 10.2,
+          "years": 10
+        },
+        {
+          "month": 11,
+          "temp": 11.2,
+          "high": 16.8,
+          "low": 6.3,
+          "precip": 51.0,
+          "rain_days": 5.2,
+          "years": 10
+        },
+        {
+          "month": 12,
+          "temp": 5.4,
+          "high": 11.4,
+          "low": 0.3,
+          "precip": 28.0,
+          "rain_days": 3.5,
+          "years": 10
+        }
+      ],
+      "source": {
+        "url": "https://www.data.jma.go.jp/stats/etrn/view/monthly_s1.php?prec_no=41&block_no=47615&year=2016&month=&day=&view=p1",
+        "fetched_at": "2026-11-17T09:42:11+00:00"
+      }
+    },
+    {
+      "prefecture": "tokushima",
+      "station": {
+        "name": "徳島",
+        "prec_no": 71,
+        "block_no": "47895"
+      },
+      "months": [
+        {
+          "month": 1,
+          "temp": 6.7,
+          "high": 10.5,
+          "low": 3.3,
+          "precip": 38.0,
+          "rain_days": 4.3,
+          "years": 10
+        },
+        {
+          "month": 2,
+          "temp": 7.1,
+          "high": 11.2,
+          "low": 3.5,
+          "precip": 50.0,
+          "rain_days": 4.9,
+          "years": 10
+        },
+        {
+          "month": 3,
+          "temp": 11.0,
+          "high": 15.5,
+          "low": 6.8,
+          "precip": 93.0,
+          "rain_days": 8.4,
+          "years": 10
+        },
+        {
+          "month": 4,
+          "temp": 15.7,
+          "high": 20.3,
+          "low": 11.5,
+          "precip": 99.0,
+          "rain_days": 8.6,
+          "years": 10
+        },
+        {
+          "month": 5,
+          "temp": 19.9,
+          "high": 24.2,
+          "low": 15.9,
+          "precip": 166.0,
+          "rain_days": 9.3,
+          "years": 10
+        },
+        {
+          "month": 6,
+          "temp": 23.4,
+          "high": 27.3,
+          "low": 20.1,
+          "precip": 183.0,
+          "rain_days": 11.7,
+          "years": 10
+        },
+        {
+          "month": 7,
+          "temp": 27.6,
+          "high": 31.6,
+          "low": 24.6,
+          "precip": 164.0,
+          "rain_days": 9.7,
+          "years": 10
+        },
+        {
+          "month": 8,
+          "temp": 28.9,
+          "high": 33.1,
+          "low": 25.7,
+          "precip": 178.0,
+          "rain_days": 7.7,
+          "years": 10
+        },
+        {
+          "month": 9,
+          "temp": 25.8,
+          "high": 29.5,
+          "low": 22.8,
+          "precip": 241.0,
+          "rain_days": 11.3,
+          "years": 10
+        },
+        {
+          "month": 10,
+          "temp": 20.0,
+          "high": 23.7,
+          "low": 16.8,
+          "precip": 199.0,
+          "rain_days": 9.7,
+          "years": 10
+        },
+        {
+          "month": 11,
+          "temp": 14.3,
+          "high": 18.3,
+          "low": 10.6,
+          "precip": 81.0,
+          "rain_days": 5.7,
+          "years": 10
+        },
+        {
+          "month": 12,
+          "temp": 8.8,
+          "high": 12.7,
+          "low": 5.3,
+          "precip": 34.0,
+          "rain_days": 5.1,
+          "years": 10
+        }
+      ],
+      "source": {
+        "url": "https://www.data.jma.go.jp/stats/etrn/view/monthly_s1.php?prec_no=71&block_no=47895&year=2016&month=&day=&view=p1",
+        "fetched_at": "2026-11-17T09:42:11+00:00"
+      }
+    },
+    {
+      "prefecture": "tokyo",
+      "station": {
+        "name": "東京",
+        "prec_no": 44,
+        "block_no": "47662"
+      },
+      "months": [
+        {
+          "month": 1,
+          "temp": 5.9,
+          "high": 10.6,
+          "low": 1.9,
+          "precip": 45.0,
+          "rain_days": 3.6,
+          "years": 10
+        },
+        {
+          "month": 2,
+          "temp": 7.0,
+          "high": 12.0,
+          "low": 2.8,
+          "precip": 43.0,
+          "rain_days": 3.9,
+          "years": 10
+        },
+        {
+          "month": 3,
+          "temp": 10.8,
+          "high": 16.0,
+          "low": 6.4,
+          "precip": 143.0,
+          "rain_days": 9.1,
+          "years": 10
+        },
+        {
+          "month": 4,
+          "temp": 15.3,
+          "high": 20.4,
+          "low": 10.9,
+          "precip": 148.0,
+          "rain_days": 10.0,
+          "years": 10
+        },
+        {
+          "month": 5,
+          "temp": 19.6,
+          "high": 24.4,
+          "low": 15.4,
+          "precip": 145.0,
+          "rain_days": 10.2,
+          "years": 10
+        },
+        {
+          "month": 6,
+          "temp": 22.8,
+          "high": 27.2,
+          "low": 19.4,
+          "precip": 190.0,
+          "rain_days": 11.2,
+          "years": 10
+        },
+        {
+          "month": 7,
+          "temp": 26.9,
+          "high": 31.2,
+          "low": 23.6,
+          "precip": 159.0,
+          "rain_days": 10.1,
+          "years": 10
+        },
+        {
+          "month": 8,
+          "temp": 28.2,
+          "high": 32.7,
+          "low": 24.9,
+          "precip": 188.0,
+          "rain_days": 10.0,
+          "years": 10
+        },
+        {
+          "month": 9,
+          "temp": 24.6,
+          "high": 28.7,
+          "low": 21.5,
+          "precip": 225.0,
+          "rain_days": 11.9,
+          "years": 10
+        },
+        {
+          "month": 10,
+          "temp": 18.5,
+          "high": 22.5,
+          "low": 15.2,
+          "precip": 217.0,
+          "rain_days": 11.1,
+          "years": 10
+        },
+        {
+          "month": 11,
+          "temp": 13.4,
+          "high": 17.8,
+          "low": 9.6,
+          "precip": 76.0,
+          "rain_days": 6.8,
+          "years": 10
+        },
+        {
+          "month": 12,
+          "temp": 8.1,
+          "high": 12.7,
+          "low": 4.2,
+          "precip": 46.0,
+          "rain_days": 4.6,
+          "years": 10
+        }
+      ],
+      "source": {
+        "url": "https://www.data.jma.go.jp/stats/etrn/view/monthly_s1.php?prec_no=44&block_no=47662&year=2016&month=&day=&view=p1",
+        "fetched_at": "2026-11-17T09:42:11+00:00"
+      }
+    },
+    {
+      "prefecture": "tottori",
+      "station": {
+        "name": "鳥取",
+        "prec_no": 69,
+        "block_no": "47746"
+      },
+      "months": [
+        {
+          "month": 1,
+          "temp": 4.8,
+          "high": 8.8,
+          "low": 1.5,
+          "precip": 168.0,
+          "rain_days": 18.6,
+          "years": 10
+        },
+        {
+          "month": 2,
+          "temp": 5.2,
+          "high": 9.8,
+          "low": 1.3,
+          "precip": 154.0,
+          "rain_days": 15.5,
+          "years": 10
+        },
+        {
+          "month": 3,
+          "temp": 9.3,
+          "high": 14.8,
+          "low": 4.4,
+          "precip": 128.0,
+          "rain_days": 11.6,
+          "years": 10
+        },
+        {
+          "month": 4,
+          "temp": 14.0,
+          "high": 19.8,
+          "low": 8.5,
+          "precip": 128.0,
+          "rain_days": 9.9,
+          "years": 10
+        },
+        {
+          "month": 5,
+          "temp": 18.7,
+          "high": 24.6,
+          "low": 13.3,
+          "precip": 107.0,
+          "rain_days": 9.2,
+          "years": 10
+        },
+        {
+          "month": 6,
+          "temp": 22.8,
+          "high": 28.0,
+          "low": 18.4,
+          "precip": 157.0,
+          "rain_days": 11.2,
+          "years": 10
+        },
+        {
+          "month": 7,
+          "temp": 27.4,
+          "high": 32.2,
+          "low": 23.6,
+          "precip": 219.0,
+          "rain_days": 10.9,
+          "years": 10
+        },
+        {
+          "month": 8,
+          "temp": 28.3,
+          "high": 33.8,
+          "low": 24.3,
+          "precip": 153.0,
+          "rain_days": 9.0,
+          "years": 10
+        },
+        {
+          "month": 9,
+          "temp": 24.3,
+          "high": 29.1,
+          "low": 20.6,
+          "precip": 224.0,
+          "rain_days": 13.3,
+          "years": 10
+        },
+        {
+          "month": 10,
+          "temp": 17.9,
+          "high": 23.1,
+          "low": 13.8,
+          "precip": 160.0,
+          "rain_days": 12.3,
+          "years": 10
+        },
+        {
+          "month": 11,
+          "temp": 12.5,
+          "high": 17.8,
+          "low": 8.1,
+          "precip": 124.0,
+          "rain_days": 11.5,
+          "years": 10
+        },
+        {
+          "month": 12,
+          "temp": 7.0,
+          "high": 11.2,
+          "low": 3.4,
+          "precip": 212.0,
+          "rain_days": 18.6,
+          "years": 10
+        }
+      ],
+      "source": {
+        "url": "https://www.data.jma.go.jp/stats/etrn/view/monthly_s1.php?prec_no=69&block_no=47746&year=2016&month=&day=&view=p1",
+        "fetched_at": "2026-11-17T09:42:11+00:00"
+      }
+    },
+    {
+      "prefecture": "toyama",
+      "station": {
+        "name": "富山",
+        "prec_no": 55,
+        "block_no": "47607"
+      },
+      "months": [
+        {
+          "month": 1,
+          "temp": 3.5,
+          "high": 7.0,
+          "low": 0.7,
+          "precip": 254.0,
+          "rain_days": 21.7,
+          "years": 10
+        },
+        {
+          "month": 2,
+          "temp": 4.0,
+          "high": 8.2,
+          "low": 0.6,
+          "precip": 184.0,
+          "rain_days": 18.1,
+          "years": 10
+        },
+        {
+          "month": 3,
+          "temp": 8.4,
+          "high": 13.6,
+          "low": 3.8,
+          "precip": 142.0,
+          "rain_days": 13.8,
+          "years": 10
+        },
+        {
+          "month": 4,
+          "temp": 13.1,
+          "high": 18.5,
+          "low": 8.1,
+          "precip": 142.0,
+          "rain_days": 11.1,
+          "years": 10
+        },
+        {
+          "month": 5,
+          "temp": 18.2,
+          "high": 23.7,
+          "low": 13.3,
+          "precip": 142.0,
+          "rain_days": 10.7,
+          "years": 10
+        },
+        {
+          "month": 6,
+          "temp": 22.3,
+          "high": 27.0,
+          "low": 18.1,
+          "precip": 148.0,
+          "rain_days": 9.9,
+          "years": 10
+        },
+        {
+          "month": 7,
+          "temp": 26.8,
+          "high": 31.3,
+          "low": 23.2,
+          "precip": 279.0,
+          "rain_days": 13.5,
+          "years": 10
+        },
+        {
+          "month": 8,
+          "temp": 28.1,
+          "high": 32.7,
+          "low": 24.3,
+          "precip": 219.0,
+          "rain_days": 10.2,
+          "years": 10
+        },
+        {
+          "month": 9,
+          "temp": 24.1,
+          "high": 28.4,
+          "low": 20.5,
+          "precip": 267.0,
+          "rain_days": 12.9,
+          "years": 10
+        },
+        {
+          "month": 10,
+          "temp": 17.5,
+          "high": 22.0,
+          "low": 13.7,
+          "precip": 187.0,
+          "rain_days": 13.7,
+          "years": 10
+        },
+        {
+          "month": 11,
+          "temp": 11.8,
+          "high": 16.6,
+          "low": 7.6,
+          "precip": 187.0,
+          "rain_days": 15.1,
+          "years": 10
+        },
+        {
+          "month": 12,
+          "temp": 6.1,
+          "high": 10.0,
+          "low": 2.9,
+          "precip": 293.0,
+          "rain_days": 22.7,
+          "years": 9
+        }
+      ],
+      "source": {
+        "url": "https://www.data.jma.go.jp/stats/etrn/view/monthly_s1.php?prec_no=55&block_no=47607&year=2016&month=&day=&view=p1",
+        "fetched_at": "2026-11-17T09:42:11+00:00"
+      }
+    },
+    {
+      "prefecture": "wakayama",
+      "station": {
+        "name": "和歌山",
+        "prec_no": 65,
+        "block_no": "47777"
+      },
+      "months": [
+        {
+          "month": 1,
+          "temp": 6.7,
+          "high": 10.4,
+          "low": 3.2,
+          "precip": 45.0,
+          "rain_days": 4.5,
+          "years": 10
+        },
+        {
+          "month": 2,
+          "temp": 7.2,
+          "high": 11.2,
+          "low": 3.5,
+          "precip": 51.0,
+          "rain_days": 5.4,
+          "years": 10
+        },
+        {
+          "month": 3,
+          "temp": 11.1,
+          "high": 15.8,
+          "low": 6.8,
+          "precip": 94.0,
+          "rain_days": 9.0,
+          "years": 10
+        },
+        {
+          "month": 4,
+          "temp": 15.9,
+          "high": 20.4,
+          "low": 11.5,
+          "precip": 117.0,
+          "rain_days": 8.2,
+          "years": 10
+        },
+        {
+          "month": 5,
+          "temp": 20.0,
+          "high": 24.6,
+          "low": 15.9,
+          "precip": 167.0,
+          "rain_days": 9.6,
+          "years": 10
+        },
+        {
+          "month": 6,
+          "temp": 23.6,
+          "high": 27.6,
+          "low": 20.4,
+          "precip": 191.0,
+          "rain_days": 10.2,
+          "years": 10
+        },
+        {
+          "month": 7,
+          "temp": 27.9,
+          "high": 31.7,
+          "low": 25.0,
+          "precip": 213.0,
+          "rain_days": 8.2,
+          "years": 10
+        },
+        {
+          "month": 8,
+          "temp": 29.2,
+          "high": 33.4,
+          "low": 26.0,
+          "precip": 155.0,
+          "rain_days": 7.4,
+          "years": 10
+        },
+        {
+          "month": 9,
+          "temp": 26.0,
+          "high": 29.9,
+          "low": 22.7,
+          "precip": 168.0,
+          "rain_days": 10.0,
+          "years": 10
+        },
+        {
+          "month": 10,
+          "temp": 19.9,
+          "high": 23.9,
+          "low": 16.4,
+          "precip": 169.0,
+          "rain_days": 9.2,
+          "years": 10
+        },
+        {
+          "month": 11,
+          "temp": 14.2,
+          "high": 18.5,
+          "low": 10.2,
+          "precip": 67.0,
+          "rain_days": 5.5,
+          "years": 10
+        },
+        {
+          "month": 12,
+          "temp": 8.9,
+          "high": 12.8,
+          "low": 5.3,
+          "precip": 50.0,
+          "rain_days": 6.2,
+          "years": 10
+        }
+      ],
+      "source": {
+        "url": "https://www.data.jma.go.jp/stats/etrn/view/monthly_s1.php?prec_no=65&block_no=47777&year=2016&month=&day=&view=p1",
+        "fetched_at": "2026-11-17T09:42:11+00:00"
+      }
+    },
+    {
+      "prefecture": "yamagata",
+      "station": {
+        "name": "山形",
+        "prec_no": 35,
+        "block_no": "47588"
+      },
+      "months": [
+        {
+          "month": 1,
+          "temp": 0.3,
+          "high": 3.6,
+          "low": -2.7,
+          "precip": 89.0,
+          "rain_days": 16.0,
+          "years": 10
+        },
+        {
+          "month": 2,
+          "temp": 1.1,
+          "high": 5.2,
+          "low": -2.6,
+          "precip": 66.0,
+          "rain_days": 12.5,
+          "years": 10
+        },
+        {
+          "month": 3,
+          "temp": 5.5,
+          "high": 11.0,
+          "low": 0.7,
+          "precip": 63.0,
+          "rain_days": 8.9,
+          "years": 10
+        },
+        {
+          "month": 4,
+          "temp": 11.2,
+          "high": 17.5,
+          "low": 5.5,
+          "precip": 72.0,
+          "rain_days": 9.3,
+          "years": 10
+        },
+        {
+          "month": 5,
+          "temp": 17.0,
+          "high": 23.4,
+          "low": 11.3,
+          "precip": 82.0,
+          "rain_days": 8.8,
+          "years": 10
+        },
+        {
+          "month": 6,
+          "temp": 21.2,
+          "high": 26.9,
+          "low": 16.5,
+          "precip": 79.0,
+          "rain_days": 9.4,
+          "years": 10
+        },
+        {
+          "month": 7,
+          "temp": 25.3,
+          "high": 30.7,
+          "low": 21.4,
+          "precip": 194.0,
+          "rain_days": 12.2,
+          "years": 10
+        },
+        {
+          "month": 8,
+          "temp": 26.3,
+          "high": 31.8,
+          "low": 22.2,
+          "precip": 158.0,
+          "rain_days": 11.5,
+          "years": 10
+        },
+        {
+          "month": 9,
+          "temp": 21.8,
+          "high": 27.0,
+          "low": 17.8,
+          "precip": 147.0,
+          "rain_days": 10.8,
+          "years": 10
+        },
+        {
+          "month": 10,
+          "temp": 14.6,
+          "high": 19.8,
+          "low": 10.4,
+          "precip": 105.0,
+          "rain_days": 10.1,
+          "years": 10
+        },
+        {
+          "month": 11,
+          "temp": 8.3,
+          "high": 13.5,
+          "low": 4.1,
+          "precip": 58.0,
+          "rain_days": 9.8,
+          "years": 10
+        },
+        {
+          "month": 12,
+          "temp": 2.6,
+          "high": 6.3,
+          "low": -0.5,
+          "precip": 99.0,
+          "rain_days": 16.3,
+          "years": 10
+        }
+      ],
+      "source": {
+        "url": "https://www.data.jma.go.jp/stats/etrn/view/monthly_s1.php?prec_no=35&block_no=47588&year=2016&month=&day=&view=p1",
+        "fetched_at": "2026-11-17T09:42:11+00:00"
+      }
+    },
+    {
+      "prefecture": "yamaguchi",
+      "station": {
+        "name": "山口",
+        "prec_no": 81,
+        "block_no": "47784"
+      },
+      "months": [
+        {
+          "month": 1,
+          "temp": 4.7,
+          "high": 10.0,
+          "low": 0.4,
+          "precip": 70.0,
+          "rain_days": 8.7,
+          "years": 10
+        },
+        {
+          "month": 2,
+          "temp": 5.8,
+          "high": 11.3,
+          "low": 1.1,
+          "precip": 88.0,
+          "rain_days": 7.9,
+          "years": 10
+        },
+        {
+          "month": 3,
+          "temp": 10.2,
+          "high": 16.4,
+          "low": 4.8,
+          "precip": 151.0,
+          "rain_days": 10.8,
+          "years": 10
+        },
+        {
+          "month": 4,
+          "temp": 15.0,
+          "high": 21.3,
+          "low": 9.3,
+          "precip": 188.0,
+          "rain_days": 8.8,
+          "years": 10
+        },
+        {
+          "month": 5,
+          "temp": 19.4,
+          "high": 25.4,
+          "low": 13.9,
+          "precip": 194.0,
+          "rain_days": 8.9,
+          "years": 10
+        },
+        {
+          "month": 6,
+          "temp": 23.1,
+          "high": 28.4,
+          "low": 18.9,
+          "precip": 295.0,
+          "rain_days": 11.8,
+          "years": 10
+        },
+        {
+          "month": 7,
+          "temp": 27.3,
+          "high": 32.3,
+          "low": 23.6,
+          "precip": 326.0,
+          "rain_days": 11.1,
+          "years": 10
+        },
+        {
+          "month": 8,
+          "temp": 28.4,
+          "high": 34.0,
+          "low": 24.5,
+          "precip": 247.0,
+          "rain_days": 9.1,
+          "years": 10
+        },
+        {
+          "month": 9,
+          "temp": 24.8,
+          "high": 29.9,
+          "low": 21.1,
+          "precip": 238.0,
+          "rain_days": 9.6,
+          "years": 10
+        },
+        {
+          "month": 10,
+          "temp": 18.7,
+          "high": 24.4,
+          "low": 14.2,
+          "precip": 104.0,
+          "rain_days": 7.0,
+          "years": 10
+        },
+        {
+          "month": 11,
+          "temp": 12.3,
+          "high": 18.6,
+          "low": 7.2,
+          "precip": 72.0,
+          "rain_days": 6.1,
+          "years": 10
+        },
+        {
+          "month": 12,
+          "temp": 6.6,
+          "high": 11.9,
+          "low": 2.3,
+          "precip": 59.0,
+          "rain_days": 8.7,
+          "years": 10
+        }
+      ],
+      "source": {
+        "url": "https://www.data.jma.go.jp/stats/etrn/view/monthly_s1.php?prec_no=81&block_no=47784&year=2016&month=&day=&view=p1",
+        "fetched_at": "2026-11-17T09:42:11+00:00"
+      }
+    },
+    {
+      "prefecture": "yamanashi",
+      "station": {
+        "name": "甲府",
+        "prec_no": 49,
+        "block_no": "47638"
+      },
+      "months": [
+        {
+          "month": 1,
+          "temp": 3.6,
+          "high": 9.9,
+          "low": -1.8,
+          "precip": 28.0,
+          "rain_days": 2.9,
+          "years": 10
+        },
+        {
+          "month": 2,
+          "temp": 5.4,
+          "high": 11.8,
+          "low": -0.3,
+          "precip": 34.0,
+          "rain_days": 3.8,
+          "years": 10
+        },
+        {
+          "month": 3,
+          "temp": 9.9,
+          "high": 16.5,
+          "low": 4.3,
+          "precip": 102.0,
+          "rain_days": 8.2,
+          "years": 10
+        },
+        {
+          "month": 4,
+          "temp": 15.0,
+          "high": 21.7,
+          "low": 9.4,
+          "precip": 84.0,
+          "rain_days": 6.5,
+          "years": 10
+        },
+        {
+          "month": 5,
+          "temp": 19.4,
+          "high": 25.9,
+          "low": 14.1,
+          "precip": 93.0,
+          "rain_days": 8.3,
+          "years": 10
+        },
+        {
+          "month": 6,
+          "temp": 22.9,
+          "high": 28.7,
+          "low": 18.7,
+          "precip": 127.0,
+          "rain_days": 9.8,
+          "years": 10
+        },
+        {
+          "month": 7,
+          "temp": 26.9,
+          "high": 32.6,
+          "low": 23.2,
+          "precip": 180.0,
+          "rain_days": 12.0,
+          "years": 10
+        },
+        {
+          "month": 8,
+          "temp": 28.0,
+          "high": 34.1,
+          "low": 24.1,
+          "precip": 135.0,
+          "rain_days": 11.1,
+          "years": 10
+        },
+        {
+          "month": 9,
+          "temp": 24.6,
+          "high": 29.9,
+          "low": 20.9,
+          "precip": 151.0,
+          "rain_days": 10.1,
+          "years": 10
+        },
+        {
+          "month": 10,
+          "temp": 17.8,
+          "high": 23.0,
+          "low": 13.7,
+          "precip": 150.0,
+          "rain_days": 8.6,
+          "years": 10
+        },
+        {
+          "month": 11,
+          "temp": 11.5,
+          "high": 17.5,
+          "low": 6.4,
+          "precip": 36.0,
+          "rain_days": 4.1,
+          "years": 10
+        },
+        {
+          "month": 12,
+          "temp": 5.8,
+          "high": 12.1,
+          "low": 0.5,
+          "precip": 29.0,
+          "rain_days": 3.5,
+          "years": 10
+        }
+      ],
+      "source": {
+        "url": "https://www.data.jma.go.jp/stats/etrn/view/monthly_s1.php?prec_no=49&block_no=47638&year=2016&month=&day=&view=p1",
+        "fetched_at": "2026-11-17T09:42:11+00:00"
+      }
+    }
+  ]
+}

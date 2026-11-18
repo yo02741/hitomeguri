@@ -16,6 +16,7 @@ import RegionMotif from '../components/RegionMotif.vue'
 import SeasonDrift from '../components/SeasonDrift.vue'
 import SectionNav from '../components/SectionNav.vue'
 import SeasonCalendar from '../components/SeasonCalendar.vue'
+import ClimateTable from '../components/ClimateTable.vue'
 import WebSearchLink from '../components/WebSearchLink.vue'
 import SummaryText from '../components/SummaryText.vue'
 import SummaryDialog from '../components/SummaryDialog.vue'
@@ -117,10 +118,13 @@ watch([festMonth, festExpanded], ([month, expanded]) => {
 
 // 季節：這個縣的觀測站（有平年值的），代表站在前
 const stations = computed(() => catalog.seasons?.stations.filter((s) => s.prefecture === props.pref) ?? [])
+// 天氣：縣代表氣象台最近 10 年的月值平均
+const climate = computed(() => catalog.climate?.prefectures.find((c) => c.prefecture === props.pref) ?? null)
 
 const sections = computed(() =>
   [
     { id: 'seasons', label: '季節', show: stations.value.length > 0 },
+    { id: 'weather', label: '天氣', show: Boolean(climate.value) },
     { id: 'festivals', label: '祭典', show: festivals.value.length > 0 },
     { id: 'specialties', label: '地區特色', show: groups.value.length > 0 },
     { id: 'timed', label: '期間限定', show: true },
@@ -372,6 +376,11 @@ function sourceLabel(url: string): string {
         <section v-if="stations.length" id="seasons" class="flex scroll-mt-16 flex-col lg:scroll-mt-8 gap-4" aria-labelledby="seasons-title">
           <h2 id="seasons-title" class="text-h3 font-black tracking-title">季節</h2>
           <SeasonCalendar :stations="stations" :source-url="catalog.seasons!.source.url" />
+        </section>
+
+        <section v-if="climate && catalog.climate" id="weather" class="flex scroll-mt-16 flex-col gap-4 lg:scroll-mt-8" aria-labelledby="weather-title">
+          <h2 id="weather-title" class="text-h3 font-black tracking-title">天氣</h2>
+          <ClimateTable :data="climate" :years="catalog.climate.years" />
         </section>
 
         <section v-if="festivals.length" id="festivals" class="flex scroll-mt-24 flex-col gap-4 lg:scroll-mt-8" aria-labelledby="festivals-title">

@@ -92,7 +92,7 @@ export interface BundleIndex {
   /** 期間限定（全國一個檔） */
   timed?: { count: number; version: string }
   /** 地區特色、會話、季節、航線、浮世繪裡的景點：檔名 → 版本 */
-  extras?: Partial<Record<'specialties' | 'flights' | 'phrases' | 'seasons' | 'ukiyoe', string>>
+  extras?: Partial<Record<'specialties' | 'flights' | 'phrases' | 'seasons' | 'climate' | 'ukiyoe', string>>
   /** 成就用的小索引（achievements.json） */
   achievements?: { version: string }
   /** 市区町村界：縣 → 版本 */
@@ -347,6 +347,39 @@ export interface SeasonStation {
 export interface SeasonData {
   source: { url: string; fetched_at: string }
   stations: SeasonStation[]
+}
+
+/** 天氣（pipeline/climate.py）：各縣代表氣象台最近 10 年的月值平均；有效年數不足的欄位沒有值 */
+export interface ClimateMonth {
+  month: number
+  temp?: number
+  high?: number
+  low?: number
+  /** mm */
+  precip?: number
+  /** 日降水量 ≧1.0mm 的天數 */
+  rain_days?: number
+  years: number
+}
+export interface ClimatePref {
+  prefecture: string
+  station: { name: string; prec_no: number; block_no: string }
+  months: ClimateMonth[]
+  source: { url: string; fetched_at: string }
+}
+export interface ClimateData {
+  /** [起, 訖] */
+  years: [number, number]
+  source: { url: string; fetched_at: string }
+  prefectures: ClimatePref[]
+}
+
+export async function fetchClimate(v?: string): Promise<ClimateData | null> {
+  try {
+    return await getJson<ClimateData>(withV('climate.json', v))
+  } catch {
+    return null
+  }
 }
 
 export async function fetchSeasons(v?: string): Promise<SeasonData | null> {

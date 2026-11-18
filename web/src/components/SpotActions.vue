@@ -122,23 +122,32 @@ function againOptions(t: TripT) {
 const placeKey = (day: number) => (day === -1 ? '' : String(day))
 function moveTo(tripId: string, fromDay: number, v: string) {
   const day = v === '' ? -1 : Number(v)
-  void trips.mutate(tripId, (t) => {
-    const from = findStop(t, props.spot.id, fromDay)
-    if (!from || from.day === day || hasSpotOn(t, day, props.spot.id)) return null
-    const len = day === -1 ? t.unscheduled.length : t.days[day]?.stops.length
-    return len === undefined ? null : moveStop(t, from, { day, idx: len })
-  })
+  const name = props.spot.name
+  void trips.mutate(
+    tripId,
+    (t) => {
+      const from = findStop(t, props.spot.id, fromDay)
+      if (!from || from.day === day || hasSpotOn(t, day, props.spot.id)) return null
+      const len = day === -1 ? t.unscheduled.length : t.days[day]?.stops.length
+      return len === undefined ? null : moveStop(t, from, { day, idx: len })
+    },
+    () => ({ kind: 'move', name, day }),
+  )
 }
 function removeFrom(tripId: string, day: number) {
   const t0 = trips.get(tripId)
   const at = t0 && findStop(t0, props.spot.id, day)
   const stop = at && (at.day === -1 ? t0.unscheduled[at.idx] : t0.days[at.day]?.stops[at.idx])
   if (!at || !stop) return
-  void trips.mutate(tripId, (t) => {
-    const cur = findStop(t, props.spot.id, day)
-    return cur ? removeStop(t, cur) : null
-  })
-  showToast('已從行程移除', () => trips.mutate(tripId, (t) => insertStop(t, at, stop)))
+  void trips.mutate(
+    tripId,
+    (t) => {
+      const cur = findStop(t, props.spot.id, day)
+      return cur ? removeStop(t, cur) : null
+    },
+    () => ({ kind: 'remove', name: stop.name }),
+  )
+  showToast('已從行程移除', () => trips.mutate(tripId, (t) => insertStop(t, at, stop), () => ({ kind: 'add', name: stop.name, day: at.day })))
 }
 async function addTrip() {
   const name = newTrip.value.trim()

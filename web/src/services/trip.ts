@@ -4,12 +4,18 @@ import { prefectureFullName } from '../data/regions'
 // 同一個景點可以排在不同天（機場：來跟回），同一天（與待排）裡最多一次：
 // 停留點以「哪一天＋景點 id」認得（共編時對方可能已經移動過）。
 
-/** 行程的一個停留點。另存縣與日文名：列表只需載入相關縣的 bundle，景點從目錄移除時仍認得出來。 */
+/**
+ * 行程的一個停留點。另存縣與日文名：列表只需載入相關縣的 bundle，景點從目錄移除時仍認得出來。
+ * type 'pack'：擴充包的點（寶可夢人孔蓋、角色商店…），spot_id 是擴充包的 id（data/packs.ts 的 idPrefixes）。
+ */
 export interface Stop {
-  type: 'catalog'
+  type: 'catalog' | 'pack'
   spot_id: string
   pref: string
   name: string
+  /** 寶可夢人孔蓋的座標：名稱是所在的市町村，路線要用座標才找得到蓋子 */
+  lat?: number
+  lng?: number
 }
 
 /** 這天住的地方（日帰り，UX-FLOW.md C8）：路網的車站（rail-graph.json 的節點 id）與站名 */
@@ -266,6 +272,7 @@ export function tripPrefs(t: Pick<Trip, 'days' | 'unscheduled'>): string[] {
 }
 
 function place(s: Stop): string {
+  if (s.lat !== undefined && s.lng !== undefined) return `${s.lat},${s.lng}`
   return `${s.name} ${prefectureFullName(s.pref)}`
 }
 

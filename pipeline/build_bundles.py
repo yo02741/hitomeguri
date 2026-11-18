@@ -28,6 +28,7 @@ from typing import Any
 from pipeline import config, daytrip, municipalities, rail_graph, topo
 from pipeline.game_bundle import build_game
 from pipeline.models import (
+    ClimateData,
     Festival,
     FlightRoute,
     Phrase,
@@ -41,6 +42,7 @@ from pipeline.models import (
 )
 from pipeline.paths import (
     BUNDLES_DIR,
+    CLIMATE_JSON,
     FESTIVALS_DIR,
     FLIGHTS_JSON,
     MUNICIPALITIES_DIR,
@@ -709,6 +711,9 @@ def build_extras(dst: Path = BUNDLES_DIR) -> list[Path]:
     if SEASONS_JSON.exists():
         seasons = SeasonData.model_validate_json(SEASONS_JSON.read_text(encoding="utf-8"))
         out.append(_write(dst / "seasons.json", seasons.model_dump(mode="json")))
+    if CLIMATE_JSON.exists():
+        climate = ClimateData.model_validate_json(CLIMATE_JSON.read_text(encoding="utf-8"))
+        out.append(_write(dst / "climate.json", climate.model_dump(mode="json", exclude_none=True)))
     if UKIYOE_JSON.exists():
         out.append(_write(dst / "ukiyoe.json", build_ukiyoe()))
     return out

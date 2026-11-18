@@ -49,6 +49,8 @@ class OsmElement:
     lat: float
     lng: float
     tags: dict[str, str] = field(default_factory=dict)
+    # 最後編輯時間（ISO 8601）；查詢有 `out ... meta` 才有
+    timestamp: str | None = None
 
     @property
     def url(self) -> str:
@@ -65,7 +67,8 @@ def _run(query: str) -> list[OsmElement]:
             lat, lng = el["center"]["lat"], el["center"]["lon"]
         else:
             continue
-        out.append(OsmElement(f"{el['type']}/{el['id']}", lat, lng, el.get("tags", {})))
+        osm_id = f"{el['type']}/{el['id']}"
+        out.append(OsmElement(osm_id, lat, lng, el.get("tags", {}), el.get("timestamp")))
     return out
 
 
@@ -182,13 +185,17 @@ out center tags;"""
     return _run(q)
 
 
-def by_prefecture(filters: list[str], timeout: int = 180) -> tuple[list[OsmElement], list[str]]:
+def by_prefecture(
+    filters: list[str], timeout: int = 180, meta: bool = False
+) -> tuple[list[OsmElement], list[str]]:
     """各縣分開查（全國一次查名稱比對太重，Overpass 會逾時）；縣的 area 查詢失敗就改用範圍框。
+    meta：輸出改用 `out center meta`（tags 之外加最後編輯時間，OsmElement.timestamp）。
 
     回傳（去重後的物件, 兩種查詢都失敗的縣）。範圍框的結果會含鄰縣的點，呼叫端依座標判斷所屬縣。
     """
     from pipeline import geo
 
+    out = "out center meta;" if meta else "out center tags;"
     seen: dict[str, OsmElement] = {}
     failed: list[str] = []
     for pref in geo.pref_slugs():
@@ -198,14 +205,14 @@ def by_prefecture(filters: list[str], timeout: int = 180) -> tuple[list[OsmEleme
 (
 {body}
 );
-out center tags;"""
+{out}"""
         try:
             els = _run(q)
         except RuntimeError:
             s, w, n, e = geo.bbox(pref)
             body = "\n".join(f"  nwr{f}({s},{w},{n},{e});" for f in filters)
             try:
-                els = _run(f"[out:json][timeout:{timeout}];\n(\n{body}\n);\nout center tags;")
+                els = _run(f"[out:json][timeout:{timeout}];\n(\n{body}\n);\n{out}")
             except RuntimeError:
                 failed.append(pref)
                 continue

@@ -67,6 +67,22 @@ service cloud.firestore {
             && get(/databases/$(database)/documents/invites/$(request.resource.data.member_info[request.auth.uid].via)).data.trip_id == tripId)
         );
       allow delete: if signedIn() && request.auth.uid == resource.data.owner;
+
+      // 共編的修改紀錄（web/src/services/tripLog.ts）：成員可以讀、新增自己的、刪除（刪行程時一起清掉）；不能改
+      match /log/{entryId} {
+        function isMember() {
+          return signedIn() && request.auth.uid in get(/databases/$(database)/documents/trips/$(tripId)).data.members;
+        }
+        allow read, delete: if isMember();
+        allow create: if isMember()
+          && request.resource.data.keys().hasOnly(['kind', 'name', 'day', 'n', 'by', 'at'])
+          && request.resource.data.by == request.auth.uid
+          && request.resource.data.at == request.time
+          && request.resource.data.kind in ['add', 'move', 'remove', 'order', 'rename', 'dates', 'days', 'stay', 'addMany']
+          && (!('name' in request.resource.data) || isString(request.resource.data.name, 80))
+          && (!('day' in request.resource.data) || (request.resource.data.day is int && request.resource.data.day >= -1 && request.resource.data.day < 60))
+          && (!('n' in request.resource.data) || (request.resource.data.n is int && request.resource.data.n >= 0 && request.resource.data.n <= 300));
+      }
     }
 
     // 邀請連結：知道邀請碼的人（登入後）可以讀，不能列出；成員可以建立、刪除
