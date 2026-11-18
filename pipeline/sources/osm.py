@@ -206,16 +206,21 @@ def by_prefecture(
 {body}
 );
 {out}"""
+        started = time.monotonic()
         try:
             els = _run(q)
         except RuntimeError:
+            print(f"[osm] {pref}：縣的範圍查詢失敗，改用範圍框", flush=True)
             s, w, n, e = geo.bbox(pref)
             body = "\n".join(f"  nwr{f}({s},{w},{n},{e});" for f in filters)
             try:
                 els = _run(f"[out:json][timeout:{timeout}];\n(\n{body}\n);\n{out}")
             except RuntimeError:
+                print(f"[osm] {pref}：查詢失敗，略過", flush=True)
                 failed.append(pref)
                 continue
+        # 進度：Actions 的紀錄看得出跑到哪一縣、每縣花多久（Overpass 忙時會等好幾分鐘再試）
+        print(f"[osm] {pref}：{len(els)} 筆（{time.monotonic() - started:.0f} 秒）", flush=True)
         for el in els:
             seen.setdefault(el.osm_id, el)
     return list(seen.values()), failed
