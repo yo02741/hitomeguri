@@ -2,10 +2,10 @@
 import { computed, defineAsyncComponent, nextTick, onBeforeUnmount, ref, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import AchvSeal from '../components/AchvSeal.vue'
+import JapanMap from '../components/JapanMap.vue'
 import NewTag from '../components/NewTag.vue'
 import DollBackdrop from '../components/DollBackdrop.vue'
 import PaperDoll from '../components/PaperDoll.vue'
-import { OUTFITS } from '../data/outfits'
 import { useAvatarStore } from '../stores/avatar'
 
 import DatePicker from '../components/DatePicker.vue'
@@ -26,7 +26,7 @@ import { todayIso } from '../services/userdb'
 import { wide } from '../services/viewport'
 import { useAchievementsStore } from '../stores/achievements'
 import { useCatalogStore } from '../stores/catalog'
-import { KEIKEN_MAX, useKeikenStore } from '../stores/keiken'
+import { useKeikenStore } from '../stores/keiken'
 import { useMarksStore } from '../stores/marks'
 import { useTripsStore } from '../stores/trips'
 import { useUserStore } from '../stores/user'
@@ -81,6 +81,15 @@ const { rows, loading } = useMarkedSpots(() => visitedEntries.value)
 
 // 收集冊入口：最近去過的三張卡片疊成扇形（DESIGN.md §7.19）
 const { cards, prefDone } = useCollection(() => visitedEntries.value)
+// 摘要：去過的縣（JIS 順，超過 4 縣只寫前 4 個＋「等」）、第一次去的年份
+const prefNames = computed(() => {
+  const names = regions.filter((r) => prefDone.value.has(r.prefecture)).map((r) => r.name.zh_tw)
+  return names.length > 4 ? `${names.slice(0, 4).join('、')} 等` : names.join('、')
+})
+const since = computed(() => {
+  const ys = rows.value.flatMap((r) => (r.mark.visited_on ? [r.mark.visited_on.slice(0, 4)] : []))
+  return ys.length ? ys.sort()[0] : null
+})
 const avatar = useAvatarStore()
 const fan = computed(() =>
   [...cards.value]
@@ -195,100 +204,81 @@ function open(id: string) {
     <h1 class="text-h2 font-black tracking-title">紀錄</h1>
 
     <template v-if="userStore.user">
-      <!-- 手機與平板（<1024，決定事項 K2）：收集冊一張 96 高，經縣值、旅人、成就三格排一列 -->
-      <div class="grid grid-cols-3 gap-2 lg:grid-cols-[minmax(0,2fr)_minmax(0,1fr)_minmax(0,1fr)] lg:gap-4">
-      <RouterLink
-        to="/log/cards"
-        class="collect paper-grain group relative col-span-3 flex h-[132px] items-center gap-3 overflow-hidden rounded-card bg-region pr-5 text-on-region no-underline active:not-disabled:translate-y-px max-lg:h-24 lg:col-span-1"
-      >
-        <div class="relative h-full w-[172px] shrink-0 max-lg:w-[136px]" aria-hidden="true">
-          <template v-if="fan.length">
-            <div
-              v-for="(e, i) in fan"
-              :key="e.face.id"
-              class="fan-card pointer-events-none absolute top-[20px] left-[48px] w-[76px] @container max-lg:top-[14px] max-lg:left-[38px] max-lg:w-[60px]"
-              :style="{ '--k': i - (fan.length - 1) / 2 }"
-            >
-              <SpotCard :card="e.face" :rarity="e.rarity" :label="e.label" :number="e.number" size="fluid" />
-            </div>
-          </template>
-          <template v-else>
-            <div
-              v-for="k in 3"
-              :key="k"
-              class="fan-card absolute top-[20px] left-[48px] aspect-[5/7] w-[76px] rounded-[8px] border-2 border-dashed border-on-region/40 max-lg:top-[14px] max-lg:left-[38px] max-lg:w-[60px]"
-              :style="{ '--k': k - 2 }"
-            ></div>
-          </template>
+      <!-- 旅行手帳的扉頁（使用者 2026-11-19：拿掉儀表板的大數字、分母與進度條）：
+           左邊去過的縣塗色的日本，右邊一行摘要與收集冊、旅人、成就、經縣值的入口（實物縮圖＋一句話） -->
+      <div class="grid items-center gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)] lg:gap-10">
+        <div class="mx-auto w-full max-w-[420px] max-lg:max-w-[300px]">
+          <JapanMap :done="prefDone" @pick="(p) => router.push(`/map/${p}`)" />
         </div>
-        <div class="flex min-w-0 flex-col gap-0.5">
-          <span class="text-title font-black tracking-title">收集冊</span>
-          <span class="flex flex-wrap gap-x-3 text-body-sm">
-            <span class="whitespace-nowrap"><span class="font-num text-body-sm font-semibold">{{ cards.length }}</span> 張</span>
-            <span class="whitespace-nowrap">都道府縣 <span class="font-num"><span class="text-body-sm font-semibold">{{ prefDone.size }}</span> / 47</span></span>
-          </span>
+        <div class="flex flex-col">
+          <p class="pb-4 text-body text-ink">
+            <template v-if="visitedEntries.length">
+              <span class="font-bold">{{ prefNames }}</span>
+              <span class="mt-1 block text-body-sm text-sub">
+                <span class="font-num">{{ prefDone.size }}</span> 縣・<span class="font-num">{{ visitedEntries.length }}</span> 個地方・<span class="font-num">{{ doneTrips.length }}</span> 趟旅行<template v-if="since">・{{ since }} 年起</template>
+              </span>
+            </template>
+            <span v-else class="text-sub">還沒有去過的地方</span>
+          </p>
+          <nav class="flex flex-col border-b border-line" aria-label="紀錄">
+            <RouterLink to="/log/cards" class="collect group flex min-h-[76px] items-center gap-4 border-t border-line py-3 text-ink no-underline hover:bg-surface active:not-disabled:translate-y-px">
+              <span class="relative h-[60px] w-[76px] shrink-0" aria-hidden="true">
+                <template v-if="fan.length">
+                  <div
+                    v-for="(e, i) in fan"
+                    :key="e.face.id"
+                    class="fan-card pointer-events-none absolute top-[2px] left-[24px] w-[38px] @container"
+                    :style="{ '--k': i - (fan.length - 1) / 2 }"
+                  >
+                    <SpotCard :card="e.face" :rarity="e.rarity" :label="e.label" :number="e.number" size="fluid" />
+                  </div>
+                </template>
+              </span>
+              <span class="flex min-w-0 flex-col">
+                <span class="text-title font-bold">收集冊</span>
+                <span class="text-body-sm text-sub">{{ cards.length ? `${cards.length} 張卡` : '去過的景點有收集卡' }}</span>
+              </span>
+              <svg class="ml-auto shrink-0 text-sub transition-transform group-hover:translate-x-1" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7" /></svg>
+            </RouterLink>
+            <!-- 旅人入口（DESIGN.md §7.24） -->
+            <RouterLink to="/log/avatar" class="group flex min-h-[76px] items-center gap-4 border-t border-line py-3 text-ink no-underline hover:bg-surface active:not-disabled:translate-y-px">
+              <span class="paper-grain relative mx-[14px] h-[60px] w-[48px] shrink-0 overflow-hidden rounded-control bg-region-tint" aria-hidden="true">
+                <DollBackdrop :id="avatar.worn.bg" />
+                <PaperDoll :parts="avatar.parts" :equipped="{ ...avatar.worn, buddy: undefined }" crop="36 8 168 196" class="absolute inset-0 size-full" />
+              </span>
+              <span class="flex min-w-0 flex-col">
+                <span class="text-title font-bold">旅人</span>
+                <span class="text-body-sm text-sub">服裝 <span class="font-num">{{ avatar.ownedIds.size }}</span> 件</span>
+              </span>
+              <svg class="ml-auto shrink-0 text-sub transition-transform group-hover:translate-x-1" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7" /></svg>
+            </RouterLink>
+            <!-- 成就入口（DESIGN.md §7.25）：最近蓋的章；還沒有時不畫空的虛線圈 -->
+            <RouterLink to="/log/achievements" class="group relative flex min-h-[76px] items-center gap-4 border-t border-line py-3 text-ink no-underline hover:bg-surface active:not-disabled:translate-y-px">
+              <span class="flex h-[60px] w-[76px] shrink-0 items-center justify-center" aria-hidden="true">
+                <AchvSeal
+                  v-for="(s, i) in recentSeals.slice(0, 2)"
+                  :key="s.def.id"
+                  :def="s.def"
+                  status="done"
+                  :size="48"
+                  class="-ml-5 first:ml-0"
+                  :style="{ zIndex: 2 - i }"
+                />
+              </span>
+              <span class="flex min-w-0 flex-col">
+                <span class="flex items-center gap-2 text-title font-bold">成就<NewTag v-if="achv.hasNew" /></span>
+                <span class="text-body-sm text-sub">{{ achv.counts.n ? `蓋了 ${achv.counts.n} 個章` : '紀念章帳' }}</span>
+              </span>
+              <svg class="ml-auto shrink-0 text-sub transition-transform group-hover:translate-x-1" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7" /></svg>
+            </RouterLink>
+            <!-- 經縣值入口（DESIGN.md §7.21） -->
+            <RouterLink to="/log/keiken" class="group flex min-h-tap items-center gap-4 border-t border-line py-2.5 text-ink no-underline hover:bg-surface active:not-disabled:translate-y-px">
+              <span class="w-[76px] shrink-0 text-center font-latin text-title font-bold" aria-hidden="true">{{ keikenTotal }}</span>
+              <span class="text-title font-bold">經縣值</span>
+              <svg class="ml-auto shrink-0 text-sub transition-transform group-hover:translate-x-1" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7" /></svg>
+            </RouterLink>
+          </nav>
         </div>
-        <svg class="ml-auto shrink-0 transition-transform group-hover:translate-x-1" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7" /></svg>
-      </RouterLink>
-      <!-- 經縣值入口（DESIGN.md §7.21） -->
-      <RouterLink
-        to="/log/keiken"
-        class="group flex h-[132px] flex-col justify-center gap-2 rounded-card border border-line bg-paper px-5 text-ink no-underline hover:bg-surface active:not-disabled:translate-y-px max-lg:h-[104px] max-lg:justify-between max-lg:gap-1 max-lg:p-3"
-      >
-        <span class="flex items-center text-title font-black tracking-title max-lg:text-body">
-          經縣值
-          <svg class="ml-auto shrink-0 max-lg:hidden transition-transform group-hover:translate-x-1" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7" /></svg>
-        </span>
-        <span class="flex items-baseline gap-1 font-latin"><span class="text-h2 font-bold max-lg:text-title">{{ keikenTotal }}</span><span class="text-body-sm text-sub max-lg:text-caption">/ {{ KEIKEN_MAX }}</span></span>
-        <span class="flex h-2 overflow-hidden max-lg:h-1.5 rounded-full bg-surface" aria-hidden="true">
-          <span class="h-full bg-keiken-3" :style="{ width: `${(keikenTotal / KEIKEN_MAX) * 100}%` }"></span>
-        </span>
-      </RouterLink>
-      <!-- 旅人入口（DESIGN.md §7.24） -->
-      <RouterLink
-        to="/log/avatar"
-        class="group flex h-[132px] items-center gap-3 rounded-card border border-line bg-paper px-4 text-ink no-underline hover:bg-surface active:not-disabled:translate-y-px max-lg:relative max-lg:h-[104px] max-lg:items-stretch max-lg:p-3"
-      >
-        <span class="paper-grain relative h-[108px] w-[92px] shrink-0 overflow-hidden rounded-control bg-region-tint max-lg:absolute max-lg:top-2 max-lg:right-2 max-lg:h-[50px] max-lg:w-[43px]" aria-hidden="true">
-          <!-- 換了地區背景時框裡是那張風景（§7.24b） -->
-          <DollBackdrop :id="avatar.worn.bg" />
-          <PaperDoll :parts="avatar.parts" :equipped="{ ...avatar.worn, buddy: undefined }" crop="36 8 168 196" class="absolute inset-0 size-full" />
-        </span>
-        <span class="flex min-w-0 flex-col gap-0.5 max-lg:justify-between">
-          <span class="text-title font-black tracking-title max-lg:text-body">旅人</span>
-          <span class="text-body-sm"><span class="max-lg:sr-only">服裝 </span><span class="whitespace-nowrap font-num max-lg:font-latin"><span class="text-body-sm font-semibold max-lg:text-title max-lg:font-bold">{{ avatar.ownedIds.size }}</span> <span class="max-lg:text-caption max-lg:text-sub">/ {{ OUTFITS.length }}</span></span></span>
-        </span>
-        <svg class="ml-auto shrink-0 max-lg:hidden transition-transform group-hover:translate-x-1" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7" /></svg>
-      </RouterLink>
-      <!-- 成就入口（DESIGN.md §7.25） -->
-      <RouterLink
-        to="/log/achievements"
-        class="group relative flex h-[96px] items-center gap-4 rounded-card border border-line bg-paper px-5 text-ink no-underline hover:bg-surface lg:col-span-3 active:not-disabled:translate-y-px max-lg:h-[104px] max-lg:items-stretch max-lg:p-3"
-      >
-        <span class="flex shrink-0 flex-col max-lg:justify-between">
-          <span class="text-title font-black tracking-title max-lg:text-body">成就</span>
-          <span class="whitespace-nowrap font-latin"><span class="text-h3 font-bold max-lg:text-title">{{ achv.counts.n }}</span><span class="text-body-sm text-sub max-lg:text-caption"> / {{ achv.counts.N }}</span></span>
-        </span>
-        <span class="flex min-w-0 items-center pl-2 max-lg:absolute max-lg:top-2 max-lg:right-2 max-lg:pl-0" aria-hidden="true">
-          <template v-if="recentSeals.length">
-            <AchvSeal
-              v-for="(s, i) in recentSeals"
-              :key="s.def.id"
-              :def="s.def"
-              status="done"
-              :size="wide ? 56 : 40"
-              class="-ml-3 first:ml-0"
-              :class="i >= 1 ? 'max-lg:hidden' : ''"
-              :style="{ zIndex: recentSeals.length - i }"
-            />
-          </template>
-          <template v-else>
-            <span v-for="k in 3" :key="k" class="-ml-3 block size-14 rounded-full border-2 border-dashed border-line first:ml-0 max-lg:size-10 max-lg:[&:not(:first-child)]:hidden"></span>
-          </template>
-        </span>
-        <NewTag v-if="achv.hasNew" class="absolute -top-1.5 -left-1.5" />
-        <svg class="ml-auto shrink-0 transition-transform group-hover:translate-x-1 max-lg:hidden" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7" /></svg>
-      </RouterLink>
       </div>
 
       <!-- 手機：收藏與清單的入口（桌機在頭像選單），下面是 sticky 的段落列 -->
@@ -434,16 +424,16 @@ function open(id: string) {
 /* 收集冊入口的扇形：滑過時展開 */
 .fan-card {
   transform-origin: 50% 130%;
-  transform: rotate(calc(var(--k) * 11deg)) translateX(calc(var(--k) * 10px));
+  transform: rotate(calc(var(--k) * 11deg)) translateX(calc(var(--k) * 6px));
   transition: transform 0.35s var(--ease-out-soft);
 }
 .collect:focus-visible .fan-card {
-  transform: translateY(-6px) rotate(calc(var(--k) * 15deg)) translateX(calc(var(--k) * 16px));
+  transform: translateY(-3px) rotate(calc(var(--k) * 15deg)) translateX(calc(var(--k) * 9px));
 }
 /* 觸控點過後 :hover 會黏住，只給有滑鼠的裝置 */
 @media (hover: hover) and (pointer: fine) {
   .collect:hover .fan-card {
-    transform: translateY(-6px) rotate(calc(var(--k) * 15deg)) translateX(calc(var(--k) * 16px));
+    transform: translateY(-3px) rotate(calc(var(--k) * 15deg)) translateX(calc(var(--k) * 9px));
   }
 }
 </style>

@@ -36,7 +36,6 @@ const stampsDone = computed(() => achv.stamps.filter((s) => s.done).length)
 const tripCount = computed(() => achv.derived.trips.length)
 const sinceYear = computed(() => achv.derived.dates[0]?.slice(0, 4) ?? null)
 const hero = computed(() => achv.latest[0] ?? null)
-const progress = computed(() => (achv.counts.N ? achv.counts.n / achv.counts.N : 0))
 
 /** 沒有日期、讓達成日算不出來的地方 */
 const undatedSpots = computed(() => [...achv.derived.first.values()].filter((b) => b.lo === null).length)
@@ -149,30 +148,27 @@ onBeforeUnmount(() => fresh.seen([...fresh.keys].filter((k) => k.startsWith('a:'
 
 <template>
   <section ref="root" class="mx-auto flex w-full max-w-5xl flex-col gap-7 px-6 pt-9 pb-24 max-sm:px-4">
-    <header class="paper-grain relative overflow-hidden rounded-card bg-region p-6 text-on-region max-sm:p-5">
+    <!-- 一般的標題列（使用者 2026-11-19：拿掉大色塊、進度條與「/ 40」的儀表板樣子）；右邊是最新蓋的章 -->
+    <header class="relative">
       <div class="relative grid grid-cols-[minmax(0,1fr)_160px] items-center gap-6 max-md:grid-cols-1">
         <!-- 窄螢幕：最新一枚縮成 64px 放在右上；還沒有就不放 -->
         <span v-if="hero" class="absolute top-0 right-0 w-16 md:hidden" aria-hidden="true">
           <AchvSeal :def="hero.def" status="done" :at="hero.at" class="w-full" />
         </span>
         <div class="flex min-w-0 flex-col gap-4">
-          <BackLink to="/log" on-region>紀錄</BackLink>
-          <h1 class="flex items-baseline gap-3 text-h1 font-black tracking-title">
-            成就<RollingNumber :value="achv.counts.n" class="font-latin text-h3 font-semibold tracking-normal" /><span class="-ml-1.5 font-latin text-body-sm tracking-normal">/ {{ achv.counts.N }}</span>
+          <BackLink to="/log">紀錄</BackLink>
+          <h1 class="flex items-baseline gap-3 text-h1 font-black tracking-title max-sm:text-h2">
+            成就<span v-if="achv.counts.n" class="text-body font-normal tracking-normal text-sub">蓋了 <RollingNumber :value="achv.counts.n" class="font-num" /> 個章</span>
           </h1>
-          <div class="h-3.5 max-w-[420px] overflow-hidden rounded-[2px] bg-paper/55" aria-hidden="true">
-            <div class="h-full origin-left bg-on-region transition-transform duration-500 ease-out-soft" :style="{ transform: `scaleX(${progress})` }"></div>
-          </div>
-          <p class="flex flex-wrap gap-x-4 text-body-sm font-bold">
+          <p class="flex flex-wrap gap-x-4 text-body-sm text-sub">
             <span>初訪 <span class="whitespace-nowrap font-num text-body-sm">{{ stampsDone }} / 47</span></span>
             <span v-if="tripCount">旅行 <span class="font-num text-body-sm">{{ tripCount }}</span> 趟</span>
             <span v-if="sinceYear"><span class="font-num text-body-sm">{{ sinceYear }}</span> 年起</span>
           </p>
-          <button ref="rulesBtn" type="button" class="-ml-2 h-8 w-fit rounded-control px-2 text-body-sm font-bold hover:bg-paper/20 active:not-disabled:translate-y-px pointer-coarse:h-tap" aria-haspopup="dialog" @click="showRules = true">規則</button>
+          <button ref="rulesBtn" type="button" class="-ml-2 h-8 w-fit rounded-control px-2 text-body-sm font-bold text-ink hover:bg-surface active:not-disabled:translate-y-px pointer-coarse:h-tap" aria-haspopup="dialog" @click="showRules = true">規則</button>
         </div>
         <div class="max-md:hidden" aria-hidden="true">
           <AchvSeal v-if="hero" :def="hero.def" status="done" :at="hero.at" class="w-[140px] justify-self-center" />
-          <span v-else class="mx-auto block size-[140px] rounded-full border-2 border-dashed border-on-region/50"></span>
         </div>
       </div>
     </header>
@@ -214,7 +210,8 @@ onBeforeUnmount(() => fresh.seen([...fresh.keys].filter((k) => k.startsWith('a:'
                   >
                     <PrefStamp :pref="r.prefecture" :date="s.at" aria-hidden="true" />
                   </div>
-                  <span v-else class="grid aspect-square w-full place-items-center rounded-full border-2 border-dashed border-line text-body-sm text-sub" lang="ja">{{ r.name.ja }}</span>
+                  <!-- 還沒去過：淡淡的縣名，不畫虛線圈（47 個空格像表單） -->
+                  <span v-else class="grid aspect-square w-full place-items-center rounded-full bg-surface text-body-sm text-sub" lang="ja">{{ r.name.ja }}</span>
                   <!-- 手機的章只有約 52px：NEW 放在上緣正中、壓在外圈上，不蓋住羅馬拼音 -->
                   <NewTag
                     v-if="s.done && achv.isNew(`pref-${r.prefecture}`)"

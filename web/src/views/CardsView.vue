@@ -235,15 +235,10 @@ function onCardKey(e: KeyboardEvent, id: string) {
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7" /></svg>
             </RouterLink>
           </p>
-          <!-- 手機：名城的張數與進度條排成一行 -->
-          <div v-if="castleTotal" class="flex max-w-[420px] flex-col gap-1.5 max-lg:flex-row max-lg:items-center max-lg:gap-2">
-            <p class="flex flex-wrap items-baseline gap-x-2 text-body-sm font-bold max-lg:shrink-0">
-              {{ wide ? '日本100名城・続日本100名城' : '名城' }}<span class="whitespace-nowrap font-num text-body-sm">{{ castleDone }} / {{ castleTotal }}</span>
-            </p>
-            <div class="h-3.5 overflow-hidden rounded-[2px] bg-paper/55 max-lg:h-2 max-lg:min-w-0 max-lg:flex-1" aria-hidden="true">
-              <div class="h-full rounded-[2px] bg-t-castle" :style="{ width: `${(castleDone / castleTotal) * 100}%` }"></div>
-            </div>
-          </div>
+          <!-- 名城：只寫張數（不放進度條，使用者 2026-11-19） -->
+          <p v-if="castleTotal" class="flex flex-wrap items-baseline gap-x-2 text-body-sm font-bold">
+            {{ wide ? '日本100名城・続日本100名城' : '名城' }}<span class="whitespace-nowrap font-num text-body-sm">{{ castleDone }} / {{ castleTotal }}</span>
+          </p>
         </div>
         <!-- 手機只是裝飾：點縣改用下面的縣條 -->
         <div class="max-lg:pointer-events-none" :aria-hidden="wide ? undefined : 'true'">
