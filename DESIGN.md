@@ -298,7 +298,7 @@ header 右側、登入鈕左邊（`SearchBox.vue`，每一頁都在；在行程�
 
 ### 7.4 擴充包列（原主題開關列）
 - 桌機：地圖上方浮動列，左緣對齊左側浮動面板外（`left: insetLeft`），靠左排、寬度不夠時換行；縣頁最前面是「只看○○」（`FocusChip.vue`，鎖頭圖示＋「只看東京」；開著 `bg-ink text-paper` 實心鎖，關著 `bg-paper` 打開的鎖；只管鏡頭鎖不鎖，地圖上一律只有這個縣的點；UX-FLOW.md §1.3），再來「只看收藏」膠囊鈕。
-- 深度探索入口：地圖頁左欄最下方獨立的一張卡（和清單分開，`rounded-card bg-paper shadow-float`）：左邊 40px 地區色圓底的書本圖示、「深度探索」＋小字「季節・祭典・地區特色・期間限定」、右邊 ›。
+- 深度探索入口：地圖頁左欄最下方獨立的一張卡（和清單分開，`rounded-card bg-paper shadow-float px-4`）：「深度探索」＋小字「季節・天氣・祭典・地區特色・期間限定」、右邊 ›。不放圖示圓圈（使用者 2026-11-19：去掉「圖示＋標題＋副標」的制式卡）。
 - 深度探索頁：桌機左欄（168px，sticky）上方是「‹ 地圖」外框按鈕（和地圖頁的入口在同一側），下方是段落目錄（SectionNav side，地區特色展開各組）；手機是標頭的「‹ 地圖」＋頂部橫列目錄。
 - 每個擴充包一顆膠囊按鈕 `h-9 rounded-full px-3.5 text-body-sm font-bold shadow-float`：圖示（主題色）＋名稱＋件數（`font-num`）。開啟中改為主題色底白字（`bg-(--pack)`，`--pack` 設為 `var(--color-t-*)`，不寫死色碼）；目前地區沒有資料時 `opacity-50` 不能按。
 - 列尾 36px 圓形圖示鈕（滑桿圖示，`aria-label="選擇擴充包"`）往右下打開設定卡（`w-72 rounded-card bg-paper shadow-float`）：每個擴充包一列 checkbox＋圖示＋名稱，下方小字列出組別。
@@ -371,7 +371,7 @@ header 右側、登入鈕左邊（`SearchBox.vue`，每一頁都在；在行程�
 清單分段（首頁的地方、景點類型、擴充包的組別或縣）的小標可以點擊收合：左側 `CollapseChevron`（7px 直角兩邊 `border-r/b-[1.5px] border-current`，收合時 `-rotate-45` 朝右、展開時 `rotate-45` 朝下，150ms 轉動），收合時小標後面顯示件數。收合狀態存在探索頁 store，切換地區後保留。
 
 ### 7.5c 深度探索頁（`/region/:pref`）
-- 入口：地區頁左欄最下方獨立一張卡（和景點清單分開，`rounded-card bg-paper shadow-float`）：左側 40px `bg-region` 圓裡放書本圖示，「深度探索」（`text-body-sm font-bold`）＋下一行「季節・祭典・地區特色・期間限定」（`text-caption text-sub`），右側 ›。手機沒有左欄，由海報條右端的「深度探索 ›」進入（§7.5）。
+- 入口：地區頁左欄最下方獨立一張卡（和景點清單分開，`rounded-card bg-paper shadow-float`）：「深度探索」（`text-body-sm font-bold`）＋下一行「季節・天氣・祭典・地區特色・期間限定」（`text-caption text-sub`），右側 ›；不放圖示圓圈。手機沒有左欄，由海報條右端的「深度探索 ›」進入（§7.5）。
 - 海報區：`bg-region text-on-region`，右上 320px 正圓（紋樣見 §3.6）；假名（`text-body tracking-kana`）＋縣名（`text-display font-black`）＋羅馬拼音與地方名。手機在海報區左上放「‹ 地圖」返回，縣名下面一列台灣直飛航線（`font-latin text-caption font-semibold`，桌機在地圖頁的地區標籤）。
 - 桌機左欄（168px，sticky）：上方「‹ 地圖」外框按鈕（和地圖頁的入口在同一側），下方是段落目錄（SectionNav side：點了捲到該段，捲動時標出目前段落，地區特色展開各組）。手機改成頂部 sticky 的橫列目錄（SectionNav bar）。
 - 手機的段落列（<1024，決定事項 I2）：海報還看得到時是紙色列；海報捲走後（IntersectionObserver）換成地區色條（`bg-region text-on-region`，顏色 300ms 漸變），左邊「‹ 縣名」（`text-body-sm font-bold`，觸控 44px）回到 `/map/:pref`，接一條 `bg-on-region opacity-25` 分隔線，右邊是段落膠囊（SectionNav `tone="region"`）。觸控裝置上列本身不加上下 padding（點擊區已是 44）。
@@ -863,7 +863,7 @@ MVP 不做。token 已集中在 `theme.css` 與 `regions.css`，之後以 `@cust
   - 八張由北到南「走一圈」：羊蹄山、松島、淺草寺（夜）、白川鄉（雪）、伏見稻荷大社、嚴島神社、高千穗峽、川平灣。照片是各景點資料裡的 Commons 照片（`data/spots` 的 `images`／`season_images`），srcset 960／1280／1920；手機直的畫面用 `focus`（object-position）決定裁切位置。右下寫這一張的地方（連到地圖）與「照片 作者／授權」（連到 Commons）。
   - 每張 7 秒，交叉淡入 1.4s（新的一張蓋在上一張上面淡入，不會先暗一下），照片從 1.08 慢慢拉遠到 1。照片載好才淡入；第一張載好才開始計時。只載入看過的與下一張。
   - 最下面一列：暫停／播放（WCAG 2.2.2）＋八段進度條（桌機下面寫縣名，手機只有條），按了跳到那一張；手機可以左右滑。分頁在背景、海報捲出畫面時自動停，回來接著跑。減少動態的人一開始就是暫停的。
-  - 文字壓在照片下半的漸層上（`--color-ink` 的 color-mix），左下標語「把日本走一圈。」（明朝 500，`clamp(2rem, 3.6vw, 3.5rem)`，字距 0.08em）、一句說明（15–16px、行高 1.9）、「開始探索」（paper 底，h-11）與「怎麼用」（平滑捲到流程）。字不要太大，留白多一點比較有格調（使用者回饋）。
+  - 文字壓在照片下半的漸層上（`--color-ink` 的 color-mix），左下標語「把日本走一圈。」（明朝 500，`clamp(2rem, 3.6vw, 3.5rem)`，字距 0.08em）、一句說明（15–16px、行高 1.9）、「開始探索」（paper 底，h-11）與「簡介」（平滑捲到海報正下方的收錄那一段，使用者 2026-11-19）。字不要太大，留白多一點比較有格調（使用者回饋）。
 - 捲軸：這一頁藏起原生捲軸（`#app-main[data-bare]`），照片滿版到右緣；改用 `OverlayScrollbar` 浮在右緣（6px，拖的時候 8px，半透明字色加淺色描邊，深色照片與淺色紙面都看得到），捲動或滑到右緣時出現、停 1.2 秒淡出，可以拖曳；觸控裝置不攔手指。
   - 照片在各年代套 `--era-photo-filter`。
 - 動態（使用者要求滑順）：只動 opacity 與 transform；`prefers-reduced-motion` 時都不做。

@@ -907,11 +907,11 @@ const kyotoRegion = regionOf('kyoto')
 
     <!-- 頁尾 -->
     <footer class="paper-grain relative overflow-hidden bg-region text-on-region">
-      <div class="relative mx-auto flex w-full max-w-6xl flex-col items-start gap-6 px-6 py-14 max-sm:px-4 max-sm:py-10">
-        <p v-reveal class="font-brand text-h1 font-semibold tracking-title max-sm:text-h2">{{ TAGLINE }}</p>
-        <RouterLink to="/" class="flex h-12 items-center rounded-control bg-ink px-6 text-body font-bold text-paper no-underline active:translate-y-px">開始探索</RouterLink>
-        <div class="mt-4 flex w-full flex-wrap items-center gap-x-6 gap-y-2 border-t border-on-region/30 pt-5 text-body-sm">
+      <!-- 標語只在海報寫一次（使用者 2026-11-19：頁尾再重複標語＋大按鈕是制式的結尾）；開始探索併進頁尾這一列 -->
+      <div class="relative mx-auto flex w-full max-w-6xl flex-col items-start gap-6 px-6 py-10 max-sm:px-4 max-sm:py-8">
+        <div class="flex w-full flex-wrap items-center gap-x-6 gap-y-2 text-body-sm">
           <Wordmark :to="null" class="text-on-region" />
+          <RouterLink to="/" class="font-bold text-on-region">開始探索</RouterLink>
           <RouterLink to="/credits" class="text-on-region">資料來源</RouterLink>
           <span class="ml-auto text-caption">地圖 © OpenStreetMap contributors</span>
         </div>

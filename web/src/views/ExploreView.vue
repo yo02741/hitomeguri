@@ -1096,6 +1096,8 @@ function onMoveEnd(view: MapViewState) {
           </svg>
           收藏<RollingNumber :value="marks.favorites.length" class="font-num" />
         </button>
+        <!-- 範圍（只看這一縣、只看收藏）和圖層（擴充包）是兩種東西：中間一條細線隔開 -->
+        <span v-if="(pref && regionOf(pref)) || (userStore.user && marks.favorites.length)" class="mx-1 h-6 w-0.5 shrink-0 self-center rounded-full bg-sub/50" aria-hidden="true"></span>
         <PackBar :pref="pref && regionOf(pref) ? pref : null" />
       </div>
 
@@ -1158,16 +1160,12 @@ function onMoveEnd(view: MapViewState) {
           <!-- 深度探索入口：左欄最下方獨立一顆，和清單分開（使用者決定） -->
           <RouterLink
             :to="`/region/${pref}`"
-            class="flex shrink-0 items-center gap-3 rounded-card bg-paper py-2.5 pr-3 pl-2.5 text-ink no-underline shadow-float hover:bg-surface max-lg:hidden active:not-disabled:translate-y-px"
+            class="flex shrink-0 items-center gap-3 rounded-card bg-paper px-4 py-2.5 text-ink no-underline shadow-float hover:bg-surface max-lg:hidden active:not-disabled:translate-y-px"
           >
-            <span class="grid size-10 shrink-0 place-items-center rounded-full bg-region text-on-region" aria-hidden="true">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M3 5.5c3-1.3 6-1.3 9 0v14c-3-1.3-6-1.3-9 0z M12 5.5c3-1.3 6-1.3 9 0v14c-3-1.3-6-1.3-9 0z" />
-              </svg>
-            </span>
+            <!-- 不放圖示圓圈（使用者 2026-11-19：去掉「圖示＋標題＋副標」的制式卡） -->
             <span class="flex min-w-0 flex-col">
               <span class="text-body-sm font-bold">深度探索</span>
-              <span class="truncate text-caption text-sub">季節・祭典・地區特色・期間限定</span>
+              <span class="truncate text-caption text-sub">季節・天氣・祭典・地區特色・期間限定</span>
             </span>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="ml-auto shrink-0 text-sub" aria-hidden="true">
               <path d="M9 5l7 7-7 7" />

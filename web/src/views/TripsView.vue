@@ -4,7 +4,6 @@ import { computed, ref } from 'vue'
 import TripCard from '../components/TripCard.vue'
 import TripCreateForm from '../components/TripCreateForm.vue'
 import { tripStatus } from '../services/trip'
-import { wide } from '../services/viewport'
 import { useTripsStore } from '../stores/trips'
 import { useUserStore } from '../stores/user'
 
@@ -25,21 +24,20 @@ const formOpen = ref(false)
     <h1 class="text-h2 font-black tracking-title">行程</h1>
 
     <template v-if="userStore.user">
-      <TripCreateForm v-if="wide" />
-
+      <!-- 清單在上，新增行程是一顆按鈕（桌機手機一樣，使用者 2026-11-19）；還沒有行程時表單直接打開 -->
       <ul v-if="upcoming.length" class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
         <li v-for="t in upcoming" :key="t.id"><TripCard :trip="t" /></li>
       </ul>
       <p v-else-if="trips.loaded" class="text-body-sm text-sub">還沒有行程</p>
+      <TripCreateForm v-if="formOpen || (trips.loaded && !upcoming.length)" :focus="formOpen" />
       <button
-        v-if="!wide && !formOpen"
+        v-else
         type="button"
         class="h-11 w-fit rounded-control bg-region-strong px-4 text-body-sm font-bold text-white active:not-disabled:translate-y-px"
         @click="formOpen = true"
       >
         新增行程
       </button>
-      <TripCreateForm v-else-if="!wide" focus />
       <RouterLink v-if="doneCount" to="/log#log-trips" class="w-fit text-body-sm text-sub active:text-ink pointer-coarse:-my-3 pointer-coarse:py-3">已結束的旅行 {{ doneCount }}</RouterLink>
       <p v-if="trips.error" class="text-caption text-danger" role="alert">{{ trips.error }}</p>
     </template>
