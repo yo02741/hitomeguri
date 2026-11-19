@@ -154,6 +154,7 @@ export interface PackItem {
   s?: string // 對應的景點 id（城）
   f?: string // 創業（「1705年」「16世紀」）
   w?: string // 維基百科條目
+  ck?: string // OSM 上最後有人確認的年月 "YYYY-MM"（茶屋、茶舖）
 }
 
 const base = `${import.meta.env.BASE_URL}bundles/`

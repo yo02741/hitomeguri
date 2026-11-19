@@ -237,8 +237,13 @@ def test_seed_shinise_end_to_end(tmp_path, monkeypatch):
     els = [
         OsmElement("node/1", 35.03, 135.75, {"name": "鶴屋吉信 本店", "shop": "confectionery"}),
         OsmElement("node/2", 35.0, 135.7, {"name": "山田松香木店", "shop": "gift"}),
-        OsmElement("node/3", 35.0, 135.77, {"name": "茶寮 都", "amenity": "cafe", "website": "x"},
-                   "2025-01-01T00:00:00Z"),
+        OsmElement(
+            "node/3",
+            35.0,
+            135.77,
+            {"name": "茶寮 都", "amenity": "cafe", "website": "x"},
+            "2025-01-01T00:00:00Z",
+        ),
         OsmElement("node/4", 35.0, 135.78, {"name": "茶屋カフェ", "amenity": "cafe"}),
         OsmElement("node/6", 35.0, 135.781, {"name": "お茶屋Bar 一葉", "amenity": "cafe"}),
         OsmElement("node/7", 35.0, 135.782, {"name": "中華麺飯茶屋 佳", "amenity": "restaurant"}),
@@ -246,7 +251,9 @@ def test_seed_shinise_end_to_end(tmp_path, monkeypatch):
         OsmElement("node/9", 35.0, 135.784, {"name": "SNOOPY茶屋 由布院店", "amenity": "cafe"}),
         OsmElement("node/5", 35.0, 135.79, {"name": "香草ヘア", "shop": "hairdresser"}),
     ]
-    monkeypatch.setattr(pack_shinise.osm, "by_prefecture", lambda filters, meta=False: (els, ["okinawa"]))
+    monkeypatch.setattr(
+        pack_shinise.osm, "by_prefecture", lambda filters, meta=False: (els, ["okinawa"])
+    )
     report = pack_shinise.seed_shinise()
     out = {r["id"]: r for r in json.loads((tmp_path / "shinise.json").read_text(encoding="utf-8"))}
     assert out["shinise-q1"]["kind"] == "incense" and out["shinise-q1"]["name"]["zh_tw"] == "松榮堂"
@@ -333,11 +340,110 @@ def test_teahouse_still_open():
 
     assert pack_shinise.still_open(el({}), today)
     # 很久沒人編輯：不收；有 check_date 確認過就收
-    assert not pack_shinise.still_open(el({}, "2019-05-01T00:00:00Z"), today)
-    assert pack_shinise.still_open(el({"check_date": "2024-06-10"}, "2019-05-01T00:00:00Z"), today)
+    assert not pack_shinise.still_open(el({}, "2017-05-01T00:00:00Z"), today)
+    assert pack_shinise.still_open(el({}, "2019-05-01T00:00:00Z"), today)  # 8 年內
+    assert pack_shinise.still_open(el({"check_date": "2024-06-10"}, "2017-05-01T00:00:00Z"), today)
+    assert (
+        pack_shinise.last_checked(el({"check_date": "2024-06-10"}, "2017-05-01T00:00:00Z"))
+        == "2024-06"
+    )
     assert not pack_shinise.still_open(el({}, None), today)
     # 歇業標記
     assert not pack_shinise.still_open(el({"opening_hours": "closed"}), today)
     assert not pack_shinise.still_open(el({"disused:amenity": "cafe"}), today)
     assert not pack_shinise.still_open(el({"end_date": "2023"}), today)
     assert not pack_shinise.still_open(el({"note": "2024年3月閉店"}), today)
+
+
+def test_check_teahouses(monkeypatch, tmp_path):
+    import datetime as dt
+    import json
+
+    from pipeline.sources.osm import OsmElement
+
+    def rec(i: int, kind: str = "teahouse") -> dict:
+        return {"id": f"shinise-node-{i}", "kind": kind, "prefecture": "kyoto", "name": {"ja": f"茶屋{i}"},
+                "location": {"lat": 35.0, "lng": 135.0}, "sources": []}  # fmt: skip
+
+    recs = [rec(1), rec(2), rec(3), rec(4), rec(5, "wagashi")]
+    (tmp_path / "shinise.json").write_text(json.dumps(recs), encoding="utf-8")
+    monkeypatch.setattr(pack_shinise, "PACKS_DIR", tmp_path)
+    queries: list[str] = []
+
+    def fake_run(q: str) -> list[OsmElement]:
+        queries.append(q)
+        return [
+            OsmElement("node/1", 35.0, 135.0, {"name": "茶屋1"}, "2025-06-01T00:00:00Z"),
+            OsmElement("node/2", 35.0, 135.0, {"name": "茶屋2"}, "2016-01-01T00:00:00Z"),  # 太久
+            OsmElement("node/3", 35.0, 135.0, {"name": "茶屋3", "opening_hours": "closed"}, "2025-01-01T00:00:00Z"),
+            # node/4：OSM 上已經刪掉
+        ]  # fmt: skip
+
+    monkeypatch.setattr(pack_shinise.osm, "_run", fake_run)
+    report = pack_shinise.check_teahouses(dt.date(2026, 11, 19))
+    out = json.loads((tmp_path / "shinise.json").read_text(encoding="utf-8"))
+    assert [r["id"] for r in out] == ["shinise-node-1", "shinise-node-5"]
+    assert out[0]["checked"] == "2025-06"
+    assert "node(id:1,2,3,4);" in queries[0] and "out center meta;" in queries[0]
+    assert "中村藤吉" in queries[1]
+    assert "拿掉 3 家" in report
+
+
+def test_check_teahouses_keeps_data_on_bad_response(monkeypatch, tmp_path):
+    import json
+
+    import pytest
+
+    recs = [{"id": f"shinise-node-{i}", "kind": "teahouse", "prefecture": "kyoto", "name": {"ja": "x"},
+             "location": {"lat": 35.0, "lng": 135.0}, "sources": []} for i in range(4)]  # fmt: skip
+    (tmp_path / "shinise.json").write_text(json.dumps(recs), encoding="utf-8")
+    monkeypatch.setattr(pack_shinise, "PACKS_DIR", tmp_path)
+    monkeypatch.setattr(pack_shinise.osm, "_run", lambda q: [])
+    with pytest.raises(RuntimeError):
+        pack_shinise.check_teahouses()
+    assert len(json.loads((tmp_path / "shinise.json").read_text(encoding="utf-8"))) == 4
+
+
+def test_tea_shop_records(monkeypatch):
+    from pipeline.sources.osm import OsmElement
+
+    monkeypatch.setattr(
+        pack_shinise, "_pref_of", lambda lat, lng: "kyoto" if lat > 34.5 else "tokyo"
+    )
+    ts = "2025-03-01T00:00:00Z"
+    els = [
+        # 本店的商店與喫茶在同一棟：一筆，資料完整的優先
+        OsmElement("node/1", 34.889, 135.807, {"name": "中村藤吉本店", "shop": "tea"}, ts),
+        OsmElement(
+            "node/2",
+            34.8891,
+            135.8071,
+            {"name": "中村藤吉本店", "amenity": "cafe", "website": "x"},
+            ts,
+        ),
+        OsmElement("node/3", 34.985, 135.758, {"name": "中村藤吉 京都駅店", "amenity": "cafe"}, ts),
+        # 同一家店後面附英文名、確認得比較早：留日文名、最近確認的
+        OsmElement(
+            "node/9",
+            34.8892,
+            135.8070,
+            {"name": "中村藤吉本店 Nakamura Tokichi Honten", "shop": "tea"},
+            "2019-03-01T00:00:00Z",
+        ),  # fmt: skip
+        # 同一家店標成兩個點、名字不同：留名字完整的
+        OsmElement("node/8", 34.9851, 135.7581, {"name": "中村藤吉", "amenity": "cafe"}, ts),
+        OsmElement("node/4", 34.90, 135.80, {"name": "丸久小山園", "shop": "tea"}, ts),
+        # 京都府外、名字不對、歇業的不收
+        OsmElement("node/5", 34.0, 139.7, {"name": "伊藤久右衛門 東京店", "shop": "tea"}, ts),
+        OsmElement("node/6", 34.9, 135.8, {"name": "伊藤園", "shop": "tea"}, ts),
+        OsmElement(
+            "node/7",
+            34.9,
+            135.8,
+            {"name": "伊藤久右衛門", "shop": "tea", "opening_hours": "closed"},
+            ts,
+        ),
+    ]
+    recs = pack_shinise.tea_shop_records(els, "2026-11-19")
+    assert sorted(r["id"] for r in recs) == ["shinise-node-2", "shinise-node-3", "shinise-node-4"]
+    assert {r["kind"] for r in recs} == {"tea"} and recs[0]["checked"] == "2025-03"

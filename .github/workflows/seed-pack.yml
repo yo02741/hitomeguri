@@ -14,7 +14,7 @@ on:
         required: true
         default: seed-pokefuta
         type: choice
-        options: [seed-pokefuta, seed-pokecen, seed-castles, seed-shinise, seed-chara, seed-specialties, seed-festivals, seed-seasons, seed-climate, seed-rail, seed-official, translate-summaries, seed-specialty-photos, prune-spots, seed-season-photos, photo-stats, seed-photos, seed-photo-sizes, photo-review, photo-review-rest, photo-review-sharp, photo-check, ukiyoe-stats, seed-ukiyoe, seed-municipalities, assign-municipalities, seed-airports, seed-taiwan-routes, dump-airports, dump-rail-osm]
+        options: [seed-pokefuta, seed-pokecen, seed-castles, seed-shinise, check-teahouses, seed-chara, seed-specialties, seed-festivals, seed-seasons, seed-climate, seed-rail, seed-official, translate-summaries, seed-specialty-photos, prune-spots, seed-season-photos, photo-stats, seed-photos, seed-photo-sizes, photo-review, photo-review-rest, photo-review-sharp, photo-check, ukiyoe-stats, seed-ukiyoe, seed-municipalities, assign-municipalities, seed-airports, seed-taiwan-routes, dump-airports, dump-rail-osm]
       prefectures:
         description: "都道府縣 slug，空白分隔；空白表示全部（seed-pokecen 不用）。translate-summaries、seed-specialty-photos：填數字表示只做 N 筆"
         required: false
@@ -52,7 +52,7 @@ jobs:
           ANTHROPIC_API_KEY: ${{ (inputs.command == 'translate-summaries' || inputs.command == 'seed-specialty-photos') && secrets.ANTHROPIC_API_KEY || '' }}
         run: |
           case "${{ inputs.command }}" in
-            seed-pokecen|seed-seasons|seed-castles|seed-shinise|seed-chara|seed-ukiyoe|seed-airports|seed-taiwan-routes|dump-airports) args="" ;;
+            seed-pokecen|seed-seasons|seed-castles|seed-shinise|check-teahouses|seed-chara|seed-ukiyoe|seed-airports|seed-taiwan-routes|dump-airports) args="" ;;
             translate-summaries|seed-specialty-photos)
               if [ -z "$ANTHROPIC_API_KEY" ]; then
                 echo "::error::請在 Settings → Secrets and variables → Actions 新增 ANTHROPIC_API_KEY"
