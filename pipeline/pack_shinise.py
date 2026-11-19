@@ -36,8 +36,9 @@ KIND_LABEL = {"incense": "香舖", "wagashi": "和菓子", "tea": "茶舖", "tea
 # 創業在這一年以前才算老舖（大正以前，約一百年）
 FOUNDED_MAX = 1926
 TEAHOUSE_PER_PREF = 12
-# 茶屋：OSM 上這幾年內有人編輯或確認過才收（很久沒人動的店常常已經歇業，地圖上還留著）
-TEAHOUSE_FRESH_YEARS = 4
+# 茶屋：OSM 上這幾年內有人編輯或確認過才收（很久沒人動的店常常已經歇業，地圖上還留著）。
+# 4 年拿掉了一半，連宇治的辻利兵衛本店都不見；使用者決定放寬到 8 年，卡片另外標最後確認的年月
+TEAHOUSE_FRESH_YEARS = 8
 # 名稱或註記寫著歇業
 LIFECYCLE = ("disused", "was", "abandoned", "demolished", "removed")
 CLOSED_WORDS = re.compile(r"閉店|閉業|廃業|休業|閉館|営業終了|closed", re.I)
@@ -47,12 +48,19 @@ QUALITY_KEYS = ("website", "opening_hours", "name:en", "name:ja-Hira", "name:ja-
                 "phone", "addr:full", "brand")  # fmt: skip
 
 
+def last_checked(el: OsmElement) -> str:
+    """OSM 上最後有人確認這家店的年月（"YYYY-MM"）：
+    check_date、survey:date 與最後編輯時間中最新的。"""
+    t = el.tags
+    dates = [t.get("check_date", ""), t.get("survey:date", ""), (el.timestamp or "")[:10]]
+    return max((d[:7] for d in dates if re.match(r"\d{4}-\d{2}", d)), default="")
+
+
 def still_open(el: OsmElement, today: dt.date) -> bool:
     """茶屋還在營業的跡象：沒有歇業標記，且最近 TEAHOUSE_FRESH_YEARS 年內有人編輯或確認過。
 
     OSM 的歇業標記：opening_hours=closed／off、end_date、disused:*／was:*／abandoned:*
     等生命週期前綴，名稱、note、description 寫著閉店、休業。
-    確認日取 check_date、survey:date 與最後編輯時間中最新的。
     """
     t = el.tags
     if t.get("opening_hours", "").strip().lower() in ("closed", "off"):
@@ -61,12 +69,11 @@ def still_open(el: OsmElement, today: dt.date) -> bool:
         return False
     if any(CLOSED_WORDS.search(t.get(k, "")) for k in ("name", "note", "description", "fixme")):
         return False
-    dates = [t.get("check_date", ""), t.get("survey:date", ""), (el.timestamp or "")[:10]]
-    latest = max((d for d in dates if re.match(r"\d{4}-\d{2}", d)), default="")
+    latest = last_checked(el)
     if not latest:
         return False
     cutoff = today.replace(year=today.year - TEAHOUSE_FRESH_YEARS, day=1).isoformat()[:7]
-    return latest[:7] >= cutoff
+    return latest >= cutoff
 
 
 def quality(el: OsmElement) -> float:
@@ -76,6 +83,10 @@ def quality(el: OsmElement) -> float:
 # 香舖：名稱是香老舗、香舗、香木店，或知名的香舖（「お香」「線香」太寬，會撈到雜貨、化妝品、佛具店）
 # 「松栄堂」這類店名很常見（樂器行、書店也叫松栄堂），不放進來；維基有條目的香舖另外依本店所在地找
 INCENSE_NAME = "香老舗|香舗|香木店|薫玉堂|山田松香木店|香十|林龍昇堂|玉初堂"
+# 茶舖：店名沒有「茶屋」「茶寮」，維基「日本の製茶メーカー」分類裡也沒有
+# （或找不到創業年）的宇治老舖。
+# 使用者點名要有的（2026-11-19）；只收京都府內的店（含分店），資料取自 OSM
+TEA_SHOP_NAME = "中村藤吉|丸久小山園|伊藤久右衛門"
 TEAHOUSE_NAME = "茶屋|茶寮|茶房|甘味|甘党"
 # 名稱像茶屋但其實是咖啡店、酒館、料理店
 TEAHOUSE_EXCLUDE = re.compile(
@@ -331,8 +342,32 @@ def osm_record(el: osm.OsmElement, kind: str, today: str) -> dict[str, Any] | No
         "address": osm_address(el.tags) or None,
         "location": {"lat": round(el.lat, 6), "lng": round(el.lng, 6)},
         "website": el.tags.get("website") or el.tags.get("contact:website"),
+        "checked": last_checked(el) or None,
         "sources": [{"url": el.url, "fetched_at": today}],
     }
+
+
+def tea_shop_records(els: list[osm.OsmElement], today: str) -> list[dict[str, Any]]:
+    """TEA_SHOP_NAME 的店（京都府內，含分店）→ 茶舖的紀錄。
+    同一家店的商店與喫茶（100 m 內同名）只留一筆，資料完整的優先。"""
+    cands = [
+        el
+        for el in els
+        if re.search(TEA_SHOP_NAME, el.tags.get("name", ""))
+        and (el.tags.get("shop") or el.tags.get("amenity") in ("cafe", "restaurant"))
+        and still_open(el, dt.date.fromisoformat(today))
+        and _pref_of(el.lat, el.lng) == "kyoto"
+    ]
+    cands.sort(key=lambda el: (-quality(el), el.osm_id))
+    out: list[dict[str, Any]] = []
+    for el in cands:
+        name = _norm(osm_name(el.tags))
+        if any(_norm(r["name"]["ja"]) == name and _near(r, el.lat, el.lng, 100) for r in out):
+            continue
+        rec = osm_record(el, "tea", today)
+        if rec:
+            out.append(_clean(rec))
+    return out
 
 
 def _clean(rec: dict[str, Any]) -> dict[str, Any]:
@@ -402,6 +437,8 @@ def seed_shinise() -> str:
     filters = [
         f'["shop"]["name"~"{INCENSE_NAME}"]',
         f'["amenity"~"^(cafe|restaurant)$"]["name"~"{TEAHOUSE_NAME}"]',
+        f'["shop"]["name"~"{TEA_SHOP_NAME}"]',
+        f'["amenity"~"^(cafe|restaurant)$"]["name"~"{TEA_SHOP_NAME}"]',
     ]
     if need:
         rx = _rx([s.name for s in need])
@@ -461,6 +498,12 @@ def seed_shinise() -> str:
             out.append(_clean(rec))
             added_incense += 1
 
+    # 茶舖：點名的宇治老舖（店名沒有茶屋、維基分類沒收到的）
+    tea_shops = [
+        r for r in tea_shop_records(elements, today) if r["id"] not in {x["id"] for x in out}
+    ]
+    out += tea_shops
+
     # 茶屋・甘味處：OSM，依資料完整度每縣取前幾家
     teahouses = [
         el
@@ -468,6 +511,7 @@ def seed_shinise() -> str:
         if el.tags.get("amenity") in ("cafe", "restaurant")
         and re.search(TEAHOUSE_NAME, el.tags.get("name", ""))
         and not TEAHOUSE_EXCLUDE.search(osm_name(el.tags) + " " + el.tags.get("cuisine", ""))
+        and not re.search(TEA_SHOP_NAME, el.tags.get("name", ""))
     ]
     stale = [el for el in teahouses if not still_open(el, dt.date.today())]
     teahouses = [el for el in teahouses if el not in stale]
@@ -549,6 +593,25 @@ def check_teahouses(today: dt.date | None = None) -> str:
     stale = [r for r in recs if r["id"] in by_id and not still_open(by_id[r["id"]], today)]
     drop = {r["id"] for r in gone + stale}
     out = [r for r in recs if r["id"] not in drop]
+    for r in out:
+        if r["id"] in by_id and (checked := last_checked(by_id[r["id"]])):
+            r["checked"] = checked
+
+    # 點名的宇治老舖：京都府內查一次，換掉之前收的
+    q = f"""[out:json][timeout:180];
+{osm._area(geo.iso_code("kyoto"))}
+(
+  nwr["shop"]["name"~"{TEA_SHOP_NAME}"](area.a);
+  nwr["amenity"~"^(cafe|restaurant)$"]["name"~"{TEA_SHOP_NAME}"](area.a);
+);
+out center meta;"""
+    tea = tea_shop_records(osm._run(q), today.isoformat())
+    if tea:
+        out = [
+            r for r in out if not (r["kind"] == "tea" and re.search(TEA_SHOP_NAME, r["name"]["ja"]))
+        ]
+        out += tea
+    out = sorted(out, key=lambda r: r["id"])
     path.write_text(json.dumps(out, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
     def names(rs: list[dict[str, Any]]) -> str:
@@ -562,4 +625,6 @@ def check_teahouses(today: dt.date | None = None) -> str:
         f"OSM 上已經刪掉（{len(gone)}）：{names(gone)}",
         "",
         f"有歇業標記或 {TEAHOUSE_FRESH_YEARS} 年內沒人編輯、確認（{len(stale)}）：{names(stale)}",
+        "",
+        f"茶舖（{TEA_SHOP_NAME.replace('|', '、')}）：{names(tea)}",
     ])  # fmt: skip

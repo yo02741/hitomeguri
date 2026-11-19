@@ -13,6 +13,10 @@ const emit = defineEmits<{ close: []; openSpot: [id: string] }>()
 const visitRef = computed(() => ({ id: props.item.s ?? props.item.id, pref: props.item.p, name: props.item.n }))
 
 const def = computed(() => packByKey.get(props.pack))
+const checked = computed(() => {
+  const m = props.item.ck?.match(/^(\d{4})-(\d{2})$/)
+  return m ? `${m[1]}年${Number(m[2])}月` : null
+})
 const group = computed(() => def.value?.groups.find((g) => g.key === props.item.g)?.label ?? '')
 const isLid = computed(() => props.item.g === 'lid')
 const mapsUrl = computed(() => {
@@ -77,6 +81,10 @@ const sourceLabel = computed(() => {
       </div>
       <div v-if="item.f" class="flex border-b border-line-soft py-2.5 text-body-sm">
         <span class="w-[72px] shrink-0 text-sub">創業</span><span class="font-num">{{ item.f }}</span>
+      </div>
+      <!-- 茶屋、茶舖：OSM 上最後有人確認的年月（很久沒人確認的店可能已經歇業） -->
+      <div v-if="checked" class="flex border-b border-line-soft py-2.5 text-body-sm">
+        <span class="w-[72px] shrink-0 text-sub">最後確認</span><span><span class="font-num">{{ checked }}</span><span class="ml-2 text-caption text-sub">OpenStreetMap</span></span>
       </div>
       <div class="flex border-b border-line-soft py-2.5 text-body-sm">
         <span class="w-[72px] shrink-0 text-sub">地區</span><span lang="ja">{{ regionOf(item.p)?.name.ja }}</span>

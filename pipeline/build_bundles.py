@@ -382,11 +382,11 @@ def pack_items_castle(src: Path = PACKS_DIR) -> list[dict[str, Any]]:
 
 def pack_items_shinise(src: Path = PACKS_DIR) -> list[dict[str, Any]]:
     """老舖・茶屋：香舖（incense）、和菓子（wagashi）、茶舖（tea）、茶屋・甘味處（teahouse）。
-    f 創業、w 維基條目。"""
+    f 創業、w 維基條目、ck OSM 上最後有人確認的年月（茶屋、茶舖）。"""
     items = []
     for r in _read(src / "shinise.json"):
         it = _base(r, r["kind"])
-        it.update({"f": r.get("founded"), "w": r.get("wikipedia")})
+        it.update({"f": r.get("founded"), "w": r.get("wikipedia"), "ck": r.get("checked")})
         items.append(it)
     return _compact(items)
 
