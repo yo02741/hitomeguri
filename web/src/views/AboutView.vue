@@ -219,8 +219,9 @@ function onScroll() {
     hero.style.setProperty('--p', p.toFixed(3))
   })
 }
-function scrollToFlow() {
-  document.getElementById('flow')?.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' })
+// 「簡介」：捲到海報正下方（收錄那一段）開始讀（使用者回饋 2026-11-19）
+function scrollToIntro() {
+  document.getElementById('intro')?.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' })
 }
 
 let revealIO: IntersectionObserver | null = null
@@ -274,10 +275,10 @@ const north = regions[0]!.name.zh_tw
 const south = regions[regions.length - 1]!.name.zh_tw
 
 const POINTS = [
-  { title: '一縣一色', text: '47 縣各有地區色與和風紋樣。進到哪一縣，整個畫面就換成那一縣的顏色，看得出自己在哪裡，也記得住去過哪裡。' },
+  { title: '一縣一色', text: '47 縣各有地區色與和風紋樣。進到哪一縣，畫面就換成那一縣的顏色；去過的縣在紀錄的地圖上塗滿。' },
   { title: '每一筆都有出處', text: '簡介取自維基百科，座標取自 Wikidata 與 OpenStreetMap，花期取自氣象廳。找不到來源的就留空，不另外編寫。' },
   { title: '念得出來', text: '地名、站名附假名與羅馬拼音，按一下就聽得到日文。出發前把這趟會遇到的念法整理成卡片。' },
-  { title: '從找地方到回憶', text: '探索、排行程、旅前準備、旅途中、回來之後的紀錄，接在同一個地方，不用在幾個 App 之間抄來抄去。' },
+  { title: '行程與紀錄', text: '景點加進行程，排好每一天；旅途中打開就是今天的路線，回來之後按「去過」記下日期。' },
 ]
 
 // ---- 能做什麼（頁籤） ----
@@ -558,10 +559,10 @@ const kyotoRegion = regionOf('kyoto')
         <div class="mt-auto grid items-end gap-x-10 gap-y-6 pt-16 md:grid-cols-[minmax(0,1fr)_auto]">
           <div class="flex flex-col gap-4">
             <h1 v-reveal class="tagline font-brand">{{ TAGLINE }}</h1>
-            <p v-reveal="1" class="max-w-[28em] text-body leading-[1.9] tracking-[0.03em] text-white/85 md:text-[1rem]">日本 47 都道府縣的景點地圖。在一縣一色的地圖上找地方、排行程、記住念法；去過的地方，收成一張一張的卡。</p>
+            <p v-reveal="1" class="max-w-[28em] text-body leading-[1.9] tracking-[0.03em] text-white/85 md:text-[1rem]">日本 47 都道府縣的景點地圖。找地方、排行程、記念法；去過的景點有收集卡。</p>
             <div v-reveal="2" class="flex flex-wrap items-center gap-x-6 gap-y-3">
               <RouterLink to="/" class="flex h-11 items-center rounded-control bg-paper px-5 text-body-sm font-bold tracking-[0.04em] text-ink no-underline active:translate-y-px">開始探索</RouterLink>
-              <a href="#flow" class="text-body-sm font-bold tracking-[0.04em] text-white underline decoration-white/50 decoration-2 underline-offset-[6px] hover:decoration-white" @click.prevent="scrollToFlow">怎麼用</a>
+              <a href="#intro" class="text-body-sm font-bold tracking-[0.04em] text-white underline decoration-white/50 decoration-2 underline-offset-[6px] hover:decoration-white" @click.prevent="scrollToIntro">簡介</a>
             </div>
           </div>
           <!-- 這一張：地方與照片出處（CC 授權要寫作者與授權） -->
@@ -609,7 +610,7 @@ const kyotoRegion = regionOf('kyoto')
     </header>
 
     <!-- 收錄：一句話寫完，下面是 47 縣的地區色，北到南 -->
-    <section aria-label="收錄" class="border-y border-line bg-surface">
+    <section id="intro" aria-label="收錄" class="scroll-mt-0 border-y border-line bg-surface">
       <div class="mx-auto w-full max-w-6xl px-6 py-12 max-sm:px-4 max-sm:py-9">
         <!-- 數字和量詞不拆到兩行 -->
         <p v-reveal class="counts font-brand text-h3 leading-[1.8] font-medium xl:text-[1.625rem]">
@@ -632,15 +633,13 @@ const kyotoRegion = regionOf('kyoto')
     <section class="mx-auto w-full max-w-6xl px-6 py-16 max-sm:px-4 max-sm:py-10" aria-labelledby="points">
       <h2 id="points" v-reveal class="font-brand text-h2 font-semibold tracking-title">ひとめぐり 是什麼</h2>
       <p v-reveal="1" class="mt-2 max-w-[40em] text-body text-sub">「一巡り」是繞一圈的意思。從一個縣開始，一縣一縣把日本走過一遍。</p>
-      <ul class="mt-8 grid gap-4 md:grid-cols-2">
-        <li v-for="(p, i) in POINTS" :key="p.title" v-reveal="i + 1" class="flex gap-4 rounded-card border border-line bg-paper p-5">
-          <span class="font-latin text-h2 leading-none font-bold text-region-strong">{{ String(i + 1).padStart(2, '0') }}</span>
-          <span class="flex flex-col gap-1.5">
-            <span class="text-title font-bold">{{ p.title }}</span>
-            <span class="text-body text-ink-2">{{ p.text }}</span>
-          </span>
-        </li>
-      </ul>
+      <!-- 不加 01–04 編號與卡片框（使用者 2026-11-19：去掉制式的版型）：上緣一條線，兩欄 -->
+      <dl class="mt-8 grid gap-x-12 md:grid-cols-2">
+        <div v-for="(p, i) in POINTS" :key="p.title" v-reveal="i + 1" class="flex flex-col gap-1.5 border-t border-line py-5">
+          <dt class="text-title font-bold">{{ p.title }}</dt>
+          <dd class="text-body text-ink-2">{{ p.text }}</dd>
+        </div>
+      </dl>
     </section>
 
     <!-- 能做什麼：頁籤 -->
@@ -818,7 +817,7 @@ const kyotoRegion = regionOf('kyoto')
     <!-- 一趟旅行的流程 -->
     <section id="flow" class="mx-auto w-full max-w-6xl scroll-mt-4 px-6 py-16 max-sm:px-4 max-sm:py-10" aria-labelledby="flow-title">
       <h2 id="flow-title" v-reveal class="font-brand text-h2 font-semibold tracking-title">一趟旅行怎麼用</h2>
-      <ol class="relative mt-8 grid gap-4 md:grid-cols-3 lg:grid-cols-6">
+      <ol class="relative mt-8 grid gap-x-5 gap-y-6 md:grid-cols-3 lg:grid-cols-6">
         <li v-for="(s, i) in [
           { t: '找地方', d: '選一個縣，看地圖與清單，收藏想去的。', tab: 'explore' },
           { t: '排行程', d: '加入行程排進每一天，設定住在哪，看哪裡當天來回得了。', tab: 'trip' },
@@ -827,11 +826,9 @@ const kyotoRegion = regionOf('kyoto')
           { t: '去過', d: '到了按「去過」，拿到這一季的卡。', tab: 'cards' },
           { t: '回顧', d: '蓋紀念章、收集卡，做一張回顧圖。', tab: 'log' },
         ] as const" :key="s.t" v-reveal="i + 1" class="flex">
-          <button type="button" class="flex w-full flex-col gap-2 rounded-card border border-line bg-paper p-4 text-left hover:bg-surface active:translate-y-px" @click="showTab(s.tab)">
-            <span class="flex items-center gap-2">
-              <span class="grid size-8 place-items-center rounded-full bg-region font-latin text-body font-bold text-on-region">{{ i + 1 }}</span>
-              <span class="text-title font-bold">{{ s.t }}</span>
-            </span>
+          <!-- 圓形編號＋卡片框是制式版型（使用者 2026-11-19）：順序由排列看得出來，上緣一條線 -->
+          <button type="button" class="group flex w-full flex-col gap-1.5 border-t-2 border-line pt-3 pb-1 text-left hover:border-region-strong active:translate-y-px" @click="showTab(s.tab)">
+            <span class="text-title font-bold group-hover:text-region-strong">{{ s.t }}</span>
             <span class="text-body-sm text-ink-2">{{ s.d }}</span>
           </button>
         </li>
