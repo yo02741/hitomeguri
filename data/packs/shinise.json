@@ -1,60 +1,5 @@
 [
   {
-    "id": "shinise-node-10062706567",
-    "kind": "teahouse",
-    "prefecture": "nagano",
-    "name": {
-      "ja": "茶房コスモス"
-    },
-    "location": {
-      "lat": 36.635757,
-      "lng": 138.187205
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/10062706567",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-node-10115848946",
-    "kind": "teahouse",
-    "prefecture": "osaka",
-    "name": {
-      "ja": "ツナグ茶房",
-      "en": "Tsunagu Sabou"
-    },
-    "location": {
-      "lat": 34.658106,
-      "lng": 135.572635
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/10115848946",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-node-10134906336",
-    "kind": "teahouse",
-    "prefecture": "kagoshima",
-    "name": {
-      "ja": "つばめ茶房"
-    },
-    "location": {
-      "lat": 31.581001,
-      "lng": 130.539168
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/10134906336",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
     "id": "shinise-node-10202392855",
     "kind": "teahouse",
     "prefecture": "tokyo",
@@ -1485,24 +1430,6 @@
     ]
   },
   {
-    "id": "shinise-node-13242767361",
-    "kind": "teahouse",
-    "prefecture": "gifu",
-    "name": {
-      "ja": "がんだて茶屋"
-    },
-    "location": {
-      "lat": 35.913834,
-      "lng": 137.329355
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/13242767361",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
     "id": "shinise-node-13278719476",
     "kind": "teahouse",
     "prefecture": "nagano",
@@ -1880,44 +1807,6 @@
     ]
   },
   {
-    "id": "shinise-node-1442566131",
-    "kind": "teahouse",
-    "prefecture": "kanagawa",
-    "name": {
-      "ja": "いろり茶屋",
-      "en": "Irmori Chaya"
-    },
-    "location": {
-      "lat": 35.266786,
-      "lng": 139.012799
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/1442566131",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-node-1484537895",
-    "kind": "teahouse",
-    "prefecture": "saitama",
-    "name": {
-      "ja": "浪漫茶房 右門",
-      "en": "Umon"
-    },
-    "location": {
-      "lat": 35.922035,
-      "lng": 139.482677
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/1484537895",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
     "id": "shinise-node-1484547289",
     "kind": "teahouse",
     "prefecture": "saitama",
@@ -1932,24 +1821,6 @@
     "sources": [
       {
         "url": "https://www.openstreetmap.org/node/1484547289",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-node-1789949924",
-    "kind": "teahouse",
-    "prefecture": "kanagawa",
-    "name": {
-      "ja": "相撲茶屋かまた"
-    },
-    "location": {
-      "lat": 35.463132,
-      "lng": 139.398386
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/1789949924",
         "fetched_at": "2026-09-30"
       }
     ]
@@ -2085,24 +1956,6 @@
     ]
   },
   {
-    "id": "shinise-node-2047611404",
-    "kind": "teahouse",
-    "prefecture": "fukushima",
-    "name": {
-      "ja": "やまでら茶屋"
-    },
-    "location": {
-      "lat": 37.500487,
-      "lng": 139.920442
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/2047611404",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
     "id": "shinise-node-2090962099",
     "kind": "teahouse",
     "prefecture": "tokyo",
@@ -2118,42 +1971,6 @@
     "sources": [
       {
         "url": "https://www.openstreetmap.org/node/2090962099",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-node-2168494994",
-    "kind": "teahouse",
-    "prefecture": "nagano",
-    "name": {
-      "ja": "みそ茶屋　千の水"
-    },
-    "location": {
-      "lat": 36.041865,
-      "lng": 138.11352
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/2168494994",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-node-2218796905",
-    "kind": "teahouse",
-    "prefecture": "nara",
-    "name": {
-      "ja": "いこい茶屋"
-    },
-    "location": {
-      "lat": 34.708601,
-      "lng": 136.0355
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/2218796905",
         "fetched_at": "2026-09-30"
       }
     ]
@@ -2177,78 +1994,6 @@
     ]
   },
   {
-    "id": "shinise-node-2272227460",
-    "kind": "teahouse",
-    "prefecture": "fukushima",
-    "name": {
-      "ja": "お秀茶屋"
-    },
-    "location": {
-      "lat": 37.486804,
-      "lng": 139.951689
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/2272227460",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-node-2272254972",
-    "kind": "teahouse",
-    "prefecture": "fukushima",
-    "name": {
-      "ja": "いずみ茶屋"
-    },
-    "location": {
-      "lat": 37.491162,
-      "lng": 139.946249
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/2272254972",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-node-2277882702",
-    "kind": "teahouse",
-    "prefecture": "fukushima",
-    "name": {
-      "ja": "會愛茶屋"
-    },
-    "location": {
-      "lat": 37.496296,
-      "lng": 139.928392
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/2277882702",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-node-2283669251",
-    "kind": "teahouse",
-    "prefecture": "fukui",
-    "name": {
-      "ja": "甘味茶屋 極"
-    },
-    "location": {
-      "lat": 35.942813,
-      "lng": 136.188358
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/2283669251",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
     "id": "shinise-node-2285448127",
     "kind": "teahouse",
     "prefecture": "tochigi",
@@ -2262,118 +2007,6 @@
     "sources": [
       {
         "url": "https://www.openstreetmap.org/node/2285448127",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-node-2290301957",
-    "kind": "teahouse",
-    "prefecture": "mie",
-    "name": {
-      "ja": "さんき茶屋"
-    },
-    "location": {
-      "lat": 34.058267,
-      "lng": 136.198428
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/2290301957",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-node-2308063621",
-    "kind": "teahouse",
-    "prefecture": "hiroshima",
-    "name": {
-      "ja": "徒然茶房"
-    },
-    "location": {
-      "lat": 34.399571,
-      "lng": 132.480675
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/2308063621",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-node-2332913807",
-    "kind": "teahouse",
-    "prefecture": "osaka",
-    "name": {
-      "ja": "水かけ茶屋"
-    },
-    "location": {
-      "lat": 34.668126,
-      "lng": 135.50292
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/2332913807",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-node-2494685935",
-    "kind": "teahouse",
-    "prefecture": "chiba",
-    "name": {
-      "ja": "甘味処楓",
-      "en": "Kaede"
-    },
-    "location": {
-      "lat": 35.623882,
-      "lng": 140.101125
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/2494685935",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-node-2518517694",
-    "kind": "teahouse",
-    "prefecture": "miyazaki",
-    "name": {
-      "ja": "あららぎ乃茶屋",
-      "en": "Araragi no Chaya"
-    },
-    "location": {
-      "lat": 32.705091,
-      "lng": 131.297986
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/2518517694",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-node-2636308554",
-    "kind": "teahouse",
-    "prefecture": "fukushima",
-    "name": {
-      "ja": "鶴ヶ岡茶寮"
-    },
-    "address": "福島県会津若松市東栄町8-47",
-    "location": {
-      "lat": 37.491683,
-      "lng": 139.931564
-    },
-    "website": "http://www.aizuya.com/tsurugaoka/",
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/2636308554",
         "fetched_at": "2026-09-30"
       }
     ]
@@ -2393,98 +2026,6 @@
     "sources": [
       {
         "url": "https://www.openstreetmap.org/node/2643845444",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-node-2700187228",
-    "kind": "teahouse",
-    "prefecture": "nagano",
-    "name": {
-      "ja": "茶房どーなつ庵"
-    },
-    "location": {
-      "lat": 35.678247,
-      "lng": 137.91839
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/2700187228",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-node-2817081192",
-    "kind": "teahouse",
-    "prefecture": "hyogo",
-    "name": {
-      "ja": "和食と甘味 かんざし",
-      "en": "Kanzashi"
-    },
-    "location": {
-      "lat": 34.93153,
-      "lng": 134.827414
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/2817081192",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-node-2849746272",
-    "kind": "teahouse",
-    "prefecture": "yamanashi",
-    "name": {
-      "ja": "浅間茶屋"
-    },
-    "location": {
-      "lat": 35.415697,
-      "lng": 138.857751
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/2849746272",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-node-2863460501",
-    "kind": "teahouse",
-    "prefecture": "nara",
-    "name": {
-      "ja": "カルメシ茶屋"
-    },
-    "location": {
-      "lat": 34.692846,
-      "lng": 135.696378
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/2863460501",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-node-2865809487",
-    "kind": "teahouse",
-    "prefecture": "nara",
-    "name": {
-      "ja": "摩波楽茶屋",
-      "en": "Maharajaya"
-    },
-    "location": {
-      "lat": 34.685255,
-      "lng": 135.689715
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/2865809487",
         "fetched_at": "2026-09-30"
       }
     ]
@@ -2526,42 +2067,6 @@
     ]
   },
   {
-    "id": "shinise-node-3007945887",
-    "kind": "teahouse",
-    "prefecture": "fukushima",
-    "name": {
-      "ja": "清作茶屋"
-    },
-    "location": {
-      "lat": 37.535871,
-      "lng": 140.075303
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/3007945887",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-node-3009774333",
-    "kind": "teahouse",
-    "prefecture": "iwate",
-    "name": {
-      "ja": "すがわら 月見茶屋"
-    },
-    "location": {
-      "lat": 38.943579,
-      "lng": 141.047278
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/3009774333",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
     "id": "shinise-node-3028871733",
     "kind": "teahouse",
     "prefecture": "kanagawa",
@@ -2578,63 +2083,6 @@
     "sources": [
       {
         "url": "https://www.openstreetmap.org/node/3028871733",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-node-3088415487",
-    "kind": "teahouse",
-    "prefecture": "saitama",
-    "name": {
-      "ja": "浅見茶屋"
-    },
-    "location": {
-      "lat": 35.909054,
-      "lng": 139.198827
-    },
-    "website": "https://asamichaya.jp/",
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/3088415487",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-node-3134616041",
-    "kind": "teahouse",
-    "prefecture": "oita",
-    "name": {
-      "ja": "星岡茶寮"
-    },
-    "address": "大分県大分市府内町",
-    "location": {
-      "lat": 33.235993,
-      "lng": 131.608443
-    },
-    "website": "https://itp.ne.jp/shop/KN4400060600027496/",
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/3134616041",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-node-3201501112",
-    "kind": "teahouse",
-    "prefecture": "nara",
-    "name": {
-      "ja": "茶房 暖暖（のんのん）"
-    },
-    "location": {
-      "lat": 34.676407,
-      "lng": 135.829844
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/3201501112",
         "fetched_at": "2026-09-30"
       }
     ]
@@ -2658,42 +2106,6 @@
     ]
   },
   {
-    "id": "shinise-node-3276203216",
-    "kind": "teahouse",
-    "prefecture": "wakayama",
-    "name": {
-      "ja": "千畳茶屋"
-    },
-    "location": {
-      "lat": 33.671387,
-      "lng": 135.330954
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/3276203216",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-node-3298520377",
-    "kind": "teahouse",
-    "prefecture": "niigata",
-    "name": {
-      "ja": "歩荷茶屋"
-    },
-    "location": {
-      "lat": 36.940903,
-      "lng": 137.899065
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/3298520377",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
     "id": "shinise-node-3423984810",
     "kind": "teahouse",
     "prefecture": "fukushima",
@@ -2707,43 +2119,6 @@
     "sources": [
       {
         "url": "https://www.openstreetmap.org/node/3423984810",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-node-3500173670",
-    "kind": "teahouse",
-    "prefecture": "yamagata",
-    "name": {
-      "ja": "川の駅ヤナ茶屋もがみ"
-    },
-    "location": {
-      "lat": 38.760017,
-      "lng": 140.431347
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/3500173670",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-node-3508361736",
-    "kind": "teahouse",
-    "prefecture": "ishikawa",
-    "name": {
-      "ja": "瀬女　峠茶屋"
-    },
-    "location": {
-      "lat": 36.287594,
-      "lng": 136.650514
-    },
-    "website": "https://www.senachaya.com/shop/",
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/3508361736",
         "fetched_at": "2026-09-30"
       }
     ]
@@ -2763,63 +2138,6 @@
     "sources": [
       {
         "url": "https://www.openstreetmap.org/node/3600177257",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-node-3634480956",
-    "kind": "teahouse",
-    "prefecture": "hyogo",
-    "name": {
-      "ja": "甘党の店　かいだ"
-    },
-    "address": "尼崎市西長洲町",
-    "location": {
-      "lat": 34.725312,
-      "lng": 135.421733
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/3634480956",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-node-3649979365",
-    "kind": "teahouse",
-    "prefecture": "okayama",
-    "name": {
-      "ja": "茶房みなとや"
-    },
-    "location": {
-      "lat": 34.595138,
-      "lng": 133.771939
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/3649979365",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-node-3654036006",
-    "kind": "teahouse",
-    "prefecture": "fukuoka",
-    "name": {
-      "ja": "民芸茶屋 六騎",
-      "kana": "みんげいちゃやろっきゅ",
-      "en": "Rokkyu"
-    },
-    "location": {
-      "lat": 33.158432,
-      "lng": 130.395802
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/3654036006",
         "fetched_at": "2026-09-30"
       }
     ]
@@ -2845,24 +2163,6 @@
     ]
   },
   {
-    "id": "shinise-node-3656204687",
-    "kind": "teahouse",
-    "prefecture": "niigata",
-    "name": {
-      "ja": "王将茶屋"
-    },
-    "location": {
-      "lat": 37.70205,
-      "lng": 138.786673
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/3656204687",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
     "id": "shinise-node-3665432125",
     "kind": "teahouse",
     "prefecture": "nara",
@@ -2882,25 +2182,6 @@
     ]
   },
   {
-    "id": "shinise-node-3686851289",
-    "kind": "teahouse",
-    "prefecture": "fukushima",
-    "name": {
-      "ja": "玉梨とうふ茶屋"
-    },
-    "address": "福島県大沼郡金山町玉梨363",
-    "location": {
-      "lat": 37.405391,
-      "lng": 139.551631
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/3686851289",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
     "id": "shinise-node-3710349015",
     "kind": "teahouse",
     "prefecture": "ibaraki",
@@ -2915,115 +2196,6 @@
     "sources": [
       {
         "url": "https://www.openstreetmap.org/node/3710349015",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-node-3725652519",
-    "kind": "teahouse",
-    "prefecture": "fukushima",
-    "name": {
-      "ja": "甲賀茶屋"
-    },
-    "location": {
-      "lat": 37.496713,
-      "lng": 139.932135
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/3725652519",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-node-3775067106",
-    "kind": "teahouse",
-    "prefecture": "gifu",
-    "name": {
-      "ja": "夢茶屋"
-    },
-    "location": {
-      "lat": 35.510006,
-      "lng": 136.91395
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/3775067106",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-node-3792182559",
-    "kind": "teahouse",
-    "prefecture": "kumamoto",
-    "name": {
-      "ja": "山見茶屋"
-    },
-    "location": {
-      "lat": 32.803751,
-      "lng": 130.704048
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/3792182559",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-node-3844183796",
-    "kind": "teahouse",
-    "prefecture": "tochigi",
-    "name": {
-      "ja": "茶屋 卯三郎"
-    },
-    "location": {
-      "lat": 37.045416,
-      "lng": 140.018628
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/3844183796",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-node-3916848088",
-    "kind": "teahouse",
-    "prefecture": "kochi",
-    "name": {
-      "ja": "萩の茶屋"
-    },
-    "location": {
-      "lat": 33.448377,
-      "lng": 133.456702
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/3916848088",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-node-3935263057",
-    "kind": "teahouse",
-    "prefecture": "hokkaido",
-    "name": {
-      "ja": "はるき茶屋",
-      "en": "Harukijaya"
-    },
-    "location": {
-      "lat": 45.397433,
-      "lng": 141.6887
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/3935263057",
         "fetched_at": "2026-09-30"
       }
     ]
@@ -3050,24 +2222,6 @@
     ]
   },
   {
-    "id": "shinise-node-4004996689",
-    "kind": "teahouse",
-    "prefecture": "fukushima",
-    "name": {
-      "ja": "喜多方麺茶屋"
-    },
-    "location": {
-      "lat": 37.48471,
-      "lng": 139.95359
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/4004996689",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
     "id": "shinise-node-4062690147",
     "kind": "teahouse",
     "prefecture": "tokushima",
@@ -3081,60 +2235,6 @@
     "sources": [
       {
         "url": "https://www.openstreetmap.org/node/4062690147",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-node-4107813611",
-    "kind": "teahouse",
-    "prefecture": "ehime",
-    "name": {
-      "ja": "あじさい茶屋"
-    },
-    "location": {
-      "lat": 33.956817,
-      "lng": 133.67125
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/4107813611",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-node-4111269449",
-    "kind": "teahouse",
-    "prefecture": "tochigi",
-    "name": {
-      "ja": "含満の茶屋"
-    },
-    "location": {
-      "lat": 36.749793,
-      "lng": 139.592133
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/4111269449",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-node-4125178494",
-    "kind": "teahouse",
-    "prefecture": "yamanashi",
-    "name": {
-      "ja": "浅間茶屋"
-    },
-    "location": {
-      "lat": 35.470365,
-      "lng": 138.793415
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/4125178494",
         "fetched_at": "2026-09-30"
       }
     ]
@@ -3156,43 +2256,6 @@
     "sources": [
       {
         "url": "https://www.openstreetmap.org/node/4209297989",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-node-423763976",
-    "kind": "teahouse",
-    "prefecture": "fukushima",
-    "name": {
-      "ja": "本丸茶屋",
-      "en": "Honmaru chaya"
-    },
-    "location": {
-      "lat": 37.489154,
-      "lng": 139.931303
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/423763976",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-node-4269890590",
-    "kind": "teahouse",
-    "prefecture": "okinawa",
-    "name": {
-      "ja": "浜辺の茶屋"
-    },
-    "location": {
-      "lat": 26.133532,
-      "lng": 127.784612
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/4269890590",
         "fetched_at": "2026-09-30"
       }
     ]
@@ -3235,98 +2298,6 @@
     ]
   },
   {
-    "id": "shinise-node-4331884716",
-    "kind": "teahouse",
-    "prefecture": "fukushima",
-    "name": {
-      "ja": "らぁ麺茶屋麺蔵"
-    },
-    "address": "福島県郡山市喜久田町堀之内字瓶焼場",
-    "location": {
-      "lat": 37.455081,
-      "lng": 140.340847
-    },
-    "website": "https://tabelog.com/fukushima/A0702/A070201/7017669/dtlrvwlst/B440867286/",
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/4331884716",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-node-4342017989",
-    "kind": "teahouse",
-    "prefecture": "gifu",
-    "name": {
-      "ja": "脇茶屋"
-    },
-    "location": {
-      "lat": 36.142894,
-      "lng": 137.258969
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/4342017989",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-node-4347762496",
-    "kind": "teahouse",
-    "prefecture": "gunma",
-    "name": {
-      "ja": "峠の茶屋"
-    },
-    "location": {
-      "lat": 36.552884,
-      "lng": 139.255637
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/4347762496",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-node-4378258789",
-    "kind": "teahouse",
-    "prefecture": "gunma",
-    "name": {
-      "ja": "豆腐屋 福寿茶屋"
-    },
-    "location": {
-      "lat": 36.696128,
-      "lng": 138.909027
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/4378258789",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-node-4380267087",
-    "kind": "teahouse",
-    "prefecture": "fukui",
-    "name": {
-      "ja": "お散歩茶屋はれひより"
-    },
-    "location": {
-      "lat": 36.05151,
-      "lng": 136.202017
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/4380267087",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
     "id": "shinise-node-4424549696",
     "kind": "teahouse",
     "prefecture": "tokyo",
@@ -3346,60 +2317,6 @@
     ]
   },
   {
-    "id": "shinise-node-4469878489",
-    "kind": "teahouse",
-    "prefecture": "chiba",
-    "name": {
-      "ja": "ふぐ　笹乃茶屋"
-    },
-    "location": {
-      "lat": 35.711469,
-      "lng": 139.973078
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/4469878489",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-node-4479814222",
-    "kind": "teahouse",
-    "prefecture": "kagoshima",
-    "name": {
-      "ja": "マングローブ茶屋"
-    },
-    "location": {
-      "lat": 28.257253,
-      "lng": 129.408437
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/4479814222",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-node-4482738611",
-    "kind": "teahouse",
-    "prefecture": "hokkaido",
-    "name": {
-      "ja": "茶房逍遥館"
-    },
-    "location": {
-      "lat": 43.71312,
-      "lng": 142.564076
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/4482738611",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
     "id": "shinise-node-4484284700",
     "kind": "teahouse",
     "prefecture": "miyagi",
@@ -3414,101 +2331,6 @@
     "sources": [
       {
         "url": "https://www.openstreetmap.org/node/4484284700",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-node-4541086392",
-    "kind": "teahouse",
-    "prefecture": "miyagi",
-    "name": {
-      "ja": "どんじき茶屋",
-      "en": "Donjiki Chaya"
-    },
-    "location": {
-      "lat": 38.371376,
-      "lng": 141.062827
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/4541086392",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-node-4552218589",
-    "kind": "teahouse",
-    "prefecture": "miyagi",
-    "name": {
-      "ja": "とんとん茶屋",
-      "en": "Tonton Chaya"
-    },
-    "location": {
-      "lat": 38.05846,
-      "lng": 140.73509
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/4552218589",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-node-4566500639",
-    "kind": "teahouse",
-    "prefecture": "aichi",
-    "name": {
-      "ja": "峠の茶屋 紋屋",
-      "kana": "とうげのちゃやもんや"
-    },
-    "address": "愛知県豊川市東上町日影45-1",
-    "location": {
-      "lat": 34.883036,
-      "lng": 137.434379
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/4566500639",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-node-4579052291",
-    "kind": "teahouse",
-    "prefecture": "miyagi",
-    "name": {
-      "ja": "太郎茶屋鎌倉 仙台上杉店",
-      "en": "Cafe Kamakura"
-    },
-    "location": {
-      "lat": 38.276241,
-      "lng": 140.879053
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/4579052291",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-node-4585400436",
-    "kind": "teahouse",
-    "prefecture": "nagasaki",
-    "name": {
-      "ja": "茶房 泰安洋行"
-    },
-    "location": {
-      "lat": 32.741833,
-      "lng": 129.875736
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/4585400436",
         "fetched_at": "2026-09-30"
       }
     ]
@@ -3573,42 +2395,6 @@
     ]
   },
   {
-    "id": "shinise-node-4621929493",
-    "kind": "teahouse",
-    "prefecture": "miyagi",
-    "name": {
-      "ja": "万葉茶屋"
-    },
-    "location": {
-      "lat": 38.468822,
-      "lng": 140.881085
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/4621929493",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-node-4621929495",
-    "kind": "teahouse",
-    "prefecture": "miyagi",
-    "name": {
-      "ja": "ぐるめ茶屋"
-    },
-    "location": {
-      "lat": 38.465372,
-      "lng": 140.870224
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/4621929495",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
     "id": "shinise-node-4732044732",
     "kind": "teahouse",
     "prefecture": "miyagi",
@@ -3668,42 +2454,6 @@
     ]
   },
   {
-    "id": "shinise-node-4780279222",
-    "kind": "teahouse",
-    "prefecture": "okinawa",
-    "name": {
-      "ja": "山の茶屋・楽水"
-    },
-    "location": {
-      "lat": 26.135201,
-      "lng": 127.783785
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/4780279222",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-node-4783956821",
-    "kind": "teahouse",
-    "prefecture": "kumamoto",
-    "name": {
-      "ja": "峠の茶屋"
-    },
-    "location": {
-      "lat": 32.818723,
-      "lng": 130.656553
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/4783956821",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
     "id": "shinise-node-4795889024",
     "kind": "teahouse",
     "prefecture": "wakayama",
@@ -3718,24 +2468,6 @@
     "sources": [
       {
         "url": "https://www.openstreetmap.org/node/4795889024",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-node-4826180090",
-    "kind": "teahouse",
-    "prefecture": "akita",
-    "name": {
-      "ja": "松下茶寮"
-    },
-    "location": {
-      "lat": 39.720775,
-      "lng": 140.123385
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/4826180090",
         "fetched_at": "2026-09-30"
       }
     ]
@@ -3759,225 +2491,6 @@
     ]
   },
   {
-    "id": "shinise-node-4885265939",
-    "kind": "teahouse",
-    "prefecture": "ibaraki",
-    "name": {
-      "ja": "茶房ブレッド"
-    },
-    "location": {
-      "lat": 36.238368,
-      "lng": 140.200606
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/4885265939",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-node-4920618756",
-    "kind": "teahouse",
-    "prefecture": "gunma",
-    "name": {
-      "ja": "滝見茶屋",
-      "en": "Takimijaya"
-    },
-    "location": {
-      "lat": 36.699709,
-      "lng": 139.208728
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/4920618756",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-node-4934669422",
-    "kind": "teahouse",
-    "prefecture": "kyoto",
-    "name": {
-      "ja": "辻利兵衛本店 宇治本店茶寮",
-      "en": "flagship store,tsujirihei"
-    },
-    "location": {
-      "lat": 34.889619,
-      "lng": 135.797407
-    },
-    "website": "http://www.tsujirihei.co.jp",
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/4934669422",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-node-4971598304",
-    "kind": "teahouse",
-    "prefecture": "toyama",
-    "name": {
-      "ja": "あいの風茶寮"
-    },
-    "location": {
-      "lat": 36.79553,
-      "lng": 137.04597
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/4971598304",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-node-5004508329",
-    "kind": "teahouse",
-    "prefecture": "yamagata",
-    "name": {
-      "ja": "きみ茶屋"
-    },
-    "location": {
-      "lat": 38.367285,
-      "lng": 140.385729
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/5004508329",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-node-5009403737",
-    "kind": "teahouse",
-    "prefecture": "gunma",
-    "name": {
-      "ja": "海鮮茶屋八幡太郎本店"
-    },
-    "location": {
-      "lat": 36.23213,
-      "lng": 139.550516
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/5009403737",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-node-5013170121",
-    "kind": "teahouse",
-    "prefecture": "gunma",
-    "name": {
-      "ja": "千茶屋"
-    },
-    "location": {
-      "lat": 36.297207,
-      "lng": 139.360053
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/5013170121",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-node-5028139777",
-    "kind": "teahouse",
-    "prefecture": "yamagata",
-    "name": {
-      "ja": "まぐろ茶屋みさき"
-    },
-    "location": {
-      "lat": 38.894627,
-      "lng": 139.847699
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/5028139777",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-node-5028267699",
-    "kind": "teahouse",
-    "prefecture": "tochigi",
-    "name": {
-      "ja": "瀧茶屋"
-    },
-    "location": {
-      "lat": 36.685968,
-      "lng": 139.602178
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/5028267699",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-node-5036412467",
-    "kind": "teahouse",
-    "prefecture": "yamagata",
-    "name": {
-      "ja": "山茶屋"
-    },
-    "location": {
-      "lat": 38.807469,
-      "lng": 139.771098
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/5036412467",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-node-5044236039",
-    "kind": "teahouse",
-    "prefecture": "yamagata",
-    "name": {
-      "ja": "茶房海坂"
-    },
-    "location": {
-      "lat": 38.72571,
-      "lng": 139.819451
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/5044236039",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-node-5052898723",
-    "kind": "teahouse",
-    "prefecture": "yamagata",
-    "name": {
-      "ja": "食茶房楽珍"
-    },
-    "location": {
-      "lat": 38.596507,
-      "lng": 140.374107
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/5052898723",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
     "id": "shinise-node-5055553622",
     "kind": "teahouse",
     "prefecture": "yamanashi",
@@ -3994,96 +2507,6 @@
     "sources": [
       {
         "url": "https://www.openstreetmap.org/node/5055553622",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-node-5070877034",
-    "kind": "teahouse",
-    "prefecture": "yamagata",
-    "name": {
-      "ja": "やなぎ茶屋"
-    },
-    "location": {
-      "lat": 38.414409,
-      "lng": 140.319188
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/5070877034",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-node-5076416921",
-    "kind": "teahouse",
-    "prefecture": "niigata",
-    "name": {
-      "ja": "田舎茶屋ゆきちゃん"
-    },
-    "location": {
-      "lat": 37.646852,
-      "lng": 138.771329
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/5076416921",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-node-5087030856",
-    "kind": "teahouse",
-    "prefecture": "miyazaki",
-    "name": {
-      "ja": "国見ケ丘雲海茶屋"
-    },
-    "location": {
-      "lat": 32.708417,
-      "lng": 131.300355
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/5087030856",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-node-5088946782",
-    "kind": "teahouse",
-    "prefecture": "miyazaki",
-    "name": {
-      "ja": "国見ヶ丘 雲海茶屋"
-    },
-    "location": {
-      "lat": 32.718876,
-      "lng": 131.277442
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/5088946782",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-node-5149084232",
-    "kind": "teahouse",
-    "prefecture": "miyazaki",
-    "name": {
-      "ja": "山椒茶屋"
-    },
-    "location": {
-      "lat": 32.154042,
-      "lng": 131.516986
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/5149084232",
         "fetched_at": "2026-09-30"
       }
     ]
@@ -4146,116 +2569,6 @@
     ]
   },
   {
-    "id": "shinise-node-5207842021",
-    "kind": "teahouse",
-    "prefecture": "shiga",
-    "name": {
-      "ja": "陶茶房"
-    },
-    "location": {
-      "lat": 35.071156,
-      "lng": 135.86657
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/5207842021",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-node-5208149032",
-    "kind": "teahouse",
-    "prefecture": "kanagawa",
-    "name": {
-      "ja": "茶房 雲母"
-    },
-    "location": {
-      "lat": 35.321933,
-      "lng": 139.546591
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/5208149032",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-node-5208153029",
-    "kind": "teahouse",
-    "prefecture": "osaka",
-    "name": {
-      "ja": "たねや茶屋",
-      "en": "Taneyajaya"
-    },
-    "location": {
-      "lat": 34.703186,
-      "lng": 135.498799
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/5208153029",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-node-5237747321",
-    "kind": "teahouse",
-    "prefecture": "yamanashi",
-    "name": {
-      "ja": "民芸茶屋 清水"
-    },
-    "location": {
-      "lat": 35.796582,
-      "lng": 138.742093
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/5237747321",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-node-5276555380",
-    "kind": "teahouse",
-    "prefecture": "kagoshima",
-    "name": {
-      "ja": "和風茶屋 こっち"
-    },
-    "location": {
-      "lat": 28.421826,
-      "lng": 129.583214
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/5276555380",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-node-5283017828",
-    "kind": "teahouse",
-    "prefecture": "osaka",
-    "name": {
-      "ja": "なか卯 萩ノ茶屋店",
-      "en": "Nakau"
-    },
-    "location": {
-      "lat": 34.646309,
-      "lng": 135.49711
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/5283017828",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
     "id": "shinise-node-5302681828",
     "kind": "teahouse",
     "prefecture": "shizuoka",
@@ -4288,258 +2601,6 @@
     "sources": [
       {
         "url": "https://www.openstreetmap.org/node/5383179866",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-node-5420014223",
-    "kind": "teahouse",
-    "prefecture": "aomori",
-    "name": {
-      "ja": "紅茶屋 Tea For You"
-    },
-    "location": {
-      "lat": 40.522406,
-      "lng": 141.486236
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/5420014223",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-node-5428381581",
-    "kind": "teahouse",
-    "prefecture": "aomori",
-    "name": {
-      "ja": "北岳の茶屋"
-    },
-    "location": {
-      "lat": 40.52244,
-      "lng": 141.49507
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/5428381581",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-node-5434995240",
-    "kind": "teahouse",
-    "prefecture": "shimane",
-    "name": {
-      "ja": "百圓茶屋"
-    },
-    "location": {
-      "lat": 34.466385,
-      "lng": 131.772628
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/5434995240",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-node-5450260024",
-    "kind": "teahouse",
-    "prefecture": "iwate",
-    "name": {
-      "ja": "茶房 水曜日の午後"
-    },
-    "location": {
-      "lat": 39.609199,
-      "lng": 141.153749
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/5450260024",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-node-5538860185",
-    "kind": "teahouse",
-    "prefecture": "shimane",
-    "name": {
-      "ja": "揚げもの茶屋"
-    },
-    "location": {
-      "lat": 35.045226,
-      "lng": 132.29902
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/5538860185",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-node-5542176789",
-    "kind": "teahouse",
-    "prefecture": "ehime",
-    "name": {
-      "ja": "臥龍茶屋"
-    },
-    "location": {
-      "lat": 33.506666,
-      "lng": 132.549842
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/5542176789",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-node-5546713109",
-    "kind": "teahouse",
-    "prefecture": "ibaraki",
-    "name": {
-      "ja": "めをと茶屋"
-    },
-    "location": {
-      "lat": 36.22629,
-      "lng": 140.101327
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/5546713109",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-node-5568315153",
-    "kind": "teahouse",
-    "prefecture": "shimane",
-    "name": {
-      "ja": "清水茶屋ゆう心"
-    },
-    "location": {
-      "lat": 35.404594,
-      "lng": 133.278816
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/5568315153",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-node-5588048373",
-    "kind": "teahouse",
-    "prefecture": "niigata",
-    "name": {
-      "ja": "安兵衛茶屋"
-    },
-    "location": {
-      "lat": 37.954422,
-      "lng": 139.326246
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/5588048373",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-node-5603123122",
-    "kind": "teahouse",
-    "prefecture": "kumamoto",
-    "name": {
-      "ja": "陽氣茶屋"
-    },
-    "location": {
-      "lat": 32.846141,
-      "lng": 131.034943
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/5603123122",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-node-5603359634",
-    "kind": "teahouse",
-    "prefecture": "ibaraki",
-    "name": {
-      "ja": "茶房佳風"
-    },
-    "location": {
-      "lat": 36.17302,
-      "lng": 140.089637
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/5603359634",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-node-5606870958",
-    "kind": "teahouse",
-    "prefecture": "toyama",
-    "name": {
-      "ja": "いろり茶屋"
-    },
-    "location": {
-      "lat": 36.940521,
-      "lng": 137.499559
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/5606870958",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-node-5608719548",
-    "kind": "teahouse",
-    "prefecture": "akita",
-    "name": {
-      "ja": "峠の茶屋 お殿水"
-    },
-    "location": {
-      "lat": 40.421732,
-      "lng": 139.948698
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/5608719548",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-node-5612753921",
-    "kind": "teahouse",
-    "prefecture": "niigata",
-    "name": {
-      "ja": "長沢茶屋"
-    },
-    "location": {
-      "lat": 36.930973,
-      "lng": 138.298286
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/5612753921",
         "fetched_at": "2026-09-30"
       }
     ]
@@ -4585,170 +2646,6 @@
     ]
   },
   {
-    "id": "shinise-node-5731805933",
-    "kind": "teahouse",
-    "prefecture": "nara",
-    "name": {
-      "ja": "いにしえ茶屋"
-    },
-    "location": {
-      "lat": 34.514861,
-      "lng": 135.846521
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/5731805933",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-node-5740067322",
-    "kind": "teahouse",
-    "prefecture": "shiga",
-    "name": {
-      "ja": "下鴨茶寮"
-    },
-    "location": {
-      "lat": 35.022986,
-      "lng": 135.963476
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/5740067322",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-node-5824931767",
-    "kind": "teahouse",
-    "prefecture": "shiga",
-    "name": {
-      "ja": "お料理 浜茶屋"
-    },
-    "location": {
-      "lat": 35.042396,
-      "lng": 135.867689
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/5824931767",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-node-5831584443",
-    "kind": "teahouse",
-    "prefecture": "tochigi",
-    "name": {
-      "ja": "ミルク茶屋"
-    },
-    "location": {
-      "lat": 37.077609,
-      "lng": 140.00087
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/5831584443",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-node-5844056588",
-    "kind": "teahouse",
-    "prefecture": "nagano",
-    "name": {
-      "ja": "松屋茶房",
-      "en": "Matsuyasabo"
-    },
-    "location": {
-      "lat": 35.966978,
-      "lng": 137.812926
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/5844056588",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-node-5860628785",
-    "kind": "teahouse",
-    "prefecture": "shiga",
-    "name": {
-      "ja": "麦切茶屋 古蝶庵"
-    },
-    "location": {
-      "lat": 34.993688,
-      "lng": 135.924501
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/5860628785",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-node-5870334389",
-    "kind": "teahouse",
-    "prefecture": "shiga",
-    "name": {
-      "ja": "茶房京橋"
-    },
-    "location": {
-      "lat": 35.27186,
-      "lng": 136.252387
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/5870334389",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-node-5885018510",
-    "kind": "teahouse",
-    "prefecture": "okinawa",
-    "name": {
-      "ja": "むらの茶屋",
-      "en": "Mura no Chaya"
-    },
-    "location": {
-      "lat": 26.70076,
-      "lng": 128.018728
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/5885018510",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-node-5887260000",
-    "kind": "teahouse",
-    "prefecture": "shiga",
-    "name": {
-      "ja": "甘党の店 フルカワ"
-    },
-    "location": {
-      "lat": 35.267435,
-      "lng": 136.254176
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/5887260000",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
     "id": "shinise-node-5911264095",
     "kind": "teahouse",
     "prefecture": "shiga",
@@ -4768,24 +2665,6 @@
     ]
   },
   {
-    "id": "shinise-node-5919682786",
-    "kind": "teahouse",
-    "prefecture": "miyazaki",
-    "name": {
-      "ja": "おひの茶屋"
-    },
-    "location": {
-      "lat": 31.624817,
-      "lng": 131.351357
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/5919682786",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
     "id": "shinise-node-5919764331",
     "kind": "teahouse",
     "prefecture": "miyazaki",
@@ -4799,102 +2678,6 @@
     "sources": [
       {
         "url": "https://www.openstreetmap.org/node/5919764331",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-node-6157557107",
-    "kind": "teahouse",
-    "prefecture": "ishikawa",
-    "name": {
-      "ja": "水茶屋"
-    },
-    "location": {
-      "lat": 36.566465,
-      "lng": 136.654415
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/6157557107",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-node-6188989599",
-    "kind": "teahouse",
-    "prefecture": "shizuoka",
-    "name": {
-      "ja": "七滝茶屋",
-      "en": "Nanadaru-jaya"
-    },
-    "address": "静岡県河津町梨本",
-    "location": {
-      "lat": 34.793844,
-      "lng": 138.936
-    },
-    "website": "http://izupeninsula.net/2017/06/19/nanadaruchaya/",
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/6188989599",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-node-6199865693",
-    "kind": "teahouse",
-    "prefecture": "mie",
-    "name": {
-      "ja": "和風茶屋 緑"
-    },
-    "location": {
-      "lat": 34.630736,
-      "lng": 136.108543
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/6199865693",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-node-6232576712",
-    "kind": "teahouse",
-    "prefecture": "kanagawa",
-    "name": {
-      "ja": "おきらく厨房 桃桃茶寮"
-    },
-    "address": "神奈川横浜市綱島西",
-    "location": {
-      "lat": 35.536412,
-      "lng": 139.627233
-    },
-    "website": "https://taotao-c.com/",
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/6232576712",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-node-6320800349",
-    "kind": "teahouse",
-    "prefecture": "aichi",
-    "name": {
-      "ja": "松華堂茶寮"
-    },
-    "location": {
-      "lat": 34.893861,
-      "lng": 136.926808
-    },
-    "website": "http://handa-shokado.co.jp/",
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/6320800349",
         "fetched_at": "2026-09-30"
       }
     ]
@@ -4919,78 +2702,6 @@
     ]
   },
   {
-    "id": "shinise-node-6342820537",
-    "kind": "teahouse",
-    "prefecture": "shiga",
-    "name": {
-      "ja": "うずくまる紫香楽茶寮"
-    },
-    "location": {
-      "lat": 34.874743,
-      "lng": 136.05093
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/6342820537",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-node-6375979134",
-    "kind": "teahouse",
-    "prefecture": "ehime",
-    "name": {
-      "ja": "ぽんぽこ茶屋"
-    },
-    "location": {
-      "lat": 34.155918,
-      "lng": 133.04389
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/6375979134",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-node-6375996580",
-    "kind": "teahouse",
-    "prefecture": "ehime",
-    "name": {
-      "ja": "遠見茶屋"
-    },
-    "location": {
-      "lat": 34.183874,
-      "lng": 133.070532
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/6375996580",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-node-6418481740",
-    "kind": "teahouse",
-    "prefecture": "fukui",
-    "name": {
-      "ja": "ぬくもり茶屋"
-    },
-    "location": {
-      "lat": 35.861297,
-      "lng": 136.363443
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/6418481740",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
     "id": "shinise-node-6434178877",
     "kind": "teahouse",
     "prefecture": "shiga",
@@ -5004,153 +2715,6 @@
     "sources": [
       {
         "url": "https://www.openstreetmap.org/node/6434178877",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-node-6435593034",
-    "kind": "teahouse",
-    "prefecture": "okayama",
-    "name": {
-      "ja": "冷泉茶屋"
-    },
-    "location": {
-      "lat": 35.301466,
-      "lng": 133.678537
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/6435593034",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-node-6435754585",
-    "kind": "teahouse",
-    "prefecture": "tochigi",
-    "name": {
-      "ja": "甘味処 京源"
-    },
-    "location": {
-      "lat": 36.676629,
-      "lng": 139.961905
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/6435754585",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-node-6483414727",
-    "kind": "teahouse",
-    "prefecture": "tochigi",
-    "name": {
-      "ja": "船見茶屋"
-    },
-    "location": {
-      "lat": 36.378916,
-      "lng": 139.730997
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/6483414727",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-node-6484751285",
-    "kind": "teahouse",
-    "prefecture": "gifu",
-    "name": {
-      "ja": "茶屋赤鰐",
-      "en": "Akawani"
-    },
-    "location": {
-      "lat": 35.415686,
-      "lng": 136.7591
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/6484751285",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-node-6533334621",
-    "kind": "teahouse",
-    "prefecture": "chiba",
-    "name": {
-      "ja": "千草茶房"
-    },
-    "location": {
-      "lat": 35.634759,
-      "lng": 140.119296
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/6533334621",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-node-6549260466",
-    "kind": "teahouse",
-    "prefecture": "shimane",
-    "name": {
-      "ja": "うぐいす茶屋"
-    },
-    "location": {
-      "lat": 35.133124,
-      "lng": 132.692149
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/6549260466",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-node-6561998486",
-    "kind": "teahouse",
-    "prefecture": "hyogo",
-    "name": {
-      "ja": "滝見茶屋",
-      "en": "Tsuzumigataki Waterfall tea house"
-    },
-    "location": {
-      "lat": 34.789277,
-      "lng": 135.245977
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/6561998486",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-node-6621974992",
-    "kind": "teahouse",
-    "prefecture": "miyagi",
-    "name": {
-      "ja": "茶房 三"
-    },
-    "location": {
-      "lat": 38.262599,
-      "lng": 140.866955
-    },
-    "website": "http://santarou.jp",
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/6621974992",
         "fetched_at": "2026-09-30"
       }
     ]
@@ -5170,24 +2734,6 @@
     "sources": [
       {
         "url": "https://www.openstreetmap.org/node/6652527289",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-node-6654963036",
-    "kind": "teahouse",
-    "prefecture": "gunma",
-    "name": {
-      "ja": "おさかな茶寮"
-    },
-    "location": {
-      "lat": 36.391205,
-      "lng": 139.069344
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/6654963036",
         "fetched_at": "2026-09-30"
       }
     ]
@@ -5231,24 +2777,6 @@
     ]
   },
   {
-    "id": "shinise-node-6819208538",
-    "kind": "teahouse",
-    "prefecture": "hyogo",
-    "name": {
-      "ja": "あまの茶屋"
-    },
-    "location": {
-      "lat": 34.74224,
-      "lng": 135.396469
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/6819208538",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
     "id": "shinise-node-6840120699",
     "kind": "teahouse",
     "prefecture": "wakayama",
@@ -5262,132 +2790,6 @@
     "sources": [
       {
         "url": "https://www.openstreetmap.org/node/6840120699",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-node-6842754919",
-    "kind": "teahouse",
-    "prefecture": "wakayama",
-    "name": {
-      "ja": "料理茶屋 志迦哥"
-    },
-    "location": {
-      "lat": 33.4691,
-      "lng": 135.781148
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/6842754919",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-node-6843817802",
-    "kind": "teahouse",
-    "prefecture": "wakayama",
-    "name": {
-      "ja": "ひらいわ茶房"
-    },
-    "location": {
-      "lat": 33.631514,
-      "lng": 135.94332
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/6843817802",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-node-6849412293",
-    "kind": "teahouse",
-    "prefecture": "wakayama",
-    "name": {
-      "ja": "なごみ茶屋"
-    },
-    "location": {
-      "lat": 33.714198,
-      "lng": 135.990642
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/6849412293",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-node-6849428695",
-    "kind": "teahouse",
-    "prefecture": "wakayama",
-    "name": {
-      "ja": "茶房 花風月"
-    },
-    "location": {
-      "lat": 33.73109,
-      "lng": 135.984947
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/6849428695",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-node-6849451328",
-    "kind": "teahouse",
-    "prefecture": "wakayama",
-    "name": {
-      "ja": "東宝茶屋"
-    },
-    "location": {
-      "lat": 33.728417,
-      "lng": 135.988493
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/6849451328",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-node-6849452219",
-    "kind": "teahouse",
-    "prefecture": "wakayama",
-    "name": {
-      "ja": "くまの茶房"
-    },
-    "location": {
-      "lat": 33.72177,
-      "lng": 135.991065
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/6849452219",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-node-6901335714",
-    "kind": "teahouse",
-    "prefecture": "wakayama",
-    "name": {
-      "ja": "ゆめみ茶屋"
-    },
-    "location": {
-      "lat": 33.890629,
-      "lng": 135.156581
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/6901335714",
         "fetched_at": "2026-09-30"
       }
     ]
@@ -5407,62 +2809,6 @@
     "sources": [
       {
         "url": "https://www.openstreetmap.org/node/6917331485",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-node-6924303674",
-    "kind": "teahouse",
-    "prefecture": "akita",
-    "name": {
-      "ja": "峠の茶屋"
-    },
-    "location": {
-      "lat": 40.408282,
-      "lng": 140.864416
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/6924303674",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-node-6984882027",
-    "kind": "teahouse",
-    "prefecture": "nagasaki",
-    "name": {
-      "ja": "茶房いま村",
-      "en": "Village Teahouse"
-    },
-    "location": {
-      "lat": 32.74275,
-      "lng": 130.26077
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/6984882027",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-node-7003922788",
-    "kind": "teahouse",
-    "prefecture": "yamagata",
-    "name": {
-      "ja": "新茶屋"
-    },
-    "address": "山形県鶴岡市本町",
-    "location": {
-      "lat": 38.724624,
-      "lng": 139.819475
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/7003922788",
         "fetched_at": "2026-09-30"
       }
     ]
@@ -5526,81 +2872,6 @@
     ]
   },
   {
-    "id": "shinise-node-7121735979",
-    "kind": "teahouse",
-    "prefecture": "akita",
-    "name": {
-      "ja": "ダムの茶屋"
-    },
-    "location": {
-      "lat": 39.054622,
-      "lng": 140.627103
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/7121735979",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-node-7166875898",
-    "kind": "teahouse",
-    "prefecture": "hokkaido",
-    "name": {
-      "ja": "円山茶寮"
-    },
-    "address": "北海道札幌市",
-    "location": {
-      "lat": 43.061729,
-      "lng": 141.315692
-    },
-    "website": "https://tabelog.com/hokkaido/A0101/A010105/1000351/",
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/7166875898",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-node-7188544184",
-    "kind": "teahouse",
-    "prefecture": "tottori",
-    "name": {
-      "ja": "茶房あさひ"
-    },
-    "address": "鳥取県鳥取市湖山町西3丁目113-1",
-    "location": {
-      "lat": 35.524363,
-      "lng": 134.153866
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/7188544184",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-node-7204798302",
-    "kind": "teahouse",
-    "prefecture": "tottori",
-    "name": {
-      "ja": "茶房&フレッシュベーカリー夢屋"
-    },
-    "location": {
-      "lat": 35.265663,
-      "lng": 134.227852
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/7204798302",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
     "id": "shinise-node-7211180692",
     "kind": "teahouse",
     "prefecture": "fukuoka",
@@ -5616,60 +2887,6 @@
     "sources": [
       {
         "url": "https://www.openstreetmap.org/node/7211180692",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-node-7226652486",
-    "kind": "teahouse",
-    "prefecture": "aomori",
-    "name": {
-      "ja": "讃岐茶屋"
-    },
-    "location": {
-      "lat": 40.82563,
-      "lng": 140.749723
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/7226652486",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-node-7226681124",
-    "kind": "teahouse",
-    "prefecture": "aomori",
-    "name": {
-      "ja": "食茶房雪月花"
-    },
-    "location": {
-      "lat": 40.820242,
-      "lng": 140.730971
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/7226681124",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-node-7236203158",
-    "kind": "teahouse",
-    "prefecture": "akita",
-    "name": {
-      "ja": "仙岩峠 峠の茶屋"
-    },
-    "location": {
-      "lat": 39.702255,
-      "lng": 140.761192
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/7236203158",
         "fetched_at": "2026-09-30"
       }
     ]
@@ -5731,98 +2948,6 @@
     ]
   },
   {
-    "id": "shinise-node-7461402548",
-    "kind": "teahouse",
-    "prefecture": "saitama",
-    "name": {
-      "ja": "いな穂茶屋"
-    },
-    "address": "埼玉県伊奈町小室",
-    "location": {
-      "lat": 35.992148,
-      "lng": 139.630498
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/7461402548",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-node-7663822893",
-    "kind": "teahouse",
-    "prefecture": "miyagi",
-    "name": {
-      "ja": "喜代松茶屋",
-      "en": "Kiyomatsu Chaya"
-    },
-    "location": {
-      "lat": 38.540112,
-      "lng": 141.130419
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/7663822893",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-node-7683106968",
-    "kind": "teahouse",
-    "prefecture": "toyama",
-    "name": {
-      "ja": "山町茶屋"
-    },
-    "location": {
-      "lat": 36.747762,
-      "lng": 137.011678
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/7683106968",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-node-774140031",
-    "kind": "teahouse",
-    "prefecture": "mie",
-    "name": {
-      "ja": "赤滝茶屋"
-    },
-    "location": {
-      "lat": 34.565466,
-      "lng": 136.084368
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/774140031",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-node-7805450805",
-    "kind": "teahouse",
-    "prefecture": "okayama",
-    "name": {
-      "ja": "割烹・茶房島木川"
-    },
-    "location": {
-      "lat": 34.830433,
-      "lng": 133.492207
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/7805450805",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
     "id": "shinise-node-7939941582",
     "kind": "teahouse",
     "prefecture": "gifu",
@@ -5842,100 +2967,6 @@
     ]
   },
   {
-    "id": "shinise-node-8043533485",
-    "kind": "teahouse",
-    "prefecture": "oita",
-    "name": {
-      "ja": "味蔵民芸茶屋"
-    },
-    "location": {
-      "lat": 33.298699,
-      "lng": 131.497234
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/8043533485",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-node-8204492218",
-    "kind": "teahouse",
-    "prefecture": "miyagi",
-    "name": {
-      "ja": "えんがわ茶屋 やまびこ",
-      "en": "Yamabiko"
-    },
-    "location": {
-      "lat": 38.131811,
-      "lng": 140.563568
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/8204492218",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-node-8308241097",
-    "kind": "teahouse",
-    "prefecture": "osaka",
-    "name": {
-      "ja": "嵯峨野茶屋"
-    },
-    "address": "大阪府箕面市箕面",
-    "location": {
-      "lat": 34.832583,
-      "lng": 135.470973
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/8308241097",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-node-8422414121",
-    "kind": "teahouse",
-    "prefecture": "miyagi",
-    "name": {
-      "ja": "権現茶屋",
-      "en": "Gongen Chaya"
-    },
-    "location": {
-      "lat": 38.450627,
-      "lng": 140.856899
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/8422414121",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-node-8593815317",
-    "kind": "teahouse",
-    "prefecture": "miyagi",
-    "name": {
-      "ja": "茶寮ここの",
-      "en": "Saryō Kokono"
-    },
-    "location": {
-      "lat": 38.275912,
-      "lng": 140.88472
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/8593815317",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
     "id": "shinise-node-871768618",
     "kind": "teahouse",
     "prefecture": "yamagata",
@@ -5950,96 +2981,6 @@
     "sources": [
       {
         "url": "https://www.openstreetmap.org/node/871768618",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-node-8853828721",
-    "kind": "teahouse",
-    "prefecture": "iwate",
-    "name": {
-      "ja": "茶房うさぎ"
-    },
-    "location": {
-      "lat": 39.697458,
-      "lng": 141.153339
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/8853828721",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-node-9063488218",
-    "kind": "teahouse",
-    "prefecture": "iwate",
-    "name": {
-      "ja": "桜茶寮"
-    },
-    "location": {
-      "lat": 39.701785,
-      "lng": 141.147584
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/9063488218",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-node-9270745251",
-    "kind": "teahouse",
-    "prefecture": "hokkaido",
-    "name": {
-      "ja": "茶房　あまぽーら"
-    },
-    "location": {
-      "lat": 43.022344,
-      "lng": 144.329358
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/9270745251",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-node-9401696577",
-    "kind": "teahouse",
-    "prefecture": "iwate",
-    "name": {
-      "ja": "一茶寮"
-    },
-    "location": {
-      "lat": 39.705031,
-      "lng": 141.157899
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/9401696577",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-node-9520687721",
-    "kind": "teahouse",
-    "prefecture": "okayama",
-    "name": {
-      "ja": "かもがた茶屋 高柳店"
-    },
-    "location": {
-      "lat": 34.660634,
-      "lng": 133.897128
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/9520687721",
         "fetched_at": "2026-09-30"
       }
     ]
@@ -6065,82 +3006,6 @@
     ]
   },
   {
-    "id": "shinise-node-9624102525",
-    "kind": "teahouse",
-    "prefecture": "okinawa",
-    "name": {
-      "ja": "海中茶屋",
-      "en": "Kaichu-chaya"
-    },
-    "address": "沖縄県うるま市与那城",
-    "location": {
-      "lat": 26.332584,
-      "lng": 127.929159
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/9624102525",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-node-9687233161",
-    "kind": "teahouse",
-    "prefecture": "nara",
-    "name": {
-      "ja": "山の茶屋 きてきて"
-    },
-    "location": {
-      "lat": 34.545348,
-      "lng": 135.853575
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/9687233161",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-node-973449552",
-    "kind": "teahouse",
-    "prefecture": "aichi",
-    "name": {
-      "ja": "おかめ茶屋"
-    },
-    "location": {
-      "lat": 34.96879,
-      "lng": 137.570468
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/973449552",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-node-9936680943",
-    "kind": "teahouse",
-    "prefecture": "tokyo",
-    "name": {
-      "ja": "茶房 やま",
-      "kana": "さぼうやま",
-      "en": "Teahouse Yama"
-    },
-    "location": {
-      "lat": 35.686145,
-      "lng": 139.789658
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/9936680943",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
     "id": "shinise-node-9963246114",
     "kind": "teahouse",
     "prefecture": "hokkaido",
@@ -6154,25 +3019,6 @@
     "sources": [
       {
         "url": "https://www.openstreetmap.org/node/9963246114",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-node-9999304120",
-    "kind": "teahouse",
-    "prefecture": "akita",
-    "name": {
-      "ja": "あきた茶房",
-      "kana": "あきたさぼう"
-    },
-    "location": {
-      "lat": 39.611889,
-      "lng": 140.220596
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/node/9999304120",
         "fetched_at": "2026-09-30"
       }
     ]
@@ -7750,24 +4596,6 @@
     ]
   },
   {
-    "id": "shinise-relation-1782644",
-    "kind": "teahouse",
-    "prefecture": "hiroshima",
-    "name": {
-      "ja": "田舎茶屋 わたや"
-    },
-    "location": {
-      "lat": 34.356595,
-      "lng": 132.244866
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/relation/1782644",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
     "id": "shinise-w3bcee92255",
     "kind": "wagashi",
     "prefecture": "chiba",
@@ -7839,25 +4667,6 @@
     "sources": [
       {
         "url": "https://www.openstreetmap.org/way/1056532287",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-way-1086235757",
-    "kind": "teahouse",
-    "prefecture": "fukuoka",
-    "name": {
-      "ja": "大門茶屋いろり"
-    },
-    "location": {
-      "lat": 33.593714,
-      "lng": 130.109709
-    },
-    "website": "https://itoshimapicnicvillage.hp.peraichi.com",
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/way/1086235757",
         "fetched_at": "2026-09-30"
       }
     ]
@@ -8193,78 +5002,6 @@
     ]
   },
   {
-    "id": "shinise-way-192089550",
-    "kind": "teahouse",
-    "prefecture": "oita",
-    "name": {
-      "ja": "茶屋ぼだいじゅ"
-    },
-    "location": {
-      "lat": 33.236418,
-      "lng": 131.649861
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/way/192089550",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-way-198692617",
-    "kind": "teahouse",
-    "prefecture": "ishikawa",
-    "name": {
-      "ja": "甘党　のと路"
-    },
-    "location": {
-      "lat": 36.589824,
-      "lng": 136.646333
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/way/198692617",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-way-202511116",
-    "kind": "teahouse",
-    "prefecture": "oita",
-    "name": {
-      "ja": "茶房 器布陣"
-    },
-    "location": {
-      "lat": 33.233146,
-      "lng": 131.658367
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/way/202511116",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-way-205024547",
-    "kind": "teahouse",
-    "prefecture": "toyama",
-    "name": {
-      "ja": "五万石茶寮"
-    },
-    "location": {
-      "lat": 36.678024,
-      "lng": 137.172072
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/way/205024547",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
     "id": "shinise-way-255365948",
     "kind": "teahouse",
     "prefecture": "hyogo",
@@ -8325,45 +5062,6 @@
     ]
   },
   {
-    "id": "shinise-way-297907184",
-    "kind": "teahouse",
-    "prefecture": "hyogo",
-    "name": {
-      "ja": "おんたき茶屋",
-      "en": "Nunobiki Ontaki Chaya"
-    },
-    "location": {
-      "lat": 34.709132,
-      "lng": 135.193825
-    },
-    "website": "https://ontaki.jimdofree.com",
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/way/297907184",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-way-301758681",
-    "kind": "teahouse",
-    "prefecture": "yamanashi",
-    "name": {
-      "ja": "柳沢峠茶屋"
-    },
-    "location": {
-      "lat": 35.775957,
-      "lng": 138.802502
-    },
-    "website": "http://yanagisawatouge.web.fc2.com/",
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/way/301758681",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
     "id": "shinise-way-305352625",
     "kind": "teahouse",
     "prefecture": "yamanashi",
@@ -8378,24 +5076,6 @@
     "sources": [
       {
         "url": "https://www.openstreetmap.org/way/305352625",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-way-317466588",
-    "kind": "teahouse",
-    "prefecture": "shimane",
-    "name": {
-      "ja": "塩見茶屋"
-    },
-    "location": {
-      "lat": 35.478925,
-      "lng": 133.049023
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/way/317466588",
         "fetched_at": "2026-09-30"
       }
     ]
@@ -8433,25 +5113,6 @@
     "sources": [
       {
         "url": "https://www.openstreetmap.org/way/340394619",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-way-343204864",
-    "kind": "teahouse",
-    "prefecture": "nara",
-    "name": {
-      "ja": "茶房 ちゃいろ",
-      "en": "Chairo"
-    },
-    "location": {
-      "lat": 34.676821,
-      "lng": 135.841468
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/way/343204864",
         "fetched_at": "2026-09-30"
       }
     ]
@@ -8517,154 +5178,6 @@
     ]
   },
   {
-    "id": "shinise-way-364715737",
-    "kind": "teahouse",
-    "prefecture": "oita",
-    "name": {
-      "ja": "お茶屋お福",
-      "en": "Tea House Ofuku"
-    },
-    "address": "大分県別府市",
-    "location": {
-      "lat": 33.278638,
-      "lng": 131.49608
-    },
-    "website": "http://www.beppu-ofuku.com",
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/way/364715737",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-way-371675813",
-    "kind": "teahouse",
-    "prefecture": "tokushima",
-    "name": {
-      "ja": "金剛茶屋"
-    },
-    "location": {
-      "lat": 34.069024,
-      "lng": 134.552364
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/way/371675813",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-way-384472218",
-    "kind": "teahouse",
-    "prefecture": "aichi",
-    "name": {
-      "ja": "どんぐり茶屋 あかり"
-    },
-    "address": "愛知県豊川市赤坂町紅里131",
-    "location": {
-      "lat": 34.856626,
-      "lng": 137.306893
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/way/384472218",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-way-389323912",
-    "kind": "teahouse",
-    "prefecture": "yamaguchi",
-    "name": {
-      "ja": "深坂茶屋"
-    },
-    "location": {
-      "lat": 34.045081,
-      "lng": 130.942384
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/way/389323912",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-way-400538042",
-    "kind": "teahouse",
-    "prefecture": "toyama",
-    "name": {
-      "ja": "たかおか大仏茶屋"
-    },
-    "location": {
-      "lat": 36.745976,
-      "lng": 137.016262
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/way/400538042",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-way-401185991",
-    "kind": "teahouse",
-    "prefecture": "miyazaki",
-    "name": {
-      "ja": "しんとみ茶屋 まどころ"
-    },
-    "location": {
-      "lat": 32.077405,
-      "lng": 131.423087
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/way/401185991",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-way-412916153",
-    "kind": "teahouse",
-    "prefecture": "shimane",
-    "name": {
-      "ja": "ちどり茶屋"
-    },
-    "location": {
-      "lat": 35.474378,
-      "lng": 133.05217
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/way/412916153",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-way-415785407",
-    "kind": "teahouse",
-    "prefecture": "shimane",
-    "name": {
-      "ja": "千鳥茶屋"
-    },
-    "location": {
-      "lat": 35.474674,
-      "lng": 133.050196
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/way/415785407",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
     "id": "shinise-way-416441771",
     "kind": "teahouse",
     "prefecture": "tochigi",
@@ -8679,81 +5192,6 @@
     "sources": [
       {
         "url": "https://www.openstreetmap.org/way/416441771",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-way-416488277",
-    "kind": "teahouse",
-    "prefecture": "yamanashi",
-    "name": {
-      "ja": "茶屋"
-    },
-    "location": {
-      "lat": 35.748859,
-      "lng": 138.554603
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/way/416488277",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-way-422803836",
-    "kind": "teahouse",
-    "prefecture": "kagawa",
-    "name": {
-      "ja": "れいがん茶屋",
-      "kana": "れいがんぢゃや",
-      "en": "Reigan Jaya"
-    },
-    "address": "香川県高松市屋島東町",
-    "location": {
-      "lat": 34.357867,
-      "lng": 134.098807
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/way/422803836",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-way-423895791",
-    "kind": "teahouse",
-    "prefecture": "yamanashi",
-    "name": {
-      "ja": "さくら茶屋"
-    },
-    "location": {
-      "lat": 35.718768,
-      "lng": 138.45261
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/way/423895791",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-way-425624469",
-    "kind": "teahouse",
-    "prefecture": "oita",
-    "name": {
-      "ja": "亀の子茶屋"
-    },
-    "location": {
-      "lat": 33.326649,
-      "lng": 131.493506
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/way/425624469",
         "fetched_at": "2026-09-30"
       }
     ]
@@ -8777,98 +5215,6 @@
     ]
   },
   {
-    "id": "shinise-way-457374588",
-    "kind": "teahouse",
-    "prefecture": "hyogo",
-    "name": {
-      "ja": "紅葉の茶屋",
-      "en": "Momiji no Chaya"
-    },
-    "location": {
-      "lat": 34.715055,
-      "lng": 135.187658
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/way/457374588",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-way-457382024",
-    "kind": "teahouse",
-    "prefecture": "hyogo",
-    "name": {
-      "ja": "桜茶屋",
-      "en": "Ichigahara"
-    },
-    "location": {
-      "lat": 34.717546,
-      "lng": 135.186865
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/way/457382024",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-way-458210720",
-    "kind": "teahouse",
-    "prefecture": "hiroshima",
-    "name": {
-      "ja": "十三軒茶屋"
-    },
-    "location": {
-      "lat": 34.296824,
-      "lng": 133.165109
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/way/458210720",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-way-460482139",
-    "kind": "teahouse",
-    "prefecture": "mie",
-    "name": {
-      "ja": "釣船茶屋ざうお"
-    },
-    "location": {
-      "lat": 34.874772,
-      "lng": 136.529663
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/way/460482139",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-way-460664720",
-    "kind": "teahouse",
-    "prefecture": "mie",
-    "name": {
-      "ja": "鈴鹿茶房"
-    },
-    "location": {
-      "lat": 34.831957,
-      "lng": 136.583824
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/way/460664720",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
     "id": "shinise-way-460699657",
     "kind": "teahouse",
     "prefecture": "hiroshima",
@@ -8882,24 +5228,6 @@
     "sources": [
       {
         "url": "https://www.openstreetmap.org/way/460699657",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-way-462330040",
-    "kind": "teahouse",
-    "prefecture": "akita",
-    "name": {
-      "ja": "鯉茶屋"
-    },
-    "location": {
-      "lat": 39.721404,
-      "lng": 140.124541
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/way/462330040",
         "fetched_at": "2026-09-30"
       }
     ]
@@ -8943,43 +5271,6 @@
     ]
   },
   {
-    "id": "shinise-way-465156576",
-    "kind": "teahouse",
-    "prefecture": "akita",
-    "name": {
-      "ja": "抱返りの茶屋"
-    },
-    "location": {
-      "lat": 39.608802,
-      "lng": 140.652043
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/way/465156576",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-way-47192517",
-    "kind": "teahouse",
-    "prefecture": "aichi",
-    "name": {
-      "ja": "萩乃茶屋",
-      "kana": "はぎのちゃや"
-    },
-    "location": {
-      "lat": 35.156618,
-      "lng": 136.920757
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/way/47192517",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
     "id": "shinise-way-483827189",
     "kind": "teahouse",
     "prefecture": "mie",
@@ -8993,25 +5284,6 @@
     "sources": [
       {
         "url": "https://www.openstreetmap.org/way/483827189",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-way-505850973",
-    "kind": "teahouse",
-    "prefecture": "fukuoka",
-    "name": {
-      "ja": "中神茶屋",
-      "en": "Nakagamijaya"
-    },
-    "location": {
-      "lat": 33.522582,
-      "lng": 130.53483
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/way/505850973",
         "fetched_at": "2026-09-30"
       }
     ]
@@ -9050,24 +5322,6 @@
     "sources": [
       {
         "url": "https://www.openstreetmap.org/way/515094029",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-way-515743721",
-    "kind": "teahouse",
-    "prefecture": "miyazaki",
-    "name": {
-      "ja": "馬ヶ背茶屋"
-    },
-    "location": {
-      "lat": 32.422846,
-      "lng": 131.684259
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/way/515743721",
         "fetched_at": "2026-09-30"
       }
     ]
@@ -9148,24 +5402,6 @@
     ]
   },
   {
-    "id": "shinise-way-566030754",
-    "kind": "teahouse",
-    "prefecture": "kochi",
-    "name": {
-      "ja": "久礼野茶房"
-    },
-    "location": {
-      "lat": 33.611037,
-      "lng": 133.569576
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/way/566030754",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
     "id": "shinise-way-572013947",
     "kind": "teahouse",
     "prefecture": "saga",
@@ -9185,44 +5421,6 @@
     ]
   },
   {
-    "id": "shinise-way-582396354",
-    "kind": "teahouse",
-    "prefecture": "ibaraki",
-    "name": {
-      "ja": "滝見茶屋"
-    },
-    "location": {
-      "lat": 36.76383,
-      "lng": 140.40489
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/way/582396354",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-way-598208024",
-    "kind": "teahouse",
-    "prefecture": "nagano",
-    "name": {
-      "ja": "門前茶寮 弥生座",
-      "en": "Yayoiza"
-    },
-    "location": {
-      "lat": 36.657371,
-      "lng": 138.187089
-    },
-    "website": "http://www.yayoiza.jp/cgi-bin/top.cgi",
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/way/598208024",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
     "id": "shinise-way-625744124",
     "kind": "teahouse",
     "prefecture": "tokushima",
@@ -9236,61 +5434,6 @@
     "sources": [
       {
         "url": "https://www.openstreetmap.org/way/625744124",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-way-630469106",
-    "kind": "teahouse",
-    "prefecture": "saitama",
-    "name": {
-      "ja": "定峰峠 峠の茶屋"
-    },
-    "location": {
-      "lat": 36.011102,
-      "lng": 139.163937
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/way/630469106",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-way-631244626",
-    "kind": "teahouse",
-    "prefecture": "shimane",
-    "name": {
-      "ja": "いろり茶屋"
-    },
-    "location": {
-      "lat": 35.40351,
-      "lng": 132.960314
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/way/631244626",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-way-633152147",
-    "kind": "teahouse",
-    "prefecture": "osaka",
-    "name": {
-      "ja": "うなぎ茶寮 ふく山"
-    },
-    "address": "吹田市江坂町",
-    "location": {
-      "lat": 34.764606,
-      "lng": 135.49369
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/way/633152147",
         "fetched_at": "2026-09-30"
       }
     ]
@@ -9336,42 +5479,6 @@
     ]
   },
   {
-    "id": "shinise-way-664764932",
-    "kind": "teahouse",
-    "prefecture": "shimane",
-    "name": {
-      "ja": "社日茶屋"
-    },
-    "location": {
-      "lat": 35.425218,
-      "lng": 133.249732
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/way/664764932",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-way-665737557",
-    "kind": "teahouse",
-    "prefecture": "saga",
-    "name": {
-      "ja": "観音茶屋夢屋"
-    },
-    "location": {
-      "lat": 33.435938,
-      "lng": 130.129749
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/way/665737557",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
     "id": "shinise-way-666922287",
     "kind": "teahouse",
     "prefecture": "nara",
@@ -9410,24 +5517,6 @@
     ]
   },
   {
-    "id": "shinise-way-688586553",
-    "kind": "teahouse",
-    "prefecture": "iwate",
-    "name": {
-      "ja": "展勝地茶屋"
-    },
-    "location": {
-      "lat": 39.271244,
-      "lng": 141.129301
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/way/688586553",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
     "id": "shinise-way-732994230",
     "kind": "teahouse",
     "prefecture": "chiba",
@@ -9441,24 +5530,6 @@
     "sources": [
       {
         "url": "https://www.openstreetmap.org/way/732994230",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-way-749657392",
-    "kind": "teahouse",
-    "prefecture": "ibaraki",
-    "name": {
-      "ja": "さくら茶屋"
-    },
-    "location": {
-      "lat": 35.85953,
-      "lng": 140.701073
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/way/749657392",
         "fetched_at": "2026-09-30"
       }
     ]
@@ -9479,24 +5550,6 @@
     "sources": [
       {
         "url": "https://www.openstreetmap.org/way/770618741",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-way-792449919",
-    "kind": "teahouse",
-    "prefecture": "hiroshima",
-    "name": {
-      "ja": "田舎茶屋わたや 温品店"
-    },
-    "location": {
-      "lat": 34.415465,
-      "lng": 132.509376
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/way/792449919",
         "fetched_at": "2026-09-30"
       }
     ]
@@ -9533,24 +5586,6 @@
     "sources": [
       {
         "url": "https://www.openstreetmap.org/way/823304317",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-way-825426955",
-    "kind": "teahouse",
-    "prefecture": "aomori",
-    "name": {
-      "ja": "山陽の茶屋"
-    },
-    "location": {
-      "lat": 40.619643,
-      "lng": 140.342666
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/way/825426955",
         "fetched_at": "2026-09-30"
       }
     ]
@@ -9616,61 +5651,6 @@
     ]
   },
   {
-    "id": "shinise-way-877728686",
-    "kind": "teahouse",
-    "prefecture": "shimane",
-    "name": {
-      "ja": "らーめん茶屋てまり"
-    },
-    "location": {
-      "lat": 35.480924,
-      "lng": 133.04456
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/way/877728686",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-way-895855246",
-    "kind": "teahouse",
-    "prefecture": "gunma",
-    "name": {
-      "ja": "旬彩茶屋 夢花"
-    },
-    "location": {
-      "lat": 36.621297,
-      "lng": 138.596512
-    },
-    "website": "https://localplace.jp/t100494243/",
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/way/895855246",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-way-955165267",
-    "kind": "teahouse",
-    "prefecture": "iwate",
-    "name": {
-      "ja": "茶房　居郷留"
-    },
-    "location": {
-      "lat": 39.712725,
-      "lng": 141.166848
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/way/955165267",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
     "id": "shinise-way-95639563",
     "kind": "teahouse",
     "prefecture": "kanagawa",
@@ -9706,42 +5686,6 @@
     "sources": [
       {
         "url": "https://www.openstreetmap.org/way/95639597",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-way-963678366",
-    "kind": "teahouse",
-    "prefecture": "kagawa",
-    "name": {
-      "ja": "俳句茶屋"
-    },
-    "location": {
-      "lat": 34.254198,
-      "lng": 133.725438
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/way/963678366",
-        "fetched_at": "2026-09-30"
-      }
-    ]
-  },
-  {
-    "id": "shinise-way-974359128",
-    "kind": "teahouse",
-    "prefecture": "aomori",
-    "name": {
-      "ja": "ぽっぽ茶屋"
-    },
-    "location": {
-      "lat": 40.551641,
-      "lng": 139.942608
-    },
-    "sources": [
-      {
-        "url": "https://www.openstreetmap.org/way/974359128",
         "fetched_at": "2026-09-30"
       }
     ]
