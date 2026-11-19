@@ -349,7 +349,7 @@ def osm_record(el: osm.OsmElement, kind: str, today: str) -> dict[str, Any] | No
 
 def tea_shop_records(els: list[osm.OsmElement], today: str) -> list[dict[str, Any]]:
     """TEA_SHOP_NAME 的店（京都府內，含分店）→ 茶舖的紀錄。
-    同一家店的商店與喫茶（100 m 內同名）只留一筆，資料完整的優先。"""
+    同一個品牌 100 m 內只留一筆，店名寫得完整、資料多的優先。"""
     cands = [
         el
         for el in els
@@ -358,11 +358,16 @@ def tea_shop_records(els: list[osm.OsmElement], today: str) -> list[dict[str, An
         and still_open(el, dt.date.fromisoformat(today))
         and _pref_of(el.lat, el.lng) == "kyoto"
     ]
-    cands.sort(key=lambda el: (-quality(el), el.osm_id))
+    # 店名寫得完整的（「中村藤吉 平等院店」比「中村藤吉」好）、資料多的優先
+    cands.sort(key=lambda el: (-len(osm_name(el.tags)), -quality(el), el.osm_id))
     out: list[dict[str, Any]] = []
     for el in cands:
-        name = _norm(osm_name(el.tags))
-        if any(_norm(r["name"]["ja"]) == name and _near(r, el.lat, el.lng, 100) for r in out):
+        brand = re.search(TEA_SHOP_NAME, osm_name(el.tags))
+        # 同一個品牌 100 m 內只算一家（同一間店的商店與喫茶、標成兩個點的同一家店）
+        if any(
+            brand and brand.group(0) in r["name"]["ja"] and _near(r, el.lat, el.lng, 100)
+            for r in out
+        ):
             continue
         rec = osm_record(el, "tea", today)
         if rec:

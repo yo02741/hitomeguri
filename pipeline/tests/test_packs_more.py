@@ -422,6 +422,8 @@ def test_tea_shop_records(monkeypatch):
             ts,
         ),
         OsmElement("node/3", 34.985, 135.758, {"name": "中村藤吉 京都駅店", "amenity": "cafe"}, ts),
+        # 同一家店標成兩個點、名字不同：留名字完整的
+        OsmElement("node/8", 34.9851, 135.7581, {"name": "中村藤吉", "amenity": "cafe"}, ts),
         OsmElement("node/4", 34.90, 135.80, {"name": "丸久小山園", "shop": "tea"}, ts),
         # 京都府外、名字不對、歇業的不收
         OsmElement("node/5", 34.0, 139.7, {"name": "伊藤久右衛門 東京店", "shop": "tea"}, ts),
