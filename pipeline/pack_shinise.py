@@ -358,8 +358,12 @@ def tea_shop_records(els: list[osm.OsmElement], today: str) -> list[dict[str, An
         and still_open(el, dt.date.fromisoformat(today))
         and _pref_of(el.lat, el.lng) == "kyoto"
     ]
-    # 店名寫得完整的（「中村藤吉 平等院店」比「中村藤吉」好）、資料多的優先
-    cands.sort(key=lambda el: (-len(osm_name(el.tags)), -quality(el), el.osm_id))
+
+    # 日文店名寫得完整的（「中村藤吉 平等院店」比「中村藤吉」好；後面附的英文名不算）、
+    # 最近確認過的、資料多的優先（穩定排序：先排次要的）
+    cands.sort(key=lambda el: (-quality(el), el.osm_id))
+    cands.sort(key=last_checked, reverse=True)
+    cands.sort(key=lambda el: -len(re.sub(r"[\x00-\x7f]", "", osm_name(el.tags))))
     out: list[dict[str, Any]] = []
     for el in cands:
         brand = re.search(TEA_SHOP_NAME, osm_name(el.tags))

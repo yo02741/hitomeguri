@@ -422,6 +422,14 @@ def test_tea_shop_records(monkeypatch):
             ts,
         ),
         OsmElement("node/3", 34.985, 135.758, {"name": "中村藤吉 京都駅店", "amenity": "cafe"}, ts),
+        # 同一家店後面附英文名、確認得比較早：留日文名、最近確認的
+        OsmElement(
+            "node/9",
+            34.8892,
+            135.8070,
+            {"name": "中村藤吉本店 Nakamura Tokichi Honten", "shop": "tea"},
+            "2019-03-01T00:00:00Z",
+        ),  # fmt: skip
         # 同一家店標成兩個點、名字不同：留名字完整的
         OsmElement("node/8", 34.9851, 135.7581, {"name": "中村藤吉", "amenity": "cafe"}, ts),
         OsmElement("node/4", 34.90, 135.80, {"name": "丸久小山園", "shop": "tea"}, ts),
