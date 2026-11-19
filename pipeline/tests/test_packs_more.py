@@ -237,8 +237,13 @@ def test_seed_shinise_end_to_end(tmp_path, monkeypatch):
     els = [
         OsmElement("node/1", 35.03, 135.75, {"name": "鶴屋吉信 本店", "shop": "confectionery"}),
         OsmElement("node/2", 35.0, 135.7, {"name": "山田松香木店", "shop": "gift"}),
-        OsmElement("node/3", 35.0, 135.77, {"name": "茶寮 都", "amenity": "cafe", "website": "x"},
-                   "2025-01-01T00:00:00Z"),
+        OsmElement(
+            "node/3",
+            35.0,
+            135.77,
+            {"name": "茶寮 都", "amenity": "cafe", "website": "x"},
+            "2025-01-01T00:00:00Z",
+        ),
         OsmElement("node/4", 35.0, 135.78, {"name": "茶屋カフェ", "amenity": "cafe"}),
         OsmElement("node/6", 35.0, 135.781, {"name": "お茶屋Bar 一葉", "amenity": "cafe"}),
         OsmElement("node/7", 35.0, 135.782, {"name": "中華麺飯茶屋 佳", "amenity": "restaurant"}),
@@ -246,7 +251,9 @@ def test_seed_shinise_end_to_end(tmp_path, monkeypatch):
         OsmElement("node/9", 35.0, 135.784, {"name": "SNOOPY茶屋 由布院店", "amenity": "cafe"}),
         OsmElement("node/5", 35.0, 135.79, {"name": "香草ヘア", "shop": "hairdresser"}),
     ]
-    monkeypatch.setattr(pack_shinise.osm, "by_prefecture", lambda filters, meta=False: (els, ["okinawa"]))
+    monkeypatch.setattr(
+        pack_shinise.osm, "by_prefecture", lambda filters, meta=False: (els, ["okinawa"])
+    )
     report = pack_shinise.seed_shinise()
     out = {r["id"]: r for r in json.loads((tmp_path / "shinise.json").read_text(encoding="utf-8"))}
     assert out["shinise-q1"]["kind"] == "incense" and out["shinise-q1"]["name"]["zh_tw"] == "松榮堂"
@@ -341,3 +348,50 @@ def test_teahouse_still_open():
     assert not pack_shinise.still_open(el({"disused:amenity": "cafe"}), today)
     assert not pack_shinise.still_open(el({"end_date": "2023"}), today)
     assert not pack_shinise.still_open(el({"note": "2024年3月閉店"}), today)
+
+
+def test_check_teahouses(monkeypatch, tmp_path):
+    import datetime as dt
+    import json
+
+    from pipeline.sources.osm import OsmElement
+
+    def rec(i: int, kind: str = "teahouse") -> dict:
+        return {"id": f"shinise-node-{i}", "kind": kind, "prefecture": "kyoto", "name": {"ja": f"茶屋{i}"},
+                "location": {"lat": 35.0, "lng": 135.0}, "sources": []}  # fmt: skip
+
+    recs = [rec(1), rec(2), rec(3), rec(4), rec(5, "wagashi")]
+    (tmp_path / "shinise.json").write_text(json.dumps(recs), encoding="utf-8")
+    monkeypatch.setattr(pack_shinise, "PACKS_DIR", tmp_path)
+    queries: list[str] = []
+
+    def fake_run(q: str) -> list[OsmElement]:
+        queries.append(q)
+        return [
+            OsmElement("node/1", 35.0, 135.0, {"name": "茶屋1"}, "2025-06-01T00:00:00Z"),
+            OsmElement("node/2", 35.0, 135.0, {"name": "茶屋2"}, "2018-01-01T00:00:00Z"),  # 太久
+            OsmElement("node/3", 35.0, 135.0, {"name": "茶屋3", "opening_hours": "closed"}, "2025-01-01T00:00:00Z"),
+            # node/4：OSM 上已經刪掉
+        ]  # fmt: skip
+
+    monkeypatch.setattr(pack_shinise.osm, "_run", fake_run)
+    report = pack_shinise.check_teahouses(dt.date(2026, 11, 19))
+    out = json.loads((tmp_path / "shinise.json").read_text(encoding="utf-8"))
+    assert [r["id"] for r in out] == ["shinise-node-1", "shinise-node-5"]
+    assert "node(id:1,2,3,4);" in queries[0] and "out center meta;" in queries[0]
+    assert "拿掉 3 家" in report
+
+
+def test_check_teahouses_keeps_data_on_bad_response(monkeypatch, tmp_path):
+    import json
+
+    import pytest
+
+    recs = [{"id": f"shinise-node-{i}", "kind": "teahouse", "prefecture": "kyoto", "name": {"ja": "x"},
+             "location": {"lat": 35.0, "lng": 135.0}, "sources": []} for i in range(4)]  # fmt: skip
+    (tmp_path / "shinise.json").write_text(json.dumps(recs), encoding="utf-8")
+    monkeypatch.setattr(pack_shinise, "PACKS_DIR", tmp_path)
+    monkeypatch.setattr(pack_shinise.osm, "_run", lambda q: [])
+    with pytest.raises(RuntimeError):
+        pack_shinise.check_teahouses()
+    assert len(json.loads((tmp_path / "shinise.json").read_text(encoding="utf-8"))) == 4

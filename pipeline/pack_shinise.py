@@ -515,3 +515,51 @@ def seed_shinise() -> str:
         if n:
             lines.append(f"| {pref} | {n} |")
     return "\n".join(lines) + "\n"
+
+
+def _osm_ref(rec_id: str) -> tuple[str, int] | None:
+    """「shinise-node-123」→（"node", 123）。"""
+    m = re.match(r"^shinise-(node|way|relation)-(\d+)$", rec_id)
+    return (m.group(1), int(m.group(2))) if m else None
+
+
+def check_teahouses(today: dt.date | None = None) -> str:
+    """只重新確認現有的茶屋（check-teahouses 指令）：
+    一次向 OSM 查回 data/packs/shinise.json 裡的茶屋，拿掉已經從 OSM 刪掉、有歇業標記、
+    TEAHOUSE_FRESH_YEARS 年內沒人編輯或確認過的店。
+
+    整個 seed-shinise 要逐縣查名稱，Overpass 忙時一縣等到一小時，6 小時跑不完；
+    這個只查 id，一次就好。
+    不補新的店（要補時再跑 seed-shinise）。
+    """
+    today = today or dt.date.today()
+    path = PACKS_DIR / "shinise.json"
+    recs: list[dict[str, Any]] = json.loads(path.read_text(encoding="utf-8"))
+    refs = {r["id"]: ref for r in recs if r["kind"] == "teahouse" and (ref := _osm_ref(r["id"]))}
+    ids: dict[str, list[int]] = {}
+    for kind, n in refs.values():
+        ids.setdefault(kind, []).append(n)
+    body = "\n".join(f"  {kind}(id:{','.join(map(str, sorted(ns)))});" for kind, ns in ids.items())
+    els = osm._run(f"[out:json][timeout:300];\n(\n{body}\n);\nout center meta;")
+    by_id = {f"shinise-{el.osm_id.replace('/', '-')}": el for el in els}
+    if len(by_id) < len(refs) / 2:
+        # 回應不完整（Overpass 出錯但沒報錯）：不動資料
+        raise RuntimeError(f"OSM 只回 {len(by_id)} 筆（應有 {len(refs)} 筆），不更新")
+    gone = [r for r in recs if r["id"] in refs and r["id"] not in by_id]
+    stale = [r for r in recs if r["id"] in by_id and not still_open(by_id[r["id"]], today)]
+    drop = {r["id"] for r in gone + stale}
+    out = [r for r in recs if r["id"] not in drop]
+    path.write_text(json.dumps(out, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+
+    def names(rs: list[dict[str, Any]]) -> str:
+        return "、".join(f"{r['name']['ja']}（{r['prefecture']}）" for r in rs) or "沒有"
+
+    return "\n".join([
+        "## 茶屋：重新確認還在營業",
+        "",
+        f"原本 {len(refs)} 家，留下 {len(refs) - len(drop)} 家，拿掉 {len(drop)} 家。",
+        "",
+        f"OSM 上已經刪掉（{len(gone)}）：{names(gone)}",
+        "",
+        f"有歇業標記或 {TEAHOUSE_FRESH_YEARS} 年內沒人編輯、確認（{len(stale)}）：{names(stale)}",
+    ])  # fmt: skip

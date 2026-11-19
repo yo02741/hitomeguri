@@ -269,6 +269,13 @@ def cmd_seed_castles(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_check_teahouses(args: argparse.Namespace) -> int:
+    from pipeline.pack_shinise import check_teahouses
+
+    _emit(check_teahouses(), args.report)
+    return 0
+
+
 def cmd_seed_shinise(args: argparse.Namespace) -> int:
     from pipeline.pack_shinise import seed_shinise
 
@@ -422,6 +429,14 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("prefectures", nargs="*", help="省略時處理全部縣")
     p.add_argument("--report")
     p.set_defaults(func=cmd_seed_pokefuta)
+
+    p = sub.add_parser(
+        "check-teahouses",
+        help="老舖・茶屋：只重新確認現有的茶屋，拿掉歇業、OSM 已刪除、太久沒人確認的",
+    )
+    p.add_argument("prefectures", nargs="*", help="不使用")
+    p.add_argument("--report")
+    p.set_defaults(func=cmd_check_teahouses)
 
     p = sub.add_parser("seed-pokecen", help="擴充包：寶可夢中心與商店（OSM 全國）→ data/packs/")
     p.add_argument("--report")
