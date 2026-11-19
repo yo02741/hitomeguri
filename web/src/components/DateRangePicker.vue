@@ -21,6 +21,8 @@ const props = withDefaults(
     initial?: string
     size?: 'sm' | 'md' | 'lg'
     disabled?: boolean
+    /** 沒有外框，像一行文字（行程頁的標頭）；滑過、打開時才有底色 */
+    plain?: boolean
   }>(),
   { placeholder: '出發 → 回程', size: 'md' },
 )
@@ -87,8 +89,8 @@ const days = computed(() => dayCount(draftStart.value || undefined, (draftEnd.va
     aria-haspopup="dialog"
     :aria-expanded="open"
     :aria-label="`${label}：${text || '未選'}`"
-    class="flex items-center gap-2 rounded-control border bg-paper px-2.5 text-left text-body-sm hover:bg-surface disabled:cursor-not-allowed disabled:opacity-40 active:not-disabled:translate-y-px"
-    :class="[HEIGHT[size], open ? 'border-region-strong' : 'border-line']"
+    class="flex items-center gap-2 rounded-control text-left text-body-sm hover:bg-surface disabled:cursor-not-allowed disabled:opacity-40 active:not-disabled:translate-y-px"
+    :class="[HEIGHT[size], plain ? ['-mx-1.5 px-1.5', open ? 'bg-surface' : ''] : ['border bg-paper px-2.5', open ? 'border-region-strong' : 'border-line']]"
     @click="open = !open"
     @keydown.down.prevent="open = true"
   >

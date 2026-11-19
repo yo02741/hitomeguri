@@ -408,16 +408,18 @@ header 右側、登入鈕左邊（`SearchBox.vue`，每一頁都在；在行程�
 - 旅途中的今天：DAY 標記下面一個「今日」牌，樣式同「旅途中」（`rounded-tag bg-region-strong px-1.5 text-caption font-bold text-white`）。桌機照舊（地圖顯示全部、左欄從頭看起）；手機進頁就選今天，見下。
 
 ### 7.9b 行程頁（`TripView.vue`）
-- 按鈕列：桌機照舊（旅前準備、旅前小書、匯出 KML、匯出 CSV、離線用、回顧圖、刪除）。手機（<1024，決定事項 D2）只留 旅前準備、旅前小書、離線用、「更多 ▾」；更多是 `ActionMenu.vue` 的選單：匯出 KML、匯出 CSV（能分享檔案時走系統分享，§7.23a）、回顧圖，線下面 `text-danger` 的「刪除行程」（建立者才有）。寬度 <640 時按鈕 `px-2.5`、間距 `gap-1.5`，360 寬也排成一列。
+- 旅のしおり的扉頁（使用者 2026-11-19：去掉一顆顆框線按鈕、控制項攤開的制式感）：名稱下面一行文字「（日曆圖示）日期（無框，`DateRangePicker` 的 `plain`，滑過才有 `bg-surface`）　n 天　還有 [翻牌] 天」；沒有日期時同一行最後是「＋ 加一天」文字鈕。下面是共編（頭像＋`text-sub` 的「共編 n 人」，無框）、旅伴的修改。
+- 按鈕列（桌機、手機一樣）：主要的「旅前準備」、「旅前小書」、「離線用」、「更多 ▾」。更多是 `ActionMenu.vue` 的選單：匯出 KML、匯出 CSV（手機能分享檔案時走系統分享，§7.23a；桌機直接下載）、回顧圖，線下面 `text-danger` 的「刪除行程」（建立者才有）。寬度 <640 時按鈕 `px-2.5`、間距 `gap-1.5`，360 寬也排成一列。
+- 地圖顯示的天：桌機點 DAY 標記只顯示那天（標記外圈 `ring-2 ring-region-strong`），這時天數上面才出現「× 地圖顯示全部」文字鈕；沒有常駐的「全部」頁籤。
 - 手機版面（決定事項 F3）：整頁在 `<main>` 裡捲，沒有內層捲動。日期、成員、按鈕列下面是 sticky（`top-0 z-10 bg-paper`）的天數條：左邊橫向捲動的格子（`h-tap min-w-14 rounded-control`，上 `DAY n` `font-latin text-body-sm font-bold`、下日期 `text-micro`，今天寫「今日」；選中的是那天主縣的 `bg-region text-on-region`，沒有點的天 `bg-ink text-paper`，其他 `bg-surface`；最後一格「待排」＋筆數），格子超出時右緣淡出（`fade-x-end`，捲到底拿掉），看得出後面還有天數與待排；右邊「地圖」鈕（地圖圖示＋字，打開時 `bg-ink text-paper`，`aria-expanded`）。一次只顯示選中的那天（沒選過是 DAY 1），沒有「全部」。地圖預設收起，打開時在天數條下面 `h-[40dvh]`（一起黏在上面；手機打橫 32dvh，下面還看得到兩三站），只顯示選中的那天並連線；待排不連線。往下捲過之後換天，頁面回到天數條剛黏住的位置；選中的格子捲進天數條。旅途中進頁就選今天、打開地圖，頁面捲到天數條黏在頂端（返回時回到原本的位置就不捲）。沒有日期時「地圖」左邊是「加一天」（`size-tap` 外框方鈕、＋ 圖示、`aria-label="加一天"`），固定不動；加一天之後換到新的那天。
 - 加一天（沒有日期時；有日期時天數跟著日期，沒有這顆）：桌機在日期鈕與「n 天」右邊（外框鈕 `h-10`，＋ 圖示＋「加一天」），位置固定，不放在最後一天下面（天數一多就一直往下跑）；手機在天數條右邊，見上。每天標頭右邊的「刪除這天」照舊。到 MAX_DAYS 時停用。
-- 停留點列：桌機照舊（⠿ 把手、號碼、名稱、「移到」下拉、往前往後、×）。觸控（`pointer-coarse:`）沒有 ⠿ 把手（觸控不會觸發 dragstart）與「移到」下拉，名稱多出約 100px；右邊「⋯」（`size-tap`）打開選單：移到最前、往前、往後、移到最後｜移到 待排、移到 DAY n（右邊日期）｜從行程移除。換順序之後焦點留在「⋯」；移到別天、移除時焦點移到隔壁的停留點，讀屏器讀出結果。選單項目多時自己捲（最高 70dvh）。
-- Google Maps 連結（UX-FLOW C5，桌機手機都有）：每天第一站上面一行「從目前位置」（準星圖示，樣式同「轉乘路線」：`text-caption text-sub`，觸控 `min-h-tap`），不給 origin、`travelmode=transit`，Google Maps 以裝置位置為起點。停留點下面是這天的「Google Maps 路線」外框小鈕（`h-8`，觸控 `h-tap`，右邊 ↗）：依順序經過每一站，不指定交通方式（大眾運輸不支援 waypoints）。超過 waypoint 上限時拆段（觸控或 <1024 用手機瀏覽器的 3 個，桌機 9 個；網址超過 2,048 字元也拆），前面一個 `text-caption text-sub` 的「Google Maps 路線」，後面每段一顆「1–5 ↗」「5–8 ↗」，下一段從上一段的終點出發（`services/trip.ts` 的 `dayRouteUrls`）。
+- 停留點畫成路線圖：左邊 28px 的欄裡一條 2px `bg-line` 直線，號碼（`size-6 rounded-full bg-ink text-paper`）在線上；站與站之間的「轉乘路線 ↗」（`text-caption text-sub`）也在線旁。待排沒有順序，只有 8px 的 `bg-sub` 小點、沒有線。每列只有假名、名稱（粗體，滑過加 2px 底線，點了看介紹）、縣名，右邊「⋯」（`StopMenu`，桌機手機都有）：移到最前、往前、往後、移到最後｜移到 待排、移到 DAY n（右邊日期）｜從行程移除。桌機整列可以拖曳，滑過或鍵盤選到時「⋯」左邊才出現 ⠿ 把手；觸控沒有拖曳。換順序之後焦點留在「⋯」；移到別天、移除時焦點移到隔壁的停留點，讀屏器讀出結果。選單項目多時自己捲（最高 70dvh）。
+- Google Maps 連結（UX-FLOW C5，桌機手機都有）：旅途中的今天，第一站上面一行「從目前位置」（準星圖示在路線的起點，`text-caption text-sub`，觸控 `min-h-tap`），不給 origin、`travelmode=transit`，Google Maps 以裝置位置為起點；其他天不放。停留點下面是這天的「Google Maps 路線 ↗」（粗體文字連結、2px `decoration-line` 底線，`h-8`，觸控 `h-tap`）：依順序經過每一站，不指定交通方式（大眾運輸不支援 waypoints）。超過 waypoint 上限時拆段（觸控或 <1024 用手機瀏覽器的 3 個，桌機 9 個；網址超過 2,048 字元也拆），前面一個 `text-caption text-sub` 的「Google Maps 路線」，後面每段一顆「1–5 ↗」「5–8 ↗」，下一段從上一段的終點出發（`services/trip.ts` 的 `dayRouteUrls`）。
 
 ### 7.9c 住的車站與單日來回（UX-FLOW.md C8）
-- 每天的標頭下面一列（桌機、手機都有；`pl-0.5`，和 DAY 標記對齊）：
-  - 「住在 ▾」外框小鈕（`h-8 rounded-control border-line bg-paper`，觸控 `h-tap`）：小字「住在」（`text-caption text-sub`）＋站名（`lang="ja"` 粗體）＋ ▾；沒設定時站名的位置是 `text-sub` 的「選車站」。離線時停用。
-  - 有住的地方時右邊「單日來回」外框小鈕（同上）；開著時 `border-ink bg-ink text-paper`、`aria-expanded`。
+- 每天的標頭（桌機、手機都有）：左邊 DAY 標記，右邊兩行字。第一行日期（`font-num text-body font-bold`）＋縣名（`text-sub`），沒有日期時右邊「刪除這天」。第二行是文字鈕（無框，`h-8 px-1.5`，滑過 `bg-surface`，觸控 `h-tap`）：
+  - 「住 京都 ▾」（「住」`text-sub`、站名 `lang="ja"` 粗體）；沒設定時 `text-sub` 的「住哪一站 ▾」。離線時停用。
+  - 有住的地方時「・單日來回」；開著時 `bg-ink font-bold text-paper`、`aria-expanded`。
 - 住的車站（`StayPicker.vue`）：`BottomDialog`，標題「DAY n 住的車站」。上面搜尋框（placeholder「車站名稱」，桌機打開就聚焦，觸控不自動叫出鍵盤；Enter 選第一個）。每列 `min-h-tap`：縣色小方塊 14px、站名（`lang="ja"` 粗體，過長截斷）、新幹線站多「新幹線」牌（`rounded-tag bg-ink text-paper text-caption font-bold`，同車站卡片）、右邊縣名（`text-caption text-sub`）；目前的那一站右邊 `text-region-strong` 的勾。沒打字時列建議，右邊小字是來由（「前一天」「浅草寺附近」「後一天」「DAY 3」）。有住的地方時底部 sticky 一列「住在 ○○」＋外框鈕「清除」。讀取中用骨架，讀不到「讀不到車站資料」＋「重試」。
 - 單日來回的清單（`DaytripList.vue`）：
   - 分段：一整列三格的底線分頁（§7.2，`min-h-tap`、`border-b-3`，選中 `border-region-strong font-bold text-ink`，其他 `text-sub`）：「鐵路 60 km 內」「60–150 km」「新幹線」，後面 `font-num text-caption text-sub` 的件數。桌機前面多地圖上的記號當圖例（10px：60 km 內 `bg-region-strong` 實心、60–150 km `bg-region` 加 1.5px `border-region-strong`、新幹線 `bg-paper` 加 `border-ink` 雙圈）。

@@ -5,7 +5,6 @@ import { useRouter } from 'vue-router'
 import ActionMenu, { type MenuAction } from '../components/ActionMenu.vue'
 import BackLink from '../components/BackLink.vue'
 import DateRangePicker from '../components/DateRangePicker.vue'
-import ExportButtons from '../components/ExportButtons.vue'
 import OfflineButton from '../components/OfflineButton.vue'
 import MapView from '../components/MapView.vue'
 import AchvRow from '../components/AchvRow.vue'
@@ -29,7 +28,7 @@ import { regionOf } from '../data/regions'
 import type { MapSpot, ShinkansenBundle } from '../services/bundles'
 import { confirmDialog } from '../services/confirm'
 import { type Band, buildGraph, nearestStation, stationById, type StationOption } from '../services/daytrip'
-import { type ExportFolder, type ExportRow, shareOrDownload, toCsv, toKml } from '../services/export'
+import { download, type ExportFolder, type ExportRow, shareOrDownload, toCsv, toKml } from '../services/export'
 import { drawTripRecap } from '../services/shareImage'
 import { showToast } from '../services/toast'
 import type { LogEntry } from '../services/tripLog'
@@ -595,9 +594,10 @@ const moreItems = computed<MenuAction[]>(() => {
 })
 function onMore(key: string) {
   const title = trip.value?.name || 'ひとめぐり 行程'
-  // 手機的匯出能分享檔案時走系統分享（決定事項 P2）
-  if (key === 'kml') void shareOrDownload(title, 'kml', toKml(title, folders.value))
-  else if (key === 'csv') void shareOrDownload(title, 'csv', toCsv(folders.value.flatMap((f) => f.rows), ['日', '順序']))
+  // 手機的匯出能分享檔案時走系統分享（決定事項 P2）；桌機直接下載
+  const save = wide.value ? download : shareOrDownload
+  if (key === 'kml') void save(title, 'kml', toKml(title, folders.value))
+  else if (key === 'csv') void save(title, 'csv', toCsv(folders.value.flatMap((f) => f.rows), ['日', '順序']))
   else if (key === 'recap') recapOpen.value = true
   else if (key === 'delete') void del()
 }
@@ -641,34 +641,36 @@ async function del() {
           @blur="nameField.onBlur"
           @keydown="nameField.onKeydown"
         />
-        <div class="flex flex-wrap items-center gap-2.5">
+        <!-- 日期、天數、還有幾天排成一行文字（旅のしおり的扉頁；使用者 2026-11-19：去掉一顆顆框線按鈕的制式感） -->
+        <div class="flex flex-wrap items-center gap-x-3 gap-y-1 text-body-sm">
           <DateRangePicker
             label="日期"
+            plain
             :start="trip.start_date ?? ''"
             :end="trip.end_date ?? ''"
             :disabled="locked"
             @change="setDates"
           />
-          <span class="text-caption text-sub">{{ trip.days.length }} 天</span>
-          <!-- 沒有日期時天數自己加（有日期時天數跟著日期）；桌機在天數旁邊，位置固定。手機在天數條右邊 -->
+          <span class="text-sub"><span class="font-num">{{ trip.days.length }}</span> 天</span>
+          <span v-if="status === 'ongoing'" class="rounded-tag bg-region-strong px-1.5 text-caption font-bold text-white">旅途中</span>
+          <span v-else-if="until !== null" class="flex items-center gap-1 text-sub">還有<SplitFlap :value="String(until)" class="text-title" />天</span>
+          <!-- 沒有日期時天數自己加（有日期時天數跟著日期）；桌機在這一行，位置固定。手機在天數條右邊 -->
           <button
             v-if="wide && !hasDates"
             type="button"
             :disabled="locked || trip.days.length >= MAX_DAYS"
-            class="flex h-10 items-center gap-1 rounded-control border border-line bg-paper pr-3 pl-2.5 text-body-sm text-ink hover:not-disabled:bg-surface disabled:cursor-not-allowed disabled:opacity-40 active:not-disabled:translate-y-px pointer-coarse:h-tap"
+            class="-mx-1.5 flex h-9 items-center gap-1 rounded-control px-1.5 text-body-sm text-ink hover:not-disabled:bg-surface disabled:cursor-not-allowed disabled:opacity-40 active:not-disabled:translate-y-px pointer-coarse:h-tap"
             @click="addDay"
           >
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14" /></svg>
             加一天
           </button>
-          <span v-if="status === 'ongoing'" class="rounded-tag bg-region-strong px-1.5 text-caption font-bold text-white">旅途中</span>
-          <span v-else-if="until !== null" class="flex items-center gap-1 text-caption text-sub">還有<SplitFlap :value="String(until)" class="text-title" />天</span>
         </div>
+        <TripMembers :trip="trip" class="self-start" />
         <p v-if="locked" class="w-fit rounded-tag bg-ink px-1.5 text-caption font-bold text-paper" role="status">離線中・行程不能修改</p>
         <p v-else-if="trips.error" class="text-caption text-danger" role="alert">{{ trips.error }}</p>
-        <TripMembers :trip="trip" />
         <TripLog v-if="trip.members.length > 1" :key="trip.id" :trip="trip" />
-        <!-- 手機窄螢幕（<640）內距與間距縮一點，旅前準備、旅前小書、離線用、更多排得進一列 -->
+        <!-- 按鈕：一顆主要的「旅前準備」，旅前小書、離線用，其餘（匯出、回顧圖、刪除）收進「更多」；桌機手機一樣 -->
         <div class="flex flex-wrap gap-2 max-sm:gap-1.5">
           <!-- 一個畫面只有一個 Primary（DESIGN §7.1）：「旅前準備」是出發前與旅途中的 Primary，結束後退成 Secondary -->
           <RouterLink
@@ -680,49 +682,31 @@ async function del() {
             :to="`/trips/${trip.id}/book`"
             class="flex h-9 items-center rounded-control border border-line bg-paper px-3 text-body-sm text-ink no-underline hover:bg-surface active:not-disabled:translate-y-px pointer-coarse:h-tap max-sm:px-2.5"
           >旅前小書</RouterLink>
-          <ExportButtons class="max-lg:hidden" :title="trip.name || 'ひとめぐり 行程'" :folders="folders" :leading="['日', '順序']" />
           <OfflineButton :trip="trip" class="max-sm:px-2.5" />
-          <button
-            type="button"
-            class="h-9 rounded-control max-lg:hidden border border-line bg-paper px-3 text-body-sm text-ink hover:bg-surface disabled:cursor-not-allowed disabled:opacity-40 active:not-disabled:translate-y-px pointer-coarse:h-tap"
-            :disabled="!trip.days.some((d) => d.stops.length)"
-            @click="recapOpen = true"
-          >回顧圖</button>
-          <button
-            v-if="isOwner"
-            type="button"
-            :disabled="locked"
-            class="h-9 rounded-control border border-line bg-paper px-3 text-body-sm text-danger max-lg:hidden hover:not-disabled:bg-surface disabled:cursor-not-allowed disabled:opacity-40 active:not-disabled:translate-y-px pointer-coarse:h-tap"
-            @click="del"
-          >刪除</button>
-          <!-- 手機：匯出、回顧圖、刪除收進「更多」（決定事項 D2） -->
-          <span class="contents lg:hidden">
-            <ActionMenu
-              label="更多"
-              :items="moreItems"
-              trigger-class="flex h-9 items-center gap-1 rounded-control border border-line bg-paper pr-2 pl-3 text-body-sm max-sm:pr-1.5 max-sm:pl-2.5 text-ink hover:bg-surface active:not-disabled:translate-y-px pointer-coarse:h-tap"
-              @select="onMore"
-            >
-              更多
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" class="text-sub" aria-hidden="true"><path d="M6 9l6 6 6-6" /></svg>
-            </ActionMenu>
-          </span>
+          <ActionMenu
+            label="更多"
+            :items="moreItems"
+            trigger-class="flex h-9 items-center gap-1 rounded-control border border-line bg-paper pr-2 pl-3 text-body-sm max-sm:pr-1.5 max-sm:pl-2.5 text-ink hover:bg-surface active:not-disabled:translate-y-px pointer-coarse:h-tap"
+            @select="onMore"
+          >
+            更多
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" class="text-sub" aria-hidden="true"><path d="M6 9l6 6 6-6" /></svg>
+          </ActionMenu>
         </div>
         <!-- 這趟達成的初訪章與成就（DESIGN.md §7.25） -->
         <AchvRow v-if="status === 'done'" :trip="trip" :size="64" header />
       </div>
 
-      <div v-if="wide" class="flex items-center gap-3 text-body-sm pointer-coarse:-mx-1.5 pointer-coarse:-my-2.5">
-        <button
-          type="button"
-          class="pointer-coarse:px-1.5 pointer-coarse:py-2.5"
-          :class="selectedDay === null ? 'border-region-strong font-bold text-ink' : 'border-transparent text-sub hover:text-ink active:text-ink'"
-          :aria-pressed="selectedDay === null"
-          @click="selectedDay = null"
-        >
-          <span class="block border-b-2 border-inherit pb-0.5">全部</span>
-        </button>
-      </div>
+      <!-- 桌機點 DAY 標記時地圖只顯示那天；這時才出現「地圖顯示全部」（沒有單獨的「全部」頁籤） -->
+      <button
+        v-if="wide && selectedDay !== null"
+        type="button"
+        class="-my-2 flex h-8 w-fit items-center gap-1 text-body-sm text-sub hover:text-ink"
+        @click="selectedDay = null"
+      >
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" /></svg>
+        地圖顯示全部
+      </button>
 
       <!-- 手機：sticky 天數條＋地圖（決定事項 F3）。定位點記下天數條原本的位置；-mt-5 抵掉定位點多出來的間距 -->
       <div v-if="!wide" ref="anchor" class="h-0" aria-hidden="true"></div>
@@ -788,67 +772,72 @@ async function del() {
 
       <!-- 每一天（手機一次只顯示天數條選中的那天） -->
       <section v-for="(d, i) in trip.days" v-show="wide || activeDay === i" :key="i" :data-day="i" class="flex flex-col gap-1.5" :aria-label="`DAY ${i + 1}`">
-        <div class="flex items-center gap-2" :data-pref="dayPref(d)">
+        <!-- 每天的標頭（旅のしおり）：左邊 DAY 標記；右邊兩行字：日期・縣，住的車站・單日來回（都是文字鈕，不加外框） -->
+        <div class="flex items-start gap-3" :data-pref="dayPref(d)">
           <!-- 桌機點 DAY 標記切換地圖只顯示這天；手機由天數條切換，這裡只是標頭 -->
           <component
             :is="wide ? 'button' : 'div'"
-            v-bind="wide ? { type: 'button', 'aria-pressed': selectedDay === i } : {}"
-            class="flex items-center gap-2 rounded-control py-1 pr-2 pl-0.5"
-            :class="wide ? ['active:not-disabled:translate-y-px', selectedDay === i ? 'bg-region-tint' : 'hover:bg-surface'] : ''"
+            v-bind="wide ? { type: 'button', 'aria-pressed': selectedDay === i, 'aria-label': `地圖只顯示 DAY ${i + 1}` } : {}"
+            class="flex shrink-0 flex-col items-center gap-1 rounded-badge"
+            :class="wide ? ['active:not-disabled:translate-y-px', selectedDay === i ? 'ring-2 ring-region-strong ring-offset-2 ring-offset-paper' : ''] : ''"
             @click="wide && (selectedDay = selectedDay === i ? null : i)"
           >
             <!-- DAY 標記（DESIGN.md §7.9）：當天主縣的顏色；旅途中的今天下面加「今日」 -->
-            <span class="flex shrink-0 flex-col items-center gap-1">
-              <span
-                class="flex size-11 shrink-0 flex-col items-center justify-center rounded-badge font-latin font-bold leading-none"
-                :class="dayPref(d) ? 'bg-region text-on-region' : 'bg-placeholder text-ink'"
-              >
-                <span class="text-micro leading-none">DAY</span><span class="text-[18px]">{{ i + 1 }}</span>
-              </span>
-              <span v-if="i === todayIdx" class="rounded-tag bg-region-strong px-1.5 text-caption font-bold text-white">今日</span>
+            <span
+              class="flex size-11 shrink-0 flex-col items-center justify-center rounded-badge font-latin font-bold leading-none"
+              :class="dayPref(d) ? 'bg-region text-on-region' : 'bg-placeholder text-ink'"
+            >
+              <span class="text-micro leading-none">DAY</span><span class="text-[18px]">{{ i + 1 }}</span>
             </span>
-            <span v-if="dayDate(trip, i)" class="font-num text-body-sm text-ink">{{ shortDate(dayDate(trip, i)!) }}</span>
-            <span v-if="dayPref(d)" lang="ja" class="text-caption text-sub">{{ regionOf(dayPref(d))?.name.ja }}</span>
+            <span v-if="i === todayIdx" class="rounded-tag bg-region-strong px-1.5 text-caption font-bold text-white">今日</span>
           </component>
-          <button
-            v-if="!hasDates && trip.days.length > 1"
-            type="button"
-            :aria-label="`刪除 DAY ${i + 1}`"
-            :disabled="locked"
-            class="ml-auto text-caption text-sub hover:not-disabled:text-ink disabled:cursor-not-allowed disabled:opacity-40 active:not-disabled:text-ink"
-            @click="removeDay(i)"
-          >
-            刪除這天
-          </button>
-        </div>
-        <!-- 住的車站與單日來回（DESIGN.md §7.9c） -->
-        <div class="flex flex-wrap items-center gap-1.5 pl-0.5">
-          <button
-            type="button"
-            class="flex h-8 max-w-full items-center gap-1.5 rounded-control border border-line bg-paper pr-2 pl-2.5 text-body-sm text-ink hover:not-disabled:bg-surface disabled:cursor-not-allowed disabled:opacity-40 active:not-disabled:translate-y-px pointer-coarse:h-tap"
-            :disabled="locked"
-            :aria-label="d.stay ? `DAY ${i + 1} 住在 ${d.stay.n}，更改` : `DAY ${i + 1} 住在哪一站`"
-            @click="stayDay = i"
-          >
-            <span class="shrink-0 text-caption text-sub">住在</span>
-            <span v-if="d.stay" lang="ja" class="truncate font-bold">{{ d.stay.n }}</span>
-            <span v-else class="text-sub">選車站</span>
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 text-sub" aria-hidden="true"><path d="M6 9l6 6 6-6" /></svg>
-          </button>
-          <button
-            v-if="d.stay"
-            type="button"
-            class="flex h-8 items-center gap-1 rounded-control border px-2.5 text-body-sm active:not-disabled:translate-y-px pointer-coarse:h-tap"
-            :class="dtDay === i ? 'border-ink bg-ink text-paper' : 'border-line bg-paper text-ink hover:bg-surface'"
-            :aria-expanded="dtDay === i"
-            @click="dtDay === i ? closeDaytrip() : openDaytrip(i)"
-          >
-            單日來回
-          </button>
+          <div class="flex min-w-0 flex-1 flex-col">
+            <div class="flex min-h-6 items-baseline gap-2">
+              <span v-if="dayDate(trip, i)" class="font-num text-body font-bold text-ink">{{ shortDate(dayDate(trip, i)!) }}</span>
+              <span v-if="dayPref(d)" lang="ja" class="text-body-sm text-sub">{{ regionOf(dayPref(d))?.name.ja }}</span>
+              <button
+                v-if="!hasDates && trip.days.length > 1"
+                type="button"
+                :aria-label="`刪除 DAY ${i + 1}`"
+                :disabled="locked"
+                class="ml-auto text-caption text-sub hover:not-disabled:text-ink disabled:cursor-not-allowed disabled:opacity-40 active:not-disabled:text-ink pointer-coarse:min-h-tap"
+                @click="removeDay(i)"
+              >
+                刪除這天
+              </button>
+            </div>
+            <!-- 住的車站與單日來回（DESIGN.md §7.9c）：沒設定時淡淡的「住哪一站」 -->
+            <div class="-ml-1.5 flex flex-wrap items-center text-body-sm">
+              <button
+                type="button"
+                class="flex h-8 max-w-full items-center gap-1 rounded-control px-1.5 text-ink hover:not-disabled:bg-surface disabled:cursor-not-allowed disabled:opacity-40 active:not-disabled:translate-y-px pointer-coarse:h-tap"
+                :disabled="locked"
+                :aria-label="d.stay ? `DAY ${i + 1} 住在 ${d.stay.n}，更改` : `DAY ${i + 1} 住在哪一站`"
+                @click="stayDay = i"
+              >
+                <template v-if="d.stay"><span class="shrink-0 text-sub">住</span><span lang="ja" class="truncate font-bold">{{ d.stay.n }}</span></template>
+                <span v-else class="text-sub">住哪一站</span>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 text-sub" aria-hidden="true"><path d="M6 9l6 6 6-6" /></svg>
+              </button>
+              <template v-if="d.stay">
+                <span class="text-sub" aria-hidden="true">・</span>
+                <button
+                  type="button"
+                  class="flex h-8 items-center rounded-control px-1.5 active:not-disabled:translate-y-px pointer-coarse:h-tap"
+                  :class="dtDay === i ? 'bg-ink font-bold text-paper' : 'text-ink hover:bg-surface'"
+                  :aria-expanded="dtDay === i"
+                  @click="dtDay === i ? closeDaytrip() : openDaytrip(i)"
+                >
+                  單日來回
+                </button>
+              </template>
+            </div>
+          </div>
         </div>
         <TripStopList
           :stops="d.stops"
           :day="i"
+          :from-here="i === todayIdx"
           :spots="byId"
           :targets="targets"
           :taken="(id: string) => placesOf(trip!, id)"
@@ -866,7 +855,7 @@ async function del() {
           @focus="focusStop"
         />
         <!-- 這天的 Google Maps 路線：超過 waypoint 上限時拆段，按鈕寫這段從第幾站到第幾站 -->
-        <div v-if="routes[i]?.length" class="flex flex-wrap items-center gap-1.5 pl-9 pointer-coarse:pl-2.5" :data-pref="dayPref(d)">
+        <div v-if="routes[i]?.length" class="flex flex-wrap items-center gap-x-3 gap-y-1 pl-9" :data-pref="dayPref(d)">
           <span v-if="routes[i]!.length > 1" class="mr-0.5 text-caption text-sub">Google Maps 路線</span>
           <a
             v-for="leg in routes[i]"
@@ -875,7 +864,7 @@ async function del() {
             target="_blank"
             rel="noopener"
             :aria-label="routes[i]!.length > 1 ? `DAY ${i + 1} Google Maps 路線 第 ${leg.from + 1} 到 ${leg.to + 1} 站` : `DAY ${i + 1} Google Maps 路線`"
-            class="flex h-8 items-center gap-1.5 rounded-control border border-line bg-paper px-3 text-body-sm text-ink no-underline hover:bg-surface active:translate-y-px pointer-coarse:h-tap"
+            class="flex h-8 items-center gap-1 text-body-sm font-bold text-ink underline decoration-line decoration-2 underline-offset-4 hover:decoration-ink active:translate-y-px pointer-coarse:h-tap"
           >
             <template v-if="routes[i]!.length > 1"><span class="font-num">{{ leg.from + 1 }}–{{ leg.to + 1 }}</span></template>
             <template v-else>Google Maps 路線</template>

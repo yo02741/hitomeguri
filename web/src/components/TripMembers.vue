@@ -34,7 +34,8 @@ useDismiss(root, computed(() => open.value && wide.value), () => (open.value = f
     <button
       ref="toggleBtn"
       type="button"
-      class="flex h-9 items-center gap-2 rounded-control border border-line bg-paper pr-3 pl-1.5 text-body-sm text-ink hover:bg-surface active:not-disabled:translate-y-px pointer-coarse:h-tap"
+      class="-mx-1.5 flex h-9 items-center gap-2 rounded-control px-1.5 text-body-sm text-ink hover:bg-surface active:not-disabled:translate-y-px pointer-coarse:h-tap"
+      :class="open ? 'bg-surface' : ''"
       :aria-haspopup="wide ? 'true' : 'dialog'"
       :aria-expanded="open"
       @click="open = !open"
@@ -48,7 +49,7 @@ useDismiss(root, computed(() => open.value && wide.value), () => (open.value = f
           class="ring-2 ring-paper"
         />
       </span>
-      共編<span v-if="members.length > 1" class="font-num">{{ members.length }}</span>
+      <span class="text-sub">共編<span v-if="members.length > 1" class="ml-1 font-num">{{ members.length }} 人</span></span>
     </button>
 
     <div

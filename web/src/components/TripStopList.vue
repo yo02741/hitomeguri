@@ -4,13 +4,13 @@ import { nextTick, ref, watch } from 'vue'
 import { regionOf } from '../data/regions'
 import type { MapSpot } from '../services/bundles'
 import { fromHereUrl, type Stop, type StopPos, transitUrl } from '../services/trip'
-import Dropdown from './Dropdown.vue'
 import StopMenu from './StopMenu.vue'
 
-// 行程某一天（或「待排」）的停留點。拖曳排序／換天，另有「移到」選單與上下移動（鍵盤用）。
-// 觸控裝置上沒有拖曳把手（觸控不會觸發 dragstart）與「移到」下拉，排序、換天、移除收進「⋯」選單（StopMenu）：
-// 24px 的小鈕手指點不到，幾顆 44px 又會擠掉名稱。
-// 相鄰停留點之間放 Google Maps 大眾運輸路線連結；每天第一站上面是「從目前位置」（不給起點，Google Maps 用裝置位置）。
+// 行程某一天（或「待排」）的停留點，畫成路線圖：號碼在一條直線上，站與站之間是 Google Maps 大眾運輸路線連結
+// （使用者 2026-11-19：做成旅のしおり，不要每列一排控制項）。
+// 桌機拖曳排序／換天（整列可拖，滑過時右邊出現把手）；排序、換天、移除都在「⋯」選單（StopMenu，鍵盤也用它）。
+// 觸控沒有拖曳（觸控不會觸發 dragstart），只有「⋯」。
+// 旅途中的今天，第一站上面是「從目前位置」（不給起點，Google Maps 用裝置位置）。
 const props = defineProps<{
   stops: Stop[]
   /** -1 為待排 */
@@ -24,6 +24,8 @@ const props = defineProps<{
   focusId?: string | null
   /** 離線時不能修改：拖曳、移到、往前往後、移除都停用 */
   locked?: boolean
+  /** 第一站上面放「從目前位置」（旅途中的今天） */
+  fromHere?: boolean
 }>()
 /** 「移到」的選項：這一天之外、已經排了同一個景點的天不列 */
 function rowTargets(spotId: string) {
@@ -127,80 +129,79 @@ const isDrop = (idx: number) => props.dropAt?.day === props.day && props.dropAt.
     @drop.prevent="emit('drop')"
   >
     <li
-      v-if="day >= 0 && stops.length"
+      v-if="day >= 0 && stops.length && fromHere"
       key="here"
-      class="flex items-center gap-2 py-0.5 pl-9 text-caption text-sub pointer-coarse:py-0 pointer-coarse:pl-2.5"
+      class="flex items-stretch gap-2 text-caption text-sub"
       @dragover.prevent="emit('dragover', { day, idx: 0 })"
     >
+      <span class="relative grid w-7 shrink-0 place-items-center" aria-hidden="true">
+        <span class="absolute bottom-0 left-1/2 h-1/2 w-0.5 -translate-x-1/2 bg-line"></span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="relative bg-paper">
+          <circle cx="12" cy="12" r="3" /><path d="M12 2v4M12 18v4M2 12h4M18 12h4" />
+        </svg>
+      </span>
       <a
         :href="fromHereUrl(stops[0]!)"
         target="_blank"
         rel="noopener"
         :aria-label="`從目前位置到 ${stops[0]!.name} 的轉乘路線`"
-        class="flex items-center gap-1 text-sub hover:text-ink active:text-ink pointer-coarse:min-h-tap pointer-coarse:pr-3"
-      >
-        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <circle cx="12" cy="12" r="3" /><path d="M12 2v4M12 18v4M2 12h4M18 12h4" />
-        </svg>
-        從目前位置
-      </a>
+        class="flex min-h-8 items-center text-sub hover:text-ink active:text-ink pointer-coarse:min-h-tap pointer-coarse:pr-3"
+      >從目前位置</a>
     </li>
     <template v-for="(s, i) in stops" :key="s.spot_id">
+      <!-- 站與站之間：路線上的「轉乘路線」 -->
       <li
         v-if="day >= 0 && i > 0"
-        class="flex items-center gap-2 py-0.5 pl-9 text-caption text-sub pointer-coarse:py-0 pointer-coarse:pl-2.5"
+        class="flex items-stretch gap-2 text-caption text-sub"
         @dragover="onOverRow(i - 1, $event)"
       >
-        <a :href="transitUrl(stops[i - 1]!, s)" target="_blank" rel="noopener" class="flex items-center gap-1 text-sub hover:text-ink active:text-ink pointer-coarse:min-h-tap pointer-coarse:pr-3">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M12 5v14M6 13l6 6 6-6" />
-          </svg>
+        <span class="relative w-7 shrink-0" aria-hidden="true"><span class="absolute inset-y-0 left-1/2 w-0.5 -translate-x-1/2 bg-line"></span></span>
+        <a :href="transitUrl(stops[i - 1]!, s)" target="_blank" rel="noopener" class="flex min-h-7 items-center gap-1 text-sub hover:text-ink active:text-ink pointer-coarse:min-h-tap pointer-coarse:pr-3">
           轉乘路線
+          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" /></svg>
         </a>
       </li>
       <li
         :id="`stop-${s.spot_id}`"
         :draggable="!locked"
-        class="group flex items-center gap-2 rounded-control border-t-2 py-1.5 pr-1 pl-1"
+        class="group flex items-stretch gap-2 rounded-control border-t-2 pr-1"
         :class="[isDrop(i) ? 'border-region-strong' : 'border-transparent', focusId === s.spot_id ? 'bg-region-tint shadow-[inset_0_0_0_1.5px_var(--region-strong)]' : 'hover:bg-surface active:bg-surface']"
         @dragstart="onStart(i, $event)"
         @dragover="onOverRow(i, $event)"
         @dragend="emit('dragend')"
       >
-        <span class="grid w-7 shrink-0 place-items-center text-sub pointer-coarse:hidden" :class="locked ? 'opacity-40' : 'cursor-grab'" aria-hidden="true">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><circle cx="9" cy="6" r="1.6" /><circle cx="15" cy="6" r="1.6" /><circle cx="9" cy="12" r="1.6" /><circle cx="15" cy="12" r="1.6" /><circle cx="9" cy="18" r="1.6" /><circle cx="15" cy="18" r="1.6" /></svg>
+        <!-- 路線：號碼在線上（待排沒有順序，只有一個小點） -->
+        <span class="relative grid w-7 shrink-0 place-items-center" aria-hidden="true">
+          <template v-if="day >= 0">
+            <span v-if="i > 0 || fromHere" class="absolute -top-0.5 left-1/2 h-[calc(50%+2px)] w-0.5 -translate-x-1/2 bg-line"></span>
+            <span v-if="i < stops.length - 1" class="absolute bottom-0 left-1/2 h-1/2 w-0.5 -translate-x-1/2 bg-line"></span>
+            <span class="relative grid size-6 place-items-center rounded-full bg-ink font-num text-caption font-bold text-paper">{{ i + 1 }}</span>
+          </template>
+          <span v-else class="size-2 rounded-full bg-sub"></span>
         </span>
-        <span v-if="day >= 0" class="grid size-6 shrink-0 place-items-center rounded-full bg-ink font-num text-caption font-bold text-paper">{{ i + 1 }}</span>
-        <button type="button" :data-stop="s.spot_id" class="flex min-w-0 flex-1 flex-col text-left active:not-disabled:translate-y-px pointer-coarse:-my-1.5 pointer-coarse:self-stretch pointer-coarse:justify-center pointer-coarse:py-1.5" @click="emit('focus', s.spot_id)">
+        <!-- 名稱：點了看介紹（滑過時加底線，看得出能點） -->
+        <button
+          type="button"
+          :data-stop="s.spot_id"
+          class="group/name flex min-w-0 flex-1 flex-col py-1.5 text-left active:not-disabled:translate-y-px pointer-coarse:justify-center"
+          :aria-label="`${s.name} 的介紹`"
+          @click="emit('focus', s.spot_id)"
+        >
           <span v-if="spots.get(s.spot_id)?.h" lang="ja" class="truncate text-caption tracking-kana text-sub" :title="spots.get(s.spot_id)?.h">{{ spots.get(s.spot_id)?.h }}</span>
           <span class="line-clamp-2 text-body-sm break-words">
-            <span lang="ja" class="font-bold">{{ s.name }}</span>
+            <span lang="ja" class="font-bold decoration-line decoration-2 underline-offset-4 group-hover/name:underline">{{ s.name }}</span>
             <span lang="ja" class="ml-1.5 text-caption whitespace-nowrap text-sub">{{ regionOf(s.pref)?.name.ja }}</span>
           </span>
         </button>
-        <span class="contents pointer-coarse:hidden">
-          <Dropdown
-            :model-value="String(day)"
-            :options="rowTargets(s.spot_id).map((t) => ({ value: String(t.value), label: t.label }))"
-            :label="`${s.name} 移到`"
-            size="sm"
-            align="end"
-            :disabled="locked"
-            @update:model-value="emit('move', { day, idx: i }, Number($event))"
-          />
+        <!-- 拖曳把手：桌機滑過或鍵盤選到這一列時才出現（整列都能拖；觸控沒有拖曳） -->
+        <span
+          class="grid w-6 shrink-0 place-items-center text-sub opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 pointer-coarse:hidden"
+          :class="locked ? 'invisible' : 'cursor-grab'"
+          aria-hidden="true"
+        >
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><circle cx="9" cy="6" r="1.6" /><circle cx="15" cy="6" r="1.6" /><circle cx="9" cy="12" r="1.6" /><circle cx="15" cy="12" r="1.6" /><circle cx="9" cy="18" r="1.6" /><circle cx="15" cy="18" r="1.6" /></svg>
         </span>
-        <span class="flex shrink-0 flex-col pointer-coarse:hidden">
-          <button type="button" :aria-label="`${s.name} 往前`" :disabled="locked || i === 0" class="grid h-4 w-6 place-items-center text-sub hover:text-ink disabled:opacity-30 active:not-disabled:translate-y-px" @click="reorder(i, () => emit('shift', { day, idx: i }, -1))">
-            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 15l6-6 6 6" /></svg>
-          </button>
-          <button type="button" :aria-label="`${s.name} 往後`" :disabled="locked || i === stops.length - 1" class="grid h-4 w-6 place-items-center text-sub hover:text-ink disabled:opacity-30 active:not-disabled:translate-y-px" @click="reorder(i, () => emit('shift', { day, idx: i }, 1))">
-            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6" /></svg>
-          </button>
-        </span>
-        <button type="button" :aria-label="`從行程移除：${s.name}`" :disabled="locked" class="grid size-8 shrink-0 place-items-center rounded-control text-sub hover:not-disabled:bg-surface hover:not-disabled:text-ink disabled:cursor-not-allowed disabled:opacity-40 pointer-coarse:hidden active:not-disabled:translate-y-px" @click="remove(i)">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" /></svg>
-        </button>
-        <span class="hidden pointer-coarse:contents">
+        <span class="flex items-center">
           <StopMenu
             :name="s.name"
             :disabled="locked"
