@@ -63,6 +63,27 @@
     "updated_at": "2026-11-18T17:36:50+00:00"
   },
   {
+    "id": "jma-ichou-2026-山形",
+    "kind": "seasonal",
+    "category": "autumn_leaves",
+    "brand": "気象庁",
+    "title": {
+      "ja": "山形　いちょう黄葉",
+      "zh_tw": "山形 銀杏轉黃"
+    },
+    "summary_zh": "山形的氣象台 11月18日 觀測到銀杏轉黃，比平年晚 8 天。",
+    "scope": "regional",
+    "prefectures": [
+      "yamagata"
+    ],
+    "valid_from": "2026-11-18",
+    "valid_to": "2026-12-02",
+    "relevance": 0.0,
+    "source_url": "https://www.data.jma.go.jp/sakura/data/phn_012.html",
+    "source_label": "出典：気象庁ホームページ（生物季節観測）を加工して作成",
+    "updated_at": "2026-11-19T17:43:07+00:00"
+  },
+  {
     "id": "jma-ichou-2026-帯広",
     "kind": "seasonal",
     "category": "autumn_leaves",
@@ -313,6 +334,27 @@
     "source_url": "https://www.data.jma.go.jp/sakura/data/phn_014.html",
     "source_label": "出典：気象庁ホームページ（生物季節観測）を加工して作成",
     "updated_at": "2026-11-18T17:36:50+00:00"
+  },
+  {
+    "id": "jma-kaede-2026-秋田",
+    "kind": "seasonal",
+    "category": "autumn_leaves",
+    "brand": "気象庁",
+    "title": {
+      "ja": "秋田　かえで紅葉",
+      "zh_tw": "秋田 楓葉轉紅"
+    },
+    "summary_zh": "秋田的氣象台 11月18日 觀測到楓葉轉紅，比平年晚 6 天。",
+    "scope": "regional",
+    "prefectures": [
+      "akita"
+    ],
+    "valid_from": "2026-11-18",
+    "valid_to": "2026-12-02",
+    "relevance": 0.0,
+    "source_url": "https://www.data.jma.go.jp/sakura/data/phn_014.html",
+    "source_label": "出典：気象庁ホームページ（生物季節観測）を加工して作成",
+    "updated_at": "2026-11-19T17:43:07+00:00"
   },
   {
     "id": "jma-kaede-2026-青森",
