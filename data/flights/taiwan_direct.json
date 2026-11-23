@@ -4,118 +4,252 @@
     "dest": "KIX",
     "airlines": [
       {
-        "name_zh": "長榮"
+        "name_zh": "長榮航空",
+        "iata": "BR"
       },
       {
-        "name_zh": "華航"
+        "name_zh": "中華航空",
+        "iata": "CI"
       },
       {
-        "name_zh": "虎航"
+        "name_zh": "台灣虎航",
+        "iata": "IT"
       },
       {
-        "name_zh": "樂桃"
+        "name_zh": "樂桃航空",
+        "iata": "MM"
       }
     ],
-    "verified": false,
-    "checked_at": "2026-09-27",
-    "sources": []
+    "verified": true,
+    "checked_at": "2026-11-23",
+    "sources": [
+      {
+        "url": "https://www.kia.gov.tw/FLIPLAN.html",
+        "fetched_at": "2026-11-23"
+      },
+      {
+        "url": "https://www.kia.gov.tw/EN/FLIPLAN.html",
+        "fetched_at": "2026-11-23"
+      },
+      {
+        "url": "https://www.kia.gov.tw/FIDS.html",
+        "fetched_at": "2026-11-23"
+      }
+    ],
+    "frequency_note_zh": "長榮航空每日1班(另有週二三五六加開一班)、中華航空每日1班(另有週一三五加開一班)、台灣虎航每日1班、樂桃航空每日1班；四家合計每日多班",
+    "season": "2026 冬季班表（資料顯示區間為 2026-11-16～2026-11-22）"
   },
   {
     "origin": "TPE",
     "dest": "KIX",
     "airlines": [
       {
-        "name_zh": "長榮"
+        "name_zh": "長榮航空",
+        "iata": "BR"
       },
       {
-        "name_zh": "華航"
+        "name_zh": "中華航空",
+        "iata": "CI"
       },
       {
-        "name_zh": "星宇"
+        "name_zh": "星宇航空",
+        "iata": "JX"
       },
       {
-        "name_zh": "虎航"
+        "name_zh": "台灣虎航",
+        "iata": "IT"
       },
       {
-        "name_zh": "樂桃"
+        "name_zh": "樂桃航空",
+        "iata": "MM"
       },
       {
-        "name_zh": "捷星"
+        "name_zh": "捷星日本",
+        "iata": "GK"
       }
     ],
-    "verified": false,
-    "checked_at": "2026-09-27",
-    "sources": []
+    "verified": true,
+    "checked_at": "2026-11-23",
+    "sources": [
+      {
+        "url": "https://www.kansai-airport.or.jp/tw/flight/search",
+        "fetched_at": "2026-11-23"
+      },
+      {
+        "url": "https://www.taoyuan-airport.com/flight_timetable",
+        "fetched_at": "2026-11-23"
+      },
+      {
+        "url": "https://web.taoyuan-airport.com/flight_depart?k=%E6%98%9F%E6%97%A5%E6%9C%AC&time=all",
+        "fetched_at": "2026-11-23"
+      },
+      {
+        "url": "https://www.starlux-airlines.com/flights/en/flights-from-taipei-to-osaka",
+        "fetched_at": "2026-11-23"
+      },
+      {
+        "url": "https://www.tigerairtw.com/jp/ready-to-go/timetable",
+        "fetched_at": "2026-11-23"
+      },
+      {
+        "url": "https://www.flypeach.com/tw/lm/st/w_schedule",
+        "fetched_at": "2026-11-23"
+      }
+    ],
+    "frequency_note_zh": "長榮、華航、星宇每日多班；虎航、樂桃、捷星日本每日約1~2班（實際班次依日期略有調整）",
+    "season": "2026年冬季班表（約2026/10/25–2027/03/27）"
   },
   {
     "origin": "KHH",
     "dest": "NGO",
     "airlines": [
       {
-        "name_zh": "台灣虎航"
+        "name_zh": "台灣虎航",
+        "iata": "IT"
       }
     ],
-    "verified": false,
-    "checked_at": "2026-09-27",
-    "sources": []
+    "verified": true,
+    "checked_at": "2026-11-23",
+    "sources": [
+      {
+        "url": "https://www.tigerairtw.com/en/ready-to-go/timetable",
+        "fetched_at": "2026-11-23"
+      },
+      {
+        "url": "https://www.tigerairtw.com/zh-TW/print/flight-schedule-table?slug=flight-schedule",
+        "fetched_at": "2026-11-23"
+      },
+      {
+        "url": "https://www.tigerairtw.com/jp/print/flight-schedule-table?slug=flight-schedule",
+        "fetched_at": "2026-11-23"
+      }
+    ],
+    "frequency_note_zh": "每週約3班（週一、三、六，依季節班表略有調整）",
+    "season": "2026/10/25–2027/03/27（2026冬季班表，涵蓋2026-11-23）"
   },
   {
     "origin": "RMQ",
     "dest": "NGO",
     "airlines": [
       {
-        "name_zh": "台灣虎航"
+        "name_zh": "台灣虎航",
+        "iata": "IT"
+      },
+      {
+        "name_zh": "星宇航空",
+        "iata": "JX"
       }
     ],
-    "verified": false,
-    "checked_at": "2026-09-27",
-    "sources": []
+    "verified": true,
+    "checked_at": "2026-11-23",
+    "sources": [
+      {
+        "url": "https://www.centrair.jp/flight/schedule/international-departure-01.html",
+        "fetched_at": "2026-11-23"
+      },
+      {
+        "url": "https://latestnews.starlux-airlines.com/zh-TW/about-us/travel-advisories/advisories/latest-news/from-taichung-to-nagoya",
+        "fetched_at": "2026-11-23"
+      },
+      {
+        "url": "https://www.tca.gov.tw/cht/index.php?act=fids&code=today_new",
+        "fetched_at": "2026-11-23"
+      }
+    ],
+    "frequency_note_zh": "星宇航空：2026/11/1~11/30每日一班（JX320/321、JX1320/1321），2026/12/1~2027/3/27起改為每週二、四、六3班；台灣虎航：全季每週一、三、五3班（IT778/IT779）",
+    "season": "2026冬季班表（2026/11/1～2027/3/27）"
   },
   {
     "origin": "TPE",
     "dest": "NGO",
     "airlines": [
       {
-        "name_zh": "長榮"
+        "name_zh": "長榮航空",
+        "iata": "BR"
       },
       {
-        "name_zh": "華航"
+        "name_zh": "國泰航空",
+        "iata": "CX"
       },
       {
-        "name_zh": "星宇"
+        "name_zh": "星宇航空",
+        "iata": "JX"
       },
       {
-        "name_zh": "日航"
-      },
-      {
-        "name_zh": "國泰"
-      },
-      {
-        "name_zh": "虎航"
+        "name_zh": "日本航空",
+        "iata": "JL"
       }
     ],
-    "verified": false,
-    "checked_at": "2026-09-27",
-    "sources": []
+    "verified": true,
+    "checked_at": "2026-11-23",
+    "sources": [
+      {
+        "url": "https://www.taoyuan-airport.com/flight_timetable",
+        "fetched_at": "2026-11-23"
+      },
+      {
+        "url": "https://flights.cathaypacific.com/destinations/zh_TW/%E5%BE%9E%E5%8F%B0%E5%8C%97%E5%88%B0%E5%90%8D%E5%8F%A4%E5%B1%8B%E7%9A%84%E8%88%AA%E7%8F%AD",
+        "fetched_at": "2026-11-23"
+      },
+      {
+        "url": "https://news.cathaypacific.com/%E5%9C%8B%E6%B3%B0%E8%88%AA%E7%A9%BA%E5%8F%B0%E5%8C%97-%E5%90%8D%E5%8F%A4%E5%B1%8B%E8%88%AA%E7%B7%9A-10%E6%9C%8829%E6%97%A5%E5%BE%A9%E9%A3%9B-%E7%8F%BE%E5%B7%B2%E9%96%8B%E6%94%BE%E9%A0%90%E8%A8%82",
+        "fetched_at": "2026-11-23"
+      },
+      {
+        "url": "https://www.starlux-airlines.com/flights/zh-tw/sitemap/%E5%9F%8E%E5%B8%82%E5%88%B0%E5%9F%8E%E5%B8%82/page-1",
+        "fetched_at": "2026-11-23"
+      },
+      {
+        "url": "https://www.jal.co.jp/jp/ja/inter/route/chubu/taipei/",
+        "fetched_at": "2026-11-23"
+      }
+    ],
+    "frequency_note_zh": "每日多班（各航空公司各自約每日1班，確切班次請以各官網即時查詢為準）",
+    "season": "2026冬季班表（約2026年10月下旬至2027年3月）"
   },
   {
     "origin": "RMQ",
     "dest": "UKB",
     "airlines": [
       {
-        "name_zh": "星宇"
+        "name_zh": "星宇航空",
+        "iata": "JX"
       }
     ],
-    "verified": false,
-    "checked_at": "2026-09-27",
-    "sources": []
+    "verified": true,
+    "checked_at": "2026-11-23",
+    "sources": [
+      {
+        "url": "https://latestnews.starlux-airlines.com/zh-TW/about-us/travel-advisories/advisories/latest-news/fly_to_UKB",
+        "fetched_at": "2026-11-23"
+      },
+      {
+        "url": "https://www.starlux-airlines.com/flights/en-tw/flights-from-taichung-to-kobe",
+        "fetched_at": "2026-11-23"
+      }
+    ],
+    "frequency_note_zh": "每日往返（JX306/JX307）"
   },
   {
     "origin": "TPE",
     "dest": "UKB",
-    "airlines": [],
-    "verified": false,
-    "checked_at": "2026-09-27",
-    "sources": []
+    "airlines": [
+      {
+        "name_zh": "星宇航空",
+        "iata": "JX"
+      }
+    ],
+    "verified": true,
+    "checked_at": "2026-11-23",
+    "sources": [
+      {
+        "url": "https://www.starlux-airlines.com/flights/en-tw/flights-from-taipei-to-kobe",
+        "fetched_at": "2026-11-23"
+      },
+      {
+        "url": "https://latestnews.starlux-airlines.com/en-Global/about-us/travel-advisories/advisories/latest-news/fly_to_UKB",
+        "fetched_at": "2026-11-23"
+      }
+    ]
   }
 ]
