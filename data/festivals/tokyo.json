@@ -1172,7 +1172,9 @@
       "en": "Shitamachi Tanabata Festival"
     },
     "prefecture": "tokyo",
-    "months": [],
+    "months": [
+      7
+    ],
     "location": {
       "lat": 35.71480278,
       "lng": 139.78726944
@@ -1204,7 +1206,8 @@
       }
     ],
     "views": 592,
-    "updated_at": "2026-09-29"
+    "updated_at": "2026-09-29",
+    "months_source": "wikipedia"
   },
   {
     "id": "tokyo-Q218646",

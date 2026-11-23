@@ -9,7 +9,10 @@
       "en": "Pacific Music Festival"
     },
     "prefecture": "hokkaido",
-    "months": [],
+    "months": [
+      7,
+      8
+    ],
     "summary": {
       "text": "The Pacific Music Festival (PMF) (パシフィック・ミュージック・フェスティバル札幌 (Pashifikku Myūjikku Fesutibaru Sapporo)) is an international classical music festival held annually in Sapporo, Japan. It was founded in 1990 by Leonard Bernstein, along with the London Symphony Orchestra, and 123 young musicians from 18 countries. The original artistic directors were Bernstein and Michael Tilson Thomas.",
       "lang": "en",
@@ -36,7 +39,8 @@
       }
     ],
     "views": 3916,
-    "updated_at": "2026-09-29"
+    "updated_at": "2026-09-29",
+    "months_source": "wikipedia"
   },
   {
     "id": "hokkaido-Q11255141",

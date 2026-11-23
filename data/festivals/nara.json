@@ -230,7 +230,9 @@
       "zh_tw": "篠原踊"
     },
     "prefecture": "nara",
-    "months": [],
+    "months": [
+      1
+    ],
     "location": {
       "lat": 34.172694,
       "lng": 135.816556
@@ -255,7 +257,8 @@
       }
     ],
     "views": 209,
-    "updated_at": "2026-09-29"
+    "updated_at": "2026-09-29",
+    "months_source": "wikipedia"
   },
   {
     "id": "nara-Q11611120",

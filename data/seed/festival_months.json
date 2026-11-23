@@ -1,0 +1,211 @@
+{
+ "_readme": "祭典的舉行月份，從日文維基整篇條目擷取（festival-months，Claude API）。quote 是條目原文；months 為空表示條目沒有寫新曆月份（lunar：只有舊曆）。",
+ "items": {
+  "aichi-Q109364405": {
+   "months": [
+    6
+   ],
+   "quote": "開催日:6月13、14日",
+   "lunar": false,
+   "defunct": false,
+   "source_url": "https://ja.wikipedia.org/wiki/MistFES",
+   "checked_at": "2026-11-23",
+   "model": "claude-opus-5-5"
+  },
+  "aichi-Q48745443": {
+   "months": [
+    9
+   ],
+   "quote": "からくり人形を乗せた山車の巡行と、神社への献灯などが毎年9月の第4日曜日とその前日に行われる。",
+   "lunar": false,
+   "defunct": false,
+   "source_url": "https://ja.wikipedia.org/wiki/%E5%B0%BE%E5%BC%B5%E6%A8%AA%E9%A0%88%E8%B3%80%E3%81%BE%E3%81%A4%E3%82%8A",
+   "checked_at": "2026-11-23",
+   "model": "claude-opus-5-5"
+  },
+  "chiba-Q11463659": {
+   "months": [
+    7
+   ],
+   "quote": "7月第3週の金土日に行われる（山車の曳き廻しは土日のみ）。",
+   "lunar": false,
+   "defunct": false,
+   "source_url": "https://ja.wikipedia.org/wiki/%E5%B0%8F%E8%A6%8B%E5%B7%9D%E7%A5%87%E5%9C%92%E7%A5%AD",
+   "checked_at": "2026-11-23",
+   "model": "claude-opus-5-5"
+  },
+  "fukui-Q28685424": {
+   "months": [],
+   "quote": "",
+   "lunar": false,
+   "defunct": false,
+   "source_url": "https://ja.wikipedia.org/wiki/%E6%89%8B%E6%9D%B5%E7%A5%AD",
+   "checked_at": "2026-11-23",
+   "model": "claude-opus-5-5"
+  },
+  "gifu-Q11599905": {
+   "months": [
+    4
+   ],
+   "quote": "毎年4月の笠松春まつりの本祭にて、本町通り～八幡神社・産霊神社を練り歩く。",
+   "lunar": false,
+   "defunct": false,
+   "source_url": "https://ja.wikipedia.org/wiki/%E7%AC%A0%E6%9D%BE%E3%81%AE%E5%A5%B4%E8%A1%8C%E5%88%97",
+   "checked_at": "2026-11-23",
+   "model": "claude-opus-5-5"
+  },
+  "hokkaido-Q1033843": {
+   "months": [
+    7,
+    8
+   ],
+   "quote": "毎年７月～８月に約３週間の会期で開催される。",
+   "lunar": false,
+   "defunct": false,
+   "source_url": "https://ja.wikipedia.org/wiki/%E3%83%91%E3%82%B7%E3%83%95%E3%82%A3%E3%83%83%E3%82%AF%E3%83%BB%E3%83%9F%E3%83%A5%E3%83%BC%E3%82%B8%E3%83%83%E3%82%AF%E3%83%BB%E3%83%95%E3%82%A7%E3%82%B9%E3%83%86%E3%82%A3%E3%83%90%E3%83%AB",
+   "checked_at": "2026-11-23",
+   "model": "claude-opus-5-5"
+  },
+  "hyogo-Q131904933": {
+   "months": [],
+   "quote": "",
+   "lunar": false,
+   "defunct": false,
+   "source_url": "https://ja.wikipedia.org/wiki/%E3%81%BE%E3%81%A1%E3%81%AE%E6%96%87%E5%8C%96%E7%A5%AD",
+   "checked_at": "2026-11-23",
+   "model": "claude-opus-5-5"
+  },
+  "ibaraki-Q30930004": {
+   "months": [
+    12
+   ],
+   "quote": "祭の開催日は慣例では旧暦の11月14日となっているが、2006年からは12月の第3日曜日に開催されるようになっている。",
+   "lunar": false,
+   "defunct": false,
+   "source_url": "https://ja.wikipedia.org/wiki/%E6%82%AA%E6%85%8B%E7%A5%AD%E3%82%8A_%28%E7%AC%A0%E9%96%93%E5%B8%82%29",
+   "checked_at": "2026-11-23",
+   "model": "claude-opus-5-5"
+  },
+  "kagoshima-Q11391275": {
+   "months": [],
+   "quote": "",
+   "lunar": true,
+   "defunct": false,
+   "source_url": "https://ja.wikipedia.org/wiki/%E5%85%AB%E6%9C%88%E8%B8%8A",
+   "checked_at": "2026-11-23",
+   "model": "claude-opus-5-5"
+  },
+  "kanagawa-Q60985206": {
+   "months": [],
+   "quote": "",
+   "lunar": false,
+   "defunct": true,
+   "source_url": "https://ja.wikipedia.org/wiki/%E7%A5%9E%E5%A5%88%E5%B7%9D%E6%96%B0%E8%81%9E%E8%8A%B1%E7%81%AB%E5%A4%A7%E4%BC%9A",
+   "checked_at": "2026-11-23",
+   "model": "claude-opus-5-5"
+  },
+  "kyoto-Q17210764": {
+   "months": [
+    8
+   ],
+   "quote": "大会は毎年盆休みの8月14日から翌週の週末に2つの期間に分けて行われる。",
+   "lunar": false,
+   "defunct": false,
+   "source_url": "https://ja.wikipedia.org/wiki/%E7%A6%8F%E7%9F%A5%E5%B1%B1%E3%83%89%E3%83%83%E3%82%B3%E3%82%A4%E3%82%BB%E3%81%BE%E3%81%A4%E3%82%8A",
+   "checked_at": "2026-11-23",
+   "model": "claude-opus-5-5"
+  },
+  "miyagi-Q20043614": {
+   "months": [],
+   "quote": "",
+   "lunar": false,
+   "defunct": false,
+   "source_url": "https://ja.wikipedia.org/wiki/%E3%81%8B%E3%81%8F%E3%81%A0%E8%8F%9C%E3%81%AE%E8%8A%B1%E3%81%BE%E3%81%A4%E3%82%8A",
+   "checked_at": "2026-11-23",
+   "model": "claude-opus-5-5"
+  },
+  "miyagi-Q21655120": {
+   "months": [
+    8
+   ],
+   "quote": "8月14日前後",
+   "lunar": false,
+   "defunct": false,
+   "source_url": "https://ja.wikipedia.org/wiki/YOSAKOI%26%E3%81%AD%E3%81%B7%E3%81%9Fin%E3%81%A8%E3%82%88%E3%81%95%E3%81%A8",
+   "checked_at": "2026-11-23",
+   "model": "claude-opus-5-5"
+  },
+  "nara-Q11603638": {
+   "months": [
+    1
+   ],
+   "quote": "毎年1月25日、大塔町篠原の天満神社の初天神祭で神事が営まれた後に境内で「式三番」といわれる「梅の古木踊り」「宝踊り」「世の中踊り」の3曲が地元の住人らにより奉納される。",
+   "lunar": false,
+   "defunct": false,
+   "source_url": "https://ja.wikipedia.org/wiki/%E7%AF%A0%E5%8E%9F%E8%B8%8A",
+   "checked_at": "2026-11-23",
+   "model": "claude-opus-5-5"
+  },
+  "oita-Q11486080": {
+   "months": [
+    8
+   ],
+   "quote": "毎年8月第1週の金曜日から日曜日までの3日間にわたって開催される大分七夕まつりのメイン・イベントで、七夕まつり初日の金曜日の夜に、20基以上の山車と踊り隊が、歩行者天国とされた中央通りをはじめとする大分市の中心街を練り歩く。",
+   "lunar": false,
+   "defunct": false,
+   "source_url": "https://ja.wikipedia.org/wiki/%E5%BA%9C%E5%86%85%E6%88%A6%E7%B4%99",
+   "checked_at": "2026-11-23",
+   "model": "claude-opus-5-5"
+  },
+  "okinawa-Q22127846": {
+   "months": [],
+   "quote": "",
+   "lunar": true,
+   "defunct": false,
+   "source_url": "https://ja.wikipedia.org/wiki/%E6%B2%96%E7%B8%84%E5%85%A8%E5%B3%B6%E3%82%A8%E3%82%A4%E3%82%B5%E3%83%BC%E3%81%BE%E3%81%A4%E3%82%8A",
+   "checked_at": "2026-11-23",
+   "model": "claude-opus-5-5"
+  },
+  "osaka-Q17994153": {
+   "months": [],
+   "quote": "",
+   "lunar": false,
+   "defunct": false,
+   "source_url": "https://ja.wikipedia.org/wiki/%E6%B0%B4%E9%83%BD%E7%A5%AD",
+   "checked_at": "2026-11-23",
+   "model": "claude-opus-5-5"
+  },
+  "shimane-Q105837985": {
+   "months": [
+    3,
+    10
+   ],
+   "quote": "明治時代の記録では旧暦の2月初午と9月28日に行われていたが、現代は新暦の3月初巳と10月28日に行われている。",
+   "lunar": false,
+   "defunct": false,
+   "source_url": "https://ja.wikipedia.org/wiki/%E3%81%A7%E3%82%84%E3%82%93%E3%81%AA%E7%A5%AD",
+   "checked_at": "2026-11-23",
+   "model": "claude-opus-5-5"
+  },
+  "tochigi-Q124751043": {
+   "months": [],
+   "quote": "",
+   "lunar": false,
+   "defunct": true,
+   "source_url": "https://ja.wikipedia.org/wiki/%E5%9C%9F%E7%A5%AD",
+   "checked_at": "2026-11-23",
+   "model": "claude-opus-5-5"
+  },
+  "tokyo-Q21019044": {
+   "months": [
+    7
+   ],
+   "quote": "2026年（令和8年） -　第39回、7月3日～7月7日開催",
+   "lunar": false,
+   "defunct": false,
+   "source_url": "https://ja.wikipedia.org/wiki/%E4%B8%8B%E7%94%BA%E4%B8%83%E5%A4%95%E3%81%BE%E3%81%A4%E3%82%8A",
+   "checked_at": "2026-11-23",
+   "model": "claude-opus-5-5"
+  }
+ }
+}

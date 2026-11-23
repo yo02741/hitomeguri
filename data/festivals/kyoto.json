@@ -904,7 +904,9 @@
       "zh_tw": "福知山ドッコイセまつり"
     },
     "prefecture": "kyoto",
-    "months": [],
+    "months": [
+      8
+    ],
     "location": {
       "lat": 35.29669444444445,
       "lng": 135.12661111111112
@@ -929,7 +931,8 @@
       }
     ],
     "views": 1445,
-    "updated_at": "2026-09-29"
+    "updated_at": "2026-09-29",
+    "months_source": "wikipedia"
   },
   {
     "id": "kyoto-Q17221872",
