@@ -14,6 +14,8 @@ const props = withDefaults(
     label: string
     min?: string
     max?: string
+    /** 有固定出發時區的頁面可以指定當地今天。 */
+    today?: string
     placeholder?: string
     clearable?: boolean
     size?: 'sm' | 'md' | 'lg'
@@ -30,8 +32,8 @@ const panel = ref<HTMLElement | null>(null)
 const { open, style, pref, side, origin, host } = useFloating(trigger, panel, { align: props.align })
 
 const text = computed(() => (isIsoDate(props.modelValue) ? longDate(props.modelValue) : ''))
-const today = todayIso()
-const todayOk = computed(() => !(props.min && today < props.min) && !(props.max && today > props.max))
+const today = computed(() => props.today ?? todayIso())
+const todayOk = computed(() => !(props.min && today.value < props.min) && !(props.max && today.value > props.max))
 const HEIGHT = { sm: 'h-9 pointer-coarse:h-tap', md: 'h-10 pointer-coarse:h-tap', lg: 'h-11' }
 
 function set(v: string) {
@@ -93,7 +95,7 @@ function onFocusOut(e: FocusEvent) {
       @keydown.esc.stop.prevent="close"
       @focusout="onFocusOut"
     >
-      <CalendarPanel :value="modelValue" :min="min" :max="max" @pick="set">
+      <CalendarPanel :value="modelValue" :min="min" :max="max" :today="today" @pick="set">
         <template #footer>
           <div class="flex items-center gap-2 border-t border-line-soft pt-2">
             <button

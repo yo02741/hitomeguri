@@ -4,6 +4,9 @@
 // 只列實際用到的來源（pipeline/sources、data/ 各檔的 sources），新增來源時一起補上。
 import { N03_URL } from '../map/style'
 
+const version = __APP_VERSION__
+const buildCommit = __BUILD_COMMIT__
+
 interface Link {
   label: string
   href: string
@@ -145,7 +148,13 @@ const licenses = (l: Link | string | Array<Link | string>): Array<Link | string>
 
 <template>
   <section class="mx-auto flex w-full max-w-3xl flex-col gap-10 px-6 pt-9 pb-24 max-sm:px-4">
-    <h1 class="text-h2 font-black tracking-title">資料來源</h1>
+    <header class="flex flex-col gap-2">
+      <h1 class="text-h2 font-black tracking-title">資料來源</h1>
+      <p class="text-body-sm text-sub">
+        網站版本 <span class="font-num font-bold">v{{ version }}</span>
+        <template v-if="buildCommit"> · 提交 <span class="font-num">{{ buildCommit }}</span></template>
+      </p>
+    </header>
 
     <section v-for="g in GROUPS" :key="g.id" class="flex flex-col gap-1" :aria-labelledby="`credits-${g.id}`">
       <h2 :id="`credits-${g.id}`" class="pb-2 text-h3 font-black tracking-title">{{ g.title }}</h2>

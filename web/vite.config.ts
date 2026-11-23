@@ -7,6 +7,11 @@ import { VitePWA } from 'vite-plugin-pwa'
 
 import { homeIcons, manifestIcons } from './build/icons.ts'
 
+const { version } = JSON.parse(
+  readFileSync(new URL('./package.json', import.meta.url), 'utf-8'),
+) as { version: string }
+const buildCommit = process.env.GITHUB_SHA?.slice(0, 7) ?? ''
+
 // build-region-css 產生的各主題地區色（令和的鍵是 modern）：中性色層次已套好，和 regions.css 一致（DESIGN.md §3.1a）
 type ThemeColors = Record<string, { national: Record<string, string>; regions: Record<string, Record<string, string>> }>
 const themeColors = JSON.parse(
@@ -150,6 +155,10 @@ function pwa() {
 // GitHub Pages 部署在 /hitomeguri/ 子路徑，由 workflow 設 VITE_BASE；本機與 Firebase Hosting 用 /。
 export default defineConfig({
   base: process.env.VITE_BASE ?? '/',
+  define: {
+    __APP_VERSION__: JSON.stringify(version),
+    __BUILD_COMMIT__: JSON.stringify(buildCommit),
+  },
   plugins: [splashColors(), homeIcons(new URL('../data/regions.json', import.meta.url)), vue(), tailwindcss(), pwa()],
   build: {
     rolldownOptions: {

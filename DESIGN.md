@@ -746,6 +746,14 @@ header 右側、登入鈕左邊（`SearchBox.vue`，每一頁都在；在行程�
 
 ---
 
+### 7.28 直飛日本（`/flights`）
+
+- 標題使用一般頁首與 `BackLink.vue`。出發機場、日本地區、抵達機場使用 `Dropdown.vue`（§7.23），出發日使用 `DatePicker.vue`（§7.16），「今天」以台灣時間計算。
+- 換出發機場時只清除不適用的篩選。日本地區和抵達機場依已選出發機場提供選項。班表載入時保留航點清單和上方的資訊區。
+- 航點用細分隔線與 `CollapseChevron.vue` 顯示展開狀態。班號、時刻與班次數使用 `font-num`。手機的控制項保留 44px 觸控區。
+
+---
+
 ## 8. 地圖樣式（MapLibre）
 - 底圖：OpenFreeMap Positron 為基底，樣式 JSON 放在 `web/src/map/style.json`，以下顏色對應 token：
   - 陸地：`--region-map`（切換縣時以 `setPaintProperty` 更新，過場 200ms）

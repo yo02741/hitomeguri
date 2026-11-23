@@ -2,6 +2,10 @@
 import { computed, onMounted, ref, shallowRef, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 
+import BackLink from '../components/BackLink.vue'
+import CollapseChevron from '../components/CollapseChevron.vue'
+import DatePicker from '../components/DatePicker.vue'
+import Dropdown from '../components/Dropdown.vue'
 import { regions } from '../data/regions'
 import {
   type FlightDirectory,
@@ -25,14 +29,23 @@ const directoryError = ref(false)
 const scheduleError = ref(false)
 
 const options = computed(() => origins.filter((code) => directory.value?.[code]))
-const area = computed(() => areas.find(([code]) => code === route.query.area)?.[0] ?? '')
-const originOptions = computed(() => options.value.filter((code) =>
-  !area.value || Object.values(directory.value![code]!.destinations).some((d) => d.area === area.value),
-))
-const origin = computed(() =>
-  originOptions.value.find((code) => code === route.query.from) ?? originOptions.value[0],
-)
+const hasArea = (code: FlightOrigin, area: string) =>
+  Object.values(directory.value?.[code]?.destinations ?? {}).some((destination) => destination.area === area)
+const origin = computed(() => {
+  const requested = options.value.find((code) => code === route.query.from)
+  const area = route.query.area
+  return requested ?? options.value.find((code) => typeof area === 'string' && hasArea(code, area)) ?? options.value[0]
+})
 const originMeta = computed(() => origin.value ? directory.value?.[origin.value] : undefined)
+const areaOptions = computed(() => areas.filter(([code]) => origin.value && hasArea(origin.value, code)))
+const area = computed(() => areaOptions.value.find(([code]) => code === route.query.area)?.[0] ?? '')
+const originChoices = computed(() =>
+  options.value.map((code) => ({ value: code, label: `${directory.value![code]!.name} ${code}` })),
+)
+const areaChoices = computed(() => [
+  { value: '', label: '全部地區' },
+  ...areaOptions.value.map(([value, label]) => ({ value, label, lang: 'ja' })),
+])
 const destinations = computed(() =>
   Object.entries(originMeta.value?.destinations ?? {})
     .filter(([, destination]) => !area.value || destination.area === area.value)
@@ -41,6 +54,10 @@ const destinations = computed(() =>
 const destination = computed(() =>
   destinations.value.find(([code]) => code === route.query.to)?.[0] ?? '',
 )
+const destinationChoices = computed(() => [
+  { value: '', label: '全部航點' },
+  ...destinations.value.map(([value, airport]) => ({ value, label: `${airport.name} ${value}` })),
+])
 const date = computed(() => {
   const value = route.query.date
   if (typeof value !== 'string' || !/^\d{4}-\d{2}-\d{2}$/.test(value)) return today
@@ -65,20 +82,28 @@ const results = computed(() =>
     .filter(([code]) => !destination.value || code === destination.value)
     .map(([code, airport]) => {
       const flights = byDestination.value[code] ?? []
+      const count = new Set(flights.map((flight) => flight.number)).size
       return {
         code,
         name: airport.name,
         flights,
-        alternateTimes: new Set(flights.map((flight) => flight.number)).size !== flights.length,
+        count,
       }
     }),
 )
 
-function change(key: 'area' | 'from' | 'to' | 'date', event: Event) {
-  const value = (event.target as HTMLInputElement | HTMLSelectElement).value
+function change(key: 'area' | 'from' | 'to' | 'date', value: string) {
   const query = { ...route.query, [key]: value || undefined }
-  if (key === 'area' || key === 'from') query.to = undefined
-  if (key === 'area') query.from = undefined
+  if (key === 'area') {
+    query.from = origin.value
+    const selected = originMeta.value?.destinations[destination.value]
+    query.to = selected && (!value || selected.area === value) ? destination.value : undefined
+  }
+  if (key === 'from') {
+    const next = options.value.find((code) => code === value)
+    query.to = next && directory.value?.[next]?.destinations[destination.value] ? destination.value : undefined
+    query.area = next && hasArea(next, area.value) ? area.value : undefined
+  }
   void router.replace({ name: 'flights', query })
 }
 
@@ -113,53 +138,45 @@ watch(origin, (code) => {
 </script>
 
 <template>
-  <section class="mx-auto flex w-full max-w-5xl flex-col gap-6 px-4 pt-7 pb-20 sm:px-6 sm:pt-9">
-    <header class="flex flex-col gap-1">
+  <section class="mx-auto flex w-full max-w-5xl flex-col gap-5 px-4 pt-7 pb-20 sm:px-6 sm:pt-9">
+    <header class="flex flex-col gap-2">
+      <BackLink to="/">探索</BackLink>
       <h1 class="text-h2 font-black tracking-title">直飛日本</h1>
       <p class="text-body-sm text-sub">定期出發班表 · 時刻皆為當地時間</p>
     </header>
 
     <p v-if="directoryError" class="text-body-sm" role="alert">
-      班表載入失敗。<button type="button" class="font-bold underline" @click="loadDirectory">重試</button>
+      班表載入失敗。<button type="button" class="font-bold underline active:text-ink" @click="loadDirectory">重試</button>
     </p>
     <p v-else-if="!directory" class="text-body-sm text-sub" role="status">載入航點中</p>
     <template v-else>
-      <div class="grid grid-cols-2 gap-3 rounded-card border border-line bg-surface p-3 md:grid-cols-4 md:p-4">
-        <label class="flex min-w-0 flex-col gap-1 text-body-sm font-bold">
-          出發機場
-          <select :value="origin ?? ''" :disabled="!originOptions.length" class="h-tap min-w-0 rounded-control border border-line bg-paper px-2 font-normal text-ink" @change="change('from', $event)">
-            <option v-if="!originOptions.length" value="">無</option>
-            <option v-for="code in originOptions" :key="code" :value="code">{{ directory[code]!.name }} {{ code }}</option>
-          </select>
-        </label>
-        <label class="flex min-w-0 flex-col gap-1 text-body-sm font-bold">
-          日本地區
-          <select :value="area" class="h-tap min-w-0 rounded-control border border-line bg-paper px-2 font-normal text-ink" @change="change('area', $event)">
-            <option value="">全部地區</option>
-            <option v-for="[code, name] in areas" :key="code" :value="code">{{ name }}</option>
-          </select>
-        </label>
-        <label class="flex min-w-0 flex-col gap-1 text-body-sm font-bold">
-          抵達機場
-          <select :value="destination" :disabled="!destinations.length" class="h-tap min-w-0 rounded-control border border-line bg-paper px-2 font-normal text-ink" @change="change('to', $event)">
-            <option value="">全部航點</option>
-            <option v-for="[code, airport] in destinations" :key="code" :value="code">{{ airport.name }} {{ code }}</option>
-          </select>
-        </label>
-        <label class="flex min-w-0 flex-col gap-1 text-body-sm font-bold">
-          出發日期
-          <input type="date" :value="date" required class="h-tap min-w-0 rounded-control border border-line bg-paper px-2 font-num font-normal text-ink" @change="change('date', $event)" />
-        </label>
+      <div class="grid grid-cols-[minmax(0,1fr)_minmax(0,1.3fr)] gap-x-3 gap-y-4 border-b border-line pb-4 sm:grid-cols-2 md:grid-cols-4" role="group" aria-label="航班篩選">
+        <div class="flex min-w-0 flex-col gap-1.5">
+          <span class="text-caption font-bold text-sub" aria-hidden="true">出發機場</span>
+          <Dropdown label="出發機場" :model-value="origin ?? ''" :options="originChoices" :disabled="!origin" class="min-w-0 pointer-coarse:h-tap" @update:model-value="change('from', $event)" />
+        </div>
+        <div class="flex min-w-0 flex-col gap-1.5">
+          <span class="text-caption font-bold text-sub" aria-hidden="true">日本地區</span>
+          <Dropdown label="日本地區" :model-value="area" :options="areaChoices" :disabled="!areaOptions.length" class="min-w-0 pointer-coarse:h-tap" @update:model-value="change('area', $event)" />
+        </div>
+        <div class="flex min-w-0 flex-col gap-1.5">
+          <span class="text-caption font-bold text-sub" aria-hidden="true">抵達機場</span>
+          <Dropdown label="抵達機場" :model-value="destination" :options="destinationChoices" :disabled="!destinations.length" class="min-w-0 pointer-coarse:h-tap" @update:model-value="change('to', $event)" />
+        </div>
+        <div class="flex min-w-0 flex-col gap-1.5">
+          <span class="text-caption font-bold text-sub" aria-hidden="true">出發日期</span>
+          <DatePicker label="出發日期" :model-value="date" :today="today" :clearable="false" align="end" class="min-w-0" @update:model-value="change('date', $event)" />
+        </div>
       </div>
 
-      <p v-if="!origin" class="text-body-sm text-sub" role="status">目前的班表沒有飛往這個地區的航點。</p>
-      <p v-else-if="scheduleError" class="text-body-sm" role="alert">
-        這個機場的班表載入失敗。<button type="button" class="font-bold underline" @click="loadSchedule(origin)">重試</button>
-      </p>
-      <p v-else-if="!schedule" class="text-body-sm text-sub" role="status">載入航班中</p>
+      <p v-if="!origin" class="text-body-sm text-sub" role="status">目前沒有收錄航點。</p>
       <template v-else>
-        <div class="flex flex-col gap-1 text-body-sm text-sub" aria-live="polite">
-          <p v-if="weekly">松山機場提供每週班表。以下依所選日期的星期顯示，實際日期以機場公告為準。</p>
+        <div class="flex min-h-24 flex-col gap-1 text-body-sm text-sub sm:min-h-20" aria-live="polite">
+          <p v-if="scheduleError" role="alert">
+            班表載入失敗。<button type="button" class="font-bold underline active:text-ink" @click="loadSchedule(origin)">重試</button>
+          </p>
+          <p v-else-if="!schedule" role="status">載入航班中</p>
+          <p v-else-if="weekly">松山機場提供每週班表，實際班次以機場公告為準。</p>
           <p v-else-if="!covered" class="font-bold text-ink">目前沒有這天的班表資料。</p>
           <p v-if="coverage.length">
             已收錄
@@ -167,27 +184,30 @@ watch(origin, (code) => {
               {{ i ? '、' : '' }}{{ span.start }} – {{ span.end }}
             </span>
           </p>
-          <p>
-            班表更新 <time class="font-num" :datetime="schedule.updated_at">{{ schedule.updated_at }}</time> ·
-            <a :href="originMeta?.source" target="_blank" rel="noopener noreferrer" class="underline underline-offset-2">{{ originMeta?.name }}機場官方班表</a>
+          <p class="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+            <span v-if="schedule">班表更新 <time class="font-num" :datetime="schedule.updated_at">{{ schedule.updated_at }}</time></span>
+            <a :href="originMeta?.source" target="_blank" rel="noopener noreferrer" class="underline decoration-line underline-offset-4 hover:decoration-ink">{{ originMeta?.name }}機場官方班表</a>
           </p>
         </div>
-        <div class="flex flex-col gap-2" :aria-label="`${date} 航班查詢結果`">
-          <details v-for="result in results" :key="`${origin}-${result.code}`" :open="destination === result.code || undefined" class="rounded-card border border-line bg-paper">
-            <summary class="flex min-h-tap cursor-pointer list-none items-center gap-3 rounded-card px-3 py-2 hover:bg-surface sm:px-4 [&::-webkit-details-marker]:hidden">
-              <span class="font-latin text-body-sm font-bold tracking-[.09em] text-region-strong">{{ result.code }}</span>
-              <span class="text-body font-bold">{{ result.name }}</span>
-              <span v-if="covered || weekly" class="ml-auto text-body-sm text-sub">
-                {{ result.flights.length ? `${new Set(result.flights.map((f) => f.number)).size} 班` : '當日無列出班次' }}
+        <div class="flex flex-col divide-y divide-line border-y border-line" role="group" :aria-label="`${date} 航班查詢結果`" :aria-busy="!schedule && !scheduleError">
+          <details v-for="result in results" :key="`${origin}-${result.code}`" :open="destination === result.code || undefined" class="group">
+            <summary class="flex min-h-tap cursor-pointer list-none items-center gap-2.5 rounded-control px-2.5 py-2 hover:bg-surface active:bg-surface sm:px-3.5 [&::-webkit-details-marker]:hidden">
+              <span class="w-9 shrink-0 font-latin text-body-sm font-bold text-region-strong">{{ result.code }}</span>
+              <span class="text-body-sm font-bold sm:text-body">{{ result.name }}</span>
+              <span v-if="schedule" class="ml-auto shrink-0 text-caption text-sub sm:text-body-sm">
+                <template v-if="covered || weekly">
+                  <span v-if="result.count" class="font-num">{{ result.count }} 班</span>
+                  <template v-else>當日未列班次</template>
+                </template>
+                <template v-else>日期未收錄</template>
               </span>
-              <span v-else class="ml-auto text-body-sm text-sub">日期未收錄</span>
-              <span aria-hidden="true" class="font-bold text-sub">⌄</span>
+              <CollapseChevron :open="false" class="text-sub group-open:-translate-y-[2px] group-open:rotate-45" :class="schedule ? '' : 'ml-auto'" />
             </summary>
-            <p v-if="result.alternateTimes" class="border-t border-line px-4 py-2 text-body-sm text-sub">同一班號在來源中有不同時刻，以航空公司公告為準。</p>
-            <ul v-if="result.flights.length" class="divide-y divide-line border-t border-line">
+            <p v-if="result.count !== result.flights.length" class="px-3.5 pt-2 text-caption text-sub">同一班號列有不同時刻，以航空公司公告為準。</p>
+            <ul v-if="result.flights.length" class="divide-y divide-line-soft border-t border-line-soft">
               <li v-for="flight in result.flights" :key="`${flight.number}-${flight.departure}`" class="grid grid-cols-[1fr_auto] items-center gap-x-3 gap-y-1 px-3 py-2.5 sm:px-4">
                 <div class="flex flex-wrap items-baseline gap-x-2">
-                  <span class="font-latin text-body font-bold">{{ flight.number }}</span>
+                  <span class="font-num text-body font-bold">{{ flight.number }}</span>
                   <span class="text-body-sm text-sub">{{ flight.airline }}</span>
                 </div>
                 <div class="flex items-center gap-1.5 font-num text-body font-bold">
@@ -200,7 +220,7 @@ watch(origin, (code) => {
                 <p v-if="flight.codeshares?.length" class="col-span-2 text-caption text-sub">共掛 {{ flight.codeshares.join('、') }}</p>
               </li>
             </ul>
-            <p v-else class="border-t border-line px-4 py-2 text-body-sm text-sub">
+            <p v-else-if="schedule" class="border-t border-line-soft px-3.5 py-2 text-body-sm text-sub">
               {{ covered || weekly ? '官方班表沒有列出這天的班次。' : '這天超出目前收錄的日期。' }}
             </p>
           </details>

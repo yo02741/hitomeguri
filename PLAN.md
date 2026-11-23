@@ -66,7 +66,8 @@
 
 ```
 /
-├── CLAUDE.md                     # 給 Claude Code 的專案規則（見 §11）
+├── AGENTS.md                     # Codex 與 Claude Code 共用的專案規則
+├── CLAUDE.md                     # 讓 Claude Code 載入 AGENTS.md
 ├── PLAN.md                       # 本文件
 ├── firebase.json                 # Hosting + Firestore（無 Functions、無 Storage）
 ├── .firebaserc
@@ -553,18 +554,6 @@ extra_stations?: [{ id, name, lat, lng }]                              // edges 
 
 ---
 
-## 11. 給 Claude Code 的工作規則（請同步寫入 CLAUDE.md）
+## 11. 專案工作規則
 
-- 一次只做一個 Phase；每個 Phase 結束時總結做了什麼、還缺什麼，等我確認再繼續。
-- **不得引入任何需要 Firebase Blaze 方案的服務**（Cloud Functions、Cloud Storage、Extensions 等）；需要後端運算一律用 GitHub Actions 或本機 script。
-- 開發與測試一律使用 Firebase Emulator；**未經我同意不要執行 `firebase deploy`**。
-- 任何 API key、service account 不可 commit；本機用 `.env`（加入 .gitignore），CI 用 GitHub Actions secrets。前端不得包含 Claude API key。
-- 外部資料採集：遵守各站 robots.txt 與使用條款、設定合理 rate limit 與 User-Agent；不爬 traveldoko、Google Maps、食べログ。
-- 每筆資料都要保留來源 URL 與取得時間；**不用 LLM 產生網路上沒有的內容**（簡介、念法等一律取自實際來源，沒有就留空）；LLM 只用於查證與擷取，且必須附來源 URL。
-- LLM 呼叫先用小量資料（例 20 筆）驗證 prompt 與輸出 schema，再跑整區 batch；記錄 token 用量並寫進 PR 描述。
-- `data/` 的 JSON 以穩定順序（依 id 排序）與固定縮排輸出，讓 PR diff 可讀。
-- **UI 文案遵守 §6a「不要有 AI 味」**：不把本文件的設計理由、功能說明寫進介面；不加 onboarding 說明卡、emoji、sparkle 圖示、「AI」標記。寫任何 UI 文字前先問：車站標示或旅遊書會這樣寫嗎？
-- LLM 生成的簡介與詞录說明遵守 §6a 文風規則，並做禁用詞檢查。
-- 樣式只用 `DESIGN.md` 定義的 token 與元件配方；不得寫死色碼。`regions.css` 由 `python -m pipeline.cli build-region-css` 從 `data/regions.json` 產生，不可手改。
-- Python 用 type hints + pydantic；前端用 TypeScript strict。
-- 不確定的外部 API 細節（網址、參數、額度、model string）先查官方文件再實作，不要猜。
+Codex 與 Claude Code 共用 [AGENTS.md](AGENTS.md)。

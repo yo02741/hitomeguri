@@ -9,7 +9,9 @@ import { useFloating } from '../composables/floating'
 export interface DropdownOption {
   value: string
   label: string
+  lang?: string
 }
+defineOptions({ inheritAttrs: false })
 const props = withDefaults(
   defineProps<{
     modelValue: string
@@ -73,6 +75,7 @@ watch(active, async () => {
   <button
     ref="trigger"
     type="button"
+    v-bind="$attrs"
     :aria-label="label"
     aria-haspopup="listbox"
     :aria-expanded="open"
@@ -83,7 +86,7 @@ watch(active, async () => {
     @click="open ? (open = false) : show()"
     @keydown="onTriggerKey"
   >
-    <span class="min-w-0 flex-1 truncate">{{ current?.label }}</span>
+    <span :lang="current?.lang" class="min-w-0 flex-1 truncate">{{ current?.label }}</span>
     <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 text-sub" aria-hidden="true">
       <path d="M6 9l6 6 6-6" />
     </svg>
@@ -122,7 +125,7 @@ watch(active, async () => {
         <span class="w-3.5 shrink-0 text-region-strong" aria-hidden="true">
           <svg v-if="o.value === modelValue" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10" /></svg>
         </span>
-        <span :class="o.value === modelValue ? 'font-bold' : ''">{{ o.label }}</span>
+        <span :lang="o.lang" :class="o.value === modelValue ? 'font-bold' : ''">{{ o.label }}</span>
       </button>
     </div>
   </Teleport>

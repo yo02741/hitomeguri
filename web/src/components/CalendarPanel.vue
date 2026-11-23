@@ -17,10 +17,12 @@ const props = defineProps<{
   max?: string
   /** 還沒選日期時先打開的那一天所在的月；預設今天 */
   initial?: string
+  /** 有固定出發時區時，以該地日期標示今天。 */
+  today?: string
 }>()
 const emit = defineEmits<{ pick: [date: string] }>()
 
-const today = todayIso()
+const today = props.today ?? todayIso()
 const initial = clampDate(props.value || props.end || props.start || props.initial || today, props.min, props.max)
 const view = ref<'days' | 'months' | 'years'>('days')
 const month = ref(monthOf(initial))

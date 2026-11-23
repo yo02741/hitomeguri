@@ -105,7 +105,7 @@ GBA 風的俯視走格子遊戲。主角是你在旅人頁穿好的旅人，變�
 | `PLAN.md` | 開發規格：技術棧、資料 pipeline、資料模型、開發階段、工作規則、文案原則 |
 | `UX-FLOW.md` | 資訊架構、地區色規則、User Stories、UI flow、路由 |
 | `DESIGN.md` | UI 設計準則與 Tailwind 元件配方；§14 形象網站、§14a 像素散步、§14b 番外篇 |
-| `CLAUDE.md` | 給 Claude Code 的專案規則 |
+| `AGENTS.md` | Codex 與 Claude Code 共用的專案規則，Claude Code 透過 `CLAUDE.md` 載入 |
 | `docs/驗收.md` | 需要使用者做的事、各功能的驗收說明（一份） |
 | `docs/PROGRESS.md` | 目前狀態、開發紀錄、使用者決定、已知限制、之後要做 |
 | `docs/參考/` | 設計研究、使用流程盤點、手機版計畫、效能檢測、skill 回顧、遊戲用的 skill、番外篇的技術 |
