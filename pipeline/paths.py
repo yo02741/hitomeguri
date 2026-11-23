@@ -21,6 +21,7 @@ RAIL_DIR = DATA / "rail"
 MUNICIPALITIES_DIR = DATA / "municipalities"
 # 深度探索「祭典」：日文維基分類
 FESTIVALS_DIR = DATA / "festivals"
+FESTIVAL_MONTHS_JSON = SEED_DIR / "festival_months.json"
 # 深度探索「季節」：氣象廳生物季節平年值
 SEASONS_JSON = DATA / "seasons.json"
 CLIMATE_JSON = DATA / "climate.json"

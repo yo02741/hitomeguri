@@ -3,6 +3,7 @@ import { computed, onBeforeUnmount, ref, watch } from 'vue'
 
 import { useDismiss } from '../composables/floating'
 import { usePackChips } from '../composables/packChips'
+import { regionOf } from '../data/regions'
 import { useExploreStore } from '../stores/explore'
 import { useMarksStore } from '../stores/marks'
 import { useUserStore } from '../stores/user'
@@ -61,6 +62,9 @@ const pill = 'flex h-9 items-center gap-1.5 rounded-full px-3.5 text-body-sm fon
       <button v-if="pref" type="button" :class="hit" :aria-pressed="explore.focusLock" @click="explore.focusLock = !explore.focusLock">
         <FocusChip :pref="pref" :pill="pill" />
       </button>
+      <RouterLink v-if="pref" :to="{ name: 'flights', query: { area: regionOf(pref)?.area } }" :class="[hit, 'no-underline']">
+        <span :class="[pill, 'bg-paper text-ink']">直飛日本</span>
+      </RouterLink>
       <button
         v-if="showFavorites"
         type="button"

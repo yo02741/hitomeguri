@@ -21,9 +21,12 @@ const hasData = computed(() => new Set(props.available))
   <section
     class="scroll-quiet flex min-h-0 flex-col gap-3 overflow-y-auto overscroll-contain rounded-card bg-paper px-4 pt-5 pb-3 shadow-float max-lg:gap-2 max-lg:px-3 max-lg:pt-3"
   >
-    <h1 class="px-1 text-h3 leading-[1.45] font-black tracking-title max-lg:text-title max-lg:leading-snug">
-      都道府縣
-    </h1>
+    <div class="flex items-center justify-between gap-2 px-1">
+      <h1 class="text-h3 leading-[1.45] font-black tracking-title max-lg:text-title max-lg:leading-snug">都道府縣</h1>
+      <RouterLink to="/flights" class="flex min-h-9 shrink-0 items-center text-body-sm font-bold text-ink underline underline-offset-2 pointer-coarse:min-h-tap">
+        直飛日本
+      </RouterLink>
+    </div>
     <nav v-if="wide" class="flex flex-col" aria-label="地區">
       <template v-for="g in groups" :key="g.area">
         <button

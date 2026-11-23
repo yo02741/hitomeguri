@@ -1,0 +1,158 @@
+{
+  "origin": "TSA",
+  "updated_at": "2026-11-23",
+  "flights": [
+    {
+      "destination": "HND",
+      "number": "BR192",
+      "airline": "長榮航空公司",
+      "departure": "07:15",
+      "arrival": "11:00",
+      "codeshares": [
+        "NH5826"
+      ],
+      "weekdays": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "destination": "HND",
+      "number": "CI220",
+      "airline": "中華航空公司",
+      "departure": "09:00",
+      "arrival": "12:50",
+      "codeshares": [
+        "JL5042"
+      ],
+      "weekdays": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "destination": "HND",
+      "number": "JL096",
+      "airline": "日本航空",
+      "departure": "09:10",
+      "arrival": "13:00",
+      "codeshares": [
+        "CI9220"
+      ],
+      "weekdays": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "destination": "HND",
+      "number": "NH852",
+      "airline": "全日本空輸",
+      "departure": "13:30",
+      "arrival": "17:25",
+      "codeshares": [
+        "BR2176"
+      ],
+      "weekdays": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "destination": "HND",
+      "number": "JL098",
+      "airline": "日本航空",
+      "departure": "15:35",
+      "arrival": "19:25",
+      "codeshares": [
+        "CI9222"
+      ],
+      "weekdays": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "destination": "HND",
+      "number": "BR190",
+      "airline": "長榮航空公司",
+      "departure": "16:30",
+      "arrival": "20:20",
+      "codeshares": [
+        "NH5824"
+      ],
+      "weekdays": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "destination": "HND",
+      "number": "NH854",
+      "airline": "全日本空輸",
+      "departure": "16:50",
+      "arrival": "20:40",
+      "codeshares": [
+        "BR2178"
+      ],
+      "weekdays": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "destination": "HND",
+      "number": "CI222",
+      "airline": "中華航空公司",
+      "departure": "18:25",
+      "arrival": "22:15",
+      "codeshares": [
+        "JL5044"
+      ],
+      "weekdays": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    }
+  ]
+}

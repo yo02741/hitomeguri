@@ -69,7 +69,9 @@ const routes = computed(() =>
         <svg width="9" height="9" viewBox="0 0 10 10" aria-hidden="true"><path d="M2 0l8 5-8 5z" fill="currentColor" /></svg>
       </RouterLink>
     </span>
-    <span v-if="routes.length" class="px-3 py-1 font-latin text-caption tracking-[1px]">{{ routes.join('　') }}</span>
+    <RouterLink :to="{ name: 'flights', query: { area: region.area } }" class="w-fit px-3 py-1 text-caption text-inherit underline underline-offset-2">
+      {{ routes.length ? routes.join('　') : '查詢直飛航班' }}
+    </RouterLink>
   </div>
   <div
     v-else-if="region"
@@ -104,6 +106,8 @@ const routes = computed(() =>
         <span lang="ja" class="text-caption font-bold">{{ region.area_name }}</span>
       </span>
     </span>
-    <span v-if="routes.length" class="relative mt-1.5 pl-2 font-latin text-caption font-semibold tracking-[1px]">{{ routes.join('　') }}</span>
+    <RouterLink :to="{ name: 'flights', query: { area: region.area } }" class="relative mt-1.5 w-fit pl-2 text-caption font-semibold text-on-region underline underline-offset-2">
+      {{ routes.length ? routes.join('　') : '查詢直飛航班' }}
+    </RouterLink>
   </div>
 </template>

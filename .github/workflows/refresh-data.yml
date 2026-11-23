@@ -1,7 +1,7 @@
 name: refresh-data
 
 # 定期重跑資料採集，結果開成 PR（PLAN.md §9 Phase 6）：
-# - 每週（週一 03:23 日本時間）：擴充包（寶可夢人孔蓋、寶可夢中心、城）與祭典。
+# - 每週（週一 03:23 日本時間）：擴充包（寶可夢人孔蓋、寶可夢中心、城）、祭典與網站直飛班表。
 # - 每月第一週：再加老舖・茶屋、角色商店（OSM 各縣查詢，各約一小時）、地區特色（全國）與各縣的維基簡介、念法（seed-wiki）。
 # - 每季（1、4、7、10 月第一週）：各縣大點整個重採（seed-region，含簡介與念法），取代 seed-wiki。
 # 結果推到 pipeline/refresh-<run> 分支並開 PR。PR 描述附資料變更報告與資料檢查結果，
@@ -16,7 +16,7 @@ on:
   workflow_dispatch:
     inputs:
       scope:
-        description: "weekly：寶可夢、城、祭典／monthly：再加老舖、角色商店、地區特色、維基簡介／quarterly：再加各縣大點重採"
+        description: "weekly：寶可夢、城、祭典、直飛班表／monthly：再加老舖、角色商店、地區特色、維基簡介／quarterly：再加各縣大點重採"
         type: choice
         options: [weekly, monthly, quarterly]
         default: weekly
@@ -102,6 +102,12 @@ jobs:
             fi
             echo >> report-nationwide.md
           done
+          echo "## 網站直飛班表" >> report-nationwide.md
+          set -o pipefail
+          if ! .venv/bin/python -m pipeline.flight_schedules | tee -a report-nationwide.md; then
+            echo "flight-schedules" >> failed-nationwide.txt
+            echo "::warning::未取得新的網站直飛班表"
+          fi
       - uses: actions/upload-artifact@v4
         with:
           name: refresh-nationwide

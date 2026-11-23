@@ -1,6 +1,9 @@
 import json
 from pathlib import Path
 
+import pytest
+
+from pipeline import build_bundles
 from pipeline.build_bundles import (
     build_achievements,
     build_specialties,
@@ -122,6 +125,41 @@ def test_build_specialties_one_file_per_prefecture(tmp_path: Path) -> None:
     written = json.loads(path.read_text(encoding="utf-8"))
     assert [s["id"] for s in written] == [s["id"] for s in real]
     assert all(s["prefecture"] == "aichi" for s in written)
+
+
+def test_build_festivals_uses_recorded_months_as_fallback(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    src = tmp_path / "src"
+    src.mkdir()
+    source = {"url": "https://ja.wikipedia.org/wiki/MistFES", "fetched_at": "2026-11-23"}
+    mist = {
+        "id": "aichi-Q109364405",
+        "name": {"ja": "MistFES", "zh_tw": "MistFES"},
+        "prefecture": "aichi",
+        "months": [],
+        "sources": [source],
+        "updated_at": "2026-11-23",
+    }
+    existing = {**mist, "id": "aichi-Q2", "months": [7], "months_source": "wikidata"}
+    (src / "aichi.json").write_text(json.dumps([mist, existing]), encoding="utf-8")
+    seed = tmp_path / "festival_months.json"
+    monkeypatch.setattr(build_bundles, "FESTIVALS_DIR", src)
+    monkeypatch.setattr(build_bundles, "FESTIVAL_MONTHS_JSON", seed)
+    _, original = build_bundles.build_festivals(tmp_path / "dst")["aichi"]
+    record = {"months": [6], "source_url": source["url"], "lunar": False, "defunct": False}
+    seed.write_text(
+        json.dumps({"items": {mist["id"]: record, existing["id"]: {**record, "months": [1, 12]}}}),
+        encoding="utf-8",
+    )
+    bundle, updated = build_bundles.build_festivals(tmp_path / "dst")["aichi"]
+    rendered = {item["id"]: item for item in json.loads(bundle.read_text(encoding="utf-8"))}
+    assert updated["version"] != original["version"]
+    assert updated["count"] == original["count"]
+    assert rendered[mist["id"]]["months"] == [6]
+    assert rendered[mist["id"]]["months_source"] == "wikipedia"
+    assert rendered[mist["id"]]["sources"] == mist["sources"]
+    assert rendered[existing["id"]]["months"] == existing["months"]
 
 
 def test_commons_thumb_url_for_unscaled_originals() -> None:

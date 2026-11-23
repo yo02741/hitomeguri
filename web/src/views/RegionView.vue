@@ -282,9 +282,10 @@ function sourceLabel(url: string): string {
             <span lang="ja" class="text-body-sm font-bold">{{ region.area_name }}</span>
           </div>
         </div>
-        <p v-if="routes.length" class="-mt-2 flex flex-wrap gap-x-4 font-latin text-caption font-semibold tracking-[1px] lg:hidden">
-          <span v-for="r in routes" :key="r" class="whitespace-nowrap">{{ r }}</span>
-        </p>
+        <RouterLink :to="{ name: 'flights', query: { area: region.area } }" class="-mt-2 flex min-h-9 w-fit flex-wrap items-center gap-x-4 text-body-sm font-bold text-on-region underline underline-offset-2 pointer-coarse:min-h-tap">
+          查詢直飛航班
+          <span v-for="r in routes" :key="r" class="font-latin text-caption whitespace-nowrap">{{ r }}</span>
+        </RouterLink>
       </div>
     </header>
 

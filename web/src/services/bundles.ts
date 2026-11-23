@@ -91,6 +91,8 @@ export interface BundleIndex {
   specialties?: Record<string, { count: number; version: string }>
   /** 期間限定（全國一個檔） */
   timed?: { count: number; version: string }
+  /** 直飛日本的航點索引（逐班資料按出發機場載入） */
+  flight_routes?: string
   /** 地區特色、會話、季節、航線、浮世繪裡的景點：檔名 → 版本 */
   extras?: Partial<Record<'specialties' | 'flights' | 'phrases' | 'seasons' | 'climate' | 'ukiyoe', string>>
   /** 成就用的小索引（achievements.json） */
@@ -432,4 +434,39 @@ export async function fetchFlights(v?: string): Promise<FlightRoute[]> {
   } catch {
     return []
   }
+}
+
+export type FlightOrigin = 'TPE' | 'TSA' | 'RMQ' | 'KHH'
+
+export type FlightDirectory = Partial<Record<FlightOrigin, {
+  name: string
+  source: string
+  version: string
+  destinations: Record<string, { name: string; area: string }>
+}>>
+
+export interface ScheduledFlight {
+  destination: string
+  number: string
+  airline: string
+  departure: string
+  arrival?: string
+  codeshares?: string[]
+  dates?: string[]
+  weekdays?: number[]
+}
+
+export interface FlightSchedule {
+  origin: FlightOrigin
+  updated_at: string
+  coverage?: { start: string; end: string }[]
+  flights: ScheduledFlight[]
+}
+
+export function fetchFlightDirectory(version: string): Promise<FlightDirectory> {
+  return getJson<FlightDirectory>(withV('flight-routes.json', version))
+}
+
+export function fetchFlightSchedule(origin: FlightOrigin, version: string): Promise<FlightSchedule> {
+  return getJson<FlightSchedule>(withV(`flight-schedules/${origin}.json`, version))
 }

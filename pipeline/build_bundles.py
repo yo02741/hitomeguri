@@ -26,6 +26,7 @@ from pathlib import Path
 from typing import Any
 
 from pipeline import config, daytrip, municipalities, rail_graph, topo
+from pipeline.flight_schedules import ORIGINS, SCHEDULES, SOURCES, Schedule, japan_airports
 from pipeline.game_bundle import build_game
 from pipeline.models import (
     ClimateData,
@@ -43,6 +44,7 @@ from pipeline.models import (
 from pipeline.paths import (
     BUNDLES_DIR,
     CLIMATE_JSON,
+    FESTIVAL_MONTHS_JSON,
     FESTIVALS_DIR,
     FLIGHTS_JSON,
     MUNICIPALITIES_DIR,
@@ -296,6 +298,10 @@ def build(src: Path = SPOTS_DIR, dst: Path = BUNDLES_DIR) -> list[Path]:
     written += extras
     # 地區特色、會話、季節、航線也帶版本（網址加 ?v=）：前端與 service worker 存了就不必每次再下載
     index["extras"] = {p.stem: hashlib.sha1(p.read_bytes()).hexdigest()[:10] for p in extras}
+    schedules = build_flight_schedules(dst)
+    if schedules:
+        written += schedules
+        index["flight_routes"] = hashlib.sha1(schedules[-1].read_bytes()).hexdigest()[:10]
     # 番外篇（/play）的小 bundle：讀上面寫好的檔，所以最後做
     game = build_game(dst)
     index["game"] = {pref: meta for pref, (_, meta) in game.items()}
@@ -574,19 +580,34 @@ def build_festivals(dst: Path) -> dict[str, tuple[Path, dict[str, Any]]]:
     """深度探索「祭典」：一縣一檔（開深度探索頁時才載入）；回傳 {縣: (路徑, 索引資訊)}。"""
     out = {}
     zh = _translations()
-    tag = _translation_tag()
+    recorded_months = {}
+    if FESTIVAL_MONTHS_JSON.exists():
+        recorded_months = json.loads(FESTIVAL_MONTHS_JSON.read_text(encoding="utf-8"))["items"]
     for path in sorted(FESTIVALS_DIR.glob("*.json")) if FESTIVALS_DIR.exists() else []:
         raw = json.loads(path.read_text(encoding="utf-8"))
-        items = [
-            with_translation(
-                Festival.model_validate(f).model_dump(mode="json", exclude_none=True), zh
+        items = []
+        for festival in raw:
+            record = recorded_months.get(festival["id"])
+            # 重新採集所得的月份優先，缺少月份時再沿用同一條目的全文查證。
+            if (
+                not festival.get("months")
+                and record
+                and record["months"]
+                and not record["lunar"]
+                and not record["defunct"]
+                and any(s["url"] == record["source_url"] for s in festival.get("sources", []))
+            ):
+                festival = {**festival, "months": record["months"], "months_source": "wikipedia"}
+            items.append(
+                with_translation(
+                    Festival.model_validate(festival).model_dump(mode="json", exclude_none=True), zh
+                )
             )
-            for f in raw
-        ]
         if not items:
             continue
-        version = hashlib.sha1(path.read_bytes() + tag).hexdigest()[:10]
-        out[path.stem] = (_write(dst / path.name, items), {"count": len(items), "version": version})
+        bundle = _write(dst / path.name, items)
+        version = hashlib.sha1(bundle.read_bytes()).hexdigest()[:10]
+        out[path.stem] = (bundle, {"count": len(items), "version": version})
     return out
 
 
@@ -717,3 +738,33 @@ def build_extras(dst: Path = BUNDLES_DIR) -> list[Path]:
     if UKIYOE_JSON.exists():
         out.append(_write(dst / "ukiyoe.json", build_ukiyoe()))
     return out
+
+
+def build_flight_schedules(dst: Path) -> list[Path]:
+    airports = japan_airports()
+    origins = {}
+    written = []
+    for code, name in ORIGINS.items():
+        path = SCHEDULES / f"{code}.json"
+        if not path.exists():
+            continue
+        schedule = Schedule.model_validate_json(path.read_bytes())
+        if schedule.origin != code:
+            raise ValueError(f"班表的出發機場與檔名不符：{path}")
+        bundle = _write(
+            dst / "flight-schedules" / path.name,
+            schedule.model_dump(mode="json", exclude_defaults=True),
+        )
+        written.append(bundle)
+        origins[code] = {
+            "name": name,
+            "version": hashlib.sha1(bundle.read_bytes()).hexdigest()[:10],
+            "source": SOURCES[code],
+            "destinations": {
+                airport: airports[airport]
+                for airport in sorted({flight.destination for flight in schedule.flights})
+            },
+        }
+    if origins:
+        written.append(_write(dst / "flight-routes.json", origins))
+    return written
