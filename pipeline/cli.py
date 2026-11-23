@@ -233,6 +233,13 @@ def cmd_translate_summaries(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_festival_months(args: argparse.Namespace) -> int:
+    from pipeline.festival_months import festival_months
+
+    _emit(festival_months(args.limit), args.report)
+    return 0
+
+
 def cmd_seed_festivals(args: argparse.Namespace) -> int:
     from pipeline.festivals import seed_festivals
     from pipeline.geo import pref_slugs
@@ -542,6 +549,14 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("--limit", type=int, help="只翻前 N 筆（先小量驗證）")
     p.add_argument("--report")
     p.set_defaults(func=cmd_translate_summaries)
+
+    p = sub.add_parser(
+        "festival-months",
+        help="沒有月份的祭典：從整篇日文維基條目擷取舉行月份 → data/seed/festival_months.json",
+    )
+    p.add_argument("--limit", type=int, help="只做 N 筆（先小量驗證）")
+    p.add_argument("--report")
+    p.set_defaults(func=cmd_festival_months)
 
     p = sub.add_parser(
         "seed-specialty-photos",

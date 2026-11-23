@@ -4,6 +4,7 @@
 簡介取維基百科開頭段落（中文優先）。舉行月份依序取：
 1. Wikidata P837（day in year for periodic occurrence）／P2922（month of the year）的標籤「○月…」
 2. 日文維基開頭段落的「毎年○月」「○月に行われる」等（舊曆的不取）
+3. festival-months 從整篇條目擷取、存在 data/seed/festival_months.json 的（附原文引文）
 都沒有就不寫月份。不用 LLM 補內容。
 """
 
@@ -15,6 +16,7 @@ import re
 import unicodedata
 from typing import Any
 
+from pipeline.festival_months import cached_months
 from pipeline.kana import is_kana, normalize_kana, romaji_with_spacing
 from pipeline.major import (
     PrefResolver,
@@ -175,7 +177,7 @@ def seed_festivals(prefs: list[str]) -> str:
             months = months_from_labels([occurs.get(q, "") for q in ent.occurs])
             months_source = "wikidata" if months else None
             if not months:
-                months = months_from_text(lead)
+                months = months_from_text(lead) or cached_months(f"{pref}-{ent.qid}")
                 months_source = "wikipedia" if months else None
             kana, kana_source = None, None
             if is_kana(ja):

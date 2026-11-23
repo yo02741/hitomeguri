@@ -233,3 +233,19 @@ def wikitexts(site: str, titles: list[str]) -> dict[str, str]:
         if revs:
             out[t] = revs[0].get("slots", {}).get("main", {}).get("content", "")
     return out
+
+
+def full_extract(site: str, title: str) -> str:
+    """整篇條目的純文字（prop=extracts 不帶 exintro 時一次只能取一頁）。"""
+    lang = SITES[site]
+    params = {
+        "action": "query",
+        "prop": "extracts",
+        "explaintext": 1,
+        "redirects": 1,
+        "titles": title,
+        "format": "json",
+    }
+    data = get_json(f"https://{lang}.wikipedia.org/w/api.php", params=params, min_interval=0.3)
+    pages = data.get("query", {}).get("pages", {}).values()
+    return next(((p.get("extract") or "").strip() for p in pages), "")
