@@ -63,6 +63,27 @@
     "updated_at": "2026-11-17T17:55:18+00:00"
   },
   {
+    "id": "jma-ichou-2026-和歌山",
+    "kind": "seasonal",
+    "category": "autumn_leaves",
+    "brand": "気象庁",
+    "title": {
+      "ja": "和歌山　いちょう黄葉",
+      "zh_tw": "和歌山 銀杏轉黃"
+    },
+    "summary_zh": "和歌山的氣象台 11月24日 觀測到銀杏轉黃，比平年晚 1 天。",
+    "scope": "regional",
+    "prefectures": [
+      "wakayama"
+    ],
+    "valid_from": "2026-11-24",
+    "valid_to": "2026-12-08",
+    "relevance": 0.0,
+    "source_url": "https://www.data.jma.go.jp/sakura/data/phn_012.html",
+    "source_label": "出典：気象庁ホームページ（生物季節観測）を加工して作成",
+    "updated_at": "2026-11-25T18:51:46+00:00"
+  },
+  {
     "id": "jma-ichou-2026-富山",
     "kind": "seasonal",
     "category": "autumn_leaves",
@@ -166,6 +187,27 @@
     "source_url": "https://www.data.jma.go.jp/sakura/data/phn_012.html",
     "source_label": "出典：気象庁ホームページ（生物季節観測）を加工して作成",
     "updated_at": "2026-11-13T16:45:43+00:00"
+  },
+  {
+    "id": "jma-ichou-2026-東京",
+    "kind": "seasonal",
+    "category": "autumn_leaves",
+    "brand": "気象庁",
+    "title": {
+      "ja": "東京　いちょう黄葉",
+      "zh_tw": "東京 銀杏轉黃"
+    },
+    "summary_zh": "東京的氣象台 11月24日 觀測到銀杏轉黃，比平年晚 1 天。",
+    "scope": "regional",
+    "prefectures": [
+      "tokyo"
+    ],
+    "valid_from": "2026-11-24",
+    "valid_to": "2026-12-08",
+    "relevance": 0.0,
+    "source_url": "https://www.data.jma.go.jp/sakura/data/phn_012.html",
+    "source_label": "出典：気象庁ホームページ（生物季節観測）を加工して作成",
+    "updated_at": "2026-11-25T18:51:46+00:00"
   },
   {
     "id": "jma-ichou-2026-盛岡",
@@ -355,6 +397,27 @@
     "source_url": "https://www.data.jma.go.jp/sakura/data/phn_014.html",
     "source_label": "出典：気象庁ホームページ（生物季節観測）を加工して作成",
     "updated_at": "2026-11-18T17:36:50+00:00"
+  },
+  {
+    "id": "jma-kaede-2026-広島",
+    "kind": "seasonal",
+    "category": "autumn_leaves",
+    "brand": "気象庁",
+    "title": {
+      "ja": "広島　かえで紅葉",
+      "zh_tw": "広島 楓葉轉紅"
+    },
+    "summary_zh": "広島的氣象台 11月24日 觀測到楓葉轉紅，比平年晚 2 天。",
+    "scope": "regional",
+    "prefectures": [
+      "hiroshima"
+    ],
+    "valid_from": "2026-11-24",
+    "valid_to": "2026-12-08",
+    "relevance": 0.0,
+    "source_url": "https://www.data.jma.go.jp/sakura/data/phn_014.html",
+    "source_label": "出典：気象庁ホームページ（生物季節観測）を加工して作成",
+    "updated_at": "2026-11-25T18:51:46+00:00"
   },
   {
     "id": "jma-kaede-2026-新潟",
