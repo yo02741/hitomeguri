@@ -84,6 +84,27 @@
     "updated_at": "2026-11-25T18:51:46+00:00"
   },
   {
+    "id": "jma-ichou-2026-宮崎",
+    "kind": "seasonal",
+    "category": "autumn_leaves",
+    "brand": "気象庁",
+    "title": {
+      "ja": "宮崎　いちょう黄葉",
+      "zh_tw": "宮崎 銀杏轉黃"
+    },
+    "summary_zh": "宮崎的氣象台 11月26日 觀測到銀杏轉黃，比平年早 3 天。",
+    "scope": "regional",
+    "prefectures": [
+      "miyazaki"
+    ],
+    "valid_from": "2026-11-26",
+    "valid_to": "2026-12-10",
+    "relevance": 0.0,
+    "source_url": "https://www.data.jma.go.jp/sakura/data/phn_012.html",
+    "source_label": "出典：気象庁ホームページ（生物季節観測）を加工して作成",
+    "updated_at": "2026-11-27T18:29:28+00:00"
+  },
+  {
     "id": "jma-ichou-2026-富山",
     "kind": "seasonal",
     "category": "autumn_leaves",
@@ -315,6 +336,48 @@
     "updated_at": "2026-11-05T16:52:48+00:00"
   },
   {
+    "id": "jma-ichou-2026-高松",
+    "kind": "seasonal",
+    "category": "autumn_leaves",
+    "brand": "気象庁",
+    "title": {
+      "ja": "高松　いちょう黄葉",
+      "zh_tw": "高松 銀杏轉黃"
+    },
+    "summary_zh": "高松的氣象台 11月26日 觀測到銀杏轉黃，與平年同日。",
+    "scope": "regional",
+    "prefectures": [
+      "kagawa"
+    ],
+    "valid_from": "2026-11-26",
+    "valid_to": "2026-12-10",
+    "relevance": 0.0,
+    "source_url": "https://www.data.jma.go.jp/sakura/data/phn_012.html",
+    "source_label": "出典：気象庁ホームページ（生物季節観測）を加工して作成",
+    "updated_at": "2026-11-27T18:29:28+00:00"
+  },
+  {
+    "id": "jma-ichou-2026-高知",
+    "kind": "seasonal",
+    "category": "autumn_leaves",
+    "brand": "気象庁",
+    "title": {
+      "ja": "高知　いちょう黄葉",
+      "zh_tw": "高知 銀杏轉黃"
+    },
+    "summary_zh": "高知的氣象台 11月26日 觀測到銀杏轉黃，比平年晚 11 天。",
+    "scope": "regional",
+    "prefectures": [
+      "kochi"
+    ],
+    "valid_from": "2026-11-26",
+    "valid_to": "2026-12-10",
+    "relevance": 0.0,
+    "source_url": "https://www.data.jma.go.jp/sakura/data/phn_012.html",
+    "source_label": "出典：気象庁ホームページ（生物季節観測）を加工して作成",
+    "updated_at": "2026-11-27T18:29:28+00:00"
+  },
+  {
     "id": "jma-kaede-2026-仙台",
     "kind": "seasonal",
     "category": "autumn_leaves",
@@ -418,6 +481,27 @@
     "source_url": "https://www.data.jma.go.jp/sakura/data/phn_014.html",
     "source_label": "出典：気象庁ホームページ（生物季節観測）を加工して作成",
     "updated_at": "2026-11-18T17:36:50+00:00"
+  },
+  {
+    "id": "jma-kaede-2026-宮崎",
+    "kind": "seasonal",
+    "category": "autumn_leaves",
+    "brand": "気象庁",
+    "title": {
+      "ja": "宮崎　かえで紅葉",
+      "zh_tw": "宮崎 楓葉轉紅"
+    },
+    "summary_zh": "宮崎的氣象台 11月26日 觀測到楓葉轉紅，比平年早 8 天。",
+    "scope": "regional",
+    "prefectures": [
+      "miyazaki"
+    ],
+    "valid_from": "2026-11-26",
+    "valid_to": "2026-12-10",
+    "relevance": 0.0,
+    "source_url": "https://www.data.jma.go.jp/sakura/data/phn_014.html",
+    "source_label": "出典：気象庁ホームページ（生物季節観測）を加工して作成",
+    "updated_at": "2026-11-27T18:29:28+00:00"
   },
   {
     "id": "jma-kaede-2026-広島",
