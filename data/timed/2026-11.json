@@ -84,6 +84,48 @@
     "updated_at": "2026-11-25T18:51:46+00:00"
   },
   {
+    "id": "jma-ichou-2026-大阪",
+    "kind": "seasonal",
+    "category": "autumn_leaves",
+    "brand": "気象庁",
+    "title": {
+      "ja": "大阪　いちょう黄葉",
+      "zh_tw": "大阪 銀杏轉黃"
+    },
+    "summary_zh": "大阪的氣象台 11月27日 觀測到銀杏轉黃，比平年晚 5 天。",
+    "scope": "regional",
+    "prefectures": [
+      "osaka"
+    ],
+    "valid_from": "2026-11-27",
+    "valid_to": "2026-12-11",
+    "relevance": 0.0,
+    "source_url": "https://www.data.jma.go.jp/sakura/data/phn_012.html",
+    "source_label": "出典：気象庁ホームページ（生物季節観測）を加工して作成",
+    "updated_at": "2026-11-28T17:12:52+00:00"
+  },
+  {
+    "id": "jma-ichou-2026-奈良",
+    "kind": "seasonal",
+    "category": "autumn_leaves",
+    "brand": "気象庁",
+    "title": {
+      "ja": "奈良　いちょう黄葉",
+      "zh_tw": "奈良 銀杏轉黃"
+    },
+    "summary_zh": "奈良的氣象台 11月27日 觀測到銀杏轉黃，比平年晚 9 天。",
+    "scope": "regional",
+    "prefectures": [
+      "nara"
+    ],
+    "valid_from": "2026-11-27",
+    "valid_to": "2026-12-11",
+    "relevance": 0.0,
+    "source_url": "https://www.data.jma.go.jp/sakura/data/phn_012.html",
+    "source_label": "出典：気象庁ホームページ（生物季節観測）を加工して作成",
+    "updated_at": "2026-11-28T17:12:52+00:00"
+  },
+  {
     "id": "jma-ichou-2026-宮崎",
     "kind": "seasonal",
     "category": "autumn_leaves",
@@ -189,6 +231,27 @@
     "updated_at": "2026-11-21T16:24:39+00:00"
   },
   {
+    "id": "jma-ichou-2026-彦根",
+    "kind": "seasonal",
+    "category": "autumn_leaves",
+    "brand": "気象庁",
+    "title": {
+      "ja": "彦根　いちょう黄葉",
+      "zh_tw": "彦根 銀杏轉黃"
+    },
+    "summary_zh": "彦根的氣象台 11月27日 觀測到銀杏轉黃，比平年晚 7 天。",
+    "scope": "regional",
+    "prefectures": [
+      "shiga"
+    ],
+    "valid_from": "2026-11-27",
+    "valid_to": "2026-12-11",
+    "relevance": 0.0,
+    "source_url": "https://www.data.jma.go.jp/sakura/data/phn_012.html",
+    "source_label": "出典：気象庁ホームページ（生物季節観測）を加工して作成",
+    "updated_at": "2026-11-28T17:12:52+00:00"
+  },
+  {
     "id": "jma-ichou-2026-新潟",
     "kind": "seasonal",
     "category": "autumn_leaves",
@@ -231,6 +294,27 @@
     "updated_at": "2026-11-25T18:51:46+00:00"
   },
   {
+    "id": "jma-ichou-2026-津",
+    "kind": "seasonal",
+    "category": "autumn_leaves",
+    "brand": "気象庁",
+    "title": {
+      "ja": "津　いちょう黄葉",
+      "zh_tw": "津 銀杏轉黃"
+    },
+    "summary_zh": "津的氣象台 11月27日 觀測到銀杏轉黃，比平年晚 7 天。",
+    "scope": "regional",
+    "prefectures": [
+      "mie"
+    ],
+    "valid_from": "2026-11-27",
+    "valid_to": "2026-12-11",
+    "relevance": 0.0,
+    "source_url": "https://www.data.jma.go.jp/sakura/data/phn_012.html",
+    "source_label": "出典：気象庁ホームページ（生物季節観測）を加工して作成",
+    "updated_at": "2026-11-28T17:12:52+00:00"
+  },
+  {
     "id": "jma-ichou-2026-盛岡",
     "kind": "seasonal",
     "category": "autumn_leaves",
@@ -250,6 +334,27 @@
     "source_url": "https://www.data.jma.go.jp/sakura/data/phn_012.html",
     "source_label": "出典：気象庁ホームページ（生物季節観測）を加工して作成",
     "updated_at": "2026-11-03T16:37:56+00:00"
+  },
+  {
+    "id": "jma-ichou-2026-神戸",
+    "kind": "seasonal",
+    "category": "autumn_leaves",
+    "brand": "気象庁",
+    "title": {
+      "ja": "神戸　いちょう黄葉",
+      "zh_tw": "神戸 銀杏轉黃"
+    },
+    "summary_zh": "神戸的氣象台 11月27日 觀測到銀杏轉黃，比平年晚 14 天。",
+    "scope": "regional",
+    "prefectures": [
+      "hyogo"
+    ],
+    "valid_from": "2026-11-27",
+    "valid_to": "2026-12-11",
+    "relevance": 0.0,
+    "source_url": "https://www.data.jma.go.jp/sakura/data/phn_012.html",
+    "source_label": "出典：気象庁ホームページ（生物季節観測）を加工して作成",
+    "updated_at": "2026-11-28T17:12:52+00:00"
   },
   {
     "id": "jma-ichou-2026-福島",
@@ -334,6 +439,27 @@
     "source_url": "https://www.data.jma.go.jp/sakura/data/phn_012.html",
     "source_label": "出典：気象庁ホームページ（生物季節観測）を加工して作成",
     "updated_at": "2026-11-05T16:52:48+00:00"
+  },
+  {
+    "id": "jma-ichou-2026-静岡",
+    "kind": "seasonal",
+    "category": "autumn_leaves",
+    "brand": "気象庁",
+    "title": {
+      "ja": "静岡　いちょう黄葉",
+      "zh_tw": "静岡 銀杏轉黃"
+    },
+    "summary_zh": "静岡的氣象台 11月27日 觀測到銀杏轉黃，比平年晚 2 天。",
+    "scope": "regional",
+    "prefectures": [
+      "shizuoka"
+    ],
+    "valid_from": "2026-11-27",
+    "valid_to": "2026-12-11",
+    "relevance": 0.0,
+    "source_url": "https://www.data.jma.go.jp/sakura/data/phn_012.html",
+    "source_label": "出典：気象庁ホームページ（生物季節観測）を加工して作成",
+    "updated_at": "2026-11-28T17:12:52+00:00"
   },
   {
     "id": "jma-ichou-2026-高松",
@@ -565,6 +691,27 @@
     "source_url": "https://www.data.jma.go.jp/sakura/data/phn_014.html",
     "source_label": "出典：気象庁ホームページ（生物季節観測）を加工して作成",
     "updated_at": "2026-11-10T16:37:25+00:00"
+  },
+  {
+    "id": "jma-kaede-2026-津",
+    "kind": "seasonal",
+    "category": "autumn_leaves",
+    "brand": "気象庁",
+    "title": {
+      "ja": "津　かえで紅葉",
+      "zh_tw": "津 楓葉轉紅"
+    },
+    "summary_zh": "津的氣象台 11月27日 觀測到楓葉轉紅，比平年晚 2 天。",
+    "scope": "regional",
+    "prefectures": [
+      "mie"
+    ],
+    "valid_from": "2026-11-27",
+    "valid_to": "2026-12-11",
+    "relevance": 0.0,
+    "source_url": "https://www.data.jma.go.jp/sakura/data/phn_014.html",
+    "source_label": "出典：気象庁ホームページ（生物季節観測）を加工して作成",
+    "updated_at": "2026-11-28T17:12:52+00:00"
   },
   {
     "id": "jma-kaede-2026-盛岡",
